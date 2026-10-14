@@ -19,3 +19,4 @@ a{color:var(--acc)}
 footer{border-top:1px solid var(--bd);margin-top:56px;padding:24px 0 44px;color:var(--mut);font-size:.88rem}footer a{color:var(--mut);margin-right:14px}
 .ad{min-height:8px}
 @media(min-width:640px){h1{font-size:2.8rem}}
+.ask{display:flex;gap:8px;margin:18px 0 6px}.ask input{flex:1;min-width:0;padding:14px 16px;font:inherit;font-size:16px;border:1.5px solid var(--bd);border-radius:14px;background:var(--card);color:var(--fg);outline:none}.ask input:focus{border-color:var(--acc)}.ask button{flex:none;padding:0 20px;font:inherit;font-weight:800;border:0;border-radius:14px;background:var(--acc);color:#fff;cursor:pointer}@media(prefers-color-scheme:dark){.ask button{color:#0e1015}}.note{font-size:.85rem;color:var(--mut);margin:0}

@@ -8,16 +8,30 @@
 <meta name="theme-color" content="#7c5cff">
 <!-- Google Search Console 소유 확인 메타태그 자리: <meta name="google-site-verification" content="코드"> -->
 <!-- 네이버 서치어드바이저 소유 확인 메타태그 자리: <meta name="naver-site-verification" content="코드"> -->
+<!-- GA4 태그 자리(측정 ID 발급 후 주석 해제): <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","G-XXXXXXX");</script> -->
 <!-- AdSense 사이트 연결 코드 삽입 위치(head): <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
 <link rel="stylesheet" href="/assets/lab.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "Seongsang Park's Lab", "url": "https://sungprofile.cloud/", "inLanguage": "ko", "author": {"@type": "Person", "name": "Seongsang Park"}}</script>
 </head><body>
 <header class="top"><div class="w"><a class="bn" href="/">Seongsang Park's Lab</a><nav><a href="#projects">서비스</a><a href="#tools">계산기</a><a href="/about/">소개</a></nav></div></header>
-<main class="w">
-<section class="intro"><p class="eyebrow">Seongsang Park</p><h1>직접 만들어 운영하는<br>웹 서비스들</h1><p class="sub">생활에 쓸모 있고, 한 번 해보면 친구에게 보내고 싶어지는 작은 서비스를 실험하고 운영합니다. 모든 서비스는 로그인 없이 브라우저 안에서 동작하고, 입력한 내용은 서버로 보내지 않습니다.</p></section>
-<h2 id="projects">서비스</h2>
-<div class="plist">
-<a class="proj" href="/quiz/"><span class="ico" style="background:linear-gradient(135deg,#7c5cff,#ff6fb1)">📝</span><span class="pt"><b>찐친 모의고사 메이커</b><span>문제를 직접 내고 링크로 뿌리는 "나 얼마나 알아?" 모의고사</span><em>출시 2026.10.14</em></span></a>
+<main class="w"><section class="intro" id="request"><p class="eyebrow">Seongsang Park's Lab</p>
+<h1>필요한 거 말만 해보세요.<br>대충 한번 만들어 봅시다.</h1>
+<p class="sub">불편했던 것, 있었으면 하는 것을 한 줄로 적어 주세요. 쓸 만하면 서비스로 만들어서 여기에 올려 둘게요. 로그인 없고, 이름·연락처는 안 받아요.</p>
+<!-- TALLY_FORM_URL: 요청 접수용 Tally 폼 주소를 아래 script의 TALLY_FORM_URL 값에 넣으면 이 입력칸이 폼으로 연결됩니다(또는 이 자리에 Tally 임베드 iframe). -->
+<form class="ask" id="ask" autocomplete="off"><input id="ask-in" type="text" maxlength="100" placeholder="예: 단톡방 N빵 정산기 같은 거" aria-label="필요한 것 한 줄"><button type="submit">말해보기</button></form>
+<p class="note" id="ask-note">이름·연락처·주소 같은 개인정보는 적지 마세요.</p>
+</section>
+<script>
+(function(){
+var TALLY_FORM_URL = ''; /* TALLY_FORM_URL */
+var f=document.getElementById('ask'),i=document.getElementById('ask-in'),n=document.getElementById('ask-note');
+f.addEventListener('submit',function(e){e.preventDefault();var v=i.value.trim();
+ if(!TALLY_FORM_URL){n.textContent='요청 창구를 곧 열어요. 조금만 기다려 주세요!';return}
+ window.open(TALLY_FORM_URL+(TALLY_FORM_URL.indexOf('?')>-1?'&':'?')+'request='+encodeURIComponent(v),'_blank','noopener')});
+})();
+</script>
+<h2 id="projects">요청받아 만든 서비스</h2>
+<div class="plist"><a class="proj" href="/quiz/"><span class="ico" style="background:linear-gradient(135deg,#7c5cff,#ff6fb1)">📝</span><span class="pt"><b>찐친 모의고사 메이커</b><span>문제를 직접 내고 링크로 뿌리는 "나 얼마나 알아?" 모의고사</span><em>출시 2026.10.14</em></span></a>
 <a class="proj" href="/aitest/"><span class="ico" style="background:linear-gradient(135deg,#3b6cff,#22c1c3)">🤖</span><span class="pt"><b>AI 생존력 테스트</b><span>12문항으로 보는 나의 AI 생존 점수와 6가지 유형</span><em>출시 2026.10.14</em></span></a>
 <a class="proj" href="/luck/"><span class="ico" style="background:linear-gradient(135deg,#6b4bd8,#ff6fb1)">🔮</span><span class="pt"><b>오늘의 운세 카드</b><span>매일 새로 뽑는 별자리 운세 카드와 행운 아이템</span><em>출시 2026.10.14</em></span></a>
 </div>
