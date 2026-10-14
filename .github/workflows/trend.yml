@@ -20,7 +20,7 @@ jobs:
           cache: pip
           cache-dependency-path: _trend/requirements.txt
       - run: pip install -r _trend/requirements.txt
-      - run: python _trend/collect.py
+      - run: python _trend/collect.py --if-stale 50
       - name: 데이터 커밋
         run: |
           git config user.name "trend-bot"

@@ -385,6 +385,13 @@ def main():
     sys.stdout.reconfigure(encoding='utf-8')
     os.makedirs(DATA, exist_ok=True)
     now = now_kst()
+    if '--if-stale' in sys.argv:
+        # 예비 실행: 집 PC 수집이 멈춰 데이터가 오래됐을 때만 돈다(해외 IP는 일부 사이트가 막힘)
+        limit = int(sys.argv[sys.argv.index('--if-stale') + 1])
+        upd = load(LATEST_F, {}).get('updated')
+        if upd and (now - datetime.fromisoformat(upd)).total_seconds() < limit * 60:
+            print(f'최근 갱신 {upd} - {limit}분 이내라 건너뜀')
+            return 0
     posts = load(POSTS_F, {})
     hourly = load(HOURLY_F, {})
     tok = Tok()
