@@ -444,7 +444,9 @@ def mention_kws(p):
 def analyze(posts, needs, site_stat, now):
     today0 = now.replace(hour=0, minute=0, second=0)
     day_keys = [(today0 - timedelta(days=i)).strftime('%Y-%m-%d') for i in range(7, -1, -1)]   # 지난 7일 + 오늘
-    periods = {'today': today0, '24': now - timedelta(hours=24), '7d': today0 - timedelta(days=7)}
+    periods = {'today': today0, '24': now - timedelta(hours=24), '7d': today0 - timedelta(days=7),
+               'week': today0 - timedelta(days=7)}                    # week: 오늘을 뺀 지난 7일
+    ends = {'week': today0}
 
     plist = []
     for k, p in posts.items():
@@ -459,7 +461,7 @@ def analyze(posts, needs, site_stat, now):
     top = lambda c, n=50: [[k, v] for k, v in c.most_common(n)]
     out_p, need_p = {}, {}
     for name, start in periods.items():
-        act = [x for x in plist if x['pt'] >= start]
+        act = [x for x in plist if x['pt'] >= start and (name not in ends or x['pt'] < ends[name])]
         mention, per_site, site_posts = collections.Counter(), collections.defaultdict(collections.Counter), collections.Counter()
         nk_posts, nk_type, ntype, nsent = collections.Counter(), collections.defaultdict(collections.Counter), collections.Counter(), 0
         for x in act:
@@ -472,12 +474,12 @@ def analyze(posts, needs, site_stat, now):
                 for w in set(kws) - STOP - NEED_WORDS:
                     nk_type[w].update(ty)
             nk_posts.update(x['nkw'])
-        out_p[name] = dict(posts=len(act), mention=top(mention),
+        out_p[name] = dict(posts=len(act), mention=top(mention, 80),
                            sites={s: dict(posts=site_posts[s], top=top(per_site[s], 10)) for s in site_posts})
         need_p[name] = dict(
             posts=sum(1 for x in act if x['nd']), sentences=nsent,
             types=[[t, ntype[t]] for t in NEED_ORDER],
-            keywords=[[w, n, {t: nk_type[w][t] for t in NEED_ORDER if nk_type[w][t]}] for w, n in nk_posts.most_common(40)],
+            keywords=[[w, n, {t: nk_type[w][t] for t in NEED_ORDER if nk_type[w][t]}] for w, n in nk_posts.most_common(60)],
         )
 
     def share_cmp(field, min_today):
@@ -510,8 +512,8 @@ def analyze(posts, needs, site_stat, now):
                          [t for t in NEED_ORDER if x['ntype'][t]]])
         return post_ref[x['k']]
 
-    focus = [w for n in periods for w, _ in out_p[n]['mention'][:40]]
-    focus += [w for n in periods for w, _, _ in need_p[n]['keywords'][:40]]
+    focus = [w for n in periods for w, _ in out_p[n]['mention'][:60]]
+    focus += [w for n in periods for w, _, _ in need_p[n]['keywords'][:60]]
     focus += [r[0] for r in tvw['rows']] + [r[0] for r in tvw_need['rows']]
     by_kw = collections.defaultdict(list)
     for x in plist:
@@ -548,7 +550,8 @@ def analyze(posts, needs, site_stat, now):
     startup = dict(posts=len(st), keywords=top(sk, 30), list=[ref(x) for x in st[:40]])
 
     latest = dict(
-        updated=now.isoformat(), days=day_keys, sites=SITE_NAME, groups=SITE_GROUP, site_status=site_stat,
+        updated=now.isoformat(), days=day_keys,
+        day_posts=[sum(1 for x in plist if x['day'] == d) for d in day_keys], sites=SITE_NAME, groups=SITE_GROUP, site_status=site_stat,
         need_types=NEED_ORDER, periods=out_p, needs=need_p, today_vs_week=tvw, needs_today_vs_week=tvw_need,
         startup=startup, detail=detail, posts=refs,
     )
