@@ -19,6 +19,11 @@ from bs4 import BeautifulSoup
 
 KST = timezone(timedelta(hours=9))
 HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, HERE)
+try:
+    import money_private as MP           # 비공개 확장: 공개 저장소에 올리지 않는다(.gitignore)
+except ImportError:
+    MP = None
 ROOT = os.path.dirname(HERE)
 STATE = os.path.join(HERE, 'state')
 POSTS_F = os.path.join(STATE, 'posts.json')
@@ -82,11 +87,13 @@ SITES = [
          sel='td.title a', row='tr', body='div.questionDetail',
          page='https://kin.naver.com/qna/list.naver?dirId=4&page={n}', bf=40, stride=10),
 ]
+if MP:
+    SITES += MP.SITES                     # 비공개 수집처(돈 신호)
 SITE_NAME = {s['id']: s['name'] for s in SITES}
 SITE_GROUP = {s['id']: s['g'] for s in SITES}
 
 KEEP_DAYS = 8             # 글 상태 보관(오늘 + 지난 7일)
-DETAIL_LIVE = {'hot': 15, 'ask': 30}   # 평소 실행 때 사이트당 본문·댓글 수집 수
+DETAIL_LIVE = {'hot': 15, 'ask': 30, 'money': 20}   # 평소 실행 때 사이트당 본문·댓글 수집 수
 DETAIL_BACKFILL = 300     # 백필 때 사이트당 본문·댓글 수집 상한
 REFRESH_MIN = 60          # 댓글 재수집 간격
 REFRESH_AGE_H = 24        # 처음 본 뒤 이 시간까지만 재수집
@@ -121,6 +128,8 @@ NEED_WORDS = set('''불편 짜증 최악 불만 스트레스 도전 답답 귀�
 # 창업 주제 키워드에서 뺄 창업 일반어(무슨 창업인지를 보려고)
 BIZ_WORDS = set('창업 사업 사업자 자영업 자영업자 가게 매장 장사 부업 프랜차이즈 오픈 퇴사 수익 수익화 외주 개업 폐업 기업 1인'.split())
 NEED_ORDER = [n for n, _ in NEED_TYPES]
+
+MONEY_RX = MP.MONEY_RX if MP else []     # 비공개 확장이 없으면 돈 신호 분류도 없다
 
 
 def now_kst():
@@ -167,6 +176,9 @@ def parse_dt(text, now):
         h, mi = (int(m[4]), int(m[5])) if m[4] else (12, 0)
         return safe_dt(int(m[1]), int(m[2]), int(m[3]), h, mi)
     m = re.search(r'\b(\d{2})/(\d{2})/(\d{2})\s+(\d{1,2}):(\d{2})', text)       # 26/10/14 17:12
+    if m:
+        return safe_dt(2000 + int(m[1]), int(m[2]), int(m[3]), int(m[4]), int(m[5]))
+    m = re.search(r'(?<![\d.])(\d{2})\.(\d{2})\.(\d{2})\s+(\d{1,2}):(\d{2})', text)  # 26.10.14 22:41
     if m:
         return safe_dt(2000 + int(m[1]), int(m[2]), int(m[3]), int(m[4]), int(m[5]))
     m = re.search(r'(?<![\d.])(\d{2})\.(\d{2})\.(\d{2})(?![\d.])', text)        # 20.03.25
@@ -342,12 +354,13 @@ def extract_needs(texts, tok):
     for src, text in texts:
         for s in ([text] if src == 't' else sentences(text)):
             ty = [n for n, rx in NEED_RX if rx.search(s)]
-            if not ty or s in seen:
+            mty = [n for n, _, rx in MONEY_RX if rx.search(s)]
+            if not (ty or mty) or s in seen:
                 continue
             seen.add(s)
             kws = sorted(set(tok.nouns(s)))
             if kws:
-                out.append([src, ty, s[:220], kws])
+                out.append([src, ty, s[:220], kws, mty])
     return out
 
 
@@ -404,8 +417,8 @@ def update(posts, needs, results, tok, now):
             p = posts.get(key)
             if p is None:
                 p = posts[key] = dict(s=res['site'], t=title, u=url, fs=iso, br=rank, h=[])
-            if p.get('t') != title or 'tn' not in p:
-                p['t'], p['tk'] = title, sorted(set(tok.nouns(title)))
+            if p.get('t') != title or p.get('tv') != 2:
+                p['t'], p['tk'], p['tv'] = title, sorted(set(tok.nouns(title))), 2
                 p['tn'] = extract_needs([('t', title)], tok)
             if pt and not p.get('pt'):
                 p['pt'] = pt
@@ -450,8 +463,10 @@ def analyze(posts, needs, site_stat, now):
 
     plist = []
     for k, p in posts.items():
+        if SITE_GROUP.get(p['s']) not in ('hot', 'ask'):
+            continue                                        # 돈 신호 수집처는 공개 집계에서 뺀다
         pt = post_time(p)
-        nd = (p.get('tn') or []) + needs.get(k, [])
+        nd = [x[:4] for x in (p.get('tn') or []) + needs.get(k, []) if x[1]]
         nkw, ntype = set(), collections.Counter()
         for _, ty, _, kws in nd:
             nkw.update(w for w in kws if w not in STOP and w not in NEED_WORDS)
@@ -551,7 +566,10 @@ def analyze(posts, needs, site_stat, now):
 
     latest = dict(
         updated=now.isoformat(), days=day_keys,
-        day_posts=[sum(1 for x in plist if x['day'] == d) for d in day_keys], sites=SITE_NAME, groups=SITE_GROUP, site_status=site_stat,
+        day_posts=[sum(1 for x in plist if x['day'] == d) for d in day_keys],
+        sites={k: v for k, v in SITE_NAME.items() if SITE_GROUP[k] != 'money'},
+        groups={k: v for k, v in SITE_GROUP.items() if v != 'money'},
+        site_status={k: v for k, v in site_stat.items() if SITE_GROUP.get(k) != 'money'},
         need_types=NEED_ORDER, periods=out_p, needs=need_p, today_vs_week=tvw, needs_today_vs_week=tvw_need,
         startup=startup, detail=detail, posts=refs,
     )
@@ -637,6 +655,8 @@ def main():
         latest, plist = analyze(posts, needs, load(LATEST_F, {}).get('site_status', {}), now)
         dump(LATEST_F, latest)
         write_report(latest, plist, now)
+        rows = MP.money_analyze(sys.modules[__name__], posts, needs, now) if MP else []
+        print('돈 신호', [(r[0], r[1]) for r in rows[:25]])
         n7 = latest['needs']['7d']
         print('니즈 키워드', [w for w, _, _ in n7['keywords'][:25]])
         print('창업', latest['startup']['keywords'][:20])
@@ -659,6 +679,8 @@ def main():
     dump(NEEDS_F, needs)
     dump(LATEST_F, latest)
     write_report(latest, plist, now)
+    rows = MP.money_analyze(sys.modules[__name__], posts, needs, now) if MP else []
+    print('돈 신호', [(r[0], r[1]) for r in rows[:20]])
     n7 = latest['needs']['7d']
     print(f"보관 글 {len(posts)} | 7일 니즈 문장 {n7['sentences']} | {time.time() - t0:.0f}초")
     print('니즈 키워드', [w for w, _, _ in n7['keywords'][:20]])
