@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>오늘의 운세 카드 - 생일로 보는 오늘 운세, 행운색·행운숫자 | Seongsang Park's Lab</title>
+<meta name="description" content="생일만 고르면 오늘의 총운, 분야별 운, 행운색·행운숫자·피할 것을 한 장의 카드로. 매일 새로 바뀌는 별자리 순위와 이미지 저장.">
+<link rel="canonical" href="https://sungprofile.cloud/luck/">
+<meta property="og:type" content="website"><meta property="og:locale" content="ko_KR"><meta property="og:site_name" content="Seongsang Park's Lab">
+<meta property="og:title" content="오늘의 운세 카드 - 생일로 보는 오늘 운세, 행운색·행운숫자 | Seongsang Park's Lab"><meta property="og:description" content="생일만 고르면 오늘의 총운, 분야별 운, 행운색·행운숫자·피할 것을 한 장의 카드로. 매일 새로 바뀌는 별자리 순위와 이미지 저장."><meta property="og:url" content="https://sungprofile.cloud/luck/"><meta property="og:image" content="https://sungprofile.cloud/luck/og.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://sungprofile.cloud/luck/og.png">
+<meta name="theme-color" content="#7c5cff">
+<!-- Google Search Console 소유 확인 메타태그 자리: <meta name="google-site-verification" content="코드"> -->
+<!-- 네이버 서치어드바이저 소유 확인 메타태그 자리: <meta name="naver-site-verification" content="코드"> -->
+<!-- AdSense 사이트 연결 코드 삽입 위치(head): <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
+<link rel="stylesheet" href="/assets/fun.css">
+<style>:root{--acc:#6b4bd8;--acc2:#ff6fb1}</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "오늘의 운세 카드", "url": "https://sungprofile.cloud/luck/", "applicationCategory": "EntertainmentApplication", "operatingSystem": "Any", "inLanguage": "ko", "description": "생일만 고르면 오늘의 총운, 분야별 운, 행운색·행운숫자·피할 것을 한 장의 카드로. 매일 새로 바뀌는 별자리 순위와 이미지 저장.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "KRW"}, "author": {"@type": "Person", "name": "Seongsang Park"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Seongsang Park's Lab", "item": "https://sungprofile.cloud/"}, {"@type": "ListItem", "position": 2, "name": "오늘의 운세 카드", "item": "https://sungprofile.cloud/luck/"}]}</script>
+</head><body>
+<header><div class="w"><a class="b" href="/"><i>🔮</i>오늘의 운세 카드</a><nav><a href="/">Lab 홈</a><a href="/#tools">계산기</a></nav></div></header>
+<main class="w">
+<section class="hero"><span class="em">🔮</span><span class="badge">매일 0시 새로고침 · 가입 없음</span>
+<h1>오늘의 운세 카드</h1><p>생일만 고르면 오늘의 운세가 한 장의 카드로 나와요.</p>
+<p style="margin-top:10px"><span class="dday hide" id="csat"></span></p></section>
+
+<div id="pick" class="card">
+<label>내 생일</label>
+<div class="row"><select id="m" aria-label="월"></select><select id="d" aria-label="일"></select></div>
+<label for="y">띠도 함께 볼까요? (선택)</label>
+<select id="y"></select>
+<button class="btn" id="go" type="button">오늘의 운세 뽑기</button>
+<p class="note">입력한 생일은 이 기기 브라우저에만 저장되어 다음에 자동으로 카드를 보여주며, 서버로 보내지 않습니다.</p>
+</div>
+
+<div id="card" class="hide">
+<div id="f-shared" class="card hide"><b>친구가 공유한 카드예요</b><button class="btn" id="f-shared-go" type="button">내 운세 뽑기</button></div>
+<div class="card" style="text-align:center">
+<div class="note" id="f-head"></div>
+<div style="font-size:3.2rem;font-weight:900;color:var(--acc);line-height:1.3" id="f-score"></div>
+<span class="dday" id="f-grade"></span>
+<p id="f-say" style="margin:12px 0 0;font-weight:600"></p>
+</div>
+<canvas id="f-canvas" class="res" aria-label="운세 카드 이미지"></canvas>
+<div id="f-share"></div>
+<div class="card"><b>분야별 운</b><div id="f-cats"></div></div>
+<div class="card"><b>오늘의 행운 아이템</b>
+<div class="kv"><span>행운색</span><span><i id="f-dot" style="display:inline-block;width:14px;height:14px;border-radius:99px;margin-right:6px;vertical-align:-2px;border:1px solid var(--bd)"></i><b id="f-color"></b></span></div>
+<div class="kv"><span>행운숫자</span><b id="f-num"></b></div>
+<div class="kv"><span>행운 간식</span><b id="f-snack"></b></div>
+<div class="kv"><span>좋은 시간대</span><b id="f-time"></b></div>
+<div class="kv"><span>오늘 피할 것</span><b id="f-avoid" style="text-align:right"></b></div></div>
+<button class="btn ghost" id="again" type="button">다른 생일로 보기</button>
+</div>
+
+<h2>오늘의 별자리 순위</h2>
+<div class="card"><table class="tbl"><tbody id="all"></tbody></table><p class="note">같은 날 같은 별자리는 누구나 같은 결과가 나옵니다. 내일은 순위가 바뀌니 다시 들러 보세요.</p></div>
+<a class="btn" href="https://sungprofile.cloud/aitest/">AI 생존력 테스트도 해보기</a>
+
+<h2>자주 묻는 질문</h2>
+<details><summary>운세는 어떻게 정해지나요?</summary><p class="note">한국 표준시 날짜와 별자리(띠를 고르면 띠까지)를 씨앗으로 하는 계산식이 점수와 문구를 고릅니다. 별자리 점성술이나 사주 이론을 근거로 한 예측이 아니라 가볍게 즐기는 오락용 콘텐츠입니다.</p></details>
+<details><summary>같은 날 다시 보면 결과가 달라지나요?</summary><p class="note">달라지지 않습니다. 하루에 한 장, 자정(한국 시간)에 새 카드로 바뀝니다.</p></details>
+<details><summary>생일 정보는 어디에 저장되나요?</summary><p class="note">이 기기의 브라우저 저장소에만 남으며, 우리 서버에는 전송되지 않습니다. 브라우저 사이트 데이터를 지우면 사라집니다.</p></details>
+<details><summary>수능 D-day는 왜 보이나요?</summary><p class="note">2027학년도 대학수학능력시험 예정일(2026년 11월 19일)까지 남은 날짜를 응원 겸 표시합니다. 정확한 일정은 한국교육과정평가원 공지를 확인하세요.</p></details>
+
+<!-- AdSense 광고 단위 삽입 위치(본문 하단): <ins class="adsbygoogle" ...></ins> -->
+<div class="ad"></div>
+</main>
+<footer><div class="w"><a href="/">Seongsang Park's Lab</a><a href="/about/">소개</a><a href="/privacy/">개인정보처리방침</a><a href="/terms/">이용약관·면책</a><a href="/contact/">문의</a>
+<p>오늘의 운세 카드는 직접 만들어 운영하는 무료 웹서비스입니다. 입력한 내용은 서버로 전송하지 않습니다.</p></div></footer>
+<script src="/assets/common.js"></script><script src="app.js"></script>
+</body></html>

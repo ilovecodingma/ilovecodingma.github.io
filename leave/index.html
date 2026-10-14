@@ -1,20 +1,20 @@
 <!doctype html>
 <html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>연차 계산기 - 입사일 기준 연차 일수와 연차수당 계산 | 생활계산 도구함</title>
+<title>연차 계산기 - 입사일 기준 연차 일수와 연차수당 계산 | Seongsang Park's Lab</title>
 <meta name="description" content="입사일을 넣으면 근로기준법 기준 연차 발생 일수와 미사용 연차수당을 계산합니다. 1년 미만 월차, 근속별 가산 연차, 연차수당 공식과 FAQ.">
-<link rel="canonical" href="https://ilovecodingma.github.io/leave/">
-<meta property="og:type" content="website"><meta property="og:locale" content="ko_KR"><meta property="og:site_name" content="생활계산 도구함">
-<meta property="og:title" content="연차 계산기 - 입사일 기준 연차 일수와 연차수당 계산 | 생활계산 도구함"><meta property="og:description" content="입사일을 넣으면 근로기준법 기준 연차 발생 일수와 미사용 연차수당을 계산합니다. 1년 미만 월차, 근속별 가산 연차, 연차수당 공식과 FAQ."><meta property="og:url" content="https://ilovecodingma.github.io/leave/">
+<link rel="canonical" href="https://sungprofile.cloud/leave/">
+<meta property="og:type" content="website"><meta property="og:locale" content="ko_KR"><meta property="og:site_name" content="Seongsang Park's Lab">
+<meta property="og:title" content="연차 계산기 - 입사일 기준 연차 일수와 연차수당 계산 | Seongsang Park's Lab"><meta property="og:description" content="입사일을 넣으면 근로기준법 기준 연차 발생 일수와 미사용 연차수당을 계산합니다. 1년 미만 월차, 근속별 가산 연차, 연차수당 공식과 FAQ."><meta property="og:url" content="https://sungprofile.cloud/leave/">
 <meta name="twitter:card" content="summary">
 <!-- Google Search Console 소유 확인 메타태그 자리: <meta name="google-site-verification" content="코드"> -->
 <!-- 네이버 서치어드바이저 소유 확인 메타태그 자리: <meta name="naver-site-verification" content="코드"> -->
 <!-- AdSense 사이트 연결 코드 삽입 위치(head): <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
 <link rel="stylesheet" href="/assets/style.css">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "연차 계산기", "url": "https://ilovecodingma.github.io/leave/", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "inLanguage": "ko", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "KRW"}, "description": "입사일 기준 연차 일수·연차수당 계산"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "연차 계산기", "url": "https://sungprofile.cloud/leave/", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "inLanguage": "ko", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "KRW"}, "description": "입사일 기준 연차 일수·연차수당 계산"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "입사 1년 미만인데 연차가 있나요?", "acceptedAnswer": {"@type": "Answer", "text": "있습니다. 근로기준법 제60조 제2항에 따라 계속 근로한 기간이 1년 미만인 근로자에게는 1개월 개근 시 유급휴가 1일이 발생하며, 최대 11일입니다. 다만 상시 근로자 5명 미만 사업장에는 연차 규정이 적용되지 않습니다."}}, {"@type": "Question", "name": "1년차에 쓴 연차는 15일에서 빠지나요?", "acceptedAnswer": {"@type": "Answer", "text": "2020년 3월 31일 개정 이후에는 1년 미만 기간에 발생한 연차를 1년 근속 시 발생하는 15일에서 빼지 않습니다."}}, {"@type": "Question", "name": "미사용 연차수당은 어떻게 계산하나요?", "acceptedAnswer": {"@type": "Answer", "text": "미사용 연차일수 × 1일 통상임금입니다. 1일 통상임금은 월 통상임금을 월 소정근로시간(주 40시간제·주휴 포함 월 209시간)으로 나눈 시급에 1일 소정근로시간(8시간)을 곱해 구하는 방식이 일반적입니다."}}, {"@type": "Question", "name": "연차수당 청구 기한이 있나요?", "acceptedAnswer": {"@type": "Answer", "text": "임금채권의 소멸시효는 3년이므로(근로기준법 제49조) 연차수당 청구권은 발생 후 3년이 지나면 소멸할 수 있습니다."}}, {"@type": "Question", "name": "회계연도(1월 1일) 기준과 입사일 기준이 다르면?", "acceptedAnswer": {"@type": "Answer", "text": "회사가 회계연도 기준으로 일괄 운영하더라도 법정 기준(입사일 기준)보다 불리하면 안 되며, 퇴직 시에는 입사일 기준으로 정산해 부족분이 있으면 지급해야 하는 것으로 안내됩니다. 이 계산기는 입사일 기준입니다."}}]}</script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "생활계산 도구함", "item": "https://ilovecodingma.github.io/"}, {"@type": "ListItem", "position": 2, "name": "연차 계산기 - 입사일 기준 연차 일수와 연차수당 계산", "item": "https://ilovecodingma.github.io/leave/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Seongsang Park's Lab", "item": "https://sungprofile.cloud/"}, {"@type": "ListItem", "position": 2, "name": "연차 계산기 - 입사일 기준 연차 일수와 연차수당 계산", "item": "https://sungprofile.cloud/leave/"}]}</script>
 </head><body>
-<header><div class="w"><a class="b" href="/">생활계산 도구함</a><a href="/brokerage/">중개수수료</a><a href="/prepay/">중도상환수수료</a><a href="/leave/">연차·연차수당</a></div></header>
+<header><div class="w"><a class="b" href="/">Seongsang Park's Lab</a><a href="/quiz/">모의고사</a><a href="/aitest/">AI 테스트</a><a href="/luck/">운세</a><a href="/#tools">계산기</a></div></header>
 <main class="w">
 <h1>연차 계산기 (입사일 기준 연차 일수·연차수당)</h1>
 <p class="lead">입사일과 기준일을 넣으면 법정 발생 연차와 미사용 연차수당을 계산합니다. 기준일 2026-10-14.</p>
@@ -41,6 +41,6 @@
 <div class="ad"></div>
 </main>
 <footer><div class="w"><a href="/about/">소개</a><a href="/privacy/">개인정보처리방침</a><a href="/terms/">이용약관·면책</a><a href="/contact/">문의</a>
-<p>계산 결과는 참고용이며 법적 효력이 없습니다. 기준일 2026-10-14.</p></div></footer>
+<p>© 2026 Seongsang Park. 계산·운세·테스트 결과는 참고 및 오락용이며 법적 효력이 없습니다. 기준일 2026-10-14.</p></div></footer>
 <script src="/assets/leave.js"></script>
 </body></html>

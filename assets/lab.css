@@ -1,0 +1,21 @@
+:root{--bg:#fbfbfd;--fg:#16181d;--mut:#5f6675;--bd:#e4e7ee;--card:#fff;--acc:#4338ca;--sh:0 1px 2px rgba(20,24,40,.04),0 8px 24px rgba(20,24,40,.06)}
+@media(prefers-color-scheme:dark){:root{--bg:#0e1015;--fg:#eef0f5;--mut:#9aa1b2;--bd:#262a35;--card:#171a22;--acc:#a5b4fc;--sh:0 1px 2px rgba(0,0,0,.3)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.75 Pretendard,"Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",system-ui,sans-serif;word-break:keep-all}
+.w{max-width:720px;margin:0 auto;padding:0 20px}
+.top{border-bottom:1px solid var(--bd)}.top .w{display:flex;justify-content:space-between;align-items:center;height:56px}
+.top a{color:var(--fg);text-decoration:none}.bn{font-weight:800;letter-spacing:-.01em;white-space:nowrap}.top nav{white-space:nowrap}.top nav a{margin-left:14px;font-size:.92rem;color:var(--mut);font-weight:600}
+.intro{padding:52px 0 14px}.eyebrow{color:var(--acc);font-weight:800;font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;margin:0 0 10px}
+h1{font-size:2.3rem;line-height:1.25;letter-spacing:-.03em;margin:0 0 16px}
+.sub{color:var(--mut);margin:0 0 8px}
+h2{font-size:1.05rem;margin:44px 0 14px;letter-spacing:.02em;color:var(--mut);text-transform:uppercase;font-weight:800}
+.plist{display:grid;gap:12px}
+.proj{display:flex;gap:16px;align-items:center;background:var(--card);border:1px solid var(--bd);border-radius:20px;padding:18px;text-decoration:none;color:var(--fg);box-shadow:var(--sh);transition:transform .15s,border-color .15s}
+.proj:hover{transform:translateY(-2px);border-color:var(--acc)}
+.ico{flex:none;width:56px;height:56px;border-radius:16px;display:grid;place-items:center;font-size:28px;background:var(--bd)}
+.pt{display:flex;flex-direction:column;min-width:0}.pt b{font-size:1.08rem;letter-spacing:-.01em}.pt span{color:var(--mut);font-size:.92rem;line-height:1.5}.pt em{font-style:normal;font-size:.78rem;color:var(--mut);margin-top:4px;opacity:.8}
+.proj.sm{padding:14px 16px}.proj.sm .ico{width:44px;height:44px;font-size:22px;border-radius:12px}
+a{color:var(--acc)}
+footer{border-top:1px solid var(--bd);margin-top:56px;padding:24px 0 44px;color:var(--mut);font-size:.88rem}footer a{color:var(--mut);margin-right:14px}
+.ad{min-height:8px}
+@media(min-width:640px){h1{font-size:2.8rem}}

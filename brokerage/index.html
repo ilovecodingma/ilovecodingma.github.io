@@ -1,20 +1,20 @@
 <!doctype html>
 <html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>부동산 중개수수료 계산기 - 매매·전세·월세 복비 상한 계산 | 생활계산 도구함</title>
+<title>부동산 중개수수료 계산기 - 매매·전세·월세 복비 상한 계산 | Seongsang Park's Lab</title>
 <meta name="description" content="매매·전세·월세 거래금액을 입력하면 주택·오피스텔 법정 상한요율 기준 중개수수료(복비) 최대 금액을 계산합니다. 요율표와 계산 예시, 공식 출처 포함.">
-<link rel="canonical" href="https://ilovecodingma.github.io/brokerage/">
-<meta property="og:type" content="website"><meta property="og:locale" content="ko_KR"><meta property="og:site_name" content="생활계산 도구함">
-<meta property="og:title" content="부동산 중개수수료 계산기 - 매매·전세·월세 복비 상한 계산 | 생활계산 도구함"><meta property="og:description" content="매매·전세·월세 거래금액을 입력하면 주택·오피스텔 법정 상한요율 기준 중개수수료(복비) 최대 금액을 계산합니다. 요율표와 계산 예시, 공식 출처 포함."><meta property="og:url" content="https://ilovecodingma.github.io/brokerage/">
+<link rel="canonical" href="https://sungprofile.cloud/brokerage/">
+<meta property="og:type" content="website"><meta property="og:locale" content="ko_KR"><meta property="og:site_name" content="Seongsang Park's Lab">
+<meta property="og:title" content="부동산 중개수수료 계산기 - 매매·전세·월세 복비 상한 계산 | Seongsang Park's Lab"><meta property="og:description" content="매매·전세·월세 거래금액을 입력하면 주택·오피스텔 법정 상한요율 기준 중개수수료(복비) 최대 금액을 계산합니다. 요율표와 계산 예시, 공식 출처 포함."><meta property="og:url" content="https://sungprofile.cloud/brokerage/">
 <meta name="twitter:card" content="summary">
 <!-- Google Search Console 소유 확인 메타태그 자리: <meta name="google-site-verification" content="코드"> -->
 <!-- 네이버 서치어드바이저 소유 확인 메타태그 자리: <meta name="naver-site-verification" content="코드"> -->
 <!-- AdSense 사이트 연결 코드 삽입 위치(head): <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
 <link rel="stylesheet" href="/assets/style.css">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "부동산 중개수수료 계산기", "url": "https://ilovecodingma.github.io/brokerage/", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "inLanguage": "ko", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "KRW"}, "description": "주택·오피스텔 중개보수 상한 계산"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "부동산 중개수수료 계산기", "url": "https://sungprofile.cloud/brokerage/", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "inLanguage": "ko", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "KRW"}, "description": "주택·오피스텔 중개보수 상한 계산"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "중개수수료(중개보수)는 협의로 정하나요, 법으로 정해져 있나요?", "acceptedAnswer": {"@type": "Answer", "text": "공인중개사법에 따라 상한(요율·한도액)은 국토교통부령(공인중개사법 시행규칙 별표 1)과 시·도 조례로 정해지고, 실제 금액은 그 상한 안에서 의뢰인과 중개사가 협의합니다. 상한을 넘겨 받으면 안 됩니다."}}, {"@type": "Question", "name": "월세 계약의 거래금액은 어떻게 계산하나요?", "acceptedAnswer": {"@type": "Answer", "text": "보증금 + (월 차임 × 100)으로 환산합니다. 이 합계가 5천만 원 미만이면 보증금 + (월 차임 × 70)으로 다시 계산합니다."}}, {"@type": "Question", "name": "부가가치세는 별도인가요?", "acceptedAnswer": {"@type": "Answer", "text": "중개사무소가 일반과세자이면 중개보수에 부가세 10%가 별도로 붙는 것이 일반적입니다. 간이과세자는 세율이 달라 총액이 다를 수 있으므로 계약 전에 확인하세요."}}, {"@type": "Question", "name": "계약이 중간에 취소되면 어떻게 되나요?", "acceptedAnswer": {"@type": "Answer", "text": "중개보수는 거래가 성립(계약 체결)한 때 청구할 수 있는 것이 원칙입니다. 구체적인 분쟁은 관할 지자체 부동산 관련 부서나 한국공인중개사협회 등에 문의하세요."}}, {"@type": "Question", "name": "오피스텔과 상가는 요율이 같나요?", "acceptedAnswer": {"@type": "Answer", "text": "아닙니다. 전용면적 85㎡ 이하이면서 일정 시설(부엌·화장실·욕실 등)을 갖춘 주거용 오피스텔은 매매 0.5%, 임대차 0.4% 이내이고, 그 밖의 오피스텔·상가 등은 거래금액의 0.9% 이내에서 협의합니다. 이 계산기는 이 세 가지 유형을 지원합니다."}}]}</script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "생활계산 도구함", "item": "https://ilovecodingma.github.io/"}, {"@type": "ListItem", "position": 2, "name": "부동산 중개수수료 계산기 - 매매·전세·월세 복비 상한 계산", "item": "https://ilovecodingma.github.io/brokerage/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Seongsang Park's Lab", "item": "https://sungprofile.cloud/"}, {"@type": "ListItem", "position": 2, "name": "부동산 중개수수료 계산기 - 매매·전세·월세 복비 상한 계산", "item": "https://sungprofile.cloud/brokerage/"}]}</script>
 </head><body>
-<header><div class="w"><a class="b" href="/">생활계산 도구함</a><a href="/brokerage/">중개수수료</a><a href="/prepay/">중도상환수수료</a><a href="/leave/">연차·연차수당</a></div></header>
+<header><div class="w"><a class="b" href="/">Seongsang Park's Lab</a><a href="/quiz/">모의고사</a><a href="/aitest/">AI 테스트</a><a href="/luck/">운세</a><a href="/#tools">계산기</a></div></header>
 <main class="w">
 <h1>부동산 중개수수료 계산기 (주택·오피스텔 매매·전세·월세)</h1>
 <p class="lead">거래금액을 넣으면 법정 상한 요율 기준의 중개보수(복비) 최대 금액을 계산합니다. 기준일 2026-10-14.</p>
@@ -52,6 +52,6 @@
 <div class="ad"></div>
 </main>
 <footer><div class="w"><a href="/about/">소개</a><a href="/privacy/">개인정보처리방침</a><a href="/terms/">이용약관·면책</a><a href="/contact/">문의</a>
-<p>계산 결과는 참고용이며 법적 효력이 없습니다. 기준일 2026-10-14.</p></div></footer>
+<p>© 2026 Seongsang Park. 계산·운세·테스트 결과는 참고 및 오락용이며 법적 효력이 없습니다. 기준일 2026-10-14.</p></div></footer>
 <script src="/assets/brokerage.js"></script>
 </body></html>
