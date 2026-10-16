@@ -326,10 +326,10 @@ def apply_kind(k):
 
 def load_apply():
     fp = os.path.join(DATA, 'apply.jsonl')
-    if not os.path.exists(fp):
-        return []
+    mp = os.path.join(HERE, 'manual_apply.jsonl')  # 사이트 쪽 확인분(정본은 공모전 세션 apply.jsonl)
+    lines = (open(fp, encoding='utf-8').readlines() if os.path.exists(fp) else []) + (open(mp, encoding='utf-8').readlines() if os.path.exists(mp) else [])
     out, seen = [], set()
-    for l in open(fp, encoding='utf-8'):
+    for l in lines:
         try:
             r = json.loads(l)
         except ValueError:
