@@ -84,7 +84,7 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False):
 <meta name="theme-color" content="#5b21b6">
 <link rel="icon" href="/favicon.ico?v=5" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png?v=5"><link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png?v=5"><link rel="manifest" href="/site.webmanifest">
 <link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="/assets/gm.css?v=4"><link rel="stylesheet" href="/assets/chat/ruri-chat.css?v=2"><script type="module" src="/assets/chat/ruri-chat.js?v=3"></script>
+<link rel="stylesheet" href="/assets/gm.css?v=4"><link rel="stylesheet" href="/assets/chat/ruri-chat.css?v=3"><script type="module" src="/assets/chat/ruri-chat.js?v=5"></script>
 {ldh}
 {GTAG}
 </head><body>
@@ -377,9 +377,13 @@ def build():
     for c in contests:
         detail(c, live)
     sync_shots(live)
-    keys = ('id', 'title', 'org', 'end', 'prize', 'pv', 'field', 'tags', 'th')
+    keys = ('id', 'title', 'org', 'end', 'prize', 'pv', 'field', 'tags', 'th', 'elig')
     with open(os.path.join(ROOT, 'data.json'), 'w', encoding='utf-8', newline='\n') as f:
         json.dump({'updated': datetime.datetime.now().strftime('%Y-%m-%d %H:%M'), 'items': [{k: c[k] for k in keys} for c in live]},
+                  f, ensure_ascii=False, separators=(',', ':'))
+    # 챗봇 추천용 경품 이벤트 목록 (진행 중만)
+    with open(os.path.join(ROOT, 'events.json'), 'w', encoding='utf-8', newline='\n') as f:
+        json.dump([{'title': e['title'], 'org': e['org'], 'end': e['end'], 'ez': e.get('effort') or EASY.get(e['type'], e['type']), 'link': e['link']} for e in events],
                   f, ensure_ascii=False, separators=(',', ':'))
     pre = ''.join(card(c) for c in live[:60])  # 크롤러용 서버 렌더, JS 가 전체 목록으로 교체
     big = sorted(live, key=lambda c: -c['pv'])[:6]
