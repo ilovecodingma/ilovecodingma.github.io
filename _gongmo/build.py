@@ -75,7 +75,7 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False):
     if ld:
         lds.append(ld)
     ldh = ''.join('<script type="application/ld+json">%s</script>' % json.dumps(x, ensure_ascii=False).replace('</', '<\\/') for x in lds)
-    nav = ''.join(f'<a href="/{s}/">{n}</a>' for s, n in NAV + ([('community', '공략 파티')] if COMM_API else []))
+    nav = ''.join(f'<a href="/{s}/">{n}</a>' for s, n in NAV + ([('community', '원정대')] if COMM_API else []))
     doc = f'''<!doctype html>
 <html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{E(t)}</title>
@@ -92,7 +92,7 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False):
 {ldh}
 {GTAG}
 </head><body{(' data-api="' + COMM_API + '"') if COMM_API else ''}>
-<header class="hd"><div class="w hd-in"><a class="logo" href="/"><img src="/assets/icons/logo.svg" width="30" height="30" alt=""><span>루리의 <b>줍줍</b></span></a><nav>{nav}</nav></div></header>
+<header class="hd"><div class="w hd-in"><a class="logo" href="/"><img src="/assets/icons/logo.svg" width="30" height="30" alt=""><span>루리의 <b>줍줍</b></span></a></div></header>
 <main class="w">
 {body}
 </main>
@@ -429,22 +429,14 @@ def build():
                     key=lambda c: -score(c))
     hidden = [c for c in hidden if dday(c['end'])[0] >= 2]
     cats = ''.join(f'<a class="cat" data-c="{s_}" href="/cat/{s_}/"><span class="ic">{CAT_ICON[n]}</span><b>{n}</b><span class="n">{sum(1 for c in live if n in c["tags"])}건</span></a>' for s_, n in CATS)
-    home = f'''<section class="hero"><div class="hero-t"><p class="kick">{TODAY.month}월 {TODAY.day}일 업데이트</p><h1>그냥 넣으면 되는 용돈 기회,<br><em>루리</em>가 주워 왔어요</h1>
-<p class="sub">슬로건 한 줄, 사진 한 장으로 내는 대회부터 경쟁 적은 숨은 대회, 청약·지원금 신청까지. 일단 넣고 보세요!</p>
-<form class="hs" onsubmit="var q=document.getElementById('q');q.value=this.k.value;q.dispatchEvent(new Event('input'));document.getElementById('all').scrollIntoView();return false"><input name="k" type="search" placeholder="예) 슬로건, 숏폼, 해커톤" aria-label="공모전 검색"><button>검색</button></form>
-<div class="stat"><span><b>{len(live)}</b>공모전</span><span><b>{len(wk)}</b>이번 주 마감</span><span><b>{len(events)}</b>경품·용돈</span></div></div>
-<div class="hero-r"><div class="hb">안녕하세요, <b>루리</b>예요!<br>오늘도 마감 임박 공모전 챙겨 왔어요 ✨</div><img id="hero-ruri" src="/assets/ruri/smile.webp" width="300" height="415" alt="루리"></div></section>
-<div class="sec"><h2>✍️ 바로 낼 수 있는 대회</h2><a href="#all">전체 보기 →</a></div><p class="note" style="margin:-6px 0 10px">슬로건·네이밍·짧은 글·아이디어·사진처럼 오늘 바로 낼 수 있는 대회</p><ul class="list row">{''.join(card(c) for c in short[:12])}</ul>
-<div class="sec"><h2>🔍 참가자 적은 숨은 대회</h2><a href="#all">전체 보기 →</a></div><p class="note" style="margin:-6px 0 10px">지역·재학·재직 같은 자격 제한이 있거나 시·군·구 단위로 열려 경쟁이 덜할 만한 대회</p><ul class="list row">{''.join(card(c) for c in hidden[:12])}</ul>
-{'<div class="sec"><h2>📝 청약·신청 일정</h2><a href="/apply/">전체 보기 →</a></div><ul class="list row">' + ''.join(ap_card(a) for a in aps[:10]) + '</ul>' if aps else ''}
-<div class="cats">{cats}<a class="cat" data-c="event" href="/event/"><span class="ic">🎁</span><b>경품·용돈</b><span class="n">{len(events)}건</span></a><a class="cat" data-c="apply" href="/apply/"><span class="ic">📝</span><b>청약·신청</b><span class="n">{len(aps)}건</span></a></div>
-<div class="sec"><h2>⏰ 이번 주 마감</h2><a href="#all">전체 보기 →</a></div><ul class="list row">{''.join(card(c) for c in wk[:10])}</ul>
-<div class="sec"><h2>🏆 상금 큰 공모전</h2></div><ul class="list grid">{''.join(card(c) for c in big)}</ul>
-<div class="sec" id="all"><h2>📋 전체 공모전</h2></div>{TOOLBAR}<ul class="list" id="list">{pre}</ul><button class="more" id="more" hidden>더 보기</button>
-<section class="intro">{say('think', '공모전 정보는 여러 사이트에 흩어져 있어서 마감을 놓치기 쉬워요. 그래서 제가 <b>마감일·상금·응모 자격·접수 방법</b>을 같은 형식으로 정리하고, 공모전마다 응모 전 체크리스트를 붙였어요. 처음이라면 <a href="/guide/">응모 가이드</a>부터 읽어 보세요!')}</section>'''
-    page('/', '루리의 줍줍 — 일단 넣고 보는 용돈 정보',
+    # 2026-10-17 사용자: 서비스 본질은 루리 추천 상담. 메인은 상담만, 외부 검색(지식인 등)은 상세 페이지로 받음
+    home = f'''<h1 class="cs-h1">이 공모전이나 해 볼까? 루리 공모전 추천 상담</h1>
+<section id="consult" aria-label="루리 공모전 추천 상담"><noscript><p>루리 상담은 자바스크립트가 필요해요. 진행 중 공모전 {len(live)}건이 있어요.</p></noscript></section>
+<p class="cs-foot">진행 중 공모전 {len(live)}건의 마감일·상금·응모 자격·접수 방법과 공식 공고 캡처를 정리해 두고, 루리가 상황에 맞는 것만 골라 드려요.</p>
+<link rel="stylesheet" href="/assets/home/consult.css?v=2"><script defer src="/assets/home/consult.js?v=3"></script>'''
+    page('/', '루리의 줍줍 — 이 공모전이나 해 볼까? 루리 공모전 추천 상담',
          f'진행 중인 공모전 {len(live)}건을 마감 임박순·상금순으로. 문학, 아이디어·정책, 디자인, 영상, 논문, IT, 해외 공모전과 경품 이벤트 정리.',
-         home + HERO_JS + listing_js(), full_title=True, ld={'@context': 'https://schema.org', '@type': 'WebSite', 'name': NAME, 'url': SITE + '/'})
+         home, full_title=True, ld={'@context': 'https://schema.org', '@type': 'WebSite', 'name': NAME, 'url': SITE + '/'})
     for s, n in CATS:
         cl = [c for c in live if n in c['tags']]
         tips = ''.join(f'<li>{E(t)}</li>' for t in TIPS[n])
@@ -588,11 +580,11 @@ def community(live=()):
     # 팀 만들 때 고르는 공모전 목록 (진행 중만)
     with open(os.path.join(ROOT, 'assets', 'community', 'contests.json'), 'w', encoding='utf-8', newline='\n') as f:
         json.dump([{'id': c['id'], 't': c['title'], 'e': c['end'], 'p': c.get('prize', ''), 'pv': c.get('pv', 0), 'g': (c.get('tags') or [''])[0], 'i': CAT_ICON.get((c.get('tags') or ['기타'])[0], '💗'), 'th': c.get('th', 0)} for c in live], f, ensure_ascii=False, separators=(',', ':'))
-    page('/community/', '공모전 공략 파티 · 커뮤니티', '공모전이라는 히로인을 같이 공략할 파티원을 찾는 루리의 줍줍 커뮤니티. 파티를 결성하고 합류 신청을 받아요.',
-         f'''<p class="bc"><a href="/">홈</a> › 커뮤니티</p><h1 class="vn-h1">💘 공모전 공략 파티</h1>
-<section id="vn" aria-label="루리와 공모전 공략 파티 찾기"></section>
+    page('/community/', '공모전 원정대 · 커뮤니티', '공모전에 같이 나갈 사람을 찾는 루리의 줍줍 원정대. 원정대를 꾸리고 대원을 모아요.',
+         f'''<p class="bc"><a href="/">홈</a> › 커뮤니티</p><h1 class="vn-h1">🚩 공모전 원정대</h1>
+<section id="vn" aria-label="루리와 공모전 원정대 찾기"></section>
 <button class="btn2 cm-join-cta" hidden>무료 가입 · 로그인 (이메일만 있으면 돼요)</button>
-<div class="cm-tabs"><button data-k="team">💘 전체 파티 목록</button><button data-k="board">💬 후기·질문</button></div>
+<div class="cm-tabs"><button data-k="team">🚩 전체 원정대</button><button data-k="board">💬 후기·질문</button></div>
 <section id="cm-teams" data-all data-tab="team"></section>
 <section id="cm-board" data-all data-tab="board" hidden></section>
 <script defer src="/assets/community/vn.js?v=6"></script>''', [('루리의 줍줍', '/'), ('커뮤니티', '/community/')])

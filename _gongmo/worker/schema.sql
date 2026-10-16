@@ -96,3 +96,21 @@ CREATE TABLE IF NOT EXISTS user_prefs (  -- 루리 꾸미기 설정
   user_id INTEGER PRIMARY KEY,
   data TEXT NOT NULL DEFAULT '{}'
 );
+
+-- 공략 파티 꾸미기·이미지 (2026-10-17 사용자: "공략파티는 내 설정 느낌으로, 이미지도 올리게")
+CREATE TABLE IF NOT EXISTS team_prefs (
+  team_id INTEGER PRIMARY KEY,
+  data TEXT NOT NULL DEFAULT '{}'   -- {color, emoji, cover(이미지 id)}
+);
+CREATE TABLE IF NOT EXISTS team_images (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  team_id INTEGER NOT NULL,
+  user_id INTEGER NOT NULL,
+  kind TEXT NOT NULL DEFAULT 'post',  -- cover(표지, 공개) | post(파티 앨범, 파티원만)
+  mime TEXT NOT NULL,
+  data TEXT NOT NULL,                 -- base64 (브라우저에서 줄여서 올림, 최대 약 300KB)
+  caption TEXT NOT NULL DEFAULT '',
+  created INTEGER NOT NULL,
+  hidden INTEGER NOT NULL DEFAULT 0
+);
+CREATE INDEX IF NOT EXISTS team_images_team ON team_images(team_id, created DESC);

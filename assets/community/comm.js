@@ -22,7 +22,7 @@
   function authModal(onDone) {
     const m = document.createElement('div'); m.className = 'cm-modal';
     m.innerHTML = `<div class="cm-box" role="dialog" aria-label="로그인"><button class="cm-x" aria-label="닫기">✕</button>
-<h3>💘 공략 동맹 가입 · 로그인</h3><p class="note">이메일과 비밀번호만 있으면 돼요. 다른 정보는 받지 않아요.</p>
+<h3>🚩 가입 · 로그인</h3><p class="note">이메일과 비밀번호만 있으면 돼요. 다른 정보는 받지 않아요.</p>
 <input type="email" class="cm-em" placeholder="이메일" autocomplete="email"><input type="password" class="cm-pw" placeholder="비밀번호 (8자 이상)" autocomplete="current-password">
 <p class="cm-err"></p><div class="cm-row"><button class="cm-login btn2">로그인</button><button class="cm-join btn2 ghost">처음이에요, 가입</button></div>
 <p class="note">가입하면 <a href="/terms/">이용약관</a>과 <a href="/privacy/">개인정보처리방침</a>에 동의한 것으로 봐요. 글쓴이 이름은 이메일 앞부분을 가려서(예: sun***) 표시해요.</p></div>`;
@@ -111,7 +111,7 @@
 
 
 
-  // ---- 공략 파티 결성 창 (공용) ----
+  // ---- 원정대 꾸리기 창 (공용) ----
   async function createTeam(cid, title, onDone) {
     if (!st.t) return authModal(() => createTeam(cid, title, onDone));
     const m = document.createElement('div'); m.className = 'cm-modal';
@@ -120,13 +120,13 @@
       cs = await fetch('/assets/community/contests.json').then(r => r.json()).catch(() => []);
       pick = `<input class="tm-cq" list="tm-cl" placeholder="공략할 히로인(공모전) 검색 — 없으면 비워 두세요"><datalist id="tm-cl">${cs.map(c => `<option value="${esc(c.t)}"></option>`).join('')}</datalist>`;
     }
-    m.innerHTML = `<div class="cm-box tm-box" role="dialog" aria-label="공략 파티 결성"><button class="cm-x" aria-label="닫기">✕</button><h3>💘 공략 파티 결성</h3>${pick}
-<input class="tm-nm" maxlength="60" placeholder="파티 이름 (예: 영상 공모전 같이 깰 사람)">
-<textarea class="tm-in" maxlength="2000" rows="4" placeholder="어떤 파티인지, 지금 몇 명이고 어떤 파티원을 찾는지 적어 주세요."></textarea>
+    m.innerHTML = `<div class="cm-box tm-box" role="dialog" aria-label="원정대 꾸리기"><button class="cm-x" aria-label="닫기">✕</button><h3>💘 원정대 꾸리기</h3>${pick}
+<input class="tm-nm" maxlength="60" placeholder="원정대 이름 (예: 영상 공모전 같이 깰 사람)">
+<textarea class="tm-in" maxlength="2000" rows="4" placeholder="어떤 원정대인지, 지금 몇 명이고 어떤 대원을 찾는지 적어 주세요."></textarea>
 <input class="tm-rl" maxlength="200" placeholder="찾는 역할, 쉼표로 (예: 기획, 디자인, 영상 편집)">
 <div class="tm-row"><label>정원 <select class="tm-sz">${[2, 3, 4, 5, 6, 8, 10].map(n => `<option${n === 4 ? ' selected' : ''}>${n}</option>`).join('')}</select>명</label><label>모집 마감 <input type="date" class="tm-dl"></label></div>
-<input class="tm-ct" maxlength="300" placeholder="연락 방법 (예: 카카오톡 오픈채팅 링크) — 수락한 파티원에게만 보여요">
-<p class="cm-err"></p><button class="tm-send btn2">💘 파티 결성!</button></div>`;
+<input class="tm-ct" maxlength="300" placeholder="연락 방법 (예: 카카오톡 오픈채팅 링크) — 수락한 대원에게만 보여요">
+<p class="cm-err"></p><button class="tm-send btn2">💘 원정대 출발!</button></div>`;
     document.body.appendChild(m);
     m.querySelector('.cm-x').onclick = () => m.remove(); m.onclick = e => { if (e.target === m) m.remove(); };
     const q = s => m.querySelector(s);
@@ -145,18 +145,19 @@
   const tag = s => `<span class="tm-role">${esc(s)}</span>`;
   async function teams(el) {
     const cid = el.dataset.contest || '', title = el.dataset.title || '', all = 'all' in el.dataset;
-    el.innerHTML = `<div class="cm-head"><h2>💘 ${all ? '공략 파티 모집' : '이 히로인 공략 파티'}</h2><button class="tm-new btn2">💘 공략 파티 결성</button></div>
+    el.innerHTML = `<div class="cm-head"><h2>💘 ${all ? '원정대 모집' : '이 공모전 원정대'}</h2><button class="tm-new btn2">💘 원정대 꾸리기</button></div>
 ${all ? '<div class="tm-mine" hidden></div>' : ''}<div class="cm-form" hidden></div><ul class="tm-list"><li class="note">불러오는 중…</li></ul>`;
     const list = el.querySelector('.tm-list'), form = el.querySelector('.cm-form');
     const load = async () => {
       try {
         const { teams } = await api('/api/teams' + (cid ? '?contest=' + encodeURIComponent(cid) : ''));
-        list.innerHTML = teams.length ? '' : `<li class="cm-empty">${all ? '아직 결성된 공략 파티가 없어요. 첫 파티를 만들어 보세요!' : '아직 이 히로인을 노리는 파티가 없어요. 파티를 만들고 같이 공략할 사람을 모아 보세요!'}</li>`;
+        list.innerHTML = teams.length ? '' : `<li class="cm-empty">${all ? '아직 결성된 원정대가 없어요. 첫 원정대를 만들어 보세요!' : '아직 이 히로인을 노리는 원정대가 없어요. 원정대를 꾸려 같이 나갈 사람을 모아 보세요!'}</li>`;
         teams.forEach(t => {
           const li = document.createElement('li'); li.className = 'tm-card' + (t.status === 'closed' ? ' closed' : '');
+          const pr = t.prefs || {}; li.style.setProperty('--tc', pr.color || '#7c3aed');
           const full = t.cnt >= t.size;
-          li.innerHTML = `<div class="cm-meta"><span class="tm-st ${t.status === 'closed' || full ? 'off' : 'on'}">${t.status === 'closed' ? '모집 마감' : full ? '정원 참' : '파티원 모집 중'}</span><span>👥 ${t.cnt}/${t.size}명</span>${t.deadline ? `<span>~${esc(t.deadline.slice(5).replace('-', '/'))}</span>` : ''}<span>${esc(t.leader || '탈퇴한 회원')} · ${ago(t.created)}</span></div>
-<h3>${esc(t.name)}</h3>${all && t.contest_id !== 'free' ? `<a class="cm-on" href="/c/${esc(t.contest_id)}/">📌 ${esc(t.contest_title || t.contest_id)}</a>` : ''}<p class="cm-body">${esc(t.intro)}</p>
+          li.innerHTML = `<div class="cm-meta"><span class="tm-st ${t.status === 'closed' || full ? 'off' : 'on'}">${t.status === 'closed' ? '모집 마감' : full ? '정원 참' : '대원 모집 중'}</span><span>👥 ${t.cnt}/${t.size}명</span>${t.deadline ? `<span>~${esc(t.deadline.slice(5).replace('-', '/'))}</span>` : ''}<span>${esc(t.leader || '탈퇴한 회원')} · ${ago(t.created)}</span></div>
+${pr.cover ? `<div class="tm-ccov" style="background-image:url(${imgUrl(pr.cover)})"></div>` : ''}<h3>${esc(pr.emoji || '🚩')} ${esc(t.name)}</h3>${all && t.contest_id !== 'free' ? `<a class="cm-on" href="/c/${esc(t.contest_id)}/">📌 ${esc(t.contest_title || t.contest_id)}</a>` : ''}<p class="cm-body">${esc(t.intro)}</p>
 <div class="tm-roles">${t.roles ? t.roles.split(',').map(tag).join('') : ''}</div><div class="cm-acts"><button class="tm-open btn2 ghost">살펴보기 · 합류</button></div>`;
           li.querySelector('.tm-open').onclick = () => teamModal(t.id, load);
           list.appendChild(li);
@@ -166,12 +167,60 @@ ${all ? '<div class="tm-mine" hidden></div>' : ''}<div class="cm-form" hidden></
       if (mine && st.t) {
         const { teams: my } = await api('/api/myteams').catch(() => ({ teams: [] }));
         mine.hidden = !my.length;
-        mine.innerHTML = '<h3>💖 내 파티</h3>' + my.map(t => `<button class="tm-my" data-id="${t.id}">${t.leader ? '👑' : t.state === 'accepted' ? '✅' : '⏳'} ${esc(t.name)}${t.leader && t.waiting ? ` <b class="tm-wait">신청 ${t.waiting}</b>` : ''}${!t.leader && t.state === 'pending' ? ' <small>파티장 답 기다리는 중</small>' : ''}${t.state === 'rejected' ? ' <small>거절됨</small>' : ''}</button>`).join('');
+        mine.innerHTML = '<h3>🚩 내 원정대</h3>' + my.map(t => `<button class="tm-my" data-id="${t.id}">${t.leader ? '👑' : t.state === 'accepted' ? '✅' : '⏳'} ${esc(t.name)}${t.leader && t.waiting ? ` <b class="tm-wait">신청 ${t.waiting}</b>` : ''}${!t.leader && t.state === 'pending' ? ' <small>대장 답 기다리는 중</small>' : ''}${t.state === 'rejected' ? ' <small>거절됨</small>' : ''}</button>`).join('');
         mine.querySelectorAll('.tm-my').forEach(b => b.onclick = () => teamModal(+b.dataset.id, load));
       }
     };
     el.querySelector('.tm-new').onclick = () => createTeam(cid, title, () => load());
     load();
+  }
+
+  // ---- 이미지: 폰에서 고른 사진을 줄여 webp data URL 로 (표지 960x540 꽉 채움, 사진첩 긴 변 1280) ----
+  function shrink(file, cover) {
+    return new Promise((ok, no) => {
+      const im = new Image(); im.onload = () => {
+        const c = document.createElement('canvas'), x = c.getContext('2d');
+        if (cover) { c.width = 960; c.height = 540; const r = Math.max(960 / im.width, 540 / im.height), w = im.width * r, h = im.height * r; x.drawImage(im, (960 - w) / 2, (540 - h) / 2, w, h); }
+        else { const r = Math.min(1, 1280 / Math.max(im.width, im.height)); c.width = Math.round(im.width * r); c.height = Math.round(im.height * r); x.drawImage(im, 0, 0, c.width, c.height); }
+        let q = 0.82, d = c.toDataURL('image/webp', q); while (d.length > 400000 && q > 0.4) { q -= 0.12; d = c.toDataURL('image/webp', q); }
+        URL.revokeObjectURL(im.src); ok(d);
+      }; im.onerror = () => no(new Error('이미지를 읽지 못했어요.')); im.src = URL.createObjectURL(file);
+    });
+  }
+  const pick = () => new Promise(ok => { const i = document.createElement('input'); i.type = 'file'; i.accept = 'image/*'; i.onchange = () => ok(i.files[0]); i.click(); });
+  const imgUrl = (id, priv) => API + '/api/img/' + id + (priv && st.t ? '?t=' + st.t : '');
+  const COLORS = ['#7c3aed', '#ec4899', '#f97316', '#eab308', '#22c55e', '#06b6d4', '#3b82f6', '#334155'];
+  const EMOJIS = ['🚩', '🚀', '🔥', '🎬', '✍️', '🎨', '💡', '📸', '🎯', '🏆', '⚡', '🌱'];
+  // 원정대 설정: 내 꾸미기처럼 탭(기본 정보 / 표지 / 색·깃발)
+  async function teamSettings(id, d, done) {
+    const t = d.team, pr = d.prefs || {};
+    const m = document.createElement('div'); m.className = 'cm-modal';
+    m.innerHTML = `<div class="cm-box tm-box ts-box"><button class="cm-x" aria-label="닫기">✕</button><h3>⚙️ 원정대 설정</h3>
+<div class="vn-tabs ts-tabs"><button data-t="info" class="on">📝 기본 정보</button><button data-t="cover">🖼 표지</button><button data-t="look">🎨 색·깃발</button></div>
+<div class="ts-p" data-p="info"><input class="tm-nm" maxlength="60" value="${esc(t.name)}" placeholder="원정대 이름"><textarea class="tm-in" maxlength="2000" rows="4">${esc(t.intro)}</textarea>
+<input class="tm-rl" maxlength="200" value="${esc(t.roles)}" placeholder="찾는 역할, 쉼표로"><div class="tm-row"><label>정원 <select class="tm-sz">${[2, 3, 4, 5, 6, 8, 10].map(n => `<option${n === t.size ? ' selected' : ''}>${n}</option>`).join('')}</select>명</label><label>모집 마감 <input type="date" class="tm-dl" value="${esc(t.deadline)}"></label></div>
+<input class="tm-ct" maxlength="300" value="${esc(t.contact)}" placeholder="연락 방법 (수락한 대원에게만 보여요)"></div>
+<div class="ts-p" data-p="cover" hidden><div class="ts-cover" style="${pr.cover ? `background-image:url(${imgUrl(pr.cover)})` : ''}">${pr.cover ? '' : '표지 없음'}</div><button class="btn2 ts-up">📷 표지 사진 올리기</button><p class="note">가로 16:9로 맞춰 줄여 올려요. 누구나 볼 수 있어요.</p></div>
+<div class="ts-p" data-p="look" hidden><b>테마 색</b><div class="ts-colors">${COLORS.map(c => `<button data-c="${c}" style="background:${c}" class="${(pr.color || COLORS[0]) === c ? 'on' : ''}"></button>`).join('')}</div>
+<b>깃발</b><div class="ts-emojis">${EMOJIS.map(e => `<button data-e="${e}" class="${(pr.emoji || '🚩') === e ? 'on' : ''}">${e}</button>`).join('')}</div></div>
+<p class="cm-err"></p><button class="btn2 ts-save">저장</button></div>`;
+    document.body.appendChild(m);
+    const q = s => m.querySelector(s), close = () => { m.remove(); done && done(); };
+    q('.cm-x').onclick = close; m.onclick = e => { if (e.target === m) close(); };
+    m.querySelectorAll('.ts-tabs button').forEach(b => b.onclick = () => { m.querySelectorAll('.ts-tabs button').forEach(x => x.classList.toggle('on', x === b)); m.querySelectorAll('.ts-p').forEach(x => x.hidden = x.dataset.p !== b.dataset.t); });
+    let color = pr.color || COLORS[0], emoji = pr.emoji || '🚩';
+    m.querySelectorAll('[data-c]').forEach(b => b.onclick = () => { color = b.dataset.c; m.querySelectorAll('[data-c]').forEach(x => x.classList.toggle('on', x === b)); });
+    m.querySelectorAll('[data-e]').forEach(b => b.onclick = () => { emoji = b.dataset.e; m.querySelectorAll('[data-e]').forEach(x => x.classList.toggle('on', x === b)); });
+    q('.ts-up').onclick = async () => {
+      const f = await pick(); if (!f) return; q('.ts-up').textContent = '올리는 중…';
+      try { const data = await shrink(f, true); const r = await api(`/api/teams/${id}/image`, { method: 'POST', body: { kind: 'cover', data } }); ga('party_cover', {});
+            q('.ts-cover').style.backgroundImage = `url(${imgUrl(r.id)})`; q('.ts-cover').textContent = ''; q('.ts-up').textContent = '📷 다른 사진으로 바꾸기'; }
+      catch (e) { q('.cm-err').textContent = e.message; q('.ts-up').textContent = '📷 표지 사진 올리기'; }
+    };
+    q('.ts-save').onclick = async () => {
+      try { await api(`/api/teams/${id}/edit`, { method: 'POST', body: { name: q('.tm-nm').value, intro: q('.tm-in').value, roles: q('.tm-rl').value, size: +q('.tm-sz').value, deadline: q('.tm-dl').value, contact: q('.tm-ct').value, color, emoji } }); close(); }
+      catch (e) { q('.cm-err').textContent = e.message; }
+    };
   }
   async function teamModal(id, reload) {
     const m = document.createElement('div'); m.className = 'cm-modal';
@@ -186,22 +235,33 @@ ${all ? '<div class="tm-mine" hidden></div>' : ''}<div class="cm-form" hidden></
       const contact = t.contact ? (/^https?:\/\//.test(t.contact) ? `<a href="${esc(t.contact)}" target="_blank" rel="noopener nofollow">${esc(t.contact)}</a>` : esc(t.contact)) : '';
       let act = '';
       if (me_.leader) {
-        act = `<h4>합류 신청 ${d.applicants.length}명</h4>${d.applicants.length ? d.applicants.map(a => `<div class="tm-app"><b>${esc(a.nick || '탈퇴한 회원')}</b>${a.role ? ' ' + tag(a.role) : ''}<p>${esc(a.msg) || '<span class="note">한마디 없음</span>'}</p><button class="btn2" data-ok="${a.uid}">수락</button> <button class="btn2 ghost" data-no="${a.uid}">거절</button></div>`).join('') : '<p class="note">아직 합류 신청이 없어요. 링크를 뿌려 파티원을 모아 보세요.</p>'}
-<div class="cm-row"><button class="btn2 ghost tm-tg">${t.status === 'open' ? '모집 마감하기' : '다시 모집하기'}</button><button class="btn2 ghost tm-del">파티 해산</button></div>`;
-      } else if (me_.state === 'accepted') act = `<p class="tm-okmsg">💖 이 파티의 파티원이에요!</p><button class="btn2 ghost tm-lv">파티 나가기</button>`;
-      else if (me_.state === 'pending') act = '<p class="note">⏳ 합류 신청을 보냈어요. 파티장이 수락하면 연락 방법이 여기 보여요.</p>';
-      else if (t.status !== 'open') act = '<p class="note">모집이 끝난 파티예요.</p>';
-      else act = `<h4>이 파티에 합류 신청</h4>${me_.state === 'rejected' ? '<p class="note">지난 신청은 거절됐어요. 다시 신청할 수 있어요.</p>' : ''}
+        act = `<h4>합류 신청 ${d.applicants.length}명</h4>${d.applicants.length ? d.applicants.map(a => `<div class="tm-app"><b>${esc(a.nick || '탈퇴한 회원')}</b>${a.role ? ' ' + tag(a.role) : ''}<p>${esc(a.msg) || '<span class="note">한마디 없음</span>'}</p><button class="btn2" data-ok="${a.uid}">수락</button> <button class="btn2 ghost" data-no="${a.uid}">거절</button></div>`).join('') : '<p class="note">아직 합류 신청이 없어요. 링크를 뿌려 대원을 모아 보세요.</p>'}
+<div class="cm-row"><button class="btn2 ghost tm-tg">${t.status === 'open' ? '모집 마감하기' : '다시 모집하기'}</button><button class="btn2 ghost tm-del">원정대 해산</button></div>`;
+      } else if (me_.state === 'accepted') act = `<p class="tm-okmsg">💖 이 원정대의 대원이에요!</p><button class="btn2 ghost tm-lv">원정대 나가기</button>`;
+      else if (me_.state === 'pending') act = '<p class="note">⏳ 합류 신청을 보냈어요. 대장이 수락하면 연락 방법이 여기 보여요.</p>';
+      else if (t.status !== 'open') act = '<p class="note">모집이 끝난 원정대예요.</p>';
+      else act = `<h4>이 원정대에 합류 신청</h4>${me_.state === 'rejected' ? '<p class="note">지난 신청은 거절됐어요. 다시 신청할 수 있어요.</p>' : ''}
 <select class="tm-ar"><option value="">맡고 싶은 역할</option>${roles.map(r => `<option>${esc(r)}</option>`).join('')}<option>기타</option></select>
 <textarea class="tm-am" maxlength="500" rows="3" placeholder="간단한 자기소개, 해 본 것, 가능한 시간 등. 전화번호는 쓰지 마세요."></textarea><p class="cm-err"></p><button class="btn2 tm-ap">💌 합류 신청</button>`;
-      body.innerHTML = `<div class="cm-meta"><span class="tm-st ${t.status === 'open' ? 'on' : 'off'}">${t.status === 'open' ? '파티원 모집 중' : '모집 마감'}</span><span>👥 ${d.members.length}/${t.size}명</span>${t.deadline ? `<span>마감 ${esc(t.deadline)}</span>` : ''}</div>
+      const pr = d.prefs || {}, col = pr.color || '#7c3aed';
+      m.querySelector('.tm-box').style.setProperty('--tc', col);
+      const head = `<div class="tm-cov" style="${pr.cover ? `background-image:url(${imgUrl(pr.cover)})` : `background:linear-gradient(135deg,${col},#1e1b4b)`}"><span class="tm-flag">${esc(pr.emoji || '🚩')}</span></div>`;
+      const album = (me_.leader || me_.state === 'accepted') ? `<h4>📸 원정대 사진첩 <small>대원끼리만 봐요</small></h4><div class="tm-album">${(d.album || []).map(a => `<figure><img src="${imgUrl(a.id, true)}" alt="" loading="lazy"><figcaption>${esc(a.nick || '')}${a.caption ? ' · ' + esc(a.caption) : ''}${a.mine || me_.leader ? ` <button data-rm="${a.id}">지우기</button>` : ''}</figcaption></figure>`).join('') || '<p class="note">아직 사진이 없어요. 시안·참고 자료를 올려 보세요.</p>'}</div><div class="cm-row"><input class="tm-cap" maxlength="100" placeholder="사진 설명 (선택)"><button class="btn2 tm-pic">📷 사진 올리기</button></div>` : '';
+      body.innerHTML = head + (me_.leader ? '<button class="btn2 tm-set">⚙️ 원정대 설정</button>' : '') + `<div class="cm-meta"><span class="tm-st ${t.status === 'open' ? 'on' : 'off'}">${t.status === 'open' ? '대원 모집 중' : '모집 마감'}</span><span>👥 ${d.members.length}/${t.size}명</span>${t.deadline ? `<span>마감 ${esc(t.deadline)}</span>` : ''}</div>
 <h3>${esc(t.name)}</h3>${t.contest_id !== 'free' ? `<a class="cm-on" href="/c/${esc(t.contest_id)}/">📌 ${esc(t.contest_title || t.contest_id)}</a>` : t.contest_title ? `<p class="note">📌 ${esc(t.contest_title)}</p>` : ''}
 <p class="cm-body">${esc(t.intro)}</p>${roles.length ? `<div class="tm-roles">찾는 역할 ${roles.map(tag).join('')}</div>` : ''}
-<h4>파티원</h4><div class="tm-mem">${d.members.map(x => `<span>${x.role === '팀장' ? '👑' : '🙂'} ${esc(x.nick || '탈퇴한 회원')}${x.role ? ' · ' + esc(x.role === '팀장' ? '파티장' : x.role) : ''}</span>`).join('')}</div>
+<h4>대원</h4><div class="tm-mem">${d.members.map(x => `<span>${x.role === '팀장' ? '👑' : '🙂'} ${esc(x.nick || '탈퇴한 회원')}${x.role ? ' · ' + esc(x.role === '팀장' ? '대장' : x.role) : ''}</span>`).join('')}</div>
 ${contact ? `<div class="tm-ct2">📞 연락 방법: ${contact}</div>` : ''}
 ${st.t ? act : '<button class="btn2 tm-login">가입하고 합류 신청</button>'}
-<div class="cm-acts"><button class="tm-share">링크 복사</button>${st.t && !me_.leader ? '<button class="tm-rp">신고</button>' : ''}</div>`;
+${album}<div class="cm-acts"><button class="tm-share">링크 복사</button>${st.t && !me_.leader ? '<button class="tm-rp">신고</button>' : ''}</div>`;
       const q = s => body.querySelector(s);
+      if (q('.tm-set')) q('.tm-set').onclick = () => teamSettings(id, d, draw);
+      if (q('.tm-pic')) q('.tm-pic').onclick = async () => {
+        const f = await pick(); if (!f) return; q('.tm-pic').textContent = '올리는 중…';
+        try { await api(`/api/teams/${id}/image`, { method: 'POST', body: { kind: 'post', data: await shrink(f, false), caption: q('.tm-cap').value } }); ga('party_photo', {}); draw(); }
+        catch (e) { q('.tm-pic').textContent = e.message; }
+      };
+      body.querySelectorAll('[data-rm]').forEach(b => b.onclick = async () => { if (confirmLite(b)) { await api(`/api/teams/${id}/unimage`, { method: 'POST', body: { id: +b.dataset.rm } }); draw(); } });
       body.querySelectorAll('[data-ok],[data-no]').forEach(b => b.onclick = async () => {
         try { await api(`/api/teams/${id}/decide`, { method: 'POST', body: { uid: +(b.dataset.ok || b.dataset.no), accept: !!b.dataset.ok } }); ga('party_decide', { accept: !!b.dataset.ok }); draw(); } catch (e) { b.textContent = e.message; }
       });

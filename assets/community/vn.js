@@ -1,4 +1,4 @@
-// 루리의 줍줍 커뮤니티 — 미연시 모드: 공모전 = 공략 대상 히로인, 팀 = 공략 파티, 루리 = 정보통 친구
+// 루리의 줍줍 커뮤니티 — 미연시 모드: 공모전 = 공략 대상 히로인, 팀 = 원정대, 루리 = 정보통 친구
 // 친구 초대(링크 방문 1점, 가입 3점, 히로인별 기록) 점수만큼 루리 꾸미기(의상·배경·대사창·효과·호칭) 해금. comm.js 의 window.JUP 사용.
 (function () {
   const S = document.getElementById('vn'), J = window.JUP; if (!S || !J) return;
@@ -68,20 +68,20 @@
     try { localStorage.setItem('jupjup_vn', 1); } catch {}
     if (first) await say([['excited', '앗, 왔구나! 나 루리야. 공모전 정보라면 내가 제일 빠삭하지!'],
       ['wink', '여기 공모전들은 전부 <b>공략 대상 히로인</b>이야. 상금이라는 보상도 있고, 마감이라는 고백 기한도 있어.'],
-      ['think', '근데 솔직히 히로인 혼자 공략하는 건 어렵잖아? 그래서 같이 공략할 <b>파티</b>를 짜는 거야!'],
+      ['think', '근데 솔직히 히로인 혼자 공략하는 건 어렵잖아? 그래서 같이 공략할 <b>원정대</b>를 짜는 거야!'],
       ['thumbsup', '아, 그리고 친구를 초대해 오면… 내가 옷을 하나씩 갈아입을게. 끝까지 모으면 바다 갈 준비도 해 둘게!']]);
     else await say([['smile', `또 왔네, ${you()}! 오늘은 누구를 공략해 볼까?`]]);
     menu();
   }
   function menu() {
     const n = [...tcount.values()].reduce((a, b) => a + b, 0);
-    say([['outfit', `지금 파티 <b>${n}</b>개가 히로인을 노리고 있어. 뭐부터 할래?`]]).then(() => choose([
-      ['💗 오늘의 히로인 보기', () => heroines()], ['💘 공략 파티 구경하기', parties], ['✨ 내가 파티 결성하기', () => J.createTeam('', '', reboot)],
+    say([['outfit', `지금 원정대 <b>${n}</b>개가 히로인을 노리고 있어. 뭐부터 할래?`]]).then(() => choose([
+      ['💗 오늘의 히로인 보기', () => heroines()], ['💘 원정대 구경하기', parties], ['✨ 내가 원정대 결성하기', () => J.createTeam('', '', reboot)],
       ['🎀 루리 꾸미기 · 친구 초대', dress]]));
   }
   function heroines(q = '') {
     const pool = (q ? cs.filter(c => c.t.includes(q)) : [...cs].sort((a, b) => (tcount.get(b.id) || 0) - (tcount.get(a.id) || 0) || (dday(a.e) ?? 99) - (dday(b.e) ?? 99))).slice(0, 12);
-    showPanel(`<div class="vn-ph"><b>💗 공략 대상 선택</b><input class="vn-q" placeholder="히로인(공모전) 이름 검색" value="${esc(q)}"><button class="vn-back">✕</button></div>
+    showPanel(`<div class="vn-ph"><b>💗 공모전 고르기</b><input class="vn-q" placeholder="히로인(공모전) 이름 검색" value="${esc(q)}"><button class="vn-back">✕</button></div>
 <div class="vn-cards">${pool.map(card).join('') || '<p class="note">그런 히로인은 없어…</p>'}</div>`, '누구로 할래? 카드를 눌러 봐!', 'think');
     let tm; panel.querySelector('.vn-q').oninput = e => { clearTimeout(tm); tm = setTimeout(() => { heroines(e.target.value.trim()); const i = panel.querySelector('.vn-q'); i.focus(); i.setSelectionRange(99, 99); }, 300); };
     panel.querySelectorAll('[data-id]').forEach(b => b.onclick = () => heroine(cs.find(c => c.id === b.dataset.id)));
@@ -91,27 +91,27 @@
     const n = dday(c.e), k = tcount.get(c.id) || 0;
     return `<button class="vn-card${n !== null && n <= 3 ? ' hot' : ''}" data-id="${esc(c.id)}"><span class="vn-art">${c.th ? `<img src="/assets/shots/${esc(c.id)}.webp" alt="" loading="lazy">` : `<em>${esc(c.i || '💗')}</em>`}</span>
 <b>${esc(c.t.length > 30 ? c.t.slice(0, 30) + '…' : c.t)}</b><span class="vn-st">🎁 ${esc(c.p || '보상 비공개')}</span><span class="vn-st">💌 고백 마감 ${n === null ? '-' : n <= 0 ? '오늘!' : 'D-' + n}</span>
-<span class="vn-st">난이도 <i>${stars(c)}</i></span><span class="vn-heart">${k ? `💘 파티 ${k}` : '파티 모집 전'}</span></button>`;
+<span class="vn-st">난이도 <i>${stars(c)}</i></span><span class="vn-heart">${k ? `🚩 원정대 ${k}` : '원정대 모집 전'}</span></button>`;
   }
   async function heroine(c) {
     J.ga('heroine_view', { contest_id: c.id });
     const n = dday(c.e), k = tcount.get(c.id) || 0;
     await say([['surprise', `오, <b>${esc(c.t)}</b>! ${you()}, 눈이 높네?`],
       ['think', `보상은 <b>${esc(c.p || '비공개')}</b>, 고백 마감까지 <b>${n === null ? '?' : n <= 0 ? '오늘까지' : 'D-' + n}</b>. 취향은 <b>${esc(c.g || '다양')}</b> 쪽이야.`],
-      [k ? 'wink' : 'smile', k ? `지금 이 히로인을 노리는 파티가 <b>${k}</b>개 있어. 합류할래, 직접 파티를 만들래?` : '아직 아무도 이 히로인에게 파티를 안 짰어. 선점하면 유리할걸?']]);
+      [k ? 'wink' : 'smile', k ? `지금 이 히로인을 노리는 원정대가 <b>${k}</b>개 있어. 합류할래, 직접 원정대를 만들래?` : '아직 아무도 이 히로인에게 원정대를 안 짰어. 선점하면 유리할걸?']]);
     const opts = [];
-    if (k) opts.push(['💘 이 히로인 공략 파티 보기', async () => {
+    if (k) opts.push(['💘 이 공모전 원정대 보기', async () => {
       const { teams } = await J.api('/api/teams?contest=' + encodeURIComponent(c.id)).catch(() => ({ teams: [] }));
       choose([...teams.map(t => [`${t.status === 'open' && t.cnt < t.size ? '💌' : '🔒'} ${esc(t.name)} · ${t.cnt}/${t.size}명`, () => J.teamModal(t.id, () => heroine(c))]), ['↩ 돌아가기', () => heroine(c)]]);
     }]);
-    opts.push(['✨ 이 히로인으로 파티 결성', () => J.createTeam(c.id, c.t, reboot)], ['💌 이 히로인 같이 공략할 친구 초대', () => invite(c)],
-              ['📖 공략집(공모전 정보) 보기', () => { location.href = `/c/${c.id}/`; }], ['💗 다른 히로인 볼래', () => heroines()]);
+    opts.push(['✨ 이 히로인으로 원정대 결성', () => J.createTeam(c.id, c.t, reboot)], ['💌 이 히로인 같이 나갈 친구 초대', () => invite(c)],
+              ['📖 공모전 정보 보기', () => { location.href = `/c/${c.id}/`; }], ['💗 다른 히로인 볼래', () => heroines()]);
     choose(opts);
   }
   async function parties() {
     const { teams } = await J.api('/api/teams').catch(() => ({ teams: [] }));
-    if (!teams.length) { await say([['sad', '어라… 아직 결성된 파티가 하나도 없어.'], ['excited', `그럼 ${you()}가 첫 파티장이 되는 거야! 해 볼래?`]]); return choose([['✨ 파티 결성하기', () => J.createTeam('', '', reboot)], ['↩ 메뉴로', menu]]); }
-    await say([['wink', '지금 파티원을 찾는 파티들이야. 마음에 드는 데 말 걸어 봐!']]);
+    if (!teams.length) { await say([['sad', '어라… 아직 결성된 원정대가 하나도 없어.'], ['excited', `그럼 ${you()}가 첫 대장이 되는 거야! 해 볼래?`]]); return choose([['✨ 원정대 결성하기', () => J.createTeam('', '', reboot)], ['↩ 메뉴로', menu]]); }
+    await say([['wink', '지금 대원을 찾는 원정대들이야. 마음에 드는 데 말 걸어 봐!']]);
     choose([...teams.slice(0, 8).map(t => [`${t.status === 'open' && t.cnt < t.size ? '💌' : '🔒'} ${esc(t.name)}${t.contest_title ? ` <small>→ ${esc(t.contest_title.slice(0, 18))}</small>` : ''} · ${t.cnt}/${t.size}`, () => J.teamModal(t.id, menu)]), ['📋 전체 목록으로', () => document.getElementById('cm-teams').scrollIntoView({ behavior: 'smooth' })], ['↩ 메뉴로', menu]]);
   }
   async function needLogin(line) {
@@ -125,11 +125,11 @@
     if (!J.st.t) return needLogin('초대 링크는 가입한 친구한테만 줄 수 있어. 초대할수록 나를 더 꾸밀 수 있거든!');
     if (!me) await getMe(); if (!me) return menu();
     const link = c ? `${location.origin}/c/${c.id}/?ref=${me.code}` : `${location.origin}/community/?ref=${me.code}`;
-    const title = c ? `「${c.t}」 같이 공략할래?` : '같이 공모전 공략 파티 짤래?';
+    const title = c ? `「${c.t}」 같이 나갈래?` : '같이 공모전 원정대 짤래?';
     showPanel(`<div class="vn-ph"><b>💌 친구 초대${c ? ` · ${esc(c.t.slice(0, 20))}` : ''}</b><button class="vn-back">✕</button></div>
 <div class="vn-inv"><p>이 링크로 친구가 들어오면 <b>1점</b>, 가입하면 <b>3점</b>! ${c ? '이 히로인 초대 기록에 남아.' : ''}</p><input readonly value="${esc(link)}">
 <div class="vn-share"><a class="naver" target="_blank" rel="noopener" href="https://share.naver.com/web/shareView?url=${encodeURIComponent(link)}&title=${encodeURIComponent(title + ' — 루리의 줍줍')}">N 네이버</a>
-<a class="mail" href="mailto:?subject=${encodeURIComponent(title)}&body=${encodeURIComponent(title + ' 같이 파티 짜자! ' + link)}">✉ 메일</a><button class="kakao">💬 카톡 · 공유</button><button class="copy">🔗 복사</button></div></div>`,
+<a class="mail" href="mailto:?subject=${encodeURIComponent(title)}&body=${encodeURIComponent(title + ' 같이 원정대 짜자! ' + link)}">✉ 메일</a><button class="kakao">💬 카톡 · 공유</button><button class="copy">🔗 복사</button></div></div>`,
       `친구가 많이 올수록 나도 예쁘게 꾸밀 수 있어! 지금 <b>${pts()}점</b>이야.`, 'wink');
     const cp = e => (navigator.clipboard ? navigator.clipboard.writeText(link) : Promise.reject()).then(() => e.target.textContent = '복사됐어!', () => panel.querySelector('.vn-inv input').select());
     panel.querySelector('.copy').onclick = e => { J.ga('invite_share', { method: 'copy', contest_id: c ? c.id : '' }); cp(e); };
@@ -148,7 +148,7 @@
       const cur = P[tab] || CAT[tab][1][0][1];
       body = `<div class="vn-ward">${CAT[tab][1].map(([need, v, n]) => `<button class="vn-cloth${need <= p ? '' : ' lock'}${cur === v ? ' on' : ''}" data-v="${v}" ${need <= p ? '' : 'disabled'}>${tab === 'o' ? `<img src="/assets/ruri/${v}_s.webp" alt="" width="110" height="152">` : `<span class="vn-sw" data-${tab}="${v}">${tab === 'f' ? (FX[v] || (v === 'petal' ? '🌸' : '∅')) : ''}</span>`}<span>${need <= p ? n : `🔒 ${need}점`}</span></button>`).join('')}</div>`;
     } else if (tab === 'c') {
-      body = p >= CALL_AT ? `<div class="vn-inv"><p>루리가 나를 뭐라고 부를까? (최대 8자)</p><input class="vn-call" maxlength="8" value="${esc(P.c || '')}" placeholder="예: 선배, 파티장님"><div class="vn-share"><button class="vn-callsave">저장</button></div></div>`
+      body = p >= CALL_AT ? `<div class="vn-inv"><p>루리가 나를 뭐라고 부를까? (최대 8자)</p><input class="vn-call" maxlength="8" value="${esc(P.c || '')}" placeholder="예: 선배, 대장님"><div class="vn-share"><button class="vn-callsave">저장</button></div></div>`
                          : `<p class="note">🔒 초대 점수 ${CALL_AT}점부터 루리가 부르는 호칭을 정할 수 있어요.</p>`;
     } else {
       const byC = me.by_contest || [], name = id => (cs.find(c => c.id === id) || {}).t || (id ? id : '커뮤니티 전체');

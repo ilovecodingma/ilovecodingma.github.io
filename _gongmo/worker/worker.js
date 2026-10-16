@@ -147,13 +147,26 @@ export default {
         await env.DB.prepare('UPDATE comments SET hidden = 1 WHERE id = ? AND user_id = ?').bind(+m[1], u.id).run();
         return json(req, { ok: true });
       }
+      let im = p.match(/^\/api\/img\/(\d+)$/);
+      if (im && req.method === 'GET') {
+        const r = await env.DB.prepare('SELECT i.*, t.leader_id FROM team_images i JOIN teams t ON t.id = i.team_id WHERE i.id = ? AND i.hidden = 0').bind(+im[1]).first();
+        if (!r) return new Response('not found', { status: 404, headers: cors(req) });
+        if (r.kind !== 'cover') {
+          const tk = url.searchParams.get('t') || '';
+          const u = tk ? await env.DB.prepare('SELECT s.user_id FROM sessions s WHERE s.token = ? AND s.expires > ?').bind(tk, now()).first('user_id') : null;
+          const ok = u && (u === r.leader_id || await count(env, "SELECT COUNT(*) n FROM team_members WHERE team_id = ? AND user_id = ? AND state = 'accepted'", r.team_id, u));
+          if (!ok) return new Response('forbidden', { status: 403, headers: cors(req) });
+        }
+        const bin = Uint8Array.from(atob(r.data), c => c.charCodeAt(0));
+        return new Response(bin, { headers: { 'Content-Type': r.mime, 'Cache-Control': r.kind === 'cover' ? 'public, max-age=86400' : 'private, max-age=3600', ...cors(req) } });
+      }
       // ---- 팀 모집 ----
       if (p === '/api/teams' && req.method === 'GET') {
         const c = clean(url.searchParams.get('contest'), 40), page = Math.max(0, +url.searchParams.get('page') || 0);
-        const sel = "SELECT t.id, t.contest_id, t.contest_title, t.name, substr(t.intro, 1, 160) intro, t.roles, t.size, t.deadline, t.status, t.created, u.nick leader, (SELECT COUNT(*) FROM team_members m WHERE m.team_id = t.id AND m.state = 'accepted') cnt FROM teams t LEFT JOIN users u ON u.id = t.leader_id WHERE t.hidden = 0";
+        const sel = "SELECT t.id, t.contest_id, t.contest_title, t.name, substr(t.intro, 1, 160) intro, t.roles, t.size, t.deadline, t.status, t.created, u.nick leader, (SELECT COUNT(*) FROM team_members m WHERE m.team_id = t.id AND m.state = 'accepted') cnt, (SELECT data FROM team_prefs f WHERE f.team_id = t.id) prefs FROM teams t LEFT JOIN users u ON u.id = t.leader_id WHERE t.hidden = 0";
         const ord = " ORDER BY t.status = 'closed', t.created DESC LIMIT 30 OFFSET ?";
         const q = c ? env.DB.prepare(sel + ' AND t.contest_id = ?' + ord).bind(c, page * 30) : env.DB.prepare(sel + ord).bind(page * 30);
-        return json(req, { teams: (await q.all()).results });
+        return json(req, { teams: (await q.all()).results.map(t => ({ ...t, prefs: t.prefs ? JSON.parse(t.prefs) : {} })) });
       }
       if (p === '/api/teams' && req.method === 'POST') {
         const u = await me(req, env); if (!u) return err(req, '로그인이 필요해요.', 401);
@@ -173,7 +186,7 @@ export default {
         const r = await env.DB.prepare("SELECT t.id, t.name, t.contest_id, t.contest_title, t.status, m.state, (t.leader_id = ?) leader, (SELECT COUNT(*) FROM team_members x WHERE x.team_id = t.id AND x.state = 'pending') waiting FROM team_members m JOIN teams t ON t.id = m.team_id WHERE m.user_id = ? AND t.hidden = 0 ORDER BY t.created DESC LIMIT 50").bind(u.id, u.id).all();
         return json(req, { teams: r.results });
       }
-      let tm = p.match(/^\/api\/teams\/(\d+)(?:\/(apply|decide|close|open|leave))?$/);
+      let tm = p.match(/^\/api\/teams\/(\d+)(?:\/(apply|decide|close|open|leave|edit|image|unimage))?$/);
       if (tm) {
         const tid = +tm[1], act = tm[2] || '';
         const t = await env.DB.prepare('SELECT t.*, u.nick leader FROM teams t LEFT JOIN users u ON u.id = t.leader_id WHERE t.id = ? AND t.hidden = 0').bind(tid).first();
@@ -185,7 +198,9 @@ export default {
           const apps = isLeader ? (await env.DB.prepare("SELECT m.user_id uid, m.role, m.msg, m.created, u.nick FROM team_members m LEFT JOIN users u ON u.id = m.user_id WHERE m.team_id = ? AND m.state = 'pending' ORDER BY m.created").bind(tid).all()).results : [];
           const ok = isLeader || (mine && mine.state === 'accepted');
           const { leader_id, contact, reports, hidden, ...pub } = t;
-          return json(req, { team: { ...pub, contact: ok ? contact : '' }, members: mem, applicants: apps, me: { leader: isLeader, state: mine ? mine.state : '' } });
+          const prefs = JSON.parse((await env.DB.prepare('SELECT data FROM team_prefs WHERE team_id = ?').bind(tid).first('data')) || '{}');
+          const album = ok ? (await env.DB.prepare("SELECT i.id, i.caption, i.created, u.nick, (i.user_id = ?) mine FROM team_images i LEFT JOIN users u ON u.id = i.user_id WHERE i.team_id = ? AND i.kind = 'post' AND i.hidden = 0 ORDER BY i.created DESC LIMIT 60").bind(u ? u.id : 0, tid).all()).results : [];
+          return json(req, { team: { ...pub, contact: ok ? contact : '' }, members: mem, applicants: apps, me: { leader: isLeader, state: mine ? mine.state : '' }, prefs, album });
         }
         if (!act && req.method === 'DELETE') {
           if (!isLeader) return err(req, '팀장만 지울 수 있어요.', 403);
@@ -201,11 +216,43 @@ export default {
           await env.DB.prepare("INSERT OR REPLACE INTO team_members (team_id, user_id, role, msg, state, created) VALUES (?, ?, ?, ?, 'pending', ?)").bind(tid, u.id, clean(body.role, 20), clean(body.msg, 500), now()).run();
           return json(req, { ok: true });
         }
+        if (act === 'image') {  // 표지(파티장) 또는 앨범(파티원)
+          const kind = body.kind === 'cover' ? 'cover' : 'post';
+          if (kind === 'cover' ? !isLeader : !(isLeader || (mine && mine.state === 'accepted'))) return err(req, kind === 'cover' ? '표지는 파티장만 바꿀 수 있어요.' : '파티원만 사진을 올릴 수 있어요.', 403);
+          const m2 = String(body.data || '').match(/^data:(image\/(?:webp|jpeg|png));base64,([A-Za-z0-9+/=]+)$/);
+          if (!m2) return err(req, '이미지 형식을 확인해 주세요.');
+          if (m2[2].length > 420000) return err(req, '이미지가 너무 커요.');
+          if (await count(env, 'SELECT COUNT(*) n FROM team_images WHERE user_id = ? AND created > ?', u.id, now() - DAY) >= 30) return err(req, '하루에 올릴 수 있는 사진 수를 넘었어요.', 429);
+          const r = await env.DB.prepare('INSERT INTO team_images (team_id, user_id, kind, mime, data, caption, created) VALUES (?, ?, ?, ?, ?, ?, ?)').bind(tid, u.id, kind, m2[1], m2[2], clean(body.caption, 100), now()).run();
+          if (kind === 'cover') {
+            const pr = JSON.parse((await env.DB.prepare('SELECT data FROM team_prefs WHERE team_id = ?').bind(tid).first('data')) || '{}');
+            if (pr.cover) await env.DB.prepare('UPDATE team_images SET hidden = 1 WHERE id = ?').bind(pr.cover).run();
+            pr.cover = r.meta.last_row_id;
+            await env.DB.prepare('INSERT OR REPLACE INTO team_prefs (team_id, data) VALUES (?, ?)').bind(tid, JSON.stringify(pr)).run();
+          }
+          return json(req, { id: r.meta.last_row_id });
+        }
+        if (act === 'unimage') {
+          await env.DB.prepare('UPDATE team_images SET hidden = 1 WHERE id = ? AND team_id = ? AND (user_id = ? OR ?)').bind(+body.id || 0, tid, u.id, isLeader ? 1 : 0).run();
+          return json(req, { ok: true });
+        }
         if (act === 'leave') {
           if (isLeader) return err(req, '팀장은 나갈 수 없어요. 모집을 닫거나 팀을 지워 주세요.');
           await env.DB.prepare('DELETE FROM team_members WHERE team_id = ? AND user_id = ?').bind(tid, u.id).run(); return json(req, { ok: true });
         }
         if (!isLeader) return err(req, '팀장만 할 수 있어요.', 403);
+        if (act === 'edit') {  // 파티 설정
+          const name = clean(body.name, 60), intro = clean(body.intro, 2000);
+          if (name.length < 2 || intro.length < 5) return err(req, '파티 이름과 소개를 조금 더 써 주세요.');
+          const roles = clean(body.roles, 200).split(/[,，、]+/).map(r => r.trim().slice(0, 20)).filter(Boolean).slice(0, 8).join(',');
+          const size = Math.min(20, Math.max(2, (+body.size | 0) || t.size)), dl = /^\d{4}-\d{2}-\d{2}$/.test(body.deadline || '') ? body.deadline : '';
+          await env.DB.prepare('UPDATE teams SET name = ?, intro = ?, roles = ?, size = ?, deadline = ?, contact = ? WHERE id = ?').bind(name, intro, roles, size, dl, clean(body.contact, 300), tid).run();
+          const pr = JSON.parse((await env.DB.prepare('SELECT data FROM team_prefs WHERE team_id = ?').bind(tid).first('data')) || '{}');
+          if (/^#[0-9a-f]{6}$/i.test(body.color || '')) pr.color = body.color;
+          if (body.emoji !== undefined) pr.emoji = clean(body.emoji, 4);
+          await env.DB.prepare('INSERT OR REPLACE INTO team_prefs (team_id, data) VALUES (?, ?)').bind(tid, JSON.stringify(pr)).run();
+          return json(req, { ok: true });
+        }
         if (act === 'decide') {
           if (body.accept && await count(env, "SELECT COUNT(*) n FROM team_members WHERE team_id = ? AND state = 'accepted'", tid) >= t.size) return err(req, '정원이 다 찼어요. 모집을 닫거나 인원을 늘려 주세요.');
           await env.DB.prepare("UPDATE team_members SET state = ? WHERE team_id = ? AND user_id = ? AND state = 'pending'").bind(body.accept ? 'accepted' : 'rejected', tid, +body.uid || 0).run();
