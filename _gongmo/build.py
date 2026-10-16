@@ -387,17 +387,22 @@ def build():
     wk = [c for c in live if dday(c['end'])[0] <= 7]
     quick = sorted([e for e in events if EASY_RANK.get(e.get('effort') or EASY.get(e['type'], ''), 2) <= 1],
                    key=lambda e: (e['end'], EASY_RANK.get(e.get('effort') or EASY.get(e['type'], ''), 2)))
-    SHORT = re.compile(r'슬로건|네이밍|명칭|표어|캐치프레이즈|한\s*줄|삼행시|사행시|디카시|짧은\s*글|문구|애칭|이름\s*짓기|BI|캐릭터\s*이름')
+    SHORT = re.compile(r'슬로건|네이밍|명칭|표어|캐치프레이즈|아이디어|사진|한\s*줄|삼행시|사행시|디카시|짧은\s*글|문구|애칭|이름\s*짓기|BI|캐릭터\s*이름')
     short = [c for c in live if SHORT.search(c['title'] + ' ' + (c['field'] or ''))]
+    short.sort(key=lambda c: (dday(c['end'])[0] > 14, -c['pv'], c['end']))
+    LOCAL = re.compile(r'(시민|도민|군민|구민|주민|거주|재학|재직|소재|관내|출신)')
+    SMALLORG = re.compile(r'(군|구|읍|면|동)(청|청장|의회)?$|문화재단|복지관|도서관|센터$')
+    hidden = sorted([c for c in live if c not in short and (LOCAL.search(c['elig'] or '') or SMALLORG.search((c['org'] or '').strip()))],
+                    key=lambda c: (-c['pv'], c['end']))
     cats = ''.join(f'<a class="cat" data-c="{s_}" href="/cat/{s_}/"><span class="ic">{CAT_ICON[n]}</span><b>{n}</b><span class="n">{sum(1 for c in live if n in c["tags"])}건</span></a>' for s_, n in CATS)
     home = f'''<section class="hero"><div class="hero-t"><p class="kick">{TODAY.month}월 {TODAY.day}일 업데이트</p><h1>그냥 넣으면 되는 용돈 기회,<br><em>루리</em>가 주워 왔어요</h1>
-<p class="sub">응모만 하면 되는 경품, 1분 댓글·설문, 청약·지원금 신청, 슬로건 한 줄 공모전까지. 일단 넣고 보세요!</p>
+<p class="sub">슬로건 한 줄, 사진 한 장으로 내는 대회부터 경쟁 적은 숨은 대회, 청약·지원금 신청까지. 일단 넣고 보세요!</p>
 <form class="hs" onsubmit="var q=document.getElementById('q');q.value=this.k.value;q.dispatchEvent(new Event('input'));document.getElementById('all').scrollIntoView();return false"><input name="k" type="search" placeholder="예) 슬로건, 숏폼, 해커톤" aria-label="공모전 검색"><button>검색</button></form>
 <div class="stat"><span><b>{len(live)}</b>공모전</span><span><b>{len(wk)}</b>이번 주 마감</span><span><b>{len(events)}</b>경품·용돈</span></div></div>
 <div class="hero-r"><div class="hb">안녕하세요, <b>루리</b>예요!<br>오늘도 마감 임박 공모전 챙겨 왔어요 ✨</div><img id="hero-ruri" src="/assets/ruri/smile.webp" width="300" height="415" alt="루리"></div></section>
-<div class="sec"><h2>⚡ 1분이면 끝</h2><a href="/event/">전체 보기 →</a></div><p class="note" style="margin:-6px 0 10px">응모만 · 댓글 1줄 · 폼 1분 · 설문 5분 — 그냥 넣으면 되는 것부터</p><ul class="list row">{''.join(ev_card(e) for e in quick[:12])}</ul>
+<div class="sec"><h2>✍️ 바로 낼 수 있는 대회</h2><a href="#all">전체 보기 →</a></div><p class="note" style="margin:-6px 0 10px">슬로건·네이밍·짧은 글·아이디어·사진처럼 오늘 바로 낼 수 있는 대회</p><ul class="list row">{''.join(card(c) for c in short[:12])}</ul>
+<div class="sec"><h2>🔍 참가자 적은 숨은 대회</h2><a href="#all">전체 보기 →</a></div><p class="note" style="margin:-6px 0 10px">지역·재학·재직 같은 자격 제한이 있거나 시·군·구 단위로 열려 경쟁이 덜할 만한 대회</p><ul class="list row">{''.join(card(c) for c in hidden[:12])}</ul>
 {'<div class="sec"><h2>📝 청약·신청 일정</h2><a href="/apply/">전체 보기 →</a></div><ul class="list row">' + ''.join(ap_card(a) for a in aps[:10]) + '</ul>' if aps else ''}
-<div class="sec"><h2>✍️ 한 줄이면 내는 공모전</h2><a href="#all">전체 보기 →</a></div><p class="note" style="margin:-6px 0 10px">슬로건·네이밍·짧은 글처럼 바로 낼 수 있는 공모전</p><ul class="list row">{''.join(card(c) for c in short[:12])}</ul>
 <div class="cats">{cats}<a class="cat" data-c="event" href="/event/"><span class="ic">🎁</span><b>경품·용돈</b><span class="n">{len(events)}건</span></a><a class="cat" data-c="apply" href="/apply/"><span class="ic">📝</span><b>청약·신청</b><span class="n">{len(aps)}건</span></a></div>
 <div class="sec"><h2>⏰ 이번 주 마감</h2><a href="#all">전체 보기 →</a></div><ul class="list row">{''.join(card(c) for c in wk[:10])}</ul>
 <div class="sec"><h2>🏆 상금 큰 공모전</h2></div><ul class="list grid">{''.join(card(c) for c in big)}</ul>
