@@ -45,7 +45,7 @@ print('D1', DBID)
 call('POST', f'/d1/database/{DBID}/query', {'sql': open(os.path.join(HERE, 'schema.sql'), encoding='utf-8').read()})
 # 3) Worker 업로드 (ES 모듈 + D1 바인딩)
 bd = '----jupjup' + os.urandom(6).hex()
-meta = {'main_module': 'worker.js', 'compatibility_date': '2026-10-01', 'bindings': [{'type': 'd1', 'name': 'DB', 'id': DBID}]}
+meta = {'main_module': 'worker.js', 'compatibility_date': '2026-10-01', 'bindings': [{'type': 'd1', 'name': 'DB', 'id': DBID}], 'keep_bindings': ['secret_text']}  # OAuth 시크릿 유지
 parts = [
     f'--{bd}\r\nContent-Disposition: form-data; name="metadata"; filename="metadata.json"\r\nContent-Type: application/json\r\n\r\n'.encode() + json.dumps(meta).encode() + b'\r\n',
     f'--{bd}\r\nContent-Disposition: form-data; name="worker.js"; filename="worker.js"\r\nContent-Type: application/javascript+module\r\n\r\n'.encode()

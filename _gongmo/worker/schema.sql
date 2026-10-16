@@ -114,3 +114,12 @@ CREATE TABLE IF NOT EXISTS team_images (
   hidden INTEGER NOT NULL DEFAULT 0
 );
 CREATE INDEX IF NOT EXISTS team_images_team ON team_images(team_id, created DESC);
+
+-- 소셜 로그인 (2026-10-17: 구글·카카오 OAuth). provider+sub → users.id
+CREATE TABLE IF NOT EXISTS oauth_links (
+  provider TEXT NOT NULL,   -- google | kakao
+  sub TEXT NOT NULL,        -- 제공자 고유 id
+  user_id INTEGER NOT NULL,
+  created INTEGER NOT NULL,
+  PRIMARY KEY (provider, sub)
+);

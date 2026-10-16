@@ -3,6 +3,9 @@
 (function () {
   const API = document.body.dataset.api; if (!API) return;
   const ga = (n, p) => { try { window.gtag && gtag('event', n, p || {}); } catch {} };  // GA4 맞춤 이벤트
+  { const h = location.hash.match(/#jt=([0-9a-f]+)&jn=([^&]+)/), e = location.hash.match(/#jerr=([^&]+)/);  // 구글·카카오 로그인 후 돌아옴
+    if (h) { st.set(h[1], decodeURIComponent(h[2])); try { localStorage.removeItem('jupjup_prefs_t'); } catch {} ga('login', { method: 'oauth' }); history.replaceState(null, '', location.pathname + location.search); }
+    else if (e) { history.replaceState(null, '', location.pathname + location.search); setTimeout(() => alert(decodeURIComponent(e[1])), 300); } }
   try { const rf = new URLSearchParams(location.search).get('ref'); if (rf && /^[0-9a-f]{8}$/.test(rf)) { const h = new URLSearchParams(location.search).get('h') || (location.pathname.match(/^\/c\/([^/]+)\//) || [])[1] || ''; localStorage.setItem('jupjup_ref', rf); localStorage.setItem('jupjup_ref_h', h); fetch(API + '/api/ref', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ ref: rf, h }) }).catch(() => {}); } } catch {}
   const KEY = 'jupjup_tok', NK = 'jupjup_nick';
   const st = { get t() { try { return localStorage.getItem(KEY) || ''; } catch { return ''; } }, get n() { try { return localStorage.getItem(NK) || ''; } catch { return ''; } },
@@ -23,11 +26,12 @@
     const m = document.createElement('div'); m.className = 'cm-modal';
     m.innerHTML = `<div class="cm-box" role="dialog" aria-label="로그인"><button class="cm-x" aria-label="닫기">✕</button>
 <h3>🚩 가입 · 로그인</h3><p class="note">이메일과 비밀번호만 있으면 돼요. 다른 정보는 받지 않아요.</p>
-<input type="email" class="cm-em" placeholder="이메일" autocomplete="email"><input type="password" class="cm-pw" placeholder="비밀번호 (8자 이상)" autocomplete="current-password">
+<div class="cm-soc"><a class="soc kakao" href="${API}/api/oauth/kakao/start?back=${encodeURIComponent(location.pathname)}">💬 카카오로 시작</a><a class="soc google" href="${API}/api/oauth/google/start?back=${encodeURIComponent(location.pathname)}"><b>G</b> 구글로 시작</a></div><p class="cm-or">또는 이메일로</p><input type="email" class="cm-em" placeholder="이메일" autocomplete="email"><input type="password" class="cm-pw" placeholder="비밀번호 (8자 이상)" autocomplete="current-password">
 <p class="cm-err"></p><div class="cm-row"><button class="cm-login btn2">로그인</button><button class="cm-join btn2 ghost">처음이에요, 가입</button></div>
 <p class="note">가입하면 <a href="/terms/">이용약관</a>과 <a href="/privacy/">개인정보처리방침</a>에 동의한 것으로 봐요. 글쓴이 이름은 이메일 앞부분을 가려서(예: sun***) 표시해요.</p></div>`;
     document.body.appendChild(m);
     const em = m.querySelector('.cm-em'), pw = m.querySelector('.cm-pw'), er = m.querySelector('.cm-err');
+    fetch(API + '/api/oauth/ready').then(r => r.json()).then(r => { m.querySelectorAll('.soc').forEach(a => { if (!r[a.classList.contains('kakao') ? 'kakao' : 'google']) a.remove(); }); if (!m.querySelector('.soc')) { const s = m.querySelector('.cm-soc'), o = m.querySelector('.cm-or'); s && s.remove(); o && o.remove(); } }).catch(() => {});
     const go = async path => {
       er.textContent = '';
       try { const j = await api(path, { method: 'POST', body: { email: em.value, password: pw.value, ref: (() => { try { return localStorage.getItem('jupjup_ref') || ''; } catch { return ''; } })(), h: (() => { try { return localStorage.getItem('jupjup_ref_h') || ''; } catch { return ''; } })() } }); st.set(j.token, j.nick); ga(path === '/api/signup' ? 'sign_up' : 'login', { method: 'email' }); try { localStorage.removeItem('jupjup_prefs_t'); } catch {} syncPrefs(); m.remove(); onDone && onDone(); paintBar(); }

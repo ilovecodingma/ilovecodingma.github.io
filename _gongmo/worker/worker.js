@@ -42,6 +42,48 @@ async function newSession(env, uid) {
 }
 async function count(env, sql, ...a) { return (await env.DB.prepare(sql).bind(...a).first('n')) || 0; }
 
+
+// ---- 소셜 로그인: /api/oauth/<google|kakao>/start?back=<돌아갈 주소> → 제공자 → /api/oauth/<p>/callback → 사이트 #jt=<토큰>&jn=<닉> ----
+const SITE = 'https://sungprofile.cloud';
+const PROV = {
+  google: { auth: 'https://accounts.google.com/o/oauth2/v2/auth', token: 'https://oauth2.googleapis.com/token', scope: 'openid email', id: 'GOOGLE_ID', secret: 'GOOGLE_SECRET' },
+  kakao: { auth: 'https://kauth.kakao.com/oauth/authorize', token: 'https://kauth.kakao.com/oauth/token', scope: '', id: 'KAKAO_ID', secret: 'KAKAO_SECRET' },
+};
+async function oauth(req, env, url, prov, act) {
+  const P = PROV[prov], cid = env[P.id], cb = url.origin + `/api/oauth/${prov}/callback`;
+  if (!cid) return err(req, '아직 준비 중인 로그인이에요.', 503);
+  if (act === 'start') {
+    const back = (url.searchParams.get('back') || '/').replace(/^https?:\/\/[^/]+/, '').slice(0, 200) || '/';
+    const state = hex(crypto.getRandomValues(new Uint8Array(12)));
+    const q = new URLSearchParams({ client_id: cid, redirect_uri: cb, response_type: 'code', state, ...(P.scope ? { scope: P.scope } : {}), ...(prov === 'google' ? { prompt: 'select_account' } : {}) });
+    return new Response(null, { status: 302, headers: { Location: P.auth + '?' + q, 'Set-Cookie': `jo=${state}.${encodeURIComponent(back)}; Path=/api/oauth; Max-Age=600; HttpOnly; Secure; SameSite=Lax` } });
+  }
+  const ck = (req.headers.get('Cookie') || '').match(/(?:^|;\s*)jo=([0-9a-f]+)\.([^;]*)/), code = url.searchParams.get('code');
+  const fail = m => Response.redirect(SITE + '/#jerr=' + encodeURIComponent(m), 302);
+  if (!ck || ck[1] !== url.searchParams.get('state') || !code) return fail('로그인을 다시 시도해 주세요.');
+  const back = decodeURIComponent(ck[2] || '/');
+  const tk = await (await fetch(P.token, { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams({ grant_type: 'authorization_code', code, redirect_uri: cb, client_id: cid, ...(env[P.secret] ? { client_secret: env[P.secret] } : {}) }) })).json();
+  if (!tk.access_token) return fail('로그인 확인에 실패했어요.');
+  let sub, email = '';
+  if (prov === 'google') { const u = await (await fetch('https://openidconnect.googleapis.com/v1/userinfo', { headers: { Authorization: 'Bearer ' + tk.access_token } })).json(); sub = u.sub; email = u.email_verified ? String(u.email || '').toLowerCase() : ''; }
+  else { const u = await (await fetch('https://kapi.kakao.com/v2/user/me', { headers: { Authorization: 'Bearer ' + tk.access_token } })).json(); sub = u.id && String(u.id); const ka = u.kakao_account || {}; email = ka.is_email_verified && ka.email ? ka.email.toLowerCase() : ''; }
+  if (!sub) return fail('계정 정보를 받지 못했어요.');
+  let uid = await env.DB.prepare('SELECT user_id FROM oauth_links WHERE provider = ? AND sub = ?').bind(prov, sub).first('user_id');
+  if (!uid && email) uid = await env.DB.prepare('SELECT id FROM users WHERE email = ?').bind(email).first('id');  // 같은 이메일로 이미 가입했으면 연결
+  if (!uid) {
+    const mail = email || `${prov}_${sub}@${prov}.login`, base = prov === 'kakao' ? 'kko' : (email.split('@')[0].replace(/[^0-9a-z]/g, '').slice(0, 3) || 'ggl');
+    let nick = base + '***'; for (let i = 2; await count(env, 'SELECT COUNT(*) n FROM users WHERE nick = ?', nick); i++) nick = base + '***' + i;
+    const r = await env.DB.prepare('INSERT INTO users (email, nick, pw, created) VALUES (?, ?, ?, ?)').bind(mail, nick, 'oauth$' + prov, now()).run();
+    uid = r.meta.last_row_id;
+  }
+  await env.DB.prepare('INSERT OR IGNORE INTO oauth_links (provider, sub, user_id, created) VALUES (?, ?, ?, ?)').bind(prov, sub, uid, now()).run();
+  const u = await env.DB.prepare('SELECT nick, banned FROM users WHERE id = ?').bind(uid).first();
+  if (!u || u.banned) return fail('이용이 제한된 계정이에요.');
+  const token = await newSession(env, uid);
+  return new Response(null, { status: 302, headers: { Location: SITE + back.split('#')[0] + '#jt=' + token + '&jn=' + encodeURIComponent(u.nick), 'Set-Cookie': 'jo=; Path=/api/oauth; Max-Age=0' } });
+}
+
 export default {
   async fetch(req, env) {
     if (req.method === 'OPTIONS') return new Response(null, { headers: cors(req) });
@@ -65,9 +107,12 @@ export default {
         }
         return json(req, { token: await newSession(env, r.meta.last_row_id), nick });
       }
+      const om = p.match(/^\/api\/oauth\/(google|kakao)\/(start|callback)$/);
+      if (om && req.method === 'GET') return await oauth(req, env, url, om[1], om[2]);
+      if (p === '/api/oauth/ready') return json(req, { google: !!env.GOOGLE_ID, kakao: !!env.KAKAO_ID });
       if (p === '/api/login' && req.method === 'POST') {
         const u = await env.DB.prepare('SELECT id, nick, pw, banned FROM users WHERE email = ?').bind(clean(body.email, 120).toLowerCase()).first();
-        if (!u || !(await checkPw(String(body.password || ''), u.pw))) return err(req, '이메일 또는 비밀번호가 맞지 않아요.', 401);
+        if (!u || u.pw.startsWith('oauth$') || !(await checkPw(String(body.password || ''), u.pw))) return err(req, u && u.pw.startsWith('oauth$') ? '구글·카카오로 가입한 계정이에요. 그 버튼으로 로그인해 주세요.' : '이메일 또는 비밀번호가 맞지 않아요.', 401);
         if (u.banned) return err(req, '이용이 제한된 계정이에요.', 403);
         return json(req, { token: await newSession(env, u.id), nick: u.nick });
       }
@@ -100,7 +145,7 @@ export default {
       if (p === '/api/withdraw' && req.method === 'POST') {  // 회원 탈퇴: 계정·세션 삭제, 글은 '탈퇴한 회원'으로 숨김
         const u = await me(req, env); if (!u) return err(req, '로그인이 필요해요.', 401);
         await env.DB.batch([env.DB.prepare('UPDATE posts SET hidden = 1 WHERE user_id = ?').bind(u.id), env.DB.prepare('UPDATE comments SET hidden = 1 WHERE user_id = ?').bind(u.id),
-          env.DB.prepare('DELETE FROM sessions WHERE user_id = ?').bind(u.id), env.DB.prepare('DELETE FROM invite_codes WHERE user_id = ?').bind(u.id), env.DB.prepare('DELETE FROM user_prefs WHERE user_id = ?').bind(u.id), env.DB.prepare('DELETE FROM users WHERE id = ?').bind(u.id)]);
+          env.DB.prepare('DELETE FROM sessions WHERE user_id = ?').bind(u.id), env.DB.prepare('DELETE FROM invite_codes WHERE user_id = ?').bind(u.id), env.DB.prepare('DELETE FROM user_prefs WHERE user_id = ?').bind(u.id), env.DB.prepare('DELETE FROM oauth_links WHERE user_id = ?').bind(u.id), env.DB.prepare('DELETE FROM users WHERE id = ?').bind(u.id)]);
         return json(req, { ok: true });
       }
       // ---- 글 ----
