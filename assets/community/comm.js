@@ -248,7 +248,7 @@ ${st.t ? act : '<button class="btn2 tm-login">가입하고 합류 신청</button
     const o = st.t ? prefs().o : '', src = img.getAttribute('src') || '', m = src.match(/^\/assets\/ruri\/([a-z_]+?)(_s)?\.webp$/);
     if (!m || KEEP.test(src)) return;
     if (!img.dataset.ruri) { img.dataset.ruri = m[1]; img.dataset.rn = wearN++; }
-    const outfit = o && o !== 'smile' ? o.replace(/^o_/, '') : 'office';
+    const base = img.dataset.ruri, outfit = o && o !== 'smile' ? o.replace(/^o_/, '') : /^o_/.test(base) ? base.slice(2) : 'office';  // 로그인 옷 > 원래 자리 옷 > 오피스룩
     const ps = poseSrc(outfit, ctxPose(img, img.dataset.ruri), !!m[2], +img.dataset.rn);
     const nsrc = ps || `/assets/ruri/${o && o !== 'smile' ? o : img.dataset.ruri}${m[2] || ''}.webp`;
     if (src !== nsrc) img.setAttribute('src', nsrc);
