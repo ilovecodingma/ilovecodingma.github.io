@@ -170,6 +170,11 @@ def load():
         r = byid.get(c['id'], {})
         c['ch'] = CH.get(r.get('ch', ''), '공고 참조')
         c['th'] = 1 if os.path.exists(os.path.join(SHOTS, c['id'] + '.webp')) else 0
+        # 공모전 세션 수집 필드(있으면 우선): quick, effort, region, fee
+        c['quick'] = r.get('quick')
+        c['effort'] = P.clean(r.get('effort', ''))[:12]
+        c['region'] = P.clean(r.get('region', '') if isinstance(r.get('region'), str) else '')[:10]
+        c['fee'] = r.get('fee') or 0
     seen, events = set(), []
     for r in rows:
         k = r.get('kind', '')
@@ -192,7 +197,7 @@ def card(c):
     n, dd = dday(c['end'])
     cls = 'd off' if n < 0 else 'd u3' if n <= 3 else 'd hot' if n <= 7 else 'd'
     tg = ''.join(f'<span class="tg">{E(t)}</span>' for t in c['tags'])
-    pz = f'<span class="pz">🏆 {E(c["prize"])}</span>' if c['pv'] else ''
+    pz = (f'<span class="ez e0">{E(c["effort"])}</span>' if c.get('effort') else '') + (f'<span class="pz">🏆 {E(c["prize"])}</span>' if c['pv'] else '')
     th = f'<img class="th" src="/assets/shots/{c["id"]}.webp" width="640" height="400" alt="" loading="lazy">' if c.get('th') else ''
     return (f'<li><a class="card{" has-th" if th else ""}" data-c="{SLUG[c["tags"][0]]}" href="/c/{c["id"]}/">{th}<span class="ic">{CAT_ICON[c["tags"][0]]}</span><div class="cb"><div class="top"><h3 class="t">{E(c["title"])}</h3><span class="{cls}">{dd}</span></div>'
             f'<p class="o">{E(c["org"])} · ~{ddot(c["end"])}</p><div class="tags">{pz}{tg}</div></div></a></li>')
@@ -377,7 +382,7 @@ def build():
     for c in contests:
         detail(c, live)
     sync_shots(live)
-    keys = ('id', 'title', 'org', 'end', 'prize', 'pv', 'field', 'tags', 'th', 'elig')
+    keys = ('id', 'title', 'org', 'end', 'prize', 'pv', 'field', 'tags', 'th', 'elig', 'effort', 'region')
     with open(os.path.join(ROOT, 'data.json'), 'w', encoding='utf-8', newline='\n') as f:
         json.dump({'updated': datetime.datetime.now().strftime('%Y-%m-%d %H:%M'), 'items': [{k: c[k] for k in keys} for c in live]},
                   f, ensure_ascii=False, separators=(',', ':'))
@@ -392,11 +397,11 @@ def build():
     quick = sorted([e for e in events if EASY_RANK.get(e.get('effort') or EASY.get(e['type'], ''), 2) <= 1],
                    key=lambda e: (e['end'], EASY_RANK.get(e.get('effort') or EASY.get(e['type'], ''), 2)))
     SHORT = re.compile(r'슬로건|네이밍|명칭|표어|캐치프레이즈|아이디어|사진|한\s*줄|삼행시|사행시|디카시|짧은\s*글|문구|애칭|이름\s*짓기|BI|캐릭터\s*이름')
-    short = [c for c in live if SHORT.search(c['title'] + ' ' + (c['field'] or ''))]
+    short = [c for c in live if not c.get('fee') and (c.get('quick') is True or (c.get('quick') is None and SHORT.search(c['title'] + ' ' + (c['field'] or ''))))]
     short.sort(key=lambda c: (dday(c['end'])[0] > 14, -c['pv'], c['end']))
     LOCAL = re.compile(r'(시민|도민|군민|구민|주민|거주|재학|재직|소재|관내|출신)')
     SMALLORG = re.compile(r'(군|구|읍|면|동)(청|청장|의회)?$|문화재단|복지관|도서관|센터$')
-    hidden = sorted([c for c in live if c not in short and (LOCAL.search(c['elig'] or '') or SMALLORG.search((c['org'] or '').strip()))],
+    hidden = sorted([c for c in live if c not in short and not c.get('fee') and (c.get('region') or LOCAL.search(c['elig'] or '') or SMALLORG.search((c['org'] or '').strip()))],
                     key=lambda c: (-c['pv'], c['end']))
     cats = ''.join(f'<a class="cat" data-c="{s_}" href="/cat/{s_}/"><span class="ic">{CAT_ICON[n]}</span><b>{n}</b><span class="n">{sum(1 for c in live if n in c["tags"])}건</span></a>' for s_, n in CATS)
     home = f'''<section class="hero"><div class="hero-t"><p class="kick">{TODAY.month}월 {TODAY.day}일 업데이트</p><h1>그냥 넣으면 되는 용돈 기회,<br><em>루리</em>가 주워 왔어요</h1>
