@@ -56,3 +56,6 @@ html.cs-lock{overflow:hidden}
 .cs-list .cs-card:first-child .cs-th:after{content:"👑 1순위";position:absolute;margin:10px;top:0;left:0;background:#fbbf24;color:#1e1b4b;font-weight:900;font-size:13px;border-radius:999px;padding:4px 12px}
 .cs-list .cs-card:first-child .cs-th{position:relative}
 .cs-res .cs-head h2{font-size:20px}
+
+.cs-ap .cs-th{font-size:40px;background:linear-gradient(135deg,#dcfce7,#bfdbfe)}.cs-list .cs-card.cs-ap:first-child .cs-th{aspect-ratio:16/7}
+.cs-list .cs-card.cs-ap:first-child a{flex-direction:row;padding:12px}.cs-list .cs-card.cs-ap:first-child .cs-th{flex:0 0 96px;width:auto;aspect-ratio:auto;border-radius:12px}.cs-list .cs-card.cs-ap:first-child .cs-b{padding:0}

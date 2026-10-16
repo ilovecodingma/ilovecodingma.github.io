@@ -1,4 +1,4 @@
-// 루리의 줍줍 메인 = 루리 공모전 상담: 몇 가지 묻고, 우리 DB(/data.json)에서 유사도로 골라 추천만 보여 줌 (2026-10-17 사용자 "그냥 루리 추천해주는 거")
+// 루리의 줍줍 메인 = 루리 공모전·청약 상담: 몇 가지 묻고, 우리 DB(/data.json)에서 유사도로 골라 추천만 보여 줌 (2026-10-17 사용자 "그냥 루리 추천해주는 거")
 // 유사도 = 상담 답으로 만든 관심 문장 ↔ 공모전(제목·분야·태그·형식·자격) 글자 2-gram 코사인 + 신분·시간·중요한 것 가중
 (function () {
   const S = document.getElementById('consult'); if (!S) return;
@@ -21,6 +21,22 @@
   const HEAVY = /논문|영상|영화|해커톤|창업|기획서|제안서|시나리오|소설|웹툰|애니메이션|앱/;
   const LOCAL = /(시민|도민|구민|군민|거주|재학|재직|관내)/;
 
+
+  // 청약·지원금 상담 (2026-10-17 사용자 "청약 상담도 메인 상담기능에")
+  const AQ = [
+    { k: 'kinds', multi: true, ask: '어떤 걸 찾아요? 여러 개 골라도 돼요.', pose: 'think',
+      opts: { '🏠 아파트 분양': 'apt', '🏘️ 임대·전세임대': 'rent', '💰 지원금·보조금': 'grant', '📈 공모주': 'ipo' } },
+    { k: 'region', ask: '어느 지역이 좋아요?', pose: 'point',
+      opts: { '서울': /서울/, '경기·인천': /경기|인천|수원|성남|고양|용인|화성|부천|안산|안양|남양주|평택|시흥|파주|김포|의정부|광명|하남|오산|이천|양주|구리|군포|의왕|포천|여주|동두천|과천|가평|양평|연천/,
+              '부산·울산·경남': /부산|울산|경남|창원|김해|양산|진주|거제|통영|사천|밀양/, '대구·경북': /대구|경북|포항|구미|경산|안동|김천|영주|경주/,
+              '대전·세종·충청': /대전|세종|충북|충남|청주|천안|아산|충주|제천|논산|당진|서산/, '광주·전라': /광주|전북|전남|전주|익산|군산|여수|순천|목포|나주/,
+              '강원·제주': /강원|제주|춘천|원주|강릉|속초|서귀포/, '🌏 어디든': null } },
+    { k: 'who', ask: '어떤 상황이에요? 우선순위가 달라져요.', pose: 'think',
+      opts: { '🎓 청년·대학생': /청년|대학생|사회초년|취업준비|1인/, '💍 신혼·아이 있는 집': /신혼|신생아|출산|육아|자녀|다자녀|한부모/, '🏡 무주택 일반': /무주택|일반|국민|공공/, '🤷 상관없어요': null } },
+    { k: 'when', ask: '마지막! 언제까지 넣을 수 있는 게 좋아요?', pose: 'wink',
+      opts: { '⚡ 이번 주 안': 7, '📅 한 달 안': 31, '🗓️ 상관없어요': 9999 } },
+  ];
+  let apps = null, mode = 'contest';
   let items = null, prof = null, shown = 0, ranked = [];
   const outfit = () => { try { const t = localStorage.getItem('jupjup_tok'), o = (JSON.parse(localStorage.getItem('jupjup_prefs') || '{}').o || ''); return t && o && o !== 'smile' ? o.replace(/^o_/, '') : 'office'; } catch { return 'office'; } };
   const pose = p => (window.JUP && window.JUP.poseSrc && window.JUP.poseSrc(outfit(), p, false)) || `/assets/ruri/p/office_${p}.webp`;
@@ -40,15 +56,17 @@
   const ga = (n, p) => { try { window.gtag && gtag('event', n, p || {}); } catch {} };
 
   async function step(n, ans) {
-    if (n >= Q.length) {
+    const QS = mode === 'apply' ? AQ : Q;
+    if (mode === 'apply' && n >= QS.length) { prof = { ...ans, mode }; try { localStorage.setItem(KEY, JSON.stringify(prof)); } catch {} ga('consult_done', { mode, kinds: (ans.kinds || []).join(','), region: ans.region, who: ans.who }); opts.innerHTML = ''; recommend(); return; }
+    if (n >= QS.length) {
       await talk('좋아요! 관심 있는 주제가 있으면 하나만 더 알려 주세요. 없으면 바로 추천할게요.', 'v');
       opts.innerHTML = '<button class="cs-go">✨ 그냥 추천해 줘</button>'; free.hidden = false; free.querySelector('input').focus({ preventScroll: true });
-      const go = topic => { free.hidden = true; opts.innerHTML = ''; prof = { ...ans, topic }; try { localStorage.setItem(KEY, JSON.stringify(prof)); } catch {} ga('consult_done', { can: (ans.can || []).join(','), who: ans.who, time: ans.time, want: ans.want }); recommend(); };
+      const go = topic => { free.hidden = true; opts.innerHTML = ''; prof = { ...ans, topic, mode }; try { localStorage.setItem(KEY, JSON.stringify(prof)); } catch {} ga('consult_done', { can: (ans.can || []).join(','), who: ans.who, time: ans.time, want: ans.want }); recommend(); };
       opts.querySelector('.cs-go').onclick = () => go('');
       free.onsubmit = e => { e.preventDefault(); go(free.querySelector('input').value.trim()); };
       return;
     }
-    const q = Q[n]; await talk(q.ask, q.pose);
+    const q = QS[n]; await talk(q.ask, q.pose);
     const keys = Object.keys(q.opts), sel = new Set();
     opts.innerHTML = keys.map(k => `<button type="button">${k}</button>`).join('') + (q.multi ? '<button type="button" class="cs-next" disabled>다음 →</button>' : '');
     opts.querySelectorAll('button:not(.cs-next)').forEach((b, i) => b.onclick = () => {
@@ -62,6 +80,7 @@
   const grams = s => { const m = new Map(); s = s.toLowerCase().replace(/[^0-9a-z가-힣]/g, ''); for (let i = 0; i < s.length - 1; i++) { const g = s.slice(i, i + 2); m.set(g, (m.get(g) || 0) + 1); } return m; };
   const cos = (a, b) => { let d = 0, na = 0, nb = 0; for (const [g, v] of a) { na += v * v; if (b.has(g)) d += v * b.get(g); } for (const v of b.values()) nb += v * v; return d ? d / Math.sqrt(na * nb) : 0; };
   function recommend() {
+    if ((prof.mode || 'contest') === 'apply') return recApply();
     const want = (prof.can || []).map(k => Q[0].opts[k]).join(' ') + ' ' + (prof.topic || '');
     const qv = grams(want), whoRe = Q[1].opts[prof.who], time = Q[2].opts[prof.time], pref = Q[3].opts[prof.want];
     ranked = items.map(i => {
@@ -90,20 +109,58 @@
     opts.innerHTML = '<button type="button" class="cs-again">✨ 추천 다시 보기</button><button type="button" class="cs-redo2">🔄 다시 상담</button>';
     opts.querySelector('.cs-again').onclick = openPop; opts.querySelector('.cs-redo2').onclick = restart;
   }
+
+  async function recApply() {
+    mode = 'apply';
+    if (!apps) apps = await fetch('/apply.json').then(r => r.json()).catch(() => []);
+    const kinds = (prof.kinds || []).map(k => AQ[0].opts[k]), reg = AQ[1].opts[prof.region], who = AQ[2].opts[prof.who], within = AQ[3].opts[prof.when] || 9999;
+    ranked = apps.map(i => {
+      const hay = i.title + ' ' + i.org, l = left(i.end), why = [];
+      if (kinds.length && !kinds.includes(i.kk)) return null;
+      if (l < 0 || l > within) return null;
+      let s = 1;
+      if (reg) { if (reg.test(hay)) { s += 2; why.push(prof.region + ' 지역'); } else if (/전국|국민|LH|한국주택|HUG|주택도시/.test(hay) || i.kk === 'grant' || i.kk === 'ipo') s += 0.3; else s -= 1.5; }
+      if (who) { if (who.test(hay)) { s += 1.2; why.push(prof.who.replace(/^\S+\s/, '') + ' 대상'); } }
+      s += l <= 3 ? 0.6 : l <= 7 ? 0.4 : l <= 31 ? 0.2 : 0; if (l <= 7) why.push(l ? `D-${l}` : '오늘 마감');
+      why.unshift({ apt: '아파트 분양', rent: '임대·전세임대', grant: '지원금', ipo: '공모주' }[i.kk] || i.kind);
+      return { i, s, why, l, a: 1 };
+    }).filter(Boolean).sort((a, b) => b.s - a.s || a.l - b.l);
+    const top = ranked[0] ? ranked[0].s : 1;
+    ranked.forEach(x => x.pct = Math.max(41, Math.min(98, Math.round(58 + 40 * x.s / top))));
+    shown = 0; list.innerHTML = ''; more(); openPop();
+    const n = ranked.length, hot = ranked.slice(0, 5).some(x => x.l <= 3);
+    res.querySelector('.cs-head h2').textContent = '이 청약이나 넣어 볼까?';
+    res.querySelector('.cs-sum').textContent = `청약·신청 ${apps.length}건 중 ${n}건이 맞았어요`;
+    const line = !n ? '음… 지금 조건엔 열려 있는 게 없어요. 지역이나 기간을 넓혀 볼까요?' : hot ? '이거 봐요! <b>곧 마감</b>인 게 있어요. 서류 미리 챙겨요!' : `<b>${esc(ranked[0].i.title)}</b> 이거 넣어 볼래요? 제일 잘 맞아요!`;
+    res.querySelector('.cs-psay').innerHTML = line; res.querySelector('.cs-pr').src = pose(!n ? 'awkward' : hot ? 'surprise' : 'v');
+    talk(line, !n ? 'awkward' : hot ? 'surprise' : 'v');
+    opts.innerHTML = '<button type="button" class="cs-again">✨ 추천 다시 보기</button><button type="button" class="cs-redo2">🔄 다시 상담</button>';
+    opts.querySelector('.cs-again').onclick = openPop; opts.querySelector('.cs-redo2').onclick = restart;
+  }
   function openPop() { res.hidden = false; document.documentElement.classList.add('cs-lock'); res.scrollTop = 0; ga('consult_popup', {}); }
   function closePop() { res.hidden = true; document.documentElement.classList.remove('cs-lock'); }
   res.addEventListener('click', e => { if (e.target === res || e.target.closest('.cs-x')) closePop(); });
   addEventListener('keydown', e => { if (e.key === 'Escape' && !res.hidden) closePop(); });
   function more() {
     const part = ranked.slice(shown, shown + 5); shown += part.length;
-    list.insertAdjacentHTML('beforeend', part.map(({ i, why, l, pct }, k) => `<li class="cs-card" style="--d:${k * 70}ms"><a href="/c/${i.id}/">
+    list.insertAdjacentHTML('beforeend', part.map(({ i, why, l, pct, a }, k) => a ? `<li class="cs-card cs-ap" style="--d:${k * 70}ms"><a href="/a/${esc(i.id)}/"><span class="cs-th"><em>${({ apt: '🏠', rent: '🏘️', grant: '💰', ipo: '📈' })[i.kk] || '📝'}</em></span><span class="cs-b"><span class="cs-match"><i style="width:${pct}%"></i><b>일치도 ${pct}%</b></span><strong>${esc(i.title)}</strong><span class="cs-why">💬 ${esc(why.slice(0, 3).join(' · '))}</span><span class="cs-meta"><em class="${l <= 3 ? 'hot' : ''}">${l ? 'D-' + l : 'D-DAY'}</em>${esc(i.org || '')} · ~${esc(i.end.slice(5).replace('-', '/'))}</span></span></a></li>` : `<li class="cs-card" style="--d:${k * 70}ms"><a href="/c/${i.id}/">
 <span class="cs-th">${i.th ? `<img src="/assets/shots/${i.id}.webp" alt="" loading="lazy">` : '<em>🏆</em>'}</span>
 <span class="cs-b"><span class="cs-match"><i style="width:${pct}%"></i><b>일치도 ${pct}%</b></span><strong>${esc(i.title)}</strong>
 <span class="cs-why">💬 ${esc(why.slice(0, 3).join(' · '))}</span>
 <span class="cs-meta"><em class="${l <= 3 ? 'hot' : ''}">${l ? 'D-' + l : 'D-DAY'}</em>${i.pv ? esc(i.prize.split('·')[0]) : ''} · ${esc(i.org || '')}</span></span></a></li>`).join(''));
     S.querySelector('.cs-more').hidden = shown >= ranked.length;
   }
-  function restart() { try { localStorage.removeItem(KEY); } catch {} closePop(); free.hidden = true; S.scrollIntoView({ behavior: 'smooth' }); step(0, {}); }
+  function choose() {
+    talk('뭐 상담해 줄까요? <b>공모전</b>이든 <b>청약·지원금</b>이든 딱 맞는 걸 골라 줄게요!', 'wave').then(() => {
+      opts.innerHTML = '<button type="button" data-m="contest">🏆 공모전 추천받기</button><button type="button" data-m="apply">🏠 청약·지원금 상담</button>';
+      opts.querySelectorAll('[data-m]').forEach(b => b.onclick = () => { mode = b.dataset.m; ga('consult_mode', { mode });
+        S.querySelector('.cs-title').innerHTML = mode === 'apply' ? '이 청약이나<br><em>넣어 볼까?</em>' : '이 공모전이나<br><em>해 볼까?</em>';
+        S.querySelector('.cs-name').textContent = mode === 'apply' ? '루리 · 청약 상담' : '루리 · 공모전 상담';
+        res.querySelector('.cs-head h2').textContent = mode === 'apply' ? '이 청약이나 넣어 볼까?' : '이 공모전이나 해 볼까?';
+        step(0, {}); });
+    });
+  }
+  function restart() { try { localStorage.removeItem(KEY); } catch {} closePop(); mode = 'contest'; free.hidden = true; S.scrollIntoView({ behavior: 'smooth' }); choose(); return; free.hidden = true; S.scrollIntoView({ behavior: 'smooth' }); step(0, {}); }
   S.querySelector('.cs-more').onclick = () => { more(); ga('consult_more', {}); };
   S.querySelector('.cs-redo').onclick = restart;
   fetch('/data.json').then(r => r.json()).then(d => {
@@ -112,7 +169,7 @@
     if (dd.length) { S.querySelector('.cs-dday').hidden = false;
       S.querySelector('.cs-strip').innerHTML = dd.map(({ i, l }) => `<a class="cs-dc" href="/c/${i.id}/"><span class="cs-dth">${i.th ? `<img src="/assets/shots/${i.id}.webp" alt="" loading="lazy">` : '<em>⏰</em>'}<b class="${l <= 1 ? 'hot' : ''}">${l ? 'D-' + l : 'D-DAY'}</b></span><strong>${esc(i.title)}</strong><small>${i.pv ? esc(i.prize.split('·')[0]) : esc(i.org || '')}</small></a>`).join(''); }
     try { prof = JSON.parse(localStorage.getItem(KEY) || 'null'); } catch { prof = null; }
-    if (prof) { talk('또 왔네! 오늘은 <b>이거나 해 볼까?</b> 지난번 얘기한 거 기준으로 새로 골라 왔어요.', 'wave').then(recommend); }
-    else talk('심심한데 <b>공모전이나 하나 해 볼까?</b> 뭐가 맞을지 내가 골라 줄게! 몇 개만 물어볼게요.', 'wave').then(() => setTimeout(() => step(0, {}), 500));
+    if (prof) { mode = prof.mode || 'contest'; if (mode === 'apply') { S.querySelector('.cs-title').innerHTML = '이 청약이나<br><em>넣어 볼까?</em>'; S.querySelector('.cs-name').textContent = '루리 · 청약 상담'; } talk('또 왔네! 오늘은 <b>이거나 해 볼까?</b> 지난번 얘기한 거 기준으로 새로 골라 왔어요.', 'wave').then(recommend); }
+    else choose();
   });
 })();
