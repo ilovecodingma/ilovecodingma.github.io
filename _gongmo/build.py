@@ -56,7 +56,7 @@ EV_KIND = {'event': '이벤트', 'sweepstakes': '추첨 경품', 'quiz': '퀴즈
            'sns_tag_required': '친구 태그', 'sns_story_required': '스토리 공유', 'sns_capture': '캡처 인증', 'sns_form_only': '폼 응모',
            'sns_comment+form': '댓글+폼', 'sns_purchase': '구매 인증', 'sns_region': '지역 한정', 'sns_other': 'SNS 이벤트'}
 
-COMM_TAGS_TPL = '<link rel="stylesheet" href="/assets/community/comm.css?v=6"><script defer src="/assets/community/comm.js?v=4"></script>'
+COMM_TAGS_TPL = '<link rel="stylesheet" href="/assets/community/comm.css?v=6"><script defer src="/assets/community/comm.js?v=5"></script>'
 GTAG = ('<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4248498719773262" crossorigin="anonymous"></script>\n'
         '<script async src="https://www.googletagmanager.com/gtag/js?id=G-G9BPFF95GY"></script>\n'
         "<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-G9BPFF95GY');</script>")
@@ -595,7 +595,7 @@ def community(live=()):
 <div class="cm-tabs"><button data-k="team">💘 전체 파티 목록</button><button data-k="board">💬 후기·질문</button></div>
 <section id="cm-teams" data-all data-tab="team"></section>
 <section id="cm-board" data-all data-tab="board" hidden></section>
-<script defer src="/assets/community/vn.js?v=3"></script>''', [('루리의 줍줍', '/'), ('커뮤니티', '/community/')])
+<script defer src="/assets/community/vn.js?v=4"></script>''', [('루리의 줍줍', '/'), ('커뮤니티', '/community/')])
 
 
 def statics(nl, ne):

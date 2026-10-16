@@ -5,8 +5,8 @@
   const esc = J.esc, $ = s => S.querySelector(s);
   // 꾸미기 카탈로그: [필요 점수, 값, 이름]
   const CAT = {
-    o: ['👗 의상', [[0, 'smile', '교복'], [1, 'o_cardigan', '카디건'], [3, 'o_vest', '니트 베스트'], [6, 'o_suit', '정장'], [10, 'o_trench', '트렌치코트'], [15, 'o_gray', '그레이 셋업'], [25, 'o_anchor', '앵커룩'], [40, 'o_present', '발표 정장']]],
-    b: ['🌆 배경', [[0, 'dusk', '노을 교실'], [2, 'night', '밤 옥상'], [4, 'sakura', '벚꽃길'], [8, 'fest', '축제 불꽃'], [12, 'sea', '여름 바다'], [20, 'star', '별빛 천문대']]],
+    o: ['👗 의상', [[0, 'smile', '오피스룩'], [0, 'o_cardigan', '카디건'], [0, 'o_vest', '니트 베스트'], [0, 'o_suit', '정장'], [0, 'o_trench', '트렌치코트'], [0, 'o_gray', '그레이 셋업'], [0, 'o_anchor', '앵커룩'], [0, 'o_present', '발표 정장'], [1, 'o_summer', '여름 오피스룩'], [3, 'o_resort', '리조트 원피스'], [6, 'o_beach', '비치 커버업'], [10, 'o_swim', '수영복']]],  // 로그인하면 오피스 8벌 기본 제공, 초대 점수로 여름 단계
+    b: ['🌆 배경', [[0, 'dusk', '노을 하늘'], [2, 'night', '밤 옥상'], [4, 'sakura', '벚꽃길'], [8, 'fest', '축제 불꽃'], [12, 'sea', '여름 바다'], [20, 'star', '별빛 천문대']]],
     x: ['💬 대사창', [[0, 'basic', '기본'], [3, 'mint', '민트'], [7, 'gold', '골드'], [14, 'dark', '다크'], [30, 'rainbow', '무지개']]],
     f: ['✨ 효과', [[0, 'petal', '벚꽃잎'], [5, 'heart', '하트'], [9, 'star', '반짝이'], [18, 'snow', '눈송이'], [0, 'none', '끄기']]],
   };
@@ -32,11 +32,11 @@
     face('outfit');
   }
   function save(k, v) {
-    P[k] = v; try { localStorage.setItem('jupjup_prefs', JSON.stringify(P)); } catch {}
+    P[k] = v; try { localStorage.setItem('jupjup_prefs', JSON.stringify(P)); } catch {} if (k === 'o' && J.wearAll) J.wearAll();
     if (J.st.t) J.api('/api/prefs', { method: 'POST', body: { data: P } }).catch(() => {});
     apply();
   }
-  const face = e => { const o = P.o && P.o !== 'smile' ? P.o : ''; const f = o && (e === 'smile' || e === 'outfit') ? o : (EXP[e] ? e : 'smile'); const src = `/assets/ruri/${f}.webp`; if (!img.src.endsWith(src)) { img.classList.remove('pop'); void img.offsetWidth; img.classList.add('pop'); img.src = src; } };
+  const face = e => { const o = J.st.t && P.o && P.o !== 'smile' ? P.o : ''; const f = o || (EXP[e] ? e : 'smile'); const src = `/assets/ruri/${f}.webp`; if (!img.src.endsWith(src)) { img.classList.remove('pop'); void img.offsetWidth; img.classList.add('pop'); img.src = src; } };
 
   // ---- 대사 엔진: say([[표정, 대사], ...]) → Promise ----
   function say(lines) {
@@ -66,10 +66,10 @@
   async function intro() {
     const first = (() => { try { return !localStorage.getItem('jupjup_vn'); } catch { return true; } })();
     try { localStorage.setItem('jupjup_vn', 1); } catch {}
-    if (first) await say([['excited', '앗, 왔구나! 나 루리야. 이 학교… 아니, 이 사이트의 정보통이지!'],
+    if (first) await say([['excited', '앗, 왔구나! 나 루리야. 공모전 정보라면 내가 제일 빠삭하지!'],
       ['wink', '여기 공모전들은 전부 <b>공략 대상 히로인</b>이야. 상금이라는 보상도 있고, 마감이라는 고백 기한도 있어.'],
       ['think', '근데 솔직히 히로인 혼자 공략하는 건 어렵잖아? 그래서 같이 공략할 <b>파티</b>를 짜는 거야!'],
-      ['thumbsup', '아, 그리고 친구를 초대해 오면… 내가 옷도 갈아입고 이것저것 꾸며 줄게!']]);
+      ['thumbsup', '아, 그리고 친구를 초대해 오면… 내가 옷을 하나씩 갈아입을게. 끝까지 모으면 바다 갈 준비도 해 둘게!']]);
     else await say([['smile', `또 왔네, ${you()}! 오늘은 누구를 공략해 볼까?`]]);
     menu();
   }
@@ -137,7 +137,7 @@
 
   // 꾸미기
   async function dress(tab = 'o') {
-    if (!J.st.t) return needLogin('꾸미기는 가입한 친구만 할 수 있어. 친구를 초대할수록 의상·배경·효과가 하나씩 열려!');
+    if (!J.st.t) return needLogin('로그인하면 오피스룩 8벌은 바로 줄게! 친구를 초대할수록 여름옷이 하나씩 열리고, 끝까지 모으면 수영복까지 입어 볼게.');
     if (!me) await getMe(); if (!me) return menu();
     const p = pts(), all = Object.values(CAT).flatMap(([, l]) => l).concat([[CALL_AT]]), nextNeed = all.map(x => x[0]).filter(n => n > p).sort((a, b) => a - b)[0];
     const tabs = Object.entries(CAT).map(([k, [n]]) => `<button data-t="${k}" class="${tab === k ? 'on' : ''}">${n}</button>`).join('') + `<button data-t="c" class="${tab === 'c' ? 'on' : ''}">🏷 호칭</button><button data-t="log" class="${tab === 'log' ? 'on' : ''}">📒 초대 기록</button>`;

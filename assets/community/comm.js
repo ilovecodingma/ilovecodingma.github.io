@@ -29,7 +29,7 @@
     const em = m.querySelector('.cm-em'), pw = m.querySelector('.cm-pw'), er = m.querySelector('.cm-err');
     const go = async path => {
       er.textContent = '';
-      try { const j = await api(path, { method: 'POST', body: { email: em.value, password: pw.value, ref: (() => { try { return localStorage.getItem('jupjup_ref') || ''; } catch { return ''; } })(), h: (() => { try { return localStorage.getItem('jupjup_ref_h') || ''; } catch { return ''; } })() } }); st.set(j.token, j.nick); m.remove(); onDone && onDone(); paintBar(); }
+      try { const j = await api(path, { method: 'POST', body: { email: em.value, password: pw.value, ref: (() => { try { return localStorage.getItem('jupjup_ref') || ''; } catch { return ''; } })(), h: (() => { try { return localStorage.getItem('jupjup_ref_h') || ''; } catch { return ''; } })() } }); st.set(j.token, j.nick); try { localStorage.removeItem('jupjup_prefs_t'); } catch {} syncPrefs(); m.remove(); onDone && onDone(); paintBar(); }
       catch (e) { er.textContent = e.message; }
     };
     m.querySelector('.cm-login').onclick = () => go('/api/login');
@@ -46,7 +46,7 @@
     b.innerHTML = st.t ? `<span>${esc(st.n)}</span><button class="cm-out">로그아웃</button>` : '<button class="cm-in">로그인</button>';
     const i = b.querySelector('.cm-in'), o = b.querySelector('.cm-out');
     if (i) i.onclick = () => authModal(() => location.reload());
-    if (o) o.onclick = async () => { await api('/api/logout', { method: 'POST' }).catch(() => {}); st.set(''); location.reload(); };
+    if (o) o.onclick = async () => { await api('/api/logout', { method: 'POST' }).catch(() => {}); st.set(''); try { localStorage.removeItem('jupjup_prefs'); localStorage.removeItem('jupjup_prefs_t'); } catch {} location.reload(); };
   }
 
   // ---- 게시판 (공모전 상세 #cm-board[data-contest], 전체 /community/ #cm-board[data-all]) ----
@@ -228,9 +228,32 @@ ${st.t ? act : '<button class="btn2 tm-login">가입하고 합류 신청</button
     const h = location.hash.match(/^#team-(\d+)$/); if (h) teamModal(+h[1]);
   }
 
+  // ---- 로그인한 사람이 고른 루리 옷으로 사이트 전체 루리 일괄 갈아입히기 ----
+  const KEEP = /\/assets\/ruri\/(avatar|profile|og)\b/;
+  const prefs = () => { try { return JSON.parse(localStorage.getItem('jupjup_prefs') || '{}'); } catch { return {}; } };
+  function wearOne(img) {
+    if (img.closest('#vn')) return;
+    const o = st.t ? prefs().o : '', src = img.getAttribute('src') || '', m = src.match(/^\/assets\/ruri\/([a-z_]+?)(_s)?\.webp$/);
+    if (!m || KEEP.test(src)) return;
+    if (!img.dataset.ruri) img.dataset.ruri = m[1];
+    const want = o && o !== 'smile' ? o : img.dataset.ruri, nsrc = `/assets/ruri/${want}${m[2] || ''}.webp`;
+    if (src !== nsrc) img.setAttribute('src', nsrc);
+  }
+  function wearAll() { document.querySelectorAll('img[src^="/assets/ruri/"]').forEach(wearOne); }
+  async function syncPrefs() {  // 다른 기기에서 고른 옷도 따라오게: 로그인 상태면 하루 한 번 서버 값 가져오기
+    if (!st.t) return;
+    let last = 0; try { last = +localStorage.getItem('jupjup_prefs_t') || 0; } catch {}
+    if (Date.now() - last < 864e5 && localStorage.getItem('jupjup_prefs')) return;
+    const me = await api('/api/me').catch(() => null); if (!me) return;
+    try { localStorage.setItem('jupjup_prefs', JSON.stringify(me.prefs || {})); localStorage.setItem('jupjup_prefs_t', Date.now()); } catch {}
+    wearAll();
+  }
+  new MutationObserver(ms => ms.forEach(m => { if (m.type === 'attributes') wearOne(m.target); else m.addedNodes.forEach(n => { if (n.nodeType === 1) { if (n.tagName === 'IMG') wearOne(n); else n.querySelectorAll && n.querySelectorAll('img[src^="/assets/ruri/"]').forEach(wearOne); } }); }))
+    .observe(document.body, { subtree: true, childList: true, attributes: true, attributeFilter: ['src'] });
+  wearAll(); syncPrefs();
   paintBar();
   document.querySelectorAll('#cm-teams').forEach(teams);
   document.querySelectorAll('#cm-board').forEach(board);
   tabs();
-  window.JUP = { api, st, esc, ago, authModal, teamModal, createTeam, teams };
+  window.JUP = { api, st, esc, ago, authModal, teamModal, createTeam, teams, wearAll };
 })();
