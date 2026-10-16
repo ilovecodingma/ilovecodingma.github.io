@@ -2,6 +2,7 @@
 // 가입은 이메일+비밀번호만. 표시 이름은 가린 이메일.
 (function () {
   const API = document.body.dataset.api; if (!API) return;
+  const ga = (n, p) => { try { window.gtag && gtag('event', n, p || {}); } catch {} };  // GA4 맞춤 이벤트
   try { const rf = new URLSearchParams(location.search).get('ref'); if (rf && /^[0-9a-f]{8}$/.test(rf)) { const h = new URLSearchParams(location.search).get('h') || (location.pathname.match(/^\/c\/([^/]+)\//) || [])[1] || ''; localStorage.setItem('jupjup_ref', rf); localStorage.setItem('jupjup_ref_h', h); fetch(API + '/api/ref', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ ref: rf, h }) }).catch(() => {}); } } catch {}
   const KEY = 'jupjup_tok', NK = 'jupjup_nick';
   const st = { get t() { try { return localStorage.getItem(KEY) || ''; } catch { return ''; } }, get n() { try { return localStorage.getItem(NK) || ''; } catch { return ''; } },
@@ -29,7 +30,7 @@
     const em = m.querySelector('.cm-em'), pw = m.querySelector('.cm-pw'), er = m.querySelector('.cm-err');
     const go = async path => {
       er.textContent = '';
-      try { const j = await api(path, { method: 'POST', body: { email: em.value, password: pw.value, ref: (() => { try { return localStorage.getItem('jupjup_ref') || ''; } catch { return ''; } })(), h: (() => { try { return localStorage.getItem('jupjup_ref_h') || ''; } catch { return ''; } })() } }); st.set(j.token, j.nick); try { localStorage.removeItem('jupjup_prefs_t'); } catch {} syncPrefs(); m.remove(); onDone && onDone(); paintBar(); }
+      try { const j = await api(path, { method: 'POST', body: { email: em.value, password: pw.value, ref: (() => { try { return localStorage.getItem('jupjup_ref') || ''; } catch { return ''; } })(), h: (() => { try { return localStorage.getItem('jupjup_ref_h') || ''; } catch { return ''; } })() } }); st.set(j.token, j.nick); ga(path === '/api/signup' ? 'sign_up' : 'login', { method: 'email' }); try { localStorage.removeItem('jupjup_prefs_t'); } catch {} syncPrefs(); m.remove(); onDone && onDone(); paintBar(); }
       catch (e) { er.textContent = e.message; }
     };
     m.querySelector('.cm-login').onclick = () => go('/api/login');
@@ -135,7 +136,7 @@
       try {
         const { id } = await api('/api/teams', { method: 'POST', body: { contest_id: c_id, contest_title: c_t, name: q('.tm-nm').value, intro: q('.tm-in').value,
           roles: q('.tm-rl').value, size: +q('.tm-sz').value, deadline: q('.tm-dl').value, contact: q('.tm-ct').value } });
-        m.remove(); onDone && onDone(id); teamModal(id, onDone && (() => onDone()));
+        ga('party_create', { contest_id: c_id }); m.remove(); onDone && onDone(id); teamModal(id, onDone && (() => onDone()));
       } catch (e) { q('.cm-err').textContent = e.message; }
     };
   }
@@ -202,13 +203,13 @@ ${st.t ? act : '<button class="btn2 tm-login">가입하고 합류 신청</button
 <div class="cm-acts"><button class="tm-share">링크 복사</button>${st.t && !me_.leader ? '<button class="tm-rp">신고</button>' : ''}</div>`;
       const q = s => body.querySelector(s);
       body.querySelectorAll('[data-ok],[data-no]').forEach(b => b.onclick = async () => {
-        try { await api(`/api/teams/${id}/decide`, { method: 'POST', body: { uid: +(b.dataset.ok || b.dataset.no), accept: !!b.dataset.ok } }); draw(); } catch (e) { b.textContent = e.message; }
+        try { await api(`/api/teams/${id}/decide`, { method: 'POST', body: { uid: +(b.dataset.ok || b.dataset.no), accept: !!b.dataset.ok } }); ga('party_decide', { accept: !!b.dataset.ok }); draw(); } catch (e) { b.textContent = e.message; }
       });
       if (q('.tm-tg')) q('.tm-tg').onclick = async () => { await api(`/api/teams/${id}/${t.status === 'open' ? 'close' : 'open'}`, { method: 'POST' }); draw(); };
       if (q('.tm-del')) q('.tm-del').onclick = async e => { if (confirmLite(e.currentTarget)) { await api('/api/teams/' + id, { method: 'DELETE' }); close(); } };
       if (q('.tm-lv')) q('.tm-lv').onclick = async e => { if (confirmLite(e.currentTarget)) { await api(`/api/teams/${id}/leave`, { method: 'POST' }); draw(); } };
       if (q('.tm-ap')) q('.tm-ap').onclick = async () => {
-        try { await api(`/api/teams/${id}/apply`, { method: 'POST', body: { role: q('.tm-ar').value, msg: q('.tm-am').value } }); draw(); }
+        try { await api(`/api/teams/${id}/apply`, { method: 'POST', body: { role: q('.tm-ar').value, msg: q('.tm-am').value } }); ga('party_apply', { team_id: id }); draw(); }
         catch (e) { q('.cm-err').textContent = e.message; }
       };
       if (q('.tm-login')) q('.tm-login').onclick = () => authModal(draw);
@@ -255,5 +256,5 @@ ${st.t ? act : '<button class="btn2 tm-login">가입하고 합류 신청</button
   document.querySelectorAll('#cm-teams').forEach(teams);
   document.querySelectorAll('#cm-board').forEach(board);
   tabs();
-  window.JUP = { api, st, esc, ago, authModal, teamModal, createTeam, teams, wearAll };
+  window.JUP = { api, st, esc, ago, authModal, teamModal, createTeam, teams, wearAll, ga };
 })();

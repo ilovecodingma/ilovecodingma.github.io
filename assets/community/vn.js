@@ -94,6 +94,7 @@
 <span class="vn-st">난이도 <i>${stars(c)}</i></span><span class="vn-heart">${k ? `💘 파티 ${k}` : '파티 모집 전'}</span></button>`;
   }
   async function heroine(c) {
+    J.ga('heroine_view', { contest_id: c.id });
     const n = dday(c.e), k = tcount.get(c.id) || 0;
     await say([['surprise', `오, <b>${esc(c.t)}</b>! ${you()}, 눈이 높네?`],
       ['think', `보상은 <b>${esc(c.p || '비공개')}</b>, 고백 마감까지 <b>${n === null ? '?' : n <= 0 ? '오늘까지' : 'D-' + n}</b>. 취향은 <b>${esc(c.g || '다양')}</b> 쪽이야.`],
@@ -131,8 +132,9 @@
 <a class="mail" href="mailto:?subject=${encodeURIComponent(title)}&body=${encodeURIComponent(title + ' 같이 파티 짜자! ' + link)}">✉ 메일</a><button class="kakao">💬 카톡 · 공유</button><button class="copy">🔗 복사</button></div></div>`,
       `친구가 많이 올수록 나도 예쁘게 꾸밀 수 있어! 지금 <b>${pts()}점</b>이야.`, 'wink');
     const cp = e => (navigator.clipboard ? navigator.clipboard.writeText(link) : Promise.reject()).then(() => e.target.textContent = '복사됐어!', () => panel.querySelector('.vn-inv input').select());
-    panel.querySelector('.copy').onclick = cp;
-    panel.querySelector('.kakao').onclick = e => navigator.share ? navigator.share({ title: '루리의 줍줍', text: title, url: link }).catch(() => {}) : cp(e);
+    panel.querySelector('.copy').onclick = e => { J.ga('invite_share', { method: 'copy', contest_id: c ? c.id : '' }); cp(e); };
+    panel.querySelector('.kakao').onclick = e => { J.ga('invite_share', { method: 'share', contest_id: c ? c.id : '' }); navigator.share ? navigator.share({ title: '루리의 줍줍', text: title, url: link }).catch(() => {}) : cp(e); };
+    panel.querySelector('.naver').onclick = () => J.ga('invite_share', { method: 'naver', contest_id: c ? c.id : '' }); panel.querySelector('.mail').onclick = () => J.ga('invite_share', { method: 'mail', contest_id: c ? c.id : '' });
   }
 
   // 꾸미기
@@ -156,7 +158,7 @@
 <div class="vn-tabs">${tabs}</div>${body}<div class="vn-share" style="margin-top:12px"><button class="vn-inv-go">💌 친구 초대하고 점수 모으기</button></div>`,
       nextNeed ? `<b>${nextNeed - p}점</b>만 더 모으면 새로운 게 열려! 초대해 줄 거지?` : '전부 다 열었어! 고마워, 진짜 최고야 💕', p ? 'excited' : 'wink');
     panel.querySelectorAll('[data-t]').forEach(b => b.onclick = () => dress(b.dataset.t));
-    panel.querySelectorAll('.vn-cloth:not(.lock)').forEach(b => b.onclick = () => { save(tab, b.dataset.v); dress(tab); });
+    panel.querySelectorAll('.vn-cloth:not(.lock)').forEach(b => b.onclick = () => { save(tab, b.dataset.v); J.ga('ruri_custom', { item: tab + ':' + b.dataset.v }); dress(tab); });
     const cs_ = panel.querySelector('.vn-callsave'); if (cs_) cs_.onclick = () => { save('c', panel.querySelector('.vn-call').value.trim()); say([['excited', `좋아, 앞으로 <b>${you()}</b>(이)라고 부를게!`]]).then(() => dress('c')); };
     panel.querySelector('.vn-inv-go').onclick = () => invite(null);
   }

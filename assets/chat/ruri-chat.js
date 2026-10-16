@@ -48,6 +48,7 @@ const el = (t, c, h) => { const e = document.createElement(t); if (c) e.classNam
 const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const today = (() => { const n = new Date(); return Math.round(Date.UTC(n.getFullYear(), n.getMonth(), n.getDate()) / 864e5); })();
 const dn = s => { const p = s.split('-'); return Math.round(Date.UTC(+p[0], p[1] - 1, +p[2]) / 864e5); };
+const ga = (n, p) => { try { window.gtag && gtag('event', n, p || {}); } catch {} };  // GA4 맞춤 이벤트
 const pref = { get() { try { return JSON.parse(localStorage.getItem(PKEY)) || null; } catch { return null; } },
                set(v) { try { localStorage.setItem(PKEY, JSON.stringify(v)); } catch {} } };
 
@@ -161,7 +162,7 @@ function ui() {
   const add = (who, html) => { const b = el('div', 'rc-m ' + who, html); log.appendChild(b); scroll(); return b; };
   const byId = id => items.find(i => i.id === id);
   // 답 아래 빠른 버튼: chips([[라벨, 함수], ...])
-  const chips = (b, list) => { const w = el('div', 'rc-chips'); list.forEach(([t, f]) => { const x = el('button', '', t); x.type = 'button'; x.onclick = () => { w.remove(); f(); }; w.appendChild(x); }); b.appendChild(w); scroll(); return w; };
+  const chips = (b, list) => { const w = el('div', 'rc-chips'); list.forEach(([t, f]) => { const x = el('button', '', t); x.type = 'button'; x.onclick = () => { ga('chat_menu', { label: t.replace(/[^\p{L}\p{N} ]/gu, '').trim().slice(0, 30) }); w.remove(); f(); }; w.appendChild(x); }); b.appendChild(w); scroll(); return w; };
   const say = (html, next, list) => { const b = add('bot', html + (list && list.length ? cards(list) : '')); talk(html.replace(/<[^>]+>/g, '') + (list ? ' ' + list.slice(0, 3).map(x => (x.i || x).title).join(', ') : '')); if (next) chips(b, next); return b; };
   const me = t => add('me', esc(t));
   const C = list => list.map(i => ({ k: 'c', i }));
@@ -210,8 +211,8 @@ function ui() {
   // 카드의 찜·캘린더 버튼 (이벤트 위임)
   log.addEventListener('click', e => {
     const f = e.target.closest('[data-fav]'), c = e.target.closest('[data-cal]');
-    if (f) { const i = byId(f.dataset.fav); if (!i) return; const on = fav.toggle(i); log.querySelectorAll(`[data-fav="${i.id}"]`).forEach(x => { x.classList.toggle('on', on); x.textContent = on ? '★' : '☆'; }); badge(); }
-    if (c) { const i = byId(c.dataset.cal); if (i) ics(i); }
+    if (f) { const i = byId(f.dataset.fav); if (!i) return; const on = fav.toggle(i); if (on) ga('fav_add', { contest_id: i.id }); log.querySelectorAll(`[data-fav="${i.id}"]`).forEach(x => { x.classList.toggle('on', on); x.textContent = on ? '★' : '☆'; }); badge(); }
+    if (c) { const i = byId(c.dataset.cal); if (i) { ics(i); ga('calendar_add', { contest_id: i.id }); } }
   });
   const urgent = () => fav.get().map(x => ({ ...x, left: dn(x.end) - today })).filter(x => x.left >= 0 && x.left <= 3).sort((a, b) => a.left - b.left);
   const badge = () => { $('.rc-fab', root).classList.toggle('alert', !!urgent().length); };
@@ -245,12 +246,13 @@ function ui() {
   }
   const send = async () => {
     const q = input.value.trim(); if (!q) return; input.value = '';
-    add('me', esc(q)); await load();
+    add('me', esc(q)); ga('chat_ask', { q: q.slice(0, 40) }); await load();
     const a = answer(q);
     if (a.html) { const b = add('bot', a.html); talk(a.say); chips(b, [['🎯 취향으로 추천', picker], ['❓ 자주 묻는 질문', faq], ...back()]); }
     if (a.pick) picker();
   };
   const open = async () => {
+    ga('chat_open', { page: location.pathname });
     await load();
     const u = urgent();
     if (u.length) say(`앗, 찜한 공모전 마감이 다가와요! ${u.map(x => `<b>${esc(x.title)}</b> ${dd(x.left)}`).join(', ')}`);

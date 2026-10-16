@@ -56,10 +56,10 @@ EV_KIND = {'event': '이벤트', 'sweepstakes': '추첨 경품', 'quiz': '퀴즈
            'sns_tag_required': '친구 태그', 'sns_story_required': '스토리 공유', 'sns_capture': '캡처 인증', 'sns_form_only': '폼 응모',
            'sns_comment+form': '댓글+폼', 'sns_purchase': '구매 인증', 'sns_region': '지역 한정', 'sns_other': 'SNS 이벤트'}
 
-COMM_TAGS_TPL = '<link rel="stylesheet" href="/assets/community/comm.css?v=6"><script defer src="/assets/community/comm.js?v=5"></script>'
+COMM_TAGS_TPL = '<link rel="stylesheet" href="/assets/community/comm.css?v=6"><script defer src="/assets/community/comm.js?v=6"></script>'
 GTAG = ('<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4248498719773262" crossorigin="anonymous"></script>\n'
         '<script async src="https://www.googletagmanager.com/gtag/js?id=G-G9BPFF95GY"></script>\n'
-        "<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-G9BPFF95GY');</script>")
+        "<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());if(location.hostname!=='sungprofile.cloud')window['ga-disable-G-G9BPFF95GY']=true;gtag('config','G-G9BPFF95GY');</script>")
 NAV = [('apply', '청약·신청'), ('ssul', '썰'), ('event', '경품·용돈'), ('cat/literature', '문학'), ('cat/idea', '아이디어'), ('cat/design', '디자인'),
        ('cat/video', '영상'), ('cat/it', 'IT'), ('cat/global', '해외'), ('guide', '가이드')]
 
@@ -88,7 +88,7 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False):
 <meta name="theme-color" content="#5b21b6">
 <link rel="icon" href="/favicon.ico?v=5" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png?v=5"><link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png?v=5"><link rel="manifest" href="/site.webmanifest">
 <link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="/assets/gm.css?v=4"><link rel="stylesheet" href="/assets/chat/ruri-chat.css?v=5">{COMM_TAGS}<script type="module" src="/assets/chat/ruri-chat.js?v=7"></script>
+<link rel="stylesheet" href="/assets/gm.css?v=4"><link rel="stylesheet" href="/assets/chat/ruri-chat.css?v=5">{COMM_TAGS}<script type="module" src="/assets/chat/ruri-chat.js?v=8"></script>
 {ldh}
 {GTAG}
 </head><body{(' data-api="' + COMM_API + '"') if COMM_API else ''}>
@@ -595,7 +595,7 @@ def community(live=()):
 <div class="cm-tabs"><button data-k="team">💘 전체 파티 목록</button><button data-k="board">💬 후기·질문</button></div>
 <section id="cm-teams" data-all data-tab="team"></section>
 <section id="cm-board" data-all data-tab="board" hidden></section>
-<script defer src="/assets/community/vn.js?v=4"></script>''', [('루리의 줍줍', '/'), ('커뮤니티', '/community/')])
+<script defer src="/assets/community/vn.js?v=5"></script>''', [('루리의 줍줍', '/'), ('커뮤니티', '/community/')])
 
 
 def statics(nl, ne):
