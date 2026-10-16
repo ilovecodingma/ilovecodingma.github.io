@@ -80,9 +80,9 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False):
 <meta property="og:image" content="{SITE}/assets/ruri/og.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="{SITE}/assets/ruri/og.jpg">
 <meta name="theme-color" content="#5b21b6">
-<link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png"><link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest">
+<link rel="icon" href="/favicon.ico?v=3" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png?v=3"><link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png?v=3"><link rel="manifest" href="/site.webmanifest">
 <link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="/assets/gm.css?v=3">
+<link rel="stylesheet" href="/assets/gm.css?v=4">
 {ldh}
 {GTAG}
 </head><body>
@@ -90,7 +90,7 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False):
 <main class="w">
 {body}
 </main>
-<footer class="ft"><div class="w ft-in"><div class="ft-b"><img src="/assets/ruri/wink_s.webp" width="56" height="77" alt="" loading="lazy"><div><b>공모왕</b><p>마감 놓치지 마세요! 매일 아침 새 공모전을 정리해 둘게요.</p></div></div>
+<footer class="ft"><div class="w ft-in"><div class="ft-b"><img class="av" src="/assets/ruri/avatar.webp" width="56" height="56" alt="공모왕 루리" loading="lazy"><div><b>공모왕</b><p>마감 놓치지 마세요! 매일 아침 새 공모전을 정리해 둘게요.</p><p class="ft-m">문의 <a href="mailto:sung2011103@naver.com">sung2011103@naver.com</a></p></div></div>
 <p class="ft-l"><a href="/about/">소개</a><a href="/guide/">응모 가이드</a><a href="/event/">경품 이벤트</a><a href="/privacy/">개인정보처리방침</a><a href="/terms/">이용약관</a><a href="/contact/">문의</a></p>
 <p class="ft-n">공모전 정보는 각 주최 기관의 공고를 바탕으로 정리했으며, 정확한 요강은 반드시 공식 공고에서 확인하세요. © 2026 공모왕 · sungprofile.cloud</p></div></footer>
 </body></html>'''
@@ -374,7 +374,7 @@ def statics(nl, ne):
 <h2>정보 정리 방식</h2><p>공개된 공고를 수집해 마감일과 상금, 자격을 자동으로 추출하고, 분야별 응모 체크리스트를 붙입니다. 자동 정리 과정에서 오류가 생길 수 있으므로 공모전 페이지마다 공식 공고 링크를 함께 제공합니다. 정확한 요강은 항상 주최 측 공식 공고를 기준으로 해 주세요.</p>
 <h2>잘못된 정보 제보</h2><p>마감일이나 상금이 틀렸거나 종료된 공모전이 보이면 <a href="/contact/">문의</a>로 알려 주세요.</p>''', [('공모왕', '/'), ('소개', '/about/')])
     page('/contact/', '문의', '공모왕 정보 오류 제보, 공모전 등록 요청, 삭제 요청 안내.',
-         '''<h1>문의</h1><p>정보 오류 제보, 공모전 등록 요청, 삭제 요청은 <a href="https://github.com/ilovecodingma/ilovecodingma.github.io/issues" rel="noopener">GitHub Issues</a>에 남겨 주세요. 공모전 등록을 요청할 때는 공식 공고 주소를 함께 적어 주시면 확인 후 반영합니다.</p><p class="note">개인정보(이름·연락처)는 공개 게시판에 올리지 마세요.</p>''', [('공모왕', '/'), ('문의', '/contact/')])
+         '''<h1>문의</h1><p>정보 오류 제보, 공모전 등록 요청, 삭제 요청, 제휴 문의는 이메일 <a href="mailto:sung2011103@naver.com">sung2011103@naver.com</a> 으로 보내 주세요. <a href="https://github.com/ilovecodingma/ilovecodingma.github.io/issues" rel="noopener">GitHub Issues</a>에 남기셔도 됩니다. 공모전 등록을 요청할 때는 공식 공고 주소를 함께 적어 주시면 확인 후 반영합니다.</p><p class="note">개인정보(이름·연락처)는 공개 게시판에 올리지 마세요.</p>''', [('공모왕', '/'), ('문의', '/contact/')])
     page('/privacy/', '개인정보처리방침', '공모왕은 이용자의 개인정보를 수집하지 않습니다. 광고 쿠키와 방문 통계 안내.',
          '''<h1>개인정보처리방침</h1><p>공모왕(sungprofile.cloud)은 회원가입·로그인 기능이 없으며 이용자의 이름, 이메일, 연락처 등 개인정보를 수집·저장하지 않습니다.</p>
 <h2>1. 광고와 쿠키</h2><p>이 사이트는 Google AdSense 광고를 게재하며, Google 등 제3자 광고 사업자는 쿠키를 사용해 이용자의 이전 방문 기록에 기반한 광고를 표시할 수 있습니다. 이용자는 <a href="https://adssettings.google.com" rel="noopener">Google 광고 설정</a>에서 맞춤 광고를 해제할 수 있으며, 자세한 내용은 <a href="https://policies.google.com/technologies/ads" rel="noopener">Google 광고 정책</a>을 참고하세요.</p>

@@ -125,3 +125,7 @@ ul.row .o{display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;o
 .shot img{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;object-position:top}
 .shot img.ruri{width:auto;height:220px;aspect-ratio:auto;margin:10px auto 0;object-fit:contain}
 .shot span{position:absolute;right:12px;bottom:12px;background:rgba(30,27,75,.85);color:#fff;font-size:13px;font-weight:700;padding:6px 12px;border-radius:999px}
+/* 푸터 동그란 프로필 + 메일 */
+.ft-b .av{width:56px;height:56px;border-radius:50%;object-fit:cover;object-position:50% 20%;border:2px solid rgba(255,255,255,.25);background:#4c1d95;flex:0 0 auto}
+.ft-m{margin-top:4px!important;font-size:12.5px}.ft-m a{color:#fcd34d;text-decoration:none}
+.logo img{border-radius:50%}
