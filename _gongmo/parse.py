@@ -239,6 +239,10 @@ def main():
     items = {}
     stat = {'src': len(rows), 'past': 0, 'noncontest': 0, 'dup': 0}
     for x in rows:
+        if x.get('closed'):  # 공모전 세션이 조기 종료로 표시
+            continue
+        if x.get('end_override'):  # 마감 연장 등 공모전 세션 확인값 우선
+            x['end'] = x['end_override']
         if x.get('kind') not in KINDS or x.get('end', '') < TODAY.isoformat():
             continue
         title = clean(x['title'])
@@ -267,6 +271,8 @@ def main():
             stat['noncontest'] += 1
             continue
         s, e = parse_dates(src, t)
+        if x.get('end_override'):
+            e = datetime.date.fromisoformat(x['end_override'])
         fld0 = parse_field(src, core, x) if t else ''
         if not CONTESTY.search(title) or (re.search(r'봉사|교육|동아리|서포터즈|채용|인턴|대외활동', fld0) and not re.search(r'공모전|경진|콘테스트|콩쿠르', title)):
             if not (x['reg'] != 'KR' and x['kind'] in ('hackathon', 'contest')):

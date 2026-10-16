@@ -118,3 +118,10 @@ ul.row{grid-auto-columns:minmax(270px,320px)}
 ul.row .t{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
 ul.row .o{display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden}
 @media(max-width:700px){.hero{grid-template-columns:1fr}.hero-r img{width:130px}.hb{position:static;width:auto;margin-bottom:24px}ul.row{grid-auto-columns:82%}}
+/* 공고 캡처 썸네일 */
+.card.has-th{flex-wrap:wrap}
+.card .th{width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;object-position:top;border-radius:12px;border:1px solid var(--bd);background:var(--bg)}
+.shot{display:block;position:relative;margin:14px 0;border-radius:18px;overflow:hidden;border:1px solid var(--bd);background:linear-gradient(135deg,var(--pbg),var(--card));box-shadow:var(--sh);text-decoration:none;text-align:center}
+.shot img{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;object-position:top}
+.shot img.ruri{width:auto;height:220px;aspect-ratio:auto;margin:10px auto 0;object-fit:contain}
+.shot span{position:absolute;right:12px;bottom:12px;background:rgba(30,27,75,.85);color:#fff;font-size:13px;font-weight:700;padding:6px 12px;border-radius:999px}

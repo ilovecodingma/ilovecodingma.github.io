@@ -10,11 +10,17 @@ import parse as P
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
-MASTER = r'C:\Users\k\Desktop\공모전_2026\주말큐_master.jsonl'
+DATA = r'C:\Users\k\Desktop\공모전_2026\data'  # 공모전 세션 정본 (2026-10-16 합의)
+MASTER = os.path.join(DATA, 'master.jsonl')
+if not os.path.exists(MASTER):
+    MASTER = r'C:\Users\k\Desktop\공모전_2026\주말큐_master.jsonl'
+SHOTS = os.path.join(DATA, 'shots')  # 공식 공고 캡처 <id>.webp 640x400
 SITE = 'https://sungprofile.cloud'
 NAME = '공모왕'
 TODAY = datetime.date.today()
-KEEP_PAST = 45  # 마감 후 상세페이지 보존 일수
+KEEP_PAST = 0  # 마감 후 상세페이지 보존 일수 (2026-10-16 사용자: 마감된 건 내림)
+TXT_SRC = [os.path.join(DATA, 'txt'),
+           r'C:\Users\k\AppData\Local\Temp\claude\C--Users-k\4f3e089f-943b-4eb1-9e20-4a85afd47dac\scratchpad\collect\q\txt']
 E = html.escape
 
 CATS = [('literature', '문학'), ('idea', '아이디어·정책'), ('design', '디자인'), ('video', '영상'),
@@ -76,7 +82,7 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False):
 <meta name="theme-color" content="#5b21b6">
 <link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png"><link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest">
 <link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="/assets/gm.css?v=2">
+<link rel="stylesheet" href="/assets/gm.css?v=3">
 {ldh}
 {GTAG}
 </head><body>
@@ -111,7 +117,39 @@ def ddot(s):
     return s.replace('-', '.') if s else ''
 
 
+def sync_txt():
+    """공모전 세션이 새로 받은 공고 본문을 _gongmo/txt 로 복사(없는 것·갱신된 것만)"""
+    dst = os.path.join(HERE, 'txt')
+    os.makedirs(dst, exist_ok=True)
+    n = 0
+    for src in TXT_SRC:
+        if not os.path.isdir(src):
+            continue
+        for f in os.listdir(src):
+            a, b = os.path.join(src, f), os.path.join(dst, f)
+            if not os.path.exists(b) or os.path.getmtime(a) > os.path.getmtime(b):
+                shutil.copy2(a, b)
+                n += 1
+    return n
+
+
+def sync_shots(live):
+    """진행 중 공모전 캡처만 assets/shots 에 두고, 마감된 건 지움"""
+    dst = os.path.join(ROOT, 'assets', 'shots')
+    os.makedirs(dst, exist_ok=True)
+    keep = {c['id'] + '.webp' for c in live if c.get('th')}
+    for f in keep:
+        a, b = os.path.join(SHOTS, f), os.path.join(dst, f)
+        if not os.path.exists(b) or os.path.getmtime(a) > os.path.getmtime(b):
+            shutil.copy2(a, b)
+    gone = [f for f in os.listdir(dst) if f not in keep]
+    for f in gone:
+        os.remove(os.path.join(dst, f))
+    print('shots', len(keep), 'removed', len(gone))
+
+
 def load():
+    print('txt synced', sync_txt())
     rows = [json.loads(l) for l in open(MASTER, encoding='utf-8') if l.strip()]
     # 공모전 판정·추출은 parse.py 로직 그대로, 마감 후 KEEP_PAST 일까지 포함
     P.Q = HERE
@@ -128,6 +166,7 @@ def load():
     for c in contests:
         r = byid.get(c['id'], {})
         c['ch'] = CH.get(r.get('ch', ''), '공고 참조')
+        c['th'] = 1 if os.path.exists(os.path.join(SHOTS, c['id'] + '.webp')) else 0
     seen, events = set(), []
     for r in rows:
         k = r.get('kind', '')
@@ -151,7 +190,8 @@ def card(c):
     cls = 'd off' if n < 0 else 'd u3' if n <= 3 else 'd hot' if n <= 7 else 'd'
     tg = ''.join(f'<span class="tg">{E(t)}</span>' for t in c['tags'])
     pz = f'<span class="pz">🏆 {E(c["prize"])}</span>' if c['pv'] else ''
-    return (f'<li><a class="card" data-c="{SLUG[c["tags"][0]]}" href="/c/{c["id"]}/"><span class="ic">{CAT_ICON[c["tags"][0]]}</span><div class="cb"><div class="top"><h3 class="t">{E(c["title"])}</h3><span class="{cls}">{dd}</span></div>'
+    th = f'<img class="th" src="/assets/shots/{c["id"]}.webp" width="640" height="400" alt="" loading="lazy">' if c.get('th') else ''
+    return (f'<li><a class="card{" has-th" if th else ""}" data-c="{SLUG[c["tags"][0]]}" href="/c/{c["id"]}/">{th}<span class="ic">{CAT_ICON[c["tags"][0]]}</span><div class="cb"><div class="top"><h3 class="t">{E(c["title"])}</h3><span class="{cls}">{dd}</span></div>'
             f'<p class="o">{E(c["org"])} · ~{ddot(c["end"])}</p><div class="tags">{pz}{tg}</div></div></a></li>')
 
 
@@ -179,6 +219,7 @@ def detail(c, live):
     body = f'''<p class="bc"><a href="/">홈</a> › <a href="/cat/{SLUG[main_tag]}/">{E(main_tag)}</a></p>
 <section class="dh" data-c="{SLUG[main_tag]}"><span class="ic big">{CAT_ICON[main_tag]}</span><h1>{E(c["title"])}</h1>{status}</section>
 {ruri}
+<a class="shot" href="{E(c["link"])}" target="_blank" rel="noopener nofollow">{f'<img src="/assets/shots/{c["id"]}.webp" width="640" height="400" alt="{E(c["title"])} 공식 공고 화면">' if c.get('th') else f'<img class="ruri" src="/assets/ruri/thumbsup.webp" width="300" height="415" alt="공모왕 루리">'}<span>공식 공고 페이지 열기 →</span></a>
 <div class="panel"><table class="info">{tb}</table>
 <a class="btn" href="{E(c["link"])}" target="_blank" rel="noopener nofollow">공식 공고 보러 가기 →</a></div>
 <h2>한눈에 보기</h2><p>{E(summary)}</p>
@@ -205,7 +246,7 @@ var r=items.filter(function(i){return i.left>=0&&(!cat||i.tags.indexOf(cat)>=0)&
 r.sort(s==='prize'?function(a,b){return b.pv-a.pv||a.left-b.left}:function(a,b){return a.left-b.left||b.pv-a.pv});
 $('cnt').textContent='진행 중 공모전 '+r.length+'건';var ul=$('list');ul.textContent='';
 if(!r.length){var li=el('li','empty');li.innerHTML='<img src="/assets/ruri/sad_s.webp" width="56" height="77" alt=""><p>조건에 맞는 공모전이 없어요. 검색어를 바꿔 볼까요?</p>';ul.appendChild(li)}
-r.slice(0,shown).forEach(function(i){var li=el('li'),a=el('a','card');a.href='/c/'+i.id+'/';a.dataset.c=SL[i.tags[0]]||'etc';a.appendChild(el('span','ic',IC[i.tags[0]]||'🧩'));var cb=el('div','cb'),top=el('div','top');top.appendChild(el('h3','t',i.title));
+r.slice(0,shown).forEach(function(i){var li=el('li'),a=el('a','card');a.href='/c/'+i.id+'/';a.dataset.c=SL[i.tags[0]]||'etc';if(i.th){a.className+=' has-th';var im=el('img','th');im.src='/assets/shots/'+i.id+'.webp';im.loading='lazy';im.alt='';a.appendChild(im)}a.appendChild(el('span','ic',IC[i.tags[0]]||'🧩'));var cb=el('div','cb'),top=el('div','top');top.appendChild(el('h3','t',i.title));
 top.appendChild(el('span','d'+(i.left<=3?' u3':i.left<=7?' hot':''),i.left?'D-'+i.left:'D-DAY'));cb.appendChild(top);cb.appendChild(el('p','o',i.org+' · ~'+i.end.replace(/-/g,'.')));
 var tg=el('div','tags');if(i.pv)tg.appendChild(el('span','pz','🏆 '+i.prize));i.tags.forEach(function(x){tg.appendChild(el('span','tg',x))});cb.appendChild(tg);a.appendChild(cb);li.appendChild(a);ul.appendChild(li)});
 $('more').hidden=r.length<=shown}
@@ -235,7 +276,8 @@ def build():
         shutil.rmtree(os.path.join(ROOT, d), ignore_errors=True)
     for c in contests:
         detail(c, live)
-    keys = ('id', 'title', 'org', 'end', 'prize', 'pv', 'field', 'tags')
+    sync_shots(live)
+    keys = ('id', 'title', 'org', 'end', 'prize', 'pv', 'field', 'tags', 'th')
     with open(os.path.join(ROOT, 'data.json'), 'w', encoding='utf-8', newline='\n') as f:
         json.dump({'updated': datetime.datetime.now().strftime('%Y-%m-%d %H:%M'), 'items': [{k: c[k] for k in keys} for c in live]},
                   f, ensure_ascii=False, separators=(',', ':'))
@@ -274,7 +316,11 @@ def build():
     statics(len(live), len(events))
     urls = ['/', '/event/', '/guide/'] + [f'/cat/{s}/' for s, _ in CATS] + [f'/guide/{g[0]}/' for g in GUIDES] + \
            ['/about/', '/privacy/', '/terms/', '/contact/'] + [f'/c/{c["id"]}/' for c in contests] + sorted((f'/v/{d}/' for d in os.listdir(os.path.join(ROOT, 'v')) if os.path.isfile(os.path.join(ROOT, 'v', d, 'index.html'))), key=lambda u: int(u.split('/')[2]) if u.split('/')[2].isdigit() else 0)
-    with open(os.path.join(ROOT, 'sitemap.xml'), 'w', encoding='utf-8', newline='\n') as f:
+    global NEW_URLS
+    sm = os.path.join(ROOT, 'sitemap.xml')
+    old = set(re.findall(r'<loc>([^<]+)</loc>', open(sm, encoding='utf-8').read())) if os.path.exists(sm) else set()
+    NEW_URLS = [SITE + u for u in urls if SITE + u not in old]
+    with open(sm, 'w', encoding='utf-8', newline='\n') as f:
         f.write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n')
         f.writelines(f'<url><loc>{SITE}{u}</loc><lastmod>{TODAY}</lastmod></url>\n' for u in urls)
         f.write('</urlset>\n')
@@ -343,6 +389,22 @@ def statics(nl, ne):
 <h2>4. 광고</h2><p>사이트 운영을 위해 Google AdSense 광고를 게재합니다.</p><p class="note">시행일: 2026-10-16</p>''', [('공모왕', '/'), ('이용약관', '/terms/')])
 
 
+NEW_URLS = []
+INDEXNOW_KEY = '5d0b54e7778c4d46a6de43d65f168163'
+
+
+def indexnow(urls):
+    """새로 생긴 주소만 Bing·네이버·Yandex 에 알림 (키 파일은 사이트 루트)"""
+    import urllib.request
+    body = json.dumps({'host': 'sungprofile.cloud', 'key': INDEXNOW_KEY, 'keyLocation': f'{SITE}/{INDEXNOW_KEY}.txt', 'urlList': urls}).encode()
+    for ep in ('https://api.indexnow.org/indexnow', 'https://searchadvisor.naver.com/indexnow'):
+        try:
+            r = urllib.request.urlopen(urllib.request.Request(ep, data=body, headers={'Content-Type': 'application/json; charset=utf-8'}), timeout=30)
+            print('indexnow', ep, r.status, len(urls))
+        except Exception as e:
+            print('indexnow', ep, 'fail', e)
+
+
 if __name__ == '__main__':
     build()
     if '--push' in sys.argv:
@@ -354,4 +416,5 @@ if __name__ == '__main__':
         if git('diff', '--cached', '--quiet').returncode:
             git('commit', '-q', '-m', f'공모왕 데이터 갱신 {datetime.datetime.now():%m-%d %H:%M}')
             git('pull', '-q', '--rebase', '-X', 'ours')
-            git('push', '-q')
+            if git('push', '-q').returncode == 0 and NEW_URLS:
+                indexnow([SITE + '/'] + NEW_URLS)
