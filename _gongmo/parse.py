@@ -237,6 +237,11 @@ def norm_title(s):
 def main():
     push = '--no-push' not in sys.argv
     rows = [json.loads(l) for l in open(MASTER, encoding='utf-8') if l.strip()]
+    mp = os.path.join(Q, 'manual.json')  # 사이트 쪽 확인값 덮어쓰기 (id → 필드, force)
+    man = {k: v for k, v in (json.load(open(mp, encoding='utf-8')) if os.path.exists(mp) else {}).items() if not k.startswith('_')}
+    for x in rows:
+        if x['id'] in man:
+            x.update({k: v for k, v in man[x['id']].items() if k != 'note'})
     items = {}
     stat = {'src': len(rows), 'past': 0, 'noncontest': 0, 'dup': 0}
     for x in rows:
@@ -267,17 +272,17 @@ def main():
             body = core[bi + 4:] if bi >= 0 else core
         body = re.sub(r'\s+', ' ', body.replace('~', ' ~ '))
         # all-con 은 공모전 카테고리만
-        if src == 'all-con' and not re.search(r'(대학생·일반인|청소년)\s*공모전', t[:900]):
+        if src == 'all-con' and not x.get('force') and not re.search(r'(대학생·일반인|청소년)\s*공모전', t[:900]):
             stat['noncontest'] += 1
             continue
-        if NONCONTEST.search(title) and not re.search(r'공모전|경진대회|콘테스트', title):
+        if NONCONTEST.search(title) and not x.get('force') and not re.search(r'공모전|경진대회|콘테스트', title):
             stat['noncontest'] += 1
             continue
         s, e = parse_dates(src, t)
         if x.get('end_override'):
             e = datetime.date.fromisoformat(x['end_override'])
         fld0 = parse_field(src, core, x) if t else ''
-        if not CONTESTY.search(title) or (re.search(r'봉사|교육|동아리|서포터즈|채용|인턴|대외활동', fld0) and not re.search(r'공모전|경진|콘테스트|콩쿠르', title)):
+        if not x.get('force') and (not CONTESTY.search(title) or (re.search(r'봉사|교육|동아리|서포터즈|채용|인턴|대외활동', fld0) and not re.search(r'공모전|경진|콘테스트|콩쿠르', title))):
             if not (x['reg'] != 'KR' and x['kind'] in ('hackathon', 'contest')):
                 stat['noncontest'] += 1
                 continue
