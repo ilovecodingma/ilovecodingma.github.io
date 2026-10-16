@@ -3,13 +3,14 @@
 (function () {
   const API = document.body.dataset.api; if (!API) return;
   const ga = (n, p) => { try { window.gtag && gtag('event', n, p || {}); } catch {} };  // GA4 맞춤 이벤트
-  { const h = location.hash.match(/#jt=([0-9a-f]+)&jn=([^&]+)/), e = location.hash.match(/#jerr=([^&]+)/);  // 구글·카카오 로그인 후 돌아옴
-    if (h) { st.set(h[1], decodeURIComponent(h[2])); try { localStorage.removeItem('jupjup_prefs_t'); } catch {} ga('login', { method: 'oauth' }); history.replaceState(null, '', location.pathname + location.search); }
-    else if (e) { history.replaceState(null, '', location.pathname + location.search); setTimeout(() => alert(decodeURIComponent(e[1])), 300); } }
   try { const rf = new URLSearchParams(location.search).get('ref'); if (rf && /^[0-9a-f]{8}$/.test(rf)) { const h = new URLSearchParams(location.search).get('h') || (location.pathname.match(/^\/c\/([^/]+)\//) || [])[1] || ''; localStorage.setItem('jupjup_ref', rf); localStorage.setItem('jupjup_ref_h', h); fetch(API + '/api/ref', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ ref: rf, h }) }).catch(() => {}); } } catch {}
   const KEY = 'jupjup_tok', NK = 'jupjup_nick';
   const st = { get t() { try { return localStorage.getItem(KEY) || ''; } catch { return ''; } }, get n() { try { return localStorage.getItem(NK) || ''; } catch { return ''; } },
     set(t, n) { try { if (t) { localStorage.setItem(KEY, t); localStorage.setItem(NK, n); } else { localStorage.removeItem(KEY); localStorage.removeItem(NK); } } catch {} } };
+  // 구글·카카오 로그인 후 돌아옴 (st 정의 뒤에 있어야 함 — 2026-10-17 앞에 두었다가 스크립트 전체가 멈춤)
+  { const h = location.hash.match(/#jt=([0-9a-f]+)&jn=([^&]+)/), e = location.hash.match(/#jerr=([^&]+)/);  // 구글·카카오 로그인 후 돌아옴
+    if (h) { st.set(h[1], decodeURIComponent(h[2])); try { localStorage.removeItem('jupjup_prefs_t'); } catch {} ga('login', { method: 'oauth' }); history.replaceState(null, '', location.pathname + location.search); }
+    else if (e) { history.replaceState(null, '', location.pathname + location.search); setTimeout(() => alert(decodeURIComponent(e[1])), 300); } }
   const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
   const ago = t => { const d = Date.now() / 1000 - t; return d < 60 ? '방금' : d < 3600 ? Math.floor(d / 60) + '분 전' : d < 86400 ? Math.floor(d / 3600) + '시간 전' : new Date(t * 1000).toLocaleDateString('ko-KR'); };
   const KIND = { review: '후기', qna: '질문', tip: '팁' };
