@@ -232,12 +232,25 @@ ${st.t ? act : '<button class="btn2 tm-login">가입하고 합류 신청</button
   // ---- 로그인한 사람이 고른 루리 옷으로 사이트 전체 루리 일괄 갈아입히기 ----
   const KEEP = /\/assets\/ruri\/(avatar|profile|og)\b/;
   const prefs = () => { try { return JSON.parse(localStorage.getItem('jupjup_prefs') || '{}'); } catch { return {}; } };
+  // 포즈 세트: /assets/ruri/poses.json = {"office": ["wave", ...], "<복장키>": [...]} → /assets/ruri/p/<복장>_<포즈>(_s).webp
+  // 같은 복장이라도 자리(맥락)·접속마다 포즈가 바뀜. 세트가 없는 복장은 기존 단일 이미지.
+  let POSES = null; const seed = Math.floor(Math.random() * 1e6);
+  const POSE_OF = { smile: 'wave', wink: 'v', excited: 'v', thumbsup: 'clap', think: 'think', sad: 'think', surprise: 'surprise', serious: 'point' };
+  const ctxPose = (img, base) => img.id === 'hero-ruri' ? ['wave', 'v', 'clap'][seed % 3] : img.closest('.shot') ? 'surprise' : img.closest('.empty') ? 'think' : POSE_OF[base] || '';  // 그 밖(말풍선 등)은 표정 따라, 없으면 순번·접속마다 순환
+  function poseSrc(outfit, want, small, salt = 0) {  // outfit: 'office' | 'cardigan' ..., want: 원하는 포즈(없으면 순환)
+    const list = POSES && POSES[outfit]; if (!list || !list.length) return '';
+    const pose = list.includes(want) ? want : list[(seed + salt) % list.length];
+    return `/assets/ruri/p/${outfit}_${pose}${small ? '_s' : ''}.webp`;
+  }
+  let wearN = 0;
   function wearOne(img) {
     if (img.closest('#vn')) return;
     const o = st.t ? prefs().o : '', src = img.getAttribute('src') || '', m = src.match(/^\/assets\/ruri\/([a-z_]+?)(_s)?\.webp$/);
     if (!m || KEEP.test(src)) return;
-    if (!img.dataset.ruri) img.dataset.ruri = m[1];
-    const want = o && o !== 'smile' ? o : img.dataset.ruri, nsrc = `/assets/ruri/${want}${m[2] || ''}.webp`;
+    if (!img.dataset.ruri) { img.dataset.ruri = m[1]; img.dataset.rn = wearN++; }
+    const outfit = o && o !== 'smile' ? o.replace(/^o_/, '') : 'office';
+    const ps = poseSrc(outfit, ctxPose(img, img.dataset.ruri), !!m[2], +img.dataset.rn);
+    const nsrc = ps || `/assets/ruri/${o && o !== 'smile' ? o : img.dataset.ruri}${m[2] || ''}.webp`;
     if (src !== nsrc) img.setAttribute('src', nsrc);
   }
   function wearAll() { document.querySelectorAll('img[src^="/assets/ruri/"]').forEach(wearOne); }
@@ -251,10 +264,10 @@ ${st.t ? act : '<button class="btn2 tm-login">가입하고 합류 신청</button
   }
   new MutationObserver(ms => ms.forEach(m => { if (m.type === 'attributes') wearOne(m.target); else m.addedNodes.forEach(n => { if (n.nodeType === 1) { if (n.tagName === 'IMG') wearOne(n); else n.querySelectorAll && n.querySelectorAll('img[src^="/assets/ruri/"]').forEach(wearOne); } }); }))
     .observe(document.body, { subtree: true, childList: true, attributes: true, attributeFilter: ['src'] });
-  wearAll(); syncPrefs();
+  fetch('/assets/ruri/poses.json').then(r => r.ok ? r.json() : null).catch(() => null).then(j => { POSES = j; wearAll(); }); syncPrefs();
   paintBar();
   document.querySelectorAll('#cm-teams').forEach(teams);
   document.querySelectorAll('#cm-board').forEach(board);
   tabs();
-  window.JUP = { api, st, esc, ago, authModal, teamModal, createTeam, teams, wearAll, ga };
+  window.JUP = { api, st, esc, ago, authModal, teamModal, createTeam, teams, wearAll, ga, poseSrc, POSE_OF, poses: () => POSES };
 })();

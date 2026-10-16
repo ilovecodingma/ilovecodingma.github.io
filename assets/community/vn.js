@@ -36,7 +36,7 @@
     if (J.st.t) J.api('/api/prefs', { method: 'POST', body: { data: P } }).catch(() => {});
     apply();
   }
-  const face = e => { const o = J.st.t && P.o && P.o !== 'smile' ? P.o : ''; const f = o || (EXP[e] ? e : 'smile'); const src = `/assets/ruri/${f}.webp`; if (!img.src.endsWith(src)) { img.classList.remove('pop'); void img.offsetWidth; img.classList.add('pop'); img.src = src; } };
+  let fn = 0; const face = e => { const o = J.st.t && P.o && P.o !== 'smile' ? P.o : ''; const ps = J.poseSrc(o ? o.replace(/^o_/, '') : 'office', J.POSE_OF[e] || '', false, fn++); const f = o || (EXP[e] ? e : 'smile'); const src = ps || `/assets/ruri/${f}.webp`; if (!img.src.endsWith(src)) { img.classList.remove('pop'); void img.offsetWidth; img.classList.add('pop'); img.src = src; } };
 
   // ---- 대사 엔진: say([[표정, 대사], ...]) → Promise ----
   function say(lines) {
