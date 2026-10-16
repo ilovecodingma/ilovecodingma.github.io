@@ -73,23 +73,33 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False):
 <meta property="og:title" content="{E(t)}"><meta property="og:description" content="{E(desc)}"><meta property="og:url" content="{url}">
 <meta property="og:image" content="{SITE}/assets/ruri/og.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="{SITE}/assets/ruri/og.jpg">
-<meta name="theme-color" content="#1e40af">
+<meta name="theme-color" content="#5b21b6">
 <link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png"><link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest">
-<link rel="stylesheet" href="/assets/gm.css">
+<link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="/assets/gm.css?v=2">
 {ldh}
 {GTAG}
 </head><body>
-<header class="hd"><div class="w"><a class="logo" href="/"><img src="/assets/icons/favicon-32.png" width="28" height="28" alt="">공모왕</a><nav>{nav}</nav></div></header>
+<header class="hd"><div class="w hd-in"><a class="logo" href="/"><img src="/assets/icons/logo.svg" width="30" height="30" alt="">공모왕</a><nav>{nav}</nav></div></header>
 <main class="w">
 {body}
 </main>
-<footer class="ft"><div class="w"><p><a href="/about/">소개</a> · <a href="/guide/">응모 가이드</a> · <a href="/privacy/">개인정보처리방침</a> · <a href="/terms/">이용약관</a> · <a href="/contact/">문의</a></p>
-<p>공모전 정보는 각 주최 기관의 공고를 바탕으로 정리했으며, 정확한 요강은 반드시 공식 공고에서 확인하세요.</p><p>© 2026 공모왕 · sungprofile.cloud</p></div></footer>
+<footer class="ft"><div class="w ft-in"><div class="ft-b"><img src="/assets/ruri/wink_s.webp" width="56" height="77" alt="" loading="lazy"><div><b>공모왕</b><p>마감 놓치지 마세요! 매일 아침 새 공모전을 정리해 둘게요.</p></div></div>
+<p class="ft-l"><a href="/about/">소개</a><a href="/guide/">응모 가이드</a><a href="/event/">경품 이벤트</a><a href="/privacy/">개인정보처리방침</a><a href="/terms/">이용약관</a><a href="/contact/">문의</a></p>
+<p class="ft-n">공모전 정보는 각 주최 기관의 공고를 바탕으로 정리했으며, 정확한 요강은 반드시 공식 공고에서 확인하세요. © 2026 공모왕 · sungprofile.cloud</p></div></footer>
 </body></html>'''
     d = os.path.join(ROOT, path.strip('/'))
     os.makedirs(d, exist_ok=True)
     with open(os.path.join(d, 'index.html'), 'w', encoding='utf-8', newline='\n') as f:
         f.write(doc)
+
+
+CAT_ICON = {'문학': '✍️', '아이디어·정책': '💡', '디자인': '🎨', '영상': '🎬', '논문': '📚', 'IT·과학': '💻', '해외': '🌏', '기타': '🧩'}
+
+
+def say(expr, html_, cls=''):
+    return (f'<div class="say {cls}"><img src="/assets/ruri/{expr}_s.webp" width="56" height="77" alt="공모왕 루리" loading="lazy">'
+            f'<div class="bub"><b>루리</b><div>{html_}</div></div></div>')
 
 
 def dday(end):
@@ -138,11 +148,11 @@ def load():
 
 def card(c):
     n, dd = dday(c['end'])
-    cls = 'd hot' if 0 <= n <= 7 else 'd off' if n < 0 else 'd'
+    cls = 'd off' if n < 0 else 'd u3' if n <= 3 else 'd hot' if n <= 7 else 'd'
     tg = ''.join(f'<span class="tg">{E(t)}</span>' for t in c['tags'])
-    pz = f'<span class="pz">{E(c["prize"])}</span>' if c['pv'] else ''
-    return (f'<li><a class="card" href="/c/{c["id"]}/"><div class="top"><h3 class="t">{E(c["title"])}</h3><span class="{cls}">{dd}</span></div>'
-            f'<p class="o">{E(c["org"])} · ~{ddot(c["end"])}</p><div class="tags">{pz}{tg}</div></a></li>')
+    pz = f'<span class="pz">🏆 {E(c["prize"])}</span>' if c['pv'] else ''
+    return (f'<li><a class="card" data-c="{SLUG[c["tags"][0]]}" href="/c/{c["id"]}/"><span class="ic">{CAT_ICON[c["tags"][0]]}</span><div class="cb"><div class="top"><h3 class="t">{E(c["title"])}</h3><span class="{cls}">{dd}</span></div>'
+            f'<p class="o">{E(c["org"])} · ~{ddot(c["end"])}</p><div class="tags">{pz}{tg}</div></div></a></li>')
 
 
 def detail(c, live):
@@ -152,7 +162,11 @@ def detail(c, live):
     sim = [x for x in live if x['id'] != c['id'] and main_tag in x['tags']][:6]
     simh = ''.join(card(x) for x in sim)
     status = ('<p class="warn">접수가 마감된 공모전입니다. 같은 분야의 진행 중 공모전을 아래에서 확인하세요.</p>' if n < 0
-              else f'<p class="lead">접수 마감까지 <b>{dd}</b> · {ddot(c["end"])} 마감</p>')
+              else f'<p class="lead"><span class="{"d u3" if n <= 3 else "d hot" if n <= 7 else "d"}">{dd}</span> {ddot(c["end"])} 마감</p>')
+    ruri = (say('sad', '아쉽지만 이건 마감됐어요. 아래 진행 중인 공모전을 봐 주세요!') if n < 0 else
+            say('surprise', f'마감까지 <b>{dd}</b>! 오늘 바로 요강부터 확인해요.') if n <= 3 else
+            say('thumbsup', f'상금 <b>{E(c["prize"])}</b>! 응모 자격만 맞으면 도전해 볼 만해요.') if c['pv'] else
+            say('smile', '공식 공고에서 제출 양식과 파일 형식을 먼저 확인해 주세요!'))
     period = (ddot(c['start']) + ' ~ ' if c['start'] else '~ ') + ddot(c['end'])
     rows = [('주최·주관', c['org']), ('분야', c['field'] or ', '.join(c['tags'])), ('접수 기간', period), ('상금', c['prize']),
             ('응모 자격', c['elig']), ('접수 방법', c['ch'])]
@@ -163,10 +177,10 @@ def detail(c, live):
                f'응모 자격은 "{c["elig"]}"이고 상금은 {c["prize"]}입니다. '
                f'접수 방법은 {c["ch"]}이므로 공식 공고에서 제출 양식과 파일 형식을 먼저 확인하세요.')
     body = f'''<p class="bc"><a href="/">홈</a> › <a href="/cat/{SLUG[main_tag]}/">{E(main_tag)}</a></p>
-<h1>{E(c["title"])}</h1>
-{status}
-<table class="info">{tb}</table>
-<a class="btn" href="{E(c["link"])}" target="_blank" rel="noopener nofollow">공식 공고 보러 가기 →</a>
+<section class="dh" data-c="{SLUG[main_tag]}"><span class="ic big">{CAT_ICON[main_tag]}</span><h1>{E(c["title"])}</h1>{status}</section>
+{ruri}
+<div class="panel"><table class="info">{tb}</table>
+<a class="btn" href="{E(c["link"])}" target="_blank" rel="noopener nofollow">공식 공고 보러 가기 →</a></div>
 <h2>한눈에 보기</h2><p>{E(summary)}</p>
 <h2>응모 전 체크리스트</h2><ul class="chk">{tips}</ul>
 <p class="note">분야: {catl}. 상금·자격·기간은 공고 원문에서 자동으로 정리한 값이라 오차가 있을 수 있습니다. 최종 기준은 주최 측 공식 공고입니다.</p>
@@ -182,7 +196,7 @@ def detail(c, live):
 
 def listing_js(cat=''):
     return '''<script>
-(function(){var $=function(i){return document.getElementById(i)};var items=[],cat=%s,PAGE=40,shown=PAGE;
+(function(){var IC=%s,SL=%s;var $=function(i){return document.getElementById(i)};var items=[],cat=%s,PAGE=40,shown=PAGE;
 var n=new Date(),T=Math.round(Date.UTC(n.getFullYear(),n.getMonth(),n.getDate())/864e5);
 function dn(s){var p=s.split('-');return Math.round(Date.UTC(+p[0],p[1]-1,+p[2])/864e5)}
 function el(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}
@@ -190,14 +204,14 @@ function render(){var q=$('q').value.trim().toLowerCase(),due=+$('due').value||0
 var r=items.filter(function(i){return i.left>=0&&(!cat||i.tags.indexOf(cat)>=0)&&(!due||i.left<=due)&&(!q||i.hay.indexOf(q)>=0)});
 r.sort(s==='prize'?function(a,b){return b.pv-a.pv||a.left-b.left}:function(a,b){return a.left-b.left||b.pv-a.pv});
 $('cnt').textContent='진행 중 공모전 '+r.length+'건';var ul=$('list');ul.textContent='';
-if(!r.length)ul.appendChild(el('li','empty','조건에 맞는 공모전이 없어요.'));
-r.slice(0,shown).forEach(function(i){var li=el('li'),a=el('a','card');a.href='/c/'+i.id+'/';var top=el('div','top');top.appendChild(el('h3','t',i.title));
-top.appendChild(el('span','d'+(i.left<=7?' hot':''),i.left?'D-'+i.left:'D-DAY'));a.appendChild(top);a.appendChild(el('p','o',i.org+' · ~'+i.end.replace(/-/g,'.')));
-var tg=el('div','tags');if(i.pv)tg.appendChild(el('span','pz',i.prize));i.tags.forEach(function(x){tg.appendChild(el('span','tg',x))});a.appendChild(tg);li.appendChild(a);ul.appendChild(li)});
+if(!r.length){var li=el('li','empty');li.innerHTML='<img src="/assets/ruri/sad_s.webp" width="56" height="77" alt=""><p>조건에 맞는 공모전이 없어요. 검색어를 바꿔 볼까요?</p>';ul.appendChild(li)}
+r.slice(0,shown).forEach(function(i){var li=el('li'),a=el('a','card');a.href='/c/'+i.id+'/';a.dataset.c=SL[i.tags[0]]||'etc';a.appendChild(el('span','ic',IC[i.tags[0]]||'🧩'));var cb=el('div','cb'),top=el('div','top');top.appendChild(el('h3','t',i.title));
+top.appendChild(el('span','d'+(i.left<=3?' u3':i.left<=7?' hot':''),i.left?'D-'+i.left:'D-DAY'));cb.appendChild(top);cb.appendChild(el('p','o',i.org+' · ~'+i.end.replace(/-/g,'.')));
+var tg=el('div','tags');if(i.pv)tg.appendChild(el('span','pz','🏆 '+i.prize));i.tags.forEach(function(x){tg.appendChild(el('span','tg',x))});cb.appendChild(tg);a.appendChild(cb);li.appendChild(a);ul.appendChild(li)});
 $('more').hidden=r.length<=shown}
 ['q','due','sort'].forEach(function(i){$(i).addEventListener('input',function(){shown=PAGE;render()})});$('more').onclick=function(){shown+=PAGE;render()};
 fetch('/data.json',{cache:'no-cache'}).then(function(r){return r.json()}).then(function(d){items=d.items.map(function(i){i.left=dn(i.end)-T;i.hay=(i.title+' '+i.org+' '+i.field+' '+i.tags.join(' ')).toLowerCase();return i});render()});
-})();</script>''' % json.dumps(cat, ensure_ascii=False)
+})();</script>''' % (json.dumps(CAT_ICON, ensure_ascii=False), json.dumps(SLUG, ensure_ascii=False), json.dumps(cat, ensure_ascii=False))
 
 
 TOOLBAR = '''<div class="bar"><input type="search" id="q" placeholder="공모전, 주최, 키워드 검색" aria-label="검색">
@@ -209,9 +223,9 @@ TOOLBAR = '''<div class="bar"><input type="search" id="q" placeholder="공모전
 def ev_card(e):
     n, dd = dday(e['end'])
     ch = f'<span class="tg">{E(e["ch"])}</span>' if e['ch'] else ''
-    return (f'<li><a class="card" href="{E(e["link"])}" target="_blank" rel="noopener nofollow"><div class="top"><h3 class="t">{E(e["title"])}</h3>'
-            f'<span class="d{" hot" if n <= 3 else ""}">{dd}</span></div><p class="o">{E(e["org"] or "공식 계정")} · ~{ddot(e["end"])}</p>'
-            f'<div class="tags"><span class="tg">{E(e["type"])}</span>{ch}</div></a></li>')
+    return (f'<li><a class="card" data-c="event" href="{E(e["link"])}" target="_blank" rel="noopener nofollow"><span class="ic">🎁</span><div class="cb"><div class="top"><h3 class="t">{E(e["title"])}</h3>'
+            f'<span class="d{" u3" if n <= 3 else ""}">{dd}</span></div><p class="o">{E(e["org"] or "공식 계정")} · ~{ddot(e["end"])}</p>'
+            f'<div class="tags"><span class="tg">{E(e["type"])}</span>{ch}</div></div></a></li>')
 
 
 def build():
@@ -227,26 +241,33 @@ def build():
                   f, ensure_ascii=False, separators=(',', ':'))
     pre = ''.join(card(c) for c in live[:60])  # 크롤러용 서버 렌더, JS 가 전체 목록으로 교체
     big = sorted(live, key=lambda c: -c['pv'])[:6]
-    cats = ''.join(f'<a class="cat" href="/cat/{s}/"><b>{n}</b><span>{sum(1 for c in live if n in c["tags"])}건</span></a>' for s, n in CATS)
-    home = f'''<section class="hero"><h1>마감 임박 공모전을 한곳에서</h1>
-<p>문학·아이디어·디자인·영상·논문·IT·해외 공모전 <b>{len(live)}건</b>과 경품 이벤트 <b>{len(events)}건</b>을 마감 순서로 정리했어요. {TODAY:%Y.%m.%d} 갱신.</p></section>
-<div class="cats">{cats}<a class="cat ev" href="/event/"><b>경품 이벤트</b><span>{len(events)}건</span></a></div>
-<h2>상금 큰 공모전</h2><ul class="list">{''.join(card(c) for c in big)}</ul>
-<h2>전체 공모전</h2>{TOOLBAR}<ul class="list" id="list">{pre}</ul><button class="more" id="more" hidden>더 보기</button>
-<section class="intro"><h2>공모왕은 이런 곳이에요</h2><p>공모전 정보는 여러 사이트와 기관 홈페이지에 흩어져 있어 마감을 놓치기 쉽습니다. 공모왕은 공개된 공모전 공고를 모아 <b>마감일·상금·응모 자격·접수 방법</b>을 같은 형식으로 정리하고, 공모전마다 응모 전에 확인할 체크리스트를 붙였습니다. 처음 응모한다면 <a href="/guide/">응모 가이드</a>부터 읽어 보세요.</p></section>'''
+    wk = [c for c in live if dday(c['end'])[0] <= 7]
+    cats = ''.join(f'<a class="cat" data-c="{s_}" href="/cat/{s_}/"><span class="ic">{CAT_ICON[n]}</span><b>{n}</b><span class="n">{sum(1 for c in live if n in c["tags"])}건</span></a>' for s_, n in CATS)
+    home = f'''<section class="hero"><div class="hero-t"><p class="kick">{TODAY.month}월 {TODAY.day}일 업데이트</p><h1>마감 임박 공모전,<br><em>공모왕</em>이 골라 드려요</h1>
+<p class="sub">문학·아이디어·디자인·영상·논문·IT·해외 공모전과 경품 이벤트를 마감 순서로 정리했어요.</p>
+<form class="hs" onsubmit="var q=document.getElementById('q');q.value=this.k.value;q.dispatchEvent(new Event('input'));document.getElementById('all').scrollIntoView();return false"><input name="k" type="search" placeholder="예) 슬로건, 숏폼, 해커톤" aria-label="공모전 검색"><button>검색</button></form>
+<div class="stat"><span><b>{len(live)}</b>진행 중</span><span><b>{len(wk)}</b>이번 주 마감</span><span><b>{len(events)}</b>경품 이벤트</span></div></div>
+<div class="hero-r"><div class="hb">안녕하세요, <b>공모왕 루리</b>예요!<br>오늘도 마감 임박 공모전 챙겨 왔어요 ✨</div><img src="/assets/ruri/smile.webp" width="300" height="415" alt="공모왕 루리"></div></section>
+<div class="cats">{cats}<a class="cat" data-c="event" href="/event/"><span class="ic">🎁</span><b>경품 이벤트</b><span class="n">{len(events)}건</span></a></div>
+<div class="sec"><h2>⏰ 이번 주 마감</h2><a href="#all">전체 보기 →</a></div><ul class="list row">{''.join(card(c) for c in wk[:10])}</ul>
+<div class="sec"><h2>🏆 상금 큰 공모전</h2></div><ul class="list grid">{''.join(card(c) for c in big)}</ul>
+<div class="sec" id="all"><h2>📋 전체 공모전</h2></div>{TOOLBAR}<ul class="list" id="list">{pre}</ul><button class="more" id="more" hidden>더 보기</button>
+<section class="intro">{say('think', '공모전 정보는 여러 사이트에 흩어져 있어서 마감을 놓치기 쉬워요. 그래서 제가 <b>마감일·상금·응모 자격·접수 방법</b>을 같은 형식으로 정리하고, 공모전마다 응모 전 체크리스트를 붙였어요. 처음이라면 <a href="/guide/">응모 가이드</a>부터 읽어 보세요!')}</section>'''
     page('/', '공모왕 — 마감 임박 공모전·상금 정보 모음',
          f'진행 중인 공모전 {len(live)}건을 마감 임박순·상금순으로. 문학, 아이디어·정책, 디자인, 영상, 논문, IT, 해외 공모전과 경품 이벤트 정리.',
          home + listing_js(), full_title=True, ld={'@context': 'https://schema.org', '@type': 'WebSite', 'name': NAME, 'url': SITE + '/'})
     for s, n in CATS:
         cl = [c for c in live if n in c['tags']]
         tips = ''.join(f'<li>{E(t)}</li>' for t in TIPS[n])
-        body = f'''<p class="bc"><a href="/">홈</a> › {n}</p><h1>{n} 공모전</h1><p class="lead">진행 중 {len(cl)}건 · 마감 임박순</p><p>{CAT_INTRO[n]}</p>
-<h2>{n} 공모전 응모 팁</h2><ul class="chk">{tips}</ul>
+        body = f'''<p class="bc"><a href="/">홈</a> › {n}</p><section class="dh" data-c="{s}"><span class="ic big">{CAT_ICON[n]}</span><h1>{n} 공모전</h1><p class="lead">진행 중 <b>{len(cl)}건</b> · 마감 임박순</p></section>
+<p>{CAT_INTRO[n]}</p>
+{say('serious', f'<b>{n} 공모전 응모 팁</b><ul class="chk">{tips}</ul>')}
 <h2>진행 중 {n} 공모전</h2>{TOOLBAR}<ul class="list" id="list">{''.join(card(c) for c in cl[:60])}</ul><button class="more" id="more" hidden>더 보기</button>'''
         page(f'/cat/{s}/', f'{n} 공모전 모음 (진행 중 {len(cl)}건)', f'{n} 분야 진행 중 공모전 {len(cl)}건 마감 임박순 정리. {CAT_INTRO[n][:70]}',
              body + listing_js(n), [('공모왕', '/'), (n, f'/cat/{s}/')])
     page('/event/', f'경품 이벤트 모음 (진행 중 {len(events)}건)', f'댓글·퀴즈·설문·SNS 경품 이벤트 {len(events)}건을 마감 임박순으로 정리했어요.',
-         f'''<p class="bc"><a href="/">홈</a> › 경품 이벤트</p><h1>경품 이벤트</h1><p class="lead">진행 중 {len(events)}건 · 마감 임박순</p>
+         f'''<p class="bc"><a href="/">홈</a> › 경품 이벤트</p><section class="dh" data-c="event"><span class="ic big">🎁</span><h1>경품 이벤트</h1><p class="lead">진행 중 <b>{len(events)}건</b> · 마감 임박순</p></section>
+{say('excited', '댓글·퀴즈·설문만으로 응모할 수 있는 이벤트가 이렇게 많아요! 당첨 발표는 꼭 공식 계정에서 확인해요.')}
 <p>공공기관·기업이 진행하는 댓글, 퀴즈, 설문, SNS 경품 이벤트입니다. 참여 조건(팔로우, 친구 태그, 스토리 공유 등)과 당첨자 발표 방법은 이벤트마다 달라요. 당첨 연락을 사칭해 개인정보나 송금을 요구하는 경우가 있으니 발표는 주최 측 공식 계정에서 확인하세요.</p>
 <ul class="list">{''.join(ev_card(e) for e in events)}</ul>''', [('공모왕', '/'), ('경품 이벤트', '/event/')])
     guides(live)
@@ -290,12 +311,12 @@ GUIDES = [
 
 
 def guides(live):
-    li = ''.join(f'<li><a class="card" href="/guide/{s}/"><h3 class="t">{E(t)}</h3><p class="o">{E(d)}</p></a></li>' for s, t, d, _ in GUIDES)
+    li = ''.join(f'<li><a class="card" data-c="guide" href="/guide/{s}/"><span class="ic">📖</span><div class="cb"><h3 class="t">{E(t)}</h3><p class="o">{E(d)}</p></div></a></li>' for s, t, d, _ in GUIDES)
     page('/guide/', '공모전 응모 가이드', '공모전 처음 응모하는 법, 제안서 쓰는 법, 수기·문학 공모 요령, 상금 수령과 사칭 주의까지.',
-         f'<p class="bc"><a href="/">홈</a> › 응모 가이드</p><h1>공모전 응모 가이드</h1><ul class="list">{li}</ul>', [('공모왕', '/'), ('응모 가이드', '/guide/')])
+         f'<p class="bc"><a href="/">홈</a> › 응모 가이드</p><section class="dh" data-c="guide"><span class="ic big">📖</span><h1>공모전 응모 가이드</h1></section>{say("wink", "처음 응모한다면 1번부터 차근차근 읽어 보세요. 실수로 탈락하는 일이 확 줄어요!")}<ul class="list">{li}</ul>', [('공모왕', '/'), ('응모 가이드', '/guide/')])
     rel = ''.join(card(c) for c in live[:4])
     for s, t, d, b in GUIDES:
-        page(f'/guide/{s}/', t, d, f'<p class="bc"><a href="/">홈</a> › <a href="/guide/">응모 가이드</a></p><article><h1>{E(t)}</h1>{b}</article><h2>마감 임박 공모전</h2><ul class="list">{rel}</ul>',
+        page(f'/guide/{s}/', t, d, f'<p class="bc"><a href="/">홈</a> › <a href="/guide/">응모 가이드</a></p><article><h1>{E(t)}</h1>{say("thumbsup", E(d))}{b}</article><h2>마감 임박 공모전</h2><ul class="list">{rel}</ul>',
              [('공모왕', '/'), ('응모 가이드', '/guide/'), (t, f'/guide/{s}/')],
              {'@context': 'https://schema.org', '@type': 'Article', 'headline': t, 'description': d, 'datePublished': '2026-10-16',
               'author': {'@type': 'Person', 'name': 'Seongsang Park'}})
