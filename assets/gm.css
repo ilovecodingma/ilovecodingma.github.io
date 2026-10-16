@@ -139,3 +139,7 @@ ul.row .o{display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;o
 article.ssul p{line-height:1.85}article.ssul h2{margin-top:22px}
 .pd{margin:-6px 0 8px;font-size:12.5px;color:var(--pri);font-weight:600}
 .o{margin-bottom:6px}
+/* 폰 글자 확대·긴 내용 때문에 화면이 옆으로 밀리지 않게 (2026-10-17) */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}body{overflow-x:clip}
+.hero{grid-template-columns:minmax(0,1fr) 300px}.hero-t,.hero-r,.hs{min-width:0}.hs{max-width:min(480px,100%)}
+@media(max-width:700px){.hero{grid-template-columns:minmax(0,1fr)}}
