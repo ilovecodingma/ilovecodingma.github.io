@@ -27,8 +27,8 @@
 
   S.innerHTML = `<div class="cs-stage"><p class="cs-title">이 공모전이나<br><em>해 볼까?</em></p><div class="cs-ruri"><img alt="루리" width="300" height="415"></div>
 <div class="cs-talk"><span class="cs-name">루리 · 공모전 상담</span><p class="cs-say"></p><div class="cs-opts"></div><form class="cs-free" hidden><input maxlength="40" placeholder="관심 주제가 있으면 적어 주세요 (예: 환경, 반려동물, 부산)"><button>추천받기</button></form></div></div>
-<div class="cs-dday" hidden><div class="cs-head"><h2>⏰ 마감 임박 D-3</h2><span class="cs-sum">오늘 안 내면 놓쳐요</span></div><div class="cs-strip"></div></div><div class="cs-res" hidden><div class="cs-head"><h2>이 공모전이나 해 볼까?</h2><span class="cs-sum"></span></div><ol class="cs-list"></ol>
-<div class="cs-act"><button class="cs-more">더 보여줘</button><button class="cs-redo">다시 상담할래</button></div></div>`;
+<div class="cs-dday" hidden><div class="cs-head"><h2>⏰ 마감 임박 D-3</h2><span class="cs-sum">오늘 안 내면 놓쳐요</span></div><div class="cs-strip"></div></div><div class="cs-res" hidden role="dialog" aria-label="루리 추천"><div class="cs-pbox"><button type="button" class="cs-x" aria-label="닫기">✕</button><div class="cs-ptop"><img class="cs-pr" alt="" width="300" height="415"><div><b class="cs-pname">루리의 추천</b><p class="cs-psay"></p></div></div><div class="cs-head"><h2>이 공모전이나 해 볼까?</h2><span class="cs-sum"></span></div><ol class="cs-list"></ol>
+<div class="cs-act"><button class="cs-more">더 보여줘</button><button class="cs-redo">다시 상담할래</button></div></div></div>`;
   const img = S.querySelector('.cs-ruri img'), say = S.querySelector('.cs-say'), opts = S.querySelector('.cs-opts'), free = S.querySelector('.cs-free');
   const res = S.querySelector('.cs-res'), list = S.querySelector('.cs-list');
   let typing;
@@ -81,13 +81,19 @@
     }).filter(x => x.l >= 0 && x.s > 0).sort((a, b) => b.s - a.s);
     const top = ranked[0] ? ranked[0].s : 1;
     ranked.forEach(x => x.pct = Math.max(41, Math.min(98, Math.round(58 + 40 * x.s / top))));
-    shown = 0; list.innerHTML = ''; res.hidden = false; more();
+    shown = 0; list.innerHTML = ''; more(); openPop();
     const n = ranked.length, hot = ranked.slice(0, 5).some(x => x.l <= 3);
     res.querySelector('.cs-sum').textContent = `우리 DB ${items.length}건 중 ${Math.min(n, 99)}건이 맞았어요`;
     talk(!n ? '음… 딱 맞는 게 지금은 없어요. 조건을 조금 바꿔 볼까요?' : hot ? `이거 어때요? 근데 <b>마감이 코앞</b>인 게 있어요. 하려면 지금!` : `<b>${esc(ranked[0].i.title)}</b> 이거나 해 볼래요? 제일 잘 맞아요!`, !n ? 'awkward' : hot ? 'surprise' : 'v');
-    opts.innerHTML = '<button type="button" class="cs-redo2">🔄 다시 상담</button>'; opts.querySelector('.cs-redo2').onclick = restart;
-    res.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    const line = !n ? '음… 딱 맞는 게 지금은 없어요. 조건을 조금 바꿔 볼까요?' : hot ? '이거 어때요? 근데 <b>마감이 코앞</b>인 게 있어요. 하려면 지금!' : `<b>${esc(ranked[0].i.title)}</b> 이거나 해 볼래요? 제일 잘 맞아요!`;
+    res.querySelector('.cs-psay').innerHTML = line; res.querySelector('.cs-pr').src = pose(!n ? 'awkward' : hot ? 'surprise' : 'v');
+    opts.innerHTML = '<button type="button" class="cs-again">✨ 추천 다시 보기</button><button type="button" class="cs-redo2">🔄 다시 상담</button>';
+    opts.querySelector('.cs-again').onclick = openPop; opts.querySelector('.cs-redo2').onclick = restart;
   }
+  function openPop() { res.hidden = false; document.documentElement.classList.add('cs-lock'); res.scrollTop = 0; ga('consult_popup', {}); }
+  function closePop() { res.hidden = true; document.documentElement.classList.remove('cs-lock'); }
+  res.addEventListener('click', e => { if (e.target === res || e.target.closest('.cs-x')) closePop(); });
+  addEventListener('keydown', e => { if (e.key === 'Escape' && !res.hidden) closePop(); });
   function more() {
     const part = ranked.slice(shown, shown + 5); shown += part.length;
     list.insertAdjacentHTML('beforeend', part.map(({ i, why, l, pct }, k) => `<li class="cs-card" style="--d:${k * 70}ms"><a href="/c/${i.id}/">
@@ -97,7 +103,7 @@
 <span class="cs-meta"><em class="${l <= 3 ? 'hot' : ''}">${l ? 'D-' + l : 'D-DAY'}</em>${i.pv ? esc(i.prize.split('·')[0]) : ''} · ${esc(i.org || '')}</span></span></a></li>`).join(''));
     S.querySelector('.cs-more').hidden = shown >= ranked.length;
   }
-  function restart() { try { localStorage.removeItem(KEY); } catch {} res.hidden = true; free.hidden = true; S.scrollIntoView({ behavior: 'smooth' }); step(0, {}); }
+  function restart() { try { localStorage.removeItem(KEY); } catch {} closePop(); free.hidden = true; S.scrollIntoView({ behavior: 'smooth' }); step(0, {}); }
   S.querySelector('.cs-more').onclick = () => { more(); ga('consult_more', {}); };
   S.querySelector('.cs-redo').onclick = restart;
   fetch('/data.json').then(r => r.json()).then(d => {
