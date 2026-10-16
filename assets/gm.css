@@ -82,7 +82,7 @@ ul.row li{scroll-snap-align:start}
 .cnt{margin:4px 0 8px;color:var(--mu);font-size:13px}
 /* Ruri speech */
 .say{display:flex;gap:10px;align-items:flex-end;margin:16px 0}
-.say img{flex:0 0 auto;width:56px;height:auto}
+.say img{flex:0 0 auto;width:64px;height:auto}
 .bub{position:relative;flex:1;background:var(--card);border:1px solid var(--bd);border-radius:18px 18px 18px 4px;padding:12px 16px;box-shadow:var(--sh);font-size:14.5px}
 .bub>b{display:block;font-size:12px;color:var(--pri);margin-bottom:2px}
 .bub p{margin:0}.bub .chk{margin:6px 0 0}
