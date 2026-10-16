@@ -1,5 +1,5 @@
 // 루리의 줍줍 커뮤니티 API — Cloudflare Worker + D1 (바인딩 이름: DB)
-// 회원가입·로그인(이메일+비밀번호만 받음 — 2026-10-16 사용자 "최소 정보, 이메일 주소만"; 표시 이름은 이메일 앞부분을 가린 값), 공모전별 후기·질문 게시판, 댓글, 신고(3회 누적 시 자동 숨김)
+// 회원가입·로그인(이메일+비밀번호만 받음 — 2026-10-16 사용자 "최소 정보, 이메일 주소만"; 표시 이름은 이메일 앞부분을 가린 값), 공모전별 팀 모집(만들기·신청·수락), 후기·질문 게시판, 댓글, 신고(3회 누적 시 자동 숨김)
 const ORIGINS = ['https://sungprofile.cloud', 'http://localhost:8765'];
 const DAY = 86400, LIMIT_POST = 10, LIMIT_COMMENT = 40, HIDE_AT = 3;
 
@@ -122,14 +122,81 @@ export default {
         await env.DB.prepare('UPDATE comments SET hidden = 1 WHERE id = ? AND user_id = ?').bind(+m[1], u.id).run();
         return json(req, { ok: true });
       }
+      // ---- 팀 모집 ----
+      if (p === '/api/teams' && req.method === 'GET') {
+        const c = clean(url.searchParams.get('contest'), 40), page = Math.max(0, +url.searchParams.get('page') || 0);
+        const sel = "SELECT t.id, t.contest_id, t.contest_title, t.name, substr(t.intro, 1, 160) intro, t.roles, t.size, t.deadline, t.status, t.created, u.nick leader, (SELECT COUNT(*) FROM team_members m WHERE m.team_id = t.id AND m.state = 'accepted') cnt FROM teams t LEFT JOIN users u ON u.id = t.leader_id WHERE t.hidden = 0";
+        const ord = " ORDER BY t.status = 'closed', t.created DESC LIMIT 30 OFFSET ?";
+        const q = c ? env.DB.prepare(sel + ' AND t.contest_id = ?' + ord).bind(c, page * 30) : env.DB.prepare(sel + ord).bind(page * 30);
+        return json(req, { teams: (await q.all()).results });
+      }
+      if (p === '/api/teams' && req.method === 'POST') {
+        const u = await me(req, env); if (!u) return err(req, '로그인이 필요해요.', 401);
+        const name = clean(body.name, 60), intro = clean(body.intro, 2000), cid = clean(body.contest_id, 40) || 'free';
+        if (name.length < 2 || intro.length < 5) return err(req, '팀 이름과 소개를 조금 더 써 주세요.');
+        const roles = clean(body.roles, 200).split(/[,，、]+/).map(r => r.trim().slice(0, 20)).filter(Boolean).slice(0, 8).join(',');
+        const size = Math.min(20, Math.max(2, (+body.size | 0) || 4)), dl = /^\d{4}-\d{2}-\d{2}$/.test(body.deadline || '') ? body.deadline : '';
+        if (await count(env, 'SELECT COUNT(*) n FROM teams WHERE leader_id = ? AND created > ?', u.id, now() - DAY) >= 5) return err(req, '하루에 만들 수 있는 팀 수를 넘었어요.', 429);
+        const r = await env.DB.prepare('INSERT INTO teams (contest_id, contest_title, leader_id, name, intro, roles, size, deadline, contact, created) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)')
+          .bind(cid, clean(body.contest_title, 120), u.id, name, intro, roles, size, dl, clean(body.contact, 300), now()).run();
+        const tid = r.meta.last_row_id;
+        await env.DB.prepare("INSERT INTO team_members (team_id, user_id, role, state, created) VALUES (?, ?, '팀장', 'accepted', ?)").bind(tid, u.id, now()).run();
+        return json(req, { id: tid });
+      }
+      if (p === '/api/myteams') {
+        const u = await me(req, env); if (!u) return err(req, '로그인이 필요해요.', 401);
+        const r = await env.DB.prepare("SELECT t.id, t.name, t.contest_id, t.contest_title, t.status, m.state, (t.leader_id = ?) leader, (SELECT COUNT(*) FROM team_members x WHERE x.team_id = t.id AND x.state = 'pending') waiting FROM team_members m JOIN teams t ON t.id = m.team_id WHERE m.user_id = ? AND t.hidden = 0 ORDER BY t.created DESC LIMIT 50").bind(u.id, u.id).all();
+        return json(req, { teams: r.results });
+      }
+      let tm = p.match(/^\/api\/teams\/(\d+)(?:\/(apply|decide|close|open|leave))?$/);
+      if (tm) {
+        const tid = +tm[1], act = tm[2] || '';
+        const t = await env.DB.prepare('SELECT t.*, u.nick leader FROM teams t LEFT JOIN users u ON u.id = t.leader_id WHERE t.id = ? AND t.hidden = 0').bind(tid).first();
+        if (!t) return err(req, '없거나 내려간 팀이에요.', 404);
+        const u = await me(req, env), isLeader = !!u && u.id === t.leader_id;
+        const mine = u ? await env.DB.prepare('SELECT state, role FROM team_members WHERE team_id = ? AND user_id = ?').bind(tid, u.id).first() : null;
+        if (!act && req.method === 'GET') {
+          const mem = (await env.DB.prepare("SELECT m.role, u.nick FROM team_members m LEFT JOIN users u ON u.id = m.user_id WHERE m.team_id = ? AND m.state = 'accepted' ORDER BY m.created").bind(tid).all()).results;
+          const apps = isLeader ? (await env.DB.prepare("SELECT m.user_id uid, m.role, m.msg, m.created, u.nick FROM team_members m LEFT JOIN users u ON u.id = m.user_id WHERE m.team_id = ? AND m.state = 'pending' ORDER BY m.created").bind(tid).all()).results : [];
+          const ok = isLeader || (mine && mine.state === 'accepted');
+          const { leader_id, contact, reports, hidden, ...pub } = t;
+          return json(req, { team: { ...pub, contact: ok ? contact : '' }, members: mem, applicants: apps, me: { leader: isLeader, state: mine ? mine.state : '' } });
+        }
+        if (!act && req.method === 'DELETE') {
+          if (!isLeader) return err(req, '팀장만 지울 수 있어요.', 403);
+          await env.DB.prepare('UPDATE teams SET hidden = 1 WHERE id = ?').bind(tid).run(); return json(req, { ok: true });
+        }
+        if (req.method !== 'POST' || !act) return err(req, '없는 주소예요.', 404);
+        if (!u) return err(req, '로그인이 필요해요.', 401);
+        if (act === 'apply') {
+          if (isLeader) return err(req, '내가 만든 팀이에요.');
+          if (t.status !== 'open') return err(req, '모집이 끝난 팀이에요.');
+          if (mine && mine.state !== 'rejected') return err(req, mine.state === 'accepted' ? '이미 팀원이에요.' : '이미 신청했어요. 팀장 답을 기다려 주세요.');
+          if (await count(env, "SELECT COUNT(*) n FROM team_members WHERE user_id = ? AND created > ? AND state = 'pending'", u.id, now() - DAY) >= 20) return err(req, '하루에 신청할 수 있는 수를 넘었어요.', 429);
+          await env.DB.prepare("INSERT OR REPLACE INTO team_members (team_id, user_id, role, msg, state, created) VALUES (?, ?, ?, ?, 'pending', ?)").bind(tid, u.id, clean(body.role, 20), clean(body.msg, 500), now()).run();
+          return json(req, { ok: true });
+        }
+        if (act === 'leave') {
+          if (isLeader) return err(req, '팀장은 나갈 수 없어요. 모집을 닫거나 팀을 지워 주세요.');
+          await env.DB.prepare('DELETE FROM team_members WHERE team_id = ? AND user_id = ?').bind(tid, u.id).run(); return json(req, { ok: true });
+        }
+        if (!isLeader) return err(req, '팀장만 할 수 있어요.', 403);
+        if (act === 'decide') {
+          if (body.accept && await count(env, "SELECT COUNT(*) n FROM team_members WHERE team_id = ? AND state = 'accepted'", tid) >= t.size) return err(req, '정원이 다 찼어요. 모집을 닫거나 인원을 늘려 주세요.');
+          await env.DB.prepare("UPDATE team_members SET state = ? WHERE team_id = ? AND user_id = ? AND state = 'pending'").bind(body.accept ? 'accepted' : 'rejected', tid, +body.uid || 0).run();
+          return json(req, { ok: true });
+        }
+        await env.DB.prepare('UPDATE teams SET status = ? WHERE id = ?').bind(act === 'close' ? 'closed' : 'open', tid).run();
+        return json(req, { ok: true });
+      }
       // ---- 신고 (3명 신고 시 자동 숨김) ----
       if (p === '/api/report' && req.method === 'POST') {
         const u = await me(req, env); if (!u) return err(req, '로그인이 필요해요.', 401);
-        const t = /^[pc]:\d+$/.test(body.target || '') ? body.target : '';
+        const t = /^[pct]:\d+$/.test(body.target || '') ? body.target : '';
         if (!t) return err(req, '대상을 확인해 주세요.');
         const ins = await env.DB.prepare('INSERT OR IGNORE INTO reports (user_id, target, created) VALUES (?, ?, ?)').bind(u.id, t, now()).run();
         if (ins.meta.changes) {
-          const [k, id] = t.split(':'), tb = k === 'p' ? 'posts' : 'comments';
+          const [k, id] = t.split(':'), tb = { p: 'posts', c: 'comments', t: 'teams' }[k];
           await env.DB.prepare(`UPDATE ${tb} SET reports = reports + 1, hidden = CASE WHEN reports + 1 >= ? THEN 1 ELSE hidden END WHERE id = ?`).bind(HIDE_AT, +id).run();
         }
         return json(req, { ok: true });

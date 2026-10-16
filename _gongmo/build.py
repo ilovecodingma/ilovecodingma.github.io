@@ -56,7 +56,7 @@ EV_KIND = {'event': '이벤트', 'sweepstakes': '추첨 경품', 'quiz': '퀴즈
            'sns_tag_required': '친구 태그', 'sns_story_required': '스토리 공유', 'sns_capture': '캡처 인증', 'sns_form_only': '폼 응모',
            'sns_comment+form': '댓글+폼', 'sns_purchase': '구매 인증', 'sns_region': '지역 한정', 'sns_other': 'SNS 이벤트'}
 
-COMM_TAGS_TPL = '<link rel="stylesheet" href="/assets/community/comm.css?v=1"><script defer src="/assets/community/comm.js?v=1"></script>'
+COMM_TAGS_TPL = '<link rel="stylesheet" href="/assets/community/comm.css?v=2"><script defer src="/assets/community/comm.js?v=2"></script>'
 GTAG = ('<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4248498719773262" crossorigin="anonymous"></script>\n'
         '<script async src="https://www.googletagmanager.com/gtag/js?id=G-G9BPFF95GY"></script>\n'
         "<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-G9BPFF95GY');</script>")
@@ -75,7 +75,7 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False):
     if ld:
         lds.append(ld)
     ldh = ''.join('<script type="application/ld+json">%s</script>' % json.dumps(x, ensure_ascii=False).replace('</', '<\\/') for x in lds)
-    nav = ''.join(f'<a href="/{s}/">{n}</a>' for s, n in NAV + ([('community', '커뮤니티')] if COMM_API else []))
+    nav = ''.join(f'<a href="/{s}/">{n}</a>' for s, n in NAV + ([('community', '팀원 모집')] if COMM_API else []))
     doc = f'''<!doctype html>
 <html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{E(t)}</title>
@@ -251,7 +251,7 @@ def detail(c, live):
 <h2>한눈에 보기</h2><p>{E(summary)}</p>
 <h2>응모 전 체크리스트</h2><ul class="chk">{tips}</ul>
 <p class="note">분야: {catl}. 상금·자격·기간은 공고 원문에서 자동으로 정리한 값이라 오차가 있을 수 있습니다. 최종 기준은 주최 측 공식 공고입니다.</p>
-{f'<section id="cm-board" data-contest="{c["id"]}" data-title="{E(c["title"])}"></section>' if COMM_API else ''}
+{f'<section id="cm-teams" data-contest="{c["id"]}" data-title="{E(c["title"])}"></section><section id="cm-board" data-contest="{c["id"]}" data-title="{E(c["title"])}"></section>' if COMM_API else ''}
 <h2>같은 분야 진행 중 공모전</h2><ul class="list">{simh or '<li class="empty">진행 중인 같은 분야 공모전이 없어요.</li>'}</ul>'''
     ld = {'@context': 'https://schema.org', '@type': 'Event', 'name': c['title'], 'eventStatus': 'https://schema.org/EventScheduled',
           'eventAttendanceMode': 'https://schema.org/OnlineEventAttendanceMode', 'startDate': c['start'] or c['end'], 'endDate': c['end'],
@@ -464,7 +464,7 @@ def build():
     ss = load_ssul()
     build_ssul(ss, live, aps)
     guides(live)
-    community()
+    community(live)
     statics(len(live), len(events))
     urls = ['/', '/apply/', '/event/', '/guide/', '/ssul/'] + [f'/ssul/{x["slug"]}/' for x in ss] + [f'/a/{a["id"]}/' for a in aps] + [f'/cat/{s}/' for s, _ in CATS] + [f'/guide/{g[0]}/' for g in GUIDES] + \
            ['/about/', '/privacy/', '/terms/', '/contact/'] + [f'/c/{c["id"]}/' for c in contests] + sorted((f'/v/{d}/' for d in os.listdir(os.path.join(ROOT, 'v')) if os.path.isfile(os.path.join(ROOT, 'v', d, 'index.html'))), key=lambda u: int(u.split('/')[2]) if u.split('/')[2].isdigit() else 0)
@@ -581,14 +581,20 @@ PRIV_MEMBER = ('<p>루리의 줍줍(sungprofile.cloud)은 커뮤니티(후기·�
                '<p>회원이 아닌 방문자의 개인정보는 수집하지 않습니다.</p>') if COMM_API else               '<p>루리의 줍줍(sungprofile.cloud)은 회원가입·로그인 기능이 없으며 이용자의 이름, 이메일, 연락처 등 개인정보를 수집·저장하지 않습니다.</p>'
 
 
-def community():
+def community(live=()):
     if not COMM_API:
         shutil.rmtree(os.path.join(ROOT, 'community'), ignore_errors=True)
         return
-    page('/community/', '후기 커뮤니티', '공모전·대회 응모 후기와 질문, 팁을 나누는 루리의 줍줍 커뮤니티.',
-         f'''<p class="bc"><a href="/">홈</a> › 커뮤니티</p><section class="dh" data-c="guide"><span class="ic big">💬</span><h1>후기 커뮤니티</h1><p class="lead">응모 후기·질문·팁</p></section>
-{say('o_present', '응모해 본 대회 후기를 남겨 주세요! 글은 각 공모전 페이지의 「후기·질문」에서 쓸 수 있어요.')}
-<section id="cm-board" data-all></section>''', [('루리의 줍줍', '/'), ('커뮤니티', '/community/')])
+    # 팀 만들 때 고르는 공모전 목록 (진행 중만)
+    with open(os.path.join(ROOT, 'assets', 'community', 'contests.json'), 'w', encoding='utf-8', newline='\n') as f:
+        json.dump([{'id': c['id'], 't': c['title']} for c in live], f, ensure_ascii=False, separators=(',', ':'))
+    page('/community/', '팀원 모집 · 커뮤니티', '공모전·대회에 같이 나갈 팀원을 찾고 팀을 만드는 루리의 줍줍 커뮤니티. 응모 후기와 질문도 나눠요.',
+         f'''<p class="bc"><a href="/">홈</a> › 커뮤니티</p><section class="dh" data-c="guide"><span class="ic big">🤝</span><h1>팀원 모집 · 커뮤니티</h1><p class="lead">공모전 같이 나갈 사람 찾기</p></section>
+{say('o_present', '혼자 나가기 어려운 공모전, 같이 나갈 팀원을 여기서 찾아요! 팀을 만들고 찾는 역할을 적으면 신청이 와요. 팀장이 수락한 사람에게만 연락 방법이 보여요.')}
+<button class="btn2 cm-join-cta" hidden>무료 가입 · 로그인 (이메일만 있으면 돼요)</button>
+<div class="cm-tabs"><button data-k="team">🤝 팀 찾기·만들기</button><button data-k="board">💬 후기·질문</button></div>
+<section id="cm-teams" data-all data-tab="team"></section>
+<section id="cm-board" data-all data-tab="board" hidden></section>''', [('루리의 줍줍', '/'), ('커뮤니티', '/community/')])
 
 
 def statics(nl, ne):

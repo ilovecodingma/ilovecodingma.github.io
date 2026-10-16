@@ -3,13 +3,17 @@
 준비: 금고 ~/.cloudflare.xml (PSCredential: UserName=계정 ID, Password=API 토큰[Workers Scripts:Edit, D1:Edit, Workers Subdomain:Edit])
 사용: python -X utf8 deploy.py   → D1 생성/재사용 → 스키마 적용 → Worker 업로드 → workers.dev 공개 → _gongmo/community.json 기록
 """
-import json, os, subprocess, urllib.request
+import json, os, subprocess, sys, urllib.request
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 NAME, DBNAME = 'jupjup-api', 'jupjup'
 
 
 def cred():
+    try:  # OAuth 자동 갱신 (~/remote_login/cf_token.py)
+        sys.path.insert(0, os.path.expanduser('~/remote_login')); import cf_token; return cf_token.get()
+    except Exception as e:
+        print('토큰 자동 갱신 실패, 금고 값 사용:', e)
     ps = ("$c = Import-Clixml \"$env:USERPROFILE\\.cloudflare.xml\"; "
           "Write-Output $c.UserName; Write-Output $c.GetNetworkCredential().Password")
     out = subprocess.run(['powershell', '-NoProfile', '-Command', ps], capture_output=True, text=True).stdout.split()

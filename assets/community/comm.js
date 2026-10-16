@@ -1,4 +1,4 @@
-// 루리의 줍줍 커뮤니티 — 공모전별 후기·질문 게시판 (API: Cloudflare Worker, 주소는 <body data-api>)
+// 루리의 줍줍 커뮤니티 — 공모전별 팀 모집(만들기·신청·수락) + 후기·질문 게시판 (API: Cloudflare Worker, 주소는 <body data-api>)
 // 가입은 이메일+비밀번호만. 표시 이름은 가린 이메일.
 (function () {
   const API = document.body.dataset.api; if (!API) return;
@@ -51,7 +51,7 @@
   // ---- 게시판 (공모전 상세 #cm-board[data-contest], 전체 /community/ #cm-board[data-all]) ----
   async function board(el) {
     const cid = el.dataset.contest || '', title = el.dataset.title || '', all = 'all' in el.dataset;
-    el.innerHTML = `${all ? '' : `<div class="cm-head"><h2>💬 이 공모전 후기·질문</h2><button class="cm-write btn2">글쓰기</button></div>`}<div class="cm-form" hidden></div><ul class="cm-list"><li class="note">불러오는 중…</li></ul>`;
+    el.innerHTML = `<div class="cm-head"><h2>💬 ${all ? '후기·질문·자유' : '이 공모전 후기·질문'}</h2><button class="cm-write btn2">글쓰기</button></div><div class="cm-form" hidden></div><ul class="cm-list"><li class="note">불러오는 중…</li></ul>`;
     const list = el.querySelector('.cm-list'), form = el.querySelector('.cm-form');
     const load = async () => {
       try {
@@ -107,6 +107,122 @@
   }
   function confirmLite(btn) { if (btn.dataset.sure) return true; btn.dataset.sure = 1; btn.textContent = '한 번 더 누르면 삭제'; return false; }
 
+
+  // ---- 팀 모집 (공모전 상세 #cm-teams[data-contest], 전체 /community/ #cm-teams[data-all]) ----
+  const ROLE_EX = ['기획', '디자인', '개발', '영상 편집', '글쓰기', '발표'];
+  const tag = s => `<span class="tm-role">${esc(s)}</span>`;
+  async function teams(el) {
+    const cid = el.dataset.contest || '', title = el.dataset.title || '', all = 'all' in el.dataset;
+    el.innerHTML = `<div class="cm-head"><h2>🤝 ${all ? '팀원 모집' : '이 공모전 같이 나갈 팀'}</h2><button class="tm-new btn2">+ 팀 만들기</button></div>
+${all ? '<div class="tm-mine" hidden></div>' : ''}<div class="cm-form" hidden></div><ul class="tm-list"><li class="note">불러오는 중…</li></ul>`;
+    const list = el.querySelector('.tm-list'), form = el.querySelector('.cm-form');
+    const load = async () => {
+      try {
+        const { teams } = await api('/api/teams' + (cid ? '?contest=' + encodeURIComponent(cid) : ''));
+        list.innerHTML = teams.length ? '' : `<li class="cm-empty">${all ? '아직 모집 중인 팀이 없어요. 나가고 싶은 공모전이 있다면 첫 팀을 만들어 보세요!' : '아직 이 공모전 팀이 없어요. 팀을 만들어 같이 나갈 사람을 모아 보세요!'}</li>`;
+        teams.forEach(t => {
+          const li = document.createElement('li'); li.className = 'tm-card' + (t.status === 'closed' ? ' closed' : '');
+          const full = t.cnt >= t.size;
+          li.innerHTML = `<div class="cm-meta"><span class="tm-st ${t.status === 'closed' || full ? 'off' : 'on'}">${t.status === 'closed' ? '모집 마감' : full ? '정원 참' : '모집 중'}</span><span>👥 ${t.cnt}/${t.size}명</span>${t.deadline ? `<span>~${esc(t.deadline.slice(5).replace('-', '/'))}</span>` : ''}<span>${esc(t.leader || '탈퇴한 회원')} · ${ago(t.created)}</span></div>
+<h3>${esc(t.name)}</h3>${all && t.contest_id !== 'free' ? `<a class="cm-on" href="/c/${esc(t.contest_id)}/">📌 ${esc(t.contest_title || t.contest_id)}</a>` : ''}<p class="cm-body">${esc(t.intro)}</p>
+<div class="tm-roles">${t.roles ? t.roles.split(',').map(tag).join('') : ''}</div><div class="cm-acts"><button class="tm-open btn2 ghost">자세히 · 신청</button></div>`;
+          li.querySelector('.tm-open').onclick = () => teamModal(t.id, load);
+          list.appendChild(li);
+        });
+      } catch (e) { list.innerHTML = '<li class="note">팀 목록을 불러오지 못했어요.</li>'; }
+      const mine = el.querySelector('.tm-mine');
+      if (mine && st.t) {
+        const { teams: my } = await api('/api/myteams').catch(() => ({ teams: [] }));
+        mine.hidden = !my.length;
+        mine.innerHTML = '<h3>내 팀</h3>' + my.map(t => `<button class="tm-my" data-id="${t.id}">${t.leader ? '👑' : t.state === 'accepted' ? '✅' : '⏳'} ${esc(t.name)}${t.leader && t.waiting ? ` <b class="tm-wait">신청 ${t.waiting}</b>` : ''}${!t.leader && t.state === 'pending' ? ' <small>답 기다리는 중</small>' : ''}${t.state === 'rejected' ? ' <small>거절됨</small>' : ''}</button>`).join('');
+        mine.querySelectorAll('.tm-my').forEach(b => b.onclick = () => teamModal(+b.dataset.id, load));
+      }
+    };
+    el.querySelector('.tm-new').onclick = async () => {
+      if (!st.t) return authModal(() => location.reload());
+      form.hidden = !form.hidden; if (form.hidden) return;
+      let pick = '';
+      if (all) {
+        const cs = await fetch('/assets/community/contests.json').then(r => r.json()).catch(() => []);
+        pick = `<input class="tm-cq" list="tm-cl" placeholder="나갈 공모전 이름 검색 (없으면 비워 두세요)"><datalist id="tm-cl">${cs.map(c => `<option value="${esc(c.t)}" data-id="${esc(c.id)}"></option>`).join('')}</datalist>`;
+        form._cs = cs;
+      } else pick = `<p class="note">📌 ${esc(title)}</p>`;
+      form.innerHTML = `${pick}<input class="tm-nm" maxlength="60" placeholder="팀 이름 (예: 영상 공모전 같이 나갈 분)">
+<textarea class="tm-in" maxlength="2000" rows="4" placeholder="어떤 팀인지, 지금 몇 명이고 어떤 사람을 찾는지 적어 주세요."></textarea>
+<input class="tm-rl" maxlength="200" placeholder="찾는 역할, 쉼표로 (예: ${ROLE_EX.slice(0, 3).join(', ')})">
+<div class="tm-row"><label>총 인원 <select class="tm-sz">${[2, 3, 4, 5, 6, 8, 10].map(n => `<option${n === 4 ? ' selected' : ''}>${n}</option>`).join('')}</select>명</label><label>모집 마감 <input type="date" class="tm-dl"></label></div>
+<input class="tm-ct" maxlength="300" placeholder="연락 방법 (예: 카카오톡 오픈채팅 링크). 수락한 팀원에게만 보여요">
+<p class="cm-err"></p><button class="tm-send btn2">팀 만들기</button>`;
+      form.querySelector('.tm-send').onclick = async () => {
+        let c_id = cid, c_t = title;
+        if (all) { const q = form.querySelector('.tm-cq').value.trim(), hit = (form._cs || []).find(c => c.t === q); c_id = hit ? hit.id : 'free'; c_t = hit ? hit.t : q; }
+        try {
+          const { id } = await api('/api/teams', { method: 'POST', body: { contest_id: c_id, contest_title: c_t, name: form.querySelector('.tm-nm').value, intro: form.querySelector('.tm-in').value,
+            roles: form.querySelector('.tm-rl').value, size: +form.querySelector('.tm-sz').value, deadline: form.querySelector('.tm-dl').value, contact: form.querySelector('.tm-ct').value } });
+          form.hidden = true; await load(); teamModal(id, load);
+        } catch (e) { form.querySelector('.cm-err').textContent = e.message; }
+      };
+    };
+    load();
+  }
+  async function teamModal(id, reload) {
+    const m = document.createElement('div'); m.className = 'cm-modal';
+    m.innerHTML = '<div class="cm-box tm-box" role="dialog" aria-label="팀"><button class="cm-x" aria-label="닫기">✕</button><div class="tm-body"><p class="note">불러오는 중…</p></div></div>';
+    document.body.appendChild(m);
+    const close = () => { m.remove(); reload && reload(); };
+    m.querySelector('.cm-x').onclick = close; m.onclick = e => { if (e.target === m) close(); };
+    const body = m.querySelector('.tm-body');
+    const draw = async () => {
+      let d; try { d = await api('/api/teams/' + id); } catch (e) { body.innerHTML = `<p class="cm-err">${esc(e.message)}</p>`; return; }
+      const t = d.team, me_ = d.me, roles = t.roles ? t.roles.split(',') : [];
+      const contact = t.contact ? (/^https?:\/\//.test(t.contact) ? `<a href="${esc(t.contact)}" target="_blank" rel="noopener nofollow">${esc(t.contact)}</a>` : esc(t.contact)) : '';
+      let act = '';
+      if (me_.leader) {
+        act = `<h4>신청한 사람 ${d.applicants.length}명</h4>${d.applicants.length ? d.applicants.map(a => `<div class="tm-app"><b>${esc(a.nick || '탈퇴한 회원')}</b>${a.role ? ' ' + tag(a.role) : ''}<p>${esc(a.msg) || '<span class="note">한마디 없음</span>'}</p><button class="btn2" data-ok="${a.uid}">수락</button> <button class="btn2 ghost" data-no="${a.uid}">거절</button></div>`).join('') : '<p class="note">아직 신청이 없어요. 링크를 공유해 보세요.</p>'}
+<div class="cm-row"><button class="btn2 ghost tm-tg">${t.status === 'open' ? '모집 마감하기' : '다시 모집하기'}</button><button class="btn2 ghost tm-del">팀 지우기</button></div>`;
+      } else if (me_.state === 'accepted') act = `<p class="tm-okmsg">✅ 팀원이에요!</p><button class="btn2 ghost tm-lv">팀 나가기</button>`;
+      else if (me_.state === 'pending') act = '<p class="note">⏳ 신청했어요. 팀장이 수락하면 연락 방법이 여기 보여요.</p>';
+      else if (t.status !== 'open') act = '<p class="note">모집이 끝난 팀이에요.</p>';
+      else act = `<h4>이 팀에 신청하기</h4>${me_.state === 'rejected' ? '<p class="note">이전 신청은 거절됐어요. 다시 신청할 수 있어요.</p>' : ''}
+<select class="tm-ar"><option value="">맡고 싶은 역할</option>${roles.map(r => `<option>${esc(r)}</option>`).join('')}<option>기타</option></select>
+<textarea class="tm-am" maxlength="500" rows="3" placeholder="간단한 자기소개, 해 본 것, 가능한 시간 등. 전화번호는 쓰지 마세요."></textarea><p class="cm-err"></p><button class="btn2 tm-ap">신청하기</button>`;
+      body.innerHTML = `<div class="cm-meta"><span class="tm-st ${t.status === 'open' ? 'on' : 'off'}">${t.status === 'open' ? '모집 중' : '모집 마감'}</span><span>👥 ${d.members.length}/${t.size}명</span>${t.deadline ? `<span>마감 ${esc(t.deadline)}</span>` : ''}</div>
+<h3>${esc(t.name)}</h3>${t.contest_id !== 'free' ? `<a class="cm-on" href="/c/${esc(t.contest_id)}/">📌 ${esc(t.contest_title || t.contest_id)}</a>` : t.contest_title ? `<p class="note">📌 ${esc(t.contest_title)}</p>` : ''}
+<p class="cm-body">${esc(t.intro)}</p>${roles.length ? `<div class="tm-roles">찾는 역할 ${roles.map(tag).join('')}</div>` : ''}
+<h4>팀원</h4><div class="tm-mem">${d.members.map(x => `<span>${x.role === '팀장' ? '👑' : '🙂'} ${esc(x.nick || '탈퇴한 회원')}${x.role ? ' · ' + esc(x.role) : ''}</span>`).join('')}</div>
+${contact ? `<div class="tm-ct2">📞 연락 방법: ${contact}</div>` : ''}
+${st.t ? act : '<button class="btn2 tm-login">로그인하고 신청하기</button>'}
+<div class="cm-acts"><button class="tm-share">링크 복사</button>${st.t && !me_.leader ? '<button class="tm-rp">신고</button>' : ''}</div>`;
+      const q = s => body.querySelector(s);
+      body.querySelectorAll('[data-ok],[data-no]').forEach(b => b.onclick = async () => {
+        try { await api(`/api/teams/${id}/decide`, { method: 'POST', body: { uid: +(b.dataset.ok || b.dataset.no), accept: !!b.dataset.ok } }); draw(); } catch (e) { b.textContent = e.message; }
+      });
+      if (q('.tm-tg')) q('.tm-tg').onclick = async () => { await api(`/api/teams/${id}/${t.status === 'open' ? 'close' : 'open'}`, { method: 'POST' }); draw(); };
+      if (q('.tm-del')) q('.tm-del').onclick = async e => { if (confirmLite(e.currentTarget)) { await api('/api/teams/' + id, { method: 'DELETE' }); close(); } };
+      if (q('.tm-lv')) q('.tm-lv').onclick = async e => { if (confirmLite(e.currentTarget)) { await api(`/api/teams/${id}/leave`, { method: 'POST' }); draw(); } };
+      if (q('.tm-ap')) q('.tm-ap').onclick = async () => {
+        try { await api(`/api/teams/${id}/apply`, { method: 'POST', body: { role: q('.tm-ar').value, msg: q('.tm-am').value } }); draw(); }
+        catch (e) { q('.cm-err').textContent = e.message; }
+      };
+      if (q('.tm-login')) q('.tm-login').onclick = () => authModal(draw);
+      if (q('.tm-rp')) q('.tm-rp').onclick = e => report(e.currentTarget, 't:' + id);
+      q('.tm-share').onclick = e => { const u = location.origin + '/community/#team-' + id; (navigator.clipboard ? navigator.clipboard.writeText(u) : Promise.reject()).then(() => e.target.textContent = '복사됐어요', () => prompt('링크', u)); };
+    };
+    draw();
+  }
+
+  // ---- 커뮤니티 탭 ----
+  function tabs() {
+    const bar = document.querySelector('.cm-tabs'); if (!bar) return;
+    const show = k => { bar.querySelectorAll('button').forEach(b => b.classList.toggle('on', b.dataset.k === k)); document.querySelectorAll('[data-tab]').forEach(s => s.hidden = s.dataset.tab !== k); };
+    bar.querySelectorAll('button').forEach(b => b.onclick = () => show(b.dataset.k));
+    const j = document.querySelector('.cm-join-cta'); if (j) { j.hidden = !!st.t; j.onclick = () => authModal(() => location.reload()); }
+    show('team');
+    const h = location.hash.match(/^#team-(\d+)$/); if (h) teamModal(+h[1]);
+  }
+
   paintBar();
+  document.querySelectorAll('#cm-teams').forEach(teams);
   document.querySelectorAll('#cm-board').forEach(board);
+  tabs();
 })();

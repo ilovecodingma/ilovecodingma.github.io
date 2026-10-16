@@ -43,3 +43,32 @@ CREATE TABLE IF NOT EXISTS reports (
   created INTEGER NOT NULL,
   PRIMARY KEY (user_id, target)
 );
+
+-- 팀 모집 (2026-10-16 사용자: "팀도 만들고 그러는 용도")
+CREATE TABLE IF NOT EXISTS teams (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  contest_id TEXT NOT NULL,
+  contest_title TEXT NOT NULL DEFAULT '',
+  leader_id INTEGER NOT NULL,
+  name TEXT NOT NULL,
+  intro TEXT NOT NULL,
+  roles TEXT NOT NULL DEFAULT '',      -- 쉼표 구분: 기획,디자인,개발
+  size INTEGER NOT NULL DEFAULT 4,     -- 팀장 포함 총원
+  deadline TEXT NOT NULL DEFAULT '',   -- YYYY-MM-DD 모집 마감
+  contact TEXT NOT NULL DEFAULT '',    -- 오픈채팅 링크 등, 수락된 팀원에게만 공개
+  status TEXT NOT NULL DEFAULT 'open', -- open | closed
+  created INTEGER NOT NULL,
+  reports INTEGER NOT NULL DEFAULT 0,
+  hidden INTEGER NOT NULL DEFAULT 0
+);
+CREATE INDEX IF NOT EXISTS teams_contest ON teams(contest_id, created DESC);
+CREATE INDEX IF NOT EXISTS teams_recent ON teams(created DESC);
+CREATE TABLE IF NOT EXISTS team_members (
+  team_id INTEGER NOT NULL,
+  user_id INTEGER NOT NULL,
+  role TEXT NOT NULL DEFAULT '',
+  msg TEXT NOT NULL DEFAULT '',
+  state TEXT NOT NULL DEFAULT 'pending', -- pending | accepted | rejected
+  created INTEGER NOT NULL,
+  PRIMARY KEY (team_id, user_id)
+);
