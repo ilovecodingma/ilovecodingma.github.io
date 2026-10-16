@@ -1,8 +1,8 @@
-// 공모왕 루리 챗봇 — 브라우저 안에서만 동작 (검색 RAG + WebLLM 초경량 sLLM + 음성 STS)
+// 루리 챗봇 — 브라우저 안에서만 동작 (검색 RAG + WebLLM 초경량 sLLM + 음성 STS)
 // 기준 문서: _gongmo/chatbot_manual.md
 const MODEL = 'Qwen2.5-0.5B-Instruct-q4f16_1-MLC';
 const WEBLLM = 'https://cdn.jsdelivr.net/npm/@mlc-ai/web-llm@0.2.79/+esm';
-const MANUAL = `너는 공모전 정보 사이트 「공모왕」의 안내 캐릭터 "공모왕 루리"다.
+const MANUAL = `너는 공모전 정보 사이트 「루리의 생활지식」의 안내 캐릭터 "루리"다.
 규칙:
 - 밝고 단정한 존댓말(~해요), 3~5문장으로 짧게.
 - 반드시 아래 [찾은 공모전] 목록에 있는 것만 말한다. 목록에 없는 공모전·날짜·상금을 지어내지 않는다.
@@ -14,7 +14,7 @@ const FAQ = [
   [/(AI|에이아이|인공지능).*(써도|사용|만들어도|괜찮)/, '공모전마다 달라요. 생성형 AI를 금지하거나 사용 표기를 요구하는 곳이 있으니 요강을 꼭 확인해 주세요.'],
   [/돈.*(보내|입금)|수수료.*(내라|요구)|당첨.*(입금|송금)/, '사기일 가능성이 높아요! 정상적인 공모전은 먼저 돈을 요구하지 않아요. 주최 기관 공식 연락처로 꼭 확인하세요.'],
   [/틀렸|오류|잘못된 정보|등록해|삭제해|제휴|광고|협찬/, '알려 주셔서 고마워요! 사이트 맨 아래 문의 메일로 공모전 이름과 함께 보내 주시면 확인할게요.'],
-  [/^(안녕|하이|hi|hello)/i, '안녕하세요, 공모왕 루리예요! "이번 주 마감 슬로건 공모전"처럼 물어보시면 찾아 드릴게요.'],
+  [/^(안녕|하이|hi|hello)/i, '안녕하세요, 루리예요! "이번 주 마감 슬로건 공모전"처럼 물어보시면 찾아 드릴게요.'],
   [/(경품|이벤트|퀴즈|설문|댓글)/, null], // 아래에서 /event/ 안내 덧붙임
   [/(쓰는 법|작성법|요령|팁|처음 응모|어떻게 응모)/, '응모 요령은 가이드에 정리해 뒀어요. <a href="/guide/first/">처음 응모할 때 확인할 7가지</a>, <a href="/guide/proposal/">제안서 쓰는 법</a>, <a href="/guide/writing/">수기·문학 공모 요령</a>'],
 ];
@@ -132,7 +132,7 @@ let log, alertBot, scroll;
 function ui() {
   const root = el('div', 'rc');
   root.innerHTML = `<button class="rc-fab" aria-label="루리에게 물어보기"><img src="/assets/ruri/avatar.webp" alt=""><span>루리에게 물어보기</span></button>
-<section class="rc-panel" hidden aria-label="공모왕 루리 챗봇"><header><img src="/assets/ruri/avatar.webp" alt=""><div><b>공모왕 루리</b><small id="rc-note">진행 중 공모전에서 찾아 드려요</small></div>
+<section class="rc-panel" hidden aria-label="루리 챗봇"><header><img src="/assets/ruri/avatar.webp" alt=""><div><b>루리</b><small id="rc-note">진행 중 공모전에서 찾아 드려요</small></div>
 <button class="rc-ai" title="브라우저 안에서 초경량 AI(약 300MB)를 켭니다">AI 켜기</button><button id="rc-spk" class="rc-ic" title="답변 읽어 주기">🔈</button><button class="rc-x rc-ic" aria-label="닫기">✕</button></header>
 <div class="rc-log" role="log" aria-live="polite"></div>
 <div class="rc-chips"><button>이번 주 마감</button><button>상금 큰 공모전</button><button>영상 숏폼 공모전</button><button>슬로건 공모전</button><button>해외 공모전</button></div>
@@ -150,7 +150,7 @@ function ui() {
     input.placeholder = ok ? '예) 이번 주 마감 슬로건 공모전' : '먼저 위의 「AI 켜기」를 눌러 주세요';
     if (gate) { gate.remove(); gate = null; }
     if (ok) { if (!log.querySelector('.rc-hello')) add('bot rc-hello', searchOnly && !engine ? '간단 검색 모드예요. "이번 주 마감", "영상 공모전"처럼 물어봐 주세요.' : '준비됐어요! 어떤 공모전을 찾으세요? 말로 물어보려면 🎤 를 눌러 주세요.'); input.focus(); return; }
-    gate = add('bot rc-gate', '안녕하세요, 공모왕 루리예요!<br>AI 를 켜면 대화할 수 있어요. 브라우저 안에서만 돌아가고, 처음 한 번 약 300MB 를 받아요.'
+    gate = add('bot rc-gate', '안녕하세요, 루리예요!<br>AI 를 켜면 대화할 수 있어요. 브라우저 안에서만 돌아가고, 처음 한 번 약 300MB 를 받아요.'
       + '<div class="rc-gbtn"><button class="rc-on">AI 켜기</button>' + (why ? '<button class="rc-lite">간단 검색 모드로 쓰기</button>' : '') + '</div>'
       + (why === 'nogpu' ? '<small>이 기기는 AI 를 지원하지 않아요(PC 크롬·엣지 권장). 간단 검색 모드는 바로 쓸 수 있어요.</small>' : why === 'fail' ? '<small>AI 를 켜지 못했어요. 다시 시도하거나 간단 검색 모드를 써 주세요.</small>' : ''));
     gate.querySelector('.rc-on').onclick = () => enableAI($('.rc-ai', root), note);

@@ -129,3 +129,8 @@ ul.row .o{display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;o
 .ft-b .av{width:56px;height:56px;border-radius:50%;object-fit:cover;object-position:50% 20%;border:2px solid rgba(255,255,255,.25);background:#4c1d95;flex:0 0 auto}
 .ft-m{margin-top:4px!important;font-size:12.5px}.ft-m a{color:#fcd34d;text-decoration:none}
 .logo img{border-radius:50%}
+.logo span{font-weight:700}.logo span b{font-weight:900;color:var(--pri)}
+/* 참여 난이도 배지 · 청약 */
+.ez{font-size:12px;font-weight:800;border-radius:6px;padding:1px 8px;background:var(--okbg);color:var(--ok)}
+.ez.e2,.ez.e3{background:var(--pbg);color:var(--pri)}.ez.e4,.ez.e5{background:var(--bd);color:var(--mu)}
+[data-c=apply]{--cc:#059669;--cbg:#d1fae5}

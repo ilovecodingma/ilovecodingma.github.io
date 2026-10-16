@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""공모왕(sungprofile.cloud) 정적 사이트 생성.
+"""루리의 생활지식(sungprofile.cloud) 정적 사이트 생성.
 사용: python _gongmo/build.py [--push]
 원본: 바탕화면 공모전_2026/주말큐_master.jsonl + _gongmo/txt/<id>.txt(공고 본문 캐시, 비공개)
 """
-import json, os, re, sys, html, shutil, datetime, subprocess
+import json, os, re, sys, html, shutil, datetime, subprocess, hashlib
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import parse as P
 
@@ -16,7 +16,7 @@ if not os.path.exists(MASTER):
     MASTER = r'C:\Users\k\Desktop\공모전_2026\주말큐_master.jsonl'
 SHOTS = os.path.join(DATA, 'shots')  # 공식 공고 캡처 <id>.webp 640x400
 SITE = 'https://sungprofile.cloud'
-NAME = '공모왕'
+NAME = '루리의 생활지식'
 _CT = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'contact.json'), encoding='utf-8'))
 MAIL, PARTNER = _CT['contact'], _CT['partner']  # 에이전트채널 규약: 일반 문의 / 제휴·광고
 TODAY = datetime.date.today()
@@ -57,8 +57,8 @@ EV_KIND = {'event': '이벤트', 'sweepstakes': '추첨 경품', 'quiz': '퀴즈
 GTAG = ('<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4248498719773262" crossorigin="anonymous"></script>\n'
         '<script async src="https://www.googletagmanager.com/gtag/js?id=G-G9BPFF95GY"></script>\n'
         "<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-G9BPFF95GY');</script>")
-NAV = [('cat/literature', '문학'), ('cat/idea', '아이디어'), ('cat/design', '디자인'), ('cat/video', '영상'),
-       ('cat/it', 'IT'), ('cat/global', '해외'), ('event', '경품'), ('guide', '가이드')]
+NAV = [('apply', '청약·신청'), ('event', '경품·용돈'), ('cat/literature', '문학'), ('cat/idea', '아이디어'), ('cat/design', '디자인'),
+       ('cat/video', '영상'), ('cat/it', 'IT'), ('cat/global', '해외'), ('guide', '가이드')]
 
 
 def page(path, title, desc, body, crumbs=None, ld=None, full_title=False):
@@ -82,19 +82,19 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False):
 <meta property="og:image" content="{SITE}/assets/ruri/og.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="{SITE}/assets/ruri/og.jpg">
 <meta name="theme-color" content="#5b21b6">
-<link rel="icon" href="/favicon.ico?v=3" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png?v=3"><link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png?v=3"><link rel="manifest" href="/site.webmanifest">
+<link rel="icon" href="/favicon.ico?v=4" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png?v=4"><link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png?v=4"><link rel="manifest" href="/site.webmanifest">
 <link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <link rel="stylesheet" href="/assets/gm.css?v=4"><link rel="stylesheet" href="/assets/chat/ruri-chat.css?v=2"><script type="module" src="/assets/chat/ruri-chat.js?v=3"></script>
 {ldh}
 {GTAG}
 </head><body>
-<header class="hd"><div class="w hd-in"><a class="logo" href="/"><img src="/assets/icons/logo.svg" width="30" height="30" alt="">공모왕</a><nav>{nav}</nav></div></header>
+<header class="hd"><div class="w hd-in"><a class="logo" href="/"><img src="/assets/icons/logo.svg" width="30" height="30" alt=""><span>루리의 <b>생활지식</b></span></a><nav>{nav}</nav></div></header>
 <main class="w">
 {body}
 </main>
-<footer class="ft"><div class="w ft-in"><div class="ft-b"><img class="av" src="/assets/ruri/avatar.webp" width="56" height="56" alt="공모왕 루리" loading="lazy"><div><b>공모왕</b><p>마감 놓치지 마세요! 매일 아침 새 공모전을 정리해 둘게요.</p><p class="ft-m">문의 <a href="mailto:{MAIL}">{MAIL}</a>{"" if PARTNER == MAIL else f' · 제휴 <a href="mailto:{PARTNER}">{PARTNER}</a>'}</p></div></div>
+<footer class="ft"><div class="w ft-in"><div class="ft-b"><img class="av" src="/assets/ruri/avatar.webp" width="56" height="56" alt="루리" loading="lazy"><div><b>루리의 생활지식</b><p>마감 놓치지 마세요! 매일 아침 새 공모전을 정리해 둘게요.</p><p class="ft-m">문의 <a href="mailto:{MAIL}">{MAIL}</a>{"" if PARTNER == MAIL else f' · 제휴 <a href="mailto:{PARTNER}">{PARTNER}</a>'}</p></div></div>
 <p class="ft-l"><a href="/about/">소개</a><a href="/guide/">응모 가이드</a><a href="/event/">경품 이벤트</a><a href="/privacy/">개인정보처리방침</a><a href="/terms/">이용약관</a><a href="/contact/">문의</a></p>
-<p class="ft-n">공모전 정보는 각 주최 기관의 공고를 바탕으로 정리했으며, 정확한 요강은 반드시 공식 공고에서 확인하세요. © 2026 공모왕 · sungprofile.cloud</p></div></footer>
+<p class="ft-n">공모전 정보는 각 주최 기관의 공고를 바탕으로 정리했으며, 정확한 요강은 반드시 공식 공고에서 확인하세요. © 2026 루리의 생활지식 · sungprofile.cloud</p></div></footer>
 </body></html>'''
     d = os.path.join(ROOT, path.strip('/'))
     os.makedirs(d, exist_ok=True)
@@ -107,7 +107,7 @@ CAT_ICON = {'문학': '✍️', '아이디어·정책': '💡', '디자인': '�
 
 
 def say(expr, html_, cls=''):
-    return (f'<div class="say {cls}"><img src="/assets/ruri/{expr}_s.webp" width="56" height="77" alt="공모왕 루리" loading="lazy">'
+    return (f'<div class="say {cls}"><img src="/assets/ruri/{expr}_s.webp" width="56" height="77" alt="루리" loading="lazy">'
             f'<div class="bub"><b>루리</b><div>{html_}</div></div></div>')
 
 
@@ -222,7 +222,7 @@ def detail(c, live):
     body = f'''<p class="bc"><a href="/">홈</a> › <a href="/cat/{SLUG[main_tag]}/">{E(main_tag)}</a></p>
 <section class="dh" data-c="{SLUG[main_tag]}"><span class="ic big">{CAT_ICON[main_tag]}</span><h1>{E(c["title"])}</h1>{status}</section>
 {ruri}
-<a class="shot" href="{E(c["link"])}" target="_blank" rel="noopener nofollow">{f'<img src="/assets/shots/{c["id"]}.webp" width="640" height="400" alt="{E(c["title"])} 공식 공고 화면">' if c.get('th') else f'<img class="ruri" src="/assets/ruri/thumbsup.webp" width="300" height="415" alt="공모왕 루리">'}<span>공식 공고 페이지 열기 →</span></a>
+<a class="shot" href="{E(c["link"])}" target="_blank" rel="noopener nofollow">{f'<img src="/assets/shots/{c["id"]}.webp" width="640" height="400" alt="{E(c["title"])} 공식 공고 화면">' if c.get('th') else f'<img class="ruri" src="/assets/ruri/thumbsup.webp" width="300" height="415" alt="루리">'}<span>공식 공고 페이지 열기 →</span></a>
 <div class="panel"><table class="info">{tb}</table>
 <a class="btn" href="{E(c["link"])}" target="_blank" rel="noopener nofollow">공식 공고 보러 가기 →</a></div>
 <h2>한눈에 보기</h2><p>{E(summary)}</p>
@@ -235,7 +235,7 @@ def detail(c, live):
           'description': summary}
     desc = f'{c["title"]} — {org} 주최, {ddot(c["end"])} 마감, 상금 {c["prize"]}. 응모 자격·접수 방법·체크리스트 정리.'
     page(f'/c/{c["id"]}/', c['title'], desc[:155], body,
-         [('공모왕', '/'), (main_tag, f'/cat/{SLUG[main_tag]}/'), (c['title'], f'/c/{c["id"]}/')], ld)
+         [('루리의 생활지식', '/'), (main_tag, f'/cat/{SLUG[main_tag]}/'), (c['title'], f'/c/{c["id"]}/')], ld)
 
 
 def listing_js(cat=''):
@@ -264,16 +264,109 @@ TOOLBAR = '''<div class="bar"><input type="search" id="q" placeholder="공모전
 <p class="cnt" id="cnt"></p>'''
 
 
+# 참여 난이도 배지 (공모전 세션 합의: "설문 5분", "댓글 1줄" 처럼 쉬운 정도를 앞에)
+EASY = {'댓글 이벤트': '댓글 1줄', '설문': '설문 5분', '퀴즈': '퀴즈 풀기', '폼 응모': '폼 1분', '댓글+폼': '댓글+폼', '추첨 경품': '응모만',
+        '친구 태그': '친구 태그', '스토리 공유': '스토리 공유', '캡처 인증': '캡처 인증', '구매 인증': '구매 필요', '지역 한정': '지역 한정',
+        '이벤트': '참여형', 'SNS 이벤트': 'SNS 참여'}
+EASY_RANK = {'댓글 1줄': 0, '폼 1분': 0, '응모만': 0, '설문 5분': 1, '퀴즈 풀기': 1, '댓글+폼': 1, '참여형': 2, 'SNS 참여': 2,
+             '친구 태그': 2, '스토리 공유': 3, '캡처 인증': 3, '지역 한정': 4, '구매 필요': 5}
+
+
 def ev_card(e):
     n, dd = dday(e['end'])
     ch = f'<span class="tg">{E(e["ch"])}</span>' if e['ch'] else ''
+    ez = EASY.get(e['type'], e['type'])
     return (f'<li><a class="card" data-c="event" href="{E(e["link"])}" target="_blank" rel="noopener nofollow"><span class="ic">🎁</span><div class="cb"><div class="top"><h3 class="t">{E(e["title"])}</h3>'
             f'<span class="d{" u3" if n <= 3 else ""}">{dd}</span></div><p class="o">{E(e["org"] or "공식 계정")} · ~{ddot(e["end"])}</p>'
-            f'<div class="tags"><span class="tg">{E(e["type"])}</span>{ch}</div></div></a></li>')
+            f'<div class="tags"><span class="ez e{EASY_RANK.get(ez, 2)}">{E(ez)}</span>{ch}</div></div></a></li>')
+
+
+# ---- 청약·신청 (공모전 세션이 data/apply.jsonl 에 쌓음: title, org, kind, start, end, url, source, verified) ----
+APPLY_KIND = {'apt': ('아파트 청약', '🏠'), 'rent': ('공공임대', '🏘️'), 'ipo': ('공모주', '📈'), 'grant': ('지원금 신청', '💰')}
+
+
+def apply_kind(k):
+    k = (k or '').lower()
+    for key, v in APPLY_KIND.items():
+        if key in k or v[0] in k:
+            return v
+    if any(w in k for w in ('청약', '분양')):
+        return APPLY_KIND['apt']
+    if any(w in k for w in ('임대', '행복주택', '매입')):
+        return APPLY_KIND['rent']
+    if '공모주' in k or '상장' in k:
+        return APPLY_KIND['ipo']
+    return ('신청', '📝')
+
+
+def load_apply():
+    fp = os.path.join(DATA, 'apply.jsonl')
+    if not os.path.exists(fp):
+        return []
+    out, seen = [], set()
+    for l in open(fp, encoding='utf-8'):
+        try:
+            r = json.loads(l)
+        except ValueError:
+            continue
+        if not r.get('title') or not r.get('end') or r.get('closed'):
+            continue
+        end = r.get('end_override') or r['end']
+        try:
+            if dday(end)[0] < 0:
+                continue
+        except ValueError:
+            continue
+        aid = str(r['id']) if r.get('id') else 'A' + hashlib.md5((r['title'] + '|' + r.get('url', '')).encode('utf-8')).hexdigest()[:8]
+        if aid in seen:
+            continue
+        seen.add(aid)
+        nm, ic = apply_kind(r.get('kind'))
+        out.append({'id': aid, 'title': P.clean(r['title'])[:90], 'org': P.clean(r.get('org', ''))[:40] or '공고 참조', 'kind': nm, 'icon': ic,
+                    'start': r.get('start', ''), 'end': end, 'url': r.get('url', ''), 'source': r.get('source', ''), 'verified': bool(r.get('verified'))})
+    out.sort(key=lambda a: (a['end'], a['title']))
+    return out
+
+
+def ap_card(a):
+    n, dd = dday(a['end'])
+    v = '<span class="tg">확인됨</span>' if a['verified'] else ''
+    return (f'<li><a class="card" data-c="apply" href="/a/{a["id"]}/"><span class="ic">{a["icon"]}</span><div class="cb"><div class="top"><h3 class="t">{E(a["title"])}</h3>'
+            f'<span class="d{" u3" if n <= 3 else " hot" if n <= 7 else ""}">{dd}</span></div><p class="o">{E(a["org"])} · ~{ddot(a["end"])}</p>'
+            f'<div class="tags"><span class="ez e1">{E(a["kind"])}</span>{v}</div></div></a></li>')
+
+
+APPLY_INTRO = '''<p>아파트 청약, 공공임대, 공모주 청약, 지원금 신청처럼 <b>기간 안에 신청만 하면 되는 기회</b>를 모았어요. 신청은 반드시 공식 사이트에서 하세요.</p>
+<h2>어디서 신청하나요?</h2><ul class="chk"><li><b>아파트 청약</b>: 한국부동산원 청약홈(applyhome.co.kr). 청약통장 가입 기간·납입 횟수가 순위를 가릅니다.</li>
+<li><b>공공임대</b>: LH청약플러스(apply.lh.or.kr), SH·GH 등 지역 공사. 소득·자산 기준을 먼저 확인하세요.</li>
+<li><b>공모주</b>: 증권사 앱에서 청약. 증거금(신청금액의 50% 안팎)이 필요하고, 배정 후 남은 돈은 환불됩니다.</li>
+<li><b>지원금</b>: 정부24·복지로·지자체 홈페이지. 대부분 본인인증 후 온라인으로 신청합니다.</li></ul>
+<p class="note">정보는 공고를 바탕으로 정리했으며, 자격·일정은 바뀔 수 있으니 공식 공고를 기준으로 하세요. 투자·청약 결과에 대한 판단은 본인 책임입니다.</p>'''
+
+
+def build_apply(aps):
+    for a in aps:
+        n, dd = dday(a['end'])
+        period = (ddot(a['start']) + ' ~ ' if a['start'] else '~ ') + ddot(a['end'])
+        tb = ''.join(f'<tr><th>{k}</th><td>{E(v)}</td></tr>' for k, v in
+                     [('구분', a['kind']), ('주관', a['org']), ('신청 기간', period), ('출처', a['source'] or '공식 공고')])
+        btn = (f'<a class="btn" href="{E(a["url"])}" target="_blank" rel="noopener nofollow">공식 사이트에서 신청하기 →</a>' if a['url'] else '')
+        body = f'''<p class="bc"><a href="/">홈</a> › <a href="/apply/">청약·신청</a></p>
+<section class="dh" data-c="apply"><span class="ic big">{a["icon"]}</span><h1>{E(a["title"])}</h1><p class="lead"><span class="d{" u3" if n <= 3 else " hot" if n <= 7 else ""}">{dd}</span> {ddot(a["end"])} 마감</p></section>
+{say('o_suit', f'신청 기간을 놓치지 마세요! 자격 조건은 <b>공식 공고</b>에서 꼭 확인해 주세요.')}
+<div class="panel"><table class="info">{tb}</table>{btn}</div>
+<h2>신청 전 확인할 것</h2><ul class="chk"><li>신청 자격(나이·소득·자산·거주지·무주택 여부)</li><li>필요 서류와 본인인증 수단</li><li>발표일과 계약·납부 일정</li></ul>'''
+        page(f'/a/{a["id"]}/', a['title'], f'{a["title"]} — {a["kind"]}, {ddot(a["end"])} 마감. 신청 기간과 공식 신청처 정리.', body,
+             [('루리의 생활지식', '/'), ('청약·신청', '/apply/'), (a['title'], f'/a/{a["id"]}/')])
+    lst = ''.join(ap_card(a) for a in aps) or '<li class="empty"><img src="/assets/ruri/o_desk_s.webp" width="64" height="88" alt=""><p>지금 정리 중이에요. 곧 청약·신청 일정을 올릴게요!</p></li>'
+    page('/apply/', f'청약·신청 일정 모음', '아파트 청약, 공공임대, 공모주, 지원금 신청 일정을 마감 순서로 정리했어요.',
+         f'''<p class="bc"><a href="/">홈</a> › 청약·신청</p><section class="dh" data-c="apply"><span class="ic big">📝</span><h1>청약·신청</h1><p class="lead">진행 중 <b>{len(aps)}건</b> · 마감 임박순</p></section>
+{say('o_desk', '신청만 하면 되는 기회들이에요. 기간이 짧으니 미리 챙겨요!')}{APPLY_INTRO}<h2>진행 중 청약·신청</h2><ul class="list">{lst}</ul>''',
+         [('루리의 생활지식', '/'), ('청약·신청', '/apply/')])
 
 
 HERO_JS = '''<script>(function(){var o=[['smile','오늘도 마감 임박 공모전 챙겨 왔어요 ✨'],['o_suit','오늘의 공모전 브리핑 시작할게요!'],['o_gray','상금 큰 공모전부터 정리해 뒀어요.'],['o_present','이번 주 마감, 같이 확인해 볼까요?'],['o_desk','새 공모전을 방금 업데이트했어요.'],['o_cardigan','글쓰기 공모전도 많아요. 천천히 골라 보세요.'],['o_trench','해외 공모전도 챙겨 왔어요.'],['o_anchor','마감 소식 전해 드릴게요!'],['o_vest','응모 전 체크리스트도 잊지 마세요.']];
-try{var p=o[Math.floor(Math.random()*o.length)],i=document.getElementById('hero-ruri'),b=document.querySelector('.hb');if(i){i.src='/assets/ruri/'+p[0]+'.webp'}if(b){b.innerHTML='안녕하세요, <b>공모왕 루리</b>예요!<br>'+p[1]}}catch(e){}})();</script>'''
+try{var p=o[Math.floor(Math.random()*o.length)],i=document.getElementById('hero-ruri'),b=document.querySelector('.hb');if(i){i.src='/assets/ruri/'+p[0]+'.webp'}if(b){b.innerHTML='안녕하세요, <b>루리</b>예요!<br>'+p[1]}}catch(e){}})();</script>'''
 
 
 def build():
@@ -290,19 +383,22 @@ def build():
                   f, ensure_ascii=False, separators=(',', ':'))
     pre = ''.join(card(c) for c in live[:60])  # 크롤러용 서버 렌더, JS 가 전체 목록으로 교체
     big = sorted(live, key=lambda c: -c['pv'])[:6]
+    aps = load_apply()
     wk = [c for c in live if dday(c['end'])[0] <= 7]
     cats = ''.join(f'<a class="cat" data-c="{s_}" href="/cat/{s_}/"><span class="ic">{CAT_ICON[n]}</span><b>{n}</b><span class="n">{sum(1 for c in live if n in c["tags"])}건</span></a>' for s_, n in CATS)
-    home = f'''<section class="hero"><div class="hero-t"><p class="kick">{TODAY.month}월 {TODAY.day}일 업데이트</p><h1>마감 임박 공모전,<br><em>공모왕</em>이 골라 드려요</h1>
-<p class="sub">문학·아이디어·디자인·영상·논문·IT·해외 공모전과 경품 이벤트를 마감 순서로 정리했어요.</p>
+    home = f'''<section class="hero"><div class="hero-t"><p class="kick">{TODAY.month}월 {TODAY.day}일 업데이트</p><h1>용돈 되는 생활 정보,<br><em>루리</em>가 챙겨 드려요</h1>
+<p class="sub">상금 받는 공모전, 놓치기 쉬운 지원금, 참여만 해도 받는 경품까지 마감 순서로 정리했어요.</p>
 <form class="hs" onsubmit="var q=document.getElementById('q');q.value=this.k.value;q.dispatchEvent(new Event('input'));document.getElementById('all').scrollIntoView();return false"><input name="k" type="search" placeholder="예) 슬로건, 숏폼, 해커톤" aria-label="공모전 검색"><button>검색</button></form>
-<div class="stat"><span><b>{len(live)}</b>진행 중</span><span><b>{len(wk)}</b>이번 주 마감</span><span><b>{len(events)}</b>경품 이벤트</span></div></div>
-<div class="hero-r"><div class="hb">안녕하세요, <b>공모왕 루리</b>예요!<br>오늘도 마감 임박 공모전 챙겨 왔어요 ✨</div><img id="hero-ruri" src="/assets/ruri/smile.webp" width="300" height="415" alt="공모왕 루리"></div></section>
-<div class="cats">{cats}<a class="cat" data-c="event" href="/event/"><span class="ic">🎁</span><b>경품 이벤트</b><span class="n">{len(events)}건</span></a></div>
+<div class="stat"><span><b>{len(live)}</b>공모전</span><span><b>{len(wk)}</b>이번 주 마감</span><span><b>{len(events)}</b>경품·용돈</span></div></div>
+<div class="hero-r"><div class="hb">안녕하세요, <b>루리</b>예요!<br>오늘도 마감 임박 공모전 챙겨 왔어요 ✨</div><img id="hero-ruri" src="/assets/ruri/smile.webp" width="300" height="415" alt="루리"></div></section>
+<div class="cats">{cats}<a class="cat" data-c="event" href="/event/"><span class="ic">🎁</span><b>경품·용돈</b><span class="n">{len(events)}건</span></a><a class="cat" data-c="apply" href="/apply/"><span class="ic">📝</span><b>청약·신청</b><span class="n">{len(aps)}건</span></a></div>
+<div class="sec"><h2>🎁 쉽게 참여하는 경품</h2><a href="/event/">전체 보기 →</a></div><ul class="list row">{''.join(ev_card(e) for e in sorted(events, key=lambda e: (EASY_RANK.get(EASY.get(e['type'], ''), 2), e['end']))[:10])}</ul>
+{'<div class="sec"><h2>📝 청약·신청 일정</h2><a href="/apply/">전체 보기 →</a></div><ul class="list row">' + ''.join(ap_card(a) for a in aps[:10]) + '</ul>' if aps else ''}
 <div class="sec"><h2>⏰ 이번 주 마감</h2><a href="#all">전체 보기 →</a></div><ul class="list row">{''.join(card(c) for c in wk[:10])}</ul>
 <div class="sec"><h2>🏆 상금 큰 공모전</h2></div><ul class="list grid">{''.join(card(c) for c in big)}</ul>
 <div class="sec" id="all"><h2>📋 전체 공모전</h2></div>{TOOLBAR}<ul class="list" id="list">{pre}</ul><button class="more" id="more" hidden>더 보기</button>
 <section class="intro">{say('think', '공모전 정보는 여러 사이트에 흩어져 있어서 마감을 놓치기 쉬워요. 그래서 제가 <b>마감일·상금·응모 자격·접수 방법</b>을 같은 형식으로 정리하고, 공모전마다 응모 전 체크리스트를 붙였어요. 처음이라면 <a href="/guide/">응모 가이드</a>부터 읽어 보세요!')}</section>'''
-    page('/', '공모왕 — 마감 임박 공모전·상금 정보 모음',
+    page('/', '루리의 생활지식 — 공모전·지원금·용돈벌이 정보',
          f'진행 중인 공모전 {len(live)}건을 마감 임박순·상금순으로. 문학, 아이디어·정책, 디자인, 영상, 논문, IT, 해외 공모전과 경품 이벤트 정리.',
          home + HERO_JS + listing_js(), full_title=True, ld={'@context': 'https://schema.org', '@type': 'WebSite', 'name': NAME, 'url': SITE + '/'})
     for s, n in CATS:
@@ -313,15 +409,17 @@ def build():
 {say(CAT_OUTFIT[n], f'<b>{n} 공모전 응모 팁</b><ul class="chk">{tips}</ul>')}
 <h2>진행 중 {n} 공모전</h2>{TOOLBAR}<ul class="list" id="list">{''.join(card(c) for c in cl[:60])}</ul><button class="more" id="more" hidden>더 보기</button>'''
         page(f'/cat/{s}/', f'{n} 공모전 모음 (진행 중 {len(cl)}건)', f'{n} 분야 진행 중 공모전 {len(cl)}건 마감 임박순 정리. {CAT_INTRO[n][:70]}',
-             body + listing_js(n), [('공모왕', '/'), (n, f'/cat/{s}/')])
+             body + listing_js(n), [('루리의 생활지식', '/'), (n, f'/cat/{s}/')])
     page('/event/', f'경품 이벤트 모음 (진행 중 {len(events)}건)', f'댓글·퀴즈·설문·SNS 경품 이벤트 {len(events)}건을 마감 임박순으로 정리했어요.',
          f'''<p class="bc"><a href="/">홈</a> › 경품 이벤트</p><section class="dh" data-c="event"><span class="ic big">🎁</span><h1>경품 이벤트</h1><p class="lead">진행 중 <b>{len(events)}건</b> · 마감 임박순</p></section>
 {say('excited', '댓글·퀴즈·설문만으로 응모할 수 있는 이벤트가 이렇게 많아요! 당첨 발표는 꼭 공식 계정에서 확인해요.')}
 <p>공공기관·기업이 진행하는 댓글, 퀴즈, 설문, SNS 경품 이벤트입니다. 참여 조건(팔로우, 친구 태그, 스토리 공유 등)과 당첨자 발표 방법은 이벤트마다 달라요. 당첨 연락을 사칭해 개인정보나 송금을 요구하는 경우가 있으니 발표는 주최 측 공식 계정에서 확인하세요.</p>
-<ul class="list">{''.join(ev_card(e) for e in events)}</ul>''', [('공모왕', '/'), ('경품 이벤트', '/event/')])
+<ul class="list">{''.join(ev_card(e) for e in sorted(events, key=lambda e: (min(dday(e['end'])[0], 7) // 4, EASY_RANK.get(EASY.get(e['type'], ''), 2), e['end'])))}</ul>''', [('루리의 생활지식', '/'), ('경품 이벤트', '/event/')])
+    shutil.rmtree(os.path.join(ROOT, 'a'), ignore_errors=True)
+    build_apply(aps)
     guides(live)
     statics(len(live), len(events))
-    urls = ['/', '/event/', '/guide/'] + [f'/cat/{s}/' for s, _ in CATS] + [f'/guide/{g[0]}/' for g in GUIDES] + \
+    urls = ['/', '/apply/', '/event/', '/guide/'] + [f'/a/{a["id"]}/' for a in aps] + [f'/cat/{s}/' for s, _ in CATS] + [f'/guide/{g[0]}/' for g in GUIDES] + \
            ['/about/', '/privacy/', '/terms/', '/contact/'] + [f'/c/{c["id"]}/' for c in contests] + sorted((f'/v/{d}/' for d in os.listdir(os.path.join(ROOT, 'v')) if os.path.isfile(os.path.join(ROOT, 'v', d, 'index.html'))), key=lambda u: int(u.split('/')[2]) if u.split('/')[2].isdigit() else 0)
     global NEW_URLS
     sm = os.path.join(ROOT, 'sitemap.xml')
@@ -366,34 +464,34 @@ GUIDES = [
 def guides(live):
     li = ''.join(f'<li><a class="card" data-c="guide" href="/guide/{s}/"><span class="ic">📖</span><div class="cb"><h3 class="t">{E(t)}</h3><p class="o">{E(d)}</p></div></a></li>' for s, t, d, _ in GUIDES)
     page('/guide/', '공모전 응모 가이드', '공모전 처음 응모하는 법, 제안서 쓰는 법, 수기·문학 공모 요령, 상금 수령과 사칭 주의까지.',
-         f'<p class="bc"><a href="/">홈</a> › 응모 가이드</p><section class="dh" data-c="guide"><span class="ic big">📖</span><h1>공모전 응모 가이드</h1></section>{say("o_vest", "처음 응모한다면 1번부터 차근차근 읽어 보세요. 실수로 탈락하는 일이 확 줄어요!")}<ul class="list">{li}</ul>', [('공모왕', '/'), ('응모 가이드', '/guide/')])
+         f'<p class="bc"><a href="/">홈</a> › 응모 가이드</p><section class="dh" data-c="guide"><span class="ic big">📖</span><h1>공모전 응모 가이드</h1></section>{say("o_vest", "처음 응모한다면 1번부터 차근차근 읽어 보세요. 실수로 탈락하는 일이 확 줄어요!")}<ul class="list">{li}</ul>', [('루리의 생활지식', '/'), ('응모 가이드', '/guide/')])
     rel = ''.join(card(c) for c in live[:4])
     for s, t, d, b in GUIDES:
         page(f'/guide/{s}/', t, d, f'<p class="bc"><a href="/">홈</a> › <a href="/guide/">응모 가이드</a></p><article><h1>{E(t)}</h1>{say(["o_suit", "o_cardigan", "o_desk", "o_present"][GUIDES.index((s, t, d, b)) % 4], E(d))}{b}</article><h2>마감 임박 공모전</h2><ul class="list">{rel}</ul>',
-             [('공모왕', '/'), ('응모 가이드', '/guide/'), (t, f'/guide/{s}/')],
+             [('루리의 생활지식', '/'), ('응모 가이드', '/guide/'), (t, f'/guide/{s}/')],
              {'@context': 'https://schema.org', '@type': 'Article', 'headline': t, 'description': d, 'datePublished': '2026-10-16',
               'author': {'@type': 'Person', 'name': 'Seongsang Park'}})
 
 
 def statics(nl, ne):
-    page('/about/', '소개', '공모왕은 흩어진 공모전·경품 이벤트 공고를 마감일·상금·자격 기준으로 정리하는 개인 운영 사이트입니다.',
-         f'''<h1>소개</h1><p>공모왕은 개인 개발자 Seongsang Park이 운영하는 공모전 정보 사이트입니다. 여러 사이트와 기관 홈페이지에 흩어진 공모전·경품 이벤트 공고를 모아 <b>마감일, 상금, 응모 자격, 접수 방법</b>을 같은 형식으로 정리합니다. 현재 진행 중인 공모전 {nl}건, 경품 이벤트 {ne}건을 소개하고 있습니다.</p>
+    page('/about/', '소개', '루리의 생활지식은 흩어진 공모전·지원금·경품 이벤트 공고를 마감일·상금·자격 기준으로 정리하는 개인 운영 사이트입니다.',
+         f'''<h1>소개</h1><p>루리의 생활지식은 개인 개발자 Seongsang Park이 운영하는 생활 정보 사이트입니다. 상금을 받을 수 있는 공모전, 개인이 신청할 수 있는 지원금, 참여만 해도 받는 경품 이벤트처럼 일상에서 용돈이 되는 정보를 모읍니다. 여러 사이트와 기관 홈페이지에 흩어진 공모전·경품 이벤트 공고를 모아 <b>마감일, 상금, 응모 자격, 접수 방법</b>을 같은 형식으로 정리합니다. 현재 진행 중인 공모전 {nl}건, 경품 이벤트 {ne}건을 소개하고 있습니다.</p>
 <h2>정보 정리 방식</h2><p>공개된 공고를 수집해 마감일과 상금, 자격을 자동으로 추출하고, 분야별 응모 체크리스트를 붙입니다. 자동 정리 과정에서 오류가 생길 수 있으므로 공모전 페이지마다 공식 공고 링크를 함께 제공합니다. 정확한 요강은 항상 주최 측 공식 공고를 기준으로 해 주세요.</p>
-<h2>잘못된 정보 제보</h2><p>마감일이나 상금이 틀렸거나 종료된 공모전이 보이면 <a href="/contact/">문의</a>로 알려 주세요.</p>''', [('공모왕', '/'), ('소개', '/about/')])
-    page('/contact/', '문의', '공모왕 정보 오류 제보, 공모전 등록 요청, 삭제 요청 안내.',
-         f'''<h1>문의</h1><p>정보 오류 제보, 공모전 등록 요청, 삭제 요청은 이메일 <a href="mailto:{MAIL}">{MAIL}</a>, 제휴·광고 문의는 <a href="mailto:{PARTNER}">{PARTNER}</a> 로 보내 주세요. <a href="https://github.com/ilovecodingma/ilovecodingma.github.io/issues" rel="noopener">GitHub Issues</a>에 남기셔도 됩니다. 공모전 등록을 요청할 때는 공식 공고 주소를 함께 적어 주시면 확인 후 반영합니다.</p><p class="note">개인정보(이름·연락처)는 공개 게시판에 올리지 마세요.</p>''', [('공모왕', '/'), ('문의', '/contact/')])
-    page('/privacy/', '개인정보처리방침', '공모왕은 이용자의 개인정보를 수집하지 않습니다. 광고 쿠키와 방문 통계 안내.',
-         '''<h1>개인정보처리방침</h1><p>공모왕(sungprofile.cloud)은 회원가입·로그인 기능이 없으며 이용자의 이름, 이메일, 연락처 등 개인정보를 수집·저장하지 않습니다.</p>
+<h2>잘못된 정보 제보</h2><p>마감일이나 상금이 틀렸거나 종료된 공모전이 보이면 <a href="/contact/">문의</a>로 알려 주세요.</p>''', [('루리의 생활지식', '/'), ('소개', '/about/')])
+    page('/contact/', '문의', '루리의 생활지식 정보 오류 제보, 공모전 등록 요청, 삭제 요청 안내.',
+         f'''<h1>문의</h1><p>정보 오류 제보, 공모전 등록 요청, 삭제 요청은 이메일 <a href="mailto:{MAIL}">{MAIL}</a>, 제휴·광고 문의는 <a href="mailto:{PARTNER}">{PARTNER}</a> 로 보내 주세요. <a href="https://github.com/ilovecodingma/ilovecodingma.github.io/issues" rel="noopener">GitHub Issues</a>에 남기셔도 됩니다. 공모전 등록을 요청할 때는 공식 공고 주소를 함께 적어 주시면 확인 후 반영합니다.</p><p class="note">개인정보(이름·연락처)는 공개 게시판에 올리지 마세요.</p>''', [('루리의 생활지식', '/'), ('문의', '/contact/')])
+    page('/privacy/', '개인정보처리방침', '루리의 생활지식은 이용자의 개인정보를 수집하지 않습니다. 광고 쿠키와 방문 통계 안내.',
+         '''<h1>개인정보처리방침</h1><p>루리의 생활지식(sungprofile.cloud)은 회원가입·로그인 기능이 없으며 이용자의 이름, 이메일, 연락처 등 개인정보를 수집·저장하지 않습니다.</p>
 <h2>1. 광고와 쿠키</h2><p>이 사이트는 Google AdSense 광고를 게재하며, Google 등 제3자 광고 사업자는 쿠키를 사용해 이용자의 이전 방문 기록에 기반한 광고를 표시할 수 있습니다. 이용자는 <a href="https://adssettings.google.com" rel="noopener">Google 광고 설정</a>에서 맞춤 광고를 해제할 수 있으며, 자세한 내용은 <a href="https://policies.google.com/technologies/ads" rel="noopener">Google 광고 정책</a>을 참고하세요.</p>
 <h2>2. 방문 통계</h2><p>서비스 개선을 위해 Google Analytics로 방문 통계(페이지 조회, 유입 경로, 기기 종류)를 수집합니다. 브라우저 설정이나 <a href="https://tools.google.com/dlpage/gaoptout" rel="noopener">차단 부가기능</a>으로 거부할 수 있습니다.</p>
 <h2>3. 접속 로그</h2><p>사이트는 GitHub Pages로 호스팅되며, 호스팅 제공자가 보안 목적으로 접속 로그(IP 주소 등)를 처리할 수 있습니다.</p>
 <h2>4. 외부 링크</h2><p>공모전 공식 공고 링크를 누르면 주최 기관 사이트로 이동하며, 해당 사이트의 개인정보처리방침이 적용됩니다.</p>
-<h2>5. 문의</h2><p><a href="/contact/">문의</a> 페이지를 이용해 주세요.</p><p class="note">시행일: 2026-10-16</p>''', [('공모왕', '/'), ('개인정보처리방침', '/privacy/')])
-    page('/terms/', '이용약관', '공모왕 이용약관과 정보 정확성에 관한 면책 안내.',
-         '''<h1>이용약관</h1><h2>1. 서비스 내용</h2><p>공모왕은 공개된 공모전·이벤트 공고를 정리해 소개하는 무료 정보 서비스입니다. 공모전의 주최·심사·시상에는 관여하지 않습니다.</p>
+<h2>5. 문의</h2><p><a href="/contact/">문의</a> 페이지를 이용해 주세요.</p><p class="note">시행일: 2026-10-16</p>''', [('루리의 생활지식', '/'), ('개인정보처리방침', '/privacy/')])
+    page('/terms/', '이용약관', '루리의 생활지식 이용약관과 정보 정확성에 관한 면책 안내.',
+         '''<h1>이용약관</h1><h2>1. 서비스 내용</h2><p>루리의 생활지식은 공개된 공모전·지원사업·이벤트 공고를 정리해 소개하는 무료 정보 서비스입니다. 공모전의 주최·심사·시상에는 관여하지 않습니다.</p>
 <h2>2. 정보의 정확성</h2><p>마감일·상금·응모 자격 등은 공고 원문에서 자동으로 정리한 값으로 오류가 있을 수 있습니다. 응모 전 반드시 주최 측 공식 공고를 확인해야 하며, 사이트 정보만 믿고 응모해 생긴 불이익에 대해 운영자는 책임지지 않습니다.</p>
-<h2>3. 저작권</h2><p>각 공모전 공고의 저작권은 주최 기관에 있습니다. 공모왕은 요약 정보와 공식 공고 링크만 제공합니다. 게재를 원하지 않는 주최 측은 <a href="/contact/">문의</a>로 요청하시면 삭제합니다.</p>
-<h2>4. 광고</h2><p>사이트 운영을 위해 Google AdSense 광고를 게재합니다.</p><p class="note">시행일: 2026-10-16</p>''', [('공모왕', '/'), ('이용약관', '/terms/')])
+<h2>3. 저작권</h2><p>각 공모전 공고의 저작권은 주최 기관에 있습니다. 루리의 생활지식은 요약 정보와 공식 공고 링크만 제공합니다. 게재를 원하지 않는 주최 측은 <a href="/contact/">문의</a>로 요청하시면 삭제합니다.</p>
+<h2>4. 광고</h2><p>사이트 운영을 위해 Google AdSense 광고를 게재합니다.</p><p class="note">시행일: 2026-10-16</p>''', [('루리의 생활지식', '/'), ('이용약관', '/terms/')])
 
 
 NEW_URLS = []
@@ -434,7 +532,7 @@ if __name__ == '__main__':
             return r
         git('add', '-A')
         if git('diff', '--cached', '--quiet').returncode:
-            git('commit', '-q', '-m', f'공모왕 데이터 갱신 {datetime.datetime.now():%m-%d %H:%M}')
+            git('commit', '-q', '-m', f'사이트 데이터 갱신 {datetime.datetime.now():%m-%d %H:%M}')
             git('pull', '-q', '--rebase', '-X', 'ours')
             if git('push', '-q').returncode == 0 and NEW_URLS:
                 indexnow([SITE + '/'] + NEW_URLS)
