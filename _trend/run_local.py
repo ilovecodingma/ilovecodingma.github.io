@@ -18,7 +18,8 @@ def main():
     py = sys.executable.replace('pythonw.exe', 'python.exe')
     code, txt = run(py, os.path.join('_trend', 'collect.py'))
     out.append(txt)
-    if code == 0:
+    # 2026-10-16 사이트를 공모왕으로 전환 — 수집·비공개 보고서는 PC 에서 계속, 사이트 반영(push)은 중단
+    if False and code == 0:
         run('git', 'add', 'trend/data')
         if run('git', 'diff', '--cached', '--quiet')[0]:
             run('git', 'commit', '-q', '-m', f'트렌드 데이터 갱신 {datetime.now():%m-%d %H:%M} (PC)')
