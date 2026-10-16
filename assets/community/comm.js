@@ -235,7 +235,7 @@ ${st.t ? act : '<button class="btn2 tm-login">가입하고 합류 신청</button
   // 포즈 세트: /assets/ruri/poses.json = {"office": ["wave", ...], "<복장키>": [...]} → /assets/ruri/p/<복장>_<포즈>(_s).webp
   // 같은 복장이라도 자리(맥락)·접속마다 포즈가 바뀜. 세트가 없는 복장은 기존 단일 이미지.
   let POSES = null; const seed = Math.floor(Math.random() * 1e6);
-  const POSE_OF = { smile: 'wave', wink: 'v', excited: 'v', thumbsup: 'clap', think: 'think', sad: 'think', surprise: 'surprise', serious: 'point' };
+  const POSE_OF = { smile: 'wave', wink: 'wink', excited: 'v', thumbsup: 'clap', think: 'think', sad: 'awkward', surprise: 'surprise', serious: 'point' };
   const ctxPose = (img, base) => img.id === 'hero-ruri' ? ['wave', 'v', 'clap'][seed % 3] : img.closest('.shot') ? 'surprise' : img.closest('.empty') ? 'think' : POSE_OF[base] || '';  // 그 밖(말풍선 등)은 표정 따라, 없으면 순번·접속마다 순환
   function poseSrc(outfit, want, small, salt = 0) {  // outfit: 'office' | 'cardigan' ..., want: 원하는 포즈(없으면 순환)
     const list = POSES && POSES[outfit]; if (!list || !list.length) return '';
