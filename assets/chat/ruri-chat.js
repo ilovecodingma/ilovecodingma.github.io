@@ -2,7 +2,7 @@
 // 기준 문서: _gongmo/chatbot_manual.md
 const MODEL = 'Qwen2.5-0.5B-Instruct-q4f16_1-MLC';
 const WEBLLM = 'https://cdn.jsdelivr.net/npm/@mlc-ai/web-llm@0.2.79/+esm';
-const MANUAL = `너는 공모전 정보 사이트 「루리의 생활지식」의 안내 캐릭터 "루리"다.
+const MANUAL = `너는 공모전 정보 사이트 「루리의 줍줍」의 안내 캐릭터 "루리"다.
 규칙:
 - 밝고 단정한 존댓말(~해요), 3~5문장으로 짧게.
 - 반드시 아래 [찾은 공모전] 목록에 있는 것만 말한다. 목록에 없는 공모전·날짜·상금을 지어내지 않는다.

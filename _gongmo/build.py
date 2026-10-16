@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""루리의 생활지식(sungprofile.cloud) 정적 사이트 생성.
+"""루리의 줍줍(sungprofile.cloud) 정적 사이트 생성.
 사용: python _gongmo/build.py [--push]
 원본: 바탕화면 공모전_2026/주말큐_master.jsonl + _gongmo/txt/<id>.txt(공고 본문 캐시, 비공개)
 """
@@ -16,7 +16,7 @@ if not os.path.exists(MASTER):
     MASTER = r'C:\Users\k\Desktop\공모전_2026\주말큐_master.jsonl'
 SHOTS = os.path.join(DATA, 'shots')  # 공식 공고 캡처 <id>.webp 640x400
 SITE = 'https://sungprofile.cloud'
-NAME = '루리의 생활지식'
+NAME = '루리의 줍줍'
 _CT = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'contact.json'), encoding='utf-8'))
 MAIL, PARTNER = _CT['contact'], _CT['partner']  # 에이전트채널 규약: 일반 문의 / 제휴·광고
 TODAY = datetime.date.today()
@@ -82,19 +82,19 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False):
 <meta property="og:image" content="{SITE}/assets/ruri/og.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="{SITE}/assets/ruri/og.jpg">
 <meta name="theme-color" content="#5b21b6">
-<link rel="icon" href="/favicon.ico?v=4" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png?v=4"><link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png?v=4"><link rel="manifest" href="/site.webmanifest">
+<link rel="icon" href="/favicon.ico?v=5" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png?v=5"><link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png?v=5"><link rel="manifest" href="/site.webmanifest">
 <link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <link rel="stylesheet" href="/assets/gm.css?v=4"><link rel="stylesheet" href="/assets/chat/ruri-chat.css?v=2"><script type="module" src="/assets/chat/ruri-chat.js?v=3"></script>
 {ldh}
 {GTAG}
 </head><body>
-<header class="hd"><div class="w hd-in"><a class="logo" href="/"><img src="/assets/icons/logo.svg" width="30" height="30" alt=""><span>루리의 <b>생활지식</b></span></a><nav>{nav}</nav></div></header>
+<header class="hd"><div class="w hd-in"><a class="logo" href="/"><img src="/assets/icons/logo.svg" width="30" height="30" alt=""><span>루리의 <b>줍줍</b></span></a><nav>{nav}</nav></div></header>
 <main class="w">
 {body}
 </main>
-<footer class="ft"><div class="w ft-in"><div class="ft-b"><img class="av" src="/assets/ruri/avatar.webp" width="56" height="56" alt="루리" loading="lazy"><div><b>루리의 생활지식</b><p>마감 놓치지 마세요! 매일 아침 새 공모전을 정리해 둘게요.</p><p class="ft-m">문의 <a href="mailto:{MAIL}">{MAIL}</a>{"" if PARTNER == MAIL else f' · 제휴 <a href="mailto:{PARTNER}">{PARTNER}</a>'}</p></div></div>
+<footer class="ft"><div class="w ft-in"><div class="ft-b"><img class="av" src="/assets/ruri/avatar.webp" width="56" height="56" alt="루리" loading="lazy"><div><b>루리의 줍줍</b><p>마감 놓치지 마세요! 매일 아침 새 공모전을 정리해 둘게요.</p><p class="ft-m">문의 <a href="mailto:{MAIL}">{MAIL}</a>{"" if PARTNER == MAIL else f' · 제휴 <a href="mailto:{PARTNER}">{PARTNER}</a>'}</p></div></div>
 <p class="ft-l"><a href="/about/">소개</a><a href="/guide/">응모 가이드</a><a href="/event/">경품 이벤트</a><a href="/privacy/">개인정보처리방침</a><a href="/terms/">이용약관</a><a href="/contact/">문의</a></p>
-<p class="ft-n">공모전 정보는 각 주최 기관의 공고를 바탕으로 정리했으며, 정확한 요강은 반드시 공식 공고에서 확인하세요. © 2026 루리의 생활지식 · sungprofile.cloud</p></div></footer>
+<p class="ft-n">공모전 정보는 각 주최 기관의 공고를 바탕으로 정리했으며, 정확한 요강은 반드시 공식 공고에서 확인하세요. © 2026 루리의 줍줍 · sungprofile.cloud</p></div></footer>
 </body></html>'''
     d = os.path.join(ROOT, path.strip('/'))
     os.makedirs(d, exist_ok=True)
@@ -235,7 +235,7 @@ def detail(c, live):
           'description': summary}
     desc = f'{c["title"]} — {org} 주최, {ddot(c["end"])} 마감, 상금 {c["prize"]}. 응모 자격·접수 방법·체크리스트 정리.'
     page(f'/c/{c["id"]}/', c['title'], desc[:155], body,
-         [('루리의 생활지식', '/'), (main_tag, f'/cat/{SLUG[main_tag]}/'), (c['title'], f'/c/{c["id"]}/')], ld)
+         [('루리의 줍줍', '/'), (main_tag, f'/cat/{SLUG[main_tag]}/'), (c['title'], f'/c/{c["id"]}/')], ld)
 
 
 def listing_js(cat=''):
@@ -357,12 +357,12 @@ def build_apply(aps):
 <div class="panel"><table class="info">{tb}</table>{btn}</div>
 <h2>신청 전 확인할 것</h2><ul class="chk"><li>신청 자격(나이·소득·자산·거주지·무주택 여부)</li><li>필요 서류와 본인인증 수단</li><li>발표일과 계약·납부 일정</li></ul>'''
         page(f'/a/{a["id"]}/', a['title'], f'{a["title"]} — {a["kind"]}, {ddot(a["end"])} 마감. 신청 기간과 공식 신청처 정리.', body,
-             [('루리의 생활지식', '/'), ('청약·신청', '/apply/'), (a['title'], f'/a/{a["id"]}/')])
+             [('루리의 줍줍', '/'), ('청약·신청', '/apply/'), (a['title'], f'/a/{a["id"]}/')])
     lst = ''.join(ap_card(a) for a in aps) or '<li class="empty"><img src="/assets/ruri/o_desk_s.webp" width="64" height="88" alt=""><p>지금 정리 중이에요. 곧 청약·신청 일정을 올릴게요!</p></li>'
     page('/apply/', f'청약·신청 일정 모음', '아파트 청약, 공공임대, 공모주, 지원금 신청 일정을 마감 순서로 정리했어요.',
          f'''<p class="bc"><a href="/">홈</a> › 청약·신청</p><section class="dh" data-c="apply"><span class="ic big">📝</span><h1>청약·신청</h1><p class="lead">진행 중 <b>{len(aps)}건</b> · 마감 임박순</p></section>
 {say('o_desk', '신청만 하면 되는 기회들이에요. 기간이 짧으니 미리 챙겨요!')}{APPLY_INTRO}<h2>진행 중 청약·신청</h2><ul class="list">{lst}</ul>''',
-         [('루리의 생활지식', '/'), ('청약·신청', '/apply/')])
+         [('루리의 줍줍', '/'), ('청약·신청', '/apply/')])
 
 
 HERO_JS = '''<script>(function(){var o=[['smile','오늘도 마감 임박 공모전 챙겨 왔어요 ✨'],['o_suit','오늘의 공모전 브리핑 시작할게요!'],['o_gray','상금 큰 공모전부터 정리해 뒀어요.'],['o_present','이번 주 마감, 같이 확인해 볼까요?'],['o_desk','새 공모전을 방금 업데이트했어요.'],['o_cardigan','글쓰기 공모전도 많아요. 천천히 골라 보세요.'],['o_trench','해외 공모전도 챙겨 왔어요.'],['o_anchor','마감 소식 전해 드릴게요!'],['o_vest','응모 전 체크리스트도 잊지 마세요.']];
@@ -385,20 +385,25 @@ def build():
     big = sorted(live, key=lambda c: -c['pv'])[:6]
     aps = load_apply()
     wk = [c for c in live if dday(c['end'])[0] <= 7]
+    quick = sorted([e for e in events if EASY_RANK.get(e.get('effort') or EASY.get(e['type'], ''), 2) <= 1],
+                   key=lambda e: (e['end'], EASY_RANK.get(e.get('effort') or EASY.get(e['type'], ''), 2)))
+    SHORT = re.compile(r'슬로건|네이밍|명칭|표어|캐치프레이즈|한\s*줄|삼행시|사행시|디카시|짧은\s*글|문구|애칭|이름\s*짓기|BI|캐릭터\s*이름')
+    short = [c for c in live if SHORT.search(c['title'] + ' ' + (c['field'] or ''))]
     cats = ''.join(f'<a class="cat" data-c="{s_}" href="/cat/{s_}/"><span class="ic">{CAT_ICON[n]}</span><b>{n}</b><span class="n">{sum(1 for c in live if n in c["tags"])}건</span></a>' for s_, n in CATS)
-    home = f'''<section class="hero"><div class="hero-t"><p class="kick">{TODAY.month}월 {TODAY.day}일 업데이트</p><h1>용돈 되는 생활 정보,<br><em>루리</em>가 챙겨 드려요</h1>
-<p class="sub">상금 받는 공모전, 놓치기 쉬운 지원금, 참여만 해도 받는 경품까지 마감 순서로 정리했어요.</p>
+    home = f'''<section class="hero"><div class="hero-t"><p class="kick">{TODAY.month}월 {TODAY.day}일 업데이트</p><h1>그냥 넣으면 되는 용돈 기회,<br><em>루리</em>가 주워 왔어요</h1>
+<p class="sub">응모만 하면 되는 경품, 1분 댓글·설문, 청약·지원금 신청, 슬로건 한 줄 공모전까지. 일단 넣고 보세요!</p>
 <form class="hs" onsubmit="var q=document.getElementById('q');q.value=this.k.value;q.dispatchEvent(new Event('input'));document.getElementById('all').scrollIntoView();return false"><input name="k" type="search" placeholder="예) 슬로건, 숏폼, 해커톤" aria-label="공모전 검색"><button>검색</button></form>
 <div class="stat"><span><b>{len(live)}</b>공모전</span><span><b>{len(wk)}</b>이번 주 마감</span><span><b>{len(events)}</b>경품·용돈</span></div></div>
 <div class="hero-r"><div class="hb">안녕하세요, <b>루리</b>예요!<br>오늘도 마감 임박 공모전 챙겨 왔어요 ✨</div><img id="hero-ruri" src="/assets/ruri/smile.webp" width="300" height="415" alt="루리"></div></section>
-<div class="cats">{cats}<a class="cat" data-c="event" href="/event/"><span class="ic">🎁</span><b>경품·용돈</b><span class="n">{len(events)}건</span></a><a class="cat" data-c="apply" href="/apply/"><span class="ic">📝</span><b>청약·신청</b><span class="n">{len(aps)}건</span></a></div>
-<div class="sec"><h2>🎁 쉽게 참여하는 경품</h2><a href="/event/">전체 보기 →</a></div><ul class="list row">{''.join(ev_card(e) for e in sorted(events, key=lambda e: (EASY_RANK.get(e.get('effort') or EASY.get(e['type'], ''), 2), e['end']))[:10])}</ul>
+<div class="sec"><h2>⚡ 1분이면 끝</h2><a href="/event/">전체 보기 →</a></div><p class="note" style="margin:-6px 0 10px">응모만 · 댓글 1줄 · 폼 1분 · 설문 5분 — 그냥 넣으면 되는 것부터</p><ul class="list row">{''.join(ev_card(e) for e in quick[:12])}</ul>
 {'<div class="sec"><h2>📝 청약·신청 일정</h2><a href="/apply/">전체 보기 →</a></div><ul class="list row">' + ''.join(ap_card(a) for a in aps[:10]) + '</ul>' if aps else ''}
+<div class="sec"><h2>✍️ 한 줄이면 내는 공모전</h2><a href="#all">전체 보기 →</a></div><p class="note" style="margin:-6px 0 10px">슬로건·네이밍·짧은 글처럼 바로 낼 수 있는 공모전</p><ul class="list row">{''.join(card(c) for c in short[:12])}</ul>
+<div class="cats">{cats}<a class="cat" data-c="event" href="/event/"><span class="ic">🎁</span><b>경품·용돈</b><span class="n">{len(events)}건</span></a><a class="cat" data-c="apply" href="/apply/"><span class="ic">📝</span><b>청약·신청</b><span class="n">{len(aps)}건</span></a></div>
 <div class="sec"><h2>⏰ 이번 주 마감</h2><a href="#all">전체 보기 →</a></div><ul class="list row">{''.join(card(c) for c in wk[:10])}</ul>
 <div class="sec"><h2>🏆 상금 큰 공모전</h2></div><ul class="list grid">{''.join(card(c) for c in big)}</ul>
 <div class="sec" id="all"><h2>📋 전체 공모전</h2></div>{TOOLBAR}<ul class="list" id="list">{pre}</ul><button class="more" id="more" hidden>더 보기</button>
 <section class="intro">{say('think', '공모전 정보는 여러 사이트에 흩어져 있어서 마감을 놓치기 쉬워요. 그래서 제가 <b>마감일·상금·응모 자격·접수 방법</b>을 같은 형식으로 정리하고, 공모전마다 응모 전 체크리스트를 붙였어요. 처음이라면 <a href="/guide/">응모 가이드</a>부터 읽어 보세요!')}</section>'''
-    page('/', '루리의 생활지식 — 공모전·지원금·용돈벌이 정보',
+    page('/', '루리의 줍줍 — 일단 넣고 보는 용돈 정보',
          f'진행 중인 공모전 {len(live)}건을 마감 임박순·상금순으로. 문학, 아이디어·정책, 디자인, 영상, 논문, IT, 해외 공모전과 경품 이벤트 정리.',
          home + HERO_JS + listing_js(), full_title=True, ld={'@context': 'https://schema.org', '@type': 'WebSite', 'name': NAME, 'url': SITE + '/'})
     for s, n in CATS:
@@ -409,12 +414,12 @@ def build():
 {say(CAT_OUTFIT[n], f'<b>{n} 공모전 응모 팁</b><ul class="chk">{tips}</ul>')}
 <h2>진행 중 {n} 공모전</h2>{TOOLBAR}<ul class="list" id="list">{''.join(card(c) for c in cl[:60])}</ul><button class="more" id="more" hidden>더 보기</button>'''
         page(f'/cat/{s}/', f'{n} 공모전 모음 (진행 중 {len(cl)}건)', f'{n} 분야 진행 중 공모전 {len(cl)}건 마감 임박순 정리. {CAT_INTRO[n][:70]}',
-             body + listing_js(n), [('루리의 생활지식', '/'), (n, f'/cat/{s}/')])
+             body + listing_js(n), [('루리의 줍줍', '/'), (n, f'/cat/{s}/')])
     page('/event/', f'경품 이벤트 모음 (진행 중 {len(events)}건)', f'댓글·퀴즈·설문·SNS 경품 이벤트 {len(events)}건을 마감 임박순으로 정리했어요.',
          f'''<p class="bc"><a href="/">홈</a> › 경품 이벤트</p><section class="dh" data-c="event"><span class="ic big">🎁</span><h1>경품 이벤트</h1><p class="lead">진행 중 <b>{len(events)}건</b> · 마감 임박순</p></section>
 {say('excited', '댓글·퀴즈·설문만으로 응모할 수 있는 이벤트가 이렇게 많아요! 당첨 발표는 꼭 공식 계정에서 확인해요.')}
 <p>공공기관·기업이 진행하는 댓글, 퀴즈, 설문, SNS 경품 이벤트입니다. 참여 조건(팔로우, 친구 태그, 스토리 공유 등)과 당첨자 발표 방법은 이벤트마다 달라요. 당첨 연락을 사칭해 개인정보나 송금을 요구하는 경우가 있으니 발표는 주최 측 공식 계정에서 확인하세요.</p>
-<ul class="list">{''.join(ev_card(e) for e in sorted(events, key=lambda e: (min(dday(e['end'])[0], 7) // 4, EASY_RANK.get(e.get('effort') or EASY.get(e['type'], ''), 2), e['end'])))}</ul>''', [('루리의 생활지식', '/'), ('경품 이벤트', '/event/')])
+<ul class="list">{''.join(ev_card(e) for e in sorted(events, key=lambda e: (min(dday(e['end'])[0], 7) // 4, EASY_RANK.get(e.get('effort') or EASY.get(e['type'], ''), 2), e['end'])))}</ul>''', [('루리의 줍줍', '/'), ('경품 이벤트', '/event/')])
     shutil.rmtree(os.path.join(ROOT, 'a'), ignore_errors=True)
     build_apply(aps)
     guides(live)
@@ -464,34 +469,34 @@ GUIDES = [
 def guides(live):
     li = ''.join(f'<li><a class="card" data-c="guide" href="/guide/{s}/"><span class="ic">📖</span><div class="cb"><h3 class="t">{E(t)}</h3><p class="o">{E(d)}</p></div></a></li>' for s, t, d, _ in GUIDES)
     page('/guide/', '공모전 응모 가이드', '공모전 처음 응모하는 법, 제안서 쓰는 법, 수기·문학 공모 요령, 상금 수령과 사칭 주의까지.',
-         f'<p class="bc"><a href="/">홈</a> › 응모 가이드</p><section class="dh" data-c="guide"><span class="ic big">📖</span><h1>공모전 응모 가이드</h1></section>{say("o_vest", "처음 응모한다면 1번부터 차근차근 읽어 보세요. 실수로 탈락하는 일이 확 줄어요!")}<ul class="list">{li}</ul>', [('루리의 생활지식', '/'), ('응모 가이드', '/guide/')])
+         f'<p class="bc"><a href="/">홈</a> › 응모 가이드</p><section class="dh" data-c="guide"><span class="ic big">📖</span><h1>공모전 응모 가이드</h1></section>{say("o_vest", "처음 응모한다면 1번부터 차근차근 읽어 보세요. 실수로 탈락하는 일이 확 줄어요!")}<ul class="list">{li}</ul>', [('루리의 줍줍', '/'), ('응모 가이드', '/guide/')])
     rel = ''.join(card(c) for c in live[:4])
     for s, t, d, b in GUIDES:
         page(f'/guide/{s}/', t, d, f'<p class="bc"><a href="/">홈</a> › <a href="/guide/">응모 가이드</a></p><article><h1>{E(t)}</h1>{say(["o_suit", "o_cardigan", "o_desk", "o_present"][GUIDES.index((s, t, d, b)) % 4], E(d))}{b}</article><h2>마감 임박 공모전</h2><ul class="list">{rel}</ul>',
-             [('루리의 생활지식', '/'), ('응모 가이드', '/guide/'), (t, f'/guide/{s}/')],
+             [('루리의 줍줍', '/'), ('응모 가이드', '/guide/'), (t, f'/guide/{s}/')],
              {'@context': 'https://schema.org', '@type': 'Article', 'headline': t, 'description': d, 'datePublished': '2026-10-16',
               'author': {'@type': 'Person', 'name': 'Seongsang Park'}})
 
 
 def statics(nl, ne):
-    page('/about/', '소개', '루리의 생활지식은 흩어진 공모전·지원금·경품 이벤트 공고를 마감일·상금·자격 기준으로 정리하는 개인 운영 사이트입니다.',
-         f'''<h1>소개</h1><p>루리의 생활지식은 개인 개발자 Seongsang Park이 운영하는 생활 정보 사이트입니다. 상금을 받을 수 있는 공모전, 개인이 신청할 수 있는 지원금, 참여만 해도 받는 경품 이벤트처럼 일상에서 용돈이 되는 정보를 모읍니다. 여러 사이트와 기관 홈페이지에 흩어진 공모전·경품 이벤트 공고를 모아 <b>마감일, 상금, 응모 자격, 접수 방법</b>을 같은 형식으로 정리합니다. 현재 진행 중인 공모전 {nl}건, 경품 이벤트 {ne}건을 소개하고 있습니다.</p>
+    page('/about/', '소개', '루리의 줍줍은 흩어진 공모전·지원금·경품 이벤트 공고를 마감일·상금·자격 기준으로 정리하는 개인 운영 사이트입니다.',
+         f'''<h1>소개</h1><p>루리의 줍줍은 개인 개발자 Seongsang Park이 운영하는 "일단 넣고 보는" 용돈 정보 사이트입니다. 응모만 하면 되는 경품, 1분이면 끝나는 댓글·설문 이벤트, 청약·지원금 신청, 슬로건 한 줄로 낼 수 있는 공모전처럼 그냥 넣으면 되는 기회를 주워 모읍니다. 여러 사이트와 기관 홈페이지에 흩어진 공모전·경품 이벤트 공고를 모아 <b>마감일, 상금, 응모 자격, 접수 방법</b>을 같은 형식으로 정리합니다. 현재 진행 중인 공모전 {nl}건, 경품 이벤트 {ne}건을 소개하고 있습니다.</p>
 <h2>정보 정리 방식</h2><p>공개된 공고를 수집해 마감일과 상금, 자격을 자동으로 추출하고, 분야별 응모 체크리스트를 붙입니다. 자동 정리 과정에서 오류가 생길 수 있으므로 공모전 페이지마다 공식 공고 링크를 함께 제공합니다. 정확한 요강은 항상 주최 측 공식 공고를 기준으로 해 주세요.</p>
-<h2>잘못된 정보 제보</h2><p>마감일이나 상금이 틀렸거나 종료된 공모전이 보이면 <a href="/contact/">문의</a>로 알려 주세요.</p>''', [('루리의 생활지식', '/'), ('소개', '/about/')])
-    page('/contact/', '문의', '루리의 생활지식 정보 오류 제보, 공모전 등록 요청, 삭제 요청 안내.',
-         f'''<h1>문의</h1><p>정보 오류 제보, 공모전 등록 요청, 삭제 요청은 이메일 <a href="mailto:{MAIL}">{MAIL}</a>, 제휴·광고 문의는 <a href="mailto:{PARTNER}">{PARTNER}</a> 로 보내 주세요. <a href="https://github.com/ilovecodingma/ilovecodingma.github.io/issues" rel="noopener">GitHub Issues</a>에 남기셔도 됩니다. 공모전 등록을 요청할 때는 공식 공고 주소를 함께 적어 주시면 확인 후 반영합니다.</p><p class="note">개인정보(이름·연락처)는 공개 게시판에 올리지 마세요.</p>''', [('루리의 생활지식', '/'), ('문의', '/contact/')])
-    page('/privacy/', '개인정보처리방침', '루리의 생활지식은 이용자의 개인정보를 수집하지 않습니다. 광고 쿠키와 방문 통계 안내.',
-         '''<h1>개인정보처리방침</h1><p>루리의 생활지식(sungprofile.cloud)은 회원가입·로그인 기능이 없으며 이용자의 이름, 이메일, 연락처 등 개인정보를 수집·저장하지 않습니다.</p>
+<h2>잘못된 정보 제보</h2><p>마감일이나 상금이 틀렸거나 종료된 공모전이 보이면 <a href="/contact/">문의</a>로 알려 주세요.</p>''', [('루리의 줍줍', '/'), ('소개', '/about/')])
+    page('/contact/', '문의', '루리의 줍줍 정보 오류 제보, 공모전 등록 요청, 삭제 요청 안내.',
+         f'''<h1>문의</h1><p>정보 오류 제보, 공모전 등록 요청, 삭제 요청은 이메일 <a href="mailto:{MAIL}">{MAIL}</a>, 제휴·광고 문의는 <a href="mailto:{PARTNER}">{PARTNER}</a> 로 보내 주세요. <a href="https://github.com/ilovecodingma/ilovecodingma.github.io/issues" rel="noopener">GitHub Issues</a>에 남기셔도 됩니다. 공모전 등록을 요청할 때는 공식 공고 주소를 함께 적어 주시면 확인 후 반영합니다.</p><p class="note">개인정보(이름·연락처)는 공개 게시판에 올리지 마세요.</p>''', [('루리의 줍줍', '/'), ('문의', '/contact/')])
+    page('/privacy/', '개인정보처리방침', '루리의 줍줍은 이용자의 개인정보를 수집하지 않습니다. 광고 쿠키와 방문 통계 안내.',
+         '''<h1>개인정보처리방침</h1><p>루리의 줍줍(sungprofile.cloud)은 회원가입·로그인 기능이 없으며 이용자의 이름, 이메일, 연락처 등 개인정보를 수집·저장하지 않습니다.</p>
 <h2>1. 광고와 쿠키</h2><p>이 사이트는 Google AdSense 광고를 게재하며, Google 등 제3자 광고 사업자는 쿠키를 사용해 이용자의 이전 방문 기록에 기반한 광고를 표시할 수 있습니다. 이용자는 <a href="https://adssettings.google.com" rel="noopener">Google 광고 설정</a>에서 맞춤 광고를 해제할 수 있으며, 자세한 내용은 <a href="https://policies.google.com/technologies/ads" rel="noopener">Google 광고 정책</a>을 참고하세요.</p>
 <h2>2. 방문 통계</h2><p>서비스 개선을 위해 Google Analytics로 방문 통계(페이지 조회, 유입 경로, 기기 종류)를 수집합니다. 브라우저 설정이나 <a href="https://tools.google.com/dlpage/gaoptout" rel="noopener">차단 부가기능</a>으로 거부할 수 있습니다.</p>
 <h2>3. 접속 로그</h2><p>사이트는 GitHub Pages로 호스팅되며, 호스팅 제공자가 보안 목적으로 접속 로그(IP 주소 등)를 처리할 수 있습니다.</p>
 <h2>4. 외부 링크</h2><p>공모전 공식 공고 링크를 누르면 주최 기관 사이트로 이동하며, 해당 사이트의 개인정보처리방침이 적용됩니다.</p>
-<h2>5. 문의</h2><p><a href="/contact/">문의</a> 페이지를 이용해 주세요.</p><p class="note">시행일: 2026-10-16</p>''', [('루리의 생활지식', '/'), ('개인정보처리방침', '/privacy/')])
-    page('/terms/', '이용약관', '루리의 생활지식 이용약관과 정보 정확성에 관한 면책 안내.',
-         '''<h1>이용약관</h1><h2>1. 서비스 내용</h2><p>루리의 생활지식은 공개된 공모전·지원사업·이벤트 공고를 정리해 소개하는 무료 정보 서비스입니다. 공모전의 주최·심사·시상에는 관여하지 않습니다.</p>
+<h2>5. 문의</h2><p><a href="/contact/">문의</a> 페이지를 이용해 주세요.</p><p class="note">시행일: 2026-10-16</p>''', [('루리의 줍줍', '/'), ('개인정보처리방침', '/privacy/')])
+    page('/terms/', '이용약관', '루리의 줍줍 이용약관과 정보 정확성에 관한 면책 안내.',
+         '''<h1>이용약관</h1><h2>1. 서비스 내용</h2><p>루리의 줍줍은 공개된 공모전·지원사업·이벤트 공고를 정리해 소개하는 무료 정보 서비스입니다. 공모전의 주최·심사·시상에는 관여하지 않습니다.</p>
 <h2>2. 정보의 정확성</h2><p>마감일·상금·응모 자격 등은 공고 원문에서 자동으로 정리한 값으로 오류가 있을 수 있습니다. 응모 전 반드시 주최 측 공식 공고를 확인해야 하며, 사이트 정보만 믿고 응모해 생긴 불이익에 대해 운영자는 책임지지 않습니다.</p>
-<h2>3. 저작권</h2><p>각 공모전 공고의 저작권은 주최 기관에 있습니다. 루리의 생활지식은 요약 정보와 공식 공고 링크만 제공합니다. 게재를 원하지 않는 주최 측은 <a href="/contact/">문의</a>로 요청하시면 삭제합니다.</p>
-<h2>4. 광고</h2><p>사이트 운영을 위해 Google AdSense 광고를 게재합니다.</p><p class="note">시행일: 2026-10-16</p>''', [('루리의 생활지식', '/'), ('이용약관', '/terms/')])
+<h2>3. 저작권</h2><p>각 공모전 공고의 저작권은 주최 기관에 있습니다. 루리의 줍줍은 요약 정보와 공식 공고 링크만 제공합니다. 게재를 원하지 않는 주최 측은 <a href="/contact/">문의</a>로 요청하시면 삭제합니다.</p>
+<h2>4. 광고</h2><p>사이트 운영을 위해 Google AdSense 광고를 게재합니다.</p><p class="note">시행일: 2026-10-16</p>''', [('루리의 줍줍', '/'), ('이용약관', '/terms/')])
 
 
 NEW_URLS = []
