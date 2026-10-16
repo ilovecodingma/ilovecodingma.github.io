@@ -196,6 +196,17 @@ def load():
     return contests, events
 
 
+def score(c):
+    """추천순: 상금(로그) + 적당히 남은 기간(2~14일 최고) − 오늘 마감"""
+    n = dday(c['end'])[0]
+    import math
+    s = (math.log10(c['pv']) - 4) * 1.2 if c['pv'] else 0
+    s += 2 if 2 <= n <= 14 else 1 if n <= 30 else 0
+    s -= 3 if n <= 0 else 0
+    s += 1 if c.get('effort') or c.get('quick') else 0
+    return s
+
+
 def card(c):
     n, dd = dday(c['end'])
     cls = 'd off' if n < 0 else 'd u3' if n <= 3 else 'd hot' if n <= 7 else 'd'
@@ -203,7 +214,7 @@ def card(c):
     pz = (f'<span class="ez e0">{E(c["effort"])}</span>' if c.get('effort') else '') + (f'<span class="pz">🏆 {E(c["prize"])}</span>' if c['pv'] else '')
     th = f'<img class="th" src="/assets/shots/{c["id"]}.webp" width="640" height="400" alt="" loading="lazy">' if c.get('th') else ''
     return (f'<li><a class="card{" has-th" if th else ""}" data-c="{SLUG[c["tags"][0]]}" href="/c/{c["id"]}/">{th}<span class="ic">{CAT_ICON[c["tags"][0]]}</span><div class="cb"><div class="top"><h3 class="t">{E(c["title"])}</h3><span class="{cls}">{dd}</span></div>'
-            f'<p class="o">{E(c["org"])} · ~{ddot(c["end"])}</p><div class="tags">{pz}{tg}</div></div></a></li>')
+            f'<p class="o">{E(c["org"])}</p><p class="pd">접수 {(ddot(c["start"])[5:] + " ~ ") if c.get("start") else "~ "}{ddot(c["end"])[5:]}</p><div class="tags">{pz}{tg}</div></div></a></li>')
 
 
 def detail(c, live):
@@ -249,17 +260,18 @@ def detail(c, live):
 def listing_js(cat=''):
     return '''<script>
 (function(){var IC=%s,SL=%s;var $=function(i){return document.getElementById(i)};var items=[],cat=%s,PAGE=40,shown=PAGE;
-var n=new Date(),T=Math.round(Date.UTC(n.getFullYear(),n.getMonth(),n.getDate())/864e5);
+var n=new Date(),LATE=n.getHours()>=18,T=Math.round(Date.UTC(n.getFullYear(),n.getMonth(),n.getDate())/864e5);
 function dn(s){var p=s.split('-');return Math.round(Date.UTC(+p[0],p[1]-1,+p[2])/864e5)}
 function el(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}
 function render(){var q=$('q').value.trim().toLowerCase(),due=+$('due').value||0,s=$('sort').value;
-var r=items.filter(function(i){return i.left>=0&&(!cat||i.tags.indexOf(cat)>=0)&&(!due||i.left<=due)&&(!q||i.hay.indexOf(q)>=0)});
-r.sort(s==='prize'?function(a,b){return b.pv-a.pv||a.left-b.left}:function(a,b){return a.left-b.left||b.pv-a.pv});
+function sc(i){var s=i.pv?(Math.log(i.pv)/Math.LN10-4)*1.2:0;s+=(i.left>=2&&i.left<=14)?2:i.left<=30?1:0;if(i.left<=0)s-=3;if(i.effort)s+=1;return s}
+var r=items.filter(function(i){return i.left>=(LATE?1:0)&&(!cat||i.tags.indexOf(cat)>=0)&&(!due||i.left<=due)&&(!q||i.hay.indexOf(q)>=0)});
+r.sort(s==='prize'?function(a,b){return b.pv-a.pv||a.left-b.left}:s==='end'?function(a,b){return a.left-b.left||b.pv-a.pv}:function(a,b){return sc(b)-sc(a)||a.left-b.left});
 $('cnt').textContent='진행 중 공모전 '+r.length+'건';var ul=$('list');ul.textContent='';
 if(!r.length){var li=el('li','empty');li.innerHTML='<img src="/assets/ruri/sad_s.webp" width="56" height="77" alt=""><p>조건에 맞는 공모전이 없어요. 검색어를 바꿔 볼까요?</p>';ul.appendChild(li)}
 r.slice(0,shown).forEach(function(i){var li=el('li'),a=el('a','card');a.href='/c/'+i.id+'/';a.dataset.c=SL[i.tags[0]]||'etc';if(i.th){a.className+=' has-th';var im=el('img','th');im.src='/assets/shots/'+i.id+'.webp';im.loading='lazy';im.alt='';a.appendChild(im)}a.appendChild(el('span','ic',IC[i.tags[0]]||'🧩'));var cb=el('div','cb'),top=el('div','top');top.appendChild(el('h3','t',i.title));
-top.appendChild(el('span','d'+(i.left<=3?' u3':i.left<=7?' hot':''),i.left?'D-'+i.left:'D-DAY'));cb.appendChild(top);cb.appendChild(el('p','o',i.org+' · ~'+i.end.replace(/-/g,'.')));
-var tg=el('div','tags');if(i.pv)tg.appendChild(el('span','pz','🏆 '+i.prize));i.tags.forEach(function(x){tg.appendChild(el('span','tg',x))});cb.appendChild(tg);a.appendChild(cb);li.appendChild(a);ul.appendChild(li)});
+top.appendChild(el('span','d'+(i.left<=3?' u3':i.left<=7?' hot':''),i.left?'D-'+i.left:'D-DAY'));cb.appendChild(top);cb.appendChild(el('p','o',i.org));cb.appendChild(el('p','pd','접수 '+(i.start?i.start.slice(5).replace('-','.')+' ~ ':'~ ')+i.end.slice(5).replace('-','.')));
+var tg=el('div','tags');if(i.effort)tg.appendChild(el('span','ez e0',i.effort));if(i.pv)tg.appendChild(el('span','pz','🏆 '+i.prize));i.tags.forEach(function(x){tg.appendChild(el('span','tg',x))});cb.appendChild(tg);a.appendChild(cb);li.appendChild(a);ul.appendChild(li)});
 $('more').hidden=r.length<=shown}
 ['q','due','sort'].forEach(function(i){$(i).addEventListener('input',function(){shown=PAGE;render()})});$('more').onclick=function(){shown+=PAGE;render()};
 fetch('/data.json',{cache:'no-cache'}).then(function(r){return r.json()}).then(function(d){items=d.items.map(function(i){i.left=dn(i.end)-T;i.hay=(i.title+' '+i.org+' '+i.field+' '+i.tags.join(' ')).toLowerCase();return i});render()});
@@ -268,7 +280,7 @@ fetch('/data.json',{cache:'no-cache'}).then(function(r){return r.json()}).then(f
 
 TOOLBAR = '''<div class="bar"><input type="search" id="q" placeholder="공모전, 주최, 키워드 검색" aria-label="검색">
 <select id="due" aria-label="마감"><option value="">마감 전체</option><option value="7">7일 이내</option><option value="30">30일 이내</option></select>
-<select id="sort" aria-label="정렬"><option value="end">마감 임박순</option><option value="prize">상금 큰 순</option></select></div>
+<select id="sort" aria-label="정렬"><option value="rec">추천순</option><option value="end">마감 임박순</option><option value="prize">상금 큰 순</option></select></div>
 <p class="cnt" id="cnt"></p>'''
 
 
@@ -379,13 +391,15 @@ try{var p=o[Math.floor(Math.random()*o.length)],i=document.getElementById('hero-
 
 def build():
     contests, events = load()
-    live = [c for c in contests if dday(c['end'])[0] >= 0]
+    late = datetime.datetime.now().hour >= 18  # 대부분 18시·업무시간 마감 → 저녁 빌드부터 오늘 마감은 내림
+    live = [c for c in contests if dday(c['end'])[0] >= (1 if late else 0)]
+    events = [e for e in events if dday(e['end'])[0] >= (1 if late else 0)]
     for d in ('c', 'cat', 'event', 'guide'):
         shutil.rmtree(os.path.join(ROOT, d), ignore_errors=True)
     for c in contests:
         detail(c, live)
     sync_shots(live)
-    keys = ('id', 'title', 'org', 'end', 'prize', 'pv', 'field', 'tags', 'th', 'elig', 'effort', 'region')
+    keys = ('id', 'title', 'org', 'start', 'end', 'prize', 'pv', 'field', 'tags', 'th', 'elig', 'effort', 'region')
     with open(os.path.join(ROOT, 'data.json'), 'w', encoding='utf-8', newline='\n') as f:
         json.dump({'updated': datetime.datetime.now().strftime('%Y-%m-%d %H:%M'), 'items': [{k: c[k] for k in keys} for c in live]},
                   f, ensure_ascii=False, separators=(',', ':'))
@@ -393,19 +407,22 @@ def build():
     with open(os.path.join(ROOT, 'events.json'), 'w', encoding='utf-8', newline='\n') as f:
         json.dump([{'title': e['title'], 'org': e['org'], 'end': e['end'], 'ez': e.get('effort') or EASY.get(e['type'], e['type']), 'link': e['link']} for e in events],
                   f, ensure_ascii=False, separators=(',', ':'))
-    pre = ''.join(card(c) for c in live[:60])  # 크롤러용 서버 렌더, JS 가 전체 목록으로 교체
+    live_rec = sorted(live, key=lambda c: -score(c))
+    pre = ''.join(card(c) for c in live_rec[:60])  # 크롤러용 서버 렌더, JS 가 전체 목록으로 교체
     big = sorted(live, key=lambda c: -c['pv'])[:6]
     aps = load_apply()
-    wk = [c for c in live if dday(c['end'])[0] <= 7]
+    wk = [c for c in live if 1 <= dday(c['end'])[0] <= 7]
     quick = sorted([e for e in events if EASY_RANK.get(e.get('effort') or EASY.get(e['type'], ''), 2) <= 1],
                    key=lambda e: (e['end'], EASY_RANK.get(e.get('effort') or EASY.get(e['type'], ''), 2)))
     SHORT = re.compile(r'슬로건|네이밍|명칭|표어|캐치프레이즈|아이디어|사진|한\s*줄|삼행시|사행시|디카시|짧은\s*글|문구|애칭|이름\s*짓기|BI|캐릭터\s*이름')
     short = [c for c in live if not c.get('fee') and not re.search('우편|방문', c.get('submit') or '') and (c.get('quick') is True or (c.get('quick') is None and SHORT.search(c['title'] + ' ' + (c['field'] or ''))))]
-    short.sort(key=lambda c: (dday(c['end'])[0] > 14, -c['pv'], c['end']))
+    short = [c for c in short if dday(c['end'])[0] >= 2]
+    short.sort(key=lambda c: -score(c))
     LOCAL = re.compile(r'(시민|도민|군민|구민|주민|거주|재학|재직|소재|관내|출신)')
     SMALLORG = re.compile(r'(군|구|읍|면|동)(청|청장|의회)?$|문화재단|복지관|도서관|센터$')
     hidden = sorted([c for c in live if c not in short and not c.get('fee') and (c.get('region') or LOCAL.search(c['elig'] or '') or SMALLORG.search((c['org'] or '').strip()))],
-                    key=lambda c: (-c['pv'], c['end']))
+                    key=lambda c: -score(c))
+    hidden = [c for c in hidden if dday(c['end'])[0] >= 2]
     cats = ''.join(f'<a class="cat" data-c="{s_}" href="/cat/{s_}/"><span class="ic">{CAT_ICON[n]}</span><b>{n}</b><span class="n">{sum(1 for c in live if n in c["tags"])}건</span></a>' for s_, n in CATS)
     home = f'''<section class="hero"><div class="hero-t"><p class="kick">{TODAY.month}월 {TODAY.day}일 업데이트</p><h1>그냥 넣으면 되는 용돈 기회,<br><em>루리</em>가 주워 왔어요</h1>
 <p class="sub">슬로건 한 줄, 사진 한 장으로 내는 대회부터 경쟁 적은 숨은 대회, 청약·지원금 신청까지. 일단 넣고 보세요!</p>
