@@ -18,7 +18,9 @@ SHOTS = os.path.join(DATA, 'shots')  # 공식 공고 캡처 <id>.webp 640x400
 SITE = 'https://sungprofile.cloud'
 NAME = '루리의 줍줍'
 _CT = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'contact.json'), encoding='utf-8'))
-MAIL, PARTNER = _CT['contact'], _CT['partner']  # 에이전트채널 규약: 일반 문의 / 제휴·광고
+MAIL, PARTNER = _CT['contact'], _CT['partner']
+_CM = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'community.json')
+COMM_API = json.load(open(_CM, encoding='utf-8')).get('api', '') if os.path.exists(_CM) else ''  # 비어 있으면 게시판·로그인 숨김  # 에이전트채널 규약: 일반 문의 / 제휴·광고
 TODAY = datetime.date.today()
 KEEP_PAST = 0  # 마감 후 상세페이지 보존 일수 (2026-10-16 사용자: 마감된 건 내림)
 TXT_SRC = [os.path.join(DATA, 'txt'),
@@ -54,6 +56,7 @@ EV_KIND = {'event': '이벤트', 'sweepstakes': '추첨 경품', 'quiz': '퀴즈
            'sns_tag_required': '친구 태그', 'sns_story_required': '스토리 공유', 'sns_capture': '캡처 인증', 'sns_form_only': '폼 응모',
            'sns_comment+form': '댓글+폼', 'sns_purchase': '구매 인증', 'sns_region': '지역 한정', 'sns_other': 'SNS 이벤트'}
 
+COMM_TAGS_TPL = '<link rel="stylesheet" href="/assets/community/comm.css?v=1"><script defer src="/assets/community/comm.js?v=1"></script>'
 GTAG = ('<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4248498719773262" crossorigin="anonymous"></script>\n'
         '<script async src="https://www.googletagmanager.com/gtag/js?id=G-G9BPFF95GY"></script>\n'
         "<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-G9BPFF95GY');</script>")
@@ -63,6 +66,7 @@ NAV = [('apply', '청약·신청'), ('ssul', '썰'), ('event', '경품·용돈')
 
 def page(path, title, desc, body, crumbs=None, ld=None, full_title=False):
     url = SITE + path
+    COMM_TAGS = COMM_TAGS_TPL if COMM_API else ''
     t = title if full_title else f'{title} | {NAME}'
     lds = []
     if crumbs:
@@ -71,7 +75,7 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False):
     if ld:
         lds.append(ld)
     ldh = ''.join('<script type="application/ld+json">%s</script>' % json.dumps(x, ensure_ascii=False).replace('</', '<\\/') for x in lds)
-    nav = ''.join(f'<a href="/{s}/">{n}</a>' for s, n in NAV)
+    nav = ''.join(f'<a href="/{s}/">{n}</a>' for s, n in NAV + ([('community', '커뮤니티')] if COMM_API else []))
     doc = f'''<!doctype html>
 <html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{E(t)}</title>
@@ -84,10 +88,10 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False):
 <meta name="theme-color" content="#5b21b6">
 <link rel="icon" href="/favicon.ico?v=5" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png?v=5"><link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png?v=5"><link rel="manifest" href="/site.webmanifest">
 <link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="/assets/gm.css?v=4"><link rel="stylesheet" href="/assets/chat/ruri-chat.css?v=3"><script type="module" src="/assets/chat/ruri-chat.js?v=5"></script>
+<link rel="stylesheet" href="/assets/gm.css?v=4"><link rel="stylesheet" href="/assets/chat/ruri-chat.css?v=3">{COMM_TAGS}<script type="module" src="/assets/chat/ruri-chat.js?v=5"></script>
 {ldh}
 {GTAG}
-</head><body>
+</head><body{(' data-api="' + COMM_API + '"') if COMM_API else ''}>
 <header class="hd"><div class="w hd-in"><a class="logo" href="/"><img src="/assets/icons/logo.svg" width="30" height="30" alt=""><span>루리의 <b>줍줍</b></span></a><nav>{nav}</nav></div></header>
 <main class="w">
 {body}
@@ -247,6 +251,7 @@ def detail(c, live):
 <h2>한눈에 보기</h2><p>{E(summary)}</p>
 <h2>응모 전 체크리스트</h2><ul class="chk">{tips}</ul>
 <p class="note">분야: {catl}. 상금·자격·기간은 공고 원문에서 자동으로 정리한 값이라 오차가 있을 수 있습니다. 최종 기준은 주최 측 공식 공고입니다.</p>
+{f'<section id="cm-board" data-contest="{c["id"]}" data-title="{E(c["title"])}"></section>' if COMM_API else ''}
 <h2>같은 분야 진행 중 공모전</h2><ul class="list">{simh or '<li class="empty">진행 중인 같은 분야 공모전이 없어요.</li>'}</ul>'''
     ld = {'@context': 'https://schema.org', '@type': 'Event', 'name': c['title'], 'eventStatus': 'https://schema.org/EventScheduled',
           'eventAttendanceMode': 'https://schema.org/OnlineEventAttendanceMode', 'startDate': c['start'] or c['end'], 'endDate': c['end'],
@@ -459,6 +464,7 @@ def build():
     ss = load_ssul()
     build_ssul(ss, live, aps)
     guides(live)
+    community()
     statics(len(live), len(events))
     urls = ['/', '/apply/', '/event/', '/guide/', '/ssul/'] + [f'/ssul/{x["slug"]}/' for x in ss] + [f'/a/{a["id"]}/' for a in aps] + [f'/cat/{s}/' for s, _ in CATS] + [f'/guide/{g[0]}/' for g in GUIDES] + \
            ['/about/', '/privacy/', '/terms/', '/contact/'] + [f'/c/{c["id"]}/' for c in contests] + sorted((f'/v/{d}/' for d in os.listdir(os.path.join(ROOT, 'v')) if os.path.isfile(os.path.join(ROOT, 'v', d, 'index.html'))), key=lambda u: int(u.split('/')[2]) if u.split('/')[2].isdigit() else 0)
@@ -567,6 +573,24 @@ def guides(live):
               'author': {'@type': 'Person', 'name': 'Seongsang Park'}})
 
 
+PRIV_MEMBER = ('<p>루리의 줍줍(sungprofile.cloud)은 커뮤니티(후기·질문 게시판)를 쓰려는 회원에게서 <b>이메일 주소 한 가지</b>만 받습니다. 이름·전화번호·주소 등 다른 정보는 받지 않습니다.</p>'
+               '<h2>회원 정보</h2><ul class="chk"><li>수집 항목: 이메일 주소(필수). 비밀번호는 복원할 수 없는 암호화 값(PBKDF2)으로만 저장합니다.</li>'
+               '<li>이용 목적: 로그인, 게시글·댓글 작성자 구분, 부정 이용 방지</li><li>표시: 글쓴이 이름은 이메일 앞부분을 가린 값(예: sun***)으로만 보입니다.</li>'
+               '<li>보관: 회원 탈퇴 시 즉시 삭제하며, 작성한 글·댓글은 비공개 처리합니다. 탈퇴·삭제 요청은 문의 메일로도 받습니다.</li>'
+               '<li>처리 위탁: 회원·게시판 데이터는 Cloudflare(Workers, D1)에 저장됩니다.</li></ul>'
+               '<p>회원이 아닌 방문자의 개인정보는 수집하지 않습니다.</p>') if COMM_API else               '<p>루리의 줍줍(sungprofile.cloud)은 회원가입·로그인 기능이 없으며 이용자의 이름, 이메일, 연락처 등 개인정보를 수집·저장하지 않습니다.</p>'
+
+
+def community():
+    if not COMM_API:
+        shutil.rmtree(os.path.join(ROOT, 'community'), ignore_errors=True)
+        return
+    page('/community/', '후기 커뮤니티', '공모전·대회 응모 후기와 질문, 팁을 나누는 루리의 줍줍 커뮤니티.',
+         f'''<p class="bc"><a href="/">홈</a> › 커뮤니티</p><section class="dh" data-c="guide"><span class="ic big">💬</span><h1>후기 커뮤니티</h1><p class="lead">응모 후기·질문·팁</p></section>
+{say('o_present', '응모해 본 대회 후기를 남겨 주세요! 글은 각 공모전 페이지의 「후기·질문」에서 쓸 수 있어요.')}
+<section id="cm-board" data-all></section>''', [('루리의 줍줍', '/'), ('커뮤니티', '/community/')])
+
+
 def statics(nl, ne):
     page('/about/', '소개', '루리의 줍줍은 흩어진 공모전·지원금·경품 이벤트 공고를 마감일·상금·자격 기준으로 정리하는 개인 운영 사이트입니다.',
          f'''<h1>소개</h1><p>루리의 줍줍은 개인 개발자 Seongsang Park이 운영하는 "일단 넣고 보는" 용돈 정보 사이트입니다. 응모만 하면 되는 경품, 1분이면 끝나는 댓글·설문 이벤트, 청약·지원금 신청, 슬로건 한 줄로 낼 수 있는 공모전처럼 그냥 넣으면 되는 기회를 주워 모읍니다. 여러 사이트와 기관 홈페이지에 흩어진 공모전·경품 이벤트 공고를 모아 <b>마감일, 상금, 응모 자격, 접수 방법</b>을 같은 형식으로 정리합니다. 현재 진행 중인 공모전 {nl}건, 경품 이벤트 {ne}건을 소개하고 있습니다.</p>
@@ -575,7 +599,7 @@ def statics(nl, ne):
     page('/contact/', '문의', '루리의 줍줍 정보 오류 제보, 공모전 등록 요청, 삭제 요청 안내.',
          f'''<h1>문의</h1><p>정보 오류 제보, 공모전 등록 요청, 삭제 요청은 이메일 <a href="mailto:{MAIL}">{MAIL}</a>, 제휴·광고 문의는 <a href="mailto:{PARTNER}">{PARTNER}</a> 로 보내 주세요. <a href="https://github.com/ilovecodingma/ilovecodingma.github.io/issues" rel="noopener">GitHub Issues</a>에 남기셔도 됩니다. 공모전 등록을 요청할 때는 공식 공고 주소를 함께 적어 주시면 확인 후 반영합니다.</p><p class="note">개인정보(이름·연락처)는 공개 게시판에 올리지 마세요.</p>''', [('루리의 줍줍', '/'), ('문의', '/contact/')])
     page('/privacy/', '개인정보처리방침', '루리의 줍줍은 이용자의 개인정보를 수집하지 않습니다. 광고 쿠키와 방문 통계 안내.',
-         '''<h1>개인정보처리방침</h1><p>루리의 줍줍(sungprofile.cloud)은 회원가입·로그인 기능이 없으며 이용자의 이름, 이메일, 연락처 등 개인정보를 수집·저장하지 않습니다.</p>
+         f'''<h1>개인정보처리방침</h1>{PRIV_MEMBER}
 <h2>1. 광고와 쿠키</h2><p>이 사이트는 Google AdSense 광고를 게재하며, Google 등 제3자 광고 사업자는 쿠키를 사용해 이용자의 이전 방문 기록에 기반한 광고를 표시할 수 있습니다. 이용자는 <a href="https://adssettings.google.com" rel="noopener">Google 광고 설정</a>에서 맞춤 광고를 해제할 수 있으며, 자세한 내용은 <a href="https://policies.google.com/technologies/ads" rel="noopener">Google 광고 정책</a>을 참고하세요.</p>
 <h2>2. 방문 통계</h2><p>서비스 개선을 위해 Google Analytics로 방문 통계(페이지 조회, 유입 경로, 기기 종류)를 수집합니다. 브라우저 설정이나 <a href="https://tools.google.com/dlpage/gaoptout" rel="noopener">차단 부가기능</a>으로 거부할 수 있습니다.</p>
 <h2>3. 접속 로그</h2><p>사이트는 GitHub Pages로 호스팅되며, 호스팅 제공자가 보안 목적으로 접속 로그(IP 주소 등)를 처리할 수 있습니다.</p>
