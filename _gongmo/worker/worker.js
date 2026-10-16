@@ -61,7 +61,7 @@ export default {
         const ref = clean(body.ref, 16);
         if (ref) {
           const by = await env.DB.prepare('SELECT user_id FROM invite_codes WHERE code = ?').bind(ref).first('user_id');
-          if (by) await env.DB.prepare('INSERT OR IGNORE INTO invited (user_id, by_user, created) VALUES (?, ?, ?)').bind(r.meta.last_row_id, by, now()).run();
+          if (by) await env.DB.prepare('INSERT OR IGNORE INTO invited (user_id, by_user, contest_id, created) VALUES (?, ?, ?, ?)').bind(r.meta.last_row_id, by, clean(body.h, 40), now()).run();
         }
         return json(req, { token: await newSession(env, r.meta.last_row_id), nick });
       }
@@ -80,19 +80,27 @@ export default {
         const code = clean(body.ref, 16);
         if (!/^[0-9a-f]{8}$/.test(code) || !(await count(env, 'SELECT COUNT(*) n FROM invite_codes WHERE code = ?', code))) return json(req, { ok: false });
         const vh = hex(await crypto.subtle.digest('SHA-256', new TextEncoder().encode((req.headers.get('CF-Connecting-IP') || '') + '|' + (req.headers.get('User-Agent') || '')))).slice(0, 16);
-        await env.DB.prepare('INSERT OR IGNORE INTO ref_visits (code, vh, created) VALUES (?, ?, ?)').bind(code, vh, now()).run();
+        await env.DB.prepare('INSERT OR IGNORE INTO ref_visits (code, vh, contest_id, created) VALUES (?, ?, ?, ?)').bind(code, vh, clean(body.h, 40), now()).run();
+        return json(req, { ok: true });
+      }
+      if (p === '/api/prefs' && req.method === 'POST') {  // 루리 꾸미기 저장
+        const u = await me(req, env); if (!u) return err(req, '로그인이 필요해요.', 401);
+        const d = {}; for (const [k, v] of Object.entries(body.data || {}).slice(0, 12)) if (/^[a-z]{1,12}$/.test(k)) d[k] = clean(v, 24);
+        await env.DB.prepare('INSERT OR REPLACE INTO user_prefs (user_id, data) VALUES (?, ?)').bind(u.id, JSON.stringify(d)).run();
         return json(req, { ok: true });
       }
       if (p === '/api/me') {
         const u = await me(req, env); if (!u) return err(req, '로그인이 필요해요.', 401);
         let code = await env.DB.prepare('SELECT code FROM invite_codes WHERE user_id = ?').bind(u.id).first('code');
         if (!code) { code = hex(crypto.getRandomValues(new Uint8Array(4))); await env.DB.prepare('INSERT OR IGNORE INTO invite_codes (code, user_id) VALUES (?, ?)').bind(code, u.id).run(); }
-        return json(req, { nick: u.nick, code, invites: await count(env, 'SELECT COUNT(*) n FROM invited WHERE by_user = ?', u.id), visits: await count(env, 'SELECT COUNT(*) n FROM ref_visits WHERE code = ?', code) });
+        const byC = (await env.DB.prepare("SELECT contest_id h, SUM(v) visits, SUM(j) joins FROM (SELECT contest_id, 1 v, 0 j FROM ref_visits WHERE code = ? UNION ALL SELECT contest_id, 0, 1 FROM invited WHERE by_user = ?) GROUP BY contest_id ORDER BY SUM(v) + SUM(j) * 3 DESC LIMIT 50").bind(code, u.id).all()).results;
+        const prefs = await env.DB.prepare('SELECT data FROM user_prefs WHERE user_id = ?').bind(u.id).first('data');
+        return json(req, { nick: u.nick, code, invites: byC.reduce((a, x) => a + x.joins, 0), visits: byC.reduce((a, x) => a + x.visits, 0), by_contest: byC, prefs: prefs ? JSON.parse(prefs) : {} });
       }
       if (p === '/api/withdraw' && req.method === 'POST') {  // 회원 탈퇴: 계정·세션 삭제, 글은 '탈퇴한 회원'으로 숨김
         const u = await me(req, env); if (!u) return err(req, '로그인이 필요해요.', 401);
         await env.DB.batch([env.DB.prepare('UPDATE posts SET hidden = 1 WHERE user_id = ?').bind(u.id), env.DB.prepare('UPDATE comments SET hidden = 1 WHERE user_id = ?').bind(u.id),
-          env.DB.prepare('DELETE FROM sessions WHERE user_id = ?').bind(u.id), env.DB.prepare('DELETE FROM invite_codes WHERE user_id = ?').bind(u.id), env.DB.prepare('DELETE FROM users WHERE id = ?').bind(u.id)]);
+          env.DB.prepare('DELETE FROM sessions WHERE user_id = ?').bind(u.id), env.DB.prepare('DELETE FROM invite_codes WHERE user_id = ?').bind(u.id), env.DB.prepare('DELETE FROM user_prefs WHERE user_id = ?').bind(u.id), env.DB.prepare('DELETE FROM users WHERE id = ?').bind(u.id)]);
         return json(req, { ok: true });
       }
       // ---- 글 ----

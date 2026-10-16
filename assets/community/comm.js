@@ -2,7 +2,7 @@
 // 가입은 이메일+비밀번호만. 표시 이름은 가린 이메일.
 (function () {
   const API = document.body.dataset.api; if (!API) return;
-  try { const rf = new URLSearchParams(location.search).get('ref'); if (rf && /^[0-9a-f]{8}$/.test(rf)) { localStorage.setItem('jupjup_ref', rf); fetch(API + '/api/ref', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ ref: rf }) }).catch(() => {}); } } catch {}
+  try { const rf = new URLSearchParams(location.search).get('ref'); if (rf && /^[0-9a-f]{8}$/.test(rf)) { const h = new URLSearchParams(location.search).get('h') || (location.pathname.match(/^\/c\/([^/]+)\//) || [])[1] || ''; localStorage.setItem('jupjup_ref', rf); localStorage.setItem('jupjup_ref_h', h); fetch(API + '/api/ref', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ ref: rf, h }) }).catch(() => {}); } } catch {}
   const KEY = 'jupjup_tok', NK = 'jupjup_nick';
   const st = { get t() { try { return localStorage.getItem(KEY) || ''; } catch { return ''; } }, get n() { try { return localStorage.getItem(NK) || ''; } catch { return ''; } },
     set(t, n) { try { if (t) { localStorage.setItem(KEY, t); localStorage.setItem(NK, n); } else { localStorage.removeItem(KEY); localStorage.removeItem(NK); } } catch {} } };
@@ -29,7 +29,7 @@
     const em = m.querySelector('.cm-em'), pw = m.querySelector('.cm-pw'), er = m.querySelector('.cm-err');
     const go = async path => {
       er.textContent = '';
-      try { const j = await api(path, { method: 'POST', body: { email: em.value, password: pw.value, ref: (() => { try { return localStorage.getItem('jupjup_ref') || ''; } catch { return ''; } })() } }); st.set(j.token, j.nick); m.remove(); onDone && onDone(); paintBar(); }
+      try { const j = await api(path, { method: 'POST', body: { email: em.value, password: pw.value, ref: (() => { try { return localStorage.getItem('jupjup_ref') || ''; } catch { return ''; } })(), h: (() => { try { return localStorage.getItem('jupjup_ref_h') || ''; } catch { return ''; } })() } }); st.set(j.token, j.nick); m.remove(); onDone && onDone(); paintBar(); }
       catch (e) { er.textContent = e.message; }
     };
     m.querySelector('.cm-login').onclick = () => go('/api/login');

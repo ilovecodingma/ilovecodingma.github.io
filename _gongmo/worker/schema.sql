@@ -73,7 +73,7 @@ CREATE TABLE IF NOT EXISTS team_members (
   PRIMARY KEY (team_id, user_id)
 );
 
--- 초대 (2026-10-16: 네이버·메일·카톡으로 초대 링크 → 가입하면 루리 의상 해금)
+-- 초대 (2026-10-16: 네이버·메일·카톡으로 초대 링크 → 방문 1점·가입 3점, 히로인(공모전)별 기록, 점수만큼 루리 꾸미기 해금)
 CREATE TABLE IF NOT EXISTS invite_codes (
   code TEXT PRIMARY KEY,
   user_id INTEGER NOT NULL UNIQUE
@@ -81,12 +81,18 @@ CREATE TABLE IF NOT EXISTS invite_codes (
 CREATE TABLE IF NOT EXISTS invited (
   user_id INTEGER PRIMARY KEY,   -- 초대받아 가입한 사람
   by_user INTEGER NOT NULL,      -- 초대한 사람
+  contest_id TEXT NOT NULL DEFAULT '',  -- 어느 히로인으로 초대했는지
   created INTEGER NOT NULL
 );
 CREATE INDEX IF NOT EXISTS invited_by ON invited(by_user);
 CREATE TABLE IF NOT EXISTS ref_visits (  -- 초대 링크로 들어온 방문(같은 사람 중복 제외)
   code TEXT NOT NULL,
   vh TEXT NOT NULL,              -- sha256(IP+UA) 앞 16자, 원문 저장 안 함
+  contest_id TEXT NOT NULL DEFAULT '',
   created INTEGER NOT NULL,
   PRIMARY KEY (code, vh)
+);
+CREATE TABLE IF NOT EXISTS user_prefs (  -- 루리 꾸미기 설정
+  user_id INTEGER PRIMARY KEY,
+  data TEXT NOT NULL DEFAULT '{}'
 );
