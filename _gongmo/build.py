@@ -71,12 +71,15 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False):
 <link rel="canonical" href="{url}">
 <meta property="og:type" content="website"><meta property="og:locale" content="ko_KR"><meta property="og:site_name" content="{NAME}">
 <meta property="og:title" content="{E(t)}"><meta property="og:description" content="{E(desc)}"><meta property="og:url" content="{url}">
-<meta name="theme-color" content="#c2410c">
+<meta property="og:image" content="{SITE}/assets/ruri/og.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="{SITE}/assets/ruri/og.jpg">
+<meta name="theme-color" content="#1e40af">
+<link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png"><link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest">
 <link rel="stylesheet" href="/assets/gm.css">
 {ldh}
 {GTAG}
 </head><body>
-<header class="hd"><div class="w"><a class="logo" href="/">공모왕</a><nav>{nav}</nav></div></header>
+<header class="hd"><div class="w"><a class="logo" href="/"><img src="/assets/icons/favicon-32.png" width="28" height="28" alt="">공모왕</a><nav>{nav}</nav></div></header>
 <main class="w">
 {body}
 </main>
