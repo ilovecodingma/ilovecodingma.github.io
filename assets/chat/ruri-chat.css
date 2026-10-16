@@ -30,3 +30,10 @@
 @keyframes rcp{50%{box-shadow:0 0 0 6px rgba(225,29,72,.2)}}
 .rc-go{border:0;font:inherit;font-weight:700;font-size:13.5px;background:#6d28d9;color:#fff;border-radius:12px;padding:0 14px;cursor:pointer}
 @media(max-width:560px){.rc-fab span{display:none}.rc-fab{padding:6px}}
+.rc-in input:disabled,.rc-go:disabled,.rc-mic:disabled,.rc-chips button:disabled{opacity:.45;cursor:not-allowed}
+.rc-gate{text-align:center;align-self:stretch;max-width:100%}
+.rc-gbtn{display:flex;flex-direction:column;gap:6px;margin:10px 0 4px}
+.rc-gbtn button{font:inherit;font-weight:800;border:0;border-radius:12px;padding:10px;cursor:pointer}
+.rc-on{background:linear-gradient(135deg,#7c3aed,#4338ca);color:#fff}
+.rc-lite{background:var(--bg,#f6f5fd);color:var(--pri,#6d28d9);border:1px solid var(--bd,#e7e5f5)!important}
+.rc-gate small{display:block;color:var(--mu,#6b6890);font-size:12px}

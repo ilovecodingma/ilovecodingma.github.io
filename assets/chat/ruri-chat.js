@@ -21,9 +21,12 @@ const FAQ = [
 const CAT = { '문학': /문학|시\b|소설|수필|수기|에세이|슬로건|네이밍|표어|글/, '아이디어·정책': /아이디어|정책|제안|기획|창업|마케팅/,
   '디자인': /디자인|캐릭터|포스터|일러스트|웹툰|그림|로고/, '영상': /영상|숏폼|쇼츠|UCC|사진|릴스|촬영/, '논문': /논문|리포트|학술/,
   'IT·과학': /IT|개발|해커톤|코딩|AI|데이터|과학|SW|소프트웨어/, '해외': /해외|국제|글로벌|일본|영어/ };
-const STOP = /(공모전|공모|있어|있나|있나요|알려|줘|주세요|찾아|추천|좀|뭐|어떤|요|이번|주|마감|임박|오늘|상금|큰|많은|만원|이상|\d+)/g;
+const STOP = /(공모전|공모|대회|경진대회|콘테스트|있어|있나|있나요|있는|없는|알려|줘|주세요|찾아|추천|좀|뭐|어떤|어떻게|요|이번|주|마감|임박|오늘|상금|큰|많은|만원|이상|혹시|지금|요즘|진행|중인|중에|관련|대한|관한|관해|대해|같은|하는|할만한|참여|응모|목록|리스트|보여|전부|모두|\d+)/g;
+const GENERIC = /^(문학|글|글쓰기|아이디어|정책|디자인|영상|논문|IT|과학|해외|국제|글로벌|기타|분야)$/i;
+const JOSA = /(으로|에서|에게|까지|부터|이랑|은|는|이|가|을|를|에|의|도|로|과|와|만)$/;
 
-let items = null, engine = null, loading = false, speak = false, rec = null;
+let items = null, engine = null, loading = false, speak = false, rec = null, searchOnly = false;
+let setReady = () => {};
 const $ = (s, r = document) => r.querySelector(s);
 const el = (t, c, h) => { const e = document.createElement(t); if (c) e.className = c; if (h != null) e.innerHTML = h; return e; };
 const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
@@ -47,12 +50,13 @@ function search(q) {
   const cats = Object.keys(CAT).filter(c => CAT[c].test(q));
   if (cats.length) { r = r.filter(i => cats.some(c => i.tags.includes(c))); why.push(cats.join('·')); }
   const man = q.match(/(\d+)\s*만\s*원?\s*이상/); if (man) { r = r.filter(i => i.pv >= +man[1] * 1e4); why.push(man[1] + '만원 이상'); }
-  const words = q.replace(STOP, ' ').split(/[\s,.?!]+/).filter(w => w.length >= 2 && !cats.some(c => CAT[c].test(w)));
+  const words = q.replace(STOP, ' ').split(/[\s,.?!]+/).map(w => w.replace(JOSA, '')).filter(w => w.length >= 2 && !GENERIC.test(w));
   if (words.length) {
-    const sc = r.map(i => [i, words.reduce((s, w) => s + (i.title.includes(w) ? 3 : 0) + (i.hay.includes(w.toLowerCase()) ? 1 : 0), 0)]);
+    const sc = r.map(i => [i, words.every(w => i.hay.includes(w.toLowerCase())) ? words.reduce((s, w) => s + (i.title.includes(w) ? 3 : 1), 0) : 0]);
     const hit = sc.filter(x => x[1] > 0);
-    if (hit.length) { r = hit.sort((a, b) => b[1] - a[1] || a[0].left - b[0].left).map(x => x[0]); why.push('「' + words.join(' ') + '」'); }
+    r = hit.sort((a, b) => b[1] - a[1] || a[0].left - b[0].left).map(x => x[0]); why.push('「' + words.join(' ') + '」');  // 안 맞으면 0건
   }
+  if (!why.length && !/상금|큰|많은|고액/.test(q)) return { list: [], total: 0, why, vague: true };
   if (/상금|큰|많은|고액/.test(q)) { r.sort((a, b) => b.pv - a.pv || a.left - b.left); why.push('상금 큰 순'); }
   else if (!words.length) r.sort((a, b) => a.left - b.left || b.pv - a.pv);
   return { list: r.slice(0, 5), total: r.length, why };
@@ -67,10 +71,10 @@ function cards(list) {
 async function answer(q) {
   await load();
   for (const [re, txt] of FAQ) if (re.test(q) && txt) return { html: txt, say: txt.replace(/<[^>]+>/g, '') };
-  const { list, total, why } = search(q);
+  const { list, total, why, vague } = search(q);
   const ev = /(경품|이벤트|퀴즈|설문|댓글)/.test(q) ? ' 경품 이벤트는 <a href="/event/">경품 이벤트 모음</a>에 따로 있어요.' : '';
   if (!list.length) {
-    const t = '지금 목록에는 맞는 공모전이 없어요. "이번 주 마감", "영상 공모전", "상금 큰 공모전"처럼 바꿔서 물어봐 주세요.' + ev;
+    const t = (vague ? '어떤 공모전을 찾으시는지 조금만 더 알려 주세요.' : '지금 목록에는 맞는 공모전이 없어요.') + ' "이번 주 마감", "영상 공모전", "상금 큰 공모전"처럼 바꿔서 물어봐 주세요.' + ev;
     return { html: t, say: t.replace(/<[^>]+>/g, '') };
   }
   const head = `${why.length ? why.join(', ') + ' 조건으로 ' : ''}${total}건을 찾았어요. ${/상금|큰|많은|고액/.test(q) ? '상금이 큰' : '마감이 가까운'} 것부터 보여 드릴게요.`;
@@ -91,13 +95,13 @@ async function answer(q) {
 // ---- sLLM (WebLLM, WebGPU) ----
 async function enableAI(btn, note) {
   if (engine || loading) return;
-  if (!navigator.gpu) { note.textContent = '이 브라우저는 WebGPU 를 지원하지 않아 검색 답변만 쓸 수 있어요(PC 크롬·엣지 권장).'; return; }
+  if (!navigator.gpu) { note.textContent = '이 기기는 AI 를 돌릴 수 없어요 · 간단 검색 모드를 써 주세요'; setReady(false, 'nogpu'); return; }
   loading = true; btn.disabled = true;
   try {
     const webllm = await import(WEBLLM);
     engine = await webllm.CreateMLCEngine(MODEL, { initProgressCallback: p => { note.textContent = 'AI 준비 중 ' + Math.round((p.progress || 0) * 100) + '% (처음 한 번 약 300MB)'; } });
-    note.textContent = 'AI 켜짐 · 브라우저 안에서만 실행돼요'; btn.textContent = 'AI 켜짐'; btn.classList.add('on');
-  } catch (e) { note.textContent = 'AI 를 켜지 못했어요. 검색 답변으로 안내할게요.'; btn.disabled = false; console.warn(e); }
+    note.textContent = 'AI 켜짐 · 브라우저 안에서만 실행돼요'; btn.textContent = 'AI 켜짐'; btn.classList.add('on'); setReady(true);
+  } catch (e) { note.textContent = 'AI 를 켜지 못했어요'; btn.disabled = false; setReady(false, 'fail'); console.warn(e); }
   loading = false;
 }
 
@@ -138,8 +142,22 @@ function ui() {
   log = $('.rc-log', root); scroll = () => { log.scrollTop = log.scrollHeight; };
   const add = (who, html) => { const b = el('div', 'rc-m ' + who, html); log.appendChild(b); scroll(); return b; };
   alertBot = t => add('bot', esc(t));
+  const ctrls = () => [input, $('.rc-go', root), $('.rc-mic', root), ...root.querySelectorAll('.rc-chips button')];
+  let gate = null;
+  setReady = (on, why) => {
+    const ok = on || searchOnly;
+    ctrls().forEach(c => c.disabled = !ok);
+    input.placeholder = ok ? '예) 이번 주 마감 슬로건 공모전' : '먼저 위의 「AI 켜기」를 눌러 주세요';
+    if (gate) { gate.remove(); gate = null; }
+    if (ok) { if (!log.querySelector('.rc-hello')) add('bot rc-hello', searchOnly && !engine ? '간단 검색 모드예요. "이번 주 마감", "영상 공모전"처럼 물어봐 주세요.' : '준비됐어요! 어떤 공모전을 찾으세요? 말로 물어보려면 🎤 를 눌러 주세요.'); input.focus(); return; }
+    gate = add('bot rc-gate', '안녕하세요, 공모왕 루리예요!<br>AI 를 켜면 대화할 수 있어요. 브라우저 안에서만 돌아가고, 처음 한 번 약 300MB 를 받아요.'
+      + '<div class="rc-gbtn"><button class="rc-on">AI 켜기</button>' + (why ? '<button class="rc-lite">간단 검색 모드로 쓰기</button>' : '') + '</div>'
+      + (why === 'nogpu' ? '<small>이 기기는 AI 를 지원하지 않아요(PC 크롬·엣지 권장). 간단 검색 모드는 바로 쓸 수 있어요.</small>' : why === 'fail' ? '<small>AI 를 켜지 못했어요. 다시 시도하거나 간단 검색 모드를 써 주세요.</small>' : ''));
+    gate.querySelector('.rc-on').onclick = () => enableAI($('.rc-ai', root), note);
+    const lite = gate.querySelector('.rc-lite'); if (lite) lite.onclick = () => { searchOnly = true; note.textContent = '간단 검색 모드'; setReady(false); };
+  };
   const send = async () => {
-    const q = input.value.trim(); if (!q) return; input.value = '';
+    const q = input.value.trim(); if (!q || (!engine && !searchOnly)) return; input.value = '';
     add('me', esc(q)); const b = add('bot', '<i class="rc-dot">찾는 중…</i>');
     try {
       const a = await answer(q); b.innerHTML = '';
@@ -147,7 +165,7 @@ function ui() {
     } catch (e) { b.textContent = '앗, 잠시 문제가 생겼어요. 다시 물어봐 주세요.'; console.warn(e); }
     scroll();
   };
-  $('.rc-fab', root).onclick = () => { panel.hidden = !panel.hidden; if (!panel.hidden) { input.focus(); if (!log.children.length) add('bot', '안녕하세요, 공모왕 루리예요! 어떤 공모전을 찾으세요? 말로 물어보려면 🎤 를 눌러 주세요.'); load(); } };
+  $('.rc-fab', root).onclick = () => { panel.hidden = !panel.hidden; if (!panel.hidden) { if (!log.children.length) setReady(!!engine, navigator.gpu ? '' : 'nogpu'); load(); } };
   $('.rc-x', root).onclick = () => { panel.hidden = true; if (window.speechSynthesis) speechSynthesis.cancel(); };
   $('form', root).onsubmit = e => { e.preventDefault(); send(); };
   root.querySelectorAll('.rc-chips button').forEach(c => c.onclick = () => { input.value = c.textContent; send(); });
