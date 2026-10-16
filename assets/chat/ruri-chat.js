@@ -1,4 +1,4 @@
-// 루리의 줍줍 — 취향 기반 추천 챗봇 (브라우저 안에서만 동작, 모델 없음)
+// 루리의 줍줍 — 시나리오형 추천 챗봇 (브라우저 안에서만 동작, 모델 없음): 시작 메뉴·후속 버튼·찜/마감 알림·캘린더·상세 페이지 맞춤
 // 데이터: /data.json(진행 중 대회), /events.json(경품 이벤트). 기준 문서: _gongmo/chatbot_manual.md
 const FAQ = [
   [/세금|제세|원천징수/, '상금은 보통 제세공과금을 떼고 지급돼요. 자세한 건 <a href="/guide/prize/">상금 수령 가이드</a>를 봐 주세요.'],
@@ -7,7 +7,24 @@ const FAQ = [
   [/틀렸|오류|잘못된 정보|등록해|삭제해|제휴|광고|협찬/, '알려 주셔서 고마워요! 사이트 맨 아래 문의 메일로 보내 주시면 확인할게요.'],
   [/(쓰는 법|작성법|요령|팁|처음 응모|어떻게 응모)/, '응모 요령은 가이드에 있어요. <a href="/guide/first/">처음 응모할 때 확인할 7가지</a> · <a href="/guide/proposal/">제안서 쓰는 법</a> · <a href="/guide/writing/">글 공모 요령</a>'],
   [/청약|임대|공모주|지원금/, '청약·신청 일정은 <a href="/apply/">청약·신청</a> 페이지에 모아 두고 있어요.'],
+  [/중복|여러\s*개|동시에|두\s*군데/, '한 작품을 여러 공모전에 같이 내는 건 대부분 금지예요(이중 응모·기수상작 제외 규정). 서로 다른 작품이면 여러 곳에 내도 괜찮아요. 요강의 「유의사항」을 꼭 보세요.'],
+  [/저작권|권리|소유권|가져가/, '당선작 저작권이 주최 측으로 넘어가는지(양도), 이용만 허락하는지(이용허락) 대회마다 달라요. 요강의 「저작권」 항목을 응모 전에 확인하세요.'],
+  [/당선.*(후|되면|다음)|발표.*(언제|어디)|시상/, '당선되면 보통 ① 개별 연락(문자·메일) ② 원본·서류 제출 ③ 제세공과금 공제 후 상금 지급 순서예요. 발표일과 방법은 공고에 적혀 있어요.'],
+  [/사기|피싱|가짜|의심/, '정상 공모전은 참가비·보증금·수수료를 먼저 받지 않아요. 당첨 연락이 와도 주최 기관 공식 홈페이지·대표번호로 다시 확인하세요.'],
 ];
+const FAQ_CHIPS = [['상금 세금', '상금 세금은?'], ['AI 써도 돼요?', 'AI로 만들어도 돼요?'], ['사기 구별', '사기 구별하는 법'], ['중복 응모', '중복 응모 돼요?'], ['저작권', '저작권은 누구 거예요?'], ['당선 후 절차', '당선되면 다음은?']];
+// 신분 → 자격 문구
+const WHO = { '누구나': null, '대학생': /대학|대학생|대학원|청년/, '청소년': /청소년|중학|고등|초등|학생/, '직장인·일반': /일반|성인|국민|누구나|제한\s*없/ };
+const FAV = 'jupjup_fav_v1';
+const fav = { get() { try { return JSON.parse(localStorage.getItem(FAV)) || []; } catch { return []; } }, set(v) { try { localStorage.setItem(FAV, JSON.stringify(v)); } catch {} },
+  has(id) { return fav.get().some(x => x.id === id); }, toggle(i) { const l = fav.get(), k = l.findIndex(x => x.id === i.id); if (k >= 0) l.splice(k, 1); else l.push({ id: i.id, title: i.title, end: i.end }); fav.set(l); return k < 0; } };
+function ics(i) {  // 마감일 캘린더 파일 (마감 하루 전 오전 9시 알림)
+  const d = i.end.replace(/-/g, ''), url = location.origin + '/c/' + i.id + '/';
+  const body = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//jupjup//ruri//KO', 'BEGIN:VEVENT', 'UID:' + i.id + '@sungprofile.cloud', 'DTSTAMP:' + new Date().toISOString().replace(/[-:]/g, '').slice(0, 15) + 'Z',
+    'DTSTART;VALUE=DATE:' + d, 'SUMMARY:[마감] ' + i.title.replace(/[,;]/g, ' '), 'DESCRIPTION:' + url, 'URL:' + url,
+    'BEGIN:VALARM', 'TRIGGER:-PT15H', 'ACTION:DISPLAY', 'DESCRIPTION:내일 마감 — ' + i.title.replace(/[,;]/g, ' '), 'END:VALARM', 'END:VEVENT', 'END:VCALENDAR'].join('\r\n');
+  const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([body], { type: 'text/calendar' })); a.download = i.id + '_마감.ics'; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 4000);
+}
 // 관심 분야 → 데이터 태그·키워드
 const INTEREST = {
   '슬로건·글': { tags: ['문학'], re: /슬로건|네이밍|표어|문구|수기|시|수필|에세이|글/ },
@@ -103,7 +120,7 @@ const dd = l => l ? 'D-' + l : 'D-DAY';
 function cardHTML(x) {
   if (x.k === 'e') return `<a class="rc-card" href="${esc(x.i.link)}" target="_blank" rel="noopener nofollow"><b>🎁 ${esc(x.i.title)}</b><span>${dd(x.i.left)} · ${esc(x.i.ez)}</span></a>`;
   const i = x.i || x;
-  return `<a class="rc-card" href="/c/${i.id}/"><b>${esc(i.title)}</b><span>${dd(i.left)} · ${i.end.replace(/-/g, '.')} 마감${i.pv ? ' · ' + esc(i.prize) : ''}</span></a>`;
+  return `<div class="rc-cw"><a class="rc-card" href="/c/${i.id}/"><b>${esc(i.title)}</b><span>${dd(i.left)} · ${i.end.replace(/-/g, '.')} 마감${i.pv ? ' · ' + esc(i.prize) : ''}${i.effort ? ' · ' + esc(i.effort) : ''}</span></a><button type="button" class="rc-fav${fav.has(i.id) ? ' on' : ''}" data-fav="${i.id}" title="찜">${fav.has(i.id) ? '★' : '☆'}</button><button type="button" class="rc-cal" data-cal="${i.id}" title="캘린더에 마감일 넣기">📅</button></div>`;
 }
 const cards = list => '<div class="rc-list">' + list.map(cardHTML).join('') + '</div>';
 
@@ -133,8 +150,8 @@ function talk(t) {
 // ---- UI ----
 function ui() {
   const root = el('div', 'rc');
-  root.innerHTML = `<button class="rc-fab" aria-label="루리에게 추천받기"><img src="/assets/ruri/avatar.webp" alt=""><span>루리에게 추천받기</span></button>
-<section class="rc-panel" hidden aria-label="루리 추천 챗봇"><header><img src="/assets/ruri/avatar.webp" alt=""><div><b>루리</b><small>취향에 맞는 대회·경품을 골라 드려요</small></div>
+  root.innerHTML = `<button class="rc-fab" aria-label="루리에게 추천받기"><img src="/assets/ruri/avatar.webp" alt=""><span>루리에게 물어보기</span></button>
+<section class="rc-panel" hidden aria-label="루리 추천 챗봇"><header><img src="/assets/ruri/avatar.webp" alt=""><div><b>루리</b><small>마감·상금·찜·캘린더까지 챙겨 드려요</small></div>
 <button class="rc-ai rc-redo" title="취향 다시 고르기">취향 고르기</button><button id="rc-spk" class="rc-ic" title="답변 읽어 주기">🔈</button><button class="rc-x rc-ic" aria-label="닫기">✕</button></header>
 <div class="rc-log" role="log" aria-live="polite"></div>
 <form class="rc-in"><button type="button" class="rc-mic rc-ic" title="말로 물어보기">🎤</button><input placeholder="예) 슬로건 공모전, 이번 주 마감" aria-label="질문"><button class="rc-go">보내기</button></form></section>`;
@@ -142,13 +159,70 @@ function ui() {
   const panel = $('.rc-panel', root), input = $('input', root), log = $('.rc-log', root);
   const scroll = () => { log.scrollTop = log.scrollHeight; };
   const add = (who, html) => { const b = el('div', 'rc-m ' + who, html); log.appendChild(b); scroll(); return b; };
+  const byId = id => items.find(i => i.id === id);
+  // 답 아래 빠른 버튼: chips([[라벨, 함수], ...])
+  const chips = (b, list) => { const w = el('div', 'rc-chips'); list.forEach(([t, f]) => { const x = el('button', '', t); x.type = 'button'; x.onclick = () => { w.remove(); f(); }; w.appendChild(x); }); b.appendChild(w); scroll(); return w; };
+  const say = (html, next, list) => { const b = add('bot', html + (list && list.length ? cards(list) : '')); talk(html.replace(/<[^>]+>/g, '') + (list ? ' ' + list.slice(0, 3).map(x => (x.i || x).title).join(', ') : '')); if (next) chips(b, next); return b; };
+  const me = t => add('me', esc(t));
+  const C = list => list.map(i => ({ k: 'c', i }));
+  const more = (list, title, n = 5) => {  // 5개씩 끊어 보여 주기
+    let k = 0; const step = () => { const part = list.slice(k, k + n); k += n;
+      say(k <= n ? title : '이어서 보여 드릴게요.', [...(k < list.length ? [['더 보기 ▾', step]] : []), ...back()], C(part)); };
+    if (!list.length) return say('지금 조건에 맞는 공모전이 없어요. 조건을 바꿔 볼까요?', back()); step();
+  };
+  const back = () => [['🏠 처음 메뉴', menu]];
+  const narrow = (base, label) => [['🎨 분야로 좁히기', () => { me('분야로 좁히기'); say('어떤 분야요?', Object.keys(CAT).map(c => [c, () => { me(c); more(base.filter(i => i.tags.includes(c)), `${label} · ${c} 공모전이에요.`); }])); }],
+                                  ['⚡ 쉬운 것만', () => { me('쉬운 것만'); more(base.filter(i => EASY_RE.test(i.title + ' ' + i.field + ' ' + (i.effort || ''))), `${label} 중 금방 낼 수 있는 것만 골랐어요.`); }]];
+  function menu() {
+    say('무엇을 도와드릴까요?', [
+      ['🔥 이번 주 마감', soon], ['⚡ 10분 안에 내는 것', quick], ['💰 상금 큰 것', big], ['🎯 나한테 맞는 것', who],
+      ['📍 우리 동네 대회', local], [`⭐ 찜한 공모전${fav.get().length ? ' ' + fav.get().length : ''}`, favs], ['🤝 같이 할 팀 찾기', () => { location.href = '/community/'; }], ['❓ 자주 묻는 질문', faq]]);
+  }
+  function soon() { me('이번 주 마감'); const l = items.filter(i => i.left <= 7).sort((a, b) => a.left - b.left || b.pv - a.pv);
+    const b = say(`7일 안에 마감하는 공모전이 ${l.length}건이에요. 급한 것부터 보여 드릴게요.`, null, C(l.slice(0, 5))); chips(b, [...narrow(l, '이번 주 마감'), ...(l.length > 5 ? [['더 보기 ▾', () => more(l.slice(5), '이어서 보여 드릴게요.')]] : []), ...back()]); }
+  function quick() { me('10분 안에 내는 것');
+    const l = items.filter(i => EASY_RE.test(i.title + ' ' + i.field + ' ' + (i.effort || ''))).sort((a, b) => a.left - b.left);
+    const ev = events.filter(e => EZ_RANK[e.ez] === 0).sort((a, b) => a.left - b.left).slice(0, 3).map(i => ({ k: 'e', i }));
+    say(`슬로건·네이밍·삼행시·사진처럼 짧게 내는 공모전 ${l.length}건, 댓글·폼 1분 경품도 같이 골랐어요.`, [['더 보기 ▾', () => more(l.slice(4), '이어서 짧게 내는 공모전이에요.')], ['🎁 경품만 더', () => { me('경품만 더'); say('1분이면 끝나는 경품 이벤트예요.', back(), events.filter(e => EZ_RANK[e.ez] != null).sort((a, b) => (EZ_RANK[a.ez] - EZ_RANK[b.ez]) || a.left - b.left).slice(0, 6).map(i => ({ k: 'e', i }))); }], ...back()], [...C(l.slice(0, 4)), ...ev]); }
+  function big() { me('상금 큰 것'); say('상금 기준을 골라 주세요.', [100, 500, 1000].map(m => [`${m}만원 이상`, () => { me(`${m}만원 이상`); more(items.filter(i => i.pv >= m * 1e4).sort((a, b) => b.pv - a.pv), `상금 ${m}만원 이상, 큰 순이에요.`); }]).concat(back())); }
+  function who() { me('나한테 맞는 것'); say('지금 어떤 신분이세요? 자격 조건에 맞춰 걸러 드릴게요.', Object.keys(WHO).map(w => [w, () => { me(w);
+    const p = pref.get() || { ints: [], style: 'easy', region: '' }; p.who = w; pref.set(p);
+    say('관심 있는 분야도 골라 주세요.', [...Object.keys(INTEREST).filter(k => k !== '경품 이벤트').map(k => [k, () => { me(k); p.ints = [k]; pref.set(p);
+      const re = WHO[w], l = recommend(p).filter(x => x.k === 'c' && (!re || re.test(x.i.elig || '') || /제한\s*없|누구나/.test(x.i.elig || ''))).map(x => x.i);
+      more(l, `${w} · ${k} 기준으로 골라 봤어요. 자격은 공고에서 한 번 더 확인해 주세요.`); }]), ['🧩 자세히 고르기', picker]]); }])); }
+  function local() { me('우리 동네 대회'); const b = say('사는 시·군·구를 적어 주세요. (예: 부산, 수원, 강남)');
+    const f = el('form', 'rc-inline', '<input placeholder="지역 이름" maxlength="10"><button>찾기</button>'); b.appendChild(f); scroll();
+    f.onsubmit = e => { e.preventDefault(); const r = f.querySelector('input').value.trim(); if (!r) return; f.remove(); me(r);
+      const p = pref.get() || { ints: [], style: 'easy' }; p.region = r; pref.set(p);
+      more(items.filter(i => (i.title + i.org + (i.elig || '') + (i.region || '')).includes(r)).sort((a, b) => a.left - b.left), `「${r}」 관련·주민 대상 공모전이에요.`); }; }
+  function favs() { me('찜한 공모전'); const l = fav.get().map(x => byId(x.id)).filter(Boolean).sort((a, b) => a.left - b.left);
+    if (!l.length) return say('아직 찜한 공모전이 없어요. 카드 옆 ☆을 누르면 찜돼요. 마감이 다가오면 제가 먼저 알려 드릴게요!', back());
+    say(`찜한 공모전 ${l.length}건이에요. 📅을 누르면 캘린더에 마감일이 들어가요.`, back(), C(l)); }
+  function faq() { me('자주 묻는 질문'); say('궁금한 걸 골라 주세요.', FAQ_CHIPS.map(([t, q]) => [t, () => { me(t); const a = answer(q); say(a.html, [['❓ 다른 질문', faq], ...back()]); }]).concat(back())); }
+  function detail(i) {  // 공모전 상세 페이지에서 열면 그 공모전 기준으로
+    const chk = [`⏰ 마감 <b>${dd(i.left)}</b> (${i.end.replace(/-/g, '.')})`, i.elig ? `👤 자격: ${esc(i.elig)}` : '', i.effort ? `📝 형식: ${esc(i.effort)}` : '', i.pv ? `💰 상금: ${esc(i.prize)}` : '', '📌 분량·제출 방법·저작권은 공식 공고에서 확인'].filter(Boolean);
+    say(`<b>${esc(i.title)}</b> 응모 준비 체크예요.<ul class="rc-chk">${chk.map(c => `<li>${c}</li>`).join('')}</ul>`, [
+      [fav.has(i.id) ? '★ 찜 해제' : '☆ 찜하기', () => { const on = fav.toggle(i); say(on ? '찜했어요! 마감 3일 전부터 챗봇을 열면 알려 드릴게요.' : '찜을 뺐어요.', [['📅 캘린더에 넣기', () => ics(i)], ...back()]); }],
+      ['📅 캘린더에 넣기', () => { ics(i); say('캘린더 파일을 받았어요. 열면 마감 전날 알림이 들어가요.', back()); }],
+      ['🤝 같이 할 팀 찾기', () => { const t = document.getElementById('cm-teams'); if (t) { panel.hidden = true; t.scrollIntoView({ behavior: 'smooth' }); } else location.href = '/community/'; }],
+      ['🔎 비슷한 공모전', () => { me('비슷한 공모전'); more(items.filter(x => x.id !== i.id && x.tags.some(t => i.tags.includes(t))).sort((a, b) => a.left - b.left), '같은 분야 진행 중 공모전이에요.'); }], ...back()]);
+  }
+  // 카드의 찜·캘린더 버튼 (이벤트 위임)
+  log.addEventListener('click', e => {
+    const f = e.target.closest('[data-fav]'), c = e.target.closest('[data-cal]');
+    if (f) { const i = byId(f.dataset.fav); if (!i) return; const on = fav.toggle(i); log.querySelectorAll(`[data-fav="${i.id}"]`).forEach(x => { x.classList.toggle('on', on); x.textContent = on ? '★' : '☆'; }); badge(); }
+    if (c) { const i = byId(c.dataset.cal); if (i) ics(i); }
+  });
+  const urgent = () => fav.get().map(x => ({ ...x, left: dn(x.end) - today })).filter(x => x.left >= 0 && x.left <= 3).sort((a, b) => a.left - b.left);
+  const badge = () => { $('.rc-fab', root).classList.toggle('alert', !!urgent().length); };
+  badge();
 
   const showRec = p => {
     const r = recommend(p);
     const lab = [p.ints.join('·') || '전체', Object.keys(STYLE).find(k => STYLE[k] === p.style), p.region].filter(Boolean).join(' / ');
     const t = r.length ? `「${lab}」 취향으로 골라 봤어요!` : '조건에 맞는 게 지금은 없어요. 취향을 조금 넓혀 볼까요?';
     const b = add('bot', esc(t) + (r.length ? cards(r) : '') + '<div class="rc-act"><button class="rc-more">다른 취향으로</button></div>');
-    b.querySelector('.rc-more').onclick = picker;
+    b.querySelector('.rc-more').onclick = picker; chips(b, back());
     talk(t + ' ' + r.slice(0, 3).map(x => x.i.title).join(', '));
   };
   function picker() {
@@ -173,14 +247,17 @@ function ui() {
     const q = input.value.trim(); if (!q) return; input.value = '';
     add('me', esc(q)); await load();
     const a = answer(q);
-    if (a.html) { add('bot', a.html); talk(a.say); }
+    if (a.html) { const b = add('bot', a.html); talk(a.say); chips(b, [['🎯 취향으로 추천', picker], ['❓ 자주 묻는 질문', faq], ...back()]); }
     if (a.pick) picker();
   };
   const open = async () => {
     await load();
-    const p = pref.get();
-    if (p) { add('bot', '다시 오셨네요! 지난번 취향으로 새로 골라 왔어요.'); showRec(p); }
-    else { add('bot', '안녕하세요, 루리예요! 취향을 알려 주시면 딱 맞는 대회·경품을 골라 드릴게요. 궁금한 건 아래에 바로 물어보셔도 돼요.'); picker(); }
+    const u = urgent();
+    if (u.length) say(`앗, 찜한 공모전 마감이 다가와요! ${u.map(x => `<b>${esc(x.title)}</b> ${dd(x.left)}`).join(', ')}`);
+    const here = (location.pathname.match(/^\/c\/([^/]+)\//) || [])[1], i = here && byId(here);
+    if (i) { say('이 공모전 같이 볼까요?'); detail(i); return; }
+    add('bot', pref.get() ? '다시 오셨네요! 오늘은 뭘 찾아 드릴까요?' : '안녕하세요, 루리예요! 진행 중인 공모전에서 딱 맞는 걸 골라 드려요. 아래 버튼을 누르거나 그냥 물어보셔도 돼요.');
+    menu();
   };
   $('.rc-fab', root).onclick = () => { panel.hidden = !panel.hidden; if (!panel.hidden && !log.children.length) open(); };
   $('.rc-x', root).onclick = () => { panel.hidden = true; if (window.speechSynthesis) speechSynthesis.cancel(); };

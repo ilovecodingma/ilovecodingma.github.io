@@ -49,3 +49,12 @@
 .rc-panel{height:min(600px,calc(100vh - 110px));height:min(600px,calc(100dvh - 110px))}
 @media(max-width:560px){.rc-panel{left:8px;right:8px;width:auto;bottom:72px;top:auto;height:calc(100dvh - 88px);max-height:calc(100dvh - 88px);border-radius:16px}
 .rc-panel header{padding:8px 10px;flex-wrap:nowrap}.rc-panel header small{font-size:10.5px}}
+
+/* 시나리오 버튼·찜·캘린더 */
+.rc-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}.rc-chips button{font:inherit;font-size:13px;font-weight:700;border:1px solid #c4b5fd;background:#f5f3ff;color:#5b21b6;border-radius:999px;padding:6px 11px;cursor:pointer}
+.rc-chips button:hover{background:#ede9fe}
+.rc-cw{display:flex;gap:4px;align-items:stretch}.rc-cw .rc-card{flex:1;min-width:0}
+.rc-fav,.rc-cal{flex:0 0 34px;border:1px solid var(--bd,#e7e5f5);background:var(--card,#fff);border-radius:10px;cursor:pointer;font-size:16px;color:#a78bfa}.rc-fav.on{color:#f59e0b;border-color:#fcd34d;background:#fffbeb}
+.rc-chk{margin:6px 0 0;padding-left:18px;font-size:13.5px;line-height:1.6}
+.rc-inline{display:flex;gap:6px;margin-top:8px}.rc-inline input{flex:1;font:inherit;padding:7px 10px;border:1px solid var(--bd,#e7e5f5);border-radius:10px}.rc-inline button{font:inherit;font-weight:800;border:0;border-radius:10px;background:#6d28d9;color:#fff;padding:0 12px}
+.rc-fab{position:relative}.rc-fab.alert:after{content:"";position:absolute;top:4px;right:4px;width:12px;height:12px;border-radius:50%;background:#ef4444;border:2px solid #fff}
