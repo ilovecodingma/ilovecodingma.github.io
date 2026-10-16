@@ -405,7 +405,20 @@ def indexnow(urls):
             print('indexnow', ep, 'fail', e)
 
 
+def take_lock():
+    """수집기 호출과 1시간 예약이 겹치지 않게: 20분 안의 잠금이 있으면 이번 실행은 건너뜀"""
+    import time
+    lk = os.path.join(HERE, '.lock')
+    if os.path.exists(lk) and time.time() - os.path.getmtime(lk) < 1200:
+        print('다른 생성이 진행 중이라 건너뜀')
+        sys.exit(0)
+    open(lk, 'w').write(str(os.getpid()))
+    import atexit
+    atexit.register(lambda: os.path.exists(lk) and os.remove(lk))
+
+
 if __name__ == '__main__':
+    take_lock()
     build()
     if '--push' in sys.argv:
         def git(*a):
