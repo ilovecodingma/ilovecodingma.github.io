@@ -183,7 +183,7 @@ def load():
             continue
         seen.add(key)
         events.append({'id': r['id'], 'title': t, 'org': P.clean(r.get('org', ''))[:40], 'end': r['end'],
-                       'type': EV_KIND[k], 'ch': CH.get(r.get('ch', ''), ''), 'link': r.get('apply') or r['url']})
+                       'type': EV_KIND[k], 'ch': CH.get(r.get('ch', ''), ''), 'link': r.get('apply') or r['url'], 'effort': P.clean(r.get('effort', ''))[:12]})
     events.sort(key=lambda e: (e['end'], e['title']))
     return contests, events
 
@@ -275,7 +275,7 @@ EASY_RANK = {'댓글 1줄': 0, '폼 1분': 0, '응모만': 0, '설문 5분': 1, 
 def ev_card(e):
     n, dd = dday(e['end'])
     ch = f'<span class="tg">{E(e["ch"])}</span>' if e['ch'] else ''
-    ez = EASY.get(e['type'], e['type'])
+    ez = e.get('effort') or EASY.get(e['type'], e['type'])
     return (f'<li><a class="card" data-c="event" href="{E(e["link"])}" target="_blank" rel="noopener nofollow"><span class="ic">🎁</span><div class="cb"><div class="top"><h3 class="t">{E(e["title"])}</h3>'
             f'<span class="d{" u3" if n <= 3 else ""}">{dd}</span></div><p class="o">{E(e["org"] or "공식 계정")} · ~{ddot(e["end"])}</p>'
             f'<div class="tags"><span class="ez e{EASY_RANK.get(ez, 2)}">{E(ez)}</span>{ch}</div></div></a></li>')
@@ -392,7 +392,7 @@ def build():
 <div class="stat"><span><b>{len(live)}</b>공모전</span><span><b>{len(wk)}</b>이번 주 마감</span><span><b>{len(events)}</b>경품·용돈</span></div></div>
 <div class="hero-r"><div class="hb">안녕하세요, <b>루리</b>예요!<br>오늘도 마감 임박 공모전 챙겨 왔어요 ✨</div><img id="hero-ruri" src="/assets/ruri/smile.webp" width="300" height="415" alt="루리"></div></section>
 <div class="cats">{cats}<a class="cat" data-c="event" href="/event/"><span class="ic">🎁</span><b>경품·용돈</b><span class="n">{len(events)}건</span></a><a class="cat" data-c="apply" href="/apply/"><span class="ic">📝</span><b>청약·신청</b><span class="n">{len(aps)}건</span></a></div>
-<div class="sec"><h2>🎁 쉽게 참여하는 경품</h2><a href="/event/">전체 보기 →</a></div><ul class="list row">{''.join(ev_card(e) for e in sorted(events, key=lambda e: (EASY_RANK.get(EASY.get(e['type'], ''), 2), e['end']))[:10])}</ul>
+<div class="sec"><h2>🎁 쉽게 참여하는 경품</h2><a href="/event/">전체 보기 →</a></div><ul class="list row">{''.join(ev_card(e) for e in sorted(events, key=lambda e: (EASY_RANK.get(e.get('effort') or EASY.get(e['type'], ''), 2), e['end']))[:10])}</ul>
 {'<div class="sec"><h2>📝 청약·신청 일정</h2><a href="/apply/">전체 보기 →</a></div><ul class="list row">' + ''.join(ap_card(a) for a in aps[:10]) + '</ul>' if aps else ''}
 <div class="sec"><h2>⏰ 이번 주 마감</h2><a href="#all">전체 보기 →</a></div><ul class="list row">{''.join(card(c) for c in wk[:10])}</ul>
 <div class="sec"><h2>🏆 상금 큰 공모전</h2></div><ul class="list grid">{''.join(card(c) for c in big)}</ul>
@@ -414,7 +414,7 @@ def build():
          f'''<p class="bc"><a href="/">홈</a> › 경품 이벤트</p><section class="dh" data-c="event"><span class="ic big">🎁</span><h1>경품 이벤트</h1><p class="lead">진행 중 <b>{len(events)}건</b> · 마감 임박순</p></section>
 {say('excited', '댓글·퀴즈·설문만으로 응모할 수 있는 이벤트가 이렇게 많아요! 당첨 발표는 꼭 공식 계정에서 확인해요.')}
 <p>공공기관·기업이 진행하는 댓글, 퀴즈, 설문, SNS 경품 이벤트입니다. 참여 조건(팔로우, 친구 태그, 스토리 공유 등)과 당첨자 발표 방법은 이벤트마다 달라요. 당첨 연락을 사칭해 개인정보나 송금을 요구하는 경우가 있으니 발표는 주최 측 공식 계정에서 확인하세요.</p>
-<ul class="list">{''.join(ev_card(e) for e in sorted(events, key=lambda e: (min(dday(e['end'])[0], 7) // 4, EASY_RANK.get(EASY.get(e['type'], ''), 2), e['end'])))}</ul>''', [('루리의 생활지식', '/'), ('경품 이벤트', '/event/')])
+<ul class="list">{''.join(ev_card(e) for e in sorted(events, key=lambda e: (min(dday(e['end'])[0], 7) // 4, EASY_RANK.get(e.get('effort') or EASY.get(e['type'], ''), 2), e['end'])))}</ul>''', [('루리의 생활지식', '/'), ('경품 이벤트', '/event/')])
     shutil.rmtree(os.path.join(ROOT, 'a'), ignore_errors=True)
     build_apply(aps)
     guides(live)
