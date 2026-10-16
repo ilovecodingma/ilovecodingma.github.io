@@ -175,5 +175,5 @@
     cs = c; tcount = new Map(); (t.teams || []).forEach(x => tcount.set(x.contest_id, (tcount.get(x.contest_id) || 0) + 1));
   }
   apply();
-  load().then(intro);
+  load().then(() => location.hash === '#dress' ? dress() : intro());
 })();

@@ -112,3 +112,10 @@
 .cm-soc{display:grid;gap:8px;margin:10px 0 4px}.cm-soc .soc{display:flex;align-items:center;justify-content:center;gap:8px;font-weight:800;font-size:15px;border-radius:12px;padding:11px;text-decoration:none}
 .cm-soc .kakao{background:#fee500;color:#191600}.cm-soc .google{background:#fff;color:#1f1f1f;border:1px solid #dadce0}.cm-soc .google b{color:#4285f4;font-size:17px}
 .cm-or{text-align:center;font-size:12px;color:var(--mu);margin:8px 0 2px}
+
+.cm-acct{position:relative}.cm-me{font:inherit;font-size:13px;font-weight:800;border:1px solid var(--bd);background:var(--card);color:var(--tx);border-radius:10px;padding:6px 10px;cursor:pointer}
+.cm-menu{position:absolute;right:0;top:calc(100% + 8px);z-index:60;width:min(280px,86vw);background:var(--card);border:1px solid var(--bd);border-radius:16px;box-shadow:0 18px 40px rgba(30,10,80,.25);padding:8px;display:flex;flex-direction:column;gap:2px}
+.cm-menu[hidden]{display:none}.cm-menu a{display:block;padding:9px 10px;border-radius:10px;text-decoration:none;color:var(--tx);font-weight:700;font-size:14px}.cm-menu a:hover{background:var(--pbg)}
+.cm-menu b{font-size:12px;color:var(--mu);padding:8px 10px 2px}.cm-menu p{font-size:12px;color:var(--mu);margin:2px 10px 6px}
+.cm-menu .cm-fv{font-weight:600;font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.cm-fv em{font-style:normal;font-weight:800;color:#7c3aed;margin-right:6px}
+.cm-menu .cm-out{margin-top:6px;width:100%;padding:9px}
