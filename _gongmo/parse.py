@@ -241,6 +241,8 @@ def main():
     for x in rows:
         if x.get('closed'):  # 공모전 세션이 조기 종료로 표시
             continue
+        if x.get('verified') is False:  # 개인 블로그 등 미확인 출처는 사이트에 안 올림
+            continue
         if x.get('end_override'):  # 마감 연장 등 공모전 세션 확인값 우선
             x['end'] = x['end_override']
         if x.get('kind') not in KINDS or x.get('end', '') < TODAY.isoformat():

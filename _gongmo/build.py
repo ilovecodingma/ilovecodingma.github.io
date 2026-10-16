@@ -175,6 +175,9 @@ def load():
         c['effort'] = P.clean(r.get('effort', ''))[:12]
         c['region'] = P.clean(r.get('region', '') if isinstance(r.get('region'), str) else '')[:10]
         c['fee'] = r.get('fee') or 0
+        c['submit'] = P.clean(r.get('submit', ''))[:10]
+        if r.get('prize_first') and not c['pv']:
+            c['pv'] = int(r['prize_first']); c['prize'] = f"1등 {int(r['prize_first']) // 10000:,}만원"
     seen, events = set(), []
     for r in rows:
         k = r.get('kind', '')
@@ -397,7 +400,7 @@ def build():
     quick = sorted([e for e in events if EASY_RANK.get(e.get('effort') or EASY.get(e['type'], ''), 2) <= 1],
                    key=lambda e: (e['end'], EASY_RANK.get(e.get('effort') or EASY.get(e['type'], ''), 2)))
     SHORT = re.compile(r'슬로건|네이밍|명칭|표어|캐치프레이즈|아이디어|사진|한\s*줄|삼행시|사행시|디카시|짧은\s*글|문구|애칭|이름\s*짓기|BI|캐릭터\s*이름')
-    short = [c for c in live if not c.get('fee') and (c.get('quick') is True or (c.get('quick') is None and SHORT.search(c['title'] + ' ' + (c['field'] or ''))))]
+    short = [c for c in live if not c.get('fee') and not re.search('우편|방문', c.get('submit') or '') and (c.get('quick') is True or (c.get('quick') is None and SHORT.search(c['title'] + ' ' + (c['field'] or ''))))]
     short.sort(key=lambda c: (dday(c['end'])[0] > 14, -c['pv'], c['end']))
     LOCAL = re.compile(r'(시민|도민|군민|구민|주민|거주|재학|재직|소재|관내|출신)')
     SMALLORG = re.compile(r'(군|구|읍|면|동)(청|청장|의회)?$|문화재단|복지관|도서관|센터$')
