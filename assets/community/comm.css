@@ -94,3 +94,4 @@
 .vn-call{width:100%;font:inherit;padding:8px;border:1px solid #f5d0fe;border-radius:8px}
 .vn-h1{margin:6px 0 0;font-size:22px}
 #vn [hidden]{display:none!important}
+@media (max-width:560px){.cm-head{flex-wrap:wrap;gap:8px;justify-content:flex-start}.cm-head h2{flex:1 1 100%}}
