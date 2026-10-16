@@ -56,7 +56,7 @@ EV_KIND = {'event': '이벤트', 'sweepstakes': '추첨 경품', 'quiz': '퀴즈
            'sns_tag_required': '친구 태그', 'sns_story_required': '스토리 공유', 'sns_capture': '캡처 인증', 'sns_form_only': '폼 응모',
            'sns_comment+form': '댓글+폼', 'sns_purchase': '구매 인증', 'sns_region': '지역 한정', 'sns_other': 'SNS 이벤트'}
 
-COMM_TAGS_TPL = '<link rel="stylesheet" href="/assets/community/comm.css?v=2"><script defer src="/assets/community/comm.js?v=2"></script>'
+COMM_TAGS_TPL = '<link rel="stylesheet" href="/assets/community/comm.css?v=3"><script defer src="/assets/community/comm.js?v=3"></script>'
 GTAG = ('<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4248498719773262" crossorigin="anonymous"></script>\n'
         '<script async src="https://www.googletagmanager.com/gtag/js?id=G-G9BPFF95GY"></script>\n'
         "<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-G9BPFF95GY');</script>")
@@ -75,7 +75,7 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False):
     if ld:
         lds.append(ld)
     ldh = ''.join('<script type="application/ld+json">%s</script>' % json.dumps(x, ensure_ascii=False).replace('</', '<\\/') for x in lds)
-    nav = ''.join(f'<a href="/{s}/">{n}</a>' for s, n in NAV + ([('community', '팀원 모집')] if COMM_API else []))
+    nav = ''.join(f'<a href="/{s}/">{n}</a>' for s, n in NAV + ([('community', '공략 파티')] if COMM_API else []))
     doc = f'''<!doctype html>
 <html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{E(t)}</title>
@@ -587,14 +587,15 @@ def community(live=()):
         return
     # 팀 만들 때 고르는 공모전 목록 (진행 중만)
     with open(os.path.join(ROOT, 'assets', 'community', 'contests.json'), 'w', encoding='utf-8', newline='\n') as f:
-        json.dump([{'id': c['id'], 't': c['title']} for c in live], f, ensure_ascii=False, separators=(',', ':'))
-    page('/community/', '팀원 모집 · 커뮤니티', '공모전·대회에 같이 나갈 팀원을 찾고 팀을 만드는 루리의 줍줍 커뮤니티. 응모 후기와 질문도 나눠요.',
-         f'''<p class="bc"><a href="/">홈</a> › 커뮤니티</p><section class="dh" data-c="guide"><span class="ic big">🤝</span><h1>팀원 모집 · 커뮤니티</h1><p class="lead">공모전 같이 나갈 사람 찾기</p></section>
-{say('o_present', '혼자 나가기 어려운 공모전, 같이 나갈 팀원을 여기서 찾아요! 팀을 만들고 찾는 역할을 적으면 신청이 와요. 팀장이 수락한 사람에게만 연락 방법이 보여요.')}
+        json.dump([{'id': c['id'], 't': c['title'], 'e': c['end'], 'p': c.get('prize', ''), 'pv': c.get('pv', 0), 'g': (c.get('tags') or [''])[0], 'i': CAT_ICON.get((c.get('tags') or ['기타'])[0], '💗'), 'th': c.get('th', 0)} for c in live], f, ensure_ascii=False, separators=(',', ':'))
+    page('/community/', '공모전 공략 파티 · 커뮤니티', '공모전이라는 히로인을 같이 공략할 파티원을 찾는 루리의 줍줍 커뮤니티. 파티를 결성하고 합류 신청을 받아요.',
+         f'''<p class="bc"><a href="/">홈</a> › 커뮤니티</p><h1 class="vn-h1">💘 공모전 공략 파티</h1>
+<section id="vn" aria-label="루리와 공모전 공략 파티 찾기"></section>
 <button class="btn2 cm-join-cta" hidden>무료 가입 · 로그인 (이메일만 있으면 돼요)</button>
-<div class="cm-tabs"><button data-k="team">🤝 팀 찾기·만들기</button><button data-k="board">💬 후기·질문</button></div>
+<div class="cm-tabs"><button data-k="team">💘 전체 파티 목록</button><button data-k="board">💬 후기·질문</button></div>
 <section id="cm-teams" data-all data-tab="team"></section>
-<section id="cm-board" data-all data-tab="board" hidden></section>''', [('루리의 줍줍', '/'), ('커뮤니티', '/community/')])
+<section id="cm-board" data-all data-tab="board" hidden></section>
+<script defer src="/assets/community/vn.js?v=1"></script>''', [('루리의 줍줍', '/'), ('커뮤니티', '/community/')])
 
 
 def statics(nl, ne):

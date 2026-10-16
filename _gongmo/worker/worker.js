@@ -58,6 +58,11 @@ export default {
         if (pw.length < 8) return err(req, '비밀번호는 8자 이상이어야 해요.');
         if (await count(env, 'SELECT COUNT(*) n FROM users WHERE email = ?', email)) return err(req, '이미 가입된 이메일이에요.');
         const r = await env.DB.prepare('INSERT INTO users (email, nick, pw, created) VALUES (?, ?, ?, ?)').bind(email, nick, await hashPw(pw), now()).run();
+        const ref = clean(body.ref, 16);
+        if (ref) {
+          const by = await env.DB.prepare('SELECT user_id FROM invite_codes WHERE code = ?').bind(ref).first('user_id');
+          if (by) await env.DB.prepare('INSERT OR IGNORE INTO invited (user_id, by_user, created) VALUES (?, ?, ?)').bind(r.meta.last_row_id, by, now()).run();
+        }
         return json(req, { token: await newSession(env, r.meta.last_row_id), nick });
       }
       if (p === '/api/login' && req.method === 'POST') {
@@ -71,11 +76,23 @@ export default {
         if (t) await env.DB.prepare('DELETE FROM sessions WHERE token = ?').bind(t).run();
         return json(req, { ok: true });
       }
-      if (p === '/api/me') { const u = await me(req, env); return u ? json(req, { nick: u.nick }) : err(req, '로그인이 필요해요.', 401); }
+      if (p === '/api/ref' && req.method === 'POST') {  // 초대 링크 방문 집계
+        const code = clean(body.ref, 16);
+        if (!/^[0-9a-f]{8}$/.test(code) || !(await count(env, 'SELECT COUNT(*) n FROM invite_codes WHERE code = ?', code))) return json(req, { ok: false });
+        const vh = hex(await crypto.subtle.digest('SHA-256', new TextEncoder().encode((req.headers.get('CF-Connecting-IP') || '') + '|' + (req.headers.get('User-Agent') || '')))).slice(0, 16);
+        await env.DB.prepare('INSERT OR IGNORE INTO ref_visits (code, vh, created) VALUES (?, ?, ?)').bind(code, vh, now()).run();
+        return json(req, { ok: true });
+      }
+      if (p === '/api/me') {
+        const u = await me(req, env); if (!u) return err(req, '로그인이 필요해요.', 401);
+        let code = await env.DB.prepare('SELECT code FROM invite_codes WHERE user_id = ?').bind(u.id).first('code');
+        if (!code) { code = hex(crypto.getRandomValues(new Uint8Array(4))); await env.DB.prepare('INSERT OR IGNORE INTO invite_codes (code, user_id) VALUES (?, ?)').bind(code, u.id).run(); }
+        return json(req, { nick: u.nick, code, invites: await count(env, 'SELECT COUNT(*) n FROM invited WHERE by_user = ?', u.id), visits: await count(env, 'SELECT COUNT(*) n FROM ref_visits WHERE code = ?', code) });
+      }
       if (p === '/api/withdraw' && req.method === 'POST') {  // 회원 탈퇴: 계정·세션 삭제, 글은 '탈퇴한 회원'으로 숨김
         const u = await me(req, env); if (!u) return err(req, '로그인이 필요해요.', 401);
         await env.DB.batch([env.DB.prepare('UPDATE posts SET hidden = 1 WHERE user_id = ?').bind(u.id), env.DB.prepare('UPDATE comments SET hidden = 1 WHERE user_id = ?').bind(u.id),
-          env.DB.prepare('DELETE FROM sessions WHERE user_id = ?').bind(u.id), env.DB.prepare('DELETE FROM users WHERE id = ?').bind(u.id)]);
+          env.DB.prepare('DELETE FROM sessions WHERE user_id = ?').bind(u.id), env.DB.prepare('DELETE FROM invite_codes WHERE user_id = ?').bind(u.id), env.DB.prepare('DELETE FROM users WHERE id = ?').bind(u.id)]);
         return json(req, { ok: true });
       }
       // ---- 글 ----
