@@ -57,7 +57,7 @@ EV_KIND = {'event': '이벤트', 'sweepstakes': '추첨 경품', 'quiz': '퀴즈
 GTAG = ('<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4248498719773262" crossorigin="anonymous"></script>\n'
         '<script async src="https://www.googletagmanager.com/gtag/js?id=G-G9BPFF95GY"></script>\n'
         "<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-G9BPFF95GY');</script>")
-NAV = [('apply', '청약·신청'), ('event', '경품·용돈'), ('cat/literature', '문학'), ('cat/idea', '아이디어'), ('cat/design', '디자인'),
+NAV = [('apply', '청약·신청'), ('ssul', '썰'), ('event', '경품·용돈'), ('cat/literature', '문학'), ('cat/idea', '아이디어'), ('cat/design', '디자인'),
        ('cat/video', '영상'), ('cat/it', 'IT'), ('cat/global', '해외'), ('guide', '가이드')]
 
 
@@ -439,9 +439,11 @@ def build():
 <ul class="list">{''.join(ev_card(e) for e in sorted(events, key=lambda e: (min(dday(e['end'])[0], 7) // 4, EASY_RANK.get(e.get('effort') or EASY.get(e['type'], ''), 2), e['end'])))}</ul>''', [('루리의 줍줍', '/'), ('경품 이벤트', '/event/')])
     shutil.rmtree(os.path.join(ROOT, 'a'), ignore_errors=True)
     build_apply(aps)
+    ss = load_ssul()
+    build_ssul(ss, live, aps)
     guides(live)
     statics(len(live), len(events))
-    urls = ['/', '/apply/', '/event/', '/guide/'] + [f'/a/{a["id"]}/' for a in aps] + [f'/cat/{s}/' for s, _ in CATS] + [f'/guide/{g[0]}/' for g in GUIDES] + \
+    urls = ['/', '/apply/', '/event/', '/guide/', '/ssul/'] + [f'/ssul/{x["slug"]}/' for x in ss] + [f'/a/{a["id"]}/' for a in aps] + [f'/cat/{s}/' for s, _ in CATS] + [f'/guide/{g[0]}/' for g in GUIDES] + \
            ['/about/', '/privacy/', '/terms/', '/contact/'] + [f'/c/{c["id"]}/' for c in contests] + sorted((f'/v/{d}/' for d in os.listdir(os.path.join(ROOT, 'v')) if os.path.isfile(os.path.join(ROOT, 'v', d, 'index.html'))), key=lambda u: int(u.split('/')[2]) if u.split('/')[2].isdigit() else 0)
     global NEW_URLS
     sm = os.path.join(ROOT, 'sitemap.xml')
@@ -481,6 +483,59 @@ GUIDES = [
 <h2>당첨 사칭 주의</h2><p>"당첨되었으니 수수료나 세금을 먼저 입금하라"는 연락은 사기일 가능성이 높습니다. 정상적인 공모전은 상금에서 세금을 공제하고 지급하며, 응모자에게 먼저 돈을 보내라고 하지 않습니다. 발표는 반드시 주최 기관의 공식 홈페이지나 공식 SNS 계정에서 다시 확인하세요.</p>
 <h2>발표 확인</h2><p>발표일을 메모해 두고, 발표 방법(홈페이지 게시, 개별 연락, SNS 댓글)을 확인해 두세요. 연락이 닿지 않으면 수상이 취소되는 공모전도 있습니다.</p>'''),
 ]
+
+
+# ---- 썰 코너 (본문은 공모전 세션이 바탕화면 공모전_2026\daily\ssul\<slug>.md 로 씀) ----
+# md 맨 위 머리말:  ---\ntitle: 제목\ndate: 2026-10-17\nsummary: 한 줄 요약\nfacts: Q00123, Q00456\nexpr: o_cardigan\n---\n본문(마크다운)
+SSUL_DIR = r'C:\Users\k\Desktop\공모전_2026\daily\ssul'
+
+
+def load_ssul():
+    import markdown
+    out = []
+    if not os.path.isdir(SSUL_DIR):
+        return out
+    for f in sorted(os.listdir(SSUL_DIR)):
+        if not f.endswith('.md'):
+            continue
+        slug = re.sub(r'[^0-9A-Za-z가-힣_-]', '', f[:-3])[:60]
+        raw = open(os.path.join(SSUL_DIR, f), encoding='utf-8').read().replace('\r\n', '\n')
+        meta, body = {}, raw
+        m = re.match(r'---\n(.*?)\n---\n', raw, re.S)
+        if m:
+            for line in m.group(1).split('\n'):
+                if ':' in line:
+                    k, v = line.split(':', 1); meta[k.strip()] = v.strip()
+            body = raw[m.end():]
+        if not meta.get('title') or meta.get('draft') in ('true', '1'):
+            continue
+        html_ = markdown.markdown(html.escape(body, quote=False), extensions=['extra', 'nl2br'])
+        out.append({'slug': slug, 'title': meta['title'][:80], 'date': meta.get('date', ''), 'summary': meta.get('summary', '')[:140],
+                    'facts': [x.strip() for x in re.split(r'[,\s]+', meta.get('facts', '')) if x.strip()],
+                    'expr': meta.get('expr', 'o_cardigan') if re.fullmatch(r'[a-z_]+', meta.get('expr', 'x')) else 'o_cardigan', 'html': html_})
+    out.sort(key=lambda x: x['date'], reverse=True)
+    return out
+
+
+def build_ssul(ss, live, aps):
+    shutil.rmtree(os.path.join(ROOT, 'ssul'), ignore_errors=True)
+    byc = {c['id']: c for c in live}; bya = {a['id']: a for a in aps}
+    for x in ss:
+        rel = ''.join(card(byc[i]) for i in x['facts'] if i in byc) + ''.join(ap_card(bya[i]) for i in x['facts'] if i in bya)
+        tail = (f'<h2>루리가 골라 둔 진짜 기회</h2><ul class="list">{rel}</ul>' if rel else
+                '<h2>지금 낼 수 있는 대회</h2><p><a href="/">바로 낼 수 있는 대회 보러 가기 →</a></p>')
+        body = f'''<p class="bc"><a href="/">홈</a> › <a href="/ssul/">썰</a></p>
+<article class="ssul"><p class="note">{E(x["date"])}</p><h1>{E(x["title"])}</h1>{say(x["expr"], E(x["summary"]) or "루리가 들려주는 이야기예요.")}{x["html"]}</article>{tail}'''
+        page(f'/ssul/{x["slug"]}/', x['title'], x['summary'] or x['title'], body,
+             [('루리의 줍줍', '/'), ('썰', '/ssul/'), (x['title'], f'/ssul/{x["slug"]}/')],
+             {'@context': 'https://schema.org', '@type': 'Article', 'headline': x['title'], 'datePublished': x['date'] or str(TODAY),
+              'author': {'@type': 'Person', 'name': 'Seongsang Park'}})
+    li = ''.join(f'<li><a class="card" data-c="guide" href="/ssul/{x["slug"]}/"><span class="ic">💬</span><div class="cb"><h3 class="t">{E(x["title"])}</h3><p class="o">{E(x["summary"])}</p></div></a></li>' for x in ss) \
+        or '<li class="empty"><img src="/assets/ruri/o_cardigan_s.webp" width="64" height="88" alt=""><p>루리가 첫 이야기를 준비하고 있어요!</p></li>'
+    page('/ssul/', '루리의 썰', '루리가 들려주는 용돈·공모전 이야기. 이야기 끝에 실제로 낼 수 있는 대회를 이어 드려요.',
+         f'''<p class="bc"><a href="/">홈</a> › 썰</p><section class="dh" data-c="guide"><span class="ic big">💬</span><h1>루리의 썰</h1><p class="lead">이야기 끝에 진짜 낼 수 있는 대회가 이어져요</p></section>
+{say("o_cardigan", "오늘은 무슨 얘기 해 볼까요? 재밌게 읽고, 마음에 드는 대회는 바로 넣어 봐요!")}<ul class="list">{li}</ul>''',
+         [('루리의 줍줍', '/'), ('썰', '/ssul/')])
 
 
 def guides(live):
