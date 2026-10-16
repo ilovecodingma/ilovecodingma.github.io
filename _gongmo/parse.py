@@ -207,7 +207,8 @@ TAGS = [
 CATS = ['문학', '아이디어·정책', '디자인', '영상', '논문', 'IT·과학', '해외', '기타']
 
 NONCONTEST = re.compile(r'recruitment|Recruitment|걷기|트레킹|마라톤|러닝크루|참가자 모집|봉사단|오디션|세미나|설명회|서포터즈|기자단|교육생|강좌|강연|포럼|채용|워크숍|체험단|멘토링|인턴|발대식|토크콘서트|박람회 참가|지식향연|참가자 모집 공고')
-CONTESTY = re.compile(r'공모|콩쿠르|응모|수기|선발대회|페스티벌|페스타|챌린지|아카데미 어워드|경진|콘테스트|콘텐스트|어워드|대회|contest|Contest|hack|Hack|Award|award|Challenge|챌린지|コンテスト|コンペ|募集|賞|公募')
+# 2026-10-16 연구 세션 요청: 백일장·글짓기·사생대회·문학상도 공모전으로(지식인 답변 링크용)
+CONTESTY = re.compile(r'공모|백일장|글짓기|사생대회|문학상|시조대회|콩쿠르|응모|수기|선발대회|페스티벌|페스타|챌린지|아카데미 어워드|경진|콘테스트|콘텐스트|어워드|대회|contest|Contest|hack|Hack|Award|award|Challenge|챌린지|コンテスト|コンペ|募集|賞|公募')
 
 
 def tags_for(field, title, reg):
