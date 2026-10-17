@@ -97,7 +97,7 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False):
 {body}
 </main>
 <footer class="ft"><div class="w ft-in"><div class="ft-b"><img class="av" src="/assets/ruri/avatar.webp" width="56" height="56" alt="루리" loading="lazy"><div><b>루리의 줍줍</b><p>마감 놓치지 마세요! 매일 아침 새 공모전을 정리해 둘게요.</p><p class="ft-m">문의 <a href="mailto:{MAIL}">{MAIL}</a>{"" if PARTNER == MAIL else f' · 제휴 <a href="mailto:{PARTNER}">{PARTNER}</a>'}</p></div></div>
-<p class="ft-l"><a href="/about/">소개</a><a href="/guide/">응모 가이드</a><a href="/event/">경품 이벤트</a><a href="/privacy/">개인정보처리방침</a><a href="/terms/">이용약관</a><a href="/contact/">문의</a></p>
+<p class="ft-l"><a href="/about/">소개</a><a href="/qa/">고민 해결</a><a href="/guide/">응모 가이드</a><a href="/event/">경품 이벤트</a><a href="/privacy/">개인정보처리방침</a><a href="/terms/">이용약관</a><a href="/contact/">문의</a></p>
 <p class="ft-n">공모전 정보는 각 주최 기관의 공고를 바탕으로 정리했으며, 정확한 요강은 반드시 공식 공고에서 확인하세요. © 2026 루리의 줍줍 · sungprofile.cloud</p></div></footer>
 </body></html>'''
     d = os.path.join(ROOT, path.strip('/'))
@@ -441,8 +441,8 @@ def build():
     # 2026-10-17 사용자: 서비스 본질은 루리 추천 상담. 메인은 상담만, 외부 검색(지식인 등)은 상세 페이지로 받음
     home = f'''<h1 class="cs-h1">이 공모전이나 해 볼까? 루리 공모전 추천 상담</h1>
 <section id="consult" aria-label="루리 공모전 추천 상담"><noscript><p>루리 상담은 자바스크립트가 필요해요. 진행 중 공모전 {len(live)}건이 있어요.</p></noscript></section>
-<a class="lab-cta" href="/lab/"><b>🏆 루리의 수상 연구소</b><span>공모전 수상작을 뜯어보고 당선 공식을 정리했어요 →</span></a><p class="cs-foot">진행 중 공모전 {len(live)}건의 마감일·상금·응모 자격·접수 방법과 공식 공고 캡처를 정리해 두고, 루리가 상황에 맞는 것만 골라 드려요.</p>
-<link rel="stylesheet" href="/assets/home/consult.css?v=5"><script defer src="/assets/home/consult.js?v=10"></script>'''
+{qa_home()}<a class="lab-cta" href="/lab/"><b>🏆 루리의 수상 연구소</b><span>공모전 수상작을 뜯어보고 당선 공식을 정리했어요 →</span></a><p class="cs-foot">진행 중 공모전 {len(live)}건의 마감일·상금·응모 자격·접수 방법과 공식 공고 캡처를 정리해 두고, 루리가 상황에 맞는 것만 골라 드려요.</p>
+<link rel="stylesheet" href="/assets/home/consult.css?v=6"><script defer src="/assets/home/consult.js?v=10"></script>'''
     page('/', '루리의 줍줍 — 이 공모전이나 해 볼까? 루리 공모전 추천 상담',
          f'진행 중인 공모전 {len(live)}건을 마감 임박순·상금순으로. 문학, 아이디어·정책, 디자인, 영상, 논문, IT, 해외 공모전과 경품 이벤트 정리.',
          home, full_title=True, ld={'@context': 'https://schema.org', '@type': 'WebSite', 'name': NAME, 'url': SITE + '/'})
@@ -465,11 +465,12 @@ def build():
     ss = load_ssul()
     build_ssul(ss, live, aps)
     guides(live)
+    qa_pages(live)
     community(live)
     lab_urls = lab() or []
     me_pages()
     statics(len(live), len(events))
-    urls = ['/', '/apply/', '/event/', '/guide/', '/ssul/'] + lab_urls + [f'/ssul/{x["slug"]}/' for x in ss] + [f'/a/{a["id"]}/' for a in aps] + [f'/cat/{s}/' for s, _ in CATS] + [f'/guide/{g[0]}/' for g in GUIDES] + \
+    urls = ['/', '/apply/', '/event/', '/guide/', '/ssul/'] + lab_urls + [f'/ssul/{x["slug"]}/' for x in ss] + [f'/a/{a["id"]}/' for a in aps] + [f'/cat/{s}/' for s, _ in CATS] + [f'/guide/{g[0]}/' for g in GUIDES] + ['/qa/'] + [f'/guide/{q["slug"]}/' for q in QA] + \
            ['/about/', '/privacy/', '/terms/', '/contact/'] + [f'/c/{c["id"]}/' for c in contests] + sorted((f'/v/{d}/' for d in os.listdir(os.path.join(ROOT, 'v')) if os.path.isfile(os.path.join(ROOT, 'v', d, 'index.html'))), key=lambda u: int(u.split('/')[2]) if u.split('/')[2].isdigit() else 0)
     global NEW_URLS
     sm = os.path.join(ROOT, 'sitemap.xml')
@@ -510,8 +511,13 @@ GUIDES = [
 <h2>발표 확인</h2><p>발표일을 메모해 두고, 발표 방법(홈페이지 게시, 개별 연락, SNS 댓글)을 확인해 두세요. 연락이 닿지 않으면 수상이 취소되는 공모전도 있습니다.</p>'''),
 ]
 _GX = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'guides_extra.json')  # 지식인 고민 해결 글(연구 세션이 추가)
+# 고민 해결(/qa/ 목록, 글은 /guide/<slug>/ 유지 — 지식인 답변 링크). 항목: [slug, 제목, 요약, 본문HTML] 또는 {slug,title,desc,body,icon,tag}
+QA = []
 if os.path.exists(_GX):
-    GUIDES += [tuple(g) for g in json.load(open(_GX, encoding='utf-8'))]
+    for g in json.load(open(_GX, encoding='utf-8')):
+        g = g if isinstance(g, dict) else dict(zip(('slug', 'title', 'desc', 'body'), g))
+        QA.append({'slug': g['slug'], 'title': g['title'], 'desc': g.get('desc', ''), 'body': g.get('body', ''), 'icon': g.get('icon') or '💬', 'tag': g.get('tag', '')})
+    QA.reverse()  # 새 글이 위로
 
 
 # ---- 썰 코너 (본문은 공모전 세션이 바탕화면 공모전_2026\daily\ssul\<slug>.md 로 씀) ----
@@ -565,6 +571,27 @@ def build_ssul(ss, live, aps):
          f'''<p class="bc"><a href="/">홈</a> › 썰</p><section class="dh" data-c="guide"><span class="ic big">💬</span><h1>루리의 썰</h1><p class="lead">이야기 끝에 진짜 낼 수 있는 대회가 이어져요</p></section>
 {say("o_cardigan", "오늘은 무슨 얘기 해 볼까요? 재밌게 읽고, 마음에 드는 대회는 바로 넣어 봐요!")}<ul class="list">{li}</ul>''',
          [('루리의 줍줍', '/'), ('썰', '/ssul/')])
+
+
+def qa_card(q):
+    return f'<li><a class="card" data-c="guide" href="/guide/{q["slug"]}/"><span class="ic">{q["icon"]}</span><div class="cb"><h3 class="t">{E(q["title"])}</h3><p class="o">{(E(q["tag"]) + " · ") if q["tag"] else ""}{E(q["desc"])}</p></div></a></li>'
+
+
+def qa_home():
+    if not QA: return ''
+    return f'<section class="qa-home"><h2>💬 루리의 고민 해결 <a href="/qa/">전체 {len(QA)}편 →</a></h2><ul class="list">{"".join(qa_card(q) for q in QA[:4])}</ul></section>'
+
+
+def qa_pages(live):
+    page('/qa/', '루리의 고민 해결', '청년 지원금, 진로, 공모전 준비까지 실제로 받은 고민에 루리가 답을 정리했어요.',
+         f'<p class="bc"><a href="/">홈</a> › 고민 해결</p><section class="dh" data-c="guide"><span class="ic big">💬</span><h1>루리의 고민 해결</h1></section>{say("o_cardigan", "실제로 받은 고민에 하나씩 답을 정리했어요. 비슷한 고민이면 골라 읽어 보세요!")}<ul class="list">{"".join(qa_card(q) for q in QA)}</ul>',
+         [('루리의 줍줍', '/'), ('고민 해결', '/qa/')])
+    rel = ''.join(card(c) for c in live[:4])
+    for i, q in enumerate(QA):
+        page(f'/guide/{q["slug"]}/', q['title'], q['desc'], f'<p class="bc"><a href="/">홈</a> › <a href="/qa/">고민 해결</a></p><article><h1>{E(q["title"])}</h1>{say(["o_suit", "o_cardigan", "o_desk", "o_present"][i % 4], E(q["desc"]))}{q["body"]}</article><p class="qa-more"><a href="/qa/">💬 다른 고민 보기</a> · <a href="/">🎯 루리에게 추천 상담 받기</a></p><h2>마감 임박 공모전</h2><ul class="list">{rel}</ul>',
+             [('루리의 줍줍', '/'), ('고민 해결', '/qa/'), (q['title'], f'/guide/{q["slug"]}/')],
+             {'@context': 'https://schema.org', '@type': 'Article', 'headline': q['title'], 'description': q['desc'], 'datePublished': '2026-10-17',
+              'author': {'@type': 'Person', 'name': 'Seongsang Park'}})
 
 
 def guides(live):
