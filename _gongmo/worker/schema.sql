@@ -123,3 +123,16 @@ CREATE TABLE IF NOT EXISTS oauth_links (
   created INTEGER NOT NULL,
   PRIMARY KEY (provider, sub)
 );
+
+-- 내 공간 (2026-10-17 사용자: 가입 장점 극대화 — 공모전·청약·지원금·경품 공통)
+CREATE TABLE IF NOT EXISTS user_items (
+  user_id INTEGER NOT NULL,
+  item_id TEXT NOT NULL,          -- c:Q01234 / a:lh-... / e:<경품 id>
+  title TEXT NOT NULL DEFAULT '',
+  end_date TEXT NOT NULL DEFAULT '', -- YYYY-MM-DD
+  fav INTEGER NOT NULL DEFAULT 0,    -- 찜(마감 알림 대상)
+  state TEXT NOT NULL DEFAULT '',    -- '' | applied(냈어요) | won(당첨) | lost(아쉬움)
+  updated INTEGER NOT NULL,
+  PRIMARY KEY (user_id, item_id)
+);
+CREATE INDEX IF NOT EXISTS user_items_end ON user_items(end_date);

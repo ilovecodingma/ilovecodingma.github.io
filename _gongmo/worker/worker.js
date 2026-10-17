@@ -130,7 +130,7 @@ export default {
       }
       if (p === '/api/prefs' && req.method === 'POST') {  // 루리 꾸미기 저장
         const u = await me(req, env); if (!u) return err(req, '로그인이 필요해요.', 401);
-        const d = {}; for (const [k, v] of Object.entries(body.data || {}).slice(0, 12)) if (/^[a-z]{1,12}$/.test(k)) d[k] = clean(v, 24);
+        const d = {}; for (const [k, v] of Object.entries(body.data || {}).slice(0, 40)) if (/^[a-z]{1,12}$/.test(k)) d[k] = clean(v, 80);
         await env.DB.prepare('INSERT OR REPLACE INTO user_prefs (user_id, data) VALUES (?, ?)').bind(u.id, JSON.stringify(d)).run();
         return json(req, { ok: true });
       }
@@ -145,7 +145,7 @@ export default {
       if (p === '/api/withdraw' && req.method === 'POST') {  // 회원 탈퇴: 계정·세션 삭제, 글은 '탈퇴한 회원'으로 숨김
         const u = await me(req, env); if (!u) return err(req, '로그인이 필요해요.', 401);
         await env.DB.batch([env.DB.prepare('UPDATE posts SET hidden = 1 WHERE user_id = ?').bind(u.id), env.DB.prepare('UPDATE comments SET hidden = 1 WHERE user_id = ?').bind(u.id),
-          env.DB.prepare('DELETE FROM sessions WHERE user_id = ?').bind(u.id), env.DB.prepare('DELETE FROM invite_codes WHERE user_id = ?').bind(u.id), env.DB.prepare('DELETE FROM user_prefs WHERE user_id = ?').bind(u.id), env.DB.prepare('DELETE FROM oauth_links WHERE user_id = ?').bind(u.id), env.DB.prepare('DELETE FROM users WHERE id = ?').bind(u.id)]);
+          env.DB.prepare('DELETE FROM sessions WHERE user_id = ?').bind(u.id), env.DB.prepare('DELETE FROM invite_codes WHERE user_id = ?').bind(u.id), env.DB.prepare('DELETE FROM user_prefs WHERE user_id = ?').bind(u.id), env.DB.prepare('DELETE FROM oauth_links WHERE user_id = ?').bind(u.id), env.DB.prepare('DELETE FROM user_items WHERE user_id = ?').bind(u.id), env.DB.prepare('DELETE FROM users WHERE id = ?').bind(u.id)]);
         return json(req, { ok: true });
       }
       // ---- 글 ----
@@ -204,6 +204,36 @@ export default {
         }
         const bin = Uint8Array.from(atob(r.data), c => c.charCodeAt(0));
         return new Response(bin, { headers: { 'Content-Type': r.mime, 'Cache-Control': r.kind === 'cover' ? 'public, max-age=86400' : 'private, max-age=3600', ...cors(req) } });
+      }
+      // ---- 내 공간: 찜·응모 기록 (공모전·청약·지원금·경품 공통) ----
+      if (p === '/api/items') {
+        const u = await me(req, env); if (!u) return err(req, '로그인이 필요해요.', 401);
+        if (req.method === 'GET') return json(req, { items: (await env.DB.prepare('SELECT item_id id, title, end_date end, fav, state, updated FROM user_items WHERE user_id = ? AND (fav = 1 OR length(state) > 0) ORDER BY end_date').bind(u.id).all()).results });
+        if (req.method === 'POST') {
+          const list = Array.isArray(body.items) ? body.items.slice(0, 200) : [body];
+          for (const it of list) {
+            const id = clean(it.id, 60); if (!/^[cae]:[\w.-]+$/.test(id)) continue;
+            const cur = await env.DB.prepare('SELECT fav, state, title, end_date FROM user_items WHERE user_id = ? AND item_id = ?').bind(u.id, id).first() || { fav: 0, state: '', title: '', end_date: '' };
+            const fav = it.fav === undefined ? cur.fav : it.fav ? 1 : 0, state = it.state === undefined ? cur.state : (['', 'applied', 'won', 'lost'].includes(it.state) ? it.state : cur.state);
+            await env.DB.prepare('INSERT OR REPLACE INTO user_items (user_id, item_id, title, end_date, fav, state, updated) VALUES (?, ?, ?, ?, ?, ?, ?)')
+              .bind(u.id, id, clean(it.title, 120) || cur.title, /^\d{4}-\d{2}-\d{2}$/.test(it.end || '') ? it.end : cur.end_date, fav, state, now()).run();
+          }
+          return json(req, { ok: true });
+        }
+      }
+      // ---- 관리자 (대장 계정만) ----
+      if (p === '/api/admin') {
+        const u = await me(req, env); if (!u || u.id !== 16) return err(req, '권한이 없어요.', 403);
+        const one = async q => (await env.DB.prepare(q).first('n')) || 0, day = now() - DAY, week = now() - 7 * DAY;
+        const recent = (await env.DB.prepare("SELECT id, nick, created, CASE WHEN pw LIKE 'oauth$%' THEN substr(pw, 7) ELSE 'email' END via FROM users ORDER BY created DESC LIMIT 15").all()).results;
+        const reported = (await env.DB.prepare("SELECT 'post' k, id, title t, reports, hidden FROM posts WHERE reports > 0 UNION ALL SELECT 'team', id, name, reports, hidden FROM teams WHERE reports > 0 ORDER BY reports DESC LIMIT 20").all()).results;
+        const byDay = (await env.DB.prepare("SELECT date(created, 'unixepoch', '+9 hours') d, COUNT(*) n FROM users WHERE created > ? GROUP BY d ORDER BY d").bind(now() - 14 * DAY).all()).results;
+        return json(req, {
+          users: await one('SELECT COUNT(*) n FROM users'), users_day: await one(`SELECT COUNT(*) n FROM users WHERE created > ${day}`), users_week: await one(`SELECT COUNT(*) n FROM users WHERE created > ${week}`),
+          social: await one("SELECT COUNT(*) n FROM oauth_links"), teams: await one('SELECT COUNT(*) n FROM teams WHERE hidden = 0'), open_teams: await one("SELECT COUNT(*) n FROM teams WHERE hidden = 0 AND status = 'open'"),
+          posts: await one('SELECT COUNT(*) n FROM posts WHERE hidden = 0'), favs: await one('SELECT COUNT(*) n FROM user_items WHERE fav = 1'), applied: await one("SELECT COUNT(*) n FROM user_items WHERE state != ''"),
+          won: await one("SELECT COUNT(*) n FROM user_items WHERE state = 'won'"), alerts: await one("SELECT COUNT(*) n FROM user_prefs WHERE data LIKE '%\"alert\":\"1\"%'"),
+          invites: await one('SELECT COUNT(*) n FROM invited'), visits: await one('SELECT COUNT(*) n FROM ref_visits'), recent, reported, byDay });
       }
       // ---- 팀 모집 ----
       if (p === '/api/teams' && req.method === 'GET') {
