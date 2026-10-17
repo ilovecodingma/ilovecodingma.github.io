@@ -336,9 +336,9 @@ def load_apply():
             r = json.loads(l)
         except ValueError:
             continue
-        if not r.get('title') or not r.get('end') or r.get('closed'):
+        if not r.get('title') or not (r.get('end') or r.get('always')) or r.get('closed'):
             continue
-        end = r.get('end_override') or r['end']
+        end = r.get('end_override') or r.get('end') or '2099-12-31'  # always: 상시 신청
         try:
             if dday(end)[0] < 0:
                 continue
@@ -350,7 +350,9 @@ def load_apply():
         seen.add(aid)
         nm, ic = apply_kind(r.get('kind'))
         out.append({'id': aid, 'title': P.clean(r['title'])[:90], 'org': P.clean(r.get('org', ''))[:40] or '공고 참조', 'kind': nm, 'icon': ic, 'kk': r.get('kind') or ('apt' if re.search(r'아파트|분양|자이|힐스테이트|푸르지오|래미안|e편한|롯데캐슬|하늘채|더샵|아이파크|위브|포레나|센트레빌|리슈빌|공공분양', r['title']) else 'rent' if re.search(r'임대|전세|월세|행복주택|매입', r['title']) else 'grant'),
-                    'start': r.get('start', ''), 'end': end, 'url': r.get('url', ''), 'source': r.get('source', ''), 'verified': bool(r.get('verified'))})
+                    'start': r.get('start', ''), 'end': end, 'url': r.get('url', ''), 'source': r.get('source', ''), 'verified': bool(r.get('verified')),
+                    'always': bool(r.get('always')), 'region': P.clean(r.get('region', ''))[:20], 'target': P.clean(r.get('target', ''))[:80], 'benefit': P.clean(r.get('benefit', ''))[:80],
+                    'how': P.clean(r.get('how', ''))[:60], 'income': P.clean(r.get('income', ''))[:30], 'age_min': r.get('age_min'), 'age_max': r.get('age_max')})
     out.sort(key=lambda a: (a['end'], a['title']))
     return out
 
@@ -374,15 +376,17 @@ APPLY_INTRO = '''<p>아파트 청약, 공공임대, 공모주 청약, 지원금 
 def build_apply(aps):
     # 메인 루리 상담(청약·지원금)용 데이터 (2026-10-17)
     with open(os.path.join(ROOT, 'apply.json'), 'w', encoding='utf-8', newline='\n') as f:
-        json.dump([{k: a[k] for k in ('id', 'title', 'org', 'kind', 'icon', 'kk', 'start', 'end')} for a in aps], f, ensure_ascii=False, separators=(',', ':'))
+        json.dump([{k: a[k] for k in ('id', 'title', 'org', 'kind', 'icon', 'kk', 'start', 'end', 'always', 'region', 'target', 'benefit', 'how', 'income', 'age_min', 'age_max') if a.get(k) not in (None, '', False)} for a in aps], f, ensure_ascii=False, separators=(',', ':'))
     for a in aps:
         n, dd = dday(a['end'])
         period = (ddot(a['start']) + ' ~ ' if a['start'] else '~ ') + ddot(a['end'])
         tb = ''.join(f'<tr><th>{k}</th><td>{E(v)}</td></tr>' for k, v in
-                     [('구분', a['kind']), ('주관', a['org']), ('신청 기간', period), ('출처', a['source'] or '공식 공고')])
+                     [x for x in [('구분', a['kind']), ('대상', a.get('target')), ('혜택', a.get('benefit')), ('지역', a.get('region')), ('나이', (f"만 {a['age_min'] or ''}~{a['age_max'] or ''}세" if a.get('age_min') or a.get('age_max') else '')),
+                      ('소득 조건', a.get('income')), ('신청 방법', a.get('how')), ('주관', a['org']), ('신청 기간', '상시 신청' if a.get('always') else period), ('출처', a['source'] or '공식 공고')] if x[1]])
         btn = (f'<a class="btn" href="{E(a["url"])}" target="_blank" rel="noopener nofollow">공식 사이트에서 신청하기 →</a>' if a['url'] else '')
         body = f'''<p class="bc"><a href="/">홈</a> › <a href="/apply/">청약·신청</a></p>
-<section class="dh" data-c="apply"><span class="ic big">{a["icon"]}</span><h1>{E(a["title"])}</h1><p class="lead"><span class="d{" u3" if n <= 3 else " hot" if n <= 7 else ""}">{dd}</span> {ddot(a["end"])} 마감</p></section>
+<section class="dh" data-c="apply"><span class="ic big">{a["icon"]}</span><h1>{E(a["title"])}</h1><p class="lead">{'<span class="d">상시</span> 지금 신청할 수 있어요' if a.get('always') else f'<span class="d{" u3" if n <= 3 else " hot" if n <= 7 else ""}">{dd}</span> {ddot(a["end"])} 마감'}</p></section>
+<div class="my-acts" data-id="a:{E(a['id'])}" data-title="{E(a['title'])}" data-end="{'' if a.get('always') else a['end']}"></div>
 {say('o_suit', f'신청 기간을 놓치지 마세요! 자격 조건은 <b>공식 공고</b>에서 꼭 확인해 주세요.')}
 <div class="panel"><table class="info">{tb}</table>{btn}</div>
 <h2>신청 전 확인할 것</h2><ul class="chk"><li>신청 자격(나이·소득·자산·거주지·무주택 여부)</li><li>필요 서류와 본인인증 수단</li><li>발표일과 계약·납부 일정</li></ul>'''
@@ -438,7 +442,7 @@ def build():
     home = f'''<h1 class="cs-h1">이 공모전이나 해 볼까? 루리 공모전 추천 상담</h1>
 <section id="consult" aria-label="루리 공모전 추천 상담"><noscript><p>루리 상담은 자바스크립트가 필요해요. 진행 중 공모전 {len(live)}건이 있어요.</p></noscript></section>
 <a class="lab-cta" href="/lab/"><b>🏆 루리의 수상 연구소</b><span>공모전 수상작을 뜯어보고 당선 공식을 정리했어요 →</span></a><p class="cs-foot">진행 중 공모전 {len(live)}건의 마감일·상금·응모 자격·접수 방법과 공식 공고 캡처를 정리해 두고, 루리가 상황에 맞는 것만 골라 드려요.</p>
-<link rel="stylesheet" href="/assets/home/consult.css?v=5"><script defer src="/assets/home/consult.js?v=7"></script>'''
+<link rel="stylesheet" href="/assets/home/consult.css?v=5"><script defer src="/assets/home/consult.js?v=8"></script>'''
     page('/', '루리의 줍줍 — 이 공모전이나 해 볼까? 루리 공모전 추천 상담',
          f'진행 중인 공모전 {len(live)}건을 마감 임박순·상금순으로. 문학, 아이디어·정책, 디자인, 영상, 논문, IT, 해외 공모전과 경품 이벤트 정리.',
          home, full_title=True, ld={'@context': 'https://schema.org', '@type': 'WebSite', 'name': NAME, 'url': SITE + '/'})

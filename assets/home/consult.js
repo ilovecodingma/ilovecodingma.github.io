@@ -110,6 +110,7 @@
     opts.querySelector('.cs-again').onclick = openPop; opts.querySelector('.cs-redo2').onclick = restart;
   }
 
+  const myAge = () => { try { const a = (JSON.parse(localStorage.getItem('jupjup_prefs') || '{}').age || ''); const m = a.match(/(\d+)/); return m ? +m[1] + 5 : 0; } catch { return 0; } };  // 나이대 가운데값
   async function recApply() {
     mode = 'apply';
     if (!apps) apps = await fetch('/apply.json').then(r => r.json()).catch(() => []);
@@ -117,11 +118,17 @@
     ranked = apps.map(i => {
       const hay = i.title + ' ' + i.org, l = left(i.end), why = [];
       if (kinds.length && !kinds.includes(i.kk)) return null;
-      if (l < 0 || l > within) return null;
+      if (l < 0 || (l > within && !i.always)) return null;
       let s = 1;
       if (reg) { if (reg.test(hay)) { s += 2; why.push(prof.region + ' 지역'); } else if (/전국|국민|LH|한국주택|HUG|주택도시/.test(hay) || i.kk === 'grant' || i.kk === 'ipo') s += 0.3; else s -= 1.5; }
       if (who) { if (who.test(hay)) { s += 1.2; why.push(prof.who.replace(/^\S+\s/, '') + ' 대상'); } }
       s += l <= 3 ? 0.6 : l <= 7 ? 0.4 : l <= 31 ? 0.2 : 0; if (l <= 7) why.push(l ? `D-${l}` : '오늘 마감');
+      const hay2 = hay + ' ' + (i.region || '') + ' ' + (i.target || '');
+      if (reg && i.region && i.region !== '전국' && !reg.test(i.region)) return null;  // 지역 한정인데 다른 지역
+      if (i.always) { s += 0.5; why.push('지금 신청 가능'); }
+      if (who && i.target && who.test(i.target) && !why.some(w => w.includes('대상'))) { s += 1; why.push(prof.who.replace(/^\S+\s/, '') + ' 대상'); }
+      const ag = myAge(); if (ag && ((i.age_min && ag < i.age_min - 9) || (i.age_max && ag > i.age_max))) return null;  // 나이 밖
+      if (i.benefit) why.push(i.benefit);
       why.unshift({ apt: '아파트 분양', rent: '임대·전세임대', grant: '지원금', ipo: '공모주' }[i.kk] || i.kind);
       return { i, s, why, l, a: 1 };
     }).filter(Boolean).sort((a, b) => b.s - a.s || a.l - b.l);
@@ -143,7 +150,7 @@
   addEventListener('keydown', e => { if (e.key === 'Escape' && !res.hidden) closePop(); });
   function more() {
     const part = ranked.slice(shown, shown + 5); shown += part.length;
-    list.insertAdjacentHTML('beforeend', part.map(({ i, why, l, pct, a }, k) => a ? `<li class="cs-card cs-ap" style="--d:${k * 70}ms"><a href="/a/${esc(i.id)}/"><span class="cs-th"><em>${({ apt: '🏠', rent: '🏘️', grant: '💰', ipo: '📈' })[i.kk] || '📝'}</em></span><span class="cs-b"><span class="cs-match"><i style="width:${pct}%"></i><b>일치도 ${pct}%</b></span><strong>${esc(i.title)}</strong><span class="cs-why">💬 ${esc(why.slice(0, 3).join(' · '))}</span><span class="cs-meta"><em class="${l <= 3 ? 'hot' : ''}">${l ? 'D-' + l : 'D-DAY'}</em>${esc(i.org || '')} · ~${esc(i.end.slice(5).replace('-', '/'))}</span></span></a></li>` : `<li class="cs-card" style="--d:${k * 70}ms"><a href="/c/${i.id}/">
+    list.insertAdjacentHTML('beforeend', part.map(({ i, why, l, pct, a }, k) => a ? `<li class="cs-card cs-ap" style="--d:${k * 70}ms"><a href="/a/${esc(i.id)}/"><span class="cs-th"><em>${({ apt: '🏠', rent: '🏘️', grant: '💰', ipo: '📈' })[i.kk] || '📝'}</em></span><span class="cs-b"><span class="cs-match"><i style="width:${pct}%"></i><b>일치도 ${pct}%</b></span><strong>${esc(i.title)}</strong><span class="cs-why">💬 ${esc(why.slice(0, 3).join(' · '))}</span><span class="cs-meta"><em class="${l <= 3 ? 'hot' : ''}">${i.always ? '상시' : l ? 'D-' + l : 'D-DAY'}</em>${esc(i.org || '')}${i.always ? '' : ' · ~' + esc(i.end.slice(5).replace('-', '/'))}</span></span></a></li>` : `<li class="cs-card" style="--d:${k * 70}ms"><a href="/c/${i.id}/">
 <span class="cs-th">${i.th ? `<img src="/assets/shots/${i.id}.webp" alt="" loading="lazy">` : '<em>🏆</em>'}</span>
 <span class="cs-b"><span class="cs-match"><i style="width:${pct}%"></i><b>일치도 ${pct}%</b></span><strong>${esc(i.title)}</strong>
 <span class="cs-why">💬 ${esc(why.slice(0, 3).join(' · '))}</span>
