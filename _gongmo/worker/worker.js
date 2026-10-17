@@ -40,6 +40,7 @@ async function newSession(env, uid) {
   await env.DB.prepare('INSERT INTO sessions (token, user_id, expires) VALUES (?, ?, ?)').bind(token, uid, now() + 30 * DAY).run();
   return token;
 }
+const ADMINS = [16];  // 관리자 계정(사장님 구글 계정)
 async function count(env, sql, ...a) { return (await env.DB.prepare(sql).bind(...a).first('n')) || 0; }
 
 
@@ -141,7 +142,7 @@ export default {
         const byC = (await env.DB.prepare("SELECT contest_id h, SUM(v) visits, SUM(j) joins FROM (SELECT contest_id, 1 v, 0 j FROM ref_visits WHERE code = ? UNION ALL SELECT contest_id, 0, 1 FROM invited WHERE by_user = ?) GROUP BY contest_id ORDER BY SUM(v) + SUM(j) * 3 DESC LIMIT 50").bind(code, u.id).all()).results;
         const prefs = await env.DB.prepare('SELECT data FROM user_prefs WHERE user_id = ?').bind(u.id).first('data');
         const em = await env.DB.prepare('SELECT email FROM users WHERE id = ?').bind(u.id).first('email') || '';
-        return json(req, { nick: u.nick, email: /\.login$/.test(em) ? '' : em, code, invites: byC.reduce((a, x) => a + x.joins, 0), visits: byC.reduce((a, x) => a + x.visits, 0), by_contest: byC, prefs: prefs ? JSON.parse(prefs) : {} });
+        return json(req, { nick: u.nick, email: /\.login$/.test(em) ? '' : em, code, invites: byC.reduce((a, x) => a + x.joins, 0), visits: byC.reduce((a, x) => a + x.visits, 0), by_contest: byC, prefs: prefs ? JSON.parse(prefs) : {}, admin: ADMINS.includes(u.id) });
       }
       if (p === '/api/withdraw' && req.method === 'POST') {  // 회원 탈퇴: 계정·세션 삭제, 글은 '탈퇴한 회원'으로 숨김
         const u = await me(req, env); if (!u) return err(req, '로그인이 필요해요.', 401);
@@ -222,9 +223,39 @@ export default {
           return json(req, { ok: true });
         }
       }
+      // ---- 방문 기록 (자체 집계, 관리자 화면용) ----
+      if (p === '/api/hit' && req.method === 'POST') {
+        const ua = req.headers.get('User-Agent') || '';
+        if (/bot|crawl|spider|slurp|headless|lighthouse|preview|facebookexternalhit|daum|yeti/i.test(ua)) return json(req, { ok: 1 });
+        const ip = req.headers.get('CF-Connecting-IP') || '', d = new Date(Date.now() + 9 * 3600e3).toISOString().slice(0, 10);
+        const vid = hex(new Uint8Array(await crypto.subtle.digest('SHA-256', new TextEncoder().encode(ip + '|' + ua + '|' + d)))).slice(0, 16);
+        let ref = ''; try { ref = body.r ? new URL(body.r).hostname.replace(/^www\./, '') : ''; } catch {}
+        if (/sungprofile\.cloud$/.test(ref)) ref = '';
+        const u = await me(req, env), cf = req.cf || {};
+        await env.DB.prepare('INSERT INTO hits (day, ts, vid, uid, path, ref, country, city, mobile) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)')
+          .bind(d, now(), vid, u ? u.id : 0, clean(body.p, 120), clean(ref, 60), clean(cf.country || '', 4), clean(cf.city || '', 40), /Mobi|Android|iPhone/i.test(ua) ? 1 : 0).run();
+        return json(req, { ok: 1 });
+      }
+      if (p === '/api/admin/visits') {
+        const u = await me(req, env); if (!u || !ADMINS.includes(u.id)) return err(req, '권한이 없어요.', 403);
+        const d = new Date(Date.now() + 9 * 3600e3).toISOString().slice(0, 10), mine = url.searchParams.get('mine') === '1';
+        const W = mine ? '' : ` AND uid NOT IN (${ADMINS.join(',')})`, wk = new Date(Date.now() + 9 * 3600e3 - 6 * 86400e3).toISOString().slice(0, 10);
+        const all = async (q, ...a) => (await env.DB.prepare(q).bind(...a).all()).results;
+        const first = async (q, ...a) => await env.DB.prepare(q).bind(...a).first();
+        return json(req, {
+          today: await first(`SELECT COUNT(DISTINCT vid) v, COUNT(*) pv FROM hits WHERE day = ?${W}`, d),
+          live: await first(`SELECT COUNT(DISTINCT vid) v FROM hits WHERE ts > ?${W}`, now() - 1800),
+          total: await first(`SELECT COUNT(DISTINCT vid || day) v, COUNT(*) pv, MIN(day) since FROM hits WHERE 1=1${W}`),
+          byDay: await all(`SELECT day d, COUNT(DISTINCT vid) v, COUNT(*) pv FROM hits WHERE day >= date(?, '-13 days')${W} GROUP BY day ORDER BY day`, d),
+          pages: await all(`SELECT path, COUNT(*) pv, COUNT(DISTINCT vid) v FROM hits WHERE day >= ?${W} GROUP BY path ORDER BY v DESC, pv DESC LIMIT 15`, wk),
+          refs: await all(`SELECT CASE WHEN ref = '' THEN '직접·북마크' ELSE ref END r, COUNT(DISTINCT vid) v FROM hits WHERE day >= ?${W} GROUP BY r ORDER BY v DESC LIMIT 10`, wk),
+          cities: await all(`SELECT country || ' ' || city c, COUNT(DISTINCT vid) v FROM hits WHERE day >= ?${W} GROUP BY c ORDER BY v DESC LIMIT 10`, wk),
+          mobile: await first(`SELECT COUNT(DISTINCT CASE WHEN mobile = 1 THEN vid END) m, COUNT(DISTINCT vid) v FROM hits WHERE day >= ?${W}`, wk),
+          recent: await all(`SELECT ts, path, ref, city, mobile, uid FROM hits WHERE 1=1${W} ORDER BY ts DESC LIMIT 30`) });
+      }
       // ---- 관리자 (대장 계정만) ----
       if (p === '/api/admin') {
-        const u = await me(req, env); if (!u || u.id !== 16) return err(req, '권한이 없어요.', 403);
+        const u = await me(req, env); if (!u || !ADMINS.includes(u.id)) return err(req, '권한이 없어요.', 403);
         const one = async q => (await env.DB.prepare(q).first('n')) || 0, day = now() - DAY, week = now() - 7 * DAY;
         const recent = (await env.DB.prepare("SELECT id, nick, created, CASE WHEN pw LIKE 'oauth$%' THEN substr(pw, 7) ELSE 'email' END via FROM users ORDER BY created DESC LIMIT 15").all()).results;
         const reported = (await env.DB.prepare("SELECT 'post' k, id, title t, reports, hidden FROM posts WHERE reports > 0 UNION ALL SELECT 'team', id, name, reports, hidden FROM teams WHERE reports > 0 ORDER BY reports DESC LIMIT 20").all()).results;

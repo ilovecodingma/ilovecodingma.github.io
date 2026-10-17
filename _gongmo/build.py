@@ -56,7 +56,7 @@ EV_KIND = {'event': '이벤트', 'sweepstakes': '추첨 경품', 'quiz': '퀴즈
            'sns_tag_required': '친구 태그', 'sns_story_required': '스토리 공유', 'sns_capture': '캡처 인증', 'sns_form_only': '폼 응모',
            'sns_comment+form': '댓글+폼', 'sns_purchase': '구매 인증', 'sns_region': '지역 한정', 'sns_other': 'SNS 이벤트'}
 
-COMM_TAGS_TPL = '<link rel="stylesheet" href="/assets/community/comm.css?v=10"><script defer src="/assets/community/comm.js?v=14"></script>'
+COMM_TAGS_TPL = '<link rel="stylesheet" href="/assets/community/comm.css?v=10"><script defer src="/assets/community/comm.js?v=15"></script>'
 GTAG = ('<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4248498719773262" crossorigin="anonymous"></script>\n'
         '<script async src="https://www.googletagmanager.com/gtag/js?id=G-G9BPFF95GY"></script>\n'
         "<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());if(location.hostname!=='sungprofile.cloud')window['ga-disable-G-G9BPFF95GY']=true;gtag('config','G-G9BPFF95GY');</script>")
@@ -634,8 +634,8 @@ def community(live=()):
 def me_pages():
     """내 공간(가입 혜택 모음) · 관리자 (2026-10-17)"""
     page('/me/', '내 공간 — 찜·응모 기록·마감 알림', '찜한 공모전·청약, 응모 기록, 마감 알림 메일, 자격 프로필, 청약 가점 계산기를 한곳에서.',
-         '''<section id="me" aria-label="내 공간"></section><link rel="stylesheet" href="/assets/me/me.css?v=1"><script defer src="/assets/me/me.js?v=2"></script>''', [('루리의 줍줍', '/'), ('내 공간', '/me/')])
-    page('/admin/', '관리자', '관리자', '''<section id="admin"></section><link rel="stylesheet" href="/assets/me/me.css?v=1"><script defer src="/assets/me/admin.js?v=1"></script>''')
+         '''<section id="me" aria-label="내 공간"></section><link rel="stylesheet" href="/assets/me/me.css?v=2"><script defer src="/assets/me/me.js?v=2"></script>''', [('루리의 줍줍', '/'), ('내 공간', '/me/')])
+    page('/admin/', '관리자', '관리자', '''<section id="admin"></section><link rel="stylesheet" href="/assets/me/me.css?v=2"><script defer src="/assets/me/admin.js?v=2"></script>''')
 
 
 def lab():

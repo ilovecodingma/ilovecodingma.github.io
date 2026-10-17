@@ -14,6 +14,8 @@
   const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
   const ago = t => { const d = Date.now() / 1000 - t; return d < 60 ? '방금' : d < 3600 ? Math.floor(d / 60) + '분 전' : d < 86400 ? Math.floor(d / 3600) + '시간 전' : new Date(t * 1000).toLocaleDateString('ko-KR'); };
   const KIND = { review: '후기', qna: '질문', tip: '팁' };
+  // 방문 기록(관리자 화면용, 운영 도메인만)
+  if (location.hostname === 'sungprofile.cloud') setTimeout(() => { try { fetch(API + '/api/hit', { method: 'POST', keepalive: true, headers: { 'Content-Type': 'application/json', ...(st.t ? { Authorization: 'Bearer ' + st.t } : {}) }, body: JSON.stringify({ p: location.pathname, r: document.referrer }) }).catch(() => {}); } catch {} }, 400);
   async function api(path, opt = {}) {
     const r = await fetch(API + path, { ...opt, headers: { 'Content-Type': 'application/json', ...(st.t ? { Authorization: 'Bearer ' + st.t } : {}) }, body: opt.body ? JSON.stringify(opt.body) : undefined });
     const j = await r.json().catch(() => ({}));
@@ -54,7 +56,7 @@
     const dl = e => { const p = e.split('-'), n = new Date(); return Math.round((Date.UTC(+p[0], p[1] - 1, +p[2]) - Date.UTC(n.getFullYear(), n.getMonth(), n.getDate())) / 864e5); };
     const fl = favs.map(f => ({ ...f, l: dl(f.end) })).filter(f => f.l >= 0).sort((a, b) => a.l - b.l).slice(0, 5);
     b.innerHTML = st.t ? `<button class="cm-me">${esc(st.n)} ▾</button><div class="cm-menu" hidden>
-<a href="/me/">🏠 내 공간 <small>찜·응모 기록·알림</small></a><a href="/community/">🚩 원정대</a><a href="/lab/">🏆 수상 연구소</a><a href="/community/#dress">🎀 루리 꾸미기</a>
+<a href="/me/">🏠 내 공간 <small>찜·응모 기록·알림</small></a><a href="/community/">🚩 원정대</a><a href="/lab/">🏆 수상 연구소</a><a href="/community/#dress">🎀 루리 꾸미기</a>${(() => { try { return localStorage.getItem('jupjup_adm') ? '<a href="/admin/">📊 관리자 <small>방문자·가입자</small></a>' : ''; } catch { return ''; } })()}
 <b>⭐ 찜한 공모전</b>${fl.length ? fl.map(f => `<a class="cm-fv" href="/c/${esc(f.id)}/"><em>${f.l ? 'D-' + f.l : 'D-DAY'}</em>${esc(f.title)}</a>`).join('') : '<p>챗봇 카드의 ☆로 찜해 두면 여기 모여요.</p>'}
 <button class="cm-out">로그아웃</button></div>` : '<button class="cm-in">로그인</button>';
     const me = b.querySelector('.cm-me'), menu = b.querySelector('.cm-menu');
@@ -334,6 +336,7 @@ ${album}<div class="cm-acts"><button class="tm-share">링크 복사</button>${st
     if (Date.now() - last < 864e5 && localStorage.getItem('jupjup_prefs')) return;
     const me = await api('/api/me').catch(() => null); if (!me) return;
     try { localStorage.setItem('jupjup_prefs', JSON.stringify(me.prefs || {})); localStorage.setItem('jupjup_prefs_t', Date.now()); } catch {}
+    try { const a = me.admin ? '1' : ''; if ((localStorage.getItem('jupjup_adm') || '') !== a) { localStorage.setItem('jupjup_adm', a); paintBar(); } } catch {}
     wearAll();
   }
   new MutationObserver(ms => ms.forEach(m => { if (m.type === 'attributes') wearOne(m.target); else m.addedNodes.forEach(n => { if (n.nodeType === 1) { if (n.tagName === 'IMG') wearOne(n); else n.querySelectorAll && n.querySelectorAll('img[src^="/assets/ruri/"]').forEach(wearOne); } }); }))
