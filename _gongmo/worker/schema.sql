@@ -140,3 +140,8 @@ CREATE INDEX IF NOT EXISTS user_items_end ON user_items(end_date);
 CREATE TABLE IF NOT EXISTS hits (id INTEGER PRIMARY KEY, day TEXT NOT NULL, ts INTEGER NOT NULL, vid TEXT NOT NULL, uid INTEGER NOT NULL DEFAULT 0, path TEXT, ref TEXT, country TEXT, city TEXT, mobile INTEGER DEFAULT 0);
 CREATE INDEX IF NOT EXISTS hits_day ON hits(day);
 CREATE INDEX IF NOT EXISTS hits_ts ON hits(ts);
+
+-- 준비실 (2026-10-18)
+CREATE TABLE IF NOT EXISTS prep (user_id INTEGER NOT NULL, item_id TEXT NOT NULL, data TEXT NOT NULL, updated INTEGER NOT NULL, PRIMARY KEY (user_id, item_id));
+CREATE TABLE IF NOT EXISTS post_likes (user_id INTEGER NOT NULL, post_id INTEGER NOT NULL, created INTEGER NOT NULL, PRIMARY KEY (user_id, post_id));
+CREATE INDEX IF NOT EXISTS post_likes_post ON post_likes(post_id);

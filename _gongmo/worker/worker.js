@@ -223,6 +223,47 @@ export default {
           return json(req, { ok: true });
         }
       }
+      // ---- 준비실: 공모전별 준비 보드 (2026-10-18 사용자: 공모전 준비할 사람들이 편하게 준비할 공간) ----
+      if (p === '/api/prep' && req.method === 'GET') {
+        const u = await me(req, env); if (!u) return err(req, '로그인이 필요해요.', 401);
+        const rows = (await env.DB.prepare('SELECT item_id id, data, updated FROM prep WHERE user_id = ? ORDER BY updated DESC LIMIT 100').bind(u.id).all()).results;
+        return json(req, { prep: rows.map(r => ({ id: r.id, updated: r.updated, ...JSON.parse(r.data) })) });
+      }
+      if (p === '/api/prep' && req.method === 'POST') {
+        const u = await me(req, env); if (!u) return err(req, '로그인이 필요해요.', 401);
+        for (const it of (Array.isArray(body.items) ? body.items : [body]).slice(0, 50)) {
+          const id = clean(it.id, 60); if (!/^c:[\w.-]+$/.test(id)) continue;
+          if (it.del) { await env.DB.prepare('DELETE FROM prep WHERE user_id = ? AND item_id = ?').bind(u.id, id).run(); continue; }
+          const d = it.data || {}, data = JSON.stringify({ title: clean(d.title, 120), end: /^\d{4}-\d{2}-\d{2}$/.test(d.end || '') ? d.end : '', g: clean(d.g, 12), url: clean(d.url, 300),
+            steps: (d.steps || []).slice(0, 20).map(x => !!x), checks: (d.checks || []).slice(0, 30).map(x => !!x), memo: clean(d.memo, 3000), done: !!d.done, created: +d.created || now() });
+          if (await count(env, 'SELECT COUNT(*) n FROM prep WHERE user_id = ?', u.id) >= 100) return err(req, '준비 보드는 100개까지예요.', 429);
+          await env.DB.prepare('INSERT OR REPLACE INTO prep (user_id, item_id, data, updated) VALUES (?, ?, ?, ?)').bind(u.id, id, data, +it.updated || now()).run();
+        }
+        return json(req, { ok: true });
+      }
+      // ---- 꿀팁 (posts kind=tip, contest_id = 'g:<장르>' 또는 공모전 id) ----
+      if (p === '/api/tips' && req.method === 'GET') {
+        const g = clean(url.searchParams.get('g'), 12), u = await me(req, env);
+        const sel = `SELECT p.id, p.contest_id, p.contest_title, p.body, p.created, u.nick, (SELECT COUNT(*) FROM post_likes l WHERE l.post_id = p.id) likes${u ? ', (SELECT 1 FROM post_likes l WHERE l.post_id = p.id AND l.user_id = ' + u.id + ') liked' : ''} FROM posts p LEFT JOIN users u ON u.id = p.user_id WHERE p.kind = 'tip' AND p.hidden = 0`;
+        const q = g ? env.DB.prepare(sel + ' AND p.contest_id = ? ORDER BY likes DESC, p.created DESC LIMIT 50').bind('g:' + g) : env.DB.prepare(sel + ' ORDER BY p.created DESC LIMIT 50');
+        return json(req, { tips: (await q.all()).results });
+      }
+      if (p === '/api/tips' && req.method === 'POST') {
+        const u = await me(req, env); if (!u) return err(req, '로그인이 필요해요.', 401);
+        const text = clean(body.body, 1000), g = clean(body.g, 12);
+        if (text.length < 10) return err(req, '꿀팁을 조금 더 자세히 써 주세요. (10자 이상)');
+        if (await count(env, 'SELECT COUNT(*) n FROM posts WHERE user_id = ? AND created > ?', u.id, now() - DAY) >= LIMIT_POST) return err(req, '하루에 쓸 수 있는 글 수를 넘었어요.', 429);
+        const r = await env.DB.prepare("INSERT INTO posts (contest_id, contest_title, user_id, kind, title, body, created) VALUES (?, ?, ?, 'tip', ?, ?, ?)")
+          .bind('g:' + (g || 'all'), clean(body.contest_title, 120), u.id, text.slice(0, 40), text, now()).run();
+        return json(req, { id: r.meta.last_row_id });
+      }
+      let lk = p.match(/^\/api\/tips\/(\d+)\/like$/);
+      if (lk && req.method === 'POST') {
+        const u = await me(req, env); if (!u) return err(req, '로그인이 필요해요.', 401);
+        const ins = await env.DB.prepare('INSERT OR IGNORE INTO post_likes (user_id, post_id, created) VALUES (?, ?, ?)').bind(u.id, +lk[1], now()).run();
+        if (!ins.meta.changes) await env.DB.prepare('DELETE FROM post_likes WHERE user_id = ? AND post_id = ?').bind(u.id, +lk[1]).run();
+        return json(req, { liked: !!ins.meta.changes, likes: await count(env, 'SELECT COUNT(*) n FROM post_likes WHERE post_id = ?', +lk[1]) });
+      }
       // ---- 방문 기록 (자체 집계, 관리자 화면용) ----
       if (p === '/api/hit' && req.method === 'POST') {
         const ua = req.headers.get('User-Agent') || '';

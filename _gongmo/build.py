@@ -56,7 +56,7 @@ EV_KIND = {'event': '이벤트', 'sweepstakes': '추첨 경품', 'quiz': '퀴즈
            'sns_tag_required': '친구 태그', 'sns_story_required': '스토리 공유', 'sns_capture': '캡처 인증', 'sns_form_only': '폼 응모',
            'sns_comment+form': '댓글+폼', 'sns_purchase': '구매 인증', 'sns_region': '지역 한정', 'sns_other': 'SNS 이벤트'}
 
-COMM_TAGS_TPL = '<link rel="stylesheet" href="/assets/community/comm.css?v=10"><script defer src="/assets/community/comm.js?v=15"></script>'
+COMM_TAGS_TPL = '<link rel="stylesheet" href="/assets/community/comm.css?v=11"><script defer src="/assets/community/comm.js?v=16"></script>'
 GTAG = ('<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4248498719773262" crossorigin="anonymous"></script>\n'
         '<script async src="https://www.googletagmanager.com/gtag/js?id=G-G9BPFF95GY"></script>\n'
         "<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());if(location.hostname!=='sungprofile.cloud')window['ga-disable-G-G9BPFF95GY']=true;gtag('config','G-G9BPFF95GY');</script>")
@@ -97,7 +97,7 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False):
 {body}
 </main>
 <footer class="ft"><div class="w ft-in"><div class="ft-b"><img class="av" src="/assets/ruri/avatar.webp" width="56" height="56" alt="루리" loading="lazy"><div><b>루리의 줍줍</b><p>마감 놓치지 마세요! 매일 아침 새 공모전을 정리해 둘게요.</p><p class="ft-m">문의 <a href="mailto:{MAIL}">{MAIL}</a>{"" if PARTNER == MAIL else f' · 제휴 <a href="mailto:{PARTNER}">{PARTNER}</a>'}</p></div></div>
-<p class="ft-l"><a href="/about/">소개</a><a href="/qa/">고민 해결</a><a href="/guide/">응모 가이드</a><a href="/event/">경품 이벤트</a><a href="/privacy/">개인정보처리방침</a><a href="/terms/">이용약관</a><a href="/contact/">문의</a></p>
+<p class="ft-l"><a href="/about/">소개</a><a href="/prep/">준비실</a><a href="/qa/">고민 해결</a><a href="/guide/">응모 가이드</a><a href="/event/">경품 이벤트</a><a href="/privacy/">개인정보처리방침</a><a href="/terms/">이용약관</a><a href="/contact/">문의</a></p>
 <p class="ft-n">공모전 정보는 각 주최 기관의 공고를 바탕으로 정리했으며, 정확한 요강은 반드시 공식 공고에서 확인하세요. © 2026 루리의 줍줍 · sungprofile.cloud</p></div></footer>
 </body></html>'''
     d = os.path.join(ROOT, path.strip('/'))
@@ -441,7 +441,7 @@ def build():
     # 2026-10-17 사용자: 서비스 본질은 루리 추천 상담. 메인은 상담만, 외부 검색(지식인 등)은 상세 페이지로 받음
     home = f'''<h1 class="cs-h1">이 공모전이나 해 볼까? 루리 공모전 추천 상담</h1>
 <section id="consult" aria-label="루리 공모전 추천 상담"><noscript><p>루리 상담은 자바스크립트가 필요해요. 진행 중 공모전 {len(live)}건이 있어요.</p></noscript></section>
-{qa_home()}<a class="lab-cta" href="/lab/"><b>🏆 루리의 수상 연구소</b><span>공모전 수상작을 뜯어보고 당선 공식을 정리했어요 →</span></a><p class="cs-foot">진행 중 공모전 {len(live)}건의 마감일·상금·응모 자격·접수 방법과 공식 공고 캡처를 정리해 두고, 루리가 상황에 맞는 것만 골라 드려요.</p>
+{qa_home()}<a class="lab-cta prep-cta" href="/prep/"><b>📋 루리의 준비실</b><span>공모전 고르면 마감까지 할 일·체크리스트를 짜 드려요 · 장르별 꿀팁 →</span></a><a class="lab-cta" href="/lab/"><b>🏆 루리의 수상 연구소</b><span>공모전 수상작을 뜯어보고 당선 공식을 정리했어요 →</span></a><p class="cs-foot">진행 중 공모전 {len(live)}건의 마감일·상금·응모 자격·접수 방법과 공식 공고 캡처를 정리해 두고, 루리가 상황에 맞는 것만 골라 드려요.</p>
 <link rel="stylesheet" href="/assets/home/consult.css?v=6"><script defer src="/assets/home/consult.js?v=10"></script>'''
     page('/', '루리의 줍줍 — 이 공모전이나 해 볼까? 루리 공모전 추천 상담',
          f'진행 중인 공모전 {len(live)}건을 마감 임박순·상금순으로. 문학, 아이디어·정책, 디자인, 영상, 논문, IT, 해외 공모전과 경품 이벤트 정리.',
@@ -466,11 +466,12 @@ def build():
     build_ssul(ss, live, aps)
     guides(live)
     qa_pages(live)
+    prep_page()
     community(live)
     lab_urls = lab() or []
     me_pages()
     statics(len(live), len(events))
-    urls = ['/', '/apply/', '/event/', '/guide/', '/ssul/'] + lab_urls + [f'/ssul/{x["slug"]}/' for x in ss] + [f'/a/{a["id"]}/' for a in aps] + [f'/cat/{s}/' for s, _ in CATS] + [f'/guide/{g[0]}/' for g in GUIDES] + ['/qa/'] + [f'/guide/{q["slug"]}/' for q in QA] + \
+    urls = ['/', '/apply/', '/event/', '/guide/', '/ssul/'] + lab_urls + [f'/ssul/{x["slug"]}/' for x in ss] + [f'/a/{a["id"]}/' for a in aps] + [f'/cat/{s}/' for s, _ in CATS] + [f'/guide/{g[0]}/' for g in GUIDES] + ['/qa/', '/prep/'] + [f'/guide/{q["slug"]}/' for q in QA] + \
            ['/about/', '/privacy/', '/terms/', '/contact/'] + [f'/c/{c["id"]}/' for c in contests] + sorted((f'/v/{d}/' for d in os.listdir(os.path.join(ROOT, 'v')) if os.path.isfile(os.path.join(ROOT, 'v', d, 'index.html'))), key=lambda u: int(u.split('/')[2]) if u.split('/')[2].isdigit() else 0)
     global NEW_URLS
     sm = os.path.join(ROOT, 'sitemap.xml')
@@ -571,6 +572,21 @@ def build_ssul(ss, live, aps):
          f'''<p class="bc"><a href="/">홈</a> › 썰</p><section class="dh" data-c="guide"><span class="ic big">💬</span><h1>루리의 썰</h1><p class="lead">이야기 끝에 진짜 낼 수 있는 대회가 이어져요</p></section>
 {say("o_cardigan", "오늘은 무슨 얘기 해 볼까요? 재밌게 읽고, 마음에 드는 대회는 바로 넣어 봐요!")}<ul class="list">{li}</ul>''',
          [('루리의 줍줍', '/'), ('썰', '/ssul/')])
+
+
+def prep_page():
+    # 루리의 준비실 (2026-10-18 사용자: 공모전 준비할 사람들이 더 편하게 준비할 공간 + 꿀팁 공유)
+    G = json.load(open(os.path.join(ROOT, 'assets', 'prep', 'data.json'), encoding='utf-8'))['genres']
+    seed = ''.join(f'<li class="tp-ruri"><span class="tp-who">{g["icon"]} {E(g["name"])}</span><p>{E(x)}</p></li>' for g in G for x in g['tips'][:2])
+    body = f'''<p class="bc"><a href="/">홈</a> › 준비실</p><h1>📋 루리의 공모전 준비실</h1>
+{say("o_desk", "공모전 하나 고르면 마감일에 맞춰 할 일을 날짜별로 짜 드릴게요. 체크하면서 따라오기만 하면 돼요!")}
+<section id="prep" aria-label="공모전 준비 보드">
+<h2>🧰 준비 도구</h2><div class="pp-tools"><div class="pp-tool"><h3>📏 분량 계산기 <small>글자 수·원고지 매수·A4 쪽수</small></h3><div id="pp-count"><noscript>자바스크립트가 필요해요.</noscript></div></div>
+<div class="pp-links"><a href="/lab/#diag"><b>🏆 내 문구 진단</b>슬로건·네이밍을 수상작 공식과 비교</a><a href="/lab/"><b>🔬 수상 연구소</b>실제 수상작과 분석</a><a href="/community/"><b>🚩 원정대</b>같이 할 팀원 찾기</a><a href="/qa/"><b>💬 고민 해결</b>준비하다 막힌 것들</a></div></div>
+<section id="tips"><h2>🍯 장르별 공모전 꿀팁 <small>루리 팁 + 회원들이 직접 나눈 팁</small></h2><div class="tp-chips"></div><ul class="tp-list">{seed}</ul><div class="tp-form"></div></section>
+</section><link rel="stylesheet" href="/assets/prep/prep.css?v=1"><script defer src="/assets/prep/prep.js?v=1"></script>'''
+    page('/prep/', '루리의 공모전 준비실 — 마감 역산 일정·체크리스트·꿀팁', '공모전을 고르면 마감일에 맞춘 준비 일정과 장르별 체크리스트를 만들어 줘요. 슬로건·수기·디자인·영상·사진·정책 제안 꿀팁과 분량 계산기까지.',
+         body, [('루리의 줍줍', '/'), ('준비실', '/prep/')])
 
 
 def qa_card(q):
