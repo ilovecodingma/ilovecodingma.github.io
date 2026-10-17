@@ -56,7 +56,7 @@ EV_KIND = {'event': '이벤트', 'sweepstakes': '추첨 경품', 'quiz': '퀴즈
            'sns_tag_required': '친구 태그', 'sns_story_required': '스토리 공유', 'sns_capture': '캡처 인증', 'sns_form_only': '폼 응모',
            'sns_comment+form': '댓글+폼', 'sns_purchase': '구매 인증', 'sns_region': '지역 한정', 'sns_other': 'SNS 이벤트'}
 
-COMM_TAGS_TPL = '<link rel="stylesheet" href="/assets/community/comm.css?v=9"><script defer src="/assets/community/comm.js?v=12"></script>'
+COMM_TAGS_TPL = '<link rel="stylesheet" href="/assets/community/comm.css?v=9"><script defer src="/assets/community/comm.js?v=13"></script>'
 GTAG = ('<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4248498719773262" crossorigin="anonymous"></script>\n'
         '<script async src="https://www.googletagmanager.com/gtag/js?id=G-G9BPFF95GY"></script>\n'
         "<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());if(location.hostname!=='sungprofile.cloud')window['ga-disable-G-G9BPFF95GY']=true;gtag('config','G-G9BPFF95GY');</script>")
@@ -88,7 +88,7 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False):
 <meta name="theme-color" content="#5b21b6">
 <link rel="icon" href="/favicon.ico?v=5" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png?v=5"><link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png?v=5"><link rel="manifest" href="/site.webmanifest">
 <link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="/assets/gm.css?v=5"><link rel="stylesheet" href="/assets/chat/ruri-chat.css?v=5">{COMM_TAGS}<script type="module" src="/assets/chat/ruri-chat.js?v=8"></script>
+<link rel="stylesheet" href="/assets/gm.css?v=6"><link rel="stylesheet" href="/assets/chat/ruri-chat.css?v=5">{COMM_TAGS}<script type="module" src="/assets/chat/ruri-chat.js?v=8"></script>
 {ldh}
 {GTAG}
 </head><body{(' data-api="' + COMM_API + '"') if COMM_API else ''}>
@@ -250,6 +250,7 @@ def detail(c, live):
 <a class="btn" href="{E(c["link"])}" target="_blank" rel="noopener nofollow">공식 공고 보러 가기 →</a></div>
 <h2>한눈에 보기</h2><p>{E(summary)}</p>
 <h2>응모 전 체크리스트</h2><ul class="chk">{tips}</ul>
+{'<a class="lab-cta" href="/lab/#diag"><b>🏆 이런 공모전 수상작은 어떻게 생겼을까?</b><span>수상작 300여 개를 분석한 당선 공식과 내 문구 진단 →</span></a>' if re.search(r'슬로건|표어|네이밍|명칭|캐치프레이즈|삼행시|N행시|이행시|애칭', c['title']) else ''}
 <p class="note">분야: {catl}. 상금·자격·기간은 공고 원문에서 자동으로 정리한 값이라 오차가 있을 수 있습니다. 최종 기준은 주최 측 공식 공고입니다.</p>
 {f'<section id="cm-teams" data-contest="{c["id"]}" data-title="{E(c["title"])}"></section><section id="cm-board" data-contest="{c["id"]}" data-title="{E(c["title"])}"></section>' if COMM_API else ''}
 <h2>같은 분야 진행 중 공모전</h2><ul class="list">{simh or '<li class="empty">진행 중인 같은 분야 공모전이 없어요.</li>'}</ul>'''
@@ -435,7 +436,7 @@ def build():
     # 2026-10-17 사용자: 서비스 본질은 루리 추천 상담. 메인은 상담만, 외부 검색(지식인 등)은 상세 페이지로 받음
     home = f'''<h1 class="cs-h1">이 공모전이나 해 볼까? 루리 공모전 추천 상담</h1>
 <section id="consult" aria-label="루리 공모전 추천 상담"><noscript><p>루리 상담은 자바스크립트가 필요해요. 진행 중 공모전 {len(live)}건이 있어요.</p></noscript></section>
-<p class="cs-foot">진행 중 공모전 {len(live)}건의 마감일·상금·응모 자격·접수 방법과 공식 공고 캡처를 정리해 두고, 루리가 상황에 맞는 것만 골라 드려요.</p>
+<a class="lab-cta" href="/lab/"><b>🏆 루리의 수상 연구소</b><span>공모전 수상작을 뜯어보고 당선 공식을 정리했어요 →</span></a><p class="cs-foot">진행 중 공모전 {len(live)}건의 마감일·상금·응모 자격·접수 방법과 공식 공고 캡처를 정리해 두고, 루리가 상황에 맞는 것만 골라 드려요.</p>
 <link rel="stylesheet" href="/assets/home/consult.css?v=5"><script defer src="/assets/home/consult.js?v=7"></script>'''
     page('/', '루리의 줍줍 — 이 공모전이나 해 볼까? 루리 공모전 추천 상담',
          f'진행 중인 공모전 {len(live)}건을 마감 임박순·상금순으로. 문학, 아이디어·정책, 디자인, 영상, 논문, IT, 해외 공모전과 경품 이벤트 정리.',
@@ -460,6 +461,7 @@ def build():
     build_ssul(ss, live, aps)
     guides(live)
     community(live)
+    lab()
     statics(len(live), len(events))
     urls = ['/', '/apply/', '/event/', '/guide/', '/ssul/'] + [f'/ssul/{x["slug"]}/' for x in ss] + [f'/a/{a["id"]}/' for a in aps] + [f'/cat/{s}/' for s, _ in CATS] + [f'/guide/{g[0]}/' for g in GUIDES] + \
            ['/about/', '/privacy/', '/terms/', '/contact/'] + [f'/c/{c["id"]}/' for c in contests] + sorted((f'/v/{d}/' for d in os.listdir(os.path.join(ROOT, 'v')) if os.path.isfile(os.path.join(ROOT, 'v', d, 'index.html'))), key=lambda u: int(u.split('/')[2]) if u.split('/')[2].isdigit() else 0)
@@ -591,6 +593,15 @@ def community(live=()):
 <section id="cm-teams" data-all data-tab="team"></section>
 <section id="cm-board" data-all data-tab="board" hidden></section>
 <script defer src="/assets/community/vn.js?v=7"></script>''', [('루리의 줍줍', '/'), ('커뮤니티', '/community/')])
+
+
+def lab():
+    """루리의 수상 연구소 — 수상작 분석·당선 공식·내 문구 진단 (2026-10-17 사용자: 수상 전략으로)"""
+    if not os.path.exists(os.path.join(ROOT, 'winners.json')):
+        return
+    page('/lab/', '루리의 수상 연구소 — 공모전 수상작 분석·당선 공식', '공모전 슬로건·표어·네이밍 수상작을 모아 길이·구조·자주 쓰는 말을 분석하고, 내 문구를 수상작과 비교해 진단해 드려요.',
+         '''<section id="lab" aria-label="루리의 수상 연구소"><noscript>수상작 분석은 자바스크립트가 필요해요.</noscript></section>
+<link rel="stylesheet" href="/assets/lab/lab.css?v=1"><script defer src="/assets/lab/lab.js?v=1"></script>''', [('루리의 줍줍', '/'), ('수상 연구소', '/lab/')])
 
 
 def statics(nl, ne):
