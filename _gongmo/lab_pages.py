@@ -8,6 +8,8 @@ PAIRS = [('오늘', '내일'), ('나', '우리'), ('작은', '큰'), ('시작', 
 THEMEW = {'청렴': ['청렴', '정직', '투명', '신뢰', '공정', '깨끗'], '안전': ['안전', '확인', '점검', '생명', '지킴', '보호'], '인권': ['인권', '존중', '평등', '차별', '배려'],
           '출산육아': ['아이', '웃음', '가족', '육아', '결혼', '출산'], '비전': ['미래', '내일', '함께', '도약', '꿈', '세계'], '관광축제': ['여행', '축제', '설렘', '머무', '오세요'],
           '도시브랜드': ['도시', '행복', '살기', '품', '중심'], '기념일': ['신문', '한글', '독서', '읽'], '기업캠페인': ['고객', '마음', '행복', '함께']}
+ICON = {'대구': '↔️', '두 덩어리': '✂️', '대비어': '⚖️', '반복': '🔁', '운율': '🎵', '주제어': '🎯', '기관명': '🏢', '숫자': '🔢', '느낌표': '❗', '명사 마무리': '⏹️', '작명 의미': '💡'}
+COLS = ['대구', '두 덩어리', '대비어', '반복', '운율', '주제어', '기관명', '명사 마무리']
 RANKN = {1: '대상·최우수', 2: '우수', 3: '장려', 4: '입선', 5: '기타'}
 
 def chunks(p):
@@ -48,6 +50,16 @@ def anatomy(it, med):
     seg = ' <i>/</i> '.join(f'<span class="lw-c">{E(c)}</span>' for c in cs)
     return seg, tech, one
 
+def matrix(mx, med):
+    if not mx: return ''
+    cols = [c for c in COLS if any(c in t for _, t in mx)]
+    mxl = max([med] + [(r.get('f') or {}).get('len', 0) for r, _ in mx]) or 1
+    head = ''.join(f'<th title="{c}">{ICON[c]}<small>{c}</small></th>' for c in cols)
+    rows = ''.join(f'''<tr class="r{r["rk"]}"><td class="lm-n"><b>{E(r.get("gr") or RANKN.get(r["rk"], ""))}</b><span>{E(r["p"][:22])}{"…" if len(r["p"]) > 22 else ""}</span>
+<i class="lm-len" style="--w:{round((r.get("f") or {}).get("len", 0) / mxl * 100)}%"><em>{(r.get("f") or {}).get("len", "")}자</em></i></td>{"".join(f'<td>{"●" if c in t else ""}</td>' for c in cols)}</tr>''' for r, t in mx)
+    return f'<section class="lm"><h2>👀 한눈에 보기</h2><div class="lm-w"><table><tr><th>작품 <small>막대=길이 · 가운데 {med:g}자</small></th>{head}</tr>{rows}</table></div></section>'
+
+
 def compare(rows):
     """같은 공모전 안 등급 비교 한두 줄"""
     top = [r for r in rows if r['rk'] == 1]; low = [r for r in rows if r['rk'] >= 3]
@@ -72,16 +84,18 @@ def build(ROOT, page, say):
         rows.sort(key=lambda r: r['rk'])
         key = hashlib.md5(f'{c}|{o}|{y}'.encode()).hexdigest()[:8]; url = f'/lab/{key}/'; urls.append(url)
         g, th, n = rows[0].get('g'), rows[0].get('th'), next((r['n'] for r in rows if r.get('n')), None)
-        works = ''
+        works = ''; mx = []
         for r in rows:
             seg, tech, one = anatomy(r, med)
-            works += f'''<article class="lw-w r{r["rk"]}"><p class="lw-g">{E(r.get("gr") or RANKN.get(r["rk"], ""))}</p><p class="lw-p">{seg}</p>
-<ul class="lw-t">{"".join(f'<li><b>{E(t)}</b>{E(d)}</li>' for t, d in tech)}</ul><p class="lw-one">💬 루리: {E(one)}</p><a class="lw-src" href="{E(r["s"])}" target="_blank" rel="noopener nofollow">출처 보기</a></article>'''
+            badges = ''.join(f'<span class="lw-b" title="{E(d)}">{ICON.get(t, "•")} {E(t)}</span>' for t, d in tech if t != '길이')
+            works += f'''<article class="lw-w r{r["rk"]}"><p class="lw-g">{E(r.get("gr") or RANKN.get(r["rk"], ""))} <small>{(r.get("f") or {}).get("len", "")}자</small></p><p class="lw-p">{seg}</p>
+<p class="lw-bs">{badges}</p><details><summary>💬 {E(one)} <em>해설 펼치기</em></summary><ul class="lw-t">{"".join(f'<li><b>{E(t)}</b>{E(d)}</li>' for t, d in tech)}</ul><a class="lw-src" href="{E(r["s"])}" target="_blank" rel="noopener nofollow">출처 보기</a></details></article>'''
+            mx.append((r, {t for t, _ in tech}))
         cmp_ = compare(rows)
         body = f'''<p class="bc"><a href="/">홈</a> › <a href="/lab/">수상 연구소</a></p>
 <section class="lw-head"><p class="lw-k">{E(g)} · {E(th)}</p><h1>{E(c)}</h1><p>{E(o)}{f" · {y}년" if y else ""}{f" · 응모 {int(n):,}편" if n else ""} · 수상작 {len(rows)}개</p></section>
 {say('think', f'이 공모전에서 붙은 작품들을 하나씩 뜯어봤어요. {"응모 " + format(int(n), ",") + "편 중에서 뽑힌 문구예요. " if n else ""}어디가 달랐는지 같이 봐요!')}
-{f'<section class="lw-cmp"><h2>🥇 1등과 나머지는 뭐가 달랐을까</h2><ul>{cmp_}</ul></section>' if cmp_ else ''}
+{matrix(mx, med)}{f'<section class="lw-cmp"><h2>🥇 1등과 나머지는 뭐가 달랐을까</h2><ul>{cmp_}</ul></section>' if cmp_ else ''}
 <section class="lw-list">{works}</section>
 <a class="lab-cta" href="/lab/#diag"><b>🧪 내 문구도 이렇게 분석받기</b><span>수상작 패턴과 비교해 점수와 고칠 점을 알려 줘요 →</span></a>
 <p class="lb-foot">수상 문구는 주최 기관 발표·보도에서 짧게 인용했고 출처를 붙였어요. 수상자 정보는 싣지 않아요.</p>
@@ -98,7 +112,7 @@ def index_html(cards, D):
     def li(c): return (f'''<li class="lx" data-g="{E(c["g"])}" data-th="{E(c["th"])}"><a href="{c["url"]}"><span class="lx-m">{E(c["g"])} · {E(c["th"])} · {c["y"] or ""}</span>
 <q>{E(c["top"])}</q><span class="lx-c">{E(c["gr"])} · {E(c["c"])}</span><span class="lx-o">{E(c["o"])}{f" · 응모 {int(c['n']):,}편" if c["n"] else ""} · 수상작 {c["cnt"]}개 해설 →</span><span class="lx-one">💬 {E(c["one"])}</span></a></li>''')
     GEN = {'슬로건': '✍️ 슬로건', '표어': '📢 표어', '네이밍': '🏷️ 네이밍', '삼행시': '🎤 삼행시'}
-    secs = ''.join(f'<section class="lx-sec" id="g-{E(g)}"><h2>{GEN.get(g, g)} 수상작 <small>{sum(1 for c in cards if c["g"] == g)}개 공모전</small></h2><ol class="lx-list">' + ''.join(li(c) for c in cards if c['g'] == g) + '</ol></section>' for g in sorted({c['g'] for c in cards}, key=lambda g: ['슬로건', '표어', '네이밍', '삼행시'].index(g) if g in ['슬로건', '표어', '네이밍', '삼행시'] else 9))
+    secs = ''.join(f'<section class="lx-sec" id="g-{E(g)}"><h2>{GEN.get(g, g)} 수상작 <small>{sum(1 for c in cards if c["g"] == g)}개 공모전</small></h2><ol class="lx-list lx-row">' + ''.join(li(c) for c in cards if c['g'] == g) + '</ol></section>' for g in sorted({c['g'] for c in cards}, key=lambda g: ['슬로건', '표어', '네이밍', '삼행시'].index(g) if g in ['슬로건', '표어', '네이밍', '삼행시'] else 9))
     pct = lambda x: round((x or 0) * 100)
     return f'''<section class="lb-hero"><img src="/assets/ruri/p/office_think.webp" alt="루리" width="300" height="415"><div><p class="lb-kick">루리의 수상 연구소</p><h1>실제 수상작을 <em>한 편씩</em> 뜯어봤어요</h1>
 <p>공모전 <b>{len(cards)}개</b>, 수상작 <b>{D["count"]}개</b>. 작품마다 왜 붙었는지 해설을 달았어요.</p></div></section>
