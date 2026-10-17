@@ -54,7 +54,7 @@
     const dl = e => { const p = e.split('-'), n = new Date(); return Math.round((Date.UTC(+p[0], p[1] - 1, +p[2]) - Date.UTC(n.getFullYear(), n.getMonth(), n.getDate())) / 864e5); };
     const fl = favs.map(f => ({ ...f, l: dl(f.end) })).filter(f => f.l >= 0).sort((a, b) => a.l - b.l).slice(0, 5);
     b.innerHTML = st.t ? `<button class="cm-me">${esc(st.n)} ▾</button><div class="cm-menu" hidden>
-<a href="/community/">🚩 원정대</a><a href="/lab/">🏆 수상 연구소</a><a href="/community/#dress">🎀 루리 꾸미기</a>
+<a href="/me/">🏠 내 공간 <small>찜·응모 기록·알림</small></a><a href="/community/">🚩 원정대</a><a href="/lab/">🏆 수상 연구소</a><a href="/community/#dress">🎀 루리 꾸미기</a>
 <b>⭐ 찜한 공모전</b>${fl.length ? fl.map(f => `<a class="cm-fv" href="/c/${esc(f.id)}/"><em>${f.l ? 'D-' + f.l : 'D-DAY'}</em>${esc(f.title)}</a>`).join('') : '<p>챗봇 카드의 ☆로 찜해 두면 여기 모여요.</p>'}
 <button class="cm-out">로그아웃</button></div>` : '<button class="cm-in">로그인</button>';
     const me = b.querySelector('.cm-me'), menu = b.querySelector('.cm-menu');
@@ -339,6 +339,30 @@ ${album}<div class="cm-acts"><button class="tm-share">링크 복사</button>${st
   new MutationObserver(ms => ms.forEach(m => { if (m.type === 'attributes') wearOne(m.target); else m.addedNodes.forEach(n => { if (n.nodeType === 1) { if (n.tagName === 'IMG') wearOne(n); else n.querySelectorAll && n.querySelectorAll('img[src^="/assets/ruri/"]').forEach(wearOne); } }); }))
     .observe(document.body, { subtree: true, childList: true, attributes: true, attributeFilter: ['src'] });
   fetch('/assets/ruri/poses.json').then(r => r.ok ? r.json() : null).catch(() => null).then(j => { POSES = j; wearAll(); }); syncPrefs();
+  // ---- 찜·냈어요 (상세 페이지 .my-acts, 챗봇 찜) → 로그인하면 계정에 저장 ----
+  const FAVK = 'jupjup_fav_v1', lfav = () => { try { return JSON.parse(localStorage.getItem(FAVK) || '[]'); } catch { return []; } };
+  const lfavSet = l => { try { localStorage.setItem(FAVK, JSON.stringify(l)); } catch {} };
+  const pushItem = it => st.t ? api('/api/items', { method: 'POST', body: it }).catch(() => {}) : Promise.resolve();
+  addEventListener('jj-fav', e => { const { i, on } = e.detail || {}; if (i) pushItem({ id: 'c:' + i.id, title: i.title, end: i.end, fav: on ? 1 : 0 }); });
+  async function syncFav() {
+    if (!st.t) return; let last = 0; try { last = +localStorage.getItem('jupjup_fav_t') || 0; } catch {}
+    if (Date.now() - last < 6e5) return;
+    const r = await api('/api/items').catch(() => null); if (!r) return;
+    const loc = lfav(), srv = r.items.filter(x => x.fav && x.id.startsWith('c:')).map(x => ({ id: x.id.slice(2), title: x.title, end: x.end }));
+    const up = loc.filter(l => !srv.some(s => s.id === l.id)); if (up.length) pushItem({ items: up.map(l => ({ id: 'c:' + l.id, title: l.title, end: l.end, fav: 1 })) });
+    lfavSet([...srv, ...up]); try { localStorage.setItem('jupjup_fav_t', Date.now()); } catch {}
+  }
+  async function myActs(el) {
+    const id = el.dataset.id, title = el.dataset.title, end = el.dataset.end;
+    let cur = { fav: lfav().some(f => 'c:' + f.id === id) ? 1 : 0, state: '' };
+    if (st.t) { const r = await api('/api/items').catch(() => null); const x = r && r.items.find(x => x.id === id); if (x) cur = x; }
+    const paint = () => { el.innerHTML = `<button class="ma-fav${cur.fav ? ' on' : ''}">${cur.fav ? '⭐ 찜함 · 마감 알림 받는 중' : '☆ 찜하고 마감 알림 받기'}</button><button class="ma-app${cur.state ? ' on' : ''}">${{ '': '✅ 냈어요', applied: '✅ 냈어요 기록됨', won: '🏆 당첨!', lost: '😢 아쉬움' }[cur.state] || '✅ 냈어요'}</button>${st.t ? '' : '<small>로그인하면 폰·PC 어디서든 기록되고, 마감 3일 전에 메일로 알려 줘요.</small>'}`;
+      el.querySelector('.ma-fav').onclick = () => { if (!st.t) return authModal(() => location.reload()); cur.fav = cur.fav ? 0 : 1; pushItem({ id, title, end, fav: cur.fav });
+        const l = lfav().filter(f => 'c:' + f.id !== id); if (cur.fav && id.startsWith('c:')) l.push({ id: id.slice(2), title, end }); lfavSet(l); ga(cur.fav ? 'fav_add' : 'fav_remove', { id }); paint(); };
+      el.querySelector('.ma-app').onclick = () => { if (!st.t) return authModal(() => location.reload()); cur.state = cur.state ? '' : 'applied'; pushItem({ id, title, end, state: cur.state }); ga('applied', { id, on: !!cur.state }); paint(); }; };
+    paint();
+  }
+  syncFav(); document.querySelectorAll('.my-acts').forEach(myActs);
   paintBar();
   document.querySelectorAll('#cm-teams').forEach(teams);
   document.querySelectorAll('#cm-board').forEach(board);

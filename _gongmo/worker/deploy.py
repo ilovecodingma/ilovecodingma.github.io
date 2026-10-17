@@ -11,7 +11,7 @@ NAME, DBNAME = 'jupjup-api', 'jupjup'
 
 def cred():
     try:  # OAuth 자동 갱신 (~/remote_login/cf_token.py)
-        sys.path.insert(0, os.path.expanduser('~/remote_login')); import cf_token; return cf_token.get()
+        sys.path.insert(0, os.path.expanduser('~/remote_login')); import cf_token; return cf_token.get(force=True)
     except Exception as e:
         print('토큰 자동 갱신 실패, 금고 값 사용:', e)
     ps = ("$c = Import-Clixml \"$env:USERPROFILE\\.cloudflare.xml\"; "

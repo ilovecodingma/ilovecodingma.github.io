@@ -211,7 +211,7 @@ function ui() {
   // 카드의 찜·캘린더 버튼 (이벤트 위임)
   log.addEventListener('click', e => {
     const f = e.target.closest('[data-fav]'), c = e.target.closest('[data-cal]');
-    if (f) { const i = byId(f.dataset.fav); if (!i) return; const on = fav.toggle(i); if (on) ga('fav_add', { contest_id: i.id }); log.querySelectorAll(`[data-fav="${i.id}"]`).forEach(x => { x.classList.toggle('on', on); x.textContent = on ? '★' : '☆'; }); badge(); }
+    if (f) { const i = byId(f.dataset.fav); if (!i) return; const on = fav.toggle(i); dispatchEvent(new CustomEvent('jj-fav', { detail: { i, on } })); if (on) ga('fav_add', { contest_id: i.id }); log.querySelectorAll(`[data-fav="${i.id}"]`).forEach(x => { x.classList.toggle('on', on); x.textContent = on ? '★' : '☆'; }); badge(); }
     if (c) { const i = byId(c.dataset.cal); if (i) { ics(i); ga('calendar_add', { contest_id: i.id }); } }
   });
   const urgent = () => fav.get().map(x => ({ ...x, left: dn(x.end) - today })).filter(x => x.left >= 0 && x.left <= 3).sort((a, b) => a.left - b.left);

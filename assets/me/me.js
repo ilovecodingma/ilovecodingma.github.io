@@ -1,0 +1,63 @@
+// 루리의 줍줍 「내 공간」(/me/) — 가입 혜택을 한곳에: 찜·응모 기록·마감 알림·자격 프로필·청약 가점·문구 진단 기록 (2026-10-17)
+// 공모전·청약·지원금·경품 공통 (item id: c:<공모전> / a:<청약> / e:<경품>)
+(function () {
+  const M = document.getElementById('me'), J = window.JUP; if (!M || !J) return;
+  const esc = J.esc, today = (() => { const n = new Date(); return Math.round(Date.UTC(n.getFullYear(), n.getMonth(), n.getDate()) / 864e5); })();
+  const left = e => { if (!e) return null; const p = e.split('-'); return Math.round(Date.UTC(+p[0], p[1] - 1, +p[2]) / 864e5) - today; };
+  const link = id => id.startsWith('c:') ? `/c/${id.slice(2)}/` : id.startsWith('a:') ? `/a/${id.slice(2)}/` : '#';
+  const STATE = { '': '찜', applied: '✅ 냈어요', won: '🏆 당첨', lost: '😢 아쉬움' };
+  if (!J.st.t) {
+    M.innerHTML = `<section class="me-hero"><img src="/assets/ruri/p/office_wave.webp" alt="" width="300" height="415"><div><h1>가입하면 루리가 챙겨 줘요</h1>
+<ul class="me-ben"><li>🔔 <b>마감 알림 메일</b> — 찜한 공모전·청약 마감 3일 전과 당일</li><li>⭐ <b>찜·응모 기록</b> — 폰·PC 어디서든, 냈어요 → 당첨까지</li><li>🎯 <b>자격 맞춤 추천</b> — 나이·지역·신분에 안 맞는 건 자동으로 빼요</li>
+<li>🏠 <b>청약 가점 계산·저장</b></li><li>🏆 <b>수상작 전체 보기 + 내 문구 진단 기록</b></li><li>🎀 <b>루리 꾸미기 · 🚩 원정대</b></li></ul>
+<button class="btn2 me-join">구글·카카오·이메일로 1초 가입</button></div></section>`;
+    M.querySelector('.me-join').onclick = () => J.authModal(() => location.reload()); return;
+  }
+  M.innerHTML = '<p class="note">불러오는 중…</p>';
+  Promise.all([J.api('/api/items').catch(() => ({ items: [] })), J.api('/api/me').catch(() => ({}))]).then(([it, me]) => {
+    const items = it.items || [], P = me.prefs || {};
+    const save = data => J.api('/api/prefs', { method: 'POST', body: { data: { ...P, ...data } } }).then(() => Object.assign(P, data));
+    const lab = (() => { try { return JSON.parse(localStorage.getItem('jupjup_lab') || '[]'); } catch { return []; } })();
+    const soon = items.filter(x => x.fav && x.state === '' && (left(x.end) ?? 99) >= 0).sort((a, b) => (left(a.end) ?? 999) - (left(b.end) ?? 999));
+    const rec = items.filter(x => x.state), won = rec.filter(x => x.state === 'won').length;
+    M.innerHTML = `<section class="me-top"><img src="${J.poseSrc ? J.poseSrc(P.o && P.o !== 'smile' ? P.o.replace(/^o_/, '') : 'office', 'wave', false) || '/assets/ruri/p/office_wave.webp' : '/assets/ruri/p/office_wave.webp'}" alt="" width="300" height="415">
+<div><h1>${esc(me.nick || J.st.n)}의 공간</h1><p class="me-stat"><span><b>${soon.length}</b>찜</span><span><b>${rec.length}</b>냈어요</span><span><b>${won}</b>당첨</span><span><b>${(me.visits || 0) + (me.invites || 0) * 3}</b>초대 점수</span></p></div></section>
+<section class="me-sec"><h2>🔔 마감 알림</h2><label class="me-sw"><input type="checkbox" class="me-alert" ${P.alert === '1' ? 'checked' : ''}> 찜한 것 마감 3일 전·당일에 메일 받기</label>
+<p class="note">받는 곳: ${esc(me.email || '가입 이메일')} · 매일 아침 8시 · 끄면 바로 멈춰요</p></section>
+<section class="me-sec"><h2>⭐ 찜 <small>마감 임박순</small></h2><ul class="me-list">${soon.map(x => row(x)).join('') || '<li class="note">아직 찜한 게 없어요. 공모전·청약 상세 페이지나 루리 추천에서 ⭐를 눌러 보세요.</li>'}</ul></section>
+<section class="me-sec"><h2>📒 응모 기록</h2><ul class="me-list">${rec.map(x => row(x, true)).join('') || '<li class="note">상세 페이지에서 「✅ 냈어요」를 누르면 여기 쌓여요. 발표 나면 당첨/아쉬움을 골라 두세요.</li>'}</ul></section>
+<section class="me-sec"><h2>🎯 자격 프로필 <small>추천에서 안 맞는 건 빼요</small></h2><div class="me-prof">
+<label>나이대 <select data-k="age">${['선택 안 함', '10대', '20대', '30대', '40대', '50대 이상'].map(v => `<option${P.age === v ? ' selected' : ''}>${v}</option>`).join('')}</select></label>
+<label>사는 곳 <select data-k="region">${['선택 안 함', '서울', '경기', '인천', '부산', '대구', '광주', '대전', '울산', '세종', '강원', '충북', '충남', '전북', '전남', '경북', '경남', '제주'].map(v => `<option${P.region === v ? ' selected' : ''}>${v}</option>`).join('')}</select></label>
+<label>신분 <select data-k="role">${['선택 안 함', '초중고 학생', '대학생', '직장인', '구직·프리랜서', '주부', '기타'].map(v => `<option${P.role === v ? ' selected' : ''}>${v}</option>`).join('')}</select></label>
+<label>주택 <select data-k="house">${['선택 안 함', '무주택', '1주택', '다주택'].map(v => `<option${P.house === v ? ' selected' : ''}>${v}</option>`).join('')}</select></label></div><p class="note me-saved"></p></section>
+<section class="me-sec" id="gajum"><h2>🏠 청약 가점 계산기 <small>84점 만점</small></h2><div class="me-gj">
+<label>무주택 기간 <select data-g="h">${['1년 미만', ...Array.from({ length: 14 }, (_, i) => `${i + 1}년 이상`), '15년 이상'].map((v, i) => `<option value="${i}">${v}</option>`).join('')}</select></label>
+<label>부양가족 수 <select data-g="f">${['0명', '1명', '2명', '3명', '4명', '5명', '6명 이상'].map((v, i) => `<option value="${i}">${v}</option>`).join('')}</select></label>
+<label>청약통장 가입 기간 <select data-g="b">${['6개월 미만', '6개월~1년', ...Array.from({ length: 14 }, (_, i) => `${i + 1}년 이상`), '15년 이상'].map((v, i) => `<option value="${i}">${v}</option>`).join('')}</select></label></div>
+<div class="me-gjr"><b class="me-gs">0점</b><span class="me-gd"></span></div><p class="note">무주택 2점×기간(최대 32) + 부양가족 5점×(인원+1)(최대 35) + 통장 기간(최대 17). 실제 판정은 청약홈 기준이에요.</p></section>
+<section class="me-sec"><h2>🏆 내 문구 진단 기록</h2><ul class="me-list">${lab.map(h => `<li><q>${esc(h.q)}</q> <b>${h.score}점</b> <small>${esc(h.th || '')}</small></li>`).join('') || '<li class="note"><a href="/lab/#diag">수상 연구소</a>에서 문구를 진단하면 여기 남아요.</li>'}</ul></section>
+<section class="me-sec me-links"><a href="/community/">🚩 원정대</a><a href="/community/#dress">🎀 루리 꾸미기</a><a href="/lab/">🏆 수상 연구소</a><a href="/">💬 루리 상담</a></section>`;
+    function row(x, rec) {
+      const l = left(x.end);
+      return `<li data-id="${esc(x.id)}"><a href="${link(x.id)}">${esc(x.title || x.id)}</a><small>${l === null ? '' : l < 0 ? '마감' : l ? 'D-' + l : 'D-DAY'}</small>
+<span class="me-st">${rec ? ['applied', 'won', 'lost'].map(s => `<button data-s="${s}" class="${x.state === s ? 'on' : ''}">${STATE[s]}</button>`).join('') : `<button data-s="applied">✅ 냈어요</button><button data-unfav>☆ 빼기</button>`}</span></li>`;
+    }
+    M.querySelectorAll('.me-list [data-s],.me-list [data-unfav]').forEach(b => b.onclick = async () => {
+      const id = b.closest('li').dataset.id;
+      await J.api('/api/items', { method: 'POST', body: b.dataset.s ? { id, state: b.dataset.s } : { id, fav: 0 } }); location.reload();
+    });
+    M.querySelector('.me-alert').onchange = e => save({ alert: e.target.checked ? '1' : '0' }).then(() => J.ga && J.ga('alert_toggle', { on: e.target.checked }));
+    M.querySelectorAll('.me-prof select').forEach(s => s.onchange = () => save({ [s.dataset.k]: s.value === '선택 안 함' ? '' : s.value }).then(() => { M.querySelector('.me-saved').textContent = '저장했어요. 루리 추천에 바로 반영돼요.'; }));
+    // 가점
+    const g = { h: +(P.gh || 0), f: +(P.gf || 0), b: +(P.gb || 0) };
+    M.querySelectorAll('[data-g]').forEach(s => { s.value = g[s.dataset.g]; s.onchange = () => { g[s.dataset.g] = +s.value; calc(true); }; });
+    function calc(store) {
+      const H = g.h === 0 ? 2 : Math.min(32, 2 * (g.h + 1)), F = Math.min(35, 5 * (g.f + 1)), B = Math.min(17, g.b + 1), S = H + F + B;
+      M.querySelector('.me-gs').textContent = S + '점';
+      M.querySelector('.me-gd').textContent = `무주택 ${H} · 부양가족 ${F} · 통장 ${B} — ${S >= 60 ? '수도권 인기 단지도 노려볼 만해요' : S >= 45 ? '지방·비인기 단지 일반공급에 유리해요' : '추첨제·특별공급(신혼·청년)을 같이 보세요'}`;
+      if (store) save({ gh: String(g.h), gf: String(g.f), gb: String(g.b), gajum: String(S) });
+    }
+    calc(false);
+  });
+})();

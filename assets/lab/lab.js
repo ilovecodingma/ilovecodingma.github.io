@@ -25,18 +25,8 @@
     const A = D.all, T = D.top || A, R = D.rest || A, items = D.items;
     const themes = Object.keys(D.theme || {}), lift = Object.keys(FEAT).map(k => ({ k, top: T.rate[k] || 0, rest: R.rate[k] || 0, all: A.rate[k] || 0 })).sort((a, b) => b.all - a.all);
     const best = lift.filter(x => x.top > x.rest + 0.05).sort((a, b) => (b.top - b.rest) - (a.top - a.rest)).slice(0, 2);
-    L.innerHTML = `<section class="lb-hero"><img src="${pose('think')}" alt="루리" width="300" height="415"><div><p class="lb-kick">루리의 수상 연구소</p><h1>떨어지는 문구와 <em>붙는 문구</em>는 뭐가 다를까?</h1>
-<p>공모전 <b>${D.contests}개</b>의 수상작 <b>${D.count}개</b>를 뜯어봤어요. 슬로건·표어·네이밍부터 시작해요. (길이·기법 통계는 슬로건·표어 ${A.n}개 기준)</p></div></section>
-<section class="lb-sec"><h2>🔍 당선 공식</h2><div class="lb-grid">
-<div class="lb-card big"><b>길이</b><p class="lb-num">공백 빼고 <em>${A.len_p25}~${A.len_p75}자</em></p><p class="note">가운데 값 ${A.len_med}자 · 1등만 보면 ${T.len_med}자</p></div>
-${best.length ? `<div class="lb-card big"><b>1등의 차이</b>${best.map(x => `<p class="lb-num"><em>${FEAT[x.k][0]}</em> ${pct(x.top)}% <small>(나머지 ${pct(x.rest)}%)</small></p>`).join('')}<p class="note">대상·최우수가 장려·입선보다 더 많이 쓴 기법</p></div>` : ''}
-${D.naming ? `<div class="lb-card big"><b>네이밍 당선 이름</b><p class="lb-num">평균 <em>${D.naming.len_med}자</em></p><p class="note">짧고 부르기 쉬운 이름이 붙어요 · 수상 ${D.naming.n}개</p></div>` : ''}<div class="lb-card wide"><b>수상작이 자주 쓰는 기법</b>${lift.map(x => `<div class="lb-bar"><span>${FEAT[x.k][0]}</span><i style="--w:${pct(x.all)}%"></i><em>${pct(x.all)}%</em></div>`).join('')}</div></div></section>
-<section class="lb-sec" id="diag"><h2>🧪 내 문구 진단</h2><div class="lb-diag"><div class="lb-in"><select class="lb-th"><option value="">주제(선택)</option>${themes.map(t => `<option>${esc(t)}</option>`).join('')}</select>
-<input class="lb-q" maxlength="60" placeholder="응모할 슬로건·표어를 써 보세요"><button class="btn2 lb-go">진단받기</button></div><div class="lb-out"></div></div></section>
-${themes.length ? `<section class="lb-sec"><h2>🗂 주제별로 자주 나온 말</h2><div class="lb-themes">${themes.map(t => `<div class="lb-card"><b>${esc(t)}</b> <small>${D.theme[t].n}개</small><p>${D.theme[t].words.slice(0, 8).map(w => `<span class="lb-w">${esc(w[0])}</span>`).join('')}</p></div>`).join('')}</div></section>` : ''}
-<section class="lb-sec"><h2>📚 수상작 모음</h2><div class="lb-filter"></div><ol class="lb-list"></ol><div class="lb-gate" hidden></div></section>
-<p class="lb-foot">수상 문구는 주최 기관 발표·보도에서 짧게 인용했고, 모두 출처를 붙였어요. 저작권과 수상자 정보는 원문을 따라요.</p>`;
-
+    L.innerHTML = `<h2>🧪 내 문구 진단</h2><div class="lb-diag" id="diag"><div class="lb-in"><select class="lb-th"><option value="">주제(선택)</option>${themes.map(t => `<option>${esc(t)}</option>`).join('')}</select>
+<input class="lb-q" maxlength="60" placeholder="응모할 슬로건·표어를 써 보세요"><button class="btn2 lb-go">진단받기</button></div><div class="lb-out"></div></div>`;
     // 진단
     const out = L.querySelector('.lb-out');
     L.querySelector('.lb-go').onclick = () => {
@@ -57,21 +47,6 @@ ${themes.length ? `<section class="lb-sec"><h2>🗂 주제별로 자주 나온 �
     };
     L.querySelector('.lb-q').addEventListener('keydown', e => { if (e.key === 'Enter') L.querySelector('.lb-go').click(); });
 
-    // 모음 (비회원은 30개까지, 가입하면 전부)
-    const FREE = 30; let fg = '', fth = '';
-    const filter = L.querySelector('.lb-filter'), list = L.querySelector('.lb-list'), gate = L.querySelector('.lb-gate');
-    const genres = [...new Set(items.map(i => i.g))];
-    filter.innerHTML = `<button data-g="" class="on">전체</button>${genres.map(g => `<button data-g="${esc(g)}">${esc(g)}</button>`).join('')}<select class="lb-fth"><option value="">주제 전체</option>${[...new Set(items.map(i => i.th))].map(t => `<option>${esc(t)}</option>`).join('')}</select>`;
-    const draw = () => {
-      const all = items.filter(i => (!fg || i.g === fg) && (!fth || i.th === fth)), shown = tok() ? all : all.slice(0, FREE);
-      list.innerHTML = shown.map(i => `<li class="lb-it r${i.rk}"><q>${esc(i.p)}</q>${i.m ? `<p class="lb-m">💡 ${esc(i.m)}</p>` : ''}<small><b>${esc(i.gr || '수상')}</b> · ${esc(i.c)} · ${esc(i.o)}${i.y ? ' · ' + i.y : ''}${i.n ? ` · ${Number(i.n).toLocaleString()}편 중` : ''} · <a href="${esc(i.s)}" target="_blank" rel="noopener nofollow">출처</a></small></li>`).join('');
-      gate.hidden = !!tok() || all.length <= FREE;
-      gate.innerHTML = `<p>🔒 수상작 <b>${all.length - FREE}개</b> 더 있어요. 무료 가입하면 전부 보고, 내 문구 진단 기록도 저장돼요.</p><button class="btn2 lb-join">구글·이메일로 1초 가입</button>`;
-      const j = gate.querySelector('.lb-join'); if (j) j.onclick = () => { const b = document.querySelector('.cm-in'); b ? b.click() : location.href = '/community/'; };
-    };
-    filter.querySelectorAll('[data-g]').forEach(b => b.onclick = () => { fg = b.dataset.g; filter.querySelectorAll('[data-g]').forEach(x => x.classList.toggle('on', x === b)); draw(); });
-    filter.querySelector('.lb-fth').onchange = e => { fth = e.target.value; draw(); };
-    draw();
-    const qs = new URLSearchParams(location.search).get('theme'); if (qs && D.theme[qs]) { L.querySelector('.lb-th').value = qs; fth = qs; filter.querySelector('.lb-fth').value = qs; draw(); }
+    const qs = new URLSearchParams(location.search).get('theme'); if (qs && D.theme[qs]) L.querySelector('.lb-th').value = qs;
   }).catch(() => { L.innerHTML = '<p class="note">연구소 자료를 불러오지 못했어요.</p>'; });
 })();
