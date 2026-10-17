@@ -509,6 +509,9 @@ GUIDES = [
 <h2>당첨 사칭 주의</h2><p>"당첨되었으니 수수료나 세금을 먼저 입금하라"는 연락은 사기일 가능성이 높습니다. 정상적인 공모전은 상금에서 세금을 공제하고 지급하며, 응모자에게 먼저 돈을 보내라고 하지 않습니다. 발표는 반드시 주최 기관의 공식 홈페이지나 공식 SNS 계정에서 다시 확인하세요.</p>
 <h2>발표 확인</h2><p>발표일을 메모해 두고, 발표 방법(홈페이지 게시, 개별 연락, SNS 댓글)을 확인해 두세요. 연락이 닿지 않으면 수상이 취소되는 공모전도 있습니다.</p>'''),
 ]
+_GX = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'guides_extra.json')  # 지식인 고민 해결 글(연구 세션이 추가)
+if os.path.exists(_GX):
+    GUIDES += [tuple(g) for g in json.load(open(_GX, encoding='utf-8'))]
 
 
 # ---- 썰 코너 (본문은 공모전 세션이 바탕화면 공모전_2026\daily\ssul\<slug>.md 로 씀) ----
