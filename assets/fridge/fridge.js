@@ -46,14 +46,18 @@
       c.getContext('2d').drawImage(im, 0, 0, c.width, c.height); URL.revokeObjectURL(im.src);
       let tk = ''; try { tk = localStorage.getItem('jupjup_tok') || ''; } catch {}
       try {
-        const res = await fetch(API + '/api/fridge-scan', { method: 'POST', headers: { 'Content-Type': 'application/json', ...(tk ? { Authorization: 'Bearer ' + tk } : {}) }, body: JSON.stringify({ image: c.toDataURL('image/jpeg', 0.8) }) });
+        const ac = new AbortController(), to = setTimeout(() => ac.abort(), 25000);
+        const res = await fetch(API + '/api/fridge-scan', { signal: ac.signal, method: 'POST', headers: { 'Content-Type': 'application/json', ...(tk ? { Authorization: 'Bearer ' + tk } : {}) }, body: JSON.stringify({ image: c.toDataURL('image/jpeg', 0.8) }) });
+        clearTimeout(to);
         const d = await res.json().catch(() => ({})); if (!res.ok) throw new Error(d.error || '사진을 잘 못 봤어요.');
         const nw = d.found.filter(x => !have.has(x)); d.found.forEach(x => have.add(x)); save(); paint(); ga('fridge_scan', { found: d.found.length });
         const m2 = ROOT.querySelector('.fr-scan'); m2.hidden = false; m2.className = 'fr-scan ok';
         m2.innerHTML = d.found.length ? `📸 사진에서 <b>${d.found.map(esc).join(', ')}</b>${nw.length < d.found.length ? '' : ''}을(를) 찾았어요! 틀린 건 눌러서 빼고, 빠진 건 더 눌러 주세요.` : '🤔 사진에서 재료를 못 찾았어요. 밝은 곳에서 가까이 찍거나, 아래에서 직접 눌러 주세요.';
         nw.forEach(x => { const b = ROOT.querySelector(`[data-i="${x}"]`); if (b) b.classList.add('new'); });
-      } catch (e) { msg.className = 'fr-scan err'; msg.textContent = e.message; }
-    }; im.src = URL.createObjectURL(f);
+      } catch (e) { msg.className = 'fr-scan err'; msg.textContent = e.name === 'AbortError' ? '사진 인식이 너무 오래 걸려요. 잠시 뒤 다시 하거나 재료를 직접 눌러 주세요.' : /fetch|network/i.test(e.message) ? '인터넷 연결이 불안정해요. 다시 해 보거나 재료를 직접 눌러 주세요.' : e.message; }
+      ROOT.querySelector('.fr-cam input').value = '';
+    }; im.onerror = () => { msg.className = 'fr-scan err'; msg.textContent = '이 사진은 열 수 없어요(HEIC 같은 형식일 수 있어요). 카메라로 바로 찍거나 JPG 사진으로 다시 골라 주세요. 재료는 아래에서 직접 눌러도 돼요.'; };
+    im.src = URL.createObjectURL(f);
   }
   let gaT;
   function result() {
