@@ -255,6 +255,14 @@ def main():
         price = {x['market'][4:]: {'p': x['trade_price'], 'chg': round(x['signed_change_rate'] * 100, 2)} for x in r}
     except Exception:
         pass
+    hist = {}
+    for sym in COINS:  # 업비트 공개 API 일봉 30일(차트용)
+        try:
+            r = requests.get('https://api.upbit.com/v1/candles/days', params={'market': 'KRW-' + sym, 'count': 30}, timeout=15).json()
+            hist[sym] = [[x['candle_date_time_kst'][:10], x['trade_price']] for x in reversed(r)]
+            time.sleep(0.15)
+        except Exception:
+            pass
     coins = []
     for sym, (kn, _) in COINS.items():
         ns = sorted([n for n in C if n['sym'] == sym], key=lambda n: -n['ts'])
@@ -268,7 +276,7 @@ def main():
                         rs.setdefault(r, []).append(n['who'] or n['o'])
             tree[d] = sorted([[r, sorted(set(w))[:6], len(w)] for r, w in rs.items()], key=lambda x: -x[2])
         tg = [n['tgt'] for n in ns if n.get('tgt')]
-        coins.append({'sym': sym, 'name': kn, 'bull': bu, 'bear': be, 'neutral': ne, 'n': len(ns), 'price': price.get(sym), 'tgt': [min(tg), max(tg)] if tg else None, 'tree': tree,
+        coins.append({'hist': hist.get(sym, []), 'sym': sym, 'name': kn, 'bull': bu, 'bear': be, 'neutral': ne, 'n': len(ns), 'price': price.get(sym), 'tgt': [min(tg), max(tg)] if tg else None, 'tree': tree,
                       'nodes': [{k: n.get(k) for k in ('dir', 'who', 'tgt', 'rs', 't', 'u', 'o', 'ts')} for n in ns[:20]]})
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
     json.dump({'updated': datetime.datetime.now(KST).strftime('%Y-%m-%d %H:%M'), 'stocks': stocks, 'coins': coins},

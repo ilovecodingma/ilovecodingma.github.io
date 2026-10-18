@@ -4,7 +4,7 @@
 사용: python _gongmo/build.py [--push]
 원본: 바탕화면 공모전_2026/주말큐_master.jsonl + _gongmo/txt/<id>.txt(공고 본문 캐시, 비공개)
 """
-import json, os, re, sys, html, shutil, datetime, subprocess, hashlib
+import json, os, re, sys, html, shutil, datetime, subprocess, hashlib, time
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import parse as P
 
@@ -842,6 +842,75 @@ def an_nodes(nodes, coin=False):
     return f'<ul class="an-nodes">{li}</ul>'
 
 
+DCOL = {'up': '#ef4444', 'bull': '#ef4444', 'down': '#3b82f6', 'bear': '#3b82f6', 'keep': '#94a3b8', 'neutral': '#94a3b8'}
+
+
+def kdate_of(ts):
+    return datetime.datetime.fromtimestamp(ts, datetime.timezone(datetime.timedelta(hours=9))).strftime('%Y-%m-%d')
+
+
+def coin_svg(c):
+    """30일 종가 선 + 전망 기사가 나온 날 강세(빨강)·약세(파랑)·혼조(회색) 점을 겹친다."""
+    h = c.get('hist') or []
+    if len(h) < 5:
+        return ''
+    W, H, L, R, T, B = 640, 250, 70, 14, 16, 34
+    ps = [v for _, v in h]
+    lo, hi = min(ps), max(ps)
+    pad = (hi - lo) * 0.08 or hi * 0.01
+    lo, hi = lo - pad, hi + pad
+    X = lambda i: L + (W - L - R) * i / (len(h) - 1)
+    Y = lambda v: T + (H - T - B) * (1 - (v - lo) / (hi - lo))
+    pts = ' '.join(f'{X(i):.1f},{Y(v):.1f}' for i, (_, v) in enumerate(h))
+    area = f'{X(0):.1f},{H - B} ' + pts + f' {X(len(h) - 1):.1f},{H - B}'
+    idx = {d: i for i, (d, _) in enumerate(h)}
+    dots, stack = '', {}
+    for n in c.get('nodes', []):
+        i = idx.get(kdate_of(n['ts']))
+        if i is None:
+            continue
+        k = stack[i] = stack.get(i, 0) + 1
+        if k > 6:
+            continue
+        y = Y(h[i][1]) - 11 * k
+        dots += f'<circle cx="{X(i):.1f}" cy="{y:.1f}" r="4.5" fill="{DCOL[n["dir"]]}" stroke="#fff" stroke-width="1.5"><title>{E(n["t"])}</title></circle>'
+    dots += ''.join(f'<text x="{X(i) - 8:.1f}" y="{Y(h[i][1]) - 80:.1f}" text-anchor="end" class="lb">+{k - 6}</text>' for i, k in stack.items() if k > 6)
+    fmt = (lambda v: f'{v / 1e8:.2f}억') if hi >= 1e8 else (lambda v: f'{v / 1e4:,.0f}만') if hi >= 1e5 else (lambda v: f'{v:,.0f}')
+    ax = ''.join(f'<text x="{L - 6}" y="{Y(v) + 4:.1f}" text-anchor="end">{fmt(v)}</text><line x1="{L}" x2="{W - R}" y1="{Y(v):.1f}" y2="{Y(v):.1f}" class="g"/>' for v in (lo + pad, (lo + hi) / 2, hi - pad))
+    xs = ''.join(f'<text x="{X(i):.1f}" y="{H - 10}" text-anchor="middle">{h[i][0][5:].replace("-", "/")}</text>' for i in (0, len(h) // 2, len(h) - 1))
+    return (f'<figure class="an-ch"><svg viewBox="0 0 {W} {H}" role="img" aria-label="{E(c["name"])} 30일 가격과 전망 기사"><defs><linearGradient id="ga{c["sym"]}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8b5cf6" stop-opacity=".25"/><stop offset="1" stop-color="#8b5cf6" stop-opacity="0"/></linearGradient></defs>'
+            f'{ax}<polygon points="{area}" fill="url(#ga{c["sym"]})"/><polyline points="{pts}" fill="none" stroke="#7c3aed" stroke-width="2.5" stroke-linejoin="round"/>{dots}{xs}</svg>'
+            f'<figcaption>업비트 일봉 종가(원) · 점 = 그날 나온 전망 기사 <i style="color:#ef4444">● 강세</i> <i style="color:#3b82f6">● 약세</i> <i style="color:#94a3b8">● 혼조</i></figcaption></figure>')
+
+
+def stock_svg(s):
+    """증권사별 목표가: 점(새 목표가) + 이전 목표가에서 이어지는 선, 평균 목표가 점선."""
+    ns = [n for n in s.get('nodes', []) if n.get('tp')]
+    if not ns:
+        return ''
+    W, H, L, R, T, B = 640, 240, 86, 16, 20, 34
+    now = time.time()
+    t0 = min(min(n['ts'] for n in ns), now - 7 * 86400)
+    vals = [n['tp'] for n in ns] + [n['tp0'] for n in ns if n.get('tp0')]
+    lo, hi = min(vals), max(vals)
+    pad = (hi - lo) * 0.15 or hi * 0.1
+    lo, hi = lo - pad, hi + pad
+    X = lambda ts: L + (W - L - R) * (ts - t0) / max(1, now - t0)
+    Y = lambda v: T + (H - T - B) * (1 - (v - lo) / (hi - lo))
+    g = ''
+    for n in ns:
+        x = X(n['ts'])
+        if n.get('tp0'):
+            g += f'<line x1="{x:.1f}" x2="{x:.1f}" y1="{Y(n["tp0"]):.1f}" y2="{Y(n["tp"]):.1f}" stroke="{DCOL[n["dir"]]}" stroke-width="3" stroke-opacity=".45"/><circle cx="{x:.1f}" cy="{Y(n["tp0"]):.1f}" r="3.5" fill="#fff" stroke="{DCOL[n["dir"]]}" stroke-width="2"/>'
+        g += f'<circle cx="{x:.1f}" cy="{Y(n["tp"]):.1f}" r="6" fill="{DCOL[n["dir"]]}" stroke="#fff" stroke-width="2"><title>{E(n["br"])} {won_txt(n["tp"])}</title></circle><text x="{x + 9:.1f}" y="{Y(n["tp"]) + 4:.1f}" class="lb">{E(n["br"].replace("투자증권", "").replace("증권", "").replace("금융투자", ""))}</text>'
+    avg = s.get('tp_avg')
+    av = f'<line x1="{L}" x2="{W - R}" y1="{Y(avg):.1f}" y2="{Y(avg):.1f}" stroke="#10b981" stroke-dasharray="6 4" stroke-width="2"/><text x="{W - R}" y="{Y(avg) - 6:.1f}" text-anchor="end" class="lb" fill="#047857">평균 {won_txt(avg)}</text>' if avg else ''
+    ax = ''.join(f'<text x="{L - 6}" y="{Y(v) + 4:.1f}" text-anchor="end">{won_txt(int(v))}</text><line x1="{L}" x2="{W - R}" y1="{Y(v):.1f}" y2="{Y(v):.1f}" class="g"/>' for v in (lo + pad, hi - pad) if v > 0)
+    xs = f'<text x="{L}" y="{H - 10}">{kdate_of(t0)[5:].replace("-", "/")}</text><text x="{W - R}" y="{H - 10}" text-anchor="end">오늘</text>'
+    return (f'<figure class="an-ch"><svg viewBox="0 0 {W} {H}" role="img" aria-label="{E(s["name"])} 증권사별 목표가">{ax}{av}{g}{xs}</svg>'
+            f'<figcaption>증권사별 목표가(원) · <i style="color:#ef4444">● 상향</i> <i style="color:#3b82f6">● 하향</i> <i style="color:#94a3b8">● 유지</i> · 흰 점 = 이전 목표가</figcaption></figure>')
+
+
 def stock_card(s, full=False):
     tot = s['up'] + s['down'] + s['keep']
     bar = ''.join(f'<i class="{d}" style="width:{round(100 * s[d] / tot)}%"></i>' for d in ('up', 'keep', 'down') if tot and s[d])
@@ -849,7 +918,7 @@ def stock_card(s, full=False):
     head = (f'<div class="an-h"><h3><a href="/analyst/s/{s["id"]}/">{E(s["name"])}</a></h3>{"<span class=an-mix>⚖️ 의견 엇갈림</span>" if s["mixed"] else ""}</div>'
             f'<p class="an-st">증권사 {s["nb"]}곳 · 🔺{s["up"]} ➖{s["keep"]} 🔻{s["down"]}{(" · 평균 목표가 " + won_txt(s["tp_avg"])) if s["tp_avg"] else ""}{(" (" + rng + ")") if rng else ""}{(" · 기사 속 상승여력 평균 " + str(s["upside"]) + "%") if s.get("upside") is not None else ""}</p>'
             f'<div class="an-bar">{bar}</div>')
-    return f'<article class="an-c">{head}{an_tree(s["tree"], ("up", "down", "keep"))}' + (an_nodes(s['nodes']) if full else f'<a class="an-more" href="/analyst/s/{s["id"]}/">리포트 노드 {s["nn"]}개 자세히 →</a>') + '</article>'
+    return f'<article class="an-c">{head}{stock_svg(s)}{an_tree(s["tree"], ("up", "down", "keep"))}' + (an_nodes(s['nodes']) if full else f'<a class="an-more" href="/analyst/s/{s["id"]}/">리포트 노드 {s["nn"]}개 자세히 →</a>') + '</article>'
 
 
 def coin_card(c, full=False):
@@ -860,7 +929,7 @@ def coin_card(c, full=False):
     tg = f' · 기사 속 목표 {format(c["tgt"][0], "g")}~{format(c["tgt"][1], "g")}만 달러' if c.get('tgt') else ''
     return (f'<article class="an-c"><div class="an-h"><h3><a href="/analyst/coin/{c["sym"].lower()}/">{E(c["name"])} <small>{c["sym"]}</small></a></h3>{pr}</div>'
             f'<p class="an-st">최근 7일 전망 기사 {c["n"]}건 · 🟢 강세 {c["bull"]} · ⚪ 혼조 {c["neutral"]} · 🔴 약세 {c["bear"]}{tg}</p><div class="an-bar">{bar}</div>'
-            + an_tree(c['tree'], ('bull', 'bear', 'neutral')) + (an_nodes(c['nodes'], True) if full else f'<a class="an-more" href="/analyst/coin/{c["sym"].lower()}/">전망 노드 {c["n"]}개 자세히 →</a>') + '</article>')
+            + coin_svg(c) + an_tree(c['tree'], ('bull', 'bear', 'neutral')) + (an_nodes(c['nodes'], True) if full else f'<a class="an-more" href="/analyst/coin/{c["sym"].lower()}/">전망 노드 {c["n"]}개 자세히 →</a>') + '</article>')
 
 
 def analyst_pages():
@@ -869,7 +938,7 @@ def analyst_pages():
     if not d:
         return []
     S, C = d.get('stocks', []), d.get('coins', [])
-    css = '<link rel="stylesheet" href="/assets/analyst/analyst.css?v=1">'
+    css = '<link rel="stylesheet" href="/assets/analyst/analyst.css?v=3">'
     ups = sorted([s for s in S if s['up'] > s['down']], key=lambda s: (-s['up'], -s['last']))[:10]
     dns = sorted([s for s in S if s['down'] > s['up']], key=lambda s: (-s['down'], -s['last']))[:10]
     mix = [s for s in S if s['mixed']][:10]
