@@ -1058,6 +1058,11 @@ def satire_pages():
     page('/satire/', '루리 풍자 — 매일 한 컷, 증시·뉴스 만평', f'루리가 매일 그리는 풍자 만화. 오늘: {title0}. 지난 풍자도 날짜별로 모아 봐요.',
          '<p class="bc"><a href="/">홈</a> › 루리 풍자</p><h1>🎨 루리 풍자</h1>' + one(d0, v0) + note + arch + css, [('루리의 줍줍', '/'), ('루리 풍자', '/satire/')])
     for i, (d, v) in enumerate(days):
+        od = os.path.join(ROOT, 'satire', d)  # 원본이 빠진 그림(사용자가 뺀 컷)은 사이트에서도 지움
+        keep = {f[:-4] + '.webp' for f in v['imgs']}
+        for f in (os.listdir(od) if os.path.isdir(od) else []):
+            if f.endswith('.webp') and f not in keep:
+                os.remove(os.path.join(od, f))
         nav = ''
         if i + 1 < len(days):
             nav += f'<a href="/satire/{days[i + 1][0]}/">← {kdate(days[i + 1][0])}</a>'
