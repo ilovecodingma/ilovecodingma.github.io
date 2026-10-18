@@ -58,7 +58,7 @@ EV_KIND = {'event': '이벤트', 'sweepstakes': '추첨 경품', 'quiz': '퀴즈
            'sns_tag_required': '친구 태그', 'sns_story_required': '스토리 공유', 'sns_capture': '캡처 인증', 'sns_form_only': '폼 응모',
            'sns_comment+form': '댓글+폼', 'sns_purchase': '구매 인증', 'sns_region': '지역 한정', 'sns_other': 'SNS 이벤트'}
 
-COMM_TAGS_TPL = '<link rel="stylesheet" href="/assets/community/comm.css?v=14"><script defer src="/assets/community/comm.js?v=19"></script><script defer src="/assets/community/crew.js?v=1"></script>'
+COMM_TAGS_TPL = '<link rel="stylesheet" href="/assets/community/comm.css?v=14"><script defer src="/assets/community/comm.js?v=20"></script><script defer src="/assets/community/crew.js?v=1"></script>'
 GTAG = ('<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4248498719773262" crossorigin="anonymous"></script>\n'
         '<script async src="https://www.googletagmanager.com/gtag/js?id=G-G9BPFF95GY"></script>\n'
         "<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());if(location.hostname!=='sungprofile.cloud')window['ga-disable-G-G9BPFF95GY']=true;gtag('config','G-G9BPFF95GY');</script>")
@@ -99,7 +99,7 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False):
 {body}
 </main>
 <footer class="ft"><div class="w ft-in"><div class="ft-b"><img class="av" src="/assets/ruri/avatar.webp" width="56" height="56" alt="루리" loading="lazy"><div><b>루리의 줍줍</b><p>마감 놓치지 마세요! 매일 아침 새 공모전을 정리해 둘게요.</p><p class="ft-m">문의 <a href="mailto:{MAIL}">{MAIL}</a>{"" if PARTNER == MAIL else f' · 제휴 <a href="mailto:{PARTNER}">{PARTNER}</a>'}</p></div></div>
-<p class="ft-l"><a href="/about/">소개</a><a href="/app/">📲 앱·알림</a><a href="/prep/">준비실</a><a href="/qa/">고민 해결</a><a href="/guide/">응모 가이드</a><a href="/event/">경품 이벤트</a><a href="/privacy/">개인정보처리방침</a><a href="/terms/">이용약관</a><a href="/contact/">문의</a></p>
+<p class="ft-l"><a href="/about/">소개</a><a href="/news/">🕵️ 이슈 감별</a><a href="/app/">📲 앱·알림</a><a href="/prep/">준비실</a><a href="/qa/">고민 해결</a><a href="/guide/">응모 가이드</a><a href="/event/">경품 이벤트</a><a href="/privacy/">개인정보처리방침</a><a href="/terms/">이용약관</a><a href="/contact/">문의</a></p>
 <p class="ft-n">공모전 정보는 각 주최 기관의 공고를 바탕으로 정리했으며, 정확한 요강은 반드시 공식 공고에서 확인하세요. © 2026 루리의 줍줍 · sungprofile.cloud</p></div></footer>
 </body></html>'''
     d = os.path.join(ROOT, path.strip('/'))
@@ -444,8 +444,8 @@ def build():
     # 2026-10-17 사용자: 서비스 본질은 루리 추천 상담. 메인은 상담만, 외부 검색(지식인 등)은 상세 페이지로 받음
     home = f'''<h1 class="cs-h1">이 공모전이나 해 볼까? 루리 공모전 추천 상담</h1>
 <section id="consult" aria-label="루리 공모전 추천 상담"><noscript><p>루리 상담은 자바스크립트가 필요해요. 진행 중 공모전 {len(live)}건이 있어요.</p></noscript></section>
-{qa_home()}<a class="lab-cta" href="/app/"><b>🔔 공모전 알림 받기 · 앱 설치</b><span>관심 분야 새 공모전·마감 임박을 폰 알림으로 · 홈 화면에 루리의 줍줍 앱 →</span></a><a class="lab-cta prep-cta" href="/prep/"><b>📋 루리의 준비실</b><span>공모전 고르면 마감까지 할 일·체크리스트를 짜 드려요 · 장르별 꿀팁 →</span></a><a class="lab-cta" href="/lab/"><b>🏆 루리의 수상 연구소</b><span>공모전 수상작을 뜯어보고 당선 공식을 정리했어요 →</span></a><p class="cs-foot">진행 중 공모전 {len(live)}건의 마감일·상금·응모 자격·접수 방법과 공식 공고 캡처를 정리해 두고, 루리가 상황에 맞는 것만 골라 드려요.</p>
-<link rel="stylesheet" href="/assets/home/consult.css?v=6"><script defer src="/assets/home/consult.js?v=10"></script>'''
+{news_top()}{qa_home()}<a class="lab-cta" href="/app/"><b>🔔 공모전 알림 받기 · 앱 설치</b><span>관심 분야 새 공모전·마감 임박을 폰 알림으로 · 홈 화면에 루리의 줍줍 앱 →</span></a><a class="lab-cta prep-cta" href="/prep/"><b>📋 루리의 준비실</b><span>공모전 고르면 마감까지 할 일·체크리스트를 짜 드려요 · 장르별 꿀팁 →</span></a><a class="lab-cta" href="/lab/"><b>🏆 루리의 수상 연구소</b><span>공모전 수상작을 뜯어보고 당선 공식을 정리했어요 →</span></a><p class="cs-foot">진행 중 공모전 {len(live)}건의 마감일·상금·응모 자격·접수 방법과 공식 공고 캡처를 정리해 두고, 루리가 상황에 맞는 것만 골라 드려요.</p>
+<link rel="stylesheet" href="/assets/home/consult.css?v=7"><script defer src="/assets/home/consult.js?v=10"></script>'''
     page('/', '루리의 줍줍 — 이 공모전이나 해 볼까? 루리 공모전 추천 상담',
          f'진행 중인 공모전 {len(live)}건을 마감 임박순·상금순으로. 문학, 아이디어·정책, 디자인, 영상, 논문, IT, 해외 공모전과 경품 이벤트 정리.',
          home, full_title=True, ld={'@context': 'https://schema.org', '@type': 'WebSite', 'name': NAME, 'url': SITE + '/'})
@@ -472,11 +472,12 @@ def build():
     prep_page()
     fridge_page()
     app_page()
+    news_page()
     community(live)
     lab_urls = lab() or []
     me_pages()
     statics(len(live), len(events))
-    urls = ['/', '/apply/', '/event/', '/guide/', '/ssul/'] + lab_urls + [f'/ssul/{x["slug"]}/' for x in ss] + [f'/a/{a["id"]}/' for a in aps] + [f'/cat/{s}/' for s, _ in CATS] + [f'/guide/{g[0]}/' for g in GUIDES] + ['/qa/', '/prep/', '/fridge/', '/app/'] + [f'/guide/{q["slug"]}/' for q in QA] + \
+    urls = ['/', '/apply/', '/event/', '/guide/', '/ssul/'] + lab_urls + [f'/ssul/{x["slug"]}/' for x in ss] + [f'/a/{a["id"]}/' for a in aps] + [f'/cat/{s}/' for s, _ in CATS] + [f'/guide/{g[0]}/' for g in GUIDES] + ['/qa/', '/prep/', '/fridge/', '/app/', '/news/'] + [f'/guide/{q["slug"]}/' for q in QA] + \
            ['/about/', '/privacy/', '/terms/', '/contact/'] + [f'/c/{c["id"]}/' for c in contests] + sorted((f'/v/{d}/' for d in os.listdir(os.path.join(ROOT, 'v')) if os.path.isfile(os.path.join(ROOT, 'v', d, 'index.html'))), key=lambda u: int(u.split('/')[2]) if u.split('/')[2].isdigit() else 0)
     global NEW_URLS
     sm = os.path.join(ROOT, 'sitemap.xml')
@@ -592,6 +593,27 @@ def prep_page():
 </section><link rel="stylesheet" href="/assets/prep/prep.css?v=3"><script defer src="/assets/prep/prep.js?v=3"></script>'''
     page('/prep/', '루리의 공모전 준비실 — 마감 역산 일정·체크리스트·꿀팁', '공모전을 고르면 마감일에 맞춘 준비 일정과 장르별 체크리스트를 만들어 줘요. 슬로건·수기·디자인·영상·사진·정책 제안 꿀팁과 분량 계산기까지.',
          body, [('루리의 줍줍', '/'), ('준비실', '/prep/')])
+
+
+def news_top():
+    # 홈 투트랙(2026-10-18 사용자: 공모전과 투트랙) — 이슈 감별 상위 3개
+    try:
+        d = json.load(open(os.path.join(ROOT, 'news', 'data.json'), encoding='utf-8'))
+    except Exception:
+        return ''
+    G = {'ok': '✅', 'warn': '🟡', 'bad': '🔴'}
+    li = ''.join(f'<li><a href="/news/#is{x["n"]}"><em>{i + 1}</em><b>{E(x["t"])}</b><span>{G.get("bad" if x.get("cf") else x.get("g"), "")} {x["s"] if x.get("s") is not None else ""}점 · {x["on"]}곳</span></a></li>' for i, x in enumerate(d.get('issues', [])[:3]))
+    return f'<section class="nw-home"><h2>🕵️ 루리 탐정의 이슈 감별 <a href="/news/">이슈 순위 전체 →</a></h2><ol>{li}</ol></section>' if li else ''
+
+
+def news_page():
+    # 루리 탐정의 이슈 감별 (2026-10-18 사용자: RSS 기사 수집 → 주제별 묶음 → 팩트체크 기반 채점, 피드, 탐정 루리, 기사 관련 줍줍)
+    body = f'''<p class="bc"><a href="/">홈</a> › 이슈 감별</p><h1>🕵️ 루리 탐정의 이슈 감별</h1>
+<section id="news" aria-label="이슈 순위와 기사 채점"><noscript>자바스크립트가 필요해요.</noscript></section>
+<details class="nw-how"><summary>채점은 이렇게 해요</summary><ul><li><b>교차 보도</b> — 같은 사건을 여러 언론사가 보도하면 가점, 한 곳뿐이면 표시만 해요.</li><li><b>출처</b> — 실명 기관·인물 출처는 가점, 익명 관계자뿐이거나 온라인 커뮤니티·SNS 글이 출처면 감점.</li><li><b>제목-본문 일치</b> — 제목의 숫자·인용문이 본문에 없으면 감점.</li><li><b>숫자 엇갈림</b> — 같은 사건인데 언론사마다 사망·부상자 수가 다르면 따로 표시해요.</li><li><b>낚시·홍보</b> — 「충격」「결국」「이것」 같은 낚시 표현, 기업 홍보성 기사는 감점.</li></ul><p>기사 본문은 채점에만 쓰고 이 사이트에 옮겨 싣지 않아요. 제목을 누르면 원래 언론사 기사로 이동해요.</p></details>
+<link rel="stylesheet" href="/assets/news/news.css?v=1"><script defer src="/assets/news/news.js?v=1"></script>'''
+    page('/news/', '루리 탐정의 이슈 감별 — 오늘의 이슈 순위·기사 팩트 채점', '언론사 15곳 기사를 매시간 모아 같은 사건끼리 묶고, 교차 보도·출처·제목-본문 일치·숫자 엇갈림·낚시 표현으로 기사마다 점수를 매겨요. 지금 가장 많이 보도된 이슈 순위.',
+         body, [('루리의 줍줍', '/'), ('이슈 감별', '/news/')])
 
 
 def app_page():

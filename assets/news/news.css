@@ -1,0 +1,25 @@
+/* 루리 탐정의 이슈 감별 */
+#news{max-width:720px;margin:0 auto}#news [hidden]{display:none!important}
+.nw-hero{display:flex;gap:14px;align-items:center;background:linear-gradient(135deg,#fef3c7,#fde68a 40%,#f5f3ff);border:1px solid #fcd34d;border-radius:20px;padding:12px 14px;overflow:hidden}
+.nw-hero img{width:120px;height:154px;object-fit:cover;object-position:top;border-radius:14px;flex:none}.nw-hero small{font-size:12px;color:#92400e;font-weight:700}.nw-hero b{display:block;font-size:19px;color:#451a03;margin:2px 0}
+.nw-hero p{margin:2px 0;font-size:14px;font-weight:700;color:#78350f}.nw-hero .nw-hs{font-size:12.5px;font-weight:500;color:#78350f;line-height:1.55;margin-top:6px}
+.nw-tabs,.nw-f{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;margin:12px 0 0;padding-bottom:2px}.nw-tabs button,.nw-f button{flex:none;border:1px solid #e5e7eb;background:#fff;border-radius:999px;padding:8px 13px;font-size:14px;font-weight:700;color:#374151;cursor:pointer}
+.nw-tabs button.on{background:#451a03;border-color:#451a03;color:#fff}.nw-f button{font-size:13px;padding:6px 11px}.nw-f button.on{background:#fef3c7;border-color:#f59e0b;color:#92400e}
+.nw-is{display:flex;gap:10px;background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:14px 14px 12px 10px;margin:12px 0;box-shadow:var(--sh)}.nw-is.bad{border-color:#fecaca}.nw-is.ok{border-color:#bbf7d0}
+.nw-rank{flex:none;width:34px;font-size:26px;font-weight:900;color:#d97706;text-align:center;font-style:italic}.nw-is:nth-of-type(n+4) .nw-rank{color:#a8a29e;font-size:22px}
+.nw-ib{flex:1;min-width:0}.nw-meta{margin:0;display:flex;gap:8px;align-items:center;font-size:12px;flex-wrap:wrap}.nw-cat{background:#f3f4f6;border-radius:6px;padding:2px 7px;font-weight:800;color:#374151}.nw-hot{font-weight:800;color:#dc2626}.nw-t{color:var(--mu)}
+.nw-is h2{font-size:17px;line-height:1.4;margin:6px 0 6px}
+.nw-b{display:inline-flex;gap:4px;align-items:center;border-radius:999px;padding:3px 10px;font-size:13px;font-weight:900}.nw-b small{font-weight:700;font-size:11.5px}
+.nw-b.ok{background:#dcfce7;color:#166534}.nw-b.warn{background:#fef9c3;color:#854d0e}.nw-b.bad{background:#fee2e2;color:#991b1b}.nw-b.opinion{background:#f3f4f6;color:#374151}
+.nw-say{display:flex;gap:8px;align-items:flex-end;margin:10px 0 4px}.nw-say img{width:44px;height:61px;object-fit:cover;object-position:top;border-radius:10px;background:#fef3c7;flex:none}
+.nw-say p{margin:0;background:#fffbeb;border:1px solid #fde68a;border-radius:14px 14px 14px 4px;padding:8px 11px;font-size:13.5px;line-height:1.5}.nw-say p b{display:block;font-size:11.5px;color:#b45309}
+.nw-pr{margin:10px 0 2px;display:grid;gap:6px}.nw-pr small{font-size:12px;font-weight:800;color:#7c3aed}.nw-pr a{display:flex;gap:8px;align-items:center;background:#faf5ff;border:1px solid #e9d5ff;border-radius:12px;padding:8px 10px;text-decoration:none;color:inherit;font-size:13.5px}
+.nw-pr a em{flex:none;font-style:normal;font-size:11.5px;font-weight:800;color:#7c3aed}.nw-pr a b{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.nw-pr a span{flex:none;font-size:12px;color:#db2777;font-weight:800}
+.nw-d{margin-top:8px}.nw-d summary{cursor:pointer;font-weight:800;font-size:14px;color:#92400e}
+.nw-al{list-style:none;margin:8px 0 0;padding:0;display:grid;gap:8px}.nw-a{border:1px solid var(--bd);border-radius:12px;padding:9px 11px;background:#fff}.nw-a.bad{background:#fff7f7}
+.nw-ah{display:flex;gap:8px;align-items:center;font-size:13px}.nw-ah .nw-t{margin-left:auto;font-size:11.5px}.nw-at{display:block;font-size:14.5px;font-weight:700;color:#111827;text-decoration:none;margin:4px 0;line-height:1.45}.nw-at:hover{text-decoration:underline}
+.nw-why{margin:0;padding:0;list-style:none;font-size:12.5px;color:#4b5563;line-height:1.6}
+.nw-sh{margin-top:8px;border:1px solid #e5e7eb;background:#fff;border-radius:999px;padding:5px 12px;font-size:12.5px;cursor:pointer}
+.nw-sus{margin-top:22px}.nw-sus h2,.nw-board h2{font-size:17px;margin:0 0 8px}.nw-board{margin-top:24px}.nw-board h2 small{font-size:12px;color:var(--mu);font-weight:600}
+.nw-board table{width:100%;border-collapse:collapse;font-size:14px;background:var(--card);border-radius:14px;overflow:hidden}.nw-board th,.nw-board td{padding:8px 10px;border-bottom:1px solid var(--bd);text-align:left}.nw-board th{background:#fafaf9;font-size:12.5px;color:var(--mu)}
+.nw-note{font-size:12.5px;color:var(--mu);line-height:1.6}.nw-empty{color:var(--mu);padding:20px;text-align:center}

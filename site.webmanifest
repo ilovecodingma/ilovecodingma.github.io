@@ -16,5 +16,41 @@
    "sizes": "512x512",
    "type": "image/png"
   }
+ ],
+ "description": "공모전·지원금·이슈 감별까지, 루리가 매일 골라 주는 정보 앱",
+ "shortcuts": [
+  {
+   "name": "이슈 감별",
+   "short_name": "이슈",
+   "url": "/news/",
+   "icons": [
+    {
+     "src": "/assets/icons/icon-192.png",
+     "sizes": "192x192"
+    }
+   ]
+  },
+  {
+   "name": "공모전",
+   "short_name": "공모전",
+   "url": "/",
+   "icons": [
+    {
+     "src": "/assets/icons/icon-192.png",
+     "sizes": "192x192"
+    }
+   ]
+  },
+  {
+   "name": "알림 설정",
+   "short_name": "알림",
+   "url": "/app/",
+   "icons": [
+    {
+     "src": "/assets/icons/icon-192.png",
+     "sizes": "192x192"
+    }
+   ]
+  }
  ]
 }
