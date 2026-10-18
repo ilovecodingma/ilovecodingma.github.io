@@ -101,7 +101,7 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False):
 {body}
 </main>
 <footer class="ft"><div class="w ft-in"><div class="ft-b"><img class="av" src="/assets/ruri/avatar.webp" width="56" height="56" alt="루리" loading="lazy"><div><b>루리의 줍줍</b><p>마감 놓치지 마세요! 매일 아침 새 공모전을 정리해 둘게요.</p><p class="ft-m">문의 <a href="mailto:{MAIL}">{MAIL}</a>{"" if PARTNER == MAIL else f' · 제휴 <a href="mailto:{PARTNER}">{PARTNER}</a>'}</p></div></div>
-<p class="ft-l"><a href="/about/">소개</a><a href="/news/">🕵️ 이슈 감별</a><a href="/app/">📲 앱·알림</a><a href="/prep/">준비실</a><a href="/qa/">고민 해결</a><a href="/guide/">응모 가이드</a><a href="/event/">경품 이벤트</a><a href="/privacy/">개인정보처리방침</a><a href="/terms/">이용약관</a><a href="/contact/">문의</a></p>
+<p class="ft-l"><a href="/about/">소개</a><a href="/ailog/">🤖 AI 제작 로그</a><a href="/news/">🕵️ 이슈 감별</a><a href="/app/">📲 앱·알림</a><a href="/prep/">준비실</a><a href="/qa/">고민 해결</a><a href="/guide/">응모 가이드</a><a href="/event/">경품 이벤트</a><a href="/privacy/">개인정보처리방침</a><a href="/terms/">이용약관</a><a href="/contact/">문의</a></p>
 <p class="ft-n">공모전 정보는 각 주최 기관의 공고를 바탕으로 정리했으며, 정확한 요강은 반드시 공식 공고에서 확인하세요. © 2026 루리의 줍줍 · sungprofile.cloud</p></div></footer>
 </body></html>'''
     d = os.path.join(ROOT, path.strip('/'))
@@ -479,6 +479,7 @@ def build():
     app_page()
     news_page()
     extra_urls = talk_pages() + mag_pages(live, aps) + analyst_pages() + satire_pages() + kw_pages()
+    extra_urls += ailog_page(live, len(extra_urls))
     community(live)
     lab_urls = lab() or []
     me_pages()
@@ -1143,6 +1144,42 @@ def kw_pages():
              f'<p class="bc"><a href="/">홈</a> › <a href="/kw/">인기 키워드</a> › {kdate(d)}</p><h1>🔎 {kdate(d)} 인기 키워드</h1>' + bd, [('루리의 줍줍', '/'), ('인기 키워드', '/kw/'), (kdate(d), f'/kw/{d}/')])
         urls.append(f'/kw/{d}/')
     return urls
+
+
+def ailog_page(live, nurls):
+    # AI 제작 로그 (2026-10-18 사용자: "AI로 이 사이트 어케 만들었는지 다 공개", "홍보 마케팅은 기밀, 사이트 쪽만", "핵심은 비용 0원으로 그럴듯한 운영")
+    a = json.load(open(os.path.join(HERE, 'ailog.json'), encoding='utf-8'))
+    try:
+        commits = int(subprocess.run(['git', 'rev-list', '--count', 'HEAD'], cwd=ROOT, capture_output=True, text=True).stdout.strip() or 0)
+        first = subprocess.run(['git', 'log', '--reverse', '--format=%ad', '--date=format:%Y-%m-%d'], cwd=ROOT, capture_output=True, text=True).stdout.split()[0]
+    except Exception:
+        commits, first = 0, '2026-10-13'
+    npage = sum(1 for _r, _d, fs in os.walk(ROOT) if 'index.html' in fs and '.git' not in _r)
+    days = (TODAY - datetime.date.fromisoformat(first)).days + 1
+    stat = [('제작 기간', f'{days}일', f'{first[5:].replace("-", "/")} 첫 커밋부터'), ('코드 변경(커밋)', f'{commits:,}번', 'AI가 고치고 올린 횟수'),
+            ('페이지', f'{npage:,}개', '매시간 다시 만들어요'), ('진행 중 공모전', f'{len(live):,}건', '상세 페이지 자동 생성'),
+            ('매시간 자동 작업', '6가지', '뉴스·커뮤니티·애널리스트·키워드·빌드·배포'), ('서버·API 비용', '0원', '무료 한도 + 내 PC')]
+    st = ''.join(f'<div><small>{E(k)}</small><b>{E(v)}</b><span>{E(d)}</span></div>' for k, v, d in stat)
+    cost = ''.join(f'<tr><td>{E(x)}</td><td>{E(y)}</td><td><b>{E(z)}</b></td></tr>' for x, y, z in a['costs'])
+    arch = ''.join(f'<li><b>{E(x)}</b><span>{E(y)}</span></li>' for x, y in a['arch'])
+    chat = ''.join(f'<li><p class="al-u">🙋 {E(u)}</p><p class="al-a">🤖 {E(r)}</p></li>' for u, r in a['chat'])
+    fixes = ''.join(f'<li><b>❌ {E(x)}</b><span>✅ {E(y)}</span></li>' for x, y in a['fixes'])
+    rules = ''.join(f'<li>{E(x)}</li>' for x in a['rules'])
+    tl = ''.join(f'<li><em>{E(d)}</em><span>{E(t)}</span></li>' for d, t in a['timeline'])
+    body = (f'<p class="bc"><a href="/">홈</a> › AI 제작 로그</p><h1>🤖 AI 제작 로그 — 서버비 0원으로 이 사이트를 만든 방법</h1>'
+            + say('o_desk', E(a['lead']))
+            + f'<div class="al-st">{st}</div>'
+            + f'<section class="mg-s"><h2>💸 비용표: 어디에 얼마 드나</h2><table class="al-t"><tr><th>무엇</th><th>쓰는 것</th><th>비용</th></tr>{cost}</table><p class="note">{E(a["cost_note"])}</p></section>'
+            + f'<section class="mg-s"><h2>🧩 구조: 매시간 이렇게 돌아가요</h2><ol class="al-ar">{arch}</ol></section>'
+            + f'<section class="mg-s"><h2>💬 사람이 한 말 → AI가 만든 것</h2><p class="note">실제 지시를 그대로 옮겼어요. 사람은 방향만 말하고, 코드·디자인·배포·검사는 AI가 했어요.</p><ul class="al-c">{chat}</ul></section>'
+            + f'<section class="mg-s"><h2>🛠️ AI가 틀린 것과 고친 것</h2><ul class="al-f">{fixes}</ul></section>'
+            + f'<section class="mg-s"><h2>📏 지킨 원칙</h2><ul class="al-r">{rules}</ul></section>'
+            + f'<section class="mg-s"><h2>🗓️ 날짜별 기록</h2><ul class="al-tl">{tl}</ul></section>'
+            + '<p class="note">이 페이지는 사이트 개발 과정만 공개해요. 숫자는 빌드할 때마다 자동으로 갱신돼요.</p><link rel="stylesheet" href="/assets/mag/mag.css?v=5">')
+    page('/ailog/', 'AI 제작 로그 — 서버비 0원으로 정보 사이트 만들기(Claude Code)',
+         f'사람 한 명의 말과 AI(Claude Code)로 {days}일 동안 페이지 {npage:,}개짜리 정보 사이트를 만든 기록. 무료 호스팅·무료 서버리스·공개 RSS로 서버비 0원, 매시간 자동 갱신.',
+         body, [('루리의 줍줍', '/'), ('AI 제작 로그', '/ailog/')])
+    return ['/ailog/']
 
 
 def news_top():
