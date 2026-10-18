@@ -56,7 +56,7 @@
     const dl = e => { const p = e.split('-'), n = new Date(); return Math.round((Date.UTC(+p[0], p[1] - 1, +p[2]) - Date.UTC(n.getFullYear(), n.getMonth(), n.getDate())) / 864e5); };
     const fl = favs.map(f => ({ ...f, l: dl(f.end) })).filter(f => f.l >= 0).sort((a, b) => a.l - b.l).slice(0, 5);
     b.innerHTML = st.t ? `<button class="cm-me">${esc(st.n)} ▾</button><div class="cm-menu" hidden>
-<a href="/me/">🏠 내 공간 <small>찜·응모 기록·알림</small></a><a href="/prep/">📋 준비실 <small>준비 보드·꿀팁</small></a><a href="/community/">🚩 원정대</a><a href="/lab/">🏆 수상 연구소</a><a href="/community/#dress">🎀 루리 꾸미기</a>${(() => { try { return localStorage.getItem('jupjup_adm') ? '<a href="/admin/">📊 관리자 <small>방문자·가입자</small></a>' : ''; } catch { return ''; } })()}
+<a href="/me/">🏠 내 공간 <small>찜·응모 기록·알림</small></a><a href="/prep/">📋 준비실 <small>준비 보드·꿀팁</small></a><a href="/app/">🔔 앱·알림 <small>공모전 폰 알림</small></a><a href="/community/">🚩 원정대</a><a href="/lab/">🏆 수상 연구소</a><a href="/community/#dress">🎀 루리 꾸미기</a>${(() => { try { return localStorage.getItem('jupjup_adm') ? '<a href="/admin/">📊 관리자 <small>방문자·가입자</small></a>' : ''; } catch { return ''; } })()}
 <b>⭐ 찜한 공모전</b>${fl.length ? fl.map(f => `<a class="cm-fv" href="/c/${esc(f.id)}/"><em>${f.l ? 'D-' + f.l : 'D-DAY'}</em>${esc(f.title)}</a>`).join('') : '<p>챗봇 카드의 ☆로 찜해 두면 여기 모여요.</p>'}
 <button class="cm-out">로그아웃</button></div>` : '<button class="cm-in">로그인</button>';
     const me = b.querySelector('.cm-me'), menu = b.querySelector('.cm-menu');

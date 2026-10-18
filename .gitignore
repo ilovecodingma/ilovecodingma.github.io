@@ -14,3 +14,6 @@ trend/
 _gongmo/.lock
 *.bak_*
 _gongmo/alerts_sent.jsonl
+_gongmo/push_state.json
+_gongmo/push_log.txt
+_gongmo/alerts_new_seen.json

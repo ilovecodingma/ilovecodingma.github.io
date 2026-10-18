@@ -242,6 +242,23 @@ export default {
         return json(req, { ok: true });
       }
       // ---- 냉장고 사진 → 재료 자동 체크 (Cloudflare Workers AI 공개 모델, 2026-10-18 사용자: 프론티어 AI 말고 모델로) ----
+      // 웹푸시 공모전 알림 구독 (2026-10-18 사용자: 공모전 알림 + 웹푸시). 발송은 PC의 _gongmo/push.py 가 한다.
+      if (p === '/api/push/sub' && req.method === 'POST') {
+        const sb = body.sub || {}, ep = String(sb.endpoint || ''), k = sb.keys || {};
+        if (!/^https:\/\/[a-z0-9.-]+\.(googleapis\.com|mozilla\.com|windows\.com|apple\.com|mozaws\.net)\//.test(ep) || ep.length > 600) return err(req, '이 브라우저는 알림을 지원하지 않아요.');
+        const ok = x => typeof x === 'string' && /^[A-Za-z0-9_-]{10,200}$/.test(x);
+        if (!ok(k.p256dh) || !ok(k.auth)) return err(req, '알림 등록에 실패했어요.');
+        const cats = (Array.isArray(body.cats) ? body.cats : []).filter(c => /^[a-z]{2,12}$/.test(c)).slice(0, 12).join(',');
+        const u = await me(req, env), n = await count(env, 'SELECT COUNT(*) n FROM push_subs');
+        if (n > 20000) return err(req, '지금은 알림 등록이 많아요. 잠시 뒤에 다시 해 주세요.', 429);
+        await env.DB.prepare('INSERT INTO push_subs (endpoint, p256dh, auth, cats, newc, dl, uid, created, sent, fails) VALUES (?, ?, ?, ?, ?, ?, ?, ?, 0, 0) ON CONFLICT(endpoint) DO UPDATE SET p256dh = excluded.p256dh, auth = excluded.auth, cats = excluded.cats, newc = excluded.newc, dl = excluded.dl, uid = COALESCE(excluded.uid, push_subs.uid), fails = 0')
+          .bind(ep, k.p256dh, k.auth, cats, body.newc === 0 ? 0 : 1, body.dl === 0 ? 0 : 1, u ? u.id : null, now()).run();
+        return json(req, { ok: true });
+      }
+      if (p === '/api/push/unsub' && req.method === 'POST') {
+        await env.DB.prepare('DELETE FROM push_subs WHERE endpoint = ?').bind(String(body.endpoint || '').slice(0, 600)).run();
+        return json(req, { ok: true });
+      }
       if (p === '/api/fridge-scan' && req.method === 'POST') {
         const m = /^data:image\/(?:jpeg|png|webp);base64,([A-Za-z0-9+/=]+)$/.exec(body.image || '');
         if (!m || m[1].length > 1400000) return err(req, '사진을 다시 찍어 주세요.');
@@ -377,7 +394,7 @@ export default {
           users: await one('SELECT COUNT(*) n FROM users'), users_day: await one(`SELECT COUNT(*) n FROM users WHERE created > ${day}`), users_week: await one(`SELECT COUNT(*) n FROM users WHERE created > ${week}`),
           social: await one("SELECT COUNT(*) n FROM oauth_links"), teams: await one('SELECT COUNT(*) n FROM teams WHERE hidden = 0'), open_teams: await one("SELECT COUNT(*) n FROM teams WHERE hidden = 0 AND status = 'open'"),
           posts: await one('SELECT COUNT(*) n FROM posts WHERE hidden = 0'), favs: await one('SELECT COUNT(*) n FROM user_items WHERE fav = 1'), applied: await one("SELECT COUNT(*) n FROM user_items WHERE state != ''"),
-          won: await one("SELECT COUNT(*) n FROM user_items WHERE state = 'won'"), alerts: await one("SELECT COUNT(*) n FROM user_prefs WHERE data LIKE '%\"alert\":\"1\"%'"),
+          won: await one("SELECT COUNT(*) n FROM user_items WHERE state = 'won'"), alerts: await one("SELECT COUNT(*) n FROM user_prefs WHERE data LIKE '%\"alert\":\"1\"%'"),  push: await one('SELECT COUNT(*) n FROM push_subs'),
           invites: await one('SELECT COUNT(*) n FROM invited'), visits: await one('SELECT COUNT(*) n FROM ref_visits'), recent, reported, byDay });
       }
       // ---- 팀 모집 ----
