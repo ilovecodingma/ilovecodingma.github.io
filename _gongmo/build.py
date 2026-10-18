@@ -63,8 +63,8 @@ GTAG = ('<script async src="https://pagead2.googlesyndication.com/pagead/js/adsb
         '<script async src="https://www.googletagmanager.com/gtag/js?id=G-G9BPFF95GY"></script>\n'
         "<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());if(location.hostname!=='sungprofile.cloud')window['ga-disable-G-G9BPFF95GY']=true;gtag('config','G-G9BPFF95GY');</script>")
 THEMES = [  # (키, 이름, 아이콘, 테마색, 홈, [하위 메뉴], [이 테마에 속하는 주소 앞부분])
-    ('issue', '이슈', '🕵️', '#b45309', '/news/', [('/hot/', '핫이슈'), ('/news/', '이슈 감별'), ('/talk/', '커뮤니티 이슈'), ('/kw/', '인기 키워드'), ('/satire/', '루리 풍자'), ('/mag/', '매거진')],
-     ['/hot/', '/news/', '/talk/', '/kw/', '/satire/', '/mag/']),
+    ('issue', '이슈', '🕵️', '#b45309', '/news/', [('/hot/', '핫이슈'), ('/news/', '이슈 감별'), ('/talk/', '커뮤니티 이슈'), ('/kw/', '인기 키워드'), ('/satire/', '루리 풍자'), ('/mag/', '매거진'), ('/review/', '평론')],
+     ['/hot/', '/news/', '/talk/', '/kw/', '/satire/', '/mag/', '/review/']),
     ('money', '머니', '📊', '#047857', '/analyst/', [('/analyst/', '애널리스트 종합'), ('/money/experts/', '전문가 코멘트'), ('/money/policy/', '투자 정책'), ('/money/age/', '나이별 원칙'), ('/money/tools/salary/', '계산기'), ('/analyst/coin/btc/', '코인')], ['/analyst/', '/money/']),
     ('contest', '공모전', '🏆', '#6d28d9', '/contest/', [('/contest/', '추천 상담'), ('/cat/literature/', '분야별'), ('/prep/', '준비실'), ('/lab/', '수상 연구소'), ('/community/', '원정대'), ('/guide/', '가이드'), ('/widget/', '위젯')],
      ['/contest/', '/c/', '/cat/', '/prep/', '/lab/', '/community/', '/guide/', '/v/', '/me/', '/widget/']),
@@ -87,6 +87,7 @@ NAV = [('apply', '청약·신청'), ('ssul', '썰'), ('event', '경품·용돈')
 
 
 PAGE_HASH, NOINDEX = {}, set()
+REVIEWS = []   # 평론 (review_pages 가 채움, rss_feed 가 읽음)
 
 
 PAGE_INTRO = {k: f'<section class="pg-intro"><h2>{h}</h2>{v}</section>' for k, (h, v) in {  # 2026-10-18 애드센스 보강: 목록·홈에 운영자가 쓴 안내문
@@ -135,7 +136,7 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False, noinde
 <meta name="theme-color" content="{TH[3] if TH else '#5b21b6'}">
 <link rel="icon" href="/favicon.ico?v=5" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png?v=5"><link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png?v=5"><link rel="manifest" href="/site.webmanifest"><link rel="alternate" type="application/rss+xml" title="루리의 줍줍" href="/rss.xml">
 <link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="/assets/gm.css?v=13">{('<link rel="stylesheet" href="/assets/chat/ruri-chat.css?v=7">') if not (TH and TH[0] == 'ai') else ''}{COMM_TAGS}{('<script type="module" src="/assets/chat/ruri-chat.js?v=12"></script>') if not (TH and TH[0] == 'ai') else ''}<script defer src="/assets/app/app.js?v=3"></script>
+<link rel="stylesheet" href="/assets/gm.css?v=14">{('<link rel="stylesheet" href="/assets/chat/ruri-chat.css?v=7">') if not (TH and TH[0] == 'ai') else ''}{COMM_TAGS}{('<script type="module" src="/assets/chat/ruri-chat.js?v=12"></script>') if not (TH and TH[0] == 'ai') else ''}<script defer src="/assets/app/app.js?v=3"></script>
 {ldh}
 {GTAG}
 </head><body data-th="{TH[0] if TH else 'hub'}"{(' data-api="' + COMM_API + '"') if COMM_API else ''}>
@@ -308,7 +309,7 @@ def gone_pages():
 def auto_thin(urls):
     """빌드가 끝난 뒤 상세 페이지의 고유 본문을 세어 200자 미만이면 검색 제외로 돌린다(adsense_audit 와 같은 셈법)."""
     import adsense_audit as A
-    DET = ('/c/', '/a/', '/lab/', '/kw/', '/analyst/s/', '/analyst/coin/', '/money/tools/', '/apply/r/', '/contest/univ/', '/contest/ai-video/', '/hot/', '/satire/', '/mag/', '/ssul/', '/guide/')
+    DET = ('/c/', '/a/', '/lab/', '/kw/', '/analyst/s/', '/analyst/coin/', '/money/tools/', '/apply/r/', '/contest/univ/', '/contest/ai-video/', '/hot/', '/satire/', '/mag/', '/ssul/', '/guide/', '/review/')
     got, freq = {}, collections.Counter()
     for u in urls:
         f = os.path.join(ROOT, u.strip('/'), 'index.html')
@@ -561,6 +562,81 @@ def ap_insight(a, aps):
         L.append(f'같은 종류({a["kind"]}) 진행 중 공고는 전국 {len(kind)}건이에요.')
     links = ([(f'/apply/r/{sl}/', f'{nm} 지원금·청약 모아 보기')] if sl else []) + [('/apply/', '전체 지원금·청약 일정'), ('/apply/recommend/', '청약 가점 추천')]
     return (f'<h2>🧐 루리 분석</h2><p>{" ".join(E(x) for x in L)}</p>' if L else '') + rel_block(r'지원금|청년|월세|청약', links)
+
+
+_RX = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'review_extra.json')  # 평론 원고(연구 세션이 추가, 2026-10-19)
+INVEST_RE = r'투자|주식|증시|코인|비트코인|ETF|금리|환율|부동산|집값|종목|목표가'
+
+
+def load_reviews():
+    import markdown
+    if not os.path.exists(_RX):
+        return []
+    try:
+        raw = json.load(open(_RX, encoding='utf-8'))
+    except Exception as e:
+        print('review_extra.json 읽기 실패', e)
+        return []
+    out = []
+    for r in raw if isinstance(raw, list) else []:
+        slug = re.sub(r'[^0-9A-Za-z가-힣_-]', '', str(r.get('slug', '')))[:60]
+        if not slug or not r.get('title') or not r.get('body_md') or r.get('draft'):
+            continue
+        h = markdown.markdown(html.escape(r['body_md'].replace('\r\n', '\n'), quote=False), extensions=['extra'])
+        # 「루리의 시선」 제목부터 다음 h2 전까지를 의견 상자로 감싼다 (사실·의견 구분 표시)
+        h = re.sub(r'(<h2>[^<]*루리의 시선[^<]*</h2>)(.*?)(?=<h2>|$)', r'<div class="rv-op"><p class="rv-tag">💭 의견 · 루리의 시선</p>\1\2</div>', h, flags=re.S)
+        h = re.sub(r'<a href="(https?://)', r'<a rel="noopener" target="_blank" href="\1', h)
+        kw = r.get('kw') or []
+        kw = [kw] if isinstance(kw, str) else kw
+        rel = []
+        for x in r.get('related') or []:
+            if isinstance(x, dict) and x.get('u'):
+                rel.append((x['u'], x.get('t') or x['u']))
+            elif isinstance(x, (list, tuple)) and x:
+                rel.append((x[0], x[1] if len(x) > 1 else x[0]))
+            elif isinstance(x, str):
+                rel.append((x, x))
+        out.append({'slug': slug, 'title': str(r['title'])[:90], 'date': str(r.get('date') or TODAY.isoformat())[:10], 'kw': [str(k) for k in kw][:8],
+                    'desc': str(r.get('desc') or re.sub(r'<[^>]+>|\s+', ' ', h).strip()[:140]), 'html': h,
+                    'src': [(x.get('t') or x.get('u'), x['u']) for x in r.get('sources') or [] if isinstance(x, dict) and str(x.get('u', '')).startswith('http')],
+                    'rel': [(u, t) for u, t in rel if u.startswith('/') or u.startswith('http')],
+                    'invest': bool(r.get('invest')) or bool(re.search(INVEST_RE, str(r['title']) + ' '.join(map(str, kw))))})
+    out = [x for x in out if x['date'] <= TODAY.isoformat()]   # 날짜가 미래면 그날 공개
+    out.sort(key=lambda x: (x['date'], x['slug']), reverse=True)
+    return out
+
+
+REVIEW_NOTE = '<p class="an-warn">📈 전망 정리·투자 권유 아님 — 기사·공식 자료에 나온 전망을 모은 글이에요. 특정 종목·상품을 권하지 않고, 투자 판단과 책임은 본인에게 있어요.</p>'
+
+
+def review_pages():
+    """/review/ 평론: 무슨 일 → 쟁점(찬반) → 나한테 뭐가 달라지나 → 남은 질문. 사실은 출처 링크, 의견은 「루리의 시선」 상자."""
+    shutil.rmtree(os.path.join(ROOT, 'review'), ignore_errors=True)
+    R = load_reviews()
+    urls = ['/review/']
+    for x in R:
+        u = f'/review/{x["slug"]}/'
+        src = ''.join(f'<li><a href="{E(su)}" rel="noopener" target="_blank">{E(st)}</a></li>' for st, su in x['src'])
+        others = [y for y in R if y is not x][:4]
+        body = (f'<p class="bc"><a href="/">홈</a> › <a href="/news/">이슈</a> › <a href="/review/">평론</a></p>'
+                f'<article class="ssul rv"><p class="note">{E(kdate(x["date"]))} · 루리의 평론' + (' · ' + ' '.join(f'#{E(k)}' for k in x['kw']) if x['kw'] else '') + f'</p><h1>{E(x["title"])}</h1>'
+                + (REVIEW_NOTE if x['invest'] else '') + x['html']
+                + (f'<section class="rv-src"><h2>📰 사실 확인 출처</h2><ul>{src}</ul></section>' if src else '') + '</article>'
+                + '<p class="note">사실 부분은 위 출처를 바탕으로 썼고, 「루리의 시선」은 운영자 의견이에요. 틀린 사실은 <a href="/contact/">문의</a>로 알려 주시면 고쳐요.</p>'
+                + rel_block('', x['rel'] + [(f'/review/{y["slug"]}/', y['title']) for y in others] + [('/review/', '평론 전체 보기'), ('/news/', '오늘의 이슈 감별')]))
+        page(u, x['title'], x['desc'], body, [('루리의 줍줍', '/'), ('평론', '/review/'), (x['title'], u)],
+             {'@context': 'https://schema.org', '@type': 'Article', 'headline': x['title'], 'datePublished': x['date'], 'dateModified': x['date'],
+              'author': {'@type': 'Person', 'name': 'Seongsang Park'}, 'publisher': {'@type': 'Organization', 'name': '루리의 줍줍'},
+              'keywords': ', '.join(x['kw']), 'citation': [su for _, su in x['src']]})
+        urls.append(u)
+    li = ''.join(f'<li><a class="card" data-c="guide" href="/review/{x["slug"]}/"><span class="ic">🖋️</span><div class="cb"><h3 class="t">{E(x["title"])}</h3><p class="o">{E(kdate(x["date"]))} · {E(x["desc"][:90])}</p></div></a></li>' for x in R) \
+        or '<li class="empty"><p>첫 평론을 준비하고 있어요.</p></li>'
+    page('/review/', '루리의 평론 — 오늘 이슈·정책·지원금 해설 칼럼', '오늘 뜬 이슈·정책·지원금·공모전 하나를 골라 무슨 일인지, 쟁점은 무엇인지, 나한테 뭐가 달라지는지, 남은 질문은 무엇인지 짚는 해설 칼럼.',
+         '<p class="bc"><a href="/">홈</a> › <a href="/news/">이슈</a> › 평론</p><h1>🖋️ 루리의 평론</h1>'
+         '<section class="pg-intro"><h2>평론은 이렇게 써요</h2><p>하루에 한 가지 이슈·정책·지원금·공모전을 골라 <b>무슨 일 → 쟁점(찬반 나란히) → 나한테 뭐가 달라지나 → 남은 질문</b> 순서로 짚어요. 사실은 기사·공식 자료 링크를 달고, 운영자 의견은 「💭 루리의 시선」 상자로 따로 표시해요. 투자 관련 글은 전망 정리일 뿐 투자 권유가 아니고, 정치인 비방·연예인 사생활은 다루지 않아요.</p></section>'
+         f'<ul class="list">{li}</ul>' + rel_block('', [('/news/', '오늘의 이슈 감별'), ('/hot/', '핫이슈'), ('/mag/', '데일리 매거진')]),
+         [('루리의 줍줍', '/'), ('평론', '/review/')], noindex=not R)
+    return urls, R
 
 
 def build_apply(aps):
@@ -840,6 +916,8 @@ window.gtag&&gtag('event','home_route',{{route:v}})}}catch(e){{}}}})();</script>
     import widget
     extra_urls += widget.build(ROOT, live, aps, hot_live()[0], page, say, COMM_API, TODAY)  # 퍼가기 위젯 (2026-10-18 연구 세션 요청)
     extra_urls += region_pages(aps) + contest_hubs(live) + week_hub(live)
+    rv_urls, REVIEWS[:] = review_pages()
+    extra_urls += rv_urls
     extra_urls += ailog_page(live, len(extra_urls)) + all_page()
     community(live)
     lab_urls = lab() or []
@@ -865,7 +943,7 @@ window.gtag&&gtag('event','home_route',{{route:v}})}}catch(e){{}}}})();</script>
         f.writelines(f'<url><loc>{SITE}{u}</loc><lastmod>{lm[u][1]}</lastmod></url>\n' for u in urls if u not in NOINDEX)
         f.write('</urlset>\n')
     SMT = [('contest', ('/c/', '/cat/', '/contest/', '/lab/', '/guide/', '/prep/', '/widget/', '/ssul/')), ('apply', ('/a/', '/apply/', '/event/', '/fridge/', '/qa/')),
-           ('money', ('/analyst/', '/money/')), ('issue', ('/news/', '/talk/', '/mag/', '/kw/', '/hot/', '/satire/'))]
+           ('money', ('/analyst/', '/money/')), ('issue', ('/news/', '/talk/', '/mag/', '/kw/', '/hot/', '/satire/', '/review/'))]
     idx = []
     for nm, pre in SMT + [('etc', None)]:
         L = [u for u in urls if u not in NOINDEX and ((pre and u.startswith(pre)) or (not pre and not any(u.startswith(x) for _, ps in SMT for x in ps)))]
@@ -1628,7 +1706,7 @@ def ailog_page(live, nurls):
 def all_page():
     # 전체 메뉴 (2026-10-18 홈 단순화로 빠진 기능 모음)
     G = [('🕵️ 이슈', [('/news/', '이슈 감별', '언론사 기사 묶음·팩트 채점'), ('/talk/', '커뮤니티 이슈', '여러 커뮤니티에 동시에 뜬 화제'), ('/kw/', '인기 키워드', '검색 급상승 이유'),
-                       ('/satire/', '루리 풍자', '매일 한 컷 만평'), ('/mag/', '데일리 매거진', '이슈 리딩·하루 정보 한 장')]),
+                       ('/satire/', '루리 풍자', '매일 한 컷 만평'), ('/mag/', '데일리 매거진', '이슈 리딩·하루 정보 한 장'), ('/review/', '루리의 평론', '이슈·정책 해설 칼럼')]),
          ('📊 투자 정보', [('/analyst/', '애널리스트 분석', '목표가 상향·하향 노드 트리'), ('/analyst/coin/btc/', '코인 전망', '비트코인·이더리움 강세·약세')]),
          ('🏆 공모전', [('/', '공모전 추천 상담', '질문 몇 개로 딱 맞는 공모전'), ('/cat/literature/', '분야별 공모전', '문학·아이디어·디자인·영상·IT·요리'), ('/prep/', '준비실', '마감 역산 일정·체크리스트·꿀팁'),
                        ('/lab/', '수상 연구소', '수상작 분석·당선 공식'), ('/community/', '원정대', '같이 나갈 팀 모으기'), ('/guide/', '응모 가이드', '공모전 처음이라면')]),
@@ -1755,6 +1833,8 @@ def rss_feed(live, aps):
             add(f'/c/{c["id"]}/', f'{c["title"]} — {c["end"][5:].replace("-", "/")} 마감', c['start'], f'{c.get("org") or ""} 주최 · 상금 {c.get("prize") or "공고 확인"} · 응모 자격·접수 방법 정리')
     for a in sorted([a for a in aps if a.get('start') and a['start'] <= TODAY.isoformat()], key=lambda a: a['start'], reverse=True)[:15]:
         add(f'/a/{a["id"]}/', a['title'], a['start'], f'{a.get("kind", "")} · {a.get("org") or ""} · 신청 기간과 방법 정리')
+    for x in REVIEWS[:15]:
+        add(f'/review/{x["slug"]}/', '[평론] ' + x['title'], x['date'] + 'T09:00:00', x['desc'])
     for q in QA[:10]:
         add(f'/guide/{q["slug"]}/', q['title'], (q.get('date') or TODAY.isoformat())[:10], q.get('desc', ''))
     it.sort(key=lambda x: x[0], reverse=True)
