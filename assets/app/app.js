@@ -119,9 +119,12 @@
   async function apply(lang) {
     set(lang);
     if (lang === 'ko') { document.cookie = 'googtrans=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT'; document.cookie = 'googtrans=; path=/; domain=' + location.hostname + '; expires=Thu, 01 Jan 1970 00:00:00 GMT'; if (document.documentElement.classList.contains('translated-ltr') || document.documentElement.lang !== 'ko') location.reload(); return; }
+    document.cookie = 'googtrans=/ko/' + lang + '; path=/';   // 위젯이 시작할 때 이 쿠키를 읽어 자동 번역(다음 페이지에도 유지)
+    const first = !document.querySelector('.goog-te-combo');
     await load();
     const c = document.querySelector('.goog-te-combo'); if (!c) return;
-    c.value = lang; c.dispatchEvent(new Event('change'));
+    const fire = () => { c.value = lang; c.dispatchEvent(new Event('change', { bubbles: true })); };
+    if (!first) fire(); else { setTimeout(fire, 600); setTimeout(() => { if (!document.documentElement.classList.contains('translated-ltr')) fire(); }, 1800); }
     try { window.gtag && gtag('event', 'translate', { lang }); } catch {}
   }
   function button() {
