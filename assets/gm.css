@@ -149,3 +149,12 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}body{overflow-x:clip}
 .tb{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;padding-bottom:8px}.tb::-webkit-scrollbar{display:none}
 .tb a{flex:none;color:var(--mu);text-decoration:none;font-size:13.5px;font-weight:700;padding:6px 11px;border-radius:999px;white-space:nowrap;background:color-mix(in srgb,var(--card) 70%,transparent);border:1px solid var(--bd)}
 .tb a.on{background:var(--pri);border-color:var(--pri);color:#fff}.tb a:hover:not(.on){color:var(--pri)}
+/* 2026-10-18 테마 분리: 이슈·머니·공모전·생활·AI 로그 — 테마색·전환 줄·하위 메뉴 */
+body[data-th=issue]{--pri:#b45309;--pbg:#fef3c7}body[data-th=money]{--pri:#047857;--pbg:#d1fae5}body[data-th=contest]{--pri:#6d28d9;--pbg:#ede9fe}
+body[data-th=life]{--pri:#0e7490;--pbg:#cffafe}body[data-th=ai]{--pri:#334155;--pbg:#e2e8f0}
+.th-name{font-size:13px;font-weight:800;color:var(--pri);background:var(--pbg);border-radius:999px;padding:3px 10px;margin-left:-8px}
+.th-sw{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;padding:0 0 6px}.th-sw::-webkit-scrollbar{display:none}
+.th-sw a{flex:none;font-size:13px;font-weight:700;color:var(--mu);text-decoration:none;padding:5px 10px;border-radius:10px;border-bottom:3px solid transparent}
+.th-sw a.on{color:var(--tc);border-bottom-color:var(--tc);background:color-mix(in srgb,var(--tc) 9%,transparent)}
+.tb a.on{background:var(--pri);border-color:var(--pri)}.tb{border-top:1px solid var(--bd);padding-top:7px}
+body[data-th=ai] .hd{background:#0f172a}body[data-th=ai] .hd .logo span,body[data-th=ai] .th-sw a{color:#cbd5e1}body[data-th=ai] .th-name{background:#1e293b;color:#e2e8f0}

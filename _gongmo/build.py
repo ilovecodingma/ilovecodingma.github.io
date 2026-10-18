@@ -62,6 +62,25 @@ COMM_TAGS_TPL = '<link rel="stylesheet" href="/assets/community/comm.css?v=14"><
 GTAG = ('<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4248498719773262" crossorigin="anonymous"></script>\n'
         '<script async src="https://www.googletagmanager.com/gtag/js?id=G-G9BPFF95GY"></script>\n'
         "<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());if(location.hostname!=='sungprofile.cloud')window['ga-disable-G-G9BPFF95GY']=true;gtag('config','G-G9BPFF95GY');</script>")
+THEMES = [  # (키, 이름, 아이콘, 테마색, 홈, [하위 메뉴], [이 테마에 속하는 주소 앞부분])
+    ('issue', '이슈', '🕵️', '#b45309', '/news/', [('/news/', '이슈 감별'), ('/talk/', '커뮤니티 이슈'), ('/kw/', '인기 키워드'), ('/satire/', '루리 풍자'), ('/mag/', '매거진')],
+     ['/news/', '/talk/', '/kw/', '/satire/', '/mag/']),
+    ('money', '머니', '📊', '#047857', '/analyst/', [('/analyst/', '애널리스트 종합'), ('/analyst/coin/btc/', '비트코인'), ('/analyst/coin/eth/', '이더리움')], ['/analyst/']),
+    ('contest', '공모전', '🏆', '#6d28d9', '/contest/', [('/contest/', '추천 상담'), ('/cat/literature/', '분야별'), ('/prep/', '준비실'), ('/lab/', '수상 연구소'), ('/community/', '원정대'), ('/guide/', '가이드')],
+     ['/contest/', '/c/', '/cat/', '/prep/', '/lab/', '/community/', '/guide/', '/v/', '/me/']),
+    ('life', '생활', '🍳', '#0e7490', '/apply/', [('/apply/', '지원금·청약'), ('/event/', '경품'), ('/fridge/', '냉장고 파먹기'), ('/qa/', '고민 해결')], ['/apply/', '/a/', '/event/', '/fridge/', '/qa/', '/ssul/']),
+    ('ai', 'AI 로그', '🤖', '#0f172a', '/ailog/', [('/ailog/', 'AI 제작 로그')], ['/ailog/'])]
+
+
+def theme_of(path):
+    if path == '/':
+        return None
+    for th in THEMES:
+        if any(path.startswith(px) for px in th[6]):
+            return th
+    return None
+
+
 TABS = [('/news/', '🕵️ 이슈'), ('/analyst/', '📊 애널리스트'), ('/', '🏆 공모전'), ('/mag/', '📰 매거진'), ('/all/', '☰ 전체')]   # 2026-10-18 난잡함 정리: 5개만, 나머지는 /all/
 NAV = [('apply', '청약·신청'), ('ssul', '썰'), ('event', '경품·용돈'), ('cat/literature', '문학'), ('cat/idea', '아이디어'), ('cat/design', '디자인'),
        ('cat/video', '영상'), ('cat/it', 'IT'), ('cat/global', '해외'), ('guide', '가이드')]
@@ -69,6 +88,7 @@ NAV = [('apply', '청약·신청'), ('ssul', '썰'), ('event', '경품·용돈')
 
 def page(path, title, desc, body, crumbs=None, ld=None, full_title=False):
     url = SITE + path
+    TH = theme_of(path)
     COMM_TAGS = COMM_TAGS_TPL if COMM_API else ''
     t = title if full_title else f'{title} | {NAME}'
     lds = []
@@ -88,15 +108,16 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False):
 <meta property="og:title" content="{E(t)}"><meta property="og:description" content="{E(desc)}"><meta property="og:url" content="{url}">
 <meta property="og:image" content="{SITE}/assets/ruri/og.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="{SITE}/assets/ruri/og.jpg">
-<meta name="theme-color" content="#5b21b6">
+<meta name="theme-color" content="{TH[3] if TH else '#5b21b6'}">
 <link rel="icon" href="/favicon.ico?v=5" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png?v=5"><link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png?v=5"><link rel="manifest" href="/site.webmanifest">
 <link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="/assets/gm.css?v=6"><link rel="stylesheet" href="/assets/chat/ruri-chat.css?v=5">{COMM_TAGS}<script type="module" src="/assets/chat/ruri-chat.js?v=9"></script><script defer src="/assets/app/app.js?v=1"></script>
+<link rel="stylesheet" href="/assets/gm.css?v=6">{('<link rel="stylesheet" href="/assets/chat/ruri-chat.css?v=5">') if TH and TH[0] == 'contest' else ''}{COMM_TAGS}{('<script type="module" src="/assets/chat/ruri-chat.js?v=9"></script>') if TH and TH[0] == 'contest' else ''}<script defer src="/assets/app/app.js?v=1"></script>
 {ldh}
 {GTAG}
-</head><body{(' data-api="' + COMM_API + '"') if COMM_API else ''}>
-<header class="hd"><div class="w hd-in"><a class="logo" href="/"><img src="/assets/icons/logo.svg" width="30" height="30" alt=""><span>루리의 <b>줍줍</b></span></a></div>
-<nav class="tb w" aria-label="주요 메뉴">{"".join(f'<a href="{u}"{" class=on" if (path == u if u == "/" else path.startswith(u)) else ""}>{n}</a>' for u, n in TABS)}</nav></header>
+</head><body data-th="{TH[0] if TH else 'hub'}"{(' data-api="' + COMM_API + '"') if COMM_API else ''}>
+<header class="hd"><div class="w hd-in"><a class="logo" href="/"><img src="/assets/icons/logo.svg" width="30" height="30" alt=""><span>루리의 <b>줍줍</b></span></a>{('<span class="th-name">' + TH[2] + ' ' + TH[1] + '</span>') if TH else ''}</div>
+<nav class="th-sw w" aria-label="테마">{"".join(f'<a href="{t[4]}" style="--tc:{t[3]}"{" class=on" if TH and TH[0] == t[0] else ""}>{t[2]} {t[1]}</a>' for t in THEMES)}</nav>
+{('<nav class="tb w" aria-label="' + TH[1] + ' 메뉴">' + "".join(f'<a href="{u}"{" class=on" if (path == u or (u != TH[4] and path.startswith(u))) else ""}>{n}</a>' for u, n in TH[5]) + '</nav>') if TH else ''}</header>
 <main class="w">
 {body}
 </main>
@@ -443,35 +464,48 @@ def build():
                     key=lambda c: -score(c))
     hidden = [c for c in hidden if dday(c['end'])[0] >= 2]
     cats = ''.join(f'<a class="cat" data-c="{s_}" href="/cat/{s_}/"><span class="ic">{CAT_ICON[n]}</span><b>{n}</b><span class="n">{sum(1 for c in live if n in c["tags"])}건</span></a>' for s_, n in CATS)
-    # 2026-10-17 사용자: 서비스 본질은 루리 추천 상담. 메인은 상담만, 외부 검색(지식인 등)은 상세 페이지로 받음
-    # 2026-10-18 사용자: 사이트 비중 이슈 40 · 애널리스트 분석 40 · 공모전 20 → 홈 위쪽에 이슈·애널리스트, 공모전 상담은 그 아래
-    # 2026-10-18 사용자: "사이트 너무 난잡하다, 유입 경로에 맞춰서 메인 최적화" — 큰 덩어리 3개(이슈·애널리스트·공모전)만,
-    # 유입별 순서: 지식인·블로그·카페(공모전 답변 링크) → 공모전 먼저 / 쇼츠·인스타·스레드·디시(이슈·시세 홍보) → 이슈·애널리스트 먼저. 나머지 기능은 /all/
-    home = f'''<h1 class="cs-h1">루리의 줍줍 — 오늘의 이슈 · 애널리스트 분석 · 공모전</h1>
+    # 2026-10-18 사용자: "메인이 너무 난잡 → 테마를 정하고 테마별 맞춤 UI, AI 로그 등 분리, 기획부터 다시"
+    # → 메인(/)은 테마 입구(허브)만, 공모전 상담은 /contest/ 로. 유입(src·referrer)에 맞는 테마 입구를 맨 위로 + 루리 안내
+    contest_home = f'''<h1 class="cs-h1">🏆 루리 공모전 추천 상담 — 이 공모전이나 해 볼까?</h1>
+<section id="consult" aria-label="루리 공모전 추천 상담"><noscript><p>루리 상담은 자바스크립트가 필요해요. 진행 중 공모전 {len(live)}건이 있어요.</p></noscript></section>
+{qa_home()}<p class="cs-foot">진행 중 공모전 {len(live)}건의 마감일·상금·응모 자격·접수 방법과 공식 공고 캡처를 정리해 두고, 루리가 상황에 맞는 것만 골라 드려요.</p>
+<link rel="stylesheet" href="/assets/home/consult.css?v=12"><script defer src="/assets/home/consult.js?v=10"></script>'''
+    page('/contest/', '루리 공모전 추천 상담 — 진행 중 공모전 ' + str(len(live)) + '건', f'진행 중인 공모전 {len(live)}건을 마감 임박순·상금순으로. 질문 몇 개면 루리가 딱 맞는 공모전을 골라 드려요.',
+         contest_home, [('루리의 줍줍', '/'), ('공모전', '/contest/')])
+    nw, an, tk = _rd('news/data.json'), _rd('analyst/data.json'), _rd('talk/data.json')
+    i0 = (nw.get('issues') or [{}])[0]
+    btc = next((c for c in an.get('coins', []) if c['sym'] == 'BTC'), None)
+    d3 = sum(1 for c in live if 0 <= dday(c['end'])[0] <= 3)
+    newap = sum(1 for a in aps if a.get('start') and a['start'] >= (TODAY - datetime.timedelta(days=2)).isoformat())
+    doors = [
+        ('issue', '/news/', '🕵️', '이슈', '오늘 많이 보도된 이슈와 기사 팩트 채점', (f'1위 · {i0.get("t", "")}' if i0 else '언론사 15곳 기사 매시간 채점'), ['커뮤니티 이슈', '인기 키워드', '풍자', '매거진']),
+        ('money', '/analyst/', '📊', '머니', '증권사 목표가·코인 전망을 노드로 다시 정리', (f'비트코인 {btc["price"]["p"]:,.0f}원 · 강세 {btc["bull"]} / 약세 {btc["bear"]}' if btc and btc.get('price') else '증권사 리포트 종합'),
+         [f'목표가 상향 {sum(s["up"] for s in an.get("stocks", []))}건', f'하향 {sum(s["down"] for s in an.get("stocks", []))}건']),
+        ('contest', '/contest/', '🏆', '공모전', '질문 몇 개면 딱 맞는 공모전 추천', f'진행 중 {len(live)}건 · 사흘 안 마감 {d3}건', ['준비실', '수상 연구소', '원정대']),
+        ('life', '/apply/', '🍳', '생활', '지원금·청약·경품·오늘 메뉴', f'지원금·청약 {len(aps)}건 · 새로 열린 것 {newap}건', ['경품', '냉장고 파먹기', '고민 해결'])]
+    cards = ''.join(f'<a class="dr dr-{k}" data-k="{k}" href="{u}"><span class="dr-ic">{ic}</span><div><b>{E(n)}</b><small>{E(sub)}</small><p>{E(live_)}</p><i>{" · ".join(E(x) for x in tags)}</i></div></a>'
+                    for k, u, ic, n, sub, live_, tags in doors)
+    home = f'''<h1 class="hub-h">루리의 줍줍 <small>오늘 필요한 정보만 골라 드려요</small></h1>
 <div id="hm-in" hidden></div>
-<div id="hm">
-<section class="hm-b" data-k="issue"><h2 class="hm-h">🕵️ 오늘의 이슈</h2>{satire_top()}{news_top()}<p class="hm-links"><a href="/talk/">💬 커뮤니티 이슈</a><a href="/kw/">🔎 인기 키워드</a><a href="/mag/{TODAY.isoformat()}/">📰 오늘의 매거진</a></p></section>
-<section class="hm-b" data-k="analyst"><h2 class="hm-h">📊 애널리스트 분석</h2>{analyst_top()}</section>
-<section class="hm-b" data-k="contest"><h2 class="hm-h">🏆 공모전 · 지원금</h2><section id="consult" aria-label="루리 공모전 추천 상담"><noscript><p>루리 상담은 자바스크립트가 필요해요. 진행 중 공모전 {len(live)}건이 있어요.</p></noscript></section>
-<p class="hm-links"><a href="/cat/literature/">분야별 공모전</a><a href="/apply/">💰 지원금·청약</a><a href="/event/">🎁 경품</a><a href="/all/">☰ 전체 메뉴</a></p></section>
-</div>
-<p class="cs-foot">진행 중 공모전 {len(live)}건, 언론사 기사 매시간 채점, 증권사 리포트·코인 전망 종합 — 루리가 매시간 정리해요. <a href="/all/">전체 메뉴 보기</a></p>
+<nav id="doors" class="doors" aria-label="테마">{cards}</nav>
+{satire_top()}
+<p class="hub-ai"><a href="/ailog/">🤖 이 사이트는 사람 1명 + AI로 만들었어요 — AI 제작 로그</a></p>
 <script>(function(){{try{{
 var q=(new URLSearchParams(location.search).get('src')||'').toLowerCase(),r=(document.referrer||'').toLowerCase(),k='jj_in',v=sessionStorage.getItem(k);
 if(!v){{var s=r+' '+q;
 v=/okky|geeknews|news\\.hada|velog|disquiet|github|(^| )(dev|gn|dq|velog)$/.test(s)?'dev'
 :/kin\\.naver|blog\\.naver|cafe\\.naver|tistory|search\\.naver|(^| )(blog|cafe|kin)$/.test(s)?'contest'
-:/(^| )(an|stock|coin)$/.test(s)?'analyst'
+:/(^| )(an|stock|coin|money)$/.test(s)?'money'
 :/youtube|youtu\\.be|instagram|threads|dcinside|twitter|x\\.com|facebook|(^| )(yt|ig|th|dc|reel|shorts|news|sns)$/.test(s)?'issue':'-';
 sessionStorage.setItem(k,v)}}
-var M={{contest:['공모전·지원금부터 보여 드릴게요! 질문 몇 개면 딱 맞는 걸 골라 드려요.','contest'],issue:['오늘 많이 보도된 이슈랑 팩트 채점부터 보여 드릴게요!','issue'],
-analyst:['증권사 목표가·코인 전망 종합부터 보여 드릴게요!','analyst'],dev:['이 사이트는 사람 1명 + AI로 서버비 0원에 만들었어요. 만든 과정은 <a href="/ailog/">🤖 AI 제작 로그</a>에 다 있어요.','issue']}},m=M[v];
-if(!m)return;var h=document.getElementById('hm'),c=h.querySelector('[data-k='+m[1]+']');h.insertBefore(c,h.firstChild);
-var b=document.getElementById('hm-in');b.innerHTML='<img src="/assets/ruri/o_det_wave_s.webp" width="44" height="61" alt=""><p><b>루리</b>'+m[0]+'</p>';b.hidden=false;
+var M={{contest:['찾던 공모전·지원금부터 보여 드릴게요!','contest','/contest/'],issue:['오늘 이슈랑 팩트 채점부터 보여 드릴게요!','issue','/news/'],
+money:['증권사 목표가·코인 전망 종합부터 보여 드릴게요!','money','/analyst/'],dev:['이 사이트는 사람 1명 + AI로 서버비 0원에 만들었어요.','ai','/ailog/']}},m=M[v];
+if(!m)return;var h=document.getElementById('doors'),c=h.querySelector('[data-k='+m[1]+']');if(c){{h.insertBefore(c,h.firstChild);c.classList.add('pick')}}
+var b=document.getElementById('hm-in');b.innerHTML='<img src="/assets/ruri/o_det_wave_s.webp" width="44" height="61" alt=""><p><b>루리</b>'+m[0]+' <a href="'+m[2]+'">바로 가기 →</a></p>';b.hidden=false;
 window.gtag&&gtag('event','home_route',{{route:v}})}}catch(e){{}}}})();</script>
-<link rel="stylesheet" href="/assets/home/consult.css?v=10"><script defer src="/assets/home/consult.js?v=10"></script>'''
-    page('/', '루리의 줍줍 — 이슈 감별 · 애널리스트 분석 종합 · 공모전',
-         f'오늘의 정치 이슈 팩트 감별, 증권사 목표가·코인 전망 노드 분석, 커뮤니티 화제, 진행 중 공모전 {len(live)}건까지. 루리가 매시간 정리해요.',
+<link rel="stylesheet" href="/assets/home/consult.css?v=12">'''
+    page('/', '루리의 줍줍 — 이슈 · 머니 · 공모전 · 생활 정보',
+         f'오늘의 이슈 팩트 채점, 증권사 목표가·코인 전망 종합, 공모전 {len(live)}건 추천, 지원금·청약·경품까지 — 테마별로 골라 보는 루리의 줍줍.',
          home, full_title=True, ld={'@context': 'https://schema.org', '@type': 'WebSite', 'name': NAME, 'alternateName': ['루리의줍줍', 'sungprofile', '루리 줍줍'], 'url': SITE + '/'})
     for s, n in CATS:
         cl = [c for c in live if n in c['tags']]
