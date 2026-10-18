@@ -1484,7 +1484,7 @@ def me_pages():
     """내 공간(가입 혜택 모음) · 관리자 (2026-10-17)"""
     page('/me/', '내 공간 — 찜·응모 기록·마감 알림', '찜한 공모전·청약, 응모 기록, 마감 알림 메일, 자격 프로필, 청약 가점 계산기를 한곳에서.',
          '''<section id="me" aria-label="내 공간"></section><link rel="stylesheet" href="/assets/me/me.css?v=2"><script defer src="/assets/me/me.js?v=2"></script>''', [('루리의 줍줍', '/'), ('내 공간', '/me/')])
-    page('/admin/', '관리자', '관리자', '''<section id="admin"></section><link rel="stylesheet" href="/assets/me/me.css?v=2"><script defer src="/assets/me/admin.js?v=3"></script>''')
+    page('/admin/', '관리자', '관리자', '''<section id="admin"></section><link rel="stylesheet" href="/assets/me/me.css?v=2"><script defer src="/assets/me/admin.js?v=4"></script>''')
 
 
 def lab():
