@@ -1,0 +1,10 @@
+/* 루리의 청약 추천 */
+#aprec{max-width:640px;margin:0 auto}.ar-f{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:14px}
+.ar-f label{display:flex;flex-direction:column;gap:4px;font-size:12.5px;font-weight:800;color:#155e75}.ar-f select{font:inherit;font-size:15px;padding:8px;border:1px solid var(--bd);border-radius:10px;background:#fff}
+.ar-ck{grid-column:1/-1;flex-direction:row!important;align-items:center;font-size:14px!important;font-weight:600!important;color:#111827!important}.ar-ck input{width:18px;height:18px;accent-color:#0e7490}
+.ar-go{grid-column:1/-1;border:0;border-radius:14px;padding:14px;font-size:16px;font-weight:900;color:#fff;background:linear-gradient(135deg,#0e7490,#06b6d4);cursor:pointer}
+.ar-s{background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:14px;margin:12px 0;box-shadow:var(--sh)}.ar-s h2{font-size:17px;margin:0 0 8px}.ar-s h2 b{color:#0e7490;font-size:24px}
+.ar-bar{height:10px;border-radius:999px;background:#e0f2fe;overflow:hidden}.ar-bar i{display:block;height:100%;background:linear-gradient(90deg,#06b6d4,#0e7490)}.ar-d{font-size:13.5px;margin:6px 0 0}.ar-d small{color:var(--mu)}
+.ar-t,.ar-l{list-style:none;margin:0;padding:0;display:grid;gap:7px;grid-template-columns:minmax(0,1fr)}.ar-t li{background:#ecfeff;border-radius:12px;padding:8px 11px}.ar-t b{display:block;font-size:14.5px}.ar-t span{font-size:13.5px;color:#374151}
+.ar-l a{display:block;background:#fff;border:1px solid var(--bd);border-radius:12px;padding:9px 11px;text-decoration:none;color:inherit}.ar-l b{display:block;font-size:14.5px;line-height:1.4}.ar-l span{font-size:12.5px;color:var(--mu)}
+.ar-n{font-size:13px;color:var(--mu);margin:8px 0 0}

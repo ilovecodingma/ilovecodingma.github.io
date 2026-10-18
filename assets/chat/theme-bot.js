@@ -88,6 +88,7 @@ export function start(th) {
     const find = q => { const ws = q.split(/\s+/).filter(Boolean); return D.a.filter(x => (!x.end || x.end >= today) && ws.every(w => (x.title + ' ' + (x.org || '') + ' ' + (x.region || '') + ' ' + (x.target || '')).includes(w))); };
     B.menu = () => say('무엇을 찾아 드릴까요?', [
       ['💰 지원금 찾기', () => { say('찾는 말이나 지역을 적어 주세요. 예) <b>청년 월세</b>, <b>부산</b>, <b>출산</b>'); }],
+      ['🏠 청약 추천받기', () => say('내 상황을 고르면 가점·노려볼 공급 유형·맞는 공고를 골라 드려요.' + list([{ t: '루리의 청약 추천', u: '/apply/recommend/' }]), back())],
       ['🏠 청약 일정', () => say('곧 마감하는 청약이에요.' + list(D.a.filter(x => /청약|임대/.test(x.kind || '') && x.end >= today).sort((a, b) => a.end.localeCompare(b.end)).slice(0, 6).map(ap)), back())],
       ['🎁 쉬운 경품', () => say('응모만·댓글 한 줄이면 되는 이벤트예요.' + list(D.e.filter(x => /응모만|댓글 1줄|폼 1분/.test(x.ez || '') && x.end >= today).slice(0, 6).map(x => ({ t: x.title, u: x.link, ext: 1, m: `${esc(x.org || '')} · ${esc(x.ez || '')}` }))), back())],
       ['🍳 오늘 뭐 먹지?', () => { const R = D.r.recipes, x = R[(new Date().getDate() * 7) % R.length]; say(x ? `오늘은 <b>${esc(x.n)}</b> 어때요? ${x.m}분이면 돼요. 재료: ${esc(x.need.join(', '))}` + list([{ t: '냉장고 재료로 다른 메뉴 찾기', u: '/fridge/' }]) : '', back()); }]]);

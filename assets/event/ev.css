@@ -1,0 +1,8 @@
+/* 경품 이벤트 */
+.ev-top h2,.ev-h{font-size:17px;margin:16px 0 8px}.ev-ul{list-style:none;margin:0;padding:0;display:grid;gap:7px;grid-template-columns:minmax(0,1fr)}
+.ev-ul a{display:block;background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:10px 12px;text-decoration:none;color:inherit;box-shadow:var(--sh)}.ev-ul b{display:block;font-size:14.5px;line-height:1.4;overflow-wrap:anywhere}
+.ev-ul span{display:block;font-size:12.5px;color:var(--mu);margin-top:3px}.ev-ul em{font-style:normal;font-weight:900;color:#0e7490;margin-right:6px}.ev-ul em.u{color:#dc2626}.ev-ul i{font-style:normal;font-weight:700;color:#0e7490}
+.ev-top .ev-ul a{border-color:#a5f3fc;background:linear-gradient(135deg,#ecfeff,#fff)}
+.ev-bar{display:grid;gap:8px;margin-bottom:10px}.ev-k{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none}.ev-k button{flex:none;border:1px solid var(--bd);background:#fff;border-radius:999px;padding:7px 12px;font-size:13.5px;font-weight:700;cursor:pointer}
+.ev-k button.on{background:#0e7490;border-color:#0e7490;color:#fff}.ev-q{font:inherit;font-size:15px;padding:10px 12px;border:1px solid var(--bd);border-radius:12px}.ev-n{font-size:12.5px;color:var(--mu)}
+.ev-more{display:block;width:100%;margin:10px 0;border:1px solid #a5f3fc;background:#ecfeff;color:#0e7490;font-weight:800;border-radius:12px;padding:11px;cursor:pointer}.ev-0{color:var(--mu);padding:10px}
