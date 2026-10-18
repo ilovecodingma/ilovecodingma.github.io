@@ -6,7 +6,7 @@
   ③ 제목-본문 일치: 제목의 숫자·인용이 본문에 실제로 있나   ④ 낚시 표현   ⑤ 기업 홍보성
 본문은 분석에만 쓰고 저장·게시하지 않는다(제목·언론사·링크·판정만 data.json 에).
 사용: python news.py [--no-push]   결과 root/news/data.json (작업 스케줄러 JupJup_News 매시 50분, 배포는 매시 빌드가 함께 올림)"""
-import os, re, sys, json, time, html, datetime, hashlib, email.utils, concurrent.futures as cf
+import os, re, sys, json, time, html, math, datetime, hashlib, email.utils, collections, concurrent.futures as cf
 import requests, trafilatura
 from kiwipiepy import Kiwi
 
@@ -30,6 +30,7 @@ SNSRE = re.compile(r'자신의 SNS|자신의 인스타그램|인스타그램에|
 ACC = re.compile(r'사고|숨져|숨진|사망|화재|참사|추락|실종|부상|흉기|살해|변사|폭행|끼임|붕괴|익사|사상자|중상|순직')
 POL_QUOTE = re.compile(r"^[“\"‘'][^”\"’']{4,}[”\"’']|[가-힣]{2,4}(?: 대통령| 총리| 장관| 대표| 의원| 위원장| 대변인| 시장| 지사)?[,\s]*[“\"][^”\"]{6,}[”\"]")
 WINDOW_H = 36
+DEBUG = "--debug" in sys.argv
 MAX_ITEMS = 300
 KST = datetime.timezone(datetime.timedelta(hours=9))
 kiwi = Kiwi()
@@ -98,6 +99,99 @@ def body_of(u):
 def nouns(t):
     t = re.sub(r'[\[［(][^\]］)]{0,12}[\]］)]', ' ', t)
     return {w.form for w in kiwi.tokenize(t) if (w.tag in ('NNP', 'NNG', 'SL') and len(w.form) >= 2 and w.form not in STOPN)}
+
+
+def ents(t):
+    """고유명사(인물·기관·나라). 다른 사건을 합치지 않는 근거로 쓴다."""
+    t = re.sub(r'[\[［(][^\]］)]{0,12}[\]］)]', ' ', t)
+    return {w.form for w in kiwi.tokenize(t) if w.tag == 'NNP' and len(w.form) >= 2 and w.form not in STOPN}
+
+
+# ---- 중복 제거 (2026-10-19 사용자: 같은 사건을 제목만 바꿔 중복 노출하지 않게)
+TRACK = re.compile(r'(?<=[?&])(?:utm_[^=&]*|fbclid|gclid|from|ref|rss|feed|cid|sns|share)=[^&]*&?', re.I)
+
+
+def norm_url(u):
+    u = u.strip().split('#')[0]
+    u = re.sub(r'^http://', 'https://', u)
+    u = re.sub(r'^https://(?:www|m)\.', 'https://', u)
+    u = TRACK.sub('', u)
+    return re.sub(r'[?&]+$', '', u).rstrip('/')
+
+
+def norm_title(t):
+    t = re.sub(r'[\[［(【<〈][^\]］)】>〉]{0,14}[\]］)】>〉]', ' ', t)   # [단독] (종합) 【속보】 같은 머리표
+    t = re.sub(r'\(?\d보\)?|종합\d?보?$', ' ', t)
+    return re.sub(r'[^0-9A-Za-z가-힣]', '', t).lower()
+
+
+def dedup(arts):
+    """① 같은 주소(추적 꼬리표 무시) ② 같은 언론사의 같은 제목(머리표·문장부호 무시) → 최신 1건만."""
+    by_u, by_t = {}, {}
+    for a in sorted(arts, key=lambda a: -a['ts']):
+        k = norm_url(a['u'])
+        if k in by_u:
+            continue
+        by_u[k] = a
+        kt = (a['o'], norm_title(a['t']))
+        if kt[1] and kt in by_t:
+            continue
+        by_t[kt] = a
+    return sorted(by_t.values(), key=lambda a: -a['ts'])
+
+
+def group(arts):
+    """같은 사건 묶기. 1단계: 씨앗 기사와 제목 명사가 3개 이상·자카드 0.3 이상 겹치면 같은 묶음(고리처럼 번지지 않게 씨앗 기준).
+    2단계: 묶음끼리 핵심 명사(묶음 기사 절반 이상에 나오는 말)가 희귀어 가중치로 절반 이상 겹치면 합친다.
+    단, 서로 상대 묶음에 없는 고유명사(인물·기관·나라)가 양쪽 모두에 있으면 다른 사건으로 보고 합치지 않는다."""
+    N = [nouns(a['t']) for a in arts]
+    P = [ents(a['t']) for a in arts]
+    seeds, gid = [], [0] * len(arts)
+    for i in sorted(range(len(arts)), key=lambda k: arts[k]['ts']):
+        best, bs = None, 0
+        for g_, sd in enumerate(seeds):
+            if abs(arts[sd]['ts'] - arts[i]['ts']) > 30 * 3600:
+                continue
+            sh = len(N[i] & N[sd]); jac = sh / max(1, len(N[i] | N[sd]))
+            if sh >= 3 and jac >= 0.3 and jac > bs:
+                best, bs = g_, jac
+        if best is None:
+            seeds.append(i); best = len(seeds) - 1
+        gid[i] = best
+    df = collections.Counter(w for n in N for w in n)
+    idf = {w: math.log((len(N) + 1) / (c + 0.5)) for w, c in df.items()}
+    mem = collections.defaultdict(list)
+    for i, g_ in enumerate(gid):
+        mem[g_].append(i)
+    core, allw, ent, tsr = {}, {}, {}, {}
+    for g_, L in mem.items():
+        c = collections.Counter(w for i in L for w in N[i])
+        core[g_] = {w for w, n in c.items() if n * 2 >= len(L)}
+        allw[g_] = set(c)
+        ent[g_] = {w for i in L for w in P[i]} & core[g_]
+        tsr[g_] = (min(arts[i]['ts'] for i in L), max(arts[i]['ts'] for i in L))
+    par = {g_: g_ for g_ in mem}
+    def find(x):
+        while par[x] != x:
+            par[x] = par[par[x]]; x = par[x]
+        return x
+    G = sorted(mem, key=lambda g_: -len(mem[g_]))
+    for x, a in enumerate(G):
+        for b in G[x + 1:]:
+            if tsr[a][0] - tsr[b][1] > 30 * 3600 or tsr[b][0] - tsr[a][1] > 30 * 3600:
+                continue
+            sh = core[a] & core[b]
+            if len(sh) < 3:
+                continue
+            w = sum(idf[t] for t in sh) / max(1e-9, min(sum(idf[t] for t in core[a]), sum(idf[t] for t in core[b])))
+            if w < 0.5:
+                continue
+            if (ent[a] - allw[b]) and (ent[b] - allw[a]):
+                continue
+            if DEBUG:
+                log("합침", round(w, 2), sorted(sh), "|", arts[mem[a][0]]["t"][:40], "<-", arts[mem[b][0]]["t"][:40])
+            par[find(b)] = find(a)
+    return [find(g_) for g_ in gid]
 
 
 def signals(a, body):
@@ -260,11 +354,9 @@ def main():
         arts = [a for lst in ex.map(feed, SRC) for a in lst]
     now = time.time()
     arts = [a for a in arts if now - a['ts'] < WINDOW_H * 3600 and not SKIP.search(a['t'])]
-    uniq = {}
-    for a in arts:
-        uniq.setdefault(a['u'], a)
-    arts = sorted(uniq.values(), key=lambda a: -a['ts'])
-    log('기사', len(arts), '언론사', len({a['o'] for a in arts}))
+    n0 = len(arts)
+    arts = dedup(arts)
+    log('기사', len(arts), f'(중복 {n0 - len(arts)}건 제거)', '언론사', len({a['o'] for a in arts}))
     todo = [a for a in arts if a['u'] not in cache][:400]
     log('본문 새로 읽기', len(todo))
     with cf.ThreadPoolExecutor(8) as ex:
@@ -272,21 +364,8 @@ def main():
             cache[a['u']] = {'sig': signals(a, body), 'ts': a['ts']}
     cache = {k: v for k, v in cache.items() if now - v.get('ts', now) < 72 * 3600}
     json.dump(cache, open(CACHE, 'w', encoding='utf-8'), ensure_ascii=False)
-    # 같은 사건 묶기(제목 명사 겹침)
-    N = [nouns(a['t']) for a in arts]
-    # 씨앗 기사 기준으로만 묶는다(고리처럼 이어져 다른 사건이 섞이지 않게)
-    seeds, gid = [], [0] * len(arts)
-    for i in sorted(range(len(arts)), key=lambda k: arts[k]['ts']):
-        best, bs = None, 0
-        for g_, sd in enumerate(seeds):
-            if abs(arts[sd]['ts'] - arts[i]['ts']) > 30 * 3600:
-                continue
-            sh = len(N[i] & N[sd]); jac = sh / max(1, len(N[i] | N[sd]))
-            if sh >= 3 and jac >= 0.3 and jac > bs:
-                best, bs = g_, jac
-        if best is None:
-            seeds.append(i); best = len(seeds) - 1
-        gid[i] = best
+    # 같은 사건 묶기(제목 명사 겹침 + 묶음끼리 합치기, group() 설명 참고)
+    gid = group(arts)
     fd = lambda i: gid[i]
     groups = {}
     for i in range(len(arts)):
