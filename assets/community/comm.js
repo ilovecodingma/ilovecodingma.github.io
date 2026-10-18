@@ -15,7 +15,7 @@
   const ago = t => { const d = Date.now() / 1000 - t; return d < 60 ? '방금' : d < 3600 ? Math.floor(d / 60) + '분 전' : d < 86400 ? Math.floor(d / 3600) + '시간 전' : new Date(t * 1000).toLocaleDateString('ko-KR'); };
   const KIND = { review: '후기', qna: '질문', tip: '팁' };
   // 방문 기록(관리자 화면용, 운영 도메인만)
-  if (location.hostname === 'sungprofile.cloud') setTimeout(() => { try { fetch(API + '/api/hit', { method: 'POST', keepalive: true, headers: { 'Content-Type': 'application/json', ...(st.t ? { Authorization: 'Bearer ' + st.t } : {}) }, body: JSON.stringify({ p: location.pathname, r: document.referrer }) }).catch(() => {}); } catch {} }, 400);
+  if (location.hostname === 'sungprofile.cloud') setTimeout(() => { try { fetch(API + '/api/hit', { method: 'POST', keepalive: true, headers: { 'Content-Type': 'application/json', ...(st.t ? { Authorization: 'Bearer ' + st.t } : {}) }, body: JSON.stringify({ p: location.pathname, r: document.referrer , s: (new URLSearchParams(location.search).get('src') || '').slice(0, 16)}) }).catch(() => {}); } catch {} }, 400);
   async function api(path, opt = {}) {
     const r = await fetch(API + path, { ...opt, headers: { 'Content-Type': 'application/json', ...(st.t ? { Authorization: 'Bearer ' + st.t } : {}) }, body: opt.body ? JSON.stringify(opt.body) : undefined });
     const j = await r.json().catch(() => ({}));

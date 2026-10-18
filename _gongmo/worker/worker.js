@@ -361,6 +361,7 @@ export default {
         const vid = hex(new Uint8Array(await crypto.subtle.digest('SHA-256', new TextEncoder().encode(ip + '|' + ua + '|' + d)))).slice(0, 16);
         let ref = ''; try { ref = body.r ? new URL(body.r).hostname.replace(/^www\./, '') : ''; } catch {}
         if (/sungprofile\.cloud$/.test(ref)) ref = '';
+        if (/^[a-z0-9_-]{1,16}$/i.test(body.s || '')) ref = 'src:' + body.s.toLowerCase();  // 홍보 링크 꼬리 ?src=th 등(앱 내 브라우저는 referrer 가 비어서)
         const u = await me(req, env), cf = req.cf || {};
         await env.DB.prepare('INSERT INTO hits (day, ts, vid, uid, path, ref, country, city, mobile) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)')
           .bind(d, now(), vid, u ? u.id : 0, clean(body.p, 120), clean(ref, 60), clean(cf.country || '', 4), clean(cf.city || '', 40), /Mobi|Android|iPhone/i.test(ua) ? 1 : 0).run();
