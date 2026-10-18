@@ -38,12 +38,18 @@
 <button class="fr-clear">비우기</button></section>
 <div class="fr-opts"><div class="fr-o"><small>오늘 기분은?</small><div>${MOODS.map(m => `<button data-m="${m}" class="${mood === m ? 'on' : ''}">${m === '아무거나' ? m : '#' + m}</button>`).join('')}</div></div>
 <div class="fr-o"><small>시간은?</small><div>${TIMES.map(([v, l]) => `<button data-t="${v}" class="${maxMin === v ? 'on' : ''}">${l}</button>`).join('')}</div></div></div>
+<button class="fr-go">🍳 이 재료로 메뉴 추천받기</button>
 <div class="fr-out"></div>`;
     ROOT.querySelectorAll('[data-i]').forEach(b => b.onclick = () => { const i = b.dataset.i; have.has(i) ? have.delete(i) : have.add(i); b.classList.toggle('on'); save(); ROOT.querySelector('.fr-n').textContent = have.size + '개 골랐어요'; result(); });
     ROOT.querySelectorAll('[data-m]').forEach(b => b.onclick = () => { mood = b.dataset.m; ROOT.querySelectorAll('[data-m]').forEach(x => x.classList.toggle('on', x === b)); result(); });
     ROOT.querySelectorAll('[data-t]').forEach(b => b.onclick = () => { maxMin = +b.dataset.t; ROOT.querySelectorAll('[data-t]').forEach(x => x.classList.toggle('on', x === b)); result(); });
     ROOT.querySelector('.fr-cam input').onchange = e => scan(e.target.files[0]);
     ROOT.querySelector('.fr-clear').onclick = () => { have.clear(); save(); paint(); };
+    ROOT.querySelector('.fr-go').onclick = () => {   // 2026-10-19 사용자: 「추천받기 누르면 나와야지」
+      result(); const o = ROOT.querySelector('.fr-out');
+      if (!have.size) o.innerHTML = '<p class="fr-note">👆 먼저 냉장고에 있는 재료를 하나 이상 눌러 주세요. 사진을 찍으면 자동으로 골라 드려요.</p>';
+      o.scrollIntoView({ behavior: 'smooth', block: 'start' }); ga('fridge_go', { have: have.size });
+    };
     result();
   }
   // 사진 → 서버(Cloudflare Workers AI 공개 모델)가 재료 이름만 돌려줌 → 칩 자동 체크. 사진은 저장 안 함

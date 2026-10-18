@@ -63,3 +63,6 @@
 .tb-l b{font-weight:700}.tb-l small{display:block;font-size:11.5px;color:#6b7280;margin-top:2px}.tb-n{display:block;margin-top:6px;font-size:11.5px;color:#6b7280}
 .rc-issue .rc-fab{background:linear-gradient(135deg,#b45309,#f59e0b)}.rc-money .rc-fab{background:linear-gradient(135deg,#047857,#10b981)}.rc-life .rc-fab{background:linear-gradient(135deg,#0e7490,#06b6d4)}
 .rc-issue .rc-panel header{background:linear-gradient(135deg,#92400e,#d97706)}.rc-money .rc-panel header{background:linear-gradient(135deg,#065f46,#059669)}.rc-life .rc-panel header{background:linear-gradient(135deg,#155e75,#0891b2)}
+
+/* 2026-10-19 모바일: 챗봇 버튼이 핵심 정보·접수 버튼을 가리지 않게 작게 + 본문 아래 여백 */
+@media (max-width:640px){.rc{right:10px;bottom:10px}.rc-fab img{width:40px!important;height:40px!important}.rc-fab{padding:3px!important;opacity:.92}body{padding-bottom:72px}}

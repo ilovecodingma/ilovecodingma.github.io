@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""루리 탐정의 팩트 감별 (/news/) — 언론사 RSS 기사를 모아 진실성 신호로 점수를 매기고, 기사 주제와 관련된 줍줍(공모전·지원금·청약)을 붙인다.
+"""루리 탐정의 기사 확인 신호 (/news/) — 언론사 RSS 기사를 모아 진실성 신호로 점수를 매기고, 기사 주제와 관련된 줍줍(공모전·지원금·청약)을 붙인다.
 2026-10-18 사용자: "RSS 뉴스 중 기레기 판별" → "팩트체크로, 프로모션은 그 기사 관련 쪽으로" → "기사 수집해서 진실성 평가로" → "피드로, 루리 탐정 복장으로".
 점수는 사실 여부 판정이 아니라 '확인 신호'다:
   ① 교차 보도: 같은 사건을 몇 개 언론사가 썼나   ② 출처: 실명 기관·인물 / 익명 관계자 / 커뮤니티·SNS
@@ -146,6 +146,9 @@ def group(arts):
     단, 서로 상대 묶음에 없는 고유명사(인물·기관·나라)가 양쪽 모두에 있으면 다른 사건으로 보고 합치지 않는다."""
     N = [nouns(a['t']) for a in arts]
     P = [ents(a['t']) for a in arts]
+    df = collections.Counter(w for n in N for w in n)
+    idf = {w: math.log((len(N) + 1) / (c + 0.5)) for w, c in df.items()}
+    W = lambda ws: sum(idf[t] for t in ws)
     seeds, gid = [], [0] * len(arts)
     for i in sorted(range(len(arts)), key=lambda k: arts[k]['ts']):
         best, bs = None, 0
@@ -153,13 +156,11 @@ def group(arts):
             if abs(arts[sd]['ts'] - arts[i]['ts']) > 30 * 3600:
                 continue
             sh = len(N[i] & N[sd]); jac = sh / max(1, len(N[i] | N[sd]))
-            if sh >= 3 and jac >= 0.3 and jac > bs:
+            if sh >= 3 and jac >= 0.3 and jac > bs and W(N[i] & N[sd]) >= 0.45 * min(W(N[i]), W(N[sd])):
                 best, bs = g_, jac
         if best is None:
             seeds.append(i); best = len(seeds) - 1
         gid[i] = best
-    df = collections.Counter(w for n in N for w in n)
-    idf = {w: math.log((len(N) + 1) / (c + 0.5)) for w, c in df.items()}
     mem = collections.defaultdict(list)
     for i, g_ in enumerate(gid):
         mem[g_].append(i)
@@ -211,11 +212,11 @@ def signals(a, body):
 
 
 def judge(a, sig, cl_n, cl_out, cat=''):
-    """0~100 진실성 신호 점수(높을수록 믿을 만함)와 이유 목록."""
+    """0~100 확인 신호 점수(높을수록 확인할 근거가 많음 — 사실 판정 아님)와 이유 목록."""
     why, sc = [], 65
     t = a['t']
     if OPINION.search(t) or OPINION.search(a['u']):
-        return None, 'opinion', ['🗣️ 사설·칼럼 같은 의견 글이라 사실 판정 대상이 아니에요']
+        return None, 'opinion', ['🗣️ 사설·칼럼 같은 의견 글이라 확인 신호 점수를 매기지 않아요']
     excl = '단독' in t[:8]
     if cl_n >= 4:
         sc += 20; why.append(f'✅ {cl_n}개 언론사가 같은 사건을 보도했어요')
@@ -239,7 +240,7 @@ def judge(a, sig, cl_n, cl_out, cat=''):
         if sig.get('miss_q'):
             sc -= 10; why.append('❌ 제목의 인용문이 본문 내용과 달라요')
     else:
-        why.append('🔎 본문을 열어 보지 못해 제목만 봤어요')
+        why.append('🔎 본문을 가져오지 못해 출처·제목-본문 일치는 확인 불가예요(허위라는 뜻 아님)')
     bait = [w for w in BAIT if w in t and not (w == '?' and t.rstrip().endswith('?') is False)]
     if t.rstrip().endswith('?'):
         bait = [w for w in bait if w not in ('?',)] + ['물음표 제목']
@@ -259,7 +260,50 @@ def judge(a, sig, cl_n, cl_out, cat=''):
         sc -= 10; why.append('📢 기업·상품 홍보성 기사로 보여요')
     sc = max(0, min(100, sc))
     g = 'ok' if sc >= 75 else ('warn' if sc >= 50 else 'bad')
+    if not sig.get('body') and g == 'ok':
+        g = 'warn'   # 본문을 못 읽었으면 「확인 신호 많음」으로 올리지 않는다
     return sc, g, why
+
+
+def checks(a, sig, cl_n, cat=''):
+    """항목별 확인 표: [항목, 상태, 근거]. 상태 = 확인 / 주의 / 확인 불가 / 해당 없음 / 참고.
+    2026-10-19 사용자: 무엇을 확인했고 무엇을 확인 못 했는지, 확인 실패를 허위로 처리하지 말 것."""
+    t, body = a['t'], sig.get('body')
+    C = [['같은 사건 보도', '참고', f'언론사 {cl_n}곳(같은 언론사 기사는 1곳으로 셈). 보도한 곳이 많아도 내용이 사실이라는 뜻은 아니에요.']]
+    if not body:
+        C.append(['출처(말한 사람·기관)', '확인 불가', '본문을 가져오지 못했어요.'])
+    elif sig.get('commu'):
+        C.append(['출처(말한 사람·기관)', '주의', '본문이 온라인 커뮤니티·SNS 글을 출처로 들었어요.'])
+    elif sig.get('named', 0) >= 2:
+        C.append(['출처(말한 사람·기관)', '확인', f'실명 기관·인물이 말한 문장 {sig["named"]}곳.'])
+    elif sig.get('anon'):
+        C.append(['출처(말한 사람·기관)', '주의', '「관계자」「알려졌다」 같은 익명 출처만 있어요.'])
+    else:
+        C.append(['출처(말한 사람·기관)', '참고', '말한 사람·기관이 따로 나오지 않는 기사예요.'])
+    nums = [n.strip() for n in NUM.findall(t) if re.sub(r'\D', '', n)]
+    if not nums:
+        C.append(['제목 숫자 ↔ 본문', '해당 없음', '제목에 숫자가 없어요.'])
+    elif not body:
+        C.append(['제목 숫자 ↔ 본문', '확인 불가', '본문을 가져오지 못해 비교하지 못했어요.'])
+    elif sig.get('miss_num'):
+        C.append(['제목 숫자 ↔ 본문', '주의', '본문에서 찾지 못한 숫자: ' + ', '.join(sig['miss_num'])])
+    else:
+        C.append(['제목 숫자 ↔ 본문', '확인', '제목의 숫자가 본문에 있어요: ' + ', '.join(nums[:3])])
+    if not QUOTE.findall(t):
+        C.append(['제목 인용문 ↔ 본문', '해당 없음', '제목에 따옴표 인용이 없어요.'])
+    elif not body:
+        C.append(['제목 인용문 ↔ 본문', '확인 불가', '본문을 가져오지 못해 비교하지 못했어요.'])
+    elif sig.get('miss_q'):
+        C.append(['제목 인용문 ↔ 본문', '주의', '본문과 표현이 많이 다른 인용: ' + ', '.join(sig['miss_q'])])
+    else:
+        C.append(['제목 인용문 ↔ 본문', '확인', '제목의 인용 표현이 본문에도 있어요.'])
+    bait = [w for w in BAIT if w in t and w != '?'] + (['물음표 제목'] if t.rstrip().endswith('?') else [])
+    if a.get('ent') or cat == '연예·문화':
+        bait += [w for w in ENT_BAIT if w in t]
+    C.append(['낚시 표현(제목)', '주의' if bait else '확인', ('있음: ' + ', '.join(dict.fromkeys(bait))) if bait else '없음'])
+    if OPINION.search(t) or OPINION.search(a['u']):
+        C.append(['글 종류', '참고', '사설·칼럼 같은 의견 글이에요.'])
+    return C
 
 
 # ---------------- 기사 주제와 관련된 줍줍(사이트 내부 페이지만)
@@ -361,7 +405,7 @@ def main():
     log('본문 새로 읽기', len(todo))
     with cf.ThreadPoolExecutor(8) as ex:
         for a, body in zip(todo, ex.map(lambda a: body_of(a['u']), todo)):
-            cache[a['u']] = {'sig': signals(a, body), 'ts': a['ts']}
+            cache[a['u']] = {'sig': signals(a, body), 'ts': a['ts'], 'at': datetime.datetime.now(KST).strftime('%Y-%m-%d %H:%M')}
     cache = {k: v for k, v in cache.items() if now - v.get('ts', now) < 72 * 3600}
     json.dump(cache, open(CACHE, 'w', encoding='utf-8'), ensure_ascii=False)
     # 같은 사건 묶기(제목 명사 겹침 + 묶음끼리 합치기, group() 설명 참고)
@@ -389,9 +433,11 @@ def main():
         g = groups[fd(i)]
         outs = sorted({arts[k]['o'] for k in g})
         ct = '연예·문화' if a.get('ent') and not re.search(CATS[0][1], a['t']) else cat_of([a['t']])
-        sc, grade, why = judge(a, cache.get(a['u'], {}).get('sig', {}), len(outs), outs, ct)
+        sig_ = cache.get(a['u'], {}).get('sig', {})
+        sc, grade, why = judge(a, sig_, len(outs), outs, ct)
         it = {'id': hashlib.md5(a['u'].encode()).hexdigest()[:10], 't': a['t'], 'o': a['o'], 'u': a['u'], 'ts': a['ts'], 's': sc, 'g': grade, 'why': why,
-              'cl': [o for o in outs if o != a['o']][:6], 'pr': promos(a, data, apply_, today), 'c': ct, 'is': iss_of.get(i), 'ent': a.get('ent', 0), 'acc': 1 if ACC.search(a['t']) else 0}
+              'cl': [o for o in outs if o != a['o']][:6], 'pr': promos(a, data, apply_, today), 'c': ct, 'is': iss_of.get(i), 'ent': a.get('ent', 0), 'acc': 1 if ACC.search(a['t']) else 0,
+              'ck': checks(a, sig_, len(outs), ct), 'at': cache.get(a['u'], {}).get('at')}
         items.append(it)
         if sc is not None:
             by_o.setdefault(a['o'], []).append(sc)

@@ -32,3 +32,7 @@
 .nw-f{max-width:100%}.nw-cmp{overflow-wrap:anywhere}
 .hot-home{background:linear-gradient(135deg,#fff1f2,#fff7ed);border:1px solid #fecdd3;border-radius:18px;padding:12px 14px;margin:8px 0 12px}.hot-home h2{display:flex;justify-content:space-between;font-size:16px;margin:0 0 8px;color:#9f1239}.hot-home h2 a{font-size:13px;color:#e11d48;text-decoration:none}
 .hot-home ol{list-style:none;margin:0;padding:0;display:grid;gap:6px}.hot-home li a{display:flex;gap:8px;align-items:center;background:#fff;border-radius:12px;padding:8px 10px;text-decoration:none;color:inherit;min-width:0}.hot-home em{font-style:normal}.hot-home b{flex:1;min-width:0;font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.hot-home span{flex:none;font-size:11.5px;color:var(--mu)}
+
+/* 기사별 확인 항목 표 (2026-10-19) */
+.nw-ck{width:100%;border-collapse:collapse;font-size:.84em;margin:6px 0;table-layout:fixed}.nw-ck th,.nw-ck td{border-top:1px solid rgba(127,127,127,.2);padding:4px 6px;text-align:left;vertical-align:top;word-break:keep-all;overflow-wrap:anywhere}.nw-ck th:nth-child(1){width:34%}.nw-ck th:nth-child(2){width:20%}.nw-ck span{display:inline-block;padding:1px 6px;border-radius:8px;font-weight:700;white-space:nowrap}.ck-ok{background:#dcfce7;color:#166534}.ck-bad{background:#fee2e2;color:#991b1b}.ck-na{background:#e5e7eb;color:#374151}.ck-no{color:#6b7280}.nw-at2{font-size:.8em;color:#6b7280;margin:2px 0 6px}
+.nw-ck span{white-space:normal;word-break:keep-all}.nw-ck th:nth-child(2){width:22%}

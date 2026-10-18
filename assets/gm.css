@@ -180,3 +180,8 @@ details.faq{border-bottom:1px solid rgba(0,0,0,.08);padding:8px 0}details.faq su
 
 .an-warn{background:#fff7ed;border:1px solid #fed7aa;border-radius:10px;padding:10px 12px;font-size:.92em}.rv-op{background:#fffbeb;border-left:4px solid #b45309;border-radius:10px;padding:4px 16px 8px;margin:18px 0}.rv-op h2{margin-top:8px}.rv-tag{font-size:.82em;font-weight:700;color:#b45309;margin:8px 0 0}.rv-src ul{font-size:.92em}article.rv table{border-collapse:collapse;width:100%;margin:10px 0}article.rv th,article.rv td{border:1px solid rgba(0,0,0,.12);padding:8px;vertical-align:top}article.rv th{background:rgba(180,83,9,.08)}
 @media (prefers-color-scheme:dark){.rv-op{background:rgba(180,83,9,.12)}}
+
+/* 2026-10-19 상세: 확인 필요 칸 */
+table.info td.need{color:#b45309;font-weight:600}.dh h1,.card .t{overflow-wrap:anywhere;word-break:keep-all}h2 small{font-size:.65em;color:var(--mu);font-weight:600}
+
+.hm-scope{font-size:12px;color:var(--mu);margin:6px 0 0;line-height:1.5;overflow-wrap:anywhere}

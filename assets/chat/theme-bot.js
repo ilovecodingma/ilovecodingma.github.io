@@ -33,7 +33,7 @@ export function start(th) {
   // ---------------- 메인 허브: 길 안내
   if (th === 'hub') {
     B.load = async () => { const [n, a] = await Promise.all([J('/news/data.json'), J('/analyst/data.json')]); D = { n, a }; };
-    B.menu = () => say('어떤 정보를 찾으세요?', [['🕵️ 오늘 이슈', () => { const i = (D.n?.issues || [])[0]; say(i ? `지금 가장 많이 보도된 이슈는 <b>${esc(i.t)}</b> (${i.on}곳)이에요.` + list([{ t: '이슈 감별 전체 보기', u: '/news/' }]) : '이슈를 불러오지 못했어요.', back()); }],
+    B.menu = () => say('어떤 정보를 찾으세요?', [['🕵️ 오늘 이슈', () => { const i = (D.n?.issues || [])[0]; say(i ? `지금 가장 많이 보도된 이슈는 <b>${esc(i.t)}</b> (언론사 ${i.on}곳 보도)이에요.` + list([{ t: '기사 확인 신호 전체 보기', u: '/news/' }]) : '이슈를 불러오지 못했어요.', back()); }],
       ['📊 코인·주식 의견', () => { const c = (D.a?.coins || []).find(x => x.sym === 'BTC'); say((c && c.price ? `비트코인은 지금 ${c.price.p.toLocaleString()}원, 최근 7일 전망 기사는 강세 ${c.bull} · 약세 ${c.bear}이에요. ` : '') + list([{ t: '애널리스트 종합 보기', u: '/analyst/' }]) + '<small class="tb-n">투자 권유가 아니에요.</small>', back()); }],
       ['🏆 공모전 추천', () => say('질문 몇 개면 딱 맞는 공모전을 골라 드려요.' + list([{ t: '루리 공모전 추천 상담', u: '/contest/' }]), back())],
       ['🍳 지원금·경품·오늘 메뉴', () => say(list([{ t: '지원금·청약', u: '/apply/' }, { t: '경품 이벤트', u: '/event/' }, { t: '냉장고 파먹기', u: '/fridge/' }]), back())]]);

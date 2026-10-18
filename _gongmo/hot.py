@@ -59,6 +59,16 @@ NUM = re.compile(r'\d[\d,.]*\s?(?:%p|%|조\s?원|억\s?원|만\s?원|원|조|억
 DATE = re.compile(r'(\d{1,2})월\s?(\d{1,2})일|(\d{1,2})/(\d{1,2})(?!\d)|\d{1,2}월(?:부터|까지|중|말|초)|연내|올해 안|내년(?:부터)?')
 
 
+def same_event(rec, arts):
+    """기존 핫이슈와 같은 사건인가: 기사 주소(추적 꼬리표 무시)가 2건 이상, 또는 작은 쪽의 절반 이상 겹치면 같은 사건.
+    2026-10-19: 대표 제목이 바뀔 때마다 새 주소가 생겨 메인에 같은 사건이 두 번 뜨던 문제(비대면 초진)."""
+    import news as NW
+    a = {NW.norm_url(x['u']) for x in rec.get('arts') or []}
+    b = {NW.norm_url(x['u']) for x in arts}
+    sh = len(a & b)
+    return sh >= 2 or (sh >= 1 and sh * 2 >= min(len(a), len(b)))
+
+
 def slug(k):
     s = re.sub(r'[^0-9A-Za-z가-힣ㄱ-ㅎㅏ-ㅣ]+', '-', k.strip()).strip('-')
     return s[:40] or 'hot'
@@ -85,6 +95,16 @@ def main():
             continue
         cands.append({'title': x['t'], 'arts': [I[a] for a in x['a'] if a in I], 'issue': x})
     made = 0
+    # 이미 같은 사건으로 확인된 중복 기록은 대표 기록 쪽으로 합쳐 둔다(주소는 남기고 대표로 안내)
+    recs = sorted([v for v in db.values() if not v.get('dup')], key=lambda v: v['first'])
+    for i, v in enumerate(recs):
+        if v.get('dup'):
+            continue
+        for w in recs[i + 1:]:
+            if not w.get('dup') and same_event(v, w['arts']):
+                w['dup'] = v['slug']
+                print('중복 핫이슈 합침', w['slug'], '->', v['slug'])
+    done = {}
     for c in cands:
         arts = c['arts']
         txt = c['title'] + ' ' + ' '.join(a['t'] for a in arts)
@@ -102,6 +122,14 @@ def main():
         iss = c.get('issue') or next((x for x in nw.get('issues', []) if any(a['id'] in x['a'] for a in arts)), None)
         head = iss['t'] if iss else c['title']
         sl = slug(c.get('kw') and c['title'] or re.sub(r'[“”"\'‘’\[\]…·]', ' ', head)[:30])
+        twin = next((v for v in db.values() if not v.get('dup') and v['slug'] != sl and same_event(v, arts)), None)
+        if twin:   # 같은 사건이 이미 있으면 그 주소를 계속 쓴다
+            sl = twin['slug']
+        if sl in done:   # 이번 회차에 이미 갱신한 사건(키워드 후보·언론 이슈 후보가 겹침) → 기사만 보탠다
+            seen_u = {a['u'] for a in done[sl]['arts']}
+            done[sl]['arts'] += [{'t': a['t'], 'o': a['o'], 'u': a['u'], 's': a.get('s'), 'g': a.get('g')} for a in arts if a['u'] not in seen_u][:max(0, 10 - len(done[sl]['arts']))]
+            done[sl]['outs'] = sorted({a['o'] for a in done[sl]['arts']} | set(done[sl]['outs']))
+            continue
         seen, what = set(), []
         for a in sorted(arts, key=lambda a: -(a.get('s') or 0)):
             if a['o'] in seen:
@@ -119,15 +147,17 @@ def main():
                 if not any(d_ == x['v'] for x in dates):
                     dates.append({'v': d_, 'o': a['o'], 't': a['t']})
         rec = db.get(sl, {'first': now.strftime('%Y-%m-%d %H:%M')})
+        if twin:
+            head = rec.get('title') or head   # 주소와 제목은 처음 것을 유지
         rec.update({'slug': sl, 'title': head, 'q': c['title'], 'type': typ, 'last': now.strftime('%Y-%m-%d %H:%M'), 'outs': outs, 'what': what, 'nums': nums[:6], 'dates': dates[:5],
                     'arts': [{'t': a['t'], 'o': a['o'], 'u': a['u'], 's': a.get('s'), 'g': a.get('g')} for a in arts[:10]], 'kw': c.get('kw'), 'traffic': c.get('traffic'),
                     'issue': {'n': iss['n'], 'on': iss['on'], 's': iss.get('s'), 'g': iss.get('g')} if iss else None,
                     'pr': NW.promos({'t': txt[:200], 'd': ''}, C, A, now.date().isoformat())})
-        db[sl] = rec
+        db[sl] = rec; done[sl] = rec
         made += 1
     os.makedirs(os.path.dirname(DBF), exist_ok=True)
     json.dump(db, open(DBF, 'w', encoding='utf-8', newline='\n'), ensure_ascii=False, separators=(',', ':'))
-    live = [v for v in db.values() if v['last'] >= (now - datetime.timedelta(hours=48)).strftime('%Y-%m-%d %H:%M')]
+    live = [v for v in db.values() if not v.get('dup') and v['last'] >= (now - datetime.timedelta(hours=48)).strftime('%Y-%m-%d %H:%M')]
     print('후보', len(cands), '갱신', made, '지금 핫이슈', len(live), '전체', len(db))
 
 

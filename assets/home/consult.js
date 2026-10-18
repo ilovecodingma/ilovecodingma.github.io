@@ -3,7 +3,8 @@
 (function () {
   const S = document.getElementById('consult'); if (!S) return;
   const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
-  const today = (() => { const n = new Date(); return Math.round(Date.UTC(n.getFullYear(), n.getMonth(), n.getDate()) / 864e5); })();
+  const today = (() => { const n = new Date(Date.now() + 324e5); return Math.round(Date.UTC(n.getUTCFullYear(), n.getUTCMonth(), n.getUTCDate()) / 864e5); })();   // 한국 시간 기준 날짜
+  const LATE = new Date(Date.now() + 324e5).getUTCHours() >= 18;   // 18시 이후엔 오늘 마감 공모전을 빼요(마감 시각 정보가 없어서 보수적으로)
   const left = e => { const p = e.split('-'); return Math.round(Date.UTC(+p[0], p[1] - 1, +p[2]) / 864e5) - today; };
   const KEY = 'jupjup_consult_v1';
   const Q = [
@@ -97,7 +98,7 @@
       if (pref === 'soon' && l <= 7) { s += 0.6; why.push('곧 마감'); } else if (l <= 1) s -= 0.6;
       if (!why.length && want.trim()) why.push('관심 분야와 비슷해요');
       return { i, s, why, l };
-    }).filter(x => x.l >= 0 && x.s > 0).sort((a, b) => b.s - a.s);
+    }).filter(x => x.l >= (LATE ? 1 : 0) && x.s > 0).sort((a, b) => b.s - a.s);
     const top = ranked[0] ? ranked[0].s : 1;
     ranked.forEach(x => x.pct = Math.max(41, Math.min(98, Math.round(58 + 40 * x.s / top))));
     shown = 0; list.innerHTML = ''; more(); openPop();
@@ -171,13 +172,15 @@
   function restart() { try { localStorage.removeItem(KEY); } catch {} closePop(); mode = 'contest'; free.hidden = true; S.scrollIntoView({ behavior: 'smooth' }); choose(); return; free.hidden = true; S.scrollIntoView({ behavior: 'smooth' }); step(0, {}); }
   S.querySelector('.cs-more').onclick = () => { more(); ga('consult_more', {}); };
   S.querySelector('.cs-redo').onclick = restart;
-  fetch('/data.json').then(r => r.json()).then(d => {
+  fetch('/data.json', { cache: 'no-cache' }).then(r => r.json()).then(d => {
     items = d.items;
-    const dd = items.map(i => ({ i, l: left(i.end) })).filter(x => x.l >= 0 && x.l <= 3).sort((a, b) => a.l - b.l || (b.i.pv || 0) - (a.i.pv || 0)).slice(0, 12);
+    const age = (Date.now() - new Date(String(d.updated).replace(' ', 'T') + ':00+09:00')) / 36e5;
+    if (age > 3) S.insertAdjacentHTML('afterbegin', `<p class="cs-stale">⏳ 공모전 목록 마지막 갱신이 ${Math.floor(age)}시간 전(${esc(d.updated)})이에요. 마감 여부는 공식 공고로 확인해 주세요.</p>`);
+    const dd = items.map(i => ({ i, l: left(i.end) })).filter(x => x.l >= (LATE ? 1 : 0) && x.l <= 3).sort((a, b) => a.l - b.l || (b.i.pv || 0) - (a.i.pv || 0)).slice(0, 12);
     if (dd.length) { S.querySelector('.cs-dday').hidden = false;
       S.querySelector('.cs-strip').innerHTML = dd.map(({ i, l }) => `<a class="cs-dc" href="/c/${i.id}/"><span class="cs-dth">${i.th ? `<img src="/assets/shots/${i.id}.webp" alt="" loading="lazy">` : '<em>⏰</em>'}<b class="${l <= 1 ? 'hot' : ''}">${l ? 'D-' + l : 'D-DAY'}</b></span><strong>${esc(i.title)}</strong><small>${i.pv ? esc(i.prize.split('·')[0]) : esc(i.org || '')}</small></a>`).join(''); }
     try { prof = JSON.parse(localStorage.getItem(KEY) || 'null'); } catch { prof = null; }
     if (prof) { mode = prof.mode || 'contest'; if (mode === 'apply') { S.querySelector('.cs-title').innerHTML = '이 청약이나<br><em>넣어 볼까?</em>'; S.querySelector('.cs-name').textContent = '루리 · 청약 상담'; } talk('또 왔네! 오늘은 <b>이거나 해 볼까?</b> 지난번 얘기한 거 기준으로 새로 골라 왔어요.', 'wave').then(recommend); }
     else choose();
-  });
+  }).catch(() => { S.insertAdjacentHTML('afterbegin', '<p class="cs-stale">공모전 목록을 불러오지 못했어요. 잠시 뒤 새로고침하거나 <a href="/contest/week/">이번 주 마감 목록</a>을 봐 주세요.</p>'); });
 })();
