@@ -136,7 +136,7 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False, noinde
 <meta property="og:image" content="{SITE}/assets/ruri/og.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="{SITE}/assets/ruri/og.jpg">
 <meta name="theme-color" content="{TH[3] if TH else '#5b21b6'}">
-<link rel="icon" href="/favicon.ico?v=5" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png?v=5"><link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png?v=5"><link rel="manifest" href="/site.webmanifest"><link rel="alternate" type="application/rss+xml" title="루리의 줍줍" href="/rss.xml">
+<link rel="icon" href="/favicon.ico?v=6" sizes="any"><link rel="icon" type="image/png" sizes="48x48" href="/assets/icons/icon-48.png?v=6"><link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/icon-96.png?v=6"><link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/icon-192.png?v=6"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=6"><link rel="manifest" href="/site.webmanifest"><link rel="alternate" type="application/rss+xml" title="루리의 줍줍" href="/rss.xml">
 <link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <link rel="stylesheet" href="/assets/gm.css?v=15">{('<link rel="stylesheet" href="/assets/chat/ruri-chat.css?v=8">') if not (TH and TH[0] == 'ai') else ''}{COMM_TAGS}{('<script type="module" src="/assets/chat/ruri-chat.js?v=13"></script>') if not (TH and TH[0] == 'ai') else ''}<script defer src="/assets/app/app.js?v=3"></script>
 {ldh}
@@ -919,7 +919,9 @@ def build():
 <link rel="stylesheet" href="/assets/home/consult.css?v=14">'''
     page('/', '루리의 줍줍 — 나에게 맞는 공모전 찾기·마감 전 준비',
          f'진행 중 공모전 {len(live)}건의 분야·참가 자격·마감일·제출물을 비교하고, 조건에 맞는 공모전을 찾아 준비 일정까지. 이슈·머니·생활 정보도 함께.',
-         home, full_title=True, ld={'@context': 'https://schema.org', '@type': 'WebSite', 'name': NAME, 'alternateName': ['루리의줍줍', 'sungprofile', '루리 줍줍'], 'url': SITE + '/'})
+         home, full_title=True, ld={'@context': 'https://schema.org', '@graph': [  # 2026-10-19 구글 검색 결과 사이트 이름·로고
+             {'@type': 'WebSite', '@id': SITE + '/#website', 'name': NAME, 'alternateName': ['줍줍', '루리의줍줍', '루리 줍줍'], 'url': SITE + '/', 'publisher': {'@id': SITE + '/#org'}},
+             {'@type': 'Organization', '@id': SITE + '/#org', 'name': NAME, 'url': SITE + '/', 'logo': {'@type': 'ImageObject', 'url': SITE + '/assets/icons/icon-512.png', 'width': 512, 'height': 512}}]})
     for s, n in CATS:
         cl = [c for c in live if n in c['tags']]
         tips = ''.join(f'<li>{E(t)}</li>' for t in TIPS[n])
