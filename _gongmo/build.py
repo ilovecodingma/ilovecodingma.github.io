@@ -694,7 +694,7 @@ def talk_pages():
     if not days:
         return []
     arch = '<section class="tk-arch"><h2>📅 날짜별 커뮤니티 이슈</h2><p>' + ''.join(f'<a href="/talk/{d}/">{kdate(d)}</a>' for d in days[:60]) + '</p></section>'
-    css = '<link rel="stylesheet" href="/assets/mag/mag.css?v=8"><link rel="stylesheet" href="/assets/news/news.css?v=3">'
+    css = '<link rel="stylesheet" href="/assets/mag/mag.css?v=9"><link rel="stylesheet" href="/assets/news/news.css?v=3">'
     note = '<p class="note">순위는 여러 커뮤니티에 동시에 뜬 정도·댓글 수·인기글에 머문 시간으로 매겨요. 성·혐오·개인 신상·비방·사생활 폭로성 글은 모으지 않아요. 요약은 루리가 제목과 수치만 보고 정리했어요.</p>'
     urls = ['/talk/']
     for i, d in enumerate(days):
@@ -841,7 +841,7 @@ def mag_pages(live, aps):
     mag_snapshot(live, aps)
     md = os.path.join(ROOT, 'mag', 'archive')
     days = sorted([f[:-5] for f in os.listdir(md) if f.endswith('.json')], reverse=True)
-    css = '<link rel="stylesheet" href="/assets/mag/mag.css?v=8">'
+    css = '<link rel="stylesheet" href="/assets/mag/mag.css?v=9">'
     urls, cards = ['/mag/'], []
     for d in days:
         m = json.load(open(os.path.join(md, d + '.json'), encoding='utf-8'))
@@ -1099,7 +1099,7 @@ def satire_pages():
     days = satire_days()
     if not days:
         return []
-    css = '<link rel="stylesheet" href="/assets/mag/mag.css?v=8">'
+    css = '<link rel="stylesheet" href="/assets/mag/mag.css?v=9">'
     note = '<p class="note">풍자 만화예요. 특정 종목·인물을 비방하거나 투자를 권하려는 게 아니에요. 숫자는 그날 보도 기준이에요.</p>'
     urls = ['/satire/']
     def one(d, v, h='h2'):
@@ -1152,13 +1152,18 @@ def kw_pages():
     days = sorted([f[:-5] for f in os.listdir(ad) if f.endswith('.json')], reverse=True) if os.path.isdir(ad) else []
     if not db or not days:
         return []
-    css = '<link rel="stylesheet" href="/assets/mag/mag.css?v=8">'
+    css = '<link rel="stylesheet" href="/assets/mag/mag.css?v=9">'
     G = {'ok': '✅', 'warn': '🟡', 'bad': '🔴'}
     note = '<p class="note">구글 트렌드 한국 급상승 검색어를 바탕으로 루리가 관련 보도와 사이트 정보를 모은 페이지예요. 연예인 사생활·사건사고·비방성 키워드는 다루지 않아요.</p>'
     urls = ['/kw/']
+    kd = os.path.join(ROOT, 'kw')  # 제외된 키워드 페이지는 지움
+    for f in os.listdir(kd):
+        if os.path.isdir(os.path.join(kd, f)) and f != 'archive' and not re.match(r'\d{4}-\d{2}-\d{2}$', f) and f not in db:
+            shutil.rmtree(os.path.join(kd, f), ignore_errors=True)
+    SRCB = lambda r: ('<span class="kw-b both">구글+네이버 동시</span>' if len(r.get('src') or []) > 1 else '<span class="kw-b n">실시간 검색어</span>' if (r.get('src') or ['google']) == ['naver'] else '<span class="kw-b g">구글 트렌드</span>')
     for sl, r in db.items():
         k = r['k']
-        lines = [f'「{E(k)}」{josa_ga(k)} {kdate(r["days"][-1])} 구글 검색 급상승 키워드에 올랐어요(검색량 {E(r.get("traffic") or "-")}).']
+        lines = [f'「{E(k)}」{josa_ga(k)} {kdate(r["days"][-1])} ' + ('구글 급상승과 실시간 검색어에 동시에' if len(r.get('src') or []) > 1 else '실시간 검색어에' if (r.get('src') or ['google']) == ['naver'] else '구글 검색 급상승 키워드에') + f' 올랐어요({E(r.get("traffic") or "-")}).']
         if r.get('srcs'):
             lines.append(f'관련 보도는 {len(r["srcs"])}곳({E(", ".join(r["srcs"][:5]))}{" 등" if len(r["srcs"]) > 5 else ""})에서 나왔어요.')
         if r.get('issue'):
@@ -1175,8 +1180,9 @@ def kw_pages():
         links += [f'<a href="/analyst/s/{x["id"]}/"><em>📊 애널리스트</em><b>{E(x["name"])} 목표가 의견</b></a>' for x in r.get('stocks', [])]
         links += [f'<a href="/analyst/coin/{x["sym"].lower()}/"><em>🪙 코인</em><b>{E(x["name"])} 전망 종합</b></a>' for x in r.get('coins', [])]
         links += [f'<a href="{E(p_["u"])}"><em>{E(p_["k"])}</em><b>{E(p_["t"])}</b></a>' for p_ in r.get('pr', [])]
-        body = (f'<p class="bc"><a href="/">홈</a> › <a href="/kw/">인기 키워드</a> › {E(k)}</p><h1>🔎 {E(k)} — 왜 검색이 늘었나</h1>'
-                + say('o_det_think', ' '.join(lines))
+        post = f'<section class="mg-s"><h2>✍️ 루리의 정리 글</h2><div class="nw-pr"><a href="{E(r["post"])}" target="_blank" rel="noopener"><em>블로그</em><b>{E(k)} 자세히 정리한 글 보기</b></a></div></section>' if r.get('post') else ''
+        body = (f'<p class="bc"><a href="/">홈</a> › <a href="/kw/">인기 키워드</a> › {E(k)}</p><h1>🔎 {E(k)} — 왜 검색이 늘었나</h1><p>{SRCB(r)}</p>'
+                + say('o_det_think', ' '.join(lines)) + post
                 + (f'<section class="mg-s"><h2>📰 왜 떴나: 관련 보도</h2><ul class="kw-l">{why}</ul></section>' if why else '')
                 + (f'<section class="mg-s"><h2>🕵️ 루리가 채점한 관련 기사</h2><ul class="kw-l">{ours}</ul></section>' if ours else '')
                 + (f'<section class="mg-s"><h2>📌 루리의 줍줍에서 더 보기</h2><div class="nw-pr">{"".join(links)}</div></section>' if links else '')
@@ -1187,7 +1193,7 @@ def kw_pages():
     arch = '<section class="tk-arch"><h2>📅 날짜별 인기 키워드</h2><p>' + ''.join(f'<a href="/kw/{d}/">{kdate(d)}</a>' for d in days[:90]) + '</p></section>'
     for i, d in enumerate(days):
         L = json.load(open(os.path.join(ad, d + '.json'), encoding='utf-8'))
-        li = ''.join(f'<li><a href="/kw/{x["slug"]}/"><em>{j + 1}</em><b>{E(x["k"])}</b><span>검색량 {E(x.get("traffic") or "-")} · {E(x.get("first", ""))} 첫 등장</span></a></li>' for j, x in enumerate(L) if x['slug'] in db)
+        li = ''.join(f'<li><a href="/kw/{x["slug"]}/"><em>{j + 1}</em><b>{E(x["k"])}</b><span>{SRCB(x)} {E(x.get("traffic") or "-")} · {E(x.get("first", ""))} 첫 등장</span></a></li>' for j, x in enumerate([y for y in L if y['slug'] in db]))
         bd = f'<ol class="mg-l">{li}</ol>' + arch + note + css
         if i == 0:
             page('/kw/', '오늘의 인기 키워드 — 검색 급상승 이유 정리', f'{kdate(d)} 구글 검색 급상승 키워드와 왜 떴는지: ' + ', '.join(x['k'] for x in L[:6]),
@@ -1228,7 +1234,7 @@ def ailog_page(live, nurls):
             + f'<section class="mg-s"><h2>🛠️ AI가 틀린 것과 고친 것</h2><ul class="al-f">{fixes}</ul></section>'
             + f'<section class="mg-s"><h2>📏 지킨 원칙</h2><ul class="al-r">{rules}</ul></section>'
             + f'<section class="mg-s"><h2>🗓️ 날짜별 기록</h2><ul class="al-tl">{tl}</ul></section>'
-            + '<p class="note">이 페이지는 사이트 개발 과정만 공개해요. 숫자는 빌드할 때마다 자동으로 갱신돼요.</p><link rel="stylesheet" href="/assets/mag/mag.css?v=8">')
+            + '<p class="note">이 페이지는 사이트 개발 과정만 공개해요. 숫자는 빌드할 때마다 자동으로 갱신돼요.</p><link rel="stylesheet" href="/assets/mag/mag.css?v=9">')
     page('/ailog/', 'AI 제작 로그 — 서버비 0원으로 정보 사이트 만들기(Claude Code)',
          f'사람 한 명의 말과 AI(Claude Code)로 {days}일 동안 페이지 {npage:,}개짜리 정보 사이트를 만든 기록. 무료 호스팅·무료 서버리스·공개 RSS로 서버비 0원, 매시간 자동 갱신.',
          body, [('루리의 줍줍', '/'), ('AI 제작 로그', '/ailog/')])
@@ -1245,7 +1251,7 @@ def all_page():
          ('💰 생활 정보', [('/apply/', '지원금·청약', '청년 지원금·청약 일정'), ('/event/', '경품 이벤트', '응모만 하면 되는 이벤트'), ('/fridge/', '냉장고 파먹기', '있는 재료로 오늘 메뉴'), ('/qa/', '고민 해결', '실제 고민에 답 정리')]),
          ('⚙️ 더 보기', [('/app/', '앱·알림', '홈 화면 설치·폰 알림'), ('/me/', '내 공간', '찜·응모 기록'), ('/ailog/', 'AI 제작 로그', '이 사이트를 만든 방법')])]
     body = '<p class="bc"><a href="/">홈</a> › 전체 메뉴</p><h1>☰ 루리의 줍줍 전체 메뉴</h1>' + ''.join(
-        f'<section class="mg-s"><h2>{E(g)}</h2><ul class="al-menu">' + ''.join(f'<li><a href="{u}"><b>{E(n)}</b><span>{E(d)}</span></a></li>' for u, n, d in items) + '</ul></section>' for g, items in G) + '<link rel="stylesheet" href="/assets/mag/mag.css?v=8">'
+        f'<section class="mg-s"><h2>{E(g)}</h2><ul class="al-menu">' + ''.join(f'<li><a href="{u}"><b>{E(n)}</b><span>{E(d)}</span></a></li>' for u, n, d in items) + '</ul></section>' for g, items in G) + '<link rel="stylesheet" href="/assets/mag/mag.css?v=9">'
     page('/all/', '전체 메뉴', '루리의 줍줍 전체 메뉴: 이슈 감별, 커뮤니티 이슈, 인기 키워드, 풍자, 매거진, 애널리스트 분석, 공모전, 지원금·청약, 경품, 냉장고 파먹기, 앱·알림.', body, [('루리의 줍줍', '/'), ('전체 메뉴', '/all/')])
     return ['/all/']
 
@@ -1284,7 +1290,7 @@ def money_pages():
     # 머니 테마 정보 섹션 (2026-10-18 사용자: "주식 관련해서도 정책 등, 나이별 포트폴리오 전략 등을 넣고 전문가들 이야기도 넣어서" — 연구 ⑂ 기획)
     an = _rd('analyst/data.json')
     ex = an.get('experts', [])
-    css = '<link rel="stylesheet" href="/assets/analyst/analyst.css?v=4"><link rel="stylesheet" href="/assets/mag/mag.css?v=8">'
+    css = '<link rel="stylesheet" href="/assets/analyst/analyst.css?v=4"><link rel="stylesheet" href="/assets/mag/mag.css?v=9">'
     urls = []
     how = ('<details class="an-how"><summary>어떻게 모았나요?</summary><ol><li>증권·경제 기사 RSS에서 리서치센터장·CIO·이코노미스트·한국은행·KDI·IMF·월가 기관 등 실명 기관·인물의 발언이 제목에 나온 기사만 골라요.</li>'
            '<li>주제(코스피·미국 증시·금리·환율·반도체·부동산·경기·코인·원자재)와 성격(시장 전망·자산배분 조언·리스크 경고)으로 나눠요.</li><li>발언(따옴표) 부분으로 긍정·신중을 가려, 같은 주제에서 둘 다 있으면 나란히 보여 줘요.</li>'
