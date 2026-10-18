@@ -112,13 +112,15 @@ ${member() ? '' : '<p class="pp-login">🔒 준비 보드는 <b>회원 전용</b
     const checks = checksOf(b).map((c, i) => `<li><label><input type="checkbox" data-k="checks" data-i="${i}" ${(b.checks || [])[i] ? 'checked' : ''}><span>${esc(c)}</span></label></li>`).join('');
     top.innerHTML = `<section class="pp-board"><p class="pp-back"><a href="#">← 내 준비 보드</a></p>
 <header><span class="pp-ic big">${gg.icon}</span><div><small>${esc(gg.name)} 준비</small><h2>${esc(b.title)}</h2><p><em class="${l <= 3 && l >= 0 ? 'hot' : ''}">${dlab(l)}</em> ${b.end ? md(b.end) + ' 마감' : ''} · 진행 <b class="pp-pc">${p}%</b></p><i class="pp-bar"><i style="width:${p}%"></i></i></div></header>
-<div class="pp-acts"><a href="${esc(b.url)}">📄 공고 보기</a><button class="pp-ics">📅 캘린더에 넣기</button><button class="pp-done${b.done ? ' on' : ''}">${b.done ? '✅ 냈어요' : '✅ 다 냈어요'}</button><a href="/community/">🚩 같이 할 사람</a></div>
+<div class="pp-acts"><a href="${esc(b.url)}">📄 공고 보기</a><button class="pp-ics">📅 캘린더에 넣기</button><button class="pp-done${b.done ? ' on' : ''}">${b.done ? '✅ 냈어요' : '✅ 다 냈어요'}</button><button class="pp-share">📤 공유하기</button></div>
 <h3>🗓️ 마감까지 준비 일정</h3>${l >= 0 && l < maxOff(gg) ? '<p class="pp-note">마감이 가까워서 일정을 촘촘하게 줄였어요.</p>' : ''}
 <ol class="pp-steps">${steps}</ol>
 <h3>✔️ 내기 전 체크리스트</h3><ul class="pp-checks">${checks}</ul>
 <h3>📝 메모 <small>아이디어·후보·링크 무엇이든</small></h3><textarea class="pp-memo" rows="6" placeholder="예) 후보: 1) … 2) …  /  담당자 메일: …">${esc(b.memo || '')}</textarea><p class="pp-saved" hidden>저장했어요</p>
 <h3>🍯 ${esc(gg.name)} 꿀팁</h3><ul class="pp-tips">${gg.tips.slice(0, 3).map(t => `<li>${esc(t)}</li>`).join('')}</ul><p class="pp-more"><a href="#tips" data-g="${esc(gg.g)}">꿀팁 더 보기·공유하기 →</a>${b.g === 'slogan' ? ' · <a href="/lab/#diag">🏆 내 문구 진단 받기</a>' : ''}</p>
-<p class="pp-del"><button>이 보드 지우기</button></p></section>`;
+<section class="cm-crew pp-crew" data-contest="${esc(id.slice(2))}" data-title="${esc(b.title)}"></section><p class="pp-del"><button>이 보드 지우기</button></p></section>`;
+    if (window.JCREW) JCREW.mount(top.querySelector('.pp-crew'));
+    top.querySelector('.pp-share').onclick = () => window.JCREW && JCREW.share({ title: b.title, text: `「${b.title}」 준비 중! 같이 할 사람? (${dlab(l)})`, path: '/c/' + id.slice(2) + '/' });
     top.querySelectorAll('input[type=checkbox]').forEach(x => x.onchange = () => {
       const k = x.dataset.k; b[k] = b[k] || []; b[k][+x.dataset.i] = x.checked; save(id);
       const np = prog(b); top.querySelector('.pp-pc').textContent = np + '%'; top.querySelector('header .pp-bar i').style.width = np + '%';

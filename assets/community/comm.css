@@ -123,5 +123,22 @@
 .my-acts{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}.my-acts button{flex:1 1 180px;font:inherit;font-weight:800;font-size:14px;border:2px solid #e9d5ff;background:#faf5ff;color:#5b21b6;border-radius:14px;padding:11px;cursor:pointer}
 .my-acts button.on{background:#7c3aed;color:#fff;border-color:#7c3aed}.my-acts small{flex-basis:100%;font-size:12px;color:var(--mu)}.cm-menu a small{display:block;font-size:11px;color:var(--mu);font-weight:600}
 
-.ma-prep{display:block;text-align:center;margin-top:6px;padding:11px;border-radius:12px;background:linear-gradient(135deg,#7c3aed,#db2777);color:#fff!important;font-weight:800;text-decoration:none;font-size:14.5px}
+.ma-prep{display:block;width:100%;box-sizing:border-box;text-align:center;margin-top:6px;padding:11px;border-radius:12px;background:linear-gradient(135deg,#7c3aed,#db2777);color:#fff!important;font-weight:800;text-decoration:none;font-size:14.5px}
 .ma-prep small{font-size:11px;background:rgba(255,255,255,.25);border-radius:999px;padding:2px 7px;margin-left:4px}
+
+/* 동료 찾기·공유 (crew.js) */
+.ma-share{display:block;width:100%;margin-top:6px;padding:10px;border-radius:12px;border:1px solid #ddd6fe;background:#fff;color:#5b21b6;font-weight:800;font-size:14px;cursor:pointer}
+#cm-crew,.cm-crew{margin:18px 0;background:var(--card,#fff);border:1px solid var(--bd,#e9e5f5);border-radius:18px;padding:14px}#cm-crew [hidden],.cm-crew [hidden]{display:none!important}
+.cr-head{display:flex;justify-content:space-between;align-items:center;gap:8px}.cr-head h2{margin:0;font-size:18px}.cr-share-b{border:1px solid #ddd6fe;background:#faf5ff;color:#5b21b6;font-weight:800;border-radius:999px;padding:6px 12px;cursor:pointer}
+.cr-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:10px 0}.cr-stats div{background:#f5f3ff;border-radius:12px;padding:8px;text-align:center}.cr-stats b{display:block;font-size:22px;color:#7c3aed}.cr-stats small{font-size:11.5px;color:var(--mu,#6b7280)}
+.cr-inv{background:#fff7ed;border:1px solid #fed7aa;border-radius:12px;padding:10px 12px;font-size:13.5px;margin:6px 0;line-height:1.6}.cr-inv .btn2{margin-top:6px;display:block;width:100%}
+.cr-acts{display:grid;grid-template-columns:1fr 1fr;gap:6px}.cr-acts .btn2{width:100%;font-size:14px}
+.cr-form{margin-top:10px;display:grid;gap:8px}.cr-roles{display:flex;flex-wrap:wrap;gap:6px}.cr-roles button{border:1px solid #ddd6fe;background:#fff;border-radius:999px;padding:7px 12px;font-size:13px;font-weight:700;color:#5b21b6;cursor:pointer}.cr-roles button.on{background:#7c3aed;color:#fff;border-color:#7c3aed}
+.cr-intro{font-size:15px;padding:10px;border:1px solid var(--bd,#e9e5f5);border-radius:10px;width:100%;box-sizing:border-box}.cr-row{display:flex;gap:6px}.cr-row .btn2{flex:1}
+#cm-crew h3,.cm-crew h3{font-size:15px;margin:14px 0 6px}.cr-list,.cr-teams{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.cr-list li{border:1px solid var(--bd,#e9e5f5);border-radius:12px;padding:10px 12px;background:#fff}.cr-list li>div:first-child{display:flex;justify-content:space-between;gap:6px}.cr-ago{font-size:11.5px;color:var(--mu,#6b7280)}
+.cr-list p{margin:4px 0 0;font-size:13.5px}.cr-list .btn2{margin-top:6px;width:100%;font-size:13.5px}.cr-called{display:inline-block;margin-top:6px;font-size:12.5px;color:#16a34a;font-weight:800}
+.cr-teams button{width:100%;text-align:left;border:1px solid #ddd6fe;background:#faf5ff;border-radius:12px;padding:10px 12px;display:grid;gap:3px;cursor:pointer}.cr-teams b{font-size:14px}.cr-teams span{font-size:12.5px;color:var(--mu,#6b7280)}
+.cr-empty{font-size:13.5px;color:var(--mu,#6b7280);background:#faf5ff;border-radius:12px;padding:10px 12px;margin:10px 0 0}
+.cr-share .cr-url{width:100%;box-sizing:border-box;font-size:13px;padding:9px;border:1px solid var(--bd,#e9e5f5);border-radius:10px;margin:6px 0}.cr-share .btn2{width:100%}
+.cr-dot{display:inline-grid;place-items:center;min-width:17px;height:17px;border-radius:999px;background:#f43f5e;color:#fff;font-size:10.5px;font-style:normal;margin-left:4px}.cr-mi{background:#fff7ed;font-weight:800}

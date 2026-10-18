@@ -241,6 +241,48 @@ export default {
         }
         return json(req, { ok: true });
       }
+      // ---- 동료 찾기: 같은 공모전 준비하는 사람끼리 모이기 (2026-10-18 사용자: 같은 사람이 모이는 구조 + 원정대 활성화) ----
+      if (p === '/api/crew' && req.method === 'GET') {
+        const c = clean(url.searchParams.get('c'), 40), u = await me(req, env);
+        if (!c) {  // 전체: 최근 동료 찾는 사람
+          const rows = (await env.DB.prepare('SELECT s.user_id uid, s.contest_id, s.contest_title, s.roles, s.intro, s.updated, u.nick FROM seekers s JOIN users u ON u.id = s.user_id WHERE u.banned = 0 ORDER BY s.updated DESC LIMIT 40').all()).results;
+          return json(req, { seekers: rows.map(r => ({ ...r, me: !!(u && u.id === r.uid) })) });
+        }
+        const prep = await count(env, "SELECT COUNT(*) n FROM (SELECT user_id FROM prep WHERE item_id = ? UNION SELECT user_id FROM user_items WHERE item_id = ? AND (fav = 1 OR state != ''))", 'c:' + c, 'c:' + c);
+        const seekers = (await env.DB.prepare('SELECT s.user_id uid, s.roles, s.intro, s.updated, u.nick FROM seekers s JOIN users u ON u.id = s.user_id WHERE s.contest_id = ? AND u.banned = 0 ORDER BY s.updated DESC LIMIT 50').bind(c).all()).results;
+        const teams = (await env.DB.prepare("SELECT t.id, t.name, t.roles, t.size, t.status, t.leader_id, (SELECT COUNT(*) FROM team_members m WHERE m.team_id = t.id AND m.state = 'accepted') cnt FROM teams t WHERE t.contest_id = ? AND t.hidden = 0 ORDER BY t.status = 'closed', t.created DESC LIMIT 20").bind(c).all()).results;
+        let invites = [], myTeams = [];
+        if (u) {
+          invites = (await env.DB.prepare("SELECT i.team_id, t.name, u.nick leader FROM crew_invites i JOIN teams t ON t.id = i.team_id JOIN users u ON u.id = t.leader_id WHERE i.user_id = ? AND t.contest_id = ? AND t.hidden = 0 AND NOT EXISTS (SELECT 1 FROM team_members m WHERE m.team_id = i.team_id AND m.user_id = i.user_id)").bind(u.id, c).all()).results;
+          myTeams = teams.filter(x => x.leader_id === u.id && x.status !== 'closed').map(x => x.id);
+        }
+        const called = u ? (await env.DB.prepare('SELECT user_id FROM crew_invites WHERE team_id IN (SELECT id FROM teams WHERE leader_id = ? AND contest_id = ?)').bind(u.id, c).all()).results.map(r => r.user_id) : [];
+        return json(req, { preparing: Math.max(prep, seekers.length), seekers: seekers.map(s => ({ ...s, me: !!(u && u.id === s.uid), called: called.includes(s.uid) })),
+          teams: teams.map(({ leader_id, ...x }) => ({ ...x, mine: !!(u && u.id === leader_id) })), invites, myTeams, joined: !!(u && seekers.some(s => s.uid === u.id)) });
+      }
+      if (p === '/api/crew' && req.method === 'POST') {
+        const u = await me(req, env); if (!u) return err(req, '로그인이 필요해요.', 401);
+        const c = clean(body.c, 40); if (!/^[\w.-]+$/.test(c)) return err(req, '공모전을 확인해 주세요.');
+        if (body.del) { await env.DB.prepare('DELETE FROM seekers WHERE user_id = ? AND contest_id = ?').bind(u.id, c).run(); return json(req, { ok: true }); }
+        const roles = clean(body.roles, 120).split(/[,，、]+/).map(r => r.trim().slice(0, 20)).filter(Boolean).slice(0, 6).join(','), intro = clean(body.intro, 300);
+        if (!roles && intro.length < 2) return err(req, '잘하는 것이나 한 줄 소개를 적어 주세요.');
+        if (await count(env, 'SELECT COUNT(*) n FROM seekers WHERE user_id = ?', u.id) >= 30) return err(req, '동료 찾기는 30개 공모전까지예요.', 429);
+        await env.DB.prepare('INSERT OR REPLACE INTO seekers (user_id, contest_id, contest_title, roles, intro, updated) VALUES (?, ?, ?, ?, ?, ?)').bind(u.id, c, clean(body.title, 120), roles, intro, now()).run();
+        return json(req, { ok: true });
+      }
+      if (p === '/api/crew/invite' && req.method === 'POST') {  // 원정대장이 동료 찾는 사람을 부르기
+        const u = await me(req, env); if (!u) return err(req, '로그인이 필요해요.', 401);
+        const tm = await env.DB.prepare("SELECT id, contest_id FROM teams WHERE id = ? AND leader_id = ? AND hidden = 0 AND status != 'closed'").bind(+body.team, u.id).first();
+        if (!tm) return err(req, '내가 대장인 모집 중 원정대만 부를 수 있어요.', 403);
+        if (!await env.DB.prepare('SELECT 1 FROM seekers WHERE user_id = ? AND contest_id = ?').bind(+body.user, tm.contest_id).first()) return err(req, '이 공모전 동료를 찾는 사람이 아니에요.');
+        if (await count(env, 'SELECT COUNT(*) n FROM crew_invites WHERE team_id IN (SELECT id FROM teams WHERE leader_id = ?) AND created > ?', u.id, now() - DAY) >= 30) return err(req, '오늘은 더 부를 수 없어요.', 429);
+        await env.DB.prepare('INSERT OR IGNORE INTO crew_invites (team_id, user_id, created) VALUES (?, ?, ?)').bind(tm.id, +body.user, now()).run();
+        return json(req, { ok: true });
+      }
+      if (p === '/api/crew/mine') {  // 나를 부른 원정대 (메뉴 알림용)
+        const u = await me(req, env); if (!u) return err(req, '로그인이 필요해요.', 401);
+        return json(req, { invites: (await env.DB.prepare("SELECT i.team_id, t.name, t.contest_id, t.contest_title FROM crew_invites i JOIN teams t ON t.id = i.team_id WHERE i.user_id = ? AND t.hidden = 0 AND t.status != 'closed' AND NOT EXISTS (SELECT 1 FROM team_members m WHERE m.team_id = i.team_id AND m.user_id = i.user_id) ORDER BY i.created DESC LIMIT 20").bind(u.id).all()).results });
+      }
       // ---- 꿀팁 (posts kind=tip, contest_id = 'g:<장르>' 또는 공모전 id) ----
       if (p === '/api/tips' && req.method === 'GET') {
         const g = clean(url.searchParams.get('g'), 12), u = await me(req, env);

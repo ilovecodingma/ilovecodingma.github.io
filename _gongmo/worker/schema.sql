@@ -145,3 +145,8 @@ CREATE INDEX IF NOT EXISTS hits_ts ON hits(ts);
 CREATE TABLE IF NOT EXISTS prep (user_id INTEGER NOT NULL, item_id TEXT NOT NULL, data TEXT NOT NULL, updated INTEGER NOT NULL, PRIMARY KEY (user_id, item_id));
 CREATE TABLE IF NOT EXISTS post_likes (user_id INTEGER NOT NULL, post_id INTEGER NOT NULL, created INTEGER NOT NULL, PRIMARY KEY (user_id, post_id));
 CREATE INDEX IF NOT EXISTS post_likes_post ON post_likes(post_id);
+
+-- 동료 찾기 (2026-10-18)
+CREATE TABLE IF NOT EXISTS seekers (user_id INTEGER NOT NULL, contest_id TEXT NOT NULL, contest_title TEXT NOT NULL DEFAULT '', roles TEXT NOT NULL DEFAULT '', intro TEXT NOT NULL DEFAULT '', updated INTEGER NOT NULL, PRIMARY KEY (user_id, contest_id));
+CREATE INDEX IF NOT EXISTS seekers_c ON seekers(contest_id, updated DESC);
+CREATE TABLE IF NOT EXISTS crew_invites (team_id INTEGER NOT NULL, user_id INTEGER NOT NULL, created INTEGER NOT NULL, PRIMARY KEY (team_id, user_id));
