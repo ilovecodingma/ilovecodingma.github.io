@@ -19,7 +19,7 @@
       return { r, lack, plus, score: (lack.length ? -10 * lack.length : 0) + plus.length * 1.2 + r.need.length * 0.8 + (fit ? 3 : 0) + seed(r.n) };
     }).filter(x => x.r.m <= maxMin && (mood === '아무거나' || x.r.t.includes(mood) || x.lack.length === 0)).sort((a, b) => b.score - a.score);
   }
-  const card = (x, big) => `<article class="fr-m${big ? ' top' : ''}"><header><span class="fr-e">${x.r.e}</span><div><h3>${esc(x.r.n)}</h3><p><em>⏱ ${x.r.m}분</em><em>${esc(x.r.lv)}</em>${x.r.t.map(t => `<em class="t">#${esc(t)}</em>`).join('')}</p></div></header>
+  const card = (x, big) => `<article class="fr-m${big ? ' best' : ''}"><header><span class="fr-e">${x.r.e}</span><div><h3>${esc(x.r.n)}</h3><p><em>⏱ ${x.r.m}분</em><em>${esc(x.r.lv)}</em>${x.r.t.map(t => `<em class="t">#${esc(t)}</em>`).join('')}</p></div></header>
 <p class="fr-use">${x.r.need.filter(i => have.has(i)).concat(x.plus).map(i => `<span>${esc(i)}</span>`).join('')}${x.lack.map(i => `<span class="no">+ ${esc(i)} 사기</span>`).join('')}</p>
 <details${big ? ' open' : ''}><summary>만드는 법</summary><ol>${x.r.s.map(s => `<li>${esc(s)}</li>`).join('')}</ol>${x.r.opt.length ? `<p class="fr-tip">💡 있으면 더 좋아요: ${x.r.opt.map(esc).join(', ')}</p>` : ''}</details></article>`;
   function paint() {

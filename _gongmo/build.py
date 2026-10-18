@@ -108,7 +108,7 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False):
         f.write(doc)
 
 
-CAT_OUTFIT = {'요리·레시피': 'o_cardigan', '문학': 'o_cardigan', '아이디어·정책': 'o_present', '디자인': 'o_gray', '영상': 'o_anchor', '논문': 'o_vest', 'IT·과학': 'o_desk', '해외': 'o_trench', '기타': 'o_suit'}
+CAT_OUTFIT = {'요리·레시피': 'o_cook', '문학': 'o_cardigan', '아이디어·정책': 'o_present', '디자인': 'o_gray', '영상': 'o_anchor', '논문': 'o_vest', 'IT·과학': 'o_desk', '해외': 'o_trench', '기타': 'o_suit'}
 CAT_ICON = {'요리·레시피': '🍳', '문학': '✍️', '아이디어·정책': '💡', '디자인': '🎨', '영상': '🎬', '논문': '📚', 'IT·과학': '💻', '해외': '🌏', '기타': '🧩'}
 
 
@@ -597,10 +597,10 @@ def fridge_page():
     # 루리의 냉장고 파먹기 (2026-10-18 사용자: 냉장고 사진 찍어서 오늘 메뉴 추천, Claude API)
     page('/fridge/', '루리의 냉장고 파먹기 — 있는 재료로 오늘 메뉴 추천', '냉장고에 있는 재료만 고르면 집밥 레시피 77개 중 지금 바로 만들 수 있는 오늘 메뉴와 만드는 법, 하나만 사면 되는 메뉴까지 알려 줘요.',
          f'''<p class="bc"><a href="/">홈</a> › 냉장고 파먹기</p><h1>🍳 루리의 냉장고 파먹기</h1>
-{say("o_cardigan", "냉장고 사진을 찍거나 있는 재료를 눌러 주세요. 집밥 레시피 77개 중에 지금 바로 만들 수 있는 걸 골라 드릴게요!")}
+{say("o_cook", "냉장고 사진을 찍거나 있는 재료를 눌러 주세요. 집밥 레시피 77개 중에 지금 바로 만들 수 있는 걸 골라 드릴게요!")}
 <section id="fridge" aria-label="냉장고 재료로 메뉴 추천"><noscript>자바스크립트가 필요해요.</noscript></section>
 <a class="lab-cta" href="/cat/food/"><b>🏆 요리·레시피 공모전</b><span>레시피 공모전·요리경연대회 모아 보기 · 상금 받고 요리 실력 뽐내기 →</span></a><p class="note">사진은 재료를 찾는 데만 쓰고 저장하지 않아요. 고른 재료는 이 폰에만 저장돼요. 알레르기가 있으면 재료를 꼭 다시 확인해 주세요.</p>
-<link rel="stylesheet" href="/assets/fridge/fridge.css?v=3"><script defer src="/assets/fridge/fridge.js?v=3"></script>''', [('루리의 줍줍', '/'), ('냉장고 파먹기', '/fridge/')])
+<link rel="stylesheet" href="/assets/fridge/fridge.css?v=4"><script defer src="/assets/fridge/fridge.js?v=4"></script>''', [('루리의 줍줍', '/'), ('냉장고 파먹기', '/fridge/')])
 
 
 def qa_card(q):
