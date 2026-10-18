@@ -71,13 +71,32 @@ def feed(src):
     return out
 
 
+BDATE = {}
+
+
 def body(u):
     try:
         r = requests.get(u, headers=UA, timeout=15)
         x = r.content.decode('cp949', 'ignore') if 'euc-kr' in r.content[:2000].decode('ascii', 'ignore').lower() else r.content.decode('utf-8', 'ignore')
+        try:  # 기사 작성일(메타데이터) — RSS 날짜가 없을 때 옛 기사가 오늘 것으로 들어오지 않게
+            md = trafilatura.extract_metadata(x)
+            if md and md.date:
+                BDATE[u] = md.date
+        except Exception:
+            pass
         return (trafilatura.extract(x) or '')[:8000]
     except Exception:
         return ''
+
+
+def url_date(u):
+    m = re.search(r'(20[12]\d)[-/]?(0[1-9]|1[0-2])[-/]?(0[1-9]|[12]\d|3[01])', u)
+    if m:
+        try:
+            return datetime.datetime(int(m.group(1)), int(m.group(2)), int(m.group(3)), 12, tzinfo=KST).timestamp()
+        except Exception:
+            return None
+    return None
 
 
 def broker_of(t, b):
@@ -158,9 +177,18 @@ def stock_nodes(arts, bodies):
         op = next((n for n, rx in OPIN if re.search(rx, t + ' ' + b[:600])), None)
         tp, prev = tp_of(t + ' ' + b[:1500])
         up = re.search(r'상승\s?여력(?:은|이)?\s?(?:약\s)?(\d{1,3}(?:\.\d)?)\s?%', b)
+        # 숫자 검증: 이전→새 목표가 변화가 60% 넘거나, 방향(상향/하향)과 반대거나, 제목의 %와 크게 다르면 '확인 필요'
+        chk = 0
+        if tp and prev:
+            r_ = tp / prev - 1
+            pct = re.search(r'(\d{1,3})%\s?[↑↓]', t)
+            if abs(r_) > 0.6 or (d == 'up' and r_ < 0) or (d == 'down' and r_ > 0) or (pct and abs(abs(r_) * 100 - int(pct.group(1))) > 8):
+                chk = 1
+        if up and float(up.group(1)) > 150:
+            chk = 1
         rs = tags_dir(t + ' ' + b[:1500], REASONS, d)
         nodes.append({'k': 'stock', 'id': hashlib.md5(a['u'].encode()).hexdigest()[:10], 'name': st, 'br': br or '증권사 미상', 'dir': d, 'op': op, 'tp': tp, 'tp0': prev,
-                      'upside': float(up.group(1)) if up else None, 'rs': [n for n, s in rs], 'rsg': {n: s for n, s in rs}, 't': t, 'u': a['u'], 'o': a['o'], 'ts': a['ts']})
+                      'chk': chk, 'upside': float(up.group(1)) if up else None, 'rs': [n for n, s in rs], 'rsg': {n: s for n, s in rs}, 't': t, 'u': a['u'], 'o': a['o'], 'ts': a['ts']})
     return nodes
 
 
@@ -210,12 +238,28 @@ def main():
         try:
             a['ts'] = int(email.utils.parsedate_to_datetime(a['pd']).timestamp())
         except Exception:
-            a['ts'] = int(now)
+            try:
+                a['ts'] = int(datetime.datetime.fromisoformat(a['pd'].replace('Z', '+00:00')).timestamp())
+            except Exception:
+                a['ts'] = None
     sa = [a for a in sa if re.search(r'목표(?:주)?가|투자의견', a['t']) and a['u'] not in db['seen']]
     ca = [a for a in ca if any(re.search(rx, a['t']) for _, rx in COINS.values()) and a['u'] not in db['seen']]
     need = {a['u'] for a in sa + ca}
     with cf.ThreadPoolExecutor(8) as ex:
         bodies = dict(zip(need, ex.map(body, need)))
+    for a in sa + ca:  # 날짜 확정: RSS → 주소 속 날짜 → 기사 메타데이터. 모르면 버림. 주소 날짜가 RSS보다 3일 넘게 이르면 옛 기사
+        ud = url_date(a['u'])
+        if a['ts'] is None and a['u'] in BDATE:
+            try:
+                a['ts'] = int(datetime.datetime.fromisoformat(BDATE[a['u']]).replace(tzinfo=KST).timestamp())
+            except Exception:
+                pass
+        if a['ts'] is None:
+            a['ts'] = int(ud) if ud else None
+        elif ud and a['ts'] - ud > 3 * 86400:
+            a['ts'] = int(ud)
+    sa = [a for a in sa if a['ts'] and now - a['ts'] < 7 * 86400]
+    ca = [a for a in ca if a['ts'] and now - a['ts'] < 7 * 86400]
     new = stock_nodes(sa, bodies) + coin_nodes(ca, bodies)
     for n in new:
         db['nodes'][n['id']] = n
@@ -237,7 +281,7 @@ def main():
         for n in ns:  # 증권사별 최신 의견만 집계
             latest.setdefault(n['br'], n)
         L = list(latest.values())
-        tps = [n['tp'] for n in L if n['tp']]
+        tps = [n['tp'] for n in L if n['tp'] and not n.get('chk')]
         up, dn, kp = (sum(1 for n in L if n['dir'] == d) for d in ('up', 'down', 'keep'))
         tot = up + dn + kp
         agree = round(100 * max(up, dn, kp) / tot) if tot else 0
@@ -245,7 +289,7 @@ def main():
         stocks.append({'id': hashlib.md5(name.encode()).hexdigest()[:8], 'name': name, 'nb': len(L), 'nn': len(ns), 'up': up, 'down': dn, 'keep': kp, 'agree': agree,
                        'mixed': 1 if up and dn else 0, 'tp_avg': round(sum(tps) / len(tps)) if tps else None, 'tp_min': min(tps) if tps else None, 'tp_max': max(tps) if tps else None,
                        'upside': round(sum(ups) / len(ups), 1) if ups else None, 'last': ns[0]['ts'], 'tree': tree_stock(L),
-                       'nodes': [{k: n.get(k) for k in ('br', 'dir', 'op', 'tp', 'tp0', 'upside', 'rs', 't', 'u', 'o', 'ts')} for n in ns[:20]]})
+                       'nodes': [{k: n.get(k) for k in ('br', 'dir', 'op', 'tp', 'tp0', 'upside', 'rs', 't', 'u', 'o', 'ts', 'chk')} for n in ns[:20]]})
     stocks.sort(key=lambda s: (-s['nb'], -s['last']))
     # ---- 코인 집계(최근 7일) + 업비트 시세
     C = [n for n in db['nodes'].values() if n['k'] == 'coin' and n['ts'] >= now - 7 * 86400]

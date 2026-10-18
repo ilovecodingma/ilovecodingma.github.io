@@ -836,7 +836,7 @@ def an_nodes(nodes, coin=False):
             meta = f'{E(n.get("who") or n["o"])}{(" · 목표 " + format(n["tgt"], "g") + "만 달러") if n.get("tgt") else ""}'
         else:
             tp = (f'{won_txt(n["tp0"])} → {won_txt(n["tp"])}' if n.get('tp0') else won_txt(n['tp'])) if n.get('tp') else ''
-            meta = f'{E(n["br"])}{(" · " + E(n["op"])) if n.get("op") else ""}{(" · " + tp) if tp else ""}'
+            meta = f'{E(n["br"])}{(" · " + E(n["op"])) if n.get("op") else ""}{(" · " + tp) if tp else ""}{" · ⚠️ 숫자 확인 필요(평균 제외)" if n.get("chk") else ""}'
         li += (f'<li class="{n["dir"]}"><span class="an-d">{DIRN[n["dir"]][0]}</span><div><small>{dt} · {meta}</small>'
                f'<a href="{E(n["u"])}" target="_blank" rel="noopener nofollow">{E(n["t"])}</a><em>{E(n["o"])}</em></div></li>')
     return f'<ul class="an-nodes">{li}</ul>'
@@ -885,7 +885,7 @@ def coin_svg(c):
 
 def stock_svg(s):
     """증권사별 목표가: 점(새 목표가) + 이전 목표가에서 이어지는 선, 평균 목표가 점선."""
-    ns = [n for n in s.get('nodes', []) if n.get('tp')]
+    ns = [n for n in s.get('nodes', []) if n.get('tp') and not n.get('chk')]
     if not ns:
         return ''
     W, H, L, R, T, B = 640, 240, 86, 16, 20, 34
