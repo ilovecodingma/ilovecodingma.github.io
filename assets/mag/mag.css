@@ -28,3 +28,5 @@
 .st-d h1,.st-d h2{font-size:20px;margin:6px 0 10px}.st-imgs{display:grid;gap:12px}.st-imgs img{display:block;width:100%;height:auto;border-radius:16px;box-shadow:var(--sh)}
 .st-cap{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:10px 14px;margin:10px 0;font-size:15px;line-height:1.7}.st-cap p{margin:2px 0}
 .st-nav{display:flex;justify-content:space-between;gap:8px;margin:12px 0}.st-nav a{font-weight:800;color:#7c3aed;text-decoration:none}
+.kw-l{list-style:none;margin:6px 0 0;padding:0;display:grid;gap:6px}.kw-l a{display:block;background:#fafafa;border:1px solid var(--bd);border-radius:12px;padding:9px 11px;text-decoration:none;color:#111827;font-size:14.5px;line-height:1.45}
+.kw-l em{display:block;font-style:normal;font-size:12px;font-weight:800;color:#7c3aed;margin-bottom:2px}

@@ -62,7 +62,7 @@ COMM_TAGS_TPL = '<link rel="stylesheet" href="/assets/community/comm.css?v=14"><
 GTAG = ('<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4248498719773262" crossorigin="anonymous"></script>\n'
         '<script async src="https://www.googletagmanager.com/gtag/js?id=G-G9BPFF95GY"></script>\n'
         "<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());if(location.hostname!=='sungprofile.cloud')window['ga-disable-G-G9BPFF95GY']=true;gtag('config','G-G9BPFF95GY');</script>")
-TABS = [('/news/', '🕵️ 이슈 감별'), ('/analyst/', '📊 애널리스트'), ('/talk/', '💬 커뮤니티'), ('/satire/', '🎨 풍자'), ('/mag/', '📰 매거진'), ('/', '🏆 공모전'), ('/apply/', '💰 지원금·청약'), ('/event/', '🎁 경품'), ('/fridge/', '🍳 냉장고'), ('/prep/', '📋 준비실')]
+TABS = [('/news/', '🕵️ 이슈 감별'), ('/analyst/', '📊 애널리스트'), ('/talk/', '💬 커뮤니티'), ('/satire/', '🎨 풍자'), ('/kw/', '🔎 인기 키워드'), ('/mag/', '📰 매거진'), ('/', '🏆 공모전'), ('/apply/', '💰 지원금·청약'), ('/event/', '🎁 경품'), ('/fridge/', '🍳 냉장고'), ('/prep/', '📋 준비실')]
 NAV = [('apply', '청약·신청'), ('ssul', '썰'), ('event', '경품·용돈'), ('cat/literature', '문학'), ('cat/idea', '아이디어'), ('cat/design', '디자인'),
        ('cat/video', '영상'), ('cat/it', 'IT'), ('cat/global', '해외'), ('guide', '가이드')]
 
@@ -478,7 +478,7 @@ def build():
     fridge_page()
     app_page()
     news_page()
-    extra_urls = talk_pages() + mag_pages(live, aps) + analyst_pages() + satire_pages()
+    extra_urls = talk_pages() + mag_pages(live, aps) + analyst_pages() + satire_pages() + kw_pages()
     community(live)
     lab_urls = lab() or []
     me_pages()
@@ -640,7 +640,7 @@ def talk_pages():
     if not days:
         return []
     arch = '<section class="tk-arch"><h2>📅 날짜별 커뮤니티 이슈</h2><p>' + ''.join(f'<a href="/talk/{d}/">{kdate(d)}</a>' for d in days[:60]) + '</p></section>'
-    css = '<link rel="stylesheet" href="/assets/mag/mag.css?v=3"><link rel="stylesheet" href="/assets/news/news.css?v=2">'
+    css = '<link rel="stylesheet" href="/assets/mag/mag.css?v=4"><link rel="stylesheet" href="/assets/news/news.css?v=2">'
     note = '<p class="note">순위는 여러 커뮤니티에 동시에 뜬 정도·댓글 수·인기글에 머문 시간으로 매겨요. 성·혐오·개인 신상·비방·사생활 폭로성 글은 모으지 않아요. 요약은 루리가 제목과 수치만 보고 정리했어요.</p>'
     urls = ['/talk/']
     for i, d in enumerate(days):
@@ -787,7 +787,7 @@ def mag_pages(live, aps):
     mag_snapshot(live, aps)
     md = os.path.join(ROOT, 'mag', 'archive')
     days = sorted([f[:-5] for f in os.listdir(md) if f.endswith('.json')], reverse=True)
-    css = '<link rel="stylesheet" href="/assets/mag/mag.css?v=3">'
+    css = '<link rel="stylesheet" href="/assets/mag/mag.css?v=4">'
     urls, cards = ['/mag/'], []
     for d in days:
         m = json.load(open(os.path.join(md, d + '.json'), encoding='utf-8'))
@@ -1045,7 +1045,7 @@ def satire_pages():
     days = satire_days()
     if not days:
         return []
-    css = '<link rel="stylesheet" href="/assets/mag/mag.css?v=3">'
+    css = '<link rel="stylesheet" href="/assets/mag/mag.css?v=4">'
     note = '<p class="note">풍자 만화예요. 특정 종목·인물을 비방하거나 투자를 권하려는 게 아니에요. 숫자는 그날 보도 기준이에요.</p>'
     urls = ['/satire/']
     def one(d, v, h='h2'):
@@ -1084,6 +1084,65 @@ def satire_top():
     t = v['cap'][0] if v['cap'] else '오늘의 풍자'
     return (f'<section class="nw-home st-home"><h2>🎨 오늘의 루리 풍자 <a href="/satire/">지난 풍자 →</a></h2><a class="st-hm" href="/satire/{d}/"><img src="{img}" width="864" height="1080" alt="{E(t)}">'
             f'<span><b>{E(t)}</b>{E(" ".join(v["cap"][1:3]))[:90]}</span></a></section>')
+
+
+def josa_ga(w):
+    c = w[-1]
+    return '이' if '가' <= c <= '힣' and (ord(c) - 0xAC00) % 28 else '가'
+
+
+def kw_pages():
+    # 인기 키워드 상세 (2026-10-18 사용자: 구글 등 인기 키워드로 블로그 + 사이트 상세 정보, 홍보 세션 연구 ⑂ 요청) — 매시 kw.py
+    db = _rd('kw/db.json')
+    ad = os.path.join(ROOT, 'kw', 'archive')
+    days = sorted([f[:-5] for f in os.listdir(ad) if f.endswith('.json')], reverse=True) if os.path.isdir(ad) else []
+    if not db or not days:
+        return []
+    css = '<link rel="stylesheet" href="/assets/mag/mag.css?v=4">'
+    G = {'ok': '✅', 'warn': '🟡', 'bad': '🔴'}
+    note = '<p class="note">구글 트렌드 한국 급상승 검색어를 바탕으로 루리가 관련 보도와 사이트 정보를 모은 페이지예요. 연예인 사생활·사건사고·비방성 키워드는 다루지 않아요.</p>'
+    urls = ['/kw/']
+    for sl, r in db.items():
+        k = r['k']
+        lines = [f'「{E(k)}」{josa_ga(k)} {kdate(r["days"][-1])} 구글 검색 급상승 키워드에 올랐어요(검색량 {E(r.get("traffic") or "-")}).']
+        if r.get('srcs'):
+            lines.append(f'관련 보도는 {len(r["srcs"])}곳({E(", ".join(r["srcs"][:5]))}{" 등" if len(r["srcs"]) > 5 else ""})에서 나왔어요.')
+        if r.get('issue'):
+            x = r['issue']
+            lines.append(f'루리 이슈 감별에서는 언론사 {x["on"]}곳이 보도한 이슈로 묶였고, 확인 신호 점수는 {G.get(x.get("g"), "")} {x.get("s") if x.get("s") is not None else "-"}점이에요.')
+        if len(r['days']) > 1:
+            lines.append(f'최근 {len(r["days"])}일 동안 급상승에 올랐어요({", ".join(d[5:].replace("-", "/") for d in r["days"][-5:])}).')
+        why = ''.join(f'<li><a href="{E(n["u"])}" target="_blank" rel="noopener nofollow"><em>{E(n["o"])}</em>{E(n["t"])}</a></li>' for n in r.get('news', []))
+        ours = ''.join(f'<li><a href="{E(a["u"])}" target="_blank" rel="noopener nofollow"><em>{E(a["o"])} {G.get(a.get("g"), "")} {a["s"] if a.get("s") is not None else ""}</em>{E(a["t"])}</a></li>' for a in r.get('ours', []))
+        links = []
+        if r.get('issue'):
+            links.append(f'<a href="/news/#is{r["issue"]["n"]}"><em>🕵️ 이슈 감별</em><b>{E(r["issue"]["t"])}</b></a>')
+        links += [f'<a href="/talk/#t{x["n"]}"><em>💬 커뮤니티</em><b>{E(x["t"])}</b></a>' for x in r.get('talk', [])]
+        links += [f'<a href="/analyst/s/{x["id"]}/"><em>📊 애널리스트</em><b>{E(x["name"])} 목표가 의견</b></a>' for x in r.get('stocks', [])]
+        links += [f'<a href="/analyst/coin/{x["sym"].lower()}/"><em>🪙 코인</em><b>{E(x["name"])} 전망 종합</b></a>' for x in r.get('coins', [])]
+        links += [f'<a href="{E(p_["u"])}"><em>{E(p_["k"])}</em><b>{E(p_["t"])}</b></a>' for p_ in r.get('pr', [])]
+        body = (f'<p class="bc"><a href="/">홈</a> › <a href="/kw/">인기 키워드</a> › {E(k)}</p><h1>🔎 {E(k)} — 왜 검색이 늘었나</h1>'
+                + say('o_det_think', ' '.join(lines))
+                + (f'<section class="mg-s"><h2>📰 왜 떴나: 관련 보도</h2><ul class="kw-l">{why}</ul></section>' if why else '')
+                + (f'<section class="mg-s"><h2>🕵️ 루리가 채점한 관련 기사</h2><ul class="kw-l">{ours}</ul></section>' if ours else '')
+                + (f'<section class="mg-s"><h2>📌 루리의 줍줍에서 더 보기</h2><div class="nw-pr">{"".join(links)}</div></section>' if links else '')
+                + f'<p class="mg-nav"><a href="/kw/">오늘의 인기 키워드 전체 →</a> · <a href="/mag/">매거진 →</a></p>' + note + css)
+        page(f'/kw/{sl}/', f'{k} 검색 급상승 이유 — 관련 보도·정리', f'{k}{josa_ga(k)} 검색 급상승 키워드에 오른 이유: ' + ' / '.join(n['t'] for n in r.get('news', [])[:2])[:140], body,
+             [('루리의 줍줍', '/'), ('인기 키워드', '/kw/'), (k, f'/kw/{sl}/')])
+        urls.append(f'/kw/{sl}/')
+    arch = '<section class="tk-arch"><h2>📅 날짜별 인기 키워드</h2><p>' + ''.join(f'<a href="/kw/{d}/">{kdate(d)}</a>' for d in days[:90]) + '</p></section>'
+    for i, d in enumerate(days):
+        L = json.load(open(os.path.join(ad, d + '.json'), encoding='utf-8'))
+        li = ''.join(f'<li><a href="/kw/{x["slug"]}/"><em>{j + 1}</em><b>{E(x["k"])}</b><span>검색량 {E(x.get("traffic") or "-")} · {E(x.get("first", ""))} 첫 등장</span></a></li>' for j, x in enumerate(L) if x['slug'] in db)
+        bd = f'<ol class="mg-l">{li}</ol>' + arch + note + css
+        if i == 0:
+            page('/kw/', '오늘의 인기 키워드 — 검색 급상승 이유 정리', f'{kdate(d)} 구글 검색 급상승 키워드와 왜 떴는지: ' + ', '.join(x['k'] for x in L[:6]),
+                 f'<p class="bc"><a href="/">홈</a> › 인기 키워드</p><h1>🔎 오늘의 인기 키워드</h1>' + say('o_det_wave', '지금 검색이 확 늘어난 키워드를 모아, 왜 떴는지 관련 보도와 함께 정리했어요.') + bd,
+                 [('루리의 줍줍', '/'), ('인기 키워드', '/kw/')])
+        page(f'/kw/{d}/', f'{kdate(d)} 인기 키워드 — 검색 급상승 정리', f'{kdate(d)} 구글 검색 급상승 키워드: ' + ', '.join(x['k'] for x in L[:8]),
+             f'<p class="bc"><a href="/">홈</a> › <a href="/kw/">인기 키워드</a> › {kdate(d)}</p><h1>🔎 {kdate(d)} 인기 키워드</h1>' + bd, [('루리의 줍줍', '/'), ('인기 키워드', '/kw/'), (kdate(d), f'/kw/{d}/')])
+        urls.append(f'/kw/{d}/')
+    return urls
 
 
 def news_top():
