@@ -86,9 +86,16 @@ NAV = [('apply', '청약·신청'), ('ssul', '썰'), ('event', '경품·용돈')
        ('cat/video', '영상'), ('cat/it', 'IT'), ('cat/global', '해외'), ('guide', '가이드')]
 
 
-def page(path, title, desc, body, crumbs=None, ld=None, full_title=False):
+PAGE_HASH, NOINDEX = {}, set()
+
+
+def page(path, title, desc, body, crumbs=None, ld=None, full_title=False, noindex=False):
     url = SITE + path
     TH = theme_of(path)
+    # 사이트맵 lastmod: 날짜·시각·D-day 처럼 매번 바뀌는 글자는 빼고 내용이 바뀐 날만 갱신
+    PAGE_HASH[path] = hashlib.md5(re.sub(r'D-\d+|D-DAY|\d{1,2}:\d{2}|\d{4}-\d{2}-\d{2}|\d{1,2}/\d{1,2}', '', title + body).encode()).hexdigest()
+    if noindex:
+        NOINDEX.add(path)
     COMM_TAGS = COMM_TAGS_TPL if COMM_API else ''
     t = title if full_title else f'{title} | {NAME}'
     lds = []
@@ -102,14 +109,14 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False):
     doc = f'''<!doctype html>
 <html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{E(t)}</title>
-<meta name="description" content="{E(desc)}">
+<meta name="description" content="{E(desc)}">{'<meta name="robots" content="noindex,follow">' if noindex else ''}
 <link rel="canonical" href="{url}">
 <meta property="og:type" content="website"><meta property="og:locale" content="ko_KR"><meta property="og:site_name" content="{NAME}">
 <meta property="og:title" content="{E(t)}"><meta property="og:description" content="{E(desc)}"><meta property="og:url" content="{url}">
 <meta property="og:image" content="{SITE}/assets/ruri/og.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="{SITE}/assets/ruri/og.jpg">
 <meta name="theme-color" content="{TH[3] if TH else '#5b21b6'}">
-<link rel="icon" href="/favicon.ico?v=5" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png?v=5"><link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png?v=5"><link rel="manifest" href="/site.webmanifest">
+<link rel="icon" href="/favicon.ico?v=5" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png?v=5"><link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png?v=5"><link rel="manifest" href="/site.webmanifest"><link rel="alternate" type="application/rss+xml" title="루리의 줍줍" href="/rss.xml">
 <link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <link rel="stylesheet" href="/assets/gm.css?v=6">{('<link rel="stylesheet" href="/assets/chat/ruri-chat.css?v=7">') if not (TH and TH[0] == 'ai') else ''}{COMM_TAGS}{('<script type="module" src="/assets/chat/ruri-chat.js?v=11"></script>') if not (TH and TH[0] == 'ai') else ''}<script defer src="/assets/app/app.js?v=1"></script>
 {ldh}
@@ -286,7 +293,10 @@ def detail(c, live):
           'location': {'@type': 'VirtualLocation', 'url': c['link']}, 'organizer': {'@type': 'Organization', 'name': c['org']},
           'description': summary}
     desc = f'{c["title"]} — {org} 주최, {ddot(c["end"])} 마감, 상금 {c["prize"]}. 응모 자격·접수 방법·체크리스트 정리.'
-    page(f'/c/{c["id"]}/', c['title'], desc[:155], body,
+    md_ = c['end'][5:].replace('-', '/').lstrip('0').replace('/0', '/')
+    pz = re.sub(r'\s+', ' ', (c.get('prize') or '')).strip()
+    seo_t = f"{c['title']} — " + (f"상금 {pz[:24]} · " if pz and pz not in ('공고 확인', '-') else '') + f"{md_} 마감 · 자격·접수 방법"   # 2026-10-18 자연 유입: 검색어 모양 제목
+    page(f'/c/{c["id"]}/', seo_t, desc[:155], body,
          [('루리의 줍줍', '/'), (main_tag, f'/cat/{SLUG[main_tag]}/'), (c['title'], f'/c/{c["id"]}/')], ld)
 
 
@@ -548,16 +558,24 @@ window.gtag&&gtag('event','home_route',{{route:v}})}}catch(e){{}}}})();</script>
     me_pages()
     statics(len(live), len(events))
     urls = ['/', '/apply/', '/event/', '/guide/', '/ssul/'] + lab_urls + [f'/ssul/{x["slug"]}/' for x in ss] + [f'/a/{a["id"]}/' for a in aps] + [f'/cat/{s}/' for s, _ in CATS] + [f'/guide/{g[0]}/' for g in GUIDES] + ['/qa/', '/prep/', '/fridge/', '/app/', '/news/'] + extra_urls + [f'/guide/{q["slug"]}/' for q in QA] + \
-           ['/about/', '/privacy/', '/terms/', '/contact/'] + [f'/c/{c["id"]}/' for c in contests] + sorted((f'/v/{d}/' for d in os.listdir(os.path.join(ROOT, 'v')) if os.path.isfile(os.path.join(ROOT, 'v', d, 'index.html'))), key=lambda u: int(u.split('/')[2]) if u.split('/')[2].isdigit() else 0)
+           ['/about/', '/privacy/', '/terms/', '/contact/'] + [f'/c/{c["id"]}/' for c in contests]
     global NEW_URLS
     sm = os.path.join(ROOT, 'sitemap.xml')
     old = set(re.findall(r'<loc>([^<]+)</loc>', open(sm, encoding='utf-8').read())) if os.path.exists(sm) else set()
     NEW_URLS = [SITE + u for u in urls if SITE + u not in old]
     with open(sm, 'w', encoding='utf-8', newline='\n') as f:
         f.write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n')
-        f.writelines(f'<url><loc>{SITE}{u}</loc><lastmod>{TODAY}</lastmod></url>\n' for u in urls)
+        LM = os.path.join(HERE, 'lastmod.json')
+        lm = json.load(open(LM, encoding='utf-8')) if os.path.exists(LM) else {}
+        for u in urls:
+            h_ = PAGE_HASH.get(u)
+            if u not in lm or (h_ and lm[u][0] != h_):
+                lm[u] = [h_, TODAY.isoformat()]
+        json.dump(lm, open(LM, 'w', encoding='utf-8'), ensure_ascii=False)
+        f.writelines(f'<url><loc>{SITE}{u}</loc><lastmod>{lm[u][1]}</lastmod></url>\n' for u in urls if u not in NOINDEX)
         f.write('</urlset>\n')
-    print('contests', len(contests), 'live', len(live), 'events', len(events), 'urls', len(urls))
+    rss_feed(live, aps)
+    print('contests', len(contests), 'live', len(live), 'events', len(events), 'urls', len(urls), 'noindex', len(NOINDEX))
 
 
 GUIDES = [
@@ -1208,7 +1226,7 @@ def kw_pages():
                 + (f'<section class="mg-s"><h2>📌 루리의 줍줍에서 더 보기</h2><div class="nw-pr">{"".join(links)}</div></section>' if links else '')
                 + f'<p class="mg-nav"><a href="/kw/">오늘의 인기 키워드 전체 →</a> · <a href="/mag/">매거진 →</a></p>' + note + css)
         page(f'/kw/{sl}/', f'{k} 검색 급상승 이유 — 관련 보도·정리', f'{k}{josa_ga(k)} 검색 급상승 키워드에 오른 이유: ' + ' / '.join(n['t'] for n in r.get('news', [])[:2])[:140], body,
-             [('루리의 줍줍', '/'), ('인기 키워드', '/kw/'), (k, f'/kw/{sl}/')])
+             [('루리의 줍줍', '/'), ('인기 키워드', '/kw/'), (k, f'/kw/{sl}/')], noindex=not r.get('ours') and len(r.get('news') or []) < 2)
         urls.append(f'/kw/{sl}/')
     arch = '<section class="tk-arch"><h2>📅 날짜별 인기 키워드</h2><p>' + ''.join(f'<a href="/kw/{d}/">{kdate(d)}</a>' for d in days[:90]) + '</p></section>'
     for i, d in enumerate(days):
@@ -1220,7 +1238,7 @@ def kw_pages():
                  f'<p class="bc"><a href="/">홈</a> › 인기 키워드</p><h1>🔎 오늘의 인기 키워드</h1>' + say('o_det_wave', '지금 검색이 확 늘어난 키워드를 모아, 왜 떴는지 관련 보도와 함께 정리했어요.') + bd,
                  [('루리의 줍줍', '/'), ('인기 키워드', '/kw/')])
         page(f'/kw/{d}/', f'{kdate(d)} 인기 키워드 — 검색 급상승 정리', f'{kdate(d)} 구글 검색 급상승 키워드: ' + ', '.join(x['k'] for x in L[:8]),
-             f'<p class="bc"><a href="/">홈</a> › <a href="/kw/">인기 키워드</a> › {kdate(d)}</p><h1>🔎 {kdate(d)} 인기 키워드</h1>' + bd, [('루리의 줍줍', '/'), ('인기 키워드', '/kw/'), (kdate(d), f'/kw/{d}/')])
+             f'<p class="bc"><a href="/">홈</a> › <a href="/kw/">인기 키워드</a> › {kdate(d)}</p><h1>🔎 {kdate(d)} 인기 키워드</h1>' + bd, [('루리의 줍줍', '/'), ('인기 키워드', '/kw/'), (kdate(d), f'/kw/{d}/')], noindex=True)
         urls.append(f'/kw/{d}/')
     return urls
 
@@ -1369,6 +1387,55 @@ def apply_rec_page():
     return ['/apply/recommend/']
 
 
+def rss_feed(live, aps):
+    """/rss.xml — 새로 생기는 페이지(매거진·풍자·새 공모전·새 지원금·고민 해결)를 최신순 60개. 2026-10-18 자연 유입 전략 ①."""
+    from email.utils import format_datetime
+    KST_ = datetime.timezone(datetime.timedelta(hours=9))
+    it = []
+    def add(u, t, d, desc):
+        if d[:10] > TODAY.isoformat():   # 시작일이 미래인 공고는 아직 새 글이 아님
+            return
+        try:
+            dt = datetime.datetime.fromisoformat(d).replace(tzinfo=KST_) if len(d) > 10 else datetime.datetime.combine(datetime.date.fromisoformat(d), datetime.time(7, 30), KST_)
+        except Exception:
+            return
+        it.append((dt, u, t, desc))
+    for f in sorted(os.listdir(os.path.join(ROOT, 'mag', 'archive')), reverse=True)[:14] if os.path.isdir(os.path.join(ROOT, 'mag', 'archive')) else []:
+        d = f[:-5]; add(f'/mag/{d}/', f'루리의 이슈 리딩 {kdate(d)}', d, f'{kdate(d)} 정치 이슈·커뮤니티 화제·마감 공모전·새 지원금 한 장 정리')
+    for d, v in satire_days()[:14]:
+        add(f'/satire/{d}/', f'{kdate(d)} 루리 풍자 — ' + (v['cap'][0] if v['cap'] else '만평'), d, ' '.join(v['cap'][:2])[:150])
+    for c in sorted(live, key=lambda c: c.get('start') or '', reverse=True)[:25]:
+        if c.get('start'):
+            add(f'/c/{c["id"]}/', f'{c["title"]} — {c["end"][5:].replace("-", "/")} 마감', c['start'], f'{c.get("org") or ""} 주최 · 상금 {c.get("prize") or "공고 확인"} · 응모 자격·접수 방법 정리')
+    for a in sorted([a for a in aps if a.get('start')], key=lambda a: a['start'], reverse=True)[:15]:
+        add(f'/a/{a["id"]}/', a['title'], a['start'], f'{a.get("kind", "")} · {a.get("org") or ""} · 신청 기간과 방법 정리')
+    for q in QA[:10]:
+        add(f'/guide/{q["slug"]}/', q['title'], (q.get('date') or TODAY.isoformat())[:10], q.get('desc', ''))
+    it.sort(key=lambda x: x[0], reverse=True)
+    items = ''.join(f'<item><title>{E(t)}</title><link>{SITE}{u}</link><guid>{SITE}{u}</guid><pubDate>{format_datetime(dt)}</pubDate><description>{E(desc)}</description></item>\n' for dt, u, t, desc in it[:60])
+    xml = (f'<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0"><channel><title>루리의 줍줍</title><link>{SITE}/</link>'
+           f'<description>이슈 팩트 채점·애널리스트 분석·공모전·지원금 정보를 매일 정리하는 루리의 줍줍</description><language>ko</language>\n{items}</channel></rss>\n')
+    open(os.path.join(ROOT, 'rss.xml'), 'w', encoding='utf-8', newline='\n').write(xml)
+
+
+def news_static():
+    """검색엔진·자바스크립트 없는 환경용으로 이슈 순위를 글자로 미리 그려 둔다(화면에선 news.js 가 바로 대체). 2026-10-18 자연 유입 전략 ①."""
+    d = _rd('news/data.json')
+    if not d:
+        return '<noscript>자바스크립트가 필요해요.</noscript>'
+    I = {a['id']: a for a in d.get('items', [])}
+    G = {'ok': '믿을 만함', 'warn': '확인 필요', 'bad': '의심'}
+    out = f'<p>{E(d.get("updated", ""))} 기준 · 언론사 기사 {len(d.get("items", []))}건을 같은 사건끼리 묶은 이슈 순위와 확인 신호 점수예요.</p><ol class="nw-static">'
+    for x in sorted(d.get('issues', []), key=lambda x: (x.get('c') != '정치', x['n']))[:40]:
+        arts = ''.join(f'<li>{E(I[a]["o"])} · {I[a]["s"] if I[a].get("s") is not None else "-"}점 · <a href="{E(I[a]["u"])}" rel="nofollow noopener" target="_blank">{E(I[a]["t"])}</a></li>' for a in x['a'][:6] if a in I)
+        why = ''
+        if x['a'] and x['a'][0] in I:
+            why = ' / '.join(E(w) for w in I[x['a'][0]].get('why', [])[:3])
+        out += (f'<li id="is{x["n"]}"><h2>{E(x["t"])}</h2><p>{E(x["c"])} · 언론사 {x["on"]}곳 보도 · 확인 신호 {x["s"] if x.get("s") is not None else "-"}점({G.get(x.get("g"), "")})'
+                f'{" · 발언·주장 기사" if x.get("claim") else ""}{(" · 숫자 엇갈림: " + E(", ".join(x["cf"]))) if x.get("cf") else ""}</p><p>{why}</p><ul>{arts}</ul></li>')
+    return out + '</ol>'
+
+
 def news_top():
     # 홈 투트랙(2026-10-18 사용자: 공모전과 투트랙) — 이슈 감별 상위 3개
     try:
@@ -1383,7 +1450,7 @@ def news_top():
 def news_page():
     # 루리 탐정의 이슈 감별 (2026-10-18 사용자: RSS 기사 수집 → 주제별 묶음 → 팩트체크 기반 채점, 피드, 탐정 루리, 기사 관련 줍줍)
     body = f'''<p class="bc"><a href="/">홈</a> › 이슈 감별</p><h1>🕵️ 루리 탐정의 이슈 감별</h1>
-<section id="news" aria-label="이슈 순위와 기사 채점"><noscript>자바스크립트가 필요해요.</noscript></section>
+<section id="news" aria-label="이슈 순위와 기사 채점">{news_static()}</section>
 <details class="nw-how"><summary>채점은 이렇게 해요</summary><ul><li><b>교차 보도</b> — 같은 사건을 여러 언론사가 보도하면 가점, 한 곳뿐이면 표시만 해요.</li><li><b>출처</b> — 실명 기관·인물 출처는 가점, 익명 관계자뿐이거나 온라인 커뮤니티·SNS 글이 출처면 감점.</li><li><b>제목-본문 일치</b> — 제목의 숫자·인용문이 본문에 없으면 감점.</li><li><b>숫자 엇갈림</b> — 같은 사건인데 언론사마다 사망·부상자 수가 다르면 따로 표시해요.</li><li><b>낚시·홍보</b> — 「충격」「결국」「이것」 같은 낚시 표현, 기업 홍보성 기사는 감점.</li></ul><p>기사 본문은 채점에만 쓰고 이 사이트에 옮겨 싣지 않아요. 제목을 누르면 원래 언론사 기사로 이동해요.</p></details>
 <link rel="stylesheet" href="/assets/news/news.css?v=3"><script defer src="/assets/news/news.js?v=3"></script>'''
     page('/news/', '루리 탐정의 이슈 감별 — 오늘의 이슈 순위·기사 팩트 채점', '언론사 15곳 기사를 매시간 모아 같은 사건끼리 묶고, 교차 보도·출처·제목-본문 일치·숫자 엇갈림·낚시 표현으로 기사마다 점수를 매겨요. 지금 가장 많이 보도된 이슈 순위.',
@@ -1484,7 +1551,7 @@ def me_pages():
     """내 공간(가입 혜택 모음) · 관리자 (2026-10-17)"""
     page('/me/', '내 공간 — 찜·응모 기록·마감 알림', '찜한 공모전·청약, 응모 기록, 마감 알림 메일, 자격 프로필, 청약 가점 계산기를 한곳에서.',
          '''<section id="me" aria-label="내 공간"></section><link rel="stylesheet" href="/assets/me/me.css?v=2"><script defer src="/assets/me/me.js?v=2"></script>''', [('루리의 줍줍', '/'), ('내 공간', '/me/')])
-    page('/admin/', '관리자', '관리자', '''<section id="admin"></section><link rel="stylesheet" href="/assets/me/me.css?v=2"><script defer src="/assets/me/admin.js?v=4"></script>''')
+    page('/admin/', '관리자', '관리자', '''<section id="admin"></section><link rel="stylesheet" href="/assets/me/me.css?v=2"><script defer src="/assets/me/admin.js?v=4"></script>''', noindex=True)
 
 
 def lab():
