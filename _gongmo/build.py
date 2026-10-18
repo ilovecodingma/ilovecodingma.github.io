@@ -102,7 +102,7 @@ PAGE_INTRO = {k: f'<section class="pg-intro"><h2>{h}</h2>{v}</section>' for k, (
  '/fridge/': ('냉장고 파먹기 사용법', '<p>집에 있는 재료를 고르면 루리가 정리한 집밥 레시피 중 지금 바로 만들 수 있는 메뉴를 먼저 보여 드려요. 재료 하나만 더 사면 되는 메뉴도 함께 알려 줘서, 장보기 목록을 줄일 수 있어요. 레시피는 1~2인분 기준이고 조리 시간과 난이도를 함께 적었어요.</p>'),
  '/lab/': ('수상 연구소는 이렇게 분석해요', '<p>슬로건·표어·네이밍 공모전의 실제 수상작을 모아 글자 수, 운율, 대구, 핵심어 위치 같은 구조로 하나씩 풀어 봐요. 수상작을 베끼는 게 아니라 「왜 뽑혔는지」를 알아보는 곳이에요. 내 문구를 넣으면 같은 기준으로 진단해 드려요.</p>'),
  '/apply/': ('청약·지원금 신청 전에', '<p>여기 모은 일정은 청약홈·LH·지자체·정부24 공고를 바탕으로 마감순으로 정리했어요. 같은 지원금이라도 지역·나이·소득 기준이 달라 신청 전에 자격부터 확인해야 해요. 청약은 <a href="/apply/recommend/">청약 추천</a>에서 내 가점을 먼저 계산해 보세요. 사는 곳 기준으로 보려면 <a href="/apply/r/">지역별 지원금·청약</a>에서 시·도를 고르세요.</p>'),
- '/contest/': ('공모전 추천은 이렇게 해요', '<p>진행 중인 공모전을 마감·상금·분야·제출물로 정리해 두고, 내가 고른 조건에 맞는 것부터 보여 줘요. 상금이 큰 것만이 아니라 「준비 시간 대비 할 만한 것」을 위로 올리는 게 루리의 기준이에요. 각 공모전 페이지에는 같은 분야와 비교한 분석, 오늘 기준 준비 일정을 붙여 두었어요. 대상별로는 <a href="/contest/univ/">대학생 공모전</a>, <a href="/contest/ai-video/">AI 영상 공모전</a> 모음도 있어요.</p>'),
+ '/contest/': ('공모전 추천은 이렇게 해요', '<p>진행 중인 공모전을 마감·상금·분야·제출물로 정리해 두고, 내가 고른 조건에 맞는 것부터 보여 줘요. 상금이 큰 것만이 아니라 「준비 시간 대비 할 만한 것」을 위로 올리는 게 루리의 기준이에요. 각 공모전 페이지에는 같은 분야와 비교한 분석, 오늘 기준 준비 일정을 붙여 두었어요. <a href="/contest/week/">이번 주 마감 공모전</a>만 따로 볼 수도 있고, 대상별로는 <a href="/contest/univ/">대학생 공모전</a>, <a href="/contest/ai-video/">AI 영상 공모전</a> 모음도 있어요.</p>'),
 }.items()}
 
 
@@ -535,6 +535,34 @@ APPLY_INTRO = '''<p>아파트 청약, 공공임대, 공모주 청약, 지원금 
 <p class="note">정보는 공고를 바탕으로 정리했으며, 자격·일정은 바뀔 수 있으니 공식 공고를 기준으로 하세요. 투자·청약 결과에 대한 판단은 본인 책임입니다.</p>'''
 
 
+def ap_insight(a, aps):
+    """지원금 상세 고유 해설: 같은 지역·같은 종류 진행 중 건수, 남은 기간, 정리된 조건 해석."""
+    n = dday(a['end'])[0]
+    sl = sido_of(a)
+    nm = next((x[1] for x in SIDO if x[0] == sl), '')
+    same = [x for x in aps if x['id'] != a['id'] and sl and sido_of(x) == sl]
+    kind = [x for x in aps if x['id'] != a['id'] and x['kind'] == a['kind']]
+    L = []
+    if a.get('always'):
+        L.append('상시 신청 사업이라 마감 걱정은 없지만, 예산이 떨어지면 일찍 끝날 수 있어요.')
+    elif a.get('start'):
+        try:
+            tot = (datetime.date.fromisoformat(a['end']) - datetime.date.fromisoformat(a['start'])).days + 1
+            L.append(f'신청 기간은 모두 {tot}일이고 ' + ('오늘이 마감일이에요.' if n == 0 else f'{n}일 남았어요.'))
+        except Exception:
+            pass
+    if a.get('age_min') or a.get('age_max'):
+        L.append(f'나이 조건(만 {a.get("age_min") or ""}~{a.get("age_max") or ""}세)은 보통 공고일 기준이라, 생일이 가까우면 기준일을 꼭 확인하세요.')
+    if a.get('income'):
+        L.append(f'소득 조건은 「{a["income"]}」이에요. 기준 중위소득 %로 적힌 경우 가구원 수에 따라 금액이 달라져요.')
+    if nm and same:
+        L.append(f'지금 {nm}에서 신청할 수 있는 공고가 {len(same)}건 더 있어요.')
+    if kind:
+        L.append(f'같은 종류({a["kind"]}) 진행 중 공고는 전국 {len(kind)}건이에요.')
+    links = ([(f'/apply/r/{sl}/', f'{nm} 지원금·청약 모아 보기')] if sl else []) + [('/apply/', '전체 지원금·청약 일정'), ('/apply/recommend/', '청약 가점 추천')]
+    return (f'<h2>🧐 루리 분석</h2><p>{" ".join(E(x) for x in L)}</p>' if L else '') + rel_block(r'지원금|청년|월세|청약', links)
+
+
 def build_apply(aps):
     # 메인 루리 상담(청약·지원금)용 데이터 (2026-10-17)
     with open(os.path.join(ROOT, 'apply.json'), 'w', encoding='utf-8', newline='\n') as f:
@@ -551,7 +579,7 @@ def build_apply(aps):
 <div class="my-acts" data-id="a:{E(a['id'])}" data-title="{E(a['title'])}" data-end="{'' if a.get('always') else a['end']}"></div>
 {say('o_suit', f'신청 기간을 놓치지 마세요! 자격 조건은 <b>공식 공고</b>에서 꼭 확인해 주세요.')}
 <div class="panel"><table class="info">{tb}</table>{btn}</div>
-<h2>신청 전 확인할 것</h2><ul class="chk"><li>신청 자격(나이·소득·자산·거주지·무주택 여부)</li><li>필요 서류와 본인인증 수단</li><li>발표일과 계약·납부 일정</li></ul>'''
+{ap_insight(a, aps)}<h2>신청 전 확인할 것</h2><ul class="chk"><li>신청 자격(나이·소득·자산·거주지·무주택 여부)</li><li>필요 서류와 본인인증 수단</li><li>발표일과 계약·납부 일정</li></ul>'''
         page(f'/a/{a["id"]}/', a['title'], f'{a["title"]} — {a["kind"]}, {ddot(a["end"])} 마감. 신청 기간과 공식 신청처 정리.', body,
              [('루리의 줍줍', '/'), ('청약·신청', '/apply/'), (a['title'], f'/a/{a["id"]}/')], noindex=sum(1 for k in ('target', 'benefit', 'how', 'income') if a.get(k)) < 2)
         GONE[f'/a/{a["id"]}/'] = [a['title'], '/apply/', '청약·신청', a['end']]
@@ -653,6 +681,29 @@ def region_pages(aps):
     page('/apply/r/', f'지역별 지원금·청약 {YR} — 서울·경기·부산 등 시·도별 신청 일정', '시·도별 청년 지원금, 월세 지원, 아파트 청약 일정을 마감순으로 정리했어요.', body,
          [('루리의 줍줍', '/'), ('지원금·청약', '/apply/'), ('지역별', '/apply/r/')])
     return ['/apply/r/'] + urls
+
+
+def week_hub(live):
+    """「이번 주 마감 공모전」 (2026-10-18 키워드 전략): 오늘부터 7일 안에 마감, 매 빌드 갱신."""
+    e7 = TODAY + datetime.timedelta(days=7)
+    L = sorted([c for c in live if dday(c['end'])[0] <= 7], key=lambda c: (c['end'], -(c.get('pv') or 0)))
+    pv = [c for c in L if c.get('pv')]
+    big = max(pv, key=lambda c: c['pv']) if pv else None
+    tg = collections.Counter(c['tags'][0] for c in L).most_common(3)
+    ef = collections.Counter(c['effort'] for c in L if c.get('effort')).most_common(2)
+    days = collections.Counter(c['end'] for c in L).most_common(1)
+    t = (f'{TODAY.month}/{TODAY.day}부터 {e7.month}/{e7.day}까지 마감하는 공모전은 {len(L)}건이에요. '
+         + (f'분야는 ' + ', '.join(f'{k} {v}건' for k, v in tg) + ' 순으로 많고, ' if tg else '')
+         + (f'제출물은 ' + ', '.join(f'{k} {v}건' for k, v in ef) + '이 많아요. ' if ef else '')
+         + (f'마감이 가장 몰린 날은 {ddot(days[0][0])[5:]}({days[0][1]}건)이에요. ' if days else '')
+         + (f'상금이 가장 큰 곳은 「{big["title"][:30]}」({won_txt(big["pv"])})예요.' if big else ''))
+    body = (f'<p class="bc"><a href="/">홈</a> › <a href="/contest/">공모전</a> › 이번 주 마감</p><h1>⏰ 이번 주 마감 공모전 ({TODAY.month}/{TODAY.day}~{e7.month}/{e7.day}, {len(L)}건)</h1>'
+            f'<p class="cat-st">📌 {E(t)}</p><p>남은 기간이 짧을수록 분량이 적은 슬로건·네이밍·사진 공모전부터 고르는 게 좋아요. 영상·기획서처럼 준비가 오래 걸리는 건 이번 주보다 다음 주 마감을 노리세요. 매시간 새로 정리돼요.</p>'
+            f'<ul class="list">{"".join(card(c) for c in L) or "<li class=empty>이번 주 마감 공모전이 없어요.</li>"}</ul>'
+            + rel_block(r'공모전|마감|응모', [('/contest/univ/', '대학생 공모전 모음'), ('/cat/video/', '영상 공모전 모음'), ('/widget/', '블로그용 이번 주 마감 위젯')]))
+    page('/contest/week/', f'이번 주 마감 공모전 — {TODAY.month}/{TODAY.day}~{e7.month}/{e7.day} 마감 {len(L)}건 (상금·자격)', f'{TODAY.month}/{TODAY.day}~{e7.month}/{e7.day} 마감하는 공모전 {len(L)}건을 마감순으로 정리. 분야·상금·제출물 한눈에.',
+         body, [('루리의 줍줍', '/'), ('공모전', '/contest/'), ('이번 주 마감', '/contest/week/')])
+    return ['/contest/week/']
 
 
 def contest_hubs(live):
@@ -788,7 +839,7 @@ window.gtag&&gtag('event','home_route',{{route:v}})}}catch(e){{}}}})();</script>
     extra_urls = talk_pages() + mag_pages(live, aps) + analyst_pages() + satire_pages() + kw_pages() + money_pages() + apply_rec_page() + tool_pages() + hot_pages()
     import widget
     extra_urls += widget.build(ROOT, live, aps, hot_live()[0], page, say, COMM_API, TODAY)  # 퍼가기 위젯 (2026-10-18 연구 세션 요청)
-    extra_urls += region_pages(aps) + contest_hubs(live)
+    extra_urls += region_pages(aps) + contest_hubs(live) + week_hub(live)
     extra_urls += ailog_page(live, len(extra_urls)) + all_page()
     community(live)
     lab_urls = lab() or []
@@ -813,6 +864,19 @@ window.gtag&&gtag('event','home_route',{{route:v}})}}catch(e){{}}}})();</script>
         json.dump(lm, open(LM, 'w', encoding='utf-8'), ensure_ascii=False)
         f.writelines(f'<url><loc>{SITE}{u}</loc><lastmod>{lm[u][1]}</lastmod></url>\n' for u in urls if u not in NOINDEX)
         f.write('</urlset>\n')
+    SMT = [('contest', ('/c/', '/cat/', '/contest/', '/lab/', '/guide/', '/prep/', '/widget/', '/ssul/')), ('apply', ('/a/', '/apply/', '/event/', '/fridge/', '/qa/')),
+           ('money', ('/analyst/', '/money/')), ('issue', ('/news/', '/talk/', '/mag/', '/kw/', '/hot/', '/satire/'))]
+    idx = []
+    for nm, pre in SMT + [('etc', None)]:
+        L = [u for u in urls if u not in NOINDEX and ((pre and u.startswith(pre)) or (not pre and not any(u.startswith(x) for _, ps in SMT for x in ps)))]
+        with open(os.path.join(ROOT, f'sitemap-{nm}.xml'), 'w', encoding='utf-8', newline='\n') as f2:
+            f2.write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n')
+            f2.writelines(f'<url><loc>{SITE}{u}</loc><lastmod>{lm[u][1]}</lastmod></url>\n' for u in L)
+            f2.write('</urlset>\n')
+        idx.append((nm, max([lm[u][1] for u in L] or [TODAY.isoformat()])))
+    with open(os.path.join(ROOT, 'sitemap_index.xml'), 'w', encoding='utf-8', newline='\n') as f2:
+        f2.write('<?xml version="1.0" encoding="UTF-8"?>\n<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+                 + ''.join(f'<sitemap><loc>{SITE}/sitemap-{nm}.xml</loc><lastmod>{d}</lastmod></sitemap>\n' for nm, d in idx) + '</sitemapindex>\n')
     rss_feed(live, aps)
     print('contests', len(contests), 'live', len(live), 'events', len(events), 'urls', len(urls), 'noindex', len(NOINDEX))
     try:
