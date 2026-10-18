@@ -19,9 +19,12 @@
 <a class="nw-at" href="${esc(a.u)}" target="_blank" rel="noopener nofollow" data-ga="news_out">${esc(a.t)}</a><ul class="nw-why">${a.why.map(w => `<li>${esc(w)}</li>`).join('')}</ul></li>`;
   function issue(x, i, I) {
     const arts = x.a.map(id => I[id]).filter(Boolean), g = x.cf && x.cf.length ? 'bad' : x.g;
-    const words = t => (t.match(/[가-힣A-Za-z0-9]{2,}/g) || []);
+    // 그 언론사만 쓴 표현: 조사 떼고 비교, 3곳 이상일 때만, 제목당 긴 말 2개까지
+    const stem = w => w.replace(/(으로|에서|에게|까지|부터|이라|라며|라고|하며|했다|한다|은|는|이|가|을|를|에|의|도|로|와|과|만)$/, '');
+    const words = t => (t.match(/[가-힣A-Za-z0-9]{2,}/g) || []).map(stem).filter(w => w.length >= 2);
     const cnt = {}; arts.forEach(a => new Set(words(a.t)).forEach(w => { cnt[w] = (cnt[w] || 0) + 1; }));
-    const hl = t => esc(t).replace(/[가-힣A-Za-z0-9]{2,}/g, w => cnt[w] === 1 && arts.length >= 3 ? `<mark>${w}</mark>` : w);
+    const hl = t => { const uniq = [...new Set(words(t))].filter(w => cnt[w] === 1 && arts.length >= 3).sort((a, b) => b.length - a.length).slice(0, 2);
+      let h = esc(t); uniq.forEach(w => { h = h.replace(w, `<mark>${w}</mark>`); }); return h; };
     const cmp = x.c === '정치' ? `<div class="nw-cmp"><small>📰 같은 사건, 언론사별 제목 <i>(이 언론사만 쓴 표현은 노란색)</i></small>${arts.map(a => `<p><b>${esc(a.o)}</b>${hl(a.t)}</p>`).join('')}</div>` : '';
     const line = x.claim ? '이건 발언(주장)을 전한 기사들이에요. 그런 말을 한 건 사실이지만, 말한 내용이 맞는지는 따로 따져 봐야 해요!' : x.cf && x.cf.length ? `언론사마다 숫자가 달라요(${x.cf.join(' / ')}). 공식 발표를 확인해 보세요!` : pick(SAY[g] || SAY.warn, x.t);
     return `<article class="nw-is ${g || ''}" id="is${x.n}"><div class="nw-rank">${i + 1}</div><div class="nw-ib">

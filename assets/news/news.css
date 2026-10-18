@@ -27,3 +27,6 @@
 .nw-cmp{margin:10px 0 2px;background:#fafaf9;border:1px solid #e7e5e4;border-radius:12px;padding:8px 10px}.nw-cmp small{display:block;font-size:12px;font-weight:800;color:#57534e;margin-bottom:4px}.nw-cmp small i{font-style:normal;font-weight:600;color:var(--mu)}
 .nw-cmp p{margin:4px 0;font-size:13.5px;line-height:1.5}.nw-cmp p b{display:inline-block;min-width:66px;font-size:12px;color:#78716c;margin-right:6px}.nw-cmp mark{background:#fef08a;padding:0 2px;border-radius:3px}
 .nw-ent h2 small{font-size:12px;color:var(--mu);font-weight:600}
+/* 2026-10-18 폰 가로 넘침 수정 */
+.nw-pr{grid-template-columns:minmax(0,1fr)}.nw-pr>*{min-width:0;max-width:100%;box-sizing:border-box}.nw-al{grid-template-columns:minmax(0,1fr)}.nw-a{min-width:0}
+.nw-f{max-width:100%}.nw-cmp{overflow-wrap:anywhere}
