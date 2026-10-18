@@ -14,6 +14,7 @@
 <div class="ad-g">${card('오늘 방문자', v.today.v || 0, `페이지 ${v.today.pv || 0}회`)}${card('지금 (30분)', v.live.v || 0)}${card('누적 방문', v.total.v || 0, v.total.since ? v.total.since.slice(5).replace('-', '/') + '부터 · 페이지 ' + v.total.pv + '회' : '')}${card('폰으로 본 비율', v.mobile.v ? Math.round(v.mobile.m / v.mobile.v * 100) + '%' : '-', '최근 7일')}</div>
 <h2>최근 14일 방문자</h2>${bars(v.byDay, 'v', x => x.d.slice(5))}
 <div class="ad-2"><section><h3>어디서 왔나 · 오늘</h3>${rank(v.refsToday || [], 'r', 'v')}</section><section><h3>어디서 왔나 · 7일</h3>${rank(v.refs, 'r', 'v')}</section><section><h3>지역 (7일)</h3>${rank(v.cities, 'c', 'v')}</section></div>
+<div class="ad-2"><section><h3>🧩 위젯 노출 · 7일 (붙은 곳)</h3>${rank((v.widgets || []).map(x => ({ r: x.k + ' · ' + x.h, n: x.n })), 'r', 'n')}</section><section><h3>🧩 위젯 클릭 · 7일 (방문자)</h3>${rank(v.widgetClicks || [], 'k', 'v')}</section></div>
 <h3>많이 본 페이지 (7일, 사람 수)</h3>${rank(v.pages.map(x => ({ ...x, p: x.path })), 'p', 'v')}
 <h3>최근 방문</h3><table class="ad-t"><tr><th>언제</th><th>페이지</th><th>유입</th><th>지역</th></tr>${v.recent.map(h => `<tr><td>${ago(h.ts)}</td><td><a href="${J.esc(h.path)}">${J.esc(h.path)}</a></td><td>${J.esc(h.ref || '직접')}</td><td>${J.esc(h.city || '')}${h.mobile ? ' 📱' : ''}${h.uid ? ' 👤' : ''}</td></tr>`).join('')}</table>
 <p class="note">봇·크롤러는 빼고 센 숫자예요. 자세한 건 <a href="https://analytics.google.com/analytics/web/#/a411961216p558909960/reports/intelligenthome" target="_blank" rel="noopener">구글 애널리틱스</a>.</p>

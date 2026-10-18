@@ -1,0 +1,28 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
+<title>루리의 줍줍 위젯</title><style>
+:root{--bg:#fff;--fg:#1e1b2e;--mu:#6b7280;--ln:#ece9f5;--ac:#6d28d9;--hi:#f5f3ff}
+.dark{--bg:#17151f;--fg:#f3f1fa;--mu:#a4a0b5;--ln:#2c2939;--ac:#a78bfa;--hi:#221e30}
+*{box-sizing:border-box}html,body{margin:0;height:100%}body{font:14px/1.45 -apple-system,"Malgun Gothic","Apple SD Gothic Neo",sans-serif;background:var(--bg);color:var(--fg);display:flex;flex-direction:column;border:1px solid var(--ln);border-radius:12px;overflow:hidden}
+header{display:flex;align-items:center;gap:8px;padding:10px 12px;background:var(--hi);font-weight:800}header img{width:28px;height:28px;border-radius:50%}
+ul{list-style:none;margin:0;padding:0;flex:1;overflow:auto}li a{display:flex;gap:10px;align-items:flex-start;padding:9px 12px;border-bottom:1px solid var(--ln);color:inherit;text-decoration:none}li a:hover{background:var(--hi)}
+b.d{flex:none;min-width:52px;text-align:center;font-size:12px;padding:2px 6px;border-radius:99px;background:var(--ac);color:#fff}b.d.u{background:#dc2626}
+span.t{display:block;font-weight:600;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}small{color:var(--mu)}
+footer{padding:7px 12px;font-size:12px;color:var(--mu);border-top:1px solid var(--ln)}footer a{color:var(--ac);font-weight:700;text-decoration:none}
+.big{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:14px;text-decoration:none;color:inherit}.big b{font-size:44px;color:var(--ac);line-height:1.1}.big span{font-weight:700;margin-top:6px}
+</style></head><body><header><img src="/assets/ruri/avatar.webp" alt=""><span id="hd"></span></header><div id="bx" style="flex:1;display:flex;flex-direction:column;overflow:hidden"></div>
+<footer><a id="ft" href="https://sungprofile.cloud/?src=w_dday" target="_blank" rel="noopener">루리의 줍줍</a>에서 매일 갱신 · <span id="up"></span></footer>
+<script>(function(){var K='dday',S='https://sungprofile.cloud',Q=new URLSearchParams(location.search),n=Math.min(10,Math.max(1,+Q.get('n')||5)),cat=Q.get('cat')||'all',src='?src=w_'+K;
+if(Q.get('t')==='dark')document.body.className='dark';
+var esc=function(s){return String(s||'').replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})};
+var dd=function(e){var t=new Date(Date.now()+9*36e5).toISOString().slice(0,10),n=Math.round((new Date(e)-new Date(t))/864e5);return[n,n===0?'D-DAY':n<0?'마감':'D-'+n]};
+var CN={"all": "전체", "video": "영상", "design": "디자인", "write": "글쓰기", "photo": "사진", "food": "요리", "idea": "아이디어", "univ": "대학생"};
+fetch('/w/data.json',{cache:'no-cache'}).then(function(r){return r.json()}).then(function(D){var h=document.getElementById('hd'),b=document.getElementById('bx'),L=[];
+document.getElementById('up').textContent=D.updated+' 기준';
+if(K==='contest'){h.textContent='이번 주 마감 공모전'+(cat!=='all'?' · '+(CN[cat]||''):'');L=(D.contest[cat]||[]).slice(0,n).map(function(c){var d=dd(c.e);return'<li><a href="'+S+'/c/'+c.id+'/'+src+'" target="_blank" rel="noopener"><b class="d'+(d[0]<=3?' u':'')+'">'+d[1]+'</b><span><span class="t">'+esc(c.t)+'</span><small>'+esc(c.o)+(c.p?' · '+esc(c.p):'')+'</small></span></a></li>'})}
+else if(K==='apply'){h.textContent='이번 주 지원금·청약 마감';L=D.apply.slice(0,n).map(function(a){var d=dd(a.e);return'<li><a href="'+S+'/a/'+encodeURIComponent(a.id)+'/'+src+'" target="_blank" rel="noopener"><b class="d'+(d[0]<=3?' u':'')+'">'+d[1]+'</b><span><span class="t">'+esc(a.t)+'</span><small>'+esc(a.k)+' · '+esc(a.o)+'</small></span></a></li>'})}
+else if(K==='hot'){h.textContent='오늘의 핫이슈';L=D.hot.slice(0,Math.min(n,3)).map(function(x,i){return'<li><a href="'+S+'/hot/'+encodeURIComponent(x.s)+'/'+src+'" target="_blank" rel="noopener"><b class="d">'+(i+1)+'</b><span><span class="t">'+esc(x.t)+'</span><small>언론사 '+x.n+'곳 보도 · 나한테 달라지는 점 보기</small></span></a></li>'})}
+else if(K==='dday'){var id=Q.get('id')||'';h.textContent='공모전 마감 카운터';return fetch('/data.json').then(function(r){return r.json()}).then(function(A){var c=(A.items||[]).filter(function(x){return x.id===id})[0];
+if(!c){b.innerHTML='<a class="big" href="'+S+'/contest/'+src+'" target="_blank" rel="noopener"><span>공모전을 찾지 못했어요.<br>진행 중 공모전 보기 →</span></a>';return}var d=dd(c.end);
+b.innerHTML='<a class="big" href="'+S+'/c/'+c.id+'/'+src+'" target="_blank" rel="noopener"><b>'+d[1]+'</b><span>'+esc(c.title)+'</span><small>'+c.end.replace(/-/g,'.')+' 마감'+(c.pv?' · '+esc(c.prize):'')+'</small></a>'})}
+b.innerHTML='<ul>'+(L.join('')||'<li><a href="'+S+'/'+src+'" target="_blank" rel="noopener"><span class="t">지금 정리 중이에요. 사이트에서 보기 →</span></a></li>')+'</ul>'}).catch(function(){});
+try{if(location.hostname==='sungprofile.cloud'&&!/sungprofile/.test(document.referrer))fetch('https://jupjup-api.sung2011103.workers.dev/api/wv',{method:'POST',keepalive:true,headers:{'Content-Type':'application/json'},body:JSON.stringify({k:K,r:document.referrer})})}catch(e){}})();</script></body></html>

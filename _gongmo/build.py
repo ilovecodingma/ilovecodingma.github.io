@@ -66,8 +66,8 @@ THEMES = [  # (키, 이름, 아이콘, 테마색, 홈, [하위 메뉴], [이 테
     ('issue', '이슈', '🕵️', '#b45309', '/news/', [('/hot/', '핫이슈'), ('/news/', '이슈 감별'), ('/talk/', '커뮤니티 이슈'), ('/kw/', '인기 키워드'), ('/satire/', '루리 풍자'), ('/mag/', '매거진')],
      ['/hot/', '/news/', '/talk/', '/kw/', '/satire/', '/mag/']),
     ('money', '머니', '📊', '#047857', '/analyst/', [('/analyst/', '애널리스트 종합'), ('/money/experts/', '전문가 코멘트'), ('/money/policy/', '투자 정책'), ('/money/age/', '나이별 원칙'), ('/money/tools/loan/', '계산기'), ('/analyst/coin/btc/', '코인')], ['/analyst/', '/money/']),
-    ('contest', '공모전', '🏆', '#6d28d9', '/contest/', [('/contest/', '추천 상담'), ('/cat/literature/', '분야별'), ('/prep/', '준비실'), ('/lab/', '수상 연구소'), ('/community/', '원정대'), ('/guide/', '가이드')],
-     ['/contest/', '/c/', '/cat/', '/prep/', '/lab/', '/community/', '/guide/', '/v/', '/me/']),
+    ('contest', '공모전', '🏆', '#6d28d9', '/contest/', [('/contest/', '추천 상담'), ('/cat/literature/', '분야별'), ('/prep/', '준비실'), ('/lab/', '수상 연구소'), ('/community/', '원정대'), ('/guide/', '가이드'), ('/widget/', '위젯')],
+     ['/contest/', '/c/', '/cat/', '/prep/', '/lab/', '/community/', '/guide/', '/v/', '/me/', '/widget/']),
     ('life', '생활', '🍳', '#0e7490', '/apply/', [('/apply/', '지원금·청약'), ('/apply/recommend/', '청약 추천'), ('/event/', '경품'), ('/fridge/', '냉장고 파먹기'), ('/qa/', '고민 해결')], ['/apply/', '/a/', '/event/', '/fridge/', '/qa/', '/ssul/']),
     ('ai', 'AI 로그', '🤖', '#0f172a', '/ailog/', [('/ailog/', 'AI 제작 로그')], ['/ailog/'])]
 
@@ -695,6 +695,8 @@ window.gtag&&gtag('event','home_route',{{route:v}})}}catch(e){{}}}})();</script>
     app_page()
     news_page()
     extra_urls = talk_pages() + mag_pages(live, aps) + analyst_pages() + satire_pages() + kw_pages() + money_pages() + apply_rec_page() + tool_pages() + hot_pages()
+    import widget
+    extra_urls += widget.build(ROOT, live, aps, hot_live()[0], page, say, COMM_API, TODAY)  # 퍼가기 위젯 (2026-10-18 연구 세션 요청)
     extra_urls += ailog_page(live, len(extra_urls)) + all_page()
     community(live)
     lab_urls = lab() or []
@@ -707,7 +709,7 @@ window.gtag&&gtag('event','home_route',{{route:v}})}}catch(e){{}}}})();</script>
     global NEW_URLS
     sm = os.path.join(ROOT, 'sitemap.xml')
     old = set(re.findall(r'<loc>([^<]+)</loc>', open(sm, encoding='utf-8').read())) if os.path.exists(sm) else set()
-    NEW_URLS = [SITE + u for u in urls if SITE + u not in old]
+    NEW_URLS = [SITE + u for u in urls if SITE + u not in old and u not in NOINDEX]
     with open(sm, 'w', encoding='utf-8', newline='\n') as f:
         f.write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n')
         LM = os.path.join(HERE, 'lastmod.json')
@@ -1852,7 +1854,7 @@ def me_pages():
     """내 공간(가입 혜택 모음) · 관리자 (2026-10-17)"""
     page('/me/', '내 공간 — 찜·응모 기록·마감 알림', '찜한 공모전·청약, 응모 기록, 마감 알림 메일, 자격 프로필, 청약 가점 계산기를 한곳에서.',
          '''<section id="me" aria-label="내 공간"></section><link rel="stylesheet" href="/assets/me/me.css?v=2"><script defer src="/assets/me/me.js?v=2"></script>''', [('루리의 줍줍', '/'), ('내 공간', '/me/')])
-    page('/admin/', '관리자', '관리자', '''<section id="admin"></section><link rel="stylesheet" href="/assets/me/me.css?v=2"><script defer src="/assets/me/admin.js?v=4"></script>''', noindex=True)
+    page('/admin/', '관리자', '관리자', '''<section id="admin"></section><link rel="stylesheet" href="/assets/me/me.css?v=2"><script defer src="/assets/me/admin.js?v=5"></script>''', noindex=True)
 
 
 def lab():

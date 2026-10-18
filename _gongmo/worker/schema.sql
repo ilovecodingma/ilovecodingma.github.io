@@ -156,3 +156,6 @@ CREATE TABLE IF NOT EXISTS fridge_log (id INTEGER PRIMARY KEY, day TEXT NOT NULL
 CREATE INDEX IF NOT EXISTS fridge_day ON fridge_log(day, who);
 -- 웹푸시 공모전 알림 구독 (2026-10-18)
 CREATE TABLE IF NOT EXISTS push_subs (endpoint TEXT PRIMARY KEY, p256dh TEXT NOT NULL, auth TEXT NOT NULL, cats TEXT DEFAULT '', newc INTEGER DEFAULT 1, dl INTEGER DEFAULT 1, uid INTEGER, created INTEGER, sent INTEGER DEFAULT 0, fails INTEGER DEFAULT 0, last_ok INTEGER);
+
+CREATE TABLE IF NOT EXISTS widget_views (id INTEGER PRIMARY KEY, day TEXT, ts INTEGER, kind TEXT, host TEXT);
+CREATE INDEX IF NOT EXISTS widget_views_day ON widget_views (day);
