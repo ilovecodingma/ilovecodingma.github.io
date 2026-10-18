@@ -65,7 +65,7 @@ GTAG = ('<script async src="https://pagead2.googlesyndication.com/pagead/js/adsb
 THEMES = [  # (키, 이름, 아이콘, 테마색, 홈, [하위 메뉴], [이 테마에 속하는 주소 앞부분])
     ('issue', '이슈', '🕵️', '#b45309', '/news/', [('/news/', '이슈 감별'), ('/talk/', '커뮤니티 이슈'), ('/kw/', '인기 키워드'), ('/satire/', '루리 풍자'), ('/mag/', '매거진')],
      ['/news/', '/talk/', '/kw/', '/satire/', '/mag/']),
-    ('money', '머니', '📊', '#047857', '/analyst/', [('/analyst/', '애널리스트 종합'), ('/analyst/coin/btc/', '비트코인'), ('/analyst/coin/eth/', '이더리움')], ['/analyst/']),
+    ('money', '머니', '📊', '#047857', '/analyst/', [('/analyst/', '애널리스트 종합'), ('/money/experts/', '전문가 코멘트'), ('/money/policy/', '투자 정책'), ('/money/age/', '나이별 원칙'), ('/analyst/coin/btc/', '코인')], ['/analyst/', '/money/']),
     ('contest', '공모전', '🏆', '#6d28d9', '/contest/', [('/contest/', '추천 상담'), ('/cat/literature/', '분야별'), ('/prep/', '준비실'), ('/lab/', '수상 연구소'), ('/community/', '원정대'), ('/guide/', '가이드')],
      ['/contest/', '/c/', '/cat/', '/prep/', '/lab/', '/community/', '/guide/', '/v/', '/me/']),
     ('life', '생활', '🍳', '#0e7490', '/apply/', [('/apply/', '지원금·청약'), ('/event/', '경품'), ('/fridge/', '냉장고 파먹기'), ('/qa/', '고민 해결')], ['/apply/', '/a/', '/event/', '/fridge/', '/qa/', '/ssul/']),
@@ -531,7 +531,7 @@ window.gtag&&gtag('event','home_route',{{route:v}})}}catch(e){{}}}})();</script>
     fridge_page()
     app_page()
     news_page()
-    extra_urls = talk_pages() + mag_pages(live, aps) + analyst_pages() + satire_pages() + kw_pages()
+    extra_urls = talk_pages() + mag_pages(live, aps) + analyst_pages() + satire_pages() + kw_pages() + money_pages()
     extra_urls += ailog_page(live, len(extra_urls)) + all_page()
     community(live)
     lab_urls = lab() or []
@@ -694,7 +694,7 @@ def talk_pages():
     if not days:
         return []
     arch = '<section class="tk-arch"><h2>📅 날짜별 커뮤니티 이슈</h2><p>' + ''.join(f'<a href="/talk/{d}/">{kdate(d)}</a>' for d in days[:60]) + '</p></section>'
-    css = '<link rel="stylesheet" href="/assets/mag/mag.css?v=6"><link rel="stylesheet" href="/assets/news/news.css?v=2">'
+    css = '<link rel="stylesheet" href="/assets/mag/mag.css?v=7"><link rel="stylesheet" href="/assets/news/news.css?v=2">'
     note = '<p class="note">순위는 여러 커뮤니티에 동시에 뜬 정도·댓글 수·인기글에 머문 시간으로 매겨요. 성·혐오·개인 신상·비방·사생활 폭로성 글은 모으지 않아요. 요약은 루리가 제목과 수치만 보고 정리했어요.</p>'
     urls = ['/talk/']
     for i, d in enumerate(days):
@@ -841,7 +841,7 @@ def mag_pages(live, aps):
     mag_snapshot(live, aps)
     md = os.path.join(ROOT, 'mag', 'archive')
     days = sorted([f[:-5] for f in os.listdir(md) if f.endswith('.json')], reverse=True)
-    css = '<link rel="stylesheet" href="/assets/mag/mag.css?v=6">'
+    css = '<link rel="stylesheet" href="/assets/mag/mag.css?v=7">'
     urls, cards = ['/mag/'], []
     for d in days:
         m = json.load(open(os.path.join(md, d + '.json'), encoding='utf-8'))
@@ -992,7 +992,7 @@ def analyst_pages():
     if not d:
         return []
     S, C = d.get('stocks', []), d.get('coins', [])
-    css = '<link rel="stylesheet" href="/assets/analyst/analyst.css?v=3">'
+    css = '<link rel="stylesheet" href="/assets/analyst/analyst.css?v=4">'
     ups = sorted([s for s in S if s['up'] > s['down']], key=lambda s: (-s['up'], -s['last']))[:10]
     dns = sorted([s for s in S if s['down'] > s['up']], key=lambda s: (-s['down'], -s['last']))[:10]
     mix = [s for s in S if s['mixed']][:10]
@@ -1099,7 +1099,7 @@ def satire_pages():
     days = satire_days()
     if not days:
         return []
-    css = '<link rel="stylesheet" href="/assets/mag/mag.css?v=6">'
+    css = '<link rel="stylesheet" href="/assets/mag/mag.css?v=7">'
     note = '<p class="note">풍자 만화예요. 특정 종목·인물을 비방하거나 투자를 권하려는 게 아니에요. 숫자는 그날 보도 기준이에요.</p>'
     urls = ['/satire/']
     def one(d, v, h='h2'):
@@ -1152,7 +1152,7 @@ def kw_pages():
     days = sorted([f[:-5] for f in os.listdir(ad) if f.endswith('.json')], reverse=True) if os.path.isdir(ad) else []
     if not db or not days:
         return []
-    css = '<link rel="stylesheet" href="/assets/mag/mag.css?v=6">'
+    css = '<link rel="stylesheet" href="/assets/mag/mag.css?v=7">'
     G = {'ok': '✅', 'warn': '🟡', 'bad': '🔴'}
     note = '<p class="note">구글 트렌드 한국 급상승 검색어를 바탕으로 루리가 관련 보도와 사이트 정보를 모은 페이지예요. 연예인 사생활·사건사고·비방성 키워드는 다루지 않아요.</p>'
     urls = ['/kw/']
@@ -1228,7 +1228,7 @@ def ailog_page(live, nurls):
             + f'<section class="mg-s"><h2>🛠️ AI가 틀린 것과 고친 것</h2><ul class="al-f">{fixes}</ul></section>'
             + f'<section class="mg-s"><h2>📏 지킨 원칙</h2><ul class="al-r">{rules}</ul></section>'
             + f'<section class="mg-s"><h2>🗓️ 날짜별 기록</h2><ul class="al-tl">{tl}</ul></section>'
-            + '<p class="note">이 페이지는 사이트 개발 과정만 공개해요. 숫자는 빌드할 때마다 자동으로 갱신돼요.</p><link rel="stylesheet" href="/assets/mag/mag.css?v=6">')
+            + '<p class="note">이 페이지는 사이트 개발 과정만 공개해요. 숫자는 빌드할 때마다 자동으로 갱신돼요.</p><link rel="stylesheet" href="/assets/mag/mag.css?v=7">')
     page('/ailog/', 'AI 제작 로그 — 서버비 0원으로 정보 사이트 만들기(Claude Code)',
          f'사람 한 명의 말과 AI(Claude Code)로 {days}일 동안 페이지 {npage:,}개짜리 정보 사이트를 만든 기록. 무료 호스팅·무료 서버리스·공개 RSS로 서버비 0원, 매시간 자동 갱신.',
          body, [('루리의 줍줍', '/'), ('AI 제작 로그', '/ailog/')])
@@ -1245,9 +1245,90 @@ def all_page():
          ('💰 생활 정보', [('/apply/', '지원금·청약', '청년 지원금·청약 일정'), ('/event/', '경품 이벤트', '응모만 하면 되는 이벤트'), ('/fridge/', '냉장고 파먹기', '있는 재료로 오늘 메뉴'), ('/qa/', '고민 해결', '실제 고민에 답 정리')]),
          ('⚙️ 더 보기', [('/app/', '앱·알림', '홈 화면 설치·폰 알림'), ('/me/', '내 공간', '찜·응모 기록'), ('/ailog/', 'AI 제작 로그', '이 사이트를 만든 방법')])]
     body = '<p class="bc"><a href="/">홈</a> › 전체 메뉴</p><h1>☰ 루리의 줍줍 전체 메뉴</h1>' + ''.join(
-        f'<section class="mg-s"><h2>{E(g)}</h2><ul class="al-menu">' + ''.join(f'<li><a href="{u}"><b>{E(n)}</b><span>{E(d)}</span></a></li>' for u, n, d in items) + '</ul></section>' for g, items in G) + '<link rel="stylesheet" href="/assets/mag/mag.css?v=6">'
+        f'<section class="mg-s"><h2>{E(g)}</h2><ul class="al-menu">' + ''.join(f'<li><a href="{u}"><b>{E(n)}</b><span>{E(d)}</span></a></li>' for u, n, d in items) + '</ul></section>' for g, items in G) + '<link rel="stylesheet" href="/assets/mag/mag.css?v=7">'
     page('/all/', '전체 메뉴', '루리의 줍줍 전체 메뉴: 이슈 감별, 커뮤니티 이슈, 인기 키워드, 풍자, 매거진, 애널리스트 분석, 공모전, 지원금·청약, 경품, 냉장고 파먹기, 앱·알림.', body, [('루리의 줍줍', '/'), ('전체 메뉴', '/all/')])
     return ['/all/']
+
+
+MONEY_NOTE = ('<p class="an-warn">📊 공개된 기사·공식 자료를 정리한 일반 정보예요. 루리의 줍줍이 특정 종목·상품을 권하거나 수익을 약속하지 않아요. '
+              '개인 상황에 따라 맞는 답이 다르고, 투자 판단과 책임은 본인에게 있어요.</p>')
+ECOL = {'bull': ('🟢', '긍정'), 'bear': ('🔴', '신중'), 'neutral': ('⚪', '중립')}
+
+
+def exp_li(n):
+    dt = datetime.datetime.fromtimestamp(n['ts']).strftime('%m/%d')
+    return (f'<li class="{n["dir"]}"><span class="an-d">{ECOL[n["dir"]][0]}</span><div><small>{dt} · {E(n["who"])} · {E(n["cat"])}</small>'
+            f'<a href="{E(n["u"])}" target="_blank" rel="noopener nofollow">{E(n["t"])}</a><em>{E(n["o"])}</em></div></li>')
+
+
+def experts_html(ex, cats=None, limit=None):
+    out = ''
+    for e in ex[:limit]:
+        ns = [n for n in e['nodes'] if not cats or n['cat'] in cats]
+        if not ns:
+            continue
+        if e['mixed']:
+            b = [n for n in ns if n['dir'] == 'bull'][:4]
+            r = [n for n in ns if n['dir'] == 'bear'][:4]
+            body = (f'<div class="ex-vs"><div><p>🟢 긍정적으로 본 쪽</p><ul class="an-nodes">{"".join(exp_li(n) for n in b)}</ul></div>'
+                    f'<div><p>🔴 신중하게 본 쪽</p><ul class="an-nodes">{"".join(exp_li(n) for n in r)}</ul></div></div>')
+        else:
+            body = f'<ul class="an-nodes">{"".join(exp_li(n) for n in ns[:6])}</ul>'
+        cc = ' · '.join(f'{k} {v}' for k, v in e['cats'].items() if v)
+        out += (f'<article class="an-c"><div class="an-h"><h3>{E(e["topic"])}</h3>{"<span class=an-mix>⚖️ 의견 엇갈림</span>" if e["mixed"] else ""}</div>'
+                f'<p class="an-st">최근 14일 전문가 발언 {e["n"]}건 · 🟢 {e["bull"]} · 🔴 {e["bear"]} · {E(cc)}</p>{body}</article>')
+    return out
+
+
+def money_pages():
+    # 머니 테마 정보 섹션 (2026-10-18 사용자: "주식 관련해서도 정책 등, 나이별 포트폴리오 전략 등을 넣고 전문가들 이야기도 넣어서" — 연구 ⑂ 기획)
+    an = _rd('analyst/data.json')
+    ex = an.get('experts', [])
+    css = '<link rel="stylesheet" href="/assets/analyst/analyst.css?v=4"><link rel="stylesheet" href="/assets/mag/mag.css?v=7">'
+    urls = []
+    how = ('<details class="an-how"><summary>어떻게 모았나요?</summary><ol><li>증권·경제 기사 RSS에서 리서치센터장·CIO·이코노미스트·한국은행·KDI·IMF·월가 기관 등 실명 기관·인물의 발언이 제목에 나온 기사만 골라요.</li>'
+           '<li>주제(코스피·미국 증시·금리·환율·반도체·부동산·경기·코인·원자재)와 성격(시장 전망·자산배분 조언·리스크 경고)으로 나눠요.</li><li>발언(따옴표) 부분으로 긍정·신중을 가려, 같은 주제에서 둘 다 있으면 나란히 보여 줘요.</li>'
+           '<li>기사 본문은 옮기지 않고 제목(발언 요지)과 원문 링크만 실어요.</li></ol></details>')
+    page('/money/experts/', '전문가 코멘트 종합 — 리서치센터장·CIO·한은·IMF 시장 전망 비교',
+         '증권사 리서치센터장, 운용사 CIO, 한국은행·KDI·IMF 등 실명 전문가 발언을 주제별로 모으고, 같은 주제에서 의견이 엇갈리면 나란히 비교했어요.',
+         '<p class="bc"><a href="/">홈</a> › <a href="/analyst/">머니</a> › 전문가 코멘트</p><h1>🎙️ 전문가 코멘트 종합</h1>' + MONEY_NOTE
+         + (experts_html(ex) or '<p class="nw-empty">아직 모인 발언이 없어요. 매시간 새로 모아요.</p>') + how + css,
+         [('루리의 줍줍', '/'), ('머니', '/analyst/'), ('전문가 코멘트', '/money/experts/')])
+    urls.append('/money/experts/')
+    a = json.load(open(os.path.join(HERE, 'money_age.json'), encoding='utf-8'))
+    common = ''.join(f'<li><b>{E(k)}</b><span>{E(v)}</span></li>' for k, v in a['common'])
+    rule = f'<section class="mg-s"><h2>📏 {E(a["rule"]["title"])}</h2><p>{E(a["rule"]["body"])}</p><ul class="al-r">{"".join(f"<li>{E(x)}</li>" for x in a["rule"]["limits"])}</ul></section>'
+    ages = ''.join(f'<section class="mg-s ag-{x["k"]}" id="{x["k"]}"><h2>{E(x["t"])} <small>— {E(x["focus"])}</small></h2><ul class="ag-l">{"".join(f"<li>{E(i)}</li>" for i in x["items"])}</ul></section>' for x in a['ages'])
+    jump = ''.join(f'<a href="#{x["k"]}">{E(x["t"].split(" · ")[0])}</a>' for x in a['ages'])
+    adv = experts_html(ex, cats=('자산배분 조언', '리스크 경고'), limit=4)
+    page('/money/age/', '나이별 자산관리 일반 원칙 — 20대부터 은퇴 후까지',
+         '20대 사회초년생, 30대 결혼·내 집 마련, 40대, 50대 은퇴 준비, 60대 이상 인출기까지 흔히 쓰이는 자산관리 원칙: 비상금, 세제 혜택 계좌 순서, 100−나이 규칙과 한계, 분산·리밸런싱.',
+         '<p class="bc"><a href="/">홈</a> › <a href="/analyst/">머니</a> › 나이별 원칙</p><h1>🧭 나이별 자산관리 일반 원칙</h1>'
+         + f'<p class="an-warn">⚠️ {E(a["note"])}</p><p class="hm-links">{jump}<a href="/money/policy/">투자 정책 정리 →</a></p>'
+         + f'<section class="mg-s"><h2>🧱 나이와 상관없는 공통 원칙</h2><ul class="ag-c">{common}</ul></section>' + rule + ages
+         + (f'<h2>🎙️ 요즘 전문가들의 자산배분·리스크 이야기</h2>{adv}' if adv else '') + css,
+         [('루리의 줍줍', '/'), ('머니', '/analyst/'), ('나이별 원칙', '/money/age/')])
+    urls.append('/money/age/')
+    pol = os.path.join(HERE, 'money_policy.json')
+    if os.path.exists(pol):
+        P = json.load(open(pol, encoding='utf-8'))
+        secs = ''
+        for it in P.get('items', []):
+            rows = ''.join(f'<tr><th>{E(r[0])}</th><td>{E(r[1])}</td></tr>' for r in it.get('rows', []) if len(r) >= 2)
+            src = ''.join(f'<li><a href="{E(x["url"])}" target="_blank" rel="noopener nofollow">{E(x["title"])}</a>{(" · " + E(x["date"])) if x.get("date") else ""}</li>' for x in it.get('sources', []))
+            ver = '' if it.get('verified', True) else '<p class="an-warn">🔎 공식 자료를 찾지 못해 보도 기준으로 정리했어요. 가입 전 공식 안내를 꼭 확인하세요.</p>'
+            secs += (f'<section class="mg-s" id="{E(it["key"])}"><h2>{E(it["name"])}</h2>{ver}<table class="pl-t">{rows}</table>'
+                     + (f'<p class="pl-ch">🆕 {E(it["changes"])}</p>' if it.get('changes') else '') + (f'<details class="pl-src"><summary>출처</summary><ul>{src}</ul></details>' if src else '') + '</section>')
+        jump = ''.join(f'<a href="#{E(it["key"])}">{E(it["name"].split("(")[0])}</a>' for it in P.get('items', []))
+        rel = experts_html([e for e in ex if e['topic'] in ('금리', '코스피·국내 증시', '경기·성장률')], limit=2)
+        page('/money/policy/', '투자 관련 정책·제도 정리 — ISA·연금저축·IRP·청년도약계좌·공모주·세제·공매도',
+             'ISA, 연금저축·IRP 세액공제, 청년도약계좌, 공모주 청약 배정, 금투세·배당소득 과세, 공매도 제도를 공식 자료 기준으로 표로 정리했어요(기준일·출처 표시).',
+             '<p class="bc"><a href="/">홈</a> › <a href="/analyst/">머니</a> › 투자 정책</p><h1>🏛️ 투자 관련 정책·제도 정리</h1>' + MONEY_NOTE
+             + f'<p class="pl-asof">기준일 {E(P.get("asof", ""))} · 금융위원회·기획재정부·국세청 등 공식 자료 기준. 제도는 바뀔 수 있으니 가입 전 공식 안내를 확인하세요.</p><p class="hm-links">{jump}</p>'
+             + secs + '<p class="hm-links"><a href="/apply/">💰 지원금·청약 데이터 보기</a><a href="/money/age/">🧭 나이별 원칙</a></p>' + (f'<h2>🎙️ 관련 전문가 코멘트</h2>{rel}' if rel else '') + css,
+             [('루리의 줍줍', '/'), ('머니', '/analyst/'), ('투자 정책', '/money/policy/')])
+        urls.append('/money/policy/')
+    return urls
 
 
 def news_top():

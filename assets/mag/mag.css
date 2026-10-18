@@ -39,3 +39,4 @@
 .al-r li{background:#ecfdf5;border-radius:10px;padding:7px 11px;font-size:14px}.al-tl li{display:flex;gap:10px;font-size:14px}.al-tl em{flex:none;font-style:normal;font-weight:900;color:#7c3aed;width:44px}
 .al-menu{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.al-menu a{display:block;background:#fafafa;border:1px solid var(--bd);border-radius:12px;padding:10px 12px;text-decoration:none;color:inherit;height:100%;box-sizing:border-box}
 .al-menu b{display:block;font-size:15px;color:#4c1d95}.al-menu span{font-size:12.5px;color:var(--mu)}
+.hm-links{display:flex;flex-wrap:wrap;gap:6px;margin:8px 2px}.hm-links a{font-size:13px;font-weight:700;background:var(--card);border:1px solid var(--bd);border-radius:999px;padding:6px 11px;text-decoration:none;color:var(--pri)}

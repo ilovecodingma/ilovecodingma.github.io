@@ -213,6 +213,37 @@ def coin_nodes(arts, bodies):
     return nodes
 
 
+EXP_ROLE = re.compile(r'리서치센터장|센터장|최고투자책임자|CIO|수석\s?이코노미스트|이코노미스트|전략가|스트래티지스트|투자전략팀장|운용역|펀드매니저|한국은행|한은 총재|총재|KDI|한국개발연구원|IMF|OECD|국제통화기금|연준|파월|월가|골드만삭스|JP모건|모건스탠리|블랙록|자산운용|버핏|다이먼')
+EXP_SAY = re.compile(r'전망|예상|경고|우려|조언|분석|진단|관측|내다|점쳤|권고|제시|"|“')
+EXP_CAT = [('리스크 경고', r'경고|우려|위험|버블|거품|폭락|급락|경계|하방|침체|위기|리스크'), ('자산배분 조언', r'비중|분산|채권|현금|포트폴리오|자산배분|담아|줄여|늘려|매수 기회|분할 매수|리밸런싱|배당주')]
+EXP_TOPIC = [('코스피·국내 증시', r'코스피|코스닥|국내 증시|韓 증시|한국 증시|K-?증시'), ('미국 증시', r'S&P|나스닥|뉴욕증시|미 증시|미국 증시|다우'), ('금리', r'금리|기준금리|연준|Fed|FOMC|한은'),
+             ('환율', r'환율|원·달러|원달러|달러|엔화'), ('반도체·AI', r'반도체|HBM|AI|엔비디아|삼성전자|하이닉스'), ('부동산', r'부동산|집값|아파트|주택'), ('경기·성장률', r'성장률|경기|GDP|침체|물가|인플레'),
+             ('코인', r'비트코인|이더리움|가상자산|암호화폐'), ('원자재', r'유가|금값|원자재|구리')]
+
+
+def expert_nodes(arts):
+    out = []
+    for a in arts:
+        t = a['t'] + ' ' + a.get('d', '')[:160]
+        if not (EXP_ROLE.search(a['t']) and EXP_SAY.search(t)) or re.search(r'목표(?:주)?가|투자의견', a['t']):
+            continue
+        tp = next((n for n, rx in EXP_TOPIC if re.search(rx, t)), None)
+        if not tp:
+            continue
+        who = EXP_ROLE.search(a['t']).group(0)
+        m = re.search(r'([가-힣A-Za-z&·]{2,12}(?:증권|자산운용|운용|은행|연구원|캐피털|인베스트먼트)?)\s?(?:' + re.escape(who) + ')', a['t'])
+        who_full = (m.group(0) if m else who).strip()
+        cat = next((n for n, rx in EXP_CAT if re.search(rx, t)), '시장 전망')
+        qt = ' '.join(re.findall(r'[“"]([^”"]{3,})[”"]', a['t'])) or a['t']   # 발언(따옴표) 부분으로 방향 판단
+        bu = len(BULL.findall(qt)) + len(re.findall(r'사라|매수|기회|저평가|낙관|반등|과도|기대', qt))
+        be = len(BEAR.findall(qt)) + len(re.findall(r'팔아|매도|고평가|비관|경고|조심|위험', qt))
+        d = 'bull' if bu > be else 'bear' if be > bu else 'neutral'
+        cat = next((n for n, rx in EXP_CAT if re.search(rx, qt)), '시장 전망')
+        out.append({'k': 'expert', 'id': hashlib.md5(('e' + a['u']).encode()).hexdigest()[:10], 'who': who_full, 'topic': tp, 'cat': cat, 'dir': d,
+                    't': a['t'], 'u': a['u'], 'o': a['o'], 'ts': a['ts']})
+    return out
+
+
 def tree_stock(ns):
     """종목 노드들 → 상승/하락/유지 가지, 가지 아래 근거 태그별 증권사 목록."""
     br = {}
@@ -242,9 +273,14 @@ def main():
                 a['ts'] = int(datetime.datetime.fromisoformat(a['pd'].replace('Z', '+00:00')).timestamp())
             except Exception:
                 a['ts'] = None
+    ea = [a for a in sa if EXP_ROLE.search(a['t']) and a['u'] not in db['seen']]
     sa = [a for a in sa if re.search(r'목표(?:주)?가|투자의견', a['t']) and a['u'] not in db['seen']]
     ca = [a for a in ca if any(re.search(rx, a['t']) for _, rx in COINS.values()) and a['u'] not in db['seen']]
     need = {a['u'] for a in sa + ca}
+    for a in ea:
+        if a['ts'] is None:
+            ud = url_date(a['u']); a['ts'] = int(ud) if ud else None
+    ea = [a for a in ea if a['ts'] and now - a['ts'] < 7 * 86400]
     with cf.ThreadPoolExecutor(8) as ex:
         bodies = dict(zip(need, ex.map(body, need)))
     for a in sa + ca:  # 날짜 확정: RSS → 주소 속 날짜 → 기사 메타데이터. 모르면 버림. 주소 날짜가 RSS보다 3일 넘게 이르면 옛 기사
@@ -260,10 +296,10 @@ def main():
             a['ts'] = int(ud)
     sa = [a for a in sa if a['ts'] and now - a['ts'] < 7 * 86400]
     ca = [a for a in ca if a['ts'] and now - a['ts'] < 7 * 86400]
-    new = stock_nodes(sa, bodies) + coin_nodes(ca, bodies)
+    new = stock_nodes(sa, bodies) + coin_nodes(ca, bodies) + expert_nodes(ea)
     for n in new:
         db['nodes'][n['id']] = n
-    for u in need:
+    for u in need | {a['u'] for a in ea}:
         db['seen'][u] = int(now)
     cut = now - 90 * 86400
     db['nodes'] = {k: v for k, v in db['nodes'].items() if v['ts'] >= cut}
@@ -322,8 +358,19 @@ def main():
         tg = [n['tgt'] for n in ns if n.get('tgt')]
         coins.append({'hist': hist.get(sym, []), 'sym': sym, 'name': kn, 'bull': bu, 'bear': be, 'neutral': ne, 'n': len(ns), 'price': price.get(sym), 'tgt': [min(tg), max(tg)] if tg else None, 'tree': tree,
                       'nodes': [{k: n.get(k) for k in ('dir', 'who', 'tgt', 'rs', 't', 'u', 'o', 'ts')} for n in ns[:20]]})
+    E_ = sorted([n for n in db['nodes'].values() if n['k'] == 'expert' and n['ts'] >= now - 14 * 86400], key=lambda n: -n['ts'])
+    experts = []
+    for tp, _ in EXP_TOPIC:
+        ns = [n for n in E_ if n['topic'] == tp]
+        if not ns:
+            continue
+        bu, be = sum(1 for n in ns if n['dir'] == 'bull'), sum(1 for n in ns if n['dir'] == 'bear')
+        experts.append({'topic': tp, 'n': len(ns), 'bull': bu, 'bear': be, 'mixed': 1 if bu and be else 0,
+                        'cats': {c: sum(1 for n in ns if n['cat'] == c) for c in ('시장 전망', '자산배분 조언', '리스크 경고')},
+                        'nodes': [{k: n.get(k) for k in ('who', 'cat', 'dir', 't', 'u', 'o', 'ts')} for n in ns[:12]]})
+    experts.sort(key=lambda x: (-x['mixed'], -x['n']))
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
-    json.dump({'updated': datetime.datetime.now(KST).strftime('%Y-%m-%d %H:%M'), 'stocks': stocks, 'coins': coins},
+    json.dump({'experts': experts, 'updated': datetime.datetime.now(KST).strftime('%Y-%m-%d %H:%M'), 'stocks': stocks, 'coins': coins},
               open(OUT, 'w', encoding='utf-8', newline='\n'), ensure_ascii=False, separators=(',', ':'))
     print('새 노드', len(new), '종목', len(stocks), '코인 노드', len(C), '시세', bool(price))
 
