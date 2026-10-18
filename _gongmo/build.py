@@ -62,7 +62,7 @@ COMM_TAGS_TPL = '<link rel="stylesheet" href="/assets/community/comm.css?v=14"><
 GTAG = ('<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4248498719773262" crossorigin="anonymous"></script>\n'
         '<script async src="https://www.googletagmanager.com/gtag/js?id=G-G9BPFF95GY"></script>\n'
         "<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());if(location.hostname!=='sungprofile.cloud')window['ga-disable-G-G9BPFF95GY']=true;gtag('config','G-G9BPFF95GY');</script>")
-TABS = [('/', '🏆 공모전'), ('/news/', '🕵️ 이슈 감별'), ('/talk/', '💬 커뮤니티'), ('/mag/', '📰 매거진'), ('/apply/', '💰 지원금·청약'), ('/event/', '🎁 경품'), ('/fridge/', '🍳 냉장고'), ('/prep/', '📋 준비실')]
+TABS = [('/news/', '🕵️ 이슈 감별'), ('/analyst/', '📊 애널리스트'), ('/talk/', '💬 커뮤니티'), ('/mag/', '📰 매거진'), ('/', '🏆 공모전'), ('/apply/', '💰 지원금·청약'), ('/event/', '🎁 경품'), ('/fridge/', '🍳 냉장고'), ('/prep/', '📋 준비실')]
 NAV = [('apply', '청약·신청'), ('ssul', '썰'), ('event', '경품·용돈'), ('cat/literature', '문학'), ('cat/idea', '아이디어'), ('cat/design', '디자인'),
        ('cat/video', '영상'), ('cat/it', 'IT'), ('cat/global', '해외'), ('guide', '가이드')]
 
@@ -444,13 +444,16 @@ def build():
     hidden = [c for c in hidden if dday(c['end'])[0] >= 2]
     cats = ''.join(f'<a class="cat" data-c="{s_}" href="/cat/{s_}/"><span class="ic">{CAT_ICON[n]}</span><b>{n}</b><span class="n">{sum(1 for c in live if n in c["tags"])}건</span></a>' for s_, n in CATS)
     # 2026-10-17 사용자: 서비스 본질은 루리 추천 상담. 메인은 상담만, 외부 검색(지식인 등)은 상세 페이지로 받음
-    home = f'''<h1 class="cs-h1">이 공모전이나 해 볼까? 루리 공모전 추천 상담</h1>
+    # 2026-10-18 사용자: 사이트 비중 이슈 40 · 애널리스트 분석 40 · 공모전 20 → 홈 위쪽에 이슈·애널리스트, 공모전 상담은 그 아래
+    home = f'''<h1 class="cs-h1">루리의 줍줍 — 오늘의 이슈 감별 · 애널리스트 분석 · 공모전</h1>
+<div class="hm-2">{news_top()}{analyst_top()}</div>{talk_top()}<a class="lab-cta mag-cta" href="/mag/{TODAY.isoformat()}/"><b>📰 오늘의 루리의 줍줍 데일리</b><span>정치 이슈 · 커뮤니티 화제 · 마감 공모전 · 새 지원금 · 오늘 메뉴를 한 장에 →</span></a>
+<h2 class="cs-h2">🏆 이 공모전이나 해 볼까? 루리 공모전 추천 상담</h2>
 <section id="consult" aria-label="루리 공모전 추천 상담"><noscript><p>루리 상담은 자바스크립트가 필요해요. 진행 중 공모전 {len(live)}건이 있어요.</p></noscript></section>
-{news_top()}{qa_home()}<a class="lab-cta" href="/app/"><b>🔔 공모전 알림 받기 · 앱 설치</b><span>관심 분야 새 공모전·마감 임박을 폰 알림으로 · 홈 화면에 루리의 줍줍 앱 →</span></a><a class="lab-cta prep-cta" href="/prep/"><b>📋 루리의 준비실</b><span>공모전 고르면 마감까지 할 일·체크리스트를 짜 드려요 · 장르별 꿀팁 →</span></a><a class="lab-cta" href="/lab/"><b>🏆 루리의 수상 연구소</b><span>공모전 수상작을 뜯어보고 당선 공식을 정리했어요 →</span></a><p class="cs-foot">진행 중 공모전 {len(live)}건의 마감일·상금·응모 자격·접수 방법과 공식 공고 캡처를 정리해 두고, 루리가 상황에 맞는 것만 골라 드려요.</p>
-<link rel="stylesheet" href="/assets/home/consult.css?v=7"><script defer src="/assets/home/consult.js?v=10"></script>'''
-    page('/', '루리의 줍줍 — 이 공모전이나 해 볼까? 루리 공모전 추천 상담',
-         f'진행 중인 공모전 {len(live)}건을 마감 임박순·상금순으로. 문학, 아이디어·정책, 디자인, 영상, 논문, IT, 해외 공모전과 경품 이벤트 정리.',
-         home, full_title=True, ld={'@context': 'https://schema.org', '@type': 'WebSite', 'name': NAME, 'url': SITE + '/'})
+{qa_home()}<a class="lab-cta" href="/app/"><b>🔔 공모전 알림 받기 · 앱 설치</b><span>관심 분야 새 공모전·마감 임박을 폰 알림으로 · 홈 화면에 루리의 줍줍 앱 →</span></a><a class="lab-cta prep-cta" href="/prep/"><b>📋 루리의 준비실</b><span>공모전 고르면 마감까지 할 일·체크리스트를 짜 드려요 · 장르별 꿀팁 →</span></a><a class="lab-cta" href="/lab/"><b>🏆 루리의 수상 연구소</b><span>공모전 수상작을 뜯어보고 당선 공식을 정리했어요 →</span></a><p class="cs-foot">진행 중 공모전 {len(live)}건의 마감일·상금·응모 자격·접수 방법과 공식 공고 캡처를 정리해 두고, 루리가 상황에 맞는 것만 골라 드려요.</p>
+<link rel="stylesheet" href="/assets/home/consult.css?v=8"><script defer src="/assets/home/consult.js?v=10"></script>'''
+    page('/', '루리의 줍줍 — 이슈 감별 · 애널리스트 분석 종합 · 공모전',
+         f'오늘의 정치 이슈 팩트 감별, 증권사 목표가·코인 전망 노드 분석, 커뮤니티 화제, 진행 중 공모전 {len(live)}건까지. 루리가 매시간 정리해요.',
+         home, full_title=True, ld={'@context': 'https://schema.org', '@type': 'WebSite', 'name': NAME, 'alternateName': ['루리의줍줍', 'sungprofile', '루리 줍줍'], 'url': SITE + '/'})
     for s, n in CATS:
         cl = [c for c in live if n in c['tags']]
         tips = ''.join(f'<li>{E(t)}</li>' for t in TIPS[n])
@@ -475,7 +478,7 @@ def build():
     fridge_page()
     app_page()
     news_page()
-    extra_urls = talk_pages() + mag_pages(live, aps)
+    extra_urls = talk_pages() + mag_pages(live, aps) + analyst_pages()
     community(live)
     lab_urls = lab() or []
     me_pages()
@@ -637,7 +640,7 @@ def talk_pages():
     if not days:
         return []
     arch = '<section class="tk-arch"><h2>📅 날짜별 커뮤니티 이슈</h2><p>' + ''.join(f'<a href="/talk/{d}/">{kdate(d)}</a>' for d in days[:60]) + '</p></section>'
-    css = '<link rel="stylesheet" href="/assets/mag/mag.css?v=1"><link rel="stylesheet" href="/assets/news/news.css?v=2">'
+    css = '<link rel="stylesheet" href="/assets/mag/mag.css?v=2"><link rel="stylesheet" href="/assets/news/news.css?v=2">'
     note = '<p class="note">순위는 여러 커뮤니티에 동시에 뜬 정도·댓글 수·인기글에 머문 시간으로 매겨요. 성·혐오·개인 신상·비방·사생활 폭로성 글은 모으지 않아요. 요약은 루리가 제목과 수치만 보고 정리했어요.</p>'
     urls = ['/talk/']
     for i, d in enumerate(days):
@@ -700,6 +703,41 @@ def mag_snapshot(live, aps):
     json.dump(snap, open(os.path.join(md, TODAY.isoformat() + '.json'), 'w', encoding='utf-8', newline='\n'), ensure_ascii=False, separators=(',', ':'))
 
 
+LEAD_DIR = r'C:\Users\k\Desktop\공모전_2026\이슈리딩'
+
+
+def lead_html(d):
+    """홍보 세션(연구 ⑂)이 쓰는 「루리의 이슈 리딩」 원고 mag.json + 카드 10장을 매거진 호 맨 위에 그대로 싣는다(2026-10-18 합의)."""
+    dd = datetime.date.fromisoformat(d)
+    src = os.path.join(LEAD_DIR, f'{dd:%m%d}')
+    mj = os.path.join(src, 'mag.json')
+    if not os.path.exists(mj):
+        return '', None
+    try:
+        m = json.load(open(mj, encoding='utf-8'))
+    except Exception:
+        return '', None
+    out_dir = os.path.join(ROOT, 'mag', d, 'cards')
+    os.makedirs(out_dir, exist_ok=True)
+    from PIL import Image
+    secs = []
+    for i, pg in enumerate(m.get('pages', [])):
+        png = os.path.join(src, 'cards', f'{i + 1:02d}.png')
+        img = ''
+        if os.path.exists(png):
+            wp = os.path.join(out_dir, f'{i + 1:02d}.webp')
+            if not os.path.exists(wp) or os.path.getmtime(wp) < os.path.getmtime(png):
+                Image.open(png).convert('RGB').resize((720, 900), Image.LANCZOS).save(wp, quality=82)
+            img = f'<img src="/mag/{d}/cards/{i + 1:02d}.webp" width="720" height="900" alt="{E(pg.get("title", ""))}" loading="{"eager" if i == 0 else "lazy"}">'
+        rows = ''.join(f'<li>{E(r)}</li>' for r in pg.get('rows', []))
+        say_ = ' '.join(pg.get('say', []))
+        secs.append(f'<section class="ld-p">{img}<div class="ld-t">{("<small>" + E(pg["kicker"]) + "</small>") if pg.get("kicker") else ""}<h2>{E(pg.get("title", ""))}</h2>'
+                    f'{("<p class=ld-big>" + E(pg["big"]) + "</p>") if pg.get("big") else ""}<ul>{rows}</ul>{("<p class=ld-say>💬 " + E(say_) + "</p>") if say_ else ""}'
+                    f'{("<p class=ld-src>출처: " + E(pg["src"]) + "</p>") if pg.get("src") else ""}</div></section>')
+    first = (m.get('pages') or [{}])[0].get('title', '')
+    return f'<div class="ld">{"".join(secs)}</div><h2 class="ld-more">📌 오늘의 줍줍 모음</h2>', first
+
+
 def mag_issue_html(m, d):
     is_today = d == TODAY.isoformat()
     sec = []
@@ -740,7 +778,8 @@ def mag_issue_html(m, d):
     st = '기준 · 오늘 하루 계속 갱신' if is_today else '확정'
     head = (f'<div class="mg-hero"><small>루리의 줍줍 데일리 · 제{m["no"]}호</small><b>{kdate(d)}</b><p>오늘의 정치 이슈 · 커뮤니티 화제 · 마감 임박 공모전 · 새 지원금 · 오늘 메뉴를 한 장에 모았어요.</p>'
             f'<span>{E(m["updated"])} {st}</span></div>')
-    return head + ''.join(sec)
+    lead, _ = lead_html(d)
+    return head + lead + ''.join(sec)
 
 
 def mag_pages(live, aps):
@@ -748,14 +787,16 @@ def mag_pages(live, aps):
     mag_snapshot(live, aps)
     md = os.path.join(ROOT, 'mag', 'archive')
     days = sorted([f[:-5] for f in os.listdir(md) if f.endswith('.json')], reverse=True)
-    css = '<link rel="stylesheet" href="/assets/mag/mag.css?v=1">'
+    css = '<link rel="stylesheet" href="/assets/mag/mag.css?v=2">'
     urls, cards = ['/mag/'], []
     for d in days:
         m = json.load(open(os.path.join(md, d + '.json'), encoding='utf-8'))
-        tops = [x['t'] for x in m['pol'][:1]] + [x['t'] for x in m['talk'][:1]]
-        body = (f'<p class="bc"><a href="/">홈</a> › <a href="/mag/">매거진</a> › {kdate(d)}</p><h1>📰 루리의 줍줍 데일리 {kdate(d)}</h1>' + mag_issue_html(m, d)
+        _, lt = lead_html(d)
+        tops = ([lt] if lt else []) + [x['t'] for x in m['pol'][:1]] + [x['t'] for x in m['talk'][:1]]
+        nm = '루리의 이슈 리딩' if lt else '루리의 줍줍 데일리'
+        body = (f'<p class="bc"><a href="/">홈</a> › <a href="/mag/">매거진</a> › {kdate(d)}</p><h1>📰 {nm} {kdate(d)}</h1>' + mag_issue_html(m, d)
                 + '<p class="mg-nav"><a href="/mag/">📚 지난 호 모두 보기</a></p>' + css)
-        page(f'/mag/{d}/', f'루리의 줍줍 데일리 {kdate(d)} — 정치 이슈·커뮤니티 화제·마감 공모전', (f'{kdate(d)} 하루 정보 모음: ' + ' / '.join(tops))[:150], body,
+        page(f'/mag/{d}/', f'{nm} {kdate(d)} — ' + (lt or '정치 이슈·커뮤니티 화제·마감 공모전'), (f'{kdate(d)} 하루 정보 모음: ' + ' / '.join(tops))[:150], body,
              [('루리의 줍줍', '/'), ('매거진', '/mag/'), (kdate(d), f'/mag/{d}/')])
         urls.append(f'/mag/{d}/')
         cards.append(f'<li><a href="/mag/{d}/"><small>제{m["no"]}호</small><b>{kdate(d)}</b><span>{E(" · ".join(tops))}</span></a></li>')
@@ -763,6 +804,131 @@ def mag_pages(live, aps):
          '<p class="bc"><a href="/">홈</a> › 매거진</p><h1>📰 루리의 줍줍 데일리</h1>' + say('o_present', '매일 한 장으로 정리해 드려요. 오늘 호는 하루 동안 계속 새 소식으로 바뀌어요!')
          + f'<ul class="mg-idx">{"".join(cards)}</ul>' + css, [('루리의 줍줍', '/'), ('매거진', '/mag/')])
     return urls
+
+
+DIRN = {'up': ('🔺', '목표가 상향'), 'down': ('🔻', '목표가 하향'), 'keep': ('➖', '의견 유지'), 'bull': ('🟢', '강세 전망'), 'bear': ('🔴', '약세 전망'), 'neutral': ('⚪', '중립·혼조')}
+AN_NOTE = ('<p class="an-warn">📊 증권사 리포트·전문가 전망을 다룬 기사를 모아 다시 정리한 정보예요. 루리의 줍줍이 직접 주가를 예측하거나 매수·매도를 권하지 않아요. '
+           '투자 판단과 책임은 본인에게 있어요. 목표가·의견은 각 증권사·기관의 것이며 원문 기사에서 확인해 주세요.</p>')
+
+
+def won_txt(v):
+    if not v:
+        return '-'
+    return f'{v // 10000:,}만{(" " + format(v % 10000, ",")) if v % 10000 else ""}원' if v >= 10000 else f'{v:,}원'
+
+
+def an_tree(tree, keys):
+    out = ''
+    for d in keys:
+        rows = tree.get(d) or []
+        if not rows:
+            continue
+        li = ''.join(f'<li><b>{E(r[0])}</b><span>{E(", ".join(r[1]))}{(" 외 " + str(r[2] - len(r[1])) + "건") if len(r) > 2 and r[2] > len(r[1]) else ""}</span></li>' for r in rows[:6])
+        out += f'<div class="an-br {d}"><p>{DIRN[d][0]} {DIRN[d][1]} 근거</p><ul>{li}</ul></div>'
+    return f'<div class="an-tree">{out}</div>' if out else ''
+
+
+def an_nodes(nodes, coin=False):
+    li = ''
+    for n in nodes[:12]:
+        dt = datetime.datetime.fromtimestamp(n['ts']).strftime('%m/%d')
+        if coin:
+            meta = f'{E(n.get("who") or n["o"])}{(" · 목표 " + format(n["tgt"], "g") + "만 달러") if n.get("tgt") else ""}'
+        else:
+            tp = (f'{won_txt(n["tp0"])} → {won_txt(n["tp"])}' if n.get('tp0') else won_txt(n['tp'])) if n.get('tp') else ''
+            meta = f'{E(n["br"])}{(" · " + E(n["op"])) if n.get("op") else ""}{(" · " + tp) if tp else ""}'
+        li += (f'<li class="{n["dir"]}"><span class="an-d">{DIRN[n["dir"]][0]}</span><div><small>{dt} · {meta}</small>'
+               f'<a href="{E(n["u"])}" target="_blank" rel="noopener nofollow">{E(n["t"])}</a><em>{E(n["o"])}</em></div></li>')
+    return f'<ul class="an-nodes">{li}</ul>'
+
+
+def stock_card(s, full=False):
+    tot = s['up'] + s['down'] + s['keep']
+    bar = ''.join(f'<i class="{d}" style="width:{round(100 * s[d] / tot)}%"></i>' for d in ('up', 'keep', 'down') if tot and s[d])
+    rng = f'{won_txt(s["tp_min"])} ~ {won_txt(s["tp_max"])}' if s['tp_min'] and s['tp_max'] and s['tp_min'] != s['tp_max'] else ''
+    head = (f'<div class="an-h"><h3><a href="/analyst/s/{s["id"]}/">{E(s["name"])}</a></h3>{"<span class=an-mix>⚖️ 의견 엇갈림</span>" if s["mixed"] else ""}</div>'
+            f'<p class="an-st">증권사 {s["nb"]}곳 · 🔺{s["up"]} ➖{s["keep"]} 🔻{s["down"]}{(" · 평균 목표가 " + won_txt(s["tp_avg"])) if s["tp_avg"] else ""}{(" (" + rng + ")") if rng else ""}{(" · 기사 속 상승여력 평균 " + str(s["upside"]) + "%") if s.get("upside") is not None else ""}</p>'
+            f'<div class="an-bar">{bar}</div>')
+    return f'<article class="an-c">{head}{an_tree(s["tree"], ("up", "down", "keep"))}' + (an_nodes(s['nodes']) if full else f'<a class="an-more" href="/analyst/s/{s["id"]}/">리포트 노드 {s["nn"]}개 자세히 →</a>') + '</article>'
+
+
+def coin_card(c, full=False):
+    p = c.get('price') or {}
+    pr = f'<span class="an-p">{p["p"]:,.0f}원 <b class="{"up" if p["chg"] >= 0 else "down"}">{p["chg"]:+.2f}%</b> <small>업비트</small></span>' if p else ''
+    tot = c['bull'] + c['bear'] + c['neutral']
+    bar = ''.join(f'<i class="{d}" style="width:{round(100 * c[d] / tot)}%"></i>' for d in ('bull', 'neutral', 'bear') if tot and c[d])
+    tg = f' · 기사 속 목표 {format(c["tgt"][0], "g")}~{format(c["tgt"][1], "g")}만 달러' if c.get('tgt') else ''
+    return (f'<article class="an-c"><div class="an-h"><h3><a href="/analyst/coin/{c["sym"].lower()}/">{E(c["name"])} <small>{c["sym"]}</small></a></h3>{pr}</div>'
+            f'<p class="an-st">최근 7일 전망 기사 {c["n"]}건 · 🟢 강세 {c["bull"]} · ⚪ 혼조 {c["neutral"]} · 🔴 약세 {c["bear"]}{tg}</p><div class="an-bar">{bar}</div>'
+            + an_tree(c['tree'], ('bull', 'bear', 'neutral')) + (an_nodes(c['nodes'], True) if full else f'<a class="an-more" href="/analyst/coin/{c["sym"].lower()}/">전망 노드 {c["n"]}개 자세히 →</a>') + '</article>')
+
+
+def analyst_pages():
+    # 애널리스트 분석의 분석 (2026-10-18 사용자: 애널리스트 발언을 노드로 나눠 2차 가공, 비트코인·이더리움 등, 사이트 비중 40%)
+    d = _rd('analyst/data.json')
+    if not d:
+        return []
+    S, C = d.get('stocks', []), d.get('coins', [])
+    css = '<link rel="stylesheet" href="/assets/analyst/analyst.css?v=1">'
+    ups = sorted([s for s in S if s['up'] > s['down']], key=lambda s: (-s['up'], -s['last']))[:10]
+    dns = sorted([s for s in S if s['down'] > s['up']], key=lambda s: (-s['down'], -s['last']))[:10]
+    mix = [s for s in S if s['mixed']][:10]
+    nn = sum(s['nn'] for s in S)
+    hero = (f'<div class="an-hero"><img src="/assets/ruri/o_present.webp" width="300" height="415" alt="애널리스트 분석을 정리하는 루리"><div><small>{E(d["updated"])} 기준 · 매시간 갱신</small>'
+            f'<b>리포트 노드 {nn}개 · 종목 {len(S)}개 · 코인 {len(C)}개</b><p>증권사 리포트 기사 속 발언을 「상향·하향·유지」 노드로 쪼개고, 근거별로 어느 증권사가 말했는지 다시 묶었어요.</p></div></div>')
+    how = ('<details class="an-how"><summary>노드 분석은 이렇게 해요</summary><ol><li>증권 기사 RSS에서 「목표가」「투자의견」이 나온 기사만 골라요.</li><li>기사 1건 = 노드 1개: 증권사·종목·방향(상향/하향/유지)·투자의견·목표가(이전→새)·근거 태그를 뽑아요.</li>'
+           '<li>근거 태그(실적 개선·업황 호조·수주·주주환원·저평가 / 실적 부진·업황 둔화·고평가·규제·심리 악화)는 노드 방향과 맞는 것만 붙여요.</li><li>종목별로 증권사마다 최신 노드 하나만 남겨 상향·하향·유지 수, 평균 목표가, 의견 엇갈림을 계산해요.</li>'
+           '<li>코인은 전문가·기관 발언 기사를 강세·약세·혼조 노드로 나누고 근거(ETF 자금·금리·규제·기관 매수·거래소 유입 등)별로 묶어요.</li></ol></details>')
+    sec = ''
+    if C:
+        sec += '<h2>🪙 코인 전망 종합</h2>' + ''.join(coin_card(c) for c in C if c['n'])
+    if ups:
+        sec += '<h2>🔺 목표가 상향이 많은 종목</h2>' + ''.join(stock_card(s) for s in ups)
+    if dns:
+        sec += '<h2>🔻 목표가 하향이 많은 종목</h2>' + ''.join(stock_card(s) for s in dns)
+    if mix:
+        sec += '<h2>⚖️ 증권사 의견이 엇갈린 종목</h2>' + ''.join(stock_card(s) for s in mix)
+    rest = [s for s in S if s not in ups and s not in dns and s not in mix]
+    if rest:
+        sec += '<h2>📋 최근 리포트가 나온 종목</h2><ul class="an-all">' + ''.join(f'<li><a href="/analyst/s/{s["id"]}/">{E(s["name"])}<small>{"🔺" * min(3, s["up"])}{"🔻" * min(3, s["down"])}{"➖" * min(3, s["keep"])}</small></a></li>' for s in rest) + '</ul>'
+    page('/analyst/', '루리의 애널리스트 분석 종합 — 증권사 목표가 상향·하향, 코인 전망 노드 분석',
+         f'증권사 리포트 기사 속 목표가·투자의견을 노드로 쪼개 종목별로 다시 정리했어요. 상향 {sum(s["up"] for s in S)}건 · 하향 {sum(s["down"] for s in S)}건, 비트코인·이더리움 전망 강세·약세 근거까지.',
+         '<p class="bc"><a href="/">홈</a> › 애널리스트 분석</p><h1>📊 루리의 애널리스트 분석 종합</h1>' + hero + AN_NOTE + sec + how + css, [('루리의 줍줍', '/'), ('애널리스트 분석', '/analyst/')])
+    urls = ['/analyst/']
+    for s in S:
+        page(f'/analyst/s/{s["id"]}/', f'{s["name"]} 목표가·투자의견 종합 — 증권사 {s["nb"]}곳 리포트 노드 분석',
+             f'{s["name"]} 최근 30일 증권사 리포트: 상향 {s["up"]} · 유지 {s["keep"]} · 하향 {s["down"]}' + (f', 평균 목표가 {won_txt(s["tp_avg"])}' if s['tp_avg'] else '') + '. 상승·하락 근거별로 어느 증권사가 말했는지 정리.',
+             f'<p class="bc"><a href="/">홈</a> › <a href="/analyst/">애널리스트 분석</a> › {E(s["name"])}</p><h1>📊 {E(s["name"])} 애널리스트 의견 종합</h1>' + AN_NOTE + stock_card(s, True) + '<p class="mg-nav"><a href="/analyst/">다른 종목 보기 →</a></p>' + css,
+             [('루리의 줍줍', '/'), ('애널리스트 분석', '/analyst/'), (s['name'], f'/analyst/s/{s["id"]}/')])
+        urls.append(f'/analyst/s/{s["id"]}/')
+    for c in C:
+        if not c['n']:
+            continue
+        page(f'/analyst/coin/{c["sym"].lower()}/', f'{c["name"]}({c["sym"]}) 전망 종합 — 강세·약세 의견 노드 분석', f'{c["name"]} 최근 7일 전망 기사 {c["n"]}건: 강세 {c["bull"]} · 약세 {c["bear"]} · 혼조 {c["neutral"]}. 근거별 정리와 업비트 현재가.',
+             f'<p class="bc"><a href="/">홈</a> › <a href="/analyst/">애널리스트 분석</a> › {E(c["name"])}</p><h1>🪙 {E(c["name"])} 전망 종합</h1>' + AN_NOTE + coin_card(c, True) + '<p class="mg-nav"><a href="/analyst/">다른 코인·종목 보기 →</a></p>' + css,
+             [('루리의 줍줍', '/'), ('애널리스트 분석', '/analyst/'), (c['name'], f'/analyst/coin/{c["sym"].lower()}/')])
+        urls.append(f'/analyst/coin/{c["sym"].lower()}/')
+    return urls
+
+
+def analyst_top():
+    d = _rd('analyst/data.json')
+    if not d:
+        return ''
+    S, C = d.get('stocks', []), d.get('coins', [])
+    li = ''
+    for c in [c for c in C if c['n']][:2]:
+        p = c.get('price') or {}
+        li += f'<li><a href="/analyst/coin/{c["sym"].lower()}/"><em>🪙</em><b>{E(c["name"])}{(" " + format(p["p"], ",.0f") + "원") if p else ""}</b><span>🟢{c["bull"]} 🔴{c["bear"]}</span></a></li>'
+    for s in sorted(S, key=lambda s: (-s['nb'], -s['last']))[:3]:
+        li += f'<li><a href="/analyst/s/{s["id"]}/"><em>📈</em><b>{E(s["name"])}</b><span>🔺{s["up"]} 🔻{s["down"]}{(" · " + won_txt(s["tp_avg"])) if s["tp_avg"] else ""}</span></a></li>'
+    return f'<section class="nw-home an-home"><h2>📊 애널리스트 분석 종합 <a href="/analyst/">전체 →</a></h2><ol>{li}</ol></section>' if li else ''
+
+
+def talk_top():
+    d = _rd('talk/data.json')
+    li = ''.join(f'<li><a href="/talk/#t{x["n"]}"><em>{i + 1}</em><b>{E(x["t"])}</b><span>{x["nsite"]}곳 · 💬{x["nc"]:,}</span></a></li>' for i, x in enumerate(d.get('issues', [])[:3]))
+    return f'<section class="nw-home tk-home"><h2>💬 지금 커뮤니티 이슈 <a href="/talk/">TOP30 →</a></h2><ol>{li}</ol></section>' if li else ''
 
 
 def news_top():

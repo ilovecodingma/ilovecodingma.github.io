@@ -347,5 +347,7 @@ if __name__ == '__main__':
     try:  # 커뮤니티 이슈도 같은 주기로(언론 이슈 연결 때문에 뉴스 다음)
         import talk
         talk.main()
+        import analyst
+        analyst.main()
     except Exception as e:
         log('talk 실패', repr(e)[:200])

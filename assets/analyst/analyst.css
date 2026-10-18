@@ -1,0 +1,17 @@
+/* 애널리스트 분석 종합 */
+.an-hero{display:flex;gap:14px;align-items:center;background:linear-gradient(135deg,#ecfdf5,#eff6ff);border:1px solid #a7f3d0;border-radius:20px;padding:12px 14px;margin:0 0 10px}
+.an-hero img{width:96px;height:133px;object-fit:cover;object-position:top;border-radius:14px;flex:none}.an-hero small{font-size:12px;color:#047857;font-weight:700}.an-hero b{display:block;font-size:18px;color:#064e3b;margin:2px 0}.an-hero p{margin:4px 0 0;font-size:13px;color:#065f46;line-height:1.55}
+.an-warn{font-size:12.5px;background:#f8fafc;border:1px solid #cbd5e1;color:#334155;border-radius:12px;padding:8px 11px;margin:8px 0;line-height:1.55}
+#main h2,main h2{scroll-margin-top:110px}
+.an-c{background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:14px;margin:10px 0;box-shadow:var(--sh)}
+.an-h{display:flex;gap:8px;align-items:center;justify-content:space-between;flex-wrap:wrap}.an-h h3{margin:0;font-size:18px}.an-h h3 a{color:inherit;text-decoration:none}.an-h h3 small{font-size:12px;color:var(--mu)}
+.an-mix{font-size:12px;font-weight:800;background:#fef3c7;color:#92400e;border-radius:999px;padding:3px 9px}.an-p{font-size:14px;font-weight:800}.an-p b.up{color:#dc2626}.an-p b.down{color:#2563eb}.an-p small{font-size:11px;color:var(--mu);font-weight:600}
+.an-st{font-size:13px;color:#374151;margin:6px 0}.an-bar{display:flex;height:8px;border-radius:999px;overflow:hidden;background:#f1f5f9}.an-bar i{display:block;height:100%}
+.an-bar .up,.an-bar .bull{background:#ef4444}.an-bar .down,.an-bar .bear{background:#3b82f6}.an-bar .keep,.an-bar .neutral{background:#cbd5e1}
+.an-tree{display:grid;gap:8px;margin:10px 0 4px}.an-br{border-left:4px solid #e5e7eb;padding:2px 0 2px 10px}.an-br.up,.an-br.bull{border-color:#ef4444}.an-br.down,.an-br.bear{border-color:#3b82f6}
+.an-br p{margin:0 0 4px;font-size:13px;font-weight:900}.an-br ul{list-style:none;margin:0;padding:0;display:grid;gap:3px}.an-br li{font-size:13.5px;display:flex;gap:8px;flex-wrap:wrap}.an-br li b{font-weight:800}.an-br li span{color:var(--mu);font-size:12.5px}
+.an-nodes{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:6px}.an-nodes li{display:flex;gap:8px;border:1px solid var(--bd);border-radius:12px;padding:8px 10px;background:#fff}
+.an-d{flex:none;font-size:16px}.an-nodes small{display:block;font-size:12px;color:var(--mu)}.an-nodes a{display:block;font-size:14px;font-weight:700;color:#111827;text-decoration:none;line-height:1.45}.an-nodes em{font-style:normal;font-size:11.5px;color:var(--mu)}
+.an-more{display:inline-block;margin-top:8px;font-size:13.5px;font-weight:800;color:#047857;text-decoration:none}
+.an-all{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:6px}.an-all a{display:inline-flex;gap:6px;background:var(--card);border:1px solid var(--bd);border-radius:999px;padding:6px 12px;text-decoration:none;color:inherit;font-size:13.5px;font-weight:700}
+.an-how{margin:16px 0;font-size:13.5px}.an-how summary{cursor:pointer;font-weight:800}.an-how ol{line-height:1.7;color:#374151}
