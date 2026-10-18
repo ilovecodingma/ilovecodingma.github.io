@@ -77,3 +77,9 @@ html.cs-lock{overflow:hidden}
 .st-hm{display:flex;gap:12px;align-items:center;text-decoration:none;color:inherit;background:#fff;border-radius:14px;padding:8px}.st-hm img{width:120px;height:150px;object-fit:cover;border-radius:10px;flex:none}
 .st-hm span{font-size:13px;color:#6b7280;line-height:1.5}.st-hm b{display:block;font-size:16px;color:#111827;margin-bottom:4px}
 .st-hm span{flex:1;min-width:0;white-space:normal!important;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+/* 2026-10-18 홈 단순화: 큰 덩어리 3개 + 유입별 안내 */
+#hm{max-width:640px;margin:0 auto}.hm-b{margin:0 0 18px}.hm-h{font-size:18px;margin:16px 2px 6px;color:#1e1b4b}.hm-b .nw-home{margin:8px 0}
+.hm-links{display:flex;flex-wrap:wrap;gap:6px;margin:8px 2px}.hm-links a{font-size:13px;font-weight:700;background:var(--card);border:1px solid var(--bd);border-radius:999px;padding:6px 11px;text-decoration:none;color:#4c1d95}
+#hm-in{max-width:640px;margin:10px auto 0;display:flex;gap:8px;align-items:flex-end}#hm-in[hidden]{display:none}#hm-in img{width:44px;height:61px;object-fit:cover;object-position:top;border-radius:10px;flex:none}
+#hm-in p{margin:0;background:#fffbeb;border:1px solid #fde68a;border-radius:14px 14px 14px 4px;padding:8px 11px;font-size:13.5px;line-height:1.5}#hm-in b{display:block;font-size:11.5px;color:#b45309}
+.hm-b .cs-h2{display:none}
