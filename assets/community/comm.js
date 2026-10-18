@@ -359,7 +359,7 @@ ${album}<div class="cm-acts"><button class="tm-share">링크 복사</button>${st
     const id = el.dataset.id, title = el.dataset.title, end = el.dataset.end;
     let cur = { fav: lfav().some(f => 'c:' + f.id === id) ? 1 : 0, state: '' };
     if (st.t) { const r = await api('/api/items').catch(() => null); const x = r && r.items.find(x => x.id === id); if (x) cur = x; }
-    const prepBtn = () => { if (!id.startsWith('c:')) return ''; let on = false; try { on = !!JSON.parse(localStorage.getItem('jupjup_prep_v1') || '{}')[id]; } catch {} return `<a class="ma-prep" href="/prep/#${esc(id)}">${on ? '📋 내 준비 보드 열기' : '📋 준비 시작 · 마감까지 할 일 짜기'}</a>`; };
+    const prepBtn = () => { if (!id.startsWith('c:')) return ''; let on = false; try { on = !!JSON.parse(localStorage.getItem('jupjup_prep_v1') || '{}')[id]; } catch {} return `<a class="ma-prep" href="/prep/#${esc(id)}">${on && st.t ? '📋 내 준비 보드 열기' : '📋 준비 시작 · 마감까지 할 일 짜기'}${st.t ? '' : ' <small>회원 전용</small>'}</a>`; };
     const paint = () => { el.innerHTML = `<button class="ma-fav${cur.fav ? ' on' : ''}">${cur.fav ? '⭐ 찜함 · 마감 알림 받는 중' : '☆ 찜하고 마감 알림 받기'}</button><button class="ma-app${cur.state ? ' on' : ''}">${{ '': '✅ 냈어요', applied: '✅ 냈어요 기록됨', won: '🏆 당첨!', lost: '😢 아쉬움' }[cur.state] || '✅ 냈어요'}</button>${st.t ? '' : '<small>로그인하면 폰·PC 어디서든 기록되고, 마감 3일 전에 메일로 알려 줘요.</small>'}${prepBtn()}`;
       el.querySelector('.ma-fav').onclick = () => { if (!st.t) return authModal(() => location.reload()); cur.fav = cur.fav ? 0 : 1; pushItem({ id, title, end, fav: cur.fav });
         const l = lfav().filter(f => 'c:' + f.id !== id); if (cur.fav && id.startsWith('c:')) l.push({ id: id.slice(2), title, end }); lfavSet(l); ga(cur.fav ? 'fav_add' : 'fav_remove', { id }); paint(); };

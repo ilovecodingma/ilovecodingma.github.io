@@ -53,8 +53,10 @@
   }
   const checksOf = b => genre(b.g).checks.concat(b.g === 'all' ? [] : genre('all').checks.slice(0, 3));
   const prog = b => { const n = genre(b.g).steps.length + checksOf(b).length, d = (b.steps || []).filter(Boolean).length + (b.checks || []).filter(Boolean).length; return n ? Math.min(100, Math.round(d / n * 100)) : 0; };
+  const member = () => !!(J && J.st.t);
   function startBoard(c) {
     const id = 'c:' + c.id;
+    if (!member()) { if (location.hash === '#' + id) locked(id); else location.hash = id; return; }
     if (!S[id]) {
       S[id] = { title: c.title, end: c.end, g: genreOf(c), url: '/c/' + c.id + '/', steps: [], checks: [], memo: '', done: false, created: Math.floor(Date.now() / 1000) };
       save(id); ga('prep_start', { id: c.id, g: S[id].g });
@@ -65,7 +67,7 @@
   // ---- 화면 ----
   const top = document.createElement('div'); top.id = 'prep-top'; ROOT.prepend(top);
   function home() {
-    const list = Object.entries(S).sort((a, b) => (a[1].done - b[1].done) || left(a[1].end) - left(b[1].end));
+    const list = (member() ? Object.entries(S) : []).sort((a, b) => (a[1].done - b[1].done) || left(a[1].end) - left(b[1].end));
     const cards = list.map(([id, b]) => {
       const l = left(b.end), p = prog(b), gg = genre(b.g), nx = plan(b).find(s => !(b.steps || [])[s.i]);
       return `<li><a href="#${esc(id)}" class="pp-card${b.done ? ' done' : ''}"><span class="pp-ic">${gg.icon}</span><div><b>${esc(b.title)}</b><em class="${l <= 3 && l >= 0 ? 'hot' : ''}">${b.done ? '✅ 냈어요' : dlab(l)}</em><small>${b.done ? '결과 기다리는 중' : nx ? '다음: ' + esc(nx.name) + ' (' + md(nx.d) + ')' : '모든 단계 완료!'}</small><i class="pp-bar"><i style="width:${p}%"></i></i></div></a></li>`;
@@ -73,8 +75,8 @@
     top.innerHTML = `<section class="pp-start"><h2>📋 어떤 공모전을 준비할까요?</h2><div class="pp-search"><input type="search" placeholder="공모전 이름으로 찾기 (예: 슬로건, 숏폼, 수기)" aria-label="공모전 찾기"><ul class="pp-res"></ul></div>
 <p class="pp-or">찾아서 누르면 마감일에 맞춘 <b>준비 일정·체크리스트</b>가 바로 만들어져요.</p></section>
 ${list.length ? `<section class="pp-mine"><h2>🗂️ 내 준비 보드 <small>${list.length}개</small></h2><ul>${cards}</ul></section>`
-      : '<p class="pp-empty">아직 준비 중인 공모전이 없어요. 위에서 찾거나, 공모전 상세 페이지의 「📋 준비 시작」을 눌러 보세요.</p>'}
-${J && J.st.t ? '' : '<p class="pp-login">💡 로그인하면 준비 보드가 폰·PC 어디서나 이어지고, 마감 알림도 받아요. <button class="pp-in">로그인</button></p>'}`;
+      : (member() ? '<p class="pp-empty">아직 준비 중인 공모전이 없어요. 위에서 찾거나, 공모전 상세 페이지의 「📋 준비 시작」을 눌러 보세요.</p>' : '')}
+${member() ? '' : '<p class="pp-login">🔒 준비 보드는 <b>회원 전용</b>이에요. 가입하면 마감까지 할 일·체크리스트·메모가 저장되고 마감 알림도 받아요. <button class="pp-in">가입·로그인</button></p>'}`;
     const inp = top.querySelector('input'), res = top.querySelector('.pp-res');
     inp.oninput = () => {
       const q = inp.value.trim().toLowerCase(); if (!q) { res.innerHTML = ''; return; }
@@ -93,7 +95,17 @@ ${J && J.st.t ? '' : '<p class="pp-login">💡 로그인하면 준비 보드가 
     a.href = URL.createObjectURL(new Blob(['BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//jupjup//prep//KO\r\n' + ev + '\r\nEND:VCALENDAR'], { type: 'text/calendar' }));
     a.download = '준비일정.ics'; a.click(); ga('prep_ics');
   }
+  function locked(id) {
+    const c = C.find(x => 'c:' + x.id === id), gg = genre(c ? genreOf(c) : 'all'), pl = c ? plan({ g: gg.g, end: c.end }) : [];
+    top.innerHTML = `<section class="pp-board pp-lock"><p class="pp-back"><a href="#">← 준비실</a></p>
+<header><span class="pp-ic big">${gg.icon}</span><div><small>${esc(gg.name)} 준비</small><h2>${esc(c ? c.title : '공모전 준비 보드')}</h2>${c ? `<p><em>${dlab(left(c.end))}</em> ${md(c.end)} 마감</p>` : ''}</div></header>
+<div class="pp-veil"><ol class="pp-steps">${pl.map(s => `<li><label><input type="checkbox" disabled><span class="pp-d">${md(s.d)}</span><span><b>${esc(s.name)}</b><small>${esc(s.desc)}</small></span></label></li>`).join('')}</ol>
+<div class="pp-gate"><b>🔒 준비 보드는 회원 전용이에요</b><p>가입하면 마감까지 날짜별 할 일, 장르별 체크리스트, 메모가 저장되고 폰·PC 어디서나 이어서 볼 수 있어요. 마감 알림도 같이 받아요.</p><button class="pp-join">구글로 3초 가입·로그인</button></div></div></section>`;
+    top.querySelector('.pp-join').onclick = () => J && J.authModal(() => location.reload());
+    window.scrollTo(0, Math.max(0, top.getBoundingClientRect().top + window.scrollY - 70));
+  }
   function board(id) {
+    if (!member()) return locked(id);
     const b = S[id]; if (!b) { home(); return; }
     const gg = genre(b.g), l = left(b.end), pl = plan(b), p = prog(b), td = ymd(today());
     const steps = pl.map(s => `<li class="${(b.steps || [])[s.i] ? 'ok' : s.d < td ? 'late' : s.d === td ? 'now' : ''}"><label><input type="checkbox" data-k="steps" data-i="${s.i}" ${(b.steps || [])[s.i] ? 'checked' : ''}><span class="pp-d">${s.d === td ? '오늘' : md(s.d)}</span><span><b>${esc(s.name)}</b>${s.desc ? `<small>${esc(s.desc)}</small>` : ''}</span></label></li>`).join('');
