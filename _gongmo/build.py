@@ -1180,9 +1180,19 @@ def kw_pages():
         links += [f'<a href="/analyst/s/{x["id"]}/"><em>📊 애널리스트</em><b>{E(x["name"])} 목표가 의견</b></a>' for x in r.get('stocks', [])]
         links += [f'<a href="/analyst/coin/{x["sym"].lower()}/"><em>🪙 코인</em><b>{E(x["name"])} 전망 종합</b></a>' for x in r.get('coins', [])]
         links += [f'<a href="{E(p_["u"])}"><em>{E(p_["k"])}</em><b>{E(p_["t"])}</b></a>' for p_ in r.get('pr', [])]
+        trs = r.get('trend') or []
+        if len(trs) >= 5:
+            W_, H_ = 600, 140; mx = max(v for _, v in trs) or 1
+            pts = ' '.join(f'{10 + (W_ - 20) * i / (len(trs) - 1):.1f},{H_ - 22 - (H_ - 40) * v / mx:.1f}' for i, (_, v) in enumerate(trs))
+            trend_html = (f'<section class="mg-s"><h2>📈 최근 30일 네이버 검색량 추이</h2><figure class="an-ch"><svg viewBox="0 0 {W_} {H_}" role="img" aria-label="{E(k)} 검색량 추이">'
+                          f'<polyline points="{pts}" fill="none" stroke="#16a34a" stroke-width="3"/><text x="10" y="{H_ - 4}">{trs[0][0][5:]}</text><text x="{W_ - 10}" y="{H_ - 4}" text-anchor="end">{trs[-1][0][5:]}</text></svg>'
+                          '<figcaption>네이버 데이터랩 검색어 트렌드(기간 중 최댓값 = 100인 상대값)</figcaption></figure></section>')
+        else:
+            trend_html = ''
         post = f'<section class="mg-s"><h2>✍️ 루리의 정리 글</h2><div class="nw-pr"><a href="{E(r["post"])}" target="_blank" rel="noopener"><em>블로그</em><b>{E(k)} 자세히 정리한 글 보기</b></a></div></section>' if r.get('post') else ''
+        css = '<link rel="stylesheet" href="/assets/mag/mag.css?v=9"><link rel="stylesheet" href="/assets/analyst/analyst.css?v=4">'
         body = (f'<p class="bc"><a href="/">홈</a> › <a href="/kw/">인기 키워드</a> › {E(k)}</p><h1>🔎 {E(k)} — 왜 검색이 늘었나</h1><p>{SRCB(r)}</p>'
-                + say('o_det_think', ' '.join(lines)) + post
+                + say('o_det_think', ' '.join(lines)) + trend_html + post
                 + (f'<section class="mg-s"><h2>📰 왜 떴나: 관련 보도</h2><ul class="kw-l">{why}</ul></section>' if why else '')
                 + (f'<section class="mg-s"><h2>🕵️ 루리가 채점한 관련 기사</h2><ul class="kw-l">{ours}</ul></section>' if ours else '')
                 + (f'<section class="mg-s"><h2>📌 루리의 줍줍에서 더 보기</h2><div class="nw-pr">{"".join(links)}</div></section>' if links else '')

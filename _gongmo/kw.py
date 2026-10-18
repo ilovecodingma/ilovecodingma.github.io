@@ -44,6 +44,28 @@ def fetch_signal():
     return [{'k': x['keyword'].strip(), 'traffic': f'실시간 {x["rank"]}위', 'ts': now, 'news': [], 'rank': x['rank']} for x in d.get('top10', []) if x.get('keyword')]
 
 
+DLKEY = os.path.expanduser('~/.naver_datalab.json')   # {"id": "...", "secret": "..."} — 네이버 개발자센터 앱 키(사용자 계정 등록 후 이 파일에 둠, 저장소 밖)
+
+
+def datalab(keys):
+    """네이버 데이터랩 검색어 트렌드 공식 Open API — 키워드별 최근 30일 일별 상대 검색량(0~100). 키 파일이 없으면 건너뜀. 한 번에 5개."""
+    if not os.path.exists(DLKEY) or not keys:
+        return {}
+    k = json.load(open(DLKEY, encoding='utf-8'))
+    end = datetime.date.today(); start = end - datetime.timedelta(days=30)
+    out = {}
+    for i in range(0, len(keys), 5):
+        grp = [{'groupName': x, 'keywords': [x]} for x in keys[i:i + 5]]
+        try:
+            r = requests.post('https://openapi.naver.com/v1/datalab/search', timeout=20, headers={'X-Naver-Client-Id': k['id'], 'X-Naver-Client-Secret': k['secret'], 'Content-Type': 'application/json'},
+                              json={'startDate': start.isoformat(), 'endDate': end.isoformat(), 'timeUnit': 'date', 'keywordGroups': grp}).json()
+            for res in r.get('results', []):
+                out[res['title']] = [[d['period'], round(d['ratio'], 1)] for d in res.get('data', [])]
+        except Exception as e:
+            print('datalab 실패', repr(e)[:120])
+    return out
+
+
 def main():
     now = datetime.datetime.now(KST)
     today = now.date().isoformat()
@@ -105,6 +127,11 @@ def main():
                 if a_['slug'] == sl:
                     a_['src'] = sorted(set(a_.get('src', ['google'])) | set(it.get('src', []))); a_['traffic'] = it['traffic']
         kept += 1
+    need = [v['k'] for v in db.values() if today in v['days'] and v.get('trend_day') != today][:50]   # 하루 한 번만(API 하루 1,000회 한도)
+    tr = datalab(need)
+    for v in db.values():
+        if v['k'] in tr:
+            v['trend'], v['trend_day'] = tr[v['k']], today
     os.makedirs(ARCH, exist_ok=True)
     json.dump(db, open(DBF, 'w', encoding='utf-8', newline='\n'), ensure_ascii=False, separators=(',', ':'))
     arch.sort(key=lambda a: -len(a.get('src', [])))  # 구글+네이버 동시 키워드를 위로
