@@ -279,4 +279,11 @@ function ui() {
     rec.start();
   };
 }
-if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', ui); else ui();
+// 2026-10-18 테마별 챗봇: 공모전 테마는 이 파일, 이슈·머니·생활·메인은 theme-bot.js(열 때만 데이터 불러옴), AI 로그 테마는 챗봇 없음
+function boot() {
+  const th = document.body.dataset.th || 'hub';
+  if (th === 'contest') return ui();
+  if (th === 'ai') return;
+  import('/assets/chat/theme-bot.js?v=1').then(m => m.start(th)).catch(() => {});
+}
+if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot); else boot();
