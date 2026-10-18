@@ -151,8 +151,8 @@ function talk(t) {
 // ---- UI ----
 function ui() {
   const root = el('div', 'rc');
-  root.innerHTML = `<button class="rc-fab" aria-label="루리에게 추천받기"><img src="/assets/ruri/avatar.webp" alt=""><span>루리에게 물어보기</span></button>
-<section class="rc-panel" hidden aria-label="루리 추천 챗봇"><header><img src="/assets/ruri/avatar.webp" alt=""><div><b>루리</b><small>마감·상금·찜·캘린더까지 챙겨 드려요</small></div>
+  root.innerHTML = `<button class="rc-fab" aria-label="루리에게 추천받기"><img src="/assets/ruri/avatar.webp" width="40" height="40" alt="" decoding="async"><span>루리에게 물어보기</span></button>
+<section class="rc-panel" hidden aria-label="루리 추천 챗봇"><header><img src="/assets/ruri/avatar.webp" width="40" height="40" alt="" decoding="async"><div><b>루리</b><small>마감·상금·찜·캘린더까지 챙겨 드려요</small></div>
 <button class="rc-ai rc-redo" title="취향 다시 고르기">취향 고르기</button><button id="rc-spk" class="rc-ic" title="답변 읽어 주기">🔈</button><button class="rc-x rc-ic" aria-label="닫기">✕</button></header>
 <div class="rc-log" role="log" aria-live="polite"></div>
 <form class="rc-in"><button type="button" class="rc-mic rc-ic" title="말로 물어보기">🎤</button><input placeholder="예) 슬로건 공모전, 이번 주 마감" aria-label="질문"><button class="rc-go">보내기</button></form></section>`;

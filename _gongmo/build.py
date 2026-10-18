@@ -135,7 +135,7 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False, noinde
 <meta name="theme-color" content="{TH[3] if TH else '#5b21b6'}">
 <link rel="icon" href="/favicon.ico?v=5" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png?v=5"><link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png?v=5"><link rel="manifest" href="/site.webmanifest"><link rel="alternate" type="application/rss+xml" title="루리의 줍줍" href="/rss.xml">
 <link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="/assets/gm.css?v=13">{('<link rel="stylesheet" href="/assets/chat/ruri-chat.css?v=7">') if not (TH and TH[0] == 'ai') else ''}{COMM_TAGS}{('<script type="module" src="/assets/chat/ruri-chat.js?v=11"></script>') if not (TH and TH[0] == 'ai') else ''}<script defer src="/assets/app/app.js?v=3"></script>
+<link rel="stylesheet" href="/assets/gm.css?v=13">{('<link rel="stylesheet" href="/assets/chat/ruri-chat.css?v=7">') if not (TH and TH[0] == 'ai') else ''}{COMM_TAGS}{('<script type="module" src="/assets/chat/ruri-chat.js?v=12"></script>') if not (TH and TH[0] == 'ai') else ''}<script defer src="/assets/app/app.js?v=3"></script>
 {ldh}
 {GTAG}
 </head><body data-th="{TH[0] if TH else 'hub'}"{(' data-api="' + COMM_API + '"') if COMM_API else ''}>
@@ -402,7 +402,7 @@ def detail(c, live):
     body = f'''<p class="bc"><a href="/">홈</a> › <a href="/cat/{SLUG[main_tag]}/">{E(main_tag)}</a></p>
 <section class="dh" data-c="{SLUG[main_tag]}"><span class="ic big">{CAT_ICON[main_tag]}</span><h1>{E(c["title"])}</h1>{status}</section>
 {ruri}
-<a class="shot" href="{E(c["link"])}" target="_blank" rel="noopener nofollow">{f'<img src="/assets/shots/{c["id"]}.webp" width="640" height="400" alt="{E(c["title"])} 공식 공고 화면">' if c.get('th') else f'<img class="ruri" src="/assets/ruri/thumbsup.webp" width="300" height="415" alt="루리">'}<span>공식 공고 페이지 열기 →</span></a>
+<a class="shot" href="{E(c["link"])}" target="_blank" rel="noopener nofollow">{f'<img src="/assets/shots/{c["id"]}.webp" width="640" height="400" alt="{E(c["title"])} 공식 공고 화면" fetchpriority="high">' if c.get('th') else f'<img class="ruri" src="/assets/ruri/thumbsup.webp" width="300" height="415" alt="루리">'}<span>공식 공고 페이지 열기 →</span></a>
 <div class="panel"><table class="info">{tb}</table>
 <a class="btn" href="{E(c["link"])}" target="_blank" rel="noopener nofollow">공식 공고 보러 가기 →</a></div>
 <div class="my-acts" data-id="c:{c["id"]}" data-title="{E(c["title"])}" data-end="{c["end"]}"></div>
@@ -1510,7 +1510,7 @@ def satire_top():
     d, v = days[0]
     img = satire_img(d, v['imgs'][0])
     t = v['cap'][0] if v['cap'] else '오늘의 풍자'
-    return (f'<section class="nw-home st-home"><h2>🎨 오늘의 루리 풍자 <a href="/satire/">지난 풍자 →</a></h2><a class="st-hm" href="/satire/{d}/"><img src="{img}" width="864" height="1080" alt="{E(t)}">'
+    return (f'<section class="nw-home st-home"><h2>🎨 오늘의 루리 풍자 <a href="/satire/">지난 풍자 →</a></h2><a class="st-hm" href="/satire/{d}/"><img src="{img}" width="864" height="1080" alt="{E(t)}" loading="lazy" decoding="async">'
             f'<span><b>{E(t)}</b>{E(" ".join(v["cap"][1:3]))[:90]}</span></a></section>')
 
 
