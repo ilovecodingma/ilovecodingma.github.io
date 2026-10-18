@@ -351,5 +351,7 @@ if __name__ == '__main__':
         analyst.main()
         import kw
         kw.main()
+        import hot
+        hot.main()
     except Exception as e:
         log('talk 실패', repr(e)[:200])

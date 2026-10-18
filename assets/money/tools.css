@@ -1,0 +1,6 @@
+#mtool{max-width:640px;margin:10px auto}.mt-f{display:grid;gap:10px;background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:14px}
+.mt-f label{display:flex;flex-direction:column;gap:4px;font-size:13px;font-weight:800;color:#065f46}.mt-f input,.mt-f select{font:inherit;font-size:16px;padding:10px;border:1px solid var(--bd);border-radius:10px}
+.mt-go{border:0;border-radius:14px;padding:13px;font-size:16px;font-weight:900;color:#fff;background:linear-gradient(135deg,#047857,#10b981);cursor:pointer}
+.mt-o{background:#ecfdf5;border:1px solid #a7f3d0;border-radius:16px;padding:12px 14px;margin:12px 0;font-size:15px;line-height:1.6}.mt-o b{color:#065f46;font-size:18px}
+.mt-t{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:6px}.mt-t th,.mt-t td{padding:6px;border-bottom:1px solid #d1fae5;text-align:right}.mt-t th:first-child,.mt-t td:first-child{text-align:left}.mt-t tr.on{font-weight:800;background:#d1fae5}
+.mt-n{font-size:12.5px;color:var(--mu)}

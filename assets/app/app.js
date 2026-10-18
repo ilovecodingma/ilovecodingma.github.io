@@ -99,3 +99,41 @@
   if (ROOT) { paintInstall(); paintPush(); paintMail(); }
   window.JPUSH = { subscribe, unsubscribe, isOn };
 })();
+
+// ---------------- 자동 번역 (2026-10-18 사용자: "영어 등 자동 번역 기능도 만들어") — 구글 번역 위젯, 누를 때만 불러옴, 고른 언어는 다음 페이지에도 유지
+(function () {
+  const LANGS = [['ko', '한국어(원문)'], ['en', 'English'], ['ja', '日本語'], ['zh-CN', '中文(简体)'], ['zh-TW', '中文(繁體)'], ['vi', 'Tiếng Việt'], ['th', 'ไทย'], ['id', 'Bahasa Indonesia'], ['es', 'Español'], ['ru', 'Русский']];
+  const K = 'jupjup_lang';
+  const get = () => { try { return localStorage.getItem(K) || 'ko'; } catch { return 'ko'; } };
+  const set = v => { try { localStorage.setItem(K, v); } catch {} };
+  let loading = null;
+  function load() {
+    if (loading) return loading;
+    loading = new Promise(res => {
+      const d = document.createElement('div'); d.id = 'gt-el'; d.style.display = 'none'; document.body.appendChild(d);
+      window.__gtInit = () => { new google.translate.TranslateElement({ pageLanguage: 'ko', autoDisplay: false }, 'gt-el'); const w = () => document.querySelector('.goog-te-combo') ? res() : setTimeout(w, 150); w(); };
+      const s = document.createElement('script'); s.src = 'https://translate.google.com/translate_a/element.js?cb=__gtInit'; s.async = true; s.onerror = () => res(); document.head.appendChild(s);
+    });
+    return loading;
+  }
+  async function apply(lang) {
+    set(lang);
+    if (lang === 'ko') { document.cookie = 'googtrans=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT'; document.cookie = 'googtrans=; path=/; domain=' + location.hostname + '; expires=Thu, 01 Jan 1970 00:00:00 GMT'; if (document.documentElement.classList.contains('translated-ltr') || document.documentElement.lang !== 'ko') location.reload(); return; }
+    await load();
+    const c = document.querySelector('.goog-te-combo'); if (!c) return;
+    c.value = lang; c.dispatchEvent(new Event('change'));
+    try { window.gtag && gtag('event', 'translate', { lang }); } catch {}
+  }
+  function button() {
+    const hd = document.querySelector('.hd-in'); if (!hd || hd.querySelector('.lang-b')) return;
+    const b = document.createElement('div'); b.className = 'lang-b notranslate';
+    b.innerHTML = `<button type="button" aria-label="Language / 언어">🌐 <span>${get() === 'ko' ? 'KO' : get().slice(0, 2).toUpperCase()}</span></button><ul hidden>${LANGS.map(([v, t]) => `<li><button type="button" data-l="${v}">${t}</button></li>`).join('')}</ul>`;
+    hd.appendChild(b);
+    const ul = b.querySelector('ul');
+    b.querySelector('button').onclick = e => { e.stopPropagation(); ul.hidden = !ul.hidden; };
+    b.querySelectorAll('[data-l]').forEach(x => x.onclick = () => { ul.hidden = true; b.querySelector('span').textContent = x.dataset.l === 'ko' ? 'KO' : x.dataset.l.slice(0, 2).toUpperCase(); apply(x.dataset.l); });
+    document.addEventListener('click', () => { ul.hidden = true; });
+  }
+  const start = () => { button(); if (get() !== 'ko') apply(get()); };
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start); else start();
+})();

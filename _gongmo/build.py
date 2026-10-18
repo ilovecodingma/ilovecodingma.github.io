@@ -63,9 +63,9 @@ GTAG = ('<script async src="https://pagead2.googlesyndication.com/pagead/js/adsb
         '<script async src="https://www.googletagmanager.com/gtag/js?id=G-G9BPFF95GY"></script>\n'
         "<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());if(location.hostname!=='sungprofile.cloud')window['ga-disable-G-G9BPFF95GY']=true;gtag('config','G-G9BPFF95GY');</script>")
 THEMES = [  # (키, 이름, 아이콘, 테마색, 홈, [하위 메뉴], [이 테마에 속하는 주소 앞부분])
-    ('issue', '이슈', '🕵️', '#b45309', '/news/', [('/news/', '이슈 감별'), ('/talk/', '커뮤니티 이슈'), ('/kw/', '인기 키워드'), ('/satire/', '루리 풍자'), ('/mag/', '매거진')],
-     ['/news/', '/talk/', '/kw/', '/satire/', '/mag/']),
-    ('money', '머니', '📊', '#047857', '/analyst/', [('/analyst/', '애널리스트 종합'), ('/money/experts/', '전문가 코멘트'), ('/money/policy/', '투자 정책'), ('/money/age/', '나이별 원칙'), ('/analyst/coin/btc/', '코인')], ['/analyst/', '/money/']),
+    ('issue', '이슈', '🕵️', '#b45309', '/news/', [('/hot/', '핫이슈'), ('/news/', '이슈 감별'), ('/talk/', '커뮤니티 이슈'), ('/kw/', '인기 키워드'), ('/satire/', '루리 풍자'), ('/mag/', '매거진')],
+     ['/hot/', '/news/', '/talk/', '/kw/', '/satire/', '/mag/']),
+    ('money', '머니', '📊', '#047857', '/analyst/', [('/analyst/', '애널리스트 종합'), ('/money/experts/', '전문가 코멘트'), ('/money/policy/', '투자 정책'), ('/money/age/', '나이별 원칙'), ('/money/tools/loan/', '계산기'), ('/analyst/coin/btc/', '코인')], ['/analyst/', '/money/']),
     ('contest', '공모전', '🏆', '#6d28d9', '/contest/', [('/contest/', '추천 상담'), ('/cat/literature/', '분야별'), ('/prep/', '준비실'), ('/lab/', '수상 연구소'), ('/community/', '원정대'), ('/guide/', '가이드')],
      ['/contest/', '/c/', '/cat/', '/prep/', '/lab/', '/community/', '/guide/', '/v/', '/me/']),
     ('life', '생활', '🍳', '#0e7490', '/apply/', [('/apply/', '지원금·청약'), ('/apply/recommend/', '청약 추천'), ('/event/', '경품'), ('/fridge/', '냉장고 파먹기'), ('/qa/', '고민 해결')], ['/apply/', '/a/', '/event/', '/fridge/', '/qa/', '/ssul/']),
@@ -118,7 +118,7 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False, noinde
 <meta name="theme-color" content="{TH[3] if TH else '#5b21b6'}">
 <link rel="icon" href="/favicon.ico?v=5" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png?v=5"><link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png?v=5"><link rel="manifest" href="/site.webmanifest"><link rel="alternate" type="application/rss+xml" title="루리의 줍줍" href="/rss.xml">
 <link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="/assets/gm.css?v=6">{('<link rel="stylesheet" href="/assets/chat/ruri-chat.css?v=7">') if not (TH and TH[0] == 'ai') else ''}{COMM_TAGS}{('<script type="module" src="/assets/chat/ruri-chat.js?v=11"></script>') if not (TH and TH[0] == 'ai') else ''}<script defer src="/assets/app/app.js?v=1"></script>
+<link rel="stylesheet" href="/assets/gm.css?v=6">{('<link rel="stylesheet" href="/assets/chat/ruri-chat.css?v=7">') if not (TH and TH[0] == 'ai') else ''}{COMM_TAGS}{('<script type="module" src="/assets/chat/ruri-chat.js?v=11"></script>') if not (TH and TH[0] == 'ai') else ''}<script defer src="/assets/app/app.js?v=2"></script>
 {ldh}
 {GTAG}
 </head><body data-th="{TH[0] if TH else 'hub'}"{(' data-api="' + COMM_API + '"') if COMM_API else ''}>
@@ -479,7 +479,7 @@ def build():
     contest_home = f'''<h1 class="cs-h1">🏆 루리 공모전 추천 상담 — 이 공모전이나 해 볼까?</h1>
 <section id="consult" aria-label="루리 공모전 추천 상담"><noscript><p>루리 상담은 자바스크립트가 필요해요. 진행 중 공모전 {len(live)}건이 있어요.</p></noscript></section>
 {qa_home()}<p class="cs-foot">진행 중 공모전 {len(live)}건의 마감일·상금·응모 자격·접수 방법과 공식 공고 캡처를 정리해 두고, 루리가 상황에 맞는 것만 골라 드려요.</p>
-<link rel="stylesheet" href="/assets/home/consult.css?v=12"><script defer src="/assets/home/consult.js?v=10"></script>'''
+<link rel="stylesheet" href="/assets/home/consult.css?v=13"><script defer src="/assets/home/consult.js?v=10"></script>'''
     page('/contest/', '루리 공모전 추천 상담 — 진행 중 공모전 ' + str(len(live)) + '건', f'진행 중인 공모전 {len(live)}건을 마감 임박순·상금순으로. 질문 몇 개면 루리가 딱 맞는 공모전을 골라 드려요.',
          contest_home, [('루리의 줍줍', '/'), ('공모전', '/contest/')])
     nw, an, tk = _rd('news/data.json'), _rd('analyst/data.json'), _rd('talk/data.json')
@@ -498,7 +498,7 @@ def build():
     home = f'''<h1 class="hub-h">루리의 줍줍 <small>오늘 필요한 정보만 골라 드려요</small></h1>
 <div id="hm-in" hidden></div>
 <nav id="doors" class="doors" aria-label="테마">{cards}</nav>
-{satire_top()}
+{hot_top()}{satire_top()}
 <p class="hub-ai"><a href="/ailog/">🤖 이 사이트는 사람 1명 + AI로 만들었어요 — AI 제작 로그</a></p>
 <script>(function(){{try{{
 var q=(new URLSearchParams(location.search).get('src')||'').toLowerCase(),r=(document.referrer||'').toLowerCase(),k='jj_in',v=sessionStorage.getItem(k);
@@ -513,7 +513,7 @@ money:['증권사 목표가·코인 전망 종합부터 보여 드릴게요!','m
 if(!m)return;var h=document.getElementById('doors'),c=h.querySelector('[data-k='+m[1]+']');if(c){{h.insertBefore(c,h.firstChild);c.classList.add('pick')}}
 var b=document.getElementById('hm-in');b.innerHTML='<img src="/assets/ruri/o_det_wave_s.webp" width="44" height="61" alt=""><p><b>루리</b>'+m[0]+' <a href="'+m[2]+'">바로 가기 →</a></p>';b.hidden=false;
 window.gtag&&gtag('event','home_route',{{route:v}})}}catch(e){{}}}})();</script>
-<link rel="stylesheet" href="/assets/home/consult.css?v=12">'''
+<link rel="stylesheet" href="/assets/home/consult.css?v=13">'''
     page('/', '루리의 줍줍 — 이슈 · 머니 · 공모전 · 생활 정보',
          f'오늘의 이슈 팩트 채점, 증권사 목표가·코인 전망 종합, 공모전 {len(live)}건 추천, 지원금·청약·경품까지 — 테마별로 골라 보는 루리의 줍줍.',
          home, full_title=True, ld={'@context': 'https://schema.org', '@type': 'WebSite', 'name': NAME, 'alternateName': ['루리의줍줍', 'sungprofile', '루리 줍줍'], 'url': SITE + '/'})
@@ -551,7 +551,7 @@ window.gtag&&gtag('event','home_route',{{route:v}})}}catch(e){{}}}})();</script>
     fridge_page()
     app_page()
     news_page()
-    extra_urls = talk_pages() + mag_pages(live, aps) + analyst_pages() + satire_pages() + kw_pages() + money_pages() + apply_rec_page()
+    extra_urls = talk_pages() + mag_pages(live, aps) + analyst_pages() + satire_pages() + kw_pages() + money_pages() + apply_rec_page() + tool_pages() + hot_pages()
     extra_urls += ailog_page(live, len(extra_urls)) + all_page()
     community(live)
     lab_urls = lab() or []
@@ -722,7 +722,7 @@ def talk_pages():
     if not days:
         return []
     arch = '<section class="tk-arch"><h2>📅 날짜별 커뮤니티 이슈</h2><p>' + ''.join(f'<a href="/talk/{d}/">{kdate(d)}</a>' for d in days[:60]) + '</p></section>'
-    css = '<link rel="stylesheet" href="/assets/mag/mag.css?v=9"><link rel="stylesheet" href="/assets/news/news.css?v=3">'
+    css = '<link rel="stylesheet" href="/assets/mag/mag.css?v=10"><link rel="stylesheet" href="/assets/news/news.css?v=4">'
     note = '<p class="note">순위는 여러 커뮤니티에 동시에 뜬 정도·댓글 수·인기글에 머문 시간으로 매겨요. 성·혐오·개인 신상·비방·사생활 폭로성 글은 모으지 않아요. 요약은 루리가 제목과 수치만 보고 정리했어요.</p>'
     urls = ['/talk/']
     for i, d in enumerate(days):
@@ -869,7 +869,7 @@ def mag_pages(live, aps):
     mag_snapshot(live, aps)
     md = os.path.join(ROOT, 'mag', 'archive')
     days = sorted([f[:-5] for f in os.listdir(md) if f.endswith('.json')], reverse=True)
-    css = '<link rel="stylesheet" href="/assets/mag/mag.css?v=9">'
+    css = '<link rel="stylesheet" href="/assets/mag/mag.css?v=10">'
     urls, cards = ['/mag/'], []
     for d in days:
         m = json.load(open(os.path.join(md, d + '.json'), encoding='utf-8'))
@@ -1127,7 +1127,7 @@ def satire_pages():
     days = satire_days()
     if not days:
         return []
-    css = '<link rel="stylesheet" href="/assets/mag/mag.css?v=9">'
+    css = '<link rel="stylesheet" href="/assets/mag/mag.css?v=10">'
     note = '<p class="note">풍자 만화예요. 특정 종목·인물을 비방하거나 투자를 권하려는 게 아니에요. 숫자는 그날 보도 기준이에요.</p>'
     urls = ['/satire/']
     def one(d, v, h='h2'):
@@ -1180,7 +1180,7 @@ def kw_pages():
     days = sorted([f[:-5] for f in os.listdir(ad) if f.endswith('.json')], reverse=True) if os.path.isdir(ad) else []
     if not db or not days:
         return []
-    css = '<link rel="stylesheet" href="/assets/mag/mag.css?v=9">'
+    css = '<link rel="stylesheet" href="/assets/mag/mag.css?v=10">'
     G = {'ok': '✅', 'warn': '🟡', 'bad': '🔴'}
     note = '<p class="note">구글 트렌드 한국 급상승 검색어를 바탕으로 루리가 관련 보도와 사이트 정보를 모은 페이지예요. 연예인 사생활·사건사고·비방성 키워드는 다루지 않아요.</p>'
     urls = ['/kw/']
@@ -1218,7 +1218,7 @@ def kw_pages():
         else:
             trend_html = ''
         post = f'<section class="mg-s"><h2>✍️ 루리의 정리 글</h2><div class="nw-pr"><a href="{E(r["post"])}" target="_blank" rel="noopener"><em>블로그</em><b>{E(k)} 자세히 정리한 글 보기</b></a></div></section>' if r.get('post') else ''
-        css = '<link rel="stylesheet" href="/assets/mag/mag.css?v=9"><link rel="stylesheet" href="/assets/analyst/analyst.css?v=4">'
+        css = '<link rel="stylesheet" href="/assets/mag/mag.css?v=10"><link rel="stylesheet" href="/assets/analyst/analyst.css?v=4">'
         body = (f'<p class="bc"><a href="/">홈</a> › <a href="/kw/">인기 키워드</a> › {E(k)}</p><h1>🔎 {E(k)} — 왜 검색이 늘었나</h1><p>{SRCB(r)}</p>'
                 + say('o_det_think', ' '.join(lines)) + trend_html + post
                 + (f'<section class="mg-s"><h2>📰 왜 떴나: 관련 보도</h2><ul class="kw-l">{why}</ul></section>' if why else '')
@@ -1272,7 +1272,7 @@ def ailog_page(live, nurls):
             + f'<section class="mg-s"><h2>🛠️ AI가 틀린 것과 고친 것</h2><ul class="al-f">{fixes}</ul></section>'
             + f'<section class="mg-s"><h2>📏 지킨 원칙</h2><ul class="al-r">{rules}</ul></section>'
             + f'<section class="mg-s"><h2>🗓️ 날짜별 기록</h2><ul class="al-tl">{tl}</ul></section>'
-            + '<p class="note">이 페이지는 사이트 개발 과정만 공개해요. 숫자는 빌드할 때마다 자동으로 갱신돼요.</p><link rel="stylesheet" href="/assets/mag/mag.css?v=9">')
+            + '<p class="note">이 페이지는 사이트 개발 과정만 공개해요. 숫자는 빌드할 때마다 자동으로 갱신돼요.</p><link rel="stylesheet" href="/assets/mag/mag.css?v=10">')
     page('/ailog/', 'AI 제작 로그 — 서버비 0원으로 정보 사이트 만들기(Claude Code)',
          f'사람 한 명의 말과 AI(Claude Code)로 {days}일 동안 페이지 {npage:,}개짜리 정보 사이트를 만든 기록. 무료 호스팅·무료 서버리스·공개 RSS로 서버비 0원, 매시간 자동 갱신.',
          body, [('루리의 줍줍', '/'), ('AI 제작 로그', '/ailog/')])
@@ -1289,7 +1289,7 @@ def all_page():
          ('💰 생활 정보', [('/apply/', '지원금·청약', '청년 지원금·청약 일정'), ('/event/', '경품 이벤트', '응모만 하면 되는 이벤트'), ('/fridge/', '냉장고 파먹기', '있는 재료로 오늘 메뉴'), ('/qa/', '고민 해결', '실제 고민에 답 정리')]),
          ('⚙️ 더 보기', [('/app/', '앱·알림', '홈 화면 설치·폰 알림'), ('/me/', '내 공간', '찜·응모 기록'), ('/ailog/', 'AI 제작 로그', '이 사이트를 만든 방법')])]
     body = '<p class="bc"><a href="/">홈</a> › 전체 메뉴</p><h1>☰ 루리의 줍줍 전체 메뉴</h1>' + ''.join(
-        f'<section class="mg-s"><h2>{E(g)}</h2><ul class="al-menu">' + ''.join(f'<li><a href="{u}"><b>{E(n)}</b><span>{E(d)}</span></a></li>' for u, n, d in items) + '</ul></section>' for g, items in G) + '<link rel="stylesheet" href="/assets/mag/mag.css?v=9">'
+        f'<section class="mg-s"><h2>{E(g)}</h2><ul class="al-menu">' + ''.join(f'<li><a href="{u}"><b>{E(n)}</b><span>{E(d)}</span></a></li>' for u, n, d in items) + '</ul></section>' for g, items in G) + '<link rel="stylesheet" href="/assets/mag/mag.css?v=10">'
     page('/all/', '전체 메뉴', '루리의 줍줍 전체 메뉴: 이슈 감별, 커뮤니티 이슈, 인기 키워드, 풍자, 매거진, 애널리스트 분석, 공모전, 지원금·청약, 경품, 냉장고 파먹기, 앱·알림.', body, [('루리의 줍줍', '/'), ('전체 메뉴', '/all/')])
     return ['/all/']
 
@@ -1328,7 +1328,7 @@ def money_pages():
     # 머니 테마 정보 섹션 (2026-10-18 사용자: "주식 관련해서도 정책 등, 나이별 포트폴리오 전략 등을 넣고 전문가들 이야기도 넣어서" — 연구 ⑂ 기획)
     an = _rd('analyst/data.json')
     ex = an.get('experts', [])
-    css = '<link rel="stylesheet" href="/assets/analyst/analyst.css?v=4"><link rel="stylesheet" href="/assets/mag/mag.css?v=9">'
+    css = '<link rel="stylesheet" href="/assets/analyst/analyst.css?v=4"><link rel="stylesheet" href="/assets/mag/mag.css?v=10">'
     urls = []
     how = ('<details class="an-how"><summary>어떻게 모았나요?</summary><ol><li>증권·경제 기사 RSS에서 리서치센터장·CIO·이코노미스트·한국은행·KDI·IMF·월가 기관 등 실명 기관·인물의 발언이 제목에 나온 기사만 골라요.</li>'
            '<li>주제(코스피·미국 증시·금리·환율·반도체·부동산·경기·코인·원자재)와 성격(시장 전망·자산배분 조언·리스크 경고)으로 나눠요.</li><li>발언(따옴표) 부분으로 긍정·신중을 가려, 같은 주제에서 둘 다 있으면 나란히 보여 줘요.</li>'
@@ -1436,6 +1436,97 @@ def news_static():
     return out + '</ol>'
 
 
+TOOLS = {'dividend': ('배당소득 분리과세 계산기', '고배당 기업 배당을 분리과세로 받으면 세금이 얼마인지 구간별 세율(14·20·25·30%)로 대략 계산해요.'),
+         'stocktax': ('증권거래세 계산기', '2026년 증권거래세율(코스피 0.05%+농특세 0.15%, 코스닥 0.20%, 코넥스 0.10%)로 팔 때 세금을 계산해요.'),
+         'pension': ('연금 세액공제 계산기', '연금저축(600만원)·IRP 합산(900만원) 한도와 공제율(16.5%·13.2%)로 돌려받는 세금을 계산해요.'),
+         'loan': ('대출 이자 계산기', '원리금균등·원금균등·만기일시 상환별로 첫 달 상환액과 총 이자, 금리 0.25%p 오르내릴 때 차이를 비교해요.'),
+         'fx': ('환전 계산기', '매매기준율·수수료·환율 우대로 실제 받는 외화를 계산하고, 우대로 얼마나 더 받는지 비교해요.')}
+
+
+def tool_pages():
+    # 이슈형 미니 도구 (2026-10-18 핫이슈 기획) — 참고용, 투자 수익 계산 없음
+    urls = []
+    for k, (n, d) in TOOLS.items():
+        others = ''.join(f'<a href="/money/tools/{k2}/">{E(n2)}</a>' for k2, (n2, _) in TOOLS.items() if k2 != k)
+        page(f'/money/tools/{k}/', f'{n} — 2026 기준 간단 계산', d,
+             f'<p class="bc"><a href="/">홈</a> › <a href="/analyst/">머니</a> › {E(n)}</p><h1>🧮 {E(n)}</h1><p>{E(d)}</p>'
+             f'<section id="mtool" data-tool="{k}"><noscript>자바스크립트가 필요해요.</noscript></section><p class="hm-links">{others}<a href="/money/policy/">🏛️ 근거: 투자 정책 정리</a></p>'
+             '<link rel="stylesheet" href="/assets/money/tools.css?v=1"><link rel="stylesheet" href="/assets/mag/mag.css?v=10"><script defer src="/assets/money/tools.js?v=1"></script>',
+             [('루리의 줍줍', '/'), ('머니', '/analyst/'), (n, f'/money/tools/{k}/')])
+        urls.append(f'/money/tools/{k}/')
+    return urls
+
+
+HOT_TYPE = {'health': '🏥 의료·건강', 'labor': '💼 일·임금', 'housing': '🏠 청약·주거', 'grant': '💰 지원금·저축', 'tax': '🧾 세금·세제', 'rate': '📉 금리·환율', 'market': '📈 증시·코인', 'event': '📅 행사·날씨'}
+
+
+def hot_live():
+    d = _rd('hot/db.json')
+    cut = (datetime.datetime.now() - datetime.timedelta(hours=48)).strftime('%Y-%m-%d %H:%M')
+    return sorted([v for v in d.values() if v['last'] >= cut], key=lambda v: (-len(v['outs']), v['last']), reverse=False), d
+
+
+def hot_pages():
+    # 핫이슈 랜딩 (2026-10-18 사용자: "트렌드 분석에 따른 핫이슈에 맞춘 것들을 만들어") — hot.py 매시
+    live, db = hot_live()
+    if not db:
+        return []
+    import sys
+    sys.path.insert(0, HERE)
+    import hot as H
+    G = {'ok': '✅', 'warn': '🟡', 'bad': '🔴'}
+    css = '<link rel="stylesheet" href="/assets/mag/mag.css?v=10"><link rel="stylesheet" href="/assets/analyst/analyst.css?v=4"><link rel="stylesheet" href="/assets/news/news.css?v=4">'
+    urls = ['/hot/']
+    livesl = {v['slug'] for v in live}
+    hd = os.path.join(ROOT, 'hot')
+    for v in db.values():
+        lead, links, faq = H.TOOL[v['type']]
+        what = ''.join(f'<li><b>{E(w["o"])}</b> {E(w["t"])}</li>' for w in v['what'])
+        nums = ''.join(f'<li><b>{E(n["v"])}</b> <small>— {E(n["o"])} 「{E(n["t"][:40])}」</small></li>' for n in v['nums'])
+        dates = ''.join(f'<li><b>{E(x["v"])}</b> <small>— {E(x["o"])} 「{E(x["t"][:40])}」</small></li>' for x in v['dates'])
+        arts = ''.join(f'<li><a href="{E(a["u"])}" target="_blank" rel="noopener nofollow"><em>{E(a["o"])} {G.get(a.get("g"), "")} {a["s"] if a.get("s") is not None else ""}</em>{E(a["t"])}</a></li>' for a in v['arts'])
+        tl = ''.join(f'<a href="{u}"><em>바로 가기</em><b>{E(n)}</b></a>' for n, u in links)
+        pr = ''.join(f'<a href="{E(p_["u"])}"><em>{E(p_["k"])}</em><b>{E(p_["t"])}</b></a>' for p_ in v.get('pr') or [])
+        fq = ''.join(f'<details><summary>{E(q)}</summary><p>{E(a)}</p></details>' for q, a in faq)
+        ld = {'@context': 'https://schema.org', '@type': 'FAQPage', 'mainEntity': [{'@type': 'Question', 'name': q, 'acceptedAnswer': {'@type': 'Answer', 'text': a}} for q, a in faq]}
+        old = '' if v['slug'] in livesl else f'<p class="an-warn">📦 지난 이슈예요(마지막 확인 {E(v["last"])}). 지금은 상황이 바뀌었을 수 있어요.</p>'
+        iss = v.get('issue')
+        kwl = f'<a href="/kw/{v["kw"]}/">🔎 키워드 상세 →</a>' if v.get('kw') else ''
+        sig = (f'<p class="hm-links"><a href="/news/#is{iss["n"]}">🕵️ 이슈 감별: 언론사 {iss["on"]}곳 · 확인 신호 {G.get(iss.get("g"), "")} {iss.get("s") if iss.get("s") is not None else "-"}점 →</a>{kwl}</p>') if iss else (f'<p class="hm-links">{kwl}</p>' if kwl else '')
+        body = (f'<p class="bc"><a href="/">홈</a> › <a href="/hot/">핫이슈</a> › {E(v["q"][:30])}</p><h1>🔥 {E(v["title"])}</h1>'
+                f'<p><span class="kw-b both">{HOT_TYPE[v["type"]]}</span> 언론사 {len(v["outs"])}곳 보도 · 처음 {E(v["first"])} · 갱신 {E(v["last"])}</p>' + old
+                + f'<section class="mg-s"><h2>📌 한눈에 정리</h2><p class="hot-n">여러 언론사가 이렇게 전했어요(기사 제목 그대로).</p><ul class="hot-l">{what}</ul>'
+                + (f'<h3>🔢 기사에 나온 숫자</h3><ul class="hot-l">{nums}</ul>' if nums else '') + (f'<h3>📅 기사에 나온 날짜</h3><ul class="hot-l">{dates}</ul>' if dates else '') + '</section>'
+                + f'<section class="mg-s"><h2>🙋 나한테 뭐가 달라지나</h2><p>{E(lead)}</p><div class="nw-pr">{tl}</div></section>' + sig
+                + (f'<section class="mg-s"><h2>📎 관련 줍줍</h2><div class="nw-pr">{pr}</div></section>' if pr else '')
+                + f'<section class="mg-s"><h2>📰 관련 기사 (확인 신호 점수)</h2><ul class="kw-l">{arts}</ul></section>'
+                + f'<section class="mg-s"><h2>❓ 자주 묻는 질문</h2><div class="hot-faq">{fq}</div></section>'
+                + '<p class="note">기사 제목·숫자·날짜는 각 언론사 보도 그대로이고, 루리의 줍줍이 사실을 새로 판정한 게 아니에요. 정책·세금·금융은 공식 기관 안내를 확인하세요.</p>' + css)
+        q = re.sub(r'[“”"]', '', v['q'])
+        page(f'/hot/{v["slug"]}/', f'{q[:40]} — 무슨 일·나한테 달라지는 점 정리', f'{q[:40]}: 여러 언론사 보도를 모아 무슨 일인지, 기사에 나온 숫자·날짜, 나한테 달라지는 점과 관련 도구를 정리했어요.',
+             body, [('루리의 줍줍', '/'), ('핫이슈', '/hot/'), (q[:30], f'/hot/{v["slug"]}/')], ld)
+        urls.append(f'/hot/{v["slug"]}/')
+    for f in os.listdir(hd):
+        if os.path.isdir(os.path.join(hd, f)) and f not in db:
+            shutil.rmtree(os.path.join(hd, f), ignore_errors=True)
+    card = lambda v: f'<li><a href="/hot/{v["slug"]}/"><em>{HOT_TYPE[v["type"]]}</em><b>{E(v["title"])}</b><span>언론사 {len(v["outs"])}곳 · {E(v["last"][5:])}</span></a></li>'
+    past = sorted([v for v in db.values() if v['slug'] not in livesl], key=lambda v: v['last'], reverse=True)[:60]
+    page('/hot/', '지금 뜨는 핫이슈 — 무슨 일·나한테 달라지는 점 정리', '검색 급상승·언론 보도가 몰린 정보성 이슈를 골라 무슨 일인지, 나한테 달라지는 점, 관련 계산기·지원금을 정리했어요.',
+         '<p class="bc"><a href="/">홈</a> › 핫이슈</p><h1>🔥 지금 뜨는 핫이슈</h1>' + say('o_det_wave', '검색이 몰리고 여러 언론사가 다룬 이슈 중, 나한테 실제로 쓸모 있는 것만 골랐어요.')
+         + (f'<ul class="mg-l hot-c">{"".join(card(v) for v in live)}</ul>' if live else '<p class="nw-empty">지금은 정리할 핫이슈가 없어요.</p>')
+         + (f'<h2>📦 지난 이슈</h2><ul class="mg-l hot-c">{"".join(card(v) for v in past)}</ul>' if past else '') + css,
+         [('루리의 줍줍', '/'), ('핫이슈', '/hot/')])
+    return urls
+
+
+def hot_top(n=4):
+    live, _ = hot_live()
+    if not live:
+        return ''
+    li = ''.join(f'<li><a href="/hot/{v["slug"]}/"><em>🔥</em><b>{E(v["title"])}</b><span>{HOT_TYPE[v["type"]]}</span></a></li>' for v in live[:n])
+    return f'<section class="nw-home hot-home"><h2>🔥 지금 뜨는 핫이슈 <a href="/hot/">전체 →</a></h2><ol>{li}</ol></section>'
+
+
 def news_top():
     # 홈 투트랙(2026-10-18 사용자: 공모전과 투트랙) — 이슈 감별 상위 3개
     try:
@@ -1449,10 +1540,10 @@ def news_top():
 
 def news_page():
     # 루리 탐정의 이슈 감별 (2026-10-18 사용자: RSS 기사 수집 → 주제별 묶음 → 팩트체크 기반 채점, 피드, 탐정 루리, 기사 관련 줍줍)
-    body = f'''<p class="bc"><a href="/">홈</a> › 이슈 감별</p><h1>🕵️ 루리 탐정의 이슈 감별</h1>
+    body = f'''<p class="bc"><a href="/">홈</a> › 이슈 감별</p><h1>🕵️ 루리 탐정의 이슈 감별</h1>{hot_top(3)}
 <section id="news" aria-label="이슈 순위와 기사 채점">{news_static()}</section>
 <details class="nw-how"><summary>채점은 이렇게 해요</summary><ul><li><b>교차 보도</b> — 같은 사건을 여러 언론사가 보도하면 가점, 한 곳뿐이면 표시만 해요.</li><li><b>출처</b> — 실명 기관·인물 출처는 가점, 익명 관계자뿐이거나 온라인 커뮤니티·SNS 글이 출처면 감점.</li><li><b>제목-본문 일치</b> — 제목의 숫자·인용문이 본문에 없으면 감점.</li><li><b>숫자 엇갈림</b> — 같은 사건인데 언론사마다 사망·부상자 수가 다르면 따로 표시해요.</li><li><b>낚시·홍보</b> — 「충격」「결국」「이것」 같은 낚시 표현, 기업 홍보성 기사는 감점.</li></ul><p>기사 본문은 채점에만 쓰고 이 사이트에 옮겨 싣지 않아요. 제목을 누르면 원래 언론사 기사로 이동해요.</p></details>
-<link rel="stylesheet" href="/assets/news/news.css?v=3"><script defer src="/assets/news/news.js?v=3"></script>'''
+<link rel="stylesheet" href="/assets/news/news.css?v=4"><script defer src="/assets/news/news.js?v=3"></script>'''
     page('/news/', '루리 탐정의 이슈 감별 — 오늘의 이슈 순위·기사 팩트 채점', '언론사 15곳 기사를 매시간 모아 같은 사건끼리 묶고, 교차 보도·출처·제목-본문 일치·숫자 엇갈림·낚시 표현으로 기사마다 점수를 매겨요. 지금 가장 많이 보도된 이슈 순위.',
          body, [('루리의 줍줍', '/'), ('이슈 감별', '/news/')])
 
