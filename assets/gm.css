@@ -163,3 +163,10 @@ body[data-th=ai] .hd{background:#0f172a}body[data-th=ai] .hd .logo span,body[dat
 .hd-in .lang-b+*{margin-left:8px}.lang-b ul{position:absolute;right:0;top:36px;z-index:50;list-style:none;margin:0;padding:6px;background:#fff;border:1px solid var(--bd);border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.12);min-width:170px}
 .lang-b li button{display:block;width:100%;text-align:left;border:0;background:none;padding:8px 10px;border-radius:8px;font-size:14px;cursor:pointer}.lang-b li button:hover{background:var(--pbg)}
 .goog-te-banner-frame,.skiptranslate>iframe,#goog-gt-tt,.goog-te-balloon-frame{display:none!important}body{top:0!important}.goog-text-highlight{background:none!important;box-shadow:none!important}
+/* 2026-10-18 반응형 머리말: 오른쪽은 🌐·로그인 묶음, 좁은 폰은 간결하게, 넓은 화면은 테마 전환을 첫 줄 가운데로(2줄) */
+.hd-in{gap:8px;min-height:54px}.th-name{white-space:nowrap;flex:none}.lang-b{margin-left:auto;flex:none}.cm-acct{margin-left:0!important}.lang-b>button{white-space:nowrap}
+.logo{flex:none;white-space:nowrap}
+@media(max-width:480px){.th-name{display:none}.lang-b>button span{display:none}.lang-b>button{padding:5px 8px}.hd-in{min-height:48px;gap:6px}.logo span{font-size:17px}
+  .th-sw{padding-bottom:4px}.th-sw a{padding:4px 8px;font-size:12.5px}.tb{padding-top:5px;padding-bottom:6px}.tb a{padding:5px 10px;font-size:12.5px}.cm-acct .btn2,.cm-acct button{padding:6px 10px;font-size:12.5px}}
+@media(min-width:1000px){.th-sw{position:absolute;top:9px;left:50%;transform:translateX(-50%);width:auto;max-width:520px;padding:0}.th-sw a{padding:7px 12px;font-size:14px}}
+.lang-b{order:2}.cm-acct{order:3}.th-name{margin-left:0}
