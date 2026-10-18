@@ -17,3 +17,9 @@
 .fr-m header p{margin:3px 0 0}.fr-m header em{font-style:normal;font-size:12.5px;font-weight:800;color:#7c3aed;margin-right:8px}.fr-why{font-size:14.5px;margin:10px 0 6px}
 .fr-m details summary{cursor:pointer;font-weight:800;color:#db2777;font-size:14px}.fr-m ol{margin:8px 0 0;padding-left:20px;font-size:14.5px;line-height:1.65}.fr-tip{font-size:13.5px;background:#fefce8;border-radius:10px;padding:8px 10px;margin:8px 0 0}
 .fr-end{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:10px}.fr-end button{border:1px solid #ddd6fe;background:#faf5ff;color:#5b21b6;font-weight:800;border-radius:12px;padding:12px 6px;font-size:14px;cursor:pointer}.fr-left{text-align:center;font-size:12.5px;color:var(--mu)}
+/* v2: 재료 고르기 방식 */
+.fr-pick{background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:14px;position:relative}.fr-pick h2{font-size:17px;margin:0}.fr-pick h2 small,.fr-h small{font-size:12px;color:#7c3aed;margin-left:6px}
+.fr-basic{font-size:12.5px;color:var(--mu);margin:4px 0 10px}.fr-cat{margin:0 0 10px}.fr-cat small{display:block;font-size:12px;font-weight:800;color:var(--mu);margin-bottom:5px}.fr-cat div{display:flex;flex-wrap:wrap;gap:5px}
+.fr-cat button{border:1px solid #e5e7eb;background:#fff;border-radius:999px;padding:7px 11px;font-size:14px;cursor:pointer}.fr-cat button.on{background:#ecfdf5;border-color:#10b981;color:#047857;font-weight:800}
+.fr-clear{position:absolute;top:12px;right:12px;border:0;background:none;color:var(--mu);font-size:12.5px;text-decoration:underline;cursor:pointer}
+.fr-m header em.t{color:#db2777}.fr-more summary{cursor:pointer;font-weight:800;color:#7c3aed;margin:4px 0 10px}

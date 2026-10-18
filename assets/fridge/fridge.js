@@ -1,50 +1,57 @@
-// 루리의 냉장고 파먹기 (/fridge/) — 냉장고 사진 → Claude 가 재료를 보고 오늘 메뉴 3개 추천 (2026-10-18 사용자 요청)
+// 루리의 냉장고 파먹기 (/fridge/) — 냉장고에 있는 재료를 고르면 레시피 77개 중 지금 만들 수 있는 오늘 메뉴를 추천
+// 2026-10-18 사용자: "AI 말고 그냥 레시피 추천으로" → 재료 매칭 방식(서버·AI 없이 브라우저에서 계산)
 (function () {
   const ROOT = document.getElementById('fridge'); if (!ROOT) return;
-  const API = document.body.dataset.api || 'https://jupjup-api.sung2011103.workers.dev';
+  const KEY = 'jupjup_fridge_v1';
   const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const ga = (n, p) => { try { window.gtag && gtag('event', n, p || {}); } catch {} };
-  const tok = () => { try { return localStorage.getItem('jupjup_tok') || ''; } catch { return ''; } };
-  const OPT = { people: ['1인분', '2인분', '3~4인 가족'], time: ['10분', '20분', '40분'], want: ['아무거나', '든든하게', '가볍게·다이어트', '아이 반찬', '술안주', '안 맵게'] };
-  const sel = { people: '1인분', time: '20분', want: '아무거나' };
-  let img = '';
-  ROOT.innerHTML = `<label class="fr-shot"><input type="file" accept="image/*" capture="environment" hidden><span class="fr-ph"><b>📸 냉장고 사진 찍기</b><small>문 열고 한 장! 앨범 사진도 돼요</small></span><img alt="" hidden></label>
-<div class="fr-opts">${Object.entries(OPT).map(([k, vs]) => `<div class="fr-o"><small>${{ people: '몇 명이 먹어요?', time: '시간은?', want: '오늘 기분은?' }[k]}</small><div>${vs.map(v => `<button data-k="${k}" data-v="${v}" class="${sel[k] === v ? 'on' : ''}">${v}</button>`).join('')}</div></div>`).join('')}</div>
-<button class="fr-go" disabled>🍳 루리야, 오늘 뭐 해 먹지?</button><p class="fr-err" hidden></p><div class="fr-out"></div>`;
-  const q = s => ROOT.querySelector(s), go = q('.fr-go'), out = q('.fr-out'), er = q('.fr-err');
-  ROOT.querySelectorAll('.fr-o button').forEach(b => b.onclick = () => { sel[b.dataset.k] = b.dataset.v; ROOT.querySelectorAll(`.fr-o button[data-k="${b.dataset.k}"]`).forEach(x => x.classList.toggle('on', x === b)); });
-  // 사진은 폰에서 긴 변 1280px JPEG 로 줄여서 보냄 (서버에 저장 안 함)
-  q('.fr-shot input').onchange = e => {
-    const f = e.target.files[0]; if (!f) return;
-    const im = new Image(); im.onload = () => {
-      const r = Math.min(1, 1280 / Math.max(im.width, im.height)), c = document.createElement('canvas');
-      c.width = Math.round(im.width * r); c.height = Math.round(im.height * r); c.getContext('2d').drawImage(im, 0, 0, c.width, c.height);
-      let qq = 0.82; img = c.toDataURL('image/jpeg', qq); while (img.length > 1400000 && qq > 0.4) { qq -= 0.12; img = c.toDataURL('image/jpeg', qq); }
-      const pv = q('.fr-shot img'); pv.src = img; pv.hidden = false; q('.fr-ph').innerHTML = '<b>📸 다시 찍기</b>'; q('.fr-shot').classList.add('has'); go.disabled = false; URL.revokeObjectURL(im.src);
-    }; im.src = URL.createObjectURL(f);
-  };
-  const card = (m, i) => `<article class="fr-m${i === 0 ? ' top' : ''}"><header><span class="fr-e">${esc(m.emoji || '🍽️')}</span><div><h3>${esc(m.name)}</h3><p><em>⏱ ${esc(m.time || '')}</em><em>${esc(m.level || '')}</em></p></div></header>
-<p class="fr-why">${esc(m.why || '')}</p><p class="fr-use">${(m.use || []).map(x => `<span>${esc(x)}</span>`).join('')}${(m.missing || []).map(x => `<span class="no">+ ${esc(x)}</span>`).join('')}</p>
-<details${i === 0 ? ' open' : ''}><summary>만드는 법</summary><ol>${(m.steps || []).map(s => `<li>${esc(s)}</li>`).join('')}</ol>${m.tip ? `<p class="fr-tip">💡 ${esc(m.tip)}</p>` : ''}</details></article>`;
-  go.onclick = async () => {
-    if (!img) return; go.disabled = true; er.hidden = true; ga('fridge_ask', sel);
-    out.innerHTML = '<div class="fr-wait"><img src="/assets/ruri/o_desk.webp" alt=""><p>루리가 냉장고를 들여다보는 중… <span>🥕🥚🧅</span></p></div>';
-    try {
-      const r = await fetch(API + '/api/fridge', { method: 'POST', headers: { 'Content-Type': 'application/json', ...(tok() ? { Authorization: 'Bearer ' + tok() } : {}) }, body: JSON.stringify({ image: img, opt: sel }) });
-      const d = await r.json().catch(() => ({})); if (!r.ok) throw new Error(d.error || '문제가 생겼어요.');
-      if (!d.menus || !d.menus.length) { out.innerHTML = `<p class="fr-note">🤔 ${esc(d.note || '재료가 잘 안 보여요. 냉장고 문을 활짝 열고 밝게 다시 찍어 주세요!')}</p>`; return; }
-      out.innerHTML = `<section class="fr-ing"><h2>🧺 루리가 찾은 재료 <small>${d.ingredients.length}개</small></h2><p>${d.ingredients.map(x => `<span>${esc(x)}</span>`).join('')}</p>${d.note ? `<p class="fr-note">💬 ${esc(d.note)}</p>` : ''}</section>
-<h2 class="fr-h">🍽️ 오늘의 추천 메뉴</h2>${d.menus.map(card).join('')}
-<div class="fr-end"><button class="fr-share">📤 오늘 메뉴 공유하기</button><button class="fr-again">📸 다른 사진으로</button></div><p class="fr-left">오늘 ${d.left >= 0 ? d.left + '번 더' : ''} 볼 수 있어요${tok() ? '' : ' · 가입하면 하루 10번'}</p>`;
-      ga('fridge_result', { n: d.menus.length });
-      q('.fr-again').onclick = () => { q('.fr-shot input').click(); };
-      q('.fr-share').onclick = () => {
-        const text = `냉장고 털어서 오늘은 「${d.menus[0].name}」! 루리가 골라 줬어요 🍳`, url = location.origin + '/fridge/';
-        if (navigator.share) navigator.share({ title: '루리의 냉장고 파먹기', text, url }).catch(() => {});
-        else (navigator.clipboard ? navigator.clipboard.writeText(text + ' ' + url) : Promise.reject()).then(() => { q('.fr-share').textContent = '✅ 링크 복사했어요'; }).catch(() => {});
-      };
-      out.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    } catch (e) { out.innerHTML = ''; er.textContent = e.message; er.hidden = false; }
-    finally { go.disabled = false; }
-  };
+  let D = null, have = new Set(), mood = '아무거나', maxMin = 99;
+  try { have = new Set(JSON.parse(localStorage.getItem(KEY) || '[]')); } catch {}
+  const save = () => { try { localStorage.setItem(KEY, JSON.stringify([...have])); } catch {} };
+  const MOODS = ['아무거나', '든든', '가벼움', '아이', '안주', '안 매움', '매움', '간식'];
+  const TIMES = [[99, '상관없음'], [10, '10분'], [20, '20분'], [30, '30분']];
+  // 같은 점수면 날짜마다 다른 메뉴가 먼저 오게 (오늘의 메뉴)
+  const day = new Date().toISOString().slice(0, 10), seed = s => { let h = 0; for (const c of day + s) h = (h * 31 + c.charCodeAt(0)) | 0; return (h >>> 0) / 4294967296; };
+  function rank() {
+    return D.recipes.map(r => {
+      const lack = r.need.filter(x => !have.has(x)), plus = r.opt.filter(x => have.has(x));
+      const fit = mood === '아무거나' || r.t.includes(mood);
+      return { r, lack, plus, score: (lack.length ? -10 * lack.length : 0) + plus.length * 1.2 + r.need.length * 0.8 + (fit ? 3 : 0) + seed(r.n) };
+    }).filter(x => x.r.m <= maxMin && (mood === '아무거나' || x.r.t.includes(mood) || x.lack.length === 0)).sort((a, b) => b.score - a.score);
+  }
+  const card = (x, big) => `<article class="fr-m${big ? ' top' : ''}"><header><span class="fr-e">${x.r.e}</span><div><h3>${esc(x.r.n)}</h3><p><em>⏱ ${x.r.m}분</em><em>${esc(x.r.lv)}</em>${x.r.t.map(t => `<em class="t">#${esc(t)}</em>`).join('')}</p></div></header>
+<p class="fr-use">${x.r.need.filter(i => have.has(i)).concat(x.plus).map(i => `<span>${esc(i)}</span>`).join('')}${x.lack.map(i => `<span class="no">+ ${esc(i)} 사기</span>`).join('')}</p>
+<details${big ? ' open' : ''}><summary>만드는 법</summary><ol>${x.r.s.map(s => `<li>${esc(s)}</li>`).join('')}</ol>${x.r.opt.length ? `<p class="fr-tip">💡 있으면 더 좋아요: ${x.r.opt.map(esc).join(', ')}</p>` : ''}</details></article>`;
+  function paint() {
+    const cats = Object.entries(D.ing).map(([c, xs]) => `<div class="fr-cat"><small>${esc(c)}</small><div>${xs.map(x => `<button data-i="${esc(x)}" class="${have.has(x) ? 'on' : ''}">${esc(x)}</button>`).join('')}</div></div>`).join('');
+    ROOT.innerHTML = `<section class="fr-pick"><h2>🧊 냉장고에 뭐 있어요? <small class="fr-n">${have.size}개 골랐어요</small></h2><p class="fr-basic">기본양념(${esc(D.basic)})은 있다고 칠게요.</p>${cats}
+<button class="fr-clear">비우기</button></section>
+<div class="fr-opts"><div class="fr-o"><small>오늘 기분은?</small><div>${MOODS.map(m => `<button data-m="${m}" class="${mood === m ? 'on' : ''}">${m === '아무거나' ? m : '#' + m}</button>`).join('')}</div></div>
+<div class="fr-o"><small>시간은?</small><div>${TIMES.map(([v, l]) => `<button data-t="${v}" class="${maxMin === v ? 'on' : ''}">${l}</button>`).join('')}</div></div></div>
+<div class="fr-out"></div>`;
+    ROOT.querySelectorAll('[data-i]').forEach(b => b.onclick = () => { const i = b.dataset.i; have.has(i) ? have.delete(i) : have.add(i); b.classList.toggle('on'); save(); ROOT.querySelector('.fr-n').textContent = have.size + '개 골랐어요'; result(); });
+    ROOT.querySelectorAll('[data-m]').forEach(b => b.onclick = () => { mood = b.dataset.m; ROOT.querySelectorAll('[data-m]').forEach(x => x.classList.toggle('on', x === b)); result(); });
+    ROOT.querySelectorAll('[data-t]').forEach(b => b.onclick = () => { maxMin = +b.dataset.t; ROOT.querySelectorAll('[data-t]').forEach(x => x.classList.toggle('on', x === b)); result(); });
+    ROOT.querySelector('.fr-clear').onclick = () => { have.clear(); save(); paint(); };
+    result();
+  }
+  let gaT;
+  function result() {
+    const out = ROOT.querySelector('.fr-out');
+    if (!have.size) { out.innerHTML = '<p class="fr-note">👆 냉장고 열어 보고 있는 재료를 눌러 주세요. 고른 재료는 다음에 와도 기억해 둘게요!</p>'; return; }
+    const all = rank(), now = all.filter(x => !x.lack.length), buy1 = all.filter(x => x.lack.length === 1).slice(0, 4);
+    out.innerHTML = (now.length ? `<h2 class="fr-h">🍽️ 오늘은 이거 어때요? <small>지금 있는 재료로 바로 · ${now.length}개</small></h2>${card(now[0], true)}${now.slice(1, 3).map(x => card(x)).join('')}
+${now.length > 3 ? `<details class="fr-more"><summary>바로 만들 수 있는 메뉴 ${now.length - 3}개 더 보기</summary>${now.slice(3).map(x => card(x)).join('')}</details>` : ''}` : '<p class="fr-note">🤔 고른 재료만으로는 딱 맞는 메뉴가 없어요. 아래처럼 하나만 사면 돼요!</p>')
+      + (buy1.length ? `<h2 class="fr-h">🛒 하나만 사면 되는 메뉴</h2>${buy1.map(x => card(x)).join('')}` : '')
+      + (now.length ? '<div class="fr-end"><button class="fr-share">📤 오늘 메뉴 공유하기</button><button class="fr-top">🔄 재료 다시 고르기</button></div>' : '');
+    const sh = out.querySelector('.fr-share'); if (sh) sh.onclick = () => {
+      const text = `냉장고 털어서 오늘은 「${now[0].r.n}」! 루리가 골라 줬어요 🍳`, url = location.origin + '/fridge/';
+      ga('share', { method: navigator.share ? 'native' : 'copy', content_type: 'fridge' });
+      if (navigator.share) navigator.share({ title: '루리의 냉장고 파먹기', text, url }).catch(() => {});
+      else (navigator.clipboard ? navigator.clipboard.writeText(text + ' ' + url) : Promise.reject()).then(() => { sh.textContent = '✅ 복사했어요'; }).catch(() => {});
+    };
+    const tp = out.querySelector('.fr-top'); if (tp) tp.onclick = () => ROOT.scrollIntoView({ behavior: 'smooth' });
+    clearTimeout(gaT); gaT = setTimeout(() => ga('fridge_result', { have: have.size, now: now.length, mood }), 1500);
+  }
+  fetch('/assets/fridge/recipes.json?v=1').then(r => r.json()).then(d => { D = d; paint(); });
 })();

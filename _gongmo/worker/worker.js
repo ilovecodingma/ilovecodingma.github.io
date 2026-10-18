@@ -241,30 +241,6 @@ export default {
         }
         return json(req, { ok: true });
       }
-      // ---- 냉장고 사진 → 오늘 메뉴 추천 (Claude API, 2026-10-18 사용자 요청) ----
-      if (p === '/api/fridge' && req.method === 'POST') {
-        if (!env.ANTHROPIC_KEY) return err(req, '루리 요리 추천은 곧 열려요! 조금만 기다려 주세요.', 503);
-        const m = /^data:(image\/(?:jpeg|png|webp));base64,([A-Za-z0-9+/=]+)$/.exec(body.image || '');
-        if (!m || m[2].length > 1500000) return err(req, '사진을 다시 찍어 주세요. (1MB 이하 사진만 돼요)');
-        const ip = req.headers.get('CF-Connecting-IP') || '', d = new Date(Date.now() + 9 * 3600e3).toISOString().slice(0, 10), u = await me(req, env);
-        const who = u ? 'u' + u.id : hex(new Uint8Array(await crypto.subtle.digest('SHA-256', new TextEncoder().encode(ip + '|fridge')))).slice(0, 16);
-        const mine = await count(env, 'SELECT COUNT(*) n FROM fridge_log WHERE day = ? AND who = ?', d, who), all = await count(env, 'SELECT COUNT(*) n FROM fridge_log WHERE day = ?', d);
-        const cap = u ? 10 : 3;
-        if (mine >= cap) return err(req, u ? '오늘은 10번까지 볼 수 있어요. 내일 또 와요!' : '비회원은 하루 3번까지예요. 가입하면 하루 10번까지 볼 수 있어요!', 429);
-        if (all >= 500) return err(req, '오늘 추천이 너무 많아서 쉬는 중이에요. 내일 다시 와 주세요!', 429);
-        const o = body.opt || {}, opt = [o.people && `먹는 사람: ${clean(o.people, 10)}`, o.time && `조리 시간: ${clean(o.time, 10)} 이내`, o.want && `조건: ${clean(o.want, 60)}`].filter(Boolean).join(', ');
-        const prompt = `냉장고(또는 식재료) 사진이에요. ${opt ? opt + '. ' : ''}사진에 실제로 보이는 재료만 근거로, 지금 집에서 바로 만들 수 있는 한국 가정식 위주의 오늘 메뉴 3개를 추천해 주세요.
-규칙: 확실히 보이는 재료만 ingredients 에 넣고, 애매하면 넣지 마세요. 소금·간장·설탕·식용유·고춧가루·마늘 같은 기본양념은 있다고 봐도 돼요. 없는 재료가 꼭 필요하면 missing 에 적어요(최대 2개). 사진이 음식 재료와 관계없으면 ingredients 를 빈 배열로, menus 도 빈 배열로 하고 note 에 이유를 적어요.
-말투: 친근한 20살 마스코트 '루리'의 존댓말(~해요). 아래 JSON 하나만 출력하고 다른 글은 쓰지 마세요.
-{"ingredients":["재료"],"note":"한 줄 코멘트","menus":[{"name":"메뉴","emoji":"🍳","time":"15분","level":"쉬움|보통|어려움","why":"이 메뉴를 고른 이유 한 줄","use":["사진 속 재료"],"missing":["없으면 빈 배열"],"steps":["1단계","2단계","3단계","4단계"],"tip":"한 줄 꿀팁"}]}`;
-        const r = await fetch('https://api.anthropic.com/v1/messages', { method: 'POST', headers: { 'x-api-key': env.ANTHROPIC_KEY, 'anthropic-version': '2023-06-01', 'content-type': 'application/json' },
-          body: JSON.stringify({ model: env.FRIDGE_MODEL || 'claude-sonnet-5-5', max_tokens: 1800, messages: [{ role: 'user', content: [{ type: 'image', source: { type: 'base64', media_type: m[1], data: m[2] } }, { type: 'text', text: prompt }] }] }) });
-        const j = await r.json().catch(() => ({}));
-        await env.DB.prepare('INSERT INTO fridge_log (day, ts, who, ok, tin, tout) VALUES (?, ?, ?, ?, ?, ?)').bind(d, now(), who, r.ok ? 1 : 0, (j.usage || {}).input_tokens || 0, (j.usage || {}).output_tokens || 0).run();
-        if (!r.ok) return err(req, '루리가 사진을 잘 못 봤어요. 잠시 뒤에 다시 해 주세요.', 502);
-        const txt = (j.content || []).map(c => c.text || '').join(''), js = txt.slice(txt.indexOf('{'), txt.lastIndexOf('}') + 1);
-        try { const out = JSON.parse(js); return json(req, { ...out, left: cap - mine - 1 }); } catch { return err(req, '추천을 정리하다 꼬였어요. 한 번만 다시 눌러 주세요.', 502); }
-      }
       // ---- 동료 찾기: 같은 공모전 준비하는 사람끼리 모이기 (2026-10-18 사용자: 같은 사람이 모이는 구조 + 원정대 활성화) ----
       if (p === '/api/crew' && req.method === 'GET') {
         const c = clean(url.searchParams.get('c'), 40), u = await me(req, env);
