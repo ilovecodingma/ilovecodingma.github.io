@@ -202,13 +202,14 @@ TAGS = [
     ('디자인', r'디자인|캐릭터|웹툰|미술|그림|포스터|건축|일러스트|공예|デザイン|イラスト|ロゴ|design'),
     ('영상', r'영상|UCC|사진|숏폼|영화|촬영|릴스|映像|動画|写真|フォト|video'),
     ('논문', r'논문|리포트|학술|paper'),
+    ('요리·레시피', r'요리|레시피|쿠킹|베이킹|제과|제빵|떡볶이|밥상|식단|미식|한식|디저트|바리스타|Cook|cook'),  # 2026-10-18 연구 세션 요청(냉장고 파먹기 연결)
     ('IT·과학', r'(?<![A-Za-z])IT(?![A-Za-z])|소프트웨어|게임|과학|공학|해커톤|(?<![A-Za-z])AI(?![A-Za-z])|코딩|데이터|hack|Hack|プログラム'),
 ]
-CATS = ['문학', '아이디어·정책', '디자인', '영상', '논문', 'IT·과학', '해외', '기타']
+CATS = ['문학', '아이디어·정책', '디자인', '영상', '논문', 'IT·과학', '요리·레시피', '해외', '기타']
 
 NONCONTEST = re.compile(r'recruitment|Recruitment|걷기|트레킹|마라톤|러닝크루|참가자 모집|봉사단|오디션|세미나|설명회|서포터즈|기자단|교육생|강좌|강연|포럼|채용|워크숍|체험단|멘토링|인턴|발대식|토크콘서트|박람회 참가|지식향연|참가자 모집 공고')
 # 2026-10-16 연구 세션 요청: 백일장·글짓기·사생대회·문학상도 공모전으로(지식인 답변 링크용)
-CONTESTY = re.compile(r'공모|백일장|글짓기|사생대회|문학상|시조대회|콩쿠르|응모|수기|선발대회|페스티벌|페스타|챌린지|아카데미 어워드|경진|콘테스트|콘텐스트|어워드|대회|contest|Contest|hack|Hack|Award|award|Challenge|챌린지|コンテスト|コンペ|募集|賞|公募')
+CONTESTY = re.compile(r'공모|경연|미식대전|요리대전|백일장|글짓기|사생대회|문학상|시조대회|콩쿠르|응모|수기|선발대회|페스티벌|페스타|챌린지|아카데미 어워드|경진|콘테스트|콘텐스트|어워드|대회|contest|Contest|hack|Hack|Award|award|Challenge|챌린지|コンテスト|コンペ|募集|賞|公募')
 
 
 def tags_for(field, title, reg):
@@ -251,7 +252,11 @@ def main():
             continue
         if x.get('end_override'):  # 마감 연장 등 공모전 세션 확인값 우선
             x['end'] = x['end_override']
-        if x.get('kind') not in KINDS or x.get('end', '') < TODAY.isoformat():
+        kind = x.get('kind')
+        # 요리경연대회는 위비티에서 이벤트로 분류돼 올 때가 많아 공모전으로 받음 (2026-10-18)
+        if kind == 'event' and re.search(r'요리|레시피|쿠킹|미식', x.get('title', '')) and re.search(r'경연|대회|공모|대전|챌린지', x.get('title', '')):
+            kind = 'contest'
+        if kind not in KINDS or x.get('end', '') < TODAY.isoformat():
             continue
         title = clean(x['title'])
         title = re.sub(r'\s*\d{4}\.\d{2}\.\d{2}\.?\s*$', '', title)
@@ -261,6 +266,10 @@ def main():
         src = source_of(x['url'])
         tp = os.path.join(Q, 'txt', x['id'] + '.txt')
         t = clean(open(tp, encoding='utf-8', errors='ignore').read()) if os.path.exists(tp) else ''
+        # 콘테스트코리아 목록 주소(str_no 없음)로 저장된 건 본문이 목록 페이지라 날짜·상금이 엉뚱함 → 본문 무시, 마감은 master 값
+        listurl = src == 'contestkorea' and 'str_no=' not in x['url']
+        if listurl:
+            t = ''
         anchor = {'wevity': '조회수 :', 'contestkorea': '주최 . 주관', 'thinkyou': '조회수', 'all-con': '공모전/대외활동 정보', 'linkareer': '기업형태'}.get(src)
         ai = t.find(anchor, 150) if anchor else -1
         core = t[ai:] if ai >= 0 else t
@@ -275,7 +284,7 @@ def main():
         if src == 'all-con' and not x.get('force') and not re.search(r'(대학생·일반인|청소년)\s*공모전', t[:900]):
             stat['noncontest'] += 1
             continue
-        if NONCONTEST.search(title) and not x.get('force') and not re.search(r'공모전|경진대회|콘테스트', title):
+        if NONCONTEST.search(title) and not x.get('force') and not re.search(r'공모전|경진대회|콘테스트|경연대회|요리대회', title):
             stat['noncontest'] += 1
             continue
         s, e = parse_dates(src, t)
@@ -288,7 +297,7 @@ def main():
                 continue
         unreliable_end = src in ('contestkorea', 'all-con', 'wevity', 'thinkyou', 'linkareer') or x['reg'] == 'KR'
         if e is None:
-            if unreliable_end and src != 'other':
+            if unreliable_end and src != 'other' and not listurl:
                 continue  # 접수기간 못 읽으면 심사일일 수 있어 제외
             e = datetime.date.fromisoformat(x['end'])
         if e < TODAY:

@@ -25,7 +25,7 @@
 <select id="due" aria-label="마감"><option value="">마감 전체</option><option value="7">7일 이내</option><option value="30">30일 이내</option></select>
 <select id="sort" aria-label="정렬"><option value="rec">추천순</option><option value="end">마감 임박순</option><option value="prize">상금 큰 순</option></select></div>
 <p class="cnt" id="cnt"></p><ul class="list" id="list"></ul><button class="more" id="more" hidden>더 보기</button><script>
-(function(){var IC={"문학": "✍️", "아이디어·정책": "💡", "디자인": "🎨", "영상": "🎬", "논문": "📚", "IT·과학": "💻", "해외": "🌏", "기타": "🧩"},SL={"문학": "literature", "아이디어·정책": "idea", "디자인": "design", "영상": "video", "논문": "paper", "IT·과학": "it", "해외": "global", "기타": "etc"};var $=function(i){return document.getElementById(i)};var items=[],cat="해외",PAGE=40,shown=PAGE;
+(function(){var IC={"요리·레시피": "🍳", "문학": "✍️", "아이디어·정책": "💡", "디자인": "🎨", "영상": "🎬", "논문": "📚", "IT·과학": "💻", "해외": "🌏", "기타": "🧩"},SL={"문학": "literature", "아이디어·정책": "idea", "디자인": "design", "영상": "video", "논문": "paper", "IT·과학": "it", "요리·레시피": "food", "해외": "global", "기타": "etc"};var $=function(i){return document.getElementById(i)};var items=[],cat="해외",PAGE=40,shown=PAGE;
 var n=new Date(),LATE=n.getHours()>=18,T=Math.round(Date.UTC(n.getFullYear(),n.getMonth(),n.getDate())/864e5);
 function dn(s){var p=s.split('-');return Math.round(Date.UTC(+p[0],p[1]-1,+p[2])/864e5)}
 function el(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}

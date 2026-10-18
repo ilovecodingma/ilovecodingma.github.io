@@ -28,9 +28,10 @@ TXT_SRC = [os.path.join(DATA, 'txt'),
 E = html.escape
 
 CATS = [('literature', '문학'), ('idea', '아이디어·정책'), ('design', '디자인'), ('video', '영상'),
-        ('paper', '논문'), ('it', 'IT·과학'), ('global', '해외'), ('etc', '기타')]
+        ('paper', '논문'), ('it', 'IT·과학'), ('food', '요리·레시피'), ('global', '해외'), ('etc', '기타')]
 SLUG = {n: s for s, n in CATS}
 CAT_INTRO = {
+ '요리·레시피': '레시피 공모전, 요리경연대회, 지역 특산물 요리대회처럼 음식으로 응모하는 공모전입니다. 레시피 서류 심사 후 본선에서 직접 조리하는 경우가 많아 재료비·조리 시간·인원 제한과 본선 날짜를 먼저 확인하세요. 지정 식재료(쌀, 과일, 계란 등)를 꼭 써야 하는 대회가 많습니다.',
  '문학': '시·소설·수필·수기·네이밍·슬로건처럼 글로 응모하는 공모전입니다. 분량과 형식(원고지 매수, 글자 수, 파일 형식)이 요강마다 달라 제출 전 반드시 확인해야 합니다. 수기 공모는 실제 경험을 구체적인 장면으로 쓰는 것이, 네이밍·슬로건은 주최 기관이 내세우려는 가치를 짧게 담는 것이 중요합니다.',
  '아이디어·정책': '지자체·공공기관·기업이 정책 제안, 사업 아이디어, 마케팅 기획을 받는 공모전입니다. 국민신문고·국민생각함 같은 공식 창구로 접수하는 경우가 많고, 현황·문제점·개선안·기대효과 순서의 제안서 형식이 일반적입니다. 실현 가능성과 예산 규모를 함께 적으면 심사에서 유리합니다.',
  '디자인': '캐릭터·포스터·일러스트·웹툰·건축·공예 등 시각 작품을 받는 공모전입니다. 해상도, 파일 형식(AI·PSD·PNG), 원본 파일 제출 여부, 저작권 귀속 조건을 꼭 확인하세요. 수상작의 저작권이 주최 측으로 넘어가는 경우가 많습니다.',
@@ -41,6 +42,7 @@ CAT_INTRO = {
  '기타': '위 분야에 속하지 않는 다양한 공모전입니다. 요강의 응모 자격과 제출물을 꼼꼼히 읽어 보세요.',
 }
 TIPS = {
+ '요리·레시피': ['지정 식재료(쌀·과일·계란 등)를 주재료로 썼는지 확인', '레시피는 재료 g·계량과 조리 순서를 사진과 함께', '본선 조리 시간·인원·재료 지참 여부 확인', '완성 사진은 밝은 자연광에서 위·45도 두 컷', '집에 있는 재료로 연습하려면 루리의 냉장고 파먹기 활용'],
  '문학': ['분량(글자 수·원고지 매수)과 파일 형식을 요강 그대로 맞추기', '주제어가 제목과 첫 문단에 드러나게 쓰기', '미발표 창작물 조건 확인(다른 공모전 중복 응모 금지가 흔함)'],
  '아이디어·정책': ['현황 → 문제점 → 개선안 → 기대효과 순서로 정리', '비슷한 기존 정책이 있는지 먼저 검색해 차별점 적기', '소요 예산과 실행 주체를 구체적으로 제시'],
  '디자인': ['요구 해상도·규격·파일 형식 확인', '원본 파일(AI·PSD) 제출 요구 여부 확인', '저작권 귀속·2차 활용 조건 읽기'],
@@ -106,8 +108,8 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False):
         f.write(doc)
 
 
-CAT_OUTFIT = {'문학': 'o_cardigan', '아이디어·정책': 'o_present', '디자인': 'o_gray', '영상': 'o_anchor', '논문': 'o_vest', 'IT·과학': 'o_desk', '해외': 'o_trench', '기타': 'o_suit'}
-CAT_ICON = {'문학': '✍️', '아이디어·정책': '💡', '디자인': '🎨', '영상': '🎬', '논문': '📚', 'IT·과학': '💻', '해외': '🌏', '기타': '🧩'}
+CAT_OUTFIT = {'요리·레시피': 'o_cardigan', '문학': 'o_cardigan', '아이디어·정책': 'o_present', '디자인': 'o_gray', '영상': 'o_anchor', '논문': 'o_vest', 'IT·과학': 'o_desk', '해외': 'o_trench', '기타': 'o_suit'}
+CAT_ICON = {'요리·레시피': '🍳', '문학': '✍️', '아이디어·정책': '💡', '디자인': '🎨', '영상': '🎬', '논문': '📚', 'IT·과학': '💻', '해외': '🌏', '기타': '🧩'}
 
 
 def say(expr, html_, cls=''):
@@ -183,9 +185,10 @@ def load():
         if r.get('prize_first') and not c['pv']:
             c['pv'] = int(r['prize_first']); c['prize'] = f"1등 {int(r['prize_first']) // 10000:,}만원"
     seen, events = set(), []
+    cids = {c['id'] for c in contests}
     for r in rows:
         k = r.get('kind', '')
-        if k not in EV_KIND or r.get('end', '') < TODAY.isoformat():
+        if k not in EV_KIND or r.get('end', '') < TODAY.isoformat() or r['id'] in cids:
             continue
         t = P.clean(r.get('title', ''))[:90]
         if not t or t == 'N/A':
@@ -451,7 +454,7 @@ def build():
         tips = ''.join(f'<li>{E(t)}</li>' for t in TIPS[n])
         body = f'''<p class="bc"><a href="/">홈</a> › {n}</p><section class="dh" data-c="{s}"><span class="ic big">{CAT_ICON[n]}</span><h1>{n} 공모전</h1><p class="lead">진행 중 <b>{len(cl)}건</b> · 마감 임박순</p></section>
 <p>{CAT_INTRO[n]}</p>
-{say(CAT_OUTFIT[n], f'<b>{n} 공모전 응모 팁</b><ul class="chk">{tips}</ul>')}
+{say(CAT_OUTFIT[n], f'<b>{n} 공모전 응모 팁</b><ul class="chk">{tips}</ul>')}{'<a class="lab-cta" href="/fridge/"><b>🍳 루리의 냉장고 파먹기</b><span>집에 있는 재료로 만들 수 있는 레시피 77개 · 요리대회 연습용으로 딱 →</span></a>' if s == 'food' else ''}
 <h2>진행 중 {n} 공모전</h2>{TOOLBAR}<ul class="list" id="list">{''.join(card(c) for c in cl[:60])}</ul><button class="more" id="more" hidden>더 보기</button>'''
         page(f'/cat/{s}/', f'{n} 공모전 모음 (진행 중 {len(cl)}건)', f'{n} 분야 진행 중 공모전 {len(cl)}건 마감 임박순 정리. {CAT_INTRO[n][:70]}',
              body + listing_js(n), [('루리의 줍줍', '/'), (n, f'/cat/{s}/')])
@@ -596,7 +599,7 @@ def fridge_page():
          f'''<p class="bc"><a href="/">홈</a> › 냉장고 파먹기</p><h1>🍳 루리의 냉장고 파먹기</h1>
 {say("o_cardigan", "냉장고 사진을 찍거나 있는 재료를 눌러 주세요. 집밥 레시피 77개 중에 지금 바로 만들 수 있는 걸 골라 드릴게요!")}
 <section id="fridge" aria-label="냉장고 재료로 메뉴 추천"><noscript>자바스크립트가 필요해요.</noscript></section>
-<p class="note">사진은 재료를 찾는 데만 쓰고 저장하지 않아요. 고른 재료는 이 폰에만 저장돼요. 알레르기가 있으면 재료를 꼭 다시 확인해 주세요.</p>
+<a class="lab-cta" href="/cat/food/"><b>🏆 요리·레시피 공모전</b><span>레시피 공모전·요리경연대회 모아 보기 · 상금 받고 요리 실력 뽐내기 →</span></a><p class="note">사진은 재료를 찾는 데만 쓰고 저장하지 않아요. 고른 재료는 이 폰에만 저장돼요. 알레르기가 있으면 재료를 꼭 다시 확인해 주세요.</p>
 <link rel="stylesheet" href="/assets/fridge/fridge.css?v=3"><script defer src="/assets/fridge/fridge.js?v=3"></script>''', [('루리의 줍줍', '/'), ('냉장고 파먹기', '/fridge/')])
 
 
