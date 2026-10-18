@@ -241,6 +241,36 @@ export default {
         }
         return json(req, { ok: true });
       }
+      // ---- 냉장고 사진 → 재료 자동 체크 (Cloudflare Workers AI 공개 모델, 2026-10-18 사용자: 프론티어 AI 말고 모델로) ----
+      if (p === '/api/fridge-scan' && req.method === 'POST') {
+        const m = /^data:image\/(?:jpeg|png|webp);base64,([A-Za-z0-9+/=]+)$/.exec(body.image || '');
+        if (!m || m[1].length > 1400000) return err(req, '사진을 다시 찍어 주세요.');
+        const ip = req.headers.get('CF-Connecting-IP') || '', d = new Date(Date.now() + 9 * 3600e3).toISOString().slice(0, 10), u = await me(req, env);
+        const who = u ? 'u' + u.id : hex(new Uint8Array(await crypto.subtle.digest('SHA-256', new TextEncoder().encode(ip + '|fridge')))).slice(0, 16);
+        const cap = u ? 15 : 5, mine = await count(env, 'SELECT COUNT(*) n FROM fridge_log WHERE day = ? AND who = ?', d, who);
+        if (mine >= cap) return err(req, u ? '사진 인식은 하루 15번까지예요. 재료는 직접 눌러서 골라 주세요!' : '사진 인식은 하루 5번까지예요. 가입하면 15번! 재료는 직접 눌러도 돼요.', 429);
+        if (await count(env, 'SELECT COUNT(*) n FROM fridge_log WHERE day = ?', d) >= 400) return err(req, '오늘 사진 인식이 다 찼어요. 재료를 직접 눌러 주세요!', 429);
+        const ING = { '양파': 'onion', '대파': 'green onion/leek', '감자': 'potato', '당근': 'carrot', '애호박': 'zucchini', '양배추': 'cabbage', '콩나물': 'soybean sprouts', '숙주': 'mung bean sprouts', '시금치': 'spinach', '버섯': 'mushroom',
+          '무': 'white radish', '고추': 'chili pepper', '깻잎': 'perilla leaves', '오이': 'cucumber', '토마토': 'tomato', '상추': 'lettuce', '부추': 'chives', '브로콜리': 'broccoli', '파프리카': 'bell pepper', '고구마': 'sweet potato', '가지': 'eggplant',
+          '돼지고기': 'pork', '소고기': 'beef', '닭고기': 'chicken meat', '베이컨': 'bacon', '햄': 'ham', '스팸': 'Spam can', '소시지': 'sausage', '참치캔': 'canned tuna', '어묵': 'fish cake', '맛살': 'crab stick', '오징어': 'squid', '새우': 'shrimp', '고등어': 'mackerel', '멸치': 'dried anchovy',
+          '달걀': 'eggs', '두부': 'tofu', '우유': 'milk', '치즈': 'cheese', '버터': 'butter', '김치': 'kimchi', '밥': 'cooked rice', '라면': 'instant ramen', '국수': 'noodles', '파스타면': 'pasta', '떡': 'rice cake', '만두': 'dumplings', '식빵': 'sliced bread',
+          '당면': 'glass noodles', '김': 'seaweed (gim)', '미역': 'seaweed (miyeok)', '단무지': 'yellow pickled radish', '고추장': 'gochujang (red pepper paste)', '된장': 'doenjang (soybean paste)', '카레가루': 'curry powder', '케첩': 'ketchup', '마요네즈': 'mayonnaise' };
+        const prompt = 'Look at this photo of a fridge or food ingredients. From the list below, name ONLY the items you can clearly see. Answer with the English names exactly as written, separated by commas, nothing else. If none, answer NONE.\nList: ' + Object.values(ING).join(', ');
+        const bin = Uint8Array.from(atob(m[1]), c => c.charCodeAt(0));
+        const MODEL = '@cf/meta/llama-3.2-11b-vision-instruct';
+        const run = () => env.AI.run(MODEL, { prompt, image: [...bin], max_tokens: 200, temperature: 0.1 });
+        let out;
+        let why = '';
+        try { out = await run(); } catch (e) {
+          why = String(e && e.message || e).slice(0, 200);
+          if (/agree/i.test(String(e && e.message))) { await env.AI.run(MODEL, { prompt: 'agree' }).catch(() => {}); out = await run().catch(e2 => { why = String(e2 && e2.message || e2).slice(0, 200); return null; }); }
+          if (!out) { await env.DB.prepare('INSERT INTO fridge_log (day, ts, who, ok) VALUES (?, ?, ?, 0)').bind(d, now(), who).run(); return json(req, { error: '사진을 잘 못 봤어요. 재료를 직접 눌러 주세요.', why }, 502); }
+        }
+        const txt = String(out.response || out.result || '').toLowerCase();
+        const found = Object.entries(ING).filter(([k, en]) => en.toLowerCase().split(/[\/()]/).map(x => x.trim()).filter(x => x.length > 2).some(x => txt.includes(x))).map(([k]) => k);
+        await env.DB.prepare('INSERT INTO fridge_log (day, ts, who, ok, tout) VALUES (?, ?, ?, 1, ?)').bind(d, now(), who, found.length).run();
+        return json(req, { found, left: cap - mine - 1 });
+      }
       // ---- 동료 찾기: 같은 공모전 준비하는 사람끼리 모이기 (2026-10-18 사용자: 같은 사람이 모이는 구조 + 원정대 활성화) ----
       if (p === '/api/crew' && req.method === 'GET') {
         const c = clean(url.searchParams.get('c'), 40), u = await me(req, env);

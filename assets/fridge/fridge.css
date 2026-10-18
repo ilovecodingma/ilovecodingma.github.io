@@ -23,3 +23,7 @@
 .fr-cat button{border:1px solid #e5e7eb;background:#fff;border-radius:999px;padding:7px 11px;font-size:14px;cursor:pointer}.fr-cat button.on{background:#ecfdf5;border-color:#10b981;color:#047857;font-weight:800}
 .fr-clear{position:absolute;top:12px;right:12px;border:0;background:none;color:var(--mu);font-size:12.5px;text-decoration:underline;cursor:pointer}
 .fr-m header em.t{color:#db2777}.fr-more summary{cursor:pointer;font-weight:800;color:#7c3aed;margin:4px 0 10px}
+/* v3: 사진 자동 체크 */
+.fr-cam{display:grid;gap:3px;text-align:center;cursor:pointer;margin:0 0 10px;padding:16px;border-radius:18px;background:linear-gradient(135deg,#f97316,#db2777);color:#fff;box-shadow:0 8px 20px rgba(219,39,119,.22)}.fr-cam b{font-size:17px}.fr-cam small{font-size:12.5px;opacity:.9}
+.fr-scan{font-size:14px;border-radius:12px;padding:10px 12px;margin:0 0 10px;line-height:1.55}.fr-scan.wait{background:#f5f3ff;color:#5b21b6}.fr-scan.ok{background:#ecfdf5;color:#065f46}.fr-scan.err{background:#fff1f2;color:#be123c}
+.fr-cat button.new{box-shadow:0 0 0 2px #f97316}

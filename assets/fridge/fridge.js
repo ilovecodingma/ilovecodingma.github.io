@@ -24,7 +24,8 @@
 <details${big ? ' open' : ''}><summary>만드는 법</summary><ol>${x.r.s.map(s => `<li>${esc(s)}</li>`).join('')}</ol>${x.r.opt.length ? `<p class="fr-tip">💡 있으면 더 좋아요: ${x.r.opt.map(esc).join(', ')}</p>` : ''}</details></article>`;
   function paint() {
     const cats = Object.entries(D.ing).map(([c, xs]) => `<div class="fr-cat"><small>${esc(c)}</small><div>${xs.map(x => `<button data-i="${esc(x)}" class="${have.has(x) ? 'on' : ''}">${esc(x)}</button>`).join('')}</div></div>`).join('');
-    ROOT.innerHTML = `<section class="fr-pick"><h2>🧊 냉장고에 뭐 있어요? <small class="fr-n">${have.size}개 골랐어요</small></h2><p class="fr-basic">기본양념(${esc(D.basic)})은 있다고 칠게요.</p>${cats}
+    ROOT.innerHTML = `<label class="fr-cam"><input type="file" accept="image/*" capture="environment" hidden><b>📸 냉장고 사진 찍어서 자동 체크</b><small>사진 속 재료를 찾아 아래에 체크해 드려요 · 틀린 건 눌러서 고치면 돼요</small></label><p class="fr-scan" hidden></p>
+<section class="fr-pick"><h2>🧊 냉장고에 뭐 있어요? <small class="fr-n">${have.size}개 골랐어요</small></h2><p class="fr-basic">기본양념(${esc(D.basic)})은 있다고 칠게요.</p>${cats}
 <button class="fr-clear">비우기</button></section>
 <div class="fr-opts"><div class="fr-o"><small>오늘 기분은?</small><div>${MOODS.map(m => `<button data-m="${m}" class="${mood === m ? 'on' : ''}">${m === '아무거나' ? m : '#' + m}</button>`).join('')}</div></div>
 <div class="fr-o"><small>시간은?</small><div>${TIMES.map(([v, l]) => `<button data-t="${v}" class="${maxMin === v ? 'on' : ''}">${l}</button>`).join('')}</div></div></div>
@@ -32,8 +33,27 @@
     ROOT.querySelectorAll('[data-i]').forEach(b => b.onclick = () => { const i = b.dataset.i; have.has(i) ? have.delete(i) : have.add(i); b.classList.toggle('on'); save(); ROOT.querySelector('.fr-n').textContent = have.size + '개 골랐어요'; result(); });
     ROOT.querySelectorAll('[data-m]').forEach(b => b.onclick = () => { mood = b.dataset.m; ROOT.querySelectorAll('[data-m]').forEach(x => x.classList.toggle('on', x === b)); result(); });
     ROOT.querySelectorAll('[data-t]').forEach(b => b.onclick = () => { maxMin = +b.dataset.t; ROOT.querySelectorAll('[data-t]').forEach(x => x.classList.toggle('on', x === b)); result(); });
+    ROOT.querySelector('.fr-cam input').onchange = e => scan(e.target.files[0]);
     ROOT.querySelector('.fr-clear').onclick = () => { have.clear(); save(); paint(); };
     result();
+  }
+  // 사진 → 서버(Cloudflare Workers AI 공개 모델)가 재료 이름만 돌려줌 → 칩 자동 체크. 사진은 저장 안 함
+  function scan(f) {
+    if (!f) return; const msg = ROOT.querySelector('.fr-scan'), API = document.body.dataset.api || 'https://jupjup-api.sung2011103.workers.dev';
+    msg.hidden = false; msg.className = 'fr-scan wait'; msg.textContent = '🔍 루리가 냉장고를 들여다보는 중…';
+    const im = new Image(); im.onload = async () => {
+      const r = Math.min(1, 1024 / Math.max(im.width, im.height)), c = document.createElement('canvas'); c.width = Math.round(im.width * r); c.height = Math.round(im.height * r);
+      c.getContext('2d').drawImage(im, 0, 0, c.width, c.height); URL.revokeObjectURL(im.src);
+      let tk = ''; try { tk = localStorage.getItem('jupjup_tok') || ''; } catch {}
+      try {
+        const res = await fetch(API + '/api/fridge-scan', { method: 'POST', headers: { 'Content-Type': 'application/json', ...(tk ? { Authorization: 'Bearer ' + tk } : {}) }, body: JSON.stringify({ image: c.toDataURL('image/jpeg', 0.8) }) });
+        const d = await res.json().catch(() => ({})); if (!res.ok) throw new Error(d.error || '사진을 잘 못 봤어요.');
+        const nw = d.found.filter(x => !have.has(x)); d.found.forEach(x => have.add(x)); save(); paint(); ga('fridge_scan', { found: d.found.length });
+        const m2 = ROOT.querySelector('.fr-scan'); m2.hidden = false; m2.className = 'fr-scan ok';
+        m2.innerHTML = d.found.length ? `📸 사진에서 <b>${d.found.map(esc).join(', ')}</b>${nw.length < d.found.length ? '' : ''}을(를) 찾았어요! 틀린 건 눌러서 빼고, 빠진 건 더 눌러 주세요.` : '🤔 사진에서 재료를 못 찾았어요. 밝은 곳에서 가까이 찍거나, 아래에서 직접 눌러 주세요.';
+        nw.forEach(x => { const b = ROOT.querySelector(`[data-i="${x}"]`); if (b) b.classList.add('new'); });
+      } catch (e) { msg.className = 'fr-scan err'; msg.textContent = e.message; }
+    }; im.src = URL.createObjectURL(f);
   }
   let gaT;
   function result() {
