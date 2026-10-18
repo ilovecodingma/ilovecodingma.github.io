@@ -1149,14 +1149,14 @@ def kw_pages():
 def ailog_page(live, nurls):
     # AI 제작 로그 (2026-10-18 사용자: "AI로 이 사이트 어케 만들었는지 다 공개", "홍보 마케팅은 기밀, 사이트 쪽만", "핵심은 비용 0원으로 그럴듯한 운영")
     a = json.load(open(os.path.join(HERE, 'ailog.json'), encoding='utf-8'))
+    first = a.get('start', '2026-10-17')   # 2026-10-18 사용자: "2일이야" — 루리의 줍줍 제작 시작일 기준
     try:
-        commits = int(subprocess.run(['git', 'rev-list', '--count', 'HEAD'], cwd=ROOT, capture_output=True, text=True).stdout.strip() or 0)
-        first = subprocess.run(['git', 'log', '--reverse', '--format=%ad', '--date=format:%Y-%m-%d'], cwd=ROOT, capture_output=True, text=True).stdout.split()[0]
+        commits = int(subprocess.run(['git', 'rev-list', '--count', f'--since={first}T00:00', 'HEAD'], cwd=ROOT, capture_output=True, text=True).stdout.strip() or 0)
     except Exception:
-        commits, first = 0, '2026-10-13'
+        commits = 0
     npage = sum(1 for _r, _d, fs in os.walk(ROOT) if 'index.html' in fs and '.git' not in _r)
     days = (TODAY - datetime.date.fromisoformat(first)).days + 1
-    stat = [('제작 기간', f'{days}일', f'{first[5:].replace("-", "/")} 첫 커밋부터'), ('코드 변경(커밋)', f'{commits:,}번', 'AI가 고치고 올린 횟수'),
+    stat = [('제작 기간', f'{days}일', f'{first[5:].replace("-", "/")} 시작'), ('코드 변경(커밋)', f'{commits:,}번', 'AI가 고치고 올린 횟수'),
             ('페이지', f'{npage:,}개', '매시간 다시 만들어요'), ('진행 중 공모전', f'{len(live):,}건', '상세 페이지 자동 생성'),
             ('매시간 자동 작업', '6가지', '뉴스·커뮤니티·애널리스트·키워드·빌드·배포'), ('서버·API 비용', '0원', '무료 한도 + 내 PC')]
     st = ''.join(f'<div><small>{E(k)}</small><b>{E(v)}</b><span>{E(d)}</span></div>' for k, v, d in stat)
