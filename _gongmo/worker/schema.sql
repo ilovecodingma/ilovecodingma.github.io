@@ -150,3 +150,7 @@ CREATE INDEX IF NOT EXISTS post_likes_post ON post_likes(post_id);
 CREATE TABLE IF NOT EXISTS seekers (user_id INTEGER NOT NULL, contest_id TEXT NOT NULL, contest_title TEXT NOT NULL DEFAULT '', roles TEXT NOT NULL DEFAULT '', intro TEXT NOT NULL DEFAULT '', updated INTEGER NOT NULL, PRIMARY KEY (user_id, contest_id));
 CREATE INDEX IF NOT EXISTS seekers_c ON seekers(contest_id, updated DESC);
 CREATE TABLE IF NOT EXISTS crew_invites (team_id INTEGER NOT NULL, user_id INTEGER NOT NULL, created INTEGER NOT NULL, PRIMARY KEY (team_id, user_id));
+
+-- 냉장고 메뉴 추천 사용 기록 (하루 한도·비용 확인용, 사진은 저장 안 함)
+CREATE TABLE IF NOT EXISTS fridge_log (id INTEGER PRIMARY KEY, day TEXT NOT NULL, ts INTEGER NOT NULL, who TEXT NOT NULL, ok INTEGER NOT NULL DEFAULT 1, tin INTEGER DEFAULT 0, tout INTEGER DEFAULT 0);
+CREATE INDEX IF NOT EXISTS fridge_day ON fridge_log(day, who);

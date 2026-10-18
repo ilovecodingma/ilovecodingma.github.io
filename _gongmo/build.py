@@ -467,11 +467,12 @@ def build():
     guides(live)
     qa_pages(live)
     prep_page()
+    fridge_page()
     community(live)
     lab_urls = lab() or []
     me_pages()
     statics(len(live), len(events))
-    urls = ['/', '/apply/', '/event/', '/guide/', '/ssul/'] + lab_urls + [f'/ssul/{x["slug"]}/' for x in ss] + [f'/a/{a["id"]}/' for a in aps] + [f'/cat/{s}/' for s, _ in CATS] + [f'/guide/{g[0]}/' for g in GUIDES] + ['/qa/', '/prep/'] + [f'/guide/{q["slug"]}/' for q in QA] + \
+    urls = ['/', '/apply/', '/event/', '/guide/', '/ssul/'] + lab_urls + [f'/ssul/{x["slug"]}/' for x in ss] + [f'/a/{a["id"]}/' for a in aps] + [f'/cat/{s}/' for s, _ in CATS] + [f'/guide/{g[0]}/' for g in GUIDES] + ['/qa/', '/prep/', '/fridge/'] + [f'/guide/{q["slug"]}/' for q in QA] + \
            ['/about/', '/privacy/', '/terms/', '/contact/'] + [f'/c/{c["id"]}/' for c in contests] + sorted((f'/v/{d}/' for d in os.listdir(os.path.join(ROOT, 'v')) if os.path.isfile(os.path.join(ROOT, 'v', d, 'index.html'))), key=lambda u: int(u.split('/')[2]) if u.split('/')[2].isdigit() else 0)
     global NEW_URLS
     sm = os.path.join(ROOT, 'sitemap.xml')
@@ -587,6 +588,16 @@ def prep_page():
 </section><link rel="stylesheet" href="/assets/prep/prep.css?v=3"><script defer src="/assets/prep/prep.js?v=3"></script>'''
     page('/prep/', '루리의 공모전 준비실 — 마감 역산 일정·체크리스트·꿀팁', '공모전을 고르면 마감일에 맞춘 준비 일정과 장르별 체크리스트를 만들어 줘요. 슬로건·수기·디자인·영상·사진·정책 제안 꿀팁과 분량 계산기까지.',
          body, [('루리의 줍줍', '/'), ('준비실', '/prep/')])
+
+
+def fridge_page():
+    # 루리의 냉장고 파먹기 (2026-10-18 사용자: 냉장고 사진 찍어서 오늘 메뉴 추천, Claude API)
+    page('/fridge/', '루리의 냉장고 파먹기 — 냉장고 사진으로 오늘 메뉴 추천', '냉장고 사진 한 장만 찍으면 루리가 재료를 알아보고 지금 바로 만들 수 있는 오늘 메뉴 3개와 만드는 법을 알려 줘요.',
+         f'''<p class="bc"><a href="/">홈</a> › 냉장고 파먹기</p><h1>🍳 루리의 냉장고 파먹기</h1>
+{say("o_cardigan", "냉장고 문 열고 사진 한 장만 찍어 주세요. 있는 재료로 오늘 뭐 해 먹을지 루리가 골라 드릴게요!")}
+<section id="fridge" aria-label="냉장고 사진으로 메뉴 추천"><noscript>자바스크립트가 필요해요.</noscript></section>
+<p class="note">사진은 메뉴 추천에만 쓰고 저장하지 않아요. 알레르기가 있으면 재료를 꼭 다시 확인해 주세요.</p>
+<link rel="stylesheet" href="/assets/fridge/fridge.css?v=1"><script defer src="/assets/fridge/fridge.js?v=1"></script>''', [('루리의 줍줍', '/'), ('냉장고 파먹기', '/fridge/')])
 
 
 def qa_card(q):

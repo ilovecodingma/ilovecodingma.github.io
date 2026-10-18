@@ -1,0 +1,19 @@
+/* 루리의 냉장고 파먹기 */
+#fridge{max-width:640px;margin:0 auto}#fridge [hidden]{display:none!important}
+.fr-shot{display:block;position:relative;border:2px dashed #c4b5fd;border-radius:20px;background:linear-gradient(135deg,#f5f3ff,#ecfeff);min-height:170px;cursor:pointer;overflow:hidden}
+.fr-ph{position:absolute;inset:0;display:grid;place-content:center;text-align:center;gap:4px}.fr-ph b{font-size:20px;color:#5b21b6}.fr-ph small{color:var(--mu)}
+.fr-shot.has{border-style:solid}.fr-shot img{display:block;width:100%;max-height:340px;object-fit:cover}.fr-shot.has .fr-ph{inset:auto 10px 10px auto;background:rgba(255,255,255,.92);border-radius:999px;padding:6px 12px}.fr-shot.has .fr-ph b{font-size:13px}
+.fr-opts{display:grid;gap:10px;margin:14px 0}.fr-o small{display:block;font-size:12.5px;font-weight:800;color:var(--mu);margin-bottom:5px}.fr-o div{display:flex;flex-wrap:wrap;gap:6px}
+.fr-o button{border:1px solid #ddd6fe;background:#fff;border-radius:999px;padding:8px 13px;font-size:14px;font-weight:700;color:#5b21b6;cursor:pointer}.fr-o button.on{background:#7c3aed;border-color:#7c3aed;color:#fff}
+.fr-go{width:100%;border:0;border-radius:16px;padding:16px;font-size:17px;font-weight:900;color:#fff;background:linear-gradient(135deg,#f97316,#db2777);cursor:pointer;box-shadow:0 8px 20px rgba(219,39,119,.25)}.fr-go:disabled{opacity:.45;box-shadow:none}
+.fr-err{color:#e11d48;font-weight:700;font-size:14px;background:#fff1f2;border-radius:12px;padding:10px 12px}
+.fr-wait{display:flex;align-items:center;gap:12px;margin:18px 0;background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:12px}.fr-wait img{width:64px;height:64px;object-fit:cover;object-position:top;border-radius:12px}.fr-wait span{display:inline-block;animation:frb 1s infinite alternate}
+@keyframes frb{to{transform:translateY(-4px)}}
+.fr-ing{margin:18px 0 6px;background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:12px 14px}.fr-ing h2,.fr-h{font-size:17px;margin:0 0 8px}.fr-h{margin:18px 0 8px}.fr-ing h2 small{font-size:12px;color:var(--mu)}
+.fr-ing p span,.fr-use span{display:inline-block;margin:0 5px 5px 0;background:#ecfdf5;color:#047857;border-radius:999px;padding:4px 10px;font-size:13px;font-weight:700}.fr-use span.no{background:#fff7ed;color:#c2410c}
+.fr-note{font-size:14px;color:#6b21a8;background:#faf5ff;border-radius:12px;padding:10px 12px;margin:8px 0 0}
+.fr-m{background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:14px;margin:0 0 10px;box-shadow:var(--sh)}.fr-m.top{border:2px solid #f9a8d4}
+.fr-m header{display:flex;gap:12px;align-items:center}.fr-e{font-size:34px;width:56px;height:56px;display:grid;place-items:center;background:#fff7ed;border-radius:16px;flex:none}.fr-m h3{margin:0;font-size:18px}
+.fr-m header p{margin:3px 0 0}.fr-m header em{font-style:normal;font-size:12.5px;font-weight:800;color:#7c3aed;margin-right:8px}.fr-why{font-size:14.5px;margin:10px 0 6px}
+.fr-m details summary{cursor:pointer;font-weight:800;color:#db2777;font-size:14px}.fr-m ol{margin:8px 0 0;padding-left:20px;font-size:14.5px;line-height:1.65}.fr-tip{font-size:13.5px;background:#fefce8;border-radius:10px;padding:8px 10px;margin:8px 0 0}
+.fr-end{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:10px}.fr-end button{border:1px solid #ddd6fe;background:#faf5ff;color:#5b21b6;font-weight:800;border-radius:12px;padding:12px 6px;font-size:14px;cursor:pointer}.fr-left{text-align:center;font-size:12.5px;color:var(--mu)}
