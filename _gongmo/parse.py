@@ -214,7 +214,7 @@ CONTESTY = re.compile(r'공모|경연|미식대전|요리대전|백일장|글짓
 
 def tags_for(field, title, reg):
     s = field + ' ' + title
-    out = [n for n, rx in TAGS if re.search(rx, s)]
+    out = [n for n, rx in TAGS if re.search(rx, title if n == '요리·레시피' else s)]  # 요리는 제목만(분야명 '요리•뷰티•배우•오디션' 오분류 방지)
     if reg != 'KR':
         out.append('해외')
     return out or ['기타']
