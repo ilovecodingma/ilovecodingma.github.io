@@ -4,7 +4,7 @@
 사용: python _gongmo/build.py [--push]
 원본: 바탕화면 공모전_2026/주말큐_master.jsonl + _gongmo/txt/<id>.txt(공고 본문 캐시, 비공개)
 """
-import json, os, re, sys, html, shutil, datetime, subprocess, hashlib, time
+import collections, json, os, re, sys, html, shutil, datetime, subprocess, hashlib, time
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import parse as P
 
@@ -89,6 +89,23 @@ NAV = [('apply', '청약·신청'), ('ssul', '썰'), ('event', '경품·용돈')
 PAGE_HASH, NOINDEX = {}, set()
 
 
+PAGE_INTRO = {k: f'<section class="pg-intro"><h2>{h}</h2>{v}</section>' for k, (h, v) in {  # 2026-10-18 애드센스 보강: 목록·홈에 운영자가 쓴 안내문
+ '/': ('루리의 줍줍은 어떤 곳인가요?', '<p>루리의 줍줍은 개인 개발자 한 명이 AI와 함께 만들고 운영하는 생활 정보 사이트예요. 매일 쏟아지는 기사·리포트·공고를 그대로 옮기지 않고, 같은 내용끼리 묶어 숫자를 다시 계산한 뒤 「그래서 나한테 무슨 뜻인지」를 정리하는 게 목표예요.</p><ul class="chk"><li><b>🕵️ 이슈</b>: 언론사 15곳 기사를 사건별로 묶어 몇 곳이 보도했는지, 출처가 실명인지, 제목 속 숫자가 본문에 있는지 같은 확인 신호로 점수를 매겨요. 진실 판정이 아니라 「더 확인해 볼 곳」을 알려 주는 점수예요.</li><li><b>📊 머니</b>: 증권사 리포트 기사 속 목표가·투자의견을 노드로 쪼개 종목별로 상향·하향을 다시 셉니다. 투자 권유가 아니라 의견 분포를 보여 주는 정리예요. 세금·대출 계산기와 2026년 투자 정책 표도 있어요.</li><li><b>🏆 공모전</b>·<b>🍳 생활</b>: 마감·상금·자격을 같은 형식으로 정리하고, 같은 분야와 비교한 분석과 준비 일정을 붙여요. 지원금·청약·경품 이벤트도 마감순으로 모아요.</li></ul><p>모든 자동 정리에는 원문 링크를 함께 달고, 틀린 정보는 <a href="/contact/">문의</a>로 받으면 바로 고쳐요. 만드는 과정은 <a href="/ailog/">AI 제작 로그</a>에 공개하고 있어요.</p>'),
+ '/guide/': ('응모 가이드 읽는 법', '<p>공모전을 처음 내 보는 분부터 여러 번 떨어져 본 분까지, 루리가 실제 공고와 수상작을 보며 정리한 글이에요. 제안서 구성, 수기·문학 분량 맞추기, 영상 저작권, 상금 세금(기타소득 22%)과 수상 사칭 사기 구별법처럼 응모 전후에 자주 묻는 것들을 다뤄요. 글마다 관련 공모전 목록을 붙여 두었으니 읽고 바로 골라 보세요.</p>'),
+ '/qa/': ('고민 해결은 이렇게 만들어요', '<p>사이트 챗봇과 문의로 실제 받은 질문 가운데 여러 사람이 비슷하게 묻는 것을 골라 답을 정리해요. 청년 지원금 자격, 공모전 준비 순서, 청약 가점처럼 공식 기준이 있는 질문은 정부24·청약홈 같은 공식 안내를 확인한 뒤 써요. 개인 사정에 따라 답이 달라지는 부분은 「어디에 물어보면 되는지」까지 적어 두어요.</p>'),
+ '/mag/': ('루리의 이슈 리딩이란', '<p>하루에 한 장, 정치 이슈 팩트 감별 결과와 커뮤니티 화제, 마감 임박 공모전, 새 지원금을 한 번에 훑어보는 데일리 매거진이에요. 기사 제목을 옮기는 대신 「몇 곳이 보도했고 무엇이 아직 확인되지 않았는지」를 짧게 정리하고, 지난 호도 날짜별로 다시 볼 수 있어요.</p>'),
+ '/kw/': ('인기 키워드는 이렇게 골라요', '<p>구글 트렌드와 실시간 검색어 자료에서 지금 검색이 몰리는 말을 모으고, 같은 시간 언론 보도와 맞춰 「왜 떴는지」를 붙여요. 사건·사고, 연예인 사생활, 혐오성 키워드는 일부러 빼요. 키워드가 이틀 넘게 이어지면 추세선으로 얼마나 오래 화제인지도 보여 드려요.</p>'),
+ '/hot/': ('핫이슈 고르는 기준', '<p>검색 급상승과 언론 보도가 함께 몰린 이슈 가운데 <b>내 돈·내 생활에 바로 영향을 주는 것</b>만 골라요. 청약·지원금·세금·금리·의료·임금처럼 「나한테 달라지는 점」이 있는 이슈에는 관련 계산기와 신청처를 붙이고, 정치 공방이나 사건·사고는 넣지 않아요. 48시간이 지나면 지난 이슈로 내려가요.</p>'),
+ '/satire/': ('루리 풍자에 대해', '<p>그날 화제가 된 증시·뉴스를 루리가 한 컷 만평으로 그려요. 특정 개인을 조롱하지 않고, 상황의 아이러니를 짚는 걸 원칙으로 해요. 이미지는 직접 만든 AI 그림이고, 지난 풍자도 날짜별로 모아 두었어요.</p>'),
+ '/all/': ('전체 메뉴 안내', '<p>루리의 줍줍은 이슈·머니·공모전·생활·AI 로그 다섯 테마로 나뉘어 있어요. 테마마다 매시간 자동으로 갱신되는 정리 페이지와, 직접 쓴 가이드·계산기가 섞여 있어요. 찾는 메뉴가 없으면 화면 아래 루리 챗봇에게 물어보세요.</p>'),
+ '/event/': ('경품 이벤트 볼 때 알아 둘 것', '<p>기업·기관 SNS와 이벤트 사이트에 올라온 경품 이벤트를 매시간 모아 마감순으로 정리해요. 댓글 한 줄·퀴즈·설문처럼 1~5분이면 끝나는 것을 위로 올려요. 당첨됐다며 개인정보나 배송비·세금 송금을 먼저 요구하는 연락은 사기일 가능성이 크니, 꼭 공식 계정의 발표 글과 대조해 보세요. 경품이 5만원을 넘으면 제세공과금(22%)을 낼 수 있어요.</p>'),
+ '/fridge/': ('냉장고 파먹기 사용법', '<p>집에 있는 재료를 고르면 루리가 정리한 집밥 레시피 중 지금 바로 만들 수 있는 메뉴를 먼저 보여 드려요. 재료 하나만 더 사면 되는 메뉴도 함께 알려 줘서, 장보기 목록을 줄일 수 있어요. 레시피는 1~2인분 기준이고 조리 시간과 난이도를 함께 적었어요.</p>'),
+ '/lab/': ('수상 연구소는 이렇게 분석해요', '<p>슬로건·표어·네이밍 공모전의 실제 수상작을 모아 글자 수, 운율, 대구, 핵심어 위치 같은 구조로 하나씩 풀어 봐요. 수상작을 베끼는 게 아니라 「왜 뽑혔는지」를 알아보는 곳이에요. 내 문구를 넣으면 같은 기준으로 진단해 드려요.</p>'),
+ '/apply/': ('청약·지원금 신청 전에', '<p>여기 모은 일정은 청약홈·LH·지자체·정부24 공고를 바탕으로 마감순으로 정리했어요. 같은 지원금이라도 지역·나이·소득 기준이 달라 신청 전에 자격부터 확인해야 해요. 청약은 <a href="/apply/recommend/">청약 추천</a>에서 내 가점을 먼저 계산해 보세요.</p>'),
+ '/contest/': ('공모전 추천은 이렇게 해요', '<p>진행 중인 공모전을 마감·상금·분야·제출물로 정리해 두고, 내가 고른 조건에 맞는 것부터 보여 줘요. 상금이 큰 것만이 아니라 「준비 시간 대비 할 만한 것」을 위로 올리는 게 루리의 기준이에요. 각 공모전 페이지에는 같은 분야와 비교한 분석, 오늘 기준 준비 일정을 붙여 두었어요.</p>'),
+}.items()}
+
+
 def page(path, title, desc, body, crumbs=None, ld=None, full_title=False, noindex=False):
     url = SITE + path
     TH = theme_of(path)
@@ -118,7 +135,7 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False, noinde
 <meta name="theme-color" content="{TH[3] if TH else '#5b21b6'}">
 <link rel="icon" href="/favicon.ico?v=5" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png?v=5"><link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png?v=5"><link rel="manifest" href="/site.webmanifest"><link rel="alternate" type="application/rss+xml" title="루리의 줍줍" href="/rss.xml">
 <link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="/assets/gm.css?v=6">{('<link rel="stylesheet" href="/assets/chat/ruri-chat.css?v=7">') if not (TH and TH[0] == 'ai') else ''}{COMM_TAGS}{('<script type="module" src="/assets/chat/ruri-chat.js?v=11"></script>') if not (TH and TH[0] == 'ai') else ''}<script defer src="/assets/app/app.js?v=3"></script>
+<link rel="stylesheet" href="/assets/gm.css?v=12">{('<link rel="stylesheet" href="/assets/chat/ruri-chat.css?v=7">') if not (TH and TH[0] == 'ai') else ''}{COMM_TAGS}{('<script type="module" src="/assets/chat/ruri-chat.js?v=11"></script>') if not (TH and TH[0] == 'ai') else ''}<script defer src="/assets/app/app.js?v=3"></script>
 {ldh}
 {GTAG}
 </head><body data-th="{TH[0] if TH else 'hub'}"{(' data-api="' + COMM_API + '"') if COMM_API else ''}>
@@ -126,7 +143,7 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False, noinde
 <nav class="th-sw w" aria-label="테마">{"".join(f'<a href="{t[4]}" style="--tc:{t[3]}"{" class=on" if TH and TH[0] == t[0] else ""}>{t[2]} {t[1]}</a>' for t in THEMES)}</nav>
 {('<nav class="tb w" aria-label="' + TH[1] + ' 메뉴">' + "".join(f'<a href="{u}"{" class=on" if (path == u or (u != TH[4] and path.startswith(u))) else ""}>{n}</a>' for u, n in TH[5]) + '</nav>') if TH else ''}</header>
 <main class="w">
-{body}
+{body}{PAGE_INTRO.get(path, '')}
 </main>
 <footer class="ft"><div class="w ft-in"><div class="ft-b"><img class="av" src="/assets/ruri/avatar.webp" width="56" height="56" alt="루리" loading="lazy"><div><b>루리의 줍줍</b><p>마감 놓치지 마세요! 매일 아침 새 공모전을 정리해 둘게요.</p><p class="ft-m">문의 <a href="mailto:{MAIL}">{MAIL}</a>{"" if PARTNER == MAIL else f' · 제휴 <a href="mailto:{PARTNER}">{PARTNER}</a>'}</p></div></div>
 <p class="ft-l"><a href="/about/">소개</a><a href="/ailog/">🤖 AI 제작 로그</a><a href="/news/">🕵️ 이슈 감별</a><a href="/app/">📲 앱·알림</a><a href="/prep/">준비실</a><a href="/qa/">고민 해결</a><a href="/guide/">응모 가이드</a><a href="/event/">경품 이벤트</a><a href="/privacy/">개인정보처리방침</a><a href="/terms/">이용약관</a><a href="/contact/">문의</a></p>
@@ -254,6 +271,113 @@ def card(c):
             f'<p class="o">{E(c["org"])}</p><p class="pd">접수 {(ddot(c["start"])[5:] + " ~ ") if c.get("start") else "~ "}{ddot(c["end"])[5:]}</p><div class="tags">{pz}{tg}</div></div></a></li>')
 
 
+ELIG_NOTE = [  # 응모 자격 글자 → 준비할 것 (2026-10-18 애드센스 보강: 공모전마다 다른 해설)
+    (r'제한\s?없|누구나|전\s?국민|일반\s?국민', '나이·지역 제한이 없어 누구나 낼 수 있어요. 다만 1인당 응모 편수 제한이 있는지 공고에서 확인하세요.'),
+    (r'외국인', '외국인도 낼 수 있게 열려 있어요. 수상 시 외국인등록증 등 신분 확인 서류를 요구할 수 있어요.'),
+    (r'대학원생|대학생', '대학(원)생이 대상에 들어 있어요. 수상 후 재학·휴학 증명서를 요구하는 경우가 많으니 미리 발급해 두세요.'),
+    (r'청소년|초등|중학|고등|유치원', '학생부가 따로 있을 수 있어요. 미성년자는 보호자 동의서가 필요한 경우가 많아요.'),
+    (r'거주|도민|시민|군민|구민|지역', '지역 거주자로 제한될 수 있어요. 주민등록상 주소나 재직·재학지가 기준인지 확인하세요.'),
+    (r'팀|공동|2인|3인', '팀이나 공동 작품도 받아요. 팀 응모는 대표자 한 명이 접수하고 상금을 나누는 방식이 흔해요.'),
+]
+EFFORT_NOTE = {'영상': '영상은 길이(초)·해상도·파일 형식(mp4)과 음원·폰트 저작권이 심사 전에 가장 많이 걸리는 부분이에요. 무료 음원도 출처를 적어 두세요.',
+               '원고': '원고는 분량 기준(글자 수·원고지 매수)과 파일 형식(hwp·docx·pdf)을 먼저 맞추세요. 분량을 넘기면 심사에서 빠지는 경우가 있어요.',
+               '아이디어 제안서': '제안서는 현황 → 문제점 → 개선안 → 기대효과 순서가 기본이에요. 이미 시행 중인 정책과 겹치지 않는지 검색해 보고 차별점을 한 줄로 적어 두세요.',
+               '디자인': '디자인은 원본 파일(ai·psd)과 미리보기(jpg·png)를 함께 내라는 공고가 많아요. 폰트·이미지 라이선스를 꼭 확인하세요.',
+               '사진': '사진은 촬영 원본(EXIF 포함)을 요구하는 경우가 많고, 사람이 나오면 초상권 동의가 필요해요. 과한 보정은 감점될 수 있어요.',
+               '기획서': '기획서는 목표·대상·실행 방법·예산·일정을 한 장 요약으로 먼저 보여 주면 심사위원이 읽기 쉬워요.',
+               '실물 출품': '실물 출품은 접수 기간 안에 도착해야 하는지(도착 기준) 보낸 날짜 기준인지 확인하고, 포장·배송 기간을 넉넉히 잡으세요.'}
+GONE = {}
+
+
+def gone_pages():
+    """한 번 만든 /c/·/a/ 주소는 데이터에서 빠져도 「마감」 안내로 남긴다(검색 제외). 2026-10-18 애드센스 심사 중 404 방지."""
+    G = os.path.join(HERE, 'gone_pages.json')
+    old = json.load(open(G, encoding='utf-8')) if os.path.exists(G) else {}
+    cur = set(GONE)
+    old.update(GONE)
+    for u, (t, back, bn, end) in old.items():
+        if u in cur:
+            continue
+        msg = f'아쉽지만 끝났어요. <a href="{back}">진행 중인 {E(bn)}</a>을 봐 주세요!'
+        page(u, f'{t} (마감)', f'{t} — 접수가 끝났어요. 진행 중인 {bn}을 확인하세요.',
+             f'<p class="bc"><a href="/">홈</a> › <a href="{back}">{E(bn)}</a></p><h1>{E(t)}</h1><p class="warn">{ddot(end)}에 마감된 공고예요. 정보가 더 이상 갱신되지 않아요.</p>'
+             + say('sad', msg), [('루리의 줍줍', '/'), (bn, back)], noindex=True)
+    json.dump(old, open(G, 'w', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))
+
+
+def auto_thin(urls):
+    """빌드가 끝난 뒤 상세 페이지의 고유 본문을 세어 200자 미만이면 검색 제외로 돌린다(adsense_audit 와 같은 셈법)."""
+    import adsense_audit as A
+    DET = ('/c/', '/a/', '/lab/', '/kw/', '/analyst/s/', '/analyst/coin/', '/money/tools/', '/hot/', '/satire/', '/mag/', '/ssul/', '/guide/')
+    got, freq = {}, collections.Counter()
+    for u in urls:
+        f = os.path.join(ROOT, u.strip('/'), 'index.html')
+        if not os.path.exists(f):
+            continue
+        doc = open(f, encoding='utf-8').read()
+        lines = A.parts(doc)[0]
+        freq.update({re.sub(r'[\d,.]+', '#', l) for l in lines})
+        got[u] = (f, doc, lines)
+    n = 0
+    for u, (f, doc, lines) in got.items():
+        if u in NOINDEX or not any(u.startswith(d) and u != d for d in DET):
+            continue
+        own = sum(len(l.replace(' ', '')) for l in lines if freq[re.sub(r'[\d,.]+', '#', l)] < 5)
+        if own < 200:
+            NOINDEX.add(u); n += 1
+            open(f, 'w', encoding='utf-8', newline='\n').write(doc.replace('<link rel="canonical"', '<meta name="robots" content="noindex,follow">\n<link rel="canonical"', 1))
+    return n
+
+
+def c_insight(c, live):
+    """공모전마다 숫자가 다른 루리 분석 + 같은 분야 비교표. 공고 원문을 옮기지 않고 우리 데이터로 계산한 것만."""
+    n = dday(c['end'])[0]
+    tag = c['tags'][0]
+    same = [x for x in live if tag in x['tags'] and x['id'] != c['id']]
+    L = []
+    if same:
+        early = sum(1 for x in same if x['end'] < c['end'])
+        L.append(f'지금 접수 중인 {tag} 공모전은 이것 말고 {len(same)}건이 더 있고, 이 공모전은 ' + ('가장 먼저 마감해요.' if early == 0 else '가장 늦게 마감하는 편이라 준비할 시간이 넉넉해요.' if early >= len(same) * .8 else f'그중 {early + 1}번째로 마감이 빨라요.'))
+    pv = [x['pv'] for x in same if x.get('pv')]
+    if c.get('pv') and pv:
+        big = sum(1 for v in pv if v > c['pv'])
+        med = sorted(pv)[len(pv) // 2]
+        L.append(f'상금은 {won_txt(c["pv"])}로, 같은 분야에서 상금이 숫자로 나온 {len(pv)}건 중 {big + 1}번째로 커요. 이 분야 상금 중간값({won_txt(med)})보다 ' + ('큰 편이에요.' if c['pv'] > med else '작은 편이라, 경쟁이 덜할 수 있어요.' if c['pv'] < med else '딱 중간이에요.'))
+    elif not c.get('pv'):
+        L.append('상금이 숫자로 정리되지 않은 공모전이에요. 상장·기념품만 주는지, 부상이 따로 있는지 공고에서 확인해 보세요.')
+    if c.get('start'):
+        try:
+            tot = (datetime.date.fromisoformat(c['end']) - datetime.date.fromisoformat(c['start'])).days + 1
+            L.append(f'접수 기간은 모두 {tot}일' + (f'이고 오늘 기준 {n}일 남았어요.' if n >= 0 else '이었어요.'))
+        except Exception:
+            pass
+    el = c.get('elig') or ''
+    for pat, note in ELIG_NOTE:
+        if re.search(pat, el):
+            L.append(note)
+            break
+    if c.get('effort') in EFFORT_NOTE:
+        L.append(f'제출물은 「{c["effort"]}」이에요. ' + EFFORT_NOTE[c['effort']])
+    if c.get('fee'):
+        L.append(f'참가비가 있는 공모전이에요({c["fee"]:,}원). 주최 기관이 맞는지 한 번 더 확인하세요.' if isinstance(c['fee'], int) else '참가비가 있는 공모전이에요. 주최 기관이 맞는지 한 번 더 확인하세요.')
+    org_n = sum(1 for x in live if x['org'] == c['org'] and x['id'] != c['id']) if c['org'] not in ('공고 참조', '') else 0
+    if org_n:
+        L.append(f'같은 주최({c["org"]})가 지금 받는 공모전이 {org_n}건 더 있어요. 한 번에 같이 준비하면 시간을 아낄 수 있어요.')
+    plan = ''
+    if n >= 4:
+        e = datetime.date.fromisoformat(c['end'])
+        d1 = TODAY + datetime.timedelta(days=max(1, n // 3)); d2 = e - datetime.timedelta(days=max(1, n // 5)); d3 = e - datetime.timedelta(days=1)
+        plan = (f'<h2>📅 이 공모전 준비 일정 (오늘 기준)</h2><ul class="chk"><li>{d1.month}/{d1.day}까지: 요강 읽고 자격·제출물·분량 표시해 두기, 아이디어 3개 뽑기</li>'
+                f'<li>{d2.month}/{d2.day}까지: 초안 완성하고 하루 묵힌 뒤 고치기</li><li>{d3.month}/{d3.day}까지: 파일 형식·이름 맞춰 제출 (마감일엔 접수 서버가 몰려요)</li></ul>')
+    cmp_ = sorted(same, key=lambda x: (abs((datetime.date.fromisoformat(x['end']) - datetime.date.fromisoformat(c['end'])).days), -(x.get('pv') or 0)))[:5]
+    tb = ''
+    if cmp_:
+        rows = ''.join(f'<tr><td><a href="/c/{x["id"]}/">{E(x["title"][:40])}</a></td><td>{E(won_txt(x["pv"]) if x.get("pv") else "상금 공고 확인")}</td><td>{ddot(x["end"])[5:]} 마감</td><td>{E((x.get("effort") or "공고 확인"))}</td></tr>' for x in cmp_)
+        tb = (f'<h2>🔍 마감이 비슷한 {E(tag)} 공모전 비교</h2><table class="info cmp"><tr><th>공모전</th><th>상금</th><th>마감</th><th>제출물</th></tr>'
+              f'<tr class="on"><td>이 공모전</td><td>{E(won_txt(c["pv"]) if c.get("pv") else "상금 공고 확인")}</td><td>{ddot(c["end"])[5:]} 마감</td><td>{E(c.get("effort") or "공고 확인")}</td></tr>{rows}</table>')
+    return (f'<h2>🧐 루리 분석</h2><p>{" ".join(E(x) for x in L)}</p>' if L else '') + plan + tb
+
+
 def detail(c, live):
     n, dd = dday(c['end'])
     main_tag = c['tags'][0]
@@ -283,6 +407,7 @@ def detail(c, live):
 <a class="btn" href="{E(c["link"])}" target="_blank" rel="noopener nofollow">공식 공고 보러 가기 →</a></div>
 <div class="my-acts" data-id="c:{c["id"]}" data-title="{E(c["title"])}" data-end="{c["end"]}"></div>
 <h2>한눈에 보기</h2><p>{E(summary)}</p>
+{c_insight(c, live)}
 <h2>응모 전 체크리스트</h2><ul class="chk">{tips}</ul>
 {'<a class="lab-cta" href="/lab/#diag"><b>🏆 이런 공모전 수상작은 어떻게 생겼을까?</b><span>수상작 300여 개를 분석한 당선 공식과 내 문구 진단 →</span></a>' if re.search(r'슬로건|표어|네이밍|명칭|캐치프레이즈|삼행시|N행시|이행시|애칭', c['title']) else ''}
 <p class="note">분야: {catl}. 상금·자격·기간은 공고 원문에서 자동으로 정리한 값이라 오차가 있을 수 있습니다. 최종 기준은 주최 측 공식 공고입니다.</p>
@@ -297,7 +422,8 @@ def detail(c, live):
     pz = re.sub(r'\s+', ' ', (c.get('prize') or '')).strip()
     seo_t = f"{c['title']} — " + (f"상금 {pz[:24]} · " if pz and pz not in ('공고 확인', '-') else '') + f"{md_} 마감 · 자격·접수 방법"   # 2026-10-18 자연 유입: 검색어 모양 제목
     page(f'/c/{c["id"]}/', seo_t, desc[:155], body,
-         [('루리의 줍줍', '/'), (main_tag, f'/cat/{SLUG[main_tag]}/'), (c['title'], f'/c/{c["id"]}/')], ld)
+         [('루리의 줍줍', '/'), (main_tag, f'/cat/{SLUG[main_tag]}/'), (c['title'], f'/c/{c["id"]}/')], ld, noindex=n < 0)
+    GONE[f'/c/{c["id"]}/'] = [c['title'], f'/cat/{SLUG[main_tag]}/', f'{main_tag} 공모전', c['end']]
 
 
 def listing_js(cat=''):
@@ -427,7 +553,8 @@ def build_apply(aps):
 <div class="panel"><table class="info">{tb}</table>{btn}</div>
 <h2>신청 전 확인할 것</h2><ul class="chk"><li>신청 자격(나이·소득·자산·거주지·무주택 여부)</li><li>필요 서류와 본인인증 수단</li><li>발표일과 계약·납부 일정</li></ul>'''
         page(f'/a/{a["id"]}/', a['title'], f'{a["title"]} — {a["kind"]}, {ddot(a["end"])} 마감. 신청 기간과 공식 신청처 정리.', body,
-             [('루리의 줍줍', '/'), ('청약·신청', '/apply/'), (a['title'], f'/a/{a["id"]}/')])
+             [('루리의 줍줍', '/'), ('청약·신청', '/apply/'), (a['title'], f'/a/{a["id"]}/')], noindex=sum(1 for k in ('target', 'benefit', 'how', 'income') if a.get(k)) < 2)
+        GONE[f'/a/{a["id"]}/'] = [a['title'], '/apply/', '청약·신청', a['end']]
     lst = ''.join(ap_card(a) for a in aps) or '<li class="empty"><img src="/assets/ruri/o_desk_s.webp" width="64" height="88" alt=""><p>지금 정리 중이에요. 곧 청약·신청 일정을 올릴게요!</p></li>'
     page('/apply/', f'청약·신청 일정 모음', '아파트 청약, 공공임대, 공모주, 지원금 신청 일정을 마감 순서로 정리했어요.',
          f'''<p class="bc"><a href="/">홈</a> › 청약·신청</p><section class="dh" data-c="apply"><span class="ic big">📝</span><h1>청약·신청</h1><p class="lead">진행 중 <b>{len(aps)}건</b> · 마감 임박순</p></section>
@@ -437,6 +564,22 @@ def build_apply(aps):
 
 HERO_JS = '''<script>(function(){var o=[['smile','오늘도 마감 임박 공모전 챙겨 왔어요 ✨'],['o_suit','오늘의 공모전 브리핑 시작할게요!'],['o_gray','상금 큰 공모전부터 정리해 뒀어요.'],['o_present','이번 주 마감, 같이 확인해 볼까요?'],['o_desk','새 공모전을 방금 업데이트했어요.'],['o_cardigan','글쓰기 공모전도 많아요. 천천히 골라 보세요.'],['o_trench','해외 공모전도 챙겨 왔어요.'],['o_anchor','마감 소식 전해 드릴게요!'],['o_vest','응모 전 체크리스트도 잊지 마세요.']];
 try{var p=o[Math.floor(Math.random()*o.length)],i=document.getElementById('hero-ruri'),b=document.querySelector('.hb');if(i){i.src='/assets/ruri/'+p[0]+'.webp'}if(b){b.innerHTML='안녕하세요, <b>루리</b>예요!<br>'+p[1]}}catch(e){}})();</script>'''
+
+
+def cat_stats(n, cl):
+    """분야별 지금 숫자: 건수·상금 중간값·이번 주 마감·제출물 분포 (매 빌드 계산)."""
+    if not cl:
+        return ''
+    pv = sorted(x['pv'] for x in cl if x.get('pv'))
+    wk = sum(1 for x in cl if dday(x['end'])[0] <= 7)
+    ef = collections.Counter(x['effort'] for x in cl if x.get('effort')).most_common(3)
+    big = max(cl, key=lambda x: x.get('pv') or 0)
+    t = f'지금 접수 중인 {n} 공모전은 {len(cl)}건이고, 이 중 {wk}건이 일주일 안에 마감해요. '
+    if pv:
+        t += f'상금이 숫자로 나온 {len(pv)}건의 중간값은 {won_txt(pv[len(pv) // 2])}, 가장 큰 곳은 「{big["title"][:30]}」({won_txt(big["pv"])})예요. '
+    if ef:
+        t += '제출물은 ' + ', '.join(f'{k} {v}건' for k, v in ef) + ' 순으로 많아요.'
+    return f'<p class="cat-st">📌 {E(t)}</p>'
 
 
 def build():
@@ -521,7 +664,7 @@ window.gtag&&gtag('event','home_route',{{route:v}})}}catch(e){{}}}})();</script>
         cl = [c for c in live if n in c['tags']]
         tips = ''.join(f'<li>{E(t)}</li>' for t in TIPS[n])
         body = f'''<p class="bc"><a href="/">홈</a> › {n}</p><section class="dh" data-c="{s}"><span class="ic big">{CAT_ICON[n]}</span><h1>{n} 공모전</h1><p class="lead">진행 중 <b>{len(cl)}건</b> · 마감 임박순</p></section>
-<p>{CAT_INTRO[n]}</p>
+<p>{CAT_INTRO[n]}</p>{cat_stats(n, cl)}
 {say(CAT_OUTFIT[n], f'<b>{n} 공모전 응모 팁</b><ul class="chk">{tips}</ul>')}{'<a class="lab-cta" href="/fridge/"><b>🍳 루리의 냉장고 파먹기</b><span>집에 있는 재료로 만들 수 있는 레시피 77개 · 요리대회 연습용으로 딱 →</span></a>' if s == 'food' else ''}
 <h2>진행 중 {n} 공모전</h2>{TOOLBAR}<ul class="list" id="list">{''.join(card(c) for c in cl[:60])}</ul><button class="more" id="more" hidden>더 보기</button>'''
         page(f'/cat/{s}/', f'{n} 공모전 모음 (진행 중 {len(cl)}건)', f'{n} 분야 진행 중 공모전 {len(cl)}건 마감 임박순 정리. {CAT_INTRO[n][:70]}',
@@ -557,8 +700,10 @@ window.gtag&&gtag('event','home_route',{{route:v}})}}catch(e){{}}}})();</script>
     lab_urls = lab() or []
     me_pages()
     statics(len(live), len(events))
-    urls = ['/', '/apply/', '/event/', '/guide/', '/ssul/'] + lab_urls + [f'/ssul/{x["slug"]}/' for x in ss] + [f'/a/{a["id"]}/' for a in aps] + [f'/cat/{s}/' for s, _ in CATS] + [f'/guide/{g[0]}/' for g in GUIDES] + ['/qa/', '/prep/', '/fridge/', '/app/', '/news/'] + extra_urls + [f'/guide/{q["slug"]}/' for q in QA] + \
+    urls = ['/', '/contest/', '/apply/', '/event/', '/guide/', '/ssul/'] + lab_urls + [f'/ssul/{x["slug"]}/' for x in ss] + [f'/a/{a["id"]}/' for a in aps] + [f'/cat/{s}/' for s, _ in CATS] + [f'/guide/{g[0]}/' for g in GUIDES] + ['/qa/', '/prep/', '/fridge/', '/app/', '/news/'] + extra_urls + [f'/guide/{q["slug"]}/' for q in QA] + \
            ['/about/', '/privacy/', '/terms/', '/contact/'] + [f'/c/{c["id"]}/' for c in contests]
+    gone_pages()
+    print('auto_thin noindex', auto_thin(urls))
     global NEW_URLS
     sm = os.path.join(ROOT, 'sitemap.xml')
     old = set(re.findall(r'<loc>([^<]+)</loc>', open(sm, encoding='utf-8').read())) if os.path.exists(sm) else set()
@@ -993,6 +1138,43 @@ def stock_svg(s):
             f'<figcaption>증권사별 목표가(원) · <i style="color:#ef4444">● 상향</i> <i style="color:#3b82f6">● 하향</i> <i style="color:#94a3b8">● 유지</i> · 흰 점 = 이전 목표가</figcaption></figure>')
 
 
+def an_sum(s):
+    """종목 노드를 다시 계산한 해설 (기사 문장 전재 없음, 숫자는 노드에서)."""
+    ns = s.get('nodes') or []
+    up, dn, kp = s['up'], s['down'], s['keep']
+    L = [f'최근 30일 동안 {s["name"]} 목표가·투자의견이 나온 리포트 기사 {s["nn"]}건을 증권사 {s["nb"]}곳 기준으로 다시 묶었어요. 상향 {up}곳 · 유지 {kp}곳 · 하향 {dn}곳으로 '
+         + ('상향 의견이 더 많아요.' if up > dn else '하향 의견이 더 많아요.' if dn > up else '상향과 하향이 같아요.')]
+    if s.get('tp_avg'):
+        if s.get('tp_min') and s.get('tp_max') and s['tp_min'] != s['tp_max']:
+            L.append(f'제시된 목표가는 평균 {won_txt(s["tp_avg"])}이고, 가장 낮은 곳({won_txt(s["tp_min"])})과 높은 곳({won_txt(s["tp_max"])}) 차이는 {round((s["tp_max"] - s["tp_min"]) * 100 / s["tp_min"])}%예요.')
+        else:
+            L.append(f'목표가를 밝힌 곳은 모두 {won_txt(s["tp_avg"])}를 제시했어요.')
+    for x in [x for x in ns if x.get('tp') and x.get('tp0') and x['tp0'] != x['tp']][:3]:
+        L.append(f'{x["br"]}은 목표가를 {won_txt(x["tp0"])}에서 {won_txt(x["tp"])}로 {abs(round((x["tp"] - x["tp0"]) * 100 / x["tp0"]))}% {"올렸" if x["tp"] > x["tp0"] else "내렸"}어요.')
+    rc = collections.Counter(r for x in ns for r in (x.get('rs') or []))
+    if rc:
+        r, k = rc.most_common(1)[0]
+        L.append(f'노드에서 가장 많이 나온 근거는 「{r}」({k}건)이에요.')
+    if s.get('mixed'):
+        L.append('증권사끼리 방향이 엇갈려요. 리포트 날짜가 서로 다를 수 있으니 아래 노드에서 날짜와 근거를 함께 보세요.')
+    if any(x.get('chk') for x in ns):
+        L.append('목표가 숫자나 방향이 기사 제목과 어긋나 보이는 노드는 「확인 필요」로 따로 표시했어요.')
+    return '<section class="an-sum"><h2>🧐 루리 해설</h2><p>' + ' '.join(E(x) for x in L) + '</p></section>'
+
+
+def coin_sum(c):
+    L = [f'최근 7일 {c["name"]} 전망 기사 {c["n"]}건을 강세 {c["bull"]} · 혼조 {c["neutral"]} · 약세 {c["bear"]} 노드로 나눴어요. '
+         + ('강세 쪽 발언이 더 많아요.' if c['bull'] > c['bear'] else '약세 쪽 발언이 더 많아요.' if c['bear'] > c['bull'] else '강세와 약세가 같아요.')]
+    h = [v for _, v in (c.get('hist') or []) if v]
+    if len(h) > 5:
+        L.append(f'업비트 일봉으로 보면 최근 {len(h)}일 동안 {round((h[-1] - h[0]) * 100 / h[0], 1):+}% 움직였고, 고점과 저점 차이는 {round((max(h) - min(h)) * 100 / min(h), 1)}%예요.')
+    for side, nm in (('bull', '강세'), ('bear', '약세')):
+        t = (c.get('tree') or {}).get(side) or []
+        if t:
+            L.append(f'{nm} 근거는 「{t[0][0]}」가 가장 많았어요.')
+    return '<section class="an-sum"><h2>🧐 루리 해설</h2><p>' + ' '.join(E(x) for x in L) + '</p></section>'
+
+
 def stock_card(s, full=False):
     tot = s['up'] + s['down'] + s['keep']
     bar = ''.join(f'<i class="{d}" style="width:{round(100 * s[d] / tot)}%"></i>' for d in ('up', 'keep', 'down') if tot and s[d])
@@ -1049,15 +1231,15 @@ def analyst_pages():
     for s in S:
         page(f'/analyst/s/{s["id"]}/', f'{s["name"]} 목표가·투자의견 종합 — 증권사 {s["nb"]}곳 리포트 노드 분석',
              f'{s["name"]} 최근 30일 증권사 리포트: 상향 {s["up"]} · 유지 {s["keep"]} · 하향 {s["down"]}' + (f', 평균 목표가 {won_txt(s["tp_avg"])}' if s['tp_avg'] else '') + '. 상승·하락 근거별로 어느 증권사가 말했는지 정리.',
-             f'<p class="bc"><a href="/">홈</a> › <a href="/analyst/">애널리스트 분석</a> › {E(s["name"])}</p><h1>📊 {E(s["name"])} 애널리스트 의견 종합</h1>' + AN_NOTE + stock_card(s, True) + '<p class="mg-nav"><a href="/analyst/">다른 종목 보기 →</a></p>' + css,
-             [('루리의 줍줍', '/'), ('애널리스트 분석', '/analyst/'), (s['name'], f'/analyst/s/{s["id"]}/')])
+             f'<p class="bc"><a href="/">홈</a> › <a href="/analyst/">애널리스트 분석</a> › {E(s["name"])}</p><h1>📊 {E(s["name"])} 애널리스트 의견 종합</h1>' + AN_NOTE + an_sum(s) + stock_card(s, True) + '<p class="mg-nav"><a href="/analyst/">다른 종목 보기 →</a></p>' + css,
+             [('루리의 줍줍', '/'), ('애널리스트 분석', '/analyst/'), (s['name'], f'/analyst/s/{s["id"]}/')], noindex=s['nb'] < 2)
         urls.append(f'/analyst/s/{s["id"]}/')
     for c in C:
         if not c['n']:
             continue
         page(f'/analyst/coin/{c["sym"].lower()}/', f'{c["name"]}({c["sym"]}) 전망 종합 — 강세·약세 의견 노드 분석', f'{c["name"]} 최근 7일 전망 기사 {c["n"]}건: 강세 {c["bull"]} · 약세 {c["bear"]} · 혼조 {c["neutral"]}. 근거별 정리와 업비트 현재가.',
-             f'<p class="bc"><a href="/">홈</a> › <a href="/analyst/">애널리스트 분석</a> › {E(c["name"])}</p><h1>🪙 {E(c["name"])} 전망 종합</h1>' + AN_NOTE + coin_card(c, True) + '<p class="mg-nav"><a href="/analyst/">다른 코인·종목 보기 →</a></p>' + css,
-             [('루리의 줍줍', '/'), ('애널리스트 분석', '/analyst/'), (c['name'], f'/analyst/coin/{c["sym"].lower()}/')])
+             f'<p class="bc"><a href="/">홈</a> › <a href="/analyst/">애널리스트 분석</a> › {E(c["name"])}</p><h1>🪙 {E(c["name"])} 전망 종합</h1>' + AN_NOTE + coin_sum(c) + coin_card(c, True) + '<p class="mg-nav"><a href="/analyst/">다른 코인·종목 보기 →</a></p>' + css,
+             [('루리의 줍줍', '/'), ('애널리스트 분석', '/analyst/'), (c['name'], f'/analyst/coin/{c["sym"].lower()}/')], noindex=c['n'] < 5)
         urls.append(f'/analyst/coin/{c["sym"].lower()}/')
     return urls
 
@@ -1226,7 +1408,7 @@ def kw_pages():
                 + (f'<section class="mg-s"><h2>📌 루리의 줍줍에서 더 보기</h2><div class="nw-pr">{"".join(links)}</div></section>' if links else '')
                 + f'<p class="mg-nav"><a href="/kw/">오늘의 인기 키워드 전체 →</a> · <a href="/mag/">매거진 →</a></p>' + note + css)
         page(f'/kw/{sl}/', f'{k} 검색 급상승 이유 — 관련 보도·정리', f'{k}{josa_ga(k)} 검색 급상승 키워드에 오른 이유: ' + ' / '.join(n['t'] for n in r.get('news', [])[:2])[:140], body,
-             [('루리의 줍줍', '/'), ('인기 키워드', '/kw/'), (k, f'/kw/{sl}/')], noindex=not r.get('ours') and len(r.get('news') or []) < 2)
+             [('루리의 줍줍', '/'), ('인기 키워드', '/kw/'), (k, f'/kw/{sl}/')], noindex=not r.get('post'))
         urls.append(f'/kw/{sl}/')
     arch = '<section class="tk-arch"><h2>📅 날짜별 인기 키워드</h2><p>' + ''.join(f'<a href="/kw/{d}/">{kdate(d)}</a>' for d in days[:90]) + '</p></section>'
     for i, d in enumerate(days):
@@ -1418,6 +1600,26 @@ def rss_feed(live, aps):
     open(os.path.join(ROOT, 'rss.xml'), 'w', encoding='utf-8', newline='\n').write(xml)
 
 
+def issue_note(x, I):
+    """이슈 묶음 숫자로 만든 루리 해설 (기사 문장 전재 없음)."""
+    A = [I[a] for a in x['a'] if a in I]
+    sc = [a['s'] for a in A if a.get('s') is not None]
+    t = f'루리 해설: 기사 {len(A)}건을 같은 사건으로 묶었어요.'
+    if sc:
+        t += f' 확인 신호 점수는 가장 높은 기사 {max(sc)}점, 가장 낮은 기사 {min(sc)}점' + (f'으로 {max(sc) - min(sc)}점 차이가 나요.' if max(sc) != min(sc) else '으로 같아요.')
+    w = collections.Counter(y for a in A for y in a.get('why', []))
+    neg = [k for k in w if k.startswith(('⚠', '❓', '🔎'))]
+    if neg:
+        t += f' 자주 걸린 신호는 「{neg[0].lstrip("⚠️❓🔎 ").strip()}」({w[neg[0]]}건)이에요.'
+    if x.get('cf'):
+        t += ' 언론사마다 숫자가 달라서, 공식 발표가 나오면 다시 확인해야 해요.'
+    elif x.get('claim'):
+        t += ' 누군가의 발언·주장을 전하는 기사라, 사실 여부는 따로 확인이 필요해요.'
+    elif int(x.get('on') or 0) >= 5:
+        t += ' 여러 언론사가 같은 내용을 전해 사건 자체는 확인된 편이에요.'
+    return t
+
+
 def news_static():
     """검색엔진·자바스크립트 없는 환경용으로 이슈 순위를 글자로 미리 그려 둔다(화면에선 news.js 가 바로 대체). 2026-10-18 자연 유입 전략 ①."""
     d = _rd('news/data.json')
@@ -1432,7 +1634,7 @@ def news_static():
         if x['a'] and x['a'][0] in I:
             why = ' / '.join(E(w) for w in I[x['a'][0]].get('why', [])[:3])
         out += (f'<li id="is{x["n"]}"><h2>{E(x["t"])}</h2><p>{E(x["c"])} · 언론사 {x["on"]}곳 보도 · 확인 신호 {x["s"] if x.get("s") is not None else "-"}점({G.get(x.get("g"), "")})'
-                f'{" · 발언·주장 기사" if x.get("claim") else ""}{(" · 숫자 엇갈림: " + E(", ".join(x["cf"]))) if x.get("cf") else ""}</p><p>{why}</p><ul>{arts}</ul></li>')
+                f'{" · 발언·주장 기사" if x.get("claim") else ""}{(" · 숫자 엇갈림: " + E(", ".join(x["cf"]))) if x.get("cf") else ""}</p><p>{why}</p><p class="nw-ins">{E(issue_note(x, I))}</p><ul>{arts}</ul></li>')
     return out + '</ol>'
 
 
@@ -1443,6 +1645,14 @@ TOOLS = {'dividend': ('배당소득 분리과세 계산기', '고배당 기업 �
          'fx': ('환전 계산기', '매매기준율·수수료·환율 우대로 실제 받는 외화를 계산하고, 우대로 얼마나 더 받는지 비교해요.')}
 
 
+TOOL_HELP = {  # 2026-10-18 애드센스 보강: 계산기마다 계산 방법·예시·주의 (숫자 근거는 /money/policy/)
+ 'dividend': '<h2>어떻게 계산하나요?</h2><p>2026년 1월 1일 이후 받는 고배당 기업 배당은 다른 금융소득과 합치지 않고 따로 세금을 매기는 분리과세를 고를 수 있어요. 세율은 구간별로 올라가요. 2천만원까지 14%, 3억원까지 20%, 50억원까지 25%, 그 위로 30%이고, 여기에 국세의 10%가 지방소득세로 붙어요.</p><h2>예시</h2><p>배당 3천만원이면 2천만원 × 14% = 280만원, 나머지 1천만원 × 20% = 200만원, 국세 480만원에 지방소득세 48만원을 더해 약 528만원이에요. 같은 돈을 일반 원천징수 15.4%로 내면 462만원이라, 금액이 크지 않으면 원천징수가 더 쌀 수도 있어요.</p><h2>주의할 점</h2><ul class="chk"><li>배당성향 등 요건을 채운 「고배당 기업」 배당에만 적용돼요.</li><li>금융소득이 연 2천만원을 넘으면 종합과세와 비교해 유리한 쪽을 골라야 해요.</li><li>건강보험료(피부양자 자격)에 영향이 있을 수 있어요.</li></ul>',
+ 'stocktax': '<h2>어떻게 계산하나요?</h2><p>증권거래세는 주식을 팔 때 매도 금액에 세율을 곱해 증권사가 바로 떼어 가요. 2026년부터 코스피는 증권거래세 0.05%에 농어촌특별세 0.15%를 더해 0.20%, 코스닥과 K-OTC는 0.20%, 코넥스는 0.10%예요. 이익이 났는지 손해를 봤는지와 상관없이 팔 때마다 붙어요.</p><h2>예시</h2><p>코스피 주식을 1천만원어치 팔면 1천만원 × 0.20% = 2만원이에요. 같은 금액을 하루에 다섯 번 사고팔면 세금만 10만원이 나가요.</p><h2>주의할 점</h2><ul class="chk"><li>증권사 매매 수수료는 따로 붙어요.</li><li>대주주 양도소득세는 별도 세금이에요.</li><li>해외 주식은 이 세율이 아니라 양도소득세(연 250만원 공제 후 22%)가 적용돼요.</li></ul>',
+ 'pension': '<h2>어떻게 계산하나요?</h2><p>연금저축은 연 600만원까지, 연금저축과 IRP를 합쳐 연 900만원까지 낸 돈의 일부를 세금에서 돌려받아요. 총급여 5,500만원 이하(종합소득 4,500만원 이하)는 16.5%, 그보다 많으면 13.2%를 공제받아요.</p><h2>예시</h2><p>총급여 5천만원인 직장인이 연금저축 600만원과 IRP 300만원을 내면 900만원 × 16.5% = 148만 5천원을 연말정산에서 돌려받아요. 연금저축만 900만원을 내면 한도 600만원만 인정돼 99만원이에요.</p><h2>주의할 점</h2><ul class="chk"><li>중도 해지하면 공제받은 세금을 기타소득세(16.5%)로 다시 내요.</li><li>55세 이후 연금으로 받을 때 연금소득세(3.3~5.5%)가 붙어요.</li><li>ISA 만기 자금을 옮기면 300만원 한도가 더 생겨요(이 계산기에는 빠져 있어요).</li></ul>',
+ 'loan': '<h2>상환 방식별 차이</h2><p><b>원리금균등</b>은 매달 같은 금액을 내서 계획 세우기 쉽지만, 초반엔 이자 비중이 커요. <b>원금균등</b>은 원금을 똑같이 나눠 갚아 첫 달 부담이 가장 크지만 총 이자가 가장 적어요. <b>만기일시</b>는 매달 이자만 내고 마지막에 원금을 한 번에 갚아 총 이자가 가장 많아요.</p><h2>예시</h2><p>2억원을 연 4.2%, 30년(360개월) 원리금균등으로 빌리면 매달 약 97만 8천원, 총 이자는 약 1억 5천 2백만원이에요. 금리가 0.25%p만 올라도 총 이자가 1천만원 넘게 늘어요. 계산 결과 표에서 금리가 바뀔 때 차이를 바로 볼 수 있어요.</p><h2>주의할 점</h2><ul class="chk"><li>변동금리는 기준금리·코픽스에 따라 매달 내는 돈이 바뀌어요.</li><li>중도상환수수료(보통 3년 이내 1% 안팎)는 따로예요.</li><li>DSR 규제로 실제 대출 한도는 소득에 따라 달라요.</li></ul>',
+ 'fx': '<h2>어떻게 계산하나요?</h2><p>은행은 매매기준율에 환전 수수료(현찰 기준 보통 1.75% 안팎)를 붙여 팔아요. 환율 우대 90%는 이 수수료의 90%를 깎아 준다는 뜻이라, 실제 수수료는 1.75% × 10% = 0.175%가 돼요.</p><h2>예시</h2><p>100만원을 매매기준율 1,380원에 우대 없이 바꾸면 적용 환율은 약 1,404원이라 약 712달러를 받아요. 90% 우대를 받으면 약 1,382원이 되어 약 723달러로, 11달러쯤 더 받아요.</p><h2>주의할 점</h2><ul class="chk"><li>현찰과 송금(전신환)은 수수료가 달라요.</li><li>공항 환전소는 우대가 적은 편이라, 은행 앱으로 미리 신청하고 공항에서 받으면 유리해요.</li><li>매매기준율은 하루에도 여러 번 바뀌어요.</li></ul>'}
+
+
 def tool_pages():
     # 이슈형 미니 도구 (2026-10-18 핫이슈 기획) — 참고용, 투자 수익 계산 없음
     urls = []
@@ -1450,7 +1660,7 @@ def tool_pages():
         others = ''.join(f'<a href="/money/tools/{k2}/">{E(n2)}</a>' for k2, (n2, _) in TOOLS.items() if k2 != k)
         page(f'/money/tools/{k}/', f'{n} — 2026 기준 간단 계산', d,
              f'<p class="bc"><a href="/">홈</a> › <a href="/analyst/">머니</a> › {E(n)}</p><h1>🧮 {E(n)}</h1><p>{E(d)}</p>'
-             f'<section id="mtool" data-tool="{k}"><noscript>자바스크립트가 필요해요.</noscript></section><p class="hm-links">{others}<a href="/money/policy/">🏛️ 근거: 투자 정책 정리</a></p>'
+             f'<section id="mtool" data-tool="{k}"><noscript>자바스크립트가 필요해요.</noscript></section>{TOOL_HELP.get(k, '')}<p class="hm-links">{others}<a href="/money/policy/">🏛️ 근거: 투자 정책 정리</a></p>'
              '<link rel="stylesheet" href="/assets/money/tools.css?v=1"><link rel="stylesheet" href="/assets/mag/mag.css?v=10"><script defer src="/assets/money/tools.js?v=1"></script>',
              [('루리의 줍줍', '/'), ('머니', '/analyst/'), (n, f'/money/tools/{k}/')])
         urls.append(f'/money/tools/{k}/')
@@ -1618,7 +1828,7 @@ PRIV_MEMBER = ('<p>루리의 줍줍(sungprofile.cloud)은 커뮤니티(후기·�
                '<li>이용 목적: 로그인, 게시글·댓글 작성자 구분, 부정 이용 방지</li><li>표시: 글쓴이 이름은 이메일 앞부분을 가린 값(예: sun***)으로만 보입니다.</li>'
                '<li>보관: 회원 탈퇴 시 즉시 삭제하며, 작성한 글·댓글은 비공개 처리합니다. 탈퇴·삭제 요청은 문의 메일로도 받습니다.</li>'
                '<li>처리 위탁: 회원·게시판 데이터는 Cloudflare(Workers, D1)에 저장됩니다.</li></ul>'
-               '<p>회원이 아닌 방문자의 개인정보는 수집하지 않습니다.</p>') if COMM_API else               '<p>루리의 줍줍(sungprofile.cloud)은 회원가입·로그인 기능이 없으며 이용자의 이름, 이메일, 연락처 등 개인정보를 수집·저장하지 않습니다.</p>'
+               '<p>회원이 아닌 방문자의 이름·연락처 같은 개인정보는 받지 않습니다. 아래 광고·통계·알림 항목을 확인하세요.</p>') if COMM_API else               '<p>루리의 줍줍(sungprofile.cloud)은 회원가입 기능이 없으며 이용자의 이름·연락처 같은 개인정보를 받지 않습니다. 아래 광고·통계·알림 항목을 확인하세요.</p>'
 
 
 def community(live=()):
@@ -1658,19 +1868,38 @@ def lab():
 
 
 def statics(nl, ne):
-    page('/about/', '소개', '루리의 줍줍은 흩어진 공모전·지원금·경품 이벤트 공고를 마감일·상금·자격 기준으로 정리하는 개인 운영 사이트입니다.',
-         f'''<h1>소개</h1><p>루리의 줍줍은 개인 개발자 Seongsang Park이 운영하는 "일단 넣고 보는" 용돈 정보 사이트입니다. 응모만 하면 되는 경품, 1분이면 끝나는 댓글·설문 이벤트, 청약·지원금 신청, 슬로건 한 줄로 낼 수 있는 공모전처럼 그냥 넣으면 되는 기회를 주워 모읍니다. 여러 사이트와 기관 홈페이지에 흩어진 공모전·경품 이벤트 공고를 모아 <b>마감일, 상금, 응모 자격, 접수 방법</b>을 같은 형식으로 정리합니다. 현재 진행 중인 공모전 {nl}건, 경품 이벤트 {ne}건을 소개하고 있습니다.</p>
-<h2>정보 정리 방식</h2><p>공개된 공고를 수집해 마감일과 상금, 자격을 자동으로 추출하고, 분야별 응모 체크리스트를 붙입니다. 자동 정리 과정에서 오류가 생길 수 있으므로 공모전 페이지마다 공식 공고 링크를 함께 제공합니다. 정확한 요강은 항상 주최 측 공식 공고를 기준으로 해 주세요.</p>
-<h2>잘못된 정보 제보</h2><p>마감일이나 상금이 틀렸거나 종료된 공모전이 보이면 <a href="/contact/">문의</a>로 알려 주세요.</p>''', [('루리의 줍줍', '/'), ('소개', '/about/')])
+    page('/about/', '소개', '루리의 줍줍은 개인 개발자가 AI와 함께 운영하는 생활 정보 사이트입니다. 이슈 확인 신호 채점, 애널리스트 의견 종합, 공모전·지원금 정리의 운영 목적과 작성 방식.',
+         f'''<h1>소개</h1>
+<p>루리의 줍줍(sungprofile.cloud)은 개인 개발자 Seongsang Park이 운영하는 생활 정보 사이트입니다. 마스코트 「루리」가 안내를 맡고, 사이트 제작과 데이터 정리에는 AI(Anthropic Claude)를 적극적으로 씁니다. 회사나 언론사가 아닌 개인 운영 사이트이며, 특정 기업·정당·증권사와 제휴하거나 돈을 받고 글을 쓰지 않습니다.</p>
+<h2>운영 목적</h2><p>뉴스·증권 리포트·공모전·지원금 공고는 여기저기 흩어져 있고, 같은 내용이 제목만 바꿔 반복되는 경우가 많습니다. 루리의 줍줍은 이런 정보를 <b>그대로 옮기지 않고</b>, 같은 내용끼리 묶어 숫자를 다시 세고 비교해서 「몇 곳이 말했는지, 무엇이 아직 확인되지 않았는지, 나한테 무슨 뜻인지」를 짧게 정리하는 것을 목표로 합니다.</p>
+<h2>테마별로 하는 일</h2><ul class="chk">
+<li><b>🕵️ 이슈</b>: 언론사 15곳의 RSS 기사를 사건별로 묶고, 보도한 언론사 수·실명 출처·제목 속 숫자와 따옴표가 본문에 있는지 같은 <b>확인 신호</b>로 점수를 매깁니다. 이 점수는 기사의 진실 여부를 판정하는 것이 아니라, 더 확인해 볼 곳을 알려 주는 참고 지표입니다. 사건·사고와 사생활 기사는 일부러 다루지 않습니다.</li>
+<li><b>📊 머니</b>: 증권사 리포트 기사에 나온 목표가·투자의견을 「상향·하향·유지」 노드로 나눠 종목별로 다시 셉니다. 투자 권유나 주가 예측이 아니며, 세금·대출 계산기와 투자 정책 표는 금융위원회·기획재정부·국세청 공식 자료를 확인해 만들었습니다.</li>
+<li><b>🏆 공모전</b>: 진행 중 공모전 {nl}건의 마감·상금·자격·제출물을 같은 형식으로 정리하고, 같은 분야 공모전과 비교한 분석과 오늘 기준 준비 일정을 붙입니다. 실제 수상작을 구조로 풀어 보는 수상 연구소와 응모 가이드도 직접 씁니다.</li>
+<li><b>🍳 생활</b>: 지원금·청약 일정, 청약 가점 계산, 경품 이벤트 {ne}건, 냉장고 재료로 고르는 레시피를 정리합니다.</li></ul>
+<h2>콘텐츠 작성 방식</h2><ul class="chk">
+<li><b>출처</b>: 공식 기관 공고, 언론사 RSS, 공개 API(업비트 시세 등)만 씁니다. 사이트의 robots.txt가 수집을 막는 곳은 쓰지 않습니다.</li>
+<li><b>전재 금지</b>: 기사·공고 본문은 옮기지 않고 제목과 원문 링크만 남깁니다. 요약과 해설은 루리의 줍줍이 계산하고 쓴 것입니다.</li>
+<li><b>갱신 주기</b>: 이슈·키워드·애널리스트 종합은 매시간, 공모전·지원금·경품 이벤트는 하루 여러 번 자동으로 갱신합니다. 가이드·고민 해결 글은 사람이 검토해 매일 추가합니다.</li>
+<li><b>자동화와 검토</b>: 수집과 숫자 계산은 프로그램이 하고, 판정 기준(점수 규칙, 제외 키워드, 정책 표)은 운영자가 정하고 고칩니다. 자동 정리라 오류가 있을 수 있어 모든 페이지에 원문 링크를 함께 둡니다.</li>
+<li><b>AI 활용</b>: 사이트 코드와 루리 그림, 일부 해설 문장은 AI로 만들고 운영자가 검토합니다. 제작 과정은 <a href="/ailog/">AI 제작 로그</a>에 공개합니다.</li></ul>
+<h2>광고</h2><p>운영비를 마련하기 위해 Google AdSense 광고를 싣습니다. 광고는 본문과 구분해 표시하며, 광고주가 콘텐츠 내용에 관여하지 않습니다. 자세한 내용은 <a href="/privacy/">개인정보처리방침</a>을 참고하세요.</p>
+<h2>문의와 정정</h2><p>틀린 정보, 삭제 요청, 제휴 문의는 <a href="mailto:{MAIL}">{MAIL}</a> 또는 <a href="/contact/">문의</a> 페이지로 보내 주세요. 정보 오류는 확인하는 대로 고칩니다.</p>''', [('루리의 줍줍', '/'), ('소개', '/about/')])
     page('/contact/', '문의', '루리의 줍줍 정보 오류 제보, 공모전 등록 요청, 삭제 요청 안내.',
          f'''<h1>문의</h1><p>정보 오류 제보, 공모전 등록 요청, 삭제 요청은 이메일 <a href="mailto:{MAIL}">{MAIL}</a>, 제휴·광고 문의는 <a href="mailto:{PARTNER}">{PARTNER}</a> 로 보내 주세요. <a href="https://github.com/ilovecodingma/ilovecodingma.github.io/issues" rel="noopener">GitHub Issues</a>에 남기셔도 됩니다. 공모전 등록을 요청할 때는 공식 공고 주소를 함께 적어 주시면 확인 후 반영합니다.</p><p class="note">개인정보(이름·연락처)는 공개 게시판에 올리지 마세요.</p>''', [('루리의 줍줍', '/'), ('문의', '/contact/')])
-    page('/privacy/', '개인정보처리방침', '루리의 줍줍은 이용자의 개인정보를 수집하지 않습니다. 광고 쿠키와 방문 통계 안내.',
+    page('/privacy/', '개인정보처리방침', '루리의 줍줍 개인정보처리방침 — 수집 항목, Google AdSense 광고 쿠키와 맞춤 광고 해제 방법, 방문 통계, 알림 구독 정보 안내.',
          f'''<h1>개인정보처리방침</h1>{PRIV_MEMBER}
-<h2>1. 광고와 쿠키</h2><p>이 사이트는 Google AdSense 광고를 게재하며, Google 등 제3자 광고 사업자는 쿠키를 사용해 이용자의 이전 방문 기록에 기반한 광고를 표시할 수 있습니다. 이용자는 <a href="https://adssettings.google.com" rel="noopener">Google 광고 설정</a>에서 맞춤 광고를 해제할 수 있으며, 자세한 내용은 <a href="https://policies.google.com/technologies/ads" rel="noopener">Google 광고 정책</a>을 참고하세요.</p>
-<h2>2. 방문 통계</h2><p>서비스 개선을 위해 Google Analytics로 방문 통계(페이지 조회, 유입 경로, 기기 종류)를 수집합니다. 브라우저 설정이나 <a href="https://tools.google.com/dlpage/gaoptout" rel="noopener">차단 부가기능</a>으로 거부할 수 있습니다.</p>
-<h2>3. 접속 로그</h2><p>사이트는 GitHub Pages로 호스팅되며, 호스팅 제공자가 보안 목적으로 접속 로그(IP 주소 등)를 처리할 수 있습니다.</p>
-<h2>4. 외부 링크</h2><p>공모전 공식 공고 링크를 누르면 주최 기관 사이트로 이동하며, 해당 사이트의 개인정보처리방침이 적용됩니다.</p>
-<h2>5. 문의</h2><p><a href="/contact/">문의</a> 페이지를 이용해 주세요.</p><p class="note">시행일: 2026-10-16</p>''', [('루리의 줍줍', '/'), ('개인정보처리방침', '/privacy/')])
+<h2>1. 광고와 쿠키 (Google AdSense)</h2><p>이 사이트는 Google AdSense 광고를 게재합니다. Google을 포함한 제3자 광고 사업자는 쿠키를 사용해 이용자가 이 사이트와 다른 사이트를 방문한 기록을 바탕으로 광고를 표시할 수 있습니다. Google은 광고 쿠키를 사용해 이용자에게 이 사이트 및 인터넷의 다른 사이트 방문 기록에 기반한 광고를 제공합니다.</p>
+<ul class="chk"><li><b>맞춤 광고 해제</b>: <a href="https://adssettings.google.com" rel="noopener">Google 광고 설정</a>에서 맞춤 광고를 끌 수 있습니다. 제3자 광고 사업자의 쿠키는 <a href="https://www.aboutads.info/choices/" rel="noopener">aboutads.info</a>에서 해제할 수 있습니다.</li>
+<li><b>쿠키 거부</b>: 브라우저 설정(크롬: 설정 → 개인정보 보호 및 보안 → 서드 파티 쿠키)에서 쿠키를 막거나 지울 수 있습니다. 쿠키를 막아도 사이트는 이용할 수 있지만, 광고가 관심사와 관계없이 표시됩니다.</li>
+<li>Google이 데이터를 쓰는 방식은 <a href="https://policies.google.com/technologies/partner-sites" rel="noopener">Google 파트너 사이트 데이터 사용 안내</a>와 <a href="https://policies.google.com/technologies/ads" rel="noopener">Google 광고 정책</a>에서 볼 수 있습니다.</li></ul>
+<h2>2. 방문 통계</h2><p>서비스 개선을 위해 Google Analytics로 페이지 조회, 유입 경로, 기기 종류를 수집합니다. <a href="https://tools.google.com/dlpage/gaoptout" rel="noopener">Google 애널리틱스 차단 부가기능</a>으로 거부할 수 있습니다. 이와 별도로 자체 방문 집계를 위해 브라우저에 무작위 방문자 번호를 저장하고, 방문한 페이지·이전 사이트 주소·국가와 도시(접속 IP로 추정, IP 자체는 저장하지 않음)·모바일 여부를 기록합니다. 이 기록으로 개인을 알아볼 수 없으며 집계 후 통계로만 씁니다.</p>
+<h2>3. 알림 구독</h2><ul class="chk"><li><b>웹 푸시</b>: 공모전 알림을 켜면 브라우저가 만든 푸시 주소와 암호 키, 고른 분야만 저장합니다. 알림을 끄면 바로 지웁니다.</li>
+<li><b>이메일 알림</b>: 신청한 경우에만 이메일 주소와 고른 분야를 저장하고, 알림 발송 외에는 쓰지 않습니다. 문의 메일로 요청하면 언제든 지웁니다.</li></ul>
+<h2>4. 브라우저 저장소</h2><p>찜한 공모전, 챗봇 설정, 언어 선택은 이용자의 브라우저(localStorage)에만 저장되며 서버로 보내지 않습니다. 번역 기능을 쓰면 Google 번역이 언어 쿠키(googtrans)를 저장합니다.</p>
+<h2>5. 처리 위탁과 보관</h2><p>사이트는 GitHub Pages로 호스팅되며, 호스팅 제공자가 보안 목적으로 접속 로그(IP 주소 등)를 처리할 수 있습니다. 회원·알림·방문 집계 데이터는 Cloudflare(Workers, D1)에 저장합니다. 방문 집계는 통계 외의 목적으로 쓰지 않습니다.</p>
+<h2>6. 외부 링크</h2><p>공모전 공식 공고나 기사 원문 링크를 누르면 해당 사이트로 이동하며, 그 사이트의 개인정보처리방침이 적용됩니다.</p>
+<h2>7. 문의</h2><p>개인정보 관련 문의·삭제 요청: <a href="mailto:{MAIL}">{MAIL}</a> (운영자 Seongsang Park). <a href="/contact/">문의</a> 페이지도 이용할 수 있습니다.</p><p class="note">시행일: 2026-10-16 · 개정: 2026-10-18 (광고 쿠키 해제 방법, 방문 집계·알림 구독 항목 추가)</p>''', [('루리의 줍줍', '/'), ('개인정보처리방침', '/privacy/')])
     page('/terms/', '이용약관', '루리의 줍줍 이용약관과 정보 정확성에 관한 면책 안내.',
          '''<h1>이용약관</h1><h2>1. 서비스 내용</h2><p>루리의 줍줍은 공개된 공모전·지원사업·이벤트 공고를 정리해 소개하는 무료 정보 서비스입니다. 공모전의 주최·심사·시상에는 관여하지 않습니다.</p>
 <h2>2. 정보의 정확성</h2><p>마감일·상금·응모 자격 등은 공고 원문에서 자동으로 정리한 값으로 오류가 있을 수 있습니다. 응모 전 반드시 주최 측 공식 공고를 확인해야 하며, 사이트 정보만 믿고 응모해 생긴 불이익에 대해 운영자는 책임지지 않습니다.</p>

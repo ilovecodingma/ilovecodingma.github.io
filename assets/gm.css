@@ -170,3 +170,6 @@ body[data-th=ai] .hd{background:#0f172a}body[data-th=ai] .hd .logo span,body[dat
   .th-sw{padding-bottom:4px}.th-sw a{padding:4px 8px;font-size:12.5px}.tb{padding-top:5px;padding-bottom:6px}.tb a{padding:5px 10px;font-size:12.5px}.cm-acct .btn2,.cm-acct button{padding:6px 10px;font-size:12.5px}}
 @media(min-width:1000px){.th-sw{position:absolute;top:9px;left:50%;transform:translateX(-50%);width:auto;max-width:520px;padding:0}.th-sw a{padding:7px 12px;font-size:14px}}
 .lang-b{order:2}.cm-acct{order:3}.th-name{margin-left:0}
+.pg-intro{margin:32px 0 8px;padding:18px 18px 8px;border-radius:14px;background:var(--card,#f8fafc);border:1px solid rgba(0,0,0,.06);line-height:1.7}.pg-intro h2{margin-top:0;font-size:1.05rem}
+table.cmp td:first-child{max-width:240px;overflow-wrap:anywhere}table.cmp tr.on td{font-weight:700}.cat-st{background:rgba(109,40,217,.06);padding:10px 12px;border-radius:10px}
+.an-sum{margin:12px 0;padding:14px 16px;border-radius:12px;background:rgba(4,120,87,.06);line-height:1.7}.an-sum h2{margin:0 0 6px;font-size:1rem}.nw-ins{color:#92400e;font-size:.93em}
