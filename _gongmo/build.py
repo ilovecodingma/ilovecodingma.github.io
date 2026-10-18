@@ -62,7 +62,7 @@ COMM_TAGS_TPL = '<link rel="stylesheet" href="/assets/community/comm.css?v=14"><
 GTAG = ('<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4248498719773262" crossorigin="anonymous"></script>\n'
         '<script async src="https://www.googletagmanager.com/gtag/js?id=G-G9BPFF95GY"></script>\n'
         "<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());if(location.hostname!=='sungprofile.cloud')window['ga-disable-G-G9BPFF95GY']=true;gtag('config','G-G9BPFF95GY');</script>")
-TABS = [('/news/', '🕵️ 이슈 감별'), ('/analyst/', '📊 애널리스트'), ('/talk/', '💬 커뮤니티'), ('/mag/', '📰 매거진'), ('/', '🏆 공모전'), ('/apply/', '💰 지원금·청약'), ('/event/', '🎁 경품'), ('/fridge/', '🍳 냉장고'), ('/prep/', '📋 준비실')]
+TABS = [('/news/', '🕵️ 이슈 감별'), ('/analyst/', '📊 애널리스트'), ('/talk/', '💬 커뮤니티'), ('/satire/', '🎨 풍자'), ('/mag/', '📰 매거진'), ('/', '🏆 공모전'), ('/apply/', '💰 지원금·청약'), ('/event/', '🎁 경품'), ('/fridge/', '🍳 냉장고'), ('/prep/', '📋 준비실')]
 NAV = [('apply', '청약·신청'), ('ssul', '썰'), ('event', '경품·용돈'), ('cat/literature', '문학'), ('cat/idea', '아이디어'), ('cat/design', '디자인'),
        ('cat/video', '영상'), ('cat/it', 'IT'), ('cat/global', '해외'), ('guide', '가이드')]
 
@@ -446,11 +446,11 @@ def build():
     # 2026-10-17 사용자: 서비스 본질은 루리 추천 상담. 메인은 상담만, 외부 검색(지식인 등)은 상세 페이지로 받음
     # 2026-10-18 사용자: 사이트 비중 이슈 40 · 애널리스트 분석 40 · 공모전 20 → 홈 위쪽에 이슈·애널리스트, 공모전 상담은 그 아래
     home = f'''<h1 class="cs-h1">루리의 줍줍 — 오늘의 이슈 감별 · 애널리스트 분석 · 공모전</h1>
-<div class="hm-2">{news_top()}{analyst_top()}</div>{talk_top()}<a class="lab-cta mag-cta" href="/mag/{TODAY.isoformat()}/"><b>📰 오늘의 루리의 줍줍 데일리</b><span>정치 이슈 · 커뮤니티 화제 · 마감 공모전 · 새 지원금 · 오늘 메뉴를 한 장에 →</span></a>
+<div class="hm-2">{satire_top()}{news_top()}{analyst_top()}</div>{talk_top()}<a class="lab-cta mag-cta" href="/mag/{TODAY.isoformat()}/"><b>📰 오늘의 루리의 줍줍 데일리</b><span>정치 이슈 · 커뮤니티 화제 · 마감 공모전 · 새 지원금 · 오늘 메뉴를 한 장에 →</span></a>
 <h2 class="cs-h2">🏆 이 공모전이나 해 볼까? 루리 공모전 추천 상담</h2>
 <section id="consult" aria-label="루리 공모전 추천 상담"><noscript><p>루리 상담은 자바스크립트가 필요해요. 진행 중 공모전 {len(live)}건이 있어요.</p></noscript></section>
 {qa_home()}<a class="lab-cta" href="/app/"><b>🔔 공모전 알림 받기 · 앱 설치</b><span>관심 분야 새 공모전·마감 임박을 폰 알림으로 · 홈 화면에 루리의 줍줍 앱 →</span></a><a class="lab-cta prep-cta" href="/prep/"><b>📋 루리의 준비실</b><span>공모전 고르면 마감까지 할 일·체크리스트를 짜 드려요 · 장르별 꿀팁 →</span></a><a class="lab-cta" href="/lab/"><b>🏆 루리의 수상 연구소</b><span>공모전 수상작을 뜯어보고 당선 공식을 정리했어요 →</span></a><p class="cs-foot">진행 중 공모전 {len(live)}건의 마감일·상금·응모 자격·접수 방법과 공식 공고 캡처를 정리해 두고, 루리가 상황에 맞는 것만 골라 드려요.</p>
-<link rel="stylesheet" href="/assets/home/consult.css?v=8"><script defer src="/assets/home/consult.js?v=10"></script>'''
+<link rel="stylesheet" href="/assets/home/consult.css?v=9"><script defer src="/assets/home/consult.js?v=10"></script>'''
     page('/', '루리의 줍줍 — 이슈 감별 · 애널리스트 분석 종합 · 공모전',
          f'오늘의 정치 이슈 팩트 감별, 증권사 목표가·코인 전망 노드 분석, 커뮤니티 화제, 진행 중 공모전 {len(live)}건까지. 루리가 매시간 정리해요.',
          home, full_title=True, ld={'@context': 'https://schema.org', '@type': 'WebSite', 'name': NAME, 'alternateName': ['루리의줍줍', 'sungprofile', '루리 줍줍'], 'url': SITE + '/'})
@@ -478,7 +478,7 @@ def build():
     fridge_page()
     app_page()
     news_page()
-    extra_urls = talk_pages() + mag_pages(live, aps) + analyst_pages()
+    extra_urls = talk_pages() + mag_pages(live, aps) + analyst_pages() + satire_pages()
     community(live)
     lab_urls = lab() or []
     me_pages()
@@ -640,7 +640,7 @@ def talk_pages():
     if not days:
         return []
     arch = '<section class="tk-arch"><h2>📅 날짜별 커뮤니티 이슈</h2><p>' + ''.join(f'<a href="/talk/{d}/">{kdate(d)}</a>' for d in days[:60]) + '</p></section>'
-    css = '<link rel="stylesheet" href="/assets/mag/mag.css?v=2"><link rel="stylesheet" href="/assets/news/news.css?v=2">'
+    css = '<link rel="stylesheet" href="/assets/mag/mag.css?v=3"><link rel="stylesheet" href="/assets/news/news.css?v=2">'
     note = '<p class="note">순위는 여러 커뮤니티에 동시에 뜬 정도·댓글 수·인기글에 머문 시간으로 매겨요. 성·혐오·개인 신상·비방·사생활 폭로성 글은 모으지 않아요. 요약은 루리가 제목과 수치만 보고 정리했어요.</p>'
     urls = ['/talk/']
     for i, d in enumerate(days):
@@ -787,7 +787,7 @@ def mag_pages(live, aps):
     mag_snapshot(live, aps)
     md = os.path.join(ROOT, 'mag', 'archive')
     days = sorted([f[:-5] for f in os.listdir(md) if f.endswith('.json')], reverse=True)
-    css = '<link rel="stylesheet" href="/assets/mag/mag.css?v=2">'
+    css = '<link rel="stylesheet" href="/assets/mag/mag.css?v=3">'
     urls, cards = ['/mag/'], []
     for d in days:
         m = json.load(open(os.path.join(md, d + '.json'), encoding='utf-8'))
@@ -998,6 +998,87 @@ def talk_top():
     d = _rd('talk/data.json')
     li = ''.join(f'<li><a href="/talk/#t{x["n"]}"><em>{i + 1}</em><b>{E(x["t"])}</b><span>{x["nsite"]}곳 · 💬{x["nc"]:,}</span></a></li>' for i, x in enumerate(d.get('issues', [])[:3]))
     return f'<section class="nw-home tk-home"><h2>💬 지금 커뮤니티 이슈 <a href="/talk/">TOP30 →</a></h2><ol>{li}</ol></section>' if li else ''
+
+
+SAT_DIR = r'C:\Users\k\Desktop\공모전_2026\풍자툰'
+
+
+def satire_days():
+    """풍자툰 폴더의 satire_MMDD.png(만평)·toon_MMDD.png(4컷)·cap_MMDD.txt → [(YYYY-MM-DD, {'imgs': [...], 'cap': [...]})], 최신 먼저."""
+    if not os.path.isdir(SAT_DIR):
+        return []
+    days = {}
+    for f in os.listdir(SAT_DIR):
+        m = re.match(r'(satire|toon)_(\d{2})(\d{2})\.png$', f)
+        if not m:
+            continue
+        y = TODAY.year if (int(m.group(2)), int(m.group(3))) <= (TODAY.month, TODAY.day) else TODAY.year - 1
+        d = f'{y}-{m.group(2)}-{m.group(3)}'
+        days.setdefault(d, {'imgs': [], 'mmdd': m.group(2) + m.group(3)})['imgs'].append((0 if m.group(1) == 'satire' else 1, f))
+    out = []
+    for d, v in days.items():
+        v['imgs'] = [f for _, f in sorted(v['imgs'])]
+        cp = os.path.join(SAT_DIR, f'cap_{v["mmdd"]}.txt')
+        lines = []
+        if os.path.exists(cp):
+            for l in open(cp, encoding='utf-8-sig').read().splitlines():
+                l = l.strip()
+                if l and not l.startswith('#') and '프로필 링크' not in l and '캐릭터 이미지' not in l:
+                    lines.append(l)
+        v['cap'] = lines
+        out.append((d, v))
+    return sorted(out, reverse=True)
+
+
+def satire_img(d, f):
+    od = os.path.join(ROOT, 'satire', d)
+    os.makedirs(od, exist_ok=True)
+    src, dst = os.path.join(SAT_DIR, f), os.path.join(od, f[:-4] + '.webp')
+    if not os.path.exists(dst) or os.path.getmtime(dst) < os.path.getmtime(src):
+        from PIL import Image
+        Image.open(src).convert('RGB').resize((864, 1080), Image.LANCZOS).save(dst, quality=84)
+    return f'/satire/{d}/{f[:-4]}.webp'
+
+
+def satire_pages():
+    # 루리 풍자 (2026-10-18 사용자: "루리 풍자도 메인에 올리고 매일매일 하나씩 나오게 하고 이전꺼도 보게") — 원고·그림은 홍보 세션이 풍자툰 폴더에 매일 둔다
+    days = satire_days()
+    if not days:
+        return []
+    css = '<link rel="stylesheet" href="/assets/mag/mag.css?v=3">'
+    note = '<p class="note">풍자 만화예요. 특정 종목·인물을 비방하거나 투자를 권하려는 게 아니에요. 숫자는 그날 보도 기준이에요.</p>'
+    urls = ['/satire/']
+    def one(d, v, h='h2'):
+        imgs = ''.join(f'<img src="{satire_img(d, f)}" width="864" height="1080" alt="{kdate(d)} 루리 풍자 {"만평" if f.startswith("satire") else "4컷"}" loading="lazy">' for f in v['imgs'])
+        cap = ''.join(f'<p>{E(l)}</p>' for l in v['cap'])
+        return f'<article class="st-d"><{h}>🎨 {kdate(d)} 루리 풍자</{h}><div class="st-imgs">{imgs}</div>{("<div class=st-cap>" + cap + "</div>") if cap else ""}</article>'
+    arch = '<section class="tk-arch"><h2>📅 지난 풍자 모아 보기</h2><p>' + ''.join(f'<a href="/satire/{d}/">{kdate(d)}</a>' for d, _ in days[:90]) + '</p></section>'
+    d0, v0 = days[0]
+    title0 = (v0['cap'][0] if v0['cap'] else '오늘의 풍자')
+    page('/satire/', '루리 풍자 — 매일 한 컷, 증시·뉴스 만평', f'루리가 매일 그리는 풍자 만화. 오늘: {title0}. 지난 풍자도 날짜별로 모아 봐요.',
+         '<p class="bc"><a href="/">홈</a> › 루리 풍자</p><h1>🎨 루리 풍자</h1>' + one(d0, v0) + note + arch + css, [('루리의 줍줍', '/'), ('루리 풍자', '/satire/')])
+    for i, (d, v) in enumerate(days):
+        nav = ''
+        if i + 1 < len(days):
+            nav += f'<a href="/satire/{days[i + 1][0]}/">← {kdate(days[i + 1][0])}</a>'
+        if i > 0:
+            nav += f'<a href="/satire/{days[i - 1][0]}/">{kdate(days[i - 1][0])} →</a>'
+        page(f'/satire/{d}/', f'{kdate(d)} 루리 풍자 — ' + (v['cap'][0] if v['cap'] else '증시·뉴스 만평'), f'{kdate(d)} 루리 풍자 만화. ' + ' '.join(v['cap'][:2])[:120],
+             f'<p class="bc"><a href="/">홈</a> › <a href="/satire/">루리 풍자</a> › {kdate(d)}</p>' + one(d, v, 'h1') + f'<p class="st-nav">{nav}</p>' + note + arch + css,
+             [('루리의 줍줍', '/'), ('루리 풍자', '/satire/'), (kdate(d), f'/satire/{d}/')])
+        urls.append(f'/satire/{d}/')
+    return urls
+
+
+def satire_top():
+    days = satire_days()
+    if not days:
+        return ''
+    d, v = days[0]
+    img = satire_img(d, v['imgs'][0])
+    t = v['cap'][0] if v['cap'] else '오늘의 풍자'
+    return (f'<section class="nw-home st-home"><h2>🎨 오늘의 루리 풍자 <a href="/satire/">지난 풍자 →</a></h2><a class="st-hm" href="/satire/{d}/"><img src="{img}" width="864" height="1080" alt="{E(t)}">'
+            f'<span><b>{E(t)}</b>{E(" ".join(v["cap"][1:3]))[:90]}</span></a></section>')
 
 
 def news_top():
