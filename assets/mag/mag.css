@@ -1,0 +1,23 @@
+/* 커뮤니티 이슈(/talk/) · 데일리 매거진(/mag/) */
+.tk-hero,.mg-hero{display:flex;gap:14px;align-items:center;background:linear-gradient(135deg,#ecfeff,#f5f3ff);border:1px solid #c7d2fe;border-radius:20px;padding:12px 14px;margin:0 0 10px}
+.tk-hero img{width:96px;height:133px;object-fit:cover;object-position:top;border-radius:14px;flex:none}.tk-hero small,.mg-hero small{font-size:12px;color:#4338ca;font-weight:700}
+.tk-hero b{display:block;font-size:18px;color:#1e1b4b;margin:2px 0}.tk-hero p{margin:4px 0 0;font-size:13px;color:#3730a3;line-height:1.55}
+.tk-warn{font-size:13px;background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;border-radius:12px;padding:8px 11px;margin:8px 0 4px}
+.tk-is{display:flex;gap:10px;background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:14px 14px 12px 10px;margin:12px 0;box-shadow:var(--sh)}
+.tk-r{flex:none;width:34px;font-size:26px;font-weight:900;color:#4f46e5;text-align:center;font-style:italic}.tk-b{flex:1;min-width:0}
+.tk-m{margin:0;display:flex;gap:10px;font-size:12px;color:var(--mu)}.tk-hot{font-weight:800;color:#dc2626}.tk-is h2{font-size:17px;line-height:1.4;margin:6px 0}
+.tk-s{font-size:13.5px;color:#374151;line-height:1.6;margin:0 0 6px}.tk-kw{margin:0 0 6px;display:flex;flex-wrap:wrap;gap:4px}.tk-kw span{font-size:12px;background:#eef2ff;color:#4338ca;border-radius:6px;padding:2px 7px;font-weight:700}
+.tk-news{display:inline-block;font-size:12.5px;font-weight:800;color:#92400e;background:#fef3c7;border-radius:8px;padding:4px 9px;text-decoration:none}.tk-nn{display:inline-block;font-size:12.5px;font-weight:700;color:#6b7280;background:#f3f4f6;border-radius:8px;padding:4px 9px}
+.tk-is details{margin-top:8px}.tk-is summary{cursor:pointer;font-weight:800;font-size:13.5px;color:#4338ca}
+.tk-ps{list-style:none;margin:6px 0 0;padding:0;display:grid;gap:4px}.tk-ps li{display:flex;gap:8px;align-items:center;font-size:13.5px}.tk-ps a{flex:1;min-width:0;color:#111827;text-decoration:none;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.tk-ps em{font-style:normal;font-size:11.5px;font-weight:800;color:#6366f1;margin-right:6px}.tk-ps small{flex:none;color:var(--mu);font-size:12px}
+.tk-arch{margin-top:20px}.tk-arch h2{font-size:16px}.tk-arch p{display:flex;flex-wrap:wrap;gap:6px}.tk-arch a{font-size:13px;background:var(--card);border:1px solid var(--bd);border-radius:999px;padding:5px 11px;text-decoration:none;color:inherit}
+.mg-hero{display:block;background:linear-gradient(135deg,#1e1b4b,#4c1d95);border:0;color:#fff;padding:18px}.mg-hero small{color:#c4b5fd}.mg-hero b{display:block;font-size:24px;margin:4px 0}.mg-hero p{margin:0;font-size:14px;color:#e0e7ff;line-height:1.55}.mg-hero span{display:block;font-size:12px;color:#a5b4fc;margin-top:6px}
+.mg-s{background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:14px;margin:12px 0;box-shadow:var(--sh)}.mg-s h2{font-size:18px;margin:0 0 8px}
+.mg-l{list-style:none;margin:8px 0 0;padding:0;display:grid;gap:6px}.mg-l a{display:flex;gap:10px;align-items:flex-start;background:#fafafa;border:1px solid var(--bd);border-radius:12px;padding:9px 11px;text-decoration:none;color:inherit}
+.mg-l em{flex:none;width:22px;font-style:italic;font-weight:900;color:#7c3aed;font-size:17px}.mg-l b{flex:1;min-width:0;font-size:14.5px;line-height:1.4}.mg-l span{display:block;font-size:12px;color:var(--mu);font-weight:600;margin-top:2px}
+.mg-l a{flex-wrap:wrap}.mg-l a span{flex-basis:100%;padding-left:32px}
+.mg-more{display:inline-block;margin-top:8px;font-size:13.5px;font-weight:800;color:#7c3aed;text-decoration:none}
+.mg-menu{background:#fff7ed;border-radius:12px;padding:10px 12px;margin-top:8px}.mg-menu b{display:block;font-size:16px}.mg-menu span{font-size:13px;color:#9a3412}.mg-menu ol{margin:6px 0 0;padding-left:20px;font-size:14px;line-height:1.65}
+.mg-idx{list-style:none;margin:12px 0;padding:0;display:grid;gap:8px}.mg-idx a{display:block;background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:12px 14px;text-decoration:none;color:inherit;box-shadow:var(--sh)}
+.mg-idx small{font-size:12px;color:#7c3aed;font-weight:800}.mg-idx b{display:block;font-size:17px}.mg-idx span{font-size:13px;color:var(--mu)}.mg-nav{text-align:center;margin:16px 0}.mg-nav a{font-weight:800;color:#7c3aed}
