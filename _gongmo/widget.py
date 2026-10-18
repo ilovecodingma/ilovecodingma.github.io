@@ -132,6 +132,74 @@ def card_png(path, title, rows, updated, root, accent=(109, 40, 217)):
     im.save(path, optimize=True)
 
 
+def _wrap(dr, t, f, w, n):
+    """단어 단위 줄바꿈(긴 단어만 글자 단위), 최대 n줄 (넘치면 …)"""
+    out, cur = [], ''
+    for word in t.split(' '):
+        cand = (cur + ' ' + word) if cur else word
+        if dr.textlength(cand, font=f) <= w:
+            cur = cand; continue
+        if cur:
+            out.append(cur); cur = ''
+        while dr.textlength(word, font=f) > w:
+            k = len(word)
+            while k > 1 and dr.textlength(word[:k], font=f) > w:
+                k -= 1
+            out.append(word[:k]); word = word[k:]
+        cur = word
+    if cur:
+        out.append(cur)
+    if len(out) > n:
+        out = out[:n]; out[-1] = _fit(dr, out[-1] + '…', f, w)
+    return out
+
+
+def card_png_170(path, title, rows, updated, root, accent=(109, 40, 217)):
+    """네이버 블로그 사이드바용 세로 카드 (표시 170×최대 600 → 2배 해상도 340폭으로 그림)."""
+    from PIL import Image, ImageDraw
+    W, S = 340, 2
+    ft, fb, fs, fd, ff = _font(30, True), _font(25, True), _font(19), _font(20, True), _font(19, True)
+    tmp = Image.new('RGB', (W, 10)); dr = ImageDraw.Draw(tmp)
+    blocks = []
+    for badge, t, sub, red in rows or [('', '지금 정리 중이에요', 'sungprofile.cloud', False)]:
+        blocks.append((badge, _wrap(dr, t, fb, W - 28, 3), _wrap(dr, sub, fs, W - 28, 2), red))
+    HH = 112
+    H = HH + sum(18 + (36 if b[0] else 0) + 32 * len(b[1]) + 25 * len(b[2]) + 14 for b in blocks) + 70
+    H = min(H, 1200)
+    im = Image.new('RGB', (W, H), (255, 255, 255)); dr = ImageDraw.Draw(im)
+    dr.rectangle([0, 0, W, HH], fill=(245, 243, 255))
+    try:
+        av = Image.open(os.path.join(root, 'assets', 'ruri', 'avatar.webp')).convert('RGBA').resize((56, 56))
+        m = Image.new('L', (56, 56), 0); ImageDraw.Draw(m).ellipse([0, 0, 55, 55], fill=255)
+        im.paste(av, (14, 14), m)
+    except Exception:
+        pass
+    tl = title.split('\n')
+    for i, l in enumerate(tl[:2]):
+        dr.text((82, 14 + i * 34), _fit(dr, l, ft, W - 92), font=ft, fill=(30, 27, 46))
+    dr.text((W - 14, HH - 12), updated + ' 갱신', font=_font(17), fill=(107, 114, 128), anchor='rs')
+    y = HH
+    for badge, tl_, sl, red in blocks:
+        y += 18
+        if badge:
+            bw = dr.textlength(badge, font=fd) + 26
+            dr.rounded_rectangle([14, y, 14 + bw, y + 30], 15, fill=(220, 38, 38) if red else accent)
+            dr.text((14 + bw / 2, y + 15), badge, font=fd, fill=(255, 255, 255), anchor='mm')
+            y += 36
+        for l in tl_:
+            dr.text((14, y), l, font=fb, fill=(30, 27, 46)); y += 32
+        for l in sl:
+            dr.text((14, y), l, font=fs, fill=(107, 114, 128)); y += 25
+        y += 14
+        if y > H - 80:
+            break
+        dr.line([14, y - 2, W - 14, y - 2], fill=(236, 233, 245), width=2)
+    dr.rectangle([0, H - 70, W, H], fill=accent)
+    dr.text((W / 2, H - 46), '루리의 줍줍 매일 갱신', font=ff, fill=(255, 255, 255), anchor='mm')
+    dr.text((W / 2, H - 22), 'sungprofile.cloud', font=_font(17), fill=(237, 233, 254), anchor='mm')
+    im.save(path, optimize=True)
+
+
 def images(root, D, today):
     d = os.path.join(root, 'w', 'img')
     os.makedirs(d, exist_ok=True)
@@ -140,9 +208,16 @@ def images(root, D, today):
         rows = [(_dd(c['e'], today)[1], c['t'], f'{c["o"]}' + (f' · 상금 {c["p"]}' if c['p'] else '') + f' · {c["e"][5:].replace("-", "/")} 마감', _dd(c['e'], today)[0] <= 3) for c in D['contest'][k][:5]]
         card_png(os.path.join(d, 'contest-week.png' if k == 'all' else f'contest-week-{k}.png'), '이번 주 마감 공모전 TOP5' + ('' if k == 'all' else f' · {cn[k]}'), rows, D['updated'], root)
     rows = [(_dd(a['e'], today)[1], a['t'], f'{a["k"]} · {a["o"]} · {a["e"][5:].replace("-", "/")} 마감', _dd(a['e'], today)[0] <= 3) for a in D['apply'][:5]]
-    card_png(os.path.join(d, 'apply-week.png'), '이번 주 지원금·청약 마감', rows, D['updated'], root, (14, 116, 144))
+    card_png(os.path.join(d, 'apply-week.png'), '이번 주 마감\n지원금·청약', rows, D['updated'], root, (14, 116, 144))
     rows = [(f'{i + 1}위', x['t'], f'언론사 {x["n"]}곳 보도 · 나한테 달라지는 점 정리', False) for i, x in enumerate(D['hot'][:3])]
     card_png(os.path.join(d, 'hot-today.png'), '오늘의 핫이슈 3', rows, D['updated'], root, (180, 83, 9))
+    # 네이버 블로그 사이드바(가로 170px·세로 600px 제한)용 세로형 TOP3 (2026-10-18 홍보 세션 요청)
+    rows = [(_dd(c['e'], today)[1] + ' · ' + c['e'][5:].replace('-', '/') + ' 마감', c['t'], (f'상금 {c["p"]}' if c['p'] else c['o']), _dd(c['e'], today)[0] <= 3) for c in D['contest']['all'][:3]]
+    card_png_170(os.path.join(d, 'contest-week-170.png'), '이번 주 마감\n공모전 TOP3', rows, D['updated'], root)
+    rows = [(_dd(a['e'], today)[1] + ' · ' + a['e'][5:].replace('-', '/') + ' 마감', a['t'], a['k'], _dd(a['e'], today)[0] <= 3) for a in D['apply'][:3]]
+    card_png_170(os.path.join(d, 'apply-week-170.png'), '이번 주 마감\n지원금·청약', rows, D['updated'], root, (14, 116, 144))
+    rows = [(f'{i + 1}위', x['t'], f'언론사 {x["n"]}곳 보도', False) for i, x in enumerate(D['hot'][:3])]
+    card_png_170(os.path.join(d, 'hot-today-170.png'), '오늘의\n핫이슈 TOP3', rows, D['updated'], root, (180, 83, 9))
 
 
 def widget_page(page, say, D):
@@ -162,13 +237,13 @@ def widget_page(page, say, D):
 <div class="wg-c"><h3>🖼️ 이미지 + 링크 (네이버 블로그·카페·디시)</h3><textarea id="c1" readonly rows="3"></textarea><p><button data-c="c1">코드 복사</button><button id="cimg">이미지 주소 복사</button></p></div>
 <div class="wg-c"><h3>🪟 iframe (티스토리·워드프레스·홈페이지)</h3><textarea id="c2" readonly rows="3"></textarea><p><button data-c="c2">코드 복사</button></p></div>
 <div class="wg-c"><h3>📝 텍스트 목록 (어디든 붙여넣기)</h3><textarea id="c3" readonly rows="5"></textarea><p><button data-c="c3">코드 복사</button></p><p class="note">텍스트 목록은 복사한 그 시점의 목록이라 자동으로 바뀌지 않아요.</p></div></section>
-<h2>블로그에 붙이는 법</h2><ul class="chk">
-<li><b>네이버 블로그</b>: 글쓰기 → 사진 대신 「이미지 주소 복사」로 받은 주소를 이미지로 넣고, 이미지를 눌러 링크에 https://sungprofile.cloud/contest/?src=w_img 를 걸어요. 네이버 에디터는 붙인 이미지를 네이버 서버에 복사해 두기 때문에 자동 갱신은 안 될 수 있어요. 목록이 바뀌면 다시 붙이거나, 프로필·위젯 영역에 링크로 걸어 두세요.</li>
+<h2 id="naver">📗 네이버 블로그 사이드바에 붙이는 법 (캡처)</h2><div class="wg-c"><h3>네이버 블로그용 코드 (가로 170px 세로형)</h3><select id="nk" aria-label="네이버용 위젯 종류"><option value="contest-week-170|/contest/week/|이번 주 마감 공모전">이번 주 마감 공모전 TOP3</option><option value="apply-week-170|/apply/|이번 주 마감 지원금·청약">이번 주 마감 지원금·청약</option><option value="hot-today-170|/hot/|오늘의 핫이슈">오늘의 핫이슈 TOP3</option></select><textarea id="c4" readonly rows="3"></textarea><p><button data-c="c4">코드 복사</button></p><img id="nimg" src="/w/img/contest-week-170.png" width="170" alt="네이버용 위젯 미리보기"></div><ol class="wg-man"><li><b>1. 블로그 관리 → 꾸미기 설정</b><p>네이버 블로그 오른쪽 위 「관리」로 들어가 위쪽 「꾸미기 설정」 탭을 누르고, 왼쪽 「레이아웃·위젯 설정」을 고르세요.</p><img src="/assets/widget/manual/01.webp" alt="네이버 블로그 위젯 등록 1단계: 블로그 관리 → 꾸미기 설정" loading="lazy" decoding="async"></li><li><b>2. 디자인 설정 → 레이아웃·위젯 설정</b><p>레이아웃 화면 오른쪽에 「위젯 사용 설정」 목록이 있어요. 아래로 내려 주세요.</p><img src="/assets/widget/manual/02.webp" alt="네이버 블로그 위젯 등록 2단계: 디자인 설정 → 레이아웃·위젯 설정" loading="lazy" decoding="async"></li><li><b>3. 위젯 목록 아래 「+위젯직접등록」</b><p>위젯 목록 맨 아래 「+위젯직접등록 BETA」 버튼을 눌러요.</p><img src="/assets/widget/manual/03.webp" alt="네이버 블로그 위젯 등록 3단계: 위젯 목록 아래 「+위젯직접등록」" loading="lazy" decoding="async"></li><li><b>4. 위젯명 입력</b><p>위젯 이름은 블로그에 보이지 않으니 알아보기 쉽게 「이번 주 마감 공모전」처럼 적어요.</p><img src="/assets/widget/manual/04.webp" alt="네이버 블로그 위젯 등록 4단계: 위젯명 입력" loading="lazy" decoding="async"></li><li><b>5. 위젯 코드 붙여넣기 → 다음</b><p>위에서 복사한 「네이버 블로그용 코드」를 위젯 코드 칸에 붙여 넣고 「다음」을 눌러요.</p><img src="/assets/widget/manual/05.webp" alt="네이버 블로그 위젯 등록 5단계: 위젯 코드 붙여넣기 → 다음" loading="lazy" decoding="async"></li><li><b>6. 미리보기 확인 → 등록</b><p>미리보기에 위젯 그림이 보이면 「등록」을 눌러요. 네이버 위젯은 가로 170px까지만 보여서 170px 전용 이미지를 써요.</p><img src="/assets/widget/manual/06.webp" alt="네이버 블로그 위젯 등록 6단계: 미리보기 확인 → 등록" loading="lazy" decoding="async"></li><li><b>7. 사이드바에 위젯 블록이 생겨요</b><p>왼쪽 사이드바에 새 위젯 블록이 생겨요. 원하는 위치로 끌어 옮긴 뒤 아래 「적용」 → 「확인」을 눌러요.</p><img src="/assets/widget/manual/07.webp" alt="네이버 블로그 위젯 등록 7단계: 사이드바에 위젯 블록이 생겨요" loading="lazy" decoding="async"></li><li><b>8. 블로그에서 확인</b><p>내 블로그에 들어가면 사이드바에 위젯이 보여요. 누르면 루리의 줍줍 「이번 주 마감 공모전」으로 이동해요.</p><img src="/assets/widget/manual/08.webp" alt="네이버 블로그 위젯 등록 8단계: 블로그에서 확인" loading="lazy" decoding="async"></li><li><b>9. 위젯 확대 모습</b><p>이미지는 매시간 새로 그려요. 다만 네이버가 이미지를 저장해 둘 수 있어서, 목록이 오래 그대로면 위젯을 지웠다가 다시 등록해 주세요.</p><img src="/assets/widget/manual/09.webp" alt="네이버 블로그 위젯 등록 9단계: 위젯 확대 모습" loading="lazy" decoding="async"></li></ol><h2>블로그에 붙이는 법</h2><ul class="chk">
+<li><b>네이버 블로그 사이드바</b>: <a href="#naver">위의 캡처 매뉴얼</a>대로 「위젯직접등록」에 네이버용 코드를 넣어요.</li><li><b>네이버 블로그 글</b>: 글쓰기 → 사진 대신 「이미지 주소 복사」로 받은 주소를 이미지로 넣고, 이미지를 눌러 링크에 https://sungprofile.cloud/contest/?src=w_img 를 걸어요. 네이버 에디터는 붙인 이미지를 네이버 서버에 복사해 두기 때문에 자동 갱신은 안 될 수 있어요. 목록이 바뀌면 다시 붙이거나, 프로필·위젯 영역에 링크로 걸어 두세요.</li>
 <li><b>티스토리</b>: 글쓰기 → 기본모드 오른쪽 위 「HTML」로 바꾸고 iframe 코드를 붙여요. 사이드바에 넣으려면 꾸미기 → 사이드바 → HTML 배너 출력에 붙여요.</li>
 <li><b>워드프레스</b>: 블록 추가 → 「사용자 정의 HTML」 블록에 iframe 코드를 붙여요. 위젯 영역(외모 → 위젯)에도 같은 블록을 쓸 수 있어요.</li>
 <li><b>네이버 카페·디시</b>: iframe 이 막혀 있어서 이미지 + 링크 방식이 좋아요. 이미지 주소로 그림을 넣고 아래에 사이트 링크를 한 줄 적어 주세요.</li></ul>
 <p class="note">위젯 목록은 매시간 갱신돼요. 공모전 정보는 각 주최 기관 공고를 정리한 것이라, 응모 전 공식 공고를 꼭 확인하세요. 위젯을 붙인 뒤 문제가 있으면 <a href="/contact/">문의</a>로 알려 주세요.</p>
-<link rel="stylesheet" href="/assets/widget/widget.css?v=1"><script defer src="/assets/widget/widget.js?v=1"></script>'''
+<link rel="stylesheet" href="/assets/widget/widget.css?v=2"><script defer src="/assets/widget/widget.js?v=2"></script>'''
     page('/widget/', '공모전 위젯 무료 — 블로그에 이번 주 마감 공모전 자동 표시', '블로그·카페·홈페이지에 이번 주 마감 공모전 TOP5, 지원금·청약 마감, 오늘의 핫이슈, D-day 카운터를 무료로 붙이세요. 이미지·iframe·텍스트 3가지 방식, 매시간 자동 갱신.',
          body, [('루리의 줍줍', '/'), ('공모전', '/contest/'), ('위젯', '/widget/')])
 

@@ -30,6 +30,9 @@
     $('c3').value = `<ul>\n${rows.join('\n')}\n</ul>\n<p><a href="${S}/${tag}">루리의 줍줍</a>에서 매일 갱신</p>`;
   }
   ['wk', 'wc', 'wn', 'ws', 'wt', 'wi'].forEach(i => $(i).addEventListener('change', draw));
+  const nv = () => { const [img, land, alt] = $('nk').value.split('|'); $('nimg').src = `/w/img/${img}.png?t=${Date.now() / 36e5 | 0}`;
+    $('c4').value = `<a href="${S}${land}?src=w_nblog" target="_blank"><img src="${S}/w/img/${img}.png" width="170" alt="${alt}"></a>`; };
+  if ($('nk')) { $('nk').addEventListener('change', nv); nv(); }
   const copy = (v, b) => { (navigator.clipboard ? navigator.clipboard.writeText(v) : Promise.reject()).then(() => { const o = b.textContent; b.textContent = '복사했어요 ✓'; setTimeout(() => b.textContent = o, 1500); }).catch(() => { prompt('복사해서 쓰세요', v); });
     try { window.gtag && gtag('event', 'widget_copy', { kind: $('wk').value }); } catch {} };
   document.querySelectorAll('.wg-c button[data-c]').forEach(b => b.onclick = () => copy($(b.dataset.c).value, b));
