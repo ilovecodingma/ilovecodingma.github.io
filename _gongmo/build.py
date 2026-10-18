@@ -1404,10 +1404,10 @@ def rss_feed(live, aps):
         d = f[:-5]; add(f'/mag/{d}/', f'루리의 이슈 리딩 {kdate(d)}', d, f'{kdate(d)} 정치 이슈·커뮤니티 화제·마감 공모전·새 지원금 한 장 정리')
     for d, v in satire_days()[:14]:
         add(f'/satire/{d}/', f'{kdate(d)} 루리 풍자 — ' + (v['cap'][0] if v['cap'] else '만평'), d, ' '.join(v['cap'][:2])[:150])
-    for c in sorted(live, key=lambda c: c.get('start') or '', reverse=True)[:25]:
+    for c in sorted([c for c in live if (c.get('start') or '9') <= TODAY.isoformat()], key=lambda c: c['start'], reverse=True)[:25]:
         if c.get('start'):
             add(f'/c/{c["id"]}/', f'{c["title"]} — {c["end"][5:].replace("-", "/")} 마감', c['start'], f'{c.get("org") or ""} 주최 · 상금 {c.get("prize") or "공고 확인"} · 응모 자격·접수 방법 정리')
-    for a in sorted([a for a in aps if a.get('start')], key=lambda a: a['start'], reverse=True)[:15]:
+    for a in sorted([a for a in aps if a.get('start') and a['start'] <= TODAY.isoformat()], key=lambda a: a['start'], reverse=True)[:15]:
         add(f'/a/{a["id"]}/', a['title'], a['start'], f'{a.get("kind", "")} · {a.get("org") or ""} · 신청 기간과 방법 정리')
     for q in QA[:10]:
         add(f'/guide/{q["slug"]}/', q['title'], (q.get('date') or TODAY.isoformat())[:10], q.get('desc', ''))
