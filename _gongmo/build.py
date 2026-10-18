@@ -65,10 +65,10 @@ GTAG = ('<script async src="https://pagead2.googlesyndication.com/pagead/js/adsb
 THEMES = [  # (키, 이름, 아이콘, 테마색, 홈, [하위 메뉴], [이 테마에 속하는 주소 앞부분])
     ('issue', '이슈', '🕵️', '#b45309', '/news/', [('/hot/', '핫이슈'), ('/news/', '이슈 감별'), ('/talk/', '커뮤니티 이슈'), ('/kw/', '인기 키워드'), ('/satire/', '루리 풍자'), ('/mag/', '매거진')],
      ['/hot/', '/news/', '/talk/', '/kw/', '/satire/', '/mag/']),
-    ('money', '머니', '📊', '#047857', '/analyst/', [('/analyst/', '애널리스트 종합'), ('/money/experts/', '전문가 코멘트'), ('/money/policy/', '투자 정책'), ('/money/age/', '나이별 원칙'), ('/money/tools/loan/', '계산기'), ('/analyst/coin/btc/', '코인')], ['/analyst/', '/money/']),
+    ('money', '머니', '📊', '#047857', '/analyst/', [('/analyst/', '애널리스트 종합'), ('/money/experts/', '전문가 코멘트'), ('/money/policy/', '투자 정책'), ('/money/age/', '나이별 원칙'), ('/money/tools/salary/', '계산기'), ('/analyst/coin/btc/', '코인')], ['/analyst/', '/money/']),
     ('contest', '공모전', '🏆', '#6d28d9', '/contest/', [('/contest/', '추천 상담'), ('/cat/literature/', '분야별'), ('/prep/', '준비실'), ('/lab/', '수상 연구소'), ('/community/', '원정대'), ('/guide/', '가이드'), ('/widget/', '위젯')],
      ['/contest/', '/c/', '/cat/', '/prep/', '/lab/', '/community/', '/guide/', '/v/', '/me/', '/widget/']),
-    ('life', '생활', '🍳', '#0e7490', '/apply/', [('/apply/', '지원금·청약'), ('/apply/recommend/', '청약 추천'), ('/event/', '경품'), ('/fridge/', '냉장고 파먹기'), ('/qa/', '고민 해결')], ['/apply/', '/a/', '/event/', '/fridge/', '/qa/', '/ssul/']),
+    ('life', '생활', '🍳', '#0e7490', '/apply/', [('/apply/', '지원금·청약'), ('/apply/recommend/', '청약 추천'), ('/apply/r/', '지역별'), ('/event/', '경품'), ('/fridge/', '냉장고 파먹기'), ('/qa/', '고민 해결')], ['/apply/', '/a/', '/event/', '/fridge/', '/qa/', '/ssul/']),
     ('ai', 'AI 로그', '🤖', '#0f172a', '/ailog/', [('/ailog/', 'AI 제작 로그')], ['/ailog/'])]
 
 
@@ -101,8 +101,8 @@ PAGE_INTRO = {k: f'<section class="pg-intro"><h2>{h}</h2>{v}</section>' for k, (
  '/event/': ('경품 이벤트 볼 때 알아 둘 것', '<p>기업·기관 SNS와 이벤트 사이트에 올라온 경품 이벤트를 매시간 모아 마감순으로 정리해요. 댓글 한 줄·퀴즈·설문처럼 1~5분이면 끝나는 것을 위로 올려요. 당첨됐다며 개인정보나 배송비·세금 송금을 먼저 요구하는 연락은 사기일 가능성이 크니, 꼭 공식 계정의 발표 글과 대조해 보세요. 경품이 5만원을 넘으면 제세공과금(22%)을 낼 수 있어요.</p>'),
  '/fridge/': ('냉장고 파먹기 사용법', '<p>집에 있는 재료를 고르면 루리가 정리한 집밥 레시피 중 지금 바로 만들 수 있는 메뉴를 먼저 보여 드려요. 재료 하나만 더 사면 되는 메뉴도 함께 알려 줘서, 장보기 목록을 줄일 수 있어요. 레시피는 1~2인분 기준이고 조리 시간과 난이도를 함께 적었어요.</p>'),
  '/lab/': ('수상 연구소는 이렇게 분석해요', '<p>슬로건·표어·네이밍 공모전의 실제 수상작을 모아 글자 수, 운율, 대구, 핵심어 위치 같은 구조로 하나씩 풀어 봐요. 수상작을 베끼는 게 아니라 「왜 뽑혔는지」를 알아보는 곳이에요. 내 문구를 넣으면 같은 기준으로 진단해 드려요.</p>'),
- '/apply/': ('청약·지원금 신청 전에', '<p>여기 모은 일정은 청약홈·LH·지자체·정부24 공고를 바탕으로 마감순으로 정리했어요. 같은 지원금이라도 지역·나이·소득 기준이 달라 신청 전에 자격부터 확인해야 해요. 청약은 <a href="/apply/recommend/">청약 추천</a>에서 내 가점을 먼저 계산해 보세요.</p>'),
- '/contest/': ('공모전 추천은 이렇게 해요', '<p>진행 중인 공모전을 마감·상금·분야·제출물로 정리해 두고, 내가 고른 조건에 맞는 것부터 보여 줘요. 상금이 큰 것만이 아니라 「준비 시간 대비 할 만한 것」을 위로 올리는 게 루리의 기준이에요. 각 공모전 페이지에는 같은 분야와 비교한 분석, 오늘 기준 준비 일정을 붙여 두었어요.</p>'),
+ '/apply/': ('청약·지원금 신청 전에', '<p>여기 모은 일정은 청약홈·LH·지자체·정부24 공고를 바탕으로 마감순으로 정리했어요. 같은 지원금이라도 지역·나이·소득 기준이 달라 신청 전에 자격부터 확인해야 해요. 청약은 <a href="/apply/recommend/">청약 추천</a>에서 내 가점을 먼저 계산해 보세요. 사는 곳 기준으로 보려면 <a href="/apply/r/">지역별 지원금·청약</a>에서 시·도를 고르세요.</p>'),
+ '/contest/': ('공모전 추천은 이렇게 해요', '<p>진행 중인 공모전을 마감·상금·분야·제출물로 정리해 두고, 내가 고른 조건에 맞는 것부터 보여 줘요. 상금이 큰 것만이 아니라 「준비 시간 대비 할 만한 것」을 위로 올리는 게 루리의 기준이에요. 각 공모전 페이지에는 같은 분야와 비교한 분석, 오늘 기준 준비 일정을 붙여 두었어요. 대상별로는 <a href="/contest/univ/">대학생 공모전</a>, <a href="/contest/ai-video/">AI 영상 공모전</a> 모음도 있어요.</p>'),
 }.items()}
 
 
@@ -135,7 +135,7 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False, noinde
 <meta name="theme-color" content="{TH[3] if TH else '#5b21b6'}">
 <link rel="icon" href="/favicon.ico?v=5" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png?v=5"><link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png?v=5"><link rel="manifest" href="/site.webmanifest"><link rel="alternate" type="application/rss+xml" title="루리의 줍줍" href="/rss.xml">
 <link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="/assets/gm.css?v=12">{('<link rel="stylesheet" href="/assets/chat/ruri-chat.css?v=7">') if not (TH and TH[0] == 'ai') else ''}{COMM_TAGS}{('<script type="module" src="/assets/chat/ruri-chat.js?v=11"></script>') if not (TH and TH[0] == 'ai') else ''}<script defer src="/assets/app/app.js?v=3"></script>
+<link rel="stylesheet" href="/assets/gm.css?v=13">{('<link rel="stylesheet" href="/assets/chat/ruri-chat.css?v=7">') if not (TH and TH[0] == 'ai') else ''}{COMM_TAGS}{('<script type="module" src="/assets/chat/ruri-chat.js?v=11"></script>') if not (TH and TH[0] == 'ai') else ''}<script defer src="/assets/app/app.js?v=3"></script>
 {ldh}
 {GTAG}
 </head><body data-th="{TH[0] if TH else 'hub'}"{(' data-api="' + COMM_API + '"') if COMM_API else ''}>
@@ -146,7 +146,7 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False, noinde
 {body}{PAGE_INTRO.get(path, '')}
 </main>
 <footer class="ft"><div class="w ft-in"><div class="ft-b"><img class="av" src="/assets/ruri/avatar.webp" width="56" height="56" alt="루리" loading="lazy"><div><b>루리의 줍줍</b><p>마감 놓치지 마세요! 매일 아침 새 공모전을 정리해 둘게요.</p><p class="ft-m">문의 <a href="mailto:{MAIL}">{MAIL}</a>{"" if PARTNER == MAIL else f' · 제휴 <a href="mailto:{PARTNER}">{PARTNER}</a>'}</p></div></div>
-<p class="ft-l"><a href="/about/">소개</a><a href="/ailog/">🤖 AI 제작 로그</a><a href="/news/">🕵️ 이슈 감별</a><a href="/app/">📲 앱·알림</a><a href="/prep/">준비실</a><a href="/qa/">고민 해결</a><a href="/guide/">응모 가이드</a><a href="/event/">경품 이벤트</a><a href="/privacy/">개인정보처리방침</a><a href="/terms/">이용약관</a><a href="/contact/">문의</a></p>
+<p class="ft-l"><a href="/about/">소개</a><a href="/all/">전체 메뉴</a><a href="/ailog/">🤖 AI 제작 로그</a><a href="/news/">🕵️ 이슈 감별</a><a href="/app/">📲 앱·알림</a><a href="/prep/">준비실</a><a href="/qa/">고민 해결</a><a href="/guide/">응모 가이드</a><a href="/event/">경품 이벤트</a><a href="/privacy/">개인정보처리방침</a><a href="/terms/">이용약관</a><a href="/contact/">문의</a></p>
 <p class="ft-n">공모전 정보는 각 주최 기관의 공고를 바탕으로 정리했으며, 정확한 요강은 반드시 공식 공고에서 확인하세요. © 2026 루리의 줍줍 · sungprofile.cloud</p></div></footer>
 </body></html>'''
     d = os.path.join(ROOT, path.strip('/'))
@@ -308,7 +308,7 @@ def gone_pages():
 def auto_thin(urls):
     """빌드가 끝난 뒤 상세 페이지의 고유 본문을 세어 200자 미만이면 검색 제외로 돌린다(adsense_audit 와 같은 셈법)."""
     import adsense_audit as A
-    DET = ('/c/', '/a/', '/lab/', '/kw/', '/analyst/s/', '/analyst/coin/', '/money/tools/', '/hot/', '/satire/', '/mag/', '/ssul/', '/guide/')
+    DET = ('/c/', '/a/', '/lab/', '/kw/', '/analyst/s/', '/analyst/coin/', '/money/tools/', '/apply/r/', '/contest/univ/', '/contest/ai-video/', '/hot/', '/satire/', '/mag/', '/ssul/', '/guide/')
     got, freq = {}, collections.Counter()
     for u in urls:
         f = os.path.join(ROOT, u.strip('/'), 'index.html')
@@ -422,7 +422,7 @@ def detail(c, live):
     pz = re.sub(r'\s+', ' ', (c.get('prize') or '')).strip()
     seo_t = f"{c['title']} — " + (f"상금 {pz[:24]} · " if pz and pz not in ('공고 확인', '-') else '') + f"{md_} 마감 · 자격·접수 방법"   # 2026-10-18 자연 유입: 검색어 모양 제목
     page(f'/c/{c["id"]}/', seo_t, desc[:155], body,
-         [('루리의 줍줍', '/'), (main_tag, f'/cat/{SLUG[main_tag]}/'), (c['title'], f'/c/{c["id"]}/')], ld, noindex=n < 0)
+         [('루리의 줍줍', '/'), (main_tag, f'/cat/{SLUG[main_tag]}/'), (c['title'], f'/c/{c["id"]}/')], ld, noindex=n < 0 or c not in live)
     GONE[f'/c/{c["id"]}/'] = [c['title'], f'/cat/{SLUG[main_tag]}/', f'{main_tag} 공모전', c['end']]
 
 
@@ -566,6 +566,13 @@ HERO_JS = '''<script>(function(){var o=[['smile','오늘도 마감 임박 공모
 try{var p=o[Math.floor(Math.random()*o.length)],i=document.getElementById('hero-ruri'),b=document.querySelector('.hb');if(i){i.src='/assets/ruri/'+p[0]+'.webp'}if(b){b.innerHTML='안녕하세요, <b>루리</b>예요!<br>'+p[1]}}catch(e){}})();</script>'''
 
 
+YR = TODAY.year  # 허브 제목 연도는 해가 바뀌면 자동으로 넘어감 (계산기 제목은 요율 확인 뒤 사람이 바꿈)
+CAT_T = {  # 2026-10-18 키워드 전략: 자동완성 문구 제목 (진행 중 건수는 뒤에)
+ '영상': f'영상 공모전 {YR} 모음 (마감순)', '문학': f'소설·글쓰기 공모전 {YR} — 문학·수기·슬로건 모음', '디자인': f'디자인 공모전 {YR} 모음 (마감순)',
+ '아이디어·정책': f'아이디어 공모전 {YR} — 정책 제안·기획 공모전 모음', '요리·레시피': f'요리 공모전 {YR} — 레시피·요리대회 모음', '논문': f'논문 공모전 {YR} — 대학생·대학원생 학술 공모전 모음',
+ 'IT·과학': f'IT 공모전 {YR} — 개발·AI·과학 공모전 모음', '해외': f'해외 공모전 {YR} 모음 (국제 공모전·영문 공모)', '기타': f'기타 공모전 {YR} 모음 (사진·캐릭터·이벤트형)'}
+
+
 def cat_stats(n, cl):
     """분야별 지금 숫자: 건수·상금 중간값·이번 주 마감·제출물 분포 (매 빌드 계산)."""
     if not cl:
@@ -580,6 +587,90 @@ def cat_stats(n, cl):
     if ef:
         t += '제출물은 ' + ', '.join(f'{k} {v}건' for k, v in ef) + ' 순으로 많아요.'
     return f'<p class="cat-st">📌 {E(t)}</p>'
+
+
+SIDO = [('seoul', '서울', r'서울'), ('busan', '부산', r'부산'), ('daegu', '대구', r'대구'), ('incheon', '인천', r'인천'), ('jeonnam-gwangju', '광주·전남', r'광주광역|전남|전라남도|광주$|^광주'),
+        ('daejeon', '대전', r'대전'), ('ulsan', '울산', r'울산'), ('sejong', '세종', r'세종'), ('gyeonggi', '경기', r'경기'), ('gangwon', '강원', r'강원'),
+        ('chungbuk', '충북', r'충북|충청북도'), ('chungnam', '충남', r'충남|충청남도'), ('jeonbuk', '전북', r'전북|전라북도'), ('gyeongbuk', '경북', r'경북|경상북도'),
+        ('gyeongnam', '경남', r'경남|경상남도'), ('jeju', '제주', r'제주')]
+
+
+def sido_of(a):
+    """지원금 → 시·도 slug. 지역 칸 첫 단어 → 제목 [ ] → 주관 기관 순."""
+    for src in ((a.get('region') or '').split(' ')[0], (re.match(r'\[([^\]]+)\]', a['title']) or [0, ''])[1], (a.get('org') or '').split(' ')[0]):
+        if not src or src in ('전국', '공고', '공고 참조'):
+            continue
+        for sl, nm, pat in SIDO:
+            if re.search(pat, src):
+                return sl
+    return None
+
+
+REG_TYPES = {'': ('지원금·청약', None), 'youth': ('청년 지원금', lambda a: re.search(r'청년|대학생|사회초년', a['title'])),
+             'house': ('청약·월세·주거 지원', lambda a: a.get('kk') in ('rent', 'apt') or re.search(r'월세|주거|임대|청약|전세|주택', a['title']))}
+
+
+def region_pages(aps):
+    """지역(시·도) × 유형 허브 (2026-10-18 키워드 전략 ②). 항목이 적으면 검색 제외."""
+    by = {}
+    for a in aps:
+        sl = sido_of(a)
+        if sl:
+            by.setdefault(sl, []).append(a)
+    nat = [a for a in aps if (a.get('region') or '').startswith('전국')]
+    urls, idx = [], []
+    for sl, nm, _ in SIDO:
+        L = by.get(sl, [])
+        for tk, (tn, f) in REG_TYPES.items():
+            M = [a for a in L if not f or f(a)]
+            path = f'/apply/r/{sl}/' + (f'{tk}/' if tk else '')
+            kinds = collections.Counter(a['kind'] for a in M).most_common(3)
+            wk = sum(1 for a in M if not a.get('always') and dday(a['end'])[0] <= 7)
+            info = sum(1 for a in M if a.get('target') or a.get('benefit'))
+            t = (f'지금 {nm}에서 신청할 수 있는 {tn} 공고는 {len(M)}건이에요. ' + (f'이 중 {wk}건이 일주일 안에 마감하고, ' if wk else '') +
+                 ('종류는 ' + ', '.join(f'{k} {v}건' for k, v in kinds) + '이에요. ' if kinds else '') +
+                 (f'대상·혜택이 정리된 공고는 {info}건이라, 나머지는 공식 공고에서 자격을 꼭 확인하세요. ' if M else '') +
+                 (f'가장 먼저 끝나는 건 「{M[0]["title"][:30]}」({ddot(M[0]["end"])} 마감)이에요.' if M and not M[0].get('always') else ''))
+            orgs = collections.Counter(a['org'] for a in M if a.get('org') and a['org'] != '공고 참조').most_common(3)
+            if orgs:
+                t += ' 공고를 많이 낸 곳은 ' + ', '.join(f'{o} {n}건' for o, n in orgs) + '이에요.'
+            guide = {'youth': f'{nm} 청년 지원금은 시·도와 시·군·구가 따로 공고하는 경우가 많아요. 거주 기간(보통 6개월~1년 이상), 나이(만 19~34세 또는 39세), 소득 기준(기준 중위소득 %)을 먼저 확인하고, 국가 사업인 청년월세 지원·청년도약계좌와 겹쳐 받을 수 있는지도 공고에서 보세요.',
+                     'house': f'{nm} 아파트 청약은 청약홈, 공공임대는 LH청약플러스와 지역 도시공사, 월세 지원은 복지로와 시·군·구에서 신청해요. 청약은 해당 지역 거주 기간에 따라 우선 공급이 갈리니 <a href="/apply/recommend/">청약 가점 추천</a>으로 내 점수부터 계산해 보세요.',
+                     '': f'{nm} 지역 공고만 골라 마감순으로 모았어요. 전국 대상 공고 {len(nat)}건은 <a href="/apply/">전체 일정</a>에서 함께 확인하세요.'}[tk]
+            subs = ' · '.join(f'<a href="/apply/r/{sl}/{k2 + "/" if k2 else ""}"{" class=on" if k2 == tk else ""}>{nm} {n2}</a>' for k2, (n2, f2) in REG_TYPES.items())
+            lst = ''.join(ap_card(a) for a in M) or '<li class="empty">지금은 이 지역 공고가 없어요.</li>'
+            title = {'': f'{nm} 지원금·청약 {YR} — 진행 중 {len(M)}건 마감순', 'youth': f'{nm} 청년지원금 {YR} — 신청 일정·자격 ({len(M)}건)', 'house': f'{nm} 청약·월세 지원 {YR} — 청약 일정·주거 지원 ({len(M)}건)'}[tk]
+            body = (f'<p class="bc"><a href="/">홈</a> › <a href="/apply/">지원금·청약</a> › <a href="/apply/r/">지역별</a> › {nm}</p><h1>📍 {E(title)}</h1><p class="hm-links">{subs}</p>'
+                    f'<p class="cat-st">📌 {t}</p><p>{guide}</p><h2>진행 중 공고 (마감순)</h2><ul class="list">{lst}</ul>'
+                    + rel_block(r'청년|월세|청약|지원금' if tk != 'house' else r'월세|청약|주거', [('/apply/recommend/', '청약 가점 추천'), ('/apply/', '전국 지원금·청약 일정'), ('/money/tools/loan/', '대출 이자 계산기')]))
+            page(path, title, f'{nm} {tn} {YR}: 진행 중 {len(M)}건을 마감순으로 정리. 신청 기간·대상·공식 신청처.', body,
+                 [('루리의 줍줍', '/'), ('지원금·청약', '/apply/'), ('지역별', '/apply/r/'), (nm, path)], noindex=len(M) < (8 if not tk else 5))
+            urls.append(path)
+        idx.append((sl, nm, len(L)))
+    body = (f'<p class="bc"><a href="/">홈</a> › <a href="/apply/">지원금·청약</a> › 지역별</p><h1>📍 지역별 지원금·청약 {YR}</h1>'
+            '<p>시·도별로 지금 신청할 수 있는 지원금·청약·월세 지원 공고를 모았어요. 지역 칸이나 제목에 시·도가 적힌 공고만 들어가고, 전국 대상 공고는 <a href="/apply/">전체 일정</a>에 있어요. 매시간 새 공고를 반영해요.</p><ul class="reg-l">'
+            + ''.join(f'<li><a href="/apply/r/{sl}/"><b>{nm}</b><span>{n}건</span></a></li>' for sl, nm, n in sorted(idx, key=lambda x: -x[2])) + '</ul>')
+    page('/apply/r/', f'지역별 지원금·청약 {YR} — 서울·경기·부산 등 시·도별 신청 일정', '시·도별 청년 지원금, 월세 지원, 아파트 청약 일정을 마감순으로 정리했어요.', body,
+         [('루리의 줍줍', '/'), ('지원금·청약', '/apply/'), ('지역별', '/apply/r/')])
+    return ['/apply/r/'] + urls
+
+
+def contest_hubs(live):
+    """자동완성 문구 허브: 대학생 공모전, AI 영상 공모전 (2026-10-18 키워드 전략 ③)."""
+    H = [('univ', f'대학생 공모전 사이트 — {YR} 진행 중 모음 (마감순)', '대학생 공모전', lambda c: '대학생' in (c.get('elig') or ''),
+          '응모 자격에 대학생이 들어간 공모전만 모았어요. 대외활동 사이트마다 흩어진 공고를 마감·상금·제출물 기준으로 한 번에 비교할 수 있어요. 수상하면 재학·휴학 증명서를 요구하는 경우가 많으니 미리 발급해 두세요.'),
+         ('ai-video', f'AI 영상 공모전 {YR} — 생성형 AI 영상·숏폼 공모전 모음', 'AI 영상 공모전', lambda c: re.search(r'AI|인공지능|생성형', c['title']) and (re.search(r'영상|숏폼|쇼츠|릴스|뮤직비디오|애니', c['title']) or '영상' in c['tags']),
+          '제목에 AI·생성형이 들어가고 영상·숏폼을 받는 공모전만 골랐어요. AI 도구로 만든 영상은 음원·이미지 저작권과 「AI 사용 표기」 규정을 공고마다 다르게 정해 두니 꼭 확인하세요.')]
+    urls = []
+    for sl, title, nm, f, intro in H:
+        L = [c for c in live if f(c)]
+        path = f'/contest/{sl}/'
+        body = (f'<p class="bc"><a href="/">홈</a> › <a href="/contest/">공모전</a> › {nm}</p><h1>🏆 {E(title)}</h1><p>{intro}</p>{cat_stats(nm.replace(" 공모전", ""), L)}'
+                f'<h2>진행 중 {nm} ({len(L)}건)</h2><ul class="list">{"".join(card(c) for c in L[:80]) or "<li class=empty>지금은 없어요.</li>"}</ul>'
+                + rel_block(r'공모전|대학생|영상', [('/guide/', '공모전 응모 가이드'), ('/widget/', '블로그용 공모전 위젯'), ('/cat/video/', f'영상 공모전 {YR} 모음')]))
+        page(path, title, f'{nm} 진행 중 {len(L)}건을 마감순으로 정리. 상금·자격·제출물 비교.', body, [('루리의 줍줍', '/'), ('공모전', '/contest/'), (nm, path)], noindex=len(L) < 5)
+        urls.append(path)
+    return urls
 
 
 def build():
@@ -663,11 +754,11 @@ window.gtag&&gtag('event','home_route',{{route:v}})}}catch(e){{}}}})();</script>
     for s, n in CATS:
         cl = [c for c in live if n in c['tags']]
         tips = ''.join(f'<li>{E(t)}</li>' for t in TIPS[n])
-        body = f'''<p class="bc"><a href="/">홈</a> › {n}</p><section class="dh" data-c="{s}"><span class="ic big">{CAT_ICON[n]}</span><h1>{n} 공모전</h1><p class="lead">진행 중 <b>{len(cl)}건</b> · 마감 임박순</p></section>
+        body = f'''<p class="bc"><a href="/">홈</a> › {n}</p><section class="dh" data-c="{s}"><span class="ic big">{CAT_ICON[n]}</span><h1>{CAT_T.get(n, n + ' 공모전')}</h1><p class="lead">진행 중 <b>{len(cl)}건</b> · 마감 임박순</p></section>
 <p>{CAT_INTRO[n]}</p>{cat_stats(n, cl)}
 {say(CAT_OUTFIT[n], f'<b>{n} 공모전 응모 팁</b><ul class="chk">{tips}</ul>')}{'<a class="lab-cta" href="/fridge/"><b>🍳 루리의 냉장고 파먹기</b><span>집에 있는 재료로 만들 수 있는 레시피 77개 · 요리대회 연습용으로 딱 →</span></a>' if s == 'food' else ''}
-<h2>진행 중 {n} 공모전</h2>{TOOLBAR}<ul class="list" id="list">{''.join(card(c) for c in cl[:60])}</ul><button class="more" id="more" hidden>더 보기</button>'''
-        page(f'/cat/{s}/', f'{n} 공모전 모음 (진행 중 {len(cl)}건)', f'{n} 분야 진행 중 공모전 {len(cl)}건 마감 임박순 정리. {CAT_INTRO[n][:70]}',
+<h2>진행 중 {n} 공모전</h2>{TOOLBAR}<ul class="list" id="list">{''.join(card(c) for c in cl[:60])}</ul>{('<details class="rest"><summary>나머지 ' + str(len(cl) - 60) + '건 제목으로 보기</summary><ul>' + ''.join(f'<li><a href="/c/{c["id"]}/">{E(c["title"])}</a> · {ddot(c["end"])[5:]} 마감</li>' for c in cl[60:]) + '</ul></details>') if len(cl) > 60 else ''}<p class="hm-links">{' '.join(f'<a href="/cat/{s2}/">{n2}</a>' for s2, n2 in CATS if s2 != s)}</p><button class="more" id="more" hidden>더 보기</button>'''
+        page(f'/cat/{s}/', f'{CAT_T.get(n, n + " 공모전 모음")} · 진행 중 {len(cl)}건', f'{n} 분야 진행 중 공모전 {len(cl)}건 마감 임박순 정리. {CAT_INTRO[n][:70]}',
              body + listing_js(n), [('루리의 줍줍', '/'), (n, f'/cat/{s}/')])
     # 2026-10-18 사용자: "경품 이벤트도 좀 적당히 보이게, 갱신도 자동으로" — 1,300여 건 통째 나열 대신 '오늘·내일 마감 + 쉬운 것' 12개만 크게, 나머지는 종류·검색으로(events.json 매시 빌드 갱신)
     EZT = ('댓글 1줄', '퀴즈 1분', '설문 5분', '응모만', '폼 1분')
@@ -697,6 +788,7 @@ window.gtag&&gtag('event','home_route',{{route:v}})}}catch(e){{}}}})();</script>
     extra_urls = talk_pages() + mag_pages(live, aps) + analyst_pages() + satire_pages() + kw_pages() + money_pages() + apply_rec_page() + tool_pages() + hot_pages()
     import widget
     extra_urls += widget.build(ROOT, live, aps, hot_live()[0], page, say, COMM_API, TODAY)  # 퍼가기 위젯 (2026-10-18 연구 세션 요청)
+    extra_urls += region_pages(aps) + contest_hubs(live)
     extra_urls += ailog_page(live, len(extra_urls)) + all_page()
     community(live)
     lab_urls = lab() or []
@@ -723,6 +815,12 @@ window.gtag&&gtag('event','home_route',{{route:v}})}}catch(e){{}}}})();</script>
         f.write('</urlset>\n')
     rss_feed(live, aps)
     print('contests', len(contests), 'live', len(live), 'events', len(events), 'urls', len(urls), 'noindex', len(NOINDEX))
+    try:
+        import health
+        hr = health.run(ROOT, urls, NOINDEX)
+        print('health', '정상' if not hr['warn'] else hr['warn'])
+    except Exception as e:
+        print('health fail', e)
 
 
 GUIDES = [
@@ -1644,7 +1742,78 @@ TOOLS = {'dividend': ('배당소득 분리과세 계산기', '고배당 기업 �
          'stocktax': ('증권거래세 계산기', '2026년 증권거래세율(코스피 0.05%+농특세 0.15%, 코스닥 0.20%, 코넥스 0.10%)로 팔 때 세금을 계산해요.'),
          'pension': ('연금 세액공제 계산기', '연금저축(600만원)·IRP 합산(900만원) 한도와 공제율(16.5%·13.2%)로 돌려받는 세금을 계산해요.'),
          'loan': ('대출 이자 계산기', '원리금균등·원금균등·만기일시 상환별로 첫 달 상환액과 총 이자, 금리 0.25%p 오르내릴 때 차이를 비교해요.'),
-         'fx': ('환전 계산기', '매매기준율·수수료·환율 우대로 실제 받는 외화를 계산하고, 우대로 얼마나 더 받는지 비교해요.')}
+         'fx': ('환전 계산기', '매매기준율·수수료·환율 우대로 실제 받는 외화를 계산하고, 우대로 얼마나 더 받는지 비교해요.'),
+         'salary': ('연봉 실수령액 계산기', '2026년 4대보험 요율(국민연금 4.75%·건강보험 3.595%·장기요양·고용보험 0.9%)과 소득세로 연봉에서 매달 실제 받는 돈을 계산해요.'),
+         'severance': ('퇴직금 계산기', '입사일·퇴사일과 최근 3개월 임금으로 법정 퇴직금(세전)과 퇴직소득세를 뺀 세후 금액을 계산해요. 알바도 같은 기준이에요.'),
+         'unemployment': ('실업급여 계산기', '2026년 구직급여 상한액(하루 68,100원)·하한액과 가입기간·나이별 받는 날 수로 실업급여 총액을 계산해요.')}
+TOOL_T = {  # 2026-10-18 키워드 전략: 검색 자동완성 문구 제목 (주소는 그대로)
+ 'dividend': '배당금 계산기 — 2026 고배당 분리과세 세금',
+ 'stocktax': '주식 세금 계산기 — 2026 증권거래세 (코스피·코스닥)',
+ 'pension': '연금저축 IRP 세액공제 계산기 2026 (환급액)',
+ 'loan': '대출 이자 계산기 (주담대 원리금균등·원금균등·만기일시)',
+ 'fx': '환율 계산기 (달러·엔화 환전 수수료·우대 포함)',
+ 'salary': '2026 연봉 실수령액 계산기 (4대보험·소득세 공제 후 월급)',
+ 'severance': '퇴직금 계산기 (세전·세후, 알바 포함)',
+ 'unemployment': '실업급여 계산기 2026 (상한액·하한액·수급기간)'}
+TOOL_SRC = {  # 기준일·출처 (2026-10-18 확인)
+ 'salary': '국민연금 9.5%·기준소득월액 41만~659만원(국민연금공단, 2026.7~2027.6), 건강보험료율 7.19%·장기요양 0.9448%(보건복지부·국민건강보험공단), 고용보험 근로자 0.9%(고용노동부), 소득세 기본세율·근로소득공제(소득세법)',
+ 'severance': '근로자퇴직급여 보장법(평균임금 30일분 × 근속연수), 소득세법 퇴직소득 근속연수공제·환산급여공제(2023.1.1 이후 퇴직분)',
+ 'unemployment': '고용노동부 「고용보험법 시행령」 개정(구직급여 상한 66,000원 → 68,100원, 2026.1.1 이후 이직자), 2026년 최저임금 시급 10,320원(최저임금위원회), 고용보험법 소정급여일수 표',
+ 'dividend': '기획재정부 2025년 세법개정(고배당 기업 배당소득 분리과세)', 'stocktax': '기획재정부 증권거래세법 시행령(2026.1.1 시행)',
+ 'pension': '소득세법 연금계좌 세액공제(국세청)', 'loan': '원리금 계산 공식(금리는 직접 입력)', 'fx': '은행 환전 수수료 공식(환율은 직접 입력)'}
+TOOL_FAQ = {
+ 'salary': [('연봉 4,000만원이면 월 실수령액은 얼마인가요?', '비과세 식대 월 20만원, 본인 1명 기준으로 4대보험과 소득세를 빼면 한 달 약 292만원이에요. 부양가족이 많으면 소득세가 줄어 조금 더 받아요.'),
+            ('2026년에 실수령액이 줄어든 이유는?', '국민연금 보험료율이 9%에서 9.5%로, 건강보험료율이 7.09%에서 7.19%로 올라 같은 연봉이라도 공제액이 늘었어요.'),
+            ('회사 명세서와 금액이 조금 다른 이유는?', '회사는 국세청 간이세액표로 소득세를 떼고, 이 계산기는 연말정산 식으로 1년치를 계산해 12로 나눠요. 그래서 소득세가 몇천~몇만 원 다를 수 있어요.')],
+ 'severance': [('알바도 퇴직금을 받을 수 있나요?', '주 15시간 이상 일하고 1년(365일) 이상 일했다면 알바·계약직도 법정 퇴직금 대상이에요.'),
+               ('퇴직금은 언제까지 받아야 하나요?', '퇴사 후 14일 안에 받아야 해요. 당사자 합의로 기한을 늦출 수는 있어요.'),
+               ('퇴직금에도 세금이 붙나요?', '퇴직소득세가 붙지만 근속연수공제·환산급여공제가 커서 근로소득보다 훨씬 적어요. IRP로 받으면 연금을 받을 때까지 세금이 미뤄져요.')],
+ 'unemployment': [('2026년 실업급여 상한액은 얼마인가요?', '2026년 1월 1일 이후 이직자부터 하루 68,100원이에요. 2019년부터 이어진 66,000원에서 올랐어요.'),
+                  ('하한액은 어떻게 정해지나요?', '그해 최저임금의 80%에 하루 소정근로시간을 곱해요. 2026년 하루 8시간이면 10,320원 × 80% × 8시간 = 66,048원이에요.'),
+                  ('실업급여는 며칠 동안 받나요?', '고용보험 가입기간과 나이에 따라 120일에서 270일까지예요. 50세 이상이거나 장애인이면 같은 가입기간이라도 더 오래 받아요.')],
+ 'loan': [('원리금균등과 원금균등 중 뭐가 이자가 적나요?', '원금균등이 총 이자가 가장 적어요. 대신 첫 달 내는 돈이 가장 커요.'), ('금리 0.25%p 차이가 크나요?', '2억원 30년 대출이면 총 이자가 1천만원 넘게 달라질 수 있어요.')],
+ 'pension': [('연금저축과 IRP 세액공제 한도는?', '연금저축 연 600만원, IRP를 합쳐 연 900만원까지 공제돼요.'), ('공제율은 얼마인가요?', '총급여 5,500만원 이하는 16.5%, 넘으면 13.2%예요.')],
+ 'dividend': [('고배당 분리과세 세율은?', '2천만원까지 14%, 3억원까지 20%, 50억원까지 25%, 그 위 30%이고 지방소득세 10%가 붙어요.')],
+ 'stocktax': [('2026년 증권거래세율은?', '코스피 0.20%(거래세 0.05% + 농어촌특별세 0.15%), 코스닥 0.20%, 코넥스 0.10%예요.')],
+ 'fx': [('환율 우대 90%는 무슨 뜻인가요?', '은행 환전 수수료의 90%를 깎아 준다는 뜻이에요. 수수료 1.75%면 실제로는 0.175%만 내요.')]}
+TOOL_HELP_NEW = {
+ 'salary': '<h2>어떻게 계산하나요?</h2><p>연봉을 12로 나눈 월급에서 비과세(식대 월 20만원 등)를 뺀 금액에 4대보험 요율을 곱해요. 국민연금은 기준소득월액(41만~659만원) 안에서 4.75%, 건강보험 3.595%, 장기요양은 건강보험료의 13.14%, 고용보험 0.9%예요. 소득세는 근로소득공제·인적공제(1명 150만원)·보험료 공제를 뺀 과세표준에 기본세율(6~45%)을 매기고, 근로소득세액공제와 표준세액공제를 뺀 뒤 12로 나눠요. 지방소득세는 소득세의 10%예요.</p><p>연봉 구간별 결과는 <a href="/money/tools/salary/table/">2026 연봉 실수령액표</a>에서 한눈에 볼 수 있어요.</p><h2>주의할 점</h2><ul class="chk"><li>국민연금 상한(659만원)을 넘는 고연봉은 연금이 더 늘지 않아요.</li><li>자녀세액공제, 신용카드·의료비 공제는 연말정산 때 따로 반영돼요.</li><li>상여금이 따로 나오는 회사는 상여가 나오는 달 공제가 커져요.</li></ul>',
+ 'severance': '<h2>어떻게 계산하나요?</h2><p>퇴직금 = 1일 평균임금 × 30일 × (재직일수 ÷ 365)예요. 1일 평균임금은 퇴사 전 3개월 동안 받은 임금 총액(지난 1년 상여금과 연차수당의 3/12 포함)을 그 3개월의 날짜 수로 나눠요. 퇴직소득세는 근속연수공제와 환산급여공제를 빼고 계산해서 같은 금액의 근로소득보다 세금이 훨씬 적어요.</p><h2>예시</h2><p>월 300만원을 받으며 3년(1,095일) 일했다면 1일 평균임금은 약 9만 9천원, 퇴직금은 약 890만원이에요. 퇴직소득세는 근속연수공제(300만원)를 빼고 계산해 몇만 원 수준이에요.</p><h2>주의할 점</h2><ul class="chk"><li>주 15시간 미만 근무 기간은 재직일수에서 빠질 수 있어요.</li><li>퇴직 직전 3개월에 휴업·육아휴직 기간이 있으면 그 기간은 빼고 계산해요.</li><li>회사가 14일 안에 주지 않으면 고용노동부에 진정할 수 있어요.</li></ul>',
+ 'unemployment': '<h2>어떻게 계산하나요?</h2><p>하루 받는 돈(구직급여일액)은 퇴사 전 3개월 1일 평균임금의 60%예요. 이 값이 상한액(2026년 1월 1일 이후 이직자 68,100원)보다 크면 상한액을, 하한액(최저임금 10,320원 × 80% × 하루 소정근로시간)보다 작으면 하한액을 줘요. 받는 날 수(소정급여일수)는 고용보험 가입기간과 나이로 정해져요.</p><table class="info"><tr><th>가입기간</th><th>50세 미만</th><th>50세 이상·장애인</th></tr><tr><td>1년 미만</td><td>120일</td><td>120일</td></tr><tr><td>1~3년</td><td>150일</td><td>180일</td></tr><tr><td>3~5년</td><td>180일</td><td>210일</td></tr><tr><td>5~10년</td><td>210일</td><td>240일</td></tr><tr><td>10년 이상</td><td>240일</td><td>270일</td></tr></table><h2>받을 수 있는 조건</h2><ul class="chk"><li>이직 전 18개월 동안 고용보험 가입일(피보험 단위기간)이 180일 이상</li><li>권고사직·계약 만료·폐업처럼 본인 뜻이 아닌 퇴사 (자발적 퇴사라도 임금 체불·통근 곤란 등 정당한 사유가 있으면 가능)</li><li>일할 의사와 능력이 있고 재취업 활동을 할 것</li></ul><p>신청은 퇴사 후 고용24에서 구직 등록 → 수급자격 신청 순서로 해요. 퇴사 다음 날부터 12개월이 지나면 남은 날은 못 받으니 빨리 신청하세요.</p>'}
+
+
+def rel_block(pat, links):
+    # 같이 보면 좋은: 직접 쓴 가이드(QA) 중 pat 이 제목에 든 것 + 고정 링크
+    g = [(f'/guide/{q["slug"]}/', q['title']) for q in QA if re.search(pat, q['title'])][:4] if pat else []
+    L = g + [x for x in links if x[0] not in [y[0] for y in g]]
+    return ('<section class="rel"><h2>📎 같이 보면 좋은</h2><ul>' + ''.join(f'<li><a href="{u}">{E(t)}</a></li>' for u, t in L[:8]) + '</ul></section>') if L else ''
+
+
+TOOL_REL = {'salary': (r'연봉|월급|4대보험|연말정산|세금', [('/money/tools/salary/table/', '2026 연봉 실수령액표'), ('/money/tools/severance/', '퇴직금 계산기'), ('/money/tools/pension/', '연금저축 IRP 세액공제 계산기'), ('/money/age/', '나이별 돈 관리 원칙')]),
+            'severance': (r'퇴직|퇴사|실업|IRP', [('/money/tools/unemployment/', '실업급여 계산기'), ('/money/tools/salary/', '연봉 실수령액 계산기'), ('/money/tools/pension/', 'IRP 세액공제 계산기')]),
+            'unemployment': (r'실업|퇴사|구직|청년', [('/money/tools/severance/', '퇴직금 계산기'), ('/apply/', '지원금·청약 일정'), ('/money/tools/salary/', '연봉 실수령액 계산기')]),
+            'loan': (r'대출|금리|주담대|청약', [('/apply/recommend/', '청약 가점 추천'), ('/money/policy/', '2026 투자 정책 정리')]),
+            'pension': (r'연금|IRP|ISA|세액공제', [('/money/tools/salary/', '연봉 실수령액 계산기'), ('/money/age/', '나이별 원칙')]),
+            'dividend': (r'배당|ISA|세금', [('/money/policy/', '2026 투자 정책 정리'), ('/analyst/', '애널리스트 의견 종합')]),
+            'stocktax': (r'주식|세금|ISA', [('/money/policy/', '2026 투자 정책 정리'), ('/analyst/', '애널리스트 의견 종합')]),
+            'fx': (r'환율|환전|여행', [('/money/tools/loan/', '대출 이자 계산기')])}
+
+
+def salary_table():
+    import paycalc
+    rows = ''.join(f'<tr><td>{a // 10000:,}만원</td><td>{won_txt(int(r["m"]))}</td><td>{int(r["p"] + r["h"] + r["l"] + r["e"]):,}원</td><td>{int(r["it"] + r["lt"]):,}원</td><td><b>{int(r["net"]):,}원</b></td></tr>'
+                   for a in range(20_000_000, 100_000_001, 1_000_000) for r in [paycalc.salary(a)])
+    r40, r30, r60 = paycalc.salary(40_000_000), paycalc.salary(30_000_000), paycalc.salary(60_000_000)
+    body = (f'<p class="bc"><a href="/">홈</a> › <a href="/analyst/">머니</a> › <a href="/money/tools/salary/">연봉 실수령액 계산기</a> › 실수령액표</p><h1>📋 2026 연봉 실수령액표 (2,000만~1억)</h1>'
+            f'<p>2026년 4대보험 요율과 소득세 기본세율로 연봉 100만원 단위 월 실수령액을 계산한 표예요. 비과세 식대 월 20만원, 본인 1명(부양가족 없음) 기준이에요. 예를 들어 연봉 3,000만원은 월 약 {int(r30["net"]):,}원, 4,000만원은 약 {int(r40["net"]):,}원, 6,000만원은 약 {int(r60["net"]):,}원을 받아요. '
+            f'연봉이 1,000만원 오를 때 실수령액은 생각보다 덜 늘어나는데, 소득세 세율 구간이 올라가고 4대보험도 함께 늘기 때문이에요. 부양가족이 있거나 비과세가 다르면 <a href="/money/tools/salary/">계산기</a>에 직접 넣어 보세요.</p>'
+            f'<div class="tbl-w"><table class="info sal-t"><tr><th>연봉</th><th>월 세전</th><th>4대보험</th><th>소득세+지방세</th><th>월 실수령액</th></tr>{rows}</table></div>'
+            f'<p class="note">기준일 2026-10-18 · 출처: {E(TOOL_SRC["salary"])}. 참고용 계산이며 회사 간이세액표와 소득세가 조금 다를 수 있어요.</p>'
+            + rel_block(r'연봉|월급|4대보험|연말정산', [('/money/tools/salary/', '연봉 실수령액 계산기'), ('/money/tools/severance/', '퇴직금 계산기'), ('/money/tools/unemployment/', '실업급여 계산기')]))
+    page('/money/tools/salary/table/', '2026 연봉 실수령액표 — 2,000만~1억 월급 (4대보험·세금 공제 후)', f'2026년 4대보험·소득세 기준 연봉 실수령액표. 연봉 4,000만원 월 {int(r40["net"]):,}원 등 2,000만~1억 원을 100만원 단위로 정리.',
+         body + '<link rel="stylesheet" href="/assets/money/tools.css?v=2">', [('루리의 줍줍', '/'), ('머니', '/analyst/'), ('연봉 실수령액 계산기', '/money/tools/salary/'), ('실수령액표', '/money/tools/salary/table/')])
+    return ['/money/tools/salary/table/']
+
 
 
 TOOL_HELP = {  # 2026-10-18 애드센스 보강: 계산기마다 계산 방법·예시·주의 (숫자 근거는 /money/policy/)
@@ -1658,15 +1827,22 @@ TOOL_HELP = {  # 2026-10-18 애드센스 보강: 계산기마다 계산 방법·
 def tool_pages():
     # 이슈형 미니 도구 (2026-10-18 핫이슈 기획) — 참고용, 투자 수익 계산 없음
     urls = []
+    TOOL_HELP.update(TOOL_HELP_NEW)
     for k, (n, d) in TOOLS.items():
         others = ''.join(f'<a href="/money/tools/{k2}/">{E(n2)}</a>' for k2, (n2, _) in TOOLS.items() if k2 != k)
-        page(f'/money/tools/{k}/', f'{n} — 2026 기준 간단 계산', d,
-             f'<p class="bc"><a href="/">홈</a> › <a href="/analyst/">머니</a> › {E(n)}</p><h1>🧮 {E(n)}</h1><p>{E(d)}</p>'
-             f'<section id="mtool" data-tool="{k}"><noscript>자바스크립트가 필요해요.</noscript></section>{TOOL_HELP.get(k, '')}<p class="hm-links">{others}<a href="/money/policy/">🏛️ 근거: 투자 정책 정리</a></p>'
-             '<link rel="stylesheet" href="/assets/money/tools.css?v=1"><link rel="stylesheet" href="/assets/mag/mag.css?v=10"><script defer src="/assets/money/tools.js?v=1"></script>',
-             [('루리의 줍줍', '/'), ('머니', '/analyst/'), (n, f'/money/tools/{k}/')])
+        tt = TOOL_T.get(k, f'{n} — 2026 기준 간단 계산')
+        fq = TOOL_FAQ.get(k, [])
+        ld = {'@context': 'https://schema.org', '@graph': [{'@type': 'WebApplication', 'name': tt, 'url': f'{SITE}/money/tools/{k}/', 'applicationCategory': 'FinanceApplication', 'operatingSystem': 'Any', 'inLanguage': 'ko', 'offers': {'@type': 'Offer', 'price': '0', 'priceCurrency': 'KRW'}, 'description': d}]
+              + ([{'@type': 'FAQPage', 'mainEntity': [{'@type': 'Question', 'name': q, 'acceptedAnswer': {'@type': 'Answer', 'text': a}} for q, a in fq]}] if fq else [])}
+        extra = (('<h2>자주 묻는 질문</h2>' + ''.join(f'<details class="faq"><summary>{E(q)}</summary><p>{E(a)}</p></details>' for q, a in fq)) if fq else '') \
+            + f'<p class="note">기준일 2026-10-18 · 출처: {E(TOOL_SRC.get(k, ""))}. 참고용 계산이에요. 실제 금액은 해당 기관 안내로 확인하세요.</p>' + rel_block(*TOOL_REL.get(k, ('', [])))
+        page(f'/money/tools/{k}/', tt, d,
+             f'<p class="bc"><a href="/">홈</a> › <a href="/analyst/">머니</a> › {E(n)}</p><h1>🧮 {E(tt)}</h1><p>{E(d)}</p>'
+             f'<section id="mtool" data-tool="{k}"><noscript>자바스크립트가 필요해요.</noscript></section>{TOOL_HELP.get(k, '')}{extra}<p class="hm-links">{others}<a href="/money/policy/">🏛️ 근거: 투자 정책 정리</a></p>'
+             '<link rel="stylesheet" href="/assets/money/tools.css?v=2"><link rel="stylesheet" href="/assets/mag/mag.css?v=10"><script defer src="/assets/money/tools.js?v=2"></script>',
+             [('루리의 줍줍', '/'), ('머니', '/analyst/'), (n, f'/money/tools/{k}/')], ld)
         urls.append(f'/money/tools/{k}/')
-    return urls
+    return urls + salary_table()
 
 
 HOT_TYPE = {'health': '🏥 의료·건강', 'labor': '💼 일·임금', 'housing': '🏠 청약·주거', 'grant': '💰 지원금·저축', 'tax': '🧾 세금·세제', 'rate': '📉 금리·환율', 'market': '📈 증시·코인', 'event': '📅 행사·날씨'}
@@ -1784,7 +1960,7 @@ def app_page():
 
 def fridge_page():
     # 루리의 냉장고 파먹기 (2026-10-18 사용자: 냉장고 사진 찍어서 오늘 메뉴 추천, Claude API)
-    page('/fridge/', '루리의 냉장고 파먹기 — 있는 재료로 오늘 메뉴 추천', '냉장고에 있는 재료만 고르면 집밥 레시피 77개 중 지금 바로 만들 수 있는 오늘 메뉴와 만드는 법, 하나만 사면 되는 메뉴까지 알려 줘요.',
+    page('/fridge/', '냉장고 파먹기 메뉴 추천 — 있는 재료로 오늘 요리 (레시피 77개)', '냉장고에 있는 재료만 고르면 집밥 레시피 77개 중 지금 바로 만들 수 있는 오늘 메뉴와 만드는 법, 하나만 사면 되는 메뉴까지 알려 줘요.',
          f'''<p class="bc"><a href="/">홈</a> › 냉장고 파먹기</p><h1>🍳 루리의 냉장고 파먹기</h1>
 {say("o_cook", "냉장고 사진을 찍거나 있는 재료를 눌러 주세요. 집밥 레시피 77개 중에 지금 바로 만들 수 있는 걸 골라 드릴게요!")}
 <section id="fridge" aria-label="냉장고 재료로 메뉴 추천"><noscript>자바스크립트가 필요해요.</noscript></section>

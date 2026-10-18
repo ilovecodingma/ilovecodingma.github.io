@@ -173,3 +173,7 @@ body[data-th=ai] .hd{background:#0f172a}body[data-th=ai] .hd .logo span,body[dat
 .pg-intro{margin:32px 0 8px;padding:18px 18px 8px;border-radius:14px;background:var(--card,#f8fafc);border:1px solid rgba(0,0,0,.06);line-height:1.7}.pg-intro h2{margin-top:0;font-size:1.05rem}
 table.cmp td:first-child{max-width:240px;overflow-wrap:anywhere}table.cmp tr.on td{font-weight:700}.cat-st{background:rgba(109,40,217,.06);padding:10px 12px;border-radius:10px}
 .an-sum{margin:12px 0;padding:14px 16px;border-radius:12px;background:rgba(4,120,87,.06);line-height:1.7}.an-sum h2{margin:0 0 6px;font-size:1rem}.nw-ins{color:#92400e;font-size:.93em}
+.rel{margin:24px 0;padding:14px 16px;border-radius:14px;border:1px solid rgba(0,0,0,.08)}.rel h2{margin:0 0 6px;font-size:1rem}.rel ul{margin:0;padding-left:18px;line-height:1.9}
+details.faq{border-bottom:1px solid rgba(0,0,0,.08);padding:8px 0}details.faq summary{font-weight:700;cursor:pointer}details.faq p{margin:6px 0 0}
+.tbl-w{overflow-x:auto}.sal-t td,.sal-t th{text-align:right;white-space:nowrap}.sal-t td:first-child,.sal-t th:first-child{text-align:left}
+.reg-l{list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px}.reg-l a{display:flex;justify-content:space-between;padding:10px 12px;border-radius:12px;border:1px solid rgba(0,0,0,.08);text-decoration:none;color:inherit}.reg-l span{color:#0e7490;font-weight:700}
