@@ -1,4 +1,4 @@
-// 루리의 냉장고 파먹기 (/fridge/) — 냉장고에 있는 재료를 고르면 레시피 77개 중 지금 만들 수 있는 오늘 메뉴를 추천
+// 루리의 냉장고 파먹기 (/fridge/) — 냉장고에 있는 재료를 고르면 레시피 중 지금 만들 수 있는 오늘 메뉴를 추천
 // 2026-10-18 사용자: "AI 말고 그냥 레시피 추천으로" → 재료 매칭 방식(서버·AI 없이 브라우저에서 계산)
 (function () {
   const ROOT = document.getElementById('fridge'); if (!ROOT) return;
@@ -16,8 +16,17 @@
     return D.recipes.map(r => {
       const lack = r.need.filter(x => !have.has(x)), plus = r.opt.filter(x => have.has(x));
       const fit = mood === '아무거나' || r.t.includes(mood);
-      return { r, lack, plus, score: (lack.length ? -10 * lack.length : 0) + plus.length * 1.2 + r.need.length * 0.8 + (fit ? 3 : 0) + seed(r.n) };
+      // 2026-10-19 사용자 「어묵탕 이딴 거만 나온다」: 재료 한 개짜리 반찬이 위로 오던 걸 → 내 재료를 많이 쓰는 메뉴·한 끼 메뉴 우선
+      const used = r.need.length - lack.length + plus.length, cover = used / (r.need.length + r.opt.length || 1);
+      const meal = r.t.includes('든든') ? 2 : r.t.includes('간식') ? -1 : 0;
+      return { r, lack, plus, score: -10 * lack.length + used * 2 + cover * 3 + (mood === '아무거나' ? meal : fit ? 3 : 0) + seed(r.n) * 2.5 };
     }).filter(x => x.r.m <= maxMin && (mood === '아무거나' || x.r.t.includes(mood) || x.lack.length === 0)).sort((a, b) => b.score - a.score);
+  }
+  // 위쪽 3개는 주재료가 겹치지 않게 (어묵볶음·어묵탕 연달아 X)
+  function spread(L) {
+    const top = [], rest = [], seen = new Set();
+    for (const x of L) { const k = x.r.need[0]; if (top.length < 3 && !seen.has(k)) { top.push(x); seen.add(k); } else rest.push(x); }
+    return top.concat(rest);
   }
   const card = (x, big) => `<article class="fr-m${big ? ' best' : ''}"><header><span class="fr-e">${x.r.e}</span><div><h3>${esc(x.r.n)}</h3><p><em>⏱ ${x.r.m}분</em><em>${esc(x.r.lv)}</em>${x.r.t.map(t => `<em class="t">#${esc(t)}</em>`).join('')}</p></div></header>
 <p class="fr-use">${x.r.need.filter(i => have.has(i)).concat(x.plus).map(i => `<span>${esc(i)}</span>`).join('')}${x.lack.map(i => `<span class="no">+ ${esc(i)} 사기</span>`).join('')}</p>
@@ -63,7 +72,7 @@
   function result() {
     const out = ROOT.querySelector('.fr-out');
     if (!have.size) { out.innerHTML = '<p class="fr-note">👆 냉장고 열어 보고 있는 재료를 눌러 주세요. 고른 재료는 다음에 와도 기억해 둘게요!</p>'; return; }
-    const all = rank(), now = all.filter(x => !x.lack.length), buy1 = all.filter(x => x.lack.length === 1).slice(0, 4);
+    const all = rank(), now = spread(all.filter(x => !x.lack.length)), buy1 = spread(all.filter(x => x.lack.length === 1)).slice(0, 4);
     out.innerHTML = (now.length ? `<h2 class="fr-h">🍽️ 오늘은 이거 어때요? <small>지금 있는 재료로 바로 · ${now.length}개</small></h2>${card(now[0], true)}${now.slice(1, 3).map(x => card(x)).join('')}
 ${now.length > 3 ? `<details class="fr-more"><summary>바로 만들 수 있는 메뉴 ${now.length - 3}개 더 보기</summary>${now.slice(3).map(x => card(x)).join('')}</details>` : ''}` : '<p class="fr-note">🤔 고른 재료만으로는 딱 맞는 메뉴가 없어요. 아래처럼 하나만 사면 돼요!</p>')
       + (buy1.length ? `<h2 class="fr-h">🛒 하나만 사면 되는 메뉴</h2>${buy1.map(x => card(x)).join('')}` : '')
@@ -77,5 +86,5 @@ ${now.length > 3 ? `<details class="fr-more"><summary>바로 만들 수 있는 �
     const tp = out.querySelector('.fr-top'); if (tp) tp.onclick = () => ROOT.scrollIntoView({ behavior: 'smooth' });
     clearTimeout(gaT); gaT = setTimeout(() => ga('fridge_result', { have: have.size, now: now.length, mood }), 1500);
   }
-  fetch('/assets/fridge/recipes.json?v=1').then(r => r.json()).then(d => { D = d; paint(); });
+  fetch('/assets/fridge/recipes.json?v=2').then(r => r.json()).then(d => { D = d; paint(); });
 })();
