@@ -23,3 +23,7 @@
 .nw-sus{margin-top:22px}.nw-sus h2,.nw-board h2{font-size:17px;margin:0 0 8px}.nw-board{margin-top:24px}.nw-board h2 small{font-size:12px;color:var(--mu);font-weight:600}
 .nw-board table{width:100%;border-collapse:collapse;font-size:14px;background:var(--card);border-radius:14px;overflow:hidden}.nw-board th,.nw-board td{padding:8px 10px;border-bottom:1px solid var(--bd);text-align:left}.nw-board th{background:#fafaf9;font-size:12.5px;color:var(--mu)}
 .nw-note{font-size:12.5px;color:var(--mu);line-height:1.6}.nw-empty{color:var(--mu);padding:20px;text-align:center}
+.nw-b.claim{background:#ede9fe;color:#5b21b6;margin-left:6px}
+.nw-cmp{margin:10px 0 2px;background:#fafaf9;border:1px solid #e7e5e4;border-radius:12px;padding:8px 10px}.nw-cmp small{display:block;font-size:12px;font-weight:800;color:#57534e;margin-bottom:4px}.nw-cmp small i{font-style:normal;font-weight:600;color:var(--mu)}
+.nw-cmp p{margin:4px 0;font-size:13.5px;line-height:1.5}.nw-cmp p b{display:inline-block;min-width:66px;font-size:12px;color:#78716c;margin-right:6px}.nw-cmp mark{background:#fef08a;padding:0 2px;border-radius:3px}
+.nw-ent h2 small{font-size:12px;color:var(--mu);font-weight:600}

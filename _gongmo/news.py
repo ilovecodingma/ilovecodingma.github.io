@@ -21,6 +21,14 @@ FEEDS = {
     '뉴시스': 'https://newsis.com/RSS/sokbo.xml', '아시아경제': 'https://www.asiae.co.kr/rss/all.htm', '파이낸셜뉴스': 'https://www.fnnews.com/rss/r20/fn_realnews_all.xml',
     '세계일보': 'https://www.segye.com/Articles/RSSList/segye_recent.xml', '이데일리': 'http://rss.edaily.co.kr/edaily_news.xml', '오마이뉴스': 'http://rss.ohmynews.com/rss/ohmynews.xml',
 }
+ENT = [('연합뉴스', 'https://www.yna.co.kr/rss/entertainment.xml'), ('조선일보', 'https://www.chosun.com/arc/outboundfeeds/rss/category/entertainments/?outputType=xml'),
+       ('동아일보', 'https://rss.donga.com/entertainment.xml'), ('뉴시스', 'https://newsis.com/RSS/entertain.xml'), ('한국경제', 'https://www.hankyung.com/feed/entertainment'),
+       ('세계일보', 'https://www.segye.com/Articles/RSSList/segye_entertainment.xml'), ('SBS', 'https://news.sbs.co.kr/news/SectionRssFeed.do?sectionId=14'), ('국민일보', 'https://www.kmib.co.kr/rss/data/kmibEntRss.xml')]
+SRC = [(k, v, 0) for k, v in FEEDS.items()] + [(k, v, 1) for k, v in ENT]
+ENT_BAIT = ['♥', '열애', '결별', '파격', '과감', '아찔', '몸매', '비키니', '오열', '저격', '누구?', '이 배우', '이 가수', '못 알아볼', '확 달라진', '이게 무슨', '눈길', '시선 강탈', '깜짝 근황', '충격 고백', '심경', '의미심장']
+SNSRE = re.compile(r'자신의 SNS|자신의 인스타그램|인스타그램에|개인 (?:SNS|계정)|라이브 방송에서|유튜브 채널에|스토리에|팬 커뮤니티|게시물을 올렸|사진을 게재|근황을 공개')
+ACC = re.compile(r'사고|숨져|숨진|사망|화재|참사|추락|실종|부상|흉기|살해|변사|폭행|끼임|붕괴|익사|사상자|중상|순직')
+POL_QUOTE = re.compile("^[“\"‘'][^”\"’']{4,}[”\"’']|[가-힣]{2,4}(?: 대통령| 총리| 장관| 대표| 의원| 위원장| 대변인| 시장| 지사)?[,\s]*[“\"][^”\"]{6,}[”\"]")
 WINDOW_H = 36
 MAX_ITEMS = 300
 KST = datetime.timezone(datetime.timedelta(hours=9))
@@ -56,9 +64,10 @@ def clean(s):
     return re.sub(r'\s+', ' ', html.unescape(html.unescape(s))).strip()
 
 
-def feed(name):
+def feed(src):
+    name, url, ent = src
     try:
-        r = requests.get(FEEDS[name], headers=UA, timeout=20)
+        r = requests.get(url, headers=UA, timeout=20)
         x = decode(r)
     except Exception as e:
         log('피드 실패', name, repr(e)[:80]); return []
@@ -73,7 +82,7 @@ def feed(name):
             ts = email.utils.parsedate_to_datetime(ds).timestamp() if ',' in ds or 'GMT' in ds or '+' in ds[-6:] else datetime.datetime.fromisoformat(ds.replace('Z', '+00:00')).timestamp()
         except Exception:
             ts = time.time()
-        out.append(dict(o=name, t=t, u=link, ts=int(ts), d=clean(g('description'))[:400]))
+        out.append(dict(o=name, t=t, u=link, ts=int(ts), d=clean(g('description'))[:400], ent=ent))
     return out
 
 
@@ -99,6 +108,7 @@ def signals(a, body):
     s['named'] = len(NAMED.findall(body))
     s['anon'] = len(ANON.findall(body))
     s['commu'] = len(COMMU.findall(body))
+    s['sns'] = len(SNSRE.findall(body))
     bd = re.sub(r'[\s,]', '', body)
     miss_n = [n.strip() for n in NUM.findall(a['t']) if re.sub(r'[\s,]', '', n.strip()) and re.sub(r'[\s,]', '', n.strip()) not in bd and re.sub(r'\D', '', n) not in re.sub(r'\D', ' ', body).split()]
     s['miss_num'] = [n for n in miss_n if len(re.sub(r'\D', '', n)) >= 1][:3]
@@ -106,7 +116,7 @@ def signals(a, body):
     return s
 
 
-def judge(a, sig, cl_n, cl_out):
+def judge(a, sig, cl_n, cl_out, cat=''):
     """0~100 진실성 신호 점수(높을수록 믿을 만함)와 이유 목록."""
     why, sc = [], 65
     t = a['t']
@@ -143,6 +153,14 @@ def judge(a, sig, cl_n, cl_out):
         bait = [w for w in bait if w != '?']
     if bait:
         sc -= min(30, 10 * len(bait)); why.append('🎣 낚시 표현: ' + ', '.join(dict.fromkeys(bait)))
+    if a.get('ent') or cat == '연예·문화':
+        eb = [w for w in ENT_BAIT if w in t]
+        if eb:
+            sc -= min(30, 10 * len(eb)); why.append('🎣 연예 낚시 표현: ' + ', '.join(eb))
+        if sig.get('sns'):
+            sc -= 15; why.append('📱 연예인 SNS 글·사진을 옮겨 쓴 기사예요')
+    if cat == '정치' and POL_QUOTE.search(t):
+        why.append('🗣️ 발언 전달 기사: 따옴표 안은 말한 사람의 주장이에요. 말한 내용이 맞는지는 따로 확인이 필요해요')
     if PROMO_T.search(t) and cl_n <= 1:
         sc -= 10; why.append('📢 기업·상품 홍보성 기사로 보여요')
     sc = max(0, min(100, sc))
@@ -239,7 +257,7 @@ def main():
     t0 = time.time()
     cache = json.load(open(CACHE, encoding='utf-8')) if os.path.exists(CACHE) else {}
     with cf.ThreadPoolExecutor(8) as ex:
-        arts = [a for lst in ex.map(feed, FEEDS) for a in lst]
+        arts = [a for lst in ex.map(feed, SRC) for a in lst]
     now = time.time()
     arts = [a for a in arts if now - a['ts'] < WINDOW_H * 3600 and not SKIP.search(a['t'])]
     uniq = {}
@@ -279,7 +297,7 @@ def main():
     issues = []
     for root_, g in groups.items():
         outs = sorted({arts[k]['o'] for k in g})
-        if len(outs) < 2:
+        if len(outs) < 2 or sum(1 for k in g if ACC.search(arts[k]['t'])) * 2 >= len(g):
             continue
         issues.append({'g': g, 'outs': outs, 'ts': max(arts[k]['ts'] for k in g)})
     issues.sort(key=lambda x: (-len(x['outs']), -x['ts']))
@@ -291,9 +309,10 @@ def main():
     for i, a in enumerate(arts):
         g = groups[fd(i)]
         outs = sorted({arts[k]['o'] for k in g})
-        sc, grade, why = judge(a, cache.get(a['u'], {}).get('sig', {}), len(outs), outs)
+        ct = '연예·문화' if a.get('ent') and not re.search(CATS[0][1], a['t']) else cat_of([a['t']])
+        sc, grade, why = judge(a, cache.get(a['u'], {}).get('sig', {}), len(outs), outs, ct)
         it = {'id': hashlib.md5(a['u'].encode()).hexdigest()[:10], 't': a['t'], 'o': a['o'], 'u': a['u'], 'ts': a['ts'], 's': sc, 'g': grade, 'why': why,
-              'cl': [o for o in outs if o != a['o']][:6], 'pr': promos(a, data, apply_, today), 'c': cat_of([a['t']]), 'is': iss_of.get(i)}
+              'cl': [o for o in outs if o != a['o']][:6], 'pr': promos(a, data, apply_, today), 'c': ct, 'is': iss_of.get(i), 'ent': a.get('ent', 0), 'acc': 1 if ACC.search(a['t']) else 0}
         items.append(it)
         if sc is not None:
             by_o.setdefault(a['o'], []).append(sc)
@@ -307,13 +326,17 @@ def main():
         if cf_ and avg is not None:
             avg = max(0, avg - 10)
         prs = next((it['pr'] for it in arts_ if it['pr']), [])
-        ISS.append({'n': n_, 't': best['t'], 'c': cat_of([it['t'] for it in arts_]), 'on': len(x['outs']), 'ts': x['ts'], 's': avg,
+        cc = cat_of([it['t'] for it in arts_])
+        claim = cc == '정치' and sum(1 for it in arts_ if POL_QUOTE.search(it['t'])) * 2 >= len(arts_)
+        ISS.append({'claim': 1 if claim else 0, 'n': n_, 't': re.sub(r'\s*[\[［][^\]］]{1,14}[\]］]\s*$', '', best['t']), 'c': cc, 'on': len(x['outs']), 'ts': x['ts'], 's': avg,
                     'g': None if avg is None else ('ok' if avg >= 75 else 'warn' if avg >= 50 else 'bad'), 'cf': cf_, 'a': [it['id'] for it in arts_], 'pr': prs})
     keep = {i for x in ISS for i in x['a']}
+    ENTW = [it['id'] for it in sorted([it for it in items if it.get('ent') and it['s'] is not None and it['s'] < 60], key=lambda it: it['s'])[:25]]
+    keep |= set(ENTW)
     items = [it for it in items if it['id'] in keep] + [it for it in items if it['id'] not in keep][:MAX_ITEMS]
     outlets = sorted([{'o': o, 'n': len(v), 'avg': round(sum(v) / len(v)), 'bad': round(100 * sum(1 for x in v if x < 50) / len(v))} for o, v in by_o.items() if len(v) >= 10], key=lambda x: -x['avg'])
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
-    json.dump({'updated': datetime.datetime.now(KST).strftime('%Y-%m-%d %H:%M'), 'issues': ISS, 'items': items, 'outlets': outlets}, open(OUT, 'w', encoding='utf-8', newline='\n'), ensure_ascii=False, separators=(',', ':'))
+    json.dump({'updated': datetime.datetime.now(KST).strftime('%Y-%m-%d %H:%M'), 'issues': ISS, 'ent': ENTW, 'items': items, 'outlets': outlets}, open(OUT, 'w', encoding='utf-8', newline='\n'), ensure_ascii=False, separators=(',', ':'))
     cnt = {k: sum(1 for x in items if x['g'] == k) for k in ('ok', 'warn', 'bad', 'opinion')}
     log('이슈', len(ISS), '최대', ISS[0]['on'] if ISS else 0, '곳')
     log('완료', len(items), cnt, f'{time.time() - t0:.0f}초')

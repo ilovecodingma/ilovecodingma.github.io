@@ -9,8 +9,8 @@
     warn: ['큰 틀은 맞지만, 세부 내용은 기사마다 조금씩 달라요.', '아직 확인이 덜 된 부분이 있어요. 한 번 더 보세요!'],
     bad: ['잠깐! 제목이랑 본문이 안 맞거나 출처가 약해요.', '숫자가 엇갈려요. 공식 발표를 기다려 봐요!']
   };
-  const CATS = ['전체', '정치', '경제', '사회', '국제', 'IT·과학', '스포츠', '연예·문화'];
-  let D = null, cat = '전체', only = '';
+  const CATS = ['정치', '전체', '경제', '사회', '국제', 'IT·과학', '스포츠', '연예·문화'];
+  let D = null, cat = '정치', only = '';
   const ago = ts => { const m = Math.max(1, Math.round((Date.now() / 1000 - ts) / 60)); return m < 60 ? m + '분 전' : m < 1440 ? Math.round(m / 60) + '시간 전' : Math.round(m / 1440) + '일 전'; };
   const badge = (s, g) => g && G[g] ? `<span class="nw-b ${g}">${G[g][0]} ${s ?? ''}${s != null ? '점' : ''} <small>${G[g][1]}</small></span>` : '';
   const pick = (arr, k) => arr[Math.abs([...String(k)].reduce((a, c) => a * 31 + c.charCodeAt(0), 7)) % arr.length];
@@ -19,21 +19,27 @@
 <a class="nw-at" href="${esc(a.u)}" target="_blank" rel="noopener nofollow" data-ga="news_out">${esc(a.t)}</a><ul class="nw-why">${a.why.map(w => `<li>${esc(w)}</li>`).join('')}</ul></li>`;
   function issue(x, i, I) {
     const arts = x.a.map(id => I[id]).filter(Boolean), g = x.cf && x.cf.length ? 'bad' : x.g;
-    const line = x.cf && x.cf.length ? `언론사마다 숫자가 달라요(${x.cf.join(' / ')}). 공식 발표를 확인해 보세요!` : pick(SAY[g] || SAY.warn, x.t);
+    const words = t => (t.match(/[가-힣A-Za-z0-9]{2,}/g) || []);
+    const cnt = {}; arts.forEach(a => new Set(words(a.t)).forEach(w => { cnt[w] = (cnt[w] || 0) + 1; }));
+    const hl = t => esc(t).replace(/[가-힣A-Za-z0-9]{2,}/g, w => cnt[w] === 1 && arts.length >= 3 ? `<mark>${w}</mark>` : w);
+    const cmp = x.c === '정치' ? `<div class="nw-cmp"><small>📰 같은 사건, 언론사별 제목 <i>(이 언론사만 쓴 표현은 노란색)</i></small>${arts.map(a => `<p><b>${esc(a.o)}</b>${hl(a.t)}</p>`).join('')}</div>` : '';
+    const line = x.claim ? '이건 발언(주장)을 전한 기사들이에요. 그런 말을 한 건 사실이지만, 말한 내용이 맞는지는 따로 따져 봐야 해요!' : x.cf && x.cf.length ? `언론사마다 숫자가 달라요(${x.cf.join(' / ')}). 공식 발표를 확인해 보세요!` : pick(SAY[g] || SAY.warn, x.t);
     return `<article class="nw-is ${g || ''}" id="is${x.n}"><div class="nw-rank">${i + 1}</div><div class="nw-ib">
 <p class="nw-meta"><span class="nw-cat">${esc(x.c)}</span><span class="nw-hot">🔥 ${x.on}곳 보도</span><span class="nw-t">${esc(ago(x.ts))}</span></p>
-<h2>${esc(x.t)}</h2>${badge(x.s, g)}
+<h2>${esc(x.t)}</h2>${badge(x.s, g)}${x.claim ? '<span class="nw-b claim">🗣️ 발언·주장</span>' : ''}
 <div class="nw-say"><img src="/assets/ruri/o_det_${G[g] ? G[g][2] : 'think'}_s.webp" width="44" height="61" alt="루리 탐정"><p><b>루리 탐정</b>${esc(line)}</p></div>
-${prs(x.pr)}
+${cmp}${prs(x.pr)}
 <details class="nw-d"><summary>🔎 언론사별 기사 채점 ${arts.length}건 보기</summary><ul class="nw-al">${arts.map(art).join('')}</ul></details>
 <button class="nw-sh" data-n="${x.n}">📤 공유</button></div></article>`;
   }
+  const ent = I => { const L = (D.ent || []).map(i => I[i]).filter(Boolean); return L.length ? `<section class="nw-sus nw-ent"><h2>🎣 연예 낚시 감별 <small>점수 낮은 순</small></h2><p class="nw-note">「파격」「몸매」「근황」 같은 낚시 표현, 연예인 SNS 글·사진을 옮겨 쓴 기사를 골랐어요.</p><ul class="nw-al">${L.slice(0, 15).map(art).join('')}</ul></section>` : ''; };
   function paint() {
     const I = Object.fromEntries(D.items.map(a => [a.id, a]));
     const iss = D.issues.filter(x => cat === '전체' || x.c === cat).filter(x => !only || (only === 'bad' ? (x.g === 'bad' || (x.cf && x.cf.length)) : x.g === only));
     const inIss = new Set(D.issues.flatMap(x => x.a));
     const sus = D.items.filter(a => !inIss.has(a.id) && a.g === 'bad' && (cat === '전체' || a.c === cat)).slice(0, 15);
     ROOT.querySelector('.nw-feed').innerHTML = (iss.length ? iss.map((x, i) => issue(x, i, I)).join('') : '<p class="nw-empty">이 분야는 지금 여러 언론사가 함께 다룬 이슈가 없어요.</p>')
+      + (cat === '연예·문화' || cat === '전체' ? ent(I) : '')
       + (sus.length && !only ? `<section class="nw-sus"><h2>🕵️ 루리 탐정 수첩: 확인이 필요한 기사</h2><ul class="nw-al">${sus.map(art).join('')}</ul></section>` : '');
     ROOT.querySelectorAll('.nw-sh').forEach(b => b.onclick = () => {
       const x = D.issues.find(y => y.n === +b.dataset.n), text = `「${x.t}」 ${x.on}곳 보도 · 루리 탐정 감별 ${x.s ?? ''}점`, path = '/news/#is' + x.n;

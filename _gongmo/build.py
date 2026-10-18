@@ -602,8 +602,8 @@ def news_top():
     except Exception:
         return ''
     G = {'ok': '✅', 'warn': '🟡', 'bad': '🔴'}
-    li = ''.join(f'<li><a href="/news/#is{x["n"]}"><em>{i + 1}</em><b>{E(x["t"])}</b><span>{G.get("bad" if x.get("cf") else x.get("g"), "")} {x["s"] if x.get("s") is not None else ""}점 · {x["on"]}곳</span></a></li>' for i, x in enumerate(d.get('issues', [])[:3]))
-    return f'<section class="nw-home"><h2>🕵️ 루리 탐정의 이슈 감별 <a href="/news/">이슈 순위 전체 →</a></h2><ol>{li}</ol></section>' if li else ''
+    li = ''.join(f'<li><a href="/news/#is{x["n"]}"><em>{i + 1}</em><b>{E(x["t"])}</b><span>{G.get("bad" if x.get("cf") else x.get("g"), "")} {x["s"] if x.get("s") is not None else ""}점 · {x["on"]}곳</span></a></li>' for i, x in enumerate([y for y in d.get('issues', []) if y.get('c') == '정치'][:3] or d.get('issues', [])[:3]))
+    return f'<section class="nw-home"><h2>🕵️ 오늘의 정치 이슈 감별 <a href="/news/">이슈 순위 전체 →</a></h2><ol>{li}</ol></section>' if li else ''
 
 
 def news_page():
@@ -611,7 +611,7 @@ def news_page():
     body = f'''<p class="bc"><a href="/">홈</a> › 이슈 감별</p><h1>🕵️ 루리 탐정의 이슈 감별</h1>
 <section id="news" aria-label="이슈 순위와 기사 채점"><noscript>자바스크립트가 필요해요.</noscript></section>
 <details class="nw-how"><summary>채점은 이렇게 해요</summary><ul><li><b>교차 보도</b> — 같은 사건을 여러 언론사가 보도하면 가점, 한 곳뿐이면 표시만 해요.</li><li><b>출처</b> — 실명 기관·인물 출처는 가점, 익명 관계자뿐이거나 온라인 커뮤니티·SNS 글이 출처면 감점.</li><li><b>제목-본문 일치</b> — 제목의 숫자·인용문이 본문에 없으면 감점.</li><li><b>숫자 엇갈림</b> — 같은 사건인데 언론사마다 사망·부상자 수가 다르면 따로 표시해요.</li><li><b>낚시·홍보</b> — 「충격」「결국」「이것」 같은 낚시 표현, 기업 홍보성 기사는 감점.</li></ul><p>기사 본문은 채점에만 쓰고 이 사이트에 옮겨 싣지 않아요. 제목을 누르면 원래 언론사 기사로 이동해요.</p></details>
-<link rel="stylesheet" href="/assets/news/news.css?v=1"><script defer src="/assets/news/news.js?v=1"></script>'''
+<link rel="stylesheet" href="/assets/news/news.css?v=2"><script defer src="/assets/news/news.js?v=2"></script>'''
     page('/news/', '루리 탐정의 이슈 감별 — 오늘의 이슈 순위·기사 팩트 채점', '언론사 15곳 기사를 매시간 모아 같은 사건끼리 묶고, 교차 보도·출처·제목-본문 일치·숫자 엇갈림·낚시 표현으로 기사마다 점수를 매겨요. 지금 가장 많이 보도된 이슈 순위.',
          body, [('루리의 줍줍', '/'), ('이슈 감별', '/news/')])
 
