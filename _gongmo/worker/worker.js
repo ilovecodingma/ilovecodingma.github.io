@@ -43,6 +43,19 @@ async function newSession(env, uid) {
 const ADMINS = [16];  // 관리자 계정(사장님 구글 계정)
 async function count(env, sql, ...a) { return (await env.DB.prepare(sql).bind(...a).first('n')) || 0; }
 
+// 사이트 레시피 목록을 30분 캐시해 읽는다(추천 묻기용)
+async function recipeIndex(env) {
+  const key = new Request('https://jupjup.internal/fridge-recipes'), cache = caches.default;
+  let hit = await cache.match(key);
+  if (!hit) {
+    const r = await fetch('https://sungprofile.cloud/assets/fridge/recipes.json');
+    if (!r.ok) throw new Error('recipes ' + r.status);
+    hit = new Response(await r.text(), { headers: { 'Content-Type': 'application/json', 'Cache-Control': 'max-age=1800' } });
+    await cache.put(key, hit.clone());
+  }
+  return (await hit.json()).recipes || [];
+}
+
 
 // ---- 소셜 로그인: /api/oauth/<google|kakao>/start?back=<돌아갈 주소> → 제공자 → /api/oauth/<p>/callback → 사이트 #jt=<토큰>&jn=<닉> ----
 const SITE = 'https://sungprofile.cloud';
@@ -287,6 +300,59 @@ export default {
         const found = Object.entries(ING).filter(([k, en]) => en.toLowerCase().split(/[\/()]/).map(x => x.trim()).filter(x => x.length > 2).some(x => txt.includes(x))).map(([k]) => k);
         await env.DB.prepare('INSERT INTO fridge_log (day, ts, who, ok, tout) VALUES (?, ?, ?, 1, ?)').bind(d, now(), who, found.length).run();
         return json(req, { found, left: cap - mine - 1 });
+      }
+      // ---- 레시피 추천 묻기(2026-10-19): 사이트 레시피 1,353개에서 후보를 추려 Workers AI 가 한국어로 골라 준다 ----
+      if (p === '/api/fridge-ask' && req.method === 'POST') {
+        const q = clean(body.q, 160);
+        const have = Array.isArray(body.have) ? body.have.slice(0, 40).map(x => clean(x, 12)).filter(Boolean) : [];
+        if (!q && !have.length) return err(req, '재료를 고르거나 궁금한 걸 적어 주세요.');
+        const ip = req.headers.get('CF-Connecting-IP') || '', d = new Date(Date.now() + 9 * 3600e3).toISOString().slice(0, 10), u = await me(req, env);
+        const who = 'q:' + (u ? 'u' + u.id : hex(new Uint8Array(await crypto.subtle.digest('SHA-256', new TextEncoder().encode(ip + '|ask')))).slice(0, 16));
+        const cap = u ? 30 : 8, mine = await count(env, 'SELECT COUNT(*) n FROM fridge_log WHERE day = ? AND who = ?', d, who);
+        if (mine >= cap) return err(req, u ? '물어보기는 하루 30번까지예요. 재료를 골라 추천을 받아 보세요!' : '물어보기는 하루 8번까지예요. 가입하면 30번! 재료를 골라도 추천이 나와요.', 429);
+
+        let all = [], why = '';
+        try { all = await recipeIndex(env); } catch (e) { why = String(e && e.message || e).slice(0, 120); }
+        if (!all.length) return json(req, { answer: '레시피를 불러오지 못했어요. 잠시 뒤 다시 해 주세요.', picks: [], why: why || 'empty' }, 502);
+        const H = new Set(have), toks = q.replace(/[^0-9A-Za-z가-힣]+/g, ' ').split(' ').filter(t => t.length >= 2);
+        const scored = [];
+        for (const r of all) {
+          const need = r.need || [], opt = r.opt || [];
+          const hitN = need.filter(i => H.has(i)).length, hitO = opt.filter(i => H.has(i)).length;
+          let sc = need.length ? (hitN / need.length) * 6 : 0;
+          sc += Math.min(hitO, 4) * 0.6;
+          const ready = need.length > 0 && hitN === need.length;
+          if (ready) sc += 3;
+          const hay = r.n + ' ' + (r.t || []).join(' ') + ' ' + need.join(' ') + ' ' + opt.join(' ');
+          for (const t of toks) { if (r.n.includes(t)) sc += 3; else if (hay.includes(t)) sc += 2; }
+          if (sc > 0) scored.push({ r, sc, ready });
+        }
+        scored.sort((a, b) => b.sc - a.sc);
+        const cands = scored.slice(0, 12);
+        if (!cands.length) return json(req, { answer: '그 재료로 만들 수 있는 메뉴를 아직 못 찾았어요. 재료를 몇 개 더 골라 주시면 다시 찾아볼게요!', picks: [], n: all.length });
+
+        const slug = n => n.replace(/[^0-9A-Za-z가-힣]+/g, '-').replace(/^-+|-+$/g, '');
+        const line = (x, i) => `${i + 1}) ${x.r.n} — ${x.r.m}분, ${x.r.lv}, 꼭 필요한 재료 ${(x.r.need || []).join('·')}` +
+          ((x.r.opt || []).length ? `, 있으면 좋은 재료 ${x.r.opt.slice(0, 4).join('·')}` : '') + (x.ready ? ' [지금 바로 가능]' : '');
+        const sys = '너는 한국 가정식 레시피를 골라 주는 「루리」야. 아래 후보 목록에 있는 메뉴만 2~3개 골라서 추천해. 목록에 없는 메뉴 이름은 절대 쓰지 마. ' +
+          '존댓말로 3~4문장만 쓰고, 고른 이유를 가진 재료와 조리 시간으로 짧게 설명해. 메뉴 이름은 목록에 적힌 그대로 써. 재료를 더 사라는 말은 하지 마.';
+        const user = `가진 재료: ${have.join(', ') || '(고른 재료 없음)'}\n물어본 것: ${q || '(없음)'}\n후보 목록:\n${cands.map(line).join('\n')}`;
+        let answer = '';
+        try {
+          const out = await env.AI.run('@cf/meta/llama-3.3-70b-instruct-fp8-fast',
+            { messages: [{ role: 'system', content: sys }, { role: 'user', content: user }], max_tokens: 400, temperature: 0.3 });
+          answer = clean(out.response || out.result || '', 900);
+        } catch (e) { answer = ''; }
+        // AI 가 안 되면 규칙으로 답한다
+        const named = cands.filter(x => answer.includes(x.r.n));
+        const picks = (named.length ? named : cands.slice(0, 3)).slice(0, 3)
+          .map(x => ({ n: x.r.n, e: x.r.e, m: x.r.m, lv: x.r.lv, need: x.r.need, ready: x.ready, u: '/fridge/r/' + slug(x.r.n) + '/' }));
+        if (!answer) {
+          const top = picks[0];
+          answer = top ? `${top.n}은(는) ${top.need.join('·')}만 있으면 ${top.m}분이면 돼요. 아래에서 만드는 법을 볼 수 있어요!` : '';
+        }
+        await env.DB.prepare('INSERT INTO fridge_log (day, ts, who, ok, tin, tout) VALUES (?, ?, ?, 1, ?, ?)').bind(d, now(), who, have.length, picks.length).run();
+        return json(req, { answer, picks, left: cap - mine - 1 });
       }
       // ---- 동료 찾기: 같은 공모전 준비하는 사람끼리 모이기 (2026-10-18 사용자: 같은 사람이 모이는 구조 + 원정대 활성화) ----
       if (p === '/api/crew' && req.method === 'GET') {

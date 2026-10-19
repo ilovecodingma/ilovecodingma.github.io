@@ -79,6 +79,9 @@ ${cr.length ? `<details class="fr-cr"><summary>사진 출처</summary><p>${cr.jo
 <div class="fr-o"><small>조건</small><div><button data-f="easy" class="${easyOnly ? 'on' : ''}">쉬운 것만</button><button data-f="few" class="${fewDish ? 'on' : ''}">설거지 적게</button><button data-f="exp" class="${expMode ? 'on' : ''}">⏰ 곧 상할 재료 고르기</button></div></div></div>
 ${TD && TD.picks ? `<section class="fr-wx"><h2 class="fr-h">🌤️ 오늘 날씨에 어울리는 메뉴 <small>${esc(TD.place)} ${Math.round(TD.t)}도 · ${esc(TD.why)}${TD.day ? ' · ' + esc(TD.day) : ''}</small></h2><div class="fr-wxl">${TD.picks.map(n => { const r = D.recipes.find(x => x.n === n); return r ? `<a href="/fridge/r/${encodeURIComponent(n.replace(/[^0-9A-Za-z가-힣]+/g, '-').replace(/^-|-$/g, ''))}/"><span>${r.e}</span><b>${esc(n)}</b><small>${r.m}분 · ${esc(r.lv)}</small></a>` : ''; }).join('')}</div></section>` : ''}
 <button class="fr-go">🍳 이 재료로 메뉴 추천받기</button>
+<form class="fr-ask"><b>💬 루리에게 물어보기</b><small>고른 재료에 맞춰 골라 드려요 · 예) 매콤하고 든든한 거, 10분 안에 되는 아침</small>
+<div><input type="text" maxlength="60" placeholder="어떤 게 당겨요?" aria-label="루리에게 물어볼 내용"><button type="submit">물어보기</button></div></form>
+<div class="fr-ans" hidden></div>
 <div class="fr-out"></div>`;
     ROOT.querySelectorAll('[data-i]').forEach(b => { if (exp.has(b.dataset.i)) b.classList.add('exp'); b.onclick = () => { const i = b.dataset.i;
       if (expMode) { exp.has(i) ? exp.delete(i) : (exp.add(i), have.add(i), b.classList.add('on')); b.classList.toggle('exp', exp.has(i)); LSset('jupjup_fridge_exp', [...exp]); save(); result(); return; }
@@ -88,12 +91,37 @@ ${TD && TD.picks ? `<section class="fr-wx"><h2 class="fr-h">🌤️ 오늘 날�
     ROOT.querySelectorAll('[data-t]').forEach(b => b.onclick = () => { maxMin = +b.dataset.t; ROOT.querySelectorAll('[data-t]').forEach(x => x.classList.toggle('on', x === b)); result(); });
     ROOT.querySelector('.fr-cam input').onchange = e => scan(e.target.files[0]);
     ROOT.querySelector('.fr-clear').onclick = () => { have.clear(); save(); paint(); };
+    ROOT.querySelector('.fr-ask').onsubmit = e => { e.preventDefault(); ask(); };
     ROOT.querySelector('.fr-go').onclick = () => {   // 2026-10-19 사용자: 「추천받기 누르면 나와야지」
       result(); const o = ROOT.querySelector('.fr-out');
       if (!have.size) o.innerHTML = '<p class="fr-note">👆 먼저 냉장고에 있는 재료를 하나 이상 눌러 주세요. 사진을 찍으면 자동으로 골라 드려요.</p>';
       o.scrollIntoView({ behavior: 'smooth', block: 'start' }); ga('fridge_go', { have: have.size });
     };
     result();
+  }
+  // 물어보기 → 서버가 고른 재료와 질문에 맞는 레시피를 사이트 레시피 안에서 찾아 추천(2026-10-19)
+  async function ask() {
+    const box = ROOT.querySelector('.fr-ans'), inp = ROOT.querySelector('.fr-ask input');
+    const q = inp.value.trim(), API = document.body.dataset.api || 'https://jupjup-api.sung2011103.workers.dev';
+    if (!q && !have.size) { box.hidden = false; box.className = 'fr-ans err'; box.textContent = '재료를 고르거나 궁금한 걸 적어 주세요.'; return; }
+    box.hidden = false; box.className = 'fr-ans wait'; box.textContent = '🤔 루리가 메뉴를 고르는 중…';
+    let tk = ''; try { tk = localStorage.getItem('jupjup_tok') || ''; } catch {}
+    try {
+      const ac = new AbortController(), to = setTimeout(() => ac.abort(), 30000);
+      const res = await fetch(API + '/api/fridge-ask', { signal: ac.signal, method: 'POST',
+        headers: { 'Content-Type': 'application/json', ...(tk ? { Authorization: 'Bearer ' + tk } : {}) },
+        body: JSON.stringify({ q, have: [...have] }) });
+      clearTimeout(to);
+      const d = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(d.error || d.answer || '지금은 답하기 어려워요.');
+      box.className = 'fr-ans ok';
+      box.innerHTML = `<p>${esc(d.answer || '')}</p>` + ((d.picks || []).length
+        ? `<div class="fr-wxl">${d.picks.map(x => `<a href="${esc(x.u)}"><span>${esc(x.e || '🍽️')}</span><b>${esc(x.n)}</b><small>${x.m}분 · ${esc(x.lv)}</small></a>`).join('')}</div>` : '');
+      ga('fridge_ask', { picks: (d.picks || []).length, have: have.size });
+    } catch (e) {
+      box.className = 'fr-ans err';
+      box.textContent = e.name === 'AbortError' ? '답이 너무 오래 걸려요. 잠시 뒤 다시 물어봐 주세요.' : e.message;
+    }
   }
   // 사진 → 서버(Cloudflare Workers AI 공개 모델)가 재료 이름만 돌려줌 → 칩 자동 체크. 사진은 저장 안 함
   function scan(f) {

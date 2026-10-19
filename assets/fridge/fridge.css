@@ -38,3 +38,18 @@
 
 /* 2026-10-19 음식 추천 고도화 */
 .fr-why{font-size:13px;color:#0e7490;margin:4px 0}.fr-sub{font-size:13px;color:#7c2d12;background:#fff7ed;border-radius:8px;padding:4px 8px;margin:4px 0}[data-i].exp{outline:2px solid #f97316;outline-offset:1px}[data-i].exp::after{content:" ⏰"}.fr-made{border:1px solid rgba(127,127,127,.3);border-radius:999px;padding:6px 12px;background:transparent;font:inherit;font-size:13px;cursor:pointer}.fr-wx{margin:14px 0}.fr-wxl{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.fr-wxl a{display:flex;flex-direction:column;align-items:center;text-align:center;padding:10px 6px;border-radius:14px;border:1px solid rgba(127,127,127,.2);text-decoration:none;color:inherit}.fr-wxl span{font-size:28px}.fr-wxl b{font-size:13.5px;overflow-wrap:anywhere}.fr-wxl small{font-size:11.5px;color:#6b7280}.fr-set{background:#ecfeff;border-radius:14px;padding:8px 12px;margin:10px 0}.fr-set p{margin:4px 0;font-size:14px}
+
+
+/* 2026-10-19 루리에게 물어보기 */
+.fr-ask{display:block;margin:10px 0 4px;padding:12px;border:1px solid rgba(127,127,127,.2);border-radius:14px}
+.fr-ask b{display:block;font-size:15px}
+.fr-ask small{display:block;color:#6b7280;font-size:12.5px;margin:2px 0 8px}
+.fr-ask div{display:flex;gap:6px}
+.fr-ask input{flex:1;min-width:0;padding:11px 12px;border:1px solid rgba(127,127,127,.35);border-radius:10px;font:inherit;font-size:15px;background:transparent;color:inherit}
+.fr-ask button{flex:none;padding:11px 16px;border:0;border-radius:10px;background:#0e7490;color:#fff;font:inherit;font-weight:700;cursor:pointer}
+.fr-ans{margin:8px 0;padding:12px;border-radius:14px;font-size:14.5px}
+.fr-ans p{margin:0 0 8px;line-height:1.6}
+.fr-ans.wait{background:#f3f4f6;color:#4b5563}
+.fr-ans.ok{background:#ecfeff}
+.fr-ans.err{background:#fef2f2;color:#991b1b}
+@media (prefers-color-scheme:dark){.fr-ans.wait{background:#1f2937;color:#d1d5db}.fr-ans.ok{background:#0b3b44}.fr-ans.err{background:#3b1113;color:#fecaca}}
