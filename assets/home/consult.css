@@ -129,3 +129,11 @@ html.cs-lock{overflow:hidden}
 .hm-sec .hub-ai{text-align:center;font-size:13px;margin:16px 0 4px}
 
 .cs-stale{max-width:640px;margin:8px auto;background:#fff7ed;border:1px solid #fed7aa;border-radius:12px;padding:8px 12px;font-size:13px;color:#7c2d12}
+
+/* 2026-10-19 생활·소비 홈 */
+.hm-ing{display:flex;gap:8px;margin:14px 0 8px}.hm-ing input{flex:1;min-width:0;min-height:44px;padding:8px 12px;border:1px solid var(--bd);border-radius:12px;font:inherit;background:var(--card);color:var(--tx)}
+.hm-ing button{min-height:44px;padding:0 16px;border:0;border-radius:12px;background:#0e7490;color:#fff;font:inherit;font-weight:700;cursor:pointer}
+.hm-chips{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 10px}.hm-chips a{padding:5px 12px;border-radius:999px;border:1px solid var(--bd);background:var(--card);color:var(--tx);text-decoration:none;font-size:14px}
+.hm-today{padding:10px 12px;border-radius:12px;background:var(--card);border:1px solid var(--bd)}.hm-today ul{margin:6px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px}
+.hm-today li a{display:inline-block;padding:6px 12px;border-radius:999px;background:#ecfeff;color:#0e7490;font-weight:700;text-decoration:none}
+.hm-ev{margin:0;padding:0;list-style:none;display:grid;gap:8px}.hm-ev a{display:block;padding:10px 12px;border:1px solid var(--bd);border-radius:12px;background:var(--card);color:var(--tx);text-decoration:none}.hm-ev small{display:block;color:var(--mu);margin-top:2px}

@@ -15,6 +15,7 @@
   const RO = w => { const c = w.charCodeAt(w.length - 1) - 0xac00; if (c < 0 || c > 11171) return '로'; const j = c % 28; return j === 0 || j === 8 ? '로' : '으로'; };   // 받침 없거나 ㄹ이면 「로」
   const HOUR = new Date(Date.now() + 324e5).getUTCHours();
   try { have = new Set(JSON.parse(localStorage.getItem(KEY) || '[]')); } catch {}
+  try { const q = new URLSearchParams(location.search).get('ing'); if (q) q.split(/[,\s]+/).map(x => x.trim()).filter(Boolean).forEach(x => have.add(x)); } catch {}   // 2026-10-19 홈 재료 검색 ?ing=김치,달걀
   const save = () => { try { localStorage.setItem(KEY, JSON.stringify([...have])); } catch {} };
   const MOODS = ['아무거나', '든든', '가벼움', '아이', '안주', '안 매움', '매움', '간식'];
   const TIMES = [[99, '상관없음'], [10, '10분'], [20, '20분'], [30, '30분']];

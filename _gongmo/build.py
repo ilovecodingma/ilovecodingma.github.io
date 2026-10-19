@@ -74,6 +74,10 @@ THEMES = [  # (키, 이름, 아이콘, 테마색, 홈, [하위 메뉴], [이 테
     ('ai', '개발 지식', '🧑‍💻', '#0f172a', '/ailog/', [('/ailog/', '개발 지식'), ('/dev/faq/', '개발 FAQ'), ('/en/guide/', 'English guides'), ('/ailog/#log', 'AI 제작 로그')], ['/ailog/', '/dev/', '/en/'])]   # 2026-10-19 사용자: AI 로그 → 개발 지식으로 개편
 
 
+# 2026-10-19 사용자 「소비 쪽으로 가중치, URL 그대로 메인만」: 테마 줄 순서만 생활 먼저 (주소·테마 소속은 그대로)
+THEMES = [next(t for t in THEMES if t[0] == k) for k in ('life', 'contest', 'issue', 'money', 'ai')]
+
+
 def theme_of(path):
     if path == '/':
         return None
@@ -1276,41 +1280,48 @@ def build():
          f'언론사 15곳 RSS 최근 36시간 · 같은 언론사 여러 기사는 1곳 · {nw.get("updated", "갱신 시각 없음")} 갱신'),
         ('money', '/analyst/', '📊', '머니', (f'목표가 상향 {n_up}건 · 하향 {n_dn}건' if stocks else '증권사 의견 정리 준비 중'),
          f'최근 30일 · 종목 {len(stocks)}개 · 리포트 {n_rep}건(증권사·종목별 최신 1건, 여러 기사가 인용해도 1건) · 기사 {n_art}건 · {an.get("updated", "갱신 시각 없음")} 갱신'),
-        ('life', '/apply/', '🍳', '생활', f'지원금·청약 신청 가능 {len(aps)}건 · 최근 3일 새 공고 {newap}건',
-         f'공공·지자체 공고 중 오늘 기준 신청 마감 전 · {built} 갱신')]
+        ]
     more_h = ''.join(f'<a class="hm-m hm-{k}" href="{u}"><span>{ic}</span><div><b>{E(n)}</b><p>{E(v)}</p><small>{E(sc)}</small></div></a>' for k, u, ic, n, v, sc in more)
     hot_h = ''.join(f'<li><a href="/hot/{v["slug"]}/">{E(v["title"])}<small> · 언론사 {len(v["outs"])}곳</small></a></li>' for v in hot3[:3])
     _rj = os.path.join(ROOT, 'assets', 'fridge', 'recipes.json')
     NR_HOME = f'{len(json.load(open(_rj, encoding="utf-8")).get("recipes", [])):,}' if os.path.exists(_rj) else '1,300'
     XLINKS_HOME = ''.join(f' · <a href="/apply/{tk}/{sl}/">{"청년 월세" if tk == "youth-rent" else "신혼부부"} {nm}</a>' for tk in ('youth-rent', 'newlywed') for sl, nm, n in sorted(xregions(aps, tk), key=lambda x: -x[2])[:3])
-    home = f'''<section class="hm-hero"><h1>나에게 맞는 공모전을 찾고,<br>마감 전에 준비하세요.</h1>
-<p class="hm-sub">진행 중 공모전 <b>{len(live)}건</b>의 분야·자격·마감·제출물을 한 형식으로 정리했어요. 몇 가지 질문에 답하면 조건에 맞는 공모전부터 보여 드려요.</p>
-<div class="hm-cta"><a class="hm-b1" href="/contest/">🔎 맞는 공모전 찾기</a><a class="hm-b2" href="/contest/week/">⏰ 마감 임박 보기 <small>7일 안 {wk7}건</small></a></div>
-<p class="hm-scope">{E(scope_c)}</p>
-<div class="hm-ruri"><img src="/assets/ruri/o_det_wave_s.webp" width="44" height="61" alt=""><p><b>루리</b>사흘 안에 마감하는 공모전이 {d3}건 있어요. 마감 시각은 공고마다 달라서 상세 화면의 공식 공고에서 꼭 확인해 주세요.</p></div></section>
-<section class="hm-sec"><h2>📋 지금 볼 만한 공모전 <a href="/contest/">조건으로 찾기 →</a></h2>
-<p class="hm-why">고른 기준: 상금 규모 + 마감까지 2~14일 남은 것 + 제출물 정보가 있는 것. 내 조건을 반영한 추천은 「맞는 공모전 찾기」에서 할 수 있어요.</p>
-<ul class="hm-cc">{"".join(cmp_card(c) for c in pick6) or '<li class="empty">지금 보여 드릴 공모전이 없어요. 데이터 갱신이 늦어지고 있을 수 있어요.</li>'}</ul>
-<p class="hm-more"><a href="/contest/week/">이번 주 마감 전체</a> · <a href="/contest/univ/">대학생 공모전</a> · <a href="/cat/literature/">분야별 보기</a></p></section>
-<section class="hm-sec"><h2>🛠️ 준비 지원</h2><div class="hm-prep">
-<a href="/prep/"><b>📋 준비실</b><span>마감일에서 거꾸로 짠 준비 일정과 체크리스트</span></a>
-<a href="/lab/"><b>🔬 수상 연구소</b><span>슬로건·네이밍 수상작 구조 분석과 내 문구 진단</span></a>
-<a href="/guide/"><b>📘 응모 가이드</b><span>제안서·분량·저작권·상금 세금·사기 구별법</span></a></div></section>
-<section class="hm-sec"><h2>🧺 바로 쓰는 정보</h2><div class="hm-prep">
-<a href="/fridge/"><b>🍳 냉장고 파먹기 레시피</b><span>있는 재료를 고르면 만들 수 있는 집밥 {NR_HOME}개 중에서 골라 드려요</span></a>
-<a href="/money/tools/salary/"><b>🧮 계산기</b><span>연봉 실수령액·실업급여·퇴직금·청약 가점 (2026 기준)</span></a>
-<a href="/apply/r/"><b>📍 지역별 지원금</b><span>시·도별 청년 월세·신혼부부·청약 일정 공고 마감순</span></a></div>
-<p class="hm-more"><a href="/money/tools/salary/table/">연봉 실수령액 표</a> · <a href="/money/tools/unemployment/">실업급여 계산기</a> · <a href="/money/tools/severance/">퇴직금 계산기</a> · <a href="/apply/recommend/">청약 가점 계산기</a></p>
+    _RS = json.load(open(_rj, encoding='utf-8'))['recipes'] if os.path.exists(_rj) else []
+    _TD = _rd('assets/fridge/today.json') or {}
+    _picks = [r for n_ in _TD.get('picks', []) for r in _RS if r['n'] == n_][:3]
+    _ez = ('댓글 1줄', '퀴즈 1분', '설문 5분', '응모만', '폼 1분')
+    _ev3 = sorted([e for e in events if (e.get('org') or '').strip() and dday(e['end'])[0] >= 0], key=lambda e: (e['end'], (e.get('effort') or EASY.get(e['type'], '')) not in _ez))[:4]
+    _ing = ['김치', '달걀', '스팸', '두부', '감자', '양파', '참치', '대파']
+    home = f'''<section class="hm-hero hm-life"><h1>오늘 뭐 먹지?<br>있는 재료로 바로 찾아요.</h1>
+<p class="hm-sub">집밥 레시피 <b>{NR_HOME}개</b>, 오늘 마감 경품·용돈 이벤트, 지원금·공모전 일정까지 생활에 쓰는 정보를 매시간 정리해요.</p>
+<form class="hm-ing" action="/fridge/" method="get"><input name="ing" placeholder="있는 재료 예) 김치, 달걀" aria-label="있는 재료"><button>메뉴 찾기</button></form>
+<p class="hm-chips">{''.join(f'<a href="/fridge/?ing={x}">{x}</a>' for x in _ing)}</p>
+{('<div class="hm-today"><b>☀️ 오늘의 메뉴</b> <small>' + E(_TD.get('place', '서울')) + ' ' + str(round(_TD.get('t', 0))) + '도 · ' + E(_TD.get('why', '')) + '</small><ul>' + ''.join(f'<li><a href="/fridge/r/{fr_slug(r["n"])}/">{r["e"]} {E(r["n"])} <small>{r["m"]}분 · {E(r["lv"])}</small></a></li>' for r in _picks) + '</ul></div>') if _picks else ''}</section>
+<section class="hm-sec"><h2>🍳 많이 찾는 레시피 모음 <a href="/fridge/">재료로 찾기 →</a></h2><div class="hm-prep">
+<a href="/fridge/solo/"><b>🏠 자취 요리 추천</b><span>재료 3개 이하·20분 안에 끝나는 1인분 집밥</span></a>
+<a href="/fridge/weather/"><b>🌤️ 날씨별 오늘 메뉴</b><span>비 오는 날·쌀쌀한 날·더운 날에 어울리는 집밥</span></a></div>
+<div class="mg-s" data-pctop="/fridge/r/" data-by="likes" data-n="6" data-head="❤️ 지금 인기 있는 메뉴"></div>
+{cp_box('', '🛒 오늘의 특가·자취 필수템')}</section>
+<section class="hm-sec"><h2>🎁 오늘 마감 경품·용돈 <a href="/event/">전체 {len(events)}건 →</a></h2>
+<ul class="hm-ev">{''.join(f'<li><a href="{E(e["link"])}" target="_blank" rel="noopener nofollow"><b>{E(e["title"][:48])}</b><small>{dday(e["end"])[1]} · {E(e.get("org") or "")} · {E(e.get("effort") or EASY.get(e["type"], ""))}</small></a></li>' for e in _ev3) or '<li class="empty">지금은 없어요.</li>'}</ul></section>
+<section class="hm-sec"><h2>💰 지원금·계산기</h2><div class="hm-prep">
+<a href="/apply/"><b>📋 지원금·청약 일정</b><span>신청 가능 {len(aps)}건 · 최근 3일 새 공고 {newap}건</span></a>
+<a href="/apply/r/"><b>📍 지역별 지원금</b><span>시·도별 청년 월세·신혼부부·청약 일정 공고 마감순</span></a>
+<a href="/money/tools/salary/"><b>🧮 계산기</b><span>연봉 실수령액·실업급여·퇴직금·청약 가점 (2026 기준)</span></a></div>
 <p class="hm-more"><a href="/apply/youth-rent/">청년 월세 지원</a>{XLINKS_HOME} · <a href="/apply/newlywed/">신혼부부 지원금</a></p>
-<p class="hm-more"><a href="/hot/">🔥 지금 뜨는 이슈</a> · <a href="/kw/">🔎 많이 찾는 검색어</a></p></section>
-<section class="hm-sec"><h2>🧭 다른 정보</h2><div class="hm-more3">{more_h}</div>
+<p class="hm-more"><a href="/money/tools/salary/table/">연봉 실수령액 표</a> · <a href="/money/tools/unemployment/">실업급여 계산기</a> · <a href="/money/tools/severance/">퇴직금 계산기</a> · <a href="/apply/recommend/">청약 가점 계산기</a></p></section>
+<section class="hm-sec"><h2>🏆 마감 앞둔 공모전 <a href="/contest/">맞는 공모전 찾기 →</a></h2>
+<p class="hm-why">진행 중 {len(live)}건 · 7일 안 마감 {wk7}건 · 상금 규모와 마감까지 2~14일 남은 것 기준. {E(scope_c)}</p>
+<ul class="hm-cc">{"".join(cmp_card(c) for c in pick6[:3]) or '<li class="empty">지금 보여 드릴 공모전이 없어요.</li>'}</ul>
+<p class="hm-more"><a href="/contest/week/">이번 주 마감 전체</a> · <a href="/contest/univ/">대학생 공모전</a> · <a href="/cat/literature/">분야별 보기</a> · <a href="/prep/">📋 준비실</a> · <a href="/lab/">🔬 수상 연구소</a> · <a href="/guide/">📘 응모 가이드</a></p></section>
+<section class="hm-sec"><h2>🧭 이슈·머니</h2><div class="hm-more3">{more_h}</div>
 {f'<div class="hm-hot"><b>🔥 지금 뜨는 이슈</b><ol>{hot_h}</ol></div>' if hot_h else ''}
-<p class="hub-ai"><a href="/all/">☰ 전체 메뉴</a> · <a href="/ailog/">🤖 사람 1명 + AI로 만든 과정</a></p></section>
+<p class="hm-more"><a href="/hot/">🔥 지금 뜨는 이슈</a> · <a href="/kw/">🔎 많이 찾는 검색어</a> · <a href="/all/">☰ 전체 메뉴</a> · <a href="/ailog/">🤖 사람 1명 + AI로 만든 과정</a></p></section>
 <section class="hm-sec"><div data-pcrecent="6"></div>
 <p class="hm-more"><a href="/plaza/">🗣️ 줍줍 광장 — 내 글 올리기</a> · <a href="/dev/faq/">❓ 개발 FAQ</a></p></section>
-<link rel="stylesheet" href="/assets/home/consult.css?v=14">'''
-    page('/', '루리의 줍줍 — 나에게 맞는 공모전 찾기·마감 전 준비',
-         f'진행 중 공모전 {len(live)}건의 분야·참가 자격·마감일·제출물을 비교하고, 조건에 맞는 공모전을 찾아 준비 일정까지. 이슈·머니·생활 정보도 함께.',
+<link rel="stylesheet" href="/assets/home/consult.css?v=15">'''
+    page('/', '루리의 줍줍 — 오늘 뭐 먹지·냉장고 파먹기 레시피, 경품·지원금·공모전',
+         f'있는 재료로 찾는 집밥 레시피 {NR_HOME}개와 오늘의 메뉴, 오늘 마감 경품·용돈 이벤트, 지원금·청약 일정, 진행 중 공모전 {len(live)}건까지 생활 정보를 매시간 정리해요.',
          home, full_title=True, ld={'@context': 'https://schema.org', '@graph': [  # 2026-10-19 구글 검색 결과 사이트 이름·로고
              {'@type': 'WebSite', '@id': SITE + '/#website', 'name': NAME, 'alternateName': ['줍줍', '루리의줍줍', '루리 줍줍'], 'url': SITE + '/', 'publisher': {'@id': SITE + '/#org'}},
              {'@type': 'Organization', '@id': SITE + '/#org', 'name': NAME, 'url': SITE + '/', 'logo': {'@type': 'ImageObject', 'url': SITE + '/assets/icons/icon-512.png', 'width': 512, 'height': 512}}]})
@@ -2569,16 +2580,18 @@ _CPJ = os.path.expanduser('~/tools/promo_share/coupang.json')
 CP = json.load(open(_CPJ, encoding='utf-8')) if os.path.exists(_CPJ) else {}
 
 
-def cp_box(text, title='🛒 함께 보면 좋은 물건', n=2):
-    """본문 하단 박스. 링크 rel=sponsored nofollow, 공정위 문구는 링크 바로 아래. 팝업·자동 이동 없음."""
+def cp_box(text, title='🛒 함께 보면 좋은 물건', n=2, fill=''):
+    """광고 박스 한 곳. 링크 rel=sponsored nofollow, 공정위 문구는 링크 바로 아래. 팝업·자동 이동 없음.
+    text 에 맞는 규칙(coupang.json rules 순서)을 먼저, 모자라면 fill 에 맞는 규칙으로 채움(레시피: 메뉴별 도구 → 일반 요리 도구)."""
     if not CP.get('on'):
         return ''
     items = []
-    for r in CP.get('rules', []):
-        if any(k in text for k in r['kw']):
-            items += [x for x in r['items'] if x not in items]
-        if len(items) >= n:
-            break
+    for t in (text, fill):
+        for r in CP.get('rules', []):
+            if len(items) >= n:
+                break
+            if t and any(k in t for k in r['kw']) and not (t is text and fill and any(k in fill for k in r['kw'])):
+                items += [x for x in r['items'] if x not in items]
     items = (items or CP.get('default', []))[:n]
     if not items:
         return ''
@@ -2855,6 +2868,7 @@ def fridge_page():
                 + (f'<img class="fr-rmain" src="{E(mp["f"])}" width="720" height="540" alt="{E(r["n"])} 완성 사진" fetchpriority="high">' if mp else '')
                 + f'<p>{E(tip)}</p><h2>🧺 재료</h2><div class="fr-ri"><div><h3>꼭 있어야 해요</h3><ul>{ingl(r["need"])}</ul></div>'
                 + (f'<div><h3>있으면 더 좋아요</h3><ul>{ingl(r["opt"])}</ul></div>' if r['opt'] else '') + '</div>'
+                + cp_box(r['n'] + ' ' + ' '.join(r['s']), '🛒 이 요리에 필요한 도구', fill='요리 레시피')
                 + (f'<h2>👩‍🍳 {E(r["n"])} 맛있게 끓이는 방법</h2>' if re.search(r'국|찌개|탕|전골|국밥', r['n']) else f'<h2>👩‍🍳 {E(r["n"])} 맛있게 만드는 방법</h2>') + f'<ol class="fr-rs">{steps}</ol>'
                 + (f'<p class="note">영문: {E(FR_EN[r["n"]])} recipe</p>' if FR_EN.get(r['n']) else '')
                 + share_bar(f'{r["n"]} 만드는 법', f'{r["n"]} 만드는 법 — 재료 {len(r["need"])}가지로 {r["m"]}분')
@@ -2862,7 +2876,6 @@ def fridge_page():
                 + f'<a class="lab-cta" href="/fridge/"><b>🍳 내 냉장고 재료로 다른 메뉴 찾기</b><span>재료를 고르면 지금 만들 수 있는 메뉴를 골라 드려요 · 레시피 {NR}개 →</span></a>'
                 + (f'<h2>🔗 재료가 비슷한 메뉴</h2><ul class="fr-rel">' + ''.join(f'<li><a href="/fridge/r/{fr_slug(x["n"])}/">{x["e"]} {E(x["n"])} <small>{x["m"]}분</small></a></li>' for x in rel) + '</ul>' if rel else '')
                 + (f'<details class="fr-cr"><summary>사진 출처</summary><p>{"<br>".join(cr)}</p></details>' if cr else '')
-                + cp_box('요리 레시피', '🛒 이 요리에 필요한 도구')
                 + '<p class="note">루리의 줍줍이 직접 정리한 1~2인분 기준 레시피예요. 사진은 자유 이용 사진이거나 출처를 밝힌 참고 사진이고, 맞는 사진이 없는 메뉴는 비워 뒀어요. 알레르기가 있으면 재료를 꼭 확인하세요.</p></article>'
                 + '<link rel="stylesheet" href="/assets/fridge/fridge.css?v=12">')
         def how_step(k, t):
@@ -2917,7 +2930,7 @@ def fridge_page():
 <p class="hm-more"><a href="/fridge/weather/">🌤️ 날씨별 메뉴</a> · <a href="/fridge/solo/">🏠 자취 요리</a> · <a href="/fridge/r/계란찜/">🥚 계란찜</a></p>
 <details class="fr-all"><summary>📚 전체 레시피 {NR}개 보기</summary><ul>{allr}</ul></details>
 <a class="lab-cta" href="/cat/food/"><b>🏆 요리·레시피 공모전</b><span>레시피 공모전·요리경연대회 모아 보기 · 상금 받고 요리 실력 뽐내기 →</span></a><p class="note">사진은 재료를 찾는 데만 쓰고 저장하지 않아요. 고른 재료는 이 폰에만 저장돼요. 알레르기가 있으면 재료를 꼭 다시 확인해 주세요.</p>
-<link rel="stylesheet" href="/assets/fridge/fridge.css?v=12"><script defer src="/assets/fridge/fridge.js?v=14"></script>""", [('루리의 줍줍', '/'), ('냉장고 파먹기', '/fridge/')],
+<link rel="stylesheet" href="/assets/fridge/fridge.css?v=12"><script defer src="/assets/fridge/fridge.js?v=15"></script>""", [('루리의 줍줍', '/'), ('냉장고 파먹기', '/fridge/')],
          {'@context': 'https://schema.org', '@type': 'ItemList', 'name': '냉장고 파먹기 집밥 레시피', 'numberOfItems': NR, 'itemListElement': [{'@type': 'ListItem', 'position': k + 1, 'url': f'{SITE}/fridge/r/{fr_slug(r["n"])}/', 'name': r['n']} for k, r in enumerate(RS[:50])]})
     return urls
 
