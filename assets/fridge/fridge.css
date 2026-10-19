@@ -55,3 +55,9 @@
 @media (prefers-color-scheme:dark){.fr-ans.wait{background:#1f2937;color:#d1d5db}.fr-ans.ok{background:#0b3b44}.fr-ans.err{background:#3b1113;color:#fecaca}}
 @media (max-width:480px){.fr-ask div{flex-direction:column}.fr-ask button{width:100%}}
 .fr-wxl a img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:10px;margin-bottom:4px}
+/* 카드 좋아요·수치 (2026-10-19) */
+.fr-like{font:inherit;font-size:13px;font-weight:700;border:1px solid #e5e7eb;background:#fff;color:#334155;border-radius:999px;padding:5px 12px;cursor:pointer}
+.fr-like.on{background:#fee2e2;border-color:#fecaca;color:#b91c1c}
+.fr-st{display:inline-flex;gap:8px;margin-left:8px;font-size:12px;color:#64748b;vertical-align:middle}
+.fr-st .pcs{display:inline-flex;gap:8px;margin:0}
+.fr-wxl a .pcs{justify-content:center;margin-top:2px}

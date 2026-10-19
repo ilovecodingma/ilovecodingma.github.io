@@ -13,7 +13,7 @@
     else if (e) { history.replaceState(null, '', location.pathname + location.search); setTimeout(() => alert(decodeURIComponent(e[1])), 300); } }
   const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
   const ago = t => { const d = Date.now() / 1000 - t; return d < 60 ? '방금' : d < 3600 ? Math.floor(d / 60) + '분 전' : d < 86400 ? Math.floor(d / 3600) + '시간 전' : new Date(t * 1000).toLocaleDateString('ko-KR'); };
-  const KIND = { review: '후기', qna: '질문', tip: '팁' };
+  const KIND = { review: '후기', qna: '질문', tip: '팁', free: '자유', recipe: '레시피', story: '썰' };
   // 방문 기록(관리자 화면용, 운영 도메인만)
   if (location.hostname === 'sungprofile.cloud') setTimeout(() => { try { fetch(API + '/api/hit', { method: 'POST', keepalive: true, headers: { 'Content-Type': 'application/json', ...(st.t ? { Authorization: 'Bearer ' + st.t } : {}) }, body: JSON.stringify({ p: location.pathname, r: document.referrer , s: (new URLSearchParams(location.search).get('src') || (new URLSearchParams(location.search).get('utm_source') ? 'u_' + new URLSearchParams(location.search).get('utm_source').replace(/[^a-z0-9_-]/gi, '') : '')).slice(0, 16)}) }).catch(() => {}); } catch {} }, 400);
   async function api(path, opt = {}) {
@@ -69,17 +69,17 @@
   // ---- 게시판 (공모전 상세 #cm-board[data-contest], 전체 /community/ #cm-board[data-all]) ----
   async function board(el) {
     const cid = el.dataset.contest || '', title = el.dataset.title || '', all = 'all' in el.dataset;
-    el.innerHTML = `<div class="cm-head"><h2>💬 ${all ? '후기·질문·자유' : '이 공모전 후기·질문'}</h2><button class="cm-write btn2">글쓰기</button></div><div class="cm-form" hidden></div><ul class="cm-list"><li class="note">불러오는 중…</li></ul>`;
+    el.innerHTML = `<div class="cm-head"><h2>💬 ${esc(el.dataset.head || (all ? '후기·질문·자유' : '이 공모전 후기·질문'))}</h2><button class="cm-write btn2">글쓰기</button></div><div class="cm-form" hidden></div><ul class="cm-list"><li class="note">불러오는 중…</li></ul>`;
     const list = el.querySelector('.cm-list'), form = el.querySelector('.cm-form');
     const load = async () => {
       try {
         const { posts } = await api('/api/posts' + (cid ? '?contest=' + encodeURIComponent(cid) : ''));
-        list.innerHTML = posts.length ? '' : `<li class="cm-empty">${all ? '아직 글이 없어요.' : '아직 후기가 없어요. 응모해 보셨다면 첫 후기를 남겨 주세요!'}</li>`;
+        list.innerHTML = posts.length ? '' : `<li class="cm-empty">${esc(el.dataset.empty || (all ? '아직 글이 없어요.' : '아직 후기가 없어요. 응모해 보셨다면 첫 후기를 남겨 주세요!'))}</li>`;
         posts.forEach(p => {
           const li = document.createElement('li'); li.className = 'cm-post';
-          li.innerHTML = `<div class="cm-meta"><span class="cm-k k-${p.kind}">${KIND[p.kind] || '글'}</span>${p.rating ? '<span class="cm-star">' + '★'.repeat(p.rating) + '☆'.repeat(5 - p.rating) + '</span>' : ''}<span>${esc(p.nick || '탈퇴한 회원')} · ${ago(p.created)}</span></div>
-<h3>${esc(p.title)}</h3>${all && p.contest_id !== 'free' ? `<a class="cm-on" href="/c/${esc(p.contest_id)}/">📌 ${esc(p.contest_title || p.contest_id)}</a>` : ''}<p class="cm-body">${esc(p.body)}</p>
-<div class="cm-acts"><button class="cm-cm">댓글 ${p.cm}</button>${st.n && st.n === p.nick ? '<button class="cm-del">삭제</button>' : ''}<button class="cm-rp">신고</button></div><div class="cm-cms" hidden></div>`;
+          li.innerHTML = `<div class="cm-meta"><span class="cm-k k-${p.kind}">${KIND[p.kind] || '글'}</span>${p.rating ? '<span class="cm-star">' + '★'.repeat(p.rating) + '☆'.repeat(5 - p.rating) + '</span>' : ''}<span>${esc(p.nick || '탈퇴한 회원')}${p.adm ? '<em class="cm-adm">운영자</em>' : ''} · ${ago(p.created)}</span></div>
+<h3>${esc(p.title)}${p.kind === 'qna' ? (p.cm ? '<em class="cm-ans">답변 ' + p.cm + '</em>' : '<em class="cm-need">답변 기다림</em>') : ''}</h3>${all && p.contest_id !== 'free' ? `<a class="cm-on" href="/c/${esc(p.contest_id)}/">📌 ${esc(p.contest_title || p.contest_id)}</a>` : ''}<p class="cm-body">${esc(p.body)}</p>
+<div class="cm-acts"><button class="cm-cm">${p.kind === 'qna' && !p.cm ? '답변 달기' : '댓글 ' + p.cm}</button>${st.n && st.n === p.nick ? '<button class="cm-del">삭제</button>' : ''}<button class="cm-rp">신고</button></div><div class="cm-cms" hidden></div>`;
           li.querySelector('.cm-cm').onclick = () => comments(li.querySelector('.cm-cms'), p.id);
           const d = li.querySelector('.cm-del'); if (d) d.onclick = async () => { if (confirmLite(d)) { await api('/api/posts/' + p.id, { method: 'DELETE' }); load(); } };
           li.querySelector('.cm-rp').onclick = e => report(e.currentTarget, 'p:' + p.id);
@@ -91,13 +91,14 @@
     if (w) w.onclick = () => {
       if (!st.t) return authModal(() => w.click());
       form.hidden = !form.hidden; if (form.hidden) return;
-      form.innerHTML = `<div class="cm-kinds"><label><input type="radio" name="k" value="review" checked> 후기</label><label><input type="radio" name="k" value="qna"> 질문</label><label><input type="radio" name="k" value="tip"> 팁</label>
-<select class="cm-rate"><option value="">별점(후기)</option>${[5, 4, 3, 2, 1].map(n => `<option value="${n}">${'★'.repeat(n)}</option>`).join('')}</select></div>
-<input class="cm-ti" maxlength="80" placeholder="제목"><textarea class="cm-tx" maxlength="3000" rows="5" placeholder="응모 과정, 결과, 팁을 나눠 주세요. 개인정보(전화번호·주소)는 쓰지 마세요."></textarea>
+      const KS = (el.dataset.kinds || 'review,qna,tip').split(',').filter(Boolean);
+      form.innerHTML = `<div class="cm-kinds">${KS.map((k, i) => `<label><input type="radio" name="k" value="${k}"${i ? '' : ' checked'}> ${KIND[k] || k}</label>`).join('')}
+${KS.includes('review') ? `<select class="cm-rate"><option value="">별점(후기)</option>${[5, 4, 3, 2, 1].map(n => `<option value="${n}">${'★'.repeat(n)}</option>`).join('')}</select>` : ''}</div>
+<input class="cm-ti" maxlength="80" placeholder="제목"><textarea class="cm-tx" maxlength="3000" rows="5" placeholder="${esc(el.dataset.ph || '응모 과정, 결과, 팁을 나눠 주세요. 개인정보(전화번호·주소)는 쓰지 마세요.')}"></textarea>
 <p class="cm-err"></p><button class="cm-send btn2">올리기</button>`;
       form.querySelector('.cm-send').onclick = async () => {
         const k = form.querySelector('input[name=k]:checked').value;
-        try { await api('/api/posts', { method: 'POST', body: { contest_id: cid, contest_title: title, kind: k, rating: k === 'review' ? +form.querySelector('.cm-rate').value || null : null,
+        try { await api('/api/posts', { method: 'POST', body: { contest_id: cid, contest_title: title, kind: k, rating: k === 'review' && form.querySelector('.cm-rate') ? +form.querySelector('.cm-rate').value || null : null,
                                                               title: form.querySelector('.cm-ti').value, body: form.querySelector('.cm-tx').value } });
               form.hidden = true; load(); }
         catch (e) { form.querySelector('.cm-err').textContent = e.message; }
@@ -372,5 +373,127 @@ ${album}<div class="cm-acts"><button class="tm-share">링크 복사</button>${st
   document.querySelectorAll('#cm-teams').forEach(teams);
   document.querySelectorAll('#cm-board').forEach(board);
   tabs();
-  window.JUP = { api, st, esc, ago, authModal, teamModal, createTeam, teams, wearAll, ga, poseSrc, POSE_OF, poses: () => POSES };
+
+  // ---- 모든 페이지 댓글·좋아요·조회수 (2026-10-19 사용자: "모든 곳에 추가, 회원가입하면 가능하게") ----
+  const PC_SKIP = [/^\/me\//, /^\/admin\//, /^\/login\//, /^\/widget\//, /^\/og\//, /^\/privacy\//, /^\/terms\//, /^\/contact\//];
+  const nfmt = n => (+n || 0).toLocaleString('ko-KR');
+  const pcPath = () => { let x = location.pathname; try { x = decodeURIComponent(x); } catch {} return /\/$/.test(x) ? x : x + '/'; };
+  const pcTitle = () => document.title.replace(/\s*\|\s*루리의 줍줍\s*$/, '').slice(0, 90);
+
+  async function pcLoad(sec) {
+    const path = pcPath(), title = pcTitle();
+    let d = null;
+    try { d = await api('/api/p?page=' + encodeURIComponent(path)); } catch { d = null; }
+    if (!d) { sec.innerHTML = '<p class="note">댓글을 불러오지 못했어요. 잠시 뒤 새로고침 해 주세요.</p>'; return; }
+    const paint = () => {
+      sec.innerHTML = `<div class="pc-bar">
+<button class="pc-like${d.liked ? ' on' : ''}" aria-pressed="${d.liked}">${d.liked ? '❤️' : '🤍'} 좋아요 <b>${nfmt(d.likes)}</b></button>
+<span class="pc-n">👁 조회 ${nfmt(d.views)}</span><span class="pc-n">💬 댓글 ${nfmt(d.cms)}</span>${d.fav ? `<span class="pc-n">⭐ 찜 ${nfmt(d.fav)}</span>` : ''}
+<button class="pc-sh">📤 공유</button></div>
+<div class="pc-box"><h2>💬 댓글 <b>${nfmt(d.cms)}</b></h2>
+${st.t ? `<div class="pc-w"><textarea class="pc-tx" rows="2" maxlength="1000" placeholder="이 페이지에 대해 한마디 남겨 주세요"></textarea><button class="pc-send btn2">등록</button></div><p class="pc-err"></p>`
+        : `<div class="pc-w off"><button class="pc-in btn2">로그인하고 댓글 쓰기</button><small>가입은 이메일·카카오·구글 중 하나면 끝나요.</small></div>`}
+<ul class="pc-list">${d.comments.length ? d.comments.map(c => `<li data-id="${c.id}"><div class="pc-m"><b>${esc(c.nick)}</b>${c.adm ? '<em class="cm-adm">운영자</em>' : ''}<span>${ago(c.created)}</span></div><p>${esc(c.body)}</p><div class="pc-a">${c.mine ? '<button class="pc-del">삭제</button>' : '<button class="pc-rp">신고</button>'}</div></li>`).join('')
+        : '<li class="pc-empty">아직 댓글이 없어요. 첫 댓글을 남겨 보세요.</li>'}</ul></div>`;
+      const like = sec.querySelector('.pc-like');
+      like.onclick = async () => {
+        if (!st.t) return authModal(() => location.reload());
+        const on = !d.liked;
+        try { const r = await api('/api/p/like', { method: 'POST', body: { page: path, title, on } }); d.liked = r.liked; d.likes = r.likes; ga(on ? 'page_like' : 'page_unlike', { page: path }); paint(); }
+        catch (e) { alert(e.message); }
+      };
+      sec.querySelector('.pc-sh').onclick = () => { if (window.JCREW) JCREW.share({ title, text: title, path: location.pathname }); else if (window.FUN) FUN.copy(location.href); };
+      const inb = sec.querySelector('.pc-in'); if (inb) inb.onclick = () => authModal(() => location.reload());
+      const send = sec.querySelector('.pc-send');
+      if (send) send.onclick = async () => {
+        const tx = sec.querySelector('.pc-tx'), er = sec.querySelector('.pc-err');
+        er.textContent = ''; send.disabled = true;
+        try { const r = await api('/api/p/comment', { method: 'POST', body: { page: path, title, body: tx.value } });
+              d.comments.unshift({ id: r.id, nick: r.nick, body: tx.value.trim(), created: r.created, mine: true, adm: r.adm }); d.cms++; ga('page_comment', { page: path }); paint(); }
+        catch (e) { er.textContent = e.message; send.disabled = false; }
+      };
+      sec.querySelectorAll('.pc-del').forEach(b => b.onclick = async () => {
+        const id = +b.closest('li').dataset.id;
+        if (!confirmLite(b)) return;
+        await api('/api/p/comment/' + id, { method: 'DELETE' }).catch(() => {});
+        d.comments = d.comments.filter(c => c.id !== id); d.cms = Math.max(0, d.cms - 1); paint();
+      });
+      sec.querySelectorAll('.pc-rp').forEach(b => b.onclick = e => report(e.currentTarget, 'g:' + e.currentTarget.closest('li').dataset.id));
+    };
+    paint();
+  }
+
+  function pcMount() {
+    const path = pcPath();
+    if (PC_SKIP.some(r => r.test(path))) return;
+    if (document.querySelector('.pc')) return;
+    const main = document.querySelector('main.w') || document.querySelector('main'); if (!main) return;
+    const sec = document.createElement('section');
+    sec.className = 'pc'; sec.id = 'comments';
+    sec.innerHTML = '<p class="note">댓글 불러오는 중…</p>';
+    main.appendChild(sec);
+    let done = false;
+    const go = () => { if (done) return; done = true; pcLoad(sec); };
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver(es => { if (es.some(e => e.isIntersecting)) { io.disconnect(); go(); } }, { rootMargin: '600px' });
+      io.observe(sec);
+      setTimeout(go, 6000);
+    } else go();
+  }
+
+  // 목록 화면 카드에 수치 달기: <a data-pcs="/fridge/r/김치찌개/"> 안에 👁·❤·💬 를 채운다
+  async function pcScan(root) {
+    const els = [...(root || document).querySelectorAll('[data-pcs]')].filter(e => !e.dataset.pcsDone);
+    if (!els.length) return;
+    els.forEach(e => e.dataset.pcsDone = '1');
+    for (let i = 0; i < els.length; i += 180) {
+      const part = els.slice(i, i + 180);
+      try {
+        const { stats } = await api('/api/p/stats', { method: 'POST', body: { pages: part.map(e => e.dataset.pcs) } });
+        part.forEach(e => {
+          const x = stats[e.dataset.pcs]; if (!x || !(x.v || x.l || x.c)) return;
+          let b = e.querySelector('.pcs'); if (!b) { b = document.createElement('span'); b.className = 'pcs'; e.appendChild(b); }
+          b.innerHTML = `${x.v ? `<span>👁 ${nfmt(x.v)}</span>` : ''}${x.l ? `<span>❤️ ${nfmt(x.l)}</span>` : ''}${x.c ? `<span>💬 ${nfmt(x.c)}</span>` : ''}`;
+        });
+      } catch {}
+    }
+  }
+
+  // 인기 묶음: <div data-pctop="/fridge/r/" data-by="likes" data-n="8" data-head="지금 인기 있는 메뉴">
+  async function pcTop(el) {
+    try {
+      const { top } = await api('/api/p/top?prefix=' + encodeURIComponent(el.dataset.pctop) + '&by=' + (el.dataset.by || 'views') + '&n=' + (+el.dataset.n || 8));
+      if (!top.length) { el.remove(); return; }
+      el.innerHTML = `<h2>${esc(el.dataset.head || '지금 많이 보는 글')}</h2><ol class="pc-top">${top.map(x => `<li><a href="${esc(x.page)}"><b>${esc(x.title || x.page)}</b><span>👁 ${nfmt(x.v)}${x.l ? ' · ❤️ ' + nfmt(x.l) : ''}${x.c ? ' · 💬 ' + nfmt(x.c) : ''}</span></a></li>`).join('')}</ol>`;
+    } catch { el.remove(); }
+  }
+
+  // 최근 댓글: <div data-pcrecent="8">
+  async function pcRecent(el) {
+    try {
+      const { comments } = await api('/api/p/recent?n=' + (+el.dataset.pcrecent || 8));
+      if (!comments.length) { el.remove(); return; }
+      el.innerHTML = `<h2>💬 방금 올라온 댓글</h2><ul class="pc-rc">${comments.map(c => `<li><a href="${esc(c.page)}"><b>${esc(c.nick)}</b>${c.adm ? '<em class="cm-adm">운영자</em>' : ''} <span>${ago(c.created)}</span><p>${esc(c.body)}</p><em class="pc-rt">${esc(c.title || c.page)}</em></a></li>`).join('')}</ul>`;
+    } catch { el.remove(); }
+  }
+
+
+  // 개발 Q&A 요약: <div data-devqna="3"> (개발 지식 허브에서 질문 몇 개와 답변 상태만 보여 준다)
+  async function devQna(el) {
+    const n = +el.dataset.devqna || 3;
+    try {
+      const { posts } = await api('/api/posts?contest=dev');
+      const q = posts.filter(p => p.kind === 'qna'), answered = posts.filter(p => p.cm > 0).length, need = q.filter(p => !p.cm).length;
+      el.innerHTML = `<div class="dq-sum"><b>🙋 개발 Q&A</b><span>질문·팁 ${posts.length}개 · 답변 달린 글 ${answered}개${need ? ` · 답변 기다리는 질문 ${need}개` : ''}</span>
+<a class="btn2" href="/dev/qna/">질문 올리기 · 전체 보기</a></div>
+<ul class="dq-ls">${posts.slice(0, n).map(p => `<li><a href="/dev/qna/#p${p.id}"><b>${esc(p.title)}</b><span>${esc(p.nick || '탈퇴한 회원')} · ${ago(p.created)} · ${p.cm ? '답변 ' + p.cm : '답변 기다림'}</span></a></li>`).join('')}</ul>`;
+    } catch { el.remove(); }
+  }
+  document.querySelectorAll('[data-devqna]').forEach(devQna);
+  pcMount();
+  document.querySelectorAll('[data-pctop]').forEach(pcTop);
+  document.querySelectorAll('[data-pcrecent]').forEach(pcRecent);
+  setTimeout(() => pcScan(), 300);
+
+  window.JUP = { api, st, esc, ago, authModal, pcScan, pcPath, teamModal, createTeam, teams, wearAll, ga, poseSrc, POSE_OF, poses: () => POSES };
 })();

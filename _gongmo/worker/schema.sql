@@ -163,3 +163,36 @@ CREATE INDEX IF NOT EXISTS widget_views_day ON widget_views (day);
 -- 카카오톡 마감 알림 (2026-10-19): refresh_token 은 AES-GCM 암호문(키는 워커 비밀값 KAKAO_ALERT_KEY)
 CREATE TABLE IF NOT EXISTS kakao_alert (user_id INTEGER PRIMARY KEY, sub TEXT NOT NULL, rt TEXT NOT NULL, created INTEGER NOT NULL, last_sent TEXT);
 CREATE TABLE IF NOT EXISTS kakao_alert_nonce (nonce TEXT PRIMARY KEY, user_id INTEGER NOT NULL, created INTEGER NOT NULL);
+
+-- 페이지 댓글·좋아요·조회수 (2026-10-19 사용자: "개발자 섹션에 댓글 … 모든 곳에 추가 … 회원가입하면 가능하게", "레시피에도 좋아요·조회수")
+CREATE TABLE IF NOT EXISTS page_comments (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  page TEXT NOT NULL,                  -- /fridge/r/김치찌개/ 처럼 주소 그대로
+  title TEXT NOT NULL DEFAULT '',      -- 그 페이지 제목(내 댓글 모아보기·관리자용)
+  user_id INTEGER NOT NULL,
+  body TEXT NOT NULL,
+  created INTEGER NOT NULL,
+  reports INTEGER NOT NULL DEFAULT 0,
+  hidden INTEGER NOT NULL DEFAULT 0
+);
+CREATE INDEX IF NOT EXISTS page_comments_page ON page_comments(page, created);
+CREATE INDEX IF NOT EXISTS page_comments_recent ON page_comments(created DESC);
+CREATE INDEX IF NOT EXISTS page_comments_user ON page_comments(user_id, created DESC);
+CREATE TABLE IF NOT EXISTS page_likes (
+  user_id INTEGER NOT NULL,
+  page TEXT NOT NULL,
+  created INTEGER NOT NULL,
+  PRIMARY KEY (user_id, page)
+);
+CREATE INDEX IF NOT EXISTS page_likes_page ON page_likes(page);
+-- 집계(조회수는 hits 에서 올리고, 좋아요·댓글 수는 쓸 때마다 같이 올린다)
+CREATE TABLE IF NOT EXISTS page_stats (
+  page TEXT PRIMARY KEY,
+  title TEXT NOT NULL DEFAULT '',
+  views INTEGER NOT NULL DEFAULT 0,
+  likes INTEGER NOT NULL DEFAULT 0,
+  cms INTEGER NOT NULL DEFAULT 0,
+  updated INTEGER NOT NULL DEFAULT 0
+);
+CREATE INDEX IF NOT EXISTS page_stats_views ON page_stats(views DESC);
+CREATE INDEX IF NOT EXISTS page_stats_likes ON page_stats(likes DESC);

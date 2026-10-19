@@ -7,6 +7,15 @@ const now = () => Math.floor(Date.now() / 1000);
 const hex = b => [...new Uint8Array(b)].map(x => x.toString(16).padStart(2, '0')).join('');
 const unhex = h => new Uint8Array(h.match(/../g).map(x => parseInt(x, 16)));
 const clean = (s, n) => String(s || '').replace(/[\u0000-\u0008\u000b-\u001f]/g, '').trim().slice(0, n);
+// 페이지 주소를 댓글·좋아요·조회수의 열쇠로 쓰기 위해 한 모양으로 맞춘다(/fridge/r/김치찌개/)
+const npage = s => {
+  let x = String(s || '').split('#')[0].split('?')[0];
+  try { x = decodeURIComponent(x); } catch {}
+  x = x.replace(/[\u0000-\u001f\s]/g, '');
+  if (!x.startsWith('/') || x.includes('..')) return '';
+  if (!/\/$/.test(x)) x += '/';
+  return x.length <= 120 ? x : '';
+};
 
 async function hashPw(pw, saltHex, iter = 100000) {
   const salt = saltHex ? unhex(saltHex) : crypto.getRandomValues(new Uint8Array(16));
@@ -207,20 +216,20 @@ export default {
       }
       if (p === '/api/withdraw' && req.method === 'POST') {  // 회원 탈퇴: 계정·세션 삭제, 글은 '탈퇴한 회원'으로 숨김
         const u = await me(req, env); if (!u) return err(req, '로그인이 필요해요.', 401);
-        await env.DB.batch([env.DB.prepare('UPDATE posts SET hidden = 1 WHERE user_id = ?').bind(u.id), env.DB.prepare('UPDATE comments SET hidden = 1 WHERE user_id = ?').bind(u.id),
+        await env.DB.batch([env.DB.prepare('UPDATE posts SET hidden = 1 WHERE user_id = ?').bind(u.id), env.DB.prepare('UPDATE comments SET hidden = 1 WHERE user_id = ?').bind(u.id), env.DB.prepare('UPDATE page_comments SET hidden = 1 WHERE user_id = ?').bind(u.id), env.DB.prepare('DELETE FROM page_likes WHERE user_id = ?').bind(u.id),
           env.DB.prepare('DELETE FROM sessions WHERE user_id = ?').bind(u.id), env.DB.prepare('DELETE FROM invite_codes WHERE user_id = ?').bind(u.id), env.DB.prepare('DELETE FROM user_prefs WHERE user_id = ?').bind(u.id), env.DB.prepare('DELETE FROM oauth_links WHERE user_id = ?').bind(u.id), env.DB.prepare('DELETE FROM user_items WHERE user_id = ?').bind(u.id), env.DB.prepare('DELETE FROM kakao_alert WHERE user_id = ?').bind(u.id), env.DB.prepare('DELETE FROM users WHERE id = ?').bind(u.id)]);
         return json(req, { ok: true });
       }
       // ---- 글 ----
       if (p === '/api/posts' && req.method === 'GET') {
         const c = clean(url.searchParams.get('contest'), 40), page = Math.max(0, +url.searchParams.get('page') || 0);
-        const q = c ? env.DB.prepare('SELECT p.id, p.contest_id, p.contest_title, p.kind, p.title, p.body, p.rating, p.created, u.nick, (SELECT COUNT(*) FROM comments m WHERE m.post_id = p.id AND m.hidden = 0) cm FROM posts p LEFT JOIN users u ON u.id = p.user_id WHERE p.hidden = 0 AND p.contest_id = ? ORDER BY p.created DESC LIMIT 20 OFFSET ?').bind(c, page * 20)
-                    : env.DB.prepare('SELECT p.id, p.contest_id, p.contest_title, p.kind, p.title, substr(p.body, 1, 140) body, p.rating, p.created, u.nick, (SELECT COUNT(*) FROM comments m WHERE m.post_id = p.id AND m.hidden = 0) cm FROM posts p LEFT JOIN users u ON u.id = p.user_id WHERE p.hidden = 0 ORDER BY p.created DESC LIMIT 20 OFFSET ?').bind(page * 20);
-        return json(req, { posts: (await q.all()).results });
+        const q = c ? env.DB.prepare('SELECT p.id, p.contest_id, p.contest_title, p.kind, p.title, p.body, p.rating, p.created, p.user_id, u.nick, (SELECT COUNT(*) FROM comments m WHERE m.post_id = p.id AND m.hidden = 0) cm FROM posts p LEFT JOIN users u ON u.id = p.user_id WHERE p.hidden = 0 AND p.contest_id = ? ORDER BY p.created DESC LIMIT 20 OFFSET ?').bind(c, page * 20)
+                    : env.DB.prepare('SELECT p.id, p.contest_id, p.contest_title, p.kind, p.title, substr(p.body, 1, 140) body, p.rating, p.created, p.user_id, u.nick, (SELECT COUNT(*) FROM comments m WHERE m.post_id = p.id AND m.hidden = 0) cm FROM posts p LEFT JOIN users u ON u.id = p.user_id WHERE p.hidden = 0 ORDER BY p.created DESC LIMIT 20 OFFSET ?').bind(page * 20);
+        return json(req, { posts: ((await q.all()).results || []).map(x => ({ ...x, adm: ADMINS.includes(x.user_id), user_id: undefined })) });
       }
       if (p === '/api/posts' && req.method === 'POST') {
         const u = await me(req, env); if (!u) return err(req, '로그인이 필요해요.', 401);
-        const kind = ['review', 'qna', 'tip'].includes(body.kind) ? body.kind : 'review';
+        const kind = ['review', 'qna', 'tip', 'free', 'recipe', 'story'].includes(body.kind) ? body.kind : 'review';
         const title = clean(body.title, 80), text = clean(body.body, 3000), cid = clean(body.contest_id, 40) || 'free';
         if (title.length < 2 || text.length < 5) return err(req, '제목과 내용을 조금 더 써 주세요.');
         if (await count(env, 'SELECT COUNT(*) n FROM posts WHERE user_id = ? AND created > ?', u.id, now() - DAY) >= LIMIT_POST) return err(req, '하루에 쓸 수 있는 글 수를 넘었어요.', 429);
@@ -237,9 +246,9 @@ export default {
       }
       // ---- 댓글 ----
       if (p === '/api/comments' && req.method === 'GET') {
-        const r = await env.DB.prepare('SELECT c.id, c.body, c.created, u.nick FROM comments c LEFT JOIN users u ON u.id = c.user_id WHERE c.post_id = ? AND c.hidden = 0 ORDER BY c.created LIMIT 200')
+        const r = await env.DB.prepare('SELECT c.id, c.body, c.created, c.user_id, u.nick FROM comments c LEFT JOIN users u ON u.id = c.user_id WHERE c.post_id = ? AND c.hidden = 0 ORDER BY c.created LIMIT 200')
           .bind(+url.searchParams.get('post') || 0).all();
-        return json(req, { comments: r.results });
+        return json(req, { comments: (r.results || []).map(x => ({ id: x.id, body: x.body, created: x.created, nick: x.nick, adm: ADMINS.includes(x.user_id) })) });
       }
       if (p === '/api/comments' && req.method === 'POST') {
         const u = await me(req, env); if (!u) return err(req, '로그인이 필요해요.', 401);
@@ -486,8 +495,12 @@ export default {
         if (/sungprofile\.cloud$/.test(ref)) ref = '';
         if (/^[a-z0-9_-]{1,16}$/i.test(body.s || '')) ref = 'src:' + body.s.toLowerCase();  // 홍보 링크 꼬리 ?src=th 등(앱 내 브라우저는 referrer 가 비어서)
         const u = await me(req, env), cf = req.cf || {};
-        await env.DB.prepare('INSERT INTO hits (day, ts, vid, uid, path, ref, country, city, mobile) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)')
-          .bind(d, now(), vid, u ? u.id : 0, clean(body.p, 120), clean(ref, 60), clean(cf.country || '', 4), clean(cf.city || '', 40), /Mobi|Android|iPhone/i.test(ua) ? 1 : 0).run();
+        const pg = npage(body.p);
+        const q = [env.DB.prepare('INSERT INTO hits (day, ts, vid, uid, path, ref, country, city, mobile) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)')
+          .bind(d, now(), vid, u ? u.id : 0, clean(body.p, 120), clean(ref, 60), clean(cf.country || '', 4), clean(cf.city || '', 40), /Mobi|Android|iPhone/i.test(ua) ? 1 : 0)];
+        if (pg) q.push(env.DB.prepare("INSERT INTO page_stats (page, title, views, updated) VALUES (?, ?, 1, ?) ON CONFLICT(page) DO UPDATE SET views = views + 1, updated = excluded.updated, title = CASE WHEN page_stats.title = '' THEN excluded.title ELSE page_stats.title END")
+          .bind(pg, clean(body.t, 90), now()));
+        await env.DB.batch(q);
         return json(req, { ok: 1 });
       }
       if (p === '/api/admin/visits') {
@@ -670,13 +683,90 @@ export default {
         return json(req, { ok: true });
       }
       // ---- 신고 (3명 신고 시 자동 숨김) ----
+      // ---- 페이지 댓글·좋아요·조회수 (모든 페이지 공통. 쓰기는 회원만) ----
+      if (p === '/api/p' && req.method === 'GET') {
+        const pg = npage(url.searchParams.get('page'));
+        if (!pg) return err(req, '주소를 확인해 주세요.');
+        const u = await me(req, env);
+        const fid = (pg.match(/^\/(?:c|a)\/([^/]+)\//) || [])[1];
+        const b = [
+          env.DB.prepare('SELECT views, likes, cms FROM page_stats WHERE page = ?').bind(pg),
+          env.DB.prepare('SELECT c.id, c.body, c.created, c.user_id, u.nick FROM page_comments c LEFT JOIN users u ON u.id = c.user_id WHERE c.page = ? AND c.hidden = 0 ORDER BY c.created DESC LIMIT 100').bind(pg),
+          env.DB.prepare('SELECT 1 x FROM page_likes WHERE page = ? AND user_id = ?').bind(pg, u ? u.id : 0)];
+        if (fid) b.push(env.DB.prepare('SELECT COUNT(*) n FROM user_items WHERE fav = 1 AND item_id = ?').bind('c:' + fid));
+        const r = await env.DB.batch(b);
+        const s0 = (r[0].results || [])[0] || { views: 0, likes: 0, cms: 0 };
+        return json(req, { views: s0.views, likes: s0.likes, cms: s0.cms, liked: !!(r[2].results || []).length,
+          fav: fid ? (((r[3].results || [])[0] || {}).n || 0) : 0,
+          comments: (r[1].results || []).map(c => ({ id: c.id, nick: c.nick || '탈퇴한 회원', body: c.body, created: c.created, mine: !!u && c.user_id === u.id, adm: ADMINS.includes(c.user_id) })) });
+      }
+      if (p === '/api/p/like' && req.method === 'POST') {
+        const u = await me(req, env); if (!u) return err(req, '로그인하면 좋아요를 누를 수 있어요.', 401);
+        const pg = npage(body.page); if (!pg) return err(req, '주소를 확인해 주세요.');
+        const on = body.on !== false;
+        const had = await count(env, 'SELECT COUNT(*) n FROM page_likes WHERE page = ? AND user_id = ?', pg, u.id);
+        if (on && !had) {
+          if (await count(env, 'SELECT COUNT(*) n FROM page_likes WHERE user_id = ? AND created > ?', u.id, now() - DAY) >= 300) return err(req, '오늘은 여기까지만 눌러 주세요.', 429);
+          await env.DB.batch([env.DB.prepare('INSERT OR IGNORE INTO page_likes (user_id, page, created) VALUES (?, ?, ?)').bind(u.id, pg, now()),
+            env.DB.prepare('INSERT INTO page_stats (page, title, likes, updated) VALUES (?, ?, 1, ?) ON CONFLICT(page) DO UPDATE SET likes = likes + 1, updated = excluded.updated').bind(pg, clean(body.title, 90), now())]);
+        } else if (!on && had) {
+          await env.DB.batch([env.DB.prepare('DELETE FROM page_likes WHERE user_id = ? AND page = ?').bind(u.id, pg),
+            env.DB.prepare('UPDATE page_stats SET likes = MAX(0, likes - 1), updated = ? WHERE page = ?').bind(now(), pg)]);
+        }
+        const s0 = await env.DB.prepare('SELECT likes FROM page_stats WHERE page = ?').bind(pg).first('likes');
+        return json(req, { likes: s0 || 0, liked: on });
+      }
+      if (p === '/api/p/comment' && req.method === 'POST') {
+        const u = await me(req, env); if (!u) return err(req, '로그인하면 댓글을 쓸 수 있어요.', 401);
+        const pg = npage(body.page); if (!pg) return err(req, '주소를 확인해 주세요.');
+        const text = clean(body.body, 1000);
+        if (text.length < 2) return err(req, '댓글을 조금 더 써 주세요.');
+        if (await count(env, 'SELECT COUNT(*) n FROM page_comments WHERE user_id = ? AND created > ?', u.id, now() - DAY) >= LIMIT_COMMENT) return err(req, '하루에 쓸 수 있는 댓글 수를 넘었어요.', 429);
+        if (await count(env, 'SELECT COUNT(*) n FROM page_comments WHERE user_id = ? AND created > ?', u.id, now() - 20)) return err(req, '조금 천천히 써 주세요.', 429);
+        const t = now();
+        const r = await env.DB.prepare('INSERT INTO page_comments (page, title, user_id, body, created) VALUES (?, ?, ?, ?, ?)').bind(pg, clean(body.title, 90), u.id, text, t).run();
+        await env.DB.prepare('INSERT INTO page_stats (page, title, cms, updated) VALUES (?, ?, 1, ?) ON CONFLICT(page) DO UPDATE SET cms = cms + 1, updated = excluded.updated').bind(pg, clean(body.title, 90), t).run();
+        return json(req, { id: r.meta.last_row_id, nick: u.nick, created: t, adm: ADMINS.includes(u.id) });
+      }
+      let gm = p.match(/^\/api\/p\/comment\/(\d+)$/);
+      if (gm && req.method === 'DELETE') {
+        const u = await me(req, env); if (!u) return err(req, '로그인이 필요해요.', 401);
+        const row = await env.DB.prepare('SELECT page, user_id, hidden FROM page_comments WHERE id = ?').bind(+gm[1]).first();
+        if (!row || (row.user_id !== u.id && !ADMINS.includes(u.id))) return err(req, '지울 수 없는 댓글이에요.', 403);
+        if (!row.hidden) await env.DB.batch([env.DB.prepare('UPDATE page_comments SET hidden = 1 WHERE id = ?').bind(+gm[1]),
+          env.DB.prepare('UPDATE page_stats SET cms = MAX(0, cms - 1) WHERE page = ?').bind(row.page)]);
+        return json(req, { ok: true });
+      }
+      if (p === '/api/p/stats' && req.method === 'POST') {   // 목록 화면에서 여러 페이지 수치를 한 번에
+        const pages = (Array.isArray(body.pages) ? body.pages : []).map(npage).filter(Boolean).slice(0, 200);
+        if (!pages.length) return json(req, { stats: {} });
+        const qs = pages.map(() => '?').join(',');
+        const r = await env.DB.prepare('SELECT page, views, likes, cms FROM page_stats WHERE page IN (' + qs + ')').bind(...pages).all();
+        const out = {};
+        for (const x of r.results || []) out[x.page] = { v: x.views, l: x.likes, c: x.cms };
+        return json(req, { stats: out });
+      }
+      if (p === '/api/p/top' && req.method === 'GET') {      // 인기 페이지(조회수·좋아요·댓글 기준)
+        const pre = npage(url.searchParams.get('prefix') || '/');
+        if (!pre) return err(req, '주소를 확인해 주세요.');
+        const by = ['views', 'likes', 'cms'].includes(url.searchParams.get('by')) ? url.searchParams.get('by') : 'views';
+        const n = Math.min(40, Math.max(1, +url.searchParams.get('n') || 12));
+        const r = await env.DB.prepare("SELECT page, title, views, likes, cms FROM page_stats WHERE page LIKE ? AND page != ? AND page NOT LIKE '/admin%' AND page NOT LIKE '/me/%' AND " + by + " > 0 ORDER BY " + by + " DESC, views DESC LIMIT ?")
+          .bind(pre + '%', pre, n).all();
+        return json(req, { top: (r.results || []).map(x => ({ page: x.page, title: x.title, v: x.views, l: x.likes, c: x.cms })) });
+      }
+      if (p === '/api/p/recent' && req.method === 'GET') {   // 사이트 전체 최근 댓글
+        const n = Math.min(30, Math.max(1, +url.searchParams.get('n') || 10));
+        const r = await env.DB.prepare('SELECT c.id, c.page, c.title, c.body, c.created, c.user_id, u.nick FROM page_comments c LEFT JOIN users u ON u.id = c.user_id WHERE c.hidden = 0 ORDER BY c.created DESC LIMIT ?').bind(n).all();
+        return json(req, { comments: (r.results || []).map(c => ({ id: c.id, page: c.page, title: c.title, nick: c.nick || '탈퇴한 회원', body: c.body.slice(0, 140), created: c.created, adm: ADMINS.includes(c.user_id) })) });
+      }
       if (p === '/api/report' && req.method === 'POST') {
         const u = await me(req, env); if (!u) return err(req, '로그인이 필요해요.', 401);
-        const t = /^[pct]:\d+$/.test(body.target || '') ? body.target : '';
+        const t = /^[pctg]:\d+$/.test(body.target || '') ? body.target : '';
         if (!t) return err(req, '대상을 확인해 주세요.');
         const ins = await env.DB.prepare('INSERT OR IGNORE INTO reports (user_id, target, created) VALUES (?, ?, ?)').bind(u.id, t, now()).run();
         if (ins.meta.changes) {
-          const [k, id] = t.split(':'), tb = { p: 'posts', c: 'comments', t: 'teams' }[k];
+          const [k, id] = t.split(':'), tb = { p: 'posts', c: 'comments', t: 'teams', g: 'page_comments' }[k];
           await env.DB.prepare(`UPDATE ${tb} SET reports = reports + 1, hidden = CASE WHEN reports + 1 >= ? THEN 1 ELSE hidden END WHERE id = ?`).bind(HIDE_AT, +id).run();
         }
         return json(req, { ok: true });
