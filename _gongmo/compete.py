@@ -18,17 +18,23 @@ MASTER = r'C:\Users\k\Desktop\공모전_2026\data\master.jsonl'
 APPL = re.compile(r'(?:총|모두|역대 최다인?|역대 최대)\s*([\d,]{2,7})\s*(여\s*)?(편|건|명|팀|점)(?:의)?\s*(?:작품[이가]?\s*)?(?:이|가)?\s*(?:접수|응모|출품)(?:되|했|하|돼|됐|해|된)')
 
 
+_PW = []
+
+
 def linkareer(u):
+    """링커리어 공고 조회수: 화면을 그린 뒤 제목(h1) 근처 「조회 N」(정적 HTML 의 숫자는 옆 목록 값이라 쓰지 않음).
+    2026-10-19 첫 수집에서 공고 셋이 5,796·5,798·5,798 로 비슷 → 공고별로 따로 늘어나는지 며칠 지켜본 뒤 화면에 쓸지 판단(검증 전 표시 금지)."""
     m = re.search(r'/activity/(\d+)', u)
     if not m:
         return None
-    r = requests.get(u, headers=UA, timeout=20)
-    t = r.text; i = t.find(f'"Activity:{m.group(1)}"')
-    if i < 0:
-        return None
-    seg = t[i:i + 20000]
-    v = re.search(r'"viewCount":(\d+)', seg); s = re.search(r'"scrapCount":(\d+)', seg)
-    return {'views': int(v.group(1)) if v else None, 'scraps': int(s.group(1)) if s else None, 'src': 'linkareer'}
+    if not _PW:
+        from playwright.sync_api import sync_playwright
+        p = sync_playwright().start(); b = p.chromium.launch(executable_path=r'C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe', headless=True)
+        _PW.extend([p, b, b.new_page(user_agent=UA['User-Agent'])])
+    pg = _PW[2]
+    pg.goto(u, wait_until='networkidle', timeout=60000); pg.wait_for_timeout(1200)
+    v = pg.evaluate("""() => { let el = document.querySelector('h1'); for (let k = 0; k < 6 && el; k++) { el = el.parentElement; const m = el && el.innerText.match(/조회\s*([\d,]+)/); if (m) return m[1]; } return null; }""")
+    return {'views': int(v.replace(',', '')) if v else None, 'src': 'linkareer', 'verified': False}
 
 
 def today_goers(cid):
@@ -57,7 +63,7 @@ def ours():
     """우리 D1: 공모전별 상세 조회 방문자(누적)·찜·준비하기."""
     sys.path.insert(0, HERE)
     import push
-    v = {r['p'][3:-1]: r['v'] for r in push.q("SELECT p, COUNT(DISTINCT vid) v FROM hits WHERE p LIKE '/c/%' GROUP BY p")}
+    v = {r['p'][3:-1]: r['v'] for r in push.q("SELECT path p, COUNT(DISTINCT vid) v FROM hits WHERE path LIKE '/c/%' GROUP BY path")}
     fav = {r['i'][2:]: r['n'] for r in push.q("SELECT item_id i, COUNT(*) n FROM user_items WHERE item_id LIKE 'c:%' AND fav = 1 GROUP BY item_id")}
     prep = {r['i'][2:]: r['n'] for r in push.q("SELECT item_id i, COUNT(*) n FROM prep WHERE item_id LIKE 'c:%' GROUP BY item_id")}
     return v, fav, prep
@@ -86,6 +92,8 @@ def main(force=False):
                 except Exception as e:
                     rec['err'] = repr(e)[:60]
             f.write(json.dumps(rec, ensure_ascii=False) + '\n'); n += 1
+    if _PW:
+        _PW[1].close(); _PW[0].stop()
     print('경쟁 지표 수집', day, n, '건')
     return n
 
