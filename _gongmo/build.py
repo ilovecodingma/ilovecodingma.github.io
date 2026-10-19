@@ -313,7 +313,7 @@ def gone_pages():
 def auto_thin(urls):
     """빌드가 끝난 뒤 상세 페이지의 고유 본문을 세어 200자 미만이면 검색 제외로 돌린다(adsense_audit 와 같은 셈법)."""
     import adsense_audit as A
-    DET = ('/c/', '/a/', '/lab/', '/kw/', '/analyst/s/', '/analyst/coin/', '/money/tools/', '/apply/r/', '/contest/univ/', '/contest/ai-video/', '/hot/', '/satire/', '/mag/', '/ssul/', '/guide/', '/review/')
+    DET = ('/c/', '/a/', '/lab/', '/kw/', '/analyst/s/', '/analyst/coin/', '/money/tools/', '/apply/r/', '/contest/univ/', '/contest/ai-video/', '/hot/', '/satire/', '/mag/', '/ssul/', '/guide/', '/review/', '/fridge/r/')
     got, freq = {}, collections.Counter()
     for u in urls:
         f = os.path.join(ROOT, u.strip('/'), 'index.html')
@@ -927,7 +927,7 @@ def build():
         tips = ''.join(f'<li>{E(t)}</li>' for t in TIPS[n])
         body = f'''<p class="bc"><a href="/">홈</a> › {n}</p><section class="dh" data-c="{s}"><span class="ic big">{CAT_ICON[n]}</span><h1>{CAT_T.get(n, n + ' 공모전')}</h1><p class="lead">진행 중 <b>{len(cl)}건</b> · 마감 임박순</p><p class="hm-scope">오늘 {TODAY.month}/{TODAY.day}(한국 시간) 기준 접수 마감 전 · 제목이 같은 공모전은 1건 · {NOW_KST():%m/%d %H:%M} 갱신 · 마감 시각은 공식 공고 확인</p></section>
 <p>{CAT_INTRO[n]}</p>{cat_stats(n, cl)}
-{say(CAT_OUTFIT[n], f'<b>{n} 공모전 응모 팁</b><ul class="chk">{tips}</ul>')}{'<a class="lab-cta" href="/fridge/"><b>🍳 루리의 냉장고 파먹기</b><span>집에 있는 재료로 만들 수 있는 레시피 107개 · 요리대회 연습용으로 딱 →</span></a>' if s == 'food' else ''}
+{say(CAT_OUTFIT[n], f'<b>{n} 공모전 응모 팁</b><ul class="chk">{tips}</ul>')}{'<a class="lab-cta" href="/fridge/"><b>🍳 루리의 냉장고 파먹기</b><span>집에 있는 재료로 만들 수 있는 집밥 레시피 · 요리대회 연습용으로 딱 →</span></a>' if s == 'food' else ''}
 <h2>진행 중 {n} 공모전</h2>{TOOLBAR}<ul class="list" id="list">{''.join(card(c) for c in cl[:60])}</ul>{('<details class="rest"><summary>나머지 ' + str(len(cl) - 60) + '건 제목으로 보기</summary><ul>' + ''.join(f'<li><a href="/c/{c["id"]}/">{E(c["title"])}</a> · {ddot(c["end"])[5:]} 마감</li>' for c in cl[60:]) + '</ul></details>') if len(cl) > 60 else ''}<p class="hm-links">{' '.join(f'<a href="/cat/{s2}/">{n2}</a>' for s2, n2 in CATS if s2 != s)}</p><button class="more" id="more" hidden>더 보기</button>'''
         page(f'/cat/{s}/', f'{CAT_T.get(n, n + " 공모전 모음")} · 진행 중 {len(cl)}건', f'{n} 분야 진행 중 공모전 {len(cl)}건 마감 임박순 정리. {CAT_INTRO[n][:70]}',
              body + listing_js(n), [('루리의 줍줍', '/'), (n, f'/cat/{s}/')])
@@ -953,7 +953,7 @@ def build():
     guides(live)
     qa_pages(live)
     prep_page()
-    fridge_page()
+    fr_urls = fridge_page()
     app_page()
     news_page()
     extra_urls = talk_pages() + mag_pages(live, aps) + analyst_pages() + satire_pages() + kw_pages() + money_pages() + apply_rec_page() + tool_pages() + hot_pages()
@@ -962,6 +962,7 @@ def build():
     extra_urls += region_pages(aps) + contest_hubs(live) + week_hub(live)
     rv_urls, REVIEWS[:] = review_pages()
     extra_urls += rv_urls
+    extra_urls += fr_urls
     extra_urls += ailog_page(live, len(extra_urls)) + all_page()
     community(live)
     lab_urls = lab() or []
@@ -2154,14 +2155,66 @@ def app_page():
          body, [('루리의 줍줍', '/'), ('앱·알림', '/app/')])
 
 
+def fr_slug(n):
+    return re.sub(r'[^0-9A-Za-z가-힣]+', '-', n).strip('-')
+
+
 def fridge_page():
-    # 루리의 냉장고 파먹기 (2026-10-18 사용자: 냉장고 사진 찍어서 오늘 메뉴 추천, Claude API)
-    page('/fridge/', '냉장고 파먹기 메뉴 추천 — 있는 재료로 오늘 요리 (레시피 107개)', '냉장고에 있는 재료만 고르면 집밥 레시피 107개 중 지금 바로 만들 수 있는 오늘 메뉴와 만드는 법, 하나만 사면 되는 메뉴까지 알려 줘요.',
-         f'''<p class="bc"><a href="/">홈</a> › 냉장고 파먹기</p><h1>🍳 루리의 냉장고 파먹기</h1>
-{say("o_cook", "냉장고 사진을 찍거나 있는 재료를 눌러 주세요. 집밥 레시피 107개 중에 지금 바로 만들 수 있는 걸 골라 드릴게요!")}
-<section id="fridge" aria-label="냉장고 재료로 메뉴 추천"><noscript>자바스크립트가 필요해요.</noscript></section>
+    """냉장고 파먹기 + 레시피 상세(/fridge/r/<요리>/, 2026-10-19 검색 유입: Recipe 구조화 데이터). 사진은 출처 표기 가능한 자유 이용 사진만(recipes_ph.json)."""
+    D = json.load(open(os.path.join(ROOT, 'assets', 'fridge', 'recipes.json'), encoding='utf-8'))
+    PH = _rd('assets/fridge/recipes_ph.json') or {}
+    PR, PI = PH.get('recipes') or {}, PH.get('ing') or {}
+    RS = D['recipes']; NR = len(RS)
+    shutil.rmtree(os.path.join(ROOT, 'fridge', 'r'), ignore_errors=True)
+    lic = lambda c: (f'{E(c.get("by") or "작가 미상")} · {E((c.get("lic") or "").upper().replace("PDM", "퍼블릭 도메인"))} {E(c.get("lv") or "")}'
+                     + (f' · <a href="{E(c["src"])}" target="_blank" rel="noopener nofollow">원본</a>' if c.get('src') else ''))
+    urls = []
+    for r in RS:
+        sl = fr_slug(r['n']); u = f'/fridge/r/{sl}/'
+        ph = PR.get(r['n']) or {}
+        mp = ph.get('main')
+        st = {x['k']: (mp if x.get('main') else x) for x in ph.get('steps') or []}
+        cr = ([f'완성 사진: {lic(mp)}'] if mp else [])
+        steps = ''
+        for k, t in enumerate(r['s'], 1):
+            im = st.get(k)
+            if im and im is not mp:
+                cr.append(f'{k}단계 사진: {lic(im)}')
+            steps += f'<li><p>{E(t)}</p>' + (f'<img src="{E(im["f"])}" width="720" height="540" loading="lazy" decoding="async" alt="{E(r["n"])} {k}단계">' if im and im.get('f') else '') + '</li>'
+        ingl = lambda L: ''.join(f'<li>{(f"<img src={chr(34)}{E(PI[i][chr(102)])}{chr(34)} width=28 height=28 alt=>" if i in PI else "")}{E(i)}</li>' for i in L)
+        rel = sorted([x for x in RS if x is not r and set(x['need']) & set(r['need'])], key=lambda x: -len(set(x['need'] + x['opt']) & set(r['need'] + r['opt'])))[:6]
+        tags = ' '.join(f'#{t}' for t in r['t'])
+        tip = (f'필수 재료는 {", ".join(r["need"])} {len(r["need"])}가지이고, ' + (f'{", ".join(r["opt"][:4])} 같은 재료가 있으면 더 맛있어요. ' if r['opt'] else '')
+               + f'조리 시간은 약 {r["m"]}분, 난이도는 「{r["lv"]}」이에요. 기본양념({D["basic"]})은 집에 있다고 보고 적었어요.')
+        body = (f'<p class="bc"><a href="/">홈</a> › <a href="/fridge/">냉장고 파먹기</a> › {E(r["n"])}</p>'
+                f'<article class="fr-rp"><h1>{r["e"]} {E(r["n"])} 만드는 법</h1><p class="fr-meta">⏱ {r["m"]}분 · {E(r["lv"])} · {E(tags)}</p>'
+                + (f'<img class="fr-rmain" src="{E(mp["f"])}" width="720" height="540" alt="{E(r["n"])} 완성 사진" fetchpriority="high">' if mp else '')
+                + f'<p>{E(tip)}</p><h2>🧺 재료</h2><div class="fr-ri"><div><h3>꼭 있어야 해요</h3><ul>{ingl(r["need"])}</ul></div>'
+                + (f'<div><h3>있으면 더 좋아요</h3><ul>{ingl(r["opt"])}</ul></div>' if r['opt'] else '') + '</div>'
+                + f'<h2>👩‍🍳 만드는 법</h2><ol class="fr-rs">{steps}</ol>'
+                + f'<p class="fr-look">📷 다른 사람들 과정 사진 보기: <a href="https://search.naver.com/search.naver?ssc=tab.blog.all&query={E(r["n"])}+만드는+법" target="_blank" rel="noopener nofollow">네이버 블로그</a> · <a href="https://www.youtube.com/results?search_query={E(r["n"])}+만드는+법" target="_blank" rel="noopener nofollow">유튜브</a></p>'
+                + f'<a class="lab-cta" href="/fridge/"><b>🍳 내 냉장고 재료로 다른 메뉴 찾기</b><span>재료를 고르면 지금 만들 수 있는 메뉴를 골라 드려요 · 레시피 {NR}개 →</span></a>'
+                + (f'<h2>🔗 재료가 비슷한 메뉴</h2><ul class="fr-rel">' + ''.join(f'<li><a href="/fridge/r/{fr_slug(x["n"])}/">{x["e"]} {E(x["n"])} <small>{x["m"]}분</small></a></li>' for x in rel) + '</ul>' if rel else '')
+                + (f'<details class="fr-cr"><summary>사진 출처</summary><p>{"<br>".join(cr)}</p></details>' if cr else '')
+                + '<p class="note">루리의 줍줍이 직접 정리한 1~2인분 기준 레시피예요. 사진은 상업적 이용이 허락된 자유 이용 사진(출처 표기)만 쓰고, 맞는 사진이 없는 단계는 비워 뒀어요. 알레르기가 있으면 재료를 꼭 확인하세요.</p></article>'
+                + '<link rel="stylesheet" href="/assets/fridge/fridge.css?v=7">')
+        ld = {'@context': 'https://schema.org', '@type': 'Recipe', 'name': r['n'], 'description': tip, 'totalTime': f'PT{r["m"]}M', 'recipeYield': '1~2인분', 'recipeCategory': '집밥',
+              'recipeCuisine': '한식', 'keywords': ', '.join([r['n'] + ' 만드는 법', '냉장고 파먹기'] + r['t']), 'author': {'@type': 'Organization', 'name': NAME},
+              'recipeIngredient': r['need'] + r['opt'], 'recipeInstructions': [{'@type': 'HowToStep', 'text': t} for t in r['s']]}
+        if mp:
+            ld['image'] = [SITE + mp['f']]
+        page(u, f'{r["n"]} 만드는 법 — 재료 {len(r["need"])}가지로 {r["m"]}분 집밥 레시피', f'{r["n"]} 만드는 법: {", ".join(r["need"] + r["opt"][:3])}로 {r["m"]}분. 재료와 단계별 만드는 법, 재료가 비슷한 메뉴까지.',
+             body, [('루리의 줍줍', '/'), ('냉장고 파먹기', '/fridge/'), (r['n'], u)], ld)
+        urls.append(u)
+    allr = ''.join(f'<li><a href="/fridge/r/{fr_slug(r["n"])}/">{r["e"]} {E(r["n"])}</a></li>' for r in sorted(RS, key=lambda r: r['n']))
+    page('/fridge/', f'냉장고 파먹기 메뉴 추천 — 있는 재료로 오늘 요리 (레시피 {NR}개)', f'냉장고에 있는 재료만 고르면 집밥 레시피 {NR}개 중 지금 바로 만들 수 있는 오늘 메뉴와 만드는 법, 하나만 사면 되는 메뉴까지 알려 줘요.',
+         f"""<p class="bc"><a href="/">홈</a> › 냉장고 파먹기</p><h1>🍳 루리의 냉장고 파먹기</h1>
+{say("o_cook", f"냉장고 사진을 찍거나 있는 재료를 눌러 주세요. 집밥 레시피 {NR}개 중에 지금 바로 만들 수 있는 걸 골라 드릴게요!")}
+<section id="fridge" aria-label="냉장고 재료로 메뉴 추천"><noscript>자바스크립트가 필요해요. 아래 전체 레시피 목록에서 골라 보세요.</noscript></section>
+<details class="fr-all"><summary>📚 전체 레시피 {NR}개 보기</summary><ul>{allr}</ul></details>
 <a class="lab-cta" href="/cat/food/"><b>🏆 요리·레시피 공모전</b><span>레시피 공모전·요리경연대회 모아 보기 · 상금 받고 요리 실력 뽐내기 →</span></a><p class="note">사진은 재료를 찾는 데만 쓰고 저장하지 않아요. 고른 재료는 이 폰에만 저장돼요. 알레르기가 있으면 재료를 꼭 다시 확인해 주세요.</p>
-<link rel="stylesheet" href="/assets/fridge/fridge.css?v=5"><script defer src="/assets/fridge/fridge.js?v=7"></script>''', [('루리의 줍줍', '/'), ('냉장고 파먹기', '/fridge/')])
+<link rel="stylesheet" href="/assets/fridge/fridge.css?v=7"><script defer src="/assets/fridge/fridge.js?v=9"></script>""", [('루리의 줍줍', '/'), ('냉장고 파먹기', '/fridge/')])
+    return urls
 
 
 def qa_card(q):

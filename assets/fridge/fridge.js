@@ -5,7 +5,7 @@
   const KEY = 'jupjup_fridge_v1';
   const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const ga = (n, p) => { try { window.gtag && gtag('event', n, p || {}); } catch {} };
-  let D = null, have = new Set(), mood = '아무거나', maxMin = 99;
+  let IMG = null, D = null, have = new Set(), mood = '아무거나', maxMin = 99;
   try { have = new Set(JSON.parse(localStorage.getItem(KEY) || '[]')); } catch {}
   const save = () => { try { localStorage.setItem(KEY, JSON.stringify([...have])); } catch {} };
   const MOODS = ['아무거나', '든든', '가벼움', '아이', '안주', '안 매움', '매움', '간식'];
@@ -28,9 +28,25 @@
     for (const x of L) { const k = x.r.need[0]; if (top.length < 3 && !seen.has(k)) { top.push(x); seen.add(k); } else rest.push(x); }
     return top.concat(rest);
   }
-  const card = (x, big) => `<article class="fr-m${big ? ' best' : ''}"><header><span class="fr-e">${x.r.e}</span><div><h3>${esc(x.r.n)}</h3><p><em>⏱ ${x.r.m}분</em><em>${esc(x.r.lv)}</em>${x.r.t.map(t => `<em class="t">#${esc(t)}</em>`).join('')}</p></div></header>
-<p class="fr-use">${x.r.need.filter(i => have.has(i)).concat(x.plus).map(i => `<span>${esc(i)}</span>`).join('')}${x.lack.map(i => `<span class="no">+ ${esc(i)} 사기</span>`).join('')}</p>
-<details${big ? ' open' : ''}><summary>만드는 법</summary><ol>${x.r.s.map(s => `<li>${esc(s)}</li>`).join('')}</ol>${x.r.opt.length ? `<p class="fr-tip">💡 있으면 더 좋아요: ${x.r.opt.map(esc).join(', ')}</p>` : ''}</details></article>`;
+  // 2026-10-19 사용자: 「재료에 맞게 사진이랑 나오게」 — 사진은 출처 표기가 가능한 자유 이용 사진만(recipes_img.json), 없으면 이모지
+  const LIC = c => c ? `${esc(c.by || '작가 미상')} · ${esc((c.lic || '').toUpperCase().replace('PDM', '퍼블릭 도메인'))}${c.lv ? ' ' + esc(c.lv) : ''}${c.src ? ` · <a href="${esc(c.src)}" target="_blank" rel="noopener nofollow">원본</a>` : ''}` : '';
+  const ph = (r, k) => { const m = IMG && IMG.recipes && IMG.recipes[r.n]; if (!m) return null; if (k === 'main') return m.main && m.main.f ? m.main : null;
+    const st = (m.steps || []).find(x => x.k === k); return st ? (st.main ? m.main : st) : null; };
+  const look = n => `https://search.naver.com/search.naver?ssc=tab.blog.all&query=${encodeURIComponent(n + ' 만드는 법')}`;
+  const yt = n => `https://www.youtube.com/results?search_query=${encodeURIComponent(n + ' 만드는 법')}`;
+  const card = (x, big) => { const mp = ph(x.r, 'main'), cr = [];
+    const head = mp ? `<img class="fr-ph" src="${esc(mp.f)}" width="96" height="96" loading="lazy" decoding="async" alt="${esc(x.r.n)} 완성 사진">` : `<span class="fr-e">${x.r.e}</span>`;
+    if (mp) cr.push(`완성 사진: ${LIC(mp)}`);
+    const steps = x.r.s.map((s, k) => { const p = ph(x.r, k + 1); if (p && p !== mp) cr.push(`${k + 1}단계 사진: ${LIC(p)}`);
+      return `<li>${esc(s)}${p ? `<img class="fr-sp" src="${esc(p.f)}" loading="lazy" decoding="async" alt="${esc(x.r.n)} ${k + 1}단계">` : ''}</li>`; }).join('');
+    const ing = x.r.need.filter(i => have.has(i)).concat(x.plus).map(i => { const g = IMG && IMG.ing && IMG.ing[i]; if (g) cr.push(`${esc(i)} 사진: ${LIC(g)}`);
+      return `<span>${g ? `<img src="${esc(g.f)}" width="22" height="22" loading="lazy" alt="">` : ''}${esc(i)}</span>`; }).join('');
+    return `<article class="fr-m${big ? ' best' : ''}"><header>${head}<div><h3>${esc(x.r.n)}</h3><p><em>⏱ ${x.r.m}분</em><em>${esc(x.r.lv)}</em>${x.r.t.map(t => `<em class="t">#${esc(t)}</em>`).join('')}</p></div></header>
+<p class="fr-use">${ing}${x.lack.map(i => `<span class="no">+ ${esc(i)} 사기</span>`).join('')}</p>
+<details${big ? ' open' : ''}><summary>만드는 법</summary><ol class="fr-steps">${steps}</ol>${x.r.opt.length ? `<p class="fr-tip">💡 있으면 더 좋아요: ${x.r.opt.map(esc).join(', ')}</p>` : ''}
+<p class="fr-look"><a class="fr-page" href="/fridge/r/${encodeURIComponent(x.r.n.replace(/[^0-9A-Za-z가-힣]+/g, '-').replace(/^-|-$/g, ''))}/">📖 레시피 페이지로 보기</a></p>
+<p class="fr-look">📷 과정 사진으로 보기: <a href="${look(x.r.n)}" target="_blank" rel="noopener nofollow">네이버 블로그</a> · <a href="${yt(x.r.n)}" target="_blank" rel="noopener nofollow">유튜브</a></p>
+${cr.length ? `<details class="fr-cr"><summary>사진 출처</summary><p>${cr.join('<br>')}</p></details>` : ''}</details></article>`; };
   function paint() {
     const cats = Object.entries(D.ing).map(([c, xs]) => `<div class="fr-cat"><small>${esc(c)}</small><div>${xs.map(x => `<button data-i="${esc(x)}" class="${have.has(x) ? 'on' : ''}">${esc(x)}</button>`).join('')}</div></div>`).join('');
     ROOT.innerHTML = `<label class="fr-cam"><input type="file" accept="image/*" capture="environment" hidden><b>📸 냉장고 사진 찍어서 자동 체크</b><small>사진 속 재료를 찾아 아래에 체크해 드려요 · 틀린 건 눌러서 고치면 돼요</small></label><p class="fr-scan" hidden></p>
@@ -92,5 +108,6 @@ ${now.length > 3 ? `<details class="fr-more"><summary>바로 만들 수 있는 �
     const tp = out.querySelector('.fr-top'); if (tp) tp.onclick = () => ROOT.scrollIntoView({ behavior: 'smooth' });
     clearTimeout(gaT); gaT = setTimeout(() => ga('fridge_result', { have: have.size, now: now.length, mood }), 1500);
   }
-  fetch('/assets/fridge/recipes.json?v=2').then(r => r.json()).then(d => { D = d; paint(); });
+  Promise.all([fetch('/assets/fridge/recipes.json?v=3').then(r => r.json()), fetch('/assets/fridge/recipes_ph.json?v=' + Math.floor(Date.now() / 36e5)).then(r => r.ok ? r.json() : null).catch(() => null)])
+    .then(([d, im]) => { D = d; IMG = im; paint(); }).catch(() => { ROOT.innerHTML = '<p class="fr-note">레시피를 불러오지 못했어요. 잠시 뒤 새로고침해 주세요.</p>'; });
 })();
