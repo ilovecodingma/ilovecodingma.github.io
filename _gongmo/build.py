@@ -408,7 +408,7 @@ CL_CSS = ('<style>.ft-c{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}.cl-b{
 
 
 def comm_btns(cls='cl-b'):
-    return ''.join(f'<a class="{cls}" href="{E(x["url"])}" target="_blank" rel="noopener"' + (f' style="background:{E(x["bg"])};color:{E(x.get("fg", "#fff"))}"' if x.get('bg') else '') + f'>{E(x.get("label") or (x.get("icon", "") + " " + x["name"]))}</a>' for x in COMM_LINKS)   # bg·fg: 채널 색(없으면 카톡 노랑)
+    return ''.join(f'<a class="{cls}" href="{E(x["url"])}" target="_blank" rel="noopener"' + (f' style="background:{E(x["bg"])};color:{E(x.get("fg", "#fff"))}' + (f';box-shadow:inset 0 0 0 2px {E(x["bd"])}' if x.get('bd') else '') + '"' if x.get('bg') else '') + f'>{E(x.get("label") or (x.get("icon", "") + " " + x["name"]))}</a>' for x in COMM_LINKS)   # bg·fg·bd(테두리): 채널 색(없으면 카톡 노랑). 카톡 채널은 톡방과 같은 노랑이라 검은 테두리로 구분
 
 
 def comm_banner():
