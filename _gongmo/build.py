@@ -305,7 +305,7 @@ def gone_pages():
     """한 번 만든 /c/·/a/ 주소는 데이터에서 빠져도 「마감」 안내로 남긴다(검색 제외). 2026-10-18 애드센스 심사 중 404 방지."""
     G = os.path.join(HERE, 'gone_pages.json')
     old = json.load(open(G, encoding='utf-8')) if os.path.exists(G) else {}
-    cur = set(GONE) | {f'/c/{d}/' for d in DUP}   # 중복 공고 안내 페이지는 덮어쓰지 않음
+    cur = set(GONE) | {f'/c/{d}/' for d in DUP} | {f'/a/{d}/' for d in AP_DUP}   # 중복 공고 안내 페이지는 덮어쓰지 않음
     old.update(GONE)
     for u, (t, back, bn, end) in old.items():
         if u in cur:
