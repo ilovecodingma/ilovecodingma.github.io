@@ -195,5 +195,34 @@
     "2026-10-19"
    ]
   ]
+ },
+ {
+  "slug": "issue-impact-market-pipeline",
+  "lang": "ko",
+  "date": "2026-10-20",
+  "series": "이슈 → 생활 영향·시세 결합 파이프라인",
+  "title": "뉴스 이슈에 「내 생활 영향」과 실제 시세를 붙이는 법 — 규칙표·FRED·SVG로 지어내지 않기",
+  "desc": "영향 규칙표 10개로 이슈 60개 중 7개에 생활 영향 카드를 붙이고, FRED·업비트 공개 시세 6개(1.6초)로 전문가 발언 뒤 7일·30일 등락을 사후 확인하는 정적 사이트 파이프라인.",
+  "hub": [
+   "전문가 말 vs 실제 시세",
+   "/money/experts/"
+  ],
+  "sources": [
+   [
+    "FRED 공개 CSV(SP500·NASDAQCOM·DEXKOUS·DCOILWTICO·DGS10)",
+    "https://fred.stlouisfed.org/",
+    "2026-10-20"
+   ],
+   [
+    "업비트 공개 API 일봉",
+    "https://docs.upbit.com/",
+    "2026-10-20"
+   ],
+   [
+    "이 사이트 빌드 로그·market.json",
+    "/money/experts/",
+    "2026-10-20"
+   ]
+  ]
  }
 ]
