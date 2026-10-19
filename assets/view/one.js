@@ -17,6 +17,16 @@
 ${a.url ? `<a class="btn" href="${esc(a.url)}" target="_blank" rel="noopener nofollow">공식 공고·신청처 열기 →</a>` : ''}<p class="note">자동 정리한 정보예요. 대상·기간은 공식 공고가 기준이에요.</p>`);
     }).catch(() => box('<p>공고 정보를 불러오지 못했어요. 잠시 뒤 새로고침해 주세요.</p>'));
   }
+  // /apply/ 가볍게(2026-10-19): 처음엔 마감 가까운 60건만 그리고, 나머지는 버튼을 누르면 apply.json 에서
+  const mb = document.getElementById('ap-more');
+  if (mb) mb.onclick = () => { mb.disabled = true; mb.textContent = '불러오는 중…';
+    fetch('/apply.json', { cache: 'no-cache' }).then(r => r.json()).then(L => {
+      const ul = document.getElementById('ap-list'), have = new Set([...ul.querySelectorAll('a[href]')].map(a => a.getAttribute('href')));
+      const today = kst(), rows = L.filter(a => !have.has(`/a/${a.id}/`) && !have.has(`/apply/?id=${a.id}`)).map(a => {
+        const d = a.always ? '상시' : Math.round((new Date(a.end) - new Date(today)) / 864e5);
+        return `<li><a class="card" href="/apply/?id=${encodeURIComponent(a.id)}"><span class="ic">${esc(a.icon || '📝')}</span><div class="cb"><div class="top"><h3 class="t">${esc(a.title)}</h3><span class="d">${a.always ? '상시' : d === 0 ? 'D-DAY' : 'D-' + d}</span></div><p class="o">${esc(a.org || '')} · ${esc(a.kind || '')}</p></div></a></li>`; });
+      ul.insertAdjacentHTML('beforeend', rows.join('')); mb.parentElement.remove();
+    }).catch(() => { mb.disabled = false; mb.textContent = '다시 시도'; }); };
   if (location.pathname === '/kw/' && q.get('k')) {
     fetch('/kw/db.json', { cache: 'no-cache' }).then(r => r.json()).then(D => {
       const k = q.get('k'), v = D[k] || Object.values(D).find(x => x.slug === k || x.k === k);

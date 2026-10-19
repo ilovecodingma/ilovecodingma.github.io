@@ -345,6 +345,22 @@ def collapse_thin(urls):
                 if t2 != t:
                     open(fp, 'w', encoding='utf-8', newline='\n').write(t2); n += 1
     urls[:] = [u for u in urls if u not in COLL]
+    # /apply/ 를 60건만 그리게 바꿔서(2026-10-19) 링크가 끊긴 색인 대상 /a/ 상세는 /apply/ 맨 아래 짧은 목록으로 이어 준다
+    ap_f = os.path.join(ROOT, 'apply', 'index.html')
+    if os.path.exists(ap_f):
+        t = open(ap_f, encoding='utf-8').read()
+        linked = set()
+        for dp, dn, fn in os.walk(ROOT):
+            if any(x in dp for x in (os.sep + 'assets', os.sep + '.git', os.sep + '_gongmo', os.sep + 'og', os.sep + 'a' + os.sep)):
+                continue
+            for f in fn:
+                if f.endswith('.html'):
+                    linked |= set(re.findall(r'href="(/a/[^"]+/)"', open(os.path.join(dp, f), encoding='utf-8').read()))
+        lone = [u for u in urls if u.startswith('/a/') and u not in linked and u not in NOINDEX]
+        if lone and '<!--ap-rest-->' not in t:
+            ti = {u: (re.search(r'<title>([^<|]*)', open(os.path.join(ROOT, u.strip('/'), 'index.html'), encoding='utf-8').read()) or [None, u])[1].strip() for u in lone}
+            t = t.replace('<ul class="list" id="ap-list">', f'<!--ap-rest--><details class="fr-all"><summary>그 밖의 공고 {len(lone)}건 바로 가기</summary><ul>' + ''.join(f'<li><a href="{u}">{E(ti[u])}</a></li>' for u in lone) + '</ul></details><ul class="list" id="ap-list">', 1)
+            open(ap_f, 'w', encoding='utf-8', newline=chr(10)).write(t)
     NOINDEX.difference_update(COLL)   # 없어진 페이지는 검색 제외 비율 계산에서도 뺌
     json.dump(COLL, open(os.path.join(HERE, 'collapsed.json'), 'w', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))
     return len(COLL), n
@@ -812,10 +828,12 @@ def build_apply(aps):
         page(f'/a/{a["id"]}/', f'{a["title"][:40]} {YR}' + (f' — {_org}' if _org else '') + (f' · {ddot(a["end"])[5:]} 마감' if a.get('end') and not a.get('always') else ''), f'{a["title"]} — ' + (f'{_org} ' if _org else '') + f'{a["kind"]}, ' + (f'{ddot(a["end"])} 마감' if a.get('end') and not a.get('always') else '상시 신청') + '. 신청 기간과 공식 신청처 정리.', body,
              [('루리의 줍줍', '/'), ('청약·신청', '/apply/'), (a['title'], f'/a/{a["id"]}/')], noindex=sum(1 for k in ('target', 'benefit', 'how', 'income') if a.get(k)) < 2)
         GONE[f'/a/{a["id"]}/'] = [a['title'], '/apply/', '청약·신청', a['end']]
-    lst = ''.join(ap_card(a) for a in aps) or '<li class="empty"><img src="/assets/ruri/o_desk_s.webp" width="64" height="88" alt=""><p>지금 정리 중이에요. 곧 청약·신청 일정을 올릴게요!</p></li>'
+    lst = ''.join(ap_card(a) for a in aps[:60]) or '<li class="empty"><img src="/assets/ruri/o_desk_s.webp" width="64" height="88" alt=""><p>지금 정리 중이에요. 곧 청약·신청 일정을 올릴게요!</p></li>'
     page('/apply/', f'청약·신청 일정 모음', '아파트 청약, 공공임대, 공모주, 지원금 신청 일정을 마감 순서로 정리했어요.',
          f'''<p class="bc"><a href="/">홈</a> › 청약·신청</p><section class="dh" data-c="apply"><span class="ic big">📝</span><h1>청약·신청</h1><p class="lead">진행 중 <b>{len(aps)}건</b> · 마감 임박순</p></section>
-{say('o_desk', '신청만 하면 되는 기회들이에요. 기간이 짧으니 미리 챙겨요!')}{APPLY_INTRO}<h2>진행 중 청약·신청</h2><ul class="list">{lst}</ul><script defer src="/assets/view/one.js?v=1"></script>''',
+{say('o_desk', '신청만 하면 되는 기회들이에요. 기간이 짧으니 미리 챙겨요!')}{APPLY_INTRO}<h2>진행 중 청약·신청 <small>마감 가까운 순 {min(60, len(aps))}건 · 전체 {len(aps)}건</small></h2><ul class="list" id="ap-list">{lst}</ul>
+{f'<p class="hm-more"><button class="btn2" id="ap-more" data-n="{len(aps) - 60}">나머지 {len(aps) - 60}건 더 보기</button> · <a href="/apply/month/{TODAY:%Y-%m}/">달별 일정</a> · <a href="/apply/r/">지역별</a></p>' if len(aps) > 60 else ''}
+<script defer src="/assets/view/one.js?v=2"></script>''',
          [('루리의 줍줍', '/'), ('청약·신청', '/apply/')])
 
 
@@ -928,6 +946,8 @@ def apply_hubs(aps):
                 f'<p class="cat-st">📌 {mo.year}년 {m}월에 접수를 시작하거나 마감하는 공고 {len(L)}건이에요(아파트·임대 {len(apt)}건, 공모주 {len(ipo)}건, 지원금 등 {len(etc)}건). 공모주는 투자 상품이라 청약 전 투자설명서를 꼭 읽어 보세요.</p>'
                 f'<p class="hm-scope">기준: 공공·지자체·청약홈 공고 중 접수 시작일이나 마감일이 {m}월인 것 · {NOW_KST():%m/%d %H:%M} 갱신(한국 시간)</p>'
                 + sec('🏠 아파트·공공임대', apt) + sec('📈 공모주 (투자 권유 아님)', ipo) + sec('💰 지원금·기타', etc)
+                + '<h2>청약홈 신청 방법</h2><ol><li>청약홈(applyhome.co.kr)에 접속해 공동·금융인증서나 간편인증으로 로그인해요.</li><li>「청약 신청」에서 공고 단지와 주택형을 고르고, 특별공급·일반공급(1·2순위) 접수일에 맞춰 신청해요.</li><li>신청 전 「청약 자격 확인」으로 무주택 기간·청약통장 가입 기간을 확인하고, 신청 뒤 「청약 신청 내역」에서 접수됐는지 꼭 확인해요.</li></ol>'
+                + '<h2>청약 철회(신청 취소)</h2><p>접수 기간 안에는 청약홈의 청약 신청 내역에서 신청을 취소할 수 있어요. 당첨된 뒤 계약하지 않으면 당첨자로 관리돼 재당첨 제한 같은 불이익이 생길 수 있으니, 단지 공고의 「당첨자 계약 포기」 안내를 미리 읽어 두세요.</p><p class="note">일반적인 절차 안내예요. 단지마다 다를 수 있으니 공고문과 청약홈 안내(1644-7445)를 기준으로 하세요.</p>'
                 + rel_block(r'청약|지원금|청년', [('/apply/recommend/', '청약 가점 계산기'), ('/apply/r/', '지역별 지원금·청약'), ('/apply/', '전체 일정')]))
         page(path, f'{m}월 청약 일정 {mo.year} — 아파트·공공임대·공모주 ({len(L)}건)', f'{mo.year}년 {m}월 청약 일정: 아파트·공공임대 {len(apt)}건, 공모주 {len(ipo)}건, 지원금 {len(etc)}건 접수 시작·마감일 정리.',
              body, [('루리의 줍줍', '/'), ('지원금·청약', '/apply/'), (f'{m}월 일정', path)], noindex=len(L) < 5)
@@ -1095,8 +1115,9 @@ def build():
 <section id="consult" aria-label="루리 공모전 추천 상담"><noscript><p>루리 상담은 자바스크립트가 필요해요. 진행 중 공모전 {len(live)}건이 있어요.</p></noscript></section>
 {qa_home()}<p class="cs-foot">진행 중 공모전 {len(live)}건(오늘 {TODAY.month}/{TODAY.day} 한국 시간 기준 접수 마감 전 · 제목이 같은 공모전은 1건 · {NOW_KST():%m/%d %H:%M} 갱신)의 마감일·상금·응모 자격·접수 방법과 공식 공고 캡처를 정리해 두고, 루리가 상황에 맞는 것만 골라 드려요.</p>
 <link rel="stylesheet" href="/assets/home/consult.css?v=14"><script defer src="/assets/home/consult.js?v=13"></script>'''
+    _il = {'@context': 'https://schema.org', '@type': 'ItemList', 'name': f'진행 중 공모전 {YR}', 'numberOfItems': len(live), 'itemListElement': [{'@type': 'ListItem', 'position': k + 1, 'url': f'{SITE}/c/{c["id"]}/', 'name': c['title']} for k, c in enumerate(live_rec[:30])]}
     page('/contest/', '루리 공모전 추천 상담 — 진행 중 공모전 ' + str(len(live)) + '건', f'진행 중인 공모전 {len(live)}건을 마감 임박순·상금순으로. 질문 몇 개면 루리가 딱 맞는 공모전을 골라 드려요.',
-         contest_home, [('루리의 줍줍', '/'), ('공모전', '/contest/')])
+         contest_home, [('루리의 줍줍', '/'), ('공모전', '/contest/')], _il)
     nw, an, tk = _rd('news/data.json'), _rd('analyst/data.json'), _rd('talk/data.json')
     # 2026-10-19 사용자 개선 지시: 메인 = 공모전 추천·준비가 중심(소개 → 행동 버튼 → 비교 → 준비 지원 → 이슈·머니·생활은 보조)
     # 숫자에는 집계 범위·단위·중복 제거 기준·갱신 시각을 붙인다. 추천 기준을 밝히고 「맞춤」이라고 부르지 않는다.
@@ -1284,13 +1305,13 @@ GUIDES = [
 <h2>발표 확인</h2><p>발표일을 메모해 두고, 발표 방법(홈페이지 게시, 개별 연락, SNS 댓글)을 확인해 두세요. 연락이 닿지 않으면 수상이 취소되는 공모전도 있습니다.</p>'''),
  ('unemployment-2026', '실업급여 조건 2026 — 받을 수 있는 사람·금액·기간·신청 방법', '실업급여(구직급여) 2026 조건: 고용보험 가입 기간 180일, 비자발적 이직, 하루 상한 68,100원, 지급 기간 120~270일, 고용24 신청 순서를 정리했어요.', '''
 <p class="note">기준일 2026-10-19 · 고용노동부 고용24 안내 기준으로 정리한 일반 정보예요. 내 경우에 해당하는지는 고용센터(국번 없이 1350)에서 확인하는 게 가장 정확해요.</p>
-<h2>1. 받을 수 있는 조건</h2><ul class="chk"><li><b>가입 기간:</b> 이직일 전 18개월 동안 고용보험 피보험 단위기간이 180일 이상이어야 해요(주 15시간 미만 초단시간 근로자 등은 기준이 달라요).</li>
+<h2>1. 실업급여 신청자격</h2><ul class="chk"><li><b>가입 기간:</b> 이직일 전 18개월 동안 고용보험 피보험 단위기간이 180일 이상이어야 해요(주 15시간 미만 초단시간 근로자 등은 기준이 달라요).</li>
 <li><b>비자발적 이직:</b> 권고사직·계약 기간 만료·폐업처럼 본인 뜻이 아닌 퇴사여야 해요. 자진 퇴사라도 임금 체불, 통근이 어려워진 이사, 직장 내 괴롭힘처럼 정당한 사유가 인정되면 받을 수 있어요.</li>
 <li><b>재취업 의사와 노력:</b> 일할 의사와 능력이 있고, 수급 기간 동안 구직 활동을 해야 해요.</li><li><b>신청 기한:</b> 이직 다음 날부터 12개월이 지나면 남은 날이 있어도 받을 수 없어요. 퇴사 후 되도록 빨리 신청하세요.</li></ul>
-<h2>2. 얼마나 받나</h2><p>하루 금액은 퇴직 전 평균임금의 60%예요. 다만 2026년 1월 1일 이후 이직하면 <b>하루 상한 68,100원</b>이고, 하한은 최저임금의 80%(하루 8시간 기준 66,048원)예요. 계산은 <a href="/money/tools/unemployment/">실업급여 계산기</a>로 해 볼 수 있어요(참고용).</p>
-<h2>3. 얼마 동안 받나</h2><table class="info"><tr><th>가입 기간</th><th>50세 미만</th><th>50세 이상·장애인</th></tr><tr><td>1년 미만</td><td>120일</td><td>120일</td></tr><tr><td>1~3년</td><td>150일</td><td>180일</td></tr><tr><td>3~5년</td><td>180일</td><td>210일</td></tr><tr><td>5~10년</td><td>210일</td><td>240일</td></tr><tr><td>10년 이상</td><td>240일</td><td>270일</td></tr></table>
-<h2>4. 신청 순서</h2><ol><li>회사가 이직확인서를 고용센터에 냈는지 확인해요.</li><li>고용24(www.work24.go.kr)에서 구직 등록을 해요.</li><li>온라인 수급자격 신청자 교육을 들어요.</li><li>거주지 관할 고용센터에 수급자격 인정 신청을 해요.</li><li>정해진 날마다 실업 인정(구직 활동 보고)을 하면 지급돼요.</li></ol>
-<h2>5. 자주 헷갈리는 것</h2><ul class="chk"><li>65세 이후 새로 취업한 경우는 원칙적으로 받을 수 없어요(65세 전부터 계속 일한 경우는 가능).</li><li>수급 중 아르바이트로 소득이 생기면 반드시 신고해야 해요. 신고하지 않으면 부정 수급이 돼요.</li><li>퇴직금은 실업급여와 별개라 둘 다 받을 수 있어요. <a href="/money/tools/severance/">퇴직금 계산기</a>로 먼저 확인해 보세요.</li></ul>'''),
+<h2>2. 실업급여 계산기로 미리 계산</h2><p>퇴직 전 3개월 급여, 가입 기간, 나이를 넣으면 <a href="/money/tools/unemployment/">실업급여 계산기</a>가 하루 금액과 총액을 계산해요(참고용).</p><h2>3. 실업급여 금액</h2><p>하루 금액은 퇴직 전 평균임금의 60%예요. 다만 2026년 1월 1일 이후 이직하면 <b>하루 상한 68,100원</b>이고, 하한은 최저임금의 80%(하루 8시간 기준 66,048원)예요. 계산은 <a href="/money/tools/unemployment/">실업급여 계산기</a>로 해 볼 수 있어요(참고용).</p>
+<h2>4. 실업급여 기간</h2><table class="info"><tr><th>가입 기간</th><th>50세 미만</th><th>50세 이상·장애인</th></tr><tr><td>1년 미만</td><td>120일</td><td>120일</td></tr><tr><td>1~3년</td><td>150일</td><td>180일</td></tr><tr><td>3~5년</td><td>180일</td><td>210일</td></tr><tr><td>5~10년</td><td>210일</td><td>240일</td></tr><tr><td>10년 이상</td><td>240일</td><td>270일</td></tr></table>
+<h2>5. 실업급여 신청방법</h2><ol><li>회사가 이직확인서를 고용센터에 냈는지 확인해요.</li><li>고용24(www.work24.go.kr)에서 구직 등록을 해요.</li><li>온라인 수급자격 신청자 교육을 들어요.</li><li>거주지 관할 고용센터에 수급자격 인정 신청을 해요.</li><li>정해진 날마다 실업 인정(구직 활동 보고)을 하면 지급돼요.</li></ol>
+<h2>6. 자주 헷갈리는 것</h2><ul class="chk"><li>65세 이후 새로 취업한 경우는 원칙적으로 받을 수 없어요(65세 전부터 계속 일한 경우는 가능).</li><li>수급 중 아르바이트로 소득이 생기면 반드시 신고해야 해요. 신고하지 않으면 부정 수급이 돼요.</li><li>퇴직금은 실업급여와 별개라 둘 다 받을 수 있어요. <a href="/money/tools/severance/">퇴직금 계산기</a>로 먼저 확인해 보세요.</li></ul>'''),
  ('contest-sites', '공모전 사이트 추천·비교 — 어디서 찾고 어떻게 고를까', '공모전 사이트 추천: 콘테스트코리아·위비티·링커리어·씽굿·올콘 같은 공모전 정보 사이트 특징과, 여러 사이트 공고를 한 번에 비교하는 방법을 정리했어요.', '''
 <p>공모전 정보는 여러 사이트에 흩어져 있어서, 같은 공모전이 사이트마다 조금씩 다른 제목으로 올라오기도 해요. 사이트마다 강점이 달라서 한 곳만 보면 놓치는 공고가 생겨요.</p>
 <h2>대표적인 공모전 정보 사이트</h2><table class="info"><tr><th>사이트</th><th>특징</th></tr><tr><td>콘테스트코리아</td><td>분야별 공모전 목록이 오래 쌓인 대형 공모전 포털이에요. 청소년·대학생·일반 분야 구분이 잘 되어 있어요.</td></tr>
@@ -2219,7 +2240,7 @@ TOOL_T = {  # 2026-10-18 키워드 전략: 검색 자동완성 문구 제목 (�
  'fx': '환율 계산기 (달러·엔화 환전 수수료·우대 포함)',
  'salary': '2026 연봉 실수령액 계산기 (4대보험·소득세 공제 후 월급)',
  'severance': '퇴직금 계산기 (세전·세후, 알바 포함)',
- 'unemployment': '실업급여 계산기 2026 (상한액·하한액·수급기간)'}
+ 'unemployment': '실업급여 계산기 2026 — 신청자격·금액·기간 (상한 68,100원)'}
 TOOL_SRC = {  # 기준일·출처 (2026-10-18 확인)
  'salary': '국민연금 9.5%·기준소득월액 41만~659만원(국민연금공단, 2026.7~2027.6), 건강보험료율 7.19%·장기요양 0.9448%(보건복지부·국민건강보험공단), 고용보험 근로자 0.9%(고용노동부), 소득세 기본세율·근로소득공제(소득세법)',
  'severance': '근로자퇴직급여 보장법(평균임금 30일분 × 근속연수), 소득세법 퇴직소득 근속연수공제·환산급여공제(2023.1.1 이후 퇴직분)',
@@ -2470,6 +2491,7 @@ def fridge_page():
     PH = _rd('assets/fridge/recipes_ph.json') or {}
     PR, PI = PH.get('recipes') or {}, PH.get('ing') or {}
     RS = D['recipes']; NR = len(RS)
+    FR_EN = _rd('assets/fridge/en.json') or {}   # 영문 보조 표기(본문 한 줄)
     shutil.rmtree(os.path.join(ROOT, 'fridge', 'r'), ignore_errors=True)
     lic = lambda c: (f'{E(c.get("by") or "작가 미상")} · {E((c.get("lic") or "").upper().replace("PDM", "퍼블릭 도메인"))} {E(c.get("lv") or "")}'
                      + (f' · <a href="{E(c["src"])}" target="_blank" rel="noopener nofollow">원본</a>' if c.get('src') else ''))
@@ -2496,7 +2518,8 @@ def fridge_page():
                 + (f'<img class="fr-rmain" src="{E(mp["f"])}" width="720" height="540" alt="{E(r["n"])} 완성 사진" fetchpriority="high">' if mp else '')
                 + f'<p>{E(tip)}</p><h2>🧺 재료</h2><div class="fr-ri"><div><h3>꼭 있어야 해요</h3><ul>{ingl(r["need"])}</ul></div>'
                 + (f'<div><h3>있으면 더 좋아요</h3><ul>{ingl(r["opt"])}</ul></div>' if r['opt'] else '') + '</div>'
-                + f'<h2>👩‍🍳 만드는 법</h2><ol class="fr-rs">{steps}</ol>'
+                + (f'<h2>👩‍🍳 {E(r["n"])} 맛있게 끓이는 방법</h2>' if re.search(r'국|찌개|탕|전골|국밥', r['n']) else f'<h2>👩‍🍳 {E(r["n"])} 맛있게 만드는 방법</h2>') + f'<ol class="fr-rs">{steps}</ol>'
+                + (f'<p class="note">영문: {E(FR_EN[r["n"]])} recipe</p>' if FR_EN.get(r['n']) else '')
                 + share_bar(f'{r["n"]} 만드는 법', f'{r["n"]} 만드는 법 — 재료 {len(r["need"])}가지로 {r["m"]}분')
                 + '<h2>💡 루리 팁</h2><ul class="chk">' + ''.join(f'<li>{E(t)}</li>' for t in fr_tips(r, RS)) + '</ul>'
                 + f'<p class="fr-look">📷 다른 사람들 과정 사진 보기: <a href="https://search.naver.com/search.naver?ssc=tab.blog.all&query={E(r["n"])}+만드는+법" target="_blank" rel="noopener nofollow">네이버 블로그</a> · <a href="https://www.youtube.com/results?search_query={E(r["n"])}+만드는+법" target="_blank" rel="noopener nofollow">유튜브</a></p>'
@@ -2542,7 +2565,8 @@ def fridge_page():
 <p class="hm-more"><a href="/fridge/weather/">🌤️ 날씨별 메뉴</a> · <a href="/fridge/solo/">🏠 자취 요리</a> · <a href="/fridge/r/계란찜/">🥚 계란찜</a></p>
 <details class="fr-all"><summary>📚 전체 레시피 {NR}개 보기</summary><ul>{allr}</ul></details>
 <a class="lab-cta" href="/cat/food/"><b>🏆 요리·레시피 공모전</b><span>레시피 공모전·요리경연대회 모아 보기 · 상금 받고 요리 실력 뽐내기 →</span></a><p class="note">사진은 재료를 찾는 데만 쓰고 저장하지 않아요. 고른 재료는 이 폰에만 저장돼요. 알레르기가 있으면 재료를 꼭 다시 확인해 주세요.</p>
-<link rel="stylesheet" href="/assets/fridge/fridge.css?v=8"><script defer src="/assets/fridge/fridge.js?v=10"></script>""", [('루리의 줍줍', '/'), ('냉장고 파먹기', '/fridge/')])
+<link rel="stylesheet" href="/assets/fridge/fridge.css?v=8"><script defer src="/assets/fridge/fridge.js?v=10"></script>""", [('루리의 줍줍', '/'), ('냉장고 파먹기', '/fridge/')],
+         {'@context': 'https://schema.org', '@type': 'ItemList', 'name': '냉장고 파먹기 집밥 레시피', 'numberOfItems': NR, 'itemListElement': [{'@type': 'ListItem', 'position': k + 1, 'url': f'{SITE}/fridge/r/{fr_slug(r["n"])}/', 'name': r['n']} for k, r in enumerate(RS[:50])]})
     return urls
 
 
@@ -2567,16 +2591,25 @@ def qa_pages(live):
               'author': {'@type': 'Person', 'name': 'Seongsang Park'}})
 
 
+GUIDE_FAQ = {'unemployment-2026': [
+    ('실업급여 신청자격은 어떻게 되나요?', '이직 전 18개월 동안 고용보험 가입(피보험 단위기간)이 180일 이상이고, 권고사직·계약만료처럼 비자발적으로 퇴사했으며, 재취업 의사와 능력이 있어야 해요. 자진 퇴사도 임금 체불 같은 정당한 사유가 있으면 인정될 수 있어요.'),
+    ('실업급여는 하루에 얼마 받나요?', '퇴직 전 평균임금의 60%이고, 2026년 1월 1일 이후 이직하면 하루 상한 68,100원, 하한은 최저임금의 80%(8시간 기준 66,048원)예요.'),
+    ('실업급여는 며칠 동안 받나요?', '가입 기간과 나이에 따라 120일에서 270일이에요. 50세 미만은 120~240일, 50세 이상·장애인은 120~270일이에요.'),
+    ('실업급여 신청방법은요?', '고용24에서 구직 등록과 수급자격 신청자 교육을 마친 뒤 거주지 관할 고용센터에 수급자격 인정을 신청해요. 이직 다음 날부터 12개월 안에 신청해야 해요.')]}
+
+
 def guides(live):
     li = ''.join(f'<li><a class="card" data-c="guide" href="/guide/{s}/"><span class="ic">📖</span><div class="cb"><h3 class="t">{E(t)}</h3><p class="o">{E(d)}</p></div></a></li>' for s, t, d, _ in GUIDES)
     page('/guide/', '공모전 응모 가이드', '공모전 처음 응모하는 법, 제안서 쓰는 법, 수기·문학 공모 요령, 상금 수령과 사칭 주의까지.',
          f'<p class="bc"><a href="/">홈</a> › 응모 가이드</p><section class="dh" data-c="guide"><span class="ic big">📖</span><h1>공모전 응모 가이드</h1></section>{say("o_vest", "처음 응모한다면 1번부터 차근차근 읽어 보세요. 실수로 탈락하는 일이 확 줄어요!")}<ul class="list">{li}</ul>', [('루리의 줍줍', '/'), ('응모 가이드', '/guide/')])
     rel = ''.join(card(c) for c in live[:4])
     for s, t, d, b in GUIDES:
-        page(f'/guide/{s}/', t, d, f'<p class="bc"><a href="/">홈</a> › <a href="/guide/">응모 가이드</a></p><article><h1>{E(t)}</h1>{say(["o_suit", "o_cardigan", "o_desk", "o_present"][GUIDES.index((s, t, d, b)) % 4], E(d))}{b}</article><h2>마감 임박 공모전</h2><ul class="list">{rel}</ul>',
-             [('루리의 줍줍', '/'), ('응모 가이드', '/guide/'), (t, f'/guide/{s}/')],
-             {'@context': 'https://schema.org', '@type': 'Article', 'headline': t, 'description': d, 'datePublished': '2026-10-16',
-              'author': {'@type': 'Person', 'name': 'Seongsang Park'}})
+        fq = GUIDE_FAQ.get(s, [])   # 화면에 실제로 보이는 문답만 FAQPage 로 (2026-10-19)
+        fqh = ('<section class="hub-faq"><h2>❓ 자주 묻는 질문</h2>' + ''.join(f'<details class="faq"><summary>{E(q)}</summary><p>{E(a)}</p></details>' for q, a in fq) + '</section>') if fq else ''
+        art = {'@type': 'Article', 'headline': t, 'description': d, 'datePublished': '2026-10-16', 'author': {'@type': 'Person', 'name': 'Seongsang Park'}}
+        ld_ = {'@context': 'https://schema.org', '@graph': [art, {'@type': 'FAQPage', 'mainEntity': [{'@type': 'Question', 'name': q, 'acceptedAnswer': {'@type': 'Answer', 'text': a}} for q, a in fq]}]} if fq else {'@context': 'https://schema.org', **art}
+        page(f'/guide/{s}/', t, d, f'<p class="bc"><a href="/">홈</a> › <a href="/guide/">응모 가이드</a></p><article><h1>{E(t)}</h1>{say(["o_suit", "o_cardigan", "o_desk", "o_present"][GUIDES.index((s, t, d, b)) % 4], E(d))}{b}{fqh}</article><h2>마감 임박 공모전</h2><ul class="list">{rel}</ul>',
+             [('루리의 줍줍', '/'), ('응모 가이드', '/guide/'), (t, f'/guide/{s}/')], ld_)
 
 
 PRIV_MEMBER = ('<p>루리의 줍줍(sungprofile.cloud)은 커뮤니티(후기·질문 게시판)를 쓰려는 회원에게서 <b>이메일 주소 한 가지</b>만 받습니다. 이름·전화번호·주소 등 다른 정보는 받지 않습니다.</p>'
