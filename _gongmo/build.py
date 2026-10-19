@@ -905,6 +905,10 @@ def sido_of(a):
         for sl, nm, pat in SIDO:
             if re.search(pat, src):
                 return sl
+    blob = a['title'] + ' ' + (a.get('org') or '')   # 2026-10-19 키워드 구멍: 지역 칸이 빈 청약·임대 공고
+    for sl, nm, pat in SIDO:
+        if re.search(r'광주광역|전남|전라남도' if sl == 'jeonnam-gwangju' else pat, blob):
+            return sl
     return None
 
 
@@ -944,7 +948,7 @@ def region_pages(aps):
             subs = ' · '.join(f'<a href="/apply/r/{sl}/{k2 + "/" if k2 else ""}"{" class=on" if k2 == tk else ""}>{nm} {n2}</a>' for k2, (n2, f2) in REG_TYPES.items())
             lst = ''.join(ap_card(a) for a in M) or '<li class="empty">지금은 이 지역 공고가 없어요.</li>'
             fn = SIDO_FULL.get(sl, nm)   # 2026-10-19 검색 시나리오: 검색어는 「경기도」「서울시」처럼 정식 이름으로 친다
-            title = {'': f'{fn} 지원금·청약 {YR} — 진행 중 {len(M)}건 마감순', 'youth': f'{fn} 청년 지원금 {YR} — 종류·금액·신청기간 ({len(M)}건)', 'house': f'{fn} 청약·월세 지원 {YR} — 청약 일정·주거 지원 ({len(M)}건)'}[tk]
+            title = {'': f'{fn} 지원금·청약 {YR} — 진행 중 {len(M)}건 마감순', 'youth': f'{fn} 청년 지원금 {YR} — 종류·금액·신청기간 ({len(M)}건)', 'house': f'{fn} 청약 일정 {YR} — 아파트·공공임대·월세 지원 ({len(M)}건)'}[tk]
             body = (f'<p class="bc"><a href="/">홈</a> › <a href="/apply/">지원금·청약</a> › <a href="/apply/r/">지역별</a> › {nm}</p><h1>📍 {E(title)}</h1><p class="hm-links">{subs}</p>'
                     f'<p class="cat-st">📌 {t}</p><p>{guide}</p><h2>진행 중 공고 (마감순)</h2><ul class="list">{lst}</ul>'
                     + rel_block(r'청년|월세|청약|지원금' if tk != 'house' else r'월세|청약|주거', [('/apply/recommend/', '청약 가점 추천'), ('/apply/', '전국 지원금·청약 일정'), ('/money/tools/loan/', '대출 이자 계산기')]))
@@ -958,6 +962,90 @@ def region_pages(aps):
     page('/apply/r/', f'지역별 지원금·청약 {YR} — 서울·경기·부산 등 시·도별 신청 일정', '시·도별 청년 지원금, 월세 지원, 아파트 청약 일정을 마감순으로 정리했어요.', body,
          [('루리의 줍줍', '/'), ('지원금·청약', '/apply/'), ('지역별', '/apply/r/')])
     return ['/apply/r/'] + urls
+
+
+XTOPIC = {  # 2026-10-19 홍보 세션 키워드 구멍(구글 자동완성 866개): 주제 × 시·도, 진행 중 2건 이상인 조합만 만든다
+    'youth-rent': ('청년 월세 지원', '🏠', lambda a: re.search(r'청년', a['title']) and re.search(r'월세|주거비|임차|전월세|보증금|이사비|중개보수|주거', a['title']),
+                   lambda fn, nm: f'청년 월세 지원 {fn if nm == "경기" else nm} 조건·신청 ({YR})',
+                   '청년 월세·주거비 지원은 보통 무주택 청년이 대상이고, 부모와 따로 사는지(독립 거주), 본인·부모 소득(기준 중위소득 %), 임차보증금·월세 상한을 함께 봐요. 기준은 사업마다 달라서 아래 표의 대상 칸과 공고 원문을 꼭 같이 확인하세요. 필요한 서류와 지급일도 공고마다 달라요.'),
+    'newlywed': ('신혼부부 지원금·결혼장려금', '💍', lambda a: re.search(r'신혼|결혼|예비부부|혼인|웨딩', a['title'] + ' ' + (a.get('target') or '')),
+                 lambda fn, nm: f'{fn} 신혼부부 지원금·결혼장려금 {YR}',
+                 '신혼부부 지원은 혼인 기간, 부부 합산 소득, 해당 지역 거주 기간을 공고마다 다르게 봐요. 결혼장려금처럼 현금으로 주는 것과 전세·월세 대출이자, 공공임대·특별공급처럼 주거로 돕는 것은 신청처가 달라 따로 신청해야 하는 경우가 많아요.'),
+}
+XMADE = {}
+
+
+def _xcell(v):
+    return E(v) if v else '<span class="mu">공고 원문 확인</span>'
+
+
+def _xtarget(a):
+    if a.get('target'):
+        return a['target']
+    if a.get('age_min') or a.get('age_max'):
+        return f'만 {a.get("age_min") or ""}~{a.get("age_max") or ""}세'
+    return ''
+
+
+def cross_pages(aps):
+    """주제 × 시·도 (2026-10-19 키워드 구멍). 대상·지원 내용·신청 칸은 공고에서 정리된 값만, 없으면 「공고 원문 확인」."""
+    urls = []
+    for tk in XTOPIC:
+        d = os.path.join(ROOT, 'apply', tk)
+        if tk == 'newlywed':   # /apply/newlywed/index.html 은 apply_hubs 가 만듦 — 하위 지역 폴더만 지움
+            for f in (os.listdir(d) if os.path.isdir(d) else []):
+                if os.path.isdir(os.path.join(d, f)):
+                    shutil.rmtree(os.path.join(d, f), ignore_errors=True)
+        else:
+            shutil.rmtree(d, ignore_errors=True)
+    css = ('<style>.tblw{overflow-x:auto}.xt{border-collapse:collapse;width:100%;font-size:14px;min-width:560px}.xt th,.xt td{border:1px solid #e5e7eb;padding:6px 8px;vertical-align:top;text-align:left}'
+           '.xt th{background:#f8fafc}.xt .mu{color:#94a3b8}</style>')
+    for tk, (tn, ic, f, tt, guide) in XTOPIC.items():
+        allm = sorted([a for a in aps if f(a)], key=lambda a: (a.get('always'), a['end']))
+        by = {}
+        for a in allm:
+            by.setdefault(sido_of(a) or '', []).append(a)
+        made = []
+        for sl, nm, _ in SIDO:
+            M = by.get(sl, [])
+            if len(M) < 2:
+                continue
+            fn = SIDO_FULL.get(sl, nm)
+            path = f'/apply/{tk}/{sl}/'
+            title = tt(fn, nm)
+            wk = sum(1 for a in M if not a.get('always') and dday(a['end'])[0] <= 7)
+            rows = ''.join(f'<tr><td><a href="/a/{a["id"]}/">{E(a["title"][:60])}</a><br><small>{E(a["org"])}</small></td><td>{_xcell(_xtarget(a))}</td>'
+                           f'<td>{_xcell(a.get("benefit"))}</td><td>{_xcell(a.get("how"))}</td><td>{"상시" if a.get("always") else ddot(a["end"])}</td></tr>' for a in M)
+            first = next((a for a in M if not a.get('always')), None)
+            stat = (f'지금 {fn}에서 신청할 수 있는 {tn} 공고는 {len(M)}건이에요. ' + (f'이 중 {wk}건은 일주일 안에 마감해요. ' if wk else '')
+                    + (f'가장 먼저 끝나는 건 「{first["title"][:30]}」({ddot(first["end"])} 마감)이에요.' if first else ''))
+            others = ' · '.join(f'<a href="/apply/{tk}/{s2}/">{n2}</a>' for s2, n2, _ in SIDO if s2 != sl and len(by.get(s2, [])) >= 2)
+            body = (f'<p class="bc"><a href="/">홈</a> › <a href="/apply/">지원금·청약</a> › <a href="/apply/{tk}/">{tn}</a> › {nm}</p><h1>{ic} {E(title)}</h1>'
+                    f'<p class="cat-st">📌 {E(stat)}</p><p>{guide}</p>'
+                    f'<h2>{nm} 공고별 조건 한눈에</h2><div class="tblw"><table class="xt"><thead><tr><th>공고</th><th>대상</th><th>지원 내용</th><th>신청 방법</th><th>마감</th></tr></thead><tbody>{rows}</tbody></table></div>'
+                    '<p class="note">대상·지원 내용·신청 방법은 공고에서 확인된 값만 적었어요. 비어 있는 칸은 공고 원문(각 공고 페이지의 공식 공고 링크)에서 확인하세요. 서류와 지급일은 공고마다 달라요.</p>'
+                    f'<h2>진행 중 공고 (마감순)</h2><ul class="list">{"".join(ap_card(a) for a in M)}</ul>'
+                    + (f'<p class="hm-links">다른 지역 {tn}: {others}</p>' if others else '')
+                    + rel_block(r'청년|월세|신혼|결혼|주거', [(f'/apply/r/{sl}/', f'{fn} 지원금·청약 전체'), (f'/apply/r/{sl}/house/', f'{fn} 청약 일정'), ('/apply/recommend/', '청약 가점 계산기'), ('/apply/', '전국 지원금·청약 일정')])
+                    + css)
+            page(path, title, f'{title}: 진행 중 {len(M)}건의 대상·지원 내용·신청 방법·마감일을 공고 기준으로 정리.', body,
+                 [('루리의 줍줍', '/'), ('지원금·청약', '/apply/'), (tn, f'/apply/{tk}/'), (nm, path)])
+            urls.append(path)
+            made.append((sl, nm, len(M)))
+        XMADE[tk] = made
+        if tk == 'newlywed':   # 전국 허브는 apply_hubs 의 /apply/newlywed/ — 거기에 지역 링크만 붙음
+            continue
+        idx = ''.join(f'<li><a href="/apply/{tk}/{sl}/"><b>{nm}</b><span>{n}건</span></a></li>' for sl, nm, n in sorted(made, key=lambda x: -x[2]))
+        title = f'청년 월세 지원금 {YR} — 지역별 조건·신청 ({len(allm)}건)'
+        body = (f'<p class="bc"><a href="/">홈</a> › <a href="/apply/">지원금·청약</a> › {tn}</p><h1>{ic} {E(title)}</h1>'
+                f'<p class="cat-st">📌 제목에 청년과 월세·주거비·임차 등이 들어간 진행 중 공고는 모두 {len(allm)}건이에요.</p><p>{guide}</p>'
+                + (f'<h2>지역별로 보기</h2><ul class="reg-l">{idx}</ul>' if idx else '')
+                + f'<h2>진행 중 공고 (마감순)</h2><ul class="list">{"".join(ap_card(a) for a in allm)}</ul>'
+                + rel_block(r'청년|월세|주거', [('/apply/r/', '지역별 지원금·청약'), ('/apply/', '전국 지원금·청약 일정')]))
+        page(f'/apply/{tk}/', title, f'청년 월세 지원금 {YR}: 진행 중 {len(allm)}건, 지역별 조건·신청 방법·마감일.', body,
+             [('루리의 줍줍', '/'), ('지원금·청약', '/apply/'), (tn, f'/apply/{tk}/')], noindex=len(allm) < 3)
+        urls.append(f'/apply/{tk}/')
+    return urls
 
 
 def apply_hubs(aps):
@@ -984,7 +1072,8 @@ def apply_hubs(aps):
     body = (f'<p class="bc"><a href="/">홈</a> › <a href="/apply/">지원금·청약</a> › 신혼부부</p><h1>💍 신혼부부 지원금 {YR} — 지역별 결혼·주거 지원 ({len(L)}건)</h1>'
             f'<p class="cat-st">📌 제목이나 대상에 신혼·결혼·예비부부가 들어간 진행 중 공고 {len(L)}건이에요. 지역별로는 ' + ', '.join(f'{k} {v}건' for k, v in by.most_common(6)) + ' 순이에요.</p>'
             '<p>신혼부부 지원은 혼인 기간(보통 7년 이내), 부부 합산 소득, 거주 기간 조건이 공고마다 달라요. 주거 지원(전세·월세·특별공급)과 결혼 장려금은 따로 신청하는 경우가 많으니 둘 다 확인해 보세요.</p>'
-            f'<p class="hm-scope">기준: 진행 중 공고 · {NOW_KST():%m/%d %H:%M} 갱신(한국 시간)</p><ul class="list">{"".join(ap_card(a) for a in L) or "<li class=empty>지금은 없어요.</li>"}</ul>'
+            + ((f'<h2>지역별로 보기</h2><ul class="reg-l">' + ''.join(f'<li><a href="/apply/newlywed/{sl}/"><b>{nm}</b><span>{n}건</span></a></li>' for sl, nm, n in sorted(XMADE.get('newlywed', []), key=lambda x: -x[2])) + '</ul>') if XMADE.get('newlywed') else '')
+            + f'<p class="hm-scope">기준: 진행 중 공고 · {NOW_KST():%m/%d %H:%M} 갱신(한국 시간)</p><ul class="list">{"".join(ap_card(a) for a in L) or "<li class=empty>지금은 없어요.</li>"}</ul>'
             + rel_block(r'신혼|청약|주거', [('/apply/recommend/', '청약 가점 계산기'), ('/apply/r/', '지역별 지원금·청약')]))
     page('/apply/newlywed/', f'신혼부부 지원금 {YR} — 지역별 결혼·주거 지원 ({len(L)}건)', f'신혼부부 지원금 {YR}: 진행 중 {len(L)}건을 지역별로. 결혼 장려금·전세·월세·특별공급 신청 기간과 대상.', body,
          [('루리의 줍줍', '/'), ('지원금·청약', '/apply/'), ('신혼부부', '/apply/newlywed/')], noindex=len(L) < 5)
@@ -1248,7 +1337,7 @@ def build():
     extra_urls = talk_pages() + mag_pages(live, aps) + analyst_pages() + satire_pages() + kw_pages() + money_pages() + apply_rec_page() + tool_pages() + hot_pages()
     import widget
     extra_urls += widget.build(ROOT, live, aps, hot_live()[0], page, say, COMM_API, TODAY)  # 퍼가기 위젯 (2026-10-18 연구 세션 요청)
-    extra_urls += region_pages(aps) + contest_hubs(live) + week_hub(live) + apply_hubs(aps)
+    extra_urls += region_pages(aps) + contest_hubs(live) + week_hub(live) + cross_pages(aps) + apply_hubs(aps)
     rv_urls, REVIEWS[:] = review_pages()
     extra_urls += rv_urls
     extra_urls += fr_urls
@@ -2425,8 +2514,8 @@ TOOL_T = {  # 2026-10-18 키워드 전략: 검색 자동완성 문구 제목 (�
  'pension': '연금저축 IRP 세액공제 계산기 2026 (환급액)',
  'loan': '대출 이자 계산기 (주담대 원리금균등·원금균등·만기일시)',
  'fx': '환율 계산기 (달러·엔화 환전 수수료·우대 포함)',
- 'salary': '2026 연봉 실수령액 계산기 (4대보험·소득세 공제 후 월급)',
- 'severance': '퇴직금 계산기 (세전·세후, 알바 포함)',
+ 'salary': '연봉 실수령액 계산기 2026 (4대보험·소득세 공제 후 월급)',
+ 'severance': '퇴직금 계산기 2026 — 퇴직금 계산법·세전 세후 (알바 포함)',
  'unemployment': '실업급여 계산기 2026 — 신청자격·금액·기간 (상한 68,100원)'}
 TOOL_SRC = {  # 기준일·출처 (2026-10-18 확인)
  'salary': '국민연금 9.5%·기준소득월액 41만~659만원(국민연금공단, 2026.7~2027.6), 건강보험료율 7.19%·장기요양 0.9448%(보건복지부·국민건강보험공단), 고용보험 근로자 0.9%(고용노동부), 소득세 기본세율·근로소득공제(소득세법)',
@@ -2477,13 +2566,13 @@ def salary_table():
     rows = ''.join(f'<tr><td>{a // 10000:,}만원</td><td>{won_txt(int(r["m"]))}</td><td>{int(r["p"] + r["h"] + r["l"] + r["e"]):,}원</td><td>{int(r["it"] + r["lt"]):,}원</td><td><b>{int(r["net"]):,}원</b></td></tr>'
                    for a in range(20_000_000, 100_000_001, 1_000_000) for r in [paycalc.salary(a)])
     r40, r30, r60 = paycalc.salary(40_000_000), paycalc.salary(30_000_000), paycalc.salary(60_000_000)
-    body = (f'<p class="bc"><a href="/">홈</a> › <a href="/analyst/">머니</a> › <a href="/money/tools/salary/">연봉 실수령액 계산기</a> › 실수령액표</p><h1>📋 2026 연봉 실수령액표 (2,000만~1억)</h1>'
+    body = (f'<p class="bc"><a href="/">홈</a> › <a href="/analyst/">머니</a> › <a href="/money/tools/salary/">연봉 실수령액 계산기</a> › 실수령액표</p><h1>📋 연봉 실수령액 표 2026 (2,000만~1억)</h1>'
             f'<p>2026년 4대보험 요율과 소득세 기본세율로 연봉 100만원 단위 월 실수령액을 계산한 표예요. 비과세 식대 월 20만원, 본인 1명(부양가족 없음) 기준이에요. 예를 들어 연봉 3,000만원은 월 약 {int(r30["net"]):,}원, 4,000만원은 약 {int(r40["net"]):,}원, 6,000만원은 약 {int(r60["net"]):,}원을 받아요. '
             f'연봉이 1,000만원 오를 때 실수령액은 생각보다 덜 늘어나는데, 소득세 세율 구간이 올라가고 4대보험도 함께 늘기 때문이에요. 부양가족이 있거나 비과세가 다르면 <a href="/money/tools/salary/">계산기</a>에 직접 넣어 보세요.</p>'
             f'<div class="tbl-w"><table class="info sal-t"><tr><th>연봉</th><th>월 세전</th><th>4대보험</th><th>소득세+지방세</th><th>월 실수령액</th></tr>{rows}</table></div>'
             f'<p class="note">기준일 2026-10-18 · 출처: {E(TOOL_SRC["salary"])}. 참고용 계산이며 회사 간이세액표와 소득세가 조금 다를 수 있어요.</p>'
             + rel_block(r'연봉|월급|4대보험|연말정산', [('/money/tools/salary/', '연봉 실수령액 계산기'), ('/money/tools/severance/', '퇴직금 계산기'), ('/money/tools/unemployment/', '실업급여 계산기')]))
-    page('/money/tools/salary/table/', '2026 연봉 실수령액표 — 2,000만~1억 월급 (4대보험·세금 공제 후)', f'2026년 4대보험·소득세 기준 연봉 실수령액표. 연봉 4,000만원 월 {int(r40["net"]):,}원 등 2,000만~1억 원을 100만원 단위로 정리.',
+    page('/money/tools/salary/table/', '연봉 실수령액 표 2026 — 2,000만~1억 월급 (4대보험·세금 공제 후)', f'2026년 4대보험·소득세 기준 연봉 실수령액표. 연봉 4,000만원 월 {int(r40["net"]):,}원 등 2,000만~1억 원을 100만원 단위로 정리.',
          body + '<link rel="stylesheet" href="/assets/money/tools.css?v=2">', [('루리의 줍줍', '/'), ('머니', '/analyst/'), ('연봉 실수령액 계산기', '/money/tools/salary/'), ('실수령액표', '/money/tools/salary/table/')])
     return ['/money/tools/salary/table/']
 
