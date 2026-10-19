@@ -60,7 +60,7 @@ EV_KIND = {'event': '이벤트', 'sweepstakes': '추첨 경품', 'quiz': '퀴즈
            'sns_tag_required': '친구 태그', 'sns_story_required': '스토리 공유', 'sns_capture': '캡처 인증', 'sns_form_only': '폼 응모',
            'sns_comment+form': '댓글+폼', 'sns_purchase': '구매 인증', 'sns_region': '지역 한정', 'sns_other': 'SNS 이벤트'}
 
-COMM_TAGS_TPL = '<link rel="stylesheet" href="/assets/community/comm.css?v=15"><script defer src="/assets/community/comm.js?v=24"></script><script defer src="/assets/community/crew.js?v=1"></script>'
+COMM_TAGS_TPL = '<link rel="stylesheet" href="/assets/community/comm.css?v=15"><script defer src="/assets/community/comm.js?v=25"></script><script defer src="/assets/community/crew.js?v=1"></script>'
 GTAG = ('<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4248498719773262" crossorigin="anonymous"></script>\n'
         '<script async src="https://www.googletagmanager.com/gtag/js?id=G-G9BPFF95GY"></script>\n'
         "<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());if(location.hostname!=='sungprofile.cloud')window['ga-disable-G-G9BPFF95GY']=true;gtag('config','G-G9BPFF95GY');</script>")
@@ -113,7 +113,7 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False, noinde
     url = SITE + path
     TH = theme_of(path)
     # 사이트맵 lastmod: 날짜·시각·D-day 처럼 매번 바뀌는 글자는 빼고 내용이 바뀐 날만 갱신
-    PAGE_HASH[path] = hashlib.md5(re.sub(r'D-\d+|D-DAY|\d{1,2}:\d{2}|\d{4}-\d{2}-\d{2}|\d{1,2}/\d{1,2}', '', title + body).encode()).hexdigest()
+    PAGE_HASH[path] = hashlib.md5(re.sub(r'D-\d+|D-DAY|\d{1,2}:\d{2}|\d{4}-\d{2}-\d{2}|\d{1,2}/\d{1,2}|[\d,]+\s*(?:건|명|개|곳|회|일 남)', '', title + body).encode()).hexdigest()
     if noindex:
         NOINDEX.add(path)
     COMM_TAGS = COMM_TAGS_TPL if COMM_API else ''
@@ -1270,6 +1270,9 @@ def build():
          f'공공·지자체 공고 중 오늘 기준 신청 마감 전 · {built} 갱신')]
     more_h = ''.join(f'<a class="hm-m hm-{k}" href="{u}"><span>{ic}</span><div><b>{E(n)}</b><p>{E(v)}</p><small>{E(sc)}</small></div></a>' for k, u, ic, n, v, sc in more)
     hot_h = ''.join(f'<li><a href="/hot/{v["slug"]}/">{E(v["title"])}<small> · 언론사 {len(v["outs"])}곳</small></a></li>' for v in hot3[:3])
+    _rj = os.path.join(ROOT, 'assets', 'fridge', 'recipes.json')
+    NR_HOME = f'{len(json.load(open(_rj, encoding="utf-8")).get("recipes", [])):,}' if os.path.exists(_rj) else '1,300'
+    XLINKS_HOME = ''.join(f' · <a href="/apply/{tk}/{sl}/">{"청년 월세" if tk == "youth-rent" else "신혼부부"} {nm}</a>' for tk in ('youth-rent', 'newlywed') for sl, nm, n in sorted(XMADE.get(tk, []), key=lambda x: -x[2])[:3])
     home = f'''<section class="hm-hero"><h1>나에게 맞는 공모전을 찾고,<br>마감 전에 준비하세요.</h1>
 <p class="hm-sub">진행 중 공모전 <b>{len(live)}건</b>의 분야·자격·마감·제출물을 한 형식으로 정리했어요. 몇 가지 질문에 답하면 조건에 맞는 공모전부터 보여 드려요.</p>
 <div class="hm-cta"><a class="hm-b1" href="/contest/">🔎 맞는 공모전 찾기</a><a class="hm-b2" href="/contest/week/">⏰ 마감 임박 보기 <small>7일 안 {wk7}건</small></a></div>
@@ -1283,6 +1286,13 @@ def build():
 <a href="/prep/"><b>📋 준비실</b><span>마감일에서 거꾸로 짠 준비 일정과 체크리스트</span></a>
 <a href="/lab/"><b>🔬 수상 연구소</b><span>슬로건·네이밍 수상작 구조 분석과 내 문구 진단</span></a>
 <a href="/guide/"><b>📘 응모 가이드</b><span>제안서·분량·저작권·상금 세금·사기 구별법</span></a></div></section>
+<section class="hm-sec"><h2>🧺 바로 쓰는 정보</h2><div class="hm-prep">
+<a href="/fridge/"><b>🍳 냉장고 파먹기 레시피</b><span>있는 재료를 고르면 만들 수 있는 집밥 {NR_HOME}개 중에서 골라 드려요</span></a>
+<a href="/money/tools/salary/"><b>🧮 계산기</b><span>연봉 실수령액·실업급여·퇴직금·청약 가점 (2026 기준)</span></a>
+<a href="/apply/r/"><b>📍 지역별 지원금</b><span>시·도별 청년 월세·신혼부부·청약 일정 공고 마감순</span></a></div>
+<p class="hm-more"><a href="/money/tools/salary/table/">연봉 실수령액 표</a> · <a href="/money/tools/unemployment/">실업급여 계산기</a> · <a href="/money/tools/severance/">퇴직금 계산기</a> · <a href="/apply/recommend/">청약 가점 계산기</a></p>
+<p class="hm-more"><a href="/apply/youth-rent/">청년 월세 지원</a>{XLINKS_HOME} · <a href="/apply/newlywed/">신혼부부 지원금</a></p>
+<p class="hm-more"><a href="/hot/">🔥 지금 뜨는 이슈</a> · <a href="/kw/">🔎 많이 찾는 검색어</a></p></section>
 <section class="hm-sec"><h2>🧭 다른 정보</h2><div class="hm-more3">{more_h}</div>
 {f'<div class="hm-hot"><b>🔥 지금 뜨는 이슈</b><ol>{hot_h}</ol></div>' if hot_h else ''}
 <p class="hub-ai"><a href="/all/">☰ 전체 메뉴</a> · <a href="/ailog/">🤖 사람 1명 + AI로 만든 과정</a></p></section>
@@ -2255,7 +2265,7 @@ def ailog_page(live, nurls):
             + '<section class="mg-s"><div data-pcrecent="6"></div></section>'
             + '<p class="note">이 페이지는 사이트 개발 과정만 공개해요. 숫자는 빌드할 때마다 자동으로 갱신돼요.</p><link rel="stylesheet" href="/assets/mag/mag.css?v=10">')
     page('/ailog/', '개발 지식 — AI·개발 가이드와 사이트 제작 로그(Claude Code)',
-         f'사람 한 명의 말과 AI(Claude Code)로 {days}일 동안 페이지 {npage:,}개짜리 정보 사이트를 만든 기록. 무료 호스팅·무료 서버리스·공개 RSS로 서버비 0원, 매시간 자동 갱신.',
+         '사람 한 명의 말과 AI(Claude Code)로 만든 정보 사이트의 개발 기록. 색인 대상 페이지를 10/18 3,744개→1,311개, 10/19 1,446개→863개로 줄이며 얇은 페이지를 합친 과정과 서버비 0원 운영법.',   # 2026-10-19 확인값으로 고정(디스크 파일 수는 이동·검색 제외 페이지까지 세서 뺌)
          body, [('루리의 줍줍', '/'), ('개발 지식', '/ailog/')])
     return ['/ailog/']
 
