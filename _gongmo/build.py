@@ -71,7 +71,7 @@ THEMES = [  # (키, 이름, 아이콘, 테마색, 홈, [하위 메뉴], [이 테
     ('contest', '공모전', '🏆', '#6d28d9', '/contest/', [('/contest/', '추천 상담'), ('/cat/literature/', '분야별'), ('/prep/', '준비실'), ('/lab/', '수상 연구소'), ('/community/', '원정대'), ('/guide/', '가이드'), ('/widget/', '위젯')],
      ['/contest/', '/c/', '/cat/', '/prep/', '/lab/', '/community/', '/guide/', '/v/', '/me/', '/widget/']),
     ('life', '생활', '🍳', '#0e7490', '/apply/', [('/apply/', '지원금·청약'), ('/apply/recommend/', '청약 추천'), ('/apply/r/', '지역별'), ('/event/', '경품'), ('/fridge/', '냉장고 파먹기'), ('/qa/', '고민 해결')], ['/apply/', '/a/', '/event/', '/fridge/', '/qa/', '/ssul/']),
-    ('ai', 'AI 로그', '🤖', '#0f172a', '/ailog/', [('/ailog/', 'AI 제작 로그')], ['/ailog/'])]
+    ('ai', '개발 지식', '🧑‍💻', '#0f172a', '/ailog/', [('/ailog/', '개발 지식'), ('/en/guide/', 'English guides'), ('/ailog/#log', 'AI 제작 로그')], ['/ailog/', '/dev/', '/en/'])]   # 2026-10-19 사용자: AI 로그 → 개발 지식으로 개편
 
 
 def theme_of(path):
@@ -109,7 +109,7 @@ PAGE_INTRO = {k: f'<section class="pg-intro"><h2>{h}</h2>{v}</section>' for k, (
 }.items()}
 
 
-def page(path, title, desc, body, crumbs=None, ld=None, full_title=False, noindex=False, og=None):
+def page(path, title, desc, body, crumbs=None, ld=None, full_title=False, noindex=False, og=None, lang='ko'):
     url = SITE + path
     TH = theme_of(path)
     # 사이트맵 lastmod: 날짜·시각·D-day 처럼 매번 바뀌는 글자는 빼고 내용이 바뀐 날만 갱신
@@ -127,11 +127,11 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False, noinde
     ldh = ''.join('<script type="application/ld+json">%s</script>' % json.dumps(x, ensure_ascii=False).replace('</', '<\\/') for x in lds)
     nav = ''.join(f'<a href="/{s}/">{n}</a>' for s, n in NAV + ([('community', '원정대')] if COMM_API else []))
     doc = f'''<!doctype html>
-<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<html lang="{lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{E(t)}</title>
 <meta name="description" content="{E(desc)}">{'<meta name="robots" content="noindex,follow">' if noindex else ''}
-<link rel="canonical" href="{url}">
-<meta property="og:type" content="website"><meta property="og:locale" content="ko_KR"><meta property="og:site_name" content="{NAME}">
+<link rel="canonical" href="{url}">{f'<link rel="alternate" hreflang="en" href="{url}">' if lang == 'en' else ''}
+<meta property="og:type" content="website"><meta property="og:locale" content="{'en_US' if lang == 'en' else 'ko_KR'}"><meta property="og:site_name" content="{NAME}">
 <meta property="og:title" content="{E(t)}"><meta property="og:description" content="{E(desc)}"><meta property="og:url" content="{url}">
 <meta property="og:image" content="{SITE}{og or "/assets/ruri/og.jpg"}"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="{SITE}{og or "/assets/ruri/og.jpg"}">
@@ -1230,7 +1230,7 @@ def build():
     rv_urls, REVIEWS[:] = review_pages()
     extra_urls += rv_urls
     extra_urls += fr_urls
-    extra_urls += ailog_page(live, len(extra_urls)) + all_page()
+    extra_urls += dev_pages(live) + ailog_page(live, len(extra_urls)) + all_page()
     community(live)
     lab_urls = lab() or []
     me_pages()
@@ -1248,7 +1248,7 @@ def build():
     old = set(json.load(open(SENT, encoding='utf-8'))) if os.path.exists(SENT) else (set(re.findall(r'<loc>([^<]+)</loc>', open(sm, encoding='utf-8').read())) if os.path.exists(sm) else set())
     NEW_URLS = [SITE + u for u in urls if SITE + u not in old and u not in NOINDEX]
     with open(sm, 'w', encoding='utf-8', newline='\n') as f:
-        f.write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n')
+        f.write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n')
         LM = os.path.join(HERE, 'lastmod.json')
         lm = json.load(open(LM, encoding='utf-8')) if os.path.exists(LM) else {}
         _lm_old = {k: v[0] for k, v in lm.items()}
@@ -1259,7 +1259,7 @@ def build():
         json.dump(lm, open(LM, 'w', encoding='utf-8'), ensure_ascii=False)
         chg = [SITE + u for u in urls if u.startswith('/c/') and u not in NOINDEX and lm[u][1] == TODAY.isoformat() and SITE + u not in NEW_URLS and lm[u][0] != _lm_old.get(u)]
         NEW_URLS.extend(chg[:100])   # 2026-10-19: 바뀐 공모전 상세도 IndexNow 로
-        f.writelines(f'<url><loc>{SITE}{u}</loc><lastmod>{lm[u][1]}</lastmod></url>\n' for u in urls if u not in NOINDEX)
+        f.writelines(f'<url><loc>{SITE}{u}</loc><lastmod>{lm[u][1]}</lastmod>' + (f'<xhtml:link rel="alternate" hreflang="en" href="{SITE}{u}"/>' if u.startswith('/en/') else '') + '</url>\n' for u in urls if u not in NOINDEX)
         f.write('</urlset>\n')
     SMT = [('contest', ('/c/', '/cat/', '/contest/', '/lab/', '/guide/', '/prep/', '/widget/', '/ssul/')), ('apply', ('/a/', '/apply/', '/event/', '/fridge/', '/qa/')),
            ('money', ('/analyst/', '/money/')), ('issue', ('/news/', '/talk/', '/mag/', '/kw/', '/hot/', '/satire/', '/review/'))]
@@ -1267,8 +1267,8 @@ def build():
     for nm, pre in SMT + [('etc', None)]:
         L = [u for u in urls if u not in NOINDEX and ((pre and u.startswith(pre)) or (not pre and not any(u.startswith(x) for _, ps in SMT for x in ps)))]
         with open(os.path.join(ROOT, f'sitemap-{nm}.xml'), 'w', encoding='utf-8', newline='\n') as f2:
-            f2.write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n')
-            f2.writelines(f'<url><loc>{SITE}{u}</loc><lastmod>{lm[u][1]}</lastmod></url>\n' for u in L)
+            f2.write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n')
+            f2.writelines(f'<url><loc>{SITE}{u}</loc><lastmod>{lm[u][1]}</lastmod>' + (f'<xhtml:link rel="alternate" hreflang="en" href="{SITE}{u}"/>' if u.startswith('/en/') else '') + '</url>\n' for u in L)
             f2.write('</urlset>\n')
         idx.append((nm, max([lm[u][1] for u in L] or [TODAY.isoformat()])))
     with open(os.path.join(ROOT, 'sitemap_index.xml'), 'w', encoding='utf-8', newline='\n') as f2:
@@ -2014,6 +2014,94 @@ def kw_pages():
     return urls
 
 
+DEV_F = os.path.join(HERE, 'dev_posts.json')   # 개발 지식 글 목록(본문은 devsrc/<slug>.html). 2026-10-19 사용자: 「AI 로그는 개발 지식 쪽으로, 레딧 질문에 답·테스트 자료를 바로 올려 유입」
+
+
+def dev_url(p):
+    return f'/en/guide/{p["slug"]}/' if p['lang'] == 'en' else f'/dev/{p["slug"]}/'
+
+
+def dev_posts():
+    P = json.load(open(DEV_F, encoding='utf-8')) if os.path.exists(DEV_F) else []
+    return [p for p in P if os.path.exists(os.path.join(HERE, 'devsrc', p['slug'] + '.html'))]
+
+
+def dev_requests(P):
+    """홍보 세션이 community_posted.jsonl rule_note 에 남긴 needs_page:<slug> 를 모아, 아직 글이 없는 주제를 dev_requests.json 으로 (다음 글 후보)."""
+    have = {p['slug'] for p in P}; req = {}
+    src = os.path.join(os.path.expanduser('~'), 'Desktop', '공모전_2026', 'daily', 'community_posted.jsonl')
+    if os.path.exists(src):
+        for l in open(src, encoding='utf-8'):
+            try:
+                r = json.loads(l)
+            except ValueError:
+                continue
+            for m in re.finditer(r'needs_page:([a-z0-9-]+)', r.get('rule_note') or ''):
+                x = req.setdefault(m.group(1), {'slug': m.group(1), 'count': 0, 'first': r.get('time'), 'last': r.get('time'), 'threads': []})
+                x['count'] += 1; x['last'] = r.get('time')
+                if r.get('url') and len(x['threads']) < 5:
+                    x['threads'].append({'url': r['url'], 'title': (r.get('title') or '')[:120]})
+    out = sorted([x for k, x in req.items() if k not in have], key=lambda x: (-x['count'], x['first'] or ''))
+    json.dump({'updated': datetime.datetime.now().isoformat(timespec='minutes'), 'todo': out, 'done': sorted(k for k in req if k in have)},
+              open(os.path.join(HERE, 'dev_requests.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+    return out
+
+
+FOREIGN_OK = re.compile(r'외국인|국적\s*(무관|불문|제한\s*없)|foreigner|nationality', re.I)
+FOREIGN_NO = re.compile(r'외국인\s*(은|의)?\s*(제외|불가|응모\s*불가|참여\s*불가)|내국인\s*만|대한민국\s*국적(자)?\s*만|외국\s*국적\s*(자\s*)?(제외|불가)')
+
+
+def foreign_contests(live):
+    """외국인도 낼 수 있는 진행 중 공모전 (응모자격 원문에 외국인·국적 무관이 있고, 제외 문구가 없는 것). 2026-10-19 레딧(한국 거주 외국인) 가이드용"""
+    L = [c for c in live if FOREIGN_OK.search(c.get('elig') or '') and not FOREIGN_NO.search(c.get('elig') or '') and ' > ' not in c['title'] and c['end'] >= TODAY.isoformat()]
+    return sorted(L, key=lambda c: (c['end'], -(c.get('pv') or 0)))
+
+
+def foreign_list_html(live):
+    L = foreign_contests(live)
+    if not L:
+        return '<p>No open contests mention foreigners right now. Check back tomorrow.</p>'
+    rows = ''.join(f'<tr><td>{c["end"]}</td><td><a href="/c/{c["id"]}/">{E(c["title"][:70])}</a></td><td>{E(c["prize"]) if c.get("pv") else "-"}</td><td lang="ko">{E((c.get("elig") or "")[:90])}</td></tr>' for c in L[:60])
+    return (f'<p><b>{len(L)}</b> open contests as of {TODAY.isoformat()} (deadline order' + (', first 60 shown' if len(L) > 60 else '') + ').</p>'
+            f'<table><tr><th>Deadline</th><th>Contest (Korean)</th><th>Top prize</th><th>Eligibility (original)</th></tr>{rows}</table>')
+
+
+def dev_pages(live=()):
+    P = dev_posts(); urls = []
+    try:
+        print('개발 글 요청 후보', len(dev_requests(P)))
+    except Exception as e:
+        print('개발 글 요청 읽기 실패', repr(e)[:100])
+    css = ('<link rel="stylesheet" href="/assets/mag/mag.css?v=10"><style>.dev table{width:100%;border-collapse:collapse;margin:12px 0;font-size:.92em;display:block;overflow-x:auto}.dev th,.dev td{border:1px solid #e5e7eb;padding:6px 8px;text-align:left;vertical-align:top}'
+           '.dev pre{background:#0f172a;color:#e2e8f0;padding:12px;border-radius:8px;overflow-x:auto;font-size:.85em}.dev code{font-size:.92em}.dev dt{font-weight:700;margin-top:10px}.dev dd{margin:4px 0 0 0}'
+           '.dev-ls{list-style:none;padding:0}.dev-ls li{margin:8px 0}.dev-ls a{display:block;padding:12px;border:1px solid #e5e7eb;border-radius:10px;text-decoration:none;color:inherit}.dev-ls span{display:block;font-size:.88em;color:#64748b;margin-top:4px}</style>')
+    for p in P:
+        u = dev_url(p); en = p['lang'] == 'en'
+        body_ = open(os.path.join(HERE, 'devsrc', p['slug'] + '.html'), encoding='utf-8').read()
+        if '<!--FOREIGN_LIST-->' in body_:
+            body_ = body_.replace('<!--FOREIGN_LIST-->', foreign_list_html(live))
+        src = ''.join(f'<li><a href="{E(x[1])}"' + ('' if x[1].startswith('/') else ' rel="nofollow noopener" target="_blank"') + f'>{E(x[0])}</a> — {"checked" if en else "확인"} {E(x[2])}</li>' for x in p.get('sources', []))
+        hub = p.get('hub')
+        body = (f'<p class="bc"><a href="/">{"Home" if en else "홈"}</a> › <a href="{"/en/guide/" if en else "/ailog/"}">{"Guides" if en else "개발 지식"}</a></p>'
+                f'<article class="dev" lang="{p["lang"]}"><h1>{E(p["title"])}</h1><p class="note">{"Published" if en else "작성"} {p["date"]}'
+                + (f' · {"updated" if en else "고침"} {p["updated"]}' if p.get('updated') else '') + '</p>'
+                + body_ + (f'<h2>{"Sources" if en else "출처"}</h2><ul>{src}</ul>' if src else '')
+                + (f'<p class="dev-hub">{"Related (Korean)" if en else "관련"}: <a href="{E(hub[1])}">{E(hub[0])}</a></p>' if hub else '') + f'</article>{css}')
+        t = p['title'] + ' | Ruri Jupjup' if en and len(p['title']) + 14 <= 70 else p['title']
+        ld = {'@context': 'https://schema.org', '@type': 'TechArticle', 'headline': p['title'][:110], 'description': p['desc'], 'inLanguage': p['lang'], 'datePublished': p['date'],
+              'dateModified': p.get('updated') or p['date'], 'author': {'@type': 'Organization', 'name': NAME}, 'mainEntityOfPage': SITE + u}
+        page(u, t, p['desc'], body, [('Home' if en else NAME, '/'), ('Guides' if en else '개발 지식', '/en/guide/' if en else '/ailog/'), (p['title'], u)], ld=ld, full_title=en, lang=p['lang'])
+        urls.append(u)
+    EP = [p for p in P if p['lang'] == 'en']
+    if EP:
+        li = ''.join(f'<li><a href="{dev_url(p)}"><b>{E(p["title"])}</b><span>{E(p["desc"])}</span></a></li>' for p in sorted(EP, key=lambda p: p['date'], reverse=True))
+        page('/en/guide/', 'Practical Guides: Life in Korea, AI Tools, Self-Hosting | Ruri Jupjup', 'Step-by-step English guides on living and working in Korea, AI tools at work, self-hosting and software testing, with official sources and dates.',
+             f'<p class="bc"><a href="/">Home</a> › Guides</p><h1>Practical guides</h1><p>Step-by-step guides with tables and FAQs. Numbers come from official sources, with the date we checked them.</p><ul class="dev-ls">{li}</ul>{css}',
+             [('Home', '/'), ('Guides', '/en/guide/')], full_title=True, lang='en')
+        urls.append('/en/guide/')
+    return urls
+
+
 def ailog_page(live, nurls):
     # AI 제작 로그 (2026-10-18 사용자: "AI로 이 사이트 어케 만들었는지 다 공개", "홍보 마케팅은 기밀, 사이트 쪽만", "핵심은 비용 0원으로 그럴듯한 운영")
     a = json.load(open(os.path.join(HERE, 'ailog.json'), encoding='utf-8'))
@@ -2034,7 +2122,11 @@ def ailog_page(live, nurls):
     fixes = ''.join(f'<li><b>❌ {E(x)}</b><span>✅ {E(y)}</span></li>' for x, y in a['fixes'])
     rules = ''.join(f'<li>{E(x)}</li>' for x in a['rules'])
     tl = ''.join(f'<li><em>{E(d)}</em><span>{E(t)}</span></li>' for d, t in a['timeline'])
-    body = (f'<p class="bc"><a href="/">홈</a> › AI 제작 로그</p><h1>🤖 AI 제작 로그 — 서버비 0원으로 이 사이트를 만든 방법</h1>'
+    DP = sorted(dev_posts(), key=lambda p: p['date'], reverse=True)
+    dli = ''.join(f'<li><a href="{dev_url(p)}"><b>{"[EN] " if p["lang"] == "en" else ""}{E(p["title"])}</b><span>{E(p["desc"])}</span></a></li>' for p in DP)
+    body = (f'<p class="bc"><a href="/">홈</a> › 개발 지식</p><h1>🧑‍💻 개발 지식 — 직접 해 보고 정리한 AI·개발 가이드</h1>'
+            + (f'<style>.dev-ls{{list-style:none;padding:0}}.dev-ls li{{margin:8px 0}}.dev-ls a{{display:block;padding:12px;border:1px solid #e5e7eb;border-radius:10px;text-decoration:none;color:inherit}}.dev-ls span{{display:block;font-size:.88em;color:#64748b;margin-top:4px}}</style><section class="mg-s"><h2>📚 가이드·실험 노트</h2><p class="note">질문이 들어온 주제를 직접 테스트하고 공식 문서 숫자로 정리해요. 영어 글은 <a href="/en/guide/">English guides</a>에 모여 있어요.</p><ul class="dev-ls">{dli}</ul></section>' if DP else '')
+            + '<h2 id="log">🤖 AI 제작 로그 — 서버비 0원으로 이 사이트를 만든 방법</h2>'
             + say('o_desk', E(a['lead']))
             + f'<div class="al-st">{st}</div>'
             + f'<section class="mg-s"><h2>💸 비용표: 어디에 얼마 드나</h2><table class="al-t"><tr><th>무엇</th><th>쓰는 것</th><th>비용</th></tr>{cost}</table><p class="note">{E(a["cost_note"])}</p></section>'
@@ -2044,9 +2136,9 @@ def ailog_page(live, nurls):
             + f'<section class="mg-s"><h2>📏 지킨 원칙</h2><ul class="al-r">{rules}</ul></section>'
             + f'<section class="mg-s"><h2>🗓️ 날짜별 기록</h2><ul class="al-tl">{tl}</ul></section>'
             + '<p class="note">이 페이지는 사이트 개발 과정만 공개해요. 숫자는 빌드할 때마다 자동으로 갱신돼요.</p><link rel="stylesheet" href="/assets/mag/mag.css?v=10">')
-    page('/ailog/', 'AI 제작 로그 — 서버비 0원으로 정보 사이트 만들기(Claude Code)',
+    page('/ailog/', '개발 지식 — AI·개발 가이드와 사이트 제작 로그(Claude Code)',
          f'사람 한 명의 말과 AI(Claude Code)로 {days}일 동안 페이지 {npage:,}개짜리 정보 사이트를 만든 기록. 무료 호스팅·무료 서버리스·공개 RSS로 서버비 0원, 매시간 자동 갱신.',
-         body, [('루리의 줍줍', '/'), ('AI 제작 로그', '/ailog/')])
+         body, [('루리의 줍줍', '/'), ('개발 지식', '/ailog/')])
     return ['/ailog/']
 
 
@@ -2649,7 +2741,7 @@ def me_pages():
     """내 공간(가입 혜택 모음) · 관리자 (2026-10-17)"""
     page('/me/', '내 공간 — 찜·응모 기록·마감 알림', '찜한 공모전·청약, 응모 기록, 마감 알림 메일, 자격 프로필, 청약 가점 계산기를 한곳에서.',
          '''<section id="me" aria-label="내 공간"></section><link rel="stylesheet" href="/assets/me/me.css?v=2"><script defer src="/assets/me/me.js?v=2"></script>''', [('루리의 줍줍', '/'), ('내 공간', '/me/')])
-    page('/admin/', '관리자', '관리자', '''<section id="admin"></section><section id="promo-admin"></section><section id="gsc-admin"></section><link rel="stylesheet" href="/assets/me/me.css?v=3"><script defer src="/assets/me/admin.js?v=6"></script><script defer src="/assets/me/promo-admin.js?v=2"></script>''', noindex=True)
+    page('/admin/', '관리자', '관리자', '''<section id="admin"></section><section id="gsc-admin"></section><link rel="stylesheet" href="/assets/me/me.css?v=3"><script defer src="/assets/me/admin.js?v=6"></script>''', noindex=True)
 
 
 def lab():
@@ -2732,22 +2824,7 @@ def daily_jobs():
     SF = os.path.join(HERE, 'promo_state.json')
     st = json.load(open(SF, encoding='utf-8')) if os.path.exists(SF) else {}
     h, d = NOW_KST().hour, TODAY.isoformat()
-    slots = ([('am', 7)] + ([('mon', 7)] if TODAY.weekday() == 0 else []) + [('pm', 13)])
-    for sl, hh in slots:
-        if h >= hh and st.get(sl) != d:
-            try:
-                import promo
-                M = promo.run(sl)
-                print('홍보 후보', sl, len(M), '검토 대기', sum(1 for m in M if m[7] == 'REVIEW'))
-                st[sl] = d
-            except Exception as e:
-                print('홍보 후보 실패', sl, repr(e)[:120])
-    try:   # 홍보 세션 연동: 게시 완료 반영 + 검토 목록 내보내기(빌드마다)
-        import promo
-        R, W = promo.sync()
-        print('홍보 동기화', '게시 반영', len(R), '검토 목록', len(W))
-    except Exception as e:
-        print('홍보 동기화 실패', repr(e)[:120])
+    # 2026-10-19 사용자 「관리자에서 홍보 관리는 없애, 필요없는 기능」: 홍보 후보 생성(promo.run)·동기화(promo.sync) 중단. promo.py 는 남겨 둠
     if TODAY.weekday() == 0 and st.get('tune') != d:   # 매주 월요일: 추천 가중치 조정(클릭된 추천의 점수 구성이 평균보다 높은 항목은 가중치 +10%, 낮으면 -10%)
         try:
             import push

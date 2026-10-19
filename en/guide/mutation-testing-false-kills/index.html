@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mutation Testing False Kills: Baselines, File Access, Kill Reasons</title>
+<meta name="description" content="Why mutation scores get inflated by false kills and three checks to catch them: a pristine-copy baseline, proof the mutated file was read, and the kill-reason distribution.">
+<link rel="canonical" href="https://sungprofile.cloud/en/guide/mutation-testing-false-kills/"><link rel="alternate" hreflang="en" href="https://sungprofile.cloud/en/guide/mutation-testing-false-kills/">
+<meta property="og:type" content="website"><meta property="og:locale" content="en_US"><meta property="og:site_name" content="루리의 줍줍">
+<meta property="og:title" content="Mutation Testing False Kills: Baselines, File Access, Kill Reasons"><meta property="og:description" content="Why mutation scores get inflated by false kills and three checks to catch them: a pristine-copy baseline, proof the mutated file was read, and the kill-reason distribution."><meta property="og:url" content="https://sungprofile.cloud/en/guide/mutation-testing-false-kills/">
+<meta property="og:image" content="https://sungprofile.cloud/assets/ruri/og.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://sungprofile.cloud/assets/ruri/og.jpg">
+<meta name="theme-color" content="#0f172a">
+<link rel="icon" href="/favicon.ico?v=6" sizes="any"><link rel="icon" type="image/png" sizes="48x48" href="/assets/icons/icon-48.png?v=6"><link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/icon-96.png?v=6"><link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/icon-192.png?v=6"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=6"><link rel="manifest" href="/site.webmanifest"><link rel="alternate" type="application/rss+xml" title="루리의 줍줍" href="/rss.xml">
+<link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="/assets/gm.css?v=17"><link rel="stylesheet" href="/assets/community/comm.css?v=14"><script defer src="/assets/community/comm.js?v=23"></script><script defer src="/assets/community/crew.js?v=1"></script><script defer src="/assets/app/app.js?v=3"></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://sungprofile.cloud/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://sungprofile.cloud/en/guide/"}, {"@type": "ListItem", "position": 3, "name": "Mutation Testing False Kills: Baselines, File Access, Kill Reasons", "item": "https://sungprofile.cloud/en/guide/mutation-testing-false-kills/"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Mutation Testing False Kills: Baselines, File Access, Kill Reasons", "description": "Why mutation scores get inflated by false kills and three checks to catch them: a pristine-copy baseline, proof the mutated file was read, and the kill-reason distribution.", "inLanguage": "en", "datePublished": "2026-10-19", "dateModified": "2026-10-19", "author": {"@type": "Organization", "name": "루리의 줍줍"}, "mainEntityOfPage": "https://sungprofile.cloud/en/guide/mutation-testing-false-kills/"}</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4248498719773262" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G9BPFF95GY"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());if(location.hostname!=='sungprofile.cloud')window['ga-disable-G-G9BPFF95GY']=true;gtag('config','G-G9BPFF95GY');</script>
+</head><body data-th="ai" data-api="https://jupjup-api.sung2011103.workers.dev">
+<header class="hd"><div class="w hd-in"><a class="logo" href="/"><img src="/assets/icons/logo.svg" width="30" height="30" alt="루리의 줍줍"><span>루리의 <b>줍줍</b></span></a><span class="th-name">🧑‍💻 개발 지식</span></div>
+<nav class="th-sw w" aria-label="테마"><a href="/news/" style="--tc:#b45309">🕵️ 이슈</a><a href="/analyst/" style="--tc:#047857">📊 머니</a><a href="/contest/" style="--tc:#6d28d9">🏆 공모전</a><a href="/apply/" style="--tc:#0e7490">🍳 생활</a><a href="/ailog/" style="--tc:#0f172a" class=on>🧑‍💻 개발 지식</a></nav>
+<nav class="tb w" aria-label="개발 지식 메뉴"><a href="/ailog/">개발 지식</a><a href="/en/guide/" class=on>English guides</a><a href="/ailog/#log">AI 제작 로그</a></nav></header>
+<main class="w">
+<p class="bc"><a href="/">Home</a> › <a href="/en/guide/">Guides</a></p><article class="dev" lang="en"><h1>Mutation Testing False Kills: Baselines, File Access, Kill Reasons</h1><p class="note">Published 2026-10-19</p><p>Mutation testing changes your code on purpose (a <code>&lt;</code> becomes <code>&lt;=</code>, a <code>return x</code> becomes <code>return None</code>) and checks whether your tests notice. A "killed" mutant means a test failed. But a test can fail for reasons that have nothing to do with the mutation — and then your mutation score looks better than your tests really are. This guide shows three checks that catch these <b>false kills</b>.</p>
+<h2>Why false kills happen</h2>
+<table><tr><th>Cause</th><th>What you see</th></tr>
+<tr><td>The suite was already failing or flaky before mutation</td><td>Many kills with the same unrelated error</td></tr>
+<tr><td>Tests import the original file, not the mutated copy</td><td>Kills only from timeouts or environment errors</td></tr>
+<tr><td>Timeouts from slow machines</td><td>Kills clustered on long-running tests</td></tr>
+<tr><td>Shared state between runs (temp files, caches, ports)</td><td>Kill result changes when you rerun the same mutant</td></tr></table>
+<p>Timeouts matter for the score: in Stryker, <b>detected = killed + timeout</b>, and <b>mutation score = detected / valid × 100</b>. A machine that times out a lot inflates the score. Source: <a href="https://stryker-mutator.io/docs/mutation-testing-elements/mutant-states-and-metrics/" rel="nofollow noopener" target="_blank">Stryker mutant states and metrics</a>, checked 2026-10-19.</p>
+<h2>Check 1 — Baseline on a pristine copy</h2>
+<ol><li>Copy the project to a fresh directory, exactly as the mutation tool will (same sandbox, same env vars).</li>
+<li>Run the full test suite there with <b>no</b> mutation, three times.</li>
+<li>It must pass all three times. Any failure here is a pre-existing failure that will show up as fake kills later — fix or quarantine it first.</li></ol>
+<pre><code>cp -r project /tmp/mt-baseline &amp;&amp; cd /tmp/mt-baseline
+for i in 1 2 3; do pytest -q -p no:cacheprovider || echo "BASELINE FAIL $i"; done</code></pre>
+<h2>Check 2 — Prove the tests read the mutated file</h2>
+<p>If a test never loads the mutated file, it cannot have killed that mutant. Record file access during each mutant run. In Python, an audit hook is enough:</p>
+<pre><code># conftest.py
+import sys, os
+TARGET = os.environ.get("MUT_TARGET")  # path of the mutated file
+def hook(event, args):
+    if event == "open" and TARGET and str(args[0]).endswith(TARGET):
+        open("/tmp/mut_touched", "a").write("1")
+sys.addaudithook(hook)</code></pre>
+<p>Run each mutant with stale bytecode removed (delete <code>__pycache__</code> in the copy) so the source file is actually read. Rule: a kill where the target file was never opened is marked <b>suspect</b> and rerun. On other stacks, <code>strace -e trace=openat</code> (Linux) or the test runner's coverage data serve the same purpose.</p>
+<h2>Check 3 — Look at the kill-reason distribution</h2>
+<ol><li>For every killed mutant, store <i>why</i> the run failed: assertion error, other exception, timeout, crash, collection/import error.</li>
+<li>Make a simple count table.</li></ol>
+<table><tr><th>Reason</th><th>Healthy pattern</th><th>Red flag</th></tr>
+<tr><td>Assertion failure</td><td>Most kills</td><td>—</td></tr>
+<tr><td>Other exception</td><td>Some</td><td>One identical message on many mutants</td></tr>
+<tr><td>Timeout</td><td>Few (infinite-loop mutants)</td><td>Large share; rises on slower machines</td></tr>
+<tr><td>Import / collection error</td><td>Almost none</td><td>Any meaningful share — the harness, not the tests, is failing</td></tr></table>
+<h2>Putting it together</h2>
+<ul class="chk"><li>Baseline green 3/3 on a pristine copy</li><li>Every kill has a "target file opened" record</li><li>Assertion failures are the largest kill reason</li><li>Rerun a random 5% of kills; results should not change</li></ul>
+<h2>FAQ</h2>
+<dl><dt>Should I raise the timeout?</dt><dd>Set it from the baseline: measure the normal suite time, then allow a multiple of it. Too low creates fake kills; too high slows the run.</dd>
+<dt>Do compile errors count?</dt><dd>In Stryker, compile and runtime errors are "invalid" mutants and are not part of the score.</dd></dl>
+<h2>Sources</h2><ul><li><a href="https://stryker-mutator.io/docs/mutation-testing-elements/mutant-states-and-metrics/" rel="nofollow noopener" target="_blank">Stryker: mutant states and metrics</a> — checked 2026-10-19</li></ul><p class="dev-hub">Related (Korean): <a href="/ailog/">개발 지식 모음 (한국어)</a></p></article><link rel="stylesheet" href="/assets/mag/mag.css?v=10"><style>.dev table{width:100%;border-collapse:collapse;margin:12px 0;font-size:.92em;display:block;overflow-x:auto}.dev th,.dev td{border:1px solid #e5e7eb;padding:6px 8px;text-align:left;vertical-align:top}.dev pre{background:#0f172a;color:#e2e8f0;padding:12px;border-radius:8px;overflow-x:auto;font-size:.85em}.dev code{font-size:.92em}.dev dt{font-weight:700;margin-top:10px}.dev dd{margin:4px 0 0 0}.dev-ls{list-style:none;padding:0}.dev-ls li{margin:8px 0}.dev-ls a{display:block;padding:12px;border:1px solid #e5e7eb;border-radius:10px;text-decoration:none;color:inherit}.dev-ls span{display:block;font-size:.88em;color:#64748b;margin-top:4px}</style>
+</main>
+<footer class="ft"><div class="w ft-in"><div class="ft-b"><img class="av" src="/assets/ruri/avatar.webp" width="56" height="56" alt="루리" loading="lazy"><div><b>루리의 줍줍</b><p>마감 놓치지 마세요! 매일 아침 새 공모전을 정리해 둘게요.</p><p class="ft-m">문의 <a href="mailto:sung2011103@naver.com">sung2011103@naver.com</a></p></div></div>
+<p class="ft-l"><a href="/about/">소개</a><a href="/all/">전체 메뉴</a><a href="/ailog/">🤖 AI 제작 로그</a><a href="/news/">🕵️ 기사 확인 신호</a><a href="/app/">📲 앱·알림</a><a href="/prep/">준비실</a><a href="/qa/">고민 해결</a><a href="/guide/">응모 가이드</a><a href="/event/">경품 이벤트</a><a href="/privacy/">개인정보처리방침</a><a href="/terms/">이용약관</a><a href="/contact/">문의</a></p>
+<p class="ft-n">공모전 정보는 각 주최 기관의 공고를 바탕으로 정리했으며, 정확한 요강은 반드시 공식 공고에서 확인하세요. © 2026 루리의 줍줍 · sungprofile.cloud</p></div></footer>
+</body></html>
