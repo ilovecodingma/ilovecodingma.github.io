@@ -16,7 +16,11 @@ KST = datetime.timezone(datetime.timedelta(hours=9))
 UA = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0 Safari/537.36'}
 STOCK_FEEDS = [('머니투데이', 'https://rss.mt.co.kr/mt_news_stock.xml'), ('이데일리', 'http://rss.edaily.co.kr/stock_news.xml'), ('인포스탁데일리', 'https://www.infostockdaily.co.kr/rss/allArticle.xml'),
                ('아시아경제', 'https://www.asiae.co.kr/rss/stock.htm'), ('연합뉴스', 'https://www.yna.co.kr/rss/market.xml'), ('한국경제', 'https://www.hankyung.com/feed/finance'),
-               ('뉴시스', 'https://newsis.com/RSS/economy.xml'), ('파이낸셜뉴스', 'https://www.fnnews.com/rss/r20/fn_realnews_stock.xml'), ('연합뉴스', 'https://www.yna.co.kr/rss/economy.xml')]
+               ('뉴시스', 'https://newsis.com/RSS/economy.xml'), ('파이낸셜뉴스', 'https://www.fnnews.com/rss/r20/fn_realnews_stock.xml'),
+               # 2026-10-20 전문가 코멘트 수집량 보강(하루 1~4건 → 늘림). robots.txt 허용 확인. 매경(403)·뉴스1(RSS 없음)·구글뉴스(금지)는 뺌
+               ('연합인포맥스', 'https://news.einfomax.co.kr/rss/allArticle.xml'), ('한국경제', 'https://www.hankyung.com/feed/economy'), ('이데일리', 'http://rss.edaily.co.kr/edaily_news.xml'),
+               ('서울경제', 'https://www.sedaily.com/rss/finance'), ('서울경제', 'https://www.sedaily.com/rss/market'), ('서울경제', 'https://www.sedaily.com/rss/economy'),
+               ('연합뉴스', 'https://www.yna.co.kr/rss/economy.xml')]   # 맨 끝은 코인 기사에도 씀
 COIN_FEEDS = [('블록미디어', 'https://www.blockmedia.co.kr/feed'), ('토큰포스트', 'https://www.tokenpost.kr/rss')]
 COINS = {'BTC': ('비트코인', r'비트코인|BTC|Bitcoin'), 'ETH': ('이더리움', r'이더리움|ETH\b|Ethereum'), 'XRP': ('리플', r'리플|XRP'), 'SOL': ('솔라나', r'솔라나|\bSOL\b|Solana'), 'DOGE': ('도지코인', r'도지코인|DOGE')}
 BROKERS = {'한투': '한국투자증권', '한국투자': '한국투자증권', '한화': '한화투자증권', '대신': '대신증권', '신한': '신한투자증권', 'KB': 'KB증권', '키움': '키움증권', 'NH': 'NH투자증권', '미래에셋': '미래에셋증권',
@@ -213,22 +217,25 @@ def coin_nodes(arts, bodies):
     return nodes
 
 
-EXP_ROLE = re.compile(r'리서치센터장|센터장|최고투자책임자|CIO|수석\s?이코노미스트|이코노미스트|전략가|스트래티지스트|투자전략팀장|운용역|펀드매니저|한국은행|한은 총재|총재|KDI|한국개발연구원|IMF|OECD|국제통화기금|연준|파월|월가|골드만삭스|JP모건|모건스탠리|블랙록|자산운용|버핏|다이먼')
+EXP_ROLE = re.compile(r'리서치센터장|센터장|본부장|수석연구위원|수석연구원|수석\s?전략가|연구위원|금융위원장|금감원장|금융감독원장|기재부 장관|기획재정부 장관|경제부총리|자본시장연구원|금융연구원|씨티|BofA|뱅크오브아메리카|노무라|최고투자책임자|CIO|수석\s?이코노미스트|이코노미스트|전략가|스트래티지스트|투자전략팀장|운용역|펀드매니저|한국은행|한은 총재|총재|KDI|한국개발연구원|IMF|OECD|국제통화기금|연준|파월|월가|골드만삭스|JP모건|모건스탠리|블랙록|자산운용|버핏|다이먼')
 EXP_SAY = re.compile(r'전망|예상|경고|우려|조언|분석|진단|관측|내다|점쳤|권고|제시|"|“')
 EXP_CAT = [('리스크 경고', r'경고|우려|위험|버블|거품|폭락|급락|경계|하방|침체|위기|리스크'), ('자산배분 조언', r'비중|분산|채권|현금|포트폴리오|자산배분|담아|줄여|늘려|매수 기회|분할 매수|리밸런싱|배당주')]
 EXP_TOPIC = [('코스피·국내 증시', r'코스피|코스닥|국내 증시|韓 증시|한국 증시|K-?증시'), ('미국 증시', r'S&P|나스닥|뉴욕증시|미 증시|미국 증시|다우'), ('금리', r'금리|기준금리|연준|Fed|FOMC|한은'),
              ('환율', r'환율|원·달러|원달러|달러|엔화'), ('반도체·AI', r'반도체|HBM|AI|엔비디아|삼성전자|하이닉스'), ('부동산', r'부동산|집값|아파트|주택'), ('경기·성장률', r'성장률|경기|GDP|침체|물가|인플레'),
-             ('코인', r'비트코인|이더리움|가상자산|암호화폐'), ('원자재', r'유가|금값|원자재|구리')]
+             ('코인', r'비트코인|이더리움|가상자산|암호화폐'), ('원자재', r'유가|금값|원자재|구리'), ('기타 시장', r'(?!)')]   # 위 주제에 안 맞으면 기타 시장(2026-10-20, 버리지 않음)
+
+
+EXP_NOT = re.compile(r'접견|개소|취임|선임|인사|출범|MOU|업무협약|협약 체결|IMF급|IMF 외환위기|IMF 때|부고|별세|수상|시상')   # 2026-10-20 발언 아닌 행사·인사·비유
 
 
 def expert_nodes(arts):
     out = []
     for a in arts:
         t = a['t'] + ' ' + a.get('d', '')[:160]
-        if not (EXP_ROLE.search(a['t']) and EXP_SAY.search(t)) or re.search(r'목표(?:주)?가|투자의견', a['t']):
+        if not (EXP_ROLE.search(a['t']) and EXP_SAY.search(t)) or re.search(r'목표(?:주)?가|투자의견', a['t']) or EXP_NOT.search(a['t']):
             continue
-        tp = next((n for n, rx in EXP_TOPIC if re.search(rx, t)), None)
-        if not tp:
+        tp = next((n for n, rx in EXP_TOPIC if re.search(rx, t)), '기타 시장')
+        if tp == '기타 시장' and not re.search(r'[“"]', a['t']):   # 기타 시장은 따옴표 발언이 제목에 있을 때만
             continue
         who = EXP_ROLE.search(a['t']).group(0)
         m = re.search(r'([가-힣A-Za-z&·]{2,12}(?:증권|자산운용|운용|은행|연구원|캐피털|인베스트먼트)?)\s?(?:' + re.escape(who) + ')', a['t'])
@@ -362,15 +369,18 @@ def main():
     experts = []
     for tp, _ in EXP_TOPIC:
         ns = [n for n in E_ if n['topic'] == tp]
+        ns = [n for i, n in enumerate(ns) if n['t'] not in [x['t'] for x in ns[:i]]]   # 같은 제목(여러 피드) 한 번
         if not ns:
             continue
         bu, be = sum(1 for n in ns if n['dir'] == 'bull'), sum(1 for n in ns if n['dir'] == 'bear')
-        experts.append({'topic': tp, 'n': len(ns), 'bull': bu, 'bear': be, 'mixed': 1 if bu and be else 0,
+        experts.append({'topic': tp, 'n': len(ns), 'last': ns[0]['ts'], 'bull': bu, 'bear': be, 'mixed': 1 if bu and be else 0,
                         'cats': {c: sum(1 for n in ns if n['cat'] == c) for c in ('시장 전망', '자산배분 조언', '리스크 경고')},
                         'nodes': [{k: n.get(k) for k in ('who', 'cat', 'dir', 't', 'u', 'o', 'ts')} for n in ns[:12]]})
     experts.sort(key=lambda x: (-x['mixed'], -x['n']))
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
-    json.dump({'experts': experts, 'updated': datetime.datetime.now(KST).strftime('%Y-%m-%d %H:%M'), 'stocks': stocks, 'coins': coins},
+    experts.sort(key=lambda e: -e['last'])   # 새 발언이 나온 주제부터
+    exp_meta = {'n24': sum(1 for n in E_ if n['ts'] >= now - 86400), 'n14': len(E_)}
+    json.dump({'experts': experts, 'exp_meta': exp_meta, 'updated': datetime.datetime.now(KST).strftime('%Y-%m-%d %H:%M'), 'stocks': stocks, 'coins': coins},
               open(OUT, 'w', encoding='utf-8', newline='\n'), ensure_ascii=False, separators=(',', ':'))
     print('새 노드', len(new), '종목', len(stocks), '코인 노드', len(C), '시세', bool(price))
 
