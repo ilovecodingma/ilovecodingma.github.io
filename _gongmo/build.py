@@ -2409,6 +2409,140 @@ def experts_html(ex, cats=None, limit=None):
     return out
 
 
+EXP_SER = {'미국 증시': 'sp500', '반도체·AI': 'nasdaq', '금리': 'us10y', '환율': 'usdkrw', '코인': 'btc', '원자재': 'wti'}   # 주제 → 시세(market.py). 없으면 발언 타임라인만
+EXP_SER_NOTE = {'반도체·AI': '반도체 지수는 무료 공개 출처가 없어 기술주 비중이 큰 나스닥 종합으로 대신 봐요.', '금리': '한국 국고채는 아직 연결 전이라 미국 국채 10년 금리로 봐요.'}
+
+
+def exp_all():
+    """전문가 발언 전체(30일, 같은 제목 1번) — analyst_db.json."""
+    db = _rd('_gongmo/analyst_db.json') or {}
+    cut = time.time() - 30 * 86400
+    seen, out = set(), []
+    for n in sorted([n for n in (db.get('nodes') or {}).values() if n.get('k') == 'expert' and n['ts'] >= cut], key=lambda n: -n['ts']):
+        if n['t'] in seen:
+            continue
+        seen.add(n['t'])
+        out.append(n)
+    return out
+
+
+def exp_hit(n, MK):
+    """발언 뒤 7일·30일 실제 등락(사실만). 반환 (c7, c30, 판정문구)"""
+    import market as M
+    s = (MK.get('s') or {}).get(EXP_SER.get(n['topic'], ''))
+    if not s:
+        return None, None, ''
+    d0 = datetime.datetime.fromtimestamp(n['ts']).strftime('%Y-%m-%d')
+    c7, c30 = M.chg(s, d0, 7), M.chg(s, d0, 30)
+    if c7 is None:
+        due = (datetime.date.fromisoformat(d0) + datetime.timedelta(days=7)).strftime('%m/%d')
+        return None, None, f'7일 뒤({due}) 확인 예정'
+    t = f'7일 뒤 {s["name"]} {c7:+.1f}%' + (f' · 30일 뒤 {c30:+.1f}%' if c30 is not None else '')
+    if n['dir'] in ('bull', 'bear'):
+        ok = (c7 > 0) == (n['dir'] == 'bull')
+        t += ' ✅ 발언 방향대로' if ok else ' ↔️ 발언 방향과 반대'
+    return c7, c30, t
+
+
+def exp_svg(s, ns, tid):
+    """30일 선 그래프 + 발언 점(🟢🔴⚪). 점을 누르면 아래에 발언 제목·기관·원문 링크."""
+    import market as M
+    pts = s['pts'][-30:]
+    if len(pts) < 5:
+        return ''
+    W, H, L, R, T, B = 640, 190, 8, 8, 18, 26
+    lo, hi = min(y for _, y in pts), max(y for _, y in pts)
+    hi = hi if hi > lo else lo + 1
+    d0 = datetime.date.fromisoformat(pts[0][0])
+    span = max((datetime.date.fromisoformat(pts[-1][0]) - d0).days, 1)
+    X = lambda d: L + (W - L - R) * (datetime.date.fromisoformat(d) - d0).days / span
+    Y = lambda v: T + (H - T - B) * (1 - (v - lo) / (hi - lo))
+    path = 'M' + ' L'.join(f'{X(d):.1f},{Y(v):.1f}' for d, v in pts)
+    col = {'bull': '#16a34a', 'bear': '#dc2626', 'neutral': '#94a3b8'}
+    dots, info = '', ''
+    for i, n in enumerate(ns):
+        d = datetime.datetime.fromtimestamp(n['ts']).strftime('%Y-%m-%d')
+        if d < pts[0][0]:
+            continue
+        a = M.val_at(s, d)
+        if not a:
+            continue
+        x = min(X(d), W - R)
+        dots += (f'<circle cx="{x:.1f}" cy="{Y(a[1]):.1f}" r="7" fill="{col[n["dir"]]}" stroke="#fff" stroke-width="2" data-i="{tid}-{i}" tabindex="0" role="button">'
+                 f'<title>{E(d[5:])} {E(n["who"])}: {E(n["t"])}</title></circle>')
+        info += (f'<p class="xc-i" id="{tid}-{i}" hidden>{ECOL[n["dir"]][0]} <b>{E(d[5:].replace("-", "/"))} {E(n["who"])}</b> {E(n["t"])} '
+                 f'<a href="{E(n["u"])}" target="_blank" rel="noopener nofollow">{E(n["o"])} 원문 →</a></p>')
+    f = lambda v: f'{v:,.2f}' if v < 100 else f'{v:,.0f}'
+    return (f'<figure class="xc"><svg viewBox="0 0 {W} {H}" role="img" aria-label="{E(s["name"])} 최근 30일">'
+            f'<path d="{path}" fill="none" stroke="var(--pri,#047857)" stroke-width="2.5" stroke-linejoin="round"/>'
+            f'<text x="{L}" y="12" font-size="12" fill="currentColor" opacity=".7">최고 {f(hi)}</text><text x="{L}" y="{H - 30}" font-size="12" fill="currentColor" opacity=".7">최저 {f(lo)}</text>'
+            f'<text x="{L}" y="{H - 6}" font-size="12" fill="currentColor" opacity=".7">{pts[0][0][5:].replace("-", "/")}</text>'
+            f'<text x="{W - R}" y="{H - 6}" font-size="12" fill="currentColor" opacity=".7" text-anchor="end">{pts[-1][0][5:].replace("-", "/")} {f(pts[-1][1])}{E(s["unit"]) if s["unit"] != "pt" else ""}</text>{dots}</svg>'
+            f'<figcaption>{E(s["name"])} 최근 30일 · 출처 {E(s["src"])} · 점 = 전문가 발언(🟢 낙관 🔴 신중 ⚪ 중립), 눌러서 보기</figcaption>{info}</figure>')
+
+
+EXP_JS = ('<script>document.addEventListener("click",function(e){var c=e.target.closest&&e.target.closest("circle[data-i]");if(!c)return;var f=c.closest("figure");'
+          'f.querySelectorAll(".xc-i").forEach(function(p){p.hidden=p.id!==c.dataset.i});});'
+          'document.addEventListener("keydown",function(e){if(e.key==="Enter"&&e.target.matches&&e.target.matches("circle[data-i]"))e.target.dispatchEvent(new MouseEvent("click",{bubbles:true}))});</script>')
+EXP_CSS = ('<style>.xc{margin:10px 0}.xc svg{width:100%;height:auto;display:block;color:var(--tx,#111)}.xc circle{cursor:pointer}.xc figcaption{font-size:12px;color:var(--mu,#6b7280);margin-top:4px}'
+           '.xc-i{margin:8px 0 0;padding:10px 12px;border-radius:10px;background:var(--pbg,#f1f5f9);font-size:14px;line-height:1.55}.xc-i a{white-space:nowrap}'
+           '.xg{display:flex;height:14px;border-radius:999px;overflow:hidden;margin:8px 0}.xg i{display:block}.xs{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:14px;margin:8px 0}'
+           '.xh{font-size:13px;color:var(--mu,#6b7280);display:block;margin-top:2px}.xb{width:100%;border-collapse:collapse;font-size:14px}.xb th,.xb td{border-bottom:1px solid var(--bd,#e5e7eb);padding:6px 4px;text-align:left}</style>')
+
+
+def experts_v2(an):
+    """「말 vs 실제」 (2026-10-20 사용자 「시세 흐름을 본다든가 재밌게」): 요약 카드 → 주제별 30일 차트+발언 점+생활 영향 → 적중 보드."""
+    import market as M, impact as IP
+    MK = M.load()
+    S = MK.get('s') or {}
+    A = exp_all()
+    now = time.time()
+    w7 = [n for n in A if n['ts'] >= now - 7 * 86400]
+    bu, be, ne = (sum(1 for n in w7 if n['dir'] == k) for k in ('bull', 'bear', 'neutral'))
+    tot = max(bu + be + ne, 1)
+    mv = ' · '.join(f'{S[k]["name"]} {M.last_chg(S[k]):+.1f}%' for k in ('sp500', 'nasdaq', 'usdkrw', 'btc', 'wti') if k in S and M.last_chg(S[k]) is not None)
+    top = (f'<section class="mg-s"><h2>🌡️ 이번 주 시장 분위기</h2><p>최근 7일 전문가 발언 {len(w7)}건 · 🟢 낙관 {bu} · 🔴 신중 {be} · ⚪ 중립 {ne}</p>'
+           f'<div class="xg" aria-hidden="true"><i style="width:{bu / tot * 100:.0f}%;background:#16a34a"></i><i style="width:{ne / tot * 100:.0f}%;background:#cbd5e1"></i><i style="width:{be / tot * 100:.0f}%;background:#dc2626"></i></div>'
+           + (f'<p class="xs">📈 같은 기간 실제 시세(최근 거래일 기준 7일 등락): {E(mv)}</p>' if mv else '')
+           + '<p class="xh">코스피·국고채는 무료 공개 시세 출처를 아직 연결하지 못해 발언만 보여 줘요.</p></section>')
+    topics = []
+    for tp, _ in [(e['topic'], 0) for e in an.get('experts', [])] + [(k, 0) for k in EXP_SER]:
+        if tp not in topics:
+            topics.append(tp)
+    cards = ''
+    for tp in topics:
+        ns = [n for n in A if n['topic'] == tp]
+        s = S.get(EXP_SER.get(tp, ''))
+        if not ns and not s:
+            continue
+        chart = exp_svg(s, ns, 'x' + hashlib.md5(tp.encode()).hexdigest()[:6]) if s else '<p class="xh">이 주제는 공개 시세 출처가 없어 발언 타임라인만 보여 줘요.</p>'
+        li = ''
+        for n in ns[:8]:
+            _, _, ht = exp_hit(n, MK)
+            dt = datetime.datetime.fromtimestamp(n['ts']).strftime('%m/%d')
+            li += (f'<li class="{n["dir"]}"><span class="an-d">{ECOL[n["dir"]][0]}</span><div><small>{dt} · {E(n["who"])} · {E(n["cat"])}</small>'
+                   f'<a href="{E(n["u"])}" target="_blank" rel="noopener nofollow">{E(n["t"])}</a><em>{E(n["o"])}</em>' + (f'<span class="xh">→ {E(ht)}</span>' if ht else '') + '</div></li>')
+        d0 = datetime.datetime.fromtimestamp(ns[0]['ts']).strftime('%Y-%m-%d') if ns else None
+        cards += (f'<article class="an-c" id="t-{E(tp)}"><div class="an-h"><h3>{E(tp)}</h3></div>'
+                  + (f'<p class="xh">{E(EXP_SER_NOTE[tp])}</p>' if tp in EXP_SER_NOTE and s else '') + chart
+                  + (f'<ul class="an-nodes">{li}</ul>' if li else '<p class="xh">최근 30일 이 주제의 전문가 발언은 아직 없어요.</p>')
+                  + IP.card(tp + ' ' + ' '.join(n['t'] for n in ns[:3]), d0, [(n['o'], n['t']) for n in ns[:3]], MK) + '</article>')
+    # 적중 보드: 방향(낙관·신중)이 있고 7일이 지난 발언만
+    by = {}
+    for n in A:
+        c7, _, _ = exp_hit(n, MK)
+        if c7 is None or n['dir'] not in ('bull', 'bear'):
+            continue
+        by.setdefault(n['who'], []).append((c7 > 0) == (n['dir'] == 'bull'))
+    rk = sorted([(w, sum(v), len(v)) for w, v in by.items() if len(v) >= 5], key=lambda x: (-x[1] / x[2], -x[2]))
+    small = sorted([(w, sum(v), len(v)) for w, v in by.items() if len(v) < 5], key=lambda x: -x[2])[:8]
+    board = ('<section class="mg-s" id="board"><h2>🎯 전문가 적중 보드</h2><p class="xh">낙관·신중 방향이 있는 발언만, 발언일 기준값과 7일 뒤 값을 비교한 사실이에요. 7일이 안 지난 발언은 확인 예정이에요. 시장은 발언 하나로 움직이지 않으니 재미로 봐 주세요.</p>'
+             + (('<table class="xb"><thead><tr><th>기관·인물</th><th>방향대로 움직임</th><th>표본</th></tr></thead><tbody>' + ''.join(f'<tr><td>{E(w)}</td><td>{k}/{n_}건 ({k / n_ * 100:.0f}%)</td><td>{n_}건</td></tr>' for w, k, n_ in rk) + '</tbody></table>') if rk
+                else f'<p>순위표는 판정된 발언이 5건 이상인 기관만 넣어요. 아직 5건을 넘은 곳이 없어요(판정된 발언 {sum(len(v) for v in by.values())}건).</p>')
+             + (('<p class="xh">표본이 적은 곳: ' + ' · '.join(f'{E(w)} {k}/{n_}건' for w, k, n_ in small) + '</p>') if small else '') + '</section>')
+    return top + cards + board + EXP_CSS + EXP_JS
+
+
 def money_pages():
     # 머니 테마 정보 섹션 (2026-10-18 사용자: "주식 관련해서도 정책 등, 나이별 포트폴리오 전략 등을 넣고 전문가들 이야기도 넣어서" — 연구 ⑂ 기획)
     an = _rd('analyst/data.json')
@@ -2418,11 +2552,11 @@ def money_pages():
     how = ('<details class="an-how"><summary>어떻게 모았나요?</summary><ol><li>증권·경제 기사 RSS에서 리서치센터장·CIO·이코노미스트·한국은행·KDI·IMF·월가 기관 등 실명 기관·인물의 발언이 제목에 나온 기사만 골라요.</li>'
            '<li>주제(코스피·미국 증시·금리·환율·반도체·부동산·경기·코인·원자재·기타 시장)와 성격(시장 전망·자산배분 조언·리스크 경고)으로 나눠요.</li><li>발언(따옴표) 부분으로 긍정·신중을 가려, 같은 주제에서 둘 다 있으면 나란히 보여 줘요.</li>'
            '<li>기사 본문은 옮기지 않고 제목(발언 요지)과 원문 링크만 실어요.</li></ol></details>')
-    page('/money/experts/', '전문가 코멘트 종합 — 리서치센터장·CIO·한은·IMF 시장 전망 비교',
-         '증권사 리서치센터장, 운용사 CIO, 한국은행·KDI·IMF 등 실명 전문가 발언을 주제별로 모으고, 같은 주제에서 의견이 엇갈리면 나란히 비교했어요.',
-         '<p class="bc"><a href="/">홈</a> › <a href="/analyst/">머니</a> › 전문가 코멘트</p><h1>🎙️ 전문가 코멘트 종합</h1>'
+    page('/money/experts/', '전문가 말 vs 실제 시세 — 발언 뒤 시장은 어떻게 움직였나',
+         '리서치센터장·월가·한은·IMF 등 실명 전문가 발언을 S&P500·나스닥·환율·금리·유가·비트코인 30일 차트 위에 찍고, 발언 뒤 7일·30일 실제 등락과 내 생활에 미칠 수 있는 영향을 함께 보여 줘요.',
+         '<p class="bc"><a href="/">홈</a> › <a href="/analyst/">머니</a> › 전문가 코멘트</p><h1>🎙️ 전문가 말 vs 실제 시세</h1>'
          + (f'<p class="cat-st">📡 마지막 수집 {E(an.get("updated", "")[-5:])} · 최근 24시간 {an["exp_meta"]["n24"]}건 · 최근 14일 {an["exp_meta"]["n14"]}건 · 매시간 갱신</p>' if an.get('exp_meta') else '') + MONEY_NOTE
-         + (experts_html(ex) or '<p class="nw-empty">아직 모인 발언이 없어요. 매시간 새로 모아요.</p>') + how + css,
+         + (experts_v2(an) or '<p class="nw-empty">아직 모인 발언이 없어요. 매시간 새로 모아요.</p>') + how + css,
          [('루리의 줍줍', '/'), ('머니', '/analyst/'), ('전문가 코멘트', '/money/experts/')])
     urls.append('/money/experts/')
     a = json.load(open(os.path.join(HERE, 'money_age.json'), encoding='utf-8'))
@@ -2526,6 +2660,27 @@ def issue_note(x, I):
     elif int(x.get('on') or 0) >= 5:
         t += ' 여러 언론사가 같은 내용을 전해 사건 자체는 확인된 편이에요.'
     return t
+
+
+def news_impact():
+    """/news/ 상위 이슈 중 생활 영향 규칙에 맞는 것 3개 (2026-10-20). news.js 가 바꾸지 않는 칸."""
+    d = _rd('news/data.json')
+    if not d:
+        return ''
+    import impact as IP, market as M
+    MK = M.load()
+    I = {a['id']: a for a in d.get('items', [])}
+    out, k = '', 0
+    for x in sorted(d.get('issues', []), key=lambda x: -int(x.get('on') or 0))[:30]:
+        srcs = [(I[a]['o'], I[a]['t']) for a in x['a'][:6] if a in I]
+        d0 = datetime.datetime.fromtimestamp(int(x['ts'])).strftime('%Y-%m-%d') if x.get('ts') else None
+        c = IP.card(x['t'] + ' ' + ' '.join(t for _, t in srcs[:3]), d0, srcs, MK, head=f'💥 「{E(x["t"][:40])}」이 내 생활에 미칠 수 있는 영향')
+        if c:
+            out += c
+            k += 1
+        if k >= 3:
+            break
+    return ('<section class="mg-s"><h2>💥 오늘 이슈, 내 생활엔?</h2><p class="note">언론사 여러 곳이 다룬 이슈 중 생활과 닿는 것만 골랐어요.</p>' + out + '</section>') if out else ''
 
 
 def news_static():
@@ -2780,6 +2935,8 @@ def hot_pages():
     import hot as H
     G = {'ok': '✅', 'warn': '🟡', 'bad': '🔴'}
     css = '<link rel="stylesheet" href="/assets/mag/mag.css?v=10"><link rel="stylesheet" href="/assets/analyst/analyst.css?v=4"><link rel="stylesheet" href="/assets/news/news.css?v=6">'
+    import impact as IPC, market as M_
+    MKH = M_.load()
     urls = ['/hot/']
     livesl = {v['slug'] for v in live}
     hd = os.path.join(ROOT, 'hot')
@@ -2809,7 +2966,8 @@ def hot_pages():
                 f'<p><span class="kw-b both">{HOT_TYPE[v["type"]]}</span> 언론사 {len(v["outs"])}곳 보도 · 처음 {E(v["first"])} · 갱신 {E(v["last"])}</p>' + old
                 + f'<section class="mg-s"><h2>📌 한눈에 정리</h2><p class="hot-n">여러 언론사가 이렇게 전했어요(기사 제목 그대로).</p><ul class="hot-l">{what}</ul>'
                 + (f'<h3>🔢 기사에 나온 숫자</h3><ul class="hot-l">{nums}</ul>' if nums else '') + (f'<h3>📅 기사에 나온 날짜</h3><ul class="hot-l">{dates}</ul>' if dates else '') + '</section>'
-                + f'<section class="mg-s"><h2>🙋 나한테 뭐가 달라지나</h2><p>{E(lead)}</p><div class="nw-pr">{tl}</div></section>' + sig
+                + f'<section class="mg-s"><h2>🙋 나한테 뭐가 달라지나</h2><p>{E(lead)}</p><div class="nw-pr">{tl}</div>'
+                + IPC.card(v['title'] + ' ' + v['q'] + ' ' + ' '.join(w['t'] for w in v['what'][:3]), (v.get('first') or '')[:10] or None, [(w['o'], w['t']) for w in v['what']], MKH) + '</section>' + sig
                 + (f'<section class="mg-s"><h2>📎 관련 줍줍</h2><div class="nw-pr">{pr}</div></section>' if pr else '')
                 + f'<section class="mg-s"><h2>📰 관련 기사 (확인 신호 점수)</h2><ul class="kw-l">{arts}</ul></section>'
                 + f'<section class="mg-s"><h2>❓ 자주 묻는 질문</h2><div class="hot-faq">{fq}</div></section>'
@@ -2853,7 +3011,7 @@ def news_top():
 def news_page():
     # 루리 탐정의 이슈 감별 (2026-10-18 사용자: RSS 기사 수집 → 주제별 묶음 → 팩트체크 기반 채점, 피드, 탐정 루리, 기사 관련 줍줍)
     body = f'''<p class="bc"><a href="/">홈</a> › 기사 확인 신호</p><h1>🕵️ 루리 탐정의 기사 확인 신호</h1>{hot_top(3)}
-<section id="news" aria-label="이슈 순위와 기사 채점">{news_static()}</section>
+<section id="news" aria-label="이슈 순위와 기사 채점">{news_static()}</section>{news_impact()}
 <details class="nw-how"><summary>채점은 이렇게 해요</summary><ul><li><b>교차 보도</b> — 같은 사건을 여러 언론사가 보도하면 가점, 한 곳뿐이면 표시만 해요.</li><li><b>출처</b> — 실명 기관·인물 출처는 가점, 익명 관계자뿐이거나 온라인 커뮤니티·SNS 글이 출처면 감점.</li><li><b>제목-본문 일치</b> — 제목의 숫자·인용문이 본문에 없으면 감점.</li><li><b>숫자 엇갈림</b> — 같은 사건인데 언론사마다 사망·부상자 수가 다르면 따로 표시해요.</li><li><b>낚시·홍보</b> — 「충격」「결국」「이것」 같은 낚시 표현, 기업 홍보성 기사는 감점.</li></ul><p>기사 본문은 채점에만 쓰고 이 사이트에 옮겨 싣지 않아요. 제목을 누르면 원래 언론사 기사로 이동해요.</p></details>
 <link rel="stylesheet" href="/assets/news/news.css?v=6"><script defer src="/assets/news/news.js?v=4"></script>'''
     page('/news/', '기사 확인 신호 — 오늘의 이슈 순위와 기사별 확인 항목', '언론사 15곳 기사를 매시간 모아 같은 사건끼리 묶고, 교차 보도·출처·제목-본문 일치·숫자 엇갈림·낚시 표현으로 기사마다 점수를 매겨요. 지금 가장 많이 보도된 이슈 순위.',
