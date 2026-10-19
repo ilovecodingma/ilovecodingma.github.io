@@ -1038,7 +1038,7 @@ def cross_pages(aps):
                     '<p class="note">대상·지원 내용·신청 방법은 공고에서 확인된 값만 적었어요. 비어 있는 칸은 공고 원문(각 공고 페이지의 공식 공고 링크)에서 확인하세요. 서류와 지급일은 공고마다 달라요.</p>'
                     f'<h2>진행 중 공고 (마감순)</h2><ul class="list">{"".join(ap_card(a) for a in M)}</ul>'
                     + (f'<p class="hm-links">다른 지역 {tn}: {others}</p>' if others else '')
-                    + (cp_box('월세 자취', '자취 시작할 때 많이 사는 것:', 1) if tk == 'youth-rent' else '')
+                    + ((cp_widget('자취 필수템', 'apply') or cp_box('월세 자취', '자취 시작할 때 많이 사는 것:', 1)) if tk == 'youth-rent' else '')
                     + rel_block(r'청년|월세|신혼|결혼|주거', [(f'/apply/r/{sl}/', f'{fn} 지원금·청약 전체'), (f'/apply/r/{sl}/house/', f'{fn} 청약 일정'), ('/apply/recommend/', '청약 가점 계산기'), ('/apply/', '전국 지원금·청약 일정')])
                     + css)
             page(path, title, f'{title}: 진행 중 {len(M)}건의 대상·지원 내용·신청 방법·마감일을 공고 기준으로 정리.', body,
@@ -1054,7 +1054,7 @@ def cross_pages(aps):
                 f'<p class="cat-st">📌 제목에 청년과 월세·주거비·임차 등이 들어간 진행 중 공고는 모두 {len(allm)}건이에요.</p><p>{guide}</p>'
                 + (f'<h2>지역별로 보기</h2><ul class="reg-l">{idx}</ul>' if idx else '')
                 + f'<h2>진행 중 공고 (마감순)</h2><ul class="list">{"".join(ap_card(a) for a in allm)}</ul>'
-                + cp_box('월세 자취', '자취 시작할 때 많이 사는 것:', 1)
+                + (cp_widget('자취 필수템', 'apply') or cp_box('월세 자취', '자취 시작할 때 많이 사는 것:', 1))
                 + rel_block(r'청년|월세|주거', [('/apply/r/', '지역별 지원금·청약'), ('/apply/', '전국 지원금·청약 일정')]))
         page(f'/apply/{tk}/', title, f'청년 월세 지원금 {YR}: 진행 중 {len(allm)}건, 지역별 조건·신청 방법·마감일.', body,
              [('루리의 줍줍', '/'), ('지원금·청약', '/apply/'), (tn, f'/apply/{tk}/')], noindex=len(allm) < 3)
@@ -1301,7 +1301,7 @@ def build():
 <a href="/fridge/solo/"><b>🏠 자취 요리 추천</b><span>재료 3개 이하·20분 안에 끝나는 1인분 집밥</span></a>
 <a href="/fridge/weather/"><b>🌤️ 날씨별 오늘 메뉴</b><span>비 오는 날·쌀쌀한 날·더운 날에 어울리는 집밥</span></a></div>
 <div class="mg-s" data-pctop="/fridge/r/" data-by="likes" data-n="6" data-head="❤️ 지금 인기 있는 메뉴"></div>
-{cp_box('', '장 볼 때 같이 보면 좋아요:')}</section>
+{cp_widget('자취 필수템', 'home') or cp_box('', '장 볼 때 같이 보면 좋아요:')}</section>
 <section class="hm-sec"><h2>🎁 오늘 마감 경품·용돈 <a href="/event/">전체 {len(events)}건 →</a></h2>
 <ul class="hm-ev">{''.join(f'<li><a href="{E(e["link"])}" target="_blank" rel="noopener nofollow"><b>{E(e["title"][:48])}</b><small>{dday(e["end"])[1]} · {E(e.get("org") or "")} · {E(e.get("effort") or EASY.get(e["type"], ""))}</small></a></li>' for e in _ev3) or '<li class="empty">지금은 없어요.</li>'}</ul></section>
 <section class="hm-sec"><h2>💰 지원금·계산기</h2><div class="hm-prep">
@@ -2603,6 +2603,25 @@ def cp_box(text, title='함께 보면 좋은 물건:', n=2, fill='', body='', wa
             '<style>.cp-line{margin:12px 0;line-height:1.7}.cp-in{color:#c2410c;font-weight:700;text-decoration:underline;text-underline-offset:3px}.cp-inn{display:block;font-size:12px;color:var(--mu,#6b7280)}</style>')
 
 
+def cp_widget(key, sub, note='이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.'):
+    """쿠팡 다이나믹 배너(상품 사진·가격 캐러셀, coupang.json widget_ids). iframe(지연 로드)이라 본문을 막지 않음. sub: 리포트용 서브 ID(recipe/home/apply)."""
+    wid = (CP.get('widget_ids') or {}).get(key) if CP.get('on') else None
+    if not wid:
+        return ''
+    return (f'<div class="cp-w"><iframe src="https://ads-partners.coupang.com/widgets.html?id={int(wid)}&amp;template=carousel&amp;trackingCode={E(CP.get("partner_id", ""))}&amp;subId={E(sub)}&amp;width=680&amp;height=140" '
+            f'width="100%" height="140" frameborder="0" scrolling="no" referrerpolicy="unsafe-url" loading="lazy" title="쿠팡 상품"></iframe><p class="cp-inn">{note}</p></div>'
+            '<style>.cp-w{margin:14px 0}.cp-w iframe{display:block;width:100%;max-width:680px;height:140px;border:0}.cp-inn{font-size:12px;color:var(--mu,#6b7280);margin:4px 0 0}</style>')
+
+
+def cp_recipe_widget(r):
+    txt = ' '.join(r['s'])
+    if '에어프라이어' in txt:
+        return '에어프라이어'
+    if re.search(r'(찌개|국|탕|전골)$', r['n']) or re.search(r'뚝배기|냄비', txt):
+        return '냄비·뚝배기'
+    return '밀키트'
+
+
 CP_TOOLS = ('에어프라이어', '전자레인지', '뚝배기', '냄비', '찜기', '믹서', '프라이팬')   # 만드는 법 문장 속 도구 이름에 거는 쿠팡 링크 (2026-10-19 사용자 「이렇게 붙이면 누가 누르냐」)
 
 
@@ -2898,8 +2917,8 @@ def fridge_page():
                 + (f'<img class="fr-rmain" src="{E(mp["f"])}" width="720" height="540" alt="{E(r["n"])} 완성 사진" fetchpriority="high">' if mp else '')
                 + f'<p>{E(tip)}</p><h2>🧺 재료</h2><div class="fr-ri"><div><h3>꼭 있어야 해요</h3><ul>{ingl(r["need"])}</ul></div>'
                 + (f'<div><h3>있으면 더 좋아요</h3><ul>{ingl(r["opt"])}</ul></div>' if r['opt'] else '') + '</div>'
-                + ('' if any(w in ' '.join(r['s']) and cp_tool_url(w) for w in CP_TOOLS) else cp_box('', '재료 사러 가기 번거로우면 이런 것도 있어요:', 1, fill='밀키트 레시피', want='밀키트'))
-                + (f'<h2>👩‍🍳 {E(r["n"])} 맛있게 끓이는 방법</h2>' if re.search(r'국|찌개|탕|전골|국밥', r['n']) else f'<h2>👩‍🍳 {E(r["n"])} 맛있게 만드는 방법</h2>') + f'<ol class="fr-rs">{steps}</ol>' + (CP_IN_NOTE if cpu else '')
+                + ('' if any(w in ' '.join(r['s']) and cp_tool_url(w) for w in CP_TOOLS) or (CP.get('widget_ids') or {}).get('밀키트') else cp_box('', '재료 사러 가기 번거로우면 이런 것도 있어요:', 1, fill='밀키트 레시피', want='밀키트'))
+                + (f'<h2>👩‍🍳 {E(r["n"])} 맛있게 끓이는 방법</h2>' if re.search(r'국|찌개|탕|전골|국밥', r['n']) else f'<h2>👩‍🍳 {E(r["n"])} 맛있게 만드는 방법</h2>') + f'<ol class="fr-rs">{steps}</ol>' + (cp_widget(cp_recipe_widget(r), 'recipe', ('밑줄 친 도구 이름과 위 상품은 쿠팡 파트너스 링크로, ' if cpu else '') + '이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.') or (CP_IN_NOTE if cpu else ''))
                 + (f'<p class="note">영문: {E(FR_EN[r["n"]])} recipe</p>' if FR_EN.get(r['n']) else '')
                 + share_bar(f'{r["n"]} 만드는 법', f'{r["n"]} 만드는 법 — 재료 {len(r["need"])}가지로 {r["m"]}분')
                 + '<h2>💡 루리 팁</h2><ul class="chk">' + ''.join(f'<li>{E(t)}</li>' for t in fr_tips(r, RS)) + '</ul>'
