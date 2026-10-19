@@ -142,7 +142,7 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False, noinde
 {ldh}
 {GTAG}
 </head><body data-th="{TH[0] if TH else 'hub'}"{(' data-api="' + COMM_API + '"') if COMM_API else ''}>
-<header class="hd"><div class="w hd-in"><a class="logo" href="/"><img src="/assets/icons/logo.svg" width="30" height="30" alt=""><span>루리의 <b>줍줍</b></span></a>{('<span class="th-name">' + TH[2] + ' ' + TH[1] + '</span>') if TH else ''}</div>
+<header class="hd"><div class="w hd-in"><a class="logo" href="/"><img src="/assets/icons/logo.svg" width="30" height="30" alt="루리의 줍줍"><span>루리의 <b>줍줍</b></span></a>{('<span class="th-name">' + TH[2] + ' ' + TH[1] + '</span>') if TH else ''}</div>
 <nav class="th-sw w" aria-label="테마">{"".join(f'<a href="{t[4]}" style="--tc:{t[3]}"{" class=on" if TH and TH[0] == t[0] else ""}>{t[2]} {t[1]}</a>' for t in THEMES)}</nav>
 {('<nav class="tb w" aria-label="' + TH[1] + ' 메뉴">' + "".join(f'<a href="{u}"{" class=on" if (path == u or (u != TH[4] and path.startswith(u))) else ""}>{n}</a>' for u, n in TH[5]) + '</nav>') if TH else ''}</header>
 <main class="w">
@@ -825,8 +825,15 @@ def build_apply(aps):
 <div class="panel"><table class="info">{tb}</table>{btn}</div>
 {ap_insight(a, aps)}<h2>신청 전 확인할 것</h2><ul class="chk"><li>신청 자격(나이·소득·자산·거주지·무주택 여부)</li><li>필요 서류와 본인인증 수단</li><li>발표일과 계약·납부 일정</li></ul>'''
         _org = (a.get('org') or '').strip()[:14]
-        page(f'/a/{a["id"]}/', f'{a["title"][:40]} {YR}' + (f' — {_org}' if _org else '') + (f' · {ddot(a["end"])[5:]} 마감' if a.get('end') and not a.get('always') else ''), f'{a["title"]} — ' + (f'{_org} ' if _org else '') + f'{a["kind"]}, ' + (f'{ddot(a["end"])} 마감' if a.get('end') and not a.get('always') else '상시 신청') + '. 신청 기간과 공식 신청처 정리.', body,
-             [('루리의 줍줍', '/'), ('청약·신청', '/apply/'), (a['title'], f'/a/{a["id"]}/')], noindex=sum(1 for k in ('target', 'benefit', 'how', 'income') if a.get(k)) < 2)
+        _end = f' · {ddot(a["end"])[5:]} 마감' if a.get('end') and not a.get('always') else ''
+        _og = (a.get('org') or '').strip().split()[-1][:10] if (a.get('org') or '').strip() else ''   # 제목용 기관명은 마지막 단위(과·국)만
+        _t = f'{a["title"][:40]} {YR}' + (f' — {_og}' if _og else '') + _end
+        _ft = len(_t) + len(f' | {NAME}') > 70   # 빙 경고(2026-10-19): 제목 70자 상한 — 길면 브랜드 빼고, 그래도 길면 기관명 빼고 자름
+        if len(_t) > 70:
+            _t = f'{a["title"][:40]} {YR}' + _end
+        _t = _t[:70]
+        page(f'/a/{a["id"]}/', _t, f'{a["title"]} — ' + (f'{_org} ' if _org else '') + f'{a["kind"]}, ' + (f'{ddot(a["end"])} 마감' if a.get('end') and not a.get('always') else '상시 신청') + '. 신청 기간과 공식 신청처 정리.', body,
+             [('루리의 줍줍', '/'), ('청약·신청', '/apply/'), (a['title'], f'/a/{a["id"]}/')], noindex=sum(1 for k in ('target', 'benefit', 'how', 'income') if a.get(k)) < 2, full_title=_ft)
         GONE[f'/a/{a["id"]}/'] = [a['title'], '/apply/', '청약·신청', a['end']]
     lst = ''.join(ap_card(a) for a in aps[:60]) or '<li class="empty"><img src="/assets/ruri/o_desk_s.webp" width="64" height="88" alt=""><p>지금 정리 중이에요. 곧 청약·신청 일정을 올릴게요!</p></li>'
     page('/apply/', f'청약·신청 일정 모음', '아파트 청약, 공공임대, 공모주, 지원금 신청 일정을 마감 순서로 정리했어요.',
@@ -2486,14 +2493,15 @@ def fr_slug(n):
 
 
 def fridge_page():
-    """냉장고 파먹기 + 레시피 상세(/fridge/r/<요리>/, 2026-10-19 검색 유입: Recipe 구조화 데이터). 사진은 출처 표기 가능한 자유 이용 사진만(recipes_ph.json)."""
+    """냉장고 파먹기 + 레시피 상세(/fridge/r/<요리>/, 2026-10-19 검색 유입: Recipe 구조화 데이터). 사진은 자유 이용 사진과 출처를 밝힌 참고 사진(recipes_ph.json)."""
     D = json.load(open(os.path.join(ROOT, 'assets', 'fridge', 'recipes.json'), encoding='utf-8'))
     PH = _rd('assets/fridge/recipes_ph.json') or {}
     PR, PI = PH.get('recipes') or {}, PH.get('ing') or {}
     RS = D['recipes']; NR = len(RS)
     FR_EN = _rd('assets/fridge/en.json') or {}   # 영문 보조 표기(본문 한 줄)
     shutil.rmtree(os.path.join(ROOT, 'fridge', 'r'), ignore_errors=True)
-    lic = lambda c: (f'{E(c.get("by") or "작가 미상")} · {E((c.get("lic") or "").upper().replace("PDM", "퍼블릭 도메인"))} {E(c.get("lv") or "")}'
+    lic = lambda c: (E(c.get('by') or '작가 미상')
+                     + (f' · {E((c.get("lic") or "").upper().replace("PDM", "퍼블릭 도메인"))} {E(c.get("lv") or "")}'.rstrip() if c.get('lic') else '')
                      + (f' · <a href="{E(c["src"])}" target="_blank" rel="noopener nofollow">원본</a>' if c.get('src') else ''))
     urls = []
     for r in RS:
@@ -2526,7 +2534,7 @@ def fridge_page():
                 + f'<a class="lab-cta" href="/fridge/"><b>🍳 내 냉장고 재료로 다른 메뉴 찾기</b><span>재료를 고르면 지금 만들 수 있는 메뉴를 골라 드려요 · 레시피 {NR}개 →</span></a>'
                 + (f'<h2>🔗 재료가 비슷한 메뉴</h2><ul class="fr-rel">' + ''.join(f'<li><a href="/fridge/r/{fr_slug(x["n"])}/">{x["e"]} {E(x["n"])} <small>{x["m"]}분</small></a></li>' for x in rel) + '</ul>' if rel else '')
                 + (f'<details class="fr-cr"><summary>사진 출처</summary><p>{"<br>".join(cr)}</p></details>' if cr else '')
-                + '<p class="note">루리의 줍줍이 직접 정리한 1~2인분 기준 레시피예요. 사진은 상업적 이용이 허락된 자유 이용 사진(출처 표기)만 쓰고, 맞는 사진이 없는 단계는 비워 뒀어요. 알레르기가 있으면 재료를 꼭 확인하세요.</p></article>'
+                + '<p class="note">루리의 줍줍이 직접 정리한 1~2인분 기준 레시피예요. 사진은 자유 이용 사진이거나 출처를 밝힌 참고 사진이고, 맞는 사진이 없는 메뉴는 비워 뒀어요. 알레르기가 있으면 재료를 꼭 확인하세요.</p></article>'
                 + '<link rel="stylesheet" href="/assets/fridge/fridge.css?v=8">')
         ld = {'@context': 'https://schema.org', '@type': 'Recipe', 'name': r['n'], 'description': tip, 'datePublished': '2026-10-19', 'totalTime': f'PT{r["m"]}M', 'recipeYield': '1~2인분', 'recipeCategory': '집밥',
               'recipeCuisine': '한식', 'keywords': ', '.join([r['n'] + ' 만드는 법', '냉장고 파먹기'] + r['t']), 'author': {'@type': 'Organization', 'name': NAME},
