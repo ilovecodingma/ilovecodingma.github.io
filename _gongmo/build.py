@@ -329,6 +329,8 @@ def collapse_thin(urls):
     색인 대상 페이지·마감 공모전 안내(/c/)는 건드리지 않는다."""
     COLL.clear()
     for u in sorted(NOINDEX, key=len, reverse=True):
+        if u.startswith('/a/') and u[3:-1] in AP_DUP:   # 중복 공고 안내(대표 /a/ 로 보냄)는 남김 — /apply/?id= 에는 그 id 가 없음
+            continue
         for rx, to in COLL_RULES:
             m = rx.match(u)
             if m:
