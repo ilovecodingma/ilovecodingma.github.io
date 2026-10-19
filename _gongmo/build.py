@@ -1142,6 +1142,11 @@ def build():
     guides(live)
     qa_pages(live)
     prep_page()
+    try:
+        import fridge_today   # 오늘 날씨 메뉴(Open-Meteo, 매시 빌드 — 실패하면 이전 파일)
+        fridge_today.main()
+    except Exception as e:
+        print('오늘 날씨 메뉴 실패', repr(e)[:80])
     fr_urls = fridge_page()
     app_page()
     news_page()
@@ -2425,7 +2430,7 @@ def fridge_page():
                 + (f'<h2>🔗 재료가 비슷한 메뉴</h2><ul class="fr-rel">' + ''.join(f'<li><a href="/fridge/r/{fr_slug(x["n"])}/">{x["e"]} {E(x["n"])} <small>{x["m"]}분</small></a></li>' for x in rel) + '</ul>' if rel else '')
                 + (f'<details class="fr-cr"><summary>사진 출처</summary><p>{"<br>".join(cr)}</p></details>' if cr else '')
                 + '<p class="note">루리의 줍줍이 직접 정리한 1~2인분 기준 레시피예요. 사진은 상업적 이용이 허락된 자유 이용 사진(출처 표기)만 쓰고, 맞는 사진이 없는 단계는 비워 뒀어요. 알레르기가 있으면 재료를 꼭 확인하세요.</p></article>'
-                + '<link rel="stylesheet" href="/assets/fridge/fridge.css?v=7">')
+                + '<link rel="stylesheet" href="/assets/fridge/fridge.css?v=8">')
         ld = {'@context': 'https://schema.org', '@type': 'Recipe', 'name': r['n'], 'description': tip, 'datePublished': '2026-10-19', 'totalTime': f'PT{r["m"]}M', 'recipeYield': '1~2인분', 'recipeCategory': '집밥',
               'recipeCuisine': '한식', 'keywords': ', '.join([r['n'] + ' 만드는 법', '냉장고 파먹기'] + r['t']), 'author': {'@type': 'Organization', 'name': NAME},
               'recipeIngredient': r['need'] + r['opt'], 'recipeInstructions': [{'@type': 'HowToStep', 'text': t} for t in r['s']]}
@@ -2441,7 +2446,7 @@ def fridge_page():
 <section id="fridge" aria-label="냉장고 재료로 메뉴 추천"><noscript>자바스크립트가 필요해요. 아래 전체 레시피 목록에서 골라 보세요.</noscript></section>
 <details class="fr-all"><summary>📚 전체 레시피 {NR}개 보기</summary><ul>{allr}</ul></details>
 <a class="lab-cta" href="/cat/food/"><b>🏆 요리·레시피 공모전</b><span>레시피 공모전·요리경연대회 모아 보기 · 상금 받고 요리 실력 뽐내기 →</span></a><p class="note">사진은 재료를 찾는 데만 쓰고 저장하지 않아요. 고른 재료는 이 폰에만 저장돼요. 알레르기가 있으면 재료를 꼭 다시 확인해 주세요.</p>
-<link rel="stylesheet" href="/assets/fridge/fridge.css?v=7"><script defer src="/assets/fridge/fridge.js?v=9"></script>""", [('루리의 줍줍', '/'), ('냉장고 파먹기', '/fridge/')])
+<link rel="stylesheet" href="/assets/fridge/fridge.css?v=8"><script defer src="/assets/fridge/fridge.js?v=10"></script>""", [('루리의 줍줍', '/'), ('냉장고 파먹기', '/fridge/')])
     return urls
 
 
