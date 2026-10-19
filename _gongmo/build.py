@@ -2734,6 +2734,12 @@ def daily_jobs():
                 st[sl] = d
             except Exception as e:
                 print('홍보 후보 실패', sl, repr(e)[:120])
+    try:   # 홍보 세션 연동: 게시 완료 반영 + 검토 목록 내보내기(빌드마다)
+        import promo
+        R, W = promo.sync()
+        print('홍보 동기화', '게시 반영', len(R), '검토 목록', len(W))
+    except Exception as e:
+        print('홍보 동기화 실패', repr(e)[:120])
     if TODAY.weekday() == 0 and st.get('tune') != d:   # 매주 월요일: 추천 가중치 조정(클릭된 추천의 점수 구성이 평균보다 높은 항목은 가중치 +10%, 낮으면 -10%)
         try:
             import push

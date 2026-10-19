@@ -3,7 +3,7 @@
 사이트 데이터(공모전·지원금·핫이슈·레시피·애널리스트)에서 채널별 문구를 '틀 + 실제 값'으로 만든다(숫자·날짜를 지어내지 않음).
 만든 뒤 자동 검사(qc): 원문 값과 날짜·금액 일치, 마감 지남, 과장 표현, 지원 대상 누락, 길이, 14일 안 중복. 실패하면 DRAFT 에 사유를 남겨 승인 못 하게.
 통과하면 REVIEW. 게시는 하지 않는다 — 관리자 화면에서 승인 → 예약 → 사람이 게시 후 「게시 완료」 처리.
-결과는 D1 promo 테이블(push.q). 실행: python promo.py [am|pm|mon|all] [--dry]   (build.py 가 하루 슬롯마다 1번 부른다)"""
+결과는 D1 promo 테이블(push.q). 실행: python promo.py [am|pm|mon|all] [--dry] | sync   (build.py 가 하루 슬롯마다 1번 부른다)"""
 import datetime, hashlib, json, os, re, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__)); ROOT = os.path.dirname(HERE)
@@ -143,6 +143,8 @@ def qc(kind, src, ch, title, body, recent):
         for m in re.finditer(r'(\d{1,2})월 (\d{1,2})일', body):
             if f'{int(m.group(1)):02d}-{int(m.group(2)):02d}' != src['end'][5:]:
                 bad.append(f'본문 날짜 {m.group(0)}가 마감일과 다름'); break
+    if kind == 'apply' and not src.get('always') and (src.get('start') or '') > TODAY.isoformat():
+        bad.append(f'신청 시작 전({src["start"]}) — 연도·기간 원문 확인 필요')
     if kind == 'apply' and not (src.get('target') or '').strip():
         bad.append('지원 대상 원문 없음 — 공고 확인 필요')
     key = (kind, str(src.get('id') or src.get('slug') or title), ch)
@@ -161,7 +163,7 @@ def candidates(slot):
         L = sorted([c for c in C if 2 <= dd(c['end']) <= 7], key=lambda c: -(c.get('pv') or 0))[:3]
         out += [('contest', c, f'/c/{c["id"]}/') for c in L]
     if slot in ('pm', 'all'):   # 매일 오후: 새 지원금·청약 2건(최근 3일 시작, 마감 2일 이상 남음)
-        L = [a for a in A if a.get('kind') != '공모주' and (a.get('target') or '').strip() and (a.get('always') or (a.get('end') and dd(a['end']) >= 2))]   # 공모주는 투자 권유가 될 수 있어 제외
+        L = [a for a in A if a.get('kind') != '공모주' and (a.get('target') or '').strip() and (a.get('always') or (a.get('end') and dd(a['end']) >= 2 and (a.get('start') or '') <= TODAY.isoformat()))]   # 공모주는 투자 권유가 될 수 있어 제외. 시작 전(연도 오파싱 의심 포함)은 제외
         L.sort(key=lambda a: (a.get('start') or '') , reverse=True)
         out += [('apply', a, f'/a/{a["id"]}/') for a in L[:2]]
     if slot in ('mon', 'all'):   # 매주 월요일: 주간 공모전 요약
@@ -193,7 +195,54 @@ def run(slot, dry=False):
     return made
 
 
+REVIEW_F = os.path.join(HERE, 'promo_review.json'); DONE_F = os.path.join(HERE, 'promo_done.jsonl'); DONE_SEEN = os.path.join(HERE, 'promo_done_seen.json')
+
+
+def sync():
+    """홍보 세션 연동 (2026-10-19): ① promo_done.jsonl({tok, channel, post_url, time}) 을 D1 에 반영 — 승인·예약(APPROVED·SCHEDULED) 글만 PUBLISHED 로,
+    승인 전 글은 상태를 바꾸지 않고 note 에만 남김(2중 승인 유지). ② 검토 대기~예약 목록을 promo_review.json 으로 내보냄. build.py 가 빌드마다 부른다."""
+    import push
+    seen = set(json.load(open(DONE_SEEN, encoding='utf-8'))) if os.path.exists(DONE_SEEN) else set()
+    res = []
+    if os.path.exists(DONE_F):
+        for l in open(DONE_F, encoding='utf-8'):
+            try:
+                d = json.loads(l)
+            except ValueError:
+                continue
+            k = f"{d.get('tok')}|{d.get('time')}"
+            if not d.get('tok') or k in seen:
+                continue
+            r = push.q('SELECT id, status, channel FROM promo WHERE tok = ?', [d['tok']])
+            if not r:
+                res.append((d['tok'], '없는 tok')); seen.add(k); continue
+            r = r[0]; url = str(d.get('post_url') or '')[:300]; t = str(d.get('time') or NOW.isoformat(timespec='minutes'))[:25]
+            if d.get('channel') and d['channel'] != r['channel']:
+                res.append((d['tok'], f"채널 불일치 {d['channel']}≠{r['channel']}"))
+            elif r['status'] in ('APPROVED', 'SCHEDULED'):
+                push.q("UPDATE promo SET status = 'PUBLISHED', published = ?, post_url = ?, note = ?, updated = ? WHERE id = ?", [t, url, '게시 완료(홍보 세션 보고)', int(NOW.timestamp()), r['id']])
+                res.append((d['tok'], 'PUBLISHED'))
+            elif r['status'] == 'PUBLISHED':
+                res.append((d['tok'], '이미 게시 완료'))
+            else:
+                push.q('UPDATE promo SET post_url = ?, note = ?, updated = ? WHERE id = ?', [url, f"승인 전 게시 보고({r['status']}) {t}", int(NOW.timestamp()), r['id']])
+                res.append((d['tok'], f"승인 전({r['status']}) — 상태 유지, 관리자 승인 필요"))
+            seen.add(k)
+        json.dump(sorted(seen), open(DONE_SEEN, 'w', encoding='utf-8'), ensure_ascii=False)
+    rows = push.q("SELECT tok, day, slot, kind, ref, channel, status, title, body, link, scheduled, post_url, note FROM promo WHERE status IN ('REVIEW', 'APPROVED', 'SCHEDULED') AND day >= ? ORDER BY day DESC, id",
+                  [(TODAY - datetime.timedelta(days=14)).isoformat()])
+    json.dump({'updated': NOW.isoformat(timespec='minutes'), 'note': 'APPROVED·SCHEDULED 만 게시 가능(REVIEW 는 관리자 승인 전). 게시 후 promo_done.jsonl 에 한 줄 추가',
+               'done_result': [{'tok': a, 'result': b} for a, b in res], 'items': rows}, open(REVIEW_F, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+    return res, rows
+
+
 if __name__ == '__main__':
+    if len(sys.argv) > 1 and sys.argv[1] == 'sync':
+        R, W = sync()
+        for x in R:
+            print('게시 완료 반영', *x)
+        print('promo_review.json', len(W), '건 (상태별', {s: sum(1 for w in W if w['status'] == s) for s in ('REVIEW', 'APPROVED', 'SCHEDULED')}, ')')
+        sys.exit()
     slot = sys.argv[1] if len(sys.argv) > 1 and not sys.argv[1].startswith('--') else 'all'
     M = run(slot, '--dry' in sys.argv)
     for tok, kind, ref, ch, title, body, url, st, bad in M:
