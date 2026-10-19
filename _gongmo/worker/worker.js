@@ -399,6 +399,14 @@ export default {
       }
       // ---- 관리자 (대장 계정만) ----
       // ---- 홍보 관리 (2026-10-19 SEO·홍보 지침 Phase 3): 생성은 PC 의 promo.py, 여기서는 검토·승인·예약·게시 완료 기록만. 자동 게시 없음
+      // 추천 학습 기록 (2026-10-19): 노출·클릭만, 방문자 식별은 hits 와 같은 일일 해시 없이 개수만
+      if (p === '/api/rec' && req.method === 'POST') {
+        const ev = body.ev === 'click' ? 'click' : 'imp', ids = (Array.isArray(body.ids) ? body.ids : []).slice(0, 10).map(x => clean(String(x), 20));
+        const det = Array.isArray(body.det) ? body.det.slice(0, 10) : [];
+        const d = new Date(Date.now() + 9 * 3600e3).toISOString().slice(0, 10);
+        for (let k = 0; k < ids.length; k++) await env.DB.prepare('INSERT INTO rec_log (day, ts, ev, item, pos, det) VALUES (?, ?, ?, ?, ?, ?)').bind(d, now(), ev, ids[k], k, det[k] ? JSON.stringify(det[k]).slice(0, 300) : null).run();
+        return json(req, { ok: 1 });
+      }
       if (p === '/api/admin/promo') {
         const u = await me(req, env); if (!u || !ADMINS.includes(u.id)) return err(req, '권한이 없어요.', 403);
         if (req.method === 'GET') {

@@ -1,6 +1,7 @@
 // 🔎 자동 자료 찾기 (2026-10-19): 공모전 키워드(빌드 때 공고에서 자동 추출) → 사이트 문서 색인 BM25 검색. 키워드를 빼고 더하면 바로 다시 검색. 모델·서버 없음
 (function () {
   const R = document.getElementById('finder'); if (!R) return;
+  try { const k = 'jj_seen', L = JSON.parse(localStorage.getItem(k) || '[]').filter(x => x !== R.dataset.id); L.push(R.dataset.id); localStorage.setItem(k, JSON.stringify(L.slice(-50))); } catch (e) {}   // 추천 개인화용(이 폰에만)
   const cid = R.dataset.id, esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const ga = (n, p) => { try { window.gtag && gtag('event', n, p || {}); } catch (e) {} };
   const member = () => { try { return !!(window.JUP && JUP.st && JUP.st.t) || !!localStorage.getItem('jupjup_tok'); } catch (e) { return false; } };

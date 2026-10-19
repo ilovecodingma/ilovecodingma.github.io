@@ -37,6 +37,7 @@
     { k: 'when', ask: '마지막! 언제까지 넣을 수 있는 게 좋아요?', pose: 'wink',
       opts: { '⚡ 이번 주 안': 7, '📅 한 달 안': 31, '🗓️ 상관없어요': 9999 } },
   ];
+  let REC_W = null; fetch('/assets/rec_w.json', { cache: 'no-cache' }).then(r => r.ok ? r.json() : null).then(w => { REC_W = w; }).catch(() => {});
   let apps = null, mode = 'contest';
   let items = null, prof = null, shown = 0, ranked = [];
   const outfit = () => { try { const t = localStorage.getItem('jupjup_tok'), o = (JSON.parse(localStorage.getItem('jupjup_prefs') || '{}').o || ''); return t && o && o !== 'smile' ? o.replace(/^o_/, '') : 'office'; } catch { return 'office'; } };
@@ -82,23 +83,61 @@
   const cos = (a, b) => { let d = 0, na = 0, nb = 0; for (const [g, v] of a) { na += v * v; if (b.has(g)) d += v * b.get(g); } for (const v of b.values()) nb += v * v; return d ? d / Math.sqrt(na * nb) : 0; };
   function recommend() {
     if ((prof.mode || 'contest') === 'apply') return recApply();
+    // 2026-10-19 추천 고도화(모델 없음): 적합도로 거르고 → 1인당 기대 상금 × 당선 가능성(추정) + 실현 가능성 + 개인화 → MMR 로 섞기. 가중치는 /assets/rec_w.json(주 1회 클릭률로 조정)
     const want = (prof.can || []).map(k => Q[0].opts[k]).join(' ') + ' ' + (prof.topic || '');
     const qv = grams(want), whoRe = Q[1].opts[prof.who], time = Q[2].opts[prof.time], pref = Q[3].opts[prof.want];
+    const W = Object.assign({ fit: 1, val: 1, feas: 1, pers: 0.6, int: 1 }, REC_W || {});
+    const H = [[/슬로건|네이밍|명칭|표어|문구|캐치프레이즈|삼행시|N행시|이름/, 1, 0.35], [/사진|포토|디카시|그림일기/, 4, 0.5], [/수기|에세이|수필|독후감|시|글|백일장|원고/, 16, 0.7], [/아이디어|제안|정책/, 12, 0.7],
+               [/디자인|포스터|캐릭터|웹툰|일러스트|로고/, 24, 0.8], [/영상|숏폼|UCC|쇼츠|릴스|영화|뮤직비디오/, 40, 0.9], [/기획서|창업|논문|해커톤|개발|앱|데이터/, 60, 1]];   // [제출물, 예상 작업 시간, 경쟁 덜함 계수]
+    const hrs = { quick: 2, mid: 10, long: 60 }[time] || 10;
+    const seen = (() => { try { return JSON.parse(localStorage.getItem('jj_seen') || '[]'); } catch { return []; } })();
+    const favs = (() => { try { return Object.keys(JSON.parse(localStorage.getItem('jupjup_prep_v1') || '{}')).map(k => k.replace(/^c:/, '')); } catch { return []; } })();
+    const byId = Object.fromEntries(items.map(i => [i.id, i])), hist = [...seen.slice(-30), ...favs, ...favs].map(id => byId[id]).filter(Boolean);
+    const iv = new Map(); hist.forEach(h => [...h.tags, h.effort || ''].forEach(t => t && iv.set(t, (iv.get(t) || 0) + 1)));
+    const ivn = Math.sqrt([...iv.values()].reduce((a, v) => a + v * v, 0)) || 1;
+    const pvs = items.map(i => i.pv).filter(Boolean).sort((a, b) => a - b), MED = pvs[pvs.length >> 1] || 1e6;
     ranked = items.map(i => {
-      const hay = i.title + ' ' + i.field + ' ' + i.tags.join(' ') + ' ' + (i.effort || ''), why = [];
-      let s = want.trim() ? cos(qv, grams(hay)) * 3 : 0.5;
-      if (prof.topic && hay.concat(i.org, i.elig || '').includes(prof.topic)) { s += 1.2; why.push(`「${prof.topic}」 관련`); }
-      if (whoRe) { if (whoRe.test(i.elig || '')) { s += 0.4; why.push(prof.who.replace(/^\S+\s/, '') + ' 참가 가능'); } else s -= 0.8; }
-      const easy = EASY.test(hay), heavy = HEAVY.test(hay);
-      if (time === 'quick') { if (easy) { s += 0.9; why.push('금방 낼 수 있어요'); } if (heavy) s -= 0.7; }
-      if (time === 'long' && heavy) { s += 0.4; why.push('공들일 만한 대회'); }
-      if (pref === 'prize' && i.pv) { s += Math.min(1.2, Math.log10(i.pv) - 5); if (i.pv >= 1e6) why.push(i.prize.split('·')[0].trim()); }
-      if (pref === 'chance') { if (LOCAL.test(i.elig || '')) { s += 0.6; why.push('지역·자격 한정이라 경쟁 적을 듯'); } if (i.pv && i.pv < 1e6) s += 0.2; }
-      const l = left(i.end);
-      if (pref === 'soon' && l <= 7) { s += 0.6; why.push('곧 마감'); } else if (l <= 1) s -= 0.6;
-      if (!why.length && want.trim()) why.push('관심 분야와 비슷해요');
-      return { i, s, why, l };
-    }).filter(x => x.l >= (LATE ? 1 : 0) && x.s > 0).sort((a, b) => b.s - a.s);
+      const hay = i.title + ' ' + i.field + ' ' + i.tags.join(' ') + ' ' + (i.effort || ''), why = [], det = {}, l = left(i.end);
+      // ① 적합도: 자격·참가비·AI 사용 — 안 맞으면 빼고, 애매하면 「공고 확인」
+      let fit = 1;
+      if (whoRe) { if (whoRe.test(i.elig || '')) why.push(prof.who.replace(/^\S+\s/, '') + ' 참가 가능'); else if (i.elig) return null; else { fit = 0.6; why.push('자격 공고 확인'); } }
+      if (i.fee) fit -= 0.3;
+      if (/AI|인공지능|생성형/.test(prof.topic || '') && i.ai === '금지') return null;
+      // ② 기대 가치: 1인당 기대 상금(총상금 ÷ 수상 인원, 1등 상금이면 그대로) × 당선 가능성(추정: 제출물이 무거울수록·자격이 좁을수록 경쟁이 덜함)
+      const total = /총\s*상금|총상금|총\s*\d/.test(i.prize || '');
+      const per = i.pv ? (total && i.win ? i.pv / i.win : total ? i.pv / 10 : i.pv * 0.4) : MED * 0.4;
+      const h = H.find(x => x[0].test(hay)) || [null, 12, 0.7];
+      const prob = Math.min(1, h[2] * (LOCAL.test(i.elig || '') || i.region ? 1.4 : 1) * (i.fee ? 1.2 : 1));
+      const val = Math.max(0, Math.log10(per + 1) - 4) / 3 * prob;
+      det.per = Math.round(per); det.prob = +prob.toFixed(2); if (!i.pv) why.push('상금 미확인');
+      // ③ 실현 가능성: 남은 주말·일수로 쓸 수 있는 시간 vs 제출물 예상 작업 시간
+      const we = Math.floor((l + new Date(Date.now() + 324e5).getUTCDay()) / 7), avail = Math.min(hrs, we * 8 + l);   // 상담에서 고른 「쓸 수 있는 시간」 전체와 남은 기간 중 작은 쪽
+      const feas = Math.max(0, Math.min(1.2, avail / h[1]));
+      if (feas >= 1 && we >= 1) why.push(`남은 주말 ${we}번이면 충분`); else if (feas < 0.5) why.push('시간이 빠듯해요');
+      // ④ 개인화: 내가 본·찜한 공모전의 분야·제출물과 겹치면 가산, 최근 본 건 조금 감점
+      let pers = 0; [...i.tags, i.effort || ''].forEach(t => { if (iv.get(t)) pers += iv.get(t) / ivn; }); pers = Math.min(1, pers);
+      if (seen.slice(-10).includes(i.id)) pers -= 0.3;
+      // 관심(상담 답·주제)
+      const sim = want.trim() ? cos(qv, grams(hay)) : 0;
+      let int = want.trim() ? sim * 3 - (sim < 0.08 ? 1.5 : 0) : 0.4;   // 고른 분야와 동떨어지면 크게 감점
+      if (prof.topic && hay.concat(i.org, i.elig || '').includes(prof.topic)) { int += 1.2; why.unshift(`「${prof.topic}」 관련`); }
+      if (pref === 'prize' && i.pv) int += Math.min(1, Math.log10(i.pv) - 5);
+      if (pref === 'chance' && prob >= 0.8) { int += 0.5; why.push('경쟁 덜할 가능성(추정)'); }
+      if (pref === 'soon' && l <= 7) { int += 0.5; why.push('곧 마감'); }
+      if (time === 'quick' && h[1] <= 4) why.push('금방 낼 수 있어요');
+      const s = W.fit * fit + W.val * val * 2 + W.feas * feas + W.pers * pers + W.int * int - (l <= 1 ? 0.5 : 0);
+      Object.assign(det, { fit: +fit.toFixed(2), val: +val.toFixed(2), feas: +feas.toFixed(2), pers: +pers.toFixed(2), int: +int.toFixed(2), s: +s.toFixed(2) });
+      if (!why.length) why.push('관심 분야와 비슷해요');
+      return { i, s, why: [...new Set(why)], l, det };
+    }).filter(x => x && x.l >= (LATE ? 1 : 0) && x.s > 0).sort((a, b) => b.s - a.s);
+    // ⑤ 다양성(MMR 비슷하게): 같은 분야·같은 주최가 연속 2개를 넘지 않게
+    const pool = ranked.slice(), out = [];
+    while (pool.length) {
+      const k = pool.findIndex(x => { const p1 = out[out.length - 1], p2 = out[out.length - 2]; return x.s >= pool[0].s * 0.75 && !(p1 && p2 && ((p1.i.tags[0] === x.i.tags[0] && p2.i.tags[0] === x.i.tags[0]) || (x.i.org && p1.i.org === x.i.org && p2.i.org === x.i.org))); });
+      out.push(pool.splice(k < 0 ? 0 : k, 1)[0]);
+    }
+    ranked = out;
+    try { const ids = ranked.slice(0, 10).map(x => x.i.id); window.JUP && JUP.api && JUP.api('/api/rec', { method: 'POST', body: { ev: 'imp', ids, det: ranked.slice(0, 10).map(x => x.det) } }).catch(() => {}); } catch (e) {}
     const top = ranked[0] ? ranked[0].s : 1;
     ranked.forEach(x => x.pct = Math.max(41, Math.min(98, Math.round(58 + 40 * x.s / top))));
     shown = 0; list.innerHTML = ''; more(); openPop();
@@ -152,12 +191,13 @@
   addEventListener('keydown', e => { if (e.key === 'Escape' && !res.hidden) closePop(); });
   function more() {
     const part = ranked.slice(shown, shown + 5); shown += part.length;
-    list.insertAdjacentHTML('beforeend', part.map(({ i, why, l, pct, a }, k) => a ? `<li class="cs-card cs-ap" style="--d:${k * 70}ms"><a href="/a/${esc(i.id)}/"><span class="cs-th"><em>${({ apt: '🏠', rent: '🏘️', grant: '💰', ipo: '📈' })[i.kk] || '📝'}</em></span><span class="cs-b"><span class="cs-match"><i style="width:${pct}%"></i><b>일치도 ${pct}%</b></span><strong>${esc(i.title)}</strong><span class="cs-why">💬 ${esc(why.slice(0, 3).join(' · '))}</span><span class="cs-meta"><em class="${l <= 3 ? 'hot' : ''}">${i.always ? '상시' : l ? 'D-' + l : 'D-DAY'}</em>${esc(i.org || '')}${i.always ? '' : ' · ~' + esc(i.end.slice(5).replace('-', '/'))}</span></span></a></li>` : `<li class="cs-card" style="--d:${k * 70}ms"><a href="/c/${i.id}/">
+    list.insertAdjacentHTML('beforeend', part.map(({ i, why, l, pct, a, det }, k) => a ? `<li class="cs-card cs-ap" style="--d:${k * 70}ms"><a href="/a/${esc(i.id)}/"><span class="cs-th"><em>${({ apt: '🏠', rent: '🏘️', grant: '💰', ipo: '📈' })[i.kk] || '📝'}</em></span><span class="cs-b"><span class="cs-match"><i style="width:${pct}%"></i><b>일치도 ${pct}%</b></span><strong>${esc(i.title)}</strong><span class="cs-why">💬 ${esc(why.slice(0, 3).join(' · '))}</span><span class="cs-meta"><em class="${l <= 3 ? 'hot' : ''}">${i.always ? '상시' : l ? 'D-' + l : 'D-DAY'}</em>${esc(i.org || '')}${i.always ? '' : ' · ~' + esc(i.end.slice(5).replace('-', '/'))}</span></span></a></li>` : `<li class="cs-card" style="--d:${k * 70}ms"><a href="/c/${i.id}/">
 <span class="cs-th">${i.th ? `<img src="/assets/shots/${i.id}.webp" alt="" loading="lazy">` : '<em>🏆</em>'}</span>
 <span class="cs-b"><span class="cs-match"><i style="width:${pct}%"></i><b>일치도 ${pct}%</b></span><strong>${esc(i.title)}</strong>
 <span class="cs-why">💬 ${esc(why.slice(0, 3).join(' · '))}</span>
-<span class="cs-meta"><em class="${l <= 3 ? 'hot' : ''}">${l ? 'D-' + l : 'D-DAY'}</em>${i.pv ? esc(i.prize.split('·')[0]) : ''} · ${esc(i.org || '')}</span></span></a></li>`).join(''));
+<span class="cs-meta"><em class="${l <= 3 ? 'hot' : ''}">${l ? 'D-' + l : 'D-DAY'}</em>${i.pv ? esc(i.prize.split('·')[0]) : ''} · ${esc(i.org || '')}</span></span></a>${det ? `<details class="cs-det"><summary>점수 세부(추정)</summary><p>적합도 ${det.fit} · 기대 가치 ${det.val}(1인당 약 ${Math.round(det.per / 1e4).toLocaleString()}만원 × 당선 가능성 ${det.prob}, 추정) · 실현 가능성 ${det.feas} · 개인화 ${det.pers} · 관심 일치 ${det.int} → ${det.s}. 당선 가능성은 실제 경쟁률이 아니라 제출물 난이도·자격 범위로 추정한 값이에요.</p></details>` : ''}</li>`).join(''));
     S.querySelector('.cs-more').hidden = shown >= ranked.length;
+    list.querySelectorAll('.cs-card > a:not([data-l])').forEach(a => { a.dataset.l = 1; a.addEventListener('click', () => { try { const id = a.getAttribute('href').split('/')[2]; window.JUP && JUP.api && JUP.api('/api/rec', { method: 'POST', body: { ev: 'click', ids: [id] } }).catch(() => {}); } catch (e) {} }); });
   }
   function choose() {
     talk('뭐 상담해 줄까요? <b>공모전</b>이든 <b>청약·지원금</b>이든 딱 맞는 걸 골라 줄게요!', 'wave').then(() => {

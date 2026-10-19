@@ -232,6 +232,7 @@ def load():
         c['region'] = P.clean(r.get('region', '') if isinstance(r.get('region'), str) else '')[:10]
         c['fee'] = r.get('fee') or 0
         c['submit'] = P.clean(r.get('submit', ''))[:10]
+        c['ai'] = r.get('ai') if r.get('ai') in ('허용', '금지', '표기') else ''
         if re.match(r'^\s*(및|등|또는|,|·|\)|이상)', c.get('elig') or '') or c.get('elig') in ('공고 참조', '-'):   # 2026-10-19: 잘려 들어온 자격 문구는 비워 「공식 공고 확인 필요」로
             c['elig'] = ''
         if r.get('prize_first') and not c['pv']:
@@ -551,7 +552,7 @@ def detail(c, live):
 <div class="my-acts" data-id="c:{c["id"]}" data-title="{E(c["title"])}" data-end="{c["end"]}"></div>
 <h2>한눈에 보기</h2><p>{E(summary)}</p>
 {np_html}{c_insight(c, live)}
-{('<section id="finder" data-id="' + c['id'] + '" data-v="' + TODAY.strftime('%m%d') + '"></section><script defer src="/assets/finder/finder.js?v=2"></script>') if c in live else ''}
+{('<section id="finder" data-id="' + c['id'] + '" data-v="' + TODAY.strftime('%m%d') + '"></section><script defer src="/assets/finder/finder.js?v=3"></script>') if c in live else ''}
 <h2>응모 전 체크리스트</h2><ul class="chk">{tips}</ul>
 {'<a class="lab-cta" href="/lab/#diag"><b>🏆 이런 공모전 수상작은 어떻게 생겼을까?</b><span>수상작 300여 개를 분석한 당선 공식과 내 문구 진단 →</span></a>' if re.search(r'슬로건|표어|네이밍|명칭|캐치프레이즈|삼행시|N행시|이행시|애칭', c['title']) else ''}
 {hist_html}<p class="note">분야: {catl}. 상금·자격·기간은 공고 원문에서 자동으로 정리한 값이라 오차가 있을 수 있습니다. 최종 기준은 주최 측 공식 공고입니다.</p>
@@ -1014,7 +1015,11 @@ def build():
     for c in contests:
         detail(c, live)
     sync_shots(live)
-    keys = ('id', 'title', 'org', 'start', 'end', 'prize', 'pv', 'field', 'tags', 'th', 'elig', 'effort', 'region')
+    keys = ('id', 'title', 'org', 'start', 'end', 'prize', 'pv', 'field', 'tags', 'th', 'elig', 'effort', 'region', 'fee', 'submit', 'ai', 'win')
+    for c in live:   # 수상 인원 추정(공고 원문 시상 항목의 「N명·N팀·N편」 합) — 추천 1인당 기대 상금용, 못 찾으면 0
+        sw = next((v for k_, v in notice_points(c['id']) if k_ == '시상'), '')
+        ns = [int(x) for x in re.findall(r'(\d{1,3})\s*(?:명|팀|편|점|작품)', sw)]
+        c['win'] = sum(ns) if ns and sum(ns) <= 300 else 0
     with open(os.path.join(ROOT, 'data.json'), 'w', encoding='utf-8', newline='\n') as f:
         json.dump({'updated': NOW_KST().strftime('%Y-%m-%d %H:%M'), 'late': late, 'items': [{k: c[k] for k in keys} for c in live]},
                   f, ensure_ascii=False, separators=(',', ':'))
@@ -1044,7 +1049,7 @@ def build():
     contest_home = f'''<h1 class="cs-h1">🏆 루리 공모전 추천 상담 — 이 공모전이나 해 볼까?</h1>
 <section id="consult" aria-label="루리 공모전 추천 상담"><noscript><p>루리 상담은 자바스크립트가 필요해요. 진행 중 공모전 {len(live)}건이 있어요.</p></noscript></section>
 {qa_home()}<p class="cs-foot">진행 중 공모전 {len(live)}건(오늘 {TODAY.month}/{TODAY.day} 한국 시간 기준 접수 마감 전 · 제목이 같은 공모전은 1건 · {NOW_KST():%m/%d %H:%M} 갱신)의 마감일·상금·응모 자격·접수 방법과 공식 공고 캡처를 정리해 두고, 루리가 상황에 맞는 것만 골라 드려요.</p>
-<link rel="stylesheet" href="/assets/home/consult.css?v=14"><script defer src="/assets/home/consult.js?v=11"></script>'''
+<link rel="stylesheet" href="/assets/home/consult.css?v=14"><script defer src="/assets/home/consult.js?v=13"></script>'''
     page('/contest/', '루리 공모전 추천 상담 — 진행 중 공모전 ' + str(len(live)) + '건', f'진행 중인 공모전 {len(live)}건을 마감 임박순·상금순으로. 질문 몇 개면 루리가 딱 맞는 공모전을 골라 드려요.',
          contest_home, [('루리의 줍줍', '/'), ('공모전', '/contest/')])
     nw, an, tk = _rd('news/data.json'), _rd('analyst/data.json'), _rd('talk/data.json')
@@ -2589,6 +2594,24 @@ def daily_jobs():
                 st[sl] = d
             except Exception as e:
                 print('홍보 후보 실패', sl, repr(e)[:120])
+    if TODAY.weekday() == 0 and st.get('tune') != d:   # 매주 월요일: 추천 가중치 조정(클릭된 추천의 점수 구성이 평균보다 높은 항목은 가중치 +10%, 낮으면 -10%)
+        try:
+            import push
+            rows = push.q("SELECT ev, item, det FROM rec_log WHERE day >= ?", [(TODAY - datetime.timedelta(days=7)).isoformat()])
+            imp = [json.loads(r['det']) for r in rows if r['ev'] == 'imp' and r['det']]
+            clk = {r['item'] for r in rows if r['ev'] == 'click'}
+            WF = os.path.join(ROOT, 'assets', 'rec_w.json'); w = json.load(open(WF, encoding='utf-8'))
+            if len(imp) >= 200 and clk:
+                ci = [json.loads(r['det']) for r in rows if r['ev'] == 'imp' and r['det'] and r['item'] in clk]
+                for k in ('fit', 'val', 'feas', 'pers', 'int'):
+                    a_ = sum(x.get(k, 0) for x in imp) / len(imp); c_ = sum(x.get(k, 0) for x in ci) / max(1, len(ci))
+                    w[k] = round(min(2, max(0.3, w[k] * (1.1 if c_ > a_ * 1.05 else 0.9 if c_ < a_ * 0.95 else 1))), 3)
+                w['updated'] = d; w['note'] = f'노출 {len(imp)} · 클릭 {len(clk)} 기준 조정'
+                json.dump(w, open(WF, 'w', encoding='utf-8'), ensure_ascii=False)
+            print('추천 가중치', w)
+            st['tune'] = d
+        except Exception as e:
+            print('추천 가중치 조정 실패', repr(e)[:100])
     try:
         import compete   # 경쟁 지표 원자료 하루 1번 쌓기(화면은 7일치 이상부터)
         compete.main()
