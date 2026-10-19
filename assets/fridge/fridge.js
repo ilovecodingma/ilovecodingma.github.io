@@ -140,7 +140,7 @@ ${now.length > 3 ? `<details class="fr-more"><summary>바로 만들 수 있는 �
     clearTimeout(window.__frLog); window.__frLog = setTimeout(() => { try { window.JUP && JUP.api && JUP.api('/api/rec', { method: 'POST', body: { ev: 'imp', ids: now.slice(0, 5).map(x => 'f:' + x.r.n), det: now.slice(0, 5).map(x => ({ s: +x.score.toFixed(2), cat: x.cat })) } }).catch(() => {}); } catch (e) {} }, 3000);
     clearTimeout(gaT); gaT = setTimeout(() => ga('fridge_result', { have: have.size, now: now.length, mood }), 1500);
   }
-  Promise.all([fetch('/assets/fridge/recipes.json?v=4').then(r => r.json()), fetch('/assets/fridge/recipes_ph.json?v=' + Math.floor(Date.now() / 36e5)).then(r => r.ok ? r.json() : null).catch(() => null),
+  Promise.all([fetch('/assets/fridge/recipes.json?v=5').then(r => r.json()), fetch('/assets/fridge/recipes_ph.json?v=' + Math.floor(Date.now() / 36e5)).then(r => r.ok ? r.json() : null).catch(() => null),
     fetch('/assets/fridge/today.json?v=' + Math.floor(Date.now() / 36e5)).then(r => r.ok ? r.json() : null).catch(() => null)])
     .then(([d, im, td]) => { D = d; IMG = im; TD = td; paint(); }).catch(() => { ROOT.innerHTML = '<p class="fr-note">레시피를 불러오지 못했어요. 잠시 뒤 새로고침해 주세요.</p>'; });
 })();

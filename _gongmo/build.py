@@ -104,7 +104,7 @@ PAGE_INTRO = {k: f'<section class="pg-intro"><h2>{h}</h2>{v}</section>' for k, (
  '/event/': ('경품 이벤트 볼 때 알아 둘 것', '<p>기업·기관 SNS와 이벤트 사이트에 올라온 경품 이벤트를 매시간 모아 마감순으로 정리해요. 댓글 한 줄·퀴즈·설문처럼 1~5분이면 끝나는 것을 위로 올려요. 당첨됐다며 개인정보나 배송비·세금 송금을 먼저 요구하는 연락은 사기일 가능성이 크니, 꼭 공식 계정의 발표 글과 대조해 보세요. 경품이 5만원을 넘으면 제세공과금(22%)을 낼 수 있어요.</p>'),
  '/fridge/': ('냉장고 파먹기 사용법', '<p>집에 있는 재료를 고르면 루리가 정리한 집밥 레시피 중 지금 바로 만들 수 있는 메뉴를 먼저 보여 드려요. 재료 하나만 더 사면 되는 메뉴도 함께 알려 줘서, 장보기 목록을 줄일 수 있어요. 레시피는 1~2인분 기준이고 조리 시간과 난이도를 함께 적었어요.</p>'),
  '/lab/': ('수상 연구소는 이렇게 분석해요', '<p>슬로건·표어·네이밍 공모전의 실제 수상작을 모아 글자 수, 운율, 대구, 핵심어 위치 같은 구조로 하나씩 풀어 봐요. 수상작을 베끼는 게 아니라 「왜 뽑혔는지」를 알아보는 곳이에요. 내 문구를 넣으면 같은 기준으로 진단해 드려요.</p>'),
- '/apply/': ('청약·지원금 신청 전에', '<p>여기 모은 일정은 청약홈·LH·지자체·정부24 공고를 바탕으로 마감순으로 정리했어요. 같은 지원금이라도 지역·나이·소득 기준이 달라 신청 전에 자격부터 확인해야 해요. 청약은 <a href="/apply/recommend/">청약 추천</a>에서 내 가점을 먼저 계산해 보세요. 사는 곳 기준으로 보려면 <a href="/apply/r/">지역별 지원금·청약</a>에서 시·도를 고르세요.</p>'),
+ '/apply/': ('청약·지원금 신청 전에', f'<p>여기 모은 일정은 청약홈·LH·지자체·정부24 공고를 바탕으로 마감순으로 정리했어요. 같은 지원금이라도 지역·나이·소득 기준이 달라 신청 전에 자격부터 확인해야 해요. 청약은 <a href="/apply/recommend/">청약 추천</a>에서 내 가점을 먼저 계산해 보세요. 사는 곳 기준으로 보려면 <a href="/apply/r/">지역별 지원금·청약</a>에서 시·도를 고르세요. 달별로는 <a href="/apply/month/{TODAY:%Y-%m}/">{TODAY.month}월 청약 일정</a>·<a href="/apply/month/{(TODAY.replace(day=28) + datetime.timedelta(days=4)):%Y-%m}/">{(TODAY.replace(day=28) + datetime.timedelta(days=4)).month}월 청약 일정</a>, 대상별로는 <a href="/apply/newlywed/">신혼부부 지원금</a>도 있어요.</p>'),
  '/contest/': ('공모전 추천은 이렇게 해요', '<p>진행 중인 공모전을 마감·상금·분야·제출물로 정리해 두고, 내가 고른 조건에 맞는 것부터 보여 줘요. 상금이 큰 것만이 아니라 「준비 시간 대비 할 만한 것」을 위로 올리는 게 루리의 기준이에요. 각 공모전 페이지에는 같은 분야와 비교한 분석, 오늘 기준 준비 일정을 붙여 두었어요. <a href="/contest/week/">이번 주 마감 공모전</a>만 따로 볼 수도 있고, 대상·분야별로는 <a href="/contest/youth/">청소년 공모전</a>, <a href="/contest/novel/">소설 공모전</a>, <a href="/contest/photo/">사진 공모전</a>, <a href="/contest/video/">영상 공모전</a>, <a href="/contest/idea/">아이디어 공모전</a>, <a href="/contest/univ/">대학생 공모전</a>, <a href="/contest/ai-video/">AI 영상 공모전</a> 모음도 있어요.</p>'),
 }.items()}
 
@@ -345,6 +345,7 @@ def collapse_thin(urls):
                 if t2 != t:
                     open(fp, 'w', encoding='utf-8', newline='\n').write(t2); n += 1
     urls[:] = [u for u in urls if u not in COLL]
+    NOINDEX.difference_update(COLL)   # 없어진 페이지는 검색 제외 비율 계산에서도 뺌
     json.dump(COLL, open(os.path.join(HERE, 'collapsed.json'), 'w', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))
     return len(COLL), n
 
@@ -862,6 +863,8 @@ def sido_of(a):
     return None
 
 
+SIDO_FULL = {'seoul': '서울시', 'busan': '부산시', 'daegu': '대구시', 'incheon': '인천시', 'jeonnam-gwangju': '광주·전남', 'daejeon': '대전시', 'ulsan': '울산시', 'sejong': '세종시', 'gyeonggi': '경기도',
+             'gangwon': '강원도', 'chungbuk': '충청북도', 'chungnam': '충청남도', 'jeonbuk': '전북', 'gyeongbuk': '경상북도', 'gyeongnam': '경상남도', 'jeju': '제주도'}
 REG_TYPES = {'': ('지원금·청약', None), 'youth': ('청년 지원금', lambda a: re.search(r'청년|대학생|사회초년', a['title'])),
              'house': ('청약·월세·주거 지원', lambda a: a.get('kk') in ('rent', 'apt') or re.search(r'월세|주거|임대|청약|전세|주택', a['title']))}
 
@@ -895,7 +898,8 @@ def region_pages(aps):
                      '': f'{nm} 지역 공고만 골라 마감순으로 모았어요. 전국 대상 공고 {len(nat)}건은 <a href="/apply/">전체 일정</a>에서 함께 확인하세요.'}[tk]
             subs = ' · '.join(f'<a href="/apply/r/{sl}/{k2 + "/" if k2 else ""}"{" class=on" if k2 == tk else ""}>{nm} {n2}</a>' for k2, (n2, f2) in REG_TYPES.items())
             lst = ''.join(ap_card(a) for a in M) or '<li class="empty">지금은 이 지역 공고가 없어요.</li>'
-            title = {'': f'{nm} 지원금·청약 {YR} — 진행 중 {len(M)}건 마감순', 'youth': f'{nm} 청년지원금 {YR} — 신청 일정·자격 ({len(M)}건)', 'house': f'{nm} 청약·월세 지원 {YR} — 청약 일정·주거 지원 ({len(M)}건)'}[tk]
+            fn = SIDO_FULL.get(sl, nm)   # 2026-10-19 검색 시나리오: 검색어는 「경기도」「서울시」처럼 정식 이름으로 친다
+            title = {'': f'{fn} 지원금·청약 {YR} — 진행 중 {len(M)}건 마감순', 'youth': f'{fn} 청년 지원금 {YR} — 종류·금액·신청기간 ({len(M)}건)', 'house': f'{fn} 청약·월세 지원 {YR} — 청약 일정·주거 지원 ({len(M)}건)'}[tk]
             body = (f'<p class="bc"><a href="/">홈</a> › <a href="/apply/">지원금·청약</a> › <a href="/apply/r/">지역별</a> › {nm}</p><h1>📍 {E(title)}</h1><p class="hm-links">{subs}</p>'
                     f'<p class="cat-st">📌 {t}</p><p>{guide}</p><h2>진행 중 공고 (마감순)</h2><ul class="list">{lst}</ul>'
                     + rel_block(r'청년|월세|청약|지원금' if tk != 'house' else r'월세|청약|주거', [('/apply/recommend/', '청약 가점 추천'), ('/apply/', '전국 지원금·청약 일정'), ('/money/tools/loan/', '대출 이자 계산기')]))
@@ -909,6 +913,35 @@ def region_pages(aps):
     page('/apply/r/', f'지역별 지원금·청약 {YR} — 서울·경기·부산 등 시·도별 신청 일정', '시·도별 청년 지원금, 월세 지원, 아파트 청약 일정을 마감순으로 정리했어요.', body,
          [('루리의 줍줍', '/'), ('지원금·청약', '/apply/'), ('지역별', '/apply/r/')])
     return ['/apply/r/'] + urls
+
+
+def apply_hubs(aps):
+    """2026-10-19 검색 시나리오: 「11월 청약 일정」「신혼부부 지원금 2026 지역별」 — 데이터에서 골라 만든 모음(사실 문장은 공고 값만)."""
+    urls = []
+    for mo in (TODAY.replace(day=1), (TODAY.replace(day=28) + datetime.timedelta(days=4)).replace(day=1)):
+        ym = mo.strftime('%Y-%m'); m = mo.month
+        L = [a for a in aps if not a.get('always') and ((a.get('end') or '')[:7] == ym or (a.get('start') or '')[:7] == ym)]
+        apt = [a for a in L if a.get('kk') in ('apt', 'rent')]; ipo = [a for a in L if a.get('kk') == 'ipo']; etc = [a for a in L if a not in apt and a not in ipo]
+        sec = lambda t, X: (f'<h2>{t} ({len(X)}건)</h2><ul class="list">{"".join(ap_card(a) for a in sorted(X, key=lambda a: a.get("end") or ""))}</ul>' if X else '')
+        path = f'/apply/month/{ym}/'
+        body = (f'<p class="bc"><a href="/">홈</a> › <a href="/apply/">지원금·청약</a> › {m}월 일정</p><h1>📅 {m}월 청약 일정 {mo.year} — 아파트·공공임대·공모주·지원금 ({len(L)}건)</h1>'
+                f'<p class="cat-st">📌 {mo.year}년 {m}월에 접수를 시작하거나 마감하는 공고 {len(L)}건이에요(아파트·임대 {len(apt)}건, 공모주 {len(ipo)}건, 지원금 등 {len(etc)}건). 공모주는 투자 상품이라 청약 전 투자설명서를 꼭 읽어 보세요.</p>'
+                f'<p class="hm-scope">기준: 공공·지자체·청약홈 공고 중 접수 시작일이나 마감일이 {m}월인 것 · {NOW_KST():%m/%d %H:%M} 갱신(한국 시간)</p>'
+                + sec('🏠 아파트·공공임대', apt) + sec('📈 공모주 (투자 권유 아님)', ipo) + sec('💰 지원금·기타', etc)
+                + rel_block(r'청약|지원금|청년', [('/apply/recommend/', '청약 가점 계산기'), ('/apply/r/', '지역별 지원금·청약'), ('/apply/', '전체 일정')]))
+        page(path, f'{m}월 청약 일정 {mo.year} — 아파트·공공임대·공모주 ({len(L)}건)', f'{mo.year}년 {m}월 청약 일정: 아파트·공공임대 {len(apt)}건, 공모주 {len(ipo)}건, 지원금 {len(etc)}건 접수 시작·마감일 정리.',
+             body, [('루리의 줍줍', '/'), ('지원금·청약', '/apply/'), (f'{m}월 일정', path)], noindex=len(L) < 5)
+        urls.append(path)
+    L = [a for a in aps if re.search(r'신혼|결혼|예비부부|웨딩|혼인', a['title'] + ' ' + (a.get('target') or ''))]
+    by = collections.Counter(SIDO_FULL.get(sido_of(a), '전국·기타') for a in L)
+    body = (f'<p class="bc"><a href="/">홈</a> › <a href="/apply/">지원금·청약</a> › 신혼부부</p><h1>💍 신혼부부 지원금 {YR} — 지역별 결혼·주거 지원 ({len(L)}건)</h1>'
+            f'<p class="cat-st">📌 제목이나 대상에 신혼·결혼·예비부부가 들어간 진행 중 공고 {len(L)}건이에요. 지역별로는 ' + ', '.join(f'{k} {v}건' for k, v in by.most_common(6)) + ' 순이에요.</p>'
+            '<p>신혼부부 지원은 혼인 기간(보통 7년 이내), 부부 합산 소득, 거주 기간 조건이 공고마다 달라요. 주거 지원(전세·월세·특별공급)과 결혼 장려금은 따로 신청하는 경우가 많으니 둘 다 확인해 보세요.</p>'
+            f'<p class="hm-scope">기준: 진행 중 공고 · {NOW_KST():%m/%d %H:%M} 갱신(한국 시간)</p><ul class="list">{"".join(ap_card(a) for a in L) or "<li class=empty>지금은 없어요.</li>"}</ul>'
+            + rel_block(r'신혼|청약|주거', [('/apply/recommend/', '청약 가점 계산기'), ('/apply/r/', '지역별 지원금·청약')]))
+    page('/apply/newlywed/', f'신혼부부 지원금 {YR} — 지역별 결혼·주거 지원 ({len(L)}건)', f'신혼부부 지원금 {YR}: 진행 중 {len(L)}건을 지역별로. 결혼 장려금·전세·월세·특별공급 신청 기간과 대상.', body,
+         [('루리의 줍줍', '/'), ('지원금·청약', '/apply/'), ('신혼부부', '/apply/newlywed/')], noindex=len(L) < 5)
+    return urls + ['/apply/newlywed/']
 
 
 def week_hub(live):
@@ -969,6 +1002,18 @@ def contest_hubs(live):
           '제목에 사진·포토가 들어간 공모전만 모았어요. 촬영 원본(EXIF)을 요구하는 경우가 많고, 사람이 나오면 초상권 동의가 필요해요. 과한 보정·합성은 감점되거나 실격될 수 있어요.'),
          ('video', f'영상 공모전 {YR} — 숏폼·UCC·홍보영상 공모전 모음', '영상 공모전', lambda c: '영상' in c['tags'] or re.search(r'영상|숏폼|쇼츠|UCC|릴스', c['title']) is not None,
           '영상 분야로 분류됐거나 제목에 영상·숏폼·UCC가 들어간 공모전만 모았어요. 길이(초)·해상도·파일 형식과 음원·폰트 저작권을 제출 전에 확인하세요.'),
+         ('essay', f'에세이 공모전 {YR} — 수필·수기·대학생 에세이 공모전 모음', '에세이 공모전', lambda c: re.search(r'에세이|수필|수기|체험담|사연', c['title']) is not None,
+          '제목에 에세이·수필·수기·체험담이 들어간 공모전만 모았어요. 분량(원고지 매수·A4 장수)과 「실화 여부」 조건을 먼저 보고, 개인정보가 들어간 사연은 가명 처리 규정을 확인하세요.'),
+         ('poem', f'시 공모전 {YR} — 시·동시·디카시·백일장 모음', '시 공모전', lambda c: re.search(r'(?<![가-힣])시(?:\s|$|·|,|\)|부문| 공모)|동시|디카시|시조|백일장|시인|시화', c['title']) is not None,
+          '제목에 시·동시·디카시·시조·백일장이 들어간 공모전만 골랐어요. 편수(보통 3~5편)와 「미발표작」 조건, 원고 양식(한글 hwp·글꼴·크기)을 공고에서 꼭 확인하세요.'),
+         ('character', f'캐릭터 공모전 {YR} — 캐릭터·마스코트 디자인 공모전 모음', '캐릭터 공모전', lambda c: re.search(r'캐릭터|마스코트|이모티콘', c['title']) is not None,
+          '캐릭터·마스코트·이모티콘 공모전만 모았어요. 대부분 「판넬(제출용 한 장)」에 기본형·응용 동작·컬러 칩·기획 의도를 함께 넣으라고 해요. 원본 파일(ai·psd) 제출 여부와 저작권 양도 조항을 먼저 보세요.'),
+         ('slogan', f'슬로건 공모전 {YR} — 슬로건·네이밍·표어 공모전 모음', '슬로건·네이밍 공모전', lambda c: re.search(r'슬로건|네이밍|명칭|표어|캐치프레이즈|이름\s*짓기|애칭|BI', c['title']) is not None,
+          '슬로건·네이밍·표어 공모전만 모았어요. 짧아서 응모가 많으니 「주최 기관의 핵심 단어 + 리듬」이 중요해요. <a href="/lab/">수상작 분석</a>에서 실제 당선작 구조를 먼저 보세요.'),
+         ('ucc', f'UCC 공모전 {YR} — UCC·숏폼·홍보영상 공모전 (심사기준 정리)', 'UCC·숏폼 공모전', lambda c: re.search(r'UCC|숏폼|쇼츠|릴스|틱톡|짧은 영상|1분 영상|30초', c['title']) is not None,
+          'UCC·숏폼 공모전만 모았어요. 심사기준은 보통 주제 적합성·창의성·전달력·완성도(편집·음향)로 나뉘고, 조회수·좋아요를 점수에 넣는 공모전도 있어요. 음원·폰트 저작권 표기를 꼭 확인하세요.'),
+         ('webnovel', f'웹소설 공모전 {YR} — 플랫폼 웹소설 공모전 일정', '웹소설 공모전', lambda c: re.search(r'웹소설|웹 소설|연재|노벨|문피아|카카오페이지|시리즈|조아라', c['title']) is not None,
+          '웹소설 공모전만 마감순으로 모았어요. 플랫폼 공모전은 「공모 기간 안 연재 회차·글자 수」가 조건인 경우가 많아요. 연재 시작일과 최소 회차를 먼저 확인하세요.'),
          ('idea', f'아이디어 공모전 {YR} — 정책 제안·기획 공모전 모음', '아이디어 공모전', lambda c: '아이디어·정책' in c['tags'] or re.search(r'아이디어|제안|정책', c['title']) is not None,
           '아이디어·정책 제안 공모전만 모았어요. 이미 시행 중인 정책과 겹치지 않는지 검색해 보고, 현황 → 문제점 → 개선안 → 기대효과 순서로 쓰면 심사위원이 읽기 쉬워요.')]
     for mo in sorted({int(c['end'][5:7]) for c in live if c['end'][:4] == str(TODAY.year)} & {TODAY.month, TODAY.month % 12 + 1}):
@@ -1153,7 +1198,7 @@ def build():
     extra_urls = talk_pages() + mag_pages(live, aps) + analyst_pages() + satire_pages() + kw_pages() + money_pages() + apply_rec_page() + tool_pages() + hot_pages()
     import widget
     extra_urls += widget.build(ROOT, live, aps, hot_live()[0], page, say, COMM_API, TODAY)  # 퍼가기 위젯 (2026-10-18 연구 세션 요청)
-    extra_urls += region_pages(aps) + contest_hubs(live) + week_hub(live)
+    extra_urls += region_pages(aps) + contest_hubs(live) + week_hub(live) + apply_hubs(aps)
     rv_urls, REVIEWS[:] = review_pages()
     extra_urls += rv_urls
     extra_urls += fr_urls
@@ -1236,6 +1281,34 @@ GUIDES = [
 <h2>팀 수상</h2><p>팀으로 수상하면 대표자 계좌로 한 번에 지급하는 경우가 많습니다. 미리 팀원끼리 배분 방식을 정해 두면 분쟁을 줄일 수 있습니다.</p>
 <h2>당첨 사칭 주의</h2><p>"당첨되었으니 수수료나 세금을 먼저 입금하라"는 연락은 사기일 가능성이 높습니다. 정상적인 공모전은 상금에서 세금을 공제하고 지급하며, 응모자에게 먼저 돈을 보내라고 하지 않습니다. 발표는 반드시 주최 기관의 공식 홈페이지나 공식 SNS 계정에서 다시 확인하세요.</p>
 <h2>발표 확인</h2><p>발표일을 메모해 두고, 발표 방법(홈페이지 게시, 개별 연락, SNS 댓글)을 확인해 두세요. 연락이 닿지 않으면 수상이 취소되는 공모전도 있습니다.</p>'''),
+ ('unemployment-2026', '실업급여 조건 2026 — 받을 수 있는 사람·금액·기간·신청 방법', '실업급여(구직급여) 2026 조건: 고용보험 가입 기간 180일, 비자발적 이직, 하루 상한 68,100원, 지급 기간 120~270일, 고용24 신청 순서를 정리했어요.', '''
+<p class="note">기준일 2026-10-19 · 고용노동부 고용24 안내 기준으로 정리한 일반 정보예요. 내 경우에 해당하는지는 고용센터(국번 없이 1350)에서 확인하는 게 가장 정확해요.</p>
+<h2>1. 받을 수 있는 조건</h2><ul class="chk"><li><b>가입 기간:</b> 이직일 전 18개월 동안 고용보험 피보험 단위기간이 180일 이상이어야 해요(주 15시간 미만 초단시간 근로자 등은 기준이 달라요).</li>
+<li><b>비자발적 이직:</b> 권고사직·계약 기간 만료·폐업처럼 본인 뜻이 아닌 퇴사여야 해요. 자진 퇴사라도 임금 체불, 통근이 어려워진 이사, 직장 내 괴롭힘처럼 정당한 사유가 인정되면 받을 수 있어요.</li>
+<li><b>재취업 의사와 노력:</b> 일할 의사와 능력이 있고, 수급 기간 동안 구직 활동을 해야 해요.</li><li><b>신청 기한:</b> 이직 다음 날부터 12개월이 지나면 남은 날이 있어도 받을 수 없어요. 퇴사 후 되도록 빨리 신청하세요.</li></ul>
+<h2>2. 얼마나 받나</h2><p>하루 금액은 퇴직 전 평균임금의 60%예요. 다만 2026년 1월 1일 이후 이직하면 <b>하루 상한 68,100원</b>이고, 하한은 최저임금의 80%(하루 8시간 기준 66,048원)예요. 계산은 <a href="/money/tools/unemployment/">실업급여 계산기</a>로 해 볼 수 있어요(참고용).</p>
+<h2>3. 얼마 동안 받나</h2><table class="info"><tr><th>가입 기간</th><th>50세 미만</th><th>50세 이상·장애인</th></tr><tr><td>1년 미만</td><td>120일</td><td>120일</td></tr><tr><td>1~3년</td><td>150일</td><td>180일</td></tr><tr><td>3~5년</td><td>180일</td><td>210일</td></tr><tr><td>5~10년</td><td>210일</td><td>240일</td></tr><tr><td>10년 이상</td><td>240일</td><td>270일</td></tr></table>
+<h2>4. 신청 순서</h2><ol><li>회사가 이직확인서를 고용센터에 냈는지 확인해요.</li><li>고용24(www.work24.go.kr)에서 구직 등록을 해요.</li><li>온라인 수급자격 신청자 교육을 들어요.</li><li>거주지 관할 고용센터에 수급자격 인정 신청을 해요.</li><li>정해진 날마다 실업 인정(구직 활동 보고)을 하면 지급돼요.</li></ol>
+<h2>5. 자주 헷갈리는 것</h2><ul class="chk"><li>65세 이후 새로 취업한 경우는 원칙적으로 받을 수 없어요(65세 전부터 계속 일한 경우는 가능).</li><li>수급 중 아르바이트로 소득이 생기면 반드시 신고해야 해요. 신고하지 않으면 부정 수급이 돼요.</li><li>퇴직금은 실업급여와 별개라 둘 다 받을 수 있어요. <a href="/money/tools/severance/">퇴직금 계산기</a>로 먼저 확인해 보세요.</li></ul>'''),
+ ('contest-sites', '공모전 사이트 추천·비교 — 어디서 찾고 어떻게 고를까', '공모전 사이트 추천: 콘테스트코리아·위비티·링커리어·씽굿·올콘 같은 공모전 정보 사이트 특징과, 여러 사이트 공고를 한 번에 비교하는 방법을 정리했어요.', '''
+<p>공모전 정보는 여러 사이트에 흩어져 있어서, 같은 공모전이 사이트마다 조금씩 다른 제목으로 올라오기도 해요. 사이트마다 강점이 달라서 한 곳만 보면 놓치는 공고가 생겨요.</p>
+<h2>대표적인 공모전 정보 사이트</h2><table class="info"><tr><th>사이트</th><th>특징</th></tr><tr><td>콘테스트코리아</td><td>분야별 공모전 목록이 오래 쌓인 대형 공모전 포털이에요. 청소년·대학생·일반 분야 구분이 잘 되어 있어요.</td></tr>
+<tr><td>위비티</td><td>공모전과 대외활동을 함께 다루고, 분야별 목록과 마감 순 정렬이 편해요.</td></tr><tr><td>링커리어</td><td>대학생 대외활동·인턴·공모전을 함께 보여 줘요. 대학생 대상 공고를 찾을 때 많이 써요.</td></tr>
+<tr><td>씽굿</td><td>공모전 전문 사이트로, 공모전 운영 대행 공고도 함께 올라와요.</td></tr><tr><td>올콘</td><td>공모전·대외활동 일정을 목록으로 모아 보여 줘요.</td></tr></table>
+<p class="note">사이트 특징은 2026년 10월 기준 일반적인 이용 방식으로 정리했어요. 공고의 최종 기준은 언제나 주최 기관의 공식 공고예요.</p>
+<h2>고를 때 기준</h2><ul class="chk"><li><b>마감일과 마감 시각:</b> 사이트 목록의 마감일과 공식 공고가 다를 때가 있어요. 접수 전 공식 공고에서 다시 확인하세요.</li><li><b>자격:</b> 지역 거주·재학 조건이 있는 공모전은 경쟁이 덜한 편이라 해당되면 먼저 보세요.</li><li><b>준비 시간:</b> 슬로건·사진은 짧게, 영상·기획서는 2주 이상 잡으세요.</li><li><b>참가비·저작권:</b> 참가비를 받거나 저작권을 통째로 넘기는 조건이면 한 번 더 따져 보세요.</li></ul>
+<h2>루리의 줍줍에서는</h2><p>여러 사이트에 올라온 공고를 모아 같은 공모전은 하나로 합치고, 분야·자격·마감·제출물을 같은 형식으로 정리해요. <a href="/contest/">맞는 공모전 찾기</a>에서 조건을 고르면 추천 이유와 함께 보여 주고, 공모전마다 「자동 자료 찾기」로 관련 수상작·가이드를 찾아 줘요.</p>'''),
+ ('idea-proposal-form', '아이디어 공모전 기획서 양식 — 순서·분량·ppt 구성', '아이디어 공모전 기획서·제안서 양식: 표지부터 요약, 현황·문제, 아이디어, 실행 계획, 기대효과까지 순서와 분량, ppt로 낼 때 장 구성을 정리했어요.', '''
+<p>아이디어 공모전은 양식을 주는 곳이 많아요. 주최 측 양식이 있으면 반드시 그 양식을 쓰고, 칸과 순서를 바꾸지 않는 게 기본이에요. 양식이 없을 때 쓸 수 있는 기본 구성을 정리했어요.</p>
+<h2>기본 순서</h2><ol><li><b>제목·한 줄 요약:</b> 무엇을 누구에게 어떻게 바꾸는지 한 문장으로.</li><li><b>현황과 문제:</b> 공공 통계나 기사로 숫자 하나를 근거로 들어요(출처 표기).</li><li><b>아이디어:</b> 핵심 기능 2~3개, 그림이나 흐름도 한 장.</li><li><b>실행 방법:</b> 누가, 어떤 순서로, 얼마의 비용으로.</li><li><b>기대효과:</b> 숫자로 쓸 수 있는 것과 없는 것을 나눠요.</li><li><b>차별점:</b> 이미 시행 중인 정책·서비스와 다른 점.</li></ol>
+<h2>분량</h2><p>요강에 분량(A4 몇 장, 글자 수)이 있으면 그 안에서 맞추고, 없으면 A4 3~5장 정도가 심사위원이 읽기 편해요. 요약은 첫 장 맨 위에 두세요.</p>
+<h2>ppt로 낼 때</h2><p>10장 안팎으로: 표지 → 요약 → 문제 2장 → 아이디어 3장 → 실행·예산 2장 → 기대효과 → 마무리. 한 장에 메시지 하나, 글자는 줄이고 그림을 늘려요. PDF로 바꿔 내면 글꼴이 깨지지 않아요.</p>
+<h2>제출 전 점검</h2><ul class="chk"><li>파일 이름 규칙(예: 공모전명_이름)을 지켰나요?</li><li>개인정보(이름·학교)를 넣지 말라는 블라인드 심사인지 확인했나요?</li><li>인용한 통계·사진의 출처를 적었나요?</li></ul>'''),
+ ('character-panel', '캐릭터 공모전 판넬 만드는 법 — 구성·크기·제출 전 점검', '캐릭터 공모전 판넬(제출용 한 장) 구성: 기본형, 3면도, 응용 동작, 컬러 칩, 기획 의도, 활용 예시 배치와 파일 크기·해상도 점검 목록을 정리했어요.', '''
+<p>캐릭터·마스코트 공모전은 대부분 「판넬」이라고 부르는 한 장짜리 제출 이미지를 받아요. 심사위원이 이 한 장으로 캐릭터를 이해하니 배치가 중요해요. 크기·형식은 공고마다 다르니 공고 기준이 먼저예요.</p>
+<h2>판넬에 들어가는 것</h2><ol><li><b>캐릭터 이름과 한 줄 소개</b></li><li><b>기본형:</b> 가장 크게, 정면 전신.</li><li><b>3면도:</b> 정면·측면·뒷면(공고에서 요구하면).</li><li><b>응용 동작 3~5개:</b> 인사, 기쁨, 응원처럼 실제로 쓸 장면.</li><li><b>컬러 칩:</b> 주요 색 3~5개와 색 값.</li><li><b>기획 의도:</b> 주최 기관·지역과 연결되는 이유를 3~4줄로.</li><li><b>활용 예시:</b> 굿즈·현수막·SNS에 넣은 모습 1~2개.</li></ol>
+<h2>크기·형식 점검</h2><ul class="chk"><li>공고에 크기가 없으면 A3·300dpi가 무난하고, 미리보기용 JPG와 원본(AI·PSD) 제출 여부를 확인하세요.</li><li>기존 캐릭터와 닮았다는 지적을 받지 않도록 비슷한 캐릭터를 미리 검색해 보세요.</li><li>AI 도구 사용 허용 여부와 「AI 사용 표기」 규정을 확인하세요.</li><li>수상 시 저작권이 주최 측으로 넘어가는지 공고의 저작권 조항을 읽어 두세요.</li></ul>
+<p>진행 중인 캐릭터 공모전은 <a href="/contest/character/">캐릭터 공모전 모음</a>에서 마감순으로 볼 수 있어요.</p>'''),
 ]
 _GX = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'guides_extra.json')  # 지식인 고민 해결 글(연구 세션이 추가)
 # 고민 해결(/qa/ 목록, 글은 /guide/<slug>/ 유지 — 지식인 답변 링크). 항목: [slug, 제목, 요약, 본문HTML] 또는 {slug,title,desc,body,icon,tag}
@@ -2051,7 +2124,7 @@ def apply_rec_page():
             + '<section id="aprec" aria-label="청약 추천"><noscript>자바스크립트가 필요해요.</noscript></section>'
             + '<p class="note">청약 가점은 대략 계산이며, 특별공급 자격(소득·자산·거주 기간 등)은 단지마다 달라요. 신청 전 공고문과 청약홈에서 꼭 확인하세요.</p>'
             + '<link rel="stylesheet" href="/assets/apply/rec.css?v=1"><script defer src="/assets/apply/rec.js?v=1"></script>')
-    page('/apply/recommend/', '청약 추천 — 내 가점·노려볼 공급 유형·지금 접수 중인 공고', '지역·나이·결혼·자녀·무주택 기간·부양가족·통장 기간을 고르면 청약 가점(84점)과 신혼·생애최초·다자녀·청년·공공임대 등 노려볼 공급 유형, 지금 접수 중인 공고를 골라 드려요.',
+    page('/apply/recommend/', '청약 가점 계산기 · 청약 추천 — 내 가점·노려볼 공급 유형·지금 접수 중인 공고', '지역·나이·결혼·자녀·무주택 기간·부양가족·통장 기간을 고르면 청약 가점(84점)과 신혼·생애최초·다자녀·청년·공공임대 등 노려볼 공급 유형, 지금 접수 중인 공고를 골라 드려요.',
          body, [('루리의 줍줍', '/'), ('생활', '/apply/'), ('청약 추천', '/apply/recommend/')])
     return ['/apply/recommend/']
 
@@ -2418,7 +2491,7 @@ def fridge_page():
         tip = (f'필수 재료는 {", ".join(r["need"])} {len(r["need"])}가지이고, ' + (f'{", ".join(r["opt"][:4])} 같은 재료가 있으면 더 맛있어요. ' if r['opt'] else '')
                + f'조리 시간은 약 {r["m"]}분, 난이도는 「{r["lv"]}」이에요. 기본양념({D["basic"]})은 집에 있다고 보고 적었어요.')
         body = (f'<p class="bc"><a href="/">홈</a> › <a href="/fridge/">냉장고 파먹기</a> › {E(r["n"])}</p>'
-                f'<article class="fr-rp"><h1>{r["e"]} {E(r["n"])} 만드는 법</h1><p class="fr-meta">⏱ {r["m"]}분 · {E(r["lv"])} · {E(tags)}</p>'
+                f'<article class="fr-rp"><h1>{r["e"]} {E(r["n"])} {"끓이는 법" if re.search(r"국|찌개|탕|전골|국밥", r["n"]) else "만드는 법"}</h1><p class="fr-meta">⏱ {r["m"]}분 · {E(r["lv"])} · {E(tags)}</p>'
                 + (f'<img class="fr-rmain" src="{E(mp["f"])}" width="720" height="540" alt="{E(r["n"])} 완성 사진" fetchpriority="high">' if mp else '')
                 + f'<p>{E(tip)}</p><h2>🧺 재료</h2><div class="fr-ri"><div><h3>꼭 있어야 해요</h3><ul>{ingl(r["need"])}</ul></div>'
                 + (f'<div><h3>있으면 더 좋아요</h3><ul>{ingl(r["opt"])}</ul></div>' if r['opt'] else '') + '</div>'
@@ -2436,14 +2509,36 @@ def fridge_page():
               'recipeIngredient': r['need'] + r['opt'], 'recipeInstructions': [{'@type': 'HowToStep', 'text': t} for t in r['s']]}
         if mp:
             ld['image'] = [SITE + mp['f']]
-        page(u, f'{r["n"]} 만드는 법 — 재료 {len(r["need"])}가지로 {r["m"]}분 집밥 레시피', f'{r["n"]} 만드는 법: {", ".join(r["need"] + r["opt"][:3])}로 {r["m"]}분. 재료와 단계별 만드는 법, 재료가 비슷한 메뉴까지.',
+        how = '끓이는 법 · 레시피' if re.search(r'국|찌개|탕|전골|국밥', r['n']) else '만드는 법 · 양념장' if re.search(r'조림|무침', r['n']) else '만드는 법 · 레시피'   # 2026-10-19 검색 시나리오
+        page(u, f'{r["n"]} {how} — 재료 {len(r["need"])}가지로 {r["m"]}분 집밥', f'{r["n"]} 만드는 법: {", ".join(r["need"] + r["opt"][:3])}로 {r["m"]}분. 재료와 단계별 만드는 법, 재료가 비슷한 메뉴까지.',
              body, [('루리의 줍줍', '/'), ('냉장고 파먹기', '/fridge/'), (r['n'], u)], ld)
         urls.append(u)
     allr = ''.join(f'<li><a href="/fridge/r/{fr_slug(r["n"])}/">{r["e"]} {E(r["n"])}</a></li>' for r in sorted(RS, key=lambda r: r['n']))
+    import fridge_today as FT
+    li = lambda L: '<ul class="fr-rel">' + ''.join(f'<li><a href="/fridge/r/{fr_slug(x["n"])}/">{x["e"]} {E(x["n"])} <small>{x["m"]}분 · {E(x["lv"])}</small></a></li>' for x in L) + '</ul>'
+    TD = _rd('assets/fridge/today.json') or {}
+    W = [('rainy', '☔ 비 오는 날', '비 오는 날엔 국물이나 전이 당겨요. 부침개는 기름 소리가 빗소리 같아서라는 말도 있죠.', ('국물', '전')),
+         ('cold', '🧣 쌀쌀한 날', '기온이 뚝 떨어진 날엔 뜨끈한 국물과 조림이 좋아요.', ('국물', '조림')),
+         ('hot', '☀️ 더운 날', '더운 날엔 불 앞에 오래 서지 않는 면·비빔·무침이 좋아요.', ('면', '반찬')),
+         ('gap', '🌗 일교차 큰 날', '아침저녁으로 쌀쌀한 날엔 저녁에 따뜻한 국 한 그릇.', ('국물', '밥'))]
+    secs = ''.join(f'<section class="mg-s" id="{k}"><h2>{t}</h2><p>{E(d_)}</p>' + li([x for x in RS if FT.cat(x['n']) in cs][:10]) + '</section>' for k, t, d_, cs in W)
+    page('/fridge/weather/', '비 오는 날 음식 추천 — 날씨별 오늘 메뉴(쌀쌀한 날·더운 날)', '비 오는 날·쌀쌀한 날·더운 날·일교차 큰 날에 어울리는 집밥 메뉴를 날씨별로 모았어요. 매시간 서울 날씨로 오늘의 메뉴 3개도 골라 드려요.',
+         f'<p class="bc"><a href="/">홈</a> › <a href="/fridge/">냉장고 파먹기</a> › 날씨별 메뉴</p><h1>🌤️ 날씨별 오늘 메뉴 — 비 오는 날·쌀쌀한 날·더운 날</h1>'
+         + (f'<p class="cat-st">📌 오늘 {E(TD.get("place", "서울"))} {round(TD.get("t", 0))}도 · {E(TD.get("why", ""))} → ' + ', '.join(f'<a href="/fridge/r/{fr_slug(n)}/">{E(n)}</a>' for n in TD.get('picks', [])) + f' <small>({E(TD.get("at", ""))} 기준, Open-Meteo)</small></p>' if TD.get('picks') else '')
+         + secs + '<a class="lab-cta" href="/fridge/"><b>🍳 내 냉장고 재료로 찾기</b><span>있는 재료를 고르면 지금 만들 수 있는 메뉴부터 →</span></a><link rel="stylesheet" href="/assets/fridge/fridge.css?v=8">',
+         [('루리의 줍줍', '/'), ('냉장고 파먹기', '/fridge/'), ('날씨별 메뉴', '/fridge/weather/')])
+    SOLO = sorted([x for x in RS if len(x['need']) <= 3 and x['m'] <= 20], key=lambda x: (x['m'], len(x['need'])))
+    page('/fridge/solo/', f'자취 요리 추천 — 재료 3개 이하·20분 안에 ({len(SOLO)}가지)', f'자취 요리 추천: 꼭 필요한 재료 3개 이하, 20분 안에 끝나는 1인분 집밥 {len(SOLO)}가지. 설거지 적은 메뉴와 남은 재료 활용까지.',
+         f'<p class="bc"><a href="/">홈</a> › <a href="/fridge/">냉장고 파먹기</a> › 자취 요리</p><h1>🏠 자취 요리 추천 — 재료 3개 이하·20분 ({len(SOLO)}가지)</h1>'
+         '<p>자취방 냉장고에 흔한 달걀·김치·스팸·라면으로 만들 수 있는 메뉴부터 골랐어요. 모두 꼭 필요한 재료가 3개 이하이고, 20분 안에 끝나요. 기본양념(간장·설탕·식용유 등)은 있다고 봤어요.</p>'
+         + li(SOLO) + '<a class="lab-cta" href="/fridge/"><b>🍳 내 냉장고 재료로 찾기</b><span>「설거지 적게」 조건도 고를 수 있어요 →</span></a><link rel="stylesheet" href="/assets/fridge/fridge.css?v=8">',
+         [('루리의 줍줍', '/'), ('냉장고 파먹기', '/fridge/'), ('자취 요리', '/fridge/solo/')])
+    urls += ['/fridge/weather/', '/fridge/solo/']
     page('/fridge/', f'냉장고 파먹기 메뉴 추천 — 있는 재료로 오늘 요리 (레시피 {NR}개)', f'냉장고에 있는 재료만 고르면 집밥 레시피 {NR}개 중 지금 바로 만들 수 있는 오늘 메뉴와 만드는 법, 하나만 사면 되는 메뉴까지 알려 줘요.',
          f"""<p class="bc"><a href="/">홈</a> › 냉장고 파먹기</p><h1>🍳 루리의 냉장고 파먹기</h1>
 {say("o_cook", f"냉장고 사진을 찍거나 있는 재료를 눌러 주세요. 집밥 레시피 {NR}개 중에 지금 바로 만들 수 있는 걸 골라 드릴게요!")}
 <section id="fridge" aria-label="냉장고 재료로 메뉴 추천"><noscript>자바스크립트가 필요해요. 아래 전체 레시피 목록에서 골라 보세요.</noscript></section>
+<p class="hm-more"><a href="/fridge/weather/">🌤️ 날씨별 메뉴</a> · <a href="/fridge/solo/">🏠 자취 요리</a> · <a href="/fridge/r/계란찜/">🥚 계란찜</a></p>
 <details class="fr-all"><summary>📚 전체 레시피 {NR}개 보기</summary><ul>{allr}</ul></details>
 <a class="lab-cta" href="/cat/food/"><b>🏆 요리·레시피 공모전</b><span>레시피 공모전·요리경연대회 모아 보기 · 상금 받고 요리 실력 뽐내기 →</span></a><p class="note">사진은 재료를 찾는 데만 쓰고 저장하지 않아요. 고른 재료는 이 폰에만 저장돼요. 알레르기가 있으면 재료를 꼭 다시 확인해 주세요.</p>
 <link rel="stylesheet" href="/assets/fridge/fridge.css?v=8"><script defer src="/assets/fridge/fridge.js?v=10"></script>""", [('루리의 줍줍', '/'), ('냉장고 파먹기', '/fridge/')])
