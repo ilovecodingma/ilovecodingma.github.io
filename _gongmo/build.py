@@ -2603,14 +2603,47 @@ def cp_box(text, title='함께 보면 좋은 물건:', n=2, fill='', body='', wa
             '<style>.cp-line{margin:12px 0;line-height:1.7}.cp-in{color:#c2410c;font-weight:700;text-decoration:underline;text-underline-offset:3px}.cp-inn{display:block;font-size:12px;color:var(--mu,#6b7280)}</style>')
 
 
-def cp_widget(key, sub, note='이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.'):
-    """쿠팡 다이나믹 배너(상품 사진·가격 캐러셀, coupang.json widget_ids). iframe(지연 로드)이라 본문을 막지 않음. sub: 리포트용 서브 ID(recipe/home/apply)."""
+_CPW_F = os.path.join(HERE, 'cp_widget_cache.json')
+_CPW = {}
+
+
+def cp_items(key, sub):
+    """쿠팡 다이나믹 배너(widget_ids)의 상품을 하루 1번 받아 둠 → 우리 HTML 카드로 그림(2026-10-19 사용자 화면에서 iframe 이 차단돼 「이미지 안 나와」)."""
+    global _CPW
     wid = (CP.get('widget_ids') or {}).get(key) if CP.get('on') else None
     if not wid:
+        return []
+    if not _CPW:
+        _CPW = (json.load(open(_CPW_F, encoding='utf-8')) if os.path.exists(_CPW_F) else {}) or {'_': 1}
+    k = f'{wid}|{sub}'
+    c = _CPW.get(k)
+    if not c or c.get('d') != TODAY.isoformat():
+        try:
+            import urllib.request
+            u = f'https://ads-partners.coupang.com/widgets.html?id={int(wid)}&template=carousel&trackingCode={CP.get("partner_id", "")}&subId={sub}&width=680&height=140'
+            h = urllib.request.urlopen(urllib.request.Request(u, headers={'User-Agent': 'Mozilla/5.0'}), timeout=15).read().decode('utf-8', 'replace')
+            m = re.search(r'Carousel\("#container", (\{.*?\})\);', h, re.S)
+            its = [{'name': x['name'], 'img': x['imagePath'], 'url': x['landingUrl']} for x in json.loads(m.group(1))['items'] if x.get('landingUrl', '').startswith('https://link.coupang.com/')]
+            if its:
+                c = _CPW[k] = {'d': TODAY.isoformat(), 'items': its[:3]}
+                json.dump(_CPW, open(_CPW_F, 'w', encoding='utf-8'), ensure_ascii=False)
+        except Exception as e:
+            print('쿠팡 상품 받기 실패', key, sub, e)
+    return (c or {}).get('items', [])
+
+
+def cp_widget(key, sub, note='이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.'):
+    """상품 카드 2~3개(사진·이름·「쿠팡에서 보기」, 가격은 바뀌니 안 씀). 사진이 안 뜨면 이름 링크만 남음. 고지는 바로 아래."""
+    its = cp_items(key, sub)
+    if not its:
         return ''
-    return (f'<div class="cp-w"><iframe src="https://ads-partners.coupang.com/widgets.html?id={int(wid)}&amp;template=carousel&amp;trackingCode={E(CP.get("partner_id", ""))}&amp;subId={E(sub)}&amp;width=680&amp;height=140" '
-            f'width="100%" height="140" frameborder="0" scrolling="no" referrerpolicy="unsafe-url" loading="lazy" title="쿠팡 상품"></iframe><p class="cp-inn">{note}</p></div>'
-            '<style>.cp-w{margin:14px 0}.cp-w iframe{display:block;width:100%;max-width:680px;height:140px;border:0}.cp-inn{font-size:12px;color:var(--mu,#6b7280);margin:4px 0 0}</style>')
+    cards = ''.join(f'<a class="rp-it" href="{E(x["url"])}" target="_blank" rel="sponsored nofollow noopener">'
+                    f'<img src="https://thumbnail.coupangcdn.com/thumbnails/remote/230x230ex/{E(x["img"])}" width="115" height="115" loading="lazy" decoding="async" alt="" onerror="this.remove()">'
+                    f'<span>{E(x["name"][:40])}</span><em>쿠팡에서 보기 →</em></a>' for x in its)
+    return (f'<div class="rp-tools"><div class="rp-row">{cards}</div><p class="cp-inn">{note}</p></div>'
+            '<style>.rp-tools{margin:14px 0}.rp-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.rp-it{display:flex;flex-direction:column;gap:4px;padding:8px;border:1px solid var(--bd,#e5e7eb);border-radius:12px;background:var(--card,#fff);color:var(--tx,#111);text-decoration:none}'
+            '.rp-it img{width:100%;height:auto;aspect-ratio:1;object-fit:contain;background:#fff;border-radius:8px}.rp-it span{font-size:13px;line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}'
+            '.rp-it em{font-style:normal;font-size:12px;font-weight:700;color:#c2410c}.cp-inn{font-size:12px;color:var(--mu,#6b7280);margin:6px 0 0}</style>')
 
 
 def cp_recipe_widget(r):
