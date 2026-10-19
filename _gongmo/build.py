@@ -682,6 +682,9 @@ def apply_kind(k):
     return ('신청', '📝')
 
 
+AP_DUP, AP_SEEN = {}, {}   # 중복 지원금 공고 id → 대표 id
+
+
 def load_apply():
     fp = os.path.join(DATA, 'apply.jsonl')
     mp = os.path.join(HERE, 'manual_apply.jsonl')  # 사이트 쪽 확인분(정본은 공모전 세션 apply.jsonl)
@@ -704,6 +707,11 @@ def load_apply():
         if aid in seen:
             continue
         seen.add(aid)
+        ck = (P.clean(r['title'])[:90], P.clean(r.get('org', ''))[:40], P.clean(r.get('region', ''))[:20], P.clean(r.get('benefit', ''))[:80], end)   # 2026-10-20 같은 사업이 출처 2곳(온통청년·복지로)에 올라온 것
+        if ck in AP_SEEN:
+            AP_DUP[aid] = AP_SEEN[ck]
+            continue
+        AP_SEEN[ck] = aid
         nm, ic = apply_kind(r.get('kind'))
         out.append({'id': aid, 'title': P.clean(r['title'])[:90], 'org': P.clean(r.get('org', ''))[:40] or '공고 참조', 'kind': nm, 'icon': ic, 'kk': r.get('kind') or ('apt' if re.search(r'아파트|분양|자이|힐스테이트|푸르지오|래미안|e편한|롯데캐슬|하늘채|더샵|아이파크|위브|포레나|센트레빌|리슈빌|공공분양', r['title']) else 'rent' if re.search(r'임대|전세|월세|행복주택|매입', r['title']) else 'grant'),
                     'start': r.get('start', ''), 'end': end, 'url': r.get('url', ''), 'source': r.get('source', ''), 'verified': bool(r.get('verified')),
@@ -833,6 +841,10 @@ def review_pages():
 
 
 def build_apply(aps):
+    for d_, r_ in AP_DUP.items():   # 같은 사업 중복 공고: 대표 페이지로 보내고 색인 제외
+        page(f'/a/{d_}/', '같은 공고로 합쳐졌어요', '같은 지원 사업의 대표 페이지로 합쳐졌어요.',
+             f'<h1>같은 공고로 합쳐졌어요</h1><p>같은 사업이 다른 출처에도 올라와 있어서 대표 페이지 하나로 합쳤어요.</p><p><a class="lab-cta" href="/a/{r_}/"><b>대표 공고 페이지로 가기 →</b></a></p><script>location.replace("/a/{r_}/")</script>',
+             noindex=True)
     # 메인 루리 상담(청약·지원금)용 데이터 (2026-10-17)
     with open(os.path.join(ROOT, 'apply.json'), 'w', encoding='utf-8', newline='\n') as f:
         json.dump([{k: a[k] for k in ('id', 'title', 'org', 'kind', 'icon', 'kk', 'start', 'end', 'always', 'region', 'target', 'benefit', 'how', 'income', 'age_min', 'age_max', 'url') if a.get(k) not in (None, '', False)} for a in aps], f, ensure_ascii=False, separators=(',', ':'))

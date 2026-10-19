@@ -18,7 +18,8 @@ def run(root, sitemap_urls, noindex):
         s = open(os.path.join(d, 'index.html'), encoding='utf-8', errors='ignore').read()
         m = re.search(r'<main[^>]*>(.*)</main>', s, re.S)
         txt = len(re.sub(r'\s', '', re.sub(r'<[^>]+>', '', re.sub(r'<(script|style)\b.*?</\1>', '', m.group(1) if m else '', flags=re.S))))
-        pages[u] = txt
+        if u not in ('/login/',) and not re.search(r'http-equiv="refresh"|location\.replace\(', m.group(1) if m else ''):   # 다른 페이지로 보내는 안내 페이지(/login/·/dev/qna/·합친 공고)는 빈 페이지 아님
+            pages[u] = txt
         t = re.search(r'<title>([^<]*)', s)
         if t and 'noindex' not in s[:3000]:
             titles[t.group(1)].append(u)
