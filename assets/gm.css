@@ -188,3 +188,9 @@ table.info td.need{color:#b45309;font-weight:600}.dh h1,.card .t{overflow-wrap:a
 
 /* 공유 버튼 줄 (2026-10-19) */
 .shr{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:12px 0}.shr b{font-size:14px;margin-right:2px}.shr button{min-height:40px;padding:6px 12px;border-radius:999px;border:1px solid var(--bd);background:var(--card);color:var(--tx);font:inherit;font-size:13.5px;font-weight:700;cursor:pointer}.shr button[hidden]{display:none}
+
+/* 자동 자료 찾기 (2026-10-19) */
+#finder{margin:18px 0;padding:14px;border:1px solid var(--bd);border-radius:16px;background:var(--card)}#finder h2{margin:0 0 8px}#finder h2 small{font-size:.6em;color:var(--mu);font-weight:600}
+.fd-kw{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}.fd-kw button{border:0;border-radius:999px;padding:6px 10px;background:var(--pbg);color:var(--pri);font:inherit;font-size:13px;font-weight:700;cursor:pointer}.fd-add{flex:1;min-width:120px;border:1px dashed var(--bd);border-radius:999px;padding:6px 10px;font:inherit;font-size:13px;background:transparent;color:var(--tx)}
+.fd-l{list-style:none;padding:0;margin:0;display:grid;gap:8px}.fd-l a{display:block;padding:10px 12px;border:1px solid var(--bd);border-radius:12px;text-decoration:none;color:inherit}.fd-l em{display:block;font-style:normal;font-size:12px;color:var(--pri);font-weight:700}.fd-l b{display:block;font-size:14.5px;overflow-wrap:anywhere}.fd-l span{display:block;font-size:12.5px;color:var(--mu);overflow-wrap:anywhere}.fd-l small{font-size:11.5px;color:var(--mu)}
+.fd-more{margin:10px 0;padding:12px;border-radius:12px;background:var(--pbg);text-align:center}.fd-more p{margin:4px 0 8px;font-size:13px}.fd-login{border:0;border-radius:12px;padding:10px 14px;background:var(--pri);color:#fff;font:inherit;font-weight:800;min-height:44px}.fd-pub{font-size:13px;margin:10px 0 0;overflow-wrap:anywhere}
