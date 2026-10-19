@@ -65,8 +65,8 @@ GTAG = ('<script async src="https://pagead2.googlesyndication.com/pagead/js/adsb
         '<script async src="https://www.googletagmanager.com/gtag/js?id=G-G9BPFF95GY"></script>\n'
         "<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());if(location.hostname!=='sungprofile.cloud')window['ga-disable-G-G9BPFF95GY']=true;gtag('config','G-G9BPFF95GY');</script>")
 THEMES = [  # (키, 이름, 아이콘, 테마색, 홈, [하위 메뉴], [이 테마에 속하는 주소 앞부분])
-    ('issue', '이슈', '🕵️', '#b45309', '/news/', [('/hot/', '핫이슈'), ('/news/', '기사 확인 신호'), ('/talk/', '커뮤니티 이슈'), ('/kw/', '인기 키워드'), ('/satire/', '루리 풍자'), ('/mag/', '매거진'), ('/review/', '평론')],
-     ['/hot/', '/news/', '/talk/', '/kw/', '/satire/', '/mag/', '/review/']),
+    ('issue', '이슈', '🕵️', '#b45309', '/news/', [('/trend/', '이슈 트렌드'), ('/hot/', '핫이슈'), ('/news/', '기사 확인 신호'), ('/talk/', '커뮤니티 이슈'), ('/kw/', '인기 키워드'), ('/satire/', '루리 풍자'), ('/mag/', '매거진'), ('/review/', '평론')],
+     ['/trend/', '/hot/', '/news/', '/talk/', '/kw/', '/satire/', '/mag/', '/review/']),
     ('money', '머니', '📊', '#047857', '/analyst/', [('/analyst/', '애널리스트 종합'), ('/money/experts/', '전문가 코멘트'), ('/money/policy/', '투자 정책'), ('/money/age/', '나이별 원칙'), ('/money/tools/salary/', '계산기'), ('/analyst/coin/btc/', '코인')], ['/analyst/', '/money/']),
     ('contest', '공모전', '🏆', '#6d28d9', '/contest/', [('/contest/', '추천 상담'), ('/cat/literature/', '분야별'), ('/prep/', '준비실'), ('/lab/', '수상 연구소'), ('/community/', '원정대'), ('/guide/', '가이드'), ('/widget/', '위젯')],
      ['/contest/', '/c/', '/cat/', '/prep/', '/lab/', '/community/', '/guide/', '/v/', '/me/', '/widget/']),
@@ -1330,7 +1330,7 @@ def build():
 <p class="hm-more"><a href="/contest/week/">이번 주 마감 전체</a> · <a href="/contest/univ/">대학생 공모전</a> · <a href="/cat/literature/">분야별 보기</a> · <a href="/prep/">📋 준비실</a> · <a href="/lab/">🔬 수상 연구소</a> · <a href="/guide/">📘 응모 가이드</a></p></section>
 <section class="hm-sec"><h2>🧭 이슈·머니</h2><div class="hm-more3">{more_h}</div>
 {f'<div class="hm-hot"><b>🔥 지금 뜨는 이슈</b><ol>{hot_h}</ol></div>' if hot_h else ''}
-<p class="hm-more"><a href="/hot/">🔥 지금 뜨는 이슈</a> · <a href="/kw/">🔎 많이 찾는 검색어</a> · <a href="/all/">☰ 전체 메뉴</a> · <a href="/ailog/">🤖 사람 1명 + AI로 만든 과정</a></p></section>
+<p class="hm-more"><a href="/news/#brief">📺 루리 뉴스 브리핑</a> · <a href="/trend/">🍿 이슈 트렌드</a> · <a href="/hot/">🔥 지금 뜨는 이슈</a> · <a href="/kw/">🔎 많이 찾는 검색어</a> · <a href="/all/">☰ 전체 메뉴</a> · <a href="/ailog/">🤖 사람 1명 + AI로 만든 과정</a></p></section>
 <section class="hm-sec"><div data-pcrecent="6"></div>
 <p class="hm-more"><a href="/plaza/">🗣️ 줍줍 광장 — 내 글 올리기</a> · <a href="/dev/faq/">❓ 개발 FAQ</a></p></section>
 <link rel="stylesheet" href="/assets/home/consult.css?v=15">'''
@@ -1379,7 +1379,7 @@ def build():
     fr_urls = fridge_page()
     app_page()
     news_page()
-    extra_urls = talk_pages() + mag_pages(live, aps) + analyst_pages() + satire_pages() + kw_pages() + money_pages() + apply_rec_page() + tool_pages() + hot_pages()
+    extra_urls = talk_pages() + trend_pages() + mag_pages(live, aps) + analyst_pages() + satire_pages() + kw_pages() + money_pages() + apply_rec_page() + tool_pages() + hot_pages()
     import widget
     extra_urls += widget.build(ROOT, live, aps, hot_live()[0], page, say, COMM_API, TODAY)  # 퍼가기 위젯 (2026-10-18 연구 세션 요청)
     extra_urls += region_pages(aps) + contest_hubs(live) + week_hub(live) + cross_pages(aps) + apply_hubs(aps)
@@ -1418,7 +1418,7 @@ def build():
         f.writelines(f'<url><loc>{SITE}{u}</loc><lastmod>{lm[u][1]}</lastmod>' + (f'<xhtml:link rel="alternate" hreflang="en" href="{SITE}{u}"/>' if u.startswith('/en/') else '') + '</url>\n' for u in urls if u not in NOINDEX)
         f.write('</urlset>\n')
     SMT = [('contest', ('/c/', '/cat/', '/contest/', '/lab/', '/guide/', '/prep/', '/widget/', '/ssul/')), ('apply', ('/a/', '/apply/', '/event/', '/fridge/', '/qa/')),
-           ('money', ('/analyst/', '/money/')), ('issue', ('/news/', '/talk/', '/mag/', '/kw/', '/hot/', '/satire/', '/review/'))]
+           ('money', ('/analyst/', '/money/')), ('issue', ('/news/', '/talk/', '/mag/', '/kw/', '/hot/', '/satire/', '/review/', '/trend/'))]
     idx = []
     for nm, pre in SMT + [('etc', None)]:
         L = [u for u in urls if u not in NOINDEX and ((pre and u.startswith(pre)) or (not pre and not any(u.startswith(x) for _, ps in SMT for x in ps)))]
@@ -1603,6 +1603,61 @@ def talk_issue(x, day):
     return (f'<article class="tk-is" id="t{x["n"]}"><div class="tk-r">{x["n"] + 1}</div><div class="tk-b"><p class="tk-m"><span class="tk-hot">🔥 {x["nsite"]}개 커뮤니티</span><span>댓글 {x["nc"]:,}</span></p>'
             f'<h2>{E(x["t"])}</h2><p class="tk-s">{sm}</p><p class="tk-kw">{kw}</p>{nw}{prh}'
             f'<details><summary>커뮤니티 원문 {len(x["posts"])}건</summary><ul class="tk-ps">{posts}</ul></details></div></article>')
+
+
+E2 = lambda t: E(html.unescape(html.unescape(str(t if t is not None else ''))))   # 수집 제목에 &quot; 가 이미 들어 있는 경우
+
+
+def trend_pages():
+    """이슈 트렌드 (2026-10-20 사용자 「뉴스에서 사람들이 많이 싸운 걸 위주로, 싸움구경하는 루리, 이슈 트렌드로 하나」): 커뮤니티 열기 TOP7 + 사흘 흐름 + 언론이 엇갈려 전한 이슈.
+    열기는 댓글·글·커뮤니티 수로만 매기고, 누가 이겼다·틀렸다·편들기는 쓰지 않는다. 본문은 옮기지 않고 제목·링크만."""
+    td = _rd('talk/data.json')
+    ad = os.path.join(ROOT, 'talk', 'archive')
+    if not td or not td.get('issues'):
+        return []
+    days = sorted([f[:-5] for f in os.listdir(ad) if f.endswith('.json')], reverse=True)[:3] if os.path.isdir(ad) else []
+    BADT = re.compile(r'무슬림|난민|이슬람|흑인|조선족|짱깨|한남|김치녀|된장녀|여자들은|남자들은|여자들이|남자들이|여자 병수발|못생긴|불태|살해|살인|성폭|성추행|폭행|자살|시신|사망|숨져|극단|몰카|음란')   # 성별·인종·종교 갈라치기성, 폭력 소재는 열기 순위에서 뺌
+    for x_ in td['issues']:
+        x_['posts'] = [p for p in (x_.get('posts') or []) if not BADT.search(p['t'])]
+    iss = sorted([x for x in td['issues'] if not BADT.search(x['t']) and x.get('posts')], key=lambda x: (-int(x.get('nc') or 0), -int(x.get('np') or 0)))[:7]
+    mx = max(int(x.get('nc') or 0) for x in iss) or 1
+    cards = ''
+    for i, x in enumerate(iss, 1):
+        ps = ''.join(f'<li><a href="{E2(p["u"])}" target="_blank" rel="noopener nofollow"><em>{E2(p["s"])}</em>{E2(p["t"])} <small>댓글 {p.get("nc", 0)}</small></a></li>' for p in (x.get('posts') or [])[:3])
+        nw = x.get('news')
+        nl = f'<p class="hm-links"><a href="/news/#is{nw["n"]}">🕵️ 같은 이슈를 다룬 보도: 언론사 {nw["on"]}곳 · 확인 신호 {nw.get("s", "-")}점 →</a></p>' if nw else ''
+        cards += (f'<article class="an-c tr-c"><div class="an-h"><h3>{i}. {E2(x["t"])}</h3></div>'
+                  f'<div class="tr-b" aria-hidden="true"><i style="width:{max(int(x.get("nc") or 0) / mx * 100, 6):.0f}%"></i></div>'
+                  f'<p class="an-st">💬 댓글 {x["nc"]}개 · 글 {x["np"]}건 · 커뮤니티 {x["nsite"]}곳({E2(", ".join(x["cs"][:4]))}{" 등" if len(x["cs"]) > 4 else ""}) · 인기글에 {x["hrs"]}시간째</p>'
+                  f'<ul class="kw-l">{ps}</ul>{nl}</article>')
+    rows = ''
+    prev_t = set()
+    for d in sorted(days):
+        a = json.load(open(os.path.join(ad, d + '.json'), encoding='utf-8'))
+        top = sorted([y for y in a.get('issues', []) if not BADT.search(y['t'])], key=lambda y: -int(y.get('nc') or 0))[:3]
+        rows += f'<tr><td>{d[5:].replace("-", "/")}</td>' + ''.join(f'<td>{E2(y["t"][:26])}<br><small>댓글 {y["nc"]}{" · 전날에도 올랐어요" if y["t"] in prev_t else ""}</small></td>' for y in top) + '</tr>'
+        prev_t = {y['t'] for y in a.get('issues', [])}
+    flow = (f'<section class="mg-s"><h2>📈 사흘간 열기 흐름</h2><div class="tblw"><table class="xb"><thead><tr><th>날짜</th><th>1위</th><th>2위</th><th>3위</th></tr></thead><tbody>{rows}</tbody></table></div>'
+            '<p class="kwn">그날 댓글 수가 가장 많았던 이슈 3개예요(집계 시각 기준 마지막 기록).</p></section>') if len(days) >= 2 else ''
+    nd = _rd('news/data.json') or {}
+    cf = [x for x in nd.get('issues', []) if (x.get('cf') or x.get('claim')) and int(x.get('on') or 0) >= 3 and not re.search(r'사망|숨져|사고|참사|화재', x['t'])]
+    cf = sorted(cf, key=lambda x: (-bool(x.get('cf')), -int(x.get('on') or 0)))[:4]
+    nl2 = ''.join(f'<li><a href="/news/#is{x["n"]}"><b>{E2(x["t"][:60])}</b><span>언론사 {x["on"]}곳' + (f' · 숫자가 엇갈림: {E2(", ".join(x["cf"][:3]))}' if x.get('cf') else ' · 발언·주장 기사') + '</span></a></li>' for x in cf)
+    news_h = f'<section class="mg-s"><h2>📰 언론이 서로 다르게 전한 이슈</h2><ul class="mg-l">{nl2}</ul><p class="kwn">기사 제목 속 숫자가 서로 다르거나 누군가의 발언·주장이 중심인 이슈예요. 누가 맞는지는 판단하지 않고 기사 제목을 나란히 보여 줘요.</p></section>' if nl2 else ''
+    shr = share_bar('이슈 트렌드 — 오늘 커뮤니티가 가장 뜨겁게 이야기한 이슈', '오늘 커뮤니티 TOP: ' + ', '.join(x['t'][:16] for x in iss[:3]))
+    css = ('<link rel="stylesheet" href="/assets/mag/mag.css?v=10"><link rel="stylesheet" href="/assets/analyst/analyst.css?v=4"><link rel="stylesheet" href="/assets/news/news.css?v=6">'
+           '<style>.tr-hero{display:flex;gap:14px;align-items:center;margin:8px 0 14px;padding:12px;border-radius:16px;background:linear-gradient(135deg,#fff7ed,#fef3c7);color:#451a03}.tr-hero img{width:140px;height:auto;border-radius:12px;flex:none}'
+           '.tr-hero b{display:block;font-size:20px;margin-bottom:4px}.tr-hero p{margin:0;font-size:14px;line-height:1.6}.tr-b{height:10px;border-radius:999px;background:var(--pbg,#f1f5f9);margin:6px 0;overflow:hidden}.tr-b i{display:block;height:100%;background:linear-gradient(90deg,#f59e0b,#ea580c)}'
+           '.tblw{overflow-x:auto}.xb{border-collapse:collapse;width:100%;font-size:13.5px;min-width:520px}.xb th,.xb td{border-bottom:1px solid var(--bd,#e5e7eb);padding:6px 6px;text-align:left;vertical-align:top}</style>')
+    body = ('<p class="bc"><a href="/">홈</a> › <a href="/news/">이슈</a> › 이슈 트렌드</p><h1>🍿 이슈 트렌드 — 싸움 구경 중인 루리</h1>'
+            f'<div class="tr-hero"><img src="/assets/ruri/o_watch.webp" width="140" height="193" alt="팝콘을 먹으며 이슈를 구경하는 루리"><div><b>오늘 커뮤니티가 가장 뜨겁게 이야기한 이슈</b>'
+            f'<p>{E2(td.get("updated", ""))} 기준 · 커뮤니티 {td.get("sites", 0)}곳 인기글 {td.get("npost", 0):,}건에서 <b>댓글이 가장 많이 달린 이슈</b> 7개를 골랐어요. 팝콘 들고 구경만 하는 루리는 어느 편도 들지 않아요.</p></div></div>'
+            + cards + flow + news_h + shr
+            + '<p class="note">열기는 댓글·글·커뮤니티 수로만 매겨요. 댓글이 많다고 찬반이 갈린 건 아니고, 글 속 의견은 줍줍이 판단하지 않아요. 성별·인종·종교 갈라치기성 글, 폭력 사건, 개인 신상·비방성 글은 순위에서 빼고, 글 내용은 옮기지 않고 제목과 링크만 실어요. 더 보기: '
+              '<a href="/talk/">커뮤니티 이슈 전체</a> · <a href="/hot/">핫이슈</a> · <a href="/news/">기사 확인 신호</a></p>' + css)
+    page('/trend/', '이슈 트렌드 — 오늘 커뮤니티가 가장 뜨겁게 이야기한 이슈 TOP7', '커뮤니티 인기글에서 댓글이 가장 많이 달린 이슈 TOP7과 사흘간 열기 흐름, 언론이 서로 다르게 전한 이슈를 한곳에. 팝콘 들고 구경하는 루리가 정리해요.',
+         body, [('루리의 줍줍', '/'), ('이슈', '/news/'), ('이슈 트렌드', '/trend/')], og='/assets/trend/og.jpg')
+    return ['/trend/']
 
 
 def talk_pages():
@@ -2171,35 +2226,35 @@ def kw_pages():
         print('키워드 읽을거리 실패', repr(e)[:150])
     for sl, r in db.items():
         k = r['k']
-        lines = [f'「{E(k)}」{josa_ga(k)} {kdate(r["days"][-1])} ' + ('구글 급상승과 실시간 검색어에 동시에' if len(r.get('src') or []) > 1 else '실시간 검색어에' if (r.get('src') or ['google']) == ['naver'] else '구글 검색 급상승 키워드에') + f' 올랐어요({E(r.get("traffic") or "-")}).']
+        lines = [f'「{E2(k)}」{josa_ga(k)} {kdate(r["days"][-1])} ' + ('구글 급상승과 실시간 검색어에 동시에' if len(r.get('src') or []) > 1 else '실시간 검색어에' if (r.get('src') or ['google']) == ['naver'] else '구글 검색 급상승 키워드에') + f' 올랐어요({E2(r.get("traffic") or "-")}).']
         if r.get('srcs'):
-            lines.append(f'관련 보도는 {len(r["srcs"])}곳({E(", ".join(r["srcs"][:5]))}{" 등" if len(r["srcs"]) > 5 else ""})에서 나왔어요.')
+            lines.append(f'관련 보도는 {len(r["srcs"])}곳({E2(", ".join(r["srcs"][:5]))}{" 등" if len(r["srcs"]) > 5 else ""})에서 나왔어요.')
         if r.get('issue'):
             x = r['issue']
             lines.append(f'루리의 기사 확인 신호에서는 언론사 {x["on"]}곳이 보도한 이슈로 묶였고, 확인 신호 점수는 {G.get(x.get("g"), "")} {x.get("s") if x.get("s") is not None else "-"}점이에요.')
         if len(r['days']) > 1:
             lines.append(f'최근 {len(r["days"])}일 동안 급상승에 올랐어요({", ".join(d[5:].replace("-", "/") for d in r["days"][-5:])}).')
-        why = ''.join(f'<li><a href="{E(n["u"])}" target="_blank" rel="noopener nofollow"><em>{E(n["o"])}</em>{E(n["t"])}</a></li>' for n in r.get('news', []))
-        ours = ''.join(f'<li><a href="{E(a["u"])}" target="_blank" rel="noopener nofollow"><em>{E(a["o"])} {G.get(a.get("g"), "")} {a["s"] if a.get("s") is not None else ""}</em>{E(a["t"])}</a></li>' for a in r.get('ours', []))
+        why = ''.join(f'<li><a href="{E2(n["u"])}" target="_blank" rel="noopener nofollow"><em>{E2(n["o"])}</em>{E2(n["t"])}</a></li>' for n in r.get('news', []))
+        ours = ''.join(f'<li><a href="{E2(a["u"])}" target="_blank" rel="noopener nofollow"><em>{E2(a["o"])} {G.get(a.get("g"), "")} {a["s"] if a.get("s") is not None else ""}</em>{E2(a["t"])}</a></li>' for a in r.get('ours', []))
         links = []
         if r.get('issue'):
-            links.append(f'<a href="/news/#is{r["issue"]["n"]}"><em>🕵️ 기사 확인 신호</em><b>{E(r["issue"]["t"])}</b></a>')
-        links += [f'<a href="/talk/#t{x["n"]}"><em>💬 커뮤니티</em><b>{E(x["t"])}</b></a>' for x in r.get('talk', [])]
-        links += [f'<a href="/analyst/s/{x["id"]}/"><em>📊 애널리스트</em><b>{E(x["name"])} 목표가 의견</b></a>' for x in r.get('stocks', [])]
-        links += [f'<a href="/analyst/coin/{x["sym"].lower()}/"><em>🪙 코인</em><b>{E(x["name"])} 전망 종합</b></a>' for x in r.get('coins', [])]
-        links += [f'<a href="{E(p_["u"])}"><em>{E(p_["k"])}</em><b>{E(p_["t"])}</b></a>' for p_ in r.get('pr', [])]
+            links.append(f'<a href="/news/#is{r["issue"]["n"]}"><em>🕵️ 기사 확인 신호</em><b>{E2(r["issue"]["t"])}</b></a>')
+        links += [f'<a href="/talk/#t{x["n"]}"><em>💬 커뮤니티</em><b>{E2(x["t"])}</b></a>' for x in r.get('talk', [])]
+        links += [f'<a href="/analyst/s/{x["id"]}/"><em>📊 애널리스트</em><b>{E2(x["name"])} 목표가 의견</b></a>' for x in r.get('stocks', [])]
+        links += [f'<a href="/analyst/coin/{x["sym"].lower()}/"><em>🪙 코인</em><b>{E2(x["name"])} 전망 종합</b></a>' for x in r.get('coins', [])]
+        links += [f'<a href="{E2(p_["u"])}"><em>{E2(p_["k"])}</em><b>{E2(p_["t"])}</b></a>' for p_ in r.get('pr', [])]
         trs = r.get('trend') or []
         if len(trs) >= 5:
             W_, H_ = 600, 140; mx = max(v for _, v in trs) or 1
             pts = ' '.join(f'{10 + (W_ - 20) * i / (len(trs) - 1):.1f},{H_ - 22 - (H_ - 40) * v / mx:.1f}' for i, (_, v) in enumerate(trs))
-            trend_html = (f'<section class="mg-s"><h2>📈 최근 30일 네이버 검색량 추이</h2><figure class="an-ch"><svg viewBox="0 0 {W_} {H_}" role="img" aria-label="{E(k)} 검색량 추이">'
+            trend_html = (f'<section class="mg-s"><h2>📈 최근 30일 네이버 검색량 추이</h2><figure class="an-ch"><svg viewBox="0 0 {W_} {H_}" role="img" aria-label="{E2(k)} 검색량 추이">'
                           f'<polyline points="{pts}" fill="none" stroke="#16a34a" stroke-width="3"/><text x="10" y="{H_ - 4}">{trs[0][0][5:]}</text><text x="{W_ - 10}" y="{H_ - 4}" text-anchor="end">{trs[-1][0][5:]}</text></svg>'
                           '<figcaption>네이버 데이터랩 검색어 트렌드(기간 중 최댓값 = 100인 상대값)</figcaption></figure></section>')
         else:
             trend_html = ''
-        post = f'<section class="mg-s"><h2>✍️ 루리의 정리 글</h2><div class="nw-pr"><a href="{E(r["post"])}" target="_blank" rel="noopener"><em>블로그</em><b>{E(k)} 자세히 정리한 글 보기</b></a></div></section>' if r.get('post') else ''
+        post = f'<section class="mg-s"><h2>✍️ 루리의 정리 글</h2><div class="nw-pr"><a href="{E2(r["post"])}" target="_blank" rel="noopener"><em>블로그</em><b>{E2(k)} 자세히 정리한 글 보기</b></a></div></section>' if r.get('post') else ''
         css = '<link rel="stylesheet" href="/assets/mag/mag.css?v=10"><link rel="stylesheet" href="/assets/analyst/analyst.css?v=4">'
-        body = (f'<p class="bc"><a href="/">홈</a> › <a href="/kw/">인기 키워드</a> › {E(k)}</p><h1>🔎 {E(k)} — 왜 검색이 늘었나</h1><p>{SRCB(r)}</p>'
+        body = (f'<p class="bc"><a href="/">홈</a> › <a href="/kw/">인기 키워드</a> › {E2(k)}</p><h1>🔎 {E2(k)} — 왜 검색이 늘었나</h1><p>{SRCB(r)}</p>'
                 + say('o_det_think', ' '.join(lines)) + ((ENH[sl][0] + '<link rel="stylesheet" href="/assets/kw/kw.css?v=2">') if sl in ENH else '') + trend_html + post
                 + (f'<section class="mg-s"><h2>📰 왜 떴나: 관련 보도</h2><ul class="kw-l">{why}</ul></section>' if why else '')
                 + (f'<section class="mg-s"><h2>🕵️ 루리가 채점한 관련 기사</h2><ul class="kw-l">{ours}</ul></section>' if ours else '')
@@ -2211,7 +2266,7 @@ def kw_pages():
     arch = '<section class="tk-arch"><h2>📅 날짜별 인기 키워드</h2><p>' + ''.join(f'<a href="/kw/{d}/">{kdate(d)}</a>' for d in days[:90]) + '</p></section>'
     for i, d in enumerate(days):
         L = json.load(open(os.path.join(ad, d + '.json'), encoding='utf-8'))
-        li = ''.join(f'<li><a href="/kw/{x["slug"]}/"><em>{j + 1}</em><b>{E(x["k"])}</b><span>{SRCB(x)} {E(x.get("traffic") or "-")} · {E(x.get("first", ""))} 첫 등장</span></a></li>' for j, x in enumerate([y for y in L if y['slug'] in db]))
+        li = ''.join(f'<li><a href="/kw/{x["slug"]}/"><em>{j + 1}</em><b>{E2(x["k"])}</b><span>{SRCB(x)} {E2(x.get("traffic") or "-")} · {E2(x.get("first", ""))} 첫 등장</span></a></li>' for j, x in enumerate([y for y in L if y['slug'] in db]))
         bd = f'<ol class="mg-l">{li}</ol>' + arch + note + css
         play, og_k = '', None
         if i == 0:
@@ -3076,13 +3131,76 @@ def news_top():
     return f'<section class="nw-home"><h2>🕵️ 오늘의 정치 이슈 · 기사 확인 신호 <a href="/news/">이슈 순위 전체 →</a></h2><ol>{li}</ol></section>' if li else ''
 
 
+def news_brief():
+    """📺 루리 뉴스 — 오늘의 브리핑 (2026-10-20 사용자 「쇼츠 제목은 루리 뉴스, 뉴스 섹션도 제대로」). 이슈 5개를 기사 제목·숫자·언론사 표현 차이로 정리한다.
+    사실은 기사 제목 그대로(언론사 표기), 해석·편들기 없음, 사고·사망 제외. 같은 내용을 news/brief.json 으로도 내보내 쇼츠 대본에 씀."""
+    d = _rd('news/data.json')
+    if not d or not d.get('issues'):
+        return ''
+    import impact as IPB, market as MKB
+    MKv = MKB.load()
+    I = {a['id']: a for a in d.get('items', [])}
+    hot_db = _rd('hot/db.json') or {}
+    hot_by = {(v.get('issue') or {}).get('n'): v['slug'] for v in hot_db.values() if not v.get('dup') and v.get('issue')}
+    ok = [x for x in d['issues'] if int(x.get('on') or 0) >= 3 and not re.search(r'사망|숨져|숨진|사고|참사|화재|추락|살해|피살', x['t']) and x.get('c') != '연예']
+    ok = sorted(ok, key=lambda x: -int(x['on']))
+    pick, cats = [], collections.Counter()
+    for x in ok:
+        if cats[x.get('c')] >= 2:   # 한 분야가 브리핑을 채우지 않게
+            continue
+        if any(len(set(x['t'].split()) & set(y['t'].split())) >= 4 for y in pick):
+            continue
+        pick.append(x); cats[x.get('c')] += 1
+        if len(pick) >= 5:
+            break
+    if not pick:
+        return ''
+    G = {'ok': '✅', 'warn': '🟡', 'bad': '🔴'}
+    out, js = '', []
+    for i, x in enumerate(pick, 1):
+        arts = [I[a] for a in x['a'] if a in I]
+        seen, by = set(), []
+        for a in arts:   # 언론사별 제목(같은 언론사는 1건)
+            if a['o'] not in seen:
+                seen.add(a['o']); by.append(a)
+        lead = by[0] if by else None
+        if not lead:
+            continue
+        ns = [(a['o'], n_) for a in by for n_ in IPB.nums_in(a['t'])][:3]
+        tsl = sorted([a for a in by if a.get('ts') and int(a['ts']) <= time.time()], key=lambda a: int(a['ts']))
+        tl_ = (f'<p><b>흐름</b> 처음 보도 {datetime.datetime.fromtimestamp(int(tsl[0]["ts"])).strftime("%m/%d %H:%M")}({E2(tsl[0]["o"])}) → 최근 {datetime.datetime.fromtimestamp(int(tsl[-1]["ts"])).strftime("%m/%d %H:%M")}({E2(tsl[-1]["o"])}) · 모은 기사 기준이에요</p>' if len(tsl) >= 2 else '')
+        ipc = IPB.card(x['t'] + ' ' + ' '.join(a['t'] for a in by[:3]), datetime.datetime.fromtimestamp(int(x['ts'])).strftime('%Y-%m-%d') if x.get('ts') else None, [(a['o'], a['t']) for a in by], MKv, head='🙋 내 생활엔?')
+        links = ''
+        if x['n'] in hot_by:
+            links += f'<a href="/hot/{hot_by[x["n"]]}/">🔥 핫이슈 정리</a> '
+        links += f'<a href="#is{x["n"]}">🕵️ 기사별 확인 신호</a>'
+        li = ''.join(f'<li><em>{E2(a["o"])}</em><a href="{E2(a["u"])}" target="_blank" rel="noopener nofollow">{E2(a["t"])}</a></li>' for a in by[:4])
+        out += (f'<article class="nb"><h3>{i}. {E2(x["t"])}</h3><p class="kwn">{E2(x.get("c") or "")} · 언론사 {x["on"]}곳이 보도 · 확인 신호 {G.get(x.get("g"), "")} {x.get("s") if x.get("s") is not None else "-"}점'
+                f'{" · 발언·주장 기사" if x.get("claim") else ""}</p>'
+                f'{tl_}<p><b>언론사별 제목</b></p><ul class="kw-l nbl">{li}</ul>'
+                + (f'<p>🔢 <b>기사에 나온 숫자</b> ' + ' · '.join(f'{E2(o)} 「{E2(n_)}」' for o, n_ in ns) + (f' <span class="kwn">— 숫자가 엇갈림: {E2(", ".join(x["cf"][:3]))}</span>' if x.get('cf') else '') + '</p>' if ns else '')
+                + ipc + f'<p class="hm-links">{links}</p></article>')
+        t_ = f'{x["t"]}. 언론사 {x["on"]}곳이 전했어요. ' + ' '.join(f'{a["o"]}는 "{a["t"][:40]}"라고 썼어요.' for a in by[:2])
+        if ns:
+            t_ += ' 기사에 나온 숫자는 ' + ', '.join(f'{o} {n_}' for o, n_ in ns[:2]) + '예요.'
+        js.append({'n': x['n'], 'headline': x['t'], 'cat': x.get('c'), 'outlets': x['on'], 'script': t_, 'sources': [{'o': a['o'], 't': a['t'], 'u': a['u']} for a in by[:3]]})
+    try:
+        json.dump({'title': '루리 뉴스', 'date': TODAY.isoformat(), 'updated': NOW_KST().strftime('%Y-%m-%d %H:%M'), 'items': js}, open(os.path.join(ROOT, 'news', 'brief.json'), 'w', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))
+    except Exception:
+        pass
+    return ('<section class="mg-s nb-s" id="brief"><h2>📺 루리 뉴스 — 오늘의 브리핑</h2><div class="nb-h"><img src="/assets/ruri/o_anchor_s.webp" width="64" height="88" alt="루리 뉴스 앵커 루리">'
+            f'<p>{E2(NOW_KST().strftime("%m/%d %H:%M"))} 기준 언론사 3곳 이상이 다룬 이슈 {len(js)}개예요. 언론사 표기를 붙인 기사 제목과 기사에 나온 숫자만 정리하고, 어느 쪽이 맞는지는 판단하지 않아요.</p></div>'
+            + out + '</section><style>.nb{margin:12px 0;padding:14px;border:1px solid var(--bd,#e5e7eb);border-radius:14px;background:var(--card,#fff)}.nb h3{margin:0 0 4px;font-size:17px}.nb p{margin:6px 0;line-height:1.6}'
+            '.nb-h{display:flex;gap:10px;align-items:center}.nb-h img{flex:none;width:48px;height:auto}.nbl em{font-style:normal;font-weight:700;margin-right:6px;color:var(--pri,#b45309)}</style>')
+
+
 def news_page():
     # 루리 탐정의 이슈 감별 (2026-10-18 사용자: RSS 기사 수집 → 주제별 묶음 → 팩트체크 기반 채점, 피드, 탐정 루리, 기사 관련 줍줍)
-    body = f'''<p class="bc"><a href="/">홈</a> › 기사 확인 신호</p><h1>🕵️ 루리 탐정의 기사 확인 신호</h1>{hot_top(3)}
+    body = f'''<p class="bc"><a href="/">홈</a> › 기사 확인 신호</p><h1>📺 루리 뉴스 — 오늘의 브리핑과 기사 확인 신호</h1>{news_brief()}{hot_top(3)}
 <section id="news" aria-label="이슈 순위와 기사 채점">{news_static()}</section>{news_impact()}
 <details class="nw-how"><summary>채점은 이렇게 해요</summary><ul><li><b>교차 보도</b> — 같은 사건을 여러 언론사가 보도하면 가점, 한 곳뿐이면 표시만 해요.</li><li><b>출처</b> — 실명 기관·인물 출처는 가점, 익명 관계자뿐이거나 온라인 커뮤니티·SNS 글이 출처면 감점.</li><li><b>제목-본문 일치</b> — 제목의 숫자·인용문이 본문에 없으면 감점.</li><li><b>숫자 엇갈림</b> — 같은 사건인데 언론사마다 사망·부상자 수가 다르면 따로 표시해요.</li><li><b>낚시·홍보</b> — 「충격」「결국」「이것」 같은 낚시 표현, 기업 홍보성 기사는 감점.</li></ul><p>기사 본문은 채점에만 쓰고 이 사이트에 옮겨 싣지 않아요. 제목을 누르면 원래 언론사 기사로 이동해요.</p></details>
 <link rel="stylesheet" href="/assets/news/news.css?v=6"><script defer src="/assets/news/news.js?v=4"></script>'''
-    page('/news/', '기사 확인 신호 — 오늘의 이슈 순위와 기사별 확인 항목', '언론사 15곳 기사를 매시간 모아 같은 사건끼리 묶고, 교차 보도·출처·제목-본문 일치·숫자 엇갈림·낚시 표현으로 기사마다 점수를 매겨요. 지금 가장 많이 보도된 이슈 순위.',
+    page('/news/', '루리 뉴스 — 오늘의 이슈 브리핑·기사 확인 신호 (언론사 15곳)', '언론사 15곳 기사를 매시간 모아 같은 사건끼리 묶고, 교차 보도·출처·제목-본문 일치·숫자 엇갈림·낚시 표현으로 기사마다 점수를 매겨요. 지금 가장 많이 보도된 이슈 순위.',
          body, [('루리의 줍줍', '/'), ('기사 확인 신호', '/news/')])
 
 

@@ -4,7 +4,7 @@ import datetime, hashlib, html, json, os, random, re
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
-E = lambda s: html.escape(str(s), quote=True)
+E = lambda s: html.escape(html.unescape(html.unescape(str(s))), quote=True)   # 수집 제목에 &quot; 가 이미 들어 있는 경우
 HAN = re.compile(r'[가-힣]')
 POL = re.compile(r'대통령|국회|의원|정당|여당|야당|장관|총리|청와대|탄핵|선거|공천|검찰|특검|북한|김정은|김여정|트럼프|시진핑|국민의힘|민주당|혁신당|정권|국정|외교|안보|전쟁|공습|미사일|대남|확성기|해킹|책임')
 STY = {'google': ('#2563eb', '구글'), 'naver': ('#16a34a', '실시간'), 'both': ('#9333ea', '동시')}
@@ -128,7 +128,8 @@ def quiz(cur, today):
         others = [y for y in pool if y is not x and y['r'].get('news')]
         w1 = rnd.choice(others)['r']['news'][0]
         w2 = WRONG[int(hashlib.md5((today + x['k']).encode()).hexdigest(), 16) % len(WRONG)].format(k=x['k'])
-        opts = [{'t': n['t'], 'ok': 1, 'o': n['o'], 'u': n['u']}, {'t': w1['t'], 'ok': 0}, {'t': w2, 'ok': 0}]
+        U = lambda t: html.unescape(html.unescape(t))
+        opts = [{'t': U(n['t']), 'ok': 1, 'o': n['o'], 'u': n['u']}, {'t': U(w1['t']), 'ok': 0}, {'t': w2, 'ok': 0}]
         rnd.shuffle(opts)
         out.append({'k': x['k'], 'opts': opts})
     box = ('<section class="kwc"><h2>🎯 키워드 퀴즈 — 왜 떴을까요?</h2><div id="kwq"><noscript>퀴즈는 자바스크립트가 필요해요.</noscript></div>'
