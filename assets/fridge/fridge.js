@@ -67,7 +67,6 @@
 <details${big ? ' open' : ''}><summary>만드는 법</summary><ol class="fr-steps">${steps}</ol>${x.r.opt.length ? `<p class="fr-tip">💡 있으면 더 좋아요: ${x.r.opt.map(esc).join(', ')}</p>` : ''}
 <p class="fr-look"><button class="fr-made" data-n="${esc(x.r.n)}">${made[x.r.n] ? '✅ 만들어 봤어요' : '👩‍🍳 만들어 봤어요'}</button></p>
 <p class="fr-look"><a class="fr-page" href="/fridge/r/${encodeURIComponent(x.r.n.replace(/[^0-9A-Za-z가-힣]+/g, '-').replace(/^-|-$/g, ''))}/">📖 레시피 페이지로 보기</a></p>
-<p class="fr-look">📷 과정 사진으로 보기: <a href="${look(x.r.n)}" target="_blank" rel="noopener nofollow">네이버 블로그</a> · <a href="${yt(x.r.n)}" target="_blank" rel="noopener nofollow">유튜브</a></p>
 ${cr.length ? `<details class="fr-cr"><summary>사진 출처</summary><p>${cr.join('<br>')}</p></details>` : ''}</details></article>`; };
   function paint() {
     const cats = Object.entries(D.ing).map(([c, xs]) => `<div class="fr-cat"><small>${esc(c)}</small><div>${xs.map(x => `<button data-i="${esc(x)}" class="${have.has(x) ? 'on' : ''}">${esc(x)}</button>`).join('')}</div></div>`).join('');
@@ -77,7 +76,8 @@ ${cr.length ? `<details class="fr-cr"><summary>사진 출처</summary><p>${cr.jo
 <div class="fr-opts"><div class="fr-o"><small>오늘 기분은?</small><div>${MOODS.map(m => `<button data-m="${m}" class="${mood === m ? 'on' : ''}">${m === '아무거나' ? m : '#' + m}</button>`).join('')}</div></div>
 <div class="fr-o"><small>시간은?</small><div>${TIMES.map(([v, l]) => `<button data-t="${v}" class="${maxMin === v ? 'on' : ''}">${l}</button>`).join('')}</div></div>
 <div class="fr-o"><small>조건</small><div><button data-f="easy" class="${easyOnly ? 'on' : ''}">쉬운 것만</button><button data-f="few" class="${fewDish ? 'on' : ''}">설거지 적게</button><button data-f="exp" class="${expMode ? 'on' : ''}">⏰ 곧 상할 재료 고르기</button></div></div></div>
-${TD && TD.picks ? `<section class="fr-wx"><h2 class="fr-h">🌤️ 오늘 날씨에 어울리는 메뉴 <small>${esc(TD.place)} ${Math.round(TD.t)}도 · ${esc(TD.why)}${TD.day ? ' · ' + esc(TD.day) : ''}</small></h2><div class="fr-wxl">${TD.picks.map(n => { const r = D.recipes.find(x => x.n === n); return r ? `<a href="/fridge/r/${encodeURIComponent(n.replace(/[^0-9A-Za-z가-힣]+/g, '-').replace(/^-|-$/g, ''))}/"><span>${r.e}</span><b>${esc(n)}</b><small>${r.m}분 · ${esc(r.lv)}</small></a>` : ''; }).join('')}</div></section>` : ''}
+${TD && TD.picks ? `<section class="fr-wx"><h2 class="fr-h">🌤️ 오늘 날씨에 어울리는 메뉴 <small>${esc(TD.place)} ${Math.round(TD.t)}도 · ${esc(TD.why)}${TD.day ? ' · ' + esc(TD.day) : ''}</small></h2><div class="fr-wxl">${TD.picks.map(n => { const r = D.recipes.find(x => x.n === n); if (!r) return ''; const f = ph(r, 'main');
+      return `<a href="/fridge/r/${encodeURIComponent(n.replace(/[^0-9A-Za-z가-힣]+/g, '-').replace(/^-|-$/g, ''))}/">${f ? `<img src="${esc(f.f)}" alt="${esc(n)}" loading="lazy" decoding="async">` : `<span>${r.e}</span>`}<b>${esc(n)}</b><small>${r.m}분 · ${esc(r.lv)}</small></a>`; }).join('')}</div></section>` : ''}
 <button class="fr-go">🍳 이 재료로 메뉴 추천받기</button>
 <form class="fr-ask"><b>💬 루리에게 물어보기</b><small>고른 재료에 맞춰 골라 드려요 · 예) 매콤하고 든든한 거, 10분 안에 되는 아침</small>
 <div><input type="text" maxlength="60" placeholder="어떤 게 당겨요?" aria-label="루리에게 물어볼 내용"><button type="submit">물어보기</button></div></form>
@@ -116,7 +116,8 @@ ${TD && TD.picks ? `<section class="fr-wx"><h2 class="fr-h">🌤️ 오늘 날�
       if (!res.ok) throw new Error(d.error || d.answer || '지금은 답하기 어려워요.');
       box.className = 'fr-ans ok';
       box.innerHTML = `<p>${esc(d.answer || '')}</p>` + ((d.picks || []).length
-        ? `<div class="fr-wxl">${d.picks.map(x => `<a href="${esc(x.u)}"><span>${esc(x.e || '🍽️')}</span><b>${esc(x.n)}</b><small>${x.m}분 · ${esc(x.lv)}</small></a>`).join('')}</div>` : '');
+        ? `<div class="fr-wxl">${d.picks.map(x => { const g = IMG && IMG.recipes && IMG.recipes[x.n], f = g && g.main && g.main.f;
+            return `<a href="${esc(x.u)}">${f ? `<img src="${esc(f)}" alt="${esc(x.n)}" loading="lazy" decoding="async">` : `<span>${esc(x.e || '🍽️')}</span>`}<b>${esc(x.n)}</b><small>${x.m}분 · ${esc(x.lv)}</small></a>`; }).join('')}</div>` : '');
       ga('fridge_ask', { picks: (d.picks || []).length, have: have.size });
     } catch (e) {
       box.className = 'fr-ans err';
