@@ -53,6 +53,7 @@ parts = [
     f'--{bd}--\r\n'.encode()]
 r = call('PUT', f'/workers/scripts/{NAME}', raw=b''.join(parts), ctype=f'multipart/form-data; boundary={bd}')
 print('worker', r.get('success'))
+print('cron', call('PUT', f'/workers/scripts/{NAME}/schedules', [{'cron': '30 23 * * *'}]).get('success'))   # 08:30 KST 카카오톡 마감 알림
 # 4) workers.dev 공개
 sub = (call('GET', '/workers/subdomain').get('result') or {}).get('subdomain')
 if not sub:

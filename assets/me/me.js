@@ -41,6 +41,8 @@
 <div><h1>${esc(me.nick || J.st.n)}의 공간</h1><p class="me-stat"><span><b>${soon.length}</b>찜</span><span><b>${rec.length}</b>냈어요</span><span><b>${won}</b>당첨</span><span><b>${(me.visits || 0) + (me.invites || 0) * 3}</b>초대 점수</span></p></div></section>
 <section class="me-sec"><h2>🔔 마감 알림</h2><label class="me-sw"><input type="checkbox" class="me-alert" ${P.alert === '1' ? 'checked' : ''}> 찜한 것 마감 3일 전·당일에 메일 받기</label>
 <p class="note">받는 곳: ${esc(me.email || '가입 이메일')} · 매일 아침 8시 · 끄면 바로 멈춰요</p></section>
+<section class="me-sec me-ka" hidden><h2>💬 카카오톡으로 마감 알림 받기</h2><label class="me-sw"><input type="checkbox" class="me-kalert"> 찜한 것 마감 3일 전·1일 전에 카카오톡 「나와의 채팅」으로 받기</label>
+<p class="note me-kanote">매일 아침 8시 30분 · 켤 때 카카오 「메시지 전송」 동의를 한 번 받아요 · 끄면 동의도 철회돼요</p></section>
 <section class="me-sec"><h2>⭐ 찜 <small>마감 임박순</small></h2><ul class="me-list">${soon.map(x => row(x)).join('') || '<li class="note">아직 찜한 게 없어요. 공모전·청약 상세 페이지나 루리 추천에서 ⭐를 눌러 보세요.</li>'}</ul></section>
 <section class="me-sec"><h2>📒 응모 기록</h2><ul class="me-list">${rec.map(x => row(x, true)).join('') || '<li class="note">상세 페이지에서 「✅ 냈어요」를 누르면 여기 쌓여요. 발표 나면 당첨/아쉬움을 골라 두세요.</li>'}</ul></section>
 <section class="me-sec"><h2>🎯 자격 프로필 <small>추천에서 안 맞는 건 빼요</small></h2><div class="me-prof">
@@ -61,6 +63,16 @@ ${gjHTML()}
       await J.api('/api/items', { method: 'POST', body: b.dataset.s ? { id, state: b.dataset.s } : { id, fav: 0 } }); location.reload();
     });
     M.querySelector('.me-alert').onchange = e => save({ alert: e.target.checked ? '1' : '0' }).then(() => J.ga && J.ga('alert_toggle', { on: e.target.checked }));
+    const ka = M.querySelector('.me-ka'), kc = M.querySelector('.me-kalert'), kn = M.querySelector('.me-kanote');
+    const kh = (location.hash.match(/kalert=(on|fail)/) || [])[1];
+    J.api('/api/kakao/alert').then(r => {
+      if (!r.ready) return; ka.hidden = false; kc.checked = !!r.on;
+      if (kh) { kn.textContent = kh === 'on' && r.on ? '✅ 켜졌어요. 찜한 것 마감 3일 전·1일 전 아침 8시 30분에 카카오톡으로 보내 드려요.' : '⚠️ 연결하지 못했어요. 「메시지 전송」에 동의했는지 확인하고 다시 켜 주세요.'; history.replaceState(null, '', location.pathname); }
+    }).catch(() => {});
+    kc.onchange = () => {
+      if (kc.checked) J.api('/api/kakao/alert/start', { method: 'POST', body: {} }).then(r => { location.href = r.url; }).catch(() => { kc.checked = false; });
+      else J.api('/api/kakao/alert/off', { method: 'POST', body: {} }).then(() => { kn.textContent = '껐어요. 카카오 메시지 전송 동의도 철회했어요.'; J.ga && J.ga('kakao_alert_toggle', { on: false }); });
+    };
     M.querySelectorAll('.me-prof select').forEach(s => s.onchange = () => save({ [s.dataset.k]: s.value === '선택 안 함' ? '' : s.value }).then(() => { M.querySelector('.me-saved').textContent = '저장했어요. 루리 추천에 바로 반영돼요.'; }));
     gajum(P, save);
   });

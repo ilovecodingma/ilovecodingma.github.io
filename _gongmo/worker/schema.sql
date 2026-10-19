@@ -159,3 +159,7 @@ CREATE TABLE IF NOT EXISTS push_subs (endpoint TEXT PRIMARY KEY, p256dh TEXT NOT
 
 CREATE TABLE IF NOT EXISTS widget_views (id INTEGER PRIMARY KEY, day TEXT, ts INTEGER, kind TEXT, host TEXT);
 CREATE INDEX IF NOT EXISTS widget_views_day ON widget_views (day);
+
+-- 카카오톡 마감 알림 (2026-10-19): refresh_token 은 AES-GCM 암호문(키는 워커 비밀값 KAKAO_ALERT_KEY)
+CREATE TABLE IF NOT EXISTS kakao_alert (user_id INTEGER PRIMARY KEY, sub TEXT NOT NULL, rt TEXT NOT NULL, created INTEGER NOT NULL, last_sent TEXT);
+CREATE TABLE IF NOT EXISTS kakao_alert_nonce (nonce TEXT PRIMARY KEY, user_id INTEGER NOT NULL, created INTEGER NOT NULL);

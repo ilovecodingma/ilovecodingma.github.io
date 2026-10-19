@@ -57,6 +57,40 @@ async function recipeIndex(env) {
 }
 
 
+// ---- 카카오톡 마감 알림 (2026-10-19 사용자 승인): 알림을 켤 때만 talk_message 추가 동의 → refresh_token 을 AES-GCM 으로 암호화해 D1 kakao_alert 에 보관
+//      매일 08:30 KST(Cron 30 23 * * * UTC) 찜한 것 중 D-3·D-1 을 「나에게 보내기」로. 끄면 talk_message 동의 철회 + 토큰 삭제(로그인 연결은 유지)
+async function aesKey(env) { return crypto.subtle.importKey('raw', unhex(env.KAKAO_ALERT_KEY), 'AES-GCM', false, ['encrypt', 'decrypt']); }
+async function enc(env, t) { const iv = crypto.getRandomValues(new Uint8Array(12)); return hex(iv) + '.' + hex(await crypto.subtle.encrypt({ name: 'AES-GCM', iv }, await aesKey(env), new TextEncoder().encode(t))); }
+async function dec(env, t) { const [iv, c] = t.split('.'); return new TextDecoder().decode(await crypto.subtle.decrypt({ name: 'AES-GCM', iv: unhex(iv) }, await aesKey(env), unhex(c))); }
+async function kakaoAccess(env, row) {
+  const r = await (await fetch('https://kauth.kakao.com/oauth/token', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams({ grant_type: 'refresh_token', client_id: env.KAKAO_ID, refresh_token: await dec(env, row.rt), ...(env.KAKAO_SECRET ? { client_secret: env.KAKAO_SECRET } : {}) }) })).json();
+  if (r.refresh_token) await env.DB.prepare('UPDATE kakao_alert SET rt = ? WHERE user_id = ?').bind(await enc(env, r.refresh_token), row.user_id).run();
+  return r.access_token || null;
+}
+function itemUrl(id, src) {
+  const [k, v] = [id.slice(0, 2), id.slice(2)];
+  return SITE + (k === 'c:' ? `/c/${encodeURIComponent(v)}/?src=${src}` : k === 'a:' ? `/apply/?id=${encodeURIComponent(v)}&src=${src}` : `/me/?src=${src}`);
+}
+async function kakaoAlerts(env) {
+  if (!env.KAKAO_ALERT_KEY) return;
+  const k = Date.now() + 9 * 3600e3, day = d => new Date(k + d * 864e5).toISOString().slice(0, 10), today = day(0), d1 = day(1), d3 = day(3);
+  const rows = (await env.DB.prepare('SELECT user_id, rt FROM kakao_alert WHERE last_sent IS NULL OR last_sent != ?').bind(today).all()).results || [];
+  for (const row of rows) {
+    try {
+      const it = (await env.DB.prepare("SELECT item_id, title, end_date FROM user_items WHERE user_id = ? AND fav = 1 AND state = '' AND end_date IN (?, ?) ORDER BY end_date, title").bind(row.user_id, d1, d3).all()).results || [];
+      if (!it.length) continue;
+      const at = await kakaoAccess(env, row); if (!at) continue;
+      const lines = it.slice(0, 5).map(x => `${x.end_date === d1 ? 'D-1' : 'D-3'} ${String(x.title || x.item_id).slice(0, 28)}`).join('\n');
+      const text = (`⏰ 찜한 것 마감 알림 ${it.length}건\n` + lines + (it.length > 5 ? `\n외 ${it.length - 5}건` : '')).slice(0, 200);
+      const u = it.length === 1 ? itemUrl(it[0].item_id, 'kakao_alert') : SITE + '/me/?src=kakao_alert';
+      const r = await fetch('https://kapi.kakao.com/v2/api/talk/memo/default/send', { method: 'POST', headers: { Authorization: 'Bearer ' + at, 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams({ template_object: JSON.stringify({ object_type: 'text', text, link: { web_url: u, mobile_web_url: u }, button_title: '확인하기' }) }) });
+      if (r.ok) await env.DB.prepare('UPDATE kakao_alert SET last_sent = ? WHERE user_id = ?').bind(today, row.user_id).run();
+    } catch (e) { /* 한 사람 실패가 다른 사람 발송을 막지 않게 */ }
+  }
+}
+
 // ---- 소셜 로그인: /api/oauth/<google|kakao>/start?back=<돌아갈 주소> → 제공자 → /api/oauth/<p>/callback → 사이트 #jt=<토큰>&jn=<닉> ----
 const SITE = 'https://sungprofile.cloud';
 const PROV = {
@@ -69,8 +103,12 @@ async function oauth(req, env, url, prov, act) {
   if (act === 'start') {
     const back = (url.searchParams.get('back') || '/').replace(/^https?:\/\/[^/]+/, '').slice(0, 200) || '/';
     const state = hex(crypto.getRandomValues(new Uint8Array(12)));
-    const q = new URLSearchParams({ client_id: cid, redirect_uri: cb, response_type: 'code', state, ...(P.scope ? { scope: P.scope } : {}), ...(prov === 'google' ? { prompt: 'select_account' } : {}) });
-    return new Response(null, { status: 302, headers: { Location: P.auth + '?' + q, 'Set-Cookie': `jo=${state}.${encodeURIComponent(back)}; Path=/api/oauth; Max-Age=600; HttpOnly; Secure; SameSite=Lax` } });
+    const an = prov === 'kakao' && /^[0-9a-f]{32}$/.test(url.searchParams.get('alert') || '') ? url.searchParams.get('alert') : '';
+    const q = new URLSearchParams({ client_id: cid, redirect_uri: cb, response_type: 'code', state, ...(an ? { scope: 'talk_message' } : P.scope ? { scope: P.scope } : {}), ...(prov === 'google' ? { prompt: 'select_account' } : {}) });
+    const h = new Headers({ Location: P.auth + '?' + q });
+    h.append('Set-Cookie', `jo=${state}.${encodeURIComponent(back)}; Path=/api/oauth; Max-Age=600; HttpOnly; Secure; SameSite=Lax`);
+    h.append('Set-Cookie', `ja=${an}; Path=/api/oauth; Max-Age=${an ? 600 : 0}; HttpOnly; Secure; SameSite=Lax`);
+    return new Response(null, { status: 302, headers: h });
   }
   const ck = (req.headers.get('Cookie') || '').match(/(?:^|;\s*)jo=([0-9a-f]+)\.([^;]*)/), code = url.searchParams.get('code');
   const fail = m => Response.redirect(SITE + '/#jerr=' + encodeURIComponent(m), 302);
@@ -83,6 +121,16 @@ async function oauth(req, env, url, prov, act) {
   if (prov === 'google') { const u = await (await fetch('https://openidconnect.googleapis.com/v1/userinfo', { headers: { Authorization: 'Bearer ' + tk.access_token } })).json(); sub = u.sub; email = u.email_verified ? String(u.email || '').toLowerCase() : ''; }
   else { const u = await (await fetch('https://kapi.kakao.com/v2/user/me', { headers: { Authorization: 'Bearer ' + tk.access_token } })).json(); sub = u.id && String(u.id); const ka = u.kakao_account || {}; email = ka.is_email_verified && ka.email ? ka.email.toLowerCase() : ''; }
   if (!sub) return fail('계정 정보를 받지 못했어요.');
+  const ja = (req.headers.get('Cookie') || '').match(/(?:^|;\s*)ja=([0-9a-f]{32})/);
+  if (prov === 'kakao' && ja) {
+    const n = await env.DB.prepare('SELECT user_id FROM kakao_alert_nonce WHERE nonce = ? AND created > ?').bind(ja[1], now() - 900).first('user_id');
+    await env.DB.prepare('DELETE FROM kakao_alert_nonce WHERE nonce = ? OR created < ?').bind(ja[1], now() - 900).run();
+    const h = new Headers({ Location: SITE + '/me/#kalert=' + (n && tk.refresh_token && /talk_message/.test(tk.scope || '') ? 'on' : 'fail') });
+    h.append('Set-Cookie', 'jo=; Path=/api/oauth; Max-Age=0'); h.append('Set-Cookie', 'ja=; Path=/api/oauth; Max-Age=0');
+    if (n && tk.refresh_token && /talk_message/.test(tk.scope || '') && env.KAKAO_ALERT_KEY)
+      await env.DB.prepare('INSERT OR REPLACE INTO kakao_alert (user_id, sub, rt, created, last_sent) VALUES (?, ?, ?, ?, NULL)').bind(n, sub, await enc(env, tk.refresh_token), now()).run();
+    return new Response(null, { status: 302, headers: h });
+  }
   let uid = await env.DB.prepare('SELECT user_id FROM oauth_links WHERE provider = ? AND sub = ?').bind(prov, sub).first('user_id');
   if (!uid && email) uid = await env.DB.prepare('SELECT id FROM users WHERE email = ?').bind(email).first('id');  // 같은 이메일로 이미 가입했으면 연결
   if (!uid) {
@@ -160,7 +208,7 @@ export default {
       if (p === '/api/withdraw' && req.method === 'POST') {  // 회원 탈퇴: 계정·세션 삭제, 글은 '탈퇴한 회원'으로 숨김
         const u = await me(req, env); if (!u) return err(req, '로그인이 필요해요.', 401);
         await env.DB.batch([env.DB.prepare('UPDATE posts SET hidden = 1 WHERE user_id = ?').bind(u.id), env.DB.prepare('UPDATE comments SET hidden = 1 WHERE user_id = ?').bind(u.id),
-          env.DB.prepare('DELETE FROM sessions WHERE user_id = ?').bind(u.id), env.DB.prepare('DELETE FROM invite_codes WHERE user_id = ?').bind(u.id), env.DB.prepare('DELETE FROM user_prefs WHERE user_id = ?').bind(u.id), env.DB.prepare('DELETE FROM oauth_links WHERE user_id = ?').bind(u.id), env.DB.prepare('DELETE FROM user_items WHERE user_id = ?').bind(u.id), env.DB.prepare('DELETE FROM users WHERE id = ?').bind(u.id)]);
+          env.DB.prepare('DELETE FROM sessions WHERE user_id = ?').bind(u.id), env.DB.prepare('DELETE FROM invite_codes WHERE user_id = ?').bind(u.id), env.DB.prepare('DELETE FROM user_prefs WHERE user_id = ?').bind(u.id), env.DB.prepare('DELETE FROM oauth_links WHERE user_id = ?').bind(u.id), env.DB.prepare('DELETE FROM user_items WHERE user_id = ?').bind(u.id), env.DB.prepare('DELETE FROM kakao_alert WHERE user_id = ?').bind(u.id), env.DB.prepare('DELETE FROM users WHERE id = ?').bind(u.id)]);
         return json(req, { ok: true });
       }
       // ---- 글 ----
@@ -633,10 +681,34 @@ export default {
         }
         return json(req, { ok: true });
       }
+      if (p.startsWith('/api/kakao/alert')) {
+        const u = await me(req, env); if (!u) return err(req, '로그인이 필요해요.', 401);
+        if (p === '/api/kakao/alert' && req.method === 'GET')
+          return json(req, { ready: !!(env.KAKAO_ID && env.KAKAO_ALERT_KEY), on: !!(await env.DB.prepare('SELECT user_id FROM kakao_alert WHERE user_id = ?').bind(u.id).first('user_id')) });
+        if (p === '/api/kakao/alert/start' && req.method === 'POST') {
+          const nonce = hex(crypto.getRandomValues(new Uint8Array(16)));
+          await env.DB.prepare('INSERT INTO kakao_alert_nonce (nonce, user_id, created) VALUES (?, ?, ?)').bind(nonce, u.id, now()).run();
+          return json(req, { url: url.origin + '/api/oauth/kakao/start?back=/me/&alert=' + nonce });
+        }
+        if (p === '/api/kakao/alert/off' && req.method === 'POST') {
+          const row = await env.DB.prepare('SELECT user_id, rt FROM kakao_alert WHERE user_id = ?').bind(u.id).first();
+          if (row) {
+            try {
+              const at = await kakaoAccess(env, row);
+              if (at) await fetch('https://kapi.kakao.com/v2/user/revoke/scopes', { method: 'POST', headers: { Authorization: 'Bearer ' + at, 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams({ scopes: '["talk_message"]' }) });
+            } catch (e) { /* 철회 실패해도 토큰은 지움 */ }
+            await env.DB.prepare('DELETE FROM kakao_alert WHERE user_id = ?').bind(u.id).run();
+          }
+          return json(req, { ok: true });
+        }
+      }
       if (p === '/api/health') return json(req, { ok: true, t: now() });
       return err(req, '없는 주소예요.', 404);
     } catch (e) {
       return err(req, '잠시 문제가 생겼어요.', 500);
     }
+  },
+  async scheduled(ev, env, ctx) {
+    if (ev.cron === '30 23 * * *') ctx.waitUntil(kakaoAlerts(env));
   },
 };
