@@ -1,0 +1,37 @@
+<p>Immich is a self-hosted photo and video library with phone backup. This guide shows a setup that survives a disk failure: Immich in a VM on Proxmox, photos on a ZFS mirror, and a real 3-2-1 backup on top. It assumes you already have Proxmox installed and two disks of the same size for the mirror.</p>
+<h2>Hardware: official minimums</h2>
+<table><tr><th>Item</th><th>Minimum</th><th>Recommended</th></tr>
+<tr><td>RAM</td><td>6 GB</td><td>8 GB</td></tr>
+<tr><td>CPU</td><td>2 cores</td><td>4 cores</td></tr>
+<tr><td>Database storage</td><td colspan="2">Local SSD, never a network share</td></tr></table>
+<p class="note">Source: <a href="https://immich.app/docs/install/requirements" rel="nofollow noopener" target="_blank">Immich requirements</a> (page updated 2026-10-08, checked 2026-10-19). The same page notes thumbnails and transcoded video add roughly 10–20% to library size, and that with only 4 GB RAM you should disable machine learning.</p>
+<h2>Step 1 — Create the ZFS mirror</h2>
+<ol><li>In Proxmox: <b>Datacenter → node → Disks → ZFS → Create: ZFS</b>, select both disks, RAID level <b>Mirror</b>.</li>
+<li>A two-disk mirror gives you the capacity of one disk; either disk can fail without data loss.</li>
+<li>Add it as storage for VM disks, or create a dataset (e.g. <code>tank/photos</code>) to pass into the VM.</li></ol>
+<h2>Step 2 — Create the VM</h2>
+<ol><li>Create a Debian or Ubuntu VM with at least the minimums above. Put the VM's system disk on SSD so the Postgres database is on local SSD.</li>
+<li>Set the CPU type to <code>host</code> (or another x86-64-v2 capable type); Immich's machine-learning container requires x86-64-v2 on amd64.</li>
+<li>Add a second virtual disk on the ZFS mirror for photos and mount it, e.g. at <code>/srv/photos</code>.</li></ol>
+<p>Immich documents Docker Compose in a VM as the supported path; running inside LXC containers is described as not recommended.</p>
+<h2>Step 3 — Install Immich</h2>
+<ol><li>Install Docker and the Compose plugin.</li>
+<li>Download the official <code>docker-compose.yml</code> and <code>example.env</code> from the Immich install docs.</li>
+<li>In <code>.env</code> set <code>UPLOAD_LOCATION=/srv/photos/library</code> and keep <code>DB_DATA_LOCATION</code> on the SSD system disk.</li>
+<li><code>docker compose up -d</code>, open port 2283, create the admin account, install the phone app and turn on backup.</li></ol>
+<h2>Step 4 — 3-2-1 backup</h2>
+<p>A mirror protects against a dead disk, not against deletion, ransomware or a house fire. Immich's own docs recommend a 3-2-1 strategy: 3 copies, on 2 kinds of media, 1 off-site.</p>
+<table><tr><th>Copy</th><th>Where</th><th>How</th></tr>
+<tr><td>1</td><td>ZFS mirror (live)</td><td>Immich itself</td></tr>
+<tr><td>2</td><td>External USB disk or second machine</td><td>ZFS snapshots + <code>zfs send</code>, or restic/borg</td></tr>
+<tr><td>3</td><td>Off-site (cloud bucket or a friend's server)</td><td>restic/borg with encryption</td></tr></table>
+<p><b>Back up both parts.</b> Immich creates database dumps automatically in <code>UPLOAD_LOCATION/backups</code> (default: daily at 2:00 AM, last 14 kept). Those dumps contain metadata only — no photos — so your backup job must copy the whole <code>UPLOAD_LOCATION</code>, which then includes the dumps. Source: <a href="https://immich.app/docs/administration/backup-and-restore" rel="nofollow noopener" target="_blank">Immich backup and restore</a>, checked 2026-10-19.</p>
+<p>Test a restore once: spin up a throwaway VM, restore files and a dump, and log in.</p>
+<h2>What else fits on the same server</h2>
+<ul><li>A file-sync service (e.g. Syncthing) on the same mirror.</li>
+<li>A password manager server, backed up with the same off-site job.</li>
+<li>Monitoring (disk SMART and ZFS scrub alerts) — the cheapest insurance on the list.</li></ul>
+<h2>FAQ</h2>
+<dl><dt>Is the mirror my backup?</dt><dd>No. It is redundancy. Deleting a photo deletes it on both disks instantly.</dd>
+<dt>Can I put the database on the ZFS mirror over NFS?</dt><dd>Immich says the database should never be on a network share. Keep it on local SSD.</dd>
+<dt>How much RAM does ZFS itself need?</dt><dd>ZFS uses free RAM as cache (ARC) and gives it back under pressure; budget the VM's RAM first, then let the host use the rest.</dd></dl>

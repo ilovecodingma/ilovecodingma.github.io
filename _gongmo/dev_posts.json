@@ -1,0 +1,102 @@
+[
+ {
+  "slug": "claude-for-small-business",
+  "lang": "en",
+  "date": "2026-10-19",
+  "title": "Claude for Small Product Businesses: Labels, Margins, Reviews",
+  "desc": "Four no-code Claude workflows for small product sellers: label copy checks, wholesale proposals with margin tables, competitor review analysis and a weekly check.",
+  "hub": [
+   "청년 지원금·창업 지원 모아보기",
+   "/apply/"
+  ],
+  "sources": [
+   [
+    "FDA Food Labeling & Nutrition",
+    "https://www.fda.gov/food/food-labeling-nutrition",
+    "2026-10-19"
+   ],
+   [
+    "Anthropic pricing",
+    "https://www.anthropic.com/pricing",
+    "2026-10-19"
+   ]
+  ]
+ },
+ {
+  "slug": "cut-ai-token-costs",
+  "lang": "en",
+  "date": "2026-10-19",
+  "title": "Cut AI Token Costs: Context, Model Split, Caching, Cost Tracking",
+  "desc": "Practical ways to lower Claude API bills: send only needed documents, split steps across models, cache a project summary and track cost per task. Current prices included.",
+  "hub": [
+   "AI 제작 로그·개발 지식 (한국어)",
+   "/ailog/"
+  ],
+  "sources": [
+   [
+    "Anthropic pricing",
+    "https://www.anthropic.com/pricing",
+    "2026-10-19"
+   ]
+  ]
+ },
+ {
+  "slug": "immich-proxmox-photo-server",
+  "lang": "en",
+  "date": "2026-10-19",
+  "title": "Immich on Proxmox with a ZFS Mirror: Setup and 3-2-1 Backup",
+  "desc": "Step-by-step Immich photo server on Proxmox: ZFS mirror, VM sizing from the official requirements, Docker Compose install and a 3-2-1 backup that includes database dumps.",
+  "hub": [
+   "개발 지식 모음 (한국어)",
+   "/ailog/"
+  ],
+  "sources": [
+   [
+    "Immich requirements",
+    "https://immich.app/docs/install/requirements",
+    "2026-10-19"
+   ],
+   [
+    "Immich backup and restore",
+    "https://immich.app/docs/administration/backup-and-restore",
+    "2026-10-19"
+   ]
+  ]
+ },
+ {
+  "slug": "mutation-testing-false-kills",
+  "lang": "en",
+  "date": "2026-10-19",
+  "title": "Mutation Testing False Kills: Baselines, File Access, Kill Reasons",
+  "desc": "Why mutation scores get inflated by false kills and three checks to catch them: a pristine-copy baseline, proof the mutated file was read, and the kill-reason distribution.",
+  "hub": [
+   "개발 지식 모음 (한국어)",
+   "/ailog/"
+  ],
+  "sources": [
+   [
+    "Stryker: mutant states and metrics",
+    "https://stryker-mutator.io/docs/mutation-testing-elements/mutant-states-and-metrics/",
+    "2026-10-19"
+   ]
+  ]
+ },
+ {
+  "slug": "search-index-cleanup",
+  "lang": "ko",
+  "date": "2026-10-19",
+  "title": "1인+AI로 사이트 만들며 배운 것: 페이지 줄이고 검색 색인 정리하기",
+  "desc": "사람 한 명과 Claude Code로 만든 정보 사이트에서 이틀 동안 페이지 3,744개를 863개 수준으로 줄이고 얇은 페이지를 데이터 화면으로 합친 기록과 규칙.",
+  "hub": [
+   "English guides",
+   "/en/guide/"
+  ],
+  "sources": [
+   [
+    "이 사이트 저장소 커밋 기록(index.html·sitemap.xml 개수)",
+    "/ailog/",
+    "2026-10-19"
+   ]
+  ]
+ }
+]

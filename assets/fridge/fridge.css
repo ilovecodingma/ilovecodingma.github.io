@@ -53,3 +53,4 @@
 .fr-ans.ok{background:#ecfeff}
 .fr-ans.err{background:#fef2f2;color:#991b1b}
 @media (prefers-color-scheme:dark){.fr-ans.wait{background:#1f2937;color:#d1d5db}.fr-ans.ok{background:#0b3b44}.fr-ans.err{background:#3b1113;color:#fecaca}}
+@media (max-width:480px){.fr-ask div{flex-direction:column}.fr-ask button{width:100%}}

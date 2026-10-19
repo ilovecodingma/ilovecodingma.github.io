@@ -1,0 +1,28 @@
+<p>If you use an AI model through an API for real work — coding agents, document processing, support drafts — most of the bill usually comes from <b>input tokens you did not need to send</b>. This guide covers four habits that cut cost without making answers worse, with current list prices so you can do the math yourself.</p>
+<h2>Current prices (USD per million tokens)</h2>
+<table><tr><th>Model</th><th>Input</th><th>Output</th><th>Cache read</th><th>Cache write (5-min)</th></tr>
+<tr><td>Claude Opus 5.5</td><td>$4</td><td>$20</td><td>$0.20</td><td>$5</td></tr>
+<tr><td>Claude Sonnet 5.5</td><td>$2</td><td>$10</td><td>$0.10</td><td>$2.50</td></tr>
+<tr><td>Claude Haiku 5.5 (prompts ≤100K tokens)</td><td>$0.10</td><td>$0.50</td><td>$0.01</td><td>$0.125</td></tr></table>
+<p class="note">Source: <a href="https://www.anthropic.com/pricing" rel="nofollow noopener" target="_blank">anthropic.com/pricing</a>, checked 2026-10-19. Batch processing is listed there at 50% off. Haiku 5.5 prices are higher for prompts over 100K tokens. Prices change — check the page before budgeting.</p>
+<h2>1. Send only the documents the task needs</h2>
+<p>The most common waste is pasting a whole repository, manual or chat history "just in case". Every request pays for all of it again.</p>
+<ol><li>Search first (grep, a file list, or an index), then send only the matching files or sections.</li>
+<li>Prefer excerpts with line numbers over whole files.</li>
+<li>For long conversations, start a fresh one with a short written summary instead of carrying 100 turns along.</li></ol>
+<h2>2. Split the work by step and model</h2>
+<table><tr><th>Step</th><th>Typical model tier</th></tr><tr><td>Sorting, tagging, extracting fields</td><td>Smallest</td></tr><tr><td>Drafting, routine code changes</td><td>Mid</td></tr><tr><td>Planning, hard debugging, final review</td><td>Largest</td></tr></table>
+<p>From the table above, a million input tokens cost $4 on Opus 5.5 and $0.10 on Haiku 5.5 — a 40× gap. Test quality on a small sample before moving a step down: a cheaper call that needs two retries is not cheaper.</p>
+<h2>3. Keep a project summary file — and cache it</h2>
+<ul><li>Write one short file: what the project is, folder layout, conventions, current goals. Put it at the very start of every request.</li>
+<li>Because it does not change between calls, it suits prompt caching: after the first write, reads cost $0.20 instead of $4 per million on Opus 5.5 — 5% of the normal input price.</li>
+<li>Put anything that changes (dates, the user's question) <em>after</em> the cached part. Any change earlier in the prompt breaks the cache.</li></ul>
+<h2>4. Track cost per task, not per request</h2>
+<ol><li>Log input, output and cache-read tokens from each response's usage field, tagged with a task name.</li>
+<li>Once a week, sum by task and multiply by the prices above.</li>
+<li>Look at the top three tasks only. That is usually where an oversized context or a mismatched model is hiding.</li></ol>
+<h2>Quick checklist</h2>
+<ul class="chk"><li>Is the stable part of the prompt first and cached?</li><li>Did I send whole files where excerpts would do?</li><li>Could this step run on a smaller model at the same quality?</li><li>Can this job wait for batch (50% off)?</li></ul>
+<h2>FAQ</h2>
+<dl><dt>Does a cache write cost more than normal input?</dt><dd>Yes — on Opus 5.5 a 5-minute cache write is $5 vs $4 for plain input. It pays off as soon as the same prefix is read again.</dd>
+<dt>Is batch always worth it?</dt><dd>Only for work that does not need an answer right away, such as overnight document processing.</dd></dl>

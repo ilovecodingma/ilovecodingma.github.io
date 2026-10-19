@@ -1,0 +1,32 @@
+<p>This guide is for people who run a small product business — a sauce brand, a candle shop, a handmade cosmetics line — and want to use Claude for the repetitive paperwork around the product, not for the product itself. Every workflow below runs in a normal chat window in under 15 minutes, with no code.</p>
+<h2>What Claude is good at here (and what it is not)</h2>
+<table><tr><th>Task</th><th>Good fit?</th><th>Why</th></tr>
+<tr><td>Checking label copy for consistency and missing items</td><td>Yes</td><td>It compares text against a checklist you give it, line by line.</td></tr>
+<tr><td>Drafting a wholesale pitch and a margin table</td><td>Yes</td><td>Arithmetic on numbers <em>you</em> supply, plus formatting.</td></tr>
+<tr><td>Summarising competitor reviews</td><td>Yes</td><td>Grouping hundreds of short texts into themes is a core strength.</td></tr>
+<tr><td>Deciding whether a health or safety claim is legal</td><td>No</td><td>That is your regulator's call. Use Claude to list questions, then check the official rules.</td></tr>
+<tr><td>Inventing prices, costs or market sizes</td><td>No</td><td>It will produce plausible-looking numbers. Only give it numbers you know.</td></tr></table>
+<h2>Workflow 1 — Label copy check</h2>
+<ol><li>Paste the full label text (front and back) and the product's ingredient list.</li>
+<li>Paste the official labeling checklist for your market. In the US that is the <a href="https://www.fda.gov/food/food-labeling-nutrition" rel="nofollow noopener" target="_blank">FDA food labeling pages</a>; in Korea, the MFDS labeling standards.</li>
+<li>Ask: <code>Compare the label to the checklist. Output a table: requirement, found on label (quote), missing or unclear. Do not judge legality.</code></li>
+<li>Fix what is missing, then run the same prompt on the new label to confirm nothing regressed.</li></ol>
+<p>The value is the quote column: every "found" row must point to real text on your label, so you can verify it in seconds.</p>
+<h2>Workflow 2 — Wholesale proposal and margin table</h2>
+<ol><li>Write down your real numbers: unit cost, packaging, shipping per case, case size, retail price.</li>
+<li>Ask for a table with wholesale price at several discount levels off retail, your margin per unit and per case, and the retailer's margin at their usual markup.</li>
+<li>Ask it to show the formula for each column. Recalculate one row yourself; if it matches, the rest is consistent.</li>
+<li>Then ask for a one-page pitch that cites only the numbers in the table.</li></ol>
+<h2>Workflow 3 — Competitor listing review analysis</h2>
+<ol><li>Copy public reviews from two or three competing listings into a text file, keeping the star rating with each review.</li>
+<li>Ask: <code>Group these reviews into complaint themes and praise themes. For each theme: count, two short quotes, and which star ratings it appears in.</code></li>
+<li>Turn the top complaint themes into a checklist for your own listing: photos, size info, shipping expectations, ingredients.</li></ol>
+<p>Always ask for counts and quotes. A theme without quotes is a guess.</p>
+<h2>Workflow 4 — The 20-minute weekly check</h2>
+<ul><li>Paste last week's order summary, refunds and customer messages (names and addresses removed).</li>
+<li>Ask for three things that changed vs. the previous week (with the numbers), any repeated customer question, and one listing or FAQ change that would answer it.</li>
+<li>Keep each week's answer in one document. After a month, ask Claude to compare the four summaries.</li></ul>
+<h2>FAQ</h2>
+<dl><dt>Can I trust the arithmetic?</dt><dd>Check one row by hand. If the formula shown is right and one row matches, the table is consistent; if not, ask it to recompute and show its work.</dd>
+<dt>Should I upload customer personal data?</dt><dd>Remove names, emails and addresses first. None of these workflows need them.</dd>
+<dt>Which plan or model do I need?</dt><dd>All four workflows are short chat tasks. Start with the plan you already have; current options are on <a href="https://www.anthropic.com/pricing" rel="nofollow noopener" target="_blank">Anthropic's pricing page</a>.</dd></dl>
