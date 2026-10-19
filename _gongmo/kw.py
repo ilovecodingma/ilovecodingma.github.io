@@ -149,6 +149,12 @@ def main():
     json.dump(db, open(DBF, 'w', encoding='utf-8', newline='\n'), ensure_ascii=False, separators=(',', ':'))
     arch.sort(key=lambda a: -len(a.get('src', [])))  # 구글+네이버 동시 키워드를 위로
     json.dump(arch, open(arch_f, 'w', encoding='utf-8', newline='\n'), ensure_ascii=False, separators=(',', ':'))
+    try:   # 읽을거리 상위 키워드의 구글 자동완성 연관 검색어(하루 1번, kw/ac.json)
+        cur_, _ = kf.collect(db, today, arch)
+        top_ = kf.priority(cur_, {})[:15]
+        kf.autocomplete([(x['slug'], x['k']) for x in top_], os.path.join(ROOT, 'kw', 'ac.json'), today)
+    except Exception as e:
+        print('자동완성 수집 실패', repr(e)[:120])
     print('트렌드', len(items), '게시', kept, '오늘 누적', len(arch))
 
 

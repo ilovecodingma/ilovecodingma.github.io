@@ -2100,7 +2100,7 @@ def josa_ga(w):
     return '이' if '가' <= c <= '힣' and (ord(c) - 0xAC00) % 28 else '가'
 
 
-def kw_play(db, today, L):
+def kw_play(db, today, L, ENH=None):
     """/kw/ 맨 위 놀이판 + 목록(뱃지·흐름 그래프·관련 줍줍). kw_fun.py 에 로직."""
     import kw_fun as KF
     hist = (_rd('kw/hist.json') or {}).get(today, {})
@@ -2118,6 +2118,8 @@ def kw_play(db, today, L):
             continue
         x = byslug.get(a['slug'])
         bd_ = ''.join(f'<i title="{E(t)}">{ic}{E(t) if ic in ("⏳", "🌙") else ""}</i>' for ic, t in KF.badges(x, hist)) if x else ''
+        if ENH and a['slug'] in ENH:
+            bd_ += '<i title="읽을거리가 있어요">📖</i>'
         rl = KF.rules_links(x, contests) if x else []
         ex = ''.join(f'<a href="{E(u)}">{E(t)}</a>' for u, t in rl[:2])   # 규칙표로 맞는 것만(맞는 게 없으면 안 붙임)
         li += (f'<li id="k-{E(a["slug"])}"><a href="/kw/{E(a["slug"])}/"><em>{j + 1}</em><b>{E(a["k"])} <span class="kwb">{bd_}</span></b>'
@@ -2127,9 +2129,11 @@ def kw_play(db, today, L):
               '🆕 신규(3시간 안에 처음) · 🔥 검색량 1000+ 또는 실시간 3위 안 · ⏳ 오래 버티는 중 · 📉 하락(기록 필요) · 🌙 새벽에만 떴어요. 인기도 = 검색량 구간 + 실시간 순위 합산 상대값이에요.</p>')
     shr = share_bar('오늘의 키워드 TOP5', '오늘 많이 검색된 키워드 TOP5 — ' + ', '.join(card[1][:5]) if card else '오늘의 인기 키워드')
     dl = f'<p class="kwn"><a href="/assets/kw/top5.jpg" download>🖼️ 오늘의 TOP5 카드 이미지 저장</a></p>' if card else ''
-    top = (KF.cloud(cur) + KF.top1(cur, hist) + KF.fleeting(cur) + qbox + vbox + shr + dl
+    rd = ''.join(f'<li><a href="/kw/{E(sl)}/"><b>{E(db[sl]["k"])}</b><span>섹션 {n}개 · {E(", ".join(KF.STY[KF.srckey(db[sl].get("src"))][1:2]))}</span></a></li>' for sl, (_h, n) in list((ENH or {}).items())[:8])
+    top = (KF.one_liner(cur, db) + KF.cloud(cur) + KF.top1(cur, hist)
+           + (f'<section class="kwc"><h2>📖 오늘 읽을거리 — 왜 떴나·사람들이 궁금해하는 것·타임라인</h2><ul class="mg-l">{rd}</ul><p class="kwn">여러 출처에 동시에 뜬 것, 오래 버티는 것, 생활에 닿는 것부터 골랐어요. 정치·가십·사고는 제외해요.</p></section>' if rd else '') + KF.fleeting(cur) + qbox + vbox + shr + dl
            + '<script type="application/json" id="kw-data">' + json.dumps({'q': qdata, 'v': vdata}, ensure_ascii=False).replace('</', '<' + chr(92) + '/') + '</script>'
-           + '<link rel="stylesheet" href="/assets/kw/kw.css?v=1"><script defer src="/assets/kw/kw.js?v=1"></script>')
+           + '<link rel="stylesheet" href="/assets/kw/kw.css?v=2"><script defer src="/assets/kw/kw.js?v=1"></script>')
     return {'top': top, 'list': note_h + f'<h2>📋 오늘 뜬 키워드 전체</h2><ol class="mg-l kwl">{li}</ol>'}, (card[0] if card else None)
 
 
@@ -2149,6 +2153,22 @@ def kw_pages():
         if os.path.isdir(os.path.join(kd, f)) and f != 'archive' and not re.match(r'\d{4}-\d{2}-\d{2}$', f) and f not in db:
             shutil.rmtree(os.path.join(kd, f), ignore_errors=True)
     SRCB = lambda r: ('<span class="kw-b both">구글+네이버 동시</span>' if len(r.get('src') or []) > 1 else '<span class="kw-b n">실시간 검색어</span>' if (r.get('src') or ['google']) == ['naver'] else '<span class="kw-b g">구글 트렌드</span>')
+    import kw_fun as KF, impact as IPK, market as MKT
+    ENH = {}   # 2026-10-20 읽을거리 상위 키워드(섹션 3개 이상인 것만, 15개까지)
+    try:
+        L0 = json.load(open(os.path.join(ad, days[0] + '.json'), encoding='utf-8'))
+        cur0, _mx = KF.collect(db, days[0], L0)
+        ac0 = _rd('kw/ac.json') or {}
+        tsmap = {a['u']: a.get('ts') for a in (_rd('news/data.json') or {}).get('items', [])}
+        MK0 = MKT.load()
+        for x in KF.priority(cur0, {}):
+            if len(ENH) >= 15:
+                break
+            h_, n_ = KF.enhance(x, db, ac0, tsmap, MK0, cur0, IPK)
+            if n_ >= 3:
+                ENH[x['slug']] = (h_, n_)
+    except Exception as e:
+        print('키워드 읽을거리 실패', repr(e)[:150])
     for sl, r in db.items():
         k = r['k']
         lines = [f'「{E(k)}」{josa_ga(k)} {kdate(r["days"][-1])} ' + ('구글 급상승과 실시간 검색어에 동시에' if len(r.get('src') or []) > 1 else '실시간 검색어에' if (r.get('src') or ['google']) == ['naver'] else '구글 검색 급상승 키워드에') + f' 올랐어요({E(r.get("traffic") or "-")}).']
@@ -2180,13 +2200,13 @@ def kw_pages():
         post = f'<section class="mg-s"><h2>✍️ 루리의 정리 글</h2><div class="nw-pr"><a href="{E(r["post"])}" target="_blank" rel="noopener"><em>블로그</em><b>{E(k)} 자세히 정리한 글 보기</b></a></div></section>' if r.get('post') else ''
         css = '<link rel="stylesheet" href="/assets/mag/mag.css?v=10"><link rel="stylesheet" href="/assets/analyst/analyst.css?v=4">'
         body = (f'<p class="bc"><a href="/">홈</a> › <a href="/kw/">인기 키워드</a> › {E(k)}</p><h1>🔎 {E(k)} — 왜 검색이 늘었나</h1><p>{SRCB(r)}</p>'
-                + say('o_det_think', ' '.join(lines)) + trend_html + post
+                + say('o_det_think', ' '.join(lines)) + ((ENH[sl][0] + '<link rel="stylesheet" href="/assets/kw/kw.css?v=2">') if sl in ENH else '') + trend_html + post
                 + (f'<section class="mg-s"><h2>📰 왜 떴나: 관련 보도</h2><ul class="kw-l">{why}</ul></section>' if why else '')
                 + (f'<section class="mg-s"><h2>🕵️ 루리가 채점한 관련 기사</h2><ul class="kw-l">{ours}</ul></section>' if ours else '')
                 + (f'<section class="mg-s"><h2>📌 루리의 줍줍에서 더 보기</h2><div class="nw-pr">{"".join(links)}</div></section>' if links else '')
                 + f'<p class="mg-nav"><a href="/kw/">오늘의 인기 키워드 전체 →</a> · <a href="/mag/">매거진 →</a></p>' + note + css)
         page(f'/kw/{sl}/', f'{k} 검색 급상승 이유 — 관련 보도·정리', f'{k}{josa_ga(k)} 검색 급상승 키워드에 오른 이유: ' + ' / '.join(n['t'] for n in r.get('news', [])[:2])[:140], body,
-             [('루리의 줍줍', '/'), ('인기 키워드', '/kw/'), (k, f'/kw/{sl}/')], noindex=not r.get('post'))
+             [('루리의 줍줍', '/'), ('인기 키워드', '/kw/'), (k, f'/kw/{sl}/')], noindex=not (r.get('post') or (sl in ENH and ENH[sl][1] >= 4)))
         urls.append(f'/kw/{sl}/')
     arch = '<section class="tk-arch"><h2>📅 날짜별 인기 키워드</h2><p>' + ''.join(f'<a href="/kw/{d}/">{kdate(d)}</a>' for d in days[:90]) + '</p></section>'
     for i, d in enumerate(days):
@@ -2195,7 +2215,7 @@ def kw_pages():
         bd = f'<ol class="mg-l">{li}</ol>' + arch + note + css
         play, og_k = '', None
         if i == 0:
-            play, og_k = kw_play(db, d, L)
+            play, og_k = kw_play(db, d, L, ENH)
             bd = play['list'] + arch + note + css
         if i == 0:
             page('/kw/', '오늘의 인기 키워드 — 검색 급상승 이유 정리', f'{kdate(d)} 구글 검색 급상승 키워드와 왜 떴는지: ' + ', '.join(x['k'] for x in L[:6]),

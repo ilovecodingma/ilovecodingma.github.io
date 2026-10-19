@@ -82,14 +82,14 @@ def spark(h, color='#2563eb'):
 
 
 def cloud(cur):
-    L = sorted([x for x in cur if x['han'] and x['cur']], key=lambda x: -x['score'])[:28]
+    L = sorted([x for x in cur if x['han'] and x['cur'] and not x['pol']], key=lambda x: -x['score'])[:28]
     if not L:
         return ''
     mx = max(x['score'] for x in L) or 1
     sp = ''.join(f'<a href="#k-{E(x["slug"])}" style="font-size:{14 + 22 * (x["score"] / mx) ** .6:.0f}px;color:{STY[x["src"]][0]}">{E(x["k"][:14])}</a>' for x in sorted(L, key=lambda x: x['k']))
     leg = ' '.join(f'<i style="color:{c}">●</i> {n}' for c, n in STY.values())
     return (f'<section class="kwc"><h2>☁️ 지금 키워드 구름</h2><p class="kwcl">{sp}</p>'
-            f'<p class="kwn">글자 크기 = 검색량 구간과 실시간 순위를 합친 상대 인기도 · 색 = 출처 {leg} · 누르면 아래 카드로 이동해요.</p></section>')
+            f'<p class="kwn">글자 크기 = 검색량 구간과 실시간 순위를 합친 상대 인기도 · 색 = 출처 {leg} · 누르면 아래 카드로 이동해요. 정치·가십 키워드는 구름에서 빼요.</p></section>')
 
 
 def top1(cur, hist):
@@ -210,3 +210,129 @@ def top5_card(cur, today, nowhm):
     import shutil
     shutil.copyfile(fp, os.path.join(d, 'top5.jpg'))   # 늘 같은 주소(가장 최근)
     return f'/assets/kw/{fn}', [x['k'] for x in L]
+
+
+# ---------------------------------------------------------------------------------------------------------------------
+# 2026-10-20 사용자 「디자인뿐 아니라 사람들이 관심 가질 만한 걸로」: 키워드 상세에 읽을거리(왜 떴나·궁금한 것·타임라인·생활 영향·과거 사례)
+CATS = [('외교·안보', r'북한|김정은|김여정|미사일|외교|전쟁|공습|안보|회담|대남|국경'), ('정치', r'국회|대통령|청문|의원|정당|여당|야당|장관|총리|국감|선거|특검|탄핵'),
+        ('날씨', r'날씨|기온|한파|가을비|태풍|미세먼지|weather|서리|단풍|추위'), ('증시·경제', r'증시|주가|코스피|코스닥|나스닥|환율|금리|삼성|하이닉스|삼전|반도체|경제|물가|금값|비트|코인|보험|부동산|대출|etf|vix'),
+        ('스포츠', r'축구|야구|농구|배구|골프|리그|경기|토트넘|손흥민|올림픽|감독|선수|트윈스|cwc|vs|대 '), ('연예·방송', r'배우|가수|드라마|예능|컴백|아이돌|방송|콘서트|영화|뮤지컬|걸그룹|보이그룹|개그'),
+        ('생활·소비', r'김장|연휴|세금|지원금|입시|수능|교통|할인|가격|요금|건강|다이어트|걷기|감량|기부|요리|레시피|여행')]
+LIFE = re.compile(r'물가|세금|지원금|날씨|연휴|입시|수능|교통|요금|김장|환율|금리|대출|월세|전세|연말정산|최저임금')
+QW = re.compile(r'이유|뜻|란|왜|언제|어디|일정|방법|시기|뭐|가격|나이|시간|결과|순위|중계|후기')
+
+
+def cat_of(k, news):
+    t = (k + ' ' + ' '.join(n['t'] for n in (news or [])[:3])).lower()
+    for name, rx in CATS:
+        if re.search(rx, t):
+            return name
+    return '기타'
+
+
+def one_liner(cur, db):
+    """오늘의 한 줄: 분야별 개수 집계만(해석 없음)."""
+    pool = [x for x in cur if x['han']]
+    if len(pool) < 5:
+        return ''
+    c = {}
+    for x in pool:
+        c[cat_of(x['k'], x['r'].get('news'))] = c.get(cat_of(x['k'], x['r'].get('news')), 0) + 1
+    parts = ' · '.join(f'{k} {v}개' for k, v in sorted(c.items(), key=lambda kv: (-kv[1], kv[0])))
+    return (f'<p class="kw1l">📝 <b>오늘의 한 줄</b> — 오늘 올라온 한글 키워드 {len(pool)}개를 나누면 {E(parts)}예요. '
+            '<small>(키워드와 기사 제목 속 단어로 나눈 개수일 뿐, 해석은 붙이지 않아요)</small></p>')
+
+
+def priority(cur, hist, contests=()):
+    """읽을거리를 먼저 만들 키워드 순서: ①여러 출처에 동시에 ②오래 버팀 ③생활 영향이 있음 (+검색 인기도). 정치·가십·사고는 뺌."""
+    out = []
+    for x in cur:
+        if not x['han'] or x['pol'] or not x['r'].get('news'):
+            continue
+        txt = x['k'] + ' ' + ' '.join(n['t'] for n in x['r']['news'][:3])
+        p = 3 * (x['src'] == 'both') + 2 * (x['span'] >= 6 or x['old']) + 2 * bool(LIFE.search(txt)) + x['score'] / 1000
+        out.append((p, x))
+    return [x for _, x in sorted(out, key=lambda t: -t[0])]
+
+
+def autocomplete(keys, ac_f, today, delay=0.35):
+    """키워드마다 구글 자동완성 연관 검색어를 하루 한 번 모은다(공개 suggest 주소, 키워드 15개 × 질문 접미사 5개). kw/ac.json 에 저장."""
+    import time, requests
+    ac = json.load(open(ac_f, encoding='utf-8')) if os.path.exists(ac_f) else {}
+    for d in [d for d in ac if ac[d].get('d') != today and ac[d].get('d', '') < (datetime.date.fromisoformat(today) - datetime.timedelta(days=3)).isoformat()]:
+        del ac[d]
+    for sl, k in keys:
+        if ac.get(sl, {}).get('d') == today:
+            continue
+        S = []
+        for q in [k + ' ', k + ' 이유', k + ' 뜻', k + ' 언제', k + ' 방법']:
+            try:
+                r = requests.get('https://suggestqueries.google.com/complete/search', params={'client': 'firefox', 'hl': 'ko', 'q': q}, timeout=10,
+                                 headers={'User-Agent': 'Mozilla/5.0'}).json()
+                S += [s for s in r[1] if s.startswith(k + ' ') and s.strip() != k]
+            except Exception:
+                pass
+            time.sleep(delay)
+        ac[sl] = {'d': today, 'q': list(dict.fromkeys(S))[:20]}
+    json.dump(ac, open(ac_f, 'w', encoding='utf-8', newline=chr(10)), ensure_ascii=False, separators=(',', ':'))
+    return ac
+
+
+def enhance(x, db, ac, tsmap, MK, cur, IPmod):
+    """키워드 상세의 읽을거리 블록. 반환 (html, 섹션 수). 기사에서 확인되는 것만, 없으면 「아직 알려진 게 없어요」."""
+    r, k = x['r'], x['k']
+    arts = [(n['t'], n['u'], n['o']) for n in r.get('news', [])] + [(a['t'], a['u'], a['o']) for a in r.get('ours', [])]
+    seen, A = set(), []
+    for t, u, o in arts:
+        if u not in seen:
+            seen.add(u); A.append((t, u, o))
+    secs, parts = 0, ''
+    # 1) 왜 떴나 3줄 (기사 제목 그대로) + 보도 곳수
+    outs = sorted({o for _, _, o in A if o})
+    if len(A) >= 2:
+        secs += 1
+        parts += (f'<section class="mg-s"><h2>📰 왜 떴나 — 기사 제목 3줄</h2>' + (f'<p class="kwn">언론사 {len(outs)}곳이 보도</p>' if len(outs) >= 3 else '')
+                  + '<ul class="kw-l">' + ''.join(f'<li><a href="{E(u)}" target="_blank" rel="noopener nofollow"><em>{E(o)}</em>{E(t)}</a></li>' for t, u, o in A[:3]) + '</ul></section>')
+    # 2) 사람들이 진짜 궁금해하는 것 (자동완성) + 기사로 확인되는 답
+    sug = [s for s in (ac.get(x['slug']) or {}).get('q', []) if len(s) > len(k) + 1]
+    sug = sorted(sug, key=lambda s: (not QW.search(s), len(s)))
+    rows = []
+    for s in sug:
+        toks = [w for w in s[len(k):].split() if len(w) >= 2]
+        rows.append((s, next(((t, u, o) for t, u, o in A for w in toks if w in t), None)))
+    rows = sorted(rows, key=lambda r: r[1] is None)[:5]   # 기사에서 답이 확인되는 질문을 앞에
+    if len(rows) >= 3 and sum(1 for _, h in rows if h) >= 2:   # 확인되는 답이 2개 미만이면 이 섹션은 만들지 않음(얇은 페이지 방지)
+        secs += 1
+        lis = ''
+        for s, hit in rows:
+            ans = (f'기사 제목에서 확인: <a href="{E(hit[1])}" target="_blank" rel="noopener nofollow">{E(hit[0])}</a> <small>({E(hit[2])})</small>' if hit else '아직 알려진 게 없어요')
+            lis += f'<li><b>{E(s)}?</b><br><span class="kwn">{ans}</span></li>'
+        parts += ('<section class="mg-s"><h2>🙋 사람들이 진짜 궁금해하는 것</h2><p class="kwn">구글 자동완성에 실제로 뜨는 말이에요. 답은 기사 제목에서 확인되는 것만 적어요.</p>'
+                  f'<ul class="kwq">{lis}</ul></section>')
+    # 3) 타임라인 (급상승 첫 시각 + 기사 시각)
+    tl = [(f'{x["first"]}', '구글 급상승·실시간 검색어에 처음 올랐어요', '')]
+    for t, u, o in A:
+        ts = tsmap.get(u)
+        if ts and int(ts) <= datetime.datetime.now().timestamp():   # 미래 시각(일부 피드의 날짜 오류)은 타임라인에서 뺌
+            tl.append((datetime.datetime.fromtimestamp(int(ts)).strftime('%m/%d %H:%M'), t, f'<a href="{E(u)}" target="_blank" rel="noopener nofollow">{E(o)}</a>'))
+    tl = [tl[0]] + sorted(tl[1:], key=lambda z: z[0])
+    if len(tl) >= 3:
+        secs += 1
+        parts += ('<section class="mg-s"><h2>⏱️ 타임라인</h2><ol class="kwt">' + ''.join(f'<li><b>{E(a)}</b> {E(b)} {c}</li>' for a, b, c in tl[:7])
+                  + f'</ol><p class="kwn">마지막 확인 {E(x["last"] or "-")} · 기사 시각은 루리가 모은 기사만 보여요.</p></section>')
+    # 4) 그래서 나는? (생활 영향 규칙표, 맞는 게 없으면 생략)
+    ip = IPmod.card(k + ' ' + ' '.join(t for t, _, _ in A[:3]), None, [(o, t) for t, _, o in A[:6]], MK, head='🙋 그래서 나는? — 내 생활에 미칠 수 있는 영향')
+    if ip:
+        secs += 1
+        parts += ip
+    # 5) 비슷한 과거 사례 (db.json 기록)
+    c = cat_of(k, r.get('news'))
+    same = [v for v in db.values() if cat_of(v['k'], v.get('news')) == c and HAN.search(v['k'])]
+    if len(same) >= 8:
+        d = sorted(len(v['days']) for v in same)
+        first = min(min(v['days']) for v in same)
+        n2 = sum(1 for z in d if z >= 2)
+        secs += 1
+        parts += (f'<section class="mg-s"><h2>📚 비슷한 키워드는 보통 며칠 갈까</h2><p>{E(c)} 분야 키워드 {len(same)}개 중 {n2}개가 이틀 이상 급상승에 올랐고, 보통 <b>{d[len(d) // 2]}일</b> 갔어요. '
+                  f'<small>({E(first[5:].replace("-", "/"))}부터 쌓은 기록 기준이라 표본이 작아요)</small></p></section>')
+    return parts, secs

@@ -10,3 +10,8 @@
 .kwl li{position:relative}.kwb i{font-style:normal;font-size:12px;margin-left:4px;padding:1px 6px;border-radius:999px;background:var(--pbg,#f1f5f9);white-space:nowrap}.kwsp{display:block;margin-top:4px}
 .kwr{margin:2px 0 8px;padding-left:44px;font-size:13px}.kwr a{margin-right:10px}
 @media (max-width:480px){.kw2{grid-template-columns:1fr}}
+
+.kw1 .lab-cta{background:#fff;color:#9a3412;border:1px solid #fdba74}.kw1 .lab-cta b{color:#9a3412}
+.kw1l{margin:10px 0;padding:10px 12px;border-radius:12px;background:var(--pbg,#f1f5f9);line-height:1.6;font-size:14.5px}
+.kwq{list-style:none;padding:0;margin:0}.kwq li{margin:10px 0;padding-bottom:10px;border-bottom:1px solid var(--bd,#e5e7eb)}.kwq a{text-decoration:underline}
+.kwt{margin:0;padding-left:18px}.kwt li{margin:6px 0;line-height:1.55}.kwt b{color:#0e7490}
