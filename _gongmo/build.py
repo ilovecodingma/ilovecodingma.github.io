@@ -397,10 +397,16 @@ NP_NAV = re.compile(r'콘테스트코리아|인기검색어|대외활동|로그�
 _NP_ALL = '|'.join(r for _, r in NP_KEYS)
 
 
-def share_bar(t, x=''):
-    """공유 버튼 줄 HTML (assets/share.js). t=제목, x=공유 문구."""
-    return (f'<div class="shr" data-t="{E(t)}" data-x="{E(x or t)}"><b>📤 공유</b><button data-s="native">카카오톡·문자</button><button data-s="copy">🔗 링크 복사</button>'
-            '<button data-s="x">X</button><button data-s="fb">페이스북</button></div><script defer src="/assets/share.js?v=1"></script>')
+_CFG = os.path.join(HERE, 'config.json')   # {"kakao_js_key": ""} — 카카오 JS 키가 생기면 여기에(공개되는 키라 저장소에 있어도 됨)
+KAKAO_JS = (json.load(open(_CFG, encoding='utf-8')).get('kakao_js_key') or '').strip() if os.path.exists(_CFG) else ''
+
+
+def share_bar(t, x='', en=False):
+    """공유 버튼 줄 HTML (assets/share.js). t=제목, x=공유 문구. 카카오톡 버튼은 KAKAO_JS 가 있을 때만 보임."""
+    L = ('Share', 'Share…', 'KakaoTalk', '🔗 Copy link', 'Naver Blog', 'BAND') if en else ('공유', '공유하기', '카카오톡', '🔗 링크 복사', '네이버 블로그', '밴드')
+    return (f'<div class="shr" data-t="{E(t)}" data-x="{E(x or t)}"' + (f' data-k="{E(KAKAO_JS)}"' if KAKAO_JS else '') + (' data-en="1"' if en else '') + f'><b>📤 {L[0]}</b>'
+            f'<button data-s="native">{L[1]}</button><button data-s="kakao"' + ('' if KAKAO_JS else ' hidden') + f'>{L[2]}</button><button data-s="copy">{L[3]}</button>'
+            f'<button data-s="nblog">{L[4]}</button><button data-s="band">{L[5]}</button><button data-s="x">X</button><button data-s="fb">Facebook</button></div><script defer src="/assets/share.js?v=2"></script>')
 
 
 def notice_points(cid):
@@ -823,7 +829,7 @@ def build_apply(aps):
 <div class="my-acts" data-id="a:{E(a['id'])}" data-title="{E(a['title'])}" data-end="{'' if a.get('always') else a['end']}"></div>
 {say('o_suit', f'신청 기간을 놓치지 마세요! 자격 조건은 <b>공식 공고</b>에서 꼭 확인해 주세요.')}
 <div class="panel"><table class="info">{tb}</table>{btn}</div>
-{ap_insight(a, aps)}<h2>신청 전 확인할 것</h2><ul class="chk"><li>신청 자격(나이·소득·자산·거주지·무주택 여부)</li><li>필요 서류와 본인인증 수단</li><li>발표일과 계약·납부 일정</li></ul>'''
+{share_bar(a['title'], f'「{a["title"]}」 ' + ('상시 신청' if a.get('always') else f'{ddot(a["end"])[5:]} 마감') + ' — 대상·신청처 정리')}{ap_insight(a, aps)}<h2>신청 전 확인할 것</h2><ul class="chk"><li>신청 자격(나이·소득·자산·거주지·무주택 여부)</li><li>필요 서류와 본인인증 수단</li><li>발표일과 계약·납부 일정</li></ul>'''
         _org = (a.get('org') or '').strip()[:14]
         _end = f' · {ddot(a["end"])[5:]} 마감' if a.get('end') and not a.get('always') else ''
         _og = (a.get('org') or '').strip().split()[-1][:10] if (a.get('org') or '').strip() else ''   # 제목용 기관명은 마지막 단위(과·국)만
@@ -2086,7 +2092,7 @@ def dev_pages(live=()):
                 f'<article class="dev" lang="{p["lang"]}"><h1>{E(p["title"])}</h1><p class="note">{"Published" if en else "작성"} {p["date"]}'
                 + (f' · {"updated" if en else "고침"} {p["updated"]}' if p.get('updated') else '') + '</p>'
                 + body_ + (f'<h2>{"Sources" if en else "출처"}</h2><ul>{src}</ul>' if src else '')
-                + (f'<p class="dev-hub">{"Related (Korean)" if en else "관련"}: <a href="{E(hub[1])}">{E(hub[0])}</a></p>' if hub else '') + f'</article>{css}')
+                + (f'<p class="dev-hub">{"Related (Korean)" if en else "관련"}: <a href="{E(hub[1])}">{E(hub[0])}</a></p>' if hub else '') + share_bar(p['title'], p['desc'], en) + f'</article>{css}')
         t = p['title'] + ' | Ruri Jupjup' if en and len(p['title']) + 14 <= 70 else p['title']
         ld = {'@context': 'https://schema.org', '@type': 'TechArticle', 'headline': p['title'][:110], 'description': p['desc'], 'inLanguage': p['lang'], 'datePublished': p['date'],
               'dateModified': p.get('updated') or p['date'], 'author': {'@type': 'Organization', 'name': NAME}, 'mainEntityOfPage': SITE + u}
@@ -2684,7 +2690,7 @@ def qa_pages(live):
          [('루리의 줍줍', '/'), ('고민 해결', '/qa/')])
     rel = ''.join(card(c) for c in live[:4])
     for i, q in enumerate(QA):
-        page(f'/guide/{q["slug"]}/', q['title'], q['desc'], f'<p class="bc"><a href="/">홈</a> › <a href="/qa/">고민 해결</a></p><article><h1>{E(q["title"])}</h1>{say(["o_suit", "o_cardigan", "o_desk", "o_present"][i % 4], E(q["desc"]))}{q["body"]}</article><p class="qa-more"><a href="/qa/">💬 다른 고민 보기</a> · <a href="/">🎯 루리에게 추천 상담 받기</a></p><h2>마감 임박 공모전</h2><ul class="list">{rel}</ul>',
+        page(f'/guide/{q["slug"]}/', q['title'], q['desc'], f'<p class="bc"><a href="/">홈</a> › <a href="/qa/">고민 해결</a></p><article><h1>{E(q["title"])}</h1>{say(["o_suit", "o_cardigan", "o_desk", "o_present"][i % 4], E(q["desc"]))}{q["body"]}{share_bar(q["title"])}</article><p class="qa-more"><a href="/qa/">💬 다른 고민 보기</a> · <a href="/">🎯 루리에게 추천 상담 받기</a></p><h2>마감 임박 공모전</h2><ul class="list">{rel}</ul>',
              [('루리의 줍줍', '/'), ('고민 해결', '/qa/'), (q['title'], f'/guide/{q["slug"]}/')],
              {'@context': 'https://schema.org', '@type': 'Article', 'headline': q['title'], 'description': q['desc'], 'datePublished': '2026-10-17',
               'author': {'@type': 'Person', 'name': 'Seongsang Park'}})
@@ -2707,7 +2713,7 @@ def guides(live):
         fqh = ('<section class="hub-faq"><h2>❓ 자주 묻는 질문</h2>' + ''.join(f'<details class="faq"><summary>{E(q)}</summary><p>{E(a)}</p></details>' for q, a in fq) + '</section>') if fq else ''
         art = {'@type': 'Article', 'headline': t, 'description': d, 'datePublished': '2026-10-16', 'author': {'@type': 'Person', 'name': 'Seongsang Park'}}
         ld_ = {'@context': 'https://schema.org', '@graph': [art, {'@type': 'FAQPage', 'mainEntity': [{'@type': 'Question', 'name': q, 'acceptedAnswer': {'@type': 'Answer', 'text': a}} for q, a in fq]}]} if fq else {'@context': 'https://schema.org', **art}
-        page(f'/guide/{s}/', t, d, f'<p class="bc"><a href="/">홈</a> › <a href="/guide/">응모 가이드</a></p><article><h1>{E(t)}</h1>{say(["o_suit", "o_cardigan", "o_desk", "o_present"][GUIDES.index((s, t, d, b)) % 4], E(d))}{b}{fqh}</article><h2>마감 임박 공모전</h2><ul class="list">{rel}</ul>',
+        page(f'/guide/{s}/', t, d, f'<p class="bc"><a href="/">홈</a> › <a href="/guide/">응모 가이드</a></p><article><h1>{E(t)}</h1>{say(["o_suit", "o_cardigan", "o_desk", "o_present"][GUIDES.index((s, t, d, b)) % 4], E(d))}{b}{fqh}{share_bar(t)}</article><h2>마감 임박 공모전</h2><ul class="list">{rel}</ul>',
              [('루리의 줍줍', '/'), ('응모 가이드', '/guide/'), (t, f'/guide/{s}/')], ld_)
 
 
