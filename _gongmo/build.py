@@ -2580,7 +2580,7 @@ _CPJ = os.path.expanduser('~/tools/promo_share/coupang.json')
 CP = json.load(open(_CPJ, encoding='utf-8')) if os.path.exists(_CPJ) else {}
 
 
-def cp_box(text, title='🛒 함께 보면 좋은 물건', n=2, fill='', body=''):
+def cp_box(text, title='함께 보면 좋은 물건:', n=2, fill='', body='', want=''):
     """광고 박스 한 곳. 링크 rel=sponsored nofollow, 공정위 문구는 링크 바로 아래. 팝업·자동 이동 없음.
     text 에 맞는 규칙(coupang.json rules 순서)을 먼저, 모자라면 fill 에 맞는 규칙으로 채움(레시피: 메뉴별 도구 → 일반 요리 도구)."""
     if not CP.get('on'):
@@ -2593,6 +2593,8 @@ def cp_box(text, title='🛒 함께 보면 좋은 물건', n=2, fill='', body=''
             hit = any((re.search(re.escape(k) + r'(?:\s|$)', t) if len(k) == 1 else k in t) for k in r['kw']) or (t is text and any(len(k) >= 3 and k in body for k in r['kw']))   # 한 글자(국·탕·찜)는 낱말 끝에서만(국수·그라탕 제외), body(만드는 법)는 3글자 이상 도구 이름만
             if t and hit and not (t is text and fill and any(k in fill for k in r['kw'])):
                 items += [x for x in r['items'] if x not in items]
+    if want:
+        items = [x for x in items if want in x['name']] + [x for x in items if want not in x['name']]
     items = (items or CP.get('default', []))[:n]
     if not items:
         return ''
@@ -2896,7 +2898,7 @@ def fridge_page():
                 + (f'<img class="fr-rmain" src="{E(mp["f"])}" width="720" height="540" alt="{E(r["n"])} 완성 사진" fetchpriority="high">' if mp else '')
                 + f'<p>{E(tip)}</p><h2>🧺 재료</h2><div class="fr-ri"><div><h3>꼭 있어야 해요</h3><ul>{ingl(r["need"])}</ul></div>'
                 + (f'<div><h3>있으면 더 좋아요</h3><ul>{ingl(r["opt"])}</ul></div>' if r['opt'] else '') + '</div>'
-                + ('' if any(w in ' '.join(r['s']) and cp_tool_url(w) for w in CP_TOOLS) else cp_box('', '재료 사러 가기 번거로우면', 1, fill='밀키트 레시피'))
+                + ('' if any(w in ' '.join(r['s']) and cp_tool_url(w) for w in CP_TOOLS) else cp_box('', '재료 사러 가기 번거로우면 이런 것도 있어요:', 1, fill='밀키트 레시피', want='밀키트'))
                 + (f'<h2>👩‍🍳 {E(r["n"])} 맛있게 끓이는 방법</h2>' if re.search(r'국|찌개|탕|전골|국밥', r['n']) else f'<h2>👩‍🍳 {E(r["n"])} 맛있게 만드는 방법</h2>') + f'<ol class="fr-rs">{steps}</ol>' + (CP_IN_NOTE if cpu else '')
                 + (f'<p class="note">영문: {E(FR_EN[r["n"]])} recipe</p>' if FR_EN.get(r['n']) else '')
                 + share_bar(f'{r["n"]} 만드는 법', f'{r["n"]} 만드는 법 — 재료 {len(r["need"])}가지로 {r["m"]}분')
