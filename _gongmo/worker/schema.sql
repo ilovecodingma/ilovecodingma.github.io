@@ -207,3 +207,7 @@ CREATE TABLE IF NOT EXISTS page_ratings (
   PRIMARY KEY (user_id, page)
 );
 CREATE INDEX IF NOT EXISTS page_ratings_page ON page_ratings(page);
+
+-- 2026-10-19 D1 읽기 한도 대응: 방문 통계를 매번 hits 전체에서 세지 않도록 일별 요약 + 결과 캐시
+CREATE TABLE IF NOT EXISTS hit_rollup (day TEXT PRIMARY KEY, v INTEGER NOT NULL DEFAULT 0, pv INTEGER NOT NULL DEFAULT 0);
+CREATE TABLE IF NOT EXISTS kvcache (k TEXT PRIMARY KEY, v TEXT NOT NULL, exp INTEGER NOT NULL);

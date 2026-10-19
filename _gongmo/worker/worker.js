@@ -8,6 +8,33 @@ const hex = b => [...new Uint8Array(b)].map(x => x.toString(16).padStart(2, '0')
 const unhex = h => new Uint8Array(h.match(/../g).map(x => parseInt(x, 16)));
 const clean = (s, n) => String(s || '').replace(/[\u0000-\u0008\u000b-\u001f]/g, '').trim().slice(0, n);
 // 페이지 주소를 댓글·좋아요·조회수의 열쇠로 쓰기 위해 한 모양으로 맞춘다(/fridge/r/김치찌개/)
+// 유입 경로 이름 붙이기 (2026-10-18 "유입 경로 좀 정리해, 알아들을 수 있게" — 예전 SQL CASE WHEN 을 워커로 옮김)
+function chan(r) {
+  const e = x => r.endsWith(x), i = x => r.includes(x), st = x => r.startsWith(x), q = (...x) => x.includes(r);
+  if (st('src:u_share')) return '\u{1F4E4} 공유 버튼으로 받은 링크';
+  if (r === 'src:nb_notice') return '\u{1F4CC} 블로그 공지글';
+  if (q('src:band', 'src:u_band') || e('band.us')) return '\u{1F465} 밴드';
+  if (q('src:kakao', 'src:openchat', 'src:kakao_alert') || e('open.kakao.com')) return '\u{1F4AC} 카카오톡';
+  if (q('src:pin', 'src:pinterest') || i('pinterest.')) return '\u{1F4CC} 핀터레스트';
+  if (st('src:w_')) return '\u{1F9E9} 위젯 클릭';
+  if (r === 'src:kin' || e('kin.naver.com')) return '\u{1F4AC} 네이버 지식인';
+  if (q('src:blog', 'src:u_naver_blog') || e('blog.naver.com') || e('tistory.com')) return '\u{1F4DD} 블로그';
+  if (q('src:cafe', 'src:u_naver_cafe') || e('cafe.naver.com') || e('cafe.daum.net')) return '\u2615 카페';
+  if (e('search.naver.com') || q('naver.com', 'm.naver.com')) return '\u{1F50D} 네이버 검색';
+  if (i('google.') && !st('accounts.google')) return '\u{1F50D} 구글 검색';
+  if (e('daum.net') || e('bing.com') || e('zum.com')) return '\u{1F50D} 다음·빙 검색';
+  if (q('src:yt', 'src:shorts', 'src:u_youtube') || e('youtube.com') || r === 'youtu.be') return '\u25B6\uFE0F 유튜브';
+  if (q('src:ig', 'src:reel', 'src:u_instagram') || e('instagram.com')) return '\u{1F4F8} 인스타그램';
+  if (q('src:th', 'src:u_threads') || i('threads.')) return '\u{1F9F5} 스레드';
+  if (r === 'src:dc' || e('dcinside.com')) return '\u{1F5E8}\uFE0F 디시인사이드';
+  if (q('src:dev', 'src:gn', 'src:dq', 'src:velog') || e('okky.kr') || e('hada.io') || e('velog.io') || e('disquiet.io')) return '\u{1F4BB} 개발자 커뮤니티';
+  if (q('src:medium', 'src:devto', 'src:reddit', 'src:hn', 'src:hashnode') || e('medium.com') || e('dev.to') || e('reddit.com') || e('ycombinator.com') || i('hashnode.')) return '\u{1F30D} 해외 개발 커뮤니티(레딧·HN·Medium·dev.to)';
+  if (st('accounts.google') || e('kakao.com')) return '\u{1F510} 로그인하고 돌아옴';
+  if (r === '') return '\u{1F517} 직접 접속(주소 입력·즐겨찾기·앱 안 링크)';
+  if (st('src:')) return '\u{1F3F7}\uFE0F 기타 홍보 링크(' + r.slice(4) + ')';
+  return '\u{1F310} 기타 사이트(' + r + ')';
+}
+
 const npage = s => {
   let x = String(s || '').split('#')[0].split('?')[0];
   try { x = decodeURIComponent(x); } catch {}
@@ -504,26 +531,72 @@ export default {
         await env.DB.batch(q);
         return json(req, { ok: 1 });
       }
+      // 방문 통계 (2026-10-19: hits 를 13번 집계하느라 D1 읽기 한도를 태워서, 한 번만 읽고 워커에서 묶는다.
+      //              누적은 hit_rollup(일별 요약), 결과는 kvcache 에 3분 캐시. ?fresh=1 이면 다시 계산)
       if (p === '/api/admin/visits') {
         const u = await me(req, env); if (!u || !ADMINS.includes(u.id)) return err(req, '권한이 없어요.', 403);
-        const d = new Date(Date.now() + 9 * 3600e3).toISOString().slice(0, 10), mine = url.searchParams.get('mine') === '1';
-        const W = (mine ? '' : ` AND uid NOT IN (${ADMINS.join(',')})`) + ` AND vid NOT IN (SELECT vid FROM hits WHERE country NOT IN ('KR', '') GROUP BY vid HAVING MAX(ref) = '')`  /* 해외에서 링크 없이만 온 방문(자동 점검 프로그램)만 제외, 해외 커뮤니티 유입은 셈 */, wk = new Date(Date.now() + 9 * 3600e3 - 6 * 86400e3).toISOString().slice(0, 10);
-        const all = async (q, ...a) => (await env.DB.prepare(q).bind(...a).all()).results;
-        const first = async (q, ...a) => await env.DB.prepare(q).bind(...a).first();
-        return json(req, {
-          today: await first(`SELECT COUNT(DISTINCT vid) v, COUNT(*) pv FROM hits WHERE day = ?${W}`, d),
-          live: await first(`SELECT COUNT(DISTINCT vid) v FROM hits WHERE ts > ?${W}`, now() - 1800),
-          total: await first(`SELECT COUNT(DISTINCT vid || day) v, COUNT(*) pv, MIN(day) since FROM hits WHERE 1=1${W}`),
-          byDay: await all(`SELECT day d, COUNT(DISTINCT vid) v, COUNT(*) pv FROM hits WHERE day >= date(?, '-13 days')${W} GROUP BY day ORDER BY day`, d),
-          pages: await all(`SELECT path, COUNT(*) pv, COUNT(DISTINCT vid) v FROM hits WHERE day >= ?${W} GROUP BY path ORDER BY v DESC, pv DESC LIMIT 15`, wk),
-          // 2026-10-18 사용자: "유입 경로 좀 정리해, 알아들을 수 있게" — 방문자마다 그날 처음 들어온 곳(첫 조회) 기준으로 채널 이름 묶기
-          refs: await all(`SELECT CASE WHEN h.ref LIKE 'src:u_share%' THEN '📤 공유 버튼으로 받은 링크'  WHEN h.ref = 'src:nb_notice' THEN '📌 블로그 공지글'  WHEN h.ref IN ('src:band', 'src:u_band') OR h.ref LIKE '%band.us' THEN '👥 밴드'  WHEN h.ref IN ('src:kakao', 'src:openchat', 'src:kakao_alert') OR h.ref LIKE '%open.kakao.com' THEN '💬 카카오톡'  WHEN h.ref IN ('src:pin', 'src:pinterest') OR h.ref LIKE '%pinterest.%' THEN '📌 핀터레스트'  WHEN substr(h.ref, 1, 6) = 'src:w_' THEN '🧩 위젯 클릭'  WHEN h.ref = 'src:kin' OR h.ref LIKE '%kin.naver.com' THEN '💬 네이버 지식인'  WHEN h.ref IN ('src:blog', 'src:u_naver_blog') OR h.ref LIKE '%blog.naver.com' OR h.ref LIKE '%tistory.com' THEN '📝 블로그'  WHEN h.ref IN ('src:cafe', 'src:u_naver_cafe') OR h.ref LIKE '%cafe.naver.com' OR h.ref LIKE '%cafe.daum.net' THEN '☕ 카페'  WHEN h.ref LIKE '%search.naver.com' OR h.ref IN ('naver.com', 'm.naver.com') THEN '🔍 네이버 검색'  WHEN h.ref LIKE '%google.%' AND h.ref NOT LIKE 'accounts.google%' THEN '🔍 구글 검색'  WHEN h.ref LIKE '%daum.net' OR h.ref LIKE '%bing.com' OR h.ref LIKE '%zum.com' THEN '🔍 다음·빙 검색'  WHEN h.ref IN ('src:yt', 'src:shorts', 'src:u_youtube') OR h.ref LIKE '%youtube.com' OR h.ref = 'youtu.be' THEN '▶️ 유튜브'  WHEN h.ref IN ('src:ig', 'src:reel', 'src:u_instagram') OR h.ref LIKE '%instagram.com' THEN '📸 인스타그램'  WHEN h.ref IN ('src:th', 'src:u_threads') OR h.ref LIKE '%threads.%' THEN '🧵 스레드'  WHEN h.ref = 'src:dc' OR h.ref LIKE '%dcinside.com' THEN '🗨️ 디시인사이드'  WHEN h.ref IN ('src:dev', 'src:gn', 'src:dq', 'src:velog') OR h.ref LIKE '%okky.kr' OR h.ref LIKE '%hada.io' OR h.ref LIKE '%velog.io' OR h.ref LIKE '%disquiet.io' THEN '💻 개발자 커뮤니티' WHEN h.ref IN ('src:medium', 'src:devto', 'src:reddit', 'src:hn', 'src:hashnode') OR h.ref LIKE '%medium.com' OR h.ref LIKE '%dev.to' OR h.ref LIKE '%reddit.com' OR h.ref LIKE '%ycombinator.com' OR h.ref LIKE '%hashnode.%' THEN '🌍 해외 개발 커뮤니티(레딧·HN·Medium·dev.to)'  WHEN h.ref LIKE 'accounts.google%' OR h.ref LIKE '%kakao.com' THEN '🔐 로그인하고 돌아옴'  WHEN h.ref = '' THEN '🔗 직접 접속(주소 입력·즐겨찾기·앱 안 링크)'  WHEN h.ref LIKE 'src:%' THEN '🏷️ 기타 홍보 링크(' || substr(h.ref, 5) || ')'  ELSE '🌐 기타 사이트(' || h.ref || ')' END r, COUNT(*) v FROM hits h JOIN (SELECT vid, day, MIN(ts) t FROM hits WHERE day >= ?${W} GROUP BY vid, day) f ON h.vid = f.vid AND h.day = f.day AND h.ts = f.t GROUP BY r ORDER BY v DESC LIMIT 20`, wk),
-          refsToday: await all(`SELECT CASE WHEN h.ref LIKE 'src:u_share%' THEN '📤 공유 버튼으로 받은 링크'  WHEN h.ref = 'src:nb_notice' THEN '📌 블로그 공지글'  WHEN h.ref IN ('src:band', 'src:u_band') OR h.ref LIKE '%band.us' THEN '👥 밴드'  WHEN h.ref IN ('src:kakao', 'src:openchat', 'src:kakao_alert') OR h.ref LIKE '%open.kakao.com' THEN '💬 카카오톡'  WHEN h.ref IN ('src:pin', 'src:pinterest') OR h.ref LIKE '%pinterest.%' THEN '📌 핀터레스트'  WHEN substr(h.ref, 1, 6) = 'src:w_' THEN '🧩 위젯 클릭'  WHEN h.ref = 'src:kin' OR h.ref LIKE '%kin.naver.com' THEN '💬 네이버 지식인'  WHEN h.ref IN ('src:blog', 'src:u_naver_blog') OR h.ref LIKE '%blog.naver.com' OR h.ref LIKE '%tistory.com' THEN '📝 블로그'  WHEN h.ref IN ('src:cafe', 'src:u_naver_cafe') OR h.ref LIKE '%cafe.naver.com' OR h.ref LIKE '%cafe.daum.net' THEN '☕ 카페'  WHEN h.ref LIKE '%search.naver.com' OR h.ref IN ('naver.com', 'm.naver.com') THEN '🔍 네이버 검색'  WHEN h.ref LIKE '%google.%' AND h.ref NOT LIKE 'accounts.google%' THEN '🔍 구글 검색'  WHEN h.ref LIKE '%daum.net' OR h.ref LIKE '%bing.com' OR h.ref LIKE '%zum.com' THEN '🔍 다음·빙 검색'  WHEN h.ref IN ('src:yt', 'src:shorts', 'src:u_youtube') OR h.ref LIKE '%youtube.com' OR h.ref = 'youtu.be' THEN '▶️ 유튜브'  WHEN h.ref IN ('src:ig', 'src:reel', 'src:u_instagram') OR h.ref LIKE '%instagram.com' THEN '📸 인스타그램'  WHEN h.ref IN ('src:th', 'src:u_threads') OR h.ref LIKE '%threads.%' THEN '🧵 스레드'  WHEN h.ref = 'src:dc' OR h.ref LIKE '%dcinside.com' THEN '🗨️ 디시인사이드'  WHEN h.ref IN ('src:dev', 'src:gn', 'src:dq', 'src:velog') OR h.ref LIKE '%okky.kr' OR h.ref LIKE '%hada.io' OR h.ref LIKE '%velog.io' OR h.ref LIKE '%disquiet.io' THEN '💻 개발자 커뮤니티' WHEN h.ref IN ('src:medium', 'src:devto', 'src:reddit', 'src:hn', 'src:hashnode') OR h.ref LIKE '%medium.com' OR h.ref LIKE '%dev.to' OR h.ref LIKE '%reddit.com' OR h.ref LIKE '%ycombinator.com' OR h.ref LIKE '%hashnode.%' THEN '🌍 해외 개발 커뮤니티(레딧·HN·Medium·dev.to)'  WHEN h.ref LIKE 'accounts.google%' OR h.ref LIKE '%kakao.com' THEN '🔐 로그인하고 돌아옴'  WHEN h.ref = '' THEN '🔗 직접 접속(주소 입력·즐겨찾기·앱 안 링크)'  WHEN h.ref LIKE 'src:%' THEN '🏷️ 기타 홍보 링크(' || substr(h.ref, 5) || ')'  ELSE '🌐 기타 사이트(' || h.ref || ')' END r, COUNT(*) v FROM hits h JOIN (SELECT vid, day, MIN(ts) t FROM hits WHERE day = ?${W} GROUP BY vid, day) f ON h.vid = f.vid AND h.day = f.day AND h.ts = f.t GROUP BY r ORDER BY v DESC LIMIT 20`, d),
-          cities: await all(`SELECT country || ' ' || city c, COUNT(DISTINCT vid) v FROM hits WHERE day >= ?${W} GROUP BY c ORDER BY v DESC LIMIT 10`, wk),
-          mobile: await first(`SELECT COUNT(DISTINCT CASE WHEN mobile = 1 THEN vid END) m, COUNT(DISTINCT vid) v FROM hits WHERE day >= ?${W}`, wk),
-          widgets: await all(`SELECT kind k, CASE WHEN host = '' THEN '(알 수 없음)' ELSE host END h, COUNT(*) n FROM widget_views WHERE day >= ? GROUP BY k, h ORDER BY n DESC LIMIT 20`, wk),
-          widgetClicks: await all(`SELECT substr(ref, 7) k, COUNT(DISTINCT vid) v FROM hits WHERE day >= ? AND substr(ref, 1, 6) = 'src:w_'${W} GROUP BY k ORDER BY v DESC`, wk),
-          recent: await all(`SELECT ts, path, ref, city, mobile, uid FROM hits WHERE 1=1${W} ORDER BY ts DESC LIMIT 30`) });
+        const mine = url.searchParams.get('mine') === '1', ck = 'visits:' + (mine ? '1' : '0');
+        if (url.searchParams.get('fresh') !== '1') {
+          const c = await env.DB.prepare('SELECT v FROM kvcache WHERE k = ? AND exp > ?').bind(ck, now()).first();
+          if (c) return json(req, JSON.parse(c.v));
+        }
+        const kd = m => new Date(Date.now() + 9 * 3600e3 - m * 86400e3).toISOString().slice(0, 10);
+        const d = kd(0), wk = kd(6), d14 = kd(13);
+        const [hr, wr, rr] = await env.DB.batch([
+          env.DB.prepare('SELECT day, ts, vid, uid, path, ref, country, city, mobile FROM hits WHERE day >= ?').bind(wk),
+          env.DB.prepare("SELECT kind k, CASE WHEN host = '' THEN '(알 수 없음)' ELSE host END h, COUNT(*) n FROM widget_views WHERE day >= ? GROUP BY k, h ORDER BY n DESC LIMIT 20").bind(wk),
+          env.DB.prepare('SELECT day, v, pv FROM hit_rollup')]);
+        // 해외에서 링크 없이만 온 방문(자동 점검 프로그램)만 제외 — 예전 SQL 의 vid NOT IN (...) 과 같은 판정
+        const mxr = new Map();
+        for (const h of hr.results || []) {
+          const c = h.country || ''; if (c === 'KR' || c === '') continue;
+          const r0 = h.ref || '', p0 = mxr.get(h.vid);
+          if (p0 === undefined || r0 > p0) mxr.set(h.vid, r0);
+        }
+        const bot = new Set(); for (const [v, m] of mxr) if (m === '') bot.add(v);
+        const H = (hr.results || []).filter(h => !bot.has(h.vid) && (mine || !ADMINS.includes(h.uid)));
+        const W7 = H.filter(h => h.day >= wk), TD = H.filter(h => h.day === d);
+        const uv = a2 => new Set(a2.map(x => x.vid)).size;
+        const rank = (a2, key, n) => {            // 값별 방문자 수·조회수
+          const m = new Map();
+          for (const x of a2) { const k = key(x); if (k == null) continue; const o = m.get(k) || { pv: 0, vs: new Set() }; o.pv++; o.vs.add(x.vid); m.set(k, o); }
+          return [...m].map(([k, o]) => ({ k, pv: o.pv, v: o.vs.size })).sort((p1, q1) => q1.v - p1.v || q1.pv - p1.pv).slice(0, n);
+        };
+        const firsts = a2 => {                    // 방문자마다 그날 처음 들어온 행
+          const m = new Map();
+          for (const x of a2) { const k = x.vid + '|' + x.day, o = m.get(k); if (!o || x.ts < o.ts) m.set(k, x); }
+          return [...m.values()];
+        };
+        const chans = a2 => {
+          const m = new Map();
+          for (const x of firsts(a2)) { const r = chan(x.ref || ''); m.set(r, (m.get(r) || 0) + 1); }
+          return [...m].map(([r, v]) => ({ r, v })).sort((p1, q1) => q1.v - p1.v).slice(0, 20);
+        };
+        const byDayM = new Map();
+        for (const h of H) { const o = byDayM.get(h.day) || { vs: new Set(), pv: 0 }; o.vs.add(h.vid); o.pv++; byDayM.set(h.day, o); }
+        // 누적: 저장해 둔 일별 요약 + 이번에 다시 센 최근 14일
+        const RU = new Map((rr.results || []).map(x => [x.day, { v: x.v, pv: x.pv }]));
+        for (const [dy, o] of byDayM) RU.set(dy, { v: o.vs.size, pv: o.pv });
+        const total = { v: 0, pv: 0, since: '' };
+        for (const [dy, o] of RU) { total.v += o.v; total.pv += o.pv; if (!total.since || dy < total.since) total.since = dy; }
+        const lv = now() - 1800;
+        const out = {
+          today: { v: uv(TD), pv: TD.length },
+          live: { v: uv(H.filter(h => h.ts > lv)) },
+          total,
+          byDay: [...RU].filter(([dy]) => dy >= d14).map(([dy, o]) => ({ d: dy, v: o.v, pv: o.pv })).sort((p1, q1) => p1.d < q1.d ? -1 : 1),
+          pages: rank(W7, x => x.path, 15).map(x => ({ path: x.k, pv: x.pv, v: x.v })),
+          refs: chans(W7), refsToday: chans(TD),
+          cities: rank(W7, x => (x.country || '') + ' ' + (x.city || ''), 10).map(x => ({ c: x.k, v: x.v })),
+          mobile: { m: new Set(W7.filter(x => x.mobile === 1).map(x => x.vid)).size, v: uv(W7) },
+          widgets: wr.results || [],
+          widgetClicks: rank(W7.filter(x => (x.ref || '').slice(0, 6) === 'src:w_'), x => x.ref.slice(6), 50).map(x => ({ k: x.k, v: x.v })),
+          recent: H.slice().sort((p1, q1) => q1.ts - p1.ts).slice(0, 30).map(h => ({ ts: h.ts, path: h.path, ref: h.ref, city: h.city, mobile: h.mobile, uid: h.uid })),
+          cached: now(), scanned: (hr.results || []).length };
+        const put = [env.DB.prepare('INSERT INTO kvcache (k, v, exp) VALUES (?, ?, ?) ON CONFLICT(k) DO UPDATE SET v = excluded.v, exp = excluded.exp').bind(ck, JSON.stringify(out), now() + 180)];
+        if (!mine) for (const [dy, o] of byDayM) put.push(env.DB.prepare('INSERT INTO hit_rollup (day, v, pv) VALUES (?, ?, ?) ON CONFLICT(day) DO UPDATE SET v = excluded.v, pv = excluded.pv').bind(dy, o.vs.size, o.pv));
+        await env.DB.batch(put);
+        return json(req, out);
       }
       // ---- 관리자 (대장 계정만) ----
       // ---- 홍보 관리 (2026-10-19 SEO·홍보 지침 Phase 3): 생성은 PC 의 promo.py, 여기서는 검토·승인·예약·게시 완료 기록만. 자동 게시 없음
@@ -539,12 +612,17 @@ export default {
         const u = await me(req, env); if (!u || !ADMINS.includes(u.id)) return err(req, '권한이 없어요.', 403);
         if (req.method === 'GET') {
           const st = clean(url.searchParams.get('st') || '', 12), ch = clean(url.searchParams.get('ch') || '', 16);
+          const pk = 'promo:' + st + ':' + ch;   // 2026-10-19: 클릭수를 hits 전체에서 세느라 D1 읽기가 커서 1분 캐시
+          const pc = await env.DB.prepare('SELECT v FROM kvcache WHERE k = ? AND exp > ?').bind(pk, now()).first();
+          if (pc) return json(req, JSON.parse(pc.v));
           const rows = (await env.DB.prepare(`SELECT * FROM promo WHERE (? = '' OR status = ?) AND (? = '' OR channel = ?) ORDER BY id DESC LIMIT 200`).bind(st, st, ch, ch).all()).results;
           const toks = rows.map(r => 'src:' + r.tok);
           const clicks = toks.length ? (await env.DB.prepare(`SELECT substr(ref, 5) t, COUNT(DISTINCT vid) v, COUNT(*) n FROM hits WHERE ref IN (${toks.map(() => '?').join(',')}) GROUP BY ref`).bind(...toks).all()).results : [];
           const byCh = (await env.DB.prepare(`SELECT p.channel ch, COUNT(DISTINCT h.vid) v FROM hits h JOIN promo p ON h.ref = 'src:' || p.tok WHERE h.day >= ? GROUP BY p.channel`).bind(new Date(Date.now() + 9 * 3600e3 - 30 * 864e5).toISOString().slice(0, 10)).all()).results;
           const cnt = (await env.DB.prepare('SELECT status, COUNT(*) n FROM promo GROUP BY status').all()).results;
-          return json(req, { rows, clicks, byCh, cnt });
+          const po = { rows, clicks, byCh, cnt };
+          await env.DB.prepare('INSERT INTO kvcache (k, v, exp) VALUES (?, ?, ?) ON CONFLICT(k) DO UPDATE SET v = excluded.v, exp = excluded.exp').bind(pk, JSON.stringify(po), now() + 60).run();
+          return json(req, po);
         }
         const id = +body.id, act = String(body.act || ''); const r = await env.DB.prepare('SELECT * FROM promo WHERE id = ?').bind(id).first();
         if (!r) return err(req, '없는 항목이에요.', 404);
@@ -553,6 +631,7 @@ export default {
         if (act === 'edit') {
           if (!['DRAFT', 'REVIEW', 'APPROVED'].includes(r.status)) return err(req, '게시·예약된 글은 고칠 수 없어요.');
           await env.DB.prepare("UPDATE promo SET body = ?, status = 'REVIEW', note = ?, updated = ? WHERE id = ?").bind(String(body.body || '').slice(0, 4000), '수정됨(사람 확인): ' + clean(body.note || '', 200), now(), id).run();
+          await env.DB.prepare("DELETE FROM kvcache WHERE k LIKE 'promo:%'").run();
           return json(req, { ok: 1 });
         }
         const nx = NEXT[act]; if (!nx || !nx[0].includes(r.status)) return err(req, `${r.status} 상태에서는 「${act}」를 할 수 없어요.`);
@@ -567,20 +646,27 @@ export default {
         await env.DB.prepare('UPDATE promo SET status = ?, scheduled = ?, published = ?, post_url = ?, note = ?, updated = ? WHERE id = ?')
           .bind(nx[1], sched || null, act === 'publish' ? new Date(Date.now() + 9 * 3600e3).toISOString().slice(0, 16) : r.published, act === 'publish' ? clean(body.post_url || '', 300) : r.post_url,
                 clean(body.note || r.note || '', 300), now(), id).run();
+        await env.DB.prepare("DELETE FROM kvcache WHERE k LIKE 'promo:%'").run();
         return json(req, { ok: 1, status: nx[1] });
       }
       if (p === '/api/admin') {
         const u = await me(req, env); if (!u || !ADMINS.includes(u.id)) return err(req, '권한이 없어요.', 403);
+        if (url.searchParams.get('fresh') !== '1') {   // 2026-10-19: 표가 커져도 읽기가 늘지 않게 3분 캐시
+          const ac = await env.DB.prepare('SELECT v FROM kvcache WHERE k = ? AND exp > ?').bind('admin:stats', now()).first();
+          if (ac) return json(req, JSON.parse(ac.v));
+        }
         const one = async q => (await env.DB.prepare(q).first('n')) || 0, day = now() - DAY, week = now() - 7 * DAY;
         const recent = (await env.DB.prepare("SELECT id, nick, created, CASE WHEN pw LIKE 'oauth$%' THEN substr(pw, 7) ELSE 'email' END via FROM users ORDER BY created DESC LIMIT 15").all()).results;
         const reported = (await env.DB.prepare("SELECT 'post' k, id, title t, reports, hidden FROM posts WHERE reports > 0 UNION ALL SELECT 'team', id, name, reports, hidden FROM teams WHERE reports > 0 ORDER BY reports DESC LIMIT 20").all()).results;
         const byDay = (await env.DB.prepare("SELECT date(created, 'unixepoch', '+9 hours') d, COUNT(*) n FROM users WHERE created > ? GROUP BY d ORDER BY d").bind(now() - 14 * DAY).all()).results;
-        return json(req, {
+        const ao = {
           users: await one('SELECT COUNT(*) n FROM users'), users_day: await one(`SELECT COUNT(*) n FROM users WHERE created > ${day}`), users_week: await one(`SELECT COUNT(*) n FROM users WHERE created > ${week}`),
           social: await one("SELECT COUNT(*) n FROM oauth_links"), teams: await one('SELECT COUNT(*) n FROM teams WHERE hidden = 0'), open_teams: await one("SELECT COUNT(*) n FROM teams WHERE hidden = 0 AND status = 'open'"),
           posts: await one('SELECT COUNT(*) n FROM posts WHERE hidden = 0'), favs: await one('SELECT COUNT(*) n FROM user_items WHERE fav = 1'), applied: await one("SELECT COUNT(*) n FROM user_items WHERE state != ''"),
           won: await one("SELECT COUNT(*) n FROM user_items WHERE state = 'won'"), alerts: await one("SELECT COUNT(*) n FROM user_prefs WHERE data LIKE '%\"alert\":\"1\"%'"),  push: await one('SELECT COUNT(*) n FROM push_subs'),
-          invites: await one('SELECT COUNT(*) n FROM invited'), visits: await one('SELECT COUNT(*) n FROM ref_visits'), recent, reported, byDay });
+          invites: await one('SELECT COUNT(*) n FROM invited'), visits: await one('SELECT COUNT(*) n FROM ref_visits'), recent, reported, byDay, cached: now() };
+        await env.DB.prepare('INSERT INTO kvcache (k, v, exp) VALUES (?, ?, ?) ON CONFLICT(k) DO UPDATE SET v = excluded.v, exp = excluded.exp').bind('admin:stats', JSON.stringify(ao), now() + 180).run();
+        return json(req, ao);
       }
       // ---- 팀 모집 ----
       if (p === '/api/teams' && req.method === 'GET') {
