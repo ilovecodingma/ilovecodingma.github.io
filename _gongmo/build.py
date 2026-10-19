@@ -408,7 +408,7 @@ CL_CSS = ('<style>.ft-c{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}.cl-b{
 
 
 def comm_btns(cls='cl-b'):
-    return ''.join(f'<a class="{cls}" href="{E(x["url"])}" target="_blank" rel="noopener">{E(x.get("label") or (x.get("icon", "") + " " + x["name"]))}</a>' for x in COMM_LINKS)
+    return ''.join(f'<a class="{cls}" href="{E(x["url"])}" target="_blank" rel="noopener"' + (f' style="background:{E(x["bg"])};color:{E(x.get("fg", "#fff"))}"' if x.get('bg') else '') + f'>{E(x.get("label") or (x.get("icon", "") + " " + x["name"]))}</a>' for x in COMM_LINKS)   # bg·fg: 채널 색(없으면 카톡 노랑)
 
 
 def comm_banner():
