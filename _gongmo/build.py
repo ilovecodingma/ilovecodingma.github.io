@@ -2590,7 +2590,7 @@ def cp_box(text, title='🛒 함께 보면 좋은 물건', n=2, fill='', body=''
         for r in CP.get('rules', []):
             if len(items) >= n:
                 break
-            hit = any(k in t for k in r['kw']) or (t is text and any(len(k) >= 3 and k in body for k in r['kw']))   # body(만드는 법)는 3글자 이상 도구 이름만 — 「국」「찜」 오매칭 방지
+            hit = any((re.search(re.escape(k) + r'(?:\s|$)', t) if len(k) == 1 else k in t) for k in r['kw']) or (t is text and any(len(k) >= 3 and k in body for k in r['kw']))   # 한 글자(국·탕·찜)는 낱말 끝에서만(국수·그라탕 제외), body(만드는 법)는 3글자 이상 도구 이름만
             if t and hit and not (t is text and fill and any(k in fill for k in r['kw'])):
                 items += [x for x in r['items'] if x not in items]
     items = (items or CP.get('default', []))[:n]
