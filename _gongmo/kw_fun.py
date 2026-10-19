@@ -282,7 +282,7 @@ def autocomplete(keys, ac_f, today, delay=0.35):
 def enhance(x, db, ac, tsmap, MK, cur, IPmod):
     """키워드 상세의 읽을거리 블록. 반환 (html, 섹션 수). 기사에서 확인되는 것만, 없으면 「아직 알려진 게 없어요」."""
     r, k = x['r'], x['k']
-    arts = [(n['t'], n['u'], n['o']) for n in r.get('news', [])] + [(a['t'], a['u'], a['o']) for a in r.get('ours', [])]
+    arts = [(n['t'], n['u'], n['o']) for n in r.get('news', [])] + ([(a['t'], a['u'], a['o']) for a in r.get('ours', [])] if len(k.replace(' ', '')) >= 3 else [])   # 두 글자 이하 흔한 말(삼성·경제)은 제목에 들어간 다른 주제 기사가 섞이므로 구글이 붙인 기사만
     seen, A = set(), []
     for t, u, o in arts:
         if u not in seen:
