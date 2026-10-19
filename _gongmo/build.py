@@ -312,6 +312,42 @@ def gone_pages():
     json.dump(old, open(G, 'w', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))
 
 
+COLL = {}   # 합쳐서 없앤 얇은 페이지 → 데이터 화면 주소 (collapse_thin 이 채움)
+COLL_RULES = [(re.compile(r'^/a/([^/]+)/$'), lambda m: f'/apply/?id={m.group(1)}'), (re.compile(r'^/kw/([^/]+)/$'), lambda m: f'/kw/?k={m.group(1)}'),
+              (re.compile(r'^/lab/[^/]+/$'), lambda m: '/lab/'), (re.compile(r'^/analyst/s/[^/]+/$'), lambda m: '/analyst/'),
+              (re.compile(r'^/apply/r/([^/]+)/[^/]+/$'), lambda m: f'/apply/r/{m.group(1)}/'), (re.compile(r'^/apply/r/[^/]+/$'), lambda m: '/apply/r/')]
+
+
+def collapse_thin(urls):
+    """2026-10-19 사용자 「페이지가 너무 많으니 줄이고 데이터 기반 reload 형식으로」: 검색 제외(noindex)된 얇은 자동 페이지는 파일을 만들지 않고
+    데이터 화면 하나(/apply/?id=·/kw/?k=)나 상위 허브로 합친다. 예전 주소는 404.html 이 같은 규칙으로 바로 넘겨 주고, 사이트 안 링크는 새 주소로 바꾼다.
+    색인 대상 페이지·마감 공모전 안내(/c/)는 건드리지 않는다."""
+    COLL.clear()
+    for u in sorted(NOINDEX, key=len, reverse=True):
+        for rx, to in COLL_RULES:
+            m = rx.match(u)
+            if m:
+                COLL[u] = to(m)
+                break
+    for u in COLL:
+        shutil.rmtree(os.path.join(ROOT, u.strip('/')), ignore_errors=True)
+    LINK = re.compile(r'href="(/(?:a|kw|lab|analyst/s|apply/r)/[^"#?]*)"')
+    n = 0
+    for dp, dn, fn in os.walk(ROOT):
+        if any(x in dp for x in (os.sep + 'assets', os.sep + '.git', os.sep + '_gongmo', os.sep + 'og')):
+            continue
+        for f in fn:
+            if f.endswith('.html'):
+                fp = os.path.join(dp, f)
+                t = open(fp, encoding='utf-8').read()
+                t2 = LINK.sub(lambda m: f'href="{COLL.get(m.group(1), m.group(1))}"', t)
+                if t2 != t:
+                    open(fp, 'w', encoding='utf-8', newline='\n').write(t2); n += 1
+    urls[:] = [u for u in urls if u not in COLL]
+    json.dump(COLL, open(os.path.join(HERE, 'collapsed.json'), 'w', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))
+    return len(COLL), n
+
+
 def auto_thin(urls):
     """빌드가 끝난 뒤 상세 페이지의 고유 본문을 세어 200자 미만이면 검색 제외로 돌린다(adsense_audit 와 같은 셈법)."""
     import adsense_audit as A
@@ -756,7 +792,7 @@ def review_pages():
 def build_apply(aps):
     # 메인 루리 상담(청약·지원금)용 데이터 (2026-10-17)
     with open(os.path.join(ROOT, 'apply.json'), 'w', encoding='utf-8', newline='\n') as f:
-        json.dump([{k: a[k] for k in ('id', 'title', 'org', 'kind', 'icon', 'kk', 'start', 'end', 'always', 'region', 'target', 'benefit', 'how', 'income', 'age_min', 'age_max') if a.get(k) not in (None, '', False)} for a in aps], f, ensure_ascii=False, separators=(',', ':'))
+        json.dump([{k: a[k] for k in ('id', 'title', 'org', 'kind', 'icon', 'kk', 'start', 'end', 'always', 'region', 'target', 'benefit', 'how', 'income', 'age_min', 'age_max', 'url') if a.get(k) not in (None, '', False)} for a in aps], f, ensure_ascii=False, separators=(',', ':'))
     for a in aps:
         n, dd = dday(a['end'])
         period = (ddot(a['start']) + ' ~ ' if a['start'] else '~ ') + ddot(a['end'])
@@ -777,7 +813,7 @@ def build_apply(aps):
     lst = ''.join(ap_card(a) for a in aps) or '<li class="empty"><img src="/assets/ruri/o_desk_s.webp" width="64" height="88" alt=""><p>지금 정리 중이에요. 곧 청약·신청 일정을 올릴게요!</p></li>'
     page('/apply/', f'청약·신청 일정 모음', '아파트 청약, 공공임대, 공모주, 지원금 신청 일정을 마감 순서로 정리했어요.',
          f'''<p class="bc"><a href="/">홈</a> › 청약·신청</p><section class="dh" data-c="apply"><span class="ic big">📝</span><h1>청약·신청</h1><p class="lead">진행 중 <b>{len(aps)}건</b> · 마감 임박순</p></section>
-{say('o_desk', '신청만 하면 되는 기회들이에요. 기간이 짧으니 미리 챙겨요!')}{APPLY_INTRO}<h2>진행 중 청약·신청</h2><ul class="list">{lst}</ul>''',
+{say('o_desk', '신청만 하면 되는 기회들이에요. 기간이 짧으니 미리 챙겨요!')}{APPLY_INTRO}<h2>진행 중 청약·신청</h2><ul class="list">{lst}</ul><script defer src="/assets/view/one.js?v=1"></script>''',
          [('루리의 줍줍', '/'), ('청약·신청', '/apply/')])
 
 
@@ -1122,6 +1158,7 @@ def build():
     import finder   # 공모전 자동 자료 찾기 색인·질의 (2026-10-19)
     print('자료 색인', finder.build_index(urls, NOINDEX, {c['id'] for c in live}), '질의', len(finder.build_queries(live, notice_points)))
     print('auto_thin noindex', auto_thin(urls))
+    print('얇은 페이지 합침', collapse_thin(urls))
     global NEW_URLS
     sm = os.path.join(ROOT, 'sitemap.xml')
     old = set(re.findall(r'<loc>([^<]+)</loc>', open(sm, encoding='utf-8').read())) if os.path.exists(sm) else set()
@@ -1857,7 +1894,7 @@ def kw_pages():
         bd = f'<ol class="mg-l">{li}</ol>' + arch + note + css
         if i == 0:
             page('/kw/', '오늘의 인기 키워드 — 검색 급상승 이유 정리', f'{kdate(d)} 구글 검색 급상승 키워드와 왜 떴는지: ' + ', '.join(x['k'] for x in L[:6]),
-                 f'<p class="bc"><a href="/">홈</a> › 인기 키워드</p><h1>🔎 오늘의 인기 키워드</h1>' + say('o_det_wave', '지금 검색이 확 늘어난 키워드를 모아, 왜 떴는지 관련 보도와 함께 정리했어요.') + bd,
+                 f'<p class="bc"><a href="/">홈</a> › 인기 키워드</p><h1>🔎 오늘의 인기 키워드</h1><script defer src="/assets/view/one.js?v=1"></script>' + say('o_det_wave', '지금 검색이 확 늘어난 키워드를 모아, 왜 떴는지 관련 보도와 함께 정리했어요.') + bd,
                  [('루리의 줍줍', '/'), ('인기 키워드', '/kw/')])
         page(f'/kw/{d}/', f'{kdate(d)} 인기 키워드 — 검색 급상승 정리', f'{kdate(d)} 구글 검색 급상승 키워드: ' + ', '.join(x['k'] for x in L[:8]),
              f'<p class="bc"><a href="/">홈</a> › <a href="/kw/">인기 키워드</a> › {kdate(d)}</p><h1>🔎 {kdate(d)} 인기 키워드</h1>' + bd, [('루리의 줍줍', '/'), ('인기 키워드', '/kw/'), (kdate(d), f'/kw/{d}/')], noindex=True)
@@ -2015,6 +2052,8 @@ def rss_feed(live, aps):
     KST_ = datetime.timezone(datetime.timedelta(hours=9))
     it = []
     def add(u, t, d, desc):
+        if u in COLL:   # 합쳐진 얇은 페이지는 RSS 에 넣지 않음
+            return
         if d[:10] > TODAY.isoformat():   # 시작일이 미래인 공고는 아직 새 글이 아님
             return
         try:
@@ -2550,6 +2589,11 @@ def daily_jobs():
                 st[sl] = d
             except Exception as e:
                 print('홍보 후보 실패', sl, repr(e)[:120])
+    try:
+        import compete   # 경쟁 지표 원자료 하루 1번 쌓기(화면은 7일치 이상부터)
+        compete.main()
+    except Exception as e:
+        print('경쟁 지표 수집 실패', repr(e)[:120])
     try:
         import gsc
         gsc.main()

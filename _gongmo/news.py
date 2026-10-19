@@ -406,6 +406,11 @@ def main():
     with cf.ThreadPoolExecutor(8) as ex:
         for a, body in zip(todo, ex.map(lambda a: body_of(a['u']), todo)):
             cache[a['u']] = {'sig': signals(a, body), 'ts': a['ts'], 'at': datetime.datetime.now(KST).strftime('%Y-%m-%d %H:%M')}
+            try:   # 경쟁 지표 A: 공모전 기사의 「총 N편 접수」 문장만 쌓기(본문은 저장 안 함)
+                import compete
+                compete.appl_sentences(a['t'], body, a['u'], a['ts'])
+            except Exception:
+                pass
     cache = {k: v for k, v in cache.items() if now - v.get('ts', now) < 72 * 3600}
     json.dump(cache, open(CACHE, 'w', encoding='utf-8'), ensure_ascii=False)
     # 같은 사건 묶기(제목 명사 겹침 + 묶음끼리 합치기, group() 설명 참고)
