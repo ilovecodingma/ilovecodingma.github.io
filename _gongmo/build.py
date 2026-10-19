@@ -610,6 +610,7 @@ def detail(c, live):
     if len(_nm) + 3 + len(_tail[0]) > 58:
         _nm = _nm[:58 - 4 - len(_tail[0])].rstrip() + '…'
     seo_t = f"{_nm} | {' · '.join(_tail)}"   # 2026-10-19 자연 유입: 이름 맨 앞 + 연도·마감·상금·제출물
+    body += cp_box('공모전 대학생 공부', '🛒 공모전 준비할 때 많이 찾는 물건')
     page(f'/c/{c["id"]}/', seo_t, desc[:155], body,
          [('루리의 줍줍', '/'), (main_tag, f'/cat/{SLUG[main_tag]}/'), (c['title'], f'/c/{c["id"]}/')], ld, noindex=n < 0 or c not in live, og=og_card(c) if c in live else None)
     GONE[f'/c/{c["id"]}/'] = [c['title'], f'/cat/{SLUG[main_tag]}/', f'{main_tag} 공모전', c['end']]
@@ -1033,6 +1034,7 @@ def cross_pages(aps):
                     '<p class="note">대상·지원 내용·신청 방법은 공고에서 확인된 값만 적었어요. 비어 있는 칸은 공고 원문(각 공고 페이지의 공식 공고 링크)에서 확인하세요. 서류와 지급일은 공고마다 달라요.</p>'
                     f'<h2>진행 중 공고 (마감순)</h2><ul class="list">{"".join(ap_card(a) for a in M)}</ul>'
                     + (f'<p class="hm-links">다른 지역 {tn}: {others}</p>' if others else '')
+                    + (cp_box('월세 자취', '🛒 자취 시작할 때 필요한 물건', 1) if tk == 'youth-rent' else '')
                     + rel_block(r'청년|월세|신혼|결혼|주거', [(f'/apply/r/{sl}/', f'{fn} 지원금·청약 전체'), (f'/apply/r/{sl}/house/', f'{fn} 청약 일정'), ('/apply/recommend/', '청약 가점 계산기'), ('/apply/', '전국 지원금·청약 일정')])
                     + css)
             page(path, title, f'{title}: 진행 중 {len(M)}건의 대상·지원 내용·신청 방법·마감일을 공고 기준으로 정리.', body,
@@ -1048,6 +1050,7 @@ def cross_pages(aps):
                 f'<p class="cat-st">📌 제목에 청년과 월세·주거비·임차 등이 들어간 진행 중 공고는 모두 {len(allm)}건이에요.</p><p>{guide}</p>'
                 + (f'<h2>지역별로 보기</h2><ul class="reg-l">{idx}</ul>' if idx else '')
                 + f'<h2>진행 중 공고 (마감순)</h2><ul class="list">{"".join(ap_card(a) for a in allm)}</ul>'
+                + cp_box('월세 자취', '🛒 자취 시작할 때 필요한 물건', 1)
                 + rel_block(r'청년|월세|주거', [('/apply/r/', '지역별 지원금·청약'), ('/apply/', '전국 지원금·청약 일정')]))
         page(f'/apply/{tk}/', title, f'청년 월세 지원금 {YR}: 진행 중 {len(allm)}건, 지역별 조건·신청 방법·마감일.', body,
              [('루리의 줍줍', '/'), ('지원금·청약', '/apply/'), (tn, f'/apply/{tk}/')], noindex=len(allm) < 3)
@@ -2561,6 +2564,31 @@ TOOL_HELP_NEW = {
  'unemployment': '<h2>어떻게 계산하나요?</h2><p>하루 받는 돈(구직급여일액)은 퇴사 전 3개월 1일 평균임금의 60%예요. 이 값이 상한액(2026년 1월 1일 이후 이직자 68,100원)보다 크면 상한액을, 하한액(최저임금 10,320원 × 80% × 하루 소정근로시간)보다 작으면 하한액을 줘요. 받는 날 수(소정급여일수)는 고용보험 가입기간과 나이로 정해져요.</p><table class="info"><tr><th>가입기간</th><th>50세 미만</th><th>50세 이상·장애인</th></tr><tr><td>1년 미만</td><td>120일</td><td>120일</td></tr><tr><td>1~3년</td><td>150일</td><td>180일</td></tr><tr><td>3~5년</td><td>180일</td><td>210일</td></tr><tr><td>5~10년</td><td>210일</td><td>240일</td></tr><tr><td>10년 이상</td><td>240일</td><td>270일</td></tr></table><h2>받을 수 있는 조건</h2><ul class="chk"><li>이직 전 18개월 동안 고용보험 가입일(피보험 단위기간)이 180일 이상</li><li>권고사직·계약 만료·폐업처럼 본인 뜻이 아닌 퇴사 (자발적 퇴사라도 임금 체불·통근 곤란 등 정당한 사유가 있으면 가능)</li><li>일할 의사와 능력이 있고 재취업 활동을 할 것</li></ul><p>신청은 퇴사 후 고용24에서 구직 등록 → 수급자격 신청 순서로 해요. 퇴사 다음 날부터 12개월이 지나면 남은 날은 못 받으니 빨리 신청하세요.</p>'}
 
 
+# 쿠팡 파트너스 (2026-10-19 사용자 지시 「우리 사이트도 연결해버려」): 링크·주제 규칙은 tools/promo_share/coupang.json
+_CPJ = os.path.expanduser('~/tools/promo_share/coupang.json')
+CP = json.load(open(_CPJ, encoding='utf-8')) if os.path.exists(_CPJ) else {}
+
+
+def cp_box(text, title='🛒 함께 보면 좋은 물건', n=2):
+    """본문 하단 박스. 링크 rel=sponsored nofollow, 공정위 문구는 링크 바로 아래. 팝업·자동 이동 없음."""
+    if not CP.get('on'):
+        return ''
+    items = []
+    for r in CP.get('rules', []):
+        if any(k in text for k in r['kw']):
+            items += [x for x in r['items'] if x not in items]
+        if len(items) >= n:
+            break
+    items = (items or CP.get('default', []))[:n]
+    if not items:
+        return ''
+    li = ''.join(f'<li><a href="{E(x["url"])}" target="_blank" rel="sponsored nofollow noopener">{E(x["name"])} →</a></li>' for x in items)
+    return (f'<aside class="cp-box"><h2>{title}</h2><ul>{li}</ul><p class="cp-n">이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</p></aside>'
+            '<style>.cp-box{margin:20px 0;padding:14px 16px;border:1px solid #fed7aa;border-radius:12px;background:#fffbf5}.cp-box h2{margin:0 0 8px;font-size:17px}'
+            '.cp-box ul{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:8px}.cp-box a{display:inline-flex;min-height:40px;align-items:center;padding:6px 14px;border-radius:999px;background:#fff;border:1px solid #fdba74;color:#9a3412;font-weight:700;text-decoration:none;font-size:14px}'
+            '.cp-box .cp-n{margin:10px 0 0;font-size:13px;color:#57534e}</style>')
+
+
 def rel_block(pat, links):
     # 같이 보면 좋은: 직접 쓴 가이드(QA) 중 pat 이 제목에 든 것 + 고정 링크
     g = [(f'/guide/{q["slug"]}/', q['title']) for q in QA if re.search(pat, q['title'])][:4] if pat else []
@@ -2834,6 +2862,7 @@ def fridge_page():
                 + f'<a class="lab-cta" href="/fridge/"><b>🍳 내 냉장고 재료로 다른 메뉴 찾기</b><span>재료를 고르면 지금 만들 수 있는 메뉴를 골라 드려요 · 레시피 {NR}개 →</span></a>'
                 + (f'<h2>🔗 재료가 비슷한 메뉴</h2><ul class="fr-rel">' + ''.join(f'<li><a href="/fridge/r/{fr_slug(x["n"])}/">{x["e"]} {E(x["n"])} <small>{x["m"]}분</small></a></li>' for x in rel) + '</ul>' if rel else '')
                 + (f'<details class="fr-cr"><summary>사진 출처</summary><p>{"<br>".join(cr)}</p></details>' if cr else '')
+                + cp_box('요리 레시피', '🛒 이 요리에 필요한 도구')
                 + '<p class="note">루리의 줍줍이 직접 정리한 1~2인분 기준 레시피예요. 사진은 자유 이용 사진이거나 출처를 밝힌 참고 사진이고, 맞는 사진이 없는 메뉴는 비워 뒀어요. 알레르기가 있으면 재료를 꼭 확인하세요.</p></article>'
                 + '<link rel="stylesheet" href="/assets/fridge/fridge.css?v=12">')
         def how_step(k, t):
