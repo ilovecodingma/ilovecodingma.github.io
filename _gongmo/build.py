@@ -2580,7 +2580,7 @@ _CPJ = os.path.expanduser('~/tools/promo_share/coupang.json')
 CP = json.load(open(_CPJ, encoding='utf-8')) if os.path.exists(_CPJ) else {}
 
 
-def cp_box(text, title='🛒 함께 보면 좋은 물건', n=2, fill=''):
+def cp_box(text, title='🛒 함께 보면 좋은 물건', n=2, fill='', body=''):
     """광고 박스 한 곳. 링크 rel=sponsored nofollow, 공정위 문구는 링크 바로 아래. 팝업·자동 이동 없음.
     text 에 맞는 규칙(coupang.json rules 순서)을 먼저, 모자라면 fill 에 맞는 규칙으로 채움(레시피: 메뉴별 도구 → 일반 요리 도구)."""
     if not CP.get('on'):
@@ -2590,7 +2590,8 @@ def cp_box(text, title='🛒 함께 보면 좋은 물건', n=2, fill=''):
         for r in CP.get('rules', []):
             if len(items) >= n:
                 break
-            if t and any(k in t for k in r['kw']) and not (t is text and fill and any(k in fill for k in r['kw'])):
+            hit = any(k in t for k in r['kw']) or (t is text and any(len(k) >= 3 and k in body for k in r['kw']))   # body(만드는 법)는 3글자 이상 도구 이름만 — 「국」「찜」 오매칭 방지
+            if t and hit and not (t is text and fill and any(k in fill for k in r['kw'])):
                 items += [x for x in r['items'] if x not in items]
     items = (items or CP.get('default', []))[:n]
     if not items:
@@ -2868,7 +2869,7 @@ def fridge_page():
                 + (f'<img class="fr-rmain" src="{E(mp["f"])}" width="720" height="540" alt="{E(r["n"])} 완성 사진" fetchpriority="high">' if mp else '')
                 + f'<p>{E(tip)}</p><h2>🧺 재료</h2><div class="fr-ri"><div><h3>꼭 있어야 해요</h3><ul>{ingl(r["need"])}</ul></div>'
                 + (f'<div><h3>있으면 더 좋아요</h3><ul>{ingl(r["opt"])}</ul></div>' if r['opt'] else '') + '</div>'
-                + cp_box(r['n'] + ' ' + ' '.join(r['s']), '🛒 이 요리에 필요한 도구', fill='요리 레시피')
+                + cp_box(r['n'], '🛒 이 요리에 필요한 도구', fill='요리 레시피', body=' '.join(r['s']))
                 + (f'<h2>👩‍🍳 {E(r["n"])} 맛있게 끓이는 방법</h2>' if re.search(r'국|찌개|탕|전골|국밥', r['n']) else f'<h2>👩‍🍳 {E(r["n"])} 맛있게 만드는 방법</h2>') + f'<ol class="fr-rs">{steps}</ol>'
                 + (f'<p class="note">영문: {E(FR_EN[r["n"]])} recipe</p>' if FR_EN.get(r['n']) else '')
                 + share_bar(f'{r["n"]} 만드는 법', f'{r["n"]} 만드는 법 — 재료 {len(r["need"])}가지로 {r["m"]}분')
