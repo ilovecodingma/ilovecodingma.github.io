@@ -2831,6 +2831,9 @@ def fridge_page():
               'recipeIngredient': r['need'] + r['opt'], 'recipeInstructions': [how_step(k, t) for k, t in enumerate(r['s'], 1)]}
         if mp:
             ld['image'] = [SITE + mp['f']]
+        else:   # 2026-10-19 서치 콘솔 레시피 경고: image 필수 → 메뉴 이름·재료 사진 카드 (fr_card.py)
+            import fr_card
+            ld['image'] = [SITE + fr_card.card(r, PI)]
         rt = RATE.get(u)
         if rt:
             ld['aggregateRating'] = {'@type': 'AggregateRating', 'ratingValue': rt['avg'], 'ratingCount': rt['n'], 'bestRating': 5, 'worstRating': 1}
