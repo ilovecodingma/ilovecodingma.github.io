@@ -1216,7 +1216,8 @@ def build():
     print('얇은 페이지 합침', collapse_thin(urls))
     global NEW_URLS
     sm = os.path.join(ROOT, 'sitemap.xml')
-    old = set(re.findall(r'<loc>([^<]+)</loc>', open(sm, encoding='utf-8').read())) if os.path.exists(sm) else set()
+    SENT = os.path.join(HERE, 'indexnow_sent.json')   # 2026-10-19: 로컬 빌드가 먼저 돌아도 새 주소를 놓치지 않게, 실제로 보낸 주소를 기록해서 비교
+    old = set(json.load(open(SENT, encoding='utf-8'))) if os.path.exists(SENT) else (set(re.findall(r'<loc>([^<]+)</loc>', open(sm, encoding='utf-8').read())) if os.path.exists(sm) else set())
     NEW_URLS = [SITE + u for u in urls if SITE + u not in old and u not in NOINDEX]
     with open(sm, 'w', encoding='utf-8', newline='\n') as f:
         f.write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n')
@@ -2669,13 +2670,19 @@ INDEXNOW_KEY = '5d0b54e7778c4d46a6de43d65f168163'
 def indexnow(urls):
     """새로 생긴 주소만 Bing·네이버·Yandex 에 알림 (키 파일은 사이트 루트)"""
     import urllib.request
+    ok_ = False
     body = json.dumps({'host': 'sungprofile.cloud', 'key': INDEXNOW_KEY, 'keyLocation': f'{SITE}/{INDEXNOW_KEY}.txt', 'urlList': urls}).encode()
     for ep in ('https://api.indexnow.org/indexnow', 'https://searchadvisor.naver.com/indexnow'):
         try:
             r = urllib.request.urlopen(urllib.request.Request(ep, data=body, headers={'Content-Type': 'application/json; charset=utf-8'}), timeout=30)
             print('indexnow', ep, r.status, len(urls))
+            ok_ = True
         except Exception as e:
             print('indexnow', ep, 'fail', e)
+    if ok_:   # 보낸 주소 기록(사이트맵 기준 첫 실행 이후로는 이 파일로 새 주소 판정)
+        SENT = os.path.join(HERE, 'indexnow_sent.json')
+        old = set(json.load(open(SENT, encoding='utf-8'))) if os.path.exists(SENT) else set()
+        json.dump(sorted(old | set(urls)), open(SENT, 'w', encoding='utf-8'), ensure_ascii=False)
 
 
 def daily_jobs():
