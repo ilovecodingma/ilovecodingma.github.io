@@ -5,6 +5,7 @@
 결과: root/kw/db.json(키워드별 최신 기록·등장 날짜), root/kw/archive/YYYY-MM-DD.json(그날 뜬 키워드). news.py → talk → analyst 뒤 매시."""
 import os, re, json, html, datetime, email.utils
 import requests
+import kw_fun as kf
 
 HERE = os.path.dirname(os.path.abspath(__file__)); ROOT = os.path.dirname(HERE)
 DBF = os.path.join(ROOT, 'kw', 'db.json')
@@ -93,6 +94,7 @@ def main():
     arch_f = os.path.join(ARCH, today + '.json')
     arch = json.load(open(arch_f, encoding='utf-8')) if os.path.exists(arch_f) else []
     kept = 0
+    cur_sc = {}   # 이번 시각 인기도(kw/hist.json 에 매시 쌓아 키워드별 흐름 그래프에 씀, 2026-10-20)
     for it in items:
         k = it['k']
         if not k or EXCL.search(k + ' ' + ' '.join(n['t'] for n in it['news'])):
@@ -120,6 +122,7 @@ def main():
                     'stocks': [{'id': s['id'], 'name': s['name'], 'up': s['up'], 'down': s['down']} for s in stocks],
                     'coins': [{'sym': c['sym'], 'name': c['name']} for c in coins], 'pr': pr})
         db[sl] = rec
+        cur_sc[sl] = kf.score(it['traffic'])
         if sl not in [a['slug'] for a in arch]:
             arch.append({'slug': sl, 'k': k, 'traffic': it['traffic'], 'first': now.strftime('%H:%M'), 'src': it.get('src', ['google'])})
         else:
@@ -133,6 +136,16 @@ def main():
         if v['k'] in tr:
             v['trend'], v['trend_day'] = tr[v['k']], today
     os.makedirs(ARCH, exist_ok=True)
+    hf = os.path.join(ROOT, 'kw', 'hist.json')
+    hist = json.load(open(hf, encoding='utf-8')) if os.path.exists(hf) else {}
+    hd = hist.setdefault(today, {})
+    for sl_, sc in cur_sc.items():
+        pts = hd.setdefault(sl_, [])
+        if not pts or pts[-1][0] != now.strftime('%H:00'):
+            pts.append([now.strftime('%H:00'), sc])
+    for d_ in sorted(hist)[:-3]:
+        del hist[d_]
+    json.dump(hist, open(hf, 'w', encoding='utf-8', newline=chr(10)), ensure_ascii=False, separators=(',', ':'))
     json.dump(db, open(DBF, 'w', encoding='utf-8', newline='\n'), ensure_ascii=False, separators=(',', ':'))
     arch.sort(key=lambda a: -len(a.get('src', [])))  # 구글+네이버 동시 키워드를 위로
     json.dump(arch, open(arch_f, 'w', encoding='utf-8', newline='\n'), ensure_ascii=False, separators=(',', ':'))

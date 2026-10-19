@@ -211,3 +211,7 @@ CREATE INDEX IF NOT EXISTS page_ratings_page ON page_ratings(page);
 -- 2026-10-19 D1 읽기 한도 대응: 방문 통계를 매번 hits 전체에서 세지 않도록 일별 요약 + 결과 캐시
 CREATE TABLE IF NOT EXISTS hit_rollup (day TEXT PRIMARY KEY, v INTEGER NOT NULL DEFAULT 0, pv INTEGER NOT NULL DEFAULT 0);
 CREATE TABLE IF NOT EXISTS kvcache (k TEXT PRIMARY KEY, v TEXT NOT NULL, exp INTEGER NOT NULL);
+
+-- 2026-10-20 키워드 내일 예측 투표 (로그인 없음, 사람당 하루 1표는 해시로)
+CREATE TABLE IF NOT EXISTS kw_votes (day TEXT NOT NULL, slug TEXT NOT NULL, n INTEGER NOT NULL DEFAULT 0, PRIMARY KEY (day, slug));
+CREATE TABLE IF NOT EXISTS kw_vote_seen (day TEXT NOT NULL, h TEXT NOT NULL, PRIMARY KEY (day, h));

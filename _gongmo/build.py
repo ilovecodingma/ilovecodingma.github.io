@@ -2100,6 +2100,39 @@ def josa_ga(w):
     return '이' if '가' <= c <= '힣' and (ord(c) - 0xAC00) % 28 else '가'
 
 
+def kw_play(db, today, L):
+    """/kw/ 맨 위 놀이판 + 목록(뱃지·흐름 그래프·관련 줍줍). kw_fun.py 에 로직."""
+    import kw_fun as KF
+    hist = (_rd('kw/hist.json') or {}).get(today, {})
+    SRCB = lambda r: ('<span class="kw-b both">구글+네이버 동시</span>' if len(r.get('src') or []) > 1 else '<span class="kw-b n">실시간 검색어</span>' if (r.get('src') or ['google']) == ['naver'] else '<span class="kw-b g">구글 트렌드</span>')
+    cur, mx = KF.collect(db, today, L)
+    contests = _rd('data.json').get('items', []) if _rd('data.json') else []
+    qbox, qdata = KF.quiz(cur, today)
+    vbox, vdata = KF.vote(cur, today, os.path.join(ROOT, 'kw', 'vote_cands.json'))
+    card = KF.top5_card(cur, today, mx[11:16] or '')
+    byslug = {x['slug']: x for x in cur}
+    li = ''
+    for j, a in enumerate(L):
+        r = db.get(a['slug'])
+        if not r:
+            continue
+        x = byslug.get(a['slug'])
+        bd_ = ''.join(f'<i title="{E(t)}">{ic}{E(t) if ic in ("⏳", "🌙") else ""}</i>' for ic, t in KF.badges(x, hist)) if x else ''
+        rl = KF.rules_links(x, contests) if x else []
+        ex = ''.join(f'<a href="{E(u)}">{E(t)}</a>' for u, t in rl[:2])   # 규칙표로 맞는 것만(맞는 게 없으면 안 붙임)
+        li += (f'<li id="k-{E(a["slug"])}"><a href="/kw/{E(a["slug"])}/"><em>{j + 1}</em><b>{E(a["k"])} <span class="kwb">{bd_}</span></b>'
+               f'<span>{SRCB(a)} {E(a.get("traffic") or "-")} · {E(a.get("first", ""))} 첫 등장</span>{KF.spark(hist.get(a["slug"]) or [], KF.STY[KF.srckey(a.get("src"))][0])}</a>'
+               + (f'<p class="kwr">📎 {ex}</p>' if ex else '') + '</li>')
+    note_h = ('<p class="kwn">흐름 그래프(오늘 시간대별 인기도)는 시간마다 기록이 쌓이는 대로 나타나요. 기록은 ' + (min((v[0][0] for v in hist.values() if v), default='') or '다음 갱신') + '부터예요. '
+              '🆕 신규(3시간 안에 처음) · 🔥 검색량 1000+ 또는 실시간 3위 안 · ⏳ 오래 버티는 중 · 📉 하락(기록 필요) · 🌙 새벽에만 떴어요. 인기도 = 검색량 구간 + 실시간 순위 합산 상대값이에요.</p>')
+    shr = share_bar('오늘의 키워드 TOP5', '오늘 많이 검색된 키워드 TOP5 — ' + ', '.join(card[1][:5]) if card else '오늘의 인기 키워드')
+    dl = f'<p class="kwn"><a href="/assets/kw/top5.jpg" download>🖼️ 오늘의 TOP5 카드 이미지 저장</a></p>' if card else ''
+    top = (KF.cloud(cur) + KF.top1(cur, hist) + KF.fleeting(cur) + qbox + vbox + shr + dl
+           + '<script type="application/json" id="kw-data">' + json.dumps({'q': qdata, 'v': vdata}, ensure_ascii=False).replace('</', '<' + chr(92) + '/') + '</script>'
+           + '<link rel="stylesheet" href="/assets/kw/kw.css?v=1"><script defer src="/assets/kw/kw.js?v=1"></script>')
+    return {'top': top, 'list': note_h + f'<h2>📋 오늘 뜬 키워드 전체</h2><ol class="mg-l kwl">{li}</ol>'}, (card[0] if card else None)
+
+
 def kw_pages():
     # 인기 키워드 상세 (2026-10-18 사용자: 구글 등 인기 키워드로 블로그 + 사이트 상세 정보, 홍보 세션 연구 ⑂ 요청) — 매시 kw.py
     db = _rd('kw/db.json')
@@ -2160,10 +2193,14 @@ def kw_pages():
         L = json.load(open(os.path.join(ad, d + '.json'), encoding='utf-8'))
         li = ''.join(f'<li><a href="/kw/{x["slug"]}/"><em>{j + 1}</em><b>{E(x["k"])}</b><span>{SRCB(x)} {E(x.get("traffic") or "-")} · {E(x.get("first", ""))} 첫 등장</span></a></li>' for j, x in enumerate([y for y in L if y['slug'] in db]))
         bd = f'<ol class="mg-l">{li}</ol>' + arch + note + css
+        play, og_k = '', None
+        if i == 0:
+            play, og_k = kw_play(db, d, L)
+            bd = play['list'] + arch + note + css
         if i == 0:
             page('/kw/', '오늘의 인기 키워드 — 검색 급상승 이유 정리', f'{kdate(d)} 구글 검색 급상승 키워드와 왜 떴는지: ' + ', '.join(x['k'] for x in L[:6]),
-                 f'<p class="bc"><a href="/">홈</a> › 인기 키워드</p><h1>🔎 오늘의 인기 키워드</h1><script defer src="/assets/view/one.js?v=1"></script>' + say('o_det_wave', '지금 검색이 확 늘어난 키워드를 모아, 왜 떴는지 관련 보도와 함께 정리했어요.') + bd,
-                 [('루리의 줍줍', '/'), ('인기 키워드', '/kw/')])
+                 f'<p class="bc"><a href="/">홈</a> › 인기 키워드</p><h1>🔎 오늘의 인기 키워드</h1><script defer src="/assets/view/one.js?v=1"></script>' + say('o_det_wave', '지금 검색이 확 늘어난 키워드를 모아, 왜 떴는지 관련 보도와 함께 정리했어요.') + play['top'] + bd,
+                 [('루리의 줍줍', '/'), ('인기 키워드', '/kw/')], og=og_k)
         page(f'/kw/{d}/', f'{kdate(d)} 인기 키워드 — 검색 급상승 정리', f'{kdate(d)} 구글 검색 급상승 키워드: ' + ', '.join(x['k'] for x in L[:8]),
              f'<p class="bc"><a href="/">홈</a> › <a href="/kw/">인기 키워드</a> › {kdate(d)}</p><h1>🔎 {kdate(d)} 인기 키워드</h1>' + bd, [('루리의 줍줍', '/'), ('인기 키워드', '/kw/'), (kdate(d), f'/kw/{d}/')], noindex=True)
         urls.append(f'/kw/{d}/')

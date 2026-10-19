@@ -513,6 +513,27 @@ export default {
         return json(req, { ok: 1 });
       }
       // ---- 방문 기록 (자체 집계, 관리자 화면용) ----
+      // 키워드 내일 예측 투표 (2026-10-20): 로그인 없이, 같은 사람(IP+UA 해시)은 하루 1표. GET ?day=YYYY-MM-DD → {votes:{slug:n}}
+      if (p === '/api/kwvote') {
+        const kst = new Date(Date.now() + 9 * 3600e3).toISOString().slice(0, 10);
+        const d = clean(req.method === 'POST' ? body.day : url.searchParams.get('day'), 10);
+        if (!/^\d{4}-\d{2}-\d{2}$/.test(d)) return err(req, '날짜가 올바르지 않아요.', 400);
+        if (req.method === 'POST') {
+          const ua = req.headers.get('User-Agent') || '';
+          if (/bot|crawl|spider|slurp|headless|lighthouse|preview|python|curl|wget|go-http|axios|node-fetch|scrapy/i.test(ua)) return json(req, { ok: 1 });
+          const sl = clean(body.k, 40);
+          if (d !== kst || !sl) return err(req, '오늘 후보에만 투표할 수 있어요.', 400);
+          const h = hex(await crypto.subtle.digest('SHA-256', new TextEncoder().encode((req.headers.get('CF-Connecting-IP') || '') + '|' + ua + '|kwvote|' + d))).slice(0, 16);
+          const ins = await env.DB.prepare('INSERT OR IGNORE INTO kw_vote_seen (day, h) VALUES (?, ?)').bind(d, h).run();
+          if (!ins.meta || !ins.meta.changes) return json(req, { ok: 1, dup: 1 });
+          await env.DB.prepare('INSERT INTO kw_votes (day, slug, n) VALUES (?, ?, 1) ON CONFLICT(day, slug) DO UPDATE SET n = n + 1').bind(d, sl).run();
+          return json(req, { ok: 1 });
+        }
+        const r = await env.DB.prepare('SELECT slug, n FROM kw_votes WHERE day = ? ORDER BY n DESC LIMIT 20').bind(d).all();
+        const res = json(req, { votes: Object.fromEntries((r.results || []).map(x => [x.slug, x.n])) });
+        res.headers.set('Cache-Control', 'public, max-age=60');
+        return res;
+      }
       if (p === '/api/hit' && req.method === 'POST') {
         const ua = req.headers.get('User-Agent') || '';
         if (/bot|crawl|spider|slurp|headless|lighthouse|preview|facebookexternalhit|daum|yeti|google|inspection|python|curl|wget|go-http|axios|node-fetch|scrapy/i.test(ua)) return json(req, { ok: 1 });
