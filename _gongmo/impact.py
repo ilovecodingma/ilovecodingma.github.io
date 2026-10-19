@@ -53,7 +53,7 @@ def card(text, d0=None, srcs=None, market=None, head='💥 내 생활에 미칠 
             a = M.val_at(s, d0)
             if c7 is not None:
                 extra += f'<p class="ip-x">📈 발표 뒤 실제로: {E(s["name"])} {d0[5:].replace("-", "/")} 이후 7일 {c7:+.1f}% <small>({E(s["src"])})</small></p>'
-            elif a:
+            elif a and a[0] != s['pts'][-1][0]:
                 last = s['pts'][-1]
                 extra += (f'<p class="ip-x">📈 지금까지: {E(s["name"])} {a[0][5:].replace("-", "/")} {a[1]:,.2f} → {last[0][5:].replace("-", "/")} {last[1]:,.2f} '
                           f'({(last[1] / a[1] - 1) * 100:+.1f}%) · 7일 뒤 다시 확인해요 <small>({E(s["src"])})</small></p>')

@@ -2282,7 +2282,12 @@ def ailog_page(live, nurls):
     rules = ''.join(f'<li>{E(x)}</li>' for x in a['rules'])
     tl = ''.join(f'<li><em>{E(d)}</em><span>{E(t)}</span></li>' for d, t in a['timeline'])
     DP = sorted(dev_posts(), key=lambda p: p['date'], reverse=True)
-    dli = ''.join(f'<li><a href="{dev_url(p)}"><b>{"[EN] " if p["lang"] == "en" else ""}{E(p["title"])}</b><span>{E(p["desc"])}</span></a></li>' for p in DP)
+    SER = {}
+    for p in DP:   # 2026-10-20 시리즈 섹션 (dev_posts.json 의 series 칸)
+        if p.get('series'):
+            SER.setdefault(p['series'], []).append(p)
+    dli = ''.join(f'<li><a href="{dev_url(p)}"><b>{"[EN] " if p["lang"] == "en" else ""}{E(p["title"])}</b><span>{E(p["desc"])}</span></a></li>' for p in DP if not p.get('series'))
+    dli = ''.join(f'</ul><h3>🔗 시리즈: {E(k)}</h3><ul class="dev-ls">' + ''.join(f'<li><a href="{dev_url(p)}"><b>{E(p["title"])}</b><span>{E(p["desc"])}</span></a></li>' for p in sorted(v, key=lambda p: p['date'])) + '</ul><h3>그 밖의 글</h3><ul class="dev-ls">' for k, v in SER.items()) + dli
     body = (f'<p class="bc"><a href="/">홈</a> › 개발 지식</p><h1>🧑‍💻 개발 지식 — 직접 해 보고 정리한 AI·개발 가이드</h1>'
             + (f'<style>.dev-ls{{list-style:none;padding:0}}.dev-ls li{{margin:8px 0}}.dev-ls a{{display:block;padding:12px;border:1px solid #e5e7eb;border-radius:10px;text-decoration:none;color:inherit}}.dev-ls span{{display:block;font-size:.88em;color:#64748b;margin-top:4px}}</style><section class="mg-s"><h2>📚 가이드·실험 노트</h2><p class="note">질문이 들어온 주제를 직접 테스트하고 공식 문서 숫자로 정리해요. 영어 글은 <a href="/en/guide/">English guides</a>에 모여 있어요.</p><ul class="dev-ls">{dli}</ul></section>' if DP else '')
             + '<h2 id="log">🤖 AI 제작 로그 — 서버비 0원으로 이 사이트를 만든 방법</h2>'
@@ -2454,7 +2459,8 @@ def exp_svg(s, ns, tid):
     lo, hi = min(y for _, y in pts), max(y for _, y in pts)
     hi = hi if hi > lo else lo + 1
     d0 = datetime.date.fromisoformat(pts[0][0])
-    span = max((datetime.date.fromisoformat(pts[-1][0]) - d0).days, 1)
+    endd = max([datetime.date.fromisoformat(pts[-1][0]), datetime.date.today()] + [datetime.datetime.fromtimestamp(n['ts']).date() for n in ns])
+    span = max((endd - d0).days, 1)   # 시세가 아직 없는 최근 며칠도 칸을 둬서 발언 점이 겹치지 않게
     X = lambda d: L + (W - L - R) * (datetime.date.fromisoformat(d) - d0).days / span
     Y = lambda v: T + (H - T - B) * (1 - (v - lo) / (hi - lo))
     path = 'M' + ' L'.join(f'{X(d):.1f},{Y(v):.1f}' for d, v in pts)
@@ -2467,18 +2473,19 @@ def exp_svg(s, ns, tid):
         a = M.val_at(s, d)
         if not a:
             continue
-        x = min(X(d), W - R)
-        dots += (f'<circle cx="{x:.1f}" cy="{Y(a[1]):.1f}" r="7" fill="{col[n["dir"]]}" stroke="#fff" stroke-width="2" data-i="{tid}-{i}" tabindex="0" role="button">'
+        x = min(X(d), W - R - 7)
+        same = sum(1 for m in ns[:i] if datetime.datetime.fromtimestamp(m['ts']).strftime('%Y-%m-%d') == d)   # 같은 날 발언은 위로 비켜 찍기
+        dots += (f'<circle cx="{x:.1f}" cy="{max(Y(a[1]) - same * 15, 8):.1f}" r="7" fill="{col[n["dir"]]}" stroke="#fff" stroke-width="2"' + (' fill-opacity=".55"' if d > pts[-1][0] else '') + f' data-i="{tid}-{i}" tabindex="0" role="button">'
                  f'<title>{E(d[5:])} {E(n["who"])}: {E(n["t"])}</title></circle>')
         info += (f'<p class="xc-i" id="{tid}-{i}" hidden>{ECOL[n["dir"]][0]} <b>{E(d[5:].replace("-", "/"))} {E(n["who"])}</b> {E(n["t"])} '
                  f'<a href="{E(n["u"])}" target="_blank" rel="noopener nofollow">{E(n["o"])} 원문 →</a></p>')
     f = lambda v: f'{v:,.2f}' if v < 100 else f'{v:,.0f}'
-    return (f'<figure class="xc"><svg viewBox="0 0 {W} {H}" role="img" aria-label="{E(s["name"])} 최근 30일">'
+    return (f'<figure class="xc"><svg viewBox="0 0 {W} {H}" role="img" aria-label="{E(s["name"])} 최근 30거래일">'
             f'<path d="{path}" fill="none" stroke="var(--pri,#047857)" stroke-width="2.5" stroke-linejoin="round"/>'
             f'<text x="{L}" y="12" font-size="12" fill="currentColor" opacity=".7">최고 {f(hi)}</text><text x="{L}" y="{H - 30}" font-size="12" fill="currentColor" opacity=".7">최저 {f(lo)}</text>'
             f'<text x="{L}" y="{H - 6}" font-size="12" fill="currentColor" opacity=".7">{pts[0][0][5:].replace("-", "/")}</text>'
-            f'<text x="{W - R}" y="{H - 6}" font-size="12" fill="currentColor" opacity=".7" text-anchor="end">{pts[-1][0][5:].replace("-", "/")} {f(pts[-1][1])}{E(s["unit"]) if s["unit"] != "pt" else ""}</text>{dots}</svg>'
-            f'<figcaption>{E(s["name"])} 최근 30일 · 출처 {E(s["src"])} · 점 = 전문가 발언(🟢 낙관 🔴 신중 ⚪ 중립), 눌러서 보기</figcaption>{info}</figure>')
+            f'<text x="{W - R}" y="{H - 6}" font-size="12" fill="currentColor" opacity=".7" text-anchor="end">{pts[-1][0][5:].replace("-", "/")} {f(pts[-1][1])}{E(s["unit"]) if s["unit"] != "pt" else ""}</text>{dots}<line x1="{X(pts[-1][0]):.1f}" y1="{T}" x2="{X(pts[-1][0]):.1f}" y2="{H - B}" stroke="currentColor" stroke-dasharray="3 4" opacity=".35"/></svg>'
+            f'<figcaption>{E(s["name"])} 최근 30거래일 · 출처 {E(s["src"])} · 점 = 전문가 발언(🟢 낙관 🔴 신중 ⚪ 중립), 눌러서 보기 · 점선 오른쪽은 아직 시세가 안 나온 날(흐린 점)</figcaption>{info}</figure>')
 
 
 EXP_JS = ('<script>document.addEventListener("click",function(e){var c=e.target.closest&&e.target.closest("circle[data-i]");if(!c)return;var f=c.closest("figure");'
@@ -2680,7 +2687,9 @@ def news_impact():
             k += 1
         if k >= 3:
             break
-    return ('<section class="mg-s"><h2>💥 오늘 이슈, 내 생활엔?</h2><p class="note">언론사 여러 곳이 다룬 이슈 중 생활과 닿는 것만 골랐어요.</p>' + out + '</section>') if out else ''
+    wk = (datetime.date.today() - datetime.timedelta(days=7)).isoformat()
+    rv = ''.join(f'<li><a href="/review/{x["slug"]}/">🖋️ {E(x["title"])}</a></li>' for x in load_reviews() if x['date'] >= wk)
+    return (('<section class="mg-s"><h2>💥 오늘 이슈, 내 생활엔?</h2><p class="note">언론사 여러 곳이 다룬 이슈 중 생활과 닿는 것만 골랐어요.</p>' + out + '</section>') if out else '') + (f'<section class="mg-s"><h2>🖋️ 이번 주 이슈 평론</h2><ul class="mg-l">{rv}</ul></section>' if rv else '')
 
 
 def news_static():
@@ -2937,6 +2946,7 @@ def hot_pages():
     css = '<link rel="stylesheet" href="/assets/mag/mag.css?v=10"><link rel="stylesheet" href="/assets/analyst/analyst.css?v=4"><link rel="stylesheet" href="/assets/news/news.css?v=6">'
     import impact as IPC, market as M_
     MKH = M_.load()
+    RVS = load_reviews()   # 이 핫이슈를 다룬 평론으로 연결
     urls = ['/hot/']
     livesl = {v['slug'] for v in live}
     hd = os.path.join(ROOT, 'hot')
@@ -2968,6 +2978,7 @@ def hot_pages():
                 + (f'<h3>🔢 기사에 나온 숫자</h3><ul class="hot-l">{nums}</ul>' if nums else '') + (f'<h3>📅 기사에 나온 날짜</h3><ul class="hot-l">{dates}</ul>' if dates else '') + '</section>'
                 + f'<section class="mg-s"><h2>🙋 나한테 뭐가 달라지나</h2><p>{E(lead)}</p><div class="nw-pr">{tl}</div>'
                 + IPC.card(v['title'] + ' ' + v['q'] + ' ' + ' '.join(w['t'] for w in v['what'][:3]), (v.get('first') or '')[:10] or None, [(w['o'], w['t']) for w in v['what']], MKH) + '</section>' + sig
+                + ''.join(f'<p class="hm-links"><a href="/review/{x["slug"]}/">🖋️ 이 이슈 평론: {E(x["title"])} →</a></p>' for x in RVS if any(u == f'/hot/{v["slug"]}/' for u, _ in x['rel']))
                 + (f'<section class="mg-s"><h2>📎 관련 줍줍</h2><div class="nw-pr">{pr}</div></section>' if pr else '')
                 + f'<section class="mg-s"><h2>📰 관련 기사 (확인 신호 점수)</h2><ul class="kw-l">{arts}</ul></section>'
                 + f'<section class="mg-s"><h2>❓ 자주 묻는 질문</h2><div class="hot-faq">{fq}</div></section>'
