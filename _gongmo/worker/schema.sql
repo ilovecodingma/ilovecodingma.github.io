@@ -196,3 +196,13 @@ CREATE TABLE IF NOT EXISTS page_stats (
 );
 CREATE INDEX IF NOT EXISTS page_stats_views ON page_stats(views DESC);
 CREATE INDEX IF NOT EXISTS page_stats_likes ON page_stats(likes DESC);
+
+-- 페이지 별점 (2026-10-19 서치콘솔 aggregateRating 경고 → 실제 회원 별점만 집계)
+CREATE TABLE IF NOT EXISTS page_ratings (
+  user_id INTEGER NOT NULL,
+  page TEXT NOT NULL,
+  stars INTEGER NOT NULL,
+  created INTEGER NOT NULL,
+  PRIMARY KEY (user_id, page)
+);
+CREATE INDEX IF NOT EXISTS page_ratings_page ON page_ratings(page);

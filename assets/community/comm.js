@@ -388,6 +388,7 @@ ${album}<div class="cm-acts"><button class="tm-share">링크 복사</button>${st
     const paint = () => {
       sec.innerHTML = `<div class="pc-bar">
 <button class="pc-like${d.liked ? ' on' : ''}" aria-pressed="${d.liked}">${d.liked ? '❤️' : '🤍'} 좋아요 <b>${nfmt(d.likes)}</b></button>
+<span class="pc-rate" role="group" aria-label="별점">${[1, 2, 3, 4, 5].map(k => `<button data-s="${k}" class="${(d.rate.mine || Math.round(d.rate.avg)) >= k ? 'on' : ''}" aria-label="${k}점">★</button>`).join('')}<small>${d.rate.n ? `${d.rate.avg.toFixed(1)} (${nfmt(d.rate.n)}명)${d.rate.mine ? ' · 내 별점 ' + d.rate.mine : ''}` : '첫 별점 주기'}</small></span>
 <span class="pc-n">👁 조회 ${nfmt(d.views)}</span><span class="pc-n">💬 댓글 ${nfmt(d.cms)}</span>${d.fav ? `<span class="pc-n">⭐ 찜 ${nfmt(d.fav)}</span>` : ''}
 <button class="pc-sh">📤 공유</button></div>
 <div class="pc-box"><h2>💬 댓글 <b>${nfmt(d.cms)}</b></h2>
@@ -402,6 +403,11 @@ ${st.t ? `<div class="pc-w"><textarea class="pc-tx" rows="2" maxlength="1000" pl
         try { const r = await api('/api/p/like', { method: 'POST', body: { page: path, title, on } }); d.liked = r.liked; d.likes = r.likes; ga(on ? 'page_like' : 'page_unlike', { page: path }); paint(); }
         catch (e) { alert(e.message); }
       };
+      sec.querySelectorAll('.pc-rate button').forEach(b => b.onclick = async () => {
+        if (!st.t) return authModal(() => location.reload());
+        try { const r = await api('/api/p/rate', { method: 'POST', body: { page: path, title, stars: +b.dataset.s } }); d.rate = r; ga('page_rate', { page: path, stars: +b.dataset.s }); paint(); }
+        catch (e) { alert(e.message); }
+      });
       sec.querySelector('.pc-sh').onclick = () => { if (window.JCREW) JCREW.share({ title, text: title, path: location.pathname }); else if (window.FUN) FUN.copy(location.href); };
       const inb = sec.querySelector('.pc-in'); if (inb) inb.onclick = () => authModal(() => location.reload());
       const send = sec.querySelector('.pc-send');
@@ -484,9 +490,9 @@ ${st.t ? `<div class="pc-w"><textarea class="pc-tx" rows="2" maxlength="1000" pl
     try {
       const { posts } = await api('/api/posts?contest=dev');
       const q = posts.filter(p => p.kind === 'qna'), answered = posts.filter(p => p.cm > 0).length, need = q.filter(p => !p.cm).length;
-      el.innerHTML = `<div class="dq-sum"><b>🙋 개발 Q&A</b><span>질문·팁 ${posts.length}개 · 답변 달린 글 ${answered}개${need ? ` · 답변 기다리는 질문 ${need}개` : ''}</span>
-<a class="btn2" href="/dev/qna/">질문 올리기 · 전체 보기</a></div>
-<ul class="dq-ls">${posts.slice(0, n).map(p => `<li><a href="/dev/qna/#p${p.id}"><b>${esc(p.title)}</b><span>${esc(p.nick || '탈퇴한 회원')} · ${ago(p.created)} · ${p.cm ? '답변 ' + p.cm : '답변 기다림'}</span></a></li>`).join('')}</ul>`;
+      el.innerHTML = `<div class="dq-sum"><b>❓ 개발 FAQ</b><span>남겨 주신 질문 ${posts.length}개 · 답변 달린 글 ${answered}개${need ? ` · 답변 기다리는 질문 ${need}개` : ''}</span>
+<a class="btn2" href="/dev/faq/">FAQ 보기 · 질문 남기기</a></div>
+<ul class="dq-ls">${posts.slice(0, n).map(p => `<li><a href="/dev/faq/#p${p.id}"><b>${esc(p.title)}</b><span>${esc(p.nick || '탈퇴한 회원')} · ${ago(p.created)} · ${p.cm ? '답변 ' + p.cm : '답변 기다림'}</span></a></li>`).join('')}</ul>`;
     } catch { el.remove(); }
   }
   document.querySelectorAll('[data-devqna]').forEach(devQna);

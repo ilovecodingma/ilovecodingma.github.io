@@ -216,7 +216,7 @@ export default {
       }
       if (p === '/api/withdraw' && req.method === 'POST') {  // 회원 탈퇴: 계정·세션 삭제, 글은 '탈퇴한 회원'으로 숨김
         const u = await me(req, env); if (!u) return err(req, '로그인이 필요해요.', 401);
-        await env.DB.batch([env.DB.prepare('UPDATE posts SET hidden = 1 WHERE user_id = ?').bind(u.id), env.DB.prepare('UPDATE comments SET hidden = 1 WHERE user_id = ?').bind(u.id), env.DB.prepare('UPDATE page_comments SET hidden = 1 WHERE user_id = ?').bind(u.id), env.DB.prepare('DELETE FROM page_likes WHERE user_id = ?').bind(u.id),
+        await env.DB.batch([env.DB.prepare('UPDATE posts SET hidden = 1 WHERE user_id = ?').bind(u.id), env.DB.prepare('UPDATE comments SET hidden = 1 WHERE user_id = ?').bind(u.id), env.DB.prepare('UPDATE page_comments SET hidden = 1 WHERE user_id = ?').bind(u.id), env.DB.prepare('DELETE FROM page_likes WHERE user_id = ?').bind(u.id), env.DB.prepare('DELETE FROM page_ratings WHERE user_id = ?').bind(u.id),
           env.DB.prepare('DELETE FROM sessions WHERE user_id = ?').bind(u.id), env.DB.prepare('DELETE FROM invite_codes WHERE user_id = ?').bind(u.id), env.DB.prepare('DELETE FROM user_prefs WHERE user_id = ?').bind(u.id), env.DB.prepare('DELETE FROM oauth_links WHERE user_id = ?').bind(u.id), env.DB.prepare('DELETE FROM user_items WHERE user_id = ?').bind(u.id), env.DB.prepare('DELETE FROM kakao_alert WHERE user_id = ?').bind(u.id), env.DB.prepare('DELETE FROM users WHERE id = ?').bind(u.id)]);
         return json(req, { ok: true });
       }
@@ -693,11 +693,14 @@ export default {
           env.DB.prepare('SELECT views, likes, cms FROM page_stats WHERE page = ?').bind(pg),
           env.DB.prepare('SELECT c.id, c.body, c.created, c.user_id, u.nick FROM page_comments c LEFT JOIN users u ON u.id = c.user_id WHERE c.page = ? AND c.hidden = 0 ORDER BY c.created DESC LIMIT 100').bind(pg),
           env.DB.prepare('SELECT 1 x FROM page_likes WHERE page = ? AND user_id = ?').bind(pg, u ? u.id : 0)];
+        b.push(env.DB.prepare('SELECT COUNT(*) n, SUM(stars) sum, MAX(CASE WHEN user_id = ? THEN stars END) mine FROM page_ratings WHERE page = ?').bind(u ? u.id : 0, pg));
         if (fid) b.push(env.DB.prepare('SELECT COUNT(*) n FROM user_items WHERE fav = 1 AND item_id = ?').bind('c:' + fid));
         const r = await env.DB.batch(b);
+        const rt = (r[3].results || [])[0] || { n: 0, sum: 0, mine: null };
         const s0 = (r[0].results || [])[0] || { views: 0, likes: 0, cms: 0 };
         return json(req, { views: s0.views, likes: s0.likes, cms: s0.cms, liked: !!(r[2].results || []).length,
-          fav: fid ? (((r[3].results || [])[0] || {}).n || 0) : 0,
+          fav: fid ? (((r[4].results || [])[0] || {}).n || 0) : 0,
+          rate: { n: rt.n || 0, avg: rt.n ? Math.round((rt.sum / rt.n) * 10) / 10 : 0, mine: rt.mine || 0 },
           comments: (r[1].results || []).map(c => ({ id: c.id, nick: c.nick || '탈퇴한 회원', body: c.body, created: c.created, mine: !!u && c.user_id === u.id, adm: ADMINS.includes(c.user_id) })) });
       }
       if (p === '/api/p/like' && req.method === 'POST') {
@@ -736,6 +739,22 @@ export default {
         if (!row.hidden) await env.DB.batch([env.DB.prepare('UPDATE page_comments SET hidden = 1 WHERE id = ?').bind(+gm[1]),
           env.DB.prepare('UPDATE page_stats SET cms = MAX(0, cms - 1) WHERE page = ?').bind(row.page)]);
         return json(req, { ok: true });
+      }
+      if (p === '/api/p/rate' && req.method === 'POST') {
+        const u = await me(req, env); if (!u) return err(req, '로그인하면 별점을 줄 수 있어요.', 401);
+        const pg = npage(body.page); if (!pg) return err(req, '주소를 확인해 주세요.');
+        const stars = Math.min(5, Math.max(1, +body.stars | 0));
+        if (!stars) return err(req, '별점을 1~5 중에 골라 주세요.');
+        await env.DB.prepare('INSERT INTO page_ratings (user_id, page, stars, created) VALUES (?, ?, ?, ?) ON CONFLICT(user_id, page) DO UPDATE SET stars = excluded.stars, created = excluded.created')
+          .bind(u.id, pg, stars, now()).run();
+        await env.DB.prepare("INSERT INTO page_stats (page, title, updated) VALUES (?, ?, ?) ON CONFLICT(page) DO UPDATE SET updated = excluded.updated").bind(pg, clean(body.title, 90), now()).run();
+        const rt = await env.DB.prepare('SELECT COUNT(*) n, SUM(stars) sum FROM page_ratings WHERE page = ?').bind(pg).first();
+        return json(req, { n: rt.n, avg: rt.n ? Math.round((rt.sum / rt.n) * 10) / 10 : 0, mine: stars });
+      }
+      if (p === '/api/p/rates' && req.method === 'GET') {   // 빌드가 구조화 데이터(aggregateRating)에 쓰는 실제 별점
+        const min = Math.min(20, Math.max(1, +url.searchParams.get('min') || 3));
+        const r = await env.DB.prepare('SELECT page, COUNT(*) n, SUM(stars) sum FROM page_ratings GROUP BY page HAVING COUNT(*) >= ? ORDER BY n DESC LIMIT 3000').bind(min).all();
+        return json(req, { rates: (r.results || []).map(x => ({ page: x.page, n: x.n, avg: Math.round((x.sum / x.n) * 10) / 10 })) });
       }
       if (p === '/api/p/stats' && req.method === 'POST') {   // 목록 화면에서 여러 페이지 수치를 한 번에
         const pages = (Array.isArray(body.pages) ? body.pages : []).map(npage).filter(Boolean).slice(0, 200);

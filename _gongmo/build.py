@@ -4,7 +4,7 @@
 사용: python _gongmo/build.py [--push]
 원본: 바탕화면 공모전_2026/주말큐_master.jsonl + _gongmo/txt/<id>.txt(공고 본문 캐시, 비공개)
 """
-import collections, json, os, re, sys, html, shutil, datetime, subprocess, hashlib, time
+import collections, json, os, re, sys, html, shutil, datetime, subprocess, hashlib, time, urllib.request
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import parse as P
 
@@ -71,7 +71,7 @@ THEMES = [  # (키, 이름, 아이콘, 테마색, 홈, [하위 메뉴], [이 테
     ('contest', '공모전', '🏆', '#6d28d9', '/contest/', [('/contest/', '추천 상담'), ('/cat/literature/', '분야별'), ('/prep/', '준비실'), ('/lab/', '수상 연구소'), ('/community/', '원정대'), ('/guide/', '가이드'), ('/widget/', '위젯')],
      ['/contest/', '/c/', '/cat/', '/prep/', '/lab/', '/community/', '/guide/', '/v/', '/me/', '/widget/']),
     ('life', '생활', '🍳', '#0e7490', '/apply/', [('/apply/', '지원금·청약'), ('/apply/recommend/', '청약 추천'), ('/apply/r/', '지역별'), ('/event/', '경품'), ('/fridge/', '냉장고 파먹기'), ('/qa/', '고민 해결'), ('/plaza/', '광장')], ['/apply/', '/a/', '/event/', '/fridge/', '/qa/', '/ssul/', '/plaza/']),
-    ('ai', '개발 지식', '🧑‍💻', '#0f172a', '/ailog/', [('/ailog/', '개발 지식'), ('/dev/qna/', '개발 Q&A'), ('/en/guide/', 'English guides'), ('/ailog/#log', 'AI 제작 로그')], ['/ailog/', '/dev/', '/en/'])]   # 2026-10-19 사용자: AI 로그 → 개발 지식으로 개편
+    ('ai', '개발 지식', '🧑‍💻', '#0f172a', '/ailog/', [('/ailog/', '개발 지식'), ('/dev/faq/', '개발 FAQ'), ('/en/guide/', 'English guides'), ('/ailog/#log', 'AI 제작 로그')], ['/ailog/', '/dev/', '/en/'])]   # 2026-10-19 사용자: AI 로그 → 개발 지식으로 개편
 
 
 def theme_of(path):
@@ -150,7 +150,7 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False, noinde
 </main>
 <footer class="ft"><div class="w ft-in"><div class="ft-b"><img class="av" src="/assets/ruri/avatar.webp" width="56" height="56" alt="루리" loading="lazy"><div><b>루리의 줍줍</b><p>마감 놓치지 마세요! 매일 아침 새 공모전을 정리해 둘게요.</p><p class="ft-m">문의 <a href="mailto:{MAIL}">{MAIL}</a>{"" if PARTNER == MAIL else f' · 제휴 <a href="mailto:{PARTNER}">{PARTNER}</a>'}</p></div></div>
 <p class="ft-l"><a href="/about/">소개</a><a href="/all/">전체 메뉴</a><a href="/plaza/">🗣️ 광장</a><a href="/ailog/">🤖 AI 제작 로그</a><a href="/news/">🕵️ 기사 확인 신호</a><a href="/app/">📲 앱·알림</a><a href="/prep/">준비실</a><a href="/qa/">고민 해결</a><a href="/guide/">응모 가이드</a><a href="/event/">경품 이벤트</a><a href="/privacy/">개인정보처리방침</a><a href="/terms/">이용약관</a><a href="/contact/">문의</a></p>
-<p class="ft-n">공모전 정보는 각 주최 기관의 공고를 바탕으로 정리했으며, 정확한 요강은 반드시 공식 공고에서 확인하세요. © 2026 루리의 줍줍 · sungprofile.cloud</p></div></footer>
+{('<p class="ft-c">' + comm_btns() + '</p>') if COMM_LINKS else ''}<p class="ft-n">공모전 정보는 각 주최 기관의 공고를 바탕으로 정리했으며, 정확한 요강은 반드시 공식 공고에서 확인하세요. © 2026 루리의 줍줍 · sungprofile.cloud</p></div></footer>{CL_CSS if COMM_LINKS else ''}
 </body></html>'''
     d = os.path.join(ROOT, path.strip('/'))
     os.makedirs(d, exist_ok=True)
@@ -399,6 +399,20 @@ _NP_ALL = '|'.join(r for _, r in NP_KEYS)
 
 _CFG = os.path.join(HERE, 'config.json')   # {"kakao_js_key": ""} — 카카오 JS 키가 생기면 여기에(공개되는 키라 저장소에 있어도 됨)
 KAKAO_JS = (json.load(open(_CFG, encoding='utf-8')).get('kakao_js_key') or '').strip() if os.path.exists(_CFG) else ''
+# 톡방·커뮤니티 채널 (2026-10-19): config.json community_links = [{name, label, banner, url, icon, on}] — 카톡 오픈채팅·라인·밴드·텔레그램을 켜고 끄기만 하면 됨
+COMM_LINKS = [x for x in (json.load(open(_CFG, encoding='utf-8')).get('community_links') or [] if os.path.exists(_CFG) else []) if x.get('on') and x.get('url')]
+
+
+CL_CSS = ('<style>.ft-c{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}.cl-b{display:inline-flex;align-items:center;min-height:40px;padding:6px 14px;border-radius:999px;background:#fee500;color:#191919;font-weight:700;text-decoration:none;font-size:14px}'
+          '.cl-ban{display:flex;align-items:center;gap:6px;margin:8px 0;padding:10px 14px;border-radius:12px;background:#fff9c4;border:1px solid #fde047;color:#422006;font-weight:700;text-decoration:none;font-size:14px}</style>')
+
+
+def comm_btns(cls='cl-b'):
+    return ''.join(f'<a class="{cls}" href="{E(x["url"])}" target="_blank" rel="noopener">{E(x.get("label") or (x.get("icon", "") + " " + x["name"]))}</a>' for x in COMM_LINKS)
+
+
+def comm_banner():
+    return ''.join(f'<a class="cl-ban" href="{E(x["url"])}" target="_blank" rel="noopener">{E(x.get("icon", "💬"))} {E(x.get("banner") or x["name"])}</a>' for x in COMM_LINKS[:2])
 
 
 def share_bar(t, x='', en=False):
@@ -571,7 +585,7 @@ def detail(c, live):
 <div class="panel"><table class="info">{tb}</table>
 <a class="btn" href="{E(c["link"])}" target="_blank" rel="noopener nofollow">공식 공고·접수 페이지 열기 →</a><p class="note">링크는 주최 측 공고(또는 접수) 페이지예요. 공고가 바뀌었을 수 있으니 접수 전 다시 확인하세요.</p></div>
 {chk_need}
-{share_bar(c['title'], f'「{c["title"]}」 {ddot(c["end"])[5:]} 마감' + (f' · {c["prize"]}' if c.get('pv') else '') + ' — 자격·제출물 정리')}
+{share_bar(c['title'], f'「{c["title"]}」 {ddot(c["end"])[5:]} 마감' + (f' · {c["prize"]}' if c.get('pv') else '') + ' — 자격·제출물 정리')}{comm_banner()}
 <div class="my-acts" data-id="c:{c["id"]}" data-title="{E(c["title"])}" data-end="{c["end"]}"></div>
 <h2>한눈에 보기</h2><p>{E(summary)}</p>
 {np_html}{c_insight(c, live)}
@@ -829,7 +843,7 @@ def build_apply(aps):
 <div class="my-acts" data-id="a:{E(a['id'])}" data-title="{E(a['title'])}" data-end="{'' if a.get('always') else a['end']}"></div>
 {say('o_suit', f'신청 기간을 놓치지 마세요! 자격 조건은 <b>공식 공고</b>에서 꼭 확인해 주세요.')}
 <div class="panel"><table class="info">{tb}</table>{btn}</div>
-{share_bar(a['title'], f'「{a["title"]}」 ' + ('상시 신청' if a.get('always') else f'{ddot(a["end"])[5:]} 마감') + ' — 대상·신청처 정리')}{ap_insight(a, aps)}<h2>신청 전 확인할 것</h2><ul class="chk"><li>신청 자격(나이·소득·자산·거주지·무주택 여부)</li><li>필요 서류와 본인인증 수단</li><li>발표일과 계약·납부 일정</li></ul>'''
+{share_bar(a['title'], f'「{a["title"]}」 ' + ('상시 신청' if a.get('always') else f'{ddot(a["end"])[5:]} 마감') + ' — 대상·신청처 정리')}{comm_banner()}{ap_insight(a, aps)}<h2>신청 전 확인할 것</h2><ul class="chk"><li>신청 자격(나이·소득·자산·거주지·무주택 여부)</li><li>필요 서류와 본인인증 수단</li><li>발표일과 계약·납부 일정</li></ul>'''
         _org = (a.get('org') or '').strip()[:14]
         _end = f' · {ddot(a["end"])[5:]} 마감' if a.get('end') and not a.get('always') else ''
         _og = (a.get('org') or '').strip().split()[-1][:10] if (a.get('org') or '').strip() else ''   # 제목용 기관명은 마지막 단위(과·국)만
@@ -1184,7 +1198,7 @@ def build():
 {f'<div class="hm-hot"><b>🔥 지금 뜨는 이슈</b><ol>{hot_h}</ol></div>' if hot_h else ''}
 <p class="hub-ai"><a href="/all/">☰ 전체 메뉴</a> · <a href="/ailog/">🤖 사람 1명 + AI로 만든 과정</a></p></section>
 <section class="hm-sec"><div data-pcrecent="6"></div>
-<p class="hm-more"><a href="/plaza/">🗣️ 줍줍 광장 — 내 글 올리기</a> · <a href="/ailog/#qna">🙋 개발 Q&amp;A</a></p></section>
+<p class="hm-more"><a href="/plaza/">🗣️ 줍줍 광장 — 내 글 올리기</a> · <a href="/dev/faq/">❓ 개발 FAQ</a></p></section>
 <link rel="stylesheet" href="/assets/home/consult.css?v=14">'''
     page('/', '루리의 줍줍 — 나에게 맞는 공모전 찾기·마감 전 준비',
          f'진행 중 공모전 {len(live)}건의 분야·참가 자격·마감일·제출물을 비교하고, 조건에 맞는 공모전을 찾아 준비 일정까지. 이슈·머니·생활 정보도 함께.',
@@ -2095,14 +2109,14 @@ def dev_pages(live=()):
                 + (f' · {"updated" if en else "고침"} {p["updated"]}' if p.get('updated') else '') + '</p>'
                 + body_ + (f'<h2>{"Sources" if en else "출처"}</h2><ul>{src}</ul>' if src else '')
                 + (f'<p class="dev-hub">{"Related (Korean)" if en else "관련"}: <a href="{E(hub[1])}">{E(hub[0])}</a></p>' if hub else '')
-                + ('<p class="dev-hub">Questions about how this was built? <a href="/dev/qna/">Dev Q&amp;A</a></p>' if en else '<p class="dev-hub">이 글에 대해 묻고 싶으면 <a href="/dev/qna/">🙋 개발 Q&amp;A</a>에 올려 주세요.</p>')
+                + ('<p class="dev-hub">Questions about how this was built? <a href="/dev/faq/">Dev FAQ</a></p>' if en else '<p class="dev-hub">이 글에 대해 묻고 싶으면 <a href="/dev/faq/">❓ 개발 FAQ</a>에 남겨 주세요.</p>')
                 + share_bar(p['title'], p['desc'], en) + f'</article>{css}')
         t = p['title'] + ' | Ruri Jupjup' if en and len(p['title']) + 14 <= 70 else p['title']
         ld = {'@context': 'https://schema.org', '@type': 'TechArticle', 'headline': p['title'][:110], 'description': p['desc'], 'inLanguage': p['lang'], 'datePublished': p['date'],
               'dateModified': p.get('updated') or p['date'], 'author': {'@type': 'Organization', 'name': NAME}, 'mainEntityOfPage': SITE + u}
         page(u, t, p['desc'], body, [('Home' if en else NAME, '/'), ('Guides' if en else '개발 지식', '/en/guide/' if en else '/ailog/'), (p['title'], u)], ld=ld, full_title=en, lang=p['lang'])
         urls.append(u)
-    urls += dev_qna_page(P)
+    urls += dev_faq_page(P)
     EP = [p for p in P if p['lang'] == 'en']
     if EP:
         li = ''.join(f'<li><a href="{dev_url(p)}"><b>{E(p["title"])}</b><span>{E(p["desc"])}</span></a></li>' for p in sorted(EP, key=lambda p: p['date'], reverse=True))
@@ -2146,8 +2160,8 @@ def ailog_page(live, nurls):
             + f'<section class="mg-s"><h2>🛠️ AI가 틀린 것과 고친 것</h2><ul class="al-f">{fixes}</ul></section>'
             + f'<section class="mg-s"><h2>📏 지킨 원칙</h2><ul class="al-r">{rules}</ul></section>'
             + f'<section class="mg-s"><h2>🗓️ 날짜별 기록</h2><ul class="al-tl">{tl}</ul></section>'
-            + '<section class="mg-s" id="qna"><h2>🙋 개발 Q&amp;A — 이건 어떻게 만들었나요?</h2>'
-              '<p class="note">코드·구조·비용·막힌 부분 아무거나 물어보세요. 사이트를 만든 사람이 직접 답해요. 로그인(이메일·카카오·구글)하면 글과 댓글을 쓸 수 있어요.</p>'
+            + '<section class="mg-s" id="faq"><h2>❓ 개발 FAQ — 이건 어떻게 만들었나요?</h2>'
+              '<p class="note">빌드 시간·무료 한도·이미지 변환·검색 색인처럼 자주 받는 질문은 FAQ에 정리해 뒀어요. 없는 건 거기에 바로 남기면 답해 드려요.</p>'
               '<div data-devqna="4"></div></section>'
             + '<section class="mg-s"><div data-pcrecent="6"></div></section>'
             + '<p class="note">이 페이지는 사이트 개발 과정만 공개해요. 숫자는 빌드할 때마다 자동으로 갱신돼요.</p><link rel="stylesheet" href="/assets/mag/mag.css?v=10">')
@@ -2159,26 +2173,45 @@ def ailog_page(live, nurls):
 
 
 
-def dev_qna_page(P):
-    """개발 Q&A 게시판 (2026-10-19 사용자: "개발 지식쪽도 고도화 시키고 커뮤니티화")"""
-    ls = ''.join(f'<li><a href="{dev_url(p)}" data-pcs="{dev_url(p)}"><b>{"[EN] " if p["lang"] == "en" else ""}{E(p["title"])}</b></a></li>' for p in sorted(P, key=lambda x: x['date'], reverse=True)[:8])
-    body = ('<p class="bc"><a href="/">홈</a> › <a href="/ailog/">개발 지식</a> › 개발 Q&amp;A</p>'
-            '<h1>🙋 개발 Q&amp;A — 이거 어떻게 만들었나요?</h1>'
-            + say('o_desk', '코드·구조·비용·막힌 부분 아무거나 물어보세요. 제가 직접 답하고, 답이 길어지면 아예 글로 정리해서 개발 지식에 올려요.')
-            + '<p>이 사이트는 사람 한 명이 AI(Claude Code)와 만들고 매시간 자동으로 돌리고 있어요. 빌드·배포·DB·검색 색인처럼 실제로 겪은 부분이면 거의 답할 수 있어요. '
-              '질문에 「운영자」 표시가 붙은 답이 제 답이에요. 서로 답을 달아 주셔도 좋아요.</p>'
-            '<ul class="chk"><li>질문: 구현 방법, 왜 그렇게 했는지, 비용, 막힌 에러</li><li>팁: 직접 해 보고 알게 된 것</li><li>자유: 같은 걸 만들어 본 후기</li></ul>'
-            + '<div id="cm-board" data-contest="dev" data-title="개발 Q&amp;A" data-head="질문 · 팁" data-kinds="qna,tip,free" '
-              'data-ph="어떤 부분이 궁금한지 적어 주세요. 에러 메시지나 코드 일부를 붙여 주면 답하기 쉬워요." data-empty="아직 질문이 없어요. 첫 질문을 남겨 주세요."></div>'
-            + (f'<section class="mg-s"><h2>📚 자주 나온 질문은 글로 정리했어요</h2><ul class="dev-ls">{ls}</ul></section>' if ls else '')
-            + '<section class="mg-s"><div data-pcrecent="6"></div></section>'
-            + '<style>.dev-ls{list-style:none;padding:0}.dev-ls li{margin:8px 0}.dev-ls a{display:block;padding:12px;border:1px solid #e5e7eb;border-radius:10px;text-decoration:none;color:inherit}.dev-ls span{display:block;font-size:.88em;color:#64748b;margin-top:4px}</style>'
+def dev_faq_page(P):
+    """개발 FAQ (2026-10-19 사용자: "Q&A보다는 FAQ형식으로"). 자주 받는 질문은 여기서 답하고, 없는 건 아래 게시판에."""
+    F = json.load(open(os.path.join(HERE, 'dev_faq.json'), encoding='utf-8'))
+    secs, qa_all = '', []
+    for g in F['groups']:
+        items = ''
+        for q, a in g['qa']:
+            qa_all.append((q, a))
+            items += f'<details class="faq-i"><summary>{E(q)}</summary><div>{E(a)}</div></details>'
+        secs += f'<section class="mg-s"><h2>{E(g["g"])}</h2>{items}</section>'
+    ls = ''.join(f'<li><a href="{dev_url(p)}" data-pcs="{dev_url(p)}"><b>{"[EN] " if p["lang"] == "en" else ""}{E(p["title"])}</b></a></li>'
+                 for p in sorted(P, key=lambda x: x['date'], reverse=True)[:8])
+    body = ('<p class="bc"><a href="/">홈</a> › <a href="/ailog/">개발 지식</a> › 개발 FAQ</p>'
+            '<h1>❓ 개발 FAQ — 이 사이트 어떻게 만들었나요</h1>'
+            + say('o_desk', E(F['lead']))
+            + f'<p class="note">{len(qa_all)}개 질문 · {F["updated"]} 기준. 여기에 없는 건 아래에 남겨 주시면 답하고, 답이 길어지면 글로 정리해서 FAQ에 올려요.</p>'
+            + secs
+            + '<section class="mg-s"><h2>🙋 여기에 없는 걸 묻고 싶다면</h2>'
+              '<p class="note">로그인(이메일·카카오·구글)하면 바로 쓸 수 있어요. 에러 메시지나 코드 일부를 붙여 주면 답하기 쉬워요. 「운영자」 표시가 붙은 답이 제 답이에요.</p>'
+              '<div id="cm-board" data-contest="dev" data-title="개발 FAQ" data-head="남겨 주신 질문" data-kinds="qna,tip,free" '
+              'data-ph="어떤 부분이 궁금한지 적어 주세요. 에러 메시지나 코드 일부를 붙여 주면 답하기 쉬워요." data-empty="아직 남겨 주신 질문이 없어요. 첫 질문을 남겨 주세요."></div></section>'
+            + (f'<section class="mg-s"><h2>📚 길게 답한 건 글로 정리했어요</h2><ul class="dev-ls">{ls}</ul></section>' if ls else '')
+            + '<style>.faq-i{border:1px solid #e5e7eb;border-radius:12px;padding:10px 14px;margin:8px 0;background:#fff}'
+              '.faq-i summary{font-weight:700;cursor:pointer;font-size:15px}.faq-i div{margin-top:8px;font-size:14.5px;line-height:1.7;color:#334155}'
+              '.dev-ls{list-style:none;padding:0}.dev-ls li{margin:8px 0}.dev-ls a{display:block;padding:12px;border:1px solid #e5e7eb;border-radius:10px;text-decoration:none;color:inherit}</style>'
             + '<link rel="stylesheet" href="/assets/mag/mag.css?v=10">')
-    page('/dev/qna/', '개발 Q&A — 이 사이트 어떻게 만들었나요 (1인+AI 운영)',
-         '정적 사이트 빌드, Cloudflare Workers·D1, 검색 색인, 비용 0원 운영에 대해 묻고 답하는 공간이에요. 운영자가 직접 답해요.',
-         body, [('루리의 줍줍', '/'), ('개발 지식', '/ailog/'), ('개발 Q&A', '/dev/qna/')])
-    return ['/dev/qna/']
-
+    ld = {'@context': 'https://schema.org', '@type': 'FAQPage', 'mainEntity': [
+        {'@type': 'Question', 'name': q, 'acceptedAnswer': {'@type': 'Answer', 'text': a}} for q, a in qa_all]}
+    page('/dev/faq/', '개발 FAQ — 1인+AI로 사이트 만들고 돌리는 법 (비용·빌드·D1)',
+         '정적 사이트 빌드 시간, Cloudflare Workers·D1 무료 한도, 이미지 변환, 검색 색인, 댓글 스팸 대응까지 자주 받는 질문 '
+         + str(len(qa_all)) + '개를 정리했어요.',
+         body, [('루리의 줍줍', '/'), ('개발 지식', '/ailog/'), ('개발 FAQ', '/dev/faq/')], ld=ld)
+    # 먼저 만들었던 /dev/qna/ 는 FAQ 로 안내만 (주소가 이미 나간 상태라 지우지 않음)
+    page('/dev/qna/', '개발 FAQ로 옮겼어요',
+         '개발 질문과 답은 개발 FAQ 페이지로 옮겼어요.',
+         '<p class="bc"><a href="/">홈</a> › <a href="/ailog/">개발 지식</a></p><h1>개발 FAQ로 옮겼어요</h1>'
+         '<p>질문과 답은 <a href="/dev/faq/">개발 FAQ</a>에 모았어요. 자동으로 넘어가지 않으면 눌러 주세요.</p>'
+         '<meta http-equiv="refresh" content="0; url=/dev/faq/">', noindex=True)
+    return ['/dev/faq/']
 
 def plaza_page():
     """광장: 누구나 자기 글·레시피·썰을 올리는 공간 (2026-10-19 사용자: "사람들이 그냥 글을 자기 컨텐츠를 올릴수 있는 공간")"""
@@ -2639,12 +2672,26 @@ def fr_slug(n):
     return re.sub(r'[^0-9A-Za-z가-힣]+', '-', n).strip('-')
 
 
+
+def page_rates(min_n=3):
+    """회원이 실제로 준 별점만 읽어 온다(구조화 데이터 aggregateRating 용). 실패하면 빈 값."""
+    if not COMM_API:
+        return {}
+    try:
+        with urllib.request.urlopen(COMM_API + f'/api/p/rates?min={min_n}', timeout=20) as f:
+            return {x['page']: x for x in json.load(f).get('rates') or []}
+    except Exception as e:
+        print('별점 읽기 실패', repr(e)[:80])
+        return {}
+
+
 def fridge_page():
     """냉장고 파먹기 + 레시피 상세(/fridge/r/<요리>/, 2026-10-19 검색 유입: Recipe 구조화 데이터). 사진은 자유 이용 사진과 출처를 밝힌 참고 사진(recipes_ph.json)."""
     D = json.load(open(os.path.join(ROOT, 'assets', 'fridge', 'recipes.json'), encoding='utf-8'))
     PH = _rd('assets/fridge/recipes_ph.json') or {}
     PR, PI = PH.get('recipes') or {}, PH.get('ing') or {}
     RS = D['recipes']; NR = len(RS)
+    RATE = page_rates()
     FR_EN = _rd('assets/fridge/en.json') or {}   # 영문 보조 표기(본문 한 줄)
     shutil.rmtree(os.path.join(ROOT, 'fridge', 'r'), ignore_errors=True)
     lic = lambda c: (E(c.get('by') or '작가 미상')
@@ -2662,7 +2709,7 @@ def fridge_page():
             im = st.get(k)
             if im and im is not mp and (im.get('by') or im.get('src')):
                 cr.append(f'{k}단계 사진: {lic(im)}')
-            steps += f'<li><p>{E(t)}</p>' + (f'<img src="{E(im["f"])}" width="720" height="540" loading="lazy" decoding="async" alt="{E(r["n"])} {k}단계">' if im and im.get('f') else '') + '</li>'
+            steps += f'<li id="step{k}"><p>{E(t)}</p>' + (f'<img src="{E(im["f"])}" width="720" height="540" loading="lazy" decoding="async" alt="{E(r["n"])} {k}단계">' if im and im.get('f') else '') + '</li>'
         ingl = lambda L: ''.join(f'<li>{(f"<img src={chr(34)}{E(PI[i][chr(102)])}{chr(34)} width=28 height=28 alt=>" if i in PI else "")}{E(i)}</li>' for i in L)
         rel = sorted([x for x in RS if x is not r and set(x['need']) & set(r['need'])], key=lambda x: -len(set(x['need'] + x['opt']) & set(r['need'] + r['opt'])))[:6]
         tags = ' '.join(f'#{t}' for t in r['t'])
@@ -2670,6 +2717,7 @@ def fridge_page():
                + f'조리 시간은 약 {r["m"]}분, 난이도는 「{r["lv"]}」이에요. 기본양념({D["basic"]})은 집에 있다고 보고 적었어요.')
         body = (f'<p class="bc"><a href="/">홈</a> › <a href="/fridge/">냉장고 파먹기</a> › {E(r["n"])}</p>'
                 f'<article class="fr-rp"><h1>{r["e"]} {E(r["n"])} {"끓이는 법" if re.search(r"국|찌개|탕|전골|국밥", r["n"]) else "만드는 법"}</h1><p class="fr-meta">⏱ {r["m"]}분 · {E(r["lv"])} · {E(tags)}</p>'
+                + (f'<p class="fr-rate">{"★" * round(RATE[u]["avg"])}{"☆" * (5 - round(RATE[u]["avg"]))} {RATE[u]["avg"]} · 회원 {RATE[u]["n"]}명이 준 별점</p>' if RATE.get(u) else '')
                 + (f'<img class="fr-rmain" src="{E(mp["f"])}" width="720" height="540" alt="{E(r["n"])} 완성 사진" fetchpriority="high">' if mp else '')
                 + f'<p>{E(tip)}</p><h2>🧺 재료</h2><div class="fr-ri"><div><h3>꼭 있어야 해요</h3><ul>{ingl(r["need"])}</ul></div>'
                 + (f'<div><h3>있으면 더 좋아요</h3><ul>{ingl(r["opt"])}</ul></div>' if r['opt'] else '') + '</div>'
@@ -2682,11 +2730,21 @@ def fridge_page():
                 + (f'<details class="fr-cr"><summary>사진 출처</summary><p>{"<br>".join(cr)}</p></details>' if cr else '')
                 + '<p class="note">루리의 줍줍이 직접 정리한 1~2인분 기준 레시피예요. 사진은 자유 이용 사진이거나 출처를 밝힌 참고 사진이고, 맞는 사진이 없는 메뉴는 비워 뒀어요. 알레르기가 있으면 재료를 꼭 확인하세요.</p></article>'
                 + '<link rel="stylesheet" href="/assets/fridge/fridge.css?v=12">')
+        def how_step(k, t):
+            nm = re.split(r'[,.]', t)[0].strip()[:45] or f'{k}단계'
+            d_ = {'@type': 'HowToStep', 'name': nm, 'text': t, 'url': f'{SITE}{u}#step{k}'}
+            im_ = st.get(k)
+            if im_ and im_.get('f'):
+                d_['image'] = SITE + im_['f']
+            return d_
         ld = {'@context': 'https://schema.org', '@type': 'Recipe', 'name': r['n'], 'description': tip, 'datePublished': '2026-10-19', 'totalTime': f'PT{r["m"]}M', 'recipeYield': '1~2인분', 'recipeCategory': '집밥',
               'recipeCuisine': '한식', 'keywords': ', '.join([r['n'] + ' 만드는 법', '냉장고 파먹기'] + r['t']), 'author': {'@type': 'Organization', 'name': NAME},
-              'recipeIngredient': r['need'] + r['opt'], 'recipeInstructions': [{'@type': 'HowToStep', 'text': t} for t in r['s']]}
+              'recipeIngredient': r['need'] + r['opt'], 'recipeInstructions': [how_step(k, t) for k, t in enumerate(r['s'], 1)]}
         if mp:
             ld['image'] = [SITE + mp['f']]
+        rt = RATE.get(u)
+        if rt:
+            ld['aggregateRating'] = {'@type': 'AggregateRating', 'ratingValue': rt['avg'], 'ratingCount': rt['n'], 'bestRating': 5, 'worstRating': 1}
         how = '끓이는 법 · 레시피' if re.search(r'국|찌개|탕|전골|국밥', r['n']) else '만드는 법 · 양념장' if re.search(r'조림|무침', r['n']) else '만드는 법 · 레시피'   # 2026-10-19 검색 시나리오
         page(u, f'{r["n"]} {how} — 재료 {len(r["need"])}가지로 {r["m"]}분 집밥', f'{r["n"]} 만드는 법: {", ".join(r["need"] + r["opt"][:3])}로 {r["m"]}분. 재료와 단계별 만드는 법, 재료가 비슷한 메뉴까지.',
              body, [('루리의 줍줍', '/'), ('냉장고 파먹기', '/fridge/'), (r['n'], u)], ld)
@@ -2796,7 +2854,7 @@ def community(live=()):
 def me_pages():
     """내 공간(가입 혜택 모음) · 관리자 (2026-10-17)"""
     page('/me/', '내 공간 — 찜·응모 기록·마감 알림', '찜한 공모전·청약, 응모 기록, 마감 알림 메일, 자격 프로필, 청약 가점 계산기를 한곳에서.',
-         '''<section id="me" aria-label="내 공간"></section><link rel="stylesheet" href="/assets/me/me.css?v=2"><script defer src="/assets/me/me.js?v=3"></script>''', [('루리의 줍줍', '/'), ('내 공간', '/me/')])
+         '''<section id="me" aria-label="내 공간"></section>''' + (('<section class="me-sec"><h2>💬 톡방</h2><p class="note">공모전·지원금 마감 소식을 매일 나눠요.</p><p class="ft-c">' + comm_btns() + '</p></section>') if COMM_LINKS else '') + '''<link rel="stylesheet" href="/assets/me/me.css?v=2"><script defer src="/assets/me/me.js?v=3"></script>''', [('루리의 줍줍', '/'), ('내 공간', '/me/')])
     page('/login/', '로그인', '루리의 줍줍 로그인 — 내 공간으로 이동해요.', '<p>내 공간으로 이동하고 있어요… <a href="/me/">이동하지 않으면 여기를 눌러 주세요</a></p><script>location.replace("/me/"+location.search+location.hash)</script>', noindex=True)   # 2026-10-19 /login/ 404 → 내 공간(로그인 화면 포함)
     page('/admin/', '관리자', '관리자', '''<section id="admin"></section><section id="gsc-admin"></section><link rel="stylesheet" href="/assets/me/me.css?v=3"><script defer src="/assets/me/admin.js?v=6"></script>''', noindex=True)
 
