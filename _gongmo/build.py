@@ -975,6 +975,13 @@ XTOPIC = {  # 2026-10-19 홍보 세션 키워드 구멍(구글 자동완성 866�
 XMADE = {}
 
 
+def xregions(aps, tk):
+    """주제별로 페이지가 만들어질 시·도 [(slug, 이름, 건수)] — cross_pages 와 같은 기준(2건 이상). 홈이 먼저 빌드돼서 따로 셈."""
+    f = XTOPIC[tk][2]
+    c = collections.Counter(sido_of(a) for a in aps if f(a))
+    return [(sl, nm, c[sl]) for sl, nm, _ in SIDO if c[sl] >= 2]
+
+
 def _xcell(v):
     return E(v) if v else '<span class="mu">공고 원문 확인</span>'
 
@@ -1272,7 +1279,7 @@ def build():
     hot_h = ''.join(f'<li><a href="/hot/{v["slug"]}/">{E(v["title"])}<small> · 언론사 {len(v["outs"])}곳</small></a></li>' for v in hot3[:3])
     _rj = os.path.join(ROOT, 'assets', 'fridge', 'recipes.json')
     NR_HOME = f'{len(json.load(open(_rj, encoding="utf-8")).get("recipes", [])):,}' if os.path.exists(_rj) else '1,300'
-    XLINKS_HOME = ''.join(f' · <a href="/apply/{tk}/{sl}/">{"청년 월세" if tk == "youth-rent" else "신혼부부"} {nm}</a>' for tk in ('youth-rent', 'newlywed') for sl, nm, n in sorted(XMADE.get(tk, []), key=lambda x: -x[2])[:3])
+    XLINKS_HOME = ''.join(f' · <a href="/apply/{tk}/{sl}/">{"청년 월세" if tk == "youth-rent" else "신혼부부"} {nm}</a>' for tk in ('youth-rent', 'newlywed') for sl, nm, n in sorted(xregions(aps, tk), key=lambda x: -x[2])[:3])
     home = f'''<section class="hm-hero"><h1>나에게 맞는 공모전을 찾고,<br>마감 전에 준비하세요.</h1>
 <p class="hm-sub">진행 중 공모전 <b>{len(live)}건</b>의 분야·자격·마감·제출물을 한 형식으로 정리했어요. 몇 가지 질문에 답하면 조건에 맞는 공모전부터 보여 드려요.</p>
 <div class="hm-cta"><a class="hm-b1" href="/contest/">🔎 맞는 공모전 찾기</a><a class="hm-b2" href="/contest/week/">⏰ 마감 임박 보기 <small>7일 안 {wk7}건</small></a></div>
