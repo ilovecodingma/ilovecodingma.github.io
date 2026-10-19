@@ -2598,9 +2598,9 @@ def cp_box(text, title='🛒 함께 보면 좋은 물건', n=2, fill='', body=''
         return ''
     li = ''.join(f'<li><a href="{E(x["url"])}" target="_blank" rel="sponsored nofollow noopener">{E(x["name"])} →</a></li>' for x in items)
     return (f'<aside class="cp-box"><h2>{title}</h2><ul>{li}</ul><p class="cp-n">이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</p></aside>'
-            '<style>.cp-box{margin:20px 0;padding:14px 16px;border:1px solid #fed7aa;border-radius:12px;background:#fffbf5}.cp-box h2{margin:0 0 8px;font-size:17px}'
+            '<style>.cp-box{margin:20px 0;padding:14px 16px;border:1px solid #fed7aa;border-radius:12px;background:#fffbf5}.cp-box h2{margin:0 0 8px;font-size:17px;color:#7c2d12}'
             '.cp-box ul{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:8px}.cp-box a{display:inline-flex;min-height:40px;align-items:center;padding:6px 14px;border-radius:999px;background:#fff;border:1px solid #fdba74;color:#9a3412;font-weight:700;text-decoration:none;font-size:14px}'
-            '.cp-box .cp-n{margin:10px 0 0;font-size:13px;color:#57534e}</style>')
+            '.cp-box .cp-n{margin:10px 0 0;font-size:13px;color:#57534e}@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .cp-box{background:#2a1f14;border-color:#7c2d12}:root:not([data-theme=light]) .cp-box h2{color:#fed7aa}:root:not([data-theme=light]) .cp-box a{background:#1d1a2e;color:#fdba74}:root:not([data-theme=light]) .cp-box .cp-n{color:#d6d3d1}}:root[data-theme=dark] .cp-box{background:#2a1f14;border-color:#7c2d12}:root[data-theme=dark] .cp-box h2{color:#fed7aa}:root[data-theme=dark] .cp-box a{background:#1d1a2e;color:#fdba74}:root[data-theme=dark] .cp-box .cp-n{color:#d6d3d1}</style>')
 
 
 def rel_block(pat, links):
