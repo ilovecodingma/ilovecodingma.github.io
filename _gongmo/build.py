@@ -105,7 +105,7 @@ PAGE_INTRO = {k: f'<section class="pg-intro"><h2>{h}</h2>{v}</section>' for k, (
  '/fridge/': ('냉장고 파먹기 사용법', '<p>집에 있는 재료를 고르면 루리가 정리한 집밥 레시피 중 지금 바로 만들 수 있는 메뉴를 먼저 보여 드려요. 재료 하나만 더 사면 되는 메뉴도 함께 알려 줘서, 장보기 목록을 줄일 수 있어요. 레시피는 1~2인분 기준이고 조리 시간과 난이도를 함께 적었어요.</p>'),
  '/lab/': ('수상 연구소는 이렇게 분석해요', '<p>슬로건·표어·네이밍 공모전의 실제 수상작을 모아 글자 수, 운율, 대구, 핵심어 위치 같은 구조로 하나씩 풀어 봐요. 수상작을 베끼는 게 아니라 「왜 뽑혔는지」를 알아보는 곳이에요. 내 문구를 넣으면 같은 기준으로 진단해 드려요.</p>'),
  '/apply/': ('청약·지원금 신청 전에', '<p>여기 모은 일정은 청약홈·LH·지자체·정부24 공고를 바탕으로 마감순으로 정리했어요. 같은 지원금이라도 지역·나이·소득 기준이 달라 신청 전에 자격부터 확인해야 해요. 청약은 <a href="/apply/recommend/">청약 추천</a>에서 내 가점을 먼저 계산해 보세요. 사는 곳 기준으로 보려면 <a href="/apply/r/">지역별 지원금·청약</a>에서 시·도를 고르세요.</p>'),
- '/contest/': ('공모전 추천은 이렇게 해요', '<p>진행 중인 공모전을 마감·상금·분야·제출물로 정리해 두고, 내가 고른 조건에 맞는 것부터 보여 줘요. 상금이 큰 것만이 아니라 「준비 시간 대비 할 만한 것」을 위로 올리는 게 루리의 기준이에요. 각 공모전 페이지에는 같은 분야와 비교한 분석, 오늘 기준 준비 일정을 붙여 두었어요. <a href="/contest/week/">이번 주 마감 공모전</a>만 따로 볼 수도 있고, 대상별로는 <a href="/contest/univ/">대학생 공모전</a>, <a href="/contest/ai-video/">AI 영상 공모전</a> 모음도 있어요.</p>'),
+ '/contest/': ('공모전 추천은 이렇게 해요', '<p>진행 중인 공모전을 마감·상금·분야·제출물로 정리해 두고, 내가 고른 조건에 맞는 것부터 보여 줘요. 상금이 큰 것만이 아니라 「준비 시간 대비 할 만한 것」을 위로 올리는 게 루리의 기준이에요. 각 공모전 페이지에는 같은 분야와 비교한 분석, 오늘 기준 준비 일정을 붙여 두었어요. <a href="/contest/week/">이번 주 마감 공모전</a>만 따로 볼 수도 있고, 대상·분야별로는 <a href="/contest/youth/">청소년 공모전</a>, <a href="/contest/novel/">소설 공모전</a>, <a href="/contest/photo/">사진 공모전</a>, <a href="/contest/video/">영상 공모전</a>, <a href="/contest/idea/">아이디어 공모전</a>, <a href="/contest/univ/">대학생 공모전</a>, <a href="/contest/ai-video/">AI 영상 공모전</a> 모음도 있어요.</p>'),
 }.items()}
 
 
@@ -334,6 +334,30 @@ def auto_thin(urls):
     return n
 
 
+NP_KEYS = [('공모 주제', r'공모\s?주제|공모\s?내용|공모\s?분야|주\s?제'), ('참가 자격', r'응모\s?자격|참가\s?자격|참여\s?대상|공모\s?대상|응모\s?대상|지원\s?자격'),
+           ('제출물·규격', r'제출\s?(?:서류|물|방법)|출품\s?(?:규격|형식|방법)|작품\s?규격|분\s?량|형\s?식'), ('접수', r'접수\s?(?:방법|기간)|응모\s?방법|제출\s?처'),
+           ('시상', r'시상\s?(?:내역|내용|규모)?|상\s?금|포\s?상'), ('발표', r'(?:결과\s?)?발\s?표(?:\s?일)?|수상자\s?발표'), ('심사 기준', r'심사\s?(?:기준|방법)')]
+NP_NAV = re.compile(r'콘테스트코리아|인기검색어|대외활동|로그인|회원가입|전체현황|바로가기|공유하기|스크랩|조회수|목록|이전글|다음글|Copyright|개인정보|씽굿|링커리어|위비티|올콘')
+_NP_ALL = '|'.join(r for _, r in NP_KEYS)
+
+
+def notice_points(cid):
+    """공고 원문에서 「항목: 내용」 꼴만 항목당 한 줄(110자까지). 못 찾으면 빈 목록(지어내지 않음)."""
+    f = os.path.join(HERE, 'txt', f'{cid}.txt')
+    if not os.path.exists(f):
+        return []
+    t = re.sub(r'\s+', ' ', html.unescape(html.unescape(open(f, encoding='utf-8', errors='ignore').read()))).replace('\xa0', ' ')
+    out, used = [], set()
+    for lab, rx in NP_KEYS:
+        for m in re.finditer(rf'(?:^|[\s■□▶●○◆◇※\-·•\d\.\)])(?:{rx})\s*[:：]\s*(.{{8,140}}?)(?=\s(?:[■□▶●○◆◇※]|\d+\.\s|(?:{_NP_ALL})\s*[:：])|$)', t):
+            v = m.group(1).strip(' -·•,')
+            if NP_NAV.search(v) or len(v) < 8 or v in used:
+                continue
+            out.append((lab, v[:110] + ('…' if len(v) > 110 else ''))); used.add(v)
+            break
+    return out
+
+
 def c_insight(c, live):
     """공모전마다 숫자가 다른 루리 분석 + 같은 분야 비교표. 공고 원문을 옮기지 않고 우리 데이터로 계산한 것만."""
     n = dday(c['end'])[0]
@@ -356,6 +380,11 @@ def c_insight(c, live):
             L.append(f'접수 기간은 모두 {tot}일' + (f'이고 오늘 기준 {n}일 남았어요.' if n >= 0 else '이었어요.'))
         except Exception:
             pass
+    if n >= 2:   # 공모전마다 다른 준비 여유(제목 포함 문장 — 숫자만 다른 문장은 고유 본문으로 치지 않음)
+        we = sum(1 for k in range(1, n + 1) if (TODAY + datetime.timedelta(days=k)).weekday() == 5)
+        L.append(f'「{c["title"][:40]}」 마감({ddot(c["end"])[5:]})까지 준비에 쓸 수 있는 토요일은 {we}번이에요.' + (' 주말 하루 안에 초안을 끝내는 일정이 현실적이에요.' if we <= 1 else ' 첫 주말에 기획, 마지막 주말에 마무리하는 식으로 나눠 보세요.'))
+    if c.get('org') and c['org'] not in ('공고 참조', ''):
+        L.append(f'주최는 {c["org"][:40]}이고, ' + (f'{c["region"]} 지역 공모전이에요. ' if c.get('region') else '') + f'{"·".join(c["tags"][:2])} 분야로 분류했어요.')
     el = c.get('elig') or ''
     for pat, note in ELIG_NOTE:
         if re.search(pat, el):
@@ -414,6 +443,8 @@ def detail(c, live):
     if c.get('fee'):
         todo.append('참가비가 필요한 이유와 주최 기관이 맞는지')
     todo.append('1인당 응모 편수, 수상 발표일과 발표 방법')
+    NPs = notice_points(c['id'])
+    np_html = ('<h2>📄 공고에서 확인한 핵심</h2><table class="info np">' + ''.join(f'<tr><th>{E(k)}</th><td>{E(v)}</td></tr>' for k, v in NPs) + '</table><p class="note">공고 원문의 항목을 그대로 옮긴 거예요(자동 추출이라 일부만 보일 수 있어요). 전체 내용은 공식 공고에서 확인하세요.</p>') if NPs else ''
     chk_need = '<h2>✅ 공식 공고에서 꼭 확인할 것</h2><ul class="chk">' + ''.join(f'<li>{E(t)}</li>' for t in todo) + '</ul>'
     catl = ' · '.join(f'<a href="/cat/{SLUG[t]}/">{E(t)}</a>' for t in c['tags'])
     org = c['org'] if c['org'] != '공고 참조' else '주최 기관'
@@ -429,7 +460,7 @@ def detail(c, live):
 {chk_need}
 <div class="my-acts" data-id="c:{c["id"]}" data-title="{E(c["title"])}" data-end="{c["end"]}"></div>
 <h2>한눈에 보기</h2><p>{E(summary)}</p>
-{c_insight(c, live)}
+{np_html}{c_insight(c, live)}
 <h2>응모 전 체크리스트</h2><ul class="chk">{tips}</ul>
 {'<a class="lab-cta" href="/lab/#diag"><b>🏆 이런 공모전 수상작은 어떻게 생겼을까?</b><span>수상작 300여 개를 분석한 당선 공식과 내 문구 진단 →</span></a>' if re.search(r'슬로건|표어|네이밍|명칭|캐치프레이즈|삼행시|N행시|이행시|애칭', c['title']) else ''}
 <p class="note">분야: {catl}. 상금·자격·기간은 공고 원문에서 자동으로 정리한 값이라 오차가 있을 수 있습니다. 최종 기준은 주최 측 공식 공고입니다.</p>
@@ -442,7 +473,9 @@ def detail(c, live):
     desc = f'{c["title"]} — {org} 주최, {ddot(c["end"])} 마감, 상금 {c["prize"]}. 응모 자격·접수 방법·체크리스트 정리.'
     md_ = c['end'][5:].replace('-', '/').lstrip('0').replace('/0', '/')
     pz = re.sub(r'\s+', ' ', (c.get('prize') or '')).strip()
-    seo_t = f"{c['title']} — " + (f"상금 {pz[:24]} · " if pz and pz not in ('공고 확인', '-') else '') + f"{md_} 마감 · 자격·접수 방법"   # 2026-10-18 자연 유입: 검색어 모양 제목
+    yr_ = '' if re.search(r'20\d\d', c['title']) else f' {c["end"][:4]}'
+    seo_t = (f"{c['title']}{yr_} | {c['end'][5:7].lstrip('0')}.{c['end'][8:10]} 마감" + (f" · {pz[:20]}" if pz and pz not in ('공고 확인', '공고 참조', '-') else '')
+             + (f" · {c['effort']}" if c.get('effort') else '') )   # 2026-10-19 자연 유입: 이름 맨 앞 + 연도·마감·상금·제출물
     page(f'/c/{c["id"]}/', seo_t, desc[:155], body,
          [('루리의 줍줍', '/'), (main_tag, f'/cat/{SLUG[main_tag]}/'), (c['title'], f'/c/{c["id"]}/')], ld, noindex=n < 0 or c not in live)
     GONE[f'/c/{c["id"]}/'] = [c['title'], f'/cat/{SLUG[main_tag]}/', f'{main_tag} 공모전', c['end']]
@@ -803,20 +836,58 @@ def week_hub(live):
     return ['/contest/week/']
 
 
+def hub_extra(nm, L, path):
+    """검색어 허브 공통: 집계 문장 + FAQ + ItemList/FAQPage 구조화 데이터 (숫자는 매 빌드 계산, 2026-10-19 자연 유입)."""
+    if not L:
+        return '', None
+    pv = [c for c in L if c.get('pv')]
+    big = max(pv, key=lambda c: c['pv']) if pv else None
+    day = collections.Counter(c['end'] for c in L).most_common(1)[0]
+    soon = min(L, key=lambda c: c['end'])
+    wk = sum(1 for c in L if dday(c['end'])[0] <= 7)
+    ef = collections.Counter(c['effort'] for c in L if c.get('effort')).most_common(2)
+    faq = [(f'지금 접수 중인 {nm}은 몇 개예요?', f'{TODAY.month}월 {TODAY.day}일(한국 시간) 기준 {len(L)}건이고, 일주일 안에 마감하는 건 {wk}건이에요. 매시간 새로 정리해요.'),
+           (f'{nm} 중 상금이 가장 큰 건 뭐예요?', (f'「{big["title"][:40]}」로 {won_txt(big["pv"])}이에요. 상금이 숫자로 나온 {len(pv)}건 기준이에요.' if big else '상금이 숫자로 정리된 공모전이 아직 없어요. 공고마다 확인하세요.')),
+           (f'{nm} 마감은 언제 몰려 있어요?', f'{ddot(day[0])} 마감이 {day[1]}건으로 가장 많고, 가장 먼저 마감하는 건 「{soon["title"][:40]}」({ddot(soon["end"])})예요. 마감 시각은 공고마다 달라 공식 공고를 확인하세요.'),
+           ('무엇을 내야 하나요?', ('제출물은 ' + ', '.join(f'{k} {v}건' for k, v in ef) + ' 순으로 많아요. 분량·파일 형식은 공고마다 달라요.') if ef else '제출물은 공모전마다 달라요. 상세 페이지의 제출물 칸과 공식 공고를 확인하세요.')]
+    h = '<section class="hub-faq"><h2>❓ 자주 묻는 질문</h2>' + ''.join(f'<details class="faq"><summary>{E(q)}</summary><p>{E(a)}</p></details>' for q, a in faq) + '</section>'
+    ld = {'@context': 'https://schema.org', '@graph': [
+        {'@type': 'ItemList', 'name': f'{nm} {YR}', 'numberOfItems': len(L), 'itemListElement': [{'@type': 'ListItem', 'position': i + 1, 'url': f'{SITE}/c/{c["id"]}/', 'name': c['title']} for i, c in enumerate(L[:30])]},
+        {'@type': 'FAQPage', 'mainEntity': [{'@type': 'Question', 'name': q, 'acceptedAnswer': {'@type': 'Answer', 'text': a}} for q, a in faq]}]}
+    return h, ld
+
+
 def contest_hubs(live):
     """자동완성 문구 허브: 대학생 공모전, AI 영상 공모전 (2026-10-18 키워드 전략 ③)."""
     H = [('univ', f'대학생 공모전 사이트 — {YR} 진행 중 모음 (마감순)', '대학생 공모전', lambda c: '대학생' in (c.get('elig') or ''),
           '응모 자격에 대학생이 들어간 공모전만 모았어요. 대외활동 사이트마다 흩어진 공고를 마감·상금·제출물 기준으로 한 번에 비교할 수 있어요. 수상하면 재학·휴학 증명서를 요구하는 경우가 많으니 미리 발급해 두세요.'),
          ('ai-video', f'AI 영상 공모전 {YR} — 생성형 AI 영상·숏폼 공모전 모음', 'AI 영상 공모전', lambda c: re.search(r'AI|인공지능|생성형', c['title']) and (re.search(r'영상|숏폼|쇼츠|릴스|뮤직비디오|애니', c['title']) or '영상' in c['tags']),
-          '제목에 AI·생성형이 들어가고 영상·숏폼을 받는 공모전만 골랐어요. AI 도구로 만든 영상은 음원·이미지 저작권과 「AI 사용 표기」 규정을 공고마다 다르게 정해 두니 꼭 확인하세요.')]
+          '제목에 AI·생성형이 들어가고 영상·숏폼을 받는 공모전만 골랐어요. AI 도구로 만든 영상은 음원·이미지 저작권과 「AI 사용 표기」 규정을 공고마다 다르게 정해 두니 꼭 확인하세요.'),
+         ('youth', f'청소년 공모전 {YR} — 중고등학생·초등학생 공모전 모음', '청소년 공모전', lambda c: re.search(r'청소년|초등|중학|고등|초·중·고|초중고|학생', c.get('elig') or '') is not None,
+          '응모 자격에 청소년·초중고 학생이 들어간 공모전만 모았어요. 학생부가 따로 있는지, 보호자 동의서가 필요한지 공고에서 꼭 확인하세요. 봉사시간·생활기록부 반영 여부도 공고마다 달라요.'),
+         ('novel', f'소설 공모전 {YR} — 웹소설·단편소설·신춘문예 모음', '소설 공모전', lambda c: re.search(r'소설|웹소설|신춘문예|문학상|스토리', c['title']) is not None,
+          '제목에 소설·웹소설·신춘문예·문학상이 들어간 공모전만 골랐어요. 분량(원고지 매수·글자 수)과 「미발표 창작물」 조건, 연재 플랫폼 공모는 연재 기간 규정을 먼저 확인하세요.'),
+         ('photo', f'사진 공모전 {YR} — 사진·포토 공모전 모음 (마감순)', '사진 공모전', lambda c: re.search(r'사진|포토|촬영', c['title']) is not None,
+          '제목에 사진·포토가 들어간 공모전만 모았어요. 촬영 원본(EXIF)을 요구하는 경우가 많고, 사람이 나오면 초상권 동의가 필요해요. 과한 보정·합성은 감점되거나 실격될 수 있어요.'),
+         ('video', f'영상 공모전 {YR} — 숏폼·UCC·홍보영상 공모전 모음', '영상 공모전', lambda c: '영상' in c['tags'] or re.search(r'영상|숏폼|쇼츠|UCC|릴스', c['title']) is not None,
+          '영상 분야로 분류됐거나 제목에 영상·숏폼·UCC가 들어간 공모전만 모았어요. 길이(초)·해상도·파일 형식과 음원·폰트 저작권을 제출 전에 확인하세요.'),
+         ('idea', f'아이디어 공모전 {YR} — 정책 제안·기획 공모전 모음', '아이디어 공모전', lambda c: '아이디어·정책' in c['tags'] or re.search(r'아이디어|제안|정책', c['title']) is not None,
+          '아이디어·정책 제안 공모전만 모았어요. 이미 시행 중인 정책과 겹치지 않는지 검색해 보고, 현황 → 문제점 → 개선안 → 기대효과 순서로 쓰면 심사위원이 읽기 쉬워요.')]
+    for mo in sorted({int(c['end'][5:7]) for c in live if c['end'][:4] == str(TODAY.year)} & {TODAY.month, TODAY.month % 12 + 1}):
+        H.append((f'deadline-{mo}', f'{mo}월 마감 공모전 {YR} — {mo}월에 접수 끝나는 공모전 모음', f'{mo}월 마감 공모전', (lambda m: lambda c: c['end'][:4] == str(TODAY.year) and int(c['end'][5:7]) == m)(mo),
+                  f'{YR}년 {mo}월 안에 접수가 끝나는 공모전만 마감 날짜순으로 모았어요. 같은 날 마감이 몰리면 접수 서버가 느려지니 하루 전에 내는 걸 권해요.'))
     urls = []
     for sl, title, nm, f, intro in H:
         L = [c for c in live if f(c)]
         path = f'/contest/{sl}/'
+        L.sort(key=lambda c: (c['end'], -(c.get('pv') or 0)))
+        fq, ld_ = hub_extra(nm, L, path)
         body = (f'<p class="bc"><a href="/">홈</a> › <a href="/contest/">공모전</a> › {nm}</p><h1>🏆 {E(title)}</h1><p>{intro}</p>{cat_stats(nm.replace(" 공모전", ""), L)}'
-                f'<h2>진행 중 {nm} ({len(L)}건)</h2><ul class="list">{"".join(card(c) for c in L[:80]) or "<li class=empty>지금은 없어요.</li>"}</ul>'
+                f'<p class="hm-scope">오늘 {TODAY.month}/{TODAY.day}(한국 시간) 기준 접수 마감 전 · 제목이 같은 공모전은 1건 · {NOW_KST():%m/%d %H:%M} 갱신 · 마감순</p>'
+                f'<h2>진행 중 {nm} ({len(L)}건)</h2><ul class="list">{"".join(card(c) for c in L[:80]) or "<li class=empty>지금은 없어요.</li>"}</ul>{fq}'
+                + '<p class="hm-more">다른 모음: ' + ' · '.join(f'<a href="/contest/{x[0]}/">{E(x[2])}</a>' for x in H if x[0] != sl) + '</p>'
                 + rel_block(r'공모전|대학생|영상', [('/guide/', '공모전 응모 가이드'), ('/widget/', '블로그용 공모전 위젯'), ('/cat/video/', f'영상 공모전 {YR} 모음')]))
-        page(path, title, f'{nm} 진행 중 {len(L)}건을 마감순으로 정리. 상금·자격·제출물 비교.', body, [('루리의 줍줍', '/'), ('공모전', '/contest/'), (nm, path)], noindex=len(L) < 5)
+        page(path, title, f'{nm} 진행 중 {len(L)}건을 마감순으로 정리. 상금·자격·제출물 비교.', body, [('루리의 줍줍', '/'), ('공모전', '/contest/'), (nm, path)], ld_, noindex=len(L) < 5)
         urls.append(path)
     return urls
 
@@ -929,8 +1000,9 @@ def build():
 <p>{CAT_INTRO[n]}</p>{cat_stats(n, cl)}
 {say(CAT_OUTFIT[n], f'<b>{n} 공모전 응모 팁</b><ul class="chk">{tips}</ul>')}{'<a class="lab-cta" href="/fridge/"><b>🍳 루리의 냉장고 파먹기</b><span>집에 있는 재료로 만들 수 있는 집밥 레시피 · 요리대회 연습용으로 딱 →</span></a>' if s == 'food' else ''}
 <h2>진행 중 {n} 공모전</h2>{TOOLBAR}<ul class="list" id="list">{''.join(card(c) for c in cl[:60])}</ul>{('<details class="rest"><summary>나머지 ' + str(len(cl) - 60) + '건 제목으로 보기</summary><ul>' + ''.join(f'<li><a href="/c/{c["id"]}/">{E(c["title"])}</a> · {ddot(c["end"])[5:]} 마감</li>' for c in cl[60:]) + '</ul></details>') if len(cl) > 60 else ''}<p class="hm-links">{' '.join(f'<a href="/cat/{s2}/">{n2}</a>' for s2, n2 in CATS if s2 != s)}</p><button class="more" id="more" hidden>더 보기</button>'''
+        fq, ld_ = hub_extra(f'{n} 공모전', sorted(cl, key=lambda c: c['end']), f'/cat/{s}/')
         page(f'/cat/{s}/', f'{CAT_T.get(n, n + " 공모전 모음")} · 진행 중 {len(cl)}건', f'{n} 분야 진행 중 공모전 {len(cl)}건 마감 임박순 정리. {CAT_INTRO[n][:70]}',
-             body + listing_js(n), [('루리의 줍줍', '/'), (n, f'/cat/{s}/')])
+             body + fq + listing_js(n), [('루리의 줍줍', '/'), (n, f'/cat/{s}/')], ld_)
     # 2026-10-18 사용자: "경품 이벤트도 좀 적당히 보이게, 갱신도 자동으로" — 1,300여 건 통째 나열 대신 '오늘·내일 마감 + 쉬운 것' 12개만 크게, 나머지는 종류·검색으로(events.json 매시 빌드 갱신)
     EZT = ('댓글 1줄', '퀴즈 1분', '설문 5분', '응모만', '폼 1분')
     tidy_ev = lambda t: re.sub(r'^\s*\((?:중복|\d+회 중복)[^)]*\)\s*', '', t).strip()
@@ -980,11 +1052,14 @@ def build():
         f.write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n')
         LM = os.path.join(HERE, 'lastmod.json')
         lm = json.load(open(LM, encoding='utf-8')) if os.path.exists(LM) else {}
+        _lm_old = {k: v[0] for k, v in lm.items()}
         for u in urls:
             h_ = PAGE_HASH.get(u)
             if u not in lm or (h_ and lm[u][0] != h_):
                 lm[u] = [h_, TODAY.isoformat()]
         json.dump(lm, open(LM, 'w', encoding='utf-8'), ensure_ascii=False)
+        chg = [SITE + u for u in urls if u.startswith('/c/') and u not in NOINDEX and lm[u][1] == TODAY.isoformat() and SITE + u not in NEW_URLS and lm[u][0] != _lm_old.get(u)]
+        NEW_URLS.extend(chg[:100])   # 2026-10-19: 바뀐 공모전 상세도 IndexNow 로
         f.writelines(f'<url><loc>{SITE}{u}</loc><lastmod>{lm[u][1]}</lastmod></url>\n' for u in urls if u not in NOINDEX)
         f.write('</urlset>\n')
     SMT = [('contest', ('/c/', '/cat/', '/contest/', '/lab/', '/guide/', '/prep/', '/widget/', '/ssul/')), ('apply', ('/a/', '/apply/', '/event/', '/fridge/', '/qa/')),
@@ -2155,6 +2230,35 @@ def app_page():
          body, [('루리의 줍줍', '/'), ('앱·알림', '/app/')])
 
 
+FR_SUB = {'돼지고기': '소고기나 닭고기', '소고기': '돼지고기', '닭고기': '돼지고기', '스팸': '햄이나 소시지', '햄': '스팸이나 소시지', '소시지': '햄이나 스팸', '국수': '라면 사리',
+          '파스타면': '국수', '애호박': '가지나 양배추', '양배추': '배추', '두부': '달걀', '참치캔': '스팸', '대파': '양파', '고추장': '고춧가루 조금 더', '김치': '볶은 양배추(맛은 달라져요)',
+          '오징어': '새우', '새우': '오징어', '당면': '국수', '떡': '어묵', '어묵': '맛살', '버섯': '애호박', '시금치': '부추나 깻잎', '감자': '고구마', '우유': '물(조금 묽어져요)'}
+
+
+def fr_tips(r, RS):
+    """레시피마다 다른 팁(이름·재료·태그로 계산): 맵기 조절·대체 재료·보관·남은 재료 활용. 2026-10-19 상세 본문 보강."""
+    n, L = r['n'], []
+    if '매움' in r['t']:
+        L.append(f'{n}은(는) 매콤한 메뉴라 아이와 먹을 때는 고춧가루·고추장을 절반으로 줄이고 설탕을 조금 더 넣으면 순해져요.')
+    elif '아이' in r['t'] or '안 매움' in r['t']:
+        L.append(f'{n}은(는) 맵지 않아 아이 반찬이나 도시락 메뉴로도 좋아요.')
+    sub = [(i, FR_SUB[i]) for i in r['need'] if i in FR_SUB][:2]
+    for i, x in sub:
+        L.append(f'{n}에 넣을 {i}이(가) 없으면 {x}(으)로 바꿔도 만들 수 있어요.')
+    if re.search(r'국|찌개|탕|전골', n):
+        L.append(f'남은 {n}은(는) 한 김 식혀 냉장 보관하고 이틀 안에 다시 끓여 드세요.')
+    elif re.search(r'조림|볶음|무침|나물|장조림', n):
+        L.append(f'{n}은(는) 밀폐 용기에 담아 냉장 보관하면 2~3일 반찬으로 먹을 수 있어요.')
+    left = [i for i in r['opt'] if i not in r['need']][:3]
+    other = {i: next((x for x in RS if x is not r and i in x['need']), None) for i in left}
+    for i, x in other.items():
+        if x:
+            L.append(f'{n} 만들고 {i}이(가) 남으면 「{x["n"]}」에 쓰면 좋아요.')
+            break
+    L.append(f'모두 {len(r["s"])}단계라 처음 해 봐도 {r["m"]}분 안팎이면 완성돼요.' if r['lv'] == '쉬움' else f'{len(r["s"])}단계로 조금 손이 가지만, 순서대로 하면 {r["m"]}분 정도 걸려요.')
+    return L
+
+
 def fr_slug(n):
     return re.sub(r'[^0-9A-Za-z가-힣]+', '-', n).strip('-')
 
@@ -2192,13 +2296,14 @@ def fridge_page():
                 + f'<p>{E(tip)}</p><h2>🧺 재료</h2><div class="fr-ri"><div><h3>꼭 있어야 해요</h3><ul>{ingl(r["need"])}</ul></div>'
                 + (f'<div><h3>있으면 더 좋아요</h3><ul>{ingl(r["opt"])}</ul></div>' if r['opt'] else '') + '</div>'
                 + f'<h2>👩‍🍳 만드는 법</h2><ol class="fr-rs">{steps}</ol>'
+                + '<h2>💡 루리 팁</h2><ul class="chk">' + ''.join(f'<li>{E(t)}</li>' for t in fr_tips(r, RS)) + '</ul>'
                 + f'<p class="fr-look">📷 다른 사람들 과정 사진 보기: <a href="https://search.naver.com/search.naver?ssc=tab.blog.all&query={E(r["n"])}+만드는+법" target="_blank" rel="noopener nofollow">네이버 블로그</a> · <a href="https://www.youtube.com/results?search_query={E(r["n"])}+만드는+법" target="_blank" rel="noopener nofollow">유튜브</a></p>'
                 + f'<a class="lab-cta" href="/fridge/"><b>🍳 내 냉장고 재료로 다른 메뉴 찾기</b><span>재료를 고르면 지금 만들 수 있는 메뉴를 골라 드려요 · 레시피 {NR}개 →</span></a>'
                 + (f'<h2>🔗 재료가 비슷한 메뉴</h2><ul class="fr-rel">' + ''.join(f'<li><a href="/fridge/r/{fr_slug(x["n"])}/">{x["e"]} {E(x["n"])} <small>{x["m"]}분</small></a></li>' for x in rel) + '</ul>' if rel else '')
                 + (f'<details class="fr-cr"><summary>사진 출처</summary><p>{"<br>".join(cr)}</p></details>' if cr else '')
                 + '<p class="note">루리의 줍줍이 직접 정리한 1~2인분 기준 레시피예요. 사진은 상업적 이용이 허락된 자유 이용 사진(출처 표기)만 쓰고, 맞는 사진이 없는 단계는 비워 뒀어요. 알레르기가 있으면 재료를 꼭 확인하세요.</p></article>'
                 + '<link rel="stylesheet" href="/assets/fridge/fridge.css?v=7">')
-        ld = {'@context': 'https://schema.org', '@type': 'Recipe', 'name': r['n'], 'description': tip, 'totalTime': f'PT{r["m"]}M', 'recipeYield': '1~2인분', 'recipeCategory': '집밥',
+        ld = {'@context': 'https://schema.org', '@type': 'Recipe', 'name': r['n'], 'description': tip, 'datePublished': '2026-10-19', 'totalTime': f'PT{r["m"]}M', 'recipeYield': '1~2인분', 'recipeCategory': '집밥',
               'recipeCuisine': '한식', 'keywords': ', '.join([r['n'] + ' 만드는 법', '냉장고 파먹기'] + r['t']), 'author': {'@type': 'Organization', 'name': NAME},
               'recipeIngredient': r['need'] + r['opt'], 'recipeInstructions': [{'@type': 'HowToStep', 'text': t} for t in r['s']]}
         if mp:
