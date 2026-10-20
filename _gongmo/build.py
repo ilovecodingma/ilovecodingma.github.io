@@ -70,7 +70,7 @@ THEMES = [  # (키, 이름, 아이콘, 테마색, 홈, [하위 메뉴], [이 테
     ('money', '머니', '📊', '#047857', '/analyst/', [('/analyst/', '애널리스트 종합'), ('/money/experts/', '전문가 코멘트'), ('/money/guide/', '생활 돈 가이드'), ('/money/policy/', '투자 정책'), ('/money/age/', '나이별 원칙'), ('/money/tools/salary/', '계산기'), ('/analyst/coin/btc/', '코인')], ['/analyst/', '/money/']),
     ('contest', '공모전', '🏆', '#6d28d9', '/contest/', [('/contest/', '추천 상담'), ('/cat/literature/', '분야별'), ('/prep/', '준비실'), ('/lab/', '수상 연구소'), ('/community/', '원정대'), ('/guide/', '가이드'), ('/widget/', '위젯')],
      ['/contest/', '/c/', '/cat/', '/prep/', '/lab/', '/community/', '/guide/', '/v/', '/me/', '/widget/']),
-    ('recipe', '레시피', '🍳', '#c2410c', '/fridge/', [('/fridge/', '냉장고 파먹기'), ('/fridge/solo/', '자취 요리'), ('/fridge/weather/', '날씨별'), ('/fridge/c/guk/', '국·찌개'), ('/fridge/c/bap/', '밥'), ('/fridge/c/myeon/', '면'), ('/fridge/c/bokkeum/', '볶음'), ('/fridge/c/jorim/', '조림·찜'), ('/fridge/c/banchan/', '반찬'), ('/fridge/c/jeon/', '전')], ['/fridge/']),   # 2026-10-20 사용자: 레시피 유입이 많아 별도 카테고리로
+    ('recipe', '레시피', '🍳', '#c2410c', '/fridge/', [('/fridge/', '냉장고 파먹기'), ('/fridge/solo/', '자취 요리'), ('/fridge/weather/', '날씨별'), ('/fridge/plan/', '식단·장보기'), ('/fridge/c/guk/', '국·찌개'), ('/fridge/c/bap/', '밥'), ('/fridge/c/myeon/', '면'), ('/fridge/c/bokkeum/', '볶음'), ('/fridge/c/jorim/', '조림·찜'), ('/fridge/c/banchan/', '반찬'), ('/fridge/c/jeon/', '전')], ['/fridge/']),   # 2026-10-20 사용자: 레시피 유입이 많아 별도 카테고리로
     ('life', '생활', '🧺', '#0e7490', '/apply/', [('/apply/', '지원금·청약'), ('/apply/recommend/', '청약 추천'), ('/apply/r/', '지역별'), ('/event/', '경품'), ('/qa/', '고민 해결'), ('/plaza/', '광장')], ['/apply/', '/a/', '/event/', '/qa/', '/ssul/', '/plaza/']),
     ('game', '게임', '🎮', '#4f46e5', '/game/', [('/game/', '게임 허브'), ('/game/free/', '무료 게임 기록'), ('/game/release/', '출시 일정'), ('/game/steam-sale/', '세일 달력'), ('/game/refund/', '환불 규정'), ('/game/#timing', '살 타이밍'), ('/game/#contest', '게임 공모전')], ['/game/']),   # 2026-10-20 홍보 세션 기획서: 게임·취미·개발 커뮤니티 콘텐츠
     ('ai', '개발 지식', '🧑‍💻', '#0f172a', '/ailog/', [('/ailog/', '개발 지식'), ('/dev/faq/', '개발 FAQ'), ('/en/guide/', 'English guides'), ('/class/', '루리의 AI교실'), ('/ailog/#log', 'AI 제작 로그')], ['/ailog/', '/dev/', '/en/', '/class/'])]   # 2026-10-19 사용자: AI 로그 → 개발 지식으로 개편
@@ -103,7 +103,7 @@ PAGE_INTRO = {k: f'<section class="pg-intro"><h2>{h}</h2>{v}</section>' for k, (
  '/guide/': ('응모 가이드 읽는 법', '<p>공모전을 처음 내 보는 분부터 여러 번 떨어져 본 분까지, 루리가 실제 공고와 수상작을 보며 정리한 글이에요. 제안서 구성, 수기·문학 분량 맞추기, 영상 저작권, 상금 세금(기타소득 22%)과 수상 사칭 사기 구별법처럼 응모 전후에 자주 묻는 것들을 다뤄요. 글마다 관련 공모전 목록을 붙여 두었으니 읽고 바로 골라 보세요.</p>'),
  '/qa/': ('고민 해결은 이렇게 만들어요', '<p>사이트 챗봇과 문의로 실제 받은 질문 가운데 여러 사람이 비슷하게 묻는 것을 골라 답을 정리해요. 청년 지원금 자격, 공모전 준비 순서, 청약 가점처럼 공식 기준이 있는 질문은 정부24·청약홈 같은 공식 안내를 확인한 뒤 써요. 개인 사정에 따라 답이 달라지는 부분은 「어디에 물어보면 되는지」까지 적어 두어요.</p>'),
  '/mag/': ('루리의 이슈 리딩이란', '<p>하루에 한 장, 정치 이슈의 기사 확인 신호와 커뮤니티 화제, 마감 임박 공모전, 새 지원금을 한 번에 훑어보는 데일리 매거진이에요. 기사 제목을 옮기는 대신 「몇 곳이 보도했고 무엇이 아직 확인되지 않았는지」를 짧게 정리하고, 지난 호도 날짜별로 다시 볼 수 있어요.</p>'),
- '/kw/': ('인기 키워드는 이렇게 골라요', '<p>구글 트렌드와 실시간 검색어 자료에서 지금 검색이 몰리는 말을 모으고, 같은 시간 언론 보도와 맞춰 「왜 떴는지」를 붙여요. 사건·사고, 연예인 사생활, 혐오성 키워드는 일부러 빼요. 키워드가 이틀 넘게 이어지면 추세선으로 얼마나 오래 화제인지도 보여 드려요.</p>'),
+ '/kw/': ('인기 키워드는 이렇게 골라요', '<p>구글 급상승과 시그널에서 발견한 주제를 관련 보도와 함께 살핍니다. 블로그 주제를 고를 때는 독자의 질문부터 정하세요. 예를 들어 ‘김장’은 시기·재료·보관 질문으로 나눌 수 있지만 같은 답을 반복하는 글은 합칩니다. 계절성은 여러 해의 같은 기간과 비교해야 하며, 오늘의 순위만으로 다음 달 수요를 판단할 수 없습니다. 네이버 공식 데이터랩 추이는 실제 조회 데이터가 있는 경우에만 별도로 표시합니다.</p>'),
  '/hot/': ('핫이슈 고르는 기준', '<p>검색 급상승과 언론 보도가 함께 몰린 이슈 가운데 <b>내 돈·내 생활에 바로 영향을 주는 것</b>만 골라요. 청약·지원금·세금·금리·의료·임금처럼 「나한테 달라지는 점」이 있는 이슈에는 관련 계산기와 신청처를 붙이고, 정치 공방이나 사건·사고는 넣지 않아요. 48시간이 지나면 지난 이슈로 내려가요.</p>'),
  '/satire/': ('루리 풍자에 대해', '<p>그날 화제가 된 증시·뉴스를 루리가 한 컷 만평으로 그려요. 특정 개인을 조롱하지 않고, 상황의 아이러니를 짚는 걸 원칙으로 해요. 이미지는 직접 만든 AI 그림이고, 지난 풍자도 날짜별로 모아 두었어요.</p>'),
  '/all/': ('전체 메뉴 안내', '<p>루리의 줍줍은 이슈·머니·공모전·생활·AI 로그 다섯 테마로 나뉘어 있어요. 테마마다 매시간 자동으로 갱신되는 정리 페이지와, 직접 쓴 가이드·계산기가 섞여 있어요. 찾는 메뉴가 없으면 화면 아래 루리 챗봇에게 물어보세요.</p>'),
@@ -127,6 +127,11 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False, noinde
         NOINDEX.add(path)
     COMM_TAGS = COMM_TAGS_TPL if COMM_API else ''
     t = title if full_title else f'{title} | {NAME}'
+    # 2026-10-20 정보성 글 PDF: 미리 만든 PDF 다운로드 + 인쇄(PDF로 저장) 버튼
+    if path.count('/') == 3 and not noindex and path.startswith(('/guide/', '/dev/', '/review/', '/ssul/', '/mag/', '/fridge/r/', '/lab/', '/hot/', '/money/')):
+        import make_pdf as _MP
+        _pb = '<div class="pdf-bar">' + (f'<a class="main" data-pdf href="/pdf/{_MP.pdf_name(path)}" download>📄 PDF 다운로드</a>' if _MP.is_pdf_path(path) else '') + '<button type="button" data-print>🖨️ 인쇄 · PDF로 저장</button></div>'
+        body = body.replace('</h1>', '</h1>' + _pb, 1) if '</h1>' in body else body
     lds = []
     if crumbs:
         lds.append({'@context': 'https://schema.org', '@type': 'BreadcrumbList', 'itemListElement': [
@@ -147,7 +152,7 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False, noinde
 <meta name="theme-color" content="{TH[3] if TH else '#5b21b6'}"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="오늘 뭐 먹지">
 <link rel="icon" href="/favicon.ico?v=6" sizes="any"><link rel="icon" type="image/png" sizes="48x48" href="/assets/icons/icon-48.png?v=6"><link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/icon-96.png?v=6"><link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/icon-192.png?v=6"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=6"><link rel="manifest" href="/site.webmanifest"><link rel="alternate" type="application/rss+xml" title="루리의 줍줍" href="/rss.xml">
 <link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="/assets/gm.css?v=20"><link rel="stylesheet" href="/assets/ds.css?v=11">{('<link rel="stylesheet" href="/assets/chat/ruri-chat.css?v=8">') if not (TH and TH[0] == 'ai') else ''}{COMM_TAGS}{('<script type="module" src="/assets/chat/ruri-chat.js?v=14"></script>') if not (TH and TH[0] == 'ai') else ''}<link rel="stylesheet" href="/assets/app/shell.css?v=1"><script defer src="/assets/app/app.js?v=4"></script>
+<link rel="stylesheet" href="/assets/gm.css?v=20"><link rel="stylesheet" href="/assets/ds.css?v=12"><link rel="stylesheet" href="/assets/print.css?v=1"><script defer src="/assets/print.js?v=1"></script>{('<link rel="stylesheet" href="/assets/chat/ruri-chat.css?v=8">') if not (TH and TH[0] == 'ai') else ''}{COMM_TAGS}{('<script type="module" src="/assets/chat/ruri-chat.js?v=14"></script>') if not (TH and TH[0] == 'ai') else ''}<link rel="stylesheet" href="/assets/app/shell.css?v=1"><script defer src="/assets/app/app.js?v=4"></script>
 {ldh}
 {GTAG}
 </head><body data-th="{TH[0] if TH else 'hub'}"{(' data-api="' + COMM_API + '"') if COMM_API else ''}>
@@ -1452,6 +1457,12 @@ def build():
     print('자료 색인', finder.build_index(urls, NOINDEX, {c['id'] for c in live}), '질의', len(finder.build_queries(live, notice_points)))
     print('auto_thin noindex', auto_thin(urls))
     print('얇은 페이지 합침', collapse_thin(urls))
+    try:
+        import make_pdf as _MP
+        _pp = [u for u in urls if _MP.is_pdf_path(u) and u not in NOINDEX]
+        print('PDF 새로 만듦 %d / 전체 %d' % _MP.make(ROOT, _pp))
+    except Exception as e:
+        print('PDF 생성 실패(사이트는 계속)', repr(e)[:100])
     global NEW_URLS
     sm = os.path.join(ROOT, 'sitemap.xml')
     SENT = os.path.join(HERE, 'indexnow_sent.json')   # 2026-10-19: 로컬 빌드가 먼저 돌아도 새 주소를 놓치지 않게, 실제로 보낸 주소를 기록해서 비교
@@ -2671,7 +2682,7 @@ def kw_play(db, today, L, ENH=None):
     """/kw/ 맨 위 놀이판 + 목록(뱃지·흐름 그래프·관련 줍줍). kw_fun.py 에 로직."""
     import kw_fun as KF
     hist = (_rd('kw/hist.json') or {}).get(today, {})
-    SRCB = lambda r: ('<span class="kw-b both">구글+네이버 동시</span>' if len(r.get('src') or []) > 1 else '<span class="kw-b n">실시간 검색어</span>' if (r.get('src') or ['google']) == ['naver'] else '<span class="kw-b g">구글 트렌드</span>')
+    SRCB = lambda r: ('<span class="kw-b both">구글·시그널 동시</span>' if len(r.get('src') or []) > 1 else '<span class="kw-b n">시그널 순위</span>' if (r.get('src') or ['google']) == ['naver'] else '<span class="kw-b g">구글 트렌드</span>')
     cur, mx = KF.collect(db, today, L)
     contests = _rd('data.json').get('items', []) if _rd('data.json') else []
     qbox, qdata = KF.quiz(cur, today)
@@ -2716,13 +2727,13 @@ def kw_pages():
         return []
     css = '<link rel="stylesheet" href="/assets/mag/mag.css?v=10">'
     G = {'ok': '✅', 'warn': '🟡', 'bad': '🔴'}
-    note = '<p class="note">구글 트렌드 한국 급상승 검색어를 바탕으로 루리가 관련 보도와 사이트 정보를 모은 페이지예요. 연예인 사생활·사건사고·비방성 키워드는 다루지 않아요.</p>'
+    note = '<p class="note">출처: <a href="https://trends.google.com/trending?geo=KR">Google Trends 한국 급상승</a>과 <a href="https://www.signal.bz/news/guide">시그널</a>. 시그널은 네이버와 별개인 서비스이며 네이버 공식 검색 순위가 아닙니다. 숫자 뒤 + 표시는 구글이 제공하는 검색량 구간, 실시간 N위는 시그널 순위입니다. 이를 합친 화면 점수는 자체 정렬용이며 월간 검색량·방문자 수가 아닙니다. 자동완성은 주제 후보일 뿐 수요나 검색 유입을 보장하지 않습니다. 출처 설명 확인: 2026-10-20.</p>'
     urls = ['/kw/']
     kd = os.path.join(ROOT, 'kw')  # 제외된 키워드 페이지는 지움
     for f in os.listdir(kd):
         if os.path.isdir(os.path.join(kd, f)) and f != 'archive' and not re.match(r'\d{4}-\d{2}-\d{2}$', f) and f not in db:
             shutil.rmtree(os.path.join(kd, f), ignore_errors=True)
-    SRCB = lambda r: ('<span class="kw-b both">구글+네이버 동시</span>' if len(r.get('src') or []) > 1 else '<span class="kw-b n">실시간 검색어</span>' if (r.get('src') or ['google']) == ['naver'] else '<span class="kw-b g">구글 트렌드</span>')
+    SRCB = lambda r: ('<span class="kw-b both">구글·시그널 동시</span>' if len(r.get('src') or []) > 1 else '<span class="kw-b n">시그널 순위</span>' if (r.get('src') or ['google']) == ['naver'] else '<span class="kw-b g">구글 트렌드</span>')
     import kw_fun as KF, impact as IPK, market as MKT
     ENH = {}   # 2026-10-20 읽을거리 상위 키워드(섹션 3개 이상인 것만, 15개까지)
     try:
@@ -2741,7 +2752,7 @@ def kw_pages():
         print('키워드 읽을거리 실패', repr(e)[:150])
     for sl, r in db.items():
         k = r['k']
-        lines = [f'「{E2(k)}」{josa_ga(k)} {kdate(r["days"][-1])} ' + ('구글 급상승과 실시간 검색어에 동시에' if len(r.get('src') or []) > 1 else '실시간 검색어에' if (r.get('src') or ['google']) == ['naver'] else '구글 검색 급상승 키워드에') + f' 올랐어요({E2(r.get("traffic") or "-")}).']
+        lines = [f'「{E2(k)}」{josa_ga(k)} {kdate(r["days"][-1])} ' + ('구글 급상승과 시그널 순위에 동시에' if len(r.get('src') or []) > 1 else '시그널 순위에' if (r.get('src') or ['google']) == ['naver'] else '구글 검색 급상승 키워드에') + f' 올랐어요({E2(r.get("traffic") or "-")}).']
         if r.get('srcs'):
             lines.append(f'관련 보도는 {len(r["srcs"])}곳({E2(", ".join(r["srcs"][:5]))}{" 등" if len(r["srcs"]) > 5 else ""})에서 나왔어요.')
         if r.get('issue'):
@@ -2772,7 +2783,7 @@ def kw_pages():
         body = (f'<p class="bc"><a href="/">홈</a> › <a href="/kw/">인기 키워드</a> › {E2(k)}</p><h1>🔎 {E2(k)} — 왜 검색이 늘었나</h1><p>{SRCB(r)}</p>'
                 + say('o_det_think', ' '.join(lines)) + ((ENH[sl][0] + '<link rel="stylesheet" href="/assets/kw/kw.css?v=2">') if sl in ENH else '') + trend_html + post
                 + (f'<section class="mg-s"><h2>📰 왜 떴나: 관련 보도</h2><ul class="kw-l">{why}</ul></section>' if why else '')
-                + (f'<section class="mg-s"><h2>🕵️ 루리가 채점한 관련 기사</h2><ul class="kw-l">{ours}</ul></section>' if ours else '')
+                + (f'<section class="mg-s"><h2>🕵️ 관련 기사 확인 신호</h2><ul class="kw-l">{ours}</ul></section>' if ours else '')
                 + (f'<section class="mg-s"><h2>📌 루리의 줍줍에서 더 보기</h2><div class="nw-pr">{"".join(links)}</div></section>' if links else '')
                 + f'<p class="mg-nav"><a href="/kw/">오늘의 인기 키워드 전체 →</a> · <a href="/mag/">매거진 →</a></p>' + note + css)
         page(f'/kw/{sl}/', f'{k} 검색 급상승 이유 — 관련 보도·정리', f'{k}{josa_ga(k)} 검색 급상승 키워드에 오른 이유: ' + ' / '.join(n['t'] for n in r.get('news', [])[:2])[:140], body,
@@ -2789,7 +2800,7 @@ def kw_pages():
             bd = play['list'] + arch + note + css
         if i == 0:
             page('/kw/', '오늘의 인기 키워드 — 검색 급상승 이유 정리', f'{kdate(d)} 구글 검색 급상승 키워드와 왜 떴는지: ' + ', '.join(x['k'] for x in L[:6]),
-                 f'<p class="bc"><a href="/">홈</a> › 인기 키워드</p><h1>🔎 오늘의 인기 키워드</h1><script defer src="/assets/view/one.js?v=1"></script>' + say('o_det_wave', '지금 검색이 확 늘어난 키워드를 모아, 왜 떴는지 관련 보도와 함께 정리했어요.') + play['top'] + bd,
+                 f'<p class="bc"><a href="/">홈</a> › 인기 키워드</p><h1>🔎 오늘의 인기 키워드</h1><script defer src="/assets/view/one.js?v=1"></script>' + say('o_det_wave', '구글 급상승 목록과 시그널 순위에 등장한 말을 모았어요. 관련 보도는 배경을 살피는 자료이며 검색 증가 원인을 입증하지는 않아요.') + play['top'] + bd,
                  [('루리의 줍줍', '/'), ('인기 키워드', '/kw/')], og=og_k)
         page(f'/kw/{d}/', f'{kdate(d)} 인기 키워드 — 검색 급상승 정리', f'{kdate(d)} 구글 검색 급상승 키워드: ' + ', '.join(x['k'] for x in L[:8]),
              f'<p class="bc"><a href="/">홈</a> › <a href="/kw/">인기 키워드</a> › {kdate(d)}</p><h1>🔎 {kdate(d)} 인기 키워드</h1>' + bd, [('루리의 줍줍', '/'), ('인기 키워드', '/kw/'), (kdate(d), f'/kw/{d}/')], noindex=True)
@@ -3746,23 +3757,23 @@ def fr_tips(r, RS):
     """레시피마다 다른 팁(이름·재료·태그로 계산): 맵기 조절·대체 재료·보관·남은 재료 활용. 2026-10-19 상세 본문 보강."""
     n, L = r['n'], []
     if '매움' in r['t']:
-        L.append(f'{n}은(는) 매콤한 메뉴라 아이와 먹을 때는 고춧가루·고추장을 절반으로 줄이고 설탕을 조금 더 넣으면 순해져요.')
+        L.append(f'{n}의 매운 양념은 적게 넣고 조절하세요. 설탕을 더한다고 매운 성분이 제거되지는 않으며, 김치·고추장 자체의 매운맛도 고려해야 해요.')
     elif '아이' in r['t'] or '안 매움' in r['t']:
-        L.append(f'{n}은(는) 맵지 않아 아이 반찬이나 도시락 메뉴로도 좋아요.')
+        L.append(f'{n}을 아이와 먹을 때는 양념의 염도와 재료의 알레르기를 따로 확인하세요. 안 매움 태그가 모든 연령에 적합하다는 뜻은 아니에요.')
     sub = [(i, FR_SUB[i]) for i in r['need'] if i in FR_SUB][:2]
     for i, x in sub:
-        L.append(f'{n}에 넣을 {i}이(가) 없으면 {x}(으)로 바꿔도 만들 수 있어요.')
+        L.append(f'{i} 대신 {x}을(를) 쓰는 것은 대체 후보예요. 수분·염도·익는 시간이 달라 같은 분량과 조리시간을 그대로 적용하지 말고, 아래 만드는 법의 개별 안내를 우선하세요.')
     if re.search(r'국|찌개|탕|전골', n):
-        L.append(f'남은 {n}은(는) 한 김 식혀 냉장 보관하고 이틀 안에 다시 끓여 드세요.')
+        L.append(f'남은 {n}은(는) 큰 냄비째 실온에서 오래 식히지 말고 얕은 용기에 나누어 빠르게 냉장하세요. 다시 끓이는 것만으로 잘못 보관한 음식이 안전해지는 것은 아니에요.')
     elif re.search(r'조림|볶음|무침|나물|장조림', n):
-        L.append(f'{n}은(는) 밀폐 용기에 담아 냉장 보관하면 2~3일 반찬으로 먹을 수 있어요.')
+        L.append(f'{n}의 보관 가능 기간은 재료와 냉각·보관 상태에 따라 달라요. 메뉴명만으로 며칠간 안전하다고 정할 수 없으니 바로 먹을 분량만 덜고 남은 음식은 빠르게 냉장하세요.')
     left = [i for i in r['opt'] if i not in r['need']][:3]
     other = {i: next((x for x in RS if x is not r and i in x['need']), None) for i in left}
     for i, x in other.items():
         if x:
             L.append(f'{n} 만들고 {i}이(가) 남으면 「{x["n"]}」에 쓰면 좋아요.')
             break
-    L.append(f'모두 {len(r["s"])}단계라 처음 해 봐도 {r["m"]}분 안팎이면 완성돼요.' if r['lv'] == '쉬움' else f'{len(r["s"])}단계로 조금 손이 가지만, 순서대로 하면 {r["m"]}분 정도 걸려요.')
+    L.append(f'표시된 {r["m"]}분은 예상 시간이에요. 손질 숙련도·재료 크기·화력에 따라 달라지므로 시간만 보지 말고 재료가 충분히 익었는지 확인하세요.')
     return L
 
 
@@ -3910,8 +3921,8 @@ def fridge_page():
                 + f'<a class="lab-cta" href="/fridge/"><b>🍳 내 냉장고 재료로 다른 메뉴 찾기</b><span>재료를 고르면 지금 만들 수 있는 메뉴를 골라 드려요 · 레시피 {NR}개 →</span></a>' + join_cta('recipe')
                 + relsec
                 + (f'<details class="fr-cr"><summary>사진 출처</summary><p>{"<br>".join(cr)}</p></details>' if cr else '')
-                + '<p class="note">루리의 줍줍이 직접 정리한 2인분 기준 레시피예요. 사진은 자유 이용 사진이거나 출처를 밝힌 참고 사진이고, 맞는 사진이 없는 메뉴는 비워 뒀어요. 알레르기가 있으면 재료를 꼭 확인하세요.</p></article>'
-                + '<link rel="stylesheet" href="/assets/fridge/fridge.css?v=13"><link rel="stylesheet" href="/assets/fridge/recipe.css?v=5"><script defer src="/assets/fridge/recipe.js?v=3"></script>')
+                + '<p class="note">직접 조리 시험을 완료한 레시피로 소개하지 않습니다. 분량이 적힌 메뉴는 해당 분량을 우선하고, 분량이 없는 메뉴는 재현성 보완이 필요한 조리 아이디어입니다. 시간은 예상값이며 사진은 직접 조리 결과를 보증하지 않습니다. 보관 시에는 <a href="https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/leftovers-and-food-safety">USDA의 남은 음식 안전 안내</a>처럼 얕은 용기에 나누어 신속히 냉장하세요. 일반적인 부패하기 쉬운 음식은 실온 2시간 이내, 32℃를 넘는 더운 환경은 1시간 이내가 기준이며 이미 오래 방치한 음식은 재가열로 해결하지 않습니다. 이는 모든 메뉴의 보관 일수를 보증하는 안내가 아닙니다. 안전 안내 확인: 2026-10-20.</p></article>'
+                + '<link rel="stylesheet" href="/assets/fridge/fridge.css?v=13"><link rel="stylesheet" href="/assets/fridge/recipe.css?v=6"><script defer src="/assets/fridge/recipe.js?v=4"></script>')
         def how_step(k, t):
             nm = re.split(r'[,.]', t)[0].strip()[:45] or f'{k}단계'
             d_ = {'@type': 'HowToStep', 'name': nm, 'text': t, 'url': f'{SITE}{u}#step{k}'}
@@ -3970,7 +3981,12 @@ def fridge_page():
          + f'<details class="fr-all"><summary>📚 자취 요리 전체 {len(SOLO)}가지 보기</summary>' + li(SOLO).replace('<ul class="fr-rel">', '<ul class="fr-rel" data-fold="20" data-step="40">', 1) + '</details>' + REC_TAGS + FOLD_TAGS
          + '<a class="lab-cta" href="/fridge/"><b>🍳 내 냉장고 재료로 찾기</b><span>「설거지 적게」 조건도 고를 수 있어요 →</span></a><link rel="stylesheet" href="/assets/fridge/fridge.css?v=12">',
          [('루리의 줍줍', '/'), ('냉장고 파먹기', '/fridge/'), ('자취 요리', '/fridge/solo/')])
-    urls += ['/fridge/weather/', '/fridge/solo/']
+    page('/fridge/plan/', '주간 식단표·장보기 목록 — 메뉴 담으면 재료 한 번에 정리', '이번 주 먹을 메뉴를 담으면 필요한 재료를 한데 모아 장보기 목록으로 만들어 드려요. 체크·복사·인쇄까지.',
+         '<p class="bc"><a href="/">홈</a> › <a href="/fridge/">레시피</a> › 식단·장보기</p><h1>📅 주간 식단표 · 장보기</h1>'
+         '<p class="lead" style="display:block">먹고 싶은 메뉴를 담으면, 필요한 재료를 한데 모아 몇 가지 메뉴에 쓰이는지 보여 드려요. 이 브라우저에만 저장돼요.</p><div id="plan"><noscript>자바스크립트가 필요해요.</noscript></div>'
+         '<link rel="stylesheet" href="/assets/fridge/plan.css?v=1"><script defer src="/assets/fridge/plan.js?v=1"></script>',
+         [('루리의 줍줍', '/'), ('레시피', '/fridge/'), ('식단·장보기', '/fridge/plan/')], noindex=True)
+    urls += ['/fridge/weather/', '/fridge/solo/', '/fridge/plan/']
     import collections as _co
     shutil.rmtree(os.path.join(ROOT, 'fridge', 'c'), ignore_errors=True)
     CATN = {}
