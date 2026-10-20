@@ -150,5 +150,17 @@
   [].forEach.call(A.querySelectorAll('.rp-saybtn'), function (b) { if (!TTS) { b.remove(); return; } b.onclick = function () { var li = b.closest('li'); var i = steps.indexOf(li); if (i < 0) { openCook(-1); return; } stopSpeak(); speak((i + 1) + '단계. ' + stepText(i)); ga('rp_say', { k: i + 1 }); }; });
   if (!TTS) [].forEach.call(A.querySelectorAll('.rp-needtts'), function (e) { e.remove(); });
   if (/[?&]cook=1/.test(location.search)) setTimeout(function () { openCook(-1); }, 400);
+  /* ── 찜 · 식단에 담기 · 최근 본 ── */
+  var fav = LS('jupjup_rec_fav', {}), plan = LS('jupjup_plan', []), rec = LS('jupjup_rp_recent', []);
+  rec = [TITLE].concat(rec.filter(function (x) { return x !== TITLE; })).slice(0, 12); LSset('jupjup_rp_recent', rec);
+  var bar = A.querySelector('.rp-acts');
+  if (bar) {
+    var fb = h('button', 'rp-mini'), pb = h('button', 'rp-mini');
+    fb.type = pb.type = 'button';
+    var pf = function () { fb.textContent = fav[TITLE] ? '⭐ 찜했어요' : '☆ 찜하기'; fb.classList.toggle('on', !!fav[TITLE]); pb.textContent = plan.indexOf(TITLE) >= 0 ? '✅ 식단에 담김' : '📅 식단에 담기'; pb.classList.toggle('on', plan.indexOf(TITLE) >= 0); };
+    fb.onclick = function () { if (fav[TITLE]) delete fav[TITLE]; else fav[TITLE] = Date.now(); LSset('jupjup_rec_fav', fav); ga('rp_fav', { on: !!fav[TITLE] }); pf(); toast(fav[TITLE] ? '찜 목록에 담았어요' : '찜을 뺐어요'); };
+    pb.onclick = function () { var i = plan.indexOf(TITLE); if (i >= 0) plan.splice(i, 1); else plan.push(TITLE); LSset('jupjup_plan', plan); ga('rp_plan', { on: i < 0 }); pf(); toast(i < 0 ? '식단에 담았어요 · 식단표에서 장보기 목록을 볼 수 있어요' : '식단에서 뺐어요'); };
+    var row = h('div', 'rp-minis'); row.appendChild(fb); row.appendChild(pb); var lk = h('a', 'rp-mini', '🛒 식단·장보기 보기'); lk.href = '/fridge/plan/'; row.appendChild(lk); bar.appendChild(row); pf();
+  }
   setServ(cur === BASE ? BASE : cur);
 })();

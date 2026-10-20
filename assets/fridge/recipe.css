@@ -92,3 +92,7 @@ html.ck-lock{overflow:hidden}
 .rp2 .fr-rs>li p{margin:3px 0 0}
 .rp-tips li b{display:block;font-size:13px;color:var(--acc);letter-spacing:-.01em;margin-bottom:2px}
 .rp-tms:empty{display:none}.rp-tms{margin:12px 0 0 50px}
+
+.rp-minis{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.rp-mini{flex:1 1 auto;text-align:center;text-decoration:none;border:1px solid var(--bd);background:var(--card);color:var(--tx);border-radius:14px;padding:12px 14px;font:inherit;font-weight:800;font-size:14px;cursor:pointer}
+.rp-mini.on{background:#fff7ed;border-color:#fdba74;color:#9a3412}

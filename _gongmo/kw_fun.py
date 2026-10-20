@@ -7,7 +7,7 @@ ROOT = os.path.dirname(HERE)
 E = lambda s: html.escape(html.unescape(html.unescape(str(s))), quote=True)   # 수집 제목에 &quot; 가 이미 들어 있는 경우
 HAN = re.compile(r'[가-힣]')
 POL = re.compile(r'대통령|국회|의원|정당|여당|야당|장관|총리|청와대|탄핵|선거|공천|검찰|특검|북한|김정은|김여정|트럼프|시진핑|국민의힘|민주당|혁신당|정권|국정|외교|안보|전쟁|공습|미사일|대남|확성기|해킹|책임')
-STY = {'google': ('#2563eb', '구글'), 'naver': ('#16a34a', '실시간'), 'both': ('#9333ea', '동시')}
+STY = {'google': ('#2563eb', '구글'), 'naver': ('#16a34a', '시그널'), 'both': ('#9333ea', '동시')}
 BAD = re.compile(r'외도|불륜|이혼|열애|결별|폭로|사망|숨져|논란|사과|남편|아내|성폭|운세|궁합|토토|도박|먹튀')   # 놀이판 후보에서 뺄 가십·민감 키워드
 WRONG = ['「{k}」 관련 신제품이 오늘 출시돼서', '「{k}」 이름이 들어간 행사 일정이 갑자기 바뀌어서', '포털 첫 화면 추천에 「{k}」 코너가 생겨서', '어젯밤 방송에서 「{k}」 이야기가 나와서', '「{k}」 관련 정부 발표가 있어서']   # 규칙표로 만든 오답 보기
 
@@ -89,7 +89,7 @@ def cloud(cur):
     sp = ''.join(f'<a href="#k-{E(x["slug"])}" style="font-size:{14 + 22 * (x["score"] / mx) ** .6:.0f}px;color:{STY[x["src"]][0]}">{E(x["k"][:14])}</a>' for x in sorted(L, key=lambda x: x['k']))
     leg = ' '.join(f'<i style="color:{c}">●</i> {n}' for c, n in STY.values())
     return (f'<section class="kwc"><h2>☁️ 지금 키워드 구름</h2><p class="kwcl">{sp}</p>'
-            f'<p class="kwn">글자 크기 = 검색량 구간과 실시간 순위를 합친 상대 인기도 · 색 = 출처 {leg} · 누르면 아래 카드로 이동해요. 정치·가십 키워드는 구름에서 빼요.</p></section>')
+            f'<p class="kwn">글자 크기 = 구글 검색량 구간과 시그널 순위로 만든 자체 정렬 점수(검색량 자체가 아님) · 색 = 출처 {leg} · 누르면 아래 카드로 이동해요. 정치·가십 키워드는 구름에서 빼요.</p></section>')
 
 
 def top1(cur, hist):
@@ -193,7 +193,7 @@ def top5_card(cur, today, nowhm):
         im = Image.new('RGB', (1200, 630), (248, 250, 252)); dr = ImageDraw.Draw(im)
         dr.rectangle([0, 0, 1200, 12], fill=(14, 116, 144))
         dr.text((60, 40), '루리의 줍줍 · 오늘의 키워드 TOP5', font=W._font(38, True), fill=(14, 116, 144))
-        dr.text((60, 92), f'{today[5:7]}월 {today[8:]}일 {nowhm} 기준 · 구글 트렌드·실시간 검색어', font=W._font(26), fill=(100, 116, 139))
+        dr.text((60, 92), f'{today[5:7]}월 {today[8:]}일 {nowhm} 기준 · 구글 트렌드·시그널', font=W._font(26), fill=(100, 116, 139))
         y = 150
         for i, x in enumerate(L, 1):
             dr.rounded_rectangle([60, y, 1140, y + 78], 18, fill=(255, 255, 255), outline=(203, 213, 225), width=2)
@@ -311,7 +311,7 @@ def enhance(x, db, ac, tsmap, MK, cur, IPmod):
         parts += ('<section class="mg-s"><h2>🙋 사람들이 진짜 궁금해하는 것</h2><p class="kwn">구글 자동완성에 실제로 뜨는 말이에요. 답은 기사 제목에서 확인되는 것만 적어요.</p>'
                   f'<ul class="kwq">{lis}</ul></section>')
     # 3) 타임라인 (급상승 첫 시각 + 기사 시각)
-    tl = [(f'{x["first"]}', '구글 급상승·실시간 검색어에 처음 올랐어요', '')]
+    tl = [(f'{x["first"]}', '수집 기록에서 처음 확인했어요(실제 검색 시작 시각과 다를 수 있음)', '')]
     for t, u, o in A:
         ts = tsmap.get(u)
         if ts and int(ts) <= datetime.datetime.now().timestamp():   # 미래 시각(일부 피드의 날짜 오류)은 타임라인에서 뺌
