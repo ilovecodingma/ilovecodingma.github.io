@@ -152,7 +152,7 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False, noinde
 <meta name="theme-color" content="{TH[3] if TH else '#5b21b6'}"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="오늘 뭐 먹지">
 <link rel="icon" href="/favicon.ico?v=6" sizes="any"><link rel="icon" type="image/png" sizes="48x48" href="/assets/icons/icon-48.png?v=6"><link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/icon-96.png?v=6"><link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/icon-192.png?v=6"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=6"><link rel="manifest" href="/site.webmanifest"><link rel="alternate" type="application/rss+xml" title="루리의 줍줍" href="/rss.xml">
 <link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="/assets/gm.css?v=20"><link rel="stylesheet" href="/assets/ds.css?v=12"><link rel="stylesheet" href="/assets/print.css?v=1"><script defer src="/assets/print.js?v=1"></script>{('<link rel="stylesheet" href="/assets/chat/ruri-chat.css?v=8">') if not (TH and TH[0] == 'ai') else ''}{COMM_TAGS}{('<script type="module" src="/assets/chat/ruri-chat.js?v=14"></script>') if not (TH and TH[0] == 'ai') else ''}<link rel="stylesheet" href="/assets/app/shell.css?v=1"><script defer src="/assets/app/app.js?v=4"></script>
+<link rel="stylesheet" href="/assets/gm.css?v=20"><link rel="stylesheet" href="/assets/ds.css?v=13"><link rel="stylesheet" href="/assets/print.css?v=1"><script defer src="/assets/print.js?v=1"></script>{('<link rel="stylesheet" href="/assets/chat/ruri-chat.css?v=8">') if not (TH and TH[0] == 'ai') else ''}{COMM_TAGS}{('<script type="module" src="/assets/chat/ruri-chat.js?v=14"></script>') if not (TH and TH[0] == 'ai') else ''}<link rel="stylesheet" href="/assets/app/shell.css?v=1"><script defer src="/assets/app/app.js?v=4"></script>
 {ldh}
 {GTAG}
 </head><body data-th="{TH[0] if TH else 'hub'}"{(' data-api="' + COMM_API + '"') if COMM_API else ''}>
@@ -1349,50 +1349,94 @@ def build():
     hx_ev = ''.join(f'<li><a href="{E(e["link"])}" target="_blank" rel="noopener nofollow"><span class="dd{" u" if dday(e["end"])[0] <= 1 else ""}">{dday(e["end"])[1]}</span><div><b>{E(e["title"][:52])}</b><small>{E(e.get("org") or "")} · {E(e.get("effort") or EASY.get(e["type"], ""))}</small></div></a></li>' for e in _ev3[:6])
     _fc = [('#7c3aed', '#f4efff'), ('#0f766e', '#e8f7f4'), ('#ea580c', '#fff1e6'), ('#2563eb', '#e8f0ff'), ('#db2777', '#ffe9f2'), ('#ca8a04', '#fff8de')]
     hx_more = ''.join(f'<a class="hx-f" href="{u}" style="--fc:{_fc[j % 6][0]};--fbg:{_fc[j % 6][1]}"><i>{ic}</i><b>{E(n)}</b><span>{E(v)}</span></a>' for j, (k, u, ic, n, v, sc) in enumerate(more))
+    # ── 홈 v3 데이터: 오늘 마감 보드(공모전·경품·지원금) ──
+    _rows = []
+    for e_ in events:
+        n_, dd_ = dday(e_['end'])
+        if 0 <= n_ <= 1 and (e_.get('org') or '').strip():
+            _rows.append((n_, '🎁', '경품', e_['title'], e_['link'], 1, dd_))
+    for c_ in live:
+        n_, dd_ = dday(c_['end'])
+        if 0 <= n_ <= 3:
+            _rows.append((n_, '🏆', '공모전', c_['title'], f'/c/{c_["id"]}/', 0, dd_))
+    for a_ in aps:
+        if a_.get('end') and not a_.get('always'):
+            n_, dd_ = dday(a_['end'])
+            if 0 <= n_ <= 2:
+                _rows.append((n_, '📋', a_.get('kind') or '지원금', a_['title'], a_['url'], 1, dd_))
+    _by = {}
+    for r_ in sorted(_rows, key=lambda r: (r[0], r[2])):
+        if _by.get(r_[2], 0) >= 2: continue
+        _by[r_[2]] = _by.get(r_[2], 0) + 1
+    _board, _cnt = [], {}
+    for r_ in sorted(_rows, key=lambda r: (r[0], r[1])):
+        if _cnt.get(r_[1], 0) >= 2: continue
+        _cnt[r_[1]] = _cnt.get(r_[1], 0) + 1; _board.append(r_)
+    _board = sorted(_board, key=lambda r: r[0])[:6]
+    hx_board = ''.join(f'<li><a href="{E(u_)}"{" target=_blank rel=\"noopener nofollow\"" if ext_ else ""}><span class="bd-t">{ic_}<small>{E(lb_[:6])}</small></span><b>{E(t_[:46])}</b><span class="bd-d{" u" if n_ == 0 else ""}">{dd_}</span></a></li>' for n_, ic_, lb_, t_, u_, ext_, dd_ in _board)
+    _n_today = len([r for r in _rows if r[0] == 0])
+    hx_say = (f'오늘 마감이 <b>{_n_today}건</b>이에요! 제일 급한 건 <b>{E(_board[0][3][:22])}</b> ⏰' if _board else '오늘도 남들이 뿌린 기회를 모아 왔어요!')
+    hx_pol = sorted([a for a in aps if a.get('end') and not a.get('always') and 0 <= dday(a['end'])[0] <= 14], key=lambda a: a['end'])[:5]
+    hx_pol_h = ''.join(f'<li><a href="{E(a["url"])}" target="_blank" rel="noopener nofollow"><span class="dd{" u" if dday(a["end"])[0] <= 1 else ""}">{dday(a["end"])[1]}</span><div><b>{E(a["title"][:48])}</b><small>{E(a.get("kind") or "")} · {E(a.get("org") or "")}</small></div></a></li>' for a in hx_pol)
+    _has_policy = os.path.exists(os.path.join(ROOT, 'money', 'policy', 'index.html'))
+    _pol_link = '/money/policy/' if _has_policy else '/apply/'
+    _fc = [('#7c3aed', '#f4efff'), ('#0f766e', '#e8f7f4'), ('#ea580c', '#fff1e6'), ('#2563eb', '#e8f0ff'), ('#db2777', '#ffe9f2'), ('#ca8a04', '#fff8de')]
+    hx_more = ''.join(f'<a class="hx-f" href="{u}" style="--fc:{_fc[j % 6][0]};--fbg:{_fc[j % 6][1]}"><i>{ic}</i><b>{E(n)}</b><span>{E(v)}</span></a>' for j, (k, u, ic, n, v, sc) in enumerate(more))
+    AICLASS = '<a class="hx-f" href="/class/" style="--fc:#4338ca;--fbg:#eef0ff"><i>🎓</i><b>루리의 AI교실</b><span>AI를 처음 써 보는 사람을 위한 수업</span></a>' if os.path.exists(os.path.join(ROOT, 'class', 'index.html')) else ''
+    _nav = [('today', '⏰', '오늘 마감'), ('policy', '📋', '지원금·정책'), ('contest', '🏆', '공모전'), ('event', '🎁', '경품'), ('issue', '🕵️', '이슈'), ('money', '🧮', '머니'), ('learn', '🎓', '배우기'), ('recipe', '🍳', '레시피'), ('plaza', '🗣️', '광장')]
+    hx_nav = ''.join(f'<a href="#{k}">{ic} {n}</a>' for k, ic, n in _nav)
     home = f'''<section class="hx-hero"><div class="hx-w hx-hero-in">
-<div class="hx-copy"><p class="hx-eyebrow"><i></i>{_eyebrow}</p>
-<h1>오늘 뭐 먹지?<br><em>냉장고 속 재료</em>로<br>바로 찾아요</h1>
-<p class="hx-sub">집밥 레시피 <b>{NR_HOME}개</b>를 시간·날씨·냉장고 재료에 맞춰 골라 드려요. 오늘 마감 경품, 지원금, 공모전까지 한 곳에서.</p>
-<form class="hx-search" action="/fridge/" method="get" role="search"><input name="ing" placeholder="있는 재료를 입력해 보세요 (예: 김치, 달걀)" aria-label="있는 재료" autocomplete="off"><button>메뉴 찾기</button></form>
-<p class="hx-chips">{''.join(f'<a href="/fridge/?ing={x}">{x}</a>' for x in _ing)}</p>
-<div class="hx-stats"><div><b>{NR_HOME}</b><span>집밥 레시피</span></div><div><b>{len(events):,}</b><span>진행 중 경품</span></div><div><b>{len(live)}</b><span>진행 중 공모전</span></div></div></div>
-<div class="hx-stage"><div class="hx-bubble"><small>루리의 한마디</small>{hx_say}</div>
-<img class="hx-ruri" src="/assets/ruri/o_cook.webp" width="300" height="415" alt="루리" fetchpriority="high">
-<div class="hx-card"><div data-rec="home" data-n="5">{hx_pick}</div></div></div>
+<div class="hx-copy"><p class="hx-eyebrow"><i></i>매시간 업데이트 · 공식 출처 확인</p>
+<h1>남들이 뿌리는 기회,<br><em>루리가 모아</em><br>정리해 드려요</h1>
+<p class="hx-sub">공모전·경품 이벤트·지원금·청약·정책을 한곳에 모아, 마감이 급한 순서로 알려 드려요. 놓치지 말고 <b>일단 줍고</b> 가세요.</p>
+<div class="hx-cta"><a class="hx-b1" href="#today">⏰ 오늘 마감 보기</a><a class="hx-b2" href="/app/">🔔 마감 알림 받기</a></div>
+<p class="hx-free">🆓 매시간 모아 가공한 데이터를 <b>전부 무료</b>로 공개해요</p><div class="hx-stats"><div><b>{len(live)}</b><span>진행 중 공모전</span></div><div><b>{len(events):,}</b><span>경품·이벤트</span></div><div><b>{len(aps)}</b><span>지원금·청약</span></div></div></div>
+<div class="hx-stage" id="today"><div class="hx-bubble"><small>루리의 한마디</small>{hx_say}</div>
+<img class="hx-ruri" src="/assets/ruri/o_present.webp" width="300" height="415" alt="루리" fetchpriority="high">
+<div class="hx-card hx-board"><div class="bd-h"><b>⏰ 오늘 마감 한눈에</b><small>마감 임박순</small></div><ul>{hx_board or '<li class="empty">지금은 마감 임박 항목이 없어요.</li>'}</ul><a class="bd-more" href="/contest/week/">이번 주 마감 전체 보기 →</a></div></div>
 </div></section>
-<div class="hx-w"><nav class="hx-tiles" aria-label="바로가기">{hx_tiles}</nav>
+<nav class="hx-nav" aria-label="주제로 이동"><div class="hx-w">{hx_nav}</div></nav>
+<div class="hx-w">
 
-<section class="hx-sec"><div class="hx-hd"><div><p>많이 보는 레시피</p><h2>오늘 해 먹기 좋은 메뉴</h2></div><a href="/fridge/">전체 레시피 →</a></div>
-<ul class="hx-row">{hx_rc}</ul>
-<div class="hx-sub2"><a href="/fridge/solo/">🏠 자취 요리</a><a href="/fridge/weather/">🌤️ 날씨별 메뉴</a>{''.join(f'<a href="/fridge/c/{s2}/">{i2} {n2}</a>' for s2, k2, i2, n2, _ in FR_CATS)}</div>
-{cp_widget('자취 필수템', 'home') or cp_box('', '장 볼 때 같이 보면 좋아요:')}</section>
+<section class="hx-sec hx-t-policy" id="policy"><div class="hx-hd"><div><p>📋 지원금 · 청약 · 정책</p><h2>내가 받을 수 있는 혜택</h2></div><a href="{_pol_link}">정책 모음 →</a></div>
+<div class="hx-split"><ul class="hx-ev">{hx_pol_h or '<li class="empty">2주 안에 마감하는 공고가 없어요.</li>'}</ul>
+<div class="hx-feat hx-feat1"><a class="hx-f" href="/apply/" style="--fc:#0f766e;--fbg:#e8f7f4"><i>📋</i><b>지원금·청약 일정</b><span>신청 가능 {len(aps)}건 · 최근 3일 새 공고 {newap}건</span></a>
+<a class="hx-f" href="/apply/r/" style="--fc:#2563eb;--fbg:#e8f0ff"><i>📍</i><b>지역별 지원금</b><span>시·도별 청년 월세·신혼부부 공고</span></a></div></div>
+<div class="hx-links"><a href="/apply/youth-rent/">청년 월세 지원</a><a href="/apply/newlywed/">신혼부부 지원금</a><a href="/apply/recommend/">청약 가점 계산기</a></div></section>
 
-<section class="hx-sec"><div class="hx-hd"><div><p>놓치면 아까운</p><h2>오늘 마감 경품·용돈</h2></div><a href="/event/">전체 {len(events):,}건 →</a></div>
+<section class="hx-sec hx-t-contest" id="contest"><div class="hx-hd"><div><p>🏆 공모전</p><h2>이번에 도전해 볼 공모전</h2></div><a href="/contest/">공모전 찾기 →</a></div>
+<p class="hx-why">진행 중 {len(live)}건 · 7일 안 마감 {wk7}건 · {E(scope_c)}</p>
+<ul class="hx-cc">{"".join(cmp_card(c) for c in pick6[:3]) or '<li class="empty">지금 보여 드릴 공모전이 없어요.</li>'}</ul>
+<div class="hx-links"><a href="/contest/week/">이번 주 마감</a><a href="/contest/univ/">대학생 공모전</a><a href="/cat/literature/">분야별</a><a href="/prep/">📋 준비실</a><a href="/lab/">🔬 수상 연구소</a><a href="/guide/">📘 응모 가이드</a></div></section>
+
+<section class="hx-sec hx-t-event" id="event"><div class="hx-hd"><div><p>🎁 경품 · 이벤트</p><h2>오늘 마감 경품·용돈</h2></div><a href="/event/">전체 {len(events):,}건 →</a></div>
 <ul class="hx-ev">{hx_ev or '<li class="empty">지금은 마감 임박 이벤트가 없어요.</li>'}</ul></section>
 
-<section class="hx-sec"><div class="hx-hd"><div><p>마감 임박</p><h2>이번에 도전해 볼 공모전</h2></div><a href="/contest/">공모전 찾기 →</a></div>
-<p class="hx-why">진행 중 {len(live)}건 · 7일 안 마감 {wk7}건 · 상금 규모와 마감까지 2~14일 남은 것 기준. {E(scope_c)}</p>
-<ul class="hx-cc">{"".join(cmp_card(c) for c in pick6[:3]) or '<li class="empty">지금 보여 드릴 공모전이 없어요.</li>'}</ul>
-<div class="hx-links"><a href="/contest/week/">이번 주 마감 전체</a><a href="/contest/univ/">대학생 공모전</a><a href="/cat/literature/">분야별 보기</a><a href="/prep/">📋 준비실</a><a href="/lab/">🔬 수상 연구소</a><a href="/guide/">📘 응모 가이드</a></div></section>
-
-<section class="hx-sec"><div class="hx-hd"><div><p>내가 받을 수 있는</p><h2>지원금·청약·계산기</h2></div><a href="/apply/">지원금 일정 →</a></div>
-<div class="hx-feat">
-<a class="hx-f" href="/apply/" style="--fc:#0f766e;--fbg:#e8f7f4"><i>📋</i><b>지원금·청약 일정</b><span>신청 가능 {len(aps)}건 · 최근 3일 새 공고 {newap}건</span></a>
-<a class="hx-f" href="/apply/r/" style="--fc:#2563eb;--fbg:#e8f0ff"><i>📍</i><b>지역별 지원금</b><span>시·도별 청년 월세·신혼부부·청약 일정 공고를 마감순으로</span></a>
-<a class="hx-f" href="/money/tools/salary/" style="--fc:#7c3aed;--fbg:#f4efff"><i>🧮</i><b>연봉·실업급여 계산기</b><span>실수령액·실업급여·퇴직금·청약 가점 (2026 기준)</span></a></div>
-<div class="hx-links"><a href="/apply/youth-rent/">청년 월세 지원</a>{XLINKS_HOME.replace(' · <a ', '<a ').replace('</a><a ', '</a><a ')}<a href="/apply/newlywed/">신혼부부 지원금</a><a href="/money/tools/salary/table/">연봉 실수령액 표</a><a href="/money/tools/unemployment/">실업급여 계산기</a><a href="/money/tools/severance/">퇴직금 계산기</a><a href="/apply/recommend/">청약 가점 계산기</a></div></section>
-
-<section class="hx-sec"><div class="hx-hd"><div><p>오늘의 이슈</p><h2>이슈·머니 한눈에</h2></div><a href="/news/">루리 뉴스 →</a></div>
-<div class="hx-feat">{hx_more}</div>
+<section class="hx-sec hx-t-issue" id="issue"><div class="hx-hd"><div><p>🕵️ 이슈 · 뉴스</p><h2>같은 사건, 여러 언론을 한 번에</h2></div><a href="/news/">루리 뉴스 →</a></div>
 {f'<div class="hx-hot"><b>🔥 지금 뜨는 이슈</b><ol>{hot_h}</ol></div>' if hot_h else ''}
-<div class="hx-links"><a href="https://www.youtube.com/channel/UCdJQUqqrHHXC7mWstly2eXw" target="_blank" rel="noopener">▶️ 루리 뉴스 유튜브</a><a href="/news/#brief">📺 루리 뉴스 브리핑</a><a href="/trend/">🍿 이슈 트렌드</a><a href="/kw/">🔎 인기 키워드</a><a href="/analyst/">📊 애널리스트</a></div></section>
+<div class="hx-links"><a href="/news/#brief">📺 오늘의 브리핑</a><a href="/hot/">🔥 핫이슈</a><a href="/kw/">🔎 인기 키워드</a><a href="/trend/">🍿 이슈 트렌드</a><a href="https://www.youtube.com/channel/UCdJQUqqrHHXC7mWstly2eXw" target="_blank" rel="noopener">▶️ 루리 뉴스 유튜브</a></div></section>
 
-<section class="hx-band">{join_home()}</section>
+<section class="hx-sec hx-t-money" id="money"><div class="hx-hd"><div><p>🧮 머니</p><h2>계산기 · 생활 돈 가이드</h2></div><a href="/money/tools/salary/">계산기 →</a></div>
+<div class="hx-feat"><a class="hx-f" href="/money/tools/salary/" style="--fc:#7c3aed;--fbg:#f4efff"><i>🧮</i><b>연봉 실수령액 계산기</b><span>2026 기준 · 실업급여·퇴직금도</span></a>
+<a class="hx-f" href="/money/guide/" style="--fc:#ea580c;--fbg:#fff1e6"><i>🧭</i><b>생활 돈 가이드</b><span>퇴사·주거·알바·사업 때 돈 문제를 순서대로</span></a>
+<a class="hx-f" href="/money/experts/" style="--fc:#ca8a04;--fbg:#fff8de"><i>📊</i><b>전문가 말 vs 시세</b><span>목표가가 얼마나 맞았나</span></a>
+<a class="hx-f" href="/analyst/" style="--fc:#0f766e;--fbg:#e8f7f4"><i>📈</i><b>애널리스트 종합</b><span>증권사 의견을 숫자로만 요약</span></a></div>
+<div class="hx-links"><a href="/money/guide/journey/resign/">퇴사했을 때</a><a href="/money/guide/journey/housing/">집 구할 때</a><a href="/money/guide/journey/parttime/">알바할 때</a></div></section>
 
-<section class="hx-sec"><div class="hx-hd"><div><p>줍줍 광장</p><h2>방금 올라온 이야기</h2></div><a href="/plaza/">광장 가기 →</a></div>
-<div data-pcrecent="6"></div>
-<div class="hx-links"><a href="/plaza/">🗣️ 내 글·레시피 올리기</a><a href="/dev/faq/">❓ 개발 FAQ</a></div></section></div>
-{REC_TAGS}<link rel="stylesheet" href="/assets/home/consult.css?v=15">'''
+<section class="hx-sec hx-t-learn" id="learn"><div class="hx-hd"><div><p>🎓 배우기 · 놀이</p><h2>AI·개발 지식과 무료 게임</h2></div><a href="/ailog/">개발 지식 →</a></div>
+<div class="hx-feat">{AICLASS}<a class="hx-f" href="/ailog/" style="--fc:#2563eb;--fbg:#e8f0ff"><i>💻</i><b>개발 지식</b><span>이 사이트를 AI로 만든 과정과 기록</span></a>
+<a class="hx-f" href="/dev/faq/" style="--fc:#7c3aed;--fbg:#f4efff"><i>❓</i><b>개발 FAQ</b><span>만들면서 막혔던 것 · 비용 · 구조</span></a>
+<a class="hx-f" href="/game/" style="--fc:#db2777;--fbg:#ffe9f2"><i>🎮</i><b>이번 주 무료 게임</b><span>스팀·에픽 무료 배포 모음</span></a></div></section>
+
+<section class="hx-sec hx-t-recipe" id="recipe"><div class="hx-hd"><div><p>🍳 쉬어가는 식탁</p><h2>오늘 뭐 먹지?</h2></div><a href="/fridge/">레시피 {NR_HOME}개 →</a></div>
+<ul class="hx-row">{hx_rc}</ul>
+<div class="hx-sub2"><a href="/fridge/">🧊 냉장고 재료로 찾기</a><a href="/fridge/solo/">🏠 자취 요리</a><a href="/fridge/weather/">🌤️ 날씨별</a><a href="/fridge/plan/">📅 식단·장보기</a></div></section>
+
+<section class="hx-band" id="join">{join_home()}</section>
+
+<section class="hx-sec hx-t-plaza" id="plaza"><div class="hx-hd"><div><p>🗣️ 줍줍 광장</p><h2>방금 올라온 이야기</h2></div><a href="/plaza/">광장 가기 →</a></div>
+<div data-pcrecent="6"></div></section></div>
+<link rel="stylesheet" href="/assets/home/consult.css?v=15">'''
     page('/', '루리의 줍줍 — 오늘 뭐 먹지·냉장고 파먹기 레시피, 경품·지원금·공모전',
          f'있는 재료로 찾는 집밥 레시피 {NR_HOME}개와 오늘의 메뉴, 오늘 마감 경품·용돈 이벤트, 지원금·청약 일정, 진행 중 공모전 {len(live)}건까지 생활 정보를 매시간 정리해요.',
          home, full_title=True, ld={'@context': 'https://schema.org', '@graph': [  # 2026-10-19 구글 검색 결과 사이트 이름·로고
