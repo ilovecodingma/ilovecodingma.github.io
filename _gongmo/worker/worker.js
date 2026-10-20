@@ -547,11 +547,27 @@ export default {
         const camp = /^[a-z0-9_-]{1,40}$/i.test(body.c || '') ? body.c.toLowerCase() : '';  // ?utm_campaign=<카테고리>_<YYMM>
         const u = await me(req, env), cf = req.cf || {};
         const pg = npage(body.p);
-        const q = [env.DB.prepare('INSERT INTO hits (day, ts, vid, uid, path, ref, country, city, mobile, campaign) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)')
-          .bind(d, now(), vid, u ? u.id : 0, clean(body.p, 120), clean(ref, 60), clean(cf.country || '', 4), clean(cf.city || '', 40), /Mobi|Android|iPhone/i.test(ua) ? 1 : 0, camp)];
+        // 2026-10-20 사후 분류용(막지 않고 표시만): UA 계열|OS, ASN, 통신사·호스팅 이름, 데이터센터 추정, 읽음 신호는 /api/read 가 같은 행을 갱신
+        const uab = /SamsungBrowser/i.test(ua) ? 'samsung' : /Edg\//i.test(ua) ? 'edge' : /Firefox|FxiOS/i.test(ua) ? 'firefox' : /Chrome|CriOS/i.test(ua) ? 'chrome' : /Safari/i.test(ua) ? 'safari' : 'other';
+        const uos = /Windows/i.test(ua) ? 'windows' : /iPhone|iPad|iOS/i.test(ua) ? 'ios' : /Android/i.test(ua) ? 'android' : /Mac OS|Macintosh/i.test(ua) ? 'mac' : /Linux|X11/i.test(ua) ? 'linux' : 'other';
+        const org = clean(cf.asOrganization || '', 60), asn = parseInt(cf.asn, 10) || 0;
+        const dc = /google|amazon|aws|microsoft|azure|digitalocean|ovh|hetzner|oracle|alibaba|tencent|linode|vultr|cloudflare|contabo|leaseweb|choopa|datacamp|m247|meta platforms|facebook|apple inc/i.test(org) ? 1 : 0;
+        const q = [env.DB.prepare('INSERT INTO hits (day, ts, vid, uid, path, ref, country, city, mobile, campaign, ua, asn, org, dc) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)')
+          .bind(d, now(), vid, u ? u.id : 0, clean(body.p, 120), clean(ref, 60), clean(cf.country || '', 4), clean(cf.city || '', 40), /Mobi|Android|iPhone/i.test(ua) ? 1 : 0, camp, uab + '|' + uos, asn, org, dc)];
         if (pg) q.push(env.DB.prepare("INSERT INTO page_stats (page, title, views, updated) VALUES (?, ?, 1, ?) ON CONFLICT(page) DO UPDATE SET views = views + 1, updated = excluded.updated, title = CASE WHEN page_stats.title = '' THEN excluded.title ELSE page_stats.title END")
           .bind(pg, clean(body.t, 90), now()));
-        await env.DB.batch(q);
+        const br = await env.DB.batch(q);
+        const hid = br && br[0] && br[0].meta ? br[0].meta.last_row_id : 0;
+        return json(req, { ok: 1, id: hid || 0 });
+      }
+      // 읽음 신호(2026-10-20): 방문 1건당 한 번, 최대 스크롤 깊이(%)와 체류 초. hit 때 받은 id 와 같은 익명 방문 번호가 맞을 때만 갱신
+      if (p === '/api/read' && req.method === 'POST') {
+        const ua = req.headers.get('User-Agent') || '';
+        const id = parseInt(body.id, 10) || 0, rv = /^[0-9a-f]{16}$/.test(body.v || '') ? body.v : '';
+        if (!id || !rv) return json(req, { ok: 1 });
+        const vid = hex(new Uint8Array(await crypto.subtle.digest('SHA-256', new TextEncoder().encode('rv1|' + rv)))).slice(0, 16);
+        const dw = Math.max(0, Math.min(3600, parseInt(body.d, 10) || 0)), sc = Math.max(0, Math.min(100, parseInt(body.s, 10) || 0));
+        await env.DB.prepare('UPDATE hits SET dwell = MAX(dwell, ?), scroll = MAX(scroll, ?) WHERE id = ? AND vid = ?').bind(dw, sc, id, vid).run();
         return json(req, { ok: 1 });
       }
       // 방문 통계 (2026-10-19: hits 를 13번 집계하느라 D1 읽기 한도를 태워서, 한 번만 읽고 워커에서 묶는다.
