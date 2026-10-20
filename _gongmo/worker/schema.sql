@@ -139,6 +139,7 @@ CREATE INDEX IF NOT EXISTS user_items_end ON user_items(end_date);
 
 CREATE TABLE IF NOT EXISTS hits (id INTEGER PRIMARY KEY, day TEXT NOT NULL, ts INTEGER NOT NULL, vid TEXT NOT NULL, uid INTEGER NOT NULL DEFAULT 0, path TEXT, ref TEXT, country TEXT, city TEXT, mobile INTEGER DEFAULT 0, campaign TEXT DEFAULT '');
 -- 2026-10-19: 기존 DB 에는 ALTER TABLE hits ADD COLUMN campaign TEXT DEFAULT '' 로 한 번 추가함 (utm_campaign)
+-- 2026-10-20: 사후 분류·읽음 신호용으로 기존 DB 에 한 번 추가함: ALTER TABLE hits ADD COLUMN ua TEXT DEFAULT '' (브라우저|OS), asn INTEGER DEFAULT 0, org TEXT DEFAULT '' (asOrganization), dc INTEGER DEFAULT 0 (데이터센터 추정, 표시만), dwell INTEGER DEFAULT 0 (체류 초), scroll INTEGER DEFAULT 0 (최대 스크롤 %)
 CREATE INDEX IF NOT EXISTS hits_day ON hits(day);
 CREATE INDEX IF NOT EXISTS hits_ts ON hits(ts);
 
