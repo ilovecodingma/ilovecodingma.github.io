@@ -163,7 +163,7 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False, noinde
     PAGE_HASH[path] = hashlib.md5(re.sub(r'D-\d+|D-DAY|\d{1,2}:\d{2}|\d{4}-\d{2}-\d{2}|\d{1,2}/\d{1,2}|[\d,]+\s*(?:건|명|개|곳|회|일 남)', '', title + body).encode()).hexdigest()
     if noindex:
         NOINDEX.add(path)
-    if path.startswith(('/money/guide/', '/guide/', '/ai/', '/qa/')) and not noindex:
+    if path.startswith(('/money/guide/', '/money/tools/', '/guide/', '/ai/', '/qa/')) and not noindex:
         body = law_linkify(body, LAW_DEFAULT.get(path))
     COMM_TAGS = COMM_TAGS_TPL if COMM_API else ''
     t = title if full_title else f'{title} | {NAME}'
@@ -3505,12 +3505,14 @@ TOOL_T = {  # 2026-10-18 키워드 전략: 검색 자동완성 문구 제목 (�
  'salary': '연봉 실수령액 계산기 2026 (4대보험·소득세 공제 후 월급)',
  'severance': '퇴직금 계산기 2026 — 퇴직금 계산법·세전 세후 (알바 포함)',
  'unemployment': '실업급여 계산기 2026 — 신청자격·금액·기간 (상한 68,100원)'}
-TOOL_SRC = {  # 기준일·출처 (2026-10-18 확인)
- 'salary': '국민연금 9.5%·기준소득월액 41만~659만원(국민연금공단, 2026.7~2027.6), 건강보험료율 7.19%·장기요양 0.9448%(보건복지부·국민건강보험공단), 고용보험 근로자 0.9%(고용노동부), 소득세 기본세율·근로소득공제(소득세법)',
- 'severance': '근로자퇴직급여 보장법(평균임금 30일분 × 근속연수), 소득세법 퇴직소득 근속연수공제·환산급여공제(2023.1.1 이후 퇴직분)',
- 'unemployment': '고용노동부 「고용보험법 시행령」 개정(구직급여 상한 66,000원 → 68,100원, 2026.1.1 이후 이직자), 2026년 최저임금 시급 10,320원(최저임금위원회), 고용보험법 소정급여일수 표',
- 'dividend': '기획재정부 2025년 세법개정(고배당 기업 배당소득 분리과세)', 'stocktax': '기획재정부 증권거래세법 시행령(2026.1.1 시행)',
- 'pension': '소득세법 연금계좌 세액공제(국세청)', 'loan': '원리금 계산 공식(금리는 직접 입력)', 'fx': '은행 환전 수수료 공식(환율은 직접 입력)'}
+TOOL_SRC = {  # 기준일·출처 (2026-10-18 확인, 2026-10-20 조문·원문 링크로 교체)
+ 'salary': '국민연금 본인 4.75%(보험료율 9.5%): <a href="https://www.law.go.kr/법령/국민연금법" target="_blank" rel="noopener">국민연금법 부칙 제4조(법률 제20903호)</a> · 기준소득월액 상·하한 41만~659만원(2026.7~2027.6): <a href="https://www.nps.or.kr" target="_blank" rel="noopener">국민연금공단</a> 고시(원문 확인 필요), 건강보험료율 7.19%: <a href="https://www.law.go.kr/법령/국민건강보험법시행령/제44조" target="_blank" rel="noopener">국민건강보험법 시행령 제44조 제1항</a>, 장기요양 0.9448%: <a href="https://www.law.go.kr/법령/노인장기요양보험법/제9조" target="_blank" rel="noopener">노인장기요양보험법 제9조</a>(요율은 장기요양위원회 심의, 수치는 보건복지부 발표 기준·원문 확인 필요), 고용보험 근로자 0.9%: <a href="https://www.law.go.kr/법령/고용보험및산업재해보상보험의보험료징수등에관한법률시행령/제12조" target="_blank" rel="noopener">고용보험·산재보험료징수법 시행령 제12조 제1항 제2호</a>(실업급여 1천분의 18의 절반, 부담 비율 조문은 확인 필요), 소득세: <a href="https://www.law.go.kr/법령/소득세법/제55조" target="_blank" rel="noopener">소득세법 제55조</a>(기본세율)·<a href="https://www.law.go.kr/법령/소득세법/제47조" target="_blank" rel="noopener">제47조</a>(근로소득공제)',
+ 'severance': '<a href="https://www.law.go.kr/법령/근로자퇴직급여보장법/제8조" target="_blank" rel="noopener">근로자퇴직급여 보장법 제8조</a>(평균임금 30일분 × 근속연수), <a href="https://www.law.go.kr/법령/소득세법/제48조" target="_blank" rel="noopener">소득세법 제48조</a>(퇴직소득공제: 근속연수공제·환산급여공제)',
+ 'unemployment': '<a href="https://www.law.go.kr/법령/고용보험법시행령/제68조" target="_blank" rel="noopener">고용보험법 시행령 제68조</a>(임금일액 상한 113,500원 → 구직급여 상한 68,100원, 2026.1.1 이후 이직자), <a href="https://www.law.go.kr/법령/고용보험법/제46조" target="_blank" rel="noopener">고용보험법 제46조</a>(구직급여일액 60%·최저구직급여일액 80%), <a href="https://www.law.go.kr/법령/고용보험법/제50조" target="_blank" rel="noopener">고용보험법 제50조</a>(소정급여일수 별표 1), 2026년 최저임금 시급 10,320원: <a href="https://www.minimumwage.go.kr" target="_blank" rel="noopener">최저임금위원회</a> 고시(원문 확인 필요)',
+ 'dividend': '<a href="https://www.law.go.kr/법령/조세특례제한법/제104조의27" target="_blank" rel="noopener">조세특례제한법 제104조의27</a>(고배당기업 배당소득 분리과세)',
+ 'stocktax': '<a href="https://www.law.go.kr/법령/증권거래세법시행령/제5조" target="_blank" rel="noopener">증권거래세법 시행령 제5조</a>(2026.1.1 시행 개정 세율)',
+ 'pension': '<a href="https://www.law.go.kr/법령/소득세법/제59조의3" target="_blank" rel="noopener">소득세법 제59조의3</a>(연금계좌세액공제)',
+ 'loan': '원리금 계산 공식(금리는 직접 입력)', 'fx': '은행 환전 수수료 공식(환율은 직접 입력)'}
 TOOL_FAQ = {
  'salary': [('연봉 4,000만원이면 월 실수령액은 얼마인가요?', '비과세 식대 월 20만원, 본인 1명 기준으로 4대보험과 소득세를 빼면 한 달 약 292만원이에요. 부양가족이 많으면 소득세가 줄어 조금 더 받아요.'),
             ('2026년에 실수령액이 줄어든 이유는?', '국민연금 보험료율이 9%에서 9.5%로, 건강보험료율이 7.09%에서 7.19%로 올라 같은 연봉이라도 공제액이 늘었어요.'),
@@ -3667,7 +3669,7 @@ def salary_table():
             f'<p>2026년 4대보험 요율과 소득세 기본세율로 연봉 100만원 단위 월 실수령액을 계산한 표예요. 비과세 식대 월 20만원, 본인 1명(부양가족 없음) 기준이에요. 예를 들어 연봉 3,000만원은 월 약 {int(r30["net"]):,}원, 4,000만원은 약 {int(r40["net"]):,}원, 6,000만원은 약 {int(r60["net"]):,}원을 받아요. '
             f'연봉이 1,000만원 오를 때 실수령액은 생각보다 덜 늘어나는데, 소득세 세율 구간이 올라가고 4대보험도 함께 늘기 때문이에요. 부양가족이 있거나 비과세가 다르면 <a href="/money/tools/salary/">계산기</a>에 직접 넣어 보세요.</p>'
             f'<div class="tbl-w"><table class="info sal-t"><tr><th>연봉</th><th>월 세전</th><th>4대보험</th><th>소득세+지방세</th><th>월 실수령액</th></tr>{rows}</table></div>'
-            f'<p class="note">기준일 2026-10-18 · 출처: {E(TOOL_SRC["salary"])}. 참고용 계산이며 회사 간이세액표와 소득세가 조금 다를 수 있어요.</p>'
+            f'<p class="note">기준일 2026-10-18 · 출처: {TOOL_SRC["salary"]}. 참고용 계산이며 회사 간이세액표와 소득세가 조금 다를 수 있어요.</p>'
             + rel_block(r'연봉|월급|4대보험|연말정산', [('/money/tools/salary/', '연봉 실수령액 계산기'), ('/money/tools/severance/', '퇴직금 계산기'), ('/money/tools/unemployment/', '실업급여 계산기')]))
     page('/money/tools/salary/table/', '연봉 실수령액 표 2026 — 2,000만~1억 월급 (4대보험·세금 공제 후)', f'2026년 4대보험·소득세 기준 연봉 실수령액표. 연봉 4,000만원 월 {int(r40["net"]):,}원 등 2,000만~1억 원을 100만원 단위로 정리.',
          body + '<link rel="stylesheet" href="/assets/money/tools.css?v=2">', [('루리의 줍줍', '/'), ('머니', '/analyst/'), ('연봉 실수령액 계산기', '/money/tools/salary/'), ('실수령액표', '/money/tools/salary/table/')])
@@ -3694,7 +3696,7 @@ def tool_pages():
         ld = {'@context': 'https://schema.org', '@graph': [{'@type': 'WebApplication', 'name': tt, 'url': f'{SITE}/money/tools/{k}/', 'applicationCategory': 'FinanceApplication', 'operatingSystem': 'Any', 'inLanguage': 'ko', 'offers': {'@type': 'Offer', 'price': '0', 'priceCurrency': 'KRW'}, 'description': d}]
               + ([{'@type': 'FAQPage', 'mainEntity': [{'@type': 'Question', 'name': q, 'acceptedAnswer': {'@type': 'Answer', 'text': a}} for q, a in fq]}] if fq else [])}
         extra = (('<h2>자주 묻는 질문</h2>' + ''.join(f'<details class="faq"><summary>{E(q)}</summary><p>{E(a)}</p></details>' for q, a in fq)) if fq else '') \
-            + f'<p class="note">기준일 2026-10-18 · 출처: {E(TOOL_SRC.get(k, ""))}. 참고용 계산이에요. 실제 금액은 해당 기관 안내로 확인하세요.</p>' + rel_block(*TOOL_REL.get(k, ('', [])))
+            + f'<p class="note">기준일 2026-10-18 · 출처: {TOOL_SRC.get(k, "")}. 참고용 계산이에요. 실제 금액은 해당 기관 안내로 확인하세요.</p>' + rel_block(*TOOL_REL.get(k, ('', [])))
         page(f'/money/tools/{k}/', tt, d,
              f'<p class="bc"><a href="/">홈</a> › <a href="/analyst/">머니</a> › {E(n)}</p><h1>🧮 {E(tt)}</h1><p>{E(d)}</p>'
              f'<section id="mtool" data-tool="{k}"><noscript>자바스크립트가 필요해요.</noscript></section>{TOOL_HELP.get(k, '')}{extra}<p class="hm-links">{others}<a href="/money/policy/">🏛️ 근거: 투자 정책 정리</a></p>'
