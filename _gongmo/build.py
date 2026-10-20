@@ -70,12 +70,13 @@ THEMES = [  # (키, 이름, 아이콘, 테마색, 홈, [하위 메뉴], [이 테
     ('money', '머니', '📊', '#047857', '/analyst/', [('/analyst/', '애널리스트 종합'), ('/money/experts/', '전문가 코멘트'), ('/money/policy/', '투자 정책'), ('/money/age/', '나이별 원칙'), ('/money/tools/salary/', '계산기'), ('/analyst/coin/btc/', '코인')], ['/analyst/', '/money/']),
     ('contest', '공모전', '🏆', '#6d28d9', '/contest/', [('/contest/', '추천 상담'), ('/cat/literature/', '분야별'), ('/prep/', '준비실'), ('/lab/', '수상 연구소'), ('/community/', '원정대'), ('/guide/', '가이드'), ('/widget/', '위젯')],
      ['/contest/', '/c/', '/cat/', '/prep/', '/lab/', '/community/', '/guide/', '/v/', '/me/', '/widget/']),
-    ('life', '생활', '🍳', '#0e7490', '/apply/', [('/apply/', '지원금·청약'), ('/apply/recommend/', '청약 추천'), ('/apply/r/', '지역별'), ('/event/', '경품'), ('/fridge/', '냉장고 파먹기'), ('/qa/', '고민 해결'), ('/plaza/', '광장')], ['/apply/', '/a/', '/event/', '/fridge/', '/qa/', '/ssul/', '/plaza/']),
+    ('recipe', '레시피', '🍳', '#c2410c', '/fridge/', [('/fridge/', '냉장고 파먹기'), ('/fridge/solo/', '자취 요리'), ('/fridge/weather/', '날씨별'), ('/fridge/c/guk/', '국·찌개'), ('/fridge/c/bap/', '밥'), ('/fridge/c/myeon/', '면'), ('/fridge/c/bokkeum/', '볶음'), ('/fridge/c/jorim/', '조림·찜'), ('/fridge/c/banchan/', '반찬'), ('/fridge/c/jeon/', '전')], ['/fridge/']),   # 2026-10-20 사용자: 레시피 유입이 많아 별도 카테고리로
+    ('life', '생활', '🧺', '#0e7490', '/apply/', [('/apply/', '지원금·청약'), ('/apply/recommend/', '청약 추천'), ('/apply/r/', '지역별'), ('/event/', '경품'), ('/qa/', '고민 해결'), ('/plaza/', '광장')], ['/apply/', '/a/', '/event/', '/qa/', '/ssul/', '/plaza/']),
     ('ai', '개발 지식', '🧑‍💻', '#0f172a', '/ailog/', [('/ailog/', '개발 지식'), ('/dev/faq/', '개발 FAQ'), ('/en/guide/', 'English guides'), ('/ailog/#log', 'AI 제작 로그')], ['/ailog/', '/dev/', '/en/'])]   # 2026-10-19 사용자: AI 로그 → 개발 지식으로 개편
 
 
 # 2026-10-19 사용자 「소비 쪽으로 가중치, URL 그대로 메인만」: 테마 줄 순서만 생활 먼저 (주소·테마 소속은 그대로)
-THEMES = [next(t for t in THEMES if t[0] == k) for k in ('life', 'contest', 'issue', 'money', 'ai')]
+THEMES = [next(t for t in THEMES if t[0] == k) for k in ('recipe', 'life', 'contest', 'issue', 'money', 'ai')]
 
 
 def theme_of(path):
@@ -142,7 +143,7 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False, noinde
 <meta name="theme-color" content="{TH[3] if TH else '#5b21b6'}">
 <link rel="icon" href="/favicon.ico?v=6" sizes="any"><link rel="icon" type="image/png" sizes="48x48" href="/assets/icons/icon-48.png?v=6"><link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/icon-96.png?v=6"><link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/icon-192.png?v=6"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=6"><link rel="manifest" href="/site.webmanifest"><link rel="alternate" type="application/rss+xml" title="루리의 줍줍" href="/rss.xml">
 <link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="/assets/gm.css?v=18">{('<link rel="stylesheet" href="/assets/chat/ruri-chat.css?v=8">') if not (TH and TH[0] == 'ai') else ''}{COMM_TAGS}{('<script type="module" src="/assets/chat/ruri-chat.js?v=13"></script>') if not (TH and TH[0] == 'ai') else ''}<script defer src="/assets/app/app.js?v=3"></script>
+<link rel="stylesheet" href="/assets/gm.css?v=19">{('<link rel="stylesheet" href="/assets/chat/ruri-chat.css?v=8">') if not (TH and TH[0] == 'ai') else ''}{COMM_TAGS}{('<script type="module" src="/assets/chat/ruri-chat.js?v=14"></script>') if not (TH and TH[0] == 'ai') else ''}<script defer src="/assets/app/app.js?v=3"></script>
 {ldh}
 {GTAG}
 </head><body data-th="{TH[0] if TH else 'hub'}"{(' data-api="' + COMM_API + '"') if COMM_API else ''}>
@@ -1319,6 +1320,7 @@ def build():
 <section class="hm-sec"><h2>🍳 많이 찾는 레시피 모음 <a href="/fridge/">재료로 찾기 →</a></h2><div class="hm-prep">
 <a href="/fridge/solo/"><b>🏠 자취 요리 추천</b><span>재료 3개 이하·20분 안에 끝나는 1인분 집밥</span></a>
 <a href="/fridge/weather/"><b>🌤️ 날씨별 오늘 메뉴</b><span>비 오는 날·쌀쌀한 날·더운 날에 어울리는 집밥</span></a></div>
+<p class="hm-more">분류로 보기: {' · '.join(f'<a href="/fridge/c/{s2}/">{i2} {n2}</a>' for s2, k2, i2, n2, _ in FR_CATS)}</p>
 <div class="mg-s" data-pctop="/fridge/r/" data-by="likes" data-n="6" data-head="❤️ 지금 인기 있는 메뉴"></div>
 {cp_widget('자취 필수템', 'home') or cp_box('', '장 볼 때 같이 보면 좋아요:')}</section>
 <section class="hm-sec"><h2>🎁 오늘 마감 경품·용돈 <a href="/event/">전체 {len(events)}건 →</a></h2>
@@ -2787,26 +2789,10 @@ def issue_note(x, I):
 
 
 def news_impact():
-    """/news/ 상위 이슈 중 생활 영향 규칙에 맞는 것 3개 (2026-10-20). news.js 가 바꾸지 않는 칸."""
-    d = _rd('news/data.json')
-    if not d:
-        return ''
-    import impact as IP, market as M
-    MK = M.load()
-    I = {a['id']: a for a in d.get('items', [])}
-    out, k = '', 0
-    for x in sorted(d.get('issues', []), key=lambda x: -int(x.get('on') or 0))[:30]:
-        srcs = [(I[a]['o'], I[a]['t']) for a in x['a'][:6] if a in I]
-        d0 = datetime.datetime.fromtimestamp(int(x['ts'])).strftime('%Y-%m-%d') if x.get('ts') else None
-        c = IP.card(x['t'] + ' ' + ' '.join(t for _, t in srcs[:3]), d0, srcs, MK, head=f'💥 「{E(x["t"][:40])}」이 내 생활에 미칠 수 있는 영향')
-        if c:
-            out += c
-            k += 1
-        if k >= 3:
-            break
+    """/news/ 아래 이번 주 이슈 평론 (생활 영향 카드는 위 브리핑에 이미 들어 있어서 겹치지 않게 뺌, 2026-10-20 화면 정리)."""
     wk = (datetime.date.today() - datetime.timedelta(days=7)).isoformat()
-    rv = ''.join(f'<li><a href="/review/{x["slug"]}/">🖋️ {E(x["title"])}</a></li>' for x in load_reviews() if x['date'] >= wk)
-    return (('<section class="mg-s"><h2>💥 오늘 이슈, 내 생활엔?</h2><p class="note">언론사 여러 곳이 다룬 이슈 중 생활과 닿는 것만 골랐어요.</p>' + out + '</section>') if out else '') + (f'<section class="mg-s"><h2>🖋️ 이번 주 이슈 평론</h2><ul class="mg-l">{rv}</ul></section>' if rv else '')
+    rv = ''.join(f'<li><a href="/review/{x["slug"]}/">🖋️ {E2(x["title"])}</a></li>' for x in load_reviews() if x['date'] >= wk)
+    return f'<section class="mg-s" id="review"><h2>🖋️ 이번 주 이슈 평론</h2><ul class="mg-l">{rv}</ul></section>' if rv else ''
 
 
 def news_static():
@@ -2921,6 +2907,7 @@ def cp_items(key, sub):
             m = re.search(r'Carousel\("#container", (\{.*?\})\);', h, re.S)
             its = [{'name': x['name'], 'img': x['imagePath'], 'url': x['landingUrl']} for x in json.loads(m.group(1))['items'] if x.get('landingUrl', '').startswith('https://link.coupang.com/')]
             if its:
+                seen_ = set(); its = [x for x in its if not (x['name'] in seen_ or seen_.add(x['name']))]   # 같은 상품 중복 제거
                 c = _CPW[k] = {'d': TODAY.isoformat(), 'items': its[:3]}
                 json.dump(_CPW, open(_CPW_F, 'w', encoding='utf-8'), ensure_ascii=False)
         except Exception as e:
@@ -3174,15 +3161,19 @@ def news_brief():
         ns = [(a['o'], n_) for a in by for n_ in IPB.nums_in(a['t'])][:3]
         tsl = sorted([a for a in by if a.get('ts') and int(a['ts']) <= time.time()], key=lambda a: int(a['ts']))
         tl_ = (f'<p><b>흐름</b> 처음 보도 {datetime.datetime.fromtimestamp(int(tsl[0]["ts"])).strftime("%m/%d %H:%M")}({E2(tsl[0]["o"])}) → 최근 {datetime.datetime.fromtimestamp(int(tsl[-1]["ts"])).strftime("%m/%d %H:%M")}({E2(tsl[-1]["o"])}) · 모은 기사 기준이에요</p>' if len(tsl) >= 2 else '')
-        ipc = IPB.card(x['t'] + ' ' + ' '.join(a['t'] for a in by[:3]), datetime.datetime.fromtimestamp(int(x['ts'])).strftime('%Y-%m-%d') if x.get('ts') else None, [(a['o'], a['t']) for a in by], MKv, head='🙋 내 생활엔?')
+        _tx = x['t'] + ' ' + ' '.join(a['t'] for a in by[:3])
+        ipc = IPB.card(_tx, datetime.datetime.fromtimestamp(int(x['ts'])).strftime('%Y-%m-%d') if x.get('ts') else None, [(a['o'], a['t']) for a in by], MKv, head='체감도와 영향')
+        ipc = (f'<details class="nbd"><summary>🙋 내 생활엔? <small>{E2(IPB.gauge_text(_tx))}</small></summary>{ipc}</details>' if ipc else '')
         links = ''
         if x['n'] in hot_by:
             links += f'<a href="/hot/{hot_by[x["n"]]}/">🔥 핫이슈 정리</a> '
         links += f'<a href="#is{x["n"]}">🕵️ 기사별 확인 신호</a>'
-        li = ''.join(f'<li><em>{E2(a["o"])}</em><a href="{E2(a["u"])}" target="_blank" rel="noopener nofollow">{E2(a["t"])}</a></li>' for a in by[:4])
+        _li = lambda L_: ''.join(f'<li><em>{E2(a["o"])}</em><a href="{E2(a["u"])}" target="_blank" rel="noopener nofollow">{E2(a["t"])}</a></li>' for a in L_)
+        li = _li(by[:2])
+        more_li = (f'<details class="nbd"><summary>언론사 제목 {len(by[2:5])}개 더 보기</summary><ul class="kw-l nbl">{_li(by[2:5])}</ul></details>' if len(by) > 2 else '')
         out += (f'<article class="nb"><h3>{i}. {E2(x["t"])}</h3><p class="kwn">{E2(x.get("c") or "")} · 언론사 {x["on"]}곳이 보도 · 확인 신호 {G.get(x.get("g"), "")} {x.get("s") if x.get("s") is not None else "-"}점'
                 f'{" · 발언·주장 기사" if x.get("claim") else ""}</p>'
-                f'{tl_}<p><b>언론사별 제목</b></p><ul class="kw-l nbl">{li}</ul>'
+                f'{tl_}<ul class="kw-l nbl">{li}</ul>{more_li}'
                 + (f'<p>🔢 <b>기사에 나온 숫자</b> ' + ' · '.join(f'{E2(o)} 「{E2(n_)}」' for o, n_ in ns) + (f' <span class="kwn">— 숫자가 엇갈림: {E2(", ".join(x["cf"][:3]))}</span>' if x.get('cf') else '') + '</p>' if ns else '')
                 + ipc + f'<p class="hm-links">{links}</p></article>')
         t_ = f'{x["t"]}. 언론사 {x["on"]}곳이 전했어요. ' + ' '.join(f'{a["o"]}는 "{a["t"][:40]}"라고 썼어요.' for a in by[:2])
@@ -3193,16 +3184,20 @@ def news_brief():
         json.dump({'title': '루리 뉴스', 'date': TODAY.isoformat(), 'updated': NOW_KST().strftime('%Y-%m-%d %H:%M'), 'items': js}, open(os.path.join(ROOT, 'news', 'brief.json'), 'w', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))
     except Exception:
         pass
-    return ('<section class="mg-s nb-s" id="brief"><h2>📺 루리 뉴스 — 오늘의 브리핑</h2><div class="nb-h"><img src="/assets/ruri/o_anchor_s.webp" width="64" height="88" alt="루리 뉴스 앵커 루리">'
-            f'<p>{E2(NOW_KST().strftime("%m/%d %H:%M"))} 기준 언론사 3곳 이상이 다룬 이슈 {len(js)}개예요. 언론사 표기를 붙인 기사 제목과 기사에 나온 숫자만 정리하고, 어느 쪽이 맞는지는 판단하지 않아요.</p></div>'
+    return ('<section class="mg-s nb-s" id="brief"><div class="nb-h"><img src="/assets/ruri/o_anchor_s.webp" width="64" height="88" alt="루리 뉴스 앵커 루리">'
+            f'<p><b>오늘의 브리핑</b> · {E2(NOW_KST().strftime("%m/%d %H:%M"))} 기준 언론사 3곳 이상이 다룬 이슈 {len(js)}개예요. 기사 제목과 숫자만 정리하고, 어느 쪽이 맞는지는 판단하지 않아요.</p></div>'
             + out + '</section><style>.nb{margin:12px 0;padding:14px;border:1px solid var(--bd,#e5e7eb);border-radius:14px;background:var(--card,#fff)}.nb h3{margin:0 0 4px;font-size:17px}.nb p{margin:6px 0;line-height:1.6}'
-            '.nb-h{display:flex;gap:10px;align-items:center}.nb-h img{flex:none;width:48px;height:auto}.nbl em{font-style:normal;font-weight:700;margin-right:6px;color:var(--pri,#b45309)}</style>')
+            '.nb-h{display:flex;gap:10px;align-items:center}.nb-h img{flex:none;width:48px;height:auto}.nbl{margin:6px 0}.nbl em{font-style:normal;font-weight:700;margin-right:6px;color:var(--pri,#b45309)}'
+            '.nbd{margin:6px 0;font-size:14px}.nbd summary{cursor:pointer;color:var(--pri,#b45309);font-weight:700}.nbd summary small{font-weight:400;color:var(--mu,#6b7280);margin-left:6px}.nb .ip{margin:8px 0}'
+            '.nbn{display:flex;gap:8px;overflow-x:auto;margin:8px 0 12px;padding-bottom:4px}.nbn a{flex:none;padding:7px 14px;border-radius:999px;background:var(--pbg,#f1f5f9);color:var(--tx,#111);text-decoration:none;font-weight:700;font-size:14px}</style>')
 
 
 def news_page():
     # 루리 탐정의 이슈 감별 (2026-10-18 사용자: RSS 기사 수집 → 주제별 묶음 → 팩트체크 기반 채점, 피드, 탐정 루리, 기사 관련 줍줍)
-    body = f'''<p class="bc"><a href="/">홈</a> › 기사 확인 신호</p><h1>📺 루리 뉴스 — 오늘의 브리핑과 기사 확인 신호</h1>{news_brief()}{hot_top(3)}
-<section id="news" aria-label="이슈 순위와 기사 채점">{news_static()}</section>{news_impact()}
+    body = f'''<p class="bc"><a href="/">홈</a> › 기사 확인 신호</p><h1>📺 루리 뉴스</h1><p class="kwn">언론사 15곳 기사를 매시간 모아 같은 사건끼리 묶고, 제목·숫자·확인 신호를 정리해요.</p>
+<nav class="nbn" aria-label="이 화면 안에서 이동"><a href="#brief">📺 오늘의 브리핑</a><a href="#review">🖋️ 평론</a><a href="#news">🕵️ 이슈 순위·확인 신호</a><a href="/trend/">🍿 이슈 트렌드</a><a href="/hot/">🔥 핫이슈</a></nav>
+{news_brief()}{hot_top(3)}{news_impact()}
+<h2 class="nbh" id="rank">🕵️ 이슈 순위와 기사 확인 신호</h2><section id="news" aria-label="이슈 순위와 기사 채점">{news_static()}</section>
 <details class="nw-how"><summary>채점은 이렇게 해요</summary><ul><li><b>교차 보도</b> — 같은 사건을 여러 언론사가 보도하면 가점, 한 곳뿐이면 표시만 해요.</li><li><b>출처</b> — 실명 기관·인물 출처는 가점, 익명 관계자뿐이거나 온라인 커뮤니티·SNS 글이 출처면 감점.</li><li><b>제목-본문 일치</b> — 제목의 숫자·인용문이 본문에 없으면 감점.</li><li><b>숫자 엇갈림</b> — 같은 사건인데 언론사마다 사망·부상자 수가 다르면 따로 표시해요.</li><li><b>낚시·홍보</b> — 「충격」「결국」「이것」 같은 낚시 표현, 기업 홍보성 기사는 감점.</li></ul><p>기사 본문은 채점에만 쓰고 이 사이트에 옮겨 싣지 않아요. 제목을 누르면 원래 언론사 기사로 이동해요.</p></details>
 <link rel="stylesheet" href="/assets/news/news.css?v=6"><script defer src="/assets/news/news.js?v=4"></script>'''
     page('/news/', '루리 뉴스 — 오늘의 이슈 브리핑·기사 확인 신호 (언론사 15곳)', '언론사 15곳 기사를 매시간 모아 같은 사건끼리 묶고, 교차 보도·출처·제목-본문 일치·숫자 엇갈림·낚시 표현으로 기사마다 점수를 매겨요. 지금 가장 많이 보도된 이슈 순위.',
@@ -3275,6 +3270,10 @@ def page_rates(min_n=3):
     except Exception as e:
         print('별점 읽기 실패', repr(e)[:80])
         return {}
+
+
+FR_CATS = [('guk', '국물', '🍲', '국·찌개·탕', '국물 요리'), ('bap', '밥', '🍚', '밥·덮밥·김밥', '밥 요리'), ('myeon', '면', '🍜', '면 요리', '면 요리'), ('bokkeum', '볶음', '🥘', '볶음 요리', '볶음 요리'),
+           ('jorim', '조림', '🐟', '조림·찜', '조림·찜 요리'), ('banchan', '반찬', '🥗', '반찬·무침·나물', '반찬'), ('jeon', '전', '🥞', '전·부침개', '전·부침개')]
 
 
 def fridge_page():
@@ -3367,6 +3366,29 @@ def fridge_page():
          + li(SOLO) + '<a class="lab-cta" href="/fridge/"><b>🍳 내 냉장고 재료로 찾기</b><span>「설거지 적게」 조건도 고를 수 있어요 →</span></a><link rel="stylesheet" href="/assets/fridge/fridge.css?v=12">',
          [('루리의 줍줍', '/'), ('냉장고 파먹기', '/fridge/'), ('자취 요리', '/fridge/solo/')])
     urls += ['/fridge/weather/', '/fridge/solo/']
+    import collections as _co
+    shutil.rmtree(os.path.join(ROOT, 'fridge', 'c'), ignore_errors=True)
+    CATN = {}
+    for sl_, key_, ic_, nm_, nm2_ in FR_CATS:
+        L_ = sorted([x for x in RS if FT.cat(x['n']) == key_], key=lambda x: (x['m'], len(x['need']), x['n']))
+        CATN[sl_] = len(L_)
+        if len(L_) < 10:
+            continue
+        ing_ = _co.Counter(g for x in L_ for g in x['need']).most_common(5)
+        quick = [x for x in L_ if x['m'] <= 15]
+        oth = ' · '.join(f'<a href="/fridge/c/{s2}/">{i2} {n2}</a>' for s2, k2, i2, n2, _ in FR_CATS if s2 != sl_ and len([y for y in RS if FT.cat(y['n']) == k2]) >= 10)
+        facts = (f'{nm_} 레시피 {len(L_)}가지를 조리 시간 짧은 순으로 모았어요. 가장 빠른 건 {L_[0]["n"]}({L_[0]["m"]}분)이고 평균 {sum(x["m"] for x in L_) / len(L_):.0f}분 걸려요. '
+                 f'이 분야에서 필수 재료로 가장 많이 쓰인 건 {", ".join(f"{g}({c}개)" for g, c in ing_)}예요.')
+        wk_ = 'cat-' + sl_
+        bd = (f'<p class="bc"><a href="/">홈</a> › <a href="/fridge/">레시피</a> › {E(nm_)}</p><h1>{ic_} {E(nm_)} 레시피 모음 — {len(L_)}가지</h1><p class="cat-st">📌 {E(facts)}</p>'
+              + (f'<h2>⏱️ 15분 안에 끝나는 {E(nm2_)} ({len(quick)}가지)</h2>' + li(quick[:12]) if quick else '')
+              + cp_widget('냄비·뚝배기' if key_ == '국물' else '밀키트', 'recipe')
+              + f'<h2>전체 {E(nm_)} 레시피 (조리 시간순)</h2>' + li(L_)
+              + f'<p class="hm-links">다른 분류: {oth} · <a href="/fridge/solo/">🏠 자취 요리</a> · <a href="/fridge/weather/">🌤️ 날씨별 메뉴</a></p>'
+              + '<a class="lab-cta" href="/fridge/"><b>🍳 내 냉장고 재료로 찾기</b><span>있는 재료를 고르면 지금 만들 수 있는 메뉴부터 →</span></a><link rel="stylesheet" href="/assets/fridge/fridge.css?v=12">')
+        page(f'/fridge/c/{sl_}/', f'{nm_} 레시피 모음 {YR} — 집에서 만드는 {len(L_)}가지 (조리 시간순)', f'{nm_} 레시피 {len(L_)}가지: 조리 시간 순서로 만드는 법과 필수 재료. 15분 안에 끝나는 {nm2_} {len(quick)}가지 포함.',
+             bd, [('루리의 줍줍', '/'), ('레시피', '/fridge/'), (nm_, f'/fridge/c/{sl_}/')])
+        urls.append(f'/fridge/c/{sl_}/')
     page('/fridge/', f'냉장고 파먹기 메뉴 추천 — 있는 재료로 오늘 요리 (레시피 {NR}개)', f'냉장고에 있는 재료만 고르면 집밥 레시피 {NR}개 중 지금 바로 만들 수 있는 오늘 메뉴와 만드는 법, 하나만 사면 되는 메뉴까지 알려 줘요.',
          f"""<p class="bc"><a href="/">홈</a> › 냉장고 파먹기</p><h1>🍳 루리의 냉장고 파먹기</h1>
 {say("o_cook", f"냉장고 사진을 찍거나 있는 재료를 눌러 주세요. 집밥 레시피 {NR}개 중에 지금 바로 만들 수 있는 걸 골라 드릴게요!")}
@@ -3374,6 +3396,7 @@ def fridge_page():
 <section class="mg-s" data-pctop="/fridge/r/" data-by="likes" data-n="8" data-head="❤️ 지금 인기 있는 메뉴"></section>
 <section class="mg-s" data-pctop="/fridge/r/" data-by="views" data-n="8" data-head="👀 많이 본 레시피"></section>
 <p class="hm-more"><a href="/fridge/weather/">🌤️ 날씨별 메뉴</a> · <a href="/fridge/solo/">🏠 자취 요리</a> · <a href="/fridge/r/계란찜/">🥚 계란찜</a></p>
+<p class="hm-more">분류로 보기: {' · '.join(f'<a href="/fridge/c/{s2}/">{i2} {n2}</a>' for s2, k2, i2, n2, _ in FR_CATS if CATN.get(s2, 0) >= 10)}</p>
 <details class="fr-all"><summary>📚 전체 레시피 {NR}개 보기</summary><ul>{allr}</ul></details>
 <a class="lab-cta" href="/cat/food/"><b>🏆 요리·레시피 공모전</b><span>레시피 공모전·요리경연대회 모아 보기 · 상금 받고 요리 실력 뽐내기 →</span></a><p class="note">사진은 재료를 찾는 데만 쓰고 저장하지 않아요. 고른 재료는 이 폰에만 저장돼요. 알레르기가 있으면 재료를 꼭 다시 확인해 주세요.</p>
 <link rel="stylesheet" href="/assets/fridge/fridge.css?v=12"><script defer src="/assets/fridge/fridge.js?v=15"></script>""", [('루리의 줍줍', '/'), ('냉장고 파먹기', '/fridge/')],

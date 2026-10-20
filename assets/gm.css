@@ -201,3 +201,5 @@ table.info td.need{color:#b45309;font-weight:600}.dh h1,.card .t{overflow-wrap:a
 .ft-g a{display:block;color:#e0dcff;text-decoration:none;padding:3px 0;font-size:13px}
 .ft-g a:hover{color:#fcd34d}
 .ft-l{margin:12px 0 8px;padding-top:12px;border-top:1px solid rgba(255,255,255,.12)}
+
+body[data-th=recipe]{--pri:#c2410c;--pbg:#ffedd5}

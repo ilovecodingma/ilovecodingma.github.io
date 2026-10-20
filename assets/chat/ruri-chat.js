@@ -284,6 +284,6 @@ function boot() {
   const th = document.body.dataset.th || 'hub';
   if (th === 'contest') return ui();
   if (th === 'ai') return;
-  import('/assets/chat/theme-bot.js?v=3').then(m => m.start(th)).catch(() => {});
+  import('/assets/chat/theme-bot.js?v=3').then(m => m.start(th === 'recipe' ? 'life' : th))   // 2026-10-20 레시피 테마는 생활 챗봇(오늘 메뉴).catch(() => {});
 }
 if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot); else boot();

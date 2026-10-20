@@ -21,6 +21,14 @@ def match(text, n=2):
     return [r for r in RULES if r['rx'].search(text)][:n]
 
 
+def gauge_text(text):
+    rs = match(text)
+    if not rs:
+        return ''
+    g = [max(r['gauge'][i] for r in rs) for i in range(3)]
+    return ' · '.join(f'{nm} {LV[v]}' for nm, v in zip(('💳 지갑', '🏠 일상', '📅 일정'), g))
+
+
 def nums_in(title):
     """제목 속 실제 숫자(인상 폭·%·금액·시행일)."""
     return re.findall(r'\d+(?:\.\d+)?\s?%p?|\d[\d,]*(?:\.\d+)?\s?(?:원|달러|bp)|\d{1,2}월\s?\d{1,2}일', title)
