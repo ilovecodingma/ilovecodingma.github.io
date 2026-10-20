@@ -216,3 +216,8 @@ CREATE TABLE IF NOT EXISTS kvcache (k TEXT PRIMARY KEY, v TEXT NOT NULL, exp INT
 -- 2026-10-20 키워드 내일 예측 투표 (로그인 없음, 사람당 하루 1표는 해시로)
 CREATE TABLE IF NOT EXISTS kw_votes (day TEXT NOT NULL, slug TEXT NOT NULL, n INTEGER NOT NULL DEFAULT 0, PRIMARY KEY (day, slug));
 CREATE TABLE IF NOT EXISTS kw_vote_seen (day TEXT NOT NULL, h TEXT NOT NULL, PRIMARY KEY (day, h));
+
+-- 웹툰·애니 취향 설문과 작품 반응 (2026-10-20): 방문자 해시(IP+UA+날짜)로 하루 1회, 개인정보 없음
+CREATE TABLE IF NOT EXISTS survey_answers (kind TEXT NOT NULL, day TEXT NOT NULL, vh TEXT NOT NULL, a TEXT NOT NULL, ts INTEGER NOT NULL, PRIMARY KEY (kind, day, vh));
+CREATE TABLE IF NOT EXISTS watch_votes (kind TEXT NOT NULL, id TEXT NOT NULL, vh TEXT NOT NULL, v INTEGER NOT NULL, ts INTEGER NOT NULL, PRIMARY KEY (kind, id, vh));
+CREATE INDEX IF NOT EXISTS watch_votes_k ON watch_votes(kind, id);

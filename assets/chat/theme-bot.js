@@ -8,10 +8,10 @@ const G = { ok: '✅', warn: '🟡', bad: '🔴' };
 const won = v => !v ? '' : v >= 1e8 ? (v / 1e8).toFixed(2) + '억 원' : v >= 1e4 ? Math.floor(v / 1e4).toLocaleString() + '만' + (v % 1e4 ? ' ' + (v % 1e4).toLocaleString() : '') + ' 원' : v.toLocaleString() + '원';
 
 const CONF = {
-  hub: { av: '/assets/ruri/avatar.webp', fab: '루리에게 물어보기', sub: '뭘 찾는지 말하면 길을 안내해요', ph: '예) 비트코인, 마감 임박 공모전, 오늘 이슈' },
+  hub: { av: '/assets/ruri/avatar.webp', fab: '루리에게 물어보기', sub: '마감·지원금·레시피·웹툰·애니·이슈까지', ph: '예) 오늘 마감 · 김치 달걀 있어 · 로맨스 웹툰' },
   issue: { av: '/assets/ruri/o_det_wave_s.webp', fab: '루리 탐정에게 물어보기', sub: '오늘 이슈·기사 확인 신호를 알려 드려요', ph: '예) 국무회의, 의심 기사, 커뮤니티' },
   money: { av: '/assets/ruri/o_present_s.webp', fab: '루리에게 시세·의견 묻기', sub: '증권사·전문가 의견을 정리해 드려요 · 투자 권유 아님', ph: '예) 비트코인, 카카오, 상향 종목' },
-  life: { av: '/assets/ruri/o_cook_s.webp', fab: '루리에게 생활 정보 묻기', sub: '지원금·청약·경품·오늘 메뉴', ph: '예) 청년 월세, 부산 지원금, 경품' }
+  life: { av: '/assets/ruri/o_cook_s.webp', fab: '루리에게 생활 정보 묻기', sub: '지원금·경품·레시피·웹툰·애니까지', ph: '예) 김치 달걀 있어 · 청년 월세 · 로맨스 웹툰' }
 };
 
 export function start(th) {
@@ -95,8 +95,16 @@ export function start(th) {
     B.ask = q => { const L = find(q); say(L.length ? `「${esc(q)}」로 찾은 지원금·청약 ${L.length}건이에요.` + list(L.slice(0, 6).map(ap)) : `「${esc(q)}」로 찾은 게 없어요. 더 짧게 적어 보세요(예: 월세, 청년).`, back()); };
   }
 
-  const open = async () => { ga('chat_open', { theme: th, page: location.pathname }); await B.load(); add('bot', th === 'issue' ? '루리 탐정이에요! 오늘 이슈를 같이 살펴볼까요?' : '안녕하세요, 루리예요!'); B.menu(); };
+  // 2026-10-20 사이트 전체 두뇌(ruri-site.js) 연결: 의도가 잡히면 지원금·경품·레시피·웹툰·애니 등을 카드로 답한다
+  let SITE = null; const site = () => (SITE ||= import('/assets/chat/ruri-site.js?v=3').catch(() => null));
+  const ask2 = async q => { add('me', esc(q)); const S = await site(); const r = S && await S.siteAnswer(q); if (r) { const b = add('bot', r.html); chips(b, back2()); } };
+  const back2 = () => [['🏠 처음 메뉴', siteMenu]];
+  const siteMenu = () => say('무엇을 도와드릴까요?', [['⏰ 오늘 마감', () => ask2('오늘 마감')], ['📋 지원금·청약', () => ask2('지원금')], ['🎁 경품 이벤트', () => ask2('경품 이벤트')], ['🍽️ 오늘 뭐 먹지', () => ask2('오늘 뭐 먹지')],
+    ['📖 웹툰 추천', () => ask2('웹툰 추천')], ['🎬 애니 추천', () => ask2('애니 추천')], ['🏆 공모전 찾기', () => { location.href = '/contest/'; }], ['🧮 계산기·돈 가이드', () => ask2('계산기')], ['📺 이슈·뉴스', () => ask2('이슈')]]);
+  const open = async () => { ga('chat_open', { theme: th, page: location.pathname }); await B.load(); add('bot', th === 'issue' ? '루리 탐정이에요! 오늘 이슈를 같이 살펴볼까요?' : '안녕하세요, 루리예요!');
+    const S = await site(), ph = S && S.pageHints(location.pathname); if (ph) { const pb = say(ph.say); if (ph.chips && ph.chips.length) chips(pb, ph.chips); }
+    if (th === 'hub' || th === 'life') siteMenu(); else B.menu(); };
   $('.rc-fab').onclick = () => { panel.hidden = !panel.hidden; if (!panel.hidden && !log.children.length) open(); };
   $('.rc-x').onclick = () => { panel.hidden = true; };
-  $('form').onsubmit = async e => { e.preventDefault(); const q = input.value.trim(); if (!q) return; input.value = ''; add('me', esc(q)); ga('chat_ask', { theme: th, q: q.slice(0, 40) }); if (!D) await B.load(); B.ask(q); };
+  $('form').onsubmit = async e => { e.preventDefault(); const q = input.value.trim(); if (!q) return; input.value = ''; add('me', esc(q)); ga('chat_ask', { theme: th, q: q.slice(0, 40) }); if (!D) await B.load(); const S = await site(); if (S && ((th === 'hub' || th === 'life') || S.intentOf(q)) && (th === 'hub' || th === 'life' || !/코인|비트|이더|주식|목표가|종목|증권|국무|기사|의심/.test(q))) { const t = add('bot', '<span class="rc-typing"><i></i><i></i><i></i></span>'); let r = null; try { r = await S.siteAnswer(q); } catch (e) {} t.remove(); if (r) { const b = add('bot', r.html); chips(b, back2()); ga('chat_site', { theme: th, q: q.slice(0, 30) }); return; } } B.ask(q); };
 }

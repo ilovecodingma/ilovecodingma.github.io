@@ -1,0 +1,33 @@
+/* 웹툰·애니 추천 (watch.js) */
+#watch{max-width:900px;margin:0 auto}
+.wt-tabs{display:inline-flex;gap:4px;background:var(--card);border:1px solid var(--bd);border-radius:999px;padding:4px;margin:6px 0 16px}
+.wt-tabs button{border:0;background:transparent;border-radius:999px;padding:10px 20px;font:inherit;font-weight:900;font-size:15px;color:var(--mu);cursor:pointer}.wt-tabs button.on{background:var(--tx);color:var(--bg)}
+.wt-card{background:var(--card);border:1px solid var(--bd);border-radius:28px;padding:22px 22px 18px;box-shadow:var(--sh2)}
+.wt-prog{display:flex;gap:6px;margin-bottom:16px}.wt-prog i{flex:1;height:6px;border-radius:6px;background:#eee7dd}.wt-prog i.on{background:linear-gradient(90deg,#7c3aed,#db2777)}
+.wt-q{margin:0 0 16px;font-size:clamp(20px,3vw,26px);font-weight:900;letter-spacing:-.04em;line-height:1.35}.wt-q small{display:block;font-size:12.5px;color:var(--mu);font-weight:700;letter-spacing:0;margin-bottom:4px}
+.wt-opts{display:flex;flex-wrap:wrap;gap:8px}
+.wt-o{border:1.5px solid var(--bd);background:var(--card);color:var(--tx);border-radius:999px;padding:11px 18px;font:inherit;font-size:15px;font-weight:800;cursor:pointer}
+.wt-o.on{background:var(--tx);color:var(--bg);border-color:var(--tx)}
+.wt-opts.big{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}.wt-opts.big .wt-o{border-radius:20px;padding:16px 12px;display:flex;flex-direction:column;align-items:center;gap:4px;line-height:1.3}.wt-opts.big .wt-o span{font-size:28px}
+.wt-search{width:100%;padding:14px 16px;font:inherit;font-size:16px;border:1.5px solid var(--bd);border-radius:16px;background:var(--card);color:var(--tx)}
+.wt-sres{display:grid;gap:4px;margin:8px 0}.wt-sr{text-align:left;border:1px solid var(--bd);background:var(--card);color:var(--tx);border-radius:12px;padding:10px 14px;font:inherit;font-weight:700;cursor:pointer}.wt-sr small{color:var(--mu);font-weight:500}
+.wt-picked{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}.wt-pk{background:#f4efff;color:#5b21b6;border-radius:999px;padding:7px 13px;font-size:13.5px;font-weight:800;cursor:pointer}
+.wt-nav{display:flex;justify-content:space-between;gap:10px;margin-top:20px}
+.wt-nav button{border:0;border-radius:16px;padding:14px 24px;font:inherit;font-weight:900;font-size:16px;cursor:pointer;background:#f1ece4;color:var(--tx)}.wt-nav .wt-next{background:linear-gradient(100deg,#7c3aed,#db2777);color:#fff;margin-left:auto}
+.wt-skip{margin:12px 0 0;text-align:center;font-size:13px}.wt-skip a{color:var(--mu)}
+.wt-rh{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap;margin:6px 0 16px}.wt-rh h2{margin:0;font-size:clamp(21px,3vw,28px);letter-spacing:-.045em}.wt-rh h2 small{font-size:13px;color:var(--mu);font-weight:700;margin-left:6px}.wt-rh .note{margin:4px 0 0}
+.wt-ra{display:flex;gap:8px}.wt-ra button{border:1px solid var(--bd);background:var(--card);color:var(--tx);border-radius:999px;padding:10px 16px;font:inherit;font-weight:800;font-size:14px;cursor:pointer}.wt-re{background:var(--tx)!important;color:var(--bg)!important;border-color:var(--tx)!important}
+.wt-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.wt-it{display:flex;gap:14px;background:var(--card);border:1px solid var(--bd);border-radius:24px;padding:14px;box-shadow:var(--sh)}
+.wt-img{flex:none;width:112px;height:150px;border-radius:16px;overflow:hidden;background:#f2ebe1;display:grid;place-items:center;text-decoration:none;font-size:34px}.wt-img img{width:100%;height:100%;object-fit:cover;display:block}
+.wt-b{min-width:0;flex:1;display:flex;flex-direction:column;gap:4px}.wt-b h3{margin:0;font-size:17px;letter-spacing:-.04em;line-height:1.3}
+.wt-m{margin:0;font-size:12.5px;color:var(--mu);font-weight:700}.wt-sub{margin:0;font-size:12px;color:var(--mu);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.wt-tg{margin:2px 0;display:flex;flex-wrap:wrap;gap:4px}.wt-tg em{font-style:normal;font-size:11.5px;background:#f4efff;color:#5b21b6;border-radius:999px;padding:2px 9px;font-weight:700}
+.wt-why{margin:0;font-size:12.5px;color:#9a3412;font-weight:700;line-height:1.5}
+.wt-ott{margin:0;font-size:12px;color:var(--mu)}.wt-ott a{display:inline-block;margin:0 4px 0 6px;color:var(--tx);font-weight:800}
+.wt-ac{display:flex;gap:6px;margin-top:auto;padding-top:6px;align-items:center}.wt-go{flex:1;text-align:center;background:var(--tx);color:var(--bg);border-radius:12px;padding:10px 8px;font-weight:800;font-size:13px;text-decoration:none}
+.wt-up,.wt-dn{border:1px solid var(--bd);background:var(--card);border-radius:12px;padding:8px 11px;cursor:pointer;font-size:16px}.wt-up.on{background:#fef3c7;border-color:#f59e0b}
+.wt-stats{margin:34px 0 0;background:var(--card);border:1px solid var(--bd);border-radius:24px;padding:20px 22px;box-shadow:var(--sh)}.wt-stats h2{margin:0 0 12px;font-size:19px}.wt-stats h2 small{font-size:12.5px;color:var(--mu);font-weight:700;margin-left:6px}
+.wt-bar{display:grid;grid-template-columns:96px minmax(0,1fr) 32px;gap:10px;align-items:center;margin:7px 0;font-size:13.5px;font-weight:800}.wt-bar i{height:12px;border-radius:12px;background:#eee7dd;position:relative;overflow:hidden}.wt-bar i:after{content:"";position:absolute;inset:0 auto 0 0;width:var(--w);background:linear-gradient(90deg,#a855f7,#ec4899)}.wt-bar em{font-style:normal;color:var(--mu);text-align:right}
+.wt-foot{margin-top:20px;font-size:12.5px;color:var(--mu);line-height:1.7}
+@media(max-width:700px){.wt-list{grid-template-columns:1fr}.wt-card{padding:18px 16px;border-radius:24px}.wt-img{width:96px;height:130px}.wt-bar{grid-template-columns:78px minmax(0,1fr) 28px}}

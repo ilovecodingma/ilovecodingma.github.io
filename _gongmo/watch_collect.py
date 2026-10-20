@@ -92,7 +92,7 @@ def webtoon(finished_info=1000):
     print('웹툰 저장', len(items), flush=True)
 
 
-Q = """query($page:Int,$season:MediaSeason,$year:Int,$sort:[MediaSort]){Page(page:$page,perPage:50){pageInfo{hasNextPage}media(type:ANIME,season:$season,seasonYear:$year,sort:$sort,isAdult:false){id title{romaji english native} synonyms genres tags{name rank} averageScore popularity favourites episodes duration format status season seasonYear startDate{year month day} studios(isMain:true){nodes{name}} coverImage{large color} siteUrl externalLinks{site url type language} trailer{id site}}}}"""
+Q = """query($page:Int,$season:MediaSeason,$year:Int,$sort:[MediaSort]){Page(page:$page,perPage:50){pageInfo{hasNextPage}media(type:ANIME,season:$season,seasonYear:$year,sort:$sort,isAdult:false){id title{romaji english native} synonyms genres tags{name rank} averageScore popularity favourites episodes duration format status season seasonYear startDate{year month day} studios(isMain:true){nodes{name}} coverImage{large color} siteUrl externalLinks{site url type language} trailer{id site} recommendations(sort:RATING_DESC,perPage:8){nodes{rating mediaRecommendation{id}}} reviews(sort:RATING_DESC,limit:4){nodes{score rating ratingAmount summary}}}}}"""
 Q2 = Q.replace('season:$season,seasonYear:$year,', '')
 
 
@@ -107,6 +107,14 @@ def anilist(body):
     return None
 
 
+RV_WORDS = {'art': ['animation', 'visual', 'art', 'beautiful', 'stunning'], 'story': ['story', 'plot', 'narrative', 'writing'], 'char': ['character', 'protagonist', 'development'], 'music': ['music', 'soundtrack', 'ost', 'opening'], 'emotional': ['emotional', 'touching', 'tears', 'heartwarming', 'moving'], 'funny': ['funny', 'comedy', 'hilarious', 'humor'], 'dark': ['dark', 'violent', 'brutal', 'gritty'], 'slow': ['slow', 'pacing', 'boring'], 'action': ['action', 'fight', 'battle']}
+
+
+def rv_kw(text):
+    t = (text or '').lower()
+    return [k for k, ws in RV_WORDS.items() if sum(t.count(w) for w in ws) >= 1]
+
+
 def anime():
     A = load('anime.json'); items = A.get('items', {})
     def add(m):
@@ -118,7 +126,7 @@ def anime():
         items[k] = {'id': m['id'], 'kr': kr, 'ro': t.get('romaji') or '', 'en': t.get('english') or '', 'jp': t.get('native') or '', 'g': m.get('genres') or [], 'tg': [x['name'] for x in (m.get('tags') or []) if x.get('rank', 0) >= 60][:6],
                     'sc': m.get('averageScore'), 'pop': m.get('popularity'), 'fav': m.get('favourites'), 'ep': m.get('episodes'), 'min': m.get('duration'), 'fmt': m.get('format'), 'st': m.get('status'),
                     'season': m.get('season'), 'year': m.get('seasonYear'), 'sd': f"{sd.get('year') or ''}-{sd.get('month') or ''}", 'studio': st, 'cv': (m.get('coverImage') or {}).get('large', ''), 'color': (m.get('coverImage') or {}).get('color', ''),
-                    'url': m.get('siteUrl'), 'ott': ott, 'tr': (m.get('trailer') or {}).get('id') if (m.get('trailer') or {}).get('site') == 'youtube' else ''}
+                    'url': m.get('siteUrl'), 'rec': [(x['mediaRecommendation']['id'], x['rating']) for x in ((m.get('recommendations') or {}).get('nodes') or []) if x.get('mediaRecommendation') and (x.get('rating') or 0) > 0][:8], 'rv': {'n': len((m.get('reviews') or {}).get('nodes') or []), 'sc': round(sum(x['score'] for x in (m.get('reviews') or {}).get('nodes') or []) / max(1, len((m.get('reviews') or {}).get('nodes') or [])), 1), 'kw': rv_kw(' '.join(x['summary'] or '' for x in (m.get('reviews') or {}).get('nodes') or []))}, 'ott': ott, 'tr': (m.get('trailer') or {}).get('id') if (m.get('trailer') or {}).get('site') == 'youtube' else ''}
     now = time.localtime(); y0 = now.tm_year
     for y in range(y0, y0 - 6, -1):
         for s in ('WINTER', 'SPRING', 'SUMMER', 'FALL'):
