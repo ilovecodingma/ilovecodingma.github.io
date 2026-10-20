@@ -151,13 +151,25 @@
   try { if (sa && P === '/' && !sessionStorage.getItem('app_go') && !q.has('home')) { sessionStorage.setItem('app_go', '1'); location.replace('/fridge/?src=app'); return; } } catch {}
   if (sa || q.get('src') === 'app') {
     document.documentElement.classList.add('app-mode');
-    const f = q.get('tab') === 'fridge';
-    const T = [['🍽️', '오늘', '/fridge/', P === '/fridge/' && !f], ['🧊', '냉장고', '/fridge/?tab=fridge', P === '/fridge/' && f], ['🏠', '자취', '/fridge/solo/', /^\/fridge\/solo/.test(P)], ['🌤️', '날씨', '/fridge/weather/', /^\/fridge\/weather/.test(P)]];
-    const M = [['🏆', '공모전', '마감 앞둔 공모전', '/contest/'], ['📋', '지원금·청약', '신청 가능한 공고', '/apply/'], ['🎁', '경품·용돈', '오늘 마감 이벤트', '/event/'], ['🕵️', '이슈', '기사 확인 신호', '/news/'], ['🔎', '인기 키워드', '지금 검색이 몰리는 말', '/kw/'], ['🗣️', '광장', '레시피·썰 올리기', '/plaza/'], ['👤', '내 공간', '찜·기록', '/me/'], ['🔔', '알림 설정', '점심·저녁 메뉴 알림', '/app/']];
-    const bar = document.createElement('nav'); bar.className = 'app-tb'; bar.setAttribute('aria-label', '앱 메뉴');
-    bar.innerHTML = T.map(([i, t, u, on]) => `<a href="${u}"${on ? ' class="on"' : ''}><i>${i}</i>${t}</a>`).join('') + '<button type="button" class="more"><i>⋯</i>더보기</button>';
-    const mount = () => { document.body.appendChild(bar);
-      bar.querySelector('.more').onclick = () => { const sh = document.createElement('div'); sh.className = 'app-sheet'; sh.innerHTML = `<div><b>더보기</b>${M.map(([i, t, d, u]) => `<a href="${u}"><span>${i}</span><span>${t}<small>${d}</small></span></a>`).join('')}</div>`; sh.onclick = e => { if (e.target === sh) sh.remove(); }; document.body.appendChild(sh); ga('app_more'); };
+    // 하단바는 지금 보는 섹션(레시피·생활·공모전·이슈·머니…)의 메뉴를 그대로 쓴다. 섹션 이동은 「섹션」 버튼
+    const IC = [[/fridge\/solo/, '🏠'], [/fridge\/weather/, '🌤️'], [/^\/fridge\/c\//, '🍲'], [/^\/fridge/, '🍽️'], [/contest\/week/, '⏰'], [/contest\/univ/, '🎓'], [/^\/cat\//, '🗂️'], [/community/, '🚩'], [/^\/contest/, '🏆'], [/prep/, '📋'], [/lab/, '🔬'], [/guide/, '📘'], [/apply\/r/, '📍'], [/apply/, '📋'], [/event/, '🎁'], [/qa/, '💬'], [/plaza/, '🗣️'],
+      [/news/, '🕵️'], [/hot/, '🔥'], [/trend/, '📈'], [/talk/, '💬'], [/kw/, '🔎'], [/satire/, '🎭'], [/mag/, '📰'], [/review/, '🖋️'], [/analyst/, '📊'], [/money/, '🧮'], [/game/, '🎮'], [/ailog|dev/, '💻'], [/^\/$/, '🏠'], [/app/, '🔔'], [/me/, '👤']];
+    const ic = h => { for (const [r, e] of IC) if (r.test(h)) return e; return '•'; };
+    const mount = () => {
+      const tb = document.querySelector('nav.tb'), sw = document.querySelector('nav.th-sw');
+      const links = tb ? [...tb.querySelectorAll('a')].slice(0, 4) : [];
+      const bar = document.createElement('nav'); bar.className = 'app-tb'; bar.setAttribute('aria-label', '앱 메뉴');
+      const home = ['🏠', '홈', '/'];
+      const items = links.length ? links.map(a => [ic(a.getAttribute('href')), a.textContent.trim().slice(0, 6), a.getAttribute('href'), a.classList.contains('on')]) : [[...home, P === '/']];
+      bar.innerHTML = items.map(([i, t, u, on]) => `<a href="${u}"${on ? ' class="on"' : ''}><i>${i}</i>${t}</a>`).join('') + '<button type="button" class="more"><i>☰</i>섹션</button>';
+      document.body.appendChild(bar);
+      if (tb) tb.classList.add('app-hide');
+      bar.querySelector('.more').onclick = () => {
+        const sec = sw ? [...sw.querySelectorAll('a')].map(a => `<a href="${a.getAttribute('href')}"><span>${a.textContent.trim().split(' ')[0]}</span><span>${a.textContent.trim().split(' ').slice(1).join(' ')}</span></a>`).join('') : '';
+        const sh = document.createElement('div'); sh.className = 'app-sheet';
+        sh.innerHTML = `<div><b>섹션 이동</b><a href="/"><span>🏠</span><span>홈</span></a>${sec}<a href="/me/"><span>👤</span><span>내 공간</span></a><a href="/app/"><span>🔔</span><span>알림 설정</span></a></div>`;
+        sh.onclick = e => { if (e.target === sh) sh.remove(); }; document.body.appendChild(sh); ga('app_more');
+      };
     };
     document.body ? mount() : addEventListener('DOMContentLoaded', mount);
   } else if (P === '/fridge/' || /^\/fridge\/(solo|weather)\//.test(P)) {

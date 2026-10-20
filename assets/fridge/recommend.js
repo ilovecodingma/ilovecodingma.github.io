@@ -98,7 +98,7 @@
       var alts = o.slice(1 + st.i, 1 + st.i + N); if (alts.length < N) alts = alts.concat(o.slice(0, Math.min(o.length, N - alts.length)).filter(function (x) { return x !== cur; }));
       host.innerHTML = '<div class="rec"><div class="rec-h"><b>' + title + '</b><small>' + sub + '</small></div>' + (chips ? '<div class="rec-chips" role="group" aria-label="조건">' + chips + '</div>' : '')
         + (cur ? pickHtml(cur) + (alts.length ? '<div class="rec-alts" aria-label="다른 추천">' + alts.map(altHtml).join('') + '</div>' : '') : '<p class="rec-empty">조건에 맞는 메뉴가 없어요. 다른 조건을 눌러 보세요.</p>')
-        + '<p class="rec-foot"><a href="/fridge/">🧊 내 냉장고 재료로 찾기</a><span>' + DATA.M.length + '개 중 ' + o.length + '개에서 골랐어요</span></p></div>';
+        + '<p class="rec-foot"><a href="/fridge/">🧊 내 냉장고 재료로 찾기</a></p></div>';
       if (cur) { S.seen[cur.m.n] = Date.now(); LSset('jupjup_rec_seen', S.seen); }
       wire();
     }

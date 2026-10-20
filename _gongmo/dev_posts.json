@@ -247,5 +247,29 @@
     "2026-10-20"
    ]
   ]
+ },
+ {
+  "slug": "wmic-windows11-replacement",
+  "lang": "ko",
+  "date": "2026-10-20",
+  "title": "윈도우 11에서 wmic가 사라져 예약 작업이 조용히 멈춘 이야기 (파이썬 대체 코드)",
+  "desc": "윈도우 11에 wmic가 없어 파이썬 예약 작업이 FileNotFoundError 로 조용히 실패한 원인과, Get-CimInstance·psutil 대체 코드, 점검 실패 시 멈추게 하는 법.",
+  "hub": [
+   "개발 지식 전체",
+   "/ailog/"
+  ],
+  "sources": []
+ },
+ {
+  "slug": "ffmpeg-overlay-endcard",
+  "lang": "ko",
+  "date": "2026-10-20",
+  "title": "ffmpeg 한 번에 세로 영상에 「3초 뒤 배너」와 「끝 카드」 붙이기 (파이썬)",
+  "desc": "ffmpeg filter_complex 한 번으로 세로 영상에 3초부터 나오는 배너와 3.5초 끝 카드를 붙이는 파이썬 코드, enable 쉼표·concat 규격·오디오 채널 실수 3가지.",
+  "hub": [
+   "개발 지식 전체",
+   "/ailog/"
+  ],
+  "sources": []
  }
 ]

@@ -1,0 +1,53 @@
+<p>파이썬으로 세로 영상(1080×1920)을 만들어 올리는 자동화를 돌리고 있습니다. 렌더러는 건드리지 않고, 렌더가 끝난 뒤에 두 가지를 더 붙이고 싶었습니다.</p>
+<ol>
+<li>영상 3초 지점부터 끝까지 계속 보이는 배너</li>
+<li>마지막 프레임 뒤에 붙는 3.5초짜리 정지 이미지(끝 카드). 오디오 길이를 맞추려고 무음도 같이 붙입니다.</li>
+</ol>
+<p>후처리로 빼 두면 렌더러가 단순하게 유지되고 배너 내용도 나중에 바꾸기 쉽습니다. 아래는 제가 쓰는 ffmpeg 호출 한 번짜리 코드와, 가는 길에 만난 실수 세 가지입니다.</p>
+<h2>필터 그래프</h2>
+<p>입력은 네 개입니다.</p>
+<ul>
+<li><code>0</code> 렌더가 끝난 영상(오디오 포함)</li>
+<li><code>1</code> 끝 카드 PNG(3.5초 반복)</li>
+<li><code>2</code> 끝 카드용 무음</li>
+<li><code>3</code> 배너 PNG(모서리가 투명한 RGBA)</li>
+</ul>
+<pre><code class="language-python">import subprocess, imageio_ffmpeg
+
+FF = imageio_ffmpeg.get_ffmpeg_exe()   # 번들 ffmpeg, 따로 설치 안 해도 됨
+DUR = 3.5
+
+def add_banner_and_endcard(src, endcard_png, banner_png, out, w, h, fps, sr):
+    sx, sy = int(w * 40 / 1080), int(h * 50 / 1920)   # 영상 크기에 맞춰 위치 계산
+    sw = int(w * 1000 / 1080)
+    graph = (
+        rf&quot;[3:v]scale={sw}:-1[s];&quot;
+        rf&quot;[0:v][s]overlay={sx}:{sy}:enable=gte(t\,3)[o];&quot;          # 3초부터 배너
+        rf&quot;[1:v]scale={w}:{h},fps={fps},format=yuv420p,setsar=1[e];&quot;  # 끝 카드를 본편과 같은 규격으로
+        rf&quot;[o]format=yuv420p,setsar=1[m];&quot;
+        rf&quot;[m][0:a][e][2:a]concat=n=2:v=1:a=1[v][a]&quot;
+    )
+    cmd = [FF, &quot;-y&quot;,
+           &quot;-i&quot;, src,
+           &quot;-loop&quot;, &quot;1&quot;, &quot;-t&quot;, str(DUR), &quot;-i&quot;, endcard_png,
+           &quot;-f&quot;, &quot;lavfi&quot;, &quot;-t&quot;, str(DUR), &quot;-i&quot;, f&quot;anullsrc=r={sr}:cl=mono&quot;,
+           &quot;-i&quot;, banner_png,
+           &quot;-filter_complex&quot;, graph,
+           &quot;-map&quot;, &quot;[v]&quot;, &quot;-map&quot;, &quot;[a]&quot;,
+           &quot;-c:v&quot;, &quot;libx264&quot;, &quot;-preset&quot;, &quot;veryfast&quot;, &quot;-crf&quot;, &quot;20&quot;,
+           &quot;-c:a&quot;, &quot;aac&quot;, &quot;-b:a&quot;, &quot;160k&quot;, &quot;-movflags&quot;, &quot;+faststart&quot;, out]
+    subprocess.run(cmd, check=True)
+</code></pre>
+<p><code>w</code>, <code>h</code>, <code>fps</code>, 오디오 샘플레이트 <code>sr</code>은 원본에서 읽어 옵니다. <code>ffmpeg -i 원본</code>을 실행해 나오는 stderr를 정규식으로 훑으면 충분합니다.</p>
+<h2>실수 1: <code>enable=</code> 안의 쉼표</h2>
+<p><code>enable=gte(t,3)</code>은 멀쩡해 보이지만 <code>-filter_complex</code> 안에서 쉼표는 필터 구분자입니다. 식이 둘로 쪼개져서 알아보기 힘든 파싱 오류가 납니다. <code>gte(t\,3)</code>처럼 쉼표를 이스케이프하면 됩니다.</p>
+<p>파이썬에서는 그래프 문자열을 raw 문자열(<code>rf"..."</code>)로 써야 백슬래시가 ffmpeg까지 그대로 갑니다. 일반 f-string이면 오늘은 <code>SyntaxWarning</code>, 내일은 버그입니다.</p>
+<h2>실수 2: <code>concat</code>이 끝 카드를 거부함</h2>
+<p><code>concat</code>은 이어 붙이는 조각들의 크기, 프레임레이트, 픽셀 포맷, SAR이 모두 같아야 합니다. PNG 반복은 RGB이고 fps 정보가 없으며 SAR도 다를 수 있습니다. 양쪽 모두 <code>scale=…,fps=…,format=yuv420p,setsar=1</code>로 규격을 맞추자 "Input link parameters do not match" 오류가 모두 사라졌습니다.</p>
+<h2>실수 3: 오디오 채널 배치</h2>
+<p>제 렌더러는 24kHz 모노 오디오를 씁니다. 무음을 <code>cl=stereo</code>로 만들었더니 <code>concat</code>이 오디오가 안 맞는다고 했습니다. 무음도 원본과 같은 샘플레이트·채널(<code>anullsrc=r=24000:cl=mono</code>)로 만들거나, 원본을 먼저 읽어서 맞춰야 합니다.</p>
+<h2>원본은 남겨 두기</h2>
+<p>위 함수는 새 파일에 씁니다. 실제 파이프라인에서는 원본을 먼저 <code>이름.noend.mp4</code>로 옮기고 성공했을 때만 같은 이름으로 덮어씁니다. 중간에 프로세스가 죽어도 원본이 남아 있고, 그 파일이 있으면 "이미 처리한 영상"이라고 보고 건너뛰게 만들어 두었기 때문에 같은 작업을 두 번 돌려도 안전합니다.</p>
+<h2>결과</h2>
+<p>배너(3초부터 끝까지)와 끝 카드가 인코딩 한 번에 붙습니다. 40초짜리 영상이면 일반 데스크톱 CPU에서 10~20초 걸립니다. 「특정 시각부터 워터마크」나 「끝에 슬레이트 붙이기」 같은 작업에 그대로 쓸 수 있는 패턴입니다.</p>
+<p>저는 정보 사이트를 AI 코딩 에이전트와 함께 운영하며 이런 자동화를 매일 돌리고 있습니다. 그 사이트는 <a href="https://sungprofile.cloud/">루리의 줍줍</a>이고, 자동화·개발 기록은 <a href="https://sungprofile.cloud/ailog/">개발 지식</a>에 쌓고 있습니다.</p>
