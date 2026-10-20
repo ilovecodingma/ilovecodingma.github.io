@@ -1978,11 +1978,40 @@ def _cite_box(g, path):
             '<script defer src="/assets/money/cite.js?v=1"></script></section>')
 
 
+def _jr_nav(g, JIDX, GN):
+    """여정 허브 안내: 몇 단계째인지, 이전·다음 가이드 링크."""
+    if g['slug'] not in JIDX:
+        return ''
+    j, i = JIDX[g['slug']]
+    st = j['steps']
+    pv = f'<a href="/money/guide/{st[i - 1]["slug"]}/">← {E(GN[st[i - 1]["slug"]]["name"])}</a>' if i else ''
+    nx = f'<a href="/money/guide/{st[i + 1]["slug"]}/">{E(GN[st[i + 1]["slug"]]["name"])} →</a>' if i + 1 < len(st) else ''
+    return f'<p class="hm-links">🧭 <a href="/money/guide/journey/{j["slug"]}/">{E(j["name"])}</a> {i + 1}/{len(st)}단계 · {pv} {"·" if pv and nx else ""} {nx}</p>'
+
+
+def _jr_box(g, JIDX, GN):
+    """「이 단계에서 보통 놓치는 것 / 다음 단계 / 공식 문의처」 세 칸."""
+    if g['slug'] not in JIDX or not g.get('miss'):
+        return ''
+    j, i = JIDX[g['slug']]
+    st = j['steps']
+    nx = f'<a href="/money/guide/{st[i + 1]["slug"]}/">{E(GN[st[i + 1]["slug"]]["name"])}</a>: {E(st[i + 1].get("note", ""))}' if i + 1 < len(st) else '마지막 단계예요.'
+    return ('<h2>이 단계 한눈에</h2><div class="tblw"><table class="xb"><thead><tr><th>보통 놓치는 것</th><th>다음 단계</th><th>공식 문의처</th></tr></thead><tbody><tr><td>'
+            + '<br>'.join('· ' + E(x) for x in g['miss']) + f'</td><td>{nx}</td><td>{E(g["contact"])}</td></tr></tbody></table></div>')
+
+
 def kin_guides():
     """/money/guide/ 생활 돈 가이드 (2026-10-20 홍보 세션 지식iN 반복 질문): 근로장려금·내일배움카드·월세 세액공제 vs 청년월세·퇴직금. 공식 출처로 확인된 칸만 JSON 에 담고 숫자는 표로 분리."""
     if not os.path.exists(KIN_F):
         return []
-    G = json.load(open(KIN_F, encoding='utf-8'))['guides']
+    _KD = json.load(open(KIN_F, encoding='utf-8'))
+    G = _KD['guides']
+    GN = {x['slug']: x for x in G}
+    JR = _KD.get('journeys', [])
+    JIDX = {}
+    for j in JR:
+        for i, st in enumerate(j['steps']):
+            JIDX.setdefault(st['slug'], (j, i))
     urls, cards = [], ''
     for g in G:
         secs = ''
@@ -2002,7 +2031,7 @@ def kin_guides():
         src = ''.join(f'<li><a href="{E(u)}" target="_blank" rel="noopener nofollow">{E(n)}</a></li>' for n, u in g['sources'])
         rel = ' · '.join(f'<a href="{E(u)}">{E(t)}</a>' for u, t in g['related'])
         body = (f'<p class="bc"><a href="/">홈</a> › <a href="/money/guide/">생활 돈 가이드</a> › {E(g["name"])}</p><h1>{g["icon"]} {E(g["h1"])}</h1>'
-                f'<p class="cat-st">📌 {E(g["lead"])}</p><p class="kwn">기준: {E(g["basis"])}</p>' + secs + '<h2>자주 묻는 질문</h2>' + faq
+                f'<p class="cat-st">📌 {E(g["lead"])}</p><p class="kwn">기준: {E(g["basis"])}</p>' + _jr_nav(g, JIDX, GN) + secs + _jr_box(g, JIDX, GN) + '<h2>자주 묻는 질문</h2>' + faq
                 + join_cta('apply')
                 + _cite_box(g, f'/money/guide/{g["slug"]}/')
                 + f'<h2>공식 출처</h2><ul class="gm-l">{src}</ul>'
@@ -2011,6 +2040,18 @@ def kin_guides():
         page(f'/money/guide/{g["slug"]}/', g['title'], g['desc'], body, [('루리의 줍줍', '/'), ('머니', '/analyst/'), ('생활 돈 가이드', '/money/guide/'), (g['name'], f'/money/guide/{g["slug"]}/')], ld)
         urls.append(f'/money/guide/{g["slug"]}/')
         cards += f'<li><a class="card" data-c="guide" href="/money/guide/{g["slug"]}/"><span class="ic">{g["icon"]}</span><div class="cb"><h3 class="t">{E(g["name"])}</h3><p class="o">{E(g["h1"])}</p></div></a></li>'
+    jcards = ''
+    for j in JR:
+        jp = f'/money/guide/journey/{j["slug"]}/'
+        rows = ''.join(f'<tr><td>{i + 1}</td><td><a href="/money/guide/{st["slug"]}/">{E(GN[st["slug"]]["name"])}</a></td><td>{E(st.get("note", ""))}</td><td>{E(GN[st["slug"]]["contact"])}</td></tr>' for i, st in enumerate(j['steps']) if st['slug'] in GN)
+        hb = (f'<p class="bc"><a href="/">홈</a> › <a href="/money/guide/">생활 돈 가이드</a> › {E(j["name"])}</p><h1>{j["icon"]} {E(j["h1"])}</h1><p class="cat-st">📌 {E(j["lead"])}</p>'
+              f'<h2>단계별로 보기</h2><div class="tblw"><table class="xb"><thead><tr><th>단계</th><th>가이드</th><th>이 단계에서 할 일</th><th>공식 문의처</th></tr></thead><tbody>{rows}</tbody></table></div>'
+              f'<p class="note">{E(j.get("note", "각 가이드는 공식 안내로 확인한 내용만 적고, 자료마다 다르거나 확인하지 못한 칸은 비워 뒀어요."))}</p>'
+              f'<p class="hm-links"><a href="/money/guide/">다른 생활 돈 가이드</a></p>' + GAME_CSS)
+        page(jp, j['title'], j['desc'], hb, [('루리의 줍줍', '/'), ('머니', '/analyst/'), ('생활 돈 가이드', '/money/guide/'), (j['name'], jp)])
+        urls.append(jp)
+        jcards += f'<li><a class="card" data-c="guide" href="{jp}"><span class="ic">{j["icon"]}</span><div class="cb"><h3 class="t">{E(j["name"])}</h3><p class="o">{E(j["h1"])}</p></div></a></li>'
+    cards = jcards + cards
     tools = ('<li><a class="card" data-c="guide" href="/money/tools/severance/"><span class="ic">🧮</span><div class="cb"><h3 class="t">퇴직금 계산기</h3><p class="o">입사·퇴사일과 최근 3개월 임금으로 계산</p></div></a></li>'
              '<li><a class="card" data-c="guide" href="/money/tools/unemployment/"><span class="ic">🧮</span><div class="cb"><h3 class="t">실업급여 계산기</h3><p class="o">가입 기간·나이별 받는 날 수와 금액</p></div></a></li>'
              '<li><a class="card" data-c="guide" href="/money/tools/salary/"><span class="ic">🧮</span><div class="cb"><h3 class="t">연봉 실수령액 계산기</h3><p class="o">4대보험·소득세 뺀 월급</p></div></a></li>')
