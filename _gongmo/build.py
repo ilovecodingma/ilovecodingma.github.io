@@ -1687,7 +1687,7 @@ def game_pages(live):
     gc = sorted([c for c in live if GAME_RX.search(c['title'])], key=lambda c: (c['end'], -c.get('pv', 0)))[:12]
     body = (f'<p class="bc"><a href="/">홈</a> › 게임</p><h1>🎮 게임 허브 — 이번 주 무료 게임·스팀 할인·게임 공모전</h1>'
             f'<p class="cat-st">📌 스토어 기준 {E(d.get("at", ""))}(한국 시간)에 받은 정보예요. 가격·할인은 바뀔 수 있으니 결제 전 스토어에서 확인하세요. 출처: Epic Games Store, Steam.</p>'
-            '<p class="hm-chips"><a href="/game/free/">🎁 에픽 무료 게임 기록</a><a href="/game/release/">🗓️ 신작 출시 일정</a><a href="/game/steam-sale/">📅 스팀 세일 달력</a><a href="/game/refund/">↩️ 스팀 환불 규정</a><a href="#timing">🕰️ 살 타이밍</a></p>'
+            '<p class="hm-chips"><a href="/game/free/">🎁 에픽 무료 게임 기록</a><a href="/game/release/">🗓️ 신작 출시 일정</a><a href="/game/steam-sale/">📅 스팀 세일 달력</a><a href="/game/refund/">↩️ 스팀 환불 규정</a><a href="/game/battlefield-6-editions/">🔫 배틀필드6 에디션 비교</a><a href="#timing">🕰️ 살 타이밍</a></p>'
             f'<h2 id="free">🎁 지금 무료로 받는 게임 (Epic Games Store)</h2>' + (f'<ul class="gm-g">{free}</ul>' if free else '<p class="note">지금 무료로 풀린 게임이 없어요.</p>')
             + (f'<h3>⏭️ 다음 무료 예고</h3><ul class="gm-g">{upc}</ul>' if upc else '')
             + (f'<h3>💸 에픽 할인 중</h3><ul class="gm-l">{sale}</ul>' if sale else '')
@@ -1986,13 +1986,21 @@ def kin_guides():
              '<li><a class="card" data-c="guide" href="/money/tools/salary/"><span class="ic">🧮</span><div class="cb"><h3 class="t">연봉 실수령액 계산기</h3><p class="o">4대보험·소득세 뺀 월급</p></div></a></li>')
     page('/money/guide/', '생활 돈 가이드 — 근로장려금·국민내일배움카드·월세 세액공제·퇴직금 (공식 출처 정리)', '근로장려금, 국민내일배움카드, 월세 세액공제와 청년월세 지원, 퇴직금을 국세청·고용노동부·고용24 등 공식 안내로 정리했어요. 계산기도 함께.',
          '<p class="bc"><a href="/">홈</a> › 생활 돈 가이드</p><h1>🧾 생활 돈 가이드</h1><p class="cat-st">📌 자주 묻는 돈 문제를 공식 안내로 확인한 것만 정리했어요. 공식에서 확인하지 못한 항목은 일부러 적지 않았고, 기준일과 출처를 페이지마다 밝혀요.</p>'
-         f'<ul class="list">{cards}</ul><h2>계산기</h2><ul class="list">{tools}</ul>' + join_cta('apply') + GAME_CSS,
+         f'<ul class="list">{cards}</ul>' + kin_ans_links('/money/guide/') + f'<h2>계산기</h2><ul class="list">{tools}</ul>' + join_cta('apply') + GAME_CSS,
          [('루리의 줍줍', '/'), ('머니', '/analyst/'), ('생활 돈 가이드', '/money/guide/')])
     urls.append('/money/guide/')
     return urls
 
 
 KIN_A = os.path.join(HERE, 'kin_answers.json')
+
+
+def kin_ans_links(prefix):
+    """허브에서 질문 답변 페이지로 가는 링크(고아 페이지 방지)."""
+    if not os.path.exists(KIN_A):
+        return ''
+    L = [a for a in json.load(open(KIN_A, encoding='utf-8'))['answers'] if a['path'].startswith(prefix)]
+    return ('<h2>💬 자주 묻는 질문 답변</h2><ul class="gm-l">' + ''.join(f'<li><a href="{E(a["path"])}">{E(a["h1"])}</a></li>' for a in L) + '</ul>') if L else ''
 
 
 def kin_answer_pages():
@@ -2011,7 +2019,7 @@ def kin_answer_pages():
             elif b[0] == 'ul':
                 h += '<ul class="gm-l">' + ''.join(f'<li>{E(x)}</li>' for x in b[1]) + '</ul>'
             elif b[0] == 'plink':
-                h += f'<p>{E(b[1])} <a href="{E(b[2])}">{E(b[3])}</a></p>'
+                h += f'<p>{E(b[1])} <a href="{E(urllib.parse.unquote(b[2]))}">{E(b[3])}</a></p>'
             else:
                 h += f'<p>{E(b[1])}</p>'
         first = next((b[1] for b in a['blocks'] if b[0] == 'p'), a['h1'])
@@ -3909,6 +3917,7 @@ def fridge_page():
 <section id="fridge" aria-label="냉장고 재료로 메뉴 추천" hidden><noscript><style>#fridge[hidden]{{display:block!important}}</style>자바스크립트가 필요해요. 아래 전체 레시피 목록에서 골라 보세요.</noscript></section>
 <p class="hm-more"><a href="/fridge/weather/">🌤️ 날씨별 메뉴</a> · <a href="/fridge/solo/">🏠 자취 요리</a> · <a href="/fridge/r/계란찜/">🥚 계란찜</a></p>
 <p class="hm-more">분류로 보기: {' · '.join(f'<a href="/fridge/c/{s2}/">{i2} {n2}</a>' for s2, k2, i2, n2, _ in FR_CATS if CATN.get(s2, 0) >= 10)}</p>
+{kin_ans_links('/fridge/q/')}
 <details class="fr-all"><summary>📚 전체 레시피 {NR}개 보기</summary><ul>{allr}</ul></details>
 <a class="lab-cta" href="/cat/food/"><b>🏆 요리·레시피 공모전</b><span>레시피 공모전·요리경연대회 모아 보기 · 상금 받고 요리 실력 뽐내기 →</span></a><p class="note">사진은 재료를 찾는 데만 쓰고 저장하지 않아요. 고른 재료는 이 폰에만 저장돼요. 알레르기가 있으면 재료를 꼭 다시 확인해 주세요.</p>
 <link rel="stylesheet" href="/assets/fridge/fridge.css?v=13"><script defer src="/assets/fridge/fridge.js?v=15"></script>{REC_TAGS}""", [('루리의 줍줍', '/'), ('냉장고 파먹기', '/fridge/')],
