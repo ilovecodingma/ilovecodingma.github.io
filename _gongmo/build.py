@@ -2256,6 +2256,11 @@ def kin_ans_links(prefix):
     return ('<h2>💬 자주 묻는 질문 답변</h2><ul class="gm-l">' + ''.join(f'<li><a href="{E(a["path"])}">{E(a["h1"])}</a></li>' for a in L) + '</ul>') if L else ''
 
 
+def _mdlink(t):
+    """답변 글 안의 [라벨](https://주소) 을 외부 링크로(글자는 먼저 이스케이프, 링크만 살림)."""
+    return re.sub(r'\[([^\]]+)\]\((https?://[^)\s]+)\)', lambda m: f'<a href="{m.group(2)}" target="_blank" rel="noopener">{m.group(1)}</a>', E(t))
+
+
 def kin_answer_pages():
     """2026-10-20 홍보 세션: 정확성을 확인한 지식iN 답변을 질문 제목 H1 페이지로 재활용(레시피 3·돈 2·게임 1). 원문 문장 그대로, 확인 못 한 칸은 비워 둔 채."""
     if not os.path.exists(KIN_A):
@@ -2270,17 +2275,17 @@ def kin_answer_pages():
             elif b[0] == 'h3':
                 h += f'<h3>{E(b[1])}</h3>'
             elif b[0] == 'ul':
-                h += '<ul class="gm-l">' + ''.join(f'<li>{E(x)}</li>' for x in b[1]) + '</ul>'
+                h += '<ul class="gm-l">' + ''.join(f'<li>{_mdlink(x)}</li>' for x in b[1]) + '</ul>'
             elif b[0] == 'plink':
                 h += f'<p>{E(b[1])} <a href="{E(urllib.parse.unquote(b[2]))}">{E(b[3])}</a></p>'
             else:
-                h += f'<p>{E(b[1])}</p>'
+                h += f'<p>{_mdlink(b[1])}</p>'
         first = next((b[1] for b in a['blocks'] if b[0] == 'p'), a['h1'])
         rel = ' · '.join(f'<a href="{E(u)}">{E(t)}</a>' for u, t in a['related'])
         crumbs = CRUMB[a['topic']]
         body = (f'<p class="bc"><a href="/">홈</a> › ' + ' › '.join(f'<a href="{u}">{E(n)}</a>' for n, u in crumbs) + f' › 질문 답변</p><h1>{E(a["h1"])}</h1>'
                 f'<p class="kwn">작성 {a["date"]} · 줍줍이 확인한 내용으로 정리한 답변이에요.</p>' + h
-                + (f'<p class="note">{E(a["note"])}</p>' if a.get('note') else '') + join_cta(a['topic']) + f'<p class="hm-links">{rel}</p>' + GAME_CSS)
+                + (f'<p class="note">{_mdlink(a["note"])}</p>' if a.get('note') else '') + join_cta(a['topic']) + f'<p class="hm-links">{rel}</p>' + GAME_CSS)
         page(a['path'], a['h1'], re.sub(r'\s+', ' ', first)[:150], body, [('루리의 줍줍', '/')] + [(n, u) for n, u in crumbs] + [(a['h1'][:40], a['path'])])
         urls.append(a['path'])
     return urls
