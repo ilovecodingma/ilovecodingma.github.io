@@ -912,7 +912,7 @@ def build_apply(aps):
                      [x for x in [('구분', a['kind']), ('대상', a.get('target')), ('혜택', a.get('benefit')), ('지역', a.get('region')), ('나이', (f"만 {a['age_min'] or ''}~{a['age_max'] or ''}세" if a.get('age_min') or a.get('age_max') else '')),
                       ('소득 조건', a.get('income')), ('신청 방법', a.get('how')), ('주관', a['org']), ('신청 기간', '상시 신청' if a.get('always') else period), ('출처', a['source'] or '공식 공고')] if x[1]])
         _sn = {'youthcenter': '온라인청년센터', 'bokjiro': '복지로', 'gov24': '정부24', 'odcloud': '공공데이터포털', 'applyhome': '청약홈', 'lh': 'LH 청약플러스'}.get((a.get('source') or '').strip(), a.get('source') or '공식 공고')
-        tb = re.sub(r'<tr><th>출처</th><td>[^<]*</td></tr>', lambda m: '<tr><th>출처</th><td>' + (f'<a href="{E(a["url"])}" target="_blank" rel="noopener nofollow">{E(_sn)} 공고 원문 →</a>' if a.get('url') else E(_sn)) + '</td></tr>', tb)
+        tb = re.sub(r'<tr><th>출처</th><td>[^<]*</td></tr>', lambda m: '<tr><th>출처</th><td>' + (f'<a href="{E(a["url"])}" target="_blank" rel="noopener nofollow">공식 공고 원문 →</a> (수집: {E(_sn)})' if a.get('url') else E(_sn)) + '</td></tr>', tb)
         btn = (f'<a class="btn" href="{E(a["url"])}" target="_blank" rel="noopener nofollow">공식 사이트에서 신청하기 →</a>' if a['url'] else '')
         body = f'''<p class="bc"><a href="/">홈</a> › <a href="/apply/">청약·신청</a></p>
 <section class="dh" data-c="apply"><span class="ic big">{a["icon"]}</span><h1>{E(a["title"])}</h1><p class="lead">{'<span class="d">상시</span> 지금 신청할 수 있어요' if a.get('always') else f'<span class="d{" u3" if n <= 3 else " hot" if n <= 7 else ""}">{dd}</span> {ddot(a["end"])} 마감'}</p></section>
