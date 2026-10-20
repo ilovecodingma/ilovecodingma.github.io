@@ -15,3 +15,9 @@
 .kw1l{margin:10px 0;padding:10px 12px;border-radius:12px;background:var(--pbg,#f1f5f9);line-height:1.6;font-size:14.5px}
 .kwq{list-style:none;padding:0;margin:0}.kwq li{margin:10px 0;padding-bottom:10px;border-bottom:1px solid var(--bd,#e5e7eb)}.kwq a{text-decoration:underline}
 .kwt{margin:0;padding-left:18px}.kwt li{margin:6px 0;line-height:1.55}.kwt b{color:#0e7490}
+
+/* 놀이판은 접어 두고(스크롤 줄이기), 날짜 보관함도 접는다 */
+.kw-play,.tk-arch{margin:14px 0;border:1px solid #e7e5e4;border-radius:14px;padding:2px 14px;background:#fff}
+.kw-play>summary,.tk-arch>summary{cursor:pointer;font-weight:800;padding:12px 0;font-size:15px}
+.kw-play .kwc{border:0;padding-left:0;padding-right:0;margin:8px 0}
+.tk-arch p{display:flex;flex-wrap:wrap;gap:6px 10px;margin:0 0 12px}

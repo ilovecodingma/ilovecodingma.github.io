@@ -72,11 +72,12 @@ THEMES = [  # (키, 이름, 아이콘, 테마색, 홈, [하위 메뉴], [이 테
      ['/contest/', '/c/', '/cat/', '/prep/', '/lab/', '/community/', '/guide/', '/v/', '/me/', '/widget/']),
     ('recipe', '레시피', '🍳', '#c2410c', '/fridge/', [('/fridge/', '냉장고 파먹기'), ('/fridge/solo/', '자취 요리'), ('/fridge/weather/', '날씨별'), ('/fridge/c/guk/', '국·찌개'), ('/fridge/c/bap/', '밥'), ('/fridge/c/myeon/', '면'), ('/fridge/c/bokkeum/', '볶음'), ('/fridge/c/jorim/', '조림·찜'), ('/fridge/c/banchan/', '반찬'), ('/fridge/c/jeon/', '전')], ['/fridge/']),   # 2026-10-20 사용자: 레시피 유입이 많아 별도 카테고리로
     ('life', '생활', '🧺', '#0e7490', '/apply/', [('/apply/', '지원금·청약'), ('/apply/recommend/', '청약 추천'), ('/apply/r/', '지역별'), ('/event/', '경품'), ('/qa/', '고민 해결'), ('/plaza/', '광장')], ['/apply/', '/a/', '/event/', '/qa/', '/ssul/', '/plaza/']),
+    ('game', '게임', '🎮', '#4f46e5', '/game/', [('/game/', '게임 허브'), ('/game/#free', '무료 게임'), ('/game/#steam', '스팀 할인'), ('/game/#contest', '게임 공모전')], ['/game/']),   # 2026-10-20 홍보 세션 기획서: 게임·취미·개발 커뮤니티 콘텐츠
     ('ai', '개발 지식', '🧑‍💻', '#0f172a', '/ailog/', [('/ailog/', '개발 지식'), ('/dev/faq/', '개발 FAQ'), ('/en/guide/', 'English guides'), ('/ailog/#log', 'AI 제작 로그')], ['/ailog/', '/dev/', '/en/'])]   # 2026-10-19 사용자: AI 로그 → 개발 지식으로 개편
 
 
 # 2026-10-19 사용자 「소비 쪽으로 가중치, URL 그대로 메인만」: 테마 줄 순서만 생활 먼저 (주소·테마 소속은 그대로)
-THEMES = [next(t for t in THEMES if t[0] == k) for k in ('recipe', 'life', 'contest', 'issue', 'money', 'ai')]
+THEMES = [next(t for t in THEMES if t[0] == k) for k in ('recipe', 'life', 'contest', 'issue', 'money', 'game', 'ai')]
 
 
 def theme_of(path):
@@ -114,8 +115,11 @@ PAGE_INTRO = {k: f'<section class="pg-intro"><h2>{h}</h2>{v}</section>' for k, (
 }.items()}
 
 
-def page(path, title, desc, body, crumbs=None, ld=None, full_title=False, noindex=False, og=None, lang='ko'):
-    url = SITE + path
+FOLD_TAGS = '<link rel="stylesheet" href="/assets/fold/fold.css?v=1"><script defer src="/assets/fold/fold.js?v=1"></script>'   # 긴 목록 접기·필터 (2026-10-20 스크롤 줄이기)
+
+
+def page(path, title, desc, body, crumbs=None, ld=None, full_title=False, noindex=False, og=None, lang='ko', canon=None):
+    url = SITE + (canon or path)
     TH = theme_of(path)
     # 사이트맵 lastmod: 날짜·시각·D-day 처럼 매번 바뀌는 글자는 빼고 내용이 바뀐 날만 갱신
     PAGE_HASH[path] = hashlib.md5(re.sub(r'D-\d+|D-DAY|\d{1,2}:\d{2}|\d{4}-\d{2}-\d{2}|\d{1,2}/\d{1,2}|[\d,]+\s*(?:건|명|개|곳|회|일 남)', '', title + body).encode()).hexdigest()
@@ -143,7 +147,7 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False, noinde
 <meta name="theme-color" content="{TH[3] if TH else '#5b21b6'}">
 <link rel="icon" href="/favicon.ico?v=6" sizes="any"><link rel="icon" type="image/png" sizes="48x48" href="/assets/icons/icon-48.png?v=6"><link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/icon-96.png?v=6"><link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/icon-192.png?v=6"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=6"><link rel="manifest" href="/site.webmanifest"><link rel="alternate" type="application/rss+xml" title="루리의 줍줍" href="/rss.xml">
 <link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="/assets/gm.css?v=19">{('<link rel="stylesheet" href="/assets/chat/ruri-chat.css?v=8">') if not (TH and TH[0] == 'ai') else ''}{COMM_TAGS}{('<script type="module" src="/assets/chat/ruri-chat.js?v=14"></script>') if not (TH and TH[0] == 'ai') else ''}<script defer src="/assets/app/app.js?v=3"></script>
+<link rel="stylesheet" href="/assets/gm.css?v=20">{('<link rel="stylesheet" href="/assets/chat/ruri-chat.css?v=8">') if not (TH and TH[0] == 'ai') else ''}{COMM_TAGS}{('<script type="module" src="/assets/chat/ruri-chat.js?v=14"></script>') if not (TH and TH[0] == 'ai') else ''}<script defer src="/assets/app/app.js?v=3"></script>
 {ldh}
 {GTAG}
 </head><body data-th="{TH[0] if TH else 'hub'}"{(' data-api="' + COMM_API + '"') if COMM_API else ''}>
@@ -1386,7 +1390,7 @@ def build():
     fr_urls = fridge_page()
     app_page()
     news_page()
-    extra_urls = talk_pages() + trend_pages() + mag_pages(live, aps) + analyst_pages() + satire_pages() + kw_pages() + money_pages() + apply_rec_page() + tool_pages() + hot_pages()
+    extra_urls = talk_pages() + trend_pages() + game_pages(live) + mag_pages(live, aps) + analyst_pages() + satire_pages() + kw_pages() + money_pages() + apply_rec_page() + tool_pages() + hot_pages()
     import widget
     extra_urls += widget.build(ROOT, live, aps, hot_live()[0], page, say, COMM_API, TODAY)  # 퍼가기 위젯 (2026-10-18 연구 세션 요청)
     extra_urls += region_pages(aps) + contest_hubs(live) + week_hub(live) + cross_pages(aps) + apply_hubs(aps)
@@ -1613,6 +1617,45 @@ def talk_issue(x, day):
 
 
 E2 = lambda t: E(html.unescape(html.unescape(str(t if t is not None else ''))))   # 수집 제목에 &quot; 가 이미 들어 있는 경우
+
+
+GAME_RX = re.compile(r'게임|e스포츠|이스포츠|esports|해커톤|인디|메타버스|웹툰|VR|XR', re.I)
+
+
+def game_pages(live):
+    """/game/ 게임 허브 (2026-10-20 홍보 세션 기획서): Epic 무료 게임·스팀 할인·인기·출시 예정 + 게임 관련 공모전. 자료는 game.py 가 12시간에 한 번 받아 둔 캐시.
+    가격은 스토어 기준 시각을 적고, 이미지는 각 스토어가 공개 API 로 내준 홍보 이미지를 출처와 함께 보여 준다."""
+    import game as GM
+    d = GM.load()
+    ep, st = d.get('epic') or {}, d.get('steam') or {}
+    if not ep and not st:
+        return []
+    won = lambda v: '무료' if not v else f'₩{v:,}'
+    img = lambda u, w=232, h=130: f'<img src="{E(u)}" width="{w}" height="{h}" loading="lazy" decoding="async" referrerpolicy="no-referrer" alt="" onerror="this.remove()">' if u else ''
+    css = ('<style>.gm-g{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px;list-style:none;padding:0;margin:8px 0}.gm-g li a{display:block;border:1px solid var(--bd,#e5e7eb);border-radius:12px;overflow:hidden;background:var(--card,#fff);color:var(--tx,#111);text-decoration:none;height:100%}'
+           '.gm-g img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;background:#e5e7eb}.gm-g b{display:block;padding:8px 10px 2px;font-size:14.5px;line-height:1.35}.gm-g span{display:block;padding:0 10px 10px;font-size:13px;color:var(--mu,#6b7280)}'
+           '.gm-g em{font-style:normal;font-weight:800;color:#dc2626}.gm-g s{opacity:.6}.gm-l{padding-left:18px}.gm-l li{margin:4px 0}</style>')
+    free = ''.join(f'<li><a href="{E(x["url"])}" target="_blank" rel="noopener nofollow">{img(x["img"])}<b>{E(x["name"])}</b><span><s>{E(x["orig"])}</s> <em>무료</em><br>{E(x["start"])} ~ {E(x["end"])} (한국 시간)</span></a></li>' for x in ep.get('free', []))
+    upc = ''.join(f'<li><a href="{E(x["url"])}" target="_blank" rel="noopener nofollow">{img(x["img"])}<b>{E(x["name"])}</b><span>{E(x["start"])}부터 무료 예정<br>~ {E(x["end"])}</span></a></li>' for x in ep.get('upcoming', []))
+    sale = ''.join(f'<li><a href="{E(x["url"])}" target="_blank" rel="noopener nofollow">{E(x["name"])}</a> <small><em>{x["off"]}%</em> ↓ {E(x["price"])} <s>{E(x["orig"])}</s> · ~{E(x["end"])}</small></li>' for x in ep.get('sale', []))
+    sp = ''.join(f'<li><a href="https://store.steampowered.com/app/{x["id"]}/" target="_blank" rel="noopener nofollow">{img(x["img"])}<b>{E(x["name"])}</b><span><em>{x["off"]}%</em> ↓ {won(x["price"])} <s>{won(x["orig"])}</s>{(" · ~" + E(x["until"])) if x["until"] else ""}</span></a></li>' for x in (st.get('specials') or [])[:9])
+    tp = ''.join(f'<li><a href="https://store.steampowered.com/app/{x["id"]}/" target="_blank" rel="noopener nofollow">{E(x["name"])}</a> <small>{won(x["price"])}{(" · " + str(x["off"]) + "% 할인") if x["off"] else ""}</small></li>' for x in (st.get('top_sellers') or [])[:10])
+    cs = ''.join(f'<li><a href="https://store.steampowered.com/app/{x["id"]}/" target="_blank" rel="noopener nofollow">{E(x["name"])}</a> <small>{won(x["price"]) if x["price"] else "가격 미정·무료"}</small></li>' for x in (st.get('coming_soon') or [])[:10])
+    gc = sorted([c for c in live if GAME_RX.search(c['title'])], key=lambda c: (c['end'], -c.get('pv', 0)))[:12]
+    body = (f'<p class="bc"><a href="/">홈</a> › 게임</p><h1>🎮 게임 허브 — 이번 주 무료 게임·스팀 할인·게임 공모전</h1>'
+            f'<p class="cat-st">📌 스토어 기준 {E(d.get("at", ""))}(한국 시간)에 받은 정보예요. 가격·할인은 바뀔 수 있으니 결제 전 스토어에서 확인하세요. 출처: Epic Games Store, Steam.</p>'
+            f'<h2 id="free">🎁 지금 무료로 받는 게임 (Epic Games Store)</h2>' + (f'<ul class="gm-g">{free}</ul>' if free else '<p class="note">지금 무료로 풀린 게임이 없어요.</p>')
+            + (f'<h3>⏭️ 다음 무료 예고</h3><ul class="gm-g">{upc}</ul>' if upc else '')
+            + (f'<h3>💸 에픽 할인 중</h3><ul class="gm-l">{sale}</ul>' if sale else '')
+            + f'<h2 id="steam">🔥 스팀 할인 TOP</h2>' + (f'<ul class="gm-g">{sp}</ul>' if sp else '<p class="note">지금 불러온 할인 정보가 없어요.</p>')
+            + (f'<h2>🏆 스팀 인기 게임</h2><ol class="gm-l">{tp}</ol>' if tp else '') + (f'<h2>🗓️ 곧 나오는 게임</h2><ul class="gm-l">{cs}</ul>' if cs else '')
+            + cp_box('게임 게이밍 PC', '게임할 때 많이 찾는 물건:', 2, strict=True)
+            + f'<h2 id="contest">🏆 게임·e스포츠·해커톤 공모전 (진행 중 {len(gc)}건)</h2>' + (f'<ul class="list">{"".join(card(c) for c in gc)}</ul>' if gc else '<p class="note">지금 진행 중인 게임 관련 공모전이 없어요.</p>')
+            + '<p class="note">이미지와 가격은 각 스토어가 공개한 정보를 하루 두 번 받아 보여 줘요. 줍줍은 스토어와 무관하고, 게임 구매를 권하지 않아요. 소통은 오픈채팅에서 해요.</p>'
+            '<p class="hm-links"><a href="/contest/">전체 공모전</a> · <a href="/event/">🎁 경품·용돈</a></p>' + css)
+    page('/game/', '게임 허브 — 이번 주 에픽 무료 게임·스팀 할인 TOP·게임 공모전 (매일 갱신)', f'Epic 무료 게임 {len(ep.get("free", []))}개와 스팀 할인·인기·출시 예정, 진행 중인 게임·e스포츠·해커톤 공모전 {len(gc)}건을 한곳에. 스토어 기준 시각을 적어요.',
+         body, [('루리의 줍줍', '/'), ('게임', '/game/')])
+    return ['/game/']
 
 
 def trend_pages():
@@ -2184,7 +2227,7 @@ def kw_play(db, today, L, ENH=None):
             bd_ += '<i title="읽을거리가 있어요">📖</i>'
         rl = KF.rules_links(x, contests) if x else []
         ex = ''.join(f'<a href="{E(u)}">{E(t)}</a>' for u, t in rl[:2])   # 규칙표로 맞는 것만(맞는 게 없으면 안 붙임)
-        li += (f'<li id="k-{E(a["slug"])}"><a href="/kw/{E(a["slug"])}/"><em>{j + 1}</em><b>{E(a["k"])} <span class="kwb">{bd_}</span></b>'
+        li += (f'<li id="k-{E(a["slug"])}" data-c="{E(KF.cat_of(a["k"], r.get("news")))}"><a href="/kw/{E(a["slug"])}/"><em>{j + 1}</em><b>{E(a["k"])} <span class="kwb">{bd_}</span></b>'
                f'<span>{SRCB(a)} {E(a.get("traffic") or "-")} · {E(a.get("first", ""))} 첫 등장</span>{KF.spark(hist.get(a["slug"]) or [], KF.STY[KF.srckey(a.get("src"))][0])}</a>'
                + (f'<p class="kwr">📎 {ex}</p>' if ex else '') + '</li>')
     note_h = ('<p class="kwn">흐름 그래프(오늘 시간대별 인기도)는 시간마다 기록이 쌓이는 대로 나타나요. 기록은 ' + (min((v[0][0] for v in hist.values() if v), default='') or '다음 갱신') + '부터예요. '
@@ -2192,11 +2235,14 @@ def kw_play(db, today, L, ENH=None):
     shr = share_bar('오늘의 키워드 TOP5', '오늘 많이 검색된 키워드 TOP5 — ' + ', '.join(card[1][:5]) if card else '오늘의 인기 키워드')
     dl = f'<p class="kwn"><a href="/assets/kw/top5.jpg" download>🖼️ 오늘의 TOP5 카드 이미지 저장</a></p>' if card else ''
     rd = ''.join(f'<li><a href="/kw/{E(sl)}/"><b>{E(db[sl]["k"])}</b><span>섹션 {n}개 · {E(", ".join(KF.STY[KF.srckey(db[sl].get("src"))][1:2]))}</span></a></li>' for sl, (_h, n) in list((ENH or {}).items())[:8])
-    top = (KF.one_liner(cur, db) + KF.cloud(cur) + KF.top1(cur, hist)
-           + (f'<section class="kwc"><h2>📖 오늘 읽을거리 — 왜 떴나·사람들이 궁금해하는 것·타임라인</h2><ul class="mg-l">{rd}</ul><p class="kwn">여러 출처에 동시에 뜬 것, 오래 버티는 것, 생활에 닿는 것부터 골랐어요. 정치·가십·사고는 제외해요.</p></section>' if rd else '') + KF.fleeting(cur) + qbox + vbox + shr + dl
+    rd5 = ''.join(f'<li><a href="/kw/{E(sl)}/"><b>{E(db[sl]["k"])}</b><span>섹션 {n}개 · {E(", ".join(KF.STY[KF.srckey(db[sl].get("src"))][1:2]))}</span></a></li>' for sl, (_h, n) in list((ENH or {}).items())[:5])
+    top = (KF.one_liner(cur, db) + KF.top1(cur, hist)
+           + (f'<section class="kwc"><h2>📌 오늘의 추천 — 읽어 볼 만한 키워드</h2><ul class="mg-l">{rd5}</ul><p class="kwn">여러 출처에 동시에 뜬 것, 오래 버티는 것, 생활에 닿는 것부터 골랐어요. 정치·가십·사고는 제외해요.</p></section>' if rd5 else '')
+           + KF.cloud(cur)
+           + '<details class="kw-play"><summary>🎮 놀이판 — 하루살이·장수 키워드, 퀴즈, 내일 예측 투표</summary>' + KF.fleeting(cur) + qbox + vbox + '</details>' + shr + dl
            + '<script type="application/json" id="kw-data">' + json.dumps({'q': qdata, 'v': vdata}, ensure_ascii=False).replace('</', '<' + chr(92) + '/') + '</script>'
-           + '<link rel="stylesheet" href="/assets/kw/kw.css?v=2"><script defer src="/assets/kw/kw.js?v=1"></script>')
-    return {'top': top, 'list': note_h + f'<h2>📋 오늘 뜬 키워드 전체</h2><ol class="mg-l kwl">{li}</ol>'}, (card[0] if card else None)
+           + '<link rel="stylesheet" href="/assets/kw/kw.css?v=3"><script defer src="/assets/kw/kw.js?v=1"></script>' + FOLD_TAGS)
+    return {'top': top, 'list': note_h + f'<h2>📋 오늘 뜬 키워드 전체</h2><ol class="mg-l kwl" data-fold="12" data-step="24" data-filter="c">{li}</ol>'}, (card[0] if card else None)
 
 
 def kw_pages():
@@ -2270,7 +2316,7 @@ def kw_pages():
         page(f'/kw/{sl}/', f'{k} 검색 급상승 이유 — 관련 보도·정리', f'{k}{josa_ga(k)} 검색 급상승 키워드에 오른 이유: ' + ' / '.join(n['t'] for n in r.get('news', [])[:2])[:140], body,
              [('루리의 줍줍', '/'), ('인기 키워드', '/kw/'), (k, f'/kw/{sl}/')], noindex=not (r.get('post') or (sl in ENH and ENH[sl][1] >= 4)))
         urls.append(f'/kw/{sl}/')
-    arch = '<section class="tk-arch"><h2>📅 날짜별 인기 키워드</h2><p>' + ''.join(f'<a href="/kw/{d}/">{kdate(d)}</a>' for d in days[:90]) + '</p></section>'
+    arch = '<details class="tk-arch"><summary>📅 날짜별 인기 키워드 (최근 90일)</summary><p>' + ''.join(f'<a href="/kw/{d}/">{kdate(d)}</a>' for d in days[:90]) + '</p></details>'
     for i, d in enumerate(days):
         L = json.load(open(os.path.join(ad, d + '.json'), encoding='utf-8'))
         li = ''.join(f'<li><a href="/kw/{x["slug"]}/"><em>{j + 1}</em><b>{E2(x["k"])}</b><span>{SRCB(x)} {E2(x.get("traffic") or "-")} · {E2(x.get("first", ""))} 첫 등장</span></a></li>' for j, x in enumerate([y for y in L if y['slug'] in db]))
@@ -2862,7 +2908,7 @@ _CPJ = os.path.expanduser('~/tools/promo_share/coupang.json')
 CP = json.load(open(_CPJ, encoding='utf-8')) if os.path.exists(_CPJ) else {}
 
 
-def cp_box(text, title='함께 보면 좋은 물건:', n=2, fill='', body='', want=''):
+def cp_box(text, title='함께 보면 좋은 물건:', n=2, fill='', body='', want='', strict=False):
     """광고 박스 한 곳. 링크 rel=sponsored nofollow, 공정위 문구는 링크 바로 아래. 팝업·자동 이동 없음.
     text 에 맞는 규칙(coupang.json rules 순서)을 먼저, 모자라면 fill 에 맞는 규칙으로 채움(레시피: 메뉴별 도구 → 일반 요리 도구)."""
     if not CP.get('on'):
@@ -2877,7 +2923,7 @@ def cp_box(text, title='함께 보면 좋은 물건:', n=2, fill='', body='', wa
                 items += [x for x in r['items'] if x not in items]
     if want:
         items = [x for x in items if want in x['name']] + [x for x in items if want not in x['name']]
-    items = (items or CP.get('default', []))[:n]
+    items = (items or ([] if strict else CP.get('default', [])))[:n]   # strict: 맞는 규칙이 없으면 아무것도 안 붙임(게임·취미 페이지)
     if not items:
         return ''
     lk = ', '.join(f'<a class="cp-in" href="{E(x["url"])}" target="_blank" rel="sponsored nofollow noopener">{E(x["name"])}</a>' for x in items)
@@ -3266,7 +3312,7 @@ def page_rates(min_n=3):
     if not COMM_API:
         return {}
     try:
-        with urllib.request.urlopen(COMM_API + f'/api/p/rates?min={min_n}', timeout=20) as f:
+        with urllib.request.urlopen(urllib.request.Request(COMM_API + f'/api/p/rates?min={min_n}', headers={'User-Agent': 'jupjup-build/1'}), timeout=20) as f:   # 파이썬 기본 UA 는 Cloudflare 가 막음(1010)
             return {x['page']: x for x in json.load(f).get('rates') or []}
     except Exception as e:
         print('별점 읽기 실패', repr(e)[:80])
@@ -3346,6 +3392,15 @@ def fridge_page():
         page(u, f'{r["n"]} {how} — 재료 {len(r["need"])}가지로 {r["m"]}분 집밥', f'{r["n"]} 만드는 법: {", ".join(r["need"] + r["opt"][:3])}로 {r["m"]}분. 재료와 단계별 만드는 법, 재료가 비슷한 메뉴까지.',
              body, [('루리의 줍줍', '/'), ('냉장고 파먹기', '/fridge/'), (r['n'], u)], ld)
         urls.append(u)
+    # 2026-10-20 원본 정제: 같은 메뉴가 띄어쓰기만 다르게 두 번 있던 것을 합침 — 옛 주소는 새 주소로 안내(검색 색인 중복 방지)
+    ALIAS = _rd('assets/fridge/recipes_alias.json') or {}
+    live_names = {r['n'] for r in RS}
+    for old, new in ALIAS.items():
+        if new in live_names and old not in live_names:
+            uo, un = f'/fridge/r/{fr_slug(old)}/', f'/fridge/r/{fr_slug(new)}/'
+            page(uo, f'{old} → {new} 레시피로 이동', f'{old} 레시피는 {new} 레시피로 합쳤어요.',
+                 f'<p class="bc"><a href="/">홈</a> › <a href="/fridge/">냉장고 파먹기</a></p><h1>{E(old)} → {E(new)} 레시피로 합쳤어요</h1>'
+                 f'<p><a href="{un}">{E(new)} 레시피 보기 →</a></p><meta http-equiv="refresh" content="0; url={un}">', noindex=True, canon=un)
     allr = ''.join(f'<li><a href="/fridge/r/{fr_slug(r["n"])}/">{r["e"]} {E(r["n"])}</a></li>' for r in sorted(RS, key=lambda r: r['n']))
     import fridge_today as FT
     li = lambda L: '<ul class="fr-rel">' + ''.join(f'<li><a href="/fridge/r/{fr_slug(x["n"])}/">{x["e"]} {E(x["n"])} <small>{x["m"]}분 · {E(x["lv"])}</small></a></li>' for x in L) + '</ul>'
