@@ -2086,6 +2086,15 @@ def _jr_box(g, JIDX, GN):
             + '<br>'.join('· ' + E(x) for x in g['miss']) + f'</td><td>{nx}</td><td>{E(g["contact"])}</td></tr></tbody></table></div>')
 
 
+def _alert(g):
+    """급한 처지에서 읽는 글(채무·보증금·사기·분쟁) 맨 위 안내: 법률 상담이 아니고 개별 사건은 기관에 확인."""
+    if not g.get('alert'):
+        return ''
+    return ('<div class="g-alert" role="note"><b>⚠️ 먼저 읽어 주세요</b><p>' + g['alert'] + '</p></div>'
+            '<style>.g-alert{border:2px solid #f59e0b;background:#fffbeb;color:#78350f;border-radius:12px;padding:10px 14px;margin:10px 0}.g-alert p{margin:4px 0 0;line-height:1.7}.g-alert a{color:inherit;text-decoration:underline}'
+            '@media (prefers-color-scheme: dark){.g-alert{background:#422006;color:#fde68a;border-color:#b45309}}</style>')
+
+
 def kin_guides():
     """/money/guide/ 생활 돈 가이드 (2026-10-20 홍보 세션 지식iN 반복 질문): 근로장려금·내일배움카드·월세 세액공제 vs 청년월세·퇴직금. 공식 출처로 확인된 칸만 JSON 에 담고 숫자는 표로 분리."""
     if not os.path.exists(KIN_F):
@@ -2117,7 +2126,7 @@ def kin_guides():
         src = ''.join(f'<li><a href="{E(u)}" target="_blank" rel="noopener nofollow">{E(n)}</a></li>' for n, u in g['sources'])
         rel = ' · '.join(f'<a href="{E(u)}">{E(t)}</a>' for u, t in g['related'])
         body = (f'<p class="bc"><a href="/">홈</a> › <a href="/money/guide/">생활 돈 가이드</a> › {E(g["name"])}</p><h1>{g["icon"]} {E(g["h1"])}</h1>'
-                f'<p class="cat-st">📌 {E(g["lead"])}</p><p class="kwn">기준: {E(g["basis"])}' + (' · 원문 바로가기: ' + ' · '.join(f'<a href="{E(u)}" target="_blank" rel="noopener">{E(n)}</a>' for n, u in g['sources'][:4])) + '</p>' + _jr_nav(g, JIDX, GN) + secs + _jr_box(g, JIDX, GN) + '<h2>자주 묻는 질문</h2>' + faq
+                f'<p class="cat-st">📌 {E(g["lead"])}</p><p class="kwn">기준: {E(g["basis"])}' + (' · 원문 바로가기: ' + ' · '.join(f'<a href="{E(u)}" target="_blank" rel="noopener">{E(n)}</a>' for n, u in g['sources'][:4])) + '</p>' + _jr_nav(g, JIDX, GN) + _alert(g) + secs + _jr_box(g, JIDX, GN) + '<h2>자주 묻는 질문</h2>' + faq
                 + join_cta('apply')
                 + _cite_box(g, f'/money/guide/{g["slug"]}/')
                 + f'<h2>공식 출처</h2><ul class="gm-l">{src}</ul>'
