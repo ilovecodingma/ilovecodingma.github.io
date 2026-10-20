@@ -67,7 +67,7 @@ GTAG = ('<script async src="https://pagead2.googlesyndication.com/pagead/js/adsb
 THEMES = [  # (키, 이름, 아이콘, 테마색, 홈, [하위 메뉴], [이 테마에 속하는 주소 앞부분])
     ('issue', '이슈', '🕵️', '#b45309', '/news/', [('/trend/', '이슈 트렌드'), ('/hot/', '핫이슈'), ('/news/', '기사 확인 신호'), ('/talk/', '커뮤니티 이슈'), ('/kw/', '인기 키워드'), ('/satire/', '루리 풍자'), ('/mag/', '매거진'), ('/review/', '평론')],
      ['/trend/', '/hot/', '/news/', '/talk/', '/kw/', '/satire/', '/mag/', '/review/']),
-    ('money', '머니', '📊', '#047857', '/analyst/', [('/analyst/', '애널리스트 종합'), ('/money/experts/', '전문가 코멘트'), ('/money/policy/', '투자 정책'), ('/money/age/', '나이별 원칙'), ('/money/tools/salary/', '계산기'), ('/analyst/coin/btc/', '코인')], ['/analyst/', '/money/']),
+    ('money', '머니', '📊', '#047857', '/analyst/', [('/analyst/', '애널리스트 종합'), ('/money/experts/', '전문가 코멘트'), ('/money/guide/', '생활 돈 가이드'), ('/money/policy/', '투자 정책'), ('/money/age/', '나이별 원칙'), ('/money/tools/salary/', '계산기'), ('/analyst/coin/btc/', '코인')], ['/analyst/', '/money/']),
     ('contest', '공모전', '🏆', '#6d28d9', '/contest/', [('/contest/', '추천 상담'), ('/cat/literature/', '분야별'), ('/prep/', '준비실'), ('/lab/', '수상 연구소'), ('/community/', '원정대'), ('/guide/', '가이드'), ('/widget/', '위젯')],
      ['/contest/', '/c/', '/cat/', '/prep/', '/lab/', '/community/', '/guide/', '/v/', '/me/', '/widget/']),
     ('recipe', '레시피', '🍳', '#c2410c', '/fridge/', [('/fridge/', '냉장고 파먹기'), ('/fridge/solo/', '자취 요리'), ('/fridge/weather/', '날씨별'), ('/fridge/c/guk/', '국·찌개'), ('/fridge/c/bap/', '밥'), ('/fridge/c/myeon/', '면'), ('/fridge/c/bokkeum/', '볶음'), ('/fridge/c/jorim/', '조림·찜'), ('/fridge/c/banchan/', '반찬'), ('/fridge/c/jeon/', '전')], ['/fridge/']),   # 2026-10-20 사용자: 레시피 유입이 많아 별도 카테고리로
@@ -1390,7 +1390,7 @@ def build():
     fr_urls = fridge_page()
     app_page()
     news_page()
-    extra_urls = talk_pages() + trend_pages() + game_pages(live) + game_extra_pages() + mag_pages(live, aps) + analyst_pages() + satire_pages() + kw_pages() + money_pages() + apply_rec_page() + tool_pages() + hot_pages()
+    extra_urls = talk_pages() + trend_pages() + game_pages(live) + game_extra_pages() + kin_guides() + mag_pages(live, aps) + analyst_pages() + satire_pages() + kw_pages() + money_pages() + apply_rec_page() + tool_pages() + hot_pages()
     import widget
     extra_urls += widget.build(ROOT, live, aps, hot_live()[0], page, say, COMM_API, TODAY)  # 퍼가기 위젯 (2026-10-18 연구 세션 요청)
     extra_urls += region_pages(aps) + contest_hubs(live) + week_hub(live) + cross_pages(aps) + apply_hubs(aps)
@@ -1790,6 +1790,7 @@ def game_extra_pages():
         faq, ld = _faq([('스팀 세일은 1년에 몇 번 하나요?', '시즌 세일은 스팀 전체가 참여하는 큰 세일로, 공식 문서에 「1년에 4번」(겨울·봄·여름·가을)으로 적혀 있어요. 그 밖에 장르별 테마 페스티벌과 Next Fest(체험판 행사)가 따로 열려요.'),
                         ('다음 스팀 세일은 언제예요?', (f'공식 일정 문서 기준으로 다음 시즌 세일은 {nxt["name"]}({_gr(nxt["start"], nxt["end"])}, 지금부터 {(_gd(nxt["start"]) - td).days}일 뒤)예요.' if nxt else '공식 일정 문서에 아직 다음 날짜가 없어요.')),
                         ('블랙프라이데이에도 스팀 세일을 하나요?', '2026년 스팀 가을 세일은 SteamDB 에 10월 1일~8일로 표기돼 있어 이미 끝났어요(공식 일정 문서에는 지난 일정이 실리지 않아요). 지금 공식 문서에 예정된 다음 시즌 세일은 겨울 세일이에요. 블랙프라이데이(2026년은 11월 27일)에 스팀이 따로 큰 세일을 한다는 공식 일정은 문서에 없어요.'),
+                        ('스팀 세일 때까지 기다려야 하나요?', (f'급하지 않다면 다음 시즌 세일({nxt["name"]}, {_gr(nxt["start"], nxt["end"])})까지 기다리는 선택지가 있어요. 다만 할인 여부와 폭은 게임사가 정해서 이전과 같다는 보장은 없어요. 사고 나서 다음 날 더 싸졌다면 환불 후 재구매해도 악용이 아니라는 공식 문장이 있어요(<a href="/game/refund/">환불 규정</a>).' if nxt else '다음 세일 날짜가 공식 문서에 나오면 이 표에 들어와요.')),
                         ('세일 때 산 게임을 환불할 수 있나요?', '구매 후 14일 이내이고 플레이 시간이 2시간 미만이면 요청할 수 있어요. 자세한 조건은 <a href="/game/refund/">스팀 환불 규정</a>에 정리했어요.')])
         body = ('<p class="bc"><a href="/">홈</a> › <a href="/game/">게임</a> › 스팀 세일 달력</p><h1>📅 스팀 세일 언제 하나요? 시즌 세일 달력</h1>'
                 + (f'<p class="cat-st">📌 다음 시즌 세일은 <b>{E(nxt["name"])}</b>, {E(_gr(nxt["start"], nxt["end"]))} (D-{(_gd(nxt["start"]) - td).days})예요.</p>' if nxt else '')
@@ -1826,6 +1827,8 @@ def game_extra_pages():
     # ---- 스팀 환불 규정 (스팀 공식 환불 페이지 2024-04-23 수정본 확인)
     rows = [('게임·소프트웨어', '구매 후 14일 이내 + 플레이 시간 2시간 미만이면 이유와 상관없이 요청 가능'), ('DLC', '구매 후 14일 이내 + DLC 구매 후 게임 플레이 2시간 미만 + DLC를 사용·변경·거래하지 않았을 때(일부 서드파티 DLC는 환불 불가, 상점 페이지에 표시)'),
             ('게임 내 구매', 'Valve 게임은 구매 후 48시간 이내 + 아이템을 쓰지 않았을 때. 서드파티 게임은 개발자가 환불을 켜 둔 경우만(구매 전 표시)'), ('출시 전 구매(예약 구매)', '출시 전에는 언제든 요청 가능. 14일·2시간 기준은 출시일부터 적용. 앞서 해보기는 플레이 시간이 모두 2시간에 포함'),
+            ('꾸러미(번들)', '꾸러미에 든 아이템을 거래하지 않았고 전체 플레이 시간이 2시간 미만이면 환불 가능. 환불 불가한 게임 내 아이템·DLC가 들어 있으면 꾸러미는 환불 불가(구매 과정에서 알려 줘요)'),
+            ('스팀 하드웨어', '스팀 하드웨어는 별도의 하드웨어 환불 정책을 따라요'),
             ('스팀 지갑', '충전한 금액을 쓰지 않았다면 구매 후 14일 이내'), ('정기 구독', '결제(자동 갱신 포함) 후 48시간 이내 + 그 기간 구독 혜택을 쓰지 않았을 때'), ('선물', '수락 전에는 14일·2시간 기준으로 환불(비용은 구매한 사람에게). 수락한 선물은 받은 사람이 같은 기간 안에 요청'),
             ('스팀 밖에서 산 키', '환불 불가(타사에서 산 CD키·지갑 코드)'), ('VAC 차단', '그 게임에서 VAC 차단되면 그 게임의 환불 권리를 잃어요'), ('동영상 콘텐츠', '영화·시리즈·튜토리얼 등은 환불 불가(환불되는 제품과 묶인 꾸러미는 제외)')]
     tr = ''.join(f'<tr><td><b>{E(a)}</b></td><td>{E(b)}</td></tr>' for a, b in rows)
@@ -1833,6 +1836,8 @@ def game_extra_pages():
                     ('환불은 어디서 요청하나요? 결제 오류도 거기로 문의하나요?', '<a href="https://help.steampowered.com/" target="_blank" rel="noopener nofollow">help.steampowered.com</a> 에서 환불 요청과 다른 도움(결제 문의 포함)을 받을 수 있어요.'),
                     ('환불금은 언제 어디로 들어오나요?', '요청이 확인된 뒤 1주 안에, 스팀 지갑 또는 구매에 쓴 결제 수단으로 전액 환불돼요. 결제 수단이 환불을 지원하지 않으면 스팀 지갑으로 들어와요.'),
                     ('다음 날 더 싸졌는데 환불하고 다시 사도 되나요?', '공식 안내에 「구매한 제품이 바로 다음 날 더 저렴한 가격으로 판매되고 있어서 환불 후 다시 구매하는 것은 악용으로 판단하지 않는다」고 적혀 있어요. 다만 환불을 무료 플레이 용도로 쓰면 환불 기능이 막힐 수 있어요.'),
+                    ('스팀 환불 신청 방법은요?', '<a href="https://help.steampowered.com/" target="_blank" rel="noopener nofollow">help.steampowered.com</a> 에서 요청한다고 스팀 공식 환불 안내에 나와 있어요. 구매 후 14일 이내·게임 플레이 2시간 미만인지 먼저 확인하세요.'),
+                    ('스팀 결제가 두 번 됐을 때는요?', '결제 문제도 <a href="https://help.steampowered.com/" target="_blank" rel="noopener nofollow">help.steampowered.com</a> 에서 도움을 받을 수 있다고 공식 안내에 나와 있어요. 줍줍은 개별 결제 내역을 볼 수 없어서, 출금 내역은 카드사·은행에서도 함께 확인하세요.'),
                     ('에픽·콘솔(플레이스테이션·엑스박스·닌텐도) 환불도 같나요?', '플랫폼마다 조건이 달라요. 줍줍은 스팀 공식 안내를 직접 확인한 내용만 적었고, 다른 플랫폼은 아래 공식 고객지원에서 확인하세요.')])
     body = ('<p class="bc"><a href="/">홈</a> › <a href="/game/">게임</a> › 스팀 환불 규정</p><h1>↩️ 스팀 게임 환불 되나요? 환불 규정 (구매 후 14일·플레이 2시간)</h1>'
             '<p class="cat-st">📌 스팀은 구매 후 <b>14일 이내</b>, 게임 플레이 <b>2시간 미만</b>이면 이유와 상관없이 환불을 요청할 수 있어요. 요청은 <a href="https://help.steampowered.com/" target="_blank" rel="noopener nofollow">help.steampowered.com</a>에서 해요.</p>'
@@ -1877,6 +1882,50 @@ def game_extra_pages():
     page('/game/free/', '에픽 무료 게임 — 이번 주 무료·다음 예고·지난 무료 게임 기록', '에픽게임즈 스토어에서 지금 무료인 게임과 다음 주 예고, 줍줍이 확인해 쌓은 지난 무료 게임 기록을 한곳에. 한국 시간 기준.',
          body, [('루리의 줍줍', '/'), ('게임', '/game/'), ('에픽 무료 게임', '/game/free/')], ld)
     urls.append('/game/free/')
+    return urls
+
+
+KIN_F = os.path.join(HERE, 'kin_guides.json')
+
+
+def kin_guides():
+    """/money/guide/ 생활 돈 가이드 (2026-10-20 홍보 세션 지식iN 반복 질문): 근로장려금·내일배움카드·월세 세액공제 vs 청년월세·퇴직금. 공식 출처로 확인된 칸만 JSON 에 담고 숫자는 표로 분리."""
+    if not os.path.exists(KIN_F):
+        return []
+    G = json.load(open(KIN_F, encoding='utf-8'))['guides']
+    urls, cards = [], ''
+    for g in G:
+        secs = ''
+        for sc in g['sections']:
+            h = f'<h2>{E(sc["h"])}</h2>'
+            if sc.get('table'):
+                head, rows = sc['table'][0], sc['table'][1:]
+                h += '<div class="tblw"><table class="xb"><thead><tr>' + ''.join(f'<th>{E(c)}</th>' for c in head) + '</tr></thead><tbody>' + ''.join('<tr>' + ''.join(f'<td>{E(c)}</td>' for c in r) + '</tr>' for r in rows) + '</tbody></table></div>'
+            if sc.get('ul'):
+                h += '<ul class="gm-l">' + ''.join(f'<li>{x}</li>' for x in sc['ul']) + '</ul>'
+            if sc.get('p'):
+                h += f'<p>{sc["p"]}</p>'
+            secs += h
+        faq, ld = _faq([(q, a) for q, a in g['faq']])
+        src = ''.join(f'<li><a href="{E(u)}" target="_blank" rel="noopener nofollow">{E(n)}</a></li>' for n, u in g['sources'])
+        rel = ' · '.join(f'<a href="{E(u)}">{E(t)}</a>' for u, t in g['related'])
+        body = (f'<p class="bc"><a href="/">홈</a> › <a href="/money/guide/">생활 돈 가이드</a> › {E(g["name"])}</p><h1>{g["icon"]} {E(g["h1"])}</h1>'
+                f'<p class="cat-st">📌 {E(g["lead"])}</p><p class="kwn">기준: {E(g["basis"])}</p>' + secs + '<h2>자주 묻는 질문</h2>' + faq
+                + join_cta('apply')
+                + f'<h2>공식 출처</h2><ul class="gm-l">{src}</ul>'
+                + f'<p class="note">공식 안내를 줍줍이 직접 확인해 정리한 내용이고, 기준 금액과 신청 기간은 해마다 바뀔 수 있어요. 신청 전에 위 공식 출처를 꼭 확인하고, 개별 사정은 {E(g["contact"])}에 문의하세요. 법률·세무 상담이 아니에요.</p>'
+                + f'<p class="hm-links">{rel} · <a href="/money/guide/">다른 생활 돈 가이드</a></p>' + GAME_CSS)
+        page(f'/money/guide/{g["slug"]}/', g['title'], g['desc'], body, [('루리의 줍줍', '/'), ('머니', '/analyst/'), ('생활 돈 가이드', '/money/guide/'), (g['name'], f'/money/guide/{g["slug"]}/')], ld)
+        urls.append(f'/money/guide/{g["slug"]}/')
+        cards += f'<li><a class="card" data-c="guide" href="/money/guide/{g["slug"]}/"><span class="ic">{g["icon"]}</span><div class="cb"><h3 class="t">{E(g["name"])}</h3><p class="o">{E(g["h1"])}</p></div></a></li>'
+    tools = ('<li><a class="card" data-c="guide" href="/money/tools/severance/"><span class="ic">🧮</span><div class="cb"><h3 class="t">퇴직금 계산기</h3><p class="o">입사·퇴사일과 최근 3개월 임금으로 계산</p></div></a></li>'
+             '<li><a class="card" data-c="guide" href="/money/tools/unemployment/"><span class="ic">🧮</span><div class="cb"><h3 class="t">실업급여 계산기</h3><p class="o">가입 기간·나이별 받는 날 수와 금액</p></div></a></li>'
+             '<li><a class="card" data-c="guide" href="/money/tools/salary/"><span class="ic">🧮</span><div class="cb"><h3 class="t">연봉 실수령액 계산기</h3><p class="o">4대보험·소득세 뺀 월급</p></div></a></li>')
+    page('/money/guide/', '생활 돈 가이드 — 근로장려금·국민내일배움카드·월세 세액공제·퇴직금 (공식 출처 정리)', '근로장려금, 국민내일배움카드, 월세 세액공제와 청년월세 지원, 퇴직금을 국세청·고용노동부·고용24 등 공식 안내로 정리했어요. 계산기도 함께.',
+         '<p class="bc"><a href="/">홈</a> › 생활 돈 가이드</p><h1>🧾 생활 돈 가이드</h1><p class="cat-st">📌 자주 묻는 돈 문제를 공식 안내로 확인한 것만 정리했어요. 공식에서 확인하지 못한 항목은 일부러 적지 않았고, 기준일과 출처를 페이지마다 밝혀요.</p>'
+         f'<ul class="list">{cards}</ul><h2>계산기</h2><ul class="list">{tools}</ul>' + join_cta('apply') + GAME_CSS,
+         [('루리의 줍줍', '/'), ('머니', '/analyst/'), ('생활 돈 가이드', '/money/guide/')])
+    urls.append('/money/guide/')
     return urls
 
 
