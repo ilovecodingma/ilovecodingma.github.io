@@ -1,3 +1,19 @@
+# AI 검색·답변 서비스 크롤러도 공개 페이지는 읽을 수 있게 허용(비공개 경로만 제외). 허용이 인용을 보장하지는 않아요.
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+User-agent: CCBot
+Allow: /
+Disallow: /admin/
+Disallow: /me/
+
 User-agent: *
 Allow: /
 Disallow: /admin/
