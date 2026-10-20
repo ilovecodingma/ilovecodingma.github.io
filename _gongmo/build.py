@@ -139,8 +139,8 @@ def law_linkify(html_s, default=None):
     for tok in re.split(r'(<[^>]+>)', html_s):
         if tok.startswith('<'):
             low = tok[1:6].lower()
-            if re.match(r'<(a|script|style|h1)', tok, re.I): depth += 1
-            elif re.match(r'</(a|script|style|h1)', tok, re.I): depth = max(0, depth - 1)
+            if re.match(r'<(a|script|style|h1)\b', tok, re.I): depth += 1
+            elif re.match(r'</(a|script|style|h1)\b', tok, re.I): depth = max(0, depth - 1)
             out.append(tok); continue
         if depth or '제' not in tok:
             out.append(tok); continue
