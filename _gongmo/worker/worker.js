@@ -538,7 +538,9 @@ export default {
         const ua = req.headers.get('User-Agent') || '';
         if (/bot|crawl|spider|slurp|headless|lighthouse|preview|facebookexternalhit|daum|yeti|google|inspection|python|curl|wget|go-http|axios|node-fetch|scrapy/i.test(ua)) return json(req, { ok: 1 });
         const ip = req.headers.get('CF-Connecting-IP') || '', d = new Date(Date.now() + 9 * 3600e3).toISOString().slice(0, 10);
-        const vid = hex(new Uint8Array(await crypto.subtle.digest('SHA-256', new TextEncoder().encode(ip + '|' + ua + '|' + d)))).slice(0, 16);
+        // 2026-10-20 재방문율: 브라우저가 보낸 익명 번호(v)가 있으면 그걸로 vid(날짜 안 섞음), 없으면 예전처럼 하루 단위(IP+UA+날짜)
+        const rv = /^[0-9a-f]{16}$/.test(body.v || '') ? body.v : '';
+        const vid = hex(new Uint8Array(await crypto.subtle.digest('SHA-256', new TextEncoder().encode(rv ? 'rv1|' + rv : ip + '|' + ua + '|' + d)))).slice(0, 16);
         let ref = ''; try { ref = body.r ? new URL(body.r).hostname.replace(/^www\./, '') : ''; } catch {}
         if (/sungprofile\.cloud$/.test(ref)) ref = '';
         if (/^[a-z0-9_-]{1,16}$/i.test(body.s || '')) ref = 'src:' + body.s.toLowerCase();  // 홍보 링크 꼬리 ?src=th 또는 ?utm_source=th (2026-10-19 둘 다 src:<채널>)(앱 내 브라우저는 referrer 가 비어서)
