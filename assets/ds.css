@@ -268,3 +268,42 @@ main.w:has(.hx-hero){max-width:none;padding:0}
   .hx-ruri{width:170px;margin:0 0 -12px;justify-self:end;-webkit-mask-image:none;mask-image:none;grid-column:2!important;grid-row:1!important}
   .hx-card{grid-column:1 / -1!important;grid-row:2!important;width:auto}
 }
+/* ── 푸터 재정리 (2026-10-20) ── */
+.ft{margin-top:64px;padding-bottom:84px}
+.ft-in{max-width:1180px;padding:48px 20px 20px}
+.ft-b{gap:16px;padding-bottom:26px;border-bottom:1px solid rgba(255,255,255,.1)}
+.ft-b .av{width:64px;height:64px}
+.ft-b p{font-size:14px;color:#b9b4c9}
+.ft-m{font-size:13.5px!important}.ft-m a{color:#fdba74}
+.ft-g{margin:30px 0 0;grid-template-columns:repeat(5,minmax(0,1fr));gap:26px 20px}
+.ft-g>div{min-width:0}
+.ft-g b{font-size:12.5px;letter-spacing:.04em;margin-bottom:8px;color:#fff}
+.ft-g a{font-size:14px;padding:5px 0;line-height:1.35}
+.ft-c{margin:26px 0 0;display:flex;flex-wrap:wrap;gap:8px}
+.ft-c .cl-b{min-height:40px;font-size:13.5px}
+.ft-l{display:flex;flex-wrap:wrap;gap:6px 18px;margin:26px 0 10px;padding-top:20px}
+.ft-l a{font-size:13.5px;font-weight:700}
+.ft-n{font-size:12.5px;max-width:880px}
+@media(max-width:820px){
+  .ft{margin-top:48px;padding-bottom:92px}
+  .ft-in{padding:32px 16px 16px}
+  .ft-b{padding-bottom:20px}.ft-b .av{width:52px;height:52px}
+  .ft-g{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 14px;margin-top:22px}
+  .ft-g a{padding:4px 0;font-size:13.5px}
+  .ft-g>div:last-child{grid-column:1/-1}
+  .ft-g>div:last-child a{display:inline-block;margin-right:16px}
+  .ft-c{margin-top:20px}.ft-c .cl-b{flex:1 1 calc(50% - 8px);justify-content:center;padding:6px 8px;font-size:13px}
+  .ft-l{margin-top:20px}
+}
+/* ── 모바일 공통: 채팅 버튼이 글을 덮지 않게 ── */
+@media(max-width:700px){
+  .rc{right:12px;bottom:12px}
+  .rc-fab{padding:4px!important;box-shadow:0 6px 18px rgba(76,29,149,.35)}
+  .rc-fab img{width:44px;height:44px}
+  body{padding-bottom:4px}
+  main.w{padding-bottom:72px}
+}
+/* 터치 영역 */
+.bc a{display:inline-block;padding:8px 4px;margin:-8px -2px}
+.bc{margin:12px 0 4px}
+@media(max-width:700px){.pg-intro a,.ft-l a{display:inline-block;padding:6px 0}}
