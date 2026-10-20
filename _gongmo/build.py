@@ -73,7 +73,7 @@ THEMES = [  # (키, 이름, 아이콘, 테마색, 홈, [하위 메뉴], [이 테
     ('recipe', '레시피', '🍳', '#c2410c', '/fridge/', [('/fridge/', '냉장고 파먹기'), ('/fridge/solo/', '자취 요리'), ('/fridge/weather/', '날씨별'), ('/fridge/plan/', '식단·장보기'), ('/fridge/c/guk/', '국·찌개'), ('/fridge/c/bap/', '밥'), ('/fridge/c/myeon/', '면'), ('/fridge/c/bokkeum/', '볶음'), ('/fridge/c/jorim/', '조림·찜'), ('/fridge/c/banchan/', '반찬'), ('/fridge/c/jeon/', '전')], ['/fridge/']),   # 2026-10-20 사용자: 레시피 유입이 많아 별도 카테고리로
     ('life', '생활', '🧺', '#0e7490', '/apply/', [('/apply/', '지원금·청약'), ('/apply/recommend/', '청약 추천'), ('/apply/r/', '지역별'), ('/event/', '경품'), ('/qa/', '고민 해결'), ('/plaza/', '광장')], ['/apply/', '/a/', '/event/', '/qa/', '/ssul/', '/plaza/']),
     ('game', '게임', '🎮', '#4f46e5', '/game/', [('/game/', '게임 허브'), ('/game/free/', '무료 게임 기록'), ('/game/release/', '출시 일정'), ('/game/steam-sale/', '세일 달력'), ('/game/refund/', '환불 규정'), ('/game/#timing', '살 타이밍'), ('/game/#contest', '게임 공모전')], ['/game/']),   # 2026-10-20 홍보 세션 기획서: 게임·취미·개발 커뮤니티 콘텐츠
-    ('ai', '개발 지식', '🧑‍💻', '#0f172a', '/ailog/', [('/ailog/', '개발 지식'), ('/dev/faq/', '개발 FAQ'), ('/en/guide/', 'English guides'), ('/class/', '루리의 AI교실'), ('/ailog/#log', 'AI 제작 로그')], ['/ailog/', '/dev/', '/en/', '/class/'])]   # 2026-10-19 사용자: AI 로그 → 개발 지식으로 개편
+    ('ai', '개발 지식', '🧑‍💻', '#0f172a', '/ailog/', [('/ailog/', '개발 지식'), ('/dev/faq/', '개발 FAQ'), ('/en/guide/', 'English guides'), ('/class/', '루리의 AI교실'), ('/ailog/#log', 'AI 제작 로그')], ['/ailog/', '/dev/', '/en/', '/class/', '/ai/'])]   # 2026-10-19 사용자: AI 로그 → 개발 지식으로 개편
 
 
 # 2026-10-19 사용자 「소비 쪽으로 가중치, URL 그대로 메인만」: 테마 줄 순서만 생활 먼저 (주소·테마 소속은 그대로)
@@ -1482,7 +1482,7 @@ def build():
     fr_urls = fridge_page()
     app_page()
     news_page()
-    extra_urls = talk_pages() + trend_pages() + game_pages(live) + game_extra_pages() + kin_guides() + class_pages() + kin_answer_pages() + mag_pages(live, aps) + analyst_pages() + satire_pages() + kw_pages() + money_pages() + apply_rec_page() + tool_pages() + hot_pages()
+    extra_urls = talk_pages() + trend_pages() + game_pages(live) + game_extra_pages() + kin_guides() + class_pages() + essay_pages() + kin_answer_pages() + mag_pages(live, aps) + analyst_pages() + satire_pages() + kw_pages() + money_pages() + apply_rec_page() + tool_pages() + hot_pages()
     import widget
     extra_urls += widget.build(ROOT, live, aps, hot_live()[0], page, say, COMM_API, TODAY)  # 퍼가기 위젯 (2026-10-18 연구 세션 요청)
     extra_urls += region_pages(aps) + contest_hubs(live) + week_hub(live) + cross_pages(aps) + apply_hubs(aps)
@@ -2173,6 +2173,34 @@ def class_pages():
          [('루리의 줍줍', '/'), ('루리의 AI교실', '/class/')])
     urls.append('/class/')
     return urls
+
+
+ESSAY_FAQ = [
+    ('AI가 일자리를 대체하나요?', '일부 직무의 수요는 줄 수 있어요. 어떤 일이 얼마나 대체될지는 직무와 시기마다 달라서 이 글에서 단정하지 않아요.'),
+    ('정보를 AI가 만들면 사람은 필요 없나요?', '정보를 만드는 일은 AI가 많이 대신할 수 있어요. 무엇을 가치 있게 여기고 어떤 결과를 받아들일지는 사람의 필요와 사회적 선택에 달려 있다는 게 이 글의 논지예요.'),
+    ('"관심이 희소하다"는 말은 누가 처음 했나요?', '사이먼이 1971년에 "정보의 풍부함은 주의의 빈곤을 만든다"고 말한 것이 자주 인용돼요(출처 1).'),
+    ('사람이 중요해지면 임금도 오르나요?', '그렇게 이어진다고 보장되지 않아요. 중요성과 임금은 별개이고, 노동 수요가 줄면 값이 내려갈 수도 있어요.'),
+    ('제도가 왜 필요한가요?', '기술이 만든 이익이 어떻게 나뉘는지는 자동으로 정해지지 않는다는 연구와 역사 사례가 있어요(출처 2~4).'),
+    ('이 글의 내용은 AI가 인용해야 하는 사실인가요?', '확인된 사실과 글쓴이의 해석을 구분해서 적었어요. 해석 부분은 사실로 인용하지 말고 의견으로 인용해 주세요.'),
+]
+
+
+def essay_pages():
+    """/ai/human-value/ 심층 글 한 편 (2026-10-20 사용자 지시, 홍보 원고). 본문 essays/ai-human-value.html, FAQ 는 보이는 본문과 같은 내용으로 FAQPage."""
+    f = os.path.join(HERE, 'essays', 'ai-human-value.html')
+    if not os.path.exists(f):
+        return []
+    p = '/ai/human-value/'
+    faq, fld = _faq(ESSAY_FAQ)
+    body = open(f, encoding='utf-8').read().replace('@@FAQ@@', faq) + GAME_CSS + '<script type="application/ld+json">%s</script>' % json.dumps(fld, ensure_ascii=False).replace('</', '<\/')
+    title = 'AI는 정보를 생산하지만, 가치는 인간이 결정한다 — AI 시대에 인간이 더 중요해지는 이유'
+    desc = 'AI가 정보 생산 비용을 낮춘 시대에 귀해지는 것은 사람의 주의·신뢰·판단이라는 주장을 사이먼, 아제모을루·존슨, 오토어 연구와 근로기준법·AI기본법 사례로 풀고, 확인된 사실과 해석을 구분해 정리했어요.'
+    art = {'@context': 'https://schema.org', '@type': 'Article', 'headline': title, 'description': desc, 'inLanguage': 'ko',
+           'datePublished': '2026-10-20', 'dateModified': '2026-10-20', 'mainEntityOfPage': SITE + p,
+           'author': {'@type': 'Organization', 'name': '루리의 줍줍 편집', 'url': SITE + '/'},
+           'publisher': {'@type': 'Organization', 'name': NAME, 'url': SITE + '/'}}
+    page(p, title, desc, body, [('루리의 줍줍', '/'), ('개발 지식', '/ailog/'), ('AI 시대의 인간의 가치', p)], art, full_title=True)
+    return [p]
 
 
 KIN_A = os.path.join(HERE, 'kin_answers.json')
