@@ -44,6 +44,7 @@ const PKEY = 'jupjup_pref_v1';
 
 let items = null, events = null, speak = false, rec = null;
 const $ = (s, r = document) => r.querySelector(s);
+let SITE = null; const site = () => (SITE ||= import('/assets/chat/ruri-site.js?v=3').catch(() => ({ siteAnswer: async () => null, pageHints: () => null })));
 const el = (t, c, h) => { const e = document.createElement(t); if (c) e.className = c; if (h != null) e.innerHTML = h; return e; };
 const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const today = (() => { const n = new Date(); return Math.round(Date.UTC(n.getFullYear(), n.getMonth(), n.getDate()) / 864e5); })();
@@ -152,10 +153,10 @@ function talk(t) {
 function ui() {
   const root = el('div', 'rc');
   root.innerHTML = `<button class="rc-fab" aria-label="루리에게 추천받기"><img src="/assets/ruri/avatar.webp" width="40" height="40" alt="" decoding="async"><span>루리에게 물어보기</span></button>
-<section class="rc-panel" hidden aria-label="루리 추천 챗봇"><header><img src="/assets/ruri/avatar.webp" width="40" height="40" alt="" decoding="async"><div><b>루리</b><small>마감·상금·찜·캘린더까지 챙겨 드려요</small></div>
+<section class="rc-panel" hidden aria-label="루리 추천 챗봇"><header><img src="/assets/ruri/avatar.webp" width="40" height="40" alt="" decoding="async"><div><b>루리</b><small>마감·지원금·레시피·웹툰·애니까지 물어보세요</small></div>
 <button class="rc-ai rc-redo" title="취향 다시 고르기">취향 고르기</button><button id="rc-spk" class="rc-ic" title="답변 읽어 주기">🔈</button><button class="rc-x rc-ic" aria-label="닫기">✕</button></header>
 <div class="rc-log" role="log" aria-live="polite"></div>
-<form class="rc-in"><button type="button" class="rc-mic rc-ic" title="말로 물어보기">🎤</button><input placeholder="예) 슬로건 공모전, 이번 주 마감" aria-label="질문"><button class="rc-go">보내기</button></form></section>`;
+<form class="rc-in"><button type="button" class="rc-mic rc-ic" title="말로 물어보기">🎤</button><input placeholder="예) 김치 달걀 있어 · 청년 월세 지원 · 로맨스 웹툰" aria-label="질문"><button class="rc-go">보내기</button></form></section>`;
   document.body.appendChild(root);
   const panel = $('.rc-panel', root), input = $('input', root), log = $('.rc-log', root);
   const scroll = () => { log.scrollTop = log.scrollHeight; };
@@ -174,11 +175,17 @@ function ui() {
   const back = () => [['🏠 처음 메뉴', menu]];
   const narrow = (base, label) => [['🎨 분야로 좁히기', () => { me('분야로 좁히기'); say('어떤 분야요?', Object.keys(CAT).map(c => [c, () => { me(c); more(base.filter(i => i.tags.includes(c)), `${label} · ${c} 공모전이에요.`); }])); }],
                                   ['⚡ 쉬운 것만', () => { me('쉬운 것만'); more(base.filter(i => EASY_RE.test(i.title + ' ' + i.field + ' ' + (i.effort || ''))), `${label} 중 금방 낼 수 있는 것만 골랐어요.`); }]];
-  function menu() {
+  function menu() {   // 사이트 전체 메뉴 (2026-10-20)
     say('무엇을 도와드릴까요?', [
-      ['🔥 이번 주 마감', soon], ['⚡ 10분 안에 내는 것', quick], ['💰 상금 큰 것', big], ['🎯 나한테 맞는 것', who],
-      ['📍 우리 동네 대회', local], [`⭐ 찜한 공모전${fav.get().length ? ' ' + fav.get().length : ''}`, favs], ['🤝 같이 할 팀 찾기', () => { location.href = '/community/'; }], ['❓ 자주 묻는 질문', faq]]);
+      ['⏰ 오늘 마감', () => ask('오늘 마감')], ['📋 지원금·청약', () => ask('지원금')], ['🎁 경품 이벤트', () => ask('경품 이벤트')], ['🍽️ 오늘 뭐 먹지', () => ask('오늘 뭐 먹지')],
+      ['📖 웹툰 추천', () => ask('웹툰 추천')], ['🎬 애니 추천', () => ask('애니 추천')], ['🏆 공모전 찾기', cmenu], ['🧮 계산기·돈 가이드', () => ask('계산기')], ['📺 이슈·뉴스', () => ask('이슈')]]);
   }
+  function cmenu() {
+    say('공모전을 찾아 드릴게요. 어떻게 골라 볼까요?', [
+      ['🔥 이번 주 마감', soon], ['⚡ 10분 안에 내는 것', quick], ['💰 상금 큰 것', big], ['🎯 나한테 맞는 것', who],
+      ['📍 우리 동네 대회', local], [`⭐ 찜한 공모전${fav.get().length ? ' ' + fav.get().length : ''}`, favs], ['🤝 같이 할 팀 찾기', () => { location.href = '/community/'; }], ['❓ 자주 묻는 질문', faq], ['🏠 처음 메뉴', menu]]);
+  }
+  const ask = async q => { me(q); await load(); const S = await site(); const r = await S.siteAnswer(q); if (r) { const b = add('bot', r.html); talk(r.say); chips(b, back()); } };
   function soon() { me('이번 주 마감'); const l = items.filter(i => i.left <= 7).sort((a, b) => a.left - b.left || b.pv - a.pv);
     const b = say(`7일 안에 마감하는 공모전이 ${l.length}건이에요. 급한 것부터 보여 드릴게요.`, null, C(l.slice(0, 5))); chips(b, [...narrow(l, '이번 주 마감'), ...(l.length > 5 ? [['더 보기 ▾', () => more(l.slice(5), '이어서 보여 드릴게요.')]] : []), ...back()]); }
   function quick() { me('10분 안에 내는 것');
@@ -247,6 +254,10 @@ function ui() {
   const send = async () => {
     const q = input.value.trim(); if (!q) return; input.value = '';
     add('me', esc(q)); ga('chat_ask', { q: q.slice(0, 40) }); await load();
+    if (!FAQ.some(([re]) => re.test(q))) {
+      const t = add('bot', '<span class="rc-typing"><i></i><i></i><i></i></span>'); const S = await site(); let r = null; try { r = await S.siteAnswer(q); } catch (e) {} t.remove();
+      if (r) { const bb = add('bot', r.html); talk(r.say); chips(bb, r.menu ? [['⏰ 오늘 마감', () => ask('오늘 마감')], ['🍽️ 오늘 뭐 먹지', () => ask('오늘 뭐 먹지')], ['📖 웹툰 추천', () => ask('웹툰 추천')], ['🏆 공모전', cmenu]] : back()); ga('chat_site', { q: q.slice(0, 30) }); return; }
+    }
     const a = answer(q);
     if (a.html) { const b = add('bot', a.html); talk(a.say); chips(b, [['🎯 취향으로 추천', picker], ['❓ 자주 묻는 질문', faq], ...back()]); }
     if (a.pick) picker();
@@ -258,7 +269,8 @@ function ui() {
     if (u.length) say(`앗, 찜한 공모전 마감이 다가와요! ${u.map(x => `<b>${esc(x.title)}</b> ${dd(x.left)}`).join(', ')}`);
     const here = (location.pathname.match(/^\/c\/([^/]+)\//) || [])[1], i = here && byId(here);
     if (i) { say('이 공모전 같이 볼까요?'); detail(i); return; }
-    add('bot', pref.get() ? '다시 오셨네요! 오늘은 뭘 찾아 드릴까요?' : '안녕하세요, 루리예요! 진행 중인 공모전에서 딱 맞는 걸 골라 드려요. 아래 버튼을 누르거나 그냥 물어보셔도 돼요.');
+    const S0 = await site(), ph = S0.pageHints(location.pathname); if (ph) { const pb = say(ph.say); if (ph.chips && ph.chips.length) chips(pb, ph.chips); }
+    add('bot', pref.get() ? '다시 오셨네요! 오늘은 뭘 찾아 드릴까요?' : '안녕하세요, 루리예요! 공모전·지원금·경품 마감부터 오늘 뭐 먹지, 웹툰·애니까지 골라 드려요. 아래 버튼을 누르거나 그냥 물어보셔도 돼요.');
     menu();
   };
   $('.rc-fab', root).onclick = () => { panel.hidden = !panel.hidden; if (!panel.hidden && !log.children.length) open(); };
@@ -284,6 +296,6 @@ function boot() {
   const th = document.body.dataset.th || 'hub';
   if (th === 'contest') return ui();
   if (th === 'ai') return;
-  import('/assets/chat/theme-bot.js?v=3').then(m => m.start(th === 'recipe' ? 'life' : th))   // 2026-10-20 레시피 테마는 생활 챗봇(오늘 메뉴).catch(() => {});
+  import('/assets/chat/theme-bot.js?v=5').then(m => m.start(th === 'recipe' ? 'life' : th))   // 2026-10-20 레시피 테마는 생활 챗봇(오늘 메뉴).catch(() => {});
 }
 if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot); else boot();

@@ -810,6 +810,45 @@ export default {
       }
       // ---- 신고 (3명 신고 시 자동 숨김) ----
       // ---- 페이지 댓글·좋아요·조회수 (모든 페이지 공통. 쓰기는 회원만) ----
+      // ---- 취향 설문·작품 반응 (2026-10-20 웹툰·애니 추천): 개인정보 없이 선택값만, 방문자 해시로 하루 1회 ----
+      if (p === '/api/survey' && req.method === 'POST') {
+        const kind = /^(webtoon|anime)$/.test(body.kind || '') ? body.kind : '';
+        if (!kind) return err(req, '종류를 확인해 주세요.');
+        const A = body.a && typeof body.a === 'object' ? body.a : {}, clean2 = {};
+        for (const q of Object.keys(A).slice(0, 12)) { if (!/^[a-z_]{1,12}$/.test(q)) continue; clean2[q] = (Array.isArray(A[q]) ? A[q] : [A[q]]).map(x => String(x).slice(0, 20)).slice(0, 8); }
+        const ip = req.headers.get('CF-Connecting-IP') || '', ua = req.headers.get('User-Agent') || '', d = new Date(Date.now() + 9 * 3600e3).toISOString().slice(0, 10);
+        const vh = hex(new Uint8Array(await crypto.subtle.digest('SHA-256', new TextEncoder().encode(ip + '|' + ua + '|' + d + '|sv')))).slice(0, 16);
+        await env.DB.prepare('INSERT OR REPLACE INTO survey_answers (kind, day, vh, a, ts) VALUES (?, ?, ?, ?, ?)').bind(kind, d, vh, JSON.stringify(clean2), now()).run();
+        await env.DB.prepare("DELETE FROM kvcache WHERE k = ?").bind('sv:' + kind).run();
+        return json(req, { ok: 1 });
+      }
+      if (p === '/api/survey/stats' && req.method === 'GET') {
+        const kind = url.searchParams.get('kind') === 'anime' ? 'anime' : 'webtoon', ck = 'sv:' + kind;
+        const c = await env.DB.prepare('SELECT v FROM kvcache WHERE k = ? AND exp > ?').bind(ck, now()).first();
+        if (c) return json(req, JSON.parse(c.v));
+        const rows = (await env.DB.prepare('SELECT a FROM survey_answers WHERE kind = ? ORDER BY ts DESC LIMIT 3000').bind(kind).all()).results || [];
+        const cnt = {}; for (const r of rows) { let a = {}; try { a = JSON.parse(r.a); } catch {} for (const q of Object.keys(a)) for (const v of a[q]) { cnt[q] = cnt[q] || {}; cnt[q][v] = (cnt[q][v] || 0) + 1; } }
+        const out = { n: rows.length, cnt };
+        await env.DB.prepare('INSERT INTO kvcache (k, v, exp) VALUES (?, ?, ?) ON CONFLICT(k) DO UPDATE SET v = excluded.v, exp = excluded.exp').bind(ck, JSON.stringify(out), now() + 600).run();
+        return json(req, out);
+      }
+      if (p === '/api/watch/vote' && req.method === 'POST') {
+        const kind = /^(webtoon|anime)$/.test(body.kind || '') ? body.kind : '', id = String(body.id || '').replace(/[^0-9]/g, '').slice(0, 10), v = body.v === 1 ? 1 : body.v === -1 ? -1 : 0;
+        if (!kind || !id || !v) return err(req, '확인해 주세요.');
+        const ip = req.headers.get('CF-Connecting-IP') || '', ua = req.headers.get('User-Agent') || '';
+        const vh = hex(new Uint8Array(await crypto.subtle.digest('SHA-256', new TextEncoder().encode(ip + '|' + ua + '|wv')))).slice(0, 16);
+        await env.DB.prepare('INSERT OR REPLACE INTO watch_votes (kind, id, vh, v, ts) VALUES (?, ?, ?, ?, ?)').bind(kind, id, vh, v, now()).run();
+        return json(req, { ok: 1 });
+      }
+      if (p === '/api/watch/votes' && req.method === 'GET') {   // 작품별 좋아요·별로 수 (빌드가 받아 정적 파일로 두고, 화면은 그 파일을 씀)
+        const kind = url.searchParams.get('kind') === 'anime' ? 'anime' : 'webtoon', ck = 'wv:' + kind;
+        const c = await env.DB.prepare('SELECT v FROM kvcache WHERE k = ? AND exp > ?').bind(ck, now()).first();
+        if (c) return json(req, JSON.parse(c.v));
+        const rows = (await env.DB.prepare('SELECT id, SUM(CASE WHEN v = 1 THEN 1 ELSE 0 END) up, SUM(CASE WHEN v = -1 THEN 1 ELSE 0 END) dn FROM watch_votes WHERE kind = ? GROUP BY id HAVING COUNT(*) >= 1 ORDER BY up DESC LIMIT 400').bind(kind).all()).results || [];
+        const out = { votes: Object.fromEntries(rows.map(r => [r.id, [r.up, r.dn]])) };
+        await env.DB.prepare('INSERT INTO kvcache (k, v, exp) VALUES (?, ?, ?) ON CONFLICT(k) DO UPDATE SET v = excluded.v, exp = excluded.exp').bind(ck, JSON.stringify(out), now() + 900).run();
+        return json(req, out);
+      }
       if (p === '/api/p' && req.method === 'GET') {
         const pg = npage(url.searchParams.get('page'));
         if (!pg) return err(req, '주소를 확인해 주세요.');

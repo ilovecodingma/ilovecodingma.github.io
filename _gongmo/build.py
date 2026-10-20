@@ -72,7 +72,7 @@ THEMES = [  # (키, 이름, 아이콘, 테마색, 홈, [하위 메뉴], [이 테
      ['/contest/', '/c/', '/cat/', '/prep/', '/lab/', '/community/', '/guide/', '/v/', '/me/', '/widget/']),
     ('recipe', '레시피', '🍳', '#c2410c', '/fridge/', [('/fridge/', '냉장고 파먹기'), ('/fridge/solo/', '자취 요리'), ('/fridge/weather/', '날씨별'), ('/fridge/plan/', '식단·장보기'), ('/fridge/c/guk/', '국·찌개'), ('/fridge/c/bap/', '밥'), ('/fridge/c/myeon/', '면'), ('/fridge/c/bokkeum/', '볶음'), ('/fridge/c/jorim/', '조림·찜'), ('/fridge/c/banchan/', '반찬'), ('/fridge/c/jeon/', '전')], ['/fridge/']),   # 2026-10-20 사용자: 레시피 유입이 많아 별도 카테고리로
     ('life', '생활', '🧺', '#0e7490', '/apply/', [('/apply/', '지원금·청약'), ('/apply/recommend/', '청약 추천'), ('/apply/r/', '지역별'), ('/event/', '경품'), ('/qa/', '고민 해결'), ('/plaza/', '광장')], ['/apply/', '/a/', '/event/', '/qa/', '/ssul/', '/plaza/']),
-    ('game', '게임', '🎮', '#4f46e5', '/game/', [('/game/', '게임 허브'), ('/game/free/', '무료 게임 기록'), ('/game/release/', '출시 일정'), ('/game/steam-sale/', '세일 달력'), ('/game/refund/', '환불 규정'), ('/game/#timing', '살 타이밍'), ('/game/#contest', '게임 공모전')], ['/game/']),   # 2026-10-20 홍보 세션 기획서: 게임·취미·개발 커뮤니티 콘텐츠
+    ('game', '게임', '🎮', '#4f46e5', '/game/', [('/game/', '게임 허브'), ('/watch/', '웹툰·애니 추천'), ('/game/free/', '무료 게임 기록'), ('/game/release/', '출시 일정'), ('/game/steam-sale/', '세일 달력'), ('/game/refund/', '환불 규정'), ('/game/#timing', '살 타이밍'), ('/game/#contest', '게임 공모전')], ['/game/', '/watch/']),   # 2026-10-20 홍보 세션 기획서: 게임·취미·개발 커뮤니티 콘텐츠
     ('ai', '개발 지식', '🧑‍💻', '#0f172a', '/ailog/', [('/dev/', '기술 블로그'), ('/ailog/', '개발 지식·제작 로그'), ('/dev/faq/', '개발 FAQ'), ('/en/guide/', 'English guides'), ('/class/', '루리의 AI교실'), ('/ailog/#log', 'AI 제작 로그')], ['/ailog/', '/dev/', '/en/', '/class/', '/ai/'])]   # 2026-10-19 사용자: AI 로그 → 개발 지식으로 개편
 
 
@@ -192,7 +192,7 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False, noinde
 <meta name="theme-color" content="{TH[3] if TH else '#5b21b6'}"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="오늘 뭐 먹지">
 <link rel="icon" href="/favicon.ico?v=6" sizes="any"><link rel="icon" type="image/png" sizes="48x48" href="/assets/icons/icon-48.png?v=6"><link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/icon-96.png?v=6"><link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/icon-192.png?v=6"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=6"><link rel="manifest" href="/site.webmanifest"><link rel="alternate" type="application/rss+xml" title="루리의 줍줍" href="/rss.xml">
 <link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="/assets/gm.css?v=20"><link rel="stylesheet" href="/assets/ds.css?v=13"><link rel="stylesheet" href="/assets/print.css?v=1"><script defer src="/assets/print.js?v=1"></script>{('<link rel="stylesheet" href="/assets/chat/ruri-chat.css?v=8">') if not (TH and TH[0] == 'ai') else ''}{COMM_TAGS}{('<script type="module" src="/assets/chat/ruri-chat.js?v=14"></script>') if not (TH and TH[0] == 'ai') else ''}<link rel="stylesheet" href="/assets/app/shell.css?v=1"><script defer src="/assets/app/app.js?v=4"></script>
+<link rel="stylesheet" href="/assets/gm.css?v=20"><link rel="stylesheet" href="/assets/ds.css?v=14"><link rel="stylesheet" href="/assets/print.css?v=1"><script defer src="/assets/print.js?v=1"></script>{('<link rel="stylesheet" href="/assets/chat/ruri-chat.css?v=9">') if not (TH and TH[0] == 'ai') else ''}{COMM_TAGS}{('<script type="module" src="/assets/chat/ruri-chat.js?v=16"></script>') if not (TH and TH[0] == 'ai') else ''}<link rel="stylesheet" href="/assets/app/shell.css?v=1"><script defer src="/assets/app/app.js?v=4"></script>
 {ldh}
 {GTAG}
 </head><body data-th="{TH[0] if TH else 'hub'}"{(' data-api="' + COMM_API + '"') if COMM_API else ''}>
@@ -1425,7 +1425,25 @@ def build():
     _fc = [('#7c3aed', '#f4efff'), ('#0f766e', '#e8f7f4'), ('#ea580c', '#fff1e6'), ('#2563eb', '#e8f0ff'), ('#db2777', '#ffe9f2'), ('#ca8a04', '#fff8de')]
     hx_more = ''.join(f'<a class="hx-f" href="{u}" style="--fc:{_fc[j % 6][0]};--fbg:{_fc[j % 6][1]}"><i>{ic}</i><b>{E(n)}</b><span>{E(v)}</span></a>' for j, (k, u, ic, n, v, sc) in enumerate(more))
     AICLASS = '<a class="hx-f" href="/class/" style="--fc:#4338ca;--fbg:#eef0ff"><i>🎓</i><b>루리의 AI교실</b><span>AI를 처음 써 보는 사람을 위한 수업</span></a>' if os.path.exists(os.path.join(ROOT, 'class', 'index.html')) else ''
-    _nav = [('today', '⏰', '오늘 마감'), ('policy', '📋', '지원금·정책'), ('contest', '🏆', '공모전'), ('event', '🎁', '경품'), ('issue', '🕵️', '이슈'), ('money', '🧮', '머니'), ('learn', '🎓', '배우기'), ('recipe', '🍳', '레시피'), ('plaza', '🗣️', '광장')]
+    _nav = [('today', '⏰', '오늘 마감'), ('policy', '📋', '지원금·정책'), ('contest', '🏆', '공모전'), ('event', '🎁', '경품'), ('issue', '🕵️', '이슈'), ('money', '🧮', '머니'), ('watch', '🎯', '웹툰·애니'), ('learn', '🎓', '배우기'), ('recipe', '🍳', '레시피'), ('plaza', '🗣️', '광장')]
+    def _hx_watch():
+        import random as _r
+        out = ''
+        for k, nm in (('webtoon', '📖 웹툰'), ('anime', '🎬 애니')):
+            f = os.path.join(HERE, 'watch', k + '.json')
+            if not os.path.exists(f): continue
+            I = list(json.load(open(f, encoding='utf-8'))['items'].values())
+            if k == 'webtoon':
+                I = [v for v in I if v.get('th') and not v.get('adult') and not v.get('rest') and not v.get('fin') and (v.get('sc') or 0) >= 9.7]; I.sort(key=lambda v: -(v.get('fav') or 0)); I = I[:40]
+            else:
+                I = [v for v in I if v.get('cv') and v.get('fmt') in ('TV', 'ONA') and (v.get('sc') or 0) >= 75 and v.get('year', 0) >= (TODAY.year - 2)]; I.sort(key=lambda v: -(v.get('pop') or 0)); I = I[:40]
+            _r.Random(TODAY.toordinal() + len(k)).shuffle(I); I = I[:8]
+            cards = ''.join('<li class="hx-wc"><a href="/watch/#%s"><span class="wp"><img src="%s" alt="%s 표지" loading="lazy" referrerpolicy="no-referrer"></span><b>%s</b><small>%s</small></a></li>' % (
+                k, E(v['th'] if k == 'webtoon' else v['cv']), E(v['n'] if k == 'webtoon' else (v['kr'] or v['en'] or v['ro'])), E((v['n'] if k == 'webtoon' else (v['kr'] or v['en'] or v['ro']))[:22]),
+                E(' · '.join((v.get('tags') or [])[:2]) if k == 'webtoon' else ' · '.join(GL_ANIME.get(g, g) for g in v['g'][:2]))) for v in I)
+            out += f'<div class="hx-wh"><b>{nm}</b></div><ul class="hx-row hx-wrow">{cards}</ul>'
+        return out
+    hx_watch = _hx_watch()
     hx_nav = ''.join(f'<a href="#{k}">{ic} {n}</a>' for k, ic, n in _nav)
     home = f'''<section class="hx-hero"><div class="hx-w hx-hero-in">
 <div class="hx-copy"><p class="hx-eyebrow"><i></i>매시간 업데이트 · 공식 출처 확인</p>
@@ -1465,9 +1483,14 @@ def build():
 <a class="hx-f" href="/analyst/" style="--fc:#0f766e;--fbg:#e8f7f4"><i>📈</i><b>애널리스트 종합</b><span>증권사 의견을 숫자로만 요약</span></a></div>
 <div class="hx-links"><a href="/money/guide/journey/resign/">퇴사했을 때</a><a href="/money/guide/journey/housing/">집 구할 때</a><a href="/money/guide/journey/parttime/">알바할 때</a></div></section>
 
+<section class="hx-sec hx-t-watch" id="watch"><div class="hx-hd"><div><p>🎯 웹툰 · 애니 추천</p><h2>내 취향 작품, 1분 설문으로</h2></div><a href="/watch/">추천 받기 →</a></div>
+{hx_watch}
+<div class="hx-links"><a class="hx-primary" href="/watch/">🎯 1분 취향 설문 시작</a><a href="/watch/#webtoon">📖 웹툰 추천</a><a href="/watch/#anime">🎬 애니 추천</a></div></section>
+
 <section class="hx-sec hx-t-learn" id="learn"><div class="hx-hd"><div><p>🎓 배우기 · 놀이</p><h2>AI·개발 지식과 무료 게임</h2></div><a href="/ailog/">개발 지식 →</a></div>
 <div class="hx-feat">{AICLASS}<a class="hx-f" href="/ailog/" style="--fc:#2563eb;--fbg:#e8f0ff"><i>💻</i><b>개발 지식</b><span>이 사이트를 AI로 만든 과정과 기록</span></a>
 <a class="hx-f" href="/dev/faq/" style="--fc:#7c3aed;--fbg:#f4efff"><i>❓</i><b>개발 FAQ</b><span>만들면서 막혔던 것 · 비용 · 구조</span></a>
+<a class="hx-f" href="/watch/" style="--fc:#9333ea;--fbg:#f5ecff"><i>🎯</i><b>웹툰·애니 추천</b><span>1분 설문으로 내 취향 작품 찾기</span></a>
 <a class="hx-f" href="/game/" style="--fc:#db2777;--fbg:#ffe9f2"><i>🎮</i><b>이번 주 무료 게임</b><span>스팀·에픽 무료 배포 모음</span></a></div></section>
 
 <section class="hx-sec hx-t-recipe" id="recipe"><div class="hx-hd"><div><p>🍳 쉬어가는 식탁</p><h2>오늘 뭐 먹지?</h2></div><a href="/fridge/">레시피 {NR_HOME}개 →</a></div>
@@ -1522,6 +1545,7 @@ def build():
     except Exception as e:
         print('오늘 날씨 메뉴 실패', repr(e)[:80])
     fr_urls = fridge_page()
+    fr_urls = list(fr_urls) + watch_pages()
     app_page()
     news_page()
     extra_urls = talk_pages() + trend_pages() + game_pages(live) + game_extra_pages() + kin_guides() + class_pages() + essay_pages() + kin_answer_pages() + mag_pages(live, aps) + analyst_pages() + satire_pages() + kw_pages() + money_pages() + apply_rec_page() + tool_pages() + hot_pages()
@@ -3961,6 +3985,72 @@ def news_page():
 <link rel="stylesheet" href="/assets/news/news.css?v=6"><script defer src="/assets/news/news.js?v=4"></script>'''
     page('/news/', '루리 뉴스 — 오늘의 이슈 브리핑·기사 확인 신호 (언론사 15곳)', '언론사 15곳 기사를 매시간 모아 같은 사건끼리 묶고, 교차 보도·출처·제목-본문 일치·숫자 엇갈림·낚시 표현으로 기사마다 점수를 매겨요. 지금 가장 많이 보도된 이슈 순위.',
          body, [('루리의 줍줍', '/'), ('기사 확인 신호', '/news/')])
+
+
+GL_ANIME = {'Comedy': '코미디', 'Action': '액션', 'Fantasy': '판타지', 'Slice of Life': '일상', 'Drama': '드라마', 'Adventure': '모험', 'Romance': '로맨스', 'Sci-Fi': 'SF', 'Supernatural': '초자연', 'Music': '음악',
+            'Mystery': '미스터리', 'Sports': '스포츠', 'Psychological': '심리', 'Horror': '호러', 'Thriller': '스릴러', 'Mecha': '메카', 'Mahou Shoujo': '마법소녀', 'Isekai': '이세계', 'School': '학원', 'Idol': '아이돌',
+            'Iyashikei': '힐링', 'Coming of Age': '성장', 'Magic': '마법', 'Tragedy': '비극', 'Super Power': '초능력', 'Swordplay': '검술', 'Shounen': '소년만화', 'Seinen': '성인만화', 'Urban Fantasy': '어반판타지',
+            'Cute Girls Doing Cute Things': '귀여운 일상', 'Animals': '동물', 'Work': '직장', 'Demons': '악마', 'Female Protagonist': '여주인공', 'Male Protagonist': '남주인공', 'Ecchi': '에치'}
+
+
+def watch_data():
+    """수집해 둔 웹툰·애니(_gongmo/watch/*.json)를 화면용 가벼운 배열로 바꿔 assets/watch/*.json 에 쓴다."""
+    wd = os.path.join(HERE, 'watch'); od = os.path.join(ROOT, 'assets', 'watch'); os.makedirs(od, exist_ok=True)
+    wr = lambda n, o: open(os.path.join(od, n), 'w', encoding='utf-8', newline='\n').write(json.dumps(o, ensure_ascii=False, separators=(',', ':')))
+    out = {}
+    fa = os.path.join(wd, 'anime.json')
+    if os.path.exists(fa):
+        A = json.load(open(fa, encoding='utf-8')); its = [v for v in A['items'].values() if not (v.get('fmt') in ('SPECIAL', 'MUSIC') or (v.get('sc') or 0) < 55 or (v.get('pop') or 0) < 3000)]
+        its.sort(key=lambda v: -(v.get('pop') or 0))
+        gc = collections.Counter(g for v in its for g in v['g']); top = [g for g, _ in gc.most_common(16)]
+        extra = [x for x in ('Isekai', 'School', 'Idol', 'Iyashikei') if any(x in v['tg'] for v in its)]
+        WHY = {'love': '설레고 싶은 기분에', 'fun': '웃고 싶은 기분에', 'tense': '긴장감 있는 이야기가 당길 때', 'cry': '울고 싶은 기분에', 'heal': '힐링이 필요할 때', 'fight': '신나게 보고 싶을 때'}
+        mood = lambda k, e, lb, names, kw: {'k': k, 'e': e, 'label': lb, 'why': WHY.get(k, lb), 'names': names, 'kw': kw}
+        cfg = {'genres': [[g, GL_ANIME.get(g, g)] for g in top + extra], 'gl': GL_ANIME,
+               'moods': [mood('love', '💕', '설레고 싶어요', ['Romance'], []), mood('fun', '😂', '웃고 싶어요', ['Comedy'], ['funny']), mood('tense', '😱', '긴장감 있게', ['Thriller', 'Mystery', 'Psychological', 'Horror'], ['dark']),
+                         mood('cry', '😢', '울고 싶어요', ['Drama', 'Tragedy'], ['emotional']), mood('heal', '🍵', '편하게 힐링', ['Slice of Life', 'Iyashikei', 'Cute Girls Doing Cute Things'], []), mood('fight', '⚔️', '신나게 싸움', ['Action', 'Swordplay', 'Super Power'], ['action'])],
+               'modes': [{'k': 'any', 'e': '🎲', 'label': '상관없어요'}, {'k': 'tv', 'e': '📺', 'label': 'TV 시리즈'}, {'k': 'short', 'e': '⏱️', 'label': '짧게(13화 이하)'}, {'k': 'movie', 'e': '🎞️', 'label': '극장판'}]}
+        rows = [[v['id'], v['kr'] or v['en'] or v['ro'], v['jp'], v['ro'] if (v['kr'] or v['en']) else '', v['g'], v['tg'][:5], v['sc'], v['pop'], v['ep'], v['fmt'], v['year'], v['season'], v['st'], v['studio'], v['cv'], v['color'],
+                 v['url'], v['ott'], v.get('rec') or [], (v.get('rv') or {}).get('kw') or [], v['tr'], v['min']] for v in its[:1500]]
+        wr('anime.json', {'at': A['at'], 'cfg': cfg, 'r': rows}); out['anime'] = (len(rows), [(r[1] or r[2], r[16]) for r in rows[:12]])
+    fw = os.path.join(wd, 'webtoon.json')
+    if os.path.exists(fw):
+        Wt = json.load(open(fw, encoding='utf-8')); its = [v for v in Wt['items'].values() if v.get('tags') is not None and not v.get('adult') and not v.get('rest')]
+        its.sort(key=lambda v: -(v.get('fav') or 0))
+        tc = collections.Counter(g for v in its for g in v['tags'])
+        GEN = ['로맨스', '판타지', '드라마', '액션', '스릴러', '개그', '일상', '무협/사극', '성장물', '감성적인', '청춘', '우정', '가족', '이능력', '러브코미디', '시리어스', '소설원작']
+        top = [g for g in GEN if tc.get(g)]
+        kc = collections.Counter(w for v in its for w in (v.get('kw') or [])); common = {w for w, n in kc.items() if n > 60}   # 어디에나 나오는 낱말은 추천 계산에서 뺀다
+        for v in its: v['kw'] = [w for w in (v.get('kw') or []) if w not in common][:10]
+        WHYW = {'love': '설레고 싶은 기분에', 'fun': '웃고 싶은 기분에', 'tense': '긴장감 있는 이야기가 당길 때', 'cry': '감동받고 싶은 기분에', 'heal': '힐링이 필요할 때', 'fight': '신나게 보고 싶을 때'}
+        mood = lambda k, e, lb, names, kw: {'k': k, 'e': e, 'label': lb, 'why': WHYW.get(k, lb), 'names': [n for n in names if tc.get(n)], 'kw': kw}
+        cfg = {'genres': [[g, g] for g in top], 'gl': {},
+               'moods': [mood('love', '💕', '설레고 싶어요', ['로맨스', '설렘폭발', '러브코미디', '리얼로맨스'], ['사랑', '연애']), mood('fun', '😂', '웃고 싶어요', ['개그', '러브코미디', '일상'], []), mood('tense', '😱', '긴장감 있게', ['스릴러', '시리어스', '자극적인'], ['죽음', '복수', '살인']),
+                         mood('cry', '😢', '감동받고 싶어요', ['감성적인', '가족', '우정', '성장물', '드라마'], ['가족', '상처']), mood('heal', '🍵', '편하게 힐링', ['일상', '감성적인', '청춘'], []), mood('fight', '⚔️', '신나게 싸움', ['액션', '액션판타지', '무협/사극', '이능력', '사이다'], ['능력', '던전', '헌터'])],
+               'modes': [{'k': 'any', 'e': '🎲', 'label': '상관없어요'}, {'k': 'ongoing', 'e': '📆', 'label': '연재 중(매주 보기)'}, {'k': 'finished', 'e': '✅', 'label': '완결(몰아보기)'}]}
+        rows = [[v['id'], v['n'], v['a'], v['th'], v['tags'], v.get('kw') or [], round(v.get('sc') or 0, 2), v.get('fav') or 0, 1 if v['fin'] else 0, v['days'], v.get('age', ''), 0, v.get('pub', '')] for v in its[:1800]]
+        wr('webtoon.json', {'at': Wt['at'], 'cfg': cfg, 'r': rows}); out['webtoon'] = (len(rows), [(r[1], f'https://comic.naver.com/webtoon/list?titleId={r[0]}') for r in rows[:12]])
+    return out
+
+
+def watch_pages():
+    """/watch/ — 웹툰·애니 취향 추천 (설문 → 줄거리 키워드·장르·비슷한 작품 → 추천)."""
+    D = watch_data()
+    if not D:
+        return []
+    ssr = ''
+    for k, nm in (('webtoon', '웹툰'), ('anime', '애니')):
+        if k in D:
+            ssr += f'<section class="mg-s"><h2>{nm} 인기작</h2><ul class="fr-rel">' + ''.join(f'<li><a href="{E(u)}" target="_blank" rel="noopener nofollow">{E(n)}</a></li>' for n, u in D[k][1]) + '</ul></section>'
+    cnt = ' · '.join(f'{nm} {D[k][0]:,}편' for k, nm in (('webtoon', '웹툰'), ('anime', '애니')) if k in D)
+    page('/watch/', '웹툰·애니 추천 — 1분 취향 설문으로 골라 드려요', f'장르·기분·재밌게 본 작품만 알려 주면 웹툰과 애니 중 취향에 맞는 작품을 골라 드려요. 줄거리 키워드와 비슷한 작품 관계, 평점으로 추천 ({cnt}).',
+         '<p class="bc"><a href="/">홈</a> › 웹툰·애니 추천</p><h1>🎯 웹툰·애니 추천</h1>'
+         f'<p class="lead" style="display:block">1분 설문으로 취향을 알려 주면, 줄거리 키워드·장르·평점·비슷한 작품 관계를 합쳐 골라 드려요. 지금 {cnt}을 모아 뒀어요.</p>'
+         '<div id="watch"><noscript>자바스크립트를 켜면 설문 추천을 쓸 수 있어요.</noscript></div>' + ssr
+         + '<p class="wt-foot">웹툰 정보는 네이버웹툰 공개 목록, 애니 정보는 AniList 공개 데이터를 모아 정리했어요. 작품의 표지·제목에 대한 권리는 각 작가·제작사·서비스에 있고, 이 페이지는 작품을 소개하고 원본 서비스로 연결해요. 줄거리 원문은 저장하지 않고 핵심 낱말만 추천 계산에 써요. 설문 선택값은 개인 식별 없이 장르 선호 집계에만 써요.</p>'
+         '<link rel="stylesheet" href="/assets/watch/watch.css?v=1"><script defer src="/assets/watch/watch.js?v=1"></script>',
+         [('루리의 줍줍', '/'), ('웹툰·애니 추천', '/watch/')])
+    return ['/watch/']
 
 
 def app_page():
