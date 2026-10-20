@@ -221,3 +221,50 @@ main.w:has(.hx-hero){max-width:none;padding:0}
  .rp-tmb{background:#3a2012;color:#fdba74;border-color:#7c3a12}.rc-fab{}
  .hx-tile i,.hx-f i{background:#2a2540}.hx-f{background:color-mix(in srgb,var(--fc) 14%,var(--card))}
  .ft{background:#0c0a14}}
+/* ── 히어로 무대 재구성: 겹침 없이 [추천 카드 | 루리] ── */
+.hx-hero-in{grid-template-columns:minmax(0,1fr) minmax(0,.95fr);gap:40px}
+.hx-stage{min-height:0;padding:0;display:grid;grid-template-columns:minmax(0,1fr) 270px;align-items:end;gap:0;position:relative;isolation:isolate}
+.hx-stage:before{content:"";position:absolute;right:-30px;bottom:-24px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle at 40% 40%,#ffd9b8 0%,#ffc09a 45%,#f8a6c4 100%);opacity:.55;z-index:-1}
+.hx-ruri{position:relative;right:auto;bottom:auto;grid-column:2;grid-row:1;width:270px;height:auto;max-width:none;-webkit-mask-image:none;mask-image:none;margin:0 0 -4px -14px;filter:drop-shadow(0 14px 22px rgba(124,45,18,.25));z-index:2}
+.hx-card{grid-column:1;grid-row:1;width:auto;position:relative;z-index:3;margin:0}
+.hx-bubble{position:absolute;right:6px;top:-6px;left:auto;max-width:250px;margin:0;z-index:4;border-radius:20px 20px 6px 20px;font-size:14.5px}
+.hx-bubble:after{content:"";position:absolute;right:46px;bottom:-9px;width:16px;height:16px;background:var(--card);border-right:1px solid #f0e4d7;border-bottom:1px solid #f0e4d7;transform:rotate(45deg)}
+.hx-stage{padding-top:84px}
+@media(max-width:1000px){.hx-hero-in{grid-template-columns:1fr}.hx-stage{max-width:620px;margin:0 auto;width:100%}}
+@media(max-width:640px){
+  .hx-stage{padding-top:0;grid-template-columns:1fr 128px;grid-template-areas:'bub ruri' 'card card'}
+  .hx-stage:before{width:200px;height:200px;right:-20px;bottom:auto;top:-10px}
+  .hx-bubble{position:relative;right:auto;top:auto;grid-area:bub;max-width:none;align-self:center;margin:0 6px 12px 0;border-radius:20px 20px 6px 20px}
+  .hx-bubble:after{display:none}
+  .hx-ruri{grid-area:ruri;grid-column:auto;grid-row:auto;width:128px;margin:0 0 -12px 0;justify-self:end}
+  .hx-card{grid-area:card;grid-column:auto;grid-row:auto}
+}
+@media(min-width:1001px){
+  .hx-hero-in{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:28px}
+  .hx-stage{grid-template-columns:minmax(0,1fr) 250px;padding-top:70px}
+  .hx-ruri{width:250px;margin-left:-10px;-webkit-mask-image:linear-gradient(#000 88%,transparent 99%);mask-image:linear-gradient(#000 88%,transparent 99%)}
+  .hx-stage:before{width:330px;height:330px;right:-10px;bottom:-10px}
+  .hx-bubble{right:10px;top:4px}
+  .hx-card{padding:16px}
+}
+.hx-hero{overflow:hidden}.hx-hero-in>*,.hx-stage>*{min-width:0}
+@media(max-width:1000px){.hx-hero-in{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:640px){
+  .hx-stage{grid-template-columns:minmax(0,1fr) 120px}
+  .hx-ruri{width:120px}
+  .hx-stage:before{right:-30px}
+  .hx-search{max-width:100%}.hx-search button{flex:none}
+}
+@media(max-width:640px){
+  .hx-card{grid-area:card!important;grid-column:1 / -1!important;grid-row:2!important;width:auto}
+  .hx-bubble{grid-column:1!important;grid-row:1!important}
+  .hx-ruri{grid-column:2!important;grid-row:1!important}
+}
+@media(min-width:641px) and (max-width:1000px){
+  .hx-stage{padding-top:0;grid-template-columns:minmax(0,1fr) 170px;grid-template-areas:'bub ruri' 'card card';max-width:640px}
+  .hx-stage:before{width:240px;height:240px;right:-10px;bottom:auto;top:-20px}
+  .hx-bubble{position:relative;right:auto;top:auto;max-width:none;align-self:center;margin:0 10px 14px 0;border-radius:20px 20px 6px 20px;grid-column:1!important;grid-row:1!important}
+  .hx-bubble:after{display:none}
+  .hx-ruri{width:170px;margin:0 0 -12px;justify-self:end;-webkit-mask-image:none;mask-image:none;grid-column:2!important;grid-row:1!important}
+  .hx-card{grid-column:1 / -1!important;grid-row:2!important;width:auto}
+}

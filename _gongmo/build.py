@@ -147,7 +147,7 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False, noinde
 <meta name="theme-color" content="{TH[3] if TH else '#5b21b6'}"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="오늘 뭐 먹지">
 <link rel="icon" href="/favicon.ico?v=6" sizes="any"><link rel="icon" type="image/png" sizes="48x48" href="/assets/icons/icon-48.png?v=6"><link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/icon-96.png?v=6"><link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/icon-192.png?v=6"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=6"><link rel="manifest" href="/site.webmanifest"><link rel="alternate" type="application/rss+xml" title="루리의 줍줍" href="/rss.xml">
 <link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="/assets/gm.css?v=20"><link rel="stylesheet" href="/assets/ds.css?v=2">{('<link rel="stylesheet" href="/assets/chat/ruri-chat.css?v=8">') if not (TH and TH[0] == 'ai') else ''}{COMM_TAGS}{('<script type="module" src="/assets/chat/ruri-chat.js?v=14"></script>') if not (TH and TH[0] == 'ai') else ''}<link rel="stylesheet" href="/assets/app/shell.css?v=1"><script defer src="/assets/app/app.js?v=4"></script>
+<link rel="stylesheet" href="/assets/gm.css?v=20"><link rel="stylesheet" href="/assets/ds.css?v=7">{('<link rel="stylesheet" href="/assets/chat/ruri-chat.css?v=8">') if not (TH and TH[0] == 'ai') else ''}{COMM_TAGS}{('<script type="module" src="/assets/chat/ruri-chat.js?v=14"></script>') if not (TH and TH[0] == 'ai') else ''}<link rel="stylesheet" href="/assets/app/shell.css?v=1"><script defer src="/assets/app/app.js?v=4"></script>
 {ldh}
 {GTAG}
 </head><body data-th="{TH[0] if TH else 'hub'}"{(' data-api="' + COMM_API + '"') if COMM_API else ''}>
@@ -1433,7 +1433,7 @@ def build():
     fr_urls = fridge_page()
     app_page()
     news_page()
-    extra_urls = talk_pages() + trend_pages() + game_pages(live) + game_extra_pages() + kin_guides() + mag_pages(live, aps) + analyst_pages() + satire_pages() + kw_pages() + money_pages() + apply_rec_page() + tool_pages() + hot_pages()
+    extra_urls = talk_pages() + trend_pages() + game_pages(live) + game_extra_pages() + kin_guides() + kin_answer_pages() + mag_pages(live, aps) + analyst_pages() + satire_pages() + kw_pages() + money_pages() + apply_rec_page() + tool_pages() + hot_pages()
     import widget
     extra_urls += widget.build(ROOT, live, aps, hot_live()[0], page, say, COMM_API, TODAY)  # 퍼가기 위젯 (2026-10-18 연구 세션 요청)
     extra_urls += region_pages(aps) + contest_hubs(live) + week_hub(live) + cross_pages(aps) + apply_hubs(aps)
@@ -1989,6 +1989,39 @@ def kin_guides():
          f'<ul class="list">{cards}</ul><h2>계산기</h2><ul class="list">{tools}</ul>' + join_cta('apply') + GAME_CSS,
          [('루리의 줍줍', '/'), ('머니', '/analyst/'), ('생활 돈 가이드', '/money/guide/')])
     urls.append('/money/guide/')
+    return urls
+
+
+KIN_A = os.path.join(HERE, 'kin_answers.json')
+
+
+def kin_answer_pages():
+    """2026-10-20 홍보 세션: 정확성을 확인한 지식iN 답변을 질문 제목 H1 페이지로 재활용(레시피 3·돈 2·게임 1). 원문 문장 그대로, 확인 못 한 칸은 비워 둔 채."""
+    if not os.path.exists(KIN_A):
+        return []
+    urls = []
+    CRUMB = {'recipe': [('레시피', '/fridge/')], 'apply': [('생활 돈 가이드', '/money/guide/')], 'game': [('게임', '/game/')]}
+    for a in json.load(open(KIN_A, encoding='utf-8'))['answers']:
+        h = ''
+        for b in a['blocks']:
+            if b[0] == 'h2':
+                h += f'<h2>{E(b[1])}</h2>'
+            elif b[0] == 'h3':
+                h += f'<h3>{E(b[1])}</h3>'
+            elif b[0] == 'ul':
+                h += '<ul class="gm-l">' + ''.join(f'<li>{E(x)}</li>' for x in b[1]) + '</ul>'
+            elif b[0] == 'plink':
+                h += f'<p>{E(b[1])} <a href="{E(b[2])}">{E(b[3])}</a></p>'
+            else:
+                h += f'<p>{E(b[1])}</p>'
+        first = next((b[1] for b in a['blocks'] if b[0] == 'p'), a['h1'])
+        rel = ' · '.join(f'<a href="{E(u)}">{E(t)}</a>' for u, t in a['related'])
+        crumbs = CRUMB[a['topic']]
+        body = (f'<p class="bc"><a href="/">홈</a> › ' + ' › '.join(f'<a href="{u}">{E(n)}</a>' for n, u in crumbs) + f' › 질문 답변</p><h1>{E(a["h1"])}</h1>'
+                f'<p class="kwn">작성 {a["date"]} · 줍줍이 확인한 내용으로 정리한 답변이에요.</p>' + h
+                + (f'<p class="note">{E(a["note"])}</p>' if a.get('note') else '') + join_cta(a['topic']) + f'<p class="hm-links">{rel}</p>' + GAME_CSS)
+        page(a['path'], a['h1'], re.sub(r'\s+', ' ', first)[:150], body, [('루리의 줍줍', '/')] + [(n, u) for n, u in crumbs] + [(a['h1'][:40], a['path'])])
+        urls.append(a['path'])
     return urls
 
 
