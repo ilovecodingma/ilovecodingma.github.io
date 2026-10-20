@@ -1970,6 +1970,8 @@ def kin_guides():
                 h += '<ul class="gm-l">' + ''.join(f'<li>{x}</li>' for x in sc['ul']) + '</ul>'
             if sc.get('p'):
                 h += f'<p>{sc["p"]}</p>'
+            if sc.get('html'):
+                h += sc['html']
             secs += h
         faq, ld = _faq([(q, a) for q, a in g['faq']])
         src = ''.join(f'<li><a href="{E(u)}" target="_blank" rel="noopener nofollow">{E(n)}</a></li>' for n, u in g['sources'])
@@ -1979,7 +1981,7 @@ def kin_guides():
                 + join_cta('apply')
                 + f'<h2>공식 출처</h2><ul class="gm-l">{src}</ul>'
                 + f'<p class="note">공식 안내를 줍줍이 직접 확인해 정리한 내용이고, 기준 금액과 신청 기간은 해마다 바뀔 수 있어요. 신청 전에 위 공식 출처를 꼭 확인하고, 개별 사정은 {E(g["contact"])}에 문의하세요. 법률·세무 상담이 아니에요.</p>'
-                + f'<p class="hm-links">{rel} · <a href="/money/guide/">다른 생활 돈 가이드</a></p>' + GAME_CSS)
+                + f'<p class="hm-links">{rel} · <a href="/money/guide/">다른 생활 돈 가이드</a></p>' + GAME_CSS + (f'<script defer src="{E(g["script"])}"></script>' if g.get('script') else ''))
         page(f'/money/guide/{g["slug"]}/', g['title'], g['desc'], body, [('루리의 줍줍', '/'), ('머니', '/analyst/'), ('생활 돈 가이드', '/money/guide/'), (g['name'], f'/money/guide/{g["slug"]}/')], ld)
         urls.append(f'/money/guide/{g["slug"]}/')
         cards += f'<li><a class="card" data-c="guide" href="/money/guide/{g["slug"]}/"><span class="ic">{g["icon"]}</span><div class="cb"><h3 class="t">{E(g["name"])}</h3><p class="o">{E(g["h1"])}</p></div></a></li>'
