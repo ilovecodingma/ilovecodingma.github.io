@@ -1824,6 +1824,26 @@ def game_extra_pages():
         page('/game/release/', '신작 게임 출시 일정 — 스팀 출시일이 정해진 게임 (이번 주·이번 달)', f'스팀 인기 출시 예정 게임 중 출시일이 날짜까지 정해진 {len(rel)}개를 가까운 순으로 모았어요. 추측한 날짜는 넣지 않아요.',
              body, [('루리의 줍줍', '/'), ('게임', '/game/'), ('신작 출시 일정', '/game/release/')], ld)
         urls.append('/game/release/')
+    # ---- 영어: 신작 출시 일정 (글로벌 유입용, 홍보 요청 2026-10-20)
+    if rel:
+        wd_en = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+        mo = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+        by_en = {}
+        for x in rel:
+            by_en.setdefault(x['date'], []).append(x)
+        secs_en = ''.join(f'<h3>{mo[int(k[5:7]) - 1]} {int(k[8:])} ({wd_en[_gd(k).weekday()]}) <small>in {(_gd(k) - td).days} days</small></h3><ul class="gm-g">' + ''.join(
+            f'<li><a href="https://store.steampowered.com/app/{x["id"]}/" target="_blank" rel="noopener nofollow">' + (f'<img src="{E(x["img"])}" width="232" height="87" loading="lazy" decoding="async" referrerpolicy="no-referrer" alt="" onerror="this.remove()">' if x['img'] else '')
+            + f'<b>{E(x["name"])}</b><span>Steam, coming soon</span></a></li>' for x in v) + '</ul>' for k, v in by_en.items())
+        faq_en, ld_en = _faq([('What games are coming out this week?', ', '.join(x['name'] for x in rel[:5]) + ' are among the popular upcoming Steam games with a confirmed release day. See the full list above.'),
+                              ('Why are some games missing?', 'Games whose Steam page only says a month or a year (for example "October 2026" or "2026") are left out on purpose. They appear here automatically once a day is confirmed.'),
+                              ('What about Epic Games Store releases?', 'Epic does not publish upcoming release dates in a public feed, so this page covers Steam only. Free Epic games are tracked on the Korean page <a href="/game/free/">/game/free/</a>.')])
+        body_en = ('<p class="bc"><a href="/">Home</a> › <a href="/en/guide/">Guides</a> › New game releases</p><h1>New game releases on Steam: confirmed release dates</h1>'
+                   f'<p class="cat-st">📌 Updated {E(d.get("at", ""))} (Korea time). Popular upcoming Steam games whose release date is confirmed to the day, shown by date. We do not guess dates ({len(rel)} games).</p>'
+                   + secs_en + '<h2>Frequently asked questions</h2>' + faq_en + '<p class="note">Source: Steam store public search data. Release dates can change. Ruri Jupjup is not affiliated with Valve.</p>'
+                   '<p class="hm-links"><a href="/en/guide/">All English guides</a> · <a href="/game/release/">한국어 버전</a></p>' + GAME_CSS)
+        page('/en/guide/new-game-releases-steam/', 'New Game Releases on Steam: Confirmed Release Dates This Week and Month | Ruri Jupjup', f'Popular upcoming Steam games with a confirmed release day, listed by date ({len(rel)} games). We never guess dates; updated several times a day.',
+             body_en, [('Home', '/'), ('Guides', '/en/guide/'), ('New game releases', '/en/guide/new-game-releases-steam/')], ld_en, full_title=True, lang='en')
+        urls.append('/en/guide/new-game-releases-steam/')
     # ---- 스팀 환불 규정 (스팀 공식 환불 페이지 2024-04-23 수정본 확인)
     rows = [('게임·소프트웨어', '구매 후 14일 이내 + 플레이 시간 2시간 미만이면 이유와 상관없이 요청 가능'), ('DLC', '구매 후 14일 이내 + DLC 구매 후 게임 플레이 2시간 미만 + DLC를 사용·변경·거래하지 않았을 때(일부 서드파티 DLC는 환불 불가, 상점 페이지에 표시)'),
             ('게임 내 구매', 'Valve 게임은 구매 후 48시간 이내 + 아이템을 쓰지 않았을 때. 서드파티 게임은 개발자가 환불을 켜 둔 경우만(구매 전 표시)'), ('출시 전 구매(예약 구매)', '출시 전에는 언제든 요청 가능. 14일·2시간 기준은 출시일부터 적용. 앞서 해보기는 플레이 시간이 모두 2시간에 포함'),
@@ -2690,6 +2710,7 @@ def dev_pages(live=()):
     EP = [p for p in P if p['lang'] == 'en']
     if EP:
         li = ''.join(f'<li><a href="{dev_url(p)}"><b>{E(p["title"])}</b><span>{E(p["desc"])}</span></a></li>' for p in sorted(EP, key=lambda p: p['date'], reverse=True))
+        li = '<li><a href="/en/guide/new-game-releases-steam/"><b>New Game Releases on Steam: Confirmed Release Dates</b><span>Popular upcoming Steam games with a confirmed release day, updated several times a day.</span></a></li>' + li
         page('/en/guide/', 'Practical Guides: Life in Korea, AI Tools, Self-Hosting | Ruri Jupjup', 'Step-by-step English guides on living and working in Korea, AI tools at work, self-hosting and software testing, with official sources and dates.',
              f'<p class="bc"><a href="/">Home</a> › Guides</p><h1>Practical guides</h1><p>Step-by-step guides with tables and FAQs. Numbers come from official sources, with the date we checked them.</p><ul class="dev-ls">{li}</ul>{css}',
              [('Home', '/'), ('Guides', '/en/guide/')], full_title=True, lang='en')
