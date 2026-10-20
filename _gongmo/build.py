@@ -601,7 +601,7 @@ def detail(c, live):
 <div class="panel"><table class="info">{tb}</table>
 <a class="btn" href="{E(c["link"])}" target="_blank" rel="noopener nofollow">공식 공고·접수 페이지 열기 →</a><p class="note">링크는 주최 측 공고(또는 접수) 페이지예요. 공고가 바뀌었을 수 있으니 접수 전 다시 확인하세요.</p></div>
 {chk_need}
-{share_bar(c['title'], f'「{c["title"]}」 {ddot(c["end"])[5:]} 마감' + (f' · {c["prize"]}' if c.get('pv') else '') + ' — 자격·제출물 정리')}{comm_banner()}
+{share_bar(c['title'], f'「{c["title"]}」 {ddot(c["end"])[5:]} 마감' + (f' · {c["prize"]}' if c.get('pv') else '') + ' — 자격·제출물 정리')}{comm_banner()}{join_cta('contest')}
 <div class="my-acts" data-id="c:{c["id"]}" data-title="{E(c["title"])}" data-end="{c["end"]}"></div>
 <h2>한눈에 보기</h2><p>{E(summary)}</p>
 {np_html}{c_insight(c, live)}
@@ -872,7 +872,7 @@ def build_apply(aps):
 <div class="my-acts" data-id="a:{E(a['id'])}" data-title="{E(a['title'])}" data-end="{'' if a.get('always') else a['end']}"></div>
 {say('o_suit', f'신청 기간을 놓치지 마세요! 자격 조건은 <b>공식 공고</b>에서 꼭 확인해 주세요.')}
 <div class="panel"><table class="info">{tb}</table>{btn}</div>
-{share_bar(a['title'], f'「{a["title"]}」 ' + ('상시 신청' if a.get('always') else f'{ddot(a["end"])[5:]} 마감') + ' — 대상·신청처 정리')}{comm_banner()}{ap_insight(a, aps)}<h2>신청 전 확인할 것</h2><ul class="chk"><li>신청 자격(나이·소득·자산·거주지·무주택 여부)</li><li>필요 서류와 본인인증 수단</li><li>발표일과 계약·납부 일정</li></ul>'''
+{share_bar(a['title'], f'「{a["title"]}」 ' + ('상시 신청' if a.get('always') else f'{ddot(a["end"])[5:]} 마감') + ' — 대상·신청처 정리')}{comm_banner()}{join_cta('apply')}{ap_insight(a, aps)}<h2>신청 전 확인할 것</h2><ul class="chk"><li>신청 자격(나이·소득·자산·거주지·무주택 여부)</li><li>필요 서류와 본인인증 수단</li><li>발표일과 계약·납부 일정</li></ul>'''
         _org = (a.get('org') or '').strip()[:14]
         _end = f' · {ddot(a["end"])[5:]} 마감' if a.get('end') and not a.get('always') else ''
         _og = (a.get('org') or '').strip().split()[-1][:10] if (a.get('org') or '').strip() else ''   # 제목용 기관명은 마지막 단위(과·국)만
@@ -887,7 +887,7 @@ def build_apply(aps):
     lst = ''.join(ap_card(a) for a in aps[:60]) or '<li class="empty"><img src="/assets/ruri/o_desk_s.webp" width="64" height="88" alt=""><p>지금 정리 중이에요. 곧 청약·신청 일정을 올릴게요!</p></li>'
     page('/apply/', f'청약·신청 일정 모음', '아파트 청약, 공공임대, 공모주, 지원금 신청 일정을 마감 순서로 정리했어요.',
          f'''<p class="bc"><a href="/">홈</a> › 청약·신청</p><section class="dh" data-c="apply"><span class="ic big">📝</span><h1>청약·신청</h1><p class="lead">진행 중 <b>{len(aps)}건</b> · 마감 임박순</p></section>
-{say('o_desk', '신청만 하면 되는 기회들이에요. 기간이 짧으니 미리 챙겨요!')}{APPLY_INTRO}<h2>진행 중 청약·신청 <small>마감 가까운 순 {min(60, len(aps))}건 · 전체 {len(aps)}건</small></h2><ul class="list" id="ap-list">{lst}</ul>
+{say('o_desk', '신청만 하면 되는 기회들이에요. 기간이 짧으니 미리 챙겨요!')}{join_cta('apply')}{APPLY_INTRO}<h2>진행 중 청약·신청 <small>마감 가까운 순 {min(60, len(aps))}건 · 전체 {len(aps)}건</small></h2><ul class="list" id="ap-list">{lst}</ul>
 {f'<p class="hm-more"><button class="btn2" id="ap-more" data-n="{len(aps) - 60}">나머지 {len(aps) - 60}건 더 보기</button> · <a href="/apply/month/{TODAY:%Y-%m}/">달별 일정</a> · <a href="/apply/r/">지역별</a></p>' if len(aps) > 60 else ''}
 <script defer src="/assets/view/one.js?v=2"></script>''',
          [('루리의 줍줍', '/'), ('청약·신청', '/apply/')])
@@ -1320,12 +1320,12 @@ def build():
 <p class="hm-sub">집밥 레시피 <b>{NR_HOME}개</b>, 오늘 마감 경품·용돈 이벤트, 지원금·공모전 일정까지 생활에 쓰는 정보를 매시간 정리해요.</p>
 <form class="hm-ing" action="/fridge/" method="get"><input name="ing" placeholder="있는 재료 예) 김치, 달걀" aria-label="있는 재료"><button>메뉴 찾기</button></form>
 <p class="hm-chips">{''.join(f'<a href="/fridge/?ing={x}">{x}</a>' for x in _ing)}</p>
-{('<div class="hm-today"><b>☀️ 오늘의 메뉴</b> <small>' + E(_TD.get('place', '서울')) + ' ' + str(round(_TD.get('t', 0))) + '도 · ' + E(_TD.get('why', '')) + '</small><ul>' + ''.join(f'<li><a href="/fridge/r/{fr_slug(r["n"])}/">{r["e"]} {E(r["n"])} <small>{r["m"]}분 · {E(r["lv"])}</small></a></li>' for r in _picks) + '</ul></div>') if _picks else ''}</section>
+<div data-rec="home" data-n="5">{('<ul class="rec-ssr">' + ''.join(f'<li><a href="/fridge/r/{fr_slug(r["n"])}/">{r["e"]} {E(r["n"])} <small>{r["m"]}분 · {E(r["lv"])}</small></a></li>' for r in _picks) + '</ul>') if _picks else ''}</div>{REC_TAGS}</section>
+{join_home()}
 <section class="hm-sec"><h2>🍳 많이 찾는 레시피 모음 <a href="/fridge/">재료로 찾기 →</a></h2><div class="hm-prep">
 <a href="/fridge/solo/"><b>🏠 자취 요리 추천</b><span>재료 3개 이하·20분 안에 끝나는 1인분 집밥</span></a>
 <a href="/fridge/weather/"><b>🌤️ 날씨별 오늘 메뉴</b><span>비 오는 날·쌀쌀한 날·더운 날에 어울리는 집밥</span></a></div>
 <p class="hm-more">분류로 보기: {' · '.join(f'<a href="/fridge/c/{s2}/">{i2} {n2}</a>' for s2, k2, i2, n2, _ in FR_CATS)}</p>
-<div class="mg-s" data-pctop="/fridge/r/" data-by="likes" data-n="6" data-head="❤️ 지금 인기 있는 메뉴"></div>
 {cp_widget('자취 필수템', 'home') or cp_box('', '장 볼 때 같이 보면 좋아요:')}</section>
 <section class="hm-sec"><h2>🎁 오늘 마감 경품·용돈 <a href="/event/">전체 {len(events)}건 →</a></h2>
 <ul class="hm-ev">{''.join(f'<li><a href="{E(e["link"])}" target="_blank" rel="noopener nofollow"><b>{E(e["title"][:48])}</b><small>{dday(e["end"])[1]} · {E(e.get("org") or "")} · {E(e.get("effort") or EASY.get(e["type"], ""))}</small></a></li>' for e in _ev3) or '<li class="empty">지금은 없어요.</li>'}</ul></section>
@@ -1369,7 +1369,7 @@ def build():
         top += [e for e in sorted(events, key=lambda e: e['end']) if e not in top and (e.get('effort') or EASY.get(e['type'], '')) in EZT][:12 - len(top)]
     tcards = ''.join(f'<li><a href="{E(e["link"])}" target="_blank" rel="noopener nofollow"><b>{E(tidy_ev(e["title"]))}</b><span><em class="{"u" if dday(e["end"])[0] <= 1 else ""}">{dday(e["end"])[1]}</em>{E(e["org"] or "공식 계정")} · <i>{E(e.get("effort") or EASY.get(e["type"], e["type"]))}</i></span></a></li>' for e in top)
     page('/event/', f'경품 이벤트 — 오늘 마감·쉬운 것부터 (진행 중 {len(events)}건)', f'댓글 1줄·퀴즈·설문·응모만 하면 되는 경품 이벤트 {len(events)}건. 오늘·내일 마감하는 쉬운 이벤트부터, 종류별·검색으로 골라 보세요. 매시간 갱신.',
-         f'''<p class="bc"><a href="/">홈</a> › <a href="/apply/">생활</a> › 경품 이벤트</p><h1>🎁 경품 이벤트</h1>
+         f'''<p class="bc"><a href="/">홈</a> › <a href="/apply/">생활</a> › 경품 이벤트</p><h1>🎁 경품 이벤트</h1>{join_cta('event')}
 {say('excited', f'오늘·내일 마감하는 쉬운 이벤트부터 골랐어요! 지금 진행 중인 이벤트는 {len(events):,}건이고, 매시간 새로 정리돼요.')}
 <section class="ev-top"><h2>⚡ 오늘·내일 마감 · 쉬운 것 {len(top)}</h2><ul class="ev-ul">{tcards}</ul></section>
 <h2 class="ev-h">🔎 종류별로 골라 보기</h2><section id="evl" aria-label="경품 이벤트 목록"><noscript>자바스크립트가 필요해요.</noscript></section>
@@ -1649,13 +1649,75 @@ def game_pages(live):
             + (f'<h3>💸 에픽 할인 중</h3><ul class="gm-l">{sale}</ul>' if sale else '')
             + f'<h2 id="steam">🔥 스팀 할인 TOP</h2>' + (f'<ul class="gm-g">{sp}</ul>' if sp else '<p class="note">지금 불러온 할인 정보가 없어요.</p>')
             + (f'<h2>🏆 스팀 인기 게임</h2><ol class="gm-l">{tp}</ol>' if tp else '') + (f'<h2>🗓️ 곧 나오는 게임</h2><ul class="gm-l">{cs}</ul>' if cs else '')
-            + cp_box('게임 게이밍 PC', '게임할 때 많이 찾는 물건:', 2, strict=True)
+            + cp_box('게임 게이밍 PC', '게임할 때 많이 찾는 물건:', 2, strict=True) + join_cta('game')
             + f'<h2 id="contest">🏆 게임·e스포츠·해커톤 공모전 (진행 중 {len(gc)}건)</h2>' + (f'<ul class="list">{"".join(card(c) for c in gc)}</ul>' if gc else '<p class="note">지금 진행 중인 게임 관련 공모전이 없어요.</p>')
             + '<p class="note">이미지와 가격은 각 스토어가 공개한 정보를 하루 두 번 받아 보여 줘요. 줍줍은 스토어와 무관하고, 게임 구매를 권하지 않아요. 소통은 오픈채팅에서 해요.</p>'
             '<p class="hm-links"><a href="/contest/">전체 공모전</a> · <a href="/event/">🎁 경품·용돈</a></p>' + css)
     page('/game/', '게임 허브 — 이번 주 에픽 무료 게임·스팀 할인 TOP·게임 공모전 (매일 갱신)', f'Epic 무료 게임 {len(ep.get("free", []))}개와 스팀 할인·인기·출시 예정, 진행 중인 게임·e스포츠·해커톤 공모전 {len(gc)}건을 한곳에. 스토어 기준 시각을 적어요.',
          body, [('루리의 줍줍', '/'), ('게임', '/game/')])
     return ['/game/']
+
+
+JN_TOPICS = {   # 2026-10-20 사용자 「그 사람이 듣고 싶은 정보를 회원가입하면 보내 주는 서비스」「가입 유도」: 키 → (아이콘, 제목, 보내는 때)
+    'recipe': ('🍳', '오늘 뭐 먹지, 아침마다 알려 드려요', '매일 아침 · 이메일'),
+    'apply': ('💰', '새 지원금·마감 임박 청약을 놓치지 않게', '새 공고와 마감 3일 전 · 이메일'),
+    'contest': ('🏆', '마감 임박 공모전을 놓치지 않게', '마감 3일 전 · 이메일'),
+    'issue': ('📺', '루리 뉴스 브리핑을 메일로', '매일 아침 · 이메일'),
+    'game': ('🎮', '이번 주 무료 게임·스팀 할인을 먼저', '새 무료 게임이 풀릴 때 · 이메일'),
+    'money': ('📊', '전문가 말 vs 시세 요약을 메일로', '매일 아침 · 이메일'),
+    'event': ('🎁', '오늘 마감 경품·용돈을 놓치지 않게', '매일 아침 · 이메일')}
+_JNP = {}
+
+
+def jn_preview(t):
+    """가입하면 받을 소식의 맛보기 한 줄 — 지금 사이트 자료로(없으면 빈 문자열)."""
+    if t in _JNP:
+        return _JNP[t]
+    out = ''
+    try:
+        td = datetime.date.today()
+        if t == 'recipe':
+            pk = (_rd('assets/fridge/today.json') or {}).get('picks') or []
+            out = ('오늘의 메뉴: ' + ', '.join(pk[:3])) if pk else ''
+        elif t == 'apply':
+            L = [a for a in (_rd('apply.json') or []) if a.get('end') and not a.get('always') and 0 <= (datetime.date.fromisoformat(a['end']) - td).days <= 7]
+            out = f'지금 7일 안에 마감하는 지원금·청약 {len(L)}건' if L else ''
+        elif t == 'contest':
+            L = [c for c in ((_rd('data.json') or {}).get('items') or []) if c.get('end') and 0 <= (datetime.date.fromisoformat(c['end']) - td).days <= 7]
+            out = f'7일 안에 마감하는 공모전 {len(L)}건' if L else ''
+        elif t == 'issue':
+            it = (_rd('news/brief.json') or {}).get('items') or []
+            out = f'오늘 브리핑 {len(it)}가지: ' + html.unescape(html.unescape(it[0]['headline']))[:22] + '…' if it else ''
+        elif t == 'game':
+            fr = ((_rd('_gongmo/game_cache.json') or {}).get('epic') or {}).get('free') or []
+            out = '지금 Epic 무료: ' + ', '.join(x['name'] for x in fr[:2]) if fr else ''
+        elif t == 'money':
+            n = ((_rd('analyst/data.json') or {}).get('exp_meta') or {}).get('n24')
+            out = f'최근 24시간 전문가 발언 {n}건을 시세와 함께' if n else ''
+        elif t == 'event':
+            n = len([e for e in (_rd('events.json') or []) if e.get('end', '') >= td.isoformat()])
+            out = f'지금 응모할 수 있는 경품·이벤트 {n}건' if n else ''
+    except Exception:
+        out = ''
+    _JNP[t] = out
+    return out
+
+
+def join_cta(t):
+    """가입 유도 카드 한 장(페이지당 하나, 팝업 없음). 누르면 가입 창 → 그 주제를 메일로 받기(assets/join/join.js)."""
+    if t not in JN_TOPICS:
+        return ''
+    ic, ti, when = JN_TOPICS[t]
+    pv = jn_preview(t)
+    return (f'<aside class="jn" data-t="{t}"><div><b>📬 {ic} {E(ti)}</b>' + (f'<p>{E(pv)}</p>' if pv else '') + f'<small>{E(when)} · 가입 무료 · 언제든 끌 수 있어요</small></div>'
+            '<button class="jn-b" type="button">무료로 받기</button></aside><link rel="stylesheet" href="/assets/join/join.css?v=1"><script defer src="/assets/join/join.js?v=1"></script>')
+
+
+def join_home():
+    """홈: 주제를 골라 받는 입구(눌러서 /me/ 의 소식 설정으로)."""
+    chips = ''.join(f'<a href="/me/?t={k}#topics">{ic} {E(ti.split(",")[0][:14])}</a>' for k, (ic, ti, _) in JN_TOPICS.items())
+    return ('<section class="hm-sec jn-home"><h2>📬 원하는 소식만 골라 받기</h2><p class="kwn">가입하면 고른 주제의 새 소식을 메일로 보내 드려요. 마감 임박·새 공고·무료 게임·오늘의 메뉴까지, 끄는 것도 한 번에.</p>'
+            f'<p class="hm-chips">{chips}</p></section><link rel="stylesheet" href="/assets/join/join.css?v=1">')
 
 
 def trend_pages():
@@ -2728,7 +2790,7 @@ def money_pages():
          '리서치센터장·월가·한은·IMF 등 실명 전문가 발언을 S&P500·나스닥·환율·금리·유가·비트코인 30일 차트 위에 찍고, 발언 뒤 7일·30일 실제 등락과 내 생활에 미칠 수 있는 영향을 함께 보여 줘요.',
          '<p class="bc"><a href="/">홈</a> › <a href="/analyst/">머니</a> › 전문가 코멘트</p><h1>🎙️ 전문가 말 vs 실제 시세</h1>'
          + (f'<p class="cat-st">📡 마지막 수집 {E(an.get("updated", "")[-5:])} · 최근 24시간 {an["exp_meta"]["n24"]}건 · 최근 14일 {an["exp_meta"]["n14"]}건 · 매시간 갱신</p>' if an.get('exp_meta') else '') + MONEY_NOTE
-         + (experts_v2(an) or '<p class="nw-empty">아직 모인 발언이 없어요. 매시간 새로 모아요.</p>') + how + css,
+         + join_cta('money') + (experts_v2(an) or '<p class="nw-empty">아직 모인 발언이 없어요. 매시간 새로 모아요.</p>') + how + css,
          [('루리의 줍줍', '/'), ('머니', '/analyst/'), ('전문가 코멘트', '/money/experts/')])
     urls.append('/money/experts/')
     a = json.load(open(os.path.join(HERE, 'money_age.json'), encoding='utf-8'))
@@ -3243,7 +3305,7 @@ def news_page():
     # 루리 탐정의 이슈 감별 (2026-10-18 사용자: RSS 기사 수집 → 주제별 묶음 → 팩트체크 기반 채점, 피드, 탐정 루리, 기사 관련 줍줍)
     body = f'''<p class="bc"><a href="/">홈</a> › 기사 확인 신호</p><h1>📺 루리 뉴스</h1><p class="kwn">언론사 15곳 기사를 매시간 모아 같은 사건끼리 묶고, 제목·숫자·확인 신호를 정리해요.</p>
 <nav class="nbn" aria-label="이 화면 안에서 이동"><a href="#brief">📺 오늘의 브리핑</a><a href="#review">🖋️ 평론</a><a href="#news">🕵️ 이슈 순위·확인 신호</a><a href="/trend/">🍿 이슈 트렌드</a><a href="/hot/">🔥 핫이슈</a></nav>
-{news_brief()}{hot_top(3)}{news_impact()}
+{news_brief()}{join_cta('issue')}{hot_top(3)}{news_impact()}
 <h2 class="nbh" id="rank">🕵️ 이슈 순위와 기사 확인 신호</h2><section id="news" aria-label="이슈 순위와 기사 채점">{news_static()}</section>
 <details class="nw-how"><summary>채점은 이렇게 해요</summary><ul><li><b>교차 보도</b> — 같은 사건을 여러 언론사가 보도하면 가점, 한 곳뿐이면 표시만 해요.</li><li><b>출처</b> — 실명 기관·인물 출처는 가점, 익명 관계자뿐이거나 온라인 커뮤니티·SNS 글이 출처면 감점.</li><li><b>제목-본문 일치</b> — 제목의 숫자·인용문이 본문에 없으면 감점.</li><li><b>숫자 엇갈림</b> — 같은 사건인데 언론사마다 사망·부상자 수가 다르면 따로 표시해요.</li><li><b>낚시·홍보</b> — 「충격」「결국」「이것」 같은 낚시 표현, 기업 홍보성 기사는 감점.</li></ul><p>기사 본문은 채점에만 쓰고 이 사이트에 옮겨 싣지 않아요. 제목을 누르면 원래 언론사 기사로 이동해요.</p></details>
 <link rel="stylesheet" href="/assets/news/news.css?v=6"><script defer src="/assets/news/news.js?v=4"></script>'''
@@ -3323,6 +3385,54 @@ FR_CATS = [('guk', '국물', '🍲', '국·찌개·탕', '국물 요리'), ('bap
            ('jorim', '조림', '🐟', '조림·찜', '조림·찜 요리'), ('banchan', '반찬', '🥗', '반찬·무침·나물', '반찬'), ('jeon', '전', '🥞', '전·부침개', '전·부침개')]
 
 
+REC_TAGS = '<link rel="stylesheet" href="/assets/fridge/recommend.css?v=1"><script defer src="/assets/fridge/recommend.js?v=1"></script>'   # 오늘 뭐 먹지? (2026-10-20)
+
+
+def rec_pop():
+    """지금 많이 보는 메뉴(조회수·좋아요 상위 40). 방문자마다 D1 을 읽지 않도록 빌드가 시간마다 받아 정적 파일(rec_pop.json)로 둔다."""
+    import urllib.parse
+    out = {}
+    if not COMM_API:
+        return out
+    for by in ('views', 'likes'):
+        try:
+            req = urllib.request.Request(COMM_API + f'/api/p/top?prefix=/fridge/r/&by={by}&n=40', headers={'User-Agent': 'jupjup-build/1'})
+            for x in json.load(urllib.request.urlopen(req, timeout=20)).get('top') or []:
+                sl = urllib.parse.unquote(x['page']).strip('/').split('/')[-1]
+                o = out.setdefault(sl, [0, 0]); o[0] = max(o[0], x['v']); o[1] = max(o[1], x['l'])
+        except Exception as e:
+            print('인기 메뉴 읽기 실패', repr(e)[:80])
+    return out
+
+
+def rec_build(RS, PR):
+    """추천용 가벼운 데이터(rec.json: 메뉴 요약 배열)와 작은 사진(ph/t/<slug>.webp 240px). 완성 사진이 정제에서 빠진 메뉴는 사진 없이(이모지) 나간다."""
+    import fridge_today as FT
+    from PIL import Image
+    tdir = os.path.join(ROOT, 'assets', 'fridge', 'ph', 't'); os.makedirs(tdir, exist_ok=True)
+    TAGS = ['든든', '안 매움', '가벼움', '아이', '간식', '안주', '매움']
+    LV = {'쉬움': 0, '보통': 1, '어려움': 2}
+    keep, rows = set(), []
+    for r in RS:
+        sl = fr_slug(r['n']); mp = (PR.get(r['n']) or {}).get('main'); has = 0
+        if mp and mp.get('f'):
+            src = os.path.join(ROOT, mp['f'].lstrip('/').replace('/', os.sep)); dst = os.path.join(tdir, sl + '.webp')
+            if os.path.exists(src):
+                if not os.path.exists(dst) or os.path.getmtime(dst) < os.path.getmtime(src):
+                    im = Image.open(src).convert('RGB'); im.thumbnail((240, 180)); im.save(dst, 'WEBP', quality=72, method=6)
+                has = 1; keep.add(sl + '.webp')
+        rows.append([r['n'], r['e'], r['m'], LV.get(r['lv'], 0), [TAGS.index(t) for t in r['t'] if t in TAGS], FT.cat(r['n']), has, r['need'], r['opt'][:4], len(r['s'])])
+    for f in os.listdir(tdir):
+        if f not in keep:
+            os.remove(os.path.join(tdir, f))
+    wr = lambda name, obj: open(os.path.join(ROOT, 'assets', 'fridge', name), 'w', encoding='utf-8', newline='\n').write(json.dumps(obj, ensure_ascii=False, separators=(',', ':')))
+    wr('rec.json', {'v': 1, 'tags': TAGS, 'r': rows})
+    pop = rec_pop()
+    if pop or not os.path.exists(os.path.join(ROOT, 'assets', 'fridge', 'rec_pop.json')):
+        wr('rec_pop.json', pop)
+    return len(rows), sum(1 for x in rows if x[6])
+
+
 def fridge_page():
     """냉장고 파먹기 + 레시피 상세(/fridge/r/<요리>/, 2026-10-19 검색 유입: Recipe 구조화 데이터). 사진은 자유 이용 사진과 출처를 밝힌 참고 사진(recipes_ph.json)."""
     D = json.load(open(os.path.join(ROOT, 'assets', 'fridge', 'recipes.json'), encoding='utf-8'))
@@ -3365,7 +3475,7 @@ def fridge_page():
                 + (f'<p class="note">영문: {E(FR_EN[r["n"]])} recipe</p>' if FR_EN.get(r['n']) else '')
                 + share_bar(f'{r["n"]} 만드는 법', f'{r["n"]} 만드는 법 — 재료 {len(r["need"])}가지로 {r["m"]}분')
                 + '<h2>💡 루리 팁</h2><ul class="chk">' + ''.join(f'<li>{E(t)}</li>' for t in fr_tips(r, RS)) + '</ul>'
-                + f'<a class="lab-cta" href="/fridge/"><b>🍳 내 냉장고 재료로 다른 메뉴 찾기</b><span>재료를 고르면 지금 만들 수 있는 메뉴를 골라 드려요 · 레시피 {NR}개 →</span></a>'
+                + f'<a class="lab-cta" href="/fridge/"><b>🍳 내 냉장고 재료로 다른 메뉴 찾기</b><span>재료를 고르면 지금 만들 수 있는 메뉴를 골라 드려요 · 레시피 {NR}개 →</span></a>' + join_cta('recipe')
                 + (f'<h2>🔗 재료가 비슷한 메뉴</h2><ul class="fr-rel">' + ''.join(f'<li><a href="/fridge/r/{fr_slug(x["n"])}/">{x["e"]} {E(x["n"])} <small>{x["m"]}분</small></a></li>' for x in rel) + '</ul>' if rel else '')
                 + (f'<details class="fr-cr"><summary>사진 출처</summary><p>{"<br>".join(cr)}</p></details>' if cr else '')
                 + '<p class="note">루리의 줍줍이 직접 정리한 1~2인분 기준 레시피예요. 사진은 자유 이용 사진이거나 출처를 밝힌 참고 사진이고, 맞는 사진이 없는 메뉴는 비워 뒀어요. 알레르기가 있으면 재료를 꼭 확인하세요.</p></article>'
@@ -3403,6 +3513,9 @@ def fridge_page():
                  f'<p><a href="{un}">{E(new)} 레시피 보기 →</a></p><meta http-equiv="refresh" content="0; url={un}">', noindex=True, canon=un)
     allr = ''.join(f'<li><a href="/fridge/r/{fr_slug(r["n"])}/">{r["e"]} {E(r["n"])}</a></li>' for r in sorted(RS, key=lambda r: r['n']))
     import fridge_today as FT
+    n_rec, n_ph = rec_build(RS, PR)
+    print('추천 데이터', n_rec, '메뉴 · 사진 있는 메뉴', n_ph)
+    ssr = lambda L, note='': '<ul class="rec-ssr">' + ''.join(f'<li><a href="/fridge/r/{fr_slug(x["n"])}/">{x["e"]} {E(x["n"])} <small>{x["m"]}분 · {E(x["lv"])}</small></a></li>' for x in L) + '</ul>' + (f'<p class="note">{note}</p>' if note else '')
     li = lambda L: '<ul class="fr-rel">' + ''.join(f'<li><a href="/fridge/r/{fr_slug(x["n"])}/">{x["e"]} {E(x["n"])} <small>{x["m"]}분 · {E(x["lv"])}</small></a></li>' for x in L) + '</ul>'
     TD = _rd('assets/fridge/today.json') or {}
     W = [('rainy', '☔ 비 오는 날', '비 오는 날엔 국물이나 전이 당겨요. 부침개는 기름 소리가 빗소리 같아서라는 말도 있죠.', ('국물', '전')),
@@ -3413,13 +3526,17 @@ def fridge_page():
     page('/fridge/weather/', '비 오는 날 음식 추천 — 날씨별 오늘 메뉴(쌀쌀한 날·더운 날)', '비 오는 날·쌀쌀한 날·더운 날·일교차 큰 날에 어울리는 집밥 메뉴를 날씨별로 모았어요. 매시간 서울 날씨로 오늘의 메뉴 3개도 골라 드려요.',
          f'<p class="bc"><a href="/">홈</a> › <a href="/fridge/">냉장고 파먹기</a> › 날씨별 메뉴</p><h1>🌤️ 날씨별 오늘 메뉴 — 비 오는 날·쌀쌀한 날·더운 날</h1>'
          + (f'<p class="cat-st">📌 오늘 {E(TD.get("place", "서울"))} {round(TD.get("t", 0))}도 · {E(TD.get("why", ""))} → ' + ', '.join(f'<a href="/fridge/r/{fr_slug(n)}/">{E(n)}</a>' for n in TD.get('picks', [])) + f' <small>({E(TD.get("at", ""))} 기준, Open-Meteo)</small></p>' if TD.get('picks') else '')
-         + secs + '<a class="lab-cta" href="/fridge/"><b>🍳 내 냉장고 재료로 찾기</b><span>있는 재료를 고르면 지금 만들 수 있는 메뉴부터 →</span></a><link rel="stylesheet" href="/assets/fridge/fridge.css?v=12">',
+         + '<div data-rec="weather" data-n="8">' + ssr([x for x in RS if x['n'] in set(TD.get('picks', []))][:3], '자바스크립트를 켜면 오늘 날씨와 시간에 맞춰 골라 드려요.') + '</div>'
+         + '<details class="fr-all"><summary>📚 날씨별 전체 메뉴 보기</summary>' + secs + '</details>' + REC_TAGS + FOLD_TAGS
+         + '<a class="lab-cta" href="/fridge/"><b>🍳 내 냉장고 재료로 찾기</b><span>있는 재료를 고르면 지금 만들 수 있는 메뉴부터 →</span></a><link rel="stylesheet" href="/assets/fridge/fridge.css?v=12">',
          [('루리의 줍줍', '/'), ('냉장고 파먹기', '/fridge/'), ('날씨별 메뉴', '/fridge/weather/')])
     SOLO = sorted([x for x in RS if len(x['need']) <= 3 and x['m'] <= 20], key=lambda x: (x['m'], len(x['need'])))
     page('/fridge/solo/', f'자취 요리 추천 — 재료 3개 이하·20분 안에 ({len(SOLO)}가지)', f'자취 요리 추천: 꼭 필요한 재료 3개 이하, 20분 안에 끝나는 1인분 집밥 {len(SOLO)}가지. 설거지 적은 메뉴와 남은 재료 활용까지.',
          f'<p class="bc"><a href="/">홈</a> › <a href="/fridge/">냉장고 파먹기</a> › 자취 요리</p><h1>🏠 자취 요리 추천 — 재료 3개 이하·20분 ({len(SOLO)}가지)</h1>'
          '<p>자취방 냉장고에 흔한 달걀·김치·스팸·라면으로 만들 수 있는 메뉴부터 골랐어요. 모두 꼭 필요한 재료가 3개 이하이고, 20분 안에 끝나요. 기본양념(간장·설탕·식용유 등)은 있다고 봤어요.</p>'
-         + li(SOLO) + '<a class="lab-cta" href="/fridge/"><b>🍳 내 냉장고 재료로 찾기</b><span>「설거지 적게」 조건도 고를 수 있어요 →</span></a><link rel="stylesheet" href="/assets/fridge/fridge.css?v=12">',
+         + '<div data-rec="solo" data-n="8">' + ssr(SOLO[:5], '자바스크립트를 켜면 지금 시간에 맞춰 골라 드려요.') + '</div>'
+         + f'<details class="fr-all"><summary>📚 자취 요리 전체 {len(SOLO)}가지 보기</summary>' + li(SOLO).replace('<ul class="fr-rel">', '<ul class="fr-rel" data-fold="20" data-step="40">', 1) + '</details>' + REC_TAGS + FOLD_TAGS
+         + '<a class="lab-cta" href="/fridge/"><b>🍳 내 냉장고 재료로 찾기</b><span>「설거지 적게」 조건도 고를 수 있어요 →</span></a><link rel="stylesheet" href="/assets/fridge/fridge.css?v=12">',
          [('루리의 줍줍', '/'), ('냉장고 파먹기', '/fridge/'), ('자취 요리', '/fridge/solo/')])
     urls += ['/fridge/weather/', '/fridge/solo/']
     import collections as _co
@@ -3437,9 +3554,11 @@ def fridge_page():
                  f'이 분야에서 필수 재료로 가장 많이 쓰인 건 {", ".join(f"{g}({c}개)" for g, c in ing_)}예요.')
         wk_ = 'cat-' + sl_
         bd = (f'<p class="bc"><a href="/">홈</a> › <a href="/fridge/">레시피</a> › {E(nm_)}</p><h1>{ic_} {E(nm_)} 레시피 모음 — {len(L_)}가지</h1><p class="cat-st">📌 {E(facts)}</p>'
-              + (f'<h2>⏱️ 15분 안에 끝나는 {E(nm2_)} ({len(quick)}가지)</h2>' + li(quick[:12]) if quick else '')
+              + f'<div data-rec="cat" data-cat="{E(key_)}" data-n="6">' + ssr(L_[:5]) + '</div>'
+              + (f'<h2>⏱️ 15분 안에 끝나는 {E(nm2_)} ({len(quick)}가지)</h2>' + li(quick[:12]).replace('<ul class="fr-rel">', '<ul class="fr-rel" data-fold="6" data-step="12">', 1) if quick else '')
               + cp_widget('냄비·뚝배기' if key_ == '국물' else '밀키트', 'recipe')
-              + f'<h2>전체 {E(nm_)} 레시피 (조리 시간순)</h2>' + li(L_)
+              + f'<h2>전체 {E(nm_)} 레시피 (조리 시간순)</h2>' + li(L_).replace('<ul class="fr-rel">', '<ul class="fr-rel" data-fold="15" data-step="30">', 1) + REC_TAGS + FOLD_TAGS
+              + join_cta('recipe')
               + f'<p class="hm-links">다른 분류: {oth} · <a href="/fridge/solo/">🏠 자취 요리</a> · <a href="/fridge/weather/">🌤️ 날씨별 메뉴</a></p>'
               + '<a class="lab-cta" href="/fridge/"><b>🍳 내 냉장고 재료로 찾기</b><span>있는 재료를 고르면 지금 만들 수 있는 메뉴부터 →</span></a><link rel="stylesheet" href="/assets/fridge/fridge.css?v=12">')
         page(f'/fridge/c/{sl_}/', f'{nm_} 레시피 모음 {YR} — 집에서 만드는 {len(L_)}가지 (조리 시간순)', f'{nm_} 레시피 {len(L_)}가지: 조리 시간 순서로 만드는 법과 필수 재료. 15분 안에 끝나는 {nm2_} {len(quick)}가지 포함.',
@@ -3448,14 +3567,14 @@ def fridge_page():
     page('/fridge/', f'냉장고 파먹기 메뉴 추천 — 있는 재료로 오늘 요리 (레시피 {NR}개)', f'냉장고에 있는 재료만 고르면 집밥 레시피 {NR}개 중 지금 바로 만들 수 있는 오늘 메뉴와 만드는 법, 하나만 사면 되는 메뉴까지 알려 줘요.',
          f"""<p class="bc"><a href="/">홈</a> › 냉장고 파먹기</p><h1>🍳 루리의 냉장고 파먹기</h1>
 {say("o_cook", f"냉장고 사진을 찍거나 있는 재료를 눌러 주세요. 집밥 레시피 {NR}개 중에 지금 바로 만들 수 있는 걸 골라 드릴게요!")}
-<section id="fridge" aria-label="냉장고 재료로 메뉴 추천"><noscript>자바스크립트가 필요해요. 아래 전체 레시피 목록에서 골라 보세요.</noscript></section>
-<section class="mg-s" data-pctop="/fridge/r/" data-by="likes" data-n="8" data-head="❤️ 지금 인기 있는 메뉴"></section>
-<section class="mg-s" data-pctop="/fridge/r/" data-by="views" data-n="8" data-head="👀 많이 본 레시피"></section>
+<div class="rec-tabs" data-rec-tabs role="tablist"><button type="button" data-t="rec-pane" class="on">🍽️ 오늘의 추천</button><button type="button" data-t="fridge">🧊 내 냉장고로 찾기</button></div>
+<section id="rec-pane" aria-label="오늘의 추천"><div data-rec="today" data-n="8">{ssr([x for x in RS if x['n'] in set(TD.get('picks', []))][:3], '자바스크립트를 켜면 시간·날씨에 맞춰 골라 드려요.')}</div></section>
+<section id="fridge" aria-label="냉장고 재료로 메뉴 추천" hidden><noscript><style>#fridge[hidden]{{display:block!important}}</style>자바스크립트가 필요해요. 아래 전체 레시피 목록에서 골라 보세요.</noscript></section>
 <p class="hm-more"><a href="/fridge/weather/">🌤️ 날씨별 메뉴</a> · <a href="/fridge/solo/">🏠 자취 요리</a> · <a href="/fridge/r/계란찜/">🥚 계란찜</a></p>
 <p class="hm-more">분류로 보기: {' · '.join(f'<a href="/fridge/c/{s2}/">{i2} {n2}</a>' for s2, k2, i2, n2, _ in FR_CATS if CATN.get(s2, 0) >= 10)}</p>
 <details class="fr-all"><summary>📚 전체 레시피 {NR}개 보기</summary><ul>{allr}</ul></details>
 <a class="lab-cta" href="/cat/food/"><b>🏆 요리·레시피 공모전</b><span>레시피 공모전·요리경연대회 모아 보기 · 상금 받고 요리 실력 뽐내기 →</span></a><p class="note">사진은 재료를 찾는 데만 쓰고 저장하지 않아요. 고른 재료는 이 폰에만 저장돼요. 알레르기가 있으면 재료를 꼭 다시 확인해 주세요.</p>
-<link rel="stylesheet" href="/assets/fridge/fridge.css?v=12"><script defer src="/assets/fridge/fridge.js?v=15"></script>""", [('루리의 줍줍', '/'), ('냉장고 파먹기', '/fridge/')],
+<link rel="stylesheet" href="/assets/fridge/fridge.css?v=13"><script defer src="/assets/fridge/fridge.js?v=15"></script>{REC_TAGS}""", [('루리의 줍줍', '/'), ('냉장고 파먹기', '/fridge/')],
          {'@context': 'https://schema.org', '@type': 'ItemList', 'name': '냉장고 파먹기 집밥 레시피', 'numberOfItems': NR, 'itemListElement': [{'@type': 'ListItem', 'position': k + 1, 'url': f'{SITE}/fridge/r/{fr_slug(r["n"])}/', 'name': r['n']} for k, r in enumerate(RS[:50])]})
     return urls
 
@@ -3530,7 +3649,7 @@ def community(live=()):
 def me_pages():
     """내 공간(가입 혜택 모음) · 관리자 (2026-10-17)"""
     page('/me/', '내 공간 — 찜·응모 기록·마감 알림', '찜한 공모전·청약, 응모 기록, 마감 알림 메일, 자격 프로필, 청약 가점 계산기를 한곳에서.',
-         '''<section id="me" aria-label="내 공간"></section>''' + (('<section class="me-sec"><h2>💬 톡방</h2><p class="note">공모전·지원금 마감 소식을 매일 나눠요.</p><p class="ft-c">' + comm_btns() + '</p></section>') if COMM_LINKS else '') + '''<link rel="stylesheet" href="/assets/me/me.css?v=2"><script defer src="/assets/me/me.js?v=3"></script>''', [('루리의 줍줍', '/'), ('내 공간', '/me/')])
+         '''<section id="me" aria-label="내 공간"></section>''' + (('<section class="me-sec"><h2>💬 톡방</h2><p class="note">공모전·지원금 마감 소식을 매일 나눠요.</p><p class="ft-c">' + comm_btns() + '</p></section>') if COMM_LINKS else '') + '''<link rel="stylesheet" href="/assets/me/me.css?v=3"><script defer src="/assets/me/me.js?v=4"></script>''', [('루리의 줍줍', '/'), ('내 공간', '/me/')])
     page('/login/', '로그인', '루리의 줍줍 로그인 — 내 공간으로 이동해요.', '<p>내 공간으로 이동하고 있어요… <a href="/me/">이동하지 않으면 여기를 눌러 주세요</a></p><script>location.replace("/me/"+location.search+location.hash)</script>', noindex=True)   # 2026-10-19 /login/ 404 → 내 공간(로그인 화면 포함)
     page('/admin/', '관리자', '관리자', '''<section id="admin"></section><section id="gsc-admin"></section><link rel="stylesheet" href="/assets/me/me.css?v=3"><script defer src="/assets/me/admin.js?v=7"></script>''', noindex=True)
 

@@ -23,3 +23,5 @@
 
 /* 홍보 관리 (2026-10-19) */
 #promo-admin{max-width:900px;margin:24px auto}.pa-f{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}.pa-f button{padding:6px 10px;border-radius:999px;border:1px solid var(--bd);background:var(--card);color:var(--tx);font:inherit;font-size:13px}.pa-f button.on{background:var(--pri);color:#fff}.pa-i{border:1px solid var(--bd);border-radius:14px;padding:12px;margin:10px 0;background:var(--card)}.pa-i header{display:flex;gap:8px;flex-wrap:wrap;align-items:baseline}.pa-i header small{color:var(--mu)}.pa-i h3{margin:6px 0;font-size:15px}.pa-i textarea{width:100%;box-sizing:border-box;font:inherit;font-size:13px;border-radius:10px;border:1px solid var(--bd);padding:8px}.pa-qc{color:#b91c1c;font-size:13px}.pa-b{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:6px}.pa-b button{padding:6px 10px;border-radius:10px;border:1px solid var(--bd);background:var(--card);color:var(--tx);font:inherit;font-size:13px}.pa-b input{padding:5px;border-radius:8px;border:1px solid var(--bd);font:inherit;font-size:13px}
+
+.me-tp .me-sw{display:block;margin:8px 0}.me-tp small{color:var(--mu,#6b7280);margin-left:4px}
