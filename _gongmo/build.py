@@ -118,6 +118,44 @@ PAGE_INTRO = {k: f'<section class="pg-intro"><h2>{h}</h2>{v}</section>' for k, (
 FOLD_TAGS = '<link rel="stylesheet" href="/assets/fold/fold.css?v=1"><script defer src="/assets/fold/fold.js?v=1"></script>'   # 긴 목록 접기·필터 (2026-10-20 스크롤 줄이기)
 
 
+LAW_ALIAS = {   # 본문에 쓰는 이름 → 국가법령정보센터 법령명
+    '근로기준법 시행령': '근로기준법 시행령', '근로기준법': '근로기준법', '국민연금법 시행령': '국민연금법 시행령', '국민연금법': '국민연금법',
+    '국민건강보험법 시행령': '국민건강보험법 시행령', '국민건강보험법': '국민건강보험법', '고용보험법 시행령': '고용보험법 시행령', '고용보험법': '고용보험법',
+    '산재보험법': '산업재해보상보험법', '산업재해보상보험법': '산업재해보상보험법', '정보통신망법': '정보통신망 이용촉진 및 정보보호 등에 관한 법률',
+    '민법': '민법', '상법': '상법', '전자상거래법': '전자상거래 등에서의 소비자보호에 관한 법률', '금융소비자보호법': '금융소비자 보호에 관한 법률',
+    '자동차손해배상 보장법': '자동차손해배상 보장법', '자배법': '자동차손해배상 보장법', '소득세법 시행령': '소득세법 시행령', '소득세법': '소득세법',
+    '조세특례제한법': '조세특례제한법', '증권거래세법 시행령': '증권거래세법 시행령', '증권거래세법': '증권거래세법', '주택공급에 관한 규칙': '주택공급에 관한 규칙',
+    '부가가치세법': '부가가치세법', '근로자퇴직급여 보장법': '근로자퇴직급여 보장법', '주택임대차보호법': '주택임대차보호법', '국민기초생활 보장법': '국민기초생활 보장법',
+    'AI기본법': '인공지능 발전과 신뢰 기반 조성 등에 관한 기본법'}
+LAW_DEFAULT = {   # 경로 → 이름 없이 「제N조」만 쓴 곳이 가리키는 법 (한 가지 법만 다루는 글만)
+    '/money/guide/annual-leave-pay-resign/': '근로기준법', '/money/guide/parttime-contract/': '근로기준법', '/money/guide/parttime-weekly-holiday-pay/': '근로기준법',
+    '/money/guide/parttime-unpaid-wages/': '근로기준법'}
+_LAW_RE = re.compile(r'(' + '|'.join(re.escape(k) for k in sorted(LAW_ALIAS, key=len, reverse=True)) + r'|시행령|법)?(\s*)(제\d+조(?:의\d+)?)')
+
+
+def law_linkify(html_s, default=None):
+    """법령 조문 언급(「근로기준법 제60조」 등)을 국가법령정보센터 조문 주소로 연결. 이름이 없으면 글의 기본 법(default)일 때만 연결하고, 이미 링크·스크립트·스타일 안은 건드리지 않아요."""
+    out, depth = [], 0
+    for tok in re.split(r'(<[^>]+>)', html_s):
+        if tok.startswith('<'):
+            low = tok[1:6].lower()
+            if re.match(r'<(a|script|style|h1)', tok, re.I): depth += 1
+            elif re.match(r'</(a|script|style|h1)', tok, re.I): depth = max(0, depth - 1)
+            out.append(tok); continue
+        if depth or '제' not in tok:
+            out.append(tok); continue
+        def rep(m):
+            nm, sp, art = m.group(1), m.group(2), m.group(3)
+            if nm in LAW_ALIAS: law = LAW_ALIAS[nm]
+            elif nm in ('시행령', '법') and default: law = default + (' 시행령' if nm == '시행령' and not default.endswith('시행령') else '')
+            elif not nm and default: law = default
+            else: return m.group(0)
+            url = 'https://www.law.go.kr/법령/' + law.replace(' ', '') + '/' + art
+            return f'<a href="{url}" target="_blank" rel="noopener">{(nm or "") + sp + art}</a>'
+        out.append(_LAW_RE.sub(rep, tok))
+    return ''.join(out)
+
+
 def page(path, title, desc, body, crumbs=None, ld=None, full_title=False, noindex=False, og=None, lang='ko', canon=None):
     url = SITE + (canon or path)
     TH = theme_of(path)
@@ -125,6 +163,8 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False, noinde
     PAGE_HASH[path] = hashlib.md5(re.sub(r'D-\d+|D-DAY|\d{1,2}:\d{2}|\d{4}-\d{2}-\d{2}|\d{1,2}/\d{1,2}|[\d,]+\s*(?:건|명|개|곳|회|일 남)', '', title + body).encode()).hexdigest()
     if noindex:
         NOINDEX.add(path)
+    if path.startswith(('/money/guide/', '/guide/', '/ai/', '/qa/')) and not noindex:
+        body = law_linkify(body, LAW_DEFAULT.get(path))
     COMM_TAGS = COMM_TAGS_TPL if COMM_API else ''
     t = title if full_title else f'{title} | {NAME}'
     # 2026-10-20 정보성 글 PDF: 미리 만든 PDF 다운로드 + 인쇄(PDF로 저장) 버튼
@@ -2075,7 +2115,7 @@ def kin_guides():
         src = ''.join(f'<li><a href="{E(u)}" target="_blank" rel="noopener nofollow">{E(n)}</a></li>' for n, u in g['sources'])
         rel = ' · '.join(f'<a href="{E(u)}">{E(t)}</a>' for u, t in g['related'])
         body = (f'<p class="bc"><a href="/">홈</a> › <a href="/money/guide/">생활 돈 가이드</a> › {E(g["name"])}</p><h1>{g["icon"]} {E(g["h1"])}</h1>'
-                f'<p class="cat-st">📌 {E(g["lead"])}</p><p class="kwn">기준: {E(g["basis"])}</p>' + _jr_nav(g, JIDX, GN) + secs + _jr_box(g, JIDX, GN) + '<h2>자주 묻는 질문</h2>' + faq
+                f'<p class="cat-st">📌 {E(g["lead"])}</p><p class="kwn">기준: {E(g["basis"])}' + (' · 원문 바로가기: ' + ' · '.join(f'<a href="{E(u)}" target="_blank" rel="noopener">{E(n)}</a>' for n, u in g['sources'][:4])) + '</p>' + _jr_nav(g, JIDX, GN) + secs + _jr_box(g, JIDX, GN) + '<h2>자주 묻는 질문</h2>' + faq
                 + join_cta('apply')
                 + _cite_box(g, f'/money/guide/{g["slug"]}/')
                 + f'<h2>공식 출처</h2><ul class="gm-l">{src}</ul>'
