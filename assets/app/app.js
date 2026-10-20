@@ -28,7 +28,7 @@
     if (perm !== 'granted') throw new Error('알림이 차단돼 있어요. 브라우저 주소창 왼쪽 자물쇠 → 알림 → 허용으로 바꿔 주세요.');
     const reg = await ready();
     const sub = (await reg.pushManager.getSubscription()) || await reg.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey: key() });
-    await post('/api/push/sub', { sub: sub.toJSON(), cats: opt.cats, newc: opt.newc ? 1 : 0, dl: opt.dl ? 1 : 0 });
+    await post('/api/push/sub', { sub: sub.toJSON(), cats: opt.cats, newc: opt.newc ? 1 : 0, dl: opt.dl ? 1 : 0, meal: opt.meal === false ? 0 : 1 });
     put(opt);
     return reg;
   }
@@ -57,21 +57,22 @@
   }
   async function paintPush() {
     const el = ROOT.querySelector('.ap-push'), cats = JSON.parse(ROOT.dataset.cats || '[]');
-    const on = await isOn(), cur = get() || { cats: [], newc: true, dl: true };
-    el.innerHTML = `<p class="ap-sm">관심 분야를 고르면 <b>새 공모전이 올라온 날 저녁에 한 번</b>, <b>인기 공모전 마감 3일 전</b>에 폰으로 알려 드려요. 하루 최대 2번이에요.</p>
+    const on = await isOn(), cur = Object.assign({ cats: [], newc: true, dl: true, meal: true }, get() || {});
+    el.innerHTML = `<label class="ap-sw ap-main"><input type="checkbox" class="ap-meal" ${cur.meal ? 'checked' : ''}> 🍽️ <b>오늘 뭐 먹지?</b> 점심·저녁 메뉴 추천 (11:30·17:30쯤, 하루 최대 2번)</label>
+<p class="ap-sm">관심 분야를 고르면 <b>새 공모전이 올라온 날 저녁에 한 번</b>, <b>인기 공모전 마감 3일 전</b>에 폰으로 알려 드려요. 하루 최대 2번이에요.</p>
 <div class="ap-cats">${cats.map(([s, n, i]) => `<button data-c="${s}" class="${cur.cats.includes(s) ? 'on' : ''}">${i} ${esc(n)}</button>`).join('')}</div><p class="ap-sm">하나도 안 고르면 전체 분야로 받아요.</p>
 <label class="ap-sw"><input type="checkbox" class="ap-newc" ${cur.newc ? 'checked' : ''}> 🆕 새 공모전 올라오면 (저녁 7시쯤 모아서)</label>
 <label class="ap-sw"><input type="checkbox" class="ap-dl" ${cur.dl ? 'checked' : ''}> ⏰ 인기 공모전 마감 3일 전 (아침 9시쯤)</label>
-<button class="ap-btn ap-on">${on ? '💾 알림 설정 저장' : '🔔 공모전 알림 켜기'}</button>${on ? '<button class="ap-off">알림 끄기</button>' : ''}<p class="ap-msg">${on ? '✅ 알림이 켜져 있어요.' : ''}</p>`;
+<button class="ap-btn ap-on">${on ? '💾 알림 설정 저장' : '🔔 알림 켜기'}</button>${on ? '<button class="ap-off">알림 끄기</button>' : ''}<p class="ap-msg">${on ? '✅ 알림이 켜져 있어요.' : ''}</p>`;
     el.querySelectorAll('.ap-cats button').forEach(b => b.onclick = () => b.classList.toggle('on'));
     const msg = el.querySelector('.ap-msg');
     el.querySelector('.ap-on').onclick = async () => {
-      const opt = { cats: [...el.querySelectorAll('.ap-cats button.on')].map(b => b.dataset.c), newc: el.querySelector('.ap-newc').checked, dl: el.querySelector('.ap-dl').checked };
+      const opt = { cats: [...el.querySelectorAll('.ap-cats button.on')].map(b => b.dataset.c), newc: el.querySelector('.ap-newc').checked, dl: el.querySelector('.ap-dl').checked, meal: el.querySelector('.ap-meal').checked };
       msg.textContent = '설정하는 중…';
       try {
         const reg = await subscribe(opt);
-        if (!on) reg.showNotification('🔔 알림이 켜졌어요!', { body: '새 공모전·마감 임박 소식을 루리가 챙겨 드릴게요.', icon: '/assets/icons/icon-192.png', tag: 'jupjup-hello', data: { url: '/app/' } });
-        ga('push_on', { cats: opt.cats.join(',') || 'all' }); paintPush();
+        if (!on) reg.showNotification('🔔 알림이 켜졌어요!', { body: '메뉴 추천과 새 공모전 소식을 루리가 챙겨 드릴게요.', icon: '/assets/icons/icon-192.png', tag: 'jupjup-hello', data: { url: '/app/' } });
+        ga('push_on', { cats: opt.cats.join(',') || 'all', meal: opt.meal ? 1 : 0 }); paintPush();
       } catch (e) { msg.textContent = '⚠️ ' + e.message; }
     };
     const off = el.querySelector('.ap-off'); if (off) off.onclick = async () => { await unsubscribe(); ga('push_off'); paintPush(); };
@@ -139,4 +140,39 @@
   }
   const start = () => { button(); if (get() !== 'ko') apply(get()); };
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start); else start();
+})();
+
+
+// ---------------- 앱 셸 (2026-10-20 사용자: "레시피 추천 앱으로 오늘 뭐먹지 느낌으로, 기존 앱 고도화")
+(function () {
+  const sa = matchMedia('(display-mode: standalone)').matches || navigator.standalone === true, q = new URLSearchParams(location.search), P = location.pathname;
+  const ga = (n, p) => { try { window.gtag && gtag('event', n, p || {}); } catch {} };
+  // 이미 깔려 있던 앱(시작 화면이 홈)은 한 번만 오늘의 추천으로 데려온다
+  try { if (sa && P === '/' && !sessionStorage.getItem('app_go') && !q.has('home')) { sessionStorage.setItem('app_go', '1'); location.replace('/fridge/?src=app'); return; } } catch {}
+  if (sa || q.get('src') === 'app') {
+    document.documentElement.classList.add('app-mode');
+    const f = q.get('tab') === 'fridge';
+    const T = [['🍽️', '오늘', '/fridge/', P === '/fridge/' && !f], ['🧊', '냉장고', '/fridge/?tab=fridge', P === '/fridge/' && f], ['🏠', '자취', '/fridge/solo/', /^\/fridge\/solo/.test(P)], ['🌤️', '날씨', '/fridge/weather/', /^\/fridge\/weather/.test(P)]];
+    const M = [['🏆', '공모전', '마감 앞둔 공모전', '/contest/'], ['📋', '지원금·청약', '신청 가능한 공고', '/apply/'], ['🎁', '경품·용돈', '오늘 마감 이벤트', '/event/'], ['🕵️', '이슈', '기사 확인 신호', '/news/'], ['🔎', '인기 키워드', '지금 검색이 몰리는 말', '/kw/'], ['🗣️', '광장', '레시피·썰 올리기', '/plaza/'], ['👤', '내 공간', '찜·기록', '/me/'], ['🔔', '알림 설정', '점심·저녁 메뉴 알림', '/app/']];
+    const bar = document.createElement('nav'); bar.className = 'app-tb'; bar.setAttribute('aria-label', '앱 메뉴');
+    bar.innerHTML = T.map(([i, t, u, on]) => `<a href="${u}"${on ? ' class="on"' : ''}><i>${i}</i>${t}</a>`).join('') + '<button type="button" class="more"><i>⋯</i>더보기</button>';
+    const mount = () => { document.body.appendChild(bar);
+      bar.querySelector('.more').onclick = () => { const sh = document.createElement('div'); sh.className = 'app-sheet'; sh.innerHTML = `<div><b>더보기</b>${M.map(([i, t, d, u]) => `<a href="${u}"><span>${i}</span><span>${t}<small>${d}</small></span></a>`).join('')}</div>`; sh.onclick = e => { if (e.target === sh) sh.remove(); }; document.body.appendChild(sh); ga('app_more'); };
+    };
+    document.body ? mount() : addEventListener('DOMContentLoaded', mount);
+  } else if (P === '/fridge/' || /^\/fridge\/(solo|weather)\//.test(P)) {
+    // 레시피 화면을 두 번째 이상 보면 앱 설치를 한 번 권한다(일주일에 한 번)
+    try {
+      const n = +(localStorage.getItem('jupjup_fr_visit') || 0) + 1; localStorage.setItem('jupjup_fr_visit', n);
+      const last = +(localStorage.getItem('jupjup_ins_ask') || 0);
+      addEventListener('beforeinstallprompt', e => {
+        e.preventDefault(); const ev = e;
+        if (n < 2 || Date.now() - last < 7 * 864e5) return;
+        const b = document.createElement('div'); b.className = 'app-ins'; b.innerHTML = '<span>📲 <b>오늘 뭐 먹지?</b>를 앱으로 설치하면<br>점심·저녁 메뉴를 알려 드려요</span><button class="go">설치</button><button class="no">나중에</button>';
+        document.body.appendChild(b); localStorage.setItem('jupjup_ins_ask', Date.now()); ga('app_install_banner');
+        b.querySelector('.no').onclick = () => b.remove();
+        b.querySelector('.go').onclick = async () => { ev.prompt(); const r = await ev.userChoice.catch(() => ({})); ga('app_install_click', { outcome: r && r.outcome, from: 'banner' }); b.remove(); };
+      });
+    } catch {}
+  }
 })();

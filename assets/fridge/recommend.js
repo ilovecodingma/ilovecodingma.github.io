@@ -13,7 +13,7 @@
     : HOUR < 15 && HOUR >= 10 ? { k: '점심', want: { 든든: 1.2 }, cat: { 밥: .8, 면: .8 }, max: 30 }
     : HOUR >= 15 && HOUR < 21 ? { k: '저녁', want: { 든든: .9 }, cat: { 국물: .7, 볶음: .6, 조림: .5, 밥: .3 }, max: 60 }
     : { k: '야식', want: { 안주: 1.2, 간식: 1, 가벼움: .6 }, cat: { 면: .6, 전: .6 }, max: 25 };
-  var S = { dis: LS('jupjup_rec_dis', {}), seen: LS('jupjup_rec_seen', {}), made: LS('jupjup_fridge_made', {}) };
+  var S = { dis: LS('jupjup_rec_dis', {}), seen: LS('jupjup_rec_seen', {}), made: LS('jupjup_fridge_made', {}), fav: LS('jupjup_rec_fav', {}) };
   var slug = function (n) { return n.replace(/[^0-9A-Za-z가-힣]+/g, '-').replace(/^-|-$/g, ''); };
   var seed = function (s) { var h = 0, t = DAY + s; for (var i = 0; i < t.length; i++) h = (h * 31 + t.charCodeAt(i)) | 0; return (h >>> 0) / 4294967296; };
 
@@ -22,7 +22,7 @@
     fast: ['⏱ 15분 이내', function (m) { return m.m <= 15; }], solo: ['🏠 혼밥(재료 3개↓)', function (m) { return m.need.length <= 3 && m.m <= 20; }],
     mild: ['🙂 안 매움', function (m) { return m.t.indexOf('안 매움') >= 0; }], spicy: ['🌶 매콤', function (m) { return m.t.indexOf('매움') >= 0; }],
     snack: ['🍺 안주·야식', function (m) { return m.t.indexOf('안주') >= 0 || m.t.indexOf('간식') >= 0; }], kid: ['🧒 아이랑', function (m) { return m.t.indexOf('아이') >= 0; }],
-    pop: ['🔥 지금 인기', function (m) { return m.pv > 0; }]
+    pop: ['🔥 지금 인기', function (m) { return m.pv > 0; }], fav: ['⭐ 찜한 메뉴', function (m) { return !!S.fav[m.n]; }]
   };
   var WX = { rainy: ['☔ 비 오는 날', ['국물', '전']], cold: ['🧣 쌀쌀한 날', ['국물', '조림']], hot: ['☀️ 더운 날', ['면', '반찬']], gap: ['🌗 일교차 큰 날', ['국물', '밥']], mild: ['🌤️ 선선한 날', ['볶음', '밥', '조림']] };
 
@@ -65,6 +65,7 @@
   function mount(host) {
     var mode = host.getAttribute('data-rec') || 'today', N = +host.getAttribute('data-n') || 6, ccat = host.getAttribute('data-cat') || '';
     var ids = (host.getAttribute('data-chips') || (mode === 'home' ? 'all,hearty,light,fast' : mode === 'solo' ? 'all,hearty,light,mild,snack,pop' : mode === 'cat' ? 'all,fast,mild,kid,pop' : mode === 'weather' ? '' : 'all,hearty,light,fast,solo,mild,snack,kid,pop')).split(',').filter(Boolean);
+    if ((mode === 'today' || mode === 'home') && Object.keys(S.fav).length && ids.indexOf('fav') < 0) ids.push('fav');
     var base = mode === 'solo' ? function (m) { return m.need.length <= 3 && m.m <= 20; } : mode === 'cat' && ccat ? function (m) { return m.cat === ccat; } : null;
     var chipKey = mode === 'weather' ? (DATA.td && WX[DATA.td.label] ? DATA.td.label : 'mild') : (LS('jupjup_rec_chip_' + mode, 'all')), st = { i: 0, salt: '', order: [], chip: ids.indexOf(chipKey) >= 0 || mode === 'weather' ? chipKey : 'all' };
     var wxKeys = Object.keys(WX), todayLabel = DATA.td && DATA.td.label;
@@ -83,7 +84,7 @@
       return '<article class="rec-pick"><a class="rec-img" href="/fridge/r/' + esc(encodeURI(m.slug)) + '/" data-n="' + esc(m.n) + '">' + img + '</a><div class="rec-body"><h3><a href="/fridge/r/' + esc(encodeURI(m.slug)) + '/" data-n="' + esc(m.n) + '">' + esc(m.n) + '</a></h3>'
         + '<p class="rec-meta"><em>⏱ ' + m.m + '분</em><em>' + ['쉬움', '보통', '어려움'][m.lv] + '</em><em>' + esc(m.cat) + '</em></p><p class="rec-why">💡 ' + esc(why.join(' · ')) + '</p>'
         + '<p class="rec-need">필수 재료 ' + m.need.map(esc).join(', ') + '</p></div></article>'
-        + '<div class="rec-act"><a class="rec-go" href="/fridge/r/' + esc(encodeURI(m.slug)) + '/" data-n="' + esc(m.n) + '">레시피 보기 →</a><button type="button" class="rec-re">🔄 다른 메뉴</button><button type="button" class="rec-no" aria-label="이 메뉴는 별로예요" title="별로예요">👎</button></div>';
+        + '<div class="rec-act"><a class="rec-go" href="/fridge/r/' + esc(encodeURI(m.slug)) + '/" data-n="' + esc(m.n) + '">레시피 보기 →</a><button type="button" class="rec-re">🔄 다른 메뉴</button><button type="button" class="rec-fav' + (S.fav[m.n] ? ' on' : '') + '" aria-label="찜" title="찜">' + (S.fav[m.n] ? '⭐' : '☆') + '</button><button type="button" class="rec-no" aria-label="이 메뉴는 별로예요" title="별로예요">👎</button></div>';
     }
     function altHtml(x) {
       var m = x.m, img = m.ph ? '<img src="/assets/fridge/ph/t/' + esc(encodeURI(m.slug)) + '.webp" width="112" height="84" loading="lazy" alt="">' : '<span class="rec-e s">' + m.e + '</span>';
@@ -104,16 +105,17 @@
     function wire() {
       [].forEach.call(host.querySelectorAll('.rec-chip'), function (b) { b.onclick = function () { st.chip = b.getAttribute('data-c'); st.salt = ''; if (mode !== 'weather') LSset('jupjup_rec_chip_' + mode, st.chip); ga('rec_chip', { mode: mode, chip: st.chip }); build(); paint(); }; });
       var re = host.querySelector('.rec-re'); if (re) re.onclick = function () { st.i = (st.i + 1) % Math.max(1, st.order.length); ga('rec_reroll', { mode: mode }); paint(); };
+      var fv = host.querySelector('.rec-fav'); if (fv) fv.onclick = function () { var c = st.order[st.i]; if (!c) return; if (S.fav[c.m.n]) delete S.fav[c.m.n]; else S.fav[c.m.n] = Date.now(); LSset('jupjup_rec_fav', S.fav); if (ids.indexOf('fav') < 0 && (mode === 'today' || mode === 'home')) ids.push('fav'); ga('rec_fav', { mode: mode, on: !!S.fav[c.m.n] }); paint(); };
       var no = host.querySelector('.rec-no'); if (no) no.onclick = function () { var c = st.order[st.i]; if (!c) return; S.dis[c.m.n] = Date.now(); LSset('jupjup_rec_dis', S.dis); ga('rec_dislike', { mode: mode }); st.order.splice(st.i, 1); if (st.i >= st.order.length) st.i = 0; paint(); };
       [].forEach.call(host.querySelectorAll('a[data-n]'), function (a) { a.addEventListener('click', function () { var n = a.getAttribute('data-n'); ga('rec_click', { mode: mode, item: n }); try { window.JUP && JUP.api && JUP.api('/api/rec', { method: 'POST', body: { ev: 'click', ids: ['f:' + n], det: [{ m: mode, c: st.chip, s: SLOT.k }] } }).catch(function () {}); } catch (e) {} }); });
     }
-    build(); paint(); host.classList.add('rec-on');
+    build(); if (/[?&]reroll=1/.test(location.search) && st.order.length > 1) st.i = 1; paint(); host.classList.add('rec-on');
   }
 
   // 탭 (냉장고 화면: 오늘의 추천 ↔ 내 냉장고로 찾기)
   [].forEach.call(document.querySelectorAll('[data-rec-tabs]'), function (bar) {
     var btns = [].slice.call(bar.querySelectorAll('button[data-t]')), panes = btns.map(function (b) { return document.getElementById(b.getAttribute('data-t')); });
-    var has = false; try { has = (JSON.parse(localStorage.getItem('jupjup_fridge_v1') || '[]') || []).length > 0 || /[?&]ing=/.test(location.search); } catch (e) {}
+    var has = false; try { has = (JSON.parse(localStorage.getItem('jupjup_fridge_v1') || '[]') || []).length > 0 || /[?&](ing|tab=fridge)/.test(location.search); } catch (e) {}
     var show = function (k) { btns.forEach(function (b, i) { var on = i === k; b.classList.toggle('on', on); b.setAttribute('aria-selected', on); if (panes[i]) panes[i].hidden = !on; }); };
     btns.forEach(function (b, i) { b.onclick = function () { show(i); ga('rec_tab', { tab: b.getAttribute('data-t') }); }; });
     show(has ? 1 : 0);

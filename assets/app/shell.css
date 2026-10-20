@@ -1,0 +1,18 @@
+/* 앱 화면(홈 화면에 설치해 연 상태) — 아래 탭바로 「오늘 뭐 먹지」를 앱처럼 (2026-10-20) */
+html.app-mode body{padding-bottom:calc(68px + env(safe-area-inset-bottom))}
+html.app-mode .th-sw,html.app-mode .ft-g{display:none}
+html.app-mode .rc{bottom:calc(86px + env(safe-area-inset-bottom))}
+.app-tb{position:fixed;left:0;right:0;bottom:0;z-index:60;display:flex;background:#fff;border-top:1px solid #fed7aa;padding:5px 4px calc(5px + env(safe-area-inset-bottom));box-shadow:0 -6px 18px rgba(124,45,18,.08)}
+.app-tb a,.app-tb button{all:unset;box-sizing:border-box;flex:1;text-align:center;display:flex;flex-direction:column;align-items:center;gap:1px;font:inherit;font-size:11px;font-weight:800;color:#78716c;text-decoration:none;padding:4px 0;background:none;border:0;cursor:pointer}
+.app-tb a,.app-tb button{display:flex!important;flex-direction:column;align-items:center;gap:1px;font-size:11px;font-weight:800;color:#78716c;padding:4px 0;cursor:pointer}
+.app-tb i{font-style:normal;font-size:21px;line-height:1.1}
+.app-tb .on{color:#c2410c}
+.app-sheet{position:fixed;inset:0;z-index:70;background:rgba(28,25,23,.45);display:flex;align-items:flex-end}
+.app-sheet>div{width:100%;max-height:75vh;overflow:auto;background:#fff;border-radius:20px 20px 0 0;padding:16px 16px calc(80px + env(safe-area-inset-bottom))}
+.app-sheet b{display:block;font-size:16px;margin-bottom:10px}
+.app-sheet a{display:flex;gap:12px;align-items:center;padding:13px 4px;border-bottom:1px solid #f5f5f4;color:#1c1917;text-decoration:none;font-weight:700}
+.app-sheet a small{display:block;font-weight:500;color:#78716c;font-size:12px}
+.app-ins{position:fixed;left:12px;right:12px;bottom:calc(14px + env(safe-area-inset-bottom));z-index:55;display:flex;gap:10px;align-items:center;background:#7c2d12;color:#fff;border-radius:16px;padding:12px 14px;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+.app-ins span{flex:1;font-size:13.5px;line-height:1.45}
+.app-ins button{border:0;border-radius:10px;padding:9px 13px;font:inherit;font-weight:800;font-size:13px;cursor:pointer}
+.app-ins .go{background:#fff;color:#9a3412}.app-ins .no{background:transparent;color:#fed7aa}

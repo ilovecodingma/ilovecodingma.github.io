@@ -72,7 +72,7 @@ THEMES = [  # (키, 이름, 아이콘, 테마색, 홈, [하위 메뉴], [이 테
      ['/contest/', '/c/', '/cat/', '/prep/', '/lab/', '/community/', '/guide/', '/v/', '/me/', '/widget/']),
     ('recipe', '레시피', '🍳', '#c2410c', '/fridge/', [('/fridge/', '냉장고 파먹기'), ('/fridge/solo/', '자취 요리'), ('/fridge/weather/', '날씨별'), ('/fridge/c/guk/', '국·찌개'), ('/fridge/c/bap/', '밥'), ('/fridge/c/myeon/', '면'), ('/fridge/c/bokkeum/', '볶음'), ('/fridge/c/jorim/', '조림·찜'), ('/fridge/c/banchan/', '반찬'), ('/fridge/c/jeon/', '전')], ['/fridge/']),   # 2026-10-20 사용자: 레시피 유입이 많아 별도 카테고리로
     ('life', '생활', '🧺', '#0e7490', '/apply/', [('/apply/', '지원금·청약'), ('/apply/recommend/', '청약 추천'), ('/apply/r/', '지역별'), ('/event/', '경품'), ('/qa/', '고민 해결'), ('/plaza/', '광장')], ['/apply/', '/a/', '/event/', '/qa/', '/ssul/', '/plaza/']),
-    ('game', '게임', '🎮', '#4f46e5', '/game/', [('/game/', '게임 허브'), ('/game/#free', '무료 게임'), ('/game/#steam', '스팀 할인'), ('/game/#contest', '게임 공모전')], ['/game/']),   # 2026-10-20 홍보 세션 기획서: 게임·취미·개발 커뮤니티 콘텐츠
+    ('game', '게임', '🎮', '#4f46e5', '/game/', [('/game/', '게임 허브'), ('/game/free/', '무료 게임 기록'), ('/game/steam-sale/', '세일 달력'), ('/game/refund/', '환불 규정'), ('/game/#timing', '살 타이밍'), ('/game/#contest', '게임 공모전')], ['/game/']),   # 2026-10-20 홍보 세션 기획서: 게임·취미·개발 커뮤니티 콘텐츠
     ('ai', '개발 지식', '🧑‍💻', '#0f172a', '/ailog/', [('/ailog/', '개발 지식'), ('/dev/faq/', '개발 FAQ'), ('/en/guide/', 'English guides'), ('/ailog/#log', 'AI 제작 로그')], ['/ailog/', '/dev/', '/en/'])]   # 2026-10-19 사용자: AI 로그 → 개발 지식으로 개편
 
 
@@ -144,10 +144,10 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False, noinde
 <meta property="og:title" content="{E(t)}"><meta property="og:description" content="{E(desc)}"><meta property="og:url" content="{url}">
 <meta property="og:image" content="{SITE}{og or "/assets/ruri/og.jpg"}"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="{SITE}{og or "/assets/ruri/og.jpg"}">
-<meta name="theme-color" content="{TH[3] if TH else '#5b21b6'}">
+<meta name="theme-color" content="{TH[3] if TH else '#5b21b6'}"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="오늘 뭐 먹지">
 <link rel="icon" href="/favicon.ico?v=6" sizes="any"><link rel="icon" type="image/png" sizes="48x48" href="/assets/icons/icon-48.png?v=6"><link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/icon-96.png?v=6"><link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/icon-192.png?v=6"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=6"><link rel="manifest" href="/site.webmanifest"><link rel="alternate" type="application/rss+xml" title="루리의 줍줍" href="/rss.xml">
 <link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="/assets/gm.css?v=20">{('<link rel="stylesheet" href="/assets/chat/ruri-chat.css?v=8">') if not (TH and TH[0] == 'ai') else ''}{COMM_TAGS}{('<script type="module" src="/assets/chat/ruri-chat.js?v=14"></script>') if not (TH and TH[0] == 'ai') else ''}<script defer src="/assets/app/app.js?v=3"></script>
+<link rel="stylesheet" href="/assets/gm.css?v=20">{('<link rel="stylesheet" href="/assets/chat/ruri-chat.css?v=8">') if not (TH and TH[0] == 'ai') else ''}{COMM_TAGS}{('<script type="module" src="/assets/chat/ruri-chat.js?v=14"></script>') if not (TH and TH[0] == 'ai') else ''}<link rel="stylesheet" href="/assets/app/shell.css?v=1"><script defer src="/assets/app/app.js?v=4"></script>
 {ldh}
 {GTAG}
 </head><body data-th="{TH[0] if TH else 'hub'}"{(' data-api="' + COMM_API + '"') if COMM_API else ''}>
@@ -1390,7 +1390,7 @@ def build():
     fr_urls = fridge_page()
     app_page()
     news_page()
-    extra_urls = talk_pages() + trend_pages() + game_pages(live) + mag_pages(live, aps) + analyst_pages() + satire_pages() + kw_pages() + money_pages() + apply_rec_page() + tool_pages() + hot_pages()
+    extra_urls = talk_pages() + trend_pages() + game_pages(live) + game_extra_pages() + mag_pages(live, aps) + analyst_pages() + satire_pages() + kw_pages() + money_pages() + apply_rec_page() + tool_pages() + hot_pages()
     import widget
     extra_urls += widget.build(ROOT, live, aps, hot_live()[0], page, say, COMM_API, TODAY)  # 퍼가기 위젯 (2026-10-18 연구 세션 요청)
     extra_urls += region_pages(aps) + contest_hubs(live) + week_hub(live) + cross_pages(aps) + apply_hubs(aps)
@@ -1644,10 +1644,12 @@ def game_pages(live):
     gc = sorted([c for c in live if GAME_RX.search(c['title'])], key=lambda c: (c['end'], -c.get('pv', 0)))[:12]
     body = (f'<p class="bc"><a href="/">홈</a> › 게임</p><h1>🎮 게임 허브 — 이번 주 무료 게임·스팀 할인·게임 공모전</h1>'
             f'<p class="cat-st">📌 스토어 기준 {E(d.get("at", ""))}(한국 시간)에 받은 정보예요. 가격·할인은 바뀔 수 있으니 결제 전 스토어에서 확인하세요. 출처: Epic Games Store, Steam.</p>'
+            '<p class="hm-chips"><a href="/game/free/">🎁 에픽 무료 게임 기록</a><a href="/game/steam-sale/">📅 스팀 세일 달력</a><a href="/game/refund/">↩️ 스팀 환불 규정</a><a href="#timing">🕰️ 살 타이밍</a></p>'
             f'<h2 id="free">🎁 지금 무료로 받는 게임 (Epic Games Store)</h2>' + (f'<ul class="gm-g">{free}</ul>' if free else '<p class="note">지금 무료로 풀린 게임이 없어요.</p>')
             + (f'<h3>⏭️ 다음 무료 예고</h3><ul class="gm-g">{upc}</ul>' if upc else '')
             + (f'<h3>💸 에픽 할인 중</h3><ul class="gm-l">{sale}</ul>' if sale else '')
             + f'<h2 id="steam">🔥 스팀 할인 TOP</h2>' + (f'<ul class="gm-g">{sp}</ul>' if sp else '<p class="note">지금 불러온 할인 정보가 없어요.</p>')
+            + game_timing(st, d.get('events') or {})
             + (f'<h2>🏆 스팀 인기 게임</h2><ol class="gm-l">{tp}</ol>' if tp else '') + (f'<h2>🗓️ 곧 나오는 게임</h2><ul class="gm-l">{cs}</ul>' if cs else '')
             + cp_box('게임 게이밍 PC', '게임할 때 많이 찾는 물건:', 2, strict=True) + join_cta('game')
             + f'<h2 id="contest">🏆 게임·e스포츠·해커톤 공모전 (진행 중 {len(gc)}건)</h2>' + (f'<ul class="list">{"".join(card(c) for c in gc)}</ul>' if gc else '<p class="note">지금 진행 중인 게임 관련 공모전이 없어요.</p>')
@@ -1718,6 +1720,142 @@ def join_home():
     chips = ''.join(f'<a href="/me/?t={k}#topics">{ic} {E(ti.split(",")[0][:14])}</a>' for k, (ic, ti, _) in JN_TOPICS.items())
     return ('<section class="hm-sec jn-home"><h2>📬 원하는 소식만 골라 받기</h2><p class="kwn">가입하면 고른 주제의 새 소식을 메일로 보내 드려요. 마감 임박·새 공고·무료 게임·오늘의 메뉴까지, 끄는 것도 한 번에.</p>'
             f'<p class="hm-chips">{chips}</p></section><link rel="stylesheet" href="/assets/join/join.css?v=1">')
+
+
+def _gd(x):
+    return datetime.date.fromisoformat(x) if x else None
+
+
+def _gr(a, b):
+    return f'{a[5:7].lstrip("0")}/{a[8:].lstrip("0")}' + (f'~{b[5:7].lstrip("0")}/{b[8:].lstrip("0")}' if b else '')
+
+
+def game_timing(st, ev):
+    """스팀 할인 TOP 아래 「살 타이밍」: 현재 할인율 + 줍줍이 기록한 최저가(공개 API 에 가격 이력이 없어 기록 시작일부터) + 다음 시즌 세일."""
+    hf = os.path.join(HERE, 'game_hist.json')
+    H = json.load(open(hf, encoding='utf-8')) if os.path.exists(hf) else {'steam': {}, 'since': ''}
+    won = lambda v: f'₩{v:,}'
+    rows = ''
+    for x in (st.get('specials') or [])[:9]:
+        pts = (H['steam'].get(str(x['id'])) or {}).get('pts') or []
+        low = min((q[1] for q in pts), default=None)
+        n = len(pts)
+        if n >= 2 and low is not None:
+            note = '🟢 기록상 최저가와 같아요' if x['price'] <= low else f'기록 최저 {won(low)}({n}일 기록)'
+        else:
+            note = '기록 시작 — 내일부터 비교돼요'
+        rows += (f'<tr><td><a href="https://store.steampowered.com/app/{x["id"]}/" target="_blank" rel="noopener nofollow">{E(x["name"])}</a></td><td>{x["off"]}% ↓ <b>{won(x["price"])}</b><br><small><s>{won(x["orig"])}</s></small></td>'
+                 f'<td>{note}</td><td>{E(x["until"] or "-")}</td></tr>')
+    if not rows:
+        return ''
+    td = datetime.date.today()
+    nxt = next((e for e in (ev.get('seasonal') or []) if e.get('start') and _gd(e['start']) >= td), None)
+    nl = f'<li>다음 시즌 세일: <b>{E(nxt["name"])}</b> {E(_gr(nxt["start"], nxt["end"]))} (D-{(_gd(nxt["start"]) - td).days}) — <a href="/game/steam-sale/">세일 달력 보기</a></li>' if nxt else ''
+    return ('<h2 id="timing">🕰️ 지금 사도 될까? 살 타이밍</h2>'
+            f'<p class="kwn">스팀의 공개 정보에는 역대 최저가 기록이 없어요. 그래서 줍줍이 {E(H.get("since", ""))}부터 매일 받아 둔 가격 중 가장 낮은 값과 비교해요(기록이 짧을수록 참고만 하세요).</p>'
+            f'<div class="tblw"><table class="xb"><thead><tr><th>게임</th><th>지금 가격</th><th>줍줍 기록</th><th>할인 종료</th></tr></thead><tbody>{rows}</tbody></table></div>'
+            '<ul class="gm-l">' + nl + '<li>구매한 게임이 다음 날 더 싸졌다면 환불 후 다시 사도 스팀은 악용으로 보지 않는다고 공식 안내에 적혀 있어요 — <a href="/game/refund/">환불 규정</a></li>'
+            '<li>역대 최저가가 궁금하면 <a href="https://steamdb.info/" target="_blank" rel="noopener nofollow">SteamDB</a> 같은 가격 추적 사이트에서 게임별로 확인하세요(줍줍이 가져오지는 않아요).</li></ul>'
+            '<style>.tblw{overflow-x:auto}.xb{border-collapse:collapse;width:100%;font-size:13.5px;min-width:520px}.xb th,.xb td{border-bottom:1px solid var(--bd,#e5e7eb);padding:6px;text-align:left;vertical-align:top}</style>')
+
+
+def _faq(items):
+    ld = {'@context': 'https://schema.org', '@type': 'FAQPage', 'mainEntity': [{'@type': 'Question', 'name': q, 'acceptedAnswer': {'@type': 'Answer', 'text': re.sub(r'<[^>]+>', '', a)}} for q, a in items]}
+    return ''.join(f'<details class="faq-i"><summary>{E(q)}</summary><div>{a}</div></details>' for q, a in items), ld
+
+
+GAME_CSS = ('<style>.faq-i{border:1px solid var(--bd,#e5e7eb);border-radius:12px;padding:10px 14px;margin:8px 0;background:var(--card,#fff)}.faq-i summary{font-weight:700;cursor:pointer}.faq-i div{margin-top:8px;line-height:1.7;font-size:14.5px}'
+            '.tblw{overflow-x:auto}.xb{border-collapse:collapse;width:100%;font-size:14px;min-width:480px}.xb th,.xb td{border-bottom:1px solid var(--bd,#e5e7eb);padding:7px 6px;text-align:left;vertical-align:top}'
+            '.gm-g{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px;list-style:none;padding:0;margin:8px 0}.gm-g li a{display:block;border:1px solid var(--bd,#e5e7eb);border-radius:12px;overflow:hidden;background:var(--card,#fff);color:var(--tx,#111);text-decoration:none;height:100%}'
+            '.gm-g img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;background:#e5e7eb}.gm-g b{display:block;padding:8px 10px 2px;font-size:14.5px}.gm-g span{display:block;padding:0 10px 10px;font-size:13px;color:var(--mu,#6b7280)}.gm-g em{font-style:normal;font-weight:800;color:#dc2626}.gm-g s{opacity:.6}</style>')
+
+
+def game_extra_pages():
+    """2026-10-20 홍보 세션(지식iN 질문): 스팀 세일 달력 · 스팀 환불 규정 · 에픽 무료 게임 기록. 사실은 스팀 공식 페이지(환불·Steamworks 일정 문서)에서 확인한 것만."""
+    import game as GM
+    d = GM.load()
+    ev, ep = d.get('events') or {}, d.get('epic') or {}
+    td = datetime.date.today()
+    urls = []
+    # ---- 스팀 시즌 세일 달력
+    if ev.get('seasonal'):
+        def st_(a):
+            if not a.get('start'):
+                return '날짜 미정 (공식 문서에 TBD)'
+            return f'{_gr(a["start"], a["end"])} · ' + (f'D-{(_gd(a["start"]) - td).days}' if _gd(a['start']) > td else ('진행 중' if td <= _gd(a['end']) else '종료'))
+        rows = ''.join(f'<tr><td>{E(a["name"])}</td><td>{E(a["start"] or "-")} ~ {E(a["end"] or "-")}</td><td>{E(st_(a))}</td></tr>' for a in ev['seasonal'])
+        fr = ''.join(f'<tr><td>{E(a["name"])}</td><td>{E(a["start"])} ~ {E(a["end"])}</td><td>{("D-" + str((_gd(a["start"]) - td).days)) if _gd(a["start"]) > td else ("진행 중" if td <= _gd(a["end"]) else "종료")}</td></tr>' for a in (ev.get('fests') or []) + (ev.get('nextfest') or []) if _gd(a['end']) >= td)
+        nxt = next((a for a in ev['seasonal'] if a.get('start') and _gd(a['start']) >= td), None)
+        faq, ld = _faq([('스팀 세일은 1년에 몇 번 하나요?', '시즌 세일은 스팀 전체가 참여하는 큰 세일로, 공식 문서에 「1년에 4번」(겨울·봄·여름·가을)으로 적혀 있어요. 그 밖에 장르별 테마 페스티벌과 Next Fest(체험판 행사)가 따로 열려요.'),
+                        ('다음 스팀 세일은 언제예요?', (f'공식 일정 문서 기준으로 다음 시즌 세일은 {nxt["name"]}({_gr(nxt["start"], nxt["end"])}, 지금부터 {(_gd(nxt["start"]) - td).days}일 뒤)예요.' if nxt else '공식 일정 문서에 아직 다음 날짜가 없어요.')),
+                        ('블랙프라이데이에도 스팀 세일을 하나요?', '스팀 공식 일정 문서에는 가을 세일 날짜가 따로 적혀 있고 2026년 가을 세일은 이 문서에 날짜가 없어요. 블랙프라이데이는 미국 추수감사절(11월 넷째 목요일) 다음 날이라 2026년은 11월 27일이지만, 이건 달력 날짜일 뿐 스팀이 확정한 일정은 아니에요. 공지가 나오면 이 표가 바뀌어요.'),
+                        ('세일 때 산 게임을 환불할 수 있나요?', '구매 후 14일 이내이고 플레이 시간이 2시간 미만이면 요청할 수 있어요. 자세한 조건은 <a href="/game/refund/">스팀 환불 규정</a>에 정리했어요.')])
+        body = ('<p class="bc"><a href="/">홈</a> › <a href="/game/">게임</a> › 스팀 세일 달력</p><h1>📅 스팀 세일 언제 하나요? 시즌 세일 달력</h1>'
+                + (f'<p class="cat-st">📌 다음 시즌 세일은 <b>{E(nxt["name"])}</b>, {E(_gr(nxt["start"], nxt["end"]))} (D-{(_gd(nxt["start"]) - td).days})예요.</p>' if nxt else '')
+                + '<h2>시즌 세일 (스팀 공식 일정)</h2><div class="tblw"><table class="xb"><thead><tr><th>세일</th><th>기간</th><th>상태</th></tr></thead><tbody>' + rows + '</tbody></table></div>'
+                + '<p class="kwn">출처: Steamworks 문서 「Upcoming Steam Events」(공식). 시즌 세일은 해마다 4번이고, 날짜가 TBD 인 곳은 공식 발표 전이에요. 지난 시즌 날짜는 <a href="https://store.steampowered.com/news/" target="_blank" rel="noopener nofollow">스팀 공식 뉴스</a>에서 확인하세요.</p>'
+                + ('<h2>테마 페스티벌·Next Fest (앞으로 열리는 것)</h2><div class="tblw"><table class="xb"><thead><tr><th>행사</th><th>기간</th><th>상태</th></tr></thead><tbody>' + fr + '</tbody></table></div>'
+                   '<p class="kwn">테마 페스티벌은 특정 장르 게임을 모아 홍보하는 행사이고 할인 게임이 우선이에요. Next Fest 는 출시 전 게임의 체험판을 해 보는 행사예요(공식 설명 기준).</p>' if fr else '')
+                + '<h2>자주 묻는 질문</h2>' + faq + cp_box('게임 게이밍 PC', '게임할 때 많이 찾는 물건:', 2, strict=True) + join_cta('game')
+                + f'<p class="hm-links"><a href="/game/">🎮 게임 허브</a> · <a href="/game/refund/">↩️ 스팀 환불 규정</a> · <a href="/game/free/">🎁 에픽 무료 게임 기록</a></p>' + GAME_CSS)
+        page('/game/steam-sale/', f'스팀 세일 언제 하나요? 시즌 세일 달력 {td.year}~{td.year + 1} (겨울·봄·여름·가을, Next Fest)', '스팀 시즌 세일과 테마 페스티벌, Next Fest 일정을 스팀 공식 일정 문서 기준으로 정리했어요. 다음 세일까지 며칠 남았는지도 매일 갱신해요.',
+             body, [('루리의 줍줍', '/'), ('게임', '/game/'), ('스팀 세일 달력', '/game/steam-sale/')], ld)
+        urls.append('/game/steam-sale/')
+    # ---- 스팀 환불 규정 (스팀 공식 환불 페이지 2024-04-23 수정본 확인)
+    rows = [('게임·소프트웨어', '구매 후 14일 이내 + 플레이 시간 2시간 미만이면 이유와 상관없이 요청 가능'), ('DLC', '구매 후 14일 이내 + DLC 구매 후 게임 플레이 2시간 미만 + DLC를 사용·변경·거래하지 않았을 때(일부 서드파티 DLC는 환불 불가, 상점 페이지에 표시)'),
+            ('게임 내 구매', 'Valve 게임은 구매 후 48시간 이내 + 아이템을 쓰지 않았을 때. 서드파티 게임은 개발자가 환불을 켜 둔 경우만(구매 전 표시)'), ('출시 전 구매(예약 구매)', '출시 전에는 언제든 요청 가능. 14일·2시간 기준은 출시일부터 적용. 앞서 해보기는 플레이 시간이 모두 2시간에 포함'),
+            ('스팀 지갑', '충전한 금액을 쓰지 않았다면 구매 후 14일 이내'), ('정기 구독', '결제(자동 갱신 포함) 후 48시간 이내 + 그 기간 구독 혜택을 쓰지 않았을 때'), ('선물', '수락 전에는 14일·2시간 기준으로 환불(비용은 구매한 사람에게). 수락한 선물은 받은 사람이 같은 기간 안에 요청'),
+            ('스팀 밖에서 산 키', '환불 불가(타사에서 산 CD키·지갑 코드)'), ('VAC 차단', '그 게임에서 VAC 차단되면 그 게임의 환불 권리를 잃어요'), ('동영상 콘텐츠', '영화·시리즈·튜토리얼 등은 환불 불가(환불되는 제품과 묶인 꾸러미는 제외)')]
+    tr = ''.join(f'<tr><td><b>{E(a)}</b></td><td>{E(b)}</td></tr>' for a, b in rows)
+    faq, ld = _faq([('스팀 환불은 몇 시간까지 되나요?', '게임은 구매 후 14일 이내이고 플레이 시간이 2시간 미만이어야 해요. 규칙에 안 맞아도 일단 요청하면 확인해 준다고 공식 안내에 적혀 있어요.'),
+                    ('환불은 어디서 요청하나요? 결제 오류도 거기로 문의하나요?', '<a href="https://help.steampowered.com/" target="_blank" rel="noopener nofollow">help.steampowered.com</a> 에서 환불 요청과 다른 도움(결제 문의 포함)을 받을 수 있어요.'),
+                    ('환불금은 언제 어디로 들어오나요?', '요청이 확인된 뒤 1주 안에, 스팀 지갑 또는 구매에 쓴 결제 수단으로 전액 환불돼요. 결제 수단이 환불을 지원하지 않으면 스팀 지갑으로 들어와요.'),
+                    ('다음 날 더 싸졌는데 환불하고 다시 사도 되나요?', '공식 안내에 「구매한 제품이 바로 다음 날 더 저렴한 가격으로 판매되고 있어서 환불 후 다시 구매하는 것은 악용으로 판단하지 않는다」고 적혀 있어요. 다만 환불을 무료 플레이 용도로 쓰면 환불 기능이 막힐 수 있어요.'),
+                    ('에픽·콘솔(플레이스테이션·엑스박스·닌텐도) 환불도 같나요?', '플랫폼마다 조건이 달라요. 줍줍은 스팀 공식 안내를 직접 확인한 내용만 적었고, 다른 플랫폼은 아래 공식 고객지원에서 확인하세요.')])
+    body = ('<p class="bc"><a href="/">홈</a> › <a href="/game/">게임</a> › 스팀 환불 규정</p><h1>↩️ 스팀 게임 환불 되나요? 환불 규정 (구매 후 14일·플레이 2시간)</h1>'
+            '<p class="cat-st">📌 스팀은 구매 후 <b>14일 이내</b>, 게임 플레이 <b>2시간 미만</b>이면 이유와 상관없이 환불을 요청할 수 있어요. 요청은 <a href="https://help.steampowered.com/" target="_blank" rel="noopener nofollow">help.steampowered.com</a>에서 해요.</p>'
+            '<h2>구매 종류별 환불 조건</h2><div class="tblw"><table class="xb"><thead><tr><th>구매 종류</th><th>조건</th></tr></thead><tbody>' + tr + '</tbody></table></div>'
+            '<h2>환불 요청 방법과 받는 시기</h2><ul class="gm-l"><li>help.steampowered.com 에서 요청해요. 결제 오류 같은 다른 문의도 같은 곳이에요.</li><li>확인된 뒤 <b>1주 안</b>에 스팀 지갑 또는 구매에 쓴 결제 수단으로 전액 환불돼요.</li><li>규칙 밖이어도 요청하면 살펴본다고 공식 안내에 적혀 있고, 일부 지역은 게임에 결함이 있을 때 추가 권리가 있을 수 있어요.</li><li>환불 기능을 무료 플레이용으로 악용하면 막힐 수 있어요.</li></ul>'
+            '<h2>스팀 말고 다른 플랫폼은?</h2><p>에픽·콘솔은 조건이 서로 달라서 줍줍이 확인하지 못한 숫자는 적지 않았어요. 아래 공식 고객지원에서 확인하세요: '
+            '<a href="https://www.epicgames.com/help/ko" target="_blank" rel="noopener nofollow">에픽게임즈</a> · <a href="https://www.playstation.com/ko-kr/support/" target="_blank" rel="noopener nofollow">플레이스테이션</a> · <a href="https://support.xbox.com/ko-KR" target="_blank" rel="noopener nofollow">엑스박스</a> · <a href="https://www.nintendo.co.kr/" target="_blank" rel="noopener nofollow">닌텐도</a></p>'
+            '<h2>자주 묻는 질문</h2>' + faq + cp_box('게임 게이밍 PC', '게임할 때 많이 찾는 물건:', 2, strict=True)
+            + '<p class="note">출처: <a href="https://store.steampowered.com/steam_refunds/?l=koreana" target="_blank" rel="noopener nofollow">Steam 환불 공식 안내</a>(수정 2024년 4월 23일본, 줍줍 확인 2026-10-20). 규정은 바뀔 수 있으니 결제 전 공식 안내를 확인하세요. 법률 상담이 아니에요.</p>'
+            '<p class="hm-links"><a href="/game/">🎮 게임 허브</a> · <a href="/game/steam-sale/">📅 스팀 세일 달력</a> · <a href="/game/free/">🎁 에픽 무료 게임 기록</a></p>' + GAME_CSS)
+    page('/game/refund/', '스팀 환불 규정 — 구매 후 14일·플레이 2시간, 환불 요청 방법과 예외 (DLC·선물·지갑)', '스팀 게임 환불 조건을 공식 안내 기준으로 정리했어요. 14일·2시간 기준, 환불 요청 경로, DLC·게임 내 구매·예약 구매·선물·지갑 예외, 환불금이 들어오는 시기.',
+         body, [('루리의 줍줍', '/'), ('게임', '/game/'), ('스팀 환불 규정', '/game/refund/')], ld)
+    urls.append('/game/refund/')
+    # ---- 에픽 무료 게임 기록
+    hf = os.path.join(HERE, 'game_hist.json')
+    H = json.load(open(hf, encoding='utf-8')) if os.path.exists(hf) else {'free': [], 'since': ''}
+    nowk = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=9))).strftime('%m/%d %H:%M')
+    card_ = lambda x, lab: (f'<li><a href="{E(x["url"])}" target="_blank" rel="noopener nofollow">' + (f'<img src="{E(x["img"])}" width="232" height="130" loading="lazy" decoding="async" referrerpolicy="no-referrer" alt="" onerror="this.remove()">' if x.get('img') else '')
+                            + f'<b>{E(x["name"])}</b><span>{lab}<br>{E(x["start"])} ~ {E(x["end"])} (한국 시간)</span></a></li>')
+    cur = ''.join(card_(x, f'<s>{E(x["orig"])}</s> <em>무료</em>') for x in ep.get('free', []))
+    nxt_ = ''.join(card_(x, '무료 예정') for x in ep.get('upcoming', []))
+    past = sorted([g for g in H.get('free', []) if g['end'] < nowk or (g['start'] < nowk and g['end'] < nowk)], key=lambda g: g['start'], reverse=True)
+    pl = ''.join(f'<li><a href="{E(g["url"])}" target="_blank" rel="noopener nofollow">{E(g["name"])}</a> <small>{E(g["start"])} ~ {E(g["end"])} · 정가 {E(g["orig"])}</small></li>' for g in H.get('free', []) if g['end'] <= nowk)
+    fr0 = (ep.get('free') or [None])[0]
+    wk = ''
+    if fr0:
+        try:
+            sd = datetime.datetime.strptime(f'{td.year}/{fr0["start"]}', '%Y/%m/%d %H:%M')
+            wk = f'지금 무료 기간은 {E(fr0["start"])}(한국 시간)에 시작해 {E(fr0["end"])}에 끝나요. 새 무료 게임은 보통 이 시각에 바뀌어요.'
+        except Exception:
+            wk = ''
+    faq, ld = _faq([('이번 주 에픽 무료 게임은 뭐예요?', ', '.join(x['name'] for x in ep.get('free', [])) + f' (~{ep["free"][0]["end"]} 한국 시간까지)' if ep.get('free') else '지금 무료로 풀린 게임이 없어요.'),
+                    ('다음 무료 게임은 뭐예요?', (', '.join(f'{x["name"]}({x["start"]}부터)' for x in ep.get('upcoming', [])) + ' — 에픽이 미리 공개한 예고예요.') if ep.get('upcoming') else '아직 공개된 예고가 없어요.'),
+                    ('지난 무료 게임 목록은 어디서 보나요?', f'이 페이지에 줍줍이 확인한 무료 게임을 {E(H.get("since", ""))}부터 쌓고 있어요. 에픽 공개 자료에는 지난 목록이 없어서 그 이전 기록은 없어요. 공식 무료 게임 페이지는 <a href="https://store.epicgames.com/ko/free-games" target="_blank" rel="noopener nofollow">여기</a>예요.')])
+    body = ('<p class="bc"><a href="/">홈</a> › <a href="/game/">게임</a> › 에픽 무료 게임</p><h1>🎁 에픽게임즈 무료 게임 뭐 있나요? 이번 주·다음 예고·지난 기록</h1>'
+            f'<p class="cat-st">📌 스토어 기준 {E(d.get("at", ""))}(한국 시간). {wk}</p><h2>지금 무료</h2>' + (f'<ul class="gm-g">{cur}</ul>' if cur else '<p class="note">지금 무료로 풀린 게임이 없어요.</p>')
+            + (f'<h2>다음 무료 예고</h2><ul class="gm-g">{nxt_}</ul>' if nxt_ else '') + f'<h2>지난 무료 게임 기록 <small>({E(H.get("since", ""))}부터)</small></h2>'
+            + (f'<ul class="gm-l">{pl}</ul>' if pl else '<p class="note">아직 지난 기록이 없어요. 줍줍이 확인한 무료 게임이 끝나면 여기 쌓여요. 에픽이 공개한 자료에는 지난 목록이 없어서 그 이전 기록은 만들 수 없어요.</p>')
+            + '<h2>자주 묻는 질문</h2>' + faq + cp_box('게임 게이밍 PC', '게임할 때 많이 찾는 물건:', 2, strict=True) + join_cta('game')
+            + '<p class="note">출처: Epic Games Store 공개 프로모션 자료. 줍줍은 에픽게임즈와 무관해요. 이미지는 에픽이 공개한 홍보 이미지예요.</p>'
+            '<p class="hm-links"><a href="/game/">🎮 게임 허브</a> · <a href="/game/steam-sale/">📅 스팀 세일 달력</a> · <a href="/game/refund/">↩️ 스팀 환불 규정</a></p>' + GAME_CSS)
+    page('/game/free/', '에픽 무료 게임 — 이번 주 무료·다음 예고·지난 무료 게임 기록', '에픽게임즈 스토어에서 지금 무료인 게임과 다음 주 예고, 줍줍이 확인해 쌓은 지난 무료 게임 기록을 한곳에. 한국 시간 기준.',
+         body, [('루리의 줍줍', '/'), ('게임', '/game/'), ('에픽 무료 게임', '/game/free/')], ld)
+    urls.append('/game/free/')
+    return urls
 
 
 def trend_pages():
@@ -3317,21 +3455,22 @@ def app_page():
     # 루리의 줍줍 앱(PWA) 설치 + 공모전 알림 (2026-10-18 사용자: 앱도 사이트 안에서 배포, 공모전 알림, 웹푸시, 메일)
     cats = json.dumps([[sl, n, CAT_ICON.get(n, '🧩')] for sl, n in CATS], ensure_ascii=False)
     faq = [('앱은 어디서 받아요?', '이 페이지에서 바로 설치돼요. 플레이스토어·앱스토어를 거치지 않는 웹앱이라 용량이 거의 없고, 늘 최신 공모전이 보여요.'),
-           ('알림은 얼마나 자주 와요?', '하루 최대 2번이에요. 저녁 7시쯤 관심 분야 새 공모전을 한 번에 모아서, 아침 9시쯤 인기 공모전 마감 3일 전 소식을 보내요. 새 공모전이 없는 날은 안 와요.'),
+           ('알림은 얼마나 자주 와요?', '메뉴 추천은 점심(11시 20분쯤)과 저녁(5시 20분쯤) 하루 2번이에요. 공모전은 저녁 7시쯤 관심 분야 새 공모전을 모아서, 아침 9시쯤 인기 공모전 마감 3일 전 소식을 보내요. 새 공모전이 없는 날은 안 와요. 항목마다 따로 끌 수 있어요.'),
            ('가입해야 해요?', '폰 알림은 가입 없이 바로 켤 수 있어요. 찜한 공모전 마감 메일은 회원만 받을 수 있어요.'),
            ('아이폰도 돼요?', 'iOS 16.4 이상 사파리에서 홈 화면에 추가한 뒤, 홈 화면의 루리의 줍줍 앱을 열어 알림을 켜면 돼요.'),
            ('알림을 끄고 싶어요.', '이 페이지에서 「알림 끄기」를 누르거나, 폰 설정 → 알림에서 루리의 줍줍(또는 sungprofile.cloud)을 끄면 돼요.')]
-    body = f'''<p class="bc"><a href="/">홈</a> › 앱·알림</p><h1>📲 루리의 줍줍 앱 · 공모전 알림</h1>
-{say("o_present", "홈 화면에 앱을 깔고 관심 분야만 골라 두면, 새 공모전이랑 마감 임박을 제가 폰으로 알려 드릴게요!")}
+    body = f'''<p class="bc"><a href="/">홈</a> › 앱·알림</p><h1>📲 오늘 뭐 먹지 앱 · 루리의 줍줍</h1>
+{say("o_present", "홈 화면에 앱을 깔면 열 때마다 오늘 메뉴를 골라 드려요. 점심·저녁 메뉴 알림도 켤 수 있고, 새 공모전·마감 소식도 같이 챙겨 드려요!")}
 <section id="app-page" data-cats='{E(cats)}'>
-<div class="ap-hero"><img src="/assets/icons/icon-192.png" alt="루리의 줍줍 앱 아이콘" width="72" height="72"><div><b>루리의 줍줍</b><span>공모전·청약·지원금·경품 이벤트 · 무료 · 광고 클릭 강요 없음</span></div></div>
+<div class="ap-hero"><img src="/assets/icons/icon-192.png" alt="루리의 줍줍 앱 아이콘" width="72" height="72"><div><b>루리의 줍줍</b><span>시간·날씨·냉장고 재료로 오늘 메뉴 추천 · 공모전·지원금 알림 · 무료</span></div></div>
+<div class="ap-card ap-feat"><ul><li>🍽️ <b>오늘 뭐 먹지?</b> 앱을 열면 지금 시간·날씨에 맞는 메뉴를 먼저 보여 줘요</li><li>🧊 냉장고 재료만 고르면 지금 만들 수 있는 메뉴를 찾아 줘요</li><li>⭐ 마음에 든 메뉴는 찜, 별로인 메뉴는 👎 — 다음 추천에 반영돼요</li><li>📴 한 번 본 메뉴·사진은 인터넷이 약해도 열려요</li></ul></div>
 <h2>1. 앱 설치</h2><div class="ap-card ap-inst"><p class="ap-sm">불러오는 중…</p></div>
-<h2>2. 공모전 폰 알림 (웹푸시)</h2><div class="ap-card ap-push"><p class="ap-sm">불러오는 중…</p></div>
+<h2>2. 폰 알림 (메뉴 추천 · 공모전)</h2><div class="ap-card ap-push"><p class="ap-sm">불러오는 중…</p></div>
 <h2>3. 메일 알림</h2><div class="ap-card ap-mail"><p class="ap-sm">불러오는 중…</p></div>
 <h2>자주 묻는 질문</h2><div class="ap-card ap-faq">{"".join(f"<details><summary>{E(q)}</summary><p>{E(a)}</p></details>" for q, a in faq)}</div>
 </section><p class="note">알림을 켜면 브라우저가 만든 알림 주소와 고른 분야만 저장해요. 이름·전화번호는 받지 않아요. 알림을 끄면 바로 지워져요.</p>
-<link rel="stylesheet" href="/assets/app/app.css?v=1">'''
-    page('/app/', '루리의 줍줍 앱 설치 · 공모전 알림 받기', '루리의 줍줍 앱을 홈 화면에 설치하고, 관심 분야 새 공모전과 마감 임박 소식을 폰 알림(웹푸시)·메일로 받아 보세요. 무료, 가입 없이 폰 알림 가능.',
+<link rel="stylesheet" href="/assets/app/app.css?v=2">'''
+    page('/app/', '오늘 뭐 먹지 앱 설치 · 메뉴·공모전 알림 받기', '오늘 뭐 먹지 앱을 홈 화면에 설치하면 시간·날씨·냉장고 재료에 맞는 메뉴를 추천해 주고, 점심·저녁 메뉴 알림과 새 공모전 소식을 폰 알림으로 보내 줘요. 무료, 가입 없이 사용 가능.',
          body, [('루리의 줍줍', '/'), ('앱·알림', '/app/')])
 
 
@@ -3385,7 +3524,7 @@ FR_CATS = [('guk', '국물', '🍲', '국·찌개·탕', '국물 요리'), ('bap
            ('jorim', '조림', '🐟', '조림·찜', '조림·찜 요리'), ('banchan', '반찬', '🥗', '반찬·무침·나물', '반찬'), ('jeon', '전', '🥞', '전·부침개', '전·부침개')]
 
 
-REC_TAGS = '<link rel="stylesheet" href="/assets/fridge/recommend.css?v=1"><script defer src="/assets/fridge/recommend.js?v=1"></script>'   # 오늘 뭐 먹지? (2026-10-20)
+REC_TAGS = '<link rel="stylesheet" href="/assets/fridge/recommend.css?v=2"><script defer src="/assets/fridge/recommend.js?v=2"></script>'   # 오늘 뭐 먹지? (2026-10-20)
 
 
 def rec_pop():

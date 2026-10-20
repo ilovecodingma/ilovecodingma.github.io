@@ -1,68 +1,27 @@
 {
- "name": "루리의 줍줍",
- "short_name": "루리의 줍줍",
- "start_url": "/",
+ "id": "/",
+ "name": "오늘 뭐 먹지? · 루리의 줍줍",
+ "short_name": "오늘 뭐 먹지",
+ "description": "시간·날씨·냉장고 재료에 맞춰 오늘 메뉴를 골라 주는 레시피 추천 앱. 공모전·지원금 알림도 한 곳에서.",
+ "lang": "ko",
+ "start_url": "/fridge/?src=app",
+ "scope": "/",
  "display": "standalone",
- "theme_color": "#5b21b6",
- "background_color": "#ffffff",
+ "orientation": "portrait",
+ "theme_color": "#c2410c",
+ "background_color": "#fff7ed",
+ "categories": ["food", "lifestyle", "utilities"],
  "icons": [
-  {
-   "src": "/assets/icons/icon-48.png",
-   "sizes": "48x48",
-   "type": "image/png"
-  },
-  {
-   "src": "/assets/icons/icon-96.png",
-   "sizes": "96x96",
-   "type": "image/png"
-  },
-  {
-   "src": "/assets/icons/icon-192.png",
-   "sizes": "192x192",
-   "type": "image/png",
-   "purpose": "any"
-  },
-  {
-   "src": "/assets/icons/icon-512.png",
-   "sizes": "512x512",
-   "type": "image/png",
-   "purpose": "any"
-  }
+  {"src": "/assets/icons/icon-48.png", "sizes": "48x48", "type": "image/png"},
+  {"src": "/assets/icons/icon-96.png", "sizes": "96x96", "type": "image/png"},
+  {"src": "/assets/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any"},
+  {"src": "/assets/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any"}
  ],
- "description": "공모전 추천·마감 전 준비부터 지원금·이슈 확인 신호까지, 루리가 매일 골라 주는 정보 앱",
  "shortcuts": [
-  {
-   "name": "기사 확인 신호",
-   "short_name": "이슈",
-   "url": "/news/",
-   "icons": [
-    {
-     "src": "/assets/icons/icon-192.png",
-     "sizes": "192x192"
-    }
-   ]
-  },
-  {
-   "name": "공모전",
-   "short_name": "공모전",
-   "url": "/",
-   "icons": [
-    {
-     "src": "/assets/icons/icon-192.png",
-     "sizes": "192x192"
-    }
-   ]
-  },
-  {
-   "name": "알림 설정",
-   "short_name": "알림",
-   "url": "/app/",
-   "icons": [
-    {
-     "src": "/assets/icons/icon-192.png",
-     "sizes": "192x192"
-    }
-   ]
-  }
+  {"name": "오늘의 추천 메뉴", "short_name": "오늘 뭐 먹지", "url": "/fridge/?src=app_sc", "icons": [{"src": "/assets/icons/icon-192.png", "sizes": "192x192"}]},
+  {"name": "내 냉장고 재료로 찾기", "short_name": "냉장고", "url": "/fridge/?tab=fridge&src=app_sc", "icons": [{"src": "/assets/icons/icon-192.png", "sizes": "192x192"}]},
+  {"name": "자취 요리 추천", "short_name": "자취 요리", "url": "/fridge/solo/?src=app_sc", "icons": [{"src": "/assets/icons/icon-192.png", "sizes": "192x192"}]},
+  {"name": "날씨별 오늘 메뉴", "short_name": "날씨별", "url": "/fridge/weather/?src=app_sc", "icons": [{"src": "/assets/icons/icon-192.png", "sizes": "192x192"}]},
+  {"name": "공모전·알림 설정", "short_name": "공모전", "url": "/app/?src=app_sc", "icons": [{"src": "/assets/icons/icon-192.png", "sizes": "192x192"}]}
  ]
 }

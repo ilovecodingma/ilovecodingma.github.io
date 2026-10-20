@@ -13,3 +13,5 @@
 .ap-msg{font-size:13.5px;font-weight:700;color:#5b21b6;margin:6px 0 0;min-height:1em}
 .ap-faq details{border-bottom:1px solid var(--bd);padding:10px 0}.ap-faq summary{cursor:pointer;font-weight:800;font-size:14.5px}.ap-faq p{font-size:14px;color:var(--mu);margin:6px 0 0;line-height:1.6}
 .app-cta{display:flex;gap:10px;align-items:center;background:linear-gradient(135deg,#7c3aed,#db2777);color:#fff;border-radius:16px;padding:12px 14px;text-decoration:none;margin:14px 0}.app-cta b{font-size:15px}.app-cta span{font-size:12.5px;opacity:.9;display:block}
+
+.ap-feat ul{margin:0;padding-left:20px;font-size:14.5px;line-height:1.8}.ap-main{background:#fff7ed;border:1px solid #fed7aa;border-radius:12px;padding:10px 12px}
