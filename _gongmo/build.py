@@ -2192,7 +2192,7 @@ def essay_pages():
         return []
     p = '/ai/human-value/'
     faq, fld = _faq(ESSAY_FAQ)
-    body = open(f, encoding='utf-8').read().replace('@@FAQ@@', faq) + GAME_CSS + '<script type="application/ld+json">%s</script>' % json.dumps(fld, ensure_ascii=False).replace('</', '<\/')
+    body = open(f, encoding='utf-8').read().replace('@@FAQ@@', faq) + '<style>.es-fig{margin:12px 0}.es-fig img{display:block;width:100%;height:auto;border:1px solid var(--bd,#e5e7eb);border-radius:10px}.es-fig figcaption{font-size:12.5px;color:var(--mu,#6b7280);margin-top:4px}</style>' + GAME_CSS + '<script type="application/ld+json">%s</script>' % json.dumps(fld, ensure_ascii=False).replace('</', '<\/')
     title = 'AI는 정보를 생산하지만, 가치는 인간이 결정한다 — AI 시대에 인간이 더 중요해지는 이유'
     desc = 'AI가 정보 생산 비용을 낮춘 시대에 귀해지는 것은 사람의 주의·신뢰·판단이라는 주장을 사이먼, 아제모을루·존슨, 오토어 연구와 근로기준법·AI기본법 사례로 풀고, 확인된 사실과 해석을 구분해 정리했어요.'
     art = {'@context': 'https://schema.org', '@type': 'Article', 'headline': title, 'description': desc, 'inLanguage': 'ko',
