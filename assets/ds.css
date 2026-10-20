@@ -312,3 +312,7 @@ main.w:has(.hx-hero){max-width:none;padding:0}
   html.app-mode .hd{position:relative}
   [id]{scroll-margin-top:12px}
 }
+.ft-g{margin-bottom:0}.ft .ft-c{margin:34px 0 0!important}
+.pc{max-width:860px;margin:36px auto 0;padding:0 4px}
+.pc .note,.pc>p{padding:0 4px}
+@media(max-width:820px){.ft .ft-c{margin-top:26px!important}}
