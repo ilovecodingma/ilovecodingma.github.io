@@ -96,7 +96,7 @@ export function start(th) {
   }
 
   // 2026-10-20 사이트 전체 두뇌(ruri-site.js) 연결: 의도가 잡히면 지원금·경품·레시피·웹툰·애니 등을 카드로 답한다
-  let SITE = null; const site = () => (SITE ||= import('/assets/chat/ruri-site.js?v=3').catch(() => null));
+  let SITE = null; const site = () => (SITE ||= import('/assets/chat/ruri-site.js?v=5').catch(() => null));
   const ask2 = async q => { add('me', esc(q)); const S = await site(); const r = S && await S.siteAnswer(q); if (r) { const b = add('bot', r.html); chips(b, back2()); } };
   const back2 = () => [['🏠 처음 메뉴', siteMenu]];
   const siteMenu = () => say('무엇을 도와드릴까요?', [['⏰ 오늘 마감', () => ask2('오늘 마감')], ['📋 지원금·청약', () => ask2('지원금')], ['🎁 경품 이벤트', () => ask2('경품 이벤트')], ['🍽️ 오늘 뭐 먹지', () => ask2('오늘 뭐 먹지')],

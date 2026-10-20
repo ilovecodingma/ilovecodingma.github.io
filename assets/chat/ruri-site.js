@@ -72,9 +72,9 @@ async function watch(kind, q) {
   const L = '/watch/#' + kind;
   if (!d) return { html: `<a class="rc-more" href="${L}">${kind === 'anime' ? '애니' : '웹툰'} 추천 페이지로 가기 →</a>` };
   const gm = (d.cfg.genres || []).filter(g => q.includes(g[1] || g[0]) || q.includes(g[0])).map(g => g[0]);
-  const pick = d.r.filter(x => (kind === 'webtoon' ? !x[11] : true)).map(x => { const tg = kind === 'webtoon' ? x[4] : x[4].concat(x[5]); const m = gm.filter(g => tg.includes(g)).length; return { x, s: (gm.length ? m * 3 : 0) + (kind === 'webtoon' ? (x[6] || 0) - 8.5 + Math.log(1 + (x[7] || 0)) / 8 : (x[6] || 60) / 50 + Math.log(1 + (x[7] || 0)) / 8) + ((x[0] * 31 + KST().getUTCDate()) % 10) / 10 }; }).filter(o => !gm.length || o.s > 2).sort((a, b) => b.s - a.s).slice(0, 4);
+  const pick = d.r.filter(x => (kind === 'webtoon' ? !x[11] : true)).map(x => { const tg = kind === 'webtoon' ? x[4] : x[4].concat(x[5]); const m = gm.filter(g => ((d.cfg.alias || {})[g] || [g]).some(t => tg.includes(t))).length; return { x, m, s: (gm.length ? m * 3 : 0) + (kind === 'webtoon' ? (x[6] || 0) - 8.5 + Math.log(1 + (x[7] || 0)) / 8 : (x[6] || 60) / 50 + Math.log(1 + (x[7] || 0)) / 8) + ((x[0] * 31 + KST().getUTCDate()) % 10) / 10 }; }).filter(o => !gm.length || o.m > 0).sort((a, b) => b.s - a.s).slice(0, 4);
   const mk = o => kind === 'webtoon' ? card('https://comic.naver.com/webtoon/list?titleId=' + o.x[0], o.x[1], `${o.x[8] ? '완결' : '연재'} · ★${(o.x[6] || 0).toFixed(1)} · ${(o.x[4] || []).slice(0, 2).join('·')}`, o.x[3], '📖', 1) : card(o.x[16], o.x[1] || o.x[3] || o.x[2], `${o.x[10] || ''} · ★${((o.x[6] || 0) / 10).toFixed(1)} · ${o.x[4].slice(0, 2).join('·')}`, o.x[14], '🎬', 1);
-  return { html: `${gm.length ? gm.join('·') + ' 취향으로 ' : ''}${kind === 'anime' ? '애니' : '웹툰'} 골라 봤어요 ✨` + list(pick.map(mk)) + `<a class="rc-more" href="${L}">1분 취향 설문으로 더 정확하게 →</a>`, say: '취향에 맞는 작품을 골라 봤어요.' };
+  return { html: `${gm.length ? gm.join('·') + ' 취향으로 ' : ''}${kind === 'anime' ? '애니' : '웹툰'} 골라 봤어요 ✨` + list(pick.map(mk)) + `<a class="rc-more" href="${L}">장르를 직접 골라 오늘의 추천 받기 →</a>`, say: '취향에 맞는 작품을 골라 봤어요.' };
 }
 const MONEY = [['연봉 실수령액 계산기', '/money/tools/salary/', '🧮'], ['실업급여 계산기', '/money/tools/unemployment/', '🧮'], ['퇴직금 계산기', '/money/tools/severance/', '🧮'], ['청약 가점 계산기', '/apply/recommend/', '🏠'], ['생활 돈 가이드', '/money/guide/', '🧭']];
 function money(q) {
