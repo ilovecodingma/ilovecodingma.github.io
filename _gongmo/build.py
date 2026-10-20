@@ -659,7 +659,7 @@ def detail(c, live):
     # 2026-10-19: 접수 공고는 실제 행사가 아니라 Event 대신 WebPage(데이터와 맞는 유형만)
     ld = {'@context': 'https://schema.org', '@type': 'WebPage', 'name': c['title'], 'description': summary, 'inLanguage': 'ko',
           'dateModified': ((HIST.get(c['id']) or {}).get('chg') or [{'d': (HIST.get(c['id']) or {}).get('first') or TODAY.isoformat()}])[-1]['d'],
-          'about': {'@type': 'Thing', 'name': c['title'], 'url': c['link']}, 'publisher': {'@type': 'Organization', 'name': NAME, 'url': SITE + '/'}}
+          'expires': c['end'], 'about': {'@type': 'Thing', 'name': c['title'], 'url': c['link'], 'additionalProperty': [{'@type': 'PropertyValue', 'name': k_, 'value': v_} for k_, v_ in [('주최', (c.get('org') or '').strip()), ('접수 시작', c.get('start') or ''), ('접수 마감', c['end']), ('상금', (c.get('prize') or '').strip()), ('응모 자격', (c.get('elig') or '').strip()[:200]), ('접수 방법', (c.get('ch') or '').strip())] if v_]}, 'publisher': {'@type': 'Organization', 'name': NAME, 'url': SITE + '/'}}
     desc = f'{c["title"]} — {org} 주최, {ddot(c["end"])} 마감, 상금 {c["prize"]}. 응모 자격·접수 방법·체크리스트 정리.'
     md_ = c['end'][5:].replace('-', '/').lstrip('0').replace('/0', '/')
     pz = re.sub(r'\s+', ' ', (c.get('prize') or '')).strip()
@@ -4447,8 +4447,13 @@ def lab():
 
 
 def statics(nl, ne):
+    try:
+        _ng = len(json.load(open(KIN_F, encoding='utf-8'))['guides'])
+    except Exception:
+        _ng = 0
     page('/about/', '소개', '루리의 줍줍은 개인 개발자가 AI와 함께 운영하는 생활 정보 사이트입니다. 이슈 확인 신호 채점, 애널리스트 의견 종합, 공모전·지원금 정리의 운영 목적과 작성 방식.',
          f'''<h1>소개</h1>
+<p class="cat-st">📌 <b>루리의 줍줍</b>(sungprofile.cloud)은 공모전·지원금·청약 공고를 마감일·상금·응모 자격 순으로 비교해 보여 주고, 세금·노동·주거·금융 제도는 법령 조문과 공식 문서 링크로 확인한 가이드({_ng}편)로 정리하는 정보 사이트입니다. {TODAY.isoformat()} 기준 진행 중 공모전 {nl}건, 경품 이벤트 {ne}건을 정리하고 있습니다.</p>
 <p>루리의 줍줍(sungprofile.cloud)은 개인 개발자 Seongsang Park이 운영하는 생활 정보 사이트입니다. 마스코트 「루리」가 안내를 맡고, 사이트 제작과 데이터 정리에는 AI(Anthropic Claude)를 적극적으로 씁니다. 회사나 언론사가 아닌 개인 운영 사이트이며, 특정 기업·정당·증권사와 제휴하거나 돈을 받고 글을 쓰지 않습니다.</p>
 <h2>운영 목적</h2><p>뉴스·증권 리포트·공모전·지원금 공고는 여기저기 흩어져 있고, 같은 내용이 제목만 바꿔 반복되는 경우가 많습니다. 루리의 줍줍은 이런 정보를 <b>그대로 옮기지 않고</b>, 같은 내용끼리 묶어 숫자를 다시 세고 비교해서 「몇 곳이 말했는지, 무엇이 아직 확인되지 않았는지, 나한테 무슨 뜻인지」를 짧게 정리하는 것을 목표로 합니다.</p>
 <h2>테마별로 하는 일</h2><ul class="chk">
