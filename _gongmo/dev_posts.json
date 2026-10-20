@@ -97,7 +97,13 @@
     "/ailog/",
     "2026-10-19"
    ]
-  ]
+  ],
+  "tags": [
+   "seo",
+   "static-site",
+   "ai-agents"
+  ],
+  "en_summary": "A solo developer and an AI coding agent built a Korean information site and watched the page count balloon to 3,744 as auto-generated pages piled up, while Google Search Console showed zero indexed pages from 691 submitted URLs. In two days the pages were cut to about 863 by deleting old machine-translated language copies and merging thin detail pages into one data view, and the sitemap was trimmed to match. The post lists the exact changes, the numbers (recounted from commit history), and the rules that came out of it."
  },
  {
   "slug": "korea-take-home-salary",
@@ -223,7 +229,13 @@
     "/money/experts/",
     "2026-10-20"
    ]
-  ]
+  ],
+  "tags": [
+   "static-site",
+   "automation",
+   "data"
+  ],
+  "en_summary": "How to attach a \"what does this mean for my life\" card and real market data to news items on a static site without letting an AI invent sentences. Impact text comes only from a hand-written rule table (10 rules, keyword regex plus fixed phrasing), and expert claims are checked against public FRED and Upbit price data 7 and 30 days later, rendered as inline SVG. A daily job caches the market data so the hourly build never calls external APIs."
  },
  {
   "slug": "backlink-three-days",
@@ -246,7 +258,12 @@
     "/ailog/",
     "2026-10-20"
    ]
-  ]
+  ],
+  "tags": [
+   "seo",
+   "ai-agents"
+  ],
+  "en_summary": "Three days of real traffic numbers from six promotion channels for a brand-new domain with zero indexed pages (small sample, for reference only). Technical posts with comments on dev.to brought the most visits, Naver blog posts built around search phrases and Q&A answers were next, while a Reddit account and a LinuxFr account were suspended for link-heavy promotion. The post ends with five rules learned the hard way."
  },
  {
   "slug": "wmic-windows11-replacement",
@@ -258,7 +275,12 @@
    "개발 지식 전체",
    "/ailog/"
   ],
-  "sources": []
+  "sources": [],
+  "tags": [
+   "windows",
+   "automation"
+  ],
+  "en_summary": "A nightly Python job silently stopped working on Windows 11 because the deprecated wmic tool is no longer installed: subprocess raised FileNotFoundError, a try/except swallowed it, and later steps finished as if nothing happened. The fix replaces wmic with PowerShell Get-CimInstance (or psutil), hides the console window, and makes the pre-flight check fail loudly instead of continuing."
  },
  {
   "slug": "ffmpeg-overlay-endcard",
@@ -270,7 +292,11 @@
    "개발 지식 전체",
    "/ailog/"
   ],
-  "sources": []
+  "sources": [],
+  "tags": [
+   "automation"
+  ],
+  "en_summary": "A single ffmpeg filter_complex call that adds a banner starting at 3 seconds and a 3.5-second end card (with matching silent audio) to a finished vertical video, driven from Python. Three mistakes are explained: the comma inside enable=gte(t,3) must be escaped, the concat inputs and audio channels must match in format, and the Python graph string must be a raw string so the backslashes reach ffmpeg."
  },
  {
   "slug": "steam-refund-policy",
@@ -345,5 +371,81 @@
     "2026-10-20"
    ]
   ]
+ },
+ {
+  "slug": "visit-count-contamination",
+  "lang": "ko",
+  "date": "2026-10-20",
+  "title": "방문 집계에 우리 점검 방문이 섞여 수치가 부풀었던 일 — nohit 플래그와 데이터센터 표시로 고친 과정",
+  "desc": "하루 방문 214명 중 사람일 가능성이 큰 쪽은 76명이었어요. 링크 확인 방문과 데이터센터 점검 트래픽을 가려낸 규칙, ?nohit=1 플래그, Cloudflare Workers의 ASN·접속 회사 표시, 읽음 신호까지 정리했어요.",
+  "tags": [
+   "analytics",
+   "cloudflare",
+   "automation"
+  ],
+  "hub": [
+   "개발 지식 전체",
+   "/ailog/"
+  ],
+  "sources": [],
+  "en_summary": "Our self-built hit counter showed 214 visitors on one day, but only about 76 looked human: the rest were our own link checks and data-center traffic that slipped past a bot-name filter. The fixes were a ?nohit=1 localStorage flag, new columns (browser/OS, ASN, network owner, a data-center flag that marks instead of blocks) filled from request.cf in a Cloudflare Worker, and one read signal (max scroll and seconds on page) updated once per visit. Lesson: store the signals you will need to filter later at write time."
+ },
+ {
+  "slug": "law-article-autolink",
+  "lang": "ko",
+  "date": "2026-10-20",
+  "title": "본문 속 「근로기준법 제60조」를 국가법령정보센터 조문으로 자동 링크하기 (정규식과 함정 3가지)",
+  "desc": "법령명+제N조 언급을 law.go.kr 조문 주소로 바꾸는 파이썬 코드, 이름 없는 조문의 기본 법 처리, 링크 대조 검사, 그리고 「현행」 조회본이 최신 개정을 빠뜨렸던 사례를 정리했어요.",
+  "tags": [
+   "static-site",
+   "automation",
+   "data"
+  ],
+  "hub": [
+   "개발 지식 전체",
+   "/ailog/"
+  ],
+  "sources": [
+   [
+    "국가법령정보센터",
+    "https://www.law.go.kr",
+    "2026-10-20"
+   ]
+  ],
+  "en_summary": "How a static-site build step turns mentions like \"Labor Standards Act Article 60\" into links to the exact article on law.go.kr (URL pattern /법령/<law name without spaces>/제N조), with a Python regex that skips existing links and scripts and refuses to link when the law name is unknown. A separate check compares every generated link text with its URL (151 links, no mismatches), and one trap is documented: the default \"current\" version of a statute omitted a promulgated amendment that appeared only under its own version ID."
+ },
+ {
+  "slug": "d1-read-budget",
+  "lang": "ko",
+  "date": "2026-10-20",
+  "title": "D1 읽기 한도 때문에 방문 통계를 「한 번 읽고 코드에서 묶기」로 바꾼 일",
+  "desc": "같은 테이블을 열세 번 훑던 관리자 통계를 최근 7일 행 한 번 읽기, 일별 요약표, 3분 캐시로 바꾼 Cloudflare D1 구조와 코드, 컬럼 이름 명시의 효과를 정리했어요.",
+  "tags": [
+   "cloudflare",
+   "analytics"
+  ],
+  "hub": [
+   "개발 지식 전체",
+   "/ailog/"
+  ],
+  "sources": [],
+  "en_summary": "An admin statistics view on Cloudflare D1 (free tier) ate the daily read budget because it scanned the same hits table thirteen times; D1 bills by rows read, not by queries. The fix reads the last seven days once with explicit column names, groups visitors, channels and pages in Worker memory, keeps older days as one summary row per day, and caches the JSON result for three minutes with a ?fresh=1 escape hatch. Explicit column names later let new columns be added without touching this code."
+ },
+ {
+  "slug": "multi-ai-sessions",
+  "lang": "ko",
+  "date": "2026-10-20",
+  "title": "AI 세션 여러 개로 사이트를 돌리며 겪은 사고 네 가지 — 잠금 파일, 3-way 병합, 교차 검증, 승인 전달",
+  "desc": "끊긴 빌드가 남긴 잠금 파일로 배포가 조용히 건너뛰어진 일, 두 세션의 변경을 원본 4개만 3-way 병합한 과정, 숫자 교차 대조, 다른 세션이 전한 승인의 범위 해석까지 솔직하게 적었어요.",
+  "tags": [
+   "ai-agents",
+   "automation"
+  ],
+  "hub": [
+   "개발 지식 전체",
+   "/ailog/"
+  ],
+  "sources": [],
+  "en_summary": "One person runs a site with several AI coding-agent sessions (site code, research and coordination, outbound promotion). Four real incidents and the rules they produced: a stale build lock file made hourly builds skip silently (check the PID in the lock and verify the live page after every deploy); a branch with 1,370 changed files was merged by 3-way merging only the four hand-written sources, never the generated HTML; numbers one session wrote were cross-checked against statute text by another and two were corrected; and an approval relayed by another session was treated as scoped to one change, with backups and a live check."
  }
 ]

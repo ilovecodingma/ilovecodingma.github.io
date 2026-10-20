@@ -73,7 +73,7 @@ THEMES = [  # (키, 이름, 아이콘, 테마색, 홈, [하위 메뉴], [이 테
     ('recipe', '레시피', '🍳', '#c2410c', '/fridge/', [('/fridge/', '냉장고 파먹기'), ('/fridge/solo/', '자취 요리'), ('/fridge/weather/', '날씨별'), ('/fridge/plan/', '식단·장보기'), ('/fridge/c/guk/', '국·찌개'), ('/fridge/c/bap/', '밥'), ('/fridge/c/myeon/', '면'), ('/fridge/c/bokkeum/', '볶음'), ('/fridge/c/jorim/', '조림·찜'), ('/fridge/c/banchan/', '반찬'), ('/fridge/c/jeon/', '전')], ['/fridge/']),   # 2026-10-20 사용자: 레시피 유입이 많아 별도 카테고리로
     ('life', '생활', '🧺', '#0e7490', '/apply/', [('/apply/', '지원금·청약'), ('/apply/recommend/', '청약 추천'), ('/apply/r/', '지역별'), ('/event/', '경품'), ('/qa/', '고민 해결'), ('/plaza/', '광장')], ['/apply/', '/a/', '/event/', '/qa/', '/ssul/', '/plaza/']),
     ('game', '게임', '🎮', '#4f46e5', '/game/', [('/game/', '게임 허브'), ('/game/free/', '무료 게임 기록'), ('/game/release/', '출시 일정'), ('/game/steam-sale/', '세일 달력'), ('/game/refund/', '환불 규정'), ('/game/#timing', '살 타이밍'), ('/game/#contest', '게임 공모전')], ['/game/']),   # 2026-10-20 홍보 세션 기획서: 게임·취미·개발 커뮤니티 콘텐츠
-    ('ai', '개발 지식', '🧑‍💻', '#0f172a', '/ailog/', [('/ailog/', '개발 지식'), ('/dev/faq/', '개발 FAQ'), ('/en/guide/', 'English guides'), ('/class/', '루리의 AI교실'), ('/ailog/#log', 'AI 제작 로그')], ['/ailog/', '/dev/', '/en/', '/class/', '/ai/'])]   # 2026-10-19 사용자: AI 로그 → 개발 지식으로 개편
+    ('ai', '개발 지식', '🧑‍💻', '#0f172a', '/ailog/', [('/dev/', '기술 블로그'), ('/ailog/', '개발 지식·제작 로그'), ('/dev/faq/', '개발 FAQ'), ('/en/guide/', 'English guides'), ('/class/', '루리의 AI교실'), ('/ailog/#log', 'AI 제작 로그')], ['/ailog/', '/dev/', '/en/', '/class/', '/ai/'])]   # 2026-10-19 사용자: AI 로그 → 개발 지식으로 개편
 
 
 # 2026-10-19 사용자 「소비 쪽으로 가중치, URL 그대로 메인만」: 테마 줄 순서만 생활 먼저 (주소·테마 소속은 그대로)
@@ -184,7 +184,7 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False, noinde
 <html lang="{lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{E(t)}</title>
 <meta name="description" content="{E(desc)}">{'<meta name="robots" content="noindex,follow">' if noindex else ''}
-<link rel="canonical" href="{url}">{f'<link rel="alternate" hreflang="en" href="{url}">' if lang == 'en' else ''}
+<link rel="canonical" href="{url}">{'<link rel="alternate" type="application/rss+xml" title="루리의 줍줍 기술 블로그" href="/dev/rss.xml">' if path.startswith('/dev/') or path == '/ailog/' else ''}{f'<link rel="alternate" hreflang="en" href="{url}">' if lang == 'en' else ''}
 <meta property="og:type" content="website"><meta property="og:locale" content="{'en_US' if lang == 'en' else 'ko_KR'}"><meta property="og:site_name" content="{NAME}">
 <meta property="og:title" content="{E(t)}"><meta property="og:description" content="{E(desc)}"><meta property="og:url" content="{url}">
 <meta property="og:image" content="{SITE}{og or "/assets/ruri/og.jpg"}"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
@@ -3020,6 +3020,61 @@ def foreign_list_html(live):
             f'<table><tr><th>Deadline</th><th>Contest (Korean)</th><th>Top prize</th><th>Eligibility (original)</th></tr>{rows}</table>')
 
 
+DEV_TAGS = {'automation': '자동화', 'ai-agents': 'AI 에이전트', 'seo': '검색·SEO', 'cloudflare': 'Cloudflare', 'static-site': '정적 사이트', 'windows': 'Windows', 'analytics': '방문 집계', 'data': '데이터'}
+
+
+def _rmin(txt):
+    """읽는 시간(분): 글자 수 / 500, 최소 1분."""
+    return max(1, round(len(re.sub(r'<[^>]+>', '', txt)) / 500))
+
+
+def _dev_card(p, rm):
+    tg = ''.join(f'<em>#{E(DEV_TAGS.get(t, t))}</em>' for t in p.get('tags', []))
+    return (f'<li><a href="{dev_url(p)}"><b>{E(p["title"])}</b><span>{E(p["desc"])}</span>'
+            f'<span class="dev-meta">{p["date"]} · 읽는 시간 약 {rm}분 {tg}</span></a></li>')
+
+
+def dev_blog_pages(P, css):
+    """기술 블로그 홈(/dev/)·태그 페이지·RSS (2026-10-20 사용자: 「우리 사이트도 기술 블로그 같은 거 만들어」). 기존 /ailog/ 와 글 주소는 그대로 두고 서로 연결."""
+    urls = []
+    KO = [p for p in P if p['lang'] == 'ko']
+    order = {id(p): i for i, p in enumerate(P)}
+    KO.sort(key=lambda p: (p['date'], order[id(p)]), reverse=True)
+    rm = {p['slug']: _rmin(open(os.path.join(HERE, 'devsrc', p['slug'] + '.html'), encoding='utf-8').read()) for p in P}
+    used = sorted({t for p in KO for t in p.get('tags', [])}, key=lambda t: -sum(t in p.get('tags', []) for p in KO))
+    chips = ''.join(f'<a href="/dev/tag/{t}/">#{E(DEV_TAGS.get(t, t))} <small>{sum(t in p.get("tags", []) for p in KO)}</small></a>' for t in used)
+    st = '<style>.dev-ch{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}.dev-ch a{padding:6px 12px;border:1px solid #e5e7eb;border-radius:99px;text-decoration:none;color:inherit;font-size:.9em}.dev-meta{display:block}.dev-meta em{font-style:normal;margin-left:6px;color:#4f46e5}</style>'
+    EN = [p for p in P if p['lang'] == 'en']
+    enl = ''.join(f'<li><a href="{dev_url(p)}"><b>{E(p["title"])}</b><span>{E(p["desc"])}</span></a></li>' for p in sorted(EN, key=lambda p: p['date'], reverse=True)[:6])
+    body = ('<p class="bc"><a href="/">홈</a> › 기술 블로그</p><h1>🧑‍💻 루리의 줍줍 기술 블로그</h1>'
+            '<p class="cat-st">📌 사람 한 명과 AI 코딩 에이전트로 이 사이트를 운영하며 실제로 겪은 문제와 고친 과정을 「문제 → 원인 → 해결 코드 → 교훈」 순서로 적어요. 실패 사례도 숨기지 않아요.</p>'
+            f'<div class="dev-ch" aria-label="태그">{chips}</div>'
+            f'<h2>최신 글</h2><ul class="dev-ls">{"".join(_dev_card(p, rm[p["slug"]]) for p in KO)}</ul>'
+            + (f'<h2>English guides</h2><ul class="dev-ls">{enl}</ul><p><a href="/en/guide/">All English guides</a></p>' if EN else '')
+            + '<p class="hm-links"><a href="/ailog/">🤖 사이트 제작 로그·비용표</a> · <a href="/dev/faq/">❓ 개발 FAQ</a> · <a href="/dev/rss.xml">RSS</a></p>' + st + css)
+    page('/dev/', '루리의 줍줍 기술 블로그 — AI 에이전트·자동화·정적 사이트 운영 기록', 'AI 코딩 에이전트와 1인으로 정보 사이트를 운영하며 겪은 문제와 해결을 문제·원인·해결 코드·교훈으로 정리한 기술 블로그. 방문 집계 오염, D1 읽기 한도, 법령 자동 링크, 윈도우 자동화 사고 사례.',
+         body, [('루리의 줍줍', '/'), ('기술 블로그', '/dev/')])
+    urls.append('/dev/')
+    for t in used:
+        L = [p for p in KO if t in p.get('tags', [])]
+        tb = (f'<p class="bc"><a href="/">홈</a> › <a href="/dev/">기술 블로그</a> › #{E(DEV_TAGS.get(t, t))}</p><h1>#{E(DEV_TAGS.get(t, t))} 글 {len(L)}편</h1>'
+              f'<ul class="dev-ls">{"".join(_dev_card(p, rm[p["slug"]]) for p in L)}</ul><p class="hm-links"><a href="/dev/">← 기술 블로그 홈</a></p>' + st + css)
+        page(f'/dev/tag/{t}/', f'#{DEV_TAGS.get(t, t)} — 루리의 줍줍 기술 블로그', f'{DEV_TAGS.get(t, t)} 관련 글 {len(L)}편: ' + ' · '.join(p['title'][:30] for p in L[:3]),
+             tb, [('루리의 줍줍', '/'), ('기술 블로그', '/dev/'), (f'#{DEV_TAGS.get(t, t)}', f'/dev/tag/{t}/')])
+        urls.append(f'/dev/tag/{t}/')
+    # RSS (한국어 글 + 영어 글, 최신순)
+    allp = sorted(P, key=lambda p: (p['date'], order[id(p)]), reverse=True)
+    def rfc(dstr):
+        return datetime.datetime.strptime(dstr, '%Y-%m-%d').replace(hour=9).strftime('%a, %d %b %Y %H:%M:%S +0900')
+    items = ''.join(f'<item><title>{E(p["title"])}</title><link>{SITE}{dev_url(p)}</link><guid isPermaLink="true">{SITE}{dev_url(p)}</guid><pubDate>{rfc(p.get("updated") or p["date"])}</pubDate>'
+                    f'<description>{E(p["desc"])}</description>' + ''.join(f'<category>{E(DEV_TAGS.get(t, t))}</category>' for t in p.get('tags', [])) + '</item>' for p in allp)
+    rss = ('<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"><channel><title>루리의 줍줍 기술 블로그</title>'
+           f'<link>{SITE}/dev/</link><description>AI 코딩 에이전트와 1인으로 사이트를 운영하며 겪은 문제와 해결 기록</description><language>ko</language>{items}</channel></rss>')
+    os.makedirs(os.path.join(ROOT, 'dev'), exist_ok=True)
+    open(os.path.join(ROOT, 'dev', 'rss.xml'), 'w', encoding='utf-8', newline='\n').write(rss)
+    return urls
+
+
 def dev_pages(live=()):
     P = dev_posts(); urls = []
     try:
@@ -3036,19 +3091,31 @@ def dev_pages(live=()):
             body_ = body_.replace('<!--FOREIGN_LIST-->', foreign_list_html(live))
         src = ''.join(f'<li><a href="{E(x[1])}"' + ('' if x[1].startswith('/') else ' rel="nofollow noopener" target="_blank"') + f'>{E(x[0])}</a> — {"checked" if en else "확인"} {E(x[2])}</li>' for x in p.get('sources', []))
         hub = p.get('hub')
-        body = (f'<p class="bc"><a href="/">{"Home" if en else "홈"}</a> › <a href="{"/en/guide/" if en else "/ailog/"}">{"Guides" if en else "개발 지식"}</a></p>'
+        _rm = _rmin(body_)
+        meta_x = '' if en else f' · 읽는 시간 약 {_rm}분 · 작성 루리의 줍줍 편집'
+        tagline_x = '' if en or not p.get('tags') else '<p class="dev-tags">' + ' '.join(f'<a href="/dev/tag/{t}/">#{E(DEV_TAGS.get(t, t))}</a>' for t in p['tags']) + '</p>'
+        tail_x = ''
+        if not en:
+            if p.get('en_summary'):
+                tail_x += f'<section lang="en" class="dev-en"><h2>English summary</h2><p>{E(p["en_summary"])}</p></section>'
+            rel_ = [q for q in P if q['lang'] == 'ko' and q['slug'] != p['slug'] and set(q.get('tags', [])) & set(p.get('tags', []))][:3]
+            if rel_:
+                tail_x += '<h2>관련 글</h2><ul class="dev-ls">' + ''.join(f'<li><a href="{dev_url(q)}"><b>{E(q["title"])}</b><span>{E(q["desc"])}</span></a></li>' for q in rel_) + '</ul>'
+            tail_x += '<p class="dev-hub"><a href="/dev/">← 기술 블로그 홈</a> · <a href="/ailog/">사이트 제작 로그</a> · <a href="/dev/rss.xml">RSS</a></p>'
+        body = (f'<p class="bc"><a href="/">{"Home" if en else "홈"}</a> › <a href="{"/en/guide/" if en else "/dev/"}">{"Guides" if en else "기술 블로그"}</a></p>'
                 f'<article class="dev" lang="{p["lang"]}"><h1>{E(p["title"])}</h1><p class="note">{"Published" if en else "작성"} {p["date"]}'
-                + (f' · {"updated" if en else "고침"} {p["updated"]}' if p.get('updated') else '') + '</p>'
-                + body_ + (f'<h2>{"Sources" if en else "출처"}</h2><ul>{src}</ul>' if src else '')
+                + (f' · {"updated" if en else "고침"} {p["updated"]}' if p.get('updated') else '') + meta_x + '</p>' + tagline_x
+                + body_ + tail_x + (f'<h2>{"Sources" if en else "출처"}</h2><ul>{src}</ul>' if src else '')
                 + (f'<p class="dev-hub">{"Related (Korean)" if en else "관련"}: <a href="{E(hub[1])}">{E(hub[0])}</a></p>' if hub else '')
                 + ('<p class="dev-hub">Questions about how this was built? <a href="/dev/faq/">Dev FAQ</a></p>' if en else '<p class="dev-hub">이 글에 대해 묻고 싶으면 <a href="/dev/faq/">❓ 개발 FAQ</a>에 남겨 주세요.</p>')
-                + share_bar(p['title'], p['desc'], en) + f'</article>{css}')
+                + share_bar(p['title'], p['desc'], en) + f'</article>{css}<script defer src="/assets/dev/dev.js?v=1"></script>')
         t = p['title'] + ' | Ruri Jupjup' if en and len(p['title']) + 14 <= 70 else p['title']
         ld = {'@context': 'https://schema.org', '@type': 'TechArticle', 'headline': p['title'][:110], 'description': p['desc'], 'inLanguage': p['lang'], 'datePublished': p['date'],
-              'dateModified': p.get('updated') or p['date'], 'author': {'@type': 'Organization', 'name': NAME}, 'mainEntityOfPage': SITE + u}
-        page(u, t, p['desc'], body, [('Home' if en else NAME, '/'), ('Guides' if en else '개발 지식', '/en/guide/' if en else '/ailog/'), (p['title'], u)], ld=ld, full_title=en, lang=p['lang'])
+              'dateModified': p.get('updated') or p['date'], 'author': {'@type': 'Organization', 'name': NAME if en else '루리의 줍줍 편집'}, 'publisher': {'@type': 'Organization', 'name': NAME}, 'mainEntityOfPage': SITE + u, **({'keywords': ', '.join(DEV_TAGS.get(t, t) for t in p['tags'])} if p.get('tags') else {})}
+        page(u, t, p['desc'], body, [('Home' if en else NAME, '/'), ('Guides' if en else '기술 블로그', '/en/guide/' if en else '/dev/'), (p['title'], u)], ld=ld, full_title=en, lang=p['lang'])
         urls.append(u)
     urls += dev_faq_page(P)
+    urls += dev_blog_pages(P, css)
     EP = [p for p in P if p['lang'] == 'en']
     if EP:
         li = ''.join(f'<li><a href="{dev_url(p)}"><b>{E(p["title"])}</b><span>{E(p["desc"])}</span></a></li>' for p in sorted(EP, key=lambda p: p['date'], reverse=True))
@@ -3087,7 +3154,7 @@ def ailog_page(live, nurls):
             SER.setdefault(p['series'], []).append(p)
     dli = ''.join(f'<li><a href="{dev_url(p)}"><b>{"[EN] " if p["lang"] == "en" else ""}{E(p["title"])}</b><span>{E(p["desc"])}</span></a></li>' for p in DP if not p.get('series'))
     dli = ''.join(f'</ul><h3>🔗 시리즈: {E(k)}</h3><ul class="dev-ls">' + ''.join(f'<li><a href="{dev_url(p)}"><b>{E(p["title"])}</b><span>{E(p["desc"])}</span></a></li>' for p in sorted(v, key=lambda p: p['date'])) + '</ul><h3>그 밖의 글</h3><ul class="dev-ls">' for k, v in SER.items()) + dli
-    body = (f'<p class="bc"><a href="/">홈</a> › 개발 지식</p><h1>🧑‍💻 개발 지식 — 직접 해 보고 정리한 AI·개발 가이드</h1>'
+    body = (f'<p class="bc"><a href="/">홈</a> › 개발 지식</p><h1>🧑‍💻 개발 지식 — 직접 해 보고 정리한 AI·개발 가이드</h1><p class="note">글 모음은 <a href="/dev/">기술 블로그</a>(태그·RSS)에서도 볼 수 있어요. <a href="/dev/rss.xml">RSS</a></p>'
             + (f'<style>.dev-ls{{list-style:none;padding:0}}.dev-ls li{{margin:8px 0}}.dev-ls a{{display:block;padding:12px;border:1px solid #e5e7eb;border-radius:10px;text-decoration:none;color:inherit}}.dev-ls span{{display:block;font-size:.88em;color:#64748b;margin-top:4px}}</style><section class="mg-s"><h2>📚 가이드·실험 노트</h2><p class="note">질문이 들어온 주제를 직접 테스트하고 공식 문서 숫자로 정리해요. 영어 글은 <a href="/en/guide/">English guides</a>에 모여 있어요.</p><ul class="dev-ls">{dli}</ul></section>' if DP else '')
             + '<h2 id="log">🤖 AI 제작 로그 — 서버비 0원으로 이 사이트를 만든 방법</h2>'
             + say('o_desk', E(a['lead']))

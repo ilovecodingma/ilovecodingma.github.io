@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>본문 속 「근로기준법 제60조」를 국가법령정보센터 조문으로 자동 링크하기 (정규식과 함정 3가지) | 루리의 줍줍</title>
+<meta name="description" content="법령명+제N조 언급을 law.go.kr 조문 주소로 바꾸는 파이썬 코드, 이름 없는 조문의 기본 법 처리, 링크 대조 검사, 그리고 「현행」 조회본이 최신 개정을 빠뜨렸던 사례를 정리했어요.">
+<link rel="canonical" href="https://sungprofile.cloud/dev/law-article-autolink/"><link rel="alternate" type="application/rss+xml" title="루리의 줍줍 기술 블로그" href="/dev/rss.xml">
+<meta property="og:type" content="website"><meta property="og:locale" content="ko_KR"><meta property="og:site_name" content="루리의 줍줍">
+<meta property="og:title" content="본문 속 「근로기준법 제60조」를 국가법령정보센터 조문으로 자동 링크하기 (정규식과 함정 3가지) | 루리의 줍줍"><meta property="og:description" content="법령명+제N조 언급을 law.go.kr 조문 주소로 바꾸는 파이썬 코드, 이름 없는 조문의 기본 법 처리, 링크 대조 검사, 그리고 「현행」 조회본이 최신 개정을 빠뜨렸던 사례를 정리했어요."><meta property="og:url" content="https://sungprofile.cloud/dev/law-article-autolink/">
+<meta property="og:image" content="https://sungprofile.cloud/assets/ruri/og.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://sungprofile.cloud/assets/ruri/og.jpg">
+<meta name="theme-color" content="#0f172a"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="오늘 뭐 먹지">
+<link rel="icon" href="/favicon.ico?v=6" sizes="any"><link rel="icon" type="image/png" sizes="48x48" href="/assets/icons/icon-48.png?v=6"><link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/icon-96.png?v=6"><link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/icon-192.png?v=6"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=6"><link rel="manifest" href="/site.webmanifest"><link rel="alternate" type="application/rss+xml" title="루리의 줍줍" href="/rss.xml">
+<link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="/assets/gm.css?v=20"><link rel="stylesheet" href="/assets/ds.css?v=13"><link rel="stylesheet" href="/assets/print.css?v=1"><script defer src="/assets/print.js?v=1"></script><link rel="stylesheet" href="/assets/community/comm.css?v=15"><script defer src="/assets/community/comm.js?v=28"></script><script defer src="/assets/community/crew.js?v=1"></script><link rel="stylesheet" href="/assets/app/shell.css?v=1"><script defer src="/assets/app/app.js?v=4"></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "루리의 줍줍", "item": "https://sungprofile.cloud/"}, {"@type": "ListItem", "position": 2, "name": "기술 블로그", "item": "https://sungprofile.cloud/dev/"}, {"@type": "ListItem", "position": 3, "name": "본문 속 「근로기준법 제60조」를 국가법령정보센터 조문으로 자동 링크하기 (정규식과 함정 3가지)", "item": "https://sungprofile.cloud/dev/law-article-autolink/"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "본문 속 「근로기준법 제60조」를 국가법령정보센터 조문으로 자동 링크하기 (정규식과 함정 3가지)", "description": "법령명+제N조 언급을 law.go.kr 조문 주소로 바꾸는 파이썬 코드, 이름 없는 조문의 기본 법 처리, 링크 대조 검사, 그리고 「현행」 조회본이 최신 개정을 빠뜨렸던 사례를 정리했어요.", "inLanguage": "ko", "datePublished": "2026-10-20", "dateModified": "2026-10-20", "author": {"@type": "Organization", "name": "루리의 줍줍 편집"}, "publisher": {"@type": "Organization", "name": "루리의 줍줍"}, "mainEntityOfPage": "https://sungprofile.cloud/dev/law-article-autolink/", "keywords": "정적 사이트, 자동화, 데이터"}</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4248498719773262" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G9BPFF95GY"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());if(location.hostname!=='sungprofile.cloud')window['ga-disable-G-G9BPFF95GY']=true;gtag('config','G-G9BPFF95GY');</script>
+</head><body data-th="ai" data-api="https://jupjup-api.sung2011103.workers.dev">
+<header class="hd"><div class="w hd-in"><a class="logo" href="/"><img class="logo-av" src="/assets/ruri/avatar.webp" width="36" height="36" alt="루리의 줍줍"><span>루리의 <b>줍줍</b></span></a><span class="th-name">🧑‍💻 개발 지식</span></div>
+<nav class="th-sw w" aria-label="테마"><a href="/fridge/" style="--tc:#c2410c">🍳 레시피</a><a href="/apply/" style="--tc:#0e7490">🧺 생활</a><a href="/contest/" style="--tc:#6d28d9">🏆 공모전</a><a href="/news/" style="--tc:#b45309">🕵️ 이슈</a><a href="/analyst/" style="--tc:#047857">📊 머니</a><a href="/game/" style="--tc:#4f46e5">🎮 게임</a><a href="/ailog/" style="--tc:#0f172a" class=on>🧑‍💻 개발 지식</a></nav>
+<nav class="tb w" aria-label="개발 지식 메뉴"><a href="/dev/" class=on>기술 블로그</a><a href="/ailog/">개발 지식·제작 로그</a><a href="/dev/faq/">개발 FAQ</a><a href="/en/guide/">English guides</a><a href="/class/">루리의 AI교실</a><a href="/ailog/#log">AI 제작 로그</a></nav></header>
+<main class="w">
+<p class="bc"><a href="/">홈</a> › <a href="/dev/">기술 블로그</a></p><article class="dev" lang="ko"><h1>본문 속 「근로기준법 제60조」를 국가법령정보센터 조문으로 자동 링크하기 (정규식과 함정 3가지)</h1><div class="pdf-bar"><a class="main" data-pdf href="/pdf/dev-law-article-autolink.pdf" download>📄 PDF 다운로드</a><button type="button" data-print>🖨️ 인쇄 · PDF로 저장</button></div><p class="note">작성 2026-10-20 · 읽는 시간 약 6분 · 작성 루리의 줍줍 편집</p><p class="dev-tags"><a href="/dev/tag/static-site/">#정적 사이트</a> <a href="/dev/tag/automation/">#자동화</a> <a href="/dev/tag/data/">#데이터</a></p><p>생활 정보 글에는 「근로기준법 제60조」 같은 조문 언급이 자주 나와요. 독자가 그 조문을 직접 확인할 수 있게 본문 속 조문 언급을 국가법령정보센터의 조문 주소로 자동으로 연결했어요. 이 글은 그 정규식과 함께, 만들면서 부딪친 함정 세 가지를 정리한 기록이에요. 주소 규칙과 숫자는 2026-10-20에 직접 확인한 값이에요.</p>
+
+<h2>문제: 근거를 말로만 적으면 독자가 확인할 수 없다</h2>
+<p>글마다 「공식 출처」 목록은 있었지만, 본문 중간의 「제55조 제1항」 같은 말은 글자일 뿐이었어요. 어느 법의 몇 조인지 눌러서 바로 가 볼 수 있어야 근거가 실제로 확인되는 글이 돼요. 손으로 링크를 달면 글이 늘수록 빠뜨리고 틀려요.</p>
+
+<h2>주소 규칙</h2>
+<p>국가법령정보센터는 <code>https://www.law.go.kr/법령/&lt;법령명&gt;/제N조</code> 형태의 주소를 받아요. 법령명은 공백 없이 쓰고, 가지 조문은 <code>제58조의2</code>처럼 붙여요. 항·호는 주소에 넣지 않고 조까지만 연결했어요(링크를 누르면 조문 전체가 보여요).</p>
+<ul>
+<li>근로기준법 제60조 → <code>…/법령/근로기준법/제60조</code></li>
+<li>근로기준법 시행령 제30조 → <code>…/법령/근로기준법시행령/제30조</code></li>
+<li>정보통신망법은 정식 법령명(정보통신망 이용촉진 및 정보보호 등에 관한 법률)으로 바꿔서 주소를 만들어야 해요.</li>
+</ul>
+
+<h2>해결 코드 (일반화한 버전)</h2>
+<p>빌드할 때 본문 HTML을 한 번 훑어서, 태그가 아닌 글자 조각에서만 「법령명 + 제N조」를 찾아 링크로 바꿔요. 이미 링크(<code>&lt;a&gt;</code>)나 스크립트·스타일 안은 건드리지 않아요.</p>
+<pre><code>import re
+ALIAS = {'근로기준법 시행령': '근로기준법 시행령', '근로기준법': '근로기준법', '민법': '민법',
+         '정보통신망법': '정보통신망 이용촉진 및 정보보호 등에 관한 법률'}  # 줄임말 → 정식 이름
+NAME = '|'.join(re.escape(k) for k in sorted(ALIAS, key=len, reverse=True))
+RE = re.compile(r'(' + NAME + r'|시행령|법)?(\s*)(제\d+조(?:의\d+)?)')
+
+def linkify(html, default=None):
+    out, depth = [], 0
+    for tok in re.split(r'(&lt;[^&gt;]+&gt;)', html):
+        if tok.startswith('&lt;'):
+            if re.match(r'&lt;(a|script|style)\b', tok, re.I): depth += 1
+            elif re.match(r'&lt;/(a|script|style)\b', tok, re.I): depth = max(0, depth - 1)
+            out.append(tok); continue
+        if depth: out.append(tok); continue
+        def rep(m):
+            nm, sp, art = m.groups()
+            law = ALIAS.get(nm) or (default if not nm or nm in ('법', '시행령') else None)
+            if not law: return m.group(0)          # 법령명을 모르면 연결하지 않는다
+            if nm == '시행령': law += ' 시행령'
+            url = 'https://www.law.go.kr/법령/' + law.replace(' ', '') + '/' + art
+            return f'&lt;a href="{url}" target="_blank" rel="noopener"&gt;{(nm or "") + sp + art}&lt;/a&gt;'
+        out.append(RE.sub(rep, tok))
+    return ''.join(out)</code></pre>
+
+<h2>함정 1: 이름 없는 「제N조」는 어느 법인가</h2>
+<p>한 가지 법만 다루는 글(예: 근로기준법만 이야기하는 글)에서는 「제55조」가 그 법이 맞지만, 여러 법을 섞은 글에서는 틀린 법으로 연결될 위험이 있어요. 그래서 이름 없는 조문은 <b>글마다 정해 둔 기본 법</b>이 있을 때만 연결하고, 여러 법이 섞인 글은 문장마다 법령명을 직접 쓰도록 본문을 고쳤어요. 연결이 되는 것보다 <b>틀린 곳으로 연결되지 않는 것</b>이 더 중요해요.</p>
+
+<h2>함정 2: 링크가 맞는지 기계로 대조하기</h2>
+<p>생성된 링크의 글자(법령명)와 주소 속 법령명이 서로 일치하는지 빌드 결과물 전체에서 대조하는 스크립트를 따로 만들었어요. 151개 조문 링크에서 어긋난 것은 없었어요. 검사 코드 자체가 법 이름 속의 「제」 자를 잘못 읽어 5건을 거짓 경보로 띄운 적이 있어서, 경보가 나오면 코드와 대상 둘 다 의심해야 한다는 걸 같이 배웠어요.</p>
+
+<h2>함정 3: 「현행」 조회본이 최신 개정을 빠뜨린 경우</h2>
+<p>이 일을 하면서 조문 원문을 직접 읽어 사실을 확인하는 과정이 있었어요. 국가법령정보센터의 화면은 자바스크립트로 그려져서 일반 가져오기 도구로는 본문이 안 읽혀요. 대신 공개 조회 API(공개 테스트용 OC 값으로 XML 조회가 됐어요. 안정적으로 쓰려면 본인 인증키를 신청해 쓰는 게 맞아요)로 읽었어요.</p>
+<p>그런데 증권거래세법 시행령의 「현행」 조회본 제5조에는 2026년 세율 인상이 반영돼 있지 않았어요. 연혁 목록을 따로 조회해 보니 2025-12-31 공포·2026-01-01 시행 개정본이 별도 일련번호로 있었고, 그 번호로 조회하면 개정 세율이 나왔어요. 「현행」 표시를 곧이곧대로 믿었다면 정확한 글을 틀렸다고 고칠 뻔했어요.</p>
+
+<h2>교훈</h2>
+<ul>
+<li>링크는 자동화해도 <b>대조는 따로 자동화</b>해야 해요. 연결 코드와 검사 코드를 분리하면 서로의 오류를 잡아 줘요.</li>
+<li>모를 때는 연결하지 않는 쪽으로 설계하세요. 틀린 근거 링크는 근거가 없는 것보다 나빠요.</li>
+<li>법령 조회본은 시행일과 일련번호를 확인하세요. 「현행」이 늘 최신 개정을 포함한다고 가정하면 안 돼요.</li>
+</ul>
+<section lang="en" class="dev-en"><h2>English summary</h2><p>How a static-site build step turns mentions like &quot;Labor Standards Act Article 60&quot; into links to the exact article on law.go.kr (URL pattern /법령/&lt;law name without spaces&gt;/제N조), with a Python regex that skips existing links and scripts and refuses to link when the law name is unknown. A separate check compares every generated link text with its URL (151 links, no mismatches), and one trap is documented: the default &quot;current&quot; version of a statute omitted a promulgated amendment that appeared only under its own version ID.</p></section><h2>관련 글</h2><ul class="dev-ls"><li><a href="/dev/search-index-cleanup/"><b>1인+AI로 사이트 만들며 배운 것: 페이지 줄이고 검색 색인 정리하기</b><span>사람 한 명과 Claude Code로 만든 정보 사이트에서 이틀 동안 페이지 3,744개를 863개 수준으로 줄이고 얇은 페이지를 데이터 화면으로 합친 기록과 규칙.</span></a></li><li><a href="/dev/issue-impact-market-pipeline/"><b>뉴스 이슈에 「내 생활 영향」과 실제 시세를 붙이는 법 — 규칙표·FRED·SVG로 지어내지 않기</b><span>영향 규칙표 10개로 이슈 60개 중 7개에 생활 영향 카드를 붙이고, FRED·업비트 공개 시세 6개(1.6초)로 전문가 발언 뒤 7일·30일 등락을 사후 확인하는 정적 사이트 파이프라인.</span></a></li><li><a href="/dev/wmic-windows11-replacement/"><b>윈도우 11에서 wmic가 사라져 예약 작업이 조용히 멈춘 이야기 (파이썬 대체 코드)</b><span>윈도우 11에 wmic가 없어 파이썬 예약 작업이 FileNotFoundError 로 조용히 실패한 원인과, Get-CimInstance·psutil 대체 코드, 점검 실패 시 멈추게 하는 법.</span></a></li></ul><p class="dev-hub"><a href="/dev/">← 기술 블로그 홈</a> · <a href="/ailog/">사이트 제작 로그</a> · <a href="/dev/rss.xml">RSS</a></p><h2>출처</h2><ul><li><a href="https://www.law.go.kr" rel="nofollow noopener" target="_blank">국가법령정보센터</a> — 확인 2026-10-20</li></ul><p class="dev-hub">관련: <a href="/ailog/">개발 지식 전체</a></p><p class="dev-hub">이 글에 대해 묻고 싶으면 <a href="/dev/faq/">❓ 개발 FAQ</a>에 남겨 주세요.</p><div class="shr" data-t="본문 속 「근로기준법 제60조」를 국가법령정보센터 조문으로 자동 링크하기 (정규식과 함정 3가지)" data-x="법령명+제N조 언급을 law.go.kr 조문 주소로 바꾸는 파이썬 코드, 이름 없는 조문의 기본 법 처리, 링크 대조 검사, 그리고 「현행」 조회본이 최신 개정을 빠뜨렸던 사례를 정리했어요." data-k="476ea22a69da8f2902a540eef533b5f9"><b>📤 공유</b><button data-s="native">공유하기</button><button data-s="kakao">카카오톡</button><button data-s="copy">🔗 링크 복사</button><button data-s="nblog">네이버 블로그</button><button data-s="band">밴드</button><button data-s="x">X</button><button data-s="fb">Facebook</button></div><script defer src="/assets/share.js?v=2"></script></article><link rel="stylesheet" href="/assets/mag/mag.css?v=10"><style>.dev table{width:100%;border-collapse:collapse;margin:12px 0;font-size:.92em;display:block;overflow-x:auto}.dev th,.dev td{border:1px solid #e5e7eb;padding:6px 8px;text-align:left;vertical-align:top}.dev pre{background:#0f172a;color:#e2e8f0;padding:12px;border-radius:8px;overflow-x:auto;font-size:.85em}.dev code{font-size:.92em}.dev dt{font-weight:700;margin-top:10px}.dev dd{margin:4px 0 0 0}.dev-ls{list-style:none;padding:0}.dev-ls li{margin:8px 0}.dev-ls a{display:block;padding:12px;border:1px solid #e5e7eb;border-radius:10px;text-decoration:none;color:inherit}.dev-ls span{display:block;font-size:.88em;color:#64748b;margin-top:4px}</style><script defer src="/assets/dev/dev.js?v=1"></script>
+</main>
+<footer class="ft"><div class="w ft-in"><div class="ft-b"><img class="av" src="/assets/ruri/avatar.webp" width="56" height="56" alt="루리" loading="lazy"><div><b>루리의 줍줍</b><p>오늘 뭐 먹지부터 지원금·공모전·이슈까지, 일단 줍고 가세요.</p><p class="ft-m">문의 <a href="mailto:sung2011103@naver.com">sung2011103@naver.com</a></p></div></div>
+<nav class="ft-g" aria-label="사이트 메뉴"><div><b>🍳 생활</b><a href="/fridge/">냉장고 파먹기</a><a href="/event/">경품·용돈</a><a href="/qa/">고민 해결</a><a href="/plaza/">광장</a></div>
+<div><b>💰 지원금·머니</b><a href="/apply/">지원금·청약</a><a href="/money/tools/salary/">계산기</a><a href="/money/experts/">전문가 말 vs 시세</a><a href="/analyst/">애널리스트</a></div>
+<div><b>🏆 공모전</b><a href="/contest/">공모전 찾기</a><a href="/prep/">준비실</a><a href="/guide/">응모 가이드</a><a href="/lab/">수상 연구소</a></div>
+<div><b>📺 이슈</b><a href="/news/">루리 뉴스</a><a href="/trend/">이슈 트렌드</a><a href="/hot/">핫이슈</a><a href="/kw/">인기 키워드</a></div>
+<div><b>ℹ️ 사이트</b><a href="/about/">소개</a><a href="/ailog/">개발 지식</a><a href="/app/">앱·알림</a><a href="/all/">전체 메뉴</a></div></nav>
+<p class="ft-c"><a class="cl-b" href="https://open.kakao.com/o/gzd9B9Si" target="_blank" rel="noopener">💬 루리 톡방 들어가기</a><a class="cl-b" href="https://band.us/band/104846162" target="_blank" rel="noopener" style="background:#06c755;color:#ffffff">👥 루리 밴드 함께하기</a><a class="cl-b" href="http://pf.kakao.com/_wxhimX/friend" target="_blank" rel="noopener" style="background:#FEE500;color:#191919;box-shadow:inset 0 0 0 2px #191919">💬 루리 채널 추가하기</a><a class="cl-b" href="https://www.youtube.com/channel/UCdJQUqqrHHXC7mWstly2eXw" target="_blank" rel="noopener" style="background:#FF0000;color:#ffffff">▶️ 루리 뉴스 유튜브</a></p><p class="ft-l"><a href="/privacy/">개인정보처리방침</a><a href="/terms/">이용약관</a><a href="/contact/">문의</a></p>
+<p class="ft-n">정보는 각 기관의 공고·언론 보도·공개 자료를 바탕으로 정리했어요. 정확한 내용은 반드시 공식 공고와 원문에서 확인하세요. 일부 링크는 쿠팡 파트너스 활동의 일환으로 수수료를 받을 수 있어요. © 2026 루리의 줍줍 · sungprofile.cloud</p></div></footer><style>.ft-c{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}.cl-b{display:inline-flex;align-items:center;min-height:40px;padding:6px 14px;border-radius:999px;background:#fee500;color:#191919;font-weight:700;text-decoration:none;font-size:14px}.cl-ban{display:flex;align-items:center;gap:6px;margin:8px 0;padding:10px 14px;border-radius:12px;background:#fff9c4;border:1px solid #fde047;color:#422006;font-weight:700;text-decoration:none;font-size:14px}</style>
+</body></html>
