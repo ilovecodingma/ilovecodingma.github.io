@@ -73,7 +73,7 @@ THEMES = [  # (키, 이름, 아이콘, 테마색, 홈, [하위 메뉴], [이 테
     ('recipe', '레시피', '🍳', '#c2410c', '/fridge/', [('/fridge/', '냉장고 파먹기'), ('/fridge/solo/', '자취 요리'), ('/fridge/weather/', '날씨별'), ('/fridge/c/guk/', '국·찌개'), ('/fridge/c/bap/', '밥'), ('/fridge/c/myeon/', '면'), ('/fridge/c/bokkeum/', '볶음'), ('/fridge/c/jorim/', '조림·찜'), ('/fridge/c/banchan/', '반찬'), ('/fridge/c/jeon/', '전')], ['/fridge/']),   # 2026-10-20 사용자: 레시피 유입이 많아 별도 카테고리로
     ('life', '생활', '🧺', '#0e7490', '/apply/', [('/apply/', '지원금·청약'), ('/apply/recommend/', '청약 추천'), ('/apply/r/', '지역별'), ('/event/', '경품'), ('/qa/', '고민 해결'), ('/plaza/', '광장')], ['/apply/', '/a/', '/event/', '/qa/', '/ssul/', '/plaza/']),
     ('game', '게임', '🎮', '#4f46e5', '/game/', [('/game/', '게임 허브'), ('/game/free/', '무료 게임 기록'), ('/game/release/', '출시 일정'), ('/game/steam-sale/', '세일 달력'), ('/game/refund/', '환불 규정'), ('/game/#timing', '살 타이밍'), ('/game/#contest', '게임 공모전')], ['/game/']),   # 2026-10-20 홍보 세션 기획서: 게임·취미·개발 커뮤니티 콘텐츠
-    ('ai', '개발 지식', '🧑‍💻', '#0f172a', '/ailog/', [('/ailog/', '개발 지식'), ('/dev/faq/', '개발 FAQ'), ('/en/guide/', 'English guides'), ('/ailog/#log', 'AI 제작 로그')], ['/ailog/', '/dev/', '/en/'])]   # 2026-10-19 사용자: AI 로그 → 개발 지식으로 개편
+    ('ai', '개발 지식', '🧑‍💻', '#0f172a', '/ailog/', [('/ailog/', '개발 지식'), ('/dev/faq/', '개발 FAQ'), ('/en/guide/', 'English guides'), ('/class/', '루리의 AI교실'), ('/ailog/#log', 'AI 제작 로그')], ['/ailog/', '/dev/', '/en/', '/class/'])]   # 2026-10-19 사용자: AI 로그 → 개발 지식으로 개편
 
 
 # 2026-10-19 사용자 「소비 쪽으로 가중치, URL 그대로 메인만」: 테마 줄 순서만 생활 먼저 (주소·테마 소속은 그대로)
@@ -1433,7 +1433,7 @@ def build():
     fr_urls = fridge_page()
     app_page()
     news_page()
-    extra_urls = talk_pages() + trend_pages() + game_pages(live) + game_extra_pages() + kin_guides() + kin_answer_pages() + mag_pages(live, aps) + analyst_pages() + satire_pages() + kw_pages() + money_pages() + apply_rec_page() + tool_pages() + hot_pages()
+    extra_urls = talk_pages() + trend_pages() + game_pages(live) + game_extra_pages() + kin_guides() + class_pages() + kin_answer_pages() + mag_pages(live, aps) + analyst_pages() + satire_pages() + kw_pages() + money_pages() + apply_rec_page() + tool_pages() + hot_pages()
     import widget
     extra_urls += widget.build(ROOT, live, aps, hot_live()[0], page, say, COMM_API, TODAY)  # 퍼가기 위젯 (2026-10-18 연구 세션 요청)
     extra_urls += region_pages(aps) + contest_hubs(live) + week_hub(live) + cross_pages(aps) + apply_hubs(aps)
@@ -1993,6 +1993,74 @@ def kin_guides():
          f'<ul class="list">{cards}</ul>' + kin_ans_links('/money/guide/') + f'<h2>계산기</h2><ul class="list">{tools}</ul>' + join_cta('apply') + GAME_CSS,
          [('루리의 줍줍', '/'), ('머니', '/analyst/'), ('생활 돈 가이드', '/money/guide/')])
     urls.append('/money/guide/')
+    return urls
+
+
+CLASS_SRC = r'C:\Users\k\Desktop\공모전_2026\유튜브_롱폼\ai_lec\class_lectures.json'
+CLASS_F = os.path.join(HERE, 'class_lectures.json')
+
+
+def class_pages():
+    """/class/ 루리의 AI교실 (2026-10-20 연구 세션): 강의 10편 데이터는 class_lectures.json(원본 공모전_2026\유튜브_롱폼\ai_lec). youtube 가 null 이면 「공개 준비 중」, 채워지면 퍼가기."""
+    try:
+        if os.path.exists(CLASS_SRC) and (not os.path.exists(CLASS_F) or os.path.getmtime(CLASS_SRC) > os.path.getmtime(CLASS_F)):
+            shutil.copyfile(CLASS_SRC, CLASS_F)
+    except Exception:
+        pass
+    if not os.path.exists(CLASS_F):
+        return []
+    D = json.load(open(CLASS_F, encoding='utf-8'))
+    L = D['lectures']
+    urls = []
+    NOTE = ('<div class="cl-note"><b>안내</b> 영상의 목소리와 캐릭터(루리)는 AI로 만들었어요. 영상 속 채팅 화면은 <b>AI 응답 예시</b>이고, 엑셀 화면은 실제 엑셀을 캡처한 거예요. '
+            'AI 답은 틀릴 수 있으니 숫자·날짜·법령은 꼭 직접 확인하세요.</div>')
+    CSS = ('<style>.cl-note{padding:10px 12px;border:1px solid var(--bd,#e5e7eb);border-radius:12px;background:var(--card,#fff);margin:10px 0;font-size:13.5px;line-height:1.7}'
+           '.cl-vid{position:relative;padding-top:56.25%;border-radius:12px;overflow:hidden;background:#0f172a;margin:10px 0}.cl-vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}'
+           '.cl-soon{padding:28px 12px;text-align:center;border:1px dashed var(--bd,#d1d5db);border-radius:12px;color:var(--mu,#6b7280);margin:10px 0}'
+           '.cl-pr{position:relative;margin:8px 0}.cl-pr pre{white-space:pre-wrap;word-break:break-word;margin:0;padding:12px 12px 12px;border:1px solid var(--bd,#e5e7eb);border-radius:10px;background:var(--card,#fff);font:inherit;font-size:14px;line-height:1.7}'
+           '.cl-cp{margin:6px 0 0;min-height:40px;padding:0 14px;border:1px solid var(--bd,#d1d5db);border-radius:8px;background:transparent;color:inherit;font:inherit;cursor:pointer}'
+           '.cl-ck{list-style:none;padding:0;margin:6px 0}.cl-ck li{margin:4px 0}.cl-ck label{display:flex;gap:8px;align-items:flex-start;min-height:36px;line-height:1.6}.cl-ck input{margin-top:5px;width:18px;height:18px}'
+           '.cl-bar{height:8px;border-radius:99px;background:var(--bd,#e5e7eb);overflow:hidden;margin:6px 0}.cl-bar i{display:block;height:100%;width:0;background:#4f46e5}'
+           '.cl-paid{padding:12px;border:1px dashed var(--bd,#d1d5db);border-radius:12px;color:var(--mu,#6b7280);margin:14px 0;font-size:13.5px}.cl-st{font-size:12.5px;color:var(--mu,#6b7280)}</style>')
+    cards = ''
+    for i, l in enumerate(L):
+        n, slug = l['n'], l['slug']
+        p = f'/class/{n:02d}-{slug}/'
+        yt = l.get('youtube')
+        vid = ''
+        if yt:
+            m = re.search(r'(?:v=|youtu\.be/|embed/)([\w-]{11})', yt)
+            vid = (f'<div class="cl-vid"><iframe src="https://www.youtube-nocookie.com/embed/{m.group(1)}" title="{E(l["title"])}" loading="lazy" allowfullscreen></iframe></div>' if m
+                   else f'<p><a href="{E(yt)}" target="_blank" rel="noopener">▶ 유튜브에서 보기</a></p>')
+        else:
+            vid = '<div class="cl-soon">🎬 영상 공개 준비 중이에요. 아래 프롬프트와 체크리스트는 지금 바로 쓸 수 있어요.</div>'
+        goals = ''.join(f'<li>{E(x)}</li>' for x in l['goals'])
+        demos = ''.join(f'<h3>실습 {k + 1}. {E(d["name"])}</h3><div class="cl-pr"><pre>{E(d["prompt"])}</pre><button type="button" class="cl-cp">📋 프롬프트 복사</button></div>' for k, d in enumerate(l['demos']))
+        pit = ''.join(f'<li>{E(x)}</li>' for x in l['pitfalls'])
+        rec = ''.join(f'<li><label><input type="checkbox" data-k="r{k}"> {E(x)}</label></li>' for k, x in enumerate(l['recap']))
+        asg = ''.join(f'<li><label><input type="checkbox" data-k="a{k}"> {E(x)}</label></li>' for k, x in enumerate(l['assignment']))
+        prev = f'<a href="/class/{L[i - 1]["n"]:02d}-{L[i - 1]["slug"]}/">← {E(L[i - 1]["title"])}</a>' if i else ''
+        nxt = f'<a href="/class/{L[i + 1]["n"]:02d}-{L[i + 1]["slug"]}/">{E(L[i + 1]["title"])} →</a>' if i + 1 < len(L) else ''
+        body = (f'<p class="bc"><a href="/">홈</a> › <a href="/class/">루리의 AI교실</a> › {n}강</p><h1>🎓 {n}강. {E(l["title"])}</h1>'
+                f'<p class="cat-st">📌 {E(l["topic"])}</p><div data-cl="{n}">' + vid + NOTE
+                + f'<h2>이번 강의 목표</h2><ul class="gm-l">{goals}</ul><h2>따라 해 보기</h2><p class="kwn">복사해서 쓰는 AI 도구에 붙여 넣고, 대괄호나 내 상황에 맞게 바꿔 보세요.</p>{demos}'
+                f'<h2>조심할 점</h2><ul class="gm-l">{pit}</ul><h2>정리 체크리스트</h2><ul class="cl-ck">{rec}</ul><h2>과제</h2><ul class="cl-ck">{asg}</ul>'
+                f'<p class="cl-st" data-st></p></div>'
+                f'<div class="cl-paid" data-paid="{n}">🔒 추가 자료 자리 — 실습 파일·템플릿 같은 추가 자료는 준비되면 여기에 안내할게요.</div>'
+                f'<p class="hm-links">{prev} {"·" if prev and nxt else ""} {nxt} · <a href="/class/">전체 강의</a></p>' + join_cta('ai') + CSS
+                + '<script defer src="/assets/class/class.js?v=1"></script>')
+        page(p, f'{n}강. {l["title"]} — 루리의 AI교실', f'{l["topic"]}. 복사해서 바로 쓰는 프롬프트와 체크리스트로 따라 하는 {n}강.', body,
+             [('루리의 줍줍', '/'), ('루리의 AI교실', '/class/'), (f'{n}강', p)])
+        urls.append(p)
+        cards += (f'<li><a class="card" data-c="guide" href="{p}"><span class="ic">{"🎬" if yt else "📝"}</span><div class="cb"><h3 class="t">{n}강. {E(l["title"])}</h3>'
+                  f'<p class="o">{E(l["topic"])} · {"영상 공개" if yt else "영상 준비 중"} <span class="cl-st" data-idx="{n}"></span></p></div></a></li>')
+    idx = (f'<p class="bc"><a href="/">홈</a> › 루리의 AI교실</p><h1>🎓 루리의 AI교실</h1>'
+           f'<p class="cat-st">📌 AI에게 일 시키는 법부터 엑셀·이메일·회의록·PPT까지, 복사해서 바로 써 보는 10강이에요. 영상이 없는 강의도 프롬프트와 체크리스트는 지금 볼 수 있어요.</p>' + NOTE
+           + '<div class="cl-bar"><i data-bar></i></div><p class="cl-st" data-all></p>'
+           + f'<ul class="list">{cards}</ul>' + join_cta('ai') + CSS + '<script defer src="/assets/class/class.js?v=1"></script>')
+    page('/class/', '루리의 AI교실 — 프롬프트 기본부터 엑셀·이메일·PPT까지 10강', '프롬프트 복사 버튼과 체크리스트로 따라 하는 AI 활용 10강. 엑셀 수식, 매크로, 업무 이메일, 회의록, PPT, 문서 요약.', idx,
+         [('루리의 줍줍', '/'), ('루리의 AI교실', '/class/')])
+    urls.append('/class/')
     return urls
 
 
