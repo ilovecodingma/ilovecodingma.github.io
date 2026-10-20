@@ -3618,6 +3618,7 @@ TOOL_SRC = {  # 기준일·출처 (2026-10-18 확인, 2026-10-20 조문·원문 
  'stocktax': '<a href="https://www.law.go.kr/법령/증권거래세법시행령/제5조" target="_blank" rel="noopener">증권거래세법 시행령 제5조</a>(2026.1.1 시행 개정 세율)',
  'pension': '<a href="https://www.law.go.kr/법령/소득세법/제59조의3" target="_blank" rel="noopener">소득세법 제59조의3</a>(연금계좌세액공제)',
  'loan': '원리금 계산 공식(금리는 직접 입력)', 'fx': '은행 환전 수수료 공식(환율은 직접 입력)'}
+TOOL_DATE = {'unemployment': '2026-10-21', 'stocktax': '2026-10-21', 'dividend': '2026-10-21'}   # 조문·고시 원문을 실제로 대조한 계산기만 날짜를 올림(2026-10-21)
 TOOL_FAQ = {
  'salary': [('연봉 4,000만원이면 월 실수령액은 얼마인가요?', '비과세 식대 월 20만원, 본인 1명 기준으로 4대보험과 소득세를 빼면 한 달 약 292만원이에요. 부양가족이 많으면 소득세가 줄어 조금 더 받아요.'),
             ('2026년에 실수령액이 줄어든 이유는?', '국민연금 보험료율이 9%에서 9.5%로, 건강보험료율이 7.09%에서 7.19%로 올라 같은 연봉이라도 공제액이 늘었어요.'),
@@ -3801,7 +3802,7 @@ def tool_pages():
         ld = {'@context': 'https://schema.org', '@graph': [{'@type': 'WebApplication', 'name': tt, 'url': f'{SITE}/money/tools/{k}/', 'applicationCategory': 'FinanceApplication', 'operatingSystem': 'Any', 'inLanguage': 'ko', 'offers': {'@type': 'Offer', 'price': '0', 'priceCurrency': 'KRW'}, 'description': d}]
               + ([{'@type': 'FAQPage', 'mainEntity': [{'@type': 'Question', 'name': q, 'acceptedAnswer': {'@type': 'Answer', 'text': a}} for q, a in fq]}] if fq else [])}
         extra = (('<h2>자주 묻는 질문</h2>' + ''.join(f'<details class="faq"><summary>{E(q)}</summary><p>{E(a)}</p></details>' for q, a in fq)) if fq else '') \
-            + f'<p class="note">기준일 2026-10-18 · 출처: {TOOL_SRC.get(k, "")}. 참고용 계산이에요. 실제 금액은 해당 기관 안내로 확인하세요.</p>' + rel_block(*TOOL_REL.get(k, ('', [])))
+            + f'<p class="note">기준일 {TOOL_DATE.get(k, "2026-10-18")} · 출처: {TOOL_SRC.get(k, "")}. 참고용 계산이에요. 실제 금액은 해당 기관 안내로 확인하세요.</p>' + rel_block(*TOOL_REL.get(k, ('', [])))
         page(f'/money/tools/{k}/', tt, d,
              f'<p class="bc"><a href="/">홈</a> › <a href="/analyst/">머니</a> › {E(n)}</p><h1>🧮 {E(tt)}</h1><p>{E(d)}</p>'
              f'<section id="mtool" data-tool="{k}"><noscript>자바스크립트가 필요해요.</noscript></section>{TOOL_HELP.get(k, '')}{extra}<p class="hm-links">{others}<a href="/money/policy/">🏛️ 근거: 투자 정책 정리</a></p>'
