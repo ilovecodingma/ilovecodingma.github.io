@@ -35,42 +35,45 @@
       if (kind === 'webtoon') { if (st.mode === 'ongoing' && it.fin) return; if (st.mode === 'finished' && !it.fin) return; if (st.mode === 'ongoing' && it.days && !it.days.length && !it.fin) return; }
       else { if (st.mode === 'tv' && !(it.fmt === 'TV' || it.fmt === 'ONA')) return; if (st.mode === 'movie' && it.fmt !== 'MOVIE') return; if (st.mode === 'short' && !(it.fmt === 'TV_SHORT' || (it.ep && it.ep <= 13))) return; }
       var sc = 0, why = [];
-      var gm = st.g.filter(function (g) { return it.tags.indexOf(g) >= 0; }); if (gm.length) { sc += 3 * gm.length; why.push(gm.slice(0, 2).map(gl).join('·') + ' 취향'); } else if (st.g.length) sc -= 1.5;
+      var al = (cfg.alias || {}), has = function (g) { var L = al[g] || [g]; return it.tags.some(function (t) { return L.indexOf(t) >= 0; }); };
+      var gm = st.g.filter(has);
+      if (st.g.length && !gm.length) return;                       // 고른 장르가 하나도 안 맞는 작품은 아예 뺀다
+      if (gm.length) { sc += 4 * gm.length; if ((al[gm[0]] || [gm[0]]).indexOf(it.tags[0]) >= 0 || st.g.some(function (g) { return (al[g] || [g]).indexOf(it.tags[0]) >= 0; })) sc += 2; why.push(gm.slice(0, 2).map(gl).join('·') + ' 장르'); }
+      if (mood && !st.g.length) { var ok0 = (mood.names || []).some(function (g) { return it.tags.indexOf(g) >= 0; }); if (!ok0) return; }
       if (mood) { var nm = (mood.names || []).filter(function (g) { return it.tags.indexOf(g) >= 0; }), km = (mood.kw || []).filter(function (w) { return it.kw.indexOf(w) >= 0; }); if (nm.length || km.length) { sc += 2 * nm.length + 1.6 * km.length; why.push(mood.why || mood.label); } }
       var best = null, bs = 0; liked.forEach(function (l) { var j = jac(it.set, l.set) * 5; if (l.rec && l.rec.some(function (r) { return r[0] === it.id; })) j += 4; if (it.rec && it.rec.some(function (r) { return r[0] === l.id; })) j += 3; if (j > bs) { bs = j; best = l; } });
       if (bs > 0.9) { sc += bs; why.push('「' + best.t.slice(0, 14) + '」 좋아했다면'); }
       if (kind === 'webtoon') { sc += Math.max(0, (it.sc - 8.8)) * 3 + Math.log(1 + it.fav) / 9; if (it.sc >= 9.8) why.push('별점 ' + it.sc.toFixed(1)); }
       else { sc += (it.sc || 60) / 100 * 2.2 + Math.log(1 + it.pop) / 7; if (it.sc >= 80) why.push('평점 ' + it.sc); }
       var v = VOTES[it.id]; if (v) sc += Math.min(1.2, v[0] * .3) - Math.min(2, v[1] * .5);
-      sc += ((it.id * 2654435761 + salt) % 1000) / 1000 * 1.1;
+      sc += ((it.id * 2654435761 + salt) % 1000) / 1000 * (st.g.length || !st.seen.length ? 3.2 : 1.1);
       out.push({ it: it, sc: sc, why: why.slice(0, 3) });
     });
     out.sort(function (a, b) { return b.sc - a.sc; });
-    var pick = [], cnt = {}; out.forEach(function (x) { var g = (x.it.tags[0] || '?'); if (pick.length < 6 && (cnt[g] || 0) < 3) { pick.push(x); cnt[g] = (cnt[g] || 0) + 1; } });
+    var pick = [], cnt = {}; out.forEach(function (x) { var g = (x.it.tags[0] || '?'); if (pick.length < 6 && (cnt[g] || 0) < (st.g.length ? 4 : 3)) { pick.push(x); cnt[g] = (cnt[g] || 0) + 1; } });
     return { top: pick, all: out };
   }
 
-  // ── 화면 ──
-  var step = 0, salt = 0, offset = 0;
+  // ── 화면: 장르만 누르면 바로 「오늘의 추천」 ──
+  var dayN = Math.floor(Date.now() / 864e5), salt = dayN * 7919, adv = false;
   function tabs() { return '<div class="wt-tabs" role="tablist"><button type="button" data-k="webtoon" class="' + (kind === 'webtoon' ? 'on' : '') + '">📖 웹툰</button><button type="button" data-k="anime" class="' + (kind === 'anime' ? 'on' : '') + '">🎬 애니</button></div>'; }
   function render() {
     load(kind).then(function () {
       var st = S(), cfg = cfgOf();
-      ROOT.innerHTML = tabs() + (st.done ? results(st) : survey(st, cfg)) + statsBox();
+      ROOT.innerHTML = tabs() + genreBar(st, cfg) + results(st) + statsBox();
       wire(st); fetchStats();
     });
   }
-  var Q = function () { return [['g', '좋아하는 장르를 골라 주세요', '최대 4개', 'multi'], ['mood', '지금 어떤 이야기가 보고 싶어요?', '한 가지', 'one'], ['mode', kind === 'webtoon' ? '어떻게 보고 싶어요?' : '어떤 길이가 좋아요?', '한 가지', 'one'], ['seen', '재밌게 본 작품이 있다면 골라 주세요', '선택 · 최대 5개 · 비슷한 작품을 찾아 드려요', 'seen']]; };
-  function survey(st, cfg) {
-    var q = Q()[step], dots = Q().map(function (_, i) { return '<i class="' + (i <= step ? 'on' : '') + '"></i>'; }).join('');
-    var body = '';
-    if (q[0] === 'g') body = '<div class="wt-opts">' + cfg.genres.map(function (g) { return '<button type="button" class="wt-o' + (st.g.indexOf(g[0]) >= 0 ? ' on' : '') + '" data-v="' + esc(g[0]) + '">' + esc(g[1] || g[0]) + '</button>'; }).join('') + '</div>';
-    else if (q[0] === 'mood') body = '<div class="wt-opts big">' + cfg.moods.map(function (m) { return '<button type="button" class="wt-o' + (st.mood === m.k ? ' on' : '') + '" data-v="' + m.k + '"><span>' + m.e + '</span>' + esc(m.label) + '</button>'; }).join('') + '</div>';
-    else if (q[0] === 'mode') body = '<div class="wt-opts big">' + cfg.modes.map(function (m) { return '<button type="button" class="wt-o' + (st.mode === m.k ? ' on' : '') + '" data-v="' + m.k + '"><span>' + m.e + '</span>' + esc(m.label) + '</button>'; }).join('') + '</div>';
-    else body = '<input class="wt-search" type="search" placeholder="작품 이름을 입력해 보세요" aria-label="작품 검색"><div class="wt-sres"></div><div class="wt-picked">' + st.seen.map(function (i) { var it = DATA[kind].by[i]; return it ? '<span class="wt-pk" data-i="' + i + '">' + esc(it.t.slice(0, 16)) + ' ✕</span>' : ''; }).join('') + '</div>';
-    return '<section class="wt-card"><div class="wt-prog">' + dots + '</div><p class="wt-q"><small>' + (step + 1) + '/' + Q().length + ' · ' + esc(q[2]) + '</small>' + esc(q[1]) + '</p>' + body
-      + '<div class="wt-nav">' + (step ? '<button type="button" class="wt-prev">← 이전</button>' : '<span></span>') + '<button type="button" class="wt-next">' + (step === Q().length - 1 ? '추천 받기 ✨' : '다음 →') + '</button></div>'
-      + '<p class="wt-skip"><a href="#" class="wt-skipall">설문 건너뛰고 인기작 보기</a></p></section>';
+  function genreBar(st, cfg) {
+    var g = '<div class="wt-opts"><button type="button" class="wt-o wt-all' + (!st.g.length ? ' on' : '') + '">🔥 전체 인기</button>' + cfg.genres.map(function (x) { return '<button type="button" class="wt-o wt-g' + (st.g.indexOf(x[0]) >= 0 ? ' on' : '') + '" data-v="' + esc(x[0]) + '">' + esc(x[1] || x[0]) + '</button>'; }).join('') + '</div>';
+    var more = '<div class="wt-adv"><button type="button" class="wt-advb">🎛 ' + (adv ? '접기' : '더 정확하게 (기분 · 길이 · 본 작품)') + '</button>';
+    if (adv) {
+      more += '<p class="wt-l">지금 기분</p><div class="wt-opts">' + cfg.moods.map(function (m) { return '<button type="button" class="wt-o wt-m' + (st.mood === m.k ? ' on' : '') + '" data-v="' + m.k + '">' + m.e + ' ' + esc(m.label) + '</button>'; }).join('') + '</div>'
+        + '<p class="wt-l">' + (kind === 'webtoon' ? '보는 방식' : '길이') + '</p><div class="wt-opts">' + cfg.modes.map(function (m) { return '<button type="button" class="wt-o wt-mo' + ((st.mode || 'any') === m.k ? ' on' : '') + '" data-v="' + m.k + '">' + m.e + ' ' + esc(m.label) + '</button>'; }).join('') + '</div>'
+        + '<p class="wt-l">재밌게 본 작품 <small>(비슷한 작품을 찾아 드려요 · 최대 5개)</small></p><input class="wt-search" type="search" placeholder="작품 이름을 입력해 보세요" aria-label="작품 검색"><div class="wt-sres"></div><div class="wt-picked">' + st.seen.map(function (i) { var it = DATA[kind].by[i]; return it ? '<span class="wt-pk" data-i="' + i + '">' + esc(it.t.slice(0, 16)) + ' ✕</span>' : ''; }).join('') + '</div>';
+    }
+    more += '</div>';
+    return '<section class="wt-card"><p class="wt-q"><small>장르를 고르면 오늘의 추천이 바로 나와요 · 최대 3개</small>어떤 ' + (kind === 'webtoon' ? '웹툰' : '애니') + '이 보고 싶어요?</p>' + g + more + '</section>';
   }
   function card(x, st, i) {
     var it = x.it, meta = kind === 'webtoon' ? (it.fin ? '완결' : (it.days.join('·') ? it.days.join('·') + ' 연재' : '연재 중')) + ' · ' + (it.age === 'RATE_15' ? '15세' : it.age === 'RATE_12' ? '12세' : it.age === 'RATE_18' ? '18세' : '전체') + (it.sc ? ' · ★' + it.sc.toFixed(2) : '') : [it.fmt === 'MOVIE' ? '극장판' : it.fmt === 'TV' ? 'TV' : it.fmt, it.ep ? it.ep + '화' : '', it.year || '', it.sc ? '★' + (it.sc / 10).toFixed(1) : ''].filter(Boolean).join(' · ');
@@ -82,30 +85,31 @@
       + '<div class="wt-ac"><a class="wt-go" href="' + esc(it.url) + '" target="_blank" rel="noopener nofollow" data-id="' + it.id + '">' + esc(it.site) + '에서 보기 →</a><button type="button" class="wt-up' + (st.fav[it.id] ? ' on' : '') + '" data-id="' + it.id + '" aria-label="좋아요">👍</button><button type="button" class="wt-dn" data-id="' + it.id + '" aria-label="별로예요">👎</button></div></div></article>';
   }
   function results(st) {
-    var R = rank(st, salt), top = R.top, more = R.all.slice(6 + offset, 6 + offset + 0);
-    var sum = [st.g.length ? st.g.slice(0, 4).map(gl).join('·') : '', (cfgOf().moods.filter(function (m) { return m.k === st.mood; })[0] || {}).label || '', st.seen.length ? '본 작품 ' + st.seen.length + '개' : ''].filter(Boolean).join(' / ') || '인기작';
-    return '<section class="wt-res"><div class="wt-rh"><div><h2>🎯 내 취향 추천 <small>' + esc(sum) + '</small></h2><p class="note">줄거리·장르·평점과 비슷한 작품 관계를 합쳐 골랐어요.</p></div><div class="wt-ra"><button type="button" class="wt-re">🔄 다른 추천</button><button type="button" class="wt-redo">설문 다시</button></div></div>'
-      + '<div class="wt-list">' + top.map(function (x, i) { return card(x, st, i); }).join('') + '</div></section>';
+    var R = rank(st, salt), top = R.top, cfg = cfgOf();
+    var sum = st.g.length ? st.g.slice(0, 3).map(gl).join(' · ') : '오늘의 인기';
+    var mood = (cfg.moods.filter(function (m) { return m.k === st.mood; })[0] || {}).label;
+    return '<section class="wt-res"><div class="wt-rh"><div><h2>🎯 오늘의 추천 <small>' + esc(sum) + (mood ? ' · ' + esc(mood) : '') + '</small></h2><p class="note">' + (R.all.length ? '조건에 맞는 ' + R.all.length + '편 중 오늘 고른 6편이에요. 내일이면 바뀌어요.' : '') + '</p></div><div class="wt-ra"><button type="button" class="wt-re">🔄 다른 추천</button></div></div>'
+      + (top.length ? '<div class="wt-list">' + top.map(function (x, i) { return card(x, st, i); }).join('') + '</div>' : '<p class="wt-empty">고른 조건에 맞는 작품이 없어요. 장르나 조건을 줄여 보세요.</p>') + '</section>';
   }
   function statsBox() {
     var s = STATS[kind]; if (!s || !s.n || s.n < 5 || !s.cnt || !s.cnt.g) return '<div class="wt-stats" hidden></div>';
     var g = Object.keys(s.cnt.g).map(function (k) { return [k, s.cnt.g[k]]; }).sort(function (a, b) { return b[1] - a[1]; }).slice(0, 6), mx = g[0][1] || 1;
-    return '<section class="wt-stats"><h2>📊 다른 사람들은 이런 장르를 좋아해요 <small>설문 ' + s.n + '명</small></h2>' + g.map(function (x) { return '<div class="wt-bar"><span>' + esc(x[0]) + '</span><i style="--w:' + Math.round(x[1] / mx * 100) + '%"></i><em>' + x[1] + '</em></div>'; }).join('') + '</section>';
+    return '<section class="wt-stats"><h2>📊 다른 사람들은 이런 장르를 골라요 <small>' + s.n + '명</small></h2>' + g.map(function (x) { return '<div class="wt-bar"><span>' + esc(gl(x[0])) + '</span><i style="--w:' + Math.round(x[1] / mx * 100) + '%"></i><em>' + x[1] + '</em></div>'; }).join('') + '</section>';
   }
   function fetchStats() {
     if (STATS[kind] !== undefined) return; STATS[kind] = null;
     fetch(API + '/api/survey/stats?kind=' + kind).then(function (r) { return r.json(); }).then(function (d) { STATS[kind] = d; var el = ROOT.querySelector('.wt-stats'); if (el) el.outerHTML = statsBox(); }).catch(function () {});
     fetch(API + '/api/watch/votes?kind=' + kind).then(function (r) { return r.json(); }).then(function (d) { Object.assign(VOTES, d.votes || {}); }).catch(function () {});
   }
+  var postT = null;
+  function postGenre(st) { clearTimeout(postT); postT = setTimeout(function () { if (st.g.length) post('/api/survey', { kind: kind, a: { g: st.g, mood: st.mood ? [st.mood] : [], mode: st.mode ? [st.mode] : [], seen: st.seen.length ? ['y'] : [] } }); }, 2500); }
   function wire(st) {
-    [].forEach.call(ROOT.querySelectorAll('.wt-tabs button'), function (b) { b.onclick = function () { kind = b.getAttribute('data-k'); step = 0; salt = 0; history.replaceState(null, '', kind === 'anime' ? '#anime' : '#webtoon'); ga('watch_tab', { k: kind }); render(); }; });
-    var q = Q()[step], cfg = cfgOf();
-    [].forEach.call(ROOT.querySelectorAll('.wt-o'), function (b) {
-      b.onclick = function () { var v = b.getAttribute('data-v');
-        if (q[0] === 'g') { var i = st.g.indexOf(v); if (i >= 0) st.g.splice(i, 1); else if (st.g.length < 4) st.g.push(v); b.classList.toggle('on', st.g.indexOf(v) >= 0); }
-        else { st[q[0]] = v; [].forEach.call(ROOT.querySelectorAll('.wt-o'), function (o) { o.classList.toggle('on', o === b); }); }
-        save(st); };
-    });
+    [].forEach.call(ROOT.querySelectorAll('.wt-tabs button'), function (b) { b.onclick = function () { kind = b.getAttribute('data-k'); history.replaceState(null, '', kind === 'anime' ? '#anime' : '#webtoon'); ga('watch_tab', { k: kind }); render(); }; });
+    [].forEach.call(ROOT.querySelectorAll('.wt-g'), function (b) { b.onclick = function () { var v = b.getAttribute('data-v'), i = st.g.indexOf(v); if (i >= 0) st.g.splice(i, 1); else { if (st.g.length >= 3) st.g.shift(); st.g.push(v); } salt = dayN * 7919; save(st); ga('watch_genre', { k: kind, g: st.g.join(',') }); postGenre(st); render(); }; });
+    var all = ROOT.querySelector('.wt-all'); if (all) all.onclick = function () { st.g = []; save(st); render(); };
+    [].forEach.call(ROOT.querySelectorAll('.wt-m'), function (b) { b.onclick = function () { st.mood = st.mood === b.getAttribute('data-v') ? '' : b.getAttribute('data-v'); save(st); render(); }; });
+    [].forEach.call(ROOT.querySelectorAll('.wt-mo'), function (b) { b.onclick = function () { st.mode = b.getAttribute('data-v') === 'any' ? '' : b.getAttribute('data-v'); save(st); render(); }; });
+    var ab = ROOT.querySelector('.wt-advb'); if (ab) ab.onclick = function () { adv = !adv; render(); };
     var se = ROOT.querySelector('.wt-search');
     if (se) se.oninput = function () {
       var t = se.value.trim().toLowerCase(), box = ROOT.querySelector('.wt-sres'); if (t.length < 1) { box.innerHTML = ''; return; }
@@ -114,16 +118,8 @@
       [].forEach.call(box.querySelectorAll('.wt-sr'), function (b) { b.onclick = function () { if (st.seen.length < 5) st.seen.push(+b.getAttribute('data-i')); save(st); render(); }; });
     };
     [].forEach.call(ROOT.querySelectorAll('.wt-pk'), function (p) { p.onclick = function () { st.seen = st.seen.filter(function (i) { return i !== +p.getAttribute('data-i'); }); save(st); render(); }; });
-    var nx = ROOT.querySelector('.wt-next'); if (nx) nx.onclick = function () {
-      if (step < Q().length - 1) { step++; render(); return; }
-      st.done = true; save(st); salt = 0; ga('watch_survey', { k: kind, g: st.g.join(','), mood: st.mood, mode: st.mode, seen: st.seen.length });
-      post('/api/survey', { kind: kind, a: { g: st.g, mood: st.mood ? [st.mood] : [], mode: st.mode ? [st.mode] : [], seen: st.seen.length ? ['y'] : [] } }); render();
-    };
-    var pv = ROOT.querySelector('.wt-prev'); if (pv) pv.onclick = function () { step--; render(); };
-    var sk = ROOT.querySelector('.wt-skipall'); if (sk) sk.onclick = function (e) { e.preventDefault(); st.done = true; save(st); render(); };
     var re = ROOT.querySelector('.wt-re'); if (re) re.onclick = function () { salt += 977; ga('watch_reroll', { k: kind }); render(); };
-    var rd = ROOT.querySelector('.wt-redo'); if (rd) rd.onclick = function () { st.done = false; save(st); step = 0; render(); };
-    [].forEach.call(ROOT.querySelectorAll('.wt-up'), function (b) { b.onclick = function () { var id = +b.getAttribute('data-id'); st.fav[id] = !st.fav[id]; if (st.fav[id] && st.seen.indexOf(id) < 0 && st.seen.length < 5) st.seen.push(id); save(st); b.classList.toggle('on', !!st.fav[id]); post('/api/watch/vote', { kind: kind, id: id, v: st.fav[id] ? 1 : 0 || 1 }); ga('watch_like', { k: kind }); }; });
+    [].forEach.call(ROOT.querySelectorAll('.wt-up'), function (b) { b.onclick = function () { var id = +b.getAttribute('data-id'); st.fav[id] = !st.fav[id]; if (st.fav[id] && st.seen.indexOf(id) < 0 && st.seen.length < 5) st.seen.push(id); save(st); b.classList.toggle('on', !!st.fav[id]); if (st.fav[id]) post('/api/watch/vote', { kind: kind, id: id, v: 1 }); ga('watch_like', { k: kind }); }; });
     [].forEach.call(ROOT.querySelectorAll('.wt-dn'), function (b) { b.onclick = function () { var id = +b.getAttribute('data-id'); st.dis[id] = 1; save(st); post('/api/watch/vote', { kind: kind, id: id, v: -1 }); ga('watch_dislike', { k: kind }); render(); }; });
     [].forEach.call(ROOT.querySelectorAll('.wt-go,.wt-img'), function (a) { a.addEventListener('click', function () { ga('watch_out', { k: kind, id: a.getAttribute('data-id') }); }); });
   }

@@ -1483,14 +1483,14 @@ def build():
 <a class="hx-f" href="/analyst/" style="--fc:#0f766e;--fbg:#e8f7f4"><i>📈</i><b>애널리스트 종합</b><span>증권사 의견을 숫자로만 요약</span></a></div>
 <div class="hx-links"><a href="/money/guide/journey/resign/">퇴사했을 때</a><a href="/money/guide/journey/housing/">집 구할 때</a><a href="/money/guide/journey/parttime/">알바할 때</a></div></section>
 
-<section class="hx-sec hx-t-watch" id="watch"><div class="hx-hd"><div><p>🎯 웹툰 · 애니 추천</p><h2>내 취향 작품, 1분 설문으로</h2></div><a href="/watch/">추천 받기 →</a></div>
+<section class="hx-sec hx-t-watch" id="watch"><div class="hx-hd"><div><p>🎯 웹툰 · 애니 추천</p><h2>장르만 고르면 오늘의 추천</h2></div><a href="/watch/">추천 받기 →</a></div>
 {hx_watch}
-<div class="hx-links"><a class="hx-primary" href="/watch/">🎯 1분 취향 설문 시작</a><a href="/watch/#webtoon">📖 웹툰 추천</a><a href="/watch/#anime">🎬 애니 추천</a></div></section>
+<div class="hx-links"><a class="hx-primary" href="/watch/">🎯 장르 골라 오늘의 추천 받기</a><a href="/watch/#webtoon">📖 웹툰 추천</a><a href="/watch/#anime">🎬 애니 추천</a></div></section>
 
 <section class="hx-sec hx-t-learn" id="learn"><div class="hx-hd"><div><p>🎓 배우기 · 놀이</p><h2>AI·개발 지식과 무료 게임</h2></div><a href="/ailog/">개발 지식 →</a></div>
 <div class="hx-feat">{AICLASS}<a class="hx-f" href="/ailog/" style="--fc:#2563eb;--fbg:#e8f0ff"><i>💻</i><b>개발 지식</b><span>이 사이트를 AI로 만든 과정과 기록</span></a>
 <a class="hx-f" href="/dev/faq/" style="--fc:#7c3aed;--fbg:#f4efff"><i>❓</i><b>개발 FAQ</b><span>만들면서 막혔던 것 · 비용 · 구조</span></a>
-<a class="hx-f" href="/watch/" style="--fc:#9333ea;--fbg:#f5ecff"><i>🎯</i><b>웹툰·애니 추천</b><span>1분 설문으로 내 취향 작품 찾기</span></a>
+<a class="hx-f" href="/watch/" style="--fc:#9333ea;--fbg:#f5ecff"><i>🎯</i><b>웹툰·애니 추천</b><span>장르만 고르면 오늘의 추천</span></a>
 <a class="hx-f" href="/game/" style="--fc:#db2777;--fbg:#ffe9f2"><i>🎮</i><b>이번 주 무료 게임</b><span>스팀·에픽 무료 배포 모음</span></a></div></section>
 
 <section class="hx-sec hx-t-recipe" id="recipe"><div class="hx-hd"><div><p>🍳 쉬어가는 식탁</p><h2>오늘 뭐 먹지?</h2></div><a href="/fridge/">레시피 {NR_HOME}개 →</a></div>
@@ -4024,7 +4024,9 @@ def watch_data():
         for v in its: v['kw'] = [w for w in (v.get('kw') or []) if w not in common][:10]
         WHYW = {'love': '설레고 싶은 기분에', 'fun': '웃고 싶은 기분에', 'tense': '긴장감 있는 이야기가 당길 때', 'cry': '감동받고 싶은 기분에', 'heal': '힐링이 필요할 때', 'fight': '신나게 보고 싶을 때'}
         mood = lambda k, e, lb, names, kw: {'k': k, 'e': e, 'label': lb, 'why': WHYW.get(k, lb), 'names': [n for n in names if tc.get(n)], 'kw': kw}
-        cfg = {'genres': [[g, g] for g in top], 'gl': {},
+        alias = {g: [t for t in tc if g in t] + ([g] if g not in tc else []) for g in top}
+        alias['감성적인'] = ['감성적인', '감성']; alias['시리어스'] = ['시리어스']
+        cfg = {'genres': [[g, g] for g in top], 'gl': {}, 'alias': alias,
                'moods': [mood('love', '💕', '설레고 싶어요', ['로맨스', '설렘폭발', '러브코미디', '리얼로맨스'], ['사랑', '연애']), mood('fun', '😂', '웃고 싶어요', ['개그', '러브코미디', '일상'], []), mood('tense', '😱', '긴장감 있게', ['스릴러', '시리어스', '자극적인'], ['죽음', '복수', '살인']),
                          mood('cry', '😢', '감동받고 싶어요', ['감성적인', '가족', '우정', '성장물', '드라마'], ['가족', '상처']), mood('heal', '🍵', '편하게 힐링', ['일상', '감성적인', '청춘'], []), mood('fight', '⚔️', '신나게 싸움', ['액션', '액션판타지', '무협/사극', '이능력', '사이다'], ['능력', '던전', '헌터'])],
                'modes': [{'k': 'any', 'e': '🎲', 'label': '상관없어요'}, {'k': 'ongoing', 'e': '📆', 'label': '연재 중(매주 보기)'}, {'k': 'finished', 'e': '✅', 'label': '완결(몰아보기)'}]}
@@ -4043,12 +4045,12 @@ def watch_pages():
         if k in D:
             ssr += f'<section class="mg-s"><h2>{nm} 인기작</h2><ul class="fr-rel">' + ''.join(f'<li><a href="{E(u)}" target="_blank" rel="noopener nofollow">{E(n)}</a></li>' for n, u in D[k][1]) + '</ul></section>'
     cnt = ' · '.join(f'{nm} {D[k][0]:,}편' for k, nm in (('webtoon', '웹툰'), ('anime', '애니')) if k in D)
-    page('/watch/', '웹툰·애니 추천 — 1분 취향 설문으로 골라 드려요', f'장르·기분·재밌게 본 작품만 알려 주면 웹툰과 애니 중 취향에 맞는 작품을 골라 드려요. 줄거리 키워드와 비슷한 작품 관계, 평점으로 추천 ({cnt}).',
+    page('/watch/', '웹툰·애니 추천 — 장르만 고르면 오늘의 추천', f'장르만 고르면 웹툰과 애니 중 그 장르에 맞는 작품을 오늘의 추천으로 골라 드려요. 기분·길이·본 작품을 더하면 더 정확해져요 ({cnt}).',
          '<p class="bc"><a href="/">홈</a> › 웹툰·애니 추천</p><h1>🎯 웹툰·애니 추천</h1>'
-         f'<p class="lead" style="display:block">1분 설문으로 취향을 알려 주면, 줄거리 키워드·장르·평점·비슷한 작품 관계를 합쳐 골라 드려요. 지금 {cnt}을 모아 뒀어요.</p>'
+         f'<p class="lead" style="display:block">장르만 고르면 바로 오늘의 추천이 나와요. 기분·길이·재밌게 본 작품을 더하면 줄거리 키워드와 비슷한 작품 관계까지 반영해요. 지금 {cnt}을 모아 뒀어요.</p>'
          '<div id="watch"><noscript>자바스크립트를 켜면 설문 추천을 쓸 수 있어요.</noscript></div>' + ssr
          + '<p class="wt-foot">웹툰 정보는 네이버웹툰 공개 목록, 애니 정보는 AniList 공개 데이터를 모아 정리했어요. 작품의 표지·제목에 대한 권리는 각 작가·제작사·서비스에 있고, 이 페이지는 작품을 소개하고 원본 서비스로 연결해요. 줄거리 원문은 저장하지 않고 핵심 낱말만 추천 계산에 써요. 설문 선택값은 개인 식별 없이 장르 선호 집계에만 써요.</p>'
-         '<link rel="stylesheet" href="/assets/watch/watch.css?v=1"><script defer src="/assets/watch/watch.js?v=1"></script>',
+         '<link rel="stylesheet" href="/assets/watch/watch.css?v=2"><script defer src="/assets/watch/watch.js?v=3"></script>',
          [('루리의 줍줍', '/'), ('웹툰·애니 추천', '/watch/')])
     return ['/watch/']
 

@@ -44,7 +44,7 @@ const PKEY = 'jupjup_pref_v1';
 
 let items = null, events = null, speak = false, rec = null;
 const $ = (s, r = document) => r.querySelector(s);
-let SITE = null; const site = () => (SITE ||= import('/assets/chat/ruri-site.js?v=3').catch(() => ({ siteAnswer: async () => null, pageHints: () => null })));
+let SITE = null; const site = () => (SITE ||= import('/assets/chat/ruri-site.js?v=5').catch(() => ({ siteAnswer: async () => null, pageHints: () => null })));
 const el = (t, c, h) => { const e = document.createElement(t); if (c) e.className = c; if (h != null) e.innerHTML = h; return e; };
 const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const today = (() => { const n = new Date(); return Math.round(Date.UTC(n.getFullYear(), n.getMonth(), n.getDate()) / 864e5); })();
