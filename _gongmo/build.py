@@ -1765,7 +1765,7 @@ def _faq(items):
 
 
 GAME_CSS = ('<style>.faq-i{border:1px solid var(--bd,#e5e7eb);border-radius:12px;padding:10px 14px;margin:8px 0;background:var(--card,#fff)}.faq-i summary{font-weight:700;cursor:pointer}.faq-i div{margin-top:8px;line-height:1.7;font-size:14.5px}'
-            '.tblw{overflow-x:auto}.xb{border-collapse:collapse;width:100%;font-size:14px;min-width:480px}.xb th,.xb td{border-bottom:1px solid var(--bd,#e5e7eb);padding:7px 6px;text-align:left;vertical-align:top}'
+            '.tblw{overflow-x:auto}.xb{border-collapse:collapse;width:100%;font-size:14px;min-width:0}.xb th,.xb td{border-bottom:1px solid var(--bd,#e5e7eb);padding:7px 6px;text-align:left;vertical-align:top}'
             '.gm-g{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px;list-style:none;padding:0;margin:8px 0}.gm-g li a{display:block;border:1px solid var(--bd,#e5e7eb);border-radius:12px;overflow:hidden;background:var(--card,#fff);color:var(--tx,#111);text-decoration:none;height:100%}'
             '.gm-g img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;background:#e5e7eb}.gm-g b{display:block;padding:8px 10px 2px;font-size:14.5px}.gm-g span{display:block;padding:0 10px 10px;font-size:13px;color:var(--mu,#6b7280)}.gm-g em{font-style:normal;font-weight:800;color:#dc2626}.gm-g s{opacity:.6}</style>')
 
