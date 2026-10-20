@@ -147,7 +147,7 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False, noinde
 <meta name="theme-color" content="{TH[3] if TH else '#5b21b6'}"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="오늘 뭐 먹지">
 <link rel="icon" href="/favicon.ico?v=6" sizes="any"><link rel="icon" type="image/png" sizes="48x48" href="/assets/icons/icon-48.png?v=6"><link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/icon-96.png?v=6"><link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/icon-192.png?v=6"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=6"><link rel="manifest" href="/site.webmanifest"><link rel="alternate" type="application/rss+xml" title="루리의 줍줍" href="/rss.xml">
 <link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="/assets/gm.css?v=20"><link rel="stylesheet" href="/assets/ds.css?v=9">{('<link rel="stylesheet" href="/assets/chat/ruri-chat.css?v=8">') if not (TH and TH[0] == 'ai') else ''}{COMM_TAGS}{('<script type="module" src="/assets/chat/ruri-chat.js?v=14"></script>') if not (TH and TH[0] == 'ai') else ''}<link rel="stylesheet" href="/assets/app/shell.css?v=1"><script defer src="/assets/app/app.js?v=4"></script>
+<link rel="stylesheet" href="/assets/gm.css?v=20"><link rel="stylesheet" href="/assets/ds.css?v=10">{('<link rel="stylesheet" href="/assets/chat/ruri-chat.css?v=8">') if not (TH and TH[0] == 'ai') else ''}{COMM_TAGS}{('<script type="module" src="/assets/chat/ruri-chat.js?v=14"></script>') if not (TH and TH[0] == 'ai') else ''}<link rel="stylesheet" href="/assets/app/shell.css?v=1"><script defer src="/assets/app/app.js?v=4"></script>
 {ldh}
 {GTAG}
 </head><body data-th="{TH[0] if TH else 'hub'}"{(' data-api="' + COMM_API + '"') if COMM_API else ''}>
@@ -1953,6 +1953,20 @@ def game_extra_pages():
 KIN_F = os.path.join(HERE, 'kin_guides.json')
 
 
+def _cite_box(g, path):
+    """인용하기 쉽게(2026-10-20 홍보 요청): 갱신일·출처 문구·인용 안내 한 줄 + 표 복사 버튼(assets/money/cite.js)."""
+    m = re.search(r'확인일\s*(\d{4}-\d{2}-\d{2})', g.get('basis', ''))
+    dt = m.group(1) if m else datetime.date.today().isoformat()
+    names = ' · '.join(n for n, _ in g.get('sources', [])[:4])
+    has_tbl = any(sc.get('table') for sc in g['sections'])
+    return ('<section class="cite-box"><h2>이 페이지 인용하기</h2>'
+            f'<p>업데이트: {dt} · 출처: {E(names)}</p>'
+            f'<p>인용: 루리의 줍줍(<a href="{SITE}{path}">{SITE}{path}</a>)</p>'
+            + ('<button type="button" class="cite-cp">📋 표 복사하기 (엑셀·문서에 붙여넣기)</button>' if has_tbl else '')
+            + '<style>.cite-box{padding:10px 14px;border:1px solid var(--bd,#e5e7eb);border-radius:12px;background:var(--card,#fff);margin:16px 0;font-size:13.5px;line-height:1.7}.cite-box h2{font-size:15px;margin:0 0 4px}.cite-box p{margin:2px 0}.cite-cp{margin-top:6px;min-height:40px;padding:0 14px;border:1px solid var(--bd,#d1d5db);border-radius:8px;background:transparent;color:inherit;font:inherit;cursor:pointer}</style>'
+            '<script defer src="/assets/money/cite.js?v=1"></script></section>')
+
+
 def kin_guides():
     """/money/guide/ 생활 돈 가이드 (2026-10-20 홍보 세션 지식iN 반복 질문): 근로장려금·내일배움카드·월세 세액공제 vs 청년월세·퇴직금. 공식 출처로 확인된 칸만 JSON 에 담고 숫자는 표로 분리."""
     if not os.path.exists(KIN_F):
@@ -1979,6 +1993,7 @@ def kin_guides():
         body = (f'<p class="bc"><a href="/">홈</a> › <a href="/money/guide/">생활 돈 가이드</a> › {E(g["name"])}</p><h1>{g["icon"]} {E(g["h1"])}</h1>'
                 f'<p class="cat-st">📌 {E(g["lead"])}</p><p class="kwn">기준: {E(g["basis"])}</p>' + secs + '<h2>자주 묻는 질문</h2>' + faq
                 + join_cta('apply')
+                + _cite_box(g, f'/money/guide/{g["slug"]}/')
                 + f'<h2>공식 출처</h2><ul class="gm-l">{src}</ul>'
                 + f'<p class="note">공식 안내를 줍줍이 직접 확인해 정리한 내용이고, 기준 금액과 신청 기간은 해마다 바뀔 수 있어요. 신청 전에 위 공식 출처를 꼭 확인하고, 개별 사정은 {E(g["contact"])}에 문의하세요. 법률·세무 상담이 아니에요.</p>'
                 + f'<p class="hm-links">{rel} · <a href="/money/guide/">다른 생활 돈 가이드</a></p>' + GAME_CSS + (f'<script defer src="{E(g["script"])}"></script>' if g.get('script') else ''))
