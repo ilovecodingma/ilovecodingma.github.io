@@ -147,11 +147,11 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False, noinde
 <meta name="theme-color" content="{TH[3] if TH else '#5b21b6'}"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="오늘 뭐 먹지">
 <link rel="icon" href="/favicon.ico?v=6" sizes="any"><link rel="icon" type="image/png" sizes="48x48" href="/assets/icons/icon-48.png?v=6"><link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/icon-96.png?v=6"><link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/icon-192.png?v=6"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=6"><link rel="manifest" href="/site.webmanifest"><link rel="alternate" type="application/rss+xml" title="루리의 줍줍" href="/rss.xml">
 <link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="/assets/gm.css?v=20">{('<link rel="stylesheet" href="/assets/chat/ruri-chat.css?v=8">') if not (TH and TH[0] == 'ai') else ''}{COMM_TAGS}{('<script type="module" src="/assets/chat/ruri-chat.js?v=14"></script>') if not (TH and TH[0] == 'ai') else ''}<link rel="stylesheet" href="/assets/app/shell.css?v=1"><script defer src="/assets/app/app.js?v=4"></script>
+<link rel="stylesheet" href="/assets/gm.css?v=20"><link rel="stylesheet" href="/assets/ds.css?v=2">{('<link rel="stylesheet" href="/assets/chat/ruri-chat.css?v=8">') if not (TH and TH[0] == 'ai') else ''}{COMM_TAGS}{('<script type="module" src="/assets/chat/ruri-chat.js?v=14"></script>') if not (TH and TH[0] == 'ai') else ''}<link rel="stylesheet" href="/assets/app/shell.css?v=1"><script defer src="/assets/app/app.js?v=4"></script>
 {ldh}
 {GTAG}
 </head><body data-th="{TH[0] if TH else 'hub'}"{(' data-api="' + COMM_API + '"') if COMM_API else ''}>
-<header class="hd"><div class="w hd-in"><a class="logo" href="/"><img src="/assets/icons/logo.svg" width="30" height="30" alt="루리의 줍줍"><span>루리의 <b>줍줍</b></span></a>{('<span class="th-name">' + TH[2] + ' ' + TH[1] + '</span>') if TH else ''}</div>
+<header class="hd"><div class="w hd-in"><a class="logo" href="/"><img class="logo-av" src="/assets/ruri/avatar.webp" width="36" height="36" alt="루리의 줍줍"><span>루리의 <b>줍줍</b></span></a>{('<span class="th-name">' + TH[2] + ' ' + TH[1] + '</span>') if TH else ''}</div>
 <nav class="th-sw w" aria-label="테마">{"".join(f'<a href="{t[4]}" style="--tc:{t[3]}"{" class=on" if TH and TH[0] == t[0] else ""}>{t[2]} {t[1]}</a>' for t in THEMES)}</nav>
 {('<nav class="tb w" aria-label="' + TH[1] + ' 메뉴">' + "".join(f'<a href="{u}"{" class=on" if (path == u or (u != TH[4] and path.startswith(u))) else ""}>{n}</a>' for u, n in TH[5]) + '</nav>') if TH else ''}</header>
 <main class="w">
@@ -1314,37 +1314,80 @@ def build():
     _TD = _rd('assets/fridge/today.json') or {}
     _picks = [r for n_ in _TD.get('picks', []) for r in _RS if r['n'] == n_][:3]
     _ez = ('댓글 1줄', '퀴즈 1분', '설문 5분', '응모만', '폼 1분')
-    _ev3 = sorted([e for e in events if (e.get('org') or '').strip() and dday(e['end'])[0] >= 0], key=lambda e: (e['end'], (e.get('effort') or EASY.get(e['type'], '')) not in _ez))[:4]
+    _ev3 = sorted([e for e in events if (e.get('org') or '').strip() and dday(e['end'])[0] >= 0], key=lambda e: (e['end'], (e.get('effort') or EASY.get(e['type'], '')) not in _ez))[:6]
     _ing = ['김치', '달걀', '스팸', '두부', '감자', '양파', '참치', '대파']
-    home = f'''<section class="hm-hero hm-life"><h1>오늘 뭐 먹지?<br>있는 재료로 바로 찾아요.</h1>
-<p class="hm-sub">집밥 레시피 <b>{NR_HOME}개</b>, 오늘 마감 경품·용돈 이벤트, 지원금·공모전 일정까지 생활에 쓰는 정보를 매시간 정리해요.</p>
-<form class="hm-ing" action="/fridge/" method="get"><input name="ing" placeholder="있는 재료 예) 김치, 달걀" aria-label="있는 재료"><button>메뉴 찾기</button></form>
-<p class="hm-chips">{''.join(f'<a href="/fridge/?ing={x}">{x}</a>' for x in _ing)}</p>
-<div data-rec="home" data-n="5">{('<ul class="rec-ssr">' + ''.join(f'<li><a href="/fridge/r/{fr_slug(r["n"])}/">{r["e"]} {E(r["n"])} <small>{r["m"]}분 · {E(r["lv"])}</small></a></li>' for r in _picks) + '</ul>') if _picks else ''}</div>{REC_TAGS}</section>
-{join_home()}
-<section class="hm-sec"><h2>🍳 많이 찾는 레시피 모음 <a href="/fridge/">재료로 찾기 →</a></h2><div class="hm-prep">
-<a href="/fridge/solo/"><b>🏠 자취 요리 추천</b><span>재료 3개 이하·20분 안에 끝나는 1인분 집밥</span></a>
-<a href="/fridge/weather/"><b>🌤️ 날씨별 오늘 메뉴</b><span>비 오는 날·쌀쌀한 날·더운 날에 어울리는 집밥</span></a></div>
-<p class="hm-more">분류로 보기: {' · '.join(f'<a href="/fridge/c/{s2}/">{i2} {n2}</a>' for s2, k2, i2, n2, _ in FR_CATS)}</p>
+    import fridge_today as _FT
+    _PHJ = (_rd('assets/fridge/recipes_ph.json') or {}).get('recipes') or {}
+    _popj = _rd('assets/fridge/rec_pop.json') or {}
+    def _rimg(r):
+        sl_ = fr_slug(r['n']); t_ = os.path.join(ROOT, 'assets', 'fridge', 'ph', 't', sl_ + '.webp')
+        if os.path.exists(t_): return f'/assets/fridge/ph/t/{sl_}.webp'
+        mp_ = ((_PHJ.get(r['n']) or {}).get('main') or {}).get('f')
+        return mp_ if mp_ and os.path.exists(os.path.join(ROOT, mp_.lstrip('/'))) else ''
+    _pool = [r for r in _RS if _rimg(r)]
+    _bypop = sorted(_pool, key=lambda r: -(_popj.get(fr_slug(r['n'])) or [0])[0])
+    _show, _cats = [], {}
+    for r in [x for x in _bypop if (_popj.get(fr_slug(x['n'])) or [0])[0] > 0] + sorted(_pool, key=lambda r: (r['m'], r['n'])):
+        c_ = _FT.cat(r['n'])
+        if r in _show or _cats.get(c_, 0) >= 2: continue
+        _show.append(r); _cats[c_] = _cats.get(c_, 0) + 1
+        if len(_show) >= 10: break
+    hx_rc = ''.join(f'<li class="hx-rc"><a href="/fridge/r/{fr_slug(r["n"])}/"><div class="ph"><img src="{_rimg(r)}" width="400" height="300" loading="lazy" decoding="async" alt="{E(r["n"])} 완성 사진"><em>⏱ {r["m"]}분</em></div><b>{E(r["n"])}</b><small>{_FT.cat(r["n"])} · {E(r["lv"])}</small></a></li>' for r in _show)
+    _hp = next((r for r in _picks if _rimg(r)), None) or (_show[0] if _show else None)
+    hx_pick = (f'<a class="hx-ssrpick" href="/fridge/r/{fr_slug(_hp["n"])}/"><img src="{_rimg(_hp)}" width="400" height="300" alt="{E(_hp["n"])} 완성 사진" fetchpriority="high"><b>{_hp["e"]} {E(_hp["n"])}</b><span>⏱ {_hp["m"]}분 · {E(_hp["lv"])} · 재료 {len(_hp["need"])}가지</span></a>') if _hp else ''
+    _why0 = (_TD.get('why') or '').replace('엔', '엔 ') if _TD else ''
+    hx_say = (f'{E(_why0.strip())}! <b>{E(_hp["n"])}</b> 어때요? 🍽️' if _hp and _why0 else (f'오늘은 <b>{E(_hp["n"])}</b> 어때요? 🍽️' if _hp else '냉장고 재료만 알려 주면 오늘 메뉴를 골라 줄게요!'))
+    _eyebrow = f'{E(_TD.get("place", "서울"))} {round(_TD.get("t", 0))}° · {E(_TD.get("why", "오늘 뭐 먹을지 골라 드려요"))}' if _TD else '오늘 뭐 먹을지 골라 드려요'
+    _tiles = [('🍳', '오늘 뭐 먹지', '/fridge/', '#fff1e6'), ('🏠', '자취 요리', '/fridge/solo/', '#e8f7ee'), ('🌤️', '날씨별 메뉴', '/fridge/weather/', '#e6f2ff'), ('🏆', '공모전', '/contest/', '#f1e9ff'),
+              ('📋', '지원금·청약', '/apply/', '#e6f7f4'), ('🎁', '경품·용돈', '/event/', '#ffe9ef'), ('🕵️', '이슈·뉴스', '/news/', '#fff6d9'), ('🧮', '계산기', '/money/tools/salary/', '#eaeefb')]
+    hx_tiles = ''.join(f'<a class="hx-tile" href="{u}" style="--tbg:{bg}"><i>{ic}</i>{n}</a>' for ic, n, u, bg in _tiles)
+    hx_ev = ''.join(f'<li><a href="{E(e["link"])}" target="_blank" rel="noopener nofollow"><span class="dd{" u" if dday(e["end"])[0] <= 1 else ""}">{dday(e["end"])[1]}</span><div><b>{E(e["title"][:52])}</b><small>{E(e.get("org") or "")} · {E(e.get("effort") or EASY.get(e["type"], ""))}</small></div></a></li>' for e in _ev3[:6])
+    _fc = [('#7c3aed', '#f4efff'), ('#0f766e', '#e8f7f4'), ('#ea580c', '#fff1e6'), ('#2563eb', '#e8f0ff'), ('#db2777', '#ffe9f2'), ('#ca8a04', '#fff8de')]
+    hx_more = ''.join(f'<a class="hx-f" href="{u}" style="--fc:{_fc[j % 6][0]};--fbg:{_fc[j % 6][1]}"><i>{ic}</i><b>{E(n)}</b><span>{E(v)}</span></a>' for j, (k, u, ic, n, v, sc) in enumerate(more))
+    home = f'''<section class="hx-hero"><div class="hx-w hx-hero-in">
+<div class="hx-copy"><p class="hx-eyebrow"><i></i>{_eyebrow}</p>
+<h1>오늘 뭐 먹지?<br><em>냉장고 속 재료</em>로<br>바로 찾아요</h1>
+<p class="hx-sub">집밥 레시피 <b>{NR_HOME}개</b>를 시간·날씨·냉장고 재료에 맞춰 골라 드려요. 오늘 마감 경품, 지원금, 공모전까지 한 곳에서.</p>
+<form class="hx-search" action="/fridge/" method="get" role="search"><input name="ing" placeholder="있는 재료를 입력해 보세요 (예: 김치, 달걀)" aria-label="있는 재료" autocomplete="off"><button>메뉴 찾기</button></form>
+<p class="hx-chips">{''.join(f'<a href="/fridge/?ing={x}">{x}</a>' for x in _ing)}</p>
+<div class="hx-stats"><div><b>{NR_HOME}</b><span>집밥 레시피</span></div><div><b>{len(events):,}</b><span>진행 중 경품</span></div><div><b>{len(live)}</b><span>진행 중 공모전</span></div></div></div>
+<div class="hx-stage"><div class="hx-bubble"><small>루리의 한마디</small>{hx_say}</div>
+<img class="hx-ruri" src="/assets/ruri/o_cook.webp" width="300" height="415" alt="루리" fetchpriority="high">
+<div class="hx-card"><div data-rec="home" data-n="5">{hx_pick}</div></div></div>
+</div></section>
+<div class="hx-w"><nav class="hx-tiles" aria-label="바로가기">{hx_tiles}</nav>
+
+<section class="hx-sec"><div class="hx-hd"><div><p>많이 보는 레시피</p><h2>오늘 해 먹기 좋은 메뉴</h2></div><a href="/fridge/">전체 레시피 →</a></div>
+<ul class="hx-row">{hx_rc}</ul>
+<div class="hx-sub2"><a href="/fridge/solo/">🏠 자취 요리</a><a href="/fridge/weather/">🌤️ 날씨별 메뉴</a>{''.join(f'<a href="/fridge/c/{s2}/">{i2} {n2}</a>' for s2, k2, i2, n2, _ in FR_CATS)}</div>
 {cp_widget('자취 필수템', 'home') or cp_box('', '장 볼 때 같이 보면 좋아요:')}</section>
-<section class="hm-sec"><h2>🎁 오늘 마감 경품·용돈 <a href="/event/">전체 {len(events)}건 →</a></h2>
-<ul class="hm-ev">{''.join(f'<li><a href="{E(e["link"])}" target="_blank" rel="noopener nofollow"><b>{E(e["title"][:48])}</b><small>{dday(e["end"])[1]} · {E(e.get("org") or "")} · {E(e.get("effort") or EASY.get(e["type"], ""))}</small></a></li>' for e in _ev3) or '<li class="empty">지금은 없어요.</li>'}</ul></section>
-<section class="hm-sec"><h2>💰 지원금·계산기</h2><div class="hm-prep">
-<a href="/apply/"><b>📋 지원금·청약 일정</b><span>신청 가능 {len(aps)}건 · 최근 3일 새 공고 {newap}건</span></a>
-<a href="/apply/r/"><b>📍 지역별 지원금</b><span>시·도별 청년 월세·신혼부부·청약 일정 공고 마감순</span></a>
-<a href="/money/tools/salary/"><b>🧮 계산기</b><span>연봉 실수령액·실업급여·퇴직금·청약 가점 (2026 기준)</span></a></div>
-<p class="hm-more"><a href="/apply/youth-rent/">청년 월세 지원</a>{XLINKS_HOME} · <a href="/apply/newlywed/">신혼부부 지원금</a></p>
-<p class="hm-more"><a href="/money/tools/salary/table/">연봉 실수령액 표</a> · <a href="/money/tools/unemployment/">실업급여 계산기</a> · <a href="/money/tools/severance/">퇴직금 계산기</a> · <a href="/apply/recommend/">청약 가점 계산기</a></p></section>
-<section class="hm-sec"><h2>🏆 마감 앞둔 공모전 <a href="/contest/">맞는 공모전 찾기 →</a></h2>
-<p class="hm-why">진행 중 {len(live)}건 · 7일 안 마감 {wk7}건 · 상금 규모와 마감까지 2~14일 남은 것 기준. {E(scope_c)}</p>
-<ul class="hm-cc">{"".join(cmp_card(c) for c in pick6[:3]) or '<li class="empty">지금 보여 드릴 공모전이 없어요.</li>'}</ul>
-<p class="hm-more"><a href="/contest/week/">이번 주 마감 전체</a> · <a href="/contest/univ/">대학생 공모전</a> · <a href="/cat/literature/">분야별 보기</a> · <a href="/prep/">📋 준비실</a> · <a href="/lab/">🔬 수상 연구소</a> · <a href="/guide/">📘 응모 가이드</a></p></section>
-<section class="hm-sec"><h2>🧭 이슈·머니</h2><div class="hm-more3">{more_h}</div>
-{f'<div class="hm-hot"><b>🔥 지금 뜨는 이슈</b><ol>{hot_h}</ol></div>' if hot_h else ''}
-<p class="hm-more"><a href="https://www.youtube.com/channel/UCdJQUqqrHHXC7mWstly2eXw" target="_blank" rel="noopener">▶️ 루리 뉴스 유튜브</a> · <a href="/news/#brief">📺 루리 뉴스 브리핑</a> · <a href="/trend/">🍿 이슈 트렌드</a> · <a href="/hot/">🔥 지금 뜨는 이슈</a> · <a href="/kw/">🔎 많이 찾는 검색어</a> · <a href="/all/">☰ 전체 메뉴</a> · <a href="/ailog/">🤖 사람 1명 + AI로 만든 과정</a></p></section>
-<section class="hm-sec"><div data-pcrecent="6"></div>
-<p class="hm-more"><a href="/plaza/">🗣️ 줍줍 광장 — 내 글 올리기</a> · <a href="/dev/faq/">❓ 개발 FAQ</a></p></section>
-<link rel="stylesheet" href="/assets/home/consult.css?v=15">'''
+
+<section class="hx-sec"><div class="hx-hd"><div><p>놓치면 아까운</p><h2>오늘 마감 경품·용돈</h2></div><a href="/event/">전체 {len(events):,}건 →</a></div>
+<ul class="hx-ev">{hx_ev or '<li class="empty">지금은 마감 임박 이벤트가 없어요.</li>'}</ul></section>
+
+<section class="hx-sec"><div class="hx-hd"><div><p>마감 임박</p><h2>이번에 도전해 볼 공모전</h2></div><a href="/contest/">공모전 찾기 →</a></div>
+<p class="hx-why">진행 중 {len(live)}건 · 7일 안 마감 {wk7}건 · 상금 규모와 마감까지 2~14일 남은 것 기준. {E(scope_c)}</p>
+<ul class="hx-cc">{"".join(cmp_card(c) for c in pick6[:3]) or '<li class="empty">지금 보여 드릴 공모전이 없어요.</li>'}</ul>
+<div class="hx-links"><a href="/contest/week/">이번 주 마감 전체</a><a href="/contest/univ/">대학생 공모전</a><a href="/cat/literature/">분야별 보기</a><a href="/prep/">📋 준비실</a><a href="/lab/">🔬 수상 연구소</a><a href="/guide/">📘 응모 가이드</a></div></section>
+
+<section class="hx-sec"><div class="hx-hd"><div><p>내가 받을 수 있는</p><h2>지원금·청약·계산기</h2></div><a href="/apply/">지원금 일정 →</a></div>
+<div class="hx-feat">
+<a class="hx-f" href="/apply/" style="--fc:#0f766e;--fbg:#e8f7f4"><i>📋</i><b>지원금·청약 일정</b><span>신청 가능 {len(aps)}건 · 최근 3일 새 공고 {newap}건</span></a>
+<a class="hx-f" href="/apply/r/" style="--fc:#2563eb;--fbg:#e8f0ff"><i>📍</i><b>지역별 지원금</b><span>시·도별 청년 월세·신혼부부·청약 일정 공고를 마감순으로</span></a>
+<a class="hx-f" href="/money/tools/salary/" style="--fc:#7c3aed;--fbg:#f4efff"><i>🧮</i><b>연봉·실업급여 계산기</b><span>실수령액·실업급여·퇴직금·청약 가점 (2026 기준)</span></a></div>
+<div class="hx-links"><a href="/apply/youth-rent/">청년 월세 지원</a>{XLINKS_HOME.replace(' · <a ', '<a ').replace('</a><a ', '</a><a ')}<a href="/apply/newlywed/">신혼부부 지원금</a><a href="/money/tools/salary/table/">연봉 실수령액 표</a><a href="/money/tools/unemployment/">실업급여 계산기</a><a href="/money/tools/severance/">퇴직금 계산기</a><a href="/apply/recommend/">청약 가점 계산기</a></div></section>
+
+<section class="hx-sec"><div class="hx-hd"><div><p>오늘의 이슈</p><h2>이슈·머니 한눈에</h2></div><a href="/news/">루리 뉴스 →</a></div>
+<div class="hx-feat">{hx_more}</div>
+{f'<div class="hx-hot"><b>🔥 지금 뜨는 이슈</b><ol>{hot_h}</ol></div>' if hot_h else ''}
+<div class="hx-links"><a href="https://www.youtube.com/channel/UCdJQUqqrHHXC7mWstly2eXw" target="_blank" rel="noopener">▶️ 루리 뉴스 유튜브</a><a href="/news/#brief">📺 루리 뉴스 브리핑</a><a href="/trend/">🍿 이슈 트렌드</a><a href="/kw/">🔎 인기 키워드</a><a href="/analyst/">📊 애널리스트</a></div></section>
+
+<section class="hx-band">{join_home()}</section>
+
+<section class="hx-sec"><div class="hx-hd"><div><p>줍줍 광장</p><h2>방금 올라온 이야기</h2></div><a href="/plaza/">광장 가기 →</a></div>
+<div data-pcrecent="6"></div>
+<div class="hx-links"><a href="/plaza/">🗣️ 내 글·레시피 올리기</a><a href="/dev/faq/">❓ 개발 FAQ</a></div></section></div>
+{REC_TAGS}<link rel="stylesheet" href="/assets/home/consult.css?v=15">'''
     page('/', '루리의 줍줍 — 오늘 뭐 먹지·냉장고 파먹기 레시피, 경품·지원금·공모전',
          f'있는 재료로 찾는 집밥 레시피 {NR_HOME}개와 오늘의 메뉴, 오늘 마감 경품·용돈 이벤트, 지원금·청약 일정, 진행 중 공모전 {len(live)}건까지 생활 정보를 매시간 정리해요.',
          home, full_title=True, ld={'@context': 'https://schema.org', '@graph': [  # 2026-10-19 구글 검색 결과 사이트 이름·로고
@@ -3649,8 +3692,8 @@ def rec_build(RS, PR):
         if mp and mp.get('f'):
             src = os.path.join(ROOT, mp['f'].lstrip('/').replace('/', os.sep)); dst = os.path.join(tdir, sl + '.webp')
             if os.path.exists(src):
-                if not os.path.exists(dst) or os.path.getmtime(dst) < os.path.getmtime(src):
-                    im = Image.open(src).convert('RGB'); im.thumbnail((240, 180)); im.save(dst, 'WEBP', quality=72, method=6)
+                if not os.path.exists(dst) or os.path.getmtime(dst) < os.path.getmtime(src) or Image.open(dst).size[0] < 400:
+                    im = Image.open(src).convert('RGB'); im.thumbnail((400, 300)); im.save(dst, 'WEBP', quality=72, method=6)
                 has = 1; keep.add(sl + '.webp')
         rows.append([r['n'], r['e'], r['m'], LV.get(r['lv'], 0), [TAGS.index(t) for t in r['t'] if t in TAGS], FT.cat(r['n']), has, r['need'], r['opt'][:4], len(r['s'])])
     for f in os.listdir(tdir):
@@ -3671,6 +3714,7 @@ def fridge_page():
     PR, PI = PH.get('recipes') or {}, PH.get('ing') or {}
     RS = D['recipes']; NR = len(RS)
     RATE = page_rates()
+    import fr_extra as FX, fridge_today as FXT
     FR_EN = _rd('assets/fridge/en.json') or {}   # 영문 보조 표기(본문 한 줄)
     shutil.rmtree(os.path.join(ROOT, 'fridge', 'r'), ignore_errors=True)
     lic = lambda c: (E(c.get('by') or '작가 미상')
@@ -3689,28 +3733,57 @@ def fridge_page():
             im = st.get(k)
             if im and im is not mp and (im.get('by') or im.get('src')):
                 cr.append(f'{k}단계 사진: {lic(im)}')
-            steps += f'<li id="step{k}"><p>{cp_inline(E(t), cpu)}</p>' + (f'<img src="{E(im["f"])}" width="720" height="540" loading="lazy" decoding="async" alt="{E(r["n"])} {k}단계">' if im and im.get('f') else '') + '</li>'
-        ingl = lambda L: ''.join(f'<li>{(f"<img src={chr(34)}{E(PI[i][chr(102)])}{chr(34)} width=28 height=28 alt=>" if i in PI else "")}{E(i)}</li>' for i in L)
+            steps += (f'<li id="step{k}" data-k="{k}"><div class="rp-st"><span class="rp-n">{k}</span><p>{cp_inline(E(t), cpu)}</p></div>'
+                      + (f'<img class="rp-sp" src="{E(im["f"])}" width="720" height="540" loading="lazy" decoding="async" alt="{E(r["n"])} {k}단계: {E(t[:40])}">' if im and im.get('f') else '')
+                      + '<div class="rp-sb"><button type="button" class="rp-saybtn rp-needtts">🔊 이 단계 듣기</button></div></li>')
+        ingl = lambda L, need=False: ''.join(f'<li data-i="{E(i)}"{" data-need=1" if need else ""}><label><input type="checkbox" data-i="{E(i)}">{(f"<img src={chr(34)}{E(PI[i][chr(102)])}{chr(34)} width=28 height=28 alt=>" if i in PI else "")}<span>{E(i)}</span></label></li>' for i in L)
+        def pimg(n_):
+            sl_ = fr_slug(n_); t_ = os.path.join(ROOT, 'assets', 'fridge', 'ph', 't', sl_ + '.webp')
+            if os.path.exists(t_): return f'/assets/fridge/ph/t/{sl_}.webp'
+            m_ = ((PR.get(n_) or {}).get('main') or {}).get('f')
+            return m_ if m_ and os.path.exists(os.path.join(ROOT, m_.lstrip('/'))) else ''
+        cat_ = FXT.cat(r['n'])
         rel = sorted([x for x in RS if x is not r and set(x['need']) & set(r['need'])], key=lambda x: -len(set(x['need'] + x['opt']) & set(r['need'] + r['opt'])))[:6]
         tags = ' '.join(f'#{t}' for t in r['t'])
         tip = (f'필수 재료는 {", ".join(r["need"])} {len(r["need"])}가지이고, ' + (f'{", ".join(r["opt"][:4])} 같은 재료가 있으면 더 맛있어요. ' if r['opt'] else '')
                + f'조리 시간은 약 {r["m"]}분, 난이도는 「{r["lv"]}」이에요. 기본양념({D["basic"]})은 집에 있다고 보고 적었어요.')
+        _is_soup = bool(re.search(r'국|찌개|탕|전골|국밥', r['n']))
+        tp = FX.tips(r, RS, FR_SUB, cat_, r['t']); sb = FX.subs(r, FR_SUB); kp = FX.keep(cat_); pr_ = FX.pairs(r, RS, FXT.cat, lambda n_: bool(pimg(n_)), 4)
+        lvl = {'쉬움': '쉬움', '보통': '보통', '어려움': '어려움'}.get(r['lv'], r['lv'])
+        hero_img = (f'<img class="fr-rmain" src="{E(mp["f"])}" width="720" height="540" alt="{E(r["n"])} 완성 사진" fetchpriority="high">' if mp else '')
+        sumbar = (f'<ul class="rp-sum"><li><i>⏱</i><b>{r["m"]}분</b><span>조리 시간</span></li><li><i>📊</i><b>{E(lvl)}</b><span>난이도</span></li>'
+                  f'<li><i>🍽️</i><b data-serv-label>2인분</b><span>기준</span></li><li><i>🧺</i><b>{len(r["need"])}가지</b><span>필수 재료</span></li></ul>')
+        servbar = ('<div class="rp-serv" role="group" aria-label="인분 선택"><span>인분</span><button type="button" data-s="1">1인분</button><button type="button" data-s="2" class="on">2인분</button><button type="button" data-s="4">4인분</button></div>'
+                   '<p class="rp-serv-note" hidden>양념·재료 분량(컵·큰술·개 등)을 인분에 맞춰 바꿨어요. 불 세기·시간은 그대로예요.</p>')
+        tipsec = ('<section class="rp-tips"><h2>💡 루리의 조리 포인트</h2><ul>' + ''.join(f'<li><b>{E(h_)}</b> {E(t_)}</li>' for h_, t_ in tp) + '</ul></section>') if tp else ''
+        subsec = ''
+        if sb or kp:
+            subsec = '<section class="rp-two">' + (f'<div><h3>🔁 {E(r["n"])} 재료가 없을 땐</h3><ul>{"".join(f"<li>{E(t)}</li>" for t in sb)}</ul></div>' if sb else '') + (f'<div><h3>🧊 {E(r["n"])} 보관·남았을 때</h3><p>{E(kp)}</p></div>' if kp else '') + '</section>'
+        pairsec = ''
+        if pr_:
+            pairsec = '<section class="rp-pair"><h2>🍽️ 함께 먹으면 좋은 메뉴</h2><ul class="hx-row">' + ''.join(
+                f'<li class="hx-rc"><a href="/fridge/r/{fr_slug(x["n"])}/"><div class="ph">' + (f'<img src="{pimg(x["n"])}" width="400" height="300" loading="lazy" alt="{E(x["n"])} 완성 사진">' if pimg(x["n"]) else f'<div class="e">{x["e"]}</div>') + f'<em>⏱ {x["m"]}분</em></div><b>{E(x["n"])}</b><small>{FXT.cat(x["n"])} · {E(x["lv"])}</small></a></li>' for x in pr_) + '</ul></section>'
+        relsec = (f'<h2>🔗 재료가 비슷한 메뉴</h2><ul class="fr-rel">' + ''.join(f'<li><a href="/fridge/r/{fr_slug(x["n"])}/">{x["e"]} {E(x["n"])} <small>{x["m"]}분</small></a></li>' for x in rel) + '</ul>' if rel else '')
         body = (f'<p class="bc"><a href="/">홈</a> › <a href="/fridge/">냉장고 파먹기</a> › {E(r["n"])}</p>'
-                f'<article class="fr-rp"><h1>{r["e"]} {E(r["n"])} {"끓이는 법" if re.search(r"국|찌개|탕|전골|국밥", r["n"]) else "만드는 법"}</h1><p class="fr-meta">⏱ {r["m"]}분 · {E(r["lv"])} · {E(tags)}</p>'
+                f'<article class="fr-rp rp2" data-n="{E(r["n"])}" data-base="2"><h1>{r["e"]} {E(r["n"])} {"끓이는 법" if _is_soup else "만드는 법"}</h1><p class="fr-meta">{E(tags)}</p>'
                 + (f'<p class="fr-rate">{"★" * round(RATE[u]["avg"])}{"☆" * (5 - round(RATE[u]["avg"]))} {RATE[u]["avg"]} · 회원 {RATE[u]["n"]}명이 준 별점</p>' if RATE.get(u) else '')
-                + (f'<img class="fr-rmain" src="{E(mp["f"])}" width="720" height="540" alt="{E(r["n"])} 완성 사진" fetchpriority="high">' if mp else '')
-                + f'<p>{E(tip)}</p><h2>🧺 재료</h2><div class="fr-ri"><div><h3>꼭 있어야 해요</h3><ul>{ingl(r["need"])}</ul></div>'
+                + f'<div class="rp-hero">{hero_img}</div>' + sumbar
+                + '<div class="rp-acts"><button type="button" class="rp-cookbtn">🍳 요리 모드 <small>큰 글씨 · 음성 안내</small></button></div>'
+                + f'<p class="rp-intro">{E(tip)}</p>'
+                + f'<section class="rp-ing"><div class="rp-ih"><h2>🧺 재료</h2>{servbar}</div><div class="fr-ri"><div><h3>꼭 있어야 해요</h3><ul>{ingl(r["need"], True)}</ul></div>'
                 + (f'<div><h3>있으면 더 좋아요</h3><ul>{ingl(r["opt"])}</ul></div>' if r['opt'] else '') + '</div>'
+                + '<button type="button" class="rp-copy">🛒 없는 재료 장보기 목록 복사</button><p class="rp-hint">체크한 재료는 집에 있는 것으로 보고 빼 드려요.</p></section>'
                 + ('' if any(w in ' '.join(r['s']) and cp_tool_url(w) for w in CP_TOOLS) or (CP.get('widget_ids') or {}).get('밀키트') else cp_box('', '재료 사러 가기 번거로우면 이런 것도 있어요:', 1, fill='밀키트 레시피', want='밀키트'))
-                + (f'<h2>👩‍🍳 {E(r["n"])} 맛있게 끓이는 방법</h2>' if re.search(r'국|찌개|탕|전골|국밥', r['n']) else f'<h2>👩‍🍳 {E(r["n"])} 맛있게 만드는 방법</h2>') + f'<ol class="fr-rs">{steps}</ol>' + (cp_widget(cp_recipe_widget(r), 'recipe', ('밑줄 친 도구 이름과 위 상품은 쿠팡 파트너스 링크로, ' if cpu else '') + '이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.') or (CP_IN_NOTE if cpu else ''))
+                + f'<section class="rp-steps"><div class="rp-sh"><h2>👩‍🍳 {E(r["n"])} {"맛있게 끓이는 방법" if _is_soup else "맛있게 만드는 방법"}</h2><button type="button" class="rp-cookbtn rp-needtts ghost">🔊 한 단계씩 듣기</button></div><ol class="fr-rs">{steps}</ol></section>'
+                + (cp_widget(cp_recipe_widget(r), 'recipe', ('밑줄 친 도구 이름과 위 상품은 쿠팡 파트너스 링크로, ' if cpu else '') + '이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.') or (CP_IN_NOTE if cpu else ''))
                 + (f'<p class="note">영문: {E(FR_EN[r["n"]])} recipe</p>' if FR_EN.get(r['n']) else '')
+                + tipsec + subsec + pairsec
                 + share_bar(f'{r["n"]} 만드는 법', f'{r["n"]} 만드는 법 — 재료 {len(r["need"])}가지로 {r["m"]}분')
-                + '<h2>💡 루리 팁</h2><ul class="chk">' + ''.join(f'<li>{E(t)}</li>' for t in fr_tips(r, RS)) + '</ul>'
                 + f'<a class="lab-cta" href="/fridge/"><b>🍳 내 냉장고 재료로 다른 메뉴 찾기</b><span>재료를 고르면 지금 만들 수 있는 메뉴를 골라 드려요 · 레시피 {NR}개 →</span></a>' + join_cta('recipe')
-                + (f'<h2>🔗 재료가 비슷한 메뉴</h2><ul class="fr-rel">' + ''.join(f'<li><a href="/fridge/r/{fr_slug(x["n"])}/">{x["e"]} {E(x["n"])} <small>{x["m"]}분</small></a></li>' for x in rel) + '</ul>' if rel else '')
+                + relsec
                 + (f'<details class="fr-cr"><summary>사진 출처</summary><p>{"<br>".join(cr)}</p></details>' if cr else '')
-                + '<p class="note">루리의 줍줍이 직접 정리한 1~2인분 기준 레시피예요. 사진은 자유 이용 사진이거나 출처를 밝힌 참고 사진이고, 맞는 사진이 없는 메뉴는 비워 뒀어요. 알레르기가 있으면 재료를 꼭 확인하세요.</p></article>'
-                + '<link rel="stylesheet" href="/assets/fridge/fridge.css?v=12">')
+                + '<p class="note">루리의 줍줍이 직접 정리한 2인분 기준 레시피예요. 사진은 자유 이용 사진이거나 출처를 밝힌 참고 사진이고, 맞는 사진이 없는 메뉴는 비워 뒀어요. 알레르기가 있으면 재료를 꼭 확인하세요.</p></article>'
+                + '<link rel="stylesheet" href="/assets/fridge/fridge.css?v=13"><link rel="stylesheet" href="/assets/fridge/recipe.css?v=5"><script defer src="/assets/fridge/recipe.js?v=3"></script>')
         def how_step(k, t):
             nm = re.split(r'[,.]', t)[0].strip()[:45] or f'{k}단계'
             d_ = {'@type': 'HowToStep', 'name': nm, 'text': t, 'url': f'{SITE}{u}#step{k}'}
@@ -3718,7 +3791,7 @@ def fridge_page():
             if im_ and im_.get('f'):
                 d_['image'] = SITE + im_['f']
             return d_
-        ld = {'@context': 'https://schema.org', '@type': 'Recipe', 'name': r['n'], 'description': tip, 'datePublished': '2026-10-19', 'totalTime': f'PT{r["m"]}M', 'recipeYield': '1~2인분', 'recipeCategory': '집밥',
+        ld = {'@context': 'https://schema.org', '@type': 'Recipe', 'name': r['n'], 'description': tip, 'datePublished': '2026-10-19', 'totalTime': f'PT{r["m"]}M', 'recipeYield': '2인분', 'recipeCategory': '집밥',
               'recipeCuisine': '한식', 'keywords': ', '.join([r['n'] + ' 만드는 법', '냉장고 파먹기'] + r['t']), 'author': {'@type': 'Organization', 'name': NAME},
               'recipeIngredient': r['need'] + r['opt'], 'recipeInstructions': [how_step(k, t) for k, t in enumerate(r['s'], 1)]}
         if mp:
