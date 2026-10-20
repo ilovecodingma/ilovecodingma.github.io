@@ -46,7 +46,9 @@ def anatomy(it, med):
     else:
         tech.insert(0, ('길이', f'공백 빼고 {n}자 — 수상작 가운데 값 {med:g}자{"보다 짧고 굵게" if n < med - 3 else "보다 길게 풀어" if n > med + 3 else "에 딱 맞춰"} 썼어요.'))
     names = [t for t, _ in tech if t not in ('길이', '작명 의미')]
-    one = (f'{"·".join(names[:3])}을 겹쳐 쓴 게 이 문구의 힘이에요.' if len(names) >= 2 else f'{names[0]} 하나로 승부한 담백한 문구예요.' if names else '군더더기 없이 메시지만 남긴 문구예요.')
+    from fr_extra import josa as _jo
+    _nm = "·".join(names[:3])
+    one = (f'{_nm}{_jo(_nm, "을", "를")} 겹쳐 쓴 게 이 문구의 힘이에요.' if len(names) >= 2 else f'{names[0]} 하나로 승부한 담백한 문구예요.' if names else '군더더기 없이 메시지만 남긴 문구예요.')
     seg = ' <i>/</i> '.join(f'<span class="lw-c">{E(c)}</span>' for c in cs)
     return seg, tech, one
 
@@ -99,7 +101,7 @@ def build(ROOT, page, say):
 <section class="lw-list">{works}</section>
 <a class="lab-cta" href="/lab/#diag"><b>🧪 내 문구도 이렇게 분석받기</b><span>수상작 패턴과 비교해 점수와 고칠 점을 알려 줘요 →</span></a>
 <p class="lb-foot">수상 문구는 주최 기관 발표·보도에서 짧게 인용했고 출처를 붙였어요. 수상자 정보는 싣지 않아요.</p>
-<link rel="stylesheet" href="/assets/lab/lab.css?v=2">'''
+<link rel="stylesheet" href="/assets/lab/lab.css?v=3">'''
         top = rows[0]['p']
         page(url, f'{c} 수상작 분석 — 루리의 수상 연구소', f'{c}({o}) 수상작 {len(rows)}개를 구조·기법별로 해설. 대상작: {top[:40]}', body,
              [('루리의 줍줍', '/'), ('수상 연구소', '/lab/'), (c[:30], url)])
@@ -125,4 +127,4 @@ def index_html(cards, D):
 <li><b>대비어</b>1등은 오늘/내일 같은 맞서는 말을 {pct((T.get("rate") or {}).get("contrast"))}% 썼어요(장려·입선 {pct((R.get("rate") or {}).get("contrast"))}%).</li></ul></section>
 <section id="lab" class="lb-sec" aria-label="내 문구 진단"></section>
 <script>(function(){{var th=document.querySelector('.lx-th');th.onchange=function(){{document.querySelectorAll('.lx').forEach(function(li){{li.hidden=th.value&&li.dataset.th!==th.value}})}}}})();</script>
-<link rel="stylesheet" href="/assets/lab/lab.css?v=2"><script defer src="/assets/lab/lab.js?v=2"></script>'''
+<link rel="stylesheet" href="/assets/lab/lab.css?v=3"><script defer src="/assets/lab/lab.js?v=2"></script>'''
