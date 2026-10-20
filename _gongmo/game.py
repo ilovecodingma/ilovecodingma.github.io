@@ -83,6 +83,33 @@ def steam_events():
     return out
 
 
+def steam_release():
+    """스팀 「인기 출시 예정」 검색(공개 검색 JSON, robots 제한 없음)에서 출시일이 날짜(일)까지 확정된 것만. 「2026년 10월」「2026년」처럼 흐린 날짜·데모·사운드트랙·DLC 는 뺀다."""
+    import re, html as _h
+    r = requests.get('https://store.steampowered.com/search/results/', params={'query': '', 'start': 0, 'count': 100, 'filter': 'popularcomingsoon', 'cc': 'kr', 'l': 'koreana', 'json': 1, 'infinite': 1}, headers=UA, timeout=30).json()
+    h = r['results_html']
+    out, seen = [], set()
+    for blk in re.split(r'(?=<a href="https://store\.steampowered\.com/app/)', h)[1:]:
+        m = re.search(r'data-ds-appid="(\d+)"', blk)
+        t_ = re.search(r'<span class="title">([^<]*)</span>', blk)
+        dr = re.search(r'search_released[^>]*>\s*([^<]*?)\s*</div>', blk, re.S)
+        im = re.search(r'<img src="([^"]+)"', blk)
+        if not (m and t_ and dr):
+            continue
+        aid, img, name, dt = m.group(1), (im.group(1) if im else ''), _h.unescape(t_.group(1)), dr.group(1)
+        ds = re.search(r'data-ds-descids="\[([^\]]*)\]"', blk)
+        if ds and ({x.strip() for x in ds.group(1).split(',')} & {'1', '3', '4'}):   # 성적 내용·노출 표시가 있는 게임은 뺌(스팀 콘텐츠 설명 코드 1·3·4)
+            continue
+        if re.search(r'only ?fans|hentai|18\+|adult|nsfw|erotic|ecchi', name, re.I):
+            continue
+        dm = re.fullmatch(r'(\d{4})년 (\d{1,2})월 (\d{1,2})일', dt)
+        if not dm or aid in seen or re.search(r'Demo|데모|Soundtrack|사운드트랙|DLC|OST|Playtest', name, re.I):
+            continue
+        seen.add(aid)
+        out.append({'id': aid, 'name': name, 'img': img, 'date': f'{int(dm.group(1)):04d}-{int(dm.group(2)):02d}-{int(dm.group(3)):02d}'})
+    return out   # 스팀 인기 순서 그대로(날짜 정렬은 화면에서)
+
+
 def record_history(d):
     """우리가 받은 날의 가격·무료 게임을 game_hist.json 에 쌓는다(공개 API 에는 가격 이력이 없어서 기록 시작일부터만). 하루 한 번."""
     hf = os.path.join(HERE, 'game_hist.json')
@@ -113,7 +140,7 @@ def load(force=False):
     if not force and old.get('ts') and time.time() - old['ts'] < 12 * 3600:
         return old
     out = dict(old)
-    for k, fn in (('epic', epic), ('steam', steam), ('events', steam_events)):
+    for k, fn in (('epic', epic), ('steam', steam), ('events', steam_events), ('release', steam_release)):
         try:
             out[k] = fn()
         except Exception as e:

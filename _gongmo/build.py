@@ -72,7 +72,7 @@ THEMES = [  # (키, 이름, 아이콘, 테마색, 홈, [하위 메뉴], [이 테
      ['/contest/', '/c/', '/cat/', '/prep/', '/lab/', '/community/', '/guide/', '/v/', '/me/', '/widget/']),
     ('recipe', '레시피', '🍳', '#c2410c', '/fridge/', [('/fridge/', '냉장고 파먹기'), ('/fridge/solo/', '자취 요리'), ('/fridge/weather/', '날씨별'), ('/fridge/c/guk/', '국·찌개'), ('/fridge/c/bap/', '밥'), ('/fridge/c/myeon/', '면'), ('/fridge/c/bokkeum/', '볶음'), ('/fridge/c/jorim/', '조림·찜'), ('/fridge/c/banchan/', '반찬'), ('/fridge/c/jeon/', '전')], ['/fridge/']),   # 2026-10-20 사용자: 레시피 유입이 많아 별도 카테고리로
     ('life', '생활', '🧺', '#0e7490', '/apply/', [('/apply/', '지원금·청약'), ('/apply/recommend/', '청약 추천'), ('/apply/r/', '지역별'), ('/event/', '경품'), ('/qa/', '고민 해결'), ('/plaza/', '광장')], ['/apply/', '/a/', '/event/', '/qa/', '/ssul/', '/plaza/']),
-    ('game', '게임', '🎮', '#4f46e5', '/game/', [('/game/', '게임 허브'), ('/game/free/', '무료 게임 기록'), ('/game/steam-sale/', '세일 달력'), ('/game/refund/', '환불 규정'), ('/game/#timing', '살 타이밍'), ('/game/#contest', '게임 공모전')], ['/game/']),   # 2026-10-20 홍보 세션 기획서: 게임·취미·개발 커뮤니티 콘텐츠
+    ('game', '게임', '🎮', '#4f46e5', '/game/', [('/game/', '게임 허브'), ('/game/free/', '무료 게임 기록'), ('/game/release/', '출시 일정'), ('/game/steam-sale/', '세일 달력'), ('/game/refund/', '환불 규정'), ('/game/#timing', '살 타이밍'), ('/game/#contest', '게임 공모전')], ['/game/']),   # 2026-10-20 홍보 세션 기획서: 게임·취미·개발 커뮤니티 콘텐츠
     ('ai', '개발 지식', '🧑‍💻', '#0f172a', '/ailog/', [('/ailog/', '개발 지식'), ('/dev/faq/', '개발 FAQ'), ('/en/guide/', 'English guides'), ('/ailog/#log', 'AI 제작 로그')], ['/ailog/', '/dev/', '/en/'])]   # 2026-10-19 사용자: AI 로그 → 개발 지식으로 개편
 
 
@@ -1644,7 +1644,7 @@ def game_pages(live):
     gc = sorted([c for c in live if GAME_RX.search(c['title'])], key=lambda c: (c['end'], -c.get('pv', 0)))[:12]
     body = (f'<p class="bc"><a href="/">홈</a> › 게임</p><h1>🎮 게임 허브 — 이번 주 무료 게임·스팀 할인·게임 공모전</h1>'
             f'<p class="cat-st">📌 스토어 기준 {E(d.get("at", ""))}(한국 시간)에 받은 정보예요. 가격·할인은 바뀔 수 있으니 결제 전 스토어에서 확인하세요. 출처: Epic Games Store, Steam.</p>'
-            '<p class="hm-chips"><a href="/game/free/">🎁 에픽 무료 게임 기록</a><a href="/game/steam-sale/">📅 스팀 세일 달력</a><a href="/game/refund/">↩️ 스팀 환불 규정</a><a href="#timing">🕰️ 살 타이밍</a></p>'
+            '<p class="hm-chips"><a href="/game/free/">🎁 에픽 무료 게임 기록</a><a href="/game/release/">🗓️ 신작 출시 일정</a><a href="/game/steam-sale/">📅 스팀 세일 달력</a><a href="/game/refund/">↩️ 스팀 환불 규정</a><a href="#timing">🕰️ 살 타이밍</a></p>'
             f'<h2 id="free">🎁 지금 무료로 받는 게임 (Epic Games Store)</h2>' + (f'<ul class="gm-g">{free}</ul>' if free else '<p class="note">지금 무료로 풀린 게임이 없어요.</p>')
             + (f'<h3>⏭️ 다음 무료 예고</h3><ul class="gm-g">{upc}</ul>' if upc else '')
             + (f'<h3>💸 에픽 할인 중</h3><ul class="gm-l">{sale}</ul>' if sale else '')
@@ -1784,16 +1784,17 @@ def game_extra_pages():
                 return '날짜 미정 (공식 문서에 TBD)'
             return f'{_gr(a["start"], a["end"])} · ' + (f'D-{(_gd(a["start"]) - td).days}' if _gd(a['start']) > td else ('진행 중' if td <= _gd(a['end']) else '종료'))
         rows = ''.join(f'<tr><td>{E(a["name"])}</td><td>{E(a["start"] or "-")} ~ {E(a["end"] or "-")}</td><td>{E(st_(a))}</td></tr>' for a in ev['seasonal'])
+        rows += '<tr><td>Autumn Sale 2026 <small>(지난 시즌)</small></td><td>2026-10-01 ~ 2026-10-08</td><td>종료 · SteamDB 표기(공식 일정 문서에는 지난 일정이 없어서 줍줍 홍보팀이 확인)</td></tr>'
         fr = ''.join(f'<tr><td>{E(a["name"])}</td><td>{E(a["start"])} ~ {E(a["end"])}</td><td>{("D-" + str((_gd(a["start"]) - td).days)) if _gd(a["start"]) > td else ("진행 중" if td <= _gd(a["end"]) else "종료")}</td></tr>' for a in (ev.get('fests') or []) + (ev.get('nextfest') or []) if _gd(a['end']) >= td)
         nxt = next((a for a in ev['seasonal'] if a.get('start') and _gd(a['start']) >= td), None)
         faq, ld = _faq([('스팀 세일은 1년에 몇 번 하나요?', '시즌 세일은 스팀 전체가 참여하는 큰 세일로, 공식 문서에 「1년에 4번」(겨울·봄·여름·가을)으로 적혀 있어요. 그 밖에 장르별 테마 페스티벌과 Next Fest(체험판 행사)가 따로 열려요.'),
                         ('다음 스팀 세일은 언제예요?', (f'공식 일정 문서 기준으로 다음 시즌 세일은 {nxt["name"]}({_gr(nxt["start"], nxt["end"])}, 지금부터 {(_gd(nxt["start"]) - td).days}일 뒤)예요.' if nxt else '공식 일정 문서에 아직 다음 날짜가 없어요.')),
-                        ('블랙프라이데이에도 스팀 세일을 하나요?', '스팀 공식 일정 문서에는 가을 세일 날짜가 따로 적혀 있고 2026년 가을 세일은 이 문서에 날짜가 없어요. 블랙프라이데이는 미국 추수감사절(11월 넷째 목요일) 다음 날이라 2026년은 11월 27일이지만, 이건 달력 날짜일 뿐 스팀이 확정한 일정은 아니에요. 공지가 나오면 이 표가 바뀌어요.'),
+                        ('블랙프라이데이에도 스팀 세일을 하나요?', '2026년 스팀 가을 세일은 SteamDB 에 10월 1일~8일로 표기돼 있어 이미 끝났어요(공식 일정 문서에는 지난 일정이 실리지 않아요). 지금 공식 문서에 예정된 다음 시즌 세일은 겨울 세일이에요. 블랙프라이데이(2026년은 11월 27일)에 스팀이 따로 큰 세일을 한다는 공식 일정은 문서에 없어요.'),
                         ('세일 때 산 게임을 환불할 수 있나요?', '구매 후 14일 이내이고 플레이 시간이 2시간 미만이면 요청할 수 있어요. 자세한 조건은 <a href="/game/refund/">스팀 환불 규정</a>에 정리했어요.')])
         body = ('<p class="bc"><a href="/">홈</a> › <a href="/game/">게임</a> › 스팀 세일 달력</p><h1>📅 스팀 세일 언제 하나요? 시즌 세일 달력</h1>'
                 + (f'<p class="cat-st">📌 다음 시즌 세일은 <b>{E(nxt["name"])}</b>, {E(_gr(nxt["start"], nxt["end"]))} (D-{(_gd(nxt["start"]) - td).days})예요.</p>' if nxt else '')
                 + '<h2>시즌 세일 (스팀 공식 일정)</h2><div class="tblw"><table class="xb"><thead><tr><th>세일</th><th>기간</th><th>상태</th></tr></thead><tbody>' + rows + '</tbody></table></div>'
-                + '<p class="kwn">출처: Steamworks 문서 「Upcoming Steam Events」(공식). 시즌 세일은 해마다 4번이고, 날짜가 TBD 인 곳은 공식 발표 전이에요. 지난 시즌 날짜는 <a href="https://store.steampowered.com/news/" target="_blank" rel="noopener nofollow">스팀 공식 뉴스</a>에서 확인하세요.</p>'
+                + '<p class="kwn">출처: Steamworks 문서 「Upcoming Steam Events」(공식)와 SteamDB(지난 시즌 한 줄). 시즌 세일은 해마다 4번이고, 날짜가 TBD 인 곳은 공식 발표 전이에요. 최종 일정은 스팀 공지로 확인하세요. 지난 시즌 날짜는 <a href="https://store.steampowered.com/news/" target="_blank" rel="noopener nofollow">스팀 공식 뉴스</a>에서 확인하세요.</p>'
                 + ('<h2>테마 페스티벌·Next Fest (앞으로 열리는 것)</h2><div class="tblw"><table class="xb"><thead><tr><th>행사</th><th>기간</th><th>상태</th></tr></thead><tbody>' + fr + '</tbody></table></div>'
                    '<p class="kwn">테마 페스티벌은 특정 장르 게임을 모아 홍보하는 행사이고 할인 게임이 우선이에요. Next Fest 는 출시 전 게임의 체험판을 해 보는 행사예요(공식 설명 기준).</p>' if fr else '')
                 + '<h2>자주 묻는 질문</h2>' + faq + cp_box('게임 게이밍 PC', '게임할 때 많이 찾는 물건:', 2, strict=True) + join_cta('game')
@@ -1801,6 +1802,27 @@ def game_extra_pages():
         page('/game/steam-sale/', f'스팀 세일 언제 하나요? 시즌 세일 달력 {td.year}~{td.year + 1} (겨울·봄·여름·가을, Next Fest)', '스팀 시즌 세일과 테마 페스티벌, Next Fest 일정을 스팀 공식 일정 문서 기준으로 정리했어요. 다음 세일까지 며칠 남았는지도 매일 갱신해요.',
              body, [('루리의 줍줍', '/'), ('게임', '/game/'), ('스팀 세일 달력', '/game/steam-sale/')], ld)
         urls.append('/game/steam-sale/')
+    # ---- 신작 출시 일정 (스팀 인기 출시 예정 중 날짜가 확정된 것만)
+    rel = sorted([x for x in (d.get('release') or []) if x['date'] >= td.isoformat()][:40], key=lambda x: (x['date'], x['name']))   # 인기순 상위 40개를 날짜순으로
+    if rel:
+        wd = '월화수목금토일'
+        by = {}
+        for x in rel[:60]:
+            by.setdefault(x['date'], []).append(x)
+        secs = ''.join(f'<h3>{int(k[5:7])}월 {int(k[8:])}일({wd[_gd(k).weekday()]}) <small>D-{(_gd(k) - td).days}</small></h3><ul class="gm-g">' + ''.join(
+            f'<li><a href="https://store.steampowered.com/app/{x["id"]}/" target="_blank" rel="noopener nofollow">' + (f'<img src="{E(x["img"])}" width="232" height="87" loading="lazy" decoding="async" referrerpolicy="no-referrer" alt="" onerror="this.remove()">' if x['img'] else '')
+            + f'<b>{E(x["name"])}</b><span>스팀 출시 예정</span></a></li>' for x in v) + '</ul>' for k, v in by.items())
+        faq, ld = _faq([('이번 주 신작 게임 뭐 나와요?', ', '.join(x['name'] for x in rel[:5]) + ' 등이 스팀에서 출시일이 정해져 있어요. 전체는 위 목록을 보세요.'),
+                        ('출시일이 안 정해진 게임은요?', '스팀에 「2026년 10월」「2026년」처럼 날짜가 흐리게 적힌 게임은 일부러 뺐어요. 날짜가 정해지면 이 목록에 자동으로 들어와요.'),
+                        ('에픽 게임즈 스토어 출시 일정도 있나요?', '에픽은 출시 예정작 날짜를 공개 자료로 내주지 않아서 이 페이지에는 스팀만 있어요. 에픽은 매주 바뀌는 무료 게임 예고를 <a href="/game/free/">무료 게임 기록</a>에 정리해요.')])
+        body = ('<p class="bc"><a href="/">홈</a> › <a href="/game/">게임</a> › 신작 출시 일정</p><h1>🗓️ 신작 게임 출시 일정 — 스팀 출시일이 정해진 게임</h1>'
+                f'<p class="cat-st">📌 스토어 기준 {E(d.get("at", ""))}(한국 시간). 스팀 「인기 출시 예정」 중 출시일이 날짜까지 정해진 {len(rel)}개 가운데 가까운 순으로 보여 줘요. 추측한 날짜는 넣지 않았어요.</p>'
+                + secs + '<h2>자주 묻는 질문</h2>' + faq + cp_box('게임 게이밍 PC', '게임할 때 많이 찾는 물건:', 2, strict=True) + join_cta('game')
+                + '<p class="note">출처: Steam 스토어 공개 검색 정보. 출시일은 개발사 사정으로 바뀔 수 있어요. 줍줍은 Valve와 무관해요.</p>'
+                '<p class="hm-links"><a href="/game/">🎮 게임 허브</a> · <a href="/game/free/">🎁 에픽 무료 게임 기록</a> · <a href="/game/steam-sale/">📅 스팀 세일 달력</a></p>' + GAME_CSS)
+        page('/game/release/', '신작 게임 출시 일정 — 스팀 출시일이 정해진 게임 (이번 주·이번 달)', f'스팀 인기 출시 예정 게임 중 출시일이 날짜까지 정해진 {len(rel)}개를 가까운 순으로 모았어요. 추측한 날짜는 넣지 않아요.',
+             body, [('루리의 줍줍', '/'), ('게임', '/game/'), ('신작 출시 일정', '/game/release/')], ld)
+        urls.append('/game/release/')
     # ---- 스팀 환불 규정 (스팀 공식 환불 페이지 2024-04-23 수정본 확인)
     rows = [('게임·소프트웨어', '구매 후 14일 이내 + 플레이 시간 2시간 미만이면 이유와 상관없이 요청 가능'), ('DLC', '구매 후 14일 이내 + DLC 구매 후 게임 플레이 2시간 미만 + DLC를 사용·변경·거래하지 않았을 때(일부 서드파티 DLC는 환불 불가, 상점 페이지에 표시)'),
             ('게임 내 구매', 'Valve 게임은 구매 후 48시간 이내 + 아이템을 쓰지 않았을 때. 서드파티 게임은 개발자가 환불을 켜 둔 경우만(구매 전 표시)'), ('출시 전 구매(예약 구매)', '출시 전에는 언제든 요청 가능. 14일·2시간 기준은 출시일부터 적용. 앞서 해보기는 플레이 시간이 모두 2시간에 포함'),
