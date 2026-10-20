@@ -142,7 +142,7 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False, noinde
 <meta name="theme-color" content="{TH[3] if TH else '#5b21b6'}">
 <link rel="icon" href="/favicon.ico?v=6" sizes="any"><link rel="icon" type="image/png" sizes="48x48" href="/assets/icons/icon-48.png?v=6"><link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/icon-96.png?v=6"><link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/icon-192.png?v=6"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=6"><link rel="manifest" href="/site.webmanifest"><link rel="alternate" type="application/rss+xml" title="루리의 줍줍" href="/rss.xml">
 <link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="/assets/gm.css?v=17">{('<link rel="stylesheet" href="/assets/chat/ruri-chat.css?v=8">') if not (TH and TH[0] == 'ai') else ''}{COMM_TAGS}{('<script type="module" src="/assets/chat/ruri-chat.js?v=13"></script>') if not (TH and TH[0] == 'ai') else ''}<script defer src="/assets/app/app.js?v=3"></script>
+<link rel="stylesheet" href="/assets/gm.css?v=18">{('<link rel="stylesheet" href="/assets/chat/ruri-chat.css?v=8">') if not (TH and TH[0] == 'ai') else ''}{COMM_TAGS}{('<script type="module" src="/assets/chat/ruri-chat.js?v=13"></script>') if not (TH and TH[0] == 'ai') else ''}<script defer src="/assets/app/app.js?v=3"></script>
 {ldh}
 {GTAG}
 </head><body data-th="{TH[0] if TH else 'hub'}"{(' data-api="' + COMM_API + '"') if COMM_API else ''}>
@@ -152,9 +152,14 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False, noinde
 <main class="w">
 {body}{PAGE_INTRO.get(path, '')}
 </main>
-<footer class="ft"><div class="w ft-in"><div class="ft-b"><img class="av" src="/assets/ruri/avatar.webp" width="56" height="56" alt="루리" loading="lazy"><div><b>루리의 줍줍</b><p>마감 놓치지 마세요! 매일 아침 새 공모전을 정리해 둘게요.</p><p class="ft-m">문의 <a href="mailto:{MAIL}">{MAIL}</a>{"" if PARTNER == MAIL else f' · 제휴 <a href="mailto:{PARTNER}">{PARTNER}</a>'}</p></div></div>
-<p class="ft-l"><a href="/about/">소개</a><a href="/all/">전체 메뉴</a><a href="/plaza/">🗣️ 광장</a><a href="/ailog/">🤖 AI 제작 로그</a><a href="/news/">🕵️ 기사 확인 신호</a><a href="/app/">📲 앱·알림</a><a href="/prep/">준비실</a><a href="/qa/">고민 해결</a><a href="/guide/">응모 가이드</a><a href="/event/">경품 이벤트</a><a href="/privacy/">개인정보처리방침</a><a href="/terms/">이용약관</a><a href="/contact/">문의</a></p>
-{('<p class="ft-c">' + comm_btns() + '</p>') if COMM_LINKS else ''}<p class="ft-n">공모전 정보는 각 주최 기관의 공고를 바탕으로 정리했으며, 정확한 요강은 반드시 공식 공고에서 확인하세요. © 2026 루리의 줍줍 · sungprofile.cloud</p></div></footer>{CL_CSS if COMM_LINKS else ''}
+<footer class="ft"><div class="w ft-in"><div class="ft-b"><img class="av" src="/assets/ruri/avatar.webp" width="56" height="56" alt="루리" loading="lazy"><div><b>루리의 줍줍</b><p>오늘 뭐 먹지부터 지원금·공모전·이슈까지, 일단 줍고 가세요.</p><p class="ft-m">문의 <a href="mailto:{MAIL}">{MAIL}</a>{"" if PARTNER == MAIL else f' · 제휴 <a href="mailto:{PARTNER}">{PARTNER}</a>'}</p></div></div>
+<nav class="ft-g" aria-label="사이트 메뉴"><div><b>🍳 생활</b><a href="/fridge/">냉장고 파먹기</a><a href="/event/">경품·용돈</a><a href="/qa/">고민 해결</a><a href="/plaza/">광장</a></div>
+<div><b>💰 지원금·머니</b><a href="/apply/">지원금·청약</a><a href="/money/tools/salary/">계산기</a><a href="/money/experts/">전문가 말 vs 시세</a><a href="/analyst/">애널리스트</a></div>
+<div><b>🏆 공모전</b><a href="/contest/">공모전 찾기</a><a href="/prep/">준비실</a><a href="/guide/">응모 가이드</a><a href="/lab/">수상 연구소</a></div>
+<div><b>📺 이슈</b><a href="/news/">루리 뉴스</a><a href="/trend/">이슈 트렌드</a><a href="/hot/">핫이슈</a><a href="/kw/">인기 키워드</a></div>
+<div><b>ℹ️ 사이트</b><a href="/about/">소개</a><a href="/ailog/">개발 지식</a><a href="/app/">앱·알림</a><a href="/all/">전체 메뉴</a></div></nav>
+{('<p class="ft-c">' + comm_btns() + '</p>') if COMM_LINKS else ''}<p class="ft-l"><a href="/privacy/">개인정보처리방침</a><a href="/terms/">이용약관</a><a href="/contact/">문의</a></p>
+<p class="ft-n">정보는 각 기관의 공고·언론 보도·공개 자료를 바탕으로 정리했어요. 정확한 내용은 반드시 공식 공고와 원문에서 확인하세요. 일부 링크는 쿠팡 파트너스 활동의 일환으로 수수료를 받을 수 있어요. © 2026 루리의 줍줍 · sungprofile.cloud</p></div></footer>{CL_CSS if COMM_LINKS else ''}
 </body></html>'''
     d = os.path.join(ROOT, path.strip('/'))
     os.makedirs(d, exist_ok=True)
@@ -1330,7 +1335,7 @@ def build():
 <p class="hm-more"><a href="/contest/week/">이번 주 마감 전체</a> · <a href="/contest/univ/">대학생 공모전</a> · <a href="/cat/literature/">분야별 보기</a> · <a href="/prep/">📋 준비실</a> · <a href="/lab/">🔬 수상 연구소</a> · <a href="/guide/">📘 응모 가이드</a></p></section>
 <section class="hm-sec"><h2>🧭 이슈·머니</h2><div class="hm-more3">{more_h}</div>
 {f'<div class="hm-hot"><b>🔥 지금 뜨는 이슈</b><ol>{hot_h}</ol></div>' if hot_h else ''}
-<p class="hm-more"><a href="/news/#brief">📺 루리 뉴스 브리핑</a> · <a href="/trend/">🍿 이슈 트렌드</a> · <a href="/hot/">🔥 지금 뜨는 이슈</a> · <a href="/kw/">🔎 많이 찾는 검색어</a> · <a href="/all/">☰ 전체 메뉴</a> · <a href="/ailog/">🤖 사람 1명 + AI로 만든 과정</a></p></section>
+<p class="hm-more"><a href="https://www.youtube.com/channel/UCdJQUqqrHHXC7mWstly2eXw" target="_blank" rel="noopener">▶️ 루리 뉴스 유튜브</a> · <a href="/news/#brief">📺 루리 뉴스 브리핑</a> · <a href="/trend/">🍿 이슈 트렌드</a> · <a href="/hot/">🔥 지금 뜨는 이슈</a> · <a href="/kw/">🔎 많이 찾는 검색어</a> · <a href="/all/">☰ 전체 메뉴</a> · <a href="/ailog/">🤖 사람 1명 + AI로 만든 과정</a></p></section>
 <section class="hm-sec"><div data-pcrecent="6"></div>
 <p class="hm-more"><a href="/plaza/">🗣️ 줍줍 광장 — 내 글 올리기</a> · <a href="/dev/faq/">❓ 개발 FAQ</a></p></section>
 <link rel="stylesheet" href="/assets/home/consult.css?v=15">'''
