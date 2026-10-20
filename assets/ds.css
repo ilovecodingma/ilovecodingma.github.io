@@ -372,3 +372,5 @@ main.w:has(.hx-hero){max-width:none;padding:0}
 .hx-wc small{display:block;margin:0 3px;color:var(--mu);font-size:12px}
 .hx-primary{background:linear-gradient(100deg,#7c3aed,#db2777)!important;color:#fff!important;border-color:transparent!important}
 @media(max-width:640px){.hx-wrow{grid-auto-columns:minmax(112px,38%)}}
+
+.hx-def{margin:10px 0 0;font-size:13.5px;line-height:1.65;color:var(--mu)}
