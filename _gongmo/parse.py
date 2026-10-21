@@ -290,6 +290,8 @@ def main():
         s, e = parse_dates(src, t)
         if x.get('end_override'):
             e = datetime.date.fromisoformat(x['end_override'])
+        if x.get('start_override'):   # 2026-10-21 일정 변경 공고 등 공식 페이지 확인값(manual.json)
+            s = datetime.date.fromisoformat(x['start_override'])
         fld0 = parse_field(src, core, x) if t else ''
         if not x.get('force') and (not CONTESTY.search(title) or (re.search(r'봉사|교육|동아리|서포터즈|채용|인턴|대외활동', fld0) and not re.search(r'공모전|경진|콘테스트|콩쿠르', title))):
             if not (x['reg'] != 'KR' and x['kind'] in ('hackathon', 'contest')):
@@ -304,6 +306,10 @@ def main():
             stat['past'] += 1
             continue
         prize, pv = parse_prize(src, core, body) if t else ('공고 참조', 0)
+        if x.get('prize_override'):
+            prize = x['prize_override']
+            if x.get('pv_override') is not None:
+                pv = int(x['pv_override'])
         field = parse_field(src, core, x) if t else ''
         elig = parse_eligibility(src, core, body) if t else '공고 참조'
         org = parse_org(src, core, x)
