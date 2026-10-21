@@ -1549,7 +1549,7 @@ def build():
     fr_urls = list(fr_urls) + watch_pages()
     app_page()
     news_page()
-    extra_urls = talk_pages() + trend_pages() + game_pages(live) + game_extra_pages() + kin_guides() + class_pages() + essay_pages() + issue_pages() + kin_answer_pages() + mag_pages(live, aps) + analyst_pages() + satire_pages() + kw_pages() + money_pages() + apply_rec_page() + tool_pages() + hot_pages()
+    extra_urls = talk_pages() + trend_pages() + game_pages(live) + game_extra_pages() + kin_guides() + class_pages() + essay_pages() + issue_pages() + daily_pages() + kin_answer_pages() + mag_pages(live, aps) + analyst_pages() + satire_pages() + kw_pages() + money_pages() + apply_rec_page() + tool_pages() + hot_pages()
     import widget
     extra_urls += widget.build(ROOT, live, aps, hot_live()[0], page, say, COMM_API, TODAY)  # 퍼가기 위젯 (2026-10-18 연구 세션 요청)
     extra_urls += region_pages(aps) + contest_hubs(live) + week_hub(live) + cross_pages(aps) + apply_hubs(aps)
@@ -2307,6 +2307,57 @@ def issue_pages():
            'publisher': {'@type': 'Organization', 'name': NAME, 'url': SITE + '/'}}
     page(p, title, desc, body, [('루리의 줍줍', '/'), ('이슈', '/news/'), ('김정은 사망설', p)], art, full_title=True)
     return [p]
+
+
+
+DAILY_F = os.path.join(HERE, 'daily.json')
+DAILY_FTC = '이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.'
+DAILY_JS = """<script>(function(){document.querySelectorAll('.dl-calc').forEach(function(w){var C=JSON.parse(w.getAttribute('data-c')),$=function(s){return w.querySelector(s)};
+function fmt(n){return n>=100?Math.round(n).toLocaleString('ko-KR'):(Math.round(n*10)/10).toLocaleString('ko-KR')}
+function run(){var p=parseFloat($('.p').value),n=parseFloat($('.n').value),s=parseFloat($('.s').value),u=C.units[$('.u').selectedIndex]||[ '',1],o=$('.o');
+if(!(p>0)||!(n>0)){o.innerHTML='<p class="dl-h">결제 총액과 개수를 입력하세요.</p>';return}
+var h='';C.out.forEach(function(r){if(r[1]===0){h+='<tr><td>'+r[0]+'</td><td><b>'+fmt(p/n)+'원</b></td></tr>';return}
+if(!(s>0)){return}var base=n*s*u[1];h+='<tr><td>'+r[0]+'</td><td><b>'+fmt(p/(base/r[1]))+'원</b></td></tr>'});
+o.innerHTML='<table class="xb"><tr><th>기준</th><th>단가</th></tr>'+h+'</table><p class="dl-h">입력한 값으로만 계산한 단순 나눗셈이고, 배송비·할인·쿠폰은 반영하지 않았어요.</p>'}
+w.querySelectorAll('input,select').forEach(function(e){e.addEventListener('input',run);e.addEventListener('change',run)});run()})})();</script>"""
+
+
+def daily_pages():
+    """/money/daily/ 생필품 단가 계산기 코너 (2026-10-21 홍보 요청서). 가격 수집 없음 — 사용자가 입력한 값의 단가 계산만. 쿠팡 배너 코드는 coupang_blocks/<slug>.txt 가 있을 때만 붙인다."""
+    if not os.path.exists(DAILY_F):
+        return []
+    cats = json.load(open(DAILY_F, encoding='utf-8'))
+    ftc = f'<p class="note dl-ftc"><b>{E(DAILY_FTC)}</b></p>'
+    css = ('<style>.dl-calc{border:1px solid var(--bd,#e5e7eb);border-radius:12px;padding:12px 14px;margin:12px 0;background:var(--card,#fff)}.dl-calc label{display:block;margin:6px 0;font-size:14px}.dl-calc input,.dl-calc select{padding:7px 8px;border:1px solid var(--bd,#d1d5db);border-radius:8px;font-size:15px;width:9.5em;max-width:100%}'
+           '.dl-h{font-size:12.5px;color:var(--mu,#6b7280)}.dl-ftc{background:#fff7ed;border:1px solid #fed7aa;border-radius:10px;padding:8px 12px}.dl-bn{margin:12px 0;overflow-x:auto}</style>')
+    urls = []
+    cards = ''
+    for c in cats:
+        p = f'/money/daily/{c["slug"]}/'
+        cfg = {'units': c['units'], 'out': c['out']}
+        sz = ('<label>' + E(c['size']) + (' (선택)' if c.get('sizeopt') else '') + ' <input class="s" type="number" min="0" step="any" inputmode="decimal"> <select class="u">'
+              + ''.join(f'<option>{E(u[0])}</option>' for u in c['units']) + '</select></label>')
+        calc = (f'<div class="dl-calc" data-c="{E(json.dumps(cfg, ensure_ascii=False))}"><b>🧮 {E(c["name"])} 단가 계산기</b>'
+                f'<label>결제 총액(원) <input class="p" type="number" min="0" step="any" inputmode="numeric"></label>'
+                f'<label>{E(c["cnt"])} <input class="n" type="number" min="0" step="any" inputmode="decimal" value="1"></label>{sz}<div class="o"></div></div>')
+        bf = os.path.join(HERE, 'coupang_blocks', c['slug'] + '.txt')
+        bn = open(bf, encoding='utf-8').read().strip() if os.path.exists(bf) else ''
+        shop = (f'<h2>쿠팡에서 가격 확인하기</h2><div class="dl-bn">{bn}</div>' if bn else '<h2>쿠팡에서 가격 확인하기</h2><p>쿠팡 가격 배너를 준비 중이에요. 가격은 수시로 바뀌니, 위 계산기에 쿠팡 화면의 최신 가격을 직접 넣어 비교하세요.</p>')
+        faq, fld = _faq([tuple(x) for x in c['faq']])
+        body = (f'<p class="bc"><a href="/">홈</a> › <a href="/money/daily/">생필품 단가 계산</a> › {E(c["name"])}</p>{ftc}<h1>{E(c["h1"])}</h1>'
+                f'<div class="cat-st"><b>결론</b><br>{E(c["lead"])}</div>{calc}'
+                f'<h2>비교 전에 확인할 것</h2><ul class="gm-l">' + ''.join(f'<li>{E(x)}</li>' for x in c['check']) + '</ul>'
+                + shop + '<p class="dl-h">쿠팡 가격은 수시로 바뀌어요. 이 페이지에 가격은 적지 않았고, 쿠팡 화면이 최신이에요. 줍줍은 「최저가」를 단정하지 않아요.</p>'
+                f'<h2>자주 묻는 질문</h2>{faq}<p class="hm-links"><a href="/money/daily/">다른 생필품 단가 계산 보기</a></p>' + css + GAME_CSS
+                + DAILY_JS + '<script type="application/ld+json">%s</script>' % json.dumps(fld, ensure_ascii=False).replace('</', '<\/'))
+        page(p, f'{c["h1"]} (단가 계산기)', c['lead'][:150], body, [('루리의 줍줍', '/'), ('생필품 단가 계산', '/money/daily/'), (c['name'], p)])
+        urls.append(p)
+        cards += f'<li><a href="{p}"><b>{c["icon"]} {E(c["name"])}</b><span>{E(c["h1"][:40])}</span></a></li>'
+    hub = (f'<p class="bc"><a href="/">홈</a> › 생필품 단가 계산</p>{ftc}<h1>생필품, 총액 말고 단가로 비교하세요 — 휴지·세제·생수·쌀 단가 계산기</h1>'
+           '<div class="cat-st"><b>결론</b><br>묶음 수와 용량이 제각각이라 총액만 보면 비교가 안 돼요. 결제 총액, 개수, 용량을 넣으면 개당·100ml당·1m당 단가를 계산해 줘요. 줍줍은 쿠팡 가격을 모으지 않고, 입력한 값으로만 계산해요.</div>'
+           f'<ul class="gm-g">{cards}</ul><p class="dl-h">쿠팡 가격은 수시로 바뀌어요. 줍줍은 「최저가」를 단정하지 않고, 최신 가격은 쿠팡 화면에서 확인하세요.</p>' + css + GAME_CSS)
+    page('/money/daily/', '생필품 단가 계산기 — 휴지·물티슈·세제·생수·쌀 단가 비교', '결제 총액·개수·용량을 넣으면 개당·100ml당·1m당 단가를 계산해요. 휴지, 물티슈, 세탁세제, 샴푸, 생수, 라면, 쌀 비교.', hub, [('루리의 줍줍', '/'), ('생필품 단가 계산', '/money/daily/')])
+    return urls + ['/money/daily/']
 
 
 KIN_A = os.path.join(HERE, 'kin_answers.json')
