@@ -4,7 +4,7 @@
   const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const ga = (n, p) => { try { window.gtag && gtag('event', n, p || {}); } catch {} };
   const G = { ok: ['✅', '확인 신호 많음', 'wave'], warn: ['🟡', '추가 확인 필요', 'think'], bad: ['🔴', '주의 신호', 'surprise'], opinion: ['🗣️', '의견 글', 'think'] };
-  const CK = { '확인': 'ck-ok', '주의': 'ck-bad', '확인 불가': 'ck-na', '해당 없음': 'ck-no', '참고': 'ck-no' };
+  const CK = { '확인': 'ck-ok', '주의': 'ck-bad', '확인 불가': 'ck-na', '해당 없음': 'ck-no', '참고': 'ck-no', '확인 안 됨': 'ck-bad', '검증 불가': 'ck-na', '기사 미확인': 'ck-na' };
   const SAY = {
     ok: ['출처가 분명하고 제목 숫자·인용이 본문과 맞아요. 그래도 사실 여부는 공식 발표로 확인해요!', '확인 신호가 많은 기사들이에요. 판정이 아니라 신호라는 것만 기억해 주세요.'],
     warn: ['큰 틀은 맞지만, 세부 내용은 기사마다 조금씩 달라요.', '아직 확인이 덜 된 부분이 있어요. 한 번 더 보세요!'],
@@ -28,12 +28,12 @@
     const hl = t => { const uniq = [...new Set(words(t))].filter(w => cnt[w] === 1 && arts.length >= 3).sort((a, b) => b.length - a.length).slice(0, 2);
       let h = esc(t); uniq.forEach(w => { h = h.replace(w, `<mark>${w}</mark>`); }); return h; };
     const cmp = x.c === '정치' ? `<div class="nw-cmp"><small>📰 같은 사건, 언론사별 제목 <i>(이 언론사만 쓴 표현은 노란색)</i></small>${arts.map(a => `<p><b>${esc(a.o)}</b>${hl(a.t)}</p>`).join('')}</div>` : '';
-    const line = x.claim ? '이건 발언(주장)을 전한 기사들이에요. 그런 말을 한 건 사실이지만, 말한 내용이 맞는지는 따로 따져 봐야 해요!' : x.cf && x.cf.length ? `언론사마다 숫자가 달라요(${x.cf.join(' / ')}). 공식 발표를 확인해 보세요!` : pick(SAY[g] || SAY.warn, x.t);
+    const line = x.line ? x.line : x.claim ? '이건 발언(주장)을 전한 기사들이에요. 그런 말을 한 건 사실이지만, 말한 내용이 맞는지는 따로 따져 봐야 해요!' : x.cf && x.cf.length ? `언론사마다 숫자가 달라요(${x.cf.join(' / ')}). 공식 발표를 확인해 보세요!` : pick(SAY[g] || SAY.warn, x.t);
     return `<article class="nw-is ${g || ''}" id="is${x.n}"><div class="nw-rank">${i + 1}</div><div class="nw-ib">
 <p class="nw-meta"><span class="nw-cat">${esc(x.c)}</span><span class="nw-hot" title="같은 언론사의 여러 기사는 1곳으로 셉니다">🔥 언론사 ${x.on}곳 보도</span><span class="nw-t">${esc(ago(x.ts))}</span></p>
 <h2>${esc(x.t)}</h2>${badge(x.s, g)}${x.claim ? '<span class="nw-b claim">🗣️ 발언·주장</span>' : ''}
 <div class="nw-say"><img src="/assets/ruri/o_det_${G[g] ? G[g][2] : 'think'}_s.webp" width="44" height="61" alt="루리 탐정"><p><b>루리 탐정</b>${esc(line)}</p></div>
-${cmp}${prs(x.pr)}
+${cmp}${x.dt ? `<div class="nw-pin"><table class="nw-ck"><tr><th>상세 분석</th><th>결과</th><th>근거</th></tr>${(x.an || []).map(c => `<tr><td>${esc(c[0])}</td><td><span class="${CK[c[1]] || ''}">${esc(c[1])}</span></td><td>${esc(c[2])}</td></tr>`).join('')}</table><p><a class="nw-pl" href="${esc(x.dt.u)}">📑 ${esc(x.dt.l)}</a></p></div>` : ''}${prs(x.pr)}
 <details class="nw-d"><summary>🔎 기사별 확인 항목 ${arts.length}건 보기</summary><ul class="nw-al">${arts.map(art).join('')}</ul></details>
 <button class="nw-sh" data-n="${x.n}">📤 공유</button></div></article>`;
   }

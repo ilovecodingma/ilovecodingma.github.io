@@ -2392,7 +2392,7 @@ def trend_pages():
     nl2 = ''.join(f'<li><a href="/news/#is{x["n"]}"><b>{E2(x["t"][:60])}</b><span>언론사 {x["on"]}곳' + (f' · 숫자가 엇갈림: {E2(", ".join(x["cf"][:3]))}' if x.get('cf') else ' · 발언·주장 기사') + '</span></a></li>' for x in cf)
     news_h = f'<section class="mg-s"><h2>📰 언론이 서로 다르게 전한 이슈</h2><ul class="mg-l">{nl2}</ul><p class="kwn">기사 제목 속 숫자가 서로 다르거나 누군가의 발언·주장이 중심인 이슈예요. 누가 맞는지는 판단하지 않고 기사 제목을 나란히 보여 줘요.</p></section>' if nl2 else ''
     shr = share_bar('이슈 트렌드 — 오늘 커뮤니티가 가장 뜨겁게 이야기한 이슈', '오늘 커뮤니티 TOP: ' + ', '.join(x['t'][:16] for x in iss[:3]))
-    css = ('<link rel="stylesheet" href="/assets/mag/mag.css?v=10"><link rel="stylesheet" href="/assets/analyst/analyst.css?v=4"><link rel="stylesheet" href="/assets/news/news.css?v=6">'
+    css = ('<link rel="stylesheet" href="/assets/mag/mag.css?v=10"><link rel="stylesheet" href="/assets/analyst/analyst.css?v=4"><link rel="stylesheet" href="/assets/news/news.css?v=7">'
            '<style>.tr-hero{display:flex;gap:14px;align-items:center;margin:8px 0 14px;padding:12px;border-radius:16px;background:linear-gradient(135deg,#fff7ed,#fef3c7);color:#451a03}.tr-hero img{width:140px;height:auto;border-radius:12px;flex:none}'
            '.tr-hero b{display:block;font-size:20px;margin-bottom:4px}.tr-hero p{margin:0;font-size:14px;line-height:1.6}.tr-b{height:10px;border-radius:999px;background:var(--pbg,#f1f5f9);margin:6px 0;overflow:hidden}.tr-b i{display:block;height:100%;background:linear-gradient(90deg,#f59e0b,#ea580c)}'
            '.tblw{overflow-x:auto}.xb{border-collapse:collapse;width:100%;font-size:13.5px;min-width:520px}.xb th,.xb td{border-bottom:1px solid var(--bd,#e5e7eb);padding:6px 6px;text-align:left;vertical-align:top}</style>')
@@ -2414,7 +2414,7 @@ def talk_pages():
     if not days:
         return []
     arch = '<section class="tk-arch"><h2>📅 날짜별 커뮤니티 이슈</h2><p>' + ''.join(f'<a href="/talk/{d}/">{kdate(d)}</a>' for d in days[:60]) + '</p></section>'
-    css = '<link rel="stylesheet" href="/assets/mag/mag.css?v=10"><link rel="stylesheet" href="/assets/news/news.css?v=6">'
+    css = '<link rel="stylesheet" href="/assets/mag/mag.css?v=10"><link rel="stylesheet" href="/assets/news/news.css?v=7">'
     note = '<p class="note">순위는 여러 커뮤니티에 동시에 뜬 정도·댓글 수·인기글에 머문 시간으로 매겨요. 성·혐오·개인 신상·비방·사생활 폭로성 글은 모으지 않아요. 요약은 루리가 제목과 수치만 보고 정리했어요.</p>'
     urls = ['/talk/']
     for i, d in enumerate(days):
@@ -3620,7 +3620,7 @@ def news_static():
         if x['a'] and x['a'][0] in I:
             why = ' / '.join(E(w) for w in I[x['a'][0]].get('why', [])[:3])
         out += (f'<li id="is{x["n"]}"><h2>{E(x["t"])}</h2><p>{E(x["c"])} · 언론사 {x["on"]}곳 보도 · 확인 신호 {x["s"] if x.get("s") is not None else "-"}점({G.get(x.get("g"), "")})'
-                f'{" · 발언·주장 기사" if x.get("claim") else ""}{(" · 숫자 엇갈림: " + E(", ".join(x["cf"]))) if x.get("cf") else ""}</p><p>{why}</p><p class="nw-ins">{E(issue_note(x, I))}</p><ul>{arts}</ul></li>')
+                f'{" · 발언·주장 기사" if x.get("claim") else ""}{(" · 숫자 엇갈림: " + E(", ".join(x["cf"]))) if x.get("cf") else ""}</p><p>{why}</p>{('<p><a href="'+E(x["dt"]["u"])+'">📑 '+E(x["dt"]["l"])+'</a></p>') if x.get("dt") else ""}<p class="nw-ins">{E(issue_note(x, I))}</p><ul>{arts}</ul></li>')
     return out + '</ol>'
 
 
@@ -3861,7 +3861,7 @@ def hot_pages():
     sys.path.insert(0, HERE)
     import hot as H
     G = {'ok': '✅', 'warn': '🟡', 'bad': '🔴'}
-    css = '<link rel="stylesheet" href="/assets/mag/mag.css?v=10"><link rel="stylesheet" href="/assets/analyst/analyst.css?v=4"><link rel="stylesheet" href="/assets/news/news.css?v=6">'
+    css = '<link rel="stylesheet" href="/assets/mag/mag.css?v=10"><link rel="stylesheet" href="/assets/analyst/analyst.css?v=4"><link rel="stylesheet" href="/assets/news/news.css?v=7">'
     import impact as IPC, market as M_
     MKH = M_.load()
     RVS = load_reviews()   # 이 핫이슈를 다룬 평론으로 연결
@@ -4014,7 +4014,7 @@ def news_page():
 {news_brief()}{join_cta('issue')}{hot_top(3)}{news_impact()}
 <h2 class="nbh" id="rank">🕵️ 이슈 순위와 기사 확인 신호</h2><section id="news" aria-label="이슈 순위와 기사 채점">{news_static()}</section>
 <details class="nw-how"><summary>채점은 이렇게 해요</summary><ul><li><b>교차 보도</b> — 같은 사건을 여러 언론사가 보도하면 가점, 한 곳뿐이면 표시만 해요.</li><li><b>출처</b> — 실명 기관·인물 출처는 가점, 익명 관계자뿐이거나 온라인 커뮤니티·SNS 글이 출처면 감점.</li><li><b>제목-본문 일치</b> — 제목의 숫자·인용문이 본문에 없으면 감점.</li><li><b>숫자 엇갈림</b> — 같은 사건인데 언론사마다 사망·부상자 수가 다르면 따로 표시해요.</li><li><b>낚시·홍보</b> — 「충격」「결국」「이것」 같은 낚시 표현, 기업 홍보성 기사는 감점.</li></ul><p>기사 본문은 채점에만 쓰고 이 사이트에 옮겨 싣지 않아요. 제목을 누르면 원래 언론사 기사로 이동해요.</p></details>
-<link rel="stylesheet" href="/assets/news/news.css?v=6"><script defer src="/assets/news/news.js?v=4"></script>'''
+<link rel="stylesheet" href="/assets/news/news.css?v=7"><script defer src="/assets/news/news.js?v=5"></script>'''
     page('/news/', '루리 뉴스 — 오늘의 이슈 브리핑·기사 확인 신호 (언론사 15곳)', '언론사 15곳 기사를 매시간 모아 같은 사건끼리 묶고, 교차 보도·출처·제목-본문 일치·숫자 엇갈림·낚시 표현으로 기사마다 점수를 매겨요. 지금 가장 많이 보도된 이슈 순위.',
          body, [('루리의 줍줍', '/'), ('기사 확인 신호', '/news/')])
 
