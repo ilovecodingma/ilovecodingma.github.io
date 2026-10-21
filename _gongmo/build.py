@@ -1549,7 +1549,7 @@ def build():
     fr_urls = list(fr_urls) + watch_pages()
     app_page()
     news_page()
-    extra_urls = talk_pages() + trend_pages() + game_pages(live) + game_extra_pages() + kin_guides() + class_pages() + essay_pages() + kin_answer_pages() + mag_pages(live, aps) + analyst_pages() + satire_pages() + kw_pages() + money_pages() + apply_rec_page() + tool_pages() + hot_pages()
+    extra_urls = talk_pages() + trend_pages() + game_pages(live) + game_extra_pages() + kin_guides() + class_pages() + essay_pages() + issue_pages() + kin_answer_pages() + mag_pages(live, aps) + analyst_pages() + satire_pages() + kw_pages() + money_pages() + apply_rec_page() + tool_pages() + hot_pages()
     import widget
     extra_urls += widget.build(ROOT, live, aps, hot_live()[0], page, say, COMM_API, TODAY)  # 퍼가기 위젯 (2026-10-18 연구 세션 요청)
     extra_urls += region_pages(aps) + contest_hubs(live) + week_hub(live) + cross_pages(aps) + apply_hubs(aps)
@@ -2276,6 +2276,32 @@ def essay_pages():
            'author': {'@type': 'Organization', 'name': '루리의 줍줍 편집', 'url': SITE + '/'},
            'publisher': {'@type': 'Organization', 'name': NAME, 'url': SITE + '/'}}
     page(p, title, desc, body, [('루리의 줍줍', '/'), ('개발 지식', '/ailog/'), ('AI 시대의 인간의 가치', p)], art, full_title=True)
+    return [p]
+
+
+KIM_FAQ = [
+    ('김정은 사망설은 사실인가요?', '2026-10-21 현재 사망 주장을 뒷받침하는 근거는 확인되지 않았어요. 주장자는 증거와 최초 정보원을 밝히지 않았고, 북한 매체는 10/19 행사 참관 사진을 공개했어요(주간경향, 한국일보).'),
+    ('북한이 공개한 사진이면 안전한가요?', '사진은 공개 행보의 근거가 되지만, 촬영 시점과 편집 여부는 외부에서 검증할 수 없어요. 그래서 줍줍은 「살아 있다」고 단정하지 않고 「사망 근거가 확인되지 않았다」고 적어요.'),
+    ('과거에도 사망설이 있었나요?', '2014년 약 40일 잠행과 2020년 4월 심장 수술·중태설이 있었고, 둘 다 이후 공개 행보로 마무리됐어요. 2020년 국정원은 건강이상설을 사실무근으로 보고했다고 국회의원이 전했어요.'),
+    ('한국 정부 입장은 무엇인가요?', '이번 건에 대한 정부·국정원의 공식 입장은 줍줍이 확인한 기사에 없어요. 입장이 나오면 이 글을 고쳐요.'),
+]
+
+
+def issue_pages():
+    """/issue/kim-jong-un-rumor/ 사망설 정리 (2026-10-21 사용자 지시, 연구 ⑂ 전달). 자유 이용 이미지만."""
+    f = os.path.join(HERE, 'essays', 'kim-rumor.html')
+    if not os.path.exists(f):
+        return []
+    p = '/issue/kim-jong-un-rumor/'
+    faq, fld = _faq(KIM_FAQ)
+    body = open(f, encoding='utf-8').read().replace('@@FAQ@@', faq) + '<style>.es-fig{margin:12px 0}.es-fig img{display:block;max-width:100%;height:auto;border:1px solid var(--bd,#e5e7eb);border-radius:10px}.es-fig figcaption{font-size:12.5px;color:var(--mu,#6b7280);margin-top:4px}</style>' + GAME_CSS + '<script type="application/ld+json">%s</script>' % json.dumps(fld, ensure_ascii=False).replace('</', '<\/')
+    title = '김정은 사망설, 어디까지 사실일까요? 2014·2020·2026 사례로 정리'
+    desc = '2026-10-21 기준 김정은 사망·뇌출혈 주장은 근거가 확인되지 않았어요. 확인된 것과 확인 안 된 것을 표로 나누고 2014·2020 사례와 사망설 체크리스트를 정리했어요.'
+    art = {'@context': 'https://schema.org', '@type': 'Article', 'headline': title, 'description': desc, 'inLanguage': 'ko',
+           'datePublished': '2026-10-21', 'dateModified': '2026-10-21', 'mainEntityOfPage': SITE + p,
+           'author': {'@type': 'Organization', 'name': '루리의 줍줍 편집', 'url': SITE + '/'},
+           'publisher': {'@type': 'Organization', 'name': NAME, 'url': SITE + '/'}}
+    page(p, title, desc, body, [('루리의 줍줍', '/'), ('이슈', '/news/'), ('김정은 사망설', p)], art, full_title=True)
     return [p]
 
 
