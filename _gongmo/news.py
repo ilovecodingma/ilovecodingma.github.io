@@ -460,6 +460,25 @@ def main():
         claim = cc == '정치' and sum(1 for it in arts_ if POL_QUOTE.search(it['t'])) * 2 >= len(arts_)
         ISS.append({'claim': 1 if claim else 0, 'n': n_, 't': re.sub(r'\s*[\[［][^\]］]{1,14}[\]］]\s*$', '', best['t']), 'c': cc, 'on': len(x['outs']), 'ts': x['ts'], 's': avg,
                     'g': None if avg is None else ('ok' if avg >= 75 else 'warn' if avg >= 50 else 'bad'), 'cf': cf_, 'a': [it['id'] for it in arts_], 'pr': prs})
+    # 고정 이슈(news_pins.json): 제목 명사가 달라 자동 묶음이 놓친 큰 이슈를 정규식으로 모으고 상세 분석 링크·해설을 붙인다 (2026-10-21 사용자: 김정은 이슈 누락)
+    pf = os.path.join(HERE, 'news_pins.json')
+    if os.path.exists(pf):
+        for pi, pin in enumerate(json.load(open(pf, encoding='utf-8'))):
+            rx = re.compile(pin['re'])
+            hit = [k for k, it in enumerate(items) if rx.search(it['t'])]
+            if len({items[k]['o'] for k in hit}) < 2:
+                continue
+            ids = {items[k]['id'] for k in hit}
+            ISS = [x for x in ISS if not (set(x['a']) & ids)]
+            arts_ = sorted([items[k] for k in hit], key=lambda it: -(it['s'] or 0))
+            sc = [it['s'] for it in arts_ if it['s'] is not None]
+            avg = round(sum(sc) / len(sc)) if sc else None
+            no = 900 + pi
+            for it in arts_:
+                it['is'] = no
+            ISS.insert(0, {'claim': 0, 'n': no, 't': pin['title'], 'c': pin['cat'], 'on': len({it['o'] for it in arts_}), 'ts': max(it['ts'] for it in arts_), 's': avg,
+                           'g': None if avg is None else ('ok' if avg >= 75 else 'warn' if avg >= 50 else 'bad'), 'cf': [], 'a': [it['id'] for it in arts_], 'pr': [],
+                           'pin': 1, 'line': pin.get('line', ''), 'dt': pin['detail'], 'an': pin.get('an', [])})
     keep = {i for x in ISS for i in x['a']}
     ENTW = [it['id'] for it in sorted([it for it in items if it.get('ent') and it['s'] is not None and it['s'] < 60], key=lambda it: it['s'])[:25]]
     keep |= set(ENTW)
