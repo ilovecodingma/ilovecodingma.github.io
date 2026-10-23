@@ -95,7 +95,7 @@ def home_html(ctx):
     allsv = ''.join(f'<a href="{E(t["path"])}"><i>{t["icon"]}</i>{E(t["name"])}</a>' for t in ctx['topics'])
     feats = ''.join(f'<li><b>{E(a)}</b><span>{E(b)}</span></li>' for a, b in (('루리 위키', '정보성 글을 문서처럼 묶어 검색·이전/다음으로 읽어요 (10/23)'), ('재료 → 최저가', '레시피에서 없는 재료를 쇼핑몰 가격순 검색으로 바로 연결해요 (10/23)'), ('공식 원문 대조', '확인한 공모전은 확인일과 달랐던 점을 함께 보여 줘요 (10/23)')))
     return (f'<section class="hm-hero"><h1>오늘 필요한 생활 정보,<br>조건에 맞게 골라보세요.</h1>'
-            '<p>공모전·지원금·이벤트·레시피를 AI가 매시간 모아 정리하고, 확인하지 못한 값은 「미확인」으로 남겨요.</p>'
+            '<p>공모전·지원금·이벤트·레시피를 AI가 매시간 모아 정리해요. 공식 공고와 대조한 곳에는 표시를 달고, 확인하지 못한 값은 「확인 필요」로 솔직하게 남겨요.</p>'
             '<form class="hm-s" role="search" action="/wiki/" onsubmit="return false"><input id="hq" type="search" placeholder="예: 청년 월세, 영상 공모전, 김치볶음밥, 근로장려금" aria-label="통합 검색" autocomplete="off">'
             '<div class="hm-sc" role="group" aria-label="검색 범위"><button type="button" class="on" data-s="">전체</button><button type="button" data-s="c">공모전</button><button type="button" data-s="a">지원금</button><button type="button" data-s="e">이벤트</button><button type="button" data-s="r">레시피</button><button type="button" data-s="w">가이드</button></div>'
             '<div class="hm-r" id="hr" aria-live="polite"></div></form></section>'

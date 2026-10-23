@@ -404,7 +404,12 @@ def elig_short(c):
     if re.search(r'[가-힣]{2,4}(?:도|시|군|구)\s*(?:내|거주)|도민|시민|군민|구민|관내', e): t.append('지역 거주')
     if re.search(r'창업', e): t.append('창업자')
     if re.search(r'팀\s*(?:구성|단위)|2인\s*이상', e): t.append('팀')
-    if t == ['대학생'] and re.search(r'일반인|직장인|누구나', e):
+    _gen = bool(re.search(r'일반부|일반인|직장인|일반\s?시민|누구나', e))
+    if _gen and '대학생' in t and '청소년' in t:
+        return '부문별로 다름(표 참고)'   # 학교급·연령별 부문이 섞여 있으면 한 단어로 줄이지 않는다
+    if _gen and t and '청소년' in t:
+        return '청소년·일반부'
+    if t == ['대학생'] and _gen:
         t = ['대학생·일반인']
     if t == ['팀']:
         return '누구나' if re.search(r'제한\s?없|누구나', e) else '팀 참가'
