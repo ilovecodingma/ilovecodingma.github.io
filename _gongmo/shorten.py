@@ -20,7 +20,7 @@ def complete(t):
         return False
     if re.fullmatch(r'[A-Za-z0-9 .\-_]+', t) and len(t) < 14 and not re.fullmatch(r'[A-Za-z]{2,}\d*', t):
         return False   # 「Official B」 같은 영어 조각
-    ps = [x for x in re.split(r'\s*[,，·ㆍ/;]\s*', t) if x]
+    ps = [x for x in re.split(r'\s*[,，/;]\s*', t) if x]
     if len(ps) >= 2 and len(ps[-1]) < 2:
         return False   # 「초, 중, 고, 학」 처럼 잘린 나열
     return True
