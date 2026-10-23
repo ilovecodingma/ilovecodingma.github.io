@@ -502,5 +502,10 @@ if __name__ == '__main__':
         kw.main()
         import hot
         hot.main()
+        try:   # 게임 DB: 항목별 TTL(스팀 하루·영상 6일)이라 매시간 불러도 새로 받는 건 만료분만
+            import gamedb
+            gamedb.main()
+        except Exception as e:
+            log('gamedb 실패', repr(e)[:200])
     except Exception as e:
         log('talk 실패', repr(e)[:200])
