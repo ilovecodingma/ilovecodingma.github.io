@@ -940,7 +940,7 @@ def detail(c, live):
     if _pr == '확인 필요' and c.get('prize') and '부문' in c['prize']:
         _pr = '부문별로 다름 · ' + (SH.clip(c['prize'], 24) or '표 참고')
     _qs = [('참가 대상', elig_short(c) if elig_short(c) != '확인 필요' else v_(c['elig'])), ('마감', ('기존 공고 기준 ' + ddot(c['end'])[5:] + ' · 연장일 확인 필요') if (_v0.get('alerts') or _v0.get('conflicts')) else (ddot(c['end'])[5:] + ' ' + dd)),
-           ('제출물', sub_short(c)), ('상금', _pr), ('AI 조건', (re.split(r'\s*\(', ai_row(c, NEED))[0].strip() + '(수집 데이터 기준)') if '수집 데이터 기준' in ai_row(c, NEED) else (re.split(r'\s*[—(]', ai_row(c, NEED))[0].strip() or NEED))]
+           ('제출물', sub_short(c)), ('상금', _pr), ('AI 조건', ('허용(활용 시 지원서에 명시 필수 — 공식 공고 확인)' if ('명시' in ai_row(c, NEED) and '공식 원문 확인' in ai_row(c, NEED)) else (re.split(r'\s*\(', ai_row(c, NEED))[0].strip() + '(수집 데이터 기준)')) if '수집 데이터 기준' in ai_row(c, NEED) else (re.split(r'\s*[—(]', ai_row(c, NEED))[0].strip() or NEED))]
     qs_html = ''.join(f'<div><dt>{k_}</dt><dd{" class=nu" if NEED in str(v_2) or v_2 == "확인 필요" else ""}>{E(v_2)}</dd></div>' for k_, v_2 in _qs)
     body = f'''<p class="bc"><a href="/">홈</a> › <a href="/cat/{SLUG[main_tag]}/">{E(CQ.label_for(main_tag, c.get("medium", "")))}</a></p>
 <section class="dh" data-c="{SLUG[main_tag]}"><h1>{E(c["title"])}</h1>{status}</section>
@@ -3353,7 +3353,7 @@ AN_NOTE = ('<p class="an-warn">📊 증권사 리포트·전문가 전망을 다
 def prize_split(c):
     """표시된 상금 문구에서 (1등 상금, 총상금)을 원 단위로 따로 읽는다. 파서의 pv 는 둘 중 큰 값이라 서로 다른 기준끼리 비교되는 문제가 있어(2026-10-23 사용자 점검: 총상금 2,100만원과 1등 1,000만원이 함께 비교됨) 비교에는 쓰지 않는다."""
     s_ = c.get('prize') or ''
-    f, t = re.search(r'1등\s*([^·]+)', s_), re.search(r'총상금\s*([^·]+)', s_)
+    f, t = re.search(r'(?:1등|대상)\s*([^·]+)', s_), re.search(r'총\s*(?:상금)?\s*([^·(]+)', s_)   # 「대상 120만원」은 1등과 같은 최상위 시상으로 읽는다(2026-10-23 이천시)
     def g(m):
         if not m:
             return 0
