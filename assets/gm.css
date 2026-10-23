@@ -233,3 +233,5 @@ details.fold>summary{cursor:pointer;font-weight:700}
 details.sh-pop{position:relative}
 details.sh-pop>summary{cursor:pointer;list-style:none;min-height:40px;padding:0 14px;border:1px solid var(--bd);border-radius:10px;display:inline-flex;align-items:center;font-weight:700}
 details.sh-pop[open]>*:not(summary){margin-top:8px}
+
+ul.list{grid-template-columns:minmax(0,1fr)}ul.list>li{min-width:0}.card{min-width:0}

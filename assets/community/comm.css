@@ -199,3 +199,10 @@
 .pc-rate button.on{color:#f59e0b}
 .pc-rate small{margin-left:6px;font-size:12px;color:var(--mu);white-space:nowrap}
 .fr-rate{font-size:14px;color:#b45309;margin:4px 0}
+
+/* 2026-10-23 UI 정리: 찜·냈어요·준비 보드·팀원 모집은 한 줄의 작은 보조 버튼 — 접수 버튼이 가장 눈에 띄게 */
+.my-acts{gap:6px;margin:0}
+.my-acts button,.my-acts .ma-prep{flex:0 0 auto;width:auto;margin:0;padding:0 12px;min-height:38px;border:1px solid var(--bd,#e5e7eb);background:var(--card,#fff);color:var(--tx,#111);font-size:13.5px;font-weight:700;border-radius:10px;display:inline-flex;align-items:center;gap:4px;text-decoration:none;background-image:none;box-shadow:none}
+.my-acts button.on{background:var(--pri,#6d28d9);color:#fff;border-color:var(--pri,#6d28d9)}
+.my-acts .ma-prep{color:var(--tx,#111)!important}
+.my-acts small{flex-basis:100%;margin-top:2px}
