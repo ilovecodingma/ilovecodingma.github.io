@@ -385,6 +385,8 @@ EFFORT_NOTE = {'영상': '영상은 길이(초)·해상도·파일 형식(mp4)�
 GONE = {}
 HIST = {}   # 공모전 변경 이력 (contest_hist.json)
 DUP = {}   # 중복 공고 id → 대표 id (build 가 채움)
+_VF = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'contest_verified.json')
+VER = {k: v for k, v in (json.load(open(_VF, encoding='utf-8')) if os.path.exists(_VF) else {}).items() if not k.startswith('_')}   # 공식 원문 대조 결과(2026-10-23)
 
 
 def gone_pages():
@@ -666,6 +668,56 @@ def region_row(c, NEED):
     return '따로 적힌 제한 없음(공고 확인)'
 
 
+def deadline_row(c, NEED):
+    """마감 시각 칸: 공식 원문에서 확인한 시각만 적고, 모르면 임의로 자정·23:59 로 채우지 않는다."""
+    v = VER.get(c['id'])
+    if v:
+        for k, x in v.get('facts', []):
+            if k in ('접수 기간', '예선 마감', '접수 마감'):
+                m = re.findall(r'(\d{1,2}:\d{2}|\d{1,2}시)', x)   # 시작 시각(09:00)이 아니라 마감(마지막) 시각
+                if m:
+                    return f'{m[-1]} (공식 원문 확인 {v["verified_at"]}, 시간대 명시 없음 — 국내 공고)'
+        return '공식 원문에 시각 명시 없음(' + v['verified_at'] + ' 확인)'
+    return NEED + ' (수집 데이터에 시각이 없어요)'
+
+
+def fee_row(c, NEED):
+    """참가비 칸: 원본 fee 0 은 「없음」이 아니라 값 없음이 기본값이라(1,894/1,903건) 확인 전에는 미확인으로 둔다."""
+    v = VER.get(c['id'])
+    if v:
+        for k, x in v.get('facts', []):
+            if '참가비' in k and '확인하지 못함' not in x and '명시 없음' not in x:
+                return x
+        return '공식 원문에서 확인하지 못함(미확인)'
+    if isinstance(c.get('fee'), int) and c['fee'] > 1:
+        return f'{c["fee"]:,}원(수집 데이터 기준)'
+    return '미확인 — ' + NEED
+
+
+def ai_row(c, NEED):
+    """AI 사용 칸: 수집 데이터의 금지·허용·표기 값만 옮기고, 비어 있으면 허용으로 해석하지 않고 미확인으로 둔다."""
+    v = VER.get(c['id'])
+    if v:
+        for k, x in v.get('facts', []):
+            if k == 'AI 사용':
+                return x + f' (공식 원문 확인 {v["verified_at"]})'
+    return {'금지': '금지(수집 데이터 기준 — 공고 확인)', '허용': '허용(수집 데이터 기준 — 공고 확인)', '표기': '허용·표기 필요(수집 데이터 기준 — 공고 확인)'}.get(c.get('ai') or '', '미확인 — ' + NEED)
+
+
+def ver_block(c):
+    """공식 원문 대조 결과(검증한 공모전만). 운영자 검수라고 쓰지 않고, 확인한 것·달랐던 것·확인 못 한 것·상충을 분리해 보여 준다."""
+    v = VER.get(c['id'])
+    if not v:
+        return ''
+    facts = ''.join(f'<tr><th>{E(k)}</th><td>{E(x)}</td></tr>' for k, x in v['facts'])
+    srcs = ' · '.join(f'<a href="{E(s["url"])}" target="_blank" rel="noopener nofollow">{E(s["label"])}</a>' for s in v['sources'])
+    lst = lambda t, L: (f'<h3>{t}</h3><ul class="chk">' + ''.join(f'<li>{E(x)}</li>' for x in L) + '</ul>') if L else ''
+    return (f'<section class="ver"><h2>✅ 공식 원문 대조 결과 <small>확인일 {E(v["verified_at"])}</small></h2>'
+            f'<p class="note">주최 측 공식 페이지를 위 확인일에 직접 열어 이 페이지의 값과 맞춰 봤어요. 운영자 검수 완료 표시가 아니라 제작 과정에서 한 원문 대조이고, 공고는 바뀔 수 있어요. 출처: {srcs}</p>'
+            f'<table class="info">{facts}</table>'
+            + lst('수집 데이터와 달랐던 점(수정함)', v.get('corrections', [])) + lst('서로 다른 값(자동 분석 보류)', v.get('conflicts', [])) + lst('확인하지 못한 것', v.get('unverified', [])) + '</section>')
+
+
 def detail(c, live):
     if c['id'] in DUP:   # 같은 공고가 여러 곳에서 수집됨 → 검색 제외 + 대표 공고로 안내(주소는 유지)
         r_ = DUP[c['id']]
@@ -706,8 +758,8 @@ def detail(c, live):
     sub = ' · '.join(x for x in (c.get('effort'), c.get('submit')) if x)
     sub_type = c.get('effort') or {'photo': '사진(제목 기준)', 'video': '영상(제목 기준)', 'photo+video': '사진·영상(제목 기준)'}.get(c.get('medium', ''), '')   # 무엇을 내는지. 어디로 내는지(메일·폼)는 「접수 방법」
     rows = [('주최·주관', v_(c['org'])), ('분야', c['field'] or ', '.join(c['tags'])), ('응모 자격', v_(c['elig'])), ('지역 제한', region_row(c, NEED)),
-            ('접수 기간', period + (' (수집처 기준, 공식 공고에서 확인)' if CQ.is_aggregator(c['link']) else '')), ('마감 시각', NEED + ' (자동 정리 데이터에 시각이 없어요)'), ('제출물 종류', v_(sub_type)), ('접수 방법', CQ.auto_label(v_(c['ch'])) if v_(c['ch']) != NEED else NEED), ('상금·혜택', v_(c['prize'])),
-            ('참가비', (f'{c["fee"]:,}원' if isinstance(c.get('fee'), int) and c['fee'] > 1 else '있음 — ' + NEED) if c.get('fee') else '없음으로 정리됨(공고 확인)')]
+            ('접수 기간', period + (' (수집처 기준, 공식 공고에서 확인)' if CQ.is_aggregator(c['link']) else '')), ('마감 시각', deadline_row(c, NEED)), ('제출물 종류', v_(sub_type)), ('접수 방법', CQ.auto_label(v_(c['ch'])) if v_(c['ch']) != NEED else NEED), ('상금·혜택', v_(c['prize'])),
+            ('참가비', fee_row(c, NEED)), ('AI 사용', ai_row(c, NEED))]
     tb = ''.join(f'<tr><th>{k}</th><td{" class=need" if NEED in str(v) else ""}>{E(v)}</td></tr>' for k, v in rows)
     todo = ['마감 시각(예: 18시·23시 59분)과 접수 마감이 「도착 기준」인지']
     if v_(c['elig']) == NEED:
@@ -743,7 +795,7 @@ def detail(c, live):
 {share_bar(c['title'], f'「{c["title"]}」 {ddot(c["end"])[5:]} 마감' + (f' · {c["prize"]}' if c.get('pv') else '') + ' — 자격·제출물 정리')}{comm_banner()}{join_cta('contest')}
 <div class="my-acts" data-id="c:{c["id"]}" data-title="{E(c["title"])}" data-end="{c["end"]}"></div>
 <h2>한눈에 보기</h2><p>{E(summary)}</p>
-{np_html}{c_insight(c, live)}
+{ver_block(c)}{np_html}{'' if (VER.get(c['id']) or {}).get('conflicts') else c_insight(c, live)}
 {('<section id="finder" data-id="' + c['id'] + '" data-v="' + TODAY.strftime('%m%d') + '"></section><script defer src="/assets/finder/finder.js?v=3"></script>') if c in live else ''}
 <h2>응모 전 체크리스트</h2><ul class="chk">{tips}</ul>
 {'<a class="lab-cta" href="/lab/#diag"><b>🏆 이런 공모전 수상작은 어떻게 생겼을까?</b><span>수상작 300여 개를 분석한 당선 공식과 내 문구 진단 →</span></a>' if re.search(r'슬로건|표어|네이밍|명칭|캐치프레이즈|삼행시|N행시|이행시|애칭', c['title']) else ''}
@@ -1367,6 +1419,10 @@ def contest_hubs(live):
 
 def build():
     contests, events = load()
+    for _c in contests:   # 공식 원문으로 확인한 값은 수집 데이터보다 우선한다(목록·상세 모두 같은 값을 쓰도록 로드 직후 적용)
+        _v = VER.get(_c['id'])
+        if _v:
+            _c.update(_v.get('apply', {})); _c['verified_official'] = True
     late = NOW_KST().hour >= 18  # 대부분 18시·업무시간 마감 → 저녁 빌드부터 오늘 마감은 내림
     live = [c for c in contests if dday(c['end'])[0] >= (1 if late else 0)]
     import dup_check   # 2026-10-19: 같은 공고(주소·제목 유사도·주최·마감)는 대표 1건만 목록에, 나머지 주소는 대표로 안내
