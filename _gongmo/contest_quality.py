@@ -75,3 +75,12 @@ def deadline_sentence(end_dot, days_left):
     if days_left == 0:
         return f'마감일은 {end_dot}(오늘)입니다. 마감 시각을 확인하기 전에는 접수 가능 여부를 확정할 수 없습니다.'
     return f'{end_dot}까지 접수합니다.'
+
+
+AUTO_NOTE = '자동 분류, 공고에서 확인'
+
+
+def auto_label(value):
+    """수집기가 규칙으로 분류한 제출·접수 방식은 30건 대조에서 43%가 공고와 달랐다(2026-10-23). 값에 자동 분류임을 붙여 확정처럼 보이지 않게 한다."""
+    v = (value or '').strip()
+    return f'{v} ({AUTO_NOTE})' if v and AUTO_NOTE not in v else v

@@ -125,5 +125,28 @@ class Deadline(unittest.TestCase):
             self.assertNotRegex(s, r'23:59|23시|24시')
 
 
+class AutoLabel(unittest.TestCase):
+    def test_labels_auto_value(self):
+        self.assertIn('자동 분류', Q.auto_label('이메일 접수'))
+
+    def test_empty_stays_empty(self):
+        self.assertEqual(Q.auto_label(''), '')
+
+    def test_idempotent(self):
+        once = Q.auto_label('홈페이지 접수')
+        self.assertEqual(Q.auto_label(once), once)
+
+
+class ManualOverrides(unittest.TestCase):
+    def test_manual_json_valid_and_kobc_fixed(self):
+        import json
+        m = json.load(open(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'manual.json'), encoding='utf-8'))
+        self.assertEqual(m['Q01119']['end_override'], '2026-11-08')
+        for k, v in m.items():
+            if not k.startswith('_') and 'end_override' in v:
+                import datetime
+                datetime.date.fromisoformat(v['end_override'])
+
+
 if __name__ == '__main__':
     unittest.main(verbosity=2)
