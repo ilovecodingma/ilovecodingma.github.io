@@ -855,6 +855,15 @@ def ver_block(c):
             + lst('수집 데이터와 달랐던 점(수정함)', v.get('corrections', [])) + lst('서로 다른 값(자동 분석 보류)', v.get('conflicts', [])) + lst('확인하지 못한 것', v.get('unverified', [])) + '</details>')
 
 
+def _ai_short(v, NEED):
+    """요약 칸용 AI 조건 한 줄. 공식 원문 확인값은 명시 의무 여부만, 수집 데이터 기준값은 그 출처를 붙여 보여 준다."""
+    if '공식 원문 확인' in v and '명시' in v:
+        return '허용(활용 시 지원서에 명시 필수 — 공식 공고 확인)'
+    if '수집 데이터 기준' in v:
+        return re.split(r'\s*\(', v)[0].strip() + '(수집 데이터 기준)'
+    return re.split(r'\s*[—(]', v)[0].strip() or NEED
+
+
 def detail(c, live):
     if c['id'] in DUP:   # 같은 공고가 여러 곳에서 수집됨 → 검색 제외 + 대표 공고로 안내(주소는 유지)
         r_ = DUP[c['id']]
@@ -940,7 +949,7 @@ def detail(c, live):
     if _pr == '확인 필요' and c.get('prize') and '부문' in c['prize']:
         _pr = '부문별로 다름 · ' + (SH.clip(c['prize'], 24) or '표 참고')
     _qs = [('참가 대상', elig_short(c) if elig_short(c) != '확인 필요' else v_(c['elig'])), ('마감', ('기존 공고 기준 ' + ddot(c['end'])[5:] + ' · 연장일 확인 필요') if (_v0.get('alerts') or _v0.get('conflicts')) else (ddot(c['end'])[5:] + ' ' + dd)),
-           ('제출물', sub_short(c)), ('상금', _pr), ('AI 조건', ('허용(활용 시 지원서에 명시 필수 — 공식 공고 확인)' if ('명시' in ai_row(c, NEED) and '공식 원문 확인' in ai_row(c, NEED)) else (re.split(r'\s*\(', ai_row(c, NEED))[0].strip() + '(수집 데이터 기준)')) if '수집 데이터 기준' in ai_row(c, NEED) else (re.split(r'\s*[—(]', ai_row(c, NEED))[0].strip() or NEED))]
+           ('제출물', sub_short(c)), ('상금', _pr), ('AI 조건', _ai_short(ai_row(c, NEED), NEED))]
     qs_html = ''.join(f'<div><dt>{k_}</dt><dd{" class=nu" if NEED in str(v_2) or v_2 == "확인 필요" else ""}>{E(v_2)}</dd></div>' for k_, v_2 in _qs)
     body = f'''<p class="bc"><a href="/">홈</a> › <a href="/cat/{SLUG[main_tag]}/">{E(CQ.label_for(main_tag, c.get("medium", "")))}</a></p>
 <section class="dh" data-c="{SLUG[main_tag]}"><h1>{E(c["title"])}</h1>{status}</section>
