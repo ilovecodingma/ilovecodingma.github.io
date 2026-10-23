@@ -204,3 +204,32 @@ table.info td.need{color:#b45309;font-weight:600}.dh h1,.card .t{overflow-wrap:a
 
 body[data-th=recipe]{--pri:#c2410c;--pbg:#ffedd5}
 body[data-th=game]{--pri:#4f46e5;--pbg:#e0e7ff}
+
+/* 2026-10-23 UI 정리: 공모전 목록 카드 압축(제목 2줄 + 대상·제출물·상금·마감 고정 자리 + 작은 썸네일) */
+.card.cc{align-items:flex-start;gap:10px;padding:12px 14px}
+.card.cc .cb{flex:1;min-width:0}
+.card.cc .top{display:flex;gap:8px;align-items:flex-start;justify-content:space-between}
+.card.cc .t{margin:0;font-size:15.5px;line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card.cc .cm{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px 8px;margin:8px 0 4px}
+.card.cc .cm div{min-width:0}
+.card.cc .cm dt{font-size:11px;color:var(--mu);font-weight:600;line-height:1.2}
+.card.cc .cm dd{margin:1px 0 0;font-size:13px;font-weight:700;line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.card.cc .cm dd.nu{color:var(--mu);font-weight:500}
+.card.cc .o{margin:2px 0 0;font-size:12px;color:var(--mu);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.card.cc .th{flex:0 0 72px;width:72px;height:45px;aspect-ratio:auto;border-radius:8px;object-fit:cover;object-position:top}
+@media (max-width:520px){.card.cc .cm{grid-template-columns:repeat(2,minmax(0,1fr))}.card.cc .th{display:none}}
+.dh .ic.big{display:none}
+.dh{padding-top:14px;padding-bottom:12px}
+.cat-sub{margin-top:28px;font-size:16px;color:var(--mu)}
+/* 상세 페이지 UI 정리: 접수 버튼 줄 + 상단 경고 + 접기 */
+.act-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:12px 0 4px}
+.act-row .btn{flex:0 0 auto}
+.alert-top{border:1px solid #f59e0b;background:#fffbeb;color:#78350f;border-radius:12px;padding:10px 14px;margin:10px 0}
+.alert-top ul{margin:4px 0 0;padding-left:18px}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .alert-top{background:#422006;color:#fde68a;border-color:#b45309}}
+.sum{margin:12px 0;color:var(--mu);font-size:14.5px;line-height:1.7}
+details.fold{border:1px solid var(--bd);border-radius:12px;padding:10px 14px;margin:14px 0;background:var(--card)}
+details.fold>summary{cursor:pointer;font-weight:700}
+details.sh-pop{position:relative}
+details.sh-pop>summary{cursor:pointer;list-style:none;min-height:40px;padding:0 14px;border:1px solid var(--bd);border-radius:10px;display:inline-flex;align-items:center;font-weight:700}
+details.sh-pop[open]>*:not(summary){margin-top:8px}
