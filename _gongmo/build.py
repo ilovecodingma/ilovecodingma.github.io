@@ -461,9 +461,9 @@ def collapse_thin(urls):
 
 
 RICH_SCORES = []
-THIN_MIN = {'/lab/': 700, '/hot/': 700}   # 2026-10-23 애드센스: 고유 본문이 이만큼 안 되는 연구소·핫이슈 상세는 검색 제외
-FRIDGE_KEEP = int(os.environ.get('FRIDGE_KEEP', '100'))
-RICH_MIN = int(os.environ.get('RICH_MIN', '6'))
+THIN_MIN = {'/lab/': 250, '/hot/': 250}   # 2026-10-23 애드센스: 고유 본문이 이만큼 안 되는 연구소·핫이슈 상세는 검색 제외. 사용자 승인으로 700→250(품질 감사의 「얇음」 기준과 맞춤): noindex 는 비었거나 미완성인 페이지에만 쓴다
+FRIDGE_KEEP = int(os.environ.get('FRIDGE_KEEP', '100000'))   # 사용자 승인으로 100→전체: 레시피는 재료 체크·인분 계산 같은 실제 도구가 있는 페이지라 noindex 로 가리지 않는다
+RICH_MIN = int(os.environ.get('RICH_MIN', '4'))   # 사용자 승인으로 6→4: 자격·상금·제출물이 거의 비어 미완성인 상세(2~3점)만 noindex, 값이 채워지면 자동 색인
 THIN_FORCE_NOINDEX = {'/community/', '/me/', '/plaza/', '/ssul/', '/dev/tag/windows/', '/satire/2026-10-18/'}
 
 
