@@ -116,7 +116,7 @@
   [].forEach.call(document.querySelectorAll('[data-rec-tabs]'), function (bar) {
     var btns = [].slice.call(bar.querySelectorAll('button[data-t]')), panes = btns.map(function (b) { return document.getElementById(b.getAttribute('data-t')); });
     var has = false; try { has = (JSON.parse(localStorage.getItem('jupjup_fridge_v1') || '[]') || []).length > 0 || /[?&](ing|tab=fridge)/.test(location.search); } catch (e) {}
-    var show = function (k) { btns.forEach(function (b, i) { var on = i === k; b.classList.toggle('on', on); b.setAttribute('aria-selected', on); if (panes[i]) panes[i].hidden = !on; }); };
+    var show = function (k) { btns.forEach(function (b, i) { var on = i === k; b.classList.toggle('on', on); b.setAttribute('aria-selected', on); if (panes[i]) panes[i].hidden = !on; }); var g = document.getElementById('rec-guide'); if (g && btns[k] && btns[k].getAttribute('data-g')) g.textContent = btns[k].getAttribute('data-g'); };
     btns.forEach(function (b, i) { b.onclick = function () { show(i); ga('rec_tab', { tab: b.getAttribute('data-t') }); }; });
     show(has ? 1 : 0);
   });

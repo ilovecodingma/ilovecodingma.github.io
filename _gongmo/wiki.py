@@ -22,6 +22,26 @@ def _clean(t):
     return re.sub(r'\s+', ' ', H.unescape(re.sub(r'<[^>]+>', ' ', t))).strip()
 
 
+def _trim(t, n=100):
+    """요약은 완결된 문장으로. 첫 문장이 길면 마지막 공백에서 자르고, 금액·단위 중간(숫자 바로 뒤)에서는 끊지 않는다."""
+    t = re.sub(r'\s+', ' ', t).strip()
+    m = re.match(r'(.+?[요다])\.(?:\s|$)', t)
+    if m and len(m.group(1)) + 1 <= n:
+        return m.group(1) + '.'
+    if len(t) <= n:
+        return t
+    cut = t[:n]
+    sp = cut.rfind(' ')
+    cut = cut[:sp] if sp > n * 0.5 else cut
+    cut = re.sub(r'[\s·,(\[]+$', '', cut)
+    while re.search(r'[\d,]$', cut):
+        sp = cut.rfind(' ')
+        if sp < 20:
+            break
+        cut = cut[:sp]
+    return cut + '…'
+
+
 def _read(root, u):
     f = os.path.join(root, u.strip('/'), 'index.html')
     return open(f, encoding='utf-8').read() if os.path.exists(f) else None
@@ -51,12 +71,13 @@ def collect(urls, noindex, root):
         for p in re.findall(r'<(?:p|li)[^>]*>(.*?)</(?:p|li)>', mh[mh.find('</h1>'):], re.S):
             t = _clean(p)
             if len(t) >= 40 and not t.startswith(('기준', '홈 ›')):
-                desc = t[:96] + ('…' if len(t) > 96 else '')
+                desc = _trim(t, 100)
                 break
         # id 가 h2 에 있거나(공용 글), h2 를 감싸는 section 에 있는(생활 돈 가이드) 두 경우를 모두 읽는다
         heads = [(i, re.sub(r'^[\d?]+\s*', '', _clean(t))) for _tg, i, t in re.findall(r'<(section|h2)\b[^>]*\bid="([^"]+)"[^>]*>(.*?)</h2>', mh, re.S) if len(_clean(t)) < 120]
+        dt = (re.search(r'확인일\s*(\d{4}-\d{2}-\d{2})', mh) or [0, ''])[1]
         seen.add(u)
-        arts.append({'u': u, 'g': g[0], 'title': title, 'desc': desc, 'heads': heads})
+        arts.append({'u': u, 'g': g[0], 'title': title, 'desc': desc, 'heads': heads, 'dt': dt})
     return arts
 
 
@@ -103,7 +124,7 @@ def inject(arts, root):
         lb, ic = label[a['g']]
         top = f'<div class="wk-top"><a href="/wiki/">📚 루리 위키</a><span>›</span><span>{ic} {E(lb)}</span></div>'
         shell = ('<main class="w wk"><div class="wk-grid">' + _side(arts, a) + '<article class="wk-art">' + top + m.group(1) + _pn(arts, a) + '</article>' + _toc(a) + '</div>'
-                 '<link rel="stylesheet" href="/assets/wiki/wiki.css?v=1"><script defer src="/assets/wiki/wiki.js?v=1"></script></main>')
+                 '<link rel="stylesheet" href="/assets/wiki/wiki.css?v=2"><script defer src="/assets/wiki/wiki.js?v=2"></script></main>')
         doc = doc[:m.start()] + shell + doc[m.end():]
         open(f, 'w', encoding='utf-8', newline='\n').write(doc)
         n += 1
@@ -120,15 +141,15 @@ def hub(arts, page_fn, site):
         li = ''.join(f'<li><a href="{E(a["u"])}"><b>{E(a["title"][:48])}</b><span>{E(a["desc"])}</span></a></li>' for a in L)
         cards += (f'<section class="wk-card" id="g-{key}"><h2>{ic} {E(label)} <small>{len(L)}편</small></h2>'
                   f'<ul class="wk-list">{li}</ul></section>')
-    start = [a for u in START for a in arts if a['u'] == u]
-    st = ''.join(f'<a href="{E(a["u"])}"><b>{E(a["title"][:40])}</b><span>{E(a["desc"][:70])}</span></a>' for a in start[:5])
+    start = sorted([a for a in arts if a['g'] == 'money' and a.get('dt')], key=lambda a: a['dt'], reverse=True)[:5]
+    st = ''.join(f'<a href="{E(a["u"])}"><b>{E(a["title"][:44])}</b><span>{E(a["desc"])}</span><small>확인일 {E(a["dt"])}</small></a>' for a in start)
     chips = ''.join(f'<a href="#g-{k}">{ic} {E(lb)} <small>{len(byg[k])}</small></a>' for k, lb, ic, _ in GROUPS if k in byg)
     body = (f'<p class="bc"><a href="/">홈</a> › 루리 위키</p>'
             '<header class="wk-hero"><h1>📚 루리 위키</h1><p>공식 출처로 확인한 생활 돈·응모·개발 지식을 한곳에 모았어요. 글마다 확인일과 출처를 적고, 확인하지 못한 값은 비워 둡니다.</p>'
-            '<input class="wk-hq" type="search" placeholder="예: 에너지바우처, 근로장려금, 퇴직금, D1" aria-label="위키 검색" autocomplete="off"><div class="wk-res" aria-live="polite"></div>'
+            '<input class="wk-hq" type="search" placeholder="예: 에너지바우처, 근로장려금, 퇴직금" aria-label="위키 검색" autocomplete="off"><div class="wk-sc" role="group" aria-label="검색 범위"><button type="button" class="on" data-s="">전체</button><button type="button" data-s="money">생활 돈</button><button type="button" data-s="guide">가이드</button><button type="button" data-s="dev">개발·기타</button></div><div class="wk-res" aria-live="polite"></div>'
             f'<div class="wk-chips">{chips}</div></header>'
-            + (f'<section class="wk-start"><h2>처음 읽는다면</h2><div class="wk-sgrid">{st}</div></section>' if st else '')
-            + cards + '<link rel="stylesheet" href="/assets/wiki/wiki.css?v=1"><script defer src="/assets/wiki/wiki.js?v=1"></script>')
+            + (f'<section class="wk-start"><h2>최근 확인한 가이드 <small>확인일이 가장 최근인 5편</small></h2><div class="wk-sgrid">{st}</div></section>' if st else '')
+            + cards + '<link rel="stylesheet" href="/assets/wiki/wiki.css?v=2"><script defer src="/assets/wiki/wiki.js?v=2"></script>')
     page_fn('/wiki/', '루리 위키 — 생활 돈 가이드·응모 가이드·개발 지식 한곳에', f'공식 출처로 확인한 생활 돈 가이드 {len(byg.get("money", []))}편과 응모·고민 해결 가이드, 개발 지식, 평론을 한곳에서 검색하고 읽어요.',
             body, [('루리의 줍줍', '/'), ('루리 위키', '/wiki/')])
 
@@ -136,7 +157,7 @@ def hub(arts, page_fn, site):
 def build_wiki(urls, noindex, page_fn, root, site):
     arts = collect(urls, noindex, root)
     os.makedirs(os.path.join(root, 'assets', 'wiki'), exist_ok=True)
-    json.dump([{'u': a['u'], 't': a['title'], 'g': a['g'], 'd': a['desc']} for a in arts],
+    json.dump([{'u': a['u'], 't': a['title'], 'g': a['g'], 'd': a['desc'], 'dt': a.get('dt', '')} for a in arts],
               open(os.path.join(root, 'assets', 'wiki', 'index.json'), 'w', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))
     hub(arts, page_fn, site)
     return len(arts), inject(arts, root)

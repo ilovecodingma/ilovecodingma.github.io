@@ -21,19 +21,35 @@
     }, { rootMargin: '-80px 0px -70% 0px' });
     Object.keys(map).forEach(function (id) { var h = document.getElementById(id); if (h) io.observe(h); });
   }
-  // 허브 검색
+  // 허브 검색: 범위(전체·생활 돈·가이드·개발기타), 결과에 분류·확인일 표시
   var hq = $('.wk-hq'), res = $('.wk-res');
   if (hq && res) {
+    var SC = { '': null, money: ['money'], guide: ['guide'], dev: ['dev', 'en', 'review'] }, PH = { '': '예: 에너지바우처, 근로장려금, 퇴직금', money: '예: 에너지바우처, 근로장려금, 퇴직금', guide: '예: ISA, 전입신고, 포트폴리오', dev: '예: 비용, 빌드, 색인' };
+    var LB = { money: '생활 돈', guide: '가이드', dev: '개발', en: 'English', review: '평론' }, scope = '';
     var idx = null, load = function () { return idx ? Promise.resolve(idx) : fetch('/assets/wiki/index.json').then(function (r) { return r.json(); }).then(function (d) { idx = d; return d; }); };
-    hq.addEventListener('focus', load);
-    hq.addEventListener('input', function () {
-      var v = hq.value.trim().toLowerCase(); if (!v) { res.textContent = ''; return; }
+    var run = function () {
+      var v = hq.value.trim().toLowerCase(); res.textContent = ''; if (!v) return;
       load().then(function (d) {
-        var r = d.filter(function (a) { return (a.t + ' ' + a.d).toLowerCase().indexOf(v) >= 0; }).slice(0, 8);
-        res.textContent = '';
-        if (!r.length) { var p = document.createElement('p'); p.textContent = '일치하는 글이 없어요.'; res.appendChild(p); return; }
-        r.forEach(function (a) { var x = document.createElement('a'); x.href = a.u; x.textContent = a.t; var s = document.createElement('small'); s.textContent = a.d; x.appendChild(s); res.appendChild(x); });
+        var tk = v.split(/\s+/), ok = SC[scope];
+        var r = d.filter(function (a) { if (ok && ok.indexOf(a.g) < 0) return false; var h = (a.t + ' ' + a.d).toLowerCase(); return tk.every(function (t) { return h.indexOf(t) >= 0; }); }).slice(0, 8);
+        if (!r.length) { var p = document.createElement('p'); p.textContent = '일치하는 글이 없어요. 범위를 「전체」로 바꿔 보세요.'; res.appendChild(p); return; }
+        r.forEach(function (a) {
+          var x = document.createElement('a'); x.href = a.u;
+          var t = document.createElement('b'); t.textContent = a.t; x.appendChild(t);
+          var s = document.createElement('small'); s.textContent = (LB[a.g] || '') + (a.dt ? ' · 확인일 ' + a.dt : '') + (a.d ? ' — ' + a.d : ''); x.appendChild(s); res.appendChild(x);
+        });
       });
-    });
+    };
+    hq.addEventListener('focus', load); hq.addEventListener('input', run);
+    var sc = $('.wk-sc');
+    if (sc) sc.addEventListener('click', function (e) { var b = e.target.closest('button'); if (!b) return; $$('button', sc).forEach(function (x) { x.classList.toggle('on', x === b); }); scope = b.getAttribute('data-s'); hq.placeholder = PH[scope]; run(); });
   }
+  // 긴 목록은 12개만 먼저 보이고 더 보기
+  $$('.wk-card .wk-list').forEach(function (ul) {
+    var li = $$('li', ul); if (li.length <= 12) return;
+    li.slice(12).forEach(function (x) { x.hidden = true; });
+    var b = document.createElement('button'); b.type = 'button'; b.className = 'wk-more'; b.textContent = '더 보기 (' + (li.length - 12) + '편)';
+    b.onclick = function () { li.forEach(function (x) { x.hidden = false; }); b.remove(); };
+    ul.parentNode.appendChild(b);
+  });
 })();

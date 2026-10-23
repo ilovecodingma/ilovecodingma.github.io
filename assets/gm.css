@@ -271,3 +271,4 @@ body[data-th=ai] .hd .logo span,body[data-th=ai] .th-sw a{color:inherit}
 .hd .tb a,.hd .tb a:link,.hd .tb a:visited{background:transparent!important;border:0!important;border-bottom:3px solid transparent!important;border-radius:0!important;box-shadow:none!important;color:var(--mu,#6b7280)!important;padding:11px 12px;font-weight:700}
 .hd .tb a.on{color:var(--tx,#111)!important;border-bottom-color:var(--brand)!important}
 @media (max-width:820px){.hd{position:static}.hd .tb{padding:0 8px}}
+@media (max-width:820px){.hd-in{min-height:46px}.gn a{min-height:40px;padding:0 11px;font-size:14.5px}.hd .tb a{padding:8px 11px;font-size:14px}}

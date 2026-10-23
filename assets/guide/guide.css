@@ -55,3 +55,4 @@
 .art ul.chk li,.art ul.gm-l li{position:relative;padding:7px 0 7px 26px;border-bottom:1px dashed var(--bd,#e5e7eb)}
 .art ul.chk li:before,.art ul.gm-l li:before{content:"✓";position:absolute;left:2px;top:7px;color:var(--pri,#6d28d9);font-weight:800}
 .gs-t{min-width:0;flex:1}
+.g-toc a{max-width:260px}.g-toc a{overflow:hidden;text-overflow:ellipsis}
