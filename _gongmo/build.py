@@ -175,6 +175,11 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False, noinde
         body = law_linkify(body, LAW_DEFAULT.get(path))
     COMM_TAGS = COMM_TAGS_TPL if COMM_API else ''
     t = title if full_title else f'{title} | {NAME}'
+    if len(t) > 70:   # 2026-10-23 검색 결과에서 잘리는 제목: 브랜드 꼬리는 두고 앞부분만 줄인다
+        _sfx = '' if full_title else f' | {NAME}'
+        t = title[:max(10, 69 - len(_sfx))].rstrip() + '…' + _sfx
+    if len(desc) > 160:
+        desc = desc[:157].rstrip() + '…'
     # 2026-10-20 정보성 글 PDF: 미리 만든 PDF 다운로드 + 인쇄(PDF로 저장) 버튼
     if path.count('/') == 3 and not noindex and path.startswith(('/guide/', '/dev/', '/review/', '/ssul/', '/mag/', '/fridge/r/', '/lab/', '/hot/', '/money/')):
         import make_pdf as _MP
@@ -1471,7 +1476,12 @@ def build():
             url = (t.get('host') or '').rstrip('/') + t['path'] if t.get('host') else t['path']
             ext = ' rel="noopener"' if t.get('host') else ''
             out += f'<a class="lc-t" href="{E(url)}"{ext} style="--fc:{t["color"]};--fbg:{t["bg"]}"><i>{t["icon"]}</i><b>{E(t["name"])}</b><small>{E(stat.get(t["key"], ""))}</small></a>'
-        return f'<section class="lc" aria-label="주제 런처"><div class="hx-w"><div class="lc-g">{out}</div></div></section><link rel="stylesheet" href="/assets/home/launcher.css?v=1">'
+        hl = ''
+        fh = os.path.join(HERE, 'home_highlights.json')   # 2026-10-23 사용자 「메인 그대로인데?」 새로 나온 것 띠. 이 파일만 고치면 메인에 반영
+        if os.path.exists(fh):
+            hl = '<div class="lc-hl"><b>🆕 새로 나온 것</b>' + ''.join(f'<a href="{E(x["url"])}"><i>{x["icon"]}</i>{E(x["label"])}<small>{E(x.get("tag", ""))}</small></a>' for x in json.load(open(fh, encoding='utf-8'))) + '</div>'
+        css_hl = '<style>.lc-hl{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:12px 0 4px}.lc-hl b{font-size:14px}.lc-hl a{display:inline-flex;gap:6px;align-items:center;padding:7px 12px;border-radius:999px;border:1px solid #fed7aa;background:#fff7ed;color:#9a3412;text-decoration:none;font-size:13.5px;font-weight:700}.lc-hl small{font-weight:400;opacity:.75}@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .lc-hl a{background:#2a1f14;color:#fdba74;border-color:#7c2d12}}:root[data-theme=dark] .lc-hl a{background:#2a1f14;color:#fdba74;border-color:#7c2d12}</style>'
+        return f'<section class="lc" aria-label="주제 런처"><div class="hx-w"><div class="lc-g">{out}</div>{hl}</div></section>{css_hl if hl else ""}<link rel="stylesheet" href="/assets/home/launcher.css?v=1">'
     hx_launch = _launcher()
     hx_nav = ''.join(f'<a href="#{k}">{ic} {n}</a>' for k, ic, n in _nav)
     home = f'''{hx_launch}<section class="hx-hero"><div class="hx-w hx-hero-in">
