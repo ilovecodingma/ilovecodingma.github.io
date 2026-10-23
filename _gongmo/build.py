@@ -1882,7 +1882,7 @@ def build():
     contest_home = f'''<h1 class="cs-h1">진행 중 공모전 {len(live)}건</h1>
 <p class="cs-sub">마감 임박순 · {NOW_KST():%m/%d %H:%M} 갱신(한국 시간) · 제목이 같은 공모전은 1건</p>
 <nav class="cs-cats" aria-label="분야">{_chips}</nav>
-<h2 class="cs-lh">마감 임박 공모전</h2><div id="cnt" class="note"></div>{TOOLBAR}<ul class="list" id="list">{''.join(card(c) for c in _first)}</ul><button class="more" id="more" hidden>더 보기</button>{listing_js()}
+<h2 class="cs-lh">마감 임박 공모전</h2>{TOOLBAR}<ul class="list" id="list">{''.join(card(c) for c in _first)}</ul><button class="more" id="more" hidden>더 보기</button>{listing_js()}
 <h2 class="cs-lh">루리에게 맞춤 추천받기</h2>
 <section id="consult" aria-label="루리 공모전 맞춤 추천"><noscript><p>맞춤 추천은 자바스크립트가 필요해요. 위 목록은 그대로 쓸 수 있어요.</p></noscript></section>
 {qa_home()}<p class="cs-foot">진행 중 공모전 {len(live)}건(오늘 {TODAY.month}/{TODAY.day} 한국 시간 기준 접수 마감 전)의 마감일·상금·응모 자격·접수 방법을 정리해 두고, 루리가 상황에 맞는 것만 골라 드려요.</p>
