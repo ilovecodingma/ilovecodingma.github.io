@@ -72,12 +72,19 @@ THEMES = [  # (키, 이름, 아이콘, 테마색, 홈, [하위 메뉴], [이 테
      ['/contest/', '/c/', '/cat/', '/prep/', '/lab/', '/community/', '/guide/', '/v/', '/me/', '/widget/']),
     ('recipe', '레시피', '🍳', '#c2410c', '/fridge/', [('/fridge/', '냉장고 파먹기'), ('/fridge/solo/', '자취 요리'), ('/fridge/weather/', '날씨별'), ('/fridge/plan/', '식단·장보기'), ('/fridge/c/guk/', '국·찌개'), ('/fridge/c/bap/', '밥'), ('/fridge/c/myeon/', '면'), ('/fridge/c/bokkeum/', '볶음'), ('/fridge/c/jorim/', '조림·찜'), ('/fridge/c/banchan/', '반찬'), ('/fridge/c/jeon/', '전')], ['/fridge/']),   # 2026-10-20 사용자: 레시피 유입이 많아 별도 카테고리로
     ('life', '생활', '🧺', '#0e7490', '/apply/', [('/apply/', '지원금·청약'), ('/apply/recommend/', '청약 추천'), ('/apply/r/', '지역별'), ('/event/', '경품'), ('/qa/', '고민 해결'), ('/plaza/', '광장')], ['/apply/', '/a/', '/event/', '/qa/', '/ssul/', '/plaza/']),
-    ('game', '게임', '🎮', '#4f46e5', '/game/', [('/game/', '게임 허브'), ('/watch/', '웹툰·애니 추천'), ('/game/free/', '무료 게임 기록'), ('/game/release/', '출시 일정'), ('/game/steam-sale/', '세일 달력'), ('/game/refund/', '환불 규정'), ('/game/#timing', '살 타이밍'), ('/game/#contest', '게임 공모전')], ['/game/', '/watch/']),   # 2026-10-20 홍보 세션 기획서: 게임·취미·개발 커뮤니티 콘텐츠
+    ('game', '게임', '🎮', '#4f46e5', '/game/', [('/game/', '게임 허브'), ('/game/free/', '무료 게임 기록'), ('/game/release/', '출시 일정'), ('/game/steam-sale/', '세일 달력'), ('/game/refund/', '환불 규정'), ('/game/#timing', '살 타이밍'), ('/game/#contest', '게임 공모전')], ['/game/']),   # 2026-10-20 홍보 세션 기획서: 게임·취미·개발 커뮤니티 콘텐츠
     ('ai', '개발 지식', '🧑‍💻', '#0f172a', '/ailog/', [('/dev/', '기술 블로그'), ('/ailog/', '개발 지식·제작 로그'), ('/dev/faq/', '개발 FAQ'), ('/en/guide/', 'English guides'), ('/class/', '루리의 AI교실'), ('/ailog/#log', 'AI 제작 로그')], ['/ailog/', '/dev/', '/en/', '/class/', '/ai/'])]   # 2026-10-19 사용자: AI 로그 → 개발 지식으로 개편
 
 
 # 2026-10-19 사용자 「소비 쪽으로 가중치, URL 그대로 메인만」: 테마 줄 순서만 생활 먼저 (주소·테마 소속은 그대로)
-THEMES = [next(t for t in THEMES if t[0] == k) for k in ('recipe', 'life', 'contest', 'issue', 'money', 'game', 'ai')]
+THEMES += [   # 2026-10-23 사용자 「런처·주제별 메인 분리」: 생활을 쪼개 주제마다 자기 화면(헤더·하위메뉴·색)을 갖게 한다
+    ('today', '오늘 마감', '⏰', '#dc2626', '/today/', [('/today/', '오늘 마감'), ('/contest/week/', '이번 주 마감'), ('/app/', '마감 알림')], ['/today/']),
+    ('apply', '지원금·청약', '📋', '#0f766e', '/apply/', [('/apply/', '지원금·청약'), ('/apply/recommend/', '청약 추천'), ('/apply/r/', '지역별'), ('/apply/youth-rent/', '청년 월세'), ('/apply/newlywed/', '신혼부부')], ['/apply/', '/a/']),
+    ('event', '경품', '🎁', '#db2777', '/event/', [('/event/', '경품·이벤트')], ['/event/']),
+    ('plaza', '광장', '🗣️', '#0891b2', '/plaza/', [('/plaza/', '광장'), ('/qa/', '고민 해결'), ('/ssul/', '썰')], ['/plaza/', '/qa/', '/ssul/']),
+    ('watch', '웹툰·애니', '🎯', '#9333ea', '/watch/', [('/watch/', '오늘의 추천'), ('/watch/#webtoon', '웹툰'), ('/watch/#anime', '애니')], ['/watch/'])]
+THEMES = [t for t in THEMES if t[0] != 'life']
+THEMES = [next(t for t in THEMES if t[0] == k) for k in ('today', 'recipe', 'watch', 'apply', 'contest', 'event', 'issue', 'money', 'game', 'plaza', 'ai')]
 
 
 def theme_of(path):
@@ -159,6 +166,7 @@ def law_linkify(html_s, default=None):
 def page(path, title, desc, body, crumbs=None, ld=None, full_title=False, noindex=False, og=None, lang='ko', canon=None):
     url = SITE + (canon or path)
     TH = theme_of(path)
+    TH_CSS = '<style>' + ''.join(f'body[data-th={t[0]}]{{--pri:{t[3]};--pbg:color-mix(in srgb,{t[3]} 14%,#fff)}}' for t in THEMES) + '.th-back{opacity:.75}</style>'
     # 사이트맵 lastmod: 날짜·시각·D-day 처럼 매번 바뀌는 글자는 빼고 내용이 바뀐 날만 갱신
     PAGE_HASH[path] = hashlib.md5(re.sub(r'D-\d+|D-DAY|\d{1,2}:\d{2}|\d{4}-\d{2}-\d{2}|\d{1,2}/\d{1,2}|[\d,]+\s*(?:건|명|개|곳|회|일 남)', '', title + body).encode()).hexdigest()
     if noindex:
@@ -194,10 +202,11 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False, noinde
 <link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <link rel="stylesheet" href="/assets/gm.css?v=20"><link rel="stylesheet" href="/assets/ds.css?v=15"><link rel="stylesheet" href="/assets/print.css?v=1"><script defer src="/assets/print.js?v=1"></script>{('<link rel="stylesheet" href="/assets/chat/ruri-chat.css?v=9">') if not (TH and TH[0] == 'ai') else ''}{COMM_TAGS}{('<script type="module" src="/assets/chat/ruri-chat.js?v=16"></script>') if not (TH and TH[0] == 'ai') else ''}<link rel="stylesheet" href="/assets/app/shell.css?v=1"><script defer src="/assets/app/app.js?v=4"></script>
 {ldh}
+{TH_CSS}
 {GTAG}
 </head><body data-th="{TH[0] if TH else 'hub'}"{(' data-api="' + COMM_API + '"') if COMM_API else ''}>
 <header class="hd"><div class="w hd-in"><a class="logo" href="/"><img class="logo-av" src="/assets/ruri/avatar.webp" width="36" height="36" alt="루리의 줍줍"><span>루리의 <b>줍줍</b></span></a>{('<span class="th-name">' + TH[2] + ' ' + TH[1] + '</span>') if TH else ''}</div>
-<nav class="th-sw w" aria-label="테마">{"".join(f'<a href="{t[4]}" style="--tc:{t[3]}"{" class=on" if TH and TH[0] == t[0] else ""}>{t[2]} {t[1]}</a>' for t in THEMES)}</nav>
+{('<nav class="th-sw w" aria-label="런처로"><a href="/" class="th-back">‹ 런처</a><a href="' + TH[4] + '" class="on" style="--tc:' + TH[3] + '">' + TH[2] + ' ' + TH[1] + '</a></nav>') if TH else ''}
 {('<nav class="tb w" aria-label="' + TH[1] + ' 메뉴">' + "".join(f'<a href="{u}"{" class=on" if (path == u or (u != TH[4] and path.startswith(u))) else ""}>{n}</a>' for u, n in TH[5]) + '</nav>') if TH else ''}</header>
 <main class="w">
 {body}{PAGE_INTRO.get(path, '')}
@@ -1452,13 +1461,13 @@ def build():
         for k_ in ('webtoon', 'anime'):
             fw = os.path.join(ROOT, 'assets', 'watch', k_ + '.json')   # 추천 화면이 실제로 쓰는 목록 개수와 맞춘다
             if os.path.exists(fw): nw += len(json.load(open(fw, encoding='utf-8')).get('r', []))
-        stat = {'recipe': f'{NR_HOME}개', 'watch': f'{nw:,}편', 'policy': f'{len(aps)}건', 'contest': f'{len(live)}건 진행', 'event': f'{len(events):,}건', 'issue': '매시간', 'money': '계산기·가이드', 'game': '이번 주 무료', 'learn': '개발 지식', 'plaza': '이야기'}
+        stat = {'today': f'오늘 {_n_today}건 마감', 'recipe': f'{NR_HOME}개', 'watch': f'{nw:,}편', 'policy': f'{len(aps)}건', 'contest': f'{len(live)}건 진행', 'event': f'{len(events):,}건', 'issue': '매시간', 'money': '계산기·가이드', 'game': '이번 주 무료', 'learn': '개발 지식', 'plaza': '이야기'}
         out = ''
         for t in json.load(open(f, encoding='utf-8'))['topics']:
             url = (t.get('host') or '').rstrip('/') + t['path'] if t.get('host') else t['path']
             ext = ' rel="noopener"' if t.get('host') else ''
             out += f'<a class="lc-t" href="{E(url)}"{ext} style="--fc:{t["color"]};--fbg:{t["bg"]}"><i>{t["icon"]}</i><b>{E(t["name"])}</b><small>{E(stat.get(t["key"], ""))}</small></a>'
-        return f'<section class="lc" aria-label="주제 런처"><div class="hx-w"><p class="lc-h">무엇을 찾으세요?</p><div class="lc-g">{out}</div></div></section><link rel="stylesheet" href="/assets/home/launcher.css?v=1">'
+        return f'<section class="lc" aria-label="주제 런처"><div class="hx-w"><div class="lc-g">{out}</div></div></section><link rel="stylesheet" href="/assets/home/launcher.css?v=1">'
     hx_launch = _launcher()
     hx_nav = ''.join(f'<a href="#{k}">{ic} {n}</a>' for k, ic, n in _nav)
     home = f'''{hx_launch}<section class="hx-hero"><div class="hx-w hx-hero-in">
@@ -1490,6 +1499,8 @@ def build():
 <ul class="hx-ev">{hx_ev or '<li class="empty">지금은 마감 임박 이벤트가 없어요.</li>'}</ul></section>
 
 <section class="hx-sec hx-t-issue" id="issue"><div class="hx-hd"><div><p>🕵️ 이슈 · 뉴스</p><h2>같은 사건, 여러 언론을 한 번에</h2></div><a href="/news/">루리 뉴스 →</a></div>
+<div class="hx-feat"><a class="hx-f" href="/issue/kim-jong-un-rumor/" style="--fc:#b91c1c;--fbg:#fee2e2"><i>🕵️</i><b>김정은 사망설, 어디까지 사실일까요?</b><span>확인된 것·안 된 것 정리 · 10/23 기준</span></a>
+<a class="hx-f" href="/evergreen/" style="--fc:#15803d;--fbg:#dcfce7"><i>🌲</i><b>7일 내내 이어진 관심사</b><span>대출·택배·전월세·알바·기기 오류 지도</span></a></div>
 {f'<div class="hx-hot"><b>🔥 지금 뜨는 이슈</b><ol>{hot_h}</ol></div>' if hot_h else ''}
 <div class="hx-links"><a href="/news/#brief">📺 오늘의 브리핑</a><a href="/hot/">🔥 핫이슈</a><a href="/kw/">🔎 인기 키워드</a><a href="/trend/">🍿 이슈 트렌드</a><a href="https://www.youtube.com/channel/UCdJQUqqrHHXC7mWstly2eXw" target="_blank" rel="noopener">▶️ 루리 뉴스 유튜브</a></div></section>
 
@@ -1497,7 +1508,9 @@ def build():
 <div class="hx-feat"><a class="hx-f" href="/money/tools/salary/" style="--fc:#7c3aed;--fbg:#f4efff"><i>🧮</i><b>연봉 실수령액 계산기</b><span>2026 기준 · 실업급여·퇴직금도</span></a>
 <a class="hx-f" href="/money/guide/" style="--fc:#ea580c;--fbg:#fff1e6"><i>🧭</i><b>생활 돈 가이드</b><span>퇴사·주거·알바·사업 때 돈 문제를 순서대로</span></a>
 <a class="hx-f" href="/money/experts/" style="--fc:#ca8a04;--fbg:#fff8de"><i>📊</i><b>전문가 말 vs 시세</b><span>목표가가 얼마나 맞았나</span></a>
-<a class="hx-f" href="/analyst/" style="--fc:#0f766e;--fbg:#e8f7f4"><i>📈</i><b>애널리스트 종합</b><span>증권사 의견을 숫자로만 요약</span></a></div>
+<a class="hx-f" href="/analyst/" style="--fc:#0f766e;--fbg:#e8f7f4"><i>📈</i><b>애널리스트 종합</b><span>증권사 의견을 숫자로만 요약</span></a>
+<a class="hx-f" href="/money/daily/" style="--fc:#0369a1;--fbg:#e0f2fe"><i>🛒</i><b>생필품 단가 계산기</b><span>휴지·세제·생수·쌀·커피를 단가로 비교</span></a>
+<a class="hx-f" href="/money/guide/recommended-resignation-benefits/" style="--fc:#9a3412;--fbg:#ffedd5"><i>📄</i><b>권고사직 받았을 때</b><span>실업급여·해고예고 조문으로 확인</span></a></div>
 <div class="hx-links"><a href="/money/guide/journey/resign/">퇴사했을 때</a><a href="/money/guide/journey/housing/">집 구할 때</a><a href="/money/guide/journey/parttime/">알바할 때</a></div></section>
 
 <section class="hx-sec hx-t-watch" id="watch"><div class="hx-hd"><div><p>🎯 웹툰 · 애니 추천</p><h2>장르만 고르면 오늘의 추천</h2></div><a href="/watch/">추천 받기 →</a></div>
@@ -1519,9 +1532,12 @@ def build():
 <section class="hx-sec hx-t-plaza" id="plaza"><div class="hx-hd"><div><p>🗣️ 줍줍 광장</p><h2>방금 올라온 이야기</h2></div><a href="/plaza/">광장 가기 →</a></div>
 <div data-pcrecent="6"></div></section></div>
 <link rel="stylesheet" href="/assets/home/consult.css?v=15">'''
+    page('/today/', '오늘 마감 — 오늘 끝나는 공모전·경품·지원금',
+         f'오늘과 이번 주에 마감하는 공모전 {len(live)}건 중 급한 것, 경품·이벤트, 지원금·청약 일정을 마감 임박순으로 모았어요.', home.replace(hx_launch, '', 1),
+         crumbs=[('루리의 줍줍', '/'), ('오늘 마감', '/today/')])
     page('/', '루리의 줍줍 — 오늘 뭐 먹지·냉장고 파먹기 레시피, 경품·지원금·공모전',
          f'있는 재료로 찾는 집밥 레시피 {NR_HOME}개와 오늘의 메뉴, 오늘 마감 경품·용돈 이벤트, 지원금·청약 일정, 진행 중 공모전 {len(live)}건까지 생활 정보를 매시간 정리해요.',
-         home, full_title=True, ld={'@context': 'https://schema.org', '@graph': [  # 2026-10-19 구글 검색 결과 사이트 이름·로고
+         hx_launch, full_title=True, ld={'@context': 'https://schema.org', '@graph': [  # 2026-10-19 구글 검색 결과 사이트 이름·로고
              {'@type': 'WebSite', '@id': SITE + '/#website', 'name': NAME, 'alternateName': ['줍줍', '루리의줍줍', '루리 줍줍'], 'url': SITE + '/', 'publisher': {'@id': SITE + '/#org'}},
              {'@type': 'Organization', '@id': SITE + '/#org', 'name': NAME, 'url': SITE + '/', 'logo': {'@type': 'ImageObject', 'url': SITE + '/assets/icons/icon-512.png', 'width': 512, 'height': 512}}]})
     for s, n in CATS:

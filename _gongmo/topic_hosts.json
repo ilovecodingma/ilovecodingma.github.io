@@ -2,6 +2,15 @@
  "_설명": "런처 타일 주소. host 에 서브도메인(예: https://recipe.sungprofile.cloud)을 넣으면 그쪽으로 넘어가고, 비워 두면 path 로 간다. DNS·저장소가 준비된 주제만 host 를 채울 것.",
  "topics": [
   {
+   "key": "today",
+   "icon": "⏰",
+   "name": "오늘 마감",
+   "path": "/today/",
+   "host": "",
+   "color": "#dc2626",
+   "bg": "#ffeaea"
+  },
+  {
    "key": "recipe",
    "icon": "🍳",
    "name": "레시피",
