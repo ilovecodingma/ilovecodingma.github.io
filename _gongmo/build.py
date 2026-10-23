@@ -758,7 +758,7 @@ def detail(c, live):
     sub = ' · '.join(x for x in (c.get('effort'), c.get('submit')) if x)
     sub_type = c.get('effort') or {'photo': '사진(제목 기준)', 'video': '영상(제목 기준)', 'photo+video': '사진·영상(제목 기준)'}.get(c.get('medium', ''), '')   # 무엇을 내는지. 어디로 내는지(메일·폼)는 「접수 방법」
     rows = [('주최·주관', v_(c['org'])), ('분야', c['field'] or ', '.join(c['tags'])), ('응모 자격', v_(c['elig'])), ('지역 제한', region_row(c, NEED)),
-            ('접수 기간', period + (' (수집처 기준, 공식 공고에서 확인)' if CQ.is_aggregator(c['link']) else '')), ('마감 시각', deadline_row(c, NEED)), ('제출물 종류', v_(sub_type)), ('접수 방법', CQ.auto_label(v_(c['ch'])) if v_(c['ch']) != NEED else NEED), ('상금·혜택', v_(c['prize'])),
+            ('접수 기간', period + (' (수집처 기준, 공식 공고에서 확인)' if CQ.is_aggregator(c['link']) and not c.get('verified_official') else '')), ('마감 시각', deadline_row(c, NEED)), ('제출물 종류', v_(sub_type)), ('접수 방법', (v_(c['ch']) if c.get('verified_official') else CQ.auto_label(v_(c['ch']))) if v_(c['ch']) != NEED else NEED), ('상금·혜택', v_(c['prize'])),
             ('참가비', fee_row(c, NEED)), ('AI 사용', ai_row(c, NEED))]
     tb = ''.join(f'<tr><th>{k}</th><td{" class=need" if NEED in str(v) else ""}>{E(v)}</td></tr>' for k, v in rows)
     todo = ['마감 시각(예: 18시·23시 59분)과 접수 마감이 「도착 기준」인지']
