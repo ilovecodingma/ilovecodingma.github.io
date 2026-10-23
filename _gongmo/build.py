@@ -456,6 +456,9 @@ def collapse_thin(urls):
     return len(COLL), n
 
 
+THIN_FORCE_NOINDEX = {'/community/', '/me/', '/plaza/', '/ssul/', '/dev/tag/windows/', '/satire/2026-10-18/'}
+
+
 def auto_thin(urls):
     """빌드가 끝난 뒤 상세 페이지의 고유 본문을 세어 200자 미만이면 검색 제외로 돌린다(adsense_audit 와 같은 셈법)."""
     import adsense_audit as A
@@ -470,6 +473,20 @@ def auto_thin(urls):
         freq.update({re.sub(r'[\d,.]+', '#', l) for l in lines})
         got[u] = (f, doc, lines)
     n = 0
+    # 2026-10-23 애드센스 「가치가 별로 없는 콘텐츠」: 본문이 거의 없는 영상·앱 화면은 urls 에 없어도 검색 제외
+    _fp = ('/fridge/', '/lab/', '/v/', '/hot/', '/kw/', '/satire/', '/game/', '/a/')   # 2026-10-23 애드센스 「가치가 별로 없는 콘텐츠」: 틀로 찍은 레시피·자동 생성·얇은 구역은 검색 제외(삭제 아님, 되돌리려면 이 줄만)
+    _force = set(THIN_FORCE_NOINDEX)
+    for _pf in _fp:
+        for _dp, _dn, _fn in os.walk(os.path.join(ROOT, _pf.strip('/'))):
+            if 'index.html' in _fn:
+                _force.add('/' + os.path.relpath(_dp, ROOT).replace(os.sep, '/') + '/')
+    for u in sorted(_force):
+        f = os.path.join(ROOT, u.strip('/'), 'index.html')
+        if os.path.exists(f) and u not in NOINDEX:
+            doc = open(f, encoding='utf-8').read()
+            if 'name="robots" content="noindex' not in doc:
+                open(f, 'w', encoding='utf-8', newline='\n').write(doc.replace('<link rel="canonical"', '<meta name="robots" content="noindex,follow">\n<link rel="canonical"', 1))
+            NOINDEX.add(u); n += 1
     for u, (f, doc, lines) in got.items():
         if u in NOINDEX or not any(u.startswith(d) and u != d for d in DET):
             continue
@@ -1065,7 +1082,13 @@ def region_pages(aps):
         idx.append((sl, nm, len(L)))
     body = (f'<p class="bc"><a href="/">홈</a> › <a href="/apply/">지원금·청약</a> › 지역별</p><h1>📍 지역별 지원금·청약 {YR}</h1>'
             '<p>시·도별로 지금 신청할 수 있는 지원금·청약·월세 지원 공고를 모았어요. 지역 칸이나 제목에 시·도가 적힌 공고만 들어가고, 전국 대상 공고는 <a href="/apply/">전체 일정</a>에 있어요. 매시간 새 공고를 반영해요.</p><ul class="reg-l">'
-            + ''.join(f'<li><a href="/apply/r/{sl}/"><b>{nm}</b><span>{n}건</span></a></li>' for sl, nm, n in sorted(idx, key=lambda x: -x[2])) + '</ul>')
+            + ''.join(f'<li><a href="/apply/r/{sl}/"><b>{nm}</b><span>{n}건</span></a></li>' for sl, nm, n in sorted(idx, key=lambda x: -x[2])) + '</ul>'
+            '<h2>이 목록을 쓰는 방법</h2>'
+            '<ol><li>사는 시·도를 눌러 마감이 가까운 순서로 정렬된 공고를 봐요. 시·도 안에서 「청년」「청약」으로 한 번 더 나눌 수 있어요.</li>'
+            '<li>공고 카드의 신청 기간·대상은 요약이에요. 소득·재산·거주 기간 같은 세부 조건은 지자체마다 달라서, 신청 전에 카드의 공식 신청처 링크에서 공고 원문을 꼭 확인하세요.</li>'
+            '<li>같은 이름의 지원금도 지자체가 연도마다 예산과 대상을 바꿔요. 이미 마감됐거나 공고가 없으면 해당 시·도 칸에 「지금은 공고가 없어요」로 보여요.</li>'
+            '<li>시·도 이름이 적히지 않은 전국 대상 공고(예: 중앙부처 사업)는 이 목록이 아니라 <a href="/apply/">전체 일정</a>에 있어요.</li></ol>'
+            '<p class="note">공고 정보는 공식 사이트에 올라온 내용을 모아 보여 주는 안내이고, 신청 접수는 각 기관 사이트에서만 해요.</p>')
     page('/apply/r/', f'지역별 지원금·청약 {YR} — 서울·경기·부산 등 시·도별 신청 일정', '시·도별 청년 지원금, 월세 지원, 아파트 청약 일정을 마감순으로 정리했어요.', body,
          [('루리의 줍줍', '/'), ('지원금·청약', '/apply/'), ('지역별', '/apply/r/')])
     return ['/apply/r/'] + urls
@@ -1416,7 +1439,7 @@ def build():
     _why0 = (_TD.get('why') or '').replace('엔', '엔 ') if _TD else ''
     hx_say = (f'{E(_why0.strip())}! <b>{E(_hp["n"])}</b> 어때요? 🍽️' if _hp and _why0 else (f'오늘은 <b>{E(_hp["n"])}</b> 어때요? 🍽️' if _hp else '냉장고 재료만 알려 주면 오늘 메뉴를 골라 줄게요!'))
     _eyebrow = f'{E(_TD.get("place", "서울"))} {round(_TD.get("t", 0))}° · {E(_TD.get("why", "오늘 뭐 먹을지 골라 드려요"))}' if _TD else '오늘 뭐 먹을지 골라 드려요'
-    _tiles = [('🍳', '오늘 뭐 먹지', '/fridge/', '#fff1e6'), ('🏠', '자취 요리', '/fridge/solo/', '#e8f7ee'), ('🌤️', '날씨별 메뉴', '/fridge/weather/', '#e6f2ff'), ('🏆', '공모전', '/contest/', '#f1e9ff'),
+    _tiles = [('💡', '생활 돈 가이드', '/money/guide/', '#fff1e6'), ('🏠', '월세·전세', '/money/guide/jeonse-vs-wolse/', '#e8f7ee'), ('🧾', '연말정산', '/money/guide/year-end-prep/', '#e6f2ff'), ('🏆', '공모전', '/contest/', '#f1e9ff'),
               ('📋', '지원금·청약', '/apply/', '#e6f7f4'), ('🎁', '경품·용돈', '/event/', '#ffe9ef'), ('🕵️', '이슈·뉴스', '/news/', '#fff6d9'), ('🧮', '계산기', '/money/tools/salary/', '#eaeefb')]
     hx_tiles = ''.join(f'<a class="hx-tile" href="{u}" style="--tbg:{bg}"><i>{ic}</i>{n}</a>' for ic, n, u, bg in _tiles)
     hx_ev = ''.join(f'<li><a href="{E(e["link"])}" target="_blank" rel="noopener nofollow"><span class="dd{" u" if dday(e["end"])[0] <= 1 else ""}">{dday(e["end"])[1]}</span><div><b>{E(e["title"][:52])}</b><small>{E(e.get("org") or "")} · {E(e.get("effort") or EASY.get(e["type"], ""))}</small></div></a></li>' for e in _ev3[:6])
@@ -1456,7 +1479,7 @@ def build():
     _fc = [('#7c3aed', '#f4efff'), ('#0f766e', '#e8f7f4'), ('#ea580c', '#fff1e6'), ('#2563eb', '#e8f0ff'), ('#db2777', '#ffe9f2'), ('#ca8a04', '#fff8de')]
     hx_more = ''.join(f'<a class="hx-f" href="{u}" style="--fc:{_fc[j % 6][0]};--fbg:{_fc[j % 6][1]}"><i>{ic}</i><b>{E(n)}</b><span>{E(v)}</span></a>' for j, (k, u, ic, n, v, sc) in enumerate(more))
     AICLASS = '<a class="hx-f" href="/class/" style="--fc:#4338ca;--fbg:#eef0ff"><i>🎓</i><b>루리의 AI교실</b><span>AI를 처음 써 보는 사람을 위한 수업</span></a>' if os.path.exists(os.path.join(ROOT, 'class', 'index.html')) else ''
-    _nav = [('today', '⏰', '오늘 마감'), ('policy', '📋', '지원금·정책'), ('contest', '🏆', '공모전'), ('event', '🎁', '경품'), ('issue', '🕵️', '이슈'), ('money', '🧮', '머니'), ('watch', '🎯', '웹툰·애니'), ('learn', '🎓', '배우기'), ('recipe', '🍳', '레시피'), ('plaza', '🗣️', '광장')]
+    _nav = [('today', '⏰', '오늘 마감'), ('policy', '📋', '지원금·정책'), ('contest', '🏆', '공모전'), ('event', '🎁', '경품'), ('issue', '🕵️', '이슈'), ('money', '🧮', '머니'), ('watch', '🎯', '웹툰·애니'), ('learn', '🎓', '배우기'), ('plaza', '🗣️', '광장')]
     def _hx_watch():
         import random as _r
         out = ''
@@ -3567,8 +3590,8 @@ def all_page():
                        ('/satire/', '루리 풍자', '매일 한 컷 만평'), ('/mag/', '데일리 매거진', '이슈 리딩·하루 정보 한 장'), ('/review/', '루리의 평론', '이슈·정책 해설 칼럼')]),
          ('📊 투자 정보', [('/analyst/', '애널리스트 분석', '목표가 상향·하향 노드 트리'), ('/analyst/coin/btc/', '코인 전망', '비트코인·이더리움 강세·약세')]),
          ('🏆 공모전', [('/', '공모전 추천 상담', '질문 몇 개로 딱 맞는 공모전'), ('/cat/literature/', '분야별 공모전', '문학·아이디어·디자인·영상·IT·요리'), ('/prep/', '준비실', '마감 역산 일정·체크리스트·꿀팁'),
-                       ('/lab/', '수상 연구소', '수상작 분석·당선 공식'), ('/community/', '원정대', '같이 나갈 팀 모으기'), ('/guide/', '응모 가이드', '공모전 처음이라면')]),
-         ('💰 생활 정보', [('/apply/', '지원금·청약', '청년 지원금·청약 일정'), ('/event/', '경품 이벤트', '응모만 하면 되는 이벤트'), ('/fridge/', '냉장고 파먹기', '있는 재료로 오늘 메뉴'), ('/qa/', '고민 해결', '실제 고민에 답 정리')]),
+                       ('/community/', '원정대', '같이 나갈 팀 모으기'), ('/guide/', '응모 가이드', '공모전 처음이라면')]),
+         ('💰 생활 정보', [('/apply/', '지원금·청약', '청년 지원금·청약 일정'), ('/event/', '경품 이벤트', '응모만 하면 되는 이벤트'), ('/qa/', '고민 해결', '실제 고민에 답 정리')]),
          ('⚙️ 더 보기', [('/app/', '앱·알림', '홈 화면 설치·폰 알림'), ('/me/', '내 공간', '찜·응모 기록'), ('/ailog/', 'AI 제작 로그', '이 사이트를 만든 방법'), ('/plaza/', '줍줍 광장', '내 글·레시피·썰 올리기')])]
     body = '<p class="bc"><a href="/">홈</a> › 전체 메뉴</p><h1>☰ 루리의 줍줍 전체 메뉴</h1>' + ''.join(
         f'<section class="mg-s"><h2>{E(g)}</h2><ul class="al-menu">' + ''.join(f'<li><a href="{u}"><b>{E(n)}</b><span>{E(d)}</span></a></li>' for u, n, d in items) + '</ul></section>' for g, items in G) + '<link rel="stylesheet" href="/assets/mag/mag.css?v=10">'
@@ -3799,6 +3822,9 @@ def apply_rec_page():
     body = ('<p class="bc"><a href="/">홈</a> › <a href="/apply/">생활</a> › 청약 추천</p><h1>🏠 루리의 청약 추천</h1>'
             + say('o_cardigan', '내 상황을 고르면 청약 가점이랑 노려볼 만한 공급 유형, 지금 접수 중인 공고 중 맞는 걸 골라 드려요. 입력한 내용은 이 폰에만 저장돼요.')
             + '<section id="aprec" aria-label="청약 추천"><noscript>자바스크립트가 필요해요.</noscript></section>'
+            + '<h2>청약 가점은 이렇게 계산돼요</h2>'
+              '<p>민영주택 일반공급의 가점제(84점 만점)는 세 항목을 더해요: <b>무주택 기간</b>(최대 32점), <b>부양가족 수</b>(최대 35점), <b>청약통장 가입 기간</b>(최대 17점). 세대주 기준으로 보고, 항목마다 점수표가 따로 있어요.</p>'
+              '<p>가점제와 추첨제가 나뉘는 비율, 신혼부부·생애최초·다자녀 같은 특별공급의 소득·자산 기준은 단지와 시기마다 달라요. 아래 계산은 감을 잡는 용도이고, 확정 점수는 청약홈의 가점 계산 화면과 해당 단지의 입주자 모집 공고문으로 확인하세요.</p>'
             + '<p class="note">청약 가점은 대략 계산이며, 특별공급 자격(소득·자산·거주 기간 등)은 단지마다 달라요. 신청 전 공고문과 청약홈에서 꼭 확인하세요.</p>'
             + '<link rel="stylesheet" href="/assets/apply/rec.css?v=1"><script defer src="/assets/apply/rec.js?v=1"></script>')
     page('/apply/recommend/', '청약 가점 계산기 · 청약 추천 — 내 가점·노려볼 공급 유형·지금 접수 중인 공고', '지역·나이·결혼·자녀·무주택 기간·부양가족·통장 기간을 고르면 청약 가점(84점)과 신혼·생애최초·다자녀·청년·공공임대 등 노려볼 공급 유형, 지금 접수 중인 공고를 골라 드려요.',
