@@ -43,8 +43,8 @@
       if (mood) { var nm = (mood.names || []).filter(function (g) { return it.tags.indexOf(g) >= 0; }), km = (mood.kw || []).filter(function (w) { return it.kw.indexOf(w) >= 0; }); if (nm.length || km.length) { sc += 2 * nm.length + 1.6 * km.length; why.push(mood.why || mood.label); } }
       var best = null, bs = 0; liked.forEach(function (l) { var j = jac(it.set, l.set) * 5; if (l.rec && l.rec.some(function (r) { return r[0] === it.id; })) j += 4; if (it.rec && it.rec.some(function (r) { return r[0] === l.id; })) j += 3; if (j > bs) { bs = j; best = l; } });
       if (bs > 0.9) { sc += bs; why.push('「' + best.t.slice(0, 14) + '」 좋아했다면'); }
-      if (kind === 'webtoon') { sc += Math.max(0, (it.sc - 8.8)) * 3 + Math.log(1 + it.fav) / 9; if (it.sc >= 9.8) why.push('독자 별점 ' + it.sc.toFixed(2) + '/10 (' + it.site + ')'); }
-      else { sc += (it.sc || 60) / 100 * 2.2 + Math.log(1 + it.pop) / 7; if (it.sc >= 80) why.push('평점 ' + (it.sc / 10).toFixed(2) + '/10 (' + (it.site || 'AniList') + ')'); }
+      if (kind === 'webtoon') { sc += Math.max(0, (it.sc - 8.8)) * 3 + Math.log(1 + it.fav) / 9; }
+      else { sc += (it.sc || 60) / 100 * 2.2 + Math.log(1 + it.pop) / 7; }
       var v = VOTES[it.id]; if (v) sc += Math.min(1.2, v[0] * .3) - Math.min(2, v[1] * .5);
       sc += ((it.id * 2654435761 + salt) % 1000) / 1000 * (st.g.length || !st.seen.length ? 3.2 : 1.1);
       out.push({ it: it, sc: sc, why: why.slice(0, 3) });
@@ -65,7 +65,12 @@
     });
   }
   function genreBar(st, cfg) {
-    var g = '<div class="wt-opts"><button type="button" class="wt-o wt-all' + (!st.g.length ? ' on' : '') + '">🔥 전체 인기</button>' + cfg.genres.map(function (x) { return '<button type="button" class="wt-o wt-g' + (st.g.indexOf(x[0]) >= 0 ? ' on' : '') + '" data-v="' + esc(x[0]) + '">' + esc(x[1] || x[0]) + '</button>'; }).join('') + '</div>';
+    var MAIN = kind === 'webtoon' ? ['로맨스', '판타지', '드라마', '액션', '스릴러', '개그', '일상', '무협/사극'] : ['Comedy', 'Action', 'Fantasy', 'Drama', 'Slice of Life', 'Romance', 'Adventure', 'Sci-Fi', 'Mystery', 'Sports', 'Thriller', 'Music'];
+    var gbtn = function (x) { return '<button type="button" class="wt-o wt-g' + (st.g.indexOf(x[0]) >= 0 ? ' on' : '') + '" data-v="' + esc(x[0]) + '">' + esc(x[1] || x[0]) + '</button>'; };
+    var gmain = cfg.genres.filter(function (x) { return MAIN.indexOf(x[0]) >= 0; }), gx = cfg.genres.filter(function (x) { return MAIN.indexOf(x[0]) < 0; });
+    var gxOn = gx.some(function (x) { return st.g.indexOf(x[0]) >= 0; });
+    var g = '<p class="wt-l">장르</p><div class="wt-opts"><button type="button" class="wt-o wt-all' + (!st.g.length ? ' on' : '') + '">🔥 전체 인기</button>' + gmain.map(gbtn).join('') + '</div>'
+      + (gx.length ? '<details class="wt-xg"' + (gxOn ? ' open' : '') + '><summary>분위기·소재 추가 조건 <small>(장르와 함께 쓰면 더 좁혀져요)</small></summary><div class="wt-opts">' + gx.map(gbtn).join('') + '</div></details>' : '');
     var more = '<div class="wt-adv"><button type="button" class="wt-advb">🎛 ' + (adv ? '접기' : '더 정확하게 (기분 · 길이 · 본 작품)') + '</button>';
     if (adv) {
       more += '<p class="wt-l">지금 기분</p><div class="wt-opts">' + cfg.moods.map(function (m) { return '<button type="button" class="wt-o wt-m' + (st.mood === m.k ? ' on' : '') + '" data-v="' + m.k + '">' + m.e + ' ' + esc(m.label) + '</button>'; }).join('') + '</div>'

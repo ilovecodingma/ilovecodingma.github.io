@@ -4,6 +4,8 @@
 오늘 마감: 오늘 끝나는 기회만, 필터(전체/공모전/이벤트/지원금/주거 청약/공모주), 통일된 카드(제목·대상·혜택·마감·이동), 시각을 모르면 「시각 미확인」.
 build.py 의 함수는 ctx 로 받는다(순환 import 방지)."""
 import re, json, datetime, html as H
+import contest_quality as CQ
+import shorten as SH
 
 E = lambda t: H.escape(str(t if t is not None else ''), quote=True)
 
@@ -26,16 +28,26 @@ def due_items(ctx, today_only=True):
     for e in ctx['events']:
         if e['end'] != T:
             continue
-        out.append({'type': '이벤트', 'title': ctx['tidy_ev'](e['title']), 'target': '미확인', 'benefit': '경품 이벤트 · ' + (e.get('effort') or ctx['EASY'].get(e['type'], e['type'])),
+        out.append({'type': '이벤트', 'title': ctx['tidy_ev'](e['title']), 'target': None, 'benefit': '경품 이벤트 · ' + (e.get('effort') or ctx['EASY'].get(e['type'], e['type'])),
                     'time': '', 'href': '', 'ext': e.get('link') or '', 'org': e.get('org') or ''})
     for a in ctx['aps']:
         if a.get('always') or a['end'] != T or a['id'] in ctx['AP_DUP']:
             continue
         kk = a.get('kk') or ''
         typ = '공모주' if kk == 'ipo' else '주거 청약' if kk in ('apt', 'rent', 'lh') else '지원금'
-        out.append({'type': typ, 'title': a['title'], 'target': _short(a.get('target') or '', 14) or '미확인', 'benefit': _short(a.get('benefit') or a.get('kind') or '', 22) or '미확인',
+        tg = None if typ == '공모주' else (SH.clip(re.sub(r'^\([^)]{1,6}\)\s*', '', a.get('target') or ''), 22) or ('확인 필요' if typ == '지원금' else None))
+        out.append({'type': typ, 'title': a['title'], 'target': tg, 'benefit': (SH.clip(a.get('benefit') or '', 26) or a.get('kind') or '확인 필요') if typ != '공모주' else '청약 ' + a['start'][5:].replace('-', '.') + ' ~ ' + a['end'][5:].replace('-', '.'),
                     'time': '', 'href': f'/a/{a["id"]}/', 'ext': a.get('url') or '', 'org': a.get('org') or ''})
     return out
+
+
+def _dl(it):
+    tm = f'오늘 <b>{E(it["time"])}</b>' if it['time'] else '오늘 · <span class="nu">시각 확인 필요</span>'
+    rows = []
+    if it['target'] is not None:
+        rows.append(('대상', it['target']))
+    rows.append(('혜택', it['benefit']))
+    return ''.join(f'<div><dt>{k}</dt><dd{" class=nu" if v == "확인 필요" else ""}>{E(v)}</dd></div>' for k, v in rows) + f'<div><dt>마감</dt><dd>{tm}</dd></div>'
 
 
 def _card(it):
@@ -44,9 +56,9 @@ def _card(it):
     if it['href']:
         btns += f'<a class="b1" href="{E(it["href"])}">상세 보기</a>'
     if it['ext']:
-        btns += f'<a class="b2" href="{E(it["ext"])}" target="_blank" rel="noopener nofollow">공식 사이트 ↗</a>' if it['type'] != '이벤트' else f'<a class="b1" href="{E(it["ext"])}" target="_blank" rel="noopener nofollow">이벤트 보기 ↗</a>'
+        btns += f'<a class="b2" href="{E(it["ext"])}" target="_blank" rel="noopener nofollow">{E(CQ.link_label(it["ext"]))} ↗</a>' if it['type'] != '이벤트' else f'<a class="b1" href="{E(it["ext"])}" target="_blank" rel="noopener nofollow">이벤트 보기 ↗</a>'
     return (f'<li class="td-c" data-t="{E(it["type"])}"><span class="td-t">{E(it["type"])}</span><h3>{E(_short(it["title"], 60))}</h3>'
-            f'<dl><div><dt>대상</dt><dd{" class=nu" if it["target"] == "미확인" else ""}>{E(it["target"])}</dd></div><div><dt>혜택</dt><dd{" class=nu" if it["benefit"] == "미확인" else ""}>{E(it["benefit"])}</dd></div><div><dt>마감</dt><dd>{tm}</dd></div></dl>'
+            f'<dl>{_dl(it)}</dl>'
             f'<div class="td-b">{btns}</div></li>')
 
 
@@ -68,7 +80,7 @@ def today_html(ctx):
 
 def home_html(ctx):
     now = ctx['now']; items = due_items(ctx)
-    new_c = ctx['new_contests']
+    new_c = [c for c in ctx['new_contests'] if ctx['elig_short'](c) not in ('미확인', '확인 필요')][:5]
     # 오늘 마감 미리보기(공모전·지원금 우선 5개)
     order = {'공모전': 0, '지원금': 1, '주거 청약': 2, '공모주': 3, '이벤트': 4}
     prev = sorted(items, key=lambda x: (order.get(x['type'], 9), x['title']))[:5]
@@ -77,7 +89,7 @@ def home_html(ctx):
     guides = ''.join(f'<a href="{E(g["u"])}"><b>{E(_short(g["title"], 38))}</b><span>{E(_short(g["desc"], 60))}</span></a>' for g in ctx['guides'][:3])
     main = [('⏰', '오늘 마감하는 기회', f'{len(items)}건', '/today/'), ('🏆', '공모전 찾기', f'{ctx["n_contest"]}건 진행 중', '/contest/'), ('📋', '지원금·청약 찾기', f'{ctx["n_apply"]}건', '/apply/'), ('🍳', '오늘 뭐 먹지', '재료로도 찾기', '/fridge/')]
     mh = ''.join(f'<a class="hm-a" href="{u}"><i>{ic}</i><b>{E(t)}</b><span>{E(s)}</span></a>' for ic, t, s, u in main)
-    sub = ''.join(f'<a href="{u}">{ic} {E(t)}</a>' for ic, t, u in (('🎁', '경품 이벤트', '/event/'), ('📚', '루리 위키', '/wiki/'), ('🧮', '계산기', '/money/guide/'), ('📺', '뉴스', '/news/')))
+    sub = ''.join(f'<a href="{u}">{ic} {E(t)}</a>' for ic, t, u in (('🎁', '경품 이벤트', '/event/'), ('📚', '루리 위키', '/wiki/'), ('💰', '생활 돈 가이드', '/money/guide/'), ('📺', '뉴스', '/news/')))
     allsv = ''.join(f'<a href="{E(t["path"])}"><i>{t["icon"]}</i>{E(t["name"])}</a>' for t in ctx['topics'])
     feats = ''.join(f'<li><b>{E(a)}</b><span>{E(b)}</span></li>' for a, b in (('루리 위키', '정보성 글을 문서처럼 묶어 검색·이전/다음으로 읽어요 (10/23)'), ('재료 → 최저가', '레시피에서 없는 재료를 쇼핑몰 가격순 검색으로 바로 연결해요 (10/23)'), ('공식 원문 대조', '확인한 공모전은 확인일과 달랐던 점을 함께 보여 줘요 (10/23)')))
     return (f'<section class="hm-hero"><h1>오늘 필요한 생활 정보,<br>조건에 맞게 골라보세요.</h1>'
@@ -86,7 +98,7 @@ def home_html(ctx):
             '<div class="hm-sc" role="group" aria-label="검색 범위"><button type="button" class="on" data-s="">전체</button><button type="button" data-s="c">공모전</button><button type="button" data-s="a">지원금</button><button type="button" data-s="e">이벤트</button><button type="button" data-s="r">레시피</button><button type="button" data-s="w">가이드</button></div>'
             '<div class="hm-r" id="hr" aria-live="polite"></div></form></section>'
             f'<nav class="hm-act" aria-label="주요 바로가기">{mh}</nav><nav class="hm-sub" aria-label="더 보기">{sub}</nav>'
-            f'<section class="hm-ai" aria-label="AI 수집 현황"><b>🤖 AI 수집기</b><span>마지막 수집 <b>{now:%H:%M}</b></span><span>오늘 새로 확인 <b>{ctx["n_new"]}건</b></span><span>공식 원문 대조 <b>{ctx["n_ver"]}건</b></span><span>확인 못한 값은 「미확인」</span><a href="/about/">제작 원칙·로그</a></section>'
+            f'<section class="hm-ai" aria-label="AI 수집 현황"><b>🤖 AI 수집기</b><span>마지막 수집 <b>{now:%H:%M}</b></span><span>오늘 새로 확인 <b>{ctx["n_new"]}건</b></span><span>공식 원문 대조 <b>누적 {ctx["n_ver"]}건</b></span><span>확인 못한 값은 「확인 필요」</span><a href="/about/">제작 원칙·로그</a></section>'
             f'<section class="hm-sec"><div class="hm-h"><h2>오늘 마감</h2><a href="/today/">전체 {len(items)}건 →</a></div><ul class="td-l hm-td">{prev_h}</ul></section>'
             f'<section class="hm-sec"><div class="hm-h"><h2>새로 확인한 공모전</h2><a href="/contest/">공모전 찾기 →</a></div><ul class="hm-nl">{new_h}</ul></section>'
             + (f'<section class="hm-sec"><div class="hm-h"><h2>추천 가이드</h2><a href="/wiki/">루리 위키 →</a></div><div class="hm-g">{guides}</div></section>' if guides else '')

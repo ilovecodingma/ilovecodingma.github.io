@@ -56,3 +56,6 @@
 .art ul.chk li:before,.art ul.gm-l li:before{content:"✓";position:absolute;left:2px;top:7px;color:var(--pri,#6d28d9);font-weight:800}
 .gs-t{min-width:0;flex:1}
 .g-toc a{max-width:260px}.g-toc a{overflow:hidden;text-overflow:ellipsis}
+/* UI 2차 11번: 목차는 가로 스크롤 대신 줄바꿈 — 뒤쪽 항목(비용·구조·실패 기록)도 한눈에 */
+.g-toc{flex-wrap:wrap;overflow:visible}
+.g-toc a{max-width:none;white-space:normal}

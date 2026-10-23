@@ -1,11 +1,12 @@
 // 루리의 냉장고 파먹기 (/fridge/) — 냉장고에 있는 재료를 고르면 레시피 중 지금 만들 수 있는 오늘 메뉴를 추천
 // 2026-10-18 사용자: "AI 말고 그냥 레시피 추천으로" → 재료 매칭 방식(서버·AI 없이 브라우저에서 계산)
 (function () {
+  function LS0(k) { try { return JSON.parse(localStorage.getItem(k) || '[]'); } catch (e) { return []; } }
   const ROOT = document.getElementById('fridge'); if (!ROOT) return;
   const KEY = 'jupjup_fridge_v1';
   const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const ga = (n, p) => { try { window.gtag && gtag('event', n, p || {}); } catch {} };
-  let IMG = null, D = null, have = new Set(), mood = '아무거나', maxMin = 99, TD = null, expMode = false, easyOnly = false, fewDish = false;
+  let IMG = null, D = null, noBasic = new Set(LS0('jupjup_fridge_nobasic')), have = new Set(), mood = '아무거나', maxMin = 99, TD = null, expMode = false, easyOnly = false, fewDish = false;
   const LS = (k, d) => { try { return JSON.parse(localStorage.getItem(k) || 'null') ?? d; } catch { return d; } }, LSset = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} };
   let exp = new Set(LS('jupjup_fridge_exp', [])), made = LS('jupjup_fridge_made', {}), frSeen = LS('jupjup_fridge_seen', {});
   // 2026-10-19 음식 추천 고도화(모델 없음): 대체 재료·날씨·때·제철·곧 상할 재료·개인화·다양성·이유 한 줄
@@ -24,7 +25,8 @@
   function rank() {
     const pref = {}; Object.values(made).forEach(c => { pref[c] = (pref[c] || 0) + 1; }); const pn = Math.max(1, ...Object.values(pref));
     return D.recipes.map(r => {
-      const sub = [], lack = r.need.filter(x => { if (have.has(x)) return false; const alt = (SUB[x] || []).find(y => have.has(y)); if (alt) { sub.push([x, alt]); return false; } return true; });
+      const sub = [], lack0 = r.need.filter(x => { if (have.has(x)) return false; const alt = (SUB[x] || []).find(y => have.has(y)); if (alt) { sub.push([x, alt]); return false; } return true; });
+      const lb = [...noBasic].filter(x => (r.s || []).join(' ').includes(x)), lack = lack0.concat(lb);
       const plus = r.opt.filter(x => have.has(x)), cat = CAT(r.n), why = [];
       const fit = mood === '아무거나' || r.t.includes(mood);
       const used = r.need.length - lack.length + plus.length, cover = used / (r.need.length + r.opt.length || 1);
@@ -91,19 +93,23 @@ ${cr.length ? `<details class="fr-cr"><summary>사진 출처</summary><p>${cr.jo
 
   function paint() {
     const cats = Object.entries(D.ing).map(([c, xs]) => `<div class="fr-cat"><small>${esc(c)}</small><div>${xs.map(x => `<button data-i="${esc(x)}" class="${have.has(x) ? 'on' : ''}">${esc(x)}</button>`).join('')}</div></div>`).join('');
+    const bas = (D.basic || '').split(/[·,]/).map(x => x.trim()).filter(Boolean);
     ROOT.innerHTML = `<label class="fr-cam"><input type="file" accept="image/*" capture="environment" hidden><b>📸 냉장고 사진 찍어서 자동 체크</b><small>사진 속 재료를 찾아 아래에 체크해 드려요 · 틀린 건 눌러서 고치면 돼요</small></label><p class="fr-scan" hidden></p>
-<section class="fr-pick"><h2>🧊 냉장고에 뭐 있어요? <small class="fr-n">${have.size}개 골랐어요</small></h2><p class="fr-basic">기본양념(${esc(D.basic)})은 있다고 칠게요.</p>${cats}
-<button class="fr-clear">비우기</button></section>
-<div class="fr-opts"><div class="fr-o"><small>오늘 기분은?</small><div>${MOODS.map(m => `<button data-m="${m}" class="${mood === m ? 'on' : ''}">${m === '아무거나' ? m : '#' + m}</button>`).join('')}</div></div>
+<section class="fr-pick"><h2>🧊 냉장고에 뭐 있어요? <small class="fr-n">${have.size}개 골랐어요</small></h2>
+<input class="fr-find" type="search" placeholder="재료 검색 (예: 두부, 김치)" aria-label="재료 검색" autocomplete="off">
+<div class="fr-chosen" aria-live="polite"></div>
+<div class="fr-cats">${cats}</div><p class="fr-nofind" hidden>찾는 재료가 없어요. 사진으로 찾거나 물어보기에 적어 보세요.</p>
+<div class="fr-actrow"><button class="fr-go">🍳 이 재료로 메뉴 추천받기</button><button class="fr-clear">비우기</button></div>
+<details class="fr-bs"><summary>기본양념 ${bas.length - noBasic.size}/${bas.length}가지는 있다고 쳐요 · 바꾸기</summary><div class="fr-bsl">${bas.map(x => `<button type="button" data-b="${esc(x)}" class="${noBasic.has(x) ? '' : 'on'}">${esc(x)}</button>`).join('')}</div><small>없는 양념은 눌러서 끄면, 그 양념이 필요한 메뉴는 「하나만 더 사면 되는 메뉴」로 옮겨져요.</small></details></section>
+<details class="fr-od"><summary>조건 바꾸기 <small>기분 · 시간 · 쉬운 것만</small></summary><div class="fr-opts"><div class="fr-o"><small>오늘 기분은?</small><div>${MOODS.map(m => `<button data-m="${m}" class="${mood === m ? 'on' : ''}">${m === '아무거나' ? m : '#' + m}</button>`).join('')}</div></div>
 <div class="fr-o"><small>시간은?</small><div>${TIMES.map(([v, l]) => `<button data-t="${v}" class="${maxMin === v ? 'on' : ''}">${l}</button>`).join('')}</div></div>
-<div class="fr-o"><small>조건</small><div><button data-f="easy" class="${easyOnly ? 'on' : ''}">쉬운 것만</button><button data-f="few" class="${fewDish ? 'on' : ''}">설거지 적게</button><button data-f="exp" class="${expMode ? 'on' : ''}">⏰ 곧 상할 재료 고르기</button></div></div></div>
-${TD && TD.picks ? `<section class="fr-wx"><h2 class="fr-h">🌤️ 오늘 날씨에 어울리는 메뉴 <small>${esc(TD.place)} ${Math.round(TD.t)}도 · ${esc(TD.why)}${TD.day ? ' · ' + esc(TD.day) : ''}</small></h2><div class="fr-wxl">${TD.picks.map(n => { const r = D.recipes.find(x => x.n === n); if (!r) return ''; const f = ph(r, 'main');
-      return `<a href="${esc(rpath(n))}" data-pcs="${esc(rpath(n))}">${f ? `<img src="${esc(f.f)}" alt="${esc(n)}" loading="lazy" decoding="async">` : `<span>${r.e}</span>`}<b>${esc(n)}</b><small>${r.m}분 · ${esc(r.lv)}</small></a>`; }).join('')}</div></section>` : ''}
-<button class="fr-go">🍳 이 재료로 메뉴 추천받기</button>
+<div class="fr-o"><small>조건</small><div><button data-f="easy" class="${easyOnly ? 'on' : ''}">쉬운 것만</button><button data-f="few" class="${fewDish ? 'on' : ''}">설거지 적게</button><button data-f="exp" class="${expMode ? 'on' : ''}">⏰ 곧 상할 재료 고르기</button></div></div></div></details>
 <form class="fr-ask"><b>💬 루리에게 물어보기</b><small>고른 재료에 맞춰 골라 드려요 · 예) 매콤하고 든든한 거, 10분 안에 되는 아침</small>
 <div><input type="text" maxlength="60" placeholder="어떤 게 당겨요?" aria-label="루리에게 물어볼 내용"><button type="submit">물어보기</button></div></form>
 <div class="fr-ans" hidden></div>
-<div class="fr-out"></div>`;
+<div class="fr-out"></div>
+${TD && TD.picks ? `<section class="fr-wx"><h2 class="fr-h">🌤️ 오늘 날씨에 어울리는 메뉴 <small>${esc(TD.place)} ${Math.round(TD.t)}도 · ${esc(TD.why)}${TD.day ? ' · ' + esc(TD.day) : ''}</small></h2><div class="fr-wxl">${TD.picks.map(n => { const r = D.recipes.find(x => x.n === n); if (!r) return ''; const f = ph(r, 'main');
+      return `<a href="${esc(rpath(n))}" data-pcs="${esc(rpath(n))}">${f ? `<img src="${esc(f.f)}" alt="${esc(n)}" loading="lazy" decoding="async">` : `<span>${r.e}</span>`}<b>${esc(n)}</b><small>${r.m}분 · ${esc(r.lv)}</small></a>`; }).join('')}</div></section>` : ''}`;
     setTimeout(() => likeWire(ROOT), 0);
     ROOT.querySelectorAll('[data-i]').forEach(b => { if (exp.has(b.dataset.i)) b.classList.add('exp'); b.onclick = () => { const i = b.dataset.i;
       if (expMode) { exp.has(i) ? exp.delete(i) : (exp.add(i), have.add(i), b.classList.add('on')); b.classList.toggle('exp', exp.has(i)); LSset('jupjup_fridge_exp', [...exp]); save(); result(); return; }
@@ -113,6 +119,13 @@ ${TD && TD.picks ? `<section class="fr-wx"><h2 class="fr-h">🌤️ 오늘 날�
     ROOT.querySelectorAll('[data-t]').forEach(b => b.onclick = () => { maxMin = +b.dataset.t; ROOT.querySelectorAll('[data-t]').forEach(x => x.classList.toggle('on', x === b)); result(); });
     ROOT.querySelector('.fr-cam input').onchange = e => scan(e.target.files[0]);
     ROOT.querySelector('.fr-clear').onclick = () => { have.clear(); save(); paint(); };
+    const chosen = () => { const el = ROOT.querySelector('.fr-chosen'); el.innerHTML = have.size ? [...have].map(x => `<button type="button" data-x="${esc(x)}" title="빼기">${esc(x)} ✕</button>`).join('') : '<span>고른 재료가 여기에 모여요</span>'; el.querySelectorAll('[data-x]').forEach(b => b.onclick = () => { const t = ROOT.querySelector('[data-i="' + CSS.escape(b.dataset.x) + '"]'); if (t && !expMode) t.click(); else { have.delete(b.dataset.x); save(); paint(); } }); ROOT.querySelector('.fr-n').textContent = expMode ? '⏰ 곧 상할 재료를 눌러 주세요' : have.size + '개 골랐어요'; };
+    ROOT.chosenRefresh = chosen; chosen();
+    ROOT.querySelectorAll('[data-i]').forEach(b => b.addEventListener('click', () => setTimeout(chosen, 0)));
+    ROOT.querySelector('.fr-find').oninput = e => { const q = e.target.value.trim().toLowerCase(); let any = false;
+      ROOT.querySelectorAll('.fr-cat').forEach(c => { let n = 0; c.querySelectorAll('[data-i]').forEach(b => { const m = !q || b.dataset.i.toLowerCase().includes(q); b.hidden = !m; if (m) n++; }); c.hidden = !n; if (n) any = true; });
+      ROOT.querySelector('.fr-nofind').hidden = any || !q; };
+    ROOT.querySelectorAll('[data-b]').forEach(b => b.onclick = () => { const x = b.dataset.b; noBasic.has(x) ? noBasic.delete(x) : noBasic.add(x); b.classList.toggle('on', !noBasic.has(x)); try { localStorage.setItem('jupjup_fridge_nobasic', JSON.stringify([...noBasic])); } catch (e) {} ROOT.querySelector('.fr-bs summary').textContent = '기본양념 ' + (ROOT.querySelectorAll('[data-b].on').length) + '/' + ROOT.querySelectorAll('[data-b]').length + '가지는 있다고 쳐요 · 바꾸기'; result(); });
     ROOT.querySelector('.fr-ask').onsubmit = e => { e.preventDefault(); ask(); };
     ROOT.querySelector('.fr-go').onclick = () => {   // 2026-10-19 사용자: 「추천받기 누르면 나와야지」
       result(); const o = ROOT.querySelector('.fr-out');

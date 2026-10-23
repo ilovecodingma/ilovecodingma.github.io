@@ -71,10 +71,11 @@
     const cid = el.dataset.contest || '', title = el.dataset.title || '', all = 'all' in el.dataset;
     el.innerHTML = `<div class="cm-head"><h2>💬 ${esc(el.dataset.head || (all ? '후기·질문·자유' : '이 공모전 후기·질문'))}</h2><button class="cm-write btn2">글쓰기</button></div><div class="cm-form" hidden></div><ul class="cm-list"><li class="note">불러오는 중…</li></ul>`;
     const list = el.querySelector('.cm-list'), form = el.querySelector('.cm-form');
-    const load = async () => {
-      try {
-        const { posts } = await api('/api/posts' + (cid ? '?contest=' + encodeURIComponent(cid) : ''));
-        list.innerHTML = posts.length ? '' : `<li class="cm-empty">${esc(el.dataset.empty || (all ? '아직 글이 없어요.' : '아직 후기가 없어요. 응모해 보셨다면 첫 후기를 남겨 주세요!'))}</li>`;
+    let ALL = null, fk = '', fq = '';
+    const draw = () => {
+      {
+        const posts = ALL.filter(p => (!fk || p.kind === fk) && (!fq || ((p.title || '') + ' ' + (p.body || '')).toLowerCase().includes(fq)));
+        list.innerHTML = posts.length ? '' : (ALL.length ? '<li class="cm-empty">조건에 맞는 글이 없어요. 검색어나 분류를 바꿔 보세요.</li>' : `<li class="cm-empty">${esc(el.dataset.empty || (all ? '아직 글이 없어요.' : '아직 후기가 없어요. 응모해 보셨다면 첫 후기를 남겨 주세요!'))}</li>`);
         posts.forEach(p => {
           const li = document.createElement('li'); li.className = 'cm-post';
           li.innerHTML = `<div class="cm-meta"><span class="cm-k k-${p.kind}">${KIND[p.kind] || '글'}</span>${p.rating ? '<span class="cm-star">' + '★'.repeat(p.rating) + '☆'.repeat(5 - p.rating) + '</span>' : ''}<span>${esc(p.nick || '탈퇴한 회원')}${p.adm ? '<em class="cm-adm">운영자</em>' : ''} · ${ago(p.created)}</span></div>
@@ -85,8 +86,21 @@
           li.querySelector('.cm-rp').onclick = e => report(e.currentTarget, 'p:' + p.id);
           list.appendChild(li);
         });
-      } catch (e) { list.innerHTML = '<li class="note">게시판을 불러오지 못했어요.</li>'; }
+      }
     };
+    const load = async () => {
+      list.innerHTML = '<li class="note">글을 불러오는 중…</li>';
+      try { ({ posts: ALL } = await api('/api/posts' + (cid ? '?contest=' + encodeURIComponent(cid) : ''))); draw(); }
+      catch (e) { list.innerHTML = '<li class="note">글을 불러오지 못했어요. 네트워크를 확인하고 다시 시도해 주세요. <button type="button" class="cm-retry btn2">다시 시도</button></li>'; list.querySelector('.cm-retry').onclick = load; }
+    };
+    const KS0 = (el.dataset.kinds || '').split(',').filter(Boolean);
+    if (KS0.length >= 3) {   // 광장처럼 글 종류가 여러 개인 게시판에만 검색·분류 막대
+      const bar = document.createElement('div'); bar.className = 'cm-bar';
+      bar.innerHTML = `<input type="search" class="cm-q" placeholder="글 검색" aria-label="글 검색"><div class="cm-fk" role="group" aria-label="분류"><button type="button" data-k="" class="on">전체</button>${KS0.map(k => `<button type="button" data-k="${k}">${esc(KIND[k] || k)}</button>`).join('')}</div>`;
+      el.querySelector('.cm-head').after(bar);
+      bar.querySelector('.cm-q').oninput = e => { fq = e.target.value.trim().toLowerCase(); if (ALL) draw(); };
+      bar.querySelectorAll('[data-k]').forEach(b => b.onclick = () => { fk = b.dataset.k; bar.querySelectorAll('[data-k]').forEach(x => x.classList.toggle('on', x === b)); if (ALL) draw(); });
+    }
     const w = el.querySelector('.cm-write');
     if (w) w.onclick = () => {
       if (!st.t) return authModal(() => w.click());
@@ -375,7 +389,7 @@ ${album}<div class="cm-acts"><button class="tm-share">링크 복사</button>${st
   tabs();
 
   // ---- 모든 페이지 댓글·좋아요·조회수 (2026-10-19 사용자: "모든 곳에 추가, 회원가입하면 가능하게") ----
-  const PC_SKIP = [/^\/me\//, /^\/admin\//, /^\/login\//, /^\/widget\//, /^\/og\//, /^\/privacy\//, /^\/terms\//, /^\/contact\//];
+  const PC_SKIP = [/^\/me\//, /^\/admin\//, /^\/login\//, /^\/widget\//, /^\/og\//, /^\/privacy\//, /^\/terms\//, /^\/contact\//, /^\/(?:today|contest|apply|event|wiki|fridge|news|watch|game|plaza|all|money\/guide|ailog|about)?\/?$/, /^\/cat\/[^/]+\/$/];   // 2026-10-23 UI 2차 15번: 목록·탐색 화면에는 공통 별점·댓글을 달지 않는다
   const nfmt = n => (+n || 0).toLocaleString('ko-KR');
   const pcPath = () => { let x = location.pathname; try { x = decodeURIComponent(x); } catch {} return /\/$/.test(x) ? x : x + '/'; };
   const pcTitle = () => document.title.replace(/\s*\|\s*루리의 줍줍\s*$/, '').slice(0, 90);

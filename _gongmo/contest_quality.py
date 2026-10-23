@@ -84,3 +84,19 @@ def auto_label(value):
     """수집기가 규칙으로 분류한 제출·접수 방식은 30건 대조에서 43%가 공고와 달랐다(2026-10-23). 값에 자동 분류임을 붙여 확정처럼 보이지 않게 한다."""
     v = (value or '').strip()
     return f'{v} ({AUTO_NOTE})' if v and AUTO_NOTE not in v else v
+
+
+_OFFICIAL_RX = re.compile(r'(?:\.|^)(?:go|or|ac|re|sc|ed)\.kr$|(?:\.|^)(?:applyhome\.co\.kr|apply\.lh\.or\.kr|bokjiro\.go\.kr|gov\.kr|youthcenter\.go\.kr)$')
+_INFO_HOSTS = AGG_HOSTS + ('38.co.kr', 'ipostock.co.kr')
+
+
+def link_label(link, kind=''):
+    """URL 의 역할에 따라 버튼 이름을 정한다(2026-10-23 UI 2차 2번). 정보 플랫폼은 「수집 출처 보기」, 기관 도메인만 「공식 공고·접수」, 나머지는 「외부 페이지 보기」."""
+    h = host(link)
+    if not h:
+        return ''
+    if any(a in h for a in _INFO_HOSTS):
+        return '수집 출처 보기'
+    if _OFFICIAL_RX.search(h):
+        return '공식 공고·접수'
+    return '외부 페이지 보기'

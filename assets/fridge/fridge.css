@@ -73,3 +73,15 @@ a.no{text-decoration:none}a.no:hover{text-decoration:underline}
 .fr-bar span{font-size:14.5px}.fr-bar b{color:var(--brand,#6d28d9);font-size:17px}
 .fr-bar button{min-height:44px;padding:0 18px;border:0;border-radius:10px;background:var(--brand,#6d28d9);color:#fff;font:inherit;font-weight:800;cursor:pointer}
 @media (min-width:821px){.fr-bar{left:50%;right:auto;transform:translateX(-50%);width:min(520px,calc(100% - 200px))}}
+/* UI 2차 8번: 재료 검색 · 선택 칩 · 추천 버튼은 선택 영역 바로 아래 · 조건은 접기 */
+.fr-find{width:100%;box-sizing:border-box;margin:10px 0 6px;padding:11px 14px;border:1px solid var(--bd);border-radius:12px;font:inherit;font-size:15px;background:var(--card);color:var(--tx)}
+.fr-chosen{display:flex;flex-wrap:wrap;gap:6px;min-height:34px;margin:4px 0 10px;padding:6px 8px;border-radius:12px;background:color-mix(in srgb,var(--brand,#6d28d9) 6%,var(--card))}
+.fr-chosen span{font-size:13px;color:var(--mu);align-self:center}
+.fr-chosen button{min-height:32px;padding:0 10px;border:1px solid var(--brand,#6d28d9);border-radius:999px;background:var(--card);color:var(--brand,#6d28d9);font:inherit;font-size:13px;font-weight:700;cursor:pointer}
+.fr-nofind{font-size:13px;color:var(--mu)}
+.fr-actrow{display:flex;gap:8px;align-items:stretch;margin-top:10px}.fr-actrow .fr-go{flex:1;margin:0}.fr-actrow .fr-clear{flex:none;position:static;min-width:72px}
+.fr-bs{margin-top:10px;font-size:13.5px}.fr-bs summary{cursor:pointer;color:var(--mu);font-weight:700}
+.fr-bsl{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}.fr-bsl button{min-height:34px;padding:0 12px;border:1px solid var(--bd);border-radius:999px;background:transparent;color:var(--mu);font:inherit;font-size:13px;cursor:pointer;text-decoration:line-through}
+.fr-bsl button.on{background:var(--card);color:var(--tx);border-color:var(--brand,#6d28d9);text-decoration:none;font-weight:700}
+.fr-od{margin:12px 0;border:1px solid var(--bd);border-radius:14px;padding:4px 14px;background:var(--card)}.fr-od>summary{cursor:pointer;min-height:44px;display:flex;align-items:center;font-weight:800}.fr-od>summary small{margin-left:8px;color:var(--mu);font-weight:500}
+.fr-out:empty{display:none}
