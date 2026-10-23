@@ -4504,7 +4504,33 @@ def news_brief():
     MKv = MKB.load()
     I = {a['id']: a for a in d.get('items', [])}
     hot_db = _rd('hot/db.json') or {}
-    hot_by = {(v.get('issue') or {}).get('n'): v['slug'] for v in hot_db.values() if not v.get('dup') and v.get('issue')}
+    # 2026-10-23 P0 수정: 핫이슈 DB 의 issue.n 은 갱신 때마다 바뀌는 순번이라 번호로 연결하면 엉뚱한 글로 간다(108건 중 104건 불일치).
+    # 같은 사건인지는 기사 URL 이 겹치는지로 판단하고, 겹치지 않으면 제목이 충분히 닮았을 때만 연결한다. 못 찾으면 링크를 달지 않는다.
+    _hot_url = {}
+    for _v in hot_db.values():
+        if _v.get('dup'):
+            continue
+        for _a in (_v.get('arts') or []):
+            if _a.get('u'):
+                _hot_url.setdefault(_a['u'], _v['slug'])
+
+    def _tk(t):
+        return set(re.findall(r'[가-힣A-Za-z0-9]{2,}', t or ''))
+
+    def hot_for(x, arts_):
+        hit = collections.Counter(_hot_url[a['u']] for a in arts_ if a.get('u') in _hot_url)
+        if hit:
+            return hit.most_common(1)[0][0]
+        best, bj = None, 0.0
+        tx = _tk(x['t'])
+        for _v in hot_db.values():
+            if _v.get('dup'):
+                continue
+            tv = _tk(_v.get('title'))
+            j = len(tx & tv) / max(1, len(tx | tv))
+            if j > bj:
+                best, bj = _v['slug'], j
+        return best if bj >= 0.4 else None
     ok = [x for x in d['issues'] if int(x.get('on') or 0) >= 3 and not re.search(r'사망|숨져|숨진|사고|참사|화재|추락|살해|피살', x['t']) and x.get('c') != '연예']
     ok = sorted(ok, key=lambda x: -int(x['on']))
     pick, cats = [], collections.Counter()
@@ -4536,8 +4562,9 @@ def news_brief():
         ipc = IPB.card(_tx, datetime.datetime.fromtimestamp(int(x['ts'])).strftime('%Y-%m-%d') if x.get('ts') else None, [(a['o'], a['t']) for a in by], MKv, head='체감도와 영향')
         ipc = (f'<details class="nbd"><summary>🙋 내 생활엔? <small>{E2(IPB.gauge_text(_tx))}</small></summary>{ipc}</details>' if ipc else '')
         links = ''
-        if x['n'] in hot_by:
-            links += f'<a href="/hot/{hot_by[x["n"]]}/">🔥 핫이슈 정리</a> '
+        _hs = hot_for(x, arts)
+        if _hs:
+            links += f'<a href="/hot/{_hs}/">🔥 핫이슈 정리</a> '
         links += f'<a href="#is{x["n"]}">🕵️ 기사별 확인 신호</a>'
         _li = lambda L_: ''.join(f'<li><em>{E2(a["o"])}</em><a href="{E2(a["u"])}" target="_blank" rel="noopener nofollow">{E2(a["t"])}</a></li>' for a in L_)
         li = _li(by[:2])
