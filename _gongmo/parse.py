@@ -199,7 +199,7 @@ def parse_org(src, t, x):
 TAGS = [
     ('문학', r'문학|시나리오|수필|소설|백일장|에세이|글쓰기|(?<!자)동화|시 공모|수기|웹소설|네이밍|슬로건|詩|短歌|俳句|手紙|エッセイ|小説|文学'),
     ('아이디어·정책', r'아이디어|기획|정책|제안|사례|창업|마케팅|광고|비즈니스|アイデア'),
-    ('디자인', r'디자인|캐릭터|웹툰|미술|그림|포스터|건축|일러스트|공예|デザイン|イラスト|ロゴ|design'),
+    ('디자인', r'디자인|캐릭터|웹툰|노블코믹스|작화|미술|그림|포스터|건축|일러스트|공예|デザイン|イラスト|ロゴ|design'),
     ('영상', r'영상|UCC|사진|숏폼|영화|촬영|릴스|映像|動画|写真|フォト|video'),
     ('논문', r'논문|리포트|학술|paper'),
     ('요리·레시피', r'요리|레시피|쿠킹|베이킹|제과|제빵|떡볶이|밥상|식단|미식|한식|디저트|바리스타|Cook|cook'),  # 2026-10-18 연구 세션 요청(냉장고 파먹기 연결)
@@ -212,12 +212,30 @@ NONCONTEST = re.compile(r'recruitment|Recruitment|걷기|트레킹|마라톤|러
 CONTESTY = re.compile(r'공모|경연|미식대전|요리대전|백일장|글짓기|사생대회|문학상|시조대회|콩쿠르|응모|수기|선발대회|페스티벌|페스타|챌린지|아카데미 어워드|경진|콘테스트|콘텐스트|어워드|대회|contest|Contest|hack|Hack|Award|award|Challenge|챌린지|コンテスト|コンペ|募集|賞|公募')
 
 
+FIELD_MAP = [  # 수집처 분야 라벨(쉼표로 나뉜 한 칸 단위) → 태그. 앞에서부터 처음 맞는 것 하나만(2026-10-23 재심사: 「아이디어·창업·마케팅·네이밍」이 문학으로 분류되던 오류)
+    (r'아이디어|기획|창업|마케팅|광고|정책|비즈니스', '아이디어·정책'),
+    (r'과학|공학|IT|소프트웨어|게임|코딩|데이터|해커톤|AI', 'IT·과학'),
+    (r'영상|UCC|사진|숏폼|영화', '영상'),
+    (r'디자인|캐릭터|웹툰|미술|그림|건축|공예|포스터', '디자인'),
+    (r'논문|리포트', '논문'),
+    (r'문학|시나리오|수필|소설|글|네이밍|슬로건', '문학'),
+]
+
+
 def tags_for(field, title, reg):
-    s = field + ' ' + title
-    out = [n for n, rx in TAGS if re.search(rx, title if n == '요리·레시피' else s)]  # 요리는 제목만(분야명 '요리•뷰티•배우•오디션' 오분류 방지)
+    out = [n for n, rx in TAGS if re.search(rx, title)]   # 제목에 드러난 분야
+    for cat in re.split(r'\s*,\s*', field or ''):   # 분야 라벨은 한 칸씩 통째로 보고 하나의 태그로만 옮긴다(라벨 속 낱말로 다른 분야를 만들지 않는다)
+        for rx, tag in FIELD_MAP:
+            if re.search(rx, cat):
+                if tag not in out:
+                    out.append(tag)
+                break
+    if re.search(r'요리|레시피|쿠킹|베이킹|제과|제빵|떡볶이|밥상|식단|미식|한식|디저트|바리스타|Cook|cook', title) and '요리·레시피' not in out:
+        out.append('요리·레시피')
     if reg != 'KR':
         out.append('해외')
-    return out or ['기타']
+    order = {n: i for i, n in enumerate(CATS)}
+    return sorted(out, key=lambda t: order.get(t, 99)) or ['기타']
 
 
 def source_of(url):
