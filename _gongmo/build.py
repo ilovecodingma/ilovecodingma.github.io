@@ -236,7 +236,7 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False, noinde
 <meta name="theme-color" content="{TH[3] if TH else '#5b21b6'}"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="오늘 뭐 먹지">
 <link rel="icon" href="/favicon.ico?v=6" sizes="any"><link rel="icon" type="image/png" sizes="48x48" href="/assets/icons/icon-48.png?v=6"><link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/icon-96.png?v=6"><link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/icon-192.png?v=6"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=6"><link rel="manifest" href="/site.webmanifest"><link rel="alternate" type="application/rss+xml" title="루리의 줍줍" href="/rss.xml">
 <link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="/assets/gm.css?v=27"><link rel="stylesheet" href="/assets/ds.css?v=15"><link rel="stylesheet" href="/assets/print.css?v=1"><script defer src="/assets/print.js?v=1"></script><script src="/assets/img-fallback.js?v=1"></script>{('<link rel="stylesheet" href="/assets/chat/ruri-chat.css?v=9">') if not (TH and TH[0] == 'ai') else ''}{COMM_TAGS}{('<script type="module" src="/assets/chat/ruri-chat.js?v=16"></script>') if not (TH and TH[0] == 'ai') else ''}<link rel="stylesheet" href="/assets/app/shell.css?v=1"><script defer src="/assets/app/app.js?v=4"></script>
+<link rel="stylesheet" href="/assets/gm.css?v=28"><link rel="stylesheet" href="/assets/ds.css?v=15"><link rel="stylesheet" href="/assets/print.css?v=1"><script defer src="/assets/print.js?v=1"></script><script src="/assets/img-fallback.js?v=1"></script>{('<link rel="stylesheet" href="/assets/chat/ruri-chat.css?v=9">') if not (TH and TH[0] == 'ai') else ''}{COMM_TAGS}{('<script type="module" src="/assets/chat/ruri-chat.js?v=16"></script>') if not (TH and TH[0] == 'ai') else ''}<link rel="stylesheet" href="/assets/app/shell.css?v=1"><script defer src="/assets/app/app.js?v=4"></script>
 {ldh}
 {TH_CSS}
 {GTAG}
@@ -945,10 +945,10 @@ def detail(c, live):
     status = ('<p class="warn">접수가 마감된 공모전입니다. 같은 분야의 진행 중 공모전을 아래에서 확인하세요.</p>' if n < 0
               else (f'<p class="lead"><span class="d">기존 공고 기준</span> {ddot(c["end"])[5:]} 마감 · <b>연장일 확인 필요</b></p>' if (VER.get(c['id']) or {}).get('alerts')
                     else f'<p class="lead"><span class="{"d u3" if n <= 3 else "d hot" if n <= 7 else "d"}">{dd}</span> {ddot(c["end"])} 마감{deadline_badge(c)}</p>'))
-    ruri = (say('sad', '아쉽지만 이건 마감됐어요. 아래 진행 중인 공모전을 봐 주세요!') if n < 0 else
-            say('surprise', f'마감까지 <b>{dd}</b>! 오늘 바로 요강부터 확인해요.') if n <= 3 else
-            say('thumbsup', f'상금 <b>{E(c["prize"])}</b>! 응모 자격만 맞으면 도전해 볼 만해요.') if c['pv'] else
-            say('smile', '공식 공고에서 제출 양식과 파일 형식을 먼저 확인해 주세요!'))
+    ruri = (say('sad', '이 공모전은 접수가 끝났어요. 같은 분야에서 아직 받고 있는 공모전을 아래에 모아 뒀어요.') if n < 0 else
+            say('surprise', f'마감이 <b>{dd}</b>로 가까워요. 접수 방법과 마감 시각부터 공고에서 확인하고 시작해요.') if n <= 3 else
+            say('thumbsup', f'상금은 <b>{E(c["prize"])}</b>예요. 다만 자격과 제출 조건이 맞아야 하니 위 요약부터 확인해 봐요.') if c['pv'] else
+            say('smile', '위 요약에서 자격·제출물·마감을 먼저 훑고, 비어 있는 칸은 공식 공고로 확인해요.'))
     period = (ddot(c['start']) + ' ~ ' if c['start'] else '~ ') + ddot(c['end'])
     # 2026-10-19 사용자 개선 지시: 자격·지역·마감 시각·제출물·상금·공식 링크·확인할 것. 모르는 값은 채우지 않고 「공식 공고 확인 필요」
     NEED = '공식 공고 확인 필요'
@@ -1365,7 +1365,7 @@ def build_apply(aps):
         body = f'''<p class="bc"><a href="/">홈</a> › <a href="/apply/">청약·신청</a></p>
 <section class="dh" data-c="apply"><span class="ic big">{a["icon"]}</span><h1>{E(a["title"])}</h1><p class="lead">{'<span class="d">상시</span> 지금 신청할 수 있어요' if a.get('always') else f'<span class="d{" u3" if n <= 3 else " hot" if n <= 7 else ""}">{dd}</span> {ddot(a["end"])} 마감'}</p></section>
 <div class="my-acts" data-id="a:{E(a['id'])}" data-title="{E(a['title'])}" data-end="{'' if a.get('always') else a['end']}"></div>
-{say('o_suit', f'신청 기간을 놓치지 마세요! 자격 조건은 <b>공식 공고</b>에서 꼭 확인해 주세요.')}
+{say('o_suit', f'신청 기간이 지나면 받을 수 없는 경우가 많아요. 자격은 <b>공식 공고</b>에서 한 번 더 확인해 주세요.')}
 <div class="panel"><table class="info">{tb}</table>{btn}</div>
 {share_bar(a['title'], f'「{a["title"]}」 ' + ('상시 신청' if a.get('always') else f'{ddot(a["end"])[5:]} 마감') + ' — 대상·신청처 정리')}{comm_banner()}{join_cta('apply')}{ap_insight(a, aps)}<h2>신청 전 확인할 것</h2><ul class="chk"><li>신청 자격(나이·소득·자산·거주지·무주택 여부)</li><li>필요 서류와 본인인증 수단</li><li>발표일과 계약·납부 일정</li></ul>'''
         _org = (a.get('org') or '').strip()[:14]
@@ -3387,7 +3387,7 @@ def mag_issue_html(m, d):
                    + f'<ol class="mg-l">{li}</ol><a class="mg-more" href="/talk/{d}/">커뮤니티 이슈 전체 보기 →</a></section>')
     if m['con']:
         li = ''.join(f'<li><a href="/c/{x["id"]}/"><em>🏆</em><b>{E(x["t"])}</b><span>{E(x["p"] or "상금 공고 확인")} · {x["e"][5:].replace("-", "/")} 마감</span></a></li>' for x in m['con'])
-        sec.append('<section class="mg-s"><h2>⏰ 마감 임박 공모전</h2>' + say('o_present', '사흘 안에 마감하는 공모전 중 상금이 큰 것만 골랐어요. 지금 넣어도 늦지 않아요!')
+        sec.append('<section class="mg-s"><h2>⏰ 마감 임박 공모전</h2>' + say('o_present', '사흘 안에 마감하는 공모전을 상금 큰 순서로 모았어요. 상금만 보지 말고 자격과 제출물이 맞는지 먼저 확인해요.')
                    + f'<ol class="mg-l">{li}</ol><a class="mg-more" href="/">공모전 전체 보기 →</a></section>')
     if m['apl']:
         li = ''
@@ -4167,7 +4167,7 @@ def plaza_page():
               '광고·도배·개인정보(전화번호·주소·계좌)는 지워요.</p></details><style>.pz-guide{margin:8px 0 12px;font-size:14px}.pz-guide summary{cursor:pointer;font-weight:700;color:var(--brand,#6d28d9)}</style>'
             + '<div id="cm-board" data-contest="free" data-title="광장" data-head="올라온 글" data-kinds="free,recipe,story,tip,qna" '
               'data-ph="내가 만든 것, 겪은 일, 알게 된 팁을 자유롭게 써 주세요. 개인정보(전화번호·주소)는 쓰지 마세요." data-empty="아직 글이 없어요. 첫 글을 올려 보세요."></div>'
-            + say('o_present', '공모전 후기든, 오늘 만든 밥이든, 그냥 하고 싶은 말이든 올려 주세요. 가입은 이메일·카카오·구글 중 하나면 끝나요.')
+            + say('o_present', '공모전 후기, 오늘 만든 밥, 하고 싶은 말까지 편하게 남겨 주세요. 가입은 이메일·카카오·구글 중 하나면 돼요.')
             + '<section class="mg-s"><div data-pcrecent="8"></div></section>'
             + '<section class="mg-s" data-pctop="/" data-by="cms" data-n="8" data-head="💬 댓글이 많은 페이지"></section>'
             + '<p class="note">올린 글은 본인이 지울 수 있고, 신고가 3번 쌓이면 자동으로 가려져요. 운영자 계정에는 「운영자」 표시가 붙어요.</p>'
@@ -4413,7 +4413,7 @@ def money_pages():
 def apply_rec_page():
     # 루리의 청약 추천 (2026-10-18 사용자: "청약 추천도 만들어") — 생활 테마
     body = ('<p class="bc"><a href="/">홈</a> › <a href="/apply/">생활</a> › 청약 추천</p><h1>🏠 루리의 청약 추천</h1>'
-            + say('o_cardigan', '내 상황을 고르면 청약 가점이랑 노려볼 만한 공급 유형, 지금 접수 중인 공고 중 맞는 걸 골라 드려요. 입력한 내용은 이 폰에만 저장돼요.')
+            + say('o_cardigan', '내 상황을 고르면 청약 가점과 공급 유형을 계산하고, 지금 접수 중인 공고 중 맞을 만한 것만 보여 드려요. 입력한 내용은 이 기기에만 저장돼요.')
             + '<section id="aprec" aria-label="청약 추천"><noscript>자바스크립트가 필요해요.</noscript></section>'
             + '<h2>청약 가점은 이렇게 계산돼요</h2>'
               '<p>민영주택 일반공급의 가점제(84점 만점)는 세 항목을 더해요: <b>무주택 기간</b>(최대 32점), <b>부양가족 수</b>(최대 35점), <b>청약통장 가입 기간</b>(최대 17점). 세대주 기준으로 보고, 항목마다 점수표가 따로 있어요.</p>'

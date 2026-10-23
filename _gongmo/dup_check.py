@@ -138,7 +138,7 @@ def _same_run(a, b):
     return r >= (0.45 if pa and pa == pb else 0.6)   # 주최·기간·1등 상금이 모두 같으면 제목은 느슨하게
 
 
-MANUAL_DUP = {'Q01475': 'Q01474'}   # 대구국제디자인어워드(DIDA) — dida.biz 접수개요 확인
+MANUAL_DUP = {'Q01475': 'Q01474', 'Q02402': 'Q01547', 'Q01537': 'Q02789', 'Q01535': 'Q02789'}   # 대구국제디자인어워드(DIDA) — dida.biz 접수개요 확인
 
 AGG = re.compile(r'contestkorea|wevity|thinkyou|all-con|linkareer|campuspick|detizen|allforyoung')
 
