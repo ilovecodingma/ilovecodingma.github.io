@@ -459,6 +459,7 @@ def collapse_thin(urls):
 
 
 RICH_SCORES = []
+THIN_MIN = {'/lab/': 700, '/hot/': 700}   # 2026-10-23 애드센스: 고유 본문이 이만큼 안 되는 연구소·핫이슈 상세는 검색 제외
 FRIDGE_KEEP = int(os.environ.get('FRIDGE_KEEP', '100'))
 RICH_MIN = int(os.environ.get('RICH_MIN', '6'))
 THIN_FORCE_NOINDEX = {'/community/', '/me/', '/plaza/', '/ssul/', '/dev/tag/windows/', '/satire/2026-10-18/'}
@@ -490,7 +491,7 @@ def auto_thin(urls):
         if u in NOINDEX or not any(u.startswith(d) and u != d for d in DET):
             continue
         own = sum(len(l.replace(' ', '')) for l in lines if freq[re.sub(r'[\d,.]+', '#', l)] < 5)
-        if own < 200:
+        if own < next((v for k_, v in THIN_MIN.items() if u.startswith(k_)), 200):
             NOINDEX.add(u); n += 1
             open(f, 'w', encoding='utf-8', newline='\n').write(doc.replace('<link rel="canonical"', '<meta name="robots" content="noindex,follow">\n<link rel="canonical"', 1))
     # 2026-10-23 애드센스 「가치가 별로 없는 콘텐츠」: 레시피 1,300여 개는 틀이 같은 대량 페이지라 고유 본문이 가장 많은 상위 FRIDGE_KEEP 개만 색인
@@ -705,7 +706,7 @@ def detail(c, live):
     sub = ' · '.join(x for x in (c.get('effort'), c.get('submit')) if x)
     sub_type = c.get('effort') or {'photo': '사진(제목 기준)', 'video': '영상(제목 기준)', 'photo+video': '사진·영상(제목 기준)'}.get(c.get('medium', ''), '')   # 무엇을 내는지. 어디로 내는지(메일·폼)는 「접수 방법」
     rows = [('주최·주관', v_(c['org'])), ('분야', c['field'] or ', '.join(c['tags'])), ('응모 자격', v_(c['elig'])), ('지역 제한', region_row(c, NEED)),
-            ('접수 기간', period), ('마감 시각', NEED + ' (자동 정리 데이터에 시각이 없어요)'), ('제출물 종류', v_(sub_type)), ('접수 방법', CQ.auto_label(v_(c['ch'])) if v_(c['ch']) != NEED else NEED), ('상금·혜택', v_(c['prize'])),
+            ('접수 기간', period + (' (수집처 기준, 공식 공고에서 확인)' if CQ.is_aggregator(c['link']) else '')), ('마감 시각', NEED + ' (자동 정리 데이터에 시각이 없어요)'), ('제출물 종류', v_(sub_type)), ('접수 방법', CQ.auto_label(v_(c['ch'])) if v_(c['ch']) != NEED else NEED), ('상금·혜택', v_(c['prize'])),
             ('참가비', (f'{c["fee"]:,}원' if isinstance(c.get('fee'), int) and c['fee'] > 1 else '있음 — ' + NEED) if c.get('fee') else '없음으로 정리됨(공고 확인)')]
     tb = ''.join(f'<tr><th>{k}</th><td{" class=need" if NEED in str(v) else ""}>{E(v)}</td></tr>' for k, v in rows)
     todo = ['마감 시각(예: 18시·23시 59분)과 접수 마감이 「도착 기준」인지']
