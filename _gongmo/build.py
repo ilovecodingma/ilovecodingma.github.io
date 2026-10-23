@@ -708,7 +708,8 @@ def field_clean(c):
     """분야 칸. 수집 데이터의 분야 문자열은 40자에서 잘려 마지막 항목이 「예」처럼 끊기므로, 잘렸으면 마지막 항목을 버린다. 비면 분류 태그를 쓴다."""
     f = (c.get('field') or '').strip()
     toks = [t.strip() for t in f.split(',') if t.strip()]
-    if toks and ((len(f) >= 38) or (len(toks) >= 2 and len(toks[-1]) <= 2)):   # 길이로 잘렸거나 마지막 항목이 한두 글자로 끊긴 경우(예: 「…IT, 예」)
+    _known = ('기획/아이디어', '광고/마케팅', '논문/리포트', '영상/UCC/사진', '디자인/캐릭터/웹툰', '웹/모바일/IT', '게임/소프트웨어', '과학/공학', '문학/글/시나리오', '건축/건설/인테리어', '네이밍/슬로건', '예체능/미술/음악', '대외활동/서포터즈', '봉사활동', '취업/창업', '해외', '기타')
+    if toks and toks[-1] not in _known and any(k.startswith(toks[-1]) for k in _known):   # 수집 단계에서 잘려 완전한 분야명이 아닌 마지막 항목(예: 「…IT, 예」)은 버린다
         toks = toks[:-1]
     return ', '.join(toks) if toks else ', '.join(CQ.label_for(t, c.get('medium', '')) for t in c['tags'])
 
