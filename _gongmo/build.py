@@ -1270,7 +1270,7 @@ def build_apply(aps):
 <ul class="list" id="ap-list">{lst}</ul><p class="hm-more"><button class="btn2" id="ap-more" hidden>더 보기</button> · <a href="/apply/month/{TODAY:%Y-%m}/">달별 일정</a> · <a href="/apply/r/">지역별</a></p>
 <details class="fold"><summary>신청 전에 알아 둘 것</summary>{APPLY_INTRO}</details>
 {join_cta('apply')}
-<link rel="stylesheet" href="/assets/apply/ap.css?v=1"><script defer src="/assets/apply/ap.js?v=1"></script><script defer src="/assets/view/one.js?v=2"></script>''',
+<link rel="stylesheet" href="/assets/apply/ap.css?v=1"><script defer src="/assets/apply/ap.js?v=2"></script><script defer src="/assets/view/one.js?v=2"></script>''',
          [('루리의 줍줍', '/'), ('지원금·청약', '/apply/')])
 
 
