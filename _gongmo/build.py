@@ -624,8 +624,8 @@ def notice_points(cid):
     t = re.sub(r'\s+', ' ', html.unescape(html.unescape(open(f, encoding='utf-8', errors='ignore').read()))).replace('\xa0', ' ')
     out, used = [], set()
     for lab, rx in NP_KEYS:
-        for m in re.finditer(rf'(?:^|[\s■□▶●○◆◇※\-·•\d\.\)])(?:{rx})\s*[:：]\s*(.{{8,140}}?)(?=\s(?:[■□▶●○◆◇※]|\d+\.\s|(?:{_NP_ALL})\s*[:：])|$)', t):
-            v = m.group(1).strip(' -·•,')
+        for m in re.finditer(rf'(?:^|[\s■□▶●○◆◇※\-·•\d\.\)])(?:{rx})\s*[:：]\s*(.{{8,140}}?)(?=\s(?:[■□▶●○◆◇※]|\d{{1,2}}\.\s(?=[가-힣A-Za-z])|(?:{_NP_ALL})\s*[:：])|$)', t):
+            v = re.sub(r'\s*\*+\s*', ' ', m.group(1)).strip(' -·•,')   # 마크다운 강조·글머리 별표 제거
             if NP_NAV.search(v) or len(v) < 8 or v in used:
                 continue
             if re.search(r'[∼~～–—-]\s*$', v) or not SH.complete(v):   # 「2026. 9. 14.(월) ∼」처럼 중간에서 끊긴 추출은 게시하지 않는다(재수집 대상, 게이트 보고서에 기록)
@@ -774,7 +774,7 @@ def field_clean(c):
     return ', '.join(toks) if toks else ', '.join(CQ.label_for(t, c.get('medium', '')) for t in c['tags'])
 
 
-REG_SPECIFIC = re.compile(r'[가-힣]{2,6}(?:특별시|광역시|특별자치도|특별자치시|도|시|군|구)\s*(?:내\s*)?(?:에\s*)?(?:거주|소재|소속|주소)|[가-힣]{2,4}(?:시민|군민|구민|도민)|관내|지역\s*주민|해당\s*지역')
+REG_SPECIFIC = re.compile(r'[가-힣]{2,6}(?:특별시|광역시|특별자치도|특별자치시|도|시|군|구)\s*(?:내\s*)?(?:에\s*)?(?:거주|소재|소속|주소)|[가-힣]{2,4}(?:시민|군민|구민|도민)|관내|지역\s*주민|해당\s*지역|[가-힣]{2,6}(?:도|시|군|구)\s*내')
 REG_NATIONAL = re.compile(r'대한민국\s*(?:에\s*)?거주|국내\s*거주|대한민국\s*국민|내국인|전국|거주지?\s*(?:에\s*)?제한\s*없|지역\s*제한\s*없')
 
 
@@ -792,10 +792,10 @@ def region_row(c, NEED):
         return c['region']
     k = region_kind(c.get('elig'))
     if k == 'national':
-        return '전국(국내 거주자 대상, 자격 문구 기준)'
+        return '제한 없음(자격 문구 기준)' if re.search(r'전국|제한\s*없', c.get('elig') or '') else '전국(국내 거주자 대상, 자격 문구 기준)'
     if k == 'specific':
-        return '특정 지역 조건이 자격 문구에 있음 — 지역 범위는 ' + NEED
-    return '자격 문구에서 지역 조건을 찾지 못함(원문 전체는 미확인)'
+        return '있음 — 자격 문구에 특정 지역 조건이 있어요. 지역 범위는 ' + NEED
+    return '자격 문구에서 지역 조건을 찾지 못함 — 공고 확인(원문 전체는 미확인)'
 
 
 def deadline_row(c, NEED):

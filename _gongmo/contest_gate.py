@@ -5,7 +5,7 @@ hold(목록·추천·색인에서 뺌): 분류 불일치 · 자격/지역 모순
 import re
 
 LIT_WORDS = re.compile(r'문학|시나리오|수필|소설|백일장|에세이|글쓰기|동화|수기|웹소설|네이밍|슬로건|시 공모')
-TECH_WORDS = re.compile(r'창업|경진대회|해커톤|기술|AI|데이터|소프트웨어|스타트업|사업화')
+TECH_WORDS = re.compile(r'창업|경진대회|해커톤|스타트업|사업화|소프트웨어')
 
 
 def check(c, region_kind, np_broken=None):
@@ -17,7 +17,7 @@ def check(c, region_kind, np_broken=None):
         hold.append('분류 불일치: 대표 분야가 문학인데 제목은 기술·창업·AI 공모')
     el = (c.get('elig') or '').strip()
     rk = region_kind(el)
-    if c.get('region') and rk == 'national':
+    if c.get('region') and rk == 'national' and not re.search(r'제한\s*(?:문구\s*)?없|전국|없음', str(c.get('region'))):
         hold.append('자격 문구는 전국(국내 거주)인데 지역 제한 값이 따로 있음')
     if c.get('verified_official') and re.search(r'all-con|thinkyou|wevity|contestkorea|linkareer|campuspick', c.get('link') or ''):
         hold.append('공식 대조 완료로 표시됐는데 접수 링크는 수집처')
