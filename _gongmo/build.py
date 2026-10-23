@@ -237,6 +237,8 @@ def say(expr, html_, cls=''):
 
 def dday(end):
     n = (datetime.date.fromisoformat(end) - TODAY).days
+    if end[:4] >= '2099':   # 상시 신청의 자리표시 날짜(load_apply 가 2099-12-31 을 넣음)는 D-숫자로 보이면 안 된다
+        return n, '상시'
     return n, ('마감' if n < 0 else 'D-DAY' if n == 0 else f'D-{n}')
 
 
@@ -763,6 +765,8 @@ def load_apply():
             continue
         if not r.get('title') or not (r.get('end') or r.get('always')) or r.get('closed'):
             continue
+        if re.search(r'유지보수|용역|위탁\s*운영\s*업체', r['title']):   # 수혜 공고가 아닌 사업·조달 공고(예: 「충남청년포털 유지보수」)는 지원금 목록에 올리지 않는다
+            continue
         end = r.get('end_override') or r.get('end') or '2099-12-31'  # always: 상시 신청
         try:
             if dday(end)[0] < 0:
@@ -791,7 +795,7 @@ def ap_card(a):
     n, dd = dday(a['end'])
     v = '<span class="tg">확인됨</span>' if a['verified'] else ''
     return (f'<li><a class="card" data-c="apply" href="/a/{a["id"]}/"><span class="ic">{a["icon"]}</span><div class="cb"><div class="top"><h3 class="t">{E(a["title"])}</h3>'
-            f'<span class="d{" u3" if n <= 3 else " hot" if n <= 7 else ""}">{dd}</span></div><p class="o">{E(a["org"])} · ~{ddot(a["end"])}</p>'
+            f'<span class="d{"" if a.get("always") else " u3" if n <= 3 else " hot" if n <= 7 else ""}">{"상시" if a.get("always") else dd}</span></div><p class="o">{E(a["org"])}{" · 상시 신청" if a.get("always") else " · ~" + ddot(a["end"])}</p>'
             f'<div class="tags"><span class="ez e1">{E(a["kind"])}</span>{v}</div></div></a></li>')
 
 
