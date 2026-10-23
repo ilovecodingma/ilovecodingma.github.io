@@ -1,5 +1,8 @@
-.pg-stage{perspective:1100px;overflow-x:clip}
-.pg-panel{transform-origin:50% 40%;backface-visibility:hidden;will-change:transform}
+.pg-stage{position:relative;perspective:1700px;perspective-origin:50% 25%;overflow-x:clip;touch-action:pan-y}
+.pg-panel{background:var(--bg,#fff)}
+.pg-flipping{overflow:clip}
+.pg-leaf{position:absolute;inset:0 0 auto 0;z-index:3;transform-origin:left center;backface-visibility:hidden;will-change:transform;border-radius:0 6px 6px 0}
+.pg-under{position:relative;z-index:1}
 .pg-panel[hidden],li[hidden]{display:none!important}
 .pg-nav{display:flex;justify-content:center;align-items:center;gap:6px;margin:14px 0}
 .pg-b{min-width:40px;min-height:40px;border-radius:12px;border:1px solid var(--bd,#e5e7eb);background:var(--card,#fff);color:var(--tx,#111);font:inherit;font-weight:700;cursor:pointer}
@@ -12,6 +15,8 @@
 .pg-arw:disabled{opacity:.3;cursor:default}
 .pg-mid{flex:1;display:flex;flex-direction:column;align-items:center;gap:5px;min-width:0}
 .pg-lab{font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%;color:var(--tx,#111)}
-.pg-dots2{display:flex;gap:6px}
-.pg-dot{width:8px;height:8px;padding:0;border-radius:50%;border:0;background:var(--bd,#d1d5db);cursor:pointer}
-.pg-dot.on{width:22px;border-radius:5px;background:var(--pri,#6d28d9)}
+.pg-bar{flex-wrap:wrap}
+.pg-cnt{font-size:12px;color:var(--mu,#6b7280)}
+.pg-prog{position:absolute;left:0;bottom:0;height:3px;border-radius:3px;background:var(--pri,#6d28d9);transition:width .3s}
+.pg-panel{display:flow-root;padding-bottom:8px}
+.pg-next{display:block;width:100%;min-height:48px;margin:16px 0 4px;border-radius:14px;border:1px solid var(--bd,#e5e7eb);background:var(--card,#fff);color:var(--pri,#6d28d9);font:inherit;font-weight:800;cursor:pointer}
