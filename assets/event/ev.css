@@ -1,8 +1,24 @@
-/* 경품 이벤트 */
-.ev-top h2,.ev-h{font-size:17px;margin:16px 0 8px}.ev-ul{list-style:none;margin:0;padding:0;display:grid;gap:7px;grid-template-columns:minmax(0,1fr)}
-.ev-ul a{display:block;background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:10px 12px;text-decoration:none;color:inherit;box-shadow:var(--sh)}.ev-ul b{display:block;font-size:14.5px;line-height:1.4;overflow-wrap:anywhere}
-.ev-ul span{display:block;font-size:12.5px;color:var(--mu);margin-top:3px}.ev-ul em{font-style:normal;font-weight:900;color:#0e7490;margin-right:6px}.ev-ul em.u{color:#dc2626}.ev-ul i{font-style:normal;font-weight:700;color:#0e7490}
-.ev-top .ev-ul a{border-color:#a5f3fc;background:linear-gradient(135deg,#ecfeff,#fff)}
-.ev-bar{display:grid;gap:8px;margin-bottom:10px}.ev-k{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none}.ev-k button{flex:none;border:1px solid var(--bd);background:#fff;border-radius:999px;padding:7px 12px;font-size:13.5px;font-weight:700;cursor:pointer}
-.ev-k button.on{background:#0e7490;border-color:#0e7490;color:#fff}.ev-q{font:inherit;font-size:15px;padding:10px 12px;border:1px solid var(--bd);border-radius:12px}.ev-n{font-size:12.5px;color:var(--mu)}
-.ev-more{display:block;width:100%;margin:10px 0;border:1px solid #a5f3fc;background:#ecfeff;color:#0e7490;font-weight:800;border-radius:12px;padding:11px;cursor:pointer}.ev-0{color:var(--mu);padding:10px}
+/* 경품 이벤트 (2026-10-23 화면 개선 9번): 중립 카드, 브랜드 색 하나, 마감 임박만 빨강 */
+.ev-h1{font-size:clamp(26px,5.4vw,36px);margin:4px 0 4px;letter-spacing:-.02em}
+.ev-sub{margin:0 0 12px;color:var(--mu,#6b7280);font-size:14px}
+.ev-top h2,.ev-h{font-size:19px;margin:22px 0 10px}
+.ev-ul{list-style:none;margin:0;padding:0;display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(min(100%,330px),1fr))}
+.ev-c,.ev-top .ev-ul li{padding:13px 15px;border:1px solid var(--bd,#e5e7eb);border-radius:14px;background:var(--card,#fff);min-width:0}
+.ev-c h3{font-size:15.5px;line-height:1.4;margin:0 0 8px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.ev-c dl{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px 10px;margin:0 0 10px}
+.ev-c dt{font-size:12px;color:var(--mu,#6b7280);font-weight:600}.ev-c dd{margin:1px 0 0;font-size:13.5px;font-weight:700;line-height:1.35;overflow-wrap:anywhere}
+.ev-c dd .u{color:#dc2626}
+.ev-go{display:inline-flex;align-items:center;min-height:40px;padding:0 14px;border:1px solid var(--bd,#e5e7eb);border-radius:10px;font-size:14px;font-weight:800;color:var(--tx,#111);text-decoration:none;background:var(--card,#fff)}
+.ev-go:hover{border-color:var(--brand,#6d28d9);color:var(--brand,#6d28d9)}
+.ev-bar{display:grid;gap:10px;margin-bottom:12px}
+.ev-k{display:flex;flex-wrap:wrap;gap:6px}
+.ev-k button{min-height:40px;border:1px solid var(--bd,#e5e7eb);background:transparent;color:var(--mu,#6b7280);border-radius:999px;padding:0 14px;font:inherit;font-size:14px;font-weight:700;cursor:pointer}
+.ev-k button.on{background:var(--brand,#6d28d9);border-color:var(--brand,#6d28d9);color:#fff}
+.ev-r{display:flex;flex-wrap:wrap;gap:8px}
+.ev-q{flex:1 1 240px;min-height:44px;font:inherit;font-size:15.5px;padding:0 14px;border:1px solid var(--bd,#e5e7eb);border-radius:12px;background:var(--card,#fff);color:var(--tx,#111)}
+.ev-d{min-height:44px;padding:0 10px;border:1px solid var(--bd,#e5e7eb);border-radius:12px;font:inherit;font-size:15px;background:var(--card,#fff);color:var(--tx,#111)}
+.ev-n{margin:0;font-size:14px;color:var(--mu,#6b7280)}.ev-n b{color:var(--tx,#111)}
+.ev-reset{margin-left:6px;padding:3px 10px;border:1px solid var(--bd,#e5e7eb);border-radius:999px;background:var(--card,#fff);font:inherit;font-size:13px;font-weight:700;cursor:pointer;color:var(--brand,#6d28d9)}
+.ev-more{display:block;width:100%;margin:12px 0;border:1px solid var(--bd,#e5e7eb);background:var(--card,#fff);color:var(--brand,#6d28d9);font-weight:800;border-radius:12px;padding:12px;cursor:pointer;font:inherit}
+.ev-empty{grid-column:1/-1;padding:18px;border:1px dashed var(--bd,#e5e7eb);border-radius:12px;color:var(--mu,#6b7280)}
+@media (max-width:520px){.ev-c dl{grid-template-columns:1fr 1fr}}

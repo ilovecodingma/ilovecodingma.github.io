@@ -66,7 +66,7 @@ GTAG = ('<script async src="https://pagead2.googlesyndication.com/pagead/js/adsb
         '<script async src="https://www.googletagmanager.com/gtag/js?id=G-G9BPFF95GY"></script>\n'
         "<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());if(location.hostname!=='sungprofile.cloud')window['ga-disable-G-G9BPFF95GY']=true;gtag('config','G-G9BPFF95GY');</script>")
 THEMES = [  # (키, 이름, 아이콘, 테마색, 홈, [하위 메뉴], [이 테마에 속하는 주소 앞부분])
-    ('issue', '이슈', '🕵️', '#b45309', '/news/', [('/trend/', '이슈 트렌드'), ('/hot/', '핫이슈'), ('/news/', '기사 확인 신호'), ('/talk/', '커뮤니티 이슈'), ('/kw/', '인기 키워드'), ('/satire/', '루리 풍자'), ('/mag/', '매거진'), ('/review/', '평론')],
+    ('issue', '이슈', '🕵️', '#b45309', '/news/', [('/trend/', '이슈 트렌드'), ('/hot/', '핫이슈'), ('/news/', '루리 뉴스'), ('/talk/', '커뮤니티 이슈'), ('/kw/', '인기 키워드'), ('/satire/', '루리 풍자'), ('/mag/', '매거진'), ('/review/', '평론')],
      ['/trend/', '/hot/', '/news/', '/talk/', '/kw/', '/satire/', '/mag/', '/review/']),
     ('money', '머니', '📊', '#047857', '/analyst/', [('/analyst/', '애널리스트 종합'), ('/money/experts/', '전문가 코멘트'), ('/money/guide/', '생활 돈 가이드'), ('/money/policy/', '투자 정책'), ('/money/age/', '나이별 원칙'), ('/money/tools/salary/', '계산기'), ('/analyst/coin/btc/', '코인')], ['/analyst/', '/money/']),
     ('contest', '공모전', '🏆', '#6d28d9', '/contest/', [('/contest/', '맞춤 추천'), ('/cat/literature/', '분야별'), ('/prep/', '내 응모 준비'), ('/lab/', '수상작 분석'), ('/community/', '팀원 모집'), ('/guide/', '가이드'), ('/widget/', '위젯')],
@@ -209,11 +209,11 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False, noinde
     if len(desc) > 160:
         desc = desc[:157].rstrip() + '…'
     # 2026-10-20 정보성 글 PDF: 미리 만든 PDF 다운로드 + 인쇄(PDF로 저장) 버튼
-    if path.count('/') == 3 and not noindex and path.startswith(('/guide/', '/dev/', '/review/', '/ssul/', '/mag/', '/fridge/r/', '/lab/', '/hot/', '/money/')):
+    if path.count('/') == 3 and not noindex and path not in ('/guide/', '/money/guide/', '/dev/', '/review/', '/ssul/', '/mag/', '/lab/', '/hot/') and path.startswith(('/guide/', '/dev/', '/review/', '/ssul/', '/mag/', '/fridge/r/', '/lab/', '/hot/', '/money/')):
         import make_pdf as _MP
         _pb = '<div class="pdf-bar">' + (f'<a class="main" data-pdf href="/pdf/{_MP.pdf_name(path)}" download>📄 PDF 다운로드</a>' if _MP.is_pdf_path(path) else '') + '<button type="button" data-print>🖨️ 인쇄 · PDF로 저장</button></div>'
         body = body.replace('</h1>', '</h1>' + _pb, 1) if '</h1>' in body else body
-    if re.match(r'^/(guide|review|dev|mag|ssul|en/guide)/[^/]+/$', path) and not noindex:
+    if re.match(r'^/(guide|review|dev|mag|ssul|en/guide)/[^/]+/$|^/ailog/$', path) and not noindex:
         body = article_enhance(path, body)
     lds = []
     if crumbs:
@@ -235,7 +235,7 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False, noinde
 <meta name="theme-color" content="{TH[3] if TH else '#5b21b6'}"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="오늘 뭐 먹지">
 <link rel="icon" href="/favicon.ico?v=6" sizes="any"><link rel="icon" type="image/png" sizes="48x48" href="/assets/icons/icon-48.png?v=6"><link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/icon-96.png?v=6"><link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/icon-192.png?v=6"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=6"><link rel="manifest" href="/site.webmanifest"><link rel="alternate" type="application/rss+xml" title="루리의 줍줍" href="/rss.xml">
 <link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="/assets/gm.css?v=27"><link rel="stylesheet" href="/assets/ds.css?v=15"><link rel="stylesheet" href="/assets/print.css?v=1"><script defer src="/assets/print.js?v=1"></script><script src="/assets/img-fallback.js?v=1"></script><link rel="stylesheet" href="/assets/shell/shell.css?v=2"><script defer src="/assets/shell/shell.js?v=2"></script>{('<link rel="stylesheet" href="/assets/chat/ruri-chat.css?v=9">') if not (TH and TH[0] == 'ai') else ''}{COMM_TAGS}{('<script type="module" src="/assets/chat/ruri-chat.js?v=16"></script>') if not (TH and TH[0] == 'ai') else ''}<link rel="stylesheet" href="/assets/app/shell.css?v=1"><script defer src="/assets/app/app.js?v=4"></script>
+<link rel="stylesheet" href="/assets/gm.css?v=27"><link rel="stylesheet" href="/assets/ds.css?v=15"><link rel="stylesheet" href="/assets/print.css?v=1"><script defer src="/assets/print.js?v=1"></script><script src="/assets/img-fallback.js?v=1"></script>{('<link rel="stylesheet" href="/assets/chat/ruri-chat.css?v=9">') if not (TH and TH[0] == 'ai') else ''}{COMM_TAGS}{('<script type="module" src="/assets/chat/ruri-chat.js?v=16"></script>') if not (TH and TH[0] == 'ai') else ''}<link rel="stylesheet" href="/assets/app/shell.css?v=1"><script defer src="/assets/app/app.js?v=4"></script>
 {ldh}
 {TH_CSS}
 {GTAG}
@@ -911,12 +911,14 @@ def listing_js(cat=''):
 (function(){var IC=%s,SL=%s;var $=function(i){return document.getElementById(i)};var items=[],cat=%s,PAGE=40,shown=PAGE;
 var n=new Date(Date.now()+324e5),LATE=n.getUTCHours()>=18,T=Math.round(Date.UTC(n.getUTCFullYear(),n.getUTCMonth(),n.getUTCDate())/864e5);/* 한국 시간 기준 */
 function dn(s){var p=s.split('-');return Math.round(Date.UTC(+p[0],p[1]-1,+p[2])/864e5)}
+var SK='jupjup_list_'+(cat||'all');function save(){try{sessionStorage.setItem(SK,JSON.stringify({q:$('q').value,due:$('due').value,sort:$('sort').value,tg:$('tg').value,ai:$('ai').value,n:shown,y:window.scrollY}))}catch(e){}}
+function restore(){try{var v=JSON.parse(sessionStorage.getItem(SK)||'null');if(!v)return 0;$('q').value=v.q||'';$('due').value=v.due||'';if(v.sort)$('sort').value=v.sort;$('tg').value=v.tg||'';$('ai').value=v.ai||'';shown=v.n||PAGE;return v.y||0}catch(e){return 0}}
 function el(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}
-function render(){var q=$('q').value.trim().toLowerCase(),due=+$('due').value||0,s=$('sort').value;
+function render(){var q=$('q').value.trim().toLowerCase(),due=+$('due').value||0,s=$('sort').value,tg=$('tg').value,ai=$('ai').value;
 function sc(i){var s=i.pv?(Math.log(i.pv)/Math.LN10-4)*1.2:0;s+=(i.left>=2&&i.left<=14)?2:i.left<=30?1:0;if(i.left<=0)s-=3;if(i.effort)s+=1;return s}
-var r=items.filter(function(i){return i.left>=(LATE?1:0)&&(!cat||i.tags.indexOf(cat)>=0)&&(!due||i.left<=due)&&(!q||i.hay.indexOf(q)>=0)});
+var r=items.filter(function(i){return i.left>=(LATE?1:0)&&(!cat||i.tags.indexOf(cat)>=0)&&(!due||i.left<=due)&&(!q||i.hay.indexOf(q)>=0)&&(!tg||(i.eg||'미확인').indexOf(tg)>=0)&&(!ai||(ai==='ok'?(i.ai==='허용'||i.ai==='표기'):ai==='no'?i.ai==='금지':!i.ai))});
 r.sort(s==='prize'?function(a,b){return b.pv-a.pv||a.left-b.left}:s==='end'?function(a,b){return a.left-b.left||b.pv-a.pv}:function(a,b){return sc(b)-sc(a)||a.left-b.left});
-$('cnt').textContent='진행 중 공모전 '+r.length+'건';var ul=$('list');ul.textContent='';
+var cd=[];if(q)cd.push('“'+$('q').value.trim()+'”');if(due)cd.push(due+'일 이내');if(tg)cd.push('대상 '+tg);if(ai)cd.push('AI '+(ai==='ok'?'허용·표기':ai==='no'?'금지':'미확인'));var ce=$('cnt');ce.textContent='진행 중 공모전 '+r.length+'건'+(cd.length?' · 적용: '+cd.join(' · ')+' ':'');if(cd.length){var rb=el('button','ap-reset','초기화');rb.type='button';rb.onclick=function(){$('q').value='';$('due').value='';$('tg').value='';$('ai').value='';shown=PAGE;render()};ce.appendChild(rb)}save();var ul=$('list');ul.textContent='';
 if(!r.length){var li=el('li','empty');li.innerHTML='<img src="/assets/ruri/sad_s.webp" width="56" height="77" alt=""><p>조건에 맞는 공모전이 없어요. 검색어를 바꿔 볼까요?</p>';ul.appendChild(li)}
 r.slice(0,shown).forEach(function(i){var li=el('li'),a=el('a','card cc');a.href='/c/'+i.id+'/';a.dataset.c=SL[i.tags[0]]||'etc';var cb=el('div','cb'),top=el('div','top');top.appendChild(el('h3','t',i.title));
 top.appendChild(el('span','d'+(i.left<=3?' u3':i.left<=7?' hot':''),i.left?'D-'+i.left:'D-DAY'));cb.appendChild(top);
@@ -924,13 +926,15 @@ var dl=el('dl','cm');[['대상',i.eg||'미확인'],['제출물',i.effort||'미�
 cb.appendChild(el('p','o',[i.org&&i.org!=='공고 참조'?i.org:'',i.tags[0]||''].filter(Boolean).join(' · ')));a.appendChild(cb);
 if(i.th){var im=el('img','th');im.src='/assets/shots/'+i.id+'.webp';im.width=72;im.height=45;im.loading='lazy';im.alt='';a.appendChild(im)}li.appendChild(a);ul.appendChild(li)});
 $('more').hidden=r.length<=shown}
-['q','due','sort'].forEach(function(i){$(i).addEventListener('input',function(){shown=PAGE;render()})});$('more').onclick=function(){shown+=PAGE;render()};
-fetch('/data.json',{cache:'no-cache'}).then(function(r){return r.json()}).then(function(d){items=d.items.map(function(i){i.left=dn(i.end)-T;i.hay=(i.title+' '+i.org+' '+i.field+' '+i.tags.join(' ')).toLowerCase();return i});render()}).catch(function(){var u=document.querySelector('.list');if(u)u.insertAdjacentHTML('beforebegin','<p class="note">목록을 새로 불러오지 못해 마지막으로 만든 목록을 보여 드려요. 마감 여부는 공식 공고로 확인해 주세요.</p>')});
+['q','due','sort','tg','ai'].forEach(function(i){$(i).addEventListener('input',function(){shown=PAGE;render()})});document.addEventListener('click',function(e){if(e.target.closest&&e.target.closest('#list a'))save()});window.addEventListener('pagehide',save);$('more').onclick=function(){shown+=PAGE;render()};
+fetch('/data.json',{cache:'no-cache'}).then(function(r){return r.json()}).then(function(d){items=d.items.map(function(i){i.left=dn(i.end)-T;i.hay=(i.title+' '+i.org+' '+i.field+' '+i.tags.join(' ')).toLowerCase();return i});var y=restore();render();try{if(y&&(performance.getEntriesByType('navigation')[0]||{}).type==='back_forward')setTimeout(function(){window.scrollTo(0,y)},60)}catch(e){}}).catch(function(){var u=document.querySelector('.list');if(u)u.insertAdjacentHTML('beforebegin','<p class="note">목록을 새로 불러오지 못해 마지막으로 만든 목록을 보여 드려요. 마감 여부는 공식 공고로 확인해 주세요.</p>')});
 })();</script>''' % (json.dumps(CAT_ICON, ensure_ascii=False), json.dumps(SLUG, ensure_ascii=False), json.dumps(cat, ensure_ascii=False))
 
 
 TOOLBAR = '''<div class="bar"><input type="search" id="q" placeholder="공모전, 주최, 키워드 검색" aria-label="검색">
 <select id="due" aria-label="마감"><option value="">마감 전체</option><option value="7">7일 이내</option><option value="30">30일 이내</option></select>
+<select id="tg" aria-label="참가 대상"><option value="">참가 대상 전체</option><option value="누구나">누구나</option><option value="대학생">대학생</option><option value="청소년">청소년</option><option value="연령 제한">연령 제한</option><option value="지역 거주">지역 거주</option><option value="창업자">창업자</option><option value="미확인">미확인</option></select>
+<select id="ai" aria-label="AI 사용"><option value="">AI 사용 전체</option><option value="ok">허용·표기</option><option value="no">금지</option><option value="unk">미확인</option></select>
 <select id="sort" aria-label="정렬"><option value="end" selected>마감 임박순</option><option value="rec">추천순</option><option value="prize">상금 큰 순</option></select></div>
 <p class="cnt" id="cnt"></p>'''
 
@@ -1022,12 +1026,33 @@ def load_apply():
     return out
 
 
+def ap_group(a):
+    """지원금·청약 유형(2026-10-23 UI 개선 8번): 개인·가구 / 사업자·기업 / 주거 청약 / 공모주."""
+    kk = a.get('kk') or ''
+    if kk == 'ipo':
+        return '공모주'
+    if kk in ('apt', 'rent'):
+        return '주거 청약'
+    if re.search(r'기업|사업자|법인|소상공인|스타트업|창업|중소|협동조합|사회적경제|수출|R&D|연구개발|참여기관|기관 모집', (a.get('title') or '') + ' ' + (a.get('target') or '')):
+        return '사업자·기업'
+    return '개인·가구'
+
+
+def ap_region(a):
+    r = (a.get('region') or '').strip()
+    return r.split()[0] if r else ''
+
+
 def ap_card(a):
+    """지원금·청약 목록 카드: 제목 → 대상·지원 내용·지역·마감을 모든 항목에서 같은 자리에."""
     n, dd = dday(a['end'])
-    v = '<span class="tg">확인됨</span>' if a['verified'] else ''
-    return (f'<li><a class="card" data-c="apply" href="/a/{a["id"]}/"><span class="ic">{a["icon"]}</span><div class="cb"><div class="top"><h3 class="t">{E(a["title"])}</h3>'
-            f'<span class="d{"" if a.get("always") else " u3" if n <= 3 else " hot" if n <= 7 else ""}">{"상시" if a.get("always") else dd}</span></div><p class="o">{E(a["org"])}{" · 상시 신청" if a.get("always") else " · ~" + ddot(a["end"])}</p>'
-            f'<div class="tags"><span class="ez e1">{E(a["kind"])}</span>{v}</div></div></a></li>')
+    alw = bool(a.get('always'))
+    cls = 'd' if alw else 'd off' if n < 0 else 'd u3' if n <= 3 else 'd hot' if n <= 7 else 'd'
+    meta = (('대상', (a.get('target') or '').strip()[:14] or '미확인'), ('지원 내용', (a.get('benefit') or '').strip()[:18] or '미확인'), ('지역', ap_region(a) or '미확인'), ('마감', '상시' if alw else ddot(a['end'])[5:]))
+    dl = ''.join(f'<div><dt>{k}</dt><dd{" class=nu" if v == "미확인" else ""}>{E(v)}</dd></div>' for k, v in meta)
+    src = ' · 공식 포털 수집' if a.get('verified') else ''
+    return (f'<li><a class="card cc" data-g="{E(ap_group(a))}" data-r="{E(ap_region(a))}" href="/a/{a["id"]}/"><div class="cb"><div class="top"><h3 class="t">{E(a["title"])}</h3><span class="{cls}">{"상시" if alw else dd}</span></div>'
+            f'<dl class="cm">{dl}</dl><p class="o">{E(ap_group(a))} · {E(a["org"])}{src}</p></div></a></li>')
 
 
 APPLY_INTRO = '''<p>아파트 청약, 공공임대, 공모주 청약, 지원금 신청처럼 <b>기간 안에 신청만 하면 되는 기회</b>를 모았어요. 신청은 반드시 공식 사이트에서 하세요.</p>
@@ -1175,13 +1200,22 @@ def build_apply(aps):
         page(f'/a/{a["id"]}/', _t, f'{a["title"]} — ' + (f'{_org} ' if _org else '') + f'{a["kind"]}, ' + (f'{ddot(a["end"])} 마감' if a.get('end') and not a.get('always') else '상시 신청') + '. 신청 기간과 공식 신청처 정리.', body,
              [('루리의 줍줍', '/'), ('청약·신청', '/apply/'), (a['title'], f'/a/{a["id"]}/')], noindex=sum(1 for k in ('target', 'benefit', 'how', 'income') if a.get(k)) < 2, full_title=_ft)
         GONE[f'/a/{a["id"]}/'] = [a['title'], '/apply/', '청약·신청', a['end']]
-    lst = ''.join(ap_card(a) for a in aps[:60]) or '<li class="empty"><img src="/assets/ruri/o_desk_s.webp" width="64" height="88" alt=""><p>지금 정리 중이에요. 곧 청약·신청 일정을 올릴게요!</p></li>'
-    page('/apply/', f'청약·신청 일정 모음', '아파트 청약, 공공임대, 공모주, 지원금 신청 일정을 마감 순서로 정리했어요.',
-         f'''<p class="bc"><a href="/">홈</a> › 청약·신청</p><section class="dh" data-c="apply"><span class="ic big">📝</span><h1>청약·신청</h1><p class="lead">진행 중 <b>{len(aps)}건</b> · 마감 임박순</p></section>
-{say('o_desk', '신청만 하면 되는 기회들이에요. 기간이 짧으니 미리 챙겨요!')}{join_cta('apply')}{APPLY_INTRO}<h2>진행 중 청약·신청 <small>마감 가까운 순 {min(60, len(aps))}건 · 전체 {len(aps)}건</small></h2><ul class="list" id="ap-list">{lst}</ul>
-{f'<p class="hm-more"><button class="btn2" id="ap-more" data-n="{len(aps) - 60}">나머지 {len(aps) - 60}건 더 보기</button> · <a href="/apply/month/{TODAY:%Y-%m}/">달별 일정</a> · <a href="/apply/r/">지역별</a></p>' if len(aps) > 60 else ''}
-<script defer src="/assets/view/one.js?v=2"></script>''',
-         [('루리의 줍줍', '/'), ('청약·신청', '/apply/')])
+    _ord = sorted(aps, key=lambda a: (bool(a.get('always')), a['end'], a['title']))   # 마감 임박순, 상시 신청은 맨 뒤
+    lst = ''.join(ap_card(a) for a in _ord[:30]) or '<li class="empty"><img src="/assets/ruri/o_desk_s.webp" width="64" height="88" alt=""><p>지금 정리 중이에요. 곧 일정을 올릴게요!</p></li>'
+    _gc = collections.Counter(ap_group(a) for a in aps)
+    _chips = '<button type="button" class="on" data-g="">전체 <small>%d</small></button>' % len(aps) + ''.join(f'<button type="button" data-g="{g_}">{g_} <small>{_gc.get(g_, 0)}</small></button>' for g_ in ('개인·가구', '사업자·기업', '주거 청약', '공모주'))
+    _rg = [r_ for r_, _n in collections.Counter(ap_region(a) for a in aps if ap_region(a)).most_common()]
+    _ropt = '<option value="">지역 전체</option>' + ''.join(f'<option value="{E(r_)}">{E(r_)}</option>' for r_ in _rg) + '<option value="__none">지역 미확인</option>'
+    page('/apply/', '지원금·청약 찾기 — 대상·지역·마감으로 고르기', f'개인·가구, 사업자·기업, 주거 청약, 공모주 {len(aps)}건을 대상·지역·마감 조건으로 골라 보세요. 공식 포털에서 수집해 마감 임박순으로 정리해요.',
+         f'''<p class="bc"><a href="/">홈</a> › 지원금·청약</p><h1 class="ap-h1">지원금·청약</h1><p class="ap-sub">진행 중 {len(aps)}건 · 마감 임박순(상시 신청은 맨 뒤) · {NOW_KST():%m/%d %H:%M} 갱신(한국 시간)</p>
+<div class="ap-bar" role="search"><div class="ap-chips" role="group" aria-label="유형">{_chips}</div>
+<div class="ap-row"><input type="search" id="ap-q" placeholder="공고명·기관·대상 검색" aria-label="검색"><select id="ap-r" aria-label="지역">{_ropt}</select><select id="ap-d" aria-label="마감"><option value="">마감 전체</option><option value="7">7일 이내</option><option value="30">30일 이내</option><option value="x">상시 신청 제외</option></select></div>
+<p class="ap-cnt" id="ap-cnt" aria-live="polite"></p></div>
+<ul class="list" id="ap-list">{lst}</ul><p class="hm-more"><button class="btn2" id="ap-more" hidden>더 보기</button> · <a href="/apply/month/{TODAY:%Y-%m}/">달별 일정</a> · <a href="/apply/r/">지역별</a></p>
+<details class="fold"><summary>신청 전에 알아 둘 것</summary>{APPLY_INTRO}</details>
+{join_cta('apply')}
+<link rel="stylesheet" href="/assets/apply/ap.css?v=1"><script defer src="/assets/apply/ap.js?v=1"></script><script defer src="/assets/view/one.js?v=2"></script>''',
+         [('루리의 줍줍', '/'), ('지원금·청약', '/apply/')])
 
 
 HERO_JS = '''<script>(function(){var o=[['smile','오늘도 마감 임박 공모전 챙겨 왔어요 ✨'],['o_suit','오늘의 공모전 브리핑 시작할게요!'],['o_gray','상금 큰 공모전부터 정리해 뒀어요.'],['o_present','이번 주 마감, 같이 확인해 볼까요?'],['o_desk','새 공모전을 방금 업데이트했어요.'],['o_cardigan','글쓰기 공모전도 많아요. 천천히 골라 보세요.'],['o_trench','해외 공모전도 챙겨 왔어요.'],['o_anchor','마감 소식 전해 드릴게요!'],['o_vest','응모 전 체크리스트도 잊지 마세요.']];
@@ -1828,18 +1862,16 @@ def build():
     # 2026-10-18 사용자: "경품 이벤트도 좀 적당히 보이게, 갱신도 자동으로" — 1,300여 건 통째 나열 대신 '오늘·내일 마감 + 쉬운 것' 12개만 크게, 나머지는 종류·검색으로(events.json 매시 빌드 갱신)
     EZT = ('댓글 참여', '퀴즈 참여', '설문 참여', '응모', '폼 응모')
     tidy_ev = lambda t: re.sub(r'^\s*\((?:중복|\d+회 중복)[^)]*\)\s*', '', t).strip()
-    top = sorted([e for e in events if dday(e['end'])[0] <= 1 and (e.get('effort') or EASY.get(e['type'], '')) in EZT and (e.get('org') or '').strip()],
-                 key=lambda e: (e['end'], EASY_RANK.get(e.get('effort') or EASY.get(e['type'], ''), 2)))[:12]
-    if len(top) < 12:
-        top += [e for e in sorted(events, key=lambda e: e['end']) if e not in top and (e.get('effort') or EASY.get(e['type'], '')) in EZT][:12 - len(top)]
-    tcards = ''.join(f'<li><a href="{E(e["link"])}" target="_blank" rel="noopener nofollow"><b>{E(tidy_ev(e["title"]))}</b><span><em class="{"u" if dday(e["end"])[0] <= 1 else ""}">{dday(e["end"])[1]}</em>{E(e["org"] or "공식 계정")} · <i>{E(e.get("effort") or EASY.get(e["type"], e["type"]))}</i></span></a></li>' for e in top)
-    page('/event/', f'경품 이벤트 — 오늘 마감순 (진행 중 {len(events)}건)', f'댓글·퀴즈·설문·응모 등 참여 방식별로 정리한 경품 이벤트 {len(events)}건. 오늘·내일 마감하는 것부터, 종류별·검색으로 골라 보세요. 참여 방식은 자동 분류라 공식 안내를 확인하세요. 매시간 갱신.',
-         f'''<p class="bc"><a href="/">홈</a> › <a href="/apply/">생활</a> › 경품 이벤트</p><h1>🎁 경품 이벤트</h1>{join_cta('event')}
-{say('excited', f'오늘·내일 마감하는 이벤트부터 보여 드려요. 지금 진행 중인 이벤트는 {len(events):,}건이고, 참여 방식은 자동 분류라 공식 안내로 꼭 확인하세요.')}
-<section class="ev-top"><h2>⚡ 오늘·내일 마감 · 쉬운 것 {len(top)}</h2><ul class="ev-ul">{tcards}</ul></section>
-<h2 class="ev-h">🔎 종류별로 골라 보기</h2><section id="evl" aria-label="경품 이벤트 목록"><noscript>자바스크립트가 필요해요.</noscript></section>
-<p class="note">마지막 갱신 {datetime.datetime.now().strftime('%m/%d %H:%M')} · 참여 조건(팔로우·태그·공유)과 당첨자 발표는 이벤트마다 달라요. 당첨 연락을 사칭해 개인정보나 송금을 요구하면 사기예요.</p>
-<link rel="stylesheet" href="/assets/event/ev.css?v=1"><script defer src="/assets/event/ev.js?v=1"></script>''', [('루리의 줍줍', '/'), ('생활', '/apply/'), ('경품 이벤트', '/event/')])
+    # 2026-10-23 화면 개선 9번: 제목 바로 아래 필터·목록 → 구독(이벤트 알림) 은 목록 뒤. 「쉬운 것」 같은 근거 없는 선별을 하지 않고 마감순으로만 보여 준다
+    top = sorted([e for e in events if dday(e['end'])[0] <= 1], key=lambda e: (e['end'], e['title']))[:6]
+    tcards = ''.join(f'<li class="ev-c"><h3>{E(tidy_ev(e["title"]))}</h3><dl><div><dt>참여 방법</dt><dd>{E(e.get("effort") or EASY.get(e["type"], e["type"]))}</dd></div><div><dt>마감</dt><dd><span class="u">{"오늘" if dday(e["end"])[0] <= 0 else "D-1"}</span> {E(ddot(e["end"])[5:])}</dd></div><div><dt>주최</dt><dd>{E(e["org"] or "공식 계정")}</dd></div></dl><a class="ev-go" href="{E(e["link"])}" target="_blank" rel="noopener nofollow">이벤트 보기 ↗</a></li>' for e in top)
+    page('/event/', f'경품 이벤트 — 오늘 마감순 (진행 중 {len(events)}건)', f'댓글·퀴즈·설문·응모 등 참여 방식별로 정리한 경품 이벤트 {len(events)}건. 오늘·내일 마감하는 것부터, 참여 방식·마감·검색으로 골라 보세요. 참여 방식은 자동 분류라 공식 안내를 확인하세요. 매시간 갱신.',
+         f'''<p class="bc"><a href="/">홈</a> › 경품 이벤트</p><h1 class="ev-h1">경품 이벤트</h1><p class="ev-sub">진행 중 {len(events):,}건 · 마감 임박순 · {NOW_KST():%m/%d %H:%M} 갱신(한국 시간) · 참여 방식은 자동 분류라 공식 안내로 확인하세요</p>
+<section id="evl" aria-label="경품 이벤트 목록"><noscript><p class="note">필터는 자바스크립트가 필요해요. 오늘·내일 마감 이벤트는 아래에 있어요.</p></noscript></section>
+<section class="ev-top"><h2>오늘·내일 마감 ({len(top)}건)</h2><ul class="ev-ul">{tcards or '<li class="ev-empty">오늘·내일 마감하는 이벤트가 없어요.</li>'}</ul></section>
+<p class="note">참여 조건(팔로우·태그·공유)과 당첨자 발표는 이벤트마다 달라요. 당첨 연락을 사칭해 개인정보나 송금을 요구하면 사기예요.</p>
+{join_cta('event')}
+<link rel="stylesheet" href="/assets/event/ev.css?v=2"><script defer src="/assets/event/ev.js?v=2"></script>''', [('루리의 줍줍', '/'), ('경품 이벤트', '/event/')])
     shutil.rmtree(os.path.join(ROOT, 'a'), ignore_errors=True)
     build_apply(aps)
     ss = load_ssul()
@@ -2143,7 +2175,7 @@ JN_TOPICS = {   # 2026-10-20 사용자 「그 사람이 듣고 싶은 정보를 
     'issue': ('📺', '루리 뉴스 브리핑을 메일로', '매일 아침 · 이메일'),
     'game': ('🎮', '이번 주 무료 게임·스팀 할인을 먼저', '새 무료 게임이 풀릴 때 · 이메일'),
     'money': ('📊', '전문가 말 vs 시세 요약을 메일로', '매일 아침 · 이메일'),
-    'event': ('🎁', '오늘 마감 경품·용돈을 놓치지 않게', '매일 아침 · 이메일')}
+    'event': ('🎁', '이벤트 알림 받기 — 오늘 마감하는 경품 이벤트를 이메일로', '매일 아침 · 이메일 · 경품을 받는 버튼이 아니라 알림 신청이에요')}
 _JNP = {}
 
 
@@ -2457,7 +2489,7 @@ def article_enhance(path, body):
         return body
     title = html.unescape(re.sub(r'<[^>]+>', '', m.group(1))).strip()
     seg = path.strip('/').split('/')
-    lab, ic = {'guide': ('응모·실무 가이드', '📘'), 'review': ('평론', '🖋️'), 'dev': ('개발 지식', '🧑‍💻'), 'mag': ('이슈 리딩', '📰'), 'ssul': ('썰', '💬'), 'en': ('English guide', '🌐')}.get(seg[0], ('정보', '📄'))
+    lab, ic = {'ailog': ('개발 지식', '🧑‍💻'), 'guide': ('응모·실무 가이드', '📘'), 'review': ('평론', '🖋️'), 'dev': ('개발 지식', '🧑‍💻'), 'mag': ('이슈 리딩', '📰'), 'ssul': ('썰', '💬'), 'en': ('English guide', '🌐')}.get(seg[0], ('정보', '📄'))
     cover = guide_cover({'slug': '-'.join(seg), 'name': re.sub(r'^[^\w가-힣]+', '', title), 'icon': ic}, label=lab, foot='루리의 줍줍이 정리한 글')
     skip = ('이 페이지 인용하기',)
     cnt = [0]; toc = []
@@ -2466,7 +2498,7 @@ def article_enhance(path, body):
         if txt in skip or 'id=' in mm.group(1):
             return mm.group(0)
         cnt[0] += 1; n = cnt[0]
-        toc.append(f'<a href="#a{n}"><i>{n}</i>{E(re.sub(chr(92) + "s*[(（].*?[)）]", "", txt)[:14])}</a>')
+        toc.append(f'<a href="#a{n}"><i>{n}</i>{E(re.sub(chr(92) + "s*[(（].*?[)）]", "", txt))}</a>')
         return f'<h2{mm.group(1)} id="a{n}"><span class="gs-n">{n}</span><span class="gs-t">{mm.group(2)}</span></h2>'
     body = re.sub(r'<h2([^>]*)>(.*?)</h2>', numh2, body, flags=re.S)
     body = body.replace(m.group(0), cover + m.group(0), 1)
@@ -2475,7 +2507,7 @@ def article_enhance(path, body):
         i = body.find('<h2')
         body = body[:i] + nav + body[i:] if i >= 0 else body
     body = re.sub(r'(?<!tblw">)(<table\b.*?</table>)', r'<div class="tblw">\1</div>', body, flags=re.S) if '<div class="tblw"' not in body else body
-    return '<div class="art">' + body + '</div><link rel="stylesheet" href="/assets/guide/guide.css?v=3">'
+    return '<div class="art">' + body + '</div><link rel="stylesheet" href="/assets/guide/guide.css?v=4">'
 
 
 def _hl(t):
@@ -2526,7 +2558,7 @@ def kin_guides():
             if sc.get('html'):
                 h += sc['html']
             secs += f'<section class="gs gs-{kind}" id="s{n_}">{h}</section>'
-            toc.append(f'<a href="#s{n_}"><i>{ic_}</i>{E(re.sub(chr(92) + "s*[(（].*?[)）]", "", sc["h"])[:14])}</a>')
+            toc.append(f'<a href="#s{n_}"><i>{ic_}</i>{E(re.sub(chr(92) + "s*[(（].*?[)）]", "", sc["h"]))}</a>')
         toc.append('<a href="#faq"><i>❓</i>자주 묻는 질문</a>'); toc.append('<a href="#src"><i>📎</i>공식 출처</a>')
         g_toc = '<nav class="g-toc" aria-label="이 글의 목차">' + ''.join(toc) + '</nav>'
         _m = re.search(r'확인일\s*(\d{4}-\d{2}-\d{2})', g.get('basis', ''))
@@ -2541,7 +2573,7 @@ def kin_guides():
                 + _cite_box(g, f'/money/guide/{g["slug"]}/')
                 + f'<section class="g-src" id="src"><h2>📎 공식 출처</h2><ul class="gm-l">{src}</ul>'
                 + f'<p class="note">공식 안내를 줍줍이 직접 확인해 정리한 내용이고, 기준 금액과 신청 기간은 해마다 바뀔 수 있어요. 신청 전에 위 공식 출처를 꼭 확인하고, 개별 사정은 {E(g["contact"])}에 문의하세요. 법률·세무 상담이 아니에요.</p></section>'
-                + f'<p class="hm-links">{rel} · <a href="/money/guide/">다른 생활 돈 가이드</a></p>' + GAME_CSS + '<link rel="stylesheet" href="/assets/guide/guide.css?v=3">' + (f'<script defer src="{E(g["script"])}"></script>' if g.get('script') else ''))
+                + f'<p class="hm-links">{rel} · <a href="/money/guide/">다른 생활 돈 가이드</a></p>' + GAME_CSS + '<link rel="stylesheet" href="/assets/guide/guide.css?v=4">' + (f'<script defer src="{E(g["script"])}"></script>' if g.get('script') else ''))
         page(f'/money/guide/{g["slug"]}/', g['title'], g['desc'], body, [('루리의 줍줍', '/'), ('머니', '/analyst/'), ('생활 돈 가이드', '/money/guide/'), (g['name'], f'/money/guide/{g["slug"]}/')], ld)
         urls.append(f'/money/guide/{g["slug"]}/')
         cards += f'<li><a class="card" data-c="guide" href="/money/guide/{g["slug"]}/"><span class="ic">{g["icon"]}</span><div class="cb"><h3 class="t">{E(g["name"])}</h3><p class="o">{E(g["h1"])}</p></div></a></li>'
@@ -2560,9 +2592,19 @@ def kin_guides():
     tools = ('<li><a class="card" data-c="guide" href="/money/tools/severance/"><span class="ic">🧮</span><div class="cb"><h3 class="t">퇴직금 계산기</h3><p class="o">입사·퇴사일과 최근 3개월 임금으로 계산</p></div></a></li>'
              '<li><a class="card" data-c="guide" href="/money/tools/unemployment/"><span class="ic">🧮</span><div class="cb"><h3 class="t">실업급여 계산기</h3><p class="o">가입 기간·나이별 받는 날 수와 금액</p></div></a></li>'
              '<li><a class="card" data-c="guide" href="/money/tools/salary/"><span class="ic">🧮</span><div class="cb"><h3 class="t">연봉 실수령액 계산기</h3><p class="o">4대보험·소득세 뺀 월급</p></div></a></li>')
+    # 2026-10-23 화면 개선 12번: 검색 + 상황별 시작(그리드) / 제도 사전(검색 가능 목록) 분리, 인쇄 버튼은 개별 글 보조 메뉴로
+    _jg = ''.join(f'<a class="mg-jc" href="/money/guide/journey/{j["slug"]}/"><i>{j["icon"]}</i><b>{E(j["name"])}</b><span>{E(re.sub(chr(32) + "+", " ", j["lead"])[:46])}…</span></a>' for j in JR)
+    _dict = ''.join(f'<li data-q="{E((g["name"] + " " + g["h1"]).lower())}"><a href="/money/guide/{g["slug"]}/"><i>{g["icon"]}</i><b>{E(g["name"])}</b><span>{E(g["h1"])}</span></a></li>' for g in G)
     page('/money/guide/', '생활 돈 가이드 — 근로장려금·국민내일배움카드·월세 세액공제·퇴직금 (공식 출처 정리)', '근로장려금, 국민내일배움카드, 월세 세액공제와 청년월세 지원, 퇴직금을 국세청·고용노동부·고용24 등 공식 안내로 정리했어요. 계산기도 함께.',
-         '<p class="bc"><a href="/">홈</a> › 생활 돈 가이드</p><h1>🧾 생활 돈 가이드</h1><p class="cat-st">📌 자주 묻는 돈 문제를 공식 안내로 확인한 것만 정리했어요. 공식에서 확인하지 못한 항목은 일부러 적지 않았고, 기준일과 출처를 페이지마다 밝혀요.</p>'
-         f'<ul class="list">{cards}</ul>' + kin_ans_links('/money/guide/') + f'<h2>계산기</h2><ul class="list">{tools}</ul>' + join_cta('apply') + GAME_CSS,
+         '<p class="bc"><a href="/">홈</a> › 생활 돈 가이드</p><h1 class="mg-h1">생활 돈 가이드</h1><p class="mg-sub">공식 안내로 확인한 것만 정리했어요. 확인하지 못한 항목은 일부러 적지 않았고, 기준일과 출처를 글마다 밝혀요.</p>'
+         '<input id="mgq" class="mg-q" type="search" placeholder="예: 퇴직금, 월세, 실업급여, 에너지바우처" aria-label="가이드 검색" autocomplete="off">'
+         f'<h2 class="mg-h2">상황별로 시작하기</h2><div class="mg-j">{_jg}</div>'
+         f'<h2 class="mg-h2">제도 사전 <small>{len(G)}편</small></h2><ul class="mg-d" id="mgl">{_dict}</ul><p class="note" id="mgn" hidden>일치하는 가이드가 없어요. 검색어를 줄여 보세요.</p>'
+         + kin_ans_links('/money/guide/') + f'<h2 class="mg-h2">계산기</h2><ul class="list">{tools}</ul>' + join_cta('apply') + GAME_CSS
+         + '<style>.mg-h1{font-size:clamp(26px,5.4vw,36px);margin:4px 0 6px;letter-spacing:-.02em}.mg-sub{margin:0 0 14px;color:var(--mu);line-height:1.65;max-width:680px}.mg-q{width:100%;max-width:560px;box-sizing:border-box;min-height:50px;padding:0 16px;font:inherit;font-size:16px;border:2px solid var(--bd);border-radius:14px;background:var(--card);color:var(--tx)}.mg-q:focus{outline:none;border-color:var(--brand,#6d28d9)}'
+           '.mg-h2{font-size:20px;margin:26px 0 12px}.mg-h2 small{color:var(--mu);font-size:14px}.mg-j{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,230px),1fr));gap:12px}.mg-jc{display:flex;flex-direction:column;gap:3px;padding:14px 16px;border:1px solid var(--bd);border-radius:14px;background:var(--card);color:var(--tx);text-decoration:none}.mg-jc i{font-style:normal;font-size:24px}.mg-jc b{font-size:16.5px}.mg-jc span{font-size:13.5px;color:var(--mu);line-height:1.5}'
+           '.mg-d{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));gap:8px}.mg-d a{display:grid;grid-template-columns:28px 1fr;gap:0 10px;align-items:center;padding:11px 14px;border:1px solid var(--bd);border-radius:12px;background:var(--card);color:var(--tx);text-decoration:none}.mg-d a i{font-style:normal;grid-row:1/3;font-size:20px}.mg-d a b{font-size:15.5px}.mg-d a span{font-size:13px;color:var(--mu);line-height:1.4;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}</style>'
+         + '<script>(function(){var q=document.getElementById("mgq"),L=[].slice.call(document.querySelectorAll("#mgl li")),n=document.getElementById("mgn");if(!q)return;q.addEventListener("input",function(){var v=q.value.trim().toLowerCase(),c=0;L.forEach(function(li){var m=!v||li.getAttribute("data-q").indexOf(v)>=0;li.style.display=m?"":"none";if(m)c++});n.hidden=c>0})})();</script>',
          [('루리의 줍줍', '/'), ('머니', '/analyst/'), ('생활 돈 가이드', '/money/guide/')])
     urls.append('/money/guide/')
     return urls
@@ -4802,7 +4844,7 @@ FR_CATS = [('guk', '국물', '🍲', '국·찌개·탕', '국물 요리'), ('bap
            ('jorim', '조림', '🐟', '조림·찜', '조림·찜 요리'), ('banchan', '반찬', '🥗', '반찬·무침·나물', '반찬'), ('jeon', '전', '🥞', '전·부침개', '전·부침개')]
 
 
-REC_TAGS = '<link rel="stylesheet" href="/assets/fridge/recommend.css?v=2"><script defer src="/assets/fridge/recommend.js?v=2"></script>'   # 오늘 뭐 먹지? (2026-10-20)
+REC_TAGS = '<link rel="stylesheet" href="/assets/fridge/recommend.css?v=3"><script defer src="/assets/fridge/recommend.js?v=3"></script>'   # 오늘 뭐 먹지? (2026-10-20)
 
 
 def rec_pop():
@@ -5017,9 +5059,9 @@ def fridge_page():
              bd, [('루리의 줍줍', '/'), ('레시피', '/fridge/'), (nm_, f'/fridge/c/{sl_}/')])
         urls.append(f'/fridge/c/{sl_}/')
     page('/fridge/', f'냉장고 파먹기 메뉴 추천 — 있는 재료로 오늘 요리 (레시피 {NR}개)', f'냉장고에 있는 재료만 고르면 집밥 레시피 {NR}개 중 지금 바로 만들 수 있는 오늘 메뉴와 만드는 법, 하나만 사면 되는 메뉴까지 알려 줘요.',
-         f"""<p class="bc"><a href="/">홈</a> › 냉장고 파먹기</p><h1>🍳 루리의 냉장고 파먹기</h1>
-{say("o_cook", f"냉장고 사진을 찍거나 있는 재료를 눌러 주세요. 집밥 레시피 {NR}개 중에 지금 바로 만들 수 있는 걸 골라 드릴게요!")}
-<div class="rec-tabs" data-rec-tabs role="tablist"><button type="button" data-t="rec-pane" class="on">🍽️ 오늘의 추천</button><button type="button" data-t="fridge">🧊 내 냉장고로 찾기</button></div>
+         f"""<p class="bc"><a href="/">홈</a> › 레시피</p><h1>오늘 뭐 먹지?</h1>
+<div class="rec-tabs" data-rec-tabs role="tablist"><button type="button" data-t="rec-pane" data-g="시간·날씨·기분에 맞춰 지금 만들기 좋은 메뉴를 골라 드려요." class="on">🍽️ 메뉴 추천</button><button type="button" data-t="fridge" data-g="있는 재료를 고르면 지금 만들 수 있는 메뉴와, 재료 1개만 더 사면 되는 메뉴를 보여 드려요.">🧊 냉장고 재료로 찾기</button></div>
+<p class="rec-guide" id="rec-guide">시간·날씨·기분에 맞춰 지금 만들기 좋은 메뉴를 골라 드려요.</p>
 <section id="rec-pane" aria-label="오늘의 추천"><div data-rec="today" data-n="8">{ssr([x for x in RS if x['n'] in set(TD.get('picks', []))][:3], '자바스크립트를 켜면 시간·날씨에 맞춰 골라 드려요.')}</div></section>
 <section id="fridge" aria-label="냉장고 재료로 메뉴 추천" hidden><noscript><style>#fridge[hidden]{{display:block!important}}</style>자바스크립트가 필요해요. 아래 전체 레시피 목록에서 골라 보세요.</noscript></section>
 <p class="hm-more"><a href="/fridge/weather/">🌤️ 날씨별 메뉴</a> · <a href="/fridge/solo/">🏠 자취 요리</a> · <a href="/fridge/r/계란찜/">🥚 계란찜</a></p>
@@ -5027,7 +5069,7 @@ def fridge_page():
 {kin_ans_links('/fridge/q/')}
 <details class="fr-all"><summary>📚 전체 레시피 {NR}개 보기</summary><ul>{allr}</ul></details>
 <a class="lab-cta" href="/cat/food/"><b>🏆 요리·레시피 공모전</b><span>레시피 공모전·요리경연대회 모아 보기 · 상금 받고 요리 실력 뽐내기 →</span></a><p class="note">사진은 재료를 찾는 데만 쓰고 저장하지 않아요. 고른 재료는 이 폰에만 저장돼요. 알레르기가 있으면 재료를 꼭 다시 확인해 주세요.</p>
-<link rel="stylesheet" href="/assets/fridge/fridge.css?v=14"><script defer src="/assets/fridge/fridge.js?v=16"></script>{REC_TAGS}""", [('루리의 줍줍', '/'), ('냉장고 파먹기', '/fridge/')],
+<link rel="stylesheet" href="/assets/fridge/fridge.css?v=15"><script defer src="/assets/fridge/fridge.js?v=16"></script><script defer src="/assets/fridge/ux.js?v=1"></script>{REC_TAGS}""", [('루리의 줍줍', '/'), ('냉장고 파먹기', '/fridge/')],
          {'@context': 'https://schema.org', '@type': 'ItemList', 'name': '냉장고 파먹기 집밥 레시피', 'numberOfItems': NR, 'itemListElement': [{'@type': 'ListItem', 'position': k + 1, 'url': f'{SITE}/fridge/r/{fr_slug(r["n"])}/', 'name': r['n']} for k, r in enumerate(RS[:50])]})
     return urls
 

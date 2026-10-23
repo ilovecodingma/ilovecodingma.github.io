@@ -63,3 +63,13 @@
 .fr-wxl a .pcs{justify-content:center;margin-top:2px}
 
 a.no{text-decoration:none}a.no:hover{text-decoration:underline}
+
+/* 2026-10-23 UX: 사진 입력은 수동 선택과 같은 비중, 기본양념 가정은 눈에 띄게, 선택 수·추천 실행 고정 막대 */
+.fr-cam{background:var(--card,#fff);color:var(--tx,#111);border:1px solid var(--bd,#e5e7eb);box-shadow:none;padding:12px 14px;border-radius:14px;text-align:left;grid-template-columns:1fr;gap:2px}
+.fr-cam b{font-size:15.5px}.fr-cam small{opacity:.75}
+.fr-basic{background:color-mix(in srgb,var(--brand,#6d28d9) 7%,var(--card,#fff));border:1px solid color-mix(in srgb,var(--brand,#6d28d9) 20%,transparent);border-radius:10px;padding:8px 12px;font-size:13.5px}
+.fr-bar{position:fixed;left:12px;right:84px;bottom:12px;z-index:40;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 12px 10px 16px;border-radius:14px;background:var(--card,#fff);border:1px solid var(--bd,#e5e7eb);box-shadow:0 10px 30px -10px rgba(0,0,0,.35)}
+.fr-bar[hidden]{display:none}
+.fr-bar span{font-size:14.5px}.fr-bar b{color:var(--brand,#6d28d9);font-size:17px}
+.fr-bar button{min-height:44px;padding:0 18px;border:0;border-radius:10px;background:var(--brand,#6d28d9);color:#fff;font:inherit;font-weight:800;cursor:pointer}
+@media (min-width:821px){.fr-bar{left:50%;right:auto;transform:translateX(-50%);width:min(520px,calc(100% - 200px))}}
