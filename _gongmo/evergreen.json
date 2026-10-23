@@ -14,9 +14,9 @@
    "k": "loan",
    "icon": "💳",
    "name": "대출·카드·보험·적금",
-   "n": 1659,
-   "c": 429,
-   "sites": 19,
+   "n": 1710,
+   "c": 613,
+   "sites": 20,
    "topsites": [
     "지식iN 경제",
     "kin_it",
@@ -24,13 +24,13 @@
     "kin_shop"
    ],
    "daily": [
-    163,
-    282,
-    310,
-    171,
-    191,
-    352,
-    190
+    166,
+    297,
+    319,
+    177,
+    194,
+    358,
+    199
    ],
    "kw": [
     [
@@ -72,21 +72,7 @@
      "보험금 분쟁"
     ]
    ],
-   "qn": 1394,
-   "ex": [
-    [
-     "SD카드의 데이터 유실방지방법",
-     "https://www.clien.net/service/board/kin/19277375?od=T31&po=0&category=0&groupCd="
-    ],
-    [
-     "무선 랜카드 추천해주세요!",
-     "https://www.clien.net/service/board/kin/19274465?od=T31&po=1&category=0&groupCd="
-    ],
-    [
-     "메타 뮤즈 가입 성공하신 분들 카드 인증",
-     "https://www.clien.net/service/board/kin/19277138?od=T31&po=0&category=0&groupCd="
-    ]
-   ]
+   "qn": 1436
   },
   {
    "k": "stock",
@@ -122,28 +108,70 @@
      "애널리스트·시장 정보"
     ]
    ],
-   "qn": 100,
-   "ex": [
+   "qn": 100
+  },
+  {
+   "k": "tax",
+   "icon": "🧾",
+   "name": "세금·소득·신용",
+   "n": 372,
+   "c": 321,
+   "sites": 19,
+   "topsites": [
+    "지식iN 경제",
+    "kin_shop",
+    "보배드림",
+    "디시인사이드"
+   ],
+   "daily": [
+    31,
+    73,
+    58,
+    30,
+    38,
+    78,
+    64
+   ],
+   "kw": [
     [
-     "공부를 하면 주식으로 돈을 벌 수 있는 것인지요...?",
-     "https://www.clien.net/service/board/kin/19275834?od=T31&po=1&category=0&groupCd="
+     "신용",
+     103
     ],
     [
-     "벤처기업 특례 '복수의결권' 도입과 복수의결권주식 공시 방법은?",
-     "https://gall.dcinside.com/mgallery/board/view/?id=startup&no=420&page=1"
+     "세금",
+     100
     ],
     [
-     "주식 외화증거금 마이너스",
-     "https://kin.naver.com/qna/detail.naver?d1id=4&dirId=40102&docId=495529533"
+     "사업자",
+     79
+    ],
+    [
+     "소득",
+     58
+    ],
+    [
+     "소득세",
+     54
     ]
-   ]
+   ],
+   "links": [
+    [
+     "/money/guide/business-tax-calendar/",
+     "사업자 신고·세금 달력"
+    ],
+    [
+     "/money/guide/credit-information-rights/",
+     "신용정보 권리"
+    ]
+   ],
+   "qn": 340
   },
   {
    "k": "house",
    "icon": "🏠",
    "name": "전세·월세·아파트",
-   "n": 714,
-   "c": 1549,
+   "n": 755,
+   "c": 1619,
    "sites": 19,
    "topsites": [
     "지식iN 경제",
@@ -152,13 +180,13 @@
     "82쿡"
    ],
    "daily": [
-    76,
-    111,
-    109,
-    81,
-    92,
-    138,
-    107
+    82,
+    116,
+    116,
+    87,
+    95,
+    148,
+    111
    ],
    "kw": [
     [
@@ -180,6 +208,10 @@
     [
      "월세",
      122
+    ],
+    [
+     "임대",
+     61
     ]
    ],
    "links": [
@@ -188,47 +220,37 @@
      "이사·주거 여정"
     ],
     [
+     "/money/guide/deposit-return-lease-renewal/",
+     "보증금 반환·갱신"
+    ],
+    [
      "/apply/youth-rent/",
      "청년 월세 지원 공고"
     ]
    ],
-   "qn": 587,
-   "ex": [
-    [
-     "오래된 단독주택 공사 어떻게 시작하면 될까요?",
-     "https://www.82cook.com/entiz/read.php?bn=16&num=4114516&page=2"
-    ],
-    [
-     "아파트 외벽 도색 공사 후 집안 곳곳에 심각한 누수가 발생했습니다.",
-     "https://www.clien.net/service/board/kin/19279778?od=T31&po=0&category=0&groupCd="
-    ],
-    [
-     "입당인사와 사무실 계약 관련 공인중개사 문제.... 어떻게 해야할지 조언 구합니다..",
-     "https://www.clien.net/service/board/cm_venture/18403144?od=T31&po=1&category=0&groupCd="
-    ]
-   ]
+   "qn": 621
   },
   {
    "k": "job",
    "icon": "🧑‍🍳",
-   "name": "알바·취업·청년",
-   "n": 812,
-   "c": 1804,
+   "name": "알바·취업·면접",
+   "n": 723,
+   "c": 1088,
    "sites": 20,
    "topsites": [
     "지식iN 경제",
     "루리웹",
-    "보배드림",
-    "네이트판"
+    "kin_life",
+    "보배드림"
    ],
    "daily": [
-    131,
-    134,
-    131,
-    98,
-    100,
-    145,
-    73
+    95,
+    123,
+    123,
+    89,
+    92,
+    137,
+    64
    ],
    "kw": [
     [
@@ -240,43 +262,89 @@
      249
     ],
     [
-     "회사",
-     195
-    ],
-    [
      "취업",
      126
+    ],
+    [
+     "면접",
+     110
     ]
    ],
    "links": [
     [
      "/money/guide/journey/parttime/",
      "알바 여정"
+    ],
+    [
+     "/money/guide/unemployment-job-search/",
+     "실업급여·구직"
     ]
    ],
-   "qn": 533,
-   "ex": [
+   "qn": 557
+  },
+  {
+   "k": "exam",
+   "icon": "📚",
+   "name": "시험·자격증·공부",
+   "n": 465,
+   "c": 1258,
+   "sites": 19,
+   "topsites": [
+    "지식iN 경제",
+    "루리웹",
+    "kin_it",
+    "kin_life"
+   ],
+   "daily": [
+    51,
+    79,
+    82,
+    64,
+    76,
+    74,
+    39
+   ],
+   "kw": [
     [
-     "서울에서 택시기사로 취업하려고 하는데 현실을 알고 싶습니다.",
-     "https://www.clien.net/service/board/kin/19277181?od=T31&po=0&category=0&groupCd="
+     "공무원",
+     106
     ],
     [
-     "(테블릿 추천) 회사 대시보드 용",
-     "https://www.clien.net/service/board/kin/19274523?od=T31&po=1&category=0&groupCd="
+     "시험",
+     100
     ],
     [
-     "(교육) 동대문구 청년 창업 레벨UP 프로그램",
-     "https://www.clien.net/service/board/cm_venture/19000582?od=T31&po=0&category=0&groupCd="
+     "대학",
+     93
+    ],
+    [
+     "학생",
+     81
+    ],
+    [
+     "자격증",
+     56
+    ],
+    [
+     "공부",
+     52
     ]
-   ]
+   ],
+   "links": [
+    [
+     "/money/guide/naeil-card/",
+     "내일배움카드"
+    ]
+   ],
+   "qn": 301
   },
   {
    "k": "ship",
    "icon": "📦",
-   "name": "택배·쇼핑",
-   "n": 1645,
-   "c": 185,
-   "sites": 18,
+   "name": "택배·쇼핑·중고거래",
+   "n": 1890,
+   "c": 552,
+   "sites": 20,
    "topsites": [
     "kin_life",
     "kin_shop",
@@ -284,13 +352,13 @@
     "지식iN 경제"
    ],
    "daily": [
-    190,
-    237,
-    315,
-    264,
-    220,
-    242,
-    177
+    231,
+    281,
+    352,
+    292,
+    253,
+    284,
+    197
    ],
    "kw": [
     [
@@ -324,28 +392,74 @@
      "생필품 단가 계산기"
     ]
    ],
-   "qn": 1178,
-   "ex": [
+   "qn": 1355
+  },
+  {
+   "k": "refund",
+   "icon": "🧾",
+   "name": "환불·해지·요금",
+   "n": 643,
+   "c": 406,
+   "sites": 20,
+   "topsites": [
+    "kin_it",
+    "지식iN 경제",
+    "kin_shop",
+    "kin_life"
+   ],
+   "daily": [
+    70,
+    99,
+    118,
+    90,
+    76,
+    122,
+    68
+   ],
+   "kw": [
     [
-     "컴퓨터 파워 구매하려는데 마이크로닉스 괜찮나요 ?",
-     "https://www.clien.net/service/board/kin/19276324?od=T31&po=1&category=0&groupCd="
+     "취소",
+     105
     ],
     [
-     "처음으로 조립pc를 구매해 볼까 생각이 들었습니다.",
-     "https://www.clien.net/service/board/kin/19275667?od=T31&po=1&category=0&groupCd="
+     "요금",
+     100
     ],
     [
-     "노트북 구매 문의",
-     "https://www.clien.net/service/board/kin/19279943?od=T31&po=0&category=0&groupCd="
+     "할인",
+     97
+    ],
+    [
+     "환불",
+     92
+    ],
+    [
+     "미납",
+     76
+    ],
+    [
+     "견적",
+     72
     ]
-   ]
+   ],
+   "links": [
+    [
+     "/money/guide/finance-withdrawal-rights/",
+     "청약철회"
+    ],
+    [
+     "/money/guide/mobile-micropayment-dispute/",
+     "소액결제 환불"
+    ]
+   ],
+   "qn": 518
   },
   {
    "k": "device",
    "icon": "📱",
    "name": "기기·앱 문제",
-   "n": 2559,
-   "c": 1023,
+   "n": 2761,
+   "c": 1099,
    "sites": 23,
    "topsites": [
     "kin_it",
@@ -354,13 +468,13 @@
     "루리웹"
    ],
    "daily": [
-    274,
-    408,
-    408,
-    382,
-    392,
-    464,
-    231
+    308,
+    445,
+    443,
+    404,
+    421,
+    490,
+    250
    ],
    "kw": [
     [
@@ -394,21 +508,7 @@
      "개발 지식"
     ]
    ],
-   "qn": 1867,
-   "ex": [
-    [
-     "컴퓨터 의자 같지 않은 컴퓨터의자 추천 부탁드립니다",
-     "https://www.clien.net/service/board/kin/19276109?od=T31&po=1&category=0&groupCd="
-    ],
-    [
-     "2010년 구입한 Atom 노트북을 동영상 감상용으로만 사용하려고 하는데",
-     "https://www.clien.net/service/board/kin/19279804?od=T31&po=0&category=0&groupCd="
-    ],
-    [
-     "해결) 몇년만에 vpn 재구축 중인데 reality 설정?",
-     "https://www.clien.net/service/board/kin/19278989?od=T31&po=0&category=0&groupCd="
-    ]
-   ]
+   "qn": 2018
   },
   {
    "k": "ai",
@@ -448,72 +548,166 @@
      "개발 지식"
     ]
    ],
-   "qn": 232,
-   "ex": [
-    [
-     "AI 구독 고민중입니다 (GPT / 클로드)",
-     "https://www.clien.net/service/board/kin/19276649?od=T31&po=0&category=0&groupCd="
-    ],
-    [
-     "ai 개발/운영환경 클라우드ai+로컬ai 묶는법 문의드립니다.",
-     "https://www.clien.net/service/board/kin/19278142?od=T31&po=0&category=0&groupCd="
-    ],
-    [
-     "RTX5090 윈도PC vs 맥스튜디오 울트라, ai개발/작업용으로 뭐가 더 우수한가요?",
-     "https://www.clien.net/service/board/kin/19277274?od=T31&po=0&category=0&groupCd="
-    ]
-   ]
+   "qn": 232
   },
   {
-   "k": "family",
-   "icon": "👪",
-   "name": "결혼·가족·연애",
-   "n": 1037,
-   "c": 6251,
-   "sites": 18,
+   "k": "car",
+   "icon": "🚗",
+   "name": "자동차·운전",
+   "n": 681,
+   "c": 747,
+   "sites": 19,
    "topsites": [
     "kin_life",
-    "루리웹",
-    "네이트판",
+    "지식iN 경제",
+    "kin_shop",
     "보배드림"
    ],
    "daily": [
-    218,
-    137,
-    139,
-    138,
-    150,
-    173,
-    82
+    101,
+    127,
+    109,
+    88,
+    82,
+    107,
+    67
    ],
    "kw": [
     [
-     "결혼",
-     256
+     "자동차",
+     237
     ],
     [
-     "남편",
-     164
+     "운전",
+     96
     ],
     [
-     "엄마",
-     149
+     "주차",
+     79
     ],
     [
-     "연애",
-     139
+     "하이브리드",
+     69
     ],
     [
-     "남친",
-     133
+     "중고차",
+     60
     ],
     [
-     "부모",
-     132
+     "오토바이",
+     58
     ]
    ],
    "links": [],
-   "qn": 326
+   "qn": 500
+  },
+  {
+   "k": "home",
+   "icon": "🧹",
+   "name": "이사·벌레·냄새·정리",
+   "n": 373,
+   "c": 472,
+   "sites": 19,
+   "topsites": [
+    "kin_life",
+    "kin_shop",
+    "루리웹",
+    "지식iN 경제"
+   ],
+   "daily": [
+    40,
+    64,
+    59,
+    49,
+    52,
+    61,
+    48
+   ],
+   "kw": [
+    [
+     "벌레",
+     99
+    ],
+    [
+     "냄새",
+     62
+    ],
+    [
+     "이사",
+     60
+    ],
+    [
+     "정리",
+     54
+    ],
+    [
+     "보관",
+     53
+    ],
+    [
+     "제거",
+     52
+    ]
+   ],
+   "links": [
+    [
+     "/money/guide/moving-estimate-checklist/",
+     "이사 견적 체크리스트"
+    ]
+   ],
+   "qn": 278
+  },
+  {
+   "k": "food",
+   "icon": "🍳",
+   "name": "음식·커피·배달",
+   "n": 378,
+   "c": 805,
+   "sites": 21,
+   "topsites": [
+    "루리웹",
+    "kin_life",
+    "지식iN 경제",
+    "kin_shop"
+   ],
+   "daily": [
+    64,
+    43,
+    55,
+    72,
+    44,
+    64,
+    36
+   ],
+   "kw": [
+    [
+     "배달",
+     94
+    ],
+    [
+     "편의점",
+     89
+    ],
+    [
+     "콜라",
+     76
+    ],
+    [
+     "커피",
+     71
+    ],
+    [
+     "음식",
+     62
+    ]
+   ],
+   "links": [
+    [
+     "/fridge/",
+     "냉장고 레시피"
+    ]
+   ],
+   "qn": 173
   },
   {
    "k": "pet",
@@ -547,48 +741,37 @@
      161
     ]
    ],
-   "links": [],
+   "links": [
+    [
+     "/money/guide/pet-dog-monthly-cost/",
+     "강아지 월 양육비"
+    ]
+   ],
    "qn": 262
   },
   {
-   "k": "world",
-   "icon": "🌏",
-   "name": "일본·미국·중국·여행",
-   "n": 1301,
-   "c": 6641,
-   "sites": 22,
+   "k": "travel",
+   "icon": "✈️",
+   "name": "여행·해외",
+   "n": 313,
+   "c": 1260,
+   "sites": 20,
    "topsites": [
     "루리웹",
-    "보배드림",
-    "디시인사이드",
-    "MLB파크"
+    "kin_shop",
+    "지식iN 경제",
+    "kin_life"
    ],
    "daily": [
-    228,
-    154,
-    169,
-    135,
-    212,
-    241,
-    162
+    56,
+    41,
+    42,
+    38,
+    44,
+    50,
+    42
    ],
    "kw": [
-    [
-     "일본",
-     461
-    ],
-    [
-     "프랑스",
-     249
-    ],
-    [
-     "미국",
-     208
-    ],
-    [
-     "중국",
-     172
-    ],
     [
      "여행",
      139
@@ -596,17 +779,21 @@
     [
      "해외",
      124
+    ],
+    [
+     "축제",
+     56
     ]
    ],
    "links": [],
-   "qn": 239
+   "qn": 114
   },
   {
    "k": "fun",
    "icon": "🎮",
    "name": "게임·만화·영화",
-   "n": 982,
-   "c": 1561,
+   "n": 925,
+   "c": 1861,
    "sites": 20,
    "topsites": [
     "루리웹",
@@ -615,13 +802,13 @@
     "디시인사이드"
    ],
    "daily": [
-    136,
-    143,
-    150,
-    155,
-    150,
-    163,
-    85
+    134,
+    137,
+    127,
+    145,
+    133,
+    162,
+    87
    ],
    "kw": [
     [
@@ -637,8 +824,12 @@
      205
     ],
     [
-     "버튜버",
-     185
+     "드라마",
+     86
+    ],
+    [
+     "웹툰",
+     54
     ]
    ],
    "links": [
@@ -647,7 +838,7 @@
      "게임"
     ]
    ],
-   "qn": 130
+   "qn": 173
   }
  ]
 }

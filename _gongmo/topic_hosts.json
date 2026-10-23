@@ -1,0 +1,95 @@
+{
+ "_설명": "런처 타일 주소. host 에 서브도메인(예: https://recipe.sungprofile.cloud)을 넣으면 그쪽으로 넘어가고, 비워 두면 path 로 간다. DNS·저장소가 준비된 주제만 host 를 채울 것.",
+ "topics": [
+  {
+   "key": "recipe",
+   "icon": "🍳",
+   "name": "레시피",
+   "path": "/fridge/",
+   "host": "",
+   "color": "#ea580c",
+   "bg": "#fff1e6"
+  },
+  {
+   "key": "watch",
+   "icon": "🎯",
+   "name": "웹툰·애니",
+   "path": "/watch/",
+   "host": "",
+   "color": "#9333ea",
+   "bg": "#f5ecff"
+  },
+  {
+   "key": "policy",
+   "icon": "📋",
+   "name": "지원금·청약",
+   "path": "/apply/",
+   "host": "",
+   "color": "#0f766e",
+   "bg": "#e8f7f4"
+  },
+  {
+   "key": "contest",
+   "icon": "🏆",
+   "name": "공모전",
+   "path": "/contest/",
+   "host": "",
+   "color": "#ca8a04",
+   "bg": "#fff8de"
+  },
+  {
+   "key": "event",
+   "icon": "🎁",
+   "name": "경품·이벤트",
+   "path": "/event/",
+   "host": "",
+   "color": "#db2777",
+   "bg": "#ffe9f2"
+  },
+  {
+   "key": "issue",
+   "icon": "🕵️",
+   "name": "이슈·뉴스",
+   "path": "/news/",
+   "host": "",
+   "color": "#2563eb",
+   "bg": "#e8f0ff"
+  },
+  {
+   "key": "money",
+   "icon": "🧮",
+   "name": "머니·계산기",
+   "path": "/money/",
+   "host": "",
+   "color": "#7c3aed",
+   "bg": "#f4efff"
+  },
+  {
+   "key": "game",
+   "icon": "🎮",
+   "name": "무료 게임",
+   "path": "/game/",
+   "host": "",
+   "color": "#dc2626",
+   "bg": "#ffeaea"
+  },
+  {
+   "key": "learn",
+   "icon": "🎓",
+   "name": "AI·개발",
+   "path": "/ailog/",
+   "host": "",
+   "color": "#4338ca",
+   "bg": "#eef0ff"
+  },
+  {
+   "key": "plaza",
+   "icon": "🗣️",
+   "name": "광장",
+   "path": "/plaza/",
+   "host": "",
+   "color": "#0891b2",
+   "bg": "#e5f7fb"
+  }
+ ]
+}
