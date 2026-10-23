@@ -1510,6 +1510,7 @@ def build():
 <a class="hx-f" href="/money/experts/" style="--fc:#ca8a04;--fbg:#fff8de"><i>📊</i><b>전문가 말 vs 시세</b><span>목표가가 얼마나 맞았나</span></a>
 <a class="hx-f" href="/analyst/" style="--fc:#0f766e;--fbg:#e8f7f4"><i>📈</i><b>애널리스트 종합</b><span>증권사 의견을 숫자로만 요약</span></a>
 <a class="hx-f" href="/money/daily/" style="--fc:#0369a1;--fbg:#e0f2fe"><i>🛒</i><b>생필품 단가 계산기</b><span>휴지·세제·생수·쌀·커피를 단가로 비교</span></a>
+<a class="hx-f" href="/money/cheapest/" style="--fc:#047857;--fbg:#d1fae5"><i>🔎</i><b>가장 싼 곳 찾기</b><span>쇼핑몰·당근·번개장터 가격순을 한 번에</span></a>
 <a class="hx-f" href="/money/guide/recommended-resignation-benefits/" style="--fc:#9a3412;--fbg:#ffedd5"><i>📄</i><b>권고사직 받았을 때</b><span>실업급여·해고예고 조문으로 확인</span></a></div>
 <div class="hx-links"><a href="/money/guide/journey/resign/">퇴사했을 때</a><a href="/money/guide/journey/housing/">집 구할 때</a><a href="/money/guide/journey/parttime/">알바할 때</a></div></section>
 
@@ -1581,7 +1582,7 @@ def build():
     fr_urls = list(fr_urls) + watch_pages()
     app_page()
     news_page()
-    extra_urls = talk_pages() + trend_pages() + game_pages(live) + game_extra_pages() + kin_guides() + class_pages() + essay_pages() + issue_pages() + daily_pages() + evergreen_pages() + kin_answer_pages() + mag_pages(live, aps) + analyst_pages() + satire_pages() + kw_pages() + money_pages() + apply_rec_page() + tool_pages() + hot_pages()
+    extra_urls = talk_pages() + trend_pages() + game_pages(live) + game_extra_pages() + kin_guides() + class_pages() + essay_pages() + issue_pages() + daily_pages() + cheapest_page() + evergreen_pages() + kin_answer_pages() + mag_pages(live, aps) + analyst_pages() + satire_pages() + kw_pages() + money_pages() + apply_rec_page() + tool_pages() + hot_pages()
     import widget
     extra_urls += widget.build(ROOT, live, aps, hot_live()[0], page, say, COMM_API, TODAY)  # 퍼가기 위젯 (2026-10-18 연구 세션 요청)
     extra_urls += region_pages(aps) + contest_hubs(live) + week_hub(live) + cross_pages(aps) + apply_hubs(aps)
@@ -2387,7 +2388,7 @@ def daily_pages():
         cards += f'<li><a href="{p}"><b>{c["icon"]} {E(c["name"])}</b><span>{E(c["h1"][:40])}</span></a></li>'
     hub = (f'<p class="bc"><a href="/">홈</a> › 생필품 단가 계산</p>{ftc}<h1>생필품, 총액 말고 단가로 비교하세요 — 휴지·세제·생수·쌀 단가 계산기</h1>'
            '<div class="cat-st"><b>결론</b><br>묶음 수와 용량이 제각각이라 총액만 보면 비교가 안 돼요. 결제 총액, 개수, 용량을 넣으면 개당·100ml당·1m당 단가를 계산해 줘요. 줍줍은 쿠팡 가격을 모으지 않고, 입력한 값으로만 계산해요.</div>'
-           f'<ul class="gm-g">{cards}</ul><p class="dl-h">쿠팡 가격은 수시로 바뀌어요. 줍줍은 「최저가」를 단정하지 않고, 최신 가격은 쿠팡 화면에서 확인하세요.</p>' + css + GAME_CSS)
+           f'<p><a class="lab-cta" href="/money/cheapest/"><b>🔎 가장 싼 곳 찾기 — 쇼핑몰·당근·번개장터 가격순 한 번에</b></a></p><ul class="gm-g">{cards}</ul><p class="dl-h">쿠팡 가격은 수시로 바뀌어요. 줍줍은 「최저가」를 단정하지 않고, 최신 가격은 쿠팡 화면에서 확인하세요.</p>' + css + GAME_CSS)
     page('/money/daily/', '생필품 단가 계산기 — 휴지·물티슈·세제·생수·쌀 단가 비교', '결제 총액·개수·용량을 넣으면 개당·100ml당·1m당 단가를 계산해요. 휴지, 물티슈, 세탁세제, 샴푸, 생수, 라면, 쌀 비교.', hub, [('루리의 줍줍', '/'), ('생필품 단가 계산', '/money/daily/')])
     return urls + ['/money/daily/']
 
@@ -2427,6 +2428,47 @@ def evergreen_pages():
             '<style>.ev-c{border:1px solid var(--bd,#e5e7eb);border-radius:12px;padding:12px 14px;margin:12px 0;background:var(--card,#fff)}.ev-c h2{margin:0 0 4px}.ev-m{font-size:14px;margin:4px 0}.ev-sv{color:var(--pri,#b45309);display:block;margin:6px 0 2px;max-width:100%}.ev-d{font-size:12px;color:var(--mu,#6b7280);margin:0 0 6px}.ev-k{display:inline-block;padding:2px 8px;margin:2px 3px 2px 0;border-radius:999px;background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;font-size:12.5px}.ev-x{margin:8px 0 2px;font-size:14px}</style>' + GAME_CSS)
     page('/evergreen/', '커뮤니티에서 7일 내내 이어진 관심사 — 대출·택배·전월세·알바·기기 오류', '커뮤니티 15곳과 지식iN 글 4만 건에서 7일 내내 계속 올라온 주제를 묶어 날짜별 글 수와 줍줍 가이드로 연결했어요.', body, [('루리의 줍줍', '/'), ('오래 가는 관심사', '/evergreen/')])
     return ['/evergreen/']
+
+
+
+CHEAP_ITEMS = ['화장지', '물티슈', '세탁세제', '주방세제', '샴푸', '생수', '쌀', '라면', '계란', '우유', '기저귀', '두부', '식용유', '다이소 수납함', '전기밥솥', '에어프라이어']
+CHEAP_FAQ = [
+    ('가장 싼 곳을 줍줍이 알려 주나요?', '줍줍은 쇼핑몰 가격을 모으지 않고, 각 쇼핑몰·중고 앱의 가격 낮은 순 검색 화면으로 바로 보내 줘요. 가격과 재고는 수시로 바뀌어서 「최저가」를 단정하지 않아요.'),
+    ('쿠팡·당근 가격을 왜 직접 보여주지 않나요?', '각 서비스의 이용약관은 자동 수집을 제한해요. 그래서 줍줍은 가격을 긁어 오지 않고 검색 화면 링크와 단가 계산기만 제공해요.'),
+    ('같은 상품인지 어떻게 비교하나요?', '용량·수량·규격이 다르면 총액 비교가 소용없어요. 단가 계산기에 총액과 수량을 넣어 개당·100ml당 가격으로 비교하세요.'),
+    ('중고는 어떻게 확인하나요?', '당근·번개장터·중고나라 검색 화면에서 가격 낮은 순으로 보고, 제품 상태와 직거래·택배 조건, 사기 신고 이력을 직접 확인하세요.'),
+]
+
+
+def cheapest_page():
+    """/money/cheapest/ 가장 싼 곳 찾기 (2026-10-23 사용자 지시). 가격은 수집하지 않고 각 플랫폼의 가격순 검색 화면으로 연결 + 단가 계산기 + 공공 참가격 안내."""
+    faq, fld = _faq(CHEAP_FAQ)
+    chips = ''.join(f'<button type="button" class="ch-c" data-q="{E(x)}">{E(x)}</button>' for x in CHEAP_ITEMS)
+    css = ('<style>.ch-box{border:1px solid var(--bd,#e5e7eb);border-radius:12px;padding:12px 14px;margin:12px 0;background:var(--card,#fff)}.ch-box input{padding:9px 10px;border:1px solid var(--bd,#d1d5db);border-radius:10px;font-size:16px;width:100%;max-width:420px;box-sizing:border-box}'
+           '.ch-c{margin:4px 4px 0 0;padding:5px 11px;border:1px solid #fed7aa;background:#fff7ed;color:#9a3412;border-radius:999px;font-size:13.5px;cursor:pointer}.ch-go{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px;margin:12px 0}'
+           '.ch-go a{display:block;padding:10px 12px;border:1px solid var(--bd,#e5e7eb);border-radius:10px;text-decoration:none;color:var(--tx,#111);font-weight:700;font-size:14.5px;background:var(--card,#fff)}.ch-go a small{display:block;font-weight:400;color:var(--mu,#6b7280);font-size:12px;margin-top:2px}.dl-h{font-size:12.5px;color:var(--mu,#6b7280)}</style>')
+    js = ("<script>(function(){var q=document.getElementById('chq'),g=document.getElementById('chgo');"
+          "var S=[['쇼핑몰 가격순','네이버 쇼핑 가격 낮은 순','https://search.shopping.naver.com/search/all?sort=price_asc&query='],"
+          "['다나와 최저가','가격비교 검색','https://search.danawa.com/dsearch.php?query='],"
+          "['쿠팡 낮은 가격순','쿠팡 검색(가격 낮은 순)','https://www.coupang.com/np/search?sorter=salePriceAsc&q='],"
+          "['당근','내 동네 중고·나눔','https://www.daangn.com/kr/buy-sell/?search='],"
+          "['번개장터','중고 가격 낮은 순','https://m.bunjang.co.kr/search/products?order=price_asc&q='],"
+          "['중고나라','중고 검색','https://web.joongna.com/search/']];"
+          "function draw(){var v=q.value.trim();if(!v){g.innerHTML='<p class=\"dl-h\">찾을 물건 이름을 입력하거나 아래 버튼을 눌러 보세요.</p>';return}"
+          "g.innerHTML=S.map(function(s){return '<a href=\"'+s[2]+encodeURIComponent(v)+'\" target=\"_blank\" rel=\"noopener nofollow\">'+s[0]+'<small>'+s[1]+'</small></a>'}).join('')}"
+          "q.addEventListener('input',draw);document.querySelectorAll('.ch-c').forEach(function(b){b.addEventListener('click',function(){q.value=b.getAttribute('data-q');draw()})});draw()})();</script>")
+    body = ('<p class="bc"><a href="/">홈</a> › <a href="/money/daily/">생필품 단가 계산</a> › 가장 싼 곳 찾기</p>'
+            '<h1>생필품·중고 가장 싼 곳 찾기 — 쇼핑몰·당근·번개장터 가격순 한 번에</h1>'
+            '<div class="cat-st"><b>결론</b><br>물건 이름을 넣으면 쇼핑몰과 중고 앱의 가격 낮은 순 검색 화면을 한 번에 열 수 있어요. 줍줍은 가격을 수집하지 않아서 항상 각 서비스의 최신 화면이 기준이고, 「최저가」를 단정하지 않아요. 총액이 아니라 단가로 비교하는 계산기도 함께 두었어요.</div>'
+            '<div class="ch-box"><label for="chq"><b>🔎 찾을 물건</b></label><br><input id="chq" type="search" placeholder="예: 화장지 30롤, 계란 30구, 세탁세제" autocomplete="off"><div>' + chips + '</div><div class="ch-go" id="chgo"></div></div>'
+            '<h2>비교하기 전에</h2><ul class="gm-l"><li>용량·수량이 다른 상품은 <a href="/money/daily/">단가 계산기</a>로 개당·100ml당 가격을 먼저 비교하세요.</li>'
+            '<li>배송비·무료배송 조건·쿠폰·카드 할인은 가격 낮은 순 화면에 반영되지 않을 수 있어요.</li>'
+            '<li>중고는 상품 상태, 직거래·택배 조건, 판매자 후기와 사기 신고 이력을 직접 확인하세요.</li></ul>'
+            '<h2>마트·편의점 가격은 공공 자료로</h2><p>한국소비자원 <a href="https://www.price.go.kr/tprice/index.do" target="_blank" rel="noopener">참가격</a>은 대형마트·슈퍼마켓·편의점 등 업태별 생필품 판매가를 격주로 조사해 공개해요. 줍줍은 이 자료를 옮겨 오지 않고 원문 링크로만 안내해요(조사 시점의 가격이라 실제 판매가와 다를 수 있다고 사이트가 밝히고 있어요).</p>'
+            '<p class="dl-h">쿠팡·당근 등 각 서비스의 이용약관은 자동 수집을 제한하므로 줍줍은 가격을 수집하지 않아요. 외부 링크는 새 창으로 열리고, 가격과 재고는 수시로 바뀌어요.</p>'
+            '<h2>자주 묻는 질문</h2>' + faq + css + GAME_CSS + js + '<script type="application/ld+json">%s</script>' % json.dumps(fld, ensure_ascii=False).replace('</', '<\\/'))
+    page('/money/cheapest/', '생필품·중고 가장 싼 곳 찾기 — 쇼핑몰·당근·번개장터 가격 낮은 순 한 번에', '물건 이름을 넣으면 네이버쇼핑·다나와·쿠팡·당근·번개장터·중고나라의 가격 낮은 순 검색 화면을 한 번에 열어요. 단가 계산기와 참가격 안내 포함.', body, [('루리의 줍줍', '/'), ('생필품 단가 계산', '/money/daily/'), ('가장 싼 곳 찾기', '/money/cheapest/')])
+    return ['/money/cheapest/']
 
 
 KIN_A = os.path.join(HERE, 'kin_answers.json')
