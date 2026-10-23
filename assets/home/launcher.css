@@ -1,0 +1,9 @@
+.lc{padding:18px 0 6px}
+.lc-h{margin:0 0 10px;font-size:15px;font-weight:700;opacity:.85}
+.lc-g{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+@media (min-width:640px){.lc-g{grid-template-columns:repeat(5,1fr)}}
+.lc-t{display:flex;flex-direction:column;gap:2px;min-height:92px;padding:12px 12px 10px;border-radius:16px;background:var(--fbg);color:var(--fc);text-decoration:none;border:1px solid color-mix(in srgb,var(--fc) 22%,transparent);transition:transform .15s,box-shadow .15s}
+.lc-t:hover,.lc-t:focus-visible{transform:translateY(-2px);box-shadow:0 6px 16px color-mix(in srgb,var(--fc) 25%,transparent)}
+.lc-t i{font-style:normal;font-size:26px;line-height:1}
+.lc-t b{font-size:15px;margin-top:6px;color:inherit}
+.lc-t small{font-size:12px;opacity:.8;color:inherit}

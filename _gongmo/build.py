@@ -1444,6 +1444,22 @@ def build():
             out += f'<div class="hx-wh"><b>{nm}</b></div><ul class="hx-row hx-wrow">{cards}</ul>'
         return out
     hx_watch = _hx_watch()
+    def _launcher():
+        """홈 맨 위 주제 런처(2026-10-23 사용자 「런처에서 통합적으로·주제별로 다른 사이트로」). 주소는 topic_hosts.json 한 곳 — host 가 있으면 그 사이트로."""
+        f = os.path.join(HERE, 'topic_hosts.json')
+        if not os.path.exists(f): return ''
+        nw = 0
+        for k_ in ('webtoon', 'anime'):
+            fw = os.path.join(HERE, 'watch', k_ + '.json')
+            if os.path.exists(fw): nw += len(json.load(open(fw, encoding='utf-8')).get('items', {}))
+        stat = {'recipe': f'{NR_HOME}개', 'watch': f'{nw:,}편', 'policy': f'{len(aps)}건', 'contest': f'{len(live)}건 진행', 'event': f'{len(events):,}건', 'issue': '매시간', 'money': '계산기·가이드', 'game': '이번 주 무료', 'learn': '개발 지식', 'plaza': '이야기'}
+        out = ''
+        for t in json.load(open(f, encoding='utf-8'))['topics']:
+            url = (t.get('host') or '').rstrip('/') + t['path'] if t.get('host') else t['path']
+            ext = ' rel="noopener"' if t.get('host') else ''
+            out += f'<a class="lc-t" href="{E(url)}"{ext} style="--fc:{t["color"]};--fbg:{t["bg"]}"><i>{t["icon"]}</i><b>{E(t["name"])}</b><small>{E(stat.get(t["key"], ""))}</small></a>'
+        return f'<section class="lc" aria-label="주제 런처"><div class="hx-w"><p class="lc-h">무엇을 찾으세요?</p><div class="lc-g">{out}</div></div></section><link rel="stylesheet" href="/assets/home/launcher.css?v=1">'
+    hx_launch = _launcher()
     hx_nav = ''.join(f'<a href="#{k}">{ic} {n}</a>' for k, ic, n in _nav)
     home = f'''<section class="hx-hero"><div class="hx-w hx-hero-in">
 <div class="hx-copy"><p class="hx-eyebrow"><i></i>매시간 업데이트 · 공식 출처 확인</p>
@@ -1456,6 +1472,7 @@ def build():
 <img class="hx-ruri" src="/assets/ruri/o_present.webp" width="300" height="415" alt="루리" fetchpriority="high">
 <div class="hx-card hx-board"><div class="bd-h"><b>⏰ 오늘 마감 한눈에</b><small>마감 임박순</small></div><ul>{hx_board or '<li class="empty">지금은 마감 임박 항목이 없어요.</li>'}</ul><a class="bd-more" href="/contest/week/">이번 주 마감 전체 보기 →</a></div></div>
 </div></section>
+{hx_launch}
 <nav class="hx-nav" aria-label="주제로 이동"><div class="hx-w">{hx_nav}</div></nav>
 <div class="hx-w">
 
@@ -2391,7 +2408,7 @@ def evergreen_pages():
             + cards +
             '<h2>어떻게 골랐나요?</h2><ul class="gm-l"><li>수집한 글의 키워드 중 <b>7일 모두 등장</b>하고 <b>4곳 이상</b>의 사이트에서 나온 말을 주제별로 묶었어요.</li>'
             '<li>표본은 7일치이고 지식iN 질문 비중이 커서, 「장기」라기보다 「일주일 내내 이어진」 주제예요. 기간이 쌓이면 다시 계산해요.</li>'
-            '<li>글 수는 키워드가 잡힌 글의 수이고 실제 관심의 크기를 단정하지 않아요. 예시 질문은 원문 링크로만 걸었어요.</li></ul>'
+            '<li>글 수는 키워드가 잡힌 글의 수라서 다른 뜻의 글이 섞일 수 있고, 실제 관심의 크기를 단정하지 않아요.</li><li>정치인·정당, 성별·세대·국가 갈등처럼 의견이 갈리는 주제는 일부러 뺐어요. 대출·세금·전월세·택배·기기 오류처럼 정보로 답할 수 있는 주제만 골랐어요.</li></ul>'
             '<style>.ev-c{border:1px solid var(--bd,#e5e7eb);border-radius:12px;padding:12px 14px;margin:12px 0;background:var(--card,#fff)}.ev-c h2{margin:0 0 4px}.ev-m{font-size:14px;margin:4px 0}.ev-sv{color:var(--pri,#b45309);display:block;margin:6px 0 2px;max-width:100%}.ev-d{font-size:12px;color:var(--mu,#6b7280);margin:0 0 6px}.ev-k{display:inline-block;padding:2px 8px;margin:2px 3px 2px 0;border-radius:999px;background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;font-size:12.5px}.ev-x{margin:8px 0 2px;font-size:14px}</style>' + GAME_CSS)
     page('/evergreen/', '커뮤니티에서 7일 내내 이어진 관심사 — 대출·택배·전월세·알바·기기 오류', '커뮤니티 15곳과 지식iN 글 4만 건에서 7일 내내 계속 올라온 주제를 묶어 날짜별 글 수와 줍줍 가이드로 연결했어요.', body, [('루리의 줍줍', '/'), ('오래 가는 관심사', '/evergreen/')])
     return ['/evergreen/']
