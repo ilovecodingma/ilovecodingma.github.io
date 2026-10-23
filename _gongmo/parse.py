@@ -323,6 +323,8 @@ def main():
             link = x['url']
         if src == 'all-con' or any(a in up.urlparse(link).netloc for a in ('all-con',)):
             link = x['url']
+        if x.get('link_override'):   # 2026-10-23 공식 페이지를 직접 열어 접수기간까지 확인한 주소(manual.json). 수집처 주소를 공식이라 표기하지 않기 위함
+            link = x['link_override']
         d = {
             'id': x['id'], 'title': title[:90], 'org': org, 'start': s.isoformat() if s else '',
             'end': e.isoformat(), 'prize': prize, 'pv': pv, 'elig': elig,

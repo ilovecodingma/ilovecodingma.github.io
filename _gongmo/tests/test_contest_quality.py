@@ -148,5 +148,18 @@ class ManualOverrides(unittest.TestCase):
                 datetime.date.fromisoformat(v['end_override'])
 
 
+class LinkOverride(unittest.TestCase):
+    def test_overrides_are_https_and_not_aggregators(self):
+        import json
+        m = json.load(open(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'manual.json'), encoding='utf-8'))
+        n = 0
+        for k, v in m.items():
+            if not k.startswith('_') and 'link_override' in v:
+                n += 1
+                self.assertTrue(v['link_override'].startswith(('http://', 'https://')), k)
+                self.assertFalse(Q.is_aggregator(v['link_override']), k)
+        self.assertGreater(n, 10)
+
+
 if __name__ == '__main__':
     unittest.main(verbosity=2)
