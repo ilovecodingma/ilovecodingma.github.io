@@ -860,14 +860,21 @@ def ver_block(c):
 
 
 def _ai_short(v, NEED):
-    """요약 칸용 AI 조건 한 줄. 공식 원문 확인값은 명시 의무 여부만, 수집 데이터 기준값은 그 출처를 붙여 보여 준다."""
-    if '공식 원문 확인' in v and '명시' in v:
-        return '허용(활용 시 지원서에 명시 필수 — 공식 공고 확인)'
+    """요약 칸용 AI 조건 한 줄(2026-10-23). 「공고에 명시 없음」과 「미확인」을 구분하고, 길면 첫 문장을 낱말 경계에서 줄이되 줄였다는 표시(…)와 표 참고를 붙인다."""
+    base = re.split(r'\s*\(공식 원문', v)[0].strip()
+    if base.startswith('공고문에 명시 없음'):
+        return '공고에 명시 없음(전문 확인)'
+    if '공식 원문 확인' in v:
+        if re.search(r'명시해야|명시 필수|반드시 명시', base):
+            return '허용(활용 시 지원서에 명시 필수 — 공식 공고 확인)'
+        first = re.split(r'(?<=[다요함음])[.]\s|[.]\s', base)[0].strip()
+        if len(first) <= 40:
+            return first
+        cut = first[:40]
+        cut = cut[:cut.rfind(' ')] if ' ' in cut[20:] else cut
+        return cut.rstrip(' ,·') + '… (상세는 표 참고)'
     if '수집 데이터 기준' in v:
         return re.split(r'\s*\(', v)[0].strip() + '(수집 데이터 기준)'
-    if '공식 원문 확인' in v:
-        base = re.split(r'\s*\(공식 원문', v)[0].strip()
-        return SH.clip(base, 40) or '조건 있음 — 아래 표 참고'
     return re.split(r'\s*[—(]', v)[0].strip() or NEED
 
 
