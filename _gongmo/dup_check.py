@@ -31,6 +31,66 @@ PLACE = re.compile(r'([가-힣]{2,4}?)(?:특별자치도|특별자치시|특별�
 def _places(t):
     return {m.group(1) for m in PLACE.finditer(re.sub(r'\[[^\]]*\]', ' ', t)) if m.group(1) not in ('공모', '도시', '시민', '군민', '구민', '도민', '지구', '연구', '청소', '부산대')}
 
+GENERIC = re.compile(r'공모전|공모|콘테스트|경연|대회|영상|사진|숏폼|아이디어|디자인|캐릭터|포스터|슬로건|네이밍|전국|대국민|국제|함께하는|개최|모집|주최|주관|한국|대한민국')
+
+
+def _core(t):
+    """일반어·괄호·연도·회차를 걷어 낸 핵심 이름(고유명사 위주)."""
+    t = re.sub(r'\[[^\]]*\]|\([^)]*\)|20\d\d년?|제?\d+회', '', t)
+    t = GENERIC.sub('', t)
+    return re.sub(r'[^0-9A-Za-z가-힣]', '', t).lower()
+
+
+def _lcs(a, b):
+    """가장 긴 공통 부분 문자열 길이."""
+    best, prev = 0, [0] * (len(b) + 1)
+    for i in range(1, len(a) + 1):
+        cur = [0] * (len(b) + 1)
+        for j in range(1, len(b) + 1):
+            if a[i - 1] == b[j - 1]:
+                cur[j] = prev[j - 1] + 1
+                best = max(best, cur[j])
+        prev = cur
+    return best
+
+
+def _org_compat(a, b):
+    """주최가 비어 있거나 한쪽이 다른 쪽을 포함하면 같은 주최로 본다(공동 주최 표기 차이 허용)."""
+    x, y = re.sub(r'\s', '', a or ''), re.sub(r'\s', '', b or '')
+    return (not x) or (not y) or x in y or y in x or bool(set(re.split(r'[/,·]', a or '')) & set(re.split(r'[/,·]', b or '')) - {''})
+
+
+def _latin_tokens(t):
+    return {w.lower() for w in re.findall(r'[A-Za-z]{3,}', re.sub(r'\[[^\]]*\]', ' ', t))} - {'the', 'and', 'for', 'contest', 'award', 'awards', 'korea', 'seoul', 'photo', 'video', 'year', 'with'}
+
+
+def same_event_by_core(a, b, min_len=5):
+    """높은 확신 신호만 자동 합침(서로 다른 부문을 잘못 통합하지 않기 위해 좁게):
+    마감일이 같고 주최가 호환되며, ① 일반어를 뺀 핵심 이름이 한쪽이 다른 쪽에 통째로 들어 있거나(짧은 쪽 min_len 이상)
+    ② 제목에 같은 영문 고유어(KOBC, LAW REVIEW 같은 약어)가 있는 경우.
+    부문이 다른 같은 주최 공모전(탄소중립 미술 ≠ 탄소중립 숏폼)은 핵심 이름이 서로 들어 있지 않아 걸리지 않는다. 나머지는 candidates() 로 사람 검토."""
+    if a['end'] != b['end'] or not _org_compat(a.get('org'), b.get('org')):
+        return False
+    ea, eb = re.search(r'제\s?(\d+)\s?회', a['title']), re.search(r'제\s?(\d+)\s?회', b['title'])
+    if ea and eb and ea.group(1) != eb.group(1):
+        return False   # 회차가 다르면 다른 공모전(같은 대회의 다른 회차)
+    ca, cb = _core(a['title']), _core(b['title'])
+    if min(len(ca), len(cb)) >= min_len and (ca in cb or cb in ca):
+        return True
+    return bool(_latin_tokens(a['title']) & _latin_tokens(b['title']))
+
+
+def candidates(items):
+    """자동 합침은 아니지만 사람이 확인할 가치가 있는 쌍: 마감일 같음 + 주최 호환 + 핵심 이름 5글자 이상 겹침."""
+    out, L = [], sorted(items, key=lambda c: c['end'])
+    for i, a in enumerate(L):
+        for b in L[i + 1:]:
+            if b['end'] != a['end']:
+                break
+            if _org_compat(a.get('org'), b.get('org')) and _lcs(_core(a['title']), _core(b['title'])) >= 5:
+                out.append((a['id'], b['id']))
+    return out
+
 
 AGG = re.compile(r'contestkorea|wevity|thinkyou|all-con|linkareer|campuspick|detizen|allforyoung')
 
@@ -55,6 +115,8 @@ def dups(items):
             na, nb = re.sub(r'[^0-9A-Za-z가-힣]', '', re.sub(r'총상금[^｜|]*[｜|]|\[[^\]]*\]', '', a['title'])), re.sub(r'[^0-9A-Za-z가-힣]', '', re.sub(r'총상금[^｜|]*[｜|]|\[[^\]]*\]', '', b['title']))
             if a['end'] == b['end'] and min(len(na), len(nb)) >= 10 and (na in nb or nb in na):
                 pairs.append((a, b, '제목 포함 · 마감일 같음')); continue
+            if same_event_by_core(a, b):
+                pairs.append((a, b, '핵심 이름 겹침 · 마감일 같음 · 주최 호환')); continue
             if (j >= 0.72 and a['end'] == b['end']) or (j >= 0.6 and a.get('org') and a.get('org') == b.get('org')):
                 pairs.append((a, b, f'제목 유사도 {j:.2f}' + (' · 마감일 같음' if a['end'] == b['end'] else ' · 같은 주최')))
     for a, b, w in pairs:

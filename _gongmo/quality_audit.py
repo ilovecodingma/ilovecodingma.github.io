@@ -57,7 +57,7 @@ def main():
     for r in recs:
         uniq_lines = [l for l in r['lines'] if freq[re.sub(r'[\d,.]+', '#', l)] < 5]
         own = sum(len(l.replace(' ', '')) for l in uniq_lines); text = ' '.join(uniq_lines)
-        ctrl = len([t for t in re.findall(r'<(input|select|textarea)([^>]*)>', r['mh']) if 'type="hidden"' not in t[1] and 'type=hidden' not in t[1] and 'type="submit"' not in t[1]])   # 실제 입력 요소만(찜·공유 버튼은 도구로 세지 않는다)
+        ctrl = len([t for t in re.findall(r'<(input|select|textarea)([^>]*)>', r['mh']) if 'type="hidden"' not in t[1] and 'type=hidden' not in t[1] and 'type="submit"' not in t[1]])   # 실제 입력 요소만(찜·공유 버튼은 도구로 세지 않는다)
         tables = r['mh'].count('<table'); lis = r['mh'].count('<li')
         mtext = re.sub(r'<[^>]+>', ' ', r['mh'])
         has_date = bool(re.search(r'기준|갱신|확인일|업데이트|20\d\d[-.년 ]\s?\d{1,2}[-.월 ]', mtext))
