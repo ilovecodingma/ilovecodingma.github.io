@@ -1,0 +1,15 @@
+.sh{margin:6px 0 0}
+.sh-tabs{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding:2px 0 8px}
+.sh-tabs::-webkit-scrollbar{display:none}
+.sh-tab{flex:0 0 auto;min-height:40px;padding:0 14px;border-radius:999px;border:1px solid var(--bd,#e5e7eb);background:var(--card,#fff);color:var(--mu,#6b7280);font:inherit;font-size:14px;font-weight:700;cursor:pointer;white-space:nowrap}
+.sh-tab.on{background:var(--pri,#0f172a);border-color:var(--pri,#0f172a);color:#fff}
+.sh-view{position:relative;overflow:hidden;border-radius:18px;border:1px solid var(--bd,#e5e7eb);background:var(--card,#fff);min-height:440px}
+.sh-track{display:flex;height:100%;transition:transform .3s cubic-bezier(.22,.8,.3,1);will-change:transform}
+.sh-screen{flex:0 0 100%;width:100%;height:100%;overflow-y:auto;overflow-x:hidden;padding:14px 16px 18px;box-sizing:border-box;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
+.sh-screen>:first-child{margin-top:0}
+.sh-screen h2:first-child{margin-top:0}
+.sh-cnt{margin:8px 0 0;text-align:center;font-size:12px;color:var(--mu,#6b7280)}
+@media (prefers-reduced-motion:reduce){.sh-track{transition:none}}
+@media print{.sh-view{height:auto!important;overflow:visible}.sh-track{display:block;transform:none!important}.sh-tabs,.sh-cnt{display:none}.sh-screen{height:auto;overflow:visible}}
+.sh-on>p.bc{display:none}
+.sh-on>h1{font-size:21px;line-height:1.3;margin:12px 0 8px}
