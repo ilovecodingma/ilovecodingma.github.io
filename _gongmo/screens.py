@@ -80,10 +80,10 @@ def today_html(ctx):
 
 def home_html(ctx):
     now = ctx['now']; items = due_items(ctx)
-    new_c = [c for c in ctx['new_contests'] if ctx['elig_short'](c) not in ('미확인', '확인 필요')][:5]
+    new_c = [c for c in ctx['new_contests'] if ctx['elig_short'](c) not in ('미확인', '확인 필요') and (c.get('effort') or c.get('medium'))][:5]
     # 오늘 마감 미리보기(공모전·지원금 우선 5개)
     order = {'공모전': 0, '지원금': 1, '주거 청약': 2, '공모주': 3, '이벤트': 4}
-    prev = sorted(items, key=lambda x: (order.get(x['type'], 9), x['title']))[:5]
+    prev = sorted([x for x in items if x['target'] != '확인 필요'], key=lambda x: (order.get(x['type'], 9), x['title']))[:5]   # 대표 영역에는 핵심 조건이 확인된 항목만
     prev_h = ''.join(_card(i) for i in prev) or '<li class="td-empty">오늘 마감하는 항목이 없어요.</li>'
     new_h = ''.join(f'<li><a href="/c/{c["id"]}/"><b>{E(_short(c["title"], 46))}</b><span>{E(ctx["elig_short"](c))} · {E(ctx["prize_short"](c))} · {E(c["end"][5:].replace("-", "."))} 마감</span></a></li>' for c in new_c) or '<li class="td-empty">오늘 새로 확인한 공모전은 아직 없어요.</li>'
     guides = ''.join(f'<a href="{E(g["u"])}"><b>{E(_short(g["title"], 38))}</b><span>{E(_short(g["desc"], 60))}</span></a>' for g in ctx['guides'][:3])

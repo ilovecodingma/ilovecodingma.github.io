@@ -85,3 +85,33 @@ class VerifiedValues(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+# ---- 2026-10-23 애드센스 재심사 지침: 잘린 문구·수집 오염·링크 종류·중복 ----
+def test_shorten_rejects_truncated_and_ui_noise():
+    import shorten as S
+    assert S.repair('개인 또는 팀(3인') == '개인 또는 팀'
+    assert S.repair('40세 이하(1987.1.') == '40세 이하'
+    assert S.repair('Official B') == ''
+    assert S.repair('초, 중, 고, 학') == ''
+    assert S.clip('인 1년 최대 400,000원 /', 40) is None
+    assert S.strip_ui('영상/UCC/사진 첨부파일 다운로드 다운로드 다운로드 ') == '영상/UCC/사진'
+
+
+def test_link_label_by_role():
+    import contest_quality as CQ
+    assert CQ.link_label('https://www.all-con.co.kr/view/1') == '수집 출처 보기'
+    assert CQ.link_label('http://www.38.co.kr/html/fund/?o=v') == '수집 출처 보기'
+    assert CQ.link_label('https://www.gangdong.go.kr/x') == '공식 공고·접수'
+    assert CQ.link_label('https://example.com/x') == '외부 페이지 보기'
+
+
+def test_same_run_dup_rule():
+    import dup_check as D
+    a = {'id': 'Q1', 'title': '제20회 월간 아이러브캐릭터 캐릭터 공모전', 'org': '월간 아이러브캐릭터 / 주식회사 인큐베이팅', 'start': '2026-10-26', 'end': '2026-10-31', 'prize': '1등 200만원'}
+    b = {'id': 'Q2', 'title': '제20회 월간 캐릭터 공모전', 'org': '월간<아이러브캐릭터>/주식회사 인큐베이팅', 'start': '2026-10-26', 'end': '2026-10-31', 'prize': '1등 200만원 · 총상금 200만원'}
+    assert D._same_run(a, b)
+    c = dict(b, id='Q3', title='제21회 월간 캐릭터 공모전')
+    assert not D._same_run(a, c)            # 회차가 다르면 다른 공모전
+    d = dict(b, id='Q4', title='제20회 월간 아이러브 미술 공모전')
+    assert not D._same_run(dict(a, title='제20회 월간 아이러브 숏폼 공모전'), d)   # 부문 낱말이 어긋나면 다른 공모전

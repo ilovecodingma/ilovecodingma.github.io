@@ -97,6 +97,47 @@ def candidates(items):
     return out
 
 
+def _first_prize(c):
+    m = re.search(r'1등\s*([\d,\.]+\s*(?:억|천만|백만|만)?\s*원)', c.get('prize') or '')
+    return re.sub(r'\s', '', m.group(1)) if m else ''
+
+
+def _same_run(a, b):
+    """2026-10-23 재심사 지침 2번: 유사 제목·동일 주최·동일 일정. 주최(공백·괄호 표기 차이 허용)와 마감이 같고 시작일 차이 1일 이하,
+    1등 상금이 같으며(둘 다 있을 때) 회차가 충돌하지 않고 제목 유사도 0.6 이상이면 같은 공모전으로 본다(월간 캐릭터 제20회·팔공산 케이블카 사진 공모전)."""
+    from difflib import SequenceMatcher
+    if a['end'] != b['end'] or not (a.get('org') and b.get('org')):
+        return False
+    n = lambda t: re.sub(r'주식회사|\(주\)|[^0-9A-Za-z가-힣]', '', t or '').lower()
+    oa, ob = n(a['org']), n(b['org'])
+    if not (oa == ob or (min(len(oa), len(ob)) >= 4 and (oa in ob or ob in oa))):
+        return False
+    try:
+        import datetime as dt
+        if a.get('start') and b.get('start') and abs((dt.date.fromisoformat(a['start']) - dt.date.fromisoformat(b['start'])).days) > 1:
+            return False
+    except ValueError:
+        return False
+    ea, eb = re.search(r'제\s?(\d+)\s?회', a['title']), re.search(r'제\s?(\d+)\s?회', b['title'])
+    if ea and eb and ea.group(1) != eb.group(1):
+        return False
+    pa, pb = _first_prize(a), _first_prize(b)
+    if pa and pb and pa != pb:
+        return False
+    if not (pa or pb) and not (a.get('start') and a.get('start') == b.get('start')):
+        return False
+    ta = re.sub(r'[^0-9A-Za-z가-힣]', '', re.sub(r'\[[^\]]*\]|20\d\d년?|제?\d+회|공모전', '', a['title']))
+    tb = re.sub(r'[^0-9A-Za-z가-힣]', '', re.sub(r'\[[^\]]*\]|20\d\d년?|제?\d+회|공모전', '', b['title']))
+    CATW = re.compile(r'숏폼|숏츠|영상|사진|캐릭터|논문|슬로건|디자인|미술|포스터|웹툰|애니메이션|축제|작곡|문학|아이디어|제안|수기|공예')
+    ca, cb = {x.replace('숏츠', '숏폼') for x in CATW.findall(a['title'])}, {x.replace('숏츠', '숏폼') for x in CATW.findall(b['title'])}
+    r = SequenceMatcher(None, ta, tb).ratio()
+    if ca and cb and not (ca <= cb or cb <= ca):
+        return False   # 부문 낱말이 서로 어긋나면 다른 공모전(숏폼 영상 ≠ 미술)
+    if bool(ca) != bool(cb) or not (pa or pb):
+        return r >= 0.75   # 한쪽만 부문이 적혀 있거나 둘 다 1등 상금이 없으면 제목이 아주 비슷해야 한다
+    return r >= (0.45 if pa and pa == pb else 0.6)   # 주최·기간·1등 상금이 모두 같으면 제목은 느슨하게
+
+
 AGG = re.compile(r'contestkorea|wevity|thinkyou|all-con|linkareer|campuspick|detizen|allforyoung')
 
 
@@ -122,6 +163,8 @@ def dups(items):
             na, nb = re.sub(r'[^0-9A-Za-z가-힣]', '', re.sub(r'총상금[^｜|]*[｜|]|\[[^\]]*\]', '', a['title'])), re.sub(r'[^0-9A-Za-z가-힣]', '', re.sub(r'총상금[^｜|]*[｜|]|\[[^\]]*\]', '', b['title']))
             if a['end'] == b['end'] and min(len(na), len(nb)) >= 10 and (na in nb or nb in na):
                 pairs.append((a, b, '제목 포함 · 마감일 같음')); continue
+            if _same_run(a, b):
+                pairs.append((a, b, '같은 주최 · 같은 접수 기간 · 같은 1등 상금 · 제목 유사')); continue
             if same_event_by_core(a, b):
                 pairs.append((a, b, '핵심 이름 겹침 · 마감일 같음 · 주최 호환')); continue
             if (j >= 0.72 and a['end'] == b['end']) or (j >= 0.6 and a.get('org') and a.get('org') == b.get('org')):
