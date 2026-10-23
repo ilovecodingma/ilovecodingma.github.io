@@ -222,7 +222,7 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False, noinde
 <meta name="theme-color" content="{TH[3] if TH else '#5b21b6'}"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="오늘 뭐 먹지">
 <link rel="icon" href="/favicon.ico?v=6" sizes="any"><link rel="icon" type="image/png" sizes="48x48" href="/assets/icons/icon-48.png?v=6"><link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/icon-96.png?v=6"><link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/icon-192.png?v=6"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=6"><link rel="manifest" href="/site.webmanifest"><link rel="alternate" type="application/rss+xml" title="루리의 줍줍" href="/rss.xml">
 <link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="/assets/gm.css?v=24"><link rel="stylesheet" href="/assets/ds.css?v=15"><link rel="stylesheet" href="/assets/print.css?v=1"><script defer src="/assets/print.js?v=1"></script><link rel="stylesheet" href="/assets/shell/shell.css?v=2"><script defer src="/assets/shell/shell.js?v=2"></script>{('<link rel="stylesheet" href="/assets/chat/ruri-chat.css?v=9">') if not (TH and TH[0] == 'ai') else ''}{COMM_TAGS}{('<script type="module" src="/assets/chat/ruri-chat.js?v=16"></script>') if not (TH and TH[0] == 'ai') else ''}<link rel="stylesheet" href="/assets/app/shell.css?v=1"><script defer src="/assets/app/app.js?v=4"></script>
+<link rel="stylesheet" href="/assets/gm.css?v=25"><link rel="stylesheet" href="/assets/ds.css?v=15"><link rel="stylesheet" href="/assets/print.css?v=1"><script defer src="/assets/print.js?v=1"></script><script src="/assets/img-fallback.js?v=1"></script><link rel="stylesheet" href="/assets/shell/shell.css?v=2"><script defer src="/assets/shell/shell.js?v=2"></script>{('<link rel="stylesheet" href="/assets/chat/ruri-chat.css?v=9">') if not (TH and TH[0] == 'ai') else ''}{COMM_TAGS}{('<script type="module" src="/assets/chat/ruri-chat.js?v=16"></script>') if not (TH and TH[0] == 'ai') else ''}<link rel="stylesheet" href="/assets/app/shell.css?v=1"><script defer src="/assets/app/app.js?v=4"></script>
 {ldh}
 {TH_CSS}
 {GTAG}
@@ -339,12 +339,14 @@ def load():
         t = P.clean(r.get('title', ''))[:90]
         if not t or t == 'N/A':
             continue
+        if NONPRIZE_RX.search(t) and not PRIZE_RX.search(t):   # 서포터즈 모집·경연대회·후보자 추천 공고 등은 경품 이벤트가 아니다(참여 방식 「댓글 1줄」이 붙던 오분류)
+            continue
         key = P.norm_title(t) + r.get('end', '')
         if key in seen:
             continue
         seen.add(key)
         events.append({'id': r['id'], 'title': t, 'org': P.clean(r.get('org', ''))[:40], 'end': r['end'],
-                       'type': EV_KIND[k], 'ch': CH.get(r.get('ch', ''), ''), 'link': r.get('apply') or r['url'], 'effort': P.clean(r.get('effort', ''))[:12]})
+                       'type': EV_KIND[k], 'ch': CH.get(r.get('ch', ''), ''), 'link': r.get('apply') or r['url'], 'effort': EZ_NORM.get(P.clean(r.get('effort', ''))[:12], P.clean(r.get('effort', ''))[:12])})
     events.sort(key=lambda e: (e['end'], e['title']))
     return contests, events
 
@@ -693,6 +695,24 @@ def c_insight(c, live):
     return (f'<h2>🧐 루리 분석</h2><p>{" ".join(E(x) for x in L)}</p>' if L else '') + plan + tb
 
 
+def deadline_badge(c):
+    """마감 배지 옆 불확실성(2026-10-23 P0): 시각을 확인했으면 시각을, 아니면 「시각 미확인」을, 마감 변경(연장) 공지가 있으면 그 경고를 같이 보여 D-day 가 확정처럼 읽히지 않게 한다."""
+    t = re.match(r'(\d{1,2}(?::\d{2}|시))', deadline_row(c, ''))
+    out = f' · <b class="dl-t">{t.group(1)}</b>' if t else ' · <span class="dl-u">시각 미확인</span>'
+    if (VER.get(c['id']) or {}).get('alerts'):
+        out += ' <span class="d-warn">⚠ 마감 변경 가능성 — 아래 확인 필요</span>'
+    return out
+
+
+def field_clean(c):
+    """분야 칸. 수집 데이터의 분야 문자열은 40자에서 잘려 마지막 항목이 「예」처럼 끊기므로, 잘렸으면 마지막 항목을 버린다. 비면 분류 태그를 쓴다."""
+    f = (c.get('field') or '').strip()
+    toks = [t.strip() for t in f.split(',') if t.strip()]
+    if toks and ((len(f) >= 38) or (len(toks) >= 2 and len(toks[-1]) <= 2)):   # 길이로 잘렸거나 마지막 항목이 한두 글자로 끊긴 경우(예: 「…IT, 예」)
+        toks = toks[:-1]
+    return ', '.join(toks) if toks else ', '.join(CQ.label_for(t, c.get('medium', '')) for t in c['tags'])
+
+
 def region_row(c, NEED):
     """지역 제한 칸. 자격 문구와 모순되지 않게 한 곳에서 판정한다(2026-10-23 사용자 점검: 자격은 「전국」인데 지역 제한은 「있음」으로 나오던 모순).
     재학·재직은 신분 조건이라 지역 제한으로 세지 않는다."""
@@ -784,7 +804,7 @@ def detail(c, live):
     sim = [x for x in live if x['id'] != c['id'] and main_tag in x['tags'] and (main_tag != '영상' or not c.get('medium') or x.get('medium', '') == c.get('medium'))][:3]
     simh = ''.join(card(x) for x in sim)
     status = ('<p class="warn">접수가 마감된 공모전입니다. 같은 분야의 진행 중 공모전을 아래에서 확인하세요.</p>' if n < 0
-              else f'<p class="lead"><span class="{"d u3" if n <= 3 else "d hot" if n <= 7 else "d"}">{dd}</span> {ddot(c["end"])} 마감</p>')
+              else f'<p class="lead"><span class="{"d u3" if n <= 3 else "d hot" if n <= 7 else "d"}">{dd}</span> {ddot(c["end"])} 마감{deadline_badge(c)}</p>')
     ruri = (say('sad', '아쉽지만 이건 마감됐어요. 아래 진행 중인 공모전을 봐 주세요!') if n < 0 else
             say('surprise', f'마감까지 <b>{dd}</b>! 오늘 바로 요강부터 확인해요.') if n <= 3 else
             say('thumbsup', f'상금 <b>{E(c["prize"])}</b>! 응모 자격만 맞으면 도전해 볼 만해요.') if c['pv'] else
@@ -795,7 +815,7 @@ def detail(c, live):
     v_ = lambda x: x if (x and str(x).strip() not in ('', '-', '공고 참조', '공고 확인')) else NEED
     sub = ' · '.join(x for x in (c.get('effort'), c.get('submit')) if x)
     sub_type = c.get('effort') or {'photo': '사진(제목 기준)', 'video': '영상(제목 기준)', 'photo+video': '사진·영상(제목 기준)'}.get(c.get('medium', ''), '')   # 무엇을 내는지. 어디로 내는지(메일·폼)는 「접수 방법」
-    rows = [('주최·주관', v_(c['org'])), ('분야', c['field'] or ', '.join(c['tags'])), ('응모 자격', v_(c['elig'])), ('지역 제한', region_row(c, NEED)),
+    rows = [('주최·주관', v_(c['org'])), ('분야', field_clean(c)), ('응모 자격', v_(c['elig'])), ('지역 제한', region_row(c, NEED)),
             ('접수 기간', period + (' (수집처 기준, 공식 공고에서 확인)' if CQ.is_aggregator(c['link']) and not c.get('verified_official') else '')), ('마감 시각', deadline_row(c, NEED)), ('제출물 종류', v_(sub_type)), ('접수 방법', (v_(c['ch']) if c.get('verified_official') else CQ.auto_label(v_(c['ch']))) if v_(c['ch']) != NEED else NEED), ('상금·혜택', v_(c['prize'])),
             ('참가비', fee_row(c, NEED)), ('AI 사용', ai_row(c, NEED))]
     tb = ''.join(f'<tr><th>{k}</th><td{" class=need" if NEED in str(v) else ""}>{E(v)}</td></tr>' for k, v in rows)
@@ -898,15 +918,18 @@ fetch('/data.json',{cache:'no-cache'}).then(function(r){return r.json()}).then(f
 
 TOOLBAR = '''<div class="bar"><input type="search" id="q" placeholder="공모전, 주최, 키워드 검색" aria-label="검색">
 <select id="due" aria-label="마감"><option value="">마감 전체</option><option value="7">7일 이내</option><option value="30">30일 이내</option></select>
-<select id="sort" aria-label="정렬"><option value="rec">추천순</option><option value="end">마감 임박순</option><option value="prize">상금 큰 순</option></select></div>
+<select id="sort" aria-label="정렬"><option value="end" selected>마감 임박순</option><option value="rec">추천순</option><option value="prize">상금 큰 순</option></select></div>
 <p class="cnt" id="cnt"></p>'''
 
 
+NONPRIZE_RX = re.compile(r'서포터즈|서포터스|모집|경연대회|후보자|추천 공고|공모전|채용|교육생|발대식|설명회|세미나|포럼|오디션|봉사단|기자단|인턴|체험단')
+PRIZE_RX = re.compile(r'경품|추첨|증정|당첨|상품권|쿠폰|포인트|기프티콘|선물|이벤트|리워드|적립')
 # 참여 난이도 배지 (공모전 세션 합의: "설문 5분", "댓글 1줄" 처럼 쉬운 정도를 앞에)
-EASY = {'댓글 이벤트': '댓글 1줄', '설문': '설문 5분', '퀴즈': '퀴즈 풀기', '폼 응모': '폼 1분', '댓글+폼': '댓글+폼', '추첨 경품': '응모만',
+EASY = {'댓글 이벤트': '댓글 참여', '설문': '설문 참여', '퀴즈': '퀴즈 참여', '폼 응모': '폼 응모', '댓글+폼': '댓글+폼', '추첨 경품': '응모',
         '친구 태그': '친구 태그', '스토리 공유': '스토리 공유', '캡처 인증': '캡처 인증', '구매 인증': '구매 필요', '지역 한정': '지역 한정',
-        '이벤트': '참여형', 'SNS 이벤트': 'SNS 참여'}
-EASY_RANK = {'댓글 1줄': 0, '폼 1분': 0, '응모만': 0, '설문 5분': 1, '퀴즈 풀기': 1, '댓글+폼': 1, '참여형': 2, 'SNS 참여': 2,
+        '이벤트': '참여형', 'SNS 이벤트': 'SNS 참여'}   # 2026-10-23: 「댓글 1줄」「설문 5분」 같은 시간·쉬움 주장은 근거가 없어 참여 방식 이름만 쓴다
+EZ_NORM = {'댓글 1줄': '댓글 참여', '설문 5분': '설문 참여', '폼 1분': '폼 응모', '퀴즈 1분': '퀴즈 참여', '퀴즈 풀기': '퀴즈 참여', '응모만': '응모'}   # 수집 데이터에 남은 옛 라벨도 같은 이름으로
+EASY_RANK = {'댓글 참여': 0, '폼 응모': 0, '응모': 0, '설문 참여': 1, '퀴즈 참여': 1, '댓글+폼': 1, '참여형': 2, 'SNS 참여': 2,
              '친구 태그': 2, '스토리 공유': 3, '캡처 인증': 3, '지역 한정': 4, '구매 필요': 5}
 
 
@@ -968,7 +991,15 @@ def load_apply():
         if ck in AP_SEEN:
             AP_DUP[aid] = AP_SEEN[ck]
             continue
+        _t0 = P.clean(r['title'])   # 2026-10-23 P0: 같은 공모주가 「[공모주] 래블업」·「래블업 공모 청약 신청」처럼 이름이 달라 둘로 보이던 것 — 회사명 + 시작·마감일이 같으면 한 건
+        core = re.sub(r'[^0-9A-Za-z가-힣]', '', re.sub(r'\[[^\]]*\]|공모주|공모|청약|신청|코스닥|코스피|일정', '', _t0)).lower()
+        ck2 = ('ipo', core, r.get('start', ''), end) if len(core) >= 2 and (r.get('kind') == 'ipo' or '공모주' in _t0 or '공모 청약' in _t0) else None
+        if ck2 and ck2 in AP_SEEN:
+            AP_DUP[aid] = AP_SEEN[ck2]
+            continue
         AP_SEEN[ck] = aid
+        if ck2:
+            AP_SEEN[ck2] = aid
         nm, ic = apply_kind(r.get('kind'))
         out.append({'id': aid, 'title': P.clean(r['title'])[:90], 'org': P.clean(r.get('org', ''))[:40] or '공고 참조', 'kind': nm, 'icon': ic, 'kk': r.get('kind') or ('apt' if re.search(r'아파트|분양|자이|힐스테이트|푸르지오|래미안|e편한|롯데캐슬|하늘채|더샵|아이파크|위브|포레나|센트레빌|리슈빌|공공분양', r['title']) else 'rent' if re.search(r'임대|전세|월세|행복주택|매입', r['title']) else 'grant'),
                     'start': r.get('start', ''), 'end': end, 'url': r.get('url', ''), 'source': r.get('source', ''), 'verified': bool(r.get('verified')),
@@ -1580,7 +1611,7 @@ def build():
     _RS = json.load(open(_rj, encoding='utf-8'))['recipes'] if os.path.exists(_rj) else []
     _TD = _rd('assets/fridge/today.json') or {}
     _picks = [r for n_ in _TD.get('picks', []) for r in _RS if r['n'] == n_][:3]
-    _ez = ('댓글 1줄', '퀴즈 1분', '설문 5분', '응모만', '폼 1분')
+    _ez = ('댓글 참여', '퀴즈 참여', '설문 참여', '응모', '폼 응모')
     _ev3 = sorted([e for e in events if (e.get('org') or '').strip() and dday(e['end'])[0] >= 0], key=lambda e: (e['end'], (e.get('effort') or EASY.get(e['type'], '')) not in _ez))[:6]
     _ing = ['김치', '달걀', '스팸', '두부', '감자', '양파', '참치', '대파']
     import fridge_today as _FT
@@ -1758,7 +1789,7 @@ def build():
              {'@type': 'WebSite', '@id': SITE + '/#website', 'name': NAME, 'alternateName': ['줍줍', '루리의줍줍', '루리 줍줍'], 'url': SITE + '/', 'publisher': {'@id': SITE + '/#org'}},
              {'@type': 'Organization', '@id': SITE + '/#org', 'name': NAME, 'url': SITE + '/', 'logo': {'@type': 'ImageObject', 'url': SITE + '/assets/icons/icon-512.png', 'width': 512, 'height': 512}}]})
     for s, n in CATS:
-        cl = [c for c in live if n in c['tags']]
+        cl = sorted([c for c in live if n in c['tags']], key=lambda c: (c['end'], -(c.get('pv') or 0)))   # 제목·선택 상자·실제 순서를 모두 「마감 임박순」으로 맞춘다
         tips = ''.join(f'<li>{E(t)}</li>' for t in TIPS[n])
         body = f'''<p class="bc"><a href="/">홈</a> › {n}</p><section class="dh" data-c="{s}"><span class="ic big">{CAT_ICON[n]}</span><h1>{CAT_T.get(n, n + ' 공모전')}</h1><p class="lead">진행 중 <b>{len(cl)}건</b> · 마감 임박순</p><p class="hm-scope">오늘 {TODAY.month}/{TODAY.day}(한국 시간) 기준 접수 마감 전 · 제목이 같은 공모전은 1건 · {NOW_KST():%m/%d %H:%M} 갱신 · 마감 시각은 공식 공고 확인</p></section>
 <h2>진행 중 {n} 공모전</h2>{TOOLBAR}<ul class="list" id="list">{''.join(card(c) for c in cl[:60])}</ul>{('<details class="rest"><summary>나머지 ' + str(len(cl) - 60) + '건 제목으로 보기</summary><ul>' + ''.join(f'<li><a href="/c/{c["id"]}/">{E(c["title"])}</a> · {ddot(c["end"])[5:]} 마감</li>' for c in cl[60:]) + '</ul></details>') if len(cl) > 60 else ''}<p class="hm-links">{' '.join(f'<a href="/cat/{s2}/">{n2}</a>' for s2, n2 in CATS if s2 != s)}</p><button class="more" id="more" hidden>더 보기</button>
@@ -1768,16 +1799,16 @@ def build():
         page(f'/cat/{s}/', f'{CAT_T.get(n, n + " 공모전 모음")} · 진행 중 {len(cl)}건', f'{n} 분야 진행 중 공모전 {len(cl)}건 마감 임박순 정리. {CAT_INTRO[n][:70]}',
              body + fq + listing_js(n), [('루리의 줍줍', '/'), (n, f'/cat/{s}/')], ld_)
     # 2026-10-18 사용자: "경품 이벤트도 좀 적당히 보이게, 갱신도 자동으로" — 1,300여 건 통째 나열 대신 '오늘·내일 마감 + 쉬운 것' 12개만 크게, 나머지는 종류·검색으로(events.json 매시 빌드 갱신)
-    EZT = ('댓글 1줄', '퀴즈 1분', '설문 5분', '응모만', '폼 1분')
+    EZT = ('댓글 참여', '퀴즈 참여', '설문 참여', '응모', '폼 응모')
     tidy_ev = lambda t: re.sub(r'^\s*\((?:중복|\d+회 중복)[^)]*\)\s*', '', t).strip()
     top = sorted([e for e in events if dday(e['end'])[0] <= 1 and (e.get('effort') or EASY.get(e['type'], '')) in EZT and (e.get('org') or '').strip()],
                  key=lambda e: (e['end'], EASY_RANK.get(e.get('effort') or EASY.get(e['type'], ''), 2)))[:12]
     if len(top) < 12:
         top += [e for e in sorted(events, key=lambda e: e['end']) if e not in top and (e.get('effort') or EASY.get(e['type'], '')) in EZT][:12 - len(top)]
     tcards = ''.join(f'<li><a href="{E(e["link"])}" target="_blank" rel="noopener nofollow"><b>{E(tidy_ev(e["title"]))}</b><span><em class="{"u" if dday(e["end"])[0] <= 1 else ""}">{dday(e["end"])[1]}</em>{E(e["org"] or "공식 계정")} · <i>{E(e.get("effort") or EASY.get(e["type"], e["type"]))}</i></span></a></li>' for e in top)
-    page('/event/', f'경품 이벤트 — 오늘 마감·쉬운 것부터 (진행 중 {len(events)}건)', f'댓글 1줄·퀴즈·설문·응모만 하면 되는 경품 이벤트 {len(events)}건. 오늘·내일 마감하는 쉬운 이벤트부터, 종류별·검색으로 골라 보세요. 매시간 갱신.',
+    page('/event/', f'경품 이벤트 — 오늘 마감순 (진행 중 {len(events)}건)', f'댓글·퀴즈·설문·응모 등 참여 방식별로 정리한 경품 이벤트 {len(events)}건. 오늘·내일 마감하는 것부터, 종류별·검색으로 골라 보세요. 참여 방식은 자동 분류라 공식 안내를 확인하세요. 매시간 갱신.',
          f'''<p class="bc"><a href="/">홈</a> › <a href="/apply/">생활</a> › 경품 이벤트</p><h1>🎁 경품 이벤트</h1>{join_cta('event')}
-{say('excited', f'오늘·내일 마감하는 쉬운 이벤트부터 골랐어요! 지금 진행 중인 이벤트는 {len(events):,}건이고, 매시간 새로 정리돼요.')}
+{say('excited', f'오늘·내일 마감하는 이벤트부터 보여 드려요. 지금 진행 중인 이벤트는 {len(events):,}건이고, 참여 방식은 자동 분류라 공식 안내로 꼭 확인하세요.')}
 <section class="ev-top"><h2>⚡ 오늘·내일 마감 · 쉬운 것 {len(top)}</h2><ul class="ev-ul">{tcards}</ul></section>
 <h2 class="ev-h">🔎 종류별로 골라 보기</h2><section id="evl" aria-label="경품 이벤트 목록"><noscript>자바스크립트가 필요해요.</noscript></section>
 <p class="note">마지막 갱신 {datetime.datetime.now().strftime('%m/%d %H:%M')} · 참여 조건(팔로우·태그·공유)과 당첨자 발표는 이벤트마다 달라요. 당첨 연락을 사칭해 개인정보나 송금을 요구하면 사기예요.</p>
