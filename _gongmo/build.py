@@ -822,6 +822,9 @@ def fee_row(c, NEED):
         for k, x in v.get('facts', []):
             if '참가비' in k and '확인하지 못함' not in x and '명시 없음' not in x:
                 return x
+        for k, x in v.get('facts', []):
+            if '참가비' in k and '명시 없음' in x:
+                return x   # 「공고문 전문을 확인했고 적혀 있지 않음」 — 「아직 확인하지 못함」과 구분
         return '공식 원문에서 확인하지 못함(미확인)'
     if isinstance(c.get('fee'), int) and c['fee'] > 1:
         return f'{c["fee"]:,}원(수집 데이터 기준)'
@@ -847,7 +850,7 @@ def ver_block(c):
     srcs = ' · '.join(f'<a href="{E(s["url"])}" target="_blank" rel="noopener nofollow">{E(s["label"])}</a>' for s in v['sources'])
     lst = lambda t, L: (f'<h3>{t}</h3><ul class="chk">' + ''.join(f'<li>{E(x)}</li>' for x in L) + '</ul>') if L else ''
     return (f'<details class="fold ver"><summary>✅ 공식 원문 {"일부 " if v.get("level") == "partial" else ""}대조 결과 · 수정 이력 <small>확인일 {E(v["verified_at"])}</small></summary>'
-            f'<p class="note">주최 측 공식 페이지를 위 확인일에 직접 열어 이 페이지의 값과 맞춰 봤어요. 운영자 검수 완료 표시가 아니라 제작 과정에서 한 원문 대조이고, 공고는 바뀔 수 있어요. 출처: {srcs}</p>'
+            f'<p class="note">아래 출처 페이지(주최 측 공고, 또는 운영사무국 신청 페이지·첨부 서류)를 위 확인일에 직접 열어 이 페이지의 값과 맞춰 봤어요. 출처 종류는 링크 이름에 적었어요. 운영자 검수 완료 표시가 아니라 제작 과정에서 한 원문 대조이고, 공고는 바뀔 수 있어요. 출처: {srcs}</p>'
             f'<table class="info">{facts}</table>'
             + lst('수집 데이터와 달랐던 점(수정함)', v.get('corrections', [])) + lst('서로 다른 값(자동 분석 보류)', v.get('conflicts', [])) + lst('확인하지 못한 것', v.get('unverified', [])) + '</details>')
 
