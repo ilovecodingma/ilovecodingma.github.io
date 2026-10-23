@@ -24,7 +24,7 @@ def due_items(ctx, today_only=True):
         dr = ctx['deadline_row'](c, '')
         tm = re.match(r'(\d{1,2}(?::\d{2}|시))', dr)
         out.append({'type': '공모전', 'title': c['title'], 'target': ctx['elig_short'](c), 'benefit': ctx['prize_short'](c),
-                    'time': tm.group(1) if tm else '', 'href': f'/c/{c["id"]}/', 'ext': c.get('link') or '', 'org': c.get('org') or '', 'cid': c['id']})
+                    'time': tm.group(1) if tm else '', 'href': f'/c/{c["id"]}/', 'ext': c.get('link') or '', 'org': c.get('org') or '', 'cid': c['id'], 'end': c['end'], 'dleft': 0, 'tstate': ctx['deadline_state'](c)})
     for e in ctx['events']:
         if e['end'] != T:
             continue
@@ -42,7 +42,9 @@ def due_items(ctx, today_only=True):
 
 
 def _dl(it):
-    tm = f'오늘 <b>{E(it["time"])}</b>' if it['time'] else '오늘 · <span class="nu">시각 확인 필요</span>'
+    day = '오늘' if it.get('dleft', 0) == 0 else f'{it["end"][5:].replace("-", ".")}(D-{it["dleft"]})'
+    st = it.get('tstate', 'unknown')
+    tm = f'{day} <b>{E(it["time"])}</b>' if it['time'] else (f'{day} · <span class="nu">시각 명시 없음</span>' if st == 'absent' else f'{day} · <span class="nu">시각 확인 필요</span>')
     rows = []
     if it['target'] is not None:
         rows.append(('대상', it['target']))
@@ -88,7 +90,7 @@ def ver_items(ctx, limit=6):
         dr = ctx['deadline_row'](c, '')
         tm = re.match(r'(\d{1,2}(?::\d{2}|시))', dr)
         out.append({'type': '공모전', 'title': c['title'], 'target': ctx['elig_short'](c), 'benefit': ctx['prize_short'](c), 'time': tm.group(1) if tm else '',
-                    'href': f'/c/{c["id"]}/', 'ext': c.get('link') or '', 'org': c.get('org') or '', 'cid': c['id'], 'end': c['end'], 'full': lv != 'partial'})
+                    'href': f'/c/{c["id"]}/', 'ext': c.get('link') or '', 'org': c.get('org') or '', 'cid': c['id'], 'end': c['end'], 'dleft': (datetime.date.fromisoformat(c['end']) - ctx['today']).days, 'tstate': ctx['deadline_state'](c), 'full': lv != 'partial'})
     out.sort(key=lambda x: (0 if x['full'] else 1, x['end']))
     return out[:limit]
 
@@ -119,7 +121,7 @@ def home_html(ctx):
             '<div class="hm-sc" role="group" aria-label="검색 범위"><button type="button" class="on" data-s="">전체</button><button type="button" data-s="c">공모전</button><button type="button" data-s="a">지원금</button><button type="button" data-s="e">이벤트</button><button type="button" data-s="r">레시피</button><button type="button" data-s="w">가이드</button></div>'
             '<div class="hm-r" id="hr" aria-live="polite"></div></form></section>'
             f'<nav class="hm-act" aria-label="주요 바로가기">{mh}</nav><nav class="hm-sub" aria-label="더 보기">{sub}</nav>'
-            f'<section class="hm-ai" aria-label="AI 수집 현황"><b>🤖 AI 수집기</b><span>마지막 수집 <b>{now:%H:%M}</b></span><span>오늘 새로 확인 <b>{ctx["n_new"]}건</b></span><span>진행 중 공모전 수집 <b>{ctx["n_live"]}건</b></span><span>공식 원문 확인 <b>{ctx["n_ver"]}건</b> <small>(핵심 조건까지 대조 {ctx["n_core"]}건 · 누적)</small></span><span>확인 못한 값은 「확인 필요」</span><a href="/about/">제작 원칙·로그</a></section>'
+            f'<section class="hm-ai" aria-label="AI 수집 현황"><b>🤖 AI 수집기</b><span>마지막 수집 <b>{now:%H:%M}</b></span><span>오늘 새로 확인 <b>{ctx["n_new"]}건</b></span><span>수집 완료 <b>{ctx["n_live"]}건</b></span><span>공식 원문 확보 <b>{ctx["n_ver"]}건</b></span><span>핵심 조건 대조 <b>{ctx["n_core"]}건</b> <small>(AI 대조)</small></span><span>운영자 직접 검토 <b>{ctx["n_op"]}건</b></span><span>확인 못한 값은 「확인 필요」</span><a href="/corrections/">정정 기록</a> · <a href="/about/">제작 원칙</a></section>'
             f'<section class="hm-sec"><div class="hm-h"><h2>오늘 마감</h2><a href="/today/">전체 {len(items)}건 →</a></div><ul class="td-l hm-td">{prev_h}</ul></section>'
             + ver_sec +
             f'<section class="hm-sec"><div class="hm-h"><h2>새로 확인한 공모전</h2><a href="/contest/">공모전 찾기 →</a></div><ul class="hm-nl">{new_h}</ul></section>'
