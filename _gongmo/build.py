@@ -749,7 +749,7 @@ def c_insight(c, live):
             out += ('<h2>📤 이 공고의 제출 순서와 조건 <small>공식 원문 대조 기준 · 확인일 ' + E(_v['verified_at']) + '</small></h2><ol class="chk">'
                     + ''.join(f'<li><b>{E(lab)}</b> — {E(val)}</li>' for lab, val in rows_) + '</ol>')
     else:
-        _bt = CQ.link_wording(c['link'])[0].replace(' →', '')
+        _bt = CQ.link_wording(c['link'], bool(c.get('verified_official')))[0].replace(' →', '')
         out += (f'<h2>📤 접수하기 전에</h2><p>이 공고는 아직 공식 원문과 대조하지 못했어요. 위 「{E(_bt)}」 버튼이 여는 페이지에서 자격·마감 시각·제출 규격·접수 방법을 먼저 확인하세요.'
                 + (' 이 버튼은 공고를 모아 둔 수집처 페이지라서 주최 측 공식 공고를 따로 찾아야 해요.' if CQ.is_aggregator(c['link']) else '') + '</p>')
     if n >= 4 and not miss and c['id'] in VER:   # 일정 제안은 공식 대조로 조건을 확인한 공고에만
@@ -986,7 +986,7 @@ def detail(c, live):
     np_html = ('<h2>📄 공고에서 확인한 핵심</h2><table class="info np">' + ''.join(f'<tr><th>{E(k)}</th><td>{E(v)}</td></tr>' for k, v in NPs) + '</table><p class="note">공고 원문의 항목을 그대로 옮긴 거예요(자동 추출이라 일부만 보일 수 있어요). 전체 내용은 공식 공고에서 확인하세요.</p>') if NPs else ''
     chk_need = '<h2>✅ 공식 공고에서 꼭 확인할 것</h2><ul class="chk">' + ''.join(f'<li>{E(t)}</li>' for t in todo) + '</ul>'
     catl = ' · '.join(f'<a href="/cat/{SLUG[t]}/">{E(CQ.label_for(t, c.get("medium", "")))}</a>' for t in c['tags'])
-    LK_BTN, LK_NOTE, LK_ALT = CQ.link_wording(c['link'])
+    LK_BTN, LK_NOTE, LK_ALT = CQ.link_wording(c['link'], bool(c.get('verified_official')))
     org = c['org'] if c['org'] != '공고 참조' else '주최 기관'
     summary = (f'「{c["title"]}」은 {org}에서 진행하는 {", ".join(CQ.label_for(t, c.get("medium", "")) for t in c["tags"])} 분야 공모전이에요. {CQ.deadline_sentence(ddot(c["end"]), n)} '
                + (f'응모 자격은 "{c["elig"]}"이고 ' if c.get('elig') else '응모 자격은 공식 공고에서 확인이 필요하고 ') + (f'상금은 {c["prize"]}입니다. ' if c.get('pv') else '상금은 공식 공고에서 확인하세요. ') +
@@ -1727,6 +1727,10 @@ def build():
         _v = VER.get(_c['id'])
         if _v:
             _c.update(_v.get('apply', {})); _c['verified_official'] = True
+            if 'link' not in (_v.get('apply') or {}):   # 접수 버튼은 대조에 쓴 공식·운영 출처로(구글폼·수집처 링크가 「공식」 버튼으로 남지 않게)
+                _o = next((x_['url'] for x_ in _v.get('sources', []) if x_.get('type') in ('OFFICIAL_ORGANIZER', 'OPERATOR_APPLICATION_PAGE')), None)
+                if _o:
+                    _c['link'] = _o
     late = NOW_KST().hour >= 18  # 대부분 18시·업무시간 마감 → 저녁 빌드부터 오늘 마감은 내림
     live = [c for c in contests if dday(c['end'])[0] >= (1 if late else 0)]
     import dup_check   # 2026-10-19: 같은 공고(주소·제목 유사도·주최·마감)는 대표 1건만 목록에, 나머지 주소는 대표로 안내
@@ -3435,7 +3439,7 @@ AN_NOTE = ('<p class="an-warn">📊 증권사 리포트·전문가 전망을 다
 def prize_split(c):
     """표시된 상금 문구에서 (1등 상금, 총상금)을 원 단위로 따로 읽는다. 파서의 pv 는 둘 중 큰 값이라 서로 다른 기준끼리 비교되는 문제가 있어(2026-10-23 사용자 점검: 총상금 2,100만원과 1등 1,000만원이 함께 비교됨) 비교에는 쓰지 않는다."""
     s_ = c.get('prize') or ''
-    f, t = re.search(r'(?:1등|대상|당선(?:작)?)\s*(?:\d+\s*[팀편점명]\s*)?([^·]+)', s_), re.search(r'총\s*(?:상금)?\s*([^·(]+)', s_)   # 「대상 120만원」은 1등과 같은 최상위 시상으로 읽는다(2026-10-23 이천시)
+    f, t = re.search(r'(?:1등|대상|당선(?:작)?)\s*(?:\d+\s*[팀편점명]\s*)?([^·]+)', s_), re.search(r'(?:총\s*상금|총(?=\s*\d))\s*([^·(]+)', s_)   # 「대상 120만원」은 1등과 같은 최상위 시상으로 읽는다(2026-10-23 이천시)
     def g(m):
         if not m:
             return 0
