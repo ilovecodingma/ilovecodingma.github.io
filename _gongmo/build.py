@@ -219,7 +219,7 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False, noinde
 <meta name="theme-color" content="{TH[3] if TH else '#5b21b6'}"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="오늘 뭐 먹지">
 <link rel="icon" href="/favicon.ico?v=6" sizes="any"><link rel="icon" type="image/png" sizes="48x48" href="/assets/icons/icon-48.png?v=6"><link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/icon-96.png?v=6"><link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/icon-192.png?v=6"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=6"><link rel="manifest" href="/site.webmanifest"><link rel="alternate" type="application/rss+xml" title="루리의 줍줍" href="/rss.xml">
 <link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="/assets/gm.css?v=20"><link rel="stylesheet" href="/assets/ds.css?v=15"><link rel="stylesheet" href="/assets/print.css?v=1"><script defer src="/assets/print.js?v=1"></script><link rel="stylesheet" href="/assets/shell/shell.css?v=2"><script defer src="/assets/shell/shell.js?v=2"></script>{('<link rel="stylesheet" href="/assets/chat/ruri-chat.css?v=9">') if not (TH and TH[0] == 'ai') else ''}{COMM_TAGS}{('<script type="module" src="/assets/chat/ruri-chat.js?v=16"></script>') if not (TH and TH[0] == 'ai') else ''}<link rel="stylesheet" href="/assets/app/shell.css?v=1"><script defer src="/assets/app/app.js?v=4"></script>
+<link rel="stylesheet" href="/assets/gm.css?v=23"><link rel="stylesheet" href="/assets/ds.css?v=15"><link rel="stylesheet" href="/assets/print.css?v=1"><script defer src="/assets/print.js?v=1"></script><link rel="stylesheet" href="/assets/shell/shell.css?v=2"><script defer src="/assets/shell/shell.js?v=2"></script>{('<link rel="stylesheet" href="/assets/chat/ruri-chat.css?v=9">') if not (TH and TH[0] == 'ai') else ''}{COMM_TAGS}{('<script type="module" src="/assets/chat/ruri-chat.js?v=16"></script>') if not (TH and TH[0] == 'ai') else ''}<link rel="stylesheet" href="/assets/app/shell.css?v=1"><script defer src="/assets/app/app.js?v=4"></script>
 {ldh}
 {TH_CSS}
 {GTAG}
@@ -357,14 +357,49 @@ def score(c):
     return s
 
 
+def elig_short(c):
+    """목록 카드용 참가 대상 한 단어(2026-10-23 UI 정리). 값이 없으면 「미확인」 — 없다고 「누구나」로 읽지 않는다."""
+    e = (c.get('elig') or '').strip()
+    if not e or e in ('공고 참조', '-', '공고 확인'):
+        return '미확인'
+    t = []
+    if re.search(r'대학생|대학원생|재학', e): t.append('대학생')
+    if re.search(r'청소년|초등|중학|고등|유치원', e): t.append('청소년')
+    if re.search(r'청년|만\s?\d+\s?세|\d+세 이상', e): t.append('연령 제한')
+    if re.search(r'[가-힣]{2,4}(?:도|시|군|구)\s*(?:내|거주)|도민|시민|군민|구민|관내', e): t.append('지역 거주')
+    if re.search(r'창업', e): t.append('창업자')
+    if re.search(r'팀\s*(?:구성|단위)|2인\s*이상', e): t.append('팀')
+    if t:
+        return '·'.join(t[:2])
+    if re.search(r'제한\s?없|누구나|전\s?국민|일반\s?국민|일반인', e):
+        return '누구나'
+    return e[:10]
+
+
+def prize_short(c):
+    """목록 카드용 상금 한 줄. 1등 상금과 총상금을 구분해 라벨을 붙인다(섞어 비교하지 않는다)."""
+    f, t = prize_split(c)
+    if f:
+        return '1등 ' + won_txt(f)
+    if t:
+        return '총 ' + won_txt(t)
+    return '미확인'
+
+
+def sub_short(c):
+    return c.get('effort') or {'photo': '사진', 'video': '영상', 'photo+video': '사진·영상'}.get(c.get('medium', ''), '') or '미확인'
+
+
 def card(c):
+    """공모전 목록 카드(2026-10-23 UI 정리): 제목 두 줄 이하 + 대상·제출물·상금·마감을 모든 항목에서 같은 자리에. 공고 캡처는 작은 썸네일."""
     n, dd = dday(c['end'])
     cls = 'd off' if n < 0 else 'd u3' if n <= 3 else 'd hot' if n <= 7 else 'd'
-    tg = ''.join(f'<span class="tg">{E(t)}</span>' for t in c['tags'])
-    pz = (f'<span class="ez e0">{E(c["effort"])}</span>' if c.get('effort') else '') + (f'<span class="pz">🏆 {E(c["prize"])}</span>' if c['pv'] else '') + (f'<span class="tg rg">📍 {E(c["region"])}</span>' if c.get('region') else '')
-    th = f'<img class="th" src="/assets/shots/{c["id"]}.webp" width="640" height="400" alt="" loading="lazy">' if c.get('th') else ''
-    return (f'<li><a class="card{" has-th" if th else ""}" data-c="{SLUG[c["tags"][0]]}" href="/c/{c["id"]}/">{th}<span class="ic">{CAT_ICON[c["tags"][0]]}</span><div class="cb"><div class="top"><h3 class="t">{E(c["title"])}</h3><span class="{cls}">{dd}</span></div>'
-            f'<p class="o">{E(c["org"])}</p><p class="pd">접수 {(ddot(c["start"])[5:] + " ~ ") if c.get("start") else "~ "}{ddot(c["end"])[5:]}</p><div class="tags">{pz}{tg}</div></div></a></li>')
+    th = f'<img class="th" src="/assets/shots/{c["id"]}.webp" width="72" height="45" alt="" loading="lazy">' if c.get('th') else ''
+    meta = (('대상', elig_short(c)), ('제출물', sub_short(c)), ('상금', prize_short(c)), ('마감', ddot(c['end'])[5:]))
+    dl = ''.join(f'<div><dt>{k}</dt><dd{" class=nu" if v == "미확인" else ""}>{E(v)}</dd></div>' for k, v in meta)
+    sub = ' · '.join(x for x in (c['org'] if c.get('org') and c['org'] != '공고 참조' else '', CQ.label_for(c['tags'][0], c.get('medium', ''))) if x)
+    return (f'<li><a class="card cc" data-c="{SLUG[c["tags"][0]]}" href="/c/{c["id"]}/"><div class="cb"><div class="top"><h3 class="t">{E(c["title"])}</h3><span class="{cls}">{dd}</span></div>'
+            f'<dl class="cm">{dl}</dl><p class="o">{E(sub)}</p></div>{th}</a></li>')
 
 
 ELIG_NOTE = [  # 응모 자격 글자 → 준비할 것 (2026-10-18 애드센스 보강: 공모전마다 다른 해설)
@@ -743,7 +778,7 @@ def detail(c, live):
     else:
         _tips = TIPS['기타'] + ['제출물 종류가 확인되지 않아 분야별 준비 팁은 넣지 않았어요. 공식 공고의 제출물·규격 항목을 먼저 확인하세요.']
     tips = ''.join(f'<li>{E(t)}</li>' for t in _tips) or ''.join(f'<li>{E(t)}</li>' for t in TIPS['기타'])
-    sim = [x for x in live if x['id'] != c['id'] and main_tag in x['tags'] and (main_tag != '영상' or not c.get('medium') or x.get('medium', '') == c.get('medium'))][:6]
+    sim = [x for x in live if x['id'] != c['id'] and main_tag in x['tags'] and (main_tag != '영상' or not c.get('medium') or x.get('medium', '') == c.get('medium'))][:3]
     simh = ''.join(card(x) for x in sim)
     status = ('<p class="warn">접수가 마감된 공모전입니다. 같은 분야의 진행 중 공모전을 아래에서 확인하세요.</p>' if n < 0
               else f'<p class="lead"><span class="{"d u3" if n <= 3 else "d hot" if n <= 7 else "d"}">{dd}</span> {ddot(c["end"])} 마감</p>')
@@ -785,23 +820,31 @@ def detail(c, live):
     summary = (f'「{c["title"]}」은 {org}에서 진행하는 {", ".join(CQ.label_for(t, c.get("medium", "")) for t in c["tags"])} 분야 공모전이에요. {CQ.deadline_sentence(ddot(c["end"]), n)} '
                + (f'응모 자격은 "{c["elig"]}"이고 ' if c.get('elig') else '응모 자격은 공식 공고에서 확인이 필요하고 ') + (f'상금은 {c["prize"]}입니다. ' if c.get('pv') else '상금은 공식 공고에서 확인하세요. ') +
                f'접수 방법은 자동 분류상 {c["ch"]}이고(공고와 다를 수 있어요), 마감 시각과 제출 양식·파일 형식은 공식 공고에서 먼저 확인하세요.')
+    # 2026-10-23 UI 정리(사용자 점검): 중요도 순서 — 제목·마감 → 불확실성 → 핵심 표+접수 버튼 → 제출 조건·체크리스트 → 원문 대조·분석 → 유사 공모전 3개 → (접기) 공고 캡처·이력·공유·팀원 모집
+    _v = VER.get(c['id']) or {}
+    _al = list(_v.get('alerts', [])) + [f'값이 서로 달라 확정하지 않았어요: {x}' for x in _v.get('conflicts', [])]
+    alerts_html = ('<div class="alert-top" role="note"><b>⚠ 확인이 필요해요</b><ul>' + ''.join(f'<li>{E(x)}</li>' for x in _al) + '</ul></div>') if _al else ''
+    chk_all = ('<h2>제출 조건·준비 체크리스트</h2><ul class="chk">' + ''.join(f'<li>{E(t)}</li>' for t in todo) + '</ul>'
+               + ('<h3>이 공모전 준비 팁</h3><ul class="chk">' + tips + '</ul>' if tips else ''))
+    shot_html = (f'<a class="shot" href="{E(c["link"])}" target="_blank" rel="noopener nofollow">' + (f'<img src="/assets/shots/{c["id"]}.webp" width="640" height="400" alt="{E(c["title"])} {LK_ALT}" loading="lazy">' if c.get('th') else '')
+                 + f'<span>{LK_BTN}</span></a>') if c.get('th') else ''
+    comm_html = (f'<section id="cm-crew" data-contest="{c["id"]}" data-title="{E(c["title"])}"></section><section id="cm-teams" data-contest="{c["id"]}" data-title="{E(c["title"])}"></section><section id="cm-board" data-contest="{c["id"]}" data-title="{E(c["title"])}"></section>') if COMM_API else ''
     body = f'''<p class="bc"><a href="/">홈</a> › <a href="/cat/{SLUG[main_tag]}/">{E(CQ.label_for(main_tag, c.get("medium", "")))}</a></p>
-<section class="dh" data-c="{SLUG[main_tag]}"><span class="ic big">{'📷' if main_tag == '영상' and c.get('medium') == 'photo' else CAT_ICON[main_tag]}</span><h1>{E(c["title"])}</h1>{status}</section>
-{ruri}
-<a class="shot" href="{E(c["link"])}" target="_blank" rel="noopener nofollow">{f'<img src="/assets/shots/{c["id"]}.webp" width="640" height="400" alt="{E(c["title"])} {LK_ALT}" fetchpriority="high">' if c.get('th') else f'<img class="ruri" src="/assets/ruri/thumbsup.webp" width="300" height="415" alt="루리">'}<span>{'공고 수집처 페이지 열기 →' if CQ.is_aggregator(c['link']) else '공식 공고 페이지 열기 →'}</span></a>
+<section class="dh" data-c="{SLUG[main_tag]}"><h1>{E(c["title"])}</h1>{status}</section>
+{alerts_html}
 <div class="panel"><table class="info">{tb}</table>
-<a class="btn" href="{E(c["link"])}" target="_blank" rel="noopener nofollow">{LK_BTN}</a><p class="note">{LK_NOTE}</p></div>
-{chk_need}
-{share_bar(c['title'], f'「{c["title"]}」 {ddot(c["end"])[5:]} 마감' + (f' · {c["prize"]}' if c.get('pv') else '') + ' — 자격·제출물 정리')}{comm_banner()}{join_cta('contest')}
-<div class="my-acts" data-id="c:{c["id"]}" data-title="{E(c["title"])}" data-end="{c["end"]}"></div>
-<h2>한눈에 보기</h2><p>{E(summary)}</p>
-{ver_block(c)}{np_html}{'' if (VER.get(c['id']) or {}).get('conflicts') else c_insight(c, live)}
+<div class="act-row"><a class="btn" href="{E(c["link"])}" target="_blank" rel="noopener nofollow">{LK_BTN}</a><div class="my-acts" data-id="c:{c["id"]}" data-title="{E(c["title"])}" data-end="{c["end"]}"></div>
+<details class="sh-pop"><summary>공유</summary>{share_bar(c['title'], f'「{c["title"]}」 {ddot(c["end"])[5:]} 마감' + (f' · {c["prize"]}' if c.get('pv') else '') + ' — 자격·제출물 정리')}{comm_banner()}</details></div>
+<p class="note">{LK_NOTE}</p></div>
+<p class="sum">{E(summary)}</p>
+{chk_all}
+{ver_block(c)}{np_html}{'' if _v.get('conflicts') else c_insight(c, live)}
 {('<section id="finder" data-id="' + c['id'] + '" data-v="' + TODAY.strftime('%m%d') + '"></section><script defer src="/assets/finder/finder.js?v=3"></script>') if c in live else ''}
-<h2>응모 전 체크리스트</h2><ul class="chk">{tips}</ul>
 {'<a class="lab-cta" href="/lab/#diag"><b>🏆 이런 공모전 수상작은 어떻게 생겼을까?</b><span>수상작 300여 개를 분석한 당선 공식과 내 문구 진단 →</span></a>' if re.search(r'슬로건|표어|네이밍|명칭|캐치프레이즈|삼행시|N행시|이행시|애칭', c['title']) else ''}
-{hist_html}<p class="note">분야: {catl}. 상금·자격·기간은 공고 원문에서 자동으로 정리한 값이라 오차가 있을 수 있습니다. 최종 기준은 주최 측 공식 공고입니다.</p>
-{f'<section id="cm-crew" data-contest="{c["id"]}" data-title="{E(c["title"])}"></section><section id="cm-teams" data-contest="{c["id"]}" data-title="{E(c["title"])}"></section><section id="cm-board" data-contest="{c["id"]}" data-title="{E(c["title"])}"></section>' if COMM_API else ''}
-<h2>같은 분야 진행 중 공모전</h2><ul class="list">{simh or '<li class="empty">진행 중인 같은 분야 공모전이 없어요.</li>'}</ul>'''
+<h2>비슷한 공모전</h2><ul class="list">{simh or '<li class="empty">진행 중인 같은 분야 공모전이 없어요.</li>'}</ul>
+<details class="fold"><summary>공고 캡처 · 수집 이력 · 분류 정보</summary>{shot_html}{hist_html}<p class="note">분야: {catl}. 상금·자격·기간은 공고 원문에서 자동으로 정리한 값이라 오차가 있을 수 있습니다. 최종 기준은 주최 측 공식 공고입니다.</p></details>
+{('<details class="fold"><summary>팀원 모집 · 질문 · 후기</summary>' + comm_html + '</details>') if comm_html else ''}
+{join_cta('contest')}'''
     # 2026-10-19: 접수 공고는 실제 행사가 아니라 Event 대신 WebPage(데이터와 맞는 유형만)
     ld = {'@context': 'https://schema.org', '@type': 'WebPage', 'name': c['title'], 'description': summary, 'inLanguage': 'ko',
           'dateModified': ((HIST.get(c['id']) or {}).get('chg') or [{'d': (HIST.get(c['id']) or {}).get('first') or TODAY.isoformat()}])[-1]['d'],
@@ -839,9 +882,11 @@ var r=items.filter(function(i){return i.left>=(LATE?1:0)&&(!cat||i.tags.indexOf(
 r.sort(s==='prize'?function(a,b){return b.pv-a.pv||a.left-b.left}:s==='end'?function(a,b){return a.left-b.left||b.pv-a.pv}:function(a,b){return sc(b)-sc(a)||a.left-b.left});
 $('cnt').textContent='진행 중 공모전 '+r.length+'건';var ul=$('list');ul.textContent='';
 if(!r.length){var li=el('li','empty');li.innerHTML='<img src="/assets/ruri/sad_s.webp" width="56" height="77" alt=""><p>조건에 맞는 공모전이 없어요. 검색어를 바꿔 볼까요?</p>';ul.appendChild(li)}
-r.slice(0,shown).forEach(function(i){var li=el('li'),a=el('a','card');a.href='/c/'+i.id+'/';a.dataset.c=SL[i.tags[0]]||'etc';if(i.th){a.className+=' has-th';var im=el('img','th');im.src='/assets/shots/'+i.id+'.webp';im.loading='lazy';im.alt='';a.appendChild(im)}a.appendChild(el('span','ic',IC[i.tags[0]]||'🧩'));var cb=el('div','cb'),top=el('div','top');top.appendChild(el('h3','t',i.title));
-top.appendChild(el('span','d'+(i.left<=3?' u3':i.left<=7?' hot':''),i.left?'D-'+i.left:'D-DAY'));cb.appendChild(top);cb.appendChild(el('p','o',i.org));cb.appendChild(el('p','pd','접수 '+(i.start?i.start.slice(5).replace('-','.')+' ~ ':'~ ')+i.end.slice(5).replace('-','.')));
-var tg=el('div','tags');if(i.effort)tg.appendChild(el('span','ez e0',i.effort));if(i.pv)tg.appendChild(el('span','pz','🏆 '+i.prize));i.tags.forEach(function(x){tg.appendChild(el('span','tg',x))});cb.appendChild(tg);a.appendChild(cb);li.appendChild(a);ul.appendChild(li)});
+r.slice(0,shown).forEach(function(i){var li=el('li'),a=el('a','card cc');a.href='/c/'+i.id+'/';a.dataset.c=SL[i.tags[0]]||'etc';var cb=el('div','cb'),top=el('div','top');top.appendChild(el('h3','t',i.title));
+top.appendChild(el('span','d'+(i.left<=3?' u3':i.left<=7?' hot':''),i.left?'D-'+i.left:'D-DAY'));cb.appendChild(top);
+var dl=el('dl','cm');[['대상',i.eg||'미확인'],['제출물',i.effort||'미확인'],['상금',i.pk||'미확인'],['마감',i.end.slice(5).replace('-','.')]].forEach(function(p){var d=el('div');d.appendChild(el('dt','',p[0]));var dd=el('dd',p[1]==='미확인'?'nu':'',p[1]);d.appendChild(dd);dl.appendChild(d)});cb.appendChild(dl);
+cb.appendChild(el('p','o',[i.org&&i.org!=='공고 참조'?i.org:'',i.tags[0]||''].filter(Boolean).join(' · ')));a.appendChild(cb);
+if(i.th){var im=el('img','th');im.src='/assets/shots/'+i.id+'.webp';im.width=72;im.height=45;im.loading='lazy';im.alt='';a.appendChild(im)}li.appendChild(a);ul.appendChild(li)});
 $('more').hidden=r.length<=shown}
 ['q','due','sort'].forEach(function(i){$(i).addEventListener('input',function(){shown=PAGE;render()})});$('more').onclick=function(){shown+=PAGE;render()};
 fetch('/data.json',{cache:'no-cache'}).then(function(r){return r.json()}).then(function(d){items=d.items.map(function(i){i.left=dn(i.end)-T;i.hay=(i.title+' '+i.org+' '+i.field+' '+i.tags.join(' ')).toLowerCase();return i});render()}).catch(function(){var u=document.querySelector('.list');if(u)u.insertAdjacentHTML('beforebegin','<p class="note">목록을 새로 불러오지 못해 마지막으로 만든 목록을 보여 드려요. 마감 여부는 공식 공고로 확인해 주세요.</p>')});
@@ -1452,7 +1497,7 @@ def build():
         ns = [int(x) for x in re.findall(r'(\d{1,3})\s*(?:명|팀|편|점|작품)', sw)]
         c['win'] = sum(ns) if ns and sum(ns) <= 300 else 0
     with open(os.path.join(ROOT, 'data.json'), 'w', encoding='utf-8', newline='\n') as f:
-        json.dump({'updated': NOW_KST().strftime('%Y-%m-%d %H:%M'), 'late': late, 'items': [{k: c[k] for k in keys} for c in live]},
+        json.dump({'updated': NOW_KST().strftime('%Y-%m-%d %H:%M'), 'late': late, 'items': [{**{k: c[k] for k in keys}, 'eg': elig_short(c), 'pk': prize_short(c)} for c in live]},
                   f, ensure_ascii=False, separators=(',', ':'))
     # 챗봇 추천용 경품 이벤트 목록 (진행 중만)
     with open(os.path.join(ROOT, 'events.json'), 'w', encoding='utf-8', newline='\n') as f:
@@ -1706,9 +1751,9 @@ def build():
         cl = [c for c in live if n in c['tags']]
         tips = ''.join(f'<li>{E(t)}</li>' for t in TIPS[n])
         body = f'''<p class="bc"><a href="/">홈</a> › {n}</p><section class="dh" data-c="{s}"><span class="ic big">{CAT_ICON[n]}</span><h1>{CAT_T.get(n, n + ' 공모전')}</h1><p class="lead">진행 중 <b>{len(cl)}건</b> · 마감 임박순</p><p class="hm-scope">오늘 {TODAY.month}/{TODAY.day}(한국 시간) 기준 접수 마감 전 · 제목이 같은 공모전은 1건 · {NOW_KST():%m/%d %H:%M} 갱신 · 마감 시각은 공식 공고 확인</p></section>
-<p>{CAT_INTRO[n]}</p>{cat_stats(n, cl)}
-{say(CAT_OUTFIT[n], f'<b>{n} 공모전 응모 팁</b><ul class="chk">{tips}</ul>')}{'<a class="lab-cta" href="/fridge/"><b>🍳 루리의 냉장고 파먹기</b><span>집에 있는 재료로 만들 수 있는 집밥 레시피 · 요리대회 연습용으로 딱 →</span></a>' if s == 'food' else ''}
-<h2>진행 중 {n} 공모전</h2>{TOOLBAR}<ul class="list" id="list">{''.join(card(c) for c in cl[:60])}</ul>{('<details class="rest"><summary>나머지 ' + str(len(cl) - 60) + '건 제목으로 보기</summary><ul>' + ''.join(f'<li><a href="/c/{c["id"]}/">{E(c["title"])}</a> · {ddot(c["end"])[5:]} 마감</li>' for c in cl[60:]) + '</ul></details>') if len(cl) > 60 else ''}<p class="hm-links">{' '.join(f'<a href="/cat/{s2}/">{n2}</a>' for s2, n2 in CATS if s2 != s)}</p><button class="more" id="more" hidden>더 보기</button>'''
+<h2>진행 중 {n} 공모전</h2>{TOOLBAR}<ul class="list" id="list">{''.join(card(c) for c in cl[:60])}</ul>{('<details class="rest"><summary>나머지 ' + str(len(cl) - 60) + '건 제목으로 보기</summary><ul>' + ''.join(f'<li><a href="/c/{c["id"]}/">{E(c["title"])}</a> · {ddot(c["end"])[5:]} 마감</li>' for c in cl[60:]) + '</ul></details>') if len(cl) > 60 else ''}<p class="hm-links">{' '.join(f'<a href="/cat/{s2}/">{n2}</a>' for s2, n2 in CATS if s2 != s)}</p><button class="more" id="more" hidden>더 보기</button>
+<h2 class="cat-sub">이 분야 한눈에 보기·응모 팁</h2><p>{CAT_INTRO[n]}</p>{cat_stats(n, cl)}
+{say(CAT_OUTFIT[n], f'<b>{n} 공모전 응모 팁</b><ul class="chk">{tips}</ul>')}{'<a class="lab-cta" href="/fridge/"><b>🍳 루리의 냉장고 파먹기</b><span>집에 있는 재료로 만들 수 있는 집밥 레시피 · 요리대회 연습용으로 딱 →</span></a>' if s == 'food' else ''}'''
         fq, ld_ = hub_extra(f'{n} 공모전', sorted(cl, key=lambda c: c['end']), f'/cat/{s}/')
         page(f'/cat/{s}/', f'{CAT_T.get(n, n + " 공모전 모음")} · 진행 중 {len(cl)}건', f'{n} 분야 진행 중 공모전 {len(cl)}건 마감 임박순 정리. {CAT_INTRO[n][:70]}',
              body + fq + listing_js(n), [('루리의 줍줍', '/'), (n, f'/cat/{s}/')], ld_)
@@ -2986,7 +3031,11 @@ def prize_split(c):
     """표시된 상금 문구에서 (1등 상금, 총상금)을 원 단위로 따로 읽는다. 파서의 pv 는 둘 중 큰 값이라 서로 다른 기준끼리 비교되는 문제가 있어(2026-10-23 사용자 점검: 총상금 2,100만원과 1등 1,000만원이 함께 비교됨) 비교에는 쓰지 않는다."""
     s_ = c.get('prize') or ''
     f, t = re.search(r'1등\s*([^·]+)', s_), re.search(r'총상금\s*([^·]+)', s_)
-    g = lambda m: (P.amount_won(m.group(1).strip()) or 0) if m else 0
+    def g(m):
+        if not m:
+            return 0
+        a_ = re.search(r'[\d,\.]+\s*(?:억\s*)?(?:천만|백만|만)?\s*원', m.group(1))   # 「6,000만원(21작품)」처럼 뒤에 괄호·부연이 붙어도 금액만 읽는다
+        return (P.amount_won(a_.group(0).strip()) or 0) if a_ else 0
     return g(f), g(t)
 
 
