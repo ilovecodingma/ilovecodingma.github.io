@@ -48,6 +48,8 @@
     var k = c.getAttribute('data-i'); c.checked = !!chk[k];
     c.onchange = function () { chk[k] = c.checked; if (!c.checked) delete chk[k]; LSset(KEY, chk); c.closest('li').classList.toggle('done', c.checked); };
     c.closest('li').classList.toggle('done', c.checked);
+    var li = c.closest('li'), nm = (k || '').replace(/\(.*?\)/g, '').trim();   // 없는 재료(체크 안 함)에만 최저가 검색 링크가 보인다
+    if (nm && !li.querySelector('.rp-cheap')) { var a = document.createElement('a'); a.className = 'rp-cheap'; a.textContent = '최저가'; a.target = '_blank'; a.rel = 'noopener nofollow'; a.href = '/money/cheapest/?q=' + encodeURIComponent(nm); a.title = nm + ' 최저가 검색'; a.onclick = function (e) { e.stopPropagation(); }; li.appendChild(a); }
   });
   var cp = A.querySelector('.rp-copy');
   if (cp) cp.onclick = function () {
