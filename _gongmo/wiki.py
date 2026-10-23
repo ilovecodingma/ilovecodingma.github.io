@@ -67,12 +67,17 @@ def collect(urls, noindex, root):
         if not h1:
             continue
         title = re.sub(r'^[^\w가-힣]+', '', _clean(h1.group(1)))
-        desc = ''
+        desc, fb = '', ''
+        LAW = re.compile(r'시행규칙|시행령|별표|제\d+조|제\d+항|법률|조문')   # 법령 문장은 카드 요약으로 쓰지 않는다(2026-10-23 UI 2차 10번)
         for p in re.findall(r'<(?:p|li)[^>]*>(.*?)</(?:p|li)>', mh[mh.find('</h1>'):], re.S):
             t = _clean(p)
-            if len(t) >= 40 and not t.startswith(('기준', '홈 ›')):
-                desc = _trim(t, 72)
-                break
+            if len(t) >= 40 and not t.startswith(('기준', '홈 ›')) and not LAW.search(t):
+                c = _trim(t, 72)
+                if not c.endswith('…'):
+                    desc = c
+                    break
+                fb = fb or c
+        desc = desc or fb
         # id 가 h2 에 있거나(공용 글), h2 를 감싸는 section 에 있는(생활 돈 가이드) 두 경우를 모두 읽는다
         heads = [(i, re.sub(r'^[\d?]+\s*', '', _clean(t))) for _tg, i, t in re.findall(r'<(section|h2)\b[^>]*\bid="([^"]+)"[^>]*>(.*?)</h2>', mh, re.S) if len(_clean(t)) < 120]
         dt = (re.search(r'확인일\s*(\d{4}-\d{2}-\d{2})', mh) or [0, ''])[1]
