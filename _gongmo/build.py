@@ -440,7 +440,8 @@ def card(c):
     th = f'<img class="th" src="/assets/shots/{c["id"]}.webp" width="72" height="45" alt="" loading="lazy">' if c.get('th') else ''
     meta = (('대상', elig_short(c)), ('제출물', sub_short(c)), ('상금', prize_short(c)), ('마감', ddot(c['end'])[5:]))
     dl = ''.join(f'<div><dt>{k}</dt><dd{" class=nu" if v in ("미확인", "확인 필요") else ""}>{E(v)}</dd></div>' for k, v in meta)
-    sub = ' · '.join(x for x in (c['org'] if c.get('org') and c['org'] != '공고 참조' else '', CQ.label_for(c['tags'][0], c.get('medium', ''))) if x)
+    _vm = '' if c['id'] not in VER else ('✅ 공식 원문 대조' if VER[c['id']].get('level') != 'partial' else '☑ 공식 원문 일부 대조')
+    sub = ' · '.join(x for x in (_vm, c['org'] if c.get('org') and c['org'] != '공고 참조' else '', CQ.label_for(c['tags'][0], c.get('medium', ''))) if x)
     return (f'<li><a class="card cc" data-c="{SLUG[c["tags"][0]]}" href="/c/{c["id"]}/"><div class="cb"><div class="top"><h3 class="t">{E(c["title"])}</h3><span class="{cls}">{dd}</span></div>'
             f'<dl class="cm">{dl}</dl><p class="o">{E(sub)}</p></div>{th}</a></li>')
 
@@ -728,7 +729,7 @@ def c_insight(c, live):
         out += ('<h3>이런 경우는 조건을 더 확인하세요 <small>(자격 문구에서 읽힌 신호)</small></h3><ul class="chk">' + ''.join(f'<li>{E(x)}</li>' for x in cant) + '</ul>') if cant else ''
     sub_t = c.get('effort') or {'photo': '사진', 'video': '영상', 'photo+video': '사진·영상'}.get(mdm, '')
     pit = []
-    if sub_t in EFFORT_NOTE:
+    if sub_t in EFFORT_NOTE and c['id'] in VER:   # 일반 준비 문구는 공식 대조된 공고에서만(미대조 공고에는 공통 가이드 링크로 대신한다)
         pit.append(EFFORT_NOTE[sub_t])
     for k in ('제출물·규격', '접수', '시상'):
         if NPd.get(k):
@@ -737,16 +738,21 @@ def c_insight(c, live):
         pit.append('참가비가 있다고 수집됐어요. 주최 기관 공식 공고에 적혀 있는지 확인하세요.')
     if pit:
         out += '<h2>⚠ 이 공모전에서 놓치기 쉬운 것</h2><ul class="chk">' + ''.join(f'<li>{E(x)}</li>' for x in pit[:6]) + '</ul>'
-    chn = {'web': '공식 접수 페이지에서 직접 제출', '메일': '이메일로 제출', '우편': '우편·방문으로 제출', '폼': '온라인 신청서(구글폼 등)로 제출'}
-    ch_ = c.get('ch') or ''
-    steps = ['공식 공고를 열어 자격·마감 시각·제출 규격을 확인해요.', '규격(분량·길이·파일 형식·파일명)에 맞춰 제출물을 만들어요.',
-             f'접수합니다 — 접수 방법은 자동 분류상 「{ch_ or "공고 확인"}」이에요(공고와 다를 수 있어요).', '접수 완료 메일이나 화면을 저장해 두고, 수정 가능 기간을 확인해요.']
-    if ch_ and ch_ != '공고 참조':
+    _v = VER.get(c['id'])
+    if _v:
+        F = {k_: x_ for k_, x_ in _v.get('facts', [])}
+        ORDER = [('참가 자격', ('응모 자격', '참가 자격')), ('제출물 규격', ('제출물 규격', '제출물·규격')), ('필수 서류', ('제출 서류', '제출 항목', '제출서류')),
+                 ('접수 방법', ('접수 방법',)), ('마감', ('접수 마감',)), ('AI 사용', ('AI 사용',)), ('저작권·수상작 이용', ('저작권·활용',)), ('실격·특이 조건', ('특이 조건', '제외 대상'))]
+        rows_ = [(lab, next((F[k_] for k_ in ks if k_ in F), None)) for lab, ks in ORDER]
+        rows_ = [(lab, val) for lab, val in rows_ if val]
+        if rows_:
+            out += ('<h2>📤 이 공고의 제출 순서와 조건 <small>공식 원문 대조 기준 · 확인일 ' + E(_v['verified_at']) + '</small></h2><ol class="chk">'
+                    + ''.join(f'<li><b>{E(lab)}</b> — {E(val)}</li>' for lab, val in rows_) + '</ol>')
+    else:
         _bt = CQ.link_wording(c['link'])[0].replace(' →', '')
-        steps[2] = (f'접수합니다 — 자동 분류상 「{ch_}」 방식이에요. 위 「{_bt}」 버튼은 공고를 모아 둔 수집처 페이지라서, 실제 접수 경로는 주최 측 공식 공고에서 확인하세요.' if CQ.is_aggregator(c['link'])
-                    else f'접수합니다 — 자동 분류상 「{ch_}」 방식이에요. 실제 접수는 위 「{_bt}」 버튼이 여는 주최 측 페이지와 공고를 따르세요.')
-    out += '<h2>📤 제출 순서</h2><ol class="chk">' + ''.join(f'<li>{E(x)}</li>' for x in steps) + '</ol>'
-    if n >= 4 and not miss:
+        out += (f'<h2>📤 접수하기 전에</h2><p>이 공고는 아직 공식 원문과 대조하지 못했어요. 위 「{E(_bt)}」 버튼이 여는 페이지에서 자격·마감 시각·제출 규격·접수 방법을 먼저 확인하세요.'
+                + (' 이 버튼은 공고를 모아 둔 수집처 페이지라서 주최 측 공식 공고를 따로 찾아야 해요.' if CQ.is_aggregator(c['link']) else '') + '</p>')
+    if n >= 4 and not miss and c['id'] in VER:   # 일정 제안은 공식 대조로 조건을 확인한 공고에만
         e = datetime.date.fromisoformat(c['end'])
         d1 = TODAY + datetime.timedelta(days=max(1, n // 3)); d2 = e - datetime.timedelta(days=max(1, n // 5)); d3 = e - datetime.timedelta(days=1)
         out += (f'<h2>📅 추천 준비 일정 <small>루리 제안 · 공식 일정 아님</small></h2><p class="note">가정: 제출물 작업량은 공고에 없어서 마감일까지를 3등분했어요. 작업량이 크면 앞당기고, 접수 마감 시각은 공고로 확인하세요.</p>'
@@ -758,10 +764,13 @@ def c_insight(c, live):
     cand.sort(key=lambda t: (-len(t[1]), abs((datetime.date.fromisoformat(t[0]['end']) - datetime.date.fromisoformat(c['end'])).days)))
     cmp_ = cand[:4]
     if cmp_:
+        def _pz(x):
+            f_, t_ = prize_split(x)
+            return (won_txt(f_) if f_ else '미표기'), (won_txt(t_) if t_ else '미표기')
         row = lambda x, w_='', on='': (f'<tr{on}><td>{("이 공모전" if on else "<a href=/c/" + x["id"] + "/>" + E(x["title"][:40]) + "</a>")}</td><td>{E(elig_short(x))}</td><td>{E(sub_short(x))}</td>'
-                                       f'<td>{E(prize_short(x))}</td><td>{ddot(x["end"])[5:]}</td><td>{E(w_ or "—")}</td></tr>')
-        out += (f'<h2>🔍 비슷한 {E(CQ.label_for(tag, mdm))} 공모전 비교 <small>대표 분야가 같고 참가 대상·제출물이 일치하는 것만</small></h2><table class="info cmp"><tr><th>공모전</th><th>대상</th><th>제출물</th><th>상금(1등/총상금 구분)</th><th>마감</th><th>비슷한 점</th></tr>'
-                + row(c, '', ' class="on"') + ''.join(row(x, ' · '.join(w_)) for x, w_ in cmp_) + '</table><p class="note">상금 칸은 「1등」과 「총」을 구분해 적었어요. 기준이 다른 금액끼리는 크기를 비교하지 마세요.</p>')
+                                       f'<td>{E(_pz(x)[0])}</td><td>{E(_pz(x)[1])}</td><td>{ddot(x["end"])[5:]}</td><td>{E(w_ or "—")}</td></tr>')
+        out += (f'<h2>🔍 비슷한 {E(CQ.label_for(tag, mdm))} 공모전 비교 <small>대표 분야가 같고 참가 대상·제출물이 일치하는 것만</small></h2><table class="info cmp"><tr><th>공모전</th><th>대상</th><th>제출물</th><th>1등 상금</th><th>총상금</th><th>마감</th><th>비슷한 점</th></tr>'
+                + row(c, '', ' class="on"') + ''.join(row(x, ' · '.join(w_)) for x, w_ in cmp_) + '</table><p class="note">「1등 상금」과 「총상금」은 다른 기준이라 따로 적었어요. 「미표기」는 공고 문구에서 그 금액을 읽지 못했다는 뜻이고 없다는 뜻이 아니에요. 상금이 크다고 이 공모전이 유리하다는 뜻은 아니에요.</p>')
     if '부문' in (c.get('prize') or '') and not any(prize_split(c)):
         out += '<p class="note">이 공모전은 부문마다 상금이 달라 하나의 1등 상금으로 정리하지 않았어요. 표의 「상금·혜택」 칸을 기준으로 부문별로 확인하세요.</p>'
     return out
@@ -882,6 +891,29 @@ def _ai_short(v, NEED):
     return re.split(r'\s*[—(]', v)[0].strip() or NEED
 
 
+GUIDE_OK = None
+
+
+def guide_links_html(c):
+    """공통 준비 지식은 개별 상세에 반복하지 않고 충실한 공통 가이드로 연결한다(2026-10-23). 존재하는 가이드만 건다."""
+    global GUIDE_OK
+    if GUIDE_OK is None:
+        GUIDE_OK = set(os.listdir(os.path.join(ROOT, 'guide'))) if os.path.isdir(os.path.join(ROOT, 'guide')) else set()
+    L = [('contest-rules-reading-eligibility-deadline', '공고문에서 자격·마감 읽는 법')]
+    mdm, eff = c.get('medium', ''), c.get('effort') or ''
+    if mdm in ('video', 'photo+video') or eff == '영상':
+        L += [('media-art-video-contest-submission-check', '영상 공모전 제출 전 점검'), ('contest-music-font-license-check', '음원·폰트 라이선스 확인')]
+    if mdm in ('photo', 'photo+video') or eff == '사진':
+        L.append(('local-photo-contest-permission-portrait', '사진 공모전 초상권·촬영 허가'))
+    if c.get('ai') or any('AI' in t for t in (c.get('tags') or [])) or re.search(r'AI|인공지능', c.get('title') or ''):
+        L.append(('ai-contest-rules-check', 'AI 활용 공모전 규정 확인'))
+    if eff in ('기획서', '아이디어 제안서') or (c.get('tags') or [''])[0] == '아이디어·정책':
+        L.append(('idea-contest-ppt-structure', '아이디어 공모전 기획서 구조'))
+    L.append(('contest-deadline-day-mistakes', '마감 당일 흔한 실수'))
+    L = [(sl, lb) for sl, lb in L if sl in GUIDE_OK][:5]
+    return ('<h2>공통 준비 가이드</h2><ul class="chk">' + ''.join(f'<li><a href="/guide/{sl}/">{E(lb)}</a></li>' for sl, lb in L) + '</ul>') if L else ''
+
+
 def detail(c, live):
     if c['id'] in DUP:   # 같은 공고가 여러 곳에서 수집됨 → 검색 제외 + 대표 공고로 안내(주소는 유지)
         r_ = DUP[c['id']]
@@ -925,8 +957,16 @@ def detail(c, live):
     rows = [('주최·주관', v_(c['org'])), ('분야', field_clean(c)), ('응모 자격', v_(c['elig'])), ('지역 제한', region_row(c, NEED)),
             ('접수 기간', period + (' (수집처 기준, 공식 공고에서 확인)' if CQ.is_aggregator(c['link']) and not c.get('verified_official') else '')), ('마감 시각', deadline_row(c, NEED)), ('제출물 종류', v_(sub_type)), ('접수 방법', (v_(c['ch']) if c.get('verified_official') else CQ.auto_label(v_(c['ch']))) if v_(c['ch']) != NEED else NEED), ('상금·혜택', v_(c['prize'])),
             ('참가비', fee_row(c, NEED)), ('AI 사용', ai_row(c, NEED))]
+    _hh = HIST.get(c['id']) or {}
+    if VER.get(c['id']):
+        _src = f'공식 원문 대조 {VER[c["id"]]["verified_at"]} ({"일부 항목" if VER[c["id"]].get("level") == "partial" else "핵심 조건"}) — 아래 「공식 원문 대조 결과」에 항목별 출처'
+    else:
+        _src = (f'{CQ.host(c["link"]) if CQ.is_aggregator(c["link"]) else "주최 측 링크"}를 거쳐 자동 수집·정리한 값(처음 수집 {_hh.get("first") or "-"}) — 공식 원문 대조 전이라 자동 추정이 섞여 있을 수 있어요')
+    rows.append(('값의 출처·확인 시점', _src))
     tb = ''.join(f'<tr><th>{k}</th><td{" class=need" if NEED in str(v) else ""}>{E(v)}</td></tr>' for k, v in rows)
-    todo = ['마감 시각(예: 18시·23시 59분)과 접수 마감이 「도착 기준」인지']
+    todo = []
+    if NEED in deadline_row(c, NEED):
+        todo.append('마감 시각 — 수집 데이터에는 날짜만 있고 시각이 없어요(마감 당일 몇 시까지인지, 도착 기준인지)')
     if v_(c['elig']) == NEED:
         todo.append('응모 자격(나이·신분·지역)')
     if not sub_type:
@@ -935,7 +975,8 @@ def detail(c, live):
         todo.append('상금·부상 내용')
     if c.get('fee'):
         todo.append('참가비가 필요한 이유와 주최 기관이 맞는지')
-    todo.append('1인당 응모 편수, 수상 발표일과 발표 방법')
+    if VER.get(c['id']):
+        todo = list(VER[c['id']].get('unverified') or [])   # 대조한 공고는 대조하지 못한 항목만
     NPs = notice_points(c['id'])
     hh = HIST.get(c['id']) or {}
     _tf = os.path.join(HERE, 'txt', f'{c["id"]}.txt')
@@ -957,8 +998,7 @@ def detail(c, live):
     if _miss:
         _al.append(' · '.join(_miss) + '을(를) 아직 확인하지 못했어요. 공식 공고에서 먼저 확인한 뒤 참가 여부를 정하세요(확인 전에는 준비 일정을 추천하지 않아요).')
     alerts_html = ('<div class="alert-top" role="note"><b>⚠ 확인이 필요해요</b><ul>' + ''.join(f'<li>{E(x)}</li>' for x in _al) + '</ul></div>') if _al else ''
-    chk_all = ('<h2>제출 조건·준비 체크리스트</h2><ul class="chk">' + ''.join(f'<li>{E(t)}</li>' for t in todo) + '</ul>'
-               + ('<h3>이 공모전 준비 팁</h3><ul class="chk">' + tips + '</ul>' if tips else ''))
+    chk_all = (('<h2>아직 확인하지 못한 항목</h2><ul class="chk">' + ''.join(f'<li>{E(t)}</li>' for t in todo) + '</ul>') if todo else '') + guide_links_html(c)
     shot_html = (f'<a class="shot" href="{E(c["link"])}" target="_blank" rel="noopener nofollow">' + (f'<img src="/assets/shots/{c["id"]}.webp" width="640" height="400" alt="{E(c["title"])} {LK_ALT}" loading="lazy">' if c.get('th') else '')
                  + f'<span>{LK_BTN}</span></a>') if c.get('th') else ''
     comm_html = (f'<section id="cm-crew" data-contest="{c["id"]}" data-title="{E(c["title"])}"></section><section id="cm-teams" data-contest="{c["id"]}" data-title="{E(c["title"])}"></section><section id="cm-board" data-contest="{c["id"]}" data-title="{E(c["title"])}"></section>') if COMM_API else ''
@@ -1027,7 +1067,7 @@ if(!r.length){var li=el('li','empty');li.innerHTML='<img src="/assets/ruri/sad_s
 r.slice(0,shown).forEach(function(i){var li=el('li'),a=el('a','card cc');a.href='/c/'+i.id+'/';a.dataset.c=SL[i.tags[0]]||'etc';var cb=el('div','cb'),top=el('div','top');top.appendChild(el('h3','t',i.title));
 top.appendChild(el('span','d'+(i.left<=3?' u3':i.left<=7?' hot':''),i.left?'D-'+i.left:'D-DAY'));cb.appendChild(top);
 var dl=el('dl','cm');[['대상',i.eg||'확인 필요'],['제출물',i.effort||'확인 필요'],['상금',i.pk||'확인 필요'],['마감',i.end.slice(5).replace('-','.')]].forEach(function(p){var d=el('div');d.appendChild(el('dt','',p[0]));var dd=el('dd',p[1]==='확인 필요'?'nu':'',p[1]);d.appendChild(dd);dl.appendChild(d)});cb.appendChild(dl);
-cb.appendChild(el('p','o',[i.org&&i.org!=='공고 참조'?i.org:'',i.tags[0]||''].filter(Boolean).join(' · ')));a.appendChild(cb);
+cb.appendChild(el('p','o',[i.vf===2?'✅ 공식 원문 대조':i.vf===1?'☑ 공식 원문 일부 대조':'',i.org&&i.org!=='공고 참조'?i.org:'',i.tags[0]||''].filter(Boolean).join(' · ')));a.appendChild(cb);
 if(i.th){var im=el('img','th');im.src='/assets/shots/'+i.id+'.webp';im.width=72;im.height=45;im.loading='lazy';im.alt='';a.appendChild(im)}li.appendChild(a);ul.appendChild(li)});
 $('more').hidden=r.length<=shown}
 ['q','due','sort','tg','ai'].forEach(function(i){$(i).addEventListener('input',function(){shown=PAGE;render()})});document.addEventListener('click',function(e){if(e.target.closest&&e.target.closest('#list a'))save()});window.addEventListener('pagehide',save);$('more').onclick=function(){shown+=PAGE;render()};
@@ -1707,6 +1747,21 @@ def build():
     live = [c for c in live if c['id'] not in GATE_HOLD]
     print('게이트 검수 대기', len(GATE_HOLD), '재수집 대상', len(GATE_REC))
     try:
+        import csv as _csv
+        _gd2 = os.path.expanduser(r'~\Desktop\루리줍줍_품질개편'); os.makedirs(_gd2, exist_ok=True)
+        _rows = []
+        for c_ in live:
+            lv = 'none' if c_['id'] not in VER else (VER[c_['id']].get('level') or 'full')
+            miss_ = [n_ for n_, ok_ in (('자격', bool(c_.get('elig'))), ('제출물', bool(c_.get('effort') or c_.get('medium'))), ('상금', bool(c_.get('pv'))), ('접수 링크 공식', not CQ.is_aggregator(c_['link']))) if not ok_]
+            _rows.append((c_['end'], 0 if lv == 'none' else 1, c_['id'], c_['title'][:50], lv, ' · '.join(miss_), 'https://sungprofile.cloud/c/' + c_['id'] + '/', c_['link'], ' / '.join(GATE_REC.get(c_['id'], []))[:120]))
+        _rows.sort(key=lambda r_: (r_[0], r_[1]))
+        with open(os.path.join(_gd2, '운영자_검토목록.csv'), 'w', encoding='utf-8-sig', newline='') as f_:
+            w_ = _csv.writer(f_); w_.writerow(['마감일', '공식대조(0=없음)', 'ID', '제목', '대조수준', '비어 있는 핵심', '사이트 주소', '접수 링크', '재수집 사유', '운영자 확인일(직접 기입)', '운영자 메모'])
+            for r_ in _rows:
+                w_.writerow(list(r_) + ['', ''])
+    except Exception as e_:
+        print('운영자 검토목록 실패', e_)
+    try:
         _gd = os.path.expanduser(r'~\Desktop\루리줍줍_품질개편'); os.makedirs(_gd, exist_ok=True)
         _byid = {c['id']: c for c in contests}
         _ln = ['# 공모전 게시 전 품질 게이트 결과 (빌드마다 갱신)', '', f'- 검수 대기 {len(GATE_HOLD)}건 · 재수집 대상 {len(GATE_REC)}건', '', '## 검수 대기']
@@ -1738,7 +1793,7 @@ def build():
         ns = [int(x) for x in re.findall(r'(\d{1,3})\s*(?:명|팀|편|점|작품)', sw)]
         c['win'] = sum(ns) if ns and sum(ns) <= 300 else 0
     with open(os.path.join(ROOT, 'data.json'), 'w', encoding='utf-8', newline='\n') as f:
-        json.dump({'updated': NOW_KST().strftime('%Y-%m-%d %H:%M'), 'late': late, 'items': [{**{k: c[k] for k in keys}, 'eg': elig_short(c), 'pk': prize_short(c)} for c in live]},
+        json.dump({'updated': NOW_KST().strftime('%Y-%m-%d %H:%M'), 'late': late, 'items': [{**{k: c[k] for k in keys}, 'eg': elig_short(c), 'pk': prize_short(c), 'vf': (2 if (VER.get(c['id']) or {}).get('level') != 'partial' and c['id'] in VER else 1 if c['id'] in VER else 0)} for c in live]},
                   f, ensure_ascii=False, separators=(',', ':'))
     # 챗봇 추천용 경품 이벤트 목록 (진행 중만)
     with open(os.path.join(ROOT, 'events.json'), 'w', encoding='utf-8', newline='\n') as f:
@@ -1995,7 +2050,7 @@ def build():
     _tp = json.load(open(os.path.join(HERE, 'topic_hosts.json'), encoding='utf-8'))['topics']
     sc_ctx = {'now': NOW_KST(), 'today': TODAY, 'contests': contests, 'DUP': DUP, 'events': events, 'aps': aps, 'AP_DUP': AP_DUP, 'deadline_row': deadline_row, 'elig_short': elig_short, 'prize_short': prize_short,
               'tidy_ev': (lambda t: re.sub(r'^\s*\((?:중복|\d+회 중복)[^)]*\)\s*', '', t).strip()), 'EASY': EASY,
-              'new_contests': sorted(_cs, key=lambda c: (_first(c), c['end']), reverse=True)[:14], 'n_new': sum(1 for c in _cs if _first(c) == TODAY.isoformat()), 'n_ver': len(VER), 'n_core': sum(1 for v in VER.values() if v.get('level') != 'partial'), 'n_live': len(live),
+              'new_contests': sorted(_cs, key=lambda c: (_first(c), c['end']), reverse=True)[:14], 'n_new': sum(1 for c in _cs if _first(c) == TODAY.isoformat()), 'n_ver': len(VER), 'VER': VER, 'n_core': sum(1 for v in VER.values() if v.get('level') != 'partial'), 'n_live': len(live),
               'guides': [{'u': f'/money/guide/{k}/', 'title': _gk[k]['h1'], 'desc': _gk[k]['lead']} for k in ('energy-voucher', 'eitc', 'naeil-card') if k in _gk],
               'n_contest': len(live), 'n_apply': len(aps), 'topics': _tp,
               'reads': [{'u': u_, 'title': html.unescape(re.sub(r'\s*[|｜].*$', '', (re.search(r'<title>(.*?)</title>', open(os.path.join(ROOT, u_.strip('/'), 'index.html'), encoding='utf-8').read(), re.S) or [0, u_])[1])), 'sub': sb_}
@@ -3380,7 +3435,7 @@ AN_NOTE = ('<p class="an-warn">📊 증권사 리포트·전문가 전망을 다
 def prize_split(c):
     """표시된 상금 문구에서 (1등 상금, 총상금)을 원 단위로 따로 읽는다. 파서의 pv 는 둘 중 큰 값이라 서로 다른 기준끼리 비교되는 문제가 있어(2026-10-23 사용자 점검: 총상금 2,100만원과 1등 1,000만원이 함께 비교됨) 비교에는 쓰지 않는다."""
     s_ = c.get('prize') or ''
-    f, t = re.search(r'(?:1등|대상)\s*([^·]+)', s_), re.search(r'총\s*(?:상금)?\s*([^·(]+)', s_)   # 「대상 120만원」은 1등과 같은 최상위 시상으로 읽는다(2026-10-23 이천시)
+    f, t = re.search(r'(?:1등|대상|당선(?:작)?)\s*(?:\d+\s*[팀편점명]\s*)?([^·]+)', s_), re.search(r'총\s*(?:상금)?\s*([^·(]+)', s_)   # 「대상 120만원」은 1등과 같은 최상위 시상으로 읽는다(2026-10-23 이천시)
     def g(m):
         if not m:
             return 0
