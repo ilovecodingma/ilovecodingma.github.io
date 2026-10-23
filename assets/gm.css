@@ -284,3 +284,17 @@ body[data-th=ai] .hd .logo span,body[data-th=ai] .th-sw a{color:inherit}
 details.ver>summary small{font-weight:500;color:var(--mu);margin-left:6px}
 /* UI 2차 15번: 「전체」는 현재 메뉴처럼 강조하지 않고, 하위 서비스에 있을 때는 서비스 이름을 따로 표시 */
 .gn-cur{display:inline-flex;align-items:center;gap:4px;min-height:40px;padding:0 11px;margin-left:6px;border-left:1px solid var(--bd);font-weight:800;font-size:14.5px;color:var(--brand,#6d28d9);white-space:nowrap}
+
+/* 2026-10-23 배경: 위쪽에만 번지는 부드러운 보라·청록 빛(스크롤해도 고정하지 않아 모바일에서 가볍다), 글자 대비는 그대로 */
+body{background:
+ radial-gradient(900px 420px at 6% -6%,color-mix(in srgb,var(--brand,#6d28d9) 13%,transparent),transparent 62%),
+ radial-gradient(760px 380px at 98% 2%,color-mix(in srgb,#06b6d4 11%,transparent),transparent 60%),
+ radial-gradient(620px 300px at 50% 0%,color-mix(in srgb,#f59e0b 7%,transparent),transparent 70%),
+ var(--bg);background-repeat:no-repeat;background-size:100% 620px,100% 620px,100% 620px,auto;background-color:var(--bg)}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]) body{background-size:100% 520px,100% 520px,100% 520px,auto}}
+.hm-hero{position:relative;margin:10px 0 4px;padding:26px 22px 14px;border-radius:24px;border:1px solid color-mix(in srgb,var(--brand,#6d28d9) 16%,var(--bd,#e7e5f5));
+ background:linear-gradient(135deg,color-mix(in srgb,var(--brand,#6d28d9) 9%,var(--card,#fff)) 0%,var(--card,#fff) 55%,color-mix(in srgb,#06b6d4 8%,var(--card,#fff)) 100%);box-shadow:0 10px 30px -18px color-mix(in srgb,var(--brand,#6d28d9) 45%,transparent)}
+.hm-hero::after{content:"";position:absolute;right:-30px;top:-30px;width:160px;height:160px;border-radius:50%;background:radial-gradient(circle,color-mix(in srgb,var(--brand,#6d28d9) 18%,transparent),transparent 70%);pointer-events:none}
+@media (max-width:520px){.hm-hero{padding:20px 16px 10px;border-radius:20px}}
+.say .bub{background:linear-gradient(135deg,var(--card,#fff),color-mix(in srgb,var(--brand,#6d28d9) 6%,var(--card,#fff)));box-shadow:0 6px 18px -12px color-mix(in srgb,var(--brand,#6d28d9) 50%,transparent)}
+@media (prefers-reduced-motion:no-preference){.hm-hero{animation:hmin .5s ease both}@keyframes hmin{from{opacity:.0;transform:translateY(6px)}to{opacity:1;transform:none}}}
