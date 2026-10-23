@@ -138,6 +138,8 @@ def _same_run(a, b):
     return r >= (0.45 if pa and pa == pb else 0.6)   # 주최·기간·1등 상금이 모두 같으면 제목은 느슨하게
 
 
+MANUAL_DUP = {'Q01475': 'Q01474'}   # 대구국제디자인어워드(DIDA) — dida.biz 접수개요 확인
+
 AGG = re.compile(r'contestkorea|wevity|thinkyou|all-con|linkareer|campuspick|detizen|allforyoung')
 
 
@@ -169,6 +171,10 @@ def dups(items):
                 pairs.append((a, b, '핵심 이름 겹침 · 마감일 같음 · 주최 호환')); continue
             if (j >= 0.72 and a['end'] == b['end']) or (j >= 0.6 and a.get('org') and a.get('org') == b.get('org')):
                 pairs.append((a, b, f'제목 유사도 {j:.2f}' + (' · 마감일 같음' if a['end'] == b['end'] else ' · 같은 주최')))
+    ids = {c['id']: c for c in items}
+    for d_, r_ in MANUAL_DUP.items():   # 공식 페이지로 같은 공모전임을 확인한 쌍(2026-10-23)
+        if d_ in ids and r_ in ids:
+            pairs.insert(0, (ids[r_], ids[d_], '공식 페이지 확인 — 같은 공모전'))
     for a, b, w in pairs:
         if a['id'] in out or b['id'] in out:
             continue
