@@ -459,6 +459,7 @@ def collapse_thin(urls):
 
 
 RICH_SCORES = []
+FRIDGE_KEEP = int(os.environ.get('FRIDGE_KEEP', '100'))
 RICH_MIN = int(os.environ.get('RICH_MIN', '6'))
 THIN_FORCE_NOINDEX = {'/community/', '/me/', '/plaza/', '/ssul/', '/dev/tag/windows/', '/satire/2026-10-18/'}
 
@@ -491,6 +492,17 @@ def auto_thin(urls):
         own = sum(len(l.replace(' ', '')) for l in lines if freq[re.sub(r'[\d,.]+', '#', l)] < 5)
         if own < 200:
             NOINDEX.add(u); n += 1
+            open(f, 'w', encoding='utf-8', newline='\n').write(doc.replace('<link rel="canonical"', '<meta name="robots" content="noindex,follow">\n<link rel="canonical"', 1))
+    # 2026-10-23 애드센스 「가치가 별로 없는 콘텐츠」: 레시피 1,300여 개는 틀이 같은 대량 페이지라 고유 본문이 가장 많은 상위 FRIDGE_KEEP 개만 색인
+    fr = []
+    for u, (f, doc, lines) in got.items():
+        if u.startswith('/fridge/r/') and u != '/fridge/r/' and u not in NOINDEX:
+            fr.append((sum(len(l.replace(' ', '')) for l in lines if freq[re.sub(r'[\d,.]+', '#', l)] < 5), u))
+    fr.sort(reverse=True)
+    for _, u in fr[FRIDGE_KEEP:]:
+        f, doc, lines = got[u]
+        NOINDEX.add(u); n += 1
+        if 'name="robots" content="noindex' not in doc:
             open(f, 'w', encoding='utf-8', newline='\n').write(doc.replace('<link rel="canonical"', '<meta name="robots" content="noindex,follow">\n<link rel="canonical"', 1))
     return n
 
@@ -588,12 +600,16 @@ def c_insight(c, live):
     L = []
     if same:
         early = sum(1 for x in same if x['end'] < c['end'])
-        L.append(f'지금 접수 중인 {tag_l} 공모전은 이것 말고 {len(same)}건이 더 있고, 이 공모전은 ' + ('가장 먼저 마감해요.' if early == 0 else '가장 늦게 마감하는 편이라 준비할 시간이 넉넉해요.' if early >= len(same) * .8 else f'그중 {early + 1}번째로 마감이 빨라요.'))
-    pv = [x['pv'] for x in same if x.get('pv')]
-    if c.get('pv') and pv:
-        big = sum(1 for v in pv if v > c['pv'])
+        L.append(f'지금 접수 중인 {tag_l} 공모전은 이것 말고 {len(same)}건이 더 있고, 이 공모전은 ' + ('가장 먼저 마감해요.' if early == 0 else '가장 늦게 마감하는 편이에요.' if early >= len(same) * .8 else f'그중 {early + 1}번째로 마감이 빨라요.'))
+    _bs, _vals = prize_basis(same + [c])   # 같은 기준(1등 상금끼리 또는 총상금끼리)으로만 순위·중간값을 계산한다
+    mine = _vals.get(c['id'])
+    pv = [v for k, v in _vals.items() if k != c['id']]
+    if mine and pv:
+        big = sum(1 for v in pv if v > mine)
         med = sorted(pv)[len(pv) // 2]
-        L.append(f'상금은 {won_txt(c["pv"])}로, 같은 분야에서 상금이 숫자로 나온 {len(pv)}건 중 {big + 1}번째로 커요. 이 분야 상금 중간값({won_txt(med)})보다 ' + ('큰 편이에요.' if c['pv'] > med else '작은 편이라, 경쟁이 덜할 수 있어요.' if c['pv'] < med else '딱 중간이에요.'))
+        L.append(f'{_bs}은 {won_txt(mine)}이고, 같은 분야에서 {_bs}이 숫자로 나온 {len(pv)}건 중 {big + 1}번째로 커요. 이 분야 {_bs} 중간값({won_txt(med)})보다 ' + ('커요.' if mine > med else '작아요.' if mine < med else '같아요.') + ' 상금 규모만으로 경쟁 정도를 알 수는 없어요.')
+    elif any(prize_split(c)):
+        L.append(f'이 공모전은 {_bs} 금액이 따로 나와 있지 않아 같은 분야와 상금을 비교하지 않았어요(1등 상금과 총상금은 섞어 비교하지 않아요).')
     elif not c.get('pv'):
         L.append('상금이 숫자로 정리되지 않은 공모전이에요. 상장·기념품만 주는지, 부상이 따로 있는지 공고에서 확인해 보세요.')
     if c.get('start'):
@@ -604,7 +620,9 @@ def c_insight(c, live):
             pass
     if n >= 2:   # 공모전마다 다른 준비 여유(제목 포함 문장 — 숫자만 다른 문장은 고유 본문으로 치지 않음)
         we = sum(1 for k in range(1, n + 1) if (TODAY + datetime.timedelta(days=k)).weekday() == 5)
-        L.append(f'「{c["title"][:40]}」 마감({ddot(c["end"])[5:]})까지 준비에 쓸 수 있는 토요일은 {we}번이에요.' + (' 주말 하루 안에 초안을 끝내는 일정이 현실적이에요.' if we <= 1 else ' 첫 주말에 기획, 마지막 주말에 마무리하는 식으로 나눠 보세요.'))
+        su = sum(1 for k in range(1, n + 1) if (TODAY + datetime.timedelta(days=k)).weekday() == 6)
+        # 2026-10-23 정확도 수정: 작업량을 모르는 채 「일정이 현실적이에요」라고 판단하던 문장을 없애고, 남은 주말 수만 사실로 적는다
+        L.append(f'「{c["title"][:40]}」 마감({ddot(c["end"])[5:]})까지 토요일 {we}번·일요일 {su}번이 남아요. 제출물마다 필요한 작업 시간이 달라서, 이 일정으로 끝낼 수 있는지는 여기서 판단하지 않아요.')
     if c.get('org') and c['org'] not in ('공고 참조', ''):
         L.append(f'주최는 {c["org"][:40]}이고, ' + (f'{c["region"]} 지역 공모전이에요. ' if c.get('region') else '') + f'{"·".join(CQ.label_for(t, mdm) for t in c["tags"][:2])} 분야로 분류했어요.')
     el = c.get('elig') or ''
@@ -634,6 +652,19 @@ def c_insight(c, live):
     return (f'<h2>🧐 루리 분석</h2><p>{" ".join(E(x) for x in L)}</p>' if L else '') + plan + tb
 
 
+def region_row(c, NEED):
+    """지역 제한 칸. 자격 문구와 모순되지 않게 한 곳에서 판정한다(2026-10-23 사용자 점검: 자격은 「전국」인데 지역 제한은 「있음」으로 나오던 모순).
+    재학·재직은 신분 조건이라 지역 제한으로 세지 않는다."""
+    if c.get('region'):
+        return c['region']
+    el = c.get('elig') or ''
+    if re.search(r'전국|지역\s*제한\s*없|거주지?\s*(?:에\s*)?제한\s*없', el):
+        return '제한 없음(자격 문구 기준)'
+    if re.search(r'거주|도민|시민|군민|구민|관내|주소|[도시군구]\s*내', el):
+        return '있음 — ' + NEED
+    return '따로 적힌 제한 없음(공고 확인)'
+
+
 def detail(c, live):
     if c['id'] in DUP:   # 같은 공고가 여러 곳에서 수집됨 → 검색 제외 + 대표 공고로 안내(주소는 유지)
         r_ = DUP[c['id']]
@@ -644,7 +675,21 @@ def detail(c, live):
         return
     n, dd = dday(c['end'])
     main_tag = c['tags'][0]
-    tips = ''.join(f'<li>{E(t)}</li>' for t in CQ.tips_for(c['tags'], c.get('medium', ''), TIPS)) or ''.join(f'<li>{E(t)}</li>' for t in TIPS['기타'])
+    _eff = c.get('effort') or ''
+    # 2026-10-23: 분야 태그만 보고 팁을 붙이지 않는다 — 확인된 제출물 종류로 고르고, 모르면 일반 확인 항목만 둔다
+    if _eff in ('사진', '영상') or c.get('medium') in ('photo', 'video', 'photo+video'):
+        _tips = CQ.tips_for(['영상'], c.get('medium') or ('photo' if _eff == '사진' else 'video'), TIPS)
+    elif _eff in ('원고', '짧은 글'):
+        _tips = TIPS['문학']
+    elif _eff == '디자인':
+        _tips = TIPS['디자인']
+    elif _eff in ('아이디어 제안서', '기획서'):
+        _tips = TIPS['아이디어·정책']
+    elif any(t in ('요리·레시피', '논문', '해외') for t in c['tags'][:2]):   # 주제 자체가 정하는 조건(식재료·논문 인용·현지 시간대)만 분야 팁 유지
+        _tips = [x for t in c['tags'][:2] if t in ('요리·레시피', '논문', '해외') for x in TIPS[t]]
+    else:
+        _tips = TIPS['기타'] + ['제출물 종류가 확인되지 않아 분야별 준비 팁은 넣지 않았어요. 공식 공고의 제출물·규격 항목을 먼저 확인하세요.']
+    tips = ''.join(f'<li>{E(t)}</li>' for t in _tips) or ''.join(f'<li>{E(t)}</li>' for t in TIPS['기타'])
     sim = [x for x in live if x['id'] != c['id'] and main_tag in x['tags'] and (main_tag != '영상' or not c.get('medium') or x.get('medium', '') == c.get('medium'))][:6]
     simh = ''.join(card(x) for x in sim)
     status = ('<p class="warn">접수가 마감된 공모전입니다. 같은 분야의 진행 중 공모전을 아래에서 확인하세요.</p>' if n < 0
@@ -658,14 +703,15 @@ def detail(c, live):
     NEED = '공식 공고 확인 필요'
     v_ = lambda x: x if (x and str(x).strip() not in ('', '-', '공고 참조', '공고 확인')) else NEED
     sub = ' · '.join(x for x in (c.get('effort'), c.get('submit')) if x)
-    rows = [('주최·주관', v_(c['org'])), ('분야', c['field'] or ', '.join(c['tags'])), ('응모 자격', v_(c['elig'])), ('지역 제한', c.get('region') or ('있음 — ' + NEED if re.search(r'거주|도민|시민|군민|구민|관내|재학|재직', c.get('elig') or '') else '따로 적힌 제한 없음(공고 확인)')),
-            ('접수 기간', period), ('마감 시각', NEED + ' (자동 정리 데이터에 시각이 없어요)'), ('제출물·제출 방식', v_(sub)), ('접수 방법', v_(c['ch'])), ('상금·혜택', v_(c['prize'])),
+    sub_type = c.get('effort') or {'photo': '사진(제목 기준)', 'video': '영상(제목 기준)', 'photo+video': '사진·영상(제목 기준)'}.get(c.get('medium', ''), '')   # 무엇을 내는지. 어디로 내는지(메일·폼)는 「접수 방법」
+    rows = [('주최·주관', v_(c['org'])), ('분야', c['field'] or ', '.join(c['tags'])), ('응모 자격', v_(c['elig'])), ('지역 제한', region_row(c, NEED)),
+            ('접수 기간', period), ('마감 시각', NEED + ' (자동 정리 데이터에 시각이 없어요)'), ('제출물 종류', v_(sub_type)), ('접수 방법', CQ.auto_label(v_(c['ch'])) if v_(c['ch']) != NEED else NEED), ('상금·혜택', v_(c['prize'])),
             ('참가비', (f'{c["fee"]:,}원' if isinstance(c.get('fee'), int) and c['fee'] > 1 else '있음 — ' + NEED) if c.get('fee') else '없음으로 정리됨(공고 확인)')]
     tb = ''.join(f'<tr><th>{k}</th><td{" class=need" if NEED in str(v) else ""}>{E(v)}</td></tr>' for k, v in rows)
     todo = ['마감 시각(예: 18시·23시 59분)과 접수 마감이 「도착 기준」인지']
     if v_(c['elig']) == NEED:
         todo.append('응모 자격(나이·신분·지역)')
-    if not sub:
+    if not sub_type:
         todo.append('제출물 종류·분량·파일 형식')
     if not c.get('pv'):
         todo.append('상금·부상 내용')
@@ -685,7 +731,7 @@ def detail(c, live):
     org = c['org'] if c['org'] != '공고 참조' else '주최 기관'
     summary = (f'「{c["title"]}」은 {org}에서 진행하는 {", ".join(CQ.label_for(t, c.get("medium", "")) for t in c["tags"])} 분야 공모전이에요. {CQ.deadline_sentence(ddot(c["end"]), n)} '
                + (f'응모 자격은 "{c["elig"]}"이고 ' if c.get('elig') else '응모 자격은 공식 공고에서 확인이 필요하고 ') + (f'상금은 {c["prize"]}입니다. ' if c.get('pv') else '상금은 공식 공고에서 확인하세요. ') +
-               f'접수 방법은 {c["ch"]}이고, 마감 시각과 제출 양식·파일 형식은 공식 공고에서 먼저 확인하세요.')
+               f'접수 방법은 자동 분류상 {c["ch"]}이고(공고와 다를 수 있어요), 마감 시각과 제출 양식·파일 형식은 공식 공고에서 먼저 확인하세요.')
     body = f'''<p class="bc"><a href="/">홈</a> › <a href="/cat/{SLUG[main_tag]}/">{E(CQ.label_for(main_tag, c.get("medium", "")))}</a></p>
 <section class="dh" data-c="{SLUG[main_tag]}"><span class="ic big">{'📷' if main_tag == '영상' and c.get('medium') == 'photo' else CAT_ICON[main_tag]}</span><h1>{E(c["title"])}</h1>{status}</section>
 {ruri}
@@ -1008,13 +1054,14 @@ def cat_stats(n, cl):
     """분야별 지금 숫자: 건수·상금 중간값·이번 주 마감·제출물 분포 (매 빌드 계산)."""
     if not cl:
         return ''
-    pv = sorted(x['pv'] for x in cl if x.get('pv'))
+    _bs, _vals = prize_basis(cl)
+    pv = sorted(_vals.values())
     wk = sum(1 for x in cl if dday(x['end'])[0] <= 7)
     ef = collections.Counter(x['effort'] for x in cl if x.get('effort')).most_common(3)
-    big = max(cl, key=lambda x: x.get('pv') or 0)
+    big = max((x for x in cl if x['id'] in _vals), key=lambda x: _vals[x['id']], default=None)
     t = f'지금 접수 중인 {n} 공모전은 {len(cl)}건이고, 이 중 {wk}건이 일주일 안에 마감해요. '
     if pv:
-        t += f'상금이 숫자로 나온 {len(pv)}건의 중간값은 {won_txt(pv[len(pv) // 2])}, 가장 큰 곳은 「{big["title"][:30]}」({won_txt(big["pv"])})예요. '
+        t += f'{_bs}이 숫자로 나온 {len(pv)}건의 중간값은 {won_txt(pv[len(pv) // 2])}, 가장 큰 곳은 「{big["title"][:30]}」({won_txt(_vals[big["id"]])})예요. '
     if ef:
         t += '제출물은 ' + ', '.join(f'{k} {v}건' for k, v in ef) + ' 순으로 많아요.'
     return f'<p class="cat-st">📌 {E(t)}</p>'
@@ -1228,8 +1275,9 @@ def week_hub(live):
     """「이번 주 마감 공모전」 (2026-10-18 키워드 전략): 오늘부터 7일 안에 마감, 매 빌드 갱신."""
     e7 = TODAY + datetime.timedelta(days=7)
     L = sorted([c for c in live if dday(c['end'])[0] <= 7], key=lambda c: (c['end'], -(c.get('pv') or 0)))
-    pv = [c for c in L if c.get('pv')]
-    big = max(pv, key=lambda c: c['pv']) if pv else None
+    _bs, _vals = prize_basis(L)
+    pv = [c for c in L if c['id'] in _vals]
+    big = max(pv, key=lambda c: _vals[c['id']]) if pv else None
     tg = collections.Counter(c['tags'][0] for c in L).most_common(3)
     ef = collections.Counter(c['effort'] for c in L if c.get('effort')).most_common(2)
     days = collections.Counter(c['end'] for c in L).most_common(1)
@@ -1237,7 +1285,7 @@ def week_hub(live):
          + (f'분야는 ' + ', '.join(f'{k} {v}건' for k, v in tg) + ' 순으로 많고, ' if tg else '')
          + (f'제출물은 ' + ', '.join(f'{k} {v}건' for k, v in ef) + '이 많아요. ' if ef else '')
          + (f'마감이 가장 몰린 날은 {ddot(days[0][0])[5:]}({days[0][1]}건)이에요. ' if days else '')
-         + (f'상금이 가장 큰 곳은 「{big["title"][:30]}」({won_txt(big["pv"])})예요.' if big else ''))
+         + (f'{_bs}이 가장 큰 곳은 「{big["title"][:30]}」({won_txt(_vals[big["id"]])})예요.' if big else ''))
     body = (f'<p class="bc"><a href="/">홈</a> › <a href="/contest/">공모전</a> › 이번 주 마감</p><h1>⏰ 이번 주 마감 공모전 ({TODAY.month}/{TODAY.day}~{e7.month}/{e7.day}, {len(L)}건)</h1>'
             f'<p class="cat-st">📌 {E(t)}</p><p>남은 기간이 짧을수록 분량이 적은 슬로건·네이밍·사진 공모전부터 고르는 게 좋아요. 영상·기획서처럼 준비가 오래 걸리는 건 이번 주보다 다음 주 마감을 노리세요. 매시간 새로 정리돼요.</p>'
             f'<ul class="list">{"".join(card(c) for c in L) or "<li class=empty>이번 주 마감 공모전이 없어요.</li>"}</ul>'
@@ -1251,14 +1299,15 @@ def hub_extra(nm, L, path):
     """검색어 허브 공통: 집계 문장 + FAQ + ItemList/FAQPage 구조화 데이터 (숫자는 매 빌드 계산, 2026-10-19 자연 유입)."""
     if not L:
         return '', None
-    pv = [c for c in L if c.get('pv')]
-    big = max(pv, key=lambda c: c['pv']) if pv else None
+    _bs, _vals = prize_basis(L)
+    pv = [c for c in L if c['id'] in _vals]
+    big = max(pv, key=lambda c: _vals[c['id']]) if pv else None
     day = collections.Counter(c['end'] for c in L).most_common(1)[0]
     soon = min(L, key=lambda c: c['end'])
     wk = sum(1 for c in L if dday(c['end'])[0] <= 7)
     ef = collections.Counter(c['effort'] for c in L if c.get('effort')).most_common(2)
     faq = [(f'지금 접수 중인 {nm}은 몇 개예요?', f'{TODAY.month}월 {TODAY.day}일(한국 시간) 기준 {len(L)}건이고, 일주일 안에 마감하는 건 {wk}건이에요. 매시간 새로 정리해요.'),
-           (f'{nm} 중 상금이 가장 큰 건 뭐예요?', (f'「{big["title"][:40]}」로 {won_txt(big["pv"])}이에요. 상금이 숫자로 나온 {len(pv)}건 기준이에요.' if big else '상금이 숫자로 정리된 공모전이 아직 없어요. 공고마다 확인하세요.')),
+           (f'{nm} 중 상금이 가장 큰 건 뭐예요?', (f'「{big["title"][:40]}」로 {won_txt(_vals[big["id"]])}이에요. {_bs}이 숫자로 나온 {len(pv)}건 기준이에요(1등 상금과 총상금은 섞어 비교하지 않아요).' if big else '상금이 숫자로 정리된 공모전이 아직 없어요. 공고마다 확인하세요.')),
            (f'{nm} 마감은 언제 몰려 있어요?', f'{ddot(day[0])} 마감이 {day[1]}건으로 가장 많고, 가장 먼저 마감하는 건 「{soon["title"][:40]}」({ddot(soon["end"])})예요. 마감 시각은 공고마다 달라 공식 공고를 확인하세요.'),
            ('무엇을 내야 하나요?', ('제출물은 ' + ', '.join(f'{k} {v}건' for k, v in ef) + ' 순으로 많아요. 분량·파일 형식은 공고마다 달라요.') if ef else '제출물은 공모전마다 달라요. 상세 페이지의 제출물 칸과 공식 공고를 확인하세요.')]
     h = '<section class="hub-faq"><h2>❓ 자주 묻는 질문</h2>' + ''.join(f'<details class="faq"><summary>{E(q)}</summary><p>{E(a)}</p></details>' for q, a in faq) + '</section>'
@@ -2874,6 +2923,24 @@ def mag_pages(live, aps):
 DIRN = {'up': ('🔺', '목표가 상향'), 'down': ('🔻', '목표가 하향'), 'keep': ('➖', '의견 유지'), 'bull': ('🟢', '강세 전망'), 'bear': ('🔴', '약세 전망'), 'neutral': ('⚪', '중립·혼조')}
 AN_NOTE = ('<p class="an-warn">📊 증권사 리포트·전문가 전망을 다룬 기사를 모아 다시 정리한 정보예요. 루리의 줍줍이 직접 주가를 예측하거나 매수·매도를 권하지 않아요. '
            '투자 판단과 책임은 본인에게 있어요. 목표가·의견은 각 증권사·기관의 것이며 원문 기사에서 확인해 주세요.</p>')
+
+
+def prize_split(c):
+    """표시된 상금 문구에서 (1등 상금, 총상금)을 원 단위로 따로 읽는다. 파서의 pv 는 둘 중 큰 값이라 서로 다른 기준끼리 비교되는 문제가 있어(2026-10-23 사용자 점검: 총상금 2,100만원과 1등 1,000만원이 함께 비교됨) 비교에는 쓰지 않는다."""
+    s_ = c.get('prize') or ''
+    f, t = re.search(r'1등\s*([^·]+)', s_), re.search(r'총상금\s*([^·]+)', s_)
+    g = lambda m: (P.amount_won(m.group(1).strip()) or 0) if m else 0
+    return g(f), g(t)
+
+
+def prize_basis(items):
+    """같은 기준끼리만 비교한다. 1등 상금이 숫자로 나온 건이 총상금 건 이상이면 「1등 상금」, 아니면 「총상금」. 반환 (기준 이름, {id: 원})"""
+    F = {c['id']: prize_split(c)[0] for c in items}
+    T = {c['id']: prize_split(c)[1] for c in items}
+    nf, nt = sum(1 for v in F.values() if v), sum(1 for v in T.values() if v)
+    if nf >= nt:
+        return '1등 상금', {k: v for k, v in F.items() if v}
+    return '총상금', {k: v for k, v in T.items() if v}
 
 
 def won_txt(v):
