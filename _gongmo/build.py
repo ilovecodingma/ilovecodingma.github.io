@@ -1461,7 +1461,7 @@ def build():
         return f'<section class="lc" aria-label="주제 런처"><div class="hx-w"><p class="lc-h">무엇을 찾으세요?</p><div class="lc-g">{out}</div></div></section><link rel="stylesheet" href="/assets/home/launcher.css?v=1">'
     hx_launch = _launcher()
     hx_nav = ''.join(f'<a href="#{k}">{ic} {n}</a>' for k, ic, n in _nav)
-    home = f'''<section class="hx-hero"><div class="hx-w hx-hero-in">
+    home = f'''{hx_launch}<section class="hx-hero"><div class="hx-w hx-hero-in">
 <div class="hx-copy"><p class="hx-eyebrow"><i></i>매시간 업데이트 · 공식 출처 확인</p>
 <h1>남들이 뿌리는 기회,<br><em>루리가 모아</em><br>정리해 드려요</h1>
 <p class="hx-sub">공모전·경품 이벤트·지원금·청약·정책을 한곳에 모아, 마감이 급한 순서로 알려 드려요. 놓치지 말고 <b>일단 줍고</b> 가세요.</p>
@@ -1472,7 +1472,6 @@ def build():
 <img class="hx-ruri" src="/assets/ruri/o_present.webp" width="300" height="415" alt="루리" fetchpriority="high">
 <div class="hx-card hx-board"><div class="bd-h"><b>⏰ 오늘 마감 한눈에</b><small>마감 임박순</small></div><ul>{hx_board or '<li class="empty">지금은 마감 임박 항목이 없어요.</li>'}</ul><a class="bd-more" href="/contest/week/">이번 주 마감 전체 보기 →</a></div></div>
 </div></section>
-{hx_launch}
 <nav class="hx-nav" aria-label="주제로 이동"><div class="hx-w">{hx_nav}</div></nav>
 <div class="hx-w">
 
