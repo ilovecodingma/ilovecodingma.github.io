@@ -56,7 +56,7 @@
     const dl = e => { const p = e.split('-'), n = new Date(); return Math.round((Date.UTC(+p[0], p[1] - 1, +p[2]) - Date.UTC(n.getFullYear(), n.getMonth(), n.getDate())) / 864e5); };
     const fl = favs.map(f => ({ ...f, l: dl(f.end) })).filter(f => f.l >= 0).sort((a, b) => a.l - b.l).slice(0, 5);
     b.innerHTML = st.t ? `<button class="cm-me">${esc(st.n)} ▾</button><div class="cm-menu" hidden>
-<a href="/me/">🏠 내 공간 <small>찜·응모 기록·알림</small></a><a href="/prep/">📋 준비실 <small>준비 보드·꿀팁</small></a><a href="/news/">🕵️ 기사 확인 신호 <small>출처·제목-본문 일치 신호</small></a><a href="/app/">🔔 앱·알림 <small>공모전 폰 알림</small></a><a href="/community/">🚩 원정대</a><a href="/lab/">🏆 수상 연구소</a><a href="/community/#dress">🎀 루리 꾸미기</a>${(() => { try { return localStorage.getItem('jupjup_adm') ? '<a href="/admin/">📊 관리자 <small>방문자·가입자</small></a>' : ''; } catch { return ''; } })()}
+<a href="/me/">🏠 내 공간 <small>찜·응모 기록·알림</small></a><a href="/prep/">📋 내 응모 준비 <small>준비 보드·꿀팁</small></a><a href="/news/">🕵️ 기사 확인 신호 <small>출처·제목-본문 일치 신호</small></a><a href="/app/">🔔 앱·알림 <small>공모전 폰 알림</small></a><a href="/community/">🚩 팀원 모집</a><a href="/lab/">🏆 수상작 분석</a><a href="/community/#dress">🎀 루리 꾸미기</a>${(() => { try { return localStorage.getItem('jupjup_adm') ? '<a href="/admin/">📊 관리자 <small>방문자·가입자</small></a>' : ''; } catch { return ''; } })()}
 <b>⭐ 찜한 공모전</b>${fl.length ? fl.map(f => `<a class="cm-fv" href="/c/${esc(f.id)}/"><em>${f.l ? 'D-' + f.l : 'D-DAY'}</em>${esc(f.title)}</a>`).join('') : '<p>챗봇 카드의 ☆로 찜해 두면 여기 모여요.</p>'}
 <button class="cm-out">로그아웃</button></div>` : '<button class="cm-in">로그인</button>';
     const me = b.querySelector('.cm-me'), menu = b.querySelector('.cm-menu');
@@ -162,7 +162,7 @@ ${KS.includes('review') ? `<select class="cm-rate"><option value="">별점(후�
   const tag = s => `<span class="tm-role">${esc(s)}</span>`;
   async function teams(el) {
     const cid = el.dataset.contest || '', title = el.dataset.title || '', all = 'all' in el.dataset;
-    el.innerHTML = `<div class="cm-head"><h2>💘 ${all ? '원정대 모집' : '이 공모전 원정대'}</h2><button class="tm-new btn2">💘 원정대 꾸리기</button></div>
+    el.innerHTML = `<div class="cm-head"><h2>💘 ${all ? '팀원 모집' : '이 공모전 팀원 모집'}</h2><button class="tm-new btn2">💘 원정대 꾸리기</button></div>
 ${all ? '<div class="tm-mine" hidden></div>' : ''}<div class="cm-form" hidden></div><ul class="tm-list"><li class="note">불러오는 중…</li></ul>`;
     const list = el.querySelector('.tm-list'), form = el.querySelector('.cm-form');
     const load = async () => {
@@ -360,8 +360,8 @@ ${album}<div class="cm-acts"><button class="tm-share">링크 복사</button>${st
     const id = el.dataset.id, title = el.dataset.title, end = el.dataset.end;
     let cur = { fav: lfav().some(f => 'c:' + f.id === id) ? 1 : 0, state: '' };
     if (st.t) { const r = await api('/api/items').catch(() => null); const x = r && r.items.find(x => x.id === id); if (x) cur = x; }
-    const prepBtn = () => { if (!id.startsWith('c:')) return ''; let on = false; try { on = !!JSON.parse(localStorage.getItem('jupjup_prep_v1') || '{}')[id]; } catch {} return `<a class="ma-prep" href="/prep/#${esc(id)}">${on && st.t ? '📋 내 준비 보드 열기' : '📋 준비 시작 · 마감까지 할 일 짜기'}${st.t ? '' : ' <small>회원 전용</small>'}</a>`; };
-    const paint = () => { el.innerHTML = `<button class="ma-fav${cur.fav ? ' on' : ''}">${cur.fav ? '⭐ 찜함 · 마감 알림 받는 중' : '☆ 찜하고 마감 알림 받기'}</button><button class="ma-app${cur.state ? ' on' : ''}">${{ '': '✅ 냈어요', applied: '✅ 냈어요 기록됨', won: '🏆 당첨!', lost: '😢 아쉬움' }[cur.state] || '✅ 냈어요'}</button>${st.t ? '' : '<small>로그인하면 폰·PC 어디서든 기록되고, 마감 3일 전에 메일로 알려 줘요.</small>'}${prepBtn()}<button class="ma-share">📤 친구에게 공유 · 같이 할 사람 모으기</button>`;
+    const prepBtn = () => { if (!id.startsWith('c:')) return ''; let on = false; try { on = !!JSON.parse(localStorage.getItem('jupjup_prep_v1') || '{}')[id]; } catch {} return `<a class="ma-prep" href="/prep/#${esc(id)}">${on && st.t ? '📋 준비 보드' : '📋 준비 시작'}${st.t ? '' : ' <small>회원 전용</small>'}</a>`; };
+    const paint = () => { el.innerHTML = `<button class="ma-fav${cur.fav ? ' on' : ''}">${cur.fav ? '⭐ 찜함 · 알림 받는 중' : '☆ 찜 · 마감 알림'}</button><button class="ma-app${cur.state ? ' on' : ''}">${{ '': '✅ 냈어요', applied: '✅ 냈어요 기록됨', won: '🏆 당첨!', lost: '😢 아쉬움' }[cur.state] || '✅ 냈어요'}</button>${st.t ? '' : '<small>로그인하면 기록이 저장되고 마감 3일 전에 메일로 알려 줘요.</small>'}${prepBtn()}<button class="ma-share">👥 팀원 모집</button>`;
       el.querySelector('.ma-share').onclick = () => window.JCREW && JCREW.share({ title, text: `「${title}」 같이 준비할래? 마감 ${end ? end.slice(5).replace('-', '/') : ''} · 루리의 줍줍`, path: location.pathname });
       el.querySelector('.ma-fav').onclick = () => { if (!st.t) return authModal(() => location.reload()); cur.fav = cur.fav ? 0 : 1; pushItem({ id, title, end, fav: cur.fav });
         const l = lfav().filter(f => 'c:' + f.id !== id); if (cur.fav && id.startsWith('c:')) l.push({ id: id.slice(2), title, end }); lfavSet(l); ga(cur.fav ? 'fav_add' : 'fav_remove', { id }); paint(); };

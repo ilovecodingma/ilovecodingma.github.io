@@ -1,0 +1,57 @@
+/* 정보성 글(생활 돈 가이드) 화면 — 2026-10-23. 참고: 토스뱅크 정보글의 「맨 위 3줄 요약 + 종류별 박스 + 번호 단계」 구조를 따르되 문구·이미지는 자체 제작 */
+.g-cover{display:block;width:100%;height:auto;border-radius:20px;margin:6px 0 16px;box-shadow:0 8px 24px -14px rgba(30,10,80,.45)}
+.g-h1{font-size:clamp(24px,5vw,34px);line-height:1.28;margin:4px 0 10px;letter-spacing:-.02em}
+.g-meta{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px}
+.g-meta span{font-size:12.5px;font-weight:700;padding:5px 11px;border-radius:999px;background:var(--card,#fff);border:1px solid var(--bd,#e5e7eb);color:var(--mu,#6b7280)}
+.g-sum{border-radius:18px;padding:16px 18px 12px;margin:0 0 14px;background:color-mix(in srgb,var(--pri,#6d28d9) 8%,var(--card,#fff));border:1px solid color-mix(in srgb,var(--pri,#6d28d9) 22%,transparent)}
+.g-sum>b{display:block;font-size:13px;letter-spacing:.02em;color:var(--pri,#6d28d9);margin-bottom:8px}
+.g-sum ol{margin:0;padding:0;list-style:none;counter-reset:sm}
+.g-sum li{counter-increment:sm;position:relative;padding:0 0 8px 34px;font-size:16px;line-height:1.6}
+.g-sum li:before{content:counter(sm);position:absolute;left:0;top:1px;width:24px;height:24px;border-radius:50%;background:var(--pri,#6d28d9);color:#fff;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center}
+.nm{font-weight:800;background:linear-gradient(transparent 62%,color-mix(in srgb,var(--pri,#6d28d9) 22%,transparent) 62%);padding:0 1px}
+.g-toc{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding:2px 0 10px;margin:0 0 6px}
+.g-toc::-webkit-scrollbar{display:none}
+.g-toc a{flex:0 0 auto;display:inline-flex;align-items:center;gap:5px;padding:7px 13px;border-radius:999px;background:var(--card,#fff);border:1px solid var(--bd,#e5e7eb);color:var(--tx,#111);font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.g-toc a i{font-style:normal}
+.gs{margin:30px 0;scroll-margin-top:72px}
+.gs>h2{display:flex;align-items:center;gap:10px;font-size:clamp(19px,3.6vw,23px);line-height:1.35;margin:0 0 12px}
+.gs-n{flex:0 0 auto;width:30px;height:30px;border-radius:10px;background:var(--pri,#6d28d9);color:#fff;font-size:15px;font-weight:800;display:inline-flex;align-items:center;justify-content:center}
+.gs p,.gs li{font-size:16px;line-height:1.75}
+.gs .tblw{overflow-x:auto;border:1px solid var(--bd,#e5e7eb);border-radius:14px;background:var(--card,#fff)}
+.gs table.xb{width:100%;border-collapse:collapse;font-size:15px;min-width:420px}
+.gs table.xb th{background:color-mix(in srgb,var(--pri,#6d28d9) 10%,var(--card,#fff));text-align:left;padding:10px 12px;font-size:13.5px}
+.gs table.xb td{padding:11px 12px;border-top:1px solid var(--bd,#e5e7eb);vertical-align:top;line-height:1.6}
+.gs table.xb tr:nth-child(even) td{background:color-mix(in srgb,var(--mu,#6b7280) 5%,transparent)}
+.gs table.xb td:first-child{font-weight:700;white-space:nowrap}
+.gs-warn{padding:16px 18px;border-radius:16px;background:#fffbeb;border:1px solid #f59e0b;color:#78350f}
+.gs-warn>h2 .gs-n{background:#d97706}
+.gs-time>h2 .gs-n{background:#0891b2}.gs-money>h2 .gs-n{background:#059669}.gs-who>h2 .gs-n{background:#2563eb}.gs-how>h2 .gs-n{background:#7c3aed}.gs-faq>h2 .gs-n{background:#64748b}
+.gs-steps{list-style:none;margin:0;padding:0;counter-reset:st}
+.gs-steps li{counter-increment:st;position:relative;margin:0 0 10px;padding:12px 14px 12px 52px;border:1px solid var(--bd,#e5e7eb);border-radius:14px;background:var(--card,#fff)}
+.gs-steps li:before{content:counter(st);position:absolute;left:12px;top:11px;width:28px;height:28px;border-radius:50%;background:var(--pri,#6d28d9);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center}
+.gs ul.gm-l{list-style:none;padding:0;margin:0}
+.gs ul.gm-l li{position:relative;padding:8px 0 8px 26px;border-bottom:1px dashed var(--bd,#e5e7eb)}
+.gs ul.gm-l li:before{content:"✓";position:absolute;left:2px;top:8px;color:var(--pri,#6d28d9);font-weight:800}
+.gs-warn ul.gm-l li{border-color:#f5c26b}.gs-warn ul.gm-l li:before{content:"!";color:#d97706}
+.gs details.faq{border:1px solid var(--bd,#e5e7eb);border-radius:12px;background:var(--card,#fff);margin:8px 0;padding:2px 14px}
+.gs details.faq summary{cursor:pointer;font-weight:700;padding:11px 0;font-size:16px}
+.g-src{margin:30px 0;padding:16px 18px;border-radius:16px;background:var(--card,#fff);border:1px solid var(--bd,#e5e7eb)}
+.g-src h2{font-size:18px;margin:0 0 8px}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .gs-warn{background:#3a2a0e;color:#fde68a;border-color:#b45309}}
+@media print{.g-toc{display:none}}
+
+/* 공용 정보성 글(.art): 공모 가이드·평론·개발 글 등 — 내용은 그대로, 겉모양만 */
+.art .g-toc{margin:12px 0 8px}
+.art .g-toc a i{font-style:normal;display:inline-flex;width:20px;height:20px;border-radius:7px;background:var(--pri,#6d28d9);color:#fff;font-size:12px;font-weight:800;align-items:center;justify-content:center}
+.art>h1{font-size:clamp(24px,5vw,34px);line-height:1.28;letter-spacing:-.02em}
+.art h2{display:flex;align-items:center;gap:10px;font-size:clamp(19px,3.6vw,23px);line-height:1.35;margin:30px 0 12px;scroll-margin-top:72px}
+.art p,.art li{line-height:1.75}
+.art .tblw{overflow-x:auto;border:1px solid var(--bd,#e5e7eb);border-radius:14px;background:var(--card,#fff);margin:10px 0}
+.art table{width:100%;border-collapse:collapse;font-size:15px;min-width:420px}
+.art table th{background:color-mix(in srgb,var(--pri,#6d28d9) 10%,var(--card,#fff));text-align:left;padding:10px 12px;font-size:13.5px}
+.art table td{padding:10px 12px;border-top:1px solid var(--bd,#e5e7eb);vertical-align:top}
+.art table tr:nth-child(even) td{background:color-mix(in srgb,var(--mu,#6b7280) 5%,transparent)}
+.art ul.chk,.art ul.gm-l{list-style:none;padding:0}
+.art ul.chk li,.art ul.gm-l li{position:relative;padding:7px 0 7px 26px;border-bottom:1px dashed var(--bd,#e5e7eb)}
+.art ul.chk li:before,.art ul.gm-l li:before{content:"✓";position:absolute;left:2px;top:7px;color:var(--pri,#6d28d9);font-weight:800}
+.gs-t{min-width:0;flex:1}

@@ -61,7 +61,7 @@ EV_KIND = {'event': '이벤트', 'sweepstakes': '추첨 경품', 'quiz': '퀴즈
            'sns_tag_required': '친구 태그', 'sns_story_required': '스토리 공유', 'sns_capture': '캡처 인증', 'sns_form_only': '폼 응모',
            'sns_comment+form': '댓글+폼', 'sns_purchase': '구매 인증', 'sns_region': '지역 한정', 'sns_other': 'SNS 이벤트'}
 
-COMM_TAGS_TPL = '<link rel="stylesheet" href="/assets/community/comm.css?v=15"><script defer src="/assets/community/comm.js?v=28"></script><script defer src="/assets/community/crew.js?v=1"></script>'
+COMM_TAGS_TPL = '<link rel="stylesheet" href="/assets/community/comm.css?v=16"><script defer src="/assets/community/comm.js?v=29"></script><script defer src="/assets/community/crew.js?v=1"></script>'
 GTAG = ('<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4248498719773262" crossorigin="anonymous"></script>\n'
         '<script async src="https://www.googletagmanager.com/gtag/js?id=G-G9BPFF95GY"></script>\n'
         "<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());if(location.hostname!=='sungprofile.cloud')window['ga-disable-G-G9BPFF95GY']=true;gtag('config','G-G9BPFF95GY');</script>")
@@ -69,7 +69,7 @@ THEMES = [  # (키, 이름, 아이콘, 테마색, 홈, [하위 메뉴], [이 테
     ('issue', '이슈', '🕵️', '#b45309', '/news/', [('/trend/', '이슈 트렌드'), ('/hot/', '핫이슈'), ('/news/', '기사 확인 신호'), ('/talk/', '커뮤니티 이슈'), ('/kw/', '인기 키워드'), ('/satire/', '루리 풍자'), ('/mag/', '매거진'), ('/review/', '평론')],
      ['/trend/', '/hot/', '/news/', '/talk/', '/kw/', '/satire/', '/mag/', '/review/']),
     ('money', '머니', '📊', '#047857', '/analyst/', [('/analyst/', '애널리스트 종합'), ('/money/experts/', '전문가 코멘트'), ('/money/guide/', '생활 돈 가이드'), ('/money/policy/', '투자 정책'), ('/money/age/', '나이별 원칙'), ('/money/tools/salary/', '계산기'), ('/analyst/coin/btc/', '코인')], ['/analyst/', '/money/']),
-    ('contest', '공모전', '🏆', '#6d28d9', '/contest/', [('/contest/', '추천 상담'), ('/cat/literature/', '분야별'), ('/prep/', '준비실'), ('/lab/', '수상 연구소'), ('/community/', '원정대'), ('/guide/', '가이드'), ('/widget/', '위젯')],
+    ('contest', '공모전', '🏆', '#6d28d9', '/contest/', [('/contest/', '맞춤 추천'), ('/cat/literature/', '분야별'), ('/prep/', '내 응모 준비'), ('/lab/', '수상작 분석'), ('/community/', '팀원 모집'), ('/guide/', '가이드'), ('/widget/', '위젯')],
      ['/contest/', '/c/', '/cat/', '/prep/', '/lab/', '/community/', '/guide/', '/v/', '/me/', '/widget/']),
     ('recipe', '레시피', '🍳', '#c2410c', '/fridge/', [('/fridge/', '냉장고 파먹기'), ('/fridge/solo/', '자취 요리'), ('/fridge/weather/', '날씨별'), ('/fridge/plan/', '식단·장보기'), ('/fridge/c/guk/', '국·찌개'), ('/fridge/c/bap/', '밥'), ('/fridge/c/myeon/', '면'), ('/fridge/c/bokkeum/', '볶음'), ('/fridge/c/jorim/', '조림·찜'), ('/fridge/c/banchan/', '반찬'), ('/fridge/c/jeon/', '전')], ['/fridge/']),   # 2026-10-20 사용자: 레시피 유입이 많아 별도 카테고리로
     ('life', '생활', '🧺', '#0e7490', '/apply/', [('/apply/', '지원금·청약'), ('/apply/recommend/', '청약 추천'), ('/apply/r/', '지역별'), ('/event/', '경품'), ('/qa/', '고민 해결'), ('/plaza/', '광장')], ['/apply/', '/a/', '/event/', '/qa/', '/ssul/', '/plaza/']),
@@ -83,9 +83,10 @@ THEMES += [   # 2026-10-23 사용자 「런처·주제별 메인 분리」: 생�
     ('apply', '지원금·청약', '📋', '#0f766e', '/apply/', [('/apply/', '지원금·청약'), ('/apply/recommend/', '청약 추천'), ('/apply/r/', '지역별'), ('/apply/youth-rent/', '청년 월세'), ('/apply/newlywed/', '신혼부부')], ['/apply/', '/a/']),
     ('event', '경품', '🎁', '#db2777', '/event/', [('/event/', '경품·이벤트')], ['/event/']),
     ('plaza', '광장', '🗣️', '#0891b2', '/plaza/', [('/plaza/', '광장'), ('/qa/', '고민 해결'), ('/ssul/', '썰')], ['/plaza/', '/qa/', '/ssul/']),
-    ('watch', '웹툰·애니', '🎯', '#9333ea', '/watch/', [('/watch/', '오늘의 추천'), ('/watch/#webtoon', '웹툰'), ('/watch/#anime', '애니')], ['/watch/'])]
+    ('watch', '웹툰·애니', '🎯', '#9333ea', '/watch/', [('/watch/', '오늘의 추천'), ('/watch/#webtoon', '웹툰'), ('/watch/#anime', '애니')], ['/watch/']),
+    ('wiki', '루리 위키', '📚', '#0f766e', '/wiki/', [('/wiki/', '위키 홈'), ('/money/guide/', '생활 돈 가이드'), ('/guide/', '응모 가이드'), ('/ailog/', '개발 지식')], ['/wiki/'])]
 THEMES = [t for t in THEMES if t[0] != 'life']
-THEMES = [next(t for t in THEMES if t[0] == k) for k in ('today', 'recipe', 'watch', 'apply', 'contest', 'event', 'issue', 'money', 'game', 'plaza', 'ai')]
+THEMES = [next(t for t in THEMES if t[0] == k) for k in ('today', 'recipe', 'watch', 'apply', 'contest', 'event', 'issue', 'money', 'game', 'plaza', 'ai', 'wiki')]
 
 
 def theme_of(path):
@@ -199,6 +200,8 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False, noinde
         import make_pdf as _MP
         _pb = '<div class="pdf-bar">' + (f'<a class="main" data-pdf href="/pdf/{_MP.pdf_name(path)}" download>📄 PDF 다운로드</a>' if _MP.is_pdf_path(path) else '') + '<button type="button" data-print>🖨️ 인쇄 · PDF로 저장</button></div>'
         body = body.replace('</h1>', '</h1>' + _pb, 1) if '</h1>' in body else body
+    if re.match(r'^/(guide|review|dev|mag|ssul|en/guide)/[^/]+/$', path) and not noindex:
+        body = article_enhance(path, body)
     lds = []
     if crumbs:
         lds.append({'@context': 'https://schema.org', '@type': 'BreadcrumbList', 'itemListElement': [
@@ -219,13 +222,13 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False, noinde
 <meta name="theme-color" content="{TH[3] if TH else '#5b21b6'}"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="오늘 뭐 먹지">
 <link rel="icon" href="/favicon.ico?v=6" sizes="any"><link rel="icon" type="image/png" sizes="48x48" href="/assets/icons/icon-48.png?v=6"><link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/icon-96.png?v=6"><link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/icon-192.png?v=6"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=6"><link rel="manifest" href="/site.webmanifest"><link rel="alternate" type="application/rss+xml" title="루리의 줍줍" href="/rss.xml">
 <link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="/assets/gm.css?v=23"><link rel="stylesheet" href="/assets/ds.css?v=15"><link rel="stylesheet" href="/assets/print.css?v=1"><script defer src="/assets/print.js?v=1"></script><link rel="stylesheet" href="/assets/shell/shell.css?v=2"><script defer src="/assets/shell/shell.js?v=2"></script>{('<link rel="stylesheet" href="/assets/chat/ruri-chat.css?v=9">') if not (TH and TH[0] == 'ai') else ''}{COMM_TAGS}{('<script type="module" src="/assets/chat/ruri-chat.js?v=16"></script>') if not (TH and TH[0] == 'ai') else ''}<link rel="stylesheet" href="/assets/app/shell.css?v=1"><script defer src="/assets/app/app.js?v=4"></script>
+<link rel="stylesheet" href="/assets/gm.css?v=24"><link rel="stylesheet" href="/assets/ds.css?v=15"><link rel="stylesheet" href="/assets/print.css?v=1"><script defer src="/assets/print.js?v=1"></script><link rel="stylesheet" href="/assets/shell/shell.css?v=2"><script defer src="/assets/shell/shell.js?v=2"></script>{('<link rel="stylesheet" href="/assets/chat/ruri-chat.css?v=9">') if not (TH and TH[0] == 'ai') else ''}{COMM_TAGS}{('<script type="module" src="/assets/chat/ruri-chat.js?v=16"></script>') if not (TH and TH[0] == 'ai') else ''}<link rel="stylesheet" href="/assets/app/shell.css?v=1"><script defer src="/assets/app/app.js?v=4"></script>
 {ldh}
 {TH_CSS}
 {GTAG}
 </head><body data-th="{TH[0] if TH else 'hub'}"{(' data-api="' + COMM_API + '"') if COMM_API else ''}>
 <header class="hd"><div class="w hd-in"><a class="logo" href="/"><img class="logo-av" src="/assets/ruri/avatar.webp" width="36" height="36" alt="루리의 줍줍"><span>루리의 <b>줍줍</b></span></a>{('<span class="th-name">' + TH[2] + ' ' + TH[1] + '</span>') if TH else ''}</div>
-{('<nav class="th-sw w" aria-label="런처로"><a href="/" class="th-back">‹ 런처</a><a href="' + TH[4] + '" class="on" style="--tc:' + TH[3] + '">' + TH[2] + ' ' + TH[1] + '</a></nav>') if TH else ''}
+{('<nav class="th-sw w" aria-label="홈으로"><a href="/" class="th-back">‹ 홈</a><a href="' + TH[4] + '" class="on" style="--tc:' + TH[3] + '">' + TH[2] + ' ' + TH[1] + '</a></nav>') if TH else ''}
 {('<nav class="tb w" aria-label="' + TH[1] + ' 메뉴">' + "".join(f'<a href="{u}"{" class=on" if (path == u or (u != TH[4] and path.startswith(u))) else ""}>{n}</a>' for u, n in TH[5]) + '</nav>') if TH else ''}</header>
 <main class="w">
 {body}{PAGE_INTRO.get(path, '')}
@@ -1522,10 +1525,17 @@ def build():
     cats = ''.join(f'<a class="cat" data-c="{s_}" href="/cat/{s_}/"><span class="ic">{CAT_ICON[n]}</span><b>{n}</b><span class="n">{sum(1 for c in live if n in c["tags"])}건</span></a>' for s_, n in CATS)
     # 2026-10-18 사용자: "메인이 너무 난잡 → 테마를 정하고 테마별 맞춤 UI, AI 로그 등 분리, 기획부터 다시"
     # → 메인(/)은 테마 입구(허브)만, 공모전 상담은 /contest/ 로. 유입(src·referrer)에 맞는 테마 입구를 맨 위로 + 루리 안내
-    contest_home = f'''<h1 class="cs-h1">🏆 루리 공모전 추천 상담 — 이 공모전이나 해 볼까?</h1>
-<section id="consult" aria-label="루리 공모전 추천 상담"><noscript><p>루리 상담은 자바스크립트가 필요해요. 진행 중 공모전 {len(live)}건이 있어요.</p></noscript></section>
-{qa_home()}<p class="cs-foot">진행 중 공모전 {len(live)}건(오늘 {TODAY.month}/{TODAY.day} 한국 시간 기준 접수 마감 전 · 제목이 같은 공모전은 1건 · {NOW_KST():%m/%d %H:%M} 갱신)의 마감일·상금·응모 자격·접수 방법과 공식 공고 캡처를 정리해 두고, 루리가 상황에 맞는 것만 골라 드려요.</p>
-<link rel="stylesheet" href="/assets/home/consult.css?v=14"><script defer src="/assets/home/consult.js?v=13"></script>'''
+    _first = sorted(live, key=lambda c: (c['end'], -(c.get('pv') or 0)))[:40]
+    _chips = ''.join(f'<a href="/cat/{s_}/">{CAT_ICON[n_]} {E(n_)}</a>' for s_, n_ in CATS) + '<a href="/contest/week/">⏰ 이번 주 마감</a><a href="/contest/univ/">🎓 대학생</a>'
+    # 2026-10-23 UI 정리: 공모전을 찾으러 온 사람이 목록·검색·분야를 먼저 보고, 루리 추천은 아래 보조 구역으로
+    contest_home = f'''<h1 class="cs-h1">진행 중 공모전 {len(live)}건</h1>
+<p class="cs-sub">마감 임박순 · {NOW_KST():%m/%d %H:%M} 갱신(한국 시간) · 제목이 같은 공모전은 1건</p>
+<nav class="cs-cats" aria-label="분야">{_chips}</nav>
+<h2 class="cs-lh">마감 임박 공모전</h2><div id="cnt" class="note"></div>{TOOLBAR}<ul class="list" id="list">{''.join(card(c) for c in _first)}</ul><button class="more" id="more" hidden>더 보기</button>{listing_js()}
+<h2 class="cs-lh">루리에게 맞춤 추천받기</h2>
+<section id="consult" aria-label="루리 공모전 맞춤 추천"><noscript><p>맞춤 추천은 자바스크립트가 필요해요. 위 목록은 그대로 쓸 수 있어요.</p></noscript></section>
+{qa_home()}<p class="cs-foot">진행 중 공모전 {len(live)}건(오늘 {TODAY.month}/{TODAY.day} 한국 시간 기준 접수 마감 전)의 마감일·상금·응모 자격·접수 방법을 정리해 두고, 루리가 상황에 맞는 것만 골라 드려요.</p>
+<link rel="stylesheet" href="/assets/home/consult.css?v=15"><script defer src="/assets/home/consult.js?v=13"></script>'''
     _il = {'@context': 'https://schema.org', '@type': 'ItemList', 'name': f'진행 중 공모전 {YR}', 'numberOfItems': len(live), 'itemListElement': [{'@type': 'ListItem', 'position': k + 1, 'url': f'{SITE}/c/{c["id"]}/', 'name': c['title']} for k, c in enumerate(live_rec[:30])]}
     page('/contest/', '루리 공모전 추천 상담 — 진행 중 공모전 ' + str(len(live)) + '건', f'진행 중인 공모전 {len(live)}건을 마감 임박순·상금순으로. 질문 몇 개면 루리가 딱 맞는 공모전을 골라 드려요.',
          contest_home, [('루리의 줍줍', '/'), ('공모전', '/contest/')], _il)
@@ -1662,7 +1672,7 @@ def build():
         for k_ in ('webtoon', 'anime'):
             fw = os.path.join(ROOT, 'assets', 'watch', k_ + '.json')   # 추천 화면이 실제로 쓰는 목록 개수와 맞춘다
             if os.path.exists(fw): nw += len(json.load(open(fw, encoding='utf-8')).get('r', []))
-        stat = {'today': f'오늘 {_n_today}건 마감', 'recipe': f'{NR_HOME}개', 'watch': f'{nw:,}편', 'policy': f'{len(aps)}건', 'contest': f'{len(live)}건 진행', 'event': f'{len(events):,}건', 'issue': '매시간', 'money': '계산기·가이드', 'game': '이번 주 무료', 'learn': '개발 지식', 'plaza': '이야기'}
+        stat = {'today': f'오늘 {_n_today}건 마감', 'recipe': f'{NR_HOME}개', 'watch': f'{nw:,}편', 'policy': f'{len(aps)}건', 'contest': f'{len(live)}건 진행', 'event': f'{len(events):,}건', 'issue': '매시간', 'money': '계산기·가이드', 'game': '이번 주 무료', 'learn': '개발 지식', 'plaza': '이야기', 'wiki': '정리된 가이드'}
         out = ''
         for t in json.load(open(f, encoding='utf-8'))['topics']:
             url = (t.get('host') or '').rstrip('/') + t['path'] if t.get('host') else t['path']
@@ -1808,6 +1818,8 @@ def build():
     print('공모전 충실도 분포', sorted(collections.Counter(RICH_SCORES).items()), '기준', RICH_MIN)
     print('auto_thin noindex', auto_thin(urls))
     print('얇은 페이지 합침', collapse_thin(urls))
+    import wiki as _WK   # 2026-10-23 루리 위키: 정보성 글을 docs 형태(왼쪽 목록·오른쪽 목차·이전/다음)로 묶는다
+    print('루리 위키 글/적용', _WK.build_wiki(urls, NOINDEX, page, ROOT, SITE)); urls.append('/wiki/')
     try:
         import make_pdf as _MP
         _pp = [u for u in urls if _MP.is_pdf_path(u) and u not in NOINDEX]
@@ -2361,6 +2373,72 @@ def _alert(g):
             '@media (prefers-color-scheme: dark){.g-alert{background:#422006;color:#fde68a;border-color:#b45309}}</style>')
 
 
+def _g_hue(slug):
+    return int(hashlib.md5(slug.encode('utf-8')).hexdigest()[:4], 16) % 360
+
+
+def guide_cover(g, label='생활 돈 가이드', foot='공식 안내로 확인한 것만 정리'):
+    """정보글 표지 이미지: 글 데이터에서 자동으로 그리는 SVG(저작권 걱정 없는 자체 제작). 글마다 색이 다르다."""
+    h = _g_hue(g['slug']); h2 = (h + 38) % 360
+    gid = 'gc' + re.sub(r'[^a-z0-9]', '', g['slug'].lower())[:24]
+    nm = g['name'] if len(g['name']) <= 26 else g['name'][:25] + '…'
+    fs = 40 if len(nm) <= 12 else 32 if len(nm) <= 17 else 26
+    return (f'<svg class="g-cover" viewBox="0 0 800 200" role="img" aria-label="{E(nm)} 표지"><defs><linearGradient id="{gid}" x1="0" y1="0" x2="1" y2="1">'
+            f'<stop offset="0" stop-color="hsl({h},82%,56%)"/><stop offset="1" stop-color="hsl({h2},78%,42%)"/></linearGradient></defs>'
+            f'<rect width="800" height="200" rx="22" fill="url(#{gid})"/><circle cx="700" cy="30" r="120" fill="#fff" opacity=".10"/><circle cx="610" cy="190" r="90" fill="#fff" opacity=".08"/><circle cx="90" cy="210" r="70" fill="#fff" opacity=".07"/>'
+            f'<text x="44" y="78" fill="#fff" opacity=".85" font-size="20" font-weight="700" font-family="Pretendard,sans-serif">루리의 줍줍 · {E(label)}</text>'
+            f'<text x="44" y="132" fill="#fff" font-size="{fs}" font-weight="800" font-family="Pretendard,sans-serif">{E(nm)}</text>'
+            f'<text x="44" y="168" fill="#fff" opacity=".85" font-size="17" font-family="Pretendard,sans-serif">{E(foot)}</text>'
+            f'<text x="700" y="132" font-size="90" text-anchor="middle">{g["icon"]}</text></svg>')
+
+
+def article_enhance(path, body):
+    """정보성 글 공통 화면(2026-10-23 사용자 「정보성 글이 눈에 안 들어온다」): 표지 이미지 + 목차 + 번호 소제목 + 표 스타일. 글 내용은 바꾸지 않고 겉모양만 입힌다."""
+    m = re.search(r'<h1[^>]*>(.*?)</h1>', body, re.S)
+    if not m or 'g-cover' in body:
+        return body
+    title = html.unescape(re.sub(r'<[^>]+>', '', m.group(1))).strip()
+    seg = path.strip('/').split('/')
+    lab, ic = {'guide': ('응모·실무 가이드', '📘'), 'review': ('평론', '🖋️'), 'dev': ('개발 지식', '🧑‍💻'), 'mag': ('이슈 리딩', '📰'), 'ssul': ('썰', '💬'), 'en': ('English guide', '🌐')}.get(seg[0], ('정보', '📄'))
+    cover = guide_cover({'slug': '-'.join(seg), 'name': re.sub(r'^[^\w가-힣]+', '', title), 'icon': ic}, label=lab, foot='루리의 줍줍이 정리한 글')
+    skip = ('이 페이지 인용하기',)
+    cnt = [0]; toc = []
+    def numh2(mm):
+        txt = html.unescape(re.sub(r'<[^>]+>', '', mm.group(2))).strip()
+        if txt in skip or 'id=' in mm.group(1):
+            return mm.group(0)
+        cnt[0] += 1; n = cnt[0]
+        toc.append(f'<a href="#a{n}"><i>{n}</i>{E(re.sub(chr(92) + "s*[(（].*?[)）]", "", txt)[:14])}</a>')
+        return f'<h2{mm.group(1)} id="a{n}"><span class="gs-n">{n}</span><span class="gs-t">{mm.group(2)}</span></h2>'
+    body = re.sub(r'<h2([^>]*)>(.*?)</h2>', numh2, body, flags=re.S)
+    body = body.replace(m.group(0), cover + m.group(0), 1)
+    if len(toc) >= 3:
+        nav = '<nav class="g-toc" aria-label="이 글의 목차">' + ''.join(toc) + '</nav>'
+        i = body.find('<h2')
+        body = body[:i] + nav + body[i:] if i >= 0 else body
+    body = re.sub(r'(?<!tblw">)(<table\b.*?</table>)', r'<div class="tblw">\1</div>', body, flags=re.S) if '<div class="tblw"' not in body else body
+    return '<div class="art">' + body + '</div><link rel="stylesheet" href="/assets/guide/guide.css?v=3">'
+
+
+def _hl(t):
+    """요약문 안의 금액·기간·비율을 굵게(스캔하기 쉽게). 이미 이스케이프된 문자열에 적용."""
+    return re.sub(r'(\d[\d,\.]*\s?(?:만\s?원|억\s?원|천\s?원|원|%|일|개월|년|세|명|회|배|점))', r'<b class="nm">\1</b>', t)
+
+
+def _sum3(lead):
+    L = [x.strip() for x in re.split(r'(?<=[요다])\.\s+|(?<=[요다])\.$', lead) if x.strip()][:3]
+    return '<ol>' + ''.join(f'<li>{_hl(E(x if x.endswith(".") else x + "."))}</li>' for x in L) + '</ol>'
+
+
+def _sec_kind(h):
+    if re.search(r'신청할 수 없|제외|불가|주의|알아 둘|조심|놓치|탈락|불이익|못 받', h): return 'warn', '🛑'
+    if re.search(r'기간|일정|시기|언제|지급일', h): return 'time', '📅'
+    if re.search(r'금액|한도|지급액|얼마|상금|계산|최대', h): return 'money', '💰'
+    if re.search(r'자격|대상|조건|누가|요건|구분|나뉘', h): return 'who', '✅'
+    if re.search(r'방법|절차|순서|어떻게|서류|준비|신청', h): return 'how', '🧭'
+    return 'gen', '📌'
+
+
 def kin_guides():
     """/money/guide/ 생활 돈 가이드 (2026-10-20 홍보 세션 지식iN 반복 질문): 근로장려금·내일배움카드·월세 세액공제 vs 청년월세·퇴직금. 공식 출처로 확인된 칸만 JSON 에 담고 숫자는 표로 분리."""
     if not os.path.exists(KIN_F):
@@ -2375,29 +2453,37 @@ def kin_guides():
             JIDX.setdefault(st['slug'], (j, i))
     urls, cards = [], ''
     for g in G:
-        secs = ''
-        for sc in g['sections']:
-            h = f'<h2>{E(sc["h"])}</h2>'
+        secs, toc = '', []
+        for n_, sc in enumerate(g['sections'], 1):
+            kind, ic_ = _sec_kind(sc['h'])
+            h = f'<h2><span class="gs-n">{n_}</span>{E(sc["h"])}</h2>'
             if sc.get('table'):
                 head, rows = sc['table'][0], sc['table'][1:]
-                h += '<div class="tblw"><table class="xb"><thead><tr>' + ''.join(f'<th>{E(c)}</th>' for c in head) + '</tr></thead><tbody>' + ''.join('<tr>' + ''.join(f'<td>{E(c)}</td>' for c in r) + '</tr>' for r in rows) + '</tbody></table></div>'
+                h += '<div class="tblw"><table class="xb"><thead><tr>' + ''.join(f'<th>{E(c)}</th>' for c in head) + '</tr></thead><tbody>' + ''.join('<tr>' + ''.join(f'<td>{_hl(E(c))}</td>' for c in r) + '</tr>' for r in rows) + '</tbody></table></div>'
             if sc.get('ul'):
-                h += '<ul class="gm-l">' + ''.join(f'<li>{x}</li>' for x in sc['ul']) + '</ul>'
+                tag_ = 'ol class="gs-steps"' if re.search(r'절차|순서|단계', sc['h']) else 'ul class="gm-l"'
+                h += f'<{tag_}>' + ''.join(f'<li>{x}</li>' for x in sc['ul']) + f'</{tag_.split()[0]}>'
             if sc.get('p'):
                 h += f'<p>{sc["p"]}</p>'
             if sc.get('html'):
                 h += sc['html']
-            secs += h
+            secs += f'<section class="gs gs-{kind}" id="s{n_}">{h}</section>'
+            toc.append(f'<a href="#s{n_}"><i>{ic_}</i>{E(re.sub(chr(92) + "s*[(（].*?[)）]", "", sc["h"])[:14])}</a>')
+        toc.append('<a href="#faq"><i>❓</i>자주 묻는 질문</a>'); toc.append('<a href="#src"><i>📎</i>공식 출처</a>')
+        g_toc = '<nav class="g-toc" aria-label="이 글의 목차">' + ''.join(toc) + '</nav>'
+        _m = re.search(r'확인일\s*(\d{4}-\d{2}-\d{2})', g.get('basis', ''))
+        g_meta = (f'<div class="g-meta"><span>🗓 확인일 {E(_m.group(1)) if _m else E(g.get("basis", "")[:20])}</span><span>📎 공식 출처 {len(g["sources"])}곳</span><span>☎ {E(g["contact"])}</span></div>')
         faq, ld = _faq([(q, a) for q, a in g['faq']])
         src = ''.join(f'<li><a href="{E(u)}" target="_blank" rel="noopener nofollow">{E(n)}</a></li>' for n, u in g['sources'])
         rel = ' · '.join(f'<a href="{E(u)}">{E(t)}</a>' for u, t in g['related'])
-        body = (f'<p class="bc"><a href="/">홈</a> › <a href="/money/guide/">생활 돈 가이드</a> › {E(g["name"])}</p><h1>{g["icon"]} {E(g["h1"])}</h1>'
-                f'<p class="cat-st">📌 {E(g["lead"])}</p><p class="kwn">기준: {E(g["basis"])}' + (' · 원문 바로가기: ' + ' · '.join(f'<a href="{E(u)}" target="_blank" rel="noopener">{E(n)}</a>' for n, u in g['sources'][:4])) + '</p>' + _jr_nav(g, JIDX, GN) + _alert(g) + secs + _jr_box(g, JIDX, GN) + '<h2>자주 묻는 질문</h2>' + faq
+        body = (f'<p class="bc"><a href="/">홈</a> › <a href="/money/guide/">생활 돈 가이드</a> › {E(g["name"])}</p>' + guide_cover(g) + f'<h1 class="g-h1">{E(g["h1"])}</h1>' + g_meta
+                + f'<div class="g-sum"><b>3줄 요약</b>{_sum3(g["lead"])}</div>'
+                + f'<p class="kwn">기준: {E(g["basis"])}' + (' · 원문 바로가기: ' + ' · '.join(f'<a href="{E(u)}" target="_blank" rel="noopener">{E(n)}</a>' for n, u in g['sources'][:4])) + '</p>' + g_toc + _jr_nav(g, JIDX, GN) + _alert(g) + secs + _jr_box(g, JIDX, GN) + '<section class="gs gs-faq" id="faq"><h2><span class="gs-n">?</span>자주 묻는 질문</h2>' + faq + '</section>'
                 + join_cta('apply')
                 + _cite_box(g, f'/money/guide/{g["slug"]}/')
-                + f'<h2>공식 출처</h2><ul class="gm-l">{src}</ul>'
-                + f'<p class="note">공식 안내를 줍줍이 직접 확인해 정리한 내용이고, 기준 금액과 신청 기간은 해마다 바뀔 수 있어요. 신청 전에 위 공식 출처를 꼭 확인하고, 개별 사정은 {E(g["contact"])}에 문의하세요. 법률·세무 상담이 아니에요.</p>'
-                + f'<p class="hm-links">{rel} · <a href="/money/guide/">다른 생활 돈 가이드</a></p>' + GAME_CSS + (f'<script defer src="{E(g["script"])}"></script>' if g.get('script') else ''))
+                + f'<section class="g-src" id="src"><h2>📎 공식 출처</h2><ul class="gm-l">{src}</ul>'
+                + f'<p class="note">공식 안내를 줍줍이 직접 확인해 정리한 내용이고, 기준 금액과 신청 기간은 해마다 바뀔 수 있어요. 신청 전에 위 공식 출처를 꼭 확인하고, 개별 사정은 {E(g["contact"])}에 문의하세요. 법률·세무 상담이 아니에요.</p></section>'
+                + f'<p class="hm-links">{rel} · <a href="/money/guide/">다른 생활 돈 가이드</a></p>' + GAME_CSS + '<link rel="stylesheet" href="/assets/guide/guide.css?v=3">' + (f'<script defer src="{E(g["script"])}"></script>' if g.get('script') else ''))
         page(f'/money/guide/{g["slug"]}/', g['title'], g['desc'], body, [('루리의 줍줍', '/'), ('머니', '/analyst/'), ('생활 돈 가이드', '/money/guide/'), (g['name'], f'/money/guide/{g["slug"]}/')], ld)
         urls.append(f'/money/guide/{g["slug"]}/')
         cards += f'<li><a class="card" data-c="guide" href="/money/guide/{g["slug"]}/"><span class="ic">{g["icon"]}</span><div class="cb"><h3 class="t">{E(g["name"])}</h3><p class="o">{E(g["h1"])}</p></div></a></li>'
@@ -3050,9 +3136,13 @@ def prize_basis(items):
 
 
 def won_txt(v):
+    """원 단위 금액을 읽기 쉬운 말로(억·만 단위). 예: 300,000,000 → 3억원, 10,000,000 → 1,000만원"""
     if not v:
         return '-'
-    return f'{v // 10000:,}만{(" " + format(v % 10000, ",")) if v % 10000 else ""}원' if v >= 10000 else f'{v:,}원'
+    eok, rest = divmod(int(v), 100000000)
+    man, low = divmod(rest, 10000)
+    parts = ([f'{eok:,}억'] if eok else []) + ([f'{man:,}만'] if man else []) + ([format(low, ',')] if low else [])
+    return (' '.join(parts) + '원') if parts else f'{int(v):,}원'
 
 
 def an_tree(tree, keys):

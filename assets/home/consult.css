@@ -1,6 +1,6 @@
 /* 메인 = 루리 공모전 상담 */
 #consult{margin:14px 0 30px}
-.cs-stage{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 300px;align-items:end;gap:10px;min-height:440px;padding:26px 26px 0;border-radius:26px;overflow:hidden;
+.cs-stage{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 210px;align-items:end;gap:10px;min-height:260px;padding:18px 20px 0;border-radius:26px;overflow:hidden;
   background:radial-gradient(120% 90% at 85% 110%,#f9a8d4 0,rgba(249,168,212,0) 55%),linear-gradient(160deg,#4c1d95,#6d28d9 45%,#a855f7)}
 .cs-ruri{grid-column:2;grid-row:1;align-self:end}.cs-ruri img{display:block;width:100%;height:auto;filter:drop-shadow(0 12px 30px rgba(30,10,80,.45))}
 .cs-ruri img.pop{animation:cspop .35s ease-out}@keyframes cspop{0%{transform:translateY(8px) scale(.97);opacity:.5}}
@@ -137,3 +137,7 @@ html.cs-lock{overflow:hidden}
 .hm-today{padding:10px 12px;border-radius:12px;background:var(--card);border:1px solid var(--bd)}.hm-today ul{margin:6px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px}
 .hm-today li a{display:inline-block;padding:6px 12px;border-radius:999px;background:#ecfeff;color:#0e7490;font-weight:700;text-decoration:none}
 .hm-ev{margin:0;padding:0;list-style:none;display:grid;gap:8px}.hm-ev a{display:block;padding:10px 12px;border:1px solid var(--bd);border-radius:12px;background:var(--card);color:var(--tx);text-decoration:none}.hm-ev small{display:block;color:var(--mu);margin-top:2px}
+
+.cs-sub{margin:-4px 0 10px;color:var(--mu);font-size:13px}
+.cs-cats{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 6px}.cs-cats a{padding:7px 12px;border:1px solid var(--bd,#e5e7eb);border-radius:999px;background:var(--card,#fff);color:inherit;text-decoration:none;font-size:14px;font-weight:700}
+.cs-lh{margin:22px 0 8px;font-size:18px}
