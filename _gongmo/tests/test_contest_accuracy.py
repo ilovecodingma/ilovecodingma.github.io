@@ -144,3 +144,13 @@ def test_gate_holds_mismatches_and_keeps_missing_as_missing():
     assert h and '분류' in h[0]
     h2, r2 = G.check({'id': 'y', 'title': '숏폼 공모전', 'tags': ['영상'], 'elig': '', 'elig_raw': '개인 또는 팀(3인', 'region': ''}, B.region_kind)
     assert not h2 and r2   # 잘린 자격은 비우고 재수집 대상으로
+
+
+def test_common_guide_links_exist_after_build():
+    import os, build as B
+    root = B.ROOT
+    if not os.path.isdir(os.path.join(root, 'guide')):
+        return
+    for sl in ('contest-rules-reading-eligibility-deadline', 'media-art-video-contest-submission-check', 'contest-music-font-license-check',
+               'local-photo-contest-permission-portrait', 'ai-contest-rules-check', 'idea-contest-ppt-structure', 'contest-deadline-day-mistakes'):
+        assert os.path.exists(os.path.join(root, 'guide', sl, 'index.html')), sl
