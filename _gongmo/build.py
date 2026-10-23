@@ -345,6 +345,7 @@ def load():
             if isinstance(c.get(_k), str):
                 c[_k] = SH.strip_ui(c[_k])
         if c.get('elig'):
+            c['elig_raw'] = c['elig']
             c['elig'] = SH.repair(c['elig'])   # 열린 괄호·문장 중간에서 끊긴 자격 문구는 끊긴 부분을 버리고, 남는 게 없으면 비운다(→ 「공식 공고 확인 필요」)
         if r.get('prize_first') and not c['pv']:
             c['pv'] = int(r['prize_first']); c['prize'] = f"1등 {int(r['prize_first']) // 10000:,}만원"
@@ -612,6 +613,9 @@ def share_bar(t, x='', en=False):
             f'<button data-s="nblog">{L[4]}</button><button data-s="band">{L[5]}</button><button data-s="x">X</button><button data-s="fb">Facebook</button></div><script defer src="/assets/share.js?v=2"></script>')
 
 
+NP_BROKEN = []   # 잘려 게시하지 않은 공고 핵심 추출(빌드마다 비우고 다시 채움)
+
+
 def notice_points(cid):
     """공고 원문에서 「항목: 내용」 꼴만 항목당 한 줄(110자까지). 못 찾으면 빈 목록(지어내지 않음)."""
     f = os.path.join(HERE, 'txt', f'{cid}.txt')
@@ -623,6 +627,9 @@ def notice_points(cid):
         for m in re.finditer(rf'(?:^|[\s■□▶●○◆◇※\-·•\d\.\)])(?:{rx})\s*[:：]\s*(.{{8,140}}?)(?=\s(?:[■□▶●○◆◇※]|\d+\.\s|(?:{_NP_ALL})\s*[:：])|$)', t):
             v = m.group(1).strip(' -·•,')
             if NP_NAV.search(v) or len(v) < 8 or v in used:
+                continue
+            if re.search(r'[∼~～–—-]\s*$', v) or not SH.complete(v):   # 「2026. 9. 14.(월) ∼」처럼 중간에서 끊긴 추출은 게시하지 않는다(재수집 대상, 게이트 보고서에 기록)
+                NP_BROKEN.append((cid, lab, v[:60]))
                 continue
             out.append((lab, v[:110] + ('…' if len(v) > 110 else ''))); used.add(v)
             break
@@ -662,6 +669,21 @@ def og_card(c):
     return rel
 
 
+def sim_why(c, x):
+    """비교·추천 대상으로 삼을 수 있는 이유(대표 분야 같음 + 확인된 참가 대상 또는 제출물 일치). 이유가 없으면 빈 목록 — 관련 없는 항목을 노출하지 않는다."""
+    if x['id'] == c['id'] or not c.get('tags') or not x.get('tags') or x['tags'][0] != c['tags'][0]:
+        return []
+    if c['tags'][0] == '영상' and c.get('medium') and x.get('medium', '') != c.get('medium'):
+        return []
+    r = []
+    if elig_short(c) != '확인 필요' and elig_short(x) == elig_short(c):
+        r.append('참가 대상 같음')
+    ec, ex = (c.get('effort') or c.get('medium')), (x.get('effort') or x.get('medium'))
+    if ec and ec == ex:
+        r.append('제출물 같음')
+    return r
+
+
 def c_insight(c, live):
     """참가 판단용 해설(2026-10-23 애드센스 재심사 지침 4번). 마감까지 일수·주말 수·상금 순위 같은 계산으로 채우지 않고,
     공고 자격·제출 문구에서 읽히는 것만으로 「누가 되고 누가 안 되는지·제출 순서·비슷한 공모전 비교」를 쓴다. 핵심 조건(자격·제출물)이 비어 있으면 일정 추천 전에 확인부터 안내한다."""
@@ -677,13 +699,15 @@ def c_insight(c, live):
     can, cant = [], []
     if el:
         can.append(f'공고의 자격 문구: 「{SH.clip(el, 120) or el[:120]}」')
-    LIM = [(r'거주|도민|시민|군민|구민|관내|주소지', '해당 지역에 거주·재직·재학하는 사람으로 제한될 수 있어요(주민등록 기준인지 공고 확인).'),
+    LIM = [(r'(?!)', ''),
            (r'대학생|대학원생|재학', '재학생 증빙(재학증명서)이 필요할 수 있어요. 휴학·졸업 예정자 포함 여부는 공고 확인.'),
            (r'만\s?\d+\s?세|\d+세\s?(?:이상|이하)|청년', '나이 조건이 있어요. 기준일이 공고일인지 접수일인지 확인하세요.'),
            (r'미등단|등단자|기수상|수상\s?경력|중복\s?수상', '등단·수상 경력에 따른 제한이 있을 수 있어요.'),
            (r'중복\s?(?:응모|제출|참가)\s?(?:불가|금지)|1인\s?1(?:작품|편|건)|1인당\s?\d', '1인당 응모 편수 제한이 있을 수 있어요.'),
            (r'외국인', '외국인 참가 가능 여부가 문구에 언급돼 있어요(공고 확인).'),
            (r'팀|단체|2인|3인|5인', '팀·단체 참가 조건(인원·대표자)이 문구에 있어요.')]
+    if region_kind(el) == 'specific':
+        cant.append('자격 문구에 특정 지역 거주·소재 조건이 있어요. 어느 지역·어떤 기준(주민등록·재직·재학)인지 공고에서 확인하세요.')
     for rx, msg in LIM:
         if re.search(rx, src_txt):
             cant.append(msg)
@@ -706,23 +730,26 @@ def c_insight(c, live):
     steps = ['공식 공고를 열어 자격·마감 시각·제출 규격을 확인해요.', '규격(분량·길이·파일 형식·파일명)에 맞춰 제출물을 만들어요.',
              f'접수합니다 — 접수 방법은 자동 분류상 「{ch_ or "공고 확인"}」이에요(공고와 다를 수 있어요).', '접수 완료 메일이나 화면을 저장해 두고, 수정 가능 기간을 확인해요.']
     if ch_ and ch_ != '공고 참조':
-        steps[2] = f'접수합니다 — 자동 분류상 「{ch_}」 방식이에요. 실제 접수 링크는 위 「공식 공고·접수」 버튼과 공고를 따르세요.'
+        _bt = CQ.link_wording(c['link'])[0].replace(' →', '')
+        steps[2] = (f'접수합니다 — 자동 분류상 「{ch_}」 방식이에요. 위 「{_bt}」 버튼은 공고를 모아 둔 수집처 페이지라서, 실제 접수 경로는 주최 측 공식 공고에서 확인하세요.' if CQ.is_aggregator(c['link'])
+                    else f'접수합니다 — 자동 분류상 「{ch_}」 방식이에요. 실제 접수는 위 「{_bt}」 버튼이 여는 주최 측 페이지와 공고를 따르세요.')
     out += '<h2>📤 제출 순서</h2><ol class="chk">' + ''.join(f'<li>{E(x)}</li>' for x in steps) + '</ol>'
     if n >= 4 and not miss:
         e = datetime.date.fromisoformat(c['end'])
         d1 = TODAY + datetime.timedelta(days=max(1, n // 3)); d2 = e - datetime.timedelta(days=max(1, n // 5)); d3 = e - datetime.timedelta(days=1)
         out += (f'<h2>📅 추천 준비 일정 <small>루리 제안 · 공식 일정 아님</small></h2><p class="note">가정: 제출물 작업량은 공고에 없어서 마감일까지를 3등분했어요. 작업량이 크면 앞당기고, 접수 마감 시각은 공고로 확인하세요.</p>'
                 f'<ul class="chk"><li>{d1.month}/{d1.day}까지: 위 자격·규격 확인과 주제 정하기</li><li>{d2.month}/{d2.day}까지: 초안 완성 후 규격 점검</li><li>{d3.month}/{d3.day}까지: 파일명·형식 맞춰 제출(마감 당일엔 접수가 몰릴 수 있어요)</li></ul>')
-    same = [x for x in live if tag in x['tags'] and x['id'] != c['id'] and (tag != '영상' or not mdm or x.get('medium', '') == mdm)]
-    def sim(x):
-        return (-(2 if elig_short(x) == elig_short(c) and elig_short(c) != '확인 필요' else 0) - (1 if (x.get('effort') or x.get('medium')) == (c.get('effort') or c.get('medium')) else 0),
-                abs((datetime.date.fromisoformat(x['end']) - datetime.date.fromisoformat(c['end'])).days))
-    cmp_ = sorted(same, key=sim)[:4]
+    # 비교 대상은 대표 분야가 같고, 참가 대상 또는 제출물이 확인된 값으로 일치할 때만(2026-10-23 재심사: 창업 대회에 백일장·음악 행사가 비교로 뜨던 오류). 맞는 게 없으면 비교 영역을 생략한다.
+    why_sim = lambda x: sim_why(c, x)
+    cand = [(x, why_sim(x)) for x in live if x['id'] != c['id']]
+    cand = [(x, w_) for x, w_ in cand if w_]
+    cand.sort(key=lambda t: (-len(t[1]), abs((datetime.date.fromisoformat(t[0]['end']) - datetime.date.fromisoformat(c['end'])).days)))
+    cmp_ = cand[:4]
     if cmp_:
-        row = lambda x, on='': (f'<tr{on}><td>{("이 공모전" if on else "<a href=/c/" + x["id"] + "/>" + E(x["title"][:40]) + "</a>")}</td><td>{E(elig_short(x))}</td><td>{E(sub_short(x))}</td>'
-                                f'<td>{E(prize_short(x))}</td><td>{ddot(x["end"])[5:]}</td></tr>')
-        out += (f'<h2>🔍 분야·자격·제출물이 비슷한 {E(CQ.label_for(tag, mdm))} 공모전 비교</h2><table class="info cmp"><tr><th>공모전</th><th>대상</th><th>제출물</th><th>상금(1등/총상금 구분)</th><th>마감</th></tr>'
-                + row(c, ' class="on"') + ''.join(row(x) for x in cmp_) + '</table><p class="note">상금 칸은 「1등」과 「총」을 구분해 적었어요. 기준이 다른 금액끼리는 크기를 비교하지 마세요.</p>')
+        row = lambda x, w_='', on='': (f'<tr{on}><td>{("이 공모전" if on else "<a href=/c/" + x["id"] + "/>" + E(x["title"][:40]) + "</a>")}</td><td>{E(elig_short(x))}</td><td>{E(sub_short(x))}</td>'
+                                       f'<td>{E(prize_short(x))}</td><td>{ddot(x["end"])[5:]}</td><td>{E(w_ or "—")}</td></tr>')
+        out += (f'<h2>🔍 비슷한 {E(CQ.label_for(tag, mdm))} 공모전 비교 <small>대표 분야가 같고 참가 대상·제출물이 일치하는 것만</small></h2><table class="info cmp"><tr><th>공모전</th><th>대상</th><th>제출물</th><th>상금(1등/총상금 구분)</th><th>마감</th><th>비슷한 점</th></tr>'
+                + row(c, '', ' class="on"') + ''.join(row(x, ' · '.join(w_)) for x, w_ in cmp_) + '</table><p class="note">상금 칸은 「1등」과 「총」을 구분해 적었어요. 기준이 다른 금액끼리는 크기를 비교하지 마세요.</p>')
     if '부문' in (c.get('prize') or '') and not any(prize_split(c)):
         out += '<p class="note">이 공모전은 부문마다 상금이 달라 하나의 1등 상금으로 정리하지 않았어요. 표의 「상금·혜택」 칸을 기준으로 부문별로 확인하세요.</p>'
     return out
@@ -747,17 +774,28 @@ def field_clean(c):
     return ', '.join(toks) if toks else ', '.join(CQ.label_for(t, c.get('medium', '')) for t in c['tags'])
 
 
+REG_SPECIFIC = re.compile(r'[가-힣]{2,6}(?:특별시|광역시|특별자치도|특별자치시|도|시|군|구)\s*(?:내\s*)?(?:에\s*)?(?:거주|소재|소속|주소)|[가-힣]{2,4}(?:시민|군민|구민|도민)|관내|지역\s*주민|해당\s*지역')
+REG_NATIONAL = re.compile(r'대한민국\s*(?:에\s*)?거주|국내\s*거주|대한민국\s*국민|내국인|전국|거주지?\s*(?:에\s*)?제한\s*없|지역\s*제한\s*없')
+
+
+def region_kind(el):
+    """자격 문구의 지역 조건: 'specific'(특정 지자체 거주·소재) / 'national'(국내 거주·전국) / ''(문구 없음). 「대한민국 거주」를 특정 지역 제한으로 읽지 않는다(2026-10-23 이천시 숏폼 모순)."""
+    el = el or ''
+    if REG_SPECIFIC.search(re.sub(r'대한민국\s*(?:에\s*)?거주', '', el)):
+        return 'specific'
+    return 'national' if REG_NATIONAL.search(el) else ''
+
+
 def region_row(c, NEED):
-    """지역 제한 칸. 자격 문구와 모순되지 않게 한 곳에서 판정한다(2026-10-23 사용자 점검: 자격은 「전국」인데 지역 제한은 「있음」으로 나오던 모순).
-    재학·재직은 신분 조건이라 지역 제한으로 세지 않는다."""
+    """지역 제한 칸. 자격 문구와 모순되지 않게 한 곳에서 판정한다. 문구가 없으면 「제한 없음」이 아니라 「문구를 찾지 못함」(누락값을 없음으로 바꾸지 않는다)."""
     if c.get('region'):
         return c['region']
-    el = c.get('elig') or ''
-    if re.search(r'전국|지역\s*제한\s*없|거주지?\s*(?:에\s*)?제한\s*없', el):
-        return '제한 없음(자격 문구 기준)'
-    if re.search(r'거주|도민|시민|군민|구민|관내|주소|[도시군구]\s*내', el):
-        return '있음 — ' + NEED
-    return '따로 적힌 제한 없음(공고 확인)'
+    k = region_kind(c.get('elig'))
+    if k == 'national':
+        return '전국(국내 거주자 대상, 자격 문구 기준)'
+    if k == 'specific':
+        return '특정 지역 조건이 자격 문구에 있음 — 지역 범위는 ' + NEED
+    return '자격 문구에서 지역 조건을 찾지 못함(원문 전체는 미확인)'
 
 
 def deadline_row(c, NEED):
@@ -804,7 +842,7 @@ def ver_block(c):
     facts = ''.join(f'<tr><th>{E(k)}</th><td>{E(x)}</td></tr>' for k, x in v['facts'])
     srcs = ' · '.join(f'<a href="{E(s["url"])}" target="_blank" rel="noopener nofollow">{E(s["label"])}</a>' for s in v['sources'])
     lst = lambda t, L: (f'<h3>{t}</h3><ul class="chk">' + ''.join(f'<li>{E(x)}</li>' for x in L) + '</ul>') if L else ''
-    return (f'<details class="fold ver"><summary>✅ 공식 원문 대조 결과 · 수정 이력 <small>확인일 {E(v["verified_at"])}</small></summary>'
+    return (f'<details class="fold ver"><summary>✅ 공식 원문 {"일부 " if v.get("level") == "partial" else ""}대조 결과 · 수정 이력 <small>확인일 {E(v["verified_at"])}</small></summary>'
             f'<p class="note">주최 측 공식 페이지를 위 확인일에 직접 열어 이 페이지의 값과 맞춰 봤어요. 운영자 검수 완료 표시가 아니라 제작 과정에서 한 원문 대조이고, 공고는 바뀔 수 있어요. 출처: {srcs}</p>'
             f'<table class="info">{facts}</table>'
             + lst('수집 데이터와 달랐던 점(수정함)', v.get('corrections', [])) + lst('서로 다른 값(자동 분석 보류)', v.get('conflicts', [])) + lst('확인하지 못한 것', v.get('unverified', [])) + '</details>')
@@ -835,7 +873,7 @@ def detail(c, live):
     else:
         _tips = TIPS['기타'] + ['제출물 종류가 확인되지 않아 분야별 준비 팁은 넣지 않았어요. 공식 공고의 제출물·규격 항목을 먼저 확인하세요.']
     tips = ''.join(f'<li>{E(t)}</li>' for t in _tips) or ''.join(f'<li>{E(t)}</li>' for t in TIPS['기타'])
-    sim = [x for x in live if x['id'] != c['id'] and main_tag in x['tags'] and (main_tag != '영상' or not c.get('medium') or x.get('medium', '') == c.get('medium'))][:3]
+    sim = sorted([x for x in live if sim_why(c, x)], key=lambda x: (-len(sim_why(c, x)), abs((datetime.date.fromisoformat(x['end']) - datetime.date.fromisoformat(c['end'])).days)))[:3]
     simh = ''.join(card(x) for x in sim)
     status = ('<p class="warn">접수가 마감된 공모전입니다. 같은 분야의 진행 중 공모전을 아래에서 확인하세요.</p>' if n < 0
               else (f'<p class="lead"><span class="d">기존 공고 기준</span> {ddot(c["end"])[5:]} 마감 · <b>연장일 확인 필요</b></p>' if (VER.get(c['id']) or {}).get('alerts') or (VER.get(c['id']) or {}).get('conflicts')
@@ -909,7 +947,7 @@ def detail(c, live):
 {ver_block(c)}{np_html}{'' if _v.get('conflicts') else c_insight(c, live)}
 {('<section id="finder" data-id="' + c['id'] + '" data-v="' + TODAY.strftime('%m%d') + '"></section><script defer src="/assets/finder/finder.js?v=3"></script>') if c in live else ''}
 {'<a class="lab-cta" href="/lab/#diag"><b>🏆 이런 공모전 수상작은 어떻게 생겼을까?</b><span>수상작 300여 개를 분석한 당선 공식과 내 문구 진단 →</span></a>' if re.search(r'슬로건|표어|네이밍|명칭|캐치프레이즈|삼행시|N행시|이행시|애칭', c['title']) else ''}
-<h2>비슷한 공모전</h2><ul class="list">{simh or '<li class="empty">진행 중인 같은 분야 공모전이 없어요.</li>'}</ul>
+{('<h2>비슷한 공모전</h2><ul class="list">' + simh + '</ul>') if simh else ''}
 <details class="fold"><summary>공고 캡처 · 수집 이력 · 분류 정보</summary>{shot_html}{hist_html}<p class="note">분야: {catl}. 상금·자격·기간은 공고 원문에서 자동으로 정리한 값이라 오차가 있을 수 있습니다. 최종 기준은 주최 측 공식 공고입니다.</p></details>
 {('<details class="fold"><summary>팀원 모집 · 질문 · 후기</summary>' + comm_html + '</details>') if comm_html else ''}
 {join_cta('contest')}'''
@@ -1621,6 +1659,28 @@ def build():
     DUP.clear(); DUP.update(dup_check.dups(live)[0])
     live = [c for c in live if c['id'] not in DUP]
     print('중복 공고 합침', len(DUP))
+    import contest_gate as GATE   # 게시 전 품질 게이트: 어긋난 공고는 검수 대기(목록·추천·색인에서 제외)
+    NP_BROKEN.clear()
+    for c in contests:
+        notice_points(c['id'])
+    GATE_HOLD, GATE_REC = {}, {}
+    for c in live:
+        h_, r_ = GATE.check(c, region_kind, NP_BROKEN)
+        if h_:
+            GATE_HOLD[c['id']] = h_
+        if r_:
+            GATE_REC[c['id']] = r_
+    live = [c for c in live if c['id'] not in GATE_HOLD]
+    print('게이트 검수 대기', len(GATE_HOLD), '재수집 대상', len(GATE_REC))
+    try:
+        _gd = os.path.expanduser(r'~\Desktop\루리줍줍_품질개편'); os.makedirs(_gd, exist_ok=True)
+        _byid = {c['id']: c for c in contests}
+        _ln = ['# 공모전 게시 전 품질 게이트 결과 (빌드마다 갱신)', '', f'- 검수 대기 {len(GATE_HOLD)}건 · 재수집 대상 {len(GATE_REC)}건', '', '## 검수 대기']
+        _ln += [f'- {k} {_byid[k]["title"][:40]} — ' + ' / '.join(v) for k, v in GATE_HOLD.items()] + ['', '## 재수집 대상']
+        _ln += [f'- {k} {_byid[k]["title"][:40]} — ' + ' / '.join(v) for k, v in GATE_REC.items()]
+        open(os.path.join(_gd, 'gate_report.md'), 'w', encoding='utf-8').write(chr(10).join(_ln))
+    except Exception:
+        pass
     # 공고 변경 이력 (2026-10-19 지침 3.3): 마감일·상금·자격·제목·링크가 바뀌면 날짜와 함께 기록
     HF = os.path.join(HERE, 'contest_hist.json')
     HIST.update(json.load(open(HF, encoding='utf-8')) if os.path.exists(HF) else {})
@@ -1901,7 +1961,7 @@ def build():
     _tp = json.load(open(os.path.join(HERE, 'topic_hosts.json'), encoding='utf-8'))['topics']
     sc_ctx = {'now': NOW_KST(), 'today': TODAY, 'contests': contests, 'DUP': DUP, 'events': events, 'aps': aps, 'AP_DUP': AP_DUP, 'deadline_row': deadline_row, 'elig_short': elig_short, 'prize_short': prize_short,
               'tidy_ev': (lambda t: re.sub(r'^\s*\((?:중복|\d+회 중복)[^)]*\)\s*', '', t).strip()), 'EASY': EASY,
-              'new_contests': sorted(_cs, key=lambda c: (_first(c), c['end']), reverse=True)[:14], 'n_new': sum(1 for c in _cs if _first(c) == TODAY.isoformat()), 'n_ver': len(VER),
+              'new_contests': sorted(_cs, key=lambda c: (_first(c), c['end']), reverse=True)[:14], 'n_new': sum(1 for c in _cs if _first(c) == TODAY.isoformat()), 'n_ver': len(VER), 'n_core': sum(1 for v in VER.values() if v.get('level') != 'partial'), 'n_live': len(live),
               'guides': [{'u': f'/money/guide/{k}/', 'title': _gk[k]['h1'], 'desc': _gk[k]['lead']} for k in ('energy-voucher', 'eitc', 'naeil-card') if k in _gk],
               'n_contest': len(live), 'n_apply': len(aps), 'topics': _tp,
               'reads': [{'u': u_, 'title': html.unescape(re.sub(r'\s*[|｜].*$', '', (re.search(r'<title>(.*?)</title>', open(os.path.join(ROOT, u_.strip('/'), 'index.html'), encoding='utf-8').read(), re.S) or [0, u_])[1])), 'sub': sb_}
