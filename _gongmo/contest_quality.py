@@ -59,12 +59,14 @@ def link_kind(link):
     return 'aggregator' if is_aggregator(link) else 'official'
 
 
-def link_wording(link):
+def link_wording(link, verified=False):
     """(버튼 문구, 안내 문구, 이미지 대체문구 접미). 수집처 링크를 주최 측 공식 공고라고 쓰지 않는다."""
     if is_aggregator(link):
         return ('수집처 공고 페이지 열기 →',
                 '이 링크는 공고를 모아 둔 수집처 페이지예요(주최 측 공식 페이지가 아니에요). 접수 전에 주최 측 공식 공고를 찾아 마감 시각과 제출 조건을 꼭 확인하세요.',
                 '공고 수집처 화면')
+    if not verified and not _OFFICIAL_RX.search(host(link)):   # 기관 도메인이 아니고 공식 원문 대조도 없으면 「공식」이라 부르지 않는다(구글폼·SNS·개인 사이트 등)
+        return ('외부 접수·공고 페이지 열기 →', '기관 도메인이 아닌 외부 링크예요(구글폼·SNS·운영 대행 사이트 등). 주최 측이 공식으로 안내한 접수 경로인지 아직 확인하지 못했으니, 접수 전 주최 측 공식 공고에서 접수 경로를 다시 확인하세요.', '외부 공고 화면')
     return ('공식 공고·접수 페이지 열기 →', '링크는 주최 측 공고(또는 접수) 페이지예요. 공고가 바뀌었을 수 있으니 접수 전 다시 확인하세요.', '공식 공고 화면')
 
 
