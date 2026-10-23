@@ -1,0 +1,653 @@
+{
+ "days": [
+  "2026-10-14",
+  "2026-10-15",
+  "2026-10-16",
+  "2026-10-17",
+  "2026-10-18",
+  "2026-10-19",
+  "2026-10-20"
+ ],
+ "total": 45228,
+ "themes": [
+  {
+   "k": "loan",
+   "icon": "💳",
+   "name": "대출·카드·보험·적금",
+   "n": 1659,
+   "c": 429,
+   "sites": 19,
+   "topsites": [
+    "지식iN 경제",
+    "kin_it",
+    "ppomppu",
+    "kin_shop"
+   ],
+   "daily": [
+    163,
+    282,
+    310,
+    171,
+    191,
+    352,
+    190
+   ],
+   "kw": [
+    [
+     "대출",
+     450
+    ],
+    [
+     "카드",
+     360
+    ],
+    [
+     "보험",
+     281
+    ],
+    [
+     "결제",
+     175
+    ],
+    [
+     "페이",
+     157
+    ],
+    [
+     "토스",
+     139
+    ]
+   ],
+   "links": [
+    [
+     "/money/guide/journey/finance/",
+     "금융·결제 여정"
+    ],
+    [
+     "/money/guide/card-installment-dispute/",
+     "카드 할부 항변권·부정사용"
+    ],
+    [
+     "/money/guide/insurance-claim-dispute/",
+     "보험금 분쟁"
+    ]
+   ],
+   "qn": 1394,
+   "ex": [
+    [
+     "SD카드의 데이터 유실방지방법",
+     "https://www.clien.net/service/board/kin/19277375?od=T31&po=0&category=0&groupCd="
+    ],
+    [
+     "무선 랜카드 추천해주세요!",
+     "https://www.clien.net/service/board/kin/19274465?od=T31&po=1&category=0&groupCd="
+    ],
+    [
+     "메타 뮤즈 가입 성공하신 분들 카드 인증",
+     "https://www.clien.net/service/board/kin/19277138?od=T31&po=0&category=0&groupCd="
+    ]
+   ]
+  },
+  {
+   "k": "stock",
+   "icon": "📈",
+   "name": "주식",
+   "n": 301,
+   "c": 1506,
+   "sites": 15,
+   "topsites": [
+    "루리웹",
+    "지식iN 경제",
+    "82쿡",
+    "클리앙"
+   ],
+   "daily": [
+    24,
+    96,
+    44,
+    30,
+    28,
+    55,
+    24
+   ],
+   "kw": [
+    [
+     "주식",
+     301
+    ]
+   ],
+   "links": [
+    [
+     "/analyst/",
+     "애널리스트·시장 정보"
+    ]
+   ],
+   "qn": 100,
+   "ex": [
+    [
+     "공부를 하면 주식으로 돈을 벌 수 있는 것인지요...?",
+     "https://www.clien.net/service/board/kin/19275834?od=T31&po=1&category=0&groupCd="
+    ],
+    [
+     "벤처기업 특례 '복수의결권' 도입과 복수의결권주식 공시 방법은?",
+     "https://gall.dcinside.com/mgallery/board/view/?id=startup&no=420&page=1"
+    ],
+    [
+     "주식 외화증거금 마이너스",
+     "https://kin.naver.com/qna/detail.naver?d1id=4&dirId=40102&docId=495529533"
+    ]
+   ]
+  },
+  {
+   "k": "house",
+   "icon": "🏠",
+   "name": "전세·월세·아파트",
+   "n": 714,
+   "c": 1549,
+   "sites": 19,
+   "topsites": [
+    "지식iN 경제",
+    "kin_life",
+    "보배드림",
+    "82쿡"
+   ],
+   "daily": [
+    76,
+    111,
+    109,
+    81,
+    92,
+    138,
+    107
+   ],
+   "kw": [
+    [
+     "아파트",
+     216
+    ],
+    [
+     "전세",
+     176
+    ],
+    [
+     "계약",
+     151
+    ],
+    [
+     "주택",
+     150
+    ],
+    [
+     "월세",
+     122
+    ]
+   ],
+   "links": [
+    [
+     "/money/guide/journey/housing/",
+     "이사·주거 여정"
+    ],
+    [
+     "/apply/youth-rent/",
+     "청년 월세 지원 공고"
+    ]
+   ],
+   "qn": 587,
+   "ex": [
+    [
+     "오래된 단독주택 공사 어떻게 시작하면 될까요?",
+     "https://www.82cook.com/entiz/read.php?bn=16&num=4114516&page=2"
+    ],
+    [
+     "아파트 외벽 도색 공사 후 집안 곳곳에 심각한 누수가 발생했습니다.",
+     "https://www.clien.net/service/board/kin/19279778?od=T31&po=0&category=0&groupCd="
+    ],
+    [
+     "입당인사와 사무실 계약 관련 공인중개사 문제.... 어떻게 해야할지 조언 구합니다..",
+     "https://www.clien.net/service/board/cm_venture/18403144?od=T31&po=1&category=0&groupCd="
+    ]
+   ]
+  },
+  {
+   "k": "job",
+   "icon": "🧑‍🍳",
+   "name": "알바·취업·청년",
+   "n": 812,
+   "c": 1804,
+   "sites": 20,
+   "topsites": [
+    "지식iN 경제",
+    "루리웹",
+    "보배드림",
+    "네이트판"
+   ],
+   "daily": [
+    131,
+    134,
+    131,
+    98,
+    100,
+    145,
+    73
+   ],
+   "kw": [
+    [
+     "알바",
+     251
+    ],
+    [
+     "청년",
+     249
+    ],
+    [
+     "회사",
+     195
+    ],
+    [
+     "취업",
+     126
+    ]
+   ],
+   "links": [
+    [
+     "/money/guide/journey/parttime/",
+     "알바 여정"
+    ]
+   ],
+   "qn": 533,
+   "ex": [
+    [
+     "서울에서 택시기사로 취업하려고 하는데 현실을 알고 싶습니다.",
+     "https://www.clien.net/service/board/kin/19277181?od=T31&po=0&category=0&groupCd="
+    ],
+    [
+     "(테블릿 추천) 회사 대시보드 용",
+     "https://www.clien.net/service/board/kin/19274523?od=T31&po=1&category=0&groupCd="
+    ],
+    [
+     "(교육) 동대문구 청년 창업 레벨UP 프로그램",
+     "https://www.clien.net/service/board/cm_venture/19000582?od=T31&po=0&category=0&groupCd="
+    ]
+   ]
+  },
+  {
+   "k": "ship",
+   "icon": "📦",
+   "name": "택배·쇼핑",
+   "n": 1645,
+   "c": 185,
+   "sites": 18,
+   "topsites": [
+    "kin_life",
+    "kin_shop",
+    "ppomppu",
+    "지식iN 경제"
+   ],
+   "daily": [
+    190,
+    237,
+    315,
+    264,
+    220,
+    242,
+    177
+   ],
+   "kw": [
+    [
+     "택배",
+     392
+    ],
+    [
+     "배송",
+     338
+    ],
+    [
+     "구매",
+     240
+    ],
+    [
+     "지마켓",
+     232
+    ],
+    [
+     "쿠팡",
+     188
+    ],
+    [
+     "정품",
+     179
+    ]
+   ],
+   "links": [
+    [
+     "/money/daily/",
+     "생필품 단가 계산기"
+    ]
+   ],
+   "qn": 1178,
+   "ex": [
+    [
+     "컴퓨터 파워 구매하려는데 마이크로닉스 괜찮나요 ?",
+     "https://www.clien.net/service/board/kin/19276324?od=T31&po=1&category=0&groupCd="
+    ],
+    [
+     "처음으로 조립pc를 구매해 볼까 생각이 들었습니다.",
+     "https://www.clien.net/service/board/kin/19275667?od=T31&po=1&category=0&groupCd="
+    ],
+    [
+     "노트북 구매 문의",
+     "https://www.clien.net/service/board/kin/19279943?od=T31&po=0&category=0&groupCd="
+    ]
+   ]
+  },
+  {
+   "k": "device",
+   "icon": "📱",
+   "name": "기기·앱 문제",
+   "n": 2559,
+   "c": 1023,
+   "sites": 23,
+   "topsites": [
+    "kin_it",
+    "kin_shop",
+    "ppomppu",
+    "루리웹"
+   ],
+   "daily": [
+    274,
+    408,
+    408,
+    382,
+    392,
+    464,
+    231
+   ],
+   "kw": [
+    [
+     "네이버",
+     555
+    ],
+    [
+     "아이폰",
+     491
+    ],
+    [
+     "컴퓨터",
+     298
+    ],
+    [
+     "계정",
+     214
+    ],
+    [
+     "오류",
+     180
+    ],
+    [
+     "갤럭시",
+     179
+    ]
+   ],
+   "links": [
+    [
+     "/ailog/",
+     "개발 지식"
+    ]
+   ],
+   "qn": 1867,
+   "ex": [
+    [
+     "컴퓨터 의자 같지 않은 컴퓨터의자 추천 부탁드립니다",
+     "https://www.clien.net/service/board/kin/19276109?od=T31&po=1&category=0&groupCd="
+    ],
+    [
+     "2010년 구입한 Atom 노트북을 동영상 감상용으로만 사용하려고 하는데",
+     "https://www.clien.net/service/board/kin/19279804?od=T31&po=0&category=0&groupCd="
+    ],
+    [
+     "해결) 몇년만에 vpn 재구축 중인데 reality 설정?",
+     "https://www.clien.net/service/board/kin/19278989?od=T31&po=0&category=0&groupCd="
+    ]
+   ]
+  },
+  {
+   "k": "ai",
+   "icon": "🤖",
+   "name": "AI·유튜브",
+   "n": 544,
+   "c": 948,
+   "sites": 22,
+   "topsites": [
+    "루리웹",
+    "kin_it",
+    "디시인사이드",
+    "지식iN 경제"
+   ],
+   "daily": [
+    96,
+    100,
+    67,
+    66,
+    79,
+    84,
+    52
+   ],
+   "kw": [
+    [
+     "AI",
+     350
+    ],
+    [
+     "유튜브",
+     198
+    ]
+   ],
+   "links": [
+    [
+     "/ailog/",
+     "개발 지식"
+    ]
+   ],
+   "qn": 232,
+   "ex": [
+    [
+     "AI 구독 고민중입니다 (GPT / 클로드)",
+     "https://www.clien.net/service/board/kin/19276649?od=T31&po=0&category=0&groupCd="
+    ],
+    [
+     "ai 개발/운영환경 클라우드ai+로컬ai 묶는법 문의드립니다.",
+     "https://www.clien.net/service/board/kin/19278142?od=T31&po=0&category=0&groupCd="
+    ],
+    [
+     "RTX5090 윈도PC vs 맥스튜디오 울트라, ai개발/작업용으로 뭐가 더 우수한가요?",
+     "https://www.clien.net/service/board/kin/19277274?od=T31&po=0&category=0&groupCd="
+    ]
+   ]
+  },
+  {
+   "k": "family",
+   "icon": "👪",
+   "name": "결혼·가족·연애",
+   "n": 1037,
+   "c": 6251,
+   "sites": 18,
+   "topsites": [
+    "kin_life",
+    "루리웹",
+    "네이트판",
+    "보배드림"
+   ],
+   "daily": [
+    218,
+    137,
+    139,
+    138,
+    150,
+    173,
+    82
+   ],
+   "kw": [
+    [
+     "결혼",
+     256
+    ],
+    [
+     "남편",
+     164
+    ],
+    [
+     "엄마",
+     149
+    ],
+    [
+     "연애",
+     139
+    ],
+    [
+     "남친",
+     133
+    ],
+    [
+     "부모",
+     132
+    ]
+   ],
+   "links": [],
+   "qn": 326
+  },
+  {
+   "k": "pet",
+   "icon": "🐱",
+   "name": "고양이·강아지",
+   "n": 368,
+   "c": 394,
+   "sites": 18,
+   "topsites": [
+    "kin_life",
+    "루리웹",
+    "kin_shop",
+    "더쿠"
+   ],
+   "daily": [
+    32,
+    51,
+    63,
+    65,
+    68,
+    51,
+    38
+   ],
+   "kw": [
+    [
+     "고양이",
+     212
+    ],
+    [
+     "강아지",
+     161
+    ]
+   ],
+   "links": [],
+   "qn": 262
+  },
+  {
+   "k": "world",
+   "icon": "🌏",
+   "name": "일본·미국·중국·여행",
+   "n": 1301,
+   "c": 6641,
+   "sites": 22,
+   "topsites": [
+    "루리웹",
+    "보배드림",
+    "디시인사이드",
+    "MLB파크"
+   ],
+   "daily": [
+    228,
+    154,
+    169,
+    135,
+    212,
+    241,
+    162
+   ],
+   "kw": [
+    [
+     "일본",
+     461
+    ],
+    [
+     "프랑스",
+     249
+    ],
+    [
+     "미국",
+     208
+    ],
+    [
+     "중국",
+     172
+    ],
+    [
+     "여행",
+     139
+    ],
+    [
+     "해외",
+     124
+    ]
+   ],
+   "links": [],
+   "qn": 239
+  },
+  {
+   "k": "fun",
+   "icon": "🎮",
+   "name": "게임·만화·영화",
+   "n": 982,
+   "c": 1561,
+   "sites": 20,
+   "topsites": [
+    "루리웹",
+    "kin_it",
+    "kin_shop",
+    "디시인사이드"
+   ],
+   "daily": [
+    136,
+    143,
+    150,
+    155,
+    150,
+    163,
+    85
+   ],
+   "kw": [
+    [
+     "게임",
+     336
+    ],
+    [
+     "만화",
+     259
+    ],
+    [
+     "영화",
+     205
+    ],
+    [
+     "버튜버",
+     185
+    ]
+   ],
+   "links": [
+    [
+     "/game/",
+     "게임"
+    ]
+   ],
+   "qn": 130
+  }
+ ]
+}
