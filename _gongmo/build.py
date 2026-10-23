@@ -1481,7 +1481,7 @@ def build():
         if os.path.exists(fh):
             hl = '<div class="lc-hl"><b>🆕 새로 나온 것</b>' + ''.join(f'<a href="{E(x["url"])}"><i>{x["icon"]}</i>{E(x["label"])}<small>{E(x.get("tag", ""))}</small></a>' for x in json.load(open(fh, encoding='utf-8'))) + '</div>'
         css_hl = '<style>.lc-hl{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:12px 0 4px}.lc-hl b{font-size:14px}.lc-hl a{display:inline-flex;gap:6px;align-items:center;padding:7px 12px;border-radius:999px;border:1px solid #fed7aa;background:#fff7ed;color:#9a3412;text-decoration:none;font-size:13.5px;font-weight:700}.lc-hl small{font-weight:400;opacity:.75}@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .lc-hl a{background:#2a1f14;color:#fdba74;border-color:#7c2d12}}:root[data-theme=dark] .lc-hl a{background:#2a1f14;color:#fdba74;border-color:#7c2d12}</style>'
-        return f'<section class="lc" aria-label="주제 런처"><div class="hx-w"><div class="lc-g">{out}</div>{hl}</div></section>{css_hl if hl else ""}<link rel="stylesheet" href="/assets/home/launcher.css?v=1">'
+        return f'<section class="lc" aria-label="주제 런처"><div class="hx-w"><div class="lc-g">{out}</div>{hl}</div></section>{css_hl if hl else ""}<link rel="stylesheet" href="/assets/home/launcher.css?v=3">'
     hx_launch = _launcher()
     hx_nav = ''.join(f'<a href="#{k}">{ic} {n}</a>' for k, ic, n in _nav)
     home = f'''{hx_launch}<section class="hx-hero"><div class="hx-w hx-hero-in">
