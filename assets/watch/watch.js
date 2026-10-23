@@ -43,8 +43,8 @@
       if (mood) { var nm = (mood.names || []).filter(function (g) { return it.tags.indexOf(g) >= 0; }), km = (mood.kw || []).filter(function (w) { return it.kw.indexOf(w) >= 0; }); if (nm.length || km.length) { sc += 2 * nm.length + 1.6 * km.length; why.push(mood.why || mood.label); } }
       var best = null, bs = 0; liked.forEach(function (l) { var j = jac(it.set, l.set) * 5; if (l.rec && l.rec.some(function (r) { return r[0] === it.id; })) j += 4; if (it.rec && it.rec.some(function (r) { return r[0] === l.id; })) j += 3; if (j > bs) { bs = j; best = l; } });
       if (bs > 0.9) { sc += bs; why.push('「' + best.t.slice(0, 14) + '」 좋아했다면'); }
-      if (kind === 'webtoon') { sc += Math.max(0, (it.sc - 8.8)) * 3 + Math.log(1 + it.fav) / 9; if (it.sc >= 9.8) why.push('별점 ' + it.sc.toFixed(1)); }
-      else { sc += (it.sc || 60) / 100 * 2.2 + Math.log(1 + it.pop) / 7; if (it.sc >= 80) why.push('평점 ' + it.sc); }
+      if (kind === 'webtoon') { sc += Math.max(0, (it.sc - 8.8)) * 3 + Math.log(1 + it.fav) / 9; if (it.sc >= 9.8) why.push('독자 별점 ' + it.sc.toFixed(2) + '/10 (' + it.site + ')'); }
+      else { sc += (it.sc || 60) / 100 * 2.2 + Math.log(1 + it.pop) / 7; if (it.sc >= 80) why.push('평점 ' + (it.sc / 10).toFixed(2) + '/10 (' + (it.site || 'AniList') + ')'); }
       var v = VOTES[it.id]; if (v) sc += Math.min(1.2, v[0] * .3) - Math.min(2, v[1] * .5);
       sc += ((it.id * 2654435761 + salt) % 1000) / 1000 * (st.g.length || !st.seen.length ? 3.2 : 1.1);
       out.push({ it: it, sc: sc, why: why.slice(0, 3) });
@@ -76,7 +76,7 @@
     return '<section class="wt-card"><p class="wt-q"><small>장르를 고르면 오늘의 추천이 바로 나와요 · 최대 3개</small>어떤 ' + (kind === 'webtoon' ? '웹툰' : '애니') + '이 보고 싶어요?</p>' + g + more + '</section>';
   }
   function card(x, st, i) {
-    var it = x.it, meta = kind === 'webtoon' ? (it.fin ? '완결' : (it.days.join('·') ? it.days.join('·') + ' 연재' : '연재 중')) + ' · ' + (it.age === 'RATE_15' ? '15세' : it.age === 'RATE_12' ? '12세' : it.age === 'RATE_18' ? '18세' : '전체') + (it.sc ? ' · ★' + it.sc.toFixed(2) : '') : [it.fmt === 'MOVIE' ? '극장판' : it.fmt === 'TV' ? 'TV' : it.fmt, it.ep ? it.ep + '화' : '', it.year || '', it.sc ? '★' + (it.sc / 10).toFixed(1) : ''].filter(Boolean).join(' · ');
+    var it = x.it, meta = kind === 'webtoon' ? (it.fin ? '완결' : (it.days.join('·') ? it.days.join('·') + ' 연재' : '연재 중')) + ' · ' + (it.age === 'RATE_15' ? '15세' : it.age === 'RATE_12' ? '12세' : it.age === 'RATE_18' ? '18세' : '전체') + (it.sc ? ' · ★' + it.sc.toFixed(2) + '/10' : '') : [it.fmt === 'MOVIE' ? '극장판' : it.fmt === 'TV' ? 'TV' : it.fmt, it.ep ? it.ep + '화' : '', it.year || '', it.sc ? '★' + (it.sc / 10).toFixed(2) + '/10' : ''].filter(Boolean).join(' · ');
     var ott = (it.ott || []).slice(0, 3).map(function (o) { return '<a href="' + esc(o.u) + '" target="_blank" rel="noopener nofollow">' + esc(o.s) + '</a>'; }).join('');
     return '<article class="wt-it"><a class="wt-img" href="' + esc(it.url) + '" target="_blank" rel="noopener nofollow" data-id="' + it.id + '">' + (it.img ? '<img src="' + esc(it.img) + '" alt="' + esc(it.t) + ' 표지" loading="lazy" referrerpolicy="no-referrer"' + (it.color ? ' style="background:' + esc(it.color) + '"' : '') + '>' : '<span>' + (kind === 'webtoon' ? '📖' : '🎬') + '</span>') + '</a>'
       + '<div class="wt-b"><h3>' + esc(it.t) + '</h3><p class="wt-m">' + esc(meta) + '</p>' + (it.sub ? '<p class="wt-sub">' + esc(it.sub) + '</p>' : '')
@@ -88,7 +88,7 @@
     var R = rank(st, salt), top = R.top, cfg = cfgOf();
     var sum = st.g.length ? st.g.slice(0, 3).map(gl).join(' · ') : '오늘의 인기';
     var mood = (cfg.moods.filter(function (m) { return m.k === st.mood; })[0] || {}).label;
-    return '<section class="wt-res"><div class="wt-rh"><div><h2>🎯 오늘의 추천 <small>' + esc(sum) + (mood ? ' · ' + esc(mood) : '') + '</small></h2><p class="note">' + (R.all.length ? '조건에 맞는 ' + R.all.length + '편 중 오늘 고른 6편이에요. 내일이면 바뀌어요.' : '') + '</p></div><div class="wt-ra"><button type="button" class="wt-re">🔄 다른 추천</button></div></div>'
+    return '<section class="wt-res"><div class="wt-rh"><div><h2>🎯 오늘의 추천 <small>' + esc(sum) + (mood ? ' · ' + esc(mood) : '') + '</small></h2><p class="note">' + (R.all.length ? '조건에 맞는 ' + R.all.length + '편 중 오늘 고른 6편이에요. 내일이면 바뀌어요. 인기·별점 순에 고른 조건을 맞춘 추천이며, 개인 취향 학습은 아니에요.' : '') + '</p></div><div class="wt-ra"><button type="button" class="wt-re">🔄 다른 추천</button></div></div>'
       + (top.length ? '<div class="wt-list">' + top.map(function (x, i) { return card(x, st, i); }).join('') + '</div>' : '<p class="wt-empty">고른 조건에 맞는 작품이 없어요. 장르나 조건을 줄여 보세요.</p>') + '</section>';
   }
   function statsBox() {
