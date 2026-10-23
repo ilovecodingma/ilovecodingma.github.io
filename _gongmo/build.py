@@ -89,6 +89,19 @@ THEMES = [t for t in THEMES if t[0] != 'life']
 THEMES = [next(t for t in THEMES if t[0] == k) for k in ('today', 'recipe', 'watch', 'apply', 'contest', 'event', 'issue', 'money', 'game', 'plaza', 'ai', 'wiki')]
 
 
+GN_MAIN = ('today', 'contest', 'apply', 'recipe', 'issue', 'wiki')   # 헤더에 항상 보이는 주요 주제(나머지는 「전체」)
+GN_HOME = {'money': '/money/guide/', 'issue': '/news/'}
+
+
+def GN_HTML(TH):
+    """공통 헤더의 전역 탐색(2026-10-23 UI 개선 1번): 로고 / 주요 주제 / 전체 / 검색. 현재 주제는 밑줄과 aria-current 로만 표시한다."""
+    by = {t[0]: t for t in THEMES}
+    cur = TH[0] if TH else ''
+    items = ''.join(f'<a href="{GN_HOME.get(k, by[k][4])}"{" class=on aria-current=page" if k == cur else ""}>{by[k][1]}</a>' for k in GN_MAIN if k in by)
+    return (f'<nav class="gn" aria-label="주요 주제">{items}<a href="/#all"{" class=on" if cur and cur not in GN_MAIN else ""}>전체</a></nav>'
+            '<a class="hd-s" href="/#hq" aria-label="통합 검색">🔍<span>검색</span></a>')
+
+
 def theme_of(path):
     if path == '/':
         return None
@@ -179,7 +192,7 @@ def _seo_exp_links():
 def page(path, title, desc, body, crumbs=None, ld=None, full_title=False, noindex=False, og=None, lang='ko', canon=None):
     url = SITE + (canon or path)
     TH = theme_of(path)
-    TH_CSS = '<style>' + ''.join(f'body[data-th={t[0]}]{{--pri:{t[3]};--pbg:color-mix(in srgb,{t[3]} 14%,#fff)}}' for t in THEMES) + '.th-back{opacity:.75}</style>'
+    TH_CSS = '<style>' + ''.join(f'body[data-th={t[0]}]{{--tc:{t[3]}}}' for t in THEMES) + '</style>'
     # 사이트맵 lastmod: 날짜·시각·D-day 처럼 매번 바뀌는 글자는 빼고 내용이 바뀐 날만 갱신
     PAGE_HASH[path] = hashlib.md5(re.sub(r'D-\d+|D-DAY|\d{1,2}:\d{2}|\d{4}-\d{2}-\d{2}|\d{1,2}/\d{1,2}|[\d,]+\s*(?:건|명|개|곳|회|일 남)', '', title + body).encode()).hexdigest()
     if noindex:
@@ -222,14 +235,13 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False, noinde
 <meta name="theme-color" content="{TH[3] if TH else '#5b21b6'}"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="오늘 뭐 먹지">
 <link rel="icon" href="/favicon.ico?v=6" sizes="any"><link rel="icon" type="image/png" sizes="48x48" href="/assets/icons/icon-48.png?v=6"><link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/icon-96.png?v=6"><link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/icon-192.png?v=6"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=6"><link rel="manifest" href="/site.webmanifest"><link rel="alternate" type="application/rss+xml" title="루리의 줍줍" href="/rss.xml">
 <link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="/assets/gm.css?v=25"><link rel="stylesheet" href="/assets/ds.css?v=15"><link rel="stylesheet" href="/assets/print.css?v=1"><script defer src="/assets/print.js?v=1"></script><script src="/assets/img-fallback.js?v=1"></script><link rel="stylesheet" href="/assets/shell/shell.css?v=2"><script defer src="/assets/shell/shell.js?v=2"></script>{('<link rel="stylesheet" href="/assets/chat/ruri-chat.css?v=9">') if not (TH and TH[0] == 'ai') else ''}{COMM_TAGS}{('<script type="module" src="/assets/chat/ruri-chat.js?v=16"></script>') if not (TH and TH[0] == 'ai') else ''}<link rel="stylesheet" href="/assets/app/shell.css?v=1"><script defer src="/assets/app/app.js?v=4"></script>
+<link rel="stylesheet" href="/assets/gm.css?v=27"><link rel="stylesheet" href="/assets/ds.css?v=15"><link rel="stylesheet" href="/assets/print.css?v=1"><script defer src="/assets/print.js?v=1"></script><script src="/assets/img-fallback.js?v=1"></script><link rel="stylesheet" href="/assets/shell/shell.css?v=2"><script defer src="/assets/shell/shell.js?v=2"></script>{('<link rel="stylesheet" href="/assets/chat/ruri-chat.css?v=9">') if not (TH and TH[0] == 'ai') else ''}{COMM_TAGS}{('<script type="module" src="/assets/chat/ruri-chat.js?v=16"></script>') if not (TH and TH[0] == 'ai') else ''}<link rel="stylesheet" href="/assets/app/shell.css?v=1"><script defer src="/assets/app/app.js?v=4"></script>
 {ldh}
 {TH_CSS}
 {GTAG}
 </head><body data-th="{TH[0] if TH else 'hub'}"{(' data-api="' + COMM_API + '"') if COMM_API else ''}>
-<header class="hd"><div class="w hd-in"><a class="logo" href="/"><img class="logo-av" src="/assets/ruri/avatar.webp" width="36" height="36" alt="루리의 줍줍"><span>루리의 <b>줍줍</b></span></a>{('<span class="th-name">' + TH[2] + ' ' + TH[1] + '</span>') if TH else ''}</div>
-{('<nav class="th-sw w" aria-label="홈으로"><a href="/" class="th-back">‹ 홈</a><a href="' + TH[4] + '" class="on" style="--tc:' + TH[3] + '">' + TH[2] + ' ' + TH[1] + '</a></nav>') if TH else ''}
-{('<nav class="tb w" aria-label="' + TH[1] + ' 메뉴">' + "".join(f'<a href="{u}"{" class=on" if (path == u or (u != TH[4] and path.startswith(u))) else ""}>{n}</a>' for u, n in TH[5]) + '</nav>') if TH else ''}</header>
+<header class="hd"><div class="w hd-in"><a class="logo" href="/"><img class="logo-av" src="/assets/ruri/avatar.webp" width="36" height="36" alt="루리의 줍줍"><span>루리의 <b>줍줍</b></span></a>{GN_HTML(TH)}</div>
+{('<nav class="tb w" aria-label="' + TH[1] + ' 세부 메뉴">' + "".join(f'<a href="{u}"{" class=on aria-current=page" if (path == u or (u != TH[4] and path.startswith(u))) else ""}>{n}</a>' for u, n in TH[5]) + '</nav>') if TH else ''}</header>
 <main class="w">
 {body}{PAGE_INTRO.get(path, '')}
 </main>
@@ -1567,7 +1579,7 @@ def build():
 <h2 class="cs-lh">루리에게 맞춤 추천받기</h2>
 <section id="consult" aria-label="루리 공모전 맞춤 추천"><noscript><p>맞춤 추천은 자바스크립트가 필요해요. 위 목록은 그대로 쓸 수 있어요.</p></noscript></section>
 {qa_home()}<p class="cs-foot">진행 중 공모전 {len(live)}건(오늘 {TODAY.month}/{TODAY.day} 한국 시간 기준 접수 마감 전)의 마감일·상금·응모 자격·접수 방법을 정리해 두고, 루리가 상황에 맞는 것만 골라 드려요.</p>
-<link rel="stylesheet" href="/assets/home/consult.css?v=15"><script defer src="/assets/home/consult.js?v=13"></script>'''
+<link rel="stylesheet" href="/assets/home/consult.css?v=16"><script defer src="/assets/home/consult.js?v=13"></script>'''
     _il = {'@context': 'https://schema.org', '@type': 'ItemList', 'name': f'진행 중 공모전 {YR}', 'numberOfItems': len(live), 'itemListElement': [{'@type': 'ListItem', 'position': k + 1, 'url': f'{SITE}/c/{c["id"]}/', 'name': c['title']} for k, c in enumerate(live_rec[:30])]}
     page('/contest/', '루리 공모전 추천 상담 — 진행 중 공모전 ' + str(len(live)) + '건', f'진행 중인 공모전 {len(live)}건을 마감 임박순·상금순으로. 질문 몇 개면 루리가 딱 맞는 공모전을 골라 드려요.',
          contest_home, [('루리의 줍줍', '/'), ('공모전', '/contest/')], _il)
@@ -1780,13 +1792,27 @@ def build():
 
 <section class="hx-sec hx-t-plaza" id="plaza"><div class="hx-hd"><div><p>🗣️ 줍줍 광장</p><h2>방금 올라온 이야기</h2></div><a href="/plaza/">광장 가기 →</a></div>
 <div data-pcrecent="6"></div></section></div>
-<link rel="stylesheet" href="/assets/home/consult.css?v=15">'''
-    page('/today/', '오늘 마감 — 오늘 끝나는 공모전·경품·지원금',
-         f'오늘과 이번 주에 마감하는 공모전 {len(live)}건 중 급한 것, 경품·이벤트, 지원금·청약 일정을 마감 임박순으로 모았어요.', home.replace(hx_launch, '', 1),
+<link rel="stylesheet" href="/assets/home/consult.css?v=16">'''
+    # 2026-10-23 화면별 UI 개선 P1: 홈은 「한 문장 → 검색 → 바로가기 → 수집 현황 → 실제 콘텐츠」, 오늘 마감은 필터 + 통일 카드(screens.py)
+    import screens as SC
+    _first = lambda c: ((HIST.get(c['id']) or {}).get('first') or '')
+    _cs = [c for c in contests if c['id'] not in DUP and c['end'] >= TODAY.isoformat()]
+    _gk = {g_['slug']: g_ for g_ in json.load(open(os.path.join(HERE, 'kin_guides.json'), encoding='utf-8'))['guides']}
+    _tp = json.load(open(os.path.join(HERE, 'topic_hosts.json'), encoding='utf-8'))['topics']
+    sc_ctx = {'now': NOW_KST(), 'today': TODAY, 'contests': contests, 'DUP': DUP, 'events': events, 'aps': aps, 'AP_DUP': AP_DUP, 'deadline_row': deadline_row, 'elig_short': elig_short, 'prize_short': prize_short,
+              'tidy_ev': (lambda t: re.sub(r'^\s*\((?:중복|\d+회 중복)[^)]*\)\s*', '', t).strip()), 'EASY': EASY,
+              'new_contests': sorted(_cs, key=lambda c: (_first(c), c['end']), reverse=True)[:5], 'n_new': sum(1 for c in _cs if _first(c) == TODAY.isoformat()), 'n_ver': len(VER),
+              'guides': [{'u': f'/money/guide/{k}/', 'title': _gk[k]['h1'], 'desc': _gk[k]['lead']} for k in ('energy-voucher', 'eitc', 'naeil-card') if k in _gk],
+              'n_contest': len(live), 'n_apply': len(aps), 'topics': _tp,
+              'reads': [{'u': u_, 'title': html.unescape(re.sub(r'\s*[|｜].*$', '', (re.search(r'<title>(.*?)</title>', open(os.path.join(ROOT, u_.strip('/'), 'index.html'), encoding='utf-8').read(), re.S) or [0, u_])[1])), 'sub': sb_}
+                        for u_, sb_ in (('/issue/kim-jong-un-rumor/', '이슈 정리'), ('/ai/human-value/', 'AI 글')) if os.path.exists(os.path.join(ROOT, u_.strip('/'), 'index.html'))]}
+    page('/today/', '오늘 마감하는 기회 — 오늘 끝나는 공모전·이벤트·지원금·청약·공모주',
+         f'{TODAY.month}월 {TODAY.day}일(한국 시간) 오늘 마감하는 공모전·경품 이벤트·지원금·주거 청약·공모주를 유형별로 모았어요. 마감 시각을 모르면 시각 미확인으로 표시해요.', SC.today_html(sc_ctx),
          crumbs=[('루리의 줍줍', '/'), ('오늘 마감', '/today/')])
+    PAGE_INTRO.pop('/', None)   # 긴 사이트 소개 대신 홈 본문의 두 문장 소개
     page('/', '루리의 줍줍 — 오늘 뭐 먹지·냉장고 파먹기 레시피, 경품·지원금·공모전',
          f'있는 재료로 찾는 집밥 레시피 {NR_HOME}개와 오늘의 메뉴, 오늘 마감 경품·용돈 이벤트, 지원금·청약 일정, 진행 중 공모전 {len(live)}건까지 생활 정보를 매시간 정리해요.',
-         hx_launch, full_title=True, ld={'@context': 'https://schema.org', '@graph': [  # 2026-10-19 구글 검색 결과 사이트 이름·로고
+         SC.home_html(sc_ctx), full_title=True, ld={'@context': 'https://schema.org', '@graph': [  # 2026-10-19 구글 검색 결과 사이트 이름·로고
              {'@type': 'WebSite', '@id': SITE + '/#website', 'name': NAME, 'alternateName': ['줍줍', '루리의줍줍', '루리 줍줍'], 'url': SITE + '/', 'publisher': {'@id': SITE + '/#org'}},
              {'@type': 'Organization', '@id': SITE + '/#org', 'name': NAME, 'url': SITE + '/', 'logo': {'@type': 'ImageObject', 'url': SITE + '/assets/icons/icon-512.png', 'width': 512, 'height': 512}}]})
     for s, n in CATS:
