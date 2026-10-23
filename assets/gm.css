@@ -239,3 +239,35 @@ ul.list{grid-template-columns:minmax(0,1fr)}ul.list>li{min-width:0}.card{min-wid
 .dl-u{color:var(--mu);font-weight:600;font-size:.92em}.dl-t{font-weight:800}
 .d-warn{display:inline-block;margin-left:4px;padding:2px 9px;border-radius:999px;background:#fffbeb;border:1px solid #f59e0b;color:#92400e;font-size:12.5px;font-weight:800}
 img.img-fb{object-fit:contain;background:#ede9fe}
+
+/* 2026-10-23 공통 헤더 정리: 로고 / 주요 주제 / 검색 · 브랜드 색 고정(주제 색은 --tc 로 작은 표식에만) */
+:root{--brand:#6d28d9}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--brand:#a78bfa}}
+:root[data-theme=dark]{--brand:#a78bfa}
+body[data-th]{--pri:var(--brand);--pbg:color-mix(in srgb,var(--brand) 12%,var(--card,#fff))}
+body[data-th=ai] .hd{background:color-mix(in srgb,var(--card) 85%,transparent)}
+body[data-th=ai] .hd .logo span,body[data-th=ai] .th-sw a{color:inherit}
+.hd-in{flex-wrap:wrap;row-gap:0}
+.gn{display:flex;align-items:stretch;gap:2px;margin-left:8px;flex:1 1 auto;min-width:0}
+.gn a{display:inline-flex;align-items:center;padding:0 12px;min-height:54px;font-size:15px;font-weight:700;color:var(--mu,#6b7280);text-decoration:none;border-bottom:3px solid transparent;white-space:nowrap}
+.gn a:hover{color:var(--tx,#111)}
+.gn a.on{color:var(--tx,#111);border-bottom-color:var(--brand)}
+.hd-s{order:1;display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 12px;border:1px solid var(--bd,#e5e7eb);border-radius:10px;color:var(--mu,#6b7280);text-decoration:none;font-size:14px;font-weight:700;flex:none}
+.hd-s span{display:inline}
+.tb{border-top:1px solid var(--bd,#e5e7eb);display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;padding:0 0 0}
+.tb::-webkit-scrollbar{display:none}
+.tb a{flex:0 0 auto;border:0;border-radius:0;background:transparent;box-shadow:none;padding:11px 12px;font-size:14.5px;font-weight:700;color:var(--mu,#6b7280);border-bottom:3px solid transparent;text-decoration:none;white-space:nowrap}
+.tb a.on{background:transparent;color:var(--tx,#111);border-bottom-color:var(--brand)}
+.tb a:hover:not(.on){color:var(--tx,#111);border-color:transparent}
+@media (max-width:820px){
+ .gn{order:5;flex:1 0 100%;margin:0;overflow-x:auto;scrollbar-width:none;border-top:1px solid var(--bd,#e5e7eb)}
+ .gn::-webkit-scrollbar{display:none}
+ .gn a{min-height:44px;padding:0 12px}
+ .hd-s span{display:none}.hd-s{min-width:44px;justify-content:center;padding:0}
+}
+/* 헤더 하위 탭: 기존 알약 스타일보다 우선 */
+.hd .gn a{border-radius:0}
+.hd .tb{gap:0;padding:0 16px;border-top:1px solid var(--bd,#e5e7eb)}
+.hd .tb a,.hd .tb a:link,.hd .tb a:visited{background:transparent!important;border:0!important;border-bottom:3px solid transparent!important;border-radius:0!important;box-shadow:none!important;color:var(--mu,#6b7280)!important;padding:11px 12px;font-weight:700}
+.hd .tb a.on{color:var(--tx,#111)!important;border-bottom-color:var(--brand)!important}
+@media (max-width:820px){.hd{position:static}.hd .tb{padding:0 8px}}
