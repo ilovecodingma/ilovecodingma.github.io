@@ -404,6 +404,8 @@ def elig_short(c):
     if re.search(r'[가-힣]{2,4}(?:도|시|군|구)\s*(?:내|거주)|도민|시민|군민|구민|관내', e): t.append('지역 거주')
     if re.search(r'창업', e): t.append('창업자')
     if re.search(r'팀\s*(?:구성|단위)|2인\s*이상', e): t.append('팀')
+    if t == ['대학생'] and re.search(r'일반인|직장인|누구나', e):
+        t = ['대학생·일반인']
     if t == ['팀']:
         return '누구나' if re.search(r'제한\s?없|누구나', e) else '팀 참가'
     if t:
@@ -420,6 +422,8 @@ def prize_short(c):
         return '1등 ' + won_txt(f)
     if t:
         return '총 ' + won_txt(t)
+    if re.search(r'경쟁형 상금 아님|상금 없음|상금은 없', c.get('prize') or ''):
+        return '상금 없음(제작 지원)' if '창작대가' in (c.get('prize') or '') else '상금 없음'
     if re.search(r'상품|경품|상품권|혼합', c.get('prize') or ''):
         return '경품 포함(표 참고)'   # 금액으로 환산되지 않는 시상은 금액으로 지어내지 않는다
     return '확인 필요'
