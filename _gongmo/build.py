@@ -1596,7 +1596,7 @@ def build():
     fr_urls = list(fr_urls) + watch_pages()
     app_page()
     news_page()
-    extra_urls = talk_pages() + trend_pages() + game_pages(live) + game_extra_pages() + kin_guides() + class_pages() + essay_pages() + issue_pages() + daily_pages() + cheapest_page() + evergreen_pages() + kin_answer_pages() + mag_pages(live, aps) + analyst_pages() + satire_pages() + kw_pages() + money_pages() + apply_rec_page() + tool_pages() + hot_pages()
+    extra_urls = talk_pages() + trend_pages() + game_pages(live) + game_extra_pages() + kin_guides() + class_pages() + essay_pages() + issue_pages() + daily_pages() + cheapest_page() + gamedb_pages() + evergreen_pages() + kin_answer_pages() + mag_pages(live, aps) + analyst_pages() + satire_pages() + kw_pages() + money_pages() + apply_rec_page() + tool_pages() + hot_pages()
     import widget
     extra_urls += widget.build(ROOT, live, aps, hot_live()[0], page, say, COMM_API, TODAY)  # 퍼가기 위젯 (2026-10-18 연구 세션 요청)
     extra_urls += region_pages(aps) + contest_hubs(live) + week_hub(live) + cross_pages(aps) + apply_hubs(aps)
@@ -1855,6 +1855,7 @@ def game_pages(live):
     cs = ''.join(f'<li><a href="https://store.steampowered.com/app/{x["id"]}/" target="_blank" rel="noopener nofollow">{E(x["name"])}</a> <small>{won(x["price"]) if x["price"] else "가격 미정·무료"}</small></li>' for x in (st.get('coming_soon') or [])[:10])
     gc = sorted([c for c in live if GAME_RX.search(c['title'])], key=lambda c: (c['end'], -c.get('pv', 0)))[:12]
     body = (f'<p class="bc"><a href="/">홈</a> › 게임</p><h1>🎮 게임 허브 — 이번 주 무료 게임·스팀 할인·게임 공모전</h1>'
+                f'<p><a class="lab-cta" href="/game/db/"><b>📚 게임 DB — 할인·무료 프로모션 게임과 공략 영상 모음</b></a></p>'
             f'<p class="cat-st">📌 스토어 기준 {E(d.get("at", ""))}(한국 시간)에 받은 정보예요. 가격·할인은 바뀔 수 있으니 결제 전 스토어에서 확인하세요. 출처: Epic Games Store, Steam.</p>'
             '<p class="hm-chips"><a href="/game/free/">🎁 에픽 무료 게임 기록</a><a href="/game/release/">🗓️ 신작 출시 일정</a><a href="/game/steam-sale/">📅 스팀 세일 달력</a><a href="/game/refund/">↩️ 스팀 환불 규정</a><a href="/game/battlefield-6-editions/">🔫 배틀필드6 에디션 비교</a><a href="#timing">🕰️ 살 타이밍</a></p>'
             f'<h2 id="free">🎁 지금 무료로 받는 게임 (Epic Games Store)</h2>' + (f'<ul class="gm-g">{free}</ul>' if free else '<p class="note">지금 무료로 풀린 게임이 없어요.</p>')
@@ -2483,6 +2484,78 @@ def cheapest_page():
             '<h2>자주 묻는 질문</h2>' + faq + css + GAME_CSS + js + '<script type="application/ld+json">%s</script>' % json.dumps(fld, ensure_ascii=False).replace('</', '<\\/'))
     page('/money/cheapest/', '생필품·중고 가장 싼 곳 찾기 — 쇼핑몰·당근·번개장터 가격 낮은 순 한 번에', '물건 이름을 넣으면 네이버쇼핑·다나와·쿠팡·당근·번개장터·중고나라의 가격 낮은 순 검색 화면을 한 번에 열어요. 단가 계산기와 참가격 안내 포함.', body, [('루리의 줍줍', '/'), ('생필품 단가 계산', '/money/daily/'), ('가장 싼 곳 찾기', '/money/cheapest/')])
     return ['/money/cheapest/']
+
+
+
+def gamedb_pages():
+    """/game/db/ 게임 DB — 프로모션(할인·무료)·인기·신작 게임별 정보와 유튜브 공략 영상 링크 (2026-10-23 사용자). 스토어 공개값과 영상 제목·채널·조회수만, 공략 본문은 옮기지 않는다."""
+    f = os.path.join(HERE, 'game_db.json')
+    if not os.path.exists(f):
+        return []
+    d = json.load(open(f, encoding='utf-8'))
+    G = {k: v for k, v in d['games'].items() if not (v.get('steam') or {}).get('adult')}
+    css = ('<style>.gd-c{border:1px solid var(--bd,#e5e7eb);border-radius:12px;padding:12px 14px;margin:12px 0;background:var(--card,#fff)}.gd-t{display:flex;gap:6px;flex-wrap:wrap;margin:6px 0}.gd-t span{padding:2px 9px;border-radius:999px;background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;font-size:12.5px}'
+           '.gd-t span.pm{background:#fee2e2;border-color:#fecaca;color:#991b1b;font-weight:800}.gd-v{list-style:none;padding:0;margin:8px 0;display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px}.gd-v li a{display:block;text-decoration:none;color:var(--tx,#111);border:1px solid var(--bd,#e5e7eb);border-radius:10px;overflow:hidden;background:var(--card,#fff)}'
+           '.gd-v img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;background:#e5e7eb}.gd-v b{display:block;padding:6px 8px 2px;font-size:13.5px;line-height:1.35}.gd-v small{display:block;padding:0 8px 8px;color:var(--mu,#6b7280);font-size:12px}</style>')
+
+    def won(v):
+        return f'{v:,}' if isinstance(v, int) else (v or '')
+
+    def promo_tags(g):
+        out = []
+        for p in g['promos']:
+            k = p['kind']
+            if k == '스팀 할인':
+                out.append(f'<span class="pm">스팀 {p.get("off", 0)}% 할인 · ₩{won(p.get("price"))} (정가 ₩{won(p.get("orig"))}) · ~{E(p.get("until") or "")}</span>')
+            elif k == 'Epic 무료':
+                out.append(f'<span class="pm">Epic 무료 {E(p.get("start") or "")}~{E(p.get("end") or "")}</span>')
+            elif k == 'Epic 할인':
+                out.append('<span class="pm">Epic 할인 중</span>')
+            else:
+                out.append(f'<span>{E(k)}</span>')
+        return ''.join(out)
+
+    def vids(g):
+        v = g.get('yt') or []
+        if not v:
+            return '<p>공략 영상 목록을 아직 못 모았어요.</p>'
+        return '<ul class="gd-v">' + ''.join(
+            f'<li><a href="https://www.youtube.com/watch?v={E(x["id"])}" target="_blank" rel="noopener nofollow"><img src="https://i.ytimg.com/vi/{E(x["id"])}/mqdefault.jpg" width="320" height="180" loading="lazy" referrerpolicy="no-referrer" alt="">'
+            f'<b>{E(x["t"])}</b><small>{E(x["ch"])} · 조회 {x["v"]:,} · {E(x.get("ago") or "")} · {E(x.get("dur") or "")}</small></a></li>' for x in v) + '</ul>'
+    urls = []
+    order = sorted(G.items(), key=lambda kv: (0 if any(p['kind'] in ('스팀 할인', 'Epic 무료', 'Epic 할인') for p in kv[1]['promos']) else 1, -(max((p.get('off') or 0) for p in kv[1]['promos']))))
+    cards = ''
+    for key, g in order:
+        s = g.get('steam') or {}
+        p = f'/game/db/{key}/'
+        thumb = (s.get('header') or next((x.get('img') for x in g['promos'] if x.get('img')), '') or '')
+        genres = ' · '.join(s.get('genres', []))
+        tbl = [['항목', '내용', '출처']]
+        if s:
+            tbl += [['장르', genres or '-', '스팀 상점'], ['개발·배급', f'{s.get("dev", "")} / {s.get("pub", "")}', '스팀 상점'], ['출시일', s.get('release') or '-', '스팀 상점'],
+                    ['한국어', '지원' if s.get('ko') else '미지원 또는 미확인', '스팀 상점'], ['가격', (s.get('price') or ('무료' if s.get('free') else '-')) + (f' (정가 {s["orig"]})' if s.get('off') else ''), '스팀 상점 · 조회 시점 기준']]
+        if s.get('metacritic'):
+            tbl.append(['메타크리틱', str(s['metacritic']), '스팀 상점'])
+        rows = ''.join(f'<tr><td>{E(a)}</td><td>{E(b_)}</td><td>{E(c_)}</td></tr>' for a, b_, c_ in tbl[1:])
+        body = (f'<p class="bc"><a href="/">홈</a> › <a href="/game/">게임</a> › <a href="/game/db/">게임 DB</a> › {E(g["name"])}</p><h1>{E(g["name"])} — 할인·정보·공략 영상 모음</h1>'
+                f'<div class="gd-t">{promo_tags(g)}</div>'
+                + (f'<p>{E(s["desc"])}</p>' if s.get('desc') else '')
+                + (f'<div class="tblw"><table class="xb"><tr><th>항목</th><th>내용</th><th>출처</th></tr>{rows}</table></div>' if rows else '<p>스토어 상세 정보는 아직 못 모았어요.</p>')
+                + '<h2>공략·가이드 영상 (조회수 순)</h2>' + vids(g)
+                + '<p class="dl-h">영상 제목·채널·조회수는 유튜브 검색 결과 기준이고, 영상은 각 채널 소유예요. 줍줍은 링크만 보여 주고 영상·공략 내용을 옮기지 않아요. 가격과 할인은 수시로 바뀌니 스토어에서 최신을 확인하세요.</p>'
+                + f'<p class="dl-h">갱신: {E(d.get("at", ""))} · <a href="/game/db/">다른 게임 보기</a></p>' + css + GAME_CSS)
+        page(p, f'{g["name"]} 할인·공략 영상 모음 (스팀·Epic)', (s.get('desc') or f'{g["name"]}의 할인 정보와 공략·가이드 영상 링크를 모았어요.')[:150], body,
+             [('루리의 줍줍', '/'), ('게임', '/game/'), ('게임 DB', '/game/db/'), (g['name'][:30], p)])
+        urls.append(p)
+        pm = '🔥 ' if any(x['kind'] in ('스팀 할인', 'Epic 무료', 'Epic 할인') for x in g['promos']) else ''
+        sub = next((f'{x.get("off")}% 할인 ₩{won(x.get("price"))}' for x in g['promos'] if x['kind'] == '스팀 할인'), next((x['kind'] for x in g['promos']), ''))
+        cards += (f'<li><a href="{p}">' + (f'<img src="{E(thumb)}" width="232" height="130" loading="lazy" referrerpolicy="no-referrer" alt="" onerror="this.remove()">' if thumb else '')
+                  + f'<b>{pm}{E(g["name"])}</b><span>{E(sub)} · 영상 {len(g.get("yt") or [])}개</span></a></li>')
+    hub = ('<p class="bc"><a href="/">홈</a> › <a href="/game/">게임</a> › 게임 DB</p><h1>🎮 게임 DB — 할인·무료 프로모션 게임과 공략 영상 모음</h1>'
+           f'<div class="cat-st"><b>한눈에 보기</b><br>스팀 할인·인기·출시 예정과 Epic 무료·할인 게임 {len(G)}개를 게임별로 정리했어요. 🔥 표시는 지금 할인 또는 무료인 게임이에요. 스토어 공개 정보와 유튜브 공략 영상 링크를 모았고, 가격은 조회 시점 기준이에요.</div>'
+           f'<ul class="gm-g">{cards}</ul><p class="dl-h">갱신: {E(d.get("at", ""))} · 스팀 정보는 하루, 영상 목록은 일주일 주기로 새로 받아요.</p>' + css + GAME_CSS)
+    page('/game/db/', '게임 DB — 스팀·Epic 할인·무료 게임 정보와 공략 영상 모음', f'스팀 할인·인기·출시 예정과 Epic 무료·할인 게임 {len(G)}개의 장르·가격·한국어 지원과 공략 영상 링크를 정리했어요.', hub, [('루리의 줍줍', '/'), ('게임', '/game/'), ('게임 DB', '/game/db/')])
+    return urls + ['/game/db/']
 
 
 KIN_A = os.path.join(HERE, 'kin_answers.json')

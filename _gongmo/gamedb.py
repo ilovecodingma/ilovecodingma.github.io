@@ -77,7 +77,8 @@ def steam_info(appid):
                 'ko': '한국어' in (d.get('supported_languages') or ''), 'free': bool(d.get('is_free')),
                 'price': (d.get('price_overview') or {}).get('final_formatted', ''), 'orig': (d.get('price_overview') or {}).get('initial_formatted', ''),
                 'off': (d.get('price_overview') or {}).get('discount_percent', 0), 'header': d.get('header_image', ''),
-                'metacritic': (d.get('metacritic') or {}).get('score')}
+                'metacritic': (d.get('metacritic') or {}).get('score'),
+                'adult': bool(set((d.get('content_descriptors') or {}).get('ids') or []) & {3, 4})}
     except Exception:
         return None
 
@@ -99,6 +100,8 @@ def main():
     for key, name, appid, promo in cand:
         g = games.setdefault(key, {'name': name, 'appid': appid, 'promos': []})
         g['promos'].append(promo)
+    ADULT = re.compile(r'pervert|hentai|ero|nsfw|18\+|섹|야겜', re.I)
+    games = {k: v for k, v in games.items() if not ADULT.search(v['name'])}
     keys = list(games)[:MAX_GAMES]
     now = time.time()
     for key in keys:
