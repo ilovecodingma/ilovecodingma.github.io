@@ -1549,7 +1549,7 @@ def build():
     fr_urls = list(fr_urls) + watch_pages()
     app_page()
     news_page()
-    extra_urls = talk_pages() + trend_pages() + game_pages(live) + game_extra_pages() + kin_guides() + class_pages() + essay_pages() + issue_pages() + daily_pages() + kin_answer_pages() + mag_pages(live, aps) + analyst_pages() + satire_pages() + kw_pages() + money_pages() + apply_rec_page() + tool_pages() + hot_pages()
+    extra_urls = talk_pages() + trend_pages() + game_pages(live) + game_extra_pages() + kin_guides() + class_pages() + essay_pages() + issue_pages() + daily_pages() + evergreen_pages() + kin_answer_pages() + mag_pages(live, aps) + analyst_pages() + satire_pages() + kw_pages() + money_pages() + apply_rec_page() + tool_pages() + hot_pages()
     import widget
     extra_urls += widget.build(ROOT, live, aps, hot_live()[0], page, say, COMM_API, TODAY)  # 퍼가기 위젯 (2026-10-18 연구 세션 요청)
     extra_urls += region_pages(aps) + contest_hubs(live) + week_hub(live) + cross_pages(aps) + apply_hubs(aps)
@@ -2358,6 +2358,43 @@ def daily_pages():
            f'<ul class="gm-g">{cards}</ul><p class="dl-h">쿠팡 가격은 수시로 바뀌어요. 줍줍은 「최저가」를 단정하지 않고, 최신 가격은 쿠팡 화면에서 확인하세요.</p>' + css + GAME_CSS)
     page('/money/daily/', '생필품 단가 계산기 — 휴지·물티슈·세제·생수·쌀 단가 비교', '결제 총액·개수·용량을 넣으면 개당·100ml당·1m당 단가를 계산해요. 휴지, 물티슈, 세탁세제, 샴푸, 생수, 라면, 쌀 비교.', hub, [('루리의 줍줍', '/'), ('생필품 단가 계산', '/money/daily/')])
     return urls + ['/money/daily/']
+
+
+
+EVER_F = os.path.join(HERE, 'evergreen.json')
+
+
+def evergreen_pages():
+    """/evergreen/ 커뮤니티에서 며칠 내내 이어진 관심사 (2026-10-23 사용자: 장기적으로 관심 갖는 주제를 골라 화면으로). mg/evergreen_calc.py 가 코퍼스에서 계산한 evergreen.json 사용."""
+    if not os.path.exists(EVER_F):
+        return []
+    d = json.load(open(EVER_F, encoding='utf-8'))
+    days = d['days']
+    cards = ''
+    for t in sorted(d['themes'], key=lambda t: -t['n']):
+        mx = max(t['daily']) or 1
+        bars = ''.join(f'<rect x="{i * 22}" y="{36 - round(34 * v / mx)}" width="16" height="{max(2, round(34 * v / mx))}" rx="3" fill="currentColor" opacity=".75"><title>{E(days[i][5:])} {v}건</title></rect>' for i, v in enumerate(t['daily']))
+        dl = ' '.join(str(v) for v in t['daily'])
+        svg = f'<svg viewBox="0 0 {len(days) * 22} 38" width="{len(days) * 22}" height="38" role="img" aria-label="날짜별 글 수 {dl}" class="ev-sv">{bars}</svg>'
+        kws = ' '.join(f'<span class="ev-k">{E(w)} {n}</span>' for w, n in t['kw'])
+        ex = ''
+        if t.get('ex'):
+            ex = '<p class="ev-x"><b>실제로 올라온 질문</b></p><ul class="gm-l">' + ''.join(f'<li><a href="{E(u)}" target="_blank" rel="noopener nofollow">{E(x)}</a></li>' for x, u in t['ex']) + '</ul>'
+        lk = ''
+        if t['links']:
+            lk = '<p class="ev-x"><b>줍줍에서 보기</b> ' + ' · '.join(f'<a href="{E(u)}">{E(n)}</a>' for u, n in t['links']) + '</p>'
+        cards += (f'<section class="ev-c"><h2>{t["icon"]} {E(t["name"])}</h2><p class="ev-m">7일간 글 <b>{t["n"]:,}</b>건 · 댓글 {t["c"]:,}개 · 커뮤니티·Q&amp;A <b>{t["sites"]}</b>곳 ({E(", ".join(t["topsites"]))} 등)</p>'
+                  f'{svg}<p class="ev-d">{E(days[0][5:])} → {E(days[-1][5:])} 하루 글 수 ({" · ".join(str(v) for v in t["daily"])})</p><p>{kws}</p>{ex}{lk}</section>')
+    body = ('<p class="bc"><a href="/">홈</a> › 오래 가는 관심사</p><h1>🌲 커뮤니티에서 7일 내내 이어진 관심사 — 오늘 반짝 말고 계속 묻는 주제</h1>'
+            '<p class="kwn">업데이트: ' + E(days[-1]) + ' 기준 · 커뮤니티 15곳과 지식iN 글 ' + f'{d["total"]:,}' + '건</p>'
+            '<div class="cat-st"><b>한눈에 보기</b><br>하루 이슈는 금방 사라지지만, 대출·카드·택배·기기 오류·전월세·알바 같은 주제는 ' + E(days[0][5:]) + '부터 ' + E(days[-1][5:]) + '까지 매일 수백 건씩 올라왔어요. 아래는 그런 주제를 묶고, 줍줍에서 확인한 가이드로 이어 놓은 지도예요.</div>'
+            + cards +
+            '<h2>어떻게 골랐나요?</h2><ul class="gm-l"><li>수집한 글의 키워드 중 <b>7일 모두 등장</b>하고 <b>4곳 이상</b>의 사이트에서 나온 말을 주제별로 묶었어요.</li>'
+            '<li>표본은 7일치이고 지식iN 질문 비중이 커서, 「장기」라기보다 「일주일 내내 이어진」 주제예요. 기간이 쌓이면 다시 계산해요.</li>'
+            '<li>글 수는 키워드가 잡힌 글의 수이고 실제 관심의 크기를 단정하지 않아요. 예시 질문은 원문 링크로만 걸었어요.</li></ul>'
+            '<style>.ev-c{border:1px solid var(--bd,#e5e7eb);border-radius:12px;padding:12px 14px;margin:12px 0;background:var(--card,#fff)}.ev-c h2{margin:0 0 4px}.ev-m{font-size:14px;margin:4px 0}.ev-sv{color:var(--pri,#b45309);display:block;margin:6px 0 2px;max-width:100%}.ev-d{font-size:12px;color:var(--mu,#6b7280);margin:0 0 6px}.ev-k{display:inline-block;padding:2px 8px;margin:2px 3px 2px 0;border-radius:999px;background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;font-size:12.5px}.ev-x{margin:8px 0 2px;font-size:14px}</style>' + GAME_CSS)
+    page('/evergreen/', '커뮤니티에서 7일 내내 이어진 관심사 — 대출·택배·전월세·알바·기기 오류', '커뮤니티 15곳과 지식iN 글 4만 건에서 7일 내내 계속 올라온 주제를 묶어 날짜별 글 수와 줍줍 가이드로 연결했어요.', body, [('루리의 줍줍', '/'), ('오래 가는 관심사', '/evergreen/')])
+    return ['/evergreen/']
 
 
 KIN_A = os.path.join(HERE, 'kin_answers.json')
@@ -4061,7 +4098,7 @@ def news_brief():
 def news_page():
     # 루리 탐정의 이슈 감별 (2026-10-18 사용자: RSS 기사 수집 → 주제별 묶음 → 팩트체크 기반 채점, 피드, 탐정 루리, 기사 관련 줍줍)
     body = f'''<p class="bc"><a href="/">홈</a> › 기사 확인 신호</p><h1>📺 루리 뉴스</h1><p class="kwn">언론사 15곳 기사를 매시간 모아 같은 사건끼리 묶고, 제목·숫자·확인 신호를 정리해요.</p>
-<nav class="nbn" aria-label="이 화면 안에서 이동"><a href="#brief">📺 오늘의 브리핑</a><a href="#review">🖋️ 평론</a><a href="#news">🕵️ 이슈 순위·확인 신호</a><a href="/trend/">🍿 이슈 트렌드</a><a href="/hot/">🔥 핫이슈</a></nav>
+<nav class="nbn" aria-label="이 화면 안에서 이동"><a href="#brief">📺 오늘의 브리핑</a><a href="#review">🖋️ 평론</a><a href="#news">🕵️ 이슈 순위·확인 신호</a><a href="/trend/">🍿 이슈 트렌드</a><a href="/evergreen/">🌲 오래 가는 관심사</a><a href="/hot/">🔥 핫이슈</a></nav>
 {news_brief()}{join_cta('issue')}{hot_top(3)}{news_impact()}
 <h2 class="nbh" id="rank">🕵️ 이슈 순위와 기사 확인 신호</h2><section id="news" aria-label="이슈 순위와 기사 채점">{news_static()}</section>
 <details class="nw-how"><summary>채점은 이렇게 해요</summary><ul><li><b>교차 보도</b> — 같은 사건을 여러 언론사가 보도하면 가점, 한 곳뿐이면 표시만 해요.</li><li><b>출처</b> — 실명 기관·인물 출처는 가점, 익명 관계자뿐이거나 온라인 커뮤니티·SNS 글이 출처면 감점.</li><li><b>제목-본문 일치</b> — 제목의 숫자·인용문이 본문에 없으면 감점.</li><li><b>숫자 엇갈림</b> — 같은 사건인데 언론사마다 사망·부상자 수가 다르면 따로 표시해요.</li><li><b>낚시·홍보</b> — 「충격」「결국」「이것」 같은 낚시 표현, 기업 홍보성 기사는 감점.</li></ul><p>기사 본문은 채점에만 쓰고 이 사이트에 옮겨 싣지 않아요. 제목을 누르면 원래 언론사 기사로 이동해요.</p></details>
