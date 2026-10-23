@@ -38,3 +38,10 @@
 .wt-o.wt-all{border-style:dashed}
 .wt-empty{padding:24px;text-align:center;color:var(--mu);border:1px dashed var(--bd);border-radius:20px}
 .wt-res{margin-top:20px}
+.wt-xg{margin:10px 0 0}.wt-xg>summary{cursor:pointer;font-weight:700;min-height:40px;display:flex;align-items:center;gap:6px;color:var(--mu,#6b7280)}.wt-xg>summary small{font-weight:400}
+/* UI 2차 14번: 로딩 골격 — 완성 화면과 비슷한 높이를 미리 잡아 요소가 크게 밀리지 않게 */
+#watch{min-height:1100px}
+.wt-sk{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+.wt-sk i{display:block;height:200px;border-radius:14px;background:var(--bd,#e5e7eb);opacity:.6}
+.wt-sk i.a{grid-column:1/-1;height:120px}.wt-sk i.b{grid-column:1/-1;height:56px}
+@media (max-width:520px){#watch{min-height:1500px}}

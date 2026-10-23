@@ -16,7 +16,7 @@
     const cd = [k !== '전체' ? k : '', due ? (due === '1' ? '오늘·내일 마감' : due + '일 이내') : '', q ? '“' + q + '”' : ''].filter(Boolean);
     R.querySelector('.ev-n').innerHTML = `결과 <b>${L.length}건</b>` + (cd.length ? ` · 적용: ${esc(cd.join(' · '))} <button type="button" class="ev-reset">초기화</button>` : '');
     R.querySelector('.ev-ul').innerHTML = L.length ? L.slice(0, n).map(e => { const d = dn(e.end);
-      return `<li class="ev-c"><h3>${esc(e.t)}</h3><dl><div><dt>참여 방법</dt><dd>${esc(e.ez || '미확인')}</dd></div><div><dt>마감</dt><dd><span class="${d <= 1 ? 'u' : ''}">${d <= 0 ? '오늘' : 'D-' + d}</span> ${esc(e.end.slice(5).replace('-', '.'))}</dd></div><div><dt>주최</dt><dd>${esc(e.org || '공식 계정')}</dd></div></dl><a class="ev-go" href="${esc(e.link)}" target="_blank" rel="noopener nofollow">이벤트 보기 ↗</a></li>`; }).join('') : '<li class="ev-empty">조건에 맞는 이벤트가 없어요. 조건을 줄이거나 초기화해 보세요.</li>';
+      return `<li class="ev-c"><h3>${esc(e.t)}</h3><dl><div><dt>경품</dt><dd class="${e.prize ? '' : 'nu'}">${esc(e.prize || '경품 확인 필요')}</dd></div><div><dt>참여 조건</dt><dd class="${e.ez ? '' : 'nu'}">${esc(e.ez || '참여 방식 확인 필요')}</dd></div><div><dt>마감</dt><dd><span class="${d <= 1 ? 'u' : ''}">${d <= 0 ? '오늘' : 'D-' + d}</span> ${esc(e.end.slice(5).replace('-', '.'))}</dd></div>${(e.host || e.org) ? `<div><dt>주최</dt><dd>${esc(e.host || e.org)}</dd></div>` : ''}</dl><a class="ev-go" href="${esc(e.link)}" target="_blank" rel="noopener nofollow">이벤트 보기 ↗</a></li>`; }).join('') : '<li class="ev-empty">조건에 맞는 이벤트가 없어요. 조건을 줄이거나 초기화해 보세요.</li>';
     R.querySelector('.ev-more').hidden = L.length <= n;
     save();
   }

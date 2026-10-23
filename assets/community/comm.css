@@ -206,3 +206,6 @@
 .my-acts button.on{background:var(--pri,#6d28d9);color:#fff;border-color:var(--pri,#6d28d9)}
 .my-acts .ma-prep{color:var(--tx,#111)!important}
 .my-acts small{flex-basis:100%;margin-top:2px}
+/* UI 2차 15번: 광장 검색·분류 막대 */
+.cm-bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:8px 0}.cm-q{flex:1 1 200px;min-height:42px;padding:0 12px;border:1px solid var(--bd,#e5e7eb);border-radius:12px;font:inherit;background:var(--card,#fff);color:var(--tx,#111)}
+.cm-fk{display:flex;flex-wrap:wrap;gap:6px}.cm-fk button{min-height:38px;padding:0 13px;border:1px solid var(--bd,#e5e7eb);border-radius:999px;background:transparent;color:var(--mu,#6b7280);font:inherit;font-weight:700;cursor:pointer}.cm-fk button.on{background:var(--brand,#6d28d9);border-color:var(--brand,#6d28d9);color:#fff}

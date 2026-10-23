@@ -71,7 +71,7 @@ def collect(urls, noindex, root):
         for p in re.findall(r'<(?:p|li)[^>]*>(.*?)</(?:p|li)>', mh[mh.find('</h1>'):], re.S):
             t = _clean(p)
             if len(t) >= 40 and not t.startswith(('기준', '홈 ›')):
-                desc = _trim(t, 100)
+                desc = _trim(t, 72)
                 break
         # id 가 h2 에 있거나(공용 글), h2 를 감싸는 section 에 있는(생활 돈 가이드) 두 경우를 모두 읽는다
         heads = [(i, re.sub(r'^[\d?]+\s*', '', _clean(t))) for _tg, i, t in re.findall(r'<(section|h2)\b[^>]*\bid="([^"]+)"[^>]*>(.*?)</h2>', mh, re.S) if len(_clean(t)) < 120]

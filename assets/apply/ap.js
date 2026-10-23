@@ -11,6 +11,7 @@
   var dn = function (s) { var p = s.split('-'); return Math.round(Date.UTC(+p[0], p[1] - 1, +p[2]) / 864e5); };
   var T = dn(kst());
   var grp = function (a) {
+    if (a.grp) return a.grp;
     if (a.kk === 'ipo') return '공모주';
     if (a.kk === 'apt' || a.kk === 'rent') return '주거 청약';
     return /기업|사업자|법인|소상공인|스타트업|창업|중소|협동조합|사회적경제|수출|R&D|연구개발|참여기관|기관 모집/.test((a.title || '') + ' ' + (a.target || '')) ? '사업자·기업' : '개인·가구';
@@ -18,8 +19,8 @@
   var reg = function (a) { var r = (a.region || '').trim(); return r ? r.split(/\s+/)[0] : ''; };
   var card = function (a) {
     var alw = !!a.always, left = alw ? 0 : dn(a.end) - T, cls = 'd' + (alw ? '' : left <= 3 ? ' u3' : left <= 7 ? ' hot' : '');
-    var m = [['대상', (a.target || '').trim().slice(0, 14) || '미확인'], ['지원 내용', (a.benefit || '').trim().slice(0, 18) || '미확인'], ['지역', reg(a) || '미확인'], ['마감', alw ? '상시' : a.end.slice(5).replace('-', '.')]];
-    var dl = m.map(function (p) { return '<div><dt>' + p[0] + '</dt><dd' + (p[1] === '미확인' ? ' class="nu"' : '') + '>' + esc(p[1]) + '</dd></div>'; }).join('');
+    var m = a.cm || [['대상', '확인 필요'], ['신청 기간', alw ? '상시' : a.end.slice(5).replace('-', '.')]];
+    var dl = m.map(function (p) { return '<div><dt>' + p[0] + '</dt><dd' + (p[1] === '확인 필요' ? ' class="nu"' : '') + '>' + esc(p[1]) + '</dd></div>'; }).join('');
     return '<li><a class="card cc" href="/apply/?id=' + encodeURIComponent(a.id) + '"><div class="cb"><div class="top"><h3 class="t">' + esc(a.title) + '</h3><span class="' + cls + '">' + (alw ? '상시' : left <= 0 ? 'D-DAY' : 'D-' + left) + '</span></div><dl class="cm">' + dl + '</dl><p class="o">' + esc(grp(a)) + ' · ' + esc(a.org || '') + (a.verified ? ' · 공식 포털 수집' : '') + '</p></div></a></li>';
   };
   var sync = function () {

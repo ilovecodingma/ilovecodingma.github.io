@@ -43,3 +43,9 @@
 .rec .rec-pick{border:0;box-shadow:none;background:none;padding:0;margin:0}
 .rec-guide{margin:8px 0 14px;color:var(--mu,#6b7280);font-size:15px;line-height:1.6}
 #rec-pane{min-height:540px}
+/* UI 2차 8번: 실제 카드 모양 로딩 화면(JS 가 호스트 내용을 바꾸면 사라진다) */
+.rec-sk{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin:8px 0}
+.rec-sk i{display:block;height:168px;border-radius:14px;background:linear-gradient(90deg,var(--bd,#e5e7eb) 25%,color-mix(in srgb,var(--bd,#e5e7eb) 50%,transparent) 50%,var(--bd,#e5e7eb) 75%);background-size:200% 100%;animation:rsk 1.2s linear infinite}
+@keyframes rsk{to{background-position:-200% 0}}
+.rec-ssr{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+@media (prefers-reduced-motion:reduce){.rec-sk i{animation:none}}

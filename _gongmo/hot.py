@@ -18,7 +18,7 @@ TYPES = [  # (유형, 정규식) 위에서부터 먼저 맞는 것
     ('market', r'코스피|코스닥|주가|증시|비트코인|이더리움|가상자산|반도체|공모주|상장'),
     ('health', r'진료|의료|병원|의원|약국|처방|건강보험|비대면|백신|검진|실손'),
     ('labor', r'임금|노동|근로|최저임금|퇴직|고용|실업급여|육아휴직|출산휴가|주4일|노동부'),
-    ('event', r'축제|박람회|엑스포|공연|콘서트|태풍|폭우|폭염|한파|날씨|단풍|불꽃|마라톤|개최'),
+    ('event', r'축제|박람회|엑스포|공연|콘서트|태풍|폭우|폭염|한파|날씨|단풍|불꽃|마라톤'),
 ]
 TOOL = {  # 유형 → (나한테 뭐가 달라지나 안내, 연결 [(이름, 주소)], FAQ [(질문, 답)])
     'housing': ('청약·분양·전세 이슈예요. 내 청약 가점과 노려볼 공급 유형, 지금 접수 중인 공고부터 확인해 보세요.',
@@ -117,6 +117,8 @@ def main():
         if len(outs) < 2:
             continue
         typ = next((t for t, rx in TYPES if re.search(rx, c['title'])), None) or next((t for t, rx in TYPES if re.search(rx, ' '.join(a['t'] for a in arts[:3]))), None)
+        if typ == 'event' and re.search(r'회담|협상|종전|전쟁|군사|외교|정상|국회|대통령|총선|탄핵|정당', c['title']):   # 2026-10-23 군사회담이 「행사·날씨」로 분류되던 오류
+            typ = None
         if not typ:
             continue
         iss = c.get('issue') or next((x for x in nw.get('issues', []) if any(a['id'] in x['a'] for a in arts)), None)
