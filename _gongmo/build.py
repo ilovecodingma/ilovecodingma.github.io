@@ -898,7 +898,8 @@ def guide_links_html(c):
     """공통 준비 지식은 개별 상세에 반복하지 않고 충실한 공통 가이드로 연결한다(2026-10-23). 존재하는 가이드만 건다."""
     global GUIDE_OK
     if GUIDE_OK is None:
-        GUIDE_OK = set(os.listdir(os.path.join(ROOT, 'guide'))) if os.path.isdir(os.path.join(ROOT, 'guide')) else set()
+        # 빌드 초반에 guide/ 폴더를 비우고 다시 만들기 때문에 디스크를 보지 않고, 2026-10-23 에 확인한 공통 가이드 주소를 둔다(가이드 쪽 테스트가 존재를 확인)
+        GUIDE_OK = {'contest-rules-reading-eligibility-deadline', 'media-art-video-contest-submission-check', 'contest-music-font-license-check', 'local-photo-contest-permission-portrait', 'ai-contest-rules-check', 'idea-contest-ppt-structure', 'contest-deadline-day-mistakes'}
     L = [('contest-rules-reading-eligibility-deadline', '공고문에서 자격·마감 읽는 법')]
     mdm, eff = c.get('medium', ''), c.get('effort') or ''
     if mdm in ('video', 'photo+video') or eff == '영상':
