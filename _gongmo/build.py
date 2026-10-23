@@ -251,7 +251,7 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False, noinde
 <div><b>💰 지원금·머니</b><a href="/apply/">지원금·청약</a><a href="/money/tools/salary/">계산기</a><a href="/money/experts/">전문가 말 vs 시세</a><a href="/analyst/">애널리스트</a></div>
 <div><b>🏆 공모전</b><a href="/contest/">공모전 찾기</a><a href="/prep/">준비실</a><a href="/guide/">응모 가이드</a><a href="/lab/">수상 연구소</a></div>
 <div><b>📺 이슈</b><a href="/news/">루리 뉴스</a><a href="/trend/">이슈 트렌드</a><a href="/hot/">핫이슈</a><a href="/kw/">인기 키워드</a></div>
-<div><b>ℹ️ 운영·정책</b><a href="/about/">소개·운영 방식</a><a href="/privacy/">개인정보처리방침</a><a href="/terms/">이용약관</a><a href="/contact/">문의</a></div></nav>
+<div><b>ℹ️ 운영·정책</b><a href="/about/">소개·운영 방식</a><a href="/corrections/">정정 기록</a><a href="/privacy/">개인정보처리방침</a><a href="/terms/">이용약관</a><a href="/contact/">문의</a></div></nav>
 {('<p class="ft-c"><small>외부 채널</small> ' + comm_btns() + '</p>') if COMM_LINKS else ''}<p class="ft-l"><a href="/ailog/">개발 지식</a><a href="/app/">앱·알림</a><a href="/all/">전체 메뉴</a></p>
 <p class="ft-n">정보는 각 기관의 공고·언론 보도·공개 자료를 바탕으로 정리했어요. 정확한 내용은 반드시 공식 공고와 원문에서 확인하세요. 일부 링크는 쿠팡 파트너스 활동의 일환으로 수수료를 받을 수 있어요. © 2026 루리의 줍줍 · sungprofile.cloud</p></div></footer>{CL_CSS if COMM_LINKS else ''}
 </body></html>'''
@@ -445,7 +445,7 @@ def card(c):
     th = f'<img class="th" src="/assets/shots/{c["id"]}.webp" width="72" height="45" alt="" loading="lazy">' if c.get('th') else ''
     meta = (('대상', elig_short(c)), ('제출물', sub_short(c)), ('상금', prize_short(c)), ('마감', ddot(c['end'])[5:]))
     dl = ''.join(f'<div><dt>{k}</dt><dd{" class=nu" if v in ("미확인", "확인 필요") else ""}>{E(v)}</dd></div>' for k, v in meta)
-    _vm = '' if c['id'] not in VER else ('✅ 공식 원문 대조' if VER[c['id']].get('level') != 'partial' else '☑ 공식 원문 일부 대조')
+    _vm = {0: '', 1: '☑ 공식 원문 일부 대조', 2: '✅ 핵심 조건 대조', 3: '👤 운영자 직접 검토'}[vstage(c['id'])[0]]
     sub = ' · '.join(x for x in (_vm, c['org'] if c.get('org') and c['org'] != '공고 참조' else '', CQ.label_for(c['tags'][0], c.get('medium', ''))) if x)
     return (f'<li><a class="card cc" data-c="{SLUG[c["tags"][0]]}" href="/c/{c["id"]}/"><div class="cb"><div class="top"><h3 class="t">{E(c["title"])}</h3><span class="{cls}">{dd}</span></div>'
             f'<dl class="cm">{dl}</dl><p class="o">{E(sub)}</p></div>{th}</a></li>')
@@ -545,6 +545,7 @@ def collapse_thin(urls):
 
 
 RICH_SCORES = []
+RICH_BY_ID = {}
 THIN_MIN = {'/lab/': 250, '/hot/': 250}   # 2026-10-23 애드센스: 고유 본문이 이만큼 안 되는 연구소·핫이슈 상세는 검색 제외. 사용자 승인으로 700→250(품질 감사의 「얇음」 기준과 맞춤): noindex 는 비었거나 미완성인 페이지에만 쓴다
 FRIDGE_KEEP = int(os.environ.get('FRIDGE_KEEP', '100000'))   # 사용자 승인으로 100→전체: 레시피는 재료 체크·인분 계산 같은 실제 도구가 있는 페이지라 noindex 로 가리지 않는다
 RICH_MIN = int(os.environ.get('RICH_MIN', '4'))   # 사용자 승인으로 6→4: 자격·상금·제출물이 거의 비어 미완성인 상세(2~3점)만 noindex, 값이 채워지면 자동 색인
@@ -565,16 +566,18 @@ def strip_ads_noindex():
                 doc = open(f, encoding='utf-8').read()
             except Exception:
                 continue
-            if 'name="robots" content="noindex' in doc and 'adsbygoogle.js' in doc:
+            _m = re.search(r'/c/(Q\d+)/$', '/' + os.path.relpath(r, ROOT).replace(os.sep, '/') + '/')
+            _incomplete = bool(_m) and _m.group(1) not in VER and RICH_BY_ID.get(_m.group(1), 0) < 6   # 공식 대조도 없고 핵심 정보도 모자란 공고 상세
+            if ('name="robots" content="noindex' in doc or _incomplete) and 'adsbygoogle.js' in doc:
                 open(f, 'w', encoding='utf-8', newline='\n').write(ADS_TAG.sub('', doc, count=1)); n += 1
     return n
 
 
 # 핵심 수치는 한 값만 허용한다: (이름, 수치 앞뒤 문맥 정규식, 허용 값 집합). 새 수치는 여기에 한 줄 추가하면 모든 페이지에서 검사된다.
 NUM_RULES = [
-    ('근로장려금 맞벌이 소득 기준', r'맞벌이[^.\n]{0,30}?(\d[\d,]{3,5})\s*만\s*원?\s*미만|(\d[\d,]{3,5})\s*만\s*원?\s*미만[^.\n]{0,20}?맞벌이', {'4,400', '4400'}),
-    ('근로장려금 홑벌이 소득 기준', r'홑벌이[^.\n]{0,30}?(\d[\d,]{3,5})\s*만\s*원?\s*미만', {'3,200', '3200'}),
-    ('근로장려금 단독 소득 기준', r'단독[^.\n]{0,30}?(\d[\d,]{3,5})\s*만\s*원?\s*미만', {'2,200', '2200'}),
+    ('근로장려금 맞벌이 소득 기준', r'맞벌이(?:\s*가구)?[\s|:]*(\d[\d,]{3,5})\s*만', {'4,400', '4400'}),
+    ('근로장려금 홑벌이 소득 기준', r'홑벌이(?:\s*가구)?[\s|:]*(\d[\d,]{3,5})\s*만', {'3,200', '3200'}),
+    ('근로장려금 단독 소득 기준', r'단독(?:\s*가구)?[\s|:]*(\d[\d,]{3,5})\s*만', {'2,200', '2200'}),
 ]
 
 
@@ -597,6 +600,67 @@ def numcheck_report():
                 if v and v not in ok:
                     warn.append(f'{name}: {v}만 ({os.path.relpath(f, ROOT)})')
     return warn
+
+
+def surface_report():
+    """같은 공고의 마감일·마감 시각이 홈 카드·목록 데이터·상세에서 같은지 빌드 결과로 확인한다(2026-10-24)."""
+    warn = []
+    try:
+        listing = {x['id']: x for x in json.load(open(os.path.join(ROOT, 'data.json'), encoding='utf-8'))['items']}
+    except Exception:
+        listing = {}
+    home = open(os.path.join(ROOT, 'index.html'), encoding='utf-8').read() if os.path.exists(os.path.join(ROOT, 'index.html')) else ''
+    cards = {}
+    for m in re.finditer(r'<li class="td-c".*?</li>', home, re.S):
+        h_ = re.search(r'href="/c/(Q\d+)/"', m.group(0))
+        if h_:
+            t_ = re.sub(r'\s+', ' ', html.unescape(re.sub(r'<[^>]+>', ' ', m.group(0))))
+            mm = re.search(r'마감 (오늘|\d{2}\.\d{2}\(D-\d+\))\s*(\d{1,2}:\d{2}|시각 명시 없음|시각 확인 필요)', t_)
+            if mm:
+                cards[h_.group(1)] = (mm.group(1), mm.group(2))
+    for cid, (dlab, tlab) in cards.items():
+        f = os.path.join(ROOT, 'c', cid, 'index.html')
+        if not os.path.exists(f):
+            continue
+        d_ = html.unescape(re.sub(r'<[^>]+>', ' ', open(f, encoding='utf-8').read()))
+        d_ = re.sub(r'\s+', ' ', d_)
+        rm = re.search(r'마감 시각 (\d{1,2}:\d{2}|시각 명시 없음|공식 공고 확인 필요)', d_)
+        dm = re.search(r'(\d{4})\.(\d{2})\.(\d{2}) 마감', d_)
+        dtime = rm.group(1) if rm else None
+        if dtime and tlab != dtime and not (dtime == '공식 공고 확인 필요' and tlab == '시각 확인 필요'):
+            warn.append(f'{cid}: 홈 시각 「{tlab}」 ≠ 상세 시각 「{dtime}」')
+        if dm:
+            end = f'{dm.group(1)}-{dm.group(2)}-{dm.group(3)}'
+            left = (datetime.date.fromisoformat(end) - TODAY).days
+            exp = '오늘' if left == 0 else f'{end[5:].replace("-", ".")}(D-{left})'
+            if dlab != exp:
+                warn.append(f'{cid}: 홈 날짜 「{dlab}」 ≠ 상세 기준 「{exp}」')
+            if cid in listing and listing[cid]['end'] != end:
+                warn.append(f'{cid}: 목록 마감 {listing[cid]["end"]} ≠ 상세 {end}')
+    return warn
+
+
+def corrections_page(live):
+    """/corrections/ — 수집 데이터와 공식 원문이 달랐던 점의 공개 기록(VER 의 corrections 에서 자동 생성). 오류 신고 처리 결과도 같은 형식으로 이어서 적는다."""
+    items = []
+    byid = {c['id']: c for c in live}
+    for cid, v in VER.items():
+        if cid in byid and v.get('corrections'):
+            items.append((v['verified_at'], cid, byid[cid]['title'], v['corrections'], vstage(cid)[1]))
+    items.sort(key=lambda x: (x[0], x[1]), reverse=True)
+    n_fix = sum(len(x[3]) for x in items)
+    li = ''.join(f'<li><a href="/c/{cid}/"><b>{E(t[:46])}</b></a> <small>{E(d)} · {E(lab)}</small><ul>' + ''.join(f'<li>{E(c_)}</li>' for c_ in cs) + '</ul></li>' for d, cid, t, cs, lab in items)
+    body = (f'<p class="bc"><a href="/">홈</a> › 정정 기록</p><h1>정정 기록</h1>'
+            f'<p class="lead" style="display:block">수집 데이터를 공식 원문과 맞춰 보다가 값이 달랐던 곳을 기록해요. 지금 진행 중인 공모전 {len(items)}건에서 {n_fix}곳을 고쳤어요.</p>'
+            '<p class="note">이 기록은 AI가 공식 원문을 열어 대조한 결과이고, 운영자가 직접 확인한 것이 아니에요. 각 공고의 「확인 단계」에서 어느 단계까지 왔는지 볼 수 있어요. '
+            f'틀린 정보를 발견하면 <a href="/contact/">문의</a>로 알려 주세요. 신고를 받아 확인한 결과도 이 기록에 이어서 적어요(처리한 신고 수: {len(CORR_REPORTS)}건).</p>'
+            + (f'<ul class="chk corr">{li}</ul>' if li else '<p class="note">아직 기록이 없어요.</p>')
+            + '<style>.corr>li{margin:12px 0}.corr small{color:var(--mu,#6b7280)}.corr ul{margin:4px 0 0 18px}</style>')
+    page('/corrections/', '정정 기록 — 수집 데이터와 공식 원문이 달랐던 점', f'진행 중 공모전 {len(items)}건에서 공식 원문과 달랐던 {n_fix}곳을 고친 기록. AI 대조 기록이며 운영자 직접 확인과 구분해 표시해요.',
+         body, [('루리의 줍줍', '/'), ('정정 기록', '/corrections/')])
+
+
+CORR_REPORTS = []   # 오류 신고 처리 기록: 신고를 받아 확인한 결과를 여기에 {date, id, 내용, 결과} 로 추가한다(없으면 0건으로 표시)
 
 
 def auto_thin(urls):
@@ -832,7 +896,7 @@ def c_insight(c, live):
 def deadline_badge(c):
     """마감 배지 옆 불확실성(2026-10-23 P0): 시각을 확인했으면 시각을, 아니면 「시각 미확인」을, 마감 변경(연장) 공지가 있으면 그 경고를 같이 보여 D-day 가 확정처럼 읽히지 않게 한다."""
     t = re.match(r'(\d{1,2}(?::\d{2}|시))', deadline_row(c, ''))
-    out = f' · <b class="dl-t">{t.group(1)}</b>' if t else ' · <span class="dl-u">시각 미확인</span>'
+    out = f' · <b class="dl-t">{t.group(1)}</b>' if t else (' · <span class="dl-u">시각 명시 없음</span>' if deadline_state(c) == 'absent' else ' · <span class="dl-u">시각 미확인</span>')
     if (VER.get(c['id']) or {}).get('alerts'):
         out += ' <span class="d-warn">⚠ 마감 변경 가능성 — 아래 확인 필요</span>'
     return out
@@ -873,16 +937,23 @@ def region_row(c, NEED):
 
 
 def deadline_row(c, NEED):
-    """마감 시각 칸: 공식 원문에서 확인한 시각만 적고, 모르면 임의로 자정·23:59 로 채우지 않는다."""
+    """마감 시각 칸: 공식 원문에서 사람이 확인해 기록한 시각만 적는다(VER 의 deadline.time). 없으면 임의로 자정·23:59 로 채우지 않는다.
+    홈·목록·상세·오늘 마감·구조화 데이터가 모두 이 한 함수를 쓴다."""
     v = VER.get(c['id'])
     if v:
-        for k, x in v.get('facts', []):
-            if k in ('접수 기간', '예선 마감', '접수 마감'):
-                m = re.findall(r'(\d{1,2}:\d{2}|\d{1,2}시)', x)   # 시작 시각(09:00)이 아니라 마감(마지막) 시각
-                if m:
-                    return f'{m[-1]} (공식 원문 확인 {v["verified_at"]}, 시간대 명시 없음 — 국내 공고)'
-        return '공식 원문에 시각 명시 없음(' + v['verified_at'] + ' 확인)'
+        dl = v.get('deadline') or {}
+        if dl.get('time'):
+            return f'{dl["time"]} (공식 원문 확인 {v["verified_at"]}, 시간대 명시 없음 — 국내 공고)'
+        return '시각 명시 없음(' + v['verified_at'] + ' 확인) — ' + (dl.get('note') or '공고 원문에서 마감 시각을 찾지 못했어요.')
     return NEED + ' (수집 데이터에 시각이 없어요)'
+
+
+def deadline_state(c):
+    """'known' 시각 확인 / 'absent' 공식 원문을 확인했지만 시각이 없음 / 'unknown' 아직 원문을 확인하지 못함"""
+    v = VER.get(c['id'])
+    if not v:
+        return 'unknown'
+    return 'known' if (v.get('deadline') or {}).get('time') else 'absent'
 
 
 def fee_row(c, NEED):
@@ -911,6 +982,48 @@ def ai_row(c, NEED):
     return {'금지': '금지(수집 데이터 기준 — 공고 확인)', '허용': '허용(수집 데이터 기준 — 공고 확인)', '표기': '허용·표기 필요(수집 데이터 기준 — 공고 확인)'}.get(c.get('ai') or '', '미확인 — ' + NEED)
 
 
+OPDIR = os.path.expanduser(r'~\Desktop\루리줍줍_품질개편')
+OP_CSV = os.path.join(OPDIR, '운영자_검토목록.csv')
+OP_REV = {}   # id → (운영자 확인일, 메모). 운영자가 CSV 의 「운영자 확인일」 칸에 직접 적은 것만 들어온다(자동으로 채우지 않는다).
+
+
+def load_op_reviews():
+    """운영자가 직접 기입한 검토 기록을 읽는다. 빌드가 CSV 를 다시 쓰더라도 이 칸은 보존한다."""
+    import csv as _csv
+    OP_REV.clear()
+    if not os.path.exists(OP_CSV):
+        return
+    try:
+        with open(OP_CSV, encoding='utf-8-sig', newline='') as f_:
+            for r_ in _csv.DictReader(f_):
+                d_ = (r_.get('운영자 확인일(직접 기입)') or '').strip()
+                if r_.get('ID') and re.fullmatch(r'\d{4}-\d{2}-\d{2}', d_):
+                    OP_REV[r_['ID']] = (d_, (r_.get('운영자 메모') or '').strip())
+    except Exception as e_:
+        print('운영자 검토 기록 읽기 실패', e_)
+
+
+STAGES = ['수집 완료', '공식 원문 확보', '핵심 조건 대조', '운영자 직접 검토']
+
+
+def vstage(cid):
+    """(단계 번호 0~3, 라벨, 근거). 공식 링크가 있다는 이유만으로 올리지 않고, 기록(VER)이나 운영자 기입이 있을 때만 올린다."""
+    if cid in OP_REV:
+        return 3, '운영자 직접 검토', f'운영자 확인 {OP_REV[cid][0]}'
+    v = VER.get(cid)
+    if v:
+        if v.get('level') == 'partial':
+            return 1, '공식 원문 확보', f'AI가 공식 원문을 열어 일부 항목만 대조({v["verified_at"]})'
+        return 2, '핵심 조건 대조', f'AI가 공식 원문과 핵심 조건을 대조({v["verified_at"]})'
+    return 0, '수집 완료', '수집처 정보를 자동 정리한 값'
+
+
+def stage_row(cid):
+    n, lab, why = vstage(cid)
+    chips = ' → '.join(('✅ ' if i <= n else '▫️ ') + (STAGES[i] if i <= n else STAGES[i] + '(아직 아님)') for i in range(4))
+    return chips + f' — 현재 「{lab}」: {why}. 사람이 직접 확인한 것은 「운영자 직접 검토」 단계뿐이에요.'
+
+
 def ver_block(c):
     """공식 원문 대조 결과(검증한 공모전만). 운영자 검수라고 쓰지 않고, 확인한 것·달랐던 것·확인 못 한 것·상충을 분리해 보여 준다."""
     v = VER.get(c['id'])
@@ -920,7 +1033,7 @@ def ver_block(c):
     srcs = ' · '.join(f'<a href="{E(s["url"])}" target="_blank" rel="noopener nofollow">{E(s["label"])}</a>' for s in v['sources'])
     lst = lambda t, L: (f'<h3>{t}</h3><ul class="chk">' + ''.join(f'<li>{E(x)}</li>' for x in L) + '</ul>') if L else ''
     return (f'<details class="fold ver"><summary>✅ 공식 원문 {"일부 " if v.get("level") == "partial" else ""}대조 결과 · 수정 이력 <small>확인일 {E(v["verified_at"])}</small></summary>'
-            f'<p class="note">아래 출처 페이지(주최 측 공고, 또는 운영사무국 신청 페이지·첨부 서류)를 위 확인일에 직접 열어 이 페이지의 값과 맞춰 봤어요. 출처 종류는 링크 이름에 적었어요. 운영자 검수 완료 표시가 아니라 제작 과정에서 한 원문 대조이고, 공고는 바뀔 수 있어요. 출처: {srcs}</p>'
+            f'<p class="note">아래 출처 페이지(주최 측 공고, 또는 운영사무국 신청 페이지·첨부 서류)를 위 확인일에 직접 열어 이 페이지의 값과 맞춰 봤어요. 출처 종류는 링크 이름에 적었어요. 이 대조는 AI가 원문을 열어 값을 맞춰 본 기록이고 운영자가 직접 확인한 것이 아니에요(운영자가 확인하면 위 「확인 단계」에 날짜가 따로 표시돼요). 공고는, 공고는 바뀔 수 있어요. 출처: {srcs}</p>'
             f'<table class="info">{facts}</table>'
             + lst('수집 데이터와 달랐던 점(수정함)', v.get('corrections', [])) + lst('서로 다른 값(자동 분석 보류)', v.get('conflicts', [])) + lst('확인하지 못한 것', v.get('unverified', [])) + '</details>')
 
@@ -1016,6 +1129,7 @@ def detail(c, live):
         _src = f'공식 원문 대조 {VER[c["id"]]["verified_at"]} ({"일부 항목" if VER[c["id"]].get("level") == "partial" else "핵심 조건"}) — 아래 「공식 원문 대조 결과」에 항목별 출처'
     else:
         _src = (f'{CQ.host(c["link"]) if CQ.is_aggregator(c["link"]) else "주최 측 링크"}를 거쳐 자동 수집·정리한 값(처음 수집 {_hh.get("first") or "-"}) — 공식 원문 대조 전이라 자동 추정이 섞여 있을 수 있어요')
+    rows.append(('확인 단계', stage_row(c['id'])))
     rows.append(('값의 출처·확인 시점', _src))
     tb = ''.join(f'<tr><th>{k}</th><td{" class=need" if NEED in str(v) else ""}>{E(v)}</td></tr>' for k, v in rows)
     todo = []
@@ -1098,6 +1212,7 @@ def detail(c, live):
     # 2026-10-23 애드센스 「가치가 별로 없는 콘텐츠」: 자격·상금·제출물·접수·공고 핵심이 충분히 채워진 페이지만 검색 노출 (나머지는 noindex,follow)
     _rich = sum(1 for x in (c.get('elig'), c.get('pv'), sub, c.get('ch')) if x and str(x).strip() not in ('', '-', '공고 참조', '공고 확인')) + min(len(NPs), 4)
     RICH_SCORES.append(_rich)
+    RICH_BY_ID[c['id']] = _rich
     _thin_c = _rich < RICH_MIN
     page(f'/c/{c["id"]}/', seo_t, desc[:155], body,
          [('루리의 줍줍', '/'), (main_tag, f'/cat/{SLUG[main_tag]}/'), (c['title'], f'/c/{c["id"]}/')], ld, noindex=n < 0 or c not in live or _thin_c, og=og_card(c) if c in live else None)
@@ -1121,7 +1236,7 @@ if(!r.length){var li=el('li','empty');li.innerHTML='<img src="/assets/ruri/sad_s
 r.slice(0,shown).forEach(function(i){var li=el('li'),a=el('a','card cc');a.href='/c/'+i.id+'/';a.dataset.c=SL[i.tags[0]]||'etc';var cb=el('div','cb'),top=el('div','top');top.appendChild(el('h3','t',i.title));
 top.appendChild(el('span','d'+(i.left<=3?' u3':i.left<=7?' hot':''),i.left?'D-'+i.left:'D-DAY'));cb.appendChild(top);
 var dl=el('dl','cm');[['대상',i.eg||'확인 필요'],['제출물',i.effort||'확인 필요'],['상금',i.pk||'확인 필요'],['마감',i.end.slice(5).replace('-','.')]].forEach(function(p){var d=el('div');d.appendChild(el('dt','',p[0]));var dd=el('dd',p[1]==='확인 필요'?'nu':'',p[1]);d.appendChild(dd);dl.appendChild(d)});cb.appendChild(dl);
-cb.appendChild(el('p','o',[i.vf===2?'✅ 공식 원문 대조':i.vf===1?'☑ 공식 원문 일부 대조':'',i.org&&i.org!=='공고 참조'?i.org:'',i.tags[0]||''].filter(Boolean).join(' · ')));a.appendChild(cb);
+cb.appendChild(el('p','o',[i.vf===3?'👤 운영자 직접 검토':i.vf===2?'✅ 핵심 조건 대조':i.vf===1?'☑ 공식 원문 일부 대조':'',i.org&&i.org!=='공고 참조'?i.org:'',i.tags[0]||''].filter(Boolean).join(' · ')));a.appendChild(cb);
 if(i.th){var im=el('img','th');im.src='/assets/shots/'+i.id+'.webp';im.width=72;im.height=45;im.loading='lazy';im.alt='';a.appendChild(im)}li.appendChild(a);ul.appendChild(li)});
 $('more').hidden=r.length<=shown}
 ['q','due','sort','tg','ai'].forEach(function(i){$(i).addEventListener('input',function(){shown=PAGE;render()})});document.addEventListener('click',function(e){if(e.target.closest&&e.target.closest('#list a'))save()});window.addEventListener('pagehide',save);$('more').onclick=function(){shown+=PAGE;render()};
@@ -1776,6 +1891,7 @@ def contest_hubs(live):
 
 
 def build():
+    load_op_reviews()
     contests, events = load()
     for _c in contests:   # 공식 원문으로 확인한 값은 수집 데이터보다 우선한다(목록·상세 모두 같은 값을 쓰도록 로드 직후 적용)
         _v = VER.get(_c['id'])
@@ -1811,12 +1927,12 @@ def build():
         for c_ in live:
             lv = 'none' if c_['id'] not in VER else (VER[c_['id']].get('level') or 'full')
             miss_ = [n_ for n_, ok_ in (('자격', bool(c_.get('elig'))), ('제출물', bool(c_.get('effort') or c_.get('medium'))), ('상금', bool(c_.get('pv'))), ('접수 링크 공식', not CQ.is_aggregator(c_['link']))) if not ok_]
-            _rows.append((c_['end'], 0 if lv == 'none' else 1, c_['id'], c_['title'][:50], lv, ' · '.join(miss_), 'https://sungprofile.cloud/c/' + c_['id'] + '/', c_['link'], ' / '.join(GATE_REC.get(c_['id'], []))[:120]))
+            _rows.append((c_['end'], vstage(c_['id'])[0], c_['id'], c_['title'][:50], lv, ' · '.join(miss_), 'https://sungprofile.cloud/c/' + c_['id'] + '/', c_['link'], ' / '.join(GATE_REC.get(c_['id'], []))[:120]))
         _rows.sort(key=lambda r_: (r_[0], r_[1]))
         with open(os.path.join(_gd2, '운영자_검토목록.csv'), 'w', encoding='utf-8-sig', newline='') as f_:
-            w_ = _csv.writer(f_); w_.writerow(['마감일', '공식대조(0=없음)', 'ID', '제목', '대조수준', '비어 있는 핵심', '사이트 주소', '접수 링크', '재수집 사유', '운영자 확인일(직접 기입)', '운영자 메모'])
+            w_ = _csv.writer(f_); w_.writerow(['마감일', '확인단계(0수집 1공식확보 2핵심대조 3운영자)', 'ID', '제목', '대조수준', '비어 있는 핵심', '사이트 주소', '접수 링크', '재수집 사유', '운영자 확인일(직접 기입)', '운영자 메모'])
             for r_ in _rows:
-                w_.writerow(list(r_) + ['', ''])
+                w_.writerow(list(r_) + [(OP_REV.get(r_[2]) or ('', ''))[0], (OP_REV.get(r_[2]) or ('', ''))[1]])
     except Exception as e_:
         print('운영자 검토목록 실패', e_)
     try:
@@ -1851,7 +1967,7 @@ def build():
         ns = [int(x) for x in re.findall(r'(\d{1,3})\s*(?:명|팀|편|점|작품)', sw)]
         c['win'] = sum(ns) if ns and sum(ns) <= 300 else 0
     with open(os.path.join(ROOT, 'data.json'), 'w', encoding='utf-8', newline='\n') as f:
-        json.dump({'updated': NOW_KST().strftime('%Y-%m-%d %H:%M'), 'late': late, 'items': [{**{k: c[k] for k in keys}, 'eg': elig_short(c), 'pk': prize_short(c), 'vf': (2 if (VER.get(c['id']) or {}).get('level') != 'partial' and c['id'] in VER else 1 if c['id'] in VER else 0)} for c in live]},
+        json.dump({'updated': NOW_KST().strftime('%Y-%m-%d %H:%M'), 'late': late, 'items': [{**{k: c[k] for k in keys}, 'eg': elig_short(c), 'pk': prize_short(c), 'vf': vstage(c['id'])[0]} for c in live]},
                   f, ensure_ascii=False, separators=(',', ':'))
     # 챗봇 추천용 경품 이벤트 목록 (진행 중만)
     with open(os.path.join(ROOT, 'events.json'), 'w', encoding='utf-8', newline='\n') as f:
@@ -2106,9 +2222,9 @@ def build():
     _cs = [c for c in contests if c['id'] not in DUP and c['end'] >= TODAY.isoformat()]
     _gk = {g_['slug']: g_ for g_ in json.load(open(os.path.join(HERE, 'kin_guides.json'), encoding='utf-8'))['guides']}
     _tp = json.load(open(os.path.join(HERE, 'topic_hosts.json'), encoding='utf-8'))['topics']
-    sc_ctx = {'now': NOW_KST(), 'today': TODAY, 'contests': contests, 'DUP': DUP, 'events': events, 'aps': aps, 'AP_DUP': AP_DUP, 'deadline_row': deadline_row, 'elig_short': elig_short, 'prize_short': prize_short,
+    sc_ctx = {'now': NOW_KST(), 'today': TODAY, 'contests': contests, 'DUP': DUP, 'events': events, 'aps': aps, 'AP_DUP': AP_DUP, 'deadline_row': deadline_row, 'deadline_state': deadline_state, 'elig_short': elig_short, 'prize_short': prize_short,
               'tidy_ev': (lambda t: re.sub(r'^\s*\((?:중복|\d+회 중복)[^)]*\)\s*', '', t).strip()), 'EASY': EASY,
-              'new_contests': sorted(_cs, key=lambda c: (_first(c), c['end']), reverse=True)[:14], 'n_new': sum(1 for c in _cs if _first(c) == TODAY.isoformat()), 'n_ver': len(VER), 'VER': VER, 'n_core': sum(1 for v in VER.values() if v.get('level') != 'partial'), 'n_live': len(live),
+              'new_contests': sorted(_cs, key=lambda c: (_first(c), c['end']), reverse=True)[:14], 'n_new': sum(1 for c in _cs if _first(c) == TODAY.isoformat()), 'n_ver': len(VER), 'VER': VER, 'n_op': sum(1 for k_ in OP_REV if k_ in {c_['id'] for c_ in live}), 'n_core': sum(1 for v in VER.values() if v.get('level') != 'partial'), 'n_live': len(live),
               'guides': [{'u': f'/money/guide/{k}/', 'title': _gk[k]['h1'], 'desc': _gk[k]['lead']} for k in ('energy-voucher', 'eitc', 'naeil-card') if k in _gk],
               'n_contest': len(live), 'n_apply': len(aps), 'topics': _tp,
               'reads': [{'u': u_, 'title': html.unescape(re.sub(r'\s*[|｜].*$', '', (re.search(r'<title>(.*?)</title>', open(os.path.join(ROOT, u_.strip('/'), 'index.html'), encoding='utf-8').read(), re.S) or [0, u_])[1])), 'sub': sb_}
@@ -2183,9 +2299,12 @@ def build():
     print('광고 스크립트 뺀 검색 제외 페이지', strip_ads_noindex())
     for _w in numcheck_report():
         print('수치 불일치 의심', _w)
+    SURF = surface_report()
+    print('홈·목록·상세 불일치', len(SURF), SURF[:6])
     print('얇은 페이지 합침', collapse_thin(urls))
     import wiki as _WK   # 2026-10-23 루리 위키: 정보성 글을 docs 형태(왼쪽 목록·오른쪽 목차·이전/다음)로 묶는다
     print('루리 위키 글/적용', _WK.build_wiki(urls, NOINDEX, page, ROOT, SITE)); urls.append('/wiki/')
+    corrections_page(live); urls.append('/corrections/')
     try:
         import make_pdf as _MP
         _pp = [u for u in urls if _MP.is_pdf_path(u) and u not in NOINDEX]
@@ -5463,7 +5582,7 @@ def statics(nl, ne):
 <h2>테마별로 하는 일</h2><ul class="chk">
 <li><b>🕵️ 이슈</b>: 언론사 15곳의 RSS 기사를 사건별로 묶고, 보도한 언론사 수·실명 출처·제목 속 숫자와 따옴표가 본문에 있는지 같은 <b>확인 신호</b>로 점수를 매깁니다. 이 점수는 기사의 진실 여부를 판정하는 것이 아니라, 더 확인해 볼 곳을 알려 주는 참고 지표입니다. 사건·사고와 사생활 기사는 일부러 다루지 않습니다.</li>
 <li><b>📊 머니</b>: 증권사 리포트 기사에 나온 목표가·투자의견을 「상향·하향·유지」 노드로 나눠 종목별로 다시 셉니다. 투자 권유나 주가 예측이 아니며, 세금·대출 계산기와 투자 정책 표는 금융위원회·기획재정부·국세청 공식 자료를 확인해 만들었습니다.</li>
-<li><b>🏆 공모전</b>: 진행 중 공모전 {nl}건의 마감·상금·자격·제출물을 같은 형식으로 정리하고, 공고의 자격 문구에서 읽히는 참가 조건·제출 순서·분야와 자격이 비슷한 공모전 비교를 붙입니다. 자격이나 제출물을 확인하지 못한 공고는 「확인 필요」로 표시하고 준비 일정을 추천하지 않습니다. 주최 측 공식 페이지와 직접 대조한 공고({len(VER)}건)에만 「공식 원문 대조」와 확인일을 적고, 나머지는 수집 데이터 그대로입니다.</li>
+<li><b>🏆 공모전</b>: 진행 중 공모전 {nl}건의 마감·상금·자격·제출물을 같은 형식으로 정리하고, 공고의 자격 문구에서 읽히는 참가 조건·제출 순서·분야와 자격이 비슷한 공모전 비교를 붙입니다. 자격이나 제출물을 확인하지 못한 공고는 「확인 필요」로 표시하고 준비 일정을 추천하지 않습니다. 공고마다 확인 단계(수집 완료 → 공식 원문 확보 → 핵심 조건 대조 → 운영자 직접 검토)를 표시합니다. 현재 {len(VER)}건은 AI가 공식 원문을 열어 대조한 기록이 있고(그중 핵심 조건까지 대조한 건 {sum(1 for v_ in VER.values() if v_.get('level') != 'partial')}건), 운영자가 직접 확인해 날짜를 남긴 공고는 {len(OP_REV)}건입니다. 나머지는 수집 데이터 그대로이고, 대조해서 달랐던 점은 <a href="/corrections/">정정 기록</a>에 공개합니다.</li>
 <li><b>🍳 생활</b>: 지원금·청약 일정, 청약 가점 계산, 경품 이벤트 {ne}건, 냉장고 재료로 고르는 레시피를 정리합니다.</li></ul>
 <h2>콘텐츠 작성 방식</h2><ul class="chk">
 <li><b>출처</b>: 공식 기관 공고, 언론사 RSS, 공개 API(업비트 시세 등)만 씁니다. 사이트의 robots.txt가 수집을 막는 곳은 쓰지 않습니다.</li>

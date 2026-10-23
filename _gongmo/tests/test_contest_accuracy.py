@@ -1,3 +1,4 @@
+import re
 # -*- coding: utf-8 -*-
 """공모전 상세 표시 정확도 테스트 (2026-10-23). 사용: python -m pytest _gongmo/tests/test_contest_accuracy.py -q
 빌드를 실행하지 않고 build.py 의 판정 함수만 부른다(모듈 import 는 부작용 없이 가능)."""
@@ -67,7 +68,7 @@ class VerifiedValues(unittest.TestCase):
         self.assertTrue(B.deadline_row({'id': 'Q01471'}, NEED).startswith('17:00'))
 
     def test_time_from_korean_hour(self):   # 외황강: 마감 당일 18시
-        self.assertTrue(B.deadline_row({'id': 'Q01835'}, NEED).startswith('18시'))
+        self.assertTrue(B.deadline_row({'id': 'Q01835'}, NEED).startswith('18:00'))
 
     def test_verified_without_time_says_so(self):   # 화성: 공식에 시각 없음
         self.assertIn('시각 명시 없음', B.deadline_row({'id': 'Q01293'}, NEED))
@@ -154,3 +155,16 @@ def test_common_guide_links_exist_after_build():
     for sl in ('contest-rules-reading-eligibility-deadline', 'media-art-video-contest-submission-check', 'contest-music-font-license-check',
                'local-photo-contest-permission-portrait', 'ai-contest-rules-check', 'idea-contest-ppt-structure', 'contest-deadline-day-mistakes'):
         assert os.path.exists(os.path.join(root, 'guide', sl, 'index.html')), sl
+
+
+def test_every_verified_has_structured_deadline_and_no_invented_time():
+    import build as B
+    for cid, v in B.VER.items():
+        assert 'deadline' in v, cid
+        dl = v['deadline']
+        assert dl.get('time') is None or re.fullmatch(r'\d{2}:\d{2}', dl['time']), cid
+        if dl.get('time') is None:
+            assert B.deadline_row({'id': cid}, '확인 필요').startswith('시각 명시 없음'), cid
+    assert B.deadline_state({'id': 'Q01299'}) == 'absent'      # 대전: 공고 본문에 시각 없음(게시판 헤더 23:59는 확정하지 않음)
+    assert B.deadline_state({'id': 'ZZZ'}) == 'unknown'
+    assert '23:59' not in B.deadline_row({'id': 'Q01299'}, '확인 필요').split('—')[0]
