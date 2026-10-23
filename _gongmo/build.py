@@ -7,6 +7,7 @@
 import collections, json, os, re, sys, html, shutil, datetime, subprocess, hashlib, time, urllib.request
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import parse as P
+import contest_quality as CQ   # 2026-10-23 Sprint 1: 사진/영상 구분·링크 표기·마감일 문구 규칙(tests/test_contest_quality.py)
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
@@ -320,6 +321,7 @@ def load():
         c['region'] = P.clean(r.get('region', '') if isinstance(r.get('region'), str) else '')[:10]
         c['fee'] = r.get('fee') or 0
         c['submit'] = P.clean(r.get('submit', ''))[:10]
+        c['medium'] = CQ.medium_of(c['title'], r.get('effort', ''))   # photo | video | photo+video | ''
         c['ai'] = r.get('ai') if r.get('ai') in ('허용', '금지', '표기') else ''
         if re.match(r'^\s*(및|등|또는|,|·|\)|이상\b)', c.get('elig') or '') or c.get('elig') in ('공고 참조', '-'):   # 2026-10-19: 잘려 들어온 자격 문구는 비워 「공식 공고 확인 필요」로
             c['elig'] = ''
@@ -456,6 +458,8 @@ def collapse_thin(urls):
     return len(COLL), n
 
 
+RICH_SCORES = []
+RICH_MIN = int(os.environ.get('RICH_MIN', '6'))
 THIN_FORCE_NOINDEX = {'/community/', '/me/', '/plaza/', '/ssul/', '/dev/tag/windows/', '/satire/2026-10-18/'}
 
 
@@ -578,11 +582,13 @@ def c_insight(c, live):
     """공모전마다 숫자가 다른 루리 분석 + 같은 분야 비교표. 공고 원문을 옮기지 않고 우리 데이터로 계산한 것만."""
     n = dday(c['end'])[0]
     tag = c['tags'][0]
-    same = [x for x in live if tag in x['tags'] and x['id'] != c['id']]
+    mdm = c.get('medium', '')   # (med 는 아래에서 상금 중간값으로 쓰이므로 이름을 분리)
+    same = [x for x in live if tag in x['tags'] and x['id'] != c['id'] and (tag != '영상' or not mdm or x.get('medium', '') == mdm)]   # 사진은 사진끼리, 영상은 영상끼리 비교
+    tag_l = CQ.label_for(tag, mdm)
     L = []
     if same:
         early = sum(1 for x in same if x['end'] < c['end'])
-        L.append(f'지금 접수 중인 {tag} 공모전은 이것 말고 {len(same)}건이 더 있고, 이 공모전은 ' + ('가장 먼저 마감해요.' if early == 0 else '가장 늦게 마감하는 편이라 준비할 시간이 넉넉해요.' if early >= len(same) * .8 else f'그중 {early + 1}번째로 마감이 빨라요.'))
+        L.append(f'지금 접수 중인 {tag_l} 공모전은 이것 말고 {len(same)}건이 더 있고, 이 공모전은 ' + ('가장 먼저 마감해요.' if early == 0 else '가장 늦게 마감하는 편이라 준비할 시간이 넉넉해요.' if early >= len(same) * .8 else f'그중 {early + 1}번째로 마감이 빨라요.'))
     pv = [x['pv'] for x in same if x.get('pv')]
     if c.get('pv') and pv:
         big = sum(1 for v in pv if v > c['pv'])
@@ -600,7 +606,7 @@ def c_insight(c, live):
         we = sum(1 for k in range(1, n + 1) if (TODAY + datetime.timedelta(days=k)).weekday() == 5)
         L.append(f'「{c["title"][:40]}」 마감({ddot(c["end"])[5:]})까지 준비에 쓸 수 있는 토요일은 {we}번이에요.' + (' 주말 하루 안에 초안을 끝내는 일정이 현실적이에요.' if we <= 1 else ' 첫 주말에 기획, 마지막 주말에 마무리하는 식으로 나눠 보세요.'))
     if c.get('org') and c['org'] not in ('공고 참조', ''):
-        L.append(f'주최는 {c["org"][:40]}이고, ' + (f'{c["region"]} 지역 공모전이에요. ' if c.get('region') else '') + f'{"·".join(c["tags"][:2])} 분야로 분류했어요.')
+        L.append(f'주최는 {c["org"][:40]}이고, ' + (f'{c["region"]} 지역 공모전이에요. ' if c.get('region') else '') + f'{"·".join(CQ.label_for(t, mdm) for t in c["tags"][:2])} 분야로 분류했어요.')
     el = c.get('elig') or ''
     for pat, note in ELIG_NOTE:
         if re.search(pat, el):
@@ -623,7 +629,7 @@ def c_insight(c, live):
     tb = ''
     if cmp_:
         rows = ''.join(f'<tr><td><a href="/c/{x["id"]}/">{E(x["title"][:40])}</a></td><td>{E(won_txt(x["pv"]) if x.get("pv") else "상금 공고 확인")}</td><td>{ddot(x["end"])[5:]} 마감</td><td>{E((x.get("effort") or "공고 확인"))}</td></tr>' for x in cmp_)
-        tb = (f'<h2>🔍 마감이 비슷한 {E(tag)} 공모전 비교</h2><table class="info cmp"><tr><th>공모전</th><th>상금</th><th>마감</th><th>제출물</th></tr>'
+        tb = (f'<h2>🔍 마감이 비슷한 {E(tag_l)} 공모전 비교</h2><table class="info cmp"><tr><th>공모전</th><th>상금</th><th>마감</th><th>제출물</th></tr>'
               f'<tr class="on"><td>이 공모전</td><td>{E(won_txt(c["pv"]) if c.get("pv") else "상금 공고 확인")}</td><td>{ddot(c["end"])[5:]} 마감</td><td>{E(c.get("effort") or "공고 확인")}</td></tr>{rows}</table>')
     return (f'<h2>🧐 루리 분석</h2><p>{" ".join(E(x) for x in L)}</p>' if L else '') + plan + tb
 
@@ -638,8 +644,8 @@ def detail(c, live):
         return
     n, dd = dday(c['end'])
     main_tag = c['tags'][0]
-    tips = ''.join(f'<li>{E(t)}</li>' for tag in c['tags'][:2] for t in TIPS[tag])
-    sim = [x for x in live if x['id'] != c['id'] and main_tag in x['tags']][:6]
+    tips = ''.join(f'<li>{E(t)}</li>' for t in CQ.tips_for(c['tags'], c.get('medium', ''), TIPS)) or ''.join(f'<li>{E(t)}</li>' for t in TIPS['기타'])
+    sim = [x for x in live if x['id'] != c['id'] and main_tag in x['tags'] and (main_tag != '영상' or not c.get('medium') or x.get('medium', '') == c.get('medium'))][:6]
     simh = ''.join(card(x) for x in sim)
     status = ('<p class="warn">접수가 마감된 공모전입니다. 같은 분야의 진행 중 공모전을 아래에서 확인하세요.</p>' if n < 0
               else f'<p class="lead"><span class="{"d u3" if n <= 3 else "d hot" if n <= 7 else "d"}">{dd}</span> {ddot(c["end"])} 마감</p>')
@@ -674,17 +680,18 @@ def detail(c, live):
                  + ''.join(f' · {x["d"]} 변경: ' + ', '.join(f'{FL[k]} 「{E(str(v[0])[:20])}」→「{E(str(v[1])[:20])}」' for k, v in x['f'].items()) for x in (hh.get('chg') or [])[-3:]) + ' (한국 시간)</p>')
     np_html = ('<h2>📄 공고에서 확인한 핵심</h2><table class="info np">' + ''.join(f'<tr><th>{E(k)}</th><td>{E(v)}</td></tr>' for k, v in NPs) + '</table><p class="note">공고 원문의 항목을 그대로 옮긴 거예요(자동 추출이라 일부만 보일 수 있어요). 전체 내용은 공식 공고에서 확인하세요.</p>') if NPs else ''
     chk_need = '<h2>✅ 공식 공고에서 꼭 확인할 것</h2><ul class="chk">' + ''.join(f'<li>{E(t)}</li>' for t in todo) + '</ul>'
-    catl = ' · '.join(f'<a href="/cat/{SLUG[t]}/">{E(t)}</a>' for t in c['tags'])
+    catl = ' · '.join(f'<a href="/cat/{SLUG[t]}/">{E(CQ.label_for(t, c.get("medium", "")))}</a>' for t in c['tags'])
+    LK_BTN, LK_NOTE, LK_ALT = CQ.link_wording(c['link'])
     org = c['org'] if c['org'] != '공고 참조' else '주최 기관'
-    summary = (f'「{c["title"]}」은 {org}에서 진행하는 {", ".join(c["tags"])} 분야 공모전으로 {ddot(c["end"])}까지 접수합니다. '
+    summary = (f'「{c["title"]}」은 {org}에서 진행하는 {", ".join(CQ.label_for(t, c.get("medium", "")) for t in c["tags"])} 분야 공모전이에요. {CQ.deadline_sentence(ddot(c["end"]), n)} '
                + (f'응모 자격은 "{c["elig"]}"이고 ' if c.get('elig') else '응모 자격은 공식 공고에서 확인이 필요하고 ') + (f'상금은 {c["prize"]}입니다. ' if c.get('pv') else '상금은 공식 공고에서 확인하세요. ') +
                f'접수 방법은 {c["ch"]}이고, 마감 시각과 제출 양식·파일 형식은 공식 공고에서 먼저 확인하세요.')
-    body = f'''<p class="bc"><a href="/">홈</a> › <a href="/cat/{SLUG[main_tag]}/">{E(main_tag)}</a></p>
-<section class="dh" data-c="{SLUG[main_tag]}"><span class="ic big">{CAT_ICON[main_tag]}</span><h1>{E(c["title"])}</h1>{status}</section>
+    body = f'''<p class="bc"><a href="/">홈</a> › <a href="/cat/{SLUG[main_tag]}/">{E(CQ.label_for(main_tag, c.get("medium", "")))}</a></p>
+<section class="dh" data-c="{SLUG[main_tag]}"><span class="ic big">{'📷' if main_tag == '영상' and c.get('medium') == 'photo' else CAT_ICON[main_tag]}</span><h1>{E(c["title"])}</h1>{status}</section>
 {ruri}
-<a class="shot" href="{E(c["link"])}" target="_blank" rel="noopener nofollow">{f'<img src="/assets/shots/{c["id"]}.webp" width="640" height="400" alt="{E(c["title"])} 공식 공고 화면" fetchpriority="high">' if c.get('th') else f'<img class="ruri" src="/assets/ruri/thumbsup.webp" width="300" height="415" alt="루리">'}<span>공식 공고 페이지 열기 →</span></a>
+<a class="shot" href="{E(c["link"])}" target="_blank" rel="noopener nofollow">{f'<img src="/assets/shots/{c["id"]}.webp" width="640" height="400" alt="{E(c["title"])} {LK_ALT}" fetchpriority="high">' if c.get('th') else f'<img class="ruri" src="/assets/ruri/thumbsup.webp" width="300" height="415" alt="루리">'}<span>{'공고 수집처 페이지 열기 →' if CQ.is_aggregator(c['link']) else '공식 공고 페이지 열기 →'}</span></a>
 <div class="panel"><table class="info">{tb}</table>
-<a class="btn" href="{E(c["link"])}" target="_blank" rel="noopener nofollow">공식 공고·접수 페이지 열기 →</a><p class="note">링크는 주최 측 공고(또는 접수) 페이지예요. 공고가 바뀌었을 수 있으니 접수 전 다시 확인하세요.</p></div>
+<a class="btn" href="{E(c["link"])}" target="_blank" rel="noopener nofollow">{LK_BTN}</a><p class="note">{LK_NOTE}</p></div>
 {chk_need}
 {share_bar(c['title'], f'「{c["title"]}」 {ddot(c["end"])[5:]} 마감' + (f' · {c["prize"]}' if c.get('pv') else '') + ' — 자격·제출물 정리')}{comm_banner()}{join_cta('contest')}
 <div class="my-acts" data-id="c:{c["id"]}" data-title="{E(c["title"])}" data-end="{c["end"]}"></div>
@@ -712,8 +719,12 @@ def detail(c, live):
         _nm = _nm[:58 - 4 - len(_tail[0])].rstrip() + '…'
     seo_t = f"{_nm} | {' · '.join(_tail)}"   # 2026-10-19 자연 유입: 이름 맨 앞 + 연도·마감·상금·제출물
     body += cp_box('공모전 대학생 공부', '공모전 준비할 때 많이 찾는 물건:')
+    # 2026-10-23 애드센스 「가치가 별로 없는 콘텐츠」: 자격·상금·제출물·접수·공고 핵심이 충분히 채워진 페이지만 검색 노출 (나머지는 noindex,follow)
+    _rich = sum(1 for x in (c.get('elig'), c.get('pv'), sub, c.get('ch')) if x and str(x).strip() not in ('', '-', '공고 참조', '공고 확인')) + min(len(NPs), 4)
+    RICH_SCORES.append(_rich)
+    _thin_c = _rich < RICH_MIN
     page(f'/c/{c["id"]}/', seo_t, desc[:155], body,
-         [('루리의 줍줍', '/'), (main_tag, f'/cat/{SLUG[main_tag]}/'), (c['title'], f'/c/{c["id"]}/')], ld, noindex=n < 0 or c not in live, og=og_card(c) if c in live else None)
+         [('루리의 줍줍', '/'), (main_tag, f'/cat/{SLUG[main_tag]}/'), (c['title'], f'/c/{c["id"]}/')], ld, noindex=n < 0 or c not in live or _thin_c, og=og_card(c) if c in live else None)
     GONE[f'/c/{c["id"]}/'] = [c['title'], f'/cat/{SLUG[main_tag]}/', f'{main_tag} 공모전', c['end']]
 
 
@@ -1643,6 +1654,7 @@ def build():
     gone_pages()
     import finder   # 공모전 자동 자료 찾기 색인·질의 (2026-10-19)
     print('자료 색인', finder.build_index(urls, NOINDEX, {c['id'] for c in live}), '질의', len(finder.build_queries(live, notice_points)))
+    print('공모전 충실도 분포', sorted(collections.Counter(RICH_SCORES).items()), '기준', RICH_MIN)
     print('auto_thin noindex', auto_thin(urls))
     print('얇은 페이지 합침', collapse_thin(urls))
     try:
