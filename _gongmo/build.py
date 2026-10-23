@@ -405,7 +405,7 @@ def elig_short(c):
     if re.search(r'창업', e): t.append('창업자')
     if re.search(r'팀\s*(?:구성|단위)|2인\s*이상', e): t.append('팀')
     if t == ['팀']:
-        return '팀 참가'
+        return '누구나' if re.search(r'제한\s?없|누구나', e) else '팀 참가'
     if t:
         return '·'.join(t[:2])
     if re.search(r'제한\s?없|누구나|전\s?국민|일반\s?국민|일반인', e):
@@ -865,6 +865,9 @@ def _ai_short(v, NEED):
         return '허용(활용 시 지원서에 명시 필수 — 공식 공고 확인)'
     if '수집 데이터 기준' in v:
         return re.split(r'\s*\(', v)[0].strip() + '(수집 데이터 기준)'
+    if '공식 원문 확인' in v:
+        base = re.split(r'\s*\(공식 원문', v)[0].strip()
+        return SH.clip(base, 40) or '조건 있음 — 아래 표 참고'
     return re.split(r'\s*[—(]', v)[0].strip() or NEED
 
 
@@ -896,7 +899,7 @@ def detail(c, live):
     sim = sorted([x for x in live if sim_why(c, x)], key=lambda x: (-len(sim_why(c, x)), abs((datetime.date.fromisoformat(x['end']) - datetime.date.fromisoformat(c['end'])).days)))[:3]
     simh = ''.join(card(x) for x in sim)
     status = ('<p class="warn">접수가 마감된 공모전입니다. 같은 분야의 진행 중 공모전을 아래에서 확인하세요.</p>' if n < 0
-              else (f'<p class="lead"><span class="d">기존 공고 기준</span> {ddot(c["end"])[5:]} 마감 · <b>연장일 확인 필요</b></p>' if (VER.get(c['id']) or {}).get('alerts') or (VER.get(c['id']) or {}).get('conflicts')
+              else (f'<p class="lead"><span class="d">기존 공고 기준</span> {ddot(c["end"])[5:]} 마감 · <b>연장일 확인 필요</b></p>' if (VER.get(c['id']) or {}).get('alerts')
                     else f'<p class="lead"><span class="{"d u3" if n <= 3 else "d hot" if n <= 7 else "d"}">{dd}</span> {ddot(c["end"])} 마감{deadline_badge(c)}</p>'))
     ruri = (say('sad', '아쉽지만 이건 마감됐어요. 아래 진행 중인 공모전을 봐 주세요!') if n < 0 else
             say('surprise', f'마감까지 <b>{dd}</b>! 오늘 바로 요강부터 확인해요.') if n <= 3 else
@@ -952,7 +955,7 @@ def detail(c, live):
     _pr = prize_short(c)
     if _pr == '확인 필요' and c.get('prize') and '부문' in c['prize']:
         _pr = '부문별로 다름 · ' + (SH.clip(c['prize'], 24) or '표 참고')
-    _qs = [('참가 대상', elig_short(c) if elig_short(c) != '확인 필요' else v_(c['elig'])), ('마감', ('기존 공고 기준 ' + ddot(c['end'])[5:] + ' · 연장일 확인 필요') if (_v0.get('alerts') or _v0.get('conflicts')) else (ddot(c['end'])[5:] + ' ' + dd)),
+    _qs = [('참가 대상', elig_short(c) if elig_short(c) != '확인 필요' else v_(c['elig'])), ('마감', ('기존 공고 기준 ' + ddot(c['end'])[5:] + ' · 연장일 확인 필요') if _v0.get('alerts') else (ddot(c['end'])[5:] + ' ' + dd)),
            ('제출물', sub_short(c)), ('상금', _pr), ('AI 조건', _ai_short(ai_row(c, NEED), NEED))]
     qs_html = ''.join(f'<div><dt>{k_}</dt><dd{" class=nu" if NEED in str(v_2) or v_2 == "확인 필요" else ""}>{E(v_2)}</dd></div>' for k_, v_2 in _qs)
     body = f'''<p class="bc"><a href="/">홈</a> › <a href="/cat/{SLUG[main_tag]}/">{E(CQ.label_for(main_tag, c.get("medium", "")))}</a></p>
