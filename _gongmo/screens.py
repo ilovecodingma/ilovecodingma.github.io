@@ -78,6 +78,21 @@ def today_html(ctx):
             '<link rel="stylesheet" href="/assets/home/screens.css?v=1"><script defer src="/assets/home/screens.js?v=1"></script>')
 
 
+def ver_items(ctx, limit=6):
+    """공식 원문까지 대조한 진행 중 공모전(마감 임박순). 홈에서 확인 수준이 높은 콘텐츠를 먼저 보여 주기 위한 목록."""
+    T = ctx['today'].isoformat(); V = ctx.get('VER') or {}; out = []
+    for c in sorted(ctx['contests'], key=lambda c: c['end']):
+        if c['id'] not in V or c['id'] in ctx['DUP'] or c['end'] < T:
+            continue
+        lv = V[c['id']].get('level')
+        dr = ctx['deadline_row'](c, '')
+        tm = re.match(r'(\d{1,2}(?::\d{2}|시))', dr)
+        out.append({'type': '공모전', 'title': c['title'], 'target': ctx['elig_short'](c), 'benefit': ctx['prize_short'](c), 'time': tm.group(1) if tm else '',
+                    'href': f'/c/{c["id"]}/', 'ext': c.get('link') or '', 'org': c.get('org') or '', 'cid': c['id'], 'end': c['end'], 'full': lv != 'partial'})
+    out.sort(key=lambda x: (0 if x['full'] else 1, x['end']))
+    return out[:limit]
+
+
 def home_html(ctx):
     now = ctx['now']; items = due_items(ctx)
     new_c = [c for c in ctx['new_contests'] if ctx['elig_short'](c) not in ('미확인', '확인 필요') and (c.get('effort') or c.get('medium')) and (c['id'] in (ctx.get('VER') or {}) or ctx['prize_short'](c) != '확인 필요')]
@@ -94,6 +109,10 @@ def home_html(ctx):
     sub = ''.join(f'<a href="{u}">{ic} {E(t)}</a>' for ic, t, u in (('🎁', '경품 이벤트', '/event/'), ('📚', '루리 위키', '/wiki/'), ('💰', '생활 돈 가이드', '/money/guide/'), ('📺', '뉴스', '/news/')))
     allsv = ''.join(f'<a href="{E(t["path"])}"><i>{t["icon"]}</i>{E(t["name"])}</a>' for t in ctx['topics'])
     feats = ''.join(f'<li><b>{E(a)}</b><span>{E(b)}</span></li>' for a, b in (('루리 위키', '정보성 글을 문서처럼 묶어 검색·이전/다음으로 읽어요 (10/23)'), ('재료 → 최저가', '레시피에서 없는 재료를 쇼핑몰 가격순 검색으로 바로 연결해요 (10/23)'), ('공식 원문 대조', '확인한 공모전은 확인일과 달랐던 점을 함께 보여 줘요 (10/23)')))
+    _vi = ver_items(ctx, 4)
+    ver_h = ''.join(_card(i) for i in _vi)
+    ver_sec = (f'<section class="hm-sec"><div class="hm-h"><h2>공식 원문까지 확인한 공모전</h2><a href="/contest/">공모전 찾기 →</a></div>'
+               f'<p class="note">주최 측 공고와 첨부 서류를 직접 열어 자격·제출 규격·접수 방법을 대조한 공모전이에요(확인일은 각 상세에).</p><ul class="td-l hm-td">{ver_h}</ul></section>') if _vi else ''
     return (f'<section class="hm-hero"><h1>오늘 필요한 생활 정보,<br>조건에 맞게 골라보세요.</h1>'
             '<p>공모전·지원금·이벤트·레시피를 AI가 매시간 모아 정리해요. 공식 공고와 대조한 곳에는 표시를 달고, 확인하지 못한 값은 「확인 필요」로 솔직하게 남겨요.</p>'
             '<form class="hm-s" role="search" action="/wiki/" onsubmit="return false"><input id="hq" type="search" placeholder="예: 청년 월세, 영상 공모전, 김치볶음밥, 근로장려금" aria-label="통합 검색" autocomplete="off">'
@@ -102,6 +121,7 @@ def home_html(ctx):
             f'<nav class="hm-act" aria-label="주요 바로가기">{mh}</nav><nav class="hm-sub" aria-label="더 보기">{sub}</nav>'
             f'<section class="hm-ai" aria-label="AI 수집 현황"><b>🤖 AI 수집기</b><span>마지막 수집 <b>{now:%H:%M}</b></span><span>오늘 새로 확인 <b>{ctx["n_new"]}건</b></span><span>진행 중 공모전 수집 <b>{ctx["n_live"]}건</b></span><span>공식 원문 확인 <b>{ctx["n_ver"]}건</b> <small>(핵심 조건까지 대조 {ctx["n_core"]}건 · 누적)</small></span><span>확인 못한 값은 「확인 필요」</span><a href="/about/">제작 원칙·로그</a></section>'
             f'<section class="hm-sec"><div class="hm-h"><h2>오늘 마감</h2><a href="/today/">전체 {len(items)}건 →</a></div><ul class="td-l hm-td">{prev_h}</ul></section>'
+            + ver_sec +
             f'<section class="hm-sec"><div class="hm-h"><h2>새로 확인한 공모전</h2><a href="/contest/">공모전 찾기 →</a></div><ul class="hm-nl">{new_h}</ul></section>'
             + (f'<section class="hm-sec"><div class="hm-h"><h2>추천 가이드</h2><a href="/wiki/">루리 위키 →</a></div><div class="hm-g">{guides}</div></section>' if guides else '')
             + f'<section class="hm-sec"><div class="hm-h"><h2>새로 생긴 기능</h2></div><ul class="hm-f">{feats}</ul></section>'

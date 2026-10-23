@@ -551,6 +551,54 @@ RICH_MIN = int(os.environ.get('RICH_MIN', '4'))   # 사용자 승인으로 6→4
 THIN_FORCE_NOINDEX = {'/community/', '/me/', '/plaza/', '/ssul/', '/dev/tag/windows/', '/satire/2026-10-18/'}
 
 
+ADS_TAG = re.compile(r'<script async src="https://pagead2\.googlesyndication\.com/pagead/js/adsbygoogle\.js[^"]*"[^>]*></script>\n?')
+
+
+def strip_ads_noindex():
+    """검색에서 뺀(내용이 비었거나 얇은) 페이지에는 광고 스크립트도 싣지 않는다(2026-10-23: 콘텐츠 없는 화면에 광고가 나오지 않게)."""
+    n = 0
+    for r, ds, fs in os.walk(ROOT):
+        ds[:] = [d for d in ds if d not in ('.git', 'assets', '_gongmo', '_trend', 'node_modules')]
+        if 'index.html' in fs:
+            f = os.path.join(r, 'index.html')
+            try:
+                doc = open(f, encoding='utf-8').read()
+            except Exception:
+                continue
+            if 'name="robots" content="noindex' in doc and 'adsbygoogle.js' in doc:
+                open(f, 'w', encoding='utf-8', newline='\n').write(ADS_TAG.sub('', doc, count=1)); n += 1
+    return n
+
+
+# 핵심 수치는 한 값만 허용한다: (이름, 수치 앞뒤 문맥 정규식, 허용 값 집합). 새 수치는 여기에 한 줄 추가하면 모든 페이지에서 검사된다.
+NUM_RULES = [
+    ('근로장려금 맞벌이 소득 기준', r'맞벌이[^.\n]{0,30}?(\d[\d,]{3,5})\s*만\s*원?\s*미만|(\d[\d,]{3,5})\s*만\s*원?\s*미만[^.\n]{0,20}?맞벌이', {'4,400', '4400'}),
+    ('근로장려금 홑벌이 소득 기준', r'홑벌이[^.\n]{0,30}?(\d[\d,]{3,5})\s*만\s*원?\s*미만', {'3,200', '3200'}),
+    ('근로장려금 단독 소득 기준', r'단독[^.\n]{0,30}?(\d[\d,]{3,5})\s*만\s*원?\s*미만', {'2,200', '2200'}),
+]
+
+
+def numcheck_report():
+    """같은 기준을 페이지마다 다르게 적은 곳이 있는지 빌드 결과 전체에서 찾는다(2026-10-23: 메인 요약과 상세 FAQ 수치 불일치 재발 방지)."""
+    warn = []
+    skip = ('.git', 'assets', '_gongmo', '_trend', 'c', 'fridge', 'og', 'pdf', 'node_modules')
+    for r, ds, fs in os.walk(ROOT):
+        ds[:] = [d for d in ds if d not in skip]
+        if 'index.html' not in fs:
+            continue
+        f = os.path.join(r, 'index.html')
+        try:
+            t = html.unescape(re.sub(r'<[^>]+>', ' ', open(f, encoding='utf-8').read()))
+        except Exception:
+            continue
+        for name, rx, ok in NUM_RULES:
+            for m in re.finditer(rx, t):
+                v = next((g for g in m.groups() if g), '')
+                if v and v not in ok:
+                    warn.append(f'{name}: {v}만 ({os.path.relpath(f, ROOT)})')
+    return warn
+
+
 def auto_thin(urls):
     """빌드가 끝난 뒤 상세 페이지의 고유 본문을 세어 200자 미만이면 검색 제외로 돌린다(adsense_audit 와 같은 셈법)."""
     import adsense_audit as A
@@ -2132,6 +2180,9 @@ def build():
     print('자료 색인', finder.build_index(urls, NOINDEX, {c['id'] for c in live}), '질의', len(finder.build_queries(live, notice_points)))
     print('공모전 충실도 분포', sorted(collections.Counter(RICH_SCORES).items()), '기준', RICH_MIN)
     print('auto_thin noindex', auto_thin(urls))
+    print('광고 스크립트 뺀 검색 제외 페이지', strip_ads_noindex())
+    for _w in numcheck_report():
+        print('수치 불일치 의심', _w)
     print('얇은 페이지 합침', collapse_thin(urls))
     import wiki as _WK   # 2026-10-23 루리 위키: 정보성 글을 docs 형태(왼쪽 목록·오른쪽 목차·이전/다음)로 묶는다
     print('루리 위키 글/적용', _WK.build_wiki(urls, NOINDEX, page, ROOT, SITE)); urls.append('/wiki/')
