@@ -1450,8 +1450,8 @@ def build():
         if not os.path.exists(f): return ''
         nw = 0
         for k_ in ('webtoon', 'anime'):
-            fw = os.path.join(HERE, 'watch', k_ + '.json')
-            if os.path.exists(fw): nw += len(json.load(open(fw, encoding='utf-8')).get('items', {}))
+            fw = os.path.join(ROOT, 'assets', 'watch', k_ + '.json')   # 추천 화면이 실제로 쓰는 목록 개수와 맞춘다
+            if os.path.exists(fw): nw += len(json.load(open(fw, encoding='utf-8')).get('r', []))
         stat = {'recipe': f'{NR_HOME}개', 'watch': f'{nw:,}편', 'policy': f'{len(aps)}건', 'contest': f'{len(live)}건 진행', 'event': f'{len(events):,}건', 'issue': '매시간', 'money': '계산기·가이드', 'game': '이번 주 무료', 'learn': '개발 지식', 'plaza': '이야기'}
         out = ''
         for t in json.load(open(f, encoding='utf-8'))['topics']:
