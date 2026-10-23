@@ -250,8 +250,8 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False, noinde
 <div><b>💰 지원금·머니</b><a href="/apply/">지원금·청약</a><a href="/money/tools/salary/">계산기</a><a href="/money/experts/">전문가 말 vs 시세</a><a href="/analyst/">애널리스트</a></div>
 <div><b>🏆 공모전</b><a href="/contest/">공모전 찾기</a><a href="/prep/">준비실</a><a href="/guide/">응모 가이드</a><a href="/lab/">수상 연구소</a></div>
 <div><b>📺 이슈</b><a href="/news/">루리 뉴스</a><a href="/trend/">이슈 트렌드</a><a href="/hot/">핫이슈</a><a href="/kw/">인기 키워드</a></div>
-<div><b>ℹ️ 사이트</b><a href="/about/">소개</a><a href="/ailog/">개발 지식</a><a href="/app/">앱·알림</a><a href="/all/">전체 메뉴</a></div></nav>
-{('<p class="ft-c">' + comm_btns() + '</p>') if COMM_LINKS else ''}<p class="ft-l"><a href="/privacy/">개인정보처리방침</a><a href="/terms/">이용약관</a><a href="/contact/">문의</a></p>
+<div><b>ℹ️ 운영·정책</b><a href="/about/">소개·운영 방식</a><a href="/privacy/">개인정보처리방침</a><a href="/terms/">이용약관</a><a href="/contact/">문의</a></div></nav>
+{('<p class="ft-c"><small>외부 채널</small> ' + comm_btns() + '</p>') if COMM_LINKS else ''}<p class="ft-l"><a href="/ailog/">개발 지식</a><a href="/app/">앱·알림</a><a href="/all/">전체 메뉴</a></p>
 <p class="ft-n">정보는 각 기관의 공고·언론 보도·공개 자료를 바탕으로 정리했어요. 정확한 내용은 반드시 공식 공고와 원문에서 확인하세요. 일부 링크는 쿠팡 파트너스 활동의 일환으로 수수료를 받을 수 있어요. © 2026 루리의 줍줍 · sungprofile.cloud</p></div></footer>{CL_CSS if COMM_LINKS else ''}
 </body></html>'''
     d = os.path.join(ROOT, path.strip('/'))
@@ -2141,11 +2141,11 @@ def game_pages(live):
     img = lambda u, w=232, h=130: f'<img src="{E(u)}" width="{w}" height="{h}" loading="lazy" decoding="async" referrerpolicy="no-referrer" alt="" onerror="this.remove()">' if u else ''
     css = ('<style>.gm-g{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px;list-style:none;padding:0;margin:8px 0}.gm-g li a{display:block;border:1px solid var(--bd,#e5e7eb);border-radius:12px;overflow:hidden;background:var(--card,#fff);color:var(--tx,#111);text-decoration:none;height:100%}'
            '.gm-g img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;background:#e5e7eb}.gm-g b{display:block;padding:8px 10px 2px;font-size:14.5px;line-height:1.35}.gm-g span{display:block;padding:0 10px 10px;font-size:13px;color:var(--mu,#6b7280)}'
-           '.gm-g em{font-style:normal;font-weight:800;color:#dc2626}.gm-g s{opacity:.6}.gm-l{padding-left:18px}.gm-l li{margin:4px 0}</style>')
-    free = ''.join(f'<li><a href="{E(x["url"])}" target="_blank" rel="noopener nofollow">{img(x["img"])}<b>{E(x["name"])}</b><span><s>{E(x["orig"])}</s> <em>무료</em><br>{E(x["start"])} ~ {E(x["end"])} (한국 시간)</span></a></li>' for x in ep.get('free', []))
-    upc = ''.join(f'<li><a href="{E(x["url"])}" target="_blank" rel="noopener nofollow">{img(x["img"])}<b>{E(x["name"])}</b><span>{E(x["start"])}부터 무료 예정<br>~ {E(x["end"])}</span></a></li>' for x in ep.get('upcoming', []))
+           '.gm-g em{font-style:normal;font-weight:800;color:#dc2626}.gm-g s{opacity:.6}.gm-g:has(>li:only-child){grid-template-columns:1fr}.gm-g:has(>li:only-child) li a{display:grid;grid-template-columns:minmax(0,320px) 1fr;align-items:center}.gm-g:has(>li:only-child) b{font-size:17px}.gm-t{font-style:normal;font-size:12px;font-weight:700;padding:1px 7px;border-radius:999px;background:#eef2ff;color:#4338ca}@media(max-width:560px){.gm-g:has(>li:only-child) li a{display:block}}.gm-l{padding-left:18px}.gm-l li{margin:4px 0}</style>')
+    free = ''.join(f'<li><a href="{E(x["url"])}" target="_blank" rel="noopener nofollow">{img(x["img"])}<b>{E(x["name"])}</b><span><s>{E(x["orig"])}</s> <em>무료</em> <i class="gm-t">기간 내 받으면 소장</i><br>{E(x["start"])} ~ {E(x["end"])} (한국 시간)</span></a></li>' for x in ep.get('free', []))
+    upc = ''.join(f'<li><a href="{E(x["url"])}" target="_blank" rel="noopener nofollow">{img(x["img"])}<b>{E(x["name"])}</b><span><i class="gm-t">예고</i> {E(x["start"])}부터 무료 예정<br>~ {E(x["end"])}</span></a></li>' for x in ep.get('upcoming', []))
     sale = ''.join(f'<li><a href="{E(x["url"])}" target="_blank" rel="noopener nofollow">{E(x["name"])}</a> <small><em>{x["off"]}%</em> ↓ {E(x["price"])} <s>{E(x["orig"])}</s> · ~{E(x["end"])}</small></li>' for x in ep.get('sale', []))
-    sp = ''.join(f'<li><a href="https://store.steampowered.com/app/{x["id"]}/" target="_blank" rel="noopener nofollow">{img(x["img"])}<b>{E(x["name"])}</b><span><em>{x["off"]}%</em> ↓ {won(x["price"])} <s>{won(x["orig"])}</s>{(" · ~" + E(x["until"])) if x["until"] else ""}</span></a></li>' for x in (st.get('specials') or [])[:9])
+    sp = ''.join(f'<li><a href="https://store.steampowered.com/app/{x["id"]}/" target="_blank" rel="noopener nofollow">{img(x["img"])}<b>{E(x["name"])}</b><span><em>{x["off"]}%</em> ↓ {won(x["price"])} <s>{won(x["orig"])}</s> <i class="gm-t">할인 기간 한정</i>{(" · ~" + E(x["until"])) if x["until"] else ""}</span></a></li>' for x in (st.get('specials') or [])[:9])
     tp = ''.join(f'<li><a href="https://store.steampowered.com/app/{x["id"]}/" target="_blank" rel="noopener nofollow">{E(x["name"])}</a> <small>{won(x["price"])}{(" · " + str(x["off"]) + "% 할인") if x["off"] else ""}</small></li>' for x in (st.get('top_sellers') or [])[:10])
     cs = ''.join(f'<li><a href="https://store.steampowered.com/app/{x["id"]}/" target="_blank" rel="noopener nofollow">{E(x["name"])}</a> <small>{won(x["price"]) if x["price"] else "가격 미정·무료"}</small></li>' for x in (st.get('coming_soon') or [])[:10])
     gc = sorted([c for c in live if GAME_RX.search(c['title'])], key=lambda c: (c['end'], -c.get('pv', 0)))[:12]
@@ -3940,8 +3940,8 @@ def plaza_page():
     """광장: 누구나 자기 글·레시피·썰을 올리는 공간 (2026-10-19 사용자: "사람들이 그냥 글을 자기 컨텐츠를 올릴수 있는 공간")"""
     body = ('<p class="bc"><a href="/">홈</a> › 광장</p><h1>🗣️ 줍줍 광장 — 아무거나 올리는 곳</h1>'
             + say('o_present', '공모전 후기든, 오늘 만든 밥이든, 그냥 하고 싶은 말이든 올려 주세요. 가입은 이메일·카카오·구글 중 하나면 끝나요.')
-            + '<p>여기는 루리가 정리한 글이 아니라 <b>이용자가 직접 올리는 공간</b>이에요. 내가 만든 레시피, 겪은 일(썰), 알게 된 팁, 묻고 싶은 것 아무거나 괜찮아요. '
-              '광고·도배·개인정보(전화번호·주소·계좌)는 지워요.</p>'
+            + '<details class="pz-guide"><summary>이용 안내 (이용자가 직접 올리는 공간)</summary><p>루리가 정리한 글이 아니라 <b>이용자가 직접 올리는 공간</b>이에요. 내가 만든 레시피, 겪은 일(썰), 알게 된 팁, 묻고 싶은 것 아무거나 괜찮아요. '
+              '광고·도배·개인정보(전화번호·주소·계좌)는 지워요.</p></details><style>.pz-guide{margin:8px 0 12px;font-size:14px}.pz-guide summary{cursor:pointer;font-weight:700;color:var(--brand,#6d28d9)}</style>'
             + '<div id="cm-board" data-contest="free" data-title="광장" data-head="올라온 글" data-kinds="free,recipe,story,tip,qna" '
               'data-ph="내가 만든 것, 겪은 일, 알게 된 팁을 자유롭게 써 주세요. 개인정보(전화번호·주소)는 쓰지 마세요." data-empty="아직 글이 없어요. 첫 글을 올려 보세요."></div>'
             + '<section class="mg-s"><div data-pcrecent="8"></div></section>'
@@ -4669,7 +4669,7 @@ def news_brief():
         _li = lambda L_: ''.join(f'<li><em>{E2(a["o"])}</em><a href="{E2(a["u"])}" target="_blank" rel="noopener nofollow">{E2(a["t"])}</a></li>' for a in L_)
         li = _li(by[:2])
         more_li = (f'<details class="nbd"><summary>언론사 제목 {len(by[2:5])}개 더 보기</summary><ul class="kw-l nbl">{_li(by[2:5])}</ul></details>' if len(by) > 2 else '')
-        out += (f'<article class="nb"><h3>{i}. {E2(x["t"])}</h3><p class="kwn">{E2(x.get("c") or "")} · 언론사 {x["on"]}곳이 보도 · 확인 신호 {G.get(x.get("g"), "")} {x.get("s") if x.get("s") is not None else "-"}점'
+        out += (f'<article class="nb"><h3>{i}. {E2(x["t"])}</h3><p class="kwn">{E2(x.get("c") or "")} · 언론사 {x["on"]}곳이 보도 · 확인 신호 {G.get(x.get("g"), "")} {x.get("s") if x.get("s") is not None else "-"}점(참고용)'
                 f'{" · 발언·주장 기사" if x.get("claim") else ""}</p>'
                 f'{tl_}<ul class="kw-l nbl">{li}</ul>{more_li}'
                 + (f'<p>🔢 <b>기사에 나온 숫자</b> ' + ' · '.join(f'{E2(o)} 「{E2(n_)}」' for o, n_ in ns) + (f' <span class="kwn">— 숫자가 엇갈림: {E2(", ".join(x["cf"][:3]))}</span>' if x.get('cf') else '') + '</p>' if ns else '')
@@ -4683,7 +4683,7 @@ def news_brief():
     except Exception:
         pass
     return ('<section class="mg-s nb-s" id="brief"><div class="nb-h"><img src="/assets/ruri/o_anchor_s.webp" width="64" height="88" alt="루리 뉴스 앵커 루리">'
-            f'<p><b>오늘의 브리핑</b> · {E2(NOW_KST().strftime("%m/%d %H:%M"))} 기준 언론사 3곳 이상이 다룬 이슈 {len(js)}개예요. 기사 제목과 숫자만 정리하고, 어느 쪽이 맞는지는 판단하지 않아요.</p></div>'
+            f'<p><b>오늘의 브리핑</b> · {E2(NOW_KST().strftime("%m/%d %H:%M"))} 기준 언론사 3곳 이상이 다룬 이슈 {len(js)}개예요. 기사 제목과 숫자만 정리하고, 어느 쪽이 맞는지는 판단하지 않아요.</p></div><p class="kwn">ℹ️ 「확인 신호 점수」는 여러 언론사가 보도했는지·실명 출처가 있는지·제목 속 숫자가 본문에 있는지를 본 참고 점수예요. 기사가 사실인지 판정하는 점수가 아니라 「더 확인해 볼 곳」을 알려 줍니다.</p>'
             + out + '</section><style>.nb{margin:12px 0;padding:14px;border:1px solid var(--bd,#e5e7eb);border-radius:14px;background:var(--card,#fff)}.nb h3{margin:0 0 4px;font-size:17px}.nb p{margin:6px 0;line-height:1.6}'
             '.nb-h{display:flex;gap:10px;align-items:center}.nb-h img{flex:none;width:48px;height:auto}.nbl{margin:6px 0}.nbl em{font-style:normal;font-weight:700;margin-right:6px;color:var(--pri,#b45309)}'
             '.nbd{margin:6px 0;font-size:14px}.nbd summary{cursor:pointer;color:var(--pri,#b45309);font-weight:700}.nbd summary small{font-weight:400;color:var(--mu,#6b7280);margin-left:6px}.nb .ip{margin:8px 0}'
