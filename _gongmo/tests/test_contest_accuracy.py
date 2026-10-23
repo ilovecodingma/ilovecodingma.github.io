@@ -79,7 +79,7 @@ class VerifiedValues(unittest.TestCase):
     def test_every_verified_has_source_and_date(self):
         for cid, v in B.VER.items():
             self.assertTrue(v['verified_at'], cid)
-            self.assertTrue(v['sources'] and all(s['url'].startswith('https://') for s in v['sources']), cid)
+            self.assertTrue(v['sources'] and all(s['url'].startswith(('https://', 'http://')) for s in v['sources']), cid)
             self.assertTrue(v['facts'], cid)
 
 

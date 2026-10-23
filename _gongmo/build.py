@@ -404,6 +404,8 @@ def elig_short(c):
     if re.search(r'[가-힣]{2,4}(?:도|시|군|구)\s*(?:내|거주)|도민|시민|군민|구민|관내', e): t.append('지역 거주')
     if re.search(r'창업', e): t.append('창업자')
     if re.search(r'팀\s*(?:구성|단위)|2인\s*이상', e): t.append('팀')
+    if t == ['팀']:
+        return '팀 참가'
     if t:
         return '·'.join(t[:2])
     if re.search(r'제한\s?없|누구나|전\s?국민|일반\s?국민|일반인', e):
@@ -418,6 +420,8 @@ def prize_short(c):
         return '1등 ' + won_txt(f)
     if t:
         return '총 ' + won_txt(t)
+    if re.search(r'상품|경품|상품권|혼합', c.get('prize') or ''):
+        return '경품 포함(표 참고)'   # 금액으로 환산되지 않는 시상은 금액으로 지어내지 않는다
     return '확인 필요'
 
 
@@ -3366,7 +3370,7 @@ def prize_split(c):
     def g(m):
         if not m:
             return 0
-        a_ = re.search(r'[\d,\.]+\s*(?:억\s*)?(?:천만|백만|만)?\s*원', m.group(1))   # 「6,000만원(21작품)」처럼 뒤에 괄호·부연이 붙어도 금액만 읽는다
+        a_ = re.search(r'[\d,\.]+\s*(?:억\s*)?(?:천만|백만|만)?\s*원|[\d,\.]+\s*(?:억|만)(?![가-힣])', m.group(1))   # 「6,000만원(21작품)」처럼 뒤에 괄호·부연이 붙어도 금액만 읽는다
         return (P.amount_won(a_.group(0).strip()) or 0) if a_ else 0
     return g(f), g(t)
 
