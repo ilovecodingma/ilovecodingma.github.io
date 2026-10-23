@@ -675,6 +675,10 @@ def sim_why(c, x):
         return []
     if c['tags'][0] == '영상' and c.get('medium') and x.get('medium', '') != c.get('medium'):
         return []
+    fc = {t.strip() for t in re.split(r',', c.get('field') or '') if t.strip()}
+    fx = {t.strip() for t in re.split(r',', x.get('field') or '') if t.strip()}
+    if not (fc and fx and fc & fx):
+        return []   # 수집처 분야 라벨이 하나도 겹치지 않으면 참가 대상·제출물이 같아도 비슷하다고 하지 않는다(창업 경진대회 ↔ AI 에이전트 기획서 오연결)
     r = []
     if elig_short(c) != '확인 필요' and elig_short(x) == elig_short(c):
         r.append('참가 대상 같음')
