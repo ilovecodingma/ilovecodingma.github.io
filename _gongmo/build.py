@@ -163,6 +163,17 @@ def law_linkify(html_s, default=None):
     return ''.join(out)
 
 
+_SEO_LINKS = None
+
+
+def _seo_exp_links():
+    global _SEO_LINKS
+    if _SEO_LINKS is None:
+        fp = os.path.join(HERE, 'seo_exp_links.json')
+        _SEO_LINKS = json.load(open(fp, encoding='utf-8')) if os.path.exists(fp) else {}
+    return _SEO_LINKS
+
+
 def page(path, title, desc, body, crumbs=None, ld=None, full_title=False, noindex=False, og=None, lang='ko', canon=None):
     url = SITE + (canon or path)
     TH = theme_of(path)
@@ -171,6 +182,8 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False, noinde
     PAGE_HASH[path] = hashlib.md5(re.sub(r'D-\d+|D-DAY|\d{1,2}:\d{2}|\d{4}-\d{2}-\d{2}|\d{1,2}/\d{1,2}|[\d,]+\s*(?:건|명|개|곳|회|일 남)', '', title + body).encode()).hexdigest()
     if noindex:
         NOINDEX.add(path)
+    if path in _seo_exp_links():   # 2026-10-23 검색 유입 실험군: 색인된 허브에 주제가 맞는 가이드 링크 (seo_exp_links.json, 실험 종료 시 파일만 지우면 사라짐)
+        body += ('<section class="seo-q"><h2>📌 많이 찾는 질문</h2><ul class="gm-l">' + ''.join(f'<li><a href="{E(x["path"])}">{E(x["text"])}</a></li>' for x in _seo_exp_links()[path]) + '</ul></section>')
     if path.startswith(('/money/guide/', '/money/tools/', '/guide/', '/ai/', '/qa/')) and not noindex:
         body = law_linkify(body, LAW_DEFAULT.get(path))
     COMM_TAGS = COMM_TAGS_TPL if COMM_API else ''
@@ -205,7 +218,7 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False, noinde
 <meta name="theme-color" content="{TH[3] if TH else '#5b21b6'}"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="오늘 뭐 먹지">
 <link rel="icon" href="/favicon.ico?v=6" sizes="any"><link rel="icon" type="image/png" sizes="48x48" href="/assets/icons/icon-48.png?v=6"><link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/icon-96.png?v=6"><link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/icon-192.png?v=6"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=6"><link rel="manifest" href="/site.webmanifest"><link rel="alternate" type="application/rss+xml" title="루리의 줍줍" href="/rss.xml">
 <link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="/assets/gm.css?v=20"><link rel="stylesheet" href="/assets/ds.css?v=15"><link rel="stylesheet" href="/assets/print.css?v=1"><script defer src="/assets/print.js?v=1"></script><link rel="stylesheet" href="/assets/pager/pager.css?v=2"><script defer src="/assets/pager/pager.js?v=2"></script>{('<link rel="stylesheet" href="/assets/chat/ruri-chat.css?v=9">') if not (TH and TH[0] == 'ai') else ''}{COMM_TAGS}{('<script type="module" src="/assets/chat/ruri-chat.js?v=16"></script>') if not (TH and TH[0] == 'ai') else ''}<link rel="stylesheet" href="/assets/app/shell.css?v=1"><script defer src="/assets/app/app.js?v=4"></script>
+<link rel="stylesheet" href="/assets/gm.css?v=20"><link rel="stylesheet" href="/assets/ds.css?v=15"><link rel="stylesheet" href="/assets/print.css?v=1"><script defer src="/assets/print.js?v=1"></script><link rel="stylesheet" href="/assets/pager/pager.css?v=2"><script defer src="/assets/pager/pager.js?v=3"></script>{('<link rel="stylesheet" href="/assets/chat/ruri-chat.css?v=9">') if not (TH and TH[0] == 'ai') else ''}{COMM_TAGS}{('<script type="module" src="/assets/chat/ruri-chat.js?v=16"></script>') if not (TH and TH[0] == 'ai') else ''}<link rel="stylesheet" href="/assets/app/shell.css?v=1"><script defer src="/assets/app/app.js?v=4"></script>
 {ldh}
 {TH_CSS}
 {GTAG}
@@ -2471,7 +2484,7 @@ def cheapest_page():
           "['중고나라','중고 검색','https://web.joongna.com/search/']];"
           "function draw(){var v=q.value.trim();if(!v){g.innerHTML='<p class=\"dl-h\">찾을 물건 이름을 입력하거나 아래 버튼을 눌러 보세요.</p>';return}"
           "g.innerHTML=S.map(function(s){return '<a href=\"'+s[2]+encodeURIComponent(v)+'\" target=\"_blank\" rel=\"noopener nofollow\">'+s[0]+'<small>'+s[1]+'</small></a>'}).join('')}"
-          "q.addEventListener('input',draw);document.querySelectorAll('.ch-c').forEach(function(b){b.addEventListener('click',function(){q.value=b.getAttribute('data-q');draw()})});draw()})();</script>")
+          "q.addEventListener('input',draw);document.querySelectorAll('.ch-c').forEach(function(b){b.addEventListener('click',function(){q.value=b.getAttribute('data-q');draw()})});var m=location.search.match(/[?&]q=([^&]*)/);if(m){try{q.value=decodeURIComponent(m[1].replace(/\+/g,' ')).slice(0,60)}catch(e){}}draw()})();</script>")
     body = ('<p class="bc"><a href="/">홈</a> › <a href="/money/daily/">생필품 단가 계산</a> › 가장 싼 곳 찾기</p>'
             '<h1>생필품·중고 가장 싼 곳 찾기 — 쇼핑몰·당근·번개장터 가격순 한 번에</h1>'
             '<div class="cat-st"><b>결론</b><br>물건 이름을 넣으면 쇼핑몰과 중고 앱의 가격 낮은 순 검색 화면을 한 번에 열 수 있어요. 줍줍은 가격을 수집하지 않아서 항상 각 서비스의 최신 화면이 기준이고, 「최저가」를 단정하지 않아요. 총액이 아니라 단가로 비교하는 계산기도 함께 두었어요.</div>'
@@ -4533,7 +4546,7 @@ def fridge_page():
                 + relsec
                 + (f'<details class="fr-cr"><summary>사진 출처</summary><p>{"<br>".join(cr)}</p></details>' if cr else '')
                 + '<p class="note">직접 조리 시험을 완료한 레시피로 소개하지 않습니다. 분량이 적힌 메뉴는 해당 분량을 우선하고, 분량이 없는 메뉴는 재현성 보완이 필요한 조리 아이디어입니다. 시간은 예상값이며 사진은 직접 조리 결과를 보증하지 않습니다. 보관 시에는 <a href="https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/leftovers-and-food-safety">USDA의 남은 음식 안전 안내</a>처럼 얕은 용기에 나누어 신속히 냉장하세요. 일반적인 부패하기 쉬운 음식은 실온 2시간 이내, 32℃를 넘는 더운 환경은 1시간 이내가 기준이며 이미 오래 방치한 음식은 재가열로 해결하지 않습니다. 이는 모든 메뉴의 보관 일수를 보증하는 안내가 아닙니다. 안전 안내 확인: 2026-10-20.</p></article>'
-                + '<link rel="stylesheet" href="/assets/fridge/fridge.css?v=13"><link rel="stylesheet" href="/assets/fridge/recipe.css?v=6"><script defer src="/assets/fridge/recipe.js?v=4"></script>')
+                + '<link rel="stylesheet" href="/assets/fridge/fridge.css?v=14"><link rel="stylesheet" href="/assets/fridge/recipe.css?v=7"><script defer src="/assets/fridge/recipe.js?v=5"></script>')
         def how_step(k, t):
             nm = re.split(r'[,.]', t)[0].strip()[:45] or f'{k}단계'
             d_ = {'@type': 'HowToStep', 'name': nm, 'text': t, 'url': f'{SITE}{u}#step{k}'}
@@ -4634,7 +4647,7 @@ def fridge_page():
 {kin_ans_links('/fridge/q/')}
 <details class="fr-all"><summary>📚 전체 레시피 {NR}개 보기</summary><ul>{allr}</ul></details>
 <a class="lab-cta" href="/cat/food/"><b>🏆 요리·레시피 공모전</b><span>레시피 공모전·요리경연대회 모아 보기 · 상금 받고 요리 실력 뽐내기 →</span></a><p class="note">사진은 재료를 찾는 데만 쓰고 저장하지 않아요. 고른 재료는 이 폰에만 저장돼요. 알레르기가 있으면 재료를 꼭 다시 확인해 주세요.</p>
-<link rel="stylesheet" href="/assets/fridge/fridge.css?v=13"><script defer src="/assets/fridge/fridge.js?v=15"></script>{REC_TAGS}""", [('루리의 줍줍', '/'), ('냉장고 파먹기', '/fridge/')],
+<link rel="stylesheet" href="/assets/fridge/fridge.css?v=14"><script defer src="/assets/fridge/fridge.js?v=16"></script>{REC_TAGS}""", [('루리의 줍줍', '/'), ('냉장고 파먹기', '/fridge/')],
          {'@context': 'https://schema.org', '@type': 'ItemList', 'name': '냉장고 파먹기 집밥 레시피', 'numberOfItems': NR, 'itemListElement': [{'@type': 'ListItem', 'position': k + 1, 'url': f'{SITE}/fridge/r/{fr_slug(r["n"])}/', 'name': r['n']} for k, r in enumerate(RS[:50])]})
     return urls
 

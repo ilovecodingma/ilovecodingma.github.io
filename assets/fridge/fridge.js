@@ -65,7 +65,7 @@
       return `<span>${g ? `<img src="${esc(g.f)}" width="22" height="22" loading="lazy" alt="">` : ''}${esc(i)}</span>`; }).join('');
     return `<article class="fr-m${big ? ' best' : ''}" id="m-${encodeURIComponent(x.r.n)}"><header>${head}<div><h3>${esc(x.r.n)}</h3><p><em>⏱ ${x.r.m}분</em><em>${esc(x.r.lv)}</em>${x.r.t.map(t => `<em class="t">#${esc(t)}</em>`).join('')}</p></div></header>
 <p class="fr-why">💡 ${esc((x.why || []).join(' · '))}</p>${(x.sub || []).length ? `<p class="fr-sub">🔁 ${x.sub.map(([a, b]) => `${esc(a)} 대신 ${esc(b)}`).join(', ')}${RO(x.sub[x.sub.length - 1][1])} 만들 수 있어요</p>` : ''}
-<p class="fr-use">${ing}${x.lack.map(i => `<span class="no">+ ${esc(i)} 사기</span>`).join('')}</p>
+<p class="fr-use">${ing}${x.lack.map(i => `<a class="no" href="/money/cheapest/?q=${encodeURIComponent(i)}" target="_blank" rel="noopener nofollow" title="${esc(i)} 최저가 검색">+ ${esc(i)} 최저가 ›</a>`).join('')}</p>
 <details${big ? ' open' : ''}><summary>만드는 법</summary><ol class="fr-steps">${steps}</ol>${x.r.opt.length ? `<p class="fr-tip">💡 있으면 더 좋아요: ${x.r.opt.map(esc).join(', ')}</p>` : ''}
 <p class="fr-look"><button class="fr-made" data-n="${esc(x.r.n)}">${made[x.r.n] ? '✅ 만들어 봤어요' : '👩‍🍳 만들어 봤어요'}</button></p>
 <p class="fr-look"><button class="fr-like" data-p="${esc(rpath(x.r.n))}" data-t="${esc(x.r.n)}">🤍 좋아요</button><span class="fr-st" data-pcs="${esc(rpath(x.r.n))}"></span></p>

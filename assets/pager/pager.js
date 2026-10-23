@@ -4,6 +4,7 @@
 //  JS 가 없거나 주소에 ?all=1 이 있으면 전부 그대로 보인다(검색 노출·인쇄 영향 없음). 주소는 바꾸지 않는다.
 window.addEventListener('load', function () { setTimeout(function () {   // 도구 화면이 JS 로 채워진 뒤 높이를 잰다
   if (/[?&]all=1/.test(location.search)) return;
+  if (!window.JUPJUP_PAGER_ON && !/[?&]pager=1/.test(location.search)) return;   // 2026-10-23 사용자 「그지같다·내용이 가려진다」 → 재작업·시험 전까지 꺼 둠(?pager=1 로만 시험)
   var main = document.querySelector('main');
   if (!main || main.hasAttribute('data-nopager')) return;
   var p = location.pathname;
