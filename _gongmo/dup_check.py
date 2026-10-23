@@ -14,6 +14,11 @@ def _jac(a, b):
     return len(a & b) / max(1, len(a | b))
 
 
+def _flat(t):
+    """대괄호 안 글자는 지우지 않고 기호·공백만 걷어 낸 제목(제목 전체가 대괄호 안에 있어도 남는다)."""
+    return re.sub(r'[^0-9A-Za-z가-힣]', '', t or '').lower()
+
+
 def _url(u):
     u = (u or '').strip().split('#')[0]
     p = up.urlparse(u)
@@ -111,6 +116,8 @@ def dups(items):
             pa, pb = _places(a['title']), _places(b['title'])
             if pa and pb and not (pa & pb):
                 continue   # 지역 이름이 서로 다르면 다른 공모전(경남 드론 ≠ 충남 드론)
+            if a['end'] == b['end'] and a.get('start') and a.get('start') == b.get('start') and _flat(a['title']) == _flat(b['title']) and len(_flat(a['title'])) >= 6:
+                pairs.append((a, b, '제목 동일(대괄호·기호 차이) · 접수 기간 같음')); continue   # 「[제2회 CBS 숏폼 공모전]」 ↔ 「제2회 CBS 숏폼 공모전」(2026-10-23 P0)
             j = _jac(B[a['id']], B[b['id']])
             na, nb = re.sub(r'[^0-9A-Za-z가-힣]', '', re.sub(r'총상금[^｜|]*[｜|]|\[[^\]]*\]', '', a['title'])), re.sub(r'[^0-9A-Za-z가-힣]', '', re.sub(r'총상금[^｜|]*[｜|]|\[[^\]]*\]', '', b['title']))
             if a['end'] == b['end'] and min(len(na), len(nb)) >= 10 and (na in nb or nb in na):
