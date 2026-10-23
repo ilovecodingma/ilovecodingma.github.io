@@ -2575,7 +2575,7 @@ def gamedb_pages():
                 + '<p class="dl-h">영상 제목·채널·조회수는 유튜브 검색 결과 기준이고, 영상은 각 채널 소유예요. 줍줍은 링크만 보여 주고 영상·공략 내용을 옮기지 않아요. 가격과 할인은 수시로 바뀌니 스토어에서 최신을 확인하세요.</p>'
                 + f'<p class="dl-h">갱신: {E(d.get("at", ""))} · <a href="/game/db/">다른 게임 보기</a></p>' + css + GAME_CSS)
         page(p, f'{g["name"]} 할인·공략 영상 모음 (스팀·Epic)', (s.get('desc') or f'{g["name"]}의 할인 정보와 공략·가이드 영상 링크를 모았어요.')[:150], body,
-             [('루리의 줍줍', '/'), ('게임', '/game/'), ('게임 DB', '/game/db/'), (g['name'][:30], p)])
+             [('루리의 줍줍', '/'), ('게임', '/game/'), ('게임 DB', '/game/db/'), (g['name'][:30], p)], noindex=True)   # 2026-10-23 애드센스 「가치가 별로 없는 콘텐츠」: 스토어 공개값+영상 링크만이라 직접 쓴 내용이 없어 검색 제외
         urls.append(p)
         pm = '🔥 ' if any(x['kind'] in ('스팀 할인', 'Epic 무료', 'Epic 할인') for x in g['promos']) else ''
         sub = next((f'{x.get("off")}% 할인 ₩{won(x.get("price"))}' for x in g['promos'] if x['kind'] == '스팀 할인'), next((x['kind'] for x in g['promos']), ''))
