@@ -115,3 +115,32 @@ def test_same_run_dup_rule():
     assert not D._same_run(a, c)            # 회차가 다르면 다른 공모전
     d = dict(b, id='Q4', title='제20회 월간 아이러브 미술 공모전')
     assert not D._same_run(dict(a, title='제20회 월간 아이러브 숏폼 공모전'), d)   # 부문 낱말이 어긋나면 다른 공모전
+
+
+# ---- 2026-10-23 재심사 2차: 분류·지역·추출·게이트 ----
+def test_tags_do_not_come_from_category_label_words():
+    import parse as P
+    t = P.tags_for('아이디어·창업·마케팅·네이밍, 과학·공학·학술', '2026 Tech Discovery 실험실창업 경진대회', 'KR')
+    assert t[0] == '아이디어·정책' and '문학' not in t and '논문' not in t
+
+
+def test_domestic_residence_is_not_regional_limit():
+    import build as B
+    assert B.region_kind('대한민국 거주하고 있는 누구나') == 'national'
+    assert B.region_kind('이천시 거주 또는 재직자') == 'specific'
+    assert B.region_kind('') == ''
+    assert '이천' not in B.region_row({'elig': '대한민국 거주하고 있는 누구나'}, '확인')
+
+
+def test_notice_points_not_cut_inside_dates():
+    import build as B
+    v = dict(B.notice_points('Q01152')).get('접수', '')
+    assert '10. 23.' in v and not v.rstrip().endswith('∼')
+
+
+def test_gate_holds_mismatches_and_keeps_missing_as_missing():
+    import contest_gate as G, build as B
+    h, _ = G.check({'id': 'x', 'title': '창업 경진대회', 'tags': ['문학'], 'elig': '', 'region': ''}, B.region_kind)
+    assert h and '분류' in h[0]
+    h2, r2 = G.check({'id': 'y', 'title': '숏폼 공모전', 'tags': ['영상'], 'elig': '', 'elig_raw': '개인 또는 팀(3인', 'region': ''}, B.region_kind)
+    assert not h2 and r2   # 잘린 자격은 비우고 재수집 대상으로
