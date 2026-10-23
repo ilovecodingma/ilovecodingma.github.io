@@ -341,6 +341,11 @@ def load():
         c['ai'] = r.get('ai') if r.get('ai') in ('허용', '금지', '표기') else ''
         if re.match(r'^\s*(및|등|또는|,|·|\)|이상\b)', c.get('elig') or '') or c.get('elig') in ('공고 참조', '-'):   # 2026-10-19: 잘려 들어온 자격 문구는 비워 「공식 공고 확인 필요」로
             c['elig'] = ''
+        for _k in ('field', 'elig', 'org', 'prize'):   # 수집 과정에서 본문에 섞인 메뉴·버튼 문구 제거(2026-10-23 재심사 지침 2번: 「첨부파일 다운로드 다운로드」)
+            if isinstance(c.get(_k), str):
+                c[_k] = SH.strip_ui(c[_k])
+        if c.get('elig'):
+            c['elig'] = SH.repair(c['elig'])   # 열린 괄호·문장 중간에서 끊긴 자격 문구는 끊긴 부분을 버리고, 남는 게 없으면 비운다(→ 「공식 공고 확인 필요」)
         if r.get('prize_first') and not c['pv']:
             c['pv'] = int(r['prize_first']); c['prize'] = f"1등 {int(r['prize_first']) // 10000:,}만원"
     seen, events = set(), []
@@ -658,67 +663,69 @@ def og_card(c):
 
 
 def c_insight(c, live):
-    """공모전마다 숫자가 다른 루리 분석 + 같은 분야 비교표. 공고 원문을 옮기지 않고 우리 데이터로 계산한 것만."""
+    """참가 판단용 해설(2026-10-23 애드센스 재심사 지침 4번). 마감까지 일수·주말 수·상금 순위 같은 계산으로 채우지 않고,
+    공고 자격·제출 문구에서 읽히는 것만으로 「누가 되고 누가 안 되는지·제출 순서·비슷한 공모전 비교」를 쓴다. 핵심 조건(자격·제출물)이 비어 있으면 일정 추천 전에 확인부터 안내한다."""
     n = dday(c['end'])[0]
     tag = c['tags'][0]
-    mdm = c.get('medium', '')   # (med 는 아래에서 상금 중간값으로 쓰이므로 이름을 분리)
-    same = [x for x in live if tag in x['tags'] and x['id'] != c['id'] and (tag != '영상' or not mdm or x.get('medium', '') == mdm)]   # 사진은 사진끼리, 영상은 영상끼리 비교
-    tag_l = CQ.label_for(tag, mdm)
-    L = []
-    if same:
-        early = sum(1 for x in same if x['end'] < c['end'])
-        L.append(f'지금 접수 중인 {tag_l} 공모전은 이것 말고 {len(same)}건이 더 있고, 이 공모전은 ' + ('가장 먼저 마감해요.' if early == 0 else '가장 늦게 마감하는 편이에요.' if early >= len(same) * .8 else f'그중 {early + 1}번째로 마감이 빨라요.'))
-    _bs, _vals = prize_basis(same + [c])   # 같은 기준(1등 상금끼리 또는 총상금끼리)으로만 순위·중간값을 계산한다
-    mine = _vals.get(c['id'])
-    pv = [v for k, v in _vals.items() if k != c['id']]
-    if mine and pv:
-        big = sum(1 for v in pv if v > mine)
-        med = sorted(pv)[len(pv) // 2]
-        L.append(f'{_bs}은 {won_txt(mine)}이고, 같은 분야에서 {_bs}이 숫자로 나온 {len(pv)}건 중 {big + 1}번째로 커요. 이 분야 {_bs} 중간값({won_txt(med)})보다 ' + ('커요.' if mine > med else '작아요.' if mine < med else '같아요.') + ' 상금 규모만으로 경쟁 정도를 알 수는 없어요.')
-    elif '부문' in (c.get('prize') or '') and not any(prize_split(c)):
-        L.append('부문마다 상금이 달라 하나의 1등 상금으로 놓고 같은 분야와 비교하기 어려워요. 표의 부문별 최고 상금을 기준으로 직접 비교해 보세요.')
-    elif any(prize_split(c)):
-        L.append(f'이 공모전은 {_bs} 금액이 따로 나와 있지 않아 같은 분야와 상금을 비교하지 않았어요(1등 상금과 총상금은 섞어 비교하지 않아요).')
-    elif not c.get('pv'):
-        L.append('상금이 숫자로 정리되지 않은 공모전이에요. 상장·기념품만 주는지, 부상이 따로 있는지 공고에서 확인해 보세요.')
-    if c.get('start'):
-        try:
-            tot = (datetime.date.fromisoformat(c['end']) - datetime.date.fromisoformat(c['start'])).days + 1
-            L.append(f'접수 기간은 모두 {tot}일' + (f'이고 오늘 기준 {n}일 남았어요.' if n >= 0 else '이었어요.'))
-        except Exception:
-            pass
-    if n >= 2:   # 공모전마다 다른 준비 여유(제목 포함 문장 — 숫자만 다른 문장은 고유 본문으로 치지 않음)
-        we = sum(1 for k in range(1, n + 1) if (TODAY + datetime.timedelta(days=k)).weekday() == 5)
-        su = sum(1 for k in range(1, n + 1) if (TODAY + datetime.timedelta(days=k)).weekday() == 6)
-        # 2026-10-23 정확도 수정: 작업량을 모르는 채 「일정이 현실적이에요」라고 판단하던 문장을 없애고, 남은 주말 수만 사실로 적는다
-        L.append(f'「{c["title"][:40]}」 마감({ddot(c["end"])[5:]})까지 토요일 {we}번·일요일 {su}번이 남아요. 제출물마다 필요한 작업 시간이 달라서, 이 일정으로 끝낼 수 있는지는 여기서 판단하지 않아요.')
-    if c.get('org') and c['org'] not in ('공고 참조', ''):
-        L.append(f'주최는 {c["org"][:40]}이고, ' + (f'{c["region"]} 지역 공모전이에요. ' if c.get('region') else '') + f'{"·".join(CQ.label_for(t, mdm) for t in c["tags"][:2])} 분야로 분류했어요.')
-    el = c.get('elig') or ''
-    for pat, note in ELIG_NOTE:
-        if re.search(pat, el):
-            L.append(note)
-            break
-    if c.get('effort') in EFFORT_NOTE:
-        L.append(f'제출물은 「{c["effort"]}」이에요. ' + EFFORT_NOTE[c['effort']])
+    mdm = c.get('medium', '')
+    el = (c.get('elig') or '').strip()
+    sub_known = bool(c.get('effort') or mdm)
+    miss = [x for x, ok in (('참가 대상·자격', bool(el)), ('제출물 종류', sub_known)) if not ok]
+    out = ''
+    NPd = dict(notice_points(c['id']))
+    src_txt = el + ' ' + ' '.join(NPd.values())
+    can, cant = [], []
+    if el:
+        can.append(f'공고의 자격 문구: 「{SH.clip(el, 120) or el[:120]}」')
+    LIM = [(r'거주|도민|시민|군민|구민|관내|주소지', '해당 지역에 거주·재직·재학하는 사람으로 제한될 수 있어요(주민등록 기준인지 공고 확인).'),
+           (r'대학생|대학원생|재학', '재학생 증빙(재학증명서)이 필요할 수 있어요. 휴학·졸업 예정자 포함 여부는 공고 확인.'),
+           (r'만\s?\d+\s?세|\d+세\s?(?:이상|이하)|청년', '나이 조건이 있어요. 기준일이 공고일인지 접수일인지 확인하세요.'),
+           (r'미등단|등단자|기수상|수상\s?경력|중복\s?수상', '등단·수상 경력에 따른 제한이 있을 수 있어요.'),
+           (r'중복\s?(?:응모|제출|참가)\s?(?:불가|금지)|1인\s?1(?:작품|편|건)|1인당\s?\d', '1인당 응모 편수 제한이 있을 수 있어요.'),
+           (r'외국인', '외국인 참가 가능 여부가 문구에 언급돼 있어요(공고 확인).'),
+           (r'팀|단체|2인|3인|5인', '팀·단체 참가 조건(인원·대표자)이 문구에 있어요.')]
+    for rx, msg in LIM:
+        if re.search(rx, src_txt):
+            cant.append(msg)
+    if can or cant:
+        out += '<h2>🙋 누가 참가할 수 있나요</h2><ul class="chk">' + ''.join(f'<li>{E(x)}</li>' for x in can) + '</ul>'
+        out += ('<h3>이런 경우는 조건을 더 확인하세요 <small>(자격 문구에서 읽힌 신호)</small></h3><ul class="chk">' + ''.join(f'<li>{E(x)}</li>' for x in cant) + '</ul>') if cant else ''
+    sub_t = c.get('effort') or {'photo': '사진', 'video': '영상', 'photo+video': '사진·영상'}.get(mdm, '')
+    pit = []
+    if sub_t in EFFORT_NOTE:
+        pit.append(EFFORT_NOTE[sub_t])
+    for k in ('제출물·규격', '접수', '시상'):
+        if NPd.get(k):
+            pit.append(f'공고 「{k}」: {NPd[k]}')
     if c.get('fee'):
-        L.append(f'참가비가 있는 공모전이에요({c["fee"]:,}원). 주최 기관이 맞는지 한 번 더 확인하세요.' if isinstance(c['fee'], int) else '참가비가 있는 공모전이에요. 주최 기관이 맞는지 한 번 더 확인하세요.')
-    org_n = sum(1 for x in live if x['org'] == c['org'] and x['id'] != c['id']) if c['org'] not in ('공고 참조', '') else 0
-    if org_n:
-        L.append(f'같은 주최({c["org"]})가 지금 받는 공모전이 {org_n}건 더 있어요. 한 번에 같이 준비하면 시간을 아낄 수 있어요.')
-    plan = ''
-    if n >= 4:
+        pit.append('참가비가 있다고 수집됐어요. 주최 기관 공식 공고에 적혀 있는지 확인하세요.')
+    if pit:
+        out += '<h2>⚠ 이 공모전에서 놓치기 쉬운 것</h2><ul class="chk">' + ''.join(f'<li>{E(x)}</li>' for x in pit[:6]) + '</ul>'
+    chn = {'web': '공식 접수 페이지에서 직접 제출', '메일': '이메일로 제출', '우편': '우편·방문으로 제출', '폼': '온라인 신청서(구글폼 등)로 제출'}
+    ch_ = c.get('ch') or ''
+    steps = ['공식 공고를 열어 자격·마감 시각·제출 규격을 확인해요.', '규격(분량·길이·파일 형식·파일명)에 맞춰 제출물을 만들어요.',
+             f'접수합니다 — 접수 방법은 자동 분류상 「{ch_ or "공고 확인"}」이에요(공고와 다를 수 있어요).', '접수 완료 메일이나 화면을 저장해 두고, 수정 가능 기간을 확인해요.']
+    if ch_ and ch_ != '공고 참조':
+        steps[2] = f'접수합니다 — 자동 분류상 「{ch_}」 방식이에요. 실제 접수 링크는 위 「공식 공고·접수」 버튼과 공고를 따르세요.'
+    out += '<h2>📤 제출 순서</h2><ol class="chk">' + ''.join(f'<li>{E(x)}</li>' for x in steps) + '</ol>'
+    if n >= 4 and not miss:
         e = datetime.date.fromisoformat(c['end'])
         d1 = TODAY + datetime.timedelta(days=max(1, n // 3)); d2 = e - datetime.timedelta(days=max(1, n // 5)); d3 = e - datetime.timedelta(days=1)
-        plan = (f'<h2>📅 추천 준비 일정 <small>루리 제안 · 공식 일정 아님</small></h2><p class="note">오늘({TODAY.month}/{TODAY.day})부터 마감일까지를 나눠 잡은 권장 일정이에요. 주최 측 공식 일정(발표·서류 제출 등)은 공고를 따르세요.</p><ul class="chk"><li>{d1.month}/{d1.day}까지: 요강 읽고 자격·제출물·분량 표시해 두기, 아이디어 3개 뽑기</li>'
-                f'<li>{d2.month}/{d2.day}까지: 초안 완성하고 하루 묵힌 뒤 고치기</li><li>{d3.month}/{d3.day}까지: 파일 형식·이름 맞춰 제출 (마감일엔 접수 서버가 몰려요)</li></ul>')
-    cmp_ = sorted(same, key=lambda x: (abs((datetime.date.fromisoformat(x['end']) - datetime.date.fromisoformat(c['end'])).days), -(x.get('pv') or 0)))[:5]
-    tb = ''
+        out += (f'<h2>📅 추천 준비 일정 <small>루리 제안 · 공식 일정 아님</small></h2><p class="note">가정: 제출물 작업량은 공고에 없어서 마감일까지를 3등분했어요. 작업량이 크면 앞당기고, 접수 마감 시각은 공고로 확인하세요.</p>'
+                f'<ul class="chk"><li>{d1.month}/{d1.day}까지: 위 자격·규격 확인과 주제 정하기</li><li>{d2.month}/{d2.day}까지: 초안 완성 후 규격 점검</li><li>{d3.month}/{d3.day}까지: 파일명·형식 맞춰 제출(마감 당일엔 접수가 몰릴 수 있어요)</li></ul>')
+    same = [x for x in live if tag in x['tags'] and x['id'] != c['id'] and (tag != '영상' or not mdm or x.get('medium', '') == mdm)]
+    def sim(x):
+        return (-(2 if elig_short(x) == elig_short(c) and elig_short(c) != '확인 필요' else 0) - (1 if (x.get('effort') or x.get('medium')) == (c.get('effort') or c.get('medium')) else 0),
+                abs((datetime.date.fromisoformat(x['end']) - datetime.date.fromisoformat(c['end'])).days))
+    cmp_ = sorted(same, key=sim)[:4]
     if cmp_:
-        rows = ''.join(f'<tr><td><a href="/c/{x["id"]}/">{E(x["title"][:40])}</a></td><td>{E(won_txt(x["pv"]) if x.get("pv") else "상금 공고 확인")}</td><td>{ddot(x["end"])[5:]} 마감</td><td>{E((x.get("effort") or "공고 확인"))}</td></tr>' for x in cmp_)
-        tb = (f'<h2>🔍 마감이 비슷한 {E(tag_l)} 공모전 비교</h2><table class="info cmp"><tr><th>공모전</th><th>상금</th><th>마감</th><th>제출물</th></tr>'
-              f'<tr class="on"><td>이 공모전</td><td>{E(won_txt(c["pv"]) if c.get("pv") else "상금 공고 확인")}</td><td>{ddot(c["end"])[5:]} 마감</td><td>{E(c.get("effort") or "공고 확인")}</td></tr>{rows}</table>')
-    return (f'<h2>🧐 루리 분석</h2><p>{" ".join(E(x) for x in L)}</p>' if L else '') + plan + tb
+        row = lambda x, on='': (f'<tr{on}><td>{("이 공모전" if on else "<a href=/c/" + x["id"] + "/>" + E(x["title"][:40]) + "</a>")}</td><td>{E(elig_short(x))}</td><td>{E(sub_short(x))}</td>'
+                                f'<td>{E(prize_short(x))}</td><td>{ddot(x["end"])[5:]}</td></tr>')
+        out += (f'<h2>🔍 분야·자격·제출물이 비슷한 {E(CQ.label_for(tag, mdm))} 공모전 비교</h2><table class="info cmp"><tr><th>공모전</th><th>대상</th><th>제출물</th><th>상금(1등/총상금 구분)</th><th>마감</th></tr>'
+                + row(c, ' class="on"') + ''.join(row(x) for x in cmp_) + '</table><p class="note">상금 칸은 「1등」과 「총」을 구분해 적었어요. 기준이 다른 금액끼리는 크기를 비교하지 마세요.</p>')
+    if '부문' in (c.get('prize') or '') and not any(prize_split(c)):
+        out += '<p class="note">이 공모전은 부문마다 상금이 달라 하나의 1등 상금으로 정리하지 않았어요. 표의 「상금·혜택」 칸을 기준으로 부문별로 확인하세요.</p>'
+    return out
 
 
 def deadline_badge(c):
@@ -874,6 +881,9 @@ def detail(c, live):
     # 2026-10-23 UI 정리(사용자 점검): 중요도 순서 — 제목·마감 → 불확실성 → 핵심 표+접수 버튼 → 제출 조건·체크리스트 → 원문 대조·분석 → 유사 공모전 3개 → (접기) 공고 캡처·이력·공유·팀원 모집
     _v = VER.get(c['id']) or {}
     _al = list(_v.get('alerts', [])) + [f'값이 서로 달라 확정하지 않았어요: {x}' for x in _v.get('conflicts', [])]
+    _miss = [x for x, ok in (('참가 대상·자격', bool((c.get('elig') or '').strip())), ('제출물 종류', bool(c.get('effort') or c.get('medium')))) if not ok]
+    if _miss:
+        _al.append(' · '.join(_miss) + '을(를) 아직 확인하지 못했어요. 공식 공고에서 먼저 확인한 뒤 참가 여부를 정하세요(확인 전에는 준비 일정을 추천하지 않아요).')
     alerts_html = ('<div class="alert-top" role="note"><b>⚠ 확인이 필요해요</b><ul>' + ''.join(f'<li>{E(x)}</li>' for x in _al) + '</ul></div>') if _al else ''
     chk_all = ('<h2>제출 조건·준비 체크리스트</h2><ul class="chk">' + ''.join(f'<li>{E(t)}</li>' for t in todo) + '</ul>'
                + ('<h3>이 공모전 준비 팁</h3><ul class="chk">' + tips + '</ul>' if tips else ''))
@@ -885,7 +895,7 @@ def detail(c, live):
     if _pr == '확인 필요' and c.get('prize') and '부문' in c['prize']:
         _pr = '부문별로 다름 · ' + (SH.clip(c['prize'], 24) or '표 참고')
     _qs = [('참가 대상', elig_short(c) if elig_short(c) != '확인 필요' else v_(c['elig'])), ('마감', ('기존 공고 기준 ' + ddot(c['end'])[5:] + ' · 연장일 확인 필요') if (_v0.get('alerts') or _v0.get('conflicts')) else (ddot(c['end'])[5:] + ' ' + dd)),
-           ('제출물', sub_short(c)), ('상금', _pr), ('AI 조건', re.split(r'\s*[—(]', ai_row(c, NEED))[0].strip() or NEED)]
+           ('제출물', sub_short(c)), ('상금', _pr), ('AI 조건', (re.split(r'\s*\(', ai_row(c, NEED))[0].strip() + '(수집 데이터 기준)') if '수집 데이터 기준' in ai_row(c, NEED) else (re.split(r'\s*[—(]', ai_row(c, NEED))[0].strip() or NEED))]
     qs_html = ''.join(f'<div><dt>{k_}</dt><dd{" class=nu" if NEED in str(v_2) or v_2 == "확인 필요" else ""}>{E(v_2)}</dd></div>' for k_, v_2 in _qs)
     body = f'''<p class="bc"><a href="/">홈</a> › <a href="/cat/{SLUG[main_tag]}/">{E(CQ.label_for(main_tag, c.get("medium", "")))}</a></p>
 <section class="dh" data-c="{SLUG[main_tag]}"><h1>{E(c["title"])}</h1>{status}</section>
@@ -918,7 +928,7 @@ def detail(c, live):
     if len(_nm) + 3 + len(_tail[0]) > 58:
         _nm = _nm[:58 - 4 - len(_tail[0])].rstrip() + '…'
     seo_t = f"{_nm} | {' · '.join(_tail)}"   # 2026-10-19 자연 유입: 이름 맨 앞 + 연도·마감·상금·제출물
-    body += cp_box('공모전 대학생 공부', '공모전 준비할 때 많이 찾는 물건:')
+    # 2026-10-23 재심사 지침 6번: 공모전 상세에는 관련성이 낮은 상품 링크를 기계적으로 붙이지 않는다
     # 2026-10-23 애드센스 「가치가 별로 없는 콘텐츠」: 자격·상금·제출물·접수·공고 핵심이 충분히 채워진 페이지만 검색 노출 (나머지는 noindex,follow)
     _rich = sum(1 for x in (c.get('elig'), c.get('pv'), sub, c.get('ch')) if x and str(x).strip() not in ('', '-', '공고 참조', '공고 확인')) + min(len(NPs), 4)
     RICH_SCORES.append(_rich)
@@ -5243,14 +5253,14 @@ def statics(nl, ne):
 <h2>테마별로 하는 일</h2><ul class="chk">
 <li><b>🕵️ 이슈</b>: 언론사 15곳의 RSS 기사를 사건별로 묶고, 보도한 언론사 수·실명 출처·제목 속 숫자와 따옴표가 본문에 있는지 같은 <b>확인 신호</b>로 점수를 매깁니다. 이 점수는 기사의 진실 여부를 판정하는 것이 아니라, 더 확인해 볼 곳을 알려 주는 참고 지표입니다. 사건·사고와 사생활 기사는 일부러 다루지 않습니다.</li>
 <li><b>📊 머니</b>: 증권사 리포트 기사에 나온 목표가·투자의견을 「상향·하향·유지」 노드로 나눠 종목별로 다시 셉니다. 투자 권유나 주가 예측이 아니며, 세금·대출 계산기와 투자 정책 표는 금융위원회·기획재정부·국세청 공식 자료를 확인해 만들었습니다.</li>
-<li><b>🏆 공모전</b>: 진행 중 공모전 {nl}건의 마감·상금·자격·제출물을 같은 형식으로 정리하고, 같은 분야 공모전과 비교한 분석과 오늘 기준 준비 일정을 붙입니다. 실제 수상작을 구조로 풀어 보는 수상 연구소와 응모 가이드도 직접 씁니다.</li>
+<li><b>🏆 공모전</b>: 진행 중 공모전 {nl}건의 마감·상금·자격·제출물을 같은 형식으로 정리하고, 공고의 자격 문구에서 읽히는 참가 조건·제출 순서·분야와 자격이 비슷한 공모전 비교를 붙입니다. 자격이나 제출물을 확인하지 못한 공고는 「확인 필요」로 표시하고 준비 일정을 추천하지 않습니다. 주최 측 공식 페이지와 직접 대조한 공고({len(VER)}건)에만 「공식 원문 대조」와 확인일을 적고, 나머지는 수집 데이터 그대로입니다.</li>
 <li><b>🍳 생활</b>: 지원금·청약 일정, 청약 가점 계산, 경품 이벤트 {ne}건, 냉장고 재료로 고르는 레시피를 정리합니다.</li></ul>
 <h2>콘텐츠 작성 방식</h2><ul class="chk">
 <li><b>출처</b>: 공식 기관 공고, 언론사 RSS, 공개 API(업비트 시세 등)만 씁니다. 사이트의 robots.txt가 수집을 막는 곳은 쓰지 않습니다.</li>
 <li><b>전재 금지</b>: 기사·공고 본문은 옮기지 않고 제목과 원문 링크만 남깁니다. 요약과 해설은 루리의 줍줍이 계산하고 쓴 것입니다.</li>
-<li><b>갱신 주기</b>: 이슈·키워드·애널리스트 종합은 매시간, 공모전·지원금·경품 이벤트는 하루 여러 번 자동으로 갱신합니다. 가이드·고민 해결 글은 사람이 검토해 매일 추가합니다.</li>
-<li><b>자동화와 검토</b>: 수집과 숫자 계산은 프로그램이 하고, 판정 기준(점수 규칙, 제외 키워드, 정책 표)은 운영자가 정하고 고칩니다. 자동 정리라 오류가 있을 수 있어 모든 페이지에 원문 링크를 함께 둡니다.</li>
-<li><b>AI 활용</b>: 사이트 코드와 루리 그림, 일부 해설 문장은 AI로 만들고 운영자가 검토합니다. 제작 과정은 <a href="/ailog/">AI 제작 로그</a>에 공개합니다.</li></ul>
+<li><b>갱신 주기</b>: 이슈·키워드·애널리스트 종합은 매시간, 공모전·지원금·경품 이벤트는 하루 여러 번 자동으로 갱신합니다. 가이드·고민 해결 글은 AI가 공식 자료를 읽고 작성하며, 글마다 확인일과 출처를 적습니다.</li>
+<li><b>자동화와 검토</b>: 수집과 숫자 계산은 프로그램이 하고, 판정 기준(점수 규칙, 제외 키워드, 정책 표)은 운영자가 정하고 고칩니다. 개별 공고와 글을 사람이 한 건씩 검토하지는 않으며, 자동 정리라 오류가 있을 수 있어 모든 페이지에 원문 링크를 함께 두고 오류 신고를 받아 고칩니다.</li>
+<li><b>AI 활용</b>: 사이트 코드와 루리 그림, 수집·정리·해설 문장은 AI(Anthropic Claude)가 만듭니다. 운영자는 규칙과 방향을 정하고 오류 신고를 처리합니다. 제작 과정은 <a href="/ailog/">AI 제작 로그</a>에 공개합니다.</li></ul>
 <h2>광고</h2><p>운영비를 마련하기 위해 Google AdSense 광고를 싣습니다. 광고는 본문과 구분해 표시하며, 광고주가 콘텐츠 내용에 관여하지 않습니다. 자세한 내용은 <a href="/privacy/">개인정보처리방침</a>을 참고하세요.</p>
 <h2>문의와 정정</h2><p>틀린 정보, 삭제 요청, 제휴 문의는 <a href="mailto:{MAIL}">{MAIL}</a> 또는 <a href="/contact/">문의</a> 페이지로 보내 주세요. 정보 오류는 확인하는 대로 고칩니다.</p>''', [('루리의 줍줍', '/'), ('소개', '/about/')])
     page('/contact/', '문의', '루리의 줍줍 문의: 공모전·지원금 정보 오류 제보, 새 공모전 등록 요청, 페이지 삭제·수정 요청을 메일로 받아요. 확인 후 바로 고쳐요.',
@@ -5266,7 +5276,7 @@ def statics(nl, ne):
 <li><b>이메일 알림</b>: 신청한 경우에만 이메일 주소와 고른 분야를 저장하고, 알림 발송 외에는 쓰지 않습니다. 문의 메일로 요청하면 언제든 지웁니다.</li></ul>
 <h2>4. 브라우저 저장소</h2><p>찜한 공모전, 챗봇 설정, 언어 선택은 이용자의 브라우저(localStorage)에만 저장되며 서버로 보내지 않습니다. 번역 기능을 쓰면 Google 번역이 언어 쿠키(googtrans)를 저장합니다.</p>
 <h2>5. 처리 위탁과 보관</h2><p>사이트는 GitHub Pages로 호스팅되며, 호스팅 제공자가 보안 목적으로 접속 로그(IP 주소 등)를 처리할 수 있습니다. 회원·알림·방문 집계 데이터는 Cloudflare(Workers, D1)에 저장합니다. 방문 집계는 통계 외의 목적으로 쓰지 않습니다.</p>
-<h2>6. 외부 링크</h2><p>공모전 공식 공고나 기사 원문 링크를 누르면 해당 사이트로 이동하며, 그 사이트의 개인정보처리방침이 적용됩니다.</p>
+<h2>6. 외부 링크와 제휴 링크</h2><p>공모전 공식 공고나 기사 원문 링크를 누르면 해당 사이트로 이동하며, 그 사이트의 개인정보처리방침이 적용됩니다. 일부 페이지의 쇼핑 링크는 쿠팡 파트너스 활동의 일환으로, 링크를 통해 구매가 이뤄지면 운영자가 수수료를 받을 수 있습니다(이용자 가격은 달라지지 않습니다). 쿠팡으로 이동하면 쿠팡의 쿠키·개인정보처리방침이 적용됩니다.</p>
 <h2>7. 문의</h2><p>개인정보 관련 문의·삭제 요청: <a href="mailto:{MAIL}">{MAIL}</a> (운영자 Seongsang Park). <a href="/contact/">문의</a> 페이지도 이용할 수 있습니다.</p><p class="note">시행일: 2026-10-16 · 개정: 2026-10-18 (광고 쿠키 해제 방법, 방문 집계·알림 구독 항목 추가)</p>''', [('루리의 줍줍', '/'), ('개인정보처리방침', '/privacy/')])
     page('/terms/', '이용약관', '루리의 줍줍 이용약관: 자동 정리 정보의 정확성과 면책, 공식 공고 우선 원칙, 회원 기능·커뮤니티 이용 규칙 안내.',
          '''<h1>이용약관</h1><h2>1. 서비스 내용</h2><p>루리의 줍줍은 공개된 공모전·지원사업·이벤트 공고를 정리해 소개하는 무료 정보 서비스입니다. 공모전의 주최·심사·시상에는 관여하지 않습니다.</p>
