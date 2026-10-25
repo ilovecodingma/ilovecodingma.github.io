@@ -24,7 +24,7 @@ def due_items(ctx, today_only=True):
         dr = ctx['deadline_row'](c, '')
         tm = re.match(r'(\d{1,2}(?::\d{2}|시))', dr)
         out.append({'type': '공모전', 'title': c['title'], 'target': ctx['elig_short'](c), 'benefit': ctx['prize_short'](c),
-                    'time': tm.group(1) if tm else '', 'href': f'/c/{c["id"]}/', 'ext': c.get('link') or '', 'org': c.get('org') or '', 'cid': c['id'], 'end': c['end'], 'dleft': 0, 'tstate': ctx['deadline_state'](c)})
+                    'time': tm.group(1) if tm else '', 'href': f'/c/{c["id"]}/', 'ext': c.get('link') or '', 'org': c.get('org') or '', 'cid': c['id'], 'end': c['end'], 'dleft': 0, 'tstate': ctx['deadline_state'](c), 'ver': c['id'] in (ctx.get('VER') or {})})
     for e in ctx['events']:
         if e['end'] != T:
             continue
@@ -58,7 +58,7 @@ def _card(it):
     if it['href']:
         btns += f'<a class="b1" href="{E(it["href"])}">상세 보기</a>'
     if it['ext']:
-        btns += f'<a class="b2" href="{E(it["ext"])}" target="_blank" rel="noopener nofollow">{E(CQ.link_label(it["ext"]))} ↗</a>' if it['type'] != '이벤트' else f'<a class="b1" href="{E(it["ext"])}" target="_blank" rel="noopener nofollow">이벤트 보기 ↗</a>'
+        btns += f'<a class="b2" href="{E(it["ext"])}" target="_blank" rel="noopener nofollow">{E('공식 공고·접수' if it.get('ver') else CQ.link_label(it["ext"]))} ↗</a>' if it['type'] != '이벤트' else f'<a class="b1" href="{E(it["ext"])}" target="_blank" rel="noopener nofollow">이벤트 보기 ↗</a>'
     return (f'<li class="td-c" data-t="{E(it["type"])}"><span class="td-t">{E(it["type"])}</span><h3>{E(_short(it["title"], 60))}</h3>'
             f'<dl>{_dl(it)}</dl>'
             f'<div class="td-b">{btns}</div></li>')
@@ -84,13 +84,13 @@ def ver_items(ctx, limit=6):
     """공식 원문까지 대조한 진행 중 공모전(마감 임박순). 홈에서 확인 수준이 높은 콘텐츠를 먼저 보여 주기 위한 목록."""
     T = ctx['today'].isoformat(); V = ctx.get('VER') or {}; out = []
     for c in sorted(ctx['contests'], key=lambda c: c['end']):
-        if c['id'] not in V or c['id'] in ctx['DUP'] or c['end'] < T:
+        if c['id'] not in V or c['id'] in ctx['DUP'] or c['end'] < T or ctx['elig_short'](c) == '확인 필요':   # 대상이 비어 있는 공고는 홈 대표 영역에 올리지 않는다
             continue
         lv = V[c['id']].get('level')
         dr = ctx['deadline_row'](c, '')
         tm = re.match(r'(\d{1,2}(?::\d{2}|시))', dr)
         out.append({'type': '공모전', 'title': c['title'], 'target': ctx['elig_short'](c), 'benefit': ctx['prize_short'](c), 'time': tm.group(1) if tm else '',
-                    'href': f'/c/{c["id"]}/', 'ext': c.get('link') or '', 'org': c.get('org') or '', 'cid': c['id'], 'end': c['end'], 'dleft': (datetime.date.fromisoformat(c['end']) - ctx['today']).days, 'tstate': ctx['deadline_state'](c), 'full': lv != 'partial'})
+                    'href': f'/c/{c["id"]}/', 'ext': c.get('link') or '', 'org': c.get('org') or '', 'cid': c['id'], 'end': c['end'], 'dleft': (datetime.date.fromisoformat(c['end']) - ctx['today']).days, 'tstate': ctx['deadline_state'](c), 'ver': True, 'full': lv != 'partial'})
     out.sort(key=lambda x: (0 if x['full'] else 1, x['end']))
     return out[:limit]
 
