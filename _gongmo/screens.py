@@ -111,7 +111,8 @@ def home_html(ctx):
     sub = ''.join(f'<a href="{u}">{ic} {E(t)}</a>' for ic, t, u in (('🎁', '경품 이벤트', '/event/'), ('📚', '루리 위키', '/wiki/'), ('💰', '생활 돈 가이드', '/money/guide/'), ('📺', '뉴스', '/news/')))
     allsv = ''.join(f'<a href="{E(t["path"])}"><i>{t["icon"]}</i>{E(t["name"])}</a>' for t in ctx['topics'])
     feats = ''.join(f'<li><b>{E(a)}</b><span>{E(b)}</span></li>' for a, b in (('루리 위키', '정보성 글을 문서처럼 묶어 검색·이전/다음으로 읽어요 (10/23)'), ('재료 → 최저가', '레시피에서 없는 재료를 쇼핑몰 가격순 검색으로 바로 연결해요 (10/23)'), ('공식 원문 대조', '확인한 공모전은 확인일과 달랐던 점을 함께 보여 줘요 (10/23)')))
-    _vi = ver_items(ctx, 4)
+    _shown = {x.get('cid') for x in prev if x.get('cid')}   # 위 「오늘 마감」에 이미 나온 공고는 다시 보여 주지 않는다
+    _vi = [i for i in ver_items(ctx, 12) if i['cid'] not in _shown][:4]
     ver_h = ''.join(_card(i) for i in _vi)
     ver_sec = (f'<section class="hm-sec"><div class="hm-h"><h2>공식 원문까지 확인한 공모전</h2><a href="/contest/">공모전 찾기 →</a></div>'
                f'<p class="note">주최 측 공고와 첨부 서류를 직접 열어 자격·제출 규격·접수 방법을 대조한 공모전이에요(확인일은 각 상세에).</p><ul class="td-l hm-td">{ver_h}</ul></section>') if _vi else ''
