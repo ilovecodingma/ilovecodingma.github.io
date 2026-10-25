@@ -2224,7 +2224,7 @@ def build():
     _tp = json.load(open(os.path.join(HERE, 'topic_hosts.json'), encoding='utf-8'))['topics']
     sc_ctx = {'now': NOW_KST(), 'today': TODAY, 'contests': contests, 'DUP': DUP, 'events': events, 'aps': aps, 'AP_DUP': AP_DUP, 'deadline_row': deadline_row, 'deadline_state': deadline_state, 'elig_short': elig_short, 'prize_short': prize_short,
               'tidy_ev': (lambda t: re.sub(r'^\s*\((?:중복|\d+회 중복)[^)]*\)\s*', '', t).strip()), 'EASY': EASY,
-              'new_contests': sorted(_cs, key=lambda c: (_first(c), c['end']), reverse=True)[:14], 'n_new': sum(1 for c in _cs if _first(c) == TODAY.isoformat()), 'n_ver': len(VER), 'VER': VER, 'n_op': sum(1 for k_ in OP_REV if k_ in {c_['id'] for c_ in live}), 'n_core': sum(1 for v in VER.values() if v.get('level') != 'partial'), 'n_live': len(live),
+              'new_contests': sorted(_cs, key=lambda c: (_first(c), c['end']), reverse=True)[:14], 'n_new': sum(1 for c in _cs if _first(c) == TODAY.isoformat()), 'n_ver': sum(1 for c_ in live if c_['id'] in VER), 'VER': VER, 'n_op': sum(1 for k_ in OP_REV if k_ in {c_['id'] for c_ in live}), 'n_core': sum(1 for c_ in live if c_['id'] in VER and VER[c_['id']].get('level') != 'partial'), 'n_live': len(live),
               'guides': [{'u': f'/money/guide/{k}/', 'title': _gk[k]['h1'], 'desc': _gk[k]['lead']} for k in ('energy-voucher', 'eitc', 'naeil-card') if k in _gk],
               'n_contest': len(live), 'n_apply': len(aps), 'topics': _tp,
               'reads': [{'u': u_, 'title': html.unescape(re.sub(r'\s*[|｜].*$', '', (re.search(r'<title>(.*?)</title>', open(os.path.join(ROOT, u_.strip('/'), 'index.html'), encoding='utf-8').read(), re.S) or [0, u_])[1])), 'sub': sb_}
