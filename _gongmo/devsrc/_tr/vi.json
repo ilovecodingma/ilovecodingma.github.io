@@ -1,0 +1,233 @@
+[
+ {
+  "slug": "claude-for-small-business",
+  "title": "Dùng Claude cho doanh nghiệp nhỏ: nhãn, biên lợi nhuận, đánh giá",
+  "desc": "Bốn quy trình Claude không cần code cho người bán sản phẩm nhỏ: kiểm tra nhãn, đề xuất bán sỉ có bảng biên lợi nhuận, phân tích đánh giá đối thủ và rà soát tuần.",
+  "sources": [
+   [
+    "FDA: Ghi nhãn thực phẩm và dinh dưỡng",
+    "https://www.fda.gov/food/food-labeling-nutrition",
+    "2026-10-19"
+   ],
+   [
+    "Bảng giá của Anthropic",
+    "https://www.anthropic.com/pricing",
+    "2026-10-19"
+   ]
+  ],
+  "hub": [
+   "Tổng hợp hỗ trợ thanh niên và khởi nghiệp (청년 지원금·창업 지원 모아보기)",
+   "/apply/"
+  ]
+ },
+ {
+  "slug": "cut-ai-token-costs",
+  "title": "Cắt giảm chi phí token AI: ngữ cảnh, chia mô hình, cache, theo dõi",
+  "desc": "Cách giảm hóa đơn Claude API: chỉ gửi tài liệu cần thiết, chia bước theo mô hình, cache bản tóm tắt dự án và theo dõi chi phí từng tác vụ. Kèm giá hiện tại.",
+  "sources": [
+   [
+    "Bảng giá của Anthropic",
+    "https://www.anthropic.com/pricing",
+    "2026-10-19"
+   ]
+  ],
+  "hub": [
+   "Nhật ký chế tạo AI và kiến thức phát triển (AI 제작 로그·개발 지식, tiếng Hàn)",
+   "/ailog/"
+  ]
+ },
+ {
+  "slug": "immich-proxmox-photo-server",
+  "title": "Immich trên Proxmox với ZFS mirror: cài đặt và sao lưu 3-2-1",
+  "desc": "Dựng máy chủ ảnh Immich trên Proxmox: ZFS mirror, cấu hình VM theo yêu cầu chính thức, cài bằng Docker Compose và sao lưu 3-2-1 gồm cả bản dump cơ sở dữ liệu.",
+  "sources": [
+   [
+    "Yêu cầu hệ thống của Immich",
+    "https://immich.app/docs/install/requirements",
+    "2026-10-19"
+   ],
+   [
+    "Sao lưu và khôi phục của Immich",
+    "https://immich.app/docs/administration/backup-and-restore",
+    "2026-10-19"
+   ]
+  ],
+  "hub": [
+   "Tổng hợp kiến thức phát triển (개발 지식 모음, tiếng Hàn)",
+   "/ailog/"
+  ]
+ },
+ {
+  "slug": "mutation-testing-false-kills",
+  "title": "False kill trong mutation testing: baseline, truy cập tệp, lý do kill",
+  "desc": "Vì sao false kill thổi phồng điểm mutation và ba cách kiểm tra: baseline trên bản sao nguyên bản, bằng chứng tệp đột biến được đọc và phân bố lý do kill.",
+  "sources": [
+   [
+    "Stryker: trạng thái mutant và các chỉ số",
+    "https://stryker-mutator.io/docs/mutation-testing-elements/mutant-states-and-metrics/",
+    "2026-10-19"
+   ]
+  ],
+  "hub": [
+   "Tổng hợp kiến thức phát triển (개발 지식 모음, tiếng Hàn)",
+   "/ailog/"
+  ]
+ },
+ {
+  "slug": "korea-take-home-salary",
+  "title": "Lương thực nhận ở Hàn Quốc 2026: các khoản khấu trừ, tỷ lệ, ví dụ",
+  "desc": "Lương năm ở Hàn Quốc thành lương thực nhận hằng tháng năm 2026: lương hưu, bảo hiểm y tế, chăm sóc dài hạn, bảo hiểm việc làm, thuế thu nhập kèm ví dụ.",
+  "sources": [
+   [
+    "Cơ quan Lương hưu Quốc gia (9.5%, mức thu nhập cơ sở)",
+    "https://www.nps.or.kr",
+    "2026-10-18"
+   ],
+   [
+    "Cơ quan Bảo hiểm Y tế Quốc gia (7.19%, chăm sóc dài hạn 0.9448%)",
+    "https://www.nhis.or.kr",
+    "2026-10-18"
+   ],
+   [
+    "Bộ Lao động và Việc làm (bảo hiểm việc làm)",
+    "https://www.moel.go.kr",
+    "2026-10-18"
+   ]
+  ],
+  "hub": [
+   "Công cụ tính lương thực nhận (연봉 실수령액 계산기, tiếng Hàn)",
+   "/money/tools/salary/"
+  ]
+ },
+ {
+  "slug": "jeonse-vs-wolse-explained",
+  "title": "Jeonse và wolse: bảo vệ tiền đặt cọc khi bạn là người nước ngoài",
+  "desc": "Giải thích jeonse, wolse, ban-jeonse ở Hàn Quốc và cách bảo vệ tiền đặt cọc: khai báo địa chỉ, ngày xác định, bảo hiểm bảo lãnh, kèm lưu ý cho người nước ngoài.",
+  "sources": [
+   [
+    "Luật Xuất nhập cảnh Điều 88-2 (Trung tâm Thông tin Pháp luật Hàn Quốc)",
+    "https://www.law.go.kr",
+    "2026-10-19"
+   ],
+   [
+    "Luật Bảo vệ thuê nhà ở Điều 3, 3-2",
+    "https://www.law.go.kr",
+    "2026-10-19"
+   ],
+   [
+    "Văn phòng đăng ký trực tuyến của Tòa án Tối cao",
+    "https://www.iros.go.kr",
+    "2026-10-19"
+   ]
+  ],
+  "hub": [
+   "Bản tiếng Hàn (hướng dẫn 전세 vs 월세)",
+   "/money/guide/jeonse-vs-wolse/"
+  ]
+ },
+ {
+  "slug": "korea-unemployment-benefits-foreigners",
+  "title": "Trợ cấp thất nghiệp cho người nước ngoài ở Hàn Quốc (2026)",
+  "desc": "Visa nào được bảo hiểm việc làm Hàn Quốc chi trả, mức trợ cấp thất nghiệp tối đa và tối thiểu mỗi ngày năm 2026, thời gian nhận và cách nộp đơn.",
+  "sources": [
+   [
+    "Bộ Lao động và Việc làm — bảo hiểm việc làm cho lao động nước ngoài",
+    "https://www.moel.go.kr/minwon/fastcounsel/fastcounselView.do?inetDcssMngId=202503181255455430204",
+    "2026-10-19"
+   ],
+   [
+    "Hướng dẫn trợ cấp thất nghiệp của Work24",
+    "https://www.work24.go.kr",
+    "2026-10-19"
+   ]
+  ],
+  "hub": [
+   "Điều kiện trợ cấp thất nghiệp 2026 (실업급여 조건 2026, tiếng Hàn)",
+   "/guide/unemployment-2026/"
+  ]
+ },
+ {
+  "slug": "korea-contests-open-to-foreigners",
+  "title": "Cuộc thi ở Hàn Quốc dành cho người nước ngoài: cách tìm và tham gia",
+  "desc": "Cách đọc điều kiện tham gia cuộc thi ở Hàn Quốc khi bạn là người nước ngoài, kèm danh sách cập nhật mỗi giờ các cuộc thi mở nhắc đến người nước ngoài.",
+  "sources": [
+   [
+    "Thông báo chính thức được liên kết từ trang của từng cuộc thi",
+    "/contest/",
+    "2026-10-19"
+   ]
+  ],
+  "hub": [
+   "Tất cả cuộc thi đang diễn ra (진행 중 공모전 전체, tiếng Hàn)",
+   "/contest/"
+  ]
+ },
+ {
+  "slug": "steam-refund-policy",
+  "title": "Chính sách hoàn tiền Steam: 14 ngày, 2 giờ và cách yêu cầu hoàn tiền",
+  "desc": "Quy định hoàn tiền chính thức của Steam: 14 ngày và dưới 2 giờ chơi với game, cùng DLC, quà tặng, bundle, đặt mua trước, tiền Wallet và mục không hoàn được.",
+  "sources": [
+   [
+    "Valve: Hoàn tiền Steam (chính thức, cập nhật ngày 23 tháng 4 năm 2024)",
+    "https://store.steampowered.com/steam_refunds/",
+    "2026-10-20"
+   ],
+   [
+    "Hỗ trợ Steam",
+    "https://help.steampowered.com/",
+    "2026-10-20"
+   ]
+  ],
+  "hub": [
+   "Bản tiếng Hàn (quy định hoàn tiền Steam, 스팀 환불 규정)",
+   "/game/refund/"
+  ]
+ },
+ {
+  "slug": "korea-monthly-rent-tax-credit-foreigners",
+  "title": "Khấu trừ thuế tiền thuê nhà ở Hàn Quốc cho người nước ngoài cư trú",
+  "desc": "Ai được khấu trừ thuế tiền thuê nhà ở Hàn Quốc, mức 15-17%, trần tiền thuê KRW 10 million, quy định về nhà ở và địa chỉ, và điều người nước ngoài nên hỏi NTS.",
+  "sources": [
+   [
+    "Cục Thuế Quốc gia: khấu trừ thuế tiền thuê nhà hằng tháng (tiếng Hàn)",
+    "https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=40613&cntntsId=239025",
+    "2026-10-20"
+   ],
+   [
+    "Hỏi đáp của Cục Thuế Quốc gia (tiếng Hàn)",
+    "https://call.nts.go.kr/call/qna/selectQnaInfo.do?mi=1318&ctgId=CTG11906",
+    "2026-10-20"
+   ]
+  ],
+  "hub": [
+   "Bản tiếng Hàn (hướng dẫn khấu trừ thuế tiền thuê nhà, 월세 세액공제 가이드)",
+   "/money/guide/rent-credit/"
+  ]
+ },
+ {
+  "slug": "korea-business-tax-calendar",
+  "title": "Lịch thuế cho chủ doanh nghiệp cá nhân ở Hàn Quốc: VAT, thuế thu nhập",
+  "desc": "Khi nào chủ doanh nghiệp cá nhân ở Hàn Quốc kê khai VAT, thuế thu nhập, thuế khấu trừ tại nguồn, cùng hạn đăng ký và đóng cửa theo hướng dẫn của NTS.",
+  "sources": [
+   [
+    "Cục Thuế Quốc gia: hạn kê khai VAT (tiếng Hàn)",
+    "https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=2273&cntntsId=7694",
+    "2026-10-20"
+   ],
+   [
+    "Cục Thuế Quốc gia: hạn thuế thu nhập (tiếng Hàn)",
+    "https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=2225&cntntsId=7665",
+    "2026-10-20"
+   ],
+   [
+    "Cục Thuế Quốc gia: thuế khấu trừ tại nguồn (tiếng Hàn)",
+    "https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=2414&cntntsId=7702",
+    "2026-10-20"
+   ]
+  ],
+  "hub": [
+   "Bản tiếng Hàn (lịch kê khai và thuế cho chủ doanh nghiệp, 사업자 신고·세금 달력)",
+   "/money/guide/business-tax-calendar/"
+  ]
+ }
+]

@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>变异测试的假杀死：基线、文件访问与杀死原因 | Ruri Jupjup</title>
+<meta name="description" content="为什么假杀死会抬高变异得分，以及发现它们的三项检查：原始副本基线、证明读取了变异文件、杀死原因分布。">
+<link rel="canonical" href="https://sungprofile.cloud/zh/guide/mutation-testing-false-kills/">
+<link rel="alternate" hreflang="en" href="https://sungprofile.cloud/en/guide/mutation-testing-false-kills/">
+<link rel="alternate" hreflang="es" href="https://sungprofile.cloud/es/guide/mutation-testing-false-kills/">
+<link rel="alternate" hreflang="id" href="https://sungprofile.cloud/id/guide/mutation-testing-false-kills/">
+<link rel="alternate" hreflang="ja" href="https://sungprofile.cloud/ja/guide/mutation-testing-false-kills/">
+<link rel="alternate" hreflang="th" href="https://sungprofile.cloud/th/guide/mutation-testing-false-kills/">
+<link rel="alternate" hreflang="vi" href="https://sungprofile.cloud/vi/guide/mutation-testing-false-kills/">
+<link rel="alternate" hreflang="zh" href="https://sungprofile.cloud/zh/guide/mutation-testing-false-kills/">
+<link rel="alternate" hreflang="x-default" href="https://sungprofile.cloud/en/guide/mutation-testing-false-kills/">
+<meta property="og:type" content="website"><meta property="og:locale" content="zh_CN"><meta property="og:site_name" content="루리의 줍줍">
+<meta property="og:title" content="变异测试的假杀死：基线、文件访问与杀死原因 | Ruri Jupjup"><meta property="og:description" content="为什么假杀死会抬高变异得分，以及发现它们的三项检查：原始副本基线、证明读取了变异文件、杀死原因分布。"><meta property="og:url" content="https://sungprofile.cloud/zh/guide/mutation-testing-false-kills/">
+<meta property="og:image" content="https://sungprofile.cloud/assets/ruri/og.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://sungprofile.cloud/assets/ruri/og.jpg">
+<meta name="theme-color" content="#5b21b6"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="오늘 뭐 먹지">
+<link rel="icon" href="/favicon.ico?v=6" sizes="any"><link rel="icon" type="image/png" sizes="48x48" href="/assets/icons/icon-48.png?v=6"><link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/icon-96.png?v=6"><link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/icon-192.png?v=6"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=6"><link rel="manifest" href="/site.webmanifest"><link rel="alternate" type="application/rss+xml" title="루리의 줍줍" href="/rss.xml">
+<link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="/assets/gm.css?v=28"><link rel="stylesheet" href="/assets/ds.css?v=15"><link rel="stylesheet" href="/assets/print.css?v=1"><script defer src="/assets/print.js?v=1"></script><script src="/assets/img-fallback.js?v=1"></script><link rel="stylesheet" href="/assets/chat/ruri-chat.css?v=9"><link rel="stylesheet" href="/assets/community/comm.css?v=17"><script defer src="/assets/community/comm.js?v=32"></script><script defer src="/assets/community/crew.js?v=1"></script><script type="module" src="/assets/chat/ruri-chat.js?v=16"></script><link rel="stylesheet" href="/assets/app/shell.css?v=1"><script defer src="/assets/app/app.js?v=4"></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "首页", "item": "https://sungprofile.cloud/"}, {"@type": "ListItem", "position": 2, "name": "指南", "item": "https://sungprofile.cloud/zh/guide/"}, {"@type": "ListItem", "position": 3, "name": "变异测试的假杀死：基线、文件访问与杀死原因", "item": "https://sungprofile.cloud/zh/guide/mutation-testing-false-kills/"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "变异测试的假杀死：基线、文件访问与杀死原因", "description": "为什么假杀死会抬高变异得分，以及发现它们的三项检查：原始副本基线、证明读取了变异文件、杀死原因分布。", "inLanguage": "zh", "datePublished": "2026-10-27", "dateModified": "2026-10-27", "author": {"@type": "Organization", "name": "루리의 줍줍"}, "publisher": {"@type": "Organization", "name": "루리의 줍줍"}, "mainEntityOfPage": "https://sungprofile.cloud/zh/guide/mutation-testing-false-kills/"}</script>
+<style>body[data-th=today]{--tc:#dc2626}body[data-th=recipe]{--tc:#c2410c}body[data-th=watch]{--tc:#9333ea}body[data-th=apply]{--tc:#0f766e}body[data-th=contest]{--tc:#6d28d9}body[data-th=event]{--tc:#db2777}body[data-th=issue]{--tc:#b45309}body[data-th=money]{--tc:#047857}body[data-th=game]{--tc:#4f46e5}body[data-th=plaza]{--tc:#0891b2}body[data-th=diet]{--tc:#16a34a}body[data-th=ai]{--tc:#0f172a}body[data-th=wiki]{--tc:#0f766e}</style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4248498719773262" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G9BPFF95GY"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());if(location.hostname!=='sungprofile.cloud')window['ga-disable-G-G9BPFF95GY']=true;gtag('config','G-G9BPFF95GY');</script>
+</head><body data-th="hub" data-api="https://jupjup-api.sung2011103.workers.dev">
+<header class="hd"><div class="w hd-in"><a class="logo" href="/"><img class="logo-av" src="/assets/ruri/avatar.webp" width="36" height="36" alt="루리의 줍줍"><span>루리의 <b>줍줍</b></span></a><nav class="gn" aria-label="주요 주제"><a href="/today/">오늘 마감</a><a href="/contest/">공모전</a><a href="/apply/">지원금·청약</a><a href="/fridge/">건강 레시피</a><a href="/news/">이슈</a><a href="/wiki/">루리 위키</a><a href="/#all">전체</a></nav><a class="hd-s" href="/#hq" aria-label="통합 검색">🔍<span>검색</span></a></div>
+</header>
+<main class="w">
+<p class="bc"><a href="/">首页</a> › <a href="/zh/guide/">指南</a></p><article class="dev" lang="zh"><h1>变异测试的假杀死：基线、文件访问与杀死原因</h1><p class="note">发布日期 2026-10-27</p><p>变异测试（mutation testing）会故意修改你的代码（把 <code>&lt;</code> 改成 <code>&lt;=</code>，把 <code>return x</code> 改成 <code>return None</code>），然后检查你的测试是否能发现。“被杀死（killed）”的变异体意味着有测试失败了。但测试失败的原因可能与变异毫无关系——这样一来，你的变异得分看上去就比测试的真实水平更好。本指南介绍三项检查，用来发现这些<b>假杀死（false kills）</b>。</p>
+<h2>假杀死为什么会出现</h2>
+<table><tr><th>原因</th><th>你会看到什么</th></tr>
+<tr><td>测试套件在变异之前就已经失败或不稳定（flaky）</td><td>大量杀死都带有同一个无关的错误</td></tr>
+<tr><td>测试导入的是原始文件，而不是被变异的副本</td><td>杀死仅来自超时或环境错误</td></tr>
+<tr><td>机器太慢导致超时</td><td>杀死集中在运行时间长的测试上</td></tr>
+<tr><td>多次运行之间共享状态（临时文件、缓存、端口）</td><td>重新运行同一个变异体时，杀死结果会变化</td></tr></table>
+<p>超时会影响得分：在 Stryker 中，<b>detected = killed + timeout</b>，而<b>变异得分 = detected / valid × 100</b>。经常超时的机器会抬高得分。来源：<a href="https://stryker-mutator.io/docs/mutation-testing-elements/mutant-states-and-metrics/" rel="nofollow noopener" target="_blank">Stryker 变异体状态与指标</a>，核对于 2026-10-19。</p>
+<h2>检查 1 — 在原始副本上建立基线</h2>
+<ol><li>把项目复制到一个全新的目录，完全按变异工具的方式来做（相同的沙箱、相同的环境变量）。</li>
+<li>在那里<b>不加</b>任何变异，完整运行测试套件三次。</li>
+<li>三次都必须通过。这里出现的任何失败都是预先存在的失败，之后会表现为假杀死——请先修复或隔离它。</li></ol>
+<pre><code>cp -r project /tmp/mt-baseline &amp;&amp; cd /tmp/mt-baseline
+for i in 1 2 3; do pytest -q -p no:cacheprovider || echo "BASELINE FAIL $i"; done</code></pre>
+<h2>检查 2 — 证明测试读取了被变异的文件</h2>
+<p>如果测试根本没有加载被变异的文件，它就不可能杀死那个变异体。请在每次运行变异体时记录文件访问。在 Python 中，使用审计钩子（audit hook）就够了：</p>
+<pre><code># conftest.py
+import sys, os
+TARGET = os.environ.get("MUT_TARGET")  # path of the mutated file
+def hook(event, args):
+    if event == "open" and TARGET and str(args[0]).endswith(TARGET):
+        open("/tmp/mut_touched", "a").write("1")
+sys.addaudithook(hook)</code></pre>
+<p>运行每个变异体时，先清除过期的字节码（删除副本中的 <code>__pycache__</code>），这样源文件才会真正被读取。规则：如果某次杀死中目标文件从未被打开，就把它标记为<b>可疑（suspect）</b>并重新运行。在其他技术栈上，<code>strace -e trace=openat</code>（Linux）或测试运行器的覆盖率数据可以起到同样的作用。</p>
+<h2>检查 3 — 查看杀死原因的分布</h2>
+<ol><li>对每个被杀死的变异体，记录运行失败的<i>原因</i>：断言错误、其他异常、超时、崩溃、收集／导入错误。</li>
+<li>做一张简单的计数表。</li></ol>
+<table><tr><th>原因</th><th>健康的模式</th><th>危险信号</th></tr>
+<tr><td>断言失败</td><td>大多数杀死</td><td>—</td></tr>
+<tr><td>其他异常</td><td>少部分</td><td>许多变异体上出现同一条相同的消息</td></tr>
+<tr><td>超时</td><td>很少（无限循环的变异体）</td><td>占比很大；在较慢的机器上上升</td></tr>
+<tr><td>导入／收集错误</td><td>几乎没有</td><td>任何有意义的占比——说明失败的是测试框架，而不是测试</td></tr></table>
+<h2>综合起来</h2>
+<ul class="chk"><li>在原始副本上基线 3/3 全绿</li><li>每次杀死都有“目标文件已打开”的记录</li><li>断言失败是最大的杀死原因</li><li>随机重新运行 5% 的杀死；结果不应改变</li></ul>
+<h2>常见问题</h2>
+<dl><dt>我应该调高超时吗？</dt><dd>根据基线来设定：测量测试套件的正常运行时间，然后允许其若干倍。太低会产生假杀死；太高会拖慢运行。</dd>
+<dt>编译错误算数吗？</dt><dd>在 Stryker 中，编译错误和运行时错误属于“无效（invalid）”变异体，不计入得分。</dd></dl>
+<h2>来源</h2><ul><li><a href="https://stryker-mutator.io/docs/mutation-testing-elements/mutant-states-and-metrics/" rel="nofollow noopener" target="_blank">Stryker：变异体状态与指标</a> — 核对日期 2026-10-19</li></ul><p class="dev-hub">相关（韩语）: <a href="/ailog/">开发知识汇总（개발 지식 모음）</a></p><p class="dev-hub" lang="en">🌐 <a href="/en/guide/mutation-testing-false-kills/" hreflang="en" lang="en">English</a> · <a href="/es/guide/mutation-testing-false-kills/" hreflang="es" lang="es">Español</a> · <a href="/id/guide/mutation-testing-false-kills/" hreflang="id" lang="id">Bahasa Indonesia</a> · <a href="/ja/guide/mutation-testing-false-kills/" hreflang="ja" lang="ja">日本語</a> · <a href="/th/guide/mutation-testing-false-kills/" hreflang="th" lang="th">ไทย</a> · <a href="/vi/guide/mutation-testing-false-kills/" hreflang="vi" lang="vi">Tiếng Việt</a> · <b>中文</b></p><div class="shr" data-t="变异测试的假杀死：基线、文件访问与杀死原因" data-x="为什么假杀死会抬高变异得分，以及发现它们的三项检查：原始副本基线、证明读取了变异文件、杀死原因分布。" data-k="476ea22a69da8f2902a540eef533b5f9"><b>📤 공유</b><button data-s="native">공유하기</button><button data-s="kakao">카카오톡</button><button data-s="copy">🔗 링크 복사</button><button data-s="nblog">네이버 블로그</button><button data-s="band">밴드</button><button data-s="x">X</button><button data-s="fb">Facebook</button></div><script defer src="/assets/share.js?v=2"></script></article><link rel="stylesheet" href="/assets/mag/mag.css?v=10"><style>.dev table{width:100%;border-collapse:collapse;margin:12px 0;font-size:.92em;display:block;overflow-x:auto}.dev th,.dev td{border:1px solid #e5e7eb;padding:6px 8px;text-align:left;vertical-align:top}.dev pre{background:#0f172a;color:#e2e8f0;padding:12px;border-radius:8px;overflow-x:auto;font-size:.85em}.dev code{font-size:.92em}.dev dt{font-weight:700;margin-top:10px}.dev dd{margin:4px 0 0 0}.dev-ls{list-style:none;padding:0}.dev-ls li{margin:8px 0}.dev-ls a{display:block;padding:12px;border:1px solid #e5e7eb;border-radius:10px;text-decoration:none;color:inherit}.dev-ls span{display:block;font-size:.88em;color:#64748b;margin-top:4px}</style><link rel="stylesheet" href="/assets/dev/dev.css?v=1"><script defer src="/assets/dev/dev.js?v=2"></script>
+</main>
+<footer class="ft"><div class="w ft-in"><div class="ft-b"><img class="av" src="/assets/ruri/avatar.webp" width="56" height="56" alt="루리" loading="lazy"><div><b>루리의 줍줍</b><p>오늘 뭐 먹지부터 지원금·공모전·이슈까지, 일단 줍고 가세요.</p><p class="ft-m">문의 <a href="mailto:sung2011103@naver.com">sung2011103@naver.com</a></p></div></div>
+<nav class="ft-g" aria-label="사이트 메뉴"><div><b>🍳 생활</b><a href="/fridge/">건강 레시피</a><a href="/event/">경품·용돈</a><a href="/qa/">고민 해결</a><a href="/plaza/">광장</a></div>
+<div><b>💰 지원금·머니</b><a href="/apply/">지원금·청약</a><a href="/money/tools/salary/">계산기</a><a href="/money/experts/">전문가 말 vs 시세</a><a href="/analyst/">애널리스트</a></div>
+<div><b>🏆 공모전</b><a href="/contest/">공모전 찾기</a><a href="/prep/">준비실</a><a href="/guide/">응모 가이드</a><a href="/lab/">수상 연구소</a></div>
+<div><b>📺 이슈</b><a href="/news/">루리 뉴스</a><a href="/trend/">이슈 트렌드</a><a href="/hot/">핫이슈</a><a href="/kw/">인기 키워드</a></div>
+<div><b>ℹ️ 운영·정책</b><a href="/about/">소개·운영 방식</a><a href="/corrections/">정정 기록</a><a href="/privacy/">개인정보처리방침</a><a href="/terms/">이용약관</a><a href="/contact/">문의</a></div></nav>
+<p class="ft-c"><small>외부 채널</small> <a class="cl-b" href="https://open.kakao.com/o/gzd9B9Si" target="_blank" rel="noopener">💬 루리 톡방 들어가기</a><a class="cl-b" href="https://band.us/band/104846162" target="_blank" rel="noopener" style="background:#06c755;color:#ffffff">👥 루리 밴드 함께하기</a><a class="cl-b" href="http://pf.kakao.com/_wxhimX/friend" target="_blank" rel="noopener" style="background:#FEE500;color:#191919;box-shadow:inset 0 0 0 2px #191919">💬 루리 채널 추가하기</a><a class="cl-b" href="https://www.youtube.com/channel/UCdJQUqqrHHXC7mWstly2eXw" target="_blank" rel="noopener" style="background:#FF0000;color:#ffffff">▶️ 루리 뉴스 유튜브</a></p><p class="ft-l"><a href="/ailog/">개발 지식</a><a href="/app/">앱·알림</a><a href="/all/">전체 메뉴</a></p>
+<p class="ft-n">정보는 각 기관의 공고·언론 보도·공개 자료를 바탕으로 정리했어요. 정확한 내용은 반드시 공식 공고와 원문에서 확인하세요. 일부 링크는 쿠팡 파트너스 활동의 일환으로 수수료를 받을 수 있어요. © 2026 루리의 줍줍 · sungprofile.cloud</p></div></footer><style>.ft-c{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}.cl-b{display:inline-flex;align-items:center;min-height:40px;padding:6px 14px;border-radius:999px;background:#fee500;color:#191919;font-weight:700;text-decoration:none;font-size:14px}.cl-ban{display:flex;align-items:center;gap:6px;margin:8px 0;padding:10px 14px;border-radius:12px;background:#fff9c4;border:1px solid #fde047;color:#422006;font-weight:700;text-decoration:none;font-size:14px}</style>
+</body></html>

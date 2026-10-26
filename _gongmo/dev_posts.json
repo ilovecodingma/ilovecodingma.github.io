@@ -447,5 +447,1523 @@
   ],
   "sources": [],
   "en_summary": "One person runs a site with several AI coding-agent sessions (site code, research and coordination, outbound promotion). Four real incidents and the rules they produced: a stale build lock file made hourly builds skip silently (check the PID in the lock and verify the live page after every deploy); a branch with 1,370 changed files was merged by 3-way merging only the four hand-written sources, never the generated HTML; numbers one session wrote were cross-checked against statute text by another and two were corrected; and an approval relayed by another session was treated as scoped to one change, with backups and a live check."
+ },
+ {
+  "slug": "claude-for-small-business",
+  "lang": "ja",
+  "date": "2026-10-27",
+  "title": "小規模な商品ビジネスのためのClaude活用術:ラベル・マージン・レビュー",
+  "desc": "小さな商品ビジネス向けに、コード不要のClaude活用法を4つ紹介します。ラベル文言のチェック、マージン表つきの卸売提案、競合レビューの分析、週次チェックです。",
+  "hub": [
+   "青年支援金・創業支援まとめ(청년 지원금·창업 지원 모아보기)",
+   "/apply/"
+  ],
+  "sources": [
+   [
+    "FDA 食品表示と栄養",
+    "https://www.fda.gov/food/food-labeling-nutrition",
+    "2026-10-19"
+   ],
+   [
+    "Anthropic 料金",
+    "https://www.anthropic.com/pricing",
+    "2026-10-19"
+   ]
+  ]
+ },
+ {
+  "slug": "cut-ai-token-costs",
+  "lang": "ja",
+  "date": "2026-10-27",
+  "title": "AIトークンコスト削減術:コンテキスト・モデル分担・キャッシュ・コスト追跡",
+  "desc": "Claude APIの料金を下げる実践的な方法を紹介します。必要な文書だけを送る、工程ごとにモデルを分ける、プロジェクト要約をキャッシュする、タスク別にコストを追跡する。現在の料金つきです。",
+  "hub": [
+   "AI制作ログ・開発知識(韓国語)(AI 제작 로그·개발 지식)",
+   "/ailog/"
+  ],
+  "sources": [
+   [
+    "Anthropic 料金",
+    "https://www.anthropic.com/pricing",
+    "2026-10-19"
+   ]
+  ]
+ },
+ {
+  "slug": "immich-proxmox-photo-server",
+  "lang": "ja",
+  "date": "2026-10-27",
+  "title": "ProxmoxでImmichをZFSミラーで構築:セットアップと3-2-1バックアップ",
+  "desc": "ProxmoxでImmich写真サーバーを構築する手順を紹介します。ZFSミラー、公式要件に基づくVMのサイズ、Docker Composeでの導入、データベースダンプを含む3-2-1バックアップまで解説します。",
+  "hub": [
+   "開発知識まとめ(韓国語)(개발 지식 모음)",
+   "/ailog/"
+  ],
+  "sources": [
+   [
+    "Immichの要件",
+    "https://immich.app/docs/install/requirements",
+    "2026-10-19"
+   ],
+   [
+    "Immichのバックアップと復元",
+    "https://immich.app/docs/administration/backup-and-restore",
+    "2026-10-19"
+   ]
+  ]
+ },
+ {
+  "slug": "mutation-testing-false-kills",
+  "lang": "ja",
+  "date": "2026-10-27",
+  "title": "ミューテーションテストの偽のkill:ベースライン・ファイルアクセス・kill理由",
+  "desc": "偽のkillがミューテーションスコアを水増しする理由と、それを見抜く3つのチェックを解説します。まっさらなコピーでのベースライン、変更後ファイルが読まれた証明、kill理由の分布です。",
+  "hub": [
+   "開発知識まとめ(韓国語)(개발 지식 모음)",
+   "/ailog/"
+  ],
+  "sources": [
+   [
+    "Stryker:ミュータントの状態と指標",
+    "https://stryker-mutator.io/docs/mutation-testing-elements/mutant-states-and-metrics/",
+    "2026-10-19"
+   ]
+  ]
+ },
+ {
+  "slug": "korea-take-home-salary",
+  "lang": "ja",
+  "date": "2026-10-27",
+  "title": "韓国の2026年手取り給与:控除・料率・計算例",
+  "desc": "2026年の韓国の年俸が月々の手取りになるまでを解説します。国民年金、健康保険、長期療養保険、雇用保険、所得税を、公式の料率と金額の例つきで紹介します。外国人従業員が注意すべき点もまとめています。",
+  "hub": [
+   "年俸手取り計算機(韓国語)(연봉 실수령액 계산기)",
+   "/money/tools/salary/"
+  ],
+  "sources": [
+   [
+    "国民年金公団(9.5%、所得基準)",
+    "https://www.nps.or.kr",
+    "2026-10-18"
+   ],
+   [
+    "国民健康保険公団(7.19%、長期療養保険0.9448%)",
+    "https://www.nhis.or.kr",
+    "2026-10-18"
+   ],
+   [
+    "雇用労働部(雇用保険)",
+    "https://www.moel.go.kr",
+    "2026-10-18"
+   ]
+  ]
+ },
+ {
+  "slug": "jeonse-vs-wolse-explained",
+  "lang": "ja",
+  "date": "2026-10-27",
+  "title": "チョンセとウォルセの違い:外国人が保証金を守る方法",
+  "desc": "韓国のチョンセ、ウォルセ、パンチョンセを解説し、保証金を守る手順を紹介します。住所の届け出、確定日付、保証保険に加え、登録外国人向けの注意点や、契約前に確認すべき事項もまとめています。",
+  "hub": [
+   "韓国語版(전세 vs 월세 가이드)",
+   "/money/guide/jeonse-vs-wolse/"
+  ],
+  "sources": [
+   [
+    "出入国管理法第88条の2(国家法令情報センター)",
+    "https://www.law.go.kr",
+    "2026-10-19"
+   ],
+   [
+    "住宅賃貸借保護法第3条、第3条の2",
+    "https://www.law.go.kr",
+    "2026-10-19"
+   ],
+   [
+    "最高裁判所インターネット登記所",
+    "https://www.iros.go.kr",
+    "2026-10-19"
+   ]
+  ]
+ },
+ {
+  "slug": "korea-unemployment-benefits-foreigners",
+  "lang": "ja",
+  "date": "2026-10-27",
+  "title": "韓国で外国人が受けられる失業給付(2026年)",
+  "desc": "韓国の雇用保険の対象となるビザ、2026年の失業給付の日額の上限と下限、給付期間、外国人労働者の申請方法を、ステップごとにわかりやすく解説します。任意加入のビザは事前の加入申請が必要です。",
+  "hub": [
+   "失業給付の条件2026(韓国語)(실업급여 조건 2026)",
+   "/guide/unemployment-2026/"
+  ],
+  "sources": [
+   [
+    "雇用労働部 — 外国人労働者の雇用保険",
+    "https://www.moel.go.kr/minwon/fastcounsel/fastcounselView.do?inetDcssMngId=202503181255455430204",
+    "2026-10-19"
+   ],
+   [
+    "Work24 失業給付の案内",
+    "https://www.work24.go.kr",
+    "2026-10-19"
+   ]
+  ]
+ },
+ {
+  "slug": "korea-contests-open-to-foreigners",
+  "lang": "ja",
+  "date": "2026-10-27",
+  "title": "外国人が応募できる韓国のコンテスト:探し方と応募方法",
+  "desc": "在韓外国人として韓国のコンテストの応募資格を読み解く方法と、規約で外国人に言及している募集中のコンテストの一覧(1時間ごとに更新)を紹介します。応募前に確認したいポイントも整理しました。",
+  "hub": [
+   "募集中のコンテスト一覧(韓国語)(진행 중 공모전 전체)",
+   "/contest/"
+  ],
+  "sources": [
+   [
+    "各コンテストのページからリンクされた公式告知",
+    "/contest/",
+    "2026-10-19"
+   ]
+  ]
+ },
+ {
+  "slug": "steam-refund-policy",
+  "lang": "ja",
+  "date": "2026-10-27",
+  "title": "Steamの返金ポリシー解説:14日・2時間と申請方法",
+  "desc": "Steamの公式返金ルールをやさしく解説します。ゲームは14日以内かつ2時間未満が条件で、DLC、ギフト、バンドル、予約購入、ウォレット残高、返金できないものも説明します。",
+  "hub": [
+   "韓国語版(스팀 환불 규정)",
+   "/game/refund/"
+  ],
+  "sources": [
+   [
+    "Valve:Steamの返金(公式、2024年4月23日更新)",
+    "https://store.steampowered.com/steam_refunds/",
+    "2026-10-20"
+   ],
+   [
+    "Steamサポート",
+    "https://help.steampowered.com/",
+    "2026-10-20"
+   ]
+  ]
+ },
+ {
+  "slug": "korea-monthly-rent-tax-credit-foreigners",
+  "lang": "ja",
+  "date": "2026-10-27",
+  "title": "在韓外国人の月額家賃税額控除:対象・控除率・上限",
+  "desc": "韓国の月額家賃税額控除を申請できる人、15〜17%の控除率、家賃1,000万ウォンの上限、住宅と住所の条件、在韓外国人が国税庁に確認すべき点、必要書類、年末調整との関係を解説します。",
+  "hub": [
+   "韓国語版(월세 세액공제 가이드)",
+   "/money/guide/rent-credit/"
+  ],
+  "sources": [
+   [
+    "国税庁:月額家賃税額控除(韓国語)",
+    "https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=40613&cntntsId=239025",
+    "2026-10-20"
+   ],
+   [
+    "国税庁 Q&A(韓国語)",
+    "https://call.nts.go.kr/call/qna/selectQnaInfo.do?mi=1318&ctgId=CTG11906",
+    "2026-10-20"
+   ]
+  ]
+ },
+ {
+  "slug": "korea-business-tax-calendar",
+  "lang": "ja",
+  "date": "2026-10-27",
+  "title": "韓国の個人事業主の税務カレンダー:VAT・所得税・源泉税",
+  "desc": "韓国の個人事業主がVAT、所得税、源泉税をいつ申告するか、開業・廃業の期限とあわせて、国税庁の案内に基づいて解説します。年によって期限が延長される場合があるため、Hometaxでの確認も欠かせません。",
+  "hub": [
+   "韓国語版(사업자 신고·세금 달력)",
+   "/money/guide/business-tax-calendar/"
+  ],
+  "sources": [
+   [
+    "国税庁:VAT申告期限(韓国語)",
+    "https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=2273&cntntsId=7694",
+    "2026-10-20"
+   ],
+   [
+    "国税庁:所得税の申告期限(韓国語)",
+    "https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=2225&cntntsId=7665",
+    "2026-10-20"
+   ],
+   [
+    "国税庁:源泉税(韓国語)",
+    "https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=2414&cntntsId=7702",
+    "2026-10-20"
+   ]
+  ]
+ },
+ {
+  "slug": "claude-for-small-business",
+  "lang": "zh",
+  "date": "2026-10-27",
+  "title": "面向小型产品商家的 Claude 用法：标签、利润率与评论",
+  "desc": "为小型产品卖家准备的四个无需代码的 Claude 工作流：标签文案检查、带利润率表的批发提案、竞品评论分析和每周检查。",
+  "hub": [
+   "青年扶持金·创业扶持汇总（청년 지원금·창업 지원 모아보기）",
+   "/apply/"
+  ],
+  "sources": [
+   [
+    "FDA 食品标签与营养",
+    "https://www.fda.gov/food/food-labeling-nutrition",
+    "2026-10-19"
+   ],
+   [
+    "Anthropic 定价",
+    "https://www.anthropic.com/pricing",
+    "2026-10-19"
+   ]
+  ]
+ },
+ {
+  "slug": "cut-ai-token-costs",
+  "lang": "zh",
+  "date": "2026-10-27",
+  "title": "降低 AI Token 成本：上下文、模型分工、缓存与成本追踪",
+  "desc": "降低 Claude API 账单的实用方法：只发送所需文档、按步骤分配模型、缓存项目摘要、按任务追踪成本。附当前价格。",
+  "hub": [
+   "AI 制作日志·开发知识（AI 제작 로그·개발 지식）",
+   "/ailog/"
+  ],
+  "sources": [
+   [
+    "Anthropic 定价",
+    "https://www.anthropic.com/pricing",
+    "2026-10-19"
+   ]
+  ]
+ },
+ {
+  "slug": "immich-proxmox-photo-server",
+  "lang": "zh",
+  "date": "2026-10-27",
+  "title": "在 Proxmox 上用 ZFS 镜像搭建 Immich：安装与 3-2-1 备份",
+  "desc": "在 Proxmox 上搭建 Immich 照片服务器的分步指南：ZFS 镜像、依据官方要求配置虚拟机、Docker Compose 安装，以及包含数据库转储的 3-2-1 备份。",
+  "hub": [
+   "开发知识汇总（개발 지식 모음）",
+   "/ailog/"
+  ],
+  "sources": [
+   [
+    "Immich 系统要求",
+    "https://immich.app/docs/install/requirements",
+    "2026-10-19"
+   ],
+   [
+    "Immich 备份与恢复",
+    "https://immich.app/docs/administration/backup-and-restore",
+    "2026-10-19"
+   ]
+  ]
+ },
+ {
+  "slug": "mutation-testing-false-kills",
+  "lang": "zh",
+  "date": "2026-10-27",
+  "title": "变异测试的假杀死：基线、文件访问与杀死原因",
+  "desc": "为什么假杀死会抬高变异得分，以及发现它们的三项检查：原始副本基线、证明读取了变异文件、杀死原因分布。",
+  "hub": [
+   "开发知识汇总（개발 지식 모음）",
+   "/ailog/"
+  ],
+  "sources": [
+   [
+    "Stryker：变异体状态与指标",
+    "https://stryker-mutator.io/docs/mutation-testing-elements/mutant-states-and-metrics/",
+    "2026-10-19"
+   ]
+  ]
+ },
+ {
+  "slug": "korea-take-home-salary",
+  "lang": "zh",
+  "date": "2026-10-27",
+  "title": "2026 年韩国实发工资：扣除项、费率与示例",
+  "desc": "2026 年韩国年薪如何变成月实发工资：养老金、健康保险、长期护理、雇佣保险和所得税，附官方费率与示例金额。",
+  "hub": [
+   "年薪实发金额计算器（연봉 실수령액 계산기）",
+   "/money/tools/salary/"
+  ],
+  "sources": [
+   [
+    "国民年金公团（9.5%，收入基数）",
+    "https://www.nps.or.kr",
+    "2026-10-18"
+   ],
+   [
+    "国民健康保险公团（7.19%，长期护理 0.9448%）",
+    "https://www.nhis.or.kr",
+    "2026-10-18"
+   ],
+   [
+    "雇佣劳动部（雇佣保险）",
+    "https://www.moel.go.kr",
+    "2026-10-18"
+   ]
+  ]
+ },
+ {
+  "slug": "jeonse-vs-wolse-explained",
+  "lang": "zh",
+  "date": "2026-10-27",
+  "title": "全租与月租详解：外国人如何保护押金",
+  "desc": "详解韩国的全租（전세）、月租（월세）和半全租（반전세），以及保护押金的步骤：住址申报、确定日期和担保保险，并附登记外国人的注意事项。",
+  "hub": [
+   "韩文版（전세 vs 월세 가이드）",
+   "/money/guide/jeonse-vs-wolse/"
+  ],
+  "sources": [
+   [
+    "《出入境管理法》第 88-2 条（国家法令信息中心）",
+    "https://www.law.go.kr",
+    "2026-10-19"
+   ],
+   [
+    "《住宅租赁保护法》第 3 条、第 3-2 条",
+    "https://www.law.go.kr",
+    "2026-10-19"
+   ],
+   [
+    "大法院网上登记所",
+    "https://www.iros.go.kr",
+    "2026-10-19"
+   ]
+  ]
+ },
+ {
+  "slug": "korea-unemployment-benefits-foreigners",
+  "lang": "zh",
+  "date": "2026-10-27",
+  "title": "韩国外国人失业救济金（2026）",
+  "desc": "哪些签证被韩国雇佣保险覆盖、2026 年失业救济金的日上限与日下限、领取期限，以及外籍劳动者如何申请。",
+  "hub": [
+   "失业救济金条件 2026（실업급여 조건 2026）",
+   "/guide/unemployment-2026/"
+  ],
+  "sources": [
+   [
+    "雇佣劳动部——外国劳动者的雇佣保险",
+    "https://www.moel.go.kr/minwon/fastcounsel/fastcounselView.do?inetDcssMngId=202503181255455430204",
+    "2026-10-19"
+   ],
+   [
+    "Work24 失业救济金指引",
+    "https://www.work24.go.kr",
+    "2026-10-19"
+   ]
+  ]
+ },
+ {
+  "slug": "korea-contests-open-to-foreigners",
+  "lang": "zh",
+  "date": "2026-10-27",
+  "title": "外国人可参加的韩国征集活动：如何查找与参加",
+  "desc": "外国居民如何读懂韩国征集活动（공모전）的参赛资格规则，并附每小时更新的、规则中提到外国人的开放中征集活动列表。",
+  "hub": [
+   "进行中的全部征集活动（진행 중 공모전 전체）",
+   "/contest/"
+  ],
+  "sources": [
+   [
+    "各征集活动页面链接的官方公告",
+    "/contest/",
+    "2026-10-19"
+   ]
+  ]
+ },
+ {
+  "slug": "steam-refund-policy",
+  "lang": "zh",
+  "date": "2026-10-27",
+  "title": "Steam 退款政策详解：14 天、2 小时与申请方法",
+  "desc": "用通俗语言讲解 Steam 官方退款规则：游戏 14 天且不到 2 小时，以及 DLC、礼物、捆绑包、预购、钱包资金和不可退款的内容。",
+  "hub": [
+   "韩文版（스팀 환불 규정）",
+   "/game/refund/"
+  ],
+  "sources": [
+   [
+    "Valve：Steam 退款（官方，更新于 2024 年 4 月 23 日）",
+    "https://store.steampowered.com/steam_refunds/",
+    "2026-10-20"
+   ],
+   [
+    "Steam 支持",
+    "https://help.steampowered.com/",
+    "2026-10-20"
+   ]
+  ]
+ },
+ {
+  "slug": "korea-monthly-rent-tax-credit-foreigners",
+  "lang": "zh",
+  "date": "2026-10-27",
+  "title": "外国居民的韩国月租税额抵免：资格、比率与上限",
+  "desc": "谁可以申请韩国月租税额抵免、15–17% 的抵免率、KRW 10 million 的房租上限、住房和住址规则，以及外国居民应向国税厅确认的事项。",
+  "hub": [
+   "韩文版（월세 세액공제 가이드）",
+   "/money/guide/rent-credit/"
+  ],
+  "sources": [
+   [
+    "国税厅：月租税额抵免（韩文）",
+    "https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=40613&cntntsId=239025",
+    "2026-10-20"
+   ],
+   [
+    "国税厅问答（韩文）",
+    "https://call.nts.go.kr/call/qna/selectQnaInfo.do?mi=1318&ctgId=CTG11906",
+    "2026-10-20"
+   ]
+  ]
+ },
+ {
+  "slug": "korea-business-tax-calendar",
+  "lang": "zh",
+  "date": "2026-10-27",
+  "title": "韩国个体经营者税务日历：增值税、所得税与预扣税",
+  "desc": "依据国税厅指引，说明韩国个人经营者何时申报增值税、所得税和预扣税，以及营业登记和停业的期限。",
+  "hub": [
+   "韩文版（사업자 신고·세금 달력）",
+   "/money/guide/business-tax-calendar/"
+  ],
+  "sources": [
+   [
+    "国税厅：增值税申报期限（韩文）",
+    "https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=2273&cntntsId=7694",
+    "2026-10-20"
+   ],
+   [
+    "国税厅：所得税期限（韩文）",
+    "https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=2225&cntntsId=7665",
+    "2026-10-20"
+   ],
+   [
+    "国税厅：预扣税（韩文）",
+    "https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=2414&cntntsId=7702",
+    "2026-10-20"
+   ]
+  ]
+ },
+ {
+  "slug": "claude-for-small-business",
+  "lang": "es",
+  "date": "2026-10-27",
+  "title": "Claude para pequeños negocios: etiquetas, márgenes y reseñas",
+  "desc": "Cuatro flujos de Claude sin código para vendedores: revisión de etiquetas, propuestas mayoristas con márgenes, análisis de reseñas y revisión semanal.",
+  "hub": [
+   "청년 지원금·창업 지원 모아보기",
+   "/apply/"
+  ],
+  "sources": [
+   [
+    "FDA: etiquetado de alimentos y nutrición",
+    "https://www.fda.gov/food/food-labeling-nutrition",
+    "2026-10-19"
+   ],
+   [
+    "Precios de Anthropic",
+    "https://www.anthropic.com/pricing",
+    "2026-10-19"
+   ]
+  ]
+ },
+ {
+  "slug": "cut-ai-token-costs",
+  "lang": "es",
+  "date": "2026-10-27",
+  "title": "Reduzca el costo de tokens de IA: contexto, modelos, caché y control",
+  "desc": "Cómo bajar la factura de la API de Claude: enviar solo lo necesario, repartir pasos entre modelos, usar caché y medir el costo por tarea. Con precios actuales.",
+  "hub": [
+   "AI 제작 로그·개발 지식 (en coreano)",
+   "/ailog/"
+  ],
+  "sources": [
+   [
+    "Precios de Anthropic",
+    "https://www.anthropic.com/pricing",
+    "2026-10-19"
+   ]
+  ]
+ },
+ {
+  "slug": "immich-proxmox-photo-server",
+  "lang": "es",
+  "date": "2026-10-27",
+  "title": "Immich en Proxmox con espejo ZFS: instalación y copia 3-2-1",
+  "desc": "Servidor de fotos Immich en Proxmox: espejo ZFS, tamaño de la VM, Docker Compose y copia 3-2-1 que incluye los volcados de la base de datos.",
+  "hub": [
+   "개발 지식 모음 (en coreano)",
+   "/ailog/"
+  ],
+  "sources": [
+   [
+    "Requisitos de Immich",
+    "https://immich.app/docs/install/requirements",
+    "2026-10-19"
+   ],
+   [
+    "Copia de seguridad y restauración de Immich",
+    "https://immich.app/docs/administration/backup-and-restore",
+    "2026-10-19"
+   ]
+  ]
+ },
+ {
+  "slug": "mutation-testing-false-kills",
+  "lang": "es",
+  "date": "2026-10-27",
+  "title": "Falsas eliminaciones en pruebas de mutación: línea base y motivos",
+  "desc": "Por qué las falsas eliminaciones inflan la puntuación de mutación y tres comprobaciones: línea base limpia, lectura del archivo mutado y motivos de eliminación.",
+  "hub": [
+   "개발 지식 모음 (en coreano)",
+   "/ailog/"
+  ],
+  "sources": [
+   [
+    "Stryker: estados de mutantes y métricas",
+    "https://stryker-mutator.io/docs/mutation-testing-elements/mutant-states-and-metrics/",
+    "2026-10-19"
+   ]
+  ]
+ },
+ {
+  "slug": "korea-take-home-salary",
+  "lang": "es",
+  "date": "2026-10-27",
+  "title": "Salario neto en Corea 2026: deducciones, tasas y ejemplos",
+  "desc": "Cómo un salario anual coreano pasa a neto mensual en 2026: pensión, salud, cuidados, seguro de empleo e impuesto sobre la renta, con tasas oficiales y ejemplos.",
+  "hub": [
+   "연봉 실수령액 계산기 (en coreano)",
+   "/money/tools/salary/"
+  ],
+  "sources": [
+   [
+    "Servicio Nacional de Pensiones (9.5%, base de ingresos)",
+    "https://www.nps.or.kr",
+    "2026-10-18"
+   ],
+   [
+    "Servicio Nacional de Seguro de Salud (7.19%, cuidados de larga duración 0.9448%)",
+    "https://www.nhis.or.kr",
+    "2026-10-18"
+   ],
+   [
+    "Ministerio de Empleo y Trabajo (seguro de empleo)",
+    "https://www.moel.go.kr",
+    "2026-10-18"
+   ]
+  ]
+ },
+ {
+  "slug": "jeonse-vs-wolse-explained",
+  "lang": "es",
+  "date": "2026-10-27",
+  "title": "Jeonse vs wolse: cómo proteger su depósito siendo extranjero",
+  "desc": "Jeonse, wolse y ban-jeonse en Corea y cómo proteger su depósito: declaración de dirección, fecha cierta y seguro de garantía, con notas para extranjeros.",
+  "hub": [
+   "Versión en coreano (전세 vs 월세 가이드)",
+   "/money/guide/jeonse-vs-wolse/"
+  ],
+  "sources": [
+   [
+    "Ley de Inmigración, art. 88-2 (Centro de Información Legal de Corea)",
+    "https://www.law.go.kr",
+    "2026-10-19"
+   ],
+   [
+    "Ley de Protección del Arrendamiento de Viviendas, arts. 3 y 3-2",
+    "https://www.law.go.kr",
+    "2026-10-19"
+   ],
+   [
+    "Registro de Internet de la Corte Suprema",
+    "https://www.iros.go.kr",
+    "2026-10-19"
+   ]
+  ]
+ },
+ {
+  "slug": "korea-unemployment-benefits-foreigners",
+  "lang": "es",
+  "date": "2026-10-27",
+  "title": "Prestación por desempleo para extranjeros en Corea (2026)",
+  "desc": "Qué visados cubre el seguro de empleo coreano, la prestación diaria máxima y mínima de 2026, la duración y cómo solicitarla siendo trabajador extranjero.",
+  "hub": [
+   "실업급여 조건 2026 (en coreano)",
+   "/guide/unemployment-2026/"
+  ],
+  "sources": [
+   [
+    "Ministerio de Empleo y Trabajo: seguro de empleo para trabajadores extranjeros",
+    "https://www.moel.go.kr/minwon/fastcounsel/fastcounselView.do?inetDcssMngId=202503181255455430204",
+    "2026-10-19"
+   ],
+   [
+    "Orientación de Work24 sobre la prestación por desempleo",
+    "https://www.work24.go.kr",
+    "2026-10-19"
+   ]
+  ]
+ },
+ {
+  "slug": "korea-contests-open-to-foreigners",
+  "lang": "es",
+  "date": "2026-10-27",
+  "title": "Concursos de Corea abiertos a extranjeros: cómo encontrarlos",
+  "desc": "Cómo leer los requisitos de concursos coreanos como residente extranjero, con una lista horaria de concursos abiertos que mencionan a extranjeros.",
+  "hub": [
+   "진행 중 공모전 전체 (en coreano)",
+   "/contest/"
+  ],
+  "sources": [
+   [
+    "Avisos oficiales enlazados en cada página de concurso",
+    "/contest/",
+    "2026-10-19"
+   ]
+  ]
+ },
+ {
+  "slug": "steam-refund-policy",
+  "lang": "es",
+  "date": "2026-10-27",
+  "title": "Política de reembolsos de Steam: 14 días, 2 horas y cómo pedirlo",
+  "desc": "Reglas oficiales de reembolso de Steam: 14 días y menos de 2 horas para juegos, más DLC, regalos, paquetes, reservas, fondos de cartera y lo no reembolsable.",
+  "hub": [
+   "Versión en coreano (스팀 환불 규정)",
+   "/game/refund/"
+  ],
+  "sources": [
+   [
+    "Valve: reembolsos de Steam (oficial, actualizado el 23 de abril de 2024)",
+    "https://store.steampowered.com/steam_refunds/",
+    "2026-10-20"
+   ],
+   [
+    "Soporte de Steam",
+    "https://help.steampowered.com/",
+    "2026-10-20"
+   ]
+  ]
+ },
+ {
+  "slug": "korea-monthly-rent-tax-credit-foreigners",
+  "lang": "es",
+  "date": "2026-10-27",
+  "title": "Crédito fiscal por alquiler en Corea para extranjeros: requisitos",
+  "desc": "Quién puede pedir el crédito fiscal por alquiler en Corea, tasa del 15-17%, tope de KRW 10 millones, reglas de vivienda y dirección, y qué consultar al NTS.",
+  "hub": [
+   "Versión en coreano (월세 세액공제 가이드)",
+   "/money/guide/rent-credit/"
+  ],
+  "sources": [
+   [
+    "Servicio Nacional de Impuestos: crédito fiscal por alquiler mensual (en coreano)",
+    "https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=40613&cntntsId=239025",
+    "2026-10-20"
+   ],
+   [
+    "Preguntas y respuestas del Servicio Nacional de Impuestos (en coreano)",
+    "https://call.nts.go.kr/call/qna/selectQnaInfo.do?mi=1318&ctgId=CTG11906",
+    "2026-10-20"
+   ]
+  ]
+ },
+ {
+  "slug": "korea-business-tax-calendar",
+  "lang": "es",
+  "date": "2026-10-27",
+  "title": "Calendario fiscal en Corea para empresarios: IVA, renta y retenciones",
+  "desc": "Cuándo presentan los empresarios individuales en Corea el IVA, la renta y las retenciones, y los plazos de registro y cierre, según el NTS.",
+  "hub": [
+   "Versión en coreano (사업자 신고·세금 달력)",
+   "/money/guide/business-tax-calendar/"
+  ],
+  "sources": [
+   [
+    "Servicio Nacional de Impuestos: plazos del IVA (en coreano)",
+    "https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=2273&cntntsId=7694",
+    "2026-10-20"
+   ],
+   [
+    "Servicio Nacional de Impuestos: plazos del impuesto sobre la renta (en coreano)",
+    "https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=2225&cntntsId=7665",
+    "2026-10-20"
+   ],
+   [
+    "Servicio Nacional de Impuestos: impuesto retenido (en coreano)",
+    "https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=2414&cntntsId=7702",
+    "2026-10-20"
+   ]
+  ]
+ },
+ {
+  "slug": "claude-for-small-business",
+  "lang": "vi",
+  "date": "2026-10-27",
+  "title": "Dùng Claude cho doanh nghiệp nhỏ: nhãn, biên lợi nhuận, đánh giá",
+  "desc": "Bốn quy trình Claude không cần code cho người bán sản phẩm nhỏ: kiểm tra nhãn, đề xuất bán sỉ có bảng biên lợi nhuận, phân tích đánh giá đối thủ và rà soát tuần.",
+  "hub": [
+   "Tổng hợp hỗ trợ thanh niên và khởi nghiệp (청년 지원금·창업 지원 모아보기)",
+   "/apply/"
+  ],
+  "sources": [
+   [
+    "FDA: Ghi nhãn thực phẩm và dinh dưỡng",
+    "https://www.fda.gov/food/food-labeling-nutrition",
+    "2026-10-19"
+   ],
+   [
+    "Bảng giá của Anthropic",
+    "https://www.anthropic.com/pricing",
+    "2026-10-19"
+   ]
+  ]
+ },
+ {
+  "slug": "cut-ai-token-costs",
+  "lang": "vi",
+  "date": "2026-10-27",
+  "title": "Cắt giảm chi phí token AI: ngữ cảnh, chia mô hình, cache, theo dõi",
+  "desc": "Cách giảm hóa đơn Claude API: chỉ gửi tài liệu cần thiết, chia bước theo mô hình, cache bản tóm tắt dự án và theo dõi chi phí từng tác vụ. Kèm giá hiện tại.",
+  "hub": [
+   "Nhật ký chế tạo AI và kiến thức phát triển (AI 제작 로그·개발 지식, tiếng Hàn)",
+   "/ailog/"
+  ],
+  "sources": [
+   [
+    "Bảng giá của Anthropic",
+    "https://www.anthropic.com/pricing",
+    "2026-10-19"
+   ]
+  ]
+ },
+ {
+  "slug": "immich-proxmox-photo-server",
+  "lang": "vi",
+  "date": "2026-10-27",
+  "title": "Immich trên Proxmox với ZFS mirror: cài đặt và sao lưu 3-2-1",
+  "desc": "Dựng máy chủ ảnh Immich trên Proxmox: ZFS mirror, cấu hình VM theo yêu cầu chính thức, cài bằng Docker Compose và sao lưu 3-2-1 gồm cả bản dump cơ sở dữ liệu.",
+  "hub": [
+   "Tổng hợp kiến thức phát triển (개발 지식 모음, tiếng Hàn)",
+   "/ailog/"
+  ],
+  "sources": [
+   [
+    "Yêu cầu hệ thống của Immich",
+    "https://immich.app/docs/install/requirements",
+    "2026-10-19"
+   ],
+   [
+    "Sao lưu và khôi phục của Immich",
+    "https://immich.app/docs/administration/backup-and-restore",
+    "2026-10-19"
+   ]
+  ]
+ },
+ {
+  "slug": "mutation-testing-false-kills",
+  "lang": "vi",
+  "date": "2026-10-27",
+  "title": "False kill trong mutation testing: baseline, truy cập tệp, lý do kill",
+  "desc": "Vì sao false kill thổi phồng điểm mutation và ba cách kiểm tra: baseline trên bản sao nguyên bản, bằng chứng tệp đột biến được đọc và phân bố lý do kill.",
+  "hub": [
+   "Tổng hợp kiến thức phát triển (개발 지식 모음, tiếng Hàn)",
+   "/ailog/"
+  ],
+  "sources": [
+   [
+    "Stryker: trạng thái mutant và các chỉ số",
+    "https://stryker-mutator.io/docs/mutation-testing-elements/mutant-states-and-metrics/",
+    "2026-10-19"
+   ]
+  ]
+ },
+ {
+  "slug": "korea-take-home-salary",
+  "lang": "vi",
+  "date": "2026-10-27",
+  "title": "Lương thực nhận ở Hàn Quốc 2026: các khoản khấu trừ, tỷ lệ, ví dụ",
+  "desc": "Lương năm ở Hàn Quốc thành lương thực nhận hằng tháng năm 2026: lương hưu, bảo hiểm y tế, chăm sóc dài hạn, bảo hiểm việc làm, thuế thu nhập kèm ví dụ.",
+  "hub": [
+   "Công cụ tính lương thực nhận (연봉 실수령액 계산기, tiếng Hàn)",
+   "/money/tools/salary/"
+  ],
+  "sources": [
+   [
+    "Cơ quan Lương hưu Quốc gia (9.5%, mức thu nhập cơ sở)",
+    "https://www.nps.or.kr",
+    "2026-10-18"
+   ],
+   [
+    "Cơ quan Bảo hiểm Y tế Quốc gia (7.19%, chăm sóc dài hạn 0.9448%)",
+    "https://www.nhis.or.kr",
+    "2026-10-18"
+   ],
+   [
+    "Bộ Lao động và Việc làm (bảo hiểm việc làm)",
+    "https://www.moel.go.kr",
+    "2026-10-18"
+   ]
+  ]
+ },
+ {
+  "slug": "jeonse-vs-wolse-explained",
+  "lang": "vi",
+  "date": "2026-10-27",
+  "title": "Jeonse và wolse: bảo vệ tiền đặt cọc khi bạn là người nước ngoài",
+  "desc": "Giải thích jeonse, wolse, ban-jeonse ở Hàn Quốc và cách bảo vệ tiền đặt cọc: khai báo địa chỉ, ngày xác định, bảo hiểm bảo lãnh, kèm lưu ý cho người nước ngoài.",
+  "hub": [
+   "Bản tiếng Hàn (hướng dẫn 전세 vs 월세)",
+   "/money/guide/jeonse-vs-wolse/"
+  ],
+  "sources": [
+   [
+    "Luật Xuất nhập cảnh Điều 88-2 (Trung tâm Thông tin Pháp luật Hàn Quốc)",
+    "https://www.law.go.kr",
+    "2026-10-19"
+   ],
+   [
+    "Luật Bảo vệ thuê nhà ở Điều 3, 3-2",
+    "https://www.law.go.kr",
+    "2026-10-19"
+   ],
+   [
+    "Văn phòng đăng ký trực tuyến của Tòa án Tối cao",
+    "https://www.iros.go.kr",
+    "2026-10-19"
+   ]
+  ]
+ },
+ {
+  "slug": "korea-unemployment-benefits-foreigners",
+  "lang": "vi",
+  "date": "2026-10-27",
+  "title": "Trợ cấp thất nghiệp cho người nước ngoài ở Hàn Quốc (2026)",
+  "desc": "Visa nào được bảo hiểm việc làm Hàn Quốc chi trả, mức trợ cấp thất nghiệp tối đa và tối thiểu mỗi ngày năm 2026, thời gian nhận và cách nộp đơn.",
+  "hub": [
+   "Điều kiện trợ cấp thất nghiệp 2026 (실업급여 조건 2026, tiếng Hàn)",
+   "/guide/unemployment-2026/"
+  ],
+  "sources": [
+   [
+    "Bộ Lao động và Việc làm — bảo hiểm việc làm cho lao động nước ngoài",
+    "https://www.moel.go.kr/minwon/fastcounsel/fastcounselView.do?inetDcssMngId=202503181255455430204",
+    "2026-10-19"
+   ],
+   [
+    "Hướng dẫn trợ cấp thất nghiệp của Work24",
+    "https://www.work24.go.kr",
+    "2026-10-19"
+   ]
+  ]
+ },
+ {
+  "slug": "korea-contests-open-to-foreigners",
+  "lang": "vi",
+  "date": "2026-10-27",
+  "title": "Cuộc thi ở Hàn Quốc dành cho người nước ngoài: cách tìm và tham gia",
+  "desc": "Cách đọc điều kiện tham gia cuộc thi ở Hàn Quốc khi bạn là người nước ngoài, kèm danh sách cập nhật mỗi giờ các cuộc thi mở nhắc đến người nước ngoài.",
+  "hub": [
+   "Tất cả cuộc thi đang diễn ra (진행 중 공모전 전체, tiếng Hàn)",
+   "/contest/"
+  ],
+  "sources": [
+   [
+    "Thông báo chính thức được liên kết từ trang của từng cuộc thi",
+    "/contest/",
+    "2026-10-19"
+   ]
+  ]
+ },
+ {
+  "slug": "steam-refund-policy",
+  "lang": "vi",
+  "date": "2026-10-27",
+  "title": "Chính sách hoàn tiền Steam: 14 ngày, 2 giờ và cách yêu cầu hoàn tiền",
+  "desc": "Quy định hoàn tiền chính thức của Steam: 14 ngày và dưới 2 giờ chơi với game, cùng DLC, quà tặng, bundle, đặt mua trước, tiền Wallet và mục không hoàn được.",
+  "hub": [
+   "Bản tiếng Hàn (quy định hoàn tiền Steam, 스팀 환불 규정)",
+   "/game/refund/"
+  ],
+  "sources": [
+   [
+    "Valve: Hoàn tiền Steam (chính thức, cập nhật ngày 23 tháng 4 năm 2024)",
+    "https://store.steampowered.com/steam_refunds/",
+    "2026-10-20"
+   ],
+   [
+    "Hỗ trợ Steam",
+    "https://help.steampowered.com/",
+    "2026-10-20"
+   ]
+  ]
+ },
+ {
+  "slug": "korea-monthly-rent-tax-credit-foreigners",
+  "lang": "vi",
+  "date": "2026-10-27",
+  "title": "Khấu trừ thuế tiền thuê nhà ở Hàn Quốc cho người nước ngoài cư trú",
+  "desc": "Ai được khấu trừ thuế tiền thuê nhà ở Hàn Quốc, mức 15-17%, trần tiền thuê KRW 10 million, quy định về nhà ở và địa chỉ, và điều người nước ngoài nên hỏi NTS.",
+  "hub": [
+   "Bản tiếng Hàn (hướng dẫn khấu trừ thuế tiền thuê nhà, 월세 세액공제 가이드)",
+   "/money/guide/rent-credit/"
+  ],
+  "sources": [
+   [
+    "Cục Thuế Quốc gia: khấu trừ thuế tiền thuê nhà hằng tháng (tiếng Hàn)",
+    "https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=40613&cntntsId=239025",
+    "2026-10-20"
+   ],
+   [
+    "Hỏi đáp của Cục Thuế Quốc gia (tiếng Hàn)",
+    "https://call.nts.go.kr/call/qna/selectQnaInfo.do?mi=1318&ctgId=CTG11906",
+    "2026-10-20"
+   ]
+  ]
+ },
+ {
+  "slug": "korea-business-tax-calendar",
+  "lang": "vi",
+  "date": "2026-10-27",
+  "title": "Lịch thuế cho chủ doanh nghiệp cá nhân ở Hàn Quốc: VAT, thuế thu nhập",
+  "desc": "Khi nào chủ doanh nghiệp cá nhân ở Hàn Quốc kê khai VAT, thuế thu nhập, thuế khấu trừ tại nguồn, cùng hạn đăng ký và đóng cửa theo hướng dẫn của NTS.",
+  "hub": [
+   "Bản tiếng Hàn (lịch kê khai và thuế cho chủ doanh nghiệp, 사업자 신고·세금 달력)",
+   "/money/guide/business-tax-calendar/"
+  ],
+  "sources": [
+   [
+    "Cục Thuế Quốc gia: hạn kê khai VAT (tiếng Hàn)",
+    "https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=2273&cntntsId=7694",
+    "2026-10-20"
+   ],
+   [
+    "Cục Thuế Quốc gia: hạn thuế thu nhập (tiếng Hàn)",
+    "https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=2225&cntntsId=7665",
+    "2026-10-20"
+   ],
+   [
+    "Cục Thuế Quốc gia: thuế khấu trừ tại nguồn (tiếng Hàn)",
+    "https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=2414&cntntsId=7702",
+    "2026-10-20"
+   ]
+  ]
+ },
+ {
+  "slug": "claude-for-small-business",
+  "lang": "id",
+  "date": "2026-10-27",
+  "title": "Claude untuk Bisnis Produk Kecil: Label, Margin, Ulasan",
+  "desc": "Empat alur kerja Claude tanpa kode untuk penjual produk kecil: pemeriksaan teks label, proposal grosir dengan tabel margin, analisis ulasan pesaing, dan pemeriksaan mingguan.",
+  "hub": [
+   "청년 지원금·창업 지원 모아보기",
+   "/apply/"
+  ],
+  "sources": [
+   [
+    "FDA Food Labeling & Nutrition",
+    "https://www.fda.gov/food/food-labeling-nutrition",
+    "2026-10-19"
+   ],
+   [
+    "Harga Anthropic",
+    "https://www.anthropic.com/pricing",
+    "2026-10-19"
+   ]
+  ]
+ },
+ {
+  "slug": "cut-ai-token-costs",
+  "lang": "id",
+  "date": "2026-10-27",
+  "title": "Hemat Biaya Token AI: Konteks, Pembagian Model, Cache, Pelacakan",
+  "desc": "Cara praktis menurunkan tagihan API Claude: kirim hanya dokumen yang perlu, bagi langkah antarmodel, cache ringkasan proyek, dan lacak biaya per tugas. Harga terkini disertakan.",
+  "hub": [
+   "AI 제작 로그·개발 지식 (bahasa Korea)",
+   "/ailog/"
+  ],
+  "sources": [
+   [
+    "Harga Anthropic",
+    "https://www.anthropic.com/pricing",
+    "2026-10-19"
+   ]
+  ]
+ },
+ {
+  "slug": "immich-proxmox-photo-server",
+  "lang": "id",
+  "date": "2026-10-27",
+  "title": "Immich di Proxmox dengan ZFS Mirror: Pemasangan dan Cadangan 3-2-1",
+  "desc": "Panduan langkah demi langkah server foto Immich di Proxmox: ZFS mirror, ukuran VM sesuai persyaratan resmi, instalasi Docker Compose, dan cadangan 3-2-1 beserta dump database.",
+  "hub": [
+   "개발 지식 모음 (bahasa Korea)",
+   "/ailog/"
+  ],
+  "sources": [
+   [
+    "Persyaratan Immich",
+    "https://immich.app/docs/install/requirements",
+    "2026-10-19"
+   ],
+   [
+    "Pencadangan dan pemulihan Immich",
+    "https://immich.app/docs/administration/backup-and-restore",
+    "2026-10-19"
+   ]
+  ]
+ },
+ {
+  "slug": "jeonse-vs-wolse-explained",
+  "lang": "id",
+  "date": "2026-10-27",
+  "title": "Jeonse vs Wolse: Cara Melindungi Deposit Anda sebagai Orang Asing",
+  "desc": "Penjelasan jeonse, wolse, dan ban-jeonse di Korea, plus langkah melindungi deposit: laporan alamat, tanggal pasti, dan asuransi jaminan, dengan catatan untuk orang asing terdaftar.",
+  "hub": [
+   "Versi Korea (전세 vs 월세 가이드)",
+   "/money/guide/jeonse-vs-wolse/"
+  ],
+  "sources": [
+   [
+    "Immigration Act Pasal 88-2 (Korean Law Information Center)",
+    "https://www.law.go.kr",
+    "2026-10-19"
+   ],
+   [
+    "Housing Lease Protection Act Pasal 3, 3-2",
+    "https://www.law.go.kr",
+    "2026-10-19"
+   ],
+   [
+    "Supreme Court Internet Registry Office",
+    "https://www.iros.go.kr",
+    "2026-10-19"
+   ]
+  ]
+ },
+ {
+  "slug": "korea-unemployment-benefits-foreigners",
+  "lang": "id",
+  "date": "2026-10-27",
+  "title": "Tunjangan Pengangguran bagi Orang Asing di Korea (2026)",
+  "desc": "Visa mana yang tercakup asuransi ketenagakerjaan Korea, tunjangan pengangguran harian maksimum dan minimum 2026, lama tunjangan, dan cara pekerja asing mengajukan.",
+  "hub": [
+   "실업급여 조건 2026 (bahasa Korea)",
+   "/guide/unemployment-2026/"
+  ],
+  "sources": [
+   [
+    "Kementerian Ketenagakerjaan dan Perburuhan — asuransi ketenagakerjaan bagi pekerja asing",
+    "https://www.moel.go.kr/minwon/fastcounsel/fastcounselView.do?inetDcssMngId=202503181255455430204",
+    "2026-10-19"
+   ],
+   [
+    "Panduan tunjangan pengangguran Work24",
+    "https://www.work24.go.kr",
+    "2026-10-19"
+   ]
+  ]
+ },
+ {
+  "slug": "korea-contests-open-to-foreigners",
+  "lang": "id",
+  "date": "2026-10-27",
+  "title": "Kontes Korea yang Terbuka bagi Orang Asing: Cara Mencari dan Ikut",
+  "desc": "Cara membaca aturan persyaratan peserta kontes Korea sebagai penduduk asing, plus daftar kontes terbuka yang diperbarui tiap jam dan aturannya menyebut orang asing.",
+  "hub": [
+   "진행 중 공모전 전체 (bahasa Korea)",
+   "/contest/"
+  ],
+  "sources": [
+   [
+    "Pengumuman resmi yang ditautkan dari setiap halaman kontes",
+    "/contest/",
+    "2026-10-19"
+   ]
+  ]
+ },
+ {
+  "slug": "steam-refund-policy",
+  "lang": "id",
+  "date": "2026-10-27",
+  "title": "Kebijakan Pengembalian Dana Steam: 14 Hari, 2 Jam, dan Cara Meminta",
+  "desc": "Aturan pengembalian dana resmi Steam dengan bahasa sederhana: 14 hari dan di bawah 2 jam untuk game, plus DLC, hadiah, bundel, pre-purchase, saldo wallet, dan yang tidak bisa dikembalikan.",
+  "hub": [
+   "Versi Korea (스팀 환불 규정)",
+   "/game/refund/"
+  ],
+  "sources": [
+   [
+    "Valve: Steam Refunds (resmi, diperbarui 23 April 2024)",
+    "https://store.steampowered.com/steam_refunds/",
+    "2026-10-20"
+   ],
+   [
+    "Steam Support",
+    "https://help.steampowered.com/",
+    "2026-10-20"
+   ]
+  ]
+ },
+ {
+  "slug": "korea-monthly-rent-tax-credit-foreigners",
+  "lang": "id",
+  "date": "2026-10-27",
+  "title": "Kredit Pajak Sewa Bulanan Korea bagi Penduduk Asing: Syarat, Tarif, Batas",
+  "desc": "Siapa yang dapat mengklaim kredit pajak sewa bulanan di Korea, tarif 15-17%, batas sewa KRW 10 juta, aturan hunian dan alamat, serta yang perlu dicek penduduk asing ke NTS.",
+  "hub": [
+   "Versi Korea (월세 세액공제 가이드)",
+   "/money/guide/rent-credit/"
+  ],
+  "sources": [
+   [
+    "National Tax Service: kredit pajak sewa bulanan (Korea)",
+    "https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=40613&cntntsId=239025",
+    "2026-10-20"
+   ],
+   [
+    "National Tax Service Q&A (Korea)",
+    "https://call.nts.go.kr/call/qna/selectQnaInfo.do?mi=1318&ctgId=CTG11906",
+    "2026-10-20"
+   ]
+  ]
+ },
+ {
+  "slug": "korea-business-tax-calendar",
+  "lang": "id",
+  "date": "2026-10-27",
+  "title": "Kalender Pajak Bisnis Korea untuk Pemilik Usaha Perseorangan",
+  "desc": "Kapan pemilik usaha perorangan di Korea melaporkan PPN, pajak penghasilan, dan pajak potong, plus tenggat pendaftaran dan penutupan usaha, menurut panduan National Tax Service.",
+  "hub": [
+   "Versi Korea (사업자 신고·세금 달력)",
+   "/money/guide/business-tax-calendar/"
+  ],
+  "sources": [
+   [
+    "National Tax Service: tenggat pelaporan PPN (Korea)",
+    "https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=2273&cntntsId=7694",
+    "2026-10-20"
+   ],
+   [
+    "National Tax Service: tenggat pajak penghasilan (Korea)",
+    "https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=2225&cntntsId=7665",
+    "2026-10-20"
+   ],
+   [
+    "National Tax Service: pajak penghasilan yang dipotong (Korea)",
+    "https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=2414&cntntsId=7702",
+    "2026-10-20"
+   ]
+  ]
+ },
+ {
+  "slug": "korea-take-home-salary",
+  "lang": "id",
+  "date": "2026-10-27",
+  "title": "Gaji Bersih di Korea 2026: Potongan, Tarif, dan Contoh",
+  "desc": "Bagaimana gaji tahunan Korea menjadi gaji bersih bulanan pada 2026: pensiun, kesehatan, perawatan jangka panjang, asuransi ketenagakerjaan, dan pajak penghasilan, dengan tarif resmi dan contoh.",
+  "hub": [
+   "연봉 실수령액 계산기 (bahasa Korea)",
+   "/money/tools/salary/"
+  ],
+  "sources": [
+   [
+    "National Pension Service (9.5%, dasar penghasilan)",
+    "https://www.nps.or.kr",
+    "2026-10-18"
+   ],
+   [
+    "National Health Insurance Service (7.19%, perawatan jangka panjang 0.9448%)",
+    "https://www.nhis.or.kr",
+    "2026-10-18"
+   ],
+   [
+    "Kementerian Ketenagakerjaan dan Perburuhan (asuransi ketenagakerjaan)",
+    "https://www.moel.go.kr",
+    "2026-10-18"
+   ]
+  ]
+ },
+ {
+  "slug": "mutation-testing-false-kills",
+  "lang": "id",
+  "date": "2026-10-27",
+  "title": "False Kill pada Mutation Testing: Baseline, Akses File, Alasan Kill",
+  "desc": "Mengapa skor mutasi menggelembung karena false kill dan tiga pemeriksaan untuk menangkapnya: baseline salinan bersih, bukti file mutan dibaca, dan distribusi alasan kill.",
+  "hub": [
+   "개발 지식 모음 (bahasa Korea)",
+   "/ailog/"
+  ],
+  "sources": [
+   [
+    "Stryker: status mutan dan metrik",
+    "https://stryker-mutator.io/docs/mutation-testing-elements/mutant-states-and-metrics/",
+    "2026-10-19"
+   ]
+  ]
+ },
+ {
+  "slug": "claude-for-small-business",
+  "lang": "th",
+  "date": "2026-10-27",
+  "title": "Claude สำหรับธุรกิจสินค้าขนาดเล็ก: ฉลาก กำไรขั้นต้น และรีวิว",
+  "desc": "สี่ขั้นตอนใช้ Claude แบบไม่ต้องเขียนโค้ดสำหรับผู้ขายสินค้าขนาดเล็ก: ตรวจข้อความบนฉลาก ข้อเสนอขายส่งพร้อมตารางกำไรขั้นต้น วิเคราะห์รีวิวคู่แข่ง และการตรวจประจำสัปดาห์",
+  "hub": [
+   "ศูนย์รวมเงินสนับสนุนเยาวชนและการเริ่มธุรกิจ (청년 지원금·창업 지원 모아보기)",
+   "/apply/"
+  ],
+  "sources": [
+   [
+    "FDA การติดฉลากอาหารและโภชนาการ",
+    "https://www.fda.gov/food/food-labeling-nutrition",
+    "2026-10-19"
+   ],
+   [
+    "ราคาของ Anthropic",
+    "https://www.anthropic.com/pricing",
+    "2026-10-19"
+   ]
+  ]
+ },
+ {
+  "slug": "cut-ai-token-costs",
+  "lang": "th",
+  "date": "2026-10-27",
+  "title": "ลดค่าโทเค็น AI: บริบท การแบ่งโมเดล การแคช และการติดตามต้นทุน",
+  "desc": "วิธีลดค่าใช้จ่าย Claude API จริงจัง: ส่งเฉพาะเอกสารที่ต้องใช้ แบ่งขั้นตอนไปตามโมเดล แคชสรุปโปรเจกต์ และติดตามต้นทุนต่องาน พร้อมราคาปัจจุบัน",
+  "hub": [
+   "บันทึกการสร้างด้วย AI และความรู้การพัฒนา (AI 제작 로그·개발 지식)",
+   "/ailog/"
+  ],
+  "sources": [
+   [
+    "ราคาของ Anthropic",
+    "https://www.anthropic.com/pricing",
+    "2026-10-19"
+   ]
+  ]
+ },
+ {
+  "slug": "immich-proxmox-photo-server",
+  "lang": "th",
+  "date": "2026-10-27",
+  "title": "Immich บน Proxmox ด้วย ZFS Mirror: การติดตั้งและการสำรองข้อมูล 3-2-1",
+  "desc": "ติดตั้งเซิร์ฟเวอร์ภาพ Immich บน Proxmox ทีละขั้นตอน: ZFS mirror ขนาด VM ตามข้อกำหนดทางการ ติดตั้งด้วย Docker Compose และการสำรองข้อมูล 3-2-1 ที่รวมดัมพ์ฐานข้อมูล",
+  "hub": [
+   "รวมความรู้การพัฒนา (개발 지식 모음)",
+   "/ailog/"
+  ],
+  "sources": [
+   [
+    "ข้อกำหนดของ Immich",
+    "https://immich.app/docs/install/requirements",
+    "2026-10-19"
+   ],
+   [
+    "การสำรองและกู้คืนข้อมูลของ Immich",
+    "https://immich.app/docs/administration/backup-and-restore",
+    "2026-10-19"
+   ]
+  ]
+ },
+ {
+  "slug": "mutation-testing-false-kills",
+  "lang": "th",
+  "date": "2026-10-27",
+  "title": "False Kill ใน Mutation Testing: Baseline การเข้าถึงไฟล์ และเหตุผลที่ Kill",
+  "desc": "ทำไมคะแนน mutation จึงสูงเกินจริงเพราะ false kill และสามวิธีตรวจจับ: baseline บนสำเนาที่สะอาด หลักฐานว่าไฟล์ที่ถูกกลายพันธุ์ถูกอ่านจริง และการกระจายของเหตุผลที่ kill",
+  "hub": [
+   "รวมความรู้การพัฒนา (개발 지식 모음)",
+   "/ailog/"
+  ],
+  "sources": [
+   [
+    "Stryker: สถานะและตัวชี้วัดของมิวแทนต์",
+    "https://stryker-mutator.io/docs/mutation-testing-elements/mutant-states-and-metrics/",
+    "2026-10-19"
+   ]
+  ]
+ },
+ {
+  "slug": "korea-take-home-salary",
+  "lang": "th",
+  "date": "2026-10-27",
+  "title": "เงินเดือนสุทธิในเกาหลี 2026: รายการหัก อัตรา และตัวอย่าง",
+  "desc": "เงินเดือนรายปีของเกาหลีกลายเป็นเงินสุทธิรายเดือนในปี 2026 อย่างไร: บำนาญ ประกันสุขภาพ การดูแลระยะยาว ประกันการจ้างงาน และภาษีเงินได้ พร้อมอัตราทางการและตัวอย่างจำนวนเงิน",
+  "hub": [
+   "เครื่องคำนวณเงินเดือนสุทธิรายปี (연봉 실수령액 계산기)",
+   "/money/tools/salary/"
+  ],
+  "sources": [
+   [
+    "สำนักงานบำนาญแห่งชาติ (9.5%, ฐานรายได้)",
+    "https://www.nps.or.kr",
+    "2026-10-18"
+   ],
+   [
+    "สำนักงานประกันสุขภาพแห่งชาติ (7.19%, การดูแลระยะยาว 0.9448%)",
+    "https://www.nhis.or.kr",
+    "2026-10-18"
+   ],
+   [
+    "กระทรวงแรงงานและการจ้างงาน (ประกันการจ้างงาน)",
+    "https://www.moel.go.kr",
+    "2026-10-18"
+   ]
+  ]
+ },
+ {
+  "slug": "jeonse-vs-wolse-explained",
+  "lang": "th",
+  "date": "2026-10-27",
+  "title": "Jeonse กับ Wolse อธิบายง่าย ๆ: คุ้มครองเงินมัดจำในฐานะชาวต่างชาติ",
+  "desc": "อธิบาย jeonse, wolse และ ban-jeonse ในเกาหลี พร้อมขั้นตอนคุ้มครองเงินมัดจำ ได้แก่ การแจ้งที่อยู่ วันที่ยืนยัน และประกันค้ำประกัน พร้อมหมายเหตุสำหรับชาวต่างชาติที่ลงทะเบียน",
+  "hub": [
+   "ฉบับภาษาเกาหลี (전세 vs 월세 가이드)",
+   "/money/guide/jeonse-vs-wolse/"
+  ],
+  "sources": [
+   [
+    "พระราชบัญญัติตรวจคนเข้าเมือง มาตรา 88-2 (ศูนย์ข้อมูลกฎหมายเกาหลี)",
+    "https://www.law.go.kr",
+    "2026-10-19"
+   ],
+   [
+    "พระราชบัญญัติคุ้มครองการเช่าที่อยู่อาศัย มาตรา 3, 3-2",
+    "https://www.law.go.kr",
+    "2026-10-19"
+   ],
+   [
+    "สำนักงานทะเบียนออนไลน์ของศาลฎีกา",
+    "https://www.iros.go.kr",
+    "2026-10-19"
+   ]
+  ]
+ },
+ {
+  "slug": "korea-unemployment-benefits-foreigners",
+  "lang": "th",
+  "date": "2026-10-27",
+  "title": "เงินช่วยเหลือผู้ว่างงานสำหรับชาวต่างชาติในเกาหลี (2026)",
+  "desc": "วีซ่าประเภทใดได้รับความคุ้มครองจากประกันการจ้างงานของเกาหลี เงินช่วยเหลือผู้ว่างงานสูงสุดและต่ำสุดรายวันปี 2026 ระยะเวลาที่ได้รับ และวิธีสมัครสำหรับแรงงานต่างชาติ",
+  "hub": [
+   "เงื่อนไขเงินช่วยเหลือผู้ว่างงาน 2026 (실업급여 조건 2026)",
+   "/guide/unemployment-2026/"
+  ],
+  "sources": [
+   [
+    "กระทรวงแรงงานและการจ้างงาน — ประกันการจ้างงานสำหรับแรงงานต่างชาติ",
+    "https://www.moel.go.kr/minwon/fastcounsel/fastcounselView.do?inetDcssMngId=202503181255455430204",
+    "2026-10-19"
+   ],
+   [
+    "คำแนะนำเรื่องเงินช่วยเหลือผู้ว่างงานของ Work24",
+    "https://www.work24.go.kr",
+    "2026-10-19"
+   ]
+  ]
+ },
+ {
+  "slug": "korea-contests-open-to-foreigners",
+  "lang": "th",
+  "date": "2026-10-27",
+  "title": "การประกวดในเกาหลีที่ชาวต่างชาติเข้าร่วมได้: วิธีหาและวิธีสมัคร",
+  "desc": "วิธีอ่านเงื่อนไขคุณสมบัติผู้สมัครของการประกวดเกาหลีในฐานะชาวต่างชาติที่พำนักอยู่ พร้อมรายการการประกวดที่เปิดอยู่ซึ่งกฎระบุถึงชาวต่างชาติ อัปเดตทุกชั่วโมง",
+  "hub": [
+   "การประกวดที่กำลังดำเนินอยู่ทั้งหมด (진행 중 공모전 전체)",
+   "/contest/"
+  ],
+  "sources": [
+   [
+    "ประกาศอย่างเป็นทางการที่ลิงก์จากหน้าการประกวดแต่ละรายการ",
+    "/contest/",
+    "2026-10-19"
+   ]
+  ]
+ },
+ {
+  "slug": "steam-refund-policy",
+  "lang": "th",
+  "date": "2026-10-27",
+  "title": "นโยบายคืนเงินของ Steam: 14 วัน 2 ชั่วโมง และวิธีขอคืนเงิน",
+  "desc": "กฎการคืนเงินอย่างเป็นทางการของ Steam แบบเข้าใจง่าย: 14 วันและไม่ถึง 2 ชั่วโมงสำหรับเกม รวมถึง DLC ของขวัญ บันเดิล การสั่งซื้อล่วงหน้า เงินใน wallet และสิ่งที่คืนเงินไม่ได้",
+  "hub": [
+   "ฉบับภาษาเกาหลี (스팀 환불 규정)",
+   "/game/refund/"
+  ],
+  "sources": [
+   [
+    "Valve: การคืนเงินของ Steam (ทางการ อัปเดต 23 เมษายน 2024)",
+    "https://store.steampowered.com/steam_refunds/",
+    "2026-10-20"
+   ],
+   [
+    "ฝ่ายสนับสนุนของ Steam",
+    "https://help.steampowered.com/",
+    "2026-10-20"
+   ]
+  ]
+ },
+ {
+  "slug": "korea-monthly-rent-tax-credit-foreigners",
+  "lang": "th",
+  "date": "2026-10-27",
+  "title": "เครดิตภาษีค่าเช่ารายเดือนสำหรับชาวต่างชาติในเกาหลี: คุณสมบัติ อัตรา และเพดาน",
+  "desc": "ใครขอเครดิตภาษีค่าเช่ารายเดือนในเกาหลีได้ อัตรา 15-17% เพดานค่าเช่า 10 ล้านวอน กฎเรื่องที่อยู่อาศัยและที่อยู่ และสิ่งที่ชาวต่างชาติควรตรวจสอบกับ NTS",
+  "hub": [
+   "ฉบับภาษาเกาหลี (월세 세액공제 가이드)",
+   "/money/guide/rent-credit/"
+  ],
+  "sources": [
+   [
+    "สำนักงานสรรพากรแห่งชาติ: เครดิตภาษีค่าเช่ารายเดือน (ภาษาเกาหลี)",
+    "https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=40613&cntntsId=239025",
+    "2026-10-20"
+   ],
+   [
+    "ถาม-ตอบของสำนักงานสรรพากรแห่งชาติ (ภาษาเกาหลี)",
+    "https://call.nts.go.kr/call/qna/selectQnaInfo.do?mi=1318&ctgId=CTG11906",
+    "2026-10-20"
+   ]
+  ]
+ },
+ {
+  "slug": "korea-business-tax-calendar",
+  "lang": "th",
+  "date": "2026-10-27",
+  "title": "ปฏิทินภาษีธุรกิจเกาหลีสำหรับเจ้าของกิจการรายเดียว: VAT ภาษีเงินได้ และภาษีหัก ณ ที่จ่าย",
+  "desc": "เจ้าของธุรกิจบุคคลธรรมดาในเกาหลียื่น VAT ภาษีเงินได้ และภาษีหัก ณ ที่จ่ายเมื่อไร พร้อมกำหนดการจดทะเบียนและปิดกิจการ ตามแนวทางของสำนักงานสรรพากรแห่งชาติ",
+  "hub": [
+   "ฉบับภาษาเกาหลี (사업자 신고·세금 달력)",
+   "/money/guide/business-tax-calendar/"
+  ],
+  "sources": [
+   [
+    "สำนักงานสรรพากรแห่งชาติ: กำหนดการยื่น VAT (ภาษาเกาหลี)",
+    "https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=2273&cntntsId=7694",
+    "2026-10-20"
+   ],
+   [
+    "สำนักงานสรรพากรแห่งชาติ: กำหนดการภาษีเงินได้ (ภาษาเกาหลี)",
+    "https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=2225&cntntsId=7665",
+    "2026-10-20"
+   ],
+   [
+    "สำนักงานสรรพากรแห่งชาติ: ภาษีหัก ณ ที่จ่าย (ภาษาเกาหลี)",
+    "https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=2414&cntntsId=7702",
+    "2026-10-20"
+   ]
+  ]
  }
 ]

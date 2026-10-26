@@ -1,0 +1,32 @@
+<p>Hướng dẫn này dành cho những ai điều hành một doanh nghiệp sản phẩm nhỏ — một thương hiệu nước sốt, một cửa hàng nến, một dòng mỹ phẩm handmade — và muốn dùng Claude cho các giấy tờ lặp đi lặp lại xoay quanh sản phẩm, chứ không phải cho chính sản phẩm. Mọi quy trình dưới đây đều chạy trong một khung chat bình thường, mất chưa đến 15 phút và không cần viết code.</p>
+<h2>Claude làm tốt việc gì ở đây (và không làm được gì)</h2>
+<table><tr><th>Công việc</th><th>Phù hợp?</th><th>Lý do</th></tr>
+<tr><td>Kiểm tra nội dung nhãn xem có nhất quán và thiếu mục nào không</td><td>Có</td><td>Claude đối chiếu văn bản với danh sách kiểm tra bạn đưa, từng dòng một.</td></tr>
+<tr><td>Soạn đề xuất bán sỉ và bảng biên lợi nhuận</td><td>Có</td><td>Tính toán trên các con số <em>bạn</em> cung cấp, cộng với việc trình bày.</td></tr>
+<tr><td>Tóm tắt đánh giá của đối thủ</td><td>Có</td><td>Gom hàng trăm đoạn văn ngắn thành các chủ đề là thế mạnh cốt lõi.</td></tr>
+<tr><td>Quyết định một tuyên bố về sức khỏe hoặc an toàn có hợp pháp hay không</td><td>Không</td><td>Đó là quyết định của cơ quan quản lý. Hãy dùng Claude để liệt kê câu hỏi, rồi đối chiếu với quy định chính thức.</td></tr>
+<tr><td>Tự bịa giá, chi phí hoặc quy mô thị trường</td><td>Không</td><td>Claude sẽ tạo ra những con số trông có vẻ hợp lý. Chỉ đưa cho nó những con số bạn biết chắc.</td></tr></table>
+<h2>Quy trình 1 — Kiểm tra nội dung nhãn</h2>
+<ol><li>Dán toàn bộ nội dung nhãn (mặt trước và mặt sau) cùng danh sách thành phần của sản phẩm.</li>
+<li>Dán danh sách kiểm tra ghi nhãn chính thức của thị trường bạn bán. Ở Mỹ đó là <a href="https://www.fda.gov/food/food-labeling-nutrition" rel="nofollow noopener" target="_blank">các trang về ghi nhãn thực phẩm của FDA</a>; ở Hàn Quốc là tiêu chuẩn ghi nhãn của MFDS.</li>
+<li>Hãy hỏi: <code>Compare the label to the checklist. Output a table: requirement, found on label (quote), missing or unclear. Do not judge legality.</code></li>
+<li>Sửa những mục còn thiếu, rồi chạy lại đúng câu lệnh đó trên nhãn mới để chắc chắn không có gì bị lỗi ngược.</li></ol>
+<p>Giá trị nằm ở cột trích dẫn: mỗi dòng "đã có" phải chỉ đến đoạn văn thật trên nhãn của bạn, nên bạn kiểm chứng được chỉ trong vài giây.</p>
+<h2>Quy trình 2 — Đề xuất bán sỉ và bảng biên lợi nhuận</h2>
+<ol><li>Ghi ra các con số thật của bạn: giá vốn một đơn vị, bao bì, phí vận chuyển mỗi thùng, số sản phẩm mỗi thùng, giá bán lẻ.</li>
+<li>Yêu cầu một bảng gồm giá bán sỉ ở nhiều mức chiết khấu so với giá bán lẻ, biên lợi nhuận của bạn trên mỗi đơn vị và mỗi thùng, cùng biên lợi nhuận của nhà bán lẻ với mức cộng giá thông thường của họ.</li>
+<li>Yêu cầu Claude hiển thị công thức cho từng cột. Tự tính lại một dòng; nếu khớp thì phần còn lại nhất quán.</li>
+<li>Sau đó yêu cầu một bản đề xuất một trang chỉ trích dẫn các con số có trong bảng.</li></ol>
+<h2>Quy trình 3 — Phân tích đánh giá trên trang sản phẩm của đối thủ</h2>
+<ol><li>Sao chép các đánh giá công khai từ hai hoặc ba trang sản phẩm cạnh tranh vào một tệp văn bản, giữ nguyên số sao đi kèm mỗi đánh giá.</li>
+<li>Hãy hỏi: <code>Group these reviews into complaint themes and praise themes. For each theme: count, two short quotes, and which star ratings it appears in.</code></li>
+<li>Biến các chủ đề phàn nàn hàng đầu thành danh sách kiểm tra cho trang sản phẩm của chính bạn: ảnh, thông tin kích cỡ, kỳ vọng về giao hàng, thành phần.</li></ol>
+<p>Luôn yêu cầu số lượng và trích dẫn. Một chủ đề không có trích dẫn chỉ là phỏng đoán.</p>
+<h2>Quy trình 4 — Buổi rà soát hằng tuần trong 20 phút</h2>
+<ul><li>Dán bản tổng hợp đơn hàng, các khoản hoàn tiền và tin nhắn của khách hàng tuần trước (đã xóa tên và địa chỉ).</li>
+<li>Yêu cầu ba thứ: ba điều thay đổi so với tuần trước (kèm số liệu), câu hỏi nào của khách lặp lại, và một thay đổi ở trang sản phẩm hoặc mục FAQ có thể giải đáp câu hỏi đó.</li>
+<li>Lưu câu trả lời của mỗi tuần vào cùng một tài liệu. Sau một tháng, nhờ Claude so sánh bốn bản tóm tắt.</li></ul>
+<h2>Câu hỏi thường gặp</h2>
+<dl><dt>Tôi có thể tin vào phép tính không?</dt><dd>Hãy tự kiểm tra một dòng bằng tay. Nếu công thức hiển thị đúng và một dòng khớp thì bảng nhất quán; nếu không, hãy yêu cầu Claude tính lại và trình bày các bước.</dd>
+<dt>Có nên tải dữ liệu cá nhân của khách hàng lên không?</dt><dd>Hãy xóa tên, email và địa chỉ trước. Không quy trình nào ở trên cần đến chúng.</dd>
+<dt>Tôi cần gói hay mô hình nào?</dt><dd>Cả bốn quy trình đều là những tác vụ chat ngắn. Hãy bắt đầu với gói bạn đang có; các lựa chọn hiện tại nằm trên <a href="https://www.anthropic.com/pricing" rel="nofollow noopener" target="_blank">trang giá của Anthropic</a>.</dd></dl>

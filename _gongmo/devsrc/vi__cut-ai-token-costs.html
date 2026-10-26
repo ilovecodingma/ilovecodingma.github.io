@@ -1,0 +1,28 @@
+<p>Nếu bạn dùng một mô hình AI qua API cho công việc thực tế — agent lập trình, xử lý tài liệu, soạn thảo phản hồi hỗ trợ — thì phần lớn hóa đơn thường đến từ <b>các input token bạn không cần phải gửi</b>. Hướng dẫn này nêu bốn thói quen giúp cắt giảm chi phí mà không làm câu trả lời kém đi, kèm bảng giá niêm yết hiện tại để bạn tự tính.</p>
+<h2>Giá hiện tại (USD trên một triệu token)</h2>
+<table><tr><th>Mô hình</th><th>Input</th><th>Output</th><th>Đọc cache</th><th>Ghi cache (5 phút)</th></tr>
+<tr><td>Claude Opus 5.5</td><td>$4</td><td>$20</td><td>$0.20</td><td>$5</td></tr>
+<tr><td>Claude Sonnet 5.5</td><td>$2</td><td>$10</td><td>$0.10</td><td>$2.50</td></tr>
+<tr><td>Claude Haiku 5.5 (prompt ≤100K token)</td><td>$0.10</td><td>$0.50</td><td>$0.01</td><td>$0.125</td></tr></table>
+<p class="note">Nguồn: <a href="https://www.anthropic.com/pricing" rel="nofollow noopener" target="_blank">anthropic.com/pricing</a>, kiểm tra ngày 2026-10-19. Trang đó niêm yết xử lý theo lô (batch) giảm 50%. Giá Haiku 5.5 cao hơn với prompt trên 100K token. Giá có thể thay đổi — hãy kiểm tra trang trên trước khi lập ngân sách.</p>
+<h2>1. Chỉ gửi những tài liệu mà tác vụ cần</h2>
+<p>Sự lãng phí phổ biến nhất là dán cả một repository, một cuốn hướng dẫn hay lịch sử chat "phòng khi cần". Mỗi yêu cầu đều phải trả tiền lại cho toàn bộ chỗ đó.</p>
+<ol><li>Hãy tìm kiếm trước (grep, danh sách tệp hoặc một chỉ mục), rồi chỉ gửi các tệp hoặc đoạn phù hợp.</li>
+<li>Ưu tiên trích đoạn có số dòng thay vì cả tệp.</li>
+<li>Với các cuộc trò chuyện dài, hãy bắt đầu cuộc mới kèm một bản tóm tắt ngắn thay vì mang theo 100 lượt trao đổi.</li></ol>
+<h2>2. Chia việc theo từng bước và từng mô hình</h2>
+<table><tr><th>Bước</th><th>Hạng mô hình thường dùng</th></tr><tr><td>Phân loại, gắn thẻ, trích xuất các trường dữ liệu</td><td>Nhỏ nhất</td></tr><tr><td>Soạn thảo, thay đổi code thông thường</td><td>Trung bình</td></tr><tr><td>Lập kế hoạch, gỡ lỗi khó, rà soát cuối cùng</td><td>Lớn nhất</td></tr></table>
+<p>Theo bảng giá ở trên, một triệu input token tốn $4 trên Opus 5.5 và $0.10 trên Haiku 5.5 — chênh nhau 40 lần. Hãy thử chất lượng trên một mẫu nhỏ trước khi chuyển một bước xuống mô hình rẻ hơn: một lệnh gọi rẻ hơn nhưng phải thử lại hai lần thì không hề rẻ hơn.</p>
+<h2>3. Giữ một tệp tóm tắt dự án — và cache nó</h2>
+<ul><li>Viết một tệp ngắn: dự án là gì, cấu trúc thư mục, quy ước, mục tiêu hiện tại. Đặt nó ở ngay đầu mọi yêu cầu.</li>
+<li>Vì nó không thay đổi giữa các lần gọi nên rất phù hợp với prompt caching: sau lần ghi đầu tiên, mỗi lần đọc chỉ tốn $0.20 thay vì $4 trên một triệu token ở Opus 5.5 — bằng 5% giá input thông thường.</li>
+<li>Đặt mọi thứ hay thay đổi (ngày tháng, câu hỏi của người dùng) <em>sau</em> phần được cache. Bất kỳ thay đổi nào ở phía trước trong prompt đều làm hỏng cache.</li></ul>
+<h2>4. Theo dõi chi phí theo từng tác vụ, không phải từng yêu cầu</h2>
+<ol><li>Ghi lại số input, output và token đọc cache từ trường usage của mỗi phản hồi, gắn kèm tên tác vụ.</li>
+<li>Mỗi tuần một lần, cộng tổng theo tác vụ và nhân với giá ở trên.</li>
+<li>Chỉ xem ba tác vụ đứng đầu. Thường thì ở đó có một ngữ cảnh quá lớn hoặc một mô hình không phù hợp đang ẩn mình.</li></ol>
+<h2>Danh sách kiểm tra nhanh</h2>
+<ul class="chk"><li>Phần ổn định của prompt đã được đặt lên đầu và cache chưa?</li><li>Tôi có gửi cả tệp ở chỗ chỉ cần trích đoạn không?</li><li>Bước này có thể chạy trên mô hình nhỏ hơn mà chất lượng như nhau không?</li><li>Công việc này có thể chờ xử lý theo lô (giảm 50%) không?</li></ul>
+<h2>Câu hỏi thường gặp</h2>
+<dl><dt>Ghi cache có tốn hơn input thông thường không?</dt><dd>Có — trên Opus 5.5, ghi cache 5 phút là $5 so với $4 cho input thường. Nó có lợi ngay khi cùng một tiền tố được đọc lại.</dd>
+<dt>Xử lý theo lô có luôn đáng dùng không?</dt><dd>Chỉ với công việc không cần câu trả lời ngay, chẳng hạn xử lý tài liệu qua đêm.</dd></dl>

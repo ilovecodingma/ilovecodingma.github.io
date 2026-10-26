@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>降低 AI Token 成本：上下文、模型分工、缓存与成本追踪 | Ruri Jupjup</title>
+<meta name="description" content="降低 Claude API 账单的实用方法：只发送所需文档、按步骤分配模型、缓存项目摘要、按任务追踪成本。附当前价格。">
+<link rel="canonical" href="https://sungprofile.cloud/zh/guide/cut-ai-token-costs/">
+<link rel="alternate" hreflang="en" href="https://sungprofile.cloud/en/guide/cut-ai-token-costs/">
+<link rel="alternate" hreflang="es" href="https://sungprofile.cloud/es/guide/cut-ai-token-costs/">
+<link rel="alternate" hreflang="id" href="https://sungprofile.cloud/id/guide/cut-ai-token-costs/">
+<link rel="alternate" hreflang="ja" href="https://sungprofile.cloud/ja/guide/cut-ai-token-costs/">
+<link rel="alternate" hreflang="th" href="https://sungprofile.cloud/th/guide/cut-ai-token-costs/">
+<link rel="alternate" hreflang="vi" href="https://sungprofile.cloud/vi/guide/cut-ai-token-costs/">
+<link rel="alternate" hreflang="zh" href="https://sungprofile.cloud/zh/guide/cut-ai-token-costs/">
+<link rel="alternate" hreflang="x-default" href="https://sungprofile.cloud/en/guide/cut-ai-token-costs/">
+<meta property="og:type" content="website"><meta property="og:locale" content="zh_CN"><meta property="og:site_name" content="루리의 줍줍">
+<meta property="og:title" content="降低 AI Token 成本：上下文、模型分工、缓存与成本追踪 | Ruri Jupjup"><meta property="og:description" content="降低 Claude API 账单的实用方法：只发送所需文档、按步骤分配模型、缓存项目摘要、按任务追踪成本。附当前价格。"><meta property="og:url" content="https://sungprofile.cloud/zh/guide/cut-ai-token-costs/">
+<meta property="og:image" content="https://sungprofile.cloud/assets/ruri/og.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://sungprofile.cloud/assets/ruri/og.jpg">
+<meta name="theme-color" content="#5b21b6"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="오늘 뭐 먹지">
+<link rel="icon" href="/favicon.ico?v=6" sizes="any"><link rel="icon" type="image/png" sizes="48x48" href="/assets/icons/icon-48.png?v=6"><link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/icon-96.png?v=6"><link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/icon-192.png?v=6"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=6"><link rel="manifest" href="/site.webmanifest"><link rel="alternate" type="application/rss+xml" title="루리의 줍줍" href="/rss.xml">
+<link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="/assets/gm.css?v=28"><link rel="stylesheet" href="/assets/ds.css?v=15"><link rel="stylesheet" href="/assets/print.css?v=1"><script defer src="/assets/print.js?v=1"></script><script src="/assets/img-fallback.js?v=1"></script><link rel="stylesheet" href="/assets/chat/ruri-chat.css?v=9"><link rel="stylesheet" href="/assets/community/comm.css?v=17"><script defer src="/assets/community/comm.js?v=32"></script><script defer src="/assets/community/crew.js?v=1"></script><script type="module" src="/assets/chat/ruri-chat.js?v=16"></script><link rel="stylesheet" href="/assets/app/shell.css?v=1"><script defer src="/assets/app/app.js?v=4"></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "首页", "item": "https://sungprofile.cloud/"}, {"@type": "ListItem", "position": 2, "name": "指南", "item": "https://sungprofile.cloud/zh/guide/"}, {"@type": "ListItem", "position": 3, "name": "降低 AI Token 成本：上下文、模型分工、缓存与成本追踪", "item": "https://sungprofile.cloud/zh/guide/cut-ai-token-costs/"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "降低 AI Token 成本：上下文、模型分工、缓存与成本追踪", "description": "降低 Claude API 账单的实用方法：只发送所需文档、按步骤分配模型、缓存项目摘要、按任务追踪成本。附当前价格。", "inLanguage": "zh", "datePublished": "2026-10-27", "dateModified": "2026-10-27", "author": {"@type": "Organization", "name": "루리의 줍줍"}, "publisher": {"@type": "Organization", "name": "루리의 줍줍"}, "mainEntityOfPage": "https://sungprofile.cloud/zh/guide/cut-ai-token-costs/"}</script>
+<style>body[data-th=today]{--tc:#dc2626}body[data-th=recipe]{--tc:#c2410c}body[data-th=watch]{--tc:#9333ea}body[data-th=apply]{--tc:#0f766e}body[data-th=contest]{--tc:#6d28d9}body[data-th=event]{--tc:#db2777}body[data-th=issue]{--tc:#b45309}body[data-th=money]{--tc:#047857}body[data-th=game]{--tc:#4f46e5}body[data-th=plaza]{--tc:#0891b2}body[data-th=diet]{--tc:#16a34a}body[data-th=ai]{--tc:#0f172a}body[data-th=wiki]{--tc:#0f766e}</style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4248498719773262" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G9BPFF95GY"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());if(location.hostname!=='sungprofile.cloud')window['ga-disable-G-G9BPFF95GY']=true;gtag('config','G-G9BPFF95GY');</script>
+</head><body data-th="hub" data-api="https://jupjup-api.sung2011103.workers.dev">
+<header class="hd"><div class="w hd-in"><a class="logo" href="/"><img class="logo-av" src="/assets/ruri/avatar.webp" width="36" height="36" alt="루리의 줍줍"><span>루리의 <b>줍줍</b></span></a><nav class="gn" aria-label="주요 주제"><a href="/today/">오늘 마감</a><a href="/contest/">공모전</a><a href="/apply/">지원금·청약</a><a href="/fridge/">건강 레시피</a><a href="/news/">이슈</a><a href="/wiki/">루리 위키</a><a href="/#all">전체</a></nav><a class="hd-s" href="/#hq" aria-label="통합 검색">🔍<span>검색</span></a></div>
+</header>
+<main class="w">
+<p class="bc"><a href="/">首页</a> › <a href="/zh/guide/">指南</a></p><article class="dev" lang="zh"><h1>降低 AI Token 成本：上下文、模型分工、缓存与成本追踪</h1><p class="note">发布日期 2026-10-27</p><p>如果你通过 API 使用 AI 模型做正式工作——编程代理、文档处理、客服回复草稿——账单的大头通常来自<b>你本不必发送的输入 token</b>。本指南介绍四个不降低回答质量、又能压低成本的习惯，并附上当前的标价，方便你自己核算。</p>
+<h2>当前价格（美元／每百万 token）</h2>
+<table><tr><th>模型</th><th>输入</th><th>输出</th><th>缓存读取</th><th>缓存写入（5 分钟）</th></tr>
+<tr><td>Claude Opus 5.5</td><td>$4</td><td>$20</td><td>$0.20</td><td>$5</td></tr>
+<tr><td>Claude Sonnet 5.5</td><td>$2</td><td>$10</td><td>$0.10</td><td>$2.50</td></tr>
+<tr><td>Claude Haiku 5.5（提示词 ≤100K token）</td><td>$0.10</td><td>$0.50</td><td>$0.01</td><td>$0.125</td></tr></table>
+<p class="note">来源：<a href="https://www.anthropic.com/pricing" rel="nofollow noopener" target="_blank">anthropic.com/pricing</a>，核对日期 2026-10-19。该页面列出批处理（batch）可享 50% 折扣。提示词超过 100K token 时，Haiku 5.5 的价格更高。价格会变动——做预算前请查看该页面。</p>
+<h2>1. 只发送任务所需的文档</h2>
+<p>最常见的浪费，是把整个代码仓库、手册或聊天记录“以防万一”全部粘贴进去。每一次请求都要为这些内容再付一次费。</p>
+<ol><li>先检索（grep、文件列表或索引），再只发送匹配的文件或章节。</li>
+<li>优先使用带行号的片段，而不是整个文件。</li>
+<li>对于很长的对话，用一段简短的文字总结另开新对话，而不是带着 100 轮历史继续。</li></ol>
+<h2>2. 按步骤拆分工作并分配模型</h2>
+<table><tr><th>步骤</th><th>典型模型档位</th></tr><tr><td>分类、打标签、提取字段</td><td>最小</td></tr><tr><td>起草、常规代码修改</td><td>中等</td></tr><tr><td>规划、疑难调试、最终审查</td><td>最大</td></tr></table>
+<p>根据上面的价格表，一百万输入 token 在 Opus 5.5 上是 $4，在 Haiku 5.5 上是 $0.10——相差 40 倍。把某一步降级之前，先用小样本测试质量：一次便宜但需要重试两次的调用并不便宜。</p>
+<h2>3. 维护一个项目摘要文件——并缓存它</h2>
+<ul><li>写一个简短的文件：项目是什么、目录结构、约定、当前目标。把它放在每次请求的最开头。</li>
+<li>由于它在多次调用之间不变，很适合使用提示词缓存：第一次写入之后，在 Opus 5.5 上每百万 token 的读取费用是 $0.20 而不是 $4——仅为正常输入价格的 5%。</li>
+<li>会变化的内容（日期、用户的问题）要放在缓存部分<em>之后</em>。提示词靠前位置的任何改动都会让缓存失效。</li></ul>
+<h2>4. 按任务而不是按请求追踪成本</h2>
+<ol><li>从每个响应的 usage 字段记录输入、输出和缓存读取的 token 数，并标注任务名称。</li>
+<li>每周按任务汇总，再乘以上面的价格。</li>
+<li>只看排名前三的任务。过大的上下文或不匹配的模型通常就藏在那里。</li></ol>
+<h2>快速检查清单</h2>
+<ul class="chk"><li>提示词中稳定的部分是否放在最前面并已缓存？</li><li>我是否在片段足够的情况下发送了整个文件？</li><li>这一步能否用更小的模型达到同样的质量？</li><li>这项工作能否等待批处理（5 折）？</li></ul>
+<h2>常见问题</h2>
+<dl><dt>缓存写入比普通输入更贵吗？</dt><dd>是的——在 Opus 5.5 上，5 分钟缓存写入是 $5，而普通输入是 $4。只要同一前缀被再次读取，就立刻回本。</dd>
+<dt>批处理一定划算吗？</dt><dd>只适用于不需要立刻得到答案的工作，例如夜间的文档处理。</dd></dl>
+<h2>来源</h2><ul><li><a href="https://www.anthropic.com/pricing" rel="nofollow noopener" target="_blank">Anthropic 定价</a> — 核对日期 2026-10-19</li></ul><p class="dev-hub">相关（韩语）: <a href="/ailog/">AI 制作日志·开发知识（AI 제작 로그·개발 지식）</a></p><p class="dev-hub" lang="en">🌐 <a href="/en/guide/cut-ai-token-costs/" hreflang="en" lang="en">English</a> · <a href="/es/guide/cut-ai-token-costs/" hreflang="es" lang="es">Español</a> · <a href="/id/guide/cut-ai-token-costs/" hreflang="id" lang="id">Bahasa Indonesia</a> · <a href="/ja/guide/cut-ai-token-costs/" hreflang="ja" lang="ja">日本語</a> · <a href="/th/guide/cut-ai-token-costs/" hreflang="th" lang="th">ไทย</a> · <a href="/vi/guide/cut-ai-token-costs/" hreflang="vi" lang="vi">Tiếng Việt</a> · <b>中文</b></p><div class="shr" data-t="降低 AI Token 成本：上下文、模型分工、缓存与成本追踪" data-x="降低 Claude API 账单的实用方法：只发送所需文档、按步骤分配模型、缓存项目摘要、按任务追踪成本。附当前价格。" data-k="476ea22a69da8f2902a540eef533b5f9"><b>📤 공유</b><button data-s="native">공유하기</button><button data-s="kakao">카카오톡</button><button data-s="copy">🔗 링크 복사</button><button data-s="nblog">네이버 블로그</button><button data-s="band">밴드</button><button data-s="x">X</button><button data-s="fb">Facebook</button></div><script defer src="/assets/share.js?v=2"></script></article><link rel="stylesheet" href="/assets/mag/mag.css?v=10"><style>.dev table{width:100%;border-collapse:collapse;margin:12px 0;font-size:.92em;display:block;overflow-x:auto}.dev th,.dev td{border:1px solid #e5e7eb;padding:6px 8px;text-align:left;vertical-align:top}.dev pre{background:#0f172a;color:#e2e8f0;padding:12px;border-radius:8px;overflow-x:auto;font-size:.85em}.dev code{font-size:.92em}.dev dt{font-weight:700;margin-top:10px}.dev dd{margin:4px 0 0 0}.dev-ls{list-style:none;padding:0}.dev-ls li{margin:8px 0}.dev-ls a{display:block;padding:12px;border:1px solid #e5e7eb;border-radius:10px;text-decoration:none;color:inherit}.dev-ls span{display:block;font-size:.88em;color:#64748b;margin-top:4px}</style><link rel="stylesheet" href="/assets/dev/dev.css?v=1"><script defer src="/assets/dev/dev.js?v=2"></script>
+</main>
+<footer class="ft"><div class="w ft-in"><div class="ft-b"><img class="av" src="/assets/ruri/avatar.webp" width="56" height="56" alt="루리" loading="lazy"><div><b>루리의 줍줍</b><p>오늘 뭐 먹지부터 지원금·공모전·이슈까지, 일단 줍고 가세요.</p><p class="ft-m">문의 <a href="mailto:sung2011103@naver.com">sung2011103@naver.com</a></p></div></div>
+<nav class="ft-g" aria-label="사이트 메뉴"><div><b>🍳 생활</b><a href="/fridge/">건강 레시피</a><a href="/event/">경품·용돈</a><a href="/qa/">고민 해결</a><a href="/plaza/">광장</a></div>
+<div><b>💰 지원금·머니</b><a href="/apply/">지원금·청약</a><a href="/money/tools/salary/">계산기</a><a href="/money/experts/">전문가 말 vs 시세</a><a href="/analyst/">애널리스트</a></div>
+<div><b>🏆 공모전</b><a href="/contest/">공모전 찾기</a><a href="/prep/">준비실</a><a href="/guide/">응모 가이드</a><a href="/lab/">수상 연구소</a></div>
+<div><b>📺 이슈</b><a href="/news/">루리 뉴스</a><a href="/trend/">이슈 트렌드</a><a href="/hot/">핫이슈</a><a href="/kw/">인기 키워드</a></div>
+<div><b>ℹ️ 운영·정책</b><a href="/about/">소개·운영 방식</a><a href="/corrections/">정정 기록</a><a href="/privacy/">개인정보처리방침</a><a href="/terms/">이용약관</a><a href="/contact/">문의</a></div></nav>
+<p class="ft-c"><small>외부 채널</small> <a class="cl-b" href="https://open.kakao.com/o/gzd9B9Si" target="_blank" rel="noopener">💬 루리 톡방 들어가기</a><a class="cl-b" href="https://band.us/band/104846162" target="_blank" rel="noopener" style="background:#06c755;color:#ffffff">👥 루리 밴드 함께하기</a><a class="cl-b" href="http://pf.kakao.com/_wxhimX/friend" target="_blank" rel="noopener" style="background:#FEE500;color:#191919;box-shadow:inset 0 0 0 2px #191919">💬 루리 채널 추가하기</a><a class="cl-b" href="https://www.youtube.com/channel/UCdJQUqqrHHXC7mWstly2eXw" target="_blank" rel="noopener" style="background:#FF0000;color:#ffffff">▶️ 루리 뉴스 유튜브</a></p><p class="ft-l"><a href="/ailog/">개발 지식</a><a href="/app/">앱·알림</a><a href="/all/">전체 메뉴</a></p>
+<p class="ft-n">정보는 각 기관의 공고·언론 보도·공개 자료를 바탕으로 정리했어요. 정확한 내용은 반드시 공식 공고와 원문에서 확인하세요. 일부 링크는 쿠팡 파트너스 활동의 일환으로 수수료를 받을 수 있어요. © 2026 루리의 줍줍 · sungprofile.cloud</p></div></footer><style>.ft-c{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}.cl-b{display:inline-flex;align-items:center;min-height:40px;padding:6px 14px;border-radius:999px;background:#fee500;color:#191919;font-weight:700;text-decoration:none;font-size:14px}.cl-ban{display:flex;align-items:center;gap:6px;margin:8px 0;padding:10px 14px;border-radius:12px;background:#fff9c4;border:1px solid #fde047;color:#422006;font-weight:700;text-decoration:none;font-size:14px}</style>
+</body></html>

@@ -1,0 +1,37 @@
+<p>Immich 是一个支持手机备份的自托管照片和视频库。本指南介绍一套能经受磁盘故障的方案：在 Proxmox 上的虚拟机里运行 Immich，照片存放在 ZFS 镜像上，再加上真正的 3-2-1 备份。这里假设你已经安装好 Proxmox，并有两块容量相同的磁盘用于做镜像。</p>
+<h2>硬件：官方最低要求</h2>
+<table><tr><th>项目</th><th>最低</th><th>推荐</th></tr>
+<tr><td>内存</td><td>6 GB</td><td>8 GB</td></tr>
+<tr><td>CPU</td><td>2 核</td><td>4 核</td></tr>
+<tr><td>数据库存储</td><td colspan="2">本地 SSD，绝不能放在网络共享上</td></tr></table>
+<p class="note">来源：<a href="https://immich.app/docs/install/requirements" rel="nofollow noopener" target="_blank">Immich 系统要求</a>（页面更新于 2026-10-08，核对于 2026-10-19）。该页面还提到，缩略图和转码后的视频会使媒体库大小增加约 10–20%；如果内存只有 4 GB，应关闭机器学习功能。</p>
+<h2>第 1 步 — 创建 ZFS 镜像</h2>
+<ol><li>在 Proxmox 中：<b>Datacenter → node → Disks → ZFS → Create: ZFS</b>，选中两块磁盘，RAID 级别选 <b>Mirror</b>。</li>
+<li>两块磁盘的镜像只有一块磁盘的容量；任意一块磁盘损坏都不会丢失数据。</li>
+<li>把它添加为虚拟机磁盘的存储，或者创建一个数据集（例如 <code>tank/photos</code>）挂载给虚拟机使用。</li></ol>
+<h2>第 2 步 — 创建虚拟机</h2>
+<ol><li>创建一台 Debian 或 Ubuntu 虚拟机，配置至少达到上面的最低要求。把虚拟机的系统盘放在 SSD 上，这样 Postgres 数据库就位于本地 SSD。</li>
+<li>将 CPU 类型设为 <code>host</code>（或其他支持 x86-64-v2 的类型）；在 amd64 上，Immich 的机器学习容器要求 x86-64-v2。</li>
+<li>在 ZFS 镜像上添加第二块虚拟磁盘用于存放照片，并挂载，例如挂载到 <code>/srv/photos</code>。</li></ol>
+<p>Immich 的文档把虚拟机中的 Docker Compose 作为受支持的方式；在 LXC 容器中运行则被描述为不推荐。</p>
+<h2>第 3 步 — 安装 Immich</h2>
+<ol><li>安装 Docker 和 Compose 插件。</li>
+<li>从 Immich 安装文档下载官方的 <code>docker-compose.yml</code> 和 <code>example.env</code>。</li>
+<li>在 <code>.env</code> 中设置 <code>UPLOAD_LOCATION=/srv/photos/library</code>，并让 <code>DB_DATA_LOCATION</code> 保留在 SSD 系统盘上。</li>
+<li>运行 <code>docker compose up -d</code>，打开 2283 端口，创建管理员账户，安装手机应用并开启备份。</li></ol>
+<h2>第 4 步 — 3-2-1 备份</h2>
+<p>镜像只能防范磁盘损坏，防不了误删、勒索软件或火灾。Immich 自己的文档推荐 3-2-1 策略：3 份副本，存放在 2 种不同介质上，其中 1 份放在异地。</p>
+<table><tr><th>副本</th><th>位置</th><th>方式</th></tr>
+<tr><td>1</td><td>ZFS 镜像（在线使用）</td><td>Immich 本身</td></tr>
+<tr><td>2</td><td>外接 USB 磁盘或另一台机器</td><td>ZFS 快照 + <code>zfs send</code>，或 restic/borg</td></tr>
+<tr><td>3</td><td>异地（云存储桶或朋友的服务器）</td><td>带加密的 restic/borg</td></tr></table>
+<p><b>两部分都要备份。</b>Immich 会在 <code>UPLOAD_LOCATION/backups</code> 中自动生成数据库转储（默认每天凌晨 2:00，保留最近 14 份）。这些转储只包含元数据——不含照片——所以你的备份任务必须复制整个 <code>UPLOAD_LOCATION</code>，其中就包含这些转储。来源：<a href="https://immich.app/docs/administration/backup-and-restore" rel="nofollow noopener" target="_blank">Immich 备份与恢复</a>，核对于 2026-10-19。</p>
+<p>请至少测试一次恢复：启动一台临时虚拟机，恢复文件和一份转储，然后登录。</p>
+<h2>同一台服务器上还能放什么</h2>
+<ul><li>文件同步服务（例如 Syncthing），放在同一个镜像上。</li>
+<li>密码管理器服务器，与同一个异地备份任务一起备份。</li>
+<li>监控（磁盘 SMART 和 ZFS scrub 告警）——清单里最便宜的保险。</li></ul>
+<h2>常见问题</h2>
+<dl><dt>镜像就是我的备份吗？</dt><dd>不是。它只是冗余。删除一张照片会立刻在两块磁盘上同时删除。</dd>
+<dt>可以通过 NFS 把数据库放在 ZFS 镜像上吗？</dt><dd>Immich 表示数据库绝不能放在网络共享上。请把它放在本地 SSD。</dd>
+<dt>ZFS 本身需要多少内存？</dt><dd>ZFS 会把空闲内存用作缓存（ARC），并在内存紧张时让出；先确定虚拟机的内存预算，剩下的再留给宿主机。</dd></dl>

@@ -1,0 +1,37 @@
+<p>Mutation testing คือการเปลี่ยนโค้ดของคุณโดยตั้งใจ (เช่น <code>&lt;</code> กลายเป็น <code>&lt;=</code> หรือ <code>return x</code> กลายเป็น <code>return None</code>) แล้วตรวจว่าเทสต์ของคุณจับความเปลี่ยนแปลงได้หรือไม่ มิวแทนต์ที่ "killed" หมายถึงมีเทสต์ล้มเหลว แต่เทสต์อาจล้มเหลวด้วยเหตุผลที่ไม่เกี่ยวกับการกลายพันธุ์เลย และเมื่อเป็นเช่นนั้น คะแนน mutation ของคุณจะดูดีกว่าคุณภาพเทสต์จริง คู่มือนี้แสดงสามการตรวจสอบที่จับ <b>false kill</b> เหล่านี้ได้</p>
+<h2>ทำไมจึงเกิด false kill</h2>
+<table><tr><th>สาเหตุ</th><th>สิ่งที่คุณเห็น</th></tr>
+<tr><td>ชุดเทสต์ล้มเหลวหรือไม่เสถียรอยู่แล้วก่อนทำ mutation</td><td>มี kill จำนวนมากที่เกิดจากข้อผิดพลาดเดียวกันที่ไม่เกี่ยวข้อง</td></tr>
+<tr><td>เทสต์ import ไฟล์ต้นฉบับ ไม่ใช่สำเนาที่ถูกกลายพันธุ์</td><td>kill เกิดจาก timeout หรือข้อผิดพลาดของสภาพแวดล้อมเท่านั้น</td></tr>
+<tr><td>Timeout จากเครื่องที่ช้า</td><td>kill กระจุกตัวอยู่ที่เทสต์ที่รันนาน</td></tr>
+<tr><td>สถานะที่ใช้ร่วมกันระหว่างการรัน (ไฟล์ชั่วคราว แคช พอร์ต)</td><td>ผล kill เปลี่ยนเมื่อรันมิวแทนต์ตัวเดิมซ้ำ</td></tr></table>
+<p>Timeout มีผลต่อคะแนน: ใน Stryker, <b>detected = killed + timeout</b> และ <b>mutation score = detected / valid × 100</b> เครื่องที่ timeout บ่อยจะทำให้คะแนนสูงเกินจริง ที่มา: <a href="https://stryker-mutator.io/docs/mutation-testing-elements/mutant-states-and-metrics/" rel="nofollow noopener" target="_blank">Stryker mutant states and metrics</a> ตรวจสอบเมื่อ 2026-10-19</p>
+<h2>การตรวจที่ 1 — Baseline บนสำเนาที่สะอาด</h2>
+<ol><li>คัดลอกโปรเจกต์ไปยังไดเรกทอรีใหม่ ให้เหมือนกับที่เครื่องมือ mutation จะทำทุกประการ (sandbox เดียวกัน ตัวแปรสภาพแวดล้อมเดียวกัน)</li>
+<li>รันชุดเทสต์ทั้งหมดที่นั่นโดย<b>ไม่</b>ทำ mutation สามครั้ง</li>
+<li>ต้องผ่านทั้งสามครั้ง ความล้มเหลวใด ๆ ตรงนี้คือความล้มเหลวที่มีอยู่ก่อนแล้ว ซึ่งจะปรากฏเป็น kill ปลอมในภายหลัง ให้แก้หรือแยกกักกันก่อน</li></ol>
+<pre><code>cp -r project /tmp/mt-baseline &amp;&amp; cd /tmp/mt-baseline
+for i in 1 2 3; do pytest -q -p no:cacheprovider || echo "BASELINE FAIL $i"; done</code></pre>
+<h2>การตรวจที่ 2 — พิสูจน์ว่าเทสต์อ่านไฟล์ที่ถูกกลายพันธุ์</h2>
+<p>หากเทสต์ไม่เคยโหลดไฟล์ที่ถูกกลายพันธุ์ ก็ไม่สามารถ kill มิวแทนต์นั้นได้ ให้บันทึกการเข้าถึงไฟล์ระหว่างการรันมิวแทนต์แต่ละตัว ใน Python ใช้ audit hook ก็เพียงพอ:</p>
+<pre><code># conftest.py
+import sys, os
+TARGET = os.environ.get("MUT_TARGET")  # path of the mutated file
+def hook(event, args):
+    if event == "open" and TARGET and str(args[0]).endswith(TARGET):
+        open("/tmp/mut_touched", "a").write("1")
+sys.addaudithook(hook)</code></pre>
+<p>รันมิวแทนต์แต่ละตัวโดยลบ bytecode เก่าออก (ลบ <code>__pycache__</code> ในสำเนา) เพื่อให้ไฟล์ต้นฉบับถูกอ่านจริง กฎคือ: kill ที่ไฟล์เป้าหมายไม่เคยถูกเปิดให้ทำเครื่องหมายเป็น <b>suspect</b> แล้วรันซ้ำ สำหรับสแตกอื่น <code>strace -e trace=openat</code> (Linux) หรือข้อมูล coverage ของตัวรันเทสต์ใช้ได้เช่นกัน</p>
+<h2>การตรวจที่ 3 — ดูการกระจายของเหตุผลที่ kill</h2>
+<ol><li>สำหรับมิวแทนต์ที่ถูก kill ทุกตัว ให้เก็บ<i>เหตุผล</i>ที่การรันล้มเหลว: assertion error, exception อื่น, timeout, crash, ข้อผิดพลาดตอน collection/import</li>
+<li>ทำตารางนับอย่างง่าย</li></ol>
+<table><tr><th>เหตุผล</th><th>รูปแบบที่ปกติ</th><th>สัญญาณเตือน</th></tr>
+<tr><td>Assertion ล้มเหลว</td><td>kill ส่วนใหญ่</td><td>—</td></tr>
+<tr><td>Exception อื่น</td><td>บ้าง</td><td>ข้อความเดียวกันซ้ำในมิวแทนต์จำนวนมาก</td></tr>
+<tr><td>Timeout</td><td>น้อย (มิวแทนต์ที่ทำให้เกิดลูปไม่รู้จบ)</td><td>สัดส่วนมาก เพิ่มขึ้นบนเครื่องที่ช้ากว่า</td></tr>
+<tr><td>ข้อผิดพลาดตอน import / collection</td><td>แทบไม่มี</td><td>สัดส่วนที่มีนัยสำคัญ ไม่ว่าเท่าไร แปลว่าตัวชุดทดสอบ ไม่ใช่เทสต์ ที่กำลังล้มเหลว</td></tr></table>
+<h2>สรุปรวมกัน</h2>
+<ul class="chk"><li>Baseline ผ่านเขียว 3/3 บนสำเนาที่สะอาด</li><li>ทุก kill มีบันทึก "เปิดไฟล์เป้าหมาย"</li><li>Assertion failure เป็นเหตุผลที่ kill มากที่สุด</li><li>สุ่มรัน kill ซ้ำ 5% ผลไม่ควรเปลี่ยน</li></ul>
+<h2>คำถามที่พบบ่อย</h2>
+<dl><dt>ควรเพิ่ม timeout หรือไม่</dt><dd>ตั้งจาก baseline: วัดเวลารันชุดเทสต์ปกติ แล้วให้เวลาเป็นจำนวนเท่าของค่านั้น ตั้งต่ำเกินไปจะเกิด kill ปลอม สูงเกินไปจะทำให้รันช้า</dd>
+<dt>ข้อผิดพลาดตอนคอมไพล์นับด้วยหรือไม่</dt><dd>ใน Stryker ข้อผิดพลาดตอนคอมไพล์และตอนรันไทม์ถือเป็นมิวแทนต์ "invalid" และไม่นับรวมในคะแนน</dd></dl>

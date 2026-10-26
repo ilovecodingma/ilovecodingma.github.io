@@ -1,0 +1,32 @@
+<p>本指南面向经营小型产品生意的人——比如酱料品牌、蜡烛店、手工化妆品品牌——帮助你用 Claude 处理产品周边那些重复性的文书工作，而不是产品本身。下面每个工作流都在普通聊天窗口里运行，耗时不到 15 分钟，无需写代码。</p>
+<h2>Claude 在这里擅长什么（以及不擅长什么）</h2>
+<table><tr><th>任务</th><th>是否适合？</th><th>原因</th></tr>
+<tr><td>检查标签文案是否一致、有无遗漏项目</td><td>适合</td><td>它会按你提供的清单，逐行比对文字。</td></tr>
+<tr><td>起草批发提案和利润率表</td><td>适合</td><td>对<em>你</em>提供的数字做运算并排版。</td></tr>
+<tr><td>汇总竞品评论</td><td>适合</td><td>把数百条短文本归纳成若干主题，是它的核心强项。</td></tr>
+<tr><td>判断某项健康或安全宣称是否合法</td><td>不适合</td><td>这是监管部门的判断。可以让 Claude 帮你列出问题，再对照官方规定核实。</td></tr>
+<tr><td>编造价格、成本或市场规模</td><td>不适合</td><td>它会给出看似合理的数字。只给它你确实掌握的数字。</td></tr></table>
+<h2>工作流 1 — 标签文案检查</h2>
+<ol><li>粘贴完整的标签文字（正面和背面）以及产品的配料表。</li>
+<li>粘贴你所在市场的官方标签检查清单。美国是 <a href="https://www.fda.gov/food/food-labeling-nutrition" rel="nofollow noopener" target="_blank">FDA 食品标签页面</a>；韩国是 MFDS（食品医药品安全处）的标签标准。</li>
+<li>提问：<code>Compare the label to the checklist. Output a table: requirement, found on label (quote), missing or unclear. Do not judge legality.</code></li>
+<li>补上缺失的内容，然后对新标签再运行同一个提示词，确认没有出现新的问题。</li></ol>
+<p>价值在于“引文”这一列：每个“已找到”的行都必须指向标签上的真实文字，这样你几秒钟就能核实。</p>
+<h2>工作流 2 — 批发提案和利润率表</h2>
+<ol><li>写下你的真实数字：单位成本、包装、每箱运费、每箱数量、零售价。</li>
+<li>让它生成一张表：在零售价基础上按几档折扣得出的批发价、你每件和每箱的利润率，以及零售商按其惯常加价后的利润率。</li>
+<li>让它写出每一列的计算公式。自己重新计算其中一行；如果吻合，其余各行就是一致的。</li>
+<li>然后让它写一页纸的提案，只引用表中的数字。</li></ol>
+<h2>工作流 3 — 竞品商品页评论分析</h2>
+<ol><li>把两三个竞品商品页上的公开评论复制到文本文件中，每条评论都保留星级。</li>
+<li>提问：<code>Group these reviews into complaint themes and praise themes. For each theme: count, two short quotes, and which star ratings it appears in.</code></li>
+<li>把排名靠前的抱怨主题变成你自己商品页的检查清单：照片、尺寸信息、物流预期、配料。</li></ol>
+<p>一定要求给出数量和引文。没有引文的主题只是猜测。</p>
+<h2>工作流 4 — 每周 20 分钟检查</h2>
+<ul><li>粘贴上周的订单汇总、退款和客户留言（先去掉姓名和地址）。</li>
+<li>让它给出三点内容：与前一周相比发生了哪些变化（附数字）、重复出现的客户问题，以及一项能解答该问题的商品页或 FAQ 修改。</li>
+<li>每周的答案都保存在同一个文档里。满一个月后，让 Claude 对比这四份汇总。</li></ul>
+<h2>常见问题</h2>
+<dl><dt>我可以相信它的算术吗？</dt><dd>手动核对一行。如果所示公式正确且有一行吻合，这张表就是一致的；如果不是，让它重新计算并展示推导过程。</dd>
+<dt>应该上传客户的个人数据吗？</dt><dd>请先删除姓名、电子邮箱和地址。这些工作流都用不到它们。</dd>
+<dt>我需要哪种套餐或模型？</dt><dd>这四个工作流都是简短的聊天任务。从你现有的套餐开始即可；当前的选项见 <a href="https://www.anthropic.com/pricing" rel="nofollow noopener" target="_blank">Anthropic 定价页面</a>。</dd></dl>

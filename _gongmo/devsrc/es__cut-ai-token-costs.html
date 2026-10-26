@@ -1,0 +1,28 @@
+<p>Si usa un modelo de IA mediante una API para trabajo real (agentes de programación, procesamiento de documentos, borradores de atención al cliente), la mayor parte de la factura suele venir de los <b>tokens de entrada que no hacía falta enviar</b>. Esta guía recoge cuatro hábitos que reducen el costo sin empeorar las respuestas, con los precios de lista actuales para que pueda hacer las cuentas usted mismo.</p>
+<h2>Precios actuales (USD por millón de tokens)</h2>
+<table><tr><th>Modelo</th><th>Entrada</th><th>Salida</th><th>Lectura de caché</th><th>Escritura en caché (5 min)</th></tr>
+<tr><td>Claude Opus 5.5</td><td>$4</td><td>$20</td><td>$0.20</td><td>$5</td></tr>
+<tr><td>Claude Sonnet 5.5</td><td>$2</td><td>$10</td><td>$0.10</td><td>$2.50</td></tr>
+<tr><td>Claude Haiku 5.5 (prompts ≤100K tokens)</td><td>$0.10</td><td>$0.50</td><td>$0.01</td><td>$0.125</td></tr></table>
+<p class="note">Fuente: <a href="https://www.anthropic.com/pricing" rel="nofollow noopener" target="_blank">anthropic.com/pricing</a>, consultada el 2026-10-19. Allí se indica el procesamiento por lotes con un 50% de descuento. Los precios de Haiku 5.5 son más altos para prompts de más de 100K tokens. Los precios cambian: revise la página antes de elaborar un presupuesto.</p>
+<h2>1. Envíe solo los documentos que la tarea necesita</h2>
+<p>El desperdicio más habitual es pegar un repositorio entero, un manual o el historial del chat «por si acaso». Cada solicitud paga todo eso de nuevo.</p>
+<ol><li>Busque primero (grep, una lista de archivos o un índice) y envíe solo los archivos o secciones que coincidan.</li>
+<li>Prefiera extractos con números de línea a archivos completos.</li>
+<li>En conversaciones largas, empiece una nueva con un breve resumen escrito en lugar de arrastrar 100 turnos.</li></ol>
+<h2>2. Reparta el trabajo por paso y por modelo</h2>
+<table><tr><th>Paso</th><th>Nivel de modelo habitual</th></tr><tr><td>Clasificar, etiquetar, extraer campos</td><td>El más pequeño</td></tr><tr><td>Redactar, cambios de código rutinarios</td><td>Intermedio</td></tr><tr><td>Planificar, depuración difícil, revisión final</td><td>El más grande</td></tr></table>
+<p>Según la tabla anterior, un millón de tokens de entrada cuesta $4 en Opus 5.5 y $0.10 en Haiku 5.5: una diferencia de 40×. Pruebe la calidad con una muestra pequeña antes de bajar un paso a un modelo menor: una llamada más barata que necesita dos reintentos no es más barata.</p>
+<h2>3. Mantenga un archivo de resumen del proyecto y póngalo en caché</h2>
+<ul><li>Escriba un archivo breve: qué es el proyecto, la estructura de carpetas, las convenciones y los objetivos actuales. Póngalo al principio de cada solicitud.</li>
+<li>Como no cambia entre llamadas, es ideal para el almacenamiento en caché de prompts: tras la primera escritura, las lecturas cuestan $0.20 en lugar de $4 por millón en Opus 5.5, es decir, el 5% del precio normal de entrada.</li>
+<li>Ponga todo lo que cambia (fechas, la pregunta del usuario) <em>después</em> de la parte en caché. Cualquier cambio anterior en el prompt invalida la caché.</li></ul>
+<h2>4. Mida el costo por tarea, no por solicitud</h2>
+<ol><li>Registre los tokens de entrada, salida y lectura de caché del campo usage de cada respuesta, etiquetados con el nombre de la tarea.</li>
+<li>Una vez por semana, sume por tarea y multiplique por los precios de arriba.</li>
+<li>Mire solo las tres tareas principales. Ahí suele esconderse un contexto desmesurado o un modelo inadecuado.</li></ol>
+<h2>Lista de comprobación rápida</h2>
+<ul class="chk"><li>¿La parte estable del prompt va primero y en caché?</li><li>¿Envié archivos completos cuando bastaban extractos?</li><li>¿Podría este paso ejecutarse en un modelo más pequeño con la misma calidad?</li><li>¿Puede este trabajo esperar al procesamiento por lotes (50% de descuento)?</li></ul>
+<h2>Preguntas frecuentes</h2>
+<dl><dt>¿Escribir en caché cuesta más que la entrada normal?</dt><dd>Sí: en Opus 5.5, una escritura en caché de 5 minutos cuesta $5 frente a $4 de la entrada normal. Se amortiza en cuanto se vuelve a leer el mismo prefijo.</dd>
+<dt>¿Siempre compensa el procesamiento por lotes?</dt><dd>Solo para trabajos que no necesitan respuesta inmediata, como el procesamiento nocturno de documentos.</dd></dl>

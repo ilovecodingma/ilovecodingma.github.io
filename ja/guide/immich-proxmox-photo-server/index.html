@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ProxmoxでImmichをZFSミラーで構築:セットアップと3-2-1バックアップ | Ruri Jupjup</title>
+<meta name="description" content="ProxmoxでImmich写真サーバーを構築する手順を紹介します。ZFSミラー、公式要件に基づくVMのサイズ、Docker Composeでの導入、データベースダンプを含む3-2-1バックアップまで解説します。">
+<link rel="canonical" href="https://sungprofile.cloud/ja/guide/immich-proxmox-photo-server/">
+<link rel="alternate" hreflang="en" href="https://sungprofile.cloud/en/guide/immich-proxmox-photo-server/">
+<link rel="alternate" hreflang="es" href="https://sungprofile.cloud/es/guide/immich-proxmox-photo-server/">
+<link rel="alternate" hreflang="id" href="https://sungprofile.cloud/id/guide/immich-proxmox-photo-server/">
+<link rel="alternate" hreflang="ja" href="https://sungprofile.cloud/ja/guide/immich-proxmox-photo-server/">
+<link rel="alternate" hreflang="th" href="https://sungprofile.cloud/th/guide/immich-proxmox-photo-server/">
+<link rel="alternate" hreflang="vi" href="https://sungprofile.cloud/vi/guide/immich-proxmox-photo-server/">
+<link rel="alternate" hreflang="zh" href="https://sungprofile.cloud/zh/guide/immich-proxmox-photo-server/">
+<link rel="alternate" hreflang="x-default" href="https://sungprofile.cloud/en/guide/immich-proxmox-photo-server/">
+<meta property="og:type" content="website"><meta property="og:locale" content="ja_JP"><meta property="og:site_name" content="루리의 줍줍">
+<meta property="og:title" content="ProxmoxでImmichをZFSミラーで構築:セットアップと3-2-1バックアップ | Ruri Jupjup"><meta property="og:description" content="ProxmoxでImmich写真サーバーを構築する手順を紹介します。ZFSミラー、公式要件に基づくVMのサイズ、Docker Composeでの導入、データベースダンプを含む3-2-1バックアップまで解説します。"><meta property="og:url" content="https://sungprofile.cloud/ja/guide/immich-proxmox-photo-server/">
+<meta property="og:image" content="https://sungprofile.cloud/assets/ruri/og.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://sungprofile.cloud/assets/ruri/og.jpg">
+<meta name="theme-color" content="#5b21b6"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="오늘 뭐 먹지">
+<link rel="icon" href="/favicon.ico?v=6" sizes="any"><link rel="icon" type="image/png" sizes="48x48" href="/assets/icons/icon-48.png?v=6"><link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/icon-96.png?v=6"><link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/icon-192.png?v=6"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=6"><link rel="manifest" href="/site.webmanifest"><link rel="alternate" type="application/rss+xml" title="루리의 줍줍" href="/rss.xml">
+<link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="/assets/gm.css?v=28"><link rel="stylesheet" href="/assets/ds.css?v=15"><link rel="stylesheet" href="/assets/print.css?v=1"><script defer src="/assets/print.js?v=1"></script><script src="/assets/img-fallback.js?v=1"></script><link rel="stylesheet" href="/assets/chat/ruri-chat.css?v=9"><link rel="stylesheet" href="/assets/community/comm.css?v=17"><script defer src="/assets/community/comm.js?v=32"></script><script defer src="/assets/community/crew.js?v=1"></script><script type="module" src="/assets/chat/ruri-chat.js?v=16"></script><link rel="stylesheet" href="/assets/app/shell.css?v=1"><script defer src="/assets/app/app.js?v=4"></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://sungprofile.cloud/"}, {"@type": "ListItem", "position": 2, "name": "ガイド", "item": "https://sungprofile.cloud/ja/guide/"}, {"@type": "ListItem", "position": 3, "name": "ProxmoxでImmichをZFSミラーで構築:セットアップと3-2-1バックアップ", "item": "https://sungprofile.cloud/ja/guide/immich-proxmox-photo-server/"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "ProxmoxでImmichをZFSミラーで構築:セットアップと3-2-1バックアップ", "description": "ProxmoxでImmich写真サーバーを構築する手順を紹介します。ZFSミラー、公式要件に基づくVMのサイズ、Docker Composeでの導入、データベースダンプを含む3-2-1バックアップまで解説します。", "inLanguage": "ja", "datePublished": "2026-10-27", "dateModified": "2026-10-27", "author": {"@type": "Organization", "name": "루리의 줍줍"}, "publisher": {"@type": "Organization", "name": "루리의 줍줍"}, "mainEntityOfPage": "https://sungprofile.cloud/ja/guide/immich-proxmox-photo-server/"}</script>
+<style>body[data-th=today]{--tc:#dc2626}body[data-th=recipe]{--tc:#c2410c}body[data-th=watch]{--tc:#9333ea}body[data-th=apply]{--tc:#0f766e}body[data-th=contest]{--tc:#6d28d9}body[data-th=event]{--tc:#db2777}body[data-th=issue]{--tc:#b45309}body[data-th=money]{--tc:#047857}body[data-th=game]{--tc:#4f46e5}body[data-th=plaza]{--tc:#0891b2}body[data-th=diet]{--tc:#16a34a}body[data-th=ai]{--tc:#0f172a}body[data-th=wiki]{--tc:#0f766e}</style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4248498719773262" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G9BPFF95GY"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());if(location.hostname!=='sungprofile.cloud')window['ga-disable-G-G9BPFF95GY']=true;gtag('config','G-G9BPFF95GY');</script>
+</head><body data-th="hub" data-api="https://jupjup-api.sung2011103.workers.dev">
+<header class="hd"><div class="w hd-in"><a class="logo" href="/"><img class="logo-av" src="/assets/ruri/avatar.webp" width="36" height="36" alt="루리의 줍줍"><span>루리의 <b>줍줍</b></span></a><nav class="gn" aria-label="주요 주제"><a href="/today/">오늘 마감</a><a href="/contest/">공모전</a><a href="/apply/">지원금·청약</a><a href="/fridge/">건강 레시피</a><a href="/news/">이슈</a><a href="/wiki/">루리 위키</a><a href="/#all">전체</a></nav><a class="hd-s" href="/#hq" aria-label="통합 검색">🔍<span>검색</span></a></div>
+</header>
+<main class="w">
+<p class="bc"><a href="/">ホーム</a> › <a href="/ja/guide/">ガイド</a></p><article class="dev" lang="ja"><h1>ProxmoxでImmichをZFSミラーで構築:セットアップと3-2-1バックアップ</h1><p class="note">公開日 2026-10-27</p><p>Immichは、スマートフォンからのバックアップに対応した、セルフホスト型の写真・動画ライブラリです。このガイドでは、ディスク故障に耐える構成を紹介します。Proxmox上のVMでImmichを動かし、写真はZFSミラーに置き、その上に本格的な3-2-1バックアップを組みます。Proxmoxがすでにインストール済みで、ミラー用に同容量のディスクが2台あることを前提とします。</p>
+<h2>ハードウェア:公式の最小要件</h2>
+<table><tr><th>項目</th><th>最小</th><th>推奨</th></tr>
+<tr><td>RAM</td><td>6 GB</td><td>8 GB</td></tr>
+<tr><td>CPU</td><td>2コア</td><td>4コア</td></tr>
+<tr><td>データベースのストレージ</td><td colspan="2">ローカルSSD。ネットワーク共有は不可</td></tr></table>
+<p class="note">出典:<a href="https://immich.app/docs/install/requirements" rel="nofollow noopener" target="_blank">Immich requirements</a>(ページ更新日 2026-10-08、確認日 2026-10-19)。同ページには、サムネイルとトランスコード済み動画でライブラリのサイズが約10〜20%増えること、RAMが4 GBしかない場合は機械学習を無効にすべきことも記載されています。</p>
+<h2>ステップ1 — ZFSミラーを作る</h2>
+<ol><li>Proxmoxで<b>Datacenter → node → Disks → ZFS → Create: ZFS</b>を開き、2台のディスクを選んでRAIDレベルに<b>Mirror</b>を指定します。</li>
+<li>2台構成のミラーで使える容量は1台分です。どちらか1台が故障してもデータは失われません。</li>
+<li>VMディスク用のストレージとして追加するか、データセット(例:<code>tank/photos</code>)を作ってVMに渡します。</li></ol>
+<h2>ステップ2 — VMを作る</h2>
+<ol><li>上の最小要件を満たすDebianまたはUbuntuのVMを作ります。PostgresのデータベースをローカルSSDに置くため、VMのシステムディスクはSSDにします。</li>
+<li>CPUタイプは<code>host</code>(またはx86-64-v2に対応する他のタイプ)にします。Immichの機械学習コンテナは、amd64上でx86-64-v2を必要とします。</li>
+<li>写真用に、ZFSミラー上に2つ目の仮想ディスクを追加し、たとえば<code>/srv/photos</code>にマウントします。</li></ol>
+<p>Immichの公式ドキュメントが想定しているのは、VM内でのDocker Composeです。LXCコンテナ内での実行は推奨されないと説明されています。</p>
+<h2>ステップ3 — Immichをインストールする</h2>
+<ol><li>DockerとComposeプラグインをインストールします。</li>
+<li>Immichのインストール手順のドキュメントから、公式の<code>docker-compose.yml</code>と<code>example.env</code>をダウンロードします。</li>
+<li><code>.env</code>で<code>UPLOAD_LOCATION=/srv/photos/library</code>を設定し、<code>DB_DATA_LOCATION</code>はSSDのシステムディスク上に残します。</li>
+<li><code>docker compose up -d</code>を実行し、ポート2283を開いて管理者アカウントを作成し、スマートフォンアプリをインストールしてバックアップをオンにします。</li></ol>
+<h2>ステップ4 — 3-2-1バックアップ</h2>
+<p>ミラーが守るのはディスクの故障であり、誤削除、ランサムウェア、火災からは守れません。Immich自身のドキュメントも3-2-1戦略を推奨しています。コピーを3つ、媒体は2種類、うち1つはオフサイトに置く、というものです。</p>
+<table><tr><th>コピー</th><th>場所</th><th>方法</th></tr>
+<tr><td>1</td><td>ZFSミラー(稼働中)</td><td>Immich本体</td></tr>
+<tr><td>2</td><td>外付けUSBディスクまたは別のマシン</td><td>ZFSスナップショット+<code>zfs send</code>、またはrestic/borg</td></tr>
+<tr><td>3</td><td>オフサイト(クラウドのバケットや友人のサーバー)</td><td>暗号化したrestic/borg</td></tr></table>
+<p><b>両方を必ずバックアップしてください。</b>Immichはデータベースのダンプを<code>UPLOAD_LOCATION/backups</code>に自動作成します(デフォルトは毎日午前2:00、直近14個を保持)。このダンプに含まれるのはメタデータだけで、写真は含まれません。したがってバックアップジョブは<code>UPLOAD_LOCATION</code>全体をコピーする必要があり、そうすればダンプも含まれます。出典:<a href="https://immich.app/docs/administration/backup-and-restore" rel="nofollow noopener" target="_blank">Immich backup and restore</a>、2026-10-19確認。</p>
+<p>復元は一度テストしてください。使い捨てのVMを立ち上げ、ファイルとダンプを復元して、ログインできることを確かめます。</p>
+<h2>同じサーバーに載せられるもの</h2>
+<ul><li>同じミラー上のファイル同期サービス(例:Syncthing)。</li>
+<li>パスワードマネージャーのサーバー。同じオフサイトのジョブでバックアップします。</li>
+<li>監視(ディスクのSMARTとZFS scrubのアラート)。この一覧で最も安上がりな保険です。</li></ul>
+<h2>FAQ</h2>
+<dl><dt>ミラーはバックアップですか?</dt><dd>いいえ。冗長化です。写真を削除すると、2台のディスクの両方から即座に消えます。</dd>
+<dt>データベースをNFS経由でZFSミラーに置けますか?</dt><dd>Immichは、データベースをネットワーク共有に置いてはならないとしています。ローカルSSDに置いてください。</dd>
+<dt>ZFS自体にはどれくらいのRAMが必要ですか?</dt><dd>ZFSは空きRAMをキャッシュ(ARC)として使い、メモリ不足になれば返します。まずVMのRAMを確保し、残りをホストに使わせてください。</dd></dl>
+<h2>出典</h2><ul><li><a href="https://immich.app/docs/install/requirements" rel="nofollow noopener" target="_blank">Immichの要件</a> — 確認日 2026-10-19</li><li><a href="https://immich.app/docs/administration/backup-and-restore" rel="nofollow noopener" target="_blank">Immichのバックアップと復元</a> — 確認日 2026-10-19</li></ul><p class="dev-hub">関連（韓国語）: <a href="/ailog/">開発知識まとめ(韓国語)(개발 지식 모음)</a></p><p class="dev-hub" lang="en">🌐 <a href="/en/guide/immich-proxmox-photo-server/" hreflang="en" lang="en">English</a> · <a href="/es/guide/immich-proxmox-photo-server/" hreflang="es" lang="es">Español</a> · <a href="/id/guide/immich-proxmox-photo-server/" hreflang="id" lang="id">Bahasa Indonesia</a> · <b>日本語</b> · <a href="/th/guide/immich-proxmox-photo-server/" hreflang="th" lang="th">ไทย</a> · <a href="/vi/guide/immich-proxmox-photo-server/" hreflang="vi" lang="vi">Tiếng Việt</a> · <a href="/zh/guide/immich-proxmox-photo-server/" hreflang="zh" lang="zh">中文</a></p><div class="shr" data-t="ProxmoxでImmichをZFSミラーで構築:セットアップと3-2-1バックアップ" data-x="ProxmoxでImmich写真サーバーを構築する手順を紹介します。ZFSミラー、公式要件に基づくVMのサイズ、Docker Composeでの導入、データベースダンプを含む3-2-1バックアップまで解説します。" data-k="476ea22a69da8f2902a540eef533b5f9"><b>📤 공유</b><button data-s="native">공유하기</button><button data-s="kakao">카카오톡</button><button data-s="copy">🔗 링크 복사</button><button data-s="nblog">네이버 블로그</button><button data-s="band">밴드</button><button data-s="x">X</button><button data-s="fb">Facebook</button></div><script defer src="/assets/share.js?v=2"></script></article><link rel="stylesheet" href="/assets/mag/mag.css?v=10"><style>.dev table{width:100%;border-collapse:collapse;margin:12px 0;font-size:.92em;display:block;overflow-x:auto}.dev th,.dev td{border:1px solid #e5e7eb;padding:6px 8px;text-align:left;vertical-align:top}.dev pre{background:#0f172a;color:#e2e8f0;padding:12px;border-radius:8px;overflow-x:auto;font-size:.85em}.dev code{font-size:.92em}.dev dt{font-weight:700;margin-top:10px}.dev dd{margin:4px 0 0 0}.dev-ls{list-style:none;padding:0}.dev-ls li{margin:8px 0}.dev-ls a{display:block;padding:12px;border:1px solid #e5e7eb;border-radius:10px;text-decoration:none;color:inherit}.dev-ls span{display:block;font-size:.88em;color:#64748b;margin-top:4px}</style><link rel="stylesheet" href="/assets/dev/dev.css?v=1"><script defer src="/assets/dev/dev.js?v=2"></script>
+</main>
+<footer class="ft"><div class="w ft-in"><div class="ft-b"><img class="av" src="/assets/ruri/avatar.webp" width="56" height="56" alt="루리" loading="lazy"><div><b>루리의 줍줍</b><p>오늘 뭐 먹지부터 지원금·공모전·이슈까지, 일단 줍고 가세요.</p><p class="ft-m">문의 <a href="mailto:sung2011103@naver.com">sung2011103@naver.com</a></p></div></div>
+<nav class="ft-g" aria-label="사이트 메뉴"><div><b>🍳 생활</b><a href="/fridge/">건강 레시피</a><a href="/event/">경품·용돈</a><a href="/qa/">고민 해결</a><a href="/plaza/">광장</a></div>
+<div><b>💰 지원금·머니</b><a href="/apply/">지원금·청약</a><a href="/money/tools/salary/">계산기</a><a href="/money/experts/">전문가 말 vs 시세</a><a href="/analyst/">애널리스트</a></div>
+<div><b>🏆 공모전</b><a href="/contest/">공모전 찾기</a><a href="/prep/">준비실</a><a href="/guide/">응모 가이드</a><a href="/lab/">수상 연구소</a></div>
+<div><b>📺 이슈</b><a href="/news/">루리 뉴스</a><a href="/trend/">이슈 트렌드</a><a href="/hot/">핫이슈</a><a href="/kw/">인기 키워드</a></div>
+<div><b>ℹ️ 운영·정책</b><a href="/about/">소개·운영 방식</a><a href="/corrections/">정정 기록</a><a href="/privacy/">개인정보처리방침</a><a href="/terms/">이용약관</a><a href="/contact/">문의</a></div></nav>
+<p class="ft-c"><small>외부 채널</small> <a class="cl-b" href="https://open.kakao.com/o/gzd9B9Si" target="_blank" rel="noopener">💬 루리 톡방 들어가기</a><a class="cl-b" href="https://band.us/band/104846162" target="_blank" rel="noopener" style="background:#06c755;color:#ffffff">👥 루리 밴드 함께하기</a><a class="cl-b" href="http://pf.kakao.com/_wxhimX/friend" target="_blank" rel="noopener" style="background:#FEE500;color:#191919;box-shadow:inset 0 0 0 2px #191919">💬 루리 채널 추가하기</a><a class="cl-b" href="https://www.youtube.com/channel/UCdJQUqqrHHXC7mWstly2eXw" target="_blank" rel="noopener" style="background:#FF0000;color:#ffffff">▶️ 루리 뉴스 유튜브</a></p><p class="ft-l"><a href="/ailog/">개발 지식</a><a href="/app/">앱·알림</a><a href="/all/">전체 메뉴</a></p>
+<p class="ft-n">정보는 각 기관의 공고·언론 보도·공개 자료를 바탕으로 정리했어요. 정확한 내용은 반드시 공식 공고와 원문에서 확인하세요. 일부 링크는 쿠팡 파트너스 활동의 일환으로 수수료를 받을 수 있어요. © 2026 루리의 줍줍 · sungprofile.cloud</p></div></footer><style>.ft-c{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}.cl-b{display:inline-flex;align-items:center;min-height:40px;padding:6px 14px;border-radius:999px;background:#fee500;color:#191919;font-weight:700;text-decoration:none;font-size:14px}.cl-ban{display:flex;align-items:center;gap:6px;margin:8px 0;padding:10px 14px;border-radius:12px;background:#fff9c4;border:1px solid #fde047;color:#422006;font-weight:700;text-decoration:none;font-size:14px}</style>
+</body></html>

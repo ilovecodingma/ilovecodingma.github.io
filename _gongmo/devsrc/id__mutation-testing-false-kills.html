@@ -1,0 +1,37 @@
+<p>Mutation testing sengaja mengubah kode Anda (<code>&lt;</code> menjadi <code>&lt;=</code>, <code>return x</code> menjadi <code>return None</code>) dan memeriksa apakah tes Anda menyadarinya. Mutan yang "killed" berarti ada tes yang gagal. Namun sebuah tes bisa gagal karena alasan yang tidak ada hubungannya dengan mutasi — dan skor mutasi Anda jadi tampak lebih baik daripada kualitas tes yang sebenarnya. Panduan ini menunjukkan tiga pemeriksaan untuk menangkap <b>false kill</b> tersebut.</p>
+<h2>Mengapa false kill terjadi</h2>
+<table><tr><th>Penyebab</th><th>Yang Anda lihat</th></tr>
+<tr><td>Suite tes sudah gagal atau tidak stabil (flaky) sebelum mutasi</td><td>Banyak kill dengan error tak terkait yang sama</td></tr>
+<tr><td>Tes mengimpor file asli, bukan salinan yang dimutasi</td><td>Kill hanya dari timeout atau error lingkungan</td></tr>
+<tr><td>Timeout akibat mesin yang lambat</td><td>Kill menggumpal pada tes yang berjalan lama</td></tr>
+<tr><td>State bersama antarproses (file sementara, cache, port)</td><td>Hasil kill berubah saat mutan yang sama dijalankan ulang</td></tr></table>
+<p>Timeout berpengaruh pada skor: di Stryker, <b>detected = killed + timeout</b>, dan <b>mutation score = detected / valid × 100</b>. Mesin yang sering timeout menggelembungkan skor. Sumber: <a href="https://stryker-mutator.io/docs/mutation-testing-elements/mutant-states-and-metrics/" rel="nofollow noopener" target="_blank">Stryker mutant states and metrics</a>, diperiksa 2026-10-19.</p>
+<h2>Pemeriksaan 1 — Baseline pada salinan bersih</h2>
+<ol><li>Salin proyek ke direktori baru, persis seperti yang akan dilakukan alat mutasi (sandbox sama, variabel lingkungan sama).</li>
+<li>Jalankan seluruh suite tes di sana <b>tanpa</b> mutasi, tiga kali.</li>
+<li>Semuanya harus lulus ketiga kalinya. Kegagalan apa pun di sini adalah kegagalan yang sudah ada sebelumnya dan akan muncul sebagai kill palsu nanti — perbaiki atau karantina dulu.</li></ol>
+<pre><code>cp -r project /tmp/mt-baseline &amp;&amp; cd /tmp/mt-baseline
+for i in 1 2 3; do pytest -q -p no:cacheprovider || echo "BASELINE FAIL $i"; done</code></pre>
+<h2>Pemeriksaan 2 — Buktikan tes membaca file yang dimutasi</h2>
+<p>Jika sebuah tes tidak pernah memuat file yang dimutasi, ia tidak mungkin membunuh mutan itu. Catat akses file selama setiap proses mutan. Di Python, audit hook sudah cukup:</p>
+<pre><code># conftest.py
+import sys, os
+TARGET = os.environ.get("MUT_TARGET")  # path of the mutated file
+def hook(event, args):
+    if event == "open" and TARGET and str(args[0]).endswith(TARGET):
+        open("/tmp/mut_touched", "a").write("1")
+sys.addaudithook(hook)</code></pre>
+<p>Jalankan setiap mutan dengan bytecode usang dihapus (hapus <code>__pycache__</code> di salinan) agar file sumber benar-benar dibaca. Aturannya: kill yang file targetnya tidak pernah dibuka ditandai <b>suspect</b> dan dijalankan ulang. Pada stack lain, <code>strace -e trace=openat</code> (Linux) atau data coverage dari test runner memenuhi tujuan yang sama.</p>
+<h2>Pemeriksaan 3 — Lihat distribusi alasan kill</h2>
+<ol><li>Untuk setiap mutan yang di-kill, simpan <i>mengapa</i> prosesnya gagal: assertion error, exception lain, timeout, crash, error collection/impor.</li>
+<li>Buat tabel hitungan sederhana.</li></ol>
+<table><tr><th>Alasan</th><th>Pola sehat</th><th>Tanda bahaya</th></tr>
+<tr><td>Kegagalan assertion</td><td>Sebagian besar kill</td><td>—</td></tr>
+<tr><td>Exception lain</td><td>Sebagian</td><td>Satu pesan identik pada banyak mutan</td></tr>
+<tr><td>Timeout</td><td>Sedikit (mutan loop tak berujung)</td><td>Porsi besar; naik di mesin yang lebih lambat</td></tr>
+<tr><td>Error impor / collection</td><td>Hampir tidak ada</td><td>Porsi yang berarti — harness-nya, bukan tesnya, yang gagal</td></tr></table>
+<h2>Menyatukan semuanya</h2>
+<ul class="chk"><li>Baseline hijau 3/3 pada salinan bersih</li><li>Setiap kill punya catatan "file target dibuka"</li><li>Kegagalan assertion adalah alasan kill terbanyak</li><li>Jalankan ulang 5% kill secara acak; hasilnya tidak boleh berubah</li></ul>
+<h2>FAQ</h2>
+<dl><dt>Haruskah saya menaikkan timeout?</dt><dd>Tentukan dari baseline: ukur waktu suite normal, lalu izinkan kelipatannya. Terlalu rendah menimbulkan kill palsu; terlalu tinggi memperlambat proses.</dd>
+<dt>Apakah error kompilasi dihitung?</dt><dd>Di Stryker, error kompilasi dan runtime adalah mutan "invalid" dan tidak termasuk dalam skor.</dd></dl>

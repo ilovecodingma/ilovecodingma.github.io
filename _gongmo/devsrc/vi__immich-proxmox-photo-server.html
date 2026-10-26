@@ -1,0 +1,37 @@
+<p>Immich là thư viện ảnh và video tự lưu trữ (self-hosted) có sao lưu từ điện thoại. Hướng dẫn này trình bày một cách thiết lập có thể chịu được hỏng ổ đĩa: Immich chạy trong một VM trên Proxmox, ảnh nằm trên ZFS mirror, và bên trên là một bản sao lưu 3-2-1 thực sự. Giả định rằng bạn đã cài sẵn Proxmox và có hai ổ đĩa cùng dung lượng cho mirror.</p>
+<h2>Phần cứng: mức tối thiểu chính thức</h2>
+<table><tr><th>Hạng mục</th><th>Tối thiểu</th><th>Khuyến nghị</th></tr>
+<tr><td>RAM</td><td>6 GB</td><td>8 GB</td></tr>
+<tr><td>CPU</td><td>2 nhân</td><td>4 nhân</td></tr>
+<tr><td>Lưu trữ cơ sở dữ liệu</td><td colspan="2">SSD cục bộ, tuyệt đối không dùng thư mục chia sẻ qua mạng</td></tr></table>
+<p class="note">Nguồn: <a href="https://immich.app/docs/install/requirements" rel="nofollow noopener" target="_blank">Immich requirements</a> (trang cập nhật 2026-10-08, kiểm tra 2026-10-19). Cùng trang đó ghi chú rằng ảnh thu nhỏ và video đã chuyển mã làm tăng dung lượng thư viện khoảng 10–20%, và nếu chỉ có 4 GB RAM thì nên tắt machine learning.</p>
+<h2>Bước 1 — Tạo ZFS mirror</h2>
+<ol><li>Trong Proxmox: <b>Datacenter → node → Disks → ZFS → Create: ZFS</b>, chọn cả hai ổ đĩa, RAID level là <b>Mirror</b>.</li>
+<li>Mirror hai ổ cho dung lượng bằng một ổ; một trong hai ổ hỏng cũng không mất dữ liệu.</li>
+<li>Thêm nó làm nơi lưu trữ cho đĩa VM, hoặc tạo một dataset (ví dụ <code>tank/photos</code>) để gắn vào VM.</li></ol>
+<h2>Bước 2 — Tạo VM</h2>
+<ol><li>Tạo một VM Debian hoặc Ubuntu với cấu hình ít nhất bằng mức tối thiểu ở trên. Đặt đĩa hệ thống của VM trên SSD để cơ sở dữ liệu Postgres nằm trên SSD cục bộ.</li>
+<li>Đặt loại CPU là <code>host</code> (hoặc một loại khác hỗ trợ x86-64-v2); container machine learning của Immich yêu cầu x86-64-v2 trên amd64.</li>
+<li>Thêm đĩa ảo thứ hai nằm trên ZFS mirror để chứa ảnh và mount nó, ví dụ tại <code>/srv/photos</code>.</li></ol>
+<p>Immich ghi tài liệu Docker Compose trong VM là cách được hỗ trợ; chạy bên trong container LXC được mô tả là không khuyến nghị.</p>
+<h2>Bước 3 — Cài đặt Immich</h2>
+<ol><li>Cài Docker và plugin Compose.</li>
+<li>Tải <code>docker-compose.yml</code> và <code>example.env</code> chính thức từ tài liệu cài đặt của Immich.</li>
+<li>Trong <code>.env</code>, đặt <code>UPLOAD_LOCATION=/srv/photos/library</code> và giữ <code>DB_DATA_LOCATION</code> trên đĩa hệ thống SSD.</li>
+<li>Chạy <code>docker compose up -d</code>, mở cổng 2283, tạo tài khoản quản trị, cài ứng dụng điện thoại và bật sao lưu.</li></ol>
+<h2>Bước 4 — Sao lưu 3-2-1</h2>
+<p>Mirror bảo vệ bạn khi một ổ đĩa chết, chứ không bảo vệ khỏi việc xóa nhầm, ransomware hay hỏa hoạn. Tài liệu của chính Immich khuyến nghị chiến lược 3-2-1: 3 bản sao, trên 2 loại phương tiện lưu trữ, 1 bản ở nơi khác (off-site).</p>
+<table><tr><th>Bản sao</th><th>Ở đâu</th><th>Cách thực hiện</th></tr>
+<tr><td>1</td><td>ZFS mirror (đang chạy)</td><td>Chính Immich</td></tr>
+<tr><td>2</td><td>Ổ USB ngoài hoặc máy thứ hai</td><td>ZFS snapshot + <code>zfs send</code>, hoặc restic/borg</td></tr>
+<tr><td>3</td><td>Off-site (bucket đám mây hoặc máy chủ của một người bạn)</td><td>restic/borg có mã hóa</td></tr></table>
+<p><b>Hãy sao lưu cả hai phần.</b> Immich tự tạo bản dump cơ sở dữ liệu trong <code>UPLOAD_LOCATION/backups</code> (mặc định: hằng ngày lúc 2:00 sáng, giữ 14 bản gần nhất). Các bản dump đó chỉ chứa siêu dữ liệu — không có ảnh — nên tác vụ sao lưu của bạn phải chép toàn bộ <code>UPLOAD_LOCATION</code>, trong đó đã bao gồm các bản dump. Nguồn: <a href="https://immich.app/docs/administration/backup-and-restore" rel="nofollow noopener" target="_blank">Immich backup and restore</a>, kiểm tra 2026-10-19.</p>
+<p>Hãy thử khôi phục một lần: dựng một VM tạm, khôi phục tệp và một bản dump, rồi đăng nhập.</p>
+<h2>Còn gì khác có thể chạy trên cùng máy chủ</h2>
+<ul><li>Một dịch vụ đồng bộ tệp (ví dụ Syncthing) trên cùng mirror.</li>
+<li>Một máy chủ quản lý mật khẩu, được sao lưu bằng cùng tác vụ off-site.</li>
+<li>Giám sát (SMART của đĩa và cảnh báo ZFS scrub) — khoản bảo hiểm rẻ nhất trong danh sách.</li></ul>
+<h2>Câu hỏi thường gặp</h2>
+<dl><dt>Mirror có phải là bản sao lưu của tôi không?</dt><dd>Không. Nó chỉ là dự phòng. Xóa một bức ảnh là xóa ngay trên cả hai ổ.</dd>
+<dt>Tôi có thể đặt cơ sở dữ liệu trên ZFS mirror qua NFS không?</dt><dd>Immich nói rằng cơ sở dữ liệu tuyệt đối không nên nằm trên thư mục chia sẻ qua mạng. Hãy để nó trên SSD cục bộ.</dd>
+<dt>Bản thân ZFS cần bao nhiêu RAM?</dt><dd>ZFS dùng RAM trống làm cache (ARC) và nhả lại khi bị thiếu; hãy tính RAM cho VM trước, rồi để máy chủ host dùng phần còn lại.</dd></dl>

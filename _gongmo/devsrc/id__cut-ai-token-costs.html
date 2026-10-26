@@ -1,0 +1,29 @@
+<p>Jika Anda memakai model AI lewat API untuk pekerjaan nyata — agen pemrograman, pemrosesan dokumen, draf balasan dukungan — sebagian besar tagihan biasanya berasal dari <b>token input yang sebenarnya tidak perlu dikirim</b>. Panduan ini membahas empat kebiasaan yang memangkas biaya tanpa menurunkan kualitas jawaban, lengkap dengan harga daftar terkini agar Anda bisa menghitung sendiri.</p>
+<h2>Harga saat ini (USD per juta token)</h2>
+<table><tr><th>Model</th><th>Input</th><th>Output</th><th>Baca cache</th><th>Tulis cache (5 menit)</th></tr>
+<tr><td>Claude Opus 5.5</td><td>$4</td><td>$20</td><td>$0.20</td><td>$5</td></tr>
+<tr><td>Claude Sonnet 5.5</td><td>$2</td><td>$10</td><td>$0.10</td><td>$2.50</td></tr>
+<tr><td>Claude Haiku 5.5 (prompt ≤100K token)</td><td>$0.10</td><td>$0.50</td><td>$0.01</td><td>$0.125</td></tr></table>
+<p class="note">Sumber: <a href="https://www.anthropic.com/pricing" rel="nofollow noopener" target="_blank">anthropic.com/pricing</a>, diperiksa 2026-10-19. Pemrosesan batch tercantum di sana dengan diskon 50%. Harga Haiku 5.5 lebih tinggi untuk prompt di atas 100K token. Harga bisa berubah — periksa halamannya sebelum menyusun anggaran.</p>
+<h2>1. Kirim hanya dokumen yang dibutuhkan tugas</h2>
+<p>Pemborosan yang paling umum adalah menempelkan seluruh repositori, manual, atau riwayat obrolan "jaga-jaga". Setiap permintaan membayar semuanya lagi.</p>
+<ol><li>Cari dulu (grep, daftar file, atau indeks), lalu kirim hanya file atau bagian yang cocok.</li>
+<li>Pilih kutipan dengan nomor baris daripada file utuh.</li>
+<li>Untuk percakapan panjang, mulai percakapan baru dengan ringkasan tertulis singkat alih-alih membawa 100 giliran sekaligus.</li></ol>
+<h2>2. Bagi pekerjaan menurut langkah dan model</h2>
+<table><tr><th>Langkah</th><th>Tingkat model yang umum</th></tr>
+<tr><td>Menyortir, memberi tag, mengekstrak kolom data</td><td>Terkecil</td></tr><tr><td>Menyusun draf, perubahan kode rutin</td><td>Menengah</td></tr><tr><td>Perencanaan, debugging sulit, tinjauan akhir</td><td>Terbesar</td></tr></table>
+<p>Dari tabel di atas, satu juta token input berharga $4 di Opus 5.5 dan $0.10 di Haiku 5.5 — selisih 40×. Uji kualitas pada sampel kecil sebelum menurunkan suatu langkah ke model yang lebih kecil: panggilan yang lebih murah tetapi butuh dua kali ulang tidak lebih murah.</p>
+<h2>3. Simpan file ringkasan proyek — dan cache</h2>
+<ul><li>Tulis satu file singkat: proyek ini apa, struktur folder, konvensi, tujuan saat ini. Letakkan di bagian paling awal setiap permintaan.</li>
+<li>Karena isinya tidak berubah antarpanggilan, file ini cocok untuk prompt caching: setelah penulisan pertama, pembacaan berharga $0.20, bukan $4 per juta token di Opus 5.5 — 5% dari harga input normal.</li>
+<li>Taruh apa pun yang berubah (tanggal, pertanyaan pengguna) <em>setelah</em> bagian yang di-cache. Perubahan apa pun di bagian awal prompt akan merusak cache.</li></ul>
+<h2>4. Lacak biaya per tugas, bukan per permintaan</h2>
+<ol><li>Catat token input, output, dan baca-cache dari kolom usage di setiap respons, dengan label nama tugas.</li>
+<li>Sekali seminggu, jumlahkan per tugas dan kalikan dengan harga di atas.</li>
+<li>Lihat tiga tugas teratas saja. Biasanya di situlah konteks yang terlalu besar atau model yang tidak sesuai bersembunyi.</li></ol>
+<h2>Daftar periksa cepat</h2>
+<ul class="chk"><li>Apakah bagian prompt yang stabil berada di awal dan di-cache?</li><li>Apakah saya mengirim file utuh padahal kutipan sudah cukup?</li><li>Bisakah langkah ini dijalankan di model yang lebih kecil dengan kualitas sama?</li><li>Bisakah pekerjaan ini menunggu batch (diskon 50%)?</li></ul>
+<h2>FAQ</h2>
+<dl><dt>Apakah menulis cache lebih mahal daripada input biasa?</dt><dd>Ya — di Opus 5.5, penulisan cache 5 menit berharga $5 dibanding $4 untuk input biasa. Biaya ini langsung terbayar begitu prefiks yang sama dibaca lagi.</dd>
+<dt>Apakah batch selalu sepadan?</dt><dd>Hanya untuk pekerjaan yang tidak membutuhkan jawaban segera, seperti pemrosesan dokumen semalam.</dd></dl>

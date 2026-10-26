@@ -1,0 +1,37 @@
+<p>Immich es una biblioteca autoalojada de fotos y vídeos con copia de seguridad desde el teléfono. Esta guía muestra una instalación que sobrevive al fallo de un disco: Immich en una máquina virtual de Proxmox, las fotos en un espejo ZFS y una auténtica copia de seguridad 3-2-1 por encima. Se supone que ya tiene Proxmox instalado y dos discos del mismo tamaño para el espejo.</p>
+<h2>Hardware: mínimos oficiales</h2>
+<table><tr><th>Elemento</th><th>Mínimo</th><th>Recomendado</th></tr>
+<tr><td>RAM</td><td>6 GB</td><td>8 GB</td></tr>
+<tr><td>CPU</td><td>2 núcleos</td><td>4 núcleos</td></tr>
+<tr><td>Almacenamiento de la base de datos</td><td colspan="2">SSD local, nunca un recurso de red compartido</td></tr></table>
+<p class="note">Fuente: <a href="https://immich.app/docs/install/requirements" rel="nofollow noopener" target="_blank">requisitos de Immich</a> (página actualizada el 2026-10-08, consultada el 2026-10-19). La misma página señala que las miniaturas y el vídeo transcodificado añaden aproximadamente un 10–20% al tamaño de la biblioteca, y que con solo 4 GB de RAM conviene desactivar el aprendizaje automático.</p>
+<h2>Paso 1 — Crear el espejo ZFS</h2>
+<ol><li>En Proxmox: <b>Datacenter → node → Disks → ZFS → Create: ZFS</b>, seleccione ambos discos, nivel RAID <b>Mirror</b>.</li>
+<li>Un espejo de dos discos ofrece la capacidad de un solo disco; cualquiera de los dos puede fallar sin pérdida de datos.</li>
+<li>Añádalo como almacenamiento para discos de VM, o cree un dataset (p. ej. <code>tank/photos</code>) para pasarlo a la VM.</li></ol>
+<h2>Paso 2 — Crear la VM</h2>
+<ol><li>Cree una VM con Debian o Ubuntu que cumpla al menos los mínimos anteriores. Ponga el disco del sistema de la VM en SSD para que la base de datos Postgres esté en un SSD local.</li>
+<li>Establezca el tipo de CPU en <code>host</code> (u otro tipo compatible con x86-64-v2); el contenedor de aprendizaje automático de Immich requiere x86-64-v2 en amd64.</li>
+<li>Añada un segundo disco virtual en el espejo ZFS para las fotos y móntelo, p. ej. en <code>/srv/photos</code>.</li></ol>
+<p>Immich documenta Docker Compose en una VM como la vía soportada; ejecutarlo dentro de contenedores LXC se describe como no recomendado.</p>
+<h2>Paso 3 — Instalar Immich</h2>
+<ol><li>Instale Docker y el plugin Compose.</li>
+<li>Descargue el <code>docker-compose.yml</code> y el <code>example.env</code> oficiales de la documentación de instalación de Immich.</li>
+<li>En <code>.env</code> defina <code>UPLOAD_LOCATION=/srv/photos/library</code> y mantenga <code>DB_DATA_LOCATION</code> en el disco SSD del sistema.</li>
+<li><code>docker compose up -d</code>, abra el puerto 2283, cree la cuenta de administrador, instale la aplicación móvil y active la copia de seguridad.</li></ol>
+<h2>Paso 4 — Copia de seguridad 3-2-1</h2>
+<p>Un espejo protege contra un disco muerto, no contra un borrado, un ransomware o un incendio en casa. La propia documentación de Immich recomienda una estrategia 3-2-1: 3 copias, en 2 tipos de medios, 1 fuera del sitio.</p>
+<table><tr><th>Copia</th><th>Dónde</th><th>Cómo</th></tr>
+<tr><td>1</td><td>Espejo ZFS (en uso)</td><td>El propio Immich</td></tr>
+<tr><td>2</td><td>Disco USB externo u otra máquina</td><td>Instantáneas ZFS + <code>zfs send</code>, o restic/borg</td></tr>
+<tr><td>3</td><td>Fuera del sitio (bucket en la nube o el servidor de un amigo)</td><td>restic/borg con cifrado</td></tr></table>
+<p><b>Respalde ambas partes.</b> Immich crea volcados de la base de datos automáticamente en <code>UPLOAD_LOCATION/backups</code> (por defecto: diariamente a las 2:00 AM, se conservan los últimos 14). Esos volcados contienen solo metadatos, sin fotos, así que su tarea de copia debe copiar todo <code>UPLOAD_LOCATION</code>, que ya incluye los volcados. Fuente: <a href="https://immich.app/docs/administration/backup-and-restore" rel="nofollow noopener" target="_blank">copia de seguridad y restauración de Immich</a>, consultada el 2026-10-19.</p>
+<p>Pruebe una restauración al menos una vez: levante una VM desechable, restaure los archivos y un volcado, e inicie sesión.</p>
+<h2>Qué más cabe en el mismo servidor</h2>
+<ul><li>Un servicio de sincronización de archivos (p. ej. Syncthing) en el mismo espejo.</li>
+<li>Un servidor de gestor de contraseñas, respaldado con la misma tarea fuera del sitio.</li>
+<li>Monitorización (alertas de SMART de los discos y de scrub de ZFS): el seguro más barato de la lista.</li></ul>
+<h2>Preguntas frecuentes</h2>
+<dl><dt>¿Es el espejo mi copia de seguridad?</dt><dd>No. Es redundancia. Borrar una foto la borra al instante en ambos discos.</dd>
+<dt>¿Puedo poner la base de datos en el espejo ZFS a través de NFS?</dt><dd>Immich indica que la base de datos nunca debe estar en un recurso de red compartido. Manténgala en SSD local.</dd>
+<dt>¿Cuánta RAM necesita el propio ZFS?</dt><dd>ZFS usa la RAM libre como caché (ARC) y la devuelve cuando hay presión; presupueste primero la RAM de la VM y deje que el host use el resto.</dd></dl>

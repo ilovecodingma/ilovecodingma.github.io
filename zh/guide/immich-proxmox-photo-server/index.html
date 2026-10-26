@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>在 Proxmox 上用 ZFS 镜像搭建 Immich：安装与 3-2-1 备份 | Ruri Jupjup</title>
+<meta name="description" content="在 Proxmox 上搭建 Immich 照片服务器的分步指南：ZFS 镜像、依据官方要求配置虚拟机、Docker Compose 安装，以及包含数据库转储的 3-2-1 备份。">
+<link rel="canonical" href="https://sungprofile.cloud/zh/guide/immich-proxmox-photo-server/">
+<link rel="alternate" hreflang="en" href="https://sungprofile.cloud/en/guide/immich-proxmox-photo-server/">
+<link rel="alternate" hreflang="es" href="https://sungprofile.cloud/es/guide/immich-proxmox-photo-server/">
+<link rel="alternate" hreflang="id" href="https://sungprofile.cloud/id/guide/immich-proxmox-photo-server/">
+<link rel="alternate" hreflang="ja" href="https://sungprofile.cloud/ja/guide/immich-proxmox-photo-server/">
+<link rel="alternate" hreflang="th" href="https://sungprofile.cloud/th/guide/immich-proxmox-photo-server/">
+<link rel="alternate" hreflang="vi" href="https://sungprofile.cloud/vi/guide/immich-proxmox-photo-server/">
+<link rel="alternate" hreflang="zh" href="https://sungprofile.cloud/zh/guide/immich-proxmox-photo-server/">
+<link rel="alternate" hreflang="x-default" href="https://sungprofile.cloud/en/guide/immich-proxmox-photo-server/">
+<meta property="og:type" content="website"><meta property="og:locale" content="zh_CN"><meta property="og:site_name" content="루리의 줍줍">
+<meta property="og:title" content="在 Proxmox 上用 ZFS 镜像搭建 Immich：安装与 3-2-1 备份 | Ruri Jupjup"><meta property="og:description" content="在 Proxmox 上搭建 Immich 照片服务器的分步指南：ZFS 镜像、依据官方要求配置虚拟机、Docker Compose 安装，以及包含数据库转储的 3-2-1 备份。"><meta property="og:url" content="https://sungprofile.cloud/zh/guide/immich-proxmox-photo-server/">
+<meta property="og:image" content="https://sungprofile.cloud/assets/ruri/og.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://sungprofile.cloud/assets/ruri/og.jpg">
+<meta name="theme-color" content="#5b21b6"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="오늘 뭐 먹지">
+<link rel="icon" href="/favicon.ico?v=6" sizes="any"><link rel="icon" type="image/png" sizes="48x48" href="/assets/icons/icon-48.png?v=6"><link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/icon-96.png?v=6"><link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/icon-192.png?v=6"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=6"><link rel="manifest" href="/site.webmanifest"><link rel="alternate" type="application/rss+xml" title="루리의 줍줍" href="/rss.xml">
+<link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="/assets/gm.css?v=28"><link rel="stylesheet" href="/assets/ds.css?v=15"><link rel="stylesheet" href="/assets/print.css?v=1"><script defer src="/assets/print.js?v=1"></script><script src="/assets/img-fallback.js?v=1"></script><link rel="stylesheet" href="/assets/chat/ruri-chat.css?v=9"><link rel="stylesheet" href="/assets/community/comm.css?v=17"><script defer src="/assets/community/comm.js?v=32"></script><script defer src="/assets/community/crew.js?v=1"></script><script type="module" src="/assets/chat/ruri-chat.js?v=16"></script><link rel="stylesheet" href="/assets/app/shell.css?v=1"><script defer src="/assets/app/app.js?v=4"></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "首页", "item": "https://sungprofile.cloud/"}, {"@type": "ListItem", "position": 2, "name": "指南", "item": "https://sungprofile.cloud/zh/guide/"}, {"@type": "ListItem", "position": 3, "name": "在 Proxmox 上用 ZFS 镜像搭建 Immich：安装与 3-2-1 备份", "item": "https://sungprofile.cloud/zh/guide/immich-proxmox-photo-server/"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "在 Proxmox 上用 ZFS 镜像搭建 Immich：安装与 3-2-1 备份", "description": "在 Proxmox 上搭建 Immich 照片服务器的分步指南：ZFS 镜像、依据官方要求配置虚拟机、Docker Compose 安装，以及包含数据库转储的 3-2-1 备份。", "inLanguage": "zh", "datePublished": "2026-10-27", "dateModified": "2026-10-27", "author": {"@type": "Organization", "name": "루리의 줍줍"}, "publisher": {"@type": "Organization", "name": "루리의 줍줍"}, "mainEntityOfPage": "https://sungprofile.cloud/zh/guide/immich-proxmox-photo-server/"}</script>
+<style>body[data-th=today]{--tc:#dc2626}body[data-th=recipe]{--tc:#c2410c}body[data-th=watch]{--tc:#9333ea}body[data-th=apply]{--tc:#0f766e}body[data-th=contest]{--tc:#6d28d9}body[data-th=event]{--tc:#db2777}body[data-th=issue]{--tc:#b45309}body[data-th=money]{--tc:#047857}body[data-th=game]{--tc:#4f46e5}body[data-th=plaza]{--tc:#0891b2}body[data-th=diet]{--tc:#16a34a}body[data-th=ai]{--tc:#0f172a}body[data-th=wiki]{--tc:#0f766e}</style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4248498719773262" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G9BPFF95GY"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());if(location.hostname!=='sungprofile.cloud')window['ga-disable-G-G9BPFF95GY']=true;gtag('config','G-G9BPFF95GY');</script>
+</head><body data-th="hub" data-api="https://jupjup-api.sung2011103.workers.dev">
+<header class="hd"><div class="w hd-in"><a class="logo" href="/"><img class="logo-av" src="/assets/ruri/avatar.webp" width="36" height="36" alt="루리의 줍줍"><span>루리의 <b>줍줍</b></span></a><nav class="gn" aria-label="주요 주제"><a href="/today/">오늘 마감</a><a href="/contest/">공모전</a><a href="/apply/">지원금·청약</a><a href="/fridge/">건강 레시피</a><a href="/news/">이슈</a><a href="/wiki/">루리 위키</a><a href="/#all">전체</a></nav><a class="hd-s" href="/#hq" aria-label="통합 검색">🔍<span>검색</span></a></div>
+</header>
+<main class="w">
+<p class="bc"><a href="/">首页</a> › <a href="/zh/guide/">指南</a></p><article class="dev" lang="zh"><h1>在 Proxmox 上用 ZFS 镜像搭建 Immich：安装与 3-2-1 备份</h1><p class="note">发布日期 2026-10-27</p><p>Immich 是一个支持手机备份的自托管照片和视频库。本指南介绍一套能经受磁盘故障的方案：在 Proxmox 上的虚拟机里运行 Immich，照片存放在 ZFS 镜像上，再加上真正的 3-2-1 备份。这里假设你已经安装好 Proxmox，并有两块容量相同的磁盘用于做镜像。</p>
+<h2>硬件：官方最低要求</h2>
+<table><tr><th>项目</th><th>最低</th><th>推荐</th></tr>
+<tr><td>内存</td><td>6 GB</td><td>8 GB</td></tr>
+<tr><td>CPU</td><td>2 核</td><td>4 核</td></tr>
+<tr><td>数据库存储</td><td colspan="2">本地 SSD，绝不能放在网络共享上</td></tr></table>
+<p class="note">来源：<a href="https://immich.app/docs/install/requirements" rel="nofollow noopener" target="_blank">Immich 系统要求</a>（页面更新于 2026-10-08，核对于 2026-10-19）。该页面还提到，缩略图和转码后的视频会使媒体库大小增加约 10–20%；如果内存只有 4 GB，应关闭机器学习功能。</p>
+<h2>第 1 步 — 创建 ZFS 镜像</h2>
+<ol><li>在 Proxmox 中：<b>Datacenter → node → Disks → ZFS → Create: ZFS</b>，选中两块磁盘，RAID 级别选 <b>Mirror</b>。</li>
+<li>两块磁盘的镜像只有一块磁盘的容量；任意一块磁盘损坏都不会丢失数据。</li>
+<li>把它添加为虚拟机磁盘的存储，或者创建一个数据集（例如 <code>tank/photos</code>）挂载给虚拟机使用。</li></ol>
+<h2>第 2 步 — 创建虚拟机</h2>
+<ol><li>创建一台 Debian 或 Ubuntu 虚拟机，配置至少达到上面的最低要求。把虚拟机的系统盘放在 SSD 上，这样 Postgres 数据库就位于本地 SSD。</li>
+<li>将 CPU 类型设为 <code>host</code>（或其他支持 x86-64-v2 的类型）；在 amd64 上，Immich 的机器学习容器要求 x86-64-v2。</li>
+<li>在 ZFS 镜像上添加第二块虚拟磁盘用于存放照片，并挂载，例如挂载到 <code>/srv/photos</code>。</li></ol>
+<p>Immich 的文档把虚拟机中的 Docker Compose 作为受支持的方式；在 LXC 容器中运行则被描述为不推荐。</p>
+<h2>第 3 步 — 安装 Immich</h2>
+<ol><li>安装 Docker 和 Compose 插件。</li>
+<li>从 Immich 安装文档下载官方的 <code>docker-compose.yml</code> 和 <code>example.env</code>。</li>
+<li>在 <code>.env</code> 中设置 <code>UPLOAD_LOCATION=/srv/photos/library</code>，并让 <code>DB_DATA_LOCATION</code> 保留在 SSD 系统盘上。</li>
+<li>运行 <code>docker compose up -d</code>，打开 2283 端口，创建管理员账户，安装手机应用并开启备份。</li></ol>
+<h2>第 4 步 — 3-2-1 备份</h2>
+<p>镜像只能防范磁盘损坏，防不了误删、勒索软件或火灾。Immich 自己的文档推荐 3-2-1 策略：3 份副本，存放在 2 种不同介质上，其中 1 份放在异地。</p>
+<table><tr><th>副本</th><th>位置</th><th>方式</th></tr>
+<tr><td>1</td><td>ZFS 镜像（在线使用）</td><td>Immich 本身</td></tr>
+<tr><td>2</td><td>外接 USB 磁盘或另一台机器</td><td>ZFS 快照 + <code>zfs send</code>，或 restic/borg</td></tr>
+<tr><td>3</td><td>异地（云存储桶或朋友的服务器）</td><td>带加密的 restic/borg</td></tr></table>
+<p><b>两部分都要备份。</b>Immich 会在 <code>UPLOAD_LOCATION/backups</code> 中自动生成数据库转储（默认每天凌晨 2:00，保留最近 14 份）。这些转储只包含元数据——不含照片——所以你的备份任务必须复制整个 <code>UPLOAD_LOCATION</code>，其中就包含这些转储。来源：<a href="https://immich.app/docs/administration/backup-and-restore" rel="nofollow noopener" target="_blank">Immich 备份与恢复</a>，核对于 2026-10-19。</p>
+<p>请至少测试一次恢复：启动一台临时虚拟机，恢复文件和一份转储，然后登录。</p>
+<h2>同一台服务器上还能放什么</h2>
+<ul><li>文件同步服务（例如 Syncthing），放在同一个镜像上。</li>
+<li>密码管理器服务器，与同一个异地备份任务一起备份。</li>
+<li>监控（磁盘 SMART 和 ZFS scrub 告警）——清单里最便宜的保险。</li></ul>
+<h2>常见问题</h2>
+<dl><dt>镜像就是我的备份吗？</dt><dd>不是。它只是冗余。删除一张照片会立刻在两块磁盘上同时删除。</dd>
+<dt>可以通过 NFS 把数据库放在 ZFS 镜像上吗？</dt><dd>Immich 表示数据库绝不能放在网络共享上。请把它放在本地 SSD。</dd>
+<dt>ZFS 本身需要多少内存？</dt><dd>ZFS 会把空闲内存用作缓存（ARC），并在内存紧张时让出；先确定虚拟机的内存预算，剩下的再留给宿主机。</dd></dl>
+<h2>来源</h2><ul><li><a href="https://immich.app/docs/install/requirements" rel="nofollow noopener" target="_blank">Immich 系统要求</a> — 核对日期 2026-10-19</li><li><a href="https://immich.app/docs/administration/backup-and-restore" rel="nofollow noopener" target="_blank">Immich 备份与恢复</a> — 核对日期 2026-10-19</li></ul><p class="dev-hub">相关（韩语）: <a href="/ailog/">开发知识汇总（개발 지식 모음）</a></p><p class="dev-hub" lang="en">🌐 <a href="/en/guide/immich-proxmox-photo-server/" hreflang="en" lang="en">English</a> · <a href="/es/guide/immich-proxmox-photo-server/" hreflang="es" lang="es">Español</a> · <a href="/id/guide/immich-proxmox-photo-server/" hreflang="id" lang="id">Bahasa Indonesia</a> · <a href="/ja/guide/immich-proxmox-photo-server/" hreflang="ja" lang="ja">日本語</a> · <a href="/th/guide/immich-proxmox-photo-server/" hreflang="th" lang="th">ไทย</a> · <a href="/vi/guide/immich-proxmox-photo-server/" hreflang="vi" lang="vi">Tiếng Việt</a> · <b>中文</b></p><div class="shr" data-t="在 Proxmox 上用 ZFS 镜像搭建 Immich：安装与 3-2-1 备份" data-x="在 Proxmox 上搭建 Immich 照片服务器的分步指南：ZFS 镜像、依据官方要求配置虚拟机、Docker Compose 安装，以及包含数据库转储的 3-2-1 备份。" data-k="476ea22a69da8f2902a540eef533b5f9"><b>📤 공유</b><button data-s="native">공유하기</button><button data-s="kakao">카카오톡</button><button data-s="copy">🔗 링크 복사</button><button data-s="nblog">네이버 블로그</button><button data-s="band">밴드</button><button data-s="x">X</button><button data-s="fb">Facebook</button></div><script defer src="/assets/share.js?v=2"></script></article><link rel="stylesheet" href="/assets/mag/mag.css?v=10"><style>.dev table{width:100%;border-collapse:collapse;margin:12px 0;font-size:.92em;display:block;overflow-x:auto}.dev th,.dev td{border:1px solid #e5e7eb;padding:6px 8px;text-align:left;vertical-align:top}.dev pre{background:#0f172a;color:#e2e8f0;padding:12px;border-radius:8px;overflow-x:auto;font-size:.85em}.dev code{font-size:.92em}.dev dt{font-weight:700;margin-top:10px}.dev dd{margin:4px 0 0 0}.dev-ls{list-style:none;padding:0}.dev-ls li{margin:8px 0}.dev-ls a{display:block;padding:12px;border:1px solid #e5e7eb;border-radius:10px;text-decoration:none;color:inherit}.dev-ls span{display:block;font-size:.88em;color:#64748b;margin-top:4px}</style><link rel="stylesheet" href="/assets/dev/dev.css?v=1"><script defer src="/assets/dev/dev.js?v=2"></script>
+</main>
+<footer class="ft"><div class="w ft-in"><div class="ft-b"><img class="av" src="/assets/ruri/avatar.webp" width="56" height="56" alt="루리" loading="lazy"><div><b>루리의 줍줍</b><p>오늘 뭐 먹지부터 지원금·공모전·이슈까지, 일단 줍고 가세요.</p><p class="ft-m">문의 <a href="mailto:sung2011103@naver.com">sung2011103@naver.com</a></p></div></div>
+<nav class="ft-g" aria-label="사이트 메뉴"><div><b>🍳 생활</b><a href="/fridge/">건강 레시피</a><a href="/event/">경품·용돈</a><a href="/qa/">고민 해결</a><a href="/plaza/">광장</a></div>
+<div><b>💰 지원금·머니</b><a href="/apply/">지원금·청약</a><a href="/money/tools/salary/">계산기</a><a href="/money/experts/">전문가 말 vs 시세</a><a href="/analyst/">애널리스트</a></div>
+<div><b>🏆 공모전</b><a href="/contest/">공모전 찾기</a><a href="/prep/">준비실</a><a href="/guide/">응모 가이드</a><a href="/lab/">수상 연구소</a></div>
+<div><b>📺 이슈</b><a href="/news/">루리 뉴스</a><a href="/trend/">이슈 트렌드</a><a href="/hot/">핫이슈</a><a href="/kw/">인기 키워드</a></div>
+<div><b>ℹ️ 운영·정책</b><a href="/about/">소개·운영 방식</a><a href="/corrections/">정정 기록</a><a href="/privacy/">개인정보처리방침</a><a href="/terms/">이용약관</a><a href="/contact/">문의</a></div></nav>
+<p class="ft-c"><small>외부 채널</small> <a class="cl-b" href="https://open.kakao.com/o/gzd9B9Si" target="_blank" rel="noopener">💬 루리 톡방 들어가기</a><a class="cl-b" href="https://band.us/band/104846162" target="_blank" rel="noopener" style="background:#06c755;color:#ffffff">👥 루리 밴드 함께하기</a><a class="cl-b" href="http://pf.kakao.com/_wxhimX/friend" target="_blank" rel="noopener" style="background:#FEE500;color:#191919;box-shadow:inset 0 0 0 2px #191919">💬 루리 채널 추가하기</a><a class="cl-b" href="https://www.youtube.com/channel/UCdJQUqqrHHXC7mWstly2eXw" target="_blank" rel="noopener" style="background:#FF0000;color:#ffffff">▶️ 루리 뉴스 유튜브</a></p><p class="ft-l"><a href="/ailog/">개발 지식</a><a href="/app/">앱·알림</a><a href="/all/">전체 메뉴</a></p>
+<p class="ft-n">정보는 각 기관의 공고·언론 보도·공개 자료를 바탕으로 정리했어요. 정확한 내용은 반드시 공식 공고와 원문에서 확인하세요. 일부 링크는 쿠팡 파트너스 활동의 일환으로 수수료를 받을 수 있어요. © 2026 루리의 줍줍 · sungprofile.cloud</p></div></footer><style>.ft-c{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}.cl-b{display:inline-flex;align-items:center;min-height:40px;padding:6px 14px;border-radius:999px;background:#fee500;color:#191919;font-weight:700;text-decoration:none;font-size:14px}.cl-ban{display:flex;align-items:center;gap:6px;margin:8px 0;padding:10px 14px;border-radius:12px;background:#fff9c4;border:1px solid #fde047;color:#422006;font-weight:700;text-decoration:none;font-size:14px}</style>
+</body></html>
