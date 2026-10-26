@@ -96,14 +96,15 @@
         return '<h3>' + esc(c) + '</h3><ul class="dm-shop">' + sh.groups[c].map(function (x) { var have = sh.have.indexOf(x) >= 0, on = !!S.shop[x]; return '<li class="' + (on ? 'ok' : '') + '"><label><input type="checkbox" data-sp="' + esc(x) + '"' + (on ? ' checked' : '') + '> ' + esc(x) + ' <small>(' + sh.cnt[x] + '개 메뉴' + (have ? ' · 냉장고에 있음' : '') + ')</small></label></li>'; }).join('') + '</ul>';
       }).join('') : '<p class="dt-sub">필요한 재료가 없어요.</p>') + '</section>';
     }
-    ROOT.innerHTML = optsHtml + progress + planHtml + shopHtml + '<p class="dt-note">' + esc(DIS) + '</p><p class="dt-note">' + esc(PRIV) + '</p>';
+    ROOT.innerHTML = (window.JHabit ? JHabit.card() : '') + optsHtml + progress + planHtml + shopHtml + '<p class="dt-note">' + esc(DIS) + '</p><p class="dt-note">' + esc(PRIV) + '</p>';
+    if (window.JHabit) JHabit.wire(ROOT);
     ROOT.querySelectorAll('.dt-ch[data-k]').forEach(function (g) { g.onclick = function (e) { var b = e.target.closest('button'); if (!b) return; var k = g.getAttribute('data-k'), v = b.getAttribute('data-v'); S.opts[k] = (k === 'meals' || k === 'max') ? +v : v; save(); paint(); }; });
     var inp = document.getElementById('dm-exin');
     inp.onkeydown = function (e) { if (e.key !== 'Enter') return; e.preventDefault(); var v = inp.value.trim(); if (v && S.opts.ex.indexOf(v) < 0) { S.opts.ex.push(v); save(); paint(); } };
     document.getElementById('dm-ex').onclick = function (e) { var b = e.target.closest('button'); if (!b) return; S.opts.ex = S.opts.ex.filter(function (x) { return x !== b.getAttribute('data-x'); }); save(); paint(); };
     document.getElementById('dm-fr').onchange = function (e) { S.opts.useFridge = e.target.checked; save(); };
     document.getElementById('dm-make').onclick = function () { makePlan(); paint(); window.scrollTo({ top: ROOT.querySelector('.dm-days') ? ROOT.querySelector('.dm-days').getBoundingClientRect().top + scrollY - 70 : 0, behavior: 'smooth' }); };
-    ROOT.querySelectorAll('[data-ck]').forEach(function (b) { b.onclick = function () { var p = b.getAttribute('data-ck').split(','), d = S.plan[+p[0]], k = d.date + '|' + d.meals[+p[1]].slot; S.checks[k] = !S.checks[k]; save(); paint(); }; });
+    ROOT.querySelectorAll('[data-ck]').forEach(function (b) { b.onclick = function () { var p = b.getAttribute('data-ck').split(','), d = S.plan[+p[0]], k = d.date + '|' + d.meals[+p[1]].slot; S.checks[k] = !S.checks[k]; save(); if (S.checks[k] && d.date === kst() && window.JHabit) JHabit.mark('m'); paint(); }; });
     ROOT.querySelectorAll('[data-sw]').forEach(function (b) { b.onclick = function () { var p = b.getAttribute('data-sw').split(','); swap(+p[0], +p[1]); paint(); }; });
     ROOT.querySelectorAll('[data-sp]').forEach(function (b) { b.onchange = function () { S.shop[b.getAttribute('data-sp')] = b.checked; save(); paint(); }; });
   }

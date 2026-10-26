@@ -732,19 +732,19 @@ def diet_pages():
             '<p class="note">동작 설명은 일반적인 자세 안내예요. 세트·횟수는 공식 자료로 확인되지 않아서 적지 않았어요. 본인 체력에 맞게 하세요.</p>'
             f'<div class="dt-dict">{dic}</div>'
             '<h2>식단·칼로리</h2><p class="note">식단표와 칼로리별 레시피는 식약처 식품영양성분 DB, 농촌진흥청 표준식품성분표로 확인한 값만 쓰려고 준비 중이에요. 확인되기 전에는 숫자를 보여 주지 않아요. 열리면 이 허브에 먼저 안내할게요.</p>'
-            '<link rel="stylesheet" href="/assets/diet/workout.css?v=3">')
+            '<link rel="stylesheet" href="/assets/diet/workout.css?v=4">')
     page('/diet/', '다이어트 도우미 — 운동 사이클 뽑기·기록·공식 자료 가이드', f'운동 사이클을 무작위로 짜서 타이머로 따라 하고 기록하는 도우미. 공식 자료로 정리한 다이어트 가이드 12편과 운동 동작 사전 {len(W)}가지(참고용).',
          body, [('루리의 줍줍', '/'), ('다이어트 도우미', '/diet/')])
     app = ('<p class="bc"><a href="/">홈</a> › <a href="/diet/">다이어트 도우미</a> › 운동 사이클</p><h1>🏃 운동 사이클</h1>'
            f'<p class="note">{E(DIET_DISCLAIMER)}</p><div id="dtw"><p class="note">불러오는 중…</p></div>'
            '<noscript><p class="note">이 화면은 자바스크립트가 필요해요. 동작 설명은 <a href="/diet/">다이어트 도우미</a>의 운동 동작 사전에서 볼 수 있어요.</p></noscript>'
-           '<link rel="stylesheet" href="/assets/diet/workout.css?v=3"><script defer src="/assets/diet/workout.js?v=2"></script>')
+           '<link rel="stylesheet" href="/assets/diet/workout.css?v=4"><script defer src="/assets/diet/habit.js?v=1"></script><script defer src="/assets/diet/workout.js?v=3"></script>')
     page('/diet/workout/', '운동 사이클 뽑기·타이머·기록', '시간·부위·장소를 고르면 운동 사이클을 무작위로 짜고 타이머로 진행하며 완료를 기록해요(참고용, 기록은 이 기기에만 저장).',
          app, [('루리의 줍줍', '/'), ('다이어트 도우미', '/diet/'), ('운동 사이클', '/diet/workout/')], noindex=True)
     meal = ('<p class="bc"><a href="/">홈</a> › <a href="/diet/">다이어트 도우미</a> › 레시피 식단표</p><h1>🗓️ 레시피 식단표</h1>'
             f'<p class="note">{E(DIET_DISCLAIMER)}</p><div id="dtm"><p class="note">불러오는 중…</p></div>'
             '<noscript><p class="note">이 화면은 자바스크립트가 필요해요. 레시피는 <a href="/fridge/">오늘 뭐 먹지</a>에서 볼 수 있어요.</p></noscript>'
-            '<link rel="stylesheet" href="/assets/diet/workout.css?v=3"><script defer src="/assets/diet/meal.js?v=2"></script>')
+            '<link rel="stylesheet" href="/assets/diet/workout.css?v=4"><script defer src="/assets/diet/habit.js?v=1"></script><script defer src="/assets/diet/meal.js?v=3"></script>')
     page('/diet/meal/', '레시피 식단표 — 7일 식단·장보기·먹은 끼니 체크', '조리 시간·성향·빼고 싶은 재료를 고르면 레시피로 7일 식단표를 짜고 장보기 목록을 만들어요(참고용, 기록은 이 기기에만 저장).',
          meal, [('루리의 줍줍', '/'), ('다이어트 도우미', '/diet/'), ('레시피 식단표', '/diet/meal/')], noindex=True)
     return ['/diet/']

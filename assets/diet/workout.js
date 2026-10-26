@@ -67,12 +67,12 @@
   var sel = { min: 20, part: '전신', place: '집' };
   function chips(name, arr, cur) { return '<div class="dt-ch" data-k="' + name + '">' + arr.map(function (x) { return '<button type="button" data-v="' + esc(x[0]) + '" class="' + (String(cur) === String(x[0]) ? 'on' : '') + '">' + esc(x[1]) + '</button>'; }).join('') + '</div>'; }
   function paintMake() {
-    ROOT.innerHTML = tabs() + '<section class="dt-card">' + cutImg('o_dt_stretch', 'dt-cut-r', 120) + '<h2>오늘은 얼마나 움직일까요?</h2><p class="dt-sub">시간·부위·장소를 고르면 워밍업 → 본운동 → 쿨다운을 무작위로 짜 드려요. 같은 운동이 연달아 나오지 않아요.</p>'
+    ROOT.innerHTML = tabs() + (window.JHabit ? JHabit.card() : '') + '<section class="dt-card">' + cutImg('o_dt_stretch', 'dt-cut-r', 120) + '<h2>오늘은 얼마나 움직일까요?</h2><p class="dt-sub">시간·부위·장소를 고르면 워밍업 → 본운동 → 쿨다운을 무작위로 짜 드려요. 같은 운동이 연달아 나오지 않아요.</p>'
       + '<p class="dt-l">시간</p>' + chips('min', [[10, '10분'], [20, '20분'], [30, '30분']], sel.min)
       + '<p class="dt-l">부위</p>' + chips('part', [['전신', '전신'], ['하체', '하체'], ['상체', '상체'], ['복부', '복부'], ['스트레칭', '스트레칭']], sel.part)
       + '<p class="dt-l">장소</p>' + chips('place', [['집', '집'], ['밖', '밖']], sel.place)
       + '<button type="button" class="dt-go" id="dt-draw">🎲 운동 뽑기</button></section>' + todayBox() + foot();
-    wireTabs();
+    wireTabs(); if (window.JHabit) JHabit.wire(ROOT);
     ROOT.querySelectorAll('.dt-ch').forEach(function (g) { g.onclick = function (e) { var b = e.target.closest('button'); if (!b) return; var k = g.getAttribute('data-k'); sel[k] = k === 'min' ? +b.getAttribute('data-v') : b.getAttribute('data-v'); paintMake(); }; });
     document.getElementById('dt-draw').onclick = function () { plan = make(sel.min, sel.part, sel.place); view = 'plan'; render(); };
   }
@@ -149,6 +149,7 @@
     if (doneN > 0) {   // 한 가지라도 끝까지 한 날만 기록에 남긴다
       var k = today(), d = S.log[k] || { cycles: 0, minutes: 0, items: [] };
       d.cycles += 1; d.minutes += mins; d.items = d.items.concat(Object.keys(run.done)).slice(-60); S.log[k] = d; save();
+      if (window.JHabit) JHabit.mark('w');
     }
     view = 'done'; render();
     if (doneN > 0 && !early) say('오늘 운동 끝! 수고했어요');
