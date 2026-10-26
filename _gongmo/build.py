@@ -4219,6 +4219,20 @@ def _rmin(txt):
     return max(1, round(len(re.sub(r'<[^>]+>', '', txt)) / 500))
 
 
+def _dev_toc(h):
+    """h2 에 id 를 달고 3개 이상이면 목차(검색 엔진도 읽는 정적 HTML)를 만든다. → (본문, 목차 html)"""
+    hs = []
+    def rp(m):
+        attrs, inner = m.group(1), m.group(2)
+        i = len(hs) + 1
+        hs.append((i, re.sub(r'<[^>]+>', '', inner).strip()))
+        return f'<h2 id="s{i}"{attrs}>{inner}</h2>' if 'id=' not in attrs else m.group(0)
+    h2 = re.sub(r'<h2([^>]*)>(.*?)</h2>', rp, h, flags=re.S)
+    if len(hs) < 3:
+        return h2, ''
+    return h2, '<nav class="dev-toc" aria-label="이 글의 목차"><b>이 글의 목차</b><ol>' + ''.join(f'<li><a href="#s{i}">{E(t)}</a></li>' for i, t in hs) + '</ol></nav>'
+
+
 def _dev_card(p, rm):
     tg = ''.join(f'<em>#{E(DEV_TAGS.get(t, t))}</em>' for t in p.get('tags', []))
     return (f'<li><a href="{dev_url(p)}"><b>{E(p["title"])}</b><span>{E(p["desc"])}</span>'
@@ -4239,10 +4253,13 @@ def dev_blog_pages(P, css):
     enl = ''.join(f'<li><a href="{dev_url(p)}"><b>{E(p["title"])}</b><span>{E(p["desc"])}</span></a></li>' for p in sorted(EN, key=lambda p: p['date'], reverse=True)[:6])
     body = ('<p class="bc"><a href="/">홈</a> › 기술 블로그</p><h1>🧑‍💻 루리의 줍줍 기술 블로그</h1>'
             '<p class="cat-st">📌 사람 한 명과 AI 코딩 에이전트로 이 사이트를 운영하며 실제로 겪은 문제와 고친 과정을 「문제 → 원인 → 해결 코드 → 교훈」 순서로 적어요. 실패 사례도 숨기지 않아요.</p>'
+            + f'<p class="dev-stat"><b>{len(KO)}</b>편 · 영어 가이드 <b>{len(P) - len(KO)}</b>편 · 마지막 글 {KO[0]["date"]}</p>'
+            + '<input id="dev-q" class="dev-q" type="search" placeholder="글 찾기 (예: D1, 잠금, 빌드, 승인)" aria-label="기술 블로그 글 찾기" autocomplete="off">'
+            + '<h2>처음 읽기 좋은 글</h2><ul class="dev-ls dev-pick">' + ''.join(_dev_card(q, rm[q["slug"]]) for q in KO if q['slug'] in ('multi-ai-sessions', 'd1-read-budget', 'visit-count-contamination')) + '</ul>'
             f'<div class="dev-ch" aria-label="태그">{chips}</div>'
-            f'<h2>최신 글</h2><ul class="dev-ls">{"".join(_dev_card(p, rm[p["slug"]]) for p in KO)}</ul>'
+            f'<h2 id="dev-all">전체 글</h2><ul class="dev-ls dev-all">{"".join(_dev_card(p, rm[p["slug"]]) for p in KO)}</ul>'
             + (f'<h2>English guides</h2><ul class="dev-ls">{enl}</ul><p><a href="/en/guide/">All English guides</a></p>' if EN else '')
-            + '<p class="hm-links"><a href="/ailog/">🤖 사이트 제작 로그·비용표</a> · <a href="/dev/faq/">❓ 개발 FAQ</a> · <a href="/dev/rss.xml">RSS</a></p>' + st + css)
+            + '<p class="hm-links"><a href="/ailog/">🤖 사이트 제작 로그·비용표</a> · <a href="/dev/faq/">❓ 개발 FAQ</a> · <a href="/dev/rss.xml">RSS</a></p>' + st + css + '<link rel="stylesheet" href="/assets/dev/dev.css?v=1"><script defer src="/assets/dev/dev.js?v=2"></script>')
     page('/dev/', '루리의 줍줍 기술 블로그 — AI 에이전트·자동화·정적 사이트 운영 기록', 'AI 코딩 에이전트와 1인으로 정보 사이트를 운영하며 겪은 문제와 해결을 문제·원인·해결 코드·교훈으로 정리한 기술 블로그. 방문 집계 오염, D1 읽기 한도, 법령 자동 링크, 윈도우 자동화 사고 사례.',
          body, [('루리의 줍줍', '/'), ('기술 블로그', '/dev/')])
     urls.append('/dev/')
@@ -4278,6 +4295,9 @@ def dev_pages(live=()):
     for p in P:
         u = dev_url(p); en = p['lang'] == 'en'
         body_ = open(os.path.join(HERE, 'devsrc', p['slug'] + '.html'), encoding='utf-8').read()
+        toc_ = ''
+        if p['lang'] == 'ko':
+            body_, toc_ = _dev_toc(body_)
         if '<!--FOREIGN_LIST-->' in body_:
             body_ = body_.replace('<!--FOREIGN_LIST-->', foreign_list_html(live))
         src = ''.join(f'<li><a href="{E(x[1])}"' + ('' if x[1].startswith('/') else ' rel="nofollow noopener" target="_blank"') + f'>{E(x[0])}</a> — {"checked" if en else "확인"} {E(x[2])}</li>' for x in p.get('sources', []))
@@ -4292,14 +4312,20 @@ def dev_pages(live=()):
             rel_ = [q for q in P if q['lang'] == 'ko' and q['slug'] != p['slug'] and set(q.get('tags', [])) & set(p.get('tags', []))][:3]
             if rel_:
                 tail_x += '<h2>관련 글</h2><ul class="dev-ls">' + ''.join(f'<li><a href="{dev_url(q)}"><b>{E(q["title"])}</b><span>{E(q["desc"])}</span></a></li>' for q in rel_) + '</ul>'
+            _ko = sorted([q for q in P if q['lang'] == 'ko'], key=lambda q: (q['date'], P.index(q)))
+            _i = _ko.index(p)
+            _pv, _nx = (_ko[_i - 1] if _i > 0 else None), (_ko[_i + 1] if _i + 1 < len(_ko) else None)
+            if _pv or _nx:
+                tail_x += '<nav class="dev-pn" aria-label="이전·다음 글">' + (f'<a href="{dev_url(_pv)}"><small>← 이전 글</small><b>{E(_pv["title"])}</b></a>' if _pv else '<span></span>') + (f'<a href="{dev_url(_nx)}"><small>다음 글 →</small><b>{E(_nx["title"])}</b></a>' if _nx else '<span></span>') + '</nav>'
             tail_x += '<p class="dev-hub"><a href="/dev/">← 기술 블로그 홈</a> · <a href="/ailog/">사이트 제작 로그</a> · <a href="/dev/rss.xml">RSS</a></p>'
         body = (f'<p class="bc"><a href="/">{"Home" if en else "홈"}</a> › <a href="{"/en/guide/" if en else "/dev/"}">{"Guides" if en else "기술 블로그"}</a></p>'
                 f'<article class="dev" lang="{p["lang"]}"><h1>{E(p["title"])}</h1><p class="note">{"Published" if en else "작성"} {p["date"]}'
                 + (f' · {"updated" if en else "고침"} {p["updated"]}' if p.get('updated') else '') + meta_x + '</p>' + tagline_x
+                + ('' if en else f'<aside class="dev-sum"><b>30초 요약</b><p>{E(p["desc"])}</p></aside>') + toc_
                 + body_ + tail_x + (f'<h2>{"Sources" if en else "출처"}</h2><ul>{src}</ul>' if src else '')
                 + (f'<p class="dev-hub">{"Related (Korean)" if en else "관련"}: <a href="{E(hub[1])}">{E(hub[0])}</a></p>' if hub else '')
                 + ('<p class="dev-hub">Questions about how this was built? <a href="/dev/faq/">Dev FAQ</a></p>' if en else '<p class="dev-hub">이 글에 대해 묻고 싶으면 <a href="/dev/faq/">❓ 개발 FAQ</a>에 남겨 주세요.</p>')
-                + share_bar(p['title'], p['desc'], en) + f'</article>{css}<script defer src="/assets/dev/dev.js?v=1"></script>')
+                + share_bar(p['title'], p['desc'], en) + f'</article>{css}<link rel="stylesheet" href="/assets/dev/dev.css?v=1"><script defer src="/assets/dev/dev.js?v=2"></script>')
         t = p['title'] + ' | Ruri Jupjup' if en and len(p['title']) + 14 <= 70 else p['title']
         ld = {'@context': 'https://schema.org', '@type': 'TechArticle', 'headline': p['title'][:110], 'description': p['desc'], 'inLanguage': p['lang'], 'datePublished': p['date'],
               'dateModified': p.get('updated') or p['date'], 'author': {'@type': 'Organization', 'name': NAME if en else '루리의 줍줍 편집'}, 'publisher': {'@type': 'Organization', 'name': NAME}, 'mainEntityOfPage': SITE + u, **({'keywords': ', '.join(DEV_TAGS.get(t, t) for t in p['tags'])} if p.get('tags') else {})}
@@ -5462,7 +5488,7 @@ def fridge_page():
                 + relsec
                 + (f'<details class="fr-cr"><summary>사진 출처</summary><p>{"<br>".join(cr)}</p></details>' if cr else '')
                 + '<p class="note">직접 조리 시험을 완료한 레시피로 소개하지 않습니다. 분량이 적힌 메뉴는 해당 분량을 우선하고, 분량이 없는 메뉴는 재현성 보완이 필요한 조리 아이디어입니다. 시간은 예상값이며 사진은 직접 조리 결과를 보증하지 않습니다. 보관 시에는 <a href="https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/leftovers-and-food-safety">USDA의 남은 음식 안전 안내</a>처럼 얕은 용기에 나누어 신속히 냉장하세요. 일반적인 부패하기 쉬운 음식은 실온 2시간 이내, 32℃를 넘는 더운 환경은 1시간 이내가 기준이며 이미 오래 방치한 음식은 재가열로 해결하지 않습니다. 이는 모든 메뉴의 보관 일수를 보증하는 안내가 아닙니다. 안전 안내 확인: 2026-10-20.</p></article>'
-                + '<link rel="stylesheet" href="/assets/fridge/fridge.css?v=14"><link rel="stylesheet" href="/assets/fridge/recipe.css?v=7"><script defer src="/assets/fridge/recipe.js?v=5"></script>')
+                + '<link rel="stylesheet" href="/assets/fridge/fridge.css?v=14"><link rel="stylesheet" href="/assets/fridge/recipe.css?v=7"><link rel="stylesheet" href="/assets/fridge/health.css?v=1"><script defer src="/assets/fridge/recipe.js?v=5"></script>')
         def how_step(k, t):
             nm = re.split(r'[,.]', t)[0].strip()[:45] or f'{k}단계'
             d_ = {'@type': 'HowToStep', 'name': nm, 'text': t, 'url': f'{SITE}{u}#step{k}'}
