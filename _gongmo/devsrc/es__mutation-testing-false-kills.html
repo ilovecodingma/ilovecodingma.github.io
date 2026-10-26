@@ -1,0 +1,37 @@
+<p>Las pruebas de mutación cambian su código a propósito (un <code>&lt;</code> pasa a <code>&lt;=</code>, un <code>return x</code> pasa a <code>return None</code>) y comprueban si sus pruebas lo notan. Un mutante «eliminado» (killed) significa que una prueba falló. Pero una prueba puede fallar por motivos que nada tienen que ver con la mutación, y entonces su puntuación de mutación parece mejor de lo que realmente son sus pruebas. Esta guía presenta tres comprobaciones que detectan estas <b>falsas eliminaciones</b>.</p>
+<h2>Por qué ocurren las falsas eliminaciones</h2>
+<table><tr><th>Causa</th><th>Qué se observa</th></tr>
+<tr><td>La suite ya fallaba o era inestable antes de la mutación</td><td>Muchas eliminaciones con el mismo error sin relación</td></tr>
+<tr><td>Las pruebas importan el archivo original, no la copia mutada</td><td>Eliminaciones solo por tiempos de espera o errores de entorno</td></tr>
+<tr><td>Tiempos de espera agotados por máquinas lentas</td><td>Eliminaciones concentradas en las pruebas de larga duración</td></tr>
+<tr><td>Estado compartido entre ejecuciones (archivos temporales, cachés, puertos)</td><td>El resultado de la eliminación cambia al repetir el mismo mutante</td></tr></table>
+<p>Los tiempos de espera importan para la puntuación: en Stryker, <b>detected = killed + timeout</b> y <b>mutation score = detected / valid × 100</b>. Una máquina que agota el tiempo con frecuencia infla la puntuación. Fuente: <a href="https://stryker-mutator.io/docs/mutation-testing-elements/mutant-states-and-metrics/" rel="nofollow noopener" target="_blank">estados de mutantes y métricas de Stryker</a>, consultada el 2026-10-19.</p>
+<h2>Comprobación 1 — Línea base en una copia limpia</h2>
+<ol><li>Copie el proyecto a un directorio nuevo, exactamente como lo hará la herramienta de mutación (mismo sandbox, mismas variables de entorno).</li>
+<li>Ejecute allí la suite de pruebas completa <b>sin</b> mutación, tres veces.</li>
+<li>Debe pasar las tres veces. Cualquier fallo aquí es un fallo preexistente que luego aparecerá como falsas eliminaciones: corríjalo o póngalo en cuarentena primero.</li></ol>
+<pre><code>cp -r project /tmp/mt-baseline &amp;&amp; cd /tmp/mt-baseline
+for i in 1 2 3; do pytest -q -p no:cacheprovider || echo "BASELINE FAIL $i"; done</code></pre>
+<h2>Comprobación 2 — Demostrar que las pruebas leen el archivo mutado</h2>
+<p>Si una prueba nunca carga el archivo mutado, no puede haber eliminado ese mutante. Registre el acceso a archivos durante cada ejecución de mutante. En Python, basta un gancho de auditoría:</p>
+<pre><code># conftest.py
+import sys, os
+TARGET = os.environ.get("MUT_TARGET")  # path of the mutated file
+def hook(event, args):
+    if event == "open" and TARGET and str(args[0]).endswith(TARGET):
+        open("/tmp/mut_touched", "a").write("1")
+sys.addaudithook(hook)</code></pre>
+<p>Ejecute cada mutante sin bytecode obsoleto (borre <code>__pycache__</code> en la copia) para que el archivo fuente se lea realmente. Regla: una eliminación en la que el archivo objetivo nunca se abrió se marca como <b>sospechosa</b> y se repite. En otras pilas tecnológicas, <code>strace -e trace=openat</code> (Linux) o los datos de cobertura del ejecutor de pruebas cumplen el mismo propósito.</p>
+<h2>Comprobación 3 — Examine la distribución de motivos de eliminación</h2>
+<ol><li>Para cada mutante eliminado, guarde <i>por qué</i> falló la ejecución: error de aserción, otra excepción, tiempo de espera, fallo abrupto, error de recopilación/importación.</li>
+<li>Haga una tabla de recuento sencilla.</li></ol>
+<table><tr><th>Motivo</th><th>Patrón saludable</th><th>Señal de alarma</th></tr>
+<tr><td>Fallo de aserción</td><td>La mayoría de las eliminaciones</td><td>—</td></tr>
+<tr><td>Otra excepción</td><td>Algunas</td><td>Un mismo mensaje idéntico en muchos mutantes</td></tr>
+<tr><td>Tiempo de espera</td><td>Pocas (mutantes de bucle infinito)</td><td>Una proporción grande; aumenta en máquinas más lentas</td></tr>
+<tr><td>Error de importación / recopilación</td><td>Casi ninguno</td><td>Cualquier proporción significativa: falla el arnés, no las pruebas</td></tr></table>
+<h2>Resumen</h2>
+<ul class="chk"><li>Línea base en verde 3/3 en una copia limpia</li><li>Cada eliminación tiene un registro de «archivo objetivo abierto»</li><li>Los fallos de aserción son el motivo de eliminación más numeroso</li><li>Repita un 5% aleatorio de las eliminaciones; los resultados no deberían cambiar</li></ul>
+<h2>Preguntas frecuentes</h2>
+<dl><dt>¿Debo aumentar el tiempo de espera?</dt><dd>Fíjelo a partir de la línea base: mida el tiempo normal de la suite y permita un múltiplo de él. Demasiado bajo genera falsas eliminaciones; demasiado alto ralentiza la ejecución.</dd>
+<dt>¿Cuentan los errores de compilación?</dt><dd>En Stryker, los errores de compilación y de ejecución son mutantes «inválidos» y no forman parte de la puntuación.</dd></dl>

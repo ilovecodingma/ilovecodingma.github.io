@@ -1,0 +1,37 @@
+<p>Immichは、スマートフォンからのバックアップに対応した、セルフホスト型の写真・動画ライブラリです。このガイドでは、ディスク故障に耐える構成を紹介します。Proxmox上のVMでImmichを動かし、写真はZFSミラーに置き、その上に本格的な3-2-1バックアップを組みます。Proxmoxがすでにインストール済みで、ミラー用に同容量のディスクが2台あることを前提とします。</p>
+<h2>ハードウェア:公式の最小要件</h2>
+<table><tr><th>項目</th><th>最小</th><th>推奨</th></tr>
+<tr><td>RAM</td><td>6 GB</td><td>8 GB</td></tr>
+<tr><td>CPU</td><td>2コア</td><td>4コア</td></tr>
+<tr><td>データベースのストレージ</td><td colspan="2">ローカルSSD。ネットワーク共有は不可</td></tr></table>
+<p class="note">出典:<a href="https://immich.app/docs/install/requirements" rel="nofollow noopener" target="_blank">Immich requirements</a>(ページ更新日 2026-10-08、確認日 2026-10-19)。同ページには、サムネイルとトランスコード済み動画でライブラリのサイズが約10〜20%増えること、RAMが4 GBしかない場合は機械学習を無効にすべきことも記載されています。</p>
+<h2>ステップ1 — ZFSミラーを作る</h2>
+<ol><li>Proxmoxで<b>Datacenter → node → Disks → ZFS → Create: ZFS</b>を開き、2台のディスクを選んでRAIDレベルに<b>Mirror</b>を指定します。</li>
+<li>2台構成のミラーで使える容量は1台分です。どちらか1台が故障してもデータは失われません。</li>
+<li>VMディスク用のストレージとして追加するか、データセット(例:<code>tank/photos</code>)を作ってVMに渡します。</li></ol>
+<h2>ステップ2 — VMを作る</h2>
+<ol><li>上の最小要件を満たすDebianまたはUbuntuのVMを作ります。PostgresのデータベースをローカルSSDに置くため、VMのシステムディスクはSSDにします。</li>
+<li>CPUタイプは<code>host</code>(またはx86-64-v2に対応する他のタイプ)にします。Immichの機械学習コンテナは、amd64上でx86-64-v2を必要とします。</li>
+<li>写真用に、ZFSミラー上に2つ目の仮想ディスクを追加し、たとえば<code>/srv/photos</code>にマウントします。</li></ol>
+<p>Immichの公式ドキュメントが想定しているのは、VM内でのDocker Composeです。LXCコンテナ内での実行は推奨されないと説明されています。</p>
+<h2>ステップ3 — Immichをインストールする</h2>
+<ol><li>DockerとComposeプラグインをインストールします。</li>
+<li>Immichのインストール手順のドキュメントから、公式の<code>docker-compose.yml</code>と<code>example.env</code>をダウンロードします。</li>
+<li><code>.env</code>で<code>UPLOAD_LOCATION=/srv/photos/library</code>を設定し、<code>DB_DATA_LOCATION</code>はSSDのシステムディスク上に残します。</li>
+<li><code>docker compose up -d</code>を実行し、ポート2283を開いて管理者アカウントを作成し、スマートフォンアプリをインストールしてバックアップをオンにします。</li></ol>
+<h2>ステップ4 — 3-2-1バックアップ</h2>
+<p>ミラーが守るのはディスクの故障であり、誤削除、ランサムウェア、火災からは守れません。Immich自身のドキュメントも3-2-1戦略を推奨しています。コピーを3つ、媒体は2種類、うち1つはオフサイトに置く、というものです。</p>
+<table><tr><th>コピー</th><th>場所</th><th>方法</th></tr>
+<tr><td>1</td><td>ZFSミラー(稼働中)</td><td>Immich本体</td></tr>
+<tr><td>2</td><td>外付けUSBディスクまたは別のマシン</td><td>ZFSスナップショット+<code>zfs send</code>、またはrestic/borg</td></tr>
+<tr><td>3</td><td>オフサイト(クラウドのバケットや友人のサーバー)</td><td>暗号化したrestic/borg</td></tr></table>
+<p><b>両方を必ずバックアップしてください。</b>Immichはデータベースのダンプを<code>UPLOAD_LOCATION/backups</code>に自動作成します(デフォルトは毎日午前2:00、直近14個を保持)。このダンプに含まれるのはメタデータだけで、写真は含まれません。したがってバックアップジョブは<code>UPLOAD_LOCATION</code>全体をコピーする必要があり、そうすればダンプも含まれます。出典:<a href="https://immich.app/docs/administration/backup-and-restore" rel="nofollow noopener" target="_blank">Immich backup and restore</a>、2026-10-19確認。</p>
+<p>復元は一度テストしてください。使い捨てのVMを立ち上げ、ファイルとダンプを復元して、ログインできることを確かめます。</p>
+<h2>同じサーバーに載せられるもの</h2>
+<ul><li>同じミラー上のファイル同期サービス(例:Syncthing)。</li>
+<li>パスワードマネージャーのサーバー。同じオフサイトのジョブでバックアップします。</li>
+<li>監視(ディスクのSMARTとZFS scrubのアラート)。この一覧で最も安上がりな保険です。</li></ul>
+<h2>FAQ</h2>
+<dl><dt>ミラーはバックアップですか?</dt><dd>いいえ。冗長化です。写真を削除すると、2台のディスクの両方から即座に消えます。</dd>
+<dt>データベースをNFS経由でZFSミラーに置けますか?</dt><dd>Immichは、データベースをネットワーク共有に置いてはならないとしています。ローカルSSDに置いてください。</dd>
+<dt>ZFS自体にはどれくらいのRAMが必要ですか?</dt><dd>ZFSは空きRAMをキャッシュ(ARC)として使い、メモリ不足になれば返します。まずVMのRAMを確保し、残りをホストに使わせてください。</dd></dl>

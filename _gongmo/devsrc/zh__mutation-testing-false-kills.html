@@ -1,0 +1,37 @@
+<p>变异测试（mutation testing）会故意修改你的代码（把 <code>&lt;</code> 改成 <code>&lt;=</code>，把 <code>return x</code> 改成 <code>return None</code>），然后检查你的测试是否能发现。“被杀死（killed）”的变异体意味着有测试失败了。但测试失败的原因可能与变异毫无关系——这样一来，你的变异得分看上去就比测试的真实水平更好。本指南介绍三项检查，用来发现这些<b>假杀死（false kills）</b>。</p>
+<h2>假杀死为什么会出现</h2>
+<table><tr><th>原因</th><th>你会看到什么</th></tr>
+<tr><td>测试套件在变异之前就已经失败或不稳定（flaky）</td><td>大量杀死都带有同一个无关的错误</td></tr>
+<tr><td>测试导入的是原始文件，而不是被变异的副本</td><td>杀死仅来自超时或环境错误</td></tr>
+<tr><td>机器太慢导致超时</td><td>杀死集中在运行时间长的测试上</td></tr>
+<tr><td>多次运行之间共享状态（临时文件、缓存、端口）</td><td>重新运行同一个变异体时，杀死结果会变化</td></tr></table>
+<p>超时会影响得分：在 Stryker 中，<b>detected = killed + timeout</b>，而<b>变异得分 = detected / valid × 100</b>。经常超时的机器会抬高得分。来源：<a href="https://stryker-mutator.io/docs/mutation-testing-elements/mutant-states-and-metrics/" rel="nofollow noopener" target="_blank">Stryker 变异体状态与指标</a>，核对于 2026-10-19。</p>
+<h2>检查 1 — 在原始副本上建立基线</h2>
+<ol><li>把项目复制到一个全新的目录，完全按变异工具的方式来做（相同的沙箱、相同的环境变量）。</li>
+<li>在那里<b>不加</b>任何变异，完整运行测试套件三次。</li>
+<li>三次都必须通过。这里出现的任何失败都是预先存在的失败，之后会表现为假杀死——请先修复或隔离它。</li></ol>
+<pre><code>cp -r project /tmp/mt-baseline &amp;&amp; cd /tmp/mt-baseline
+for i in 1 2 3; do pytest -q -p no:cacheprovider || echo "BASELINE FAIL $i"; done</code></pre>
+<h2>检查 2 — 证明测试读取了被变异的文件</h2>
+<p>如果测试根本没有加载被变异的文件，它就不可能杀死那个变异体。请在每次运行变异体时记录文件访问。在 Python 中，使用审计钩子（audit hook）就够了：</p>
+<pre><code># conftest.py
+import sys, os
+TARGET = os.environ.get("MUT_TARGET")  # path of the mutated file
+def hook(event, args):
+    if event == "open" and TARGET and str(args[0]).endswith(TARGET):
+        open("/tmp/mut_touched", "a").write("1")
+sys.addaudithook(hook)</code></pre>
+<p>运行每个变异体时，先清除过期的字节码（删除副本中的 <code>__pycache__</code>），这样源文件才会真正被读取。规则：如果某次杀死中目标文件从未被打开，就把它标记为<b>可疑（suspect）</b>并重新运行。在其他技术栈上，<code>strace -e trace=openat</code>（Linux）或测试运行器的覆盖率数据可以起到同样的作用。</p>
+<h2>检查 3 — 查看杀死原因的分布</h2>
+<ol><li>对每个被杀死的变异体，记录运行失败的<i>原因</i>：断言错误、其他异常、超时、崩溃、收集／导入错误。</li>
+<li>做一张简单的计数表。</li></ol>
+<table><tr><th>原因</th><th>健康的模式</th><th>危险信号</th></tr>
+<tr><td>断言失败</td><td>大多数杀死</td><td>—</td></tr>
+<tr><td>其他异常</td><td>少部分</td><td>许多变异体上出现同一条相同的消息</td></tr>
+<tr><td>超时</td><td>很少（无限循环的变异体）</td><td>占比很大；在较慢的机器上上升</td></tr>
+<tr><td>导入／收集错误</td><td>几乎没有</td><td>任何有意义的占比——说明失败的是测试框架，而不是测试</td></tr></table>
+<h2>综合起来</h2>
+<ul class="chk"><li>在原始副本上基线 3/3 全绿</li><li>每次杀死都有“目标文件已打开”的记录</li><li>断言失败是最大的杀死原因</li><li>随机重新运行 5% 的杀死；结果不应改变</li></ul>
+<h2>常见问题</h2>
+<dl><dt>我应该调高超时吗？</dt><dd>根据基线来设定：测量测试套件的正常运行时间，然后允许其若干倍。太低会产生假杀死；太高会拖慢运行。</dd>
+<dt>编译错误算数吗？</dt><dd>在 Stryker 中，编译错误和运行时错误属于“无效（invalid）”变异体，不计入得分。</dd></dl>

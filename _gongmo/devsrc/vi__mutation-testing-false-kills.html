@@ -1,0 +1,37 @@
+<p>Mutation testing cố ý thay đổi code của bạn (<code>&lt;</code> thành <code>&lt;=</code>, <code>return x</code> thành <code>return None</code>) rồi kiểm tra xem các test có phát hiện ra không. Một mutant "killed" nghĩa là có một test thất bại. Nhưng một test có thể thất bại vì những lý do chẳng liên quan gì đến đột biến — và khi đó điểm mutation của bạn trông tốt hơn so với chất lượng thật của các test. Hướng dẫn này nêu ba cách kiểm tra để bắt các <b>false kill</b> (kill giả) này.</p>
+<h2>Vì sao false kill xảy ra</h2>
+<table><tr><th>Nguyên nhân</th><th>Bạn thấy gì</th></tr>
+<tr><td>Bộ test đã thất bại hoặc chập chờn (flaky) từ trước khi đột biến</td><td>Nhiều kill với cùng một lỗi không liên quan</td></tr>
+<tr><td>Test import tệp gốc, không phải bản sao đã đột biến</td><td>Kill chỉ đến từ timeout hoặc lỗi môi trường</td></tr>
+<tr><td>Timeout do máy chậm</td><td>Kill tập trung ở các test chạy lâu</td></tr>
+<tr><td>Trạng thái dùng chung giữa các lần chạy (tệp tạm, cache, cổng)</td><td>Kết quả kill thay đổi khi bạn chạy lại cùng một mutant</td></tr></table>
+<p>Timeout ảnh hưởng đến điểm số: trong Stryker, <b>detected = killed + timeout</b>, và <b>mutation score = detected / valid × 100</b>. Một máy timeout nhiều sẽ làm điểm bị thổi phồng. Nguồn: <a href="https://stryker-mutator.io/docs/mutation-testing-elements/mutant-states-and-metrics/" rel="nofollow noopener" target="_blank">Stryker mutant states and metrics</a>, kiểm tra 2026-10-19.</p>
+<h2>Kiểm tra 1 — Baseline trên bản sao nguyên bản</h2>
+<ol><li>Sao chép dự án sang một thư mục mới, đúng như cách công cụ mutation sẽ làm (cùng sandbox, cùng biến môi trường).</li>
+<li>Chạy toàn bộ bộ test ở đó mà <b>không</b> có đột biến, ba lần.</li>
+<li>Cả ba lần đều phải vượt qua. Bất kỳ thất bại nào ở đây là một thất bại có sẵn từ trước, về sau sẽ hiện ra thành các kill giả — hãy sửa hoặc cách ly nó trước.</li></ol>
+<pre><code>cp -r project /tmp/mt-baseline &amp;&amp; cd /tmp/mt-baseline
+for i in 1 2 3; do pytest -q -p no:cacheprovider || echo "BASELINE FAIL $i"; done</code></pre>
+<h2>Kiểm tra 2 — Chứng minh các test đã đọc tệp bị đột biến</h2>
+<p>Nếu một test không bao giờ nạp tệp bị đột biến thì nó không thể đã kill mutant đó. Hãy ghi lại việc truy cập tệp trong mỗi lần chạy mutant. Trong Python, một audit hook là đủ:</p>
+<pre><code># conftest.py
+import sys, os
+TARGET = os.environ.get("MUT_TARGET")  # path of the mutated file
+def hook(event, args):
+    if event == "open" and TARGET and str(args[0]).endswith(TARGET):
+        open("/tmp/mut_touched", "a").write("1")
+sys.addaudithook(hook)</code></pre>
+<p>Chạy mỗi mutant sau khi đã xóa bytecode cũ (xóa <code>__pycache__</code> trong bản sao) để tệp nguồn thực sự được đọc. Quy tắc: một kill mà tệp mục tiêu chưa từng được mở thì bị đánh dấu là <b>suspect</b> (đáng ngờ) và chạy lại. Trên các nền tảng khác, <code>strace -e trace=openat</code> (Linux) hoặc dữ liệu coverage của test runner cũng phục vụ cùng mục đích.</p>
+<h2>Kiểm tra 3 — Xem phân bố lý do kill</h2>
+<ol><li>Với mỗi mutant bị kill, lưu lại <i>vì sao</i> lần chạy thất bại: assertion error, exception khác, timeout, crash, lỗi collection/import.</li>
+<li>Lập một bảng đếm đơn giản.</li></ol>
+<table><tr><th>Lý do</th><th>Mẫu lành mạnh</th><th>Dấu hiệu đáng ngờ</th></tr>
+<tr><td>Assertion thất bại</td><td>Phần lớn các kill</td><td>—</td></tr>
+<tr><td>Exception khác</td><td>Một số</td><td>Một thông báo giống hệt nhau trên nhiều mutant</td></tr>
+<tr><td>Timeout</td><td>Ít (các mutant gây vòng lặp vô hạn)</td><td>Chiếm tỷ lệ lớn; tăng lên trên máy chậm hơn</td></tr>
+<tr><td>Lỗi import / collection</td><td>Gần như không có</td><td>Bất kỳ tỷ lệ đáng kể nào — chính harness, chứ không phải các test, đang thất bại</td></tr></table>
+<h2>Tổng hợp lại</h2>
+<ul class="chk"><li>Baseline xanh 3/3 trên bản sao nguyên bản</li><li>Mỗi kill đều có bản ghi "tệp mục tiêu đã được mở"</li><li>Assertion thất bại là lý do kill lớn nhất</li><li>Chạy lại ngẫu nhiên 5% số kill; kết quả không được thay đổi</li></ul>
+<h2>Câu hỏi thường gặp</h2>
+<dl><dt>Tôi có nên tăng timeout không?</dt><dd>Hãy đặt nó dựa trên baseline: đo thời gian bình thường của bộ test, rồi cho phép một bội số của nó. Quá thấp tạo ra kill giả; quá cao làm chậm lần chạy.</dd>
+<dt>Lỗi biên dịch có được tính không?</dt><dd>Trong Stryker, lỗi biên dịch và lỗi thời gian chạy là các mutant "invalid" và không nằm trong điểm số.</dd></dl>

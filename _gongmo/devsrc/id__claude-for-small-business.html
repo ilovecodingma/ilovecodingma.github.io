@@ -1,0 +1,32 @@
+<p>Panduan ini untuk Anda yang menjalankan bisnis produk kecil — merek saus, toko lilin, lini kosmetik buatan tangan — dan ingin memakai Claude untuk urusan administrasi berulang di sekitar produk, bukan untuk produknya sendiri. Setiap alur kerja di bawah ini berjalan di jendela obrolan biasa dalam waktu kurang dari 15 menit, tanpa kode.</p>
+<h2>Apa yang dikuasai Claude di sini (dan apa yang bukan)</h2>
+<table><tr><th>Tugas</th><th>Cocok?</th><th>Alasan</th></tr>
+<tr><td>Memeriksa konsistensi teks label dan bagian yang belum ada</td><td>Ya</td><td>Claude membandingkan teks dengan daftar periksa yang Anda berikan, baris demi baris.</td></tr>
+<tr><td>Menyusun proposal grosir dan tabel margin</td><td>Ya</td><td>Hitungan dari angka yang <em>Anda</em> berikan, ditambah pemformatan.</td></tr>
+<tr><td>Merangkum ulasan pesaing</td><td>Ya</td><td>Mengelompokkan ratusan teks pendek menjadi tema adalah kekuatan utamanya.</td></tr>
+<tr><td>Menentukan apakah klaim kesehatan atau keamanan itu legal</td><td>Tidak</td><td>Itu keputusan regulator Anda. Pakai Claude untuk menyusun daftar pertanyaan, lalu cek aturan resminya.</td></tr>
+<tr><td>Mengarang harga, biaya, atau ukuran pasar</td><td>Tidak</td><td>Claude akan menghasilkan angka yang tampak meyakinkan. Berikan hanya angka yang Anda ketahui.</td></tr></table>
+<h2>Alur kerja 1 — Pemeriksaan teks label</h2>
+<ol><li>Tempelkan seluruh teks label (depan dan belakang) beserta daftar bahan produk.</li>
+<li>Tempelkan daftar periksa pelabelan resmi untuk pasar Anda. Di AS itu adalah <a href="https://www.fda.gov/food/food-labeling-nutrition" rel="nofollow noopener" target="_blank">halaman pelabelan pangan FDA</a>; di Korea, standar pelabelan MFDS.</li>
+<li>Minta: <code>Compare the label to the checklist. Output a table: requirement, found on label (quote), missing or unclear. Do not judge legality.</code></li>
+<li>Perbaiki yang kurang, lalu jalankan perintah yang sama pada label baru untuk memastikan tidak ada yang mundur.</li></ol>
+<p>Nilai utamanya ada pada kolom kutipan: setiap baris "ditemukan" harus menunjuk ke teks nyata di label Anda, sehingga bisa diverifikasi dalam hitungan detik.</p>
+<h2>Alur kerja 2 — Proposal grosir dan tabel margin</h2>
+<ol><li>Tuliskan angka asli Anda: biaya per unit, kemasan, ongkos kirim per karton, isi per karton, harga eceran.</li>
+<li>Minta tabel berisi harga grosir pada beberapa tingkat diskon dari harga eceran, margin Anda per unit dan per karton, serta margin peritel pada markup yang biasa mereka pakai.</li>
+<li>Minta Claude menunjukkan rumus untuk setiap kolom. Hitung ulang satu baris sendiri; jika cocok, sisanya konsisten.</li>
+<li>Setelah itu minta proposal satu halaman yang hanya mengutip angka-angka di tabel.</li></ol>
+<h2>Alur kerja 3 — Analisis ulasan listing pesaing</h2>
+<ol><li>Salin ulasan publik dari dua atau tiga listing pesaing ke file teks, dengan menyertakan rating bintang pada tiap ulasan.</li>
+<li>Minta: <code>Group these reviews into complaint themes and praise themes. For each theme: count, two short quotes, and which star ratings it appears in.</code></li>
+<li>Ubah tema keluhan teratas menjadi daftar periksa untuk listing Anda sendiri: foto, info ukuran, ekspektasi pengiriman, bahan.</li></ol>
+<p>Selalu minta jumlah dan kutipan. Tema tanpa kutipan hanyalah tebakan.</p>
+<h2>Alur kerja 4 — Pemeriksaan mingguan 20 menit</h2>
+<ul><li>Tempelkan ringkasan pesanan, pengembalian dana, dan pesan pelanggan minggu lalu (nama dan alamat sudah dihapus).</li>
+<li>Minta tiga hal: apa yang berubah dibanding minggu sebelumnya (dengan angkanya), pertanyaan pelanggan yang berulang, dan satu perubahan pada listing atau FAQ yang bisa menjawabnya.</li>
+<li>Simpan jawaban tiap minggu dalam satu dokumen. Setelah sebulan, minta Claude membandingkan keempat ringkasan tersebut.</li></ul>
+<h2>FAQ</h2>
+<dl><dt>Bisakah saya memercayai hitungannya?</dt><dd>Periksa satu baris secara manual. Jika rumus yang ditampilkan benar dan satu baris cocok, tabelnya konsisten; jika tidak, minta Claude menghitung ulang dan menunjukkan langkahnya.</dd>
+<dt>Haruskah saya mengunggah data pribadi pelanggan?</dt><dd>Hapus dulu nama, email, dan alamat. Tidak satu pun alur kerja ini membutuhkannya.</dd>
+<dt>Paket atau model apa yang saya perlukan?</dt><dd>Keempat alur kerja ini adalah tugas obrolan singkat. Mulailah dengan paket yang sudah Anda punya; pilihan terkini ada di <a href="https://www.anthropic.com/pricing" rel="nofollow noopener" target="_blank">halaman harga Anthropic</a>.</dd></dl>

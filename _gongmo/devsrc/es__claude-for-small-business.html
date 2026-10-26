@@ -1,0 +1,32 @@
+<p>Esta guía es para quienes llevan un pequeño negocio de productos (una marca de salsas, una tienda de velas, una línea de cosmética artesanal) y quieren usar Claude para el papeleo repetitivo que rodea al producto, no para el producto en sí. Cada flujo de trabajo de abajo se hace en una ventana de chat normal en menos de 15 minutos, sin código.</p>
+<h2>En qué es bueno Claude aquí (y en qué no)</h2>
+<table><tr><th>Tarea</th><th>¿Encaja bien?</th><th>Por qué</th></tr>
+<tr><td>Revisar la coherencia del texto de la etiqueta y detectar elementos que faltan</td><td>Sí</td><td>Compara el texto con una lista de comprobación que usted le da, línea por línea.</td></tr>
+<tr><td>Redactar una propuesta mayorista y una tabla de márgenes</td><td>Sí</td><td>Operaciones aritméticas con números que <em>usted</em> aporta, más el formato.</td></tr>
+<tr><td>Resumir reseñas de la competencia</td><td>Sí</td><td>Agrupar cientos de textos cortos en temas es una de sus fortalezas principales.</td></tr>
+<tr><td>Decidir si una declaración de salud o seguridad es legal</td><td>No</td><td>Eso lo decide su regulador. Use Claude para listar preguntas y luego consulte las normas oficiales.</td></tr>
+<tr><td>Inventar precios, costos o tamaños de mercado</td><td>No</td><td>Producirá cifras de apariencia plausible. Dele solo números que usted conozca.</td></tr></table>
+<h2>Flujo 1 — Revisión del texto de la etiqueta</h2>
+<ol><li>Pegue el texto completo de la etiqueta (frontal y trasera) y la lista de ingredientes del producto.</li>
+<li>Pegue la lista oficial de requisitos de etiquetado de su mercado. En Estados Unidos son las <a href="https://www.fda.gov/food/food-labeling-nutrition" rel="nofollow noopener" target="_blank">páginas de etiquetado de alimentos de la FDA</a>; en Corea, las normas de etiquetado del MFDS.</li>
+<li>Pregunte: <code>Compare the label to the checklist. Output a table: requirement, found on label (quote), missing or unclear. Do not judge legality.</code></li>
+<li>Corrija lo que falte y luego ejecute la misma instrucción con la nueva etiqueta para confirmar que no se ha perdido nada.</li></ol>
+<p>El valor está en la columna de citas: cada fila «encontrado» debe apuntar a texto real de su etiqueta, de modo que pueda verificarlo en segundos.</p>
+<h2>Flujo 2 — Propuesta mayorista y tabla de márgenes</h2>
+<ol><li>Anote sus números reales: costo unitario, embalaje, envío por caja, tamaño de la caja, precio de venta al público.</li>
+<li>Pida una tabla con el precio mayorista a varios niveles de descuento sobre el precio de venta, su margen por unidad y por caja, y el margen del minorista con su recargo habitual.</li>
+<li>Pídale que muestre la fórmula de cada columna. Recalcule usted mismo una fila; si coincide, el resto es coherente.</li>
+<li>Después pida una propuesta de una página que cite solo los números de la tabla.</li></ol>
+<h2>Flujo 3 — Análisis de reseñas de fichas de la competencia</h2>
+<ol><li>Copie reseñas públicas de dos o tres fichas competidoras en un archivo de texto, manteniendo la puntuación en estrellas de cada reseña.</li>
+<li>Pregunte: <code>Group these reviews into complaint themes and praise themes. For each theme: count, two short quotes, and which star ratings it appears in.</code></li>
+<li>Convierta los principales temas de queja en una lista de comprobación para su propia ficha: fotos, información de tamaño, expectativas de envío, ingredientes.</li></ol>
+<p>Pida siempre recuentos y citas. Un tema sin citas es una conjetura.</p>
+<h2>Flujo 4 — La revisión semanal de 20 minutos</h2>
+<ul><li>Pegue el resumen de pedidos de la semana pasada, los reembolsos y los mensajes de clientes (sin nombres ni direcciones).</li>
+<li>Pida tres cosas: qué cambió respecto a la semana anterior (con las cifras), cualquier pregunta repetida de clientes y un cambio en la ficha o en las preguntas frecuentes que la responda.</li>
+<li>Guarde la respuesta de cada semana en un mismo documento. Al cabo de un mes, pida a Claude que compare los cuatro resúmenes.</li></ul>
+<h2>Preguntas frecuentes</h2>
+<dl><dt>¿Puedo fiarme de la aritmética?</dt><dd>Compruebe una fila a mano. Si la fórmula mostrada es correcta y una fila coincide, la tabla es coherente; si no, pídale que recalcule y muestre el procedimiento.</dd>
+<dt>¿Debo subir datos personales de clientes?</dt><dd>Elimine antes nombres, correos electrónicos y direcciones. Ninguno de estos flujos los necesita.</dd>
+<dt>¿Qué plan o modelo necesito?</dt><dd>Los cuatro flujos son tareas cortas de chat. Empiece con el plan que ya tenga; las opciones actuales están en la <a href="https://www.anthropic.com/pricing" rel="nofollow noopener" target="_blank">página de precios de Anthropic</a>.</dd></dl>

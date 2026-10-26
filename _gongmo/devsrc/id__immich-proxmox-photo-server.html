@@ -1,0 +1,37 @@
+<p>Immich adalah pustaka foto dan video self-hosted dengan pencadangan dari ponsel. Panduan ini menunjukkan pengaturan yang tahan terhadap kerusakan disk: Immich di dalam VM pada Proxmox, foto di ZFS mirror, dan pencadangan 3-2-1 yang sungguhan di atasnya. Panduan ini mengasumsikan Anda sudah memasang Proxmox dan memiliki dua disk berukuran sama untuk mirror.</p>
+<h2>Perangkat keras: minimum resmi</h2>
+<table><tr><th>Item</th><th>Minimum</th><th>Disarankan</th></tr>
+<tr><td>RAM</td><td>6 GB</td><td>8 GB</td></tr>
+<tr><td>CPU</td><td>2 core</td><td>4 core</td></tr>
+<tr><td>Penyimpanan database</td><td colspan="2">SSD lokal, jangan pernah berbagi jaringan</td></tr></table>
+<p class="note">Sumber: <a href="https://immich.app/docs/install/requirements" rel="nofollow noopener" target="_blank">Persyaratan Immich</a> (halaman diperbarui 2026-10-08, diperiksa 2026-10-19). Halaman yang sama mencatat bahwa thumbnail dan video hasil transkode menambah sekitar 10–20% pada ukuran pustaka, dan bahwa dengan RAM hanya 4 GB sebaiknya machine learning dinonaktifkan.</p>
+<h2>Langkah 1 — Buat ZFS mirror</h2>
+<ol><li>Di Proxmox: <b>Datacenter → node → Disks → ZFS → Create: ZFS</b>, pilih kedua disk, RAID level <b>Mirror</b>.</li>
+<li>Mirror dua disk memberi Anda kapasitas satu disk; salah satu disk boleh rusak tanpa kehilangan data.</li>
+<li>Tambahkan sebagai penyimpanan untuk disk VM, atau buat dataset (misalnya <code>tank/photos</code>) untuk diteruskan ke dalam VM.</li></ol>
+<h2>Langkah 2 — Buat VM</h2>
+<ol><li>Buat VM Debian atau Ubuntu dengan setidaknya spesifikasi minimum di atas. Letakkan disk sistem VM di SSD agar database Postgres berada di SSD lokal.</li>
+<li>Atur tipe CPU ke <code>host</code> (atau tipe lain yang mendukung x86-64-v2); container machine learning Immich membutuhkan x86-64-v2 pada amd64.</li>
+<li>Tambahkan disk virtual kedua di ZFS mirror untuk foto dan mount, misalnya di <code>/srv/photos</code>.</li></ol>
+<p>Immich mendokumentasikan Docker Compose di dalam VM sebagai jalur yang didukung; menjalankannya di dalam container LXC dinyatakan tidak disarankan.</p>
+<h2>Langkah 3 — Pasang Immich</h2>
+<ol><li>Pasang Docker dan plugin Compose.</li>
+<li>Unduh <code>docker-compose.yml</code> dan <code>example.env</code> resmi dari dokumentasi instalasi Immich.</li>
+<li>Di <code>.env</code> atur <code>UPLOAD_LOCATION=/srv/photos/library</code> dan biarkan <code>DB_DATA_LOCATION</code> tetap di disk sistem SSD.</li>
+<li><code>docker compose up -d</code>, buka port 2283, buat akun admin, pasang aplikasi ponsel, lalu aktifkan pencadangan.</li></ol>
+<h2>Langkah 4 — Pencadangan 3-2-1</h2>
+<p>Mirror melindungi dari disk yang mati, bukan dari penghapusan, ransomware, atau kebakaran rumah. Dokumentasi Immich sendiri merekomendasikan strategi 3-2-1: 3 salinan, pada 2 jenis media, 1 di luar lokasi (off-site).</p>
+<table><tr><th>Salinan</th><th>Lokasi</th><th>Cara</th></tr>
+<tr><td>1</td><td>ZFS mirror (aktif)</td><td>Immich itu sendiri</td></tr>
+<tr><td>2</td><td>Disk USB eksternal atau mesin kedua</td><td>Snapshot ZFS + <code>zfs send</code>, atau restic/borg</td></tr>
+<tr><td>3</td><td>Off-site (bucket cloud atau server teman)</td><td>restic/borg dengan enkripsi</td></tr></table>
+<p><b>Cadangkan kedua bagiannya.</b> Immich membuat dump database secara otomatis di <code>UPLOAD_LOCATION/backups</code> (default: setiap hari pukul 2:00 pagi, 14 terakhir disimpan). Dump tersebut hanya berisi metadata — tanpa foto — sehingga tugas pencadangan Anda harus menyalin seluruh <code>UPLOAD_LOCATION</code>, yang kemudian sudah mencakup dump itu. Sumber: <a href="https://immich.app/docs/administration/backup-and-restore" rel="nofollow noopener" target="_blank">Pencadangan dan pemulihan Immich</a>, diperiksa 2026-10-19.</p>
+<p>Uji pemulihan satu kali: buat VM sementara, pulihkan file dan satu dump, lalu coba login.</p>
+<h2>Apa lagi yang cocok di server yang sama</h2>
+<ul><li>Layanan sinkronisasi file (misalnya Syncthing) di mirror yang sama.</li>
+<li>Server pengelola kata sandi, dicadangkan dengan tugas off-site yang sama.</li>
+<li>Pemantauan (SMART disk dan peringatan scrub ZFS) — asuransi termurah dalam daftar ini.</li></ul>
+<h2>FAQ</h2>
+<dl><dt>Apakah mirror adalah cadangan saya?</dt><dd>Bukan. Mirror adalah redundansi. Menghapus foto berarti menghapusnya di kedua disk seketika.</dd>
+<dt>Bisakah saya menaruh database di ZFS mirror lewat NFS?</dt><dd>Immich menyatakan database tidak boleh berada di berbagi jaringan. Simpan di SSD lokal.</dd>
+<dt>Berapa RAM yang dibutuhkan ZFS sendiri?</dt><dd>ZFS memakai RAM kosong sebagai cache (ARC) dan melepaskannya saat dibutuhkan; tetapkan dulu RAM untuk VM, lalu biarkan host memakai sisanya.</dd></dl>

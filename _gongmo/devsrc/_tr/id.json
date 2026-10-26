@@ -1,0 +1,233 @@
+[
+ {
+  "slug": "claude-for-small-business",
+  "title": "Claude untuk Bisnis Produk Kecil: Label, Margin, Ulasan",
+  "desc": "Empat alur kerja Claude tanpa kode untuk penjual produk kecil: pemeriksaan teks label, proposal grosir dengan tabel margin, analisis ulasan pesaing, dan pemeriksaan mingguan.",
+  "sources": [
+   [
+    "FDA Food Labeling & Nutrition",
+    "https://www.fda.gov/food/food-labeling-nutrition",
+    "2026-10-19"
+   ],
+   [
+    "Harga Anthropic",
+    "https://www.anthropic.com/pricing",
+    "2026-10-19"
+   ]
+  ],
+  "hub": [
+   "청년 지원금·창업 지원 모아보기",
+   "/apply/"
+  ]
+ },
+ {
+  "slug": "cut-ai-token-costs",
+  "title": "Hemat Biaya Token AI: Konteks, Pembagian Model, Cache, Pelacakan",
+  "desc": "Cara praktis menurunkan tagihan API Claude: kirim hanya dokumen yang perlu, bagi langkah antarmodel, cache ringkasan proyek, dan lacak biaya per tugas. Harga terkini disertakan.",
+  "sources": [
+   [
+    "Harga Anthropic",
+    "https://www.anthropic.com/pricing",
+    "2026-10-19"
+   ]
+  ],
+  "hub": [
+   "AI 제작 로그·개발 지식 (bahasa Korea)",
+   "/ailog/"
+  ]
+ },
+ {
+  "slug": "immich-proxmox-photo-server",
+  "title": "Immich di Proxmox dengan ZFS Mirror: Pemasangan dan Cadangan 3-2-1",
+  "desc": "Panduan langkah demi langkah server foto Immich di Proxmox: ZFS mirror, ukuran VM sesuai persyaratan resmi, instalasi Docker Compose, dan cadangan 3-2-1 beserta dump database.",
+  "sources": [
+   [
+    "Persyaratan Immich",
+    "https://immich.app/docs/install/requirements",
+    "2026-10-19"
+   ],
+   [
+    "Pencadangan dan pemulihan Immich",
+    "https://immich.app/docs/administration/backup-and-restore",
+    "2026-10-19"
+   ]
+  ],
+  "hub": [
+   "개발 지식 모음 (bahasa Korea)",
+   "/ailog/"
+  ]
+ },
+ {
+  "slug": "jeonse-vs-wolse-explained",
+  "title": "Jeonse vs Wolse: Cara Melindungi Deposit Anda sebagai Orang Asing",
+  "desc": "Penjelasan jeonse, wolse, dan ban-jeonse di Korea, plus langkah melindungi deposit: laporan alamat, tanggal pasti, dan asuransi jaminan, dengan catatan untuk orang asing terdaftar.",
+  "sources": [
+   [
+    "Immigration Act Pasal 88-2 (Korean Law Information Center)",
+    "https://www.law.go.kr",
+    "2026-10-19"
+   ],
+   [
+    "Housing Lease Protection Act Pasal 3, 3-2",
+    "https://www.law.go.kr",
+    "2026-10-19"
+   ],
+   [
+    "Supreme Court Internet Registry Office",
+    "https://www.iros.go.kr",
+    "2026-10-19"
+   ]
+  ],
+  "hub": [
+   "Versi Korea (전세 vs 월세 가이드)",
+   "/money/guide/jeonse-vs-wolse/"
+  ]
+ },
+ {
+  "slug": "korea-unemployment-benefits-foreigners",
+  "title": "Tunjangan Pengangguran bagi Orang Asing di Korea (2026)",
+  "desc": "Visa mana yang tercakup asuransi ketenagakerjaan Korea, tunjangan pengangguran harian maksimum dan minimum 2026, lama tunjangan, dan cara pekerja asing mengajukan.",
+  "sources": [
+   [
+    "Kementerian Ketenagakerjaan dan Perburuhan — asuransi ketenagakerjaan bagi pekerja asing",
+    "https://www.moel.go.kr/minwon/fastcounsel/fastcounselView.do?inetDcssMngId=202503181255455430204",
+    "2026-10-19"
+   ],
+   [
+    "Panduan tunjangan pengangguran Work24",
+    "https://www.work24.go.kr",
+    "2026-10-19"
+   ]
+  ],
+  "hub": [
+   "실업급여 조건 2026 (bahasa Korea)",
+   "/guide/unemployment-2026/"
+  ]
+ },
+ {
+  "slug": "korea-contests-open-to-foreigners",
+  "title": "Kontes Korea yang Terbuka bagi Orang Asing: Cara Mencari dan Ikut",
+  "desc": "Cara membaca aturan persyaratan peserta kontes Korea sebagai penduduk asing, plus daftar kontes terbuka yang diperbarui tiap jam dan aturannya menyebut orang asing.",
+  "sources": [
+   [
+    "Pengumuman resmi yang ditautkan dari setiap halaman kontes",
+    "/contest/",
+    "2026-10-19"
+   ]
+  ],
+  "hub": [
+   "진행 중 공모전 전체 (bahasa Korea)",
+   "/contest/"
+  ]
+ },
+ {
+  "slug": "steam-refund-policy",
+  "title": "Kebijakan Pengembalian Dana Steam: 14 Hari, 2 Jam, dan Cara Meminta",
+  "desc": "Aturan pengembalian dana resmi Steam dengan bahasa sederhana: 14 hari dan di bawah 2 jam untuk game, plus DLC, hadiah, bundel, pre-purchase, saldo wallet, dan yang tidak bisa dikembalikan.",
+  "sources": [
+   [
+    "Valve: Steam Refunds (resmi, diperbarui 23 April 2024)",
+    "https://store.steampowered.com/steam_refunds/",
+    "2026-10-20"
+   ],
+   [
+    "Steam Support",
+    "https://help.steampowered.com/",
+    "2026-10-20"
+   ]
+  ],
+  "hub": [
+   "Versi Korea (스팀 환불 규정)",
+   "/game/refund/"
+  ]
+ },
+ {
+  "slug": "korea-monthly-rent-tax-credit-foreigners",
+  "title": "Kredit Pajak Sewa Bulanan Korea bagi Penduduk Asing: Syarat, Tarif, Batas",
+  "desc": "Siapa yang dapat mengklaim kredit pajak sewa bulanan di Korea, tarif 15-17%, batas sewa KRW 10 juta, aturan hunian dan alamat, serta yang perlu dicek penduduk asing ke NTS.",
+  "sources": [
+   [
+    "National Tax Service: kredit pajak sewa bulanan (Korea)",
+    "https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=40613&cntntsId=239025",
+    "2026-10-20"
+   ],
+   [
+    "National Tax Service Q&A (Korea)",
+    "https://call.nts.go.kr/call/qna/selectQnaInfo.do?mi=1318&ctgId=CTG11906",
+    "2026-10-20"
+   ]
+  ],
+  "hub": [
+   "Versi Korea (월세 세액공제 가이드)",
+   "/money/guide/rent-credit/"
+  ]
+ },
+ {
+  "slug": "korea-business-tax-calendar",
+  "title": "Kalender Pajak Bisnis Korea untuk Pemilik Usaha Perseorangan",
+  "desc": "Kapan pemilik usaha perorangan di Korea melaporkan PPN, pajak penghasilan, dan pajak potong, plus tenggat pendaftaran dan penutupan usaha, menurut panduan National Tax Service.",
+  "sources": [
+   [
+    "National Tax Service: tenggat pelaporan PPN (Korea)",
+    "https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=2273&cntntsId=7694",
+    "2026-10-20"
+   ],
+   [
+    "National Tax Service: tenggat pajak penghasilan (Korea)",
+    "https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=2225&cntntsId=7665",
+    "2026-10-20"
+   ],
+   [
+    "National Tax Service: pajak penghasilan yang dipotong (Korea)",
+    "https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=2414&cntntsId=7702",
+    "2026-10-20"
+   ]
+  ],
+  "hub": [
+   "Versi Korea (사업자 신고·세금 달력)",
+   "/money/guide/business-tax-calendar/"
+  ]
+ },
+ {
+  "slug": "korea-take-home-salary",
+  "title": "Gaji Bersih di Korea 2026: Potongan, Tarif, dan Contoh",
+  "desc": "Bagaimana gaji tahunan Korea menjadi gaji bersih bulanan pada 2026: pensiun, kesehatan, perawatan jangka panjang, asuransi ketenagakerjaan, dan pajak penghasilan, dengan tarif resmi dan contoh.",
+  "sources": [
+   [
+    "National Pension Service (9.5%, dasar penghasilan)",
+    "https://www.nps.or.kr",
+    "2026-10-18"
+   ],
+   [
+    "National Health Insurance Service (7.19%, perawatan jangka panjang 0.9448%)",
+    "https://www.nhis.or.kr",
+    "2026-10-18"
+   ],
+   [
+    "Kementerian Ketenagakerjaan dan Perburuhan (asuransi ketenagakerjaan)",
+    "https://www.moel.go.kr",
+    "2026-10-18"
+   ]
+  ],
+  "hub": [
+   "연봉 실수령액 계산기 (bahasa Korea)",
+   "/money/tools/salary/"
+  ]
+ },
+ {
+  "slug": "mutation-testing-false-kills",
+  "title": "False Kill pada Mutation Testing: Baseline, Akses File, Alasan Kill",
+  "desc": "Mengapa skor mutasi menggelembung karena false kill dan tiga pemeriksaan untuk menangkapnya: baseline salinan bersih, bukti file mutan dibaca, dan distribusi alasan kill.",
+  "sources": [
+   [
+    "Stryker: status mutan dan metrik",
+    "https://stryker-mutator.io/docs/mutation-testing-elements/mutant-states-and-metrics/",
+    "2026-10-19"
+   ]
+  ],
+  "hub": [
+   "개발 지식 모음 (bahasa Korea)",
+   "/ailog/"
+  ]
+ }
+]

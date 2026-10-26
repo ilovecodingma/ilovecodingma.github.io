@@ -1,0 +1,37 @@
+<p>ミューテーションテストは、コードを意図的に変更し(<code>&lt;</code>を<code>&lt;=</code>に、<code>return x</code>を<code>return None</code>に)、テストがそれに気づくかを確かめる手法です。「killed」と判定されたミュータントは、テストが失敗したことを意味します。しかし、テストはミューテーションとは無関係な理由でも失敗します。そうなると、ミューテーションスコアは実際のテストの実力より良く見えてしまいます。このガイドでは、こうした<b>偽のkill(false kill)</b>を見つける3つのチェックを紹介します。</p>
+<h2>偽のkillが起きる理由</h2>
+<table><tr><th>原因</th><th>見えるもの</th></tr>
+<tr><td>ミューテーションの前から、スイートが失敗していた、または不安定だった</td><td>無関係な同じエラーによるkillが多数</td></tr>
+<tr><td>テストが変更後のコピーではなく、元のファイルをインポートしている</td><td>killがタイムアウトか環境エラーによるものだけ</td></tr>
+<tr><td>遅いマシンによるタイムアウト</td><td>実行時間の長いテストにkillが集中</td></tr>
+<tr><td>実行間で共有される状態(一時ファイル、キャッシュ、ポート)</td><td>同じミュータントを再実行すると、killの結果が変わる</td></tr></table>
+<p>タイムアウトはスコアに影響します。Strykerでは、<b>detected = killed + timeout</b>、<b>mutation score = detected / valid × 100</b>です。タイムアウトが多発するマシンでは、スコアが水増しされます。出典:<a href="https://stryker-mutator.io/docs/mutation-testing-elements/mutant-states-and-metrics/" rel="nofollow noopener" target="_blank">Stryker mutant states and metrics</a>、2026-10-19確認。</p>
+<h2>チェック1 — まっさらなコピーでベースラインを取る</h2>
+<ol><li>ミューテーションツールが使うのとまったく同じ条件(同じサンドボックス、同じ環境変数)で、プロジェクトを新しいディレクトリにコピーします。</li>
+<li>そこで、ミューテーションを<b>かけず</b>に、テストスイート全体を3回実行します。</li>
+<li>3回とも通らなければなりません。ここでの失敗は既存の失敗で、後で偽のkillとして現れます。先に修正するか、隔離してください。</li></ol>
+<pre><code>cp -r project /tmp/mt-baseline &amp;&amp; cd /tmp/mt-baseline
+for i in 1 2 3; do pytest -q -p no:cacheprovider || echo "BASELINE FAIL $i"; done</code></pre>
+<h2>チェック2 — テストが変更後のファイルを読んだことを証明する</h2>
+<p>テストが変更後のファイルを一度も読み込まないなら、そのミュータントをkillできたはずがありません。ミュータントごとの実行中に、ファイルアクセスを記録します。Pythonなら、audit hookで十分です。</p>
+<pre><code># conftest.py
+import sys, os
+TARGET = os.environ.get("MUT_TARGET")  # path of the mutated file
+def hook(event, args):
+    if event == "open" and TARGET and str(args[0]).endswith(TARGET):
+        open("/tmp/mut_touched", "a").write("1")
+sys.addaudithook(hook)</code></pre>
+<p>各ミュータントの実行では、古いバイトコードを削除し(コピー内の<code>__pycache__</code>を消します)、ソースファイルが実際に読まれるようにします。ルールは次のとおりです。対象ファイルが一度も開かれなかったkillは<b>suspect</b>(疑わしい)とマークして再実行します。他のスタックでは、<code>strace -e trace=openat</code>(Linux)やテストランナーのカバレッジデータが同じ役割を果たします。</p>
+<h2>チェック3 — killの理由の分布を見る</h2>
+<ol><li>killされたミュータントごとに、実行が失敗した<i>理由</i>を保存します。アサーションエラー、その他の例外、タイムアウト、クラッシュ、収集/インポートエラーです。</li>
+<li>簡単な集計表を作ります。</li></ol>
+<table><tr><th>理由</th><th>健全なパターン</th><th>危険信号</th></tr>
+<tr><td>アサーション失敗</td><td>大半のkill</td><td>—</td></tr>
+<tr><td>その他の例外</td><td>いくらか</td><td>多数のミュータントで同一のメッセージ</td></tr>
+<tr><td>タイムアウト</td><td>少数(無限ループのミュータント)</td><td>割合が大きい。遅いマシンで増える</td></tr>
+<tr><td>インポート/収集エラー</td><td>ほぼなし</td><td>無視できない割合があれば、失敗しているのはテストではなくハーネス</td></tr></table>
+<h2>まとめ</h2>
+<ul class="chk"><li>まっさらなコピーでのベースラインが3回中3回グリーン</li><li>すべてのkillに「対象ファイルが開かれた」記録がある</li><li>killの理由で最も多いのがアサーション失敗</li><li>killの5%を無作為に選んで再実行し、結果が変わらない</li></ul>
+<h2>FAQ</h2>
+<dl><dt>タイムアウトを延ばすべきですか?</dt><dd>ベースラインから決めてください。通常のスイートの実行時間を測り、その何倍かを許容します。短すぎると偽のkillが生まれ、長すぎると実行が遅くなります。</dd>
+<dt>コンパイルエラーはカウントされますか?</dt><dd>Strykerでは、コンパイルエラーと実行時エラーは「invalid」なミュータントとなり、スコアには含まれません。</dd></dl>

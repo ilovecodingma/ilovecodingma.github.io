@@ -1,0 +1,233 @@
+[
+ {
+  "slug": "claude-for-small-business",
+  "title": "Claude para pequeños negocios: etiquetas, márgenes y reseñas",
+  "desc": "Cuatro flujos de Claude sin código para vendedores: revisión de etiquetas, propuestas mayoristas con márgenes, análisis de reseñas y revisión semanal.",
+  "sources": [
+   [
+    "FDA: etiquetado de alimentos y nutrición",
+    "https://www.fda.gov/food/food-labeling-nutrition",
+    "2026-10-19"
+   ],
+   [
+    "Precios de Anthropic",
+    "https://www.anthropic.com/pricing",
+    "2026-10-19"
+   ]
+  ],
+  "hub": [
+   "청년 지원금·창업 지원 모아보기",
+   "/apply/"
+  ]
+ },
+ {
+  "slug": "cut-ai-token-costs",
+  "title": "Reduzca el costo de tokens de IA: contexto, modelos, caché y control",
+  "desc": "Cómo bajar la factura de la API de Claude: enviar solo lo necesario, repartir pasos entre modelos, usar caché y medir el costo por tarea. Con precios actuales.",
+  "sources": [
+   [
+    "Precios de Anthropic",
+    "https://www.anthropic.com/pricing",
+    "2026-10-19"
+   ]
+  ],
+  "hub": [
+   "AI 제작 로그·개발 지식 (en coreano)",
+   "/ailog/"
+  ]
+ },
+ {
+  "slug": "immich-proxmox-photo-server",
+  "title": "Immich en Proxmox con espejo ZFS: instalación y copia 3-2-1",
+  "desc": "Servidor de fotos Immich en Proxmox: espejo ZFS, tamaño de la VM, Docker Compose y copia 3-2-1 que incluye los volcados de la base de datos.",
+  "sources": [
+   [
+    "Requisitos de Immich",
+    "https://immich.app/docs/install/requirements",
+    "2026-10-19"
+   ],
+   [
+    "Copia de seguridad y restauración de Immich",
+    "https://immich.app/docs/administration/backup-and-restore",
+    "2026-10-19"
+   ]
+  ],
+  "hub": [
+   "개발 지식 모음 (en coreano)",
+   "/ailog/"
+  ]
+ },
+ {
+  "slug": "mutation-testing-false-kills",
+  "title": "Falsas eliminaciones en pruebas de mutación: línea base y motivos",
+  "desc": "Por qué las falsas eliminaciones inflan la puntuación de mutación y tres comprobaciones: línea base limpia, lectura del archivo mutado y motivos de eliminación.",
+  "sources": [
+   [
+    "Stryker: estados de mutantes y métricas",
+    "https://stryker-mutator.io/docs/mutation-testing-elements/mutant-states-and-metrics/",
+    "2026-10-19"
+   ]
+  ],
+  "hub": [
+   "개발 지식 모음 (en coreano)",
+   "/ailog/"
+  ]
+ },
+ {
+  "slug": "korea-take-home-salary",
+  "title": "Salario neto en Corea 2026: deducciones, tasas y ejemplos",
+  "desc": "Cómo un salario anual coreano pasa a neto mensual en 2026: pensión, salud, cuidados, seguro de empleo e impuesto sobre la renta, con tasas oficiales y ejemplos.",
+  "sources": [
+   [
+    "Servicio Nacional de Pensiones (9.5%, base de ingresos)",
+    "https://www.nps.or.kr",
+    "2026-10-18"
+   ],
+   [
+    "Servicio Nacional de Seguro de Salud (7.19%, cuidados de larga duración 0.9448%)",
+    "https://www.nhis.or.kr",
+    "2026-10-18"
+   ],
+   [
+    "Ministerio de Empleo y Trabajo (seguro de empleo)",
+    "https://www.moel.go.kr",
+    "2026-10-18"
+   ]
+  ],
+  "hub": [
+   "연봉 실수령액 계산기 (en coreano)",
+   "/money/tools/salary/"
+  ]
+ },
+ {
+  "slug": "jeonse-vs-wolse-explained",
+  "title": "Jeonse vs wolse: cómo proteger su depósito siendo extranjero",
+  "desc": "Jeonse, wolse y ban-jeonse en Corea y cómo proteger su depósito: declaración de dirección, fecha cierta y seguro de garantía, con notas para extranjeros.",
+  "sources": [
+   [
+    "Ley de Inmigración, art. 88-2 (Centro de Información Legal de Corea)",
+    "https://www.law.go.kr",
+    "2026-10-19"
+   ],
+   [
+    "Ley de Protección del Arrendamiento de Viviendas, arts. 3 y 3-2",
+    "https://www.law.go.kr",
+    "2026-10-19"
+   ],
+   [
+    "Registro de Internet de la Corte Suprema",
+    "https://www.iros.go.kr",
+    "2026-10-19"
+   ]
+  ],
+  "hub": [
+   "Versión en coreano (전세 vs 월세 가이드)",
+   "/money/guide/jeonse-vs-wolse/"
+  ]
+ },
+ {
+  "slug": "korea-unemployment-benefits-foreigners",
+  "title": "Prestación por desempleo para extranjeros en Corea (2026)",
+  "desc": "Qué visados cubre el seguro de empleo coreano, la prestación diaria máxima y mínima de 2026, la duración y cómo solicitarla siendo trabajador extranjero.",
+  "sources": [
+   [
+    "Ministerio de Empleo y Trabajo: seguro de empleo para trabajadores extranjeros",
+    "https://www.moel.go.kr/minwon/fastcounsel/fastcounselView.do?inetDcssMngId=202503181255455430204",
+    "2026-10-19"
+   ],
+   [
+    "Orientación de Work24 sobre la prestación por desempleo",
+    "https://www.work24.go.kr",
+    "2026-10-19"
+   ]
+  ],
+  "hub": [
+   "실업급여 조건 2026 (en coreano)",
+   "/guide/unemployment-2026/"
+  ]
+ },
+ {
+  "slug": "korea-contests-open-to-foreigners",
+  "title": "Concursos de Corea abiertos a extranjeros: cómo encontrarlos",
+  "desc": "Cómo leer los requisitos de concursos coreanos como residente extranjero, con una lista horaria de concursos abiertos que mencionan a extranjeros.",
+  "sources": [
+   [
+    "Avisos oficiales enlazados en cada página de concurso",
+    "/contest/",
+    "2026-10-19"
+   ]
+  ],
+  "hub": [
+   "진행 중 공모전 전체 (en coreano)",
+   "/contest/"
+  ]
+ },
+ {
+  "slug": "steam-refund-policy",
+  "title": "Política de reembolsos de Steam: 14 días, 2 horas y cómo pedirlo",
+  "desc": "Reglas oficiales de reembolso de Steam: 14 días y menos de 2 horas para juegos, más DLC, regalos, paquetes, reservas, fondos de cartera y lo no reembolsable.",
+  "sources": [
+   [
+    "Valve: reembolsos de Steam (oficial, actualizado el 23 de abril de 2024)",
+    "https://store.steampowered.com/steam_refunds/",
+    "2026-10-20"
+   ],
+   [
+    "Soporte de Steam",
+    "https://help.steampowered.com/",
+    "2026-10-20"
+   ]
+  ],
+  "hub": [
+   "Versión en coreano (스팀 환불 규정)",
+   "/game/refund/"
+  ]
+ },
+ {
+  "slug": "korea-monthly-rent-tax-credit-foreigners",
+  "title": "Crédito fiscal por alquiler en Corea para extranjeros: requisitos",
+  "desc": "Quién puede pedir el crédito fiscal por alquiler en Corea, tasa del 15-17%, tope de KRW 10 millones, reglas de vivienda y dirección, y qué consultar al NTS.",
+  "sources": [
+   [
+    "Servicio Nacional de Impuestos: crédito fiscal por alquiler mensual (en coreano)",
+    "https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=40613&cntntsId=239025",
+    "2026-10-20"
+   ],
+   [
+    "Preguntas y respuestas del Servicio Nacional de Impuestos (en coreano)",
+    "https://call.nts.go.kr/call/qna/selectQnaInfo.do?mi=1318&ctgId=CTG11906",
+    "2026-10-20"
+   ]
+  ],
+  "hub": [
+   "Versión en coreano (월세 세액공제 가이드)",
+   "/money/guide/rent-credit/"
+  ]
+ },
+ {
+  "slug": "korea-business-tax-calendar",
+  "title": "Calendario fiscal en Corea para empresarios: IVA, renta y retenciones",
+  "desc": "Cuándo presentan los empresarios individuales en Corea el IVA, la renta y las retenciones, y los plazos de registro y cierre, según el NTS.",
+  "sources": [
+   [
+    "Servicio Nacional de Impuestos: plazos del IVA (en coreano)",
+    "https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=2273&cntntsId=7694",
+    "2026-10-20"
+   ],
+   [
+    "Servicio Nacional de Impuestos: plazos del impuesto sobre la renta (en coreano)",
+    "https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=2225&cntntsId=7665",
+    "2026-10-20"
+   ],
+   [
+    "Servicio Nacional de Impuestos: impuesto retenido (en coreano)",
+    "https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=2414&cntntsId=7702",
+    "2026-10-20"
+   ]
+  ],
+  "hub": [
+   "Versión en coreano (사업자 신고·세금 달력)",
+   "/money/guide/business-tax-calendar/"
+  ]
+ }
+]
