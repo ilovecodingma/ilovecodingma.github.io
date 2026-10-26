@@ -389,7 +389,7 @@ ${album}<div class="cm-acts"><button class="tm-share">링크 복사</button>${st
   tabs();
 
   // ---- 모든 페이지 댓글·좋아요·조회수 (2026-10-19 사용자: "모든 곳에 추가, 회원가입하면 가능하게") ----
-  const PC_SKIP = [/^\/me\//, /^\/admin\//, /^\/login\//, /^\/widget\//, /^\/og\//, /^\/privacy\//, /^\/terms\//, /^\/contact\//, /^\/(?:today|contest|apply|event|wiki|fridge|news|watch|game|plaza|all|money\/guide|ailog|about)?\/?$/, /^\/cat\/[^/]+\/$/];   // 2026-10-23 UI 2차 15번: 목록·탐색 화면에는 공통 별점·댓글을 달지 않는다
+  const PC_SKIP = [/^\/me\//, /^\/admin\//, /^\/login\//, /^\/widget\//, /^\/og\//, /^\/privacy\//, /^\/terms\//, /^\/contact\//, /^\/(?:today|contest|apply|event|wiki|fridge|news|watch|game|plaza|all|money\/guide|ailog|about)?\/?$/, /^\/cat\/[^/]+\/$/, /^\/diet\/(?:workout|meal)\/$/];   // 앱 화면에는 페이지 댓글을 달지 않는다   // 2026-10-23 UI 2차 15번: 목록·탐색 화면에는 공통 별점·댓글을 달지 않는다
   const nfmt = n => (+n || 0).toLocaleString('ko-KR');
   const pcPath = () => { let x = location.pathname; try { x = decodeURIComponent(x); } catch {} return /\/$/.test(x) ? x : x + '/'; };
   const pcTitle = () => document.title.replace(/\s*\|\s*루리의 줍줍\s*$/, '').slice(0, 90);

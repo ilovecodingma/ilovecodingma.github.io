@@ -62,7 +62,7 @@ EV_KIND = {'event': '이벤트', 'sweepstakes': '추첨 경품', 'quiz': '퀴즈
            'sns_tag_required': '친구 태그', 'sns_story_required': '스토리 공유', 'sns_capture': '캡처 인증', 'sns_form_only': '폼 응모',
            'sns_comment+form': '댓글+폼', 'sns_purchase': '구매 인증', 'sns_region': '지역 한정', 'sns_other': 'SNS 이벤트'}
 
-COMM_TAGS_TPL = '<link rel="stylesheet" href="/assets/community/comm.css?v=17"><script defer src="/assets/community/comm.js?v=31"></script><script defer src="/assets/community/crew.js?v=1"></script>'
+COMM_TAGS_TPL = '<link rel="stylesheet" href="/assets/community/comm.css?v=17"><script defer src="/assets/community/comm.js?v=32"></script><script defer src="/assets/community/crew.js?v=1"></script>'
 GTAG = ('<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4248498719773262" crossorigin="anonymous"></script>\n'
         '<script async src="https://www.googletagmanager.com/gtag/js?id=G-G9BPFF95GY"></script>\n'
         "<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());if(location.hostname!=='sungprofile.cloud')window['ga-disable-G-G9BPFF95GY']=true;gtag('config','G-G9BPFF95GY');</script>")
@@ -699,7 +699,7 @@ def diet_pages():
             '<p class="lead" style="display:block">루리와 같이 움직이고, 레시피로 식단을 짜고, 한 일을 이 기기에 기록해요.</p></div>'
             '<div class="dt-hero-i">' + ''.join(f'<img src="/assets/ruri/{n}_s.webp" width="76" height="105" alt="{al}" loading="lazy">' for n, al in (('o_dt_stretch', '스트레칭하는 루리'), ('o_dt_run', '달리는 루리'), ('o_dt_dumbbell', '덤벨 드는 루리'), ('o_dt_mat', '매트 운동하는 루리'), ('o_dt_salad', '샐러드 든 루리'), ('o_dt_water', '물 마시는 루리'), ('o_dt_scale', '체중계 앞의 루리'))) + '</div></div>')
     body = (hero +
-            '<p class="lead" style="display:block">운동 사이클을 무작위로 짜고, 타이머로 따라 하고, 한 일을 이 기기에 기록해요. 아래 가이드는 공식 자료의 수치만 정리했어요.</p>'
+            '<p class="note">아래 가이드는 공식 자료의 수치만 정리했어요.</p>'
             f'<p class="note">{E(DIET_DISCLAIMER)} 기록은 이 기기의 브라우저에만 저장되고 서버로 보내지 않아요.</p>'
             '<h2>바로 해 보기</h2><div class="dt-hub-grid">'
             '<a href="/diet/workout/"><b>🏃 운동 사이클 뽑기</b><span>시간(10·20·30분)·부위·장소를 고르면 워밍업 → 본운동 → 쿨다운을 무작위로 짜 줘요. 타이머와 음성 안내, 완료 체크까지.</span></a>'
