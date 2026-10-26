@@ -13,12 +13,23 @@ GOALS = [
     # slug, 아이콘, 이름, 한 줄, 고르는 기준(사용자에게 그대로 보여 줌)
     ('light', '🥗', '가볍게 먹기', '속이 편한 가벼운 한 끼', '메뉴 분류가 「가벼움」이고, 튀기거나 기름을 많이 쓰는 조리가 아닌 메뉴만 골랐어요.'),
     ('protein', '💪', '단백질 챙기기', '달걀·두부·고기·생선이 들어간 메뉴', '꼭 필요한 재료에 달걀·두부·닭고기·생선·콩 같은 단백질 재료가 들어간 메뉴예요. 양이나 영양 수치는 적지 않았어요.'),
-    ('veggie', '🥬', '채소 듬뿍', '채소가 세 가지 이상 들어간 메뉴', '재료에 채소·버섯·해조류가 세 가지 이상 들어가거나 무침·나물·샐러드류인 메뉴예요.'),
+    ('veggie', '🥬', '채소 듬뿍', '채소가 두 가지 이상 들어간 메뉴', '재료에 채소·버섯·해조류가 두 가지 이상 들어가거나 무침·나물·샐러드류인 메뉴예요.'),
     ('lowoil', '🫕', '기름 적게', '삶기·끓이기·찌기·무치기 위주', '조리 과정에 식용유·튀김·부침이 나오지 않는 메뉴를 골랐어요. 참기름 한두 방울 정도는 포함돼요.'),
     ('full', '🍚', '든든하게', '한 끼로 배부른 메뉴', '메뉴 분류가 「든든」인 메뉴 중 채소나 단백질 재료가 함께 들어간 것만 골랐어요.'),
     ('night', '🌙', '야식 말고 가볍게', '15분 안에 끝나는 부담 적은 메뉴', '15분 안에 끝나고 「가벼움」으로 분류된, 튀기지 않는 메뉴예요.'),
 ]
 G = {g[0]: g for g in GOALS}
+
+
+def _isveg(x):
+    return any(x == w or x.startswith(w) or x.endswith(w) for w in VEG)
+
+
+PROCESSED = ('라면', '스팸', '햄', '소시지', '베이컨', '맛살', '어묵', '참치캔')
+
+
+def processed(r):
+    return any(any(p in x for p in PROCESSED) for x in r.get('need', [])) or '라면' in r['n']
 
 
 def _has(words, ing):
@@ -31,15 +42,17 @@ def feats(r):
     steps = ' '.join(r.get('s', []))
     t = r.get('t', [])
     oil = bool(OIL_STEP.search(steps)) or bool(OIL_NAME.search(r['n']))
-    nveg = sum(1 for x in nd + [o for o in r.get('opt', [])] if any(w == x or w in x for w in VEG))
+    nveg = sum(1 for x in nd if _isveg(x))
     return dict(
-        protein=_has(PROTEIN, nd), veggie=nveg >= 3 or bool(re.search(r'무침|나물|샐러드|겉절이|생채', r['n'])),
+        protein=_has(PROTEIN, nd), veggie=nveg >= 2 or bool(re.search(r'무침|나물|샐러드|겉절이|생채', r['n'])),
         oil=oil, light='가벼움' in t, full='든든' in t, quick=r['m'] <= 15,
     )
 
 
 def goals_of(r):
     f = feats(r); out = []
+    if processed(r):
+        return ['protein'] if f['protein'] and not f['oil'] else []
     if f['light'] and not f['oil']: out.append('light')
     if f['protein']: out.append('protein')
     if f['veggie']: out.append('veggie')
@@ -64,7 +77,7 @@ def points(r):
     f = feats(r); pts = []
     ing = [x for x in r['need'] if any(w in x for w in PROTEIN)]
     if ing: pts.append(f'단백질 재료({", ".join(ing[:3])})가 들어가요.')
-    veg = [x for x in r['need'] + r.get('opt', []) if any(w == x or w in x for w in VEG)]
+    veg = [x for x in r['need'] if _isveg(x)]
     if veg: pts.append(f'채소·버섯류({", ".join(dict.fromkeys(veg))[:40]})를 함께 먹을 수 있어요.')
     if not f['oil']: pts.append('조리 과정에 튀기거나 기름을 많이 쓰는 단계가 없어요.')
     if re.search(r'국$|국 |찌개|탕|전골|국밥', r['n']): pts.append('국물 요리는 간을 약하게 하고 건더기 위주로 먹으면 나트륨을 줄이는 데 도움이 돼요.')

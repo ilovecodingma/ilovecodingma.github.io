@@ -72,7 +72,7 @@ THEMES = [  # (키, 이름, 아이콘, 테마색, 홈, [하위 메뉴], [이 테
     ('money', '머니', '📊', '#047857', '/analyst/', [('/analyst/', '애널리스트 종합'), ('/money/experts/', '전문가 코멘트'), ('/money/guide/', '생활 돈 가이드'), ('/money/policy/', '투자 정책'), ('/money/age/', '나이별 원칙'), ('/money/tools/salary/', '계산기'), ('/analyst/coin/btc/', '코인')], ['/analyst/', '/money/']),
     ('contest', '공모전', '🏆', '#6d28d9', '/contest/', [('/contest/', '공모전 찾기'), ('/cat/literature/', '분야별'), ('/prep/', '내 응모 준비'), ('/lab/', '수상작 분석'), ('/community/', '팀원 모집'), ('/guide/', '가이드'), ('/widget/', '위젯')],
      ['/contest/', '/c/', '/cat/', '/prep/', '/lab/', '/community/', '/guide/', '/v/', '/me/', '/widget/']),
-    ('recipe', '레시피', '🍳', '#c2410c', '/fridge/', [('/fridge/', '냉장고 파먹기'), ('/fridge/solo/', '자취 요리'), ('/fridge/weather/', '날씨별'), ('/fridge/plan/', '식단·장보기'), ('/fridge/c/guk/', '국·찌개'), ('/fridge/c/bap/', '밥'), ('/fridge/c/myeon/', '면'), ('/fridge/c/bokkeum/', '볶음'), ('/fridge/c/jorim/', '조림·찜'), ('/fridge/c/banchan/', '반찬'), ('/fridge/c/jeon/', '전')], ['/fridge/']),   # 2026-10-20 사용자: 레시피 유입이 많아 별도 카테고리로
+    ('recipe', '건강 레시피', '🥗', '#c2410c', '/fridge/', [('/fridge/', '건강 레시피'), ('/fridge/h/light/', '가볍게'), ('/fridge/h/protein/', '단백질'), ('/fridge/h/veggie/', '채소 듬뿍'), ('/fridge/h/lowoil/', '기름 적게'), ('/fridge/solo/', '자취 요리'), ('/fridge/weather/', '날씨별'), ('/fridge/plan/', '식단·장보기'), ('/fridge/c/guk/', '국·찌개'), ('/fridge/c/bap/', '밥'), ('/fridge/c/myeon/', '면'), ('/fridge/c/bokkeum/', '볶음'), ('/fridge/c/jorim/', '조림·찜'), ('/fridge/c/banchan/', '반찬'), ('/fridge/c/jeon/', '전')], ['/fridge/']),   # 2026-10-20 사용자: 레시피 유입이 많아 별도 카테고리로
     ('life', '생활', '🧺', '#0e7490', '/apply/', [('/apply/', '지원금·청약'), ('/apply/recommend/', '청약 추천'), ('/apply/r/', '지역별'), ('/event/', '경품'), ('/qa/', '고민 해결'), ('/plaza/', '광장')], ['/apply/', '/a/', '/event/', '/qa/', '/ssul/', '/plaza/']),
     ('game', '게임', '🎮', '#4f46e5', '/game/', [('/game/', '게임 허브'), ('/game/free/', '무료 게임 기록'), ('/game/release/', '출시 일정'), ('/game/steam-sale/', '세일 달력'), ('/game/refund/', '환불 규정'), ('/game/#timing', '살 타이밍'), ('/game/#contest', '게임 공모전')], ['/game/']),   # 2026-10-20 홍보 세션 기획서: 게임·취미·개발 커뮤니티 콘텐츠
     ('ai', '개발 지식', '🧑‍💻', '#0f172a', '/ailog/', [('/dev/', '기술 블로그'), ('/ailog/', '개발 지식·제작 로그'), ('/dev/faq/', '개발 FAQ'), ('/en/guide/', 'English guides'), ('/class/', '루리의 AI교실'), ('/ailog/#log', 'AI 제작 로그')], ['/ailog/', '/dev/', '/en/', '/class/', '/ai/'])]   # 2026-10-19 사용자: AI 로그 → 개발 지식으로 개편
@@ -248,7 +248,7 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False, noinde
 {body}{PAGE_INTRO.get(path, '')}
 </main>
 <footer class="ft"><div class="w ft-in"><div class="ft-b"><img class="av" src="/assets/ruri/avatar.webp" width="56" height="56" alt="루리" loading="lazy"><div><b>루리의 줍줍</b><p>오늘 뭐 먹지부터 지원금·공모전·이슈까지, 일단 줍고 가세요.</p><p class="ft-m">문의 <a href="mailto:{MAIL}">{MAIL}</a>{"" if PARTNER == MAIL else f' · 제휴 <a href="mailto:{PARTNER}">{PARTNER}</a>'}</p></div></div>
-<nav class="ft-g" aria-label="사이트 메뉴"><div><b>🍳 생활</b><a href="/fridge/">냉장고 파먹기</a><a href="/event/">경품·용돈</a><a href="/qa/">고민 해결</a><a href="/plaza/">광장</a></div>
+<nav class="ft-g" aria-label="사이트 메뉴"><div><b>🍳 생활</b><a href="/fridge/">건강 레시피</a><a href="/event/">경품·용돈</a><a href="/qa/">고민 해결</a><a href="/plaza/">광장</a></div>
 <div><b>💰 지원금·머니</b><a href="/apply/">지원금·청약</a><a href="/money/tools/salary/">계산기</a><a href="/money/experts/">전문가 말 vs 시세</a><a href="/analyst/">애널리스트</a></div>
 <div><b>🏆 공모전</b><a href="/contest/">공모전 찾기</a><a href="/prep/">준비실</a><a href="/guide/">응모 가이드</a><a href="/lab/">수상 연구소</a></div>
 <div><b>📺 이슈</b><a href="/news/">루리 뉴스</a><a href="/trend/">이슈 트렌드</a><a href="/hot/">핫이슈</a><a href="/kw/">인기 키워드</a></div>
@@ -2279,7 +2279,7 @@ def build():
 
 <section class="hx-sec hx-t-recipe" id="recipe"><div class="hx-hd"><div><p>🍳 쉬어가는 식탁</p><h2>오늘 뭐 먹지?</h2></div><a href="/fridge/">레시피 {NR_HOME}개 →</a></div>
 <ul class="hx-row">{hx_rc}</ul>
-<div class="hx-sub2"><a href="/fridge/">🧊 냉장고 재료로 찾기</a><a href="/fridge/solo/">🏠 자취 요리</a><a href="/fridge/weather/">🌤️ 날씨별</a><a href="/fridge/plan/">📅 식단·장보기</a></div></section>
+<div class="hx-sub2"><a href="/fridge/h/light/">🥗 가볍게</a><a href="/fridge/h/protein/">💪 단백질</a><a href="/fridge/">🧊 냉장고 재료로 찾기</a><a href="/fridge/solo/">🏠 자취 요리</a><a href="/fridge/weather/">🌤️ 날씨별</a><a href="/fridge/plan/">📅 식단·장보기</a></div></section>
 
 <section class="hx-band" id="join">{join_home()}</section>
 
@@ -5382,6 +5382,17 @@ def fridge_page():
     RS = D['recipes']; NR = len(RS)
     RATE = page_rates()
     import fr_extra as FX, fridge_today as FXT
+    import fr_health as FH
+    HG = FH.groups(RS)
+    def health_box(r):
+        pts = FH.points(r)
+        gs = [FH.G[g] for g in FH.goals_of(r)]
+        if not pts and not gs:
+            return ''
+        chips = ''.join(f'<a href="/fridge/h/{g[0]}/">{g[1]} {E(g[2])}</a>' for g in gs)
+        return ('<section class="hl-box"><h2>🌿 건강하게 먹는 포인트</h2>' + (f'<p class="hl-chips">{chips}</p>' if chips else '')
+                + ('<ul>' + ''.join(f'<li>{E(x)}</li>' for x in pts) + '</ul>' if pts else '')
+                + '<p class="hl-note">재료와 조리 과정으로 나눈 참고용 설명이에요. 영양 수치는 공식 자료를 확인한 뒤에만 적을게요. 질환·알레르기가 있거나 식사 조절이 필요하면 의사·영양사와 상담하세요.</p></section>')
     FR_EN = _rd('assets/fridge/en.json') or {}   # 영문 보조 표기(본문 한 줄)
     shutil.rmtree(os.path.join(ROOT, 'fridge', 'r'), ignore_errors=True)
     lic = lambda c: (E(c.get('by') or '작가 미상')
@@ -5437,6 +5448,7 @@ def fridge_page():
                 + f'<div class="rp-hero">{hero_img}</div>' + sumbar
                 + '<div class="rp-acts"><button type="button" class="rp-cookbtn">🍳 요리 모드 <small>큰 글씨 · 음성 안내</small></button></div>'
                 + f'<p class="rp-intro">{E(tip)}</p>'
+                + health_box(r)
                 + f'<section class="rp-ing"><div class="rp-ih"><h2>🧺 재료</h2>{servbar}</div><div class="fr-ri"><div><h3>꼭 있어야 해요</h3><ul>{ingl(r["need"], True)}</ul></div>'
                 + (f'<div><h3>있으면 더 좋아요</h3><ul>{ingl(r["opt"])}</ul></div>' if r['opt'] else '') + '</div>'
                 + '<button type="button" class="rp-copy">🛒 없는 재료 장보기 목록 복사</button><p class="rp-hint">체크한 재료는 집에 있는 것으로 보고 빼 드려요.</p></section>'
@@ -5540,8 +5552,41 @@ def fridge_page():
         page(f'/fridge/c/{sl_}/', f'{nm_} 레시피 모음 {YR} — 집에서 만드는 {len(L_)}가지 (조리 시간순)', f'{nm_} 레시피 {len(L_)}가지: 조리 시간 순서로 만드는 법과 필수 재료. 15분 안에 끝나는 {nm2_} {len(quick)}가지 포함.',
              bd, [('루리의 줍줍', '/'), ('레시피', '/fridge/'), (nm_, f'/fridge/c/{sl_}/')])
         urls.append(f'/fridge/c/{sl_}/')
-    page('/fridge/', f'냉장고 파먹기 메뉴 추천 — 있는 재료로 오늘 요리 (레시피 {NR}개)', f'냉장고에 있는 재료만 고르면 집밥 레시피 {NR}개 중 지금 바로 만들 수 있는 오늘 메뉴와 만드는 법, 하나만 사면 되는 메뉴까지 알려 줘요.',
-         f"""<p class="bc"><a href="/">홈</a> › 레시피</p><h1>오늘 뭐 먹지?</h1>
+    shutil.rmtree(os.path.join(ROOT, 'fridge', 'h'), ignore_errors=True)
+    def hl_cards(L, n=12):
+        out = []
+        for x in L[:n]:
+            pt = (FH.points(x) or [''])[0]
+            out.append(f'<li class="hx-rc"><a href="/fridge/r/{fr_slug(x["n"])}/"><div class="ph">' + (f'<img src="{pimg(x["n"])}" width="400" height="300" loading="lazy" alt="{E(x["n"])} 완성 사진">' if pimg(x["n"]) else f'<div class="e">{x["e"]}</div>')
+                       + f'<em>⏱ {x["m"]}분</em></div><b>{E(x["n"])}</b><small>{E(pt)}</small></a></li>')
+        return '<ul class="hl-cards">' + ''.join(out) + '</ul>'
+    for gk, gi, gn, gline, gwhy in FH.GOALS:
+        L_ = HG[gk]
+        if len(L_) < 10:
+            continue
+        ing_ = _co.Counter(g for x in L_ for g in x['need']).most_common(5)
+        avg_ = sum(x['m'] for x in L_) / len(L_)
+        facts = (f'{gn} 기준에 맞는 레시피 {len(L_)}가지를 조리 시간이 짧은 순으로 모았어요. 가장 빠른 건 {L_[0]["n"]}({L_[0]["m"]}분), 평균 {avg_:.0f}분이에요. '
+                 f'이 목록에서 필수 재료로 많이 쓰인 건 {", ".join(f"{g}({c}개)" for g, c in ing_)}예요.')
+        oth = ' · '.join(f'<a href="/fridge/h/{k2}/">{i2} {n2}</a>' for k2, i2, n2, _, _ in FH.GOALS if k2 != gk and len(HG[k2]) >= 10)
+        bd = (f'<p class="bc"><a href="/">홈</a> › <a href="/fridge/">건강 레시피</a> › {E(gn)}</p><h1>{gi} {E(gn)} 집밥 레시피 — {len(L_)}가지</h1>'
+              f'<p class="cat-st">📌 {E(facts)}</p>'
+              f'<section class="hl-why"><h2>어떤 기준으로 골랐나요?</h2><p>{E(gwhy)}</p><p>영양 성분표를 계산한 목록이 아니라 재료와 조리 과정만 보고 나눈 참고용 분류예요. 같은 메뉴도 양념과 먹는 양에 따라 달라지니, 식사 조절이 필요하면 의사·영양사와 상담하세요.</p></section>'
+              f'<h2>먼저 해 먹어 볼 {E(gn)} 메뉴</h2>' + hl_cards(L_, 12)
+              + f'<h2>전체 {E(gn)} 레시피 (조리 시간순)</h2>' + li(L_).replace('<ul class="fr-rel">', '<ul class="fr-rel" data-fold="15" data-step="30">', 1) + FOLD_TAGS
+              + f'<p class="hm-links">다른 건강 목적: {oth}</p>'
+              + '<a class="lab-cta" href="/fridge/"><b>🧊 냉장고 재료로도 찾을 수 있어요</b><span>있는 재료를 고르면 지금 만들 수 있는 메뉴부터 →</span></a>'
+              + '<link rel="stylesheet" href="/assets/fridge/fridge.css?v=15"><link rel="stylesheet" href="/assets/fridge/health.css?v=1">')
+        page(f'/fridge/h/{gk}/', f'{gn} 집밥 레시피 {len(L_)}가지 — {gline} ({YR})', f'{gn} 집밥 레시피 {len(L_)}가지. {gwhy}', bd,
+             [('루리의 줍줍', '/'), ('건강 레시피', '/fridge/'), (gn, f'/fridge/h/{gk}/')])
+        urls.append(f'/fridge/h/{gk}/')
+    hl_grid = ('<section class="hl-grid" aria-label="건강 목적별 레시피"><h2>🌿 오늘은 어떻게 먹고 싶어요?</h2><div>'
+               + ''.join(f'<a href="/fridge/h/{k}/"><b>{i} {E(n)}</b><span>{E(l)}</span><small>{len(HG[k])}가지</small></a>' for k, i, n, l, _ in FH.GOALS if len(HG[k]) >= 10)
+               + '</div><p class="hl-note">재료와 조리 과정으로 나눈 참고용 분류예요. 영양 수치는 공식 자료를 확인한 뒤에만 적어요.</p></section>')
+    page('/fridge/', f'건강 집밥 레시피 — 가볍게·단백질·채소 듬뿍 목적별로 고르기 (레시피 {NR}개)', f'가볍게, 단백질 챙기게, 채소 듬뿍, 기름 적게. 건강 목적별로 집밥 레시피 {NR}개를 고르고, 냉장고 재료로도 찾아요.',
+         f"""<p class="bc"><a href="/">홈</a> › 건강 레시피</p><h1>건강하게 먹는 집밥</h1>
+{hl_grid}<link rel="stylesheet" href="/assets/fridge/health.css?v=1">
+<h2 class="hl-h2">오늘 뭐 먹지?</h2>
 <div class="rec-tabs" data-rec-tabs role="tablist"><button type="button" data-t="rec-pane" data-g="시간·날씨·기분에 맞춰 지금 만들기 좋은 메뉴를 골라 드려요." class="on">🍽️ 메뉴 추천</button><button type="button" data-t="fridge" data-g="있는 재료를 고르면 지금 만들 수 있는 메뉴와, 재료 1개만 더 사면 되는 메뉴를 보여 드려요.">🧊 냉장고 재료로 찾기</button></div>
 <p class="rec-guide" id="rec-guide">시간·날씨·기분에 맞춰 지금 만들기 좋은 메뉴를 골라 드려요.</p>
 <section id="rec-pane" aria-label="오늘의 추천"><div data-rec="today" data-n="8">{ssr([x for x in RS if x['n'] in set(TD.get('picks', []))][:3], '자바스크립트를 켜면 시간·날씨에 맞춰 골라 드려요.')}</div></section>
@@ -5551,8 +5596,8 @@ def fridge_page():
 {kin_ans_links('/fridge/q/')}
 <details class="fr-all"><summary>📚 전체 레시피 {NR}개 보기</summary><ul>{allr}</ul></details>
 <a class="lab-cta" href="/cat/food/"><b>🏆 요리·레시피 공모전</b><span>레시피 공모전·요리경연대회 모아 보기 · 상금 받고 요리 실력 뽐내기 →</span></a><p class="note">사진은 재료를 찾는 데만 쓰고 저장하지 않아요. 고른 재료는 이 폰에만 저장돼요. 알레르기가 있으면 재료를 꼭 다시 확인해 주세요.</p>
-<link rel="stylesheet" href="/assets/fridge/fridge.css?v=15"><script defer src="/assets/fridge/fridge.js?v=16"></script><script defer src="/assets/fridge/ux.js?v=1"></script>{REC_TAGS}""", [('루리의 줍줍', '/'), ('냉장고 파먹기', '/fridge/')],
-         {'@context': 'https://schema.org', '@type': 'ItemList', 'name': '냉장고 파먹기 집밥 레시피', 'numberOfItems': NR, 'itemListElement': [{'@type': 'ListItem', 'position': k + 1, 'url': f'{SITE}/fridge/r/{fr_slug(r["n"])}/', 'name': r['n']} for k, r in enumerate(RS[:50])]})
+<link rel="stylesheet" href="/assets/fridge/fridge.css?v=15"><script defer src="/assets/fridge/fridge.js?v=16"></script><script defer src="/assets/fridge/ux.js?v=1"></script>{REC_TAGS}""", [('루리의 줍줍', '/'), ('건강 레시피', '/fridge/')],
+         {'@context': 'https://schema.org', '@type': 'ItemList', 'name': '건강 집밥 레시피', 'numberOfItems': NR, 'itemListElement': [{'@type': 'ListItem', 'position': k + 1, 'url': f'{SITE}/fridge/r/{fr_slug(r["n"])}/', 'name': r['n']} for k, r in enumerate(RS[:50])]})
     return urls
 
 

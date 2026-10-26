@@ -1,0 +1,15 @@
+/* 건강 레시피 — 목적별 격자·상세 포인트 (2026-10-26) */
+.hl-grid{margin:12px 0 6px}.hl-grid h2{font-size:20px;margin:0 0 10px}
+.hl-grid>div{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.hl-grid a{display:flex;flex-direction:column;gap:4px;padding:14px;border:1px solid #bbf7d0;border-radius:16px;background:linear-gradient(160deg,#f0fdf4,#fff);color:#14532d;text-decoration:none;min-height:96px}
+.hl-grid a b{font-size:16px}.hl-grid a span{font-size:13px;color:#3f6212;line-height:1.45}.hl-grid a small{margin-top:auto;font-size:12px;color:#15803d;font-weight:800}
+.hl-note{font-size:12.5px;color:var(--mu,#6b7280);line-height:1.6;margin:8px 2px}
+.hl-h2{font-size:18px;margin:18px 0 4px}
+.hl-box{border:1px solid #bbf7d0;border-radius:16px;background:#f0fdf4;padding:14px 16px;margin:14px 0}
+.hl-box h2{font-size:17px;margin:0 0 8px;color:#14532d}.hl-box ul{margin:6px 0 0;padding-left:20px;color:#1f2937}.hl-box li{margin:4px 0;line-height:1.6}
+.hl-chips{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 6px}.hl-chips a{padding:6px 12px;border-radius:999px;background:#fff;border:1px solid #86efac;color:#166534;font-size:13px;font-weight:800;text-decoration:none}
+.hl-why{border-left:4px solid #22c55e;background:#f7fef9;padding:6px 14px;margin:12px 0;border-radius:0 12px 12px 0}.hl-why h2{font-size:16px;margin:6px 0}
+.hl-cards{list-style:none;margin:8px 0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:12px}
+.hl-cards .hx-rc a{display:block;color:inherit;text-decoration:none}.hl-cards .ph{position:relative;aspect-ratio:4/3;border-radius:14px;overflow:hidden;background:#f3f4f6}.hl-cards .ph img{width:100%;height:100%;object-fit:cover}
+.hl-cards .ph em{position:absolute;left:8px;bottom:8px;font-style:normal;font-size:12px;background:rgba(0,0,0,.6);color:#fff;border-radius:999px;padding:2px 8px}
+.hl-cards b{display:block;margin:6px 2px 0}.hl-cards small{display:block;margin:2px 2px 0;font-size:12.5px;color:#4b5563;line-height:1.5}
