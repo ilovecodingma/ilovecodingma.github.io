@@ -191,6 +191,28 @@ def _seo_exp_links():
     return _SEO_LINKS
 
 
+LANGS = {'ko': ('ko_KR', '한국어'), 'en': ('en_US', 'English'), 'ja': ('ja_JP', '日本語'), 'zh': ('zh_CN', '中文'), 'es': ('es_ES', 'Español'),
+         'vi': ('vi_VN', 'Tiếng Việt'), 'id': ('id_ID', 'Bahasa Indonesia'), 'th': ('th_TH', 'ไทย')}   # 2026-10-27 사용자 「전세계 언어 대상으로」: 번역 글 언어 목록
+ALTS = {}   # 경로 → [(hreflang, 경로)] 같은 글의 다른 언어판(자기 자신 포함). 사이트맵·<head> 가 같이 쓴다
+
+
+def sm_alts(u):
+    a = ALTS.get(u)
+    if a:
+        d = next((p for hl, p in a if hl == 'en'), a[0][1])
+        return ''.join(f'<xhtml:link rel="alternate" hreflang="{hl}" href="{SITE}{p}"/>' for hl, p in a) + f'<xhtml:link rel="alternate" hreflang="x-default" href="{SITE}{d}"/>'
+    return f'<xhtml:link rel="alternate" hreflang="en" href="{SITE}{u}"/>' if u.startswith('/en/') else ''
+
+
+def hreflang_links(path, url, lang):
+    alts = ALTS.get(path)
+    if not alts:
+        return f'<link rel="alternate" hreflang="{lang}" href="{url}">' if lang != 'ko' else ''
+    out = ''.join('\n<link rel="alternate" hreflang="%s" href="%s%s">' % (hl, SITE, p) for hl, p in alts)
+    d = next((p for hl, p in alts if hl == 'en'), alts[0][1])
+    return out + '\n<link rel="alternate" hreflang="x-default" href="%s%s">' % (SITE, d)
+
+
 def page(path, title, desc, body, crumbs=None, ld=None, full_title=False, noindex=False, og=None, lang='ko', canon=None):
     url = SITE + (canon or path)
     TH = theme_of(path)
@@ -229,8 +251,8 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False, noinde
 <html lang="{lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{E(t)}</title>
 <meta name="description" content="{E(desc)}">{'<meta name="robots" content="noindex,follow">' if noindex else ''}
-<link rel="canonical" href="{url}">{'<link rel="alternate" type="application/rss+xml" title="루리의 줍줍 기술 블로그" href="/dev/rss.xml">' if path.startswith('/dev/') or path == '/ailog/' else ''}{f'<link rel="alternate" hreflang="en" href="{url}">' if lang == 'en' else ''}
-<meta property="og:type" content="website"><meta property="og:locale" content="{'en_US' if lang == 'en' else 'ko_KR'}"><meta property="og:site_name" content="{NAME}">
+<link rel="canonical" href="{url}">{'<link rel="alternate" type="application/rss+xml" title="루리의 줍줍 기술 블로그" href="/dev/rss.xml">' if path.startswith('/dev/') or path == '/ailog/' else ''}{hreflang_links(path, url, lang)}
+<meta property="og:type" content="website"><meta property="og:locale" content="{LANGS.get(lang, ('ko_KR',))[0]}"><meta property="og:site_name" content="{NAME}">
 <meta property="og:title" content="{E(t)}"><meta property="og:description" content="{E(desc)}"><meta property="og:url" content="{url}">
 <meta property="og:image" content="{SITE}{og or "/assets/ruri/og.jpg"}"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="{SITE}{og or "/assets/ruri/og.jpg"}">
@@ -2400,7 +2422,7 @@ def build():
         jdump(lm, LM, ensure_ascii=False)
         chg = [SITE + u for u in urls if u.startswith('/c/') and u not in NOINDEX and lm[u][1] == TODAY.isoformat() and SITE + u not in NEW_URLS and lm[u][0] != _lm_old.get(u)]
         NEW_URLS.extend(chg[:100])   # 2026-10-19: 바뀐 공모전 상세도 IndexNow 로
-        f.writelines(f'<url><loc>{SITE}{u}</loc><lastmod>{lm[u][1]}</lastmod>' + (f'<xhtml:link rel="alternate" hreflang="en" href="{SITE}{u}"/>' if u.startswith('/en/') else '') + '</url>\n' for u in urls if u not in NOINDEX)
+        f.writelines(f'<url><loc>{SITE}{u}</loc><lastmod>{lm[u][1]}</lastmod>' + sm_alts(u) + '</url>\n' for u in urls if u not in NOINDEX)
         f.write('</urlset>\n')
     SMT = [('contest', ('/c/', '/cat/', '/contest/', '/lab/', '/guide/', '/prep/', '/widget/', '/ssul/')), ('apply', ('/a/', '/apply/', '/event/', '/fridge/', '/qa/')),
            ('money', ('/analyst/', '/money/')), ('issue', ('/news/', '/talk/', '/mag/', '/kw/', '/hot/', '/satire/', '/review/', '/trend/'))]
@@ -2409,7 +2431,7 @@ def build():
         L = [u for u in urls if u not in NOINDEX and ((pre and u.startswith(pre)) or (not pre and not any(u.startswith(x) for _, ps in SMT for x in ps)))]
         with open(os.path.join(ROOT, f'sitemap-{nm}.xml'), 'w', encoding='utf-8', newline='\n') as f2:
             f2.write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n')
-            f2.writelines(f'<url><loc>{SITE}{u}</loc><lastmod>{lm[u][1]}</lastmod>' + (f'<xhtml:link rel="alternate" hreflang="en" href="{SITE}{u}"/>' if u.startswith('/en/') else '') + '</url>\n' for u in L)
+            f2.writelines(f'<url><loc>{SITE}{u}</loc><lastmod>{lm[u][1]}</lastmod>' + sm_alts(u) + '</url>\n' for u in L)
             f2.write('</urlset>\n')
         idx.append((nm, max([lm[u][1] for u in L] or [TODAY.isoformat()])))
     with open(os.path.join(ROOT, 'sitemap_index.xml'), 'w', encoding='utf-8', newline='\n') as f2:
@@ -4163,7 +4185,12 @@ DEV_F = os.path.join(HERE, 'dev_posts.json')   # 개발 지식 글 목록(본문
 
 
 def dev_url(p):
-    return f'/en/guide/{p["slug"]}/' if p['lang'] == 'en' else f'/dev/{p["slug"]}/'
+    return f'/{p["lang"]}/guide/{p["slug"]}/' if p['lang'] != 'ko' else f'/dev/{p["slug"]}/'
+
+
+def dev_src(p):
+    """본문 파일: ko·en 은 <slug>.html, 번역판은 <lang>__<slug>.html"""
+    return os.path.join(HERE, 'devsrc', (p['slug'] if p['lang'] in ('ko', 'en') else f'{p["lang"]}__{p["slug"]}') + '.html')
 
 
 def dev_posts():
@@ -4245,7 +4272,7 @@ def dev_blog_pages(P, css):
     KO = [p for p in P if p['lang'] == 'ko']
     order = {id(p): i for i, p in enumerate(P)}
     KO.sort(key=lambda p: (p['date'], order[id(p)]), reverse=True)
-    rm = {p['slug']: _rmin(open(os.path.join(HERE, 'devsrc', p['slug'] + '.html'), encoding='utf-8').read()) for p in P}
+    rm = {p['slug']: _rmin(open(dev_src(p), encoding='utf-8').read()) for p in P if p['lang'] == 'ko'}
     used = sorted({t for p in KO for t in p.get('tags', [])}, key=lambda t: -sum(t in p.get('tags', []) for p in KO))
     chips = ''.join(f'<a href="/dev/tag/{t}/">#{E(DEV_TAGS.get(t, t))} <small>{sum(t in p.get("tags", []) for p in KO)}</small></a>' for t in used)
     st = '<style>.dev-ch{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}.dev-ch a{padding:6px 12px;border:1px solid #e5e7eb;border-radius:99px;text-decoration:none;color:inherit;font-size:.9em}.dev-meta{display:block}.dev-meta em{font-style:normal;margin-left:6px;color:#4f46e5}</style>'
@@ -4283,8 +4310,48 @@ def dev_blog_pages(P, css):
     return urls
 
 
+I18N = {   # 라벨: checked, Home, Guides, Published, updated, Sources, Related(Korean)
+    'en': ('checked', 'Home', 'Guides', 'Published', 'updated', 'Sources', 'Related (Korean)'),
+    'ja': ('確認日', 'ホーム', 'ガイド', '公開日', '更新', '出典', '関連（韓国語）'),
+    'zh': ('核对日期', '首页', '指南', '发布日期', '更新', '来源', '相关（韩语）'),
+    'es': ('consultado', 'Inicio', 'Guías', 'Publicado', 'actualizado', 'Fuentes', 'Relacionado (coreano)'),
+    'vi': ('đã kiểm tra', 'Trang chủ', 'Hướng dẫn', 'Đăng ngày', 'cập nhật', 'Nguồn', 'Liên quan (tiếng Hàn)'),
+    'id': ('dicek', 'Beranda', 'Panduan', 'Terbit', 'diperbarui', 'Sumber', 'Terkait (bahasa Korea)'),
+    'th': ('ตรวจสอบเมื่อ', 'หน้าแรก', 'คู่มือ', 'เผยแพร่', 'อัปเดต', 'แหล่งที่มา', 'ที่เกี่ยวข้อง (ภาษาเกาหลี)'),
+}
+HUB_TXT = {   # 언어별 허브: title, description, h1, 소개
+    'ja': ('韓国での生活・仕事ガイド | Ruri Jupjup', '韓国で暮らし、働く外国人向けの実用ガイド。公式資料の出典と確認日付き。', '実用ガイド', '税金・住まい・AIツールまで、表とFAQ付きで整理しました。数字は公式資料に基づき、確認日を記載しています。'),
+    'zh': ('在韩国生活与工作指南 | Ruri Jupjup', '面向在韩外国人的实用指南，附官方来源与核对日期。', '实用指南', '从税务、住房到 AI 工具，配有表格与常见问题。数字均来自官方资料，并标注核对日期。'),
+    'es': ('Guías prácticas para vivir y trabajar en Corea | Ruri Jupjup', 'Guías prácticas para extranjeros en Corea, con fuentes oficiales y fecha de consulta.', 'Guías prácticas', 'Impuestos, vivienda, herramientas de IA y más, con tablas y preguntas frecuentes. Las cifras provienen de fuentes oficiales con su fecha de consulta.'),
+    'vi': ('Hướng dẫn sống và làm việc tại Hàn Quốc | Ruri Jupjup', 'Hướng dẫn thực tế cho người nước ngoài tại Hàn Quốc, kèm nguồn chính thức và ngày kiểm tra.', 'Hướng dẫn thực tế', 'Thuế, nhà ở, công cụ AI và nhiều hơn nữa, có bảng và câu hỏi thường gặp. Số liệu lấy từ nguồn chính thức, kèm ngày kiểm tra.'),
+    'id': ('Panduan hidup dan bekerja di Korea | Ruri Jupjup', 'Panduan praktis untuk warga asing di Korea, lengkap dengan sumber resmi dan tanggal pengecekan.', 'Panduan praktis', 'Pajak, tempat tinggal, alat AI, dan lainnya, dengan tabel dan FAQ. Angka berasal dari sumber resmi beserta tanggal pengecekan.'),
+    'th': ('คู่มือใช้ชีวิตและทำงานในเกาหลี | Ruri Jupjup', 'คู่มือปฏิบัติสำหรับชาวต่างชาติในเกาหลี พร้อมแหล่งข้อมูลทางการและวันที่ตรวจสอบ', 'คู่มือปฏิบัติ', 'ภาษี ที่อยู่อาศัย เครื่องมือ AI และอื่น ๆ พร้อมตารางและคำถามที่พบบ่อย ตัวเลขมาจากแหล่งข้อมูลทางการและระบุวันที่ตรวจสอบ'),
+}
+
+
+def hub_langs(cur):
+    return '<p class="dev-hub" lang="en">🌐 ' + ' · '.join((f'<b>{LANGS[lg][1]}</b>' if lg == cur else f'<a href="/{lg}/guide/" hreflang="{lg}" lang="{lg}">{LANGS[lg][1]}</a>') for lg in LANGS if lg == 'en' or lg in HUB_TXT) + '</p>'
+
+
+def lang_switch(u):
+    a = ALTS.get(u)
+    if not a:
+        return ''
+    return '<p class="dev-hub" lang="en">🌐 ' + ' · '.join((f'<b>{LANGS[hl][1]}</b>' if p == u else f'<a href="{p}" hreflang="{hl}" lang="{hl}">{LANGS[hl][1]}</a>') for hl, p in a) + '</p>'
+
+
 def dev_pages(live=()):
     P = dev_posts(); urls = []
+    ALTS.clear()
+    _grp = {}
+    for p in P:
+        if p['lang'] != 'ko':
+            _grp.setdefault(p['slug'], []).append(p)
+    for _sl, _ps in _grp.items():
+        if len(_ps) > 1:
+            _al = sorted([(q['lang'], dev_url(q)) for q in _ps], key=lambda x: (x[0] != 'en', x[0]))
+            for q in _ps:
+                ALTS[dev_url(q)] = _al
     try:
         print('개발 글 요청 후보', len(dev_requests(P)))
     except Exception as e:
@@ -4293,14 +4360,14 @@ def dev_pages(live=()):
            '.dev pre{background:#0f172a;color:#e2e8f0;padding:12px;border-radius:8px;overflow-x:auto;font-size:.85em}.dev code{font-size:.92em}.dev dt{font-weight:700;margin-top:10px}.dev dd{margin:4px 0 0 0}'
            '.dev-ls{list-style:none;padding:0}.dev-ls li{margin:8px 0}.dev-ls a{display:block;padding:12px;border:1px solid #e5e7eb;border-radius:10px;text-decoration:none;color:inherit}.dev-ls span{display:block;font-size:.88em;color:#64748b;margin-top:4px}</style>')
     for p in P:
-        u = dev_url(p); en = p['lang'] == 'en'
-        body_ = open(os.path.join(HERE, 'devsrc', p['slug'] + '.html'), encoding='utf-8').read()
+        u = dev_url(p); en = p['lang'] != 'ko'; lg = p['lang']; LB = I18N.get(lg, I18N['en'])
+        body_ = open(dev_src(p), encoding='utf-8').read()
         toc_ = ''
         if p['lang'] == 'ko':
             body_, toc_ = _dev_toc(body_)
         if '<!--FOREIGN_LIST-->' in body_:
             body_ = body_.replace('<!--FOREIGN_LIST-->', foreign_list_html(live))
-        src = ''.join(f'<li><a href="{E(x[1])}"' + ('' if x[1].startswith('/') else ' rel="nofollow noopener" target="_blank"') + f'>{E(x[0])}</a> — {"checked" if en else "확인"} {E(x[2])}</li>' for x in p.get('sources', []))
+        src = ''.join(f'<li><a href="{E(x[1])}"' + ('' if x[1].startswith('/') else ' rel="nofollow noopener" target="_blank"') + f'>{E(x[0])}</a> — {LB[0] if en else "확인"} {E(x[2])}</li>' for x in p.get('sources', []))
         hub = p.get('hub')
         _rm = _rmin(body_)
         meta_x = '' if en else f' · 읽는 시간 약 {_rm}분 · 작성 루리의 줍줍 편집'
@@ -4318,29 +4385,44 @@ def dev_pages(live=()):
             if _pv or _nx:
                 tail_x += '<nav class="dev-pn" aria-label="이전·다음 글">' + (f'<a href="{dev_url(_pv)}"><small>← 이전 글</small><b>{E(_pv["title"])}</b></a>' if _pv else '<span></span>') + (f'<a href="{dev_url(_nx)}"><small>다음 글 →</small><b>{E(_nx["title"])}</b></a>' if _nx else '<span></span>') + '</nav>'
             tail_x += '<p class="dev-hub"><a href="/dev/">← 기술 블로그 홈</a> · <a href="/ailog/">사이트 제작 로그</a> · <a href="/dev/rss.xml">RSS</a></p>'
-        body = (f'<p class="bc"><a href="/">{"Home" if en else "홈"}</a> › <a href="{"/en/guide/" if en else "/dev/"}">{"Guides" if en else "기술 블로그"}</a></p>'
-                f'<article class="dev" lang="{p["lang"]}"><h1>{E(p["title"])}</h1><p class="note">{"Published" if en else "작성"} {p["date"]}'
-                + (f' · {"updated" if en else "고침"} {p["updated"]}' if p.get('updated') else '') + meta_x + '</p>' + tagline_x
+        body = (f'<p class="bc"><a href="/">{LB[1] if en else "홈"}</a> › <a href="{f"/{lg}/guide/" if en else "/dev/"}">{LB[2] if en else "기술 블로그"}</a></p>'
+                f'<article class="dev" lang="{p["lang"]}"><h1>{E(p["title"])}</h1><p class="note">{LB[3] if en else "작성"} {p["date"]}'
+                + (f' · {LB[4] if en else "고침"} {p["updated"]}' if p.get('updated') else '') + meta_x + '</p>' + tagline_x
                 + ('' if en else f'<aside class="dev-sum"><b>30초 요약</b><p>{E(p["desc"])}</p></aside>') + toc_
-                + body_ + tail_x + (f'<h2>{"Sources" if en else "출처"}</h2><ul>{src}</ul>' if src else '')
-                + (f'<p class="dev-hub">{"Related (Korean)" if en else "관련"}: <a href="{E(hub[1])}">{E(hub[0])}</a></p>' if hub else '')
-                + ('<p class="dev-hub">Questions about how this was built? <a href="/dev/faq/">Dev FAQ</a></p>' if en else '<p class="dev-hub">이 글에 대해 묻고 싶으면 <a href="/dev/faq/">❓ 개발 FAQ</a>에 남겨 주세요.</p>')
-                + share_bar(p['title'], p['desc'], en) + f'</article>{css}<link rel="stylesheet" href="/assets/dev/dev.css?v=1"><script defer src="/assets/dev/dev.js?v=2"></script>')
+                + body_ + tail_x + (f'<h2>{LB[5] if en else "출처"}</h2><ul>{src}</ul>' if src else '')
+                + (f'<p class="dev-hub">{LB[6] if en else "관련"}: <a href="{E(hub[1])}">{E(hub[0])}</a></p>' if hub else '')
+                + (lang_switch(u) + ('<p class="dev-hub">Questions about how this was built? <a href="/dev/faq/">Dev FAQ</a></p>' if lg == 'en' else '') if en else '<p class="dev-hub">이 글에 대해 묻고 싶으면 <a href="/dev/faq/">❓ 개발 FAQ</a>에 남겨 주세요.</p>')
+                + share_bar(p['title'], p['desc'], lg == 'en') + f'</article>{css}<link rel="stylesheet" href="/assets/dev/dev.css?v=1"><script defer src="/assets/dev/dev.js?v=2"></script>')
         t = p['title'] + ' | Ruri Jupjup' if en and len(p['title']) + 14 <= 70 else p['title']
         ld = {'@context': 'https://schema.org', '@type': 'TechArticle', 'headline': p['title'][:110], 'description': p['desc'], 'inLanguage': p['lang'], 'datePublished': p['date'],
               'dateModified': p.get('updated') or p['date'], 'author': {'@type': 'Organization', 'name': NAME if en else '루리의 줍줍 편집'}, 'publisher': {'@type': 'Organization', 'name': NAME}, 'mainEntityOfPage': SITE + u, **({'keywords': ', '.join(DEV_TAGS.get(t, t) for t in p['tags'])} if p.get('tags') else {})}
-        page(u, t, p['desc'], body, [('Home' if en else NAME, '/'), ('Guides' if en else '기술 블로그', '/en/guide/' if en else '/dev/'), (p['title'], u)], ld=ld, full_title=en, lang=p['lang'])
+        page(u, t, p['desc'], body, [(LB[1] if en else NAME, '/'), (LB[2] if en else '기술 블로그', f'/{lg}/guide/' if en else '/dev/'), (p['title'], u)], ld=ld, full_title=en, lang=p['lang'])
         urls.append(u)
     urls += dev_faq_page(P)
     urls += dev_blog_pages(P, css)
+    _hubs = [(lg_, f'/{lg_}/guide/') for lg_ in LANGS if lg_ != 'ko' and (lg_ == 'en' or any(p['lang'] == lg_ for p in P))]
+    if len(_hubs) > 1:
+        for _l, _h in _hubs:
+            ALTS[_h] = _hubs
     EP = [p for p in P if p['lang'] == 'en']
     if EP:
         li = ''.join(f'<li><a href="{dev_url(p)}"><b>{E(p["title"])}</b><span>{E(p["desc"])}</span></a></li>' for p in sorted(EP, key=lambda p: p['date'], reverse=True))
         li = '<li><a href="/en/guide/new-game-releases-steam/"><b>New Game Releases on Steam: Confirmed Release Dates</b><span>Popular upcoming Steam games with a confirmed release day, updated several times a day.</span></a></li>' + li
         page('/en/guide/', 'Practical Guides: Life in Korea, AI Tools, Self-Hosting | Ruri Jupjup', 'Step-by-step English guides on living and working in Korea, AI tools at work, self-hosting and software testing, with official sources and dates.',
-             f'<p class="bc"><a href="/">Home</a> › Guides</p><h1>Practical guides</h1><p>Step-by-step guides with tables and FAQs. Numbers come from official sources, with the date we checked them.</p><ul class="dev-ls">{li}</ul>{css}',
+             f'<p class="bc"><a href="/">Home</a> › Guides</p><h1>Practical guides</h1><p>Step-by-step guides with tables and FAQs. Numbers come from official sources, with the date we checked them.</p>{hub_langs("en")}<ul class="dev-ls">{li}</ul>{css}',
              [('Home', '/'), ('Guides', '/en/guide/')], full_title=True, lang='en')
         urls.append('/en/guide/')
+    for lg_ in LANGS:
+        if lg_ in ('ko', 'en'):
+            continue
+        LP = sorted([p for p in P if p['lang'] == lg_], key=lambda p: p['date'], reverse=True)
+        if not LP or lg_ not in HUB_TXT:
+            continue
+        LH = HUB_TXT[lg_]
+        li = ''.join(f'<li><a href="{dev_url(p)}"><b>{E(p["title"])}</b><span>{E(p["desc"])}</span></a></li>' for p in LP)
+        page(f'/{lg_}/guide/', LH[0], LH[1], f'<p class="bc"><a href="/">{I18N[lg_][1]}</a> › {I18N[lg_][2]}</p><h1>{LH[2]}</h1><p>{LH[3]}</p>{hub_langs(lg_)}<ul class="dev-ls">{li}</ul>{css}',
+             [(I18N[lg_][1], '/'), (I18N[lg_][2], f'/{lg_}/guide/')], full_title=True, lang=lg_)
+        urls.append(f'/{lg_}/guide/')
     return urls
 
 
