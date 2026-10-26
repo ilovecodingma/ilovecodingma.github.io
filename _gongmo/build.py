@@ -87,7 +87,8 @@ THEMES += [   # 2026-10-23 사용자 「런처·주제별 메인 분리」: 생�
     ('watch', '웹툰·애니', '🎯', '#9333ea', '/watch/', [('/watch/', '오늘의 추천'), ('/watch/#webtoon', '웹툰'), ('/watch/#anime', '애니')], ['/watch/']),
     ('wiki', '루리 위키', '📚', '#0f766e', '/wiki/', [('/wiki/', '위키 홈'), ('/money/guide/', '생활 돈 가이드'), ('/guide/', '응모 가이드'), ('/ailog/', '개발 지식')], ['/wiki/'])]
 THEMES = [t for t in THEMES if t[0] != 'life']
-THEMES = [next(t for t in THEMES if t[0] == k) for k in ('today', 'recipe', 'watch', 'apply', 'contest', 'event', 'issue', 'money', 'game', 'plaza', 'ai', 'wiki')]
+THEMES.append(('diet', '다이어트', '🥗', '#16a34a', '/diet/', [('/diet/', '다이어트 허브'), ('/diet/meal/', '레시피 식단표'), ('/diet/workout/', '운동 사이클'), ('/diet/workout/#log', '기록'), ('/money/guide/meal-calorie-per-meal/', '식사 칼로리 가이드')], ['/diet/']))
+THEMES = [next(t for t in THEMES if t[0] == k) for k in ('today', 'recipe', 'watch', 'apply', 'contest', 'event', 'issue', 'money', 'game', 'plaza', 'diet', 'ai', 'wiki')]
 
 
 GN_MAIN = ('today', 'contest', 'apply', 'recipe', 'issue', 'wiki')   # 헤더에 항상 보이는 주요 주제(나머지는 「전체」)
@@ -473,6 +474,14 @@ _VF = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'contest_verified
 VER = {k: v for k, v in (json.load(open(_VF, encoding='utf-8')) if os.path.exists(_VF) else {}).items() if not k.startswith('_')}   # 공식 원문 대조 결과(2026-10-23)
 
 
+def jdump(obj, path, **kw):
+    """JSON 을 임시 파일에 쓰고 바꿔치기한다. 빌드가 중간에 끊겨도 기존 파일이 비지 않는다(2026-10-26 contest_hist.json 사고)."""
+    tmp = path + '.tmp'
+    with open(tmp, 'w', encoding='utf-8') as f_:
+        json.dump(obj, f_, **kw)
+    os.replace(tmp, path)
+
+
 def gone_pages():
     """한 번 만든 /c/·/a/ 주소는 데이터에서 빠져도 「마감」 안내로 남긴다(검색 제외). 2026-10-18 애드센스 심사 중 404 방지."""
     G = os.path.join(HERE, 'gone_pages.json')
@@ -486,7 +495,7 @@ def gone_pages():
         page(u, f'{t} (마감)', f'{t} — 접수가 끝났어요. 진행 중인 {bn}을 확인하세요.',
              f'<p class="bc"><a href="/">홈</a> › <a href="{back}">{E(bn)}</a></p><h1>{E(t)}</h1><p class="warn">{ddot(end)}에 마감된 공고예요. 정보가 더 이상 갱신되지 않아요.</p>'
              + say('sad', msg), [('루리의 줍줍', '/'), (bn, back)], noindex=True)
-    json.dump(old, open(G, 'w', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))
+    jdump(old, G, ensure_ascii=False, separators=(',', ':'))
 
 
 COLL = {}   # 합쳐서 없앤 얇은 페이지 → 데이터 화면 주소 (collapse_thin 이 채움)
@@ -540,7 +549,7 @@ def collapse_thin(urls):
             t = t.replace('<ul class="list" id="ap-list">', f'<!--ap-rest--><details class="fr-all"><summary>그 밖의 공고 {len(lone)}건 바로 가기</summary><ul>' + ''.join(f'<li><a href="{u}">{E(ti[u])}</a></li>' for u in lone) + '</ul></details><ul class="list" id="ap-list">', 1)
             open(ap_f, 'w', encoding='utf-8', newline=chr(10)).write(t)
     NOINDEX.difference_update(COLL)   # 없어진 페이지는 검색 제외 비율 계산에서도 뺌
-    json.dump(COLL, open(os.path.join(HERE, 'collapsed.json'), 'w', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))
+    jdump(COLL, os.path.join(HERE, 'collapsed.json'), ensure_ascii=False, separators=(',', ':'))
     return len(COLL), n
 
 
@@ -661,6 +670,59 @@ def corrections_page(live):
 
 
 CORR_REPORTS = []   # 오류 신고 처리 기록: 신고를 받아 확인한 결과를 여기에 {date, id, 내용, 결과} 로 추가한다(없으면 0건으로 표시)
+
+
+DIET_GUIDES = ['meal-calorie-per-meal', 'energy-requirement-estimation-formula', 'food-calorie-lookup-howto', 'weight-loss-pace-and-yoyo', 'korean-dietary-guidelines-sustainable-meals', 'low-carb-high-fat-vs-korean-standard',
+               'protein-sources-tofu-egg-bean', 'sugar-reduction-seasoning-swap', 'convenience-store-nutrition-label-diet', 'oatmeal-nutrition-and-expiry', 'walking-exercise-calorie-burn', 'walking-posture-and-start-guide']
+DIET_DISCLAIMER = '이 화면은 참고용이에요. 통증이 있거나 어지러우면 바로 멈추고, 질환이 있거나 임신 중이면 시작 전에 전문가와 상의하세요. 진단·치료·처방을 대신하지 않아요.'
+
+
+def diet_pages():
+    """/diet/ 허브(색인 대상: 가이드 연결 + 동작 사전)와 /diet/workout/ 앱 화면(검색 제외·광고 제외). 운동 목록은 _gongmo/diet/workouts.json 한 곳에서 읽고,
+    운동마다 따로 페이지를 만들지 않는다(얇은 페이지 방지). 영양 수치는 공식 DB 로 확인된 값이 들어오기 전에는 화면에 넣지 않는다."""
+    wp = os.path.join(HERE, 'diet', 'workouts.json')
+    if not os.path.exists(wp):
+        return []
+    W = json.load(open(wp, encoding='utf-8'))
+    os.makedirs(os.path.join(ROOT, 'assets', 'diet'), exist_ok=True)
+    shutil.copyfile(wp, os.path.join(ROOT, 'assets', 'diet', 'workouts.json'))
+    gk = {g_['slug']: g_ for g_ in json.load(open(os.path.join(HERE, 'kin_guides.json'), encoding='utf-8'))['guides']}
+    cards = ''.join(f'<a href="/money/guide/{sl}/"><b>{E(gk[sl]["h1"][:56])}</b><span>{E(re.sub(chr(32) + "+", " ", gk[sl]["lead"])[:92])}…</span></a>' for sl in DIET_GUIDES if sl in gk)
+    byp = collections.OrderedDict()
+    for w in W:
+        byp.setdefault(w['part'], []).append(w)
+    dic = ''.join(
+        f'<details><summary>{E(part)} <small style="margin-left:8px;color:var(--mu)">{len(L)}가지</small></summary><ul class="chk">'
+        + ''.join(f'<li><b>{E(w["name"])}</b> <em>{E(w["place"])}</em><ol>' + ''.join(f'<li>{E(x)}</li>' for x in w['steps']) + f'</ol><em>⚠ {E(w["caution"])}</em></li>' for w in L) + '</ul></details>'
+        for part, L in byp.items())
+    body = ('<p class="bc"><a href="/">홈</a> › 다이어트 도우미</p><h1>🥗 다이어트 도우미</h1>'
+            '<p class="lead" style="display:block">운동 사이클을 무작위로 짜고, 타이머로 따라 하고, 한 일을 이 기기에 기록해요. 아래 가이드는 공식 자료의 수치만 정리했어요.</p>'
+            f'<p class="note">{E(DIET_DISCLAIMER)} 기록은 이 기기의 브라우저에만 저장되고 서버로 보내지 않아요.</p>'
+            '<h2>바로 해 보기</h2><div class="dt-hub-grid">'
+            '<a href="/diet/workout/"><b>🏃 운동 사이클 뽑기</b><span>시간(10·20·30분)·부위·장소를 고르면 워밍업 → 본운동 → 쿨다운을 무작위로 짜 줘요. 타이머와 음성 안내, 완료 체크까지.</span></a>'
+            '<a href="/diet/meal/"><b>🗓️ 레시피 식단표</b><span>조리 시간·성향·빼고 싶은 재료를 고르면 레시피 1,300여 개 중에서 7일 식단표를 짜 줘요. 장보기 목록과 먹은 끼니 체크까지(열량은 공식 값이 확인된 메뉴부터).</span></a>'
+            '<a href="/diet/workout/#log"><b>📅 운동 기록</b><span>달력에 완료한 날을 표시하고 연속 일수, 주간 달성률, 주간 운동 시간을 보여 줘요.</span></a></div>'
+            '<h2>공식 자료로 정리한 가이드</h2><div class="dt-hub-grid">' + cards + '</div>'
+            f'<h2>운동 동작 사전 <small style="font-size:14px;color:var(--mu)">{len(W)}가지</small></h2>'
+            '<p class="note">동작 설명은 일반적인 자세 안내예요. 세트·횟수는 공식 자료로 확인되지 않아서 적지 않았어요. 본인 체력에 맞게 하세요.</p>'
+            f'<div class="dt-dict">{dic}</div>'
+            '<h2>식단·칼로리</h2><p class="note">식단표와 칼로리별 레시피는 식약처 식품영양성분 DB, 농촌진흥청 표준식품성분표로 확인한 값만 쓰려고 준비 중이에요. 확인되기 전에는 숫자를 보여 주지 않아요. 열리면 이 허브에 먼저 안내할게요.</p>'
+            '<link rel="stylesheet" href="/assets/diet/workout.css?v=2">')
+    page('/diet/', '다이어트 도우미 — 운동 사이클 뽑기·기록·공식 자료 가이드', f'운동 사이클을 무작위로 짜서 타이머로 따라 하고 기록하는 도우미. 공식 자료로 정리한 다이어트 가이드 12편과 운동 동작 사전 {len(W)}가지(참고용).',
+         body, [('루리의 줍줍', '/'), ('다이어트 도우미', '/diet/')])
+    app = ('<p class="bc"><a href="/">홈</a> › <a href="/diet/">다이어트 도우미</a> › 운동 사이클</p><h1>🏃 운동 사이클</h1>'
+           f'<p class="note">{E(DIET_DISCLAIMER)}</p><div id="dtw"><p class="note">불러오는 중…</p></div>'
+           '<noscript><p class="note">이 화면은 자바스크립트가 필요해요. 동작 설명은 <a href="/diet/">다이어트 도우미</a>의 운동 동작 사전에서 볼 수 있어요.</p></noscript>'
+           '<link rel="stylesheet" href="/assets/diet/workout.css?v=2"><script defer src="/assets/diet/workout.js?v=1"></script>')
+    page('/diet/workout/', '운동 사이클 뽑기·타이머·기록', '시간·부위·장소를 고르면 운동 사이클을 무작위로 짜고 타이머로 진행하며 완료를 기록해요(참고용, 기록은 이 기기에만 저장).',
+         app, [('루리의 줍줍', '/'), ('다이어트 도우미', '/diet/'), ('운동 사이클', '/diet/workout/')], noindex=True)
+    meal = ('<p class="bc"><a href="/">홈</a> › <a href="/diet/">다이어트 도우미</a> › 레시피 식단표</p><h1>🗓️ 레시피 식단표</h1>'
+            f'<p class="note">{E(DIET_DISCLAIMER)}</p><div id="dtm"><p class="note">불러오는 중…</p></div>'
+            '<noscript><p class="note">이 화면은 자바스크립트가 필요해요. 레시피는 <a href="/fridge/">오늘 뭐 먹지</a>에서 볼 수 있어요.</p></noscript>'
+            '<link rel="stylesheet" href="/assets/diet/workout.css?v=2"><script defer src="/assets/diet/meal.js?v=1"></script>')
+    page('/diet/meal/', '레시피 식단표 — 7일 식단·장보기·먹은 끼니 체크', '조리 시간·성향·빼고 싶은 재료를 고르면 레시피로 7일 식단표를 짜고 장보기 목록을 만들어요(참고용, 기록은 이 기기에만 저장).',
+         meal, [('루리의 줍줍', '/'), ('다이어트 도우미', '/diet/'), ('레시피 식단표', '/diet/meal/')], noindex=True)
+    return ['/diet/']
 
 
 def auto_thin(urls):
@@ -1946,7 +2008,10 @@ def build():
         pass
     # 공고 변경 이력 (2026-10-19 지침 3.3): 마감일·상금·자격·제목·링크가 바뀌면 날짜와 함께 기록
     HF = os.path.join(HERE, 'contest_hist.json')
-    HIST.update(json.load(open(HF, encoding='utf-8')) if os.path.exists(HF) else {})
+    try:   # 빌드가 중간에 끊겨 파일이 비면(2026-10-26 사고) 이력을 새로 시작하되 빌드는 멈추지 않는다
+        HIST.update(json.load(open(HF, encoding='utf-8')) if os.path.exists(HF) else {})
+    except Exception as e_:
+        print('contest_hist.json 읽기 실패 → 새로 시작', e_)
     for c in contests:
         cur = {k: c.get(k) or '' for k in ('title', 'end', 'prize', 'elig', 'link')}
         h_ = HIST.setdefault(c['id'], {'first': TODAY.isoformat(), 'cur': cur, 'chg': []})
@@ -1954,7 +2019,9 @@ def build():
         if diff:
             h_['chg'] = (h_['chg'] + [{'d': TODAY.isoformat(), 'f': {k: [h_['cur'].get(k), cur[k]] for k in diff}}])[-10:]
             h_['cur'] = cur
-    json.dump(HIST, open(HF, 'w', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))
+    _tmp = HF + '.tmp'   # 임시 파일에 쓰고 바꿔치기: 쓰는 도중 끊겨도 기존 파일이 비지 않게
+    json.dump(HIST, open(_tmp, 'w', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))
+    os.replace(_tmp, HF)
     events = [e for e in events if dday(e['end'])[0] >= (1 if late else 0)]
     for d in ('c', 'cat', 'event', 'guide'):
         shutil.rmtree(os.path.join(ROOT, d), ignore_errors=True)
@@ -2305,6 +2372,7 @@ def build():
     import wiki as _WK   # 2026-10-23 루리 위키: 정보성 글을 docs 형태(왼쪽 목록·오른쪽 목차·이전/다음)로 묶는다
     print('루리 위키 글/적용', _WK.build_wiki(urls, NOINDEX, page, ROOT, SITE)); urls.append('/wiki/')
     corrections_page(live); urls.append('/corrections/')
+    urls.extend(diet_pages())
     try:
         import make_pdf as _MP
         _pp = [u for u in urls if _MP.is_pdf_path(u) and u not in NOINDEX]
@@ -2325,7 +2393,7 @@ def build():
             h_ = PAGE_HASH.get(u)
             if u not in lm or (h_ and lm[u][0] != h_):
                 lm[u] = [h_, TODAY.isoformat()]
-        json.dump(lm, open(LM, 'w', encoding='utf-8'), ensure_ascii=False)
+        jdump(lm, LM, ensure_ascii=False)
         chg = [SITE + u for u in urls if u.startswith('/c/') and u not in NOINDEX and lm[u][1] == TODAY.isoformat() and SITE + u not in NEW_URLS and lm[u][0] != _lm_old.get(u)]
         NEW_URLS.extend(chg[:100])   # 2026-10-19: 바뀐 공모전 상세도 IndexNow 로
         f.writelines(f'<url><loc>{SITE}{u}</loc><lastmod>{lm[u][1]}</lastmod>' + (f'<xhtml:link rel="alternate" hreflang="en" href="{SITE}{u}"/>' if u.startswith('/en/') else '') + '</url>\n' for u in urls if u not in NOINDEX)
@@ -2963,6 +3031,8 @@ def kin_guides():
         faq, ld = _faq([(q, a) for q, a in g['faq']])
         src = ''.join(f'<li><a href="{E(u)}" target="_blank" rel="noopener nofollow">{E(n)}</a></li>' for n, u in g['sources'])
         rel = ' · '.join(f'<a href="{E(u)}">{E(t)}</a>' for u, t in g['related'])
+        if g['slug'] in DIET_GUIDES:   # 다이어트 가이드 하단 관련 링크에 허브·운동 앱을 함께 둔다
+            rel = (rel + ' · ' if rel else '') + '<a href="/diet/">🥗 다이어트 도우미</a> · <a href="/diet/workout/">🏃 운동 사이클 뽑기</a>'
         body = (f'<p class="bc"><a href="/">홈</a> › <a href="/money/guide/">생활 돈 가이드</a> › {E(g["name"])}</p>' + guide_cover(g) + f'<h1 class="g-h1">{E(g["h1"])}</h1>' + g_meta
                 + f'<div class="g-sum"><b>3줄 요약</b>{_sum3(g["lead"])}</div>'
                 + f'<p class="kwn">기준: {E(g["basis"])}' + (' · 원문 바로가기: ' + ' · '.join(f'<a href="{E(u)}" target="_blank" rel="noopener">{E(n)}</a>' for n, u in g['sources'][:4])) + '</p>' + g_toc + _jr_nav(g, JIDX, GN) + _alert(g) + secs + _jr_box(g, JIDX, GN) + '<section class="gs gs-faq" id="faq"><h2><span class="gs-n">?</span>자주 묻는 질문</h2>' + faq + '</section>'
@@ -5633,7 +5703,7 @@ def indexnow(urls):
     if ok_:   # 보낸 주소 기록(사이트맵 기준 첫 실행 이후로는 이 파일로 새 주소 판정)
         SENT = os.path.join(HERE, 'indexnow_sent.json')
         old = set(json.load(open(SENT, encoding='utf-8'))) if os.path.exists(SENT) else set()
-        json.dump(sorted(old | set(urls)), open(SENT, 'w', encoding='utf-8'), ensure_ascii=False)
+        jdump(sorted(old | set(urls)), SENT, ensure_ascii=False)
 
 
 def daily_jobs():
@@ -5656,7 +5726,7 @@ def daily_jobs():
                     a_ = sum(x.get(k, 0) for x in imp) / len(imp); c_ = sum(x.get(k, 0) for x in ci) / max(1, len(ci))
                     w[k] = round(min(2, max(0.3, w[k] * (1.1 if c_ > a_ * 1.05 else 0.9 if c_ < a_ * 0.95 else 1))), 3)
                 w['updated'] = d; w['note'] = f'노출 {len(imp)} · 클릭 {len(clk)} 기준 조정'
-                json.dump(w, open(WF, 'w', encoding='utf-8'), ensure_ascii=False)
+                jdump(w, WF, ensure_ascii=False)
             print('추천 가중치', w)
             st['tune'] = d
         except Exception as e:

@@ -1,0 +1,50 @@
+/* 다이어트 도우미 — 운동 사이클 앱 (2026-10-26) */
+#dtw{max-width:720px;margin:0 auto}
+.dt-tabs{display:flex;gap:8px;margin:0 0 12px}
+.dt-tabs button{flex:1;min-height:46px;border:1px solid var(--bd);border-radius:14px;background:var(--card);color:var(--mu);font:inherit;font-weight:800;cursor:pointer}
+.dt-tabs button.on{background:var(--brand,#6d28d9);border-color:var(--brand,#6d28d9);color:#fff}
+.dt-card{border:1px solid var(--bd);border-radius:20px;background:var(--card);padding:18px 18px 16px;margin:0 0 14px;box-shadow:0 10px 30px -22px color-mix(in srgb,var(--brand,#6d28d9) 50%,transparent)}
+.dt-card h2{margin:0 0 6px;font-size:20px}.dt-card h2 small{font-size:13px;color:var(--mu);font-weight:600;margin-left:6px}
+.dt-card h3{font-size:15px;margin:14px 0 6px;color:var(--mu)}
+.dt-sub{color:var(--mu);font-size:14px;line-height:1.6;margin:6px 0 10px}
+.dt-l{font-size:13px;font-weight:800;color:var(--mu);margin:14px 0 6px}
+.dt-ch{display:flex;flex-wrap:wrap;gap:8px}
+.dt-ch button{min-height:44px;padding:0 18px;border:1px solid var(--bd);border-radius:999px;background:transparent;color:var(--tx);font:inherit;font-weight:700;cursor:pointer}
+.dt-ch button.on{background:color-mix(in srgb,var(--brand,#6d28d9) 14%,var(--card));border-color:var(--brand,#6d28d9);color:var(--brand,#6d28d9)}
+.dt-go{display:block;width:100%;min-height:54px;margin:18px 0 4px;border:0;border-radius:16px;background:linear-gradient(135deg,#16a34a,#0e7490);color:#fff;font:inherit;font-size:17px;font-weight:900;cursor:pointer}
+.dt-go[disabled]{opacity:.5}
+.dt-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}.dt-row .dt-go{flex:1 1 100%;margin:0}
+.dt-2{flex:1 1 120px;min-height:46px;border:1px solid var(--bd);border-radius:14px;background:var(--card);color:var(--tx);font:inherit;font-weight:800;cursor:pointer}
+.dt-li{margin:0;padding-left:22px}.dt-li li{margin:4px 0}.dt-li small{color:var(--mu)}
+.dt-note{font-size:12.5px;color:var(--mu);line-height:1.6;margin:6px 4px}
+.dt-today{padding:10px 14px;border-radius:14px;background:color-mix(in srgb,#16a34a 10%,var(--card));font-size:14px;font-weight:700}
+.dt-run.work{border-color:#16a34a}.dt-run.rest{border-color:#0891b2}
+.dt-kind{margin:0;font-weight:800;color:var(--mu)}.dt-kind small{margin-left:6px}
+.dt-timer{font-size:64px;font-weight:900;text-align:center;letter-spacing:.02em;margin:6px 0;font-variant-numeric:tabular-nums}
+.dt-setno{text-align:center;margin:0 0 6px;font-weight:800;color:var(--brand,#6d28d9)}
+.dt-bar{height:8px;border-radius:99px;background:var(--bd);overflow:hidden;margin:8px 0 12px}.dt-bar i{display:block;height:100%;background:linear-gradient(90deg,#16a34a,#0e7490)}.dt-bar.big{height:12px}
+.dt-steps{padding-left:22px;margin:8px 0}.dt-steps li{margin:6px 0;line-height:1.6}
+.dt-caution{background:color-mix(in srgb,#f59e0b 14%,var(--card));border-radius:12px;padding:8px 12px;font-size:14px;margin:8px 0}
+.dt-chk{list-style:none;margin:14px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:6px}.dt-chk li{font-size:14px;color:var(--mu)}.dt-chk li.ok{color:var(--tx);font-weight:700}
+.dt-stamp{display:inline-block;margin:10px 0;padding:8px 16px;border:3px double #16a34a;border-radius:14px;color:#16a34a;font-weight:900;transform:rotate(-3deg)}
+.dt-cal{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;text-align:center;margin:8px 0}.dt-cal b{font-size:12px;color:var(--mu)}
+.dt-cal span{min-height:38px;display:flex;align-items:center;justify-content:center;border-radius:10px;font-size:14px}.dt-cal span.on{background:color-mix(in srgb,#16a34a 18%,var(--card));color:#16a34a;font-weight:900}.dt-cal span.t{outline:2px solid var(--brand,#6d28d9)}
+.dt-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin:12px 0}.dt-stats div{border:1px solid var(--bd);border-radius:14px;padding:10px 12px}.dt-stats small{display:block;color:var(--mu);font-size:12px}.dt-stats b{font-size:20px}
+#dt-goal{min-height:40px;border:1px solid var(--bd);border-radius:10px;background:var(--card);color:var(--tx);font:inherit;padding:0 10px}
+@media (max-width:420px){.dt-timer{font-size:54px}.dt-card{padding:14px}}
+/* 허브 */
+.dt-hub-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px;margin:12px 0}
+.dt-hub-grid a{display:block;padding:14px 16px;border:1px solid var(--bd);border-radius:16px;background:var(--card);color:var(--tx);text-decoration:none}
+.dt-hub-grid a b{display:block;margin-bottom:4px}.dt-hub-grid a span{font-size:13.5px;color:var(--mu);line-height:1.55;display:block}
+.dt-dict details{border:1px solid var(--bd);border-radius:14px;background:var(--card);margin:8px 0;padding:2px 14px}.dt-dict summary{cursor:pointer;min-height:44px;display:flex;align-items:center;font-weight:800}
+.dt-dict li{margin:10px 0}.dt-dict ol{margin:4px 0 4px 18px;padding:0}.dt-dict em{font-style:normal;color:var(--mu);font-size:13px}
+/* 식단표 */
+.dm-in{width:100%;box-sizing:border-box;margin:8px 0;min-height:44px;padding:0 12px;border:1px solid var(--bd);border-radius:12px;background:var(--card);color:var(--tx);font:inherit}
+.dm-chk{display:flex;align-items:center;gap:8px;margin:10px 0;font-size:14px}.dm-chk small{color:var(--mu)}
+.dm-days{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px}
+.dm-day{border:1px solid var(--bd);border-radius:14px;padding:10px 12px;background:var(--card)}.dm-day>b{display:block;margin-bottom:6px}.dm-day em{font-style:normal;font-size:12px;color:#fff;background:var(--brand,#6d28d9);border-radius:999px;padding:1px 8px;margin-left:4px}
+.dm-m{padding:8px 0;border-top:1px dashed var(--bd);font-size:14px}.dm-m.ok{opacity:.72}.dm-m a{color:var(--tx);text-decoration:none}.dm-m small{display:block;color:var(--mu)}
+.dm-sl{display:inline-block;min-width:38px;font-size:12px;font-weight:800;color:var(--mu)}
+.dm-ac{display:flex;gap:6px;margin-top:6px}.dm-ac button{min-height:36px;padding:0 10px;border:1px solid var(--bd);border-radius:10px;background:transparent;color:var(--tx);font:inherit;font-size:13px;cursor:pointer}
+.dm-kcal{display:block;font-size:13px;font-weight:700}.dm-kcal small{display:inline;font-weight:400}
+.dm-shop{list-style:none;margin:0 0 6px;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:4px}.dm-shop li.ok{opacity:.55;text-decoration:line-through}.dm-shop small{color:var(--mu)}
