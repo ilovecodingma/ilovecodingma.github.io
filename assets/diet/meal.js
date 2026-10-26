@@ -70,7 +70,7 @@
   var tones = ['아무거나', '든든', '가벼움', '안 매움', '매움', '아이'];
   function paint() {
     var o = S.opts, fr = fridge();
-    var optsHtml = '<section class="dt-card"><h2>조건 고르기</h2><p class="dt-sub">조건에 맞는 메뉴로 7일 식단표를 짜 드려요. 같은 메뉴는 한 주에 한 번만 나오고, 같은 종류(국물·면·볶음…)가 연달아 나오지 않게 해요.</p>'
+    var optsHtml = '<section class="dt-card"><img class="dt-cut dt-cut-r" src="/assets/ruri/o_dt_salad.webp" width="120" height="166" alt="샐러드를 든 루리" loading="lazy"><h2>조건 고르기</h2><p class="dt-sub">조건에 맞는 메뉴로 7일 식단표를 짜 드려요. 같은 메뉴는 한 주에 한 번만 나오고, 같은 종류(국물·면·볶음…)가 연달아 나오지 않게 해요.</p>'
       + '<p class="dt-l">하루 끼니</p><div class="dt-ch" data-k="meals">' + [[2, '2끼(점심·저녁)'], [3, '3끼']].map(function (x) { return '<button type="button" data-v="' + x[0] + '" class="' + (o.meals === x[0] ? 'on' : '') + '">' + x[1] + '</button>'; }).join('') + '</div>'
       + '<p class="dt-l">조리 시간(최대)</p><div class="dt-ch" data-k="max">' + [[15, '15분'], [30, '30분'], [60, '60분']].map(function (x) { return '<button type="button" data-v="' + x[0] + '" class="' + (o.max === x[0] ? 'on' : '') + '">' + x[1] + '</button>'; }).join('') + '</div>'
       + '<p class="dt-l">성향</p><div class="dt-ch" data-k="tone">' + tones.map(function (x) { return '<button type="button" data-v="' + esc(x) + '" class="' + (o.tone === x ? 'on' : '') + '">' + esc(x) + '</button>'; }).join('') + '</div>'

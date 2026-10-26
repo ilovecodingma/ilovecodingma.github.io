@@ -48,3 +48,9 @@
 .dm-ac{display:flex;gap:6px;margin-top:6px}.dm-ac button{min-height:36px;padding:0 10px;border:1px solid var(--bd);border-radius:10px;background:transparent;color:var(--tx);font:inherit;font-size:13px;cursor:pointer}
 .dm-kcal{display:block;font-size:13px;font-weight:700}.dm-kcal small{display:inline;font-weight:400}
 .dm-shop{list-style:none;margin:0 0 6px;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:4px}.dm-shop li.ok{opacity:.55;text-decoration:line-through}.dm-shop small{color:var(--mu)}
+/* 운동하는 루리 컷 */
+.dt-cut{height:auto;display:block}.dt-cut-r{float:right;margin:0 0 8px 12px;filter:drop-shadow(0 6px 10px rgba(0,0,0,.15))}
+.dt-card::after{content:"";display:block;clear:both}
+.dt-hero{display:flex;flex-wrap:wrap;align-items:flex-end;gap:12px;margin:6px 0 4px}.dt-hero-t{flex:1 1 300px}
+.dt-hero-i{display:flex;gap:2px;flex:1 1 300px;justify-content:flex-end;overflow:hidden}.dt-hero-i img{width:auto;height:96px;flex:none}
+@media (max-width:520px){.dt-hero-i{justify-content:flex-start;overflow-x:auto}.dt-hero-i img{height:84px}}

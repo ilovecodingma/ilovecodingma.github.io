@@ -48,6 +48,8 @@
     if (out.length) out.pop();   // 마지막 휴식은 뺀다
     return out;
   }
+  var CUT = { '스트레칭': 'o_dt_stretch', '하체': 'o_dt_mat', '복부': 'o_dt_mat', '상체': 'o_dt_dumbbell', '전신': 'o_dt_run' };
+  var cutImg = function (name, cls, w) { return '<img class="dt-cut ' + (cls || '') + '" src="/assets/ruri/' + name + '.webp" width="' + (w || 150) + '" height="' + Math.round((w || 150) * 415 / 300) + '" alt="운동하는 루리" loading="lazy">'; };
   var setText = function (w) { return (w.sets === '공식 확인' || w.reps_or_sec === '공식 확인') ? '세트·횟수: 공식 안내를 확인하세요 · ' + NOTE_SET : '세트 ' + esc(w.sets) + ' · ' + esc(w.reps_or_sec); };
 
   // ---------- 화면 ----------
@@ -65,7 +67,7 @@
   var sel = { min: 20, part: '전신', place: '집' };
   function chips(name, arr, cur) { return '<div class="dt-ch" data-k="' + name + '">' + arr.map(function (x) { return '<button type="button" data-v="' + esc(x[0]) + '" class="' + (String(cur) === String(x[0]) ? 'on' : '') + '">' + esc(x[1]) + '</button>'; }).join('') + '</div>'; }
   function paintMake() {
-    ROOT.innerHTML = tabs() + '<section class="dt-card"><h2>오늘은 얼마나 움직일까요?</h2><p class="dt-sub">시간·부위·장소를 고르면 워밍업 → 본운동 → 쿨다운을 무작위로 짜 드려요. 같은 운동이 연달아 나오지 않아요.</p>'
+    ROOT.innerHTML = tabs() + '<section class="dt-card">' + cutImg('o_dt_stretch', 'dt-cut-r', 120) + '<h2>오늘은 얼마나 움직일까요?</h2><p class="dt-sub">시간·부위·장소를 고르면 워밍업 → 본운동 → 쿨다운을 무작위로 짜 드려요. 같은 운동이 연달아 나오지 않아요.</p>'
       + '<p class="dt-l">시간</p>' + chips('min', [[10, '10분'], [20, '20분'], [30, '30분']], sel.min)
       + '<p class="dt-l">부위</p>' + chips('part', [['전신', '전신'], ['하체', '하체'], ['상체', '상체'], ['복부', '복부'], ['스트레칭', '스트레칭']], sel.part)
       + '<p class="dt-l">장소</p>' + chips('place', [['집', '집'], ['밖', '밖']], sel.place)
@@ -84,7 +86,7 @@
   }
   function paintPlan() {
     var enough = plan.main.length >= 1;
-    ROOT.innerHTML = tabs() + '<section class="dt-card"><h2>오늘의 운동 사이클 <small>' + plan.min + '분 · ' + esc(plan.part) + ' · ' + esc(plan.place) + '</small></h2>'
+    ROOT.innerHTML = tabs() + '<section class="dt-card">' + cutImg('o_dt_dumbbell', 'dt-cut-r', 110) + '<h2>오늘의 운동 사이클 <small>' + plan.min + '분 · ' + esc(plan.part) + ' · ' + esc(plan.place) + '</small></h2>'
       + (enough ? liHtml(plan.warm, '워밍업') + liHtml(plan.main, '본운동 (각 ' + plan.sets + '세트)') + liHtml(plan.cool, '쿨다운') : '<p>조건에 맞는 운동이 부족해요. 부위나 장소를 바꿔 다시 뽑아 보세요.</p>')
       + '<p class="dt-sub">동작은 30초 동안 하고 15초 쉬는 타이머로 진행해요. ' + esc(NOTE_SET) + '</p>'
       + '<div class="dt-row"><button type="button" class="dt-go" id="dt-start"' + (enough ? '' : ' disabled') + '>▶ 시작하기</button><button type="button" class="dt-2" id="dt-again">🎲 다시 뽑기</button><button type="button" class="dt-2" id="dt-back">← 조건 바꾸기</button></div></section>' + foot();
@@ -126,7 +128,7 @@
   function paintRun() {
     var s = run.q[run.i], w = s.w, total = run.q.length;
     var order = [].concat(plan.warm, plan.main, plan.cool);
-    ROOT.innerHTML = '<section class="dt-card dt-run ' + s.phase + '"><p class="dt-kind">' + esc(s.kind) + ' · ' + (s.phase === 'work' ? '운동 중' : '휴식') + ' <small>' + (run.i + 1) + '/' + total + '</small></p>'
+    ROOT.innerHTML = '<section class="dt-card dt-run ' + s.phase + '">' + cutImg(s.phase === 'work' ? (CUT[w.part] || 'o_dt_run') : 'o_dt_water', 'dt-cut-r', 96) + '<p class="dt-kind">' + esc(s.kind) + ' · ' + (s.phase === 'work' ? '운동 중' : '휴식') + ' <small>' + (run.i + 1) + '/' + total + '</small></p>'
       + '<h2>' + esc(s.phase === 'work' ? w.name : '쉬는 시간') + '</h2>'
       + '<div class="dt-timer" id="dt-t" aria-live="off">' + fmt(run.left) + '</div>'
       + (s.sets > 1 && s.phase === 'work' ? '<p class="dt-setno">세트 ' + s.set + ' / ' + s.sets + '</p>' : '')
@@ -177,7 +179,7 @@
     for (var j = 0; j <= dow; j++) { var kk = ymd(new Date(now.getTime() - j * 864e5)); if (S.log[kk]) { wk++; wmin += S.log[kk].minutes; } }
     var goal = S.goal || 3, pct = Math.min(100, Math.round(wk / goal * 100));
     var tot = Object.keys(S.log).reduce(function (a, k) { return a + S.log[k].cycles; }, 0);
-    ROOT.innerHTML = tabs() + '<section class="dt-card"><h2>' + y + '년 ' + (m + 1) + '월 운동 기록</h2><div class="dt-cal"><b>일</b><b>월</b><b>화</b><b>수</b><b>목</b><b>금</b><b>토</b>' + cells + '</div>'
+    ROOT.innerHTML = tabs() + '<section class="dt-card">' + cutImg('o_dt_scale', 'dt-cut-r', 96) + '<h2>' + y + '년 ' + (m + 1) + '월 운동 기록</h2><div class="dt-cal"><b>일</b><b>월</b><b>화</b><b>수</b><b>목</b><b>금</b><b>토</b>' + cells + '</div>'
       + '<div class="dt-stats"><div><small>연속 일수</small><b>' + streak + '일</b></div><div><small>이번 주 운동한 날</small><b>' + wk + '일</b></div><div><small>이번 주 운동 시간</small><b>' + wmin + '분</b></div><div><small>누적 사이클</small><b>' + tot + '회</b></div></div>'
       + '<p class="dt-l">주간 목표 <select id="dt-goal" aria-label="주간 목표 횟수">' + [1, 2, 3, 4, 5, 6, 7].map(function (n) { return '<option value="' + n + '"' + (n === goal ? ' selected' : '') + '>주 ' + n + '회</option>'; }).join('') + '</select></p>'
       + '<div class="dt-bar big"><i style="width:' + pct + '%"></i></div><p class="dt-sub">이번 주 달성률 <b>' + pct + '%</b> (' + wk + '/' + goal + '일)</p>'
