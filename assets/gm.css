@@ -298,3 +298,9 @@ body{background:
 @media (max-width:520px){.hm-hero{padding:20px 16px 10px;border-radius:20px}}
 .say .bub{background:linear-gradient(135deg,var(--card,#fff),color-mix(in srgb,var(--brand,#6d28d9) 6%,var(--card,#fff)));box-shadow:0 6px 18px -12px color-mix(in srgb,var(--brand,#6d28d9) 50%,transparent)}
 @media (prefers-reduced-motion:no-preference){.hm-hero{animation:hmin .5s ease both}@keyframes hmin{from{opacity:.0;transform:translateY(6px)}to{opacity:1;transform:none}}}
+/* 2026-10-27 모바일: 필터 줄이 화면 가운데 떠서 카드 글자가 비쳐 보이고 세로를 40% 차지함 → 고정 해제, 한 줄에 두 칸씩 압축 */
+@media (max-width:700px){
+.bar{position:static;padding:6px 0;gap:6px}
+.bar input{flex:1 1 100%}
+.bar select{flex:1 1 calc(50% - 6px);min-width:0;min-height:40px;font-size:14px;padding:6px 10px}
+}
