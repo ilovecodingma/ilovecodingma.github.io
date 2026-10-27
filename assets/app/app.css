@@ -15,3 +15,4 @@
 .app-cta{display:flex;gap:10px;align-items:center;background:linear-gradient(135deg,#7c3aed,#db2777);color:#fff;border-radius:16px;padding:12px 14px;text-decoration:none;margin:14px 0}.app-cta b{font-size:15px}.app-cta span{font-size:12.5px;opacity:.9;display:block}
 
 .ap-feat ul{margin:0;padding-left:20px;font-size:14.5px;line-height:1.8}.ap-main{background:#fff7ed;border:1px solid #fed7aa;border-radius:12px;padding:10px 12px}
+.ap-sw{flex-wrap:wrap}.ap-fh{min-height:40px;border:1px solid #cbd5e1;border-radius:10px;padding:0 8px;font:inherit;background:transparent;color:inherit}@media(max-width:520px){.ap-sw{min-height:44px;align-items:center}}
