@@ -628,6 +628,12 @@ export default {
           refs: chans(W7), refsToday: chans(TD),
           cities: rank(W7, x => (x.country || '') + ' ' + (x.city || ''), 10).map(x => ({ c: x.k, v: x.v })),
           mobile: { m: new Set(W7.filter(x => x.mobile === 1).map(x => x.vid)).size, v: uv(W7) },
+          vn: (() => {   // 미연시(/vn/*) 유입 — 이미 읽은 H 에서만 계산, 새 쿼리 없음
+            const isVn = x => (x.path || '').startsWith('/vn');
+            const V7 = W7.filter(isVn), VT = TD.filter(isVn);
+            return { today: { v: uv(VT), pv: VT.length }, week: { v: uv(V7), pv: V7.length },
+              pages: rank(V7, x => x.path, 5).map(x => ({ path: x.k, pv: x.pv, v: x.v })), refs: chans(V7) };
+          })(),
           widgets: wr.results || [],
           widgetClicks: rank(W7.filter(x => (x.ref || '').slice(0, 6) === 'src:w_'), x => x.ref.slice(6), 50).map(x => ({ k: x.k, v: x.v })),
           recent: H.slice().sort((p1, q1) => q1.ts - p1.ts).slice(0, 30).map(h => ({ ts: h.ts, path: h.path, ref: h.ref, city: h.city, mobile: h.mobile, uid: h.uid })),
