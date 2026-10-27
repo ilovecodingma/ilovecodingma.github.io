@@ -28,7 +28,7 @@
     if (perm !== 'granted') throw new Error('알림이 차단돼 있어요. 브라우저 주소창 왼쪽 자물쇠 → 알림 → 허용으로 바꿔 주세요.');
     const reg = await ready();
     const sub = (await reg.pushManager.getSubscription()) || await reg.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey: key() });
-    await post('/api/push/sub', { sub: sub.toJSON(), cats: opt.cats, newc: opt.newc ? 1 : 0, dl: opt.dl ? 1 : 0, meal: opt.meal === false ? 0 : 1, fit: opt.fit ? 1 : 0, fh: opt.fh == null ? 20 : opt.fh, dl2: opt.dl2 ? 1 : 0 });
+    await post('/api/push/sub', { sub: sub.toJSON(), cats: opt.cats, newc: opt.newc ? 1 : 0, dl: opt.dl ? 1 : 0, meal: opt.meal === false ? 0 : 1, fit: opt.fit ? 1 : 0, fh: opt.fh == null ? 19 : opt.fh, dl2: opt.dl2 ? 1 : 0 });
     put(opt);
     return reg;
   }
@@ -57,14 +57,14 @@
   }
   async function paintPush() {
     const el = ROOT.querySelector('.ap-push'), cats = JSON.parse(ROOT.dataset.cats || '[]');
-    const on = await isOn(), cur = Object.assign({ cats: [], newc: true, dl: true, meal: true, fit: false, fh: 20, dl2: false }, get() || {});
+    const on = await isOn(), cur = Object.assign({ cats: [], newc: true, dl: true, meal: true, fit: false, fh: 19, dl2: false }, get() || {});
     el.innerHTML = `<label class="ap-sw ap-main"><input type="checkbox" class="ap-meal" ${cur.meal ? 'checked' : ''}> 🍽️ <b>오늘 뭐 먹지?</b> 점심·저녁 메뉴 추천 (11:30·17:30쯤, 하루 최대 2번)</label>
 <p class="ap-sm">관심 분야를 고르면 <b>새 공모전이 올라온 날 저녁에 한 번</b>, <b>인기 공모전 마감 3일 전</b>에 폰으로 알려 드려요. 하루 최대 2번이에요.</p>
 <div class="ap-cats">${cats.map(([s, n, i]) => `<button data-c="${s}" class="${cur.cats.includes(s) ? 'on' : ''}">${i} ${esc(n)}</button>`).join('')}</div><p class="ap-sm">하나도 안 고르면 전체 분야로 받아요.</p>
 <label class="ap-sw"><input type="checkbox" class="ap-newc" ${cur.newc ? 'checked' : ''}> 🆕 새 공모전 올라오면 (저녁 7시쯤 모아서)</label>
 <label class="ap-sw"><input type="checkbox" class="ap-dl" ${cur.dl ? 'checked' : ''}> ⏰ 인기 공모전 마감 3일 전 (아침 9시쯤)</label>
 <label class="ap-sw"><input type="checkbox" class="ap-dl2" ${cur.dl2 ? 'checked' : ''}> 📅 고른 분야 마감 <b>7일 전·하루 전</b> (아침 9시쯤, 마감일이 확정된 것만)</label>
-<label class="ap-sw"><input type="checkbox" class="ap-fit" ${cur.fit ? 'checked' : ''}> 💪 <b>오늘 운동했나요?</b> 하루 한 번 알림 · <select class="ap-fh" aria-label="알림 시각">${[7, 8, 9, 12, 18, 19, 20, 21, 22].map(h => `<option value="${h}" ${+cur.fh === h ? 'selected' : ''}>${h < 12 ? '오전 ' + h : '오후 ' + (h > 12 ? h - 12 : 12)}시</option>`).join('')}</select></label>
+<label class="ap-sw"><input type="checkbox" class="ap-fit" ${cur.fit ? 'checked' : ''}> 💪 <b>오늘 운동했나요?</b> 하루 한 번 알림 · <select class="ap-fh" aria-label="알림 시각">${[9, 11, 17, 19].map(h => `<option value="${h}" ${+cur.fh === h ? 'selected' : ''}>${h < 12 ? '오전 ' + h : '오후 ' + (h > 12 ? h - 12 : 12)}시</option>`).join('')}</select></label>
 <button class="ap-btn ap-on">${on ? '💾 알림 설정 저장' : '🔔 알림 켜기'}</button>${on ? '<button class="ap-off">알림 끄기</button>' : ''}<p class="ap-msg">${on ? '✅ 알림이 켜져 있어요.' : ''}</p>`;
     el.querySelectorAll('.ap-cats button').forEach(b => b.onclick = () => b.classList.toggle('on'));
     const msg = el.querySelector('.ap-msg');
