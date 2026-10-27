@@ -64,3 +64,22 @@
 .hb-d.on i{background:color-mix(in srgb,#16a34a 16%,var(--card));border-color:#16a34a}.hb-d.t i{outline:2px solid var(--brand,#6d28d9);outline-offset:1px}.hb-d.f{opacity:.55}
 .hb-inst{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:8px}.hb-inst small{color:var(--mu);font-size:12.5px;flex:1 1 200px}
 .hb-x{margin-left:auto;border:0;background:none;color:var(--mu);font:inherit;font-size:12.5px;cursor:pointer;min-height:36px}
+/* 폰 화면 보강 (2026-10-27) */
+.dt-card,.dm-day,.dt-hub-grid a{min-width:0;overflow-wrap:anywhere}
+.dt-card img{max-width:100%}
+@media (max-width:520px){
+  .dt-cut-r{width:88px;height:auto;margin:0 0 6px 10px}
+  .dt-card h2{font-size:18px}
+  .dt-tabs button{font-size:14px;padding:0 4px}
+  .dt-ch button{padding:0 14px;flex:1 1 auto}
+  .dt-go{min-height:56px;font-size:16px}
+  .dm-days,.dm-shop,.dt-hub-grid{grid-template-columns:1fr}
+  .dm-ac button{min-height:44px;flex:1}
+  .dm-chk{min-height:44px}
+  .dt-stats b{font-size:18px}
+  .hb-top{flex-wrap:wrap}.hb-h{font-size:16px}.hb-s{font-size:13px}
+  .hb-week{gap:4px}.hb-d{font-size:11px}.hb-d i{border-radius:10px}
+  .hb-inst .dt-2,.hb-x{min-height:44px}
+  .hb-inst small{flex-basis:100%}
+}
+@media (max-width:360px){.dt-timer{font-size:46px}.dt-cut-r{display:none}}
