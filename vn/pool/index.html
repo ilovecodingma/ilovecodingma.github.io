@@ -1,7 +1,8 @@
 <!doctype html>
-<html lang="ko"><head><meta charset="utf-8">
+<html lang="ko">
+<head>
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="robots" content="noindex,nofollow">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-G9BPFF95GY"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());if(location.hostname!=='sungprofile.cloud')window['ga-disable-G-G9BPFF95GY']=true;gtag('config','G-G9BPFF95GY');</script>
 <script>/* 관리자 방문 통계용 기록(운영 도메인만). 사이트 공통 comm.js 와 같은 /api/hit 형식 */
@@ -9,207 +10,432 @@
 setTimeout(function(){fetch('https://jupjup-api.sung2011103.workers.dev/api/hit',{method:'POST',keepalive:true,headers:{'Content-Type':'application/json'},body:JSON.stringify({p:location.pathname,r:document.referrer,s:(q.get('src')||(q.get('utm_source')||'').replace(/[^a-z0-9_-]/gi,'')).slice(0,16),c:(q.get('utm_campaign')||'').replace(/[^a-z0-9_-]/gi,'').slice(0,40),v:v})}).catch(function(){})},400)}catch(e){}})();</script>
 <title>루리와 함께하는 수영장 파티</title>
 <style>
-:root{--bg:#1b1535;--pk:#ff7ab6;--tx:#fff}
-*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-html,body{margin:0;height:100%;background:#0b0818;color:var(--tx);font-family:-apple-system,"Malgun Gothic","Noto Sans KR",sans-serif;overscroll-behavior:none}
-#app{position:relative;margin:0 auto;width:100%;max-width:480px;height:100dvh;overflow:hidden;background:var(--bg);user-select:none}
-.bg{position:absolute;inset:0;transition:background .6s}
-#ch{position:absolute;left:50%;bottom:150px;width:min(86%,400px);transform:translateX(-50%);transition:opacity .25s;pointer-events:none;filter:drop-shadow(0 8px 18px rgba(0,0,0,.4));animation:bob 4s ease-in-out infinite}
-@keyframes bob{50%{transform:translateX(-50%) translateY(-6px)}}
-#hud{position:absolute;top:max(10px,env(safe-area-inset-top));left:12px;right:12px;display:flex;justify-content:space-between;align-items:center;font-size:14px;font-weight:800;z-index:5}
-#hud span{background:rgba(0,0,0,.45);border-radius:999px;padding:6px 12px}
-#hud button{background:rgba(0,0,0,.45);border:0;color:#fff;border-radius:999px;padding:6px 12px;font:inherit;font-size:13px;min-height:36px}
-#box{position:absolute;left:10px;right:10px;bottom:max(12px,env(safe-area-inset-bottom));min-height:150px;background:rgba(15,10,35,.86);border:1px solid rgba(255,255,255,.2);border-radius:18px;padding:14px 16px 16px;z-index:4;backdrop-filter:blur(6px)}
-#who{font-weight:900;color:var(--pk);font-size:15px;margin-bottom:6px;min-height:20px}
-#tx{font-size:17px;line-height:1.65;min-height:84px}
-#nx{position:absolute;right:16px;bottom:10px;color:var(--pk);animation:bl 1s infinite}
-@keyframes bl{50%{opacity:.2}}
-#cs{position:absolute;left:10px;right:10px;bottom:176px;display:flex;flex-direction:column;gap:10px;z-index:6}
-#cs button{min-height:52px;border:1px solid rgba(255,255,255,.35);border-radius:14px;background:rgba(40,25,80,.92);color:#fff;font:inherit;font-size:16px;font-weight:700;padding:10px 14px;text-align:left}
-#cs button:active{background:var(--pk);color:#201030}
-.ov{position:absolute;inset:0;z-index:20;display:flex;align-items:center;justify-content:center;padding:20px;background:linear-gradient(160deg,#2a1856,#120b2a)}
-.ov .cd{width:100%;max-width:380px;text-align:center}
-.ov h1{font-size:26px;margin:0 0 4px}.ov p{color:#cbbcff;margin:6px 0 14px;font-size:14.5px;line-height:1.6}
-.ov img{width:170px;margin:-6px auto 4px;display:block}
-.ov input{width:100%;min-height:50px;margin:5px 0;border-radius:12px;border:1px solid #6b57b8;background:#1d1440;color:#fff;font:inherit;font-size:16px;padding:0 14px}
-.ov .go{width:100%;min-height:54px;margin-top:8px;border:0;border-radius:14px;background:linear-gradient(135deg,#ff7ab6,#a855f7);color:#fff;font:inherit;font-size:17px;font-weight:900}
-.ov .sw{background:none;border:0;color:#cbbcff;text-decoration:underline;font:inherit;font-size:14px;min-height:44px;margin-top:6px}
-#er{color:#ff9aa8;font-size:14px;min-height:20px}
-#cg{position:absolute;inset:0;z-index:15;background:rgba(0,0,0,.88);display:none;align-items:center;justify-content:center;flex-direction:column;padding:20px;text-align:center}
-#cg .fr{width:100%;max-width:340px;aspect-ratio:9/16;max-height:70dvh;border:2px solid var(--pk);border-radius:16px;background:#1d1440;display:flex;align-items:center;justify-content:center;overflow:hidden}
-#cg img{width:100%;height:100%;object-fit:cover}
-#cg button{margin-top:14px;min-height:50px;padding:0 28px;border:0;border-radius:14px;background:var(--pk);color:#201030;font:inherit;font-weight:900;font-size:16px}
-</style></head><body>
-<div id="app">
- <div class="bg" id="bg"></div>
- <img id="ch" alt="">
- <div id="hud"><span>💗 호감도 <b id="af">0</b></span><button id="mn">메뉴</button></div>
- <div id="cs"></div>
- <div id="box"><div id="who"></div><div id="tx"></div><span id="nx">▼</span></div>
- <div id="cg"><div class="fr" id="cgf"></div><button id="cgx">계속</button></div>
- <div class="ov" id="gate" style="display:none"><div class="cd">
-  <img src="../img/smile.webp" alt="루리">
-  <h1>루리와 함께하는<br>수영장 파티</h1>
-  <p id="gp">가입하면 호감도와 진행 상황이 계정에 저장돼요.<br>다음에 와도 이어서 할 수 있어요.</p>
-  <input id="em" type="email" placeholder="이메일" autocomplete="email" inputmode="email">
-  <input id="pw" type="password" placeholder="비밀번호 (8자 이상)" autocomplete="current-password">
-  <div id="er"></div>
-  <button class="go" id="gb">가입하고 시작하기</button>
-  <button class="sw" id="sw">이미 계정이 있어요 · 로그인</button>
- </div></div>
+  :root { color-scheme: dark; --pink: #ffb3d1; --bg: #0b0b10; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; background: var(--bg); color: #fff; font-family: "Malgun Gothic", system-ui, sans-serif; }
+  button { font-family: inherit; cursor: pointer; }
+  #game { position: relative; height: 100vh; height: 100dvh; max-width: calc(100dvh * 9 / 16); margin: 0 auto; overflow: hidden; background: linear-gradient(160deg, #1b2a4a, #3a1f4a); user-select: none; }
+  #bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  #bg.off { display: none; }
+  #keyTag { position: absolute; top: 44%; width: 100%; text-align: center; opacity: .3; font-size: 14px; }
+  #hud { position: absolute; top: 10px; left: 12px; right: 12px; display: flex; justify-content: space-between; align-items: center; font-size: 13px; text-shadow: 0 1px 3px #000; z-index: 3; }
+  #hud button { all: unset; cursor: pointer; padding: 4px 6px; }
+  #bar { width: 90px; height: 6px; border-radius: 3px; background: rgba(255,255,255,.25); overflow: hidden; display: inline-block; vertical-align: middle; margin-left: 6px; }
+  #bar i { display: block; height: 100%; background: var(--pink); width: 50%; transition: width .4s; }
+  #box { position: absolute; left: 10px; right: 10px; bottom: 12px; min-height: 130px; padding: 14px 16px 20px; border-radius: 14px; background: rgba(10,10,20,.78); backdrop-filter: blur(4px); cursor: pointer; z-index: 2; }
+  #name { font-weight: 700; color: var(--pink); margin-bottom: 6px; min-height: 1.2em; }
+  #text { line-height: 1.6; font-size: 16px; white-space: pre-line; }
+  #next { position: absolute; right: 14px; bottom: 8px; font-size: 12px; opacity: .7; animation: bl 1s infinite; }
+  @keyframes bl { 50% { opacity: .1; } }
+  #choices { position: absolute; left: 10px; right: 10px; bottom: 14px; display: flex; flex-direction: column; gap: 10px; z-index: 2; }
+  #choices button { padding: 14px; border: 1px solid var(--pink); border-radius: 12px; background: rgba(20,10,20,.88); color: #fff; font-size: 16px; }
+  #choices button:hover, #choices button:focus-visible { background: var(--pink); color: #200; outline: none; }
+  #timer { height: 5px; background: var(--pink); border-radius: 3px; width: 100%; transform-origin: left; }
+  #timer.run { transition: transform 3s linear; transform: scaleX(0); }
+  #hint { text-align: center; font-size: 13px; text-shadow: 0 1px 3px #000; }
+  .panel { position: absolute; inset: 0; z-index: 5; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; background: rgba(0,0,0,.72); padding: 20px; text-align: center; }
+  .panel h1 { margin: 0; font-size: 28px; line-height: 1.3; }
+  .panel p { margin: 0; opacity: .85; line-height: 1.6; }
+  .panel button { padding: 12px 32px; font-size: 17px; border: 0; border-radius: 999px; background: var(--pink); color: #200; }
+  .panel button.sub { background: transparent; color: #fff; border: 1px solid #fff6; }
+  #gallery { justify-content: flex-start; background: rgba(11,11,16,.97); overflow-y: auto; }
+  #gallery h2 { margin: 28px 0 0; }
+  .grp { width: 100%; text-align: left; }
+  .grp h3 { margin: 8px 0; font-size: 15px; color: var(--pink); }
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+  .cell { aspect-ratio: 9 / 16; background: #1a1a24; border-radius: 6px; overflow: hidden; position: relative; border: 0; padding: 0; }
+  .cell img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .cell.locked::after { content: "🔒"; position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 22px; background: #000a; }
+  .kcard { margin-bottom: 6px; }
+  .khead { all: unset; display: block; width: 100%; padding: 10px 12px; box-sizing: border-box; background: #1a1a24; border-radius: 8px; font-size: 14px; cursor: pointer; }
+  .khead:disabled { opacity: .45; cursor: default; }
+  .kcard .grid { margin: 6px 0 10px; }
+  #viewer img { max-height: 78dvh; max-width: 100%; border-radius: 10px; }
+  .hidden { display: none !important; }
+</style>
+</head>
+<body>
+<div id="game">
+  <img id="bg" class="off" alt="">
+  <div id="keyTag"></div>
+  <div id="hud">
+    <span>♥ <b id="aff">50</b><span id="bar"><i></i></span></span>
+    <span><button id="gBtn">갤러리</button></span>
+  </div>
+  <div id="choices" class="hidden"></div>
+  <div id="box" class="hidden"><div id="name"></div><div id="text"></div><div id="next">▶</div></div>
+
+  <div id="title" class="panel">
+    <h1>루리와 함께하는<br>수영장 파티</h1>
+    <p>호감도에 따라 엔딩 4종이 갈립니다.<br>엔딩을 볼수록 갤러리가 열려요.</p>
+    <button id="startBtn">시작하기</button>
+    <button id="titleG" class="sub">갤러리</button>
+  </div>
+
+  <div id="endPanel" class="panel hidden">
+    <h1 id="endTitle"></h1>
+    <p id="endInfo"></p>
+    <button id="shareBtn">공유하기</button>
+    <button id="retryBtn" class="sub">다른 엔딩 보기 (막6부터)</button>
+    <button id="againBtn" class="sub">처음부터</button>
+    <button id="endG" class="sub">갤러리</button>
+  </div>
+
+  <div id="gallery" class="panel hidden">
+    <h2>갤러리</h2>
+    <p id="gInfo"></p>
+    <div id="gGroups" style="width:100%"></div>
+    <button id="gClose" class="sub">닫기</button>
+  </div>
+
+  <div id="viewer" class="panel hidden"><img id="vImg" alt=""><button id="vShare">공유</button><button id="vClose" class="sub">닫기</button></div>
 </div>
+
 <script>
-(function () {
-  var API = 'https://jupjup-api.sung2011103.workers.dev', E = function (id) { return document.getElementById(id); };
-  var tok = function () { try { return localStorage.getItem('jupjup_tok') || ''; } catch (e) { return ''; } };
-  var setTok = function (t) { try { localStorage.setItem('jupjup_tok', t); } catch (e) {} };
-  var ga = function (n, p) { try { window.gtag && gtag('event', n, p || {}); } catch (e) {} };
-  function api(path, body, method) {
-    return fetch(API + path, { method: method || (body ? 'POST' : 'GET'), headers: Object.assign({ 'Content-Type': 'application/json' }, tok() ? { Authorization: 'Bearer ' + tok() } : {}), body: body ? JSON.stringify(body) : undefined })
-      .then(function (r) { return r.json().catch(function () { return {}; }).then(function (d) { if (!r.ok) throw new Error(d.error || '잠시 뒤에 다시 해 주세요.'); return d; }); });
-  }
-  var BG = { pool: 'linear-gradient(#58c7ff 0%,#9be6ff 45%,#2aa7d6 46%,#0b6aa8 100%)', bar: 'linear-gradient(#ffd27a,#ff9a62 55%,#2aa7d6 56%,#0b6aa8)', sun: 'linear-gradient(#ff9a62,#ff6fa5 45%,#3a2f8f 46%,#1a1550)', dusk: 'linear-gradient(#2a1856,#6b3a8a 50%,#12204f 51%,#070a24)' };
-  var RT = { a: ['🧊 파라솔 아래 아이스바', 'a1'], b: ['🛟 튜브 타고 물놀이 시합', 'b1'], c: ['🌅 선베드에서 노을 보기', 'c1'] };
-  // l: [표정, 화자, 대사] / c: [선택지, 호감도, 다음] / go: 다음 / ev: 호감도가 충분하면 이벤트 CG / route: 루트 끝(다음 루트 고르기)
-  var S = {
-    start: { bg: 'pool', l: [['excited', '루리', '왔다! 오늘 수영장 파티, 빠지면 서운할 뻔했어요!'], ['smile', '루리', '음료도 얼음도 준비해 놨어요. 오늘은 일 얘기 금지예요!']],
-      c: [['초대해 줘서 고마워요', 2, 'p2'], ['저 수영은 잘 못해요…', 1, 'p2s'], ['오늘 분위기 최고예요', 2, 'p2']] },
-    p2: { bg: 'pool', l: [['wink', '루리', '좋아요, 그 말 듣고 싶었어요. 오늘 같이 제대로 놀아요!']], go: 'pick' },
-    p2s: { bg: 'pool', l: [['smile', '루리', '괜찮아요, 제가 튜브 끌어 줄게요. 얕은 데서 천천히 해요.']], go: 'pick' },
-    pick: { bg: 'pool', l: [['think', '루리', '자, 뭐부터 할래요? 시간은 넉넉해요.']], more: 1 },
-    a1: { bg: 'bar', l: [['smile', '루리', '여기 파라솔 아래가 제일 시원해요. 아이스바 골라 봐요!'], ['think', '루리', '딸기, 소다, 망고… 뭐 먹을래요?']],
-      c: [['딸기요, 루리 씨는요?', 2, 'a2'], ['소다 맛이요', 1, 'a2'], ['루리 씨가 골라 주세요', 2, 'a2b']] },
-    a2: { bg: 'bar', l: [['excited', '루리', '우와, 취향 비슷하다! 그럼 우리 바꿔 먹어 봐요, 한입씩!']], go: 'a3' },
-    a2b: { bg: 'bar', l: [['wink', '루리', '제 선택을 믿는군요? 그럼 망고! 후회 없을걸요.']], go: 'a3' },
-    a3: { bg: 'bar', l: [['surprise', '루리', '앗, 바람이 세졌어요! 수건이 날아가요, 잡아 줘요!'], ['excited', '루리', '아슬아슬했다… 덕분에 살았어요!']],
-      c: [['달려가서 잡을게요!', 3, 'a4'], ['같이 뛰어요!', 2, 'a4'], ['…이미 바다까지 갔어요', 1, 'a4b']], ev: 1 },
-    a4: { bg: 'bar', l: [['smile', '루리', '든든한데요? 오늘 MVP는 정해졌어요.']], route: 'a', ev: 1 },
-    a4b: { bg: 'bar', l: [['smile', '루리', '푸핫, 수건아 잘 가. 다음 건 단단히 묶어 둘게요.']], route: 'a' },
-    b1: { bg: 'pool', l: [['excited', '루리', '튜브 시합이에요! 반대편 끝까지 먼저 가는 사람이 소원 하나!'], ['wink', '루리', '준비됐죠? 봐주기 없어요.']],
-      c: [['좋아요, 진심으로 갑니다', 2, 'b2'], ['소원 먼저 정해 둘게요', 2, 'b2b'], ['저는 구경만 할래요', 0, 'b2c']] },
-    b2: { bg: 'pool', l: [['excited', '루리', '하나, 둘, 셋! 으아, 물 튀겼다! 차가워어!']], go: 'b3' },
-    b2b: { bg: 'pool', l: [['think', '루리', '소원 먼저라니, 이긴다는 자신감? 두고 봐요!']], go: 'b3' },
-    b2c: { bg: 'pool', l: [['sad', '루리', '에이, 같이 놀자고 불렀는데…'], ['smile', '루리', '알았어요, 대신 응원 크게 해 줘요!']], go: 'b3' },
-    b3: { bg: 'pool', l: [['surprise', '루리', '앗, 튜브 구멍! 바람 빠져요, 가라앉는다아!'], ['excited', '루리', '살려 줘요, 팀워크 시험이에요!']],
-      c: [['제 튜브에 타요!', 3, 'b4'], ['같이 수영해서 끌어요', 2, 'b4'], ['구명조끼 가져올게요', 1, 'b4b']], ev: 1 },
-    b4: { bg: 'pool', l: [['smile', '루리', '푹 젖었다… 그래도 재밌어요. 이긴 사람은 없지만 소원은 서로 하나씩 해요?']], route: 'b', ev: 1 },
-    b4b: { bg: 'pool', l: [['wink', '루리', '준비성 철저하네요. 이래서 같이 오고 싶었어요.']], route: 'b' },
-    c1: { bg: 'sun', l: [['smile', '루리', '해가 지고 있어요. 이 시간 수영장이 제일 예뻐요.'], ['think', '루리', '선베드 나란히 놓을까요?']],
-      c: [['좋아요, 나란히요', 2, 'c2'], ['음악 틀어도 돼요?', 2, 'c2b'], ['저는 서 있을게요', 0, 'c2c']] },
-    c2: { bg: 'sun', l: [['smile', '루리', '여기서 이렇게 보니까 하루가 아깝지 않네요.']], go: 'c3' },
-    c2b: { bg: 'sun', l: [['excited', '루리', '좋아요! 제가 여름 플레이리스트 만들어 왔는데!']], go: 'c3' },
-    c2c: { bg: 'sun', l: [['think', '루리', '앉아요, 안 잡아먹어요. 노을은 같이 보는 거예요.']], go: 'c3' },
-    c3: { bg: 'dusk', l: [['think', '루리', '있잖아요, 이런 파티 처음이에요. 항상 일만 해서.'], ['smile', '루리', '오늘 불러 줄 사람이 있다는 게 좋았어요.']],
-      c: [['앞으로도 자주 불러 줘요', 3, 'c4'], ['저도 오늘이 제일 좋았어요', 3, 'c4'], ['다음엔 바다 가요', 2, 'c4b']], ev: 1 },
-    c4: { bg: 'dusk', l: [['surprise', '루리', '…진짜요? 약속이에요.'], ['smile', '루리', '그럼 제일 예쁜 곳으로 데려갈게요.']], route: 'c', ev: 1 },
-    c4b: { bg: 'dusk', l: [['excited', '루리', '바다! 좋아요, 달력에 표시해 둘게요!']], route: 'c' },
-    end: { bg: 'dusk', fin: 1 }
+(() => {
+  "use strict";
+  const $ = (id) => document.getElementById(id);
+  const ga = (n, p) => { try { window.gtag && gtag("event", n, p || {}); } catch (e) {} };
+  const SAVE_KEY = "vn_pool_v2";
+  const START_AFF = 50;       // 선택지로 얻는 총합이 -15~+37 이라 0 시작으로는 90 에 닿지 못한다
+  const RETRY_ACT = 5;        // 인덱스. 막6
+  const TIMER_MS = 3000;
+
+  // ── 이야기 ───────────────────────────────────────────
+  // step: {say, who, cg, min} | {choice:id, opts, timer, when}
+  // min 이 붙은 대사는 그 호감도 이상일 때만 나온다
+  const R = "루리";
+  const ACTS = [
+    [ // 막1 도착
+      { who: "", say: "수영장 파라솔 아래, 루리가 손을 흔든다.", cg: "pl_wave" },
+      { who: R, say: "왔네. 늦을 줄 알았는데.", cg: "pl_parasol" },
+      { who: R, say: "자리 잡아뒀어. 저기 끝이 제일 시원해.", cg: "pl_stretch" },
+      { choice: "A", opts: [
+        { text: "\"기다렸어?\"", d: 3, reply: [R, "글쎄. 음료는 두 개 시켰지만."] },
+        { text: "\"사람 많네\"", d: 1, reply: [R, "그러니까 끝자리라니까."] },
+        { text: "말없이 앉는다", d: 0, reply: [R, "…뭐, 편한 대로."] },
+      ] },
+    ],
+    [ // 막2 물놀이
+      { who: R, say: "들어와. 미지근해서 들어가면 별거 아니야.", cg: "pl_swim" },
+      { choice: "B", opts: [
+        { text: "같이 들어간다", d: 4, cg: "pl_splash" },
+        { text: "물총을 집는다", d: 3, cg: "pl_gun", reply: [R, "야. 그거 내려놔. 진심으로."] },
+        { text: "발만 담근다", d: 1, cg: "pl_edge" },
+      ] },
+      { choice: "C", when: (s) => s.flags.B !== 2, opts: [
+        { text: "물을 끼얹는다", d: (s) => (s.aff < 30 ? -2 : 2), reply: [R, "…너 지금 선 넘었어."], replyIf: (s) => s.aff < 30 },
+        { text: "튜브를 밀어준다", d: 4, cg: "pl_float" },
+        { text: "먼저 나온다", d: 0 },
+      ] },
+    ],
+    [ // 막3 휴식
+      { who: "", say: "선베드에 눕자 시원한 음료가 나왔다.", cg: "pl_lounge" },
+      { who: "", say: "루리가 잔을 들어 올린다.", cg: "pl_drink" },
+      { who: R, say: "등. 손이 안 닿아." },
+      { choice: "D", opts: [
+        { text: "발라준다", d: 6, cg: "pl_cream", reply: [R, "…고마워. 그만. 됐어."] },
+        { text: "\"직접 해\"", d: -3, reply: [R, "치사하네."] },
+        { text: "수건을 건넨다", d: 2, cg: "pl_towel2" },
+      ] },
+      { min: 58, who: R, say: "보지 마. …아니, 잠깐만 돌아서 있어.", cg: "ox_wet" },
+    ],
+    [ // 막4 간식
+      { who: "", say: "그늘 아래 수박과 바비큐가 차려졌다.", cg: "pl_melon" },
+      { who: "", say: "고기 굽는 냄새가 번진다.", cg: "pl_bbq" },
+      { who: R, say: "하나 남았는데. 반 나눌래?", cg: "nk_hold" },
+      { choice: "E", opts: [
+        { text: "\"반만\"", d: 4, cg: "pl_share" },
+        { text: "\"다 먹어\"", d: 3, reply: [R, "그럼 사양 안 할게."] },
+        { text: "\"내가 다 먹을게\"", d: -2, reply: [R, "…너 그런 놈이었구나."] },
+      ] },
+    ],
+    [ // 막5 사고
+      { who: "", say: "젖은 타일에서 루리의 발이 미끄러진다!", cg: "pl_slip" },
+      { choice: "F", timer: true, hint: "3초 안에 고르세요!", timeoutIdx: 2, opts: [
+        { text: "잡는다", d: 8, cg: "pl_bump", reply: [R, "…놔. 아니, 고마워. 놔."] },
+        { text: "비킨다", d: -5, cg: "pl_slip" },
+        { text: "아무것도 못 한다", d: -2 },
+      ] },
+      { who: "", say: "차가운 물이 튀었다.", cg: "pl_cold" },
+      { min: 66, who: "", say: "바람에 수건이 날아간다.", cg: "ox_towelfly" },
+      { min: 66, who: "", say: "어깨끈이 흘러내린다.", cg: "ox_strap" },
+      { min: 66, who: R, say: "…아무 말도 하지 마." },
+    ],
+    [ // 막6 친밀
+      { who: "", say: "해가 진다.", cg: "pl_lean" },
+      { choice: "G", opts: [
+        { text: "\"조금 더 있자\"", d: 5, cg: "pl_lean" },
+        { text: "\"이제 갈까\"", d: 0 },
+        { text: "손을 내민다", d: (s) => (s.aff >= 72 ? 8 : -4), cg: (s) => (s.aff >= 72 ? "pl_hand" : "pl_pout") },
+      ] },
+    ],
+    [ // 막7 밤
+      { who: R, say: "폭죽 사 왔어. 한 개씩.", cg: "pl_night" },
+    ],
+  ];
+
+  // 엔딩 기준은 도달 가능한 호감 범위(35~87)에 맞춰 시나리오 값(90/60/30)을 당겼다
+  const ENDINGS = [
+    { id: "star", min: 85, title: "별 엔딩", cg: "pl_star", who: R, say: "또 부를게. 다음엔 네가 사." },
+    { id: "fire", min: 65, title: "폭죽 엔딩", cg: "pl_fire", who: R, say: "오늘 나쁘지 않았어." },
+    { id: "night", min: 45, title: "야간 수영 엔딩", cg: "pl_night", who: R, say: "먼저 가. 난 좀 더 있을래." },
+    { id: "dissolve", min: -999, title: "해산 엔딩", cg: "pl_pout", who: R, say: "…다음은 없을 것 같은데." },
+  ];
+
+  const GALLERY = [
+    { name: "포즈", keys: ["nk_front", "nk_back", "nk_split", "nk_three", "nk_shy"], rule: "엔딩 1개", ok: (p) => p.endings.length >= 1 },
+    { name: "포즈+", keys: ["nk_bend", "nk_oops"], rule: "서로 다른 엔딩 2개", ok: (p) => p.endings.length >= 2 },
+    { name: "아슬아슬", keys: ["ox_towel", "ox_tie", "ox_back", "ox_press"], rule: "호감 72 이상으로 엔딩", ok: (p) => p.best >= 72 && p.endings.length >= 1 },
+    { name: "아슬아슬+", keys: ["ox_hair", "ox_foam", "ox_steam", "ox_leaves", "ox_petals"], rule: "호감 85 (별 엔딩)", ok: (p) => p.endings.includes("star") },
+    { name: "마지막", keys: ["ox_down", "ox_down2", "ox_bare_arm", "ox_bare_hand"], rule: "엔딩 4종 전부", ok: (p) => ENDINGS.every((e) => p.endings.includes(e.id)) },
+  ];
+
+  // ── 상태·저장 ────────────────────────────────────────
+  let manifest = { order: [], cg: {} };
+  let st = null;
+  let timerId = null;
+  let lastShare = "";
+
+  const store = {
+    get() {
+      try { const v = JSON.parse(localStorage.getItem(SAVE_KEY)); if (v && Array.isArray(v.endings)) { v.seen = Array.isArray(v.seen) ? v.seen : []; return v; } } catch (e) {}
+      return { endings: [], best: 0, seen: [] };
+    },
+    set(v) { try { localStorage.setItem(SAVE_KEY, JSON.stringify(v)); } catch (e) {} },
   };
-  var st = { n: 'start', i: 0, aff: 0, seen: [], ends: 0, cgs: 0, done: [], rev: 0 }, typing = null, busy = false, CGS = [];
 
-  function save() {
-    try { localStorage.setItem('jupjup_vp', JSON.stringify(st)); } catch (e) {}
-    if (!tok()) return;
-    api('/api/me').then(function (m) {
-      var d = m.prefs || {}; d.vp = [st.n, st.i, st.aff, st.ends, st.cgs].join('.');
-      return api('/api/prefs', { data: d });
-    }).catch(function () {});
+  const newRun = (act, aff) => ({ act, i: 0, aff, flags: {}, actAff: aff, ending: null });
+
+  // ── 이미지 ───────────────────────────────────────────
+  function cgSrc(key, idx) {
+    const list = manifest.cg[key];
+    if (!list || !list.length) return "";
+    return "img/" + (list[idx || 0] || list[0]);
   }
-  function loadSave(m) {
-    var v = m && m.prefs && m.prefs.vp, p;
-    if (v && (p = v.split('.')) && S[p[0]]) { st = { n: p[0], i: +p[1] || 0, aff: +p[2] || 0, ends: +p[3] || 0, cgs: +p[4] || 0, seen: [], done: [], rev: 0 }; return; }
-    try { var l = JSON.parse(localStorage.getItem('jupjup_vp') || 'null'); if (l && S[l.n]) { st = l; st.done = st.done || []; st.rev = st.rev || 0; st.cgs = st.cgs || 0; } } catch (e) {}
+  function markSeen(key) {
+    const p = store.get();
+    if (p.seen.includes(key)) return;
+    p.seen.push(key);
+    store.set(p);
   }
-  function type(el, t, done) {
-    clearInterval(typing); var k = 0; el.textContent = '';
-    typing = setInterval(function () { k++; el.textContent = t.slice(0, k); if (k >= t.length) { clearInterval(typing); typing = null; done && done(); } }, 26);
+  function show(key) {
+    if (typeof key === "function") key = key(st);
+    if (!key) return;
+    markSeen(key);
+    const src = cgSrc(key);
+    $("bg").classList.toggle("off", !src);
+    if (src) $("bg").src = src;
+    $("keyTag").textContent = src ? "" : key;   // 아직 생성 안 된 키는 이름만 표시
   }
-  function show() {
-    var s = S[st.n]; E('af').textContent = st.aff; E('bg').style.background = BG[s.bg] || BG.office; E('cs').innerHTML = '';
-    if (s.fin) return ending();
-    var ln = s.l[st.i];
-    var im = E('ch'); var src = '../img/' + ln[0] + '.webp'; if (im.getAttribute('src') !== src) { im.style.opacity = 0; setTimeout(function () { im.src = src; im.style.opacity = 1; }, 120); }
-    E('who').textContent = ln[1]; E('nx').style.visibility = 'hidden';
-    type(E('tx'), ln[2], function () { E('nx').style.visibility = 'visible'; });
+
+  // ── 진행 ─────────────────────────────────────────────
+  function setAff(v) {
+    st.aff = Math.max(0, Math.min(100, v));
+    $("aff").textContent = st.aff;
+    $("bar").firstElementChild.style.width = st.aff + "%";
   }
-  function adv() {
-    if (busy || E('gate').style.display !== 'none') return;
-    var s = S[st.n]; if (s.fin) return;
-    if (typing) { clearInterval(typing); typing = null; E('tx').textContent = s.l[st.i][2]; E('nx').style.visibility = 'visible'; return; }
-    if (E('cs').children.length) return;
-    if (st.i < s.l.length - 1) { st.i++; return show(); }
-    if (s.more) {
-      var left = Object.keys(RT).filter(function (k) { return st.done.indexOf(k) < 0; });
-      if (st.done.length >= 2 || !left.length) { st.n = 'end'; st.i = 0; save(); return show(); }
-      left.forEach(function (k) { var b = document.createElement('button'); b.textContent = RT[k][0]; b.onclick = function (e) { e.stopPropagation(); st.n = RT[k][1]; st.i = 0; st.rev = 0; save(); ga('vp_route', { r: k }); show(); }; E('cs').appendChild(b); });
-      E('nx').style.visibility = 'hidden'; return;
+
+  function say(who, text, cg) {
+    clearChoices();
+    if (cg) show(cg);
+    $("box").classList.remove("hidden");
+    $("name").textContent = who;
+    $("text").textContent = text;
+    st.pending = null;
+  }
+
+  function clearChoices() {
+    clearTimeout(timerId);
+    $("choices").classList.add("hidden");
+    $("choices").innerHTML = "";
+  }
+
+  function nextStep() {
+    const act = ACTS[st.act];
+    if (!act) return finish();
+    while (st.i < act.length) {
+      const step = act[st.i++];
+      if (step.min && st.aff < step.min) continue;
+      if (step.when && !step.when(st)) continue;
+      if (step.choice) return showChoice(step);
+      return say(step.who, step.say, step.cg);
     }
-    if (s.route) { if (st.done.indexOf(s.route) < 0) st.done.push(s.route); st.n = 'pick'; st.i = 0; save(); return s.ev && evOK() ? cg(show) : show(); }
-    if (s.c) {
-      s.c.forEach(function (c) {
-        var b = document.createElement('button'); b.textContent = c[0];
-        b.onclick = function (e) { e.stopPropagation(); st.aff += c[1]; st.n = c[2]; st.i = 0; save(); ga('vp_choice', { to: c[2] }); if (s.ev && evOK()) cg(show); else show(); };
-        E('cs').appendChild(b);
+    st.act++;
+    st.i = 0;
+    if (st.act === RETRY_ACT) st.actAff = st.aff;
+    nextStep();
+  }
+
+  function showChoice(step) {
+    $("box").classList.add("hidden");
+    const wrap = $("choices");
+    wrap.innerHTML = "";
+    wrap.classList.remove("hidden");
+    if (step.timer) {
+      const h = document.createElement("div"); h.id = "hint"; h.textContent = step.hint;
+      const t = document.createElement("div"); t.id = "timer";
+      wrap.append(h, t);
+      requestAnimationFrame(() => requestAnimationFrame(() => t.classList.add("run")));
+      timerId = setTimeout(() => pick(step, step.timeoutIdx), TIMER_MS);
+    }
+    step.opts.forEach((o, idx) => {
+      const b = document.createElement("button");
+      b.textContent = o.text;
+      b.onclick = () => pick(step, idx);
+      wrap.appendChild(b);
+    });
+  }
+
+  function pick(step, idx) {
+    clearChoices();
+    const o = step.opts[idx];
+    st.flags[step.choice] = idx;
+    const d = typeof o.d === "function" ? o.d(st) : o.d;
+    const reply = o.reply && (!o.replyIf || o.replyIf(st)) ? o.reply : null;
+    const cg = o.cg;
+    setAff(st.aff + d);
+    if (reply || cg) {
+      // 선택 결과를 한 줄 보여준다
+      st.pendingReply = true;
+      say(reply ? reply[0] : "", reply ? reply[1] : "(" + (d >= 0 ? "+" : "") + d + ")", cg);
+    } else nextStep();
+  }
+
+  function finish() {
+    const e = ENDINGS.find((x) => st.aff >= x.min);
+    st.ending = e;
+    const p = store.get();
+    const first = !p.endings.includes(e.id);
+    if (first) p.endings.push(e.id);
+    p.best = Math.max(p.best, st.aff);
+    store.set(p);
+    ga("vn_ending", { ending: e.id, aff: st.aff });
+    $("box").classList.add("hidden");
+    say(e.who, e.say, e.cg);
+    st.i = 999; st.act = ACTS.length;     // 이 대사 다음에 엔딩 패널
+    st.atEnd = true;
+    $("endTitle").textContent = e.title;
+    $("endInfo").textContent = "호감도 " + st.aff + " · 본 엔딩 " + p.endings.length + "/4" + (first ? " · 새 엔딩!" : "");
+    lastShare = "루리와 수영장 파티에서 「" + e.title + "」를 봤어요. 호감도 " + st.aff + "!";
+  }
+
+  function advance() {
+    if (st.atEnd) { $("endPanel").classList.remove("hidden"); return; }
+    nextStep();
+  }
+
+  function startRun(act, aff) {
+    ga("vn_start", { act });
+    st = newRun(act, aff);
+    setAff(aff);
+    ["title", "endPanel", "gallery", "viewer"].forEach((id) => $(id).classList.add("hidden"));
+    nextStep();
+  }
+
+  // ── 갤러리 ───────────────────────────────────────────
+  // 본문·엔딩에서 쓰는 키(플레이로 해금) — 데이터에서 뽑아 따로 적지 않는다
+  const BODY_KEYS = (() => {
+    const set = new Set();
+    ACTS.forEach((act) => act.forEach((step) => {
+      if (typeof step.cg === "string") set.add(step.cg);
+      (step.opts || []).forEach((o) => { if (typeof o.cg === "string") set.add(o.cg); });
+    }));
+    ENDINGS.forEach((e) => set.add(e.cg));
+    set.add("pl_hand"); set.add("pl_pout");   // 호감도에 따라 갈리는 컷
+    return set;
+  })();
+
+  function card(key, files, unlocked) {
+    const d = document.createElement("div"); d.className = "kcard";
+    const head = document.createElement("button"); head.className = "khead";
+    head.textContent = (unlocked ? "▸ " : "🔒 ") + key + "  (" + files.length + "장)";
+    const grid = document.createElement("div"); grid.className = "grid hidden";
+    if (unlocked) {
+      head.onclick = () => {
+        const opening = grid.classList.contains("hidden");
+        if (opening && !grid.children.length) {
+          files.forEach((f) => {
+            const c = document.createElement("button"); c.className = "cell";
+            const im = document.createElement("img"); im.loading = "lazy"; im.src = "img/" + f; im.alt = key;
+            c.appendChild(im); c.onclick = () => openViewer("img/" + f);
+            grid.appendChild(c);
+          });
+        }
+        grid.classList.toggle("hidden");
+        head.textContent = (opening ? "▾ " : "▸ ") + key + "  (" + files.length + "장)";
+      };
+    } else head.disabled = true;
+    d.append(head, grid);
+    return d;
+  }
+
+  function openGallery() {
+    ga("vn_gallery");
+    const p = store.get();
+    const wrap = $("gGroups");
+    wrap.innerHTML = "";
+    let open = 0, total = 0;
+    const used = new Set();
+    const section = (title, keys, unlocked, rule) => {
+      keys = keys.filter((k) => manifest.cg[k] && manifest.cg[k].length);
+      if (!keys.length) return;
+      const sec = document.createElement("div"); sec.className = "grp";
+      const h = document.createElement("h3");
+      h.textContent = title + (unlocked || !rule ? "" : " — 조건: " + rule);
+      sec.appendChild(h);
+      keys.forEach((k) => {
+        used.add(k);
+        const files = manifest.cg[k];
+        total += files.length;
+        if (unlocked) open += files.length;
+        sec.appendChild(card(k, files, unlocked));
       });
-      E('nx').style.visibility = 'hidden'; return;
-    }
-    st.n = s.go; st.i = 0; save(); show();
-  }
-  function evOK() { return st.aff >= 2 + st.rev * 3 && CGS.length > 0; }
-  function cg(after, idx) {
-    var f = E('cgf'); f.innerHTML = '';
-    var n = idx != null ? idx : (st.cgs < CGS.length ? st.cgs : Math.floor(Math.random() * CGS.length));
-    if (idx == null) { if (st.cgs < CGS.length) st.cgs++; st.rev++; save(); }
-    var im = new Image(); im.src = '../img/' + CGS[n]; im.onload = function () { f.appendChild(im); }; im.onerror = function () { f.innerHTML = '<div style="padding:20px"><div style="font-size:42px">🎁</div><b>이벤트 CG</b><br><small style="color:#cbbcff">준비 중이에요.</small></div>'; };
-    E('cg').style.display = 'flex'; ga('vp_cg', { n: n + 1 });
-    E('cgx').onclick = function () { E('cg').style.display = 'none'; after && after(); };
-  }
-  function gallery() {
-    var c = E('cs'); c.innerHTML = '';
-    var u = Math.min(st.cgs, CGS.length);
-    if (!u) { var t = document.createElement('button'); t.textContent = '아직 모은 CG가 없어요. 호감도를 올려 봐요!'; c.appendChild(t); setTimeout(function () { c.innerHTML = ''; }, 2200); return; }
-    for (var k = 0; k < u; k++) (function (k) { var b = document.createElement('button'); b.style.minHeight = '44px'; b.textContent = '🖼 CG ' + (k + 1); b.onclick = function (e) { e.stopPropagation(); c.innerHTML = ''; cg(null, k); }; c.appendChild(b); })(k);
-    var x = document.createElement('button'); x.textContent = '닫기'; x.onclick = function (e) { e.stopPropagation(); c.innerHTML = ''; }; c.appendChild(x);
-    c.style.maxHeight = '55dvh'; c.style.overflowY = 'auto';
-  }
-  function ending() {
-    var good = st.aff >= 12, mid = st.aff >= 7; st.ends++; save(); ga('vp_end', { aff: st.aff, e: good ? 'good' : mid ? 'mid' : 'bad' });
-    var im = E('ch'); im.src = '../img/' + (good ? 'smile' : mid ? 'wink' : 'think') + '.webp';
-    var txt = good ? '해피 엔딩 💗\n"다음 여름도 같이 와요. 약속이에요!"' : mid ? '노멀 엔딩 ✨\n"오늘 진짜 재밌었어요. 또 놀러 와요!"' : '친구 엔딩 🍧\n"다음엔 더 오래 놀아요. 또 와요!"';
-    E('who').textContent = '루리 · 호감도 ' + st.aff; E('tx').style.whiteSpace = 'pre-line'; E('nx').style.visibility = 'hidden';
-    type(E('tx'), txt, function () {
-      var c = E('cs'); c.innerHTML = '';
-      [['🖼 모은 CG 보기', gallery], ['↻ 처음부터 다시 (다른 루트)', function () { st = { n: 'start', i: 0, aff: 0, seen: [], ends: st.ends, cgs: st.cgs, done: [], rev: 0 }; save(); E('tx').style.whiteSpace = ''; show(); }],
-       ['🔗 친구에게 공유', function () { var u = location.origin + location.pathname; if (navigator.share) navigator.share({ title: '루리와 함께하는 수영장 파티', url: u }).catch(function () {}); else { try { navigator.clipboard.writeText(u); } catch (e) {} alert('링크를 복사했어요'); } }]]
-        .forEach(function (a) { var b = document.createElement('button'); b.textContent = a[0]; b.onclick = function (e) { e.stopPropagation(); a[1](); }; c.appendChild(b); });
-    });
-  }
-  E('app').addEventListener('click', adv);
-  E('mn').onclick = function (e) { e.stopPropagation(); if (confirm('모은 CG를 볼까요? (취소하면 다음 메뉴)')) { gallery(); } else if (confirm('처음부터 다시 시작할까요?\n(로그아웃은 확인 뒤 다음 창에서)')) { st = { n: 'start', i: 0, aff: 0, seen: [], ends: st.ends, cgs: st.cgs, done: [], rev: 0 }; E('tx').style.whiteSpace = ''; save(); show(); } else if (confirm('로그아웃할까요?')) { api('/api/logout', {}).catch(function () {}); setTok(''); location.reload(); } };
-
-  var mode = 'signup';
-  function gate() {
-    E('gate').style.display = 'flex';
-    E('sw').onclick = function () { mode = mode === 'signup' ? 'login' : 'signup'; E('gb').textContent = mode === 'signup' ? '가입하고 시작하기' : '로그인'; E('sw').textContent = mode === 'signup' ? '이미 계정이 있어요 · 로그인' : '처음이에요 · 가입하기'; E('er').textContent = ''; };
-    E('gb').onclick = function () {
-      var b = E('gb'); b.disabled = true; E('er').textContent = '';
-      var ref = (location.search.match(/[?&]ref=([0-9a-f]{8})/) || [])[1];
-      api(mode === 'signup' ? '/api/signup' : '/api/login', { email: E('em').value.trim(), password: E('pw').value, ref: ref || '', h: 'vp' })
-        .then(function (d) { setTok(d.token); ga(mode === 'signup' ? 'vp_signup' : 'vp_login'); return api('/api/me'); })
-        .then(function (m) { loadSave(m); E('gate').style.display = 'none'; show(); })
-        .catch(function (e) { E('er').textContent = e.message; b.disabled = false; });
+      wrap.appendChild(sec);
     };
+    // (가) 본문 키: 본문에서 지나가면 그 키 전체가 열린다
+    const body = [...BODY_KEYS].filter((k) => manifest.cg[k]);
+    section("본문 장면 — 본 장면", body.filter((k) => p.seen.includes(k)), true);
+    section("본문 장면 — 아직 못 본 장면", body.filter((k) => !p.seen.includes(k)), false, "플레이하며 해당 장면 보기");
+    // (나) 단계 해금 키
+    GALLERY.forEach((g) => section(g.name, g.keys.filter((k) => !BODY_KEYS.has(k)), g.ok(p), g.rule));
+    // 어디에도 안 걸린 키가 생겨도 죽지 않게 맨 아래에 연다
+    section("기타", Object.keys(manifest.cg).filter((k) => !used.has(k)), true);
+    $("gInfo").textContent = "해금 " + open + " / " + total + "장 · 본 엔딩 " + p.endings.length + "/4 · 최고 호감 " + p.best;
+    $("gallery").classList.remove("hidden");
   }
-  function loadCGs(done) {
-    fetch('../img/cg_manifest.json', { cache: 'no-cache' }).then(function (r) { return r.ok ? r.json() : Promise.reject(); }).then(function (m) {
-      if (m && m.order && m.cg) { CGS = m.order.filter(function (k) { return m.cg[k] && m.cg[k].length; }).map(function (k) { return m.cg[k][0]; }); if (!CGS.length) throw 0; return done(); }   // 새 형식: 키별 목록, 키마다 첫 장
-      var arr = Array.isArray(m) ? m : (m.items || m.cgs || []); CGS = arr.map(function (x) { return (x.file || x).toString().split('/').pop(); }).filter(Boolean); if (!CGS.length) throw 0; done();
-    }).catch(function () {
-      var k = 1; (function nx() { if (k > 80) return done(); var f = 'cg' + k + '.webp', im = new Image(); im.onload = function () { CGS.push(f); k++; nx(); }; im.onerror = function () { done(); }; im.src = '../img/' + f; })();
-    });
+  function openViewer(src) { $("vImg").src = src; $("viewer").classList.remove("hidden"); }
+
+  async function share(text) {
+    ga("vn_share");
+    const url = location.origin + location.pathname;
+    const data = { title: document.title, text: text || "루리와 수영장 파티", url };
+    try {
+      if (navigator.share) return await navigator.share(data);
+      await navigator.clipboard.writeText(data.text + " " + url);
+      alert("링크를 복사했어요");
+    } catch (e) {}
   }
-  ga('vp_open');
-  loadCGs(function () { if (tok()) api('/api/me').then(function (m) { loadSave(m); show(); }).catch(function () { setTok(''); gate(); }); else gate(); });
-  ['smile', 'wink', 'think', 'sad', 'serious', 'excited', 'surprise'].forEach(function (n) { new Image().src = '../img/' + n + '.webp'; });
+
+  // ── 연결 ─────────────────────────────────────────────
+  $("box").onclick = advance;
+  document.addEventListener("keydown", (e) => {
+    if ((e.key === " " || e.key === "Enter") && st && !$("box").classList.contains("hidden")) advance();
+  });
+  $("startBtn").onclick = () => startRun(0, START_AFF);
+  $("againBtn").onclick = () => startRun(0, START_AFF);
+  $("retryBtn").onclick = () => startRun(RETRY_ACT, st ? st.actAff : START_AFF);
+  $("shareBtn").onclick = () => share(lastShare);
+  $("vShare").onclick = () => share("루리 수영장 파티 갤러리");
+  ["gBtn", "titleG", "endG"].forEach((id) => ($(id).onclick = openGallery));
+  $("gClose").onclick = () => $("gallery").classList.add("hidden");
+  $("vClose").onclick = () => $("viewer").classList.add("hidden");
+
+  fetch("img/cg_manifest.json", { cache: "no-cache" })
+    .then((r) => (r.ok ? r.json() : Promise.reject()))
+    .then((m) => { manifest = m; })
+    .catch(() => {});
 })();
-</script></body></html>
+</script>
+</body>
+</html>
