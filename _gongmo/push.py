@@ -178,6 +178,21 @@ def main():
             top = mine[0]
             body = short(top['title']) + (f' · {top["prize"]}' if top.get('prize') else '') + (f' 외 {len(mine) - 1}건' if len(mine) > 1 else '')
             ok += send(s, {'title': f'⏰ 마감 3일 전 · {len(mine)}건', 'body': body, 'url': f'/c/{top["id"]}/', 'tag': 'jupjup-dl'}, dry)
+    if mode in ('dl', 'meal', 'new'):   # 새 스케줄 없이 기존 작업(09:10·11:20·17:20·19:10)에 얹어서 보낸다: 운동 알림은 그 시각을 고른 사람에게, 마감 7일·1일 전은 아침 dl 때
+        hr = datetime.datetime.now().hour
+        for s in subs:
+            if s['fit'] and int(s['fh'] if s['fh'] is not None else 19) == hr:
+                ok += send(s, {'title': '💪 오늘 운동했나요?', 'body': '5분만 해도 연속 기록이 이어져요. 눌러서 바로 시작!', 'url': '/diet/workout/?src=push_fit', 'tag': 'jupjup-fit'}, dry)
+        if mode == 'dl':
+            for n, lab in ((7, '7일'), (1, '하루')):
+                dd = (today + datetime.timedelta(days=n)).isoformat()
+                due = sorted([c for c in items if c.get('end') == dd], key=lambda c: -(c.get('pv') or 0))
+                for s in subs:
+                    mine = [c for c in due if s['dl2'] and want(s, c)]
+                    if mine:
+                        top = mine[0]
+                        body = short(top['title']) + (f' · {top["prize"]}' if top.get('prize') else '') + (f' 외 {len(mine) - 1}건' if len(mine) > 1 else '')
+                        ok += send(s, {'title': f'📅 마감 {lab} 전 · {len(mine)}건', 'body': body, 'url': f'/c/{top["id"]}/?src=push_dl{n}', 'tag': f'jupjup-dl{n}'}, dry)
     if not dry:
         st[f'last_{mode}'] = datetime.datetime.now().isoformat(timespec='minutes')
         json.dump(st, open(STATE, 'w', encoding='utf-8'), ensure_ascii=False)
