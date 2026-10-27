@@ -197,6 +197,7 @@ html,body{margin:0;height:100%;background:#0b0818;color:var(--tx);font-family:-a
   }
   function loadCGs(done) {
     fetch('../img/cg_manifest.json', { cache: 'no-cache' }).then(function (r) { return r.ok ? r.json() : Promise.reject(); }).then(function (m) {
+      if (m && m.order && m.cg) { CGS = m.order.filter(function (k) { return m.cg[k] && m.cg[k].length; }).map(function (k) { return m.cg[k][0]; }); if (!CGS.length) throw 0; return done(); }   // 새 형식: 키별 목록, 키마다 첫 장
       var arr = Array.isArray(m) ? m : (m.items || m.cgs || []); CGS = arr.map(function (x) { return (x.file || x).toString().split('/').pop(); }).filter(Boolean); if (!CGS.length) throw 0; done();
     }).catch(function () {
       var k = 1; (function nx() { if (k > 80) return done(); var f = 'cg' + k + '.webp', im = new Image(); im.onload = function () { CGS.push(f); k++; nx(); }; im.onerror = function () { done(); }; im.src = '../img/' + f; })();
