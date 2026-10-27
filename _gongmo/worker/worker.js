@@ -348,8 +348,8 @@ export default {
         const cats = (Array.isArray(body.cats) ? body.cats : []).filter(c => /^[a-z]{2,12}$/.test(c)).slice(0, 12).join(',');
         const u = await me(req, env), n = await count(env, 'SELECT COUNT(*) n FROM push_subs');
         if (n > 20000) return err(req, '지금은 알림 등록이 많아요. 잠시 뒤에 다시 해 주세요.', 429);
-        await env.DB.prepare('INSERT INTO push_subs (endpoint, p256dh, auth, cats, newc, dl, meal, uid, created, sent, fails) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 0, 0) ON CONFLICT(endpoint) DO UPDATE SET p256dh = excluded.p256dh, auth = excluded.auth, cats = excluded.cats, newc = excluded.newc, dl = excluded.dl, meal = excluded.meal, uid = COALESCE(excluded.uid, push_subs.uid), fails = 0')
-          .bind(ep, k.p256dh, k.auth, cats, body.newc === 0 ? 0 : 1, body.dl === 0 ? 0 : 1, body.meal === 1 ? 1 : 0, u ? u.id : null, now()).run();
+        await env.DB.prepare('INSERT INTO push_subs (endpoint, p256dh, auth, cats, newc, dl, meal, uid, created, sent, fails, fit, fh, dl2) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 0, 0, ?, ?, ?) ON CONFLICT(endpoint) DO UPDATE SET p256dh = excluded.p256dh, auth = excluded.auth, cats = excluded.cats, newc = excluded.newc, dl = excluded.dl, meal = excluded.meal, fit = excluded.fit, fh = excluded.fh, dl2 = excluded.dl2, uid = COALESCE(excluded.uid, push_subs.uid), fails = 0')
+          .bind(ep, k.p256dh, k.auth, cats, body.newc === 0 ? 0 : 1, body.dl === 0 ? 0 : 1, body.meal === 1 ? 1 : 0, u ? u.id : null, now(), body.fit === 1 ? 1 : 0, Math.min(23, Math.max(0, parseInt(body.fh, 10) || 20)), body.dl2 === 1 ? 1 : 0).run();
         return json(req, { ok: true });
       }
       if (p === '/api/push/unsub' && req.method === 'POST') {

@@ -4,6 +4,8 @@
 사용: python push.py new     → 관심 분야 새 공모전 모아서 1통 (작업 스케줄러 JupJup_PushNew 19:10)
       python push.py dl      → 인기 공모전 마감 3일 전 1통 (JupJup_PushDL 09:10)
       python push.py meal    → 점심·저녁 「오늘 뭐 먹지?」 메뉴 추천 1통 (작업 스케줄러 JupJup_PushMealLunch 11:20 / JupJup_PushMealDinner 17:20)
+      python push.py fit     → 「오늘 운동했나요?」 이용자가 고른 시각(fh)에 맞춰 매시 정각 실행
+      python push.py dl2     → 마감 7일·1일 전 (구독자가 켠 것만, 마감일이 있는 공모전만)
       python push.py test    → 대장(uid 16) 구독에만 시험 알림
       --dry                  → 보낼 내용만 출력
 처음 실행한 날은 지금 올라온 공모전을 '이미 본 것'으로만 기록하고 새 공모전 알림은 보내지 않는다."""
@@ -101,7 +103,7 @@ def main():
     items = json.load(open(os.path.join(ROOT, 'data.json'), encoding='utf-8'))['items']
     st = json.load(open(STATE, encoding='utf-8')) if os.path.exists(STATE) else {}
     today = datetime.date.today()
-    subs = q('SELECT endpoint, p256dh, auth, cats, newc, dl, meal, uid FROM push_subs')
+    subs = q('SELECT endpoint, p256dh, auth, cats, newc, dl, meal, uid, fit, fh, dl2 FROM push_subs')
     log(f'== {mode} 구독 {len(subs)} / 진행 중 공모전 {len(items)}{" (dry)" if dry else ""}')
     ok = 0
     if mode == 'test':
@@ -144,6 +146,25 @@ def main():
                            'image': f'https://sungprofile.cloud/assets/fridge/ph/t/{sl}.webp'}, dry)
         if not dry:
             st['meal_hist'] = (hist + [n])[-14:]
+    elif mode == 'fit':
+        hr = datetime.datetime.now().hour
+        for s in subs:
+            if s['fit'] and int(s['fh'] if s['fh'] is not None else 20) == hr:
+                ok += send(s, {'title': '💪 오늘 운동했나요?', 'body': '5분만 해도 연속 기록이 이어져요. 눌러서 바로 시작!', 'url': '/diet/workout/?src=push_fit', 'tag': 'jupjup-fit'}, dry)
+    elif mode == 'dl2':
+        for n, lab in ((7, '7일'), (1, '하루')):
+            dd = (today + datetime.timedelta(days=n)).isoformat()
+            due = sorted([c for c in items if c.get('end') == dd], key=lambda c: -(c.get('pv') or 0))
+            log(f'D-{n} 공모전 {len(due)}건')
+            for s in subs:
+                if not s['dl2']:
+                    continue
+                mine = [c for c in due if want(s, c)]
+                if not mine:
+                    continue
+                top = mine[0]
+                body = short(top['title']) + (f' · {top["prize"]}' if top.get('prize') else '') + (f' 외 {len(mine) - 1}건' if len(mine) > 1 else '')
+                ok += send(s, {'title': f'📅 마감 {lab} 전 · {len(mine)}건', 'body': body, 'url': f'/c/{top["id"]}/?src=push_dl{n}', 'tag': f'jupjup-dl{n}'}, dry)
     elif mode == 'dl':
         d3 = (today + datetime.timedelta(days=3)).isoformat()
         due = sorted([c for c in items if c['end'] == d3], key=lambda c: -(c.get('pv') or 0))
