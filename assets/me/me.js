@@ -29,7 +29,7 @@
   if (!J.st.t) {
     M.innerHTML = `<section class="me-hero"><img src="/assets/ruri/p/office_wave.webp" alt="" width="300" height="415"><div><h1>가입하면 루리가 챙겨 줘요</h1>
 <ul class="me-ben"><li>🔔 <b>마감 알림 메일</b> — 찜한 공모전·청약 마감 3일 전과 당일</li><li>⭐ <b>찜·응모 기록</b> — 폰·PC 어디서든, 냈어요 → 당첨까지</li><li>🎯 <b>자격 맞춤 추천</b> — 나이·지역·신분에 안 맞는 건 자동으로 빼요</li>
-<li>📬 <b>맞춤 소식 메일</b> — 고른 주제(오늘의 메뉴·지원금·공모전·무료 게임·뉴스)만 소식이 있는 날 한 통</li><li>🏠 <b>청약 가점 계산·저장</b></li><li>🏆 <b>수상작 전체 보기 + 내 문구 진단 기록</b></li><li>🎀 <b>루리 꾸미기 · 🚩 원정대</b></li></ul>
+<li>📬 <b>맞춤 소식 메일</b> — 고른 주제(오늘의 메뉴·지원금·공모전·무료 게임·뉴스)만 소식이 있는 날 한 통</li><li>🏠 <b>청약 가점 계산·저장</b></li><li>🏆 <b>수상작 전체 보기 + 내 문구 진단 기록</b></li><li>🎮 <b>루리 옷벗기기 · 🚩 원정대</b></li></ul>
 <button class="btn2 me-join">구글·카카오·이메일로 1초 가입</button></div></section>${gjHTML()}`;
     gajum({}, null);
     M.querySelector('.me-join').onclick = () => J.authModal(() => location.reload()); return;
@@ -62,7 +62,7 @@
 <label>주택 <select data-k="house">${['선택 안 함', '무주택', '1주택', '다주택'].map(v => `<option${P.house === v ? ' selected' : ''}>${v}</option>`).join('')}</select></label></div><p class="note me-saved"></p></section>
 ${gjHTML()}
 <section class="me-sec"><h2>🏆 내 문구 진단 기록</h2><ul class="me-list">${lab.map(h => `<li><q>${esc(h.q)}</q> <b>${h.score}점</b> <small>${esc(h.th || '')}</small></li>`).join('') || '<li class="note"><a href="/lab/#diag">수상 연구소</a>에서 문구를 진단하면 여기 남아요.</li>'}</ul></section>
-<section class="me-sec me-links"><a href="/community/">🚩 원정대</a><a href="/community/#dress">🎀 루리 꾸미기</a><a href="/lab/">🏆 수상 연구소</a><a href="/">💬 루리 상담</a></section>`;
+<section class="me-sec me-links"><a href="/community/">🚩 원정대</a><a href="/vn/pool/">🎮 루리 옷벗기기</a><a href="/lab/">🏆 수상 연구소</a><a href="/">💬 루리 상담</a></section>`;
     function row(x, rec) {
       const l = left(x.end);
       return `<li data-id="${esc(x.id)}"><a href="${link(x.id)}">${esc(x.title || x.id)}</a><small>${l === null ? '' : l < 0 ? '마감' : l ? 'D-' + l : 'D-DAY'}</small>

@@ -1,16 +1,10 @@
 // 루리의 줍줍 커뮤니티 — 미연시 모드: 공모전 = 공략 대상 히로인, 팀 = 원정대, 루리 = 정보통 친구
-// 친구 초대(링크 방문 1점, 가입 3점, 히로인별 기록) 점수만큼 루리 꾸미기(의상·배경·대사창·효과·호칭) 해금. comm.js 의 window.JUP 사용.
+// 친구 초대(링크 방문 1점, 가입 3점, 히로인별 기록) 점수는 기록만 남긴다. comm.js 의 window.JUP 사용.
+// 2026-10-28: 꾸미기(의상·배경·대사창·효과·호칭 고르기)는 걷어냈다 — 그 자리는 「루리 옷벗기기」 진입구다.
+// 기존 설정값(P)은 localStorage 에 그대로 남아 배경·효과·표정에 계속 쓰인다. 고르는 화면만 없앴다.
 (function () {
   const S = document.getElementById('vn'), J = window.JUP; if (!S || !J) return;
   const esc = J.esc, $ = s => S.querySelector(s);
-  // 꾸미기 카탈로그: [필요 점수, 값, 이름]
-  const CAT = {
-    o: ['👗 의상', [[0, 'smile', '오피스룩'], [0, 'o_cardigan', '카디건'], [0, 'o_vest', '니트 베스트'], [0, 'o_suit', '정장'], [0, 'o_trench', '트렌치코트'], [0, 'o_gray', '그레이 셋업'], [0, 'o_anchor', '앵커룩'], [0, 'o_present', '발표 정장'], [1, 'o_summer', '여름 오피스룩'], [3, 'o_resort', '리조트 원피스'], [6, 'o_beach', '비치 커버업'], [10, 'o_swim', '수영복']]],  // 로그인하면 오피스 8벌 기본 제공, 초대 점수로 여름 단계
-    b: ['🌆 배경', [[0, 'dusk', '노을 하늘'], [2, 'night', '밤 옥상'], [4, 'sakura', '벚꽃길'], [8, 'fest', '축제 불꽃'], [12, 'sea', '여름 바다'], [20, 'star', '별빛 천문대']]],
-    x: ['💬 대사창', [[0, 'basic', '기본'], [3, 'mint', '민트'], [7, 'gold', '골드'], [14, 'dark', '다크'], [30, 'rainbow', '무지개']]],
-    f: ['✨ 효과', [[0, 'petal', '벚꽃잎'], [5, 'heart', '하트'], [9, 'star', '반짝이'], [18, 'snow', '눈송이'], [0, 'none', '끄기']]],
-  };
-  const CALL_AT = 5;  // 호칭 정하기 해금 점수
   const FX = { heart: '💗', star: '✦', snow: '❄' };
   const EXP = { smile: 1, wink: 1, excited: 1, think: 1, surprise: 1, sad: 1, thumbsup: 1, serious: 1 };
   const dday = e => e ? Math.ceil((new Date(e + 'T23:59:59+09:00') - Date.now()) / 864e5) : null;
@@ -21,7 +15,7 @@
 
   // ---- 무대 ----
   S.innerHTML = `<div class="vn-bg"></div><div class="vn-petals"></div>
-<img class="vn-ruri" alt="루리" width="300" height="415"><div class="vn-sys"><button data-s="auto">AUTO</button><button data-s="skip">SKIP</button><button data-s="ward">🎀 꾸미기</button></div>
+<img class="vn-ruri" alt="루리" width="300" height="415"><div class="vn-sys"><button data-s="auto">AUTO</button><button data-s="skip">SKIP</button><button data-s="ward">🎮 게임</button></div>
 <div class="vn-choices" hidden></div><div class="vn-panel" hidden></div>
 <div class="vn-box"><span class="vn-name">루리</span><p class="vn-text"></p><span class="vn-next">▼</span></div>`;
   const img = $('.vn-ruri'), txt = $('.vn-text'), box = $('.vn-box'), ch = $('.vn-choices'), panel = $('.vn-panel');
@@ -30,11 +24,6 @@
     const f = P.f || 'petal';
     $('.vn-petals').innerHTML = f === 'none' ? '' : Array.from({ length: 18 }, (_, i) => `<i class="${f}" style="--x:${(i * 37) % 100}%;--d:${6 + (i * 7) % 9}s;--w:${(i * 13) % 7}s;--s:${0.6 + (i % 5) * 0.15}">${FX[f] || ''}</i>`).join('');
     face('outfit');
-  }
-  function save(k, v) {
-    P[k] = v; try { localStorage.setItem('jupjup_prefs', JSON.stringify(P)); } catch {} if (k === 'o' && J.wearAll) J.wearAll();
-    if (J.st.t) J.api('/api/prefs', { method: 'POST', body: { data: P } }).catch(() => {});
-    apply();
   }
   let fn = 0; const face = e => { const o = J.st.t && P.o && P.o !== 'smile' ? P.o : ''; const ps = J.poseSrc(o ? o.replace(/^o_/, '') : 'office', J.POSE_OF[e] || '', false, fn++); const f = o || (EXP[e] ? e : 'smile'); const src = ps || `/assets/ruri/${f}.webp`; if (!img.src.endsWith(src)) { img.classList.remove('pop'); void img.offsetWidth; img.classList.add('pop'); img.src = src; } };
 
@@ -77,7 +66,7 @@
     const n = [...tcount.values()].reduce((a, b) => a + b, 0);
     say([['outfit', `지금 원정대 <b>${n}</b>개가 히로인을 노리고 있어. 뭐부터 할래?`]]).then(() => choose([
       ['💗 오늘의 히로인 보기', () => heroines()], ['💘 원정대 구경하기', parties], ['✨ 내가 원정대 결성하기', () => J.createTeam('', '', reboot)],
-      ['🎀 루리 꾸미기 · 친구 초대', dress]]));
+      ['🎮 루리 옷벗기기 · 경찰서 엔딩', dress]]));
   }
   function heroines(q = '') {
     const pool = (q ? cs.filter(c => c.t.includes(q)) : [...cs].sort((a, b) => (tcount.get(b.id) || 0) - (tcount.get(a.id) || 0) || (dday(a.e) ?? 99) - (dday(b.e) ?? 99))).slice(0, 12);
@@ -137,30 +126,17 @@
     panel.querySelector('.naver').onclick = () => J.ga('invite_share', { method: 'naver', contest_id: c ? c.id : '' }); panel.querySelector('.mail').onclick = () => J.ga('invite_share', { method: 'mail', contest_id: c ? c.id : '' });
   }
 
-  // 꾸미기
-  async function dress(tab = 'o') {
-    if (!J.st.t) return needLogin('로그인하면 오피스룩 8벌은 바로 줄게! 친구를 초대할수록 여름옷이 하나씩 열리고, 끝까지 모으면 수영복까지 입어 볼게.');
-    if (!me) await getMe(); if (!me) return menu();
-    const p = pts(), all = Object.values(CAT).flatMap(([, l]) => l).concat([[CALL_AT]]), nextNeed = all.map(x => x[0]).filter(n => n > p).sort((a, b) => a - b)[0];
-    const tabs = Object.entries(CAT).map(([k, [n]]) => `<button data-t="${k}" class="${tab === k ? 'on' : ''}">${n}</button>`).join('') + `<button data-t="c" class="${tab === 'c' ? 'on' : ''}">🏷 호칭</button><button data-t="log" class="${tab === 'log' ? 'on' : ''}">📒 초대 기록</button>`;
-    let body = '';
-    if (CAT[tab]) {
-      const cur = P[tab] || CAT[tab][1][0][1];
-      body = `<div class="vn-ward">${CAT[tab][1].map(([need, v, n]) => `<button class="vn-cloth${need <= p ? '' : ' lock'}${cur === v ? ' on' : ''}" data-v="${v}" ${need <= p ? '' : 'disabled'}>${tab === 'o' ? `<img src="/assets/ruri/${v}_s.webp" alt="" width="110" height="152">` : `<span class="vn-sw" data-${tab}="${v}">${tab === 'f' ? (FX[v] || (v === 'petal' ? '🌸' : '∅')) : ''}</span>`}<span>${need <= p ? n : `🔒 ${need}점`}</span></button>`).join('')}</div>`;
-    } else if (tab === 'c') {
-      body = p >= CALL_AT ? `<div class="vn-inv"><p>루리가 나를 뭐라고 부를까? (최대 8자)</p><input class="vn-call" maxlength="8" value="${esc(P.c || '')}" placeholder="예: 선배, 대장님"><div class="vn-share"><button class="vn-callsave">저장</button></div></div>`
-                         : `<p class="note">🔒 초대 점수 ${CALL_AT}점부터 루리가 부르는 호칭을 정할 수 있어요.</p>`;
-    } else {
-      const byC = me.by_contest || [], name = id => (cs.find(c => c.id === id) || {}).t || (id ? id : '커뮤니티 전체');
-      body = byC.length ? `<ul class="vn-log">${byC.map(x => `<li><b>${esc(name(x.h))}</b><span>방문 ${x.visits} · 가입 ${x.joins} → <b>${x.visits + x.joins * 3}점</b></span></li>`).join('')}</ul>` : '<p class="note">아직 초대 기록이 없어요. 히로인 카드에서 「친구 초대」를 눌러 링크를 보내 보세요.</p>';
-    }
-    showPanel(`<div class="vn-ph"><b>🎀 루리 꾸미기</b><span class="vn-pts">초대 점수 <b>${p}</b> <small>(방문 ${me.visits || 0} · 가입 ${me.invites || 0}×3)</small></span><button class="vn-back">✕</button></div>
-<div class="vn-tabs">${tabs}</div>${body}<div class="vn-share" style="margin-top:12px"><button class="vn-inv-go">💌 친구 초대하고 점수 모으기</button></div>`,
-      nextNeed ? `<b>${nextNeed - p}점</b>만 더 모으면 새로운 게 열려! 초대해 줄 거지?` : '전부 다 열었어! 고마워, 진짜 최고야 💕', p ? 'excited' : 'wink');
-    panel.querySelectorAll('[data-t]').forEach(b => b.onclick = () => dress(b.dataset.t));
-    panel.querySelectorAll('.vn-cloth:not(.lock)').forEach(b => b.onclick = () => { save(tab, b.dataset.v); J.ga('ruri_custom', { item: tab + ':' + b.dataset.v }); dress(tab); });
-    const cs_ = panel.querySelector('.vn-callsave'); if (cs_) cs_.onclick = () => { save('c', panel.querySelector('.vn-call').value.trim()); say([['excited', `좋아, 앞으로 <b>${you()}</b>(이)라고 부를게!`]]).then(() => dress('c')); };
-    panel.querySelector('.vn-inv-go').onclick = () => invite(null);
+  // 꾸미기 자리 — 「루리 옷벗기기」로 넘긴다. 게임은 /vn/pool/ 에 따로 산다.
+  async function dress() {
+    showPanel(`<div class="vn-ph"><b>🎮 루리 옷벗기기</b><button class="vn-back">✕</button></div>
+<div class="vn-inv"><p>가위바위보 다섯 단계. 루리한테 버릇이 있으니 잘 보면 이겨.</p>
+<p class="note">다만 끝까지 이기면 네가 경찰서에 간다. 그건 해 보면 알고.</p>
+<div class="vn-share"><button class="vn-go-game">▶ 시작하기</button></div></div>`,
+      '이길 자신 있어? 끝까지 가면 후회할 텐데.', 'wink');
+    panel.querySelector('.vn-go-game').onclick = () => {
+      J.ga('ruri_game_go', {});
+      location.href = '/vn/pool/?from=community';
+    };
   }
   function reboot() { load().then(menu); }
 
