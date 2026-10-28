@@ -506,13 +506,13 @@ setTimeout(function(){fetch('https://jupjup-api.sung2011103.workers.dev/api/hit'
   const blank = () => {
     const s = {};
     STORIES.forEach((x) => (s[x.id] = { endings: [], best: 0 }));
-    return { v: 3, seen: [], s };
+    return { v: 3, seen: [], police: false, s };
   };
   const store = {
     get() {
       try {
         const v = JSON.parse(localStorage.getItem(SAVE_KEY));
-        if (v && v.s) { const b = blank(); b.seen = Array.isArray(v.seen) ? v.seen : []; Object.keys(b.s).forEach((k) => { if (v.s[k]) b.s[k] = v.s[k]; }); return b; }
+        if (v && v.s) { const b = blank(); b.seen = Array.isArray(v.seen) ? v.seen : []; b.police = !!v.police; Object.keys(b.s).forEach((k) => { if (v.s[k]) b.s[k] = v.s[k]; }); return b; }
       } catch (e) {}
       // 수영장 단독판(vn_pool_v2) 진행도를 잃지 않게 pool 로 옮긴다
       const b = blank();
@@ -526,7 +526,101 @@ setTimeout(function(){fetch('https://jupjup-api.sung2011103.workers.dev/api/hit'
   };
   const prog = (id) => store.get().s[id] || { endings: [], best: 0 };
 
-  const newRun = (act, aff) => ({ act, i: 0, aff, flags: {}, actAff: aff, ending: null });
+  // heat: 플레이어가 고른 요구의 수위. 임계를 넘으면 호감도와 무관하게 경찰서 엔딩으로 간다.
+  const newRun = (act, aff) => ({ act, i: 0, aff, flags: {}, actAff: aff, ending: null, heat: 0, rps: 0 });
+
+  // ── 가위바위보 + 경찰서 엔딩 ─────────────────────────
+  // 이야기 끝에 루리가 승부를 건다. 이긴 판수만큼 플레이어가 요구할 수 있고,
+  // 요구가 과해질수록 heat 가 오른다. 임계를 넘으면 — 알고 보니 루리는 경찰이었다.
+  // 승부는 운 100% 가 아니다. 루리는 직전에 낸 수를 잘 안 내고, 앞서면 바위 쪽으로 기운다.
+  // 최근 수를 화면에 남기므로 관찰하면 이긴다.
+  const HAND = ["✊", "✌", "✋"];
+  const HNAME = ["바위", "가위", "보"];
+  const HEAT_CAP = 3;
+  const POLICE = {
+    id: "police", title: "경찰서 엔딩", min: -999, who: R,
+    say: "…잠깐. 신분증 좀 봅시다.", cg: "ed_cop",
+  };
+
+  function ruriHand(hist, lead) {
+    const w = [1, 1, 1];
+    if (lead > 0) w[0] *= 1.8;
+    else if (lead < 0) w[2] *= 1.8;
+    const last = hist.length ? hist[hist.length - 1] : -1;
+    if (last >= 0) w[last] *= 0.45;
+    let x = Math.random() * (w[0] + w[1] + w[2]);
+    for (let i = 0; i < 3; i++) { if ((x -= w[i]) < 0) return i; }
+    return 2;
+  }
+
+  function showRps(step) {
+    const need = step.rps;
+    st.rpsOn = true;   // 이 사이에 advance() 가 끼어들면 승부가 잘린다
+    const g = { win: 0, lose: 0, hist: [] };
+    const wrap = $("choices");
+    const render = () => {
+      $("box").classList.remove("hidden");
+      $("name").textContent = R;
+      $("text").textContent = g.hist.length
+        ? g.win + "승 " + g.lose + "패 · 내가 낸 건 " + g.hist.slice(-3).map((h) => HAND[h]).join(" ")
+        : "세 판. 네가 이긴 만큼은 들어줄게.";
+      wrap.innerHTML = "";
+      wrap.classList.remove("hidden");
+      HAND.forEach((h, i) => {
+        const b = document.createElement("button");
+        b.textContent = h + " " + HNAME[i];
+        b.onclick = () => play(i);
+        wrap.appendChild(b);
+      });
+    };
+    const play = (p) => {
+      const r = ruriHand(g.hist, g.win - g.lose);
+      g.hist.push(r);
+      const tie = p === r;
+      const win = (p - r + 3) % 3 === 2;
+      if (win) g.win++; else if (!tie) g.lose++;
+      clearChoices();
+      $("box").classList.remove("hidden");
+      $("name").textContent = R;
+      $("text").textContent = HAND[p] + " vs " + HAND[r] + " — " +
+        (tie ? "비겼어. 다시." : win ? "…졌네. 한 번은 들어줄게." : "내가 이겼어. 그건 못 들어줘.");
+      if (g.win + g.lose >= need) {
+        st.rps = g.win;
+        st.flags.rps = g.win;
+        st.rpsOn = false;
+        ga("vn_rps", { story: cur.id, win: g.win });
+        setTimeout(() => nextStep(), 900);
+      } else {
+        setTimeout(render, 900);
+      }
+    };
+    render();
+  }
+
+  // 이야기마다 끝에 붙는 공통 막. 데이터로만 끼우므로 다섯 편을 따로 손대지 않는다.
+  // 요구는 세 번 열리고, 고를 때마다 heat 가 쌓인다. 루리는 끝까지 주도권을 놓지 않는다.
+  const ASKS = [
+    [{ text: "\"손 잡아도 돼?\"", d: 4, heat: 0, reply: [R, "그 정도는. 손목 말고 손."] },
+     { text: "\"사진 한 장만\"", d: 2, heat: 1, reply: [R, "한 장. 어디 올리면 지워 오게 할 거야."] },
+     { text: "\"옷 한 겹만 벗어 봐\"", d: -2, heat: 2, reply: [R, "…순서가 틀렸는데. 뭐, 세어는 둘게."] }],
+    [{ text: "\"오늘 더 있다 가\"", d: 4, heat: 0, reply: [R, "막차까지. 그 다음은 네가 알아서."] },
+     { text: "\"무릎 좀 빌려줘\"", d: 3, heat: 1, reply: [R, "십 분. 자면 깨울 거고."] },
+     { text: "\"수건 내려놔 봐\"", d: -3, heat: 2, reply: [R, "말이 점점 짧아지네. 두 번째."] }],
+    [{ text: "\"다음에 또 보자\"", d: 5, heat: 0, reply: [R, "그래. 연락은 네가 먼저 해."] },
+     { text: "\"번호 말고 집 주소\"", d: 0, heat: 1, reply: [R, "그건 좀. 세 번째인 거 알지?"] },
+     { text: "\"여기서 더 가고 싶은데\"", d: -5, heat: 2, reply: [R, "…그 말을 기다렸어."] }],
+  ];
+  const JUDGE = [
+    { who: R, say: "잠깐. 가기 전에 하나만 하자." },
+    { who: R, say: "가위바위보. 세 판. 네가 이긴 만큼 들어줄게 — 뭘 말할지는 네 자유고." },
+    { rps: 3 },
+    { who: R, say: (s) => (s.rps >= 2 ? "두 판이나 졌네. 말해 봐, 뭐 해 줄까." : s.rps === 1 ? "한 판은 졌으니까. 하나만." : "한 판도 못 이겼으면서 뭘 바라는 거야?") },
+    { choice: "ask1", opts: (s) => ASKS[0].slice(0, Math.max(1, s.rps + 1)) },
+    { choice: "ask2", opts: (s) => ASKS[1].slice(0, Math.max(1, s.rps + 1)) },
+    { choice: "ask3", opts: (s) => ASKS[2].slice(0, Math.max(1, s.rps + 1)) },
+    { who: R, say: (s) => (s.heat >= HEAT_CAP ? "재밌었어. 그런데 하나 안 말한 게 있어." : "오늘은 여기까지. 선은 안 넘었네."), when: () => true },
+  ];
+  STORIES.forEach((s) => s.acts.push(JUDGE));
 
   // ── 흔들림(WebGL 한 패스) ───────────────────────────
   // 릴스(softbody.py)의 물리를 그대로 옮겼다: 가슴 수직 3.2Hz·수평 2.6Hz·감쇠비 0.42,
@@ -748,6 +842,8 @@ setTimeout(function(){fetch('https://jupjup-api.sung2011103.workers.dev/api/hit'
 
   function say(who, text, cg) {
     clearChoices();
+    if (typeof text === "function") text = text(st);
+    if (typeof who === "function") who = who(st);
     if (cg) show(cg);
     $("box").classList.remove("hidden");
     $("name").textContent = who;
@@ -767,6 +863,7 @@ setTimeout(function(){fetch('https://jupjup-api.sung2011103.workers.dev/api/hit'
       const step = act[st.i++];
       if (step.min && st.aff < step.min) continue;
       if (step.when && !step.when(st)) continue;
+      if (step.rps) return showRps(step);
       if (step.choice) return showChoice(step);
       return say(step.who, step.say, step.cg);
     }
@@ -788,7 +885,8 @@ setTimeout(function(){fetch('https://jupjup-api.sung2011103.workers.dev/api/hit'
       requestAnimationFrame(() => requestAnimationFrame(() => t.classList.add("run")));
       timerId = setTimeout(() => pick(step, step.timeoutIdx), TIMER_MS);
     }
-    step.opts.forEach((o, idx) => {
+    const opts = typeof step.opts === "function" ? step.opts(st) : step.opts;
+    opts.forEach((o, idx) => {
       const b = document.createElement("button");
       b.textContent = o.text;
       b.onclick = () => pick(step, idx);
@@ -798,7 +896,9 @@ setTimeout(function(){fetch('https://jupjup-api.sung2011103.workers.dev/api/hit'
 
   function pick(step, idx) {
     clearChoices();
-    const o = step.opts[idx];
+    const opts = typeof step.opts === "function" ? step.opts(st) : step.opts;
+    const o = opts[idx];
+    if (o.heat) st.heat += o.heat;
     st.flags[step.choice] = idx;
     const d = typeof o.d === "function" ? o.d(st) : o.d;
     const reply = o.reply && (!o.replyIf || o.replyIf(st)) ? o.reply : null;
@@ -809,12 +909,14 @@ setTimeout(function(){fetch('https://jupjup-api.sung2011103.workers.dev/api/hit'
   }
 
   function finish() {
-    const e = cur.endings.find((x) => st.aff >= x.min);
+    const e = st.heat >= HEAT_CAP ? POLICE : cur.endings.find((x) => st.aff >= x.min);
     st.ending = e;
     const p = store.get();
     const sp = p.s[cur.id];
-    const first = !sp.endings.includes(e.id);
-    if (first) sp.endings.push(e.id);
+    const police = e.id === "police";
+    const first = police ? !p.police : !sp.endings.includes(e.id);
+    if (police) p.police = true;
+    else if (first) sp.endings.push(e.id);
     sp.best = Math.max(sp.best, st.aff);
     store.set(p);
     ga("vn_ending", { story: cur.id, ending: e.id, aff: st.aff });
@@ -823,12 +925,21 @@ setTimeout(function(){fetch('https://jupjup-api.sung2011103.workers.dev/api/hit'
     st.i = 999; st.act = cur.acts.length;     // 이 대사 다음에 엔딩 패널
     st.atEnd = true;
     $("endTitle").textContent = e.title;
-    $("endInfo").textContent = cur.title + " · 호감도 " + st.aff + " · 이 이야기 엔딩 " + sp.endings.length + "/" + cur.endings.length + (first ? " · 새 엔딩!" : "");
-    lastShare = "루리 「" + cur.title + "」에서 「" + e.title + "」을 봤어요. 호감도 " + st.aff + "!";
+    $("endInfo").textContent = police
+      ? "요구가 세 번 선을 넘었다. 루리는 처음부터 알고 있었고, 끌려간 건 당신이다. 조서의 죄명 칸은 비어 있다 — 직접 채우시길." + (first ? " · 새 엔딩!" : "")
+      : cur.title + " · 호감도 " + st.aff + " · 이 이야기 엔딩 " + sp.endings.length + "/" + cur.endings.length + (first ? " · 새 엔딩!" : "");
+    lastShare = police
+      ? "루리 미연시에서 끝까지 밀어붙였더니 「경찰서 엔딩」이 나왔어요. 알고 보니 루리는…"
+      : "루리 「" + cur.title + "」에서 「" + e.title + "」을 봤어요. 호감도 " + st.aff + "!";
   }
 
   function advance() {
-    if (st.atEnd) { $("endPanel").classList.remove("hidden"); return; }
+    if (st && st.rpsOn) return;              // 승부 중 — 손 떼고 기다린다
+    if (st.atEnd) {
+      if (st.ending && st.ending.id === "police") show("ed_cell");
+      $("endPanel").classList.remove("hidden");
+      return;
+    }
     nextStep();
   }
 
@@ -876,7 +987,7 @@ setTimeout(function(){fetch('https://jupjup-api.sung2011103.workers.dev/api/hit'
     const set = new Set();
     s.acts.forEach((act) => act.forEach((step) => {
       if (typeof step.cg === "string") set.add(step.cg);
-      (step.opts || []).forEach((o) => { if (typeof o.cg === "string") set.add(o.cg); });
+      (Array.isArray(step.opts) ? step.opts : []).forEach((o) => { if (typeof o.cg === "string") set.add(o.cg); });
     }));
     s.endings.forEach((e) => set.add(e.cg));
     return set;
