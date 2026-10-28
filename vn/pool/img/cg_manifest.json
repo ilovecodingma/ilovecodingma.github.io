@@ -25,6 +25,32 @@
   "ox_down2",
   "ox_bare_arm",
   "ox_bare_hand",
+  "bk_blue",
+  "bk_check",
+  "bk_dot",
+  "bk_floral",
+  "bk_lav",
+  "bk_leopard",
+  "bk_mint",
+  "bk_navy",
+  "bk_red",
+  "bk_sarong",
+  "bk_shirt",
+  "bk_silhouette",
+  "bk_white",
+  "bk_yellow",
+  "dr_apron",
+  "dr_cardigan",
+  "dr_coat",
+  "dr_denim",
+  "dr_hoodie",
+  "dr_knit",
+  "dr_office",
+  "dr_rain",
+  "dr_shirtdress",
+  "dr_sports",
+  "dr_sundress",
+  "dr_yukata",
   "pl_bbq",
   "pl_bump",
   "pl_cold",
@@ -48,7 +74,17 @@
   "pl_stretch",
   "pl_swim",
   "pl_towel2",
-  "pl_wave"
+  "pl_wave",
+  "ub_camisole",
+  "ub_door",
+  "ub_hair",
+  "ub_lace",
+  "ub_robe",
+  "ub_shirt",
+  "ub_slip",
+  "ub_sock",
+  "ub_steam",
+  "ub_towel"
  ],
  "cg": {
   "nk_shy": [
@@ -276,6 +312,214 @@
    "cg_ox_bare_hand_5.webp",
    "cg_ox_bare_hand_6.webp"
   ],
+  "bk_blue": [
+   "cg_bk_blue_0.webp",
+   "cg_bk_blue_1.webp",
+   "cg_bk_blue_2.webp",
+   "cg_bk_blue_3.webp",
+   "cg_bk_blue_4.webp",
+   "cg_bk_blue_5.webp"
+  ],
+  "bk_check": [
+   "cg_bk_check_0.webp",
+   "cg_bk_check_1.webp",
+   "cg_bk_check_2.webp",
+   "cg_bk_check_3.webp",
+   "cg_bk_check_4.webp",
+   "cg_bk_check_5.webp"
+  ],
+  "bk_dot": [
+   "cg_bk_dot_0.webp",
+   "cg_bk_dot_1.webp",
+   "cg_bk_dot_2.webp",
+   "cg_bk_dot_3.webp",
+   "cg_bk_dot_4.webp",
+   "cg_bk_dot_5.webp"
+  ],
+  "bk_floral": [
+   "cg_bk_floral_0.webp",
+   "cg_bk_floral_1.webp",
+   "cg_bk_floral_2.webp",
+   "cg_bk_floral_3.webp",
+   "cg_bk_floral_4.webp",
+   "cg_bk_floral_5.webp"
+  ],
+  "bk_lav": [
+   "cg_bk_lav_0.webp",
+   "cg_bk_lav_1.webp",
+   "cg_bk_lav_2.webp",
+   "cg_bk_lav_3.webp",
+   "cg_bk_lav_4.webp",
+   "cg_bk_lav_5.webp"
+  ],
+  "bk_leopard": [
+   "cg_bk_leopard_0.webp",
+   "cg_bk_leopard_1.webp",
+   "cg_bk_leopard_2.webp",
+   "cg_bk_leopard_3.webp",
+   "cg_bk_leopard_4.webp",
+   "cg_bk_leopard_5.webp"
+  ],
+  "bk_mint": [
+   "cg_bk_mint_0.webp",
+   "cg_bk_mint_1.webp",
+   "cg_bk_mint_2.webp",
+   "cg_bk_mint_3.webp",
+   "cg_bk_mint_4.webp",
+   "cg_bk_mint_5.webp"
+  ],
+  "bk_navy": [
+   "cg_bk_navy_0.webp",
+   "cg_bk_navy_1.webp",
+   "cg_bk_navy_2.webp",
+   "cg_bk_navy_3.webp",
+   "cg_bk_navy_4.webp",
+   "cg_bk_navy_5.webp"
+  ],
+  "bk_red": [
+   "cg_bk_red_0.webp",
+   "cg_bk_red_1.webp",
+   "cg_bk_red_2.webp",
+   "cg_bk_red_3.webp",
+   "cg_bk_red_4.webp",
+   "cg_bk_red_5.webp"
+  ],
+  "bk_sarong": [
+   "cg_bk_sarong_0.webp",
+   "cg_bk_sarong_1.webp",
+   "cg_bk_sarong_2.webp",
+   "cg_bk_sarong_3.webp",
+   "cg_bk_sarong_4.webp",
+   "cg_bk_sarong_5.webp"
+  ],
+  "bk_shirt": [
+   "cg_bk_shirt_0.webp",
+   "cg_bk_shirt_1.webp",
+   "cg_bk_shirt_2.webp",
+   "cg_bk_shirt_3.webp",
+   "cg_bk_shirt_4.webp",
+   "cg_bk_shirt_5.webp"
+  ],
+  "bk_silhouette": [
+   "cg_bk_silhouette_0.webp",
+   "cg_bk_silhouette_1.webp",
+   "cg_bk_silhouette_2.webp",
+   "cg_bk_silhouette_3.webp",
+   "cg_bk_silhouette_4.webp",
+   "cg_bk_silhouette_5.webp"
+  ],
+  "bk_white": [
+   "cg_bk_white_0.webp",
+   "cg_bk_white_1.webp",
+   "cg_bk_white_2.webp",
+   "cg_bk_white_3.webp",
+   "cg_bk_white_4.webp",
+   "cg_bk_white_5.webp"
+  ],
+  "bk_yellow": [
+   "cg_bk_yellow_0.webp",
+   "cg_bk_yellow_1.webp",
+   "cg_bk_yellow_2.webp",
+   "cg_bk_yellow_3.webp",
+   "cg_bk_yellow_4.webp",
+   "cg_bk_yellow_5.webp"
+  ],
+  "dr_apron": [
+   "cg_dr_apron_0.webp",
+   "cg_dr_apron_1.webp",
+   "cg_dr_apron_2.webp",
+   "cg_dr_apron_3.webp",
+   "cg_dr_apron_4.webp",
+   "cg_dr_apron_5.webp"
+  ],
+  "dr_cardigan": [
+   "cg_dr_cardigan_0.webp",
+   "cg_dr_cardigan_1.webp",
+   "cg_dr_cardigan_2.webp",
+   "cg_dr_cardigan_3.webp",
+   "cg_dr_cardigan_4.webp",
+   "cg_dr_cardigan_5.webp"
+  ],
+  "dr_coat": [
+   "cg_dr_coat_0.webp",
+   "cg_dr_coat_1.webp",
+   "cg_dr_coat_2.webp",
+   "cg_dr_coat_3.webp",
+   "cg_dr_coat_4.webp",
+   "cg_dr_coat_5.webp"
+  ],
+  "dr_denim": [
+   "cg_dr_denim_0.webp",
+   "cg_dr_denim_1.webp",
+   "cg_dr_denim_2.webp",
+   "cg_dr_denim_3.webp",
+   "cg_dr_denim_4.webp",
+   "cg_dr_denim_5.webp"
+  ],
+  "dr_hoodie": [
+   "cg_dr_hoodie_0.webp",
+   "cg_dr_hoodie_1.webp",
+   "cg_dr_hoodie_2.webp",
+   "cg_dr_hoodie_3.webp",
+   "cg_dr_hoodie_4.webp",
+   "cg_dr_hoodie_5.webp"
+  ],
+  "dr_knit": [
+   "cg_dr_knit_0.webp",
+   "cg_dr_knit_1.webp",
+   "cg_dr_knit_2.webp",
+   "cg_dr_knit_3.webp",
+   "cg_dr_knit_4.webp",
+   "cg_dr_knit_5.webp"
+  ],
+  "dr_office": [
+   "cg_dr_office_0.webp",
+   "cg_dr_office_1.webp",
+   "cg_dr_office_2.webp",
+   "cg_dr_office_3.webp",
+   "cg_dr_office_4.webp",
+   "cg_dr_office_5.webp"
+  ],
+  "dr_rain": [
+   "cg_dr_rain_0.webp",
+   "cg_dr_rain_1.webp",
+   "cg_dr_rain_2.webp",
+   "cg_dr_rain_3.webp",
+   "cg_dr_rain_4.webp",
+   "cg_dr_rain_5.webp"
+  ],
+  "dr_shirtdress": [
+   "cg_dr_shirtdress_0.webp",
+   "cg_dr_shirtdress_1.webp",
+   "cg_dr_shirtdress_2.webp",
+   "cg_dr_shirtdress_3.webp",
+   "cg_dr_shirtdress_4.webp",
+   "cg_dr_shirtdress_5.webp"
+  ],
+  "dr_sports": [
+   "cg_dr_sports_0.webp",
+   "cg_dr_sports_1.webp",
+   "cg_dr_sports_2.webp",
+   "cg_dr_sports_3.webp",
+   "cg_dr_sports_4.webp",
+   "cg_dr_sports_5.webp"
+  ],
+  "dr_sundress": [
+   "cg_dr_sundress_0.webp",
+   "cg_dr_sundress_1.webp",
+   "cg_dr_sundress_2.webp",
+   "cg_dr_sundress_3.webp",
+   "cg_dr_sundress_4.webp",
+   "cg_dr_sundress_5.webp"
+  ],
+  "dr_yukata": [
+   "cg_dr_yukata_0.webp",
+   "cg_dr_yukata_1.webp",
+   "cg_dr_yukata_2.webp",
+   "cg_dr_yukata_3.webp",
+   "cg_dr_yukata_4.webp",
+   "cg_dr_yukata_5.webp"
+  ],
   "pl_bbq": [
    "cg_pl_bbq_0.webp",
    "cg_pl_bbq_1.webp",
@@ -491,6 +735,86 @@
    "cg_pl_wave_4.webp",
    "cg_pl_wave_5.webp",
    "cg_pl_wave_6.webp"
+  ],
+  "ub_camisole": [
+   "cg_ub_camisole_0.webp",
+   "cg_ub_camisole_1.webp",
+   "cg_ub_camisole_2.webp",
+   "cg_ub_camisole_3.webp",
+   "cg_ub_camisole_4.webp",
+   "cg_ub_camisole_5.webp"
+  ],
+  "ub_door": [
+   "cg_ub_door_0.webp",
+   "cg_ub_door_1.webp",
+   "cg_ub_door_2.webp",
+   "cg_ub_door_3.webp",
+   "cg_ub_door_4.webp",
+   "cg_ub_door_5.webp"
+  ],
+  "ub_hair": [
+   "cg_ub_hair_0.webp",
+   "cg_ub_hair_1.webp",
+   "cg_ub_hair_2.webp",
+   "cg_ub_hair_3.webp",
+   "cg_ub_hair_4.webp",
+   "cg_ub_hair_5.webp"
+  ],
+  "ub_lace": [
+   "cg_ub_lace_0.webp",
+   "cg_ub_lace_1.webp",
+   "cg_ub_lace_2.webp",
+   "cg_ub_lace_3.webp",
+   "cg_ub_lace_4.webp",
+   "cg_ub_lace_5.webp"
+  ],
+  "ub_robe": [
+   "cg_ub_robe_0.webp",
+   "cg_ub_robe_1.webp",
+   "cg_ub_robe_2.webp",
+   "cg_ub_robe_3.webp",
+   "cg_ub_robe_4.webp",
+   "cg_ub_robe_5.webp"
+  ],
+  "ub_shirt": [
+   "cg_ub_shirt_0.webp",
+   "cg_ub_shirt_1.webp",
+   "cg_ub_shirt_2.webp",
+   "cg_ub_shirt_3.webp",
+   "cg_ub_shirt_4.webp",
+   "cg_ub_shirt_5.webp"
+  ],
+  "ub_slip": [
+   "cg_ub_slip_0.webp",
+   "cg_ub_slip_1.webp",
+   "cg_ub_slip_2.webp",
+   "cg_ub_slip_3.webp",
+   "cg_ub_slip_4.webp",
+   "cg_ub_slip_5.webp"
+  ],
+  "ub_sock": [
+   "cg_ub_sock_0.webp",
+   "cg_ub_sock_1.webp",
+   "cg_ub_sock_2.webp",
+   "cg_ub_sock_3.webp",
+   "cg_ub_sock_4.webp",
+   "cg_ub_sock_5.webp"
+  ],
+  "ub_steam": [
+   "cg_ub_steam_0.webp",
+   "cg_ub_steam_1.webp",
+   "cg_ub_steam_2.webp",
+   "cg_ub_steam_3.webp",
+   "cg_ub_steam_4.webp",
+   "cg_ub_steam_5.webp"
+  ],
+  "ub_towel": [
+   "cg_ub_towel_0.webp",
+   "cg_ub_towel_1.webp",
+   "cg_ub_towel_2.webp",
+   "cg_ub_towel_3.webp",
+   "cg_ub_towel_4.webp",
+   "cg_ub_towel_5.webp"
   ]
  }
 }
