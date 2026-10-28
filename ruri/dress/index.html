@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G9BPFF95GY"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());if(location.hostname!=='sungprofile.cloud')window['ga-disable-G-G9BPFF95GY']=true;gtag('config','G-G9BPFF95GY');</script>
+<script>/* 관리자 방문 통계용 기록(운영 도메인만). 사이트 공통 comm.js 와 같은 /api/hit 형식 */
+(function(){if(location.hostname!=='sungprofile.cloud')return;try{var q=new URLSearchParams(location.search);if(q.get('nohit')==='1')localStorage.setItem('jupjup_nohit','1');if(q.get('nohit')==='0')localStorage.removeItem('jupjup_nohit');if(localStorage.getItem('jupjup_nohit')==='1')return;var v=localStorage.getItem('jupjup_vid');if(!/^[0-9a-f]{16}$/.test(v||'')){v=[].map.call(crypto.getRandomValues(new Uint8Array(8)),function(b){return('0'+b.toString(16)).slice(-2)}).join('');localStorage.setItem('jupjup_vid',v)}
+setTimeout(function(){fetch('https://jupjup-api.sung2011103.workers.dev/api/hit',{method:'POST',keepalive:true,headers:{'Content-Type':'application/json'},body:JSON.stringify({p:location.pathname,r:document.referrer,s:(q.get('src')||(q.get('utm_source')||'').replace(/[^a-z0-9_-]/gi,'')).slice(0,16),c:(q.get('utm_campaign')||'').replace(/[^a-z0-9_-]/gi,'').slice(0,40),v:v})}).catch(function(){})},400)}catch(e){}})();</script>
+<title>루리 코디 게임 - 공모왕 루리 꾸미기</title>
+<meta name="description" content="공모왕 루리에게 옷·배경·소품을 입혀 오늘의 미션 코디를 완성하세요. 점수 받고 이미지로 저장.">
+<style>
+:root{--bg:#14101f;--card:#211a33;--ac:#b794ff;--tx:#f4f0ff;--mu:#a79cc4}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font-family:system-ui,"Malgun Gothic",sans-serif}
+.w{max-width:520px;margin:0 auto;padding:12px 16px 40px}
+h1{font-size:20px;margin:8px 0 2px}.sub{color:var(--mu);font-size:13px;margin:0 0 10px}
+.mis{background:var(--card);border-radius:12px;padding:10px 12px;font-size:14px;margin-bottom:10px}
+.mis b{color:var(--ac)}
+#stage{position:relative;width:100%;aspect-ratio:3/4;border-radius:16px;overflow:hidden;background:#cdbcff}
+#stage img.ruri{position:absolute;left:50%;bottom:0;height:92%;transform:translateX(-50%);pointer-events:none}
+.st{position:absolute;font-size:34px;line-height:1;pointer-events:none;filter:drop-shadow(0 1px 2px #0006)}
+.row{display:flex;gap:8px;overflow-x:auto;padding:8px 0;scrollbar-width:thin}
+.row button{flex:none;border:2px solid transparent;background:var(--card);border-radius:12px;padding:4px;color:var(--tx);cursor:pointer;font-size:13px}
+.row button.on{border-color:var(--ac)}
+.row img{display:block;height:84px}
+.bg{width:44px;height:44px;border-radius:50%}
+.lb{font-size:12px;color:var(--mu);margin-top:6px}
+.act{display:flex;gap:8px;margin-top:10px}
+.act button{flex:1;padding:12px;border:0;border-radius:12px;font-size:15px;font-weight:700;cursor:pointer;background:var(--ac);color:#1a1030}
+.act button.g{background:var(--card);color:var(--tx)}
+#res{margin-top:10px;padding:12px;border-radius:12px;background:var(--card);display:none;font-size:15px;line-height:1.5}
+#res .sc{font-size:30px;font-weight:800;color:var(--ac)}
+a.back{color:var(--mu);font-size:13px;text-decoration:none}
+</style>
+</head>
+<body><div class="w">
+<a class="back" href="/">← 루리의 줍줍</a>
+<h1>👗 루리 코디 게임</h1>
+<p class="sub">옷·배경·소품을 골라 오늘의 미션에 맞춰 꾸며 보세요.</p>
+<div class="mis">오늘의 미션: <b id="mt"></b></div>
+<div id="stage"><img class="ruri" id="ru" alt="루리"></div>
+<div class="lb">옷</div><div class="row" id="rw"></div>
+<div class="lb">배경</div><div class="row" id="rb"></div>
+<div class="lb">소품 (여러 개 가능)</div><div class="row" id="rs"></div>
+<div class="act"><button id="go">코디 완성!</button><button class="g" id="nx">미션 바꾸기</button></div>
+<div id="res"></div>
+<div class="act"><button class="g" id="sv">이미지로 저장</button></div>
+</div>
+<script>
+var OUT=[["suit","정장",["단정","오피스","발표"]],["gray","그레이 슈트",["단정","오피스"]],["cardigan","가디건",["포근","캐주얼"]],["present","발표용",["발표","오피스"]],["desk","데스크",["오피스","캐주얼"]],["anchor","앵커",["발표","단정"]],["trench","트렌치",["외출","단정"]],["vest","조끼",["오피스","포근"]],["cook","요리",["캐주얼","포근"]],["summer","여름",["여름","캐주얼"]],["resort","휴양지",["여름","외출"]],["watch","시계",["외출","오피스"]]];
+var BG=[["#cdbcff","보라","포근"],["#ffd6e0","핑크","캐주얼"],["#bfe3ff","하늘","여름"],["#2b2540","밤","외출"],["#f6efe0","베이지","단정"],["#d7f2d0","연두","캐주얼"]];
+var ST=[["👑","왕관","발표"],["🏆","트로피","발표"],["💼","가방","오피스"],["☀️","해","여름"],["✨","반짝이","외출"],["🌸","꽃","포근"],["🎀","리본","캐주얼"],["🕶️","선글라스","여름"]];
+var MS=[["발표 심사장에 서는 날","발표"],["첫 출근 오피스룩","오피스"],["여름 휴가 출발","여름"],["포근한 주말 약속","포근"],["깔끔한 면접 단정룩","단정"],["저녁 외출","외출"],["집에서 캐주얼하게","캐주얼"]];
+var s={o:0,b:0,st:{},m:0},$=function(i){return document.getElementById(i)};
+function ga(n,p){try{if(window.gtag&&location.hostname==='sungprofile.cloud')gtag('event',n,p||{})}catch(e){}}
+function mk(box,arr,fn,kind){box.innerHTML='';arr.forEach(function(a,i){var b=document.createElement('button');b.innerHTML=kind==='o'?'<img src="/assets/ruri/o_'+a[0]+'_s.webp" alt=""><div>'+a[1]+'</div>':kind==='b'?'<div class="bg" style="background:'+a[0]+'"></div><div>'+a[1]+'</div>':'<div style="font-size:30px">'+a[0]+'</div><div>'+a[1]+'</div>';b.onclick=function(){fn(i)};box.appendChild(b)})}
+function render(){$('ru').src='/assets/ruri/o_'+OUT[s.o][0]+'.webp';$('stage').style.background=BG[s.b][0];
+[].forEach.call($('rw').children,function(c,i){c.className=i===s.o?'on':''});[].forEach.call($('rb').children,function(c,i){c.className=i===s.b?'on':''});[].forEach.call($('rs').children,function(c,i){c.className=s.st[i]?'on':''});
+[].slice.call($('stage').querySelectorAll('.st')).forEach(function(e){e.remove()});
+Object.keys(s.st).forEach(function(k,n){var e=document.createElement('div');e.className='st';e.textContent=ST[k][0];var pos=[[10,6],[78,8],[8,50],[80,46],[12,78],[78,76],[44,3],[44,88]][k%8];e.style.left=pos[0]+'%';e.style.top=pos[1]+'%';$('stage').appendChild(e)})}
+function mission(){$('mt').textContent=MS[s.m][0]}
+mk($('rw'),OUT,function(i){s.o=i;render()},'o');mk($('rb'),BG,function(i){s.b=i;render()},'b');
+mk($('rs'),ST,function(i){if(s.st[i])delete s.st[i];else s.st[i]=1;render()},'s');
+s.m=Math.floor(Math.random()*MS.length);mission();render();
+$('nx').onclick=function(){s.m=(s.m+1)%MS.length;mission();$('res').style.display='none'};
+$('go').onclick=function(){var t=MS[s.m][1],sc=40,n=[];
+if(OUT[s.o][2].indexOf(t)>=0){sc+=30;n.push('옷이 미션과 딱 맞아요')}else n.push('옷이 미션과 조금 달라요');
+if(BG[s.b][2]===t){sc+=15;n.push('배경 센스 좋음')}
+var h=0;Object.keys(s.st).forEach(function(k){if(ST[k][2]===t)h=1});if(h){sc+=15;n.push('소품이 포인트')}
+if(Object.keys(s.st).length>4){sc-=10;n.push('소품이 너무 많아요')}
+sc=Math.max(0,Math.min(100,sc));
+$('res').style.display='block';$('res').innerHTML='<div class="sc">'+sc+'점</div>'+n.join(' · ');
+ga('ruri_dress_score',{score:sc,mission:t,outfit:OUT[s.o][0]})};
+$('sv').onclick=function(){var c=document.createElement('canvas');c.width=600;c.height=800;var x=c.getContext('2d');x.fillStyle=BG[s.b][0];x.fillRect(0,0,600,800);
+var im=new Image();im.onload=function(){var h=736,w=im.width*h/im.height;x.drawImage(im,(600-w)/2,800-h,w,h);x.font='54px sans-serif';
+Object.keys(s.st).forEach(function(k){var p=[[60,90],[470,100],[50,400],[480,380],[70,640],[470,630],[270,60],[270,740]][k%8];x.fillText(ST[k][0],p[0],p[1])});
+x.font='bold 22px sans-serif';x.fillStyle='#0008';x.fillText('sungprofile.cloud/ruri/dress/',150,780);
+try{var a=document.createElement('a');a.download='ruri_coord.png';a.href=c.toDataURL('image/png');a.click();ga('ruri_dress_save')}catch(e){}};
+im.src='/assets/ruri/o_'+OUT[s.o][0]+'.webp'};
+ga('ruri_dress_open');
+</script></body></html>
