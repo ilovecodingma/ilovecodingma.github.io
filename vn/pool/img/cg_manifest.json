@@ -29,41 +29,69 @@
   "bk_check",
   "bk_dot",
   "bk_floral",
+  "bk_green",
   "bk_lav",
   "bk_leopard",
   "bk_mint",
   "bk_navy",
+  "bk_oneshoulder",
+  "bk_rash",
   "bk_red",
   "bk_sarong",
   "bk_shirt",
   "bk_silhouette",
+  "bk_stripe",
+  "bk_towelwrap",
   "bk_white",
+  "bk_wrap",
   "bk_yellow",
   "dr_apron",
+  "dr_cardigan",
+  "dr_chef",
   "dr_coat",
   "dr_denim",
+  "dr_hanbok",
   "dr_hoodie",
   "dr_knit",
+  "dr_leather",
   "dr_office",
+  "dr_overalls",
+  "dr_party",
   "dr_rain",
   "dr_shirtdress",
   "dr_sports",
   "dr_sundress",
+  "dr_travel",
+  "dr_trench",
+  "dr_turtle",
   "dr_yukata",
+  "ed_cell",
+  "ed_cop",
+  "ed_police",
+  "lv_album",
   "lv_backhug",
   "lv_call",
+  "lv_cheek",
+  "lv_confess",
   "lv_cook",
+  "lv_dance",
   "lv_date",
+  "lv_desk",
   "lv_forehead",
   "lv_gift",
   "lv_hand",
   "lv_lap",
   "lv_ring",
   "lv_selfie",
+  "lv_share",
+  "lv_shoulder",
   "lv_sleep",
+  "lv_tie",
   "lv_umbrella",
+  "lv_wait",
   "lv_wake",
   "pl_bbq",
+  "pl_book",
   "pl_bump",
   "pl_cold",
   "pl_cream",
@@ -73,17 +101,22 @@
   "pl_float",
   "pl_gun",
   "pl_hand",
+  "pl_ladder",
   "pl_lean",
   "pl_lounge",
   "pl_melon",
   "pl_night",
   "pl_parasol",
+  "pl_photo",
   "pl_pout",
+  "pl_ring",
   "pl_share",
+  "pl_shower",
   "pl_slip",
   "pl_splash",
   "pl_star",
   "pl_stretch",
+  "pl_sunset",
   "pl_swim",
   "pl_towel2",
   "pl_wave",
@@ -96,13 +129,234 @@
   "ub_slip",
   "ub_sock",
   "ub_steam",
-  "ub_towel",
-  "dr_cardigan",
-  "ed_cell",
-  "ed_cop",
-  "lv_confess"
+  "ub_towel"
  ],
  "cg": {
+  "nk_shy": [
+   "cg_nk_shy_0.webp",
+   "cg_nk_shy_1.webp",
+   "cg_nk_shy_2.webp",
+   "cg_nk_shy_3.webp",
+   "cg_nk_shy_4.webp",
+   "cg_nk_shy_5.webp",
+   "cg_nk_shy_6.webp"
+  ],
+  "nk_oops": [
+   "cg_nk_oops_0.webp",
+   "cg_nk_oops_1.webp",
+   "cg_nk_oops_2.webp",
+   "cg_nk_oops_3.webp",
+   "cg_nk_oops_4.webp",
+   "cg_nk_oops_5.webp",
+   "cg_nk_oops_6.webp"
+  ],
+  "ox_strap": [
+   "cg_ox_strap_0.webp",
+   "cg_ox_strap_1.webp",
+   "cg_ox_strap_2.webp",
+   "cg_ox_strap_3.webp",
+   "cg_ox_strap_4.webp",
+   "cg_ox_strap_5.webp",
+   "cg_ox_strap_6.webp"
+  ],
+  "ox_wet": [
+   "cg_ox_wet_0.webp",
+   "cg_ox_wet_1.webp",
+   "cg_ox_wet_2.webp",
+   "cg_ox_wet_3.webp",
+   "cg_ox_wet_4.webp",
+   "cg_ox_wet_5.webp",
+   "cg_ox_wet_6.webp"
+  ],
+  "ox_towel": [
+   "cg_ox_towel_0.webp",
+   "cg_ox_towel_1.webp",
+   "cg_ox_towel_2.webp",
+   "cg_ox_towel_3.webp",
+   "cg_ox_towel_4.webp",
+   "cg_ox_towel_5.webp",
+   "cg_ox_towel_6.webp"
+  ],
+  "ox_press": [
+   "cg_ox_press_0.webp",
+   "cg_ox_press_1.webp",
+   "cg_ox_press_2.webp",
+   "cg_ox_press_3.webp",
+   "cg_ox_press_4.webp",
+   "cg_ox_press_5.webp",
+   "cg_ox_press_6.webp"
+  ],
+  "ox_back": [
+   "cg_ox_back_0.webp",
+   "cg_ox_back_1.webp",
+   "cg_ox_back_2.webp",
+   "cg_ox_back_3.webp",
+   "cg_ox_back_4.webp",
+   "cg_ox_back_5.webp",
+   "cg_ox_back_6.webp"
+  ],
+  "ox_tie": [
+   "cg_ox_tie_0.webp",
+   "cg_ox_tie_1.webp",
+   "cg_ox_tie_2.webp",
+   "cg_ox_tie_3.webp",
+   "cg_ox_tie_4.webp",
+   "cg_ox_tie_5.webp",
+   "cg_ox_tie_6.webp"
+  ],
+  "ox_hair": [
+   "cg_ox_hair_0.webp",
+   "cg_ox_hair_1.webp",
+   "cg_ox_hair_2.webp",
+   "cg_ox_hair_3.webp",
+   "cg_ox_hair_4.webp",
+   "cg_ox_hair_5.webp",
+   "cg_ox_hair_6.webp"
+  ],
+  "ox_foam": [
+   "cg_ox_foam_0.webp",
+   "cg_ox_foam_1.webp",
+   "cg_ox_foam_2.webp",
+   "cg_ox_foam_3.webp",
+   "cg_ox_foam_4.webp",
+   "cg_ox_foam_5.webp",
+   "cg_ox_foam_6.webp"
+  ],
+  "ox_steam": [
+   "cg_ox_steam_0.webp",
+   "cg_ox_steam_1.webp",
+   "cg_ox_steam_2.webp",
+   "cg_ox_steam_3.webp",
+   "cg_ox_steam_4.webp",
+   "cg_ox_steam_5.webp",
+   "cg_ox_steam_6.webp"
+  ],
+  "ox_towelfly": [
+   "cg_ox_towelfly_0.webp",
+   "cg_ox_towelfly_1.webp",
+   "cg_ox_towelfly_2.webp",
+   "cg_ox_towelfly_3.webp",
+   "cg_ox_towelfly_4.webp",
+   "cg_ox_towelfly_5.webp",
+   "cg_ox_towelfly_6.webp"
+  ],
+  "ox_leaves": [
+   "cg_ox_leaves_0.webp",
+   "cg_ox_leaves_1.webp",
+   "cg_ox_leaves_2.webp",
+   "cg_ox_leaves_3.webp",
+   "cg_ox_leaves_4.webp",
+   "cg_ox_leaves_5.webp",
+   "cg_ox_leaves_6.webp"
+  ],
+  "ox_petals": [
+   "cg_ox_petals_0.webp",
+   "cg_ox_petals_1.webp",
+   "cg_ox_petals_2.webp",
+   "cg_ox_petals_3.webp",
+   "cg_ox_petals_4.webp",
+   "cg_ox_petals_5.webp",
+   "cg_ox_petals_6.webp"
+  ],
+  "nk_hold": [
+   "cg_nk_hold_0.webp",
+   "cg_nk_hold_1.webp",
+   "cg_nk_hold_2.webp",
+   "cg_nk_hold_3.webp",
+   "cg_nk_hold_4.webp",
+   "cg_nk_hold_5.webp",
+   "cg_nk_hold_6.webp"
+  ],
+  "nk_heart": [
+   "cg_nk_heart_0.webp",
+   "cg_nk_heart_1.webp",
+   "cg_nk_heart_2.webp",
+   "cg_nk_heart_3.webp",
+   "cg_nk_heart_4.webp",
+   "cg_nk_heart_5.webp",
+   "cg_nk_heart_6.webp"
+  ],
+  "nk_front": [
+   "cg_nk_front_0.webp",
+   "cg_nk_front_1.webp",
+   "cg_nk_front_2.webp",
+   "cg_nk_front_3.webp",
+   "cg_nk_front_4.webp",
+   "cg_nk_front_5.webp",
+   "cg_nk_front_6.webp"
+  ],
+  "nk_split": [
+   "cg_nk_split_0.webp",
+   "cg_nk_split_1.webp",
+   "cg_nk_split_2.webp",
+   "cg_nk_split_3.webp",
+   "cg_nk_split_4.webp",
+   "cg_nk_split_5.webp",
+   "cg_nk_split_6.webp"
+  ],
+  "nk_bend": [
+   "cg_nk_bend_0.webp",
+   "cg_nk_bend_1.webp",
+   "cg_nk_bend_2.webp",
+   "cg_nk_bend_3.webp",
+   "cg_nk_bend_4.webp",
+   "cg_nk_bend_5.webp",
+   "cg_nk_bend_6.webp"
+  ],
+  "nk_back": [
+   "cg_nk_back_0.webp",
+   "cg_nk_back_1.webp",
+   "cg_nk_back_2.webp",
+   "cg_nk_back_3.webp",
+   "cg_nk_back_4.webp",
+   "cg_nk_back_5.webp",
+   "cg_nk_back_6.webp"
+  ],
+  "nk_three": [
+   "cg_nk_three_0.webp",
+   "cg_nk_three_1.webp",
+   "cg_nk_three_2.webp",
+   "cg_nk_three_3.webp",
+   "cg_nk_three_4.webp",
+   "cg_nk_three_5.webp",
+   "cg_nk_three_6.webp"
+  ],
+  "ox_down": [
+   "cg_ox_down_0.webp",
+   "cg_ox_down_1.webp",
+   "cg_ox_down_2.webp",
+   "cg_ox_down_3.webp",
+   "cg_ox_down_4.webp",
+   "cg_ox_down_5.webp",
+   "cg_ox_down_6.webp"
+  ],
+  "ox_down2": [
+   "cg_ox_down2_0.webp",
+   "cg_ox_down2_1.webp",
+   "cg_ox_down2_2.webp",
+   "cg_ox_down2_3.webp",
+   "cg_ox_down2_4.webp",
+   "cg_ox_down2_5.webp",
+   "cg_ox_down2_6.webp"
+  ],
+  "ox_bare_arm": [
+   "cg_ox_bare_arm_0.webp",
+   "cg_ox_bare_arm_1.webp",
+   "cg_ox_bare_arm_2.webp",
+   "cg_ox_bare_arm_3.webp",
+   "cg_ox_bare_arm_4.webp",
+   "cg_ox_bare_arm_5.webp",
+   "cg_ox_bare_arm_6.webp"
+  ],
+  "ox_bare_hand": [
+   "cg_ox_bare_hand_0.webp",
+   "cg_ox_bare_hand_1.webp",
+   "cg_ox_bare_hand_2.webp",
+   "cg_ox_bare_hand_3.webp",
+   "cg_ox_bare_hand_4.webp",
+   "cg_ox_bare_hand_5.webp",
+   "cg_ox_bare_hand_6.webp"
+  ],
   "bk_blue": [
    "cg_bk_blue_0.webp",
    "cg_bk_blue_1.webp",
@@ -134,6 +388,14 @@
    "cg_bk_floral_3.webp",
    "cg_bk_floral_4.webp",
    "cg_bk_floral_5.webp"
+  ],
+  "bk_green": [
+   "cg_bk_green_0.webp",
+   "cg_bk_green_1.webp",
+   "cg_bk_green_2.webp",
+   "cg_bk_green_3.webp",
+   "cg_bk_green_4.webp",
+   "cg_bk_green_5.webp"
   ],
   "bk_lav": [
    "cg_bk_lav_0.webp",
@@ -167,6 +429,22 @@
    "cg_bk_navy_4.webp",
    "cg_bk_navy_5.webp"
   ],
+  "bk_oneshoulder": [
+   "cg_bk_oneshoulder_0.webp",
+   "cg_bk_oneshoulder_1.webp",
+   "cg_bk_oneshoulder_2.webp",
+   "cg_bk_oneshoulder_3.webp",
+   "cg_bk_oneshoulder_4.webp",
+   "cg_bk_oneshoulder_5.webp"
+  ],
+  "bk_rash": [
+   "cg_bk_rash_0.webp",
+   "cg_bk_rash_1.webp",
+   "cg_bk_rash_2.webp",
+   "cg_bk_rash_3.webp",
+   "cg_bk_rash_4.webp",
+   "cg_bk_rash_5.webp"
+  ],
   "bk_red": [
    "cg_bk_red_0.webp",
    "cg_bk_red_1.webp",
@@ -199,6 +477,22 @@
    "cg_bk_silhouette_4.webp",
    "cg_bk_silhouette_5.webp"
   ],
+  "bk_stripe": [
+   "cg_bk_stripe_0.webp",
+   "cg_bk_stripe_1.webp",
+   "cg_bk_stripe_2.webp",
+   "cg_bk_stripe_3.webp",
+   "cg_bk_stripe_4.webp",
+   "cg_bk_stripe_5.webp"
+  ],
+  "bk_towelwrap": [
+   "cg_bk_towelwrap_0.webp",
+   "cg_bk_towelwrap_1.webp",
+   "cg_bk_towelwrap_2.webp",
+   "cg_bk_towelwrap_3.webp",
+   "cg_bk_towelwrap_4.webp",
+   "cg_bk_towelwrap_5.webp"
+  ],
   "bk_white": [
    "cg_bk_white_0.webp",
    "cg_bk_white_1.webp",
@@ -206,6 +500,14 @@
    "cg_bk_white_3.webp",
    "cg_bk_white_4.webp",
    "cg_bk_white_5.webp"
+  ],
+  "bk_wrap": [
+   "cg_bk_wrap_0.webp",
+   "cg_bk_wrap_1.webp",
+   "cg_bk_wrap_2.webp",
+   "cg_bk_wrap_3.webp",
+   "cg_bk_wrap_4.webp",
+   "cg_bk_wrap_5.webp"
   ],
   "bk_yellow": [
    "cg_bk_yellow_0.webp",
@@ -231,6 +533,14 @@
    "cg_dr_cardigan_4.webp",
    "cg_dr_cardigan_5.webp"
   ],
+  "dr_chef": [
+   "cg_dr_chef_0.webp",
+   "cg_dr_chef_1.webp",
+   "cg_dr_chef_2.webp",
+   "cg_dr_chef_3.webp",
+   "cg_dr_chef_4.webp",
+   "cg_dr_chef_5.webp"
+  ],
   "dr_coat": [
    "cg_dr_coat_0.webp",
    "cg_dr_coat_1.webp",
@@ -246,6 +556,14 @@
    "cg_dr_denim_3.webp",
    "cg_dr_denim_4.webp",
    "cg_dr_denim_5.webp"
+  ],
+  "dr_hanbok": [
+   "cg_dr_hanbok_0.webp",
+   "cg_dr_hanbok_1.webp",
+   "cg_dr_hanbok_2.webp",
+   "cg_dr_hanbok_3.webp",
+   "cg_dr_hanbok_4.webp",
+   "cg_dr_hanbok_5.webp"
   ],
   "dr_hoodie": [
    "cg_dr_hoodie_0.webp",
@@ -263,6 +581,14 @@
    "cg_dr_knit_4.webp",
    "cg_dr_knit_5.webp"
   ],
+  "dr_leather": [
+   "cg_dr_leather_0.webp",
+   "cg_dr_leather_1.webp",
+   "cg_dr_leather_2.webp",
+   "cg_dr_leather_3.webp",
+   "cg_dr_leather_4.webp",
+   "cg_dr_leather_5.webp"
+  ],
   "dr_office": [
    "cg_dr_office_0.webp",
    "cg_dr_office_1.webp",
@@ -270,6 +596,22 @@
    "cg_dr_office_3.webp",
    "cg_dr_office_4.webp",
    "cg_dr_office_5.webp"
+  ],
+  "dr_overalls": [
+   "cg_dr_overalls_0.webp",
+   "cg_dr_overalls_1.webp",
+   "cg_dr_overalls_2.webp",
+   "cg_dr_overalls_3.webp",
+   "cg_dr_overalls_4.webp",
+   "cg_dr_overalls_5.webp"
+  ],
+  "dr_party": [
+   "cg_dr_party_0.webp",
+   "cg_dr_party_1.webp",
+   "cg_dr_party_2.webp",
+   "cg_dr_party_3.webp",
+   "cg_dr_party_4.webp",
+   "cg_dr_party_5.webp"
   ],
   "dr_rain": [
    "cg_dr_rain_0.webp",
@@ -303,6 +645,30 @@
    "cg_dr_sundress_4.webp",
    "cg_dr_sundress_5.webp"
   ],
+  "dr_travel": [
+   "cg_dr_travel_0.webp",
+   "cg_dr_travel_1.webp",
+   "cg_dr_travel_2.webp",
+   "cg_dr_travel_3.webp",
+   "cg_dr_travel_4.webp",
+   "cg_dr_travel_5.webp"
+  ],
+  "dr_trench": [
+   "cg_dr_trench_0.webp",
+   "cg_dr_trench_1.webp",
+   "cg_dr_trench_2.webp",
+   "cg_dr_trench_3.webp",
+   "cg_dr_trench_4.webp",
+   "cg_dr_trench_5.webp"
+  ],
+  "dr_turtle": [
+   "cg_dr_turtle_0.webp",
+   "cg_dr_turtle_1.webp",
+   "cg_dr_turtle_2.webp",
+   "cg_dr_turtle_3.webp",
+   "cg_dr_turtle_4.webp",
+   "cg_dr_turtle_5.webp"
+  ],
   "dr_yukata": [
    "cg_dr_yukata_0.webp",
    "cg_dr_yukata_1.webp",
@@ -327,6 +693,22 @@
    "cg_ed_cop_4.webp",
    "cg_ed_cop_5.webp"
   ],
+  "ed_police": [
+   "cg_ed_police_0.webp",
+   "cg_ed_police_1.webp",
+   "cg_ed_police_2.webp",
+   "cg_ed_police_3.webp",
+   "cg_ed_police_4.webp",
+   "cg_ed_police_5.webp"
+  ],
+  "lv_album": [
+   "cg_lv_album_0.webp",
+   "cg_lv_album_1.webp",
+   "cg_lv_album_2.webp",
+   "cg_lv_album_3.webp",
+   "cg_lv_album_4.webp",
+   "cg_lv_album_5.webp"
+  ],
   "lv_backhug": [
    "cg_lv_backhug_0.webp",
    "cg_lv_backhug_1.webp",
@@ -342,6 +724,14 @@
    "cg_lv_call_3.webp",
    "cg_lv_call_4.webp",
    "cg_lv_call_5.webp"
+  ],
+  "lv_cheek": [
+   "cg_lv_cheek_0.webp",
+   "cg_lv_cheek_1.webp",
+   "cg_lv_cheek_2.webp",
+   "cg_lv_cheek_3.webp",
+   "cg_lv_cheek_4.webp",
+   "cg_lv_cheek_5.webp"
   ],
   "lv_confess": [
    "cg_lv_confess_0.webp",
@@ -359,6 +749,14 @@
    "cg_lv_cook_4.webp",
    "cg_lv_cook_5.webp"
   ],
+  "lv_dance": [
+   "cg_lv_dance_0.webp",
+   "cg_lv_dance_1.webp",
+   "cg_lv_dance_2.webp",
+   "cg_lv_dance_3.webp",
+   "cg_lv_dance_4.webp",
+   "cg_lv_dance_5.webp"
+  ],
   "lv_date": [
    "cg_lv_date_0.webp",
    "cg_lv_date_1.webp",
@@ -366,6 +764,14 @@
    "cg_lv_date_3.webp",
    "cg_lv_date_4.webp",
    "cg_lv_date_5.webp"
+  ],
+  "lv_desk": [
+   "cg_lv_desk_0.webp",
+   "cg_lv_desk_1.webp",
+   "cg_lv_desk_2.webp",
+   "cg_lv_desk_3.webp",
+   "cg_lv_desk_4.webp",
+   "cg_lv_desk_5.webp"
   ],
   "lv_forehead": [
    "cg_lv_forehead_0.webp",
@@ -415,6 +821,22 @@
    "cg_lv_selfie_4.webp",
    "cg_lv_selfie_5.webp"
   ],
+  "lv_share": [
+   "cg_lv_share_0.webp",
+   "cg_lv_share_1.webp",
+   "cg_lv_share_2.webp",
+   "cg_lv_share_3.webp",
+   "cg_lv_share_4.webp",
+   "cg_lv_share_5.webp"
+  ],
+  "lv_shoulder": [
+   "cg_lv_shoulder_0.webp",
+   "cg_lv_shoulder_1.webp",
+   "cg_lv_shoulder_2.webp",
+   "cg_lv_shoulder_3.webp",
+   "cg_lv_shoulder_4.webp",
+   "cg_lv_shoulder_5.webp"
+  ],
   "lv_sleep": [
    "cg_lv_sleep_0.webp",
    "cg_lv_sleep_1.webp",
@@ -422,6 +844,14 @@
    "cg_lv_sleep_3.webp",
    "cg_lv_sleep_4.webp",
    "cg_lv_sleep_5.webp"
+  ],
+  "lv_tie": [
+   "cg_lv_tie_0.webp",
+   "cg_lv_tie_1.webp",
+   "cg_lv_tie_2.webp",
+   "cg_lv_tie_3.webp",
+   "cg_lv_tie_4.webp",
+   "cg_lv_tie_5.webp"
   ],
   "lv_umbrella": [
    "cg_lv_umbrella_0.webp",
@@ -431,6 +861,14 @@
    "cg_lv_umbrella_4.webp",
    "cg_lv_umbrella_5.webp"
   ],
+  "lv_wait": [
+   "cg_lv_wait_0.webp",
+   "cg_lv_wait_1.webp",
+   "cg_lv_wait_2.webp",
+   "cg_lv_wait_3.webp",
+   "cg_lv_wait_4.webp",
+   "cg_lv_wait_5.webp"
+  ],
   "lv_wake": [
    "cg_lv_wake_0.webp",
    "cg_lv_wake_1.webp",
@@ -438,231 +876,6 @@
    "cg_lv_wake_3.webp",
    "cg_lv_wake_4.webp",
    "cg_lv_wake_5.webp"
-  ],
-  "nk_back": [
-   "cg_nk_back_0.webp",
-   "cg_nk_back_1.webp",
-   "cg_nk_back_2.webp",
-   "cg_nk_back_3.webp",
-   "cg_nk_back_4.webp",
-   "cg_nk_back_5.webp",
-   "cg_nk_back_6.webp"
-  ],
-  "nk_bend": [
-   "cg_nk_bend_0.webp",
-   "cg_nk_bend_1.webp",
-   "cg_nk_bend_2.webp",
-   "cg_nk_bend_3.webp",
-   "cg_nk_bend_4.webp",
-   "cg_nk_bend_5.webp",
-   "cg_nk_bend_6.webp"
-  ],
-  "nk_front": [
-   "cg_nk_front_0.webp",
-   "cg_nk_front_1.webp",
-   "cg_nk_front_2.webp",
-   "cg_nk_front_3.webp",
-   "cg_nk_front_4.webp",
-   "cg_nk_front_5.webp",
-   "cg_nk_front_6.webp"
-  ],
-  "nk_heart": [
-   "cg_nk_heart_0.webp",
-   "cg_nk_heart_1.webp",
-   "cg_nk_heart_2.webp",
-   "cg_nk_heart_3.webp",
-   "cg_nk_heart_4.webp",
-   "cg_nk_heart_5.webp",
-   "cg_nk_heart_6.webp"
-  ],
-  "nk_hold": [
-   "cg_nk_hold_0.webp",
-   "cg_nk_hold_1.webp",
-   "cg_nk_hold_2.webp",
-   "cg_nk_hold_3.webp",
-   "cg_nk_hold_4.webp",
-   "cg_nk_hold_5.webp",
-   "cg_nk_hold_6.webp"
-  ],
-  "nk_oops": [
-   "cg_nk_oops_0.webp",
-   "cg_nk_oops_1.webp",
-   "cg_nk_oops_2.webp",
-   "cg_nk_oops_3.webp",
-   "cg_nk_oops_4.webp",
-   "cg_nk_oops_5.webp",
-   "cg_nk_oops_6.webp"
-  ],
-  "nk_shy": [
-   "cg_nk_shy_0.webp",
-   "cg_nk_shy_1.webp",
-   "cg_nk_shy_2.webp",
-   "cg_nk_shy_3.webp",
-   "cg_nk_shy_4.webp",
-   "cg_nk_shy_5.webp",
-   "cg_nk_shy_6.webp"
-  ],
-  "nk_split": [
-   "cg_nk_split_0.webp",
-   "cg_nk_split_1.webp",
-   "cg_nk_split_2.webp",
-   "cg_nk_split_3.webp",
-   "cg_nk_split_4.webp",
-   "cg_nk_split_5.webp",
-   "cg_nk_split_6.webp"
-  ],
-  "nk_three": [
-   "cg_nk_three_0.webp",
-   "cg_nk_three_1.webp",
-   "cg_nk_three_2.webp",
-   "cg_nk_three_3.webp",
-   "cg_nk_three_4.webp",
-   "cg_nk_three_5.webp",
-   "cg_nk_three_6.webp"
-  ],
-  "ox_back": [
-   "cg_ox_back_0.webp",
-   "cg_ox_back_1.webp",
-   "cg_ox_back_2.webp",
-   "cg_ox_back_3.webp",
-   "cg_ox_back_4.webp",
-   "cg_ox_back_5.webp",
-   "cg_ox_back_6.webp"
-  ],
-  "ox_bare_arm": [
-   "cg_ox_bare_arm_0.webp",
-   "cg_ox_bare_arm_1.webp",
-   "cg_ox_bare_arm_2.webp",
-   "cg_ox_bare_arm_3.webp",
-   "cg_ox_bare_arm_4.webp",
-   "cg_ox_bare_arm_5.webp",
-   "cg_ox_bare_arm_6.webp"
-  ],
-  "ox_bare_hand": [
-   "cg_ox_bare_hand_0.webp",
-   "cg_ox_bare_hand_1.webp",
-   "cg_ox_bare_hand_2.webp",
-   "cg_ox_bare_hand_3.webp",
-   "cg_ox_bare_hand_4.webp",
-   "cg_ox_bare_hand_5.webp",
-   "cg_ox_bare_hand_6.webp"
-  ],
-  "ox_down2": [
-   "cg_ox_down2_0.webp",
-   "cg_ox_down2_1.webp",
-   "cg_ox_down2_2.webp",
-   "cg_ox_down2_3.webp",
-   "cg_ox_down2_4.webp",
-   "cg_ox_down2_5.webp",
-   "cg_ox_down2_6.webp"
-  ],
-  "ox_down": [
-   "cg_ox_down_0.webp",
-   "cg_ox_down_1.webp",
-   "cg_ox_down_2.webp",
-   "cg_ox_down_3.webp",
-   "cg_ox_down_4.webp",
-   "cg_ox_down_5.webp",
-   "cg_ox_down_6.webp"
-  ],
-  "ox_foam": [
-   "cg_ox_foam_0.webp",
-   "cg_ox_foam_1.webp",
-   "cg_ox_foam_2.webp",
-   "cg_ox_foam_3.webp",
-   "cg_ox_foam_4.webp",
-   "cg_ox_foam_5.webp",
-   "cg_ox_foam_6.webp"
-  ],
-  "ox_hair": [
-   "cg_ox_hair_0.webp",
-   "cg_ox_hair_1.webp",
-   "cg_ox_hair_2.webp",
-   "cg_ox_hair_3.webp",
-   "cg_ox_hair_4.webp",
-   "cg_ox_hair_5.webp",
-   "cg_ox_hair_6.webp"
-  ],
-  "ox_leaves": [
-   "cg_ox_leaves_0.webp",
-   "cg_ox_leaves_1.webp",
-   "cg_ox_leaves_2.webp",
-   "cg_ox_leaves_3.webp",
-   "cg_ox_leaves_4.webp",
-   "cg_ox_leaves_5.webp",
-   "cg_ox_leaves_6.webp"
-  ],
-  "ox_petals": [
-   "cg_ox_petals_0.webp",
-   "cg_ox_petals_1.webp",
-   "cg_ox_petals_2.webp",
-   "cg_ox_petals_3.webp",
-   "cg_ox_petals_4.webp",
-   "cg_ox_petals_5.webp",
-   "cg_ox_petals_6.webp"
-  ],
-  "ox_press": [
-   "cg_ox_press_0.webp",
-   "cg_ox_press_1.webp",
-   "cg_ox_press_2.webp",
-   "cg_ox_press_3.webp",
-   "cg_ox_press_4.webp",
-   "cg_ox_press_5.webp",
-   "cg_ox_press_6.webp"
-  ],
-  "ox_steam": [
-   "cg_ox_steam_0.webp",
-   "cg_ox_steam_1.webp",
-   "cg_ox_steam_2.webp",
-   "cg_ox_steam_3.webp",
-   "cg_ox_steam_4.webp",
-   "cg_ox_steam_5.webp",
-   "cg_ox_steam_6.webp"
-  ],
-  "ox_strap": [
-   "cg_ox_strap_0.webp",
-   "cg_ox_strap_1.webp",
-   "cg_ox_strap_2.webp",
-   "cg_ox_strap_3.webp",
-   "cg_ox_strap_4.webp",
-   "cg_ox_strap_5.webp",
-   "cg_ox_strap_6.webp"
-  ],
-  "ox_tie": [
-   "cg_ox_tie_0.webp",
-   "cg_ox_tie_1.webp",
-   "cg_ox_tie_2.webp",
-   "cg_ox_tie_3.webp",
-   "cg_ox_tie_4.webp",
-   "cg_ox_tie_5.webp",
-   "cg_ox_tie_6.webp"
-  ],
-  "ox_towel": [
-   "cg_ox_towel_0.webp",
-   "cg_ox_towel_1.webp",
-   "cg_ox_towel_2.webp",
-   "cg_ox_towel_3.webp",
-   "cg_ox_towel_4.webp",
-   "cg_ox_towel_5.webp",
-   "cg_ox_towel_6.webp"
-  ],
-  "ox_towelfly": [
-   "cg_ox_towelfly_0.webp",
-   "cg_ox_towelfly_1.webp",
-   "cg_ox_towelfly_2.webp",
-   "cg_ox_towelfly_3.webp",
-   "cg_ox_towelfly_4.webp",
-   "cg_ox_towelfly_5.webp",
-   "cg_ox_towelfly_6.webp"
-  ],
-  "ox_wet": [
-   "cg_ox_wet_0.webp",
-   "cg_ox_wet_1.webp",
-   "cg_ox_wet_2.webp",
-   "cg_ox_wet_3.webp",
-   "cg_ox_wet_4.webp",
-   "cg_ox_wet_5.webp",
-   "cg_ox_wet_6.webp"
   ],
   "pl_bbq": [
    "cg_pl_bbq_0.webp",
@@ -672,6 +885,14 @@
    "cg_pl_bbq_4.webp",
    "cg_pl_bbq_5.webp",
    "cg_pl_bbq_6.webp"
+  ],
+  "pl_book": [
+   "cg_pl_book_0.webp",
+   "cg_pl_book_1.webp",
+   "cg_pl_book_2.webp",
+   "cg_pl_book_3.webp",
+   "cg_pl_book_4.webp",
+   "cg_pl_book_5.webp"
   ],
   "pl_bump": [
    "cg_pl_bump_0.webp",
@@ -754,6 +975,14 @@
    "cg_pl_hand_5.webp",
    "cg_pl_hand_6.webp"
   ],
+  "pl_ladder": [
+   "cg_pl_ladder_0.webp",
+   "cg_pl_ladder_1.webp",
+   "cg_pl_ladder_2.webp",
+   "cg_pl_ladder_3.webp",
+   "cg_pl_ladder_4.webp",
+   "cg_pl_ladder_5.webp"
+  ],
   "pl_lean": [
    "cg_pl_lean_0.webp",
    "cg_pl_lean_1.webp",
@@ -799,6 +1028,14 @@
    "cg_pl_parasol_5.webp",
    "cg_pl_parasol_6.webp"
   ],
+  "pl_photo": [
+   "cg_pl_photo_0.webp",
+   "cg_pl_photo_1.webp",
+   "cg_pl_photo_2.webp",
+   "cg_pl_photo_3.webp",
+   "cg_pl_photo_4.webp",
+   "cg_pl_photo_5.webp"
+  ],
   "pl_pout": [
    "cg_pl_pout_0.webp",
    "cg_pl_pout_1.webp",
@@ -808,6 +1045,14 @@
    "cg_pl_pout_5.webp",
    "cg_pl_pout_6.webp"
   ],
+  "pl_ring": [
+   "cg_pl_ring_0.webp",
+   "cg_pl_ring_1.webp",
+   "cg_pl_ring_2.webp",
+   "cg_pl_ring_3.webp",
+   "cg_pl_ring_4.webp",
+   "cg_pl_ring_5.webp"
+  ],
   "pl_share": [
    "cg_pl_share_0.webp",
    "cg_pl_share_1.webp",
@@ -816,6 +1061,14 @@
    "cg_pl_share_4.webp",
    "cg_pl_share_5.webp",
    "cg_pl_share_6.webp"
+  ],
+  "pl_shower": [
+   "cg_pl_shower_0.webp",
+   "cg_pl_shower_1.webp",
+   "cg_pl_shower_2.webp",
+   "cg_pl_shower_3.webp",
+   "cg_pl_shower_4.webp",
+   "cg_pl_shower_5.webp"
   ],
   "pl_slip": [
    "cg_pl_slip_0.webp",
@@ -852,6 +1105,14 @@
    "cg_pl_stretch_4.webp",
    "cg_pl_stretch_5.webp",
    "cg_pl_stretch_6.webp"
+  ],
+  "pl_sunset": [
+   "cg_pl_sunset_0.webp",
+   "cg_pl_sunset_1.webp",
+   "cg_pl_sunset_2.webp",
+   "cg_pl_sunset_3.webp",
+   "cg_pl_sunset_4.webp",
+   "cg_pl_sunset_5.webp"
   ],
   "pl_swim": [
    "cg_pl_swim_0.webp",
