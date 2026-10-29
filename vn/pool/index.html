@@ -958,11 +958,11 @@ setTimeout(function(){fetch('https://jupjup-api.sung2011103.workers.dev/api/hit'
   }
 
   // ── 타이틀: 이야기 고르기 ────────────────────────────
-  // 진입 화면 미리보기 띠: 수영장·비키니·의상·연애 컷(pl_·bk_·dr_·lv_)만, 다른 계열은 넣지 않는다
+  // 진입 화면 미리보기 띠: 수영장 컷(pl_)만 - bk_·dr_·lv_ 는 일부 컷이 노출이라 컷 단위 목록 없이는 넣지 않는다
   function drawStrip() {
     const el = $("strip");
     if (!el || el.childElementCount) return;
-    const keys = Object.keys(manifest.cg || {}).filter((k) => /^(pl|bk|dr|lv)_/.test(k) && manifest.cg[k] && manifest.cg[k].length);
+    const keys = Object.keys(manifest.cg || {}).filter((k) => /^pl_/.test(k) && manifest.cg[k] && manifest.cg[k].length);
     for (let i = keys.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [keys[i], keys[j]] = [keys[j], keys[i]]; }
     keys.slice(0, 10).forEach((k) => {
       const f = manifest.cg[k];
