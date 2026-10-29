@@ -1168,6 +1168,11 @@ def guide_links_html(c):
     return ('<h2>공통 준비 가이드</h2><ul class="chk">' + ''.join(f'<li><a href="/guide/{sl}/">{E(lb)}</a></li>' for sl, lb in L) + '</ul>') if L else ''
 
 
+# 2026-10-29 서치콘솔 28일 데이터: 순위 6~12위인데 클릭 없는 검색어를 제목·H1에 그대로 반영(URL 불변)
+KW_TITLE = {'Q01756': '청주페이 공모전 · 카드 디자인 공모전 2026 | 10.30 마감 · 1등 300만원'}
+KW_H1 = {'Q01756': '청주페이 카드 디자인 공모전 (청주페이 공모전 2026)'}
+
+
 def detail(c, live):
     if c['id'] in DUP:   # 같은 공고가 여러 곳에서 수집됨 → 검색 제외 + 대표 공고로 안내(주소는 유지)
         r_ = DUP[c['id']]
@@ -1265,7 +1270,7 @@ def detail(c, live):
            ('제출물', sub_short(c)), ('상금', _pr), ('AI 조건', _ai_short(ai_row(c, NEED), NEED))]
     qs_html = ''.join(f'<div><dt>{k_}</dt><dd{" class=nu" if NEED in str(v_2) or v_2 == "확인 필요" else ""}>{E(v_2)}</dd></div>' for k_, v_2 in _qs)
     body = f'''<p class="bc"><a href="/">홈</a> › <a href="/cat/{SLUG[main_tag]}/">{E(CQ.label_for(main_tag, c.get("medium", "")))}</a></p>
-<section class="dh" data-c="{SLUG[main_tag]}"><h1>{E(c["title"])}</h1>{status}</section>
+<section class="dh" data-c="{SLUG[main_tag]}"><h1>{E(KW_H1.get(c["id"], c["title"]))}</h1>{status}</section>
 {alerts_html}
 <dl class="qs" aria-label="공모전 핵심 요약">{qs_html}</dl>
 <div class="act-row"><a class="btn" href="{E(c["link"])}" target="_blank" rel="noopener nofollow">{LK_BTN}</a><div class="my-acts" data-id="c:{c["id"]}" data-title="{E(c["title"])}" data-end="{c["end"]}"></div>
@@ -1294,7 +1299,7 @@ def detail(c, live):
     _nm = c['title'] + yr_
     if len(_nm) + 3 + len(_tail[0]) > 58:
         _nm = _nm[:58 - 4 - len(_tail[0])].rstrip() + '…'
-    seo_t = f"{_nm} | {' · '.join(_tail)}"   # 2026-10-19 자연 유입: 이름 맨 앞 + 연도·마감·상금·제출물
+    seo_t = KW_TITLE.get(c['id']) or f"{_nm} | {' · '.join(_tail)}"   # 2026-10-19 자연 유입: 이름 맨 앞 + 연도·마감·상금·제출물
     # 2026-10-23 재심사 지침 6번: 공모전 상세에는 관련성이 낮은 상품 링크를 기계적으로 붙이지 않는다
     # 2026-10-23 애드센스 「가치가 별로 없는 콘텐츠」: 자격·상금·제출물·접수·공고 핵심이 충분히 채워진 페이지만 검색 노출 (나머지는 noindex,follow)
     _rich = sum(1 for x in (c.get('elig'), c.get('pv'), sub, c.get('ch')) if x and str(x).strip() not in ('', '-', '공고 참조', '공고 확인')) + min(len(NPs), 4)
@@ -1899,12 +1904,13 @@ def week_hub(live):
          + (f'제출물은 ' + ', '.join(f'{k} {v}건' for k, v in ef) + '이 많아요. ' if ef else '')
          + (f'마감이 가장 몰린 날은 {ddot(days[0][0])[5:]}({days[0][1]}건)이에요. ' if days else '')
          + (f'{_bs}이 가장 큰 곳은 「{big["title"][:30]}」({won_txt(_vals[big["id"]])})예요.' if big else ''))
+    _wfq, _wld = hub_extra('이번 주 마감 공모전', L, '/contest/week/')
     body = (f'<p class="bc"><a href="/">홈</a> › <a href="/contest/">공모전</a> › 이번 주 마감</p><h1>⏰ 이번 주 마감 공모전 ({TODAY.month}/{TODAY.day}~{e7.month}/{e7.day}, {len(L)}건)</h1>'
-            f'<p class="cat-st">📌 {E(t)}</p><p>남은 기간이 짧을수록 분량이 적은 슬로건·네이밍·사진 공모전부터 고르는 게 좋아요. 영상·기획서처럼 준비가 오래 걸리는 건 이번 주보다 다음 주 마감을 노리세요. 매시간 새로 정리돼요.</p>'
-            f'<ul class="list">{"".join(card(c) for c in L) or "<li class=empty>이번 주 마감 공모전이 없어요.</li>"}</ul>'
+            f'<p class="cat-st">📌 {E(t)}</p><p class="hm-scope">오늘 {TODAY.month}/{TODAY.day}(한국 시간) 기준 접수 마감 전 · {NOW_KST():%m/%d %H:%M} 갱신 · 마감 시각은 공식 공고 확인</p><p>남은 기간이 짧을수록 분량이 적은 슬로건·네이밍·사진 공모전부터 고르는 게 좋아요. 영상·기획서처럼 준비가 오래 걸리는 건 이번 주보다 다음 주 마감을 노리세요. 매시간 새로 정리돼요.</p>'
+            f'<ul class="list">{"".join(card(c) for c in L) or "<li class=empty>이번 주 마감 공모전이 없어요.</li>"}</ul>{_wfq}'
             + rel_block(r'공모전|마감|응모', [('/contest/univ/', '대학생 공모전 모음'), ('/cat/video/', '영상 공모전 모음'), ('/widget/', '블로그용 이번 주 마감 위젯')]))
     page('/contest/week/', f'이번 주 마감 공모전 — {TODAY.month}/{TODAY.day}~{e7.month}/{e7.day} 마감 {len(L)}건 (상금·자격)', f'{TODAY.month}/{TODAY.day}~{e7.month}/{e7.day} 마감하는 공모전 {len(L)}건을 마감순으로 정리. 분야·상금·제출물 한눈에.',
-         body, [('루리의 줍줍', '/'), ('공모전', '/contest/'), ('이번 주 마감', '/contest/week/')])
+         body, [('루리의 줍줍', '/'), ('공모전', '/contest/'), ('이번 주 마감', '/contest/week/')], _wld)
     return ['/contest/week/']
 
 
@@ -1938,8 +1944,8 @@ def contest_hubs(live):
           '제목에 AI·생성형이 들어가고 영상·숏폼을 받는 공모전만 골랐어요. AI 도구로 만든 영상은 음원·이미지 저작권과 「AI 사용 표기」 규정을 공고마다 다르게 정해 두니 꼭 확인하세요.'),
          ('youth', f'청소년 공모전 {YR} — 중고등학생·초등학생 공모전 모음', '청소년 공모전', lambda c: re.search(r'청소년|초등|중학|고등|초·중·고|초중고|학생', c.get('elig') or '') is not None,
           '응모 자격에 청소년·초중고 학생이 들어간 공모전만 모았어요. 학생부가 따로 있는지, 보호자 동의서가 필요한지 공고에서 꼭 확인하세요. 봉사시간·생활기록부 반영 여부도 공고마다 달라요.'),
-         ('novel', f'소설 공모전 {YR} — 웹소설·단편소설·신춘문예 모음', '소설 공모전', lambda c: re.search(r'소설|웹소설|신춘문예|문학상|스토리', c['title']) is not None,
-          '제목에 소설·웹소설·신춘문예·문학상이 들어간 공모전만 골랐어요. 분량(원고지 매수·글자 수)과 「미발표 창작물」 조건, 연재 플랫폼 공모는 연재 기간 규정을 먼저 확인하세요.'),
+         ('novel', f'소설 공모전 {YR} — 단편소설 공모전·웹소설 공모전 일정·신춘문예 모음', '소설 공모전', lambda c: re.search(r'소설|웹소설|신춘문예|문학상|스토리', c['title']) is not None,
+          '소설 공모전, 단편소설 공모전, 웹소설 공모전 일정을 마감순으로 한곳에 모았어요. 제목에 소설·웹소설·신춘문예·문학상이 들어간 공모전만 골랐어요. 분량(원고지 매수·글자 수)과 「미발표 창작물」 조건, 연재 플랫폼 공모는 연재 기간 규정을 먼저 확인하세요.'),
          ('photo', f'사진 공모전 {YR} — 사진·포토 공모전 모음 (마감순)', '사진 공모전', lambda c: re.search(r'사진|포토|촬영', c['title']) is not None,
           '제목에 사진·포토가 들어간 공모전만 모았어요. 촬영 원본(EXIF)을 요구하는 경우가 많고, 사람이 나오면 초상권 동의가 필요해요. 과한 보정·합성은 감점되거나 실격될 수 있어요.'),
          ('video', f'영상 공모전 {YR} — 숏폼·UCC·홍보영상 공모전 모음', '영상 공모전', lambda c: '영상' in c['tags'] or re.search(r'영상|숏폼|쇼츠|UCC|릴스', c['title']) is not None,
