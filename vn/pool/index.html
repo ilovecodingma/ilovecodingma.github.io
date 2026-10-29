@@ -43,6 +43,9 @@ setTimeout(function(){fetch('https://jupjup-api.sung2011103.workers.dev/api/hit'
   .panel button { padding: 12px 32px; font-size: 17px; border: 0; border-radius: 999px; background: var(--pink); color: #200; }
   .panel button.sub { background: transparent; color: #fff; border: 1px solid #fff6; font-size: 15px; padding: 10px 22px; }
   /* 이야기 고르는 카드 — 4편이 되면서 시작 버튼 하나로는 안 된다 */
+  #strip { display: flex; gap: 6px; width: 100%; max-width: 330px; overflow-x: auto; padding: 2px 0; scrollbar-width: none; }
+  #strip::-webkit-scrollbar { display: none; }
+  #strip img { flex: none; height: 118px; aspect-ratio: 9/16; object-fit: cover; border-radius: 8px; background: #1b1b24; }
   #stories { display: flex; flex-direction: column; gap: 9px; width: 100%; max-width: 330px; }
   .sbtn { all: unset; cursor: pointer; display: block; padding: 11px 14px; border: 1px solid #fff3; border-radius: 12px; background: rgba(255,255,255,.06); text-align: left; }
   .sbtn:hover, .sbtn:focus-visible { border-color: var(--pink); background: rgba(255,179,209,.12); outline: none; }
@@ -80,6 +83,7 @@ setTimeout(function(){fetch('https://jupjup-api.sung2011103.workers.dev/api/hit'
   <div id="title" class="panel">
     <h1>루리와 함께</h1>
     <p>이야기마다 엔딩 4종. 호감도로 갈립니다.</p>
+    <div id="strip"></div>
     <div id="stories"></div>
     <button id="titleG" class="sub">갤러리</button>
   </div>
@@ -954,6 +958,19 @@ setTimeout(function(){fetch('https://jupjup-api.sung2011103.workers.dev/api/hit'
   }
 
   // ── 타이틀: 이야기 고르기 ────────────────────────────
+  // 진입 화면 미리보기 띠: 수영장·비키니·의상·연애 컷(pl_·bk_·dr_·lv_)만, 다른 계열은 넣지 않는다
+  function drawStrip() {
+    const el = $("strip");
+    if (!el || el.childElementCount) return;
+    const keys = Object.keys(manifest.cg || {}).filter((k) => /^(pl|bk|dr|lv)_/.test(k) && manifest.cg[k] && manifest.cg[k].length);
+    for (let i = keys.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [keys[i], keys[j]] = [keys[j], keys[i]]; }
+    keys.slice(0, 10).forEach((k) => {
+      const f = manifest.cg[k];
+      const im = document.createElement("img");
+      im.loading = "lazy"; im.alt = ""; im.src = "img/" + f[Math.floor(Math.random() * f.length)];
+      el.appendChild(im);
+    });
+  }
   function drawTitle() {
     const wrap = $("stories");
     wrap.innerHTML = "";
@@ -1106,7 +1123,7 @@ setTimeout(function(){fetch('https://jupjup-api.sung2011103.workers.dev/api/hit'
   drawTitle();
   fetch("img/cg_manifest.json", { cache: "no-cache" })
     .then((r) => (r.ok ? r.json() : Promise.reject()))
-    .then((m) => { manifest = m; if (!st) drawTitle(); })
+    .then((m) => { manifest = m; if (!st) drawTitle(); drawStrip(); })
     .catch(() => {});
 })();
 </script>
