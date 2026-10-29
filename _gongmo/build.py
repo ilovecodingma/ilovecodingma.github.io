@@ -1979,9 +1979,9 @@ def hub_seo(sl, title, nm, L):
             'video': '숏폼·UCC·홍보영상 공모전', 'webnovel': '웹소설 공모전'}[sl]
     d = f'{head} {n}건 마감순.' + (f' {wk}건이 7일 내 마감해요.' if wk else '')
     if pv:
-        d += f' {bs} 중간값 {won_txt(med)}, 최고 {won_txt(big)}' + (f'({bigc["title"][:22]})' if bigc else '') + '.'
+        d += f' {bs} 중간값 {won_txt(med)}, 최고 {won_txt(big)}.'
     if ef:
-        d += ' 제출물은 ' + '·'.join(f'{k} {v}건' for k, v in ef[:3]) + ' 순이에요.'
+        d += ' 제출물은 ' + '·'.join(f'{k} {v}건' for k, v in ef[:3]) + (' 순이에요.' if len(ef) > 1 else '이에요.')
     while len(d) > 150 and ('.' in d[:-1]):
         d = d[:d.rstrip('.').rfind('.') + 1]
     return t, d
@@ -3607,7 +3607,7 @@ def talk_pages():
         body = head + TALK_NOTE + ''.join(talk_issue(y, d) for y in iss) + arch + note + css
         dsc = f'{kdate(d)} 커뮤니티 {x.get("sites", 0)}곳 인기글 {x.get("npost", 0):,}건을 같은 화제끼리 묶어, 몇 곳에서 동시에 떴는지로 순위를 매겼어요.' + (' 매시간 갱신해요.' if i == 0 else ' 확정된 기록이에요.')
         if i == 0:
-            page('/talk/', f'커뮤니티 이슈 오늘 TOP{len(iss)} — {x.get("sites", 0)}곳 인기글에서 동시에 뜬 화제 ({kdate(d)})', dsc,
+            page('/talk/', f'커뮤니티 이슈 오늘 TOP{len(iss)} — {x.get("sites", 0)}곳 인기글에서 동시에 뜬 화제', dsc,
                  '<p class="bc"><a href="/">홈</a> › 커뮤니티 이슈</p><h1>💬 루리의 커뮤니티 이슈</h1>' + body, [('루리의 줍줍', '/'), ('커뮤니티 이슈', '/talk/')])
         page(f'/talk/{d}/', f'{kdate(d)} 커뮤니티 이슈 TOP{len(iss)} — 더쿠·클리앙·디시 등 지금 뜨는 화제', dsc,
              f'<p class="bc"><a href="/">홈</a> › <a href="/talk/">커뮤니티 이슈</a> › {kdate(d)}</p><h1>💬 {kdate(d)} 커뮤니티 이슈</h1>' + body,
