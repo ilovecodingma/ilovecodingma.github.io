@@ -2091,7 +2091,7 @@ def build():
     # 2026-10-18 사용자: "메인이 너무 난잡 → 테마를 정하고 테마별 맞춤 UI, AI 로그 등 분리, 기획부터 다시"
     # → 메인(/)은 테마 입구(허브)만, 공모전 상담은 /contest/ 로. 유입(src·referrer)에 맞는 테마 입구를 맨 위로 + 루리 안내
     _first = sorted(live, key=lambda c: (c['end'], -(c.get('pv') or 0)))[:40]
-    _chips = ''.join(f'<a href="/cat/{s_}/">{CAT_ICON[n_]} {E(n_)}</a>' for s_, n_ in CATS) + '<a href="/contest/week/">⏰ 이번 주 마감</a><a href="/contest/univ/">🎓 대학생</a>'
+    _chips = ''.join(f'<a href="/cat/{s_}/">{CAT_ICON[n_]} {E(n_)}</a>' for s_, n_ in CATS) + '<a href="/contest/week/">⏰ 이번 주 마감</a><a href="/contest/novel/">📖 소설·웹소설</a><a href="/contest/univ/">🎓 대학생</a>'
     # 2026-10-23 UI 정리: 공모전을 찾으러 온 사람이 목록·검색·분야를 먼저 보고, 루리 추천은 아래 보조 구역으로
     contest_home = f'''<h1 class="cs-h1">진행 중 공모전 {len(live)}건</h1>
 <p class="cs-sub">마감 임박순 · {NOW_KST():%m/%d %H:%M} 갱신(한국 시간) · 제목이 같은 공모전은 1건</p>
