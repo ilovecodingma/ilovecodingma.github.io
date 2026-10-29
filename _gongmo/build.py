@@ -687,7 +687,7 @@ def corrections_page(live):
             f'틀린 정보를 발견하면 <a href="/contact/">문의</a>로 알려 주세요. 신고를 받아 확인한 결과도 이 기록에 이어서 적어요(처리한 신고 수: {len(CORR_REPORTS)}건).</p>'
             + (f'<ul class="chk corr">{li}</ul>' if li else '<p class="note">아직 기록이 없어요.</p>')
             + '<style>.corr>li{margin:12px 0}.corr small{color:var(--mu,#6b7280)}.corr ul{margin:4px 0 0 18px}</style>')
-    page('/corrections/', '정정 기록 — 수집 데이터와 공식 원문이 달랐던 점', f'진행 중 공모전 {len(items)}건에서 공식 원문과 달랐던 {n_fix}곳을 고친 기록. AI 대조 기록이며 운영자 직접 확인과 구분해 표시해요.',
+    page('/corrections/', f'공모전 정보 정정 기록 — {len(items)}건에서 {n_fix}곳 고친 내역', f'진행 중 공모전 {len(items)}건에서 공식 원문과 달랐던 {n_fix}곳을 고친 기록이에요. AI 대조와 운영자 직접 확인을 나누어 표시하고, 틀린 정보는 문의로 받아요.',
          body, [('루리의 줍줍', '/'), ('정정 기록', '/corrections/')])
 
 
@@ -1169,7 +1169,20 @@ def guide_links_html(c):
 
 
 # 2026-10-29 서치콘솔 28일 데이터: 순위 6~12위인데 클릭 없는 검색어를 제목·H1에 그대로 반영(URL 불변)
-KW_TITLE = {'Q01756': '청주페이 공모전 · 카드 디자인 공모전 2026 | 10.30 마감 · 1등 300만원'}
+KW_TITLE = {'Q01756': '청주페이 공모전 · 카드 디자인 공모전 2026 | 10.30 마감 · 1등 300만원',
+            # 2026-10-29 클릭 0 개선: 주최명을 제목에 넣고 설명의 주최 중복 제거. 2주 뒤(11/12 전후) 노출·클릭 비교
+            'Q03855': '대학생 정책 아이디어 공모전 2026 · 한국정책분석평가학회 · 11.26 마감',
+            'Q03651': '외국발 허위정보 대응 대학생 아이디어 공모전 · 카이스트 · 11.17 마감 · 1등 300만원',
+            'Q03703': '2026 조달청 AI 게임·콘텐츠 공모전 · 11.22 마감 · 총상금 550만원 · 누구나',
+            'Q03959': '한국공항보안 AI 디지털 이미지 공모전 2026 · 11.13 마감 · 1등 50만원',
+            'Q03848': '동계학술대회 포스터 공모전 2026 · 한국정책분석평가학회 · 11.26 마감',
+            'Q03840': '용산국제업무지구 AI 스마트도시 아이디어 공모 · 서울 중구 · 11.20 마감 · 700만원'}
+KW_DESC = {'Q03855': '한국정책분석평가학회 주최, 2026.11.26 마감, 총상금 100만원. 전국 대학생 누구나 아이디어 제안서를 이메일로 접수해요. 접수 기간 10.13~11.26(수집처 기준).',
+           'Q03651': '카이스트 안보융합원 주최, 2026.11.17 마감, 1등 300만원. 대학생·대학원생 대상 아이디어 제안서를 이메일로 접수해요. 접수 기간 10.6~11.17(2026년 2차, 수집처 기준).',
+           'Q03703': '조달청 주최, 2026.11.22 마감, 총상금 550만원. 대한민국 국민 누구나 개인 또는 팀으로 응모하고 이메일로 접수해요. 접수 기간 10.12~11.22(수집처 기준).',
+           'Q03959': '한국공항보안(주) 주최, 2026.11.13 마감, 1등 50만원. 생성형 AI 콘텐츠에 관심 있는 국민 누구나 1인 1작품, 이메일 접수예요. 접수 기간 10.16~11.13(수집처 기준).',
+           'Q03848': '한국정책분석평가학회 주최, 2026.11.26 마감, 1등 100만원. 대학생·대학원생·일반인(행정·정책 관련) 대상, 포스터 디자인을 이메일로 접수해요(수집처 기준).',
+           'Q03840': '서울 중구 주최, 2026.11.20 17:00 마감, 총상금 700만원(대상 300만원 1팀). 만 19~39세 청년, 개인 또는 5인 이하 팀이 프로젝트 서울에서 접수해요(공식 원문 확인 2026-10-24).'}
 KW_H1 = {'Q01756': '청주페이 카드 디자인 공모전 (청주페이 공모전 2026)'}
 
 
@@ -1299,6 +1312,7 @@ def detail(c, live):
     _nm = c['title'] + yr_
     if len(_nm) + 3 + len(_tail[0]) > 58:
         _nm = _nm[:58 - 4 - len(_tail[0])].rstrip() + '…'
+    desc = KW_DESC.get(c['id']) or desc
     seo_t = KW_TITLE.get(c['id']) or f"{_nm} | {' · '.join(_tail)}"   # 2026-10-19 자연 유입: 이름 맨 앞 + 연도·마감·상금·제출물
     # 2026-10-23 재심사 지침 6번: 공모전 상세에는 관련성이 낮은 상품 링크를 기계적으로 붙이지 않는다
     # 2026-10-23 애드센스 「가치가 별로 없는 콘텐츠」: 자격·상금·제출물·접수·공고 핵심이 충분히 채워진 페이지만 검색 노출 (나머지는 noindex,follow)
@@ -1645,7 +1659,7 @@ def build_apply(aps):
     _chips = '<button type="button" class="on" data-g="">전체 <small>%d</small></button>' % len(aps) + ''.join(f'<button type="button" data-g="{g_}">{g_} <small>{_gc.get(g_, 0)}</small></button>' for g_ in ('개인·가구', '사업자·기업', '주거 청약', '공모주'))
     _rg = [r_ for r_, _n in collections.Counter(ap_region(a) for a in aps if ap_region(a)).most_common()]
     _ropt = '<option value="">지역 전체</option>' + ''.join(f'<option value="{E(r_)}">{E(r_)}</option>' for r_ in _rg) + '<option value="__none">지역 미확인</option>'
-    page('/apply/', '지원금·청약 찾기 — 대상·지역·마감으로 고르기', f'개인·가구, 사업자·기업, 주거 청약, 공모주 {len(aps)}건을 대상·지역·마감 조건으로 골라 보세요. 공식 포털에서 수집해 마감 임박순으로 정리해요.',
+    page('/apply/', f'지원금·청약 {len(aps)}건 — 7일 내 마감 {sum(1 for a_ in aps if not a_.get("always") and dday(a_["end"])[0] <= 7)}건, 지역·대상으로 검색', f'개인·가구 {_gc.get("개인·가구", 0)}건, 사업자·기업 {_gc.get("사업자·기업", 0)}건, 주거 청약 {_gc.get("주거 청약", 0)}건, 공모주 {_gc.get("공모주", 0)}건을 마감 임박순으로 정리했어요. 지역·대상·마감 필터와 공식 신청처 링크가 있어요.',
          f'''<p class="bc"><a href="/">홈</a> › 지원금·청약</p><h1 class="ap-h1">지원금·청약</h1><p class="ap-sub">진행 중 {len(aps)}건 · 마감 임박순(상시 신청은 맨 뒤) · {NOW_KST():%m/%d %H:%M} 갱신(한국 시간)</p>
 <div class="ap-bar" role="search"><div class="ap-chips" role="group" aria-label="유형">{_chips}</div>
 <div class="ap-row"><input type="search" id="ap-q" placeholder="공고명·기관·대상 검색" aria-label="검색"><select id="ap-r" aria-label="지역">{_ropt}</select><select id="ap-d" aria-label="마감"><option value="">마감 전체</option><option value="7">7일 이내</option><option value="30">30일 이내</option><option value="x">상시 신청 제외</option></select></div>
@@ -1936,13 +1950,50 @@ def hub_extra(nm, L, path):
     return h, ld
 
 
+def hub_seo(sl, title, nm, L):
+    """검색 결과용 제목·설명(2026-10-29 클릭 0 페이지 개선): 건수·7일 내 마감·상금 중간값/최고값·제출물을 빌드 시점에 계산."""
+    n = len(L)
+    if sl not in ('idea', 'univ', 'slogan', 'youth', 'video', 'webnovel') or not n:
+        return title, f'{nm} 진행 중 {n}건을 마감순으로 정리. 상금·자격·제출물 비교.'
+    wk = sum(1 for c in L if dday(c['end'])[0] <= 7)
+    bs, vals = prize_basis(L)
+    pv = sorted(vals[c['id']] for c in L if c['id'] in vals)
+    med = pv[len(pv) // 2] if pv else 0
+    big = max(pv) if pv else 0
+    bigc = next((c for c in L if vals.get(c['id']) == big), None) if big else None
+    ef = collections.Counter(c['effort'] for c in L if c.get('effort') and c['effort'] != '확인 필요').most_common(3)
+    wkt = f', 7일 내 마감 {wk}건' if wk else ''
+    if sl == 'idea':
+        t = f'아이디어 공모전 {YR} — 진행 중 {n}건{wkt}'
+    elif sl == 'univ':
+        t = f'대학생 공모전 사이트 — 진행 중 {n}건{wkt} ({YR})'
+    elif sl == 'slogan':
+        t = f'슬로건·네이밍 공모전 {YR} — 진행 중 {n}건' + (f', 최고 {won_txt(big)}' if big else '')
+    elif sl == 'youth':
+        t = f'청소년 공모전 {YR} — 진행 중 {n}건{wkt}'
+    elif sl == 'video':
+        t = f'영상 공모전 {YR} — 진행 중 {n}건{wkt}'
+    else:
+        t = f'웹소설 공모전 {YR} 일정 — 접수 중 {n}건 마감순' + (f', 최고 {won_txt(big)}' if big else '')
+    head = {'idea': '정책 제안·기획 공모전', 'univ': '대학생 대상 공모전', 'slogan': '슬로건·네이밍·표어 공모전', 'youth': '학생(초·중·고) 대상 공모전',
+            'video': '숏폼·UCC·홍보영상 공모전', 'webnovel': '웹소설 공모전'}[sl]
+    d = f'{head} {n}건 마감순.' + (f' {wk}건이 7일 내 마감해요.' if wk else '')
+    if pv:
+        d += f' {bs} 중간값 {won_txt(med)}, 최고 {won_txt(big)}' + (f'({bigc["title"][:22]})' if bigc else '') + '.'
+    if ef:
+        d += ' 제출물은 ' + '·'.join(f'{k} {v}건' for k, v in ef[:3]) + ' 순이에요.'
+    while len(d) > 150 and ('.' in d[:-1]):
+        d = d[:d.rstrip('.').rfind('.') + 1]
+    return t, d
+
+
 def contest_hubs(live):
     """자동완성 문구 허브: 대학생 공모전, AI 영상 공모전 (2026-10-18 키워드 전략 ③)."""
     H = [('univ', f'대학생 공모전 사이트 — {YR} 진행 중 모음 (마감순)', '대학생 공모전', lambda c: '대학생' in (c.get('elig') or ''),
           '응모 자격에 대학생이 들어간 공모전만 모았어요. 대외활동 사이트마다 흩어진 공고를 마감·상금·제출물 기준으로 한 번에 비교할 수 있어요. 수상하면 재학·휴학 증명서를 요구하는 경우가 많으니 미리 발급해 두세요.'),
          ('ai-video', f'AI 영상 공모전 {YR} — 생성형 AI 영상·숏폼 공모전 모음', 'AI 영상 공모전', lambda c: re.search(r'AI|인공지능|생성형', c['title']) and (re.search(r'영상|숏폼|쇼츠|릴스|뮤직비디오|애니', c['title']) or '영상' in c['tags']),
           '제목에 AI·생성형이 들어가고 영상·숏폼을 받는 공모전만 골랐어요. AI 도구로 만든 영상은 음원·이미지 저작권과 「AI 사용 표기」 규정을 공고마다 다르게 정해 두니 꼭 확인하세요.'),
-         ('youth', f'청소년 공모전 {YR} — 중고등학생·초등학생 공모전 모음', '청소년 공모전', lambda c: re.search(r'청소년|초등|중학|고등|초·중·고|초중고|학생', c.get('elig') or '') is not None,
+         ('youth', f'청소년 공모전 {YR} — 중고등학생·초등학생 공모전 모음', '청소년 공모전', lambda c: re.search(r'청소년|초등|중학|고등|초·중·고|초중고|(?<!대)학생', c.get('elig') or '') is not None,
           '응모 자격에 청소년·초중고 학생이 들어간 공모전만 모았어요. 학생부가 따로 있는지, 보호자 동의서가 필요한지 공고에서 꼭 확인하세요. 봉사시간·생활기록부 반영 여부도 공고마다 달라요.'),
          ('novel', f'소설 공모전 {YR} — 단편소설 공모전·웹소설 공모전 일정·신춘문예 모음', '소설 공모전', lambda c: re.search(r'소설|웹소설|신춘문예|문학상|스토리', c['title']) is not None,
           '소설 공모전, 단편소설 공모전, 웹소설 공모전 일정을 마감순으로 한곳에 모았어요. 제목에 소설·웹소설·신춘문예·문학상이 들어간 공모전만 골랐어요. 분량(원고지 매수·글자 수)과 「미발표 창작물」 조건, 연재 플랫폼 공모는 연재 기간 규정을 먼저 확인하세요.'),
@@ -1960,7 +2011,7 @@ def contest_hubs(live):
           '슬로건·네이밍·표어 공모전만 모았어요. 짧아서 응모가 많으니 「주최 기관의 핵심 단어 + 리듬」이 중요해요. <a href="/lab/">수상작 분석</a>에서 실제 당선작 구조를 먼저 보세요.'),
          ('ucc', f'UCC 공모전 {YR} — UCC·숏폼·홍보영상 공모전 (심사기준 정리)', 'UCC·숏폼 공모전', lambda c: re.search(r'UCC|숏폼|쇼츠|릴스|틱톡|짧은 영상|1분 영상|30초', c['title']) is not None,
           'UCC·숏폼 공모전만 모았어요. 심사기준은 보통 주제 적합성·창의성·전달력·완성도(편집·음향)로 나뉘고, 조회수·좋아요를 점수에 넣는 공모전도 있어요. 음원·폰트 저작권 표기를 꼭 확인하세요.'),
-         ('webnovel', f'웹소설 공모전 {YR} — 플랫폼 웹소설 공모전 일정', '웹소설 공모전', lambda c: re.search(r'웹소설|웹 소설|연재|노벨|문피아|카카오페이지|시리즈|조아라', c['title']) is not None,
+         ('webnovel', f'웹소설 공모전 {YR} — 플랫폼 웹소설 공모전 일정', '웹소설 공모전', lambda c: re.search(r'웹소설|웹 소설|연재|노벨|문피아|카카오페이지|조아라', c['title']) is not None,
           '웹소설 공모전만 마감순으로 모았어요. 플랫폼 공모전은 「공모 기간 안 연재 회차·글자 수」가 조건인 경우가 많아요. 연재 시작일과 최소 회차를 먼저 확인하세요.'),
          ('idea', f'아이디어 공모전 {YR} — 정책 제안·기획 공모전 모음', '아이디어 공모전', lambda c: '아이디어·정책' in c['tags'] or re.search(r'아이디어|제안|정책', c['title']) is not None,
           '아이디어·정책 제안 공모전만 모았어요. 이미 시행 중인 정책과 겹치지 않는지 검색해 보고, 현황 → 문제점 → 개선안 → 기대효과 순서로 쓰면 심사위원이 읽기 쉬워요.')]
@@ -1978,7 +2029,8 @@ def contest_hubs(live):
                 f'<h2>진행 중 {nm} ({len(L)}건)</h2><ul class="list">{"".join(card(c) for c in L[:80]) or "<li class=empty>지금은 없어요.</li>"}</ul>{fq}'
                 + '<p class="hm-more">다른 모음: ' + ' · '.join(f'<a href="/contest/{x[0]}/">{E(x[2])}</a>' for x in H if x[0] != sl) + '</p>'
                 + rel_block(r'공모전|대학생|영상', [('/guide/', '공모전 응모 가이드'), ('/widget/', '블로그용 공모전 위젯'), ('/cat/video/', f'영상 공모전 {YR} 모음')]))
-        page(path, title, f'{nm} 진행 중 {len(L)}건을 마감순으로 정리. 상금·자격·제출물 비교.', body, [('루리의 줍줍', '/'), ('공모전', '/contest/'), (nm, path)], ld_, noindex=len(L) < 5)
+        _st, _sd = hub_seo(sl, title, nm, L)
+        page(path, _st, _sd, body, [('루리의 줍줍', '/'), ('공모전', '/contest/'), (nm, path)], ld_, noindex=len(L) < 5)
         urls.append(path)
     return urls
 
@@ -3227,8 +3279,8 @@ def issue_pages():
     p = '/issue/kim-jong-un-rumor/'
     faq, fld = _faq(KIM_FAQ)
     body = open(f, encoding='utf-8').read().replace('@@FAQ@@', faq) + '<style>.es-fig{margin:12px 0}.es-fig img{display:block;max-width:100%;height:auto;border:1px solid var(--bd,#e5e7eb);border-radius:10px}.es-fig figcaption{font-size:12.5px;color:var(--mu,#6b7280);margin-top:4px}</style>' + GAME_CSS + '<script type="application/ld+json">%s</script>' % json.dumps(fld, ensure_ascii=False).replace('</', '<\/')
-    title = '김정은 사망설, 어디까지 사실일까요? 2014·2020·2026 사례로 정리'
-    desc = '2026-10-21 기준 김정은 사망·뇌출혈 주장은 근거가 확인되지 않았어요. 확인된 것과 확인 안 된 것을 표로 나누고 2014·2020 사례와 사망설 체크리스트를 정리했어요.'
+    title = '김정은 사망했나요? 살아있나요? 근거 확인 결과 (2026-10-21 기준)'
+    desc = '2026-10-21 기준 사망·뇌출혈 주장은 근거가 확인되지 않았어요. 확인된 것과 아닌 것을 표로 나누고 2014·2020년 사망설 사례와 체크리스트를 담았어요.'
     art = {'@context': 'https://schema.org', '@type': 'Article', 'headline': title, 'description': desc, 'inLanguage': 'ko',
            'datePublished': '2026-10-21', 'dateModified': '2026-10-21', 'mainEntityOfPage': SITE + p,
            'author': {'@type': 'Organization', 'name': '루리의 줍줍 편집', 'url': SITE + '/'},
@@ -3553,11 +3605,11 @@ def talk_pages():
         head = (f'<div class="tk-hero"><img src="/assets/ruri/o_det_think.webp" width="300" height="415" alt="커뮤니티 이슈를 정리하는 루리"><div><small>{E(x["updated"])} 기준{st}</small>'
                 f'<b>{kdate(d)} 커뮤니티 이슈 TOP{len(iss)}</b><p>커뮤니티 {x.get("sites", 0)}곳 인기글 {x.get("npost", 0):,}건을 같은 화제끼리 묶어, 몇 곳에서 동시에 떴는지로 순위를 매겼어요.</p></div></div>')
         body = head + TALK_NOTE + ''.join(talk_issue(y, d) for y in iss) + arch + note + css
-        dsc = f'{kdate(d)} 커뮤니티 13곳 인기글을 화제별로 묶은 이슈 순위: ' + ', '.join(y['t'] for y in iss[:3])
+        dsc = f'{kdate(d)} 커뮤니티 {x.get("sites", 0)}곳 인기글 {x.get("npost", 0):,}건을 같은 화제끼리 묶어, 몇 곳에서 동시에 떴는지로 순위를 매겼어요.' + (' 매시간 갱신해요.' if i == 0 else ' 확정된 기록이에요.')
         if i == 0:
-            page('/talk/', '루리의 커뮤니티 이슈 — 지금 여러 커뮤니티에서 동시에 뜨는 화제', dsc,
+            page('/talk/', f'커뮤니티 이슈 오늘 TOP{len(iss)} — {x.get("sites", 0)}곳 인기글에서 동시에 뜬 화제 ({kdate(d)})', dsc,
                  '<p class="bc"><a href="/">홈</a> › 커뮤니티 이슈</p><h1>💬 루리의 커뮤니티 이슈</h1>' + body, [('루리의 줍줍', '/'), ('커뮤니티 이슈', '/talk/')])
-        page(f'/talk/{d}/', f'{kdate(d)} 커뮤니티 이슈 TOP{len(iss)} — 더쿠·클리앙·디시 등 지금 뜨는 화제', f'{kdate(d)} 기준 ' + dsc,
+        page(f'/talk/{d}/', f'{kdate(d)} 커뮤니티 이슈 TOP{len(iss)} — 더쿠·클리앙·디시 등 지금 뜨는 화제', dsc,
              f'<p class="bc"><a href="/">홈</a> › <a href="/talk/">커뮤니티 이슈</a> › {kdate(d)}</p><h1>💬 {kdate(d)} 커뮤니티 이슈</h1>' + body,
              [('루리의 줍줍', '/'), ('커뮤니티 이슈', '/talk/'), (kdate(d), f'/talk/{d}/')])
         urls.append(f'/talk/{d}/')
@@ -5386,7 +5438,7 @@ def app_page():
 <h2>자주 묻는 질문</h2><div class="ap-card ap-faq">{"".join(f"<details><summary>{E(q)}</summary><p>{E(a)}</p></details>" for q, a in faq)}</div>
 </section><p class="note">알림을 켜면 브라우저가 만든 알림 주소와 고른 분야만 저장해요. 이름·전화번호는 받지 않아요. 알림을 끄면 바로 지워져요.</p>
 <link rel="stylesheet" href="/assets/app/app.css?v=2">'''
-    page('/app/', '오늘 뭐 먹지 앱 설치 · 메뉴·공모전 알림 받기', '오늘 뭐 먹지 앱을 홈 화면에 설치하면 시간·날씨·냉장고 재료에 맞는 메뉴를 추천해 주고, 점심·저녁 메뉴 알림과 새 공모전 소식을 폰 알림으로 보내 줘요. 무료, 가입 없이 사용 가능.',
+    page('/app/', '오늘 뭐 먹지 앱 설치 — 시간·날씨·냉장고 재료로 메뉴 추천, 무료', '홈 화면에 설치하면 시간·날씨·냉장고 재료에 맞는 메뉴를 추천해 줘요. 점심·저녁 메뉴 알림과 새 공모전 소식도 받고, 무료·가입 없이 쓸 수 있어요.',
          body, [('루리의 줍줍', '/'), ('앱·알림', '/app/')])
 
 
