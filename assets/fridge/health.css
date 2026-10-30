@@ -13,3 +13,26 @@
 .hl-cards .hx-rc a{display:block;color:inherit;text-decoration:none}.hl-cards .ph{position:relative;aspect-ratio:4/3;border-radius:14px;overflow:hidden;background:#f3f4f6}.hl-cards .ph img{width:100%;height:100%;object-fit:cover}
 .hl-cards .ph em{position:absolute;left:8px;bottom:8px;font-style:normal;font-size:12px;background:rgba(0,0,0,.6);color:#fff;border-radius:999px;padding:2px 8px}
 .hl-cards b{display:block;margin:6px 2px 0}.hl-cards small{display:block;margin:2px 2px 0;font-size:12.5px;color:#4b5563;line-height:1.5}
+/* 다크 테마 (2026-10-30): 밝은 초록 상자가 어두운 페이지에서 혼자 튀던 것을 사이트 팔레트에 맞춤 */
+@media (prefers-color-scheme:dark){
+:root:not([data-theme=light]) .hl-grid a{background:linear-gradient(160deg,#17301f,#1d1a2e);border-color:#26603d;color:#d1fae5}
+:root:not([data-theme=light]) .hl-grid a span{color:#a7d9b8}
+:root:not([data-theme=light]) .hl-grid a small{color:#6ee7a1}
+:root:not([data-theme=light]) .hl-box{background:#14261c;border-color:#26603d}
+:root:not([data-theme=light]) .hl-box h2{color:#bbf7d0}
+:root:not([data-theme=light]) .hl-box ul{color:#e5e7eb}
+:root:not([data-theme=light]) .hl-chips a{background:#1d1a2e;border-color:#2f7a4c;color:#86efac}
+:root:not([data-theme=light]) .hl-why{background:#14261c;border-left-color:#22c55e}
+:root:not([data-theme=light]) .hl-cards .ph{background:#1d1a2e}
+:root:not([data-theme=light]) .hl-cards small{color:#a49fc7}
+}
+:root[data-theme=dark] .hl-grid a{background:linear-gradient(160deg,#17301f,#1d1a2e);border-color:#26603d;color:#d1fae5}
+:root[data-theme=dark] .hl-grid a span{color:#a7d9b8}
+:root[data-theme=dark] .hl-grid a small{color:#6ee7a1}
+:root[data-theme=dark] .hl-box{background:#14261c;border-color:#26603d}
+:root[data-theme=dark] .hl-box h2{color:#bbf7d0}
+:root[data-theme=dark] .hl-box ul{color:#e5e7eb}
+:root[data-theme=dark] .hl-chips a{background:#1d1a2e;border-color:#2f7a4c;color:#86efac}
+:root[data-theme=dark] .hl-why{background:#14261c;border-left-color:#22c55e}
+:root[data-theme=dark] .hl-cards .ph{background:#1d1a2e}
+:root[data-theme=dark] .hl-cards small{color:#a49fc7}

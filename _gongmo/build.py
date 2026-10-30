@@ -3122,7 +3122,7 @@ def article_enhance(path, body):
         i = body.find('<h2')
         body = body[:i] + nav + body[i:] if i >= 0 else body
     body = re.sub(r'(?<!tblw">)(<table\b.*?</table>)', r'<div class="tblw">\1</div>', body, flags=re.S) if '<div class="tblw"' not in body else body
-    return '<div class="art">' + body + '</div><link rel="stylesheet" href="/assets/guide/guide.css?v=5">'
+    return '<div class="art">' + body + '</div><link rel="stylesheet" href="/assets/guide/guide.css?v=6">'
 
 
 def _hl(t):
@@ -3190,7 +3190,7 @@ def kin_guides():
                 + _cite_box(g, f'/money/guide/{g["slug"]}/')
                 + f'<section class="g-src" id="src"><h2>📎 공식 출처</h2><ul class="gm-l">{src}</ul>'
                 + f'<p class="note">공식 안내를 줍줍이 직접 확인해 정리한 내용이고, 기준 금액과 신청 기간은 해마다 바뀔 수 있어요. 신청 전에 위 공식 출처를 꼭 확인하고, 개별 사정은 {E(g["contact"])}에 문의하세요. 법률·세무 상담이 아니에요.</p></section>'
-                + f'<p class="hm-links">{rel} · <a href="/money/guide/">다른 생활 돈 가이드</a></p>' + GAME_CSS + '<link rel="stylesheet" href="/assets/guide/guide.css?v=5">' + (f'<script defer src="{E(g["script"])}"></script>' if g.get('script') else ''))
+                + f'<p class="hm-links">{rel} · <a href="/money/guide/">다른 생활 돈 가이드</a></p>' + GAME_CSS + '<link rel="stylesheet" href="/assets/guide/guide.css?v=6">' + (f'<script defer src="{E(g["script"])}"></script>' if g.get('script') else ''))
         page(f'/money/guide/{g["slug"]}/', g['title'], g['desc'], body, [('루리의 줍줍', '/'), ('머니', '/analyst/'), ('생활 돈 가이드', '/money/guide/'), (g['name'], f'/money/guide/{g["slug"]}/')], ld)
         urls.append(f'/money/guide/{g["slug"]}/')
         cards += f'<li><a class="card" data-c="guide" href="/money/guide/{g["slug"]}/"><span class="ic">{g["icon"]}</span><div class="cb"><h3 class="t">{E(g["name"])}</h3><p class="o">{E(g["h1"])}</p></div></a></li>'
@@ -5694,7 +5694,7 @@ def fridge_page():
                 + relsec
                 + (f'<details class="fr-cr"><summary>사진 출처</summary><p>{"<br>".join(cr)}</p></details>' if cr else '')
                 + '<p class="note">직접 조리 시험을 완료한 레시피로 소개하지 않습니다. 분량이 적힌 메뉴는 해당 분량을 우선하고, 분량이 없는 메뉴는 재현성 보완이 필요한 조리 아이디어입니다. 시간은 예상값이며 사진은 직접 조리 결과를 보증하지 않습니다. 보관 시에는 <a href="https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/leftovers-and-food-safety">USDA의 남은 음식 안전 안내</a>처럼 얕은 용기에 나누어 신속히 냉장하세요. 일반적인 부패하기 쉬운 음식은 실온 2시간 이내, 32℃를 넘는 더운 환경은 1시간 이내가 기준이며 이미 오래 방치한 음식은 재가열로 해결하지 않습니다. 이는 모든 메뉴의 보관 일수를 보증하는 안내가 아닙니다. 안전 안내 확인: 2026-10-20.</p></article>'
-                + '<link rel="stylesheet" href="/assets/fridge/fridge.css?v=14"><link rel="stylesheet" href="/assets/fridge/recipe.css?v=7"><link rel="stylesheet" href="/assets/fridge/health.css?v=1"><script defer src="/assets/fridge/recipe.js?v=5"></script>')
+                + '<link rel="stylesheet" href="/assets/fridge/fridge.css?v=14"><link rel="stylesheet" href="/assets/fridge/recipe.css?v=7"><link rel="stylesheet" href="/assets/fridge/health.css?v=2"><script defer src="/assets/fridge/recipe.js?v=5"></script>')
         def how_step(k, t):
             nm = re.split(r'[,.]', t)[0].strip()[:45] or f'{k}단계'
             d_ = {'@type': 'HowToStep', 'name': nm, 'text': t, 'url': f'{SITE}{u}#step{k}'}
@@ -5808,7 +5808,7 @@ def fridge_page():
               + f'<h2>전체 {E(gn)} 레시피 (조리 시간순)</h2>' + li(L_).replace('<ul class="fr-rel">', '<ul class="fr-rel" data-fold="15" data-step="30">', 1) + FOLD_TAGS
               + f'<p class="hm-links">다른 건강 목적: {oth}</p>'
               + '<a class="lab-cta" href="/fridge/"><b>🧊 냉장고 재료로도 찾을 수 있어요</b><span>있는 재료를 고르면 지금 만들 수 있는 메뉴부터 →</span></a>'
-              + '<link rel="stylesheet" href="/assets/fridge/fridge.css?v=15"><link rel="stylesheet" href="/assets/fridge/health.css?v=1">')
+              + '<link rel="stylesheet" href="/assets/fridge/fridge.css?v=15"><link rel="stylesheet" href="/assets/fridge/health.css?v=2">')
         page(f'/fridge/h/{gk}/', f'{gn} 집밥 레시피 {len(L_)}가지 — {gline} ({YR})', f'{gn} 집밥 레시피 {len(L_)}가지. {gwhy}', bd,
              [('루리의 줍줍', '/'), ('건강 레시피', '/fridge/'), (gn, f'/fridge/h/{gk}/')])
         urls.append(f'/fridge/h/{gk}/')
@@ -5817,7 +5817,7 @@ def fridge_page():
                + '</div><p class="hl-note">재료와 조리 과정으로 나눈 참고용 분류예요. 영양 수치는 공식 자료를 확인한 뒤에만 적어요.</p></section>')
     page('/fridge/', f'건강 집밥 레시피 — 가볍게·단백질·채소 듬뿍 목적별로 고르기 (레시피 {NR}개)', f'가볍게, 단백질 챙기게, 채소 듬뿍, 기름 적게. 건강 목적별로 집밥 레시피 {NR}개를 고르고, 냉장고 재료로도 찾아요.',
          f"""<p class="bc"><a href="/">홈</a> › 건강 레시피</p><h1>건강하게 먹는 집밥</h1>
-{hl_grid}<link rel="stylesheet" href="/assets/fridge/health.css?v=1">
+{hl_grid}<link rel="stylesheet" href="/assets/fridge/health.css?v=2">
 <h2 class="hl-h2">오늘 뭐 먹지?</h2>
 <div class="rec-tabs" data-rec-tabs role="tablist"><button type="button" data-t="rec-pane" data-g="시간·날씨·기분에 맞춰 지금 만들기 좋은 메뉴를 골라 드려요." class="on">🍽️ 메뉴 추천</button><button type="button" data-t="fridge" data-g="있는 재료를 고르면 지금 만들 수 있는 메뉴와, 재료 1개만 더 사면 되는 메뉴를 보여 드려요.">🧊 냉장고 재료로 찾기</button></div>
 <p class="rec-guide" id="rec-guide">시간·날씨·기분에 맞춰 지금 만들기 좋은 메뉴를 골라 드려요.</p>

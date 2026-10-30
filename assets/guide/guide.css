@@ -59,3 +59,20 @@
 /* UI 2차 11번: 목차는 가로 스크롤 대신 줄바꿈 — 뒤쪽 항목(비용·구조·실패 기록)도 한눈에 */
 .g-toc{flex-wrap:wrap;overflow:visible}
 .g-toc a{max-width:none;white-space:normal}
+/* 2026-10-30 신청 흐름(정부24식 단계 카드) + 읽기 편한 본문 */
+.art ol.flow{list-style:none;margin:18px 0 22px;padding:0;counter-reset:fl}
+.art ol.flow>li{counter-increment:fl;position:relative;margin:0 0 20px;padding:15px 16px 15px 64px;border:1px solid var(--bd,#e5e7eb);border-radius:14px;background:var(--card,#fff);line-height:1.75;box-shadow:var(--sh,none)}
+.art ol.flow>li::before{content:counter(fl);position:absolute;left:16px;top:13px;width:34px;height:34px;border-radius:50%;background:var(--pri,#6d28d9);color:#fff;font-weight:800;font-size:16px;display:grid;place-items:center}
+.art ol.flow>li:not(:last-child)::after{content:"";position:absolute;left:32px;top:100%;width:2px;height:20px;background:linear-gradient(var(--pri,#6d28d9),transparent);opacity:.55}
+.art ol.flow>li:first-child{border-color:var(--pri,#6d28d9)}
+.art ol.flow>li b{color:var(--pri,#6d28d9)}
+.art p{line-height:1.85}
+.art p.note{border-left:4px solid var(--pri,#6d28d9);background:var(--accbg,rgba(109,40,217,.07));border-radius:0 10px 10px 0;padding:10px 14px;font-size:14px;line-height:1.7}
+.art table.info{border-collapse:separate;border-spacing:0;overflow:hidden;border-radius:12px;border:1px solid var(--bd,#e5e7eb)}
+.art table.info tr:nth-child(even) td{background:rgba(127,127,160,.06)}
+.art table.info th{background:rgba(109,40,217,.08);text-align:left}
+@media (max-width:640px){.art ol.flow>li{padding:14px 12px 14px 54px}.art ol.flow>li::before{left:11px;width:30px;height:30px;font-size:14px}.art ol.flow>li:not(:last-child)::after{left:25px}.art .tblw{overflow-x:auto}}
+@supports (animation-timeline:scroll()){
+body:has(.art)::before{content:"";position:fixed;left:0;top:0;height:3px;width:100%;background:var(--pri,#6d28d9);transform-origin:0 50%;transform:scaleX(0);z-index:60;animation:gprog linear both;animation-timeline:scroll(root)}
+@keyframes gprog{to{transform:scaleX(1)}}
+}
