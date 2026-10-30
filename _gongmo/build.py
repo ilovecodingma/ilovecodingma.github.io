@@ -563,6 +563,47 @@ def jdump(obj, path, **kw):
     os.replace(tmp, path)
 
 
+def unlink_dead_c():
+    """빌드 맨 끝: 지워진 마감 /c/ 상세로 가는 링크(매거진·이슈 글 등)는 글자만 남기고 링크를 푼다. 2026-10-30 마감 공모 삭제 후 깨진 내부 링크 방지."""
+    cd_ = os.path.join(ROOT, 'c')
+    alive = set(os.listdir(cd_)) if os.path.isdir(cd_) else set()
+    rx = re.compile(r'<a\s[^>]*?href="/c/(Q[0-9]+)/?"[^>]*>(.*?)</a>', re.S)
+    n = 0
+    for dp, dn, fn in os.walk(ROOT):
+        dn[:] = [x for x in dn if x not in ('.git', '_gongmo', '_trend', 'assets', 'w', 'og')]
+        for f in fn:
+            if f.endswith('.html'):
+                fp = os.path.join(dp, f)
+                t = open(fp, encoding='utf-8', errors='ignore').read()
+                if '/c/Q' not in t:
+                    continue
+                t2 = rx.sub(lambda m: m.group(0) if m.group(1) in alive else m.group(2), t)
+                if t2 != t:
+                    open(fp, 'w', encoding='utf-8', newline=chr(10)).write(t2); n += 1
+    # /a/ 도 같은 처리: 합쳐서 없앤 건 데이터 화면 주소로, 마감돼 지운 건 링크만 푼다
+    ad_ = os.path.join(ROOT, 'a')
+    alive_a = set(os.listdir(ad_)) if os.path.isdir(ad_) else set()
+    rxa = re.compile(r'<a [^>]*?href="(/a/([^"/#?]+)/?)"[^>]*>(.*?)</a>', re.S)
+    na = 0
+    for dp, dn, fn in os.walk(ROOT):
+        dn[:] = [x for x in dn if x not in ('.git', '_gongmo', '_trend', 'assets', 'w', 'og', 'a')]
+        for f in fn:
+            if f.endswith('.html'):
+                fp = os.path.join(dp, f)
+                t = open(fp, encoding='utf-8', errors='ignore').read()
+                if 'href="/a/' not in t:
+                    continue
+                def _fix(m):
+                    if m.group(2) in alive_a:
+                        return m.group(0)
+                    to = COLL.get(m.group(1) if m.group(1).endswith('/') else m.group(1) + '/')
+                    return m.group(0).replace(m.group(1), to, 1) if to else m.group(3)
+                t2 = rxa.sub(_fix, t)
+                if t2 != t:
+                    open(fp, 'w', encoding='utf-8', newline=chr(10)).write(t2); na += 1
+    print('죽은 /c/ 링크 푼 페이지', n, '/ 죽은 /a/ 링크 정리', na)
+
+
 def ref_urls():
     d_ = os.path.join(HERE, 'ref')
     return [f'/ref/{f[:-3]}/' for f in sorted(os.listdir(d_)) if f.endswith('.md')] if os.path.isdir(d_) else []
@@ -628,6 +669,10 @@ def collapse_thin(urls):
     for u in COLL:
         shutil.rmtree(os.path.join(ROOT, u.strip('/')), ignore_errors=True)
     LINK = re.compile(r'href="(/(?:a|kw|lab|analyst/s|apply/r)/[^"#?]*)"')
+    # 2026-10-30 마감 /c/ 상세를 지웠으니, 매거진·이슈 글 등에 남은 그 주소 링크는 글자만 남기고 링크를 푼다(깨진 내부 링크 방지)
+    _cdir = os.path.join(ROOT, 'c')
+    _alive = set(os.listdir(_cdir)) if os.path.isdir(_cdir) else set()
+    DEADC = re.compile(r'<a[^>]*?href="/c/(Q[0-9]+)/?"[^>]*>(.*?)</a>', re.S)
     n = 0
     for dp, dn, fn in os.walk(ROOT):
         if any(x in dp for x in (os.sep + 'assets', os.sep + '.git', os.sep + '_gongmo', os.sep + 'og')):
@@ -637,6 +682,7 @@ def collapse_thin(urls):
                 fp = os.path.join(dp, f)
                 t = open(fp, encoding='utf-8').read()
                 t2 = LINK.sub(lambda m: f'href="{COLL.get(m.group(1), m.group(1))}"', t)
+                t2 = DEADC.sub(lambda m: m.group(0) if m.group(1) in _alive else m.group(2), t2) if '/c/Q' in t2 else t2
                 if t2 != t:
                     open(fp, 'w', encoding='utf-8', newline='\n').write(t2); n += 1
     urls[:] = [u for u in urls if u not in COLL]
@@ -2592,6 +2638,7 @@ def build():
     rss_feed(live, aps)
     print('contests', len(contests), 'live', len(live), 'events', len(events), 'urls', len(urls), 'noindex', len(NOINDEX))
     try:
+        unlink_dead_c()
         import health
         hr = health.run(ROOT, urls, NOINDEX)
         print('health', '정상' if not hr['warn'] else hr['warn'])
