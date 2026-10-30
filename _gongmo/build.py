@@ -335,6 +335,29 @@ def sync_shots(live):
     print('shots', len(keep), 'removed', len(gone))
 
 
+# 2026-10-30 k-44 검증: 수집 end 가 접수 마감이 아니라 심사·발표·시상식 날짜인 건이 많았다(노출 중 1,283건 중 239건이 원문상 이미 마감).
+# 원문(txt)의 「접수기간 A ~ B」 끝날짜 B 가 수집 end 보다 이르면 B 를 마감일로 쓴다(늦은 경우는 건드리지 않는다).
+_RE_DATE = r'(\d{2,4})\s*[.\-/]\s*(\d{1,2})\s*[.\-/]\s*(\d{1,2})'
+_RE_APPLY = re.compile(r'접수\s*기간\s*' + _RE_DATE + r'[^0-9~]{0,12}~\s*' + _RE_DATE)
+_EF = os.path.join(HERE, 'end_fix.json')
+END_FIX = {k: v for k, v in (json.load(open(_EF, encoding='utf-8')) if os.path.exists(_EF) else {}).items() if not k.startswith('_')}
+PV_FIX = {'Q03732': 600000, 'Q03963': 37000000, 'Q02511': 15000000}   # 원문 총상금(수집값이 10,000배·8배·2배로 틀렸던 건)
+
+
+def real_end(cid):
+    p_ = os.path.join(HERE, 'txt', cid + '.txt')
+    if not os.path.exists(p_):
+        return None
+    m = _RE_APPLY.search(open(p_, encoding='utf-8', errors='ignore').read())
+    if not m:
+        return None
+    y = int(m[4]); y = y + 2000 if y < 100 else y
+    try:
+        return datetime.date(y, int(m[5]), int(m[6])).isoformat()
+    except ValueError:
+        return None
+
+
 def load():
     print('txt synced', sync_txt())
     rows = [json.loads(l) for l in open(MASTER, encoding='utf-8') if l.strip()]
@@ -350,6 +373,14 @@ def load():
     contests = json.load(open(tmp, encoding='utf-8'))['items']
     os.remove(tmp)
     byid = {r['id']: r for r in rows}
+    _fx = 0
+    for c in contests:
+        _re = real_end(c['id']) or END_FIX.get(c['id'])
+        if _re and _re < c['end'] and c['id'] not in VER:   # 공식 원문 대조(VER)가 있는 건은 그 값을 우선
+            c['end_src'] = c['end']; c['end'] = _re; _fx += 1
+        if c['id'] in PV_FIX:
+            c['pv'] = PV_FIX[c['id']]
+    print('마감일 원문 보정', _fx)
     for c in contests:
         r = byid.get(c['id'], {})
         c['ch'] = CH.get(r.get('ch', ''), '공고 참조')
