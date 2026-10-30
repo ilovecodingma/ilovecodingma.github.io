@@ -563,20 +563,47 @@ def jdump(obj, path, **kw):
     os.replace(tmp, path)
 
 
+def ref_urls():
+    d_ = os.path.join(HERE, 'ref')
+    return [f'/ref/{f[:-3]}/' for f in sorted(os.listdir(d_)) if f.endswith('.md')] if os.path.isdir(d_) else []
+
+
+def ref_pages():
+    """2026-10-30 홍보 요청 「기준 자료형」 글: 남이 출처로 링크할 수 있는 원본 페이지(/ref/<슬러그>/). 작가 원고(_gongmo/ref/<슬러그>.md)를 본문 수정 없이 그대로 싣는다."""
+    import md2html as MD
+    d_ = os.path.join(HERE, 'ref')
+    for u in ref_urls():
+        slug = u.strip('/').split('/')[-1]
+        _md = open(os.path.join(d_, slug + '.md'), encoding='utf-8').read()
+        _, title, desc, body = MD.convert(_md, slug)
+        if not desc:   # 원고에 「한 줄 요약」이 없으면 확인일 다음 첫 문단을 설명으로(본문은 그대로)
+            _p = next((l_.strip() for l_ in _md.split(chr(10))[1:] if l_.strip() and not l_.startswith(('확인일', '#', '|'))), '')
+            desc = re.sub(r'[ ]+', ' ', _p)[:150]
+        ld = {'@context': 'https://schema.org', '@type': 'Article', 'headline': title, 'description': desc, 'inLanguage': 'ko', 'datePublished': '2026-10-30', 'dateModified': '2026-10-30',
+              'mainEntityOfPage': SITE + u, 'author': {'@type': 'Organization', 'name': '루리의 줍줍 편집', 'url': SITE + '/'}, 'publisher': {'@type': 'Organization', 'name': NAME, 'url': SITE + '/'}}
+        page(u, title, desc, f'<p class="bc"><a href="/">홈</a> › <a href="/guide/">가이드</a> › 기준 자료</p><h1>{E(title)}</h1><div class="art">{body}</div><link rel="stylesheet" href="/assets/guide/guide.css?v=6">',
+             [('루리의 줍줍', '/'), ('가이드', '/guide/'), ('기준 자료', u)], ld)
+
+
 def gone_pages():
-    """한 번 만든 /c/·/a/ 주소는 데이터에서 빠져도 「마감」 안내로 남긴다(검색 제외). 2026-10-18 애드센스 심사 중 404 방지."""
+    """2026-10-30 사용자 지시 「마감 안내 및 삭제」: 마감·내려간 /c/·/a/ 상세 페이지는 파일로 남기지 않는다(예전 10/18 「(마감)」 안내 페이지 보존은 중단).
+    예전 주소는 404.html 이 assets/gone.json 을 읽어 「마감됐어요」 안내와 진행 중 목록 링크를 보여 준다."""
     G = os.path.join(HERE, 'gone_pages.json')
     old = json.load(open(G, encoding='utf-8')) if os.path.exists(G) else {}
-    cur = set(GONE) | {f'/c/{d}/' for d in DUP} | {f'/a/{d}/' for d in AP_DUP}   # 중복 공고 안내 페이지는 덮어쓰지 않음
+    cur = set(GONE) | {f'/c/{d}/' for d in DUP} | {f'/a/{d}/' for d in AP_DUP}   # 중복 공고 안내 페이지는 지우지 않음
     old.update(GONE)
+    gone, rm = {}, 0
+    safe = len(GONE) >= 200   # 이번 빌드가 평소(500건 안팎)보다 훨씬 적게 읽혔으면 지우지 않는다(수집 장애 대비)
     for u, (t, back, bn, end) in old.items():
         if u in cur:
             continue
-        msg = f'아쉽지만 끝났어요. <a href="{back}">진행 중인 {E(bn)}</a>을 봐 주세요!'
-        page(u, f'{t} (마감)', f'{t} — 접수가 끝났어요. 진행 중인 {bn}을 확인하세요.',
-             f'<p class="bc"><a href="/">홈</a> › <a href="{back}">{E(bn)}</a></p><h1>{E(t)}</h1><p class="warn">{ddot(end)}에 마감된 공고예요. 정보가 더 이상 갱신되지 않아요.</p>'
-             + say('sad', msg), [('루리의 줍줍', '/'), (bn, back)], noindex=True)
+        d_ = os.path.join(ROOT, u.strip('/'))
+        if safe and os.path.isdir(d_):
+            shutil.rmtree(d_, ignore_errors=True); rm += 1
+        gone[u.strip('/')] = [t[:80], back, bn, end]
     jdump(old, G, ensure_ascii=False, separators=(',', ':'))
+    jdump(gone, os.path.join(ROOT, 'assets', 'gone.json'), ensure_ascii=False, separators=(',', ':'))
+    print('마감 안내 페이지 삭제', rm, '안내 데이터', len(gone))
 
 
 COLL = {}   # 합쳐서 없앤 얇은 페이지 → 데이터 화면 주소 (collapse_thin 이 채움)
@@ -2505,8 +2532,9 @@ def build():
     lab_urls = lab() or []
     me_pages()
     statics(len(live), len(events))
+    ref_pages()
     urls = ['/', '/contest/', '/apply/', '/event/', '/guide/', '/ssul/'] + lab_urls + [f'/ssul/{x["slug"]}/' for x in ss] + [f'/a/{a["id"]}/' for a in aps] + [f'/cat/{s}/' for s, _ in CATS] + [f'/guide/{g[0]}/' for g in GUIDES] + ['/qa/', '/prep/', '/fridge/', '/app/', '/news/'] + extra_urls + [f'/guide/{q["slug"]}/' for q in QA] + \
-           ['/about/', '/privacy/', '/terms/', '/contact/', '/collab/'] + [f'/c/{c["id"]}/' for c in contests]
+           ['/about/', '/privacy/', '/terms/', '/contact/', '/collab/'] + ref_urls() + [f'/c/{c["id"]}/' for c in contests]
     gone_pages()
     import finder   # 공모전 자동 자료 찾기 색인·질의 (2026-10-19)
     print('자료 색인', finder.build_index(urls, NOINDEX, {c['id'] for c in live}), '질의', len(finder.build_queries(live, notice_points)))
