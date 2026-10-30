@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G9BPFF95GY"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());if(location.hostname!=='sungprofile.cloud')window['ga-disable-G-G9BPFF95GY']=true;gtag('config','G-G9BPFF95GY');</script>
+<title>마감 피하기 — 무료 총알 피하기 게임, 가입 없이 바로 시작 | 루리의 놀이터</title>
+<meta name="description" content="하늘에서 쏟아지는 서류·알람·지출을 손가락으로 피하는 무료 탄막 피하기 게임. 별을 먹으면 점수 보너스! 가입 없이 바로 플레이.">
+<link rel="canonical" href="https://sungprofile.cloud/play/dodge/">
+<meta property="og:title" content="마감 피하기"><meta property="og:description" content="하늘에서 쏟아지는 서류·알람·지출을 손가락으로 피하는 무료 탄막 피하기 게임. 별을 먹으면 점수 보너스! 가입 없이 바로 플레이."><meta property="og:image" content="https://sungprofile.cloud/assets/ruri/og.jpg"><meta property="og:url" content="https://sungprofile.cloud/play/dodge/">
+<link rel="icon" href="/favicon.ico?v=6" sizes="any">
+<link rel="stylesheet" href="/play/play.css?v=1">
+<style>
+html,body{overscroll-behavior:none}
+.cvw{position:relative;width:100%;background:#0e0b18;border-radius:16px;overflow:hidden;touch-action:none;user-select:none;-webkit-user-select:none}
+canvas{display:block;width:100%}
+.ov{position:absolute;inset:0;background:rgba(14,11,24,.86);display:none;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:16px;text-align:center;z-index:5}
+.ov.on{display:flex}.ov h2{margin:0;font-size:24px}.ov p{margin:0;color:var(--mu);font-size:14px;line-height:1.6}
+
+</style>
+</head>
+<body>
+<div class="pw">
+  <div class="top"><a href="/play/">← 게임 모음</a><b>☄️ 마감 피하기</b><a href="/">루리의 줍줍</a></div>
+  <div class="stat"><div><small>생존</small><b id="sc">0.0초</b></div><div><small>최고</small><b id="best">-</b></div><div><small>⭐ 별</small><b id="stars">0</b></div></div>
+  <div class="cvw"><canvas id="cv" width="480" height="640"></canvas>
+    <div class="ov on" id="ov"><h2 id="ot">☄️ 마감 피하기</h2><p id="op">드래그해서 떨어지는 마감을 피해요</p><button class="btn big" id="go" style="max-width:260px">시작</button><button class="btn g" id="sh" style="display:none">📤 자랑</button></div></div>
+  <main class="how">
+    <h2>게임 방법</h2>
+    <ul><li>화면을 손가락(PC는 마우스)으로 드래그해 루리를 움직여요. 떨어지는 장애물에 닿으면 끝나요.</li><li>시간이 지날수록 더 많이, 더 빠르게 쏟아져요.</li><li>⭐ 별을 먹으면 보너스 점수와 잠깐의 무적이 생겨요.</li></ul>
+    <p>다른 게임: <a href="/play/survivor/">루리 서바이벌</a> · <a href="/play/runner/">루리 런</a> · <a href="/play/dodge/">마감 피하기</a> · <a href="/play/clicker/">줍줍 클리커</a> · <a href="/play/mole/">두더지 잡기</a> · <a href="/play/snake/">스네이크</a> · <a href="/play/dice/">주사위 놀이</a> · <a href="/play/2048/">2048</a> · <a href="/play/memory/">짝 맞추기</a> · <a href="/play/">미니게임 모음</a></p>
+  </main>
+</div>
+<script src="/play/play.js?v=1"></script>
+<script>
+(function(){var $=PLAY.$,cv=$('cv'),x=cv.getContext('2d'),W=480,H=640;
+var img=new Image();img.src='/assets/ruri/o_suit_s.webp';
+var SP={};function spr(ch,s){var k=ch+s;if(SP[k])return SP[k];var c=document.createElement('canvas');c.width=c.height=s*2;var g=c.getContext('2d');g.font=(s*1.5)+'px "Segoe UI Emoji","Apple Color Emoji","Noto Color Emoji",sans-serif';g.textAlign='center';g.textBaseline='middle';g.fillText(ch,s,s+s*0.08);return SP[k]=c;}
+var best=PLAY.load('dodgeBest',0),st,run=false,last=0,tx=W/2,ty=H-120;$('best').textContent=best?best.toFixed(1)+'초':'-';PLAY.streak();
+function init(){st={px:W/2,py:H-120,t:0,hz:[],sp:0.5,stars:0,inv:0};tx=W/2;ty=H-120;$('stars').textContent=0;}
+function upd(dt){st.t+=dt;if(st.inv>0)st.inv-=dt;st.px+=(tx-st.px)*Math.min(1,dt*14);st.py+=(ty-st.py)*Math.min(1,dt*14);
+st.sp-=dt;if(st.sp<=0){var n=1+Math.floor(st.t/20);for(var i=0;i<n;i++){var k=Math.floor(Math.random()*3),star=Math.random()<0.07;st.hz.push({x:20+Math.random()*(W-40),y:-30,vy:(star?150:150+Math.random()*120+st.t*4),c:star?'⭐':['📄','⏰','💸'][k],s:star?16:20+Math.random()*10,star:star});}st.sp=Math.max(0.16,0.55-st.t*0.006);}
+for(var j=st.hz.length-1;j>=0;j--){var h=st.hz[j];h.y+=h.vy*dt;if(h.y>H+40){st.hz.splice(j,1);continue;}
+if(Math.hypot(h.x-st.px,h.y-st.py)<h.s*0.7+14){if(h.star){st.stars++;st.inv=1.2;st.hz.splice(j,1);$('stars').textContent=st.stars;PLAY.vib(10);}else if(st.inv<=0){die();return;}}}
+$('sc').textContent=(st.t+st.stars*2).toFixed(1)+'초';}
+function die(){run=false;var s=st.t+st.stars*2,nb=s>best;if(nb){best=s;PLAY.save('dodgeBest',best);$('best').textContent=best.toFixed(1)+'초';}
+$('ot').textContent=nb?'🏅 신기록!':'💥 마감에 맞았어요';$('op').textContent=s.toFixed(1)+'초 버텼어요 (별 '+st.stars+'개) · 최고 '+best.toFixed(1)+'초';$('go').textContent='다시 하기';$('sh').style.display='';$('ov').classList.add('on');PLAY.ga('dodge_end',{score:Math.floor(s)});PLAY.vib(40);}
+function draw(){x.fillStyle='#120e1f';x.fillRect(0,0,W,H);x.fillStyle='#ffffff10';for(var i=0;i<30;i++){x.fillRect((i*97)%W,((i*61+(st?st.t*60:0))%H),2,2);}
+if(!st)return;st.hz.forEach(function(h){x.drawImage(spr(h.c,h.s),h.x-h.s,h.y-h.s,h.s*2,h.s*2);});
+if(st.inv>0){x.strokeStyle='#ffd166';x.lineWidth=3;x.beginPath();x.arc(st.px,st.py,26,0,6.283);x.stroke();}
+if(img.complete&&img.naturalWidth)x.drawImage(img,st.px-18,st.py-26,36,50);else{x.fillStyle='#b794ff';x.beginPath();x.arc(st.px,st.py,14,0,6.283);x.fill();}}
+function loop(n){var dt=Math.min(0.04,(n-last)/1000);last=n;if(run)upd(dt);draw();requestAnimationFrame(loop);}
+function pos(cx,cy){var r=cv.getBoundingClientRect();tx=(cx-r.left)/r.width*W;ty=(cy-r.top)/r.height*H-30;tx=Math.max(16,Math.min(W-16,tx));ty=Math.max(30,Math.min(H-16,ty));}
+cv.addEventListener('touchstart',function(e){e.preventDefault();pos(e.touches[0].clientX,e.touches[0].clientY);},{passive:false});cv.addEventListener('touchmove',function(e){e.preventDefault();pos(e.touches[0].clientX,e.touches[0].clientY);},{passive:false});
+cv.addEventListener('mousemove',function(e){pos(e.clientX,e.clientY);});
+function start(){init();run=true;$('ov').classList.remove('on');$('sh').style.display='none';last=performance.now();PLAY.ga('dodge_start');}
+$('go').onclick=start;$('sh').onclick=function(){PLAY.share('마감 피하기 '+best.toFixed(1)+'초 버텼어요! 도전해 봐요','dodge');};
+init();requestAnimationFrame(loop);})();
+</script>
+</body>
+</html>

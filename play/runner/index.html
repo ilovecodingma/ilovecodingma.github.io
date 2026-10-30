@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G9BPFF95GY"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());if(location.hostname!=='sungprofile.cloud')window['ga-disable-G-G9BPFF95GY']=true;gtag('config','G-G9BPFF95GY');</script>
+<title>루리 런 — 무료 달리기 점프 게임, 가입 없이 바로 시작 | 루리의 놀이터</title>
+<meta name="description" content="서류 더미와 알람을 뛰어넘어 최대한 멀리 달리는 무료 러닝 게임. 화면을 탭하면 점프! 설치·가입 없이 모바일과 PC에서 바로 플레이.">
+<link rel="canonical" href="https://sungprofile.cloud/play/runner/">
+<meta property="og:title" content="루리 런"><meta property="og:description" content="서류 더미와 알람을 뛰어넘어 최대한 멀리 달리는 무료 러닝 게임. 화면을 탭하면 점프! 설치·가입 없이 모바일과 PC에서 바로 플레이."><meta property="og:image" content="https://sungprofile.cloud/assets/ruri/og.jpg"><meta property="og:url" content="https://sungprofile.cloud/play/runner/">
+<link rel="icon" href="/favicon.ico?v=6" sizes="any">
+<link rel="stylesheet" href="/play/play.css?v=1">
+<style>
+html,body{overscroll-behavior:none}
+.cvw{position:relative;width:100%;background:#0e0b18;border-radius:16px;overflow:hidden;touch-action:none;user-select:none;-webkit-user-select:none}
+canvas{display:block;width:100%}
+.ov{position:absolute;inset:0;background:rgba(14,11,24,.86);display:none;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:16px;text-align:center;z-index:5}
+.ov.on{display:flex}.ov h2{margin:0;font-size:24px}.ov p{margin:0;color:var(--mu);font-size:14px;line-height:1.6}
+
+</style>
+</head>
+<body>
+<div class="pw">
+  <div class="top"><a href="/play/">← 게임 모음</a><b>🏃 루리 런</b><a href="/">루리의 줍줍</a></div>
+  <div class="stat"><div><small>거리</small><b id="sc">0</b></div><div><small>최고</small><b id="best">0</b></div><div><small>🔥 접속</small><b id="stk">1일</b></div></div>
+  <div class="cvw"><canvas id="cv" width="720" height="360"></canvas>
+    <div class="ov on" id="ov"><h2 id="ot">🏃 루리 런</h2><p id="op">탭하면 점프! 장애물을 피해 달려요</p><button class="btn big" id="go" style="max-width:260px">시작</button><button class="btn g" id="sh" style="display:none">📤 자랑</button></div></div>
+  <main class="how">
+    <h2>게임 방법</h2>
+    <ul><li>화면을 탭(PC는 스페이스·위 방향키)하면 점프해요. 길게 누르면 더 높이 올라가요.</li><li>서류·알람·상자에 부딪히지 않고 달릴수록 점수가 올라가요. 속도는 점점 빨라져요.</li><li>최고 기록은 이 브라우저에 자동 저장돼요.</li></ul>
+    <p>다른 게임: <a href="/play/survivor/">루리 서바이벌</a> · <a href="/play/runner/">루리 런</a> · <a href="/play/dodge/">마감 피하기</a> · <a href="/play/clicker/">줍줍 클리커</a> · <a href="/play/mole/">두더지 잡기</a> · <a href="/play/snake/">스네이크</a> · <a href="/play/dice/">주사위 놀이</a> · <a href="/play/2048/">2048</a> · <a href="/play/memory/">짝 맞추기</a> · <a href="/play/">미니게임 모음</a></p>
+  </main>
+</div>
+<script src="/play/play.js?v=1"></script>
+<script>
+(function(){var $=PLAY.$,cv=$('cv'),x=cv.getContext('2d'),W=720,H=360,GY=300;
+var img=new Image();img.src='/assets/ruri/o_suit_s.webp';
+var SP={};function spr(ch,s){var k=ch+s;if(SP[k])return SP[k];var c=document.createElement('canvas');c.width=c.height=s*2;var g=c.getContext('2d');g.font=(s*1.5)+'px "Segoe UI Emoji","Apple Color Emoji","Noto Color Emoji",sans-serif';g.textAlign='center';g.textBaseline='middle';g.fillText(ch,s,s+s*0.08);return SP[k]=c;}
+var best=PLAY.load('runBest',0),st,run=false,last=0,hold=false;$('best').textContent=best;$('stk').textContent=PLAY.streak().n+'일';
+function init(){st={y:GY,vy:0,on:true,sp:260,d:0,ob:[],nx:1.1,t:0,jumps:0};}
+function jump(){if(!run)return;if(st.on){st.vy=-560;st.on=false;PLAY.vib(6);}hold=true;}
+function rel(){hold=false;}
+function loop(n){var dt=Math.min(0.04,(n-last)/1000);last=n;if(run){upd(dt);}draw();requestAnimationFrame(loop);}
+function upd(dt){st.t+=dt;st.sp=Math.min(620,260+st.d*0.05);st.d+=st.sp*dt;
+var g=hold&&st.vy<0?1100:2000;st.vy+=g*dt;st.y+=st.vy*dt;if(st.y>=GY){st.y=GY;st.vy=0;st.on=true;}
+st.nx-=dt;if(st.nx<=0){var k=Math.floor(Math.random()*3),c=['📄','⏰','📦'][k],s=[22,24,30][k];st.ob.push({x:W+40,c:c,s:s});st.nx=Math.max(0.55,1.25-st.d/9000)+Math.random()*0.7;}
+for(var i=st.ob.length-1;i>=0;i--){var o=st.ob[i];o.x-=st.sp*dt;if(o.x<-60){st.ob.splice(i,1);continue;}
+if(Math.abs(o.x-90)<o.s*0.62+12&&st.y>GY-o.s*1.15-6)die();}
+$('sc').textContent=Math.floor(st.d/10);}
+function die(){run=false;var s=Math.floor(st.d/10),nb=s>best;if(nb){best=s;PLAY.save('runBest',best);$('best').textContent=best;}
+$('ot').textContent=nb?'🏅 신기록!':'💥 아야!';$('op').textContent=s+'m 달렸어요 · 최고 '+best+'m';$('go').textContent='다시 하기';$('sh').style.display='';$('ov').classList.add('on');PLAY.ga('runner_end',{score:s});PLAY.vib(40);}
+function draw(){x.clearRect(0,0,W,H);var gr=x.createLinearGradient(0,0,0,H);gr.addColorStop(0,'#1c1533');gr.addColorStop(1,'#2a2142');x.fillStyle=gr;x.fillRect(0,0,W,H);
+x.fillStyle='#ffffff14';for(var i=0;i<8;i++){var bx=((i*140-(st?st.d*0.25:0))%(W+140)+W+140)%(W+140)-70;x.fillRect(bx,40+(i%3)*30,60,6);}
+x.fillStyle='#3a2f5c';x.fillRect(0,GY+26,W,H-GY-26);x.fillStyle='#b794ff';x.fillRect(0,GY+26,W,3);
+if(!st)return;st.ob.forEach(function(o){x.drawImage(spr(o.c,o.s),o.x-o.s,GY+26-o.s*2+4,o.s*2,o.s*2);});
+if(img.complete&&img.naturalWidth){var by=st.y-6+(st.on?Math.sin(st.d*0.05)*3:0);x.drawImage(img,70,by-34,40,56);}else{x.fillStyle='#b794ff';x.fillRect(70,st.y-40,36,50);}}
+function start(){init();run=true;$('ov').classList.remove('on');$('sh').style.display='none';last=performance.now();PLAY.ga('runner_start');}
+$('go').onclick=start;$('sh').onclick=function(){PLAY.share('루리 런 '+best+'m 달렸어요! 도전해 봐요','runner');};
+cv.addEventListener('touchstart',function(e){e.preventDefault();jump();},{passive:false});cv.addEventListener('touchend',rel);
+cv.addEventListener('mousedown',jump);window.addEventListener('mouseup',rel);
+window.addEventListener('keydown',function(e){if(e.code==='Space'||e.key==='ArrowUp'){e.preventDefault();if(!run&&$('ov').classList.contains('on')){start();return;}jump();}});
+window.addEventListener('keyup',function(e){if(e.code==='Space'||e.key==='ArrowUp')rel();});
+init();requestAnimationFrame(loop);})();
+</script>
+</body>
+</html>

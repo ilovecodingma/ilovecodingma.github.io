@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G9BPFF95GY"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());if(location.hostname!=='sungprofile.cloud')window['ga-disable-G-G9BPFF95GY']=true;gtag('config','G-G9BPFF95GY');</script>
+<title>루리 두더지 잡기 — 무료 반응속도 게임, 가입 없이 바로 시작 | 루리의 놀이터</title>
+<meta name="description" content="구멍에서 튀어나오는 루리를 재빨리 눌러 잡는 30초 반응속도 게임. 폭탄은 조심! 최고 점수 자동 저장, 가입 없이 바로 플레이.">
+<link rel="canonical" href="https://sungprofile.cloud/play/mole/">
+<meta property="og:title" content="루리 두더지 잡기"><meta property="og:description" content="구멍에서 튀어나오는 루리를 재빨리 눌러 잡는 30초 반응속도 게임. 폭탄은 조심! 최고 점수 자동 저장, 가입 없이 바로 플레이."><meta property="og:image" content="https://sungprofile.cloud/assets/ruri/og.jpg"><meta property="og:url" content="https://sungprofile.cloud/play/mole/">
+<link rel="icon" href="/favicon.ico?v=6" sizes="any">
+<link rel="stylesheet" href="/play/play.css?v=1">
+<style>
+html,body{overscroll-behavior:none}
+.cvw{position:relative;width:100%;background:#0e0b18;border-radius:16px;overflow:hidden;touch-action:none;user-select:none;-webkit-user-select:none}
+canvas{display:block;width:100%}
+.ov{position:absolute;inset:0;background:rgba(14,11,24,.86);display:none;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:16px;text-align:center;z-index:5}
+.ov.on{display:flex}.ov h2{margin:0;font-size:24px}.ov p{margin:0;color:var(--mu);font-size:14px;line-height:1.6}
+#hl{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:6px 0}
+.h{position:relative;aspect-ratio:1/1;background:radial-gradient(ellipse at 50% 80%,#0b0814 40%,#2a2142 41%);border-radius:50%;overflow:hidden;cursor:pointer;border:0;padding:0}
+.h img{position:absolute;left:50%;bottom:-100%;transform:translateX(-50%);height:88%;transition:bottom .12s;pointer-events:none}
+.h.up img{bottom:6%}.h .bm{position:absolute;left:0;right:0;bottom:-100%;font-size:44px;text-align:center;transition:bottom .12s;pointer-events:none}.h.bomb .bm{bottom:18%}
+.h.hit{background:radial-gradient(ellipse at 50% 80%,#244a35 40%,#2a2142 41%)}
+</style>
+</head>
+<body>
+<div class="pw">
+  <div class="top"><a href="/play/">← 게임 모음</a><b>🔨 루리 두더지 잡기</b><a href="/">루리의 줍줍</a></div>
+  <div class="stat"><div><small>점수</small><b id="sc">0</b></div><div><small>남은 시간</small><b id="tm">30</b></div><div><small>최고</small><b id="best">0</b></div></div>
+  <div style="position:relative"><div id="hl"></div>
+    <div class="ov on" id="ov" style="border-radius:16px"><h2 id="ot">🔨 두더지 잡기</h2><p id="op">튀어나오는 루리를 눌러요!<br>💣 폭탄은 누르면 안 돼요</p><button class="btn big" id="go" style="max-width:260px">시작</button><button class="btn g" id="sh" style="display:none">📤 자랑</button></div></div>
+  <main class="how">
+    <h2>게임 방법</h2>
+    <ul><li>구멍에서 튀어나오는 루리를 눌러 점수를 얻어요. 30초 안에 최대한 많이!</li><li>💣 폭탄을 누르면 점수가 깎여요. 폭탄은 눌러선 안 돼요.</li><li>연속으로 잡으면 콤보 보너스가 붙어요.</li></ul>
+    <p>다른 게임: <a href="/play/survivor/">루리 서바이벌</a> · <a href="/play/runner/">루리 런</a> · <a href="/play/dodge/">마감 피하기</a> · <a href="/play/clicker/">줍줍 클리커</a> · <a href="/play/mole/">두더지 잡기</a> · <a href="/play/snake/">스네이크</a> · <a href="/play/dice/">주사위 놀이</a> · <a href="/play/2048/">2048</a> · <a href="/play/memory/">짝 맞추기</a> · <a href="/play/">미니게임 모음</a></p>
+  </main>
+</div>
+<script src="/play/play.js?v=1"></script>
+<script>
+(function(){var $=PLAY.$,names=['suit','gray','cardigan','present','desk','anchor','trench','vest','cook'];
+var best=PLAY.load('moleBest',0),sc=0,tl=30,run=false,combo=0,timer=null,spawn=null,hs=[];$('best').textContent=best;PLAY.streak();
+var hl=$('hl');for(var i=0;i<9;i++){(function(i){var h=document.createElement('button');h.className='h';h.innerHTML='<img src="/assets/ruri/o_suit_s.webp" alt=""><div class="bm">💣</div>';h.onclick=function(){hit(i);};hl.appendChild(h);hs.push({el:h,st:0,to:null});})(i);}
+function up(i){var o=hs[i];if(o.st)return;var bomb=Math.random()<0.18;o.st=bomb?2:1;o.el.classList.add(bomb?'bomb':'up');if(!bomb)o.el.querySelector('img').src='/assets/ruri/o_'+names[PLAY.rnd(names.length)]+'_s.webp';
+o.to=setTimeout(function(){down(i);if(!bomb)combo=0;},Math.max(520,1050-(30-tl)*14));}
+function down(i){var o=hs[i];o.st=0;o.el.classList.remove('up','bomb','hit');clearTimeout(o.to);}
+function hit(i){if(!run)return;var o=hs[i];if(!o.st)return;if(o.st===1){combo++;sc+=10+Math.min(combo,10)*2;o.el.classList.add('hit');PLAY.vib(10);}else{sc=Math.max(0,sc-30);combo=0;PLAY.vib(40);}$('sc').textContent=sc;clearTimeout(o.to);setTimeout(function(){down(i);},90);}
+function tick(){tl--;$('tm').textContent=tl;if(tl<=0)end();}
+function sp(){if(!run)return;var n=1+(tl<15?1:0);for(var k=0;k<n;k++)up(PLAY.rnd(9));spawn=setTimeout(sp,Math.max(330,720-(30-tl)*10));}
+function start(){sc=0;tl=30;combo=0;run=true;$('sc').textContent=0;$('tm').textContent=30;$('ov').classList.remove('on');$('sh').style.display='none';timer=setInterval(tick,1000);sp();PLAY.ga('mole_start');}
+function end(){run=false;clearInterval(timer);clearTimeout(spawn);hs.forEach(function(o,i){down(i);});var nb=sc>best;if(nb){best=sc;PLAY.save('moleBest',best);$('best').textContent=best;}
+$('ot').textContent=nb?'🏅 신기록!':'⏰ 끝!';$('op').textContent=sc+'점 · 최고 '+best+'점';$('go').textContent='다시 하기';$('sh').style.display='';$('ov').classList.add('on');PLAY.ga('mole_end',{score:sc});}
+$('go').onclick=start;$('sh').onclick=function(){PLAY.share('루리 두더지 잡기 '+best+'점! 도전해 봐요','mole');};})();
+</script>
+</body>
+</html>

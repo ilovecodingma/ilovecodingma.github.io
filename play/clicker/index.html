@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G9BPFF95GY"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());if(location.hostname!=='sungprofile.cloud')window['ga-disable-G-G9BPFF95GY']=true;gtag('config','G-G9BPFF95GY');</script>
+<title>줍줍 클리커 — 무료 방치형 클릭 게임, 가입 없이 바로 시작 | 루리의 놀이터</title>
+<meta name="description" content="루리를 눌러 용돈을 줍고, 자동 줍기를 늘려 부자가 되는 무료 방치형 클릭 게임. 꺼 놔도 쌓여요. 가입 없이 바로 플레이.">
+<link rel="canonical" href="https://sungprofile.cloud/play/clicker/">
+<meta property="og:title" content="줍줍 클리커"><meta property="og:description" content="루리를 눌러 용돈을 줍고, 자동 줍기를 늘려 부자가 되는 무료 방치형 클릭 게임. 꺼 놔도 쌓여요. 가입 없이 바로 플레이."><meta property="og:image" content="https://sungprofile.cloud/assets/ruri/og.jpg"><meta property="og:url" content="https://sungprofile.cloud/play/clicker/">
+<link rel="icon" href="/favicon.ico?v=6" sizes="any">
+<link rel="stylesheet" href="/play/play.css?v=1">
+<style>
+html,body{overscroll-behavior:none}
+.cvw{position:relative;width:100%;background:#0e0b18;border-radius:16px;overflow:hidden;touch-action:none;user-select:none;-webkit-user-select:none}
+canvas{display:block;width:100%}
+.ov{position:absolute;inset:0;background:rgba(14,11,24,.86);display:none;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:16px;text-align:center;z-index:5}
+.ov.on{display:flex}.ov h2{margin:0;font-size:24px}.ov p{margin:0;color:var(--mu);font-size:14px;line-height:1.6}
+#big{display:block;margin:6px auto 12px;width:min(52vw,210px);background:radial-gradient(circle,#4c2a85,#2a2142);border:0;border-radius:50%;aspect-ratio:1/1;cursor:pointer;padding:0;box-shadow:0 10px 30px -10px #b794ff}
+#big img{width:70%;pointer-events:none}#big:active{transform:scale(.95)}
+.up{display:flex;justify-content:space-between;align-items:center;gap:8px;background:var(--card);border-radius:12px;padding:10px 12px;margin:7px 0;font-size:13px}
+.up b{display:block;font-size:14px}.up span{color:var(--mu);font-size:11.5px}.up .btn{padding:8px 12px;font-size:13px;flex:none}
+.pop{position:fixed;pointer-events:none;color:var(--gold);font-weight:900;font-size:18px;animation:fl .8s forwards;z-index:30}
+@keyframes fl{to{transform:translateY(-50px);opacity:0}}
+</style>
+</head>
+<body>
+<div class="pw">
+  <div class="top"><a href="/play/">← 게임 모음</a><b>🪙 줍줍 클리커</b><a href="/">루리의 줍줍</a></div>
+  <div class="stat"><div><small>🪙 용돈</small><b id="c">0</b></div><div><small>초당</small><b id="ps">0</b></div><div><small>칭호</small><b id="tt" style="font-size:13px">줍줍 신입</b></div></div>
+  <button id="big" aria-label="루리를 눌러 용돈 줍기"><img src="/assets/ruri/o_suit.webp" alt="루리"></button>
+  <div id="ups"></div>
+  <div class="row" style="margin-top:10px"><button class="btn g" id="sh">📤 자랑</button></div>
+  <main class="how">
+    <h2>게임 방법</h2>
+    <ul><li>루리를 탭(클릭)하면 용돈을 주워요. 모은 돈으로 업그레이드를 사면 초당 자동 수입이 늘어요.</li><li>게임을 꺼 둬도 시간이 지난 만큼(최대 2시간) 돈이 쌓여 있어요.</li><li>목표: 「공모왕」 칭호까지! 진행 상황은 이 브라우저에 자동 저장돼요. 실제 돈이 아니라 게임 점수예요.</li></ul>
+    <p>다른 게임: <a href="/play/survivor/">루리 서바이벌</a> · <a href="/play/runner/">루리 런</a> · <a href="/play/dodge/">마감 피하기</a> · <a href="/play/clicker/">줍줍 클리커</a> · <a href="/play/mole/">두더지 잡기</a> · <a href="/play/snake/">스네이크</a> · <a href="/play/dice/">주사위 놀이</a> · <a href="/play/2048/">2048</a> · <a href="/play/memory/">짝 맞추기</a> · <a href="/play/">미니게임 모음</a></p>
+  </main>
+</div>
+<script src="/play/play.js?v=1"></script>
+<script>
+(function(){var $=PLAY.$;
+var U=[['👆','손가락 단련','탭당 +1',15,1.18,'tap',1],['🪙','동전 자판기','초당 +1',60,1.17,'ps',1],['📰','신문 배달','초당 +6',600,1.17,'ps',6],['🏪','편의점 알바','초당 +30',5500,1.16,'ps',30],['📈','주식 줍기','초당 +180',48000,1.16,'ps',180],['🏢','공모전 사무실','초당 +1,200',420000,1.15,'ps',1200],['🏆','공모왕 길드','초당 +9,000',3800000,1.15,'ps',9000]];
+var TT=[[0,'줍줍 신입'],[1e3,'용돈 사냥꾼'],[5e4,'알뜰 달인'],[1e6,'공모 부자'],[1e8,'공모왕']];
+var S=PLAY.load('clk',{c:0,tot:0,lv:[0,0,0,0,0,0,0],t:Date.now()});if(!S.lv||S.lv.length<U.length)S.lv=U.map(function(_,i){return (S.lv&&S.lv[i])||0;});
+function tap(){var v=1;U.forEach(function(u,i){if(u[5]==='tap')v+=u[6]*S.lv[i];});return v;}
+function ps(){var v=0;U.forEach(function(u,i){if(u[5]==='ps')v+=u[6]*S.lv[i];});return v;}
+function cost(i){return Math.round(U[i][3]*Math.pow(U[i][4],S.lv[i]));}
+function f(n){return PLAY.fmt(n);}
+var now=Date.now(),off=Math.min(7200,(now-S.t)/1000)*ps();if(off>=1){S.c+=off;S.tot+=off;setTimeout(function(){PLAY.toast('자리를 비운 동안 🪙 '+f(off)+' 쌓였어요!',3000);},400);}S.t=now;
+function title(){var t=TT[0][1];TT.forEach(function(x){if(S.tot>=x[0])t=x[1];});return t;}
+function render(){$('c').textContent=f(S.c);$('ps').textContent=f(ps());$('tt').textContent=title();
+var el=$('ups');if(!el.children.length){U.forEach(function(u,i){var d=document.createElement('div');d.className='up';d.innerHTML='<div><b>'+u[0]+' '+u[1]+' <small id="l'+i+'"></small></b><span>'+u[2]+'</span></div><button class="btn" id="b'+i+'"></button>';el.appendChild(d);$('b'+i).onclick=function(){buy(i);};});}
+U.forEach(function(u,i){$('l'+i).textContent='Lv.'+S.lv[i];$('b'+i).textContent='🪙 '+f(cost(i));$('b'+i).disabled=S.c<cost(i);});}
+function buy(i){var c=cost(i);if(S.c<c)return;S.c-=c;S.lv[i]++;PLAY.save('clk',S);render();PLAY.vib(8);PLAY.ga('clicker_buy',{i:i,l:S.lv[i]});}
+$('big').onclick=function(e){var v=tap();S.c+=v;S.tot+=v;var p=document.createElement('div');p.className='pop';p.textContent='+'+f(v);p.style.left=(e.clientX||innerWidth/2)-10+'px';p.style.top=(e.clientY||innerHeight/2)-20+'px';document.body.appendChild(p);setTimeout(function(){p.remove();},800);PLAY.vib(4);};
+setInterval(function(){var v=ps()/4;if(v){S.c+=v;S.tot+=v;}S.t=Date.now();render();},250);setInterval(function(){PLAY.save('clk',S);},3000);
+$('sh').onclick=function(){PLAY.share('줍줍 클리커 '+title()+' · 누적 🪙'+f(S.tot)+' — 같이 줍줍해요!','clicker');};
+PLAY.streak();render();})();
+</script>
+</body>
+</html>
