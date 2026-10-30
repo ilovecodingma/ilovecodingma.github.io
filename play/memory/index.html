@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G9BPFF95GY"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());if(location.hostname!=='sungprofile.cloud')window['ga-disable-G-G9BPFF95GY']=true;gtag('config','G-G9BPFF95GY');</script>
+<title>루리 짝 맞추기 — 무료 카드 기억력 게임, 가입 없이 바로 시작 | 루리의 놀이터</title>
+<meta name="description" content="뒤집은 카드 두 장이 같은 루리 옷이면 짝 성공! 쉬움·보통·어려움 3단계, 최단 시간 기록이 자동 저장되는 무료 기억력 게임.">
+<link rel="canonical" href="https://sungprofile.cloud/play/memory/">
+<meta property="og:title" content="루리 짝 맞추기"><meta property="og:description" content="같은 루리 옷 카드 찾기! 기억력 게임, 가입 없이 바로 시작."><meta property="og:image" content="https://sungprofile.cloud/assets/ruri/og.jpg"><meta property="og:url" content="https://sungprofile.cloud/play/memory/">
+<link rel="icon" href="/favicon.ico?v=6" sizes="any">
+<link rel="stylesheet" href="/play/play.css?v=1">
+<style>
+#board{display:grid;gap:8px;width:100%}
+.c{position:relative;aspect-ratio:3/4;perspective:600px;cursor:pointer;border:0;background:none;padding:0}
+.c i{position:absolute;inset:0;border-radius:12px;transition:transform .35s;transform-style:preserve-3d;backface-visibility:hidden;display:flex;align-items:center;justify-content:center}
+.c .f{background:linear-gradient(160deg,var(--ac),#6d4bd1);font-style:normal;font-size:26px;color:#fff}
+.c .b{background:var(--card2);transform:rotateY(180deg);overflow:hidden}
+.c .b img{height:92%;display:block}
+.c.o .f{transform:rotateY(180deg)}.c.o .b{transform:rotateY(0)}
+.c.m .b{background:#244a35;outline:2px solid var(--ok)}
+.lv{display:flex;gap:8px;margin-bottom:10px}
+.lv button{flex:1}
+.lv .on{background:var(--ac);color:#1a1030}
+</style>
+</head>
+<body>
+<div class="pw">
+  <div class="top"><a href="/play/">← 게임 모음</a><b>🃏 루리 짝 맞추기</b><a href="/">루리의 줍줍</a></div>
+  <div class="lv" id="lv"><button class="btn g" data-n="6">쉬움</button><button class="btn g" data-n="8">보통</button><button class="btn g" data-n="12">어려움</button></div>
+  <div class="stat"><div><small>⏱ 시간</small><b id="tm">0.0초</b></div><div><small>시도</small><b id="mv">0</b></div><div><small>🏅 최고</small><b id="bs">-</b></div></div>
+  <div id="board"></div>
+  <div class="row" style="margin-top:10px"><button class="btn g" id="new">새 게임</button><button class="btn g" id="sh">📤 자랑</button></div>
+  <main class="how">
+    <h2>게임 방법</h2>
+    <ul>
+      <li>카드를 눌러 뒤집고, 같은 루리 옷 카드 두 장을 찾으면 짝이 맞아요.</li>
+      <li>다른 카드면 다시 뒤집혀요. 위치를 기억하는 게 핵심!</li>
+      <li>쉬움 6쌍 · 보통 8쌍 · 어려움 12쌍. 모든 짝을 맞추면 끝이고 가장 빠른 기록이 저장돼요.</li>
+    </ul>
+    <p>다른 게임: <a href="/play/survivor/">루리 서바이벌</a> · <a href="/play/runner/">루리 런</a> · <a href="/play/dodge/">마감 피하기</a> · <a href="/play/clicker/">줍줍 클리커</a> · <a href="/play/mole/">두더지 잡기</a> · <a href="/play/snake/">스네이크</a> · <a href="/play/dice/">주사위 놀이</a> · <a href="/play/2048/">2048</a> · <a href="/play/memory/">짝 맞추기</a> · <a href="/play/">미니게임 모음</a></p>
+  </main>
+</div>
+<div class="mod" id="win"><div class="box"><h3 id="wt">🎉 완성!</h3><p id="wp"></p><div class="row"><button class="btn" id="again">다시 하기</button><button class="btn g" id="sh2">📤 자랑</button></div></div></div>
+<script src="/play/play.js?v=1"></script>
+<script>
+(function () {
+  var $ = PLAY.$;
+  var ALL = ['suit', 'gray', 'cardigan', 'present', 'desk', 'anchor', 'trench', 'vest', 'cook', 'summer', 'resort', 'watch'];
+  var pairs = PLAY.load('memLv', 8), open = [], lock = false, matched = 0, moves = 0, t0 = 0, timer = null, done = false, bestAll = PLAY.load('memBest', {});
+  var COLS = { 6: 4, 8: 4, 12: 4 };
+  function shuffle(a) { for (var i = a.length - 1; i > 0; i--) { var j = PLAY.rnd(i + 1), t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
+  function fmt(ms) { return (ms / 1000).toFixed(1) + '초'; }
+  function setLv() { document.querySelectorAll('#lv button').forEach(function (b) { b.classList.toggle('on', +b.dataset.n === pairs); }); $('bs').textContent = bestAll[pairs] ? fmt(bestAll[pairs]) : '-'; }
+  function start() {
+    clearInterval(timer); open = []; lock = false; matched = 0; moves = 0; t0 = 0; done = false; $('mv').textContent = 0; $('tm').textContent = '0.0초'; setLv();
+    var cards = shuffle(ALL.slice(0, pairs).concat(ALL.slice(0, pairs))), b = $('board'); b.innerHTML = '';
+    b.style.gridTemplateColumns = 'repeat(' + COLS[pairs] + ',1fr)';
+    cards.forEach(function (n) {
+      var c = document.createElement('button'); c.className = 'c'; c.dataset.n = n;
+      c.innerHTML = '<i class="f">❓</i><i class="b"><img src="/assets/ruri/o_' + n + '_s.webp" alt=""></i>';
+      c.onclick = function () { flip(c); }; b.appendChild(c);
+    });
+    PLAY.ga('memory_start', { pairs: pairs });
+  }
+  function flip(c) {
+    if (lock || done || c.classList.contains('o') || c.classList.contains('m')) return;
+    if (!t0) { t0 = Date.now(); timer = setInterval(function () { $('tm').textContent = fmt(Date.now() - t0); }, 100); }
+    c.classList.add('o'); open.push(c); PLAY.vib(6);
+    if (open.length < 2) return;
+    moves++; $('mv').textContent = moves; lock = true;
+    var a = open[0], b = open[1];
+    if (a.dataset.n === b.dataset.n) {
+      a.classList.add('m'); b.classList.add('m'); open = []; lock = false; matched++; PLAY.vib(20);
+      if (matched === pairs) finish();
+    } else setTimeout(function () { a.classList.remove('o'); b.classList.remove('o'); open = []; lock = false; }, 650);
+  }
+  function finish() {
+    done = true; clearInterval(timer); var ms = Date.now() - t0, rec = !bestAll[pairs] || ms < bestAll[pairs];
+    if (rec) { bestAll[pairs] = ms; PLAY.save('memBest', bestAll); }
+    setLv(); $('wt').textContent = rec ? '🏅 신기록!' : '🎉 완성!'; $('wp').textContent = pairs + '쌍 · ' + fmt(ms) + ' · 시도 ' + moves + '번';
+    setTimeout(function () { $('win').classList.add('on'); }, 500); PLAY.ga('memory_win', { pairs: pairs, ms: ms });
+  }
+  function share() { PLAY.share('루리 짝 맞추기 ' + pairs + '쌍을 ' + (bestAll[pairs] ? fmt(bestAll[pairs]) : '-') + '에 성공! 도전해 봐요', 'memory'); }
+  document.querySelectorAll('#lv button').forEach(function (b) { b.onclick = function () { pairs = +b.dataset.n; PLAY.save('memLv', pairs); start(); }; });
+  $('new').onclick = start; $('again').onclick = function () { $('win').classList.remove('on'); start(); };
+  $('sh').onclick = share; $('sh2').onclick = share;
+  start();
+})();
+</script>
+</body>
+</html>

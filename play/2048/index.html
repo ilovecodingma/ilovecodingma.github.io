@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G9BPFF95GY"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());if(location.hostname!=='sungprofile.cloud')window['ga-disable-G-G9BPFF95GY']=true;gtag('config','G-G9BPFF95GY');</script>
+<title>2048 합치기 — 무료 퍼즐 게임, 가입 없이 바로 시작 | 루리의 놀이터</title>
+<meta name="description" content="같은 숫자를 밀어서 합쳐 2048을 만드는 무료 퍼즐 게임. 모바일은 스와이프, PC는 방향키로 바로 플레이. 최고 점수는 자동 저장돼요.">
+<link rel="canonical" href="https://sungprofile.cloud/play/2048/">
+<meta property="og:title" content="2048 합치기"><meta property="og:description" content="숫자를 밀어 합치는 무료 퍼즐. 내 최고 점수는? 가입 없이 바로 시작."><meta property="og:image" content="https://sungprofile.cloud/assets/ruri/og.jpg"><meta property="og:url" content="https://sungprofile.cloud/play/2048/">
+<link rel="icon" href="/favicon.ico?v=6" sizes="any">
+<link rel="stylesheet" href="/play/play.css?v=1">
+<style>
+#g{position:relative;width:100%;aspect-ratio:1/1;background:#2a2142;border-radius:16px;padding:8px;touch-action:none;user-select:none}
+#grid{position:absolute;inset:8px;display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(4,1fr);gap:8px}
+.bg{background:#ffffff10;border-radius:10px}
+#tiles{position:absolute;inset:8px}
+.tile{position:absolute;width:calc((100% - 24px)/4);height:calc((100% - 24px)/4);border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:clamp(20px,7.5vw,34px);transition:left .12s,top .12s;color:#1a1030}
+.tile.new{animation:pop .18s}
+.tile.mg{animation:pop .18s}
+@keyframes pop{0%{transform:scale(.6)}100%{transform:scale(1)}}
+#over{position:absolute;inset:0;background:rgba(20,16,31,.86);border-radius:16px;display:none;flex-direction:column;align-items:center;justify-content:center;gap:12px;text-align:center}
+#over.on{display:flex}
+#over b{font-size:26px}
+</style>
+</head>
+<body>
+<div class="pw">
+  <div class="top"><a href="/play/">← 게임 모음</a><b>🔢 2048 합치기</b><a href="/">루리의 줍줍</a></div>
+  <div class="stat"><div><small>점수</small><b id="sc">0</b></div><div><small>최고</small><b id="best">0</b></div><div><small>🔥 접속</small><b id="stk">1일</b></div></div>
+  <div id="g">
+    <div id="grid"></div><div id="tiles"></div>
+    <div id="over"><b id="ot">게임 끝!</b><div id="os" class="sub"></div><div class="row" style="width:80%"><button class="btn" id="again">다시 하기</button><button class="btn g" id="sh">📤 자랑</button></div></div>
+  </div>
+  <div class="row" style="margin-top:10px"><button class="btn g" id="undo">↩️ 되돌리기 (<span id="un">3</span>)</button><button class="btn g" id="new">새 게임</button></div>
+  <main class="how">
+    <h2>게임 방법</h2>
+    <ul>
+      <li>화면을 상하좌우로 밀거나(PC는 방향키) 같은 숫자 타일끼리 부딪혀 합쳐요. 2+2=4, 4+4=8 …</li>
+      <li>2048 타일을 만들면 성공! 그 뒤에도 계속해서 더 높은 점수에 도전할 수 있어요.</li>
+      <li>판이 가득 차서 더 움직일 수 없으면 끝나요. 되돌리기는 한 판에 3번까지 쓸 수 있어요.</li>
+    </ul>
+    <p>다른 게임: <a href="/play/survivor/">루리 서바이벌</a> · <a href="/play/runner/">루리 런</a> · <a href="/play/dodge/">마감 피하기</a> · <a href="/play/clicker/">줍줍 클리커</a> · <a href="/play/mole/">두더지 잡기</a> · <a href="/play/snake/">스네이크</a> · <a href="/play/dice/">주사위 놀이</a> · <a href="/play/2048/">2048</a> · <a href="/play/memory/">짝 맞추기</a> · <a href="/play/">미니게임 모음</a></p>
+  </main>
+</div>
+<script src="/play/play.js?v=1"></script>
+<script>
+(function () {
+  var $ = PLAY.$, N = 4;
+  var COL = { 2: '#e8dcff', 4: '#d7c4ff', 8: '#ffb3d1', 16: '#ff9ec7', 32: '#ffb86b', 64: '#ff9645', 128: '#ffe08a', 256: '#ffd166', 512: '#9be7a8', 1024: '#6ee7a1', 2048: '#7dd3fc' };
+  var grid = [], score = 0, best = PLAY.load('2048best', 0), undos = 3, hist = [], over = false, won = false, uid = 0;
+  var tilesEl = $('tiles');
+  for (var i = 0; i < 16; i++) { var b = document.createElement('div'); b.className = 'bg'; $('grid').appendChild(b); }
+  function empty() { var e = []; for (var r = 0; r < N; r++) for (var c = 0; c < N; c++) if (!grid[r][c]) e.push([r, c]); return e; }
+  function addTile() { var e = empty(); if (!e.length) return; var p = e[PLAY.rnd(e.length)]; grid[p[0]][p[1]] = { v: Math.random() < 0.9 ? 2 : 4, id: ++uid, n: 1 }; }
+  function start() {
+    grid = []; for (var r = 0; r < N; r++) { grid.push([null, null, null, null]); }
+    score = 0; undos = 3; hist = []; over = false; won = false; addTile(); addTile(); $('over').classList.remove('on'); draw(); PLAY.ga('g2048_start');
+  }
+  function snap() { return JSON.stringify({ g: grid.map(function (r) { return r.map(function (t) { return t ? t.v : 0; }); }), s: score }); }
+  function draw() {
+    var html = '';
+    for (var r = 0; r < N; r++) for (var c = 0; c < N; c++) {
+      var t = grid[r][c]; if (!t) continue;
+      html += '<div class="tile' + (t.n ? ' new' : '') + (t.m ? ' mg' : '') + '" style="left:calc(' + c + ' * (100% + 8px) / 4);top:calc(' + r + ' * (100% + 8px) / 4);background:' + (COL[t.v] || '#c4b5fd') + ';font-size:' + (t.v > 999 ? 'clamp(15px,5.6vw,26px)' : '') + '">' + t.v + '</div>';
+      t.n = 0; t.m = 0;
+    }
+    tilesEl.innerHTML = html; $('sc').textContent = score; $('best').textContent = best; $('un').textContent = undos;
+  }
+  function line(arr) {
+    var a = arr.filter(function (x) { return x; }), out = [], gain = 0;
+    for (var i = 0; i < a.length; i++) {
+      if (a[i + 1] && a[i].v === a[i + 1].v) { var m = { v: a[i].v * 2, id: ++uid, n: 0, m: 1 }; out.push(m); gain += m.v; i++; } else out.push(a[i]);
+    }
+    while (out.length < N) out.push(null);
+    return [out, gain];
+  }
+  function move(d) {
+    if (over) return;
+    var before = snap(), moved = false, gain = 0, r, c, ln, res;
+    for (var k = 0; k < N; k++) {
+      if (d === 0 || d === 1) { ln = []; for (c = 0; c < N; c++) ln.push(d === 0 ? grid[c][k] : grid[N - 1 - c][k]); }
+      else { ln = []; for (c = 0; c < N; c++) ln.push(d === 2 ? grid[k][c] : grid[k][N - 1 - c]); }
+      res = line(ln); gain += res[1];
+      for (c = 0; c < N; c++) {
+        var t = res[0][c];
+        if (d === 0) { if (grid[c][k] !== t) moved = true; grid[c][k] = t; }
+        else if (d === 1) { if (grid[N - 1 - c][k] !== t) moved = true; grid[N - 1 - c][k] = t; }
+        else if (d === 2) { if (grid[k][c] !== t) moved = true; grid[k][c] = t; }
+        else { if (grid[k][N - 1 - c] !== t) moved = true; grid[k][N - 1 - c] = t; }
+      }
+    }
+    if (!moved) return;
+    hist.push(before); if (hist.length > 3) hist.shift();
+    score += gain; if (score > best) { best = score; PLAY.save('2048best', best); }
+    addTile(); draw(); PLAY.vib(8);
+    for (r = 0; r < N; r++) for (c = 0; c < N; c++) if (grid[r][c] && grid[r][c].v >= 2048 && !won) { won = true; PLAY.toast('🎉 2048 달성! 계속 도전해 보세요'); PLAY.ga('g2048_win'); }
+    if (!canMove()) { over = true; $('ot').textContent = '게임 끝!'; $('os').textContent = '점수 ' + score + ' · 최고 ' + best; $('over').classList.add('on'); PLAY.ga('g2048_over', { score: score }); }
+  }
+  function canMove() {
+    if (empty().length) return true;
+    for (var r = 0; r < N; r++) for (var c = 0; c < N; c++) { var v = grid[r][c].v; if ((c + 1 < N && grid[r][c + 1].v === v) || (r + 1 < N && grid[r + 1][c].v === v)) return true; }
+    return false;
+  }
+  function undo() {
+    if (!hist.length || undos < 1 || over) { PLAY.toast('되돌릴 수 없어요'); return; }
+    var s = JSON.parse(hist.pop()); undos--;
+    grid = s.g.map(function (row) { return row.map(function (v) { return v ? { v: v, id: ++uid, n: 0 } : null; }); }); score = s.s; draw();
+  }
+  document.addEventListener('keydown', function (e) { var m = { ArrowUp: 0, ArrowDown: 1, ArrowLeft: 2, ArrowRight: 3 }[e.key]; if (m !== undefined) { e.preventDefault(); move(m); } });
+  var sx, sy, g = $('g');
+  g.addEventListener('touchstart', function (e) { sx = e.touches[0].clientX; sy = e.touches[0].clientY; }, { passive: true });
+  g.addEventListener('touchend', function (e) {
+    var dx = e.changedTouches[0].clientX - sx, dy = e.changedTouches[0].clientY - sy;
+    if (Math.max(Math.abs(dx), Math.abs(dy)) < 24) return;
+    if (Math.abs(dx) > Math.abs(dy)) move(dx > 0 ? 3 : 2); else move(dy > 0 ? 1 : 0);
+  }, { passive: true });
+  var mx, my, md = false;
+  g.addEventListener('mousedown', function (e) { md = true; mx = e.clientX; my = e.clientY; });
+  window.addEventListener('mouseup', function (e) { if (!md) return; md = false; var dx = e.clientX - mx, dy = e.clientY - my; if (Math.max(Math.abs(dx), Math.abs(dy)) < 24) return; if (Math.abs(dx) > Math.abs(dy)) move(dx > 0 ? 3 : 2); else move(dy > 0 ? 1 : 0); });
+  $('again').onclick = start; $('new').onclick = start; $('undo').onclick = undo;
+  $('sh').onclick = function () { PLAY.share('2048 합치기 점수 ' + score + '점 (최고 ' + best + ') — 도전해 봐요!', '2048'); };
+  $('stk').textContent = PLAY.streak().n + '일';
+  start();
+})();
+</script>
+</body>
+</html>

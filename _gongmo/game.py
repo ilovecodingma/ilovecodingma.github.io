@@ -27,8 +27,10 @@ def epic():
         img = next((i['url'] for t in ('OfferImageWide', 'DieselStoreFrontWide', 'Thumbnail') for i in x.get('keyImages', []) if i.get('type') == t and i['url'].startswith('http')), '')
         tp = x['price']['totalPrice']
         base = {'name': x['title'], 'url': f'https://store.epicgames.com/ko/p/{slug}' if slug else 'https://store.epicgames.com/ko/free-games', 'img': img, 'orig': tp['fmtPrice']['originalPrice']}
-        if cur and cur[0]['discountSetting']['discountPercentage'] == 0:   # 낼 돈 0%
-            free.append(dict(base, start=_kst(cur[0]['startDate']), end=_kst(cur[0]['endDate'])))
+        _fo = next((o for o in cur if o['discountSetting']['discountPercentage'] == 0), None)   # 낼 돈 0% (할인 제안이 여러 개 겹쳐도 무료 제안을 찾는다 — 2026-10-30 Sorry We're Closed 가 세일로 잘못 분류돼 무료 0개로 나오던 문제)
+        if cur and (_fo or (tp.get('discountPrice') == 0 and tp.get('originalPrice'))):
+            _fo = _fo or cur[0]
+            free.append(dict(base, start=_kst(_fo['startDate']), end=_kst(_fo['endDate'])))
         elif nxt and nxt[0]['discountSetting']['discountPercentage'] == 0:
             up.append(dict(base, start=_kst(nxt[0]['startDate']), end=_kst(nxt[0]['endDate'])))
         elif cur:

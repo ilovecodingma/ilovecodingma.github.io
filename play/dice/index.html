@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G9BPFF95GY"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());if(location.hostname!=='sungprofile.cloud')window['ga-disable-G-G9BPFF95GY']=true;gtag('config','G-G9BPFF95GY');</script>
+<title>루리의 주사위 놀이 — 무료 보드 게임, 가입 없이 바로 시작</title>
+<meta name="description" content="주사위를 굴려 보드를 한 바퀴 돌면 레벨 업! 코인을 모아 업그레이드하고 루리 의상을 모으는 무료 미니 보드 게임. 가입·설치 없이 모바일·PC에서 바로 플레이.">
+<link rel="canonical" href="https://sungprofile.cloud/play/dice/">
+<meta property="og:title" content="루리의 주사위 놀이"><meta property="og:description" content="주사위 굴려 한 바퀴! 코인·별 모아 루리 의상 모으기. 무료, 가입 없이 바로 시작."><meta property="og:image" content="https://sungprofile.cloud/assets/ruri/og.jpg"><meta property="og:url" content="https://sungprofile.cloud/play/dice/">
+<link rel="icon" href="/favicon.ico?v=6" sizes="any">
+<link rel="stylesheet" href="/play/play.css?v=1">
+<style>
+#board{position:relative;display:grid;grid-template-columns:repeat(6,1fr);grid-template-rows:repeat(6,1fr);gap:5px;aspect-ratio:1/1;width:100%}
+.t{position:relative;background:var(--card);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:22px;border:1px solid #ffffff12}
+.t small{font-size:9.5px;color:var(--mu);margin-top:1px}
+.t.start{background:linear-gradient(160deg,#4c2a85,#2a2142)}
+.t.coin{background:#2b2540}.t.box{background:#2a2c45}.t.star{background:#33294a}.t.dice{background:#25343f}.t.cost{background:#3a2330}.t.contest{background:linear-gradient(160deg,#5a3a1d,#2a2142)}
+.t.on{outline:3px solid var(--ac2);z-index:2}
+#mid{grid-row:2/6;grid-column:2/6;background:var(--card);border-radius:16px;padding:8px;display:flex;flex-direction:column;align-items:center;justify-content:space-between;text-align:center}
+#tok{position:absolute;width:34px;pointer-events:none;transition:left .2s ease,top .2s ease;z-index:5;filter:drop-shadow(0 2px 3px #0008)}
+#tok img{width:100%;display:block}
+.hop{animation:hop .2s}
+@keyframes hop{50%{transform:translateY(-10px)}}
+#dice{font-size:44px;line-height:1;height:50px}
+#dice.roll{animation:spin .15s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+#msg{font-size:12.5px;color:var(--tx);min-height:32px;line-height:1.4}
+#mid .btn{width:100%;padding:11px;font-size:16px}
+.lv{font-size:12px;color:var(--gold)}
+.sh{display:flex;align-items:center;justify-content:space-between;gap:8px;background:var(--card2);border-radius:12px;padding:9px 11px;margin:8px 0;text-align:left;font-size:13px}
+.sh b{display:block;font-size:14px}.sh span{color:var(--mu);font-size:11.5px}
+.sh .btn{padding:8px 12px;font-size:13px;flex:none}
+.out{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.out button{background:var(--card2);border:2px solid transparent;border-radius:12px;padding:6px 2px;color:var(--tx);font-size:11px;cursor:pointer;font-family:inherit}
+.out button.on{border-color:var(--ac)}
+.out img{height:64px;display:block;margin:0 auto 2px}
+.out button.lock img{filter:grayscale(1) brightness(.6)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:6px 0 10px}
+.cards button{aspect-ratio:3/4;border:0;border-radius:12px;background:linear-gradient(160deg,var(--ac),#6d4bd1);font-size:30px;cursor:pointer;color:#fff}
+</style>
+</head>
+<body>
+<div class="pw">
+  <div class="top"><a href="/play/">← 게임 모음</a><b>🎲 루리의 주사위 놀이</b><a href="/">루리의 줍줍</a></div>
+  <div class="stat">
+    <div><small>🪙 코인</small><b id="sCoin">0</b></div>
+    <div><small>⭐ 별</small><b id="sStar">0</b></div>
+    <div><small>🔥 접속</small><b id="sStk">1일</b></div>
+  </div>
+  <div id="board">
+    <div id="mid">
+      <div><div class="lv" id="lvTxt">Lv.1 줍줍 신입</div><div id="msg">주사위를 굴려 보세요!</div></div>
+      <div id="dice">🎲</div>
+      <div style="width:100%">
+        <button class="btn" id="roll">굴리기 (🎲 <span id="sRoll">10</span>)</button>
+        <div style="font-size:11px;color:var(--mu);margin-top:4px" id="regen"></div>
+      </div>
+    </div>
+    <div id="tok"><img id="tokImg" src="/assets/ruri/o_suit_s.webp" alt="루리"></div>
+  </div>
+  <div class="row" style="margin-top:10px">
+    <button class="btn g" id="bShop">⬆️ 업그레이드</button>
+    <button class="btn g" id="bOut">👗 의상</button>
+    <button class="btn g" id="bShare">📤 자랑</button>
+  </div>
+  <main class="how">
+    <h2>게임 방법</h2>
+    <ul>
+      <li>「굴리기」로 주사위를 던져 칸을 돌아요. 한 바퀴 돌면 레벨이 올라가고 보너스 코인이 나와요.</li>
+      <li>🪙 코인 칸은 코인, 🎁 상자는 랜덤 선물, ⭐ 별 칸은 별, 🎲 칸은 주사위 보너스, 🏆 칸은 행운 카드 뽑기, 💥 칸은 지출이에요.</li>
+      <li>주사위는 시간이 지나면 저절로 다시 차올라요. 앱을 꺼 둬도 쌓여요(보관 한도까지).</li>
+      <li>코인으로 업그레이드(코인 배율·주사위 보관·충전 속도), 별로 루리 의상을 모아 보세요.</li>
+      <li>코인·별은 게임 안에서만 쓰는 점수예요(실물 경품은 없어요). 저장은 이 기기의 브라우저에 자동으로 돼요.</li>
+    </ul>
+    <p>다른 게임: <a href="/play/survivor/">루리 서바이벌</a> · <a href="/play/runner/">루리 런</a> · <a href="/play/dodge/">마감 피하기</a> · <a href="/play/clicker/">줍줍 클리커</a> · <a href="/play/mole/">두더지 잡기</a> · <a href="/play/snake/">스네이크</a> · <a href="/play/dice/">주사위 놀이</a> · <a href="/play/2048/">2048</a> · <a href="/play/memory/">짝 맞추기</a> · <a href="/play/">미니게임 모음</a></p>
+  </main>
+</div>
+
+<div class="mod" id="mShop"><div class="box"><h3>⬆️ 업그레이드</h3><div id="shopList"></div><button class="btn g" data-close>닫기</button></div></div>
+<div class="mod" id="mOut"><div class="box"><h3>👗 루리 의상</h3><p>별로 의상을 모으면 말판 위 루리가 옷을 갈아입어요.</p><div class="out" id="outList"></div><br><button class="btn g" data-close>닫기</button></div></div>
+<div class="mod" id="mCard"><div class="box"><h3>🏆 행운 카드 뽑기</h3><p>하나를 골라 보세요!</p><div class="cards" id="cardBox"></div></div></div>
+
+<script src="/play/play.js?v=1"></script>
+<script>
+(function () {
+  var $ = PLAY.$;
+  var TYPES = ['start','coin','box','coin','contest','cost','coin','star','box','dice','coin','cost','box','contest','coin','star','coin','box','dice','coin'];
+  var EMO = { start: '🏠', coin: '🪙', box: '🎁', star: '⭐', dice: '🎲', cost: '💥', contest: '🏆' };
+  var NAME = { start: '출발', coin: '코인', box: '상자', star: '별', dice: '주사위', cost: '지출', contest: '카드' };
+  var OUTFITS = [['suit', '정장', 0], ['cardigan', '가디건', 3], ['trench', '트렌치', 6], ['vest', '조끼', 10], ['cook', '앞치마', 15], ['summer', '여름', 20]];
+  var TITLES = [[1, '줍줍 신입'], [3, '공모 초보'], [6, '마감 요정'], [10, '상금 사냥꾼'], [15, '공모왕']];
+  var UP = {
+    mult: { n: '코인 배율', d: '얻는 코인 +25%', cost: function (l) { return Math.round(100 * Math.pow(1.8, l)); }, max: 12 },
+    cap: { n: '주사위 보관', d: '보관 한도 +2', cost: function (l) { return Math.round(150 * Math.pow(1.9, l)); }, max: 8 },
+    speed: { n: '충전 속도', d: '충전 간격 −2초', cost: function (l) { return Math.round(200 * Math.pow(2, l)); }, max: 5 }
+  };
+  var S = PLAY.load('dice', null) || { coins: 0, stars: 0, rolls: 10, t: Date.now(), pos: 0, lap: 0, up: { mult: 0, cap: 0, speed: 0 }, outfit: 'suit', owned: ['suit'] };
+  var busy = false, tiles = [];
+  function maxRolls() { return 10 + 2 * S.up.cap; }
+  function interval() { return Math.max(8, 20 - 2 * S.up.speed) * 1000; }
+  function level() { return S.lap + 1; }
+  function base() { return 10 + 5 * level(); }
+  function gain(x) { return Math.round(x * (1 + 0.25 * S.up.mult)); }
+  function title() { var t = TITLES[0][1]; TITLES.forEach(function (x) { if (level() >= x[0]) t = x[1]; }); return t; }
+  function regen() {
+    var now = Date.now(), iv = interval();
+    if (S.rolls >= maxRolls()) { S.t = now; return; }
+    var n = Math.floor((now - S.t) / iv);
+    if (n > 0) { S.rolls = Math.min(maxRolls(), S.rolls + n); S.t += n * iv; if (S.rolls >= maxRolls()) S.t = now; }
+  }
+  function persist() { PLAY.save('dice', S); }
+  function pos(i) { if (i < 6) return [0, i]; if (i < 10) return [i - 5, 5]; if (i < 16) return [5, 15 - i]; return [20 - i, 0]; }
+  function build() {
+    var b = $('board');
+    TYPES.forEach(function (t, i) {
+      var p = pos(i), d = document.createElement('div');
+      d.className = 't ' + t; d.style.gridRow = p[0] + 1; d.style.gridColumn = p[1] + 1;
+      d.innerHTML = EMO[t] + '<small>' + NAME[t] + '</small>'; b.appendChild(d); tiles.push(d);
+    });
+  }
+  function place(i, hop) {
+    var t = tiles[i], b = $('board'), tok = $('tok');
+    tok.style.left = (t.offsetLeft + t.offsetWidth / 2 - tok.offsetWidth / 2) + 'px';
+    tok.style.top = (t.offsetTop + t.offsetHeight / 2 - tok.offsetHeight * 0.78) + 'px';
+    tiles.forEach(function (x, k) { x.classList.toggle('on', k === i); });
+    if (hop) { tok.classList.remove('hop'); void tok.offsetWidth; tok.classList.add('hop'); }
+  }
+  function render() {
+    $('sCoin').textContent = PLAY.fmt(S.coins); $('sStar').textContent = S.stars;
+    $('sRoll').textContent = S.rolls; $('lvTxt').textContent = 'Lv.' + level() + ' ' + title();
+    $('tokImg').src = '/assets/ruri/o_' + S.outfit + '_s.webp';
+    $('roll').disabled = busy || S.rolls < 1;
+    var mx = maxRolls();
+    $('regen').textContent = S.rolls >= mx ? '주사위가 가득 찼어요 (' + mx + '/' + mx + ')' : '다음 주사위까지 ' + Math.max(0, Math.ceil((interval() - (Date.now() - S.t)) / 1000)) + '초 · 보관 ' + S.rolls + '/' + mx;
+  }
+  function say(m) { $('msg').textContent = m; }
+  function add(c, s, r) {
+    if (c) S.coins += c; if (s) S.stars += s; if (r) S.rolls += r; persist(); render();
+  }
+  function roll() {
+    if (busy || S.rolls < 1) return;
+    regen(); busy = true; S.rolls--; persist(); render(); PLAY.vib(10);
+    var dEl = $('dice'), faces = ['⚀', '⚁', '⚂', '⚃', '⚄', '⚅'], n = 1 + PLAY.rnd(6);
+    dEl.classList.add('roll'); dEl.textContent = '🎲'; say('굴러가는 중…');
+    setTimeout(function () { dEl.classList.remove('roll'); dEl.textContent = faces[n - 1]; move(n); }, 550);
+    PLAY.ga('dice_roll', { lvl: level() });
+  }
+  function move(n) {
+    var left = n;
+    (function step() {
+      S.pos = (S.pos + 1) % TYPES.length; place(S.pos, true);
+      if (S.pos === 0) { S.lap++; var bonus = gain(50 * (S.lap)); S.coins += bonus; S.rolls += 1; persist(); render(); say('🏠 한 바퀴 완주! 레벨 ' + level() + ' · 보너스 🪙' + PLAY.fmt(bonus) + ' + 🎲1'); PLAY.ga('dice_lap', { lvl: level() }); PLAY.vib([20, 40, 20]); }
+      if (--left > 0) setTimeout(step, 210); else setTimeout(land, 260);
+    })();
+  }
+  function land() {
+    var t = TYPES[S.pos], b = base(), r;
+    if (t === 'coin') { var g = gain(b); add(g); say('🪙 코인 +' + PLAY.fmt(g)); }
+    else if (t === 'star') { add(0, 1); say('⭐ 별 +1'); PLAY.vib(20); }
+    else if (t === 'dice') { add(0, 0, 3); say('🎲 보너스 주사위 +3'); }
+    else if (t === 'cost') { var loss = Math.min(Math.floor(S.coins * 0.1), 30 * level()); add(-loss); say(loss ? '💥 지출! 🪙 −' + PLAY.fmt(loss) : '💥 지출 칸… 다행히 잃을 코인이 없어요'); }
+    else if (t === 'box') {
+      r = Math.random();
+      if (r < 0.5) { var g2 = gain(b * 3); add(g2); say('🎁 상자! 🪙 +' + PLAY.fmt(g2)); }
+      else if (r < 0.75) { add(0, 0, 2); say('🎁 상자! 🎲 +2'); }
+      else if (r < 0.9) { add(0, 1); say('🎁 상자! ⭐ +1'); }
+      else { var g3 = gain(b * 8); add(g3); say('🎁 대박 상자! 🪙 +' + PLAY.fmt(g3)); PLAY.vib([20, 40, 20]); }
+    }
+    else if (t === 'contest') { openCards(); return; }
+    else if (t === 'start') { say('🏠 출발 칸이에요. 다시 굴려 보세요!'); }
+    busy = false; render();
+  }
+  function openCards() {
+    var box = $('cardBox'); box.innerHTML = '';
+    for (var i = 0; i < 3; i++) {
+      var c = document.createElement('button'); c.textContent = '❓';
+      c.onclick = function () { pick(); }; box.appendChild(c);
+    }
+    $('mCard').classList.add('on'); say('🏆 행운 카드를 골라요!');
+  }
+  function pick() {
+    var b = base(), r = PLAY.rnd(4), m = '';
+    if (r === 0) { var g = gain(b * 6); add(g); m = '🏆 대박! 🪙 +' + PLAY.fmt(g); }
+    else if (r === 1) { add(0, 0, 3); m = '🏆 보너스! 🎲 +3'; }
+    else if (r === 2) { add(0, 2); m = '🏆 행운! ⭐ +2'; }
+    else { var g2 = gain(b * 2); add(g2); m = '🏆 소소한 행운! 🪙 +' + PLAY.fmt(g2); }
+    $('mCard').classList.remove('on'); say(m); PLAY.toast(m); busy = false; render(); PLAY.vib(30);
+  }
+  function shop() {
+    var el = $('shopList'); el.innerHTML = '';
+    Object.keys(UP).forEach(function (k) {
+      var u = UP[k], l = S.up[k], c = u.cost(l), done = l >= u.max;
+      var d = document.createElement('div'); d.className = 'sh';
+      d.innerHTML = '<div><b>' + u.n + ' Lv.' + l + '</b><span>' + u.d + '</span></div>';
+      var b = document.createElement('button'); b.className = 'btn'; b.textContent = done ? '최대' : '🪙 ' + PLAY.fmt(c); b.disabled = done || S.coins < c;
+      b.onclick = function () { S.coins -= c; S.up[k]++; persist(); render(); shop(); PLAY.toast(u.n + ' 업그레이드!'); PLAY.ga('dice_up', { k: k, l: S.up[k] }); };
+      d.appendChild(b); el.appendChild(d);
+    });
+    $('mShop').classList.add('on');
+  }
+  function outfits() {
+    var el = $('outList'); el.innerHTML = '';
+    OUTFITS.forEach(function (o) {
+      var own = S.owned.indexOf(o[0]) >= 0, b = document.createElement('button');
+      b.className = (S.outfit === o[0] ? 'on ' : '') + (own ? '' : 'lock');
+      b.innerHTML = '<img src="/assets/ruri/o_' + o[0] + '_s.webp" alt="">' + o[1] + '<br>' + (own ? (S.outfit === o[0] ? '입는 중' : '입기') : '⭐ ' + o[2]);
+      b.onclick = function () {
+        if (!own) { if (S.stars < o[2]) { PLAY.toast('별이 ' + (o[2] - S.stars) + '개 더 필요해요'); return; } S.stars -= o[2]; S.owned.push(o[0]); PLAY.ga('dice_outfit', { o: o[0] }); }
+        S.outfit = o[0]; persist(); render(); outfits();
+      };
+      el.appendChild(b);
+    });
+    $('mOut').classList.add('on');
+  }
+  document.querySelectorAll('[data-close]').forEach(function (b) { b.onclick = function () { b.closest('.mod').classList.remove('on'); }; });
+  $('roll').onclick = roll;
+  $('bShop').onclick = shop; $('bOut').onclick = outfits;
+  $('bShare').onclick = function () { PLAY.share('루리의 주사위 놀이 Lv.' + level() + ' ' + title() + ' · 🪙' + PLAY.fmt(S.coins) + ' ⭐' + S.stars + ' — 같이 해 봐요!', 'dice'); };
+  build();
+  regen();
+  var st = PLAY.streak();
+  $('sStk').textContent = st.n + '일';
+  if (st.fresh && st.n > 1) { S.rolls = Math.min(maxRolls() + 5, S.rolls + 3); PLAY.toast('🔥 ' + st.n + '일 연속 접속! 주사위 +3'); persist(); }
+  render();
+  window.addEventListener('load', function () { place(S.pos, false); });
+  window.addEventListener('resize', function () { place(S.pos, false); });
+  setTimeout(function () { place(S.pos, false); }, 50);
+  setInterval(function () { regen(); persist(); if (!busy) render(); else $('regen').textContent = ''; }, 1000);
+})();
+</script>
+</body>
+</html>
