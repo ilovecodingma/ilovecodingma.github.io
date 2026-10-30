@@ -1,6 +1,15 @@
 <!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>페이지를 찾을 수 없어요 | 루리의 줍줍</title><meta name="robots" content="noindex"><link rel="icon" href="/favicon.ico?v=6" sizes="any"><link rel="icon" type="image/png" sizes="48x48" href="/assets/icons/icon-48.png?v=6"><link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/icon-192.png?v=6"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=6"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"><link rel="stylesheet" href="/assets/gm.css?v=17"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4248498719773262" crossorigin="anonymous"></script><script>/* 2026-10-19 페이지 줄이기: 합쳐진 얇은 페이지 예전 주소 → 데이터 화면·상위 허브 */(function(){var p=location.pathname,m;
 if(m=p.match(/^\/a\/([^\/]+)\/?$/))location.replace('/apply/?id='+m[1]);else if(m=p.match(/^\/kw\/([^\/]+)\/?$/))location.replace('/kw/?k='+m[1]);
 else if(/^\/lab\/[^\/]+\/?$/.test(p))location.replace('/lab/');else if(/^\/analyst\/s\//.test(p))location.replace('/analyst/');
-else if(m=p.match(/^\/apply\/r\/([^\/]+)\/[^\/]+\/?$/))location.replace('/apply/r/'+m[1]+'/');else if(/^\/apply\/r\/[^\/]+\/?$/.test(p))location.replace('/apply/r/');})();</script></head><body>
+else if(m=p.match(/^\/apply\/r\/([^\/]+)\/[^\/]+\/?$/))location.replace('/apply/r/'+m[1]+'/');else if(/^\/apply\/r\/[^\/]+\/?$/.test(p))location.replace('/apply/r/');
+/* 2026-10-30 마감 안내: 마감돼서 지운 /c/·/a/ 상세 주소는 assets/gone.json 으로 어떤 공모전이었는지 알려 준다 */
+m=p.match(/^\/(c|a)\/([^\/]+)\/?$/);if(m){var k=m[1]+'/'+m[2],kind=m[1]==='c'?'공모전':'지원 사업';
+fetch('/assets/gone.json').then(function(r){return r.json()}).then(function(g){var e=g[k];
+var M=document.querySelector('main');if(!M)return;
+function esc(x){return String(x).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+var hub=e?e[1]:(m[1]==='c'?'/contest/':'/apply/');var hn=e?e[2]:kind;
+M.innerHTML='<img src="/assets/ruri/sad.webp" width="180" height="250" alt="아쉬워하는 루리">'+(e?'<h1>'+esc(e[0])+'</h1><p class="note">'+esc((e[3]||'').replace(/-/g,'.'))+'에 마감된 '+kind+'이에요. 정보가 더 이상 갱신되지 않아 페이지를 내렸어요.</p>':'<h1>마감됐거나 내려간 '+kind+'이에요</h1><p class="note">접수가 끝나서 페이지를 내렸을 수 있어요.</p>')+'<a class="btn" style="max-width:320px;margin:18px auto" href="'+esc(hub)+'">진행 중인 '+esc(hn)+' 보기</a>';
+document.title=(e?e[0]+' (마감)':'마감 안내')+' | 루리의 줍줍'}).catch(function(){})}
+})();</script></head><body>
 <header class="hd"><div class="w hd-in"><a class="logo" href="/"><img src="/assets/icons/logo.svg" width="30" height="30" alt="">루리의 줍줍</a></div></header>
 <main class="w" style="text-align:center;padding:40px 16px"><img src="/assets/ruri/surprise.webp" width="200" height="277" alt="놀란 루리"><h1>앗, 페이지를 찾을 수 없어요</h1><p class="note">마감돼서 사라졌거나 주소가 바뀌었을 수 있어요.</p><a class="btn" style="max-width:320px;margin:18px auto" href="/">진행 중인 공모전 보러 가기</a></main></body></html>
