@@ -5,7 +5,7 @@
 원본: 바탕화면 공모전_2026/주말큐_master.jsonl + _gongmo/txt/<id>.txt(공고 본문 캐시, 비공개)
 """
 import shorten as SH
-import collections, json, os, re, sys, html, shutil, datetime, subprocess, hashlib, time, urllib.request
+import collections, json, os, re, sys, html, shutil, datetime, subprocess, hashlib, time, urllib.request, urllib.parse
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import parse as P
 import contest_quality as CQ   # 2026-10-23 Sprint 1: 사진/영상 구분·링크 표기·마감일 문구 규칙(tests/test_contest_quality.py)
@@ -2440,7 +2440,7 @@ def build():
     me_pages()
     statics(len(live), len(events))
     urls = ['/', '/contest/', '/apply/', '/event/', '/guide/', '/ssul/'] + lab_urls + [f'/ssul/{x["slug"]}/' for x in ss] + [f'/a/{a["id"]}/' for a in aps] + [f'/cat/{s}/' for s, _ in CATS] + [f'/guide/{g[0]}/' for g in GUIDES] + ['/qa/', '/prep/', '/fridge/', '/app/', '/news/'] + extra_urls + [f'/guide/{q["slug"]}/' for q in QA] + \
-           ['/about/', '/privacy/', '/terms/', '/contact/'] + [f'/c/{c["id"]}/' for c in contests]
+           ['/about/', '/privacy/', '/terms/', '/contact/', '/collab/'] + [f'/c/{c["id"]}/' for c in contests]
     gone_pages()
     import finder   # 공모전 자동 자료 찾기 색인·질의 (2026-10-19)
     print('자료 색인', finder.build_index(urls, NOINDEX, {c['id'] for c in live}), '질의', len(finder.build_queries(live, notice_points)))
@@ -5878,7 +5878,25 @@ def statics(nl, ne):
 <h2>광고</h2><p>운영비를 마련하기 위해 Google AdSense 광고를 싣습니다. 광고는 본문과 구분해 표시하며, 광고주가 콘텐츠 내용에 관여하지 않습니다. 자세한 내용은 <a href="/privacy/">개인정보처리방침</a>을 참고하세요.</p>
 <h2>문의와 정정</h2><p>틀린 정보, 삭제 요청, 제휴 문의는 <a href="mailto:{MAIL}">{MAIL}</a> 또는 <a href="/contact/">문의</a> 페이지로 보내 주세요. 정보 오류는 확인하는 대로 고칩니다.</p>''', [('루리의 줍줍', '/'), ('소개', '/about/')])
     page('/contact/', '문의', '루리의 줍줍 문의: 공모전·지원금 정보 오류 제보, 새 공모전 등록 요청, 페이지 삭제·수정 요청을 메일로 받아요. 확인 후 바로 고쳐요.',
-         f'''<h1>문의</h1><p>정보 오류 제보, 공모전 등록 요청, 삭제 요청은 이메일 <a href="mailto:{MAIL}">{MAIL}</a>, 제휴·광고 문의는 <a href="mailto:{PARTNER}">{PARTNER}</a> 로 보내 주세요. <a href="https://github.com/ilovecodingma/ilovecodingma.github.io/issues" rel="noopener">GitHub Issues</a>에 남기셔도 됩니다. 공모전 등록을 요청할 때는 공식 공고 주소를 함께 적어 주시면 확인 후 반영합니다.</p><p class="note">개인정보(이름·연락처)는 공개 게시판에 올리지 마세요.</p>''', [('루리의 줍줍', '/'), ('문의', '/contact/')])
+         f'''<h1>문의</h1><p>정보 오류 제보, 공모전 등록 요청, 삭제 요청은 이메일 <a href="mailto:{MAIL}">{MAIL}</a>, 제휴·광고 문의는 <a href="mailto:{PARTNER}">{PARTNER}</a> 로 보내 주세요. 협업 제안 형식은 <a href="/collab/">협업 제안하기</a>에 정리했어요. <a href="https://github.com/ilovecodingma/ilovecodingma.github.io/issues" rel="noopener">GitHub Issues</a>에 남기셔도 됩니다. 공모전 등록을 요청할 때는 공식 공고 주소를 함께 적어 주시면 확인 후 반영합니다.</p><p class="note">개인정보(이름·연락처)는 공개 게시판에 올리지 마세요.</p>''', [('루리의 줍줍', '/'), ('문의', '/contact/')])
+    _sub = urllib.parse.quote('[협업제안] 기관/회사명 - 제안 한 줄')
+    _body = urllib.parse.quote('1. 누구인지(기관·회사·채널명과 링크):' + chr(10) + '2. 제안하는 협업 종류:' + chr(10) + '3. 하고 싶은 일(한두 문단):' + chr(10) + '4. 일정과 기간:' + chr(10) + '5. 공식 공고·자료 주소:' + chr(10) + '6. 회신받을 연락처:' + chr(10))
+    page('/collab/', '협업 제안하기 — 공모전 주최·기관·크리에이터·제휴', '루리의 줍줍에 협업을 제안하는 방법: 공모전 주최 기관의 공고 등록, 블로그·카페 위젯 연동, 정보 인용·공동 콘텐츠, 광고 제휴. 제안서에 적을 내용과 우리가 하지 않는 일을 정리했어요.',
+         f'''<p class="bc"><a href="/">홈</a> › 협업 제안</p><h1>🤝 협업 제안하기</h1>
+<p>루리의 줍줍은 공모전·지원금·생활 정보를 공식 출처 기준으로 정리하는 사이트예요. 같이 하고 싶은 일이 있으면 아래 형식으로 메일을 보내 주세요. 확인한 뒤 회신하고, 맞지 않는 제안은 이유를 적어 답해요.</p>
+<h2>이런 협업을 받아요</h2>
+<ul class="chk">
+<li><b>공모전·행사 주최 기관</b>: 진행 중이거나 곧 열리는 공모전을 공식 공고 주소와 함께 보내 주시면 확인 후 <a href="/contest/">공모전 목록</a>에 정리해요. 공고 내용과 달라진 점이 있으면 알려 주세요. 목록에 올리는 것은 정보 정리이고, 별도 비용을 받지 않아요.</li>
+<li><b>블로그·카페·커뮤니티 운영자</b>: 이번 주 마감 공모전을 자동으로 보여 주는 <a href="/widget/">무료 위젯</a>을 붙일 수 있어요. 쓰시는 곳의 주소를 알려 주시면 표시 방식 맞춤을 같이 봐요.</li>
+<li><b>정보 인용·공동 콘텐츠</b>: <a href="/guide/">가이드</a>나 <a href="/lab/">수상작 분석</a>을 인용하거나 함께 만드는 제안이요. 출처를 밝히고 원문 링크를 거는 조건이면 돼요.</li>
+<li><b>크리에이터·미디어</b>: 영상·뉴스레터·강의 같은 곳에서 공모전·지원금 정보를 함께 다루는 제안이요.</li>
+<li><b>광고·제휴</b>: 배너·제휴 링크 제안은 광고임을 표시하는 조건으로 검토해요.</li></ul>
+<h2>제안서에 적어 주세요</h2>
+<ol class="chk"><li>누구인지: 기관·회사·채널 이름과 확인할 수 있는 링크</li><li>제안하는 협업 종류와 하고 싶은 일</li><li>일정과 기간</li><li>근거가 되는 공식 공고·자료 주소</li><li>회신받을 연락처</li></ol>
+<p><a class="btn" href="mailto:{PARTNER}?subject={_sub}&amp;body={_body}">제안 메일 쓰기 ({PARTNER})</a></p>
+<h2>하지 않는 일</h2>
+<ul class="chk"><li>돈을 받고 정보의 내용·순위·평가를 바꾸는 일. 광고와 편집은 분리해요.</li><li>광고임을 숨긴 후기·추천 글</li><li>공식 출처로 확인되지 않는 내용을 사실처럼 싣는 일</li><li>개인정보를 공개 게시판이나 댓글로 받는 일. 연락처는 메일로만 주고받아요.</li></ul>
+<p class="note">정보 오류 제보·삭제 요청은 <a href="/contact/">문의</a> 페이지로 보내 주세요. 사이트 운영 방식과 AI 활용은 <a href="/about/">소개</a>에서 볼 수 있어요.</p>''', [('루리의 줍줍', '/'), ('협업 제안', '/collab/')])
     page('/privacy/', '개인정보처리방침', '루리의 줍줍 개인정보처리방침 — 수집 항목, Google AdSense 광고 쿠키와 맞춤 광고 해제 방법, 방문 통계, 알림 구독 정보 안내.',
          f'''<h1>개인정보처리방침</h1>{PRIV_MEMBER}
 <h2>1. 광고와 쿠키 (Google AdSense)</h2><p>이 사이트는 Google AdSense 광고를 게재합니다. Google을 포함한 제3자 광고 사업자는 쿠키를 사용해 이용자가 이 사이트와 다른 사이트를 방문한 기록을 바탕으로 광고를 표시할 수 있습니다. Google은 광고 쿠키를 사용해 이용자에게 이 사이트 및 인터넷의 다른 사이트 방문 기록에 기반한 광고를 제공합니다.</p>
