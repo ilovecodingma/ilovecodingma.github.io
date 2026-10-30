@@ -344,6 +344,25 @@ END_FIX = {k: v for k, v in (json.load(open(_EF, encoding='utf-8')) if os.path.e
 PV_FIX = {'Q03732': 600000, 'Q03963': 37000000, 'Q02511': 15000000}   # 원문 총상금(수집값이 10,000배·8배·2배로 틀렸던 건)
 
 
+def load_supp():
+    """k-44(영상 세션)가 공고 원문을 읽고 정리한 자격·제출물·상금 보충값(data\_supplement_*.json) + 개발 쪽 supplement.json. 수집 원문 기준이며 공식 대조 표시는 붙이지 않는다."""
+    import glob
+    out = {}
+    for f_ in sorted(glob.glob(os.path.join(DATA, '_supplement_*.json'))) + [os.path.join(HERE, 'supplement.json')]:
+        if not os.path.exists(f_):
+            continue
+        try:
+            for x_ in json.load(open(f_, encoding='utf-8')):
+                if isinstance(x_, dict) and x_.get('id'):
+                    out.setdefault(x_['id'], {}).update(x_)
+        except Exception as e_:
+            print('보충 파일 건너뜀', f_, repr(e_)[:80])
+    return out
+
+
+SUPP = load_supp()
+
+
 def real_end(cid):
     p_ = os.path.join(HERE, 'txt', cid + '.txt')
     if not os.path.exists(p_):
@@ -380,6 +399,15 @@ def load():
             c['end_src'] = c['end']; c['end'] = _re; _fx += 1
         if c['id'] in PV_FIX:
             c['pv'] = PV_FIX[c['id']]
+        _sp = SUPP.get(c['id'])
+        if _sp:
+            c['supp'] = _sp
+            if _sp.get('elig'):
+                c['elig'] = str(_sp['elig'])[:90]
+            _t, _f = int(_sp.get('prize_total') or 0), int(_sp.get('prize_first') or 0)
+            if _t or _f:
+                c['prize'] = ' · '.join(x_ for x_ in ((f'1등 {won_txt(_f)}' if _f else ''), (f'총상금 {won_txt(_t)}' if _t else '')) if x_)
+                c['pv'] = _f or _t
     print('마감일 원문 보정', _fx)
     for c in contests:
         r = byid.get(c['id'], {})
@@ -1265,6 +1293,13 @@ def detail(c, live):
         _src = f'공식 원문 대조 {VER[c["id"]]["verified_at"]} ({"일부 항목" if VER[c["id"]].get("level") == "partial" else "핵심 조건"}) — 아래 「공식 원문 대조 결과」에 항목별 출처'
     else:
         _src = (f'{CQ.host(c["link"]) if CQ.is_aggregator(c["link"]) else "주최 측 링크"}를 거쳐 자동 수집·정리한 값(처음 수집 {_hh.get("first") or "-"}) — 공식 원문 대조 전이라 자동 추정이 섞여 있을 수 있어요')
+    _sp = c.get('supp')
+    if _sp:
+        if _sp.get('effort'):
+            rows.append(('제출 방법·규격', str(_sp['effort'])[:200]))
+        rows.append(('보충 정보 출처', '수집 원문 기준(공식 대조 전): ' + str(_sp.get('source_note') or '공고 본문')[:180]))
+        if not sub_type:
+            sub_type = '수집 원문 기준 기재'
     rows.append(('확인 단계', stage_row(c['id'])))
     rows.append(('값의 출처·확인 시점', _src))
     tb = ''.join(f'<tr><th>{k}</th><td{" class=need" if NEED in str(v) else ""}>{E(v)}</td></tr>' for k, v in rows)
