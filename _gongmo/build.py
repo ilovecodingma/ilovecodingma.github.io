@@ -213,7 +213,26 @@ def hreflang_links(path, url, lang):
     return out + '\n<link rel="alternate" hreflang="x-default" href="%s%s">' % (SITE, d)
 
 
+def _title_ov():
+    """경로별 검색 결과 제목·설명 덮어쓰기(2026-11-02 마케터 「키워드+연도+질문형」). _gongmo/title_overrides.json = {"/money/guide/<slug>/": {"title": "...", "desc": "..."}}. h1 은 그대로다."""
+    global _TOV
+    try:
+        return _TOV
+    except NameError:
+        pass
+    f = os.path.join(HERE, 'title_overrides.json')
+    try:
+        _TOV = json.load(open(f, encoding='utf-8')) if os.path.exists(f) else {}
+    except Exception as e:
+        print('제목 덮어쓰기 파일 읽기 실패', repr(e)[:80]); _TOV = {}
+    return _TOV
+
+
 def page(path, title, desc, body, crumbs=None, ld=None, full_title=False, noindex=False, og=None, lang='ko', canon=None):
+    _ov = _title_ov().get(path)
+    if _ov:
+        title = _ov.get('title') or title
+        desc = _ov.get('desc') or desc
     url = SITE + (canon or path)
     TH = theme_of(path)
     TH_CSS = '<style>' + ''.join(f'body[data-th={t[0]}]{{--tc:{t[3]}}}' for t in THEMES) + '</style>'
@@ -1829,7 +1848,7 @@ def build_apply(aps):
     _chips = '<button type="button" class="on" data-g="">전체 <small>%d</small></button>' % len(aps) + ''.join(f'<button type="button" data-g="{g_}">{g_} <small>{_gc.get(g_, 0)}</small></button>' for g_ in ('개인·가구', '사업자·기업', '주거 청약', '공모주'))
     _rg = [r_ for r_, _n in collections.Counter(ap_region(a) for a in aps if ap_region(a)).most_common()]
     _ropt = '<option value="">지역 전체</option>' + ''.join(f'<option value="{E(r_)}">{E(r_)}</option>' for r_ in _rg) + '<option value="__none">지역 미확인</option>'
-    page('/apply/', f'지원금·청약 {len(aps)}건 — 7일 내 마감 {sum(1 for a_ in aps if not a_.get("always") and dday(a_["end"])[0] <= 7)}건, 지역·대상으로 검색', f'개인·가구 {_gc.get("개인·가구", 0)}건, 사업자·기업 {_gc.get("사업자·기업", 0)}건, 주거 청약 {_gc.get("주거 청약", 0)}건, 공모주 {_gc.get("공모주", 0)}건을 마감 임박순으로 정리했어요. 지역·대상·마감 필터와 공식 신청처 링크가 있어요.',
+    page('/apply/', f'지원금 신청 {YR} — 청년·신혼·지역별 신청 가능한 지원금·청약 {len(aps)}건 (마감순)', f'개인·가구 {_gc.get("개인·가구", 0)}건, 사업자·기업 {_gc.get("사업자·기업", 0)}건, 주거 청약 {_gc.get("주거 청약", 0)}건, 공모주 {_gc.get("공모주", 0)}건을 마감 임박순으로 정리했어요. 지역·대상·마감 필터와 공식 신청처 링크가 있어요.',
          f'''<p class="bc"><a href="/">홈</a> › 지원금·청약</p><h1 class="ap-h1">지원금·청약</h1><p class="ap-sub">진행 중 {len(aps)}건 · 마감 임박순(상시 신청은 맨 뒤) · {NOW_KST():%m/%d %H:%M} 갱신(한국 시간)</p>
 <div class="ap-bar" role="search"><div class="ap-chips" role="group" aria-label="유형">{_chips}</div>
 <div class="ap-row"><input type="search" id="ap-q" placeholder="공고명·기관·대상 검색" aria-label="검색"><select id="ap-r" aria-label="지역">{_ropt}</select><select id="ap-d" aria-label="마감"><option value="">마감 전체</option><option value="7">7일 이내</option><option value="30">30일 이내</option><option value="x">상시 신청 제외</option></select></div>
@@ -2636,6 +2655,7 @@ def build():
     urls.extend(diet_pages())
     urls.extend(rsi_pages())
     urls.extend(pick_pages())
+    urls.extend(calc_pages())
     print('광고 스크립트 뺀 페이지(최종)', strip_ads_noindex())   # 위키·정정 기록·다이어트 앱처럼 뒤에 만든 검색 제외 페이지까지 한 번 더
     try:
         import make_pdf as _MP
@@ -2876,11 +2896,16 @@ def game_pages(live):
     sp = ''.join(f'<li><a href="https://store.steampowered.com/app/{x["id"]}/" target="_blank" rel="noopener nofollow">{img(x["img"])}<b>{E(x["name"])}</b><span><em>{x["off"]}%</em> ↓ {won(x["price"])} <s>{won(x["orig"])}</s> <i class="gm-t">할인 기간 한정</i>{(" · ~" + E(x["until"])) if x["until"] else ""}</span></a></li>' for x in (st.get('specials') or [])[:9])
     tp = ''.join(f'<li><a href="https://store.steampowered.com/app/{x["id"]}/" target="_blank" rel="noopener nofollow">{E(x["name"])}</a> <small>{won(x["price"])}{(" · " + str(x["off"]) + "% 할인") if x["off"] else ""}</small></li>' for x in (st.get('top_sellers') or [])[:10])
     cs = ''.join(f'<li><a href="https://store.steampowered.com/app/{x["id"]}/" target="_blank" rel="noopener nofollow">{E(x["name"])}</a> <small>{won(x["price"]) if x["price"] else "가격 미정·무료"}</small></li>' for x in (st.get('coming_soon') or [])[:10])
+    sfd = d.get('steam_free') or {}
+    sk = ''.join(f'<li><a href="https://store.steampowered.com/app/{x["id"]}/" target="_blank" rel="noopener nofollow">{img(x["img"])}<b>{E(x["name"])}</b><span><s>{E(x["orig"])}</s> <em>무료</em> <i class="gm-t">{"추가 콘텐츠" if x.get("kind") == "dlc" else "게임"}</i></span></a></li>' for x in sfd.get('keep', []))
+    sf = ''.join(f'<li><a href="https://store.steampowered.com/app/{x["id"]}/" target="_blank" rel="noopener nofollow">{E(x["name"])}</a></li>' for x in sfd.get('f2p', []))
     gc = sorted([c for c in live if GAME_RX.search(c['title'])], key=lambda c: (c['end'], -c.get('pv', 0)))[:12]
     body = (f'<p class="bc"><a href="/">홈</a> › 게임</p><h1>🎮 게임 허브 — 이번 주 무료 게임·스팀 할인·게임 공모전</h1>'
             f'<h2 id="free">🎁 지금 무료로 받는 게임 (Epic Games Store)</h2>' + (f'<ul class="gm-g">{free}</ul>' if free else '<p class="note">지금 무료로 풀린 게임이 없어요.</p>')
             + (f'<h3>⏭️ 다음 무료 예고</h3><ul class="gm-g">{upc}</ul>' if upc else '')
             + (f'<h3>💸 에픽 할인 중</h3><ul class="gm-l">{sale}</ul>' if sale else '')
+            + (f'<h2 id="steam-free">🎁 스팀에서 지금 무료 (할인 100%)</h2><p class="note">정가가 있는 게임·추가 콘텐츠가 기간 한정으로 무료예요. 무료인 동안 라이브러리에 담아 두면 계속 쓸 수 있고, 끝나는 시각은 스토어 페이지에서 확인하세요.</p><ul class="gm-g">{sk}</ul>' if sk else '')
+            + (f'<h3>🆓 스팀 무료 플레이 인기</h3><ol class="gm-l">{sf}</ol>' if sf else '')
             + (f'<p><a class="lab-cta" href="/game/db/"><b>📚 게임 DB — 할인·무료 프로모션 게임과 공략 영상 모음</b></a></p>'
             f'<p class="cat-st">📌 스토어 기준 {E(d.get("at", ""))}(한국 시간)에 받은 정보예요. 가격·할인은 바뀔 수 있으니 결제 전 스토어에서 확인하세요. 출처: Epic Games Store, Steam.</p>'
             '<p class="hm-chips"><a href="/game/free/">🎁 에픽 무료 게임 기록</a><a href="/game/release/">🗓️ 신작 출시 일정</a><a href="/game/steam-sale/">📅 스팀 세일 달력</a><a href="/game/refund/">↩️ 스팀 환불 규정</a><a href="/game/battlefield-6-editions/">🔫 배틀필드6 에디션 비교</a><a href="#timing">🕰️ 살 타이밍</a></p>')
@@ -2889,9 +2914,9 @@ def game_pages(live):
             + (f'<h2>🏆 스팀 인기 게임</h2><ol class="gm-l">{tp}</ol>' if tp else '') + (f'<h2>🗓️ 곧 나오는 게임</h2><ul class="gm-l">{cs}</ul>' if cs else '')
             + cp_box('게임 게이밍 PC', '게임할 때 많이 찾는 물건:', 2, strict=True) + join_cta('game')
             + f'<h2 id="contest">🏆 게임·e스포츠·해커톤 공모전 (진행 중 {len(gc)}건)</h2>' + (f'<ul class="list">{"".join(card(c) for c in gc)}</ul>' if gc else '<p class="note">지금 진행 중인 게임 관련 공모전이 없어요.</p>')
-            + '<p class="note">이미지와 가격은 각 스토어가 공개한 정보를 하루 두 번 받아 보여 줘요. 줍줍은 스토어와 무관하고, 게임 구매를 권하지 않아요. 소통은 오픈채팅에서 해요.</p>'
+            + '<p class="note">이미지와 가격은 각 스토어가 공개한 정보를 매시간 받아 보여 줘요. 줍줍은 스토어와 무관하고, 게임 구매를 권하지 않아요. 소통은 오픈채팅에서 해요.</p>'
             '<p class="hm-links"><a href="/contest/">전체 공모전</a> · <a href="/event/">🎁 경품·용돈</a></p>' + css)
-    page('/game/', '게임 허브 — 이번 주 에픽 무료 게임·스팀 할인 TOP·게임 공모전 (매일 갱신)', f'Epic 무료 게임 {len(ep.get("free", []))}개와 스팀 할인·인기·출시 예정, 진행 중인 게임·e스포츠·해커톤 공모전 {len(gc)}건을 한곳에. 스토어 기준 시각을 적어요.',
+    page('/game/', '게임 허브 — 이번 주 에픽·스팀 무료 게임, 스팀 할인 TOP, 게임 공모전 (매일 갱신)', f'Epic 무료 게임 {len(ep.get("free", []))}개와 스팀 할인·인기·출시 예정, 진행 중인 게임·e스포츠·해커톤 공모전 {len(gc)}건을 한곳에. 스토어 기준 시각을 적어요.',
          body, [('루리의 줍줍', '/'), ('게임', '/game/')])
     return ['/game/']
 
@@ -4277,6 +4302,123 @@ def pick_pages():
              f'<p class="bc"><a href="/">홈</a> › 관심 묶음</p><h1>🧺 관심 묶음</h1><p>요즘 커뮤니티에서 오르는 화제를 보고, 같은 관심사의 가이드와 이슈를 한 묶음으로 모았어요.</p><ul class="gm-g">{cards}</ul>',
              [('루리의 줍줍', '/'), ('관심 묶음', '/pick/')])
         urls.append('/pick/')
+    return urls
+
+
+CALC_DIR = os.path.join(HERE, 'calcs')
+CALC_JS = ("var M={min:Math.min,max:Math.max,floor:Math.floor,ceil:Math.ceil,round:Math.round,abs:Math.abs};"
+           "function ev(e,v){var n=Object.keys(v),a=n.map(function(k){return v[k]});return Function.apply(null,n.concat(['min','max','floor','ceil','round','abs','return ('+e+');'])).apply(null,a.concat([M.min,M.max,M.floor,M.ceil,M.round,M.abs]))}"
+           "function run(C,vals){var v={};C.inputs.forEach(function(i){v[i.id]=Number(vals&&vals[i.id]!==undefined?vals[i.id]:i.default)});C.steps.forEach(function(s){v[s.id]=ev(s.expr,v)});return v}"
+           "function fm(x,f){if(!isFinite(x))return '-';if(f==='won')return Math.round(x).toLocaleString('ko-KR')+'원';if(f==='hours')return (Math.round(x*100)/100)+'시간';if(f==='pct')return (Math.round(x*100)/100)+'%';return String(Math.round(x*100)/100)}")
+
+
+def _calc_expr_ok(expr, names):
+    """수식 검사: 허용 글자만, 모르는 이름 금지, 대입(=) 금지."""
+    if not re.fullmatch(r'[0-9A-Za-z_+*/%(),.<>=?:! -]*', expr):
+        return False
+    if re.search(r'(?<![<>=!])=(?!=)', re.sub(r'==|<=|>=|!=', '  ', expr)):
+        return False
+    ok = set(names) | {'min', 'max', 'floor', 'ceil', 'round', 'abs'}
+    return all(t in ok for t in re.findall(r'[A-Za-z_][A-Za-z_0-9]*', expr))
+
+
+def _calc_verify(C):
+    """verify 케이스를 페이지와 같은 자바스크립트 계산기로 node 에서 돌려 맞는지 본다. 실패 메시지 목록을 돌려준다(node 가 없으면 건너뛴다)."""
+    cases = C.get('verify') or []
+    if not cases:
+        return ['verify 검산 값이 없어요']
+    import subprocess
+    prog = CALC_JS + "var d=JSON.parse(require('fs').readFileSync(0,'utf8'));console.log(JSON.stringify(d.cases.map(function(c){var v=run(d.C,c.in);return Object.keys(c.out).map(function(k){return [k,v[k],c.out[k]]})})));"
+    try:
+        r = subprocess.run(['node', '-e', prog], input=json.dumps({'C': C, 'cases': cases}), capture_output=True, text=True, encoding='utf-8', timeout=30)
+        res = json.loads(r.stdout)
+    except Exception as e:
+        print('계산기 검산 건너뜀(node 실행 실패)', repr(e)[:60])
+        return []
+    bad = []
+    for i, row in enumerate(res):
+        for k, got, want in row:
+            if got is None or abs(float(got) - float(want)) > 0.5:
+                bad.append(f'검산 {i + 1}번 {k}: 계산 {got} / 기대 {want}')
+    return bad
+
+
+def calc_pages():
+    """/money/tools/<slug>/ 계산기 (2026-11-02 마케터 JSON 규격 _gongmo/calcs/<slug>.json). 수식·검산을 통과한 것만 올리고, /money/tools/ 허브도 만든다."""
+    urls, cards = [], ''
+    if os.path.isdir(CALC_DIR):
+        for fn_ in sorted(os.listdir(CALC_DIR)):
+            if not fn_.endswith('.json'):
+                continue
+            try:
+                C = json.load(open(os.path.join(CALC_DIR, fn_), encoding='utf-8'))
+                sl = C['slug']
+                names = [i['id'] for i in C['inputs']] + [s_['id'] for s_ in C['steps']]
+                seen = [i['id'] for i in C['inputs']]
+                bad = []
+                for s_ in C['steps']:
+                    if not _calc_expr_ok(s_['expr'], seen):
+                        bad.append('step ' + s_['id'])
+                    seen.append(s_['id'])
+                for o_ in C['outputs']:
+                    if not _calc_expr_ok(o_['expr'], seen):
+                        bad.append('output ' + o_['label'])
+                bad += _calc_verify(C) if not bad else []
+            except Exception as e:
+                print('계산기 읽기 실패', fn_, repr(e)[:80])
+                continue
+            if bad:
+                print('계산기 건너뜀', sl, bad)
+                continue
+            p_ = f'/money/tools/{sl}/'
+            fld = ''
+            for i in C['inputs']:
+                if i.get('type') == 'select':
+                    opts = ''.join(f'<option value="{E(str(v_))}"' + (' selected' if v_ == i.get('default') else '') + f'>{E(n_)}</option>' for n_, v_ in i['options'])
+                    fld += f'<label>{E(i["label"])} <select data-i="{E(i["id"])}">{opts}</select></label>'
+                else:
+                    fld += (f'<label>{E(i["label"])} <input type="number" inputmode="decimal" data-i="{E(i["id"])}" value="{E(str(i.get("default", 0)))}"'
+                            f' min="{E(str(i.get("min", 0)))}" step="{E(str(i.get("step", 1)))}"></label>')
+            cfg = {'inputs': [{'id': i['id'], 'default': i.get('default', 0)} for i in C['inputs']], 'steps': [{'id': s_['id'], 'label': s_['label'], 'expr': s_['expr'], 'fmt': s_.get('fmt', 'num')} for s_ in C['steps']],
+                   'outputs': [{'label': o_['label'], 'expr': o_['expr'], 'fmt': o_.get('fmt', 'num')} for o_ in C['outputs']]}
+            secs = ''
+            for sc in C.get('sections', []):
+                secs += f'<h2>{E(sc["h"])}</h2>' + (f'<p>{E(sc["p"])}</p>' if sc.get('p') else '') + ('<ul class="gm-l">' + ''.join(f'<li>{E(x)}</li>' for x in sc['ul']) + '</ul>' if sc.get('ul') else '')
+            faq, fld_ = _faq([tuple(x) for x in C.get('faq', [])]) if C.get('faq') else ('', None)
+            if faq:
+                secs += f'<h2>자주 묻는 질문</h2>{faq}'
+            if C.get('sources'):
+                secs += '<h2>출처</h2><ul class="gm-l">' + ''.join(f'<li><a href="{E(u_)}" target="_blank" rel="noopener nofollow">{E(n_)}</a></li>' for n_, u_ in C['sources']) + '</ul>'
+            rel = ''.join(f'<a href="{E(u_)}">{E(n_)}</a>' for u_, n_ in C.get('related', []) if os.path.exists(os.path.join(ROOT, u_.strip('/'), 'index.html')))
+            js = ('<script>(function(){' + CALC_JS + 'var C=' + json.dumps(cfg, ensure_ascii=False).replace('</', '<\\/') + ';var root=document.getElementById("cc");'
+                  'function go(){var vals={};root.querySelectorAll("[data-i]").forEach(function(e){vals[e.getAttribute("data-i")]=e.value});var v;try{v=run(C,vals)}catch(x){return}'
+                  'var h="<table class=\\"xt\\"><tbody>";C.outputs.forEach(function(o){h+="<tr><th>"+o.label+"</th><td><b>"+fm(ev(o.expr,v),o.fmt)+"</b></td></tr>"});h+="</tbody></table>";'
+                  'h+="<details><summary>계산 과정 보기</summary><ul>";C.steps.forEach(function(s){h+="<li>"+s.label+": "+fm(v[s.id],s.fmt)+"</li>"});h+="</ul></details>";document.getElementById("co").innerHTML=h}'
+                  'root.addEventListener("input",go);root.addEventListener("change",go);go()})();</script>')
+            css = ('<style>.cc{border:1px solid var(--bd,#e5e7eb);border-radius:14px;padding:14px 16px;margin:14px 0;background:var(--card,#fff)}.cc label{display:block;margin:8px 0;font-size:14.5px}'
+                   '.cc input,.cc select{width:100%;max-width:320px;padding:8px 10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;display:block;margin-top:4px}'
+                   '.xt{border-collapse:collapse;width:100%;font-size:15px;margin-top:10px}.xt th,.xt td{border:1px solid #e5e7eb;padding:8px 10px;text-align:left}.xt th{background:#f8fafc;font-weight:600}</style>')
+            body = (f'<p class="bc"><a href="/">홈</a> › <a href="/money/tools/">계산기</a> › {E(C["name"])}</p><h1>🧮 {E(C["h1"])}</h1>'
+                    f'<div class="cat-st"><b>결론</b><br>{E(C["lead"])}</div><p class="note">기준: {E(C.get("basis", ""))}</p>'
+                    f'<div class="cc" id="cc">{fld}<div id="co" aria-live="polite"></div></div>'
+                    '<p class="note">참고용 계산이에요. 실제 금액은 사업장 규정·계약·공식 안내에 따라 달라질 수 있어요.</p>'
+                    + secs + (f'<p class="hm-links">{rel}</p>' if rel else '') + css + js)
+            ld_ = {'@context': 'https://schema.org', '@graph': [{'@type': 'WebApplication', 'name': C['name'], 'url': SITE + p_, 'applicationCategory': 'FinanceApplication', 'operatingSystem': 'Web', 'inLanguage': 'ko',
+                                                                    'offers': {'@type': 'Offer', 'price': '0', 'priceCurrency': 'KRW'}}] + ([fld_] if fld_ else [])}
+            page(p_, C['title'], C['desc'], body, [('루리의 줍줍', '/'), ('계산기', '/money/tools/'), (C['name'], p_)], ld_)
+            urls.append(p_)
+            cards += f'<li><a href="{p_}"><b>🧮 {E(C["name"])}</b><span>{E(C["desc"][:70])}</span></a></li>'
+    # 허브: 기존 계산기(디스크에 있는 것)도 같이 나열
+    old = [('salary', '연봉 실수령액 계산기'), ('severance', '퇴직금 계산기'), ('unemployment', '실업급여 계산기'), ('loan', '대출 이자 계산기'), ('pension', '연금저축·IRP 세액공제 계산기'),
+           ('dividend', '배당 계산기'), ('stocktax', '주식 세금 계산기'), ('fx', '환율 계산기')]
+    for k_, n_ in old:
+        if os.path.exists(os.path.join(ROOT, 'money', 'tools', k_, 'index.html')):
+            cards = f'<li><a href="/money/tools/{k_}/"><b>🧮 {E(n_)}</b><span>{E(n_)} — 입력하면 바로 계산해요</span></a></li>' + cards
+    if cards:
+        page('/money/tools/', '계산기 모음 2026 — 연봉 실수령액·퇴직금·주휴수당·실업급여', '연봉 실수령액, 퇴직금, 실업급여, 주휴수당 같은 돈 계산을 숫자만 넣으면 바로 해 주는 계산기 모음이에요. 기준일과 공식 근거를 함께 적었어요.',
+             f'<p class="bc"><a href="/">홈</a> › 계산기</p><h1>🧮 계산기 모음</h1><p>숫자만 넣으면 바로 계산돼요. 계산 방법과 공식 근거는 각 계산기 아래에 적었어요.</p><ul class="gm-g">{cards}</ul>',
+             [('루리의 줍줍', '/'), ('계산기', '/money/tools/')])
+        urls.append('/money/tools/')
     return urls
 
 

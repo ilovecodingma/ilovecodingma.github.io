@@ -1,21 +1,25 @@
 {
- "at": "2026-11-02 14:09",
+ "at": "2026-11-02 15:28",
  "note": "그날 처음 들어온 방문자 기준(관리자·자동 점검 제외). 채널 → 첫 페이지별 방문자 수.",
  "days": [
   {
    "day": "2026-11-02",
-   "visitors": 100,
+   "visitors": 115,
    "channels": [
     [
      "🔍 다음·빙 검색",
-     32
+     37
     ],
     [
      "🔍 네이버 검색",
-     17
+     21
     ],
     [
      "🔗 직접 접속(주소 입력·즐겨찾기·앱 안 링크)",
+     13
+    ],
+    [
+     "🏷️ 기타 홍보 링크(youtube)",
      10
     ],
     [
@@ -23,16 +27,12 @@
      9
     ],
     [
-     "🏷️ 기타 홍보 링크(youtube)",
-     8
-    ],
-    [
      "🏷️ 기타 홍보 링크(threads)",
      6
     ],
     [
      "🔍 구글 검색",
-     5
+     6
     ],
     [
      "🌐 기타 사이트(m.facebook.com)",
@@ -70,7 +70,7 @@
    "landing": [
     [
      "/issue/kim-jong-un-rumor/",
-     7
+     9
     ],
     [
      "/contest/ai-video/",
@@ -86,6 +86,10 @@
     ],
     [
      "/money/guide/electricity-bill-calculation/",
+     3
+    ],
+    [
+     "/fridge/",
      3
     ],
     [
@@ -105,6 +109,10 @@
      2
     ],
     [
+     "/c/Q04001/",
+     2
+    ],
+    [
      "/c/Q03064/",
      2
     ],
@@ -119,21 +127,17 @@
     [
      "/c/Q02984/",
      2
-    ],
-    [
-     "/contest/idea/",
-     2
-    ],
-    [
-     "/money/guide/walking-posture-and-start-guide/",
-     2
     ]
    ],
    "by_channel": {
     "🔍 네이버 검색": [
      [
       "/issue/kim-jong-un-rumor/",
-      7
+      9
+     ],
+     [
+      "/money/guide/voice-phishing-account-freeze/",
+      1
      ],
      [
       "/money/guide/severance-example/",
@@ -145,10 +149,6 @@
      ],
      [
       "/money/guide/housing-bond-purchase-cost-registration/",
-      1
-     ],
-     [
-      "/money/guide/health-checkup-scaling/",
       1
      ]
     ],
@@ -198,6 +198,10 @@
     ],
     "🔗 직접 접속(주소 입력·즐겨찾기·앱 안 링크)": [
      [
+      "/fridge/",
+      2
+     ],
+     [
       "/apply/",
       2
      ],
@@ -212,13 +216,13 @@
      [
       "/money/guide/property-tax-calculation/",
       1
-     ],
-     [
-      "/money/guide/jeonse-deposit-return-guarantee-claim-process/",
-      1
      ]
     ],
     "🏷️ 기타 홍보 링크(youtube)": [
+     [
+      "/c/Q04001/",
+      2
+     ],
      [
       "/c/Q03064/",
       2
@@ -270,6 +274,10 @@
       1
      ],
      [
+      "/guide/conditional-recipient-self-support-work-duty/",
+      1
+     ],
+     [
       "/contest/novel/",
       1
      ],
@@ -279,10 +287,6 @@
      ],
      [
       "/c/Q03919/",
-      1
-     ],
-     [
-      "/apply/r/chungnam/youth/",
       1
      ]
     ],

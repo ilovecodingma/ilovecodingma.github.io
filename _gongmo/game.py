@@ -137,12 +137,41 @@ def record_history(d):
     return H
 
 
+def steam_free():
+    """스팀에서 지금 무료인 것(2026-11-02 사용자 「스팀 무료도 올라가고 있나」): ① 한시 무료 = 할인 100%(받아 두면 계속 소장) ② 무료 플레이 인기. 공개 검색·상세 API 만 쓴다."""
+    import re
+    def srch(params):
+        p = {'query': '', 'start': 0, 'count': 40, 'cc': 'kr', 'l': 'koreana', 'json': 1}
+        p.update(params)
+        return requests.get('https://store.steampowered.com/search/results/', params=p, headers=UA, timeout=25).json().get('items', [])
+    keep = []
+    for it in srch({'specials': 1, 'maxprice': 'free'}):
+        m = re.search(r'/apps/(\d+)/', it.get('logo', ''))
+        if not m:
+            continue
+        aid = m.group(1)
+        try:
+            a = requests.get('https://store.steampowered.com/api/appdetails', params={'appids': aid, 'cc': 'kr', 'l': 'koreana'}, headers=UA, timeout=25).json()[aid].get('data') or {}
+        except Exception:
+            continue
+        po = a.get('price_overview') or {}
+        if po.get('discount_percent') == 100 and po.get('initial'):
+            keep.append({'id': int(aid), 'name': a.get('name') or it.get('name', ''), 'kind': a.get('type', ''), 'orig': po.get('initial_formatted') or '', 'img': a.get('header_image', '')})
+        time.sleep(0.3)
+    f2p = []
+    for it in srch({'maxprice': 'free', 'filter': 'topsellers', 'count': 20}):
+        m = re.search(r'/apps/(\d+)/', it.get('logo', ''))
+        if m:
+            f2p.append({'id': int(m.group(1)), 'name': it.get('name', ''), 'img': it.get('logo', '')})
+    return {'keep': keep, 'f2p': f2p[:12]}
+
+
 def load(force=False):
     old = json.load(open(F, encoding='utf-8')) if os.path.exists(F) else {}
-    if not force and old.get('ts') and time.time() - old['ts'] < 12 * 3600:
+    if not force and old.get('ts') and time.time() - old['ts'] < 3600:   # 2026-11-02 사용자: 공모전처럼 매시간 채운다(에픽·스팀 무료가 수시로 바뀜)
         return old
     out = dict(old)
-    for k, fn in (('epic', epic), ('steam', steam), ('events', steam_events), ('release', steam_release)):
+    for k, fn in (('epic', epic), ('steam', steam), ('steam_free', steam_free), ('events', steam_events), ('release', steam_release)):
         try:
             out[k] = fn()
         except Exception as e:
