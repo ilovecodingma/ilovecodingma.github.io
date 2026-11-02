@@ -3771,6 +3771,12 @@ def talk_pages():
     days = sorted([f[:-5] for f in os.listdir(ad) if f.endswith('.json')], reverse=True) if os.path.isdir(ad) else []
     if not days:
         return []
+    _cut = (TODAY - datetime.timedelta(days=3)).isoformat()   # 2026-11-02 사용자: 단기 이슈는 빨리 올리고 3~4일 지나면 지운다(오늘 포함 4일치, 원자료 json 은 남김)
+    for _d in [d for d in days if d < _cut]:
+        shutil.rmtree(os.path.join(ROOT, 'talk', _d), ignore_errors=True)
+    days = [d for d in days if d >= _cut]
+    if not days:
+        return []
     arch = '<section class="tk-arch"><h2>📅 날짜별 커뮤니티 이슈</h2><p>' + ''.join(f'<a href="/talk/{d}/">{kdate(d)}</a>' for d in days[:60]) + '</p></section>'
     css = '<link rel="stylesheet" href="/assets/mag/mag.css?v=10"><link rel="stylesheet" href="/assets/news/news.css?v=7">'
     note = '<p class="note">순위는 여러 커뮤니티에 동시에 뜬 정도·댓글 수·인기글에 머문 시간으로 매겨요. 성·혐오·개인 신상·비방·사생활 폭로성 글은 모으지 않아요. 요약은 루리가 제목과 수치만 보고 정리했어요.</p>'
@@ -3919,6 +3925,10 @@ def mag_pages(live, aps):
     mag_snapshot(live, aps)
     md = os.path.join(ROOT, 'mag', 'archive')
     days = sorted([f[:-5] for f in os.listdir(md) if f.endswith('.json')], reverse=True)
+    _cut = (TODAY - datetime.timedelta(days=13)).isoformat()   # 2026-11-02 사용자: 중기는 14~15일 둔다(오늘 포함 14일치, 원자료 json 은 남김)
+    for _d in [d for d in days if d < _cut]:
+        shutil.rmtree(os.path.join(ROOT, 'mag', _d), ignore_errors=True)
+    days = [d for d in days if d >= _cut] or days[:1]
     css = '<link rel="stylesheet" href="/assets/mag/mag.css?v=10">'
     urls, cards = ['/mag/'], []
     for d in days:
@@ -5348,7 +5358,14 @@ def hot_pages():
     urls = ['/hot/']
     livesl = {v['slug'] for v in live}
     hd = os.path.join(ROOT, 'hot')
+    # 2026-11-02 고아 정리: /hot/ 목록(지금 + 지난 이슈 60개)에서 밀려 어디서도 링크되지 않는 오래된 단신은 검색 제외(사이트맵에서 빠짐)
+    _past60 = {v['slug'] for v in sorted([v for v in db.values() if v['slug'] not in livesl and not v.get('dup')], key=lambda v: v['last'], reverse=True)[:60]}
+    _keep = livesl | _past60
+    _hcut = (datetime.datetime.now() - datetime.timedelta(days=4)).strftime('%Y-%m-%d %H:%M')   # 2026-11-02 사용자: 단기 이슈는 4일 지나면 지운다
+    _kept = {v['slug'] for v in db.values() if v['last'] >= _hcut}
     for v in db.values():
+        if v['slug'] not in _kept:
+            continue
         if v.get('dup') and v['dup'] in db:   # 같은 사건으로 합쳐진 옛 주소: 검색 제외 + 대표 페이지로 안내 (주소는 유지)
             m = db[v['dup']]
             page(f'/hot/{v["slug"]}/', f'{m["title"][:40]} (합쳐진 이슈)', '같은 사건을 다룬 핫이슈 페이지로 합쳐졌어요.',
@@ -5382,14 +5399,14 @@ def hot_pages():
                 + f'<section class="mg-s"><h2>❓ 자주 묻는 질문</h2><div class="hot-faq">{fq}</div></section>'
                 + '<p class="note">기사 제목·숫자·날짜는 각 언론사 보도 그대로이고, 루리의 줍줍이 사실을 새로 판정한 게 아니에요. 정책·세금·금융은 공식 기관 안내를 확인하세요.</p>' + css)
         q = re.sub(r'[“”"]', '', v['q'])
-        page(f'/hot/{v["slug"]}/', f'{q[:40]} — 무슨 일·나한테 달라지는 점 정리', f'{q[:40]}: 여러 언론사 보도를 모아 무슨 일인지, 기사에 나온 숫자·날짜, 나한테 달라지는 점과 관련 도구를 정리했어요.',
-             body, [('루리의 줍줍', '/'), ('핫이슈', '/hot/'), (q[:30], f'/hot/{v["slug"]}/')], ld)
+        page(f'/hot/{v["slug"]}/', f'{q[:36]} — 무슨 일? 확인된 내용 정리 ({v["last"][5:10].replace("-", "/")} 기준)', f'{q[:40]}: 여러 언론사 보도를 모아 무슨 일인지, 기사에 나온 숫자·날짜, 나한테 달라지는 점과 관련 도구를 정리했어요.',
+             body, [('루리의 줍줍', '/'), ('핫이슈', '/hot/'), (q[:30], f'/hot/{v["slug"]}/')], ld, noindex=v['slug'] not in _keep)
         urls.append(f'/hot/{v["slug"]}/')
     for f in os.listdir(hd):
-        if os.path.isdir(os.path.join(hd, f)) and f not in db:
+        if os.path.isdir(os.path.join(hd, f)) and f not in _kept:
             shutil.rmtree(os.path.join(hd, f), ignore_errors=True)
     card = lambda v: f'<li><a href="/hot/{v["slug"]}/"><em>{hot_label(v)}</em><b>{E(v["title"])}</b><span>언론사 {len(v["outs"])}곳 · {E(v["last"][5:])}</span></a></li>'
-    past = sorted([v for v in db.values() if v['slug'] not in livesl and not v.get('dup')], key=lambda v: v['last'], reverse=True)[:60]
+    past = sorted([v for v in db.values() if v['slug'] not in livesl and not v.get('dup') and v['slug'] in _kept], key=lambda v: v['last'], reverse=True)[:60]
     page('/hot/', '지금 뜨는 핫이슈 — 무슨 일·나한테 달라지는 점 정리', '검색 급상승·언론 보도가 몰린 정보성 이슈를 골라 무슨 일인지, 나한테 달라지는 점, 관련 계산기·지원금을 정리했어요.',
          '<p class="bc"><a href="/">홈</a> › 핫이슈</p><h1>🔥 지금 뜨는 핫이슈</h1>' + say('o_det_wave', '검색이 몰리고 여러 언론사가 다룬 이슈 중, 나한테 실제로 쓸모 있는 것만 골랐어요.')
          + (f'<ul class="mg-l hot-c">{"".join(card(v) for v in live)}</ul>' if live else '<p class="nw-empty">지금은 정리할 핫이슈가 없어요.</p>')
