@@ -1989,7 +1989,9 @@ def cross_pages(aps):
                     + ((cp_widget('자취 필수템', 'apply') or cp_box('월세 자취', '자취 시작할 때 많이 사는 것:', 1)) if tk == 'youth-rent' else '')
                     + rel_block(r'청년|월세|신혼|결혼|주거', [(f'/apply/r/{sl}/', f'{fn} 지원금·청약 전체'), (f'/apply/r/{sl}/house/', f'{fn} 청약 일정'), ('/apply/recommend/', '청약 가점 계산기'), ('/apply/', '전국 지원금·청약 일정')])
                     + css)
-            page(path, title, f'{title}: 진행 중 {len(M)}건의 대상·지원 내용·신청 방법·마감일을 공고 기준으로 정리.', body,
+            _wkt = f' · 7일 내 마감 {wk}건' if wk else ''
+            _fd = f' 가장 빠른 마감 {ddot(first["end"])}.' if first else ''
+            page(path, f'{title} — 진행 중 {len(M)}건{_wkt}', f'{fn} {tn} 진행 중 {len(M)}건의 대상·지원 내용·신청 방법·마감일을 공고 기준으로 정리.{_fd}', body,
                  [('루리의 줍줍', '/'), ('지원금·청약', '/apply/'), (tn, f'/apply/{tk}/'), (nm, path)])
             urls.append(path)
             made.append((sl, nm, len(M)))
@@ -2092,7 +2094,7 @@ def hub_extra(nm, L, path):
 def hub_seo(sl, title, nm, L):
     """검색 결과용 제목·설명(2026-10-29 클릭 0 페이지 개선): 건수·7일 내 마감·상금 중간값/최고값·제출물을 빌드 시점에 계산."""
     n = len(L)
-    if sl not in ('idea', 'univ', 'slogan', 'youth', 'video', 'webnovel') or not n:
+    if sl not in ('idea', 'univ', 'slogan', 'youth', 'video', 'webnovel', 'novel', 'ai-video') or not n:
         return title, f'{nm} 진행 중 {n}건을 마감순으로 정리. 상금·자격·제출물 비교.'
     wk = sum(1 for c in L if dday(c['end'])[0] <= 7)
     bs, vals = prize_basis(L)
@@ -2112,9 +2114,13 @@ def hub_seo(sl, title, nm, L):
         t = f'청소년 공모전 {YR} — 진행 중 {n}건{wkt}'
     elif sl == 'video':
         t = f'영상 공모전 {YR} — 진행 중 {n}건{wkt}'
+    elif sl == 'ai-video':
+        t = f'AI 영상 공모전 {YR} — 접수 중 {n}건{wkt}' + (f', 최고 {won_txt(big)}' if big else '') + ' (생성형 AI 영상·숏폼)'
+    elif sl == 'novel':
+        t = f'소설 공모전 {YR} — 단편소설·웹소설 접수 중 {n}건{wkt}' + (f', 최고 {won_txt(big)}' if big else '')
     else:
         t = f'웹소설 공모전 {YR} 일정 — 접수 중 {n}건 마감순' + (f', 최고 {won_txt(big)}' if big else '')
-    head = {'idea': '정책 제안·기획 공모전', 'univ': '대학생 대상 공모전', 'slogan': '슬로건·네이밍·표어 공모전', 'youth': '학생(초·중·고) 대상 공모전',
+    head = {'ai-video': '생성형 AI 영상·숏폼 공모전', 'novel': '단편소설·웹소설·신춘문예 공모전', 'idea': '정책 제안·기획 공모전', 'univ': '대학생 대상 공모전', 'slogan': '슬로건·네이밍·표어 공모전', 'youth': '학생(초·중·고) 대상 공모전',
             'video': '숏폼·UCC·홍보영상 공모전', 'webnovel': '웹소설 공모전'}[sl]
     d = f'{head} {n}건 마감순.' + (f' {wk}건이 7일 내 마감해요.' if wk else '')
     if pv:
@@ -3219,6 +3225,9 @@ def _sec_kind(h):
     return 'gen', '📌'
 
 
+KIN_STOP = {'방법', '신청', '발급', '조건', '비용', '기준', '총정리', '가이드', '정리', '안내', '대상', '지원', '확인', '수수료'}
+
+
 def kin_guides():
     """/money/guide/ 생활 돈 가이드 (2026-10-20 홍보 세션 지식iN 반복 질문): 근로장려금·내일배움카드·월세 세액공제 vs 청년월세·퇴직금. 공식 출처로 확인된 칸만 JSON 에 담고 숫자는 표로 분리."""
     if not os.path.exists(KIN_F):
@@ -3255,7 +3264,17 @@ def kin_guides():
         g_meta = (f'<div class="g-meta"><span>🗓 확인일 {E(_m.group(1)) if _m else E(g.get("basis", "")[:20])}</span><span>📎 공식 출처 {len(g["sources"])}곳</span><span>☎ {E(g["contact"])}</span></div>')
         faq, ld = _faq([(q, a) for q, a in g['faq']])
         src = ''.join(f'<li><a href="{E(u)}" target="_blank" rel="noopener nofollow">{E(n)}</a></li>' for n, u in g['sources'])
-        rel = ' · '.join(f'<a href="{E(u)}">{E(t)}</a>' for u, t in g['related'])
+        _rl = list(g['related'])   # 2026-11-02 마케터 요청: 관련 글 3~5개 자동 보충(제목·이름 공통 단어 기준)
+        if len(_rl) < 5:
+            _have = {u for u, _t in _rl} | {f'/money/guide/{g["slug"]}/'}
+            _tk = lambda x: {w for w in re.findall(r'[가-힣]{2,}', x['name'] + ' ' + x['title']) if w not in KIN_STOP}
+            _mine = _tk(g)
+            _cand = sorted(((len(_mine & _tk(o)), o['slug']) for o in G if o['slug'] != g['slug'] and f'/money/guide/{o["slug"]}/' not in _have), key=lambda z: (-z[0], z[1]))
+            for _sc_, _sl_ in _cand:
+                if _sc_ < 1 or len(_rl) >= 5:
+                    break
+                _rl.append((f'/money/guide/{_sl_}/', GN[_sl_]['name']))
+        rel = ' · '.join(f'<a href="{E(u)}">{E(t)}</a>' for u, t in _rl)
         if g['slug'] in DIET_GUIDES:   # 다이어트 가이드 하단 관련 링크에 허브·운동 앱을 함께 둔다
             rel = (rel + ' · ' if rel else '') + '<a href="/diet/">🥗 다이어트 도우미</a> · <a href="/diet/workout/">🏃 운동 사이클 뽑기</a>'
         body = (f'<p class="bc"><a href="/">홈</a> › <a href="/money/guide/">생활 돈 가이드</a> › {E(g["name"])}</p>' + guide_cover(g) + f'<h1 class="g-h1">{E(g["h1"])}</h1>' + g_meta
@@ -5789,7 +5808,7 @@ def fridge_page():
         if rt:
             ld['aggregateRating'] = {'@type': 'AggregateRating', 'ratingValue': rt['avg'], 'ratingCount': rt['n'], 'bestRating': 5, 'worstRating': 1}
         how = '끓이는 법 · 레시피' if re.search(r'국|찌개|탕|전골|국밥', r['n']) else '만드는 법 · 양념장' if re.search(r'조림|무침', r['n']) else '만드는 법 · 레시피'   # 2026-10-19 검색 시나리오
-        page(u, f'{r["n"]} {how} — 재료 {len(r["need"])}가지로 {r["m"]}분 집밥', f'{r["n"]} 만드는 법: {", ".join(r["need"] + r["opt"][:3])}로 {r["m"]}분. 재료와 단계별 만드는 법, 재료가 비슷한 메뉴까지.',
+        page(u, f'{r["n"]} {how} — 재료·순서 총정리, {r["m"]}분 완성', f'{r["n"]} 만드는 법: 재료는 {", ".join((r["need"] + r["opt"][:3])[:6])}, 조리 시간 {r["m"]}분. 단계별 순서와 재료가 비슷한 메뉴까지 정리했어요.',
              body, [('루리의 줍줍', '/'), ('냉장고 파먹기', '/fridge/'), (r['n'], u)], ld)
         urls.append(u)
     # 2026-10-20 원본 정제: 같은 메뉴가 띄어쓰기만 다르게 두 번 있던 것을 합침 — 옛 주소는 새 주소로 안내(검색 색인 중복 방지)
