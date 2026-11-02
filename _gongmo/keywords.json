@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-03 07:00",
+ "updated": "2026-11-03 08:10",
  "items": [
   {
    "query": "로스앤젤레스 fc 대 미네소타 유나이티드 fc 순위",
@@ -503,19 +503,6 @@
    "expires": "2026-11-06"
   },
   {
-   "query": "근로장려금",
-   "tier": "장기",
-   "signal": [
-    "지식iN",
-    "자동완성"
-   ],
-   "score": 0,
-   "status": "작성",
-   "page": "/money/guide/eitc/",
-   "registered": "2026-11-03",
-   "expires": ""
-  },
-  {
    "query": "월세 세액공제와 청년월세 지원",
    "tier": "장기",
    "signal": [
@@ -525,45 +512,6 @@
    "score": 0,
    "status": "작성",
    "page": "/money/guide/rent-credit/",
-   "registered": "2026-11-03",
-   "expires": ""
-  },
-  {
-   "query": "퇴직금",
-   "tier": "장기",
-   "signal": [
-    "지식iN",
-    "자동완성"
-   ],
-   "score": 0,
-   "status": "작성",
-   "page": "/money/guide/severance/",
-   "registered": "2026-11-03",
-   "expires": ""
-  },
-  {
-   "query": "퇴사 후 건강보험",
-   "tier": "장기",
-   "signal": [
-    "지식iN",
-    "자동완성"
-   ],
-   "score": 0,
-   "status": "작성",
-   "page": "/money/guide/health-insurance-after-quit/",
-   "registered": "2026-11-03",
-   "expires": ""
-  },
-  {
-   "query": "실업급여 구직활동·조기재취업수당",
-   "tier": "장기",
-   "signal": [
-    "지식iN",
-    "자동완성"
-   ],
-   "score": 0,
-   "status": "작성",
-   "page": "/money/guide/unemployment-job-search/",
    "registered": "2026-11-03",
    "expires": ""
   },
@@ -616,32 +564,6 @@
    "score": 0,
    "status": "작성",
    "page": "/money/guide/pet-dog-monthly-cost/",
-   "registered": "2026-11-03",
-   "expires": ""
-  },
-  {
-   "query": "연차수당·퇴사 시 남은 연차",
-   "tier": "장기",
-   "signal": [
-    "지식iN",
-    "자동완성"
-   ],
-   "score": 0,
-   "status": "작성",
-   "page": "/money/guide/annual-leave-pay-resign/",
-   "registered": "2026-11-03",
-   "expires": ""
-  },
-  {
-   "query": "알바 주휴수당",
-   "tier": "장기",
-   "signal": [
-    "지식iN",
-    "자동완성"
-   ],
-   "score": 0,
-   "status": "작성",
-   "page": "/money/guide/parttime-weekly-holiday-pay/",
    "registered": "2026-11-03",
    "expires": ""
   },
@@ -815,19 +737,6 @@
    "expires": ""
   },
   {
-   "query": "독감 무료접종",
-   "tier": "장기",
-   "signal": [
-    "지식iN",
-    "자동완성"
-   ],
-   "score": 0,
-   "status": "작성",
-   "page": "/money/guide/flu-vaccine/",
-   "registered": "2026-11-03",
-   "expires": ""
-  },
-  {
    "query": "증여세 면제 한도",
    "tier": "장기",
    "signal": [
@@ -980,19 +889,6 @@
    "score": 0,
    "status": "작성",
    "page": "/money/guide/housing-subscription-savings/",
-   "registered": "2026-11-03",
-   "expires": ""
-  },
-  {
-   "query": "난임 시술비 지원",
-   "tier": "장기",
-   "signal": [
-    "지식iN",
-    "자동완성"
-   ],
-   "score": 0,
-   "status": "작성",
-   "page": "/money/guide/infertility-support/",
    "registered": "2026-11-03",
    "expires": ""
   },
@@ -2648,19 +2544,6 @@
    "expires": ""
   },
   {
-   "query": "학자금 지원구간(소득분위) 확인 방법",
-   "tier": "장기",
-   "signal": [
-    "지식iN",
-    "자동완성"
-   ],
-   "score": 0,
-   "status": "작성",
-   "page": "/money/guide/scholarship-support-bracket-check/",
-   "registered": "2026-11-03",
-   "expires": ""
-  },
-  {
    "query": "셀프 등기 방법 (소유권이전·상속 등기)",
    "tier": "장기",
    "signal": [
@@ -2800,19 +2683,6 @@
    "score": 0,
    "status": "작성",
    "page": "/money/guide/nps-survivor-pension/",
-   "registered": "2026-11-03",
-   "expires": ""
-  },
-  {
-   "query": "다문화가족 지원 2026",
-   "tier": "장기",
-   "signal": [
-    "지식iN",
-    "자동완성"
-   ],
-   "score": 0,
-   "status": "작성",
-   "page": "/money/guide/multicultural-family-support/",
    "registered": "2026-11-03",
    "expires": ""
   },
@@ -2960,19 +2830,6 @@
    "expires": ""
   },
   {
-   "query": "가족 4대보험",
-   "tier": "장기",
-   "signal": [
-    "지식iN",
-    "자동완성"
-   ],
-   "score": 0,
-   "status": "작성",
-   "page": "/money/guide/family-member-four-insurance-obligation/",
-   "registered": "2026-11-03",
-   "expires": ""
-  },
-  {
    "query": "개인회생 변경·면책",
    "tier": "장기",
    "signal": [
@@ -2995,19 +2852,6 @@
    "score": 0,
    "status": "작성",
    "page": "/money/guide/group-loan-interim-payment-approval/",
-   "registered": "2026-11-03",
-   "expires": ""
-  },
-  {
-   "query": "청약 부적격",
-   "tier": "장기",
-   "signal": [
-    "지식iN",
-    "자동완성"
-   ],
-   "score": 0,
-   "status": "작성",
-   "page": "/money/guide/subscription-win-cancel-unqualified/",
    "registered": "2026-11-03",
    "expires": ""
   },
@@ -3151,19 +2995,6 @@
    "score": 0,
    "status": "작성",
    "page": "/money/guide/comprehensive-real-estate-tax-rates-exemption/",
-   "registered": "2026-11-03",
-   "expires": ""
-  },
-  {
-   "query": "자녀장려금",
-   "tier": "장기",
-   "signal": [
-    "지식iN",
-    "자동완성"
-   ],
-   "score": 0,
-   "status": "작성",
-   "page": "/money/guide/child-incentive-payment-conditions-amount/",
    "registered": "2026-11-03",
    "expires": ""
   },
@@ -3896,19 +3727,6 @@
    "expires": ""
   },
   {
-   "query": "운전면허증 재발급",
-   "tier": "장기",
-   "signal": [
-    "지식iN",
-    "자동완성"
-   ],
-   "score": 0,
-   "status": "작성",
-   "page": "/money/guide/driver-license-reissue-lost-online/",
-   "registered": "2026-11-03",
-   "expires": ""
-  },
-  {
    "query": "보건증 발급·재발급",
    "tier": "장기",
    "signal": [
@@ -4039,19 +3857,6 @@
    "expires": ""
   },
   {
-   "query": "건강보험 자격득실확인서",
-   "tier": "장기",
-   "signal": [
-    "지식iN",
-    "자동완성"
-   ],
-   "score": 0,
-   "status": "작성",
-   "page": "/money/guide/nhis-eligibility-certificate-issue/",
-   "registered": "2026-11-03",
-   "expires": ""
-  },
-  {
    "query": "주민등록증 재발급",
    "tier": "장기",
    "signal": [
@@ -4139,19 +3944,6 @@
    "score": 0,
    "status": "작성",
    "page": "/money/guide/self-employed-employment-insurance-join/",
-   "registered": "2026-11-03",
-   "expires": ""
-  },
-  {
-   "query": "산정특례 등록",
-   "tier": "장기",
-   "signal": [
-    "지식iN",
-    "자동완성"
-   ],
-   "score": 0,
-   "status": "작성",
-   "page": "/money/guide/nhis-special-calculation-copay-registration/",
    "registered": "2026-11-03",
    "expires": ""
   },
@@ -4312,19 +4104,6 @@
    "expires": ""
   },
   {
-   "query": "교육급여 신청",
-   "tier": "장기",
-   "signal": [
-    "지식iN",
-    "자동완성"
-   ],
-   "score": 0,
-   "status": "작성",
-   "page": "/money/guide/education-benefit-apply-eligibility/",
-   "registered": "2026-11-03",
-   "expires": ""
-  },
-  {
    "query": "긴급복지지원",
    "tier": "장기",
    "signal": [
@@ -4425,19 +4204,6 @@
    "score": 0,
    "status": "작성",
    "page": "/money/guide/medical-expense-tax-deduction-year-end/",
-   "registered": "2026-11-03",
-   "expires": ""
-  },
-  {
-   "query": "산재 휴업급여 신청",
-   "tier": "장기",
-   "signal": [
-    "지식iN",
-    "자동완성"
-   ],
-   "score": 0,
-   "status": "작성",
-   "page": "/money/guide/industrial-accident-sick-leave-benefit-apply/",
    "registered": "2026-11-03",
    "expires": ""
   },
@@ -4676,6 +4442,240 @@
    "expires": ""
   },
   {
+   "query": "다문화가족 지원 2026",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/multicultural-family-support/",
+   "registered": "2026-11-03",
+   "expires": ""
+  },
+  {
+   "query": "연차수당·퇴사 시 남은 연차",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/annual-leave-pay-resign/",
+   "registered": "2026-11-03",
+   "expires": ""
+  },
+  {
+   "query": "건강보험 자격득실확인서",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/nhis-eligibility-certificate-issue/",
+   "registered": "2026-11-03",
+   "expires": ""
+  },
+  {
+   "query": "알바 주휴수당",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/parttime-weekly-holiday-pay/",
+   "registered": "2026-11-03",
+   "expires": ""
+  },
+  {
+   "query": "실업급여 구직활동·조기재취업수당",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/unemployment-job-search/",
+   "registered": "2026-11-03",
+   "expires": ""
+  },
+  {
+   "query": "청약 부적격",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/subscription-win-cancel-unqualified/",
+   "registered": "2026-11-03",
+   "expires": ""
+  },
+  {
+   "query": "산재 휴업급여 신청",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/industrial-accident-sick-leave-benefit-apply/",
+   "registered": "2026-11-03",
+   "expires": ""
+  },
+  {
+   "query": "근로장려금",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/eitc/",
+   "registered": "2026-11-03",
+   "expires": ""
+  },
+  {
+   "query": "산정특례 등록",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/nhis-special-calculation-copay-registration/",
+   "registered": "2026-11-03",
+   "expires": ""
+  },
+  {
+   "query": "운전면허증 재발급",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/driver-license-reissue-lost-online/",
+   "registered": "2026-11-03",
+   "expires": ""
+  },
+  {
+   "query": "독감 무료접종",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/flu-vaccine/",
+   "registered": "2026-11-03",
+   "expires": ""
+  },
+  {
+   "query": "교육급여 신청",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/education-benefit-apply-eligibility/",
+   "registered": "2026-11-03",
+   "expires": ""
+  },
+  {
+   "query": "학자금 지원구간(소득분위) 확인 방법",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/scholarship-support-bracket-check/",
+   "registered": "2026-11-03",
+   "expires": ""
+  },
+  {
+   "query": "난임 시술비 지원",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/infertility-support/",
+   "registered": "2026-11-03",
+   "expires": ""
+  },
+  {
+   "query": "퇴사 후 건강보험",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/health-insurance-after-quit/",
+   "registered": "2026-11-03",
+   "expires": ""
+  },
+  {
+   "query": "자녀장려금",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/child-incentive-payment-conditions-amount/",
+   "registered": "2026-11-03",
+   "expires": ""
+  },
+  {
+   "query": "퇴직금",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/severance/",
+   "registered": "2026-11-03",
+   "expires": ""
+  },
+  {
+   "query": "가족 4대보험",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/family-member-four-insurance-obligation/",
+   "registered": "2026-11-03",
+   "expires": ""
+  },
+  {
    "query": "연차수당 계산기",
    "tier": "장기",
    "signal": [
@@ -4843,7 +4843,7 @@
    ],
    "score": 6,
    "status": "작성",
-   "page": "",
+   "page": "/money/guide/national-scholarship/",
    "registered": "2026-11-03",
    "expires": "2026-11-17"
   },
@@ -4855,7 +4855,7 @@
    ],
    "score": 6,
    "status": "작성",
-   "page": "",
+   "page": "/money/guide/resident-certificate/",
    "registered": "2026-11-03",
    "expires": "2026-11-17"
   },
@@ -4940,7 +4940,7 @@
    ],
    "score": 5,
    "status": "작성",
-   "page": "",
+   "page": "/money/guide/youth-monthly-rent-local-support-2026/",
    "registered": "2026-11-03",
    "expires": "2026-11-17"
   },
@@ -5000,7 +5000,7 @@
    ],
    "score": 4,
    "status": "작성",
-   "page": "",
+   "page": "/money/guide/national-scholarship/",
    "registered": "2026-11-03",
    "expires": "2026-11-17"
   },
@@ -5072,7 +5072,7 @@
    ],
    "score": 3,
    "status": "작성",
-   "page": "",
+   "page": "/money/guide/national-scholarship/",
    "registered": "2026-11-03",
    "expires": "2026-11-17"
   },
@@ -5108,7 +5108,7 @@
    ],
    "score": 3,
    "status": "작성",
-   "page": "",
+   "page": "/money/guide/transit-card-compare/",
    "registered": "2026-11-03",
    "expires": "2026-11-17"
   },
