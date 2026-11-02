@@ -1987,7 +1987,7 @@ def cross_pages(aps):
                     f'<h2>진행 중 공고 (마감순)</h2><ul class="list">{"".join(ap_card(a) for a in M)}</ul>'
                     + (f'<p class="hm-links">다른 지역 {tn}: {others}</p>' if others else '')
                     + ((cp_widget('자취 필수템', 'apply') or cp_box('월세 자취', '자취 시작할 때 많이 사는 것:', 1)) if tk == 'youth-rent' else '')
-                    + rel_block(r'청년|월세|신혼|결혼|주거', [(f'/apply/r/{sl}/', f'{fn} 지원금·청약 전체'), (f'/apply/r/{sl}/house/', f'{fn} 청약 일정'), ('/apply/recommend/', '청약 가점 계산기'), ('/apply/', '전국 지원금·청약 일정')])
+                    + rel_block(r'청년|월세|신혼|결혼|주거', ([('/money/guide/youth-monthly-rent-local-support-2026/', '청년 월세 지원 지역별 조건 정리 2026')] if tk == 'youth-rent' else []) + [(f'/apply/r/{sl}/', f'{fn} 지원금·청약 전체'), (f'/apply/r/{sl}/house/', f'{fn} 청약 일정'), ('/apply/recommend/', '청약 가점 계산기'), ('/apply/', '전국 지원금·청약 일정')])
                     + css)
             _wkt = f' · 7일 내 마감 {wk}건' if wk else ''
             _fd = f' 가장 빠른 마감 {ddot(first["end"])}.' if first else ''
