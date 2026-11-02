@@ -281,7 +281,7 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False, noinde
 <meta name="theme-color" content="{TH[3] if TH else '#5b21b6'}"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="오늘 뭐 먹지">
 <link rel="icon" href="/favicon.ico?v=6" sizes="any"><link rel="icon" type="image/png" sizes="48x48" href="/assets/icons/icon-48.png?v=6"><link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/icon-96.png?v=6"><link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/icon-192.png?v=6"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=6"><link rel="manifest" href="/site.webmanifest"><link rel="alternate" type="application/rss+xml" title="루리 애널리스트" href="/rss.xml">
 <link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="/assets/gm.css?v=29"><link rel="stylesheet" href="/assets/ds.css?v=15"><link rel="stylesheet" href="/assets/print.css?v=1"><link rel="stylesheet" href="/assets/pro.css?v=2"><script defer src="/assets/bgm.js?v=1"></script><script defer src="/assets/print.js?v=1"></script><script src="/assets/img-fallback.js?v=1"></script>{('<link rel="stylesheet" href="/assets/chat/ruri-chat.css?v=9">') if not (TH and TH[0] == 'ai') else ''}{COMM_TAGS}{('<script type="module" src="/assets/chat/ruri-chat.js?v=16"></script>') if not (TH and TH[0] == 'ai') else ''}<link rel="stylesheet" href="/assets/app/shell.css?v=1"><script defer src="/assets/app/app.js?v=4"></script>
+<link rel="stylesheet" href="/assets/gm.css?v=29"><link rel="stylesheet" href="/assets/ds.css?v=15"><link rel="stylesheet" href="/assets/print.css?v=1"><link rel="stylesheet" href="/assets/pro.css?v=2"><script defer src="/assets/bgm.js?v=2"></script><script defer src="/assets/print.js?v=1"></script><script src="/assets/img-fallback.js?v=1"></script>{('<link rel="stylesheet" href="/assets/chat/ruri-chat.css?v=9">') if not (TH and TH[0] == 'ai') else ''}{COMM_TAGS}{('<script type="module" src="/assets/chat/ruri-chat.js?v=16"></script>') if not (TH and TH[0] == 'ai') else ''}<link rel="stylesheet" href="/assets/app/shell.css?v=1"><script defer src="/assets/app/app.js?v=4"></script>
 {ldh}
 {TH_CSS}
 {GTAG}
@@ -763,9 +763,11 @@ def collapse_thin(urls):
 
 RICH_SCORES = []
 RICH_BY_ID = {}
-THIN_MIN = {'/lab/': 250, '/hot/': 250}   # 2026-10-23 애드센스: 고유 본문이 이만큼 안 되는 연구소·핫이슈 상세는 검색 제외. 사용자 승인으로 700→250(품질 감사의 「얇음」 기준과 맞춤): noindex 는 비었거나 미완성인 페이지에만 쓴다
-FRIDGE_KEEP = int(os.environ.get('FRIDGE_KEEP', '100000'))   # 사용자 승인으로 100→전체: 레시피는 재료 체크·인분 계산 같은 실제 도구가 있는 페이지라 noindex 로 가리지 않는다
-RICH_MIN = int(os.environ.get('RICH_MIN', '4'))   # 사용자 승인으로 6→4: 자격·상금·제출물이 거의 비어 미완성인 상세(2~3점)만 noindex, 값이 채워지면 자동 색인
+THIN_MIN = {'/lab/': 350, '/hot/': 350, '/a/': 450, '/apply/': 400, '/contest/': 350, '/analyst/s/': 400, '/mag/': 400, '/play/': 300}   # 2026-11-03 사용자 「에드센스 통과 가능하게 싹」: 고유 본문 기준을 올려 얇은 대량 페이지를 검색에서 뺀다 (이전 250)
+_THIN_OLD = {'/lab/': 250, '/hot/': 250}   # 2026-10-23 애드센스: 고유 본문이 이만큼 안 되는 연구소·핫이슈 상세는 검색 제외. 사용자 승인으로 700→250(품질 감사의 「얇음」 기준과 맞춤): noindex 는 비었거나 미완성인 페이지에만 쓴다
+FRIDGE_KEEP = int(os.environ.get('FRIDGE_KEEP', '100'))   # 2026-11-03 100000→100: 에드센스 재신청용(고유 본문 상위 100개만 색인)
+_FRIDGE_OLD = 100000; _x = int(os.environ.get('FRIDGE_KEEP_UNUSED', '0'))   # 사용자 승인으로 100→전체: 레시피는 재료 체크·인분 계산 같은 실제 도구가 있는 페이지라 noindex 로 가리지 않는다
+RICH_MIN = int(os.environ.get('RICH_MIN', '6'))   # 사용자 승인으로 6→4: 자격·상금·제출물이 거의 비어 미완성인 상세(2~3점)만 noindex, 값이 채워지면 자동 색인
 THIN_FORCE_NOINDEX = {'/community/', '/me/', '/plaza/', '/ssul/', '/dev/tag/windows/', '/satire/2026-10-18/'}
 
 
@@ -939,7 +941,7 @@ def diet_pages():
 def auto_thin(urls):
     """빌드가 끝난 뒤 상세 페이지의 고유 본문을 세어 200자 미만이면 검색 제외로 돌린다(adsense_audit 와 같은 셈법)."""
     import adsense_audit as A
-    DET = ('/c/', '/a/', '/lab/', '/kw/', '/analyst/s/', '/analyst/coin/', '/money/tools/', '/apply/r/', '/contest/univ/', '/contest/ai-video/', '/hot/', '/satire/', '/mag/', '/ssul/', '/guide/', '/review/', '/fridge/r/')
+    DET = ('/apply/', '/contest/', '/play/', '/c/', '/a/', '/lab/', '/kw/', '/analyst/s/', '/analyst/coin/', '/money/tools/', '/apply/r/', '/contest/univ/', '/contest/ai-video/', '/hot/', '/satire/', '/mag/', '/ssul/', '/guide/', '/review/', '/fridge/r/')
     got, freq = {}, collections.Counter()
     for u in urls:
         f = os.path.join(ROOT, u.strip('/'), 'index.html')
@@ -2658,6 +2660,7 @@ def build():
     corrections_page(live); urls.append('/corrections/')
     urls.extend(diet_pages())
     urls.extend(rsi_pages())
+    urls.extend(map_pages())
     urls.extend(pick_pages())
     urls.extend(calc_pages())
     print('광고 스크립트 뺀 페이지(최종)', strip_ads_noindex())   # 위키·정정 기록·다이어트 앱처럼 뒤에 만든 검색 제외 페이지까지 한 번 더
@@ -4437,6 +4440,18 @@ def calc_pages():
              [('루리 애널리스트', '/'), ('계산기', '/money/tools/')])
         urls.append('/money/tools/')
     return urls
+
+
+def map_pages():
+    """/map/ 키워드 3D 지도 전체 화면판(2026-11-03)."""
+    import screens as SC
+    h = SC._kwmap_sec(full=True)
+    if not h:
+        return []
+    page('/map/', '키워드 지도 — 사람들이 궁금해하는 질문 3D 지도 | ' + NAME, '단기·중기·장기 키워드를 3D 노드 지도로 보여 줍니다. 점을 누르면 해당 글로 이동합니다.',
+         '<p class="bc"><a href="/">홈</a> › 키워드 지도</p><h1>키워드 지도</h1><p>지금 사람들이 궁금해하는 질문을 단기·중기·장기로 나눠 한눈에 보여 줍니다.</p>' + h,
+         [(NAME, '/'), ('키워드 지도', '/map/')], full_title=True)
+    return ['/map/']
 
 
 RSI_F = os.path.join(HERE, 'rsi_daily.json')

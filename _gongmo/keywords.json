@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-03 04:25",
+ "updated": "2026-11-03 05:00",
  "items": [
   {
    "query": "로스앤젤레스 fc 대 미네소타 유나이티드 fc 순위",
@@ -516,19 +516,6 @@
    "expires": ""
   },
   {
-   "query": "국민내일배움카드",
-   "tier": "장기",
-   "signal": [
-    "지식iN",
-    "자동완성"
-   ],
-   "score": 0,
-   "status": "작성",
-   "page": "/money/guide/naeil-card/",
-   "registered": "2026-11-03",
-   "expires": ""
-  },
-  {
    "query": "월세 세액공제와 청년월세 지원",
    "tier": "장기",
    "signal": [
@@ -564,19 +551,6 @@
    "score": 0,
    "status": "작성",
    "page": "/money/guide/health-insurance-after-quit/",
-   "registered": "2026-11-03",
-   "expires": ""
-  },
-  {
-   "query": "국민연금 반환일시금·납부예외",
-   "tier": "장기",
-   "signal": [
-    "지식iN",
-    "자동완성"
-   ],
-   "score": 0,
-   "status": "작성",
-   "page": "/money/guide/nps-refund-lump-sum/",
    "registered": "2026-11-03",
    "expires": ""
   },
@@ -646,32 +620,6 @@
    "expires": ""
   },
   {
-   "query": "자영업 폐업 체크리스트",
-   "tier": "장기",
-   "signal": [
-    "지식iN",
-    "자동완성"
-   ],
-   "score": 0,
-   "status": "작성",
-   "page": "/money/guide/business-closure-checklist/",
-   "registered": "2026-11-03",
-   "expires": ""
-  },
-  {
-   "query": "이사 견적 구조 체크리스트",
-   "tier": "장기",
-   "signal": [
-    "지식iN",
-    "자동완성"
-   ],
-   "score": 0,
-   "status": "작성",
-   "page": "/money/guide/moving-estimate-checklist/",
-   "registered": "2026-11-03",
-   "expires": ""
-  },
-  {
    "query": "연차수당·퇴사 시 남은 연차",
    "tier": "장기",
    "signal": [
@@ -694,45 +642,6 @@
    "score": 0,
    "status": "작성",
    "page": "/money/guide/parttime-weekly-holiday-pay/",
-   "registered": "2026-11-03",
-   "expires": ""
-  },
-  {
-   "query": "알바 근로계약서",
-   "tier": "장기",
-   "signal": [
-    "지식iN",
-    "자동완성"
-   ],
-   "score": 0,
-   "status": "작성",
-   "page": "/money/guide/parttime-contract/",
-   "registered": "2026-11-03",
-   "expires": ""
-  },
-  {
-   "query": "알바 4대보험",
-   "tier": "장기",
-   "signal": [
-    "지식iN",
-    "자동완성"
-   ],
-   "score": 0,
-   "status": "작성",
-   "page": "/money/guide/parttime-four-insurance/",
-   "registered": "2026-11-03",
-   "expires": ""
-  },
-  {
-   "query": "알바 임금 못 받았을 때",
-   "tier": "장기",
-   "signal": [
-    "지식iN",
-    "자동완성"
-   ],
-   "score": 0,
-   "status": "작성",
-   "page": "/money/guide/parttime-unpaid-wages/",
    "registered": "2026-11-03",
    "expires": ""
   },
@@ -880,32 +789,6 @@
    "expires": ""
   },
   {
-   "query": "에너지바우처",
-   "tier": "장기",
-   "signal": [
-    "지식iN",
-    "자동완성"
-   ],
-   "score": 0,
-   "status": "작성",
-   "page": "/money/guide/energy-voucher/",
-   "registered": "2026-11-03",
-   "expires": ""
-  },
-  {
-   "query": "첫만남이용권",
-   "tier": "장기",
-   "signal": [
-    "지식iN",
-    "자동완성"
-   ],
-   "score": 0,
-   "status": "작성",
-   "page": "/money/guide/first-meeting-voucher/",
-   "registered": "2026-11-03",
-   "expires": ""
-  },
-  {
    "query": "권고사직 받았을 때 실업급여·해고예고",
    "tier": "장기",
    "signal": [
@@ -919,58 +802,6 @@
    "expires": ""
   },
   {
-   "query": "택시 승차거부 신고",
-   "tier": "장기",
-   "signal": [
-    "지식iN",
-    "자동완성"
-   ],
-   "score": 0,
-   "status": "작성",
-   "page": "/money/guide/taxi-refusal-report/",
-   "registered": "2026-11-03",
-   "expires": ""
-  },
-  {
-   "query": "국민연금 기금 수익률과 연금 지급",
-   "tier": "장기",
-   "signal": [
-    "지식iN",
-    "자동완성"
-   ],
-   "score": 0,
-   "status": "작성",
-   "page": "/money/guide/nps-fund-loss-pension/",
-   "registered": "2026-11-03",
-   "expires": ""
-  },
-  {
-   "query": "이삿짐 표준약관 추가요금·해제",
-   "tier": "장기",
-   "signal": [
-    "지식iN",
-    "자동완성"
-   ],
-   "score": 0,
-   "status": "작성",
-   "page": "/money/guide/moving-standard-terms/",
-   "registered": "2026-11-03",
-   "expires": ""
-  },
-  {
-   "query": "동물병원 진료비 게시·펫보험 유의사항",
-   "tier": "장기",
-   "signal": [
-    "지식iN",
-    "자동완성"
-   ],
-   "score": 0,
-   "status": "작성",
-   "page": "/money/guide/pet-hospital-fee-disclosure/",
-   "registered": "2026-11-03",
-   "expires": ""
-  },
-  {
    "query": "숨은 돈 찾기",
    "tier": "장기",
    "signal": [
@@ -980,32 +811,6 @@
    "score": 0,
    "status": "작성",
    "page": "/money/guide/hidden-money/",
-   "registered": "2026-11-03",
-   "expires": ""
-  },
-  {
-   "query": "휴면예금 찾기",
-   "tier": "장기",
-   "signal": [
-    "지식iN",
-    "자동완성"
-   ],
-   "score": 0,
-   "status": "작성",
-   "page": "/money/guide/dormant-deposit/",
-   "registered": "2026-11-03",
-   "expires": ""
-  },
-  {
-   "query": "숨은 보험금 찾기",
-   "tier": "장기",
-   "signal": [
-    "지식iN",
-    "자동완성"
-   ],
-   "score": 0,
-   "status": "작성",
-   "page": "/money/guide/hidden-insurance/",
    "registered": "2026-11-03",
    "expires": ""
   },
@@ -1370,19 +1175,6 @@
    "score": 0,
    "status": "작성",
    "page": "/money/guide/hometown-donation/",
-   "registered": "2026-11-03",
-   "expires": ""
-  },
-  {
-   "query": "전입신고",
-   "tier": "장기",
-   "signal": [
-    "지식iN",
-    "자동완성"
-   ],
-   "score": 0,
-   "status": "작성",
-   "page": "/money/guide/move-in-report/",
    "registered": "2026-11-03",
    "expires": ""
   },
@@ -3168,19 +2960,6 @@
    "expires": ""
   },
   {
-   "query": "새희망홀씨 조건",
-   "tier": "장기",
-   "signal": [
-    "지식iN",
-    "자동완성"
-   ],
-   "score": 0,
-   "status": "작성",
-   "page": "/money/guide/saehuimang-hongssi-loan-conditions/",
-   "registered": "2026-11-03",
-   "expires": ""
-  },
-  {
    "query": "가족 4대보험",
    "tier": "장기",
    "signal": [
@@ -4650,6 +4429,162 @@
    "expires": ""
   },
   {
+   "query": "산재 휴업급여 신청",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/industrial-accident-sick-leave-benefit-apply/",
+   "registered": "2026-11-03",
+   "expires": ""
+  },
+  {
+   "query": "첫만남이용권",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/first-meeting-voucher/",
+   "registered": "2026-11-03",
+   "expires": ""
+  },
+  {
+   "query": "휴면예금 찾기",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/dormant-deposit/",
+   "registered": "2026-11-03",
+   "expires": ""
+  },
+  {
+   "query": "알바 임금 못 받았을 때",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/parttime-unpaid-wages/",
+   "registered": "2026-11-03",
+   "expires": ""
+  },
+  {
+   "query": "자영업 폐업 체크리스트",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/business-closure-checklist/",
+   "registered": "2026-11-03",
+   "expires": ""
+  },
+  {
+   "query": "새희망홀씨 조건",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/saehuimang-hongssi-loan-conditions/",
+   "registered": "2026-11-03",
+   "expires": ""
+  },
+  {
+   "query": "동물병원 진료비 게시·펫보험 유의사항",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/pet-hospital-fee-disclosure/",
+   "registered": "2026-11-03",
+   "expires": ""
+  },
+  {
+   "query": "알바 4대보험",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/parttime-four-insurance/",
+   "registered": "2026-11-03",
+   "expires": ""
+  },
+  {
+   "query": "숨은 보험금 찾기",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/hidden-insurance/",
+   "registered": "2026-11-03",
+   "expires": ""
+  },
+  {
+   "query": "국민연금 반환일시금·납부예외",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/nps-refund-lump-sum/",
+   "registered": "2026-11-03",
+   "expires": ""
+  },
+  {
+   "query": "국민연금 기금 수익률과 연금 지급",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/nps-fund-loss-pension/",
+   "registered": "2026-11-03",
+   "expires": ""
+  },
+  {
+   "query": "알바 근로계약서",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/parttime-contract/",
+   "registered": "2026-11-03",
+   "expires": ""
+  },
+  {
    "query": "청약저축 소득공제",
    "tier": "장기",
    "signal": [
@@ -4663,7 +4598,7 @@
    "expires": ""
   },
   {
-   "query": "산재 휴업급여 신청",
+   "query": "택시 승차거부 신고",
    "tier": "장기",
    "signal": [
     "지식iN",
@@ -4671,7 +4606,72 @@
    ],
    "score": 0,
    "status": "작성",
-   "page": "/money/guide/industrial-accident-sick-leave-benefit-apply/",
+   "page": "/money/guide/taxi-refusal-report/",
+   "registered": "2026-11-03",
+   "expires": ""
+  },
+  {
+   "query": "이사 견적 구조 체크리스트",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/moving-estimate-checklist/",
+   "registered": "2026-11-03",
+   "expires": ""
+  },
+  {
+   "query": "에너지바우처",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/energy-voucher/",
+   "registered": "2026-11-03",
+   "expires": ""
+  },
+  {
+   "query": "국민내일배움카드",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/naeil-card/",
+   "registered": "2026-11-03",
+   "expires": ""
+  },
+  {
+   "query": "이삿짐 표준약관 추가요금·해제",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/moving-standard-terms/",
+   "registered": "2026-11-03",
+   "expires": ""
+  },
+  {
+   "query": "전입신고",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/move-in-report/",
    "registered": "2026-11-03",
    "expires": ""
   },

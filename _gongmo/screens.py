@@ -245,10 +245,10 @@ def _concept_sec():
              + card('l', '장기 · 계속', '오래 찾는 것', '해마다 반복되는 제도와 방법을 공식 자료로 깊게 정리해 유지합니다.', c['장기'], '건'))
     flow = ''.join(f'<li><i>{n}</i><b>{a}</b><span>{b}</span></li>' for n, a, b in (
         (1, '신호 수집', '자동완성·검색 콘솔·지식인·커뮤니티·뉴스'), (2, '분석', '겹침 대조, 점수화, 단기·중기·장기 분류'),
-        (3, '작성', '공식 출처와 기준일을 단 분석 글'), (4, '노출·정리', '기간이 지난 글은 자동으로 내림')))
-    return (f'<section class="cp"><p class="cp-k">LURI ANALYST</p><h2 class="cp-h">사람들이 궁금해하는 것,<br><em>근거와 숫자</em>로 분석합니다</h2>'
-            f'<p class="cp-s">루리 애널리스트는 지금 사람들이 무엇을 궁금해하는지 신호로 찾아내고, 그 질문에 공식 출처 기준으로 답하는 분석 사이트입니다. 현재 <b>{tot}개</b>의 질문이 정리되어 있습니다.</p>'
-            f'<div class="cp-g">{cards}</div><ol class="cp-f">{flow}</ol></section>')
+        (3, '작성', '공식 출처와 기준일을 단 분석 글'), (4, '루리 위키에 기록', '검색으로 찾아오는 문서, 기간 지난 단기 글은 정리')))
+    return (f'<section class="cp"><p class="cp-k">LURI ANALYST · LIVE ARCHIVE</p><h2 class="cp-h">사람들이 궁금해하는 것을<br><em>실시간으로 찾아 기록</em>합니다</h2>'
+            f'<p class="cp-s">루리 애널리스트는 검색어·자동완성·커뮤니티·뉴스 신호를 매시간 수집하고 분석해, 사람들이 궁금해하는 질문을 찾아냅니다. 찾아낸 질문은 공식 출처 기준의 문서로 <b>루리 위키</b>에 기록하고, 현재 <b>{tot}개</b>의 질문이 쌓여 있습니다.</p>'
+            f'<div class="cp-g">{cards}</div><ol class="cp-f">{flow}</ol><p class="cp-a"><a class="cp-btn" href="/wiki/">루리 위키 열기 →</a><a class="cp-btn o" href="/map/">키워드 지도 보기</a></p></section>')
 
 
 def _indicator_sec():

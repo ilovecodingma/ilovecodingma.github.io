@@ -1,7 +1,7 @@
 /* 배경음악: 파일 없이 웹오디오로 즉석 합성하는 잔잔한 앰비언트(저작권 문제 없음). 브라우저 규칙상 첫 터치·스크롤·키 입력 때 시작하고, 사용자가 끄면 기억한다. */
 (function () {
-  var KEY = 'ruri-bgm', st = 'on';
-  try { st = localStorage.getItem(KEY) || 'on'; } catch (e) {}
+  var KEY = 'ruri-bgm', st = 'off';   // 에드센스·접근성: 자동 재생은 기본 끔, 사용자가 켠 경우만 기억
+  try { st = localStorage.getItem(KEY) || 'off'; } catch (e) {}
   var AC = window.AudioContext || window.webkitAudioContext; if (!AC) return;
   var ctx = null, master = null, timer = null, playing = false, step = 0;
   var CH = [[57, 60, 64, 67, 71], [53, 57, 60, 64, 67], [48, 55, 60, 64, 67], [55, 59, 62, 66, 69]];   // Am9 · Fmaj7 · Cmaj7 · G6
