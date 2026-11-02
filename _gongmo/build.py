@@ -270,7 +270,7 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False, noinde
 {body}{PAGE_INTRO.get(path, '')}
 </main>
 <footer class="ft"><div class="w ft-in"><div class="ft-b"><img class="av" src="/assets/ruri/avatar.webp" width="56" height="56" alt="루리" loading="lazy"><div><b>루리의 줍줍</b><p>오늘 뭐 먹지부터 지원금·공모전·이슈까지, 일단 줍고 가세요.</p><p class="ft-m">문의 <a href="mailto:{MAIL}">{MAIL}</a>{"" if PARTNER == MAIL else f' · 제휴 <a href="mailto:{PARTNER}">{PARTNER}</a>'}</p></div></div>
-<nav class="ft-g" aria-label="사이트 메뉴"><div><b>🍳 생활</b><a href="/fridge/">건강 레시피</a><a href="/event/">경품·용돈</a><a href="/qa/">고민 해결</a><a href="/plaza/">광장</a><a href="/play/">🎮 미니게임</a></div>
+<nav class="ft-g" aria-label="사이트 메뉴"><div><b>🍳 생활</b><a href="/fridge/">건강 레시피</a><a href="/event/">경품·용돈</a><a href="/qa/">고민 해결</a><a href="/plaza/">광장</a><a href="/play/">🎮 미니게임</a><a href="/ref/">📎 기준 자료</a><a href="/evergreen/">🔁 커뮤니티 관심사</a></div>
 <div><b>💰 지원금·머니</b><a href="/apply/">지원금·청약</a><a href="/money/tools/salary/">계산기</a><a href="/money/experts/">전문가 말 vs 시세</a><a href="/analyst/">애널리스트</a></div>
 <div><b>🏆 공모전</b><a href="/contest/">공모전 찾기</a><a href="/prep/">준비실</a><a href="/guide/">응모 가이드</a><a href="/lab/">수상 연구소</a></div>
 <div><b>📺 이슈</b><a href="/news/">루리 뉴스</a><a href="/trend/">이슈 트렌드</a><a href="/hot/">핫이슈</a><a href="/kw/">인기 키워드</a></div>
@@ -609,7 +609,11 @@ def ref_urls():
     return [f'/ref/{f[:-3]}/' for f in sorted(os.listdir(d_)) if f.endswith('.md')] if os.path.isdir(d_) else []
 
 
+_REFS = []
+
+
 def ref_pages():
+    _REFS.clear()
     """2026-10-30 홍보 요청 「기준 자료형」 글: 남이 출처로 링크할 수 있는 원본 페이지(/ref/<슬러그>/). 작가 원고(_gongmo/ref/<슬러그>.md)를 본문 수정 없이 그대로 싣는다."""
     import md2html as MD
     d_ = os.path.join(HERE, 'ref')
@@ -622,8 +626,20 @@ def ref_pages():
             desc = re.sub(r'[ ]+', ' ', _p)[:150]
         ld = {'@context': 'https://schema.org', '@type': 'Article', 'headline': title, 'description': desc, 'inLanguage': 'ko', 'datePublished': '2026-10-30', 'dateModified': '2026-10-30',
               'mainEntityOfPage': SITE + u, 'author': {'@type': 'Organization', 'name': '루리의 줍줍 편집', 'url': SITE + '/'}, 'publisher': {'@type': 'Organization', 'name': NAME, 'url': SITE + '/'}}
+        _REFS.append((u, title, desc))
         page(u, title, desc, f'<p class="bc"><a href="/">홈</a> › <a href="/guide/">가이드</a> › 기준 자료</p><h1>{E(title)}</h1><div class="art">{body}</div><link rel="stylesheet" href="/assets/guide/guide.css?v=6">',
              [('루리의 줍줍', '/'), ('가이드', '/guide/'), ('기준 자료', u)], ld)
+
+
+def ref_hub():
+    """/ref/ 허브: 기준 자료 글 모음(고아 페이지 연결 겸 색인 경로, 2026-11-02)"""
+    if not _REFS:
+        return []
+    li = ''.join(f'<li><a href="{u}"><b>{E(t)}</b><span>{E(d)}</span></a></li>' for u, t, d in _REFS)
+    page('/ref/', '기준 자료 모음 — 날짜·금액 한눈에 정리', '신청 일정, 공제 한도처럼 숫자와 날짜가 중요한 주제를 출처와 확인일을 붙여 정리한 기준 자료 모음이에요.',
+         f'<p class="bc"><a href="/">홈</a> › 기준 자료</p><h1>📎 기준 자료 모음</h1><p>숫자와 날짜가 자주 바뀌는 주제를 공식 출처와 확인일을 붙여 한 장으로 정리했어요.</p><ul class="list">{li}</ul>',
+         [('루리의 줍줍', '/'), ('기준 자료', '/ref/')])
+    return ['/ref/']
 
 
 def gone_pages():
@@ -2585,8 +2601,9 @@ def build():
     me_pages()
     statics(len(live), len(events))
     ref_pages()
+    _ref_hub_urls = ref_hub()
     urls = ['/', '/contest/', '/apply/', '/event/', '/guide/', '/ssul/'] + lab_urls + [f'/ssul/{x["slug"]}/' for x in ss] + [f'/a/{a["id"]}/' for a in aps] + [f'/cat/{s}/' for s, _ in CATS] + [f'/guide/{g[0]}/' for g in GUIDES] + ['/qa/', '/prep/', '/fridge/', '/app/', '/news/'] + extra_urls + [f'/guide/{q["slug"]}/' for q in QA] + \
-           ['/about/', '/privacy/', '/terms/', '/contact/', '/collab/', '/play/', '/play/survivor/', '/play/dice/', '/play/2048/', '/play/memory/', '/play/runner/', '/play/dodge/', '/play/clicker/', '/play/mole/', '/play/snake/', '/ruri/dress/'] + ref_urls() + [f'/c/{c["id"]}/' for c in contests]
+           ['/about/', '/privacy/', '/terms/', '/contact/', '/collab/', '/play/', '/play/survivor/', '/play/dice/', '/play/2048/', '/play/memory/', '/play/runner/', '/play/dodge/', '/play/clicker/', '/play/mole/', '/play/snake/', '/ruri/dress/'] + ref_urls() + _ref_hub_urls + [f'/c/{c["id"]}/' for c in contests]
     gone_pages()
     import finder   # 공모전 자동 자료 찾기 색인·질의 (2026-10-19)
     print('자료 색인', finder.build_index(urls, NOINDEX, {c['id'] for c in live}), '질의', len(finder.build_queries(live, notice_points)))

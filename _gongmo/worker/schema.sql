@@ -221,3 +221,6 @@ CREATE TABLE IF NOT EXISTS kw_vote_seen (day TEXT NOT NULL, h TEXT NOT NULL, PRI
 CREATE TABLE IF NOT EXISTS survey_answers (kind TEXT NOT NULL, day TEXT NOT NULL, vh TEXT NOT NULL, a TEXT NOT NULL, ts INTEGER NOT NULL, PRIMARY KEY (kind, day, vh));
 CREATE TABLE IF NOT EXISTS watch_votes (kind TEXT NOT NULL, id TEXT NOT NULL, vh TEXT NOT NULL, v INTEGER NOT NULL, ts INTEGER NOT NULL, PRIMARY KEY (kind, id, vh));
 CREATE INDEX IF NOT EXISTS watch_votes_k ON watch_votes(kind, id);
+
+-- 2026-11-02 일별 유입 경로: 그날 처음 들어온 방문자의 (채널 × 첫 페이지) 방문자 수. 원본 hits 가 아니라 요약이라 읽기 부담이 작다
+CREATE TABLE IF NOT EXISTS hit_daily (day TEXT NOT NULL, ch TEXT NOT NULL, path TEXT NOT NULL, v INTEGER NOT NULL DEFAULT 0, PRIMARY KEY (day, ch, path));

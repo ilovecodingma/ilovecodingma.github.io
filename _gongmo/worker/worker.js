@@ -182,6 +182,30 @@ async function oauth(req, env, url, prov, act) {
   return new Response(null, { status: 302, headers: { Location: SITE + back.split('#')[0] + '#jt=' + token + '&jn=' + encodeURIComponent(u.nick), 'Set-Cookie': 'jo=; Path=/api/oauth; Max-Age=0' } });
 }
 
+async function fillInflow(env) {   // 매시: 오늘·어제 hits 만 읽어 (채널 × 첫 페이지)별 방문자 수를 hit_daily 에 덮어쓴다
+  const kd = m => new Date(Date.now() + 9 * 3600e3 - m * 86400e3).toISOString().slice(0, 10);
+  const d0 = kd(1);
+  const rows = (await env.DB.prepare('SELECT day, ts, vid, uid, path, ref, country FROM hits WHERE day >= ?').bind(d0).all()).results || [];
+  const mxr = new Map();   // 해외에서 링크 없이만 온 방문(자동 점검 프로그램)은 제외 — 방문 통계와 같은 판정
+  for (const h of rows) { const c = h.country || ''; if (c === 'KR' || c === '') continue; const r0 = h.ref || '', p0 = mxr.get(h.vid); if (p0 === undefined || r0 > p0) mxr.set(h.vid, r0); }
+  const bot = new Set(); for (const [v, m] of mxr) if (m === '') bot.add(v);
+  const first = new Map();
+  for (const h of rows) {
+    if (bot.has(h.vid) || ADMINS.includes(h.uid)) continue;
+    const k = h.vid + '|' + h.day, o = first.get(k); if (!o || h.ts < o.ts) first.set(k, h);
+  }
+  const agg = new Map();
+  for (const h of first.values()) { const k = h.day + '\u0001' + chan(h.ref || '') + '\u0001' + (h.path || '/'); agg.set(k, (agg.get(k) || 0) + 1); }
+  const perDay = new Map();
+  for (const [k, v] of agg) { const [day, ch, path] = k.split('\u0001'); if (!perDay.has(day)) perDay.set(day, []); perDay.get(day).push({ day, ch, path, v }); }
+  const q = [];
+  for (const [day, L] of perDay) {
+    q.push(env.DB.prepare('DELETE FROM hit_daily WHERE day = ?').bind(day));
+    for (const x of L.sort((a, b) => b.v - a.v).slice(0, 300)) q.push(env.DB.prepare('INSERT INTO hit_daily (day, ch, path, v) VALUES (?, ?, ?, ?)').bind(x.day, x.ch, x.path.slice(0, 120), x.v));
+  }
+  if (q.length) await env.DB.batch(q);
+}
+
 export default {
   async fetch(req, env) {
     if (req.method === 'OPTIONS') return new Response(null, { headers: cors(req) });
@@ -990,5 +1014,6 @@ export default {
   },
   async scheduled(ev, env, ctx) {
     if (ev.cron === '30 23 * * *') ctx.waitUntil(kakaoAlerts(env));
+    if (ev.cron === '7 * * * *') ctx.waitUntil(fillInflow(env));
   },
 };
