@@ -114,7 +114,8 @@ def _today_hot_sec():
     cards = []
     idir = os.path.join(here, 'issues')
     if os.path.isdir(idir):
-        for fn in sorted(os.listdir(idir), reverse=True):
+        _lst = []
+        for fn in os.listdir(idir):
             if not fn.endswith('.json'):
                 continue
             try:
@@ -122,6 +123,8 @@ def _today_hot_sec():
                 d0 = datetime.date.fromisoformat(c['date'])
             except Exception:
                 continue
+            _lst.append((d0.isoformat(), int(c.get('priority', 0)), os.path.getmtime(os.path.join(idir, fn)), c, d0))
+        for _dd, _pr, _mt, c, d0 in sorted(_lst, key=lambda x: (x[0], x[1], x[2]), reverse=True):   # 최신 날짜 → priority(마케터 지정, 클수록 위) → 최근 수정 순
             if (today - d0).days > int(c.get('keep_days', 4)) or not os.path.exists(os.path.join(root, 'issue', c['slug'], 'index.html')):
                 continue
             cards.append((d0.isoformat(), f'/issue/{c["slug"]}/', c['h1'], f'{c["date"][5:].replace("-", "/")} 기준 · 이슈 정리'))
