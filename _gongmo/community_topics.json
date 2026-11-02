@@ -1,22 +1,22 @@
 {
  "date": "2026-11-02",
- "updated": "2026-11-02 14:50",
+ "updated": "2026-11-02 15:50",
  "sites": 13,
- "npost": 2653,
+ "npost": 2646,
  "note": "출처(커뮤니티)별 집계예요. 작성자·연령·성별 정보는 수집하지 않아요. posts 는 이슈별로 뽑힌 일부라 전체 글 수가 아니에요.",
  "sources": [
   {
    "name": "MLB파크",
-   "np": 23,
-   "nc": 1863,
+   "np": 24,
+   "nc": 1685,
    "topics": [
     {
      "t": "2026 JTBC 서울 마라톤 풀코스 후기",
      "nsite": 6,
      "np_here": 6,
-     "nc_here": 497,
+     "nc_here": 504,
      "issue_np": 13,
-     "issue_nc": 538,
+     "issue_nc": 545,
      "kw": [
       "마라톤",
       "JTBC",
@@ -36,9 +36,9 @@
      "issue_np": 2,
      "issue_nc": 231,
      "kw": [
-      "비난",
+      "장항준",
       "연예인",
-      "장항준"
+      "비난"
      ],
      "top_post": {
       "t": "장항준 감독왈 사회가 연예인을 비난하는건 만만한 사람들 향한 린치",
@@ -47,32 +47,17 @@
      }
     },
     {
-     "t": "한국이 진짜 선진국 된거 같네요",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 229,
-     "issue_np": 2,
-     "issue_nc": 229,
-     "kw": [
-      "한국",
-      "선진국"
-     ],
-     "top_post": {
-      "t": "한국이 진짜 선진국 된거 같네요",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611010119797611&m=view",
-      "nc": 229
-     }
-    },
-    {
      "t": "현재 난리난 인종차별 영상 ㄷㄷ..",
-     "nsite": 2,
+     "nsite": 3,
      "np_here": 1,
      "nc_here": 183,
-     "issue_np": 2,
-     "issue_nc": 183,
+     "issue_np": 3,
+     "issue_nc": 185,
      "kw": [
       "인종",
-      "차별"
+      "차별",
+      "감독",
+      "박항서"
      ],
      "top_post": {
       "t": "현재 난리난 인종차별 영상 ㄷㄷ..",
@@ -82,21 +67,40 @@
     },
     {
      "t": "할로윈 미쳤네요 홍대",
-     "nsite": 4,
-     "np_here": 3,
-     "nc_here": 138,
-     "issue_np": 10,
-     "issue_nc": 142,
+     "nsite": 3,
+     "np_here": 4,
+     "nc_here": 142,
+     "issue_np": 9,
+     "issue_nc": 146,
      "kw": [
-      "홍대",
       "할로윈",
+      "홍대",
       "모텔",
       "데이"
      ],
      "top_post": {
       "t": "할로윈 미쳤네요 홍대",
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611020119828463&m=view",
-      "nc": 57
+      "nc": 61
+     }
+    },
+    {
+     "t": "베트남 더이상 하청국가 역할 하지 않을것 선언",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 125,
+     "issue_np": 4,
+     "issue_nc": 134,
+     "kw": [
+      "하청",
+      "베트남",
+      "국가",
+      "역할"
+     ],
+     "top_post": {
+      "t": "베트남 더이상 하청국가 역할 하지 않을것 선언",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611020119829636&m=view",
+      "nc": 125
      }
     },
     {
@@ -107,34 +111,15 @@
      "issue_np": 3,
      "issue_nc": 163,
      "kw": [
-      "사형",
-      "소년",
       "선고",
+      "소년",
+      "사형",
       "일본"
      ],
      "top_post": {
       "t": "10대소년에게 사형선고 내린 일본",
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611010119797626&m=view",
       "nc": 121
-     }
-    },
-    {
-     "t": "베트남 더이상 하청국가 역할 하지 않을것 선언",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 105,
-     "issue_np": 4,
-     "issue_nc": 114,
-     "kw": [
-      "역할",
-      "하청",
-      "국가",
-      "베트남"
-     ],
-     "top_post": {
-      "t": "베트남 더이상 하청국가 역할 하지 않을것 선언",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611020119829636&m=view",
-      "nc": 105
      }
     },
     {
@@ -145,15 +130,34 @@
      "issue_np": 3,
      "issue_nc": 111,
      "kw": [
+      "남편",
       "산모",
       "간호사",
-      "산부인과",
-      "남편"
+      "산부인과"
      ],
      "top_post": {
       "t": "산모 남편에게 번따 당한 산부인과 간호사ㄷㄷ",
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611010119822076&m=view",
       "nc": 86
+     }
+    },
+    {
+     "t": "최불암 빈소에서 딸 역할하는 김혜수",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 72,
+     "issue_np": 5,
+     "issue_nc": 116,
+     "kw": [
+      "최불암",
+      "빈소",
+      "김혜수",
+      "역할"
+     ],
+     "top_post": {
+      "t": "최불암 빈소에서 딸 역할하는 김혜수",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611010119820891&m=view",
+      "nc": 72
      }
     }
    ]
@@ -161,7 +165,7 @@
   {
    "name": "인스티즈",
    "np": 7,
-   "nc": 370,
+   "nc": 359,
    "topics": [
     {
      "t": "행정안전부 장관 \"콜 오브 듀티 국내 접속 차단 검토\"",
@@ -171,9 +175,9 @@
      "issue_np": 2,
      "issue_nc": 169,
      "kw": [
-      "장관",
+      "콜 오브 듀티",
+      "접속",
       "행정",
-      "차단",
       "안전부"
      ],
      "top_post": {
@@ -183,20 +187,22 @@
      }
     },
     {
-     "t": "[재혼황후] 오늘 영화가좋다에서 공개된 드라마 장면",
-     "nsite": 2,
+     "t": "40년만에 드디어 카르텔 깨져서 가격 낮아진다는 고속도로 휴게소",
+     "nsite": 3,
      "np_here": 1,
-     "nc_here": 89,
-     "issue_np": 2,
-     "issue_nc": 132,
+     "nc_here": 78,
+     "issue_np": 3,
+     "issue_nc": 78,
      "kw": [
-      "공개",
-      "재혼황후"
+      "휴게소",
+      "카르텔",
+      "도로",
+      "고속"
      ],
      "top_post": {
-      "t": "[재혼황후] 오늘 영화가좋다에서 공개된 드라마 장면",
-      "u": "https://www.instiz.net/pt/7920395?green=1",
-      "nc": 89
+      "t": "40년만에 드디어 카르텔 깨져서 가격 낮아진다는 고속도로 휴게소",
+      "u": "https://www.instiz.net/pt/7920618?green=1",
+      "nc": 78
      }
     },
     {
@@ -207,8 +213,8 @@
      "issue_np": 3,
      "issue_nc": 66,
      "kw": [
-      "주식",
-      "과장"
+      "과장",
+      "주식"
      ],
      "top_post": {
       "t": "우리 회사 과장 주식 꼴아박아서 집에서 쫓겨나심",
@@ -224,8 +230,8 @@
      "issue_np": 2,
      "issue_nc": 110,
      "kw": [
-      "계란",
-      "후라이"
+      "후라이",
+      "계란"
      ],
      "top_post": {
       "t": "계란후라이 셀프 코너에서 \"아가씨 내꺼도 하나해줘\" 논란",
@@ -258,12 +264,12 @@
      "np_here": 1,
      "nc_here": 9,
      "issue_np": 4,
-     "issue_nc": 114,
+     "issue_nc": 134,
      "kw": [
-      "역할",
       "하청",
+      "베트남",
       "국가",
-      "베트남"
+      "역할"
      ],
      "top_post": {
       "t": "이제 더 이상 하청국가 역할은 하지않겠다고 선언한 베트남",
@@ -276,152 +282,18 @@
      "nsite": 3,
      "np_here": 1,
      "nc_here": 5,
-     "issue_np": 4,
+     "issue_np": 3,
      "issue_nc": 5,
      "kw": [
       "최불암",
-      "배우",
+      "별세",
       "국민",
-      "별세"
+      "아버지"
      ],
      "top_post": {
       "t": "[속보] '국민 아버지' 배우 최불암 별세…향년 87세",
       "u": "https://www.instiz.net/pt/7919472?page=1&srt=3&k=",
       "nc": 5
-     }
-    }
-   ]
-  },
-  {
-   "name": "개드립",
-   "np": 7,
-   "nc": 213,
-   "topics": [
-    {
-     "t": "국밥계의 충무김밥이 되고 있는 음식",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 49,
-     "issue_np": 3,
-     "issue_nc": 52,
-     "kw": [
-      "국밥",
-      "음식",
-      "충무김밥"
-     ],
-     "top_post": {
-      "t": "국밥계의 충무김밥이 되고 있는 음식",
-      "u": "https://www.dogdrip.net/dogdrip/732638732?sort_index=popular&page=1",
-      "nc": 49
-     }
-    },
-    {
-     "t": "[재혼황후] 오늘 영화가좋다에서 공개된 드라마 장면",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 43,
-     "issue_np": 2,
-     "issue_nc": 132,
-     "kw": [
-      "공개",
-      "재혼황후"
-     ],
-     "top_post": {
-      "t": "영화가 좋다에서 공개된 재혼황후",
-      "u": "https://www.dogdrip.net/dogdrip/732775216?sort_index=popular&page=1",
-      "nc": 43
-     }
-    },
-    {
-     "t": "10대소년에게 사형선고 내린 일본",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 39,
-     "issue_np": 3,
-     "issue_nc": 163,
-     "kw": [
-      "사형",
-      "소년",
-      "선고",
-      "일본"
-     ],
-     "top_post": {
-      "t": "10대소년에게 사형선고 내린 일본",
-      "u": "https://www.dogdrip.net/dogdrip/732571801?sort_index=popular&page=1",
-      "nc": 39
-     }
-    },
-    {
-     "t": "도서관 책 실수로 찢었을때 테이프 붙여오면 안되는 이유",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 35,
-     "issue_np": 3,
-     "issue_nc": 35,
-     "kw": [
-      "도서관",
-      "테이프",
-      "실수"
-     ],
-     "top_post": {
-      "t": "도서관 책 실수로 찢었을때 테이프 붙여오면 안되는 이유",
-      "u": "https://www.dogdrip.net/dogdrip/732693500?sort_index=popular&page=1",
-      "nc": 35
-     }
-    },
-    {
-     "t": "산모 남편에게 번따 당한 산부인과 간호사ㄷㄷ",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 25,
-     "issue_np": 3,
-     "issue_nc": 111,
-     "kw": [
-      "산모",
-      "간호사",
-      "산부인과",
-      "남편"
-     ],
-     "top_post": {
-      "t": "산모 남편에게 번따 당한 산부인과 간호사",
-      "u": "https://www.dogdrip.net/dogdrip/732673198?sort_index=popular&page=1",
-      "nc": 25
-     }
-    },
-    {
-     "t": "???: AI 너무 징그러워요... 이걸 컨펌 시키냐고...",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 12,
-     "issue_np": 3,
-     "issue_nc": 12,
-     "kw": [
-      "컨펌",
-      "AI"
-     ],
-     "top_post": {
-      "t": "???: AI 음식사진 너무 징그러워요... 이걸 컨펌 시키냐고...",
-      "u": "https://www.dogdrip.net/dogdrip/732731372?sort_index=popular&page=1",
-      "nc": 12
-     }
-    },
-    {
-     "t": "성적인 로봇 모델 출시 예고?",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 10,
-     "issue_np": 4,
-     "issue_nc": 10,
-     "kw": [
-      "출시",
-      "로봇",
-      "야스",
-      "성인"
-     ],
-     "top_post": {
-      "t": "드디어 출시한다는 성인용 야스 로봇 근황 ㄷㄷㄷㄷ",
-      "u": "https://www.dogdrip.net/dogdrip/732635074?sort_index=popular&page=1",
-      "nc": 10
      }
     }
    ]
@@ -456,8 +328,8 @@
      "issue_np": 5,
      "issue_nc": 54,
      "kw": [
-      "세계",
       "한국",
+      "세계",
       "수출",
       "속보"
      ],
@@ -475,9 +347,9 @@
      "issue_np": 2,
      "issue_nc": 169,
      "kw": [
-      "장관",
+      "콜 오브 듀티",
+      "접속",
       "행정",
-      "차단",
       "안전부"
      ],
      "top_post": {
@@ -496,8 +368,8 @@
      "kw": [
       "지원금",
       "청년",
-      "속보",
-      "수도"
+      "수도",
+      "속보"
      ],
      "top_post": {
       "t": "[속보] 최휘영 “19~34세 모든 청년에 수도권 10만, 비수도권 15만원 매년 지원금…문화",
@@ -508,8 +380,185 @@
    ]
   },
   {
+   "name": "개드립",
+   "np": 6,
+   "nc": 170,
+   "topics": [
+    {
+     "t": "국밥계의 충무김밥이 되고 있는 음식",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 49,
+     "issue_np": 3,
+     "issue_nc": 52,
+     "kw": [
+      "국밥",
+      "충무김밥",
+      "음식"
+     ],
+     "top_post": {
+      "t": "국밥계의 충무김밥이 되고 있는 음식",
+      "u": "https://www.dogdrip.net/dogdrip/732638732?sort_index=popular&page=1",
+      "nc": 49
+     }
+    },
+    {
+     "t": "10대소년에게 사형선고 내린 일본",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 39,
+     "issue_np": 3,
+     "issue_nc": 163,
+     "kw": [
+      "선고",
+      "소년",
+      "사형",
+      "일본"
+     ],
+     "top_post": {
+      "t": "10대소년에게 사형선고 내린 일본",
+      "u": "https://www.dogdrip.net/dogdrip/732571801?sort_index=popular&page=1",
+      "nc": 39
+     }
+    },
+    {
+     "t": "도서관 책 실수로 찢었을때 테이프 붙여오면 안되는 이유",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 35,
+     "issue_np": 3,
+     "issue_nc": 35,
+     "kw": [
+      "도서관",
+      "테이프",
+      "실수"
+     ],
+     "top_post": {
+      "t": "도서관 책 실수로 찢었을때 테이프 붙여오면 안되는 이유",
+      "u": "https://www.dogdrip.net/dogdrip/732693500?sort_index=popular&page=1",
+      "nc": 35
+     }
+    },
+    {
+     "t": "산모 남편에게 번따 당한 산부인과 간호사ㄷㄷ",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 25,
+     "issue_np": 3,
+     "issue_nc": 111,
+     "kw": [
+      "남편",
+      "산모",
+      "간호사",
+      "산부인과"
+     ],
+     "top_post": {
+      "t": "산모 남편에게 번따 당한 산부인과 간호사",
+      "u": "https://www.dogdrip.net/dogdrip/732673198?sort_index=popular&page=1",
+      "nc": 25
+     }
+    },
+    {
+     "t": "???: AI 너무 징그러워요... 이걸 컨펌 시키냐고...",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 12,
+     "issue_np": 3,
+     "issue_nc": 12,
+     "kw": [
+      "AI",
+      "컨펌"
+     ],
+     "top_post": {
+      "t": "???: AI 음식사진 너무 징그러워요... 이걸 컨펌 시키냐고...",
+      "u": "https://www.dogdrip.net/dogdrip/732731372?sort_index=popular&page=1",
+      "nc": 12
+     }
+    },
+    {
+     "t": "성적인 로봇 모델 출시 예고?",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 10,
+     "issue_np": 4,
+     "issue_nc": 10,
+     "kw": [
+      "출시",
+      "로봇",
+      "야스",
+      "성인"
+     ],
+     "top_post": {
+      "t": "드디어 출시한다는 성인용 야스 로봇 근황 ㄷㄷㄷㄷ",
+      "u": "https://www.dogdrip.net/dogdrip/732635074?sort_index=popular&page=1",
+      "nc": 10
+     }
+    }
+   ]
+  },
+  {
+   "name": "네이트판",
+   "np": 6,
+   "nc": 26,
+   "topics": [
+    {
+     "t": "네이버페이 117원 (신속히 받으세요)",
+     "nsite": 5,
+     "np_here": 3,
+     "nc_here": 14,
+     "issue_np": 12,
+     "issue_nc": 22,
+     "kw": [
+      "네이버",
+      "페이",
+      "포인트",
+      "조사"
+     ],
+     "top_post": {
+      "t": "ㅈㄱㄴ..⭐ 이거 설문조사 앱인데 설문조사 하고나면 네이버페이 포인트나 현금으로 받을수있음 ...",
+      "u": "https://pann.nate.com/talk/375697027",
+      "nc": 7
+     }
+    },
+    {
+     "t": "요즘 20대 여자들이 원하는 남자조건",
+     "nsite": 5,
+     "np_here": 2,
+     "nc_here": 6,
+     "issue_np": 6,
+     "issue_nc": 49,
+     "kw": [
+      "여자",
+      "남자"
+     ],
+     "top_post": {
+      "t": "여자가 이런사람 둘을 알면 누굴 택하겠냐?당연히 겪어보니 진국인 사람이지 안그러냐 그남자야?",
+      "u": "https://pann.nate.com/talk/375696801",
+      "nc": 4
+     }
+    },
+    {
+     "t": "포니랑 같이 준비한 할로윈룩ㄷㄷ 루시 코스프레 진짜 정성 들여서 준비한게 느껴져서...",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 6,
+     "issue_np": 4,
+     "issue_nc": 6,
+     "kw": [
+      "코스프레",
+      "할로윈"
+     ],
+     "top_post": {
+      "t": "포니랑 같이 준비한 할로윈룩ㄷㄷ 루시 코스프레 진짜 정성 들여서 준비한게 느껴져서...",
+      "u": "https://pann.nate.com/talk/375698431",
+      "nc": 6
+     }
+    }
+   ]
+  },
+  {
    "name": "보배드림",
-   "np": 11,
+   "np": 12,
    "nc": 26,
    "topics": [
     {
@@ -533,14 +582,14 @@
     },
     {
      "t": "할로윈 미쳤네요 홍대",
-     "nsite": 4,
+     "nsite": 3,
      "np_here": 2,
      "nc_here": 4,
-     "issue_np": 10,
-     "issue_nc": 142,
+     "issue_np": 9,
+     "issue_nc": 146,
      "kw": [
-      "홍대",
       "할로윈",
+      "홍대",
       "모텔",
       "데이"
      ],
@@ -558,9 +607,9 @@
      "issue_np": 3,
      "issue_nc": 163,
      "kw": [
-      "사형",
-      "소년",
       "선고",
+      "소년",
+      "사형",
       "일본"
      ],
      "top_post": {
@@ -578,8 +627,8 @@
      "issue_nc": 52,
      "kw": [
       "국밥",
-      "음식",
-      "충무김밥"
+      "충무김밥",
+      "음식"
      ],
      "top_post": {
       "t": "갑자기 국밥계의 충무김밥이 되어 가고 있는 음식",
@@ -595,8 +644,8 @@
      "issue_np": 3,
      "issue_nc": 3,
      "kw": [
-      "마라톤",
       "잠실",
+      "마라톤",
       "근처"
      ],
      "top_post": {
@@ -606,21 +655,22 @@
      }
     },
     {
-     "t": "외국인이 한국 식당에서 가장 충격먹는 것",
+     "t": "현재 난리난 인종차별 영상 ㄷㄷ..",
      "nsite": 3,
      "np_here": 1,
-     "nc_here": 3,
+     "nc_here": 2,
      "issue_np": 3,
-     "issue_nc": 3,
+     "issue_nc": 185,
      "kw": [
-      "외국인",
-      "한국",
-      "식당"
+      "인종",
+      "차별",
+      "감독",
+      "박항서"
      ],
      "top_post": {
-      "t": "외국인이 한국 식당에서 가장 충격먹는 것",
-      "u": "https://www.bobaedream.co.kr/view?code=best&No=1044399&vdate=",
-      "nc": 3
+      "t": "인종 차별 당한 박항서 감독",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1044594&vdate=",
+      "nc": 2
      }
     },
     {
@@ -632,9 +682,9 @@
      "issue_nc": 32,
      "kw": [
       "여자",
-      "연애",
-      "환승",
-      "전문가"
+      "전문가",
+      "친구",
+      "연애"
      ],
      "top_post": {
       "t": "여자친구가 알고보니 환승 전문가라면?",
@@ -647,7 +697,7 @@
      "nsite": 3,
      "np_here": 1,
      "nc_here": 2,
-     "issue_np": 8,
+     "issue_np": 7,
      "issue_nc": 2,
      "kw": [
       "한국",
@@ -705,51 +755,8 @@
    ]
   },
   {
-   "name": "네이트판",
-   "np": 5,
-   "nc": 20,
-   "topics": [
-    {
-     "t": "네이버페이 117원 (신속히 받으세요)",
-     "nsite": 5,
-     "np_here": 3,
-     "nc_here": 14,
-     "issue_np": 12,
-     "issue_nc": 22,
-     "kw": [
-      "페이",
-      "네이버",
-      "포인트",
-      "현금"
-     ],
-     "top_post": {
-      "t": "ㅈㄱㄴ..⭐ 이거 설문조사 앱인데 설문조사 하고나면 네이버페이 포인트나 현금으로 받을수있음 ...",
-      "u": "https://pann.nate.com/talk/375697027",
-      "nc": 7
-     }
-    },
-    {
-     "t": "요즘 20대 여자들이 원하는 남자조건",
-     "nsite": 5,
-     "np_here": 2,
-     "nc_here": 6,
-     "issue_np": 6,
-     "issue_nc": 49,
-     "kw": [
-      "여자",
-      "남자"
-     ],
-     "top_post": {
-      "t": "여자가 이런사람 둘을 알면 누굴 택하겠냐?당연히 겪어보니 진국인 사람이지 안그러냐 그남자야?",
-      "u": "https://pann.nate.com/talk/375696801",
-      "nc": 4
-     }
-    }
-   ]
-  },
-  {
    "name": "디시인사이드",
-   "np": 9,
+   "np": 8,
    "nc": 0,
    "topics": [
     {
@@ -777,14 +784,32 @@
      "issue_np": 5,
      "issue_nc": 54,
      "kw": [
-      "세계",
       "한국",
+      "세계",
       "수출",
       "속보"
      ],
      "top_post": {
       "t": "한국, 수출 1조 달러 전망.. 세계 4위 기염.news",
       "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=474699&_dcbest=1&page=1",
+      "nc": 0
+     }
+    },
+    {
+     "t": "오늘 미국서 9명을 태운 제트기 추락..",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 5,
+     "issue_nc": 36,
+     "kw": [
+      "제트기",
+      "추락",
+      "미국"
+     ],
+     "top_post": {
+      "t": "[싱갤뉴스] 몇시간전 미국 팜비치 제트기 추락, 9명 사망 ㄷㄷ",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=474886&_dcbest=1&page=1",
       "nc": 0
      }
     },
@@ -798,30 +823,12 @@
      "kw": [
       "지원금",
       "청년",
-      "속보",
-      "수도"
+      "수도",
+      "속보"
      ],
      "top_post": {
       "t": "19~34세 모든 청년에 수도권 10만, 비수도권 15만원 매년 지원금",
       "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=474723&_dcbest=1&page=1",
-      "nc": 0
-     }
-    },
-    {
-     "t": "오늘 미국서 9명을 태운 제트기 추락..",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 16,
-     "kw": [
-      "추락",
-      "제트기",
-      "미국"
-     ],
-     "top_post": {
-      "t": "[싱갤뉴스] 몇시간전 미국 팜비치 제트기 추락, 9명 사망 ㄷㄷ",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=474886&_dcbest=1&page=1",
       "nc": 0
      }
     },
@@ -849,13 +856,13 @@
      "nsite": 3,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 4,
+     "issue_np": 3,
      "issue_nc": 5,
      "kw": [
       "최불암",
-      "배우",
+      "별세",
       "국민",
-      "별세"
+      "아버지"
      ],
      "top_post": {
       "t": "국민아버지 고(故) 최불암 빈소찾는 스타들 근황..",
@@ -864,20 +871,21 @@
      }
     },
     {
-     "t": "외국인이 한국 식당에서 가장 충격먹는 것",
+     "t": "[단독]교도소 7만명 민생지원금 수령…“숙식 제공받는데 맞나” 지적",
      "nsite": 3,
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 3,
-     "issue_nc": 3,
+     "issue_nc": 1,
      "kw": [
-      "외국인",
-      "한국",
-      "식당"
+      "교도소",
+      "지원금",
+      "수령",
+      "숙식"
      ],
      "top_post": {
-      "t": "국가별 외국인 식당 분위기",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=474858&_dcbest=1&page=1",
+      "t": "[단독]교도소 7만명 민생지원금 수령…“숙식 제공받는데 맞나” 지적",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=474896&_dcbest=1&page=1",
       "nc": 0
      }
     },
@@ -889,9 +897,9 @@
      "issue_np": 2,
      "issue_nc": 231,
      "kw": [
-      "비난",
+      "장항준",
       "연예인",
-      "장항준"
+      "비난"
      ],
      "top_post": {
       "t": "장항준,연예인 향한 집단 비난 “만만해 보여서 공격하는 것”",
@@ -903,7 +911,7 @@
   },
   {
    "name": "루리웹",
-   "np": 21,
+   "np": 22,
    "nc": 0,
    "topics": [
     {
@@ -918,8 +926,8 @@
       "남자"
      ],
      "top_post": {
-      "t": "남자 침대 VS 여자 침대",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77234583?m=all&t=now",
+      "t": "남자들은 빨리 깨달아야 하는 건데, 사실 여자들은 갑이 될 생각이 없다",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77245187?m=all&t=now",
       "nc": 0
      }
     },
@@ -931,10 +939,10 @@
      "issue_np": 12,
      "issue_nc": 22,
      "kw": [
-      "페이",
       "네이버",
+      "페이",
       "포인트",
-      "현금"
+      "조사"
      ],
      "top_post": {
       "t": "핫딜 [네이버페이] 일일적립, 클릭 42원, 라이브예고 6원",
@@ -950,8 +958,8 @@
      "issue_np": 5,
      "issue_nc": 54,
      "kw": [
-      "세계",
       "한국",
+      "세계",
       "수출",
       "속보"
      ],
@@ -966,16 +974,35 @@
      "nsite": 4,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 16,
+     "issue_np": 5,
+     "issue_nc": 36,
      "kw": [
-      "추락",
       "제트기",
+      "추락",
       "미국"
      ],
      "top_post": {
       "t": "플로리다에 제트기 추락했다고함",
       "u": "https://bbs.ruliweb.com/best/board/300143/read/77241279?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "현재 난리난 인종차별 영상 ㄷㄷ..",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 185,
+     "kw": [
+      "인종",
+      "차별",
+      "감독",
+      "박항서"
+     ],
+     "top_post": {
+      "t": "박항서 감독 태국에서 인종차별 당한거 태국인들 욕 박더니",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77244920?m=all&t=now",
       "nc": 0
      }
     },
@@ -987,8 +1014,8 @@
      "issue_np": 3,
      "issue_nc": 66,
      "kw": [
-      "주식",
-      "과장"
+      "과장",
+      "주식"
      ],
      "top_post": {
       "t": "주식에 돈 다 꼬라박고 집에서 쫓겨난 과장님",
@@ -1023,31 +1050,13 @@
      "issue_nc": 32,
      "kw": [
       "여자",
-      "연애",
-      "환승",
-      "전문가"
+      "전문가",
+      "친구",
+      "연애"
      ],
      "top_post": {
       "t": "이런 여자가 와서 연애하자고 하면 할거임?",
       "u": "https://bbs.ruliweb.com/best/board/300143/read/77238847?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "한국 서울역, 공항 근황",
-     "nsite": 3,
-     "np_here": 2,
-     "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 13,
-     "kw": [
-      "공항",
-      "서울역",
-      "한국"
-     ],
-     "top_post": {
-      "t": "우리나라 서울역, 공항 근황",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77232884?m=all&t=now",
       "nc": 0
      }
     }
@@ -1055,7 +1064,7 @@
   },
   {
    "name": "더쿠",
-   "np": 13,
+   "np": 15,
    "nc": 0,
    "topics": [
     {
@@ -1066,10 +1075,10 @@
      "issue_np": 12,
      "issue_nc": 22,
      "kw": [
-      "페이",
       "네이버",
+      "페이",
       "포인트",
-      "현금"
+      "조사"
      ],
      "top_post": {
       "t": "네이버페이10원+5원+5원+1원+1원+1원+15원+15원+1원+1원+1원+랜덤 눌러봐++10원+5원+눌러눌러 보험랜덤+보험랜덤 하나더+라이브미…",
@@ -1083,12 +1092,12 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 4,
-     "issue_nc": 114,
+     "issue_nc": 134,
      "kw": [
-      "역할",
       "하청",
+      "베트남",
       "국가",
-      "베트남"
+      "역할"
      ],
      "top_post": {
       "t": "이제 더 이상 하청국가 역할은 하지않겠다고 선언한 베트남",
@@ -1104,8 +1113,8 @@
      "issue_np": 5,
      "issue_nc": 54,
      "kw": [
-      "세계",
       "한국",
+      "세계",
       "수출",
       "속보"
      ],
@@ -1125,8 +1134,8 @@
      "kw": [
       "지원금",
       "청년",
-      "속보",
-      "수도"
+      "수도",
+      "속보"
      ],
      "top_post": {
       "t": "[속보] 최휘영 “19~34세 모든 청년에 수도권 10만, 비수도권 15만원 매년 지원금…문화예술 지원”",
@@ -1142,14 +1151,33 @@
      "issue_np": 3,
      "issue_nc": 111,
      "kw": [
+      "남편",
       "산모",
       "간호사",
-      "산부인과",
-      "남편"
+      "산부인과"
      ],
      "top_post": {
       "t": "산모 남편에게 번따 당한 산부인과 간호사",
       "u": "https://theqoo.net/hot/4392807538",
+      "nc": 0
+     }
+    },
+    {
+     "t": "40년만에 드디어 카르텔 깨져서 가격 낮아진다는 고속도로 휴게소",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 78,
+     "kw": [
+      "휴게소",
+      "카르텔",
+      "도로",
+      "고속"
+     ],
+     "top_post": {
+      "t": "40년만에 드디어 카르텔 깨져서 가격 낮아진다는 고속도로 휴게소",
+      "u": "https://theqoo.net/hot/4393594070",
       "nc": 0
      }
     },
@@ -1161,8 +1189,8 @@
      "issue_np": 3,
      "issue_nc": 66,
      "kw": [
-      "주식",
-      "과장"
+      "과장",
+      "주식"
      ],
      "top_post": {
       "t": "주식 때문에 집에서 쫓겨난 뒤 얼떨결에 같이 살게 된 과장님",
@@ -1179,30 +1207,12 @@
      "issue_nc": 52,
      "kw": [
       "국밥",
-      "음식",
-      "충무김밥"
+      "충무김밥",
+      "음식"
      ],
      "top_post": {
       "t": "갑자기 국밥계의 충무김밥이 되어 가고 있는 음식",
       "u": "https://theqoo.net/hot/4392746794",
-      "nc": 0
-     }
-    },
-    {
-     "t": "도서관 책 실수로 찢었을때 테이프 붙여오면 안되는 이유",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 35,
-     "kw": [
-      "도서관",
-      "테이프",
-      "실수"
-     ],
-     "top_post": {
-      "t": "도서관 책 실수로 찢었을때 테이프 붙여오면 안되는 이유",
-      "u": "https://theqoo.net/hot/4393316345",
       "nc": 0
      }
     }
@@ -1214,21 +1224,21 @@
    "nc": 0,
    "topics": [
     {
-     "t": "할로윈 미쳤네요 홍대",
+     "t": "베트남 더이상 하청국가 역할 하지 않을것 선언",
      "nsite": 4,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 10,
-     "issue_nc": 142,
+     "issue_np": 4,
+     "issue_nc": 134,
      "kw": [
-      "홍대",
-      "할로윈",
-      "모텔",
-      "데이"
+      "하청",
+      "베트남",
+      "국가",
+      "역할"
      ],
      "top_post": {
-      "t": "홍대 할로윈 ㄷㄷ",
-      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=676481",
+      "t": "더 이상 하청국가 역할은 하지않겠다고 선언한 베트남. JPG",
+      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=676568",
       "nc": 0
      }
     },
@@ -1252,21 +1262,20 @@
      }
     },
     {
-     "t": "베트남 더이상 하청국가 역할 하지 않을것 선언",
+     "t": "오늘 미국서 9명을 태운 제트기 추락..",
      "nsite": 4,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 114,
+     "issue_np": 5,
+     "issue_nc": 36,
      "kw": [
-      "역할",
-      "하청",
-      "국가",
-      "베트남"
+      "제트기",
+      "추락",
+      "미국"
      ],
      "top_post": {
-      "t": "더 이상 하청국가 역할은 하지않겠다고 선언한 베트남. JPG",
-      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=676568",
+      "t": "제트기 추락. JPG",
+      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=676564",
       "nc": 0
      }
     },
@@ -1280,8 +1289,8 @@
      "kw": [
       "지원금",
       "청년",
-      "속보",
-      "수도"
+      "수도",
+      "속보"
      ],
      "top_post": {
       "t": "...,.,, [속보] 청년지원금 매년 지급",
@@ -1290,20 +1299,21 @@
      }
     },
     {
-     "t": "오늘 미국서 9명을 태운 제트기 추락..",
-     "nsite": 4,
+     "t": "40년만에 드디어 카르텔 깨져서 가격 낮아진다는 고속도로 휴게소",
+     "nsite": 3,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 16,
+     "issue_np": 3,
+     "issue_nc": 78,
      "kw": [
-      "추락",
-      "제트기",
-      "미국"
+      "휴게소",
+      "카르텔",
+      "도로",
+      "고속"
      ],
      "top_post": {
-      "t": "제트기 추락. JPG",
-      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=676564",
+      "t": "이재명 - 휴게소 카르텔 끝낸다!",
+      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=676542",
       "nc": 0
      }
     }
@@ -1319,7 +1329,7 @@
      "nsite": 3,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 8,
+     "issue_np": 7,
      "issue_nc": 2,
      "kw": [
       "한국",
