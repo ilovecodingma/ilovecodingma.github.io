@@ -95,6 +95,17 @@ def ver_items(ctx, limit=6):
     return out[:limit]
 
 
+def _new_guides_sec():
+    """홈에서 새로 올라온 돈 가이드로 가는 링크(2026-11-02 색인 경로: kin_guides.json 은 새 글이 뒤에 붙는다)"""
+    import os
+    try:
+        g = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'kin_guides.json'), encoding='utf-8'))['guides'][-8:][::-1]
+    except Exception:
+        return ''
+    li = ''.join(f'<li><a href="/money/guide/{x["slug"]}/"><b>{E(_short(x["title"], 60))}</b><span>{E(x["name"])}</span></a></li>' for x in g)
+    return f'<section class="hm-sec"><div class="hm-h"><h2>새로 올라온 생활 가이드</h2><a href="/money/guide/">전체 보기 →</a></div><ul class="hm-nl">{li}</ul></section>'
+
+
 def home_html(ctx):
     now = ctx['now']; items = due_items(ctx)
     new_c = [c for c in ctx['new_contests'] if ctx['elig_short'](c) not in ('미확인', '확인 필요') and (c.get('effort') or c.get('medium')) and (c['id'] in (ctx.get('VER') or {}) or ctx['prize_short'](c) != '확인 필요')]
@@ -127,6 +138,7 @@ def home_html(ctx):
             + ver_sec +
             f'<section class="hm-sec"><div class="hm-h"><h2>새로 확인한 공모전</h2><a href="/contest/">공모전 찾기 →</a></div><ul class="hm-nl">{new_h}</ul></section>'
             + (f'<section class="hm-sec"><div class="hm-h"><h2>추천 가이드</h2><a href="/wiki/">루리 위키 →</a></div><div class="hm-g">{guides}</div></section>' if guides else '')
+            + _new_guides_sec()
             + f'<section class="hm-sec"><div class="hm-h"><h2>새로 생긴 기능</h2></div><ul class="hm-f">{feats}</ul></section>'
             + (f'<section class="hm-sec"><div class="hm-h"><h2>더 읽을거리</h2></div><ul class="hm-nl">' + ''.join(f'<li><a href="{E(r["u"])}"><b>{E(_short(r["title"], 60))}</b><span>{E(r["sub"])}</span></a></li>' for r in ctx.get('reads', [])) + '</ul></section>' if ctx.get('reads') else '')
             + f'<section class="hm-sec" id="all"><div class="hm-h"><h2>전체 서비스</h2></div><nav class="hm-all" aria-label="전체 서비스">{allsv}</nav></section>'
