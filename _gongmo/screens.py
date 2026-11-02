@@ -531,4 +531,4 @@ def kwmap_page_html():
             '<aside id="kw-info" class="kw-info" aria-live="polite"></aside></div>'
             '<p class="kw-hint"><b>보는 법</b> · 점 하나가 질문(글) 하나입니다. 안쪽 점이 단기, 바깥쪽 점이 장기입니다. 두 점을 잇는 선은 <b>제목에 같은 핵심 단어가 들어 있다</b>는 뜻이며, 의미가 비슷하다는 판단은 아닙니다. 끌어서 돌리고, 점을 누르면 연결된 질문이 강조됩니다.</p>'
             f'<h2 class="kw-h2">목록으로 보기</h2><p id="kw-empty" class="kw-empty" hidden>조건에 맞는 키워드가 없어요. 검색어를 줄이거나 분류를 다시 켜 보세요.</p>{lists}</div>'
-            f'<script type="application/json" id="kwdata">{raw}</script><link rel="stylesheet" href="/assets/home/kwmap.css?v=1"><script defer src="/assets/home/kwmap.js?v=3"></script>')
+            f'<script type="application/json" id="kwdata">{raw}</script><link rel="stylesheet" href="/assets/home/kwmap.css?v=1"><script defer src="/assets/home/kwmap.js?v=4"></script>')

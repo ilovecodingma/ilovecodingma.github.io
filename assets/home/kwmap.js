@@ -23,7 +23,7 @@
   size(); window.addEventListener('resize', size);
   var P = [];
   function proj() {
-    var sa = Math.sin(ay), ca = Math.cos(ay), sx = Math.sin(ax), cx = Math.cos(ax), s = Math.min(W, H) * .5 * zoom;
+    var sa = Math.sin(ay), ca = Math.cos(ay), sx = Math.sin(ax), cx = Math.cos(ax), s = Math.min(W, H) * .43 * zoom;
     for (var i = 0; i < N.length; i++) {
       var n = N[i], x = n.x * ca + n.z * sa, z = -n.x * sa + n.z * ca, y = n.y * cx - z * sx; z = n.y * sx + z * cx;
       var f = 1 / (1.9 - z * .55); P[i] = { x: W / 2 + x * s * f * 1.9, y: H / 2 + y * s * f * 1.9, z: z, f: f };
