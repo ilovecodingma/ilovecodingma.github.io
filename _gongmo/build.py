@@ -601,7 +601,22 @@ def unlink_dead_c():
                 t2 = rxa.sub(_fix, t)
                 if t2 != t:
                     open(fp, 'w', encoding='utf-8', newline=chr(10)).write(t2); na += 1
-    print('죽은 /c/ 링크 푼 페이지', n, '/ 죽은 /a/ 링크 정리', na)
+    # /hot/·/talk/·/mag/ 는 단기 보관(4일·14일)이라 지워진 날짜·이슈로 가는 링크는 글자만 남기고 푼다(2026-11-02)
+    import urllib.parse as _up
+    rxs = re.compile(r'<a\s[^>]*?href="(/(?:hot|talk|mag)/[^"#?]+?)/?(?:[#?][^"]*)?"[^>]*>(.*?)</a>', re.S)
+    ns = 0
+    for dp, dn, fn in os.walk(ROOT):
+        dn[:] = [x for x in dn if x not in ('.git', '_gongmo', '_trend', 'assets', 'w', 'og')]
+        for f in fn:
+            if f.endswith('.html'):
+                fp = os.path.join(dp, f)
+                t = open(fp, encoding='utf-8', errors='ignore').read()
+                if not re.search(r'href="/(?:hot|talk|mag)/', t):
+                    continue
+                t2 = rxs.sub(lambda m: m.group(0) if os.path.exists(os.path.join(ROOT, _up.unquote(m.group(1)).strip('/'), 'index.html')) else m.group(2), t)
+                if t2 != t:
+                    open(fp, 'w', encoding='utf-8', newline=chr(10)).write(t2); ns += 1
+    print('죽은 /c/ 링크 푼 페이지', n, '/ 죽은 /a/ 링크 정리', na, '/ 지난 이슈 링크 푼 페이지', ns)
 
 
 def ref_urls():
@@ -2619,6 +2634,7 @@ def build():
     print('루리 위키 글/적용', _WK.build_wiki(urls, NOINDEX, page, ROOT, SITE)); urls.append('/wiki/')
     corrections_page(live); urls.append('/corrections/')
     urls.extend(diet_pages())
+    urls.extend(rsi_pages())
     print('광고 스크립트 뺀 페이지(최종)', strip_ads_noindex())   # 위키·정정 기록·다이어트 앱처럼 뒤에 만든 검색 제외 페이지까지 한 번 더
     try:
         import make_pdf as _MP
@@ -3448,11 +3464,68 @@ KIM_FAQ = [
 ]
 
 
+ISSUE_DIR = os.path.join(HERE, 'issues')
+
+
+def issue_json_pages():
+    """/issue/<slug>/ 단기 이슈 설명 (2026-11-02 마케터 원고 JSON → 페이지). 원고는 _gongmo/issues/<slug>.json.
+    필드: slug, title, desc, h1, date(기준일 YYYY-MM-DD), keep_days(기본 4), summary, confirmed[[내용,출처]], unconfirmed[[내용,이유]],
+    sections[{h,p,ul}], faq[[질문,답]], sources[[이름,url]], related[[경로,이름]]. date+keep_days 가 지나면 페이지를 지운다."""
+    keep, urls = set(), []
+    if os.path.isdir(ISSUE_DIR):
+        for fn_ in sorted(os.listdir(ISSUE_DIR)):
+            if not fn_.endswith('.json'):
+                continue
+            try:
+                c = json.load(open(os.path.join(ISSUE_DIR, fn_), encoding='utf-8'))
+                d0 = datetime.date.fromisoformat(c['date'])
+            except Exception as e:
+                print('이슈 원고 읽기 실패', fn_, repr(e)[:80])
+                continue
+            if (TODAY - d0).days > int(c.get('keep_days', 4)):
+                continue   # 보관 기간이 지난 단기 이슈: 만들지 않고 아래에서 폴더를 지운다
+            sl = c['slug']
+            keep.add(sl)
+            p_ = f'/issue/{sl}/'
+            faq, fld = _faq([tuple(x) for x in c.get('faq', [])]) if c.get('faq') else ('', None)
+            def tbl(rows, h1_, h2_):
+                return (f'<table class="xt"><thead><tr><th>{h1_}</th><th>{h2_}</th></tr></thead><tbody>' + ''.join(f'<tr><td>{E(a_)}</td><td>{E(b_)}</td></tr>' for a_, b_ in rows) + '</tbody></table>') if rows else ''
+            secs = ''
+            if c.get('confirmed'):
+                secs += '<h2>확인된 것</h2>' + tbl(c['confirmed'], '내용', '근거·출처')
+            if c.get('unconfirmed'):
+                secs += '<h2>확인되지 않은 것</h2>' + tbl(c['unconfirmed'], '내용', '이유')
+            for sc in c.get('sections', []):
+                secs += f'<h2>{E(sc["h"])}</h2>' + (f'<p>{E(sc["p"])}</p>' if sc.get('p') else '') + ('<ul class="gm-l">' + ''.join(f'<li>{E(x)}</li>' for x in sc['ul']) + '</ul>' if sc.get('ul') else '')
+            if faq:
+                secs += f'<h2>자주 묻는 질문</h2>{faq}'
+            if c.get('sources'):
+                secs += '<h2>출처</h2><ul class="gm-l">' + ''.join(f'<li><a href="{E(u_)}" target="_blank" rel="noopener nofollow">{E(n_)}</a></li>' for n_, u_ in c['sources']) + '</ul>'
+            rel = ''.join(f'<a href="{E(u_)}">{E(n_)}</a>' for u_, n_ in c.get('related', []))
+            body = (f'<p class="bc"><a href="/">홈</a> › 이슈 › {E(c["h1"][:30])}</p><h1>{E(c["h1"])}</h1>'
+                    f'<div class="cat-st"><b>결론</b><br>{E(c["summary"])}</div><p class="note">{c["date"]} 기준 · 이 글은 단기 이슈라 {int(c.get("keep_days", 4))}일 뒤 내려가요.</p>'
+                    + secs + (f'<p class="hm-links">{rel}</p>' if rel else '')
+                    + '<style>.xt{border-collapse:collapse;width:100%;font-size:14px}.xt th,.xt td{border:1px solid #e5e7eb;padding:6px 8px;text-align:left;vertical-align:top}.xt th{background:#f8fafc}</style>')
+            art = {'@context': 'https://schema.org', '@type': 'Article', 'headline': c['title'], 'description': c['desc'], 'inLanguage': 'ko',
+                   'datePublished': c['date'], 'dateModified': c['date'], 'mainEntityOfPage': SITE + p_,
+                   'author': {'@type': 'Organization', 'name': '루리의 줍줍 편집', 'url': SITE + '/'}, 'publisher': {'@type': 'Organization', 'name': NAME, 'url': SITE + '/'}}
+            ld_ = {'@context': 'https://schema.org', '@graph': [art, fld]} if fld else art
+            page(p_, c['title'], c['desc'], body, [('루리의 줍줍', '/'), ('이슈', '/news/'), (c['h1'][:20], p_)], ld_, full_title=True)
+            urls.append(p_)
+    idir = os.path.join(ROOT, 'issue')
+    if os.path.isdir(idir):
+        for f_ in os.listdir(idir):
+            if f_ != 'kim-jong-un-rumor' and f_ not in keep and os.path.isdir(os.path.join(idir, f_)):
+                shutil.rmtree(os.path.join(idir, f_), ignore_errors=True)   # 보관 기간이 지났거나 원고가 없어진 단기 이슈
+    return urls
+
+
 def issue_pages():
     """/issue/kim-jong-un-rumor/ 사망설 정리 (2026-10-21 사용자 지시, 연구 ⑂ 전달). 자유 이용 이미지만."""
+    _ji = issue_json_pages()
     f = os.path.join(HERE, 'essays', 'kim-rumor.html')
     if not os.path.exists(f):
-        return []
+        return _ji
     p = '/issue/kim-jong-un-rumor/'
     faq, fld = _faq(KIM_FAQ)
     body = open(f, encoding='utf-8').read().replace('@@FAQ@@', faq) + '<style>.es-fig{margin:12px 0}.es-fig img{display:block;max-width:100%;height:auto;border:1px solid var(--bd,#e5e7eb);border-radius:10px}.es-fig figcaption{font-size:12.5px;color:var(--mu,#6b7280);margin-top:4px}</style>' + GAME_CSS + '<script type="application/ld+json">%s</script>' % json.dumps(fld, ensure_ascii=False).replace('</', '<\/')
@@ -3463,7 +3536,7 @@ def issue_pages():
            'author': {'@type': 'Organization', 'name': '루리의 줍줍 편집', 'url': SITE + '/'},
            'publisher': {'@type': 'Organization', 'name': NAME, 'url': SITE + '/'}}
     page(p, title, desc, body, [('루리의 줍줍', '/'), ('이슈', '/news/'), ('김정은 사망설', p)], art, full_title=True)
-    return [p]
+    return _ji + [p]
 
 
 
@@ -4137,6 +4210,88 @@ def coin_card(c, full=False):
             + coin_svg(c) + an_tree(c['tree'], ('bull', 'bear', 'neutral')) + (an_nodes(c['nodes'], True) if full else f'<a class="an-more" href="/analyst/coin/{c["sym"].lower()}/">전망 노드 {c["n"]}개 자세히 →</a>') + '</article>')
 
 
+RSI_F = os.path.join(HERE, 'rsi_daily.json')
+
+
+def rsi_pages():
+    """/analyst/rsi/ RSI(14) 지표 현황표 (2026-11-02 사용자 지시, 마케터가 rsi_daily.json 을 매일 만든다). 투자 권유가 아닌 지표 현황."""
+    if not os.path.exists(RSI_F):
+        return []
+    d = json.load(open(RSI_F, encoding='utf-8'))
+    items = [x for x in d.get('items', []) if x.get('rsi') is not None]
+    if not items:
+        return []
+    asof = d.get('asof', '')
+
+    def num(v, nd=1, sign=False):
+        if v is None:
+            return '-'
+        return (f'{v:+,.{nd}f}' if sign else f'{v:,.{nd}f}')
+
+    def px(x):
+        c = x.get('close')
+        if c is None:
+            return '-'
+        return f'{c:,.0f}' if c >= 100 else f'{c:,.2f}'
+
+    def stt(r):
+        return '과매수' if r >= 70 else '과매도' if r <= 30 else '중립'
+
+    def dv(v):
+        return v if v is not None else 0
+
+    groups = []
+    for g in dict.fromkeys(x.get('market') or '기타' for x in items):
+        groups.append((g, [x for x in items if (x.get('market') or '기타') == g]))
+    os_n = sum(1 for x in items if x['rsi'] <= 30)
+    ob_n = sum(1 for x in items if x['rsi'] >= 70)
+    tbs = ''
+    for g, L in groups:
+        rows = ''
+        for x in sorted(L, key=lambda x: x['rsi']):
+            ma = x.get('ma200_gap')
+            rows += (f'<tr data-os="{1 if x["rsi"] <= 30 else 0}" data-ob="{1 if x["rsi"] >= 70 else 0}" data-ma="{1 if (ma is not None and ma < 0) else 0}">'
+                     f'<td>{E(x["name"])}<small> {E(str(x.get("code", "")))}</small></td><td data-v="{dv(x.get("close"))}">{px(x)}</td>'
+                     f'<td data-v="{x["rsi"]}"><b>{num(x["rsi"])}</b> <small class="rs-{stt(x["rsi"])}">{stt(x["rsi"])}</small></td>'
+                     f'<td data-v="{dv(x.get("chg"))}">{num(x.get("chg"), 1, True)}%</td>'
+                     f'<td data-v="{dv(x.get("from_high"))}">{num(x.get("from_high"), 1, True)}%</td>'
+                     f'<td data-v="{dv(x.get("from_low"))}">{num(x.get("from_low"), 1, True)}%</td>'
+                     f'<td data-v="{dv(ma)}">{num(ma, 1, True)}%</td>'
+                     f'<td data-v="{dv(x.get("ret_1m"))}">{num(x.get("ret_1m"), 1, True)}%</td>'
+                     f'<td data-v="{dv(x.get("ret_6m"))}">{num(x.get("ret_6m"), 1, True)}%</td></tr>')
+        tbs += (f'<h2>{E(g)} ({len(L)}개)</h2><div class="tblw"><table class="xt rs-t"><thead><tr><th>이름</th><th data-s="1">종가</th><th data-s="2">RSI(14)</th><th data-s="3">전일 대비</th>'
+                '<th data-s="4">52주 고점 대비</th><th data-s="5">52주 저점 대비</th><th data-s="6">200일선 대비</th><th data-s="7">1개월</th><th data-s="8">6개월</th></tr></thead>'
+                f'<tbody>{rows}</tbody></table></div>')
+    js = ("<script>(function(){var T=document.querySelectorAll('.rs-t');"
+          "document.querySelectorAll('.rs-f button').forEach(function(b){b.addEventListener('click',function(){var k=b.getAttribute('data-f');"
+          "document.querySelectorAll('.rs-f button').forEach(function(x){x.classList.toggle('on',x===b)});"
+          "T.forEach(function(t){t.querySelectorAll('tbody tr').forEach(function(r){r.style.display=(k==='all'||r.getAttribute('data-'+k)==='1')?'':'none'})})})});"
+          "T.forEach(function(t){t.querySelectorAll('th[data-s]').forEach(function(h){var dir=1;h.style.cursor='pointer';h.addEventListener('click',function(){"
+          "var i=+h.getAttribute('data-s'),tb=t.querySelector('tbody'),rs=[].slice.call(tb.rows);dir=-dir;"
+          "rs.sort(function(a,b){return (parseFloat(a.cells[i].getAttribute('data-v'))-parseFloat(b.cells[i].getAttribute('data-v')))*dir});"
+          "rs.forEach(function(r){tb.appendChild(r)})})})})})();</script>")
+    css = ('<style>.rs-f{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0}.rs-f button{border:1px solid #cbd5e1;background:#fff;border-radius:999px;padding:6px 12px;font-size:13px;cursor:pointer}'
+           '.rs-f button.on{background:#0f766e;color:#fff;border-color:#0f766e}.tblw{overflow-x:auto}.xt{border-collapse:collapse;width:100%;font-size:13.5px;min-width:640px}'
+           '.xt th,.xt td{border:1px solid #e5e7eb;padding:6px 8px;text-align:right;white-space:nowrap}.xt th:first-child,.xt td:first-child{text-align:left}.xt th{background:#f8fafc}'
+           '.xt small{color:#64748b}.xt small.rs-과매도{color:#1d4ed8}.xt small.rs-과매수{color:#b91c1c}</style>')
+    notice = ('<div class="an-warn"><b>투자 권유가 아니에요.</b> 이 페이지는 공개된 가격으로 RSI 같은 보조지표를 계산해 현황을 보여 주는 정보예요. 특정 종목을 사거나 팔라는 뜻이 아니고, '
+              '수익을 보장하지도 않아요. 투자 판단과 책임은 본인에게 있어요.</div>')
+    desc = (f'{asof} 기준 RSI(14일) 수치로 과매도(30 이하) {os_n}개·과매수(70 이상) {ob_n}개를 모았어요. 52주 고점 대비 낙폭, 200일선 대비 위치를 함께 정렬해 볼 수 있는 지표 현황표예요(투자 권유 아님).')
+    how = ('<h2>RSI가 뭔가요?</h2><p>RSI(상대강도지수)는 최근 14일 동안 오른 날의 평균 상승폭이 내린 날의 평균 하락폭보다 얼마나 큰지를 0~100으로 나타낸 지표예요. 보통 70 이상을 과매수, 30 이하를 과매도 구간으로 불러요.</p>'
+           '<h2>계산법</h2><ul class="gm-l"><li>하루 종가 변화를 상승분과 하락분으로 나눠요.</li><li>처음 14일은 단순 평균을 내고, 그다음부터는 (이전 평균 × 13 + 오늘 값) ÷ 14 로 이어 가요(Wilder 방식).</li>'
+           '<li>RS = 평균 상승분 ÷ 평균 하락분, RSI = 100 − 100 ÷ (1 + RS) 로 계산해요.</li></ul>'
+           '<h2>같이 보는 지표</h2><ul class="gm-l"><li><b>52주 고점 대비</b>: 최근 1년 최고가에서 얼마나 내려와 있는지예요.</li><li><b>200일선 대비</b>: 200일 평균 종가보다 지금 가격이 얼마나 위·아래인지예요. 장기 추세를 볼 때 자주 써요.</li>'
+           '<li><b>1개월·6개월</b>: 같은 기간 가격 변화율이에요.</li></ul>'
+           '<h2>이 표의 한계</h2><ul class="gm-l"><li>과거 가격만 쓰는 지표라 실적·뉴스·금리 같은 요인은 반영되지 않아요.</li><li>RSI가 30 이하여도 하락이 이어질 수 있고, 70 이상이어도 계속 오를 수 있어요.</li>'
+           '<li>종목은 시가총액 상위 일부(국내 대형주 40개, 업비트 원화 코인 18개)일 뿐이고 추천 목록이 아니에요.</li><li>코인은 당일 진행 중인 봉이 포함돼 하루 사이에도 값이 달라져요. 출처 사정에 따라 값이 늦거나 비어 있을 수 있어요.</li></ul>')
+    body = (f'<p class="bc"><a href="/">홈</a> › <a href="/analyst/">애널리스트 분석</a> › RSI 현황표</p><h1>📈 RSI 현황표 — 과매도·과매수 구간 한눈에</h1>{notice}'
+            f'<div class="cat-st"><b>{E(asof)} 기준</b><br>RSI(14일) 30 이하 {os_n}개 · 70 이상 {ob_n}개 · 전체 {len(items)}개. 열 제목을 누르면 정렬돼요.</div>'
+            '<div class="rs-f"><button class="on" data-f="all">전체</button><button data-f="os">RSI 30 이하</button><button data-f="ob">RSI 70 이상</button><button data-f="ma">200일선 아래</button></div>'
+            + tbs + f'<p class="note">출처: {E(d.get("source", ""))}</p>' + how + notice + css + js)
+    page('/analyst/rsi/', f'RSI 현황표 {asof[5:]} 기준 — 과매도·과매수 구간 종목 (투자 권유 아님)', desc, body, [('루리의 줍줍', '/'), ('애널리스트 분석', '/analyst/'), ('RSI 현황표', '/analyst/rsi/')])
+    return ['/analyst/rsi/']
+
+
 def analyst_pages():
     # 애널리스트 분석의 분석 (2026-10-18 사용자: 애널리스트 발언을 노드로 나눠 2차 가공, 비트코인·이더리움 등, 사이트 비중 40%)
     d = _rd('analyst/data.json')
@@ -4167,7 +4322,7 @@ def analyst_pages():
         sec += '<h2>📋 최근 리포트가 나온 종목</h2><ul class="an-all">' + ''.join(f'<li><a href="/analyst/s/{s["id"]}/">{E(s["name"])}<small>{"🔺" * min(3, s["up"])}{"🔻" * min(3, s["down"])}{"➖" * min(3, s["keep"])}</small></a></li>' for s in rest) + '</ul>'
     page('/analyst/', '루리의 애널리스트 분석 종합 — 증권사 목표가 상향·하향, 코인 전망 노드 분석',
          f'증권사 리포트 기사 속 목표가·투자의견을 노드로 쪼개 종목별로 다시 정리했어요. 최근 30일 증권사별 최신 리포트 기준 상향 {sum(s["up"] for s in S)}건 · 하향 {sum(s["down"] for s in S)}건, 비트코인·이더리움 전망 강세·약세 근거까지.',
-         '<p class="bc"><a href="/">홈</a> › 애널리스트 분석</p><h1>📊 루리의 애널리스트 분석 종합</h1>' + hero + AN_NOTE + sec + how + css, [('루리의 줍줍', '/'), ('애널리스트 분석', '/analyst/')])
+         '<p class="bc"><a href="/">홈</a> › 애널리스트 분석</p><h1>📊 루리의 애널리스트 분석 종합</h1>' + hero + AN_NOTE + ('<p class="hm-links"><a href="/analyst/rsi/">📈 RSI 현황표 — 과매도·과매수 구간 한눈에</a></p>' if os.path.exists(RSI_F) else '') + sec + how + css, [('루리의 줍줍', '/'), ('애널리스트 분석', '/analyst/')])
     urls = ['/analyst/']
     for s in S:
         page(f'/analyst/s/{s["id"]}/', f'{s["name"]} 목표가·투자의견 종합 — 증권사 {s["nb"]}곳 리포트 노드 분석',
