@@ -282,7 +282,7 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False, noinde
 <meta name="theme-color" content="{TH[3] if TH else '#5b21b6'}"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="오늘 뭐 먹지">
 <link rel="icon" href="/favicon.ico?v=6" sizes="any"><link rel="icon" type="image/png" sizes="48x48" href="/assets/icons/icon-48.png?v=6"><link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/icon-96.png?v=6"><link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/icon-192.png?v=6"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=6"><link rel="manifest" href="/site.webmanifest"><link rel="alternate" type="application/rss+xml" title="루리 줍줍" href="/rss.xml">
 <link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="/assets/gm.css?v=29"><link rel="stylesheet" href="/assets/ds.css?v=15"><link rel="stylesheet" href="/assets/print.css?v=1"><link rel="stylesheet" href="/assets/pro.css?v=4"><script defer src="/assets/print.js?v=1"></script><script src="/assets/img-fallback.js?v=1"></script>{('<link rel="stylesheet" href="/assets/chat/ruri-chat.css?v=9">') if not (TH and TH[0] == 'ai') else ''}{COMM_TAGS}{('<script type="module" src="/assets/chat/ruri-chat.js?v=16"></script>') if not (TH and TH[0] == 'ai') else ''}<link rel="stylesheet" href="/assets/app/shell.css?v=1"><script defer src="/assets/app/app.js?v=4"></script>
+<link rel="stylesheet" href="/assets/gm.css?v=29"><link rel="stylesheet" href="/assets/ds.css?v=15"><link rel="stylesheet" href="/assets/print.css?v=1"><link rel="stylesheet" href="/assets/pro.css?v=5"><script defer src="/assets/print.js?v=1"></script><script src="/assets/img-fallback.js?v=1"></script>{('<link rel="stylesheet" href="/assets/chat/ruri-chat.css?v=9">') if not (TH and TH[0] == 'ai') else ''}{COMM_TAGS}{('<script type="module" src="/assets/chat/ruri-chat.js?v=16"></script>') if not (TH and TH[0] == 'ai') else ''}<link rel="stylesheet" href="/assets/app/shell.css?v=1"><script defer src="/assets/app/app.js?v=4"></script>
 {ldh}
 {TH_CSS}
 {GTAG}
@@ -1855,7 +1855,7 @@ def build_apply(aps):
     _rg = [r_ for r_, _n in collections.Counter(ap_region(a) for a in aps if ap_region(a)).most_common()]
     _ropt = '<option value="">지역 전체</option>' + ''.join(f'<option value="{E(r_)}">{E(r_)}</option>' for r_ in _rg) + '<option value="__none">지역 미확인</option>'
     page('/apply/', f'지원금 신청 {YR} — 청년·신혼·지역별 신청 가능한 지원금·청약 {len(aps)}건 (마감순)', f'개인·가구 {_gc.get("개인·가구", 0)}건, 사업자·기업 {_gc.get("사업자·기업", 0)}건, 주거 청약 {_gc.get("주거 청약", 0)}건, 공모주 {_gc.get("공모주", 0)}건을 마감 임박순으로 정리했어요. 지역·대상·마감 필터와 공식 신청처 링크가 있어요.',
-         f'''<p class="bc"><a href="/">홈</a> › 지원금·청약</p><h1 class="ap-h1">지원금·청약</h1><p class="ap-sub">진행 중 {len(aps)}건 · 마감 임박순(상시 신청은 맨 뒤) · {NOW_KST():%m/%d %H:%M} 갱신(한국 시간)</p>
+         f'''<p class="bc"><a href="/">홈</a> › 지원금·청약</p><h1 class="ap-h1">지원금·청약</h1><p class="ap-sub">진행 중 {len(aps)}건 · 마감 임박순(상시 신청은 맨 뒤) · {NOW_KST():%m/%d %H:%M} 갱신(한국 시간)</p><p class="top-ans"><b>한눈에 보기</b> · {TODAY.year}년 {TODAY.month}월 {TODAY.day}일(한국 시간) 기준 신청 가능한 지원금·청약은 {len(aps)}건이고, 7일 안에 마감하는 것은 {sum(1 for a_ in aps if not a_.get('always') and a_['end'] >= TODAY.isoformat() and dday(a_['end'])[0] <= 7)}건입니다. 대상·지역·마감일로 아래에서 바로 걸러 보세요. 신청 전 공식 공고를 한 번 더 확인하세요.</p>
 <div class="ap-bar" role="search"><div class="ap-chips" role="group" aria-label="유형">{_chips}</div>
 <div class="ap-row"><input type="search" id="ap-q" placeholder="공고명·기관·대상 검색" aria-label="검색"><select id="ap-r" aria-label="지역">{_ropt}</select><select id="ap-d" aria-label="마감"><option value="">마감 전체</option><option value="7">7일 이내</option><option value="30">30일 이내</option><option value="x">상시 신청 제외</option></select></div>
 <p class="ap-cnt" id="ap-cnt" aria-live="polite"></p></div>
@@ -2125,6 +2125,21 @@ def week_hub(live):
     return ['/contest/week/']
 
 
+def top_answer(nm, L):
+    """목록 상단 직접 답 한 단락(2026-11-03 마케터 서치콘솔 분석: 4~10위인데 클릭이 약함). 기준일·건수·가장 빠른 마감·최대 상금을 빌드 값으로 계산한다."""
+    if not L:
+        return ''
+    _bs, _vals = prize_basis(L)
+    pv = [c for c in L if c['id'] in _vals]
+    soon = min(L, key=lambda c: c['end'])
+    wk = sum(1 for c in L if dday(c['end'])[0] <= 7)
+    s = f'{TODAY.year}년 {TODAY.month}월 {TODAY.day}일(한국 시간) 기준 접수 중인 {nm}은 {len(L)}건이고, 7일 안에 마감하는 공모전은 {wk}건입니다. 가장 먼저 끝나는 것은 「{E(soon["title"][:36])}」로 {ddot(soon["end"])} 마감입니다.'
+    if pv:
+        big = max(pv, key=lambda c: _vals[c['id']])
+        s += f' {_bs}이 가장 큰 것은 「{E(big["title"][:36])}」 {won_txt(_vals[big["id"]])}입니다.'
+    return f'<p class="top-ans"><b>한눈에 보기</b> · {s}</p>'
+
+
 def hub_extra(nm, L, path):
     """검색어 허브 공통: 집계 문장 + FAQ + ItemList/FAQPage 구조화 데이터 (숫자는 매 빌드 계산, 2026-10-19 자연 유입)."""
     if not L:
@@ -2226,7 +2241,7 @@ def contest_hubs(live):
         L.sort(key=lambda c: (c['end'], -(c.get('pv') or 0)))
         fq, ld_ = hub_extra(nm, L, path)
         body = (f'<p class="bc"><a href="/">홈</a> › <a href="/contest/">공모전</a> › {nm}</p><h1>🏆 {E(title)}</h1><p>{intro}</p>{cat_stats(nm.replace(" 공모전", ""), L)}'
-                f'<p class="hm-scope">오늘 {TODAY.month}/{TODAY.day}(한국 시간) 기준 접수 마감 전 · 제목이 같은 공모전은 1건 · {NOW_KST():%m/%d %H:%M} 갱신 · 마감순</p>'
+                + top_answer(nm, L) + f'<p class="hm-scope">오늘 {TODAY.month}/{TODAY.day}(한국 시간) 기준 접수 마감 전 · 제목이 같은 공모전은 1건 · {NOW_KST():%m/%d %H:%M} 갱신 · 마감순</p>'
                 f'<h2>진행 중 {nm} ({len(L)}건)</h2><ul class="list">{"".join(card(c) for c in L[:80]) or "<li class=empty>지금은 없어요.</li>"}</ul>{fq}'
                 + '<p class="hm-more">다른 모음: ' + ' · '.join(f'<a href="/contest/{x[0]}/">{E(x[2])}</a>' for x in H if x[0] != sl) + '</p>'
                 + rel_block(r'공모전|대학생|영상', [('/guide/', '공모전 응모 가이드'), ('/widget/', '블로그용 공모전 위젯'), ('/cat/video/', f'영상 공모전 {YR} 모음')]))
@@ -2593,7 +2608,7 @@ def build():
         cl = sorted([c for c in live if n in c['tags']], key=lambda c: (c['end'], -(c.get('pv') or 0)))   # 제목·선택 상자·실제 순서를 모두 「마감 임박순」으로 맞춘다
         tips = ''.join(f'<li>{E(t)}</li>' for t in TIPS[n])
         body = f'''<p class="bc"><a href="/">홈</a> › {n}</p><section class="dh" data-c="{s}"><span class="ic big">{CAT_ICON[n]}</span><h1>{CAT_T.get(n, n + ' 공모전')}</h1><p class="lead">진행 중 <b>{len(cl)}건</b> · 마감 임박순</p><p class="hm-scope">오늘 {TODAY.month}/{TODAY.day}(한국 시간) 기준 접수 마감 전 · 제목이 같은 공모전은 1건 · {NOW_KST():%m/%d %H:%M} 갱신 · 마감 시각은 공식 공고 확인</p></section>
-<h2>진행 중 {n} 공모전</h2>{TOOLBAR}<ul class="list" id="list">{''.join(card(c) for c in cl[:60])}</ul>{('<details class="rest"><summary>나머지 ' + str(len(cl) - 60) + '건 제목으로 보기</summary><ul>' + ''.join(f'<li><a href="/c/{c["id"]}/">{E(c["title"])}</a> · {ddot(c["end"])[5:]} 마감</li>' for c in cl[60:]) + '</ul></details>') if len(cl) > 60 else ''}<p class="hm-links">{' '.join(f'<a href="/cat/{s2}/">{n2}</a>' for s2, n2 in CATS if s2 != s)}</p><button class="more" id="more" hidden>더 보기</button>
+{top_answer(n + ' 공모전', cl)}<h2>진행 중 {n} 공모전</h2>{TOOLBAR}<ul class="list" id="list">{''.join(card(c) for c in cl[:60])}</ul>{('<details class="rest"><summary>나머지 ' + str(len(cl) - 60) + '건 제목으로 보기</summary><ul>' + ''.join(f'<li><a href="/c/{c["id"]}/">{E(c["title"])}</a> · {ddot(c["end"])[5:]} 마감</li>' for c in cl[60:]) + '</ul></details>') if len(cl) > 60 else ''}<p class="hm-links">{' '.join(f'<a href="/cat/{s2}/">{n2}</a>' for s2, n2 in CATS if s2 != s)}</p><button class="more" id="more" hidden>더 보기</button>
 <h2 class="cat-sub">이 분야 한눈에 보기·응모 팁</h2><p>{CAT_INTRO[n]}</p>{cat_stats(n, cl)}
 {say(CAT_OUTFIT[n], f'<b>{n} 공모전 응모 팁</b><ul class="chk">{tips}</ul>')}{'<a class="lab-cta" href="/fridge/"><b>🍳 루리의 냉장고 파먹기</b><span>집에 있는 재료로 만들 수 있는 집밥 레시피 · 요리대회 연습용으로 딱 →</span></a>' if s == 'food' else ''}'''
         fq, ld_ = hub_extra(f'{n} 공모전', sorted(cl, key=lambda c: c['end']), f'/cat/{s}/')

@@ -1,15 +1,16 @@
 {
- "at": "2026-11-03 07:30",
- "nitems": 522,
+ "at": "2026-11-03 08:30",
+ "nitems": 524,
  "cands": [
   {
    "kw": "최불암",
-   "nsrc": 7,
+   "nsrc": 8,
    "srcs": [
     "SBS",
     "뉴시스",
     "세계일보",
     "연합뉴스",
+    "조선일보",
     "한겨레",
     "한국경제",
     "헤럴드경제"
@@ -39,17 +40,17 @@
    ]
   },
   {
-   "kw": "국민",
+   "kw": "아버지",
    "nsrc": 6,
    "srcs": [
     "SBS",
     "뉴시스",
-    "세계일보",
     "연합뉴스",
+    "조선일보",
     "한겨레",
     "한국경제"
    ],
-   "n": 22,
+   "n": 18,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -84,8 +85,13 @@
     "한국경제",
     "헤럴드경제"
    ],
-   "n": 10,
+   "n": 11,
    "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "BTS 대만 가오슝·인니 자카르타 공연 80여개국 극장서 상영",
+     "link": "https://www.yna.co.kr/view/AKR20261103017400005"
+    },
     {
      "src": "연합뉴스",
      "title": "빅뱅, 시드니 아코르 스타디움 달궜다…K팝 가수 첫 단독 공연",
@@ -100,11 +106,6 @@
      "src": "연합뉴스",
      "title": "세종문화회관 공연 마친 김동률 \"유독 더 잘 해내고 싶었다\"",
      "link": "https://www.yna.co.kr/view/AKR20261030040000005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "캣츠아이, 내년 2월 KSPO돔서 첫 내한 공연",
-     "link": "https://www.yna.co.kr/view/AKR20261029124100005"
     }
    ]
   },
@@ -153,7 +154,7 @@
     "조선일보",
     "한국경제"
    ],
-   "n": 43,
+   "n": 27,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -178,7 +179,7 @@
    ]
   },
   {
-   "kw": "아버지",
+   "kw": "국민",
    "nsrc": 5,
    "srcs": [
     "SBS",
@@ -187,7 +188,7 @@
     "한겨레",
     "한국경제"
    ],
-   "n": 18,
+   "n": 20,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -221,8 +222,13 @@
     "한국경제",
     "헤럴드경제"
    ],
-   "n": 10,
+   "n": 11,
    "headlines": [
+    {
+     "src": "동아일보",
+     "title": "오은영, 아이 향한 母 행동에 충격…“아동학대 맞다” (결혼 지옥)",
+     "link": "https://sports.donga.com/ent/article/all/20261103/134954796/1"
+    },
     {
      "src": "동아일보",
      "title": "지예은, ♥바타와 12월 결혼 청첩장 공개…유재석 “잘 살거다”",
@@ -234,14 +240,43 @@
      "link": "https://sports.donga.com/ent/article/all/20261102/134953731/1"
     },
     {
-     "src": "동아일보",
-     "title": "티아라 소연, 결혼 4년 만에 임신…내년 아들 출산 예정",
-     "link": "https://sports.donga.com/ent/article/all/20261102/134950091/1"
-    },
-    {
      "src": "한국경제",
      "title": "마로니에 김정은, 결혼 22년 만에 파경…\"협의 이혼\"",
      "link": "https://www.hankyung.com/article/202610230325H"
+    }
+   ]
+  },
+  {
+   "kw": "깜짝",
+   "nsrc": 5,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "세계일보",
+    "조선일보",
+    "한국경제"
+   ],
+   "n": 9,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "탑, 생일 카페에 여친 나나와 깜짝 방문…홈마처럼 찰칵♥",
+     "link": "https://sports.donga.com/ent/article/all/20261102/134954026/1"
+    },
+    {
+     "src": "한국경제",
+     "title": "아일릿, 여경 의상 논란에 \"깜짝 놀라…어떤 관심이든 감사\"",
+     "link": "https://www.hankyung.com/article/202610265795H"
+    },
+    {
+     "src": "한국경제",
+     "title": "\"화환할게\" 강동원, 4개월 전 팬과 약속 지켰다…결혼식장에 깜짝 선물",
+     "link": "https://www.hankyung.com/article/202610265376H"
+    },
+    {
+     "src": "세계일보",
+     "title": "장승조, 왁스 전성기 통장 잔고 보고 '깜짝'…\"0이 너무 많더라\"",
+     "link": "https://www.segye.com/newsView/20261103502494"
     }
    ]
   },
@@ -314,108 +349,6 @@
    ]
   },
   {
-   "kw": "영면",
-   "nsrc": 5,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "세계일보",
-    "연합뉴스",
-    "한겨레"
-   ],
-   "n": 8,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "'국민 아버지' 최불암 영면…아내 김민자 연신 눈물 흘려",
-     "link": "https://www.yna.co.kr/view/AKR20261102023200005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "'국민 아버지' 최불암 오늘 영면…'아베 마리아'로 마지막 배웅",
-     "link": "https://www.yna.co.kr/view/AKR20261101025200005"
-    },
-    {
-     "src": "한겨레",
-     "title": "고 최불암 오늘 영면…“아버지 품 같은 연기와 삶, 고마웠습니다”",
-     "link": "https://www.hani.co.kr/arti/culture/culture_general/1285250.html"
-    },
-    {
-     "src": "한겨레",
-     "title": "임형주 ‘아베 마리아’ 노래 속에서…고 최불암 내일 영면",
-     "link": "https://www.hani.co.kr/arti/culture/culture_general/1285196.html"
-    }
-   ]
-  },
-  {
-   "kw": "깜짝",
-   "nsrc": 5,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "세계일보",
-    "조선일보",
-    "한국경제"
-   ],
-   "n": 8,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "탑, 생일 카페에 여친 나나와 깜짝 방문…홈마처럼 찰칵♥",
-     "link": "https://sports.donga.com/ent/article/all/20261102/134954026/1"
-    },
-    {
-     "src": "한국경제",
-     "title": "아일릿, 여경 의상 논란에 \"깜짝 놀라…어떤 관심이든 감사\"",
-     "link": "https://www.hankyung.com/article/202610265795H"
-    },
-    {
-     "src": "한국경제",
-     "title": "\"화환할게\" 강동원, 4개월 전 팬과 약속 지켰다…결혼식장에 깜짝 선물",
-     "link": "https://www.hankyung.com/article/202610265376H"
-    },
-    {
-     "src": "세계일보",
-     "title": "장승조, 왁스 전성기 통장 잔고 보고 '깜짝'…\"0이 너무 많더라\"",
-     "link": "https://www.segye.com/newsView/20261103502494"
-    }
-   ]
-  },
-  {
-   "kw": "내년",
-   "nsrc": 5,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "연합뉴스",
-    "한겨레",
-    "한국경제"
-   ],
-   "n": 7,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "가상 아이돌 등 시상…'버추얼 아이콘 어워즈' 내년 2월 첫 개최",
-     "link": "https://www.yna.co.kr/view/AKR20261102161800005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "캣츠아이, 내년 2월 KSPO돔서 첫 내한 공연",
-     "link": "https://www.yna.co.kr/view/AKR20261029124100005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "내년 1월부터 장애인방송 의무편성…89개 사업자 지정",
-     "link": "https://www.yna.co.kr/view/AKR20261029075800017"
-    },
-    {
-     "src": "동아일보",
-     "title": "티아라 소연, 결혼 4년 만에 임신…내년 아들 출산 예정",
-     "link": "https://sports.donga.com/ent/article/all/20261102/134950091/1"
-    }
-   ]
-  },
-  {
    "kw": "너무",
    "nsrc": 5,
    "srcs": [
@@ -425,7 +358,7 @@
     "조선일보",
     "한국경제"
    ],
-   "n": 6,
+   "n": 8,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -459,7 +392,7 @@
     "한국경제",
     "헤럴드경제"
    ],
-   "n": 6,
+   "n": 8,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -480,6 +413,74 @@
      "src": "헤럴드경제",
      "title": "‘리센느’ 원이, 공연 중 무대 이탈 왜?…“줄어든 의상 탓에 숨 안 쉬어져” 해명",
      "link": "https://biz.heraldcorp.com/article/10922778"
+    }
+   ]
+  },
+  {
+   "kw": "빅뱅",
+   "nsrc": 5,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "연합뉴스",
+    "조선일보",
+    "헤럴드경제"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "빅뱅, 시드니 아코르 스타디움 달궜다…K팝 가수 첫 단독 공연",
+     "link": "https://www.yna.co.kr/view/AKR20261102128300005"
+    },
+    {
+     "src": "동아일보",
+     "title": "안재욱, 빅뱅 태양과 ‘아빠 달리기’ 맞대결…결과는? (라스)",
+     "link": "https://sports.donga.com/ent/article/all/20261103/134954838/1"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "“더는 묵과 못해” 20년 팬 이탈에…‘빅뱅 출신’ 탑 “늦었지만 진심 전하고파” 사과",
+     "link": "https://biz.heraldcorp.com/article/10921662"
+    },
+    {
+     "src": "뉴시스",
+     "title": "빅뱅, K-팝 그룹 첫 호주 아코르 스타디움 입성…11년 만 시드니 공연 성료",
+     "link": "https://www.newsis.com/view/NISX20261102_0003851054"
+    }
+   ]
+  },
+  {
+   "kw": "두고",
+   "nsrc": 5,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "동아일보",
+    "세계일보",
+    "조선일보"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "권은비vs김용빈, 반려견 두고 기싸움…허경환 진땀 (자랑할 개)",
+     "link": "https://sports.donga.com/ent/article/all/20261103/134954747/1"
+    },
+    {
+     "src": "세계일보",
+     "title": "故 최불암 빈소 찾은 김지영, 조문 복장 두고 엇갈린 시선",
+     "link": "https://www.segye.com/newsView/20261103502732"
+    },
+    {
+     "src": "SBS",
+     "title": "박해진, '굿파트너2' 합류…장나라와 이혼계 원톱 두고 대립",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008826392&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "뉴시스",
+     "title": "홍석천, 지연수 썸남 두고 질투 \"내가 특별히 예뻐한 남자\"",
+     "link": "https://www.newsis.com/view/NISX20261102_0003851798"
     }
    ]
   },
@@ -518,6 +519,39 @@
    ]
   },
   {
+   "kw": "빈소",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "세계일보",
+    "연합뉴스",
+    "헤럴드경제"
+   ],
+   "n": 10,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "최불암 빈소 마지막 날도 조문 행렬…김혜수는 사흘째 지켜(종합)",
+     "link": "https://www.yna.co.kr/view/AKR20261101032151005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "이제훈 \"최불암과 연기, 인생의 영광\"…김혜수 사흘째 빈소 지켜",
+     "link": "https://www.yna.co.kr/view/AKR20261101032100005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "김용건 \"최불암 빈소 못 찾아 마음 힘들어…곁에 있어야 하는데\"",
+     "link": "https://www.yna.co.kr/view/AKR20261101019400005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "최불암 빈소 이틀째 발길…\"큰 별 떠나, 누가 방송 지키나\"(종합)",
+     "link": "https://www.yna.co.kr/view/AKR20261031027651005"
+    }
+   ]
+  },
+  {
    "kw": "눈물",
    "nsrc": 4,
    "srcs": [
@@ -551,35 +585,68 @@
    ]
   },
   {
-   "kw": "연애",
+   "kw": "아들",
    "nsrc": 4,
    "srcs": [
     "뉴시스",
     "동아일보",
-    "세계일보",
-    "연합뉴스"
+    "조선일보",
+    "한국경제"
    ],
-   "n": 7,
+   "n": 8,
    "headlines": [
     {
-     "src": "연합뉴스",
-     "title": "웃으며 이별한 서강준·안은진…'너 말고 다른 연애' 2.4% 종영",
-     "link": "https://www.yna.co.kr/view/AKR20261102032700005"
+     "src": "동아일보",
+     "title": "47세 엄마 된 한다감, 생후 26일 아들 주원 첫 공개…“울면 땀 나”",
+     "link": "https://sports.donga.com/ent/article/all/20261103/134954785/1"
     },
     {
      "src": "동아일보",
-     "title": "“그냥 게이랑 놀아” 홍석천, ‘일라이와 이혼’ 지연수에 연애 금지령",
-     "link": "https://sports.donga.com/ent/article/all/20261102/134954154/1"
+     "title": "‘47세’ 한다감, 아들 최초 공개…생후 26일 붕어빵 비주얼 (슈돌)",
+     "link": "https://sports.donga.com/ent/article/all/20261103/134954771/1"
     },
     {
-     "src": "동아일보",
-     "title": "김윤혜, 첫사랑 비주얼 합격…짧지만 강렬했다 (너 말고 다른 연애)",
-     "link": "https://sports.donga.com/ent/article/all/20261102/134949519/1"
+     "src": "한국경제",
+     "title": "강석우, 69세에 할아버지 됐다…\"아들이 아들 낳아\"",
+     "link": "https://www.hankyung.com/article/202610292398H"
     },
     {
+     "src": "한국경제",
+     "title": "'김현중 혼외자 양육' 전 여친, 방송 활동 시작…\"아들 외모 출중\"",
+     "link": "https://www.hankyung.com/article/202610230216H"
+    }
+   ]
+  },
+  {
+   "kw": "이유",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "조선일보",
+    "헤럴드경제"
+   ],
+   "n": 8,
+   "headlines": [
+    {
      "src": "동아일보",
-     "title": "이동국 딸 이재아 “결혼까지 생각”…첫 연애 예능 출연",
-     "link": "https://sports.donga.com/ent/article/all/20261102/134949343/1"
+     "title": "“평생 뛸 것” 이봉주, 투병 후 다시 달리는 이유 (시대목격)",
+     "link": "https://sports.donga.com/ent/article/all/20261103/134954699/1"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "“제주 카페 망했다는데”…이동건, 1년 6개월만에 폐업 이유 밝혔다",
+     "link": "https://biz.heraldcorp.com/article/10922321"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "박하선 6년만 라디오 하차 이유…“싫어져 관두는 게 아니다” 입 열었다",
+     "link": "https://biz.heraldcorp.com/article/10921772"
+    },
+    {
+     "src": "뉴시스",
+     "title": "김정난, 고급 3층 타운하우스 접고 영등포 이사 이유",
+     "link": "https://www.newsis.com/view/NISX20261103_0003851881"
     }
    ]
   },
@@ -589,20 +656,15 @@
    "srcs": [
     "SBS",
     "뉴시스",
-    "동아일보",
+    "조선일보",
     "헤럴드경제"
    ],
-   "n": 7,
+   "n": 8,
    "headlines": [
     {
-     "src": "동아일보",
-     "title": "차예련, 학폭 의혹 부인에도 해명 요구 시끌 [DA이슈]",
-     "link": "https://sports.donga.com/ent/article/all/20261102/134949658/2"
-    },
-    {
-     "src": "동아일보",
-     "title": "차예련, 학폭 의혹 3일 만에 결국 댓글창 폐쇄…“가족 인신공격 방지”",
-     "link": "https://sports.donga.com/ent/article/all/20261102/134948929/1"
+     "src": "헤럴드경제",
+     "title": "‘차예련 학폭 폭로글’ 돌연 사라졌다…“사실무근” 부인 후 임시조치",
+     "link": "https://biz.heraldcorp.com/article/10923394"
     },
     {
      "src": "헤럴드경제",
@@ -613,105 +675,11 @@
      "src": "SBS",
      "title": "\"학폭 사실무근\" 반박에도…차예련 SNS \"해명하라\" 쇄도",
      "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008825394&plink=RSSLINK&cooper=RSSREADER"
-    }
-   ]
-  },
-  {
-   "kw": "차예련",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "동아일보",
-    "헤럴드경제"
-   ],
-   "n": 7,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "차예련, 학폭 의혹 부인에도 해명 요구 시끌 [DA이슈]",
-     "link": "https://sports.donga.com/ent/article/all/20261102/134949658/2"
-    },
-    {
-     "src": "동아일보",
-     "title": "차예련, 학폭 의혹 3일 만에 결국 댓글창 폐쇄…“가족 인신공격 방지”",
-     "link": "https://sports.donga.com/ent/article/all/20261102/134948929/1"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "차예련 측 ‘학폭 사실무근’ 반박에도…남편 주상욱· 어린 딸까지 ‘불똥’",
-     "link": "https://biz.heraldcorp.com/article/10922219"
     },
     {
      "src": "SBS",
-     "title": "\"학폭 사실무근\" 반박에도…차예련 SNS \"해명하라\" 쇄도",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008825394&plink=RSSLINK&cooper=RSSREADER"
-    }
-   ]
-  },
-  {
-   "kw": "김종관",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "세계일보",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "'낮과 밤은 서로에게' 심은경 \"김종관 감독 차분함에 용기 가져\"",
-     "link": "https://www.yna.co.kr/view/AKR20261102164000005"
-    },
-    {
-     "src": "세계일보",
-     "title": "[포토] 김종관-심은경 '낮과 밤은 서로에게'",
-     "link": "https://www.segye.com/newsView/20261102514091"
-    },
-    {
-     "src": "뉴시스",
-     "title": "김종관 \"작고 사소한 아름다움을 얘기하는 영화\"",
-     "link": "https://www.newsis.com/view/NISX20261102_0003851502"
-    },
-    {
-     "src": "조선일보",
-     "title": "[포토] 김종관 감독-심은경, 케미",
-     "link": "https://www.chosun.com/entertainments/entertain_photo/2026/11/02/MYZGEMTDGZRWGYLDHBSTAZRRGY/"
-    }
-   ]
-  },
-  {
-   "kw": "배웅",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "세계일보",
-    "연합뉴스"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "[영상] \"김 회장님 잘 가세요\"…'국민 아버지' 최불암 마지막 배웅",
-     "link": "https://www.yna.co.kr/view/AKR20261102147900704"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "\"어린 나무 지켜주던 큰 나무 최불암\"…눈물 속 마지막 배웅(종합2보)",
-     "link": "https://www.yna.co.kr/view/AKR20261102023252005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "'국민 아버지' 최불암 오늘 영면…'아베 마리아'로 마지막 배웅",
-     "link": "https://www.yna.co.kr/view/AKR20261101025200005"
-    },
-    {
-     "src": "세계일보",
-     "title": "'국민 배우' 故 최불암, 유가족·후배 배우들 배웅 속 영면 [뉴시스Pic]",
-     "link": "https://www.segye.com/newsView/20261102509976"
+     "title": "\"뺨 때려 고막 찢어져\" 85년생 학폭 여배우 폭로 나왔다…차예련 측 '사실무근' 반박",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008823590&plink=RSSLINK&cooper=RSSREADER"
     }
    ]
   },
@@ -724,7 +692,7 @@
     "연합뉴스",
     "조선일보"
    ],
-   "n": 6,
+   "n": 7,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -749,35 +717,134 @@
    ]
   },
   {
-   "kw": "마음",
+   "kw": "차예련",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "조선일보",
+    "헤럴드경제"
+   ],
+   "n": 7,
+   "headlines": [
+    {
+     "src": "헤럴드경제",
+     "title": "‘차예련 학폭 폭로글’ 돌연 사라졌다…“사실무근” 부인 후 임시조치",
+     "link": "https://biz.heraldcorp.com/article/10923394"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "차예련 측 ‘학폭 사실무근’ 반박에도…남편 주상욱· 어린 딸까지 ‘불똥’",
+     "link": "https://biz.heraldcorp.com/article/10922219"
+    },
+    {
+     "src": "SBS",
+     "title": "\"학폭 사실무근\" 반박에도…차예련 SNS \"해명하라\" 쇄도",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008825394&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "SBS",
+     "title": "\"뺨 때려 고막 찢어져\" 85년생 학폭 여배우 폭로 나왔다…차예련 측 '사실무근' 반박",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008823590&plink=RSSLINK&cooper=RSSREADER"
+    }
+   ]
+  },
+  {
+   "kw": "내년",
    "nsrc": 4,
    "srcs": [
     "뉴시스",
     "연합뉴스",
-    "조선일보",
-    "헤럴드경제"
+    "한겨레",
+    "한국경제"
    ],
    "n": 6,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "김용건 \"최불암 빈소 못 찾아 마음 힘들어…곁에 있어야 하는데\"",
-     "link": "https://www.yna.co.kr/view/AKR20261101019400005"
+     "title": "가상 아이돌 등 시상…'버추얼 아이콘 어워즈' 내년 2월 첫 개최",
+     "link": "https://www.yna.co.kr/view/AKR20261102161800005"
     },
     {
-     "src": "헤럴드경제",
-     "title": "신현준, 故최불암 빈소 지킨 김혜수에 “마음 아름다운 배우…이런 동료 있어 감사”",
-     "link": "https://biz.heraldcorp.com/article/10923251"
+     "src": "연합뉴스",
+     "title": "캣츠아이, 내년 2월 KSPO돔서 첫 내한 공연",
+     "link": "https://www.yna.co.kr/view/AKR20261029124100005"
     },
     {
-     "src": "헤럴드경제",
-     "title": "‘전원일기 장남’ 김용건, 故최불암 빈소 못 간 이유가…“하루하루 마음 힘들다” 토로",
-     "link": "https://biz.heraldcorp.com/article/10921639"
+     "src": "한겨레",
+     "title": "다큐멘터리 ‘대통령 김대중’ 내년 1월6일 개봉",
+     "link": "https://www.hani.co.kr/arti/culture/culture_general/1285277.html"
     },
     {
-     "src": "뉴시스",
-     "title": "신현준, 故최불암 마지막 길 지킨 김혜수에 \"마음 깊고 따뜻한 사람\"",
-     "link": "https://www.newsis.com/view/NISX20261102_0003851757"
+     "src": "한국경제",
+     "title": "'호프' 배우 음문석, 모델 연인과 내년 1월 결혼",
+     "link": "https://www.hankyung.com/article/2026102157717"
+    }
+   ]
+  },
+  {
+   "kw": "영면",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "연합뉴스",
+    "한겨레"
+   ],
+   "n": 6,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "'국민 아버지' 최불암 영면…아내 김민자 연신 눈물 흘려",
+     "link": "https://www.yna.co.kr/view/AKR20261102023200005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "'국민 아버지' 최불암 오늘 영면…'아베 마리아'로 마지막 배웅",
+     "link": "https://www.yna.co.kr/view/AKR20261101025200005"
+    },
+    {
+     "src": "한겨레",
+     "title": "고 최불암 오늘 영면…“아버지 품 같은 연기와 삶, 고마웠습니다”",
+     "link": "https://www.hani.co.kr/arti/culture/culture_general/1285250.html"
+    },
+    {
+     "src": "한겨레",
+     "title": "임형주 ‘아베 마리아’ 노래 속에서…고 최불암 내일 영면",
+     "link": "https://www.hani.co.kr/arti/culture/culture_general/1285196.html"
+    }
+   ]
+  },
+  {
+   "kw": "우리",
+   "nsrc": 4,
+   "srcs": [
+    "세계일보",
+    "연합뉴스",
+    "조선일보",
+    "한겨레"
+   ],
+   "n": 6,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "최불암 \"적당함 유지하는 것이 우리 삶…다 같이 행복해져야지\"",
+     "link": "https://www.yna.co.kr/view/AKR20261031027700005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "李대통령, 최불암 별세에 \"우리 시대의 아버지…깊은 애도\"",
+     "link": "https://www.yna.co.kr/view/AKR20261030045600001"
+    },
+    {
+     "src": "한겨레",
+     "title": "“사람에게 가장 필요한 것은 사람”…최불암, 우리 이웃의 삶을 품다",
+     "link": "https://www.hani.co.kr/arti/culture/culture_general/1285047.html"
+    },
+    {
+     "src": "세계일보",
+     "title": "[포토] 전소영-김동휘 '우리 잘 어울리죠?'",
+     "link": "https://www.segye.com/newsView/20261102514182"
     }
    ]
   },
@@ -848,40 +915,73 @@
    ]
   },
   {
-   "kw": "주년",
+   "kw": "연속",
    "nsrc": 4,
    "srcs": [
-    "동아일보",
+    "SBS",
+    "세계일보",
     "연합뉴스",
-    "한겨레",
-    "한국경제"
+    "조선일보"
    ],
    "n": 5,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "유니버설뮤직, 내달 재즈 레이블 70주년 기념 팝업 전시",
-     "link": "https://www.yna.co.kr/view/AKR20261030047400005"
+     "title": "[박스오피스] '치이카와' 4주 연속 주말 흥행 1위…누적 258만명",
+     "link": "https://www.yna.co.kr/view/AKR20261102036700005"
     },
     {
-     "src": "연합뉴스",
-     "title": "10주년 블랙핑크, 옥관문화훈장 수훈에 \"위로와 감동 전하겠다\"",
-     "link": "https://www.yna.co.kr/view/AKR20261030033000005"
+     "src": "세계일보",
+     "title": "‘극장판 치이카와’ 4주 연속 주말 흥행 1위",
+     "link": "https://www.segye.com/newsView/20261102514442"
     },
     {
-     "src": "동아일보",
-     "title": "손호영의 20년, 다시 빛난 ‘호라이즌’…“30주년, 40주년도 같이 가자” [DA리뷰]",
-     "link": "https://sports.donga.com/ent/article/all/20261102/134948834/1"
+     "src": "SBS",
+     "title": "데뷔곡 하나로 음방 8관왕…A2O LITE, '인기가요' 2주 연속 1위",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008826114&plink=RSSLINK&cooper=RSSREADER"
     },
     {
-     "src": "한겨레",
-     "title": "박경리 탄생 100주년…토지 무대 ‘하동 평사리’ 방문객 증가",
-     "link": "https://www.hani.co.kr/arti/culture/culture_general/1285229.html"
+     "src": "SBS",
+     "title": "'극장판 치이카와: 인어 섬의 비밀', 4주 연속 주말 박스오피스 1위…250만 돌파",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008825688&plink=RSSLINK&cooper=RSSREADER"
     }
    ]
   },
   {
-   "kw": "남자",
+   "kw": "연애",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "세계일보",
+    "연합뉴스"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "웃으며 이별한 서강준·안은진…'너 말고 다른 연애' 2.4% 종영",
+     "link": "https://www.yna.co.kr/view/AKR20261102032700005"
+    },
+    {
+     "src": "동아일보",
+     "title": "“그냥 게이랑 놀아” 홍석천, ‘일라이와 이혼’ 지연수에 연애 금지령",
+     "link": "https://sports.donga.com/ent/article/all/20261102/134954154/1"
+    },
+    {
+     "src": "세계일보",
+     "title": "이동국 딸 재아, 연애 예능 출격…“부모님처럼 장기 연애 후 결혼이 로망”",
+     "link": "https://www.segye.com/newsView/20261102517551"
+    },
+    {
+     "src": "뉴시스",
+     "title": "이동국 딸 재아, 연애 예능 출연 \"놀러가는 게 아니라 진지하게\"",
+     "link": "https://www.newsis.com/view/NISX20261102_0003851078"
+    }
+   ]
+  },
+  {
+   "kw": "투어",
    "nsrc": 4,
    "srcs": [
     "뉴시스",
@@ -893,56 +993,89 @@
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "'왕과 사는 남자' 촬영지 인기…강원 전역으로 촬영유치 확대",
-     "link": "https://www.yna.co.kr/view/AKR20261029095700062"
+     "title": "보이넥스트도어, 오늘부터 첫 북미 투어 돌입",
+     "link": "https://www.yna.co.kr/view/AKR20261030066500005"
     },
     {
      "src": "동아일보",
-     "title": "‘돌싱N모솔2’ 첫 데이트부터 삼각관계…한 여성에 두 남자",
-     "link": "https://sports.donga.com/ent/article/all/20261102/134949877/1"
+     "title": "플레어 유, 오는 12월 서울서 팬콘서트 투어 ‘Where U’RE’ 포문",
+     "link": "https://sports.donga.com/ent/article/all/20261103/134954782/1"
     },
     {
      "src": "뉴시스",
-     "title": "홍석천, 지연수 썸남 두고 질투 \"내가 특별히 예뻐한 남자\"",
-     "link": "https://www.newsis.com/view/NISX20261102_0003851798"
+     "title": "'미스트롯4' 톱7, 20개 도시 투어 성료…서울 앙코르로 피날레",
+     "link": "https://www.newsis.com/view/NISX20261102_0003851037"
     },
     {
-     "src": "뉴시스",
-     "title": "홍석천, '이혼' 지연수에 뼈 있는 조언 \"남자 만나지 마\"",
-     "link": "https://www.newsis.com/view/NISX20261102_0003851797"
+     "src": "조선일보",
+     "title": "82메이저, 11월 미주 투어 확정..'전석 매진' 열기 이어간다",
+     "link": "https://www.chosun.com/entertainments/music/2026/11/02/HFQWGNDDGRRGINTBGQ4DQNRQMU/"
     }
    ]
   },
   {
-   "kw": "이혼",
+   "kw": "감동",
    "nsrc": 4,
    "srcs": [
-    "뉴시스",
+    "SBS",
     "동아일보",
-    "조선일보",
+    "연합뉴스",
     "한국경제"
    ],
    "n": 5,
    "headlines": [
     {
+     "src": "연합뉴스",
+     "title": "韓총리, 최불암 추모…\"국민에 주신 감동 영원히 간직할 것\"",
+     "link": "https://www.yna.co.kr/view/AKR20261030044500001"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "10주년 블랙핑크, 옥관문화훈장 수훈에 \"위로와 감동 전하겠다\"",
+     "link": "https://www.yna.co.kr/view/AKR20261030033000005"
+    },
+    {
      "src": "동아일보",
-     "title": "“그냥 게이랑 놀아” 홍석천, ‘일라이와 이혼’ 지연수에 연애 금지령",
-     "link": "https://sports.donga.com/ent/article/all/20261102/134954154/1"
+     "title": "BTS 지민, 브라질 공연장 뒤덮은 노란 꽃…팬들 생일 축하에 감동",
+     "link": "https://sports.donga.com/ent/article/all/20261103/134954673/1"
     },
     {
      "src": "한국경제",
-     "title": "마로니에 김정은, 결혼 22년 만에 파경…\"협의 이혼\"",
-     "link": "https://www.hankyung.com/article/202610230325H"
+     "title": "임영웅 스타디움 공연 감동 한 번 더…실황 영화 11월 18일 개봉",
+     "link": "https://www.hankyung.com/article/202610264236H"
+    }
+   ]
+  },
+  {
+   "kw": "고백",
+   "nsrc": 4,
+   "srcs": [
+    "동아일보",
+    "조선일보",
+    "한국경제",
+    "헤럴드경제"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "송준근, 7세 때 겪은 가족 비극 고백…“형이 세상 떠났다”",
+     "link": "https://sports.donga.com/ent/article/all/20261103/134954653/1"
     },
     {
-     "src": "뉴시스",
-     "title": "홍석천, '이혼' 지연수에 뼈 있는 조언 \"남자 만나지 마\"",
-     "link": "https://www.newsis.com/view/NISX20261102_0003851797"
+     "src": "한국경제",
+     "title": "\"통장 압류, 수중엔 1000원\"…JBJ 출신 켄타, 4억 빚 고백",
+     "link": "https://www.hankyung.com/article/202610280689H"
     },
     {
-     "src": "뉴시스",
-     "title": "'이혼 6년 차' 정애연, 모친과 합가 일상…외출복 입고 화장 안 지운 채 취침",
-     "link": "https://www.newsis.com/view/NISX20261102_0003850057"
+     "src": "헤럴드경제",
+     "title": "이미숙 “주식 때문에 완전히…집 다 날아갔어” 늘그막 주식 투자 쓴맛 고백",
+     "link": "https://biz.heraldcorp.com/article/10922659"
+    },
+    {
+     "src": "조선일보",
+     "title": "차예련 학폭의혹 속…이혜성, 학폭 피해 고백 “너무 고통스럽고 힘들었다”[Oh!쎈 이슈]",
+     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/03/GMZWINJVGQ2TOY3FHE4GENRSMY/"
     }
    ]
   },
@@ -1046,101 +1179,68 @@
    ]
   },
   {
-   "kw": "말고",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 4,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "웃으며 이별한 서강준·안은진…'너 말고 다른 연애' 2.4% 종영",
-     "link": "https://www.yna.co.kr/view/AKR20261102032700005"
-    },
-    {
-     "src": "동아일보",
-     "title": "김윤혜, 첫사랑 비주얼 합격…짧지만 강렬했다 (너 말고 다른 연애)",
-     "link": "https://sports.donga.com/ent/article/all/20261102/134949519/1"
-    },
-    {
-     "src": "뉴시스",
-     "title": "서강준·안은진, 10년 열애 끝…'너 말고 다른 연애' 2.4% 종영",
-     "link": "https://www.newsis.com/view/NISX20261102_0003850458"
-    },
-    {
-     "src": "조선일보",
-     "title": "홍석천, ‘싱글맘’ 지연수에 뼈 있는 조언 “남자 만나지 말고 오빠 말 좀 들어”",
-     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/02/MI4DONZVGM3DQYRQMZTGIYJXMQ/"
-    }
-   ]
-  },
-  {
-   "kw": "이야기",
+   "kw": "박스오피",
    "nsrc": 4,
    "srcs": [
     "SBS",
+    "동아일보",
     "연합뉴스",
-    "조선일보",
     "한겨레"
    ],
    "n": 4,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "[시간들] 최불암의 정치 외도, 그 못다한 이야기",
-     "link": "https://www.yna.co.kr/view/AKR20261031029400546"
+     "title": "[박스오피스] '치이카와' 4주 연속 주말 흥행 1위…누적 258만명",
+     "link": "https://www.yna.co.kr/view/AKR20261102036700005"
+    },
+    {
+     "src": "동아일보",
+     "title": "‘암살자(들)’, 6주차에 韓영화 박스오피스 1위 탈환…340만 관객 돌파",
+     "link": "https://sports.donga.com/ent/article/all/20261103/134954800/1"
     },
     {
      "src": "한겨레",
-     "title": "‘김부장 이야기’ ‘신병’ 이현균 “연기 원동력이요? 그냥 재밌어요”",
-     "link": "https://www.hani.co.kr/arti/culture/culture_general/1285386.html"
+     "title": "브래드 피트도 못 막은 먼작귀…치이카와, 박스오피스 1위 재탈환",
+     "link": "https://www.hani.co.kr/arti/culture/culture_general/1285135.html"
     },
     {
      "src": "SBS",
-     "title": "길에서 주운 지갑이 만든 기적…'궁금한 이야기Y', 한국인 청년과 일본인 할아버지의 국경 넘은 우정",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008822669&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "조선일보",
-     "title": "가장 투어스다운 이야기 뭘까…오늘(2일) 싱글 2집 ‘TO US’ 발매",
-     "link": "https://www.chosun.com/entertainments/music/2026/11/02/GQYWKYJWMY2DCYTEMU4TKNJTMU/"
+     "title": "'극장판 치이카와: 인어 섬의 비밀', 4주 연속 주말 박스오피스 1위…250만 돌파",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008825688&plink=RSSLINK&cooper=RSSREADER"
     }
    ]
   },
   {
-   "kw": "싱글",
+   "kw": "아내",
    "nsrc": 4,
    "srcs": [
-    "SBS",
     "동아일보",
     "연합뉴스",
-    "조선일보"
+    "조선일보",
+    "헤럴드경제"
    ],
    "n": 4,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "캣츠아이, 英 오피셜 싱글 차트 78위·앨범 80위",
-     "link": "https://www.yna.co.kr/view/AKR20261031020400005"
+     "title": "'국민 아버지' 최불암 영면…아내 김민자 연신 눈물 흘려",
+     "link": "https://www.yna.co.kr/view/AKR20261102023200005"
     },
     {
      "src": "동아일보",
-     "title": "[공식] 마크, 6일 새 싱글 ‘Happiest’ 발매 확정",
-     "link": "https://sports.donga.com/ent/article/all/20261103/134954579/1"
+     "title": "김종국, 아내 저장명은 ‘귀요미♥’…출연진 난리 (옥문아)",
+     "link": "https://sports.donga.com/ent/article/all/20261103/134954769/1"
     },
     {
-     "src": "SBS",
-     "title": "폴킴, 영어 싱글 'Love Me Hard' 발매…미국 시장 도전",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008823500&plink=RSSLINK&cooper=RSSREADER"
+     "src": "헤럴드경제",
+     "title": "‘모텔 논란’ 양홍원, 아내·결혼 사진 ‘전부 삭제’…‘불륜 폭로’ 번복에도 여진 계속",
+     "link": "https://biz.heraldcorp.com/article/10923435"
     },
     {
      "src": "조선일보",
-     "title": "가장 투어스다운 이야기 뭘까…오늘(2일) 싱글 2집 ‘TO US’ 발매",
-     "link": "https://www.chosun.com/entertainments/music/2026/11/02/GQYWKYJWMY2DCYTEMU4TKNJTMU/"
+     "title": "김원효♥심진화, 국내 최초 영화관 결혼식 “아내 한 마디에 결심”(말자쇼)",
+     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/03/MQ4TKYZQMQ2WKYRQMIZTOZLCGU/"
     }
    ]
   },
@@ -1174,39 +1274,6 @@
      "src": "조선일보",
      "title": "“작년에 많은 사람 잃어” 이국주, 한국 떠난 이유 있었나",
      "link": "https://www.chosun.com/entertainments/broadcast/2026/11/02/GNRDOYRZG43WMZBVMZSGKNJSMI/"
-    }
-   ]
-  },
-  {
-   "kw": "출산",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "조선일보",
-    "헤럴드경제"
-   ],
-   "n": 4,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "티아라 소연, 결혼 4년 만에 임신…내년 아들 출산 예정",
-     "link": "https://sports.donga.com/ent/article/all/20261102/134950091/1"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "임신 모르고 12kg 감량, 30분 만에 출산 후 감정통제 불가…오은영 “아동학대 맞다”",
-     "link": "https://biz.heraldcorp.com/article/10922695"
-    },
-    {
-     "src": "뉴시스",
-     "title": "'임신 모르고 12㎏ 감량' 30분만 출산…오은영 \"명백한 아동학대\"",
-     "link": "https://www.newsis.com/view/NISX20261102_0003850176"
-    },
-    {
-     "src": "조선일보",
-     "title": "‘둘째 출산’ 거미 음주 촬영... 조정석 독박육아 불만 “누군 술 먹고 있고”(짠한형)",
-     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/02/G43TSMTGMI4WMYJRMY3TKYZSGA/"
     }
    ]
   },
@@ -1271,72 +1338,8 @@
     },
     {
      "src": "조선일보",
-     "title": "리센느 원이, 공연 중 무대 이탈…“세탁 후 줄어든 의상 탓”",
+     "title": "리센느 원이, 공연 중 무대 이탈… “세탁 후 줄어든 의상 탓”",
      "link": "https://www.chosun.com/entertainments/celebrity/2026/11/02/OG64B6SR4JCCBDTBJJ67UMKX2M/"
-    }
-   ]
-  },
-  {
-   "kw": "별세",
-   "nsrc": 3,
-   "srcs": [
-    "연합뉴스",
-    "한겨레",
-    "한국경제"
-   ],
-   "n": 12,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "'사극 대가' 정하연 작가 별세…'왕과 비'·'명성황후' 등 집필",
-     "link": "https://www.yna.co.kr/view/AKR20261101051300005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "[쇼츠] '파하~' 웃음 남기고 떠났다…'영원한 수사반장' 최불암 별세",
-     "link": "https://www.yna.co.kr/view/AKR20261030087000704"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "[영상] '영원한 수사반장' 최불암 별세…\"편히 쉬소서\"",
-     "link": "https://www.yna.co.kr/view/AKR20261030081600704"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "'엑스맨' 프로페서X 하늘나라로…배우 패트릭 스튜어트 별세",
-     "link": "https://www.yna.co.kr/view/AKR20261030010200075"
-    }
-   ]
-  },
-  {
-   "kw": "빈소",
-   "nsrc": 3,
-   "srcs": [
-    "뉴시스",
-    "연합뉴스",
-    "헤럴드경제"
-   ],
-   "n": 9,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "최불암 빈소 마지막 날도 조문 행렬…김혜수는 사흘째 지켜(종합)",
-     "link": "https://www.yna.co.kr/view/AKR20261101032151005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "이제훈 \"최불암과 연기, 인생의 영광\"…김혜수 사흘째 빈소 지켜",
-     "link": "https://www.yna.co.kr/view/AKR20261101032100005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "김용건 \"최불암 빈소 못 찾아 마음 힘들어…곁에 있어야 하는데\"",
-     "link": "https://www.yna.co.kr/view/AKR20261101019400005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "최불암 빈소 이틀째 발길…\"큰 별 떠나, 누가 방송 지키나\"(종합)",
-     "link": "https://www.yna.co.kr/view/AKR20261031027651005"
     }
    ]
   }

@@ -59,3 +59,5 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,su
 .hd .gn a,.hd .hd-s,.hd .logo{min-height:44px}
 .hd .logo{display:inline-flex;align-items:center}
 .hd button,.hd .cm-in{min-height:44px}.hd button{min-width:44px}
+.top-ans{margin:12px 0 18px;padding:14px 16px;border:1px solid var(--bd);border-left:4px solid var(--pri);border-radius:8px;background:var(--card);font-size:15.5px;line-height:1.7;color:var(--tx)}
+.top-ans b{color:var(--pri)}
