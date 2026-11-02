@@ -138,7 +138,7 @@ def _today_hot_sec():
     if not cards:
         return ''
     li = ''.join(f'<li><a href="{E(u)}"><b>{E(_short(t, 60))}</b><span>{E(sub)}</span></a></li>' for _d, u, t, sub in cards)
-    return f'<section class="hm-sec"><div class="hm-h"><h2>오늘 많이 찾는 것</h2><a href="/hot/">핫이슈 전체 →</a></div><ul class="hm-nl">{li}</ul></section>'
+    return f'<section class="hm-sec"><div class="hm-h"><h2>오늘 많이 찾는 것</h2><a href="/issue/">이슈 전체 →</a></div><ul class="hm-nl">{li}</ul></section>'
 
 
 def _indicator_sec():

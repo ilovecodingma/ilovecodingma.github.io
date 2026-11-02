@@ -3497,7 +3497,7 @@ def issue_json_pages():
     """/issue/<slug>/ 단기 이슈 설명 (2026-11-02 마케터 원고 JSON → 페이지). 원고는 _gongmo/issues/<slug>.json.
     필드: slug, title, desc, h1, date(기준일 YYYY-MM-DD), keep_days(기본 4), summary, confirmed[[내용,출처]], unconfirmed[[내용,이유]],
     sections[{h,p,ul}], faq[[질문,답]], sources[[이름,url]], related[[경로,이름]]. date+keep_days 가 지나면 페이지를 지운다."""
-    keep, urls = set(), []
+    keep, urls, icards = set(), [], []
     if os.path.isdir(ISSUE_DIR):
         for fn_ in sorted(os.listdir(ISSUE_DIR)):
             if not fn_.endswith('.json'):
@@ -3527,6 +3527,9 @@ def issue_json_pages():
                 secs += f'<h2>자주 묻는 질문</h2>{faq}'
             if c.get('sources'):
                 secs += '<h2>출처</h2><ul class="gm-l">' + ''.join(f'<li><a href="{E(u_)}" target="_blank" rel="noopener nofollow">{E(n_)}</a></li>' for n_, u_ in c['sources']) + '</ul>'
+            if c.get('lury_note'):   # 2026-11-02 사용자 방침: 루리는 글 끝 「루리의 한마디」 코너에서만 말한다
+                secs += (f'<aside class="say"><img src="/assets/ruri/o_det_think_s.webp" width="56" height="77" alt="루리" loading="lazy">'
+                         f'<div class="bub"><b>루리의 한마디</b><div>{E(c["lury_note"])}</div></div></aside>')
             rel = ''.join(f'<a href="{E(u_)}">{E(n_)}</a>' for u_, n_ in c.get('related', []))
             body = (f'<p class="bc"><a href="/">홈</a> › 이슈 › {E(c["h1"][:30])}</p><h1>{E(c["h1"])}</h1>'
                     f'<div class="cat-st"><b>결론</b><br>{E(c["summary"])}</div><p class="note">{c["date"]} 기준 · 이 글은 단기 이슈라 {int(c.get("keep_days", 4))}일 뒤 내려가요.</p>'
@@ -3538,11 +3541,20 @@ def issue_json_pages():
             ld_ = {'@context': 'https://schema.org', '@graph': [art, fld]} if fld else art
             page(p_, c['title'], c['desc'], body, [('루리의 줍줍', '/'), ('이슈', '/news/'), (c['h1'][:20], p_)], ld_, full_title=True)
             urls.append(p_)
+            icards.append((c['date'], f'<li><a href="{p_}"><b>{E(c["h1"])}</b><span>{c["date"][5:].replace("-", "/")} 기준 · {E(c["summary"][:80])}</span></a></li>'))
     idir = os.path.join(ROOT, 'issue')
     if os.path.isdir(idir):
         for f_ in os.listdir(idir):
             if f_ != 'kim-jong-un-rumor' and f_ not in keep and os.path.isdir(os.path.join(idir, f_)):
                 shutil.rmtree(os.path.join(idir, f_), ignore_errors=True)   # 보관 기간이 지났거나 원고가 없어진 단기 이슈
+    if os.path.exists(os.path.join(HERE, 'essays', 'kim-rumor.html')):
+        icards.append(('2026-10-21', '<li><a href="/issue/kim-jong-un-rumor/"><b>김정은 사망했나요? 살아있나요? 근거 확인 결과</b><span>10/21 기준 · 확인된 것과 확인되지 않은 것을 나눠 정리했습니다.</span></a></li>'))
+    if icards:
+        li = ''.join(h_ for _d, h_ in sorted(icards, key=lambda x: x[0], reverse=True))
+        page('/issue/', '요즘 많이 찾는 이슈 정리 — 확인된 것과 확인되지 않은 것', '요즘 검색이 몰리는 이슈를 공식 출처 기준으로 확인된 것과 확인되지 않은 것으로 나눠 정리합니다. 단기 이슈는 며칠 뒤 내려갑니다.',
+             f'<p class="bc"><a href="/">홈</a> › 이슈</p><h1>요즘 많이 찾는 이슈 정리</h1><p>검색이 몰리는 이슈를 공식 출처 기준으로 확인된 것과 확인되지 않은 것으로 나눕니다. 단기 이슈는 보관 기간이 지나면 내려갑니다.</p><ul class="gm-g">{li}</ul>',
+             [('루리의 줍줍', '/'), ('이슈', '/issue/')])
+        urls.append('/issue/')
     return urls
 
 
