@@ -1,10 +1,10 @@
 {
- "at": "2026-10-26 09:20",
+ "at": "2026-11-02 09:20",
  "since": "2026-10-20",
  "stable_since": "2026-10-20",
- "days_observed": 7,
- "visitors": 799,
- "returning_2plus_days": 10,
+ "days_observed": 14,
+ "visitors": 2850,
+ "returning_2plus_days": 36,
  "daily": [
   {
    "day": "2026-10-20",
@@ -38,8 +38,43 @@
   },
   {
    "day": "2026-10-26",
-   "visitors": 17,
-   "returning": 3
+   "visitors": 130,
+   "returning": 6
+  },
+  {
+   "day": "2026-10-27",
+   "visitors": 125,
+   "returning": 5
+  },
+  {
+   "day": "2026-10-28",
+   "visitors": 113,
+   "returning": 10
+  },
+  {
+   "day": "2026-10-29",
+   "visitors": 237,
+   "returning": 11
+  },
+  {
+   "day": "2026-10-30",
+   "visitors": 237,
+   "returning": 11
+  },
+  {
+   "day": "2026-10-31",
+   "visitors": 110,
+   "returning": 4
+  },
+  {
+   "day": "2026-11-01",
+   "visitors": 893,
+   "returning": 5
+  },
+  {
+   "day": "2026-11-02",
+   "visitors": 272,
+   "returning": 0
   }
  ],
  "note": "같은 방문 번호가 2일 이상 방문한 비율. 번호는 브라우저 저장소 기준이라 브라우저·기기를 바꾸거나 저장소를 지우면 새 방문자로 셈해요.",
