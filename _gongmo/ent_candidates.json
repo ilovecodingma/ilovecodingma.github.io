@@ -1,5 +1,5 @@
 {
- "at": "2026-11-03 01:30",
+ "at": "2026-11-03 02:30",
  "nitems": 516,
  "cands": [
   {
@@ -552,7 +552,7 @@
    ]
   },
   {
-   "kw": "차예련",
+   "kw": "학폭",
    "nsrc": 4,
    "srcs": [
     "SBS",
@@ -585,7 +585,7 @@
    ]
   },
   {
-   "kw": "학폭",
+   "kw": "차예련",
    "nsrc": 4,
    "srcs": [
     "SBS",
@@ -1146,39 +1146,6 @@
    ]
   },
   {
-   "kw": "이탈",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "세계일보",
-    "조선일보",
-    "헤럴드경제"
-   ],
-   "n": 4,
-   "headlines": [
-    {
-     "src": "세계일보",
-     "title": "리센느 원이, 공연 중 무대 이탈…\"세탁 후 줄어든 의상 탓\"",
-     "link": "https://www.segye.com/newsView/20261102512094"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "‘리센느’ 원이, 공연 중 무대 이탈 왜?…“줄어든 의상 탓에 숨 안 쉬어져” 해명",
-     "link": "https://biz.heraldcorp.com/article/10922778"
-    },
-    {
-     "src": "뉴시스",
-     "title": "리센느 원이, 공연 중 '호흡곤란' 무대 이탈…\"세탁 후 줄어든 의상 탓\"",
-     "link": "https://www.newsis.com/view/NISX20261102_0003851162"
-    },
-    {
-     "src": "조선일보",
-     "title": "리센느 원이, 공연 중 무대 이탈…“세탁 후 줄어든 의상 탓”",
-     "link": "https://www.chosun.com/entertainments/celebrity/2026/11/02/OG64B6SR4JCCBDTBJJ67UMKX2M/"
-    }
-   ]
-  },
-  {
    "kw": "줄어든",
    "nsrc": 4,
    "srcs": [
@@ -1213,6 +1180,39 @@
   },
   {
    "kw": "원이",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "세계일보",
+    "조선일보",
+    "헤럴드경제"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "세계일보",
+     "title": "리센느 원이, 공연 중 무대 이탈…\"세탁 후 줄어든 의상 탓\"",
+     "link": "https://www.segye.com/newsView/20261102512094"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "‘리센느’ 원이, 공연 중 무대 이탈 왜?…“줄어든 의상 탓에 숨 안 쉬어져” 해명",
+     "link": "https://biz.heraldcorp.com/article/10922778"
+    },
+    {
+     "src": "뉴시스",
+     "title": "리센느 원이, 공연 중 '호흡곤란' 무대 이탈…\"세탁 후 줄어든 의상 탓\"",
+     "link": "https://www.newsis.com/view/NISX20261102_0003851162"
+    },
+    {
+     "src": "조선일보",
+     "title": "리센느 원이, 공연 중 무대 이탈…“세탁 후 줄어든 의상 탓”",
+     "link": "https://www.chosun.com/entertainments/celebrity/2026/11/02/OG64B6SR4JCCBDTBJJ67UMKX2M/"
+    }
+   ]
+  },
+  {
+   "kw": "이탈",
    "nsrc": 4,
    "srcs": [
     "뉴시스",
