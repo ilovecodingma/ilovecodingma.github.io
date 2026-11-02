@@ -41,7 +41,7 @@ def card(r, PI):
     im = Image.new('RGB', (W, H), '#fff7ed')
     d = ImageDraw.Draw(im)
     d.rectangle([0, 0, W, 14], fill='#0e7490')
-    d.text((60, 50), '루리의 줍줍 · 냉장고 파먹기', font=_font(FB, 34), fill='#0e7490')
+    d.text((60, 50), '루리 애널리스트 · 냉장고 파먹기', font=_font(FB, 34), fill='#0e7490')
     n = r['n']
     size = 104
     while size > 60:

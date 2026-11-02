@@ -77,7 +77,7 @@ def today_html(ctx):
             f'<div class="td-f" role="group" aria-label="유형 필터">{chips}</div>'
             f'<ul class="td-l" id="tdl">{lst}</ul><p class="td-n" id="tdn" hidden>이 유형은 오늘 마감하는 항목이 없어요.</p>'
             '<p class="note">뉴스·웹툰·레시피 등 다른 주제는 <a href="/">홈</a>에서 찾아보세요. 마감 정보는 자동 수집 값이라 신청 전에 공식 사이트에서 다시 확인하세요.</p>'
-            '<link rel="stylesheet" href="/assets/home/screens.css?v=1"><script defer src="/assets/home/screens.js?v=1"></script>')
+            '<link rel="stylesheet" href="/assets/home/screens.css?v=5"><script defer src="/assets/home/screens.js?v=1"></script>')
 
 
 def ver_items(ctx, limit=6):
@@ -142,6 +142,113 @@ def _today_hot_sec():
         return ''
     li = ''.join(f'<li><a href="{E(u)}"><b>{E(_short(t, 60))}</b><span>{E(sub)}</span></a></li>' for _d, u, t, sub in cards)
     return f'<section class="hm-sec"><div class="hm-h"><h2>오늘 많이 찾는 것</h2><a href="/issue/">이슈 전체 →</a></div><ul class="hm-nl">{li}</ul></section>'
+
+
+def _tier_sec():
+    """홈 「궁금증 3단」: keywords.json(마케터 키워드 장부)에서 상태=작성·페이지 있음·만료 전인 항목을 단기/중기/장기로 나눠 보여 준다(2026-11-03 사이트 컨셉 전환)."""
+    import os, datetime, hashlib
+    here = os.path.dirname(os.path.abspath(__file__)); root = os.path.dirname(here)
+    try:
+        items = json.load(open(os.path.join(here, 'keywords.json'), encoding='utf-8'))['items']
+    except Exception:
+        return ''
+    today = datetime.date.today().isoformat()
+    by = {'단기': [], '중기': [], '장기': []}
+    for i in items:
+        p = i.get('page') or ''
+        if i.get('status') != '작성' or not p or i.get('tier') not in by:
+            continue
+        if i.get('expires') and i['expires'] < today:
+            continue
+        if not os.path.exists(os.path.join(root, p.strip('/'), 'index.html')):
+            continue
+        by[i['tier']].append(i)
+    def pick(t, n):
+        L = by[t]
+        if t == '장기':   # 장기는 날마다 다른 묶음이 보이도록 날짜로 돌린다
+            L = sorted(L, key=lambda i: hashlib.md5((today + i['query']).encode()).hexdigest())
+        else:
+            L = sorted(L, key=lambda i: (i.get('registered', ''), i.get('score', 0)), reverse=True)
+        return L[:n]
+    cols = (('단기', '지금 급상승', '며칠 안에 내려가는 이슈', 5, '/issue/'), ('중기', '이번 달 관심사', '2주 안팎 이어지는 주제', 4, '/issue/'), ('장기', '오래 찾는 것', '해마다 다시 찾는 제도·방법', 6, '/money/guide/'))
+    out = ''
+    for t, h, sub, n, more in cols:
+        L = pick(t, n)
+        if not L:
+            continue
+        li = ''.join(f'<li><a href="{E(i["page"])}"><b>{E(_short(i["query"], 54))}</b></a></li>' for i in L)
+        out += f'<div class="hm-tc"><h3>{h}</h3><p>{sub}</p><ul class="hm-nl">{li}</ul><a class="hm-tm" href="{more}">더 보기 →</a></div>'
+    if not out:
+        return ''
+    return f'<section class="hm-sec hm-tier"><div class="hm-h"><h2>사람들이 궁금해하는 것</h2></div><div class="hm-tg">{out}</div></section>'
+
+
+def _kwmap_sec(full=False):
+    """홈 「키워드 3D 지도」(2026-11-03 사용자: 키워드 노드를 따라가는 형식·3D): keywords.json 의 작성된 글을 노드로, 겹치는 단어를 선으로 보여 준다."""
+    import os, re, datetime
+    here = os.path.dirname(os.path.abspath(__file__)); root = os.path.dirname(here)
+    try:
+        items = json.load(open(os.path.join(here, 'keywords.json'), encoding='utf-8'))['items']
+    except Exception:
+        return ''
+    today = datetime.date.today().isoformat()
+    ok = []
+    for i in items:
+        p = i.get('page') or ''
+        if i.get('status') != '작성' or not p or (i.get('expires') and i['expires'] < today):
+            continue
+        if not os.path.exists(os.path.join(root, p.strip('/'), 'index.html')):
+            continue
+        ok.append(i)
+    tier = {'단기': 0, '중기': 1, '장기': 2}
+    lim = {0: 40, 1: 40, 2: 70 if not full else 400}
+    nodes, cnt = [], {0: 0, 1: 0, 2: 0}
+    for i in sorted(ok, key=lambda i: (tier[i['tier']], -(i.get('score') or 0), i.get('query', ''))):
+        t = tier[i['tier']]
+        if cnt[t] >= lim[t]:
+            continue
+        cnt[t] += 1
+        nodes.append({'q': i['query'], 't': t, 'u': i['page']})
+    if len(nodes) < 8:
+        return ''
+    stop = {'방법', '신청', '조건', '대상', '기준', '정리', '언제', '확인', '계산', '가이드', '지원금', '2026', '2027'}
+    toks = [{w for w in re.findall(r'[가-힣A-Za-z0-9]{2,}', n['q']) if w not in stop} for n in nodes]
+    edges, deg = [], [0] * len(nodes)
+    for a in range(len(nodes)):
+        for b in range(a + 1, len(nodes)):
+            if deg[a] >= 3 or deg[b] >= 3:
+                continue
+            if toks[a] & toks[b]:
+                edges.append([a, b]); deg[a] += 1; deg[b] += 1
+    data = json.dumps({'n': nodes, 'e': edges}, ensure_ascii=False).replace('</', '<' + chr(92) + '/')
+    head = '' if full else '<div class="hm-h"><h2>키워드 지도</h2><a href="/map/">크게 보기 →</a></div>'
+    return (f'<section class="hm-sec hm-kw">{head}<p class="note"><i class="kd" style="background:#e5484d"></i>단기 · <i class="kd" style="background:#d97706"></i>중기 · <i class="kd" style="background:#2563eb"></i>장기 — 끌어서 돌리고, 점을 누르면 해당 글로 이동합니다. 선은 겹치는 단어로 이어집니다.</p>'
+            f'<div id="kwmap" class="kw-box"></div><script type="application/json" id="kwdata">{data}</script><script defer src="/assets/home/kwmap.js?v=1"></script></section>')
+
+
+def _concept_sec():
+    """홈 첫 화면 설명 띠(2026-11-03 사용자: 메인에서 화려하게 설명): 컨셉 3단계와 장부 숫자, 작동 순서."""
+    import os, datetime
+    here = os.path.dirname(os.path.abspath(__file__)); root = os.path.dirname(here)
+    c = {'단기': 0, '중기': 0, '장기': 0}; tot = 0
+    try:
+        today = datetime.date.today().isoformat()
+        for i in json.load(open(os.path.join(here, 'keywords.json'), encoding='utf-8'))['items']:
+            if i.get('status') == '작성' and not (i.get('expires') and i['expires'] < today) and i.get('tier') in c:
+                c[i['tier']] += 1; tot += 1
+    except Exception:
+        pass
+    def card(cls, tag, h, p, n, unit):
+        return f'<div class="cp-c {cls}"><span class="cp-t">{tag}</span><b class="cp-n">{n}<small>{unit}</small></b><h3>{h}</h3><p>{p}</p></div>'
+    cards = (card('s', '단기 · 3~4일', '지금 급상승', '뉴스·트렌드에서 갑자기 뜬 질문을 빠르게 확인해 정리하고, 며칠 뒤 내립니다.', c['단기'], '건')
+             + card('m', '중기 · 약 2주', '이번 달 관심사', '시즌과 검색 흐름이 이어지는 주제를 2주 단위로 다룹니다.', c['중기'], '건')
+             + card('l', '장기 · 계속', '오래 찾는 것', '해마다 반복되는 제도와 방법을 공식 자료로 깊게 정리해 유지합니다.', c['장기'], '건'))
+    flow = ''.join(f'<li><i>{n}</i><b>{a}</b><span>{b}</span></li>' for n, a, b in (
+        (1, '신호 수집', '자동완성·검색 콘솔·지식인·커뮤니티·뉴스'), (2, '분석', '겹침 대조, 점수화, 단기·중기·장기 분류'),
+        (3, '작성', '공식 출처와 기준일을 단 분석 글'), (4, '노출·정리', '기간이 지난 글은 자동으로 내림')))
+    return (f'<section class="cp"><p class="cp-k">LURI ANALYST</p><h2 class="cp-h">사람들이 궁금해하는 것,<br><em>근거와 숫자</em>로 분석합니다</h2>'
+            f'<p class="cp-s">루리 애널리스트는 지금 사람들이 무엇을 궁금해하는지 신호로 찾아내고, 그 질문에 공식 출처 기준으로 답하는 분석 사이트입니다. 현재 <b>{tot}개</b>의 질문이 정리되어 있습니다.</p>'
+            f'<div class="cp-g">{cards}</div><ol class="cp-f">{flow}</ol></section>')
 
 
 def _indicator_sec():
@@ -213,13 +320,13 @@ def home_html(ctx):
     ver_h = ''.join(_card(i) for i in _vi)
     ver_sec = (f'<section class="hm-sec"><div class="hm-h"><h2>공식 원문까지 확인한 공모전</h2><a href="/contest/">공모전 찾기 →</a></div>'
                f'<p class="note">주최 측 공고와 첨부 서류를 직접 열어 자격·제출 규격·접수 방법을 대조한 공모전이에요(확인일은 각 상세에).</p><ul class="td-l hm-td">{ver_h}</ul></section>') if _vi else ''
-    return (f'<section class="hm-hero"><h1>오늘 필요한 생활 정보,<br>조건에 맞게 골라보세요.</h1>'
-            '<p>공모전·지원금·이벤트·레시피를 AI가 매시간 모아 정리해요. 공식 공고와 대조한 곳에는 표시를 달고, 확인하지 못한 값은 「확인 필요」로 솔직하게 남겨요.</p>'
+    return (_concept_sec() + f'<section class="hm-hero"><h1>궁금한 것을 바로 찾아보세요.</h1>'
+            '<p>이슈, 제도, 공모전, 지원금을 한 번에 검색합니다. 공식 공고와 대조한 곳에는 표시를 달고, 확인하지 못한 값은 「확인 필요」로 남깁니다.</p>'
             '<form class="hm-s" role="search" action="/wiki/" onsubmit="return false"><input id="hq" type="search" placeholder="예: 청년 월세, 영상 공모전, 김치볶음밥, 근로장려금" aria-label="통합 검색" autocomplete="off">'
             '<div class="hm-sc" role="group" aria-label="검색 범위"><button type="button" class="on" data-s="">전체</button><button type="button" data-s="c">공모전</button><button type="button" data-s="a">지원금</button><button type="button" data-s="e">이벤트</button><button type="button" data-s="r">레시피</button><button type="button" data-s="w">가이드</button></div>'
             '<div class="hm-r" id="hr" aria-live="polite"></div></form></section>'
             f'<nav class="hm-act" aria-label="주요 바로가기">{mh}</nav><nav class="hm-sub" aria-label="더 보기">{sub}</nav>'
-            + _today_hot_sec() + _indicator_sec() + _field_sections()
+            + _today_hot_sec() + _kwmap_sec() + _tier_sec() + _indicator_sec() + _field_sections()
             + (f'<section class="hm-sec"><div class="hm-h"><h2>추천 가이드</h2><a href="/wiki/">루리 위키 →</a></div><div class="hm-g">{guides}</div></section>' if guides else '')
             + f'<section class="hm-ai" aria-label="AI 수집 현황"><b>🤖 AI 수집기</b><span>마지막 수집 <b>{now:%H:%M}</b></span><span>오늘 새로 확인 <b>{ctx["n_new"]}건</b></span><span>수집 완료 <b>{ctx["n_live"]}건</b></span><span>공식 원문 확보 <b>{ctx["n_ver"]}건</b></span><span>핵심 조건 대조 <b>{ctx["n_core"]}건</b> <small>(AI 대조)</small></span><span>운영자 직접 검토 <b>{ctx["n_op"]}건</b></span><span>확인 못한 값은 「확인 필요」</span><a href="/corrections/">정정 기록</a> · <a href="/about/">제작 원칙</a></section>'
             + f'<section class="hm-sec"><div class="hm-h"><h2>오늘 마감</h2><a href="/today/">전체 {len(items)}건 →</a></div><ul class="td-l hm-td">{prev_h}</ul></section>'
@@ -228,5 +335,5 @@ def home_html(ctx):
             + f'<section class="hm-sec"><div class="hm-h"><h2>새로 생긴 기능</h2></div><ul class="hm-f">{feats}</ul></section>'
             + (f'<section class="hm-sec"><div class="hm-h"><h2>더 읽을거리</h2></div><ul class="hm-nl">' + ''.join(f'<li><a href="{E(r["u"])}"><b>{E(_short(r["title"], 60))}</b><span>{E(r["sub"])}</span></a></li>' for r in ctx.get('reads', [])) + '</ul></section>' if ctx.get('reads') else '')
             + f'<section class="hm-sec" id="all"><div class="hm-h"><h2>전체 서비스</h2></div><nav class="hm-all" aria-label="전체 서비스">{allsv}</nav></section>'
-            '<p class="hm-about">루리의 줍줍은 개인 개발자가 AI 수집기로 공개 공고를 모아 정리하는 생활 정보 사이트예요. 공식 출처와 확인일을 적고, 확인하지 못한 값은 비워 둡니다. 자세한 제작 원칙은 <a href="/about/">소개</a>와 <a href="/ailog/">제작 로그</a>에 있어요.</p>'
-            '<link rel="stylesheet" href="/assets/home/screens.css?v=1"><script defer src="/assets/home/screens.js?v=1"></script>')
+            '<p class="hm-about">루리 애널리스트은 요즘 사람들이 궁금해하는 이슈와 생활 속 돈 정보를 공식 출처 기준으로 분석해 정리하는 온라인 미디어입니다. 확인일과 출처를 적고, 확인하지 못한 내용은 표시해 둡니다. 편집 원칙은 <a href="/about/">소개</a>에 있습니다.</p>'
+            '<link rel="stylesheet" href="/assets/home/screens.css?v=5"><script defer src="/assets/home/screens.js?v=1"></script>')

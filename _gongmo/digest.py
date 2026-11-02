@@ -107,8 +107,8 @@ def build_mail(u, topics, cache):
     body = (f'<div style="font-family:sans-serif;max-width:560px;margin:auto;padding:20px;border-radius:16px;background:#faf5ff"><p style="font-size:18px;font-weight:800;color:#5b21b6;margin:0 0 4px">{u["nick"]}님, 오늘의 소식이에요</p>'
             f'<p style="margin:0;font-size:13px;color:#6b7280">{TODAY.month}월 {TODAY.day}일 · 고르신 주제만 모았어요</p>{parts}'
             f'<p style="margin:20px 0 0"><a href="{SITE}/me/#topics" style="background:#7c3aed;color:#fff;padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:700">받는 주제 바꾸기·끄기</a></p>'
-            f'<p style="font-size:12px;color:#6b7280;margin-top:14px">회원가입 때 고르신 주제만 보내 드려요. 소식이 없는 날은 보내지 않아요. 정보는 공식 공고·언론 보도·공개 자료 기준이니 신청 전 원문을 확인하세요. · 루리의 줍줍</p></div>')
-    return f'[루리의 줍줍] {TODAY.month}/{TODAY.day} 오늘의 소식 — {first[:30]}', body
+            f'<p style="font-size:12px;color:#6b7280;margin-top:14px">회원가입 때 고르신 주제만 보내 드려요. 소식이 없는 날은 보내지 않아요. 정보는 공식 공고·언론 보도·공개 자료 기준이니 신청 전 원문을 확인하세요. · 루리 애널리스트</p></div>')
+    return f'[루리 애널리스트] {TODAY.month}/{TODAY.day} 오늘의 소식 — {first[:30]}', body
 
 
 def main():

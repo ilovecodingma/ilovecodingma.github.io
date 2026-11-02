@@ -156,7 +156,7 @@ def hub(arts, page_fn, site):
             + (f'<section class="wk-start"><h2>최근 확인한 가이드 <small>확인일이 가장 최근인 5편</small></h2><div class="wk-sgrid">{st}</div></section>' if st else '')
             + cards + '<link rel="stylesheet" href="/assets/wiki/wiki.css?v=2"><script defer src="/assets/wiki/wiki.js?v=2"></script>')
     page_fn('/wiki/', '루리 위키 — 생활 돈 가이드·응모 가이드·개발 지식 한곳에', f'공식 출처로 확인한 생활 돈 가이드 {len(byg.get("money", []))}편과 응모·고민 해결 가이드, 개발 지식, 평론을 한곳에서 검색하고 읽어요.',
-            body, [('루리의 줍줍', '/'), ('루리 위키', '/wiki/')])
+            body, [('루리 애널리스트', '/'), ('루리 위키', '/wiki/')])
 
 
 def build_wiki(urls, noindex, page_fn, root, site):

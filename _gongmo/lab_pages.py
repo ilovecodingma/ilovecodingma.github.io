@@ -104,7 +104,7 @@ def build(ROOT, page, say):
 <link rel="stylesheet" href="/assets/lab/lab.css?v=3">'''
         top = rows[0]['p']
         page(url, f'{c} 수상작 분석 — 루리의 수상 연구소', f'{c}({o}) 수상작 {len(rows)}개를 구조·기법별로 해설. 대상작: {top[:40]}', body,
-             [('루리의 줍줍', '/'), ('수상 연구소', '/lab/'), (c[:30], url)])
+             [('루리 애널리스트', '/'), ('수상 연구소', '/lab/'), (c[:30], url)])
         cards.append({'url': url, 'c': c, 'o': o, 'y': y, 'g': g, 'th': th, 'n': n, 'cnt': len(rows), 'top': top, 'gr': rows[0].get('gr') or '', 'one': anatomy(rows[0], med)[2]})
     return cards, urls, D
 

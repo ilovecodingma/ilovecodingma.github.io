@@ -43,7 +43,7 @@ def data(live, aps, hot, today):
 
 
 IFR = r'''<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
-<title>루리의 줍줍 위젯</title><style>
+<title>루리 애널리스트 위젯</title><style>
 :root{--bg:#fff;--fg:#1e1b2e;--mu:#6b7280;--ln:#ece9f5;--ac:#6d28d9;--hi:#f5f3ff}
 .dark{--bg:#17151f;--fg:#f3f1fa;--mu:#a4a0b5;--ln:#2c2939;--ac:#a78bfa;--hi:#221e30}
 *{box-sizing:border-box}html,body{margin:0;height:100%}body{font:14px/1.45 -apple-system,"Malgun Gothic","Apple SD Gothic Neo",sans-serif;background:var(--bg);color:var(--fg);display:flex;flex-direction:column;border:1px solid var(--ln);border-radius:12px;overflow:hidden}
@@ -54,7 +54,7 @@ span.t{display:block;font-weight:600;overflow:hidden;text-overflow:ellipsis;disp
 footer{padding:7px 12px;font-size:12px;color:var(--mu);border-top:1px solid var(--ln)}footer a{color:var(--ac);font-weight:700;text-decoration:none}
 .big{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:14px;text-decoration:none;color:inherit}.big b{font-size:44px;color:var(--ac);line-height:1.1}.big span{font-weight:700;margin-top:6px}
 </style></head><body><header><img src="/assets/ruri/avatar.webp" alt=""><span id="hd"></span></header><div id="bx" style="flex:1;display:flex;flex-direction:column;overflow:hidden"></div>
-<footer><a id="ft" href="__SITE__/?src=w___K__" target="_blank" rel="noopener">루리의 줍줍</a>에서 매일 갱신 · <span id="up"></span></footer>
+<footer><a id="ft" href="__SITE__/?src=w___K__" target="_blank" rel="noopener">루리 애널리스트</a>에서 매일 갱신 · <span id="up"></span></footer>
 <script>(function(){var K='__K__',S='__SITE__',Q=new URLSearchParams(location.search),n=Math.min(10,Math.max(1,+Q.get('n')||5)),cat=Q.get('cat')||'all',src='?src=w_'+K;
 if(Q.get('t')==='dark')document.body.className='dark';
 var esc=function(s){return String(s||'').replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})};
@@ -128,7 +128,7 @@ def card_png(path, title, rows, updated, root, accent=(109, 40, 217)):
         y += RH
         dr.line([16, y - 1, W - 16, y - 1], fill=(236, 233, 245))
     dr.rectangle([0, H - FH, W, H], fill=accent)
-    dr.text((W / 2, H - FH / 2), '루리의 줍줍에서 매일 갱신 · sungprofile.cloud', font=_font(17, True), fill=(255, 255, 255), anchor='mm')
+    dr.text((W / 2, H - FH / 2), '루리 애널리스트에서 매일 갱신 · sungprofile.cloud', font=_font(17, True), fill=(255, 255, 255), anchor='mm')
     im.save(path, optimize=True)
 
 
@@ -195,7 +195,7 @@ def card_png_170(path, title, rows, updated, root, accent=(109, 40, 217)):
             break
         dr.line([14, y - 2, W - 14, y - 2], fill=(236, 233, 245), width=2)
     dr.rectangle([0, H - 70, W, H], fill=accent)
-    dr.text((W / 2, H - 46), '루리의 줍줍 매일 갱신', font=ff, fill=(255, 255, 255), anchor='mm')
+    dr.text((W / 2, H - 46), '루리 애널리스트 매일 갱신', font=ff, fill=(255, 255, 255), anchor='mm')
     dr.text((W / 2, H - 22), 'sungprofile.cloud', font=_font(17), fill=(237, 233, 254), anchor='mm')
     im.save(path, optimize=True)
 
@@ -225,7 +225,7 @@ def widget_page(page, say, D):
     ids = ''.join(f'<option value="{E(c["id"])}">{E(c["t"][:40])} ({c["e"][5:]})</option>' for c in D['contest']['all'][:10])
     body = f'''<p class="bc"><a href="/">홈</a> › <a href="/contest/">공모전</a> › 위젯</p><h1>🧩 공모전 위젯 무료 — 블로그에 이번 주 마감 공모전 자동 표시</h1>
 {say('o_present', '블로그·카페에 붙이면 <b>이번 주 마감 공모전</b>이 매시간 알아서 바뀌어요. 회원가입도, 비용도 없어요!')}
-<p>루리의 줍줍이 매시간 정리하는 마감 공모전·지원금·핫이슈 목록을 내 블로그나 카페, 홈페이지에 그대로 띄울 수 있는 무료 위젯이에요. 공모전·대외활동 정보를 올리는 블로그라면 글마다 목록을 새로 쓰지 않아도 돼요. 위젯 안에는 광고가 없고, 항목을 누르면 루리의 줍줍 상세 페이지(마감·상금·자격·준비 일정)로 이동해요.</p>
+<p>루리 애널리스트이 매시간 정리하는 마감 공모전·지원금·핫이슈 목록을 내 블로그나 카페, 홈페이지에 그대로 띄울 수 있는 무료 위젯이에요. 공모전·대외활동 정보를 올리는 블로그라면 글마다 목록을 새로 쓰지 않아도 돼요. 위젯 안에는 광고가 없고, 항목을 누르면 루리 애널리스트 상세 페이지(마감·상금·자격·준비 일정)로 이동해요.</p>
 <section class="wg"><h2>1. 위젯 고르기</h2><div class="wg-f">
 <label>종류<select id="wk"><option value="contest">이번 주 마감 공모전 TOP5</option><option value="apply">이번 주 지원금·청약 마감</option><option value="hot">오늘의 핫이슈 3</option><option value="dday">D-day 카운터 (공모전 1개)</option></select></label>
 <label id="wcl">분야<select id="wc">{opts}</select></label><label id="wil" hidden>공모전<select id="wi">{ids}</select></label>
@@ -237,7 +237,7 @@ def widget_page(page, say, D):
 <div class="wg-c"><h3>🖼️ 이미지 + 링크 (네이버 블로그·카페·디시)</h3><textarea id="c1" readonly rows="3"></textarea><p><button data-c="c1">코드 복사</button><button id="cimg">이미지 주소 복사</button></p></div>
 <div class="wg-c"><h3>🪟 iframe (티스토리·워드프레스·홈페이지)</h3><textarea id="c2" readonly rows="3"></textarea><p><button data-c="c2">코드 복사</button></p></div>
 <div class="wg-c"><h3>📝 텍스트 목록 (어디든 붙여넣기)</h3><textarea id="c3" readonly rows="5"></textarea><p><button data-c="c3">코드 복사</button></p><p class="note">텍스트 목록은 복사한 그 시점의 목록이라 자동으로 바뀌지 않아요.</p></div></section>
-<h2 id="naver">📗 네이버 블로그 사이드바에 붙이는 법 (캡처)</h2><div class="wg-c"><h3>네이버 블로그용 코드 (가로 170px 세로형)</h3><select id="nk" aria-label="네이버용 위젯 종류"><option value="contest-week-170|/contest/week/|이번 주 마감 공모전">이번 주 마감 공모전 TOP3</option><option value="apply-week-170|/apply/|이번 주 마감 지원금·청약">이번 주 마감 지원금·청약</option><option value="hot-today-170|/hot/|오늘의 핫이슈">오늘의 핫이슈 TOP3</option></select><textarea id="c4" readonly rows="3"></textarea><p><button data-c="c4">코드 복사</button></p><img id="nimg" src="/w/img/contest-week-170.png" width="170" alt="네이버용 위젯 미리보기"></div><ol class="wg-man"><li><b>1. 블로그 관리 → 꾸미기 설정</b><p>네이버 블로그 오른쪽 위 「관리」로 들어가 위쪽 「꾸미기 설정」 탭을 누르고, 왼쪽 「레이아웃·위젯 설정」을 고르세요.</p><img src="/assets/widget/manual/01.webp" alt="네이버 블로그 위젯 등록 1단계: 블로그 관리 → 꾸미기 설정" loading="lazy" decoding="async"></li><li><b>2. 디자인 설정 → 레이아웃·위젯 설정</b><p>레이아웃 화면 오른쪽에 「위젯 사용 설정」 목록이 있어요. 아래로 내려 주세요.</p><img src="/assets/widget/manual/02.webp" alt="네이버 블로그 위젯 등록 2단계: 디자인 설정 → 레이아웃·위젯 설정" loading="lazy" decoding="async"></li><li><b>3. 위젯 목록 아래 「+위젯직접등록」</b><p>위젯 목록 맨 아래 「+위젯직접등록 BETA」 버튼을 눌러요.</p><img src="/assets/widget/manual/03.webp" alt="네이버 블로그 위젯 등록 3단계: 위젯 목록 아래 「+위젯직접등록」" loading="lazy" decoding="async"></li><li><b>4. 위젯명 입력</b><p>위젯 이름은 블로그에 보이지 않으니 알아보기 쉽게 「이번 주 마감 공모전」처럼 적어요.</p><img src="/assets/widget/manual/04.webp" alt="네이버 블로그 위젯 등록 4단계: 위젯명 입력" loading="lazy" decoding="async"></li><li><b>5. 위젯 코드 붙여넣기 → 다음</b><p>위에서 복사한 「네이버 블로그용 코드」를 위젯 코드 칸에 붙여 넣고 「다음」을 눌러요.</p><img src="/assets/widget/manual/05.webp" alt="네이버 블로그 위젯 등록 5단계: 위젯 코드 붙여넣기 → 다음" loading="lazy" decoding="async"></li><li><b>6. 미리보기 확인 → 등록</b><p>미리보기에 위젯 그림이 보이면 「등록」을 눌러요. 네이버 위젯은 가로 170px까지만 보여서 170px 전용 이미지를 써요.</p><img src="/assets/widget/manual/06.webp" alt="네이버 블로그 위젯 등록 6단계: 미리보기 확인 → 등록" loading="lazy" decoding="async"></li><li><b>7. 사이드바에 위젯 블록이 생겨요</b><p>왼쪽 사이드바에 새 위젯 블록이 생겨요. 원하는 위치로 끌어 옮긴 뒤 아래 「적용」 → 「확인」을 눌러요.</p><img src="/assets/widget/manual/07.webp" alt="네이버 블로그 위젯 등록 7단계: 사이드바에 위젯 블록이 생겨요" loading="lazy" decoding="async"></li><li><b>8. 블로그에서 확인</b><p>내 블로그에 들어가면 사이드바에 위젯이 보여요. 누르면 루리의 줍줍 「이번 주 마감 공모전」으로 이동해요.</p><img src="/assets/widget/manual/08.webp" alt="네이버 블로그 위젯 등록 8단계: 블로그에서 확인" loading="lazy" decoding="async"></li><li><b>9. 위젯 확대 모습</b><p>이미지는 매시간 새로 그려요. 다만 네이버가 이미지를 저장해 둘 수 있어서, 목록이 오래 그대로면 위젯을 지웠다가 다시 등록해 주세요.</p><img src="/assets/widget/manual/09.webp" alt="네이버 블로그 위젯 등록 9단계: 위젯 확대 모습" loading="lazy" decoding="async"></li></ol><h2>블로그에 붙이는 법</h2><ul class="chk">
+<h2 id="naver">📗 네이버 블로그 사이드바에 붙이는 법 (캡처)</h2><div class="wg-c"><h3>네이버 블로그용 코드 (가로 170px 세로형)</h3><select id="nk" aria-label="네이버용 위젯 종류"><option value="contest-week-170|/contest/week/|이번 주 마감 공모전">이번 주 마감 공모전 TOP3</option><option value="apply-week-170|/apply/|이번 주 마감 지원금·청약">이번 주 마감 지원금·청약</option><option value="hot-today-170|/hot/|오늘의 핫이슈">오늘의 핫이슈 TOP3</option></select><textarea id="c4" readonly rows="3"></textarea><p><button data-c="c4">코드 복사</button></p><img id="nimg" src="/w/img/contest-week-170.png" width="170" alt="네이버용 위젯 미리보기"></div><ol class="wg-man"><li><b>1. 블로그 관리 → 꾸미기 설정</b><p>네이버 블로그 오른쪽 위 「관리」로 들어가 위쪽 「꾸미기 설정」 탭을 누르고, 왼쪽 「레이아웃·위젯 설정」을 고르세요.</p><img src="/assets/widget/manual/01.webp" alt="네이버 블로그 위젯 등록 1단계: 블로그 관리 → 꾸미기 설정" loading="lazy" decoding="async"></li><li><b>2. 디자인 설정 → 레이아웃·위젯 설정</b><p>레이아웃 화면 오른쪽에 「위젯 사용 설정」 목록이 있어요. 아래로 내려 주세요.</p><img src="/assets/widget/manual/02.webp" alt="네이버 블로그 위젯 등록 2단계: 디자인 설정 → 레이아웃·위젯 설정" loading="lazy" decoding="async"></li><li><b>3. 위젯 목록 아래 「+위젯직접등록」</b><p>위젯 목록 맨 아래 「+위젯직접등록 BETA」 버튼을 눌러요.</p><img src="/assets/widget/manual/03.webp" alt="네이버 블로그 위젯 등록 3단계: 위젯 목록 아래 「+위젯직접등록」" loading="lazy" decoding="async"></li><li><b>4. 위젯명 입력</b><p>위젯 이름은 블로그에 보이지 않으니 알아보기 쉽게 「이번 주 마감 공모전」처럼 적어요.</p><img src="/assets/widget/manual/04.webp" alt="네이버 블로그 위젯 등록 4단계: 위젯명 입력" loading="lazy" decoding="async"></li><li><b>5. 위젯 코드 붙여넣기 → 다음</b><p>위에서 복사한 「네이버 블로그용 코드」를 위젯 코드 칸에 붙여 넣고 「다음」을 눌러요.</p><img src="/assets/widget/manual/05.webp" alt="네이버 블로그 위젯 등록 5단계: 위젯 코드 붙여넣기 → 다음" loading="lazy" decoding="async"></li><li><b>6. 미리보기 확인 → 등록</b><p>미리보기에 위젯 그림이 보이면 「등록」을 눌러요. 네이버 위젯은 가로 170px까지만 보여서 170px 전용 이미지를 써요.</p><img src="/assets/widget/manual/06.webp" alt="네이버 블로그 위젯 등록 6단계: 미리보기 확인 → 등록" loading="lazy" decoding="async"></li><li><b>7. 사이드바에 위젯 블록이 생겨요</b><p>왼쪽 사이드바에 새 위젯 블록이 생겨요. 원하는 위치로 끌어 옮긴 뒤 아래 「적용」 → 「확인」을 눌러요.</p><img src="/assets/widget/manual/07.webp" alt="네이버 블로그 위젯 등록 7단계: 사이드바에 위젯 블록이 생겨요" loading="lazy" decoding="async"></li><li><b>8. 블로그에서 확인</b><p>내 블로그에 들어가면 사이드바에 위젯이 보여요. 누르면 루리 애널리스트 「이번 주 마감 공모전」으로 이동해요.</p><img src="/assets/widget/manual/08.webp" alt="네이버 블로그 위젯 등록 8단계: 블로그에서 확인" loading="lazy" decoding="async"></li><li><b>9. 위젯 확대 모습</b><p>이미지는 매시간 새로 그려요. 다만 네이버가 이미지를 저장해 둘 수 있어서, 목록이 오래 그대로면 위젯을 지웠다가 다시 등록해 주세요.</p><img src="/assets/widget/manual/09.webp" alt="네이버 블로그 위젯 등록 9단계: 위젯 확대 모습" loading="lazy" decoding="async"></li></ol><h2>블로그에 붙이는 법</h2><ul class="chk">
 <li><b>네이버 블로그 사이드바</b>: <a href="#naver">위의 캡처 매뉴얼</a>대로 「위젯직접등록」에 네이버용 코드를 넣어요.</li><li><b>네이버 블로그 글</b>: 글쓰기 → 사진 대신 「이미지 주소 복사」로 받은 주소를 이미지로 넣고, 이미지를 눌러 링크에 https://sungprofile.cloud/contest/?src=w_img 를 걸어요. 네이버 에디터는 붙인 이미지를 네이버 서버에 복사해 두기 때문에 자동 갱신은 안 될 수 있어요. 목록이 바뀌면 다시 붙이거나, 프로필·위젯 영역에 링크로 걸어 두세요.</li>
 <li><b>티스토리</b>: 글쓰기 → 기본모드 오른쪽 위 「HTML」로 바꾸고 iframe 코드를 붙여요. 사이드바에 넣으려면 꾸미기 → 사이드바 → HTML 배너 출력에 붙여요.</li>
 <li><b>워드프레스</b>: 블록 추가 → 「사용자 정의 HTML」 블록에 iframe 코드를 붙여요. 위젯 영역(외모 → 위젯)에도 같은 블록을 쓸 수 있어요.</li>
@@ -245,7 +245,7 @@ def widget_page(page, say, D):
 <p class="note">위젯 목록은 매시간 갱신돼요. 공모전 정보는 각 주최 기관 공고를 정리한 것이라, 응모 전 공식 공고를 꼭 확인하세요. 위젯을 붙인 뒤 문제가 있으면 <a href="/contact/">문의</a>로 알려 주세요.</p>
 <link rel="stylesheet" href="/assets/widget/widget.css?v=2"><script defer src="/assets/widget/widget.js?v=2"></script>'''
     page('/widget/', '공모전 위젯 무료 — 블로그에 이번 주 마감 공모전 자동 표시', '블로그·카페·홈페이지에 이번 주 마감 공모전 TOP5, 지원금·청약 마감, 오늘의 핫이슈, D-day 카운터를 무료로 붙이세요. 이미지·iframe·텍스트 3가지 방식, 매시간 자동 갱신.',
-         body, [('루리의 줍줍', '/'), ('공모전', '/contest/'), ('위젯', '/widget/')])
+         body, [('루리 애널리스트', '/'), ('공모전', '/contest/'), ('위젯', '/widget/')])
 
 
 def build(root, live, aps, hot, page, say, api, today):

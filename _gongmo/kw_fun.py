@@ -192,7 +192,7 @@ def top5_card(cur, today, nowhm):
     if not os.path.exists(fp):
         im = Image.new('RGB', (1200, 630), (248, 250, 252)); dr = ImageDraw.Draw(im)
         dr.rectangle([0, 0, 1200, 12], fill=(14, 116, 144))
-        dr.text((60, 40), '루리의 줍줍 · 오늘의 키워드 TOP5', font=W._font(38, True), fill=(14, 116, 144))
+        dr.text((60, 40), '루리 애널리스트 · 오늘의 키워드 TOP5', font=W._font(38, True), fill=(14, 116, 144))
         dr.text((60, 92), f'{today[5:7]}월 {today[8:]}일 {nowhm} 기준 · 구글 트렌드·시그널', font=W._font(26), fill=(100, 116, 139))
         y = 150
         for i, x in enumerate(L, 1):

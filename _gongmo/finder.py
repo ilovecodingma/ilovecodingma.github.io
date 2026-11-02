@@ -29,7 +29,7 @@ def build_index(urls, noindex, live_ids):
         if not os.path.exists(f):
             continue
         doc = open(f, encoding='utf-8', errors='ignore').read()
-        t = re.sub(r'\s*\|\s*루리의 줍줍\s*$', '', html.unescape((re.search(r'<title>([^<]*)', doc) or [None, ''])[1])).strip()
+        t = re.sub(r'\s*\|\s*루리 애널리스트\s*$', '', html.unescape((re.search(r'<title>([^<]*)', doc) or [None, ''])[1])).strip()
         if not t:
             continue
         docs.append({'k': k[0], 'l': k[1], 't': t[:90], 'x': _meta(doc, 'description')[:140], 'u': u})

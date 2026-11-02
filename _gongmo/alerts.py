@@ -61,8 +61,8 @@ def main():
         html = f'''<div style="font-family:sans-serif;max-width:560px;margin:auto;padding:20px;border-radius:16px;background:#faf5ff">
 <p style="font-size:18px;font-weight:800;color:#5b21b6;margin:0 0 6px">루리가 챙겨 왔어요! ⏰</p><p style="margin:0 0 10px">{u["nick"]}님이 찜한 것 중 마감이 다가온 게 있어요.</p><ul style="padding-left:18px">{rows}</ul>
 <p style="margin:14px 0 0"><a href="{SITE}/me/" style="background:#7c3aed;color:#fff;padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:700">내 공간에서 보기</a></p>
-<p style="font-size:12px;color:#6b7280;margin-top:16px">알림은 <a href="{SITE}/me/">내 공간</a>에서 언제든 끌 수 있어요. · 루리의 줍줍</p></div>'''
-        msg = MIMEText(html, 'html', 'utf-8'); msg['Subject'] = Header(f'⏰ 마감 임박 {len(due)}건 — 루리의 줍줍', 'utf-8'); msg['From'] = f'{Header("루리의 줍줍", "utf-8").encode()} <{user}@naver.com>' if '@' not in user else user; msg['To'] = u['email']
+<p style="font-size:12px;color:#6b7280;margin-top:16px">알림은 <a href="{SITE}/me/">내 공간</a>에서 언제든 끌 수 있어요. · 루리 애널리스트</p></div>'''
+        msg = MIMEText(html, 'html', 'utf-8'); msg['Subject'] = Header(f'⏰ 마감 임박 {len(due)}건 — 루리 애널리스트', 'utf-8'); msg['From'] = f'{Header("루리 애널리스트", "utf-8").encode()} <{user}@naver.com>' if '@' not in user else user; msg['To'] = u['email']
         s.sendmail(msg['From'] if '@' in msg['From'] else user, [u['email']], msg.as_string())
         with open(SENT, 'a', encoding='utf-8') as f:
             for _, it, k in due: f.write(json.dumps({'k': list(k)}, ensure_ascii=False) + '\n')
@@ -98,8 +98,8 @@ def new_mail():
         html = f'''<div style="font-family:sans-serif;max-width:560px;margin:auto;padding:20px;border-radius:16px;background:#faf5ff">
 <p style="font-size:18px;font-weight:800;color:#5b21b6;margin:0 0 6px">새 공모전이 올라왔어요! 🆕</p><p style="margin:0 0 10px">{u["nick"]}님 관심 분야에 새로 올라온 공모전이에요.</p><ul style="padding-left:18px">{rows}</ul>
 <p style="margin:14px 0 0"><a href="{SITE}/" style="background:#7c3aed;color:#fff;padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:700">전체 공모전 보기</a></p>
-<p style="font-size:12px;color:#6b7280;margin-top:16px">메일 알림은 <a href="{SITE}/app/">앱·알림</a>에서 언제든 끌 수 있어요. · 루리의 줍줍</p></div>'''
-        msg = MIMEText(html, 'html', 'utf-8'); msg['Subject'] = Header(f'🆕 새 공모전 {len(mine)}건 — 루리의 줍줍', 'utf-8'); msg['From'] = user if '@' in user else f'{user}@naver.com'; msg['To'] = u['email']
+<p style="font-size:12px;color:#6b7280;margin-top:16px">메일 알림은 <a href="{SITE}/app/">앱·알림</a>에서 언제든 끌 수 있어요. · 루리 애널리스트</p></div>'''
+        msg = MIMEText(html, 'html', 'utf-8'); msg['Subject'] = Header(f'🆕 새 공모전 {len(mine)}건 — 루리 애널리스트', 'utf-8'); msg['From'] = user if '@' in user else f'{user}@naver.com'; msg['To'] = u['email']
         s.sendmail(msg['From'], [u['email']], msg.as_string())
         print('보냄', u['nick'], len(mine))
     s.quit()
