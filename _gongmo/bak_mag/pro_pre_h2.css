@@ -1,0 +1,35 @@
+/* 루리 애널리스트 전문 미디어 톤 (2026-11-03): 변수 덮어쓰기 + 장식 줄이기. 마지막에 로드한다. */
+:root{--bg:#f7f8fa;--card:#fff;--tx:#111827;--mu:#5b6472;--bd:#e3e6eb;--pri:#1d4ed8;--pri2:#1e3a8a;--pbg:#eef3fd;--gold:#b45309;--gbg:#fdf6e7;--red:#b91c1c;--rbg:#fdeceb;--ok:#0f766e;--okbg:#e6f4f1;--sh:none}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0e1116;--card:#161a21;--tx:#e6e9ee;--mu:#9aa3b0;--bd:#262c36;--pri:#7aa2f7;--pri2:#93b4fa;--pbg:#1a2233;--gold:#e0a84a;--gbg:#2a2214;--red:#f08a8a;--rbg:#3a1c1c;--ok:#5fd0c2;--okbg:#10302c;--sh:none}}
+:root[data-theme=dark]{--bg:#0e1116;--card:#161a21;--tx:#e6e9ee;--mu:#9aa3b0;--bd:#262c36;--pri:#7aa2f7;--pri2:#93b4fa;--pbg:#1a2233;--sh:none}
+body{font-size:16px;line-height:1.75;letter-spacing:-.1px}
+h1,h2,h3{letter-spacing:-.5px;font-weight:800}
+h1{font-size:28px;line-height:1.35}
+h2{font-size:20px;margin:36px 0 12px;padding-bottom:8px;border-bottom:2px solid var(--tx)}
+h3{font-size:17px}
+/* 헤더: 흰 바탕 + 얇은 선, 메뉴는 밑줄형 */
+.hd{background:var(--card);backdrop-filter:none;border-bottom:1px solid var(--bd)}
+.logo{font-size:19px;font-weight:800;letter-spacing:-.6px}
+.logo b{color:var(--pri)}
+.hd nav a{border-radius:0;padding:18px 12px 15px;border-bottom:3px solid transparent;color:var(--tx);font-weight:600}
+.hd nav a:hover{background:none;color:var(--pri);border-bottom-color:var(--bd)}
+.hd nav a.on,.hd nav a[aria-current=page]{color:var(--pri);border-bottom-color:var(--pri);background:none}
+/* 카드·박스: 각진 모서리, 그림자 없음 */
+.card,.cc,.hm-tc,.g-sum,.cat-st,.bub,.say .bub,.tblw,details,.hm-sec li a,.gm-g li a{border-radius:6px!important;box-shadow:none!important}
+.hm-sec{margin:34px 0}
+.hm-h{border-bottom:2px solid var(--tx);padding-bottom:8px;margin-bottom:12px}
+.hm-h h2{border:0;margin:0;padding:0}
+.hm-nl li a{border-radius:0!important;border:0!important;border-bottom:1px solid var(--bd)!important}
+.hm-nl li a b{font-weight:700}
+.kick{background:var(--pbg);color:var(--pri);border-radius:3px}
+.hero{border-radius:8px;background:linear-gradient(135deg,#0f2a5c,#1d4ed8);}
+.hero:after{display:none}
+.cat-st,.g-sum{background:var(--pbg);border:0;border-left:4px solid var(--pri)}
+/* 버튼·칩 */
+button,.btn,.chip,.ch-c,[class*=btn]{border-radius:6px}
+.note,.kwn{color:var(--mu)}
+/* 푸터 */
+.ft{background:var(--card);border-top:1px solid var(--bd)}
+.bgm-b{position:fixed;right:14px;bottom:14px;z-index:40;display:flex;align-items:center;gap:6px;padding:8px 14px;border:1px solid var(--bd);border-radius:999px;background:var(--card);color:var(--tx);font:600 13px/1 Pretendard,sans-serif;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.14)}
+.bgm-b i{font-style:normal;color:var(--pri)}.bgm-b[aria-pressed=true] i{animation:bgm 1.4s ease-in-out infinite}
+@keyframes bgm{50%{transform:translateY(-3px)}}

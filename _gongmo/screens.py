@@ -299,41 +299,236 @@ def _field_sections():
     return f'<section class="hm-sec"><div class="hm-h"><h2>분야별 새 글</h2><a href="/money/guide/">가이드 전체 →</a></div><div class="hm-fld">{blocks}</div></section>'
 
 
+# ───────── 홈 개편 (2026-11-03): 검색 하나 → 지금 읽을 글 → 마감 임박 → 생활 가이드 → 주제 탐색 ─────────
+_IC = {  # 같은 선 굵기·크기의 아이콘 한 벌
+    'issue': '<path d="M4 5h13v14H6a2 2 0 0 1-2-2V5Zm13 3h3v9a2 2 0 0 1-2 2M8 9h5M8 13h5"/>',
+    'apply': '<path d="M12 3v18M16 7.5c0-1.7-1.8-3-4-3s-4 1.3-4 3 1.8 2.6 4 3 4 1.3 4 3-1.8 3-4 3-4-1.3-4-3"/>',
+    'contest': '<path d="M8 4h8v5a4 4 0 0 1-8 0V4ZM8 6H5v1a3 3 0 0 0 3 3M16 6h3v1a3 3 0 0 1-3 3M12 13v4M8 20h8"/>',
+    'guide': '<path d="M5 4h9a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3V4Zm3 4h6M8 12h6"/>',
+    'recipe': '<path d="M6 3v7a2 2 0 0 0 2 2v9M10 3v7M8 3v7M17 3c-2 2-2 6 0 8v10"/>',
+    'calc': '<path d="M6 3h12v18H6V3Zm3 4h6M9 11h.01M12 11h.01M15 11h.01M9 15h.01M12 15h.01M15 15h.01"/>',
+    'wiki': '<path d="M4 6c3-1.5 5-1.5 8 0 3-1.5 5-1.5 8 0v13c-3-1.5-5-1.5-8 0-3-1.5-5-1.5-8 0V6Zm8 0v13"/>',
+    'map': '<circle cx="6" cy="7" r="2"/><circle cx="18" cy="6" r="2"/><circle cx="12" cy="18" r="2"/><path d="m8 7.5 8-1M7 9l4 7M17 8l-4 8"/>',
+    'chart': '<path d="M4 20V4M4 20h16M8 16l4-5 3 3 5-7"/>',
+    'event': '<path d="M4 9h16v11H4V9Zm0 0V6h16v3M12 9v11"/>',
+    'game': '<path d="M7 8h10a4 4 0 0 1 4 4v1a3 3 0 0 1-5.5 1.7L15 14H9l-.5.7A3 3 0 0 1 3 13v-1a4 4 0 0 1 4-4Zm1 3v3M6.5 12.5h3"/>',
+    'search': '<circle cx="11" cy="11" r="6.5"/><path d="m16 16 4 4"/>',
+    'arrow': '<path d="M5 12h14m-5-5 5 5-5 5"/>',
+    'ext': '<path d="M14 4h6v6M20 4l-9 9M18 14v5H5V6h5"/>',
+}
+
+
+def _ic(k, cls='sv'):
+    return f'<svg class="{cls}" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{_IC[k]}</svg>'
+
+
+def _dstr(iso):
+    return iso[5:7].lstrip('0') + '.' + iso[8:10].lstrip('0') if iso else ''
+
+
+def _first_sentences(t, n):
+    t = re.sub(r'\s+', ' ', t or '').strip()
+    if len(t) <= n:
+        return t
+    cut = t[:n]
+    k = max(cut.rfind('다. '), cut.rfind('요. '), cut.rfind('. '))
+    return cut[:k + 1].strip() if k > n * .5 else cut.rstrip() + '…'
+
+
+def _read_candidates(ctx):
+    """지금 읽을 글 후보: 마케터 이슈 원고(보관 기간 안, 최신·priority 순) → 최근 생활 가이드. (url, 주제, 제목, 요약, 날짜)"""
+    import os
+    here = os.path.dirname(os.path.abspath(__file__)); root = os.path.dirname(here)
+    today = datetime.date.today(); out = []
+    idir = os.path.join(here, 'issues'); L = []
+    if os.path.isdir(idir):
+        for fn in os.listdir(idir):
+            if not fn.endswith('.json'):
+                continue
+            try:
+                c = json.load(open(os.path.join(idir, fn), encoding='utf-8')); d0 = datetime.date.fromisoformat(c['date'])
+            except Exception:
+                continue
+            if (today - d0).days > int(c.get('keep_days', 4)) or not os.path.exists(os.path.join(root, 'issue', c['slug'], 'index.html')):
+                continue
+            L.append((d0.isoformat(), int(c.get('priority', 0)), c))
+    for d0, _p, c in sorted(L, key=lambda x: (x[0], x[1]), reverse=True):
+        out.append((f'/issue/{c["slug"]}/', '이슈', c['h1'], c.get('summary') or c.get('desc') or '', d0))
+    try:
+        kin = json.load(open(os.path.join(here, 'kin_guides.json'), encoding='utf-8'))['guides']
+    except Exception:
+        kin = []
+    for g in kin[::-1]:
+        if not os.path.exists(os.path.join(root, 'money', 'guide', g['slug'], 'index.html')):
+            continue
+        m = re.search(r'확인일\s*(\d{4}-\d{2}-\d{2})', g.get('basis') or '')
+        out.append((f'/money/guide/{g["slug"]}/', g.get('name') or '생활 가이드', g.get('h1') or g['title'], g.get('lead') or g.get('desc') or '', m.group(1) if m else ''))
+    return out
+
+
+def _sec_read(cands, seen):
+    pick = []
+    for c in cands:
+        if c[0] in seen:
+            continue
+        pick.append(c); seen.add(c[0])
+        if len(pick) == 5:
+            break
+    if not pick:
+        return ''
+    f, rest = pick[0], pick[1:]
+    dt = lambda c: f'<time datetime="{c[4]}">{_dstr(c[4])} 업데이트</time>' if c[4] else ''
+    big = (f'<article class="rd-f"><p class="kk">{E(f[1])}</p><h3><a href="{E(f[0])}">{E(f[2])}</a></h3><p class="sm">{E(_first_sentences(f[3], 150))}</p><p class="mt">{dt(f)}</p></article>')
+    li = ''.join(f'<li><p class="kk">{E(c[1])}</p><h3><a href="{E(c[0])}">{E(_short(c[2], 70))}</a></h3><p class="sm">{E(_first_sentences(c[3], 60))}</p><p class="mt">{dt(c)}</p></li>' for c in rest)
+    return (f'<section class="h2-sec" aria-labelledby="s-read"><div class="h2-hd"><h2 id="s-read">지금 읽을 글</h2><a href="/issue/">이슈 전체 {_ic("arrow", "sv s")}</a></div>'
+            f'<div class="rd-g">{big}<ul class="rd-l">{li}</ul></div></section>')
+
+
+def _badge(ctx, cid):
+    if cid in (ctx.get('OP') or ()):
+        return '<span class="vb op" title="운영자가 직접 확인해 날짜를 남긴 공고">운영자 검토</span>'
+    if cid in (ctx.get('VER') or {}):
+        return '<span class="vb" title="AI가 공식 원문과 대조했고 운영자 검토는 아직 없음">AI 대조</span>'
+    return ''
+
+
+def _opp_cards(ctx, seen, limit=6):
+    """마감 임박 공모전(4) + 지원금(2): 마감 빠른 순, 핵심 조건이 확인된 것만."""
+    T = ctx['today']; Ti = T.isoformat(); out = []
+    for c in sorted(ctx['contests'], key=lambda c: c['end']):
+        if c['id'] in ctx['DUP'] or c['end'] < Ti or ctx['elig_short'](c) in ('확인 필요', '미확인') or ctx['prize_short'](c) == '확인 필요':
+            continue
+        if f'/c/{c["id"]}/' in seen:
+            continue
+        d = (datetime.date.fromisoformat(c['end']) - T).days
+        if d > 21:
+            continue
+        out.append(('공모전', c['end'], d, c['title'], [('대상', ctx['elig_short'](c)), ('혜택', ctx['prize_short'](c))], f'/c/{c["id"]}/', c.get('link') or '', _badge(ctx, c['id']), c['id']))
+    cs = out[:4]
+    ap = []
+    for a in sorted(ctx['aps'], key=lambda a: a['end']):
+        if a.get('always') or a['end'] < Ti or a['id'] in ctx['AP_DUP'] or f'/a/{a["id"]}/' in seen:
+            continue
+        kk = a.get('kk') or ''
+        if kk == 'ipo':
+            continue
+        tg = SH.clip(re.sub(r'^\([^)]{1,6}\)\s*', '', a.get('target') or ''), 24)
+        bn = SH.clip(a.get('benefit') or '', 28)
+        if not tg or not bn or '확인 필요' in tg or '상이' in tg or '확인 필요' in bn:
+            continue
+        d = (datetime.date.fromisoformat(a['end']) - T).days
+        if d > 30:
+            continue
+        ap.append(('주거 청약' if kk in ('apt', 'rent', 'lh') else '지원금', a['end'], d, a['title'], [('대상', tg), ('내용', bn)], f'/a/{a["id"]}/', a.get('url') or '', '', a['id']))
+        if len(ap) >= limit - len(cs):
+            break
+    cards = sorted(cs + ap, key=lambda x: x[1])[:limit]
+    li = ''
+    for typ, end, d, title, rows, href, ext, vb, _id in cards:
+        seen.add(href)
+        dd = '오늘 마감' if d == 0 else f'D-{d}'
+        urgent = ' u' if d <= 3 else ''
+        dl = ''.join(f'<div><dt>{k}</dt><dd>{E(v)}</dd></div>' for k, v in rows) + f'<div><dt>마감</dt><dd>{_dstr(end)}</dd></div>'
+        ex = f'<a class="b2" href="{E(ext)}" target="_blank" rel="noopener nofollow">원문 {_ic("ext", "sv s")}</a>' if ext else ''
+        li += (f'<li class="op"><div class="op-t"><span class="kk">{E(typ)}</span><span class="dd{urgent}">{dd}</span></div><h3>{E(_short(title, 60))}</h3><dl>{dl}</dl>'
+               f'<div class="op-b"><a class="b1" href="{E(href)}">상세 보기</a>{ex}{vb}</div></li>')
+    if not li:
+        return ''
+    return (f'<section class="h2-sec" aria-labelledby="s-opp"><div class="h2-hd"><h2 id="s-opp">마감 임박 공모전·지원 기회</h2><a href="/today/">오늘 마감 {_ic("arrow", "sv s")}</a></div>'
+            f'<ul class="op-g">{li}</ul><p class="h2-nt">마감 빠른 순입니다. 핵심 조건을 확인하지 못한 공고는 제외했고, 신청 전 공식 공고를 다시 확인해 주세요. <a href="/contest/">공모전 전체</a> · <a href="/apply/">지원금·청약 전체</a></p></section>')
+
+
+def _sec_guides(seen):
+    import os
+    here = os.path.dirname(os.path.abspath(__file__)); root = os.path.dirname(here)
+    try:
+        kin = json.load(open(os.path.join(here, 'kin_guides.json'), encoding='utf-8'))['guides']
+    except Exception:
+        return ''
+    li = ''; n = 0
+    for g in kin[::-1]:
+        u = f'/money/guide/{g["slug"]}/'
+        if u in seen or not os.path.exists(os.path.join(root, 'money', 'guide', g['slug'], 'index.html')):
+            continue
+        seen.add(u); n += 1
+        m = re.search(r'확인일\s*(\d{4}-\d{2}-\d{2})', g.get('basis') or '')
+        dt = f'<time datetime="{m.group(1)}">{_dstr(m.group(1))} 업데이트</time>' if m else ''
+        li += f'<li><p class="kk">{E(g.get("name") or "생활 가이드")}</p><h3><a href="{u}">{E(_short(g.get("h1") or g["title"], 64))}</a></h3><p class="sm">{E(_first_sentences(g.get("lead") or g.get("desc") or "", 70))}</p><p class="mt">{dt}</p></li>'
+        if n == 6:
+            break
+    if not li:
+        return ''
+    return f'<section class="h2-sec" aria-labelledby="s-gd"><div class="h2-hd"><h2 id="s-gd">생활 가이드</h2><a href="/money/guide/">가이드 전체 {_ic("arrow", "sv s")}</a></div><ul class="gd-l">{li}</ul></section>'
+
+
+def _kw_chips(seen, n=10):
+    """읽을 수 있는 주요 주제: 작성 완료된 키워드 글(단기→중기 순, 점수순)을 글자 칩으로."""
+    import os
+    here = os.path.dirname(os.path.abspath(__file__)); root = os.path.dirname(here)
+    try:
+        items = json.load(open(os.path.join(here, 'keywords.json'), encoding='utf-8'))['items']
+    except Exception:
+        return ''
+    today = datetime.date.today().isoformat(); tier = {'단기': 0, '중기': 1, '장기': 2}; ok = []
+    for i in items:
+        p = i.get('page') or ''
+        if i.get('status') != '작성' or not p or i.get('tier') not in tier or (i.get('expires') and i['expires'] < today) or p in seen or len(i.get('query', '')) > 18 or not os.path.exists(os.path.join(root, p.strip('/'), 'index.html')):
+            continue
+        ok.append(i)
+    ok.sort(key=lambda i: (tier[i['tier']], -(i.get('score') or 0)))
+    return ''.join(f'<a href="{E(i["page"])}">{E(_short(i["query"], 20))}</a>' for i in ok[:n])
+
+
+def _sec_topics(ctx, seen):
+    tp = [('이슈', '/issue/', 'issue', '요즘 화제를 출처와 함께'), ('지원금·청약', '/apply/', 'apply', '신청 기간·대상 정리'), ('공모전', '/contest/', 'contest', f'진행 중 {ctx["n_contest"]}건'),
+          ('생활 가이드', '/money/guide/', 'guide', '세금·일·집·건강'), ('경품 이벤트', '/event/', 'event', '마감순 정리'), ('레시피', '/fridge/', 'recipe', '재료로 찾는 집밥'),
+          ('계산기', '/money/tools/salary/', 'calc', '실수령액·퇴직금'), ('지표·RSI', '/analyst/rsi/', 'chart', '시세 현황표'), ('루리 위키', '/wiki/', 'wiki', '문서로 묶은 정보'), ('게임', '/game/', 'game', '출시·세일 일정')]
+    cards = ''.join(f'<li><a href="{u}">{_ic(ic)}<span><b>{E(n)}</b><small>{E(s)}</small></span></a></li>' for n, u, ic, s in tp)
+    ch = _kw_chips(seen)
+    mp = f'<a class="mp" href="/map/">{_ic("map", "sv s")}키워드 지도에서 탐색</a>'
+    kw = f'<div class="kw-row"><h3>키워드로 찾기</h3><div class="chips">{ch}</div>{mp}</div>' if ch else f'<div class="kw-row">{mp}</div>'
+    return f'<section class="h2-sec" id="all" aria-labelledby="s-all"><div class="h2-hd"><h2 id="s-all">전체 주제 탐색</h2></div><ul class="tp-g">{cards}</ul>{kw}</section>'
+
+
 def home_html(ctx):
-    now = ctx['now']; items = due_items(ctx)
-    new_c = [c for c in ctx['new_contests'] if ctx['elig_short'](c) not in ('미확인', '확인 필요') and (c.get('effort') or c.get('medium')) and (c['id'] in (ctx.get('VER') or {}) or ctx['prize_short'](c) != '확인 필요')]
-    new_c = sorted(new_c, key=lambda c: 0 if c['id'] in (ctx.get('VER') or {}) else 1)[:5]
-    # 오늘 마감 미리보기(공모전·지원금 우선 5개)
-    order = {'공모전': 0, '지원금': 1, '주거 청약': 2, '공모주': 3, '이벤트': 4}
-    _ver = ctx.get('VER') or {}
-    prev = sorted([x for x in items if x['target'] != '확인 필요' and (x.get('cid') in _ver or x['type'] != '공모전' or x['benefit'] not in ('확인 필요',))], key=lambda x: (0 if x.get('cid') in _ver else 1, order.get(x['type'], 9), x['title']))[:5]   # 공식 원문 대조된 항목 먼저   # 대표 영역에는 핵심 조건이 확인된 항목만
-    prev_h = ''.join(_card(i) for i in prev) or '<li class="td-empty">오늘 마감하는 항목이 없어요.</li>'
-    new_h = ''.join(f'<li><a href="/c/{c["id"]}/"><b>{E(_short(c["title"], 46))}</b><span>{E(ctx["elig_short"](c))} · {E(ctx["prize_short"](c))} · {E(c["end"][5:].replace("-", "."))} 마감</span></a></li>' for c in new_c) or '<li class="td-empty">오늘 새로 확인한 공모전은 아직 없어요.</li>'
-    guides = ''.join(f'<a href="{E(g["u"])}"><b>{E(_short(g["title"], 38))}</b><span>{E(_short(g["desc"], 60))}</span></a>' for g in ctx['guides'][:3])
-    main = [('📰', '오늘의 이슈', '단기 이슈 · 매일 갱신', '/hot/'), ('💰', '돈·생활 가이드', '지원금·세금·일자리·집', '/money/guide/'), ('📈', '지표·시세', 'RSI 현황표', '/analyst/rsi/'), ('🍳', '레시피', '오늘 뭐 먹지 · 재료로 찾기', '/fridge/'), ('🏆', '공모전·이벤트', f'{ctx["n_contest"]}건 진행 중', '/contest/'), ('🧮', '계산기', '연봉 실수령액 · 퇴직금', '/money/tools/salary/')]
-    mh = ''.join(f'<a class="hm-a" href="{u}"><i>{ic}</i><b>{E(t)}</b><span>{E(s)}</span></a>' for ic, t, s, u in main)
-    sub = ''.join(f'<a href="{u}">{ic} {E(t)}</a>' for ic, t, u in (('⏰', '오늘 마감', '/today/'), ('📋', '지원금·청약', '/apply/'), ('🎁', '경품 이벤트', '/event/'), ('📚', '루리 위키', '/wiki/'), ('📺', '뉴스', '/news/')))
-    allsv = ''.join(f'<a href="{E(t["path"])}"><i>{t["icon"]}</i>{E(t["name"])}</a>' for t in ctx['topics'])
-    feats = ''.join(f'<li><b>{E(a)}</b><span>{E(b)}</span></li>' for a, b in (('루리 위키', '정보성 글을 문서처럼 묶어 검색·이전/다음으로 읽어요 (10/23)'), ('재료 → 최저가', '레시피에서 없는 재료를 쇼핑몰 가격순 검색으로 바로 연결해요 (10/23)'), ('공식 원문 대조', '확인한 공모전은 확인일과 달랐던 점을 함께 보여 줘요 (10/23)')))
-    _shown = {x.get('cid') for x in prev if x.get('cid')}   # 위 「오늘 마감」에 이미 나온 공고는 다시 보여 주지 않는다
-    _vi = [i for i in ver_items(ctx, 12) if i['cid'] not in _shown][:4]
-    ver_h = ''.join(_card(i) for i in _vi)
-    ver_sec = (f'<section class="hm-sec"><div class="hm-h"><h2>공식 원문까지 확인한 공모전</h2><a href="/contest/">공모전 찾기 →</a></div>'
-               f'<p class="note">주최 측 공고와 첨부 서류를 직접 열어 자격·제출 규격·접수 방법을 대조한 공모전이에요(확인일은 각 상세에).</p><ul class="td-l hm-td">{ver_h}</ul></section>') if _vi else ''
-    return (_concept_sec() + f'<section class="hm-hero"><h1>궁금한 것을 바로 찾아보세요.</h1>'
-            '<p>이슈, 제도, 공모전, 지원금을 한 번에 검색합니다. 공식 공고와 대조한 곳에는 표시를 달고, 확인하지 못한 값은 「확인 필요」로 남깁니다.</p>'
-            '<form class="hm-s" role="search" action="/wiki/" onsubmit="return false"><input id="hq" type="search" placeholder="예: 청년 월세, 영상 공모전, 김치볶음밥, 근로장려금" aria-label="통합 검색" autocomplete="off">'
-            '<div class="hm-sc" role="group" aria-label="검색 범위"><button type="button" class="on" data-s="">전체</button><button type="button" data-s="c">공모전</button><button type="button" data-s="a">지원금</button><button type="button" data-s="e">이벤트</button><button type="button" data-s="r">레시피</button><button type="button" data-s="w">가이드</button></div>'
-            '<div class="hm-r" id="hr" aria-live="polite"></div></form></section>'
-            f'<nav class="hm-act" aria-label="주요 바로가기">{mh}</nav><nav class="hm-sub" aria-label="더 보기">{sub}</nav>'
-            + _today_hot_sec() + _kwmap_sec() + _tier_sec() + _indicator_sec() + _field_sections()
-            + (f'<section class="hm-sec"><div class="hm-h"><h2>추천 가이드</h2><a href="/wiki/">루리 위키 →</a></div><div class="hm-g">{guides}</div></section>' if guides else '')
-            + f'<section class="hm-ai" aria-label="AI 수집 현황"><b>🤖 AI 수집기</b><span>마지막 수집 <b>{now:%H:%M}</b></span><span>오늘 새로 확인 <b>{ctx["n_new"]}건</b></span><span>수집 완료 <b>{ctx["n_live"]}건</b></span><span>공식 원문 확보 <b>{ctx["n_ver"]}건</b></span><span>핵심 조건 대조 <b>{ctx["n_core"]}건</b> <small>(AI 대조)</small></span><span>운영자 직접 검토 <b>{ctx["n_op"]}건</b></span><span>확인 못한 값은 「확인 필요」</span><a href="/corrections/">정정 기록</a> · <a href="/about/">제작 원칙</a></section>'
-            + f'<section class="hm-sec"><div class="hm-h"><h2>오늘 마감</h2><a href="/today/">전체 {len(items)}건 →</a></div><ul class="td-l hm-td">{prev_h}</ul></section>'
-            + ver_sec +
-            f'<section class="hm-sec"><div class="hm-h"><h2>새로 확인한 공모전</h2><a href="/contest/">공모전 찾기 →</a></div><ul class="hm-nl">{new_h}</ul></section>'
-            + f'<section class="hm-sec"><div class="hm-h"><h2>새로 생긴 기능</h2></div><ul class="hm-f">{feats}</ul></section>'
-            + (f'<section class="hm-sec"><div class="hm-h"><h2>더 읽을거리</h2></div><ul class="hm-nl">' + ''.join(f'<li><a href="{E(r["u"])}"><b>{E(_short(r["title"], 60))}</b><span>{E(r["sub"])}</span></a></li>' for r in ctx.get('reads', [])) + '</ul></section>' if ctx.get('reads') else '')
-            + f'<section class="hm-sec" id="all"><div class="hm-h"><h2>전체 서비스</h2></div><nav class="hm-all" aria-label="전체 서비스">{allsv}</nav></section>'
-            '<p class="hm-about">루리 애널리스트은 요즘 사람들이 궁금해하는 이슈와 생활 속 돈 정보를 공식 출처 기준으로 분석해 정리하는 온라인 미디어입니다. 확인일과 출처를 적고, 확인하지 못한 내용은 표시해 둡니다. 편집 원칙은 <a href="/about/">소개</a>에 있습니다.</p>'
-            '<link rel="stylesheet" href="/assets/home/screens.css?v=5"><script defer src="/assets/home/screens.js?v=1"></script>')
+    seen = set()
+    cands = _read_candidates(ctx)
+    short = [('이슈', '/issue/', 'issue'), ('지원금·청약', '/apply/', 'apply'), ('공모전', '/contest/', 'contest'), ('생활 가이드', '/money/guide/', 'guide'), ('레시피', '/fridge/', 'recipe')]
+    chips = ''.join(f'<li><a href="{u}">{_ic(k)}{E(n)}</a></li>' for n, u, k in short)
+    top = ('<section class="h2-top" aria-labelledby="h2-t"><p class="br">루리 줍줍</p><h1 id="h2-t">지금 궁금한 것, 루리에서 찾아보세요.</h1>'
+           '<p class="lead">이슈부터 지원금·공모전까지, 출처와 함께 정리합니다.</p>'
+           f'<form class="h2-s" role="search" action="/wiki/"><div class="row"><label class="sr" for="hq">검색어</label>{_ic("search", "sv si")}'
+           '<input id="hq" type="search" placeholder="예: 청년 월세, 영상 공모전, 근로장려금" autocomplete="off" enterkeyhint="search"><button type="submit" class="go">검색</button></div>'
+           '<div class="sc" role="group" aria-label="검색 범위"><button type="button" class="on" data-s="" aria-pressed="true">전체</button><button type="button" data-s="c" aria-pressed="false">공모전</button><button type="button" data-s="a" aria-pressed="false">지원금</button><button type="button" data-s="w" aria-pressed="false">가이드</button><button type="button" data-s="r" aria-pressed="false">레시피</button></div>'
+           '<div class="res" id="hr" aria-live="polite"></div></form>'
+           f'<ul class="h2-sc" aria-label="주제 바로가기">{chips}</ul>'
+           '<p class="h2-ai">자료는 AI로 수집·정리하고 출처를 함께 적습니다. <a href="/about/#method">만드는 방식</a></p></section>')
+    return (top + _sec_read(cands, seen) + _opp_cards(ctx, seen) + _sec_guides(seen) + _sec_topics(ctx, seen)
+            + '<link rel="stylesheet" href="/assets/home/home2.css?v=3"><script defer src="/assets/home/home2.js?v=1"></script>')
+
+
+def kwmap_page_html():
+    """/map/ 별도 탐색 화면(2026-11-03): 검색·분류 필터·확대/초기화 + 같은 내용의 목록."""
+    h = _kwmap_sec(full=True)
+    m = re.search(r'<script type="application/json" id="kwdata">(.*?)</script>', h or '', re.S)
+    if not m:
+        return ''
+    raw = m.group(1)
+    d = json.loads(raw.replace('<' + chr(92) + '/', '</'))
+    TN = ['단기', '중기', '장기']
+    lis = {0: '', 1: '', 2: ''}
+    for i, n in enumerate(d['n']):
+        lis[n['t']] += f'<li data-i="{i}"><a href="{E(n["u"])}">{E(n["q"])}</a><button type="button" aria-label="{E(n["q"])} 지도에서 보기">지도에서 보기</button></li>'
+    cnt = {t: sum(1 for n in d['n'] if n['t'] == t) for t in range(3)}
+    desc = ('단기 · 3~4일 안에 갑자기 많이 찾는 질문', '중기 · 약 2주 동안 이어지는 관심사', '장기 · 해마다 반복해 찾는 제도와 방법')
+    lists = ''.join(f'<h3 class="kw-lh"><i class="dot t{t}"></i>{desc[t]} <small>{cnt[t]}건</small></h3><ul class="kw-l">{lis[t]}</ul>' for t in range(3) if lis[t])
+    filt = ''.join(f'<button type="button" data-t="{t}" aria-pressed="true"><i class="dot t{t}"></i>{TN[t]} {cnt[t]}</button>' for t in range(3))
+    return ('<div class="kw-pg"><div class="kw-bar"><form role="search" class="kw-s"><label class="sr" for="kw-q">키워드 검색</label>'
+            '<input id="kw-q" type="search" placeholder="키워드 검색 (예: 월세, 연말정산)" autocomplete="off"></form>'
+            f'<div class="kw-f" role="group" aria-label="기간 분류">{filt}</div>'
+            '<div class="kw-z" role="group" aria-label="지도 조작"><button type="button" id="kw-in" aria-label="확대">＋</button><button type="button" id="kw-out" aria-label="축소">－</button><button type="button" id="kw-reset">초기화</button></div></div>'
+            '<div class="kw-main"><div id="kwmap" class="kw-box"><canvas tabindex="0" role="img" aria-label="키워드 지도. 방향키로 돌리고 플러스·마이너스로 확대합니다. 같은 내용은 아래 목록에 있습니다."></canvas></div>'
+            '<aside id="kw-info" class="kw-info" aria-live="polite"></aside></div>'
+            '<p class="kw-hint"><b>보는 법</b> · 점 하나가 질문(글) 하나입니다. 안쪽 점이 단기, 바깥쪽 점이 장기입니다. 두 점을 잇는 선은 <b>제목에 같은 핵심 단어가 들어 있다</b>는 뜻이며, 의미가 비슷하다는 판단은 아닙니다. 끌어서 돌리고, 점을 누르면 연결된 질문이 강조됩니다.</p>'
+            f'<h2 class="kw-h2">목록으로 보기</h2><p id="kw-empty" class="kw-empty" hidden>조건에 맞는 키워드가 없어요. 검색어를 줄이거나 분류를 다시 켜 보세요.</p>{lists}</div>'
+            f'<script type="application/json" id="kwdata">{raw}</script><link rel="stylesheet" href="/assets/home/kwmap.css?v=1"><script defer src="/assets/home/kwmap.js?v=3"></script>')
