@@ -2706,6 +2706,15 @@ def build():
     print('contests', len(contests), 'live', len(live), 'events', len(events), 'urls', len(urls), 'noindex', len(NOINDEX))
     try:
         unlink_dead_c()
+        _rx = re.compile(r'href="(/apply/r/[^"#?/]+/(?:[^"#?/]+/)?)"')   # 2026-11-03 합쳐서 지운 지역 페이지로 남은 링크는 /apply/r/ 로 돌린다(깨진 링크 방지)
+        for _d in ('apply',):
+            for _dp, _dn, _fn in os.walk(os.path.join(ROOT, _d)):
+                for _f in _fn:
+                    if _f == 'index.html':
+                        _p = os.path.join(_dp, _f); _t = open(_p, encoding='utf-8').read()
+                        _t2 = _rx.sub(lambda m_: m_.group(0) if os.path.exists(os.path.join(ROOT, m_.group(1).strip('/'), 'index.html')) else 'href="/apply/r/"', _t)
+                        if _t2 != _t:
+                            open(_p, 'w', encoding='utf-8', newline=chr(10)).write(_t2)
         import health
         hr = health.run(ROOT, urls, NOINDEX)
         print('health', '정상' if not hr['warn'] else hr['warn'])

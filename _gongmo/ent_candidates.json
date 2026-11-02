@@ -1,6 +1,6 @@
 {
- "at": "2026-11-03 04:30",
- "nitems": 516,
+ "at": "2026-11-03 05:30",
+ "nitems": 520,
  "cands": [
   {
    "kw": "최불암",
@@ -110,6 +110,41 @@
    ]
   },
   {
+   "kw": "선물",
+   "nsrc": 6,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "연합뉴스",
+    "조선일보",
+    "한겨레",
+    "한국경제"
+   ],
+   "n": 7,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "최불암 \"전 국민에 받은 사랑 어떻게 갚나…모든 순간이 선물\"",
+     "link": "https://www.yna.co.kr/view/AKR20261101050500005"
+    },
+    {
+     "src": "동아일보",
+     "title": "‘지드래곤 열애설’ 이주연, 전남친 선물 아직도 간직…“뿌리면 그때 생각나”",
+     "link": "https://sports.donga.com/ent/article/all/20261102/134954256/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "소녀시대 유리, 그림 실력에 김숙 감탄…붓·팔레트까지 선물",
+     "link": "https://sports.donga.com/ent/article/all/20261102/134950548/1"
+    },
+    {
+     "src": "한겨레",
+     "title": "“읽고 또 읽으니”…87살 할머니에게 닿은 조정래의 선물 [.txt]",
+     "link": "https://www.hani.co.kr/arti/culture/book/1284956.html"
+    }
+   ]
+  },
+  {
    "kw": "리센느",
    "nsrc": 6,
    "srcs": [
@@ -141,41 +176,6 @@
      "src": "세계일보",
      "title": "리센느 원이, 공연 중 무대 이탈…\"세탁 후 줄어든 의상 탓\"",
      "link": "https://www.segye.com/newsView/20261102512094"
-    }
-   ]
-  },
-  {
-   "kw": "선물",
-   "nsrc": 6,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "연합뉴스",
-    "조선일보",
-    "한겨레",
-    "한국경제"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "최불암 \"전 국민에 받은 사랑 어떻게 갚나…모든 순간이 선물\"",
-     "link": "https://www.yna.co.kr/view/AKR20261101050500005"
-    },
-    {
-     "src": "동아일보",
-     "title": "소녀시대 유리, 그림 실력에 김숙 감탄…붓·팔레트까지 선물",
-     "link": "https://sports.donga.com/ent/article/all/20261102/134950548/1"
-    },
-    {
-     "src": "한겨레",
-     "title": "“읽고 또 읽으니”…87살 할머니에게 닿은 조정래의 선물 [.txt]",
-     "link": "https://www.hani.co.kr/arti/culture/book/1284956.html"
-    },
-    {
-     "src": "한국경제",
-     "title": "\"화환할게\" 강동원, 4개월 전 팬과 약속 지켰다…결혼식장에 깜짝 선물",
-     "link": "https://www.hankyung.com/article/202610265376H"
     }
    ]
   },
@@ -882,6 +882,39 @@
    ]
   },
   {
+   "kw": "남자",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "연합뉴스",
+    "조선일보"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "'왕과 사는 남자' 촬영지 인기…강원 전역으로 촬영유치 확대",
+     "link": "https://www.yna.co.kr/view/AKR20261029095700062"
+    },
+    {
+     "src": "동아일보",
+     "title": "‘돌싱N모솔2’ 첫 데이트부터 삼각관계…한 여성에 두 남자",
+     "link": "https://sports.donga.com/ent/article/all/20261102/134949877/1"
+    },
+    {
+     "src": "뉴시스",
+     "title": "홍석천, 지연수 썸남 두고 질투 \"내가 특별히 예뻐한 남자\"",
+     "link": "https://www.newsis.com/view/NISX20261102_0003851798"
+    },
+    {
+     "src": "뉴시스",
+     "title": "홍석천, '이혼' 지연수에 뼈 있는 조언 \"남자 만나지 마\"",
+     "link": "https://www.newsis.com/view/NISX20261102_0003851797"
+    }
+   ]
+  },
+  {
    "kw": "이혼",
    "nsrc": 4,
    "srcs": [
@@ -981,39 +1014,6 @@
    ]
   },
   {
-   "kw": "누적",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 4,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "[박스오피스] '치이카와' 4주 연속 주말 흥행 1위…누적 258만명",
-     "link": "https://www.yna.co.kr/view/AKR20261102036700005"
-    },
-    {
-     "src": "동아일보",
-     "title": "라이즈, ‘키윙’ 그룹 부문 11회 연속 1위…누적 20만 그린키위 돌파",
-     "link": "https://sports.donga.com/ent/article/all/20261102/134948295/2"
-    },
-    {
-     "src": "뉴시스",
-     "title": "김원효, 심진화에 매년 명품백 선물 \"누적 금액 1억 넘어\"",
-     "link": "https://www.newsis.com/view/NISX20261102_0003851792"
-    },
-    {
-     "src": "조선일보",
-     "title": "김원효, ♥심진화에 15년간 매년 명품백 선물 “누적 금액 1억 넘어”(말자쇼)",
-     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/02/GU4DIMZWG43WMNBZG44GEOLDME/"
-    }
-   ]
-  },
-  {
    "kw": "말고",
    "nsrc": 4,
    "srcs": [
@@ -1076,39 +1076,6 @@
      "src": "조선일보",
      "title": "가장 투어스다운 이야기 뭘까…오늘(2일) 싱글 2집 ‘TO US’ 발매",
      "link": "https://www.chosun.com/entertainments/music/2026/11/02/GQYWKYJWMY2DCYTEMU4TKNJTMU/"
-    }
-   ]
-  },
-  {
-   "kw": "남자",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 4,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "'왕과 사는 남자' 촬영지 인기…강원 전역으로 촬영유치 확대",
-     "link": "https://www.yna.co.kr/view/AKR20261029095700062"
-    },
-    {
-     "src": "동아일보",
-     "title": "‘돌싱N모솔2’ 첫 데이트부터 삼각관계…한 여성에 두 남자",
-     "link": "https://sports.donga.com/ent/article/all/20261102/134949877/1"
-    },
-    {
-     "src": "뉴시스",
-     "title": "홍석천, '이혼' 지연수에 뼈 있는 조언 \"남자 만나지 마\"",
-     "link": "https://www.newsis.com/view/NISX20261102_0003851797"
-    },
-    {
-     "src": "조선일보",
-     "title": "홍석천, ‘싱글맘’ 지연수에 뼈 있는 조언 “남자 만나지 말고 오빠 말 좀 들어”",
-     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/02/MI4DONZVGM3DQYRQMZTGIYJXMQ/"
     }
    ]
   },
@@ -1338,6 +1305,38 @@
      "src": "한국경제",
      "title": "'컴백' 아일릿 원희 \"'최애 앨범' 확신\"…'체포하겠어' MV엔 송강 출연",
      "link": "https://www.hankyung.com/article/202610265375H"
+    }
+   ]
+  },
+  {
+   "kw": "빈소",
+   "nsrc": 3,
+   "srcs": [
+    "뉴시스",
+    "연합뉴스",
+    "헤럴드경제"
+   ],
+   "n": 9,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "최불암 빈소 마지막 날도 조문 행렬…김혜수는 사흘째 지켜(종합)",
+     "link": "https://www.yna.co.kr/view/AKR20261101032151005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "이제훈 \"최불암과 연기, 인생의 영광\"…김혜수 사흘째 빈소 지켜",
+     "link": "https://www.yna.co.kr/view/AKR20261101032100005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "김용건 \"최불암 빈소 못 찾아 마음 힘들어…곁에 있어야 하는데\"",
+     "link": "https://www.yna.co.kr/view/AKR20261101019400005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "최불암 빈소 이틀째 발길…\"큰 별 떠나, 누가 방송 지키나\"(종합)",
+     "link": "https://www.yna.co.kr/view/AKR20261031027651005"
     }
    ]
   }
