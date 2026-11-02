@@ -106,6 +106,89 @@ def _new_guides_sec():
     return f'<section class="hm-sec"><div class="hm-h"><h2>새로 올라온 생활 가이드</h2><a href="/money/guide/">전체 보기 →</a></div><ul class="hm-nl">{li}</ul></section>'
 
 
+def _today_hot_sec():
+    """홈 「오늘 많이 찾는 것」: 마케터 이슈 원고(issues/*.json, 보관 기간 안) 먼저, 그다음 지금 뜨는 핫이슈(48시간 안, 언론사 많은 순). 잡지 커버스토리 칸(2026-11-02)."""
+    import os, datetime
+    here = os.path.dirname(os.path.abspath(__file__)); root = os.path.dirname(here)
+    today = datetime.date.today()
+    cards = []
+    idir = os.path.join(here, 'issues')
+    if os.path.isdir(idir):
+        for fn in sorted(os.listdir(idir), reverse=True):
+            if not fn.endswith('.json'):
+                continue
+            try:
+                c = json.load(open(os.path.join(idir, fn), encoding='utf-8'))
+                d0 = datetime.date.fromisoformat(c['date'])
+            except Exception:
+                continue
+            if (today - d0).days > int(c.get('keep_days', 4)) or not os.path.exists(os.path.join(root, 'issue', c['slug'], 'index.html')):
+                continue
+            cards.append((d0.isoformat(), f'/issue/{c["slug"]}/', c['h1'], f'{c["date"][5:].replace("-", "/")} 기준 · 이슈 정리'))
+    try:
+        db = json.load(open(os.path.join(root, 'hot', 'db.json'), encoding='utf-8'))
+        cut = (datetime.datetime.now() - datetime.timedelta(hours=48)).strftime('%Y-%m-%d %H:%M')
+        hot = sorted([v for v in db.values() if not v.get('dup') and v['last'] >= cut and os.path.exists(os.path.join(root, 'hot', v['slug'], 'index.html'))],
+                     key=lambda v: (-len(v['outs']), v['last']))
+        for v in hot:
+            cards.append((v['last'], f'/hot/{v["slug"]}/', v['title'], f'언론사 {len(v["outs"])}곳 보도 · {v["last"][5:10].replace("-", "/")}'))
+    except Exception:
+        pass
+    cards = cards[:5]
+    if not cards:
+        return ''
+    li = ''.join(f'<li><a href="{E(u)}"><b>{E(_short(t, 60))}</b><span>{E(sub)}</span></a></li>' for _d, u, t, sub in cards)
+    return f'<section class="hm-sec"><div class="hm-h"><h2>오늘 많이 찾는 것</h2><a href="/hot/">핫이슈 전체 →</a></div><ul class="hm-nl">{li}</ul></section>'
+
+
+def _indicator_sec():
+    """홈 「지표 현황」: rsi_daily.json(마케터가 매일 갱신)에서 RSI 낮은 순을 보여 주는 지표 칸. 추천이 아니라 현황이다(2026-11-02)."""
+    import os
+    f = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'rsi_daily.json')
+    try:
+        d = json.load(open(f, encoding='utf-8'))
+    except Exception:
+        return ''
+    its = [x for x in d.get('items', []) if x.get('rsi') is not None]
+    if not its:
+        return ''
+    os_n = sum(1 for x in its if x['rsi'] <= 30)
+    ob_n = sum(1 for x in its if x['rsi'] >= 70)
+    pick = []
+    for g in ('국내 대형주', '업비트 원화'):
+        pick += sorted([x for x in its if x.get('market') == g], key=lambda x: x['rsi'])[:3]
+    li = ''.join(f'<li><a href="/analyst/rsi/"><b>{E(x["name"])} · RSI {x["rsi"]:.1f}</b><span>{E(x.get("market", ""))}'
+                 + (f' · 52주 고점 대비 {x["from_high"]:+.1f}%' if x.get('from_high') is not None else '') + '</span></a></li>' for x in pick)
+    return (f'<section class="hm-sec"><div class="hm-h"><h2>지표 현황</h2><a href="/analyst/rsi/">RSI 현황표 →</a></div>'
+            f'<p class="note">{E(d.get("asof", ""))} 기준 RSI(14일) 30 이하 {os_n}개 · 70 이상 {ob_n}개. RSI가 낮은 순으로 보여 주는 지표 현황이고, 투자 권유가 아니에요.</p>'
+            f'<ul class="hm-nl">{li}</ul></section>')
+
+
+def _field_sections():
+    """홈 분야별 최신 3개(2026-11-02 마케터 분류표 guide_sections.json). 새 글일수록 kin_guides.json 뒤쪽이라 목록 순서로 최신을 고른다."""
+    import os
+    here = os.path.dirname(os.path.abspath(__file__)); root = os.path.dirname(here)
+    try:
+        gs = json.load(open(os.path.join(here, 'guide_sections.json'), encoding='utf-8'))
+        kin = json.load(open(os.path.join(here, 'kin_guides.json'), encoding='utf-8'))['guides']
+    except Exception:
+        return ''
+    pos = {g['slug']: i for i, g in enumerate(kin)}
+    gm = {g['slug']: g for g in kin}
+    icon = {'돈·지원금': '💰', '일·직장': '💼', '집·부동산': '🏠', '세금': '🧾', '건강·복지': '🩺', '생활': '🧺'}
+    blocks = ''
+    for f, L in gs.items():
+        L = [x for x in L if x in pos and os.path.exists(os.path.join(root, 'money', 'guide', x, 'index.html'))]
+        top = sorted(L, key=lambda x: -pos[x])[:3]
+        if not top:
+            continue
+        li = ''.join(f'<li><a href="/money/guide/{x}/"><b>{E(_short(gm[x]["title"], 46))}</b></a></li>' for x in top)
+        blocks += f'<div class="hm-fb"><h3>{icon.get(f, "📌")} {E(f)}</h3><ul>{li}</ul></div>'
+    if not blocks:
+        return ''
+    return f'<section class="hm-sec"><div class="hm-h"><h2>분야별 새 글</h2><a href="/money/guide/">가이드 전체 →</a></div><div class="hm-fld">{blocks}</div></section>'
+
+
 def home_html(ctx):
     now = ctx['now']; items = due_items(ctx)
     new_c = [c for c in ctx['new_contests'] if ctx['elig_short'](c) not in ('미확인', '확인 필요') and (c.get('effort') or c.get('medium')) and (c['id'] in (ctx.get('VER') or {}) or ctx['prize_short'](c) != '확인 필요')]
@@ -117,9 +200,9 @@ def home_html(ctx):
     prev_h = ''.join(_card(i) for i in prev) or '<li class="td-empty">오늘 마감하는 항목이 없어요.</li>'
     new_h = ''.join(f'<li><a href="/c/{c["id"]}/"><b>{E(_short(c["title"], 46))}</b><span>{E(ctx["elig_short"](c))} · {E(ctx["prize_short"](c))} · {E(c["end"][5:].replace("-", "."))} 마감</span></a></li>' for c in new_c) or '<li class="td-empty">오늘 새로 확인한 공모전은 아직 없어요.</li>'
     guides = ''.join(f'<a href="{E(g["u"])}"><b>{E(_short(g["title"], 38))}</b><span>{E(_short(g["desc"], 60))}</span></a>' for g in ctx['guides'][:3])
-    main = [('⏰', '오늘 마감하는 기회', f'{len(items)}건', '/today/'), ('🏆', '공모전 찾기', f'{ctx["n_contest"]}건 진행 중', '/contest/'), ('📋', '지원금·청약 찾기', f'{ctx["n_apply"]}건', '/apply/'), ('🍳', '오늘 뭐 먹지', '재료로도 찾기', '/fridge/')]
+    main = [('📰', '오늘의 이슈', '단기 이슈 · 매일 갱신', '/hot/'), ('💰', '돈·생활 가이드', '지원금·세금·일자리·집', '/money/guide/'), ('📈', '지표·시세', 'RSI 현황표', '/analyst/rsi/'), ('🍳', '레시피', '오늘 뭐 먹지 · 재료로 찾기', '/fridge/'), ('🏆', '공모전·이벤트', f'{ctx["n_contest"]}건 진행 중', '/contest/'), ('🧮', '계산기', '연봉 실수령액 · 퇴직금', '/money/tools/salary/')]
     mh = ''.join(f'<a class="hm-a" href="{u}"><i>{ic}</i><b>{E(t)}</b><span>{E(s)}</span></a>' for ic, t, s, u in main)
-    sub = ''.join(f'<a href="{u}">{ic} {E(t)}</a>' for ic, t, u in (('🎁', '경품 이벤트', '/event/'), ('📚', '루리 위키', '/wiki/'), ('💰', '생활 돈 가이드', '/money/guide/'), ('📺', '뉴스', '/news/')))
+    sub = ''.join(f'<a href="{u}">{ic} {E(t)}</a>' for ic, t, u in (('⏰', '오늘 마감', '/today/'), ('📋', '지원금·청약', '/apply/'), ('🎁', '경품 이벤트', '/event/'), ('📚', '루리 위키', '/wiki/'), ('📺', '뉴스', '/news/')))
     allsv = ''.join(f'<a href="{E(t["path"])}"><i>{t["icon"]}</i>{E(t["name"])}</a>' for t in ctx['topics'])
     feats = ''.join(f'<li><b>{E(a)}</b><span>{E(b)}</span></li>' for a, b in (('루리 위키', '정보성 글을 문서처럼 묶어 검색·이전/다음으로 읽어요 (10/23)'), ('재료 → 최저가', '레시피에서 없는 재료를 쇼핑몰 가격순 검색으로 바로 연결해요 (10/23)'), ('공식 원문 대조', '확인한 공모전은 확인일과 달랐던 점을 함께 보여 줘요 (10/23)')))
     _shown = {x.get('cid') for x in prev if x.get('cid')}   # 위 「오늘 마감」에 이미 나온 공고는 다시 보여 주지 않는다
@@ -133,12 +216,12 @@ def home_html(ctx):
             '<div class="hm-sc" role="group" aria-label="검색 범위"><button type="button" class="on" data-s="">전체</button><button type="button" data-s="c">공모전</button><button type="button" data-s="a">지원금</button><button type="button" data-s="e">이벤트</button><button type="button" data-s="r">레시피</button><button type="button" data-s="w">가이드</button></div>'
             '<div class="hm-r" id="hr" aria-live="polite"></div></form></section>'
             f'<nav class="hm-act" aria-label="주요 바로가기">{mh}</nav><nav class="hm-sub" aria-label="더 보기">{sub}</nav>'
-            f'<section class="hm-ai" aria-label="AI 수집 현황"><b>🤖 AI 수집기</b><span>마지막 수집 <b>{now:%H:%M}</b></span><span>오늘 새로 확인 <b>{ctx["n_new"]}건</b></span><span>수집 완료 <b>{ctx["n_live"]}건</b></span><span>공식 원문 확보 <b>{ctx["n_ver"]}건</b></span><span>핵심 조건 대조 <b>{ctx["n_core"]}건</b> <small>(AI 대조)</small></span><span>운영자 직접 검토 <b>{ctx["n_op"]}건</b></span><span>확인 못한 값은 「확인 필요」</span><a href="/corrections/">정정 기록</a> · <a href="/about/">제작 원칙</a></section>'
-            f'<section class="hm-sec"><div class="hm-h"><h2>오늘 마감</h2><a href="/today/">전체 {len(items)}건 →</a></div><ul class="td-l hm-td">{prev_h}</ul></section>'
+            + _today_hot_sec() + _indicator_sec() + _field_sections()
+            + (f'<section class="hm-sec"><div class="hm-h"><h2>추천 가이드</h2><a href="/wiki/">루리 위키 →</a></div><div class="hm-g">{guides}</div></section>' if guides else '')
+            + f'<section class="hm-ai" aria-label="AI 수집 현황"><b>🤖 AI 수집기</b><span>마지막 수집 <b>{now:%H:%M}</b></span><span>오늘 새로 확인 <b>{ctx["n_new"]}건</b></span><span>수집 완료 <b>{ctx["n_live"]}건</b></span><span>공식 원문 확보 <b>{ctx["n_ver"]}건</b></span><span>핵심 조건 대조 <b>{ctx["n_core"]}건</b> <small>(AI 대조)</small></span><span>운영자 직접 검토 <b>{ctx["n_op"]}건</b></span><span>확인 못한 값은 「확인 필요」</span><a href="/corrections/">정정 기록</a> · <a href="/about/">제작 원칙</a></section>'
+            + f'<section class="hm-sec"><div class="hm-h"><h2>오늘 마감</h2><a href="/today/">전체 {len(items)}건 →</a></div><ul class="td-l hm-td">{prev_h}</ul></section>'
             + ver_sec +
             f'<section class="hm-sec"><div class="hm-h"><h2>새로 확인한 공모전</h2><a href="/contest/">공모전 찾기 →</a></div><ul class="hm-nl">{new_h}</ul></section>'
-            + (f'<section class="hm-sec"><div class="hm-h"><h2>추천 가이드</h2><a href="/wiki/">루리 위키 →</a></div><div class="hm-g">{guides}</div></section>' if guides else '')
-            + _new_guides_sec()
             + f'<section class="hm-sec"><div class="hm-h"><h2>새로 생긴 기능</h2></div><ul class="hm-f">{feats}</ul></section>'
             + (f'<section class="hm-sec"><div class="hm-h"><h2>더 읽을거리</h2></div><ul class="hm-nl">' + ''.join(f'<li><a href="{E(r["u"])}"><b>{E(_short(r["title"], 60))}</b><span>{E(r["sub"])}</span></a></li>' for r in ctx.get('reads', [])) + '</ul></section>' if ctx.get('reads') else '')
             + f'<section class="hm-sec" id="all"><div class="hm-h"><h2>전체 서비스</h2></div><nav class="hm-all" aria-label="전체 서비스">{allsv}</nav></section>'

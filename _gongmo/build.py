@@ -2635,6 +2635,7 @@ def build():
     corrections_page(live); urls.append('/corrections/')
     urls.extend(diet_pages())
     urls.extend(rsi_pages())
+    urls.extend(pick_pages())
     print('광고 스크립트 뺀 페이지(최종)', strip_ads_noindex())   # 위키·정정 기록·다이어트 앱처럼 뒤에 만든 검색 제외 페이지까지 한 번 더
     try:
         import make_pdf as _MP
@@ -4208,6 +4209,75 @@ def coin_card(c, full=False):
     return (f'<article class="an-c"><div class="an-h"><h3><a href="/analyst/coin/{c["sym"].lower()}/">{E(c["name"])} <small>{c["sym"]}</small></a></h3>{pr}</div>'
             f'<p class="an-st">최근 7일 전망 기사 {c["n"]}건 · 🟢 강세 {c["bull"]} · ⚪ 혼조 {c["neutral"]} · 🔴 약세 {c["bear"]}{tg}</p><div class="an-bar">{bar}</div>'
             + coin_svg(c) + an_tree(c['tree'], ('bull', 'bear', 'neutral')) + (an_nodes(c['nodes'], True) if full else f'<a class="an-more" href="/analyst/coin/{c["sym"].lower()}/">전망 노드 {c["n"]}개 자세히 →</a>') + '</article>')
+
+
+PICK_DIR = os.path.join(HERE, 'picks')
+
+
+def pick_pages():
+    """/pick/<묶음>/ 관심 묶음 (2026-11-02 마케터): 커뮤니티(출처)에서 오르는 화제 + 같이 볼 가이드·이슈를 한 묶음으로. 묶음 내용은 _gongmo/picks/<slug>.json.
+    필드: slug, title, desc, intro, communities[커뮤니티명], guides[돈 가이드 slug], issues[/issue/ slug], related[[경로,이름]]. 커뮤니티 이름은 출처 표시일 뿐 연령·성별을 뜻하지 않는다."""
+    if not os.path.isdir(PICK_DIR):
+        return []
+    try:
+        import community_topics as CT
+        ct = CT.run()
+    except Exception:
+        ct = None
+    if not ct:
+        try:
+            ct = json.load(open(os.path.join(HERE, 'community_topics.json'), encoding='utf-8'))
+        except Exception:
+            ct = None
+    srcmap = {s_['name']: s_ for s_ in (ct or {}).get('sources', [])}
+    kin = {}
+    if os.path.exists(KIN_F):
+        kin = {g['slug']: g for g in json.load(open(KIN_F, encoding='utf-8'))['guides']}
+    urls, cards = [], ''
+    for fn_ in sorted(os.listdir(PICK_DIR)):
+        if not fn_.endswith('.json'):
+            continue
+        try:
+            c = json.load(open(os.path.join(PICK_DIR, fn_), encoding='utf-8'))
+            sl = c['slug']
+        except Exception as e:
+            print('관심 묶음 읽기 실패', fn_, repr(e)[:80])
+            continue
+        p_ = f'/pick/{sl}/'
+        ctb = ''
+        for nm in c.get('communities', []):
+            s_ = srcmap.get(nm)
+            if not s_:
+                continue
+            li = ''.join(f'<li><b>{E(t["t"][:60])}</b> <small>커뮤니티 {t["nsite"]}곳에서 동시에' + (f' · 이 커뮤니티 댓글 {t["nc_here"]:,}개' if t['nc_here'] else '') + '</small></li>' for t in s_['topics'][:3])
+            ctb += f'<h3>{E(nm)}</h3><ul class="gm-l">{li}</ul>'
+        gl = ''
+        for gs in c.get('guides', []):
+            g = kin.get(gs)
+            if g and os.path.exists(os.path.join(ROOT, 'money', 'guide', gs, 'index.html')):
+                gl += f'<li><a href="/money/guide/{gs}/"><b>{E(g["name"])}</b></a> — {E(g["title"][:60])}</li>'
+        il = ''
+        for isl in c.get('issues', []):
+            if os.path.exists(os.path.join(ROOT, 'issue', isl, 'index.html')):
+                try:
+                    h1_ = json.load(open(os.path.join(ISSUE_DIR, isl + '.json'), encoding='utf-8'))['h1']
+                except Exception:
+                    h1_ = isl
+                il += f'<li><a href="/issue/{isl}/"><b>{E(h1_)}</b></a></li>'
+        rel = ''.join(f'<a href="{E(u_)}">{E(n_)}</a>' for u_, n_ in c.get('related', []) if os.path.exists(os.path.join(ROOT, u_.strip('/'), 'index.html')))   # 없는 경로는 링크하지 않는다
+        body = (f'<p class="bc"><a href="/">홈</a> › <a href="/pick/">관심 묶음</a> › {E(c["title"][:24])}</p><h1>{E(c["title"])}</h1><p>{E(c["intro"])}</p>'
+                + (f'<h2>지금 이 커뮤니티들에서 오르는 화제</h2><p class="note">{E((ct or {}).get("date", ""))} 기준 · 출처별 집계예요. 커뮤니티 이름은 글이 올라온 곳을 밝히는 것이고, 특정 연령·성별을 뜻하지 않아요. 일부 커뮤니티는 댓글 수를 수집하지 않아요.</p>{ctb}' if ctb else '')
+                + (f'<h2>같이 보면 좋은 가이드</h2><ul class="gm-l">{gl}</ul>' if gl else '') + (f'<h2>관련 이슈</h2><ul class="gm-l">{il}</ul>' if il else '')
+                + (f'<p class="hm-links">{rel}</p>' if rel else ''))
+        page(p_, c['title'], c['desc'], body, [('루리의 줍줍', '/'), ('관심 묶음', '/pick/'), (c['title'][:20], p_)])
+        urls.append(p_)
+        cards += f'<li><a href="{p_}"><b>{E(c["title"])}</b><span>{E(c["desc"][:70])}</span></a></li>'
+    if urls:
+        page('/pick/', '관심 묶음 — 요즘 커뮤니티에서 오르는 화제와 같이 볼 가이드', '커뮤니티에서 오르는 화제를 근거로, 그 관심사에 맞는 가이드와 이슈를 한 묶음으로 모았어요.',
+             f'<p class="bc"><a href="/">홈</a> › 관심 묶음</p><h1>🧺 관심 묶음</h1><p>요즘 커뮤니티에서 오르는 화제를 보고, 같은 관심사의 가이드와 이슈를 한 묶음으로 모았어요.</p><ul class="gm-g">{cards}</ul>',
+             [('루리의 줍줍', '/'), ('관심 묶음', '/pick/')])
+        urls.append('/pick/')
+    return urls
 
 
 RSI_F = os.path.join(HERE, 'rsi_daily.json')
