@@ -353,7 +353,7 @@ def _read_candidates(ctx):
                 continue
             L.append((d0.isoformat(), int(c.get('priority', 0)), c))
     for d0, _p, c in sorted(L, key=lambda x: (x[0], x[1]), reverse=True):
-        out.append((f'/issue/{c["slug"]}/', '이슈', c['h1'], c.get('summary') or c.get('desc') or '', d0))
+        out.append((f'/issue/{c["slug"]}/', c.get('category') or '이슈', c['h1'], c.get('summary') or c.get('desc') or '', d0))
     try:
         kin = json.load(open(os.path.join(here, 'kin_guides.json'), encoding='utf-8'))['guides']
     except Exception:
@@ -506,6 +506,17 @@ def _sec_topics(ctx, seen):
     return f'<section class="h2-sec" id="all" aria-labelledby="s-all"><div class="h2-hd"><h2 id="s-all">전체 주제 탐색</h2></div><ul class="tp-g">{cards}</ul>{kw}</section>'
 
 
+def _sec_ent(ent, seen):
+    """연예·화제 코너: 이슈 JSON 의 category 가 「연예」인 글(주장·제기 주체·확인 상태를 구분해 적은 정리글)을 모은다."""
+    L = [c for c in ent if c[0] not in seen][:4]
+    if len(L) < 2:
+        return ''
+    for c in L:
+        seen.add(c[0])
+    li = ''.join(f'<li><p class="kk">연예·화제</p><h3><a href="{E(c[0])}">{E(_short(_dt(c[2]), 60))}</a></h3><p class="sm">{E(_first_sentences(c[3], 70))}</p><p class="mt"><time datetime="{c[4]}">{_dstr(c[4])} 업데이트</time></p></li>' for c in L)
+    return f'<section class="h2-sec" aria-labelledby="s-ent"><div class="h2-hd"><h2 id="s-ent">연예·화제</h2><a href="/issue/">이슈 전체 {_ic("arrow", "sv s")}</a></div><ul class="gd-l">{li}</ul><p class="h2-nt">제기된 주장과 확인된 사실을 나누어 적은 정리입니다. 확인되지 않은 내용은 확인 상태를 함께 표시합니다.</p></section>'
+
+
 def home_html(ctx):
     seen = set()
     cands = _read_candidates(ctx)
@@ -514,7 +525,8 @@ def home_html(ctx):
            f'<form class="h2-s" role="search" action="/wiki/"><div class="row"><label class="sr" for="hs">검색 범위</label><select id="hs"><option value="">전체</option><option value="c">공모전</option><option value="a">지원금</option><option value="w">가이드</option><option value="r">레시피</option></select>'
            '<label class="sr" for="hq">검색어</label><input id="hq" type="search" placeholder="예: 청년 월세, 영상 공모전, 근로장려금" autocomplete="off" enterkeyhint="search"><button type="submit" class="go">검색</button></div>'
            '<div class="res" id="hr" aria-live="polite"></div></form></section>')
-    return (top + _sec_read(cands, seen) + _opp_cards(ctx, seen) + _sec_guides(seen) + _sec_topics(ctx, seen)
+    ent = [c for c in cands if c[1] == '연예']; cands = [c for c in cands if c[1] != '연예']
+    return (top + _sec_read(cands, seen) + _opp_cards(ctx, seen) + _sec_guides(seen) + _sec_ent(ent, seen) + _sec_topics(ctx, seen)
             + '<link rel="stylesheet" href="/assets/home/home2.css?v=5"><script defer src="/assets/home/home2.js?v=2"></script>')
 
 

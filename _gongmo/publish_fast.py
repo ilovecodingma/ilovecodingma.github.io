@@ -3,7 +3,7 @@
 사이트맵 갱신 → IndexNow → 해당 파일만 커밋·푸시. 전체 빌드(10분)와 잠금(20분)을 거치지 않아 라이브까지 GitHub Pages 배포 시간(2~3분)만 걸린다.
 사용: python -X utf8 publish_fast.py <JSON 경로> [--no-push]   (이슈 / 계산기(inputs·steps) / 관심 묶음(communities) 을 필드로 자동 판별)
 결과: 표준 출력에 JSON 한 줄 {"ok": true, "urls": [...]} 또는 {"ok": false, "errors": [...]} (실패하면 종료 코드 1)."""
-import os, re, sys, json, shutil, subprocess, datetime, urllib.request
+import glob, os, re, sys, json, shutil, subprocess, datetime, urllib.request
 
 HERE = os.path.dirname(os.path.abspath(__file__)); ROOT = os.path.dirname(HERE)
 SITE = 'https://sungprofile.cloud'
@@ -116,6 +116,18 @@ def main():
     if errs:
         out({'ok': False, 'kind': kind, 'errors': errs}, 1)
     warn = [f'title 에 「{w}」 표현이 있어요(방침상 피하기)' for w in ('논란', '의혹', '사망설') if w in c['title']]
+    # 제목 검수(경고 수준, 2026-11-03 네이버·구글 제목 기준): 고유 제목 · 같은 키워드 2회 이상 반복 금지 · 홍보 문구 금지
+    import re as _re
+    _tt = c['title']
+    for _w in sorted({w for w in _re.findall(r'[가-힣A-Za-z0-9]{2,}', _tt) if len(_re.findall(_re.escape(w), _tt)) >= 2 and w not in ('2026', '2027')}):
+        warn.append(f'title 에 「{_w}」가 2번 이상 들어 있어요(같은 키워드 반복 금지)')
+    for _w in ('최고', '대박', '무료 증정', '지금 바로', '클릭', '꼭 보세요', '필독', '충격', '난리'):
+        if _w in _tt:
+            warn.append(f'title 에 홍보·자극 문구 「{_w}」가 있어요')
+    _dup = [os.path.basename(p)[:-5] for d_ in ('issues', 'calcs', 'picks') for p in glob.glob(os.path.join(HERE, d_, '*.json'))
+            if os.path.basename(p)[:-5] != c['slug'] and json.load(open(p, encoding='utf-8')).get('title') == _tt]
+    if _dup:
+        warn.append('같은 title 의 글이 이미 있어요: ' + ', '.join(_dup[:3]) + ' (고유 제목 필요)')
     sl = c['slug']
     sub = {'issue': 'issues', 'calc': 'calcs', 'pick': 'picks'}[kind]
     dst = os.path.join(HERE, sub, sl + '.json')

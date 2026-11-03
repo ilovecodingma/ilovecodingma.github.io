@@ -118,3 +118,22 @@ ul.list .d{flex:0 0 auto;font-size:13px;font-weight:700;padding:2px 8px;border-r
 .src-h p{margin:6px 0}
 
 main.w:has(ul.list){max-width:1120px}
+
+/* 반응형 보정 (2026-11-03): 모바일 헤더·보조 메뉴·상세 버튼·목록 */
+.hd .lang-b>button{border:0!important;background:transparent!important;box-shadow:none!important;min-width:44px;min-height:44px;padding:0 6px!important;font-size:14px;font-weight:600;color:var(--mu)}
+.tb{overflow-x:auto;flex-wrap:nowrap;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.tb::-webkit-scrollbar{display:none}
+.tb a{flex:0 0 auto;white-space:nowrap}
+@media(max-width:700px){
+  .hd-in{gap:4px;padding-top:6px;padding-bottom:0}
+  .tb{-webkit-mask-image:linear-gradient(90deg,#000 88%,transparent);mask-image:linear-gradient(90deg,#000 88%,transparent)}
+  .dh{padding:16px!important}.dh h1{font-size:24px!important;line-height:1.35}
+  .act-row .btn{min-height:50px}
+  .act-row button,.act-row .ma-prep,.act-row .sh-pop summary{padding:0 10px;font-size:14px;min-height:44px}
+  .act-row .ma-prep small{display:none}
+  .act-row .my-acts>small{font-size:13px}
+  .qs{grid-template-columns:1fr 1fr!important}
+  table.info th{width:92px;white-space:normal}
+  ul.list h3.t{font-size:17px}
+  .top-ans{font-size:15px;padding:12px 14px}
+}

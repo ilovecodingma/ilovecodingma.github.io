@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-03 10:00",
+ "updated": "2026-11-03 11:00",
  "items": [
   {
    "query": "로스앤젤레스 fc 대 미네소타 유나이티드 fc 순위",
@@ -376,6 +376,18 @@
   },
   {
    "query": "옌스 카스트로프",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-03",
+   "expires": "2026-11-06"
+  },
+  {
+   "query": "비야디",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -1388,19 +1400,6 @@
    "expires": ""
   },
   {
-   "query": "퇴직연금 DB·DC·IRP",
-   "tier": "장기",
-   "signal": [
-    "지식iN",
-    "자동완성"
-   ],
-   "score": 0,
-   "status": "작성",
-   "page": "/money/guide/retirement-pension/",
-   "registered": "2026-11-03",
-   "expires": ""
-  },
-  {
    "query": "통신요금 환급·절감",
    "tier": "장기",
    "signal": [
@@ -1947,19 +1946,6 @@
    "expires": ""
   },
   {
-   "query": "소액임차인 최우선변제금",
-   "tier": "장기",
-   "signal": [
-    "지식iN",
-    "자동완성"
-   ],
-   "score": 0,
-   "status": "작성",
-   "page": "/money/guide/small-tenant-priority-repayment/",
-   "registered": "2026-11-03",
-   "expires": ""
-  },
-  {
    "query": "회사 망해 임금 못 받았을 때 체당금(대지급금)",
    "tier": "장기",
    "signal": [
@@ -1982,19 +1968,6 @@
    "score": 0,
    "status": "작성",
    "page": "/money/guide/workplace-harassment-law/",
-   "registered": "2026-11-03",
-   "expires": ""
-  },
-  {
-   "query": "4대보험 요율",
-   "tier": "장기",
-   "signal": [
-    "지식iN",
-    "자동완성"
-   ],
-   "score": 0,
-   "status": "작성",
-   "page": "/money/guide/four-insurance-rates-2026/",
    "registered": "2026-11-03",
    "expires": ""
   },
@@ -2714,19 +2687,6 @@
    "expires": ""
   },
   {
-   "query": "국민연금 수령액 계산",
-   "tier": "장기",
-   "signal": [
-    "지식iN",
-    "자동완성"
-   ],
-   "score": 0,
-   "status": "작성",
-   "page": "/money/guide/nps-pension-amount-calc/",
-   "registered": "2026-11-03",
-   "expires": ""
-  },
-  {
    "query": "상속세 신고 방법",
    "tier": "장기",
    "signal": [
@@ -2736,19 +2696,6 @@
    "score": 0,
    "status": "작성",
    "page": "/money/guide/inheritance-tax-filing-howto/",
-   "registered": "2026-11-03",
-   "expires": ""
-  },
-  {
-   "query": "전기요금 계산",
-   "tier": "장기",
-   "signal": [
-    "지식iN",
-    "자동완성"
-   ],
-   "score": 0,
-   "status": "작성",
-   "page": "/money/guide/electricity-bill-calculation/",
    "registered": "2026-11-03",
    "expires": ""
   },
@@ -2996,19 +2943,6 @@
    "score": 0,
    "status": "작성",
    "page": "/money/guide/group-loan-interim-payment-approval/",
-   "registered": "2026-11-03",
-   "expires": ""
-  },
-  {
-   "query": "오피스텔 세금",
-   "tier": "장기",
-   "signal": [
-    "지식iN",
-    "자동완성"
-   ],
-   "score": 0,
-   "status": "작성",
-   "page": "/money/guide/officetel-tax-residential-business/",
    "registered": "2026-11-03",
    "expires": ""
   },
@@ -4820,6 +4754,162 @@
    "expires": ""
   },
   {
+   "query": "연말정산 환급금 조회·지급일",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/year-end-tax-refund-check-payment-date/",
+   "registered": "2026-11-03",
+   "expires": ""
+  },
+  {
+   "query": "연말정산 간소화 자료 제공 시기·보완",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/year-end-tax-simplified-data-supply-schedule/",
+   "registered": "2026-11-03",
+   "expires": ""
+  },
+  {
+   "query": "취약계층 난방비 지원금",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/vulnerable-heating-cost-support-winter/",
+   "registered": "2026-11-03",
+   "expires": ""
+  },
+  {
+   "query": "수도 동파 예방과 수리 비용",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/water-pipe-freeze-prevention-repair/",
+   "registered": "2026-11-03",
+   "expires": ""
+  },
+  {
+   "query": "2027 최저임금 월급·연봉 환산표",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/minimum-wage-2027-monthly-salary-table/",
+   "registered": "2026-11-03",
+   "expires": ""
+  },
+  {
+   "query": "2027학년도 정시 원서접수 일정·규칙",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/jeongsi-2027-application-schedule-rules/",
+   "registered": "2026-11-03",
+   "expires": ""
+  },
+  {
+   "query": "4대보험 요율",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/four-insurance-rates-2026/",
+   "registered": "2026-11-03",
+   "expires": ""
+  },
+  {
+   "query": "전기요금 계산",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/electricity-bill-calculation/",
+   "registered": "2026-11-03",
+   "expires": ""
+  },
+  {
+   "query": "퇴직연금 DB·DC·IRP",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/retirement-pension/",
+   "registered": "2026-11-03",
+   "expires": ""
+  },
+  {
+   "query": "소액임차인 최우선변제금",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/small-tenant-priority-repayment/",
+   "registered": "2026-11-03",
+   "expires": ""
+  },
+  {
+   "query": "국민연금 수령액 계산",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/nps-pension-amount-calc/",
+   "registered": "2026-11-03",
+   "expires": ""
+  },
+  {
+   "query": "오피스텔 세금",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/officetel-tax-residential-business/",
+   "registered": "2026-11-03",
+   "expires": ""
+  },
+  {
    "query": "연차수당 계산기",
    "tier": "장기",
    "signal": [
@@ -5536,6 +5626,32 @@
    "score": 1,
    "status": "작성",
    "page": "/issue/an-seyoung-korea-open-2026/",
+   "registered": "2026-11-03",
+   "expires": "2026-11-10"
+  },
+  {
+   "query": "BTS 가오슝 자카르타 공연 극장 상영 언제 어디서? 일정·예매 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 1,
+   "status": "작성",
+   "page": "/issue/bts-kaohsiung-jakarta-cinema-screening/",
+   "registered": "2026-11-03",
+   "expires": "2026-11-10"
+  },
+  {
+   "query": "BYD 국내 차주 불만 보도 정리, 제기된 내용과 BYD코리아 입장",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 1,
+   "status": "작성",
+   "page": "/issue/byd-korea-owners-complaints/",
    "registered": "2026-11-03",
    "expires": "2026-11-10"
   },

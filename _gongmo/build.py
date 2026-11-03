@@ -282,7 +282,7 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False, noinde
 <meta name="theme-color" content="{TH[3] if TH else '#5b21b6'}"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="오늘 뭐 먹지">
 <link rel="icon" href="/favicon.ico?v=6" sizes="any"><link rel="icon" type="image/png" sizes="48x48" href="/assets/icons/icon-48.png?v=6"><link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/icon-96.png?v=6"><link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/icon-192.png?v=6"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=6"><link rel="manifest" href="/site.webmanifest"><link rel="alternate" type="application/rss+xml" title="루리 줍줍" href="/rss.xml">
 <link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="/assets/gm.css?v=29"><link rel="stylesheet" href="/assets/ds.css?v=15"><link rel="stylesheet" href="/assets/print.css?v=1"><link rel="stylesheet" href="/assets/pro.css?v=8"><script defer src="/assets/print.js?v=1"></script><script src="/assets/img-fallback.js?v=1"></script>{('<link rel="stylesheet" href="/assets/chat/ruri-chat.css?v=9">') if not (TH and TH[0] == 'ai') else ''}{COMM_TAGS}{('<script type="module" src="/assets/chat/ruri-chat.js?v=16"></script>') if not (TH and TH[0] == 'ai') else ''}<link rel="stylesheet" href="/assets/app/shell.css?v=1"><script defer src="/assets/app/app.js?v=4"></script>
+<link rel="stylesheet" href="/assets/gm.css?v=29"><link rel="stylesheet" href="/assets/ds.css?v=15"><link rel="stylesheet" href="/assets/print.css?v=1"><link rel="stylesheet" href="/assets/pro.css?v=9"><script defer src="/assets/print.js?v=1"></script><script src="/assets/img-fallback.js?v=1"></script>{('<link rel="stylesheet" href="/assets/chat/ruri-chat.css?v=9">') if not (TH and TH[0] == 'ai') else ''}{COMM_TAGS}{('<script type="module" src="/assets/chat/ruri-chat.js?v=16"></script>') if not (TH and TH[0] == 'ai') else ''}<link rel="stylesheet" href="/assets/app/shell.css?v=1"><script defer src="/assets/app/app.js?v=4"></script>
 {ldh}
 {TH_CSS}
 {GTAG}
@@ -1076,6 +1076,40 @@ def og_card(c):
     dr.rectangle([0, 540, 1200, 630], fill=(109, 40, 217))
     dr.text((70, 585), '루리 줍줍', font=W._font(40, True), fill=(255, 255, 255), anchor='lm')
     dr.text((1130, 585), '자격·제출물·공식 공고 정리 · sungprofile.cloud', font=W._font(28), fill=(237, 233, 254), anchor='rm')
+    im.save(f, 'JPEG', quality=82, optimize=True)
+    return rel
+
+
+def _dt_og(t):
+    t = re.sub(r'\s+', ' ', t or '').strip()
+    t = re.sub(r'\s*\((?:\d{1,2}/\d{1,2}|\d{4}-\d{2}-\d{2})\s*기준\)\s*$', '', t)
+    t = re.sub(r'\s*20\d\d년\s*\d{1,2}월\s*$', '', t)
+    return t
+
+
+def og_art(kind, slug, title, label):
+    """이슈·가이드 글마다 고유한 공유 이미지 1200×630(구글 디스커버·SNS 미리보기). 제목이 바뀔 때만 새로 그린다. 2026-11-03."""
+    from PIL import Image, ImageDraw
+    import widget as W
+    key = hashlib.md5(json.dumps([title, label], ensure_ascii=False).encode()).hexdigest()[:8]
+    rel = f'/og/a/{kind}-{slug}-{key}.jpg'
+    f = os.path.join(ROOT, rel.strip('/').replace('/', os.sep))
+    if os.path.exists(f):
+        return rel
+    os.makedirs(os.path.dirname(f), exist_ok=True)
+    for old in os.listdir(os.path.dirname(f)):
+        if old.startswith(f'{kind}-{slug}-'):
+            os.remove(os.path.join(os.path.dirname(f), old))
+    im = Image.new('RGB', (1200, 630), (248, 250, 252)); dr = ImageDraw.Draw(im)
+    dr.rectangle([0, 0, 14, 630], fill=(15, 23, 42))
+    dr.text((80, 70), label, font=W._font(34, True), fill=(71, 85, 105))
+    lines = W._wrap(dr, title, W._font(64, True), 1040, 4)
+    y = 140
+    for l in lines:
+        dr.text((80, y), l, font=W._font(64, True), fill=(15, 23, 42)); y += 84
+    dr.line([80, 548, 1120, 548], fill=(226, 232, 240), width=2)
+    dr.text((80, 585), '루리 줍줍', font=W._font(36, True), fill=(15, 23, 42), anchor='lm')
+    dr.text((1120, 585), 'sungprofile.cloud', font=W._font(28), fill=(100, 116, 139), anchor='rm')
     im.save(f, 'JPEG', quality=82, optimize=True)
     return rel
 
@@ -2557,7 +2591,7 @@ def build():
 <ul class="hx-ev">{hx_ev or '<li class="empty">지금은 마감 임박 이벤트가 없어요.</li>'}</ul></section>
 
 <section class="hx-sec hx-t-issue" id="issue"><div class="hx-hd"><div><p>🕵️ 이슈 · 뉴스</p><h2>같은 사건, 여러 언론을 한 번에</h2></div><a href="/news/">루리 뉴스 →</a></div>
-<div class="hx-feat"><a class="hx-f" href="/issue/kim-jong-un-rumor/" style="--fc:#b91c1c;--fbg:#fee2e2"><i>🕵️</i><b>김정은 사망설, 어디까지 사실일까요?</b><span>확인된 것·안 된 것 정리 · 10/23 기준</span></a>
+<div class="hx-feat"><a class="hx-f" href="/issue/kim-jong-un-rumor/" style="--fc:#b91c1c;--fbg:#fee2e2"><i>🕵️</i><b>김정은 건강 이상설, 어디까지 확인됐나요?</b><span>확인된 것·안 된 것 정리 · 10/23 기준</span></a>
 <a class="hx-f" href="/evergreen/" style="--fc:#15803d;--fbg:#dcfce7"><i>🌲</i><b>7일 내내 이어진 관심사</b><span>대출·택배·전월세·알바·기기 오류 지도</span></a></div>
 {f'<div class="hx-hot"><b>🔥 지금 뜨는 이슈</b><ol>{hot_h}</ol></div>' if hot_h else ''}
 <div class="hx-links"><a href="/news/#brief">📺 오늘의 브리핑</a><a href="/hot/">🔥 핫이슈</a><a href="/kw/">🔎 인기 키워드</a><a href="/trend/">🍿 이슈 트렌드</a><a href="https://www.youtube.com/channel/UCdJQUqqrHHXC7mWstly2eXw" target="_blank" rel="noopener">▶️ 루리 뉴스 유튜브</a></div></section>
@@ -3435,7 +3469,7 @@ def kin_guides():
                 + _g_appendix(g)
                 + (f'<aside class="say"><img src="/assets/ruri/o_det_think_s.webp" width="56" height="77" alt="루리" loading="lazy"><div class="bub"><b>루리의 한마디</b><div>{E(g["lury_note"])}</div></div></aside>' if g.get('lury_note') else '')
                 + f'<p class="hm-links">{rel} · <a href="/money/guide/">다른 생활 돈 가이드</a></p>' + GAME_CSS + '<link rel="stylesheet" href="/assets/guide/guide.css?v=7">' + (f'<script defer src="{E(g["script"])}"></script>' if g.get('script') else ''))
-        page(f'/money/guide/{g["slug"]}/', g['title'], g['desc'], body, [('루리 줍줍', '/'), ('머니', '/analyst/'), ('생활 돈 가이드', '/money/guide/'), (g['name'], f'/money/guide/{g["slug"]}/')], ld)
+        page(f'/money/guide/{g["slug"]}/', g['title'], g['desc'], body, [('루리 줍줍', '/'), ('머니', '/analyst/'), ('생활 돈 가이드', '/money/guide/'), (g['name'], f'/money/guide/{g["slug"]}/')], ld, og=og_art('guide', g['slug'], _dt_og(g['h1']), '생활 가이드 · ' + g['name']))
         urls.append(f'/money/guide/{g["slug"]}/')
         cards += f'<li><a class="card" data-c="guide" href="/money/guide/{g["slug"]}/"><span class="ic">{g["icon"]}</span><div class="cb"><h3 class="t">{E(g["name"])}</h3><p class="o">{E(g["h1"])}</p></div></a></li>'
     jcards = ''
@@ -3457,11 +3491,26 @@ def kin_guides():
     _JT = {'resign': ('퇴사할 때', '퇴직금·보험·실업급여를 순서대로 확인하세요.'), 'housing': ('이사·집 구할 때', '집을 구하고 이사하는 순서대로 확인하세요.'),
            'parttime': ('알바할 때', '알바 시작부터 임금 받기까지 순서대로 확인하세요.'), 'finance': ('결제·빚 문제가 생겼을 때', '결제 문제부터 큰 빚 문제까지 순서대로 확인하세요.')}
     _jg = ''.join(f'<a class="mg-jc" href="/money/guide/journey/{j["slug"]}/"><i>{j["icon"]}</i><b>{E(_JT.get(j["slug"], (j["name"], ""))[0])}</b><span>{E(_JT.get(j["slug"], ("", re.sub(chr(32) + "+", " ", j["lead"])[:46]))[1])}</span></a>' for j in JR)
+    GUIDE_HUBS = [('year-end', '연말정산', '🧾', r'^year-end|medical-expense-tax|tax-refund', '연말정산 준비 순서, 공제 항목, 간소화 자료 제공 일정과 환급 시기를 한곳에 모았습니다.'),
+                  ('heating', '난방·에너지', '🔥', r'energy|heating|electric|water-pipe|boiler|gas-', '난방비·전기요금 계산과 에너지 지원 제도, 겨울철 동파 예방까지 모았습니다.'),
+                  ('work', '일·직장', '💼', r'minimum-wage|retire|four-insur|nps|unemploy|overtime|severance|parttime|weekly', '최저임금, 4대보험, 퇴직금·퇴직연금, 실업급여, 알바 권리를 모았습니다.')]
+    _hub_cards = ''
+    for _hk, _hn, _hi, _hp, _hd in GUIDE_HUBS:
+        _hl = [g_ for g_ in G if re.search(_hp, g_['slug'])]
+        if len(_hl) < 3:
+            continue
+        _hli = ''.join(f'<li><a href="/money/guide/{g_["slug"]}/"><b>{E(g_["h1"])}</b><span>{E(_sum3(g_["lead"]).replace("<li>", "").replace("</li>", " ")[:90] if False else re.sub(r"\s+", " ", g_["lead"])[:90])}…</span></a></li>' for g_ in _hl[::-1])
+        _hp_ = f'/money/guide/hub/{_hk}/'
+        page(_hp_, f'{_hn} 가이드 모음 — 공식 출처로 정리한 {len(_hl)}편', _hd, f'<p class="bc"><a href="/">홈</a> › <a href="/money/guide/">생활 돈 가이드</a> › {_hn}</p><h1>{_hi} {_hn} 가이드 모음</h1><p class="cat-st">{E(_hd)} 모두 {len(_hl)}편이며 글마다 확인일과 공식 출처를 적었습니다.</p><ul class="hm-nl">{_hli}</ul>' + GAME_CSS,
+             [('루리 줍줍', '/'), ('머니', '/analyst/'), ('생활 돈 가이드', '/money/guide/'), (_hn, _hp_)])
+        urls.append(_hp_)
+        _hub_cards += f'<a class="mg-jc" href="{_hp_}"><i>{_hi}</i><b>{_hn}</b><span>{len(_hl)}편 · {E(_hd[:40])}</span></a>'
     _dict = ''.join(f'<li data-q="{E((g["name"] + " " + g["h1"]).lower())}"><a href="/money/guide/{g["slug"]}/"><i>{g["icon"]}</i><b>{E(g["name"])}</b><span>{E(g["h1"])}</span></a></li>' for g in G)
     page('/money/guide/', '생활 돈 가이드 — 근로장려금·국민내일배움카드·월세 세액공제·퇴직금 (공식 출처 정리)', '근로장려금, 국민내일배움카드, 월세 세액공제와 청년월세 지원, 퇴직금을 국세청·고용노동부·고용24 등 공식 안내로 정리했어요. 계산기도 함께.',
          '<p class="bc"><a href="/">홈</a> › 생활 돈 가이드</p><h1 class="mg-h1">생활 돈 가이드</h1><p class="mg-sub">공식 안내로 확인한 것만 정리했어요. 확인하지 못한 항목은 일부러 적지 않았고, 기준일과 출처를 글마다 밝혀요.</p>'
          '<input id="mgq" class="mg-q" type="search" placeholder="예: 퇴직금, 월세, 실업급여, 에너지바우처" aria-label="가이드 검색" autocomplete="off">'
          f'<h2 class="mg-h2">상황별로 시작하기</h2><div class="mg-j">{_jg}</div>'
+         f'<h2 class="mg-h2">주제별 모음</h2><div class="mg-j">{_hub_cards}</div>'
          f'<h2 class="mg-h2">제도 사전 <small>{len(G)}편</small></h2><ul class="mg-d" id="mgl">{_dict}</ul><p class="note" id="mgn" hidden>일치하는 가이드가 없어요. 검색어를 줄여 보세요.</p>'
          + kin_ans_links('/money/guide/') + f'<h2 class="mg-h2">계산기</h2><ul class="list">{tools}</ul>' + join_cta('apply') + GAME_CSS
          + '<style>.mg-h1{font-size:clamp(26px,5.4vw,36px);margin:4px 0 6px;letter-spacing:-.02em}.mg-sub{margin:0 0 14px;color:var(--mu);line-height:1.65;max-width:680px}.mg-q{width:100%;max-width:560px;box-sizing:border-box;min-height:50px;padding:0 16px;font:inherit;font-size:16px;border:2px solid var(--bd);border-radius:14px;background:var(--card);color:var(--tx)}.mg-q:focus{outline:none;border-color:var(--brand,#6d28d9)}'
@@ -3630,7 +3679,7 @@ def issue_json_pages():
                    'datePublished': c['date'], 'dateModified': c['date'], 'mainEntityOfPage': SITE + p_,
                    'author': {'@type': 'Organization', 'name': '루리 줍줍 편집', 'url': SITE + '/'}, 'publisher': {'@type': 'Organization', 'name': NAME, 'url': SITE + '/'}}
             ld_ = {'@context': 'https://schema.org', '@graph': [art, fld]} if fld else art
-            page(p_, c['title'], c['desc'], body, [('루리 줍줍', '/'), ('이슈', '/news/'), (c['h1'][:20], p_)], ld_, full_title=True)
+            page(p_, c['title'], c['desc'], body, [('루리 줍줍', '/'), ('이슈', '/news/'), (c['h1'][:20], p_)], ld_, full_title=True, og=og_art('issue', c['slug'], _dt_og(c['h1']), '이슈 · ' + c['date'][5:].replace('-', '.') + ' 기준'))
             urls.append(p_)
             icards.append((c['date'], f'<li><a href="{p_}"><b>{E(c["h1"])}</b><span>{c["date"][5:].replace("-", "/")} 기준 · {E(c["summary"][:80])}</span></a></li>'))
     idir = os.path.join(ROOT, 'issue')
@@ -3639,7 +3688,7 @@ def issue_json_pages():
             if f_ != 'kim-jong-un-rumor' and f_ not in keep and os.path.isdir(os.path.join(idir, f_)):
                 shutil.rmtree(os.path.join(idir, f_), ignore_errors=True)   # 보관 기간이 지났거나 원고가 없어진 단기 이슈
     if os.path.exists(os.path.join(HERE, 'essays', 'kim-rumor.html')):
-        icards.append(('2026-10-21', '<li><a href="/issue/kim-jong-un-rumor/"><b>김정은 사망했나요? 살아있나요? 근거 확인 결과</b><span>10/21 기준 · 확인된 것과 확인되지 않은 것을 나눠 정리했습니다.</span></a></li>'))
+        icards.append(('2026-10-21', '<li><a href="/issue/kim-jong-un-rumor/"><b>김정은 건강 이상설 보도, 확인된 사실과 출처 정리</b><span>10/21 기준 · 확인된 것과 확인되지 않은 것을 나눠 정리했습니다.</span></a></li>'))
     if icards:
         li = ''.join(h_ for _d, h_ in sorted(icards, key=lambda x: x[0], reverse=True))
         page('/issue/', '요즘 많이 찾는 이슈 정리 — 확인된 것과 확인되지 않은 것', '요즘 검색이 몰리는 이슈를 공식 출처 기준으로 확인된 것과 확인되지 않은 것으로 나눠 정리합니다. 단기 이슈는 며칠 뒤 내려갑니다.',
@@ -3658,8 +3707,8 @@ def issue_pages():
     p = '/issue/kim-jong-un-rumor/'
     faq, fld = _faq(KIM_FAQ)
     body = open(f, encoding='utf-8').read().replace('@@FAQ@@', faq) + '<style>.es-fig{margin:12px 0}.es-fig img{display:block;max-width:100%;height:auto;border:1px solid var(--bd,#e5e7eb);border-radius:10px}.es-fig figcaption{font-size:12.5px;color:var(--mu,#6b7280);margin-top:4px}</style>' + GAME_CSS + '<script type="application/ld+json">%s</script>' % json.dumps(fld, ensure_ascii=False).replace('</', '<\/')
-    title = '김정은 사망했나요? 살아있나요? 근거 확인 결과 (2026-10-21 기준)'
-    desc = '2026-10-21 기준 사망·뇌출혈 주장은 근거가 확인되지 않았어요. 확인된 것과 아닌 것을 표로 나누고 2014·2020년 사망설 사례와 체크리스트를 담았어요.'
+    title = '김정은 건강 이상설 보도, 확인된 사실과 출처 정리 (10/21 기준)'
+    desc = '김정은 국무위원장 건강 이상설 보도에 대해 확인된 사실과 확인되지 않은 내용을 출처별로 정리했습니다.'
     art = {'@context': 'https://schema.org', '@type': 'Article', 'headline': title, 'description': desc, 'inLanguage': 'ko',
            'datePublished': '2026-10-21', 'dateModified': '2026-10-21', 'mainEntityOfPage': SITE + p,
            'author': {'@type': 'Organization', 'name': '루리 줍줍 편집', 'url': SITE + '/'},
@@ -6583,7 +6632,9 @@ def statics(nl, ne):
                 _kc[_i['tier']] += 1
     except Exception:
         pass
-    _opsec = (f'<h2 id="method">만드는 방식</h2><p>이 사이트의 자료는 AI(Anthropic Claude)가 수집하고 정리합니다. 자동완성·검색 콘솔·커뮤니티·뉴스에서 사람들이 궁금해하는 질문을 모으고, 겹치는 질문을 묶어 단기(3~4일)·중기(약 2주)·장기(계속 유지)로 나눕니다. 글에는 공식 출처와 기준일을 적고, 확인하지 못한 값은 「확인 필요」로 남깁니다. 「AI 대조」는 AI가 공식 원문과 맞춰 본 것이고, 「운영자 검토」는 운영자가 직접 확인해 날짜를 남긴 것입니다. 두 표시는 서로 다른 단계입니다.</p>'
+    _opsec = (f'<h2 id="author">누가 만드나요</h2><p>루리 줍줍은 개인 발행인 한 명(Seongsang Park)이 운영합니다. 글의 수집·초안 작성·정리에는 AI(Anthropic Claude)를 사용하고, 공식 출처와 기준일을 밝혀 게시합니다. 회사나 언론사가 아니며 특정 기업·정당·증권사와 제휴하거나 돈을 받고 글을 쓰지 않습니다. 각 글 끝의 「루리의 한마디」는 마스코트 루리가 맡습니다.</p>'
+              f'<h2 id="corrections">정정 요청</h2><p>잘못된 내용은 {MAIL}로 알려 주세요. 확인 뒤 글을 고치고 <a href="/corrections/">정정 기록</a>에 남깁니다.</p>'
+              f'<h2 id="method">만드는 방식</h2><p>이 사이트의 자료는 AI(Anthropic Claude)가 수집하고 정리합니다. 자동완성·검색 콘솔·커뮤니티·뉴스에서 사람들이 궁금해하는 질문을 모으고, 겹치는 질문을 묶어 단기(3~4일)·중기(약 2주)·장기(계속 유지)로 나눕니다. 글에는 공식 출처와 기준일을 적고, 확인하지 못한 값은 「확인 필요」로 남깁니다. 「AI 대조」는 AI가 공식 원문과 맞춰 본 것이고, 「운영자 검토」는 운영자가 직접 확인해 날짜를 남긴 것입니다. 두 표시는 서로 다른 단계입니다.</p>'
               f'<p>분석 코너는 「루리 애널리스트」, 문서 모음은 「루리 위키」로 부르며 모두 루리 줍줍의 하위 서비스입니다. <a href="/wiki/">루리 위키</a> · <a href="/map/">키워드 지도</a> · <a href="/analyst/rsi/">RSI 현황표</a></p>'
               f'<h2 id="status">운영 현황</h2><ul class="chk"><li>다루는 질문: 단기 {_kc["단기"]}건 · 중기 {_kc["중기"]}건 · 장기 {_kc["장기"]}건</li><li>진행 중 공모전 {nl}건 · 경품 이벤트 {ne}건</li><li>공식 원문과 대조한 공모전 {len(VER)}건(AI 대조), 운영자가 직접 확인한 공고 {len(OP_REV)}건(운영자 검토)</li><li>정정 내역은 <a href="/corrections/">정정 기록</a>에서 볼 수 있습니다.</li></ul>'
               '<h2 id="updates">업데이트 내역</h2><ul class="chk"><li><b>2026-11-03</b> 홈 화면을 검색 중심으로 정리하고 브랜드명을 「루리 줍줍」으로 통일했습니다.</li><li><b>2026-10-23</b> 루리 위키 · 재료 → 최저가 연결 · 공식 원문 대조 표시를 추가했습니다.</li></ul>')
