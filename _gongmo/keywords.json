@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-03 18:00",
+ "updated": "2026-11-03 19:00",
  "items": [
   {
    "query": "로스앤젤레스 fc 대 미네소타 유나이티드 fc 순위",
@@ -219,6 +219,18 @@
    "expires": "2026-11-06"
   },
   {
+   "query": "전투기",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-03",
+   "expires": "2026-11-06"
+  },
+  {
    "query": "중대범죄 수사청",
    "tier": "단기",
    "signal": [
@@ -232,18 +244,6 @@
   },
   {
    "query": "뉴캐슬 대 에버튼 순위",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 2000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-03",
-   "expires": "2026-11-06"
-  },
-  {
-   "query": "전투기",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -520,6 +520,18 @@
   },
   {
    "query": "유가증권",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-03",
+   "expires": "2026-11-06"
+  },
+  {
+   "query": "폴더 블 스마트 폰",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -5762,6 +5774,19 @@
    "expires": "2026-11-10"
   },
   {
+   "query": "폴더블 스마트폰 갤럭시 Z폴드8 판매 20% 증가 보도, 아이폰 듀오 출시 후",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 2,
+   "status": "작성",
+   "page": "/issue/foldable-phone-1103/",
+   "registered": "2026-11-03",
+   "expires": "2026-11-08"
+  },
+  {
    "query": "고속도로 휴게소 가격 언제 내려가나요? 바뀌는 제도 정리",
    "tier": "중기",
    "signal": [
@@ -5810,6 +5835,19 @@
    "score": 1,
    "status": "작성",
    "page": "/issue/an-seyoung-korea-open-2026/",
+   "registered": "2026-11-03",
+   "expires": "2026-11-10"
+  },
+  {
+   "query": "아시안컵 사우디 대회 2027년 12월 23일 개막으로 변경 발표 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 1,
+   "status": "작성",
+   "page": "/issue/asian-cup-postponed-1103/",
    "registered": "2026-11-03",
    "expires": "2026-11-10"
   },
