@@ -137,3 +137,52 @@ main.w:has(ul.list){max-width:1120px}
   ul.list h3.t{font-size:17px}
   .top-ans{font-size:15px;padding:12px 14px}
 }
+
+/* ───── 3차 정리 (2026-11-03): 공모전 표 목록, 분류 3묶음, 상세 상단 통합·더보기, 굵은 검은 선 줄이기 ───── */
+h2{border-bottom:1px solid var(--bd)}
+ul.list{border-top:1px solid var(--bd)}
+.cs-cats{display:grid;gap:8px;margin:12px 0 18px}
+.cs-g{display:flex;gap:12px;align-items:baseline}
+.cs-g>b{flex:0 0 76px;font-size:13.5px;color:var(--mu);font-weight:600}
+.cs-g>div{display:flex;flex-wrap:wrap;gap:0 4px}
+.cs-g a{display:inline-flex;align-items:center;min-height:40px;padding:0 10px;border-radius:8px;color:var(--tx);text-decoration:none;font-size:15px;font-weight:600}
+.cs-g a:hover{background:var(--card);text-decoration:underline}
+@media(max-width:560px){.cs-g{flex-direction:column;gap:0}.cs-g>b{flex:0 0 auto}}
+/* 표: 열 제목은 한 번만, 제목에 가장 넓은 폭, 상금·마감을 강조 */
+.list-h{display:none}
+@media(min-width:900px){
+ .list-h{display:grid;grid-template-columns:minmax(0,1fr) 170px 170px 110px;column-gap:20px;padding:10px 4px 8px;font-size:13px;font-weight:600;color:var(--mu)}
+ ul.list .card.cc{display:grid;grid-template-columns:minmax(0,1fr) 170px 170px 110px;column-gap:20px;align-items:center;padding:14px 4px}
+ ul.list .cb{display:block}
+ ul.list h3.t{font-size:18px}
+ ul.list .c-el{font-size:15px;color:var(--tx)}
+ ul.list .c-pz{font-size:17px;font-weight:800;color:var(--tx);letter-spacing:-.02em}
+ ul.list .c-end{display:flex;flex-direction:column;gap:2px;align-items:flex-start}
+}
+ul.list .c-end b{font-size:16px;font-weight:700}
+ul.list .c-end em{font-style:normal;font-size:13px;font-weight:700;padding:1px 7px;border-radius:6px;background:#f1f5f9;color:var(--mu)}
+ul.list .c-end em.hot{background:#fff7ed;color:#c2410c}ul.list .c-end em.u3{background:#fef2f2;color:#b91c1c}
+ul.list .nu{color:var(--mu);font-weight:500}
+@media(max-width:899px){
+ ul.list .card.cc{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px 12px;padding:14px 2px}
+ ul.list .cb{grid-column:1 / -1}
+ ul.list [data-l]::before{content:attr(data-l);display:block;font-size:12.5px;font-weight:500;color:var(--mu)}
+ ul.list .c-pz{font-weight:800;font-size:16px}
+}
+/* 상세: 제목·핵심·버튼·상태를 한 덩어리로 */
+.top-blk{border:1px solid var(--bd);border-radius:var(--r2);background:var(--card);padding:18px 20px;margin-bottom:14px}
+.top-blk .dh{border:0!important;background:transparent!important;padding:0!important;margin:0 0 12px}
+.top-blk .qs{border:0;border-top:1px solid var(--bd);border-radius:0;background:transparent;padding:12px 0 0;margin:0}
+.top-blk .act-row{margin:14px 0 0}
+.act-row.js .ma-app,.act-row.js .ma-prep,.act-row.js .ma-share,.act-row.js .sh-pop,.act-row.js .my-acts>small{display:none}
+.act-row.js.open .ma-app,.act-row.js.open .ma-prep,.act-row.js.open .ma-share,.act-row.js.open .sh-pop{display:inline-flex}
+.act-row.js.open .my-acts>small{display:block}
+.act-row.js::after{display:none}
+.act-row .am-more{order:4;border:0;background:transparent;color:var(--mu);font:inherit;font-size:14px;font-weight:600;min-height:44px;padding:0 8px;cursor:pointer}
+.act-row .am-more:hover{color:var(--tx);text-decoration:underline}
+.stat-line{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:12px 0 0}
+.stat-line span{font-size:13.5px;font-weight:600;color:#92400e;background:#fef3c7;border-radius:6px;padding:3px 9px}
+details.why{flex:0 0 auto;font-size:13.5px;color:var(--mu)}
+details.why summary{cursor:pointer;min-height:32px;display:inline-flex;align-items:center;text-decoration:underline;text-decoration-color:#94a3b8}
+details.why p{margin:6px 0 0;line-height:1.65;max-width:720px}
+@media(max-width:700px){.top-blk{padding:14px}}

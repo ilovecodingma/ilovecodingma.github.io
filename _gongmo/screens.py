@@ -353,7 +353,7 @@ def _read_candidates(ctx):
                 continue
             L.append((d0.isoformat(), int(c.get('priority', 0)), c))
     for d0, _p, c in sorted(L, key=lambda x: (x[0], x[1]), reverse=True):
-        out.append((f'/issue/{c["slug"]}/', c.get('category') or '이슈', c['h1'], c.get('summary') or c.get('desc') or '', d0))
+        out.append((f'/issue/{c["slug"]}/', c.get('category') or '이슈', c.get('home_title') or c['h1'], c.get('home_sum') or c.get('summary') or c.get('desc') or '', d0))
     try:
         kin = json.load(open(os.path.join(here, 'kin_guides.json'), encoding='utf-8'))['guides']
     except Exception:
@@ -362,23 +362,27 @@ def _read_candidates(ctx):
         if not os.path.exists(os.path.join(root, 'money', 'guide', g['slug'], 'index.html')):
             continue
         m = re.search(r'확인일\s*(\d{4}-\d{2}-\d{2})', g.get('basis') or '')
-        out.append((f'/money/guide/{g["slug"]}/', g.get('name') or '생활 가이드', g.get('h1') or g['title'], g.get('lead') or g.get('desc') or '', m.group(1) if m else ''))
+        out.append((f'/money/guide/{g["slug"]}/', g.get('name') or '생활 가이드', g.get('home_title') or g.get('h1') or g['title'], g.get('home_sum') or g.get('lead') or g.get('desc') or '', m.group(1) if m else ''))
     return out
 
 
 def _dt(t):
-    """화면 표시용 제목: 검색 노출용 긴 제목에서 기준일·연월·보조 설명을 덜어낸다(원제는 상세 페이지와 title 태그에 그대로)."""
+    """화면 표시용 제목: 검색 노출용 긴 제목에서 기준일·연월·보조 설명·질문 꼬리를 덜어낸다(원제는 상세 페이지와 title 태그에 그대로)."""
     t = re.sub(r'\s+', ' ', t or '').strip()
     t = re.sub(r'\s*\((?:\d{1,2}/\d{1,2}|\d{4}-\d{2}-\d{2})\s*기준\)\s*$', '', t)
     t = re.sub(r'\s*20\d\d년\s*\d{1,2}월\s*$', '', t)
     t = re.sub(r'\s*확인된 (?:내용|사실)(?: 정리| 총정리)?\s*$', '', t)
+    if '? ' in t or t.endswith('?'):   # 「주제 질문? 부제」 → 질문 꼬리를 떼고 주제만, 너무 짧아지면 질문까지만
+        head = t.split('? ')[0].rstrip('?')
+        stem = re.sub(r'\s*(?:어떻게 (?:된 건가요|되나요|계산하나요)|얼마나 받나요|받을 수 있나요|얼마인가요|무엇인가요|해야 하나요|언제부터)\s*$', '', head).strip()
+        t = stem if len(stem) >= 10 else head + '?'
     for sep in (' — ', ': ', ' - '):
         if sep in t:
             a = t.split(sep)[0].strip()
             if len(a) >= 8:
                 t = a
                 break
-    t = re.sub(r'\s*20\d\d\s*$', '', t).strip(' ?·,')
+    t = re.sub(r'\s*20\d\d\s*$', '', t).strip(' ·,')
     return t + ('?' if re.search(r'(?:나요|까요|가요|할까)$', t) else '')
 
 
@@ -388,14 +392,14 @@ def _sec_read(cands, seen):
         if c[0] in seen:
             continue
         pick.append(c); seen.add(c[0])
-        if len(pick) == 5:
+        if len(pick) == 3:
             break
     if not pick:
         return ''
     f, rest = pick[0], pick[1:]
     dt = lambda c: f'<time datetime="{c[4]}">{_dstr(c[4])} 업데이트</time>' if c[4] else ''
-    big = (f'<article class="rd-f"><p class="kk">{E(f[1])}</p><h3><a href="{E(f[0])}">{E(_dt(f[2]))}</a></h3><p class="sm">{E(_first_sentences(f[3], 150))}</p><p class="mt">{dt(f)}</p></article>')
-    li = ''.join(f'<li><p class="kk">{E(c[1])}</p><h3><a href="{E(c[0])}">{E(_short(_dt(c[2]), 60))}</a></h3><p class="sm">{E(_first_sentences(c[3], 60))}</p><p class="mt">{dt(c)}</p></li>' for c in rest)
+    big = (f'<article class="rd-f"><p class="kk">{E(f[1])}</p><h3><a href="{E(f[0])}">{E(_dt(f[2]))}</a></h3><p class="sm">{E(_first_sentences(f[3], 100))}</p><p class="mt">{dt(f)}</p></article>')
+    li = ''.join(f'<li><p class="kk">{E(c[1])}</p><h3><a href="{E(c[0])}">{E(_short(_dt(c[2]), 60))}</a></h3><p class="sm">{E(_first_sentences(c[3], 56))}</p><p class="mt">{dt(c)}</p></li>' for c in rest)
     return (f'<section class="h2-sec" aria-labelledby="s-read"><div class="h2-hd"><h2 id="s-read">지금 읽을 글</h2><a href="/issue/">이슈 전체 {_ic("arrow", "sv s")}</a></div>'
             f'<div class="rd-g">{big}<ul class="rd-l">{li}</ul></div></section>')
 
@@ -527,7 +531,7 @@ def home_html(ctx):
            '<div class="res" id="hr" aria-live="polite"></div></form></section>')
     ent = [c for c in cands if c[1] == '연예']; cands = [c for c in cands if c[1] != '연예']
     return (top + _sec_read(cands, seen) + _opp_cards(ctx, seen) + _sec_guides(seen) + _sec_ent(ent, seen) + _sec_topics(ctx, seen)
-            + '<link rel="stylesheet" href="/assets/home/home2.css?v=5"><script defer src="/assets/home/home2.js?v=2"></script>')
+            + '<link rel="stylesheet" href="/assets/home/home2.css?v=6"><script defer src="/assets/home/home2.js?v=3"></script>')
 
 
 def kwmap_page_html():

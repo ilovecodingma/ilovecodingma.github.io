@@ -282,7 +282,7 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False, noinde
 <meta name="theme-color" content="{TH[3] if TH else '#5b21b6'}"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="오늘 뭐 먹지">
 <link rel="icon" href="/favicon.ico?v=6" sizes="any"><link rel="icon" type="image/png" sizes="48x48" href="/assets/icons/icon-48.png?v=6"><link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/icon-96.png?v=6"><link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/icon-192.png?v=6"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=6"><link rel="manifest" href="/site.webmanifest"><link rel="alternate" type="application/rss+xml" title="루리 줍줍" href="/rss.xml">
 <link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="/assets/gm.css?v=29"><link rel="stylesheet" href="/assets/ds.css?v=15"><link rel="stylesheet" href="/assets/print.css?v=1"><link rel="stylesheet" href="/assets/pro.css?v=9"><script defer src="/assets/print.js?v=1"></script><script src="/assets/img-fallback.js?v=1"></script>{('<link rel="stylesheet" href="/assets/chat/ruri-chat.css?v=9">') if not (TH and TH[0] == 'ai') else ''}{COMM_TAGS}{('<script type="module" src="/assets/chat/ruri-chat.js?v=16"></script>') if not (TH and TH[0] == 'ai') else ''}<link rel="stylesheet" href="/assets/app/shell.css?v=1"><script defer src="/assets/app/app.js?v=4"></script>
+<link rel="stylesheet" href="/assets/gm.css?v=29"><link rel="stylesheet" href="/assets/ds.css?v=15"><link rel="stylesheet" href="/assets/print.css?v=1"><link rel="stylesheet" href="/assets/pro.css?v=10"><script defer src="/assets/print.js?v=1"></script><script src="/assets/img-fallback.js?v=1"></script>{('<link rel="stylesheet" href="/assets/chat/ruri-chat.css?v=9">') if not (TH and TH[0] == 'ai') else ''}{COMM_TAGS}{('<script type="module" src="/assets/chat/ruri-chat.js?v=16"></script>') if not (TH and TH[0] == 'ai') else ''}<link rel="stylesheet" href="/assets/app/shell.css?v=1"><script defer src="/assets/app/app.js?v=4"></script>
 {ldh}
 {TH_CSS}
 {GTAG}
@@ -511,7 +511,7 @@ def elig_short(c):
     if re.search(r'팀\s*(?:구성|단위)|2인\s*이상', e): t.append('팀')
     _gen = bool(re.search(r'일반부|일반인|직장인|일반\s?시민|누구나', e))
     if _gen and '대학생' in t and '청소년' in t:
-        return '부문별 상이'   # 학교급·연령별 부문이 섞여 있으면 한 단어로 줄이지 않는다
+        return '누구나(부문별 상이)' if re.search(r'누구나|제한\s?없', e) else '부문별 상이'   # 학교급·연령별 부문이 섞여 있으면 한 단어로 줄이지 않는다
     if _gen and t and '청소년' in t:
         return '청소년·일반부'
     if t == ['대학생'] and _gen:
@@ -562,8 +562,11 @@ def card(c):
     dl = ''.join(f'<div><dt>{k}</dt><dd{" class=nu" if v in ("미확인", "확인 필요") else ""}>{E(v)}</dd></div>' for k, v in meta)
     _vm = {0: '', 1: '☑ 공식 원문 일부 대조', 2: '✅ 핵심 조건 대조', 3: '👤 운영자 직접 검토'}[vstage(c['id'])[0]]
     sub = ' · '.join(x for x in (_vm, c['org'] if c.get('org') and c['org'] != '공고 참조' else '', list_label(c)) if x)
-    return (f'<li><a class="card cc" data-c="{SLUG[c["tags"][0]]}" href="/c/{c["id"]}/"><div class="cb"><div class="top"><h3 class="t">{E(c["title"])}</h3><span class="{cls}">{dd}</span></div>'
-            f'<dl class="cm">{dl}</dl><p class="o">{E(sub)}</p></div>{th}</a></li>')
+    _sub = ' · '.join(x for x in (sub_short(c) if sub_short(c) != '확인 필요' else '', c['org'] if c.get('org') and c['org'] != '공고 참조' else '', list_label(c), _vm) if x)
+    _nu = lambda v: ' nu' if v in ('미확인', '확인 필요') else ''
+    return (f'<li><a class="card cc" data-c="{SLUG[c["tags"][0]]}" href="/c/{c["id"]}/"><div class="cb"><h3 class="t">{E(c["title"])}</h3><p class="o">{E(_sub)}</p></div>'
+            f'<span class="c-el{_nu(elig_short(c))}" data-l="대상">{E(elig_short(c))}</span><span class="c-pz{_nu(prize_short(c))}" data-l="상금">{E(prize_short(c))}</span>'
+            f'<span class="c-end" data-l="마감"><b>{E(ddot(c["end"])[5:])}</b><em class="{cls}">{dd}</em></span>{th}</a></li>')
 
 
 ELIG_NOTE = [  # 응모 자격 글자 → 준비할 것 (2026-10-18 애드센스 보강: 공모전마다 다른 해설)
@@ -1517,16 +1520,26 @@ def detail(c, live):
     _pr = prize_short(c)
     if _pr == '확인 필요' and c.get('prize') and '부문' in c['prize']:
         _pr = '부문별로 다름 · ' + (SH.clip(c['prize'], 24) or '표 참고')
-    _qs = [('참가 대상', elig_short(c) if elig_short(c) != '확인 필요' else v_(c['elig'])), ('마감', ('기존 공고 기준 ' + ddot(c['end'])[5:] + ' · 연장일 확인 필요') if _v0.get('alerts') else (ddot(c['end'])[5:] + ' ' + dd)),
+    _qs = [('참가 대상', (elig_short(c) + ('(부문별 상이)' if False else '')) if elig_short(c) != '확인 필요' else v_(c['elig'])), ('마감', ('기존 공고 기준 ' + ddot(c['end'])[5:] + ' · 연장일 확인 필요') if _v0.get('alerts') else (ddot(c['end'])[5:] + ' ' + dd)),
            ('제출물', sub_short(c)), ('상금', _pr), ('AI 조건', _ai_short(ai_row(c, NEED), NEED))]
+    _st = []
+    if NEED in deadline_row(c, NEED):
+        _st.append('마감 시각 미확인')
+    if '공식 공고·접수' not in LK_BTN:
+        _st.append('접수 경로 확인 필요')
+    if NEED in ai_row(c, NEED):
+        _st.append('AI 사용 미확인')
+    if NEED in fee_row(c, NEED):
+        _st.append('참가비 미확인')
+    stat_html = ('<div class="stat-line" role="note">' + ''.join(f'<span>{E(x)}</span>' for x in _st) + f'<details class="why"><summary>자세히</summary><p>{LK_NOTE}</p></details></div>') if _st else f'<details class="why"><summary>접수 전 확인</summary><p>{LK_NOTE}</p></details>'
     qs_html = ''.join(f'<div><dt>{k_}</dt><dd{" class=nu" if NEED in str(v_2) or v_2 == "확인 필요" else ""}>{E(v_2)}</dd></div>' for k_, v_2 in _qs)
     body = f'''<p class="bc"><a href="/">홈</a> › <a href="/cat/{SLUG[main_tag]}/">{E(CQ.label_for(main_tag, c.get("medium", "")))}</a></p>
-<section class="dh" data-c="{SLUG[main_tag]}"><h1>{E(KW_H1.get(c["id"], c["title"]))}</h1>{status}</section>
-{alerts_html}
+<div class="top-blk"><section class="dh" data-c="{SLUG[main_tag]}"><h1>{E(KW_H1.get(c["id"], c["title"]))}</h1>{status}</section>
 <dl class="qs" aria-label="공모전 핵심 요약">{qs_html}</dl>
 <div class="act-row"><a class="btn" href="{E(c["link"])}" target="_blank" rel="noopener nofollow">{LK_BTN}</a><div class="my-acts" data-id="c:{c["id"]}" data-title="{E(c["title"])}" data-end="{c["end"]}"></div>
 <details class="sh-pop"><summary>공유</summary>{share_bar(c['title'], f'「{c["title"]}」 {ddot(c["end"])[5:]} 마감' + (f' · {c["prize"]}' if c.get('pv') else '') + ' — 자격·제출물 정리')}{comm_banner()}</details></div>
-<p class="note">{LK_NOTE}</p>
+{stat_html}</div><script defer src="/assets/actmore.js?v=1"></script>
+{alerts_html}
 <div class="panel"><h2 class="qs-h">전체 정보</h2><table class="info">{tb}</table>{_hist_html}</div>
 {chk_all}
 {ver_block(c)}{np_html}{'' if _v.get('conflicts') else c_insight(c, live)}
@@ -1577,10 +1590,11 @@ var r=items.filter(function(i){return i.left>=(LATE?1:0)&&(!cat||i.tags.indexOf(
 r.sort(s==='prize'?function(a,b){return b.pv-a.pv||a.left-b.left}:s==='end'?function(a,b){return a.left-b.left||b.pv-a.pv}:function(a,b){return sc(b)-sc(a)||a.left-b.left});
 var cd=[];if(q)cd.push('“'+$('q').value.trim()+'”');if(due)cd.push(due+'일 이내');if(tg)cd.push('대상 '+tg);if(ai)cd.push('AI '+(ai==='ok'?'허용·표기':ai==='no'?'금지':'확인 필요'));var ce=$('cnt');ce.textContent='진행 중 공모전 '+r.length+'건'+(cd.length?' · 적용: '+cd.join(' · ')+' ':'');if(cd.length){var rb=el('button','ap-reset','초기화');rb.type='button';rb.onclick=function(){$('q').value='';$('due').value='';$('tg').value='';$('ai').value='';shown=PAGE;render()};ce.appendChild(rb)}save();var ul=$('list');ul.textContent='';
 if(!r.length){var li=el('li','empty');li.innerHTML='<img src="/assets/ruri/sad_s.webp" width="56" height="77" alt=""><p>조건에 맞는 공모전이 없어요. 검색어를 바꿔 볼까요?</p>';ul.appendChild(li)}
-r.slice(0,shown).forEach(function(i){var li=el('li'),a=el('a','card cc');a.href='/c/'+i.id+'/';a.dataset.c=SL[i.tags[0]]||'etc';var cb=el('div','cb'),top=el('div','top');top.appendChild(el('h3','t',i.title));
-top.appendChild(el('span','d'+(i.left<=3?' u3':i.left<=7?' hot':''),i.left?'D-'+i.left:'D-DAY'));cb.appendChild(top);
-var dl=el('dl','cm');[['대상',i.eg||'확인 필요'],['제출물',i.effort||'확인 필요'],['상금',i.pk||'확인 필요'],['마감',i.end.slice(5).replace('-','.')]].forEach(function(p){var d=el('div');d.appendChild(el('dt','',p[0]));var dd=el('dd',p[1]==='확인 필요'?'nu':'',p[1]);d.appendChild(dd);dl.appendChild(d)});cb.appendChild(dl);
-cb.appendChild(el('p','o',[i.vf===3?'👤 운영자 직접 검토':i.vf===2?'✅ 핵심 조건 대조':i.vf===1?'☑ 공식 원문 일부 대조':'',i.org&&i.org!=='공고 참조'?i.org:'',i.tags[0]||''].filter(Boolean).join(' · ')));a.appendChild(cb);
+r.slice(0,shown).forEach(function(i){var li=el('li'),a=el('a','card cc');a.href='/c/'+i.id+'/';a.dataset.c=SL[i.tags[0]]||'etc';var cb=el('div','cb');cb.appendChild(el('h3','t',i.title));
+cb.appendChild(el('p','o',[(i.effort&&i.effort!=='확인 필요')?i.effort:'',i.org&&i.org!=='공고 참조'?i.org:'',i.tags[0]||'',i.vf===3?'👤 운영자 직접 검토':i.vf===2?'✅ 핵심 조건 대조':i.vf===1?'☑ 공식 원문 일부 대조':''].filter(Boolean).join(' · ')));a.appendChild(cb);
+var eg=i.eg||'확인 필요',pk=i.pk||'확인 필요';function sp(c,l,t){var e=el('span',c,t);e.dataset.l=l;return e}
+a.appendChild(sp('c-el'+(eg==='확인 필요'?' nu':''),'대상',eg));a.appendChild(sp('c-pz'+(pk==='확인 필요'?' nu':''),'상금',pk));
+var en=sp('c-end','마감','');en.appendChild(el('b','',i.end.slice(5).replace('-','.')));en.appendChild(el('em','d'+(i.left<=3?' u3':i.left<=7?' hot':''),i.left?'D-'+i.left:'D-DAY'));a.appendChild(en);
 if(i.th){var im=el('img','th');im.src='/assets/shots/'+i.id+'.webp';im.width=72;im.height=45;im.loading='lazy';im.alt='';a.appendChild(im)}li.appendChild(a);ul.appendChild(li)});
 $('more').hidden=r.length<=shown}
 ['q','due','sort','tg','ai'].forEach(function(i){$(i).addEventListener('input',function(){shown=PAGE;render()})});document.addEventListener('click',function(e){if(e.target.closest&&e.target.closest('#list a'))save()});window.addEventListener('pagehide',save);$('more').onclick=function(){shown+=PAGE;render()};
@@ -2285,7 +2299,7 @@ def contest_hubs(live):
         fq, ld_ = hub_extra(nm, L, path)
         body = (f'<p class="bc"><a href="/">홈</a> › <a href="/contest/">공모전</a> › {nm}</p><h1>🏆 {E(title)}</h1><p>{intro}</p>{cat_stats(nm.replace(" 공모전", ""), L)}'
                 + top_answer(nm, L) + f'<p class="hm-scope">오늘 {TODAY.month}/{TODAY.day}(한국 시간) 기준 접수 마감 전 · 제목이 같은 공모전은 1건 · {NOW_KST():%m/%d %H:%M} 갱신 · 마감순</p>'
-                f'<h2>진행 중 {nm} ({len(L)}건)</h2><ul class="list">{"".join(card(c) for c in L[:80]) or "<li class=empty>지금은 없어요.</li>"}</ul>{fq}'
+                f'<h2>진행 중 {nm} ({len(L)}건)</h2><div class="list-h" aria-hidden="true"><span>공모전 · 주최</span><span>참가 대상</span><span>상금</span><span>마감</span></div><ul class="list">{"".join(card(c) for c in L[:80]) or "<li class=empty>지금은 없어요.</li>"}</ul>{fq}'
                 + '<p class="hm-more">다른 모음: ' + ' · '.join(f'<a href="/contest/{x[0]}/">{E(x[2])}</a>' for x in H if x[0] != sl) + '</p>'
                 + rel_block(r'공모전|대학생|영상', [('/guide/', '공모전 응모 가이드'), ('/widget/', '블로그용 공모전 위젯'), ('/cat/video/', f'영상 공모전 {YR} 모음')]))
         _st, _sd = hub_seo(sl, title, nm, L)
@@ -2402,12 +2416,14 @@ def build():
     # 2026-10-18 사용자: "메인이 너무 난잡 → 테마를 정하고 테마별 맞춤 UI, AI 로그 등 분리, 기획부터 다시"
     # → 메인(/)은 테마 입구(허브)만, 공모전 상담은 /contest/ 로. 유입(src·referrer)에 맞는 테마 입구를 맨 위로 + 루리 안내
     _first = sorted(live, key=lambda c: (c['end'], -(c.get('pv') or 0)))[:40]
-    _chips = ''.join(f'<a href="/cat/{s_}/">{CAT_ICON[n_]} {E(n_)}</a>' for s_, n_ in CATS) + '<a href="/contest/week/">⏰ 이번 주 마감</a><a href="/contest/novel/">📖 소설·웹소설</a><a href="/contest/univ/">🎓 대학생</a>'
+    _chips = ('<div class="cs-g"><b>분야</b><div>' + ''.join(f'<a href="/cat/{s_}/">{E(n_)}</a>' for s_, n_ in CATS) + '<a href="/contest/novel/">소설·웹소설</a></div></div>'
+              '<div class="cs-g"><b>참가 조건</b><div><a href="/contest/univ/">대학생</a><a href="/contest/youth/">청소년</a></div></div>'
+              '<div class="cs-g"><b>접수 조건</b><div><a href="/contest/week/">이번 주 마감</a><a href="/contest/ai-video/">AI 영상</a></div></div>')
     # 2026-10-23 UI 정리: 공모전을 찾으러 온 사람이 목록·검색·분야를 먼저 보고, 루리 추천은 아래 보조 구역으로
     contest_home = f'''<h1 class="cs-h1">진행 중 공모전 {len(live)}건</h1>
 <p class="cs-sub">마감 임박순 · {NOW_KST():%m/%d %H:%M} 갱신(한국 시간) · 제목이 같은 공모전은 1건</p>
-<nav class="cs-cats" aria-label="분야">{_chips}</nav>
-<h2 class="cs-lh">마감 임박 공모전</h2>{TOOLBAR}<ul class="list" id="list">{''.join(card(c) for c in _first)}</ul><button class="more" id="more" hidden>더 보기</button>{listing_js()}
+<nav class="cs-cats" aria-label="공모전 분류">{_chips}</nav>
+<h2 class="cs-lh">마감 임박 공모전</h2>{TOOLBAR}<div class="list-h" aria-hidden="true"><span>공모전 · 주최</span><span>참가 대상</span><span>상금</span><span>마감</span></div><ul class="list" id="list">{''.join(card(c) for c in _first)}</ul><button class="more" id="more" hidden>더 보기</button>{listing_js()}
 <h2 class="cs-lh">루리에게 맞춤 추천받기</h2>
 <section id="consult" aria-label="루리 공모전 맞춤 추천"><noscript><p>맞춤 추천은 자바스크립트가 필요해요. 위 목록은 그대로 쓸 수 있어요.</p></noscript></section>
 {qa_home()}<p class="cs-foot">진행 중 공모전 {len(live)}건(오늘 {TODAY.month}/{TODAY.day} 한국 시간 기준 접수 마감 전)의 마감일·상금·응모 자격·접수 방법을 정리해 두고, 루리가 상황에 맞는 것만 골라 드려요.</p>
@@ -2651,7 +2667,7 @@ def build():
         cl = sorted([c for c in live if n in c['tags']], key=lambda c: (c['end'], -(c.get('pv') or 0)))   # 제목·선택 상자·실제 순서를 모두 「마감 임박순」으로 맞춘다
         tips = ''.join(f'<li>{E(t)}</li>' for t in TIPS[n])
         body = f'''<p class="bc"><a href="/">홈</a> › {n}</p><section class="dh" data-c="{s}"><span class="ic big">{CAT_ICON[n]}</span><h1>{CAT_T.get(n, n + ' 공모전')}</h1><p class="lead">진행 중 <b>{len(cl)}건</b> · 마감 임박순</p><p class="hm-scope">오늘 {TODAY.month}/{TODAY.day}(한국 시간) 기준 접수 마감 전 · 제목이 같은 공모전은 1건 · {NOW_KST():%m/%d %H:%M} 갱신 · 마감 시각은 공식 공고 확인</p></section>
-{top_answer(n + ' 공모전', cl)}<h2>진행 중 {n} 공모전</h2>{TOOLBAR}<ul class="list" id="list">{''.join(card(c) for c in cl[:60])}</ul>{('<details class="rest"><summary>나머지 ' + str(len(cl) - 60) + '건 제목으로 보기</summary><ul>' + ''.join(f'<li><a href="/c/{c["id"]}/">{E(c["title"])}</a> · {ddot(c["end"])[5:]} 마감</li>' for c in cl[60:]) + '</ul></details>') if len(cl) > 60 else ''}<p class="hm-links">{' '.join(f'<a href="/cat/{s2}/">{n2}</a>' for s2, n2 in CATS if s2 != s)}</p><button class="more" id="more" hidden>더 보기</button>
+{top_answer(n + ' 공모전', cl)}<h2>진행 중 {n} 공모전</h2>{TOOLBAR}<div class="list-h" aria-hidden="true"><span>공모전 · 주최</span><span>참가 대상</span><span>상금</span><span>마감</span></div><ul class="list" id="list">{''.join(card(c) for c in cl[:60])}</ul>{('<details class="rest"><summary>나머지 ' + str(len(cl) - 60) + '건 제목으로 보기</summary><ul>' + ''.join(f'<li><a href="/c/{c["id"]}/">{E(c["title"])}</a> · {ddot(c["end"])[5:]} 마감</li>' for c in cl[60:]) + '</ul></details>') if len(cl) > 60 else ''}<p class="hm-links">{' '.join(f'<a href="/cat/{s2}/">{n2}</a>' for s2, n2 in CATS if s2 != s)}</p><button class="more" id="more" hidden>더 보기</button>
 <h2 class="cat-sub">이 분야 한눈에 보기·응모 팁</h2><p>{CAT_INTRO[n]}</p>{cat_stats(n, cl)}
 {say(CAT_OUTFIT[n], f'<b>{n} 공모전 응모 팁</b><ul class="chk">{tips}</ul>')}{'<a class="lab-cta" href="/fridge/"><b>🍳 루리의 냉장고 파먹기</b><span>집에 있는 재료로 만들 수 있는 집밥 레시피 · 요리대회 연습용으로 딱 →</span></a>' if s == 'food' else ''}'''
         fq, ld_ = hub_extra(f'{n} 공모전', sorted(cl, key=lambda c: c['end']), f'/cat/{s}/')

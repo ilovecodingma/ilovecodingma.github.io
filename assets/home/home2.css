@@ -27,7 +27,7 @@ main .h2-s .res a{display:flex;gap:10px;align-items:baseline;padding:12px 14px;m
 
 /* 섹션 공통 */
 .h2-sec{margin:44px 0 0}
-.h2-hd{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:6px;padding-bottom:10px;border-bottom:2px solid var(--tx)}
+.h2-hd{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:6px;padding-bottom:10px;border-bottom:1px solid #cbd5e1}
 .h2-hd h2{margin:0;padding:0;border:0;font-size:22px;line-height:1.3;letter-spacing:-.02em;font-weight:800;color:var(--tx)}
 main .h2-hd a{display:inline-flex;align-items:center;gap:4px;min-height:44px;margin:-12px 0;font-size:14px;font-weight:600;color:var(--mu);text-decoration:none;white-space:nowrap}main .h2-hd a:hover{color:var(--tx);text-decoration:underline}
 .h2-sec .kk{margin:0 0 4px;font-size:13px;font-weight:700;color:var(--mu)}
@@ -38,7 +38,7 @@ main .h2-sec h3 a{color:inherit;text-decoration:none}.h2-sec h3 a:hover{text-dec
 .h2-nt{margin:12px 0 0;font-size:14px;color:var(--mu)}main .h2-nt a{color:var(--tx);text-decoration:underline;text-decoration-color:#94a3b8}
 
 /* ③ 지금 읽을 글: 대표 1(왼쪽 큰 칸, 카드는 여기만) + 보조 4(구분선 목록) */
-.rd-g{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,4fr);gap:32px;padding-top:18px;align-items:start}
+.rd-g{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,4fr);gap:32px;padding-top:18px;align-items:stretch}
 .rd-f{background:#fff;border:1px solid var(--bd);border-radius:12px;padding:26px 28px}
 .rd-f h3{font-size:26px;line-height:1.35;letter-spacing:-.03em;font-weight:800;-webkit-line-clamp:3}
 .rd-f .sm{font-size:16.5px;line-height:1.7;-webkit-line-clamp:4;margin-top:12px}

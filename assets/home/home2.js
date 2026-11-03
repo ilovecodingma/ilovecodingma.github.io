@@ -19,7 +19,7 @@
     return loading;
   };
   var LB = { c: '공모전', a: '지원금', r: '레시피', w: '가이드' };
-  var msg = function (t) { res.textContent = ''; var p = document.createElement('p'); p.textContent = t; res.appendChild(p); };
+  var msg = function (t, face) { res.textContent = ''; var p = document.createElement('p'); if (face) { var im = document.createElement('img'); im.src = '/assets/ruri/sad_s.webp'; im.alt = ''; im.width = 40; im.height = 55; im.style.cssText = 'vertical-align:middle;margin-right:10px'; p.appendChild(im); } p.appendChild(document.createTextNode(t)); res.appendChild(p); };
   var run = function () {
     var v = q.value.trim().toLowerCase(); res.textContent = '';
     if (!v) return Promise.resolve();
@@ -29,7 +29,7 @@
       if (!d.length) { msg('검색 데이터를 불러오지 못했어요. 잠시 뒤 다시 시도하거나 위 주제 바로가기를 이용해 주세요.'); return; }
       var tk = v.split(/\s+/);
       var r = d.filter(function (i) { if (scope && i.s !== scope) return false; var h = (i.t + ' ' + i.d).toLowerCase(); return tk.every(function (t) { return h.indexOf(t) >= 0; }); }).slice(0, 10);
-      if (!r.length) { msg('「' + q.value.trim() + '」와 일치하는 항목이 없어요. 검색어를 줄이거나 범위를 「전체」로 바꿔 보세요.'); return; }
+      if (!r.length) { msg('「' + q.value.trim() + '」와 일치하는 항목이 없어요. 검색어를 줄이거나 범위를 「전체」로 바꿔 보세요.', true); return; }
       res.textContent = '';
       r.forEach(function (i) {
         var a = document.createElement('a'); a.href = i.u;
