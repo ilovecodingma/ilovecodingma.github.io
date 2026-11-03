@@ -186,3 +186,5 @@ details.why{flex:0 0 auto;font-size:13.5px;color:var(--mu)}
 details.why summary{cursor:pointer;min-height:32px;display:inline-flex;align-items:center;text-decoration:underline;text-decoration-color:#94a3b8}
 details.why p{margin:6px 0 0;line-height:1.65;max-width:720px}
 @media(max-width:700px){.top-blk{padding:14px}}
+main .cs-g a{color:var(--tx)}
+.cs-cats{gap:0}

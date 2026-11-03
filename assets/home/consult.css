@@ -139,5 +139,5 @@ html.cs-lock{overflow:hidden}
 .hm-ev{margin:0;padding:0;list-style:none;display:grid;gap:8px}.hm-ev a{display:block;padding:10px 12px;border:1px solid var(--bd);border-radius:12px;background:var(--card);color:var(--tx);text-decoration:none}.hm-ev small{display:block;color:var(--mu);margin-top:2px}
 
 .cs-sub{margin:-4px 0 10px;color:var(--mu);font-size:13px}
-.cs-cats{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 6px}.cs-cats a{padding:7px 12px;border:1px solid var(--bd,#e5e7eb);border-radius:999px;background:var(--card,#fff);color:inherit;text-decoration:none;font-size:14px;font-weight:700}
+/* 분류 3묶음(분야·참가 조건·접수 조건)은 pro.css 의 .cs-cats/.cs-g 규칙 */
 .cs-lh{margin:22px 0 8px;font-size:18px}
