@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-04 07:00",
+ "updated": "2026-11-04 08:00",
  "items": [
   {
    "query": "로스앤젤레스 fc 대 미네소타 유나이티드 fc 순위",
@@ -120,6 +120,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-03",
+   "expires": "2026-11-07"
+  },
+  {
+   "query": "아틀레티코 대 바이에른",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 5000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-04",
    "expires": "2026-11-07"
   },
   {
@@ -303,6 +315,18 @@
    "expires": "2026-11-07"
   },
   {
+   "query": "맨유 대 로마",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-04",
+   "expires": "2026-11-07"
+  },
+  {
    "query": "윤영미",
    "tier": "단기",
    "signal": [
@@ -432,6 +456,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-03",
+   "expires": "2026-11-07"
+  },
+  {
+   "query": "두산에너 빌리티",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-04",
    "expires": "2026-11-07"
   },
   {
@@ -615,7 +651,7 @@
    "expires": "2026-11-07"
   },
   {
-   "query": "두산에너 빌리티",
+   "query": "바르셀로나 대 애스턴 빌라",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -5619,6 +5655,19 @@
    "expires": "2026-11-17"
   },
   {
+   "query": "국세청 주식 양도소득세 4,687명 21억 원 환급 대상·방식·조회 방법",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 3,
+   "status": "작성",
+   "page": "/issue/nts-stock-tax-refund-1104/",
+   "registered": "2026-11-04",
+   "expires": "2026-11-11"
+  },
+  {
    "query": "레시피 공모전",
    "tier": "중기",
    "signal": [
@@ -5910,6 +5959,19 @@
    "expires": "2026-11-09"
   },
   {
+   "query": "2026 김장 배추 풍작에 쪽파 산지 폐기, 도매가 평년 대비 37.5% 하락",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 2,
+   "status": "작성",
+   "page": "/issue/kimjang-price-cabbage-1104/",
+   "registered": "2026-11-04",
+   "expires": "2026-11-11"
+  },
+  {
    "query": "샤이니 민호 마라톤 실격 주장 보도, 주최측 규정과 입장 정리",
    "tier": "중기",
    "signal": [
@@ -6064,6 +6126,19 @@
    "page": "/issue/jimin-father-cafe-closing/",
    "registered": "2026-11-03",
    "expires": "2026-11-10"
+  },
+  {
+   "query": "KAI 2026년 3분기 잠정 매출 1조643억 영업이익 794억 전년 대비 증감 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 1,
+   "status": "작성",
+   "page": "/issue/kai-q3-2026-1104/",
+   "registered": "2026-11-04",
+   "expires": "2026-11-09"
   },
   {
    "query": "코스피 5648.79 마감, 외국인 1조5천억 순매도와 AI 우려 보도",
