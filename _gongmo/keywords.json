@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-03 21:00",
+ "updated": "2026-11-03 22:00",
  "items": [
   {
    "query": "로스앤젤레스 fc 대 미네소타 유나이티드 fc 순위",
@@ -268,6 +268,18 @@
   },
   {
    "query": "전북 대 조호르 fc",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-03",
+   "expires": "2026-11-06"
+  },
+  {
+   "query": "가시와 레이솔 대 대전",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -568,6 +580,18 @@
   },
   {
    "query": "헤수스 데 미겔",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-03",
+   "expires": "2026-11-06"
+  },
+  {
+   "query": "부산 kcc 대 고양 소노",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -5849,6 +5873,19 @@
    "expires": "2026-11-10"
   },
   {
+   "query": "마운자로 위고비 건강보험 급여 검토·허가 대상 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 2,
+   "status": "작성",
+   "page": "/issue/mounjaro-wegovy-1103/",
+   "registered": "2026-11-03",
+   "expires": "2026-11-10"
+  },
+  {
    "query": "테슬라 FSD 한국 허용되나요? 모델 Y 승인 신청 현황 정리",
    "tier": "중기",
    "signal": [
@@ -5936,6 +5973,19 @@
    "score": 1,
    "status": "작성",
    "page": "/issue/el-nino-2026-strongest-claim-1103/",
+   "registered": "2026-11-03",
+   "expires": "2026-11-10"
+  },
+  {
+   "query": "경기도 청년 보증금 이자지원 100억 원 감액과 조례안 발의 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 1,
+   "status": "작성",
+   "page": "/issue/gyeonggi-youth-housing-cut-1103/",
    "registered": "2026-11-03",
    "expires": "2026-11-10"
   },
