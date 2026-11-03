@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-03 13:00",
+ "updated": "2026-11-03 14:00",
  "items": [
   {
    "query": "로스앤젤레스 fc 대 미네소타 유나이티드 fc 순위",
@@ -21,6 +21,18 @@
     "구글트렌드"
    ],
    "score": 20000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-03",
+   "expires": "2026-11-06"
+  },
+  {
+   "query": "비야 디",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 10000,
    "status": "미작성",
    "page": "",
    "registered": "2026-11-03",
@@ -64,6 +76,30 @@
   },
   {
    "query": "선박",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 5000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-03",
+   "expires": "2026-11-06"
+  },
+  {
+   "query": "상속세",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 5000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-03",
+   "expires": "2026-11-06"
+  },
+  {
+   "query": "지밀 레니 얼",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -148,6 +184,18 @@
   },
   {
    "query": "은마아파트",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-03",
+   "expires": "2026-11-06"
+  },
+  {
+   "query": "저기압",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -399,6 +447,30 @@
    "expires": "2026-11-06"
   },
   {
+   "query": "부동산 투자",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-03",
+   "expires": "2026-11-06"
+  },
+  {
+   "query": "유가증권",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-03",
+   "expires": "2026-11-06"
+  },
+  {
    "query": "청년 문화지원금 언제부터? 대상·금액·신청 방법 정리",
    "tier": "단기",
    "signal": [
@@ -462,6 +534,19 @@
    "page": "/issue/stock-settlement-t1/",
    "registered": "2026-11-02",
    "expires": "2026-11-06"
+  },
+  {
+   "query": "태풍 인파 한국 영향 있나요? 진로와 기상청 예보 변경 정리 2026",
+   "tier": "단기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 2,
+   "status": "작성",
+   "page": "/issue/typhoon-inpha-korea-path-1103/",
+   "registered": "2026-11-03",
+   "expires": "2026-11-07"
   },
   {
    "query": "빅뱅 투어 일정 어떻게 되나요? 시드니 공연 결과와 남은 일정",
@@ -5678,6 +5763,19 @@
    "score": 1,
    "status": "작성",
    "page": "/issue/lee-hyesung-bullying-disclosure/",
+   "registered": "2026-11-03",
+   "expires": "2026-11-10"
+  },
+  {
+   "query": "125억 원 투자사기 유명 부동산 강사 구속 송치, 경찰 발표 내용 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 1,
+   "status": "작성",
+   "page": "/issue/real-estate-lecturer-12-5b-fraud-referral/",
    "registered": "2026-11-03",
    "expires": "2026-11-10"
   },
