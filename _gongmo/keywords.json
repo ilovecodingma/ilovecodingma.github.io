@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-03 08:10",
+ "updated": "2026-11-03 09:00",
  "items": [
   {
    "query": "로스앤젤레스 fc 대 미네소타 유나이티드 fc 순위",
@@ -75,6 +75,42 @@
    "expires": "2026-11-06"
   },
   {
+   "query": "서울경제tv",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 5000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-03",
+   "expires": "2026-11-06"
+  },
+  {
+   "query": "김지영",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-03",
+   "expires": "2026-11-06"
+  },
+  {
+   "query": "파흐타코르 대 알나스르",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-03",
+   "expires": "2026-11-06"
+  },
+  {
    "query": "신의 구슬",
    "tier": "단기",
    "signal": [
@@ -117,6 +153,42 @@
     "구글트렌드"
    ],
    "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-03",
+   "expires": "2026-11-06"
+  },
+  {
+   "query": "뉴캐슬 대 에버튼 순위",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-03",
+   "expires": "2026-11-06"
+  },
+  {
+   "query": "윤영미",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-03",
+   "expires": "2026-11-06"
+  },
+  {
+   "query": "아이 파크 몰 용산 점",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
    "status": "미작성",
    "page": "",
    "registered": "2026-11-03",
@@ -232,6 +304,78 @@
   },
   {
    "query": "원 이",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-03",
+   "expires": "2026-11-06"
+  },
+  {
+   "query": "심수봉",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-03",
+   "expires": "2026-11-06"
+  },
+  {
+   "query": "창신메모리테크놀로지",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-03",
+   "expires": "2026-11-06"
+  },
+  {
+   "query": "이재아",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-03",
+   "expires": "2026-11-06"
+  },
+  {
+   "query": "테슬라 모델 y",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-03",
+   "expires": "2026-11-06"
+  },
+  {
+   "query": "권상우",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-03",
+   "expires": "2026-11-06"
+  },
+  {
+   "query": "옌스 카스트로프",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -5053,6 +5197,19 @@
    "expires": "2026-11-17"
   },
   {
+   "query": "북한 바이낸스 해킹 사건 어떻게 된 건가요? 확인된 내용 정리 2026년 11월",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 3,
+   "status": "작성",
+   "page": "/issue/north-korea-binance-incident/",
+   "registered": "2026-11-03",
+   "expires": "2026-11-17"
+  },
+  {
    "query": "레시피 공모전",
    "tier": "중기",
    "signal": [
@@ -5316,6 +5473,32 @@
    "page": "/issue/highway-rest-area-price-reform/",
    "registered": "2026-11-02",
    "expires": "2026-11-09"
+  },
+  {
+   "query": "테슬라 FSD 한국 허용되나요? 모델 Y 승인 신청 현황 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 2,
+   "status": "작성",
+   "page": "/issue/tesla-fsd-korea-approval/",
+   "registered": "2026-11-03",
+   "expires": "2026-11-17"
+  },
+  {
+   "query": "안세영 코리아오픈 출전 확정, 2026 여수 빅터 코리아오픈 일정·첫 상대·예매 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 1,
+   "status": "작성",
+   "page": "/issue/an-seyoung-korea-open-2026/",
+   "registered": "2026-11-03",
+   "expires": "2026-11-10"
   },
   {
    "query": "APBC 2026 야구 대표팀 일정은? 엔트리와 교체 선수 정리",
