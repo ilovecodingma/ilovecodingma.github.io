@@ -273,7 +273,7 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False, noinde
     doc = f'''<!doctype html>
 <html lang="{lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{E(t)}</title>
-<meta name="description" content="{E(desc)}">{'<meta name="robots" content="noindex,follow">' if noindex else ''}
+<meta name="description" content="{E(desc)}">{'<meta name="robots" content="noindex,follow">' if noindex else '<meta name="robots" content="max-image-preview:large">'}
 <link rel="canonical" href="{url}">{'<link rel="alternate" type="application/rss+xml" title="루리 줍줍 기술 블로그" href="/dev/rss.xml">' if path.startswith('/dev/') or path == '/ailog/' else ''}{hreflang_links(path, url, lang)}
 <meta property="og:type" content="website"><meta property="og:locale" content="{LANGS.get(lang, ('ko_KR',))[0]}"><meta property="og:site_name" content="{NAME}">
 <meta property="og:title" content="{E(t)}"><meta property="og:description" content="{E(desc)}"><meta property="og:url" content="{url}">
@@ -5487,9 +5487,50 @@ def rss_feed(live, aps):
         add(f'/review/{x["slug"]}/', '[평론] ' + x['title'], x['date'] + 'T09:00:00', x['desc'])
     for q in QA[:10]:
         add(f'/guide/{q["slug"]}/', q['title'], (q.get('date') or TODAY.isoformat())[:10], q.get('desc', ''))
+    FULL = {}   # 주소 → 본문 전체 HTML (네이버 서치어드바이저 피드 가이드: 본문 전체 권장)
+    def _body(c):
+        parts = [f'<p>{E(c.get("summary") or c.get("lead") or c.get("desc") or "")}</p>']
+        for sec in c.get('sections') or []:
+            parts.append(f'<h2>{E(sec.get("h", ""))}</h2>')
+            if sec.get('p'):
+                parts.append(f'<p>{E(sec["p"])}</p>')
+            if sec.get('ul'):
+                parts.append('<ul>' + ''.join(f'<li>{E(x)}</li>' for x in sec['ul']) + '</ul>')
+            if sec.get('table'):
+                parts.append('<table>' + ''.join('<tr>' + ''.join(f'<td>{E(x)}</td>' for x in r) + '</tr>' for r in sec['table']) + '</table>')
+        for qa in c.get('faq') or []:
+            if len(qa) >= 2:
+                parts.append(f'<h3>{E(qa[0])}</h3><p>{E(qa[1])}</p>')
+        if c.get('sources'):
+            parts.append('<h2>출처</h2><ul>' + ''.join(f'<li><a href="{E(x[1])}">{E(x[0])}</a></li>' for x in c['sources'] if len(x) >= 2) + '</ul>')
+        return ''.join(parts)
+    idir = os.path.join(HERE, 'issues')
+    for fn in (sorted(os.listdir(idir), reverse=True) if os.path.isdir(idir) else []):
+        if not fn.endswith('.json'):
+            continue
+        try:
+            c = json.load(open(os.path.join(idir, fn), encoding='utf-8'))
+            if (TODAY - datetime.date.fromisoformat(c['date'])).days > int(c.get('keep_days', 4)) + 10 or not os.path.exists(os.path.join(ROOT, 'issue', c['slug'], 'index.html')):
+                continue
+            u = f'/issue/{c["slug"]}/'
+            add(u, c['h1'], c['date'], c.get('summary') or c.get('desc') or '')
+            FULL[u] = _body(c)
+        except Exception:
+            continue
+    try:
+        for g in json.load(open(KIN_F, encoding='utf-8'))['guides'][-20:][::-1]:
+            u = f'/money/guide/{g["slug"]}/'
+            if os.path.exists(os.path.join(ROOT, 'money', 'guide', g['slug'], 'index.html')):
+                m_ = re.search(r'확인일\s*(\d{4}-\d{2}-\d{2})', g.get('basis') or '')
+                add(u, g.get('h1') or g['title'], m_.group(1) if m_ else TODAY.isoformat(), g.get('lead') or g.get('desc') or '')
+                FULL[u] = _body(g)
+    except Exception:
+        pass
     it.sort(key=lambda x: x[0], reverse=True)
-    items = ''.join(f'<item><title>{E(t)}</title><link>{SITE}{u}</link><guid>{SITE}{u}</guid><pubDate>{format_datetime(dt)}</pubDate><description>{E(desc)}</description></item>\n' for dt, u, t, desc in it[:60])
-    xml = (f'<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0"><channel><title>루리 줍줍</title><link>{SITE}/</link>'
+    def _ce(u):
+        return ('<content:encoded><![CDATA[' + FULL[u].replace(']]>', ']]&gt;') + ']]></content:encoded>') if u in FULL else ''
+    items = ''.join(f'<item><title>{E(t)}</title><link>{SITE}{u}</link><guid>{SITE}{u}</guid><pubDate>{format_datetime(dt)}</pubDate><description>{E(desc)}</description>{_ce(u)}</item>\n' for dt, u, t, desc in it[:80])
+    xml = (f'<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>루리 줍줍</title><link>{SITE}/</link>'
            f'<description>이슈·기사 확인 신호·애널리스트 분석·공모전·지원금 정보를 매일 정리하는 루리 줍줍</description><language>ko</language>\n{items}</channel></rss>\n')
     open(os.path.join(ROOT, 'rss.xml'), 'w', encoding='utf-8', newline='\n').write(xml)
 

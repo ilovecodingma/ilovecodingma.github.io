@@ -1,38 +1,234 @@
 {
- "at": "2026-11-02 15:28",
+ "at": "2026-11-03 10:11",
  "note": "그날 처음 들어온 방문자 기준(관리자·자동 점검 제외). 채널 → 첫 페이지별 방문자 수.",
  "days": [
   {
-   "day": "2026-11-02",
-   "visitors": 115,
+   "day": "2026-11-03",
+   "visitors": 30,
    "channels": [
     [
      "🔍 다음·빙 검색",
-     37
-    ],
-    [
-     "🔍 네이버 검색",
-     21
+     11
     ],
     [
      "🔗 직접 접속(주소 입력·즐겨찾기·앱 안 링크)",
+     6
+    ],
+    [
+     "🔍 네이버 검색",
+     6
+    ],
+    [
+     "🏷️ 기타 홍보 링크(chatgptcom)",
+     3
+    ],
+    [
+     "💻 개발자 커뮤니티",
+     2
+    ],
+    [
+     "🔍 구글 검색",
+     1
+    ],
+    [
+     "🏷️ 기타 홍보 링크(naver_kin)",
+     1
+    ]
+   ],
+   "landing": [
+    [
+     "/",
+     2
+    ],
+    [
+     "/issue/kim-jong-un-rumor/",
+     2
+    ],
+    [
+     "/fridge/",
+     2
+    ],
+    [
+     "/contest/youth/",
+     2
+    ],
+    [
+     "/talk/",
+     2
+    ],
+    [
+     "/money/guide/floor-noise-response/",
+     1
+    ],
+    [
+     "/money/guide/fine-installment-deferral/",
+     1
+    ],
+    [
+     "/contest/deadline-11/",
+     1
+    ],
+    [
+     "/money/guide/protein-sources-tofu-egg-bean/",
+     1
+    ],
+    [
+     "/money/guide/probation-period-wage-dismissal-rules/",
+     1
+    ],
+    [
+     "/money/guide/other-income-necessary-expense-report/",
+     1
+    ],
+    [
+     "/money/guide/long-term-care-grade-apply/",
+     1
+    ],
+    [
+     "/money/guide/health-insurance-after-quit/",
+     1
+    ],
+    [
+     "/money/guide/four-insurance-rates-2026/",
+     1
+    ],
+    [
+     "/money/guide/employment-contract-basics/",
+     1
+    ]
+   ],
+   "by_channel": {
+    "🔗 직접 접속(주소 입력·즐겨찾기·앱 안 링크)": [
+     [
+      "/",
+      2
+     ],
+     [
+      "/talk/",
+      1
+     ],
+     [
+      "/money/guide/floor-noise-response/",
+      1
+     ],
+     [
+      "/money/guide/fine-installment-deferral/",
+      1
+     ],
+     [
+      "/contest/deadline-11/",
+      1
+     ]
+    ],
+    "🔍 네이버 검색": [
+     [
+      "/issue/kim-jong-un-rumor/",
+      2
+     ],
+     [
+      "/money/guide/eitc/",
+      1
+     ],
+     [
+      "/guide/one-person-corporation-closure-liquidation-tax/",
+      1
+     ],
+     [
+      "/guide/employment-support-target-veterans-apply/",
+      1
+     ],
+     [
+      "/guide/conditional-recipient-self-support-work-duty/",
+      1
+     ]
+    ],
+    "💻 개발자 커뮤니티": [
+     [
+      "/fridge/",
+      2
+     ]
+    ],
+    "🏷️ 기타 홍보 링크(chatgptcom)": [
+     [
+      "/contest/youth/",
+      2
+     ],
+     [
+      "/contest/essay/",
+      1
+     ]
+    ],
+    "🔍 다음·빙 검색": [
+     [
+      "/talk/",
+      1
+     ],
+     [
+      "/money/guide/protein-sources-tofu-egg-bean/",
+      1
+     ],
+     [
+      "/money/guide/probation-period-wage-dismissal-rules/",
+      1
+     ],
+     [
+      "/money/guide/other-income-necessary-expense-report/",
+      1
+     ],
+     [
+      "/money/guide/long-term-care-grade-apply/",
+      1
+     ]
+    ],
+    "🔍 구글 검색": [
+     [
+      "/contest/novel/",
+      1
+     ]
+    ],
+    "🏷️ 기타 홍보 링크(naver_kin)": [
+     [
+      "/guide/account-hacked-suspended-recovery-118/",
+      1
+     ]
+    ]
+   }
+  },
+  {
+   "day": "2026-11-02",
+   "visitors": 171,
+   "channels": [
+    [
+     "🔍 다음·빙 검색",
+     56
+    ],
+    [
+     "🔍 네이버 검색",
+     29
+    ],
+    [
+     "🔗 직접 접속(주소 입력·즐겨찾기·앱 안 링크)",
+     27
+    ],
+    [
+     "🏷️ 기타 홍보 링크(chatgptcom)",
      13
+    ],
+    [
+     "🔍 구글 검색",
+     12
     ],
     [
      "🏷️ 기타 홍보 링크(youtube)",
      10
     ],
     [
-     "🏷️ 기타 홍보 링크(chatgptcom)",
-     9
-    ],
-    [
      "🏷️ 기타 홍보 링크(threads)",
      6
     ],
     [
-     "🔍 구글 검색",
-     6
+     "💻 개발자 커뮤니티",
+     3
     ],
     [
      "🌐 기타 사이트(m.facebook.com)",
@@ -43,7 +239,11 @@
      3
     ],
     [
-     "💻 개발자 커뮤니티",
+     "📝 블로그",
+     2
+    ],
+    [
+     "💬 네이버 지식인",
      2
     ],
     [
@@ -51,15 +251,15 @@
      1
     ],
     [
-     "📝 블로그",
-     1
-    ],
-    [
-     "💬 네이버 지식인",
+     "🏷️ 기타 홍보 링크(ph)",
      1
     ],
     [
      "🏷️ 기타 홍보 링크(okky)",
+     1
+    ],
+    [
+     "🏷️ 기타 홍보 링크(naver_kin)",
      1
     ],
     [
@@ -70,10 +270,26 @@
    "landing": [
     [
      "/issue/kim-jong-un-rumor/",
-     9
+     10
+    ],
+    [
+     "/money/guide/national-scholarship/",
+     6
+    ],
+    [
+     "/",
+     5
+    ],
+    [
+     "/money/guide/electricity-bill-calculation/",
+     4
     ],
     [
      "/contest/ai-video/",
+     4
+    ],
+    [
+     "/fridge/",
      4
     ],
     [
@@ -81,15 +297,11 @@
      4
     ],
     [
-     "/money/guide/national-scholarship/",
+     "/apply/",
      3
     ],
     [
-     "/money/guide/electricity-bill-calculation/",
-     3
-    ],
-    [
-     "/fridge/",
+     "/money/guide/four-insurance-rates-2026/",
      3
     ],
     [
@@ -97,11 +309,15 @@
      3
     ],
     [
-     "/apply/",
-     2
+     "/cat/food/",
+     3
     ],
     [
-     "/",
+     "/money/guide/small-tenant-priority-repayment/",
+     3
+    ],
+    [
+     "/cat/literature/",
      2
     ],
     [
@@ -109,23 +325,7 @@
      2
     ],
     [
-     "/c/Q04001/",
-     2
-    ],
-    [
-     "/c/Q03064/",
-     2
-    ],
-    [
-     "/c/Q03021/",
-     2
-    ],
-    [
-     "/c/Q03020/",
-     2
-    ],
-    [
-     "/c/Q02984/",
+     "/money/guide/officetel-tax-residential-business/",
      2
     ]
    ],
@@ -133,7 +333,15 @@
     "🔍 네이버 검색": [
      [
       "/issue/kim-jong-un-rumor/",
-      9
+      10
+     ],
+     [
+      "/guide/workers-welfare-livelihood-loan-apply/",
+      2
+     ],
+     [
+      "/guide/phone-device-change-condition-method/",
+      2
      ],
      [
       "/money/guide/voice-phishing-account-freeze/",
@@ -142,13 +350,49 @@
      [
       "/money/guide/severance-example/",
       1
+     ]
+    ],
+    "🔍 다음·빙 검색": [
+     [
+      "/money/guide/national-scholarship/",
+      5
      ],
      [
-      "/money/guide/mobile-micropayment-dispute/",
-      1
+      "/money/guide/electricity-bill-calculation/",
+      4
      ],
      [
-      "/money/guide/housing-bond-purchase-cost-registration/",
+      "/money/guide/four-insurance-rates-2026/",
+      3
+     ],
+     [
+      "/money/guide/parttime-four-insurance/",
+      2
+     ],
+     [
+      "/money/guide/officetel-tax-residential-business/",
+      2
+     ]
+    ],
+    "🔗 직접 접속(주소 입력·즐겨찾기·앱 안 링크)": [
+     [
+      "/",
+      4
+     ],
+     [
+      "/apply/",
+      3
+     ],
+     [
+      "/fridge/",
+      2
+     ],
+     [
+      "/cat/literature/",
+      2
+     ],
+     [
+      "/money/guide/used-trade-fraud-report-steps/",
       1
      ]
     ],
@@ -158,63 +402,51 @@
       4
      ],
      [
+      "/money/guide/nps-voluntary-enrollment-apply/",
+      1
+     ],
+     [
+      "/money/guide/nps-chunap/",
+      1
+     ],
+     [
+      "/lab/",
+      1
+     ],
+     [
       "/en/guide/korea-contests-open-to-foreigners/",
       1
-     ],
-     [
-      "/contest/slogan/",
-      1
-     ],
-     [
-      "/contest/idea/",
-      1
-     ],
-     [
-      "/contest/essay/",
-      1
      ]
     ],
-    "🔍 다음·빙 검색": [
+    "🔍 구글 검색": [
      [
-      "/money/guide/national-scholarship/",
-      3
-     ],
-     [
-      "/money/guide/electricity-bill-calculation/",
-      3
-     ],
-     [
-      "/money/guide/parttime-four-insurance/",
+      "/guide/contest-music-font-license-check/",
       2
      ],
      [
-      "/guide/pre-placement-health-exam-private-apply-cost/",
+      "/cat/food/",
       2
      ],
      [
-      "/money/guide/severance-interim-settlement/",
+      "/lab/4426cdfc/",
+      1
+     ],
+     [
+      "/guide/part-time-interview-applicant-rights/",
+      1
+     ],
+     [
+      "/guide/conditional-recipient-self-support-work-duty/",
       1
      ]
     ],
-    "🔗 직접 접속(주소 입력·즐겨찾기·앱 안 링크)": [
+    "💻 개발자 커뮤니티": [
      [
       "/fridge/",
       2
      ],
      [
-      "/apply/",
-      2
-     ],
-     [
-      "/",
-      2
-     ],
-     [
-      "/money/guide/subscription-win-cancel-unqualified/",
-      1
-     ],
-     [
-      "/money/guide/property-tax-calculation/",
+      "/ailog/",
       1
      ]
     ],
@@ -268,41 +500,13 @@
       1
      ]
     ],
-    "🔍 구글 검색": [
-     [
-      "/guide/part-time-interview-applicant-rights/",
-      1
-     ],
-     [
-      "/guide/conditional-recipient-self-support-work-duty/",
-      1
-     ],
-     [
-      "/contest/novel/",
-      1
-     ],
-     [
-      "/contest/idea/",
-      1
-     ],
-     [
-      "/c/Q03919/",
-      1
-     ]
-    ],
     "📝 블로그": [
      [
       "/c/Q02516/",
       1
-     ]
-    ],
-    "💻 개발자 커뮤니티": [
-     [
-      "/fridge/",
-      1
      ],
      [
-      "/ailog/",
+      "/app/",
       1
      ]
     ],
@@ -310,11 +514,27 @@
      [
       "/guide/school-record-contest/",
       1
+     ],
+     [
+      "/guide/lh-youth-jeonse-2026/",
+      1
+     ]
+    ],
+    "🏷️ 기타 홍보 링크(ph)": [
+     [
+      "/",
+      1
      ]
     ],
     "🏷️ 기타 홍보 링크(okky)": [
      [
       "/dev/search-index-cleanup/",
+      1
+     ]
+    ],
+    "🏷️ 기타 홍보 링크(naver_kin)": [
+     [
+      "/guide/account-hacked-suspended-recovery-118/",
       1
      ]
     ],

@@ -1,6 +1,6 @@
 {
- "at": "2026-11-03 09:30",
- "nitems": 527,
+ "at": "2026-11-03 09:52",
+ "nitems": 528,
  "cands": [
   {
    "kw": "최불암",
@@ -144,6 +144,40 @@
    ]
   },
   {
+   "kw": "결혼",
+   "nsrc": 5,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "조선일보",
+    "한국경제",
+    "헤럴드경제"
+   ],
+   "n": 14,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "김종국, 아내 휴대폰 저장명은 ‘귀요미♥’…결혼 1주년 이벤트까지",
+     "link": "https://sports.donga.com/ent/article/all/20261103/134954936/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "오은영, 아이 향한 母 행동에 충격…“아동학대 맞다” (결혼 지옥)",
+     "link": "https://sports.donga.com/ent/article/all/20261103/134954796/1"
+    },
+    {
+     "src": "한국경제",
+     "title": "마로니에 김정은, 결혼 22년 만에 파경…\"협의 이혼\"",
+     "link": "https://www.hankyung.com/article/202610230325H"
+    },
+    {
+     "src": "한국경제",
+     "title": "솔비·이규한, 결혼 발표 후 첫 '투샷'…\"20년 전부터 좋아해\"",
+     "link": "https://www.hankyung.com/article/2026102297647"
+    }
+   ]
+  },
+  {
    "kw": "학폭",
    "nsrc": 5,
    "srcs": [
@@ -178,40 +212,6 @@
    ]
   },
   {
-   "kw": "결혼",
-   "nsrc": 5,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "조선일보",
-    "한국경제",
-    "헤럴드경제"
-   ],
-   "n": 11,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "김종국, 아내 휴대폰 저장명은 ‘귀요미♥’…결혼 1주년 이벤트까지",
-     "link": "https://sports.donga.com/ent/article/all/20261103/134954936/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "오은영, 아이 향한 母 행동에 충격…“아동학대 맞다” (결혼 지옥)",
-     "link": "https://sports.donga.com/ent/article/all/20261103/134954796/1"
-    },
-    {
-     "src": "한국경제",
-     "title": "마로니에 김정은, 결혼 22년 만에 파경…\"협의 이혼\"",
-     "link": "https://www.hankyung.com/article/202610230325H"
-    },
-    {
-     "src": "한국경제",
-     "title": "솔비·이규한, 결혼 발표 후 첫 '투샷'…\"20년 전부터 좋아해\"",
-     "link": "https://www.hankyung.com/article/2026102297647"
-    }
-   ]
-  },
-  {
    "kw": "고백",
    "nsrc": 5,
    "srcs": [
@@ -221,12 +221,12 @@
     "한국경제",
     "헤럴드경제"
    ],
-   "n": 9,
+   "n": 10,
    "headlines": [
     {
      "src": "동아일보",
-     "title": "송준근, 7세 때 겪은 가족 비극 고백…“형이 세상 떠났다”",
-     "link": "https://sports.donga.com/ent/article/all/20261103/134954653/1"
+     "title": "‘나는 솔로’ 34기 영수, 순자에 직진 고백…“호감도 제일 커”",
+     "link": "https://sports.donga.com/ent/article/all/20261103/134955361/1"
     },
     {
      "src": "한국경제",
@@ -552,6 +552,74 @@
    ]
   },
   {
+   "kw": "세계",
+   "nsrc": 5,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "동아일보",
+    "조선일보",
+    "한겨레"
+   ],
+   "n": 6,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "스타디움 넘어 스크린으로…방탄소년단 투어, 전 세계 6100개 극장서 본다",
+     "link": "https://sports.donga.com/ent/article/all/20261103/134955266/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "디즈니 신작 애니 ‘헥스: 마녀왕국’, 마법의 세계 그린다…스페셜 포스터 공개",
+     "link": "https://sports.donga.com/ent/article/all/20261103/134954847/1"
+    },
+    {
+     "src": "한겨레",
+     "title": "한 과학책 번역가가 쌓아온 100권의 세계 [.txt]",
+     "link": "https://www.hani.co.kr/arti/culture/book/1285114.html"
+    },
+    {
+     "src": "SBS",
+     "title": "이창동 첫 단편 '심장소리', 넷플릭스 통해 전 세계 공개…6개 언어 자막 제공",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008822827&plink=RSSLINK&cooper=RSSREADER"
+    }
+   ]
+  },
+  {
+   "kw": "스타디움",
+   "nsrc": 5,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "동아일보",
+    "연합뉴스",
+    "한국경제"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "빅뱅, 시드니 아코르 스타디움 달궜다…K팝 가수 첫 단독 공연",
+     "link": "https://www.yna.co.kr/view/AKR20261102128300005"
+    },
+    {
+     "src": "동아일보",
+     "title": "스타디움 넘어 스크린으로…방탄소년단 투어, 전 세계 6100개 극장서 본다",
+     "link": "https://sports.donga.com/ent/article/all/20261103/134955266/1"
+    },
+    {
+     "src": "한국경제",
+     "title": "임영웅 스타디움 공연 감동 한 번 더…실황 영화 11월 18일 개봉",
+     "link": "https://www.hankyung.com/article/202610264236H"
+    },
+    {
+     "src": "SBS",
+     "title": "'임영웅 | 아임 히어로 더 스타디움 2', SCREENX 상영…임영웅 영화 최초",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008822568&plink=RSSLINK&cooper=RSSREADER"
+    }
+   ]
+  },
+  {
    "kw": "개월",
    "nsrc": 5,
    "srcs": [
@@ -586,107 +654,6 @@
    ]
   },
   {
-   "kw": "세계",
-   "nsrc": 5,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "동아일보",
-    "조선일보",
-    "한겨레"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "디즈니 신작 애니 ‘헥스: 마녀왕국’, 마법의 세계 그린다…스페셜 포스터 공개",
-     "link": "https://sports.donga.com/ent/article/all/20261103/134954847/1"
-    },
-    {
-     "src": "한겨레",
-     "title": "한 과학책 번역가가 쌓아온 100권의 세계 [.txt]",
-     "link": "https://www.hani.co.kr/arti/culture/book/1285114.html"
-    },
-    {
-     "src": "SBS",
-     "title": "이창동 첫 단편 '심장소리', 넷플릭스 통해 전 세계 공개…6개 언어 자막 제공",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008822827&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "뉴시스",
-     "title": "방탄소년단 가오슝·자카르타 콘서트, 전 세계 극장서 '라이브 뷰잉'",
-     "link": "https://www.newsis.com/view/NISX20261103_0003851944"
-    }
-   ]
-  },
-  {
-   "kw": "두고",
-   "nsrc": 5,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "동아일보",
-    "세계일보",
-    "조선일보"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "권은비vs김용빈, 반려견 두고 기싸움…허경환 진땀 (자랑할 개)",
-     "link": "https://sports.donga.com/ent/article/all/20261103/134954747/1"
-    },
-    {
-     "src": "세계일보",
-     "title": "故 최불암 빈소 찾은 김지영, 조문 복장 두고 엇갈린 시선",
-     "link": "https://www.segye.com/newsView/20261103502732"
-    },
-    {
-     "src": "SBS",
-     "title": "박해진, '굿파트너2' 합류…장나라와 이혼계 원톱 두고 대립",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008826392&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "뉴시스",
-     "title": "홍석천, 지연수 썸남 두고 질투 \"내가 특별히 예뻐한 남자\"",
-     "link": "https://www.newsis.com/view/NISX20261102_0003851798"
-    }
-   ]
-  },
-  {
-   "kw": "싸이커스",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "연합뉴스",
-    "조선일보",
-    "한국경제"
-   ],
-   "n": 13,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "싸이커스 '칼군무+라이브'로 증명한 자신감…\"죽기 살기로 무대\"",
-     "link": "https://www.yna.co.kr/view/AKR20261102158100005"
-    },
-    {
-     "src": "한국경제",
-     "title": "록 입은 싸이커스의 근본 찾기 \"무대마다 죽기 살기로\" [종합]",
-     "link": "https://www.hankyung.com/article/202611020955H"
-    },
-    {
-     "src": "한국경제",
-     "title": "싸이커스, 에이티즈와 같은 달 컴백 \"우영 선배, 밥 사주며 응원\"",
-     "link": "https://www.hankyung.com/article/202611020876H"
-    },
-    {
-     "src": "한국경제",
-     "title": "싸이커스 MV에 노브레인 이성우의 등장이라…\"록의 근본\"",
-     "link": "https://www.hankyung.com/article/202611020731H"
-    }
-   ]
-  },
-  {
    "kw": "빈소",
    "nsrc": 4,
    "srcs": [
@@ -716,39 +683,6 @@
      "src": "연합뉴스",
      "title": "최불암 빈소 이틀째 발길…\"큰 별 떠나, 누가 방송 지키나\"(종합)",
      "link": "https://www.yna.co.kr/view/AKR20261031027651005"
-    }
-   ]
-  },
-  {
-   "kw": "이유",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "조선일보",
-    "헤럴드경제"
-   ],
-   "n": 9,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "홍진경부터 서인영까지…독한 여자 넷이 산으로 향한 이유",
-     "link": "https://sports.donga.com/ent/article/all/20261103/134955017/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "“평생 뛸 것” 이봉주, 투병 후 다시 달리는 이유 (시대목격)",
-     "link": "https://sports.donga.com/ent/article/all/20261103/134954699/1"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "“제주 카페 망했다는데”…이동건, 1년 6개월만에 폐업 이유 밝혔다",
-     "link": "https://biz.heraldcorp.com/article/10922321"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "박하선 6년만 라디오 하차 이유…“싫어져 관두는 게 아니다” 입 열었다",
-     "link": "https://biz.heraldcorp.com/article/10921772"
     }
    ]
   },
@@ -815,6 +749,72 @@
      "src": "연합뉴스",
      "title": "'국민 아버지' 최불암 영면…아내 김민자 연신 눈물 흘려",
      "link": "https://www.yna.co.kr/view/AKR20261102023200005"
+    }
+   ]
+  },
+  {
+   "kw": "아내",
+   "nsrc": 4,
+   "srcs": [
+    "동아일보",
+    "연합뉴스",
+    "조선일보",
+    "헤럴드경제"
+   ],
+   "n": 8,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "'국민 아버지' 최불암 영면…아내 김민자 연신 눈물 흘려",
+     "link": "https://www.yna.co.kr/view/AKR20261102023200005"
+    },
+    {
+     "src": "동아일보",
+     "title": "최정현, 아내 몰카 충격… 정민현 “다 지워” (계약결혼)",
+     "link": "https://sports.donga.com/ent/article/all/20261103/134955281/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "김종국, 아내 휴대폰 저장명은 ‘귀요미♥’…결혼 1주년 이벤트까지",
+     "link": "https://sports.donga.com/ent/article/all/20261103/134954936/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "‘결혼지옥’ 아내, 임신 모르고 12kg 감량…암 의심하다 30분 만에 출산",
+     "link": "https://sports.donga.com/ent/article/all/20261103/134954914/1"
+    }
+   ]
+  },
+  {
+   "kw": "이유",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "조선일보",
+    "헤럴드경제"
+   ],
+   "n": 8,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "홍진경부터 서인영까지…독한 여자 넷이 산으로 향한 이유",
+     "link": "https://sports.donga.com/ent/article/all/20261103/134955017/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "“평생 뛸 것” 이봉주, 투병 후 다시 달리는 이유 (시대목격)",
+     "link": "https://sports.donga.com/ent/article/all/20261103/134954699/1"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "“제주 카페 망했다는데”…이동건, 1년 6개월만에 폐업 이유 밝혔다",
+     "link": "https://biz.heraldcorp.com/article/10922321"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "박하선 6년만 라디오 하차 이유…“싫어져 관두는 게 아니다” 입 열었다",
+     "link": "https://biz.heraldcorp.com/article/10921772"
     }
    ]
   },
@@ -918,39 +918,6 @@
    ]
   },
   {
-   "kw": "아내",
-   "nsrc": 4,
-   "srcs": [
-    "동아일보",
-    "연합뉴스",
-    "조선일보",
-    "헤럴드경제"
-   ],
-   "n": 7,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "'국민 아버지' 최불암 영면…아내 김민자 연신 눈물 흘려",
-     "link": "https://www.yna.co.kr/view/AKR20261102023200005"
-    },
-    {
-     "src": "동아일보",
-     "title": "최정현, 아내 몰카 충격… 정민현 “다 지워” (계약결혼)",
-     "link": "https://sports.donga.com/ent/article/all/20261103/134955281/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "김종국, 아내 휴대폰 저장명은 ‘귀요미♥’…결혼 1주년 이벤트까지",
-     "link": "https://sports.donga.com/ent/article/all/20261103/134954936/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "‘결혼지옥’ 아내, 임신 모르고 12kg 감량…암 의심하다 30분 만에 출산",
-     "link": "https://sports.donga.com/ent/article/all/20261103/134954914/1"
-    }
-   ]
-  },
-  {
    "kw": "조문",
    "nsrc": 4,
    "srcs": [
@@ -980,6 +947,72 @@
      "src": "연합뉴스",
      "title": "\"우리의 자랑이었는데\"…'국민 아버지' 故최불암 빈소 조문 행렬",
      "link": "https://www.yna.co.kr/view/AKR20261030101100005"
+    }
+   ]
+  },
+  {
+   "kw": "양홍원",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "조선일보",
+    "헤럴드경제"
+   ],
+   "n": 7,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "양홍원, “현주야 사랑해” 2주 만에 삭제…불륜 의혹 후 달라진 SNS",
+     "link": "https://sports.donga.com/ent/article/all/20261103/134954688/1"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "‘모텔 논란’ 양홍원, 아내·결혼 사진 ‘전부 삭제’…‘불륜 폭로’ 번복에도 여진 계속",
+     "link": "https://biz.heraldcorp.com/article/10923435"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "‘천호동 모텔’ 결혼 소감 지운 양홍원…“쉽게 끝날 관계 아냐” 의미심장 노래 공유",
+     "link": "https://biz.heraldcorp.com/article/10922516"
+    },
+    {
+     "src": "뉴시스",
+     "title": "결혼 사진 전부 지운 양홍원…백년가약 맺은 지 16일 만",
+     "link": "https://www.newsis.com/view/NISX20261103_0003852018"
+    }
+   ]
+  },
+  {
+   "kw": "유재석",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "세계일보",
+    "조선일보"
+   ],
+   "n": 7,
+   "headlines": [
+    {
+     "src": "세계일보",
+     "title": "유재석, 김종국에 아직도 서운…\"내 결혼식 때 부탁한 축가 거절\"",
+     "link": "https://www.segye.com/newsView/20261103504090"
+    },
+    {
+     "src": "SBS",
+     "title": "'국민 MC' 유재석, 보관문화훈장 수훈…\"가문의 영광, 허락하는 그날까지 열심히 노력하겠다\"",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008823222&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "뉴시스",
+     "title": "유재석, 김종국에 아직도 서운…\"내 결혼식 때 부탁한 축가 거절\"",
+     "link": "https://www.newsis.com/view/NISX20261103_0003852089"
+    },
+    {
+     "src": "뉴시스",
+     "title": "유재석, 의리 빛났다 \"결혼식 겹치지만 지예은 결혼식 간다\"",
+     "link": "https://www.newsis.com/view/NISX20261103_0003852053"
     }
    ]
   },
@@ -1116,35 +1149,35 @@
    ]
   },
   {
-   "kw": "유재석",
+   "kw": "박스오피",
    "nsrc": 4,
    "srcs": [
     "SBS",
-    "뉴시스",
-    "세계일보",
-    "조선일보"
+    "동아일보",
+    "연합뉴스",
+    "한겨레"
    ],
-   "n": 6,
+   "n": 5,
    "headlines": [
     {
-     "src": "세계일보",
-     "title": "유재석, 김종국에 아직도 서운…\"내 결혼식 때 부탁한 축가 거절\"",
-     "link": "https://www.segye.com/newsView/20261103504090"
+     "src": "연합뉴스",
+     "title": "[박스오피스] '치이카와' 4주 연속 주말 흥행 1위…누적 258만명",
+     "link": "https://www.yna.co.kr/view/AKR20261102036700005"
+    },
+    {
+     "src": "동아일보",
+     "title": "‘암살자(들)’, 6주차에 韓영화 박스오피스 1위 탈환…340만 관객 돌파",
+     "link": "https://sports.donga.com/ent/article/all/20261103/134954800/1"
+    },
+    {
+     "src": "한겨레",
+     "title": "브래드 피트도 못 막은 먼작귀…치이카와, 박스오피스 1위 재탈환",
+     "link": "https://www.hani.co.kr/arti/culture/culture_general/1285135.html"
     },
     {
      "src": "SBS",
-     "title": "'국민 MC' 유재석, 보관문화훈장 수훈…\"가문의 영광, 허락하는 그날까지 열심히 노력하겠다\"",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008823222&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "뉴시스",
-     "title": "유재석, 김종국에 아직도 서운…\"내 결혼식 때 부탁한 축가 거절\"",
-     "link": "https://www.newsis.com/view/NISX20261103_0003852089"
-    },
-    {
-     "src": "뉴시스",
-     "title": "유재석, 의리 빛났다 \"결혼식 겹치지만 지예은 결혼식 간다\"",
-     "link": "https://www.newsis.com/view/NISX20261103_0003852053"
+     "title": "'하트 오브 비스트', '치이카와' 제치고 박스오피스 1위",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008827611&plink=RSSLINK&cooper=RSSREADER"
     }
    ]
   },
@@ -1178,39 +1211,6 @@
      "src": "SBS",
      "title": "'극장판 치이카와: 인어 섬의 비밀', 4주 연속 주말 박스오피스 1위…250만 돌파",
      "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008825688&plink=RSSLINK&cooper=RSSREADER"
-    }
-   ]
-  },
-  {
-   "kw": "박스오피",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "동아일보",
-    "연합뉴스",
-    "한겨레"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "[박스오피스] '치이카와' 4주 연속 주말 흥행 1위…누적 258만명",
-     "link": "https://www.yna.co.kr/view/AKR20261102036700005"
-    },
-    {
-     "src": "동아일보",
-     "title": "‘암살자(들)’, 6주차에 韓영화 박스오피스 1위 탈환…340만 관객 돌파",
-     "link": "https://sports.donga.com/ent/article/all/20261103/134954800/1"
-    },
-    {
-     "src": "한겨레",
-     "title": "브래드 피트도 못 막은 먼작귀…치이카와, 박스오피스 1위 재탈환",
-     "link": "https://www.hani.co.kr/arti/culture/culture_general/1285135.html"
-    },
-    {
-     "src": "SBS",
-     "title": "'하트 오브 비스트', '치이카와' 제치고 박스오피스 1위",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008827611&plink=RSSLINK&cooper=RSSREADER"
     }
    ]
   },
@@ -1314,35 +1314,35 @@
    ]
   },
   {
-   "kw": "양홍원",
+   "kw": "이혜성",
    "nsrc": 4,
    "srcs": [
     "뉴시스",
-    "동아일보",
+    "세계일보",
     "조선일보",
     "헤럴드경제"
    ],
    "n": 5,
    "headlines": [
     {
-     "src": "동아일보",
-     "title": "양홍원, “현주야 사랑해” 2주 만에 삭제…불륜 의혹 후 달라진 SNS",
-     "link": "https://sports.donga.com/ent/article/all/20261103/134954688/1"
+     "src": "세계일보",
+     "title": "이혜성, 학폭 피해 고백… \"참기 힘들 만큼 괴로워\"",
+     "link": "https://www.segye.com/newsView/20261103502986"
     },
     {
      "src": "헤럴드경제",
-     "title": "‘모텔 논란’ 양홍원, 아내·결혼 사진 ‘전부 삭제’…‘불륜 폭로’ 번복에도 여진 계속",
-     "link": "https://biz.heraldcorp.com/article/10923435"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "‘천호동 모텔’ 결혼 소감 지운 양홍원…“쉽게 끝날 관계 아냐” 의미심장 노래 공유",
-     "link": "https://biz.heraldcorp.com/article/10922516"
+     "title": "이혜성“나도 학폭 피해자였다…고통스럽고 힘들어”",
+     "link": "https://biz.heraldcorp.com/article/10923594"
     },
     {
      "src": "뉴시스",
-     "title": "'불륜설' 양홍원, 모텔 글 지우더니…이번엔 의미심장한 노래 삭제",
-     "link": "https://www.newsis.com/view/NISX20261102_0003851085"
+     "title": "이혜성, 학폭 피해자였다 \"참기 힘들 만큼 괴로워\"",
+     "link": "https://www.newsis.com/view/NISX20261103_0003851882"
+    },
+    {
+     "src": "조선일보",
+     "title": "이혜성, 학폭 피해자였다 \"참기 힘들 만큼 괴로워\"",
+     "link": "https://www.chosun.com/entertainments/2026/11/03/WRUGN5JL2FF4XEBLYXOETUXBI4/"
     }
    ]
   }

@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-03 09:00",
+ "updated": "2026-11-03 10:00",
  "items": [
   {
    "query": "로스앤젤레스 fc 대 미네소타 유나이티드 fc 순위",
@@ -28,6 +28,18 @@
   },
   {
    "query": "주식시장",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 10000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-03",
+   "expires": "2026-11-06"
+  },
+  {
+   "query": "중앙일보",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -208,18 +220,6 @@
   },
   {
    "query": "방은희",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 1000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-03",
-   "expires": "2026-11-06"
-  },
-  {
-   "query": "민호",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -5197,6 +5197,19 @@
    "expires": "2026-11-17"
   },
   {
+   "query": "더존비즈온 해킹 개인정보 유출 어떻게 된 건가요? 급여 계좌·가족 주민번호 확인된 내용 정리 2026년 11월",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 3,
+   "status": "작성",
+   "page": "/issue/douzone-bizon-data-breach/",
+   "registered": "2026-11-03",
+   "expires": "2026-11-17"
+  },
+  {
    "query": "북한 바이낸스 해킹 사건 어떻게 된 건가요? 확인된 내용 정리 2026년 11월",
    "tier": "중기",
    "signal": [
@@ -5462,6 +5475,19 @@
    "expires": "2026-11-17"
   },
   {
+   "query": "차예련 학폭 의혹 폭로글 삭제, 소속사 입장과 경과 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 2,
+   "status": "작성",
+   "page": "/issue/cha-yeryun-bullying-claim-timeline/",
+   "registered": "2026-11-03",
+   "expires": "2026-11-10"
+  },
+  {
    "query": "고속도로 휴게소 가격 언제 내려가나요? 바뀌는 제도 정리",
    "tier": "중기",
    "signal": [
@@ -5473,6 +5499,19 @@
    "page": "/issue/highway-rest-area-price-reform/",
    "registered": "2026-11-02",
    "expires": "2026-11-09"
+  },
+  {
+   "query": "샤이니 민호 마라톤 실격 주장 보도, 주최측 규정과 입장 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 2,
+   "status": "작성",
+   "page": "/issue/minho-marathon-disqualification-claim/",
+   "registered": "2026-11-03",
+   "expires": "2026-11-10"
   },
   {
    "query": "테슬라 FSD 한국 허용되나요? 모델 Y 승인 신청 현황 정리",
@@ -5499,6 +5538,45 @@
    "page": "/issue/an-seyoung-korea-open-2026/",
    "registered": "2026-11-03",
    "expires": "2026-11-10"
+  },
+  {
+   "query": "지민 아버지 카페 폐업 공지 정리 — 지밀레니얼 D-365, 일정과 보도 범위",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 1,
+   "status": "작성",
+   "page": "/issue/jimin-father-cafe-closing/",
+   "registered": "2026-11-03",
+   "expires": "2026-11-10"
+  },
+  {
+   "query": "이혜성 학폭 피해 고백, 발언 내용과 경과 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 1,
+   "status": "작성",
+   "page": "/issue/lee-hyesung-bullying-disclosure/",
+   "registered": "2026-11-03",
+   "expires": "2026-11-10"
+  },
+  {
+   "query": "11월 T 멤버십 혜택 2026 뭐가 있나요? 11월 한정 항목 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 1,
+   "status": "작성",
+   "page": "/issue/t-membership-november-2026/",
+   "registered": "2026-11-03",
+   "expires": "2026-11-17"
   },
   {
    "query": "APBC 2026 야구 대표팀 일정은? 엔트리와 교체 선수 정리",
