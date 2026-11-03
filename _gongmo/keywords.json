@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-03 17:00",
+ "updated": "2026-11-03 18:00",
  "items": [
   {
    "query": "로스앤젤레스 fc 대 미네소타 유나이티드 fc 순위",
@@ -40,18 +40,6 @@
   },
   {
    "query": "주식시장",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 10000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-03",
-   "expires": "2026-11-06"
-  },
-  {
-   "query": "중앙일보",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -135,6 +123,18 @@
    "expires": "2026-11-06"
   },
   {
+   "query": "유언",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-03",
+   "expires": "2026-11-06"
+  },
+  {
    "query": "신의 구슬",
    "tier": "단기",
    "signal": [
@@ -183,7 +183,31 @@
    "expires": "2026-11-06"
   },
   {
-   "query": "유언",
+   "query": "어린이",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-03",
+   "expires": "2026-11-06"
+  },
+  {
+   "query": "우량주",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-03",
+   "expires": "2026-11-06"
+  },
+  {
+   "query": "이효리",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -219,6 +243,18 @@
    "expires": "2026-11-06"
   },
   {
+   "query": "전투기",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-03",
+   "expires": "2026-11-06"
+  },
+  {
    "query": "윤영미",
    "tier": "단기",
    "signal": [
@@ -232,6 +268,18 @@
   },
   {
    "query": "아이 파크 몰 용산 점",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-03",
+   "expires": "2026-11-06"
+  },
+  {
+   "query": "담배",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -520,6 +568,19 @@
    "page": "/issue/retirement-age-extension/",
    "registered": "2026-11-02",
    "expires": "2026-11-06"
+  },
+  {
+   "query": "중앙일보 인수 CJ 다우키움 신세계 컨소시엄 현황, 계약 11월 6일 시한",
+   "tier": "단기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 2,
+   "status": "작성",
+   "page": "/issue/cj-joongang-1103/",
+   "registered": "2026-11-03",
+   "expires": "2026-11-07"
   },
   {
    "query": "전자팔찌",
@@ -5881,6 +5942,19 @@
    "page": "/issue/rescene-mini4-comeback-1103/",
    "registered": "2026-11-03",
    "expires": "2026-11-10"
+  },
+  {
+   "query": "노시환 MLB 포스팅 공시 협상 기간은 언제까지? 일정·자격 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 1,
+   "status": "작성",
+   "page": "/issue/roh-sihwan-mlb-1103/",
+   "registered": "2026-11-03",
+   "expires": "2026-11-08"
   },
   {
    "query": "중대범죄수사청 출범 한 달 현황 정리",
