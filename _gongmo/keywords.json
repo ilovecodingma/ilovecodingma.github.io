@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-04 05:00",
+ "updated": "2026-11-04 06:00",
  "items": [
   {
    "query": "로스앤젤레스 fc 대 미네소타 유나이티드 fc 순위",
@@ -692,6 +692,19 @@
    "expires": "2026-11-07"
   },
   {
+   "query": "전북현대 조호르 다룰 탁짐 2대0 ACLE 4차전 결과",
+   "tier": "단기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 2,
+   "status": "작성",
+   "page": "/issue/jeonbuk-darul-takzim-1103/",
+   "registered": "2026-11-04",
+   "expires": "2026-11-07"
+  },
+  {
    "query": "코스피 11월 2일 마감 2.24% 상승, 인텔 하락 속 투자자별 동향 정리",
    "tier": "단기",
    "signal": [
@@ -768,6 +781,19 @@
    "page": "/issue/katseye-seoul-concert/",
    "registered": "2026-11-02",
    "expires": "2026-11-06"
+  },
+  {
+   "query": "한국시리즈 1차전 kt 삼성 8-7 결과",
+   "tier": "단기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 1,
+   "status": "작성",
+   "page": "/issue/korean-series-game1-1103/",
+   "registered": "2026-11-04",
+   "expires": "2026-11-07"
   },
   {
    "query": "신세경 협박 게시글 작성자 항소심 징역 8개월 법정구속, 사건 경과는?",
