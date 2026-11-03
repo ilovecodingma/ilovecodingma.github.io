@@ -40,11 +40,7 @@
     });
   };
   q.addEventListener('focus', load); q.addEventListener('input', run);
-  document.querySelector('.h2-s .sc').addEventListener('click', function (e) {
-    var b = e.target.closest('button'); if (!b) return;
-    $$('.h2-s .sc button').forEach(function (x) { x.classList.toggle('on', x === b); x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
-    scope = b.getAttribute('data-s'); run();
-  });
+  var hs = document.getElementById('hs'); if (hs) hs.addEventListener('change', function () { scope = hs.value; run(); });
   q.form.addEventListener('submit', function (e) { e.preventDefault(); run(); });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && res.firstChild) { res.textContent = ''; q.focus(); } });
   document.addEventListener('click', function (e) { if (!q.form.contains(e.target)) res.textContent = ''; });

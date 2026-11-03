@@ -282,7 +282,7 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False, noinde
 <meta name="theme-color" content="{TH[3] if TH else '#5b21b6'}"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="오늘 뭐 먹지">
 <link rel="icon" href="/favicon.ico?v=6" sizes="any"><link rel="icon" type="image/png" sizes="48x48" href="/assets/icons/icon-48.png?v=6"><link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/icon-96.png?v=6"><link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/icon-192.png?v=6"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=6"><link rel="manifest" href="/site.webmanifest"><link rel="alternate" type="application/rss+xml" title="루리 줍줍" href="/rss.xml">
 <link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="/assets/gm.css?v=29"><link rel="stylesheet" href="/assets/ds.css?v=15"><link rel="stylesheet" href="/assets/print.css?v=1"><link rel="stylesheet" href="/assets/pro.css?v=5"><script defer src="/assets/print.js?v=1"></script><script src="/assets/img-fallback.js?v=1"></script>{('<link rel="stylesheet" href="/assets/chat/ruri-chat.css?v=9">') if not (TH and TH[0] == 'ai') else ''}{COMM_TAGS}{('<script type="module" src="/assets/chat/ruri-chat.js?v=16"></script>') if not (TH and TH[0] == 'ai') else ''}<link rel="stylesheet" href="/assets/app/shell.css?v=1"><script defer src="/assets/app/app.js?v=4"></script>
+<link rel="stylesheet" href="/assets/gm.css?v=29"><link rel="stylesheet" href="/assets/ds.css?v=15"><link rel="stylesheet" href="/assets/print.css?v=1"><link rel="stylesheet" href="/assets/pro.css?v=8"><script defer src="/assets/print.js?v=1"></script><script src="/assets/img-fallback.js?v=1"></script>{('<link rel="stylesheet" href="/assets/chat/ruri-chat.css?v=9">') if not (TH and TH[0] == 'ai') else ''}{COMM_TAGS}{('<script type="module" src="/assets/chat/ruri-chat.js?v=16"></script>') if not (TH and TH[0] == 'ai') else ''}<link rel="stylesheet" href="/assets/app/shell.css?v=1"><script defer src="/assets/app/app.js?v=4"></script>
 {ldh}
 {TH_CSS}
 {GTAG}
@@ -511,7 +511,7 @@ def elig_short(c):
     if re.search(r'팀\s*(?:구성|단위)|2인\s*이상', e): t.append('팀')
     _gen = bool(re.search(r'일반부|일반인|직장인|일반\s?시민|누구나', e))
     if _gen and '대학생' in t and '청소년' in t:
-        return '부문별로 다름(표 참고)'   # 학교급·연령별 부문이 섞여 있으면 한 단어로 줄이지 않는다
+        return '부문별 상이'   # 학교급·연령별 부문이 섞여 있으면 한 단어로 줄이지 않는다
     if _gen and t and '청소년' in t:
         return '청소년·일반부'
     if t == ['대학생'] and _gen:
@@ -535,11 +535,21 @@ def prize_short(c):
     if re.search(r'경쟁형 상금 아님|상금 없음|상금은 없', c.get('prize') or ''):
         return '상금 없음(제작 지원)' if '창작대가' in (c.get('prize') or '') else '상금 없음'
     if re.search(r'상품|경품|상품권|혼합', c.get('prize') or ''):
-        return '경품 포함(표 참고)'   # 금액으로 환산되지 않는 시상은 금액으로 지어내지 않는다
+        return '경품 포함'   # 금액으로 환산되지 않는 시상은 금액으로 지어내지 않는다
     return '확인 필요'
 
 
+def list_label(c):
+    """목록 분야 이름: 영상 묶음은 실제 제출물(사진/영상)로, 디자인이 대표인데 더 구체적인 분야 태그가 있으면 그쪽으로(2026-11-03 화면 내 모순 정리)."""
+    t = c['tags'][0]
+    if t == '디자인' and len(c['tags']) > 1:
+        t = c['tags'][1]
+    return CQ.label_for(t, c.get('medium') or {'사진': 'photo', '영상': 'video'}.get(c.get('effort') or '', ''))
+
+
 def sub_short(c):
+    if c.get('effort') == '댓글 1줄' and re.search(r'경연|공모전|대회', c.get('title') or ''):
+        return '확인 필요'   # 상금 큰 경연·공모전 제출물이 「댓글 1줄」로 분류된 값은 공고 대조 전이라 단정하지 않는다
     return c.get('effort') or {'photo': '사진', 'video': '영상', 'photo+video': '사진·영상'}.get(c.get('medium', ''), '') or '확인 필요'
 
 
@@ -551,7 +561,7 @@ def card(c):
     meta = (('대상', elig_short(c)), ('제출물', sub_short(c)), ('상금', prize_short(c)), ('마감', ddot(c['end'])[5:]))
     dl = ''.join(f'<div><dt>{k}</dt><dd{" class=nu" if v in ("미확인", "확인 필요") else ""}>{E(v)}</dd></div>' for k, v in meta)
     _vm = {0: '', 1: '☑ 공식 원문 일부 대조', 2: '✅ 핵심 조건 대조', 3: '👤 운영자 직접 검토'}[vstage(c['id'])[0]]
-    sub = ' · '.join(x for x in (_vm, c['org'] if c.get('org') and c['org'] != '공고 참조' else '', CQ.label_for(c['tags'][0], c.get('medium', ''))) if x)
+    sub = ' · '.join(x for x in (_vm, c['org'] if c.get('org') and c['org'] != '공고 참조' else '', list_label(c)) if x)
     return (f'<li><a class="card cc" data-c="{SLUG[c["tags"][0]]}" href="/c/{c["id"]}/"><div class="cb"><div class="top"><h3 class="t">{E(c["title"])}</h3><span class="{cls}">{dd}</span></div>'
             f'<dl class="cm">{dl}</dl><p class="o">{E(sub)}</p></div>{th}</a></li>')
 
@@ -1142,8 +1152,8 @@ def c_insight(c, live):
                     + ''.join(f'<li><b>{E(lab)}</b> — {E(val)}</li>' for lab, val in rows_) + '</ol>')
     else:
         _bt = CQ.link_wording(c['link'], bool(c.get('verified_official')))[0].replace(' →', '')
-        out += (f'<h2>📤 접수하기 전에</h2><p>이 공고는 아직 공식 원문과 대조하지 못했어요. 위 「{E(_bt)}」 버튼이 여는 페이지에서 자격·마감 시각·제출 규격·접수 방법을 먼저 확인하세요.'
-                + (' 이 버튼은 공고를 모아 둔 수집처 페이지라서 주최 측 공식 공고를 따로 찾아야 해요.' if CQ.is_aggregator(c['link']) else '') + '</p>')
+        out += (f'<h2>📤 접수하기 전에</h2><p>공식 원문과 대조 전입니다. 「{E(_bt)}」에서 자격·마감 시각·제출 규격·접수 방법을 먼저 확인하세요.'
+                + (' 수집처 페이지이므로 주최 측 공식 공고를 따로 찾아야 합니다.' if CQ.is_aggregator(c['link']) else '') + '</p>')
     if n >= 4 and not miss and c['id'] in VER:   # 일정 제안은 공식 대조로 조건을 확인한 공고에만
         e = datetime.date.fromisoformat(c['end'])
         d1 = TODAY + datetime.timedelta(days=max(1, n // 3)); d2 = e - datetime.timedelta(days=max(1, n // 5)); d3 = e - datetime.timedelta(days=1)
@@ -1429,8 +1439,7 @@ def detail(c, live):
         rows.append(('보충 정보 출처', '수집 원문 기준(공식 대조 전): ' + str(_sp.get('source_note') or '공고 본문')[:180]))
         if not sub_type:
             sub_type = '수집 원문 기준 기재'
-    rows.append(('확인 단계', stage_row(c['id'])))
-    rows.append(('값의 출처·확인 시점', _src))
+    _hist_html = f'<details class="src-h"><summary>출처·확인 이력</summary><p><b>확인 단계</b> {stage_row(c["id"])}</p><p><b>값의 출처</b> {E(_src)}</p></details>'
     tb = ''.join(f'<tr><th>{k}</th><td{" class=need" if NEED in str(v) else ""}>{E(v)}</td></tr>' for k, v in rows)
     todo = []
     if NEED in deadline_row(c, NEED):
@@ -1466,7 +1475,7 @@ def detail(c, live):
     if _miss:
         _al.append(' · '.join(_miss) + '을(를) 아직 확인하지 못했어요. 공식 공고에서 먼저 확인한 뒤 참가 여부를 정하세요(확인 전에는 준비 일정을 추천하지 않아요).')
     alerts_html = ('<div class="alert-top" role="note"><b>⚠ 확인이 필요해요</b><ul>' + ''.join(f'<li>{E(x)}</li>' for x in _al) + '</ul></div>') if _al else ''
-    chk_all = (('<h2>아직 확인하지 못한 항목</h2><ul class="chk">' + ''.join(f'<li>{E(t)}</li>' for t in todo) + '</ul>') if todo else '') + guide_links_html(c)
+    chk_all = guide_links_html(c)   # 미확인 항목은 위 표의 해당 줄과 상단 알림에 이미 표시한다(반복 제거)
     shot_html = (f'<a class="shot" href="{E(c["link"])}" target="_blank" rel="noopener nofollow">' + (f'<img src="/assets/shots/{c["id"]}.webp" width="640" height="400" alt="{E(c["title"])} {LK_ALT}" loading="lazy">' if c.get('th') else '')
                  + f'<span>{LK_BTN}</span></a>') if c.get('th') else ''
     comm_html = (f'<section id="cm-crew" data-contest="{c["id"]}" data-title="{E(c["title"])}"></section><section id="cm-teams" data-contest="{c["id"]}" data-title="{E(c["title"])}"></section><section id="cm-board" data-contest="{c["id"]}" data-title="{E(c["title"])}"></section>') if COMM_API else ''
@@ -1484,7 +1493,7 @@ def detail(c, live):
 <div class="act-row"><a class="btn" href="{E(c["link"])}" target="_blank" rel="noopener nofollow">{LK_BTN}</a><div class="my-acts" data-id="c:{c["id"]}" data-title="{E(c["title"])}" data-end="{c["end"]}"></div>
 <details class="sh-pop"><summary>공유</summary>{share_bar(c['title'], f'「{c["title"]}」 {ddot(c["end"])[5:]} 마감' + (f' · {c["prize"]}' if c.get('pv') else '') + ' — 자격·제출물 정리')}{comm_banner()}</details></div>
 <p class="note">{LK_NOTE}</p>
-<div class="panel"><h2 class="qs-h">전체 정보</h2><table class="info">{tb}</table></div>
+<div class="panel"><h2 class="qs-h">전체 정보</h2><table class="info">{tb}</table>{_hist_html}</div>
 {chk_all}
 {ver_block(c)}{np_html}{'' if _v.get('conflicts') else c_insight(c, live)}
 {('<section id="finder" data-id="' + c['id'] + '" data-v="' + TODAY.strftime('%m%d') + '"></section><script defer src="/assets/finder/finder.js?v=3"></script>') if c in live else ''}

@@ -366,6 +366,22 @@ def _read_candidates(ctx):
     return out
 
 
+def _dt(t):
+    """화면 표시용 제목: 검색 노출용 긴 제목에서 기준일·연월·보조 설명을 덜어낸다(원제는 상세 페이지와 title 태그에 그대로)."""
+    t = re.sub(r'\s+', ' ', t or '').strip()
+    t = re.sub(r'\s*\((?:\d{1,2}/\d{1,2}|\d{4}-\d{2}-\d{2})\s*기준\)\s*$', '', t)
+    t = re.sub(r'\s*20\d\d년\s*\d{1,2}월\s*$', '', t)
+    t = re.sub(r'\s*확인된 (?:내용|사실)(?: 정리| 총정리)?\s*$', '', t)
+    for sep in (' — ', ': ', ' - '):
+        if sep in t:
+            a = t.split(sep)[0].strip()
+            if len(a) >= 8:
+                t = a
+                break
+    t = re.sub(r'\s*20\d\d\s*$', '', t).strip(' ?·,')
+    return t + ('?' if re.search(r'(?:나요|까요|가요|할까)$', t) else '')
+
+
 def _sec_read(cands, seen):
     pick = []
     for c in cands:
@@ -378,8 +394,8 @@ def _sec_read(cands, seen):
         return ''
     f, rest = pick[0], pick[1:]
     dt = lambda c: f'<time datetime="{c[4]}">{_dstr(c[4])} 업데이트</time>' if c[4] else ''
-    big = (f'<article class="rd-f"><p class="kk">{E(f[1])}</p><h3><a href="{E(f[0])}">{E(f[2])}</a></h3><p class="sm">{E(_first_sentences(f[3], 150))}</p><p class="mt">{dt(f)}</p></article>')
-    li = ''.join(f'<li><p class="kk">{E(c[1])}</p><h3><a href="{E(c[0])}">{E(_short(c[2], 70))}</a></h3><p class="sm">{E(_first_sentences(c[3], 60))}</p><p class="mt">{dt(c)}</p></li>' for c in rest)
+    big = (f'<article class="rd-f"><p class="kk">{E(f[1])}</p><h3><a href="{E(f[0])}">{E(_dt(f[2]))}</a></h3><p class="sm">{E(_first_sentences(f[3], 150))}</p><p class="mt">{dt(f)}</p></article>')
+    li = ''.join(f'<li><p class="kk">{E(c[1])}</p><h3><a href="{E(c[0])}">{E(_short(_dt(c[2]), 60))}</a></h3><p class="sm">{E(_first_sentences(c[3], 60))}</p><p class="mt">{dt(c)}</p></li>' for c in rest)
     return (f'<section class="h2-sec" aria-labelledby="s-read"><div class="h2-hd"><h2 id="s-read">지금 읽을 글</h2><a href="/issue/">이슈 전체 {_ic("arrow", "sv s")}</a></div>'
             f'<div class="rd-g">{big}<ul class="rd-l">{li}</ul></div></section>')
 
@@ -453,7 +469,7 @@ def _sec_guides(seen):
         seen.add(u); n += 1
         m = re.search(r'확인일\s*(\d{4}-\d{2}-\d{2})', g.get('basis') or '')
         dt = f'<time datetime="{m.group(1)}">{_dstr(m.group(1))} 업데이트</time>' if m else ''
-        li += f'<li><p class="kk">{E(g.get("name") or "생활 가이드")}</p><h3><a href="{u}">{E(_short(g.get("h1") or g["title"], 64))}</a></h3><p class="sm">{E(_first_sentences(g.get("lead") or g.get("desc") or "", 70))}</p><p class="mt">{dt}</p></li>'
+        li += f'<li><p class="kk">{E(g.get("name") or "생활 가이드")}</p><h3><a href="{u}">{E(_short(_dt(g.get("h1") or g["title"]), 60))}</a></h3><p class="sm">{E(_first_sentences(g.get("lead") or g.get("desc") or "", 70))}</p><p class="mt">{dt}</p></li>'
         if n == 6:
             break
     if not li:
@@ -493,18 +509,13 @@ def _sec_topics(ctx, seen):
 def home_html(ctx):
     seen = set()
     cands = _read_candidates(ctx)
-    short = [('이슈', '/issue/', 'issue'), ('지원금·청약', '/apply/', 'apply'), ('공모전', '/contest/', 'contest'), ('생활 가이드', '/money/guide/', 'guide'), ('레시피', '/fridge/', 'recipe')]
-    chips = ''.join(f'<li><a href="{u}">{_ic(k)}{E(n)}</a></li>' for n, u, k in short)
-    top = ('<section class="h2-top" aria-labelledby="h2-t"><p class="br">루리 줍줍</p><h1 id="h2-t">지금 궁금한 것, 루리에서 찾아보세요.</h1>'
-           '<p class="lead">이슈부터 지원금·공모전까지, 출처와 함께 정리합니다.</p>'
-           f'<form class="h2-s" role="search" action="/wiki/"><div class="row"><label class="sr" for="hq">검색어</label>{_ic("search", "sv si")}'
-           '<input id="hq" type="search" placeholder="예: 청년 월세, 영상 공모전, 근로장려금" autocomplete="off" enterkeyhint="search"><button type="submit" class="go">검색</button></div>'
-           '<div class="sc" role="group" aria-label="검색 범위"><button type="button" class="on" data-s="" aria-pressed="true">전체</button><button type="button" data-s="c" aria-pressed="false">공모전</button><button type="button" data-s="a" aria-pressed="false">지원금</button><button type="button" data-s="w" aria-pressed="false">가이드</button><button type="button" data-s="r" aria-pressed="false">레시피</button></div>'
-           '<div class="res" id="hr" aria-live="polite"></div></form>'
-           f'<ul class="h2-sc" aria-label="주제 바로가기">{chips}</ul>'
-           '<p class="h2-ai">자료는 AI로 수집·정리하고 출처를 함께 적습니다. <a href="/about/#method">만드는 방식</a></p></section>')
+    top = ('<section class="h2-top" aria-labelledby="h2-t"><h1 id="h2-t">지금 궁금한 것, 루리에서 찾아보세요.</h1>'
+           '<p class="lead">이슈부터 지원금·공모전까지, 출처와 함께 정리합니다. 자료는 AI로 수집·정리합니다. <a href="/about/#method">만드는 방식</a></p>'
+           f'<form class="h2-s" role="search" action="/wiki/"><div class="row"><label class="sr" for="hs">검색 범위</label><select id="hs"><option value="">전체</option><option value="c">공모전</option><option value="a">지원금</option><option value="w">가이드</option><option value="r">레시피</option></select>'
+           '<label class="sr" for="hq">검색어</label><input id="hq" type="search" placeholder="예: 청년 월세, 영상 공모전, 근로장려금" autocomplete="off" enterkeyhint="search"><button type="submit" class="go">검색</button></div>'
+           '<div class="res" id="hr" aria-live="polite"></div></form></section>')
     return (top + _sec_read(cands, seen) + _opp_cards(ctx, seen) + _sec_guides(seen) + _sec_topics(ctx, seen)
-            + '<link rel="stylesheet" href="/assets/home/home2.css?v=3"><script defer src="/assets/home/home2.js?v=1"></script>')
+            + '<link rel="stylesheet" href="/assets/home/home2.css?v=5"><script defer src="/assets/home/home2.js?v=2"></script>')
 
 
 def kwmap_page_html():

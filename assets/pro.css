@@ -61,3 +61,60 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,su
 .hd button,.hd .cm-in{min-height:44px}.hd button{min-width:44px}
 .top-ans{margin:12px 0 18px;padding:14px 16px;border:1px solid var(--bd);border-left:4px solid var(--pri);border-radius:8px;background:var(--card);font-size:15.5px;line-height:1.7;color:var(--tx)}
 .top-ans b{color:var(--pri)}
+
+/* ───── 2차 정리 (2026-11-03): 보라색은 주 행동에만, 모서리 8/12, 헤더 로그인·언어·검색은 중립, 목록은 구분선 표, 상세 버튼은 역할별 묶음 ───── */
+:root{--r1:8px;--r2:12px}
+.hd .cm-in,.hd .cm-acct button{background:transparent!important;color:var(--tx)!important;border:0!important;box-shadow:none!important;font-weight:600;font-size:14px;border-radius:var(--r1)!important}
+.hd .cm-in:hover{text-decoration:underline}
+.hd .hd-s{border:0;background:transparent;color:var(--tx);gap:6px}
+.hd .hd-s:hover{background:var(--bg);color:var(--tx)}
+.hd [class*=lang],.hd .lang-b{border:0!important;background:transparent!important;box-shadow:none!important;border-radius:var(--r1)!important;color:var(--mu)}
+.gn a.on,.gn a[aria-current=page]{color:var(--tx);border-bottom-color:var(--tx)}
+.rc-fab{background:#334155!important}
+.logo b{color:var(--tx)}
+main a:not([class]){color:var(--pri)}
+/* 공모전 목록: 같은 열에 제목·대상·제출물·상금·마감 */
+ul.list{list-style:none;margin:0;padding:0;border-top:2px solid var(--tx)}
+ul.list>li{margin:0;border-bottom:1px solid var(--bd)}
+ul.list .card.cc{display:block;background:transparent;border:0;border-radius:0!important;box-shadow:none!important;padding:14px 4px}
+ul.list .card.cc:hover{background:var(--card)}
+ul.list .cb{display:block}
+ul.list .top{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+ul.list h3.t{margin:0;font-size:17.5px;line-height:1.45;font-weight:700;letter-spacing:-.015em}
+ul.list dl.cm{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px 16px;margin:8px 0 0}
+ul.list dl.cm dt{font-size:13px;color:#64748b;font-weight:500}
+ul.list dl.cm dd{margin:1px 0 0;font-size:15.5px;line-height:1.4;font-weight:600;color:var(--tx)}
+ul.list p.o{margin:6px 0 0;font-size:13.5px;color:var(--mu)}
+ul.list .d{flex:0 0 auto;font-size:13px;font-weight:700;padding:2px 8px;border-radius:6px}
+@media(min-width:1000px){
+ ul.list .card.cc{display:grid;grid-template-columns:minmax(0,1fr) 560px 84px;column-gap:24px;align-items:center}
+ ul.list .cb{display:contents}
+ ul.list .top{display:contents}
+ ul.list h3.t{grid-column:1;grid-row:1;align-self:end}
+ ul.list .d{grid-column:3;grid-row:1 / span 2;justify-self:end}
+ ul.list p.o{grid-column:1;grid-row:2}
+ ul.list dl.cm{grid-column:2;grid-row:1 / span 2;grid-template-columns:150px 80px 150px 70px;margin:0}
+}
+@media(max-width:560px){ul.list dl.cm{grid-template-columns:1fr 1fr}}
+.dh{border-radius:var(--r2)!important;background:var(--card)!important;border:1px solid var(--bd);box-shadow:none!important}
+/* 상세: 공식 공고(주 행동) · 저장 · 공유는 한 줄, 응모 관리는 아래 줄 */
+.act-row{display:flex;flex-wrap:wrap;align-items:center;gap:10px 10px;margin:14px 0 6px}
+.act-row .my-acts{display:contents}
+.act-row .btn{order:1;display:inline-flex;align-items:center;min-height:48px;padding:0 20px;border-radius:var(--r1);background:var(--pri);color:#fff;font-weight:700;font-size:16px;text-decoration:none;white-space:nowrap;box-shadow:none}
+.act-row .ma-fav{order:2}.act-row .sh-pop{order:3;position:relative}
+.act-row::after{content:'';order:4;flex:0 0 100%;height:0}
+.act-row .ma-app{order:5}.act-row .ma-prep{order:6}.act-row .ma-share{order:7}
+.act-row .my-acts>small{order:9;flex:0 0 100%;margin:0;font-size:13.5px;color:var(--mu)}
+.act-row button,.act-row .ma-prep,.act-row .sh-pop summary{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:44px;padding:0 14px;border:1px solid #94a3b8;border-radius:var(--r1);background:var(--card);color:var(--tx);font:inherit;font-size:15px;font-weight:600;white-space:nowrap;text-decoration:none;cursor:pointer;list-style:none}
+.act-row .ma-prep small{font-size:12px;color:var(--mu);font-weight:500}
+.act-row .sh-pop summary::-webkit-details-marker{display:none}
+.act-row .ma-app,.act-row .ma-prep,.act-row .ma-share{border-color:var(--bd);color:var(--mu)}
+.act-row .sh-pop[open] .shr{position:absolute;z-index:30;top:calc(100% + 6px);left:0;min-width:260px;background:var(--card);border:1px solid var(--bd);border-radius:var(--r2);box-shadow:0 12px 32px rgba(15,23,42,.16);padding:12px}
+@media(max-width:560px){.act-row .btn{flex:1 0 100%;justify-content:center}}
+/* 상세 요약·안내 상자 모서리 */
+.qs,.panel,table.info{border-radius:var(--r2)}
+.src-h{margin:10px 0 0;padding:10px 14px;border-top:1px solid var(--bd);font-size:14px;color:var(--mu)}
+.src-h summary{cursor:pointer;font-weight:600;color:var(--tx);min-height:32px}
+.src-h p{margin:6px 0}
+
+main.w:has(ul.list){max-width:1120px}
