@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-03 14:00",
+ "updated": "2026-11-03 16:00",
  "items": [
   {
    "query": "로스앤젤레스 fc 대 미네소타 유나이티드 fc 순위",
@@ -207,6 +207,18 @@
    "expires": "2026-11-06"
   },
   {
+   "query": "유언",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-03",
+   "expires": "2026-11-06"
+  },
+  {
    "query": "중대범죄 수사청",
    "tier": "단기",
    "signal": [
@@ -304,6 +316,30 @@
   },
   {
    "query": "이미숙",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-03",
+   "expires": "2026-11-06"
+  },
+  {
+   "query": "장성규",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-03",
+   "expires": "2026-11-06"
+  },
+  {
+   "query": "차정원",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -4995,6 +5031,19 @@
    "expires": ""
   },
   {
+   "query": "유류분 청구",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/forced-heirship-yuryubun-claim-guide/",
+   "registered": "2026-11-03",
+   "expires": ""
+  },
+  {
    "query": "연차수당 계산기",
    "tier": "장기",
    "signal": [
@@ -5741,6 +5790,32 @@
    "expires": "2026-11-10"
   },
   {
+   "query": "담뱃값 11년째 4,500원 물가 대비 얼마나 달라졌나요? 구성·통계 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 1,
+   "status": "작성",
+   "page": "/issue/cigarette-price-4500-eleven-years/",
+   "registered": "2026-11-03",
+   "expires": "2026-11-17"
+  },
+  {
+   "query": "엘니뇨 2026 전망, 공식 발표와 '1000년래 최강' 엘니뇨 보도 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 1,
+   "status": "작성",
+   "page": "/issue/el-nino-2026-strongest-claim-1103/",
+   "registered": "2026-11-03",
+   "expires": "2026-11-10"
+  },
+  {
    "query": "지민 아버지 카페 폐업 공지 정리 — 지밀레니얼 D-365, 일정과 보도 범위",
    "tier": "중기",
    "signal": [
@@ -5776,6 +5851,32 @@
    "score": 1,
    "status": "작성",
    "page": "/issue/real-estate-lecturer-12-5b-fraud-referral/",
+   "registered": "2026-11-03",
+   "expires": "2026-11-10"
+  },
+  {
+   "query": "리센느 컴백 미니 4집 PULSE 발매일·타이틀곡 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 1,
+   "status": "작성",
+   "page": "/issue/rescene-mini4-comeback-1103/",
+   "registered": "2026-11-03",
+   "expires": "2026-11-10"
+  },
+  {
+   "query": "신지애 통산 우승 기록과 최근 소식",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 1,
+   "status": "작성",
+   "page": "/issue/shin-jiyai-career-wins-1103/",
    "registered": "2026-11-03",
    "expires": "2026-11-10"
   },

@@ -1,15 +1,34 @@
 {
  "date": "2026-11-03",
- "updated": "2026-11-03 13:51",
+ "updated": "2026-11-03 15:50",
  "sites": 12,
- "npost": 2508,
+ "npost": 2522,
  "note": "출처(커뮤니티)별 집계예요. 작성자·연령·성별 정보는 수집하지 않아요. posts 는 이슈별로 뽑힌 일부라 전체 글 수가 아니에요.",
  "sources": [
   {
    "name": "MLB파크",
-   "np": 10,
-   "nc": 766,
+   "np": 12,
+   "nc": 1020,
    "topics": [
+    {
+     "t": "샤이니 민호 서브3 도전 논란",
+     "nsite": 2,
+     "np_here": 2,
+     "nc_here": 251,
+     "issue_np": 3,
+     "issue_nc": 251,
+     "kw": [
+      "민호",
+      "샤이니",
+      "논란",
+      "사과"
+     ],
+     "top_post": {
+      "t": "샤이니 민호 서브3 도전 논란",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611020119828424&m=view",
+      "nc": 217
+     }
+    },
     {
      "t": "마라톤 러너 사망사건 가족도 고소하려나 봐요",
      "nsite": 2,
@@ -18,10 +37,10 @@
      "issue_np": 2,
      "issue_nc": 184,
      "kw": [
-      "사망",
-      "가족",
       "러너",
-      "마라톤"
+      "마라톤",
+      "사망",
+      "가족"
      ],
      "top_post": {
       "t": "마라톤 러너 사망사건 가족도 고소하려나 봐요",
@@ -38,9 +57,9 @@
      "issue_nc": 185,
      "kw": [
       "베트남",
-      "국가",
+      "선언",
       "역할",
-      "하청"
+      "국가"
      ],
      "top_post": {
       "t": "베트남 더이상 하청국가 역할 하지 않을것 선언",
@@ -50,14 +69,14 @@
     },
     {
      "t": "마운자로 위고비 왜 맞는지 모르겠네요",
-     "nsite": 4,
+     "nsite": 3,
      "np_here": 1,
      "nc_here": 114,
-     "issue_np": 4,
-     "issue_nc": 138,
+     "issue_np": 3,
+     "issue_nc": 124,
      "kw": [
-      "마운자",
       "위고비",
+      "마운자",
       "반칙"
      ],
      "top_post": {
@@ -67,34 +86,33 @@
      }
     },
     {
-     "t": "무단횡단 자전거 사고",
+     "t": "올해도 돌아온 어느 아파트의 모집 공고",
      "nsite": 2,
      "np_here": 1,
-     "nc_here": 78,
+     "nc_here": 81,
      "issue_np": 2,
-     "issue_nc": 78,
+     "issue_nc": 81,
      "kw": [
-      "무단",
-      "횡단"
+      "공고",
+      "아파트"
      ],
      "top_post": {
-      "t": "무단횡단 자전거 사고",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611020119827689&m=view",
-      "nc": 78
+      "t": "올해도 돌아온 어느 아파트의 모집 공고",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611020119834310&m=view",
+      "nc": 81
      }
     },
     {
      "t": "마라톤 서울 말고 지방개최 어쩌고 하는거",
-     "nsite": 4,
+     "nsite": 3,
      "np_here": 1,
      "nc_here": 77,
-     "issue_np": 5,
+     "issue_np": 3,
      "issue_nc": 80,
      "kw": [
-      "서울",
       "마라톤",
-      "지방",
-      "도심"
+      "서울",
+      "지방"
      ],
      "top_post": {
       "t": "마라톤 서울 말고 지방개최 어쩌고 하는거",
@@ -135,24 +153,6 @@
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611020119835486&m=view",
       "nc": 32
      }
-    },
-    {
-     "t": "미국중간선거에 돌발변수가 생겼네요",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 27,
-     "issue_np": 3,
-     "issue_nc": 32,
-     "kw": [
-      "선거",
-      "미국",
-      "중간"
-     ],
-     "top_post": {
-      "t": "미국중간선거에 돌발변수가 생겼네요",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611030119839581&m=view",
-      "nc": 27
-     }
     }
    ]
   },
@@ -169,8 +169,8 @@
      "issue_np": 3,
      "issue_nc": 138,
      "kw": [
-      "카르텔",
       "휴게소",
+      "카르텔",
       "고속",
       "도로"
      ],
@@ -205,8 +205,8 @@
      "issue_np": 3,
      "issue_nc": 124,
      "kw": [
-      "호불호",
-      "역대"
+      "역대",
+      "호불호"
      ],
      "top_post": {
       "t": "배라 역대급 호불호였다는 이달의 맛.",
@@ -222,10 +222,10 @@
      "issue_np": 2,
      "issue_nc": 88,
      "kw": [
-      "전방",
-      "사망",
       "하사",
-      "부대"
+      "부대",
+      "전방",
+      "사망"
      ],
      "top_post": {
       "t": "[속보] 철원 전방부대서 하사 외상 입고 발견…의식불명 끝 사망",
@@ -259,9 +259,9 @@
      "issue_nc": 185,
      "kw": [
       "베트남",
-      "국가",
+      "선언",
       "역할",
-      "하청"
+      "국가"
      ],
      "top_post": {
       "t": "이제 더 이상 하청국가 역할은 하지않겠다고 선언한 베트남",
@@ -273,44 +273,42 @@
   },
   {
    "name": "개드립",
-   "np": 13,
-   "nc": 374,
+   "np": 12,
+   "nc": 324,
    "topics": [
     {
-     "t": "'김정은 갈아 마시자' - 해병대 장교 징계",
+     "t": "뜬금없이 전쟁을 준비하자는 스레드 근황ㄷㄷㄷ",
      "nsite": 3,
-     "np_here": 2,
-     "nc_here": 77,
-     "issue_np": 5,
-     "issue_nc": 77,
+     "np_here": 1,
+     "nc_here": 47,
+     "issue_np": 3,
+     "issue_nc": 47,
      "kw": [
-      "장교",
-      "해병대",
-      "김정은",
-      "징계"
+      "전쟁",
+      "스레드"
      ],
      "top_post": {
-      "t": "'김정은 갈아 마시자' - 해병대 장교 징계",
-      "u": "https://www.dogdrip.net/dogdrip/732749752?sort_index=popular&page=1",
-      "nc": 42
+      "t": "뜬금없이 전쟁을 준비하자는 스레드 근황ㄷㄷㄷ",
+      "u": "https://www.dogdrip.net/dogdrip/732920316?sort_index=popular&page=1",
+      "nc": 47
      }
     },
     {
-     "t": "복지가 빠졌다고 항의하는 외노자",
-     "nsite": 2,
-     "np_here": 2,
-     "nc_here": 68,
+     "t": "예금이 가장 위험한 자산",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 42,
      "issue_np": 3,
-     "issue_nc": 69,
+     "issue_nc": 42,
      "kw": [
-      "외노자",
-      "복지",
-      "항의"
+      "예금",
+      "위험",
+      "자산"
      ],
      "top_post": {
-      "t": "개드립간 복지가 빠졌다고 항의하는 외노자 글은 선동구라글",
-      "u": "https://www.dogdrip.net/dogdrip/732953241?sort_index=popular&page=1",
-      "nc": 35
+      "t": "예금이 가장 위험한 자산",
+      "u": "https://www.dogdrip.net/dogdrip/732799327?sort_index=popular&page=1",
+      "nc": 42
      }
     },
     {
@@ -321,8 +319,8 @@
      "issue_np": 3,
      "issue_nc": 124,
      "kw": [
-      "호불호",
-      "역대"
+      "역대",
+      "호불호"
      ],
      "top_post": {
       "t": "베라 역대급 호불호 이달의 맛",
@@ -335,11 +333,11 @@
      "nsite": 3,
      "np_here": 1,
      "nc_here": 39,
-     "issue_np": 4,
+     "issue_np": 3,
      "issue_nc": 40,
      "kw": [
-      "게이밍",
       "PC",
+      "게이밍",
       "아빠"
      ],
      "top_post": {
@@ -356,8 +354,8 @@
      "issue_np": 4,
      "issue_nc": 37,
      "kw": [
-      "소금",
       "주문",
+      "소금",
       "빵집"
      ],
      "top_post": {
@@ -367,28 +365,30 @@
      }
     },
     {
-     "t": "뜬금없이 전쟁을 준비하자는 스레드 근황ㄷㄷㄷ",
+     "t": "\"김정은 갈아 마시자\" 사진 올린 해병대 장교 징계 논란…",
      "nsite": 3,
      "np_here": 1,
-     "nc_here": 34,
-     "issue_np": 3,
-     "issue_nc": 34,
+     "nc_here": 35,
+     "issue_np": 4,
+     "issue_nc": 35,
      "kw": [
-      "전쟁",
-      "스레드"
+      "징계",
+      "김정은",
+      "장교",
+      "해병대"
      ],
      "top_post": {
-      "t": "뜬금없이 전쟁을 준비하자는 스레드 근황ㄷㄷㄷ",
-      "u": "https://www.dogdrip.net/dogdrip/732920316?sort_index=popular&page=1",
-      "nc": 34
+      "t": "'김정은 갈아 마시자' - 해병대 장교 징계",
+      "u": "https://www.dogdrip.net/dogdrip/732766086?sort_index=popular&page=1",
+      "nc": 35
      }
     },
     {
      "t": "JTBC 마라톤 자원봉사 후기",
-     "nsite": 3,
+     "nsite": 4,
      "np_here": 1,
      "nc_here": 31,
-     "issue_np": 4,
+     "issue_np": 5,
      "issue_nc": 61,
      "kw": [
       "마라톤",
@@ -410,8 +410,8 @@
      "issue_np": 3,
      "issue_nc": 28,
      "kw": [
-      "안경",
       "AI",
+      "안경",
       "시험장"
      ],
      "top_post": {
@@ -424,8 +424,8 @@
   },
   {
    "name": "클리앙",
-   "np": 4,
-   "nc": 153,
+   "np": 6,
+   "nc": 238,
    "topics": [
     {
      "t": "[속보] 李 '집값 놀라울 정도로 떨어져..정확한 데이터 알려야'",
@@ -435,14 +435,31 @@
      "issue_np": 2,
      "issue_nc": 105,
      "kw": [
-      "데이터",
+      "정확",
       "집값",
-      "정확"
+      "데이터"
      ],
      "top_post": {
       "t": "[속보] 李 '집값 놀라울 정도로 떨어져..정확한 데이터 알려야'",
       "u": "https://www.clien.net/service/board/park/19286538?od=T33&po=0&category=0&groupCd=clien_all",
       "nc": 105
+     }
+    },
+    {
+     "t": "이재명대통령 장난 아니네요",
+     "nsite": 2,
+     "np_here": 3,
+     "nc_here": 99,
+     "issue_np": 4,
+     "issue_nc": 99,
+     "kw": [
+      "이재명",
+      "대통령"
+     ],
+     "top_post": {
+      "t": "이재명대통령 장난 아니네요",
+      "u": "https://www.clien.net/service/board/park/19286374?od=T33&po=0&category=0&groupCd=clien_all",
+      "nc": 70
      }
     },
     {
@@ -453,8 +470,8 @@
      "issue_np": 3,
      "issue_nc": 138,
      "kw": [
-      "카르텔",
       "휴게소",
+      "카르텔",
       "고속",
       "도로"
      ],
@@ -465,34 +482,16 @@
      }
     },
     {
-     "t": "마운자로 위고비 왜 맞는지 모르겠네요",
+     "t": "미국중간선거에 돌발변수가 생겼네요",
      "nsite": 4,
      "np_here": 1,
-     "nc_here": 14,
-     "issue_np": 4,
-     "issue_nc": 138,
-     "kw": [
-      "마운자",
-      "위고비",
-      "반칙"
-     ],
-     "top_post": {
-      "t": "마운자로 위고비가 향정신성의약품인양 헛소리하는 사람들이 있는데",
-      "u": "https://www.clien.net/service/board/park/19285995?od=T33&po=0&category=0&groupCd=clien_all",
-      "nc": 14
-     }
-    },
-    {
-     "t": "미국중간선거에 돌발변수가 생겼네요",
-     "nsite": 3,
-     "np_here": 1,
      "nc_here": 5,
-     "issue_np": 3,
+     "issue_np": 4,
      "issue_nc": 32,
      "kw": [
+      "중간",
       "선거",
-      "미국",
-      "중간"
+      "미국"
      ],
      "top_post": {
       "t": "이번 미국 중간선거 보면 지난 총선 대구를 보는거 같습니다~?",
@@ -503,33 +502,9 @@
    ]
   },
   {
-   "name": "아카라이브",
-   "np": 1,
-   "nc": 30,
-   "topics": [
-    {
-     "t": "이세계 대한민국",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 30,
-     "issue_np": 4,
-     "issue_nc": 33,
-     "kw": [
-      "대한민국",
-      "세계"
-     ],
-     "top_post": {
-      "t": "이세계 대한민국",
-      "u": "https://arca.live/b/live/187841161?p=1",
-      "nc": 30
-     }
-    }
-   ]
-  },
-  {
    "name": "네이트판",
-   "np": 2,
-   "nc": 30,
+   "np": 5,
+   "nc": 41,
    "topics": [
     {
      "t": "노웨딩했는데 남편 친구들은 축의줬는데 내친구들은 축의금 안줘서 현타와",
@@ -553,7 +528,7 @@
      "nsite": 3,
      "np_here": 1,
      "nc_here": 12,
-     "issue_np": 3,
+     "issue_np": 4,
      "issue_nc": 12,
      "kw": [
       "코스프레",
@@ -564,20 +539,63 @@
       "u": "https://pann.nate.com/talk/375698431",
       "nc": 12
      }
+    },
+    {
+     "t": "네이버페이 52원 (신속히 받으세요)",
+     "nsite": 4,
+     "np_here": 3,
+     "nc_here": 11,
+     "issue_np": 9,
+     "issue_nc": 14,
+     "kw": [
+      "네이버",
+      "페이",
+      "포인트",
+      "현금"
+     ],
+     "top_post": {
+      "t": "ㅈㄱㄴ..⭐ 이거 설문조사 앱인데 설문조사 하고나면 네이버페이 포인트나 현금으로 받을수있음 ...",
+      "u": "https://pann.nate.com/talk/375699583",
+      "nc": 4
+     }
+    }
+   ]
+  },
+  {
+   "name": "아카라이브",
+   "np": 1,
+   "nc": 30,
+   "topics": [
+    {
+     "t": "이세계 대한민국",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 30,
+     "issue_np": 4,
+     "issue_nc": 33,
+     "kw": [
+      "세계",
+      "대한민국"
+     ],
+     "top_post": {
+      "t": "이세계 대한민국",
+      "u": "https://arca.live/b/live/187841161?p=1",
+      "nc": 30
+     }
     }
    ]
   },
   {
    "name": "보배드림",
-   "np": 14,
-   "nc": 25,
+   "np": 12,
+   "nc": 23,
    "topics": [
     {
      "t": "JTBC 마라톤 자원봉사 후기",
-     "nsite": 3,
+     "nsite": 4,
      "np_here": 2,
      "nc_here": 5,
-     "issue_np": 4,
+     "issue_np": 5,
      "issue_nc": 61,
      "kw": [
       "마라톤",
@@ -600,32 +618,13 @@
      "issue_nc": 185,
      "kw": [
       "베트남",
-      "국가",
+      "선언",
       "역할",
-      "하청"
+      "국가"
      ],
      "top_post": {
       "t": "더 이상 하청국가역할은 안하겠다고 선언한 베트남",
       "u": "https://www.bobaedream.co.kr/view?code=best&No=1044642&vdate=",
-      "nc": 3
-     }
-    },
-    {
-     "t": "\"계주 위험하잖아요\"…학부모 항의 한마디에 운동회서 이어달리기' 취소",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 3,
-     "issue_np": 4,
-     "issue_nc": 3,
-     "kw": [
-      "운동회",
-      "취소",
-      "학부모",
-      "계주"
-     ],
-     "top_post": {
-      "t": "운동회에서 계주가 취소된 이유",
-      "u": "https://www.bobaedream.co.kr/view?code=best&No=1044698&vdate=",
       "nc": 3
      }
     },
@@ -637,8 +636,8 @@
      "issue_np": 4,
      "issue_nc": 33,
      "kw": [
-      "대한민국",
-      "세계"
+      "세계",
+      "대한민국"
      ],
      "top_post": {
       "t": "전세계 유일의 대한민국 판사 전관예우 가능한 이유",
@@ -647,21 +646,40 @@
      }
     },
     {
-     "t": "[단독]교도소 7만명 민생지원금 수령…“숙식 제공받는데 맞나” 지적",
+     "t": "철새 도래지에 고양이 급식소 설치한 단체 근황",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 3,
+     "issue_np": 4,
+     "issue_nc": 8,
+     "kw": [
+      "도래지",
+      "철새",
+      "급식소",
+      "고양이"
+     ],
+     "top_post": {
+      "t": "철새 도래지에 고양이 급식소 설치한 단체 근황",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1044915&vdate=",
+      "nc": 3
+     }
+    },
+    {
+     "t": "\"계주 위험하잖아요\"…학부모 항의 한마디에 운동회서 이어달리기' 취소",
      "nsite": 3,
      "np_here": 1,
      "nc_here": 3,
      "issue_np": 3,
      "issue_nc": 3,
      "kw": [
-      "숙식",
-      "제공",
-      "수령",
-      "민생"
+      "계주",
+      "운동회",
+      "취소",
+      "위험"
      ],
      "top_post": {
-      "t": "숙식 제공 교도소 수용자 7만 명도 민생지원금 수령",
-      "u": "https://www.bobaedream.co.kr/view?code=best&No=1044638&vdate=",
+      "t": "운동회에서 계주가 취소된 이유",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1044698&vdate=",
       "nc": 3
      }
     },
@@ -690,8 +708,8 @@
      "issue_np": 4,
      "issue_nc": 37,
      "kw": [
-      "소금",
       "주문",
+      "소금",
       "빵집"
      ],
      "top_post": {
@@ -705,11 +723,11 @@
      "nsite": 3,
      "np_here": 1,
      "nc_here": 1,
-     "issue_np": 4,
+     "issue_np": 3,
      "issue_nc": 40,
      "kw": [
-      "게이밍",
       "PC",
+      "게이밍",
       "아빠"
      ],
      "top_post": {
@@ -722,7 +740,7 @@
   },
   {
    "name": "SLR클럽",
-   "np": 4,
+   "np": 5,
    "nc": 0,
    "topics": [
     {
@@ -734,9 +752,9 @@
      "issue_nc": 185,
      "kw": [
       "베트남",
-      "국가",
+      "선언",
       "역할",
-      "하청"
+      "국가"
      ],
      "top_post": {
       "t": "더 이상 하청국가 역할은 하지않겠다고 선언한 베트남. JPG",
@@ -745,36 +763,35 @@
      }
     },
     {
-     "t": "\"계주 위험하잖아요\"…학부모 항의 한마디에 운동회서 이어달리기' 취소",
-     "nsite": 4,
+     "t": "예금이 가장 위험한 자산",
+     "nsite": 3,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 3,
+     "issue_np": 3,
+     "issue_nc": 42,
      "kw": [
-      "운동회",
-      "취소",
-      "학부모",
-      "계주"
+      "예금",
+      "위험",
+      "자산"
      ],
      "top_post": {
-      "t": "학부모 항의 한마디에 운동회서 이어달리기' 취소",
-      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=676548",
+      "t": "가장 위험한 자산=현금 예금",
+      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=676649",
       "nc": 0
      }
     },
     {
      "t": "\"실격 처리해야\" 샤이니 민호, 마라톤 대회 논란…페이스메이커 조력",
-     "nsite": 4,
+     "nsite": 3,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 4,
+     "issue_np": 3,
      "issue_nc": 0,
      "kw": [
-      "대회",
-      "논란",
-      "실격",
-      "샤이니"
+      "메이커",
+      "민호",
+      "마라톤",
+      "조력"
      ],
      "top_post": {
       "t": "“실격 처리해야” 샤이니 민호, 마라톤 대회 논란…페이스메이커 조력 갑론을박",
@@ -790,13 +807,30 @@
      "issue_np": 2,
      "issue_nc": 105,
      "kw": [
-      "데이터",
+      "정확",
       "집값",
-      "정확"
+      "데이터"
      ],
      "top_post": {
       "t": "李 “집값 놀라울 정도로 떨어져…정확한 데이터 알려야”",
       "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=676643",
+      "nc": 0
+     }
+    },
+    {
+     "t": "이재명대통령 장난 아니네요",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 99,
+     "kw": [
+      "이재명",
+      "대통령"
+     ],
+     "top_post": {
+      "t": "문재인도 그렇고 이재명도 대통령되니...",
+      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=676653",
       "nc": 0
      }
     }
@@ -804,43 +838,25 @@
   },
   {
    "name": "루리웹",
-   "np": 26,
+   "np": 25,
    "nc": 0,
    "topics": [
     {
-     "t": "마운자로 위고비 왜 맞는지 모르겠네요",
+     "t": "JTBC 마라톤 자원봉사 후기",
      "nsite": 4,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 138,
-     "kw": [
-      "마운자",
-      "위고비",
-      "반칙"
-     ],
-     "top_post": {
-      "t": "\"위고비, 마운자로 맞고 살빼는 건 반칙아님?\"",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77251917?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "마라톤 서울 말고 지방개최 어쩌고 하는거",
-     "nsite": 4,
-     "np_here": 2,
-     "nc_here": 0,
      "issue_np": 5,
-     "issue_nc": 80,
+     "issue_nc": 61,
      "kw": [
-      "서울",
       "마라톤",
-      "지방",
-      "도심"
+      "JTBC",
+      "자원",
+      "봉사"
      ],
      "top_post": {
-      "t": "서울 도심 마라톤이 진짜 꿀딴지다",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77242794?m=all&t=now",
+      "t": "JTBC 마라톤이 마음에 안드는 이유",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77242799?m=all&t=now",
       "nc": 0
      }
     },
@@ -852,8 +868,8 @@
      "issue_np": 4,
      "issue_nc": 37,
      "kw": [
-      "소금",
       "주문",
+      "소금",
       "빵집"
      ],
      "top_post": {
@@ -863,77 +879,57 @@
      }
     },
     {
-     "t": "\"계주 위험하잖아요\"…학부모 항의 한마디에 운동회서 이어달리기' 취소",
+     "t": "미국중간선거에 돌발변수가 생겼네요",
      "nsite": 4,
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 4,
-     "issue_nc": 3,
+     "issue_nc": 32,
      "kw": [
-      "운동회",
-      "취소",
-      "학부모",
-      "계주"
+      "중간",
+      "선거",
+      "미국"
      ],
      "top_post": {
-      "t": "'계주 위험하다' 학부모 민원에 운동회 취소...아이들 울상",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77252187?m=all&t=now",
+      "t": "중간선거 패배각을 보고 후달린 미국 부통령...",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77254852?m=all&t=now",
       "nc": 0
      }
     },
     {
-     "t": "\"실격 처리해야\" 샤이니 민호, 마라톤 대회 논란…페이스메이커 조력",
+     "t": "네이버페이 52원 (신속히 받으세요)",
      "nsite": 4,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 0,
+     "issue_np": 9,
+     "issue_nc": 14,
      "kw": [
-      "대회",
-      "논란",
-      "실격",
-      "샤이니"
+      "네이버",
+      "페이",
+      "포인트",
+      "현금"
      ],
      "top_post": {
-      "t": "“실격 처리해야” 샤이니 민호, 마라톤 대회 논란…페이스메이커 조력 ‘갑론을박’",
-      "u": "https://bbs.ruliweb.com/best/board/300446/read/3823413?m=all&t=now",
+      "t": "핫딜 [네이버페이] 일일적립, 클릭 38원, 라이브예고 18원",
+      "u": "https://bbs.ruliweb.com/best/board/1020/read/108626?m=all&t=now",
       "nc": 0
      }
     },
     {
-     "t": "'김정은 갈아 마시자' - 해병대 장교 징계",
+     "t": "마운자로 위고비 왜 맞는지 모르겠네요",
      "nsite": 3,
-     "np_here": 2,
+     "np_here": 1,
      "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 77,
+     "issue_np": 3,
+     "issue_nc": 124,
      "kw": [
-      "장교",
-      "해병대",
-      "김정은",
-      "징계"
+      "위고비",
+      "마운자",
+      "반칙"
      ],
      "top_post": {
-      "t": "'김정은 갈아 마시자' - 해병대 장교 징계",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77245974?m=humor",
-      "nc": 0
-     }
-    },
-    {
-     "t": "\"내가 12살 때, 아빠가 게이밍 PC를 사주셨어.\"",
-     "nsite": 3,
-     "np_here": 2,
-     "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 40,
-     "kw": [
-      "게이밍",
-      "PC",
-      "아빠"
-     ],
-     "top_post": {
-      "t": "PC게이밍 죽이는 선두주자",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77245107?m=all&t=now",
+      "t": "\"위고비, 마운자로 맞고 살빼는 건 반칙아님?\"",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77251917?m=all&t=now",
       "nc": 0
      }
     },
@@ -943,7 +939,7 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 3,
-     "issue_nc": 34,
+     "issue_nc": 47,
      "kw": [
       "전쟁",
       "스레드"
@@ -951,6 +947,42 @@
      "top_post": {
       "t": "전쟁 대비 중인 스레드 어떤 사람들 근황",
       "u": "https://bbs.ruliweb.com/best/board/300143/read/77250704?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "예금이 가장 위험한 자산",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 42,
+     "kw": [
+      "예금",
+      "위험",
+      "자산"
+     ],
+     "top_post": {
+      "t": "코인주식보다 위험한 예금",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77246123?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "\"내가 12살 때, 아빠가 게이밍 PC를 사주셨어.\"",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 40,
+     "kw": [
+      "PC",
+      "게이밍",
+      "아빠"
+     ],
+     "top_post": {
+      "t": "12살때 아빠에게 게이밍 PC를 선물받았던 사람",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77253381?m=all&t=now",
       "nc": 0
      }
     }
@@ -969,8 +1001,8 @@
      "issue_np": 4,
      "issue_nc": 37,
      "kw": [
-      "소금",
       "주문",
+      "소금",
       "빵집"
      ],
      "top_post": {
@@ -980,21 +1012,21 @@
      }
     },
     {
-     "t": "\"실격 처리해야\" 샤이니 민호, 마라톤 대회 논란…페이스메이커 조력",
+     "t": "네이버페이 52원 (신속히 받으세요)",
      "nsite": 4,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 0,
+     "issue_np": 9,
+     "issue_nc": 14,
      "kw": [
-      "대회",
-      "논란",
-      "실격",
-      "샤이니"
+      "네이버",
+      "페이",
+      "포인트",
+      "현금"
      ],
      "top_post": {
-      "t": "“실격 처리해야” 샤이니 민호, 마라톤 대회 논란…페이스메이커 조력 ‘갑론을박’[Oh!쎈 이슈]",
-      "u": "https://theqoo.net/hot/4393480564",
+      "t": "네이버페이10원+3원+3원+4원+1원+1원+1원+1원+랜덤 눌러봐++10원+5원+눌러눌러 보험랜덤+보험랜덤 하나더+라이브미리보고19원받기+1원…",
+      "u": "https://theqoo.net/hot/4394108715",
       "nc": 0
      }
     },
@@ -1006,8 +1038,8 @@
      "issue_np": 3,
      "issue_nc": 138,
      "kw": [
-      "카르텔",
       "휴게소",
+      "카르텔",
       "고속",
       "도로"
      ],
@@ -1025,8 +1057,8 @@
      "issue_np": 3,
      "issue_nc": 124,
      "kw": [
-      "호불호",
-      "역대"
+      "역대",
+      "호불호"
      ],
      "top_post": {
       "t": "배라 역대급 호불호 이달의 맛 (예전맛이라고함)",
@@ -1052,39 +1084,40 @@
      }
     },
     {
-     "t": "네이버페이10원+3원+3원+4원+1원+1원+1원+1원+랜덤 눌러봐++10원+5원+눌러눌러 보험랜덤+보험랜덤…",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 3,
-     "kw": [
-      "페이",
-      "네이버",
-      "랜덤"
-     ],
-     "top_post": {
-      "t": "네이버페이10원+3원+3원+4원+1원+1원+1원+1원+랜덤 눌러봐++10원+5원+눌러눌러 보험랜덤+보험랜덤 하나더+라이브미리보고19원받기+1원…",
-      "u": "https://theqoo.net/hot/4394108715",
-      "nc": 0
-     }
-    },
-    {
-     "t": "[단독]교도소 7만명 민생지원금 수령…“숙식 제공받는데 맞나” 지적",
+     "t": "\"실격 처리해야\" 샤이니 민호, 마라톤 대회 논란…페이스메이커 조력",
      "nsite": 3,
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 3,
-     "issue_nc": 3,
+     "issue_nc": 0,
      "kw": [
-      "숙식",
-      "제공",
-      "수령",
-      "민생"
+      "메이커",
+      "민호",
+      "마라톤",
+      "조력"
      ],
      "top_post": {
-      "t": "[단독]교도소 7만명 민생지원금 수령…“숙식 제공받는데 맞나” 지적",
-      "u": "https://theqoo.net/hot/4393279250",
+      "t": "“실격 처리해야” 샤이니 민호, 마라톤 대회 논란…페이스메이커 조력 ‘갑론을박’[Oh!쎈 이슈]",
+      "u": "https://theqoo.net/hot/4393480564",
+      "nc": 0
+     }
+    },
+    {
+     "t": "샤이니 민호 서브3 도전 논란",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 251,
+     "kw": [
+      "민호",
+      "샤이니",
+      "논란",
+      "사과"
+     ],
+     "top_post": {
+      "t": "[전문] 샤이니 민호, 논란에 입 열었다…\"마라톤 결과 받아들이지 않겠다, 죄송\" 사과",
+      "u": "https://theqoo.net/hot/4394545659",
       "nc": 0
      }
     }
@@ -1092,63 +1125,24 @@
   },
   {
    "name": "디시인사이드",
-   "np": 11,
+   "np": 7,
    "nc": 0,
    "topics": [
     {
-     "t": "\"계주 위험하잖아요\"…학부모 항의 한마디에 운동회서 이어달리기' 취소",
+     "t": "미국중간선거에 돌발변수가 생겼네요",
      "nsite": 4,
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 4,
-     "issue_nc": 3,
+     "issue_nc": 32,
      "kw": [
-      "운동회",
-      "취소",
-      "학부모",
-      "계주"
+      "중간",
+      "선거",
+      "미국"
      ],
      "top_post": {
-      "t": "\"계주 위험하잖아요\"…학부모 항의 한마디에 운동회서 이어달리기' 취소",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=474966&_dcbest=1&page=1",
-      "nc": 0
-     }
-    },
-    {
-     "t": "\"실격 처리해야\" 샤이니 민호, 마라톤 대회 논란…페이스메이커 조력",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 0,
-     "kw": [
-      "대회",
-      "논란",
-      "실격",
-      "샤이니"
-     ],
-     "top_post": {
-      "t": "\"실격 처리해야\" 샤이니 민호, 마라톤 대회 논란…페이스메이커 조력",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=474944&_dcbest=1&page=1",
-      "nc": 0
-     }
-    },
-    {
-     "t": "'김정은 갈아 마시자' - 해병대 장교 징계",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 77,
-     "kw": [
-      "장교",
-      "해병대",
-      "김정은",
-      "징계"
-     ],
-     "top_post": {
-      "t": "\"김정은 갈아 마시자\" 사진 올린 해병대 장교 징계 논란…",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=474975&_dcbest=1&page=1",
+      "t": "낼 미국 중간선거...미국 억만장자세 운명은?",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=475124&_dcbest=1&page=1",
       "nc": 0
      }
     },
@@ -1158,7 +1152,7 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 3,
-     "issue_nc": 34,
+     "issue_nc": 47,
      "kw": [
       "전쟁",
       "스레드"
@@ -1170,20 +1164,21 @@
      }
     },
     {
-     "t": "미국중간선거에 돌발변수가 생겼네요",
+     "t": "\"김정은 갈아 마시자\" 사진 올린 해병대 장교 징계 논란…",
      "nsite": 3,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 32,
+     "issue_np": 4,
+     "issue_nc": 35,
      "kw": [
-      "선거",
-      "미국",
-      "중간"
+      "징계",
+      "김정은",
+      "장교",
+      "해병대"
      ],
      "top_post": {
-      "t": "낼 미국 중간선거...미국 억만장자세 운명은?",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=475124&_dcbest=1&page=1",
+      "t": "\"김정은 갈아 마시자\" 사진 올린 해병대 장교 징계 논란…",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=474975&_dcbest=1&page=1",
       "nc": 0
      }
     },
@@ -1195,8 +1190,8 @@
      "issue_np": 3,
      "issue_nc": 28,
      "kw": [
-      "안경",
       "AI",
+      "안경",
       "시험장"
      ],
      "top_post": {
@@ -1206,21 +1201,21 @@
      }
     },
     {
-     "t": "[단독]교도소 7만명 민생지원금 수령…“숙식 제공받는데 맞나” 지적",
+     "t": "\"계주 위험하잖아요\"…학부모 항의 한마디에 운동회서 이어달리기' 취소",
      "nsite": 3,
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 3,
      "issue_nc": 3,
      "kw": [
-      "숙식",
-      "제공",
-      "수령",
-      "민생"
+      "계주",
+      "운동회",
+      "취소",
+      "위험"
      ],
      "top_post": {
-      "t": "[단독]교도소 7만명 민생지원금 수령…“숙식 제공받는데 맞나” 지적",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=474896&_dcbest=1&page=1",
+      "t": "\"계주 위험하잖아요\"…학부모 항의 한마디에 운동회서 이어달리기' 취소",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=474966&_dcbest=1&page=1",
       "nc": 0
      }
     },
@@ -1240,28 +1235,23 @@
       "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=474918&_dcbest=1&page=1",
       "nc": 0
      }
-    }
-   ]
-  },
-  {
-   "name": "오늘의유머",
-   "np": 1,
-   "nc": 0,
-   "topics": [
+    },
     {
-     "t": "한국 망함은 wwe고 진짜 망해가는 건 일본 같음",
+     "t": "\"실격 처리해야\" 샤이니 민호, 마라톤 대회 논란…페이스메이커 조력",
      "nsite": 3,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 4,
+     "issue_np": 3,
      "issue_nc": 0,
      "kw": [
-      "한국",
-      "일본"
+      "메이커",
+      "민호",
+      "마라톤",
+      "조력"
      ],
      "top_post": {
-      "t": "한국 망함은 wwe고 진짜 망해가는 건 일본 같음",
-      "u": "https://www.todayhumor.co.kr/board/view.php?table=bestofbest&no=484052&s_no=484052&page=1",
+      "t": "\"실격 처리해야\" 샤이니 민호, 마라톤 대회 논란…페이스메이커 조력",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=474944&_dcbest=1&page=1",
       "nc": 0
      }
     }
