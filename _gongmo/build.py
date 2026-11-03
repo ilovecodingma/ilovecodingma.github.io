@@ -675,7 +675,7 @@ def ref_pages():
         ld = {'@context': 'https://schema.org', '@type': 'Article', 'headline': title, 'description': desc, 'inLanguage': 'ko', 'datePublished': '2026-10-30', 'dateModified': '2026-10-30',
               'mainEntityOfPage': SITE + u, 'author': {'@type': 'Organization', 'name': '루리 줍줍 편집', 'url': SITE + '/'}, 'publisher': {'@type': 'Organization', 'name': NAME, 'url': SITE + '/'}}
         _REFS.append((u, title, desc))
-        page(u, title, desc, f'<p class="bc"><a href="/">홈</a> › <a href="/guide/">가이드</a> › 기준 자료</p><h1>{E(title)}</h1><div class="art">{body}</div><link rel="stylesheet" href="/assets/guide/guide.css?v=6">',
+        page(u, title, desc, f'<p class="bc"><a href="/">홈</a> › <a href="/guide/">가이드</a> › 기준 자료</p><h1>{E(title)}</h1><div class="art">{body}</div><link rel="stylesheet" href="/assets/guide/guide.css?v=7">',
              [('루리 줍줍', '/'), ('가이드', '/guide/'), ('기준 자료', u)], ld)
 
 
@@ -3302,7 +3302,7 @@ def article_enhance(path, body):
         i = body.find('<h2')
         body = body[:i] + nav + body[i:] if i >= 0 else body
     body = re.sub(r'(?<!tblw">)(<table\b.*?</table>)', r'<div class="tblw">\1</div>', body, flags=re.S) if '<div class="tblw"' not in body else body
-    return '<div class="art">' + body + '</div><link rel="stylesheet" href="/assets/guide/guide.css?v=6">'
+    return '<div class="art">' + body + '</div><link rel="stylesheet" href="/assets/guide/guide.css?v=7">'
 
 
 def _hl(t):
@@ -3327,6 +3327,55 @@ def _sec_kind(h):
 KIN_STOP = {'방법', '신청', '발급', '조건', '비용', '기준', '총정리', '가이드', '정리', '안내', '대상', '지원', '확인', '수수료'}
 
 
+def _g_stats(g):
+    """핵심 숫자 카드 3~4칸(2026-11-03 마케터): stats=[{label, value, note}]"""
+    L = [x for x in (g.get('stats') or []) if x.get('value') and x.get('label')][:4]
+    if not L:
+        return ''
+    return '<section class="gx-stats" aria-label="핵심 숫자"><ul>' + ''.join(f'<li><span class="gx-l">{E(x["label"])}</span><b class="gx-v">{E(x["value"])}</b>' + (f'<span class="gx-n">{E(x["note"])}</span>' if x.get('note') else '') + '</li>' for x in L) + '</ul></section>'
+
+
+def _g_flow(g):
+    """단계 카드(가로, 모바일 세로) + 화살표: flow=[{title, desc}]"""
+    L = [x for x in (g.get('flow') or []) if x.get('title')]
+    if not L:
+        return ''
+    return '<section class="gx-flow" aria-label="진행 순서"><ol>' + ''.join(f'<li><i>{i}</i><b>{E(x["title"])}</b>' + (f'<span>{E(x["desc"])}</span>' if x.get('desc') else '') + '</li>' for i, x in enumerate(L, 1)) + '</ol></section>'
+
+
+def _g_chart(g):
+    """인라인 SVG 가로 막대 차트: chart={type:'bar', title, unit, labels[], values[]}"""
+    c = g.get('chart')
+    if not c or c.get('type', 'bar') != 'bar' or not c.get('labels') or len(c['labels']) != len(c.get('values') or []):
+        return ''
+    vals = [float(v) for v in c['values']]
+    mx = max(vals) or 1
+    n = len(vals); rh = 34; W = 640; lw = 150; vw = 110; bw = W - lw - vw
+    rows = ''
+    for i, (lb, v) in enumerate(zip(c['labels'], vals)):
+        y = i * rh
+        w = max(2, round(bw * v / mx))
+        rows += (f'<text x="{lw - 10}" y="{y + 21}" text-anchor="end" class="gx-cl">{E(lb)}</text><rect x="{lw}" y="{y + 6}" width="{w}" height="22" rx="3" class="gx-cb"/>'
+                 f'<text x="{lw + w + 8}" y="{y + 22}" class="gx-cv">{E(format(v, ",.0f") if v == int(v) else str(v))}{E(c.get("unit", ""))}</text>')
+    tl = f'<figcaption>{E(c["title"])}</figcaption>' if c.get('title') else ''
+    return f'<figure class="gx-chart">{tl}<svg viewBox="0 0 {W} {n * rh}" role="img" aria-label="{E(c.get("title", "막대 차트"))}">{rows}</svg></figure>'
+
+
+def _g_appendix(g):
+    """첨부: 확인 현황(접힘). appendix=[{status:'ok'|'no'|'diff', text, src?}]"""
+    L = [x for x in (g.get('appendix') or []) if x.get('text')]
+    if not L:
+        return ''
+    M = {'ok': ('✅', '확인', 'ok'), 'no': ('❓', '미확인', 'no'), 'diff': ('⚠️', '출처 불일치', 'diff')}
+    li = ''
+    for x in L:
+        ic, lab, k = M.get(x.get('status'), M['no'])
+        src = x.get('src') or ''
+        srch = (f' <a href="{E(src)}" target="_blank" rel="noopener nofollow">출처</a>' if src.startswith('http') else (f' <small>{E(src)}</small>' if src else ''))
+        li += f'<li class="gx-{k}"><span class="gx-chip">{ic} {lab}</span><span class="gx-t">{E(x["text"])}{srch}</span></li>'
+    return f'<details class="gx-app" id="appendix"><summary>첨부: 확인 현황 <small>확인 {sum(1 for x in L if x.get("status") == "ok")} · 미확인 {sum(1 for x in L if x.get("status") == "no")} · 불일치 {sum(1 for x in L if x.get("status") == "diff")}</small></summary><ul>{li}</ul></details>'
+
+
 def kin_guides():
     """/money/guide/ 생활 돈 가이드 (2026-10-20 홍보 세션 지식iN 반복 질문): 근로장려금·내일배움카드·월세 세액공제 vs 청년월세·퇴직금. 공식 출처로 확인된 칸만 JSON 에 담고 숫자는 표로 분리."""
     if not os.path.exists(KIN_F):
@@ -3347,7 +3396,7 @@ def kin_guides():
             h = f'<h2><span class="gs-n">{n_}</span>{E(sc["h"])}</h2>'
             if sc.get('table'):
                 head, rows = sc['table'][0], sc['table'][1:]
-                h += '<div class="tblw"><table class="xb"><thead><tr>' + ''.join(f'<th>{E(c)}</th>' for c in head) + '</tr></thead><tbody>' + ''.join('<tr>' + ''.join(f'<td>{_hl(E(c))}</td>' for c in r) + '</tr>' for r in rows) + '</tbody></table></div>'
+                h += '<div class="tblw"><table class="xb"><thead><tr>' + ''.join(f'<th>{E(c)}</th>' for c in head) + '</tr></thead><tbody>' + ''.join('<tr>' + ''.join((f'<td class="hl"><b>{E(c[1:])}</b></td>' if isinstance(c, str) and c.startswith('*') else f'<td>{_hl(E(c))}</td>') for c in r) + '</tr>' for r in rows) + '</tbody></table></div>'
             if sc.get('ul'):
                 tag_ = 'ol class="gs-steps"' if re.search(r'절차|순서|단계', sc['h']) else 'ul class="gm-l"'
                 h += f'<{tag_}>' + ''.join(f'<li>{x}</li>' for x in sc['ul']) + f'</{tag_.split()[0]}>'
@@ -3378,13 +3427,14 @@ def kin_guides():
             rel = (rel + ' · ' if rel else '') + '<a href="/diet/">🥗 다이어트 도우미</a> · <a href="/diet/workout/">🏃 운동 사이클 뽑기</a>'
         body = (f'<p class="bc"><a href="/">홈</a> › <a href="/money/guide/">생활 돈 가이드</a> › {E(g["name"])}</p>' + guide_cover(g) + f'<h1 class="g-h1">{E(g["h1"])}</h1>' + g_meta
                 + f'<div class="g-sum"><b>3줄 요약</b>{_sum3(g["lead"])}</div>'
-                + f'<p class="kwn">기준: {E(g["basis"])}' + (' · 원문 바로가기: ' + ' · '.join(f'<a href="{E(u)}" target="_blank" rel="noopener">{E(n)}</a>' for n, u in g['sources'][:4])) + '</p>' + g_toc + _jr_nav(g, JIDX, GN) + _alert(g) + secs + _jr_box(g, JIDX, GN) + '<section class="gs gs-faq" id="faq"><h2><span class="gs-n">?</span>자주 묻는 질문</h2>' + faq + '</section>'
+                + f'<p class="kwn">기준: {E(g["basis"])}' + (' · 원문 바로가기: ' + ' · '.join(f'<a href="{E(u)}" target="_blank" rel="noopener">{E(n)}</a>' for n, u in g['sources'][:4])) + '</p>' + g_toc + _jr_nav(g, JIDX, GN) + _alert(g) + _g_stats(g) + _g_flow(g) + secs + _g_chart(g) + _jr_box(g, JIDX, GN) + '<section class="gs gs-faq" id="faq"><h2><span class="gs-n">?</span>자주 묻는 질문</h2>' + faq + '</section>'
                 + join_cta('apply')
                 + _cite_box(g, f'/money/guide/{g["slug"]}/')
                 + f'<section class="g-src" id="src"><h2>📎 공식 출처</h2><ul class="gm-l">{src}</ul>'
                 + f'<p class="note">공식 안내를 줍줍이 직접 확인해 정리한 내용이고, 기준 금액과 신청 기간은 해마다 바뀔 수 있어요. 신청 전에 위 공식 출처를 꼭 확인하고, 개별 사정은 {E(g["contact"])}에 문의하세요. 법률·세무 상담이 아니에요.</p></section>'
+                + _g_appendix(g)
                 + (f'<aside class="say"><img src="/assets/ruri/o_det_think_s.webp" width="56" height="77" alt="루리" loading="lazy"><div class="bub"><b>루리의 한마디</b><div>{E(g["lury_note"])}</div></div></aside>' if g.get('lury_note') else '')
-                + f'<p class="hm-links">{rel} · <a href="/money/guide/">다른 생활 돈 가이드</a></p>' + GAME_CSS + '<link rel="stylesheet" href="/assets/guide/guide.css?v=6">' + (f'<script defer src="{E(g["script"])}"></script>' if g.get('script') else ''))
+                + f'<p class="hm-links">{rel} · <a href="/money/guide/">다른 생활 돈 가이드</a></p>' + GAME_CSS + '<link rel="stylesheet" href="/assets/guide/guide.css?v=7">' + (f'<script defer src="{E(g["script"])}"></script>' if g.get('script') else ''))
         page(f'/money/guide/{g["slug"]}/', g['title'], g['desc'], body, [('루리 줍줍', '/'), ('머니', '/analyst/'), ('생활 돈 가이드', '/money/guide/'), (g['name'], f'/money/guide/{g["slug"]}/')], ld)
         urls.append(f'/money/guide/{g["slug"]}/')
         cards += f'<li><a class="card" data-c="guide" href="/money/guide/{g["slug"]}/"><span class="ic">{g["icon"]}</span><div class="cb"><h3 class="t">{E(g["name"])}</h3><p class="o">{E(g["h1"])}</p></div></a></li>'
