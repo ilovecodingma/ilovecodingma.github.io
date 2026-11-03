@@ -3496,15 +3496,15 @@ def kin_guides():
                   ('work', '일·직장', '💼', r'minimum-wage|retire|four-insur|nps|unemploy|overtime|severance|parttime|weekly', '최저임금, 4대보험, 퇴직금·퇴직연금, 실업급여, 알바 권리를 모았습니다.')]
     _hub_cards = ''
     for _hk, _hn, _hi, _hp, _hd in GUIDE_HUBS:
-        _hl = [g_ for g_ in G if re.search(_hp, g_['slug'])]
-        if len(_hl) < 3:
+        _hgl = [g_ for g_ in G if re.search(_hp, g_['slug'])]
+        if len(_hgl) < 3:
             continue
-        _hli = ''.join(f'<li><a href="/money/guide/{g_["slug"]}/"><b>{E(g_["h1"])}</b><span>{E(_sum3(g_["lead"]).replace("<li>", "").replace("</li>", " ")[:90] if False else re.sub(r"\s+", " ", g_["lead"])[:90])}…</span></a></li>' for g_ in _hl[::-1])
+        _hli = ''.join(f'<li><a href="/money/guide/{g_["slug"]}/"><b>{E(g_["h1"])}</b><span>{E(_sum3(g_["lead"]).replace("<li>", "").replace("</li>", " ")[:90] if False else re.sub(r"\s+", " ", g_["lead"])[:90])}…</span></a></li>' for g_ in _hgl[::-1])
         _hp_ = f'/money/guide/hub/{_hk}/'
-        page(_hp_, f'{_hn} 가이드 모음 — 공식 출처로 정리한 {len(_hl)}편', _hd, f'<p class="bc"><a href="/">홈</a> › <a href="/money/guide/">생활 돈 가이드</a> › {_hn}</p><h1>{_hi} {_hn} 가이드 모음</h1><p class="cat-st">{E(_hd)} 모두 {len(_hl)}편이며 글마다 확인일과 공식 출처를 적었습니다.</p><ul class="hm-nl">{_hli}</ul>' + GAME_CSS,
+        page(_hp_, f'{_hn} 가이드 모음 — 공식 출처로 정리한 {len(_hgl)}편', _hd, f'<p class="bc"><a href="/">홈</a> › <a href="/money/guide/">생활 돈 가이드</a> › {_hn}</p><h1>{_hi} {_hn} 가이드 모음</h1><p class="cat-st">{E(_hd)} 모두 {len(_hgl)}편이며 글마다 확인일과 공식 출처를 적었습니다.</p><ul class="hm-nl">{_hli}</ul>' + GAME_CSS,
              [('루리 줍줍', '/'), ('머니', '/analyst/'), ('생활 돈 가이드', '/money/guide/'), (_hn, _hp_)])
         urls.append(_hp_)
-        _hub_cards += f'<a class="mg-jc" href="{_hp_}"><i>{_hi}</i><b>{_hn}</b><span>{len(_hl)}편 · {E(_hd[:40])}</span></a>'
+        _hub_cards += f'<a class="mg-jc" href="{_hp_}"><i>{_hi}</i><b>{_hn}</b><span>{len(_hgl)}편 · {E(_hd[:40])}</span></a>'
     _dict = ''.join(f'<li data-q="{E((g["name"] + " " + g["h1"]).lower())}"><a href="/money/guide/{g["slug"]}/"><i>{g["icon"]}</i><b>{E(g["name"])}</b><span>{E(g["h1"])}</span></a></li>' for g in G)
     page('/money/guide/', '생활 돈 가이드 — 근로장려금·국민내일배움카드·월세 세액공제·퇴직금 (공식 출처 정리)', '근로장려금, 국민내일배움카드, 월세 세액공제와 청년월세 지원, 퇴직금을 국세청·고용노동부·고용24 등 공식 안내로 정리했어요. 계산기도 함께.',
          '<p class="bc"><a href="/">홈</a> › 생활 돈 가이드</p><h1 class="mg-h1">생활 돈 가이드</h1><p class="mg-sub">공식 안내로 확인한 것만 정리했어요. 확인하지 못한 항목은 일부러 적지 않았고, 기준일과 출처를 글마다 밝혀요.</p>'
