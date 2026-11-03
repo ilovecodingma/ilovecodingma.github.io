@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-03 16:00",
+ "updated": "2026-11-03 17:00",
  "items": [
   {
    "query": "로스앤젤레스 fc 대 미네소타 유나이티드 fc 순위",
@@ -87,31 +87,7 @@
    "expires": "2026-11-06"
   },
   {
-   "query": "상속세",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 5000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-03",
-   "expires": "2026-11-06"
-  },
-  {
    "query": "지밀 레니 얼",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 5000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-03",
-   "expires": "2026-11-06"
-  },
-  {
-   "query": "전자팔찌",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -544,6 +520,19 @@
    "page": "/issue/retirement-age-extension/",
    "registered": "2026-11-02",
    "expires": "2026-11-06"
+  },
+  {
+   "query": "전자팔찌",
+   "tier": "단기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 2,
+   "status": "작성",
+   "page": "/issue/electronic-anklet-1103/",
+   "registered": "2026-11-03",
+   "expires": "2026-11-07"
   },
   {
    "query": "코스피 11월 2일 마감 2.24% 상승, 인텔 하락 속 투자자별 동향 정리",
@@ -5816,6 +5805,19 @@
    "expires": "2026-11-10"
   },
   {
+   "query": "2026 세제개편안 상속세 변경 정리, 11/03 급상승 원인은 미확인",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 1,
+   "status": "작성",
+   "page": "/issue/inheritance-tax-1103/",
+   "registered": "2026-11-03",
+   "expires": "2026-11-10"
+  },
+  {
    "query": "지민 아버지 카페 폐업 공지 정리 — 지밀레니얼 D-365, 일정과 보도 범위",
    "tier": "중기",
    "signal": [
@@ -5827,6 +5829,19 @@
    "page": "/issue/jimin-father-cafe-closing/",
    "registered": "2026-11-03",
    "expires": "2026-11-10"
+  },
+  {
+   "query": "코스피 5648.79 마감, 외국인 1조5천억 순매도와 AI 우려 보도",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 1,
+   "status": "작성",
+   "page": "/issue/kospi-plunge-deep-1103/",
+   "registered": "2026-11-03",
+   "expires": "2026-11-17"
   },
   {
    "query": "이혜성 학폭 피해 고백, 발언 내용과 경과 정리",
@@ -5864,6 +5879,19 @@
    "score": 1,
    "status": "작성",
    "page": "/issue/rescene-mini4-comeback-1103/",
+   "registered": "2026-11-03",
+   "expires": "2026-11-10"
+  },
+  {
+   "query": "중대범죄수사청 출범 한 달 현황 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 1,
+   "status": "작성",
+   "page": "/issue/serious-crime-agency-1103/",
    "registered": "2026-11-03",
    "expires": "2026-11-10"
   },

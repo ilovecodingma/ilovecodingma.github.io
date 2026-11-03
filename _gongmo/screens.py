@@ -327,12 +327,20 @@ def _dstr(iso):
 
 
 def _first_sentences(t, n):
+    """홈 요약: 도입 문구를 걷어내고 문장이 끝나는 곳까지만(말줄임 없이). 첫 문장이 길면 쉼표 앞에서 끊지 않고 첫 문장 전체를 쓴다."""
     t = re.sub(r'\s+', ' ', t or '').strip()
-    if len(t) <= n:
-        return t
-    cut = t[:n]
-    k = max(cut.rfind('다. '), cut.rfind('요. '), cut.rfind('. '))
-    return cut[:k + 1].strip() if k > n * .5 else cut.rstrip() + '…'
+    t = re.sub(r'^(?:결론부터 말씀드리면|먼저 결론부터 말씀드리면|보도에 따르면|요약하면)[,，]?\s*', '', t)
+    sents = re.findall(r'.+?(?:다|요)\.(?:\s|$)', t) or [t]
+    out = ''
+    for x in sents:
+        x = x.strip()
+        if re.match(r'^이 글은', x):
+            break
+        if not out or len(out) + 1 + len(x) <= n:
+            out = (out + ' ' + x).strip()
+        else:
+            break
+    return out
 
 
 def _read_candidates(ctx):
@@ -412,7 +420,7 @@ def _badge(ctx, cid):
     return ''
 
 
-def _opp_cards(ctx, seen, limit=6):
+def _opp_cards(ctx, seen, limit=4):
     """마감 임박 공모전(4) + 지원금(2): 마감 빠른 순, 핵심 조건이 확인된 것만."""
     T = ctx['today']; Ti = T.isoformat(); out = []
     for c in sorted(ctx['contests'], key=lambda c: c['end']):
@@ -424,7 +432,7 @@ def _opp_cards(ctx, seen, limit=6):
         if d > 21:
             continue
         out.append(('공모전', c['end'], d, c['title'], [('대상', ctx['elig_short'](c)), ('혜택', ctx['prize_short'](c))], f'/c/{c["id"]}/', c.get('link') or '', _badge(ctx, c['id']), c['id']))
-    cs = out[:4]
+    cs = out[:3]
     ap = []
     for a in sorted(ctx['aps'], key=lambda a: a['end']):
         if a.get('always') or a['end'] < Ti or a['id'] in ctx['AP_DUP'] or f'/a/{a["id"]}/' in seen:
@@ -448,14 +456,16 @@ def _opp_cards(ctx, seen, limit=6):
         seen.add(href)
         dd = '오늘 마감' if d == 0 else f'D-{d}'
         urgent = ' u' if d <= 3 else ''
-        dl = ''.join(f'<div><dt>{k}</dt><dd>{E(v)}</dd></div>' for k, v in rows) + f'<div><dt>마감</dt><dd>{_dstr(end)}</dd></div>'
+        tg, pz = rows[0][1], rows[1][1]
         ex = f'<a class="b2" href="{E(ext)}" target="_blank" rel="noopener nofollow">원문 {_ic("ext", "sv s")}</a>' if ext else ''
-        li += (f'<li class="op"><div class="op-t"><span class="kk">{E(typ)}</span><span class="dd{urgent}">{dd}</span></div><h3>{E(_short(title, 60))}</h3><dl>{dl}</dl>'
-               f'<div class="op-b"><a class="b1" href="{E(href)}">상세 보기</a>{ex}{vb}</div></li>')
+        li += (f'<li class="op"><div class="op-m"><h3><a href="{E(href)}">{E(_short(title, 60))}</a></h3><p class="mt"><span class="kk">{E(typ)}</span>{vb}{ex}</p></div>'
+               f'<p class="op-c" data-l="대상">{E(tg)}</p><p class="op-p" data-l="혜택">{E(pz)}</p>'
+               f'<p class="op-d"><b>{_dstr(end)}</b><span class="dd{urgent}">{dd}</span></p></li>')
     if not li:
         return ''
-    return (f'<section class="h2-sec" aria-labelledby="s-opp"><div class="h2-hd"><h2 id="s-opp">마감 임박 공모전·지원 기회</h2><a href="/today/">오늘 마감 {_ic("arrow", "sv s")}</a></div>'
-            f'<ul class="op-g">{li}</ul><p class="h2-nt">마감 빠른 순입니다. 핵심 조건을 확인하지 못한 공고는 제외했고, 신청 전 공식 공고를 다시 확인해 주세요. <a href="/contest/">공모전 전체</a> · <a href="/apply/">지원금·청약 전체</a></p></section>')
+    head = '<li class="op-h" aria-hidden="true"><span>공모전·지원 기회</span><span>참가 대상</span><span>혜택</span><span>마감</span></li>'
+    return (f'<section class="h2-sec" aria-labelledby="s-opp"><div class="h2-hd"><h2 id="s-opp">마감 임박 공모전·지원 기회</h2><a href="/contest/">전체 보기 {_ic("arrow", "sv s")}</a></div>'
+            f'<ul class="op-g">{head}{li}</ul><p class="h2-nt">마감 빠른 순입니다. 핵심 조건을 확인하지 못한 공고는 제외했으니 신청 전 공식 공고를 다시 확인해 주세요. <a href="/apply/">지원금·청약 전체</a> · <a href="/today/">오늘 마감</a></p></section>')
 
 
 def _sec_guides(seen):
@@ -531,7 +541,7 @@ def home_html(ctx):
            '<div class="res" id="hr" aria-live="polite"></div></form></section>')
     ent = [c for c in cands if c[1] == '연예']; cands = [c for c in cands if c[1] != '연예']
     return (top + _sec_read(cands, seen) + _opp_cards(ctx, seen) + _sec_guides(seen) + _sec_ent(ent, seen) + _sec_topics(ctx, seen)
-            + '<link rel="stylesheet" href="/assets/home/home2.css?v=6"><script defer src="/assets/home/home2.js?v=3"></script>')
+            + '<link rel="stylesheet" href="/assets/home/home2.css?v=7"><script defer src="/assets/home/home2.js?v=3"></script>')
 
 
 def kwmap_page_html():
