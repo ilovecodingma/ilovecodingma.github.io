@@ -1,34 +1,15 @@
 {
  "date": "2026-11-03",
- "updated": "2026-11-03 18:50",
+ "updated": "2026-11-03 19:50",
  "sites": 12,
- "npost": 2573,
+ "npost": 2589,
  "note": "출처(커뮤니티)별 집계예요. 작성자·연령·성별 정보는 수집하지 않아요. posts 는 이슈별로 뽑힌 일부라 전체 글 수가 아니에요.",
  "sources": [
   {
    "name": "MLB파크",
-   "np": 13,
-   "nc": 921,
+   "np": 12,
+   "nc": 784,
    "topics": [
-    {
-     "t": "마라톤 러너 사망사건 가족도 고소하려나 봐요",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 184,
-     "issue_np": 2,
-     "issue_nc": 184,
-     "kw": [
-      "러너",
-      "가족",
-      "사망",
-      "마라톤"
-     ],
-     "top_post": {
-      "t": "마라톤 러너 사망사건 가족도 고소하려나 봐요",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611020119833263&m=view",
-      "nc": 184
-     }
-    },
     {
      "t": "마운자로 위고비 왜 맞는지 모르겠네요",
      "nsite": 3,
@@ -37,8 +18,8 @@
      "issue_np": 3,
      "issue_nc": 124,
      "kw": [
-      "위고비",
       "마운자",
+      "위고비",
       "반칙"
      ],
      "top_post": {
@@ -51,9 +32,9 @@
      "t": "장애인불법주차 신고후기",
      "nsite": 2,
      "np_here": 1,
-     "nc_here": 102,
+     "nc_here": 104,
      "issue_np": 2,
-     "issue_nc": 102,
+     "issue_nc": 104,
      "kw": [
       "주차",
       "신고"
@@ -61,16 +42,16 @@
      "top_post": {
       "t": "장애인불법주차 신고후기",
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611030119842170&m=view",
-      "nc": 102
+      "nc": 104
      }
     },
     {
      "t": "샤이니 민호 사과문 떴네요",
      "nsite": 3,
      "np_here": 1,
-     "nc_here": 87,
+     "nc_here": 99,
      "issue_np": 3,
-     "issue_nc": 87,
+     "issue_nc": 99,
      "kw": [
       "민호",
       "샤이니",
@@ -79,7 +60,25 @@
      "top_post": {
       "t": "샤이니 민호 사과문 떴네요",
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611030119845104&m=view",
-      "nc": 87
+      "nc": 99
+     }
+    },
+    {
+     "t": "45살 '슈퍼모델' 김자연, 70살 삼성전자 전 사장 손영권과 스위스서 로맨틱 결혼식",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 83,
+     "issue_np": 2,
+     "issue_nc": 83,
+     "kw": [
+      "사장",
+      "김자연",
+      "삼성전자"
+     ],
+     "top_post": {
+      "t": "45살 '슈퍼모델' 김자연, 70살 삼성전자 전 사장 손영권과 스위스서 로맨틱 결혼식",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611030119845050&m=view",
+      "nc": 83
      }
     },
     {
@@ -100,20 +99,19 @@
      }
     },
     {
-     "t": "45살 '슈퍼모델' 김자연, 70살 삼성전자 전 사장 손영권과 스위스서 로맨틱 결혼식",
+     "t": "다왔다는 ai 드라마",
      "nsite": 2,
      "np_here": 1,
      "nc_here": 73,
      "issue_np": 2,
      "issue_nc": 73,
      "kw": [
-      "사장",
-      "삼성전자",
-      "김자연"
+      "드라마",
+      "AI"
      ],
      "top_post": {
-      "t": "45살 '슈퍼모델' 김자연, 70살 삼성전자 전 사장 손영권과 스위스서 로맨틱 결혼식",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611030119845050&m=view",
+      "t": "다왔다는 ai 드라마",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611030119844675&m=view",
       "nc": 73
      }
     },
@@ -125,8 +123,8 @@
      "issue_np": 2,
      "issue_nc": 72,
      "kw": [
-      "알라",
-      "하느님"
+      "하느님",
+      "알라"
      ],
      "top_post": {
       "t": "이슬람교의 알라신과 기독교의 하느님은 같은 신?",
@@ -135,66 +133,129 @@
      }
     },
     {
-     "t": "다왔다는 ai 드라마",
+     "t": "결혼식 축의금 원래 부모님이 가져가는 것인가",
      "nsite": 2,
      "np_here": 1,
-     "nc_here": 63,
+     "nc_here": 71,
      "issue_np": 2,
-     "issue_nc": 63,
+     "issue_nc": 71,
      "kw": [
-      "AI",
-      "드라마"
+      "부모",
+      "축의금",
+      "원래",
+      "결혼식"
      ],
      "top_post": {
-      "t": "다왔다는 ai 드라마",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611030119844675&m=view",
-      "nc": 63
+      "t": "결혼식 축의금 원래 부모님이 가져가는 것인가",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611030119845011&m=view",
+      "nc": 71
+     }
+    }
+   ]
+  },
+  {
+   "name": "인스티즈",
+   "np": 5,
+   "nc": 351,
+   "topics": [
+    {
+     "t": "노웨딩했는데 남편 친구들은 축의줬는데 내친구들은 축의금 안줘서 현타와",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 89,
+     "issue_np": 2,
+     "issue_nc": 107,
+     "kw": [
+      "친구",
+      "남편"
+     ],
+     "top_post": {
+      "t": "노웨딩했는데 남편 친구들은 축의줬는데 내친구들은 축의금 안줘서 현타와",
+      "u": "https://www.instiz.net/pt/7918697?green=1",
+      "nc": 89
+     }
+    },
+    {
+     "t": "배라 역대급 호불호였다는 이달의 맛.",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 83,
+     "issue_np": 3,
+     "issue_nc": 124,
+     "kw": [
+      "역대",
+      "호불호"
+     ],
+     "top_post": {
+      "t": "배라 역대급 호불호였다는 이달의 맛.",
+      "u": "https://www.instiz.net/pt/7920995?green=1",
+      "nc": 83
+     }
+    },
+    {
+     "t": "[속보] 철원 전방부대서 하사 외상 입고 발견…의식불명 끝 사망",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 80,
+     "issue_np": 2,
+     "issue_nc": 88,
+     "kw": [
+      "속보",
+      "전방",
+      "하사",
+      "사망"
+     ],
+     "top_post": {
+      "t": "[속보] 철원 전방부대서 하사 외상 입고 발견…의식불명 끝 사망",
+      "u": "https://www.instiz.net/pt/7920811?green=1",
+      "nc": 80
+     }
+    },
+    {
+     "t": "\"계주는 위험해서 안 돼\" 학부모 민원에 결국 운동회서 취소",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 72,
+     "issue_np": 4,
+     "issue_nc": 75,
+     "kw": [
+      "운동회",
+      "취소",
+      "계주",
+      "학부모"
+     ],
+     "top_post": {
+      "t": "\"계주는 위험해서 안 돼\" 학부모 민원에 결국 운동회서 취소",
+      "u": "https://www.instiz.net/pt/7921195?green=1",
+      "nc": 72
+     }
+    },
+    {
+     "t": "[속보] 李 '집값 놀라울 정도로 떨어져..정확한 데이터 알려야'",
+     "nsite": 5,
+     "np_here": 1,
+     "nc_here": 27,
+     "issue_np": 5,
+     "issue_nc": 132,
+     "kw": [
+      "정확",
+      "집값",
+      "데이터",
+      "속보"
+     ],
+     "top_post": {
+      "t": "[속보] 李 \"집값 놀라울 정도로 떨어져…정확한 데이터 알려야”",
+      "u": "https://www.instiz.net/pt/7921248?green=1",
+      "nc": 27
      }
     }
    ]
   },
   {
    "name": "개드립",
-   "np": 13,
-   "nc": 377,
+   "np": 11,
+   "nc": 290,
    "topics": [
-    {
-     "t": "김재환PD가 말하는 백**의 모욕죄 고소와 서울 경찰서에서 접수된 모욕죄 건수 비교",
-     "nsite": 2,
-     "np_here": 2,
-     "nc_here": 67,
-     "issue_np": 3,
-     "issue_nc": 67,
-     "kw": [
-      "건수",
-      "모욕",
-      "고소",
-      "서울"
-     ],
-     "top_post": {
-      "t": "김재환PD가 말하는 백**의 모욕죄 고소와 서울 경찰서에서 접수된 모욕죄 건수 비교",
-      "u": "https://www.dogdrip.net/dogdrip/732918748?sort_index=popular&page=1",
-      "nc": 42
-     }
-    },
-    {
-     "t": "갈때까지 간 게임 회사 고소 근황.그리고 팩트 체크",
-     "nsite": 2,
-     "np_here": 2,
-     "nc_here": 66,
-     "issue_np": 3,
-     "issue_nc": 66,
-     "kw": [
-      "회사",
-      "게임",
-      "고소"
-     ],
-     "top_post": {
-      "t": "갈때까지 간 게임 회사 고소 근황.그리고 팩트 체크",
-      "u": "https://www.dogdrip.net/dogdrip/732900197?sort_index=popular&page=1",
-      "nc": 34
-     }
-    },
     {
      "t": "뜬금없이 전쟁을 준비하자는 스레드 근황ㄷㄷㄷ",
      "nsite": 3,
@@ -213,6 +274,24 @@
      }
     },
     {
+     "t": "아프리카의 세네갈에서 국민 기업이 된 한국 기업",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 42,
+     "issue_np": 3,
+     "issue_nc": 45,
+     "kw": [
+      "기업",
+      "한국",
+      "이란"
+     ],
+     "top_post": {
+      "t": "이란을 대놓고 긁어버린 한국 기업",
+      "u": "https://www.dogdrip.net/dogdrip/732993950?sort_index=popular&page=1",
+      "nc": 42
+     }
+    },
+    {
      "t": "배라 역대급 호불호였다는 이달의 맛.",
      "nsite": 3,
      "np_here": 1,
@@ -220,8 +299,8 @@
      "issue_np": 3,
      "issue_nc": 124,
      "kw": [
-      "호불호",
-      "역대"
+      "역대",
+      "호불호"
      ],
      "top_post": {
       "t": "베라 역대급 호불호 이달의 맛",
@@ -301,122 +380,42 @@
       "u": "https://www.dogdrip.net/dogdrip/732822520?sort_index=popular&page=1",
       "nc": 27
      }
-    }
-   ]
-  },
-  {
-   "name": "인스티즈",
-   "np": 5,
-   "nc": 319,
-   "topics": [
-    {
-     "t": "노웨딩했는데 남편 친구들은 축의줬는데 내친구들은 축의금 안줘서 현타와",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 89,
-     "issue_np": 2,
-     "issue_nc": 107,
-     "kw": [
-      "남편",
-      "친구"
-     ],
-     "top_post": {
-      "t": "노웨딩했는데 남편 친구들은 축의줬는데 내친구들은 축의금 안줘서 현타와",
-      "u": "https://www.instiz.net/pt/7918697?green=1",
-      "nc": 89
-     }
     },
     {
-     "t": "배라 역대급 호불호였다는 이달의 맛.",
+     "t": "마운자로 위고비 왜 맞는지 모르겠네요",
      "nsite": 3,
      "np_here": 1,
-     "nc_here": 83,
+     "nc_here": 10,
      "issue_np": 3,
      "issue_nc": 124,
      "kw": [
-      "호불호",
-      "역대"
+      "마운자",
+      "위고비",
+      "반칙"
      ],
      "top_post": {
-      "t": "배라 역대급 호불호였다는 이달의 맛.",
-      "u": "https://www.instiz.net/pt/7920995?green=1",
-      "nc": 83
-     }
-    },
-    {
-     "t": "[속보] 철원 전방부대서 하사 외상 입고 발견…의식불명 끝 사망",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 80,
-     "issue_np": 2,
-     "issue_nc": 88,
-     "kw": [
-      "부대",
-      "속보",
-      "사망",
-      "하사"
-     ],
-     "top_post": {
-      "t": "[속보] 철원 전방부대서 하사 외상 입고 발견…의식불명 끝 사망",
-      "u": "https://www.instiz.net/pt/7920811?green=1",
-      "nc": 80
-     }
-    },
-    {
-     "t": "\"계주는 위험해서 안 돼\" 학부모 민원에 결국 운동회서 취소",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 63,
-     "issue_np": 4,
-     "issue_nc": 66,
-     "kw": [
-      "계주",
-      "운동회",
-      "취소",
-      "학부모"
-     ],
-     "top_post": {
-      "t": "\"계주는 위험해서 안 돼\" 학부모 민원에 결국 운동회서 취소",
-      "u": "https://www.instiz.net/pt/7921195?green=1",
-      "nc": 63
-     }
-    },
-    {
-     "t": "[속보] 李 '집값 놀라울 정도로 떨어져..정확한 데이터 알려야'",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 4,
-     "issue_np": 4,
-     "issue_nc": 109,
-     "kw": [
-      "집값",
-      "정확",
-      "데이터",
-      "속보"
-     ],
-     "top_post": {
-      "t": "[속보] 李 \"집값 놀라울 정도로 떨어져…정확한 데이터 알려야”",
-      "u": "https://www.instiz.net/pt/7921248?green=1",
-      "nc": 4
+      "t": "\"위고비, 마운자로 맞고 살빼는 건 반칙아님?\"",
+      "u": "https://www.dogdrip.net/dogdrip/732892679?sort_index=popular&page=1",
+      "nc": 10
      }
     }
    ]
   },
   {
    "name": "클리앙",
-   "np": 5,
-   "nc": 209,
+   "np": 6,
+   "nc": 223,
    "topics": [
     {
      "t": "[속보] 李 '집값 놀라울 정도로 떨어져..정확한 데이터 알려야'",
-     "nsite": 4,
+     "nsite": 5,
      "np_here": 1,
      "nc_here": 105,
-     "issue_np": 4,
-     "issue_nc": 109,
+     "issue_np": 5,
+     "issue_nc": 132,
      "kw": [
-      "집값",
       "정확",
+      "집값",
       "데이터",
       "속보"
      ],
@@ -434,13 +433,32 @@
      "issue_np": 4,
      "issue_nc": 99,
      "kw": [
-      "이재명",
-      "대통령"
+      "대통령",
+      "이재명"
      ],
      "top_post": {
       "t": "이재명대통령 장난 아니네요",
       "u": "https://www.clien.net/service/board/park/19286374?od=T33&po=0&category=0&groupCd=clien_all",
       "nc": 70
+     }
+    },
+    {
+     "t": "[속보] 법원, 한학자 보석 취소",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 14,
+     "issue_np": 4,
+     "issue_nc": 17,
+     "kw": [
+      "보석",
+      "취소",
+      "법원",
+      "학자"
+     ],
+     "top_post": {
+      "t": "[속보] 법원, 한학자 보석 취소",
+      "u": "https://www.clien.net/service/board/park/19286750?od=T33&po=0&category=0&groupCd=clien_all",
+      "nc": 14
      }
     },
     {
@@ -451,8 +469,8 @@
      "issue_np": 4,
      "issue_nc": 32,
      "kw": [
-      "중간",
       "선거",
+      "중간",
       "미국"
      ],
      "top_post": {
@@ -464,33 +482,9 @@
    ]
   },
   {
-   "name": "아카라이브",
-   "np": 1,
-   "nc": 30,
-   "topics": [
-    {
-     "t": "이세계 대한민국",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 30,
-     "issue_np": 4,
-     "issue_nc": 33,
-     "kw": [
-      "대한민국",
-      "세계"
-     ],
-     "top_post": {
-      "t": "이세계 대한민국",
-      "u": "https://arca.live/b/live/187841161?p=1",
-      "nc": 30
-     }
-    }
-   ]
-  },
-  {
    "name": "네이트판",
-   "np": 4,
-   "nc": 29,
+   "np": 5,
+   "nc": 32,
    "topics": [
     {
      "t": "노웨딩했는데 남편 친구들은 축의줬는데 내친구들은 축의금 안줘서 현타와",
@@ -500,8 +494,8 @@
      "issue_np": 2,
      "issue_nc": 107,
      "kw": [
-      "남편",
-      "친구"
+      "친구",
+      "남편"
      ],
      "top_post": {
       "t": "남편은 내성적인 성격이라 친구가 많지 않아요. 그중에서도 본인이 가장 친하고 가족처럼 생각한...",
@@ -512,15 +506,15 @@
     {
      "t": "네이버페이 52원 (신속히 받으세요)",
      "nsite": 4,
-     "np_here": 3,
-     "nc_here": 11,
-     "issue_np": 11,
-     "issue_nc": 14,
+     "np_here": 4,
+     "nc_here": 14,
+     "issue_np": 13,
+     "issue_nc": 17,
      "kw": [
       "페이",
       "네이버",
-      "포인트",
-      "설문"
+      "설문",
+      "현금"
      ],
      "top_post": {
       "t": "ㅈㄱㄴ..⭐ 이거 설문조사 앱인데 설문조사 하고나면 네이버페이 포인트나 현금으로 받을수있음 ...",
@@ -532,8 +526,8 @@
   },
   {
    "name": "보배드림",
-   "np": 11,
-   "nc": 23,
+   "np": 15,
+   "nc": 31,
    "topics": [
     {
      "t": "JTBC 마라톤 자원봉사 후기",
@@ -560,16 +554,34 @@
      "np_here": 1,
      "nc_here": 3,
      "issue_np": 4,
-     "issue_nc": 66,
+     "issue_nc": 75,
      "kw": [
-      "계주",
       "운동회",
       "취소",
+      "계주",
       "학부모"
      ],
      "top_post": {
       "t": "운동회에서 계주가 취소된 이유",
       "u": "https://www.bobaedream.co.kr/view?code=best&No=1044698&vdate=",
+      "nc": 3
+     }
+    },
+    {
+     "t": "아프리카의 세네갈에서 국민 기업이 된 한국 기업",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 3,
+     "issue_np": 3,
+     "issue_nc": 45,
+     "kw": [
+      "기업",
+      "한국",
+      "이란"
+     ],
+     "top_post": {
+      "t": "이란을 대놓고 긁어버린 한국 기업",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1044959&vdate=",
       "nc": 3
      }
     },
@@ -587,6 +599,25 @@
      "top_post": {
       "t": "전세계 유일의 대한민국 판사 전관예우 가능한 이유",
       "u": "https://www.bobaedream.co.kr/view?code=best&No=1044869&vdate=",
+      "nc": 3
+     }
+    },
+    {
+     "t": "[속보] 법원, 한학자 보석 취소",
+     "nsite": 3,
+     "np_here": 2,
+     "nc_here": 3,
+     "issue_np": 4,
+     "issue_nc": 17,
+     "kw": [
+      "보석",
+      "취소",
+      "법원",
+      "학자"
+     ],
+     "top_post": {
+      "t": "법원, 한학자 통일교 총재 보석 결정 취소",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1045020&vdate=",
       "nc": 3
      }
     },
@@ -618,8 +649,8 @@
      "issue_nc": 3,
      "kw": [
       "가로",
-      "세로",
       "연구소",
+      "세로",
       "은현장"
      ],
      "top_post": {
@@ -636,49 +667,37 @@
      "issue_np": 3,
      "issue_nc": 3,
      "kw": [
-      "영화",
-      "개봉"
+      "개봉",
+      "영화"
      ],
      "top_post": {
       "t": "10월 29일에 개봉한 영화 근황",
       "u": "https://www.bobaedream.co.kr/view?code=best&No=1044918&vdate=",
       "nc": 3
      }
-    },
+    }
+   ]
+  },
+  {
+   "name": "아카라이브",
+   "np": 1,
+   "nc": 30,
+   "topics": [
     {
-     "t": "\"내가 12살 때, 아빠가 게이밍 PC를 사주셨어.\"",
+     "t": "이세계 대한민국",
      "nsite": 3,
      "np_here": 1,
-     "nc_here": 1,
-     "issue_np": 3,
-     "issue_nc": 40,
+     "nc_here": 30,
+     "issue_np": 4,
+     "issue_nc": 33,
      "kw": [
-      "PC",
-      "게이밍",
-      "아빠"
+      "대한민국",
+      "세계"
      ],
      "top_post": {
-      "t": "\"내가 12살 때, 아빠가 게이밍 PC를 사주셨어.\"",
-      "u": "https://www.bobaedream.co.kr/view?code=best&No=1044870&vdate=",
-      "nc": 1
-     }
-    },
-    {
-     "t": "빵집에서 자꾸 소금빵을 주문보다 적게 보냄",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 1,
-     "issue_np": 3,
-     "issue_nc": 37,
-     "kw": [
-      "소금",
-      "주문",
-      "빵집"
-     ],
-     "top_post": {
-      "t": "빵집에서 자꾸 소금빵을 주문보다 적게 보냄",
-      "u": "https://www.bobaedream.co.kr/view?code=best&No=1044873&vdate=",
-      "nc": 1
+      "t": "이세계 대한민국",
+      "u": "https://arca.live/b/live/187841161?p=1",
+      "nc": 30
      }
     }
    ]
@@ -690,14 +709,14 @@
    "topics": [
     {
      "t": "[속보] 李 '집값 놀라울 정도로 떨어져..정확한 데이터 알려야'",
-     "nsite": 4,
+     "nsite": 5,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 109,
+     "issue_np": 5,
+     "issue_nc": 132,
      "kw": [
-      "집값",
       "정확",
+      "집값",
       "데이터",
       "속보"
      ],
@@ -713,7 +732,7 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 3,
-     "issue_nc": 87,
+     "issue_nc": 99,
      "kw": [
       "민호",
       "샤이니",
@@ -733,10 +752,10 @@
      "issue_np": 3,
      "issue_nc": 0,
      "kw": [
-      "민호",
+      "메이커",
       "대회",
-      "실격",
-      "샤이니"
+      "논란",
+      "마라톤"
      ],
      "top_post": {
       "t": "“실격 처리해야” 샤이니 민호, 마라톤 대회 논란…페이스메이커 조력 갑론을박",
@@ -752,8 +771,8 @@
      "issue_np": 4,
      "issue_nc": 99,
      "kw": [
-      "이재명",
-      "대통령"
+      "대통령",
+      "이재명"
      ],
      "top_post": {
       "t": "문재인도 그렇고 이재명도 대통령되니...",
@@ -770,14 +789,14 @@
    "topics": [
     {
      "t": "[속보] 李 '집값 놀라울 정도로 떨어져..정확한 데이터 알려야'",
-     "nsite": 4,
+     "nsite": 5,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 109,
+     "issue_np": 5,
+     "issue_nc": 132,
      "kw": [
-      "집값",
       "정확",
+      "집값",
       "데이터",
       "속보"
      ],
@@ -792,13 +811,13 @@
      "nsite": 4,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 11,
-     "issue_nc": 14,
+     "issue_np": 13,
+     "issue_nc": 17,
      "kw": [
       "페이",
       "네이버",
-      "포인트",
-      "설문"
+      "설문",
+      "현금"
      ],
      "top_post": {
       "t": "네이버페이10원+3원+3원+4원+1원+1원+1원+1원+랜덤 눌러봐++10원+5원+눌러눌러 보험랜덤+보험랜덤 하나더+라이브미리보고19원받기+1원…",
@@ -814,8 +833,8 @@
      "issue_np": 3,
      "issue_nc": 124,
      "kw": [
-      "호불호",
-      "역대"
+      "역대",
+      "호불호"
      ],
      "top_post": {
       "t": "배라 역대급 호불호 이달의 맛 (예전맛이라고함)",
@@ -829,7 +848,7 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 3,
-     "issue_nc": 87,
+     "issue_nc": 99,
      "kw": [
       "민호",
       "샤이니",
@@ -884,10 +903,10 @@
      "issue_np": 3,
      "issue_nc": 0,
      "kw": [
-      "민호",
+      "메이커",
       "대회",
-      "실격",
-      "샤이니"
+      "논란",
+      "마라톤"
      ],
      "top_post": {
       "t": "“실격 처리해야” 샤이니 민호, 마라톤 대회 논란…페이스메이커 조력 ‘갑론을박’[Oh!쎈 이슈]",
@@ -901,11 +920,11 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 2,
-     "issue_nc": 73,
+     "issue_nc": 83,
      "kw": [
       "사장",
-      "삼성전자",
-      "김자연"
+      "김자연",
+      "삼성전자"
      ],
      "top_post": {
       "t": "45세 슈퍼모델 김자연, 70세 삼성전자 전 사장과 결혼",
@@ -917,20 +936,39 @@
   },
   {
    "name": "디시인사이드",
-   "np": 8,
+   "np": 9,
    "nc": 0,
    "topics": [
+    {
+     "t": "[속보] 李 '집값 놀라울 정도로 떨어져..정확한 데이터 알려야'",
+     "nsite": 5,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 5,
+     "issue_nc": 132,
+     "kw": [
+      "정확",
+      "집값",
+      "데이터",
+      "속보"
+     ],
+     "top_post": {
+      "t": "李 \"집값 놀라울 정도로 떨어져..정확한 데이터 알려야\"",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=475237&_dcbest=1&page=1",
+      "nc": 0
+     }
+    },
     {
      "t": "\"계주는 위험해서 안 돼\" 학부모 민원에 결국 운동회서 취소",
      "nsite": 4,
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 4,
-     "issue_nc": 66,
+     "issue_nc": 75,
      "kw": [
-      "계주",
       "운동회",
       "취소",
+      "계주",
       "학부모"
      ],
      "top_post": {
@@ -947,8 +985,8 @@
      "issue_np": 4,
      "issue_nc": 32,
      "kw": [
-      "중간",
       "선거",
+      "중간",
       "미국"
      ],
      "top_post": {
@@ -993,6 +1031,25 @@
      }
     },
     {
+     "t": "[속보] 법원, 한학자 보석 취소",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 17,
+     "kw": [
+      "보석",
+      "취소",
+      "법원",
+      "학자"
+     ],
+     "top_post": {
+      "t": "법원, 통일교 한학자 병보석 전격 취소ㅋㅋㅋ",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=475257&_dcbest=1&page=1",
+      "nc": 0
+     }
+    },
+    {
      "t": "은현장 “가로세로장사연구소 만들겠다”···가세연 스튜디오 ‘점령’",
      "nsite": 3,
      "np_here": 1,
@@ -1001,8 +1058,8 @@
      "issue_nc": 3,
      "kw": [
       "가로",
-      "세로",
       "연구소",
+      "세로",
       "은현장"
      ],
      "top_post": {
@@ -1019,50 +1076,12 @@
      "issue_np": 3,
      "issue_nc": 3,
      "kw": [
-      "영화",
-      "개봉"
+      "개봉",
+      "영화"
      ],
      "top_post": {
       "t": "싱글벙글 2027년 개봉 영화들",
       "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=474918&_dcbest=1&page=1",
-      "nc": 0
-     }
-    },
-    {
-     "t": "\"실격 처리해야\" 샤이니 민호, 마라톤 대회 논란…페이스메이커 조력",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 0,
-     "kw": [
-      "민호",
-      "대회",
-      "실격",
-      "샤이니"
-     ],
-     "top_post": {
-      "t": "\"실격 처리해야\" 샤이니 민호, 마라톤 대회 논란…페이스메이커 조력",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=474944&_dcbest=1&page=1",
-      "nc": 0
-     }
-    },
-    {
-     "t": "김재환PD가 말하는 백**의 모욕죄 고소와 서울 경찰서에서 접수된 모욕죄 건수 비교",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 67,
-     "kw": [
-      "건수",
-      "모욕",
-      "고소",
-      "서울"
-     ],
-     "top_post": {
-      "t": "백종원의 모욕죄 고소와 서울 경찰서에서 접수된 모욕죄 건수 비교",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=475109&_dcbest=1&page=1",
       "nc": 0
      }
     }
@@ -1070,7 +1089,7 @@
   },
   {
    "name": "루리웹",
-   "np": 20,
+   "np": 18,
    "nc": 0,
    "topics": [
     {
@@ -1079,11 +1098,11 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 4,
-     "issue_nc": 66,
+     "issue_nc": 75,
      "kw": [
-      "계주",
       "운동회",
       "취소",
+      "계주",
       "학부모"
      ],
      "top_post": {
@@ -1119,32 +1138,13 @@
      "issue_np": 4,
      "issue_nc": 32,
      "kw": [
-      "중간",
       "선거",
+      "중간",
       "미국"
      ],
      "top_post": {
       "t": "중간선거 패배각을 보고 후달린 미국 부통령...",
       "u": "https://bbs.ruliweb.com/best/board/300143/read/77254852?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "네이버페이 52원 (신속히 받으세요)",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 11,
-     "issue_nc": 14,
-     "kw": [
-      "페이",
-      "네이버",
-      "포인트",
-      "설문"
-     ],
-     "top_post": {
-      "t": "핫딜 [네이버페이] 일일적립, 클릭 100원, 라이브예고 22원",
-      "u": "https://bbs.ruliweb.com/best/board/1020/read/108579?m=all&t=now",
       "nc": 0
      }
     },
@@ -1156,8 +1156,8 @@
      "issue_np": 3,
      "issue_nc": 124,
      "kw": [
-      "위고비",
       "마운자",
+      "위고비",
       "반칙"
      ],
      "top_post": {
@@ -1215,6 +1215,48 @@
      "top_post": {
       "t": "이세계 대한민국",
       "u": "https://bbs.ruliweb.com/best/board/300143/read/77251434?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "92년생 여자친구 소개하는 브래드 피트",
+     "nsite": 3,
+     "np_here": 2,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 32,
+     "kw": [
+      "친구",
+      "여자"
+     ],
+     "top_post": {
+      "t": "여자친구한테 속옷줬다가 혼났디",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77251416?m=all&t=now",
+      "nc": 0
+     }
+    }
+   ]
+  },
+  {
+   "name": "오늘의유머",
+   "np": 1,
+   "nc": 0,
+   "topics": [
+    {
+     "t": "아프리카의 세네갈에서 국민 기업이 된 한국 기업",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 45,
+     "kw": [
+      "기업",
+      "한국",
+      "이란"
+     ],
+     "top_post": {
+      "t": "아프리카의 세네갈에서 국민 기업이 된 한국 기업",
+      "u": "https://www.todayhumor.co.kr/board/view.php?table=bestofbest&no=484086&s_no=484086&page=1",
       "nc": 0
      }
     }

@@ -1,9 +1,21 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-03 19:00",
+ "updated": "2026-11-03 20:00",
  "items": [
   {
    "query": "로스앤젤레스 fc 대 미네소타 유나이티드 fc 순위",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 50000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-03",
+   "expires": "2026-11-06"
+  },
+  {
+   "query": "삼성 대 kt",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -255,6 +267,18 @@
    "expires": "2026-11-06"
   },
   {
+   "query": "전북 대 조호르 fc",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-03",
+   "expires": "2026-11-06"
+  },
+  {
    "query": "윤영미",
    "tier": "단기",
    "signal": [
@@ -364,6 +388,18 @@
   },
   {
    "query": "차정원",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-03",
+   "expires": "2026-11-06"
+  },
+  {
+   "query": "폴더 블 스마트 폰",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -531,7 +567,7 @@
    "expires": "2026-11-06"
   },
   {
-   "query": "폴더 블 스마트 폰",
+   "query": "헤수스 데 미겔",
    "tier": "단기",
    "signal": [
     "구글트렌드"
