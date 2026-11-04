@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-04 18:00",
+ "updated": "2026-11-04 19:00",
  "items": [
   {
    "query": "로스앤젤레스 fc 대 미네소타 유나이티드 fc 순위",
@@ -5654,6 +5654,32 @@
    "expires": "2026-11-09"
   },
   {
+   "query": "전세사기 최소보장제 신청 대상과 방법, 시행 예정 내용 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 5,
+   "status": "작성",
+   "page": "/issue/jeonse-fraud-minimum-guarantee-1104/",
+   "registered": "2026-11-04",
+   "expires": "2026-12-04"
+  },
+  {
+   "query": "2027 수능 당일 준비물·입실·시험 시간표 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 5,
+   "status": "작성",
+   "page": "/issue/suneung-day-checklist-1104/",
+   "registered": "2026-11-04",
+   "expires": "2026-11-25"
+  },
+  {
    "query": "미국 중간선거 결과 상원 하원 어떻게 됐나, AP 호명과 미확정 정리",
    "tier": "중기",
    "signal": [
@@ -5773,6 +5799,19 @@
    "page": "",
    "registered": "2026-11-03",
    "expires": "2026-11-18"
+  },
+  {
+   "query": "문화누리카드 2026 발급 마감 언제까지? 잔액 소멸 12월 31일 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 4,
+   "status": "작성",
+   "page": "/issue/culture-nuri-card-expiry-1104/",
+   "registered": "2026-11-04",
+   "expires": "2026-12-04"
   },
   {
    "query": "지분적립형 공공분양 고양창릉 12월 첫 공급, 25% 입주 조건 정리",
