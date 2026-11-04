@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-04 15:00",
+ "updated": "2026-11-04 16:00",
  "items": [
   {
    "query": "로스앤젤레스 fc 대 미네소타 유나이티드 fc 순위",
@@ -160,6 +160,18 @@
   },
   {
    "query": "국민연금공단",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 5000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-04",
+   "expires": "2026-11-07"
+  },
+  {
+   "query": "김연경",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -352,6 +364,18 @@
   },
   {
    "query": "토트넘 홋스퍼 fc",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-04",
+   "expires": "2026-11-07"
+  },
+  {
+   "query": "박진영",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -724,6 +748,30 @@
   },
   {
    "query": "홈택스 국세청",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-04",
+   "expires": "2026-11-07"
+  },
+  {
+   "query": "양민혁",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-04",
+   "expires": "2026-11-07"
+  },
+  {
+   "query": "이란",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -5654,6 +5702,19 @@
    "expires": "2026-11-18"
   },
   {
+   "query": "지분적립형 공공분양 고양창릉 12월 첫 공급, 25% 입주 조건 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 4,
+   "status": "작성",
+   "page": "/issue/goyang-changneung-share-sale-1104/",
+   "registered": "2026-11-04",
+   "expires": "2026-11-25"
+  },
+  {
    "query": "i-바다패스 편도 1500원 내년부터 달라지나 유류할증료·터미널이용료 본인 부담 정리",
    "tier": "중기",
    "signal": [
@@ -5665,6 +5726,19 @@
    "page": "/issue/i-bada-pass-change-1104/",
    "registered": "2026-11-04",
    "expires": "2026-11-18"
+  },
+  {
+   "query": "2027 수능 스마트안경 반입금지 물품과 부정행위 처리는? 충남교육청 탐지 도입 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 4,
+   "status": "작성",
+   "page": "/issue/suneung-smart-glasses-1104/",
+   "registered": "2026-11-04",
+   "expires": "2026-11-25"
   },
   {
    "query": "2027 1학기 국가장학금 신청기간",

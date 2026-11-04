@@ -190,3 +190,7 @@ details.why p{margin:6px 0 0;line-height:1.65;max-width:720px}
 @media(max-width:700px){.top-blk{padding:14px}}
 main .cs-g a{color:var(--tx)}
 .cs-cats{gap:0}
+
+/* 목록 보조 글씨 키움(2026-11-04) */
+.card.cc .o{font-size:13.5px;color:#475569}
+.stat-line .sl-h{font-size:13px;font-weight:700;color:#334155;margin-right:4px}
