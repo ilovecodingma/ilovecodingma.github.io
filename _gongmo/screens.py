@@ -512,7 +512,7 @@ def _kw_chips(seen, n=10):
 def _sec_topics(ctx, seen):
     tp = [('이슈', '/issue/', 'issue', '요즘 화제를 출처와 함께'), ('지원금·청약', '/apply/', 'apply', '신청 기간·대상 정리'), ('공모전', '/contest/', 'contest', f'진행 중 {ctx["n_contest"]}건'),
           ('생활 가이드', '/money/guide/', 'guide', '세금·일·집·건강'), ('경품 이벤트', '/event/', 'event', '마감순 정리'), ('레시피', '/fridge/', 'recipe', '재료로 찾는 집밥'),
-          ('계산기', '/money/tools/salary/', 'calc', '실수령액·퇴직금'), ('지표·RSI', '/analyst/rsi/', 'chart', '시세 현황표'), ('루리 위키', '/wiki/', 'wiki', '문서로 묶은 정보'), ('게임', '/game/', 'game', '출시·세일 일정')]
+          ('계산기', '/money/tools/salary/', 'calc', '실수령액·퇴직금'), ('지표·RSI', '/analyst/rsi/', 'chart', '시세 현황표'), ('루리 위키', '/wiki/', 'wiki', '문서로 묶은 정보'), ('고민 해결', '/qa/', 'guide', '자주 묻는 질문 400여 개')]
     cards = ''.join(f'<li><a href="{u}">{_ic(ic)}<span><b>{E(n)}</b><small>{E(s)}</small></span></a></li>' for n, u, ic, s in tp)
     ch = _kw_chips(seen)
     mp = f'<a class="mp" href="/map/">{_ic("map", "sv s")}키워드 지도에서 탐색</a>'
