@@ -400,7 +400,7 @@ def _sec_read(cands, seen):
         if c[0] in seen:
             continue
         pick.append(c); seen.add(c[0])
-        if len(pick) == 3:
+        if len(pick) == 5:
             break
     if not pick:
         return ''
