@@ -19,6 +19,29 @@ def session():
     return AuthorizedSession(cr)
 
 
+def resubmit_sitemaps():
+    """푸시 직후 호출: sitemap_index.xml·sitemap.xml 을 서치 콘솔에 다시 제출(2026-11-04 사용자 지시: 글 올릴 때마다 사이트맵 등록). 결과는 ~/.sitemap_submit.json 에 남기고 한 줄 문자열로 돌려준다."""
+    at = datetime.datetime.now(KST).strftime('%Y-%m-%d %H:%M')
+    res = {}
+    try:
+        if not os.path.exists(KEY):
+            raise RuntimeError('키 없음')
+        S = session(); P = urllib.parse.quote(PROP, safe='')
+        for sm in ('sitemap_index.xml', 'sitemap.xml'):
+            r = S.put(f'https://www.googleapis.com/webmasters/v3/sites/{P}/sitemaps/' + urllib.parse.quote(PROP + sm, safe=''), timeout=30)
+            res[sm] = r.status_code
+    except Exception as e:
+        res['error'] = str(e)[:120]
+    ok = bool(res) and 'error' not in res and all(v in (200, 204) for v in res.values())
+    line = f'{at} 서치콘솔 사이트맵 재제출 {"성공" if ok else "실패"} {res}'
+    try:
+        json.dump({'at': at, 'ok': ok, 'res': res}, open(os.path.expanduser('~/.sitemap_submit.json'), 'w', encoding='utf-8'), ensure_ascii=False)
+    except Exception:
+        pass
+    print(line)
+    return line
+
+
 def main(force=False):
     today = datetime.datetime.now(KST).date().isoformat()
     st = json.load(open(STATE, encoding='utf-8')) if os.path.exists(STATE) else {}
@@ -57,6 +80,10 @@ def main(force=False):
     json.dump(st, open(STATE, 'w', encoding='utf-8'))
     print('gsc', st)
     return st
+
+
+if __name__ == '__main__' and '--sitemap' in sys.argv:
+    resubmit_sitemaps(); sys.exit(0)
 
 
 if __name__ == '__main__':

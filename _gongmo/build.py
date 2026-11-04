@@ -6825,5 +6825,10 @@ if __name__ == '__main__':
         if git('diff', '--cached', '--quiet').returncode:
             git('commit', '-q', '-m', f'사이트 데이터 갱신 {datetime.datetime.now():%m-%d %H:%M}')
             git('pull', '-q', '--rebase', '-X', 'ours')
-            if git('push', '-q').returncode == 0 and NEW_URLS:
-                indexnow([SITE + '/'] + NEW_URLS)
+            if git('push', '-q').returncode == 0:
+                if NEW_URLS:
+                    indexnow([SITE + '/'] + NEW_URLS)
+                try:   # 2026-11-04: 글이 올라갈 때마다 사이트맵도 서치 콘솔에 다시 등록
+                    import gsc as _gsc; _gsc.resubmit_sitemaps()
+                except Exception as _e:
+                    print('sitemap resubmit fail', _e)

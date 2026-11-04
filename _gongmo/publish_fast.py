@@ -178,9 +178,15 @@ def main():
             run(['git', 'commit', '-q', '-m', f'빠른 게시({kind}): {c.get("h1", sl)[:40]} ({sl})\n\nCo-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>', '--'] + paths)
         pr = run(['git', 'push', 'origin', 'HEAD:main'])
         pushed = pr.returncode == 0
+        sm_line = None
+        if pushed:
+            try:   # 2026-11-04: 푸시 직후 서치 콘솔 사이트맵 재제출
+                sys.path.insert(0, HERE); import gsc as _gsc; sm_line = _gsc.resubmit_sitemaps()
+            except Exception as _e:
+                sm_line = f'사이트맵 재제출 실패 {_e}'
         if not pushed:
             out({'ok': False, 'errors': ['푸시 실패(페이지는 만들었고 커밋됨, 잠시 뒤 다시 실행): ' + (pr.stderr or '')[-160:]]}, 1)
-    out({'ok': True, 'kind': kind, 'urls': [SITE + p_, SITE + hub], 'indexnow': sent, 'pushed': pushed, 'sitemap_updated': not building,
+    out({'ok': True, 'kind': kind, 'urls': [SITE + p_, SITE + hub], 'indexnow': sent, 'pushed': pushed, 'gsc_sitemap': locals().get('sm_line'), 'sitemap_updated': not building,
          'warnings': warn, 'live_in': '푸시 후 약 2~3분(GitHub Pages 배포)'})
 
 
