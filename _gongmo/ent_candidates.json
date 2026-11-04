@@ -1,5 +1,5 @@
 {
- "at": "2026-11-04 19:07",
+ "at": "2026-11-04 20:30",
  "nitems": 535,
  "cands": [
   {
@@ -318,40 +318,6 @@
    ]
   },
   {
-   "kw": "눈물",
-   "nsrc": 5,
-   "srcs": [
-    "동아일보",
-    "세계일보",
-    "연합뉴스",
-    "조선일보",
-    "한국경제"
-   ],
-   "n": 9,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "[쇼츠] \"김 회장님, 부디 편히 쉬세요\"…'국민 아버지' 눈물 속 작별",
-     "link": "https://www.yna.co.kr/view/AKR20261102153800704"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "\"어린 나무 지켜주던 큰 나무 최불암\"…눈물 속 마지막 배웅(종합2보)",
-     "link": "https://www.yna.co.kr/view/AKR20261102023252005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "\"김회장님 잘가세요\"…\"연기 외길 걸은 벗 최불암\" 눈물 속 작별(종합)",
-     "link": "https://www.yna.co.kr/view/AKR20261102023251005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "'국민 아버지' 최불암 영면…아내 김민자 연신 눈물 흘려",
-     "link": "https://www.yna.co.kr/view/AKR20261102023200005"
-    }
-   ]
-  },
-  {
    "kw": "연기",
    "nsrc": 5,
    "srcs": [
@@ -420,7 +386,41 @@
    ]
   },
   {
-   "kw": "전지윤",
+   "kw": "고백",
+   "nsrc": 5,
+   "srcs": [
+    "뉴시스",
+    "세계일보",
+    "조선일보",
+    "한국경제",
+    "헤럴드경제"
+   ],
+   "n": 7,
+   "headlines": [
+    {
+     "src": "한국경제",
+     "title": "\"통장 압류, 수중엔 1000원\"…JBJ 출신 켄타, 4억 빚 고백",
+     "link": "https://www.hankyung.com/article/202610280689H"
+    },
+    {
+     "src": "세계일보",
+     "title": "최수종, 하희라 네 차례 유산 고백 “해줄 수 있는 건 다 해주고 싶다”",
+     "link": "https://www.segye.com/newsView/20261104502623"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "송준근 “7살 때 형 잃어…어머니 우울증에 시달려” 가슴 아픈 가족사 고백",
+     "link": "https://biz.heraldcorp.com/article/10923568"
+    },
+    {
+     "src": "뉴시스",
+     "title": "최수종, 하희라 네 차례 유산 고백…\"최대한 다 해주려 해\"",
+     "link": "https://www.newsis.com/view/NISX20261103_0003853545"
+    }
+   ]
+  },
+  {
+   "kw": "포미닛",
    "nsrc": 5,
    "srcs": [
     "뉴시스",
@@ -454,7 +454,7 @@
    ]
   },
   {
-   "kw": "포미닛",
+   "kw": "전지윤",
    "nsrc": 5,
    "srcs": [
     "뉴시스",
@@ -590,6 +590,73 @@
    ]
   },
   {
+   "kw": "이유",
+   "nsrc": 5,
+   "srcs": [
+    "뉴시스",
+    "세계일보",
+    "조선일보",
+    "한국경제",
+    "헤럴드경제"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "한국경제",
+     "title": "도파민의 시대…김종관표 '작고 사소한' 영화의 존재 이유 [씬터뷰]",
+     "link": "https://www.hankyung.com/article/202611045069H"
+    },
+    {
+     "src": "세계일보",
+     "title": "“우리가 먼저 쳐서 이긴 전쟁”… ‘문무’ 작가가 나당전쟁 택한 이유",
+     "link": "https://www.segye.com/newsView/20261104504427"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "박세리, 은퇴 후 방송하는 이유…직원 월급 주기 위해?",
+     "link": "https://biz.heraldcorp.com/article/10924113"
+    },
+    {
+     "src": "뉴시스",
+     "title": "최수종, 이만기에게 반말한 이유 밝혔다",
+     "link": "https://www.newsis.com/view/NISX20261103_0003853541"
+    }
+   ]
+  },
+  {
+   "kw": "눈물",
+   "nsrc": 4,
+   "srcs": [
+    "동아일보",
+    "세계일보",
+    "연합뉴스",
+    "한국경제"
+   ],
+   "n": 8,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "[쇼츠] \"김 회장님, 부디 편히 쉬세요\"…'국민 아버지' 눈물 속 작별",
+     "link": "https://www.yna.co.kr/view/AKR20261102153800704"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "\"어린 나무 지켜주던 큰 나무 최불암\"…눈물 속 마지막 배웅(종합2보)",
+     "link": "https://www.yna.co.kr/view/AKR20261102023252005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "\"김회장님 잘가세요\"…\"연기 외길 걸은 벗 최불암\" 눈물 속 작별(종합)",
+     "link": "https://www.yna.co.kr/view/AKR20261102023251005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "'국민 아버지' 최불암 영면…아내 김민자 연신 눈물 흘려",
+     "link": "https://www.yna.co.kr/view/AKR20261102023200005"
+    }
+   ]
+  },
+  {
    "kw": "데뷔",
    "nsrc": 4,
    "srcs": [
@@ -685,6 +752,39 @@
      "src": "세계일보",
      "title": "‘역주행 반짝 아냐?→아니네’… 리센느 신곡 차트 ‘올킬’, 음악으로 ‘국민 걸그룹’ 증명했다",
      "link": "https://www.segye.com/newsView/20261104512943"
+    }
+   ]
+  },
+  {
+   "kw": "감사",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "연합뉴스",
+    "한국경제",
+    "헤럴드경제"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "KBS 이사회, 제23대 감사 공모…12일까지 접수",
+     "link": "https://www.yna.co.kr/view/AKR20261104165000005"
+    },
+    {
+     "src": "한국경제",
+     "title": "아일릿, 여경 의상 논란에 \"깜짝 놀라…어떤 관심이든 감사\"",
+     "link": "https://www.hankyung.com/article/202610265795H"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "신현준, 故최불암 빈소 지킨 김혜수에 “마음 아름다운 배우…이런 동료 있어 감사”",
+     "link": "https://biz.heraldcorp.com/article/10923251"
+    },
+    {
+     "src": "뉴시스",
+     "title": "KBS 이사회, 신임 감사 공모…5일부터 접수",
+     "link": "https://www.newsis.com/view/NISX20261104_0003855292"
     }
    ]
   },
@@ -887,35 +987,35 @@
    ]
   },
   {
-   "kw": "감사",
+   "kw": "유산",
    "nsrc": 4,
    "srcs": [
     "뉴시스",
-    "연합뉴스",
-    "한국경제",
-    "헤럴드경제"
+    "세계일보",
+    "조선일보",
+    "한겨레"
    ],
-   "n": 4,
+   "n": 5,
    "headlines": [
     {
-     "src": "연합뉴스",
-     "title": "KBS 이사회, 제23대 감사 공모…12일까지 접수",
-     "link": "https://www.yna.co.kr/view/AKR20261104165000005"
+     "src": "한겨레",
+     "title": "태권도, 유네스코 유산 남북 ‘공동 등재’ 사실상 무산…북한 단독 유력",
+     "link": "https://www.hani.co.kr/arti/culture/culture_general/1285334.html"
     },
     {
-     "src": "한국경제",
-     "title": "아일릿, 여경 의상 논란에 \"깜짝 놀라…어떤 관심이든 감사\"",
-     "link": "https://www.hankyung.com/article/202610265795H"
+     "src": "한겨레",
+     "title": "[포토] “희망의 유산” 남기고 떠난 ‘국민 배우’ 최불암, 영면에 들다",
+     "link": "https://www.hani.co.kr/arti/culture/entertainment/1285329.html"
     },
     {
-     "src": "헤럴드경제",
-     "title": "신현준, 故최불암 빈소 지킨 김혜수에 “마음 아름다운 배우…이런 동료 있어 감사”",
-     "link": "https://biz.heraldcorp.com/article/10923251"
+     "src": "세계일보",
+     "title": "최수종, 하희라 네 차례 유산 고백 “해줄 수 있는 건 다 해주고 싶다”",
+     "link": "https://www.segye.com/newsView/20261104502623"
     },
     {
      "src": "뉴시스",
-     "title": "채시라, 故최불암 이어 故정하연 작가 추모…\"함께해 배움이었고 감사\"",
-     "link": "https://www.newsis.com/view/NISX20261104_0003853669"
+     "title": "최수종, 하희라 네 차례 유산 고백…\"최대한 다 해주려 해\"",
+     "link": "https://www.newsis.com/view/NISX20261103_0003853545"
     }
    ]
   },
@@ -986,39 +1086,6 @@
    ]
   },
   {
-   "kw": "사회",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "연합뉴스",
-    "조선일보",
-    "한겨레"
-   ],
-   "n": 4,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "\"사람에게 필요한 것은 사람\"…사회 그늘 돌아보라던 최불암(종합)",
-     "link": "https://www.yna.co.kr/view/AKR20261030002151005"
-    },
-    {
-     "src": "한겨레",
-     "title": "소수자 사회 권력관계 조명…서울국제프라이드영화제 5일 개막",
-     "link": "https://www.hani.co.kr/arti/culture/culture_general/1285732.html"
-    },
-    {
-     "src": "뉴시스",
-     "title": "'최종면접' 김정훈 감독 \"단편적 사실로 타인 재단하는 사회 돌아봐야\"",
-     "link": "https://www.newsis.com/view/NISX20261104_0003854747"
-    },
-    {
-     "src": "조선일보",
-     "title": "[사진]조한철-장선,'영평상 시상식 사회 맡았아요'",
-     "link": "https://www.chosun.com/entertainments/entertain_photo/2026/11/04/HAYTSN3GMQ2WCYRSMEYGIZJRGM/"
-    }
-   ]
-  },
-  {
    "kw": "시간",
    "nsrc": 4,
    "srcs": [
@@ -1052,101 +1119,34 @@
    ]
   },
   {
-   "kw": "이유",
-   "nsrc": 4,
+   "kw": "앤더블",
+   "nsrc": 3,
    "srcs": [
-    "뉴시스",
-    "세계일보",
-    "한국경제",
-    "헤럴드경제"
-   ],
-   "n": 4,
-   "headlines": [
-    {
-     "src": "한국경제",
-     "title": "도파민의 시대…김종관표 '작고 사소한' 영화의 존재 이유 [씬터뷰]",
-     "link": "https://www.hankyung.com/article/202611045069H"
-    },
-    {
-     "src": "세계일보",
-     "title": "“우리가 먼저 쳐서 이긴 전쟁”… ‘문무’ 작가가 나당전쟁 택한 이유",
-     "link": "https://www.segye.com/newsView/20261104504427"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "박세리, 은퇴 후 방송하는 이유…직원 월급 주기 위해?",
-     "link": "https://biz.heraldcorp.com/article/10924113"
-    },
-    {
-     "src": "뉴시스",
-     "title": "최수종, 이만기에게 반말한 이유 밝혔다",
-     "link": "https://www.newsis.com/view/NISX20261103_0003853541"
-    }
-   ]
-  },
-  {
-   "kw": "아들",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
+    "동아일보",
     "조선일보",
-    "한국경제",
-    "헤럴드경제"
+    "한국경제"
    ],
-   "n": 4,
+   "n": 10,
    "headlines": [
     {
+     "src": "동아일보",
+     "title": "앤더블, 초동 80만 장 돌파→음방 2관왕…거침없는 상승세",
+     "link": "https://sports.donga.com/ent/article/all/20261104/134967996/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "앤더블, ‘French Kissing’으로 음방 첫 1위…“앤클로 덕분”",
+     "link": "https://sports.donga.com/ent/article/all/20261104/134963966/1"
+    },
+    {
      "src": "한국경제",
-     "title": "강석우, 69세에 할아버지 됐다…\"아들이 아들 낳아\"",
-     "link": "https://www.hankyung.com/article/202610292398H"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "‘유학비 26억’ 윤영미, 500만원짜리 아들 월세방서 “내 침실은 옷장”",
-     "link": "https://biz.heraldcorp.com/article/10924228"
-    },
-    {
-     "src": "뉴시스",
-     "title": "아들 첫 공개 46세 한다감…아버지 \"손자 위해 금연 중\"",
-     "link": "https://www.newsis.com/view/NISX20261104_0003853848"
+     "title": "'컴백' 앤더블 \"'프렌치 키싱'으로 절제된 섹시 보여드릴 것\"",
+     "link": "https://www.hankyung.com/article/202610278324H"
     },
     {
      "src": "조선일보",
-     "title": "송중기·케이티 아들, 훌쩍 큰 근황... “父닮아 콧날 오똑”",
-     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/04/GAYGMMBYHA4DQYZRGBRTCYRZGM/"
-    }
-   ]
-  },
-  {
-   "kw": "고백",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "세계일보",
-    "한국경제",
-    "헤럴드경제"
-   ],
-   "n": 4,
-   "headlines": [
-    {
-     "src": "한국경제",
-     "title": "\"통장 압류, 수중엔 1000원\"…JBJ 출신 켄타, 4억 빚 고백",
-     "link": "https://www.hankyung.com/article/202610280689H"
-    },
-    {
-     "src": "세계일보",
-     "title": "최수종, 하희라 네 차례 유산 고백 “해줄 수 있는 건 다 해주고 싶다”",
-     "link": "https://www.segye.com/newsView/20261104502623"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "송준근 “7살 때 형 잃어…어머니 우울증에 시달려” 가슴 아픈 가족사 고백",
-     "link": "https://biz.heraldcorp.com/article/10923568"
-    },
-    {
-     "src": "뉴시스",
-     "title": "최수종, 하희라 네 차례 유산 고백…\"최대한 다 해주려 해\"",
-     "link": "https://www.newsis.com/view/NISX20261103_0003853545"
+     "title": "[사진]앤더블 리키 '강렬하게'",
+     "link": "https://www.chosun.com/entertainments/entertain_photo/2026/11/04/GYYWGMJRG4YTKODEGJRWKNTDMQ/"
     }
    ]
   },
@@ -1158,7 +1158,7 @@
     "세계일보",
     "조선일보"
    ],
-   "n": 12,
+   "n": 10,
    "headlines": [
     {
      "src": "세계일보",
@@ -1211,6 +1211,38 @@
      "src": "동아일보",
      "title": "‘최종면접’ 김재원 “조이현과 키스신, 현장에서 더 짙어졌다” [DA인터뷰①]",
      "link": "https://sports.donga.com/ent/article/all/20261104/134958082/2"
+    }
+   ]
+  },
+  {
+   "kw": "그룹",
+   "nsrc": 3,
+   "srcs": [
+    "연합뉴스",
+    "조선일보",
+    "한겨레"
+   ],
+   "n": 6,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "'그대 그리고 나' 부른 포크 그룹 소리새 김광석 별세",
+     "link": "https://www.yna.co.kr/view/AKR20261103159200005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "'중소돌의 기적' 리센느 \"또 한 번 기적 이루는 그룹 되고 싶어\"",
+     "link": "https://www.yna.co.kr/view/AKR20261103133400005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "가상 아이돌 그룹 플레이브, 유니세프 한국위에 1억원 기부",
+     "link": "https://www.yna.co.kr/view/AKR20261102054200371"
+    },
+    {
+     "src": "한겨레",
+     "title": "‘그대 그리고 나’ 그룹 소리새 김광석 별세…향년 70",
+     "link": "https://www.hani.co.kr/arti/culture/music/1285593.html"
     }
    ]
   },
@@ -1307,38 +1339,6 @@
      "src": "뉴시스",
      "title": "이번엔 男가수 '학폭 폭로' 글 확산",
      "link": "https://www.newsis.com/view/NISX20261103_0003853573"
-    }
-   ]
-  },
-  {
-   "kw": "컴백",
-   "nsrc": 3,
-   "srcs": [
-    "동아일보",
-    "한겨레",
-    "한국경제"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "리센느 46만뷰 이어 원희는 기상캐스터…아이돌 컴백 공식 된 ‘TV 뉴스’",
-     "link": "https://sports.donga.com/ent/article/all/20261104/134961785/1"
-    },
-    {
-     "src": "한겨레",
-     "title": "“또 한 번 중소돌의 기적을”…컴백 리센느, 역주행 신화 이어갈까",
-     "link": "https://www.hani.co.kr/arti/culture/music/1285552.html"
-    },
-    {
-     "src": "한국경제",
-     "title": "싸이커스, 에이티즈와 같은 달 컴백 \"우영 선배, 밥 사주며 응원\"",
-     "link": "https://www.hankyung.com/article/202611020876H"
-    },
-    {
-     "src": "한국경제",
-     "title": "엑스러브 현, 부상으로 컴백 쇼케이스 불참…\"하루빨리 회복하겠다\"",
-     "link": "https://www.hankyung.com/article/202610280617H"
     }
    ]
   }

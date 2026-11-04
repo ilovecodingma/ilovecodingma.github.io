@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-04 19:00",
+ "updated": "2026-11-04 21:00",
  "items": [
   {
    "query": "로스앤젤레스 fc 대 미네소타 유나이티드 fc 순위",
@@ -207,6 +207,18 @@
    "expires": "2026-11-07"
   },
   {
+   "query": "전투기",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-03",
+   "expires": "2026-11-07"
+  },
+  {
    "query": "신의 구슬",
    "tier": "단기",
    "signal": [
@@ -280,18 +292,6 @@
   },
   {
    "query": "이효리",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 2000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-03",
-   "expires": "2026-11-07"
-  },
-  {
-   "query": "전투기",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -832,6 +832,42 @@
   },
   {
    "query": "헤지펀드",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-04",
+   "expires": "2026-11-07"
+  },
+  {
+   "query": "심유진",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-04",
+   "expires": "2026-11-07"
+  },
+  {
+   "query": "해병대 제 2 사단",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-04",
+   "expires": "2026-11-07"
+  },
+  {
+   "query": "김기수",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -5827,6 +5863,19 @@
    "expires": "2026-11-25"
   },
   {
+   "query": "2027년 쉬는 날 달력, 설·추석 연휴와 대체공휴일은 언제?",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 4,
+   "status": "작성",
+   "page": "/issue/holidays-2027-calendar-1104/",
+   "registered": "2026-11-04",
+   "expires": "2026-12-04"
+  },
+  {
    "query": "i-바다패스 편도 1500원 내년부터 달라지나 유류할증료·터미널이용료 본인 부담 정리",
    "tier": "중기",
    "signal": [
@@ -5849,6 +5898,19 @@
    "score": 4,
    "status": "작성",
    "page": "/issue/insurance-rates-2027-1104/",
+   "registered": "2026-11-04",
+   "expires": "2026-12-04"
+  },
+  {
+   "query": "희귀질환·중증난치질환 산정특례 본인부담률 10%에서 7%로 인하 대상과 시기 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 4,
+   "status": "작성",
+   "page": "/issue/rare-disease-copay-7pct-1104/",
    "registered": "2026-11-04",
    "expires": "2026-12-04"
   },
