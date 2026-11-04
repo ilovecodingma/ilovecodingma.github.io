@@ -1,26 +1,38 @@
 {
- "at": "2026-11-04 09:13",
+ "at": "2026-11-04 13:17",
  "note": "그날 처음 들어온 방문자 기준(관리자·자동 점검 제외). 채널 → 첫 페이지별 방문자 수.",
  "days": [
   {
    "day": "2026-11-04",
-   "visitors": 29,
+   "visitors": 85,
    "channels": [
     [
      "🔍 다음·빙 검색",
-     13
+     51
     ],
     [
      "🔗 직접 접속(주소 입력·즐겨찾기·앱 안 링크)",
-     8
+     10
     ],
     [
      "🔍 네이버 검색",
-     4
+     9
     ],
     [
      "🔍 구글 검색",
+     7
+    ],
+    [
+     "🏷️ 기타 홍보 링크(chatgptcom)",
+     3
+    ],
+    [
+     "🏷️ 기타 홍보 링크(youtube)",
      2
+    ],
+    [
+     "🗨️ 디시인사이드",
+     1
     ],
     [
      "🏷️ 기타 홍보 링크(ph)",
@@ -34,62 +46,62 @@
    "landing": [
     [
      "/issue/douzone-bizon-data-breach/",
-     3
+     5
     ],
     [
      "/",
-     3
+     4
     ],
     [
      "/guide/bank-passbook-reissue-fee-period/",
+     3
+    ],
+    [
+     "/money/guide/officetel-tax-residential-business/",
      2
     ],
     [
-     "/money/guide/new-apartment-move-in-checklist/",
-     1
-    ],
-    [
-     "/money/guide/lh-youth-jeonse-lease-housing-apply/",
-     1
-    ],
-    [
-     "/issue/minho-marathon-disqualification-claim/",
-     1
-    ],
-    [
-     "/contest/essay/",
-     1
-    ],
-    [
-     "/cat/video/",
-     1
-    ],
-    [
-     "/apply/",
-     1
-    ],
-    [
-     "/money/guide/voicephishing-refund/",
-     1
-    ],
-    [
-     "/money/guide/traveler-duty-free-declaration-limit/",
-     1
-    ],
-    [
-     "/money/guide/pet-dog-monthly-cost/",
-     1
-    ],
-    [
      "/money/guide/minor-injury-future-treatment-cost-reform/",
-     1
+     2
     ],
     [
      "/money/guide/minimum-wage-2027-monthly-salary-table/",
+     2
+    ],
+    [
+     "/money/guide/death-report-inheritance-one-stop-service/",
+     2
+    ],
+    [
+     "/class/31-contract-check/",
+     2
+    ],
+    [
+     "/contest/univ/",
+     2
+    ],
+    [
+     "/issue/minho-marathon-disqualification-claim/",
+     2
+    ],
+    [
+     "/contest/idea/",
+     2
+    ],
+    [
+     "/issue/bts-kaohsiung-jakarta-cinema-screening/",
+     2
+    ],
+    [
+     "/guide/pre-placement-health-exam-private-apply-cost/",
+     2
+    ],
+    [
+     "/widget/",
      1
     ],
     [
-     "/money/guide/military-merit-family-benefits/",
+     "/money/guide/new-apartment-move-in-checklist/",
      1
     ]
    ],
@@ -97,22 +109,44 @@
     "🔍 다음·빙 검색": [
      [
       "/issue/douzone-bizon-data-breach/",
-      3
+      5
      ],
      [
-      "/money/guide/voicephishing-refund/",
-      1
-     ],
-     [
-      "/money/guide/traveler-duty-free-declaration-limit/",
-      1
-     ],
-     [
-      "/money/guide/pet-dog-monthly-cost/",
-      1
+      "/money/guide/officetel-tax-residential-business/",
+      2
      ],
      [
       "/money/guide/minor-injury-future-treatment-cost-reform/",
+      2
+     ],
+     [
+      "/money/guide/minimum-wage-2027-monthly-salary-table/",
+      2
+     ],
+     [
+      "/money/guide/death-report-inheritance-one-stop-service/",
+      2
+     ]
+    ],
+    "🔍 네이버 검색": [
+     [
+      "/guide/bank-passbook-reissue-fee-period/",
+      3
+     ],
+     [
+      "/money/guide/unemployment-job-search/",
+      1
+     ],
+     [
+      "/money/guide/student-loan-repay/",
+      1
+     ],
+     [
+      "/money/guide/housing-pension/",
+      1
+     ],
+     [
+      "/guide/pre-placement-health-exam-private-apply-cost/",
       1
      ]
     ],
@@ -134,31 +168,51 @@
       1
      ],
      [
-      "/contest/essay/",
+      "/contest/idea/",
       1
      ]
     ],
-    "🔍 네이버 검색": [
+    "🏷️ 기타 홍보 링크(youtube)": [
      [
-      "/guide/bank-passbook-reissue-fee-period/",
+      "/class/31-contract-check/",
+      2
+     ]
+    ],
+    "🏷️ 기타 홍보 링크(chatgptcom)": [
+     [
+      "/contest/univ/",
       2
      ],
      [
-      "/money/guide/unemployment-job-search/",
+      "/contest/idea/",
       1
-     ],
+     ]
+    ],
+    "🗨️ 디시인사이드": [
      [
-      "/money/guide/housing-pension/",
+      "/widget/",
       1
      ]
     ],
     "🔍 구글 검색": [
      [
+      "/guide/regulated-area-land-permit-residence-obligation/",
+      1
+     ],
+     [
       "/guide/kindergarten-admission-lottery-procedure/",
       1
      ],
      [
+      "/fridge/r/%EA%B9%BB%EC%9E%8E-%EB%91%90%EB%B6%80%EC%A0%84/",
+      1
+     ],
+     [
       "/contest/ai-video/",
+      1
+     ],
+     [
+      "/c/Q02969/",
       1
      ]
     ],

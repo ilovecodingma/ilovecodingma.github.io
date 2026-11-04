@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-04 13:00",
+ "updated": "2026-11-04 14:00",
  "items": [
   {
    "query": "로스앤젤레스 fc 대 미네소타 유나이티드 fc 순위",
@@ -75,6 +75,18 @@
    "expires": "2026-11-07"
   },
   {
+   "query": "송중기",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 10000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-04",
+   "expires": "2026-11-07"
+  },
+  {
    "query": "김도영",
    "tier": "단기",
    "signal": [
@@ -108,6 +120,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-03",
+   "expires": "2026-11-07"
+  },
+  {
+   "query": "서장훈",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 5000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-04",
    "expires": "2026-11-07"
   },
   {
@@ -327,6 +351,18 @@
    "expires": "2026-11-07"
   },
   {
+   "query": "토트넘 홋스퍼 fc",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-04",
+   "expires": "2026-11-07"
+  },
+  {
    "query": "윤영미",
    "tier": "단기",
    "signal": [
@@ -460,6 +496,18 @@
   },
   {
    "query": "두산에너 빌리티",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-04",
+   "expires": "2026-11-07"
+  },
+  {
+   "query": "포스코",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -664,6 +712,18 @@
   },
   {
    "query": "박성현",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-04",
+   "expires": "2026-11-07"
+  },
+  {
+   "query": "홈택스 국세청",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -5594,6 +5654,19 @@
    "expires": "2026-11-18"
   },
   {
+   "query": "i-바다패스 편도 1500원 내년부터 달라지나 유류할증료·터미널이용료 본인 부담 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 4,
+   "status": "작성",
+   "page": "/issue/i-bada-pass-change-1104/",
+   "registered": "2026-11-04",
+   "expires": "2026-11-18"
+  },
+  {
    "query": "2027 1학기 국가장학금 신청기간",
    "tier": "중기",
    "signal": [
@@ -5969,6 +6042,19 @@
    "page": "/issue/cha-yeryun-bullying-claim-timeline/",
    "registered": "2026-11-03",
    "expires": "2026-11-10"
+  },
+  {
+   "query": "정용진 이마트 대표 복귀 13년 만, 언제 어떻게 선임되나 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 2,
+   "status": "작성",
+   "page": "/issue/emart-jung-yongjin-ceo-1104/",
+   "registered": "2026-11-04",
+   "expires": "2026-11-09"
   },
   {
    "query": "폴더블 스마트폰 갤럭시 Z폴드8 판매 20% 증가 보도, 아이폰 듀오 출시 후",
