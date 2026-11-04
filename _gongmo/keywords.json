@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-04 09:00",
+ "updated": "2026-11-04 10:00",
  "items": [
   {
    "query": "로스앤젤레스 fc 대 미네소타 유나이티드 fc 순위",
@@ -124,6 +124,18 @@
   },
   {
    "query": "아틀레티코 대 바이에른",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 5000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-04",
+   "expires": "2026-11-07"
+  },
+  {
+   "query": "국민연금공단",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -663,6 +675,18 @@
    "expires": "2026-11-07"
   },
   {
+   "query": "박성현",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-04",
+   "expires": "2026-11-07"
+  },
+  {
    "query": "청년 문화지원금 언제부터? 대상·금액·신청 방법 정리",
    "tier": "단기",
    "signal": [
@@ -856,6 +880,19 @@
    "page": "/issue/soyeon-pregnancy-announcement/",
    "registered": "2026-11-02",
    "expires": "2026-11-06"
+  },
+  {
+   "query": "챔피언스리그 바르셀로나 3-0 빌라, 맨유 3-2 로마 4차전 결과 한국시간 새벽 경기",
+   "tier": "단기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 1,
+   "status": "작성",
+   "page": "/issue/ucl-matchday-1104/",
+   "registered": "2026-11-04",
+   "expires": "2026-11-07"
   },
   {
    "query": "김하성 FA 어디로? 계약 종료 이후 일정 정리",
@@ -5957,6 +5994,19 @@
    "page": "/issue/highway-rest-area-price-reform/",
    "registered": "2026-11-02",
    "expires": "2026-11-09"
+  },
+  {
+   "query": "제주 제2공항 갈등조정협의회 5일 첫 회의, 환경영향평가·찬반 입장·일정 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 2,
+   "status": "작성",
+   "page": "/issue/jeju-second-airport-deep-1104/",
+   "registered": "2026-11-04",
+   "expires": "2026-11-18"
   },
   {
    "query": "2026 김장 배추 풍작에 쪽파 산지 폐기, 도매가 평년 대비 37.5% 하락",
