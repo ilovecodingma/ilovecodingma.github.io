@@ -400,7 +400,7 @@ def _sec_read(cands, seen):
         if c[0] in seen:
             continue
         pick.append(c); seen.add(c[0])
-        if len(pick) == 5:
+        if len(pick) == 3:
             break
     if not pick:
         return ''
@@ -534,14 +534,19 @@ def _sec_ent(ent, seen):
 def home_html(ctx):
     seen = set()
     cands = _read_candidates(ctx)
-    top = ('<section class="h2-top" aria-labelledby="h2-t"><h1 id="h2-t">지금 궁금한 것, 루리에서 찾아보세요.</h1>'
+    top = ('<section class="h2-top" aria-labelledby="h2-t"><h1 id="h2-t">지원금·공모전·생활 정보, 필요한 것을 바로 찾으세요</h1>'
            '<p class="lead">이슈부터 지원금·공모전까지, 출처와 함께 정리합니다. 자료는 AI로 수집·정리합니다. <a href="/about/#method">만드는 방식</a></p>'
            f'<form class="h2-s" role="search" action="/wiki/"><div class="row"><label class="sr" for="hs">검색 범위</label><select id="hs"><option value="">전체</option><option value="c">공모전</option><option value="a">지원금</option><option value="w">가이드</option><option value="r">레시피</option></select>'
            '<label class="sr" for="hq">검색어</label><input id="hq" type="search" placeholder="예: 청년 월세, 영상 공모전, 근로장려금" autocomplete="off" enterkeyhint="search"><button type="submit" class="go">검색</button></div>'
-           '<div class="res" id="hr" aria-live="polite"></div></form></section>')
+           '<div class="res" id="hr" aria-live="polite"></div></form>'
+           '<ul class="qk" aria-label="목적별 바로가기">'
+           f'<li><a href="/apply/">{_ic("apply")}<span><b>지원금 찾기</b><small>대상·지역으로 확인</small></span></a></li>'
+           f'<li><a href="/contest/">{_ic("contest")}<span><b>공모전 찾기</b><small>분야·마감으로 비교</small></span></a></li>'
+           f'<li><a href="/money/guide/">{_ic("guide")}<span><b>생활 가이드</b><small>세금·일·집 정보</small></span></a></li>'
+           f'<li><a href="/money/tools/salary/">{_ic("calc")}<span><b>계산기</b><small>필요한 금액 바로 계산</small></span></a></li></ul></section>')
     ent = [c for c in cands if c[1] == '연예']; cands = [c for c in cands if c[1] != '연예']
     return (top + _sec_read(cands, seen) + _opp_cards(ctx, seen) + _sec_guides(seen) + _sec_ent(ent, seen) + _sec_topics(ctx, seen)
-            + '<link rel="stylesheet" href="/assets/home/home2.css?v=7"><script defer src="/assets/home/home2.js?v=3"></script>')
+            + '<link rel="stylesheet" href="/assets/home/home2.css?v=8"><script defer src="/assets/home/home2.js?v=3"></script>')
 
 
 def kwmap_page_html():

@@ -1,14 +1,14 @@
 {
  "date": "2026-11-04",
- "updated": "2026-11-04 13:51",
+ "updated": "2026-11-04 14:51",
  "sites": 13,
- "npost": 2778,
+ "npost": 2784,
  "note": "출처(커뮤니티)별 집계예요. 작성자·연령·성별 정보는 수집하지 않아요. posts 는 이슈별로 뽑힌 일부라 전체 글 수가 아니에요.",
  "sources": [
   {
    "name": "MLB파크",
    "np": 13,
-   "nc": 549,
+   "nc": 560,
    "topics": [
     {
      "t": "샤이니 민호 사과문 떴네요",
@@ -18,8 +18,8 @@
      "issue_np": 5,
      "issue_nc": 127,
      "kw": [
-      "민호",
       "샤이니",
+      "민호",
       "사과",
       "논란"
      ],
@@ -31,19 +31,21 @@
     },
     {
      "t": "심각한 中 마라톤 대회 근황 ㄷㄷ..",
-     "nsite": 2,
+     "nsite": 3,
      "np_here": 1,
-     "nc_here": 121,
-     "issue_np": 2,
-     "issue_nc": 123,
+     "nc_here": 126,
+     "issue_np": 3,
+     "issue_nc": 128,
      "kw": [
       "대회",
-      "마라톤"
+      "마라톤",
+      "제시",
+      "아이디어"
      ],
      "top_post": {
       "t": "심각한 中 마라톤 대회 근황 ㄷㄷ..",
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611040119868093&m=view",
-      "nc": 121
+      "nc": 126
      }
     },
     {
@@ -57,7 +59,7 @@
       "김자연",
       "삼성전자",
       "사장",
-      "슈퍼"
+      "모델"
      ],
      "top_post": {
       "t": "45살 '슈퍼모델' 김자연, 70살 삼성전자 전 사장 손영권과 스위스서 로맨틱 결혼식",
@@ -67,21 +69,21 @@
     },
     {
      "t": "[미 중간선거] 극초반이지만 놀랍네요",
-     "nsite": 3,
-     "np_here": 2,
-     "nc_here": 60,
-     "issue_np": 5,
-     "issue_nc": 93,
+     "nsite": 4,
+     "np_here": 3,
+     "nc_here": 71,
+     "issue_np": 11,
+     "issue_nc": 106,
      "kw": [
       "선거",
       "중간",
-      "공화당",
+      "미국",
       "초반"
      ],
      "top_post": {
       "t": "[미 중간선거] 극초반이지만 놀랍네요",
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611040119869302&m=view",
-      "nc": 44
+      "nc": 50
      }
     },
     {
@@ -92,8 +94,8 @@
      "issue_np": 3,
      "issue_nc": 54,
      "kw": [
-      "취향",
-      "식사"
+      "식사",
+      "취향"
      ],
      "top_post": {
       "t": "13,000명이 정확히 50:50으로 갈린 식사 취향",
@@ -121,24 +123,6 @@
      }
     },
     {
-     "t": "실시간 폴리마켓 미국 중간선거 예측",
-     "nsite": 3,
-     "np_here": 2,
-     "nc_here": 26,
-     "issue_np": 8,
-     "issue_nc": 26,
-     "kw": [
-      "중간",
-      "미국",
-      "선거"
-     ],
-     "top_post": {
-      "t": "실시간 폴리마켓 미국 중간선거 예측",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611040119867895&m=view",
-      "nc": 21
-     }
-    },
-    {
      "t": "'거제 반려견 비비탄 난사' 20대 3명 징역 8개월 선고",
      "nsite": 3,
      "np_here": 1,
@@ -147,8 +131,8 @@
      "issue_nc": 42,
      "kw": [
       "징역",
-      "반려견",
       "난사",
+      "반려견",
       "해병"
      ],
      "top_post": {
@@ -156,95 +140,51 @@
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611030119846760&m=view",
       "nc": 25
      }
-    }
-   ]
-  },
-  {
-   "name": "인스티즈",
-   "np": 4,
-   "nc": 391,
-   "topics": [
-    {
-     "t": "\"계주는 위험해서 안 돼\" 학부모 민원에 결국 운동회서 취소",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 137,
-     "issue_np": 2,
-     "issue_nc": 137,
-     "kw": [
-      "위험",
-      "계주",
-      "민원",
-      "취소"
-     ],
-     "top_post": {
-      "t": "\"계주는 위험해서 안 돼\" 학부모 민원에 결국 운동회서 취소",
-      "u": "https://www.instiz.net/pt/7921195?green=1",
-      "nc": 137
-     }
     },
     {
-     "t": "노웨딩했는데 남편 친구들은 축의줬는데 내친구들은 축의금 안줘서 현타와",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 89,
-     "issue_np": 2,
-     "issue_nc": 89,
-     "kw": [
-      "남편",
-      "친구"
-     ],
-     "top_post": {
-      "t": "노웨딩했는데 남편 친구들은 축의줬는데 내친구들은 축의금 안줘서 현타와",
-      "u": "https://www.instiz.net/pt/7918697?green=1",
-      "nc": 89
-     }
-    },
-    {
-     "t": "[속보] 李 \"집값 놀라울 정도로 떨어져…정확한 데이터 알려야”",
+     "t": "실시간 폴리마켓 미국 중간선거 예측",
      "nsite": 4,
      "np_here": 1,
-     "nc_here": 88,
-     "issue_np": 4,
-     "issue_nc": 88,
+     "nc_here": 21,
+     "issue_np": 6,
+     "issue_nc": 25,
      "kw": [
-      "정확",
-      "집값",
-      "데이터",
-      "속보"
+      "미국",
+      "선거",
+      "중간"
      ],
      "top_post": {
-      "t": "[속보] 李 \"집값 놀라울 정도로 떨어져…정확한 데이터 알려야”",
-      "u": "https://www.instiz.net/pt/7921248?green=1",
-      "nc": 88
-     }
-    },
-    {
-     "t": "드디어 디자인 리뉴얼한 파스타 소스 근황",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 77,
-     "issue_np": 4,
-     "issue_nc": 77,
-     "kw": [
-      "파스타",
-      "소스",
-      "디자인",
-      "리뉴얼"
-     ],
-     "top_post": {
-      "t": "드디어 디자인 리뉴얼한 파스타 소스 근황",
-      "u": "https://www.instiz.net/pt/7921318?green=1",
-      "nc": 77
+      "t": "실시간 폴리마켓 미국 중간선거 예측",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611040119867895&m=view",
+      "nc": 21
      }
     }
    ]
   },
   {
    "name": "개드립",
-   "np": 13,
-   "nc": 352,
+   "np": 16,
+   "nc": 376,
    "topics": [
+    {
+     "t": "니케 해킹사태 전말",
+     "nsite": 3,
+     "np_here": 2,
+     "nc_here": 68,
+     "issue_np": 26,
+     "issue_nc": 106,
+     "kw": [
+      "니케",
+      "해킹",
+      "사태",
+      "전말"
+     ],
+     "top_post": {
+      "t": "니케 해킹사태 큰역할(?)한 뱅가드 상황 비유",
+      "u": "https://www.dogdrip.net/dogdrip/733136248?sort_index=popular&page=1",
+      "nc": 44
+     }
+    },
     {
      "t": "뜬금없이 전쟁을 준비하자는 스레드 근황ㄷㄷㄷ",
      "nsite": 3,
@@ -253,8 +193,8 @@
      "issue_np": 3,
      "issue_nc": 47,
      "kw": [
-      "스레드",
-      "전쟁"
+      "전쟁",
+      "스레드"
      ],
      "top_post": {
       "t": "뜬금없이 전쟁을 준비하자는 스레드 근황ㄷㄷㄷ",
@@ -285,7 +225,7 @@
      "np_here": 1,
      "nc_here": 42,
      "issue_np": 3,
-     "issue_nc": 50,
+     "issue_nc": 56,
      "kw": [
       "비상",
       "사장",
@@ -302,55 +242,38 @@
      "t": "[속보] 민주당 상원 장악 가능성 98%, 하원 100%",
      "nsite": 3,
      "np_here": 1,
-     "nc_here": 39,
-     "issue_np": 3,
-     "issue_nc": 39,
+     "nc_here": 42,
+     "issue_np": 4,
+     "issue_nc": 42,
      "kw": [
+      "속보",
       "상원",
       "민주당",
-      "속보",
       "장악"
      ],
      "top_post": {
       "t": "[속보] 민주당 상원 장악 가능성 98%, 하원 100%",
       "u": "https://www.dogdrip.net/dogdrip/733111757?sort_index=popular&page=1",
-      "nc": 39
-     }
-    },
-    {
-     "t": "오후 1:00 미국 선거 근황",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 35,
-     "issue_np": 6,
-     "issue_nc": 35,
-     "kw": [
-      "미국",
-      "선거"
-     ],
-     "top_post": {
-      "t": "오후 1:00 미국 선거 근황",
-      "u": "https://www.dogdrip.net/dogdrip/733132259?sort_index=popular&page=1",
-      "nc": 35
+      "nc": 42
      }
     },
     {
      "t": "[미 중간선거] 극초반이지만 놀랍네요",
-     "nsite": 3,
+     "nsite": 4,
      "np_here": 1,
-     "nc_here": 33,
-     "issue_np": 5,
-     "issue_nc": 93,
+     "nc_here": 35,
+     "issue_np": 11,
+     "issue_nc": 106,
      "kw": [
       "선거",
       "중간",
-      "공화당",
+      "미국",
       "초반"
      ],
      "top_post": {
       "t": "미국 중간선거 공화당 뽑았다고 인증한 검머외 근황",
       "u": "https://www.dogdrip.net/dogdrip/733109297?sort_index=popular&page=1",
-      "nc": 33
+      "nc": 35
      }
     },
     {
@@ -361,8 +284,8 @@
      "issue_np": 3,
      "issue_nc": 27,
      "kw": [
-      "영화",
       "공포",
+      "영화",
       "섹시",
       "여배우"
      ],
@@ -373,43 +296,87 @@
      }
     },
     {
-     "t": "니케 해킹사태 전말",
+     "t": "요즘 늘고 있다는 다이소 합의금 장사",
      "nsite": 3,
      "np_here": 1,
      "nc_here": 24,
-     "issue_np": 23,
-     "issue_nc": 61,
+     "issue_np": 3,
+     "issue_nc": 27,
      "kw": [
-      "니케",
-      "해킹",
-      "사태",
-      "전말"
+      "다이소",
+      "합의금",
+      "장사"
      ],
      "top_post": {
-      "t": "니케 해킹사태 전말",
-      "u": "https://www.dogdrip.net/dogdrip/733085008?sort_index=popular&page=1",
+      "t": "요즘 늘고 있다는 다이소 합의금 장사",
+      "u": "https://www.dogdrip.net/dogdrip/733061511?sort_index=popular&page=1",
       "nc": 24
      }
     }
    ]
   },
   {
+   "name": "인스티즈",
+   "np": 2,
+   "nc": 165,
+   "topics": [
+    {
+     "t": "[속보] 李 \"집값 놀라울 정도로 떨어져…정확한 데이터 알려야”",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 88,
+     "issue_np": 4,
+     "issue_nc": 88,
+     "kw": [
+      "정확",
+      "집값",
+      "데이터",
+      "속보"
+     ],
+     "top_post": {
+      "t": "[속보] 李 \"집값 놀라울 정도로 떨어져…정확한 데이터 알려야”",
+      "u": "https://www.instiz.net/pt/7921248?green=1",
+      "nc": 88
+     }
+    },
+    {
+     "t": "드디어 디자인 리뉴얼한 파스타 소스 근황",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 77,
+     "issue_np": 4,
+     "issue_nc": 77,
+     "kw": [
+      "소스",
+      "파스타",
+      "디자인",
+      "리뉴얼"
+     ],
+     "top_post": {
+      "t": "드디어 디자인 리뉴얼한 파스타 소스 근황",
+      "u": "https://www.instiz.net/pt/7921318?green=1",
+      "nc": 77
+     }
+    }
+   ]
+  },
+  {
    "name": "클리앙",
-   "np": 7,
-   "nc": 153,
+   "np": 6,
+   "nc": 131,
    "topics": [
     {
      "t": "李대통령 “‘집값 폭락 중’ 말한 적 없다”…“가짜뉴스” 비판",
      "nsite": 3,
-     "np_here": 3,
-     "nc_here": 110,
-     "issue_np": 5,
-     "issue_nc": 120,
+     "np_here": 2,
+     "nc_here": 82,
+     "issue_np": 4,
+     "issue_nc": 92,
      "kw": [
       "집값",
       "폭락",
       "대통령",
-      "가짜"
+      "뉴스"
      ],
      "top_post": {
       "t": "李대통령 “서울 전체 집값 폭락 중이라고 한 적 없어”",
@@ -426,9 +393,9 @@
      "issue_nc": 16,
      "kw": [
       "손실",
-      "영업",
       "쿠팡",
-      "분기"
+      "영업",
+      "누적"
      ],
      "top_post": {
       "t": "쿠팡Inc, 3분기 누적 영업손실 1조8318억…3년치 영업이익 규모",
@@ -444,8 +411,8 @@
      "issue_np": 3,
      "issue_nc": 18,
      "kw": [
-      "취소",
       "보석",
+      "취소",
       "법원"
      ],
      "top_post": {
@@ -455,30 +422,12 @@
      }
     },
     {
-     "t": "멜론 top15 안에리센느곡 8곡50%가 넘는 점유율 ㄷㄷㄷㄷ에투라 리센느가 대세 맞고 ...",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 7,
-     "issue_np": 3,
-     "issue_nc": 32,
-     "kw": [
-      "멜론",
-      "리센느",
-      "TOP"
-     ],
-     "top_post": {
-      "t": "리센느 멜론 TOP100 14위 안으로 10곡",
-      "u": "https://www.clien.net/service/board/park/19286995?od=T33&po=0&category=0&groupCd=clien_all",
-      "nc": 7
-     }
-    },
-    {
      "t": "\"내가 왜 전과자 돼요?\" 간 큰 10대들 '비상'…사장님들 '환호'",
      "nsite": 3,
      "np_here": 1,
-     "nc_here": 5,
+     "nc_here": 11,
      "issue_np": 3,
-     "issue_nc": 50,
+     "issue_nc": 56,
      "kw": [
       "비상",
       "사장",
@@ -488,23 +437,41 @@
      "top_post": {
       "t": "'내가 왜 전과자 돼요?' 간 큰 10대들 '비상'..사장님들 '환호' (에디터픽) / SBS",
       "u": "https://www.clien.net/service/board/park/19287271?od=T33&po=0&category=0&groupCd=clien_all",
-      "nc": 5
+      "nc": 11
+     }
+    },
+    {
+     "t": "멜론 top15 안에리센느곡 8곡50%가 넘는 점유율 ㄷㄷㄷㄷ에투라 리센느가 대세 맞고 ...",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 7,
+     "issue_np": 3,
+     "issue_nc": 28,
+     "kw": [
+      "리센느",
+      "멜론",
+      "TOP"
+     ],
+     "top_post": {
+      "t": "리센느 멜론 TOP100 14위 안으로 10곡",
+      "u": "https://www.clien.net/service/board/park/19286995?od=T33&po=0&category=0&groupCd=clien_all",
+      "nc": 7
      }
     }
    ]
   },
   {
    "name": "아카라이브",
-   "np": 2,
-   "nc": 37,
+   "np": 3,
+   "nc": 42,
    "topics": [
     {
      "t": "니케 해킹사태 전말",
      "nsite": 3,
      "np_here": 2,
-     "nc_here": 37,
-     "issue_np": 23,
-     "issue_nc": 61,
+     "nc_here": 38,
+     "issue_np": 26,
+     "issue_nc": 106,
      "kw": [
       "니케",
       "해킹",
@@ -514,59 +481,32 @@
      "top_post": {
       "t": "니케 사태 진짜 웃긴 것은",
       "u": "https://arca.live/b/live/187989707?p=1",
-      "nc": 29
-     }
-    }
-   ]
-  },
-  {
-   "name": "네이트판",
-   "np": 3,
-   "nc": 31,
-   "topics": [
-    {
-     "t": "멜론 top15 안에리센느곡 8곡50%가 넘는 점유율 ㄷㄷㄷㄷ에투라 리센느가 대세 맞고 ...",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 25,
-     "issue_np": 3,
-     "issue_nc": 32,
-     "kw": [
-      "멜론",
-      "리센느",
-      "TOP"
-     ],
-     "top_post": {
-      "t": "멜론 top15 안에리센느곡 8곡50%가 넘는 점유율 ㄷㄷㄷㄷ에투라 리센느가 대세 맞고 ...",
-      "u": "https://pann.nate.com/talk/375701129",
-      "nc": 25
+      "nc": 30
      }
     },
     {
-     "t": "네이버페이 52원 (신속히 받으세요)",
+     "t": "오후 1:00 미국 선거 근황",
      "nsite": 4,
-     "np_here": 2,
-     "nc_here": 6,
-     "issue_np": 13,
-     "issue_nc": 12,
+     "np_here": 1,
+     "nc_here": 4,
+     "issue_np": 8,
+     "issue_nc": 6,
      "kw": [
-      "페이",
-      "네이버",
-      "랜덤",
-      "포인트"
+      "선거",
+      "미국"
      ],
      "top_post": {
-      "t": "ㅈㄱㄴ..⭐ 이거 설문조사 앱인데 설문조사 하고나면 네이버페이 포인트나 현금으로 받을수있음 ...",
-      "u": "https://pann.nate.com/talk/375701093",
-      "nc": 3
+      "t": "미국 선거결과 떴다 ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ",
+      "u": "https://arca.live/b/live/188020212?p=1",
+      "nc": 4
      }
     }
    ]
   },
   {
    "name": "보배드림",
-   "np": 11,
-   "nc": 27,
+   "np": 12,
+   "nc": 29,
    "topics": [
     {
      "t": "45살 '슈퍼모델' 김자연, 70살 삼성전자 전 사장 손영권과 스위스서 로맨틱 결혼식",
@@ -579,7 +519,7 @@
       "김자연",
       "삼성전자",
       "사장",
-      "슈퍼"
+      "모델"
      ],
      "top_post": {
       "t": "45세 슈퍼모델 김자연 70세 삼성전자 전 사장과 결혼",
@@ -593,7 +533,7 @@
      "np_here": 1,
      "nc_here": 3,
      "issue_np": 3,
-     "issue_nc": 50,
+     "issue_nc": 56,
      "kw": [
       "비상",
       "사장",
@@ -614,9 +554,9 @@
      "issue_np": 3,
      "issue_nc": 27,
      "kw": [
+      "다이소",
       "합의금",
-      "장사",
-      "다이소"
+      "장사"
      ],
      "top_post": {
       "t": "요즘 늘고 있다는 다이소 합의금 장사",
@@ -632,8 +572,8 @@
      "issue_np": 3,
      "issue_nc": 18,
      "kw": [
-      "취소",
       "보석",
+      "취소",
       "법원"
      ],
      "top_post": {
@@ -650,8 +590,8 @@
      "issue_np": 3,
      "issue_nc": 13,
      "kw": [
-      "기업",
       "한국",
+      "기업",
       "이란"
      ],
      "top_post": {
@@ -668,15 +608,34 @@
      "issue_np": 3,
      "issue_nc": 3,
      "kw": [
-      "배달",
       "명의",
       "외국",
+      "배달",
       "최후"
      ],
      "top_post": {
       "t": "외국인한테 배달업 명의 빌려준 사람의 최후",
       "u": "https://www.bobaedream.co.kr/view?code=best&No=1045143&vdate=",
       "nc": 3
+     }
+    },
+    {
+     "t": "심각한 中 마라톤 대회 근황 ㄷㄷ..",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 2,
+     "issue_np": 3,
+     "issue_nc": 128,
+     "kw": [
+      "대회",
+      "마라톤",
+      "제시",
+      "아이디어"
+     ],
+     "top_post": {
+      "t": "마라톤대회에 지친 사람이 제시한 아이디어",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1045131&vdate=",
+      "nc": 2
      }
     },
     {
@@ -695,22 +654,49 @@
       "u": "https://www.bobaedream.co.kr/view?code=best&No=1044939&vdate=",
       "nc": 2
      }
-    },
+    }
+   ]
+  },
+  {
+   "name": "네이트판",
+   "np": 3,
+   "nc": 27,
+   "topics": [
     {
-     "t": "현재 반응 좋다는 여배우의 일상",
+     "t": "멜론 top15 안에리센느곡 8곡50%가 넘는 점유율 ㄷㄷㄷㄷ에투라 리센느가 대세 맞고 ...",
      "nsite": 3,
      "np_here": 1,
-     "nc_here": 2,
+     "nc_here": 21,
      "issue_np": 3,
-     "issue_nc": 5,
+     "issue_nc": 28,
      "kw": [
-      "일상",
-      "여배우"
+      "리센느",
+      "멜론",
+      "TOP"
      ],
      "top_post": {
-      "t": "반응 괜찮다는 여배우의 일상",
-      "u": "https://www.bobaedream.co.kr/view?code=best&No=1045068&vdate=",
-      "nc": 2
+      "t": "멜론 top15 안에리센느곡 8곡50%가 넘는 점유율 ㄷㄷㄷㄷ에투라 리센느가 대세 맞고 ...",
+      "u": "https://pann.nate.com/talk/375701129",
+      "nc": 21
+     }
+    },
+    {
+     "t": "네이버페이 52원 (신속히 받으세요)",
+     "nsite": 4,
+     "np_here": 2,
+     "nc_here": 6,
+     "issue_np": 13,
+     "issue_nc": 12,
+     "kw": [
+      "네이버",
+      "페이",
+      "랜덤",
+      "포인트"
+     ],
+     "top_post": {
+      "t": "ㅈㄱㄴ..⭐ 이거 설문조사 앱인데 설문조사 하고나면 네이버페이 포인트나 현금으로 받을수있음 ...",
+      "u": "https://pann.nate.com/talk/375701093",
+      "nc": 3
      }
     }
    ]
@@ -725,13 +711,13 @@
      "nsite": 3,
      "np_here": 1,
      "nc_here": 10,
-     "issue_np": 5,
-     "issue_nc": 120,
+     "issue_np": 4,
+     "issue_nc": 92,
      "kw": [
       "집값",
       "폭락",
       "대통령",
-      "가짜"
+      "뉴스"
      ],
      "top_post": {
       "t": "이생선.. 집값 폭락 중 말한적 없다.. 가짜뉴스 비판",
@@ -743,7 +729,7 @@
   },
   {
    "name": "더쿠",
-   "np": 12,
+   "np": 13,
    "nc": 0,
    "topics": [
     {
@@ -754,8 +740,8 @@
      "issue_np": 5,
      "issue_nc": 127,
      "kw": [
-      "민호",
       "샤이니",
+      "민호",
       "사과",
       "논란"
      ],
@@ -793,9 +779,9 @@
      "issue_nc": 16,
      "kw": [
       "손실",
-      "영업",
       "쿠팡",
-      "분기"
+      "영업",
+      "누적"
      ],
      "top_post": {
       "t": "쿠팡, 누적 영업손실 1조8318억원.. 3년 벌어들인 이익 날렸다",
@@ -811,8 +797,8 @@
      "issue_np": 13,
      "issue_nc": 12,
      "kw": [
-      "페이",
       "네이버",
+      "페이",
       "랜덤",
       "포인트"
      ],
@@ -833,7 +819,7 @@
       "김자연",
       "삼성전자",
       "사장",
-      "슈퍼"
+      "모델"
      ],
      "top_post": {
       "t": "45세 슈퍼모델 김자연, 70세 삼성전자 전 사장과 결혼",
@@ -849,8 +835,8 @@
      "issue_np": 4,
      "issue_nc": 77,
      "kw": [
-      "파스타",
       "소스",
+      "파스타",
       "디자인",
       "리뉴얼"
      ],
@@ -868,8 +854,8 @@
      "issue_np": 3,
      "issue_nc": 54,
      "kw": [
-      "취향",
-      "식사"
+      "식사",
+      "취향"
      ],
      "top_post": {
       "t": "13,000명이 정확히 50:50으로 갈린 식사 취향",
@@ -898,7 +884,7 @@
   },
   {
    "name": "SLR클럽",
-   "np": 4,
+   "np": 5,
    "nc": 0,
    "topics": [
     {
@@ -909,8 +895,8 @@
      "issue_np": 5,
      "issue_nc": 127,
      "kw": [
-      "민호",
       "샤이니",
+      "민호",
       "사과",
       "논란"
      ],
@@ -948,9 +934,9 @@
      "issue_nc": 16,
      "kw": [
       "손실",
-      "영업",
       "쿠팡",
-      "분기"
+      "영업",
+      "누적"
      ],
      "top_post": {
       "t": "[속보] 쿠팡Inc, 3분기 영업손실 6,423억원…3분기째 적자",
@@ -963,17 +949,36 @@
      "nsite": 3,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 120,
+     "issue_np": 4,
+     "issue_nc": 92,
      "kw": [
       "집값",
       "폭락",
       "대통령",
-      "가짜"
+      "뉴스"
      ],
      "top_post": {
       "t": "[속보] 이 대통령 \"'집값 폭락 중' 발언, 강남만 맞았다는 건 가짜뉴스\"",
       "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=676736",
+      "nc": 0
+     }
+    },
+    {
+     "t": "다음주 공개될 리얼돌 로봇 수준",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 4,
+     "kw": [
+      "로봇",
+      "공개",
+      "야스",
+      "스펙"
+     ],
+     "top_post": {
+      "t": "다음주 공개될 리얼돌 로봇 수준",
+      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=676721",
       "nc": 0
      }
     }
@@ -992,14 +997,32 @@
      "issue_np": 5,
      "issue_nc": 127,
      "kw": [
-      "민호",
       "샤이니",
+      "민호",
       "사과",
       "논란"
      ],
      "top_post": {
       "t": "샤이니 민호, ‘밀어주기’ 논란에 사과…",
       "u": "https://bbs.ruliweb.com/best/board/300446/read/3823930?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "실시간 폴리마켓 미국 중간선거 예측",
+     "nsite": 4,
+     "np_here": 3,
+     "nc_here": 0,
+     "issue_np": 6,
+     "issue_nc": 25,
+     "kw": [
+      "미국",
+      "선거",
+      "중간"
+     ],
+     "top_post": {
+      "t": "현재 미국 중간선거 민주당 압승중",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77264760?m=all&t=now",
       "nc": 0
      }
     },
@@ -1012,9 +1035,9 @@
      "issue_nc": 16,
      "kw": [
       "손실",
-      "영업",
       "쿠팡",
-      "분기"
+      "영업",
+      "누적"
      ],
      "top_post": {
       "t": "쿠팡, 3분기 영업손실 6423억…3개 분기 누적 적자 1조8000억원",
@@ -1030,8 +1053,8 @@
      "issue_np": 13,
      "issue_nc": 12,
      "kw": [
-      "페이",
       "네이버",
+      "페이",
       "랜덤",
       "포인트"
      ],
@@ -1042,50 +1065,48 @@
      }
     },
     {
-     "t": "[미 중간선거] 극초반이지만 놀랍네요",
-     "nsite": 3,
-     "np_here": 2,
+     "t": "오후 1:00 미국 선거 근황",
+     "nsite": 4,
+     "np_here": 3,
      "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 93,
+     "issue_np": 8,
+     "issue_nc": 6,
      "kw": [
       "선거",
-      "중간",
-      "공화당",
-      "초반"
+      "미국"
      ],
      "top_post": {
-      "t": "괌 주지사 선거, 공화당의 아다가 승리",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77261975?m=all&t=now",
+      "t": "미국 선거...드디어 윤곽이 드러나...",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77262151?m=all&t=now",
       "nc": 0
      }
     },
     {
-     "t": "드디어 디자인 리뉴얼한 파스타 소스 근황",
+     "t": "심각한 中 마라톤 대회 근황 ㄷㄷ..",
      "nsite": 3,
-     "np_here": 2,
+     "np_here": 1,
      "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 77,
+     "issue_np": 3,
+     "issue_nc": 128,
      "kw": [
-      "파스타",
-      "소스",
-      "디자인",
-      "리뉴얼"
+      "대회",
+      "마라톤",
+      "제시",
+      "아이디어"
      ],
      "top_post": {
-      "t": "반응 안좋은 청정원 파스타소스병 디자인 리뉴얼",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77256317?m=all&t=now",
+      "t": "마라톤 대회에 지친 사람들이 제시한 아이디어",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77266883?m=all&t=now",
       "nc": 0
      }
     },
     {
      "t": "니케 해킹사태 전말",
      "nsite": 3,
-     "np_here": 3,
+     "np_here": 2,
      "nc_here": 0,
-     "issue_np": 23,
-     "issue_nc": 61,
+     "issue_np": 26,
+     "issue_nc": 106,
      "kw": [
       "니케",
       "해킹",
@@ -1099,36 +1120,21 @@
      }
     },
     {
-     "t": "13,000명이 정확히 50:50으로 갈린 식사 취향",
+     "t": "드디어 디자인 리뉴얼한 파스타 소스 근황",
      "nsite": 3,
-     "np_here": 1,
+     "np_here": 2,
      "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 54,
+     "issue_np": 4,
+     "issue_nc": 77,
      "kw": [
-      "취향",
-      "식사"
+      "소스",
+      "파스타",
+      "디자인",
+      "리뉴얼"
      ],
      "top_post": {
-      "t": "13,000명이 정확히 50:50으로 갈린 식사 취향",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77261768?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "뜬금없이 전쟁을 준비하자는 스레드 근황ㄷㄷㄷ",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 47,
-     "kw": [
-      "스레드",
-      "전쟁"
-     ],
-     "top_post": {
-      "t": "갑자기 전쟁 준비한다는 스레드 근황",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77258339?m=all&t=now",
+      "t": "반응 안좋은 청정원 파스타소스병 디자인 리뉴얼",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77256317?m=all&t=now",
       "nc": 0
      }
     }
@@ -1136,9 +1142,28 @@
   },
   {
    "name": "디시인사이드",
-   "np": 9,
+   "np": 10,
    "nc": 0,
    "topics": [
+    {
+     "t": "[미 중간선거] 극초반이지만 놀랍네요",
+     "nsite": 4,
+     "np_here": 2,
+     "nc_here": 0,
+     "issue_np": 11,
+     "issue_nc": 106,
+     "kw": [
+      "선거",
+      "중간",
+      "미국",
+      "초반"
+     ],
+     "top_post": {
+      "t": "ㅅㄱㅂㄱ 미국 중간선거 근황",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=475445&_dcbest=1&page=1",
+      "nc": 0
+     }
+    },
     {
      "t": "[속보] 李 \"집값 놀라울 정도로 떨어져…정확한 데이터 알려야”",
      "nsite": 4,
@@ -1159,6 +1184,41 @@
      }
     },
     {
+     "t": "실시간 폴리마켓 미국 중간선거 예측",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 6,
+     "issue_nc": 25,
+     "kw": [
+      "미국",
+      "선거",
+      "중간"
+     ],
+     "top_post": {
+      "t": "낼 미국 중간선거...미국 억만장자세 운명은?",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=475124&_dcbest=1&page=1",
+      "nc": 0
+     }
+    },
+    {
+     "t": "오후 1:00 미국 선거 근황",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 8,
+     "issue_nc": 6,
+     "kw": [
+      "선거",
+      "미국"
+     ],
+     "top_post": {
+      "t": "싱글벙글 지금 미국 선거 근황..",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=475475&_dcbest=1&page=1",
+      "nc": 0
+     }
+    },
+    {
      "t": "뜬금없이 전쟁을 준비하자는 스레드 근황ㄷㄷㄷ",
      "nsite": 3,
      "np_here": 1,
@@ -1166,8 +1226,8 @@
      "issue_np": 3,
      "issue_nc": 47,
      "kw": [
-      "스레드",
-      "전쟁"
+      "전쟁",
+      "스레드"
      ],
      "top_post": {
       "t": "싱글벙글 전쟁준비하는 스레드 언냐들",
@@ -1184,48 +1244,13 @@
      "issue_nc": 42,
      "kw": [
       "징역",
-      "반려견",
       "난사",
+      "반려견",
       "해병"
      ],
      "top_post": {
       "t": "'거제 반려견 비비탄 난사' 20대 3명 징역 8개월 선고",
       "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=475265&_dcbest=1&page=1",
-      "nc": 0
-     }
-    },
-    {
-     "t": "오후 1:00 미국 선거 근황",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 6,
-     "issue_nc": 35,
-     "kw": [
-      "미국",
-      "선거"
-     ],
-     "top_post": {
-      "t": "싱글벙글 지금 미국 선거 근황..",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=475475&_dcbest=1&page=1",
-      "nc": 0
-     }
-    },
-    {
-     "t": "실시간 폴리마켓 미국 중간선거 예측",
-     "nsite": 3,
-     "np_here": 2,
-     "nc_here": 0,
-     "issue_np": 8,
-     "issue_nc": 26,
-     "kw": [
-      "중간",
-      "미국",
-      "선거"
-     ],
-     "top_post": {
-      "t": "낼 미국 중간선거...미국 억만장자세 운명은?",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=475124&_dcbest=1&page=1",
       "nc": 0
      }
     },
@@ -1237,8 +1262,8 @@
      "issue_np": 3,
      "issue_nc": 18,
      "kw": [
-      "취소",
       "보석",
+      "취소",
       "법원"
      ],
      "top_post": {
@@ -1263,24 +1288,6 @@
       "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=475399&_dcbest=1&page=1",
       "nc": 0
      }
-    },
-    {
-     "t": "싱글벙글 미국 팁 문화에 대해 자세히 설명해주는 타일러",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 2,
-     "kw": [
-      "미국",
-      "설명",
-      "문화"
-     ],
-     "top_post": {
-      "t": "싱글벙글 미국 팁 문화에 대해 자세히 설명해주는 타일러",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=475314&_dcbest=1&page=1",
-      "nc": 0
-     }
     }
    ]
   },
@@ -1297,8 +1304,8 @@
      "issue_np": 3,
      "issue_nc": 13,
      "kw": [
-      "기업",
       "한국",
+      "기업",
       "이란"
      ],
      "top_post": {

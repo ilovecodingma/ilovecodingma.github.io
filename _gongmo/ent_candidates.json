@@ -1,6 +1,6 @@
 {
- "at": "2026-11-04 13:30",
- "nitems": 534,
+ "at": "2026-11-04 15:06",
+ "nitems": 535,
  "cands": [
   {
    "kw": "리센느",
@@ -16,7 +16,7 @@
     "한국경제",
     "헤럴드경제"
    ],
-   "n": 27,
+   "n": 19,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -29,14 +29,14 @@
      "link": "https://www.yna.co.kr/view/AKR20261103133400005"
     },
     {
-     "src": "연합뉴스",
-     "title": "우리은행, 새 광고모델 걸그룹 리센느…'우리는 해' CM송 공개",
-     "link": "https://www.yna.co.kr/view/AKR20261030045000002"
-    },
-    {
      "src": "동아일보",
      "title": "리센느, 디즈니 애니 ‘헥스: 마녀왕국’과 특별한 만남…엔딩크레딧 곡 참여",
      "link": "https://sports.donga.com/ent/article/all/20261104/134962867/1"
+    },
+    {
+     "src": "한겨레",
+     "title": "리센느 신곡 ‘위드’ 2시간 만에 멜론 1위…앨범 5곡 모두 ‘톱10’",
+     "link": "https://www.hani.co.kr/arti/culture/music/1285682.html"
     }
    ]
   },
@@ -78,16 +78,17 @@
   },
   {
    "kw": "공연",
-   "nsrc": 6,
+   "nsrc": 7,
    "srcs": [
     "뉴시스",
+    "동아일보",
     "세계일보",
     "연합뉴스",
+    "조선일보",
     "한겨레",
-    "한국경제",
-    "헤럴드경제"
+    "한국경제"
    ],
-   "n": 10,
+   "n": 12,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -112,51 +113,17 @@
    ]
   },
   {
-   "kw": "발매",
+   "kw": "국민",
    "nsrc": 6,
    "srcs": [
     "SBS",
-    "뉴시스",
-    "연합뉴스",
-    "조선일보",
-    "한국경제",
-    "헤럴드경제"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "리센느 신곡 '위드', 발매 첫날 멜론 '톱 100' 1위 직행",
-     "link": "https://www.yna.co.kr/view/AKR20261103181100005"
-    },
-    {
-     "src": "한국경제",
-     "title": "가을엔 규현…내달 11일 EP '컨티뉴' 발매",
-     "link": "https://www.hankyung.com/article/202610278838H"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "리센느 ‘위드’ 발매 2시간만에 음원차트 1위…‘국민 걸그룹’ 입증",
-     "link": "https://biz.heraldcorp.com/article/10925354"
-    },
-    {
-     "src": "SBS",
-     "title": "폴킴, 영어 싱글 'Love Me Hard' 발매…미국 시장 도전",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008823500&plink=RSSLINK&cooper=RSSREADER"
-    }
-   ]
-  },
-  {
-   "kw": "국민",
-   "nsrc": 5,
-   "srcs": [
-    "SBS",
+    "세계일보",
     "연합뉴스",
     "한겨레",
     "한국경제",
     "헤럴드경제"
    ],
-   "n": 13,
+   "n": 14,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -177,6 +144,111 @@
      "src": "연합뉴스",
      "title": "'국민 아버지' 최불암 오늘 영면…'아베 마리아'로 마지막 배웅",
      "link": "https://www.yna.co.kr/view/AKR20261101025200005"
+    }
+   ]
+  },
+  {
+   "kw": "학폭",
+   "nsrc": 6,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "동아일보",
+    "세계일보",
+    "조선일보",
+    "헤럴드경제"
+   ],
+   "n": 13,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "[전문] 차예련, 학폭 의혹 재차 부인 “사실무근…추가 피해 강력 조치”",
+     "link": "https://sports.donga.com/ent/article/all/20261104/134964352/1"
+    },
+    {
+     "src": "세계일보",
+     "title": "인천 출신 남성 발라드 가수 학폭 의혹 등장…“10년 넘게 자료 모았다”",
+     "link": "https://www.segye.com/newsView/20261104502924"
+    },
+    {
+     "src": "세계일보",
+     "title": "차예련, 학폭 의혹 이어 골프장 캐디 폭로까지…“반말하며 무시”",
+     "link": "https://www.segye.com/newsView/20261104502401"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "차예련 측 ‘학폭+인성 논란’에 법적 대응 시사…“허위사실·인신공격에 강력 조치할 것”",
+     "link": "https://biz.heraldcorp.com/article/10925779"
+    }
+   ]
+  },
+  {
+   "kw": "차예련",
+   "nsrc": 6,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "동아일보",
+    "세계일보",
+    "조선일보",
+    "헤럴드경제"
+   ],
+   "n": 11,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "[공식] 차예련 측, 잇단 폭로에 입 열었다…“사실무근, 강력 조치”",
+     "link": "https://sports.donga.com/ent/article/all/20261104/134964497/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "[전문] 차예련, 학폭 의혹 재차 부인 “사실무근…추가 피해 강력 조치”",
+     "link": "https://sports.donga.com/ent/article/all/20261104/134964352/1"
+    },
+    {
+     "src": "세계일보",
+     "title": "차예련, 학폭 의혹 이어 골프장 캐디 폭로까지…“반말하며 무시”",
+     "link": "https://www.segye.com/newsView/20261104502401"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "차예련 측 ‘학폭+인성 논란’에 법적 대응 시사…“허위사실·인신공격에 강력 조치할 것”",
+     "link": "https://biz.heraldcorp.com/article/10925779"
+    }
+   ]
+  },
+  {
+   "kw": "발매",
+   "nsrc": 6,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "연합뉴스",
+    "조선일보",
+    "한국경제",
+    "헤럴드경제"
+   ],
+   "n": 8,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "리센느 신곡 '위드', 발매 첫날 멜론 '톱 100' 1위 직행",
+     "link": "https://www.yna.co.kr/view/AKR20261103181100005"
+    },
+    {
+     "src": "한국경제",
+     "title": "가을엔 규현…내달 11일 EP '컨티뉴' 발매",
+     "link": "https://www.hankyung.com/article/202610278838H"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "리센느 ‘위드’ 발매 2시간만에 음원차트 1위…‘국민 걸그룹’ 입증",
+     "link": "https://biz.heraldcorp.com/article/10925354"
+    },
+    {
+     "src": "SBS",
+     "title": "폴킴, 영어 싱글 'Love Me Hard' 발매…미국 시장 도전",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008823500&plink=RSSLINK&cooper=RSSREADER"
     }
    ]
   },
@@ -249,74 +321,6 @@
    ]
   },
   {
-   "kw": "학폭",
-   "nsrc": 5,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "세계일보",
-    "조선일보",
-    "헤럴드경제"
-   ],
-   "n": 9,
-   "headlines": [
-    {
-     "src": "세계일보",
-     "title": "인천 출신 남성 발라드 가수 학폭 의혹 등장…“10년 넘게 자료 모았다”",
-     "link": "https://www.segye.com/newsView/20261104502924"
-    },
-    {
-     "src": "세계일보",
-     "title": "차예련, 학폭 의혹 이어 골프장 캐디 폭로까지…“반말하며 무시”",
-     "link": "https://www.segye.com/newsView/20261104502401"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "“인천 출신 가수…학폭 폭로하려고 10년 넘게 지켜 보는 중” SNS서 확산",
-     "link": "https://biz.heraldcorp.com/article/10925056"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "이혜성 “나도 학폭 피해자였다…고통스럽고 힘들어”",
-     "link": "https://biz.heraldcorp.com/article/10923594"
-    }
-   ]
-  },
-  {
-   "kw": "결혼",
-   "nsrc": 5,
-   "srcs": [
-    "뉴시스",
-    "연합뉴스",
-    "조선일보",
-    "한국경제",
-    "헤럴드경제"
-   ],
-   "n": 8,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "배우 배나라·한재아 14일 결혼…\"서로 의지하는 삶 살아가기로\"",
-     "link": "https://www.yna.co.kr/view/AKR20261103123900005"
-    },
-    {
-     "src": "한국경제",
-     "title": "마로니에 김정은, 결혼 22년 만에 파경…\"협의 이혼\"",
-     "link": "https://www.hankyung.com/article/202610230325H"
-    },
-    {
-     "src": "한국경제",
-     "title": "솔비·이규한, 결혼 발표 후 첫 '투샷'…\"20년 전부터 좋아해\"",
-     "link": "https://www.hankyung.com/article/2026102297647"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "‘모텔 논란’ 양홍원, 아내·결혼 사진 ‘전부 삭제’…‘불륜 폭로’ 번복에도 여진 계속",
-     "link": "https://biz.heraldcorp.com/article/10923435"
-    }
-   ]
-  },
-  {
    "kw": "마지막",
    "nsrc": 5,
    "srcs": [
@@ -326,7 +330,7 @@
     "조선일보",
     "헤럴드경제"
    ],
-   "n": 8,
+   "n": 9,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -351,12 +355,46 @@
    ]
   },
   {
+   "kw": "별세",
+   "nsrc": 5,
+   "srcs": [
+    "뉴시스",
+    "연합뉴스",
+    "조선일보",
+    "한겨레",
+    "한국경제"
+   ],
+   "n": 8,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "'그대 그리고 나' 부른 포크 그룹 소리새 김광석 별세",
+     "link": "https://www.yna.co.kr/view/AKR20261103159200005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "'사극 대가' 정하연 작가 별세…'왕과 비'·'명성황후' 등 집필",
+     "link": "https://www.yna.co.kr/view/AKR20261101051300005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "[쇼츠] '파하~' 웃음 남기고 떠났다…'영원한 수사반장' 최불암 별세",
+     "link": "https://www.yna.co.kr/view/AKR20261030087000704"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "[영상] '영원한 수사반장' 최불암 별세…\"편히 쉬소서\"",
+     "link": "https://www.yna.co.kr/view/AKR20261030081600704"
+    }
+   ]
+  },
+  {
    "kw": "논란에",
    "nsrc": 5,
    "srcs": [
     "동아일보",
     "연합뉴스",
-    "조선일보",
+    "한겨레",
     "한국경제",
     "헤럴드경제"
    ],
@@ -364,7 +402,7 @@
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "박진영, 종교 모임 논란에 입 열어…\"이단·사이비라 핍박\"",
+     "title": "박진영, 종교 모임 논란에 입 열어…\"이단·사이비라며 핍박\"",
      "link": "https://www.yna.co.kr/view/AKR20261104071800005"
     },
     {
@@ -373,82 +411,48 @@
      "link": "https://sports.donga.com/ent/article/all/20261104/134962380/1"
     },
     {
+     "src": "한겨레",
+     "title": "박진영, 이단·사이비 논란에 “핍박 시작…하나님이 해결할 것”",
+     "link": "https://www.hani.co.kr/arti/culture/culture_general/1285738.html"
+    },
+    {
      "src": "한국경제",
      "title": "아일릿, 여경 의상 논란에 \"깜짝 놀라…어떤 관심이든 감사\"",
      "link": "https://www.hankyung.com/article/202610265795H"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "“개인 연차 없이 한 달 쉬었는데”…헤이지니 논란에 현 직원 ‘등판’",
-     "link": "https://biz.heraldcorp.com/article/10924714"
     }
    ]
   },
   {
-   "kw": "개월",
-   "nsrc": 5,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "연합뉴스",
-    "조선일보",
-    "한국경제"
-   ],
-   "n": 7,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "'복면가왕' 11개월 만에 재개…'황금마스크' 12월 방송",
-     "link": "https://www.yna.co.kr/view/AKR20261103068900005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "배우 신세경 괴롭힌 악플러, 2심서 징역 8개월 법정구속",
-     "link": "https://www.yna.co.kr/view/AKR20261102117700005"
-    },
-    {
-     "src": "한국경제",
-     "title": "\"화환할게\" 강동원, 4개월 전 팬과 약속 지켰다…결혼식장에 깜짝 선물",
-     "link": "https://www.hankyung.com/article/202610265376H"
-    },
-    {
-     "src": "SBS",
-     "title": "\"가족까지 표적 삼아 위해 암시\"…신세경 악플러, 항소심서 징역 8개월 '법정구속'",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008825850&plink=RSSLINK&cooper=RSSREADER"
-    }
-   ]
-  },
-  {
-   "kw": "아내",
+   "kw": "결혼",
    "nsrc": 5,
    "srcs": [
     "뉴시스",
     "동아일보",
     "연합뉴스",
-    "조선일보",
+    "한국경제",
     "헤럴드경제"
    ],
    "n": 7,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "'국민 아버지' 최불암 영면…아내 김민자 연신 눈물 흘려",
-     "link": "https://www.yna.co.kr/view/AKR20261102023200005"
+     "title": "배우 배나라·한재아 14일 결혼…\"서로 의지하는 삶 살아가기로\"",
+     "link": "https://www.yna.co.kr/view/AKR20261103123900005"
     },
     {
      "src": "동아일보",
-     "title": "신승환, 데뷔 26년 만에 아내 최초 공개…“전생에 나라 구했나”",
-     "link": "https://sports.donga.com/ent/article/all/20261104/134963101/1"
+     "title": "[전문] 포미닛 전지윤, 11월 결혼 “올해 캐롤 안 들어도 될 듯”",
+     "link": "https://sports.donga.com/ent/article/all/20261104/134964572/1"
     },
     {
-     "src": "헤럴드경제",
-     "title": "‘모텔 논란’ 양홍원, 아내·결혼 사진 ‘전부 삭제’…‘불륜 폭로’ 번복에도 여진 계속",
-     "link": "https://biz.heraldcorp.com/article/10923435"
+     "src": "한국경제",
+     "title": "마로니에 김정은, 결혼 22년 만에 파경…\"협의 이혼\"",
+     "link": "https://www.hankyung.com/article/202610230325H"
     },
     {
-     "src": "뉴시스",
-     "title": "'서울대 집안' 신동엽, PD 아내·두 자녀와 가족사진 공개",
-     "link": "https://www.newsis.com/view/NISX20261104_0003853902"
+     "src": "한국경제",
+     "title": "솔비·이규한, 결혼 발표 후 첫 '투샷'…\"20년 전부터 좋아해\"",
+     "link": "https://www.hankyung.com/article/2026102297647"
     }
    ]
   },
@@ -458,8 +462,8 @@
    "srcs": [
     "뉴시스",
     "동아일보",
+    "세계일보",
     "연합뉴스",
-    "조선일보",
     "한국경제"
    ],
    "n": 6,
@@ -487,70 +491,36 @@
    ]
   },
   {
-   "kw": "멜론",
-   "nsrc": 5,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "연합뉴스",
-    "조선일보",
-    "한겨레"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "리센느 신곡 '위드', 발매 첫날 멜론 '톱 100' 1위 직행",
-     "link": "https://www.yna.co.kr/view/AKR20261103181100005"
-    },
-    {
-     "src": "동아일보",
-     "title": "멜론 통째로 삼켰다…리센느, 5곡 나란히 최상단 배치",
-     "link": "https://sports.donga.com/ent/article/all/20261104/134962199/1"
-    },
-    {
-     "src": "한겨레",
-     "title": "리센느 신곡 ‘위드’ 2시간 만에 멜론 1위…앨범 5곡 모두 ‘톱10’",
-     "link": "https://www.hani.co.kr/arti/culture/music/1285682.html"
-    },
-    {
-     "src": "뉴시스",
-     "title": "[인터뷰] AI가 건넨 인간적 위로…머무르 '꿈꾸던 어른이 되었나요?' 멜론 2위가 던진 질문",
-     "link": "https://www.newsis.com/view/NISX20261102_0003850080"
-    }
-   ]
-  },
-  {
-   "kw": "합류",
+   "kw": "개월",
    "nsrc": 5,
    "srcs": [
     "SBS",
-    "동아일보",
+    "뉴시스",
     "연합뉴스",
     "조선일보",
-    "헤럴드경제"
+    "한국경제"
    ],
    "n": 6,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "[방송소식] tvN 예능 '보검 매직컬2' 29일 첫선…고경표 합류",
-     "link": "https://www.yna.co.kr/view/AKR20261103064500005"
+     "title": "'복면가왕' 11개월 만에 재개…'황금마스크' 12월 방송",
+     "link": "https://www.yna.co.kr/view/AKR20261103068900005"
     },
     {
-     "src": "동아일보",
-     "title": "고지용, 젝스키스 합류 반대에 “Shut Up”?…의미심장 SNS 파장",
-     "link": "https://sports.donga.com/ent/article/all/20261104/134963618/1"
+     "src": "연합뉴스",
+     "title": "배우 신세경 괴롭힌 악플러, 2심서 징역 8개월 법정구속",
+     "link": "https://www.yna.co.kr/view/AKR20261102117700005"
     },
     {
-     "src": "헤럴드경제",
-     "title": "“Shut Up” 고지용 ‘젝스키스 합류 반대’ 성명 후…의미심장 게시물",
-     "link": "https://biz.heraldcorp.com/article/10925022"
+     "src": "한국경제",
+     "title": "\"화환할게\" 강동원, 4개월 전 팬과 약속 지켰다…결혼식장에 깜짝 선물",
+     "link": "https://www.hankyung.com/article/202610265376H"
     },
     {
      "src": "SBS",
-     "title": "박해진, '굿파트너2' 합류…장나라와 이혼계 원톱 두고 대립",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008826392&plink=RSSLINK&cooper=RSSREADER"
+     "title": "\"가족까지 표적 삼아 위해 암시\"…신세경 악플러, 항소심서 징역 8개월 '법정구속'",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008825850&plink=RSSLINK&cooper=RSSREADER"
     }
    ]
   },
@@ -589,169 +559,70 @@
    ]
   },
   {
-   "kw": "시간",
+   "kw": "아내",
    "nsrc": 5,
    "srcs": [
     "뉴시스",
     "동아일보",
+    "연합뉴스",
     "조선일보",
-    "한겨레",
-    "한국경제"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "이유리, 18명 투입해 15시간 정리…“짐 많이 줄인 건데”",
-     "link": "https://sports.donga.com/ent/article/all/20261104/134963133/1"
-    },
-    {
-     "src": "한겨레",
-     "title": "리센느 신곡 ‘위드’ 2시간 만에 멜론 1위…앨범 5곡 모두 ‘톱10’",
-     "link": "https://www.hani.co.kr/arti/culture/music/1285682.html"
-    },
-    {
-     "src": "한국경제",
-     "title": "지금 듣기에 딱…노래 잘하는 베이비몬스터 만날 시간 '디저브' [신곡in가요]",
-     "link": "https://www.hankyung.com/article/202610230950H"
-    },
-    {
-     "src": "뉴시스",
-     "title": "리센느, 이번엔 '정주행'…신곡 '위드' 발매 2시간 만에 1위 직행",
-     "link": "https://www.newsis.com/view/NISX20261103_0003853530"
-    }
-   ]
-  },
-  {
-   "kw": "고백",
-   "nsrc": 5,
-   "srcs": [
-    "뉴시스",
-    "세계일보",
-    "조선일보",
-    "한국경제",
     "헤럴드경제"
    ],
-   "n": 5,
+   "n": 6,
    "headlines": [
     {
-     "src": "한국경제",
-     "title": "\"통장 압류, 수중엔 1000원\"…JBJ 출신 켄타, 4억 빚 고백",
-     "link": "https://www.hankyung.com/article/202610280689H"
+     "src": "연합뉴스",
+     "title": "'국민 아버지' 최불암 영면…아내 김민자 연신 눈물 흘려",
+     "link": "https://www.yna.co.kr/view/AKR20261102023200005"
     },
     {
-     "src": "세계일보",
-     "title": "최수종, 하희라 네 차례 유산 고백 “해줄 수 있는 건 다 해주고 싶다”",
-     "link": "https://www.segye.com/newsView/20261104502623"
+     "src": "동아일보",
+     "title": "신승환, 데뷔 26년 만에 아내 최초 공개…“전생에 나라 구했나”",
+     "link": "https://sports.donga.com/ent/article/all/20261104/134963101/1"
     },
     {
      "src": "헤럴드경제",
-     "title": "송준근 “7살 때 형 잃어…어머니 우울증에 시달려” 가슴 아픈 가족사 고백",
-     "link": "https://biz.heraldcorp.com/article/10923568"
+     "title": "‘모텔 논란’ 양홍원, 아내·결혼 사진 ‘전부 삭제’…‘불륜 폭로’ 번복에도 여진 계속",
+     "link": "https://biz.heraldcorp.com/article/10923435"
     },
     {
      "src": "뉴시스",
-     "title": "최수종, 하희라 네 차례 유산 고백…\"최대한 다 해주려 해\"",
-     "link": "https://www.newsis.com/view/NISX20261103_0003853545"
+     "title": "'서울대 집안' 신동엽, PD 아내·두 자녀와 가족사진 공개",
+     "link": "https://www.newsis.com/view/NISX20261104_0003853902"
     }
    ]
   },
   {
-   "kw": "컴백",
-   "nsrc": 4,
+   "kw": "합류",
+   "nsrc": 5,
    "srcs": [
-    "세계일보",
-    "조선일보",
-    "한겨레",
-    "한국경제"
-   ],
-   "n": 9,
-   "headlines": [
-    {
-     "src": "한겨레",
-     "title": "“또 한 번 중소돌의 기적을”…컴백 리센느, 역주행 신화 이어갈까",
-     "link": "https://www.hani.co.kr/arti/culture/music/1285552.html"
-    },
-    {
-     "src": "한국경제",
-     "title": "싸이커스, 에이티즈와 같은 달 컴백 \"우영 선배, 밥 사주며 응원\"",
-     "link": "https://www.hankyung.com/article/202611020876H"
-    },
-    {
-     "src": "한국경제",
-     "title": "엑스러브 현, 부상으로 컴백 쇼케이스 불참…\"하루빨리 회복하겠다\"",
-     "link": "https://www.hankyung.com/article/202610280617H"
-    },
-    {
-     "src": "한국경제",
-     "title": "'컴백' 앤더블 \"'프렌치 키싱'으로 절제된 섹시 보여드릴 것\"",
-     "link": "https://www.hankyung.com/article/202610278324H"
-    }
-   ]
-  },
-  {
-   "kw": "사과",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
+    "SBS",
     "동아일보",
     "연합뉴스",
+    "조선일보",
     "헤럴드경제"
    ],
-   "n": 8,
+   "n": 5,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "하이브, 사원 여권·카드번호 등 개인정보 유출…\"깊이 사과\"",
-     "link": "https://www.yna.co.kr/view/AKR20261102138300005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "심수봉, 후배 비판 논란 후 첫 무대서 재차 사과…\"해선 안될말\"",
-     "link": "https://www.yna.co.kr/view/AKR20261102086900005"
+     "title": "[방송소식] tvN 예능 '보검 매직컬2' 29일 첫선…고경표 합류",
+     "link": "https://www.yna.co.kr/view/AKR20261103064500005"
     },
     {
      "src": "동아일보",
-     "title": "[전문] ‘계약결혼’ 32기 영수, 몰카 논란에 사과 “변명의 여지 없어”",
-     "link": "https://sports.donga.com/ent/article/all/20261104/134962380/1"
+     "title": "고지용, 젝스키스 합류 반대에 “Shut Up”?…의미심장 SNS 파장",
+     "link": "https://sports.donga.com/ent/article/all/20261104/134963618/1"
     },
     {
-     "src": "동아일보",
-     "title": "송은이, 안재욱 짝사랑 후 사과 영상까지…“조용히 좋아했는데”",
-     "link": "https://sports.donga.com/ent/article/all/20261104/134961987/1"
-    }
-   ]
-  },
-  {
-   "kw": "별세",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "연합뉴스",
-    "한겨레",
-    "한국경제"
-   ],
-   "n": 7,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "'그대 그리고 나' 부른 포크 그룹 소리새 김광석 별세",
-     "link": "https://www.yna.co.kr/view/AKR20261103159200005"
+     "src": "헤럴드경제",
+     "title": "“Shut Up” 고지용 ‘젝스키스 합류 반대’ 성명 후…의미심장 게시물",
+     "link": "https://biz.heraldcorp.com/article/10925022"
     },
     {
-     "src": "연합뉴스",
-     "title": "'사극 대가' 정하연 작가 별세…'왕과 비'·'명성황후' 등 집필",
-     "link": "https://www.yna.co.kr/view/AKR20261101051300005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "[쇼츠] '파하~' 웃음 남기고 떠났다…'영원한 수사반장' 최불암 별세",
-     "link": "https://www.yna.co.kr/view/AKR20261030087000704"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "[영상] '영원한 수사반장' 최불암 별세…\"편히 쉬소서\"",
-     "link": "https://www.yna.co.kr/view/AKR20261030081600704"
+     "src": "SBS",
+     "title": "박해진, '굿파트너2' 합류…장나라와 이혼계 원톱 두고 대립",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008826392&plink=RSSLINK&cooper=RSSREADER"
     }
    ]
   },
@@ -764,7 +635,7 @@
     "조선일보",
     "헤럴드경제"
    ],
-   "n": 7,
+   "n": 8,
    "headlines": [
     {
      "src": "동아일보",
@@ -789,101 +660,101 @@
    ]
   },
   {
-   "kw": "빌보드",
+   "kw": "사과",
    "nsrc": 4,
    "srcs": [
     "뉴시스",
     "동아일보",
     "연합뉴스",
-    "조선일보"
+    "헤럴드경제"
    ],
-   "n": 6,
+   "n": 7,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "제니 '드라큘라', 빌보드 '핫 100' 5위…리사 '빌보드 200' 35위",
-     "link": "https://www.yna.co.kr/view/AKR20261104047800005"
+     "title": "하이브, 사원 여권·카드번호 등 개인정보 유출…\"깊이 사과\"",
+     "link": "https://www.yna.co.kr/view/AKR20261102138300005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "심수봉, 후배 비판 논란 후 첫 무대서 재차 사과…\"해선 안될말\"",
+     "link": "https://www.yna.co.kr/view/AKR20261102086900005"
     },
     {
      "src": "동아일보",
-     "title": "코르티스, 美 빌보드 재진입…데뷔 1년 만에 19주 차트인",
-     "link": "https://sports.donga.com/ent/article/all/20261104/134963525/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "에이티즈의 기특한 질주…‘Drip’ 컴백도 전에 美 빌보드 입성",
-     "link": "https://sports.donga.com/ent/article/all/20261104/134962894/1"
-    },
-    {
-     "src": "뉴시스",
-     "title": "제니 '드라큘라', '핫100' 5위 반등…리사 '빌보드 200' 35위",
-     "link": "https://www.newsis.com/view/NISX20261104_0003853622"
-    }
-   ]
-  },
-  {
-   "kw": "아들",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "조선일보",
-    "한국경제",
-    "헤럴드경제"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "한국경제",
-     "title": "강석우, 69세에 할아버지 됐다…\"아들이 아들 낳아\"",
-     "link": "https://www.hankyung.com/article/202610292398H"
-    },
-    {
-     "src": "한국경제",
-     "title": "'김현중 혼외자 양육' 전 여친, 방송 활동 시작…\"아들 외모 출중\"",
-     "link": "https://www.hankyung.com/article/202610230216H"
+     "title": "[전문] ‘계약결혼’ 32기 영수, 몰카 논란에 사과 “변명의 여지 없어”",
+     "link": "https://sports.donga.com/ent/article/all/20261104/134962380/1"
     },
     {
      "src": "헤럴드경제",
-     "title": "‘유학비 26억’ 윤영미, 500만원짜리 아들 월세방서 “내 침실은 옷장”",
-     "link": "https://biz.heraldcorp.com/article/10924228"
-    },
-    {
-     "src": "뉴시스",
-     "title": "아들 첫 공개 46세 한다감…아버지 \"손자 위해 금연 중\"",
-     "link": "https://www.newsis.com/view/NISX20261104_0003853848"
+     "title": "‘계약결혼’ 32기 영수, 몰카 논란 사과…“변명 여지 없는 내 잘못”",
+     "link": "https://biz.heraldcorp.com/article/10925261"
     }
    ]
   },
   {
-   "kw": "폭로",
+   "kw": "대응",
    "nsrc": 4,
    "srcs": [
-    "SBS",
     "뉴시스",
+    "세계일보",
     "조선일보",
     "헤럴드경제"
    ],
    "n": 6,
    "headlines": [
     {
+     "src": "세계일보",
+     "title": "헤이지니, 전 직원 노동 착취 의혹 재차 부인…“허위사실 유포 법적 대응”",
+     "link": "https://www.segye.com/newsView/20261104502853"
+    },
+    {
      "src": "헤럴드경제",
-     "title": "‘모텔 논란’ 양홍원, 아내·결혼 사진 ‘전부 삭제’…‘불륜 폭로’ 번복에도 여진 계속",
-     "link": "https://biz.heraldcorp.com/article/10923435"
-    },
-    {
-     "src": "SBS",
-     "title": "\"뺨 때려 고막 찢어져\" 85년생 학폭 여배우 폭로 나왔다…차예련 측 '사실무근' 반박",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008823590&plink=RSSLINK&cooper=RSSREADER"
+     "title": "차예련 측 ‘학폭+인성 논란’에 법적 대응 시사…“허위사실·인신공격에 강력 조치할 것”",
+     "link": "https://biz.heraldcorp.com/article/10925779"
     },
     {
      "src": "뉴시스",
-     "title": "이번엔 男가수 '학폭 폭로' 글 확산",
-     "link": "https://www.newsis.com/view/NISX20261103_0003853573"
+     "title": "차예련, 학폭 의혹 다시 일축 \"법률 검토 후 강력 대응\"",
+     "link": "https://www.newsis.com/view/NISX20261104_0003854660"
     },
     {
      "src": "뉴시스",
-     "title": "차예련, 이번엔 골프장 캐디 폭로 등장 \"'야야' 거리면서…\"",
-     "link": "https://www.newsis.com/view/NISX20261103_0003853561"
+     "title": "헤이지니 측 \"급여 정상 지급…사실 왜곡 법적 대응\"",
+     "link": "https://www.newsis.com/view/NISX20261104_0003853623"
+    }
+   ]
+  },
+  {
+   "kw": "억원",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "연합뉴스",
+    "조선일보",
+    "한국경제"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "국내 디지털크리에이터, 중국 엑스포서 86억원 규모 계약 상담",
+     "link": "https://www.yna.co.kr/view/AKR20261104117600017"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "가상 아이돌 그룹 플레이브, 유니세프 한국위에 1억원 기부",
+     "link": "https://www.yna.co.kr/view/AKR20261102054200371"
+    },
+    {
+     "src": "한국경제",
+     "title": "김원효 \"주식 투자로 2억원 날려…심진화와 이혼 위기\"",
+     "link": "https://www.hankyung.com/article/202611032016H"
+    },
+    {
+     "src": "뉴시스",
+     "title": "김원효, 주식 투자로 2억원 손실…심진화와 이혼 위기까지",
+     "link": "https://www.newsis.com/view/NISX20261104_0003854359"
     }
    ]
   },
@@ -921,11 +792,11 @@
    ]
   },
   {
-   "kw": "스크린",
+   "kw": "신민아",
    "nsrc": 4,
    "srcs": [
-    "SBS",
     "뉴시스",
+    "동아일보",
     "연합뉴스",
     "조선일보"
    ],
@@ -933,272 +804,79 @@
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "김재원 \"드라마와는 또 다른 영화의 매력…스크린 데뷔 설레\"",
-     "link": "https://www.yna.co.kr/view/AKR20261103129100005"
-    },
-    {
-     "src": "SBS",
-     "title": "진영, '파이터'로 스크린 복귀…본격 격투 액션 도전",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008828128&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "뉴시스",
-     "title": "서예지, 6년 만에 스크린 복귀…한국형 뱀파이어 영화",
-     "link": "https://www.newsis.com/view/NISX20261104_0003854380"
-    },
-    {
-     "src": "뉴시스",
-     "title": "김재원, 스크린 데뷔에 6㎏ 감량…\"허투루 하고 싶지 않았다\"",
-     "link": "https://www.newsis.com/view/NISX20261103_0003853037"
-    }
-   ]
-  },
-  {
-   "kw": "박스오피",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "동아일보",
-    "연합뉴스",
-    "한겨레"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "[박스오피스] '치이카와' 4주 연속 주말 흥행 1위…누적 258만명",
-     "link": "https://www.yna.co.kr/view/AKR20261102036700005"
+     "title": "신민아·주지훈 \"익숙함에 새로움 더해…판타지 즐겨주길\"",
+     "link": "https://www.yna.co.kr/view/AKR20261103108600005"
     },
     {
      "src": "동아일보",
-     "title": "‘호프’, 프랑스 개봉 첫날 올해 韓영화 오프닝 1위…파리 박스오피스 2위",
-     "link": "https://sports.donga.com/ent/article/all/20261104/134962256/1"
+     "title": "신민아, 사랑보다 황후의 책임…‘재혼 황후’ 나비에 변신",
+     "link": "https://sports.donga.com/ent/article/all/20261104/134964263/1"
     },
     {
-     "src": "한겨레",
-     "title": "브래드 피트도 못 막은 먼작귀…치이카와, 박스오피스 1위 재탈환",
-     "link": "https://www.hani.co.kr/arti/culture/culture_general/1285135.html"
+     "src": "뉴시스",
+     "title": "신민아, \"바지 안 맞아\" 식단 시작…아침엔 과일·채소 먼저",
+     "link": "https://www.newsis.com/view/NISX20261103_0003852041"
     },
     {
-     "src": "SBS",
-     "title": "'하트 오브 비스트', '치이카와' 제치고 박스오피스 1위",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008827611&plink=RSSLINK&cooper=RSSREADER"
+     "src": "뉴시스",
+     "title": "신민아 \"'재혼 황후', 익숙하지만 새로움이 조화된 작품\"",
+     "link": "https://www.newsis.com/view/NISX20261103_0003852765"
     }
    ]
   },
   {
-   "kw": "만원",
+   "kw": "시작",
    "nsrc": 4,
    "srcs": [
     "뉴시스",
     "동아일보",
-    "조선일보",
-    "헤럴드경제"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "“새벽마다 눈물” 아이비, 사비 1000만원 들여 영어 특훈 (유퀴즈)",
-     "link": "https://sports.donga.com/ent/article/all/20261104/134963143/1"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "젝스키스 공연이 89만원? 고가 티켓 논란에 해명…“객실 가격 예시일 뿐”",
-     "link": "https://biz.heraldcorp.com/article/10923765"
-    },
-    {
-     "src": "뉴시스",
-     "title": "브라이언, 800만원 명품 백팩 300만원에 구매…\"짠돌이 맞다\"",
-     "link": "https://www.newsis.com/view/NISX20261104_0003854333"
-    },
-    {
-     "src": "조선일보",
-     "title": "브라이언, 비결 뭐길래?..“명품 캐리어 400만원→90만원에 구매” (더브라이언)",
-     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/04/MRTDEMJUGMYTQZJXGVSTONZUGQ/"
-    }
-   ]
-  },
-  {
-   "kw": "감량",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "조선일보",
-    "헤럴드경제"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "악뮤 이수현 “반년간 맥 안 잡혀…30kg 감량 2년 넘게 걸렸다”",
-     "link": "https://sports.donga.com/ent/article/all/20261104/134962559/1"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "9개월간 임신 몰랐던 20대 “약먹고 12㎏ 감량…아기 발 나와 출산”",
-     "link": "https://biz.heraldcorp.com/article/10924012"
-    },
-    {
-     "src": "뉴시스",
-     "title": "이수현, 30㎏ 감량 과정서 건강 이상…\"맥 안 잡혀\"",
-     "link": "https://www.newsis.com/view/NISX20261104_0003853711"
-    },
-    {
-     "src": "뉴시스",
-     "title": "김재원, 스크린 데뷔에 6㎏ 감량…\"허투루 하고 싶지 않았다\"",
-     "link": "https://www.newsis.com/view/NISX20261103_0003853037"
-    }
-   ]
-  },
-  {
-   "kw": "포착",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "조선일보",
+    "한겨레",
     "한국경제"
    ],
    "n": 5,
    "headlines": [
     {
-     "src": "한국경제",
-     "title": "팬들에 사과한 후…탑, 연인 나나와 생일카페 방문 '포착'",
-     "link": "https://www.hankyung.com/article/202611031848H"
+     "src": "동아일보",
+     "title": "박서진, 12월 25일 전국투어 시작…전국 6개 도시 투어 돌입",
+     "link": "https://sports.donga.com/ent/article/all/20261104/134964627/1"
     },
     {
-     "src": "SBS",
-     "title": "탑♥나나, 공개 열애 후 첫 데이트 포착…팬들 만든 생일 카페 동반 방문",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008827778&plink=RSSLINK&cooper=RSSREADER"
+     "src": "한겨레",
+     "title": "박진영, 이단·사이비 논란에 “핍박 시작…하나님이 해결할 것”",
+     "link": "https://www.hani.co.kr/arti/culture/culture_general/1285738.html"
+    },
+    {
+     "src": "한국경제",
+     "title": "'김현중 혼외자 양육' 전 여친, 방송 활동 시작…\"아들 외모 출중\"",
+     "link": "https://www.hankyung.com/article/202610230216H"
     },
     {
      "src": "뉴시스",
-     "title": "송혜교, 또 헤어스타일리스트 이일중과 투샷 포착",
-     "link": "https://www.newsis.com/view/NISX20261104_0003853703"
-    },
-    {
-     "src": "조선일보",
-     "title": "이루네♥박혜신, 계단 밀회 포착..열애설에 \"노코멘트\" ('전설의 사내')",
-     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/04/HA3GKMZSGEYDKNDEGUYDIOBRHA/"
+     "title": "신민아, \"바지 안 맞아\" 식단 시작…아침엔 과일·채소 먼저",
+     "link": "https://www.newsis.com/view/NISX20261103_0003852041"
     }
    ]
   },
   {
-   "kw": "출신",
+   "kw": "부인",
    "nsrc": 4,
    "srcs": [
-    "세계일보",
-    "조선일보",
-    "한국경제",
-    "헤럴드경제"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "한국경제",
-     "title": "\"통장 압류, 수중엔 1000원\"…JBJ 출신 켄타, 4억 빚 고백",
-     "link": "https://www.hankyung.com/article/202610280689H"
-    },
-    {
-     "src": "세계일보",
-     "title": "인천 출신 남성 발라드 가수 학폭 의혹 등장…“10년 넘게 자료 모았다”",
-     "link": "https://www.segye.com/newsView/20261104502924"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "“인천 출신 가수…학폭 폭로하려고 10년 넘게 지켜 보는 중” SNS서 확산",
-     "link": "https://biz.heraldcorp.com/article/10925056"
-    },
-    {
-     "src": "조선일보",
-     "title": "'한예종 출신' 한이수, 이렇게 우아한 신민아 시녀라니..드레스 자태  ('재혼 황후')",
-     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/04/HFSTQOJWHFQTCMLCGBSWKZDCG4/"
-    }
-   ]
-  },
-  {
-   "kw": "헤이지니",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
+    "동아일보",
     "세계일보",
     "조선일보",
     "헤럴드경제"
    ],
    "n": 5,
    "headlines": [
+    {
+     "src": "동아일보",
+     "title": "[전문] 차예련, 학폭 의혹 재차 부인 “사실무근…추가 피해 강력 조치”",
+     "link": "https://sports.donga.com/ent/article/all/20261104/134964352/1"
+    },
     {
      "src": "세계일보",
      "title": "헤이지니, 전 직원 노동 착취 의혹 재차 부인…“허위사실 유포 법적 대응”",
      "link": "https://www.segye.com/newsView/20261104502853"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "“개인 연차 없이 한 달 쉬었는데”…헤이지니 논란에 현 직원 ‘등판’",
-     "link": "https://biz.heraldcorp.com/article/10924714"
-    },
-    {
-     "src": "뉴시스",
-     "title": "헤이지니 노동착취 의혹에 현직 직원 나섰다",
-     "link": "https://www.newsis.com/view/NISX20261104_0003853687"
-    },
-    {
-     "src": "뉴시스",
-     "title": "헤이지니 측 \"급여 정상 지급…사실 왜곡 법적 대응\"",
-     "link": "https://www.newsis.com/view/NISX20261104_0003853623"
-    }
-   ]
-  },
-  {
-   "kw": "직원",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "세계일보",
-    "조선일보",
-    "헤럴드경제"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "세계일보",
-     "title": "헤이지니, 전 직원 노동 착취 의혹 재차 부인…“허위사실 유포 법적 대응”",
-     "link": "https://www.segye.com/newsView/20261104502853"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "“개인 연차 없이 한 달 쉬었는데”…헤이지니 논란에 현 직원 ‘등판’",
-     "link": "https://biz.heraldcorp.com/article/10924714"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "박세리, 은퇴 후 방송하는 이유…직원 월급 주기 위해?",
-     "link": "https://biz.heraldcorp.com/article/10924113"
-    },
-    {
-     "src": "뉴시스",
-     "title": "헤이지니 노동착취 의혹에 현직 직원 나섰다",
-     "link": "https://www.newsis.com/view/NISX20261104_0003853687"
-    }
-   ]
-  },
-  {
-   "kw": "차예련",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "세계일보",
-    "헤럴드경제"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "세계일보",
-     "title": "차예련, 학폭 의혹 이어 골프장 캐디 폭로까지…“반말하며 무시”",
-     "link": "https://www.segye.com/newsView/20261104502401"
     },
     {
      "src": "헤럴드경제",
@@ -1206,47 +884,75 @@
      "link": "https://biz.heraldcorp.com/article/10923394"
     },
     {
-     "src": "SBS",
-     "title": "\"학폭 사실무근\" 반박에도…차예련 SNS \"해명하라\" 쇄도",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008825394&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "SBS",
-     "title": "\"뺨 때려 고막 찢어져\" 85년생 학폭 여배우 폭로 나왔다…차예련 측 '사실무근' 반박",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008823590&plink=RSSLINK&cooper=RSSREADER"
+     "src": "조선일보",
+     "title": "‘학폭 부인’ 차예련, 美일정 마치고 귀국… 잇단 폭로에 입 열까",
+     "link": "https://www.chosun.com/entertainments/enter_general/2026/11/04/GUYGIMTGMJQTKYJYG4YTOMTBME/"
     }
    ]
   },
   {
-   "kw": "협업",
+   "kw": "맞아",
    "nsrc": 4,
    "srcs": [
     "뉴시스",
     "동아일보",
-    "연합뉴스",
-    "한국경제"
+    "조선일보",
+    "헤럴드경제"
    ],
-   "n": 4,
+   "n": 5,
    "headlines": [
     {
-     "src": "연합뉴스",
-     "title": "이마트24, QWER 협업 샌드위치 21종 출시…팬덤 공략",
-     "link": "https://www.yna.co.kr/view/AKR20261104033900030"
-    },
-    {
      "src": "동아일보",
-     "title": "원조 ‘센 언니’와 5세대 신예…씨엘·올데이 프로젝트, ‘2026 MAMA’서 첫 협업",
-     "link": "https://sports.donga.com/ent/article/all/20261104/134962237/1"
+     "title": "‘범죄도시’ 장이수 맞아?…박지환, 알고 보니 47년 차 애독가",
+     "link": "https://sports.donga.com/ent/article/all/20261104/134963072/1"
     },
     {
-     "src": "한국경제",
-     "title": "패닉, 'MAMA'서 코르티스·하투하 등과 컬래버…빅뱅은 둘리와 협업",
-     "link": "https://www.hankyung.com/article/202610292863H"
+     "src": "헤럴드경제",
+     "title": "신동 맞아? 몰라볼 뻔…37㎏ 감량하고 날렵해진 ‘비주얼’ 눈길",
+     "link": "https://biz.heraldcorp.com/article/10925489"
     },
     {
      "src": "뉴시스",
-     "title": "\"QWER 멤버들이 샌드위치로\" 이마트24, 협업 상품 21종 출시",
-     "link": "https://www.newsis.com/view/NISX20261104_0003853759"
+     "title": "신민아, \"바지 안 맞아\" 식단 시작…아침엔 과일·채소 먼저",
+     "link": "https://www.newsis.com/view/NISX20261103_0003852041"
+    },
+    {
+     "src": "뉴시스",
+     "title": "정범균, 개그계 군기 폭로…\"김원효와 NG 냈는데 나만 뺨 맞아\"",
+     "link": "https://www.newsis.com/view/NISX20261103_0003852377"
+    }
+   ]
+  },
+  {
+   "kw": "아냐",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "세계일보",
+    "조선일보",
+    "헤럴드경제"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "세계일보",
+     "title": "‘역주행 반짝 아냐?→아니네’… 리센느 신곡 차트 ‘올킬’, 음악으로 ‘국민 걸그룹’ 증명했다",
+     "link": "https://www.segye.com/newsView/20261104512943"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "김지영 ‘최불암 조문’ 복장 어땠기에…“예의 아냐” vs “뭐가 문제?”",
+     "link": "https://biz.heraldcorp.com/article/10923493"
+    },
+    {
+     "src": "뉴시스",
+     "title": "김재원 \"수능, 인생의 전부 아냐…결과 연연하지 않길\"",
+     "link": "https://www.newsis.com/view/NISX20261103_0003853108"
+    },
+    {
+     "src": "뉴시스",
+     "title": "\"이목구비 뚜렷한 얼굴 아냐\"…김재원, 겸손한 외모 평가",
+     "link": "https://www.newsis.com/view/NISX20261103_0003853060"
     }
    ]
   },
@@ -1284,68 +990,365 @@
    ]
   },
   {
-   "kw": "주지훈",
+   "kw": "그대",
    "nsrc": 4,
    "srcs": [
     "뉴시스",
     "연합뉴스",
     "조선일보",
-    "한국경제"
+    "한겨레"
    ],
    "n": 4,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "신민아·주지훈 \"익숙함에 새로움 더해…판타지 즐겨주길\"",
-     "link": "https://www.yna.co.kr/view/AKR20261103108600005"
+     "title": "'그대 그리고 나' 부른 포크 그룹 소리새 김광석 별세",
+     "link": "https://www.yna.co.kr/view/AKR20261103159200005"
     },
     {
-     "src": "한국경제",
-     "title": "'재혼황후' 주지훈, 욕받이 자처 \"삿대질 하고 현생 시원하다면 만족\"",
-     "link": "https://www.hankyung.com/article/202611032480H"
+     "src": "한겨레",
+     "title": "‘그대 그리고 나’ 그룹 소리새 김광석 별세…향년 70",
+     "link": "https://www.hani.co.kr/arti/culture/music/1285593.html"
     },
     {
      "src": "뉴시스",
-     "title": "'재혼 황후' 주지훈, 황제 옷 얼마나 난해하길래 \"배꼽까지 파여\"",
-     "link": "https://www.newsis.com/view/NISX20261103_0003853141"
+     "title": "'아직도 못다한 사랑'·'그대 그리고 나'…'소리새' 김광석 별세",
+     "link": "https://www.newsis.com/view/NISX20261103_0003852846"
     },
     {
      "src": "조선일보",
-     "title": "신민아·주지훈→수지·김선호, 다시 만난 그와 그녀들[Oh!쎈 레터]",
-     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/04/GBTDAOLDG5TDGNLDGFRTMMBWGY/"
+     "title": "'그대 그리고 나' 소리새 김광석, 뇌병변 장애 투병 끝 별세…향년 70세[종합]",
+     "link": "https://www.chosun.com/entertainments/enter_general/2026/11/04/MNSDIMZSGZTDCNDFGZTDCNDDGY/"
     }
    ]
   },
   {
-   "kw": "억원",
+   "kw": "그리고",
    "nsrc": 4,
    "srcs": [
     "뉴시스",
     "연합뉴스",
     "조선일보",
+    "한겨레"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "'그대 그리고 나' 부른 포크 그룹 소리새 김광석 별세",
+     "link": "https://www.yna.co.kr/view/AKR20261103159200005"
+    },
+    {
+     "src": "한겨레",
+     "title": "‘그대 그리고 나’ 그룹 소리새 김광석 별세…향년 70",
+     "link": "https://www.hani.co.kr/arti/culture/music/1285593.html"
+    },
+    {
+     "src": "뉴시스",
+     "title": "'아직도 못다한 사랑'·'그대 그리고 나'…'소리새' 김광석 별세",
+     "link": "https://www.newsis.com/view/NISX20261103_0003852846"
+    },
+    {
+     "src": "조선일보",
+     "title": "'그대 그리고 나' 소리새 김광석, 뇌병변 장애 투병 끝 별세…향년 70세[종합]",
+     "link": "https://www.chosun.com/entertainments/enter_general/2026/11/04/MNSDIMZSGZTDCNDFGZTDCNDDGY/"
+    }
+   ]
+  },
+  {
+   "kw": "소리새",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "연합뉴스",
+    "조선일보",
+    "한겨레"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "'그대 그리고 나' 부른 포크 그룹 소리새 김광석 별세",
+     "link": "https://www.yna.co.kr/view/AKR20261103159200005"
+    },
+    {
+     "src": "한겨레",
+     "title": "‘그대 그리고 나’ 그룹 소리새 김광석 별세…향년 70",
+     "link": "https://www.hani.co.kr/arti/culture/music/1285593.html"
+    },
+    {
+     "src": "뉴시스",
+     "title": "'아직도 못다한 사랑'·'그대 그리고 나'…'소리새' 김광석 별세",
+     "link": "https://www.newsis.com/view/NISX20261103_0003852846"
+    },
+    {
+     "src": "조선일보",
+     "title": "'그대 그리고 나' 소리새 김광석, 뇌병변 장애 투병 끝 별세…향년 70세[종합]",
+     "link": "https://www.chosun.com/entertainments/enter_general/2026/11/04/MNSDIMZSGZTDCNDFGZTDCNDDGY/"
+    }
+   ]
+  },
+  {
+   "kw": "김광석",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "연합뉴스",
+    "조선일보",
+    "한겨레"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "'그대 그리고 나' 부른 포크 그룹 소리새 김광석 별세",
+     "link": "https://www.yna.co.kr/view/AKR20261103159200005"
+    },
+    {
+     "src": "한겨레",
+     "title": "‘그대 그리고 나’ 그룹 소리새 김광석 별세…향년 70",
+     "link": "https://www.hani.co.kr/arti/culture/music/1285593.html"
+    },
+    {
+     "src": "뉴시스",
+     "title": "'아직도 못다한 사랑'·'그대 그리고 나'…'소리새' 김광석 별세",
+     "link": "https://www.newsis.com/view/NISX20261103_0003852846"
+    },
+    {
+     "src": "조선일보",
+     "title": "'그대 그리고 나' 소리새 김광석, 뇌병변 장애 투병 끝 별세…향년 70세[종합]",
+     "link": "https://www.chosun.com/entertainments/enter_general/2026/11/04/MNSDIMZSGZTDCNDFGZTDCNDDGY/"
+    }
+   ]
+  },
+  {
+   "kw": "같은",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "연합뉴스",
+    "한겨레",
     "한국경제"
    ],
    "n": 4,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "가상 아이돌 그룹 플레이브, 유니세프 한국위에 1억원 기부",
-     "link": "https://www.yna.co.kr/view/AKR20261102054200371"
+     "title": "\"아버지이자 선생님, 큰 산 같은 분\"…최불암 빈소 이틀째 조문 행렬",
+     "link": "https://www.yna.co.kr/view/AKR20261031027600005"
+    },
+    {
+     "src": "한겨레",
+     "title": "고 최불암 오늘 영면…“아버지 품 같은 연기와 삶, 고마웠습니다”",
+     "link": "https://www.hani.co.kr/arti/culture/culture_general/1285250.html"
     },
     {
      "src": "한국경제",
-     "title": "김원효 \"주식 투자로 2억원 날려…심진화와 이혼 위기\"",
-     "link": "https://www.hankyung.com/article/202611032016H"
+     "title": "싸이커스, 에이티즈와 같은 달 컴백 \"우영 선배, 밥 사주며 응원\"",
+     "link": "https://www.hankyung.com/article/202611020876H"
     },
     {
      "src": "뉴시스",
-     "title": "김원효, 주식 투자로 2억원 손실…심진화와 이혼 위기까지",
-     "link": "https://www.newsis.com/view/NISX20261104_0003854359"
+     "title": "뜻밖의 학맥…'이병헌♥' 이민정 \"노홍철, 저랑 같은 학교 다녀\"",
+     "link": "https://www.newsis.com/view/NISX20261103_0003853497"
+    }
+   ]
+  },
+  {
+   "kw": "너무",
+   "nsrc": 4,
+   "srcs": [
+    "동아일보",
+    "연합뉴스",
+    "한국경제",
+    "헤럴드경제"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "최불암 영정앞에 선 김혜자 \"너무 그리운 사람…곧 만나자\"(종합2보)",
+     "link": "https://www.yna.co.kr/view/AKR20261030101152005"
+    },
+    {
+     "src": "동아일보",
+     "title": "34기 영철, 현숙에 사과했는데…“너무 여러 번 해” (나는솔로)",
+     "link": "https://sports.donga.com/ent/article/all/20261104/134962996/1"
+    },
+    {
+     "src": "한국경제",
+     "title": "\"소재 너무 선정적\" 우려했는데…남지현·김재영 로코, 뚜껑 열어보니",
+     "link": "https://www.hankyung.com/article/202610230538H"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "“얼떨떨, 너무 부담스럽다” 맥도날드 랩 터진 존박 복잡한 심경",
+     "link": "https://biz.heraldcorp.com/article/10924045"
+    }
+   ]
+  },
+  {
+   "kw": "앤더블",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "조선일보",
+    "한국경제"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "앤더블, ‘French Kissing’으로 음방 첫 1위…“앤클로 덕분”",
+     "link": "https://sports.donga.com/ent/article/all/20261104/134963966/1"
+    },
+    {
+     "src": "한국경제",
+     "title": "'컴백' 앤더블 \"'프렌치 키싱'으로 절제된 섹시 보여드릴 것\"",
+     "link": "https://www.hankyung.com/article/202610278324H"
+    },
+    {
+     "src": "뉴시스",
+     "title": "앤더블 미니 2집, 초동 80만장 넘겼다…자체 신기록",
+     "link": "https://www.newsis.com/view/NISX20261103_0003852048"
     },
     {
      "src": "조선일보",
-     "title": "김원효, 주식 투자로 2억원 손실…심진화와 이혼 위기까지",
-     "link": "https://www.chosun.com/entertainments/2026/11/04/P2JWZTQSBVCI7D6I62DDOLGYUI/"
+     "title": "앤더블, 컴백 직후 '더쇼' 1위 했다..\"좋은 무대로 보답할 것\"",
+     "link": "https://www.chosun.com/entertainments/music/2026/11/04/GE4TKMZSGM4GCNTCMNRGGZDEME/"
+    }
+   ]
+  },
+  {
+   "kw": "시간",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "한겨레",
+    "한국경제"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "이유리, 18명 투입해 15시간 정리…“짐 많이 줄인 건데”",
+     "link": "https://sports.donga.com/ent/article/all/20261104/134963133/1"
+    },
+    {
+     "src": "한겨레",
+     "title": "리센느 신곡 ‘위드’ 2시간 만에 멜론 1위…앨범 5곡 모두 ‘톱10’",
+     "link": "https://www.hani.co.kr/arti/culture/music/1285682.html"
+    },
+    {
+     "src": "한국경제",
+     "title": "지금 듣기에 딱…노래 잘하는 베이비몬스터 만날 시간 '디저브' [신곡in가요]",
+     "link": "https://www.hankyung.com/article/202610230950H"
+    },
+    {
+     "src": "뉴시스",
+     "title": "리센느, 이번엔 '정주행'…신곡 '위드' 발매 2시간 만에 1위 직행",
+     "link": "https://www.newsis.com/view/NISX20261103_0003853530"
+    }
+   ]
+  },
+  {
+   "kw": "고백",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "세계일보",
+    "한국경제",
+    "헤럴드경제"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "한국경제",
+     "title": "\"통장 압류, 수중엔 1000원\"…JBJ 출신 켄타, 4억 빚 고백",
+     "link": "https://www.hankyung.com/article/202610280689H"
+    },
+    {
+     "src": "세계일보",
+     "title": "최수종, 하희라 네 차례 유산 고백 “해줄 수 있는 건 다 해주고 싶다”",
+     "link": "https://www.segye.com/newsView/20261104502623"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "송준근 “7살 때 형 잃어…어머니 우울증에 시달려” 가슴 아픈 가족사 고백",
+     "link": "https://biz.heraldcorp.com/article/10923568"
+    },
+    {
+     "src": "뉴시스",
+     "title": "최수종, 하희라 네 차례 유산 고백…\"최대한 다 해주려 해\"",
+     "link": "https://www.newsis.com/view/NISX20261103_0003853545"
+    }
+   ]
+  },
+  {
+   "kw": "이유",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "세계일보",
+    "조선일보",
+    "헤럴드경제"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "세계일보",
+     "title": "“우리가 먼저 쳐서 이긴 전쟁”… ‘문무’ 작가가 나당전쟁 택한 이유",
+     "link": "https://www.segye.com/newsView/20261104504427"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "박세리, 은퇴 후 방송하는 이유…직원 월급 주기 위해?",
+     "link": "https://biz.heraldcorp.com/article/10924113"
+    },
+    {
+     "src": "뉴시스",
+     "title": "최수종, 이만기에게 반말한 이유 밝혔다",
+     "link": "https://www.newsis.com/view/NISX20261103_0003853541"
+    },
+    {
+     "src": "조선일보",
+     "title": "데뷔부터 정규앨범 승부수..OVUS, 이유 있는 자신감",
+     "link": "https://www.chosun.com/entertainments/music/2026/11/04/HA4DEMRWMQ3TQN3BGAZTSOLGME/"
+    }
+   ]
+  },
+  {
+   "kw": "법적",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "세계일보",
+    "조선일보",
+    "헤럴드경제"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "세계일보",
+     "title": "헤이지니, 전 직원 노동 착취 의혹 재차 부인…“허위사실 유포 법적 대응”",
+     "link": "https://www.segye.com/newsView/20261104502853"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "차예련 측 ‘학폭+인성 논란’에 법적 대응 시사…“허위사실·인신공격에 강력 조치할 것”",
+     "link": "https://biz.heraldcorp.com/article/10925779"
+    },
+    {
+     "src": "뉴시스",
+     "title": "헤이지니 측 \"급여 정상 지급…사실 왜곡 법적 대응\"",
+     "link": "https://www.newsis.com/view/NISX20261104_0003853623"
+    },
+    {
+     "src": "조선일보",
+     "title": "차예련, 학폭 부인 2차 입장문..“가족 비난 多, 허위사실 법적 대응” [공식입장]",
+     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/04/GYZGEYRRGEYTIODEGQ3TMZRYHA/"
     }
    ]
   }

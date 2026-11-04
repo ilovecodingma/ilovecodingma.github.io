@@ -439,6 +439,16 @@ def load():
         # 공모전 세션 수집 필드(있으면 우선): quick, effort, region, fee
         c['quick'] = r.get('quick')
         c['effort'] = P.clean(r.get('effort', ''))[:12]
+        # 2026-11-04 화면 모순 정리: 부문별 시상(총상금 = 1등 × 부문 수)인 값은 「1등」으로 단정하지 않고, 경연·공모전 제목의 「댓글 1줄」은 제출물로 쓰지 않으며, 요리 대회는 디자인보다 요리를 대표 분야로 둔다
+        if re.search(r'&|부문', c.get('title') or '') and re.fullmatch(r'1등 ([\d,]+만)원? · 총상금 ([\d,]+만)원?', (c.get('prize') or '').strip()):
+            _m = re.fullmatch(r'1등 ([\d,]+만)원? · 총상금 ([\d,]+만)원?', c['prize'].strip())
+            _a, _b = (int(x.replace(',', '').replace('만', '')) for x in _m.groups())
+            if _a and _b % _a == 0 and 2 <= _b // _a <= 4:
+                c['prize'] = f'총상금 {_m.group(2)}원 (부문별 {_m.group(1)}원)'
+        if c['effort'] == '댓글 1줄' and re.search(r'경연|공모전|대회', c.get('title') or ''):
+            c['effort'] = ''
+        if c.get('tags') and c['tags'][0] == '디자인' and '요리·레시피' in c['tags'] and re.search(r'요리|레시피|쿠킹', c.get('title') or ''):
+            c['tags'] = ['요리·레시피'] + [x for x in c['tags'] if x != '요리·레시피']
         c['region'] = P.clean(r.get('region', '') if isinstance(r.get('region'), str) else '')[:10]
         c['fee'] = r.get('fee') or 0
         c['submit'] = P.clean(r.get('submit', ''))[:10]
