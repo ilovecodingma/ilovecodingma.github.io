@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-04 16:00",
+ "updated": "2026-11-04 17:00",
  "items": [
   {
    "query": "로스앤젤레스 fc 대 미네소타 유나이티드 fc 순위",
@@ -303,6 +303,18 @@
    "expires": "2026-11-07"
   },
   {
+   "query": "비상식량",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-04",
+   "expires": "2026-11-07"
+  },
+  {
    "query": "중대범죄 수사청",
    "tier": "단기",
    "signal": [
@@ -376,6 +388,18 @@
   },
   {
    "query": "박진영",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-04",
+   "expires": "2026-11-07"
+  },
+  {
+   "query": "골프",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -532,6 +556,30 @@
   },
   {
    "query": "포스코",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-04",
+   "expires": "2026-11-07"
+  },
+  {
+   "query": "물김치",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-04",
+   "expires": "2026-11-07"
+  },
+  {
+   "query": "국채",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -772,6 +820,18 @@
   },
   {
    "query": "이란",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-04",
+   "expires": "2026-11-07"
+  },
+  {
+   "query": "헤지펀드",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -5594,6 +5654,19 @@
    "expires": "2026-11-09"
   },
   {
+   "query": "미국 중간선거 결과 상원 하원 어떻게 됐나, AP 호명과 미확정 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 5,
+   "status": "작성",
+   "page": "/issue/us-midterm-2026-results-1104/",
+   "registered": "2026-11-04",
+   "expires": "2026-11-18"
+  },
+  {
    "query": "네이밍 공모",
    "tier": "중기",
    "signal": [
@@ -5728,6 +5801,19 @@
    "expires": "2026-11-18"
   },
   {
+   "query": "어머니 경로카드로 지하철 탄 50대 부가운임 65만원 납부, 부정승차 처리 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 4,
+   "status": "작성",
+   "page": "/issue/subway-fare-evasion-1104/",
+   "registered": "2026-11-04",
+   "expires": "2026-11-25"
+  },
+  {
    "query": "2027 수능 스마트안경 반입금지 물품과 부정행위 처리는? 충남교육청 탐지 도입 정리",
    "tier": "중기",
    "signal": [
@@ -5812,6 +5898,32 @@
    "page": "/issue/douzone-bizon-data-breach/",
    "registered": "2026-11-03",
    "expires": "2026-11-17"
+  },
+  {
+   "query": "윤석열 선거법 2심 당선무효형 선고 정리, 국민의힘 선거비용 397억 반환은 확정된 건가요?",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 3,
+   "status": "작성",
+   "page": "/issue/election-law-appeal-1104/",
+   "registered": "2026-11-04",
+   "expires": "2026-11-11"
+  },
+  {
+   "query": "가덕도신공항 공사비 6200억 증액 특별법 개정 합의 보도 정리, 착공 시기는?",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 3,
+   "status": "작성",
+   "page": "/issue/gadeokdo-airport-cost-1104/",
+   "registered": "2026-11-04",
+   "expires": "2026-11-18"
   },
   {
    "query": "북한 바이낸스 해킹 사건 어떻게 된 건가요? 확인된 내용 정리 2026년 11월",
