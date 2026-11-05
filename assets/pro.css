@@ -222,3 +222,4 @@ main .cs-g a{color:var(--tx)}
   main table td:first-child,main table th:first-child{white-space:normal!important}
   main table{min-width:0!important;max-width:100%}
 }
+@media(max-width:700px){main a{overflow-wrap:anywhere}}

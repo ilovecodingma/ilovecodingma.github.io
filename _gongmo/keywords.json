@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-05 11:00",
+ "updated": "2026-11-05 12:00",
  "items": [
   {
    "query": "로스앤젤레스 fc 대 미네소타 유나이티드 fc 순위",
@@ -352,6 +352,18 @@
   },
   {
    "query": "페네르바흐체 대 리버풀",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-05",
+   "expires": "2026-11-08"
+  },
+  {
+   "query": "kia 타이거즈",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -1084,6 +1096,42 @@
   },
   {
    "query": "이다해",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-05",
+   "expires": "2026-11-08"
+  },
+  {
+   "query": "젤다 의 전설 시간 의 오카리나",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-05",
+   "expires": "2026-11-08"
+  },
+  {
+   "query": "디트로이트 대 필라데피아",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-05",
+   "expires": "2026-11-08"
+  },
+  {
+   "query": "보디빌더",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -6222,6 +6270,19 @@
    "expires": "2026-12-05"
   },
   {
+   "query": "윤석열 전 대통령 선거법 2심 징역 1년 6개월 집행유예, 국민의힘 397억 반환은 언제?",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 4,
+   "status": "작성",
+   "page": "/issue/yoon-appeal-verdict-1105/",
+   "registered": "2026-11-05",
+   "expires": "2026-11-12"
+  },
+  {
    "query": "2027 1학기 국가장학금 신청기간",
    "tier": "중기",
    "signal": [
@@ -6740,6 +6801,19 @@
    "page": "/issue/mounjaro-wegovy-1103/",
    "registered": "2026-11-03",
    "expires": "2026-11-10"
+  },
+  {
+   "query": "니케 PC 런처 악성코드 유포 보고, 무슨 일이고 공식 입장은? 사실 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 2,
+   "status": "작성",
+   "page": "/issue/nikke-hacking-incident-1105/",
+   "registered": "2026-11-05",
+   "expires": "2026-11-12"
   },
   {
    "query": "테슬라 FSD 한국 허용되나요? 모델 Y 승인 신청 현황 정리",

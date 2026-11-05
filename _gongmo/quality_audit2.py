@@ -232,6 +232,7 @@ def main():
     rows = []
     for r in recs:
         u = r['u']; tp = r['type']
+        if r['noindex'] and ('로 이동' in r['title'] or '합쳤어요' in r['desc']): tp = r['type'] = '이동 안내(합친 글)'
         own = sum(len(l.replace(' ', '')) for l in r['lines'] if freq[key(l)] < 5)
         hs = r['hosts']; src_n = hs['primary'] + hs['public'] + hs['other'] + hs['agg']
         expired = (tp == '공모전 상세' and u.strip('/').split('/')[-1] not in live_c) or (tp == '지원금 상세' and u.strip('/').split('/')[-1] not in live_a)
@@ -246,7 +247,7 @@ def main():
         why = []
         g = 'B'
         hub = tp in ('목록·허브', '홈', '정책·소개', '태그 모음')
-        if r['mlen'] < 150 and not functional: g = 'D'; why.append('본문 거의 없음')
+        if r['mlen'] < 150 and not functional and not tp.startswith('이동 안내'): g = 'D'; why.append('본문 거의 없음')
         if not r['title'] or r['h1'] == 0: g = 'D'; why.append('제목/H1 없음')
         if '자리표시자 노출' in r['anom'] and tp not in ('개발 지식', '다국어', 'AI 교실'): g = 'D'; why.append('자리표시자 노출')
         if expired and not r['noindex']: g = 'D'; why.append('만료됐는데 색인 대상')
