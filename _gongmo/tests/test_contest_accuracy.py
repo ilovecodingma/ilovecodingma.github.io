@@ -217,3 +217,10 @@ def test_dday_boundaries():
     assert B.dday('2099-12-31')[1] == '상시'
     kst = datetime.datetime.now(datetime.timezone.utc).replace(tzinfo=None) + datetime.timedelta(hours=9)
     assert abs((B.NOW_KST() - kst).total_seconds()) < 5                                            # 날짜 기준은 PC 시간대가 아니라 한국 시간
+
+
+def test_who_inside_quote_is_not_speaker():
+    import analyst as A
+    assert A.who_of('"반도체 빼면 IMF" "진심 코로나 때가 낫다" 골목상권의 한숨') is None      # 인용문 속 IMF 는 발언 주체가 아니다
+    assert A.who_of('IMF "한국 성장률 2.1% 전망"') == 'IMF'
+    assert A.who_of('월가 "AI 버블 경고"') == '월가'

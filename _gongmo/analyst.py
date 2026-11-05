@@ -90,7 +90,7 @@ def norm_stock(name, body=''):
 # 전문가·기관: 직함 앞 단어를 무조건 붙이던 탓에 「빼면 IMF」「날린 월가」가 이름이 됐고, 금융과 무관한 「국수본부장」「통상본부장」이 들어왔다.
 WHO_INST = re.compile(r'^(?:월가|연준|IMF|OECD|KDI|한국개발연구원|국제통화기금|한국은행|골드만삭스|JP모건|모건스탠리|블랙록|씨티|BofA|뱅크오브아메리카|노무라|자본시장연구원|금융연구원|버핏|다이먼|파월)$')
 WHO_SELF = re.compile(r'^(?:금융위원장|금감원장|금융감독원장|기재부 장관|기획재정부 장관|경제부총리|한은 총재)$')   # 앞말 없이도 누구인지 정해지는 직함
-WHO_FIN = re.compile(r'(?:증권|자산운용|운용|은행|연구원|연구소|캐피털|캐피탈|인베스트먼트|투자|금융|리서치|硏|연은|BOJ|ECB|RBA|BOE|한은|금감원|금융위|기재부|분데스방크|블룸버그|헤지펀드|펀드|IB|PB)$')
+WHO_FIN = re.compile(r'(?:증권|자산운용|운용|은행|연구원|연구소|캐피털|캐피탈|인베스트먼트|투자|금융|리서치|硏|연은|일은|BOJ|ECB|RBA|BOE|PBOC|인민은행|한은|금감원|금융위|기재부|분데스방크|블룸버그|헤지펀드|펀드|IB|PB)$')
 WHO_NEED_FIN = ('본부장', '센터장')   # 흔한 직함이라 금융 기관 이름이 앞에 있을 때만 받는다
 WHO_BADPRE = re.compile(r'(?:에|면|린|는|은|고|한|된|할|던|도|를|을|의|로|와|과|서|며|자|니|게|해|워|져|때|및|등)$')
 WHO_NAME = re.compile(r'^[가-힣]{2,4}$')
@@ -120,6 +120,9 @@ def who_of(title):
     if not m0:
         return None
     role = m0.group(0)
+    if len(re.findall(r'["“”]', title[:m0.start()])) % 2 == 1:   # 따옴표 안에 든 낱말은 남의 말 속 표현이지 발언 주체가 아니다(「"반도체 빼면 IMF"」)
+        ENT_REJECT.append({'kind': 'who', 'name': role, 'why': '인용문 안의 낱말'})
+        return None
     if WHO_INST.match(role):
         return role
     md = re.search(r'([가-힣A-Za-z]{2,8})\s?(부총재보|부총재)', title)   # 「한은 부총재」는 「총재」로 잘라 읽지 않는다
