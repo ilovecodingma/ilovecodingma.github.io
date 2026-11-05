@@ -91,6 +91,9 @@ THEMES.append(('diet', '다이어트', '🥗', '#16a34a', '/diet/', [('/diet/', 
 THEMES = [next(t for t in THEMES if t[0] == k) for k in ('today', 'recipe', 'watch', 'apply', 'contest', 'event', 'issue', 'money', 'game', 'plaza', 'diet', 'ai', 'wiki')]
 
 
+# 2026-11-05 모바일 점검: 생활 가이드·계산기·고민 해결 글에 「애널리스트 종합·전문가 코멘트」 하위 메뉴가 떠서, 이 주소들은 가이드용 하위 메뉴를 쓴다
+GUIDE_SUB = [('/money/guide/', '생활 가이드'), ('/qa/', '고민 해결'), ('/money/tools/salary/', '계산기'), ('/wiki/', '위키')]
+GUIDE_SUB_PX = ('/money/guide/', '/money/tools/', '/qa/')
 GN_MAIN = ('issue', 'apply', 'contest', 'money', 'wiki')   # 헤더에 항상 보이는 주요 주제(나머지는 「전체」)
 GN_HOME = {'money': '/money/guide/', 'issue': '/issue/'}
 GN_LABEL = {'apply': '지원금<span class="x">·청약</span>', 'money': '생활 가이드', 'wiki': '위키'}
@@ -343,13 +346,13 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False, noinde
 <meta name="theme-color" content="{TH[3] if TH else '#5b21b6'}"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="오늘 뭐 먹지">
 <link rel="icon" href="/favicon.ico?v=6" sizes="any"><link rel="icon" type="image/png" sizes="48x48" href="/assets/icons/icon-48.png?v=6"><link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/icon-96.png?v=6"><link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/icon-192.png?v=6"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=6"><link rel="manifest" href="/site.webmanifest"><link rel="alternate" type="application/rss+xml" title="루리 줍줍" href="/rss.xml">
 <link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="/assets/gm.css?v=29"><link rel="stylesheet" href="/assets/ds.css?v=15"><link rel="stylesheet" href="/assets/print.css?v=1"><link rel="stylesheet" href="/assets/pro.css?v=15"><script defer src="/assets/print.js?v=1"></script><script src="/assets/img-fallback.js?v=1"></script>{('<link rel="stylesheet" href="/assets/chat/ruri-chat.css?v=9">') if not (TH and TH[0] == 'ai') else ''}{COMM_TAGS}{('<script type="module" src="/assets/chat/ruri-chat.js?v=16"></script>') if not (TH and TH[0] == 'ai') else ''}<link rel="stylesheet" href="/assets/app/shell.css?v=1"><script defer src="/assets/app/app.js?v=4"></script>
+<link rel="stylesheet" href="/assets/gm.css?v=29"><link rel="stylesheet" href="/assets/ds.css?v=15"><link rel="stylesheet" href="/assets/print.css?v=1"><link rel="stylesheet" href="/assets/pro.css?v=15"><script defer src="/assets/print.js?v=1"></script><script src="/assets/img-fallback.js?v=1"></script>{('<link rel="stylesheet" href="/assets/chat/ruri-chat.css?v=9">') if not (TH and TH[0] == 'ai') else ''}{COMM_TAGS}{('<script type="module" src="/assets/chat/ruri-chat.js?v=17"></script>') if not (TH and TH[0] == 'ai') else ''}<link rel="stylesheet" href="/assets/app/shell.css?v=1"><script defer src="/assets/app/app.js?v=4"></script>
 {ldh}
 {TH_CSS}
 {GTAG}
 </head><body data-th="{TH[0] if TH else 'hub'}"{(' data-api="' + COMM_API + '"') if COMM_API else ''}>
 <header class="hd"><div class="w hd-in"><a class="logo" href="/"><img class="logo-av" src="/assets/ruri/avatar.webp" width="36" height="36" alt="루리 줍줍"><span>루리 <b>줍줍</b></span></a>{GN_HTML(TH)}</div>
-{('<nav class="tb w" aria-label="' + TH[1] + ' 세부 메뉴">' + "".join(f'<a href="{u}"{" class=on aria-current=page" if (path == u or (u != TH[4] and path.startswith(u))) else ""}>{n}</a>' for u, n in TH[5]) + '</nav>') if TH else ''}</header>
+{('<nav class="tb w" aria-label="' + TH[1] + ' 세부 메뉴">' + "".join(f'<a href="{u}"{" class=on aria-current=page" if (path == u or (u != TH[4] and path.startswith(u))) else ""}>{n}</a>' for u, n in (GUIDE_SUB if path.startswith(GUIDE_SUB_PX) else TH[5])) + '</nav>') if TH else ''}</header>
 <main class="w">
 {body}{PAGE_INTRO.get(path, '')}
 </main>

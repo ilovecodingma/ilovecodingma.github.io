@@ -274,6 +274,8 @@ function ui() {
     menu();
   };
   $('.rc-fab', root).onclick = () => { panel.hidden = !panel.hidden; if (!panel.hidden && !log.children.length) open(); };
+  // 2026-11-05 모바일: 아래로 읽는 동안은 버튼을 숨기고(본문을 가리지 않게), 위로 올리면 다시 보인다
+  { let ly = scrollY; addEventListener('scroll', () => { const y = scrollY; if (Math.abs(y - ly) < 12) return; root.classList.toggle('rc-away', y > ly && y > 240 && panel.hidden); ly = y; }, { passive: true }); }
   $('.rc-x', root).onclick = () => { panel.hidden = true; if (window.speechSynthesis) speechSynthesis.cancel(); };
   $('.rc-redo', root).onclick = () => { load().then(picker); };
   $('form', root).onsubmit = e => { e.preventDefault(); send(); };

@@ -81,7 +81,7 @@ html.cs-lock{overflow:hidden}
 #hm{max-width:640px;margin:0 auto}.hm-b{margin:0 0 18px}.hm-h{font-size:18px;margin:16px 2px 6px;color:#1e1b4b}.hm-b .nw-home{margin:8px 0}
 .hm-links{display:flex;flex-wrap:wrap;gap:6px;margin:8px 2px}.hm-links a{font-size:13px;font-weight:700;background:var(--card);border:1px solid var(--bd);border-radius:999px;padding:6px 11px;text-decoration:none;color:#4c1d95}
 #hm-in{max-width:640px;margin:10px auto 0;display:flex;gap:8px;align-items:flex-end}#hm-in[hidden]{display:none}#hm-in img{width:44px;height:61px;object-fit:cover;object-position:top;border-radius:10px;flex:none}
-#hm-in p{margin:0;background:#fffbeb;border:1px solid #fde68a;border-radius:14px 14px 14px 4px;padding:8px 11px;font-size:13.5px;line-height:1.5}#hm-in b{display:block;font-size:11.5px;color:#b45309}
+#hm-in p{margin:0;background:#fffbeb;border:1px solid #fde68a;border-radius:14px 14px 14px 4px;padding:8px 11px;font-size:13.5px;line-height:1.5}#hm-in b{display:block;font-size:12px;color:#b45309}
 .hm-b .cs-h2{display:none}
 /* 허브 메인 */
 .hub-h{max-width:640px;margin:18px auto 10px;font-size:24px}.hub-h small{display:block;font-size:14px;color:var(--mu);font-weight:600;margin-top:2px}
@@ -108,7 +108,7 @@ html.cs-lock{overflow:hidden}
 .hm-b1{background:var(--pri);color:#fff}.hm-b2{background:var(--card);color:var(--pri);border:2px solid var(--pri)}
 .hm-scope{font-size:12px;color:var(--mu);margin:8px 0 0;line-height:1.5;overflow-wrap:anywhere}
 .hm-ruri{display:flex;gap:8px;align-items:flex-end;margin:12px 0 4px}.hm-ruri img{flex:none;width:36px;height:50px;object-fit:cover;object-position:top;border-radius:10px}
-.hm-ruri p{margin:0;background:#fffbeb;border:1px solid #fde68a;border-radius:14px 14px 14px 4px;padding:7px 10px;font-size:13px;line-height:1.5;color:#1f2937}.hm-ruri b{display:block;font-size:11px;color:#b45309}
+.hm-ruri p{margin:0;background:#fffbeb;border:1px solid #fde68a;border-radius:14px 14px 14px 4px;padding:7px 10px;font-size:13px;line-height:1.5;color:#1f2937}.hm-ruri b{display:block;font-size:12px;color:#b45309}
 .hm-sec{margin-top:22px}
 .hm-sec h2{font-size:19px;margin:0 0 6px;display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap}.hm-sec h2 a{font-size:13px;font-weight:700}
 .hm-why{font-size:12.5px;color:var(--mu);margin:0 0 8px;line-height:1.5}
@@ -124,7 +124,7 @@ html.cs-lock{overflow:hidden}
 .hm-prep a{display:block;text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:12px 14px;min-height:48px;box-sizing:border-box}.hm-prep b{display:block;font-size:15.5px}.hm-prep span{font-size:13px;color:var(--mu)}
 .hm-more3{display:grid;gap:8px}
 .hm-m{display:flex;gap:10px;align-items:flex-start;text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:10px 12px}
-.hm-m>span{flex:none;font-size:22px;line-height:1.2}.hm-m div{min-width:0}.hm-m b{font-size:15px}.hm-m p{margin:2px 0;font-size:14px;font-weight:700;overflow-wrap:anywhere}.hm-m small{display:block;font-size:11.5px;color:var(--mu);line-height:1.45;overflow-wrap:anywhere}
+.hm-m>span{flex:none;font-size:22px;line-height:1.2}.hm-m div{min-width:0}.hm-m b{font-size:15px}.hm-m p{margin:2px 0;font-size:14px;font-weight:700;overflow-wrap:anywhere}.hm-m small{display:block;font-size:12px;color:var(--mu);line-height:1.45;overflow-wrap:anywhere}
 .hm-hot{margin-top:10px;background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:10px 12px;font-size:14px}.hm-hot ol{margin:6px 0 0;padding-left:20px}.hm-hot li{margin:3px 0;overflow-wrap:anywhere}.hm-hot small{color:var(--mu)}
 .hm-sec .hub-ai{text-align:center;font-size:13px;margin:16px 0 4px}
 

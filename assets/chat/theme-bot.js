@@ -105,6 +105,8 @@ export function start(th) {
     const S = await site(), ph = S && S.pageHints(location.pathname); if (ph) { const pb = say(ph.say); if (ph.chips && ph.chips.length) chips(pb, ph.chips); }
     if (th === 'hub' || th === 'life') siteMenu(); else B.menu(); };
   $('.rc-fab').onclick = () => { panel.hidden = !panel.hidden; if (!panel.hidden && !log.children.length) open(); };
+  // 2026-11-05 모바일: 아래로 읽는 동안은 버튼을 숨기고(본문을 가리지 않게), 위로 올리면 다시 보인다
+  { let ly = scrollY; addEventListener('scroll', () => { const y = scrollY; if (Math.abs(y - ly) < 12) return; root.classList.toggle('rc-away', y > ly && y > 240 && panel.hidden); ly = y; }, { passive: true }); }
   $('.rc-x').onclick = () => { panel.hidden = true; };
   $('form').onsubmit = async e => { e.preventDefault(); const q = input.value.trim(); if (!q) return; input.value = ''; add('me', esc(q)); ga('chat_ask', { theme: th, q: q.slice(0, 40) }); if (!D) await B.load(); const S = await site(); if (S && ((th === 'hub' || th === 'life') || S.intentOf(q)) && (th === 'hub' || th === 'life' || !/코인|비트|이더|주식|목표가|종목|증권|국무|기사|의심/.test(q))) { const t = add('bot', '<span class="rc-typing"><i></i><i></i><i></i></span>'); let r = null; try { r = await S.siteAnswer(q); } catch (e) {} t.remove(); if (r) { const b = add('bot', r.html); chips(b, back2()); ga('chat_site', { theme: th, q: q.slice(0, 30) }); return; } } B.ask(q); };
 }

@@ -1,5 +1,5 @@
 {
- "at": "2026-11-05 11:06",
+ "at": "2026-11-05 11:30",
  "nitems": 527,
  "cands": [
   {
@@ -88,7 +88,7 @@
     "한국경제",
     "헤럴드경제"
    ],
-   "n": 16,
+   "n": 15,
    "headlines": [
     {
      "src": "동아일보",
@@ -109,76 +109,6 @@
      "src": "세계일보",
      "title": "서인영, 재혼 날짜 직접 공개했다…“12월 26일 교회서 조촐하게”",
      "link": "https://www.segye.com/newsView/20261105502748"
-    }
-   ]
-  },
-  {
-   "kw": "국민",
-   "nsrc": 6,
-   "srcs": [
-    "SBS",
-    "세계일보",
-    "연합뉴스",
-    "한겨레",
-    "한국경제",
-    "헤럴드경제"
-   ],
-   "n": 12,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "[쇼츠] \"김 회장님, 부디 편히 쉬세요\"…'국민 아버지' 눈물 속 작별",
-     "link": "https://www.yna.co.kr/view/AKR20261102153800704"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "[영상] \"김 회장님 잘 가세요\"…'국민 아버지' 최불암 마지막 배웅",
-     "link": "https://www.yna.co.kr/view/AKR20261102147900704"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "'국민 아버지' 최불암 영면…아내 김민자 연신 눈물 흘려",
-     "link": "https://www.yna.co.kr/view/AKR20261102023200005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "'국민 아버지' 최불암 오늘 영면…'아베 마리아'로 마지막 배웅",
-     "link": "https://www.yna.co.kr/view/AKR20261101025200005"
-    }
-   ]
-  },
-  {
-   "kw": "리센느",
-   "nsrc": 6,
-   "srcs": [
-    "SBS",
-    "세계일보",
-    "연합뉴스",
-    "한겨레",
-    "한국경제",
-    "헤럴드경제"
-   ],
-   "n": 10,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "리센느 신곡 '위드', 발매 첫날 멜론 '톱 100' 1위 직행",
-     "link": "https://www.yna.co.kr/view/AKR20261103181100005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "'중소돌의 기적' 리센느 \"또 한 번 기적 이루는 그룹 되고 싶어\"",
-     "link": "https://www.yna.co.kr/view/AKR20261103133400005"
-    },
-    {
-     "src": "한겨레",
-     "title": "리센느 신곡 ‘위드’ 2시간 만에 멜론 1위…앨범 5곡 모두 ‘톱10’",
-     "link": "https://www.hani.co.kr/arti/culture/music/1285682.html"
-    },
-    {
-     "src": "한겨레",
-     "title": "“또 한 번 중소돌의 기적을”…컴백 리센느, 역주행 신화 이어갈까",
-     "link": "https://www.hani.co.kr/arti/culture/music/1285552.html"
     }
    ]
   },
@@ -218,17 +148,50 @@
    ]
   },
   {
-   "kw": "발매",
-   "nsrc": 6,
+   "kw": "국민",
+   "nsrc": 5,
    "srcs": [
     "SBS",
-    "뉴시스",
     "연합뉴스",
-    "조선일보",
+    "한겨레",
     "한국경제",
     "헤럴드경제"
    ],
-   "n": 6,
+   "n": 10,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "[쇼츠] \"김 회장님, 부디 편히 쉬세요\"…'국민 아버지' 눈물 속 작별",
+     "link": "https://www.yna.co.kr/view/AKR20261102153800704"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "[영상] \"김 회장님 잘 가세요\"…'국민 아버지' 최불암 마지막 배웅",
+     "link": "https://www.yna.co.kr/view/AKR20261102147900704"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "'국민 아버지' 최불암 영면…아내 김민자 연신 눈물 흘려",
+     "link": "https://www.yna.co.kr/view/AKR20261102023200005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "'국민 아버지' 최불암 오늘 영면…'아베 마리아'로 마지막 배웅",
+     "link": "https://www.yna.co.kr/view/AKR20261101025200005"
+    }
+   ]
+  },
+  {
+   "kw": "리센느",
+   "nsrc": 5,
+   "srcs": [
+    "SBS",
+    "연합뉴스",
+    "한겨레",
+    "한국경제",
+    "헤럴드경제"
+   ],
+   "n": 9,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -236,24 +199,24 @@
      "link": "https://www.yna.co.kr/view/AKR20261103181100005"
     },
     {
-     "src": "한국경제",
-     "title": "가을엔 규현…내달 11일 EP '컨티뉴' 발매",
-     "link": "https://www.hankyung.com/article/202610278838H"
+     "src": "연합뉴스",
+     "title": "'중소돌의 기적' 리센느 \"또 한 번 기적 이루는 그룹 되고 싶어\"",
+     "link": "https://www.yna.co.kr/view/AKR20261103133400005"
     },
     {
-     "src": "헤럴드경제",
-     "title": "리센느 ‘위드’ 발매 2시간만에 음원차트 1위…‘국민 걸그룹’ 입증",
-     "link": "https://biz.heraldcorp.com/article/10925354"
+     "src": "한겨레",
+     "title": "리센느 신곡 ‘위드’ 2시간 만에 멜론 1위…앨범 5곡 모두 ‘톱10’",
+     "link": "https://www.hani.co.kr/arti/culture/music/1285682.html"
     },
     {
-     "src": "SBS",
-     "title": "폴킴, 영어 싱글 'Love Me Hard' 발매…미국 시장 도전",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008823500&plink=RSSLINK&cooper=RSSREADER"
+     "src": "한겨레",
+     "title": "“또 한 번 중소돌의 기적을”…컴백 리센느, 역주행 신화 이어갈까",
+     "link": "https://www.hani.co.kr/arti/culture/music/1285552.html"
     }
    ]
   },
   {
-   "kw": "공연",
+   "kw": "별세",
    "nsrc": 5,
    "srcs": [
     "뉴시스",
@@ -262,27 +225,27 @@
     "한겨레",
     "한국경제"
    ],
-   "n": 14,
+   "n": 7,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "권진아, 6∼8일 '세이브 미' 콘서트…데뷔 첫 스탠딩 공연",
-     "link": "https://www.yna.co.kr/view/AKR20261104161200005"
+     "title": "'칼리굴라' 이탈리아 영화감독 틴토 브라스 별세",
+     "link": "https://www.yna.co.kr/view/AKR20261104183600109"
     },
     {
      "src": "연합뉴스",
-     "title": "캣츠아이, 美 디트로이트 공연 당일 연기…\"메간 건강 문제\"",
-     "link": "https://www.yna.co.kr/view/AKR20261104156400005"
+     "title": "'그대 그리고 나' 부른 포크 그룹 소리새 김광석 별세",
+     "link": "https://www.yna.co.kr/view/AKR20261103159200005"
     },
     {
      "src": "연합뉴스",
-     "title": "제프 버넷, 내년 2월 3년 만에 내한 공연",
-     "link": "https://www.yna.co.kr/view/AKR20261103087300005"
+     "title": "'사극 대가' 정하연 작가 별세…'왕과 비'·'명성황후' 등 집필",
+     "link": "https://www.yna.co.kr/view/AKR20261101051300005"
     },
     {
-     "src": "연합뉴스",
-     "title": "[문화소식] 김현성, 서울·광주서 '동학, 아름다운 사람들' 공연",
-     "link": "https://www.yna.co.kr/view/AKR20261103088500005"
+     "src": "한겨레",
+     "title": "‘그대 그리고 나’ 그룹 소리새 김광석 별세…향년 70",
+     "link": "https://www.hani.co.kr/arti/culture/music/1285593.html"
     }
    ]
   },
@@ -355,40 +318,6 @@
    ]
   },
   {
-   "kw": "박스오피",
-   "nsrc": 5,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "동아일보",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 7,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "[박스오피스] '치이카와' 4주 연속 주말 흥행 1위…누적 258만명",
-     "link": "https://www.yna.co.kr/view/AKR20261102036700005"
-    },
-    {
-     "src": "동아일보",
-     "title": "‘최종면접’, 개봉 첫날 박스오피스 1위…22일 만에 韓영화 정상 탈환",
-     "link": "https://sports.donga.com/ent/article/all/20261105/134969382/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "글로벌 박스오피스, 팬데믹 이후 최고치 전망… 357억 달러 달성하나",
-     "link": "https://sports.donga.com/ent/article/all/20261104/134963907/1"
-    },
-    {
-     "src": "SBS",
-     "title": "'하트 오브 비스트', '치이카와' 제치고 박스오피스 1위",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008827611&plink=RSSLINK&cooper=RSSREADER"
-    }
-   ]
-  },
-  {
    "kw": "차예련",
    "nsrc": 5,
    "srcs": [
@@ -423,70 +352,36 @@
    ]
   },
   {
-   "kw": "전지윤",
+   "kw": "시간",
    "nsrc": 5,
    "srcs": [
     "뉴시스",
-    "세계일보",
-    "연합뉴스",
+    "동아일보",
     "조선일보",
+    "한겨레",
     "한국경제"
    ],
-   "n": 5,
+   "n": 6,
    "headlines": [
     {
-     "src": "연합뉴스",
-     "title": "포미닛 출신 전지윤, 22일 결혼…\"부끄럽고 설렌다\"",
-     "link": "https://www.yna.co.kr/view/AKR20261104147000005"
+     "src": "동아일보",
+     "title": "이요원, 최수종·하희라 24시간 동행에 질색…“정신 건강에 안 좋아”",
+     "link": "https://sports.donga.com/ent/article/all/20261105/134969205/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "최수종♥하희라, 결혼 34년 차에도 24시간 착붙…여전한 금실 (살림남)",
+     "link": "https://sports.donga.com/ent/article/all/20261105/134969250/1"
+    },
+    {
+     "src": "한겨레",
+     "title": "리센느 신곡 ‘위드’ 2시간 만에 멜론 1위…앨범 5곡 모두 ‘톱10’",
+     "link": "https://www.hani.co.kr/arti/culture/music/1285682.html"
     },
     {
      "src": "한국경제",
-     "title": "아이돌 '포미닛' 출신 전지윤, 11월 신부된다",
-     "link": "https://www.hankyung.com/article/2026110461907"
-    },
-    {
-     "src": "세계일보",
-     "title": "전지윤, 현아 이어 포미닛 두 번째 품절녀…“따뜻한 마음 가진 사람”",
-     "link": "https://www.segye.com/newsView/20261104517831"
-    },
-    {
-     "src": "뉴시스",
-     "title": "전지윤, 결혼한다…현아 이어 포미닛 두 번째 유부녀",
-     "link": "https://www.newsis.com/view/NISX20261104_0003854645"
-    }
-   ]
-  },
-  {
-   "kw": "포미닛",
-   "nsrc": 5,
-   "srcs": [
-    "뉴시스",
-    "세계일보",
-    "연합뉴스",
-    "조선일보",
-    "한국경제"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "포미닛 출신 전지윤, 22일 결혼…\"부끄럽고 설렌다\"",
-     "link": "https://www.yna.co.kr/view/AKR20261104147000005"
-    },
-    {
-     "src": "한국경제",
-     "title": "아이돌 '포미닛' 출신 전지윤, 11월 신부된다",
-     "link": "https://www.hankyung.com/article/2026110461907"
-    },
-    {
-     "src": "세계일보",
-     "title": "전지윤, 현아 이어 포미닛 두 번째 품절녀…“따뜻한 마음 가진 사람”",
-     "link": "https://www.segye.com/newsView/20261104517831"
-    },
-    {
-     "src": "뉴시스",
-     "title": "전지윤, 결혼한다…현아 이어 포미닛 두 번째 유부녀",
-     "link": "https://www.newsis.com/view/NISX20261104_0003854645"
+     "title": "지금 듣기에 딱…노래 잘하는 베이비몬스터 만날 시간 '디저브' [신곡in가요]",
+     "link": "https://www.hankyung.com/article/202610230950H"
     }
    ]
   },
@@ -521,6 +416,40 @@
      "src": "세계일보",
      "title": "또 플래티넘, 또 최초…BTS ‘아리랑’, K팝 최초 伊 플래티넘 인증",
      "link": "https://www.segye.com/newsView/20261104513607"
+    }
+   ]
+  },
+  {
+   "kw": "발매",
+   "nsrc": 5,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "연합뉴스",
+    "한국경제",
+    "헤럴드경제"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "리센느 신곡 '위드', 발매 첫날 멜론 '톱 100' 1위 직행",
+     "link": "https://www.yna.co.kr/view/AKR20261103181100005"
+    },
+    {
+     "src": "한국경제",
+     "title": "가을엔 규현…내달 11일 EP '컨티뉴' 발매",
+     "link": "https://www.hankyung.com/article/202610278838H"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "리센느 ‘위드’ 발매 2시간만에 음원차트 1위…‘국민 걸그룹’ 입증",
+     "link": "https://biz.heraldcorp.com/article/10925354"
+    },
+    {
+     "src": "SBS",
+     "title": "폴킴, 영어 싱글 'Love Me Hard' 발매…미국 시장 도전",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008823500&plink=RSSLINK&cooper=RSSREADER"
     }
    ]
   },
@@ -593,6 +522,39 @@
    ]
   },
   {
+   "kw": "공연",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "연합뉴스",
+    "한겨레",
+    "한국경제"
+   ],
+   "n": 13,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "권진아, 6∼8일 '세이브 미' 콘서트…데뷔 첫 스탠딩 공연",
+     "link": "https://www.yna.co.kr/view/AKR20261104161200005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "캣츠아이, 美 디트로이트 공연 당일 연기…\"메간 건강 문제\"",
+     "link": "https://www.yna.co.kr/view/AKR20261104156400005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "제프 버넷, 내년 2월 3년 만에 내한 공연",
+     "link": "https://www.yna.co.kr/view/AKR20261103087300005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "[문화소식] 김현성, 서울·광주서 '동학, 아름다운 사람들' 공연",
+     "link": "https://www.yna.co.kr/view/AKR20261103088500005"
+    }
+   ]
+  },
+  {
    "kw": "만원",
    "nsrc": 4,
    "srcs": [
@@ -601,7 +563,7 @@
     "조선일보",
     "헤럴드경제"
    ],
-   "n": 13,
+   "n": 12,
    "headlines": [
     {
      "src": "세계일보",
@@ -634,7 +596,7 @@
     "조선일보",
     "한국경제"
    ],
-   "n": 10,
+   "n": 9,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -655,39 +617,6 @@
      "src": "연합뉴스",
      "title": "'국민 아버지' 최불암 영면…아내 김민자 연신 눈물 흘려",
      "link": "https://www.yna.co.kr/view/AKR20261102023200005"
-    }
-   ]
-  },
-  {
-   "kw": "결혼",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 9,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "포미닛 출신 전지윤, 22일 결혼…\"부끄럽고 설렌다\"",
-     "link": "https://www.yna.co.kr/view/AKR20261104147000005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "배우 배나라·한재아 14일 결혼…\"서로 의지하는 삶 살아가기로\"",
-     "link": "https://www.yna.co.kr/view/AKR20261103123900005"
-    },
-    {
-     "src": "동아일보",
-     "title": "최수종♥하희라, 결혼 34년 차에도 24시간 착붙…여전한 금실 (살림남)",
-     "link": "https://sports.donga.com/ent/article/all/20261105/134969250/1"
-    },
-    {
-     "src": "뉴시스",
-     "title": "'12월 결혼' 서인영, 사회자로 '대세' 이재율에 러브콜",
-     "link": "https://www.newsis.com/view/NISX20261105_0003855427"
     }
    ]
   },
@@ -824,35 +753,35 @@
    ]
   },
   {
-   "kw": "아버지",
+   "kw": "결혼",
    "nsrc": 4,
    "srcs": [
-    "SBS",
     "뉴시스",
+    "동아일보",
     "연합뉴스",
-    "한국경제"
+    "조선일보"
    ],
    "n": 7,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "[쇼츠] \"김 회장님, 부디 편히 쉬세요\"…'국민 아버지' 눈물 속 작별",
-     "link": "https://www.yna.co.kr/view/AKR20261102153800704"
+     "title": "포미닛 출신 전지윤, 22일 결혼…\"부끄럽고 설렌다\"",
+     "link": "https://www.yna.co.kr/view/AKR20261104147000005"
     },
     {
      "src": "연합뉴스",
-     "title": "[영상] \"김 회장님 잘 가세요\"…'국민 아버지' 최불암 마지막 배웅",
-     "link": "https://www.yna.co.kr/view/AKR20261102147900704"
+     "title": "배우 배나라·한재아 14일 결혼…\"서로 의지하는 삶 살아가기로\"",
+     "link": "https://www.yna.co.kr/view/AKR20261103123900005"
     },
     {
-     "src": "연합뉴스",
-     "title": "'국민 아버지' 최불암 영면…아내 김민자 연신 눈물 흘려",
-     "link": "https://www.yna.co.kr/view/AKR20261102023200005"
+     "src": "동아일보",
+     "title": "최수종♥하희라, 결혼 34년 차에도 24시간 착붙…여전한 금실 (살림남)",
+     "link": "https://sports.donga.com/ent/article/all/20261105/134969250/1"
     },
     {
-     "src": "연합뉴스",
-     "title": "'국민 아버지' 최불암 오늘 영면…'아베 마리아'로 마지막 배웅",
-     "link": "https://www.yna.co.kr/view/AKR20261101025200005"
+     "src": "뉴시스",
+     "title": "'12월 결혼' 서인영, 사회자로 '대세' 이재율에 러브콜",
+     "link": "https://www.newsis.com/view/NISX20261105_0003855427"
     }
    ]
   },
@@ -890,39 +819,6 @@
    ]
   },
   {
-   "kw": "별세",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "연합뉴스",
-    "한겨레",
-    "한국경제"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "'칼리굴라' 이탈리아 영화감독 틴토 브라스 별세",
-     "link": "https://www.yna.co.kr/view/AKR20261104183600109"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "'그대 그리고 나' 부른 포크 그룹 소리새 김광석 별세",
-     "link": "https://www.yna.co.kr/view/AKR20261103159200005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "'사극 대가' 정하연 작가 별세…'왕과 비'·'명성황후' 등 집필",
-     "link": "https://www.yna.co.kr/view/AKR20261101051300005"
-    },
-    {
-     "src": "한겨레",
-     "title": "‘그대 그리고 나’ 그룹 소리새 김광석 별세…향년 70",
-     "link": "https://www.hani.co.kr/arti/culture/music/1285593.html"
-    }
-   ]
-  },
-  {
    "kw": "싸이커스",
    "nsrc": 4,
    "srcs": [
@@ -952,6 +848,39 @@
      "src": "한국경제",
      "title": "싸이커스, 에이티즈와 같은 달 컴백 \"우영 선배, 밥 사주며 응원\"",
      "link": "https://www.hankyung.com/article/202611020876H"
+    }
+   ]
+  },
+  {
+   "kw": "박스오피",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "동아일보",
+    "연합뉴스"
+   ],
+   "n": 6,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "[박스오피스] '치이카와' 4주 연속 주말 흥행 1위…누적 258만명",
+     "link": "https://www.yna.co.kr/view/AKR20261102036700005"
+    },
+    {
+     "src": "동아일보",
+     "title": "‘최종면접’, 개봉 첫날 박스오피스 1위…22일 만에 韓영화 정상 탈환",
+     "link": "https://sports.donga.com/ent/article/all/20261105/134969382/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "글로벌 박스오피스, 팬데믹 이후 최고치 전망… 357억 달러 달성하나",
+     "link": "https://sports.donga.com/ent/article/all/20261104/134963907/1"
+    },
+    {
+     "src": "SBS",
+     "title": "'하트 오브 비스트', '치이카와' 제치고 박스오피스 1위",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008827611&plink=RSSLINK&cooper=RSSREADER"
     }
    ]
   },
@@ -1154,35 +1083,35 @@
    ]
   },
   {
-   "kw": "시간",
+   "kw": "까지",
    "nsrc": 4,
    "srcs": [
-    "뉴시스",
-    "동아일보",
+    "SBS",
+    "조선일보",
     "한겨레",
     "한국경제"
    ],
    "n": 5,
    "headlines": [
     {
-     "src": "동아일보",
-     "title": "이요원, 최수종·하희라 24시간 동행에 질색…“정신 건강에 안 좋아”",
-     "link": "https://sports.donga.com/ent/article/all/20261105/134969205/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "최수종♥하희라, 결혼 34년 차에도 24시간 착붙…여전한 금실 (살림남)",
-     "link": "https://sports.donga.com/ent/article/all/20261105/134969250/1"
-    },
-    {
      "src": "한겨레",
-     "title": "리센느 신곡 ‘위드’ 2시간 만에 멜론 1위…앨범 5곡 모두 ‘톱10’",
-     "link": "https://www.hani.co.kr/arti/culture/music/1285682.html"
+     "title": "[단독] 하이브도 계좌·여권·카드·주민번호에 의료정보까지 털렸다",
+     "link": "https://www.hani.co.kr/arti/culture/music/1285298.html"
     },
     {
      "src": "한국경제",
-     "title": "지금 듣기에 딱…노래 잘하는 베이비몬스터 만날 시간 '디저브' [신곡in가요]",
-     "link": "https://www.hankyung.com/article/202610230950H"
+     "title": "god 김태우, 솔로 데뷔 20주년…가수에 프로듀서까지 '영역 확장'",
+     "link": "https://www.hankyung.com/article/202610266155H"
+    },
+    {
+     "src": "SBS",
+     "title": "[스브스夜] '런닝맨' 이현중, 농구도 예능도 '금메달'···'우승'부터 '벌칙'까지 '런닝맨 키즈'의 '런닝맨 체험'",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008825354&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "조선일보",
+     "title": "‘보스의 노골적 취향’ 성훈·오세영·이정신, 연애세포에 웃음세포까지 깨운다",
+     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/05/GJSGCOBWMM3WEN3DGNRWCMJXGQ/"
     }
    ]
   },
@@ -1253,6 +1182,138 @@
    ]
   },
   {
+   "kw": "거짓말",
+   "nsrc": 4,
+   "srcs": [
+    "동아일보",
+    "연합뉴스",
+    "조선일보",
+    "한국경제"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "장선우 감독 '거짓말', 27년 만에 무삭제 완전판 재개봉",
+     "link": "https://www.yna.co.kr/view/AKR20261105072600005"
+    },
+    {
+     "src": "동아일보",
+     "title": "송지효 정체, 김유정♥박진영 로맨스에 변수 (100일의 거짓말)",
+     "link": "https://sports.donga.com/ent/article/all/20261105/134969575/1"
+    },
+    {
+     "src": "한국경제",
+     "title": "\"일본인인 줄 알았다\"…'100일의 거짓말' 본 日 시청자 반응",
+     "link": "https://www.hankyung.com/article/202610281076H"
+    },
+    {
+     "src": "조선일보",
+     "title": "\"서현진이 성폭력 피해 거짓말\" 거짓말탐지기 결과 눈물..유연석은 고개 푹 ('라이어')",
+     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/05/MI2TAMDBHBSTCYLBGJSTAMBUGA/"
+    }
+   ]
+  },
+  {
+   "kw": "살생부",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "연합뉴스",
+    "조선일보"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "정우성, 냉혹한 한명회로 변신…액션 사극 영화 '살생부' 주연",
+     "link": "https://www.yna.co.kr/view/AKR20261105051400005"
+    },
+    {
+     "src": "동아일보",
+     "title": "정우성·정성일·백윤식부터 위하준까지…웹툰 ‘살생부’ 영화화, 화려한 라입업",
+     "link": "https://sports.donga.com/ent/article/all/20261105/134969291/1"
+    },
+    {
+     "src": "뉴시스",
+     "title": "정우성부터 정성일·백윤식까지…김홍선 감독 신작 '살생부'",
+     "link": "https://www.newsis.com/view/NISX20261105_0003856008"
+    },
+    {
+     "src": "조선일보",
+     "title": "정우성이 한명회, 위하준이 수양대군, 더 있다...후덜덜한 '살생부' [공식]",
+     "link": "https://www.chosun.com/entertainments/movie/2026/11/05/MQYDAM3DMMZWIZJSGMZWGMBXGI/"
+    }
+   ]
+  },
+  {
+   "kw": "전지윤",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "세계일보",
+    "연합뉴스",
+    "한국경제"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "포미닛 출신 전지윤, 22일 결혼…\"부끄럽고 설렌다\"",
+     "link": "https://www.yna.co.kr/view/AKR20261104147000005"
+    },
+    {
+     "src": "한국경제",
+     "title": "아이돌 '포미닛' 출신 전지윤, 11월 신부된다",
+     "link": "https://www.hankyung.com/article/2026110461907"
+    },
+    {
+     "src": "세계일보",
+     "title": "전지윤, 현아 이어 포미닛 두 번째 품절녀…“따뜻한 마음 가진 사람”",
+     "link": "https://www.segye.com/newsView/20261104517831"
+    },
+    {
+     "src": "뉴시스",
+     "title": "전지윤, 결혼한다…현아 이어 포미닛 두 번째 유부녀",
+     "link": "https://www.newsis.com/view/NISX20261104_0003854645"
+    }
+   ]
+  },
+  {
+   "kw": "포미닛",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "세계일보",
+    "연합뉴스",
+    "한국경제"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "포미닛 출신 전지윤, 22일 결혼…\"부끄럽고 설렌다\"",
+     "link": "https://www.yna.co.kr/view/AKR20261104147000005"
+    },
+    {
+     "src": "한국경제",
+     "title": "아이돌 '포미닛' 출신 전지윤, 11월 신부된다",
+     "link": "https://www.hankyung.com/article/2026110461907"
+    },
+    {
+     "src": "세계일보",
+     "title": "전지윤, 현아 이어 포미닛 두 번째 품절녀…“따뜻한 마음 가진 사람”",
+     "link": "https://www.segye.com/newsView/20261104517831"
+    },
+    {
+     "src": "뉴시스",
+     "title": "전지윤, 결혼한다…현아 이어 포미닛 두 번째 유부녀",
+     "link": "https://www.newsis.com/view/NISX20261104_0003854645"
+    }
+   ]
+  },
+  {
    "kw": "로판",
    "nsrc": 4,
    "srcs": [
@@ -1282,72 +1343,6 @@
      "src": "조선일보",
      "title": "'재혼 황후' K-로판 도파민 풀악셀..해외 언론도 통했다",
      "link": "https://www.chosun.com/entertainments/broadcast/2026/11/05/MYYTAZDDMVQTOYRTGU3TEYRQGI/"
-    }
-   ]
-  },
-  {
-   "kw": "어워즈",
-   "nsrc": 4,
-   "srcs": [
-    "동아일보",
-    "연합뉴스",
-    "조선일보",
-    "한겨레"
-   ],
-   "n": 4,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "가상 아이돌 등 시상…'버추얼 아이콘 어워즈' 내년 2월 첫 개최",
-     "link": "https://www.yna.co.kr/view/AKR20261102161800005"
-    },
-    {
-     "src": "동아일보",
-     "title": "에이티즈 종호·웨이션브이 완전체·싸이커스 ‘디 어워즈 파리 출격’",
-     "link": "https://sports.donga.com/ent/article/all/20261105/134967947/1"
-    },
-    {
-     "src": "한겨레",
-     "title": "‘전지적 독자 시점’ 등 10편 ‘2026 월드 웹툰 어워즈’ 본상",
-     "link": "https://www.hani.co.kr/arti/culture/culture_general/1285484.html"
-    },
-    {
-     "src": "조선일보",
-     "title": "에이티즈 종호, 첫 MC 발탁…WayV 완전체·싸이커스 파리 출격 ('디 어워즈')",
-     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/05/GZSDQOBWMZRTMYLCGRRGMMTCGM/"
-    }
-   ]
-  },
-  {
-   "kw": "같은",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "연합뉴스",
-    "조선일보",
-    "한국경제"
-   ],
-   "n": 4,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "\"아버지이자 선생님, 큰 산 같은 분\"…최불암 빈소 이틀째 조문 행렬",
-     "link": "https://www.yna.co.kr/view/AKR20261031027600005"
-    },
-    {
-     "src": "한국경제",
-     "title": "싸이커스, 에이티즈와 같은 달 컴백 \"우영 선배, 밥 사주며 응원\"",
-     "link": "https://www.hankyung.com/article/202611020876H"
-    },
-    {
-     "src": "뉴시스",
-     "title": "볼 인사 놓친 장원영 \"미처 못 봤다…가족 같은 사이\"",
-     "link": "https://www.newsis.com/view/NISX20261105_0003855860"
-    },
-    {
-     "src": "조선일보",
-     "title": "볼 인사 놓친 장원영 \"미처 못 봤다…가족 같은 사이\"",
-     "link": "https://www.chosun.com/entertainments/celebrity/2026/11/05/DMRQJJNWVNH6ZO4BUA3PWWSHJM/"
     }
    ]
   }

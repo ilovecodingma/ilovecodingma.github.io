@@ -3,8 +3,8 @@ html.app-mode body{padding-bottom:calc(68px + env(safe-area-inset-bottom))}
 html.app-mode .th-sw,html.app-mode .ft-g,html.app-mode nav.tb.app-hide{display:none}
 html.app-mode .rc{bottom:calc(86px + env(safe-area-inset-bottom))}
 .app-tb{position:fixed;left:50%;transform:translateX(-50%);width:100%;max-width:560px;border-radius:18px 18px 0 0;bottom:0;z-index:60;display:flex;background:#fff;border-top:1px solid #fed7aa;padding:5px 4px calc(5px + env(safe-area-inset-bottom));box-shadow:0 -6px 18px rgba(124,45,18,.08)}
-.app-tb a,.app-tb button{all:unset;box-sizing:border-box;flex:1;text-align:center;display:flex;flex-direction:column;align-items:center;gap:1px;font:inherit;font-size:11px;font-weight:800;color:#78716c;text-decoration:none;padding:4px 0;background:none;border:0;cursor:pointer}
-.app-tb a,.app-tb button{display:flex!important;flex-direction:column;align-items:center;gap:1px;font-size:11px;font-weight:800;color:#78716c;padding:4px 0;cursor:pointer}
+.app-tb a,.app-tb button{all:unset;box-sizing:border-box;flex:1;text-align:center;display:flex;flex-direction:column;align-items:center;gap:1px;font:inherit;font-size:12px;font-weight:800;color:#78716c;text-decoration:none;padding:4px 0;background:none;border:0;cursor:pointer}
+.app-tb a,.app-tb button{display:flex!important;flex-direction:column;align-items:center;gap:1px;font-size:12px;font-weight:800;color:#78716c;padding:4px 0;cursor:pointer}
 .app-tb i{font-style:normal;font-size:21px;line-height:1.1}
 .app-tb .on{color:#c2410c}
 .app-sheet{position:fixed;inset:0;z-index:70;background:rgba(28,25,23,.45);display:flex;align-items:flex-end}

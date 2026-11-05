@@ -36,14 +36,14 @@
 
 /* 시각화 (v3): 한눈에 표·뱃지·접기·가로 넘기기 */
 .lm{margin:16px 0}.lm h2{margin:0 0 8px;font-size:17px}.lm-w{overflow-x:auto;background:var(--card);border:1px solid var(--bd);border-radius:16px;box-shadow:var(--sh)}
-.lm table{border-collapse:collapse;width:100%;min-width:520px;font-size:12.5px}.lm th{position:sticky;top:0;background:#f5f3ff;padding:8px 4px;font-size:16px;text-align:center}.lm th small{display:block;font-size:10.5px;color:var(--mu);font-weight:700}
+.lm table{border-collapse:collapse;width:100%;min-width:520px;font-size:12.5px}.lm th{position:sticky;top:0;background:#f5f3ff;padding:8px 4px;font-size:16px;text-align:center}.lm th small{display:block;font-size:12px;color:var(--mu);font-weight:700}
 .lm th:first-child{text-align:left;font-size:13px;padding-left:12px}.lm td{border-top:1px solid var(--bd);text-align:center;color:#7c3aed;font-size:16px;padding:6px 2px}
-.lm tr.r1 td{background:#fffbeb}.lm tr.r1 td:not(.lm-n){color:#d97706}.lm-n{text-align:left!important;padding:8px 12px!important;min-width:190px}.lm-n b{display:block;font-size:11px;color:#b45309}.lm-n span{display:block;font-size:13px;font-weight:800;color:var(--tx)}
+.lm tr.r1 td{background:#fffbeb}.lm tr.r1 td:not(.lm-n){color:#d97706}.lm-n{text-align:left!important;padding:8px 12px!important;min-width:190px}.lm-n b{display:block;font-size:12px;color:#b45309}.lm-n span{display:block;font-size:13px;font-weight:800;color:var(--tx)}
 .lm-len{display:block;height:8px;margin-top:4px;border-radius:999px;background:#ede9fe;position:relative}.lm-len:before{content:"";position:absolute;inset:0 auto 0 0;width:var(--w);background:linear-gradient(90deg,#a855f7,#ec4899);border-radius:999px}
-.lm-len em{position:absolute;right:0;top:-15px;font-style:normal;font-size:10.5px;color:var(--mu)}
+.lm-len em{position:absolute;right:0;top:-15px;font-style:normal;font-size:12px;color:var(--mu)}
 .lw-list{gap:8px}.lw-w{padding:12px 14px}.lw-p{font-size:18px;margin:4px 0 6px}.lw-g small{color:var(--mu);font-weight:700;margin-left:4px}
 .lw-bs{display:flex;flex-wrap:wrap;gap:4px;margin:0 0 6px}.lw-b{font-size:12px;font-weight:800;background:#f5f3ff;color:#6d28d9;border-radius:999px;padding:3px 9px}
-.lw-w details summary{cursor:pointer;font-size:13.5px;font-weight:700;color:#6b21a8;list-style:none}.lw-w details summary::-webkit-details-marker{display:none}.lw-w details summary em{font-style:normal;font-size:11.5px;color:var(--mu);margin-left:4px;text-decoration:underline}
+.lw-w details summary{cursor:pointer;font-size:13.5px;font-weight:700;color:#6b21a8;list-style:none}.lw-w details summary::-webkit-details-marker{display:none}.lw-w details summary em{font-style:normal;font-size:12px;color:var(--mu);margin-left:4px;text-decoration:underline}
 .lw-w details[open] summary em{display:none}.lw-w details .lw-t{margin-top:8px}
 .lx-row{grid-template-columns:none!important;grid-auto-flow:column;grid-auto-columns:minmax(250px,78%);overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px}.lx-row .lx{scroll-snap-align:start}
 @media(min-width:900px){.lx-row{grid-auto-columns:300px}}
@@ -65,7 +65,7 @@ main.w:has(.lb-hero){max-width:1100px}
 @media(min-width:900px){.lx-list.lx-row{grid-auto-columns:calc((100% - 28px)/3)}}
 .lx a{height:auto;min-height:190px;padding:20px 20px 16px;border-radius:24px;gap:8px;justify-content:flex-start;background:linear-gradient(180deg,#fff,var(--card))}
 .lx a:hover{box-shadow:0 20px 40px -20px rgba(91,33,182,.45);transform:translateY(-4px)}
-.lx-m{display:inline-block;align-self:flex-start;font-size:11.5px;background:#f4efff;border-radius:999px;padding:3px 10px}
+.lx-m{display:inline-block;align-self:flex-start;font-size:12px;background:#f4efff;border-radius:999px;padding:3px 10px}
 .lx q{font-size:20px;line-height:1.42;letter-spacing:-.04em;margin:4px 0 2px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
 .lx-c{font-size:13.5px;color:var(--tx);line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .lx-o{margin-top:auto;padding-top:10px;border-top:1px dashed var(--bd);font-size:12.5px}

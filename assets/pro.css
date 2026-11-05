@@ -194,3 +194,31 @@ main .cs-g a{color:var(--tx)}
 /* 목록 보조 글씨 키움(2026-11-04) */
 .card.cc .o{font-size:13.5px;color:#475569}
 .stat-line .sl-h{font-size:13px;font-weight:700;color:#334155;margin-right:4px}
+
+/* ===== 모바일 전수 점검 2026-11-05 ===== */
+/* 표: 머리글 있는 3열 이상 표(class rt, 빌드가 칸마다 data-l 을 붙임)는 좁은 화면에서 행을 카드처럼 쌓는다 */
+@media(max-width:700px){
+  table.rt{display:block;width:100%!important;min-width:0!important;border:0!important;overflow:visible!important;font-size:14.5px}
+  table.rt>thead,table.rt>tr:first-child,table.rt>tbody:first-child>tr:first-child{display:none}
+  table.rt>tbody{display:block}
+  table.rt tr{display:block;padding:12px 2px;border:0;border-bottom:1px solid var(--bd,#e2e8f0);background:none!important}
+  table.rt td,table.rt tr>th{display:block;width:auto!important;min-width:0!important;max-width:none!important;border:0!important;padding:2px 0!important;text-align:left!important;white-space:normal!important;background:none!important;overflow-wrap:anywhere;line-height:1.6}
+  table.rt td:first-child,table.rt tr>th:first-child{font-size:15.5px;font-weight:700;color:var(--tx,#0f172a);margin-bottom:3px}
+  table.rt td[data-l]::before,table.rt th[data-l]::before{content:attr(data-l);margin-right:8px;font-size:12.5px;font-weight:700;color:#64748b}
+  table.rt td:empty{display:none}
+  /* 표를 감싼 가로 스크롤 상자는 카드로 쌓였으니 넘침·최소 폭을 푼다 */
+  .tblw:has(>table.rt),.g-tw:has(>table.rt),div:has(>table.rt){overflow-x:visible;min-width:0}
+  /* 2열 표(머리글 없음·정보 표)는 그대로 두되 긴 주소·영문이 칸을 뚫지 않게 */
+  main table td,main table th{overflow-wrap:anywhere}
+  /* 작은 글씨 바닥: 목록 카드의 항목 이름·사진 설명 */
+  main dt{font-size:12.5px!important}
+  main figcaption{font-size:12.5px!important}
+  /* 떠 있는 루리 버튼: 읽는 중(아래로 스크롤)에는 숨기고, 위로 올리거나 멈추면 다시 보인다 */
+  .rc{transition:transform .2s,opacity .2s}
+  .rc.rc-away:not(.open){transform:translateY(84px);opacity:0;pointer-events:none}
+}
+@media(max-width:700px){
+  /* 표 첫 칸 줄바꿈 금지(nowrap) 때문에 표가 화면 밖으로 늘어나 빈칸이 수천 px 생기던 것 */
+  main table td:first-child,main table th:first-child{white-space:normal!important}
+  main table{min-width:0!important;max-width:100%}
+}

@@ -22,7 +22,7 @@
 .wt-img{flex:none;width:112px;height:150px;border-radius:16px;overflow:hidden;background:#f2ebe1;display:grid;place-items:center;text-decoration:none;font-size:34px}.wt-img img{width:100%;height:100%;object-fit:cover;display:block}
 .wt-b{min-width:0;flex:1;display:flex;flex-direction:column;gap:4px}.wt-b h3{margin:0;font-size:17px;letter-spacing:-.04em;line-height:1.3}
 .wt-m{margin:0;font-size:12.5px;color:var(--mu);font-weight:700}.wt-sub{margin:0;font-size:12px;color:var(--mu);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.wt-tg{margin:2px 0;display:flex;flex-wrap:wrap;gap:4px}.wt-tg em{font-style:normal;font-size:11.5px;background:#f4efff;color:#5b21b6;border-radius:999px;padding:2px 9px;font-weight:700}
+.wt-tg{margin:2px 0;display:flex;flex-wrap:wrap;gap:4px}.wt-tg em{font-style:normal;font-size:12px;background:#f4efff;color:#5b21b6;border-radius:999px;padding:2px 9px;font-weight:700}
 .wt-why{margin:0;font-size:12.5px;color:#9a3412;font-weight:700;line-height:1.5}
 .wt-ott{margin:0;font-size:12px;color:var(--mu)}.wt-ott a{display:inline-block;margin:0 4px 0 6px;color:var(--tx);font-weight:800}
 .wt-ac{display:flex;gap:6px;margin-top:auto;padding-top:6px;align-items:center}.wt-go{flex:1;text-align:center;background:var(--tx);color:var(--bg);border-radius:12px;padding:10px 8px;font-weight:800;font-size:13px;text-decoration:none}
