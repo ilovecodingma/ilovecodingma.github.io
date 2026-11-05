@@ -9,6 +9,16 @@
 import os, re, json, html, hashlib, zipfile, datetime
 
 E = lambda t: html.escape(str(t), quote=True)
+KEYF = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'books_keys.json')   # 파일을 다시 만들지 정하는 해시(공개 폴더에 두지 않는다)
+
+
+def _keys():
+    return json.load(open(KEYF, encoding='utf-8')) if os.path.exists(KEYF) else {}
+
+
+def _setkey(k, v):
+    d = _keys(); d[k] = v
+    json.dump(d, open(KEYF, 'w', encoding='utf-8'), indent=1)
 SITE = 'https://sungprofile.cloud'
 PUB = '루리 줍줍'
 
@@ -183,8 +193,7 @@ def _epub(root, slug, title, sub, desc, chapters, cover_rel, edition):
            f'<manifest><item id="nav" href="nav.xhtml" media-type="application/xhtml+xml" properties="nav"/><item id="css" href="style.css" media-type="text/css"/>'
            f'<item id="cover-img" href="cover.png" media-type="image/png" properties="cover-image"/>{man}</manifest><spine>{spine}</spine></package>')
     body_key = hashlib.md5((opf.replace(now, '').replace(now[:10], '') + ''.join(b for _n, b in files) + nav).encode()).hexdigest()
-    kf = f + '.key'
-    if os.path.exists(f) and os.path.exists(kf) and open(kf).read() == body_key:
+    if os.path.exists(f) and _keys().get('epub:' + slug) == body_key:
         return '/book/files/' + slug + '.epub'   # 내용이 같으면 다시 쓰지 않는다(매 빌드마다 파일이 바뀌어 커밋이 커지지 않게)
     with zipfile.ZipFile(f, 'w') as z:
         z.writestr(zipfile.ZipInfo('mimetype'), 'application/epub+zip', compress_type=zipfile.ZIP_STORED)
@@ -193,7 +202,7 @@ def _epub(root, slug, title, sub, desc, chapters, cover_rel, edition):
         z.write(os.path.join(root, cover_rel.strip('/').replace('/', os.sep)), 'OEBPS/cover.png', zipfile.ZIP_DEFLATED)
         for nm, b in files:
             z.writestr('OEBPS/' + nm, b, zipfile.ZIP_DEFLATED)
-    open(kf, 'w').write(body_key)
+    _setkey('epub:' + slug, body_key)
     return '/book/files/' + slug + '.epub'
 
 
@@ -261,9 +270,9 @@ def make_pdfs(root):
         doc = open(f, encoding='utf-8').read()
         m = re.search(r'<main[^>]*>(.*)</main>', doc, re.S)
         h = hashlib.md5(re.sub(r'<div class="bk-dl">.*?</div>', '', m.group(1) if m else doc, flags=re.S).encode()).hexdigest()
-        kf = os.path.join(out, b['slug'] + '.pdf.key')
-        if not (os.path.exists(os.path.join(out, b['slug'] + '.pdf')) and os.path.exists(kf) and open(kf).read() == h):
-            todo.append((b, h, kf))
+        h = hashlib.md5((h + open(os.path.join(root, 'assets', 'pro.css'), 'rb').read().hex()[:0] + str(os.path.getsize(os.path.join(root, 'assets', 'pro.css')))).encode()).hexdigest()   # 인쇄 모양(pro.css)이 바뀌어도 다시 만든다
+        if not (os.path.exists(os.path.join(out, b['slug'] + '.pdf')) and _keys().get('pdf:' + b['slug']) == h):
+            todo.append((b, h, None))
     if not todo:
         return 0
     from playwright.sync_api import sync_playwright
@@ -283,7 +292,7 @@ def make_pdfs(root):
                     pg.pdf(path=os.path.join(out, b['slug'] + '.pdf'), format='A4', print_background=True, display_header_footer=True, header_template='<span></span>',
                            footer_template=f'<div style="font-size:8px;width:100%;text-align:center;color:#888;font-family:sans-serif">{E(b["title"])} · {PUB} · <span class="pageNumber"></span>/<span class="totalPages"></span></div>',
                            margin={'top': '16mm', 'bottom': '18mm', 'left': '15mm', 'right': '15mm'})
-                    open(kf, 'w').write(h); n += 1
+                    _setkey('pdf:' + b['slug'], h); n += 1
                 except Exception as e:
                     print('전자책 PDF 실패', b['slug'], repr(e)[:80])
             br.close()

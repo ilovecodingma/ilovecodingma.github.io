@@ -1,43 +1,91 @@
 {
- "at": "2026-11-05 13:40",
+ "at": "2026-11-05 22:25",
  "note": "그날 처음 들어온 방문자 기준(관리자·자동 점검 제외). 채널 → 첫 페이지별 방문자 수.",
  "days": [
   {
    "day": "2026-11-05",
-   "visitors": 71,
+   "visitors": 162,
    "channels": [
     [
      "🔍 다음·빙 검색",
-     34
+     85
     ],
     [
      "🔍 네이버 검색",
-     10
-    ],
-    [
-     "🔍 구글 검색",
-     10
-    ],
-    [
-     "🏷️ 기타 홍보 링크(chatgptcom)",
-     8
+     20
     ],
     [
      "🔗 직접 접속(주소 입력·즐겨찾기·앱 안 링크)",
-     8
+     17
+    ],
+    [
+     "🏷️ 기타 홍보 링크(chatgptcom)",
+     15
+    ],
+    [
+     "🔍 구글 검색",
+     14
+    ],
+    [
+     "🏷️ 기타 홍보 링크(youtube)",
+     4
+    ],
+    [
+     "💬 네이버 지식인",
+     2
     ],
     [
      "📝 블로그",
+     1
+    ],
+    [
+     "💻 개발자 커뮤니티",
+     1
+    ],
+    [
+     "🏷️ 기타 홍보 링크(perplexity)",
+     1
+    ],
+    [
+     "🏷️ 기타 홍보 링크(naver_kin)",
+     1
+    ],
+    [
+     "🏷️ 기타 홍보 링크(disquiet)",
      1
     ]
    ],
    "landing": [
     [
+     "/money/guide/national-scholarship/",
+     6
+    ],
+    [
+     "/money/guide/income-tax-interim-prepayment-november/",
+     6
+    ],
+    [
+     "/issue/insurance-rates-2027-1104/",
+     6
+    ],
+    [
      "/contest/youth/",
      5
     ],
     [
-     "/money/guide/national-scholarship/",
+     "/contest/deadline-11/",
+     4
+    ],
+    [
+     "/contest/character/",
+     4
+    ],
+    [
+     "/",
+     4
+    ],
+    [
+     "/contest/slogan/",
      3
     ],
     [
@@ -45,114 +93,94 @@
      3
     ],
     [
-     "/contest/deadline-11/",
+     "/apply/",
      2
     ],
     [
-     "/money/guide/gift-tax-filing-howto/",
+     "/money/guide/year-end-tax-simplified-data-supply-schedule/",
      2
     ],
     [
-     "/issue/douzone-bizon-data-breach/",
+     "/money/guide/workplace-harassment-law/",
      2
     ],
     [
-     "/guide/bank-passbook-reissue-fee-period/",
+     "/money/guide/unpaid-wage-petition-labor-office-process/",
      2
     ],
     [
-     "/contest/character/",
+     "/money/guide/temporary-two-homes-marriage-inheritance-cgt/",
      2
     ],
     [
-     "/",
+     "/money/guide/protein-sources-tofu-egg-bean/",
      2
-    ],
-    [
-     "/money/guide/officetel-tax-residential-business/",
-     2
-    ],
-    [
-     "/money/guide/oatmeal-nutrition-and-expiry/",
-     2
-    ],
-    [
-     "/money/guide/settlement-recommendation-decision-objection/",
-     1
-    ],
-    [
-     "/money/guide/new-apartment-move-in-checklist/",
-     1
-    ],
-    [
-     "/contest/slogan/",
-     1
-    ],
-    [
-     "/c/Q03144/",
-     1
     ]
    ],
    "by_channel": {
+    "🔍 다음·빙 검색": [
+     [
+      "/money/guide/national-scholarship/",
+      6
+     ],
+     [
+      "/money/guide/income-tax-interim-prepayment-november/",
+      6
+     ],
+     [
+      "/issue/insurance-rates-2027-1104/",
+      6
+     ],
+     [
+      "/money/guide/year-end-tax-simplified-data-supply-schedule/",
+      2
+     ],
+     [
+      "/money/guide/workplace-harassment-law/",
+      2
+     ]
+    ],
     "🏷️ 기타 홍보 링크(chatgptcom)": [
      [
       "/contest/youth/",
       5
      ],
      [
+      "/contest/character/",
+      2
+     ],
+     [
+      "/money/guide/saehuimang-hongssi-loan-conditions/",
+      1
+     ],
+     [
+      "/money/guide/housing-account-cancel/",
+      1
+     ],
+     [
       "/issue/goyang-changneung-share-sale-1104/",
-      1
-     ],
-     [
-      "/event/",
-      1
-     ],
-     [
-      "/contest/novel/",
-      1
-     ]
-    ],
-    "🔍 다음·빙 검색": [
-     [
-      "/money/guide/national-scholarship/",
-      3
-     ],
-     [
-      "/money/guide/gift-tax-filing-howto/",
-      2
-     ],
-     [
-      "/issue/douzone-bizon-data-breach/",
-      2
-     ],
-     [
-      "/money/guide/year-end-tax-simplified-data-supply-schedule/",
-      1
-     ],
-     [
-      "/money/guide/year-end-donation-deduction-guide/",
       1
      ]
     ],
     "🔗 직접 접속(주소 입력·즐겨찾기·앱 안 링크)": [
      [
+      "/contest/slogan/",
+      3
+     ],
+     [
       "/contest/deadline-11/",
       2
      ],
      [
+      "/apply/",
+      2
+     ],
+     [
+      "/vn/pool/",
+      1
+     ],
+     [
       "/money/guide/settlement-recommendation-decision-objection/",
-      1
-     ],
-     [
-      "/money/guide/new-apartment-move-in-checklist/",
-      1
-     ],
-     [
-      "/contest/slogan/",
-      1
-     ],
-     [
-      "/c/Q03144/",
       1
      ]
     ],
@@ -166,19 +194,23 @@
       2
      ],
      [
-      "/issue/subway-fare-evasion-1104/",
+      "/money/guide/severance-example/",
       1
      ],
      [
-      "/guide/regulated-area-land-permit-residence-obligation/",
+      "/money/guide/mobile-micropayment-dispute/",
       1
      ],
      [
-      "/guide/personal-rehab-abolished-appeal-workout/",
+      "/money/guide/marriage-birth-report/",
       1
      ]
     ],
     "🔍 구글 검색": [
+     [
+      "/guide/kindergarten-admission-lottery-procedure/",
+      2
+     ],
      [
       "/contest/character/",
       2
@@ -194,13 +226,49 @@
      [
       "/money/guide/nps-pension-amount-calc/",
       1
+     ]
+    ],
+    "💬 네이버 지식인": [
+     [
+      "/guide/lh-youth-jeonse-2026/",
+      2
+     ]
+    ],
+    "🏷️ 기타 홍보 링크(youtube)": [
+     [
+      "/issue/rare-disease-copay-7pct-1104/",
+      2
      ],
      [
-      "/money/guide/forced-heirship-yuryubun-claim-guide/",
-      1
+      "/issue/holidays-2027-calendar-1104/",
+      2
      ]
     ],
     "📝 블로그": [
+     [
+      "/",
+      1
+     ]
+    ],
+    "💻 개발자 커뮤니티": [
+     [
+      "/fridge/",
+      1
+     ]
+    ],
+    "🏷️ 기타 홍보 링크(perplexity)": [
+     [
+      "/cat/food/",
+      1
+     ]
+    ],
+    "🏷️ 기타 홍보 링크(naver_kin)": [
+     [
+      "/guide/account-hacked-suspended-recovery-118/",
+      1
+     ]
+    ],
+    "🏷️ 기타 홍보 링크(disquiet)": [
      [
       "/",
       1
