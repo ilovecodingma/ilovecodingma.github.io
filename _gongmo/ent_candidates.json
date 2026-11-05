@@ -1,5 +1,5 @@
 {
- "at": "2026-11-05 23:06",
+ "at": "2026-11-05 23:30",
  "nitems": 525,
  "cands": [
   {
@@ -224,7 +224,7 @@
     "한국경제",
     "헤럴드경제"
    ],
-   "n": 10,
+   "n": 11,
    "headlines": [
     {
      "src": "동아일보",
@@ -283,6 +283,40 @@
    ]
   },
   {
+   "kw": "깜짝",
+   "nsrc": 5,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "조선일보",
+    "한국경제",
+    "헤럴드경제"
+   ],
+   "n": 7,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "이유리, 새집 최초 공개…남다른 수집 규모 ‘깜짝’ (편스토랑)",
+     "link": "https://sports.donga.com/ent/article/all/20261105/134972267/1"
+    },
+    {
+     "src": "한국경제",
+     "title": "아일릿, 여경 의상 논란에 \"깜짝 놀라…어떤 관심이든 감사\"",
+     "link": "https://www.hankyung.com/article/202610265795H"
+    },
+    {
+     "src": "한국경제",
+     "title": "\"화환할게\" 강동원, 4개월 전 팬과 약속 지켰다…결혼식장에 깜짝 선물",
+     "link": "https://www.hankyung.com/article/202610265376H"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "“딸은 메타, 아들은 엔비디아”…김보연, 두 자녀 근황 깜짝 공개",
+     "link": "https://biz.heraldcorp.com/article/10926257"
+    }
+   ]
+  },
+  {
    "kw": "시작",
    "nsrc": 5,
    "srcs": [
@@ -313,40 +347,6 @@
      "src": "한겨레",
      "title": "박진영, 이단·사이비 의혹에 “핍박 시작…하나님이 해결할 것”",
      "link": "https://www.hani.co.kr/arti/culture/culture_general/1285738.html"
-    }
-   ]
-  },
-  {
-   "kw": "깜짝",
-   "nsrc": 5,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "조선일보",
-    "한국경제",
-    "헤럴드경제"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "이유리, 새집 최초 공개…남다른 수집 규모 ‘깜짝’ (편스토랑)",
-     "link": "https://sports.donga.com/ent/article/all/20261105/134972267/1"
-    },
-    {
-     "src": "한국경제",
-     "title": "아일릿, 여경 의상 논란에 \"깜짝 놀라…어떤 관심이든 감사\"",
-     "link": "https://www.hankyung.com/article/202610265795H"
-    },
-    {
-     "src": "한국경제",
-     "title": "\"화환할게\" 강동원, 4개월 전 팬과 약속 지켰다…결혼식장에 깜짝 선물",
-     "link": "https://www.hankyung.com/article/202610265376H"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "“딸은 메타, 아들은 엔비디아”…김보연, 두 자녀 근황 깜짝 공개",
-     "link": "https://biz.heraldcorp.com/article/10926257"
     }
    ]
   },
@@ -784,39 +784,6 @@
    ]
   },
   {
-   "kw": "디즈니",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "연합뉴스",
-    "한겨레"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "디즈니, 내년 싱가포르서 대형 팬 행사…한국 등 신작 공개",
-     "link": "https://www.yna.co.kr/view/AKR20261105096800005"
-    },
-    {
-     "src": "동아일보",
-     "title": "‘재혼 황후’ 터졌다…디즈니+ 12개국 정상·글로벌 7위",
-     "link": "https://sports.donga.com/ent/article/all/20261105/134975501/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "美 유력 매체 주목…디즈니+ ‘재혼 황후’ K-로판 글로벌 안착",
-     "link": "https://sports.donga.com/ent/article/all/20261105/134970203/1"
-    },
-    {
-     "src": "한겨레",
-     "title": "“유치한데 중독성 있네”…‘재혼 황후’ 호불호 속 디즈니 1위",
-     "link": "https://www.hani.co.kr/arti/culture/culture_general/1285884.html"
-    }
-   ]
-  },
-  {
    "kw": "한국",
    "nsrc": 4,
    "srcs": [
@@ -846,6 +813,39 @@
      "src": "SBS",
      "title": "'호프', 프랑스서 한국 영화 오프닝 신기록…벨기에 흥행도 호조",
      "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008829630&plink=RSSLINK&cooper=RSSREADER"
+    }
+   ]
+  },
+  {
+   "kw": "디즈니",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "연합뉴스",
+    "한겨레"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "디즈니, 내년 싱가포르서 대형 팬 행사…한국 등 신작 공개",
+     "link": "https://www.yna.co.kr/view/AKR20261105096800005"
+    },
+    {
+     "src": "동아일보",
+     "title": "‘재혼 황후’ 터졌다…디즈니+ 12개국 정상·글로벌 7위",
+     "link": "https://sports.donga.com/ent/article/all/20261105/134975501/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "美 유력 매체 주목…디즈니+ ‘재혼 황후’ K-로판 글로벌 안착",
+     "link": "https://sports.donga.com/ent/article/all/20261105/134970203/1"
+    },
+    {
+     "src": "한겨레",
+     "title": "“유치한데 중독성 있네”…‘재혼 황후’ 호불호 속 디즈니 1위",
+     "link": "https://www.hani.co.kr/arti/culture/culture_general/1285884.html"
     }
    ]
   },
@@ -1015,6 +1015,39 @@
    ]
   },
   {
+   "kw": "조세호",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "조선일보",
+    "헤럴드경제"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "‘유퀴즈’ 하차 조세호, 유튜브로 전격 복귀…“반성 많이해” 사과 [DA클립]",
+     "link": "https://sports.donga.com/ent/article/all/20261105/134974467/1"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "조세호 ‘조폭 연루설’ 후 방송 싹 끊기더니 결국…유튜브 채널 열었다",
+     "link": "https://biz.heraldcorp.com/article/10927541"
+    },
+    {
+     "src": "뉴시스",
+     "title": "고정 예능 사라진 조세호, 유튜브 개설…복귀 시동 거나",
+     "link": "https://www.newsis.com/view/NISX20261105_0003856703"
+    },
+    {
+     "src": "조선일보",
+     "title": "'조폭 친분설' 후 첫 심경 고백..조세호 \"반성 많이 했다, 관계 신중할 것\"",
+     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/05/MZRDKMDGGRQTOZJUMQ3DAZBZGA/"
+    }
+   ]
+  },
+  {
    "kw": "이유",
    "nsrc": 4,
    "srcs": [
@@ -1048,39 +1081,6 @@
    ]
   },
   {
-   "kw": "방탄소년",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "동아일보",
-    "세계일보"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "방탄소년단 ‘스윔’ 美 표절 소송, 원고 측 ‘자진취하’로 종결",
-     "link": "https://sports.donga.com/ent/article/all/20261105/134970858/1"
-    },
-    {
-     "src": "세계일보",
-     "title": "방탄소년단 '스윔' 표절 주장 소송, 원고 측 자진 취하…美 저작권 시비 종결",
-     "link": "https://www.segye.com/newsView/20261105509138"
-    },
-    {
-     "src": "SBS",
-     "title": "지드래곤부터 방탄소년단까지, K팝 별들 한자리에 모였다",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008829739&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "SBS",
-     "title": "방탄소년단, 남미 사로잡았다…전 회차 매진으로 85만 명 동원",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008825775&plink=RSSLINK&cooper=RSSREADER"
-    }
-   ]
-  },
-  {
    "kw": "표절",
    "nsrc": 4,
    "srcs": [
@@ -1110,6 +1110,39 @@
      "src": "세계일보",
      "title": "방탄소년단 '스윔' 표절 주장 소송, 원고 측 자진 취하…美 저작권 시비 종결",
      "link": "https://www.segye.com/newsView/20261105509138"
+    }
+   ]
+  },
+  {
+   "kw": "방탄소년",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "동아일보",
+    "세계일보"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "방탄소년단 ‘스윔’ 美 표절 소송, 원고 측 ‘자진취하’로 종결",
+     "link": "https://sports.donga.com/ent/article/all/20261105/134970858/1"
+    },
+    {
+     "src": "세계일보",
+     "title": "방탄소년단 '스윔' 표절 주장 소송, 원고 측 자진 취하…美 저작권 시비 종결",
+     "link": "https://www.segye.com/newsView/20261105509138"
+    },
+    {
+     "src": "SBS",
+     "title": "지드래곤부터 방탄소년단까지, K팝 별들 한자리에 모였다",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008829739&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "SBS",
+     "title": "방탄소년단, 남미 사로잡았다…전 회차 매진으로 85만 명 동원",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008825775&plink=RSSLINK&cooper=RSSREADER"
     }
    ]
   },
@@ -1308,39 +1341,6 @@
      "src": "헤럴드경제",
      "title": "“개인 연차 없이 한 달 쉬었는데”…헤이지니 논란에 현 직원 ‘등판’",
      "link": "https://biz.heraldcorp.com/article/10924714"
-    }
-   ]
-  },
-  {
-   "kw": "사랑",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 4,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "최불암 \"전 국민에 받은 사랑 어떻게 갚나…모든 순간이 선물\"",
-     "link": "https://www.yna.co.kr/view/AKR20261101050500005"
-    },
-    {
-     "src": "SBS",
-     "title": "'가능한 사랑', 제46회 영평상 작품상…조인성·전도연 남녀주연상 영예",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008832284&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "뉴시스",
-     "title": "'느낌표' 된 한로로, 물음표 던진다…반문 끝에 끝내 가닿을 사랑",
-     "link": "https://www.newsis.com/view/NISX20261105_0003855972"
-    },
-    {
-     "src": "조선일보",
-     "title": "영화 ‘가능한 사랑’ 올해 영평상 최우수작품상… ‘호프’ 3관왕으로 최다 수상",
-     "link": "https://www.chosun.com/culture-life/culture_general/2026/11/05/FR2QPIAVRRDOVEFJRGLY27CWCA/"
     }
    ]
   }
