@@ -232,6 +232,66 @@ def _title_ov():
 RURI_IMG_RX = re.compile(r'(<(?:aside|div) class="say[^"]*">)?<img[^>]*src="/assets/ruri/(?!og\.jpg)[^"]*"[^>]*>')
 
 
+_RT_TBL = re.compile(r'<table\b([^>]*)>(.*?)</table>', re.S)
+
+
+def rsp_tables(html_):
+    """모바일 표(2026-11-05 모바일 전수 점검): 머리글 행이 있는 3열 이상 표는 좁은 화면에서 열이 잘리거나 한 글자씩 세로로 쌓였다.
+    표마다 class="rt" 와 칸마다 data-l(열 이름)을 붙여 두고, CSS(pro.css)가 700px 이하에서 행을 카드처럼 쌓는다. 칸 합치기(colspan·rowspan)가 있는 표는 건드리지 않는다."""
+    def fix(m):
+        attrs, inner = m.group(1), m.group(2)
+        if 'colspan' in inner or 'rowspan' in inner or '<table' in inner or 'data-l=' in inner or 'data-rt="0"' in attrs:
+            return m.group(0)
+        rows = re.findall(r'<tr\b[^>]*>(.*?)</tr>', inner, re.S)
+        if len(rows) < 2 or '<td' in rows[0]:
+            return m.group(0)
+        labels = [re.sub(r'\s+', ' ', re.sub(r'<[^>]+>', '', h)).strip() for h in re.findall(r'<th\b[^>]*>(.*?)</th>', rows[0], re.S)]
+        if len(labels) < 3:
+            return m.group(0)
+        st = {'row': 0}
+
+        def row(rm):
+            st['row'] += 1
+            if st['row'] == 1:
+                return rm.group(0)
+            st['i'] = 0
+
+            def cell(cm):
+                k = st['i']; st['i'] += 1
+                if k == 0 or k >= len(labels) or not labels[k]:
+                    return cm.group(0)
+                return f'<{cm.group(1)}{cm.group(2)} data-l="{E(labels[k])}">'
+            return re.sub(r'<(td|th)\b([^>]*)>', cell, rm.group(0))
+        inner2 = re.sub(r'<tr\b[^>]*>.*?</tr>', row, inner, flags=re.S)
+        if 'class="' in attrs:
+            attrs2 = attrs.replace('class="', 'class="rt ', 1)
+        elif 'class=' in attrs:
+            attrs2 = re.sub(r'class=([^\s">]+)', r'class="rt \1"', attrs, 1)
+        else:
+            attrs2 = attrs + ' class="rt"'
+        return f'<table{attrs2}>{inner2}</table>'
+    return _RT_TBL.sub(fix, html_)
+
+
+def src_cell(t, srcs):
+    """표 칸에 주소가 통째로 들어 있으면 출처 이름(없으면 사이트 이름) 링크로 바꾼다(모바일에서 긴 주소가 칸을 뚫고 줄줄이 꺾였음)."""
+    by = {u_: n_ for n_, u_ in (srcs or [])}
+
+    def lk(m):
+        u = m.group(0).rstrip('.,)')
+        host = re.sub(r'^www\.', '', re.sub(r'^https?://([^/]+).*', r'\1', u))
+        return f'<a href="{E(u)}" target="_blank" rel="noopener nofollow">{E(by.get(u) or host)}</a>' + m.group(0)[len(u):]
+    return re.sub(r'https?://[^\s<>"]+', lk, E(t).replace('&amp;', '&')) if 'http' in t else E(t)
+
+
+def sent_list(t, cls='cat-ul'):
+    """긴 결론 문단은 문장 단위 목록으로 보여 준다(글자는 그대로). 3문장 이하면 문단 그대로."""
+    ss = [x.strip() for x in re.split(r'(?<=[다요]\.)\s+', (t or '').strip()) if x.strip()]
+    if len(ss) <= 3:
+        return E(t)
+    return f'<ul class="{cls}">' + ''.join(f'<li>{E(x)}</li>' for x in ss) + '</ul>'
+
+
 def page(path, title, desc, body, crumbs=None, ld=None, full_title=False, noindex=False, og=None, lang='ko', canon=None):
     _ov = _title_ov().get(path)
     if _ov:
@@ -244,6 +304,7 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False, noinde
     PAGE_HASH[path] = hashlib.md5(re.sub(r'D-\d+|D-DAY|\d{1,2}:\d{2}|\d{4}-\d{2}-\d{2}|\d{1,2}/\d{1,2}|[\d,]+\s*(?:건|명|개|곳|회|일 남)', '', title + body).encode()).hexdigest()
     if noindex:
         NOINDEX.add(path)
+    body = rsp_tables(body)
     if path in _seo_exp_links():   # 2026-10-23 검색 유입 실험군: 색인된 허브에 주제가 맞는 가이드 링크 (seo_exp_links.json, 실험 종료 시 파일만 지우면 사라짐)
         body += ('<section class="seo-q"><h2>📌 많이 찾는 질문</h2><ul class="gm-l">' + ''.join(f'<li><a href="{E(x["path"])}">{E(x["text"])}</a></li>' for x in _seo_exp_links()[path]) + '</ul></section>')
     if path.startswith(('/money/guide/', '/money/tools/', '/guide/', '/ai/', '/qa/')) and not noindex:
@@ -282,7 +343,7 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False, noinde
 <meta name="theme-color" content="{TH[3] if TH else '#5b21b6'}"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="오늘 뭐 먹지">
 <link rel="icon" href="/favicon.ico?v=6" sizes="any"><link rel="icon" type="image/png" sizes="48x48" href="/assets/icons/icon-48.png?v=6"><link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/icon-96.png?v=6"><link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/icon-192.png?v=6"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=6"><link rel="manifest" href="/site.webmanifest"><link rel="alternate" type="application/rss+xml" title="루리 줍줍" href="/rss.xml">
 <link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="/assets/gm.css?v=29"><link rel="stylesheet" href="/assets/ds.css?v=15"><link rel="stylesheet" href="/assets/print.css?v=1"><link rel="stylesheet" href="/assets/pro.css?v=14"><script defer src="/assets/print.js?v=1"></script><script src="/assets/img-fallback.js?v=1"></script>{('<link rel="stylesheet" href="/assets/chat/ruri-chat.css?v=9">') if not (TH and TH[0] == 'ai') else ''}{COMM_TAGS}{('<script type="module" src="/assets/chat/ruri-chat.js?v=16"></script>') if not (TH and TH[0] == 'ai') else ''}<link rel="stylesheet" href="/assets/app/shell.css?v=1"><script defer src="/assets/app/app.js?v=4"></script>
+<link rel="stylesheet" href="/assets/gm.css?v=29"><link rel="stylesheet" href="/assets/ds.css?v=15"><link rel="stylesheet" href="/assets/print.css?v=1"><link rel="stylesheet" href="/assets/pro.css?v=15"><script defer src="/assets/print.js?v=1"></script><script src="/assets/img-fallback.js?v=1"></script>{('<link rel="stylesheet" href="/assets/chat/ruri-chat.css?v=9">') if not (TH and TH[0] == 'ai') else ''}{COMM_TAGS}{('<script type="module" src="/assets/chat/ruri-chat.js?v=16"></script>') if not (TH and TH[0] == 'ai') else ''}<link rel="stylesheet" href="/assets/app/shell.css?v=1"><script defer src="/assets/app/app.js?v=4"></script>
 {ldh}
 {TH_CSS}
 {GTAG}
@@ -3723,7 +3784,7 @@ def issue_json_pages():
             p_ = f'/issue/{sl}/'
             faq, fld = _faq([tuple(x) for x in c.get('faq', [])]) if c.get('faq') else ('', None)
             def tbl(rows, h1_, h2_):
-                return (f'<table class="xt"><thead><tr><th>{h1_}</th><th>{h2_}</th></tr></thead><tbody>' + ''.join(f'<tr><td>{E(a_)}</td><td>{E(b_)}</td></tr>' for a_, b_ in rows) + '</tbody></table>') if rows else ''
+                return (f'<table class="xt"><thead><tr><th>{h1_}</th><th>{h2_}</th></tr></thead><tbody>' + ''.join(f'<tr><td>{E(a_)}</td><td>{src_cell(b_, c.get("sources"))}</td></tr>' for a_, b_ in rows) + '</tbody></table>') if rows else ''
             secs = ''
             if c.get('confirmed'):
                 secs += '<h2>확인된 것</h2>' + tbl(c['confirmed'], '내용', '근거·출처')
@@ -3740,27 +3801,29 @@ def issue_json_pages():
                          f'<div class="bub"><b>루리의 한마디</b><div>{E(c["lury_note"])}</div></div></aside>')
             rel = ''.join(f'<a href="{E(u_)}">{E(n_)}</a>' for u_, n_ in c.get('related', []))
             body = (f'<p class="bc"><a href="/">홈</a> › 이슈 › {E(c["h1"][:30])}</p><h1>{E(c["h1"])}</h1>'
-                    f'<div class="cat-st"><b>결론</b><br>{E(c["summary"])}</div><p class="note">{c["date"]} 기준 · 이 글은 단기 이슈라 {int(c.get("keep_days", 4))}일 뒤 내려가요.</p>'
+                    f'<div class="cat-st"><b>결론</b><br>{sent_list(c["summary"])}</div><p class="note">{c["date"]} 기준 · 이 글은 단기 이슈라 {int(c.get("keep_days", 4))}일 뒤 내려가요.</p>'
                     + secs + (f'<p class="hm-links">{rel}</p>' if rel else '')
-                    + '<style>.xt{border-collapse:collapse;width:100%;font-size:14px}.xt th,.xt td{border:1px solid #e5e7eb;padding:6px 8px;text-align:left;vertical-align:top}.xt th{background:#f8fafc}</style>')
+                    + '<style>.xt{border-collapse:collapse;width:100%;font-size:14px}.xt th,.xt td{border:1px solid #e5e7eb;padding:6px 8px;text-align:left;vertical-align:top}.xt th{background:#f8fafc}.xt td{overflow-wrap:anywhere}.cat-ul{margin:6px 0 0;padding-left:18px}.cat-ul li{margin:6px 0;line-height:1.65}</style>')
             art = {'@context': 'https://schema.org', '@type': 'Article', 'headline': c['title'], 'description': c['desc'], 'inLanguage': 'ko',
                    'datePublished': c['date'], 'dateModified': c['date'], 'mainEntityOfPage': SITE + p_,
                    'author': {'@type': 'Organization', 'name': '루리 줍줍 편집', 'url': SITE + '/'}, 'publisher': {'@type': 'Organization', 'name': NAME, 'url': SITE + '/'}}
             ld_ = {'@context': 'https://schema.org', '@graph': [art, fld]} if fld else art
             page(p_, c['title'], c['desc'], body, [('루리 줍줍', '/'), ('이슈', '/news/'), (c['h1'][:20], p_)], ld_, full_title=True, og=og_art('issue', c['slug'], _dt_og(c['h1']), '이슈 · ' + c['date'][5:].replace('-', '.') + ' 기준'))
             urls.append(p_)
-            icards.append((c['date'], f'<li><a href="{p_}"><b>{E(c["h1"])}</b><span>{c["date"][5:].replace("-", "/")} 기준 · {E(c["summary"][:80])}</span></a></li>'))
+            _is = c.get('home_sum') or (re.split(r'(?<=[다요]\.)\s+', c['summary'].strip())[0])
+            icards.append((c['date'], f'<li><a href="{p_}">{E(c.get("home_title") or c["h1"])}</a><p>{E(_is)}</p><small>{E(c.get("category") or "이슈")} · {c["date"][5:].replace("-", "/")} 기준</small></li>'))
     idir = os.path.join(ROOT, 'issue')
     if os.path.isdir(idir):
         for f_ in os.listdir(idir):
             if f_ != 'kim-jong-un-rumor' and f_ not in keep and os.path.isdir(os.path.join(idir, f_)):
                 shutil.rmtree(os.path.join(idir, f_), ignore_errors=True)   # 보관 기간이 지났거나 원고가 없어진 단기 이슈
     if os.path.exists(os.path.join(HERE, 'essays', 'kim-rumor.html')):
-        icards.append(('2026-10-21', '<li><a href="/issue/kim-jong-un-rumor/"><b>김정은 건강 이상설 보도, 확인된 사실과 출처 정리</b><span>10/21 기준 · 확인된 것과 확인되지 않은 것을 나눠 정리했습니다.</span></a></li>'))
+        icards.append(('2026-10-21', '<li><a href="/issue/kim-jong-un-rumor/">김정은 건강 이상설 보도, 확인된 사실과 출처 정리</a><p>확인된 것과 확인되지 않은 것을 나눠 정리했습니다.</p><small>이슈 · 10/21 기준</small></li>'))
     if icards:
         li = ''.join(h_ for _d, h_ in sorted(icards, key=lambda x: x[0], reverse=True))
         page('/issue/', '요즘 많이 찾는 이슈 정리 — 확인된 것과 확인되지 않은 것', '요즘 검색이 몰리는 이슈를 공식 출처 기준으로 확인된 것과 확인되지 않은 것으로 나눠 정리합니다. 단기 이슈는 며칠 뒤 내려갑니다.',
-             f'<p class="bc"><a href="/">홈</a> › 이슈</p><h1>요즘 많이 찾는 이슈 정리</h1><p>검색이 몰리는 이슈를 공식 출처 기준으로 확인된 것과 확인되지 않은 것으로 나눕니다. 단기 이슈는 보관 기간이 지나면 내려갑니다.</p><ul class="gm-g">{li}</ul>',
+             f'<p class="bc"><a href="/">홈</a> › 이슈</p><h1>요즘 많이 찾는 이슈 정리</h1><p>검색이 몰리는 이슈를 공식 출처 기준으로 확인된 것과 확인되지 않은 것으로 나눕니다. 단기 이슈는 보관 기간이 지나면 내려갑니다.</p><ul class="is-l">{li}</ul>'
+             '<style>.is-l{list-style:none;margin:8px 0 0;padding:0;border-top:1px solid var(--bd,#e2e8f0)}.is-l li{padding:16px 0;border-bottom:1px solid var(--bd,#e2e8f0)}main .is-l a{display:block;font-size:17.5px;font-weight:700;line-height:1.45;letter-spacing:-.015em;color:var(--tx,#0f172a);text-decoration:none}.is-l a:hover{text-decoration:underline;text-underline-offset:3px}.is-l p{margin:5px 0 0;font-size:15px;line-height:1.6;color:var(--mu,#475569);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}.is-l small{display:block;margin-top:6px;font-size:13px;color:#64748b}</style>',
              [('루리 줍줍', '/'), ('이슈', '/issue/')])
         urls.append('/issue/')
     return urls
