@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-06 05:00",
+ "updated": "2026-11-06 06:00",
  "items": [
   {
    "query": "로스앤젤레스 fc 대 미네소타 유나이티드 fc 순위",
@@ -1360,6 +1360,18 @@
   },
   {
    "query": "상장지수펀드",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-06",
+   "expires": "2026-11-09"
+  },
+  {
+   "query": "코인니스",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -7367,6 +7379,19 @@
    "page": "/issue/insurance-rates-2027-1104/",
    "registered": "2026-11-04",
    "expires": "2026-12-04"
+  },
+  {
+   "query": "교황 방한 2027 일정 장소 정리, 광화문 대신 상암 월드컵경기장",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 4,
+   "status": "작성",
+   "page": "/issue/pope-visit-2027-venue-1106/",
+   "registered": "2026-11-06",
+   "expires": "2026-11-20"
   },
   {
    "query": "희귀질환·중증난치질환 산정특례 본인부담률 10%에서 7%로 인하 대상과 시기 정리",
