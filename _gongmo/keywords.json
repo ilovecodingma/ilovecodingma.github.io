@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-05 15:00",
+ "updated": "2026-11-05 16:00",
  "items": [
   {
    "query": "로스앤젤레스 fc 대 미네소타 유나이티드 fc 순위",
@@ -96,6 +96,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-04",
+   "expires": "2026-11-08"
+  },
+  {
+   "query": "이효리",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 5000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-03",
    "expires": "2026-11-08"
   },
   {
@@ -304,18 +316,6 @@
   },
   {
    "query": "우량주",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 2000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-03",
-   "expires": "2026-11-08"
-  },
-  {
-   "query": "이효리",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -556,6 +556,30 @@
   },
   {
    "query": "김숙",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-05",
+   "expires": "2026-11-08"
+  },
+  {
+   "query": "이범호",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-05",
+   "expires": "2026-11-08"
+  },
+  {
+   "query": "필리핀",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -1179,6 +1203,30 @@
    "expires": "2026-11-08"
   },
   {
+   "query": "유치원",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-05",
+   "expires": "2026-11-08"
+  },
+  {
+   "query": "잠수함",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-05",
+   "expires": "2026-11-08"
+  },
+  {
    "query": "오늘 날씨 가을비 언제까지, 내일 기온 얼마나 떨어지나 기상청 예보 정리",
    "tier": "단기",
    "signal": [
@@ -1229,6 +1277,19 @@
    "page": "/issue/retirement-age-extension/",
    "registered": "2026-11-02",
    "expires": "2026-11-06"
+  },
+  {
+   "query": "미국 중간선거 후 증시 어떻게 움직였나, 다우 3% 급등과 코스피 하락 정리",
+   "tier": "단기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 3,
+   "status": "작성",
+   "page": "/issue/us-midterm-market-reaction-1105/",
+   "registered": "2026-11-05",
+   "expires": "2026-11-08"
   },
   {
    "query": "중앙일보 인수 CJ 다우키움 신세계 컨소시엄 현황, 계약 11월 6일 시한",
@@ -6410,6 +6471,19 @@
    "expires": "2026-11-19"
   },
   {
+   "query": "청해부대 작전구역 오만 남방까지 확대, 국회 동의는 어떻게 되나",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 4,
+   "status": "작성",
+   "page": "/issue/cheonghae-unit-operation-area-1105/",
+   "registered": "2026-11-05",
+   "expires": "2026-11-12"
+  },
+  {
    "query": "쿠팡Inc 3분기 영업손실 6423억 원, 누적 1조8318억 원 어떻게 나왔나",
    "tier": "중기",
    "signal": [
@@ -6663,6 +6737,19 @@
    "page": "/issue/election-law-appeal-1104/",
    "registered": "2026-11-04",
    "expires": "2026-11-11"
+  },
+  {
+   "query": "분당 선도지구 재건축 시공사 입찰 언제부터? 샛별·양지·더시범 단계별 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 3,
+   "status": "작성",
+   "page": "/issue/first-new-town-pilot-contractor-1105/",
+   "registered": "2026-11-05",
+   "expires": "2026-11-19"
   },
   {
    "query": "가덕도신공항 공사비 6200억 증액 특별법 개정 합의 보도 정리, 착공 시기는?",

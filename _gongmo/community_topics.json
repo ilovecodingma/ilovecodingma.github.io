@@ -1,31 +1,31 @@
 {
  "date": "2026-11-05",
- "updated": "2026-11-05 14:50",
+ "updated": "2026-11-05 15:50",
  "sites": 13,
- "npost": 2828,
+ "npost": 2821,
  "note": "출처(커뮤니티)별 집계예요. 작성자·연령·성별 정보는 수집하지 않아요. posts 는 이슈별로 뽑힌 일부라 전체 글 수가 아니에요.",
  "sources": [
   {
    "name": "MLB파크",
    "np": 11,
-   "nc": 884,
+   "nc": 812,
    "topics": [
     {
      "t": "어제 안재욱 라스 발언.txt",
      "nsite": 3,
      "np_here": 1,
-     "nc_here": 156,
+     "nc_here": 160,
      "issue_np": 3,
-     "issue_nc": 192,
+     "issue_nc": 196,
      "kw": [
-      "라스",
       "발언",
-      "안재욱"
+      "안재욱",
+      "라스"
      ],
      "top_post": {
       "t": "어제 안재욱 라스 발언.txt",
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611050119903661&m=view",
-      "nc": 156
+      "nc": 160
      }
     },
     {
@@ -36,9 +36,9 @@
      "issue_np": 3,
      "issue_nc": 146,
      "kw": [
-      "아들",
-      "추신수",
       "랭킹",
+      "추신수",
+      "아들",
       "미국"
      ],
      "top_post": {
@@ -70,36 +70,17 @@
      "np_here": 1,
      "nc_here": 120,
      "issue_np": 4,
-     "issue_nc": 121,
+     "issue_nc": 127,
      "kw": [
       "여행",
       "유튜버",
       "사망",
-      "자전거"
+      "진쓰레블"
      ],
      "top_post": {
       "t": "여행 유튜버 사망 의혹",
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611050119903856&m=view",
       "nc": 120
-     }
-    },
-    {
-     "t": "집 지하에서 발견한 거대 지하도시",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 94,
-     "issue_np": 2,
-     "issue_nc": 134,
-     "kw": [
-      "도시",
-      "발견",
-      "지하",
-      "거대"
-     ],
-     "top_post": {
-      "t": "집 지하에서 발견한 거대 지하도시",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611040119876169&m=view",
-      "nc": 94
      }
     },
     {
@@ -110,31 +91,14 @@
      "issue_np": 13,
      "issue_nc": 98,
      "kw": [
-      "중간",
       "선거",
+      "중간",
       "트럼프",
       "주옥"
      ],
      "top_post": {
       "t": "[미 중간선거] 극초반이지만 놀랍네요",
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611040119869302&m=view",
-      "nc": 56
-     }
-    },
-    {
-     "t": "운동회 민원이 많아진 이유",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 56,
-     "issue_np": 2,
-     "issue_nc": 99,
-     "kw": [
-      "민원",
-      "운동회"
-     ],
-     "top_post": {
-      "t": "운동회 민원이 많아진 이유",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611050119905815&m=view",
       "nc": 56
      }
     },
@@ -155,20 +119,56 @@
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611040119876070&m=view",
       "nc": 54
      }
+    },
+    {
+     "t": "미국 선거결과 떴다 ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ",
+     "nsite": 9,
+     "np_here": 1,
+     "nc_here": 53,
+     "issue_np": 37,
+     "issue_nc": 114,
+     "kw": [
+      "미국",
+      "선거",
+      "중간",
+      "트럼프"
+     ],
+     "top_post": {
+      "t": "역대급 미국 중간선거네요",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611040119874339&m=view",
+      "nc": 53
+     }
+    },
+    {
+     "t": "트럼프,난 원래 민주당",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 41,
+     "issue_np": 3,
+     "issue_nc": 49,
+     "kw": [
+      "민주당",
+      "트럼프"
+     ],
+     "top_post": {
+      "t": "트럼프,난 원래 민주당",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611040119879988&m=view",
+      "nc": 41
+     }
     }
    ]
   },
   {
    "name": "개드립",
-   "np": 19,
-   "nc": 495,
+   "np": 18,
+   "nc": 426,
    "topics": [
     {
      "t": "니케 사태 진짜 웃긴 것은",
      "nsite": 4,
      "np_here": 4,
      "nc_here": 75,
-     "issue_np": 24,
+     "issue_np": 23,
      "issue_nc": 107,
      "kw": [
       "사태",
@@ -183,60 +183,22 @@
      }
     },
     {
-     "t": "미국 선거결과 떴다 ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ",
-     "nsite": 9,
-     "np_here": 3,
-     "nc_here": 55,
-     "issue_np": 38,
-     "issue_nc": 158,
-     "kw": [
-      "선거",
-      "미국",
-      "중간",
-      "트럼프"
-     ],
-     "top_post": {
-      "t": "미국 중간선거 공화당 뽑았다고 인증한 검머외 근황",
-      "u": "https://www.dogdrip.net/dogdrip/733109297?sort_index=popular&page=1",
-      "nc": 35
-     }
-    },
-    {
      "t": "소신발언.",
      "nsite": 3,
      "np_here": 2,
-     "nc_here": 52,
-     "issue_np": 5,
-     "issue_nc": 55,
+     "nc_here": 59,
+     "issue_np": 7,
+     "issue_nc": 62,
      "kw": [
-      "소신",
       "발언",
+      "소신",
       "등산복",
       "지적"
      ],
      "top_post": {
       "t": "소신발언.",
       "u": "https://www.dogdrip.net/dogdrip/733289771?sort_index=popular&page=1",
-      "nc": 33
-     }
-    },
-    {
-     "t": "오늘자 공개된 야스 로봇 가격 + 스펙 근황 ㄷㄷㄷ",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 43,
-     "issue_np": 3,
-     "issue_nc": 43,
-     "kw": [
-      "공개",
-      "로봇",
-      "야스",
-      "스펙"
-     ],
-     "top_post": {
-      "t": "오늘자 공개된 야스 로봇 가격 + 스펙 근황 ㄷㄷㄷ",
-      "u": "https://www.dogdrip.net/dogdrip/733121259?sort_index=popular&page=1",
-      "nc": 43
+      "nc": 40
      }
     },
     {
@@ -247,8 +209,8 @@
      "issue_np": 13,
      "issue_nc": 98,
      "kw": [
-      "중간",
       "선거",
+      "중간",
       "트럼프",
       "주옥"
      ],
@@ -263,7 +225,7 @@
      "nsite": 3,
      "np_here": 1,
      "nc_here": 42,
-     "issue_np": 5,
+     "issue_np": 3,
      "issue_nc": 51,
      "kw": [
       "민주당",
@@ -276,25 +238,6 @@
      }
     },
     {
-     "t": "집 지하에서 발견한 거대 지하도시",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 40,
-     "issue_np": 2,
-     "issue_nc": 134,
-     "kw": [
-      "도시",
-      "발견",
-      "지하",
-      "거대"
-     ],
-     "top_post": {
-      "t": "집 지하에서 발견한 거대 지하도시",
-      "u": "https://www.dogdrip.net/dogdrip/733200986?sort_index=popular&page=1",
-      "nc": 40
-     }
-    },
-    {
      "t": "한 문장으로 네가 한국 사람임을 증명해봐",
      "nsite": 3,
      "np_here": 1,
@@ -302,39 +245,92 @@
      "issue_np": 3,
      "issue_nc": 94,
      "kw": [
+      "문장",
       "증명",
-      "한국",
-      "문장"
+      "한국"
      ],
      "top_post": {
       "t": "한 문장으로 네가 한국 사람임을 증명해봐",
       "u": "https://www.dogdrip.net/dogdrip/733178360?sort_index=popular&page=1",
       "nc": 34
      }
+    },
+    {
+     "t": "어제 안재욱 라스 발언.txt",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 33,
+     "issue_np": 3,
+     "issue_nc": 196,
+     "kw": [
+      "발언",
+      "안재욱",
+      "라스"
+     ],
+     "top_post": {
+      "t": "어제자 라스 안재욱 발언ㄷㄷ",
+      "u": "https://www.dogdrip.net/dogdrip/733262981?sort_index=popular&page=1",
+      "nc": 33
+     }
+    },
+    {
+     "t": "실시간 트럼프 타워 ㅋㅋ",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 32,
+     "issue_np": 3,
+     "issue_nc": 33,
+     "kw": [
+      "타워",
+      "트럼프"
+     ],
+     "top_post": {
+      "t": "실시간 트럼프 타워 ㅋㅋ",
+      "u": "https://www.dogdrip.net/dogdrip/733179373?sort_index=popular&page=1",
+      "nc": 32
+     }
+    },
+    {
+     "t": "텍사스 당선자의 승리 연설",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 30,
+     "issue_np": 5,
+     "issue_nc": 30,
+     "kw": [
+      "텍사스",
+      "당선자",
+      "탈라리코",
+      "연설"
+     ],
+     "top_post": {
+      "t": "텍사스 당선자의 승리 연설",
+      "u": "https://www.dogdrip.net/dogdrip/733332249?sort_index=popular&page=1",
+      "nc": 30
+     }
     }
    ]
   },
   {
    "name": "클리앙",
-   "np": 7,
-   "nc": 168,
+   "np": 9,
+   "nc": 180,
    "topics": [
     {
-     "t": "테슬라 국토부에 서류 6장 제출",
+     "t": "제빵 전문가가 호남 반도체 지원금 심의 ㅋㅋㅋ",
      "nsite": 3,
      "np_here": 1,
-     "nc_here": 43,
+     "nc_here": 41,
      "issue_np": 3,
-     "issue_nc": 43,
+     "issue_nc": 42,
      "kw": [
-      "국토부",
-      "테슬라",
-      "서류"
+      "호남",
+      "반도체"
      ],
      "top_post": {
-      "t": "테슬라 국토부에 서류 6장 제출",
-      "u": "https://www.clien.net/service/board/cm_car/19287483?od=T33&po=0&category=0&groupCd=clien_all",
-      "nc": 43
+      "t": "제빵 전문가가 호남 반도체 지원금 심의 ㅋㅋㅋ",
+      "u": "https://www.clien.net/service/board/park/19287839?od=T33&po=0&category=0&groupCd=clien_all",
+      "nc": 41
      }
     },
     {
@@ -345,8 +341,8 @@
      "issue_np": 3,
      "issue_nc": 43,
      "kw": [
-      "대통령",
       "뉴스",
+      "대통령",
       "가짜",
       "집값"
      ],
@@ -365,8 +361,8 @@
      "issue_nc": 53,
      "kw": [
       "국힘",
-      "반환",
       "윤석열",
+      "반환",
       "징역형"
      ],
      "top_post": {
@@ -397,11 +393,11 @@
      "nsite": 3,
      "np_here": 1,
      "nc_here": 15,
-     "issue_np": 4,
+     "issue_np": 3,
      "issue_nc": 15,
      "kw": [
-      "듀오",
-      "아이폰"
+      "아이폰",
+      "듀오"
      ],
      "top_post": {
       "t": "아이폰 듀오 역시 애플은 다르네요",
@@ -415,7 +411,7 @@
      "np_here": 1,
      "nc_here": 14,
      "issue_np": 4,
-     "issue_nc": 70,
+     "issue_nc": 72,
      "kw": [
       "전과자",
       "비상",
@@ -427,74 +423,48 @@
       "u": "https://www.clien.net/service/board/park/19287271?od=T33&po=0&category=0&groupCd=clien_all",
       "nc": 14
      }
-    }
-   ]
-  },
-  {
-   "name": "인스티즈",
-   "np": 4,
-   "nc": 159,
-   "topics": [
+    },
     {
-     "t": "한 문장으로 네가 한국 사람임을 증명해봐",
+     "t": "트럼프,난 원래 민주당",
      "nsite": 3,
      "np_here": 1,
-     "nc_here": 60,
+     "nc_here": 8,
      "issue_np": 3,
-     "issue_nc": 94,
+     "issue_nc": 49,
      "kw": [
-      "증명",
-      "한국",
-      "문장"
+      "민주당",
+      "트럼프"
      ],
      "top_post": {
-      "t": "한 문장으로 네가 한국 사람임을 증명해봐",
-      "u": "https://www.instiz.net/pt/7921368?green=1",
-      "nc": 60
+      "t": "[속보] 트럼프 '나를 탄핵시키면 민주당 파멸시킬 것'",
+      "u": "https://www.clien.net/service/board/park/19287675?od=T33&po=0&category=0&groupCd=clien_all",
+      "nc": 8
      }
     },
     {
-     "t": "'내가 왜 전과자 돼요?' 간 큰 10대들 '비상'..사장님들 '환호' (에디터픽) / SBS",
+     "t": "[속보] 내년부터 한국서 5년 안 살았으면 기초연금 못 받는다",
      "nsite": 3,
-     "np_here": 2,
-     "nc_here": 56,
-     "issue_np": 4,
-     "issue_nc": 70,
-     "kw": [
-      "전과자",
-      "비상",
-      "사장",
-      "환호"
-     ],
-     "top_post": {
-      "t": "\"내가 왜 전과자 돼요?\" 비상 걸린 10대들",
-      "u": "https://www.instiz.net/pt/7921858?green=1",
-      "nc": 33
-     }
-    },
-    {
-     "t": "운동회 민원이 많아진 이유",
-     "nsite": 2,
      "np_here": 1,
-     "nc_here": 43,
-     "issue_np": 2,
-     "issue_nc": 99,
+     "nc_here": 6,
+     "issue_np": 3,
+     "issue_nc": 8,
      "kw": [
-      "민원",
-      "운동회"
+      "연금",
+      "기초",
+      "내년"
      ],
      "top_post": {
-      "t": "운동회 함성 시끄럽다는 민원에 작심 발언한 안재욱",
-      "u": "https://www.instiz.net/pt/7921996?green=1",
-      "nc": 43
+      "t": "내년부터 국내 '5년 이상' 살아야 기초연금 받는다.gisa",
+      "u": "https://www.clien.net/service/board/park/19287913?od=T33&po=0&category=0&groupCd=clien_all",
+      "nc": 6
      }
     }
    ]
   },
   {
    "name": "82쿡",
-   "np": 9,
-   "nc": 107,
+   "np": 11,
+   "nc": 116,
    "topics": [
     {
      "t": "19~34세 모든 청년, 돈 받는다...'사는 지역'에 따라 금..",
@@ -504,8 +474,8 @@
      "issue_np": 3,
      "issue_nc": 46,
      "kw": [
-      "지역",
-      "청년"
+      "청년",
+      "지역"
      ],
      "top_post": {
       "t": "19~34세 모든 청년, 돈 받는다...'사는 지역'에 따라 금..",
@@ -515,14 +485,14 @@
     },
     {
      "t": "남자 왁서에게 여자 손님이 오는 경우",
-     "nsite": 5,
+     "nsite": 6,
      "np_here": 1,
      "nc_here": 20,
-     "issue_np": 7,
-     "issue_nc": 30,
+     "issue_np": 8,
+     "issue_nc": 33,
      "kw": [
-      "남자",
-      "여자"
+      "여자",
+      "남자"
      ],
      "top_post": {
       "t": "남자가 여자에게 인상좋다고 말하는거",
@@ -539,8 +509,8 @@
      "issue_nc": 53,
      "kw": [
       "국힘",
-      "반환",
       "윤석열",
+      "반환",
       "징역형"
      ],
      "top_post": {
@@ -554,11 +524,11 @@
      "nsite": 9,
      "np_here": 1,
      "nc_here": 9,
-     "issue_np": 38,
-     "issue_nc": 158,
+     "issue_np": 37,
+     "issue_nc": 114,
      "kw": [
-      "선거",
       "미국",
+      "선거",
       "중간",
       "트럼프"
      ],
@@ -573,7 +543,7 @@
      "nsite": 3,
      "np_here": 1,
      "nc_here": 9,
-     "issue_np": 5,
+     "issue_np": 3,
      "issue_nc": 51,
      "kw": [
       "민주당",
@@ -583,6 +553,25 @@
       "t": "미국 상하원 모두 민주당이 장악하네요",
       "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4255720&page=1",
       "nc": 9
+     }
+    },
+    {
+     "t": "여행 유튜버 사망 의혹",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 7,
+     "issue_np": 4,
+     "issue_nc": 127,
+     "kw": [
+      "여행",
+      "유튜버",
+      "사망",
+      "진쓰레블"
+     ],
+     "top_post": {
+      "t": "자전거 세계여행 유튜버",
+      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4255990&page=1",
+      "nc": 7
      }
     },
     {
@@ -611,49 +600,74 @@
      "issue_np": 4,
      "issue_nc": 5,
      "kw": [
-      "특전사",
       "교육",
-      "모델",
-      "워킹"
+      "특전사",
+      "워킹",
+      "모델"
      ],
      "top_post": {
       "t": "특전사한테 모델워킹 교육?",
       "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4255830&page=1",
       "nc": 5
      }
-    },
+    }
+   ]
+  },
+  {
+   "name": "인스티즈",
+   "np": 3,
+   "nc": 116,
+   "topics": [
     {
-     "t": "여행 유튜버 사망 의혹",
-     "nsite": 4,
+     "t": "한 문장으로 네가 한국 사람임을 증명해봐",
+     "nsite": 3,
      "np_here": 1,
-     "nc_here": 1,
-     "issue_np": 4,
-     "issue_nc": 121,
+     "nc_here": 60,
+     "issue_np": 3,
+     "issue_nc": 94,
      "kw": [
-      "여행",
-      "유튜버",
-      "사망",
-      "자전거"
+      "문장",
+      "증명",
+      "한국"
      ],
      "top_post": {
-      "t": "자전거 세계여행 유튜버",
-      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4255990&page=1",
-      "nc": 1
+      "t": "한 문장으로 네가 한국 사람임을 증명해봐",
+      "u": "https://www.instiz.net/pt/7921368?green=1",
+      "nc": 60
+     }
+    },
+    {
+     "t": "'내가 왜 전과자 돼요?' 간 큰 10대들 '비상'..사장님들 '환호' (에디터픽) / SBS",
+     "nsite": 3,
+     "np_here": 2,
+     "nc_here": 56,
+     "issue_np": 4,
+     "issue_nc": 72,
+     "kw": [
+      "전과자",
+      "비상",
+      "사장",
+      "환호"
+     ],
+     "top_post": {
+      "t": "\"내가 왜 전과자 돼요?\" 비상 걸린 10대들",
+      "u": "https://www.instiz.net/pt/7921858?green=1",
+      "nc": 33
      }
     }
    ]
   },
   {
    "name": "아카라이브",
-   "np": 3,
-   "nc": 51,
+   "np": 4,
+   "nc": 60,
    "topics": [
     {
      "t": "니케 사태 진짜 웃긴 것은",
      "nsite": 4,
      "np_here": 1,
      "nc_here": 32,
-     "issue_np": 24,
+     "issue_np": 23,
      "issue_nc": 107,
      "kw": [
       "사태",
@@ -665,6 +679,25 @@
       "t": "니케 사태 진짜 웃긴 것은",
       "u": "https://arca.live/b/live/187989707?p=1",
       "nc": 32
+     }
+    },
+    {
+     "t": "미국 선거결과 떴다 ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ",
+     "nsite": 9,
+     "np_here": 2,
+     "nc_here": 18,
+     "issue_np": 37,
+     "issue_nc": 114,
+     "kw": [
+      "미국",
+      "선거",
+      "중간",
+      "트럼프"
+     ],
+     "top_post": {
+      "t": "미국 선거 결과 떴냐????????",
+      "u": "https://arca.live/b/live/188025019?p=1",
+      "nc": 10
      }
     },
     {
@@ -685,32 +718,13 @@
       "u": "https://arca.live/b/live/187995170?p=1",
       "nc": 10
      }
-    },
-    {
-     "t": "미국 선거결과 떴다 ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ",
-     "nsite": 9,
-     "np_here": 1,
-     "nc_here": 9,
-     "issue_np": 38,
-     "issue_nc": 158,
-     "kw": [
-      "선거",
-      "미국",
-      "중간",
-      "트럼프"
-     ],
-     "top_post": {
-      "t": "미국 선거 결과 떴냐????????",
-      "u": "https://arca.live/b/live/188025019?p=1",
-      "nc": 9
-     }
     }
    ]
   },
   {
    "name": "보배드림",
-   "np": 13,
-   "nc": 21,
+   "np": 14,
+   "nc": 24,
    "topics": [
     {
      "t": "어제 안재욱 라스 발언.txt",
@@ -718,11 +732,11 @@
      "np_here": 1,
      "nc_here": 3,
      "issue_np": 3,
-     "issue_nc": 192,
+     "issue_nc": 196,
      "kw": [
-      "라스",
       "발언",
-      "안재욱"
+      "안재욱",
+      "라스"
      ],
      "top_post": {
       "t": "라스 안재욱 발언",
@@ -738,9 +752,9 @@
      "issue_np": 3,
      "issue_nc": 146,
      "kw": [
-      "아들",
-      "추신수",
       "랭킹",
+      "추신수",
+      "아들",
       "미국"
      ],
      "top_post": {
@@ -754,11 +768,11 @@
      "nsite": 3,
      "np_here": 1,
      "nc_here": 3,
-     "issue_np": 5,
-     "issue_nc": 55,
+     "issue_np": 7,
+     "issue_nc": 62,
      "kw": [
-      "소신",
       "발언",
+      "소신",
       "등산복",
       "지적"
      ],
@@ -776,8 +790,8 @@
      "issue_np": 3,
      "issue_nc": 46,
      "kw": [
-      "지역",
-      "청년"
+      "청년",
+      "지역"
      ],
      "top_post": {
       "t": "19~34세 모든 청년, 돈 받는다...'사는 지역'에 따라..",
@@ -793,8 +807,8 @@
      "issue_np": 3,
      "issue_nc": 43,
      "kw": [
-      "대통령",
       "뉴스",
+      "대통령",
       "가짜",
       "집값"
      ],
@@ -824,38 +838,41 @@
      }
     },
     {
-     "t": "일론 머스크 : 머지않아 아무도 일하지 않고 초고소득을 받는 시대가 올 것",
-     "nsite": 5,
+     "t": "'내가 왜 전과자 돼요?' 간 큰 10대들 '비상'..사장님들 '환호' (에디터픽) / SBS",
+     "nsite": 3,
      "np_here": 1,
-     "nc_here": 1,
-     "issue_np": 8,
-     "issue_nc": 27,
+     "nc_here": 2,
+     "issue_np": 4,
+     "issue_nc": 72,
      "kw": [
-      "일론",
-      "머스크",
-      "실시간"
+      "전과자",
+      "비상",
+      "사장",
+      "환호"
      ],
      "top_post": {
-      "t": "일론 머스크가 ㅈ된 이유",
-      "u": "https://www.bobaedream.co.kr/view?code=best&No=1045403&vdate=",
-      "nc": 1
+      "t": "\"내가 왜 전과자 돼요?\" 간 큰 10대들 '비상'..사장님..",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1045446&vdate=",
+      "nc": 2
      }
     },
     {
-     "t": "실시간 트럼프 타워 ㅋㅋ",
+     "t": "한국은 일본 식민지였는데 왜 일본어 안 써?",
      "nsite": 3,
      "np_here": 1,
-     "nc_here": 1,
-     "issue_np": 3,
-     "issue_nc": 33,
+     "nc_here": 2,
+     "issue_np": 4,
+     "issue_nc": 2,
      "kw": [
-      "트럼프",
-      "타워"
+      "한국",
+      "식민지",
+      "일본어",
+      "일본"
      ],
      "top_post": {
-      "t": "라스베이거스 트럼프 타워 근황. jpg",
-      "u": "https://www.bobaedream.co.kr/view?code=best&No=1045242&vdate=",
-      "nc": 1
+      "t": "한국은 일본 식민지였는데 왜 일본어 안 써?",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1045442&vdate=",
+      "nc": 2
      }
     }
    ]
@@ -863,32 +880,49 @@
   {
    "name": "네이트판",
    "np": 1,
-   "nc": 10,
+   "nc": 13,
    "topics": [
     {
      "t": "남자 왁서에게 여자 손님이 오는 경우",
-     "nsite": 5,
+     "nsite": 6,
      "np_here": 1,
-     "nc_here": 10,
-     "issue_np": 7,
-     "issue_nc": 30,
+     "nc_here": 13,
+     "issue_np": 8,
+     "issue_nc": 33,
      "kw": [
-      "남자",
-      "여자"
+      "여자",
+      "남자"
      ],
      "top_post": {
       "t": "여자라서 내는 핑크텍스 개많음. 자취할때 남자들은 그냥 저렴한 저층 살면서 돈아끼...",
       "u": "https://pann.nate.com/talk/375703275",
-      "nc": 10
+      "nc": 13
      }
     }
    ]
   },
   {
    "name": "SLR클럽",
-   "np": 9,
+   "np": 8,
    "nc": 0,
    "topics": [
+    {
+     "t": "남자 왁서에게 여자 손님이 오는 경우",
+     "nsite": 6,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 8,
+     "issue_nc": 33,
+     "kw": [
+      "여자",
+      "남자"
+     ],
+     "top_post": {
+      "t": "남자 왁서에게 여자 손님이 오는 경우",
+      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=676755",
+      "nc": 0
+     }
+    },
     {
      "t": "심각한 中 마라톤 대회 근황 ㄷㄷ..",
      "nsite": 5,
@@ -907,38 +941,40 @@
      }
     },
     {
-     "t": "남자 왁서에게 여자 손님이 오는 경우",
-     "nsite": 5,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 7,
-     "issue_nc": 30,
-     "kw": [
-      "남자",
-      "여자"
-     ],
-     "top_post": {
-      "t": "남자 왁서에게 여자 손님이 오는 경우",
-      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=676755",
-      "nc": 0
-     }
-    },
-    {
      "t": "여행 유튜버 사망 의혹",
      "nsite": 4,
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 4,
-     "issue_nc": 121,
+     "issue_nc": 127,
      "kw": [
       "여행",
       "유튜버",
       "사망",
-      "자전거"
+      "진쓰레블"
      ],
      "top_post": {
       "t": "헐... 이 분 돌아가셨다네요... 진쓰레블 자전거 여행 유튜버",
       "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=676815",
+      "nc": 0
+     }
+    },
+    {
+     "t": "텍사스 당선자의 승리 연설",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 5,
+     "issue_nc": 30,
+     "kw": [
+      "텍사스",
+      "당선자",
+      "탈라리코",
+      "연설"
+     ],
+     "top_post": {
+      "t": "텍사스 당선자, 탈라리코 상원의원의 명연설",
+      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=676797",
       "nc": 0
      }
     },
@@ -950,8 +986,8 @@
      "issue_np": 3,
      "issue_nc": 43,
      "kw": [
-      "대통령",
       "뉴스",
+      "대통령",
       "가짜",
       "집값"
      ],
@@ -962,39 +998,19 @@
      }
     },
     {
-     "t": "테슬라 국토부에 서류 6장 제출",
+     "t": "제빵 전문가가 호남 반도체 지원금 심의 ㅋㅋㅋ",
      "nsite": 3,
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 3,
-     "issue_nc": 43,
+     "issue_nc": 42,
      "kw": [
-      "국토부",
-      "테슬라",
-      "서류"
+      "호남",
+      "반도체"
      ],
      "top_post": {
-      "t": "국토부 \"테슬라 신청 서류 미진해 검증 어려워\"",
-      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=676720",
-      "nc": 0
-     }
-    },
-    {
-     "t": "오늘자 공개된 야스 로봇 가격 + 스펙 근황 ㄷㄷㄷ",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 43,
-     "kw": [
-      "공개",
-      "로봇",
-      "야스",
-      "스펙"
-     ],
-     "top_post": {
-      "t": "다음주 공개될 리얼돌 로봇 수준",
-      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=676721",
+      "t": "호남 반도체 근황 ㄷㄷㄷ",
+      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=676813",
       "nc": 0
      }
     },
@@ -1006,10 +1022,10 @@
      "issue_np": 3,
      "issue_nc": 28,
      "kw": [
-      "마라톤",
+      "아이디어",
       "교통",
-      "시민",
-      "서울"
+      "마라톤",
+      "체증"
      ],
      "top_post": {
       "t": "마라톤 교통체증에 지친 서울 시민 아이디어",
@@ -1039,161 +1055,27 @@
    ]
   },
   {
-   "name": "루리웹",
-   "np": 26,
+   "name": "디시인사이드",
+   "np": 7,
    "nc": 0,
    "topics": [
-    {
-     "t": "심각한 中 마라톤 대회 근황 ㄷㄷ..",
-     "nsite": 5,
-     "np_here": 2,
-     "nc_here": 0,
-     "issue_np": 6,
-     "issue_nc": 159,
-     "kw": [
-      "마라톤",
-      "대회"
-     ],
-     "top_post": {
-      "t": "난리난 中마라톤 대회 근황",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77275125?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "[미 중간선거] 극초반이지만 놀랍네요",
-     "nsite": 5,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 13,
-     "issue_nc": 98,
-     "kw": [
-      "중간",
-      "선거",
-      "트럼프",
-      "주옥"
-     ],
-     "top_post": {
-      "t": "이번 중간선거에서 공화당 개털린 과정을 보면 좀 재밌는 점이",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77275049?m=all&t=now",
-      "nc": 0
-     }
-    },
     {
      "t": "남자 왁서에게 여자 손님이 오는 경우",
-     "nsite": 5,
-     "np_here": 2,
-     "nc_here": 0,
-     "issue_np": 7,
-     "issue_nc": 30,
-     "kw": [
-      "남자",
-      "여자"
-     ],
-     "top_post": {
-      "t": "뇌가 여사친을 여자로 인식안한다는 남자애",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77269856?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "일론 머스크 : 머지않아 아무도 일하지 않고 초고소득을 받는 시대가 올 것",
-     "nsite": 5,
-     "np_here": 2,
+     "nsite": 6,
+     "np_here": 1,
      "nc_here": 0,
      "issue_np": 8,
-     "issue_nc": 27,
+     "issue_nc": 33,
      "kw": [
-      "일론",
-      "머스크",
-      "실시간"
+      "여자",
+      "남자"
      ],
      "top_post": {
-      "t": "호달달할수밖에 없는 일론 머스크",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77270429?m=all&t=now",
+      "t": "싱글벙글 여자가 남자보다 우월하다는 증거",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=475702&_dcbest=1&page=1",
       "nc": 0
      }
     },
-    {
-     "t": "소신발언.",
-     "nsite": 3,
-     "np_here": 2,
-     "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 55,
-     "kw": [
-      "소신",
-      "발언",
-      "등산복",
-      "지적"
-     ],
-     "top_post": {
-      "t": "등산복 지적에 소신발언하는 사람",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77277293?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "미국 민주당 지지층의 변화.. jpg",
-     "nsite": 3,
-     "np_here": 3,
-     "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 51,
-     "kw": [
-      "민주당",
-      "미국"
-     ],
-     "top_post": {
-      "t": "민주당이 의회 쓸었다는 소리는 ㅋㅋㅋ",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77267857?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "테슬라 국토부에 서류 6장 제출",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 43,
-     "kw": [
-      "국토부",
-      "테슬라",
-      "서류"
-     ],
-     "top_post": {
-      "t": "국토부 : 테슬라 FSD 허가 못한다",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77265515?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "오늘자 공개된 야스 로봇 가격 + 스펙 근황 ㄷㄷㄷ",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 43,
-     "kw": [
-      "공개",
-      "로봇",
-      "야스",
-      "스펙"
-     ],
-     "top_post": {
-      "t": "오늘자 공개된 야스 로봇 가격 + 스펙 근황 ㄷㄷㄷ",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77265575?m=humor",
-      "nc": 0
-     }
-    }
-   ]
-  },
-  {
-   "name": "디시인사이드",
-   "np": 8,
-   "nc": 0,
-   "topics": [
     {
      "t": "[미 중간선거] 극초반이지만 놀랍네요",
      "nsite": 5,
@@ -1202,8 +1084,8 @@
      "issue_np": 13,
      "issue_nc": 98,
      "kw": [
-      "중간",
       "선거",
+      "중간",
       "트럼프",
       "주옥"
      ],
@@ -1214,28 +1096,11 @@
      }
     },
     {
-     "t": "남자 왁서에게 여자 손님이 오는 경우",
-     "nsite": 5,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 7,
-     "issue_nc": 30,
-     "kw": [
-      "남자",
-      "여자"
-     ],
-     "top_post": {
-      "t": "싱글벙글 여자가 남자보다 우월하다는 증거",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=475702&_dcbest=1&page=1",
-      "nc": 0
-     }
-    },
-    {
      "t": "니케 사태 진짜 웃긴 것은",
      "nsite": 4,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 24,
+     "issue_np": 23,
      "issue_nc": 107,
      "kw": [
       "사태",
@@ -1258,8 +1123,8 @@
      "issue_nc": 53,
      "kw": [
       "국힘",
-      "반환",
       "윤석열",
+      "반환",
       "징역형"
      ],
      "top_post": {
@@ -1273,11 +1138,11 @@
      "nsite": 3,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 4,
+     "issue_np": 3,
      "issue_nc": 15,
      "kw": [
-      "듀오",
-      "아이폰"
+      "아이폰",
+      "듀오"
      ],
      "top_post": {
       "t": "IP68이라는 아이폰 듀오가 먼지를 얼마나 막아주는지 방진 실험",
@@ -1312,31 +1177,164 @@
      "issue_np": 4,
      "issue_nc": 5,
      "kw": [
-      "특전사",
       "교육",
-      "모델",
-      "워킹"
+      "특전사",
+      "워킹",
+      "모델"
      ],
      "top_post": {
       "t": "[단독] 특전사한테 모델 워킹 교육을 시켜?…\"부대원 자괴감\"",
       "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=475695&_dcbest=1&page=1",
       "nc": 0
      }
+    }
+   ]
+  },
+  {
+   "name": "루리웹",
+   "np": 25,
+   "nc": 0,
+   "topics": [
+    {
+     "t": "남자 왁서에게 여자 손님이 오는 경우",
+     "nsite": 6,
+     "np_here": 2,
+     "nc_here": 0,
+     "issue_np": 8,
+     "issue_nc": 33,
+     "kw": [
+      "여자",
+      "남자"
+     ],
+     "top_post": {
+      "t": "뇌가 여사친을 여자로 인식안한다는 남자애",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77269856?m=all&t=now",
+      "nc": 0
+     }
     },
     {
-     "t": "[속보] 트럼프 좋됨 ING",
+     "t": "심각한 中 마라톤 대회 근황 ㄷㄷ..",
+     "nsite": 5,
+     "np_here": 2,
+     "nc_here": 0,
+     "issue_np": 6,
+     "issue_nc": 159,
+     "kw": [
+      "마라톤",
+      "대회"
+     ],
+     "top_post": {
+      "t": "난리난 中마라톤 대회 근황",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77275125?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "[미 중간선거] 극초반이지만 놀랍네요",
+     "nsite": 5,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 13,
+     "issue_nc": 98,
+     "kw": [
+      "선거",
+      "중간",
+      "트럼프",
+      "주옥"
+     ],
+     "top_post": {
+      "t": "이번 중간선거에서 공화당 개털린 과정을 보면 좀 재밌는 점이",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77275049?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "일론 머스크 : 머지않아 아무도 일하지 않고 초고소득을 받는 시대가 올 것",
+     "nsite": 5,
+     "np_here": 2,
+     "nc_here": 0,
+     "issue_np": 8,
+     "issue_nc": 27,
+     "kw": [
+      "머스크",
+      "일론",
+      "실시간"
+     ],
+     "top_post": {
+      "t": "호달달할수밖에 없는 일론 머스크",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77270429?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "텍사스 당선자의 승리 연설",
+     "nsite": 4,
+     "np_here": 2,
+     "nc_here": 0,
+     "issue_np": 5,
+     "issue_nc": 30,
+     "kw": [
+      "텍사스",
+      "당선자",
+      "탈라리코",
+      "연설"
+     ],
+     "top_post": {
+      "t": "이번에 텍사스에 깃발꽂은 제임스 탈라리코 당선자",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77270897?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "소신발언.",
+     "nsite": 3,
+     "np_here": 3,
+     "nc_here": 0,
+     "issue_np": 7,
+     "issue_nc": 62,
+     "kw": [
+      "발언",
+      "소신",
+      "등산복",
+      "지적"
+     ],
+     "top_post": {
+      "t": "니케 갤러리에서 소신발언 한 사람의 결말",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77273200?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "미국 민주당 지지층의 변화.. jpg",
      "nsite": 3,
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 3,
-     "issue_nc": 0,
+     "issue_nc": 51,
      "kw": [
-      "트럼프",
-      "속보"
+      "민주당",
+      "미국"
      ],
      "top_post": {
-      "t": "[속보] 트럼프 항복",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=475565&_dcbest=1&page=1",
+      "t": "이번 미국 민주당이 이긴게 얼마나 쉽냐면...",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77271382?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "트럼프,난 원래 민주당",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 49,
+     "kw": [
+      "민주당",
+      "트럼프"
+     ],
+     "top_post": {
+      "t": "미국정치]???:민주당은 트럼프 반대만 하고 아무런 대안을 제공 안했다!",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77279675?m=all&t=now",
       "nc": 0
      }
     }
@@ -1344,7 +1342,7 @@
   },
   {
    "name": "더쿠",
-   "np": 9,
+   "np": 10,
    "nc": 0,
    "topics": [
     {
@@ -1355,8 +1353,8 @@
      "issue_np": 8,
      "issue_nc": 27,
      "kw": [
-      "일론",
       "머스크",
+      "일론",
       "실시간"
      ],
      "top_post": {
@@ -1371,12 +1369,12 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 4,
-     "issue_nc": 121,
+     "issue_nc": 127,
      "kw": [
       "여행",
       "유튜버",
       "사망",
-      "자전거"
+      "진쓰레블"
      ],
      "top_post": {
       "t": "여행 유튜버 '진쓰레블' 볼리비아에서 뺑소니 사고로 사망",
@@ -1393,8 +1391,8 @@
      "issue_nc": 53,
      "kw": [
       "국힘",
-      "반환",
       "윤석열",
+      "반환",
       "징역형"
      ],
      "top_post": {
@@ -1411,9 +1409,9 @@
      "issue_np": 3,
      "issue_nc": 146,
      "kw": [
-      "아들",
-      "추신수",
       "랭킹",
+      "추신수",
+      "아들",
       "미국"
      ],
      "top_post": {
@@ -1448,8 +1446,8 @@
      "issue_np": 3,
      "issue_nc": 46,
      "kw": [
-      "지역",
-      "청년"
+      "청년",
+      "지역"
      ],
      "top_post": {
       "t": "19~34세 모든 청년, 돈 받는다...'사는 지역'에 따라 금액 차이 있어",
@@ -1465,10 +1463,10 @@
      "issue_np": 3,
      "issue_nc": 28,
      "kw": [
-      "마라톤",
+      "아이디어",
       "교통",
-      "시민",
-      "서울"
+      "마라톤",
+      "체증"
      ],
      "top_post": {
       "t": "마라톤 교통체증에 지친 서울 시민 아이디어",
@@ -1477,20 +1475,20 @@
      }
     },
     {
-     "t": "네이버페이10원+5원+5원+1원+1원+랜덤 눌러봐++10원+5원+눌러눌러 보험랜덤+보험랜덤 하나더+라이브미…",
+     "t": "[속보] 내년부터 한국서 5년 안 살았으면 기초연금 못 받는다",
      "nsite": 3,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 3,
+     "issue_np": 3,
+     "issue_nc": 8,
      "kw": [
-      "네이버",
-      "페이",
-      "랜덤"
+      "연금",
+      "기초",
+      "내년"
      ],
      "top_post": {
-      "t": "네이버페이10원+5원+5원+1원+1원+랜덤 눌러봐++10원+5원+눌러눌러 보험랜덤+보험랜덤 하나더+라이브미리보고13원받기+15원+15원+1원",
-      "u": "https://theqoo.net/hot/4396205247",
+      "t": "[속보] 내년부터 한국서 5년 안 살았으면 기초연금 못 받는다",
+      "u": "https://theqoo.net/hot/4396428619",
       "nc": 0
      }
     }
@@ -1507,7 +1505,7 @@
      "np_here": 2,
      "nc_here": 0,
      "issue_np": 4,
-     "issue_nc": 1,
+     "issue_nc": 2,
      "kw": [
       "한국",
       "식민지",
