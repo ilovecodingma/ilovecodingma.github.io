@@ -1,0 +1,49 @@
+# 구글 색인 상태 — 2026-11-06 (URL 검사 API 로 조회한 주소 기준, 전체 주소가 아님)
+
+구역|조회한 주소|색인됨|색인율
+---|---:|---:|---:
+/money/|347|154|44%
+/guide/|13|7|54%
+/issue/|11|5|45%
+
+## 다른 검색엔진 유입 상위 80쪽 중 구글 미색인 37쪽
+
+주소|다음·빙·네이버 방문(최근 14일)|구글 방문|구글 상태
+---|---:|---:|---
+/money/guide/four-insurance-rates-2026/|14|0|URL is unknown to Google
+/money/guide/other-income-necessary-expense-report/|10|0|Discovered - currently not indexed
+/issue/real-estate-lecturer-12-5b-fraud-referral/|7|0|Discovered - currently not indexed
+/money/guide/minor-injury-future-treatment-cost-reform/|7|0|Discovered - currently not indexed
+/money/guide/parttime-four-insurance/|6|0|Discovered - currently not indexed
+/money/guide/account-seizure-release-tax-arrears-notice/|5|0|Discovered - currently not indexed
+/money/guide/car-tax-calculation/|5|0|Discovered - currently not indexed
+/money/guide/fixed-term-worker-2year/|5|0|Discovered - currently not indexed
+/guide/workers-welfare-livelihood-loan-apply/|4|0|Discovered - currently not indexed
+/issue/jimin-father-cafe-closing/|4|0|Discovered - currently not indexed
+/money/guide/car-liability-insurance-uninsured-penalty/|4|0|Discovered - currently not indexed
+/money/guide/death-report-inheritance-one-stop-service/|4|0|Discovered - currently not indexed
+/money/guide/long-term-care-grade-apply/|4|0|Discovered - currently not indexed
+/money/guide/minimum-wage-2027-monthly-salary-table/|4|0|Discovered - currently not indexed
+/money/guide/self-registration-inheritance-property/|4|0|Discovered - currently not indexed
+/money/guide/small-tenant-priority-repayment/|4|0|Discovered - currently not indexed
+/guide/bank-emergency-loan-extension-repay-reapply/|3|0|Discovered - currently not indexed
+/guide/court-auction-bidder-payment-eviction-order/|3|0|Discovered - currently not indexed
+/money/guide/housing-bond-purchase-cost-registration/|3|0|URL is unknown to Google
+/money/guide/acquisition-tax-rate-housing/|3|0|Discovered - currently not indexed
+/money/guide/disabled-parking-permit-issue-apply/|3|0|Discovered - currently not indexed
+/money/guide/nhis-eligibility-certificate-issue/|3|0|Discovered - currently not indexed
+/money/guide/overseas-direct-purchase-customs-limit/|3|0|URL is unknown to Google
+/money/guide/rent-arrears-two-month-termination/|3|0|Discovered - currently not indexed
+/money/guide/saehuimang-hongssi-loan-conditions/|3|0|URL is unknown to Google
+/money/guide/workplace-harassment-law/|3|0|Discovered - currently not indexed
+/guide/employment-support-target-veterans-apply/|2|0|Discovered - currently not indexed
+/guide/school-record-contest/|2|0|Discovered - currently not indexed
+/money/guide/mobile-micropayment-dispute/|2|0|Discovered - currently not indexed
+/guide/contest-prize-tax-other-income/|2|0|URL is unknown to Google
+/issue/an-seyoung-korea-open-2026/|2|0|URL is unknown to Google
+/issue/bts-kaohsiung-jakarta-cinema-screening/|2|0|Discovered - currently not indexed
+/issue/minho-marathon-disqualification-claim/|2|0|Discovered - currently not indexed
+/issue/ucl-matchday-1104/|2|0|URL is unknown to Google
+/money/guide/commercial-lease-protection-limit/|2|0|Discovered - currently not indexed
+/money/guide/dismissal-notice-allowance-claim/|2|0|Discovered - currently not indexed
+/money/guide/loan-limit-dsr-ltv/|2|0|URL is unknown to Google

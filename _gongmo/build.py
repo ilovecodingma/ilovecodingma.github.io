@@ -3877,10 +3877,19 @@ def issue_json_pages():
             secs = ''
             if c.get('confirmed'):
                 secs += '<h2>확인된 것</h2>' + tbl(c['confirmed'], '내용', '근거·출처')
-            if c.get('unconfirmed'):
-                secs += '<h2>확인되지 않은 것</h2>' + tbl(c['unconfirmed'], '내용', '이유')
+            # 2026-11-06 사용자 「확인하지 못했습니다 · 조언이나 전망이 아니다 이런 말은 왜 쓰는 거야」: 못 한 일 목록과 「이 글의 한계」가 답보다 먼저·크게 보였다.
+            #   → 확인된 내용과 본문을 먼저 보여 주고, 확인되지 않은 것·글의 한계는 본문 뒤에 접어 둔다(지우지는 않는다).
+            _lim = ''
             for sc in c.get('sections', []):
-                secs += f'<h2>{E(sc["h"])}</h2>' + (f'<p>{E(sc["p"])}</p>' if sc.get('p') else '') + ('<ul class="gm-l">' + ''.join(f'<li>{E(x)}</li>' for x in sc['ul']) + '</ul>' if sc.get('ul') else '')
+                _h = f'<h2>{E(sc["h"])}</h2>' + (f'<p>{E(sc["p"])}</p>' if sc.get('p') else '') + ('<ul class="gm-l">' + ''.join(f'<li>{E(x)}</li>' for x in sc['ul']) + '</ul>' if sc.get('ul') else '')
+                if re.search(r'이 글의 한계|글의 한계|한계와 주의|다루지 않은', sc['h']):
+                    _lim += _h.replace('<h2>', '<h3>').replace('</h2>', '</h3>')
+                else:
+                    secs += _h
+            if c.get('unconfirmed') or _lim:
+                _n = len(c.get('unconfirmed') or [])
+                secs += ('<details class="is-un"><summary>' + (f'아직 확인되지 않은 내용 {_n}건' if _n else '이 글에서 다루지 않은 것') + '</summary>'
+                         + (tbl(c['unconfirmed'], '내용', '이유') if _n else '') + _lim + '</details>')
             if faq:
                 secs += f'<h2>자주 묻는 질문</h2>{faq}'
             if c.get('sources'):
@@ -3892,7 +3901,7 @@ def issue_json_pages():
             body = (f'<p class="bc"><a href="/">홈</a> › 이슈 › {E(c["h1"][:30])}</p><h1>{E(c["h1"])}</h1>'
                     f'<div class="cat-st"><b>결론</b><br>{sent_list(c["summary"])}</div><p class="note">{c["date"]} 기준 · 이 글은 단기 이슈라 {int(c.get("keep_days", 4))}일 뒤 내려가요.</p>'
                     + ((PH.figure(_ph) + PH.CSS) if _ph else '') + secs + (f'<p class="hm-links">{rel}</p>' if rel else '')
-                    + '<style>.xt{border-collapse:collapse;width:100%;font-size:14px}.xt th,.xt td{border:1px solid #e5e7eb;padding:6px 8px;text-align:left;vertical-align:top}.xt th{background:#f8fafc}.xt td{overflow-wrap:anywhere}.cat-ul{margin:6px 0 0;padding-left:18px}.cat-ul li{margin:6px 0;line-height:1.65}</style>')
+                    + '<style>.xt{border-collapse:collapse;width:100%;font-size:14px}.xt th,.xt td{border:1px solid #e5e7eb;padding:6px 8px;text-align:left;vertical-align:top}.xt th{background:#f8fafc}.xt td{overflow-wrap:anywhere}.is-un{margin:28px 0 0;border:1px solid var(--bd,#e2e8f0);border-radius:8px;padding:0 14px}.is-un>summary{min-height:48px;display:flex;align-items:center;cursor:pointer;font-weight:700;font-size:15px;color:var(--mu,#475569)}.is-un[open]{padding-bottom:12px}.is-un h3{font-size:16px;margin:16px 0 6px}.cat-ul{margin:6px 0 0;padding-left:18px}.cat-ul li{margin:6px 0;line-height:1.65}</style>')
             art = {'@context': 'https://schema.org', '@type': 'Article', 'headline': c['title'], 'description': c['desc'], 'inLanguage': 'ko',
                    'datePublished': c['date'], 'dateModified': c['date'], 'mainEntityOfPage': SITE + p_,
                    'author': {'@type': 'Organization', 'name': '루리 줍줍 편집', 'url': SITE + '/'}, 'publisher': {'@type': 'Organization', 'name': NAME, 'url': SITE + '/'}}
@@ -6963,6 +6972,14 @@ def daily_jobs():
     SF = os.path.join(HERE, 'promo_state.json')
     st = json.load(open(SF, encoding='utf-8')) if os.path.exists(SF) else {}
     h, d = NOW_KST().hour, TODAY.isoformat()
+    if h >= 6 and st.get('idxcand') != d:   # 2026-11-06 마케터 요청: 매일 아침 「다른 검색엔진 유입 있음 + 구글 미색인」 10건을 홍보 outbox 로(index_candidates.py, 읽기 전용)
+        try:
+            r_ = subprocess.run([sys.executable, '-X', 'utf8', os.path.join(HERE, 'index_candidates.py')], capture_output=True, text=True, encoding='utf-8', timeout=600)
+            print('색인 요청 후보', (r_.stdout or '').strip().splitlines()[0][:160] if r_.stdout else r_.stderr[-160:])
+            st['idxcand'] = d
+            jdump(st, SF, ensure_ascii=False)
+        except Exception as e_:
+            print('색인 요청 후보 실패', repr(e_)[:100])
     # 2026-10-19 사용자 「관리자에서 홍보 관리는 없애, 필요없는 기능」: 홍보 후보 생성(promo.run)·동기화(promo.sync) 중단. promo.py 는 남겨 둠
     if TODAY.weekday() == 0 and st.get('tune') != d:   # 매주 월요일: 추천 가중치 조정(클릭된 추천의 점수 구성이 평균보다 높은 항목은 가중치 +10%, 낮으면 -10%)
         try:
