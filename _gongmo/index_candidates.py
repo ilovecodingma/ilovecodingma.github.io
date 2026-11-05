@@ -81,6 +81,9 @@ def main():
     pick = [(v, p, s) for v, p, s in notidx if log.get(p, '') < recent][:n_out]
     os.makedirs(OUTBOX, exist_ok=True)
     f = os.path.join(OUTBOX, f'색인요청_{now:%m%d}_타검색유입.txt')
+    if os.path.exists(f) and '--force' not in sys.argv:   # 같은 날 두 번 돌면 먼저 만든 10건을 덮어쓰지 않는다(2026-11-06: 06시 자동 실행이 새벽에 만든 목록을 바꿔 버렸음)
+        print(f'오늘 목록이 이미 있음 → 그대로 둠: {f}')
+        return
     with open(f, 'w', encoding='utf-8') as fh:
         fh.write(f'# {today} 구글 색인 요청 후보 {len(pick)}건 — 최근 {days}일 다음·빙·네이버 검색 유입이 있는데 구글에 색인되지 않은 글(방문 많은 순). 서치 콘솔 URL 검사 → 색인 생성 요청\n')
         for v, p, s in pick:

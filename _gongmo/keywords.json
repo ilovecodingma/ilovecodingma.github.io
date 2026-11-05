@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-06 07:00",
+ "updated": "2026-11-06 08:00",
  "items": [
   {
    "query": "로스앤젤레스 fc 대 미네소타 유나이티드 fc 순위",
@@ -123,6 +123,18 @@
    "expires": "2026-11-09"
   },
   {
+   "query": "한국경제",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 10000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-06",
+   "expires": "2026-11-09"
+  },
+  {
    "query": "이효리",
    "tier": "단기",
    "signal": [
@@ -144,6 +156,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-03",
+   "expires": "2026-11-09"
+  },
+  {
+   "query": "kia 타이거즈",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 5000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-05",
    "expires": "2026-11-09"
   },
   {
@@ -291,6 +315,18 @@
    "expires": "2026-11-09"
   },
   {
+   "query": "잠수함",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-05",
+   "expires": "2026-11-09"
+  },
+  {
    "query": "신의 구슬",
    "tier": "단기",
    "signal": [
@@ -400,18 +436,6 @@
   },
   {
    "query": "페네르바흐체 대 리버풀",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 2000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-05",
-   "expires": "2026-11-09"
-  },
-  {
-   "query": "kia 타이거즈",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -651,18 +675,6 @@
    "expires": "2026-11-09"
   },
   {
-   "query": "나스닥",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 2000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-06",
-   "expires": "2026-11-09"
-  },
-  {
    "query": "박계범",
    "tier": "단기",
    "signal": [
@@ -684,6 +696,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-05",
+   "expires": "2026-11-09"
+  },
+  {
+   "query": "수술",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-06",
    "expires": "2026-11-09"
   },
   {
@@ -964,18 +988,6 @@
   },
   {
    "query": "디트로이트 대 필라데피아",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 1000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-05",
-   "expires": "2026-11-09"
-  },
-  {
-   "query": "잠수함",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -1383,6 +1395,18 @@
    "expires": "2026-11-09"
   },
   {
+   "query": "아이렌",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-06",
+   "expires": "2026-11-09"
+  },
+  {
    "query": "코스피 5383.80 종가, 5.28% 내린 이유는? 사이드카 발동과 매체 분석 정리",
    "tier": "단기",
    "signal": [
@@ -1394,6 +1418,19 @@
    "page": "/issue/kospi-close-1105/",
    "registered": "2026-11-05",
    "expires": "2026-11-08"
+  },
+  {
+   "query": "미국 증시 폭락 다우 나스닥 11월 5일 마감, 나스닥 조정 구간 진입 정리",
+   "tier": "단기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 5,
+   "status": "작성",
+   "page": "/issue/us-market-close-1106/",
+   "registered": "2026-11-06",
+   "expires": "2026-11-09"
   },
   {
    "query": "오늘 날씨 가을비 언제까지, 내일 기온 얼마나 떨어지나 기상청 예보 정리",
@@ -7274,6 +7311,19 @@
    "status": "작성",
    "page": "",
    "registered": "2026-11-03",
+   "expires": "2026-11-20"
+  },
+  {
+   "query": "고병원성 AI 올겨울 첫 발생 연천 달걀 산란계 농장 일시이동중지 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 4,
+   "status": "작성",
+   "page": "/issue/avian-influenza-first-yeoncheon-1106/",
+   "registered": "2026-11-06",
    "expires": "2026-11-20"
   },
   {
