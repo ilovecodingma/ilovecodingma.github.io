@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-05 09:00",
+ "updated": "2026-11-05 10:00",
  "items": [
   {
    "query": "로스앤젤레스 fc 대 미네소타 유나이티드 fc 순위",
@@ -36,6 +36,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-03",
+   "expires": "2026-11-08"
+  },
+  {
+   "query": "우규민",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 10000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-05",
    "expires": "2026-11-08"
   },
   {
@@ -315,6 +327,42 @@
    "expires": "2026-11-08"
   },
   {
+   "query": "포항 대 감바 오사카",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-05",
+   "expires": "2026-11-08"
+  },
+  {
+   "query": "송혜교",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-05",
+   "expires": "2026-11-08"
+  },
+  {
+   "query": "페네르바흐체 대 리버풀",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-05",
+   "expires": "2026-11-08"
+  },
+  {
    "query": "중대범죄 수사청",
    "tier": "단기",
    "signal": [
@@ -411,6 +459,102 @@
    "expires": "2026-11-08"
   },
   {
+   "query": "무죄",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-05",
+   "expires": "2026-11-08"
+  },
+  {
+   "query": "한국시리즈 연장전",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-05",
+   "expires": "2026-11-08"
+  },
+  {
+   "query": "코시",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-05",
+   "expires": "2026-11-08"
+  },
+  {
+   "query": "주가",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-05",
+   "expires": "2026-11-08"
+  },
+  {
+   "query": "자동차",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-05",
+   "expires": "2026-11-08"
+  },
+  {
+   "query": "근육",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-05",
+   "expires": "2026-11-08"
+  },
+  {
+   "query": "박계범",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-05",
+   "expires": "2026-11-08"
+  },
+  {
+   "query": "사랑제일교회",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-05",
+   "expires": "2026-11-08"
+  },
+  {
    "query": "윤영미",
    "tier": "단기",
    "signal": [
@@ -444,6 +588,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-03",
+   "expires": "2026-11-08"
+  },
+  {
+   "query": "알렉산더 즈베레프",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-05",
    "expires": "2026-11-08"
   },
   {
@@ -543,6 +699,18 @@
    "expires": "2026-11-08"
   },
   {
+   "query": "야구중계",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-05",
+   "expires": "2026-11-08"
+  },
+  {
    "query": "두산에너 빌리티",
    "tier": "단기",
    "signal": [
@@ -556,6 +724,18 @@
   },
   {
    "query": "포스코",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-04",
+   "expires": "2026-11-08"
+  },
+  {
+   "query": "이란",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -588,6 +768,30 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-04",
+   "expires": "2026-11-08"
+  },
+  {
+   "query": "서울 sk 대 대구 한국가스공사",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-05",
+   "expires": "2026-11-08"
+  },
+  {
+   "query": "한화 이글스",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-05",
    "expires": "2026-11-08"
   },
   {
@@ -819,18 +1023,6 @@
    "expires": "2026-11-08"
   },
   {
-   "query": "이란",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 1000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-04",
-   "expires": "2026-11-08"
-  },
-  {
    "query": "헤지펀드",
    "tier": "단기",
    "signal": [
@@ -876,6 +1068,43 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-04",
+   "expires": "2026-11-08"
+  },
+  {
+   "query": "원태인",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-05",
+   "expires": "2026-11-08"
+  },
+  {
+   "query": "이다해",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-05",
+   "expires": "2026-11-08"
+  },
+  {
+   "query": "오늘 날씨 가을비 언제까지, 내일 기온 얼마나 떨어지나 기상청 예보 정리",
+   "tier": "단기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 5,
+   "status": "작성",
+   "page": "/issue/weather-rain-temp-drop-1105/",
+   "registered": "2026-11-05",
    "expires": "2026-11-08"
   },
   {
@@ -5703,6 +5932,32 @@
    "expires": "2026-12-04"
   },
   {
+   "query": "한국시리즈 2차전 삼성 kt 3-2 연장 12회 결과",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 5,
+   "status": "작성",
+   "page": "/issue/korean-series-game2-1105/",
+   "registered": "2026-11-05",
+   "expires": "2026-11-12"
+  },
+  {
+   "query": "조작기소 특검법 법사위 통과, 본회의 처리 쟁점은? 여야 입장 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 5,
+   "status": "작성",
+   "page": "/issue/special-counsel-fabricated-indictment-bill-1105/",
+   "registered": "2026-11-05",
+   "expires": "2026-11-19"
+  },
+  {
    "query": "2027 수능 당일 준비물·입실·시험 시간표 정리",
    "tier": "중기",
    "signal": [
@@ -5999,6 +6254,19 @@
    "page": "",
    "registered": "2026-11-03",
    "expires": "2026-11-19"
+  },
+  {
+   "query": "AMD 3분기 실적 매출 얼마? 데이터센터 부문 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 3,
+   "status": "작성",
+   "page": "/issue/amd-q3-2026-results-1105/",
+   "registered": "2026-11-05",
+   "expires": "2026-11-12"
   },
   {
    "query": "더존비즈온 해킹 개인정보 유출 어떻게 된 건가요? 급여 계좌·가족 주민번호 확인된 내용 정리 2026년 11월",
