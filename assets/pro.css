@@ -223,3 +223,6 @@ main .cs-g a{color:var(--tx)}
   main table{min-width:0!important;max-width:100%}
 }
 @media(max-width:700px){main a{overflow-wrap:anywhere}}
+
+/* 날짜 보정(dday.js): 지난 항목은 흐리게, 보정 안내 한 줄 */
+.dd-over{opacity:.55}.dd-note{margin:8px 0 12px;padding:10px 12px;border:1px solid #fde68a;border-radius:8px;background:#fffbeb;color:#92400e;font-size:13.5px;line-height:1.55}

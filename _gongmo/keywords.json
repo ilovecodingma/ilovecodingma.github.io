@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-05 13:00",
+ "updated": "2026-11-05 14:00",
  "items": [
   {
    "query": "로스앤젤레스 fc 대 미네소타 유나이티드 fc 순위",
@@ -144,6 +144,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-04",
+   "expires": "2026-11-08"
+  },
+  {
+   "query": "한남더힐 아파트",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 5000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-05",
    "expires": "2026-11-08"
   },
   {
@@ -543,6 +555,18 @@
    "expires": "2026-11-08"
   },
   {
+   "query": "김숙",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-05",
+   "expires": "2026-11-08"
+  },
+  {
    "query": "박계범",
    "tier": "단기",
    "signal": [
@@ -796,6 +820,18 @@
   },
   {
    "query": "한화 이글스",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-05",
+   "expires": "2026-11-08"
+  },
+  {
+   "query": "디트로이트 대 필라데피아",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -1119,7 +1155,7 @@
    "expires": "2026-11-08"
   },
   {
-   "query": "디트로이트 대 필라데피아",
+   "query": "보디빌더",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -1131,7 +1167,7 @@
    "expires": "2026-11-08"
   },
   {
-   "query": "보디빌더",
+   "query": "허영생",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -5758,6 +5794,110 @@
    "expires": ""
   },
   {
+   "query": "종부세 납부기한",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/jongbuse-payment-installment/",
+   "registered": "2026-11-05",
+   "expires": ""
+  },
+  {
+   "query": "부양가족 공제 요건",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/dependent-deduction-income-limit/",
+   "registered": "2026-11-05",
+   "expires": ""
+  },
+  {
+   "query": "실업크레딧 신청",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/unemployment-credit-apply/",
+   "registered": "2026-11-05",
+   "expires": ""
+  },
+  {
+   "query": "두루누리 보험료 지원",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/durunuri-insurance-support/",
+   "registered": "2026-11-05",
+   "expires": ""
+  },
+  {
+   "query": "문화누리카드 신청",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/culture-nuri-card-2026-deadline/",
+   "registered": "2026-11-05",
+   "expires": ""
+  },
+  {
+   "query": "스포츠강좌이용권 신청",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/sports-voucher-2027-apply-nov/",
+   "registered": "2026-11-05",
+   "expires": ""
+  },
+  {
+   "query": "한파특보 기준과 쉼터",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/cold-wave-warning-criteria-shelter/",
+   "registered": "2026-11-05",
+   "expires": ""
+  },
+  {
+   "query": "보일러 가동 전 점검",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/boiler-fire-co-poisoning-checklist/",
+   "registered": "2026-11-05",
+   "expires": ""
+  },
+  {
    "query": "연차수당 계산기",
    "tier": "장기",
    "signal": [
@@ -6140,6 +6280,19 @@
    "expires": "2026-11-19"
   },
   {
+   "query": "쿠팡Inc 3분기 영업손실 6423억 원, 누적 1조8318억 원 어떻게 나왔나",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 4,
+   "status": "작성",
+   "page": "/issue/coupang-q3-2026-results-1105/",
+   "registered": "2026-11-05",
+   "expires": "2026-11-12"
+  },
+  {
    "query": "문화누리카드 2026 발급 마감 언제까지? 잔액 소멸 12월 31일 정리",
    "tier": "중기",
    "signal": [
@@ -6432,6 +6585,19 @@
    "page": "/issue/nts-stock-tax-refund-1104/",
    "registered": "2026-11-04",
    "expires": "2026-11-11"
+  },
+  {
+   "query": "2026 롤드컵 4강 대진과 일정은? 젠지 8강 결과, 한국 팀 현황",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 3,
+   "status": "작성",
+   "page": "/issue/worlds-2026-semifinal-1105/",
+   "registered": "2026-11-05",
+   "expires": "2026-11-12"
   },
   {
    "query": "레시피 공모전",

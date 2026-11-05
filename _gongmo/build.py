@@ -335,7 +335,7 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False, noinde
     ldh = ''.join('<script type="application/ld+json">%s</script>' % json.dumps(x, ensure_ascii=False).replace('</', '<\\/') for x in lds)
     nav = ''.join(f'<a href="/{s}/">{n}</a>' for s, n in NAV + ([('community', '원정대')] if COMM_API else []))
     doc = f'''<!doctype html>
-<html lang="{lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<html lang="{lang}" data-built="{TODAY.isoformat()}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{E(t)}</title>
 <meta name="description" content="{E(desc)}">{'<meta name="robots" content="noindex,follow">' if noindex else '<meta name="robots" content="max-image-preview:large">'}
 <link rel="canonical" href="{url}">{'<link rel="alternate" type="application/rss+xml" title="루리 줍줍 기술 블로그" href="/dev/rss.xml">' if path.startswith('/dev/') or path == '/ailog/' else ''}{hreflang_links(path, url, lang)}
@@ -346,7 +346,7 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False, noinde
 <meta name="theme-color" content="{TH[3] if TH else '#5b21b6'}"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="오늘 뭐 먹지">
 <link rel="icon" href="/favicon.ico?v=6" sizes="any"><link rel="icon" type="image/png" sizes="48x48" href="/assets/icons/icon-48.png?v=6"><link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/icon-96.png?v=6"><link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/icon-192.png?v=6"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=6"><link rel="manifest" href="/site.webmanifest"><link rel="alternate" type="application/rss+xml" title="루리 줍줍" href="/rss.xml">
 <link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="/assets/gm.css?v=29"><link rel="stylesheet" href="/assets/ds.css?v=15"><link rel="stylesheet" href="/assets/print.css?v=1"><link rel="stylesheet" href="/assets/pro.css?v=15"><script defer src="/assets/print.js?v=1"></script><script src="/assets/img-fallback.js?v=1"></script>{('<link rel="stylesheet" href="/assets/chat/ruri-chat.css?v=9">') if not (TH and TH[0] == 'ai') else ''}{COMM_TAGS}{('<script type="module" src="/assets/chat/ruri-chat.js?v=17"></script>') if not (TH and TH[0] == 'ai') else ''}<link rel="stylesheet" href="/assets/app/shell.css?v=1"><script defer src="/assets/app/app.js?v=4"></script>
+<link rel="stylesheet" href="/assets/gm.css?v=29"><link rel="stylesheet" href="/assets/ds.css?v=15"><link rel="stylesheet" href="/assets/print.css?v=1"><link rel="stylesheet" href="/assets/pro.css?v=16"><script defer src="/assets/print.js?v=1"></script><script src="/assets/img-fallback.js?v=1"></script>{('<link rel="stylesheet" href="/assets/chat/ruri-chat.css?v=9">') if not (TH and TH[0] == 'ai') else ''}{COMM_TAGS}{('<script type="module" src="/assets/chat/ruri-chat.js?v=17"></script>') if not (TH and TH[0] == 'ai') else ''}<link rel="stylesheet" href="/assets/app/shell.css?v=1"><script defer src="/assets/app/app.js?v=4"></script>
 {ldh}
 {TH_CSS}
 {GTAG}
@@ -363,7 +363,7 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False, noinde
 <div><b>운영 정보</b><a href="/about/">소개·만드는 방식</a><a href="/corrections/">정정 기록</a><a href="/privacy/">개인정보처리방침</a><a href="/terms/">이용약관</a><a href="/contact/">문의</a></div></nav></div>
 {('<p class="ft-c"><span>외부 채널</span> ' + comm_btns() + '</p>') if COMM_LINKS else ''}
 <p class="ft-n">정보는 각 기관의 공고·언론 보도·공개 자료를 AI로 수집·정리한 것입니다. 정확한 내용은 반드시 공식 공고와 원문에서 확인하세요. 일부 링크는 쿠팡 파트너스 활동의 일환으로 수수료를 받을 수 있습니다. © 2026 루리 줍줍 · sungprofile.cloud</p></div></footer>{CL_CSS if COMM_LINKS else ''}
-</body></html>'''
+<script defer src="/assets/dday.js?v=1"></script></body></html>'''
     doc = RURI_IMG_RX.sub(lambda m_: m_.group(0) if m_.group(1) else '', doc)   # 2026-11-03 사용자 방침: 루리는 메인이 아닌 요소(루리의 한마디 코너)로만. 헤더·푸터·히어로 그림은 뺀다(자산 파일 보존)
     d = os.path.join(ROOT, path.strip('/'))
     os.makedirs(d, exist_ok=True)
@@ -3669,18 +3669,52 @@ def kin_guides():
              [('루리 줍줍', '/'), ('머니', '/analyst/'), ('생활 돈 가이드', '/money/guide/'), (_hn, _hp_)])
         urls.append(_hp_)
         _hub_cards += f'<a class="mg-jc" href="{_hp_}"><i>{_hi}</i><b>{_hn}</b><span>{len(_hgl)}편 · {E(_hd[:40])}</span></a>'
-    _dict = ''.join(f'<li data-q="{E((g["name"] + " " + g["h1"]).lower())}"><a href="/money/guide/{g["slug"]}/"><i>{g["icon"]}</i><b>{E(g["name"])}</b><span>{E(g["h1"])}</span></a></li>' for g in G)
+    # 2026-11-05 사용자 「생활가이드 겁나 난잡하네 · 그냥 랜덤추첨으로」: 328편을 이모지 카드로 한 줄에 다 늘어놓던 「제도 사전」을 없애고
+    #   ① 추천 8편(빌드 때 무작위, 「다른 글 보기」로 다시 뽑기) ② 주제별로 접어 둔 글 목록(글자 줄, 이모지 없음) ③ 검색하면 전체에서 찾기
+    GT = [('pension', '연금·노후', r'국민연금|노령연금|주택연금|퇴직연금|기초연금|연금저축|IRP|노후|추납|임의가입'),
+          ('tax', '세금·연말정산', r'연말정산|세액공제|소득공제|종합소득세|종소세|부가세|부가가치세|양도세|양도소득|증여세|상속세|재산세|자동차세|종부세|종합부동산세|취득세|기타소득|세금|환급|원천징수|3\.3|경정청구|세제|과세|비과세|기부금'),
+          ('work', '일·직장', r'퇴직|실업급여|최저임금|주휴|연차|해고|근로계약|임금|야근|수당|4대보험|육아휴직|출산휴가|배우자휴가|산재|휴업급여|직장|알바|근로|고용|내일배움|취업|권고사직|휴게시간|정년|이직'),
+          ('home', '주거·부동산', r'전세|월세|청약|임대|보증금|이사|입주|주택|부동산|중개|전입|등기|계약갱신|최우선변제|층간소음|관리비|분양|오피스텔|아파트'),
+          ('family', '가족·출산·육아', r'출산|육아|부모급여|아동수당|혼인|이혼|상속|유언|유류분|다자녀|보육|돌봄|결혼|난임|양육비|첫만남|임신|사망신고|한부모'),
+          ('health', '건강·의료·식단', r'건강보험|건강검진|의료|병원|진료|산정특례|본인부담|칼로리|단백질|식단|운동|다이어트|영양|저탄고지|걷기|수면|예방접종|접종|보건증|치과|안경'),
+          ('car', '자동차·교통', r'자동차|운전면허|교통|K-패스|전기차|정기검사|과태료|주차|하이패스|렌터카|중고차|택시|대중교통|기후동행|알뜰교통|항공|여권'),
+          ('biz', '사업자·프리랜서', r'사업자|폐업|창업|프리랜서|간이과세|세금계산서|노란우산|소상공인|상가|권리금'),
+          ('money', '금융·대출·보험', r'대출|신용|카드|보험|실손|ISA|예금|적금|계좌|보이스피싱|개인회생|파산|채무|햇살론|투자|금리|이자|통장|착오송금|휴면|숨은 돈'),
+          ('welfare', '복지·지원금', r'지원금|바우처|장려금|기초생활|생계급여|복지|장학금|청년|문화누리|에너지|긴급|차상위|보훈|다문화|교육급여|학자금|병역|장애인|노인|국민취업|도약계좌|스포츠'),
+          ('life', '생활·소비·민원', r'환불|결제|택배|통신|휴대폰|통관|휴대품|요금|주민등록|민원|소비자|헬스장|구독|전기|가스|난방|보일러|동파|한파|반려|공휴일|증명서|인감|우편'),
+          ('law', '법률·분쟁', r'소송|고소|판례|벌금|배상명령|화해권고|녹음|합의|손해배상|내용증명|하자|분쟁|사기|명예훼손|스토킹|학교폭력|임대차')]
+    _tg = collections.OrderedDict((k, []) for k, _n, _r in GT + [('etc', '그 밖의 생활 정보', '')])
+    for g in G:
+        _t = g['name'] + ' ' + g['h1']
+        _tg[next((k for k, _n, rx in GT if re.search(rx, _t)), 'etc')].append(g)
+    _tn = dict((k, n) for k, n, _r in GT); _tn['etc'] = '그 밖의 생활 정보'
+    _row = lambda g: f'<li data-q="{E((g["name"] + " " + g["h1"]).lower())}"><a href="/money/guide/{g["slug"]}/"><b>{E(g["name"])}</b><span>{E(g["h1"])}</span></a></li>'
+    _topics = ''.join(f'<details class="mg-t" id="t-{k}"><summary><b>{E(_tn[k])}</b><small>{len(v)}편</small></summary><ul class="mg-d">{"".join(_row(g) for g in v)}</ul></details>' for k, v in _tg.items() if v)
+    import random as _rnd
+    _rg = _rnd.Random(f'{TODAY.isoformat()}-{datetime.datetime.now().hour}')
+    _pick = _rg.sample(G, min(8, len(G)))
+    _pk = ''.join(f'<li><a href="/money/guide/{g["slug"]}/"><b>{E(g["h1"])}</b><span>{E(re.sub(chr(32) + "+", " ", g["lead"])[:70])}…</span></a></li>' for g in _pick)
+    print('생활 가이드 주제 분포', {_tn[k]: len(v) for k, v in _tg.items()})
     page('/money/guide/', '생활 돈 가이드 — 근로장려금·국민내일배움카드·월세 세액공제·퇴직금 (공식 출처 정리)', '근로장려금, 국민내일배움카드, 월세 세액공제와 청년월세 지원, 퇴직금을 국세청·고용노동부·고용24 등 공식 안내로 정리했어요. 계산기도 함께.',
-         '<p class="bc"><a href="/">홈</a> › 생활 돈 가이드</p><h1 class="mg-h1">생활 돈 가이드</h1><p class="mg-sub">공식 안내로 확인한 것만 정리했어요. 확인하지 못한 항목은 일부러 적지 않았고, 기준일과 출처를 글마다 밝혀요.</p>'
+         '<p class="bc"><a href="/">홈</a> › 생활 돈 가이드</p><h1 class="mg-h1">생활 돈 가이드</h1><p class="mg-sub">세금·일·집·복지 제도를 공식 출처와 확인일을 적어 정리했습니다. 궁금한 제도를 검색하거나 주제를 펼쳐 보세요.</p>'
          '<input id="mgq" class="mg-q" type="search" placeholder="예: 퇴직금, 월세, 실업급여, 에너지바우처" aria-label="가이드 검색" autocomplete="off">'
+         '<ul class="mg-d mg-r" id="mgr" hidden></ul><p class="note" id="mgn" hidden>일치하는 가이드가 없어요. 검색어를 줄여 보세요.</p>'
+         f'<div id="mgb"><div class="mg-hd"><h2 class="mg-h2">오늘의 추천 가이드</h2><button type="button" class="mg-re" id="mgre">다른 글 보기</button></div><ul class="mg-p" id="mgp">{_pk}</ul>'
          f'<h2 class="mg-h2">상황별로 시작하기</h2><div class="mg-j">{_jg}</div>'
-         f'<h2 class="mg-h2">주제별 모음</h2><div class="mg-j">{_hub_cards}</div>'
-         f'<h2 class="mg-h2">제도 사전 <small>{len(G)}편</small></h2><ul class="mg-d" id="mgl">{_dict}</ul><p class="note" id="mgn" hidden>일치하는 가이드가 없어요. 검색어를 줄여 보세요.</p>'
-         + kin_ans_links('/money/guide/') + f'<h2 class="mg-h2">계산기</h2><ul class="list">{tools}</ul>' + join_cta('apply') + GAME_CSS
-         + '<style>.mg-h1{font-size:clamp(26px,5.4vw,36px);margin:4px 0 6px;letter-spacing:-.02em}.mg-sub{margin:0 0 14px;color:var(--mu);line-height:1.65;max-width:680px}.mg-q{width:100%;max-width:560px;box-sizing:border-box;min-height:50px;padding:0 16px;font:inherit;font-size:16px;border:2px solid var(--bd);border-radius:14px;background:var(--card);color:var(--tx)}.mg-q:focus{outline:none;border-color:var(--brand,#6d28d9)}'
-           '.mg-h2{font-size:20px;margin:26px 0 12px}.mg-h2 small{color:var(--mu);font-size:14px}.mg-j{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}@media(max-width:520px){.mg-j{grid-template-columns:1fr}}.mg-jc{display:flex;flex-direction:column;gap:3px;padding:14px 16px;border:1px solid var(--bd);border-radius:14px;background:var(--card);color:var(--tx);text-decoration:none}.mg-jc i{font-style:normal;font-size:24px}.mg-jc b{font-size:16.5px}.mg-jc span{font-size:13.5px;color:var(--mu);line-height:1.5}'
-           '.mg-d{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));gap:8px}.mg-d a{display:grid;grid-template-columns:28px 1fr;gap:0 10px;align-items:center;padding:11px 14px;border:1px solid var(--bd);border-radius:12px;background:var(--card);color:var(--tx);text-decoration:none}.mg-d a i{font-style:normal;grid-row:1/3;font-size:20px}.mg-d a b{font-size:15.5px}.mg-d a span{font-size:13px;color:var(--mu);line-height:1.4;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}</style>'
-         + '<script>(function(){var q=document.getElementById("mgq"),L=[].slice.call(document.querySelectorAll("#mgl li")),n=document.getElementById("mgn");if(!q)return;q.addEventListener("input",function(){var v=q.value.trim().toLowerCase(),c=0;L.forEach(function(li){var m=!v||li.getAttribute("data-q").indexOf(v)>=0;li.style.display=m?"":"none";if(m)c++});n.hidden=c>0})})();</script>',
+         f'<h2 class="mg-h2">주제별로 찾기 <small>전체 {len(G)}편</small></h2><div class="mg-j mg-h">{_hub_cards}</div><div class="mg-ts" id="mgl">{_topics}</div>'
+         + f'<h2 class="mg-h2">계산기</h2><ul class="list">{tools}</ul></div>' + kin_ans_links('/money/guide/') + join_cta('apply') + GAME_CSS
+         + '<style>.mg-h1{font-size:clamp(26px,5.4vw,36px);margin:4px 0 6px;letter-spacing:-.02em}.mg-sub{margin:0 0 14px;color:var(--mu);line-height:1.65;max-width:680px}.mg-q{width:100%;max-width:560px;box-sizing:border-box;min-height:50px;padding:0 16px;font:inherit;font-size:16px;border:1.5px solid #64748b;border-radius:8px;background:var(--card);color:var(--tx)}.mg-q:focus{outline:none;border-color:var(--brand,#6d28d9);box-shadow:0 0 0 3px rgba(109,40,217,.18)}'
+           '.mg-hd{display:flex;align-items:baseline;justify-content:space-between;gap:12px}.mg-h2{font-size:20px;margin:30px 0 10px;letter-spacing:-.02em}.mg-h2 small{color:var(--mu);font-size:14px;font-weight:600;margin-left:6px}'
+           '.mg-re{min-height:40px;padding:0 14px;border:1px solid var(--bd);border-radius:8px;background:var(--card);color:var(--tx);font:inherit;font-size:14px;font-weight:700;cursor:pointer}.mg-re:hover{border-color:var(--brand,#6d28d9)}'
+           '.mg-p{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:32px;border-top:1px solid #cbd5e1}.mg-p li{border-bottom:1px solid var(--bd)}main .mg-p a{display:block;padding:14px 0;color:var(--tx);text-decoration:none}.mg-p b{display:block;font-size:16.5px;line-height:1.45;letter-spacing:-.01em}.mg-p a:hover b{text-decoration:underline;text-underline-offset:3px}.mg-p span{display:block;margin-top:4px;font-size:14px;line-height:1.55;color:var(--mu);overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}'
+           '.mg-j{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.mg-jc{display:flex;flex-direction:column;gap:3px;padding:12px 14px;border:1px solid var(--bd);border-radius:8px;background:var(--card);color:var(--tx);text-decoration:none}.mg-jc i{display:none}.mg-jc b{font-size:15.5px}.mg-jc span{font-size:13px;color:var(--mu);line-height:1.5}.mg-h{grid-template-columns:repeat(3,minmax(0,1fr));margin-bottom:14px}'
+           '.mg-ts{border-top:1px solid #cbd5e1}.mg-t{border-bottom:1px solid var(--bd)}.mg-t>summary{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:52px;padding:0 2px;cursor:pointer;list-style:none;font-size:16.5px}.mg-t>summary::-webkit-details-marker{display:none}.mg-t>summary small{color:var(--mu);font-size:13.5px;font-weight:600}.mg-t>summary::after{content:"+";margin-left:8px;color:var(--mu);font-size:20px;font-weight:400}.mg-t[open]>summary::after{content:"−"}.mg-t>summary b{flex:1}'
+           '.mg-d{list-style:none;margin:0;padding:0 0 12px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:32px}main .mg-d a{display:block;padding:9px 0;color:var(--tx);text-decoration:none;border-bottom:1px solid #f1f5f9}.mg-d a b{display:block;font-size:15px}.mg-d a span{display:block;font-size:13px;color:var(--mu);line-height:1.45;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}.mg-d a:hover b{text-decoration:underline}.mg-r{margin-top:12px;border-top:1px solid #cbd5e1}'
+           '@media(max-width:700px){.mg-p,.mg-d{grid-template-columns:1fr}.mg-j{grid-template-columns:repeat(2,minmax(0,1fr))}.mg-h{grid-template-columns:1fr}.mg-jc span{display:none}.mg-h .mg-jc span{display:block}}</style>'
+         + '<script>(function(){var q=document.getElementById("mgq"),A=[].slice.call(document.querySelectorAll("#mgl li")),n=document.getElementById("mgn"),r=document.getElementById("mgr"),b=document.getElementById("mgb"),p=document.getElementById("mgp"),re=document.getElementById("mgre");'
+           'if(q)q.addEventListener("input",function(){var v=q.value.trim().toLowerCase();r.textContent="";if(!v){r.hidden=true;n.hidden=true;b.hidden=false;return}var c=0;A.forEach(function(li){if(c<40&&li.getAttribute("data-q").indexOf(v)>=0){r.appendChild(li.cloneNode(true));c++}});r.hidden=!c;n.hidden=c>0;b.hidden=true});'
+           'if(re&&p)re.addEventListener("click",function(){var L=A.slice(),o=[];for(var i=0;i<8&&L.length;i++){o.push(L.splice(Math.floor(Math.random()*L.length),1)[0])}p.textContent="";o.forEach(function(li){var a=li.querySelector("a"),x=document.createElement("li"),y=document.createElement("a"),t=document.createElement("b"),s=document.createElement("span");y.href=a.getAttribute("href");t.textContent=a.querySelector("span").textContent;s.textContent=a.querySelector("b").textContent;y.appendChild(t);y.appendChild(s);x.appendChild(y);p.appendChild(x)})});'
+           '})();</script>',
          [('루리 줍줍', '/'), ('머니', '/analyst/'), ('생활 돈 가이드', '/money/guide/')])
     urls.append('/money/guide/')
     return urls

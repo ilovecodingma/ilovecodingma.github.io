@@ -59,10 +59,24 @@ def _lcs(a, b):
     return best
 
 
+def _org_tokens(o):
+    """주최 문자열 → 기관 이름 집합. 「농림축산식품부 주관 한국과수농협연합회」와 「농림축산식품부 / 한국과수농협연합회」가 같게 읽히도록
+    역할 낱말(주최·주관·후원·협찬·공동)과 구분 기호로 나누고, 「태안군청」의 「청」 같은 꼬리도 뗀다(2026-11-05 P0-3)."""
+    o = re.sub(r'\(주\)|주식회사|재단법인|사단법인', ' ', o or '')
+    parts = re.split(r'\s*(?:주최|주관|후원|협찬|공동|및|/|,|·|ㆍ|&)\s*|\s{2,}', o)
+    out = set()
+    for x in parts:
+        x = re.sub(r'[^0-9A-Za-z가-힣]', '', x).lower()
+        x = re.sub(r'(?<=[시군구도])청$', '', x)
+        if len(x) >= 2:
+            out.add(x)
+    return out
+
+
 def _org_compat(a, b):
-    """주최가 비어 있거나 한쪽이 다른 쪽을 포함하면 같은 주최로 본다(공동 주최 표기 차이 허용)."""
+    """주최가 비어 있거나, 한쪽이 다른 쪽을 포함하거나, 기관 이름이 하나라도 겹치면 같은 주최로 본다(공동 주최·역할 표기 차이 허용)."""
     x, y = re.sub(r'\s', '', a or ''), re.sub(r'\s', '', b or '')
-    return (not x) or (not y) or x in y or y in x or bool(set(re.split(r'[/,·]', a or '')) & set(re.split(r'[/,·]', b or '')) - {''})
+    return (not x) or (not y) or x in y or y in x or bool(_org_tokens(a) & _org_tokens(b))
 
 
 def _latin_tokens(t):
@@ -98,8 +112,15 @@ def candidates(items):
 
 
 def _first_prize(c):
-    m = re.search(r'1등\s*([\d,\.]+\s*(?:억|천만|백만|만)?\s*원)', c.get('prize') or '')
-    return re.sub(r'\s', '', m.group(1)) if m else ''
+    """1등 상금을 원 단위 숫자 문자열로(「50만원」과 「500,000원」을 같은 값으로 비교하기 위해)."""
+    m = re.search(r'1등\s*([\d,\.]+)\s*(억|천만|백만|만)?\s*원', c.get('prize') or '')
+    if not m:
+        return ''
+    try:
+        v = float(m.group(1).replace(',', '')) * {'억': 1e8, '천만': 1e7, '백만': 1e6, '만': 1e4, None: 1}[m.group(2)]
+    except ValueError:
+        return ''
+    return str(int(v))
 
 
 def _same_run(a, b):
@@ -110,7 +131,7 @@ def _same_run(a, b):
         return False
     n = lambda t: re.sub(r'주식회사|\(주\)|[^0-9A-Za-z가-힣]', '', t or '').lower()
     oa, ob = n(a['org']), n(b['org'])
-    if not (oa == ob or (min(len(oa), len(ob)) >= 4 and (oa in ob or ob in oa))):
+    if not (oa == ob or (min(len(oa), len(ob)) >= 4 and (oa in ob or ob in oa)) or (_org_tokens(a['org']) & _org_tokens(b['org']))):
         return False
     try:
         import datetime as dt
@@ -171,6 +192,22 @@ def dups(items):
                 pairs.append((a, b, '핵심 이름 겹침 · 마감일 같음 · 주최 호환')); continue
             if (j >= 0.72 and a['end'] == b['end']) or (j >= 0.6 and a.get('org') and a.get('org') == b.get('org')):
                 pairs.append((a, b, f'제목 유사도 {j:.2f}' + (' · 마감일 같음' if a['end'] == b['end'] else ' · 같은 주최')))
+    for i, a in enumerate(L):   # 2026-11-05 P0-3: 제목이 거의 같고(0.85↑) 주최·시작일이 같은데 마감일만 다르게 수집된 공고(31일 이내) — 회차가 다르면 제외
+        for b in L[i + 1:]:
+            if a['end'] == b['end'] or not (a.get('start') and a.get('start') == b.get('start')) or not (a.get('org') and b.get('org')):
+                continue
+            if not (_org_tokens(a['org']) & _org_tokens(b['org'])) or _jac(B[a['id']], B[b['id']]) < 0.85:
+                continue
+            ea, eb = re.search(r'제\s?(\d+)\s?회|(\d+)(?:st|nd|rd|th)', a['title']), re.search(r'제\s?(\d+)\s?회|(\d+)(?:st|nd|rd|th)', b['title'])
+            if ea and eb and (ea.group(1) or ea.group(2)) != (eb.group(1) or eb.group(2)):
+                continue
+            try:
+                import datetime as _dt
+                if abs((_dt.date.fromisoformat(a['end']) - _dt.date.fromisoformat(b['end'])).days) > 31:
+                    continue
+            except ValueError:
+                continue
+            pairs.append((a, b, '제목 거의 같음 · 같은 주최 · 같은 시작일 · 마감일만 다름'))
     ids = {c['id']: c for c in items}
     for d_, r_ in MANUAL_DUP.items():   # 공식 페이지로 같은 공모전임을 확인한 쌍(2026-10-23)
         if d_ in ids and r_ in ids:
@@ -179,7 +216,12 @@ def dups(items):
         if a['id'] in out or b['id'] in out:
             continue
         rep, dup = (a, b) if (_fill(a), -int(re.sub(r'\D', '', a['id']) or 0)) >= (_fill(b), -int(re.sub(r'\D', '', b['id']) or 0)) else (b, a)
-        out[dup['id']] = rep['id']; why[dup['id']] = w
+        cf = []   # 합친 두 공고의 값이 서로 다르면 근거와 함께 남긴다(어느 쪽이 맞는지는 공식 공고로 확인해야 함)
+        if rep['end'] != dup['end']:
+            cf.append(f'마감일 {rep["end"]} ↔ {dup["end"]}')
+        if _first_prize(rep) and _first_prize(dup) and _first_prize(rep) != _first_prize(dup):
+            cf.append(f'1등 상금 {_first_prize(rep)}원 ↔ {_first_prize(dup)}원')
+        out[dup['id']] = rep['id']; why[dup['id']] = w + (' · 값 충돌: ' + ', '.join(cf) if cf else '')
     return out, why
 
 

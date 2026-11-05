@@ -168,3 +168,52 @@ def test_every_verified_has_structured_deadline_and_no_invented_time():
     assert B.deadline_state({'id': 'Q01299'}) == 'absent'      # 대전: 공고 본문에 시각 없음(게시판 헤더 23:59는 확정하지 않음)
     assert B.deadline_state({'id': 'ZZZ'}) == 'unknown'
     assert '23:59' not in B.deadline_row({'id': 'Q01299'}, '확인 필요').split('—')[0]
+
+
+# ---- 2026-11-05 품질 지시서 P0-2·P0-4·P0-1 회귀 테스트 ----
+def test_broad_academic_label_does_not_make_it_science():
+    import parse as P
+    # 수집처의 넓은 묶음 라벨 「학문•과학•IT」만으로 IT·과학이 붙으면 안 된다
+    assert P.tags_for('학문•과학•IT', '2026 전국대학생 통일토론경연대회', 'KR') == ['기타']
+    assert P.tags_for('학문•과학•IT', '제 9 회 법학경시대회', 'KR') == ['기타']
+    assert P.tags_for('학문•과학•IT', '2026 GSA 영어 말하기 대회', 'KR') == ['기타']
+    assert 'IT·과학' in P.tags_for('학문•과학•IT', '현대자동차그룹 차량용 앱 개발 공모전', 'KR')      # 제목이 IT 면 유지
+    assert 'IT·과학' in P.tags_for('학문•과학•IT', '2026 AI 서비스 기획 공모전', 'KR')
+
+
+def test_service_scenario_is_not_literature():
+    import parse as P
+    t = P.tags_for('', '[과학기술정보통신부] 6G 서비스 시나리오 공모전', 'KR')
+    assert '문학' not in t and 'IT·과학' in t and '아이디어·정책' in t
+    assert '문학' in P.tags_for('', '제5회 영화 시나리오 공모전', 'KR')                              # 진짜 시나리오 공모는 문학
+    assert '문학' not in P.tags_for('글로벌', '2026 수출 아이디어 공모전', 'KR')                      # 라벨 「글로벌」의 「글」
+
+
+def test_analyst_entity_rules():
+    import analyst as A
+    for bad in ('28일', '영업익', '증권가', '증권주', '하루에', '석화기업', '번스타인·도이체방크'):
+        assert A.norm_stock(bad) is None, bad
+    assert A.norm_stock('LG생건') == 'LG생활건강' and A.norm_stock('KAI') == '한국항공우주' and A.norm_stock('HL만도') == 'HL만도'
+    assert A.who_of('빼면 IMF 수준 "경고"') == 'IMF' and A.who_of('날린 월가 "AI 버블"') == '월가'
+    assert A.who_of('국수본부장 "수사기관 국무회의 참석"') is None and A.who_of('통상본부장 "리스크 확대"') is None
+    assert A.who_of('NH투자증권 리서치센터장 "코스피 6000"') == 'NH투자증권 리서치센터장'
+    for bad in ('구조 "비트코인"', '금융화는 "위험"', '차트 "하락"', '높인다 "전망"', '서버 "다운"'):
+        assert A.coin_who(bad) is None, bad
+    assert A.coin_who('헤이즈 "비트코인 20만 달러"') == '헤이즈'
+
+
+def test_apply_field_cleanup_and_age():
+    assert B.ap_fields('ㅇ 신청자격 : 산학협력단', 'ㅇ 지원내용 : 실습 비용') == ('산학협력단', '실습 비용')
+    assert B.ap_fields('청년', 'ㅇ지원대상: 연소득 5,000만원 이하 청년')[1] == ''          # 혜택 칸의 대상 설명은 혜택으로 보여 주지 않는다
+    assert B.ap_fields('청년', "기간/사업비 : '21.~'30. / 34,500백만원")[1] == ''
+    assert B.age_txt({'age_min': 24, 'age_max': 24}) == '만 24세' and B.age_txt({'age_min': 19, 'age_max': 39}) == '만 19~39세'
+
+
+def test_dday_boundaries():
+    import datetime
+    t = B.TODAY
+    iso = lambda d: (t + datetime.timedelta(days=d)).isoformat()
+    assert B.dday(iso(0)) == (0, 'D-DAY') and B.dday(iso(1)) == (1, 'D-1') and B.dday(iso(-1)) == (-1, '마감')
+    assert B.dday('2099-12-31')[1] == '상시'
+    kst = datetime.datetime.now(datetime.timezone.utc).replace(tzinfo=None) + datetime.timedelta(hours=9)
+    assert abs((B.NOW_KST() - kst).total_seconds()) < 5                                            # 날짜 기준은 PC 시간대가 아니라 한국 시간

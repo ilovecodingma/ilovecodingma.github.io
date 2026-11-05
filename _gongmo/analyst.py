@@ -96,6 +96,24 @@ WHO_BADPRE = re.compile(r'(?:에|면|린|는|은|고|한|된|할|던|도|를|을
 WHO_NAME = re.compile(r'^[가-힣]{2,4}$')
 
 
+COIN_WHO_SFX = re.compile(r'(?: CEO| 회장| 창업자| 전략가| 애널리스트| 리서치| 캐피털| 증권| 은행|인베스트먼트|자산운용)$')
+COIN_WHO_OK = {'세일러', '마이클 세일러', '톰 리', '캐시 우드', '아서 헤이즈', '헤이즈', '기요사키', '머스크', '트럼프', '파월', '부테린', '창펑자오', 'CZ', '블랙록', 'JP모건', '골드만삭스', '모건스탠리', '씨티', '번스타인',
+               '스탠다드차타드', 'SC', '그레이스케일', '갤럭시', '갤럭시디지털', '비트멕스', '코인베이스', '바이낸스', '스트래티지', '테더', '피델리티', '반에크', '아크', '아크인베스트', '크립토퀀트', '글래스노드',
+               '윙클보스', '윈터뮤트', '렉트캐피탈', '10x리서치', '매트릭스포트', '비트와이즈', '판테라', '연준', 'SEC', '월가', '주기영', '김치프리미엄'}
+
+
+def coin_who(title):
+    """코인 기사 제목에서 발언 주체. 따옴표 앞 단어를 무조건 쓰던 탓에 「구조」「금융화는」「차트」「높인다」「서버」가 출처로 나왔다 → 알려진 이름이거나 기관·직함으로 끝날 때만 받는다."""
+    m = PERSON.search(title)
+    if not m:
+        return None
+    w = m.group(1).strip()
+    if w in COIN_WHO_OK or COIN_WHO_SFX.search(w):
+        return w
+    ENT_REJECT.append({'kind': 'coin_who', 'name': w, 'why': '사람·기관 이름이 아님'})
+    return None
+
+
 def who_of(title):
     """제목에서 발언 주체(기관·직함)를 뽑는다. 주체를 정할 수 없으면 None(그 기사는 전문가 코멘트로 쓰지 않는다)."""
     m0 = EXP_ROLE.search(title)
@@ -280,10 +298,10 @@ def coin_nodes(arts, bodies):
                 d = 'neutral'
             else:
                 d = 'bull' if bu > be else 'bear'
-            who = PERSON.search(t)
+            who = coin_who(t)
             tgt = re.search(r'(\d+(?:\.\d+)?)\s?만\s?달러\s?(?:간다|전망|예상|도달|돌파|목표|갈|까지)', t) if sym == 'BTC' else None
             rs = tags_dir(t + ' ' + b[:1500], CR, d)
-            nodes.append({'k': 'coin', 'id': hashlib.md5((a['u'] + sym).encode()).hexdigest()[:10], 'sym': sym, 'name': kn, 'dir': d, 'who': who.group(1).strip() if who else None,
+            nodes.append({'k': 'coin', 'id': hashlib.md5((a['u'] + sym).encode()).hexdigest()[:10], 'sym': sym, 'name': kn, 'dir': d, 'who': who,
                           'tgt': float(tgt.group(1)) if tgt else None, 'rs': [n for n, s in rs], 't': t, 'u': a['u'], 'o': a['o'], 'ts': a['ts']})
     return nodes
 
@@ -415,7 +433,7 @@ def main():
                        'nodes': [{k: n.get(k) for k in ('br', 'dir', 'op', 'tp', 'tp0', 'upside', 'rs', 't', 'u', 'o', 'ts', 'chk')} for n in ns[:20]]})
     stocks.sort(key=lambda s: (-s['nb'], -s['last']))
     # ---- 코인 집계(최근 7일) + 업비트 시세
-    C = [n for n in db['nodes'].values() if n['k'] == 'coin' and n['ts'] >= now - 7 * 86400]
+    C = [dict(n, who=coin_who(n['t'])) for n in db['nodes'].values() if n['k'] == 'coin' and n['ts'] >= now - 7 * 86400]   # 저장된 노드도 발언 주체를 다시 판정
     price = {}
     try:
         r = requests.get('https://api.upbit.com/v1/ticker', params={'markets': ','.join('KRW-' + s for s in COINS)}, timeout=15).json()
