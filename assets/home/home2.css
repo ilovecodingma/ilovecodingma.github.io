@@ -99,3 +99,8 @@ main .qk a{display:flex;gap:10px;align-items:flex-start;min-height:56px;padding:
 .qk a:hover b{text-decoration:underline}.qk .sv{color:var(--br);margin-top:2px}
 .qk b{display:block;font-size:15.5px;font-weight:700}.qk small{display:block;margin-top:1px;font-size:13px;color:var(--mu);line-height:1.35}
 @media(max-width:700px){.qk{grid-template-columns:repeat(2,minmax(0,1fr));gap:0 16px}}
+/* 대표 글 자료 사진 (2026-11-05): 16:9, 출처 한 줄 */
+.rd-im{display:block;margin:-26px -28px 0;border-radius:12px 12px 0 0;overflow:hidden}
+.rd-im img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;background:#e2e8f0}
+.rd-cr{margin:6px 0 14px;font-size:12px;line-height:1.45;color:#64748b}main .rd-cr a{color:inherit;text-decoration:underline}
+@media(max-width:700px){.rd-im{margin:-20px -20px 0}}

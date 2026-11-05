@@ -3765,6 +3765,9 @@ KIM_FAQ = [
 ISSUE_DIR = os.path.join(HERE, 'issues')
 
 
+import photo as PH   # 자료 사진 은행(2026-11-05)
+
+
 def issue_json_pages():
     """/issue/<slug>/ 단기 이슈 설명 (2026-11-02 마케터 원고 JSON → 페이지). 원고는 _gongmo/issues/<slug>.json.
     필드: slug, title, desc, h1, date(기준일 YYYY-MM-DD), keep_days(기본 4), summary, confirmed[[내용,출처]], unconfirmed[[내용,이유]],
@@ -3785,6 +3788,7 @@ def issue_json_pages():
             sl = c['slug']
             keep.add(sl)
             p_ = f'/issue/{sl}/'
+            _ph = PH.pick(c)   # 2026-11-05 자료 사진(사진 은행에서 제목 키워드로 자동 선택, 출처 표기)
             faq, fld = _faq([tuple(x) for x in c.get('faq', [])]) if c.get('faq') else ('', None)
             def tbl(rows, h1_, h2_):
                 return (f'<table class="xt"><thead><tr><th>{h1_}</th><th>{h2_}</th></tr></thead><tbody>' + ''.join(f'<tr><td>{E(a_)}</td><td>{src_cell(b_, c.get("sources"))}</td></tr>' for a_, b_ in rows) + '</tbody></table>') if rows else ''
@@ -3805,7 +3809,7 @@ def issue_json_pages():
             rel = ''.join(f'<a href="{E(u_)}">{E(n_)}</a>' for u_, n_ in c.get('related', []))
             body = (f'<p class="bc"><a href="/">홈</a> › 이슈 › {E(c["h1"][:30])}</p><h1>{E(c["h1"])}</h1>'
                     f'<div class="cat-st"><b>결론</b><br>{sent_list(c["summary"])}</div><p class="note">{c["date"]} 기준 · 이 글은 단기 이슈라 {int(c.get("keep_days", 4))}일 뒤 내려가요.</p>'
-                    + secs + (f'<p class="hm-links">{rel}</p>' if rel else '')
+                    + ((PH.figure(_ph) + PH.CSS) if _ph else '') + secs + (f'<p class="hm-links">{rel}</p>' if rel else '')
                     + '<style>.xt{border-collapse:collapse;width:100%;font-size:14px}.xt th,.xt td{border:1px solid #e5e7eb;padding:6px 8px;text-align:left;vertical-align:top}.xt th{background:#f8fafc}.xt td{overflow-wrap:anywhere}.cat-ul{margin:6px 0 0;padding-left:18px}.cat-ul li{margin:6px 0;line-height:1.65}</style>')
             art = {'@context': 'https://schema.org', '@type': 'Article', 'headline': c['title'], 'description': c['desc'], 'inLanguage': 'ko',
                    'datePublished': c['date'], 'dateModified': c['date'], 'mainEntityOfPage': SITE + p_,
@@ -3814,19 +3818,19 @@ def issue_json_pages():
             page(p_, c['title'], c['desc'], body, [('루리 줍줍', '/'), ('이슈', '/news/'), (c['h1'][:20], p_)], ld_, full_title=True, og=og_art('issue', c['slug'], _dt_og(c['h1']), '이슈 · ' + c['date'][5:].replace('-', '.') + ' 기준'))
             urls.append(p_)
             _is = c.get('home_sum') or (re.split(r'(?<=[다요]\.)\s+', c['summary'].strip())[0])
-            icards.append((c['date'], f'<li><a href="{p_}">{E(c.get("home_title") or c["h1"])}</a><p>{E(_is)}</p><small>{E(c.get("category") or "이슈")} · {c["date"][5:].replace("-", "/")} 기준</small></li>'))
+            icards.append((c['date'], f'<li><div><a href="{p_}">{E(c.get("home_title") or c["h1"])}</a><p>{E(_is)}</p><small>{E(c.get("category") or "이슈")} · {c["date"][5:].replace("-", "/")} 기준</small></div>' + (f'<a href="{p_}" tabindex="-1" aria-hidden="true">{PH.thumb(_ph)}</a>' if _ph else '') + '</li>'))
     idir = os.path.join(ROOT, 'issue')
     if os.path.isdir(idir):
         for f_ in os.listdir(idir):
             if f_ != 'kim-jong-un-rumor' and f_ not in keep and os.path.isdir(os.path.join(idir, f_)):
                 shutil.rmtree(os.path.join(idir, f_), ignore_errors=True)   # 보관 기간이 지났거나 원고가 없어진 단기 이슈
     if os.path.exists(os.path.join(HERE, 'essays', 'kim-rumor.html')):
-        icards.append(('2026-10-21', '<li><a href="/issue/kim-jong-un-rumor/">김정은 건강 이상설 보도, 확인된 사실과 출처 정리</a><p>확인된 것과 확인되지 않은 것을 나눠 정리했습니다.</p><small>이슈 · 10/21 기준</small></li>'))
+        icards.append(('2026-10-21', '<li><div><a href="/issue/kim-jong-un-rumor/">김정은 건강 이상설 보도, 확인된 사실과 출처 정리</a><p>확인된 것과 확인되지 않은 것을 나눠 정리했습니다.</p><small>이슈 · 10/21 기준</small></div></li>'))
     if icards:
         li = ''.join(h_ for _d, h_ in sorted(icards, key=lambda x: x[0], reverse=True))
         page('/issue/', '요즘 많이 찾는 이슈 정리 — 확인된 것과 확인되지 않은 것', '요즘 검색이 몰리는 이슈를 공식 출처 기준으로 확인된 것과 확인되지 않은 것으로 나눠 정리합니다. 단기 이슈는 며칠 뒤 내려갑니다.',
              f'<p class="bc"><a href="/">홈</a> › 이슈</p><h1>요즘 많이 찾는 이슈 정리</h1><p>검색이 몰리는 이슈를 공식 출처 기준으로 확인된 것과 확인되지 않은 것으로 나눕니다. 단기 이슈는 보관 기간이 지나면 내려갑니다.</p><ul class="is-l">{li}</ul>'
-             '<style>.is-l{list-style:none;margin:8px 0 0;padding:0;border-top:1px solid var(--bd,#e2e8f0)}.is-l li{padding:16px 0;border-bottom:1px solid var(--bd,#e2e8f0)}main .is-l a{display:block;font-size:17.5px;font-weight:700;line-height:1.45;letter-spacing:-.015em;color:var(--tx,#0f172a);text-decoration:none}.is-l a:hover{text-decoration:underline;text-underline-offset:3px}.is-l p{margin:5px 0 0;font-size:15px;line-height:1.6;color:var(--mu,#475569);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}.is-l small{display:block;margin-top:6px;font-size:13px;color:#64748b}</style>',
+             '<style>.is-l{list-style:none;margin:8px 0 0;padding:0;border-top:1px solid var(--bd,#e2e8f0)}.is-l li{display:flex;gap:14px;align-items:flex-start;padding:16px 0;border-bottom:1px solid var(--bd,#e2e8f0)}.is-l li>div{flex:1;min-width:0}.is-l .ph-t{flex:0 0 auto;display:block;width:112px;height:auto;aspect-ratio:16/9;object-fit:cover;border-radius:8px;background:#e2e8f0}main .is-l a{display:block;font-size:17.5px;font-weight:700;line-height:1.45;letter-spacing:-.015em;color:var(--tx,#0f172a);text-decoration:none}.is-l a:hover{text-decoration:underline;text-underline-offset:3px}.is-l p{margin:5px 0 0;font-size:15px;line-height:1.6;color:var(--mu,#475569);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}.is-l small{display:block;margin-top:6px;font-size:13px;color:#64748b}</style>',
              [('루리 줍줍', '/'), ('이슈', '/issue/')])
         urls.append('/issue/')
     return urls

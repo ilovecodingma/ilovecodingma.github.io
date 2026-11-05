@@ -343,6 +343,9 @@ def _first_sentences(t, n):
     return out
 
 
+_PHOTO = {}   # 주소 → 자료 사진 정보(2026-11-05, photo.py)
+
+
 def _read_candidates(ctx):
     """지금 읽을 글 후보: 마케터 이슈 원고(보관 기간 안, 최신·priority 순) → 최근 생활 가이드. (url, 주제, 제목, 요약, 날짜)"""
     import os
@@ -362,6 +365,13 @@ def _read_candidates(ctx):
             L.append((d0.isoformat(), int(c.get('priority', 0)), c))
     for d0, _p, c in sorted(L, key=lambda x: (x[0], x[1]), reverse=True):
         out.append((f'/issue/{c["slug"]}/', c.get('category') or '이슈', c.get('home_title') or c['h1'], c.get('home_sum') or c.get('summary') or c.get('desc') or '', d0))
+        try:
+            import photo as _PH
+            _p = _PH.pick(c)
+            if _p:
+                _PHOTO[f'/issue/{c["slug"]}/'] = _p
+        except Exception:
+            pass
     try:
         kin = json.load(open(os.path.join(here, 'kin_guides.json'), encoding='utf-8'))['guides']
     except Exception:
@@ -406,7 +416,13 @@ def _sec_read(cands, seen):
         return ''
     f, rest = pick[0], pick[1:]
     dt = lambda c: f'<time datetime="{c[4]}">{_dstr(c[4])} 업데이트</time>' if c[4] else ''
-    big = (f'<article class="rd-f"><p class="kk">{E(f[1])}</p><h3><a href="{E(f[0])}">{E(_dt(f[2]))}</a></h3><p class="sm">{E(_first_sentences(f[3], 100))}</p><p class="mt">{dt(f)}</p></article>')
+    _p = _PHOTO.get(f[0])
+    _im = ''
+    if _p:
+        import photo as _PH
+        _im = (f'<a class="rd-im" href="{E(f[0])}" tabindex="-1" aria-hidden="true"><img src="{_PH.url(_p)}" width="{_p.get("w", 1200)}" height="{_p.get("h", 675)}" alt="" decoding="async"></a>'
+               f'<p class="rd-cr">자료 사진: {E(_p["alt"])} · {E(_p.get("author") or "작가 미상")} · {E(_p["license"])} · <a href="{E(_p["source"])}" target="_blank" rel="noopener nofollow">Wikimedia Commons</a></p>')
+    big = (f'<article class="rd-f">{_im}<p class="kk">{E(f[1])}</p><h3><a href="{E(f[0])}">{E(_dt(f[2]))}</a></h3><p class="sm">{E(_first_sentences(f[3], 100))}</p><p class="mt">{dt(f)}</p></article>')
     li = ''.join(f'<li><p class="kk">{E(c[1])}</p><h3><a href="{E(c[0])}">{E(_short(_dt(c[2]), 60))}</a></h3><p class="sm">{E(_first_sentences(c[3], 56))}</p><p class="mt">{dt(c)}</p></li>' for c in rest)
     return (f'<section class="h2-sec" aria-labelledby="s-read"><div class="h2-hd"><h2 id="s-read">지금 읽을 글</h2><a href="/issue/">이슈 전체 {_ic("arrow", "sv s")}</a></div>'
             f'<div class="rd-g">{big}<ul class="rd-l">{li}</ul></div></section>')
@@ -546,7 +562,7 @@ def home_html(ctx):
            f'<li><a href="/money/tools/salary/">{_ic("calc")}<span><b>계산기</b><small>필요한 금액 바로 계산</small></span></a></li></ul></section>')
     ent = [c for c in cands if c[1] == '연예']; cands = [c for c in cands if c[1] != '연예']
     return (top + _sec_read(cands, seen) + _opp_cards(ctx, seen) + _sec_guides(seen) + _sec_ent(ent, seen) + _sec_topics(ctx, seen)
-            + '<link rel="stylesheet" href="/assets/home/home2.css?v=8"><script defer src="/assets/home/home2.js?v=3"></script>')
+            + '<link rel="stylesheet" href="/assets/home/home2.css?v=9"><script defer src="/assets/home/home2.js?v=3"></script>')
 
 
 def kwmap_page_html():
