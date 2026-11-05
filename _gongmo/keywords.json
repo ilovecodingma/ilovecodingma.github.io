@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-05 17:00",
+ "updated": "2026-11-05 18:00",
  "items": [
   {
    "query": "로스앤젤레스 fc 대 미네소타 유나이티드 fc 순위",
@@ -219,6 +219,18 @@
    "expires": "2026-11-08"
   },
   {
+   "query": "경제",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 5000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-05",
+   "expires": "2026-11-08"
+  },
+  {
    "query": "김지영",
    "tier": "단기",
    "signal": [
@@ -252,6 +264,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-03",
+   "expires": "2026-11-08"
+  },
+  {
+   "query": "양민혁",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-04",
    "expires": "2026-11-08"
   },
   {
@@ -663,6 +687,18 @@
    "expires": "2026-11-08"
   },
   {
+   "query": "제네시스 g90",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-05",
+   "expires": "2026-11-08"
+  },
+  {
    "query": "당구",
    "tier": "단기",
    "signal": [
@@ -856,6 +892,18 @@
   },
   {
    "query": "디트로이트 대 필라데피아",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-05",
+   "expires": "2026-11-08"
+  },
+  {
+   "query": "잠수함",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -1083,18 +1131,6 @@
    "expires": "2026-11-08"
   },
   {
-   "query": "양민혁",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 1000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-04",
-   "expires": "2026-11-08"
-  },
-  {
    "query": "헤지펀드",
    "tier": "단기",
    "signal": [
@@ -1215,14 +1251,15 @@
    "expires": "2026-11-08"
   },
   {
-   "query": "잠수함",
+   "query": "코스피 5383.80 종가, 5.28% 내린 이유는? 사이드카 발동과 매체 분석 정리",
    "tier": "단기",
    "signal": [
+    "뉴스",
     "구글트렌드"
    ],
-   "score": 1000,
-   "status": "미작성",
-   "page": "",
+   "score": 5,
+   "status": "작성",
+   "page": "/issue/kospi-close-1105/",
    "registered": "2026-11-05",
    "expires": "2026-11-08"
   },
