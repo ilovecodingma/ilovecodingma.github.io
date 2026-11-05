@@ -3705,11 +3705,17 @@ def kin_guides():
     _pick = _rg.sample(G, min(8, len(G)))
     _pk = ''.join(f'<li><a href="/money/guide/{g["slug"]}/"><b>{E(g["h1"])}</b><span>{E(re.sub(chr(32) + "+", " ", g["lead"])[:70])}…</span></a></li>' for g in _pick)
     print('생활 가이드 주제 분포', {_tn[k]: len(v) for k, v in _tg.items()})
+    # 시즌 묶음(2026-11-05 마케터 요청): 제목에 다음 해 연도가 든 가이드를 「○○년에 달라지는 제도」로 맨 위에 모은다. 「달라지는 제도 총정리」류를 맨 앞에.
+    _ny = str(TODAY.year + 1)
+    _season = [g for g in G if _ny in (g['name'] + ' ' + g['h1'])]
+    _season.sort(key=lambda g: (0 if re.search(r'달라지는|바뀌는|총정리|확정', g['h1']) and re.search(r'제도', g['h1']) else 1, -G.index(g)))
+    _ssn = (f'<h2 class="mg-h2">{_ny}년에 달라지는 제도 <small>{len(_season)}편</small></h2><ul class="mg-p">'
+            + ''.join(f'<li><a href="/money/guide/{g["slug"]}/"><b>{E(g["h1"])}</b><span>{E(re.sub(chr(32) + "+", " ", g["lead"])[:70])}…</span></a></li>' for g in _season[:10]) + '</ul>') if len(_season) >= 3 else ''
     page('/money/guide/', '생활 돈 가이드 — 근로장려금·국민내일배움카드·월세 세액공제·퇴직금 (공식 출처 정리)', '근로장려금, 국민내일배움카드, 월세 세액공제와 청년월세 지원, 퇴직금을 국세청·고용노동부·고용24 등 공식 안내로 정리했어요. 계산기도 함께.',
          '<p class="bc"><a href="/">홈</a> › 생활 돈 가이드</p><h1 class="mg-h1">생활 돈 가이드</h1><p class="mg-sub">세금·일·집·복지 제도를 공식 출처와 확인일을 적어 정리했습니다. 궁금한 제도를 검색하거나 주제를 펼쳐 보세요.</p>'
          '<input id="mgq" class="mg-q" type="search" placeholder="예: 퇴직금, 월세, 실업급여, 에너지바우처" aria-label="가이드 검색" autocomplete="off">'
          '<ul class="mg-d mg-r" id="mgr" hidden></ul><p class="note" id="mgn" hidden>일치하는 가이드가 없어요. 검색어를 줄여 보세요.</p>'
-         f'<div id="mgb"><div class="mg-hd"><h2 class="mg-h2">오늘의 추천 가이드</h2><button type="button" class="mg-re" id="mgre">다른 글 보기</button></div><ul class="mg-p" id="mgp">{_pk}</ul>'
+         f'<div id="mgb">{_ssn}<div class="mg-hd"><h2 class="mg-h2">오늘의 추천 가이드</h2><button type="button" class="mg-re" id="mgre">다른 글 보기</button></div><ul class="mg-p" id="mgp">{_pk}</ul>'
          f'<h2 class="mg-h2">상황별로 시작하기</h2><div class="mg-j">{_jg}</div>'
          f'<h2 class="mg-h2">주제별로 찾기 <small>전체 {len(G)}편</small></h2><div class="mg-j mg-h">{_hub_cards}</div><div class="mg-ts" id="mgl">{_topics}</div>'
          + f'<h2 class="mg-h2">계산기</h2><ul class="list">{tools}</ul></div>' + kin_ans_links('/money/guide/') + join_cta('apply') + GAME_CSS

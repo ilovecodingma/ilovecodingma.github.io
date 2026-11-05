@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-05 22:00",
+ "updated": "2026-11-05 23:00",
  "items": [
   {
    "query": "로스앤젤레스 fc 대 미네소타 유나이티드 fc 순위",
@@ -6170,6 +6170,266 @@
    "score": 0,
    "status": "작성",
    "page": "/money/guide/overseas-stock-capital-gains-tax-filing/",
+   "registered": "2026-11-05",
+   "expires": ""
+  },
+  {
+   "query": "국가장학금 서류제출",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/national-scholarship-document-submission/",
+   "registered": "2026-11-05",
+   "expires": ""
+  },
+  {
+   "query": "국가장학금 1차 2차 차이",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/national-scholarship-1st-2nd-gap/",
+   "registered": "2026-11-05",
+   "expires": ""
+  },
+  {
+   "query": "학자금 지원구간 경곗값표",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/scholarship-bracket-income-table/",
+   "registered": "2026-11-05",
+   "expires": ""
+  },
+  {
+   "query": "가구원 정보제공 동의",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/scholarship-household-consent/",
+   "registered": "2026-11-05",
+   "expires": ""
+  },
+  {
+   "query": "2027 수능 시간표",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/suneung-2027-timetable/",
+   "registered": "2026-11-05",
+   "expires": ""
+  },
+  {
+   "query": "중간예납 추계액 신고·분납",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/income-tax-interim-estimate-installment/",
+   "registered": "2026-11-05",
+   "expires": ""
+  },
+  {
+   "query": "자동차세 12월 납부",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/car-tax-december-second-period/",
+   "registered": "2026-11-05",
+   "expires": ""
+  },
+  {
+   "query": "2027 4대보험 요율표",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/insurance-rates-2027-table/",
+   "registered": "2026-11-05",
+   "expires": ""
+  },
+  {
+   "query": "2027 기준 중위소득표",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/median-income-2027-table/",
+   "registered": "2026-11-05",
+   "expires": ""
+  },
+  {
+   "query": "2027년 공무원 봉급 확정 시기",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/civil-servant-pay-2027-schedule/",
+   "registered": "2026-11-05",
+   "expires": ""
+  },
+  {
+   "query": "2027년 병사 월급",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/soldier-pay-2027/",
+   "registered": "2026-11-05",
+   "expires": ""
+  },
+  {
+   "query": "2027년 확정 제도",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/2027-system-changes-confirmed-so-far/",
+   "registered": "2026-11-05",
+   "expires": ""
+  },
+  {
+   "query": "국가장학금 성적 기준",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/national-scholarship-grade-requirement-c-warning/",
+   "registered": "2026-11-05",
+   "expires": ""
+  },
+  {
+   "query": "통장 사본 인터넷 발급",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/bank-account-copy-online-vs-opening-certificate/",
+   "registered": "2026-11-05",
+   "expires": ""
+  },
+  {
+   "query": "채용신체검사서 발급",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/public-hire-medical-exam-hospital-cost-validity/",
+   "registered": "2026-11-05",
+   "expires": ""
+  },
+  {
+   "query": "2027년 기초연금",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/basic-pension-2027-increase-announce/",
+   "registered": "2026-11-05",
+   "expires": ""
+  },
+  {
+   "query": "2027년 부모급여·아동수당",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/parent-benefit-child-allowance-2027/",
+   "registered": "2026-11-05",
+   "expires": ""
+  },
+  {
+   "query": "2027 육아휴직급여",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/parental-leave-pay-2027/",
+   "registered": "2026-11-05",
+   "expires": ""
+  },
+  {
+   "query": "2027 실업급여 상하한액",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/unemployment-benefit-cap-floor-2027/",
+   "registered": "2026-11-05",
+   "expires": ""
+  },
+  {
+   "query": "2027 유치원 입학 신청 포털",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/kindergarten-2027-portal/",
    "registered": "2026-11-05",
    "expires": ""
   },
