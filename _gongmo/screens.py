@@ -362,8 +362,8 @@ def _read_candidates(ctx):
                 continue
             if (today - d0).days > int(c.get('keep_days', 4)) or not os.path.exists(os.path.join(root, 'issue', c['slug'], 'index.html')):
                 continue
-            L.append((d0.isoformat(), int(c.get('priority', 0)), c))
-    for d0, _p, c in sorted(L, key=lambda x: (x[0], x[1]), reverse=True):
+            L.append((d0.isoformat(), int(c.get('priority', 0)), os.path.getmtime(os.path.join(idir, fn)), c))
+    for d0, _p, _m, c in sorted(L, key=lambda x: (x[0], x[1], x[2]), reverse=True):   # 같은 날·같은 우선순위면 가장 최근에 올리거나 고친 글이 먼저(2026-11-05)
         out.append((f'/issue/{c["slug"]}/', c.get('category') or '이슈', c.get('home_title') or c['h1'], c.get('home_sum') or c.get('summary') or c.get('desc') or '', d0))
         try:
             import photo as _PH
