@@ -410,8 +410,10 @@ def _sec_read(cands, seen):
         if c[0] in seen:
             continue
         pick.append(c); seen.add(c[0])
-        if len(pick) == 3:
+        if len(pick) == 4:
             break
+    if len(pick) == 4 and not _PHOTO.get(pick[0][0]):   # 대표 글에 사진이 있으면 왼쪽이 길어지므로 보조 3건, 없으면 보조 2건(좌우 높이 균형)
+        seen.discard(pick[3][0]); pick = pick[:3]
     if not pick:
         return ''
     f, rest = pick[0], pick[1:]
@@ -562,7 +564,7 @@ def home_html(ctx):
            f'<li><a href="/money/tools/salary/">{_ic("calc")}<span><b>계산기</b><small>필요한 금액 바로 계산</small></span></a></li></ul></section>')
     ent = [c for c in cands if c[1] == '연예']; cands = [c for c in cands if c[1] != '연예']
     return (top + _sec_read(cands, seen) + _opp_cards(ctx, seen) + _sec_guides(seen) + _sec_ent(ent, seen) + _sec_topics(ctx, seen)
-            + '<link rel="stylesheet" href="/assets/home/home2.css?v=9"><script defer src="/assets/home/home2.js?v=3"></script>')
+            + '<link rel="stylesheet" href="/assets/home/home2.css?v=10"><script defer src="/assets/home/home2.js?v=3"></script>')
 
 
 def kwmap_page_html():

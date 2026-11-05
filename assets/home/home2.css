@@ -104,3 +104,4 @@ main .qk a{display:flex;gap:10px;align-items:flex-start;min-height:56px;padding:
 .rd-im img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;background:#e2e8f0}
 .rd-cr{margin:6px 0 14px;font-size:12px;line-height:1.45;color:#64748b}main .rd-cr a{color:inherit;text-decoration:underline}
 @media(max-width:700px){.rd-im{margin:-20px -20px 0}}
+@media(min-width:1001px){.rd-im img{aspect-ratio:2/1}}
