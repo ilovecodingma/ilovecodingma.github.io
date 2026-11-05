@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-05 21:00",
+ "updated": "2026-11-05 22:00",
  "items": [
   {
    "query": "로스앤젤레스 fc 대 미네소타 유나이티드 fc 순위",
@@ -64,6 +64,18 @@
   },
   {
    "query": "경제",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 10000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-05",
+   "expires": "2026-11-08"
+  },
+  {
+   "query": "하이닉스",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -1264,6 +1276,18 @@
   },
   {
    "query": "유치원",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-05",
+   "expires": "2026-11-08"
+  },
+  {
+   "query": "차명석",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -6385,6 +6409,19 @@
    "expires": "2026-11-12"
   },
   {
+   "query": "삼성전자 제6노조 설립신고 접수, 동행노조 내부 갈등설 공방 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 5,
+   "status": "작성",
+   "page": "/issue/samsung-sixth-union-1105/",
+   "registered": "2026-11-05",
+   "expires": "2026-11-12"
+  },
+  {
    "query": "서울 교사 임용시험 스마트안경 검사, 1교시 전 안경 벗어 확인? 시험일·조치 정리",
    "tier": "중기",
    "signal": [
@@ -6422,6 +6459,19 @@
    "page": "/issue/suneung-day-checklist-1104/",
    "registered": "2026-11-04",
    "expires": "2026-11-25"
+  },
+  {
+   "query": "서울시립대 논술 스마트안경 수험생 2명 업무방해 고소, 학교 발표와 적발 경위 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 5,
+   "status": "작성",
+   "page": "/issue/uos-essay-smart-glasses-complaint-1105/",
+   "registered": "2026-11-05",
+   "expires": "2026-11-19"
   },
   {
    "query": "미국 중간선거 결과 상원 하원 어떻게 됐나, AP 호명과 미확정 정리",

@@ -92,7 +92,7 @@ THEMES = [next(t for t in THEMES if t[0] == k) for k in ('today', 'recipe', 'wat
 
 
 # 2026-11-05 모바일 점검: 생활 가이드·계산기·고민 해결 글에 「애널리스트 종합·전문가 코멘트」 하위 메뉴가 떠서, 이 주소들은 가이드용 하위 메뉴를 쓴다
-GUIDE_SUB = [('/money/guide/', '생활 가이드'), ('/qa/', '고민 해결'), ('/money/tools/salary/', '계산기'), ('/wiki/', '위키')]
+GUIDE_SUB = [('/money/guide/', '생활 가이드'), ('/qa/', '고민 해결'), ('/money/tools/salary/', '계산기'), ('/book/', '전자책'), ('/wiki/', '위키')]
 GUIDE_SUB_PX = ('/money/guide/', '/money/tools/', '/qa/')
 GN_MAIN = ('issue', 'apply', 'contest', 'money', 'wiki')   # 헤더에 항상 보이는 주요 주제(나머지는 「전체」)
 GN_HOME = {'money': '/money/guide/', 'issue': '/issue/'}
@@ -359,7 +359,7 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False, noinde
 <footer class="ft"><div class="w ft-in"><div class="ft-top"><div class="ft-b"><b>루리 줍줍</b><p>이슈부터 지원금·공모전까지, 출처와 함께 정리하는 정보 서비스입니다. 분석 코너는 「루리 애널리스트」, 문서 모음은 「루리 위키」입니다.</p><p class="ft-m">문의 <a href="mailto:{MAIL}">{MAIL}</a>{"" if PARTNER == MAIL else f' · 제휴 <a href="mailto:{PARTNER}">{PARTNER}</a>'}</p></div>
 <nav class="ft-g" aria-label="사이트 메뉴"><div><b>읽을거리</b><a href="/issue/">이슈</a><a href="/money/guide/">생활 가이드</a><a href="/analyst/">애널리스트</a><a href="/fridge/">레시피</a></div>
 <div><b>기회 찾기</b><a href="/apply/">지원금·청약</a><a href="/contest/">공모전</a><a href="/today/">오늘 마감</a><a href="/event/">경품 이벤트</a></div>
-<div><b>도구·탐색</b><a href="/wiki/">루리 위키</a><a href="/map/">키워드 지도</a><a href="/money/tools/salary/">계산기</a><a href="/all/">전체 메뉴</a></div>
+<div><b>도구·탐색</b><a href="/wiki/">루리 위키</a><a href="/map/">키워드 지도</a><a href="/money/tools/salary/">계산기</a><a href="/book/">전자책</a><a href="/all/">전체 메뉴</a></div>
 <div><b>운영 정보</b><a href="/about/">소개·만드는 방식</a><a href="/corrections/">정정 기록</a><a href="/privacy/">개인정보처리방침</a><a href="/terms/">이용약관</a><a href="/contact/">문의</a></div></nav></div>
 {('<p class="ft-c"><span>외부 채널</span> ' + comm_btns() + '</p>') if COMM_LINKS else ''}
 <p class="ft-n">정보는 각 기관의 공고·언론 보도·공개 자료를 AI로 수집·정리한 것입니다. 정확한 내용은 반드시 공식 공고와 원문에서 확인하세요. 일부 링크는 쿠팡 파트너스 활동의 일환으로 수수료를 받을 수 있습니다. © 2026 루리 줍줍 · sungprofile.cloud</p></div></footer>{CL_CSS if COMM_LINKS else ''}
@@ -2891,6 +2891,11 @@ def build():
         print('PDF 새로 만듦 %d / 전체 %d' % _MP.make(ROOT, _pp))
     except Exception as e:
         print('PDF 생성 실패(사이트는 계속)', repr(e)[:100])
+    try:
+        import books as _BK
+        print('전자책 PDF 새로 만듦', _BK.make_pdfs(ROOT))
+    except Exception as e:
+        print('전자책 PDF 실패(사이트는 계속)', repr(e)[:100])
     print('지난 달 모음 검색 제외', stale_month_noindex(urls))
     global NEW_URLS
     sm = os.path.join(ROOT, 'sitemap.xml')
@@ -3587,6 +3592,11 @@ def kin_guides():
         for i, st in enumerate(j['steps']):
             JIDX.setdefault(st['slug'], (j, i))
     urls, cards = [], ''
+    try:   # 2026-11-05 전자책: 가이드를 주제·상황별로 묶은 책(/book/). 본문은 가이드 그대로, 읽기 화면은 검색 제외
+        import books as BK
+        urls += BK.build(G, JR, page, ROOT)
+    except Exception as _e:
+        print('전자책 만들기 실패(사이트는 계속)', repr(_e)[:120])
     for g in G:
         secs, toc = '', []
         for n_, sc in enumerate(g['sections'], 1):

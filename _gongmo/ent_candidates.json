@@ -1,5 +1,5 @@
 {
- "at": "2026-11-05 21:06",
+ "at": "2026-11-05 21:30",
  "nitems": 525,
  "cands": [
   {
@@ -15,12 +15,17 @@
     "한국경제",
     "헤럴드경제"
    ],
-   "n": 9,
+   "n": 10,
    "headlines": [
     {
      "src": "연합뉴스",
      "title": "서양 옷 입은 'K-로판'…'재혼 황후' 낯섦 딛고 글로벌서 날까",
      "link": "https://www.yna.co.kr/view/AKR20261104039700005"
+    },
+    {
+     "src": "동아일보",
+     "title": "‘재혼 황후’ 터졌다…디즈니+ 12개국 정상·글로벌 7위",
+     "link": "https://sports.donga.com/ent/article/all/20261105/134975501/1"
     },
     {
      "src": "동아일보",
@@ -31,11 +36,6 @@
      "src": "한겨레",
      "title": "“유치한데 중독성 있네”…‘재혼 황후’ 호불호 속 디즈니 1위",
      "link": "https://www.hani.co.kr/arti/culture/culture_general/1285884.html"
-    },
-    {
-     "src": "한국경제",
-     "title": "서인영, 12월 26일 재혼…신랑은 6세 연상 NP 최지훈 대표",
-     "link": "https://www.hankyung.com/article/202611057401H"
     }
    ]
   },
@@ -813,6 +813,39 @@
    ]
   },
   {
+   "kw": "디즈니",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "연합뉴스",
+    "한겨레"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "디즈니, 내년 싱가포르서 대형 팬 행사…한국 등 신작 공개",
+     "link": "https://www.yna.co.kr/view/AKR20261105096800005"
+    },
+    {
+     "src": "동아일보",
+     "title": "‘재혼 황후’ 터졌다…디즈니+ 12개국 정상·글로벌 7위",
+     "link": "https://sports.donga.com/ent/article/all/20261105/134975501/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "美 유력 매체 주목…디즈니+ ‘재혼 황후’ K-로판 글로벌 안착",
+     "link": "https://sports.donga.com/ent/article/all/20261105/134970203/1"
+    },
+    {
+     "src": "한겨레",
+     "title": "“유치한데 중독성 있네”…‘재혼 황후’ 호불호 속 디즈니 1위",
+     "link": "https://www.hani.co.kr/arti/culture/culture_general/1285884.html"
+    }
+   ]
+  },
+  {
    "kw": "국내",
    "nsrc": 4,
    "srcs": [
@@ -875,6 +908,39 @@
      "src": "SBS",
      "title": "\"학폭 사실무근\" 반박에도…차예련 SNS \"해명하라\" 쇄도",
      "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008825394&plink=RSSLINK&cooper=RSSREADER"
+    }
+   ]
+  },
+  {
+   "kw": "황후",
+   "nsrc": 4,
+   "srcs": [
+    "동아일보",
+    "연합뉴스",
+    "조선일보",
+    "한겨레"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "서양 옷 입은 'K-로판'…'재혼 황후' 낯섦 딛고 글로벌서 날까",
+     "link": "https://www.yna.co.kr/view/AKR20261104039700005"
+    },
+    {
+     "src": "동아일보",
+     "title": "‘재혼 황후’ 터졌다…디즈니+ 12개국 정상·글로벌 7위",
+     "link": "https://sports.donga.com/ent/article/all/20261105/134975501/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "美 유력 매체 주목…디즈니+ ‘재혼 황후’ K-로판 글로벌 안착",
+     "link": "https://sports.donga.com/ent/article/all/20261105/134970203/1"
+    },
+    {
+     "src": "한겨레",
+     "title": "“유치한데 중독성 있네”…‘재혼 황후’ 호불호 속 디즈니 1위",
+     "link": "https://www.hani.co.kr/arti/culture/culture_general/1285884.html"
     }
    ]
   },
@@ -978,39 +1044,6 @@
    ]
   },
   {
-   "kw": "방탄소년",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "동아일보",
-    "세계일보"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "방탄소년단 ‘스윔’ 美 표절 소송, 원고 측 ‘자진취하’로 종결",
-     "link": "https://sports.donga.com/ent/article/all/20261105/134970858/1"
-    },
-    {
-     "src": "세계일보",
-     "title": "방탄소년단 '스윔' 표절 주장 소송, 원고 측 자진 취하…美 저작권 시비 종결",
-     "link": "https://www.segye.com/newsView/20261105509138"
-    },
-    {
-     "src": "SBS",
-     "title": "지드래곤부터 방탄소년단까지, K팝 별들 한자리에 모였다",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008829739&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "SBS",
-     "title": "방탄소년단, 남미 사로잡았다…전 회차 매진으로 85만 명 동원",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008825775&plink=RSSLINK&cooper=RSSREADER"
-    }
-   ]
-  },
-  {
    "kw": "표절",
    "nsrc": 4,
    "srcs": [
@@ -1040,6 +1073,39 @@
      "src": "세계일보",
      "title": "방탄소년단 '스윔' 표절 주장 소송, 원고 측 자진 취하…美 저작권 시비 종결",
      "link": "https://www.segye.com/newsView/20261105509138"
+    }
+   ]
+  },
+  {
+   "kw": "방탄소년",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "동아일보",
+    "세계일보"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "방탄소년단 ‘스윔’ 美 표절 소송, 원고 측 ‘자진취하’로 종결",
+     "link": "https://sports.donga.com/ent/article/all/20261105/134970858/1"
+    },
+    {
+     "src": "세계일보",
+     "title": "방탄소년단 '스윔' 표절 주장 소송, 원고 측 자진 취하…美 저작권 시비 종결",
+     "link": "https://www.segye.com/newsView/20261105509138"
+    },
+    {
+     "src": "SBS",
+     "title": "지드래곤부터 방탄소년단까지, K팝 별들 한자리에 모였다",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008829739&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "SBS",
+     "title": "방탄소년단, 남미 사로잡았다…전 회차 매진으로 85만 명 동원",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008825775&plink=RSSLINK&cooper=RSSREADER"
     }
    ]
   },
@@ -1176,39 +1242,6 @@
    ]
   },
   {
-   "kw": "디즈니",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "연합뉴스",
-    "한겨레"
-   ],
-   "n": 4,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "디즈니, 내년 싱가포르서 대형 팬 행사…한국 등 신작 공개",
-     "link": "https://www.yna.co.kr/view/AKR20261105096800005"
-    },
-    {
-     "src": "동아일보",
-     "title": "美 유력 매체 주목…디즈니+ ‘재혼 황후’ K-로판 글로벌 안착",
-     "link": "https://sports.donga.com/ent/article/all/20261105/134970203/1"
-    },
-    {
-     "src": "한겨레",
-     "title": "“유치한데 중독성 있네”…‘재혼 황후’ 호불호 속 디즈니 1위",
-     "link": "https://www.hani.co.kr/arti/culture/culture_general/1285884.html"
-    },
-    {
-     "src": "뉴시스",
-     "title": "디즈니, 내년 싱가포르서 팬 행사 'D23' 개최…韓 신작도 공개",
-     "link": "https://www.newsis.com/view/NISX20261105_0003856483"
-    }
-   ]
-  },
-  {
    "kw": "유튜브",
    "nsrc": 4,
    "srcs": [
@@ -1304,39 +1337,6 @@
      "src": "뉴시스",
      "title": "차예련, 학폭 의혹 부인에 법적대응까지 예고했는데…",
      "link": "https://www.newsis.com/view/NISX20261105_0003856532"
-    }
-   ]
-  },
-  {
-   "kw": "황후",
-   "nsrc": 4,
-   "srcs": [
-    "동아일보",
-    "연합뉴스",
-    "조선일보",
-    "한겨레"
-   ],
-   "n": 4,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "서양 옷 입은 'K-로판'…'재혼 황후' 낯섦 딛고 글로벌서 날까",
-     "link": "https://www.yna.co.kr/view/AKR20261104039700005"
-    },
-    {
-     "src": "동아일보",
-     "title": "美 유력 매체 주목…디즈니+ ‘재혼 황후’ K-로판 글로벌 안착",
-     "link": "https://sports.donga.com/ent/article/all/20261105/134970203/1"
-    },
-    {
-     "src": "한겨레",
-     "title": "“유치한데 중독성 있네”…‘재혼 황후’ 호불호 속 디즈니 1위",
-     "link": "https://www.hani.co.kr/arti/culture/culture_general/1285884.html"
-    },
-    {
-     "src": "조선일보",
-     "title": "\"이태오 다음 소비에슈\"..'재혼 황후' 주지훈표 '사빠죄아' [Oh!쎈 이슈]",
-     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/05/HAYWENBXGUZGGYJXMJRDINJYME/"
     }
    ]
   }
