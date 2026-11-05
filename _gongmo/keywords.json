@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-05 14:00",
+ "updated": "2026-11-05 15:00",
  "items": [
   {
    "query": "로스앤젤레스 fc 대 미네소타 유나이티드 fc 순위",
@@ -5894,6 +5894,136 @@
    "score": 0,
    "status": "작성",
    "page": "/money/guide/boiler-fire-co-poisoning-checklist/",
+   "registered": "2026-11-05",
+   "expires": ""
+  },
+  {
+   "query": "비상 가방 준비물",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/emergency-bag-checklist-official/",
+   "registered": "2026-11-05",
+   "expires": ""
+  },
+  {
+   "query": "민방위 대피소 조회",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/civil-defense-shelter-lookup/",
+   "registered": "2026-11-05",
+   "expires": ""
+  },
+  {
+   "query": "토지거래허가구역",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/land-transaction-permit-zone/",
+   "registered": "2026-11-05",
+   "expires": ""
+  },
+  {
+   "query": "고립·은둔 청년 지원",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/isolated-youth-support/",
+   "registered": "2026-11-05",
+   "expires": ""
+  },
+  {
+   "query": "구급대원 폭행 처벌",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/fire-ems-assault-penalty-119/",
+   "registered": "2026-11-05",
+   "expires": ""
+  },
+  {
+   "query": "촉법소년 절도 절차",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/juvenile-theft-protective-case-procedure/",
+   "registered": "2026-11-05",
+   "expires": ""
+  },
+  {
+   "query": "계산 안 한 물건 합의금",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/store-shoplifting-settlement-demand/",
+   "registered": "2026-11-05",
+   "expires": ""
+  },
+  {
+   "query": "아파트 가격 공식 통계",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/housing-price-official-stats-guide/",
+   "registered": "2026-11-05",
+   "expires": ""
+  },
+  {
+   "query": "숙박요금 바가지 환불·신고",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/lodging-overcharge-refund-report-method/",
+   "registered": "2026-11-05",
+   "expires": ""
+  },
+  {
+   "query": "해외주식 양도세 신고",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/overseas-stock-capital-gains-tax-filing/",
    "registered": "2026-11-05",
    "expires": ""
   },
