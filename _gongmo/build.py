@@ -62,7 +62,7 @@ EV_KIND = {'event': '이벤트', 'sweepstakes': '추첨 경품', 'quiz': '퀴즈
            'sns_tag_required': '친구 태그', 'sns_story_required': '스토리 공유', 'sns_capture': '캡처 인증', 'sns_form_only': '폼 응모',
            'sns_comment+form': '댓글+폼', 'sns_purchase': '구매 인증', 'sns_region': '지역 한정', 'sns_other': 'SNS 이벤트'}
 
-COMM_TAGS_TPL = '<link rel="stylesheet" href="/assets/community/comm.css?v=17"><script defer src="/assets/community/comm.js?v=32"></script><script defer src="/assets/community/crew.js?v=1"></script>'
+COMM_TAGS_TPL = '<link rel="stylesheet" href="/assets/community/comm.css?v=17"><script defer src="/assets/community/comm.js?v=33"></script><script defer src="/assets/community/crew.js?v=1"></script>'
 GTAG = ('<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4248498719773262" crossorigin="anonymous"></script>\n'
         '<script async src="https://www.googletagmanager.com/gtag/js?id=G-G9BPFF95GY"></script>\n'
         "<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());if(location.hostname!=='sungprofile.cloud')window['ga-disable-G-G9BPFF95GY']=true;gtag('config','G-G9BPFF95GY');</script>")
@@ -597,6 +597,36 @@ def elig_short(c):
     if re.search(r'제한\s?없|누구나|전\s?국민|일반\s?국민|일반인', e):
         return '누구나'
     return SH.clip(e, 22) or '확인 필요'
+
+
+_AP_BUL = re.compile(r'^(?:[ㅇ○●■□▷▶※·•*\-]\s*|o\s+(?=[가-힣(]))+')
+_AP_LT = r'\(?\s*(?:신청\s?자격|지원\s?대상|사업\s?대상|자격\s?요건|참여\s?대상|대상)\s*\)?\s*[:：]?\s*'
+_AP_LB = r'\(?\s*(?:지원\s?내용|사업\s?내용|지원\s?금액|지원\s?규모|혜택)\s*\)?\s*[:：]?\s*'
+AP_FIX = collections.Counter()   # 이번 빌드에서 고친 칸 수(내부 로그)
+
+
+def ap_fields(target, benefit):
+    """지원금 대상·혜택 칸 정리(2026-11-05 품질 고도화 P0, 633건 점검 결과):
+    ① 원문의 글머리 기호·항목 이름(「ㅇ 신청자격 :」「ㅇ 지원내용 :」)이 값 앞에 그대로 붙어 있던 것 99건 → 떼어 낸다(값은 그대로)
+    ② 혜택 칸에 「지원대상: …」이 들어온 것 4건 → 혜택은 비우고(확인 필요로 표시), 대상이 「청년」처럼 짧으면 그 설명으로 바꾼다
+    ③ 혜택 칸이 사업 기간·예산(「기간/사업비 : …」)이거나 대상 칸이 항목 이름뿐(「전공요건 세부설명」)인 것 → 비운다. 값을 지어내지 않는다."""
+    t, b = _AP_BUL.sub('', target or '').strip(), _AP_BUL.sub('', benefit or '').strip()
+    if t != (target or '').strip() or b != (benefit or '').strip():
+        AP_FIX['글머리 기호 제거'] += 1
+    if re.match(r'\(?\s*(?:신청\s?자격|지원\s?대상|사업\s?대상|자격\s?요건|참여\s?대상)', b):
+        moved = re.sub('^' + _AP_LT, '', b)
+        if len(t) < 12 and moved:
+            t = moved
+        b = ''; AP_FIX['혜택 칸의 대상 설명 분리'] += 1
+    if re.match(r'\(?\s*(?:신청\s?자격|지원\s?대상|사업\s?대상|자격\s?요건|참여\s?대상)\s*\)?\s*[:：]?', t):
+        t = re.sub('^' + _AP_LT, '', t)
+    if re.match(_AP_LB, b) and re.match(r'\(?\s*(?:지원\s?내용|사업\s?내용|지원\s?금액|지원\s?규모|혜택)', b):
+        b = re.sub('^' + _AP_LB, '', b)
+    if re.match(r'(?:기간\s?/\s?사업비|총?\s?사업비|예산)\s*[:：]', b):
+        b = ''; AP_FIX['혜택 칸의 사업비 제거'] += 1
+    if len(t) < 16 and re.search(r'세부\s?설명$|^해당\s?없음$|^-+$|^없음$', t):
+        t = ''; AP_FIX['이름뿐인 대상 칸 비움'] += 1
+    return t.strip(), b.strip()
 
 
 def age_txt(a):
@@ -1820,6 +1850,8 @@ def load_apply():
                     'start': r.get('start', ''), 'end': end, 'url': r.get('url', ''), 'source': r.get('source', ''), 'verified': bool(r.get('verified')),
                     'always': bool(r.get('always')), 'region': P.clean(r.get('region', ''))[:20], 'target': re.sub(r'만\s?(\d{1,2})\s?~\s?\1\s?세', r'만 \1세', P.clean(r.get('target', '')))[:200], 'benefit': P.clean(r.get('benefit', ''))[:200],
                     'how': P.clean(r.get('how', ''))[:60], 'income': P.clean(r.get('income', ''))[:30], 'age_min': r.get('age_min'), 'age_max': r.get('age_max')})
+        out[-1]['target'], out[-1]['benefit'] = ap_fields(out[-1]['target'], out[-1]['benefit'])
+    print('지원금 칸 정리', dict(AP_FIX))
     out.sort(key=lambda a: (a['end'], a['title']))
     return out
 
@@ -3597,7 +3629,7 @@ def kin_guides():
                 + join_cta('apply')
                 + _cite_box(g, f'/money/guide/{g["slug"]}/')
                 + f'<section class="g-src" id="src"><h2>📎 공식 출처</h2><ul class="gm-l">{src}</ul>'
-                + f'<p class="note">공식 안내를 줍줍이 직접 확인해 정리한 내용이고, 기준 금액과 신청 기간은 해마다 바뀔 수 있어요. 신청 전에 위 공식 출처를 꼭 확인하고, 개별 사정은 {E(g["contact"])}에 문의하세요. 법률·세무 상담이 아니에요.</p></section>'
+                + f'<p class="note">AI가 위 공식 출처를 바탕으로 확인일 기준으로 정리한 내용이고, 운영자가 한 건씩 직접 검토한 것은 아니에요. 기준 금액과 신청 기간은 해마다 바뀔 수 있어요. 신청 전에 위 공식 출처를 꼭 확인하고, 개별 사정은 {E(g["contact"])}에 문의하세요. 법률·세무 상담이 아니에요.</p></section>'
                 + _g_appendix(g)
                 + (f'<aside class="say"><img src="/assets/ruri/o_det_think_s.webp" width="56" height="77" alt="루리" loading="lazy"><div class="bub"><b>루리의 한마디</b><div>{E(g["lury_note"])}</div></div></aside>' if g.get('lury_note') else '')
                 + f'<p class="hm-links">{rel} · <a href="/money/guide/">다른 생활 돈 가이드</a></p>' + GAME_CSS + '<link rel="stylesheet" href="/assets/guide/guide.css?v=7">' + (f'<script defer src="{E(g["script"])}"></script>' if g.get('script') else ''))

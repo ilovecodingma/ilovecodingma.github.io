@@ -53,6 +53,77 @@ BEAR = re.compile(r'하락|약세|비관|매도|조정|폭락|경고|버블|붕�
 PERSON = re.compile(r'([가-힣A-Za-z]{2,12}(?: CEO| 회장| 창업자| 전략가| 애널리스트| 리서치| 캐피털| 증권| 은행|인베스트먼트|자산운용)?)\s?(?:은|는|이|가)?\s?["“]')
 
 
+# ---- 엔티티 정규화·유형 검증 (2026-11-05 품질 고도화 지침 P0: 조사·동사·문장 조각이 이름으로 분류되지 않게)
+# 종목명: 제목 첫 토막을 그대로 쓰던 탓에 「28일」「영업익」「증권가」「하루에」가 종목으로, 같은 회사가 두 이름(LG생건/LG생활건강)으로 집계됐다.
+STOCK_ALIAS = {'LG생건': 'LG생활건강', '대한통운': 'CJ대한통운', 'KAI': '한국항공우주', 'POSCO홀딩스': '포스코홀딩스', '한화에어로': '한화에어로스페이스', '아마존닷컴': '아마존',
+               'IPARK현산': 'IPARK현대산업개발', 'HDC현산': 'IPARK현대산업개발', 'HDC현대산업개발': 'IPARK현대산업개발', '현산': 'IPARK현대산업개발', '삼전': '삼성전자', '하닉': 'SK하이닉스',
+               'LG엔솔': 'LG에너지솔루션', '엔솔': 'LG에너지솔루션', 'NC': '엔씨소프트', '엔씨': '엔씨소프트', '한전': '한국전력', '가스공사': '한국가스공사', '삼성바이오': '삼성바이오로직스',
+               '삼바': '삼성바이오로직스', 'SKT': 'SK텔레콤', 'NAVER': '네이버', 'MS': '마이크로소프트', '현대중공업': 'HD현대중공업', '한국조선해양': 'HD한국조선해양', '현대일렉트릭': 'HD현대일렉트릭',
+               'LG화학우': 'LG화학', '에코프로BM': '에코프로비엠', '포스코인터': '포스코인터내셔널', '한화솔루션우': '한화솔루션', 'SK이노': 'SK이노베이션', '두산에너': '두산에너빌리티'}
+STOCK_NOT = re.compile(
+    r'^\d'                                                                    # 28일, 3분기, 2차전지…
+    r'|^(?:오늘|내일|어제|하루|이번|올해|내년|지난|다음|최근|상반기|하반기|연말|연초|주간|월간)'   # 때를 가리키는 말로 시작
+    r'|^(?:영업익|영업이익|순이익|순익|매출|매출액|실적|증권가|증권사|증권주|월가|외인|개인|국내|해외|글로벌|한국|미국|중국|일본|석화기업|대형주|중소형주|성장주|가치주|배당주)$'
+    r'|(?:기업|업계|업종|관련주|테마주|수혜주|대장주|주가|종목|섹터|시장)$'
+    r'|^(?:증권|은행|방산|조선|반도체|건설|화학|보험|통신|자동차|게임|엔터|바이오|제약|이차전지|금융|지주|원전|전력|로봇|화장품|유통|철강|항공|해운|음식료)주$'
+    r'|번스타인|도이체방크|도이치|모건스탠리|골드만삭스|JP모건|씨티|UBS|HSBC|바클레이즈|제프리스|웰스파고|노무라|맥쿼리|CLSA'   # 증권사 이름이 종목 자리에
+    r'|[가-힣](?:에|를|을|은|는|도|과|와|의|에서|으로|부터|까지|보다|마다|처럼)$')            # 조사로 끝나는 문장 조각
+STOCK_OK = {'HL만도', '만도', '에코프로', '하이트진로', '카카오페이', '현대오토에버'}   # 조사처럼 끝나지만 실제 종목명
+ENT_REJECT = []   # 이번 실행에서 걸러낸 이름(내부 로그 analyst_rejects.json)
+
+
+def norm_stock(name, body=''):
+    """종목명 → 대표 이름. 종목이 아닌 말(날짜·일반명사·문장 조각·증권사 이름)이면 None. 본문이 있으면 그 이름이 본문에 실제로 나오는지도 본다."""
+    n = (name or '').strip()
+    if not n:
+        return None
+    c = STOCK_ALIAS.get(n, n)
+    if STOCK_NOT.search(n) and n not in STOCK_ALIAS and n not in STOCK_OK:
+        ENT_REJECT.append({'kind': 'stock', 'name': n, 'why': '종목명 형식 아님'})
+        return None
+    if body and n not in body and c not in body:
+        ENT_REJECT.append({'kind': 'stock', 'name': n, 'why': '본문에 이름 없음'})
+        return None
+    return c
+
+
+# 전문가·기관: 직함 앞 단어를 무조건 붙이던 탓에 「빼면 IMF」「날린 월가」가 이름이 됐고, 금융과 무관한 「국수본부장」「통상본부장」이 들어왔다.
+WHO_INST = re.compile(r'^(?:월가|연준|IMF|OECD|KDI|한국개발연구원|국제통화기금|한국은행|골드만삭스|JP모건|모건스탠리|블랙록|씨티|BofA|뱅크오브아메리카|노무라|자본시장연구원|금융연구원|버핏|다이먼|파월)$')
+WHO_SELF = re.compile(r'^(?:금융위원장|금감원장|금융감독원장|기재부 장관|기획재정부 장관|경제부총리|한은 총재)$')   # 앞말 없이도 누구인지 정해지는 직함
+WHO_FIN = re.compile(r'(?:증권|자산운용|운용|은행|연구원|연구소|캐피털|캐피탈|인베스트먼트|투자|금융|리서치|硏|연은|BOJ|ECB|RBA|BOE|한은|금감원|금융위|기재부|분데스방크|블룸버그|헤지펀드|펀드|IB|PB)$')
+WHO_NEED_FIN = ('본부장', '센터장')   # 흔한 직함이라 금융 기관 이름이 앞에 있을 때만 받는다
+WHO_BADPRE = re.compile(r'(?:에|면|린|는|은|고|한|된|할|던|도|를|을|의|로|와|과|서|며|자|니|게|해|워|져|때|및|등)$')
+WHO_NAME = re.compile(r'^[가-힣]{2,4}$')
+
+
+def who_of(title):
+    """제목에서 발언 주체(기관·직함)를 뽑는다. 주체를 정할 수 없으면 None(그 기사는 전문가 코멘트로 쓰지 않는다)."""
+    m0 = EXP_ROLE.search(title)
+    if not m0:
+        return None
+    role = m0.group(0)
+    if WHO_INST.match(role):
+        return role
+    md = re.search(r'([가-힣A-Za-z]{2,8})\s?(부총재보|부총재)', title)   # 「한은 부총재」는 「총재」로 잘라 읽지 않는다
+    if md and role == '총재':
+        return (md.group(1) + ' ' + md.group(2)) if (WHO_FIN.search(md.group(1)) or md.group(1) in BROKERS) else None
+    m = re.search(r'([가-힣A-Za-z&·]{2,12})\s?' + re.escape(role), title)
+    pre = m.group(1) if m else ''
+    if role == '자산운용':   # 「○○자산운용」처럼 회사 이름이 앞에 붙어야 주체가 정해진다
+        return (pre + role) if (pre and not WHO_BADPRE.search(pre)) else None
+    if pre and (WHO_FIN.search(pre) or pre in BROKERS):
+        return (pre + ' ' + role) if (m.group(0) != pre + role) else pre + role
+    if role in WHO_NEED_FIN:
+        ENT_REJECT.append({'kind': 'who', 'name': (pre + ' ' + role).strip(), 'why': '금융 기관이 아닌 본부장·센터장'})
+        return None
+    if WHO_SELF.match(role):
+        return (pre + ' ' + role) if (pre and WHO_NAME.match(pre) and not WHO_BADPRE.search(pre)) else role
+    if pre and not WHO_BADPRE.search(pre) and (WHO_NAME.match(pre) or re.match(r'^[A-Za-z&·]{2,12}$', pre)):
+        return (pre + ' ' + role) if (m.group(0) != pre + role) else pre + role
+    ENT_REJECT.append({'kind': 'who', 'name': (pre + ' ' + role).strip(), 'why': '발언 주체 불명'})
+    return None
+
+
 def clean(s):
     import html as H
     s = re.sub(r'<!\[CDATA\[(.*?)\]\]>', r'\1', s or '', flags=re.S)
@@ -172,7 +243,7 @@ def stock_nodes(arts, bodies):
         if not re.search(r'목표(?:주)?가|투자의견', t):
             continue
         br = broker_of(t, b)
-        st = stock_of(t, br)
+        st = norm_stock(stock_of(t, br), b)
         if not st:
             continue
         d = 'up' if UP.search(t) else 'down' if DOWN.search(t) else 'keep' if KEEP.search(t + b[:400]) else None
@@ -225,7 +296,7 @@ EXP_TOPIC = [('코스피·국내 증시', r'코스피|코스닥|국내 증시|�
              ('코인', r'비트코인|이더리움|가상자산|암호화폐'), ('원자재', r'유가|금값|원자재|구리'), ('기타 시장', r'(?!)')]   # 위 주제에 안 맞으면 기타 시장(2026-10-20, 버리지 않음)
 
 
-EXP_NOT = re.compile(r'접견|개소|취임|선임|인사\b|출범|MOU|업무협약|협약 체결|IMF급|IMF 외환위기|IMF 때|부고|별세|수상|시상')   # 2026-10-20 발언 아닌 행사·인사·비유
+EXP_NOT = re.compile(r'접견|개소|취임|퇴임|이임|선임|인사\b|출범|MOU|업무협약|협약 체결|IMF급|IMF 외환위기|IMF 때|부고|별세|수상|시상')   # 2026-10-20 발언 아닌 행사·인사·비유
 
 
 def expert_nodes(arts):
@@ -237,9 +308,9 @@ def expert_nodes(arts):
         tp = next((n for n, rx in EXP_TOPIC if re.search(rx, t)), '기타 시장')
         if tp == '기타 시장' and not re.search(r'[“"]', a['t']):   # 기타 시장은 따옴표 발언이 제목에 있을 때만
             continue
-        who = EXP_ROLE.search(a['t']).group(0)
-        m = re.search(r'([가-힣A-Za-z&·]{2,12}(?:증권|자산운용|운용|은행|연구원|캐피털|인베스트먼트)?)\s?(?:' + re.escape(who) + ')', a['t'])
-        who_full = (m.group(0) if m else who).strip()
+        who_full = who_of(a['t'])
+        if not who_full:
+            continue
         cat = next((n for n, rx in EXP_CAT if re.search(rx, t)), '시장 전망')
         qt = ' '.join(re.findall(r'[“"]([^”"]{3,})[”"]', a['t'])) or a['t']   # 발언(따옴표) 부분으로 방향 판단
         bu = len(BULL.findall(qt)) + len(re.findall(r'사라|매수|기회|저평가|낙관|반등|과도|기대', qt))
@@ -316,10 +387,19 @@ def main():
     N = [n for n in db['nodes'].values() if n['k'] == 'stock' and n['ts'] >= now - 30 * 86400]
     by = {}
     for n in N:
-        by.setdefault(n['name'], []).append(n)
+        nm = norm_stock(n['name'])   # 예전에 저장된 노드도 정규화·검증(걸러진 이름은 집계에서 빠짐)
+        if nm:
+            by.setdefault(nm, []).append(n)
     stocks = []
     for name, ns in by.items():
         ns.sort(key=lambda n: -n['ts'])
+        _seen, _u = set(), []
+        for n in ns:   # 같은 증권사·같은 방향·같은 목표가 보고서를 3일 안에 여러 매체가 실은 것은 한 건으로
+            k = (n['br'], n['dir'], n.get('tp'), n['ts'] // (3 * 86400)) if n['br'] != '증권사 미상' else ('?', n['t'][:24])
+            if k in _seen:
+                continue
+            _seen.add(k); _u.append(n)
+        ns = _u
         latest = {}
         for n in ns:  # 증권사별 최신 의견만 집계
             latest.setdefault(n['br'], n)
@@ -365,7 +445,11 @@ def main():
         tg = [n['tgt'] for n in ns if n.get('tgt')]
         coins.append({'hist': hist.get(sym, []), 'sym': sym, 'name': kn, 'bull': bu, 'bear': be, 'neutral': ne, 'n': len(ns), 'price': price.get(sym), 'tgt': [min(tg), max(tg)] if tg else None, 'tree': tree,
                       'nodes': [{k: n.get(k) for k in ('dir', 'who', 'tgt', 'rs', 't', 'u', 'o', 'ts')} for n in ns[:20]]})
-    E_ = sorted([n for n in db['nodes'].values() if n['k'] == 'expert' and n['ts'] >= now - 14 * 86400], key=lambda n: -n['ts'])
+    E_ = []
+    for n in sorted([n for n in db['nodes'].values() if n['k'] == 'expert' and n['ts'] >= now - 14 * 86400], key=lambda n: -n['ts']):
+        w = who_of(n['t'])   # 예전에 저장된 노드도 같은 규칙으로 다시 판정
+        if w:
+            E_.append(dict(n, who=w))
     experts = []
     for tp, _ in EXP_TOPIC:
         ns = [n for n in E_ if n['topic'] == tp]
@@ -382,7 +466,15 @@ def main():
     exp_meta = {'n24': sum(1 for n in E_ if n['ts'] >= now - 86400), 'n14': len(E_)}
     json.dump({'experts': experts, 'exp_meta': exp_meta, 'updated': datetime.datetime.now(KST).strftime('%Y-%m-%d %H:%M'), 'stocks': stocks, 'coins': coins},
               open(OUT, 'w', encoding='utf-8', newline='\n'), ensure_ascii=False, separators=(',', ':'))
-    print('새 노드', len(new), '종목', len(stocks), '코인 노드', len(C), '시세', bool(price))
+    try:   # 걸러낸 이름 내부 로그(검증 기록)
+        _rj = {}
+        for r in ENT_REJECT:
+            k = (r['kind'], r['name'], r['why']); _rj[k] = _rj.get(k, 0) + 1
+        json.dump({'at': datetime.datetime.now(KST).strftime('%Y-%m-%d %H:%M'), 'rejects': [{'kind': k[0], 'name': k[1], 'why': k[2], 'n': v} for k, v in sorted(_rj.items(), key=lambda x: -x[1])]},
+                  open(os.path.join(HERE, 'analyst_rejects.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+    except Exception:
+        pass
+    print('새 노드', len(new), '종목', len(stocks), '코인 노드', len(C), '시세', bool(price), '걸러낸 이름', len(ENT_REJECT))
 
 
 if __name__ == '__main__':

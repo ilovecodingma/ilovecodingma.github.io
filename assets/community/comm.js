@@ -123,8 +123,10 @@ ${KS.includes('review') ? `<select class="cm-rate"><option value="">별점(후�
   async function comments(box, pid) {
     box.hidden = !box.hidden; if (box.hidden) return;
     box.innerHTML = '<p class="note">불러오는 중…</p>';
-    const { comments } = await api('/api/comments?post=' + pid).catch(() => ({ comments: [] }));
-    box.innerHTML = comments.map(c => `<div class="cm-c"><b>${esc(c.nick || '탈퇴한 회원')}</b> ${esc(c.body)} <small>${ago(c.created)}</small></div>`).join('')
+    let comments;
+    try { ({ comments } = await api('/api/comments?post=' + pid)); }
+    catch (e) { box.innerHTML = '<p class="note">댓글을 불러오지 못했어요(연결 오류). 잠시 뒤 다시 눌러 주세요.</p>'; box.dataset.err = '1'; return; }   // 2026-11-05: 불러오기 실패를 「댓글 없음」처럼 보이지 않게
+    box.innerHTML = (comments.length ? '' : '<p class="note">아직 댓글이 없어요.</p>') + comments.map(c => `<div class="cm-c"><b>${esc(c.nick || '탈퇴한 회원')}</b> ${esc(c.body)} <small>${ago(c.created)}</small></div>`).join('')
       + `<div class="cm-cf"><input maxlength="1000" placeholder="${st.t ? '댓글 달기' : '로그인하고 댓글 달기'}"><button class="btn2">등록</button></div>`;
     const inp = box.querySelector('input');
     box.querySelector('.cm-cf button').onclick = async () => {
