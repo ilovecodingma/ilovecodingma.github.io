@@ -1,14 +1,14 @@
 {
  "date": "2026-11-06",
- "updated": "2026-11-06 02:50",
+ "updated": "2026-11-06 03:50",
  "sites": 13,
- "npost": 2796,
+ "npost": 2808,
  "note": "출처(커뮤니티)별 집계예요. 작성자·연령·성별 정보는 수집하지 않아요. posts 는 이슈별로 뽑힌 일부라 전체 글 수가 아니에요.",
  "sources": [
   {
    "name": "MLB파크",
-   "np": 13,
-   "nc": 939,
+   "np": 14,
+   "nc": 1034,
    "topics": [
     {
      "t": "어제 안재욱 라스 발언.txt",
@@ -19,8 +19,8 @@
      "issue_nc": 198,
      "kw": [
       "발언",
-      "라스",
-      "안재욱"
+      "안재욱",
+      "라스"
      ],
      "top_post": {
       "t": "어제 안재욱 라스 발언.txt",
@@ -32,19 +32,19 @@
      "t": "[단독] 韓이 백기사로…美국채 대량 매입한다",
      "nsite": 2,
      "np_here": 1,
-     "nc_here": 132,
+     "nc_here": 133,
      "issue_np": 2,
-     "issue_nc": 132,
+     "issue_nc": 133,
      "kw": [
-      "단독",
       "국채",
+      "대량",
       "매입",
-      "대량"
+      "단독"
      ],
      "top_post": {
       "t": "[단독] 韓이 백기사로…美국채 대량 매입한다",
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611050119912652&m=view",
-      "nc": 132
+      "nc": 133
      }
     },
     {
@@ -70,9 +70,9 @@
      "t": "노숙자들을 보면 안타까운 여성",
      "nsite": 2,
      "np_here": 1,
-     "nc_here": 103,
+     "nc_here": 105,
      "issue_np": 2,
-     "issue_nc": 103,
+     "issue_nc": 105,
      "kw": [
       "여성",
       "노숙자"
@@ -80,7 +80,7 @@
      "top_post": {
       "t": "노숙자들을 보면 안타까운 여성",
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611050119909532&m=view",
-      "nc": 103
+      "nc": 105
      }
     },
     {
@@ -91,10 +91,10 @@
      "issue_np": 2,
      "issue_nc": 134,
      "kw": [
-      "도시",
       "지하",
-      "발견",
-      "거대"
+      "거대",
+      "도시",
+      "발견"
      ],
      "top_post": {
       "t": "집 지하에서 발견한 거대 지하도시",
@@ -110,8 +110,8 @@
      "issue_np": 3,
      "issue_nc": 90,
      "kw": [
-      "친구",
       "여자",
+      "친구",
       "장례식"
      ],
      "top_post": {
@@ -121,12 +121,29 @@
      }
     },
     {
+     "t": "운동회 민원이 많아진 이유",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 87,
+     "issue_np": 2,
+     "issue_nc": 140,
+     "kw": [
+      "운동회",
+      "민원"
+     ],
+     "top_post": {
+      "t": "운동회 민원이 많아진 이유",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611050119905815&m=view",
+      "nc": 87
+     }
+    },
+    {
      "t": "마지막 택배로 무인도에서 10일 버티기",
      "nsite": 3,
      "np_here": 1,
-     "nc_here": 63,
+     "nc_here": 67,
      "issue_np": 3,
-     "issue_nc": 102,
+     "issue_nc": 106,
      "kw": [
       "택배",
       "무인도"
@@ -134,24 +151,7 @@
      "top_post": {
       "t": "마지막 택배로 무인도에서 10일 버티기",
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611050119912853&m=view",
-      "nc": 63
-     }
-    },
-    {
-     "t": "이재명 대통령 \"누군가가 죽을 때 제일 슬퍼\"",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 45,
-     "issue_np": 3,
-     "issue_nc": 51,
-     "kw": [
-      "대통령",
-      "이재명"
-     ],
-     "top_post": {
-      "t": "이재명 대통령 \"누군가가 죽을 때 제일 슬퍼\"",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611050119916105&m=view",
-      "nc": 45
+      "nc": 67
      }
     }
    ]
@@ -159,7 +159,7 @@
   {
    "name": "개드립",
    "np": 12,
-   "nc": 422,
+   "nc": 387,
    "topics": [
     {
      "t": "여수 세계섬박람회 폐막, 성적표",
@@ -169,34 +169,15 @@
      "issue_np": 4,
      "issue_nc": 58,
      "kw": [
-      "박람회",
       "여수",
-      "폐막",
-      "세계섬"
+      "박람회",
+      "세계섬",
+      "성적표"
      ],
      "top_post": {
       "t": "여수 세계섬박람회 폐막, 성적표",
       "u": "https://www.dogdrip.net/dogdrip/733299950?sort_index=popular&page=1",
       "nc": 46
-     }
-    },
-    {
-     "t": "제빵 전문가가 호남 반도체 지원금 심의 ㅋㅋㅋ",
-     "nsite": 6,
-     "np_here": 1,
-     "nc_here": 48,
-     "issue_np": 7,
-     "issue_nc": 198,
-     "kw": [
-      "반도체",
-      "호남",
-      "지원금",
-      "심의"
-     ],
-     "top_post": {
-      "t": "카페 대표 의사가 호남 반도체 6조 지원금 심의",
-      "u": "https://www.dogdrip.net/dogdrip/733380949?sort_index=popular&page=1",
-      "nc": 48
      }
     },
     {
@@ -237,25 +218,6 @@
      }
     },
     {
-     "t": "하나하나 주옥같은 중간선거 참패 후 트럼프 반응 ㅋㅋㅋㅋㅋ",
-     "nsite": 7,
-     "np_here": 2,
-     "nc_here": 41,
-     "issue_np": 19,
-     "issue_nc": 57,
-     "kw": [
-      "선거",
-      "중간",
-      "미국",
-      "트럼프"
-     ],
-     "top_post": {
-      "t": "미국 중간선거로 ㅈ될 예정인 ICE의 실체",
-      "u": "https://www.dogdrip.net/dogdrip/733341177?sort_index=popular&page=1",
-      "nc": 26
-     }
-    },
-    {
      "t": "소신발언.",
      "nsite": 3,
      "np_here": 1,
@@ -263,10 +225,10 @@
      "issue_np": 6,
      "issue_nc": 43,
      "kw": [
-      "발언",
       "소신",
-      "등산복",
-      "지적"
+      "발언",
+      "지적",
+      "등산복"
      ],
      "top_post": {
       "t": "소신발언.",
@@ -282,10 +244,10 @@
      "issue_np": 2,
      "issue_nc": 134,
      "kw": [
-      "도시",
       "지하",
-      "발견",
-      "거대"
+      "거대",
+      "도시",
+      "발견"
      ],
      "top_post": {
       "t": "집 지하에서 발견한 거대 지하도시",
@@ -299,7 +261,7 @@
      "np_here": 1,
      "nc_here": 39,
      "issue_np": 3,
-     "issue_nc": 102,
+     "issue_nc": 106,
      "kw": [
       "택배",
       "무인도"
@@ -309,62 +271,63 @@
       "u": "https://www.dogdrip.net/dogdrip/733262625?sort_index=popular&page=1",
       "nc": 39
      }
+    },
+    {
+     "t": "텍사스 당선자의 승리 연설",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 34,
+     "issue_np": 3,
+     "issue_nc": 36,
+     "kw": [
+      "연설",
+      "텍사스",
+      "당선자",
+      "승리"
+     ],
+     "top_post": {
+      "t": "텍사스 당선자의 승리 연설",
+      "u": "https://www.dogdrip.net/dogdrip/733332249?sort_index=popular&page=1",
+      "nc": 34
+     }
+    },
+    {
+     "t": "어제 안재욱 라스 발언.txt",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 33,
+     "issue_np": 3,
+     "issue_nc": 198,
+     "kw": [
+      "발언",
+      "안재욱",
+      "라스"
+     ],
+     "top_post": {
+      "t": "어제자 라스 안재욱 발언ㄷㄷ",
+      "u": "https://www.dogdrip.net/dogdrip/733262981?sort_index=popular&page=1",
+      "nc": 33
+     }
     }
    ]
   },
   {
    "name": "클리앙",
-   "np": 13,
-   "nc": 349,
+   "np": 10,
+   "nc": 182,
    "topics": [
     {
-     "t": "주식투자해서 잃으면 남탓",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 89,
-     "issue_np": 2,
-     "issue_nc": 89,
-     "kw": [
-      "투자",
-      "주식"
-     ],
-     "top_post": {
-      "t": "주식투자해서 잃으면 남탓",
-      "u": "https://www.clien.net/service/board/park/19287807?od=T33&po=0&category=0&groupCd=clien_all",
-      "nc": 89
-     }
-    },
-    {
-     "t": "김민석 “신천지 전면 공개했으면 반발 더 컸을 것…책임의 문제는 별론”",
-     "nsite": 2,
-     "np_here": 2,
-     "nc_here": 78,
-     "issue_np": 3,
-     "issue_nc": 94,
-     "kw": [
-      "전면",
-      "천지",
-      "김민석",
-      "공개"
-     ],
-     "top_post": {
-      "t": "김민석 “신천지 전면 공개했으면 반발 더 컸을 것…책임의 문제는 별론”",
-      "u": "https://www.clien.net/service/board/park/19287873?od=T33&po=0&category=0&groupCd=clien_all",
-      "nc": 46
-     }
-    },
-    {
-     "t": "제빵 전문가가 호남 반도체 지원금 심의 ㅋㅋㅋ",
+     "t": "현재 이상하다고 말나오는 호남반도체 근황",
      "nsite": 6,
      "np_here": 1,
      "nc_here": 47,
      "issue_np": 7,
-     "issue_nc": 198,
+     "issue_nc": 202,
      "kw": [
-      "반도체",
       "호남",
-      "지원금",
-      "심의"
+      "반도체",
+      "심의",
+      "지원금"
      ],
      "top_post": {
       "t": "제빵 전문가가 호남 반도체 지원금 심의 ㅋㅋㅋ",
@@ -380,10 +343,10 @@
      "issue_np": 3,
      "issue_nc": 36,
      "kw": [
-      "삼전",
-      "반도체",
+      "닉스",
       "한국",
-      "닉스"
+      "삼전",
+      "반도체"
      ],
      "top_post": {
       "t": "삼전 닉스 둘 다 52주 최저가 대비",
@@ -399,10 +362,10 @@
      "issue_np": 3,
      "issue_nc": 39,
      "kw": [
-      "디저트카페",
+      "사장",
       "반도체",
-      "호남",
-      "사장"
+      "위원",
+      "디저트카페"
      ],
      "top_post": {
       "t": "6조 호남반도체 민간심사위원에 디저트카페사장 선임",
@@ -420,8 +383,8 @@
      "kw": [
       "마라톤",
       "대회",
-      "아이디어",
-      "제시"
+      "제시",
+      "아이디어"
      ],
      "top_post": {
       "t": "마라톤 대회에 지친 사람들이 제시한 아이디어",
@@ -464,13 +427,92 @@
       "u": "https://www.clien.net/service/board/park/19287833?od=T33&po=0&category=0&groupCd=clien_all",
       "nc": 13
      }
+    },
+    {
+     "t": "트럼프,난 원래 민주당",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 8,
+     "issue_np": 4,
+     "issue_nc": 49,
+     "kw": [
+      "민주당",
+      "트럼프"
+     ],
+     "top_post": {
+      "t": "[속보] 트럼프 '나를 탄핵시키면 민주당 파멸시킬 것'",
+      "u": "https://www.clien.net/service/board/park/19287675?od=T33&po=0&category=0&groupCd=clien_all",
+      "nc": 8
+     }
+    },
+    {
+     "t": "미국 선거 결과 떴냐????????",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 7,
+     "issue_np": 8,
+     "issue_nc": 75,
+     "kw": [
+      "미국",
+      "선거",
+      "속보",
+      "중간"
+     ],
+     "top_post": {
+      "t": "미국 선거를 보고 문득 생각난 분",
+      "u": "https://www.clien.net/service/board/park/19287672?od=T33&po=0&category=0&groupCd=clien_all",
+      "nc": 7
+     }
+    }
+   ]
+  },
+  {
+   "name": "인스티즈",
+   "np": 2,
+   "nc": 153,
+   "topics": [
+    {
+     "t": "현재 이상하다고 말나오는 호남반도체 근황",
+     "nsite": 6,
+     "np_here": 1,
+     "nc_here": 100,
+     "issue_np": 7,
+     "issue_nc": 202,
+     "kw": [
+      "호남",
+      "반도체",
+      "심의",
+      "지원금"
+     ],
+     "top_post": {
+      "t": "현재 이상하다고 말나오는 호남반도체 근황",
+      "u": "https://www.instiz.net/pt/7922052?green=1",
+      "nc": 100
+     }
+    },
+    {
+     "t": "운동회 민원이 많아진 이유",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 53,
+     "issue_np": 2,
+     "issue_nc": 140,
+     "kw": [
+      "운동회",
+      "민원"
+     ],
+     "top_post": {
+      "t": "운동회 함성 시끄럽다는 민원에 작심 발언한 안재욱",
+      "u": "https://www.instiz.net/pt/7921996?green=1",
+      "nc": 53
+     }
     }
    ]
   },
   {
    "name": "82쿡",
-   "np": 9,
-   "nc": 103,
+   "np": 8,
+   "nc": 87,
    "topics": [
     {
      "t": "19~34세 모든 청년, 돈 받는다...'사는 지역'에 따라 금..",
@@ -480,8 +522,8 @@
      "issue_np": 3,
      "issue_nc": 46,
      "kw": [
-      "지역",
-      "청년"
+      "청년",
+      "지역"
      ],
      "top_post": {
       "t": "19~34세 모든 청년, 돈 받는다...'사는 지역'에 따라 금..",
@@ -490,36 +532,17 @@
      }
     },
     {
-     "t": "김민석 “신천지 전면 공개했으면 반발 더 컸을 것…책임의 문제는 별론”",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 16,
-     "issue_np": 3,
-     "issue_nc": 94,
-     "kw": [
-      "전면",
-      "천지",
-      "김민석",
-      "공개"
-     ],
-     "top_post": {
-      "t": "김민석, 신천지 논란에 “솔직히 마음 불편…전면공개해도 문제”",
-      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4255911&page=1",
-      "nc": 16
-     }
-    },
-    {
-     "t": "제빵 전문가가 호남 반도체 지원금 심의 ㅋㅋㅋ",
+     "t": "현재 이상하다고 말나오는 호남반도체 근황",
      "nsite": 6,
      "np_here": 2,
      "nc_here": 15,
      "issue_np": 7,
-     "issue_nc": 198,
+     "issue_nc": 202,
      "kw": [
-      "반도체",
       "호남",
-      "지원금",
-      "심의"
+      "반도체",
+      "심의",
+      "지원금"
      ],
      "top_post": {
       "t": "호남반도체얘기 쏙 들어 갔죠",
@@ -535,10 +558,10 @@
      "issue_np": 3,
      "issue_nc": 39,
      "kw": [
-      "디저트카페",
+      "사장",
       "반도체",
-      "호남",
-      "사장"
+      "위원",
+      "디저트카페"
      ],
      "top_post": {
       "t": "호남반도체 심의위원에 디저트카페 사장",
@@ -547,12 +570,12 @@
      }
     },
     {
-     "t": "하나하나 주옥같은 중간선거 참패 후 트럼프 반응 ㅋㅋㅋㅋㅋ",
+     "t": "미국 중간선거 후 라스베가스 트럼프 타워 근황",
      "nsite": 7,
      "np_here": 1,
      "nc_here": 9,
-     "issue_np": 19,
-     "issue_nc": 57,
+     "issue_np": 18,
+     "issue_nc": 42,
      "kw": [
       "선거",
       "중간",
@@ -592,40 +615,14 @@
      "issue_np": 3,
      "issue_nc": 8,
      "kw": [
-      "기초",
       "연금",
+      "기초",
       "내년"
      ],
      "top_post": {
       "t": "기초연금을 외국인도 받았었군요",
       "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4255922&page=1",
       "nc": 2
-     }
-    }
-   ]
-  },
-  {
-   "name": "인스티즈",
-   "np": 1,
-   "nc": 53,
-   "topics": [
-    {
-     "t": "제빵 전문가가 호남 반도체 지원금 심의 ㅋㅋㅋ",
-     "nsite": 6,
-     "np_here": 1,
-     "nc_here": 53,
-     "issue_np": 7,
-     "issue_nc": 198,
-     "kw": [
-      "반도체",
-      "호남",
-      "지원금",
-      "심의"
-     ],
-     "top_post": {
-      "t": "현재 이상하다고 말나오는 호남반도체 근황",
-      "u": "https://www.instiz.net/pt/7922052?green=1",
-      "nc": 53
      }
     }
    ]
@@ -684,10 +681,10 @@
      "np_here": 1,
      "nc_here": 3,
      "issue_np": 3,
-     "issue_nc": 51,
+     "issue_nc": 52,
      "kw": [
-      "대통령",
-      "이재명"
+      "이재명",
+      "대통령"
      ],
      "top_post": {
       "t": "이재명, 유튜버 이재명으로 '대통령의 Y' 시작…국민 ...",
@@ -699,7 +696,7 @@
   },
   {
    "name": "보배드림",
-   "np": 11,
+   "np": 12,
    "nc": 23,
    "topics": [
     {
@@ -711,8 +708,8 @@
      "issue_nc": 198,
      "kw": [
       "발언",
-      "라스",
-      "안재욱"
+      "안재욱",
+      "라스"
      ],
      "top_post": {
       "t": "라스 안재욱 발언",
@@ -728,8 +725,8 @@
      "issue_np": 3,
      "issue_nc": 90,
      "kw": [
-      "친구",
       "여자",
+      "친구",
       "장례식"
      ],
      "top_post": {
@@ -744,10 +741,10 @@
      "np_here": 1,
      "nc_here": 3,
      "issue_np": 3,
-     "issue_nc": 51,
+     "issue_nc": 52,
      "kw": [
-      "대통령",
-      "이재명"
+      "이재명",
+      "대통령"
      ],
      "top_post": {
       "t": "이재명 대통령님",
@@ -763,8 +760,8 @@
      "issue_np": 3,
      "issue_nc": 46,
      "kw": [
-      "지역",
-      "청년"
+      "청년",
+      "지역"
      ],
      "top_post": {
       "t": "19~34세 모든 청년, 돈 받는다...'사는 지역'에 따라..",
@@ -780,10 +777,10 @@
      "issue_np": 6,
      "issue_nc": 43,
      "kw": [
-      "발언",
       "소신",
-      "등산복",
-      "지적"
+      "발언",
+      "지적",
+      "등산복"
      ],
      "top_post": {
       "t": "등산복 지적에 소신발언",
@@ -792,12 +789,12 @@
      }
     },
     {
-     "t": "하나하나 주옥같은 중간선거 참패 후 트럼프 반응 ㅋㅋㅋㅋㅋ",
+     "t": "미국 중간선거 후 라스베가스 트럼프 타워 근황",
      "nsite": 7,
      "np_here": 1,
      "nc_here": 2,
-     "issue_np": 19,
-     "issue_nc": 57,
+     "issue_np": 18,
+     "issue_nc": 42,
      "kw": [
       "선거",
       "중간",
@@ -818,9 +815,9 @@
      "issue_np": 3,
      "issue_nc": 36,
      "kw": [
-      "당선자",
-      "텍사스",
       "연설",
+      "텍사스",
+      "당선자",
       "승리"
      ],
      "top_post": {
@@ -856,12 +853,12 @@
    "nc": 0,
    "topics": [
     {
-     "t": "하나하나 주옥같은 중간선거 참패 후 트럼프 반응 ㅋㅋㅋㅋㅋ",
+     "t": "미국 중간선거 후 라스베가스 트럼프 타워 근황",
      "nsite": 7,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 19,
-     "issue_nc": 57,
+     "issue_np": 18,
+     "issue_nc": 42,
      "kw": [
       "선거",
       "중간",
@@ -934,7 +931,7 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 3,
-     "issue_nc": 102,
+     "issue_nc": 106,
      "kw": [
       "택배",
       "무인도"
@@ -953,8 +950,8 @@
      "issue_np": 3,
      "issue_nc": 46,
      "kw": [
-      "지역",
-      "청년"
+      "청년",
+      "지역"
      ],
      "top_post": {
       "t": "19~34세 모든 청년, 돈 받는다...'사는 지역'에 따라 금액 차이 있어",
@@ -970,10 +967,10 @@
      "issue_np": 3,
      "issue_nc": 36,
      "kw": [
-      "삼전",
-      "반도체",
+      "닉스",
       "한국",
-      "닉스"
+      "삼전",
+      "반도체"
      ],
      "top_post": {
       "t": "한국 반도체 삼전 닉스가 빠르게 무너질 거라 보는 이유",
@@ -989,13 +986,165 @@
      "issue_np": 3,
      "issue_nc": 8,
      "kw": [
-      "기초",
       "연금",
+      "기초",
       "내년"
      ],
      "top_post": {
       "t": "[속보] 내년부터 한국서 5년 안 살았으면 기초연금 못 받는다",
       "u": "https://theqoo.net/hot/4396428619",
+      "nc": 0
+     }
+    }
+   ]
+  },
+  {
+   "name": "디시인사이드",
+   "np": 11,
+   "nc": 0,
+   "topics": [
+    {
+     "t": "미국 중간선거 후 라스베가스 트럼프 타워 근황",
+     "nsite": 7,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 18,
+     "issue_nc": 42,
+     "kw": [
+      "선거",
+      "중간",
+      "미국",
+      "트럼프"
+     ],
+     "top_post": {
+      "t": "2026년 미국 중간선거 전국 출구조사 결과",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=475903&_dcbest=1&page=1",
+      "nc": 0
+     }
+    },
+    {
+     "t": "트럼프,난 원래 민주당",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 49,
+     "kw": [
+      "민주당",
+      "트럼프"
+     ],
+     "top_post": {
+      "t": "민주당 \"트럼프 아들 코인 다 털어버릴것\"",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=475981&_dcbest=1&page=1",
+      "nc": 0
+     }
+    },
+    {
+     "t": "여자라서 내는 핑크텍스 개많음. 자취할때 남자들은 그냥 저렴한 저층 살면서 돈아끼...",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 22,
+     "kw": [
+      "남자",
+      "여자"
+     ],
+     "top_post": {
+      "t": "싱글벙글 여자가 남자보다 우월하다는 증거",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=475702&_dcbest=1&page=1",
+      "nc": 0
+     }
+    },
+    {
+     "t": "장례식에 안왔다고 친구 손절각 보는 여자",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 90,
+     "kw": [
+      "여자",
+      "친구",
+      "장례식"
+     ],
+     "top_post": {
+      "t": "같이 계곡 갈까?? 여자친구 게하에서 남자만나고 같이 롯데월드",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=476037&_dcbest=1&page=1",
+      "nc": 0
+     }
+    },
+    {
+     "t": "여수 세계섬박람회 폐막, 성적표",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 58,
+     "kw": [
+      "여수",
+      "박람회",
+      "세계섬",
+      "성적표"
+     ],
+     "top_post": {
+      "t": "도합 1800억 들인 전라도 여수 섬박람회... 처참한 성적표 공개",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=475963&_dcbest=1&page=1",
+      "nc": 0
+     }
+    },
+    {
+     "t": "삼전 닉스 둘 다 52주 최저가 대비",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 36,
+     "kw": [
+      "닉스",
+      "한국",
+      "삼전",
+      "반도체"
+     ],
+     "top_post": {
+      "t": "???: 나는...나는 반도체를... 한국을 지키고 싶었을 뿐이였다...",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=475857&_dcbest=1&page=1",
+      "nc": 0
+     }
+    },
+    {
+     "t": "[단독] 특전사한테 모델 워킹 교육을 시켜?…\"부대원 자괴감\"",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 28,
+     "kw": [
+      "모델",
+      "교육",
+      "특전사",
+      "워킹"
+     ],
+     "top_post": {
+      "t": "[단독] 특전사한테 모델 워킹 교육을 시켜?…\"부대원 자괴감\"",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=475695&_dcbest=1&page=1",
+      "nc": 0
+     }
+    },
+    {
+     "t": "IP68이라는 아이폰 듀오가 먼지를 얼마나 막아주는지 방진 실험",
+     "nsite": 3,
+     "np_here": 2,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 15,
+     "kw": [
+      "아이폰",
+      "듀오"
+     ],
+     "top_post": {
+      "t": "IP68이라는 아이폰 듀오가 먼지를 얼마나 막아주는지 방진 실험",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=475686&_dcbest=1&page=1",
       "nc": 0
      }
     }
@@ -1052,9 +1201,9 @@
      "issue_np": 3,
      "issue_nc": 36,
      "kw": [
-      "당선자",
-      "텍사스",
       "연설",
+      "텍사스",
+      "당선자",
       "승리"
      ],
      "top_post": {
@@ -1067,7 +1216,7 @@
   },
   {
    "name": "루리웹",
-   "np": 25,
+   "np": 26,
    "nc": 0,
    "topics": [
     {
@@ -1168,10 +1317,10 @@
      "issue_np": 4,
      "issue_nc": 58,
      "kw": [
-      "박람회",
       "여수",
-      "폐막",
-      "세계섬"
+      "박람회",
+      "세계섬",
+      "성적표"
      ],
      "top_post": {
       "t": "여수 세계섬박람회 폐막, 성적표",
@@ -1187,10 +1336,10 @@
      "issue_np": 6,
      "issue_nc": 43,
      "kw": [
-      "발언",
       "소신",
-      "등산복",
-      "지적"
+      "발언",
+      "지적",
+      "등산복"
      ],
      "top_post": {
       "t": "소신발언",
@@ -1206,165 +1355,14 @@
      "issue_np": 3,
      "issue_nc": 39,
      "kw": [
-      "디저트카페",
+      "사장",
       "반도체",
-      "호남",
-      "사장"
+      "위원",
+      "디저트카페"
      ],
      "top_post": {
       "t": "6조 호남반도체 예산 심의하는데 민간위원에 디저트카페 사장",
       "u": "https://bbs.ruliweb.com/best/board/300010/read/2296744?m=all&t=now",
-      "nc": 0
-     }
-    }
-   ]
-  },
-  {
-   "name": "디시인사이드",
-   "np": 10,
-   "nc": 0,
-   "topics": [
-    {
-     "t": "트럼프,난 원래 민주당",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 49,
-     "kw": [
-      "민주당",
-      "트럼프"
-     ],
-     "top_post": {
-      "t": "민주당 \"트럼프 아들 코인 다 털어버릴것\"",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=475981&_dcbest=1&page=1",
-      "nc": 0
-     }
-    },
-    {
-     "t": "여자라서 내는 핑크텍스 개많음. 자취할때 남자들은 그냥 저렴한 저층 살면서 돈아끼...",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 22,
-     "kw": [
-      "남자",
-      "여자"
-     ],
-     "top_post": {
-      "t": "싱글벙글 여자가 남자보다 우월하다는 증거",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=475702&_dcbest=1&page=1",
-      "nc": 0
-     }
-    },
-    {
-     "t": "장례식에 안왔다고 친구 손절각 보는 여자",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 90,
-     "kw": [
-      "친구",
-      "여자",
-      "장례식"
-     ],
-     "top_post": {
-      "t": "같이 계곡 갈까?? 여자친구 게하에서 남자만나고 같이 롯데월드",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=476037&_dcbest=1&page=1",
-      "nc": 0
-     }
-    },
-    {
-     "t": "여수 세계섬박람회 폐막, 성적표",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 58,
-     "kw": [
-      "박람회",
-      "여수",
-      "폐막",
-      "세계섬"
-     ],
-     "top_post": {
-      "t": "도합 1800억 들인 전라도 여수 섬박람회... 처참한 성적표 공개",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=475963&_dcbest=1&page=1",
-      "nc": 0
-     }
-    },
-    {
-     "t": "삼전 닉스 둘 다 52주 최저가 대비",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 36,
-     "kw": [
-      "삼전",
-      "반도체",
-      "한국",
-      "닉스"
-     ],
-     "top_post": {
-      "t": "???: 나는...나는 반도체를... 한국을 지키고 싶었을 뿐이였다...",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=475857&_dcbest=1&page=1",
-      "nc": 0
-     }
-    },
-    {
-     "t": "[단독] 특전사한테 모델 워킹 교육을 시켜?…\"부대원 자괴감\"",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 28,
-     "kw": [
-      "특전사",
-      "교육",
-      "모델",
-      "워킹"
-     ],
-     "top_post": {
-      "t": "[단독] 특전사한테 모델 워킹 교육을 시켜?…\"부대원 자괴감\"",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=475695&_dcbest=1&page=1",
-      "nc": 0
-     }
-    },
-    {
-     "t": "IP68이라는 아이폰 듀오가 먼지를 얼마나 막아주는지 방진 실험",
-     "nsite": 3,
-     "np_here": 2,
-     "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 15,
-     "kw": [
-      "아이폰",
-      "듀오"
-     ],
-     "top_post": {
-      "t": "IP68이라는 아이폰 듀오가 먼지를 얼마나 막아주는지 방진 실험",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=475686&_dcbest=1&page=1",
-      "nc": 0
-     }
-    },
-    {
-     "t": "가장 한국적인 공항이라는 대구공항..",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 1,
-     "kw": [
-      "공항",
-      "대구공항",
-      "한국"
-     ],
-     "top_post": {
-      "t": "가장 한국적인 공항이라는 대구공항..",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=476005&_dcbest=1&page=1",
       "nc": 0
      }
     }
@@ -1385,8 +1383,8 @@
      "kw": [
       "마라톤",
       "대회",
-      "아이디어",
-      "제시"
+      "제시",
+      "아이디어"
      ],
      "top_post": {
       "t": "마라톤 대회에 지친 사람들이 제시한 아이디어",
