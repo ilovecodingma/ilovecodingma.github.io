@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-05 10:00",
+ "updated": "2026-11-05 11:00",
  "items": [
   {
    "query": "로스앤젤레스 fc 대 미네소타 유나이티드 fc 순위",
@@ -6183,6 +6183,19 @@
    "expires": "2026-11-25"
   },
   {
+   "query": "2027학년도 수능 결과 발표일과 성적표 항목, 이의신청 기간은?",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 4,
+   "status": "작성",
+   "page": "/issue/suneung-score-report-1105/",
+   "registered": "2026-11-05",
+   "expires": "2026-12-05"
+  },
+  {
    "query": "2027 수능 스마트안경 반입금지 물품과 부정행위 처리는? 충남교육청 탐지 도입 정리",
    "tier": "중기",
    "signal": [
@@ -6194,6 +6207,19 @@
    "page": "/issue/suneung-smart-glasses-1104/",
    "registered": "2026-11-04",
    "expires": "2026-11-25"
+  },
+  {
+   "query": "온라인 미신고 숙소 중개 금지, 영업신고증 확인 의무 시행일은?",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 4,
+   "status": "작성",
+   "page": "/issue/unregistered-lodging-platform-duty-1105/",
+   "registered": "2026-11-05",
+   "expires": "2026-12-05"
   },
   {
    "query": "2027 1학기 국가장학금 신청기간",
@@ -6306,6 +6332,19 @@
    "page": "/issue/gadeokdo-airport-cost-1104/",
    "registered": "2026-11-04",
    "expires": "2026-11-18"
+  },
+  {
+   "query": "한경협 전기차 수출경쟁력 보고서 2030년 2.2조원 위험 추정 내용 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 3,
+   "status": "작성",
+   "page": "/issue/korea-ev-export-competitiveness-1105/",
+   "registered": "2026-11-05",
+   "expires": "2026-11-19"
   },
   {
    "query": "북한 바이낸스 해킹 사건 어떻게 된 건가요? 확인된 내용 정리 2026년 11월",

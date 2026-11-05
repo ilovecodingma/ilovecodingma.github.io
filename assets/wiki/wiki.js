@@ -3,15 +3,23 @@
   var $ = function (s, r) { return (r || document).querySelector(s); }, $$ = function (s, r) { return [].slice.call((r || document).querySelectorAll(s)); };
   var tg = $('.wk-toggle'), side = $('.wk-side');
   if (tg && side) tg.onclick = function () { var o = side.classList.toggle('open'); tg.setAttribute('aria-expanded', o); };
-  var q = $('.wk-q');
-  if (q) q.addEventListener('input', function () {
-    var v = q.value.trim().toLowerCase();
-    $$('.wk-g').forEach(function (g) {
-      var any = false;
-      $$('li', g).forEach(function (li) { var m = !v || li.textContent.toLowerCase().indexOf(v) >= 0; li.style.display = m ? '' : 'none'; if (m) any = true; });
-      g.style.display = any ? '' : 'none'; if (v && any) g.open = true;
+  // 왼쪽 칸 검색: 전체 목록을 글마다 싣지 않고, 입력할 때 색인(index.json)을 한 번 불러 최대 20건만 보여 준다 (2026-11-05)
+  var q = $('.wk-q'), sr = $('.wk-sr'), near = $('.wk-near'), wi = null;
+  var wload = function () { return wi ? Promise.resolve(wi) : fetch('/assets/wiki/index.json').then(function (r) { if (!r.ok) throw 0; return r.json(); }).then(function (d) { wi = d; return d; }); };
+  if (q && sr) {
+    q.addEventListener('focus', function () { wload().catch(function () {}); });
+    q.addEventListener('input', function () {
+      var v = q.value.trim().toLowerCase(); sr.textContent = '';
+      if (!v) { sr.hidden = true; if (near) near.hidden = false; return; }
+      wload().then(function (d) {
+        if (q.value.trim().toLowerCase() !== v) return;
+        var tk = v.split(/\s+/), r = d.filter(function (a) { var h = (a.t + ' ' + (a.d || '')).toLowerCase(); return tk.every(function (t) { return h.indexOf(t) >= 0; }); }).slice(0, 20);
+        sr.textContent = ''; sr.hidden = false; if (near) near.hidden = true;
+        if (!r.length) { var n = document.createElement('li'); n.className = 'no'; n.textContent = '일치하는 글이 없어요.'; sr.appendChild(n); return; }
+        r.forEach(function (a) { var li = document.createElement('li'), x = document.createElement('a'); x.href = a.u; x.textContent = a.t; li.appendChild(x); sr.appendChild(li); });
+      }).catch(function () { sr.hidden = false; var n = document.createElement('li'); n.className = 'no'; n.textContent = '목록을 불러오지 못했어요. 위키 홈에서 찾아 주세요.'; sr.appendChild(n); });
     });
-  });
+  }
   // 오른쪽 목차: 지금 읽는 소제목 강조
   var links = $$('.wk-toc a');
   if (links.length && 'IntersectionObserver' in window) {

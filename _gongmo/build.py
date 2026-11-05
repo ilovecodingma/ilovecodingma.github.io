@@ -535,6 +535,18 @@ def elig_short(c):
     return SH.clip(e, 22) or '확인 필요'
 
 
+def age_txt(a):
+    """나이 조건 표시(2026-11-05 품질 감사): 시작=끝이면 「만 24세」(「만 24~24세」로 쓰지 않는다), 한쪽만 있으면 이상/이하."""
+    lo, hi = a.get('age_min'), a.get('age_max')
+    if lo and hi:
+        return f'만 {lo}세' if lo == hi else f'만 {lo}~{hi}세'
+    if lo:
+        return f'만 {lo}세 이상'
+    if hi:
+        return f'만 {hi}세 이하'
+    return ''
+
+
 def prize_short(c):
     """목록 카드용 상금 한 줄. 1등 상금과 총상금을 구분해 라벨을 붙인다(섞어 비교하지 않는다)."""
     f, t = prize_split(c)
@@ -798,6 +810,29 @@ _FRIDGE_OLD = 100000; _x = int(os.environ.get('FRIDGE_KEEP_UNUSED', '0'))   # �
 RICH_MIN = int(os.environ.get('RICH_MIN', '6'))   # 사용자 승인으로 6→4: 자격·상금·제출물이 거의 비어 미완성인 상세(2~3점)만 noindex, 값이 채워지면 자동 색인
 THIN_FORCE_NOINDEX = {'/community/', '/me/', '/plaza/', '/ssul/', '/dev/tag/windows/', '/satire/2026-10-18/',
                       '/ruri/dress/', '/vn/pool/', '/play/', '/dev/tag/seo/', '/dev/tag/data/', '/dev/tag/analytics/', '/dev/tag/cloudflare/', '/satire/2026-10-19/'}   # 2026-11-04 사용자 「애드센스 통과·구글 유입」: 본문 120~530자인 빈 화면·태그·풍자 1건을 검색에서 뺌
+
+
+def stale_month_noindex(urls):
+    """지난 달 모음(/apply/month/YYYY-MM/, /contest/deadline-M/)은 달이 바뀌면 빌드가 더 만들지 않아 파일만 남는다(2026-11-05 품질 감사: 만료된 모음이 색인 대상으로 남아 있었음).
+    주소는 지우지 않고 검색 제외만 건다. 그 달이 다시 오면 빌드가 새로 써서 자동으로 풀린다."""
+    n, cur = 0, set(urls)
+    for base, rx in (('apply/month', r'^[0-9]{4}-[0-9]{2}$'), ('contest', r'^deadline-[0-9]{1,2}$')):
+        d = os.path.join(ROOT, *base.split('/'))
+        if not os.path.isdir(d):
+            continue
+        for nm in os.listdir(d):
+            u, f = f'/{base}/{nm}/', os.path.join(d, nm, 'index.html')
+            if not re.match(rx, nm) or u in cur or not os.path.exists(f):
+                continue
+            doc = open(f, encoding='utf-8').read()
+            if 'name="robots" content="noindex' in doc:
+                continue
+            m_ = '<meta name="robots" content="noindex,follow">'
+            nd = doc.replace('<meta name="robots" content="max-image-preview:large">', m_, 1)
+            if nd == doc:
+                nd = doc.replace('<head>', '<head>' + chr(10) + m_, 1)
+            open(f, 'w', encoding='utf-8', newline=chr(10)).write(nd); n += 1
+    return n
 
 
 ADS_TAG = re.compile(r'<script async src="https://pagead2\.googlesyndication\.com/pagead/js/adsbygoogle\.js[^"]*"[^>]*></script>\n?')
@@ -1719,7 +1754,7 @@ def load_apply():
         nm, ic = apply_kind(r.get('kind'))
         out.append({'id': aid, 'title': P.clean(r['title'])[:90], 'org': P.clean(r.get('org', ''))[:40] or '공고 참조', 'kind': nm, 'icon': ic, 'kk': r.get('kind') or ('apt' if re.search(r'아파트|분양|자이|힐스테이트|푸르지오|래미안|e편한|롯데캐슬|하늘채|더샵|아이파크|위브|포레나|센트레빌|리슈빌|공공분양', r['title']) else 'rent' if re.search(r'임대|전세|월세|행복주택|매입', r['title']) else 'grant'),
                     'start': r.get('start', ''), 'end': end, 'url': r.get('url', ''), 'source': r.get('source', ''), 'verified': bool(r.get('verified')),
-                    'always': bool(r.get('always')), 'region': P.clean(r.get('region', ''))[:20], 'target': P.clean(r.get('target', ''))[:200], 'benefit': P.clean(r.get('benefit', ''))[:200],
+                    'always': bool(r.get('always')), 'region': P.clean(r.get('region', ''))[:20], 'target': re.sub(r'만\s?(\d{1,2})\s?~\s?\1\s?세', r'만 \1세', P.clean(r.get('target', '')))[:200], 'benefit': P.clean(r.get('benefit', ''))[:200],
                     'how': P.clean(r.get('how', ''))[:60], 'income': P.clean(r.get('income', ''))[:30], 'age_min': r.get('age_min'), 'age_max': r.get('age_max')})
     out.sort(key=lambda a: (a['end'], a['title']))
     return out
@@ -1803,7 +1838,7 @@ def ap_insight(a, aps):
         except Exception:
             pass
     if a.get('age_min') or a.get('age_max'):
-        L.append(f'나이 조건(만 {a.get("age_min") or ""}~{a.get("age_max") or ""}세)은 보통 공고일 기준이라, 생일이 가까우면 기준일을 꼭 확인하세요.')
+        L.append(f'나이 조건({age_txt(a)})은 보통 공고일 기준이라, 생일이 가까우면 기준일을 꼭 확인하세요.')
     if a.get('income'):
         L.append(f'소득 조건은 「{a["income"]}」이에요. 기준 중위소득 %로 적힌 경우 가구원 수에 따라 금액이 달라져요.')
     if nm and same:
@@ -1901,7 +1936,7 @@ def build_apply(aps):
         n, dd = dday(a['end'])
         period = (ddot(a['start']) + ' ~ ' if a['start'] else '~ ') + ddot(a['end'])
         tb = ''.join(f'<tr><th>{k}</th><td>{E(v)}</td></tr>' for k, v in
-                     [x for x in [('구분', a['kind']), ('대상', a.get('target')), ('혜택', a.get('benefit')), ('지역', a.get('region')), ('나이', (f"만 {a['age_min'] or ''}~{a['age_max'] or ''}세" if a.get('age_min') or a.get('age_max') else '')),
+                     [x for x in [('구분', a['kind']), ('대상', a.get('target')), ('혜택', a.get('benefit')), ('지역', a.get('region')), ('나이', age_txt(a)),
                       ('소득 조건', a.get('income')), ('신청 방법', a.get('how')), ('주관', a['org']), ('신청 기간', '상시 신청' if a.get('always') else period), ('출처', a['source'] or '공식 공고')] if x[1]])
         _sn = {'youthcenter': '온라인청년센터', 'bokjiro': '복지로', 'gov24': '정부24', 'odcloud': '공공데이터포털', 'applyhome': '청약홈', 'lh': 'LH 청약플러스'}.get((a.get('source') or '').strip(), a.get('source') or '공식 공고')
         tb = re.sub(r'<tr><th>출처</th><td>[^<]*</td></tr>', lambda m: '<tr><th>출처</th><td>' + (f'<a href="{E(a["url"])}" target="_blank" rel="noopener nofollow">공식 공고 원문 →</a> (수집: {E(_sn)})' if a.get('url') else E(_sn)) + '</td></tr>', tb)
@@ -2074,7 +2109,7 @@ def _xtarget(a):
     if a.get('target'):
         return a['target']
     if a.get('age_min') or a.get('age_max'):
-        return f'만 {a.get("age_min") or ""}~{a.get("age_max") or ""}세'
+        return age_txt(a)
     return ''
 
 
@@ -2732,7 +2767,7 @@ def build():
     statics(len(live), len(events))
     ref_pages()
     _ref_hub_urls = ref_hub()
-    urls = ['/', '/contest/', '/apply/', '/event/', '/guide/', '/ssul/'] + lab_urls + [f'/ssul/{x["slug"]}/' for x in ss] + [f'/a/{a["id"]}/' for a in aps] + [f'/cat/{s}/' for s, _ in CATS] + [f'/guide/{g[0]}/' for g in GUIDES] + ['/qa/', '/prep/', '/fridge/', '/app/', '/news/'] + extra_urls + [f'/guide/{q["slug"]}/' for q in QA] + \
+    urls = ['/', '/contest/', '/apply/', '/event/', '/guide/', '/ssul/', '/today/'] + lab_urls + [f'/ssul/{x["slug"]}/' for x in ss] + [f'/a/{a["id"]}/' for a in aps] + [f'/cat/{s}/' for s, _ in CATS] + [f'/guide/{g[0]}/' for g in GUIDES] + ['/qa/', '/prep/', '/fridge/', '/app/', '/news/'] + extra_urls + [f'/guide/{q["slug"]}/' for q in QA] + \
            ['/about/', '/privacy/', '/terms/', '/contact/', '/collab/', '/play/', '/play/survivor/', '/play/dice/', '/play/2048/', '/play/memory/', '/play/runner/', '/play/dodge/', '/play/clicker/', '/play/mole/', '/play/snake/', '/ruri/dress/'] + ref_urls() + _ref_hub_urls + [f'/c/{c["id"]}/' for c in contests]
     gone_pages()
     import finder   # 공모전 자동 자료 찾기 색인·질의 (2026-10-19)
@@ -2760,6 +2795,7 @@ def build():
         print('PDF 새로 만듦 %d / 전체 %d' % _MP.make(ROOT, _pp))
     except Exception as e:
         print('PDF 생성 실패(사이트는 계속)', repr(e)[:100])
+    print('지난 달 모음 검색 제외', stale_month_noindex(urls))
     global NEW_URLS
     sm = os.path.join(ROOT, 'sitemap.xml')
     SENT = os.path.join(HERE, 'indexnow_sent.json')   # 2026-10-19: 로컬 빌드가 먼저 돌아도 새 주소를 놓치지 않게, 실제로 보낸 주소를 기록해서 비교

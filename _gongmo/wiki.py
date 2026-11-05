@@ -86,18 +86,52 @@ def collect(urls, noindex, root):
     return arts
 
 
-def _side(arts, cur):
-    groups = []
-    for key, label, ic, _rx in GROUPS:
-        L = [a for a in arts if a['g'] == key]
-        if not L:
-            continue
-        op = ' open' if cur and cur['g'] == key else ''
-        li = ''.join(f'<li><a href="{E(a["u"])}"{" class=on aria-current=page" if cur and a["u"] == cur["u"] else ""}>{E(a["title"][:44])}</a></li>' for a in L)
-        groups.append(f'<details class="wk-g"{op}><summary><span>{ic} {E(label)}</span><small>{len(L)}</small></summary><ul>{li}</ul></details>')
-    return ('<aside class="wk-side"><button type="button" class="wk-toggle" aria-expanded="false">📚 위키 목록</button><div class="wk-nav">'
+_STOP = re.compile(r'20[0-9]{2}(?:년|학년도)?|정리|총정리|방법|안내|기준|확인|가이드|하나요|인가요|되나요|[ \-—·,:?!()「」/]')
+
+
+def _grams(t):
+    t = _STOP.sub('', t)
+    return {t[i:i + 2] for i in range(len(t) - 1)}
+
+
+def _near(arts, n=8):
+    """글마다 같은 묶음 안에서 제목이 가장 가까운 글 n개(2026-11-05 품질 지침 5절: 전체 목록 대신 가까운 소수만). 닮은 글이 모자라면 바로 앞뒤 글로 채운다."""
+    by = {}
+    for a in arts:
+        a['_g'] = _grams(a['title']); by.setdefault(a['g'], []).append(a)
+    out = {}
+    for g, L in by.items():
+        for i, a in enumerate(L):
+            sc = []
+            for j, b in enumerate(L):
+                if i == j or not a['_g'] or not b['_g']:
+                    continue
+                k = len(a['_g'] & b['_g'])
+                if k >= 2:
+                    sc.append((k / len(a['_g'] | b['_g']), -abs(i - j), j))
+            pick = [L[j] for _s, _d, j in sorted(sc, reverse=True)[:n]]
+            d = 1
+            while len(pick) < min(n, len(L) - 1) and d < len(L):
+                for j in (i - d, i + d):
+                    if 0 <= j < len(L) and L[j] not in pick and len(pick) < n:
+                        pick.append(L[j])
+                d += 1
+            out[a['u']] = pick
+    return out
+
+
+def _side(arts, cur, near):
+    """왼쪽 칸: 전체 글 목록(수백 개 링크)을 모든 글에 싣지 않는다. 가까운 글 몇 개 + 묶음별 전체 보기 링크만 두고, 검색은 /assets/wiki/index.json 을 그때 불러 쓴다."""
+    li = ''.join(f'<li><a href="{E(a["u"])}">{E(a["title"][:44])}</a></li>' for a in near.get(cur['u'], []))
+    cnt = {}
+    for a in arts:
+        cnt[a['g']] = cnt.get(a['g'], 0) + 1
+    allg = ''.join(f'<a href="/wiki/#g-{key}">{ic} {E(label)} <small>{cnt[key]}</small></a>' for key, label, ic, _rx in GROUPS if cnt.get(key))
+    return ('<aside class="wk-side"><button type="button" class="wk-toggle" aria-expanded="false">📚 위키에서 다른 글 찾기</button><div class="wk-nav">'
             '<a class="wk-home" href="/wiki/">📚 루리 위키</a><input class="wk-q" type="search" placeholder="글 찾기" aria-label="위키에서 글 찾기" autocomplete="off">'
-            + ''.join(groups) + '</div></aside>')
+            '<ul class="wk-sr" hidden></ul>'
+            + (f'<div class="wk-near"><b>가까운 글</b><ul>{li}</ul></div>' if li else '')
+            + f'<div class="wk-all"><b>묶음별 전체 보기</b>{allg}</div></div></aside>')
 
 
 def _toc(a):
@@ -117,6 +151,7 @@ def _pn(arts, a):
 
 def inject(arts, root):
     n = 0
+    near = _near(arts)
     label = {k: (lb, ic) for k, lb, ic, _ in GROUPS}
     for a in arts:
         f = os.path.join(root, a['u'].strip('/'), 'index.html')
@@ -128,8 +163,9 @@ def inject(arts, root):
             continue
         lb, ic = label[a['g']]
         top = f'<div class="wk-top"><a href="/wiki/">📚 루리 위키</a><span>›</span><span>{ic} {E(lb)}</span></div>'
-        shell = ('<main class="w wk"><div class="wk-grid">' + _side(arts, a) + '<article class="wk-art">' + top + m.group(1) + _pn(arts, a) + '</article>' + _toc(a) + '</div>'
-                 '<link rel="stylesheet" href="/assets/wiki/wiki.css?v=2"><script defer src="/assets/wiki/wiki.js?v=2"></script></main>')
+        # 본문을 HTML 맨 앞에 둔다(왼쪽 칸은 CSS grid-area 로 자리만 왼쪽)
+        shell = ('<main class="w wk"><div class="wk-grid"><article class="wk-art">' + top + m.group(1) + _pn(arts, a) + '</article>' + _side(arts, a, near) + _toc(a) + '</div>'
+                 '<link rel="stylesheet" href="/assets/wiki/wiki.css?v=3"><script defer src="/assets/wiki/wiki.js?v=3"></script></main>')
         doc = doc[:m.start()] + shell + doc[m.end():]
         open(f, 'w', encoding='utf-8', newline='\n').write(doc)
         n += 1
@@ -154,7 +190,7 @@ def hub(arts, page_fn, site):
             '<input class="wk-hq" type="search" placeholder="예: 에너지바우처, 근로장려금, 퇴직금" aria-label="위키 검색" autocomplete="off"><div class="wk-sc" role="group" aria-label="검색 범위"><button type="button" class="on" data-s="">전체</button><button type="button" data-s="money">생활 돈</button><button type="button" data-s="guide">가이드</button><button type="button" data-s="dev">개발·기타</button></div><div class="wk-res" aria-live="polite"></div>'
             f'<div class="wk-chips">{chips}</div></header>'
             + (f'<section class="wk-start"><h2>최근 확인한 가이드 <small>확인일이 가장 최근인 5편</small></h2><div class="wk-sgrid">{st}</div></section>' if st else '')
-            + cards + '<link rel="stylesheet" href="/assets/wiki/wiki.css?v=2"><script defer src="/assets/wiki/wiki.js?v=2"></script>')
+            + cards + '<link rel="stylesheet" href="/assets/wiki/wiki.css?v=3"><script defer src="/assets/wiki/wiki.js?v=3"></script>')
     page_fn('/wiki/', '루리 위키 — 생활 돈 가이드·응모 가이드·개발 지식 한곳에', f'공식 출처로 확인한 생활 돈 가이드 {len(byg.get("money", []))}편과 응모·고민 해결 가이드, 개발 지식, 평론을 한곳에서 검색하고 읽어요.',
             body, [('루리 애널리스트', '/'), ('루리 위키', '/wiki/')])
 
