@@ -5572,7 +5572,14 @@ def exp_all():
         if n['t'] in seen:
             continue
         seen.add(n['t'])
-        out.append(n)
+        try:   # 2026-11-05 P0-4: 저장된 옛 노드의 발언 주체도 같은 규칙으로 다시 판정(「빼면 IMF」「국수본부장」 제거)
+            import analyst as _AN
+            w = _AN.who_of(n['t'])
+        except Exception:
+            w = n.get('who')
+        if not w:
+            continue
+        out.append(dict(n, who=w))
     return out
 
 
