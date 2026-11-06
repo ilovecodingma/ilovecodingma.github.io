@@ -3635,6 +3635,12 @@ def kin_guides():
     _KD = json.load(open(KIN_F, encoding='utf-8'))
     G = _KD['guides']
     GN = {x['slug']: x for x in G}
+    BACK = {}   # 2026-11-06 사용자 「방문자 1000명을 위해 계속 작업」: 어떤 글을 관련 글로 건 글(파생 글)을 그 글에서도 되돌려 잇는다. 유입이 많은 글에서 새 파생 글로 가는 길이 자동으로 생긴다
+    for x in G:
+        for _u, _t in x.get('related', []):
+            _m = re.match(r'/money/guide/([^/]+)/$', _u)
+            if _m and _m.group(1) in GN and _m.group(1) != x['slug']:
+                BACK.setdefault(_m.group(1), []).append(x['slug'])
     JR = _KD.get('journeys', [])
     JIDX = {}
     for j in JR:
@@ -3670,6 +3676,9 @@ def kin_guides():
         faq, ld = _faq([(q, a) for q, a in g['faq']])
         src = ''.join(f'<li><a href="{E(u)}" target="_blank" rel="noopener nofollow">{E(n)}</a></li>' for n, u in g['sources'])
         _rl = list(g['related'])   # 2026-11-02 마케터 요청: 관련 글 3~5개 자동 보충(제목·이름 공통 단어 기준)
+        _hv = {u for u, _t in _rl}
+        for _sl_ in [x for x in reversed(BACK.get(g['slug'], [])) if f'/money/guide/{x}/' not in _hv][:4]:   # 이 글을 관련 글로 건 글, 최근에 쓴 것부터 4건
+            _rl.append((f'/money/guide/{_sl_}/', GN[_sl_]['name']))
         if len(_rl) < 5:
             _have = {u for u, _t in _rl} | {f'/money/guide/{g["slug"]}/'}
             _tk = lambda x: {w for w in re.findall(r'[가-힣]{2,}', x['name'] + ' ' + x['title']) if w not in KIN_STOP}
@@ -3907,6 +3916,17 @@ def issue_json_pages():
     필드: slug, title, desc, h1, date(기준일 YYYY-MM-DD), keep_days(기본 4), summary, confirmed[[내용,출처]], unconfirmed[[내용,이유]],
     sections[{h,p,ul}], faq[[질문,답]], sources[[이름,url]], related[[경로,이름]]. date+keep_days 가 지나면 페이지를 지운다."""
     keep, urls, icards = set(), [], []
+    _live = []   # 2026-11-06 마케터 요청 「이슈 하단에 같은 분류 최신 글 5개」: 게시 중인 이슈를 먼저 훑어 (기준일, slug, 분류 집합, 제목)을 모은다
+    for fn_ in sorted(os.listdir(ISSUE_DIR)) if os.path.isdir(ISSUE_DIR) else []:
+        if not fn_.endswith('.json'):
+            continue
+        try:
+            c = json.load(open(os.path.join(ISSUE_DIR, fn_), encoding='utf-8'))
+            if (TODAY - datetime.date.fromisoformat(c['date'])).days <= int(c.get('keep_days', 4)):
+                _live.append((c['date'], c['slug'], set(re.split(r'[/·,\s]+', c.get('category') or '')) - {''}, c.get('home_title') or c['h1']))
+        except Exception:
+            continue
+    _live.sort(key=lambda x: x[0], reverse=True)
     if os.path.isdir(ISSUE_DIR):
         for fn_ in sorted(os.listdir(ISSUE_DIR)):
             if not fn_.endswith('.json'):
@@ -3954,6 +3974,11 @@ def issue_json_pages():
                 if _u not in [x[0] for x in _rl_i]:
                     _rl_i.append((_u, _n + ' 가이드'))
             rel = ''.join(f'<a href="{E(u_)}">{E(n_)}</a>' for u_, n_ in _rl_i)
+            _cat = set(re.split(r'[/·,\s]+', c.get('category') or '')) - {''}
+            _oth = [x for x in _live if x[1] != sl]
+            _mo = ([x for x in _oth if x[2] & _cat] + [x for x in _oth if not (x[2] & _cat)])[:5]   # 같은 분류 먼저(최신순), 모자라면 다른 분류 최신 글로 채운다
+            if _mo:
+                rel += '</p><h2>최근 이슈 더 보기</h2><ul class="gm-l">' + ''.join(f'<li><a href="/issue/{E(x[1])}/">{E(x[3])}</a> <small>{x[0][5:].replace("-", "/")}</small></li>' for x in _mo) + '</ul><p class="hm-links"><a href="/issue/">이슈 전체 보기</a>'
             body = (f'<p class="bc"><a href="/">홈</a> › 이슈 › {E(c["h1"][:30])}</p><h1>{E(c["h1"])}</h1>'
                     f'<div class="cat-st"><b>결론</b><br>{sent_list(c["summary"])}</div><p class="note">{c["date"]} 기준 · 이 글은 단기 이슈라 {int(c.get("keep_days", 4))}일 뒤 내려가요.</p>'
                     + ((PH.figure(_ph) + PH.CSS) if _ph else '') + secs + (f'<p class="hm-links">{rel}</p>' if rel else '')
