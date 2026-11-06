@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-07 07:00",
+ "updated": "2026-11-07 08:00",
  "items": [
   {
    "query": "kt 대 삼성",
@@ -48,6 +48,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-03",
+   "expires": "2026-11-10"
+  },
+  {
+   "query": "주가 대폭락",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 20000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-07",
    "expires": "2026-11-10"
   },
   {
@@ -159,6 +171,18 @@
    "expires": "2026-11-10"
   },
   {
+   "query": "임형주",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 5000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-07",
+   "expires": "2026-11-10"
+  },
+  {
    "query": "김도영",
    "tier": "단기",
    "signal": [
@@ -180,18 +204,6 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-05",
-   "expires": "2026-11-10"
-  },
-  {
-   "query": "임형주",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 5000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-07",
    "expires": "2026-11-10"
   },
   {
@@ -339,6 +351,18 @@
    "expires": "2026-11-10"
   },
   {
+   "query": "유튜버",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-07",
+   "expires": "2026-11-10"
+  },
+  {
    "query": "김지영",
    "tier": "단기",
    "signal": [
@@ -352,18 +376,6 @@
   },
   {
    "query": "장유빈",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 2000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-07",
-   "expires": "2026-11-10"
-  },
-  {
-   "query": "유튜버",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -600,6 +612,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-06",
+   "expires": "2026-11-10"
+  },
+  {
+   "query": "시콜 스키 s 92",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-07",
    "expires": "2026-11-10"
   },
   {
@@ -1768,6 +1792,18 @@
   },
   {
    "query": "강남",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-07",
+   "expires": "2026-11-10"
+  },
+  {
+   "query": "황인범",
    "tier": "단기",
    "signal": [
     "구글트렌드"
