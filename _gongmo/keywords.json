@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-06 11:00",
+ "updated": "2026-11-06 12:00",
  "items": [
   {
    "query": "로스앤젤레스 fc 대 미네소타 유나이티드 fc 순위",
@@ -36,6 +36,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-03",
+   "expires": "2026-11-09"
+  },
+  {
+   "query": "서킷브레이커",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 20000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-06",
    "expires": "2026-11-09"
   },
   {
@@ -447,6 +459,18 @@
    "expires": "2026-11-09"
   },
   {
+   "query": "삼성전자 주가",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-05",
+   "expires": "2026-11-09"
+  },
+  {
    "query": "호날두",
    "tier": "단기",
    "signal": [
@@ -460,6 +484,18 @@
   },
   {
    "query": "김지민",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-06",
+   "expires": "2026-11-09"
+  },
+  {
+   "query": "하이닉스 주가",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -675,7 +711,7 @@
    "expires": "2026-11-09"
   },
   {
-   "query": "삼성전자 주가",
+   "query": "치매",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -683,7 +719,43 @@
    "score": 2000,
    "status": "미작성",
    "page": "",
-   "registered": "2026-11-05",
+   "registered": "2026-11-06",
+   "expires": "2026-11-09"
+  },
+  {
+   "query": "삼전주가",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-06",
+   "expires": "2026-11-09"
+  },
+  {
+   "query": "장윤정",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-06",
+   "expires": "2026-11-09"
+  },
+  {
+   "query": "최원태",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-06",
    "expires": "2026-11-09"
   },
   {
@@ -1020,6 +1092,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-05",
+   "expires": "2026-11-09"
+  },
+  {
+   "query": "군함",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-06",
    "expires": "2026-11-09"
   },
   {
@@ -6916,6 +7000,188 @@
    "expires": ""
   },
   {
+   "query": "청약 1순위 조건·예치금",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/subscription-first-rank-deposit-by-region/",
+   "registered": "2026-11-06",
+   "expires": ""
+  },
+  {
+   "query": "청약 가점제·추첨제 비율",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/subscription-points-vs-lottery-ratio/",
+   "registered": "2026-11-06",
+   "expires": ""
+  },
+  {
+   "query": "청약 특별공급 종류",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/special-supply-types-overview/",
+   "registered": "2026-11-06",
+   "expires": ""
+  },
+  {
+   "query": "신혼부부 특별공급 자격",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/special-supply-newlywed-income-asset/",
+   "registered": "2026-11-06",
+   "expires": ""
+  },
+  {
+   "query": "생애최초 특별공급",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/special-supply-first-home/",
+   "registered": "2026-11-06",
+   "expires": ""
+  },
+  {
+   "query": "신생아 특별공급",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/special-supply-newborn-priority/",
+   "registered": "2026-11-06",
+   "expires": ""
+  },
+  {
+   "query": "토지임대부 분양주택",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/land-lease-sale-housing/",
+   "registered": "2026-11-06",
+   "expires": ""
+  },
+  {
+   "query": "지분적립형 분양주택",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/equity-accumulation-sale-housing/",
+   "registered": "2026-11-06",
+   "expires": ""
+  },
+  {
+   "query": "신혼희망타운 자격·대출",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/newlywed-hope-town/",
+   "registered": "2026-11-06",
+   "expires": ""
+  },
+  {
+   "query": "청약 재당첨 제한",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/subscription-rewin-restriction-period/",
+   "registered": "2026-11-06",
+   "expires": ""
+  },
+  {
+   "query": "분양권 전매제한·거주의무",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/resale-restriction-residence-obligation/",
+   "registered": "2026-11-06",
+   "expires": ""
+  },
+  {
+   "query": "청약 예비입주자 순번",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/subscription-reserve-winner-order/",
+   "registered": "2026-11-06",
+   "expires": ""
+  },
+  {
+   "query": "부부 중복청약·배우자 통장",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/couple-duplicate-subscription-spouse-account/",
+   "registered": "2026-11-06",
+   "expires": ""
+  },
+  {
+   "query": "무주택세대구성원 기준",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/homeless-household-member-definition/",
+   "registered": "2026-11-06",
+   "expires": ""
+  },
+  {
    "query": "연차수당 계산기",
    "tier": "장기",
    "signal": [
@@ -7517,6 +7783,19 @@
    "page": "/issue/subway-fare-evasion-1104/",
    "registered": "2026-11-04",
    "expires": "2026-11-25"
+  },
+  {
+   "query": "수능일 증시 개장 시간 2026 11월 19일 몇 시? 시가·종가·선물옵션·채권 결제 시간 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 4,
+   "status": "작성",
+   "page": "/issue/suneung-day-market-hours-1106/",
+   "registered": "2026-11-06",
+   "expires": "2026-11-20"
   },
   {
    "query": "2027학년도 수능 결과 발표일과 성적표 항목, 이의신청 기간은?",
