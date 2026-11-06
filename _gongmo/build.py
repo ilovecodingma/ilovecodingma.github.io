@@ -903,7 +903,7 @@ FRIDGE_KEEP = int(os.environ.get('FRIDGE_KEEP', '100'))   # 2026-11-03 100000→
 _FRIDGE_OLD = 100000; _x = int(os.environ.get('FRIDGE_KEEP_UNUSED', '0'))   # 사용자 승인으로 100→전체: 레시피는 재료 체크·인분 계산 같은 실제 도구가 있는 페이지라 noindex 로 가리지 않는다
 RICH_MIN = int(os.environ.get('RICH_MIN', '6'))   # 사용자 승인으로 6→4: 자격·상금·제출물이 거의 비어 미완성인 상세(2~3점)만 noindex, 값이 채워지면 자동 색인
 THIN_FORCE_NOINDEX = {'/community/', '/me/', '/plaza/', '/ssul/', '/dev/tag/windows/', '/satire/2026-10-18/',
-                      '/ruri/dress/', '/vn/pool/', '/play/', '/dev/tag/seo/', '/dev/tag/data/', '/dev/tag/analytics/', '/dev/tag/cloudflare/', '/satire/2026-10-19/'}   # 2026-11-04 사용자 「애드센스 통과·구글 유입」: 본문 120~530자인 빈 화면·태그·풍자 1건을 검색에서 뺌
+                      '/vn/pool/', '/play/', '/dev/tag/seo/', '/dev/tag/data/', '/dev/tag/analytics/', '/dev/tag/cloudflare/', '/satire/2026-10-19/'}   # 2026-11-04 사용자 「애드센스 통과·구글 유입」: 본문 120~530자인 빈 화면·태그·풍자 1건을 검색에서 뺌
 
 
 def stale_month_noindex(urls):
@@ -2864,7 +2864,7 @@ def build():
     ref_pages()
     _ref_hub_urls = ref_hub()
     urls = ['/', '/contest/', '/apply/', '/event/', '/guide/', '/ssul/', '/today/'] + lab_urls + [f'/ssul/{x["slug"]}/' for x in ss] + [f'/a/{a["id"]}/' for a in aps] + [f'/cat/{s}/' for s, _ in CATS] + [f'/guide/{g[0]}/' for g in GUIDES] + ['/qa/', '/prep/', '/fridge/', '/app/', '/news/'] + extra_urls + [f'/guide/{q["slug"]}/' for q in QA] + \
-           ['/about/', '/privacy/', '/terms/', '/contact/', '/collab/', '/play/', '/play/survivor/', '/play/dice/', '/play/2048/', '/play/memory/', '/play/runner/', '/play/dodge/', '/play/clicker/', '/play/mole/', '/play/snake/', '/ruri/dress/'] + ref_urls() + _ref_hub_urls + [f'/c/{c["id"]}/' for c in contests]
+           ['/about/', '/privacy/', '/terms/', '/contact/', '/collab/', '/play/', '/play/survivor/', '/play/dice/', '/play/2048/', '/play/memory/', '/play/runner/', '/play/dodge/', '/play/clicker/', '/play/mole/', '/play/snake/'] + ref_urls() + _ref_hub_urls + [f'/c/{c["id"]}/' for c in contests]
     gone_pages()
     import finder   # 공모전 자동 자료 찾기 색인·질의 (2026-10-19)
     print('자료 색인', finder.build_index(urls, NOINDEX, {c['id'] for c in live}), '질의', len(finder.build_queries(live, notice_points)))
