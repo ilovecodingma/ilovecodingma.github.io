@@ -3739,7 +3739,13 @@ def kin_guides():
                 + _g_appendix(g)
                 + (f'<aside class="say"><img src="/assets/ruri/o_det_think_s.webp" width="56" height="77" alt="루리" loading="lazy"><div class="bub"><b>루리의 한마디</b><div>{E(g["lury_note"])}</div></div></aside>' if g.get('lury_note') else '')
                 + f'<p class="hm-links">{rel} · <a href="/money/guide/">다른 생활 돈 가이드</a></p>' + GAME_CSS + '<link rel="stylesheet" href="/assets/guide/guide.css?v=7">' + (f'<script defer src="{E(g["script"])}"></script>' if g.get('script') else ''))
-        page(f'/money/guide/{g["slug"]}/', g['title'], g['desc'], body, [('루리 줍줍', '/'), ('머니', '/analyst/'), ('생활 돈 가이드', '/money/guide/'), (g['name'], f'/money/guide/{g["slug"]}/')], ld, og=og_art('guide', g['slug'], _dt_og(g['h1']), '생활 가이드 · ' + g['name']))
+        _og_g = og_art('guide', g['slug'], _dt_og(g['h1']), '생활 가이드 · ' + g['name'])
+        _art_g = {'@context': 'https://schema.org', '@type': 'Article', 'headline': g['title'][:110], 'description': g['desc'], 'inLanguage': 'ko',
+                  'mainEntityOfPage': SITE + f'/money/guide/{g["slug"]}/', 'image': SITE + _og_g,
+                  'author': {'@type': 'Organization', 'name': '루리 줍줍 편집', 'url': SITE + '/'}, 'publisher': {'@type': 'Organization', 'name': NAME, 'url': SITE + '/'}}
+        if _m:   # 2026-11-06 마케터 요청 「구조화 데이터 점검」: 가이드에는 FAQPage 만 있고 글 자체(Article)와 확인일이 빠져 있었다. 확인일을 수정일로 싣는다
+            _art_g['datePublished'] = _art_g['dateModified'] = _m.group(1)
+        page(f'/money/guide/{g["slug"]}/', g['title'], g['desc'], body, [('루리 줍줍', '/'), ('머니', '/analyst/'), ('생활 돈 가이드', '/money/guide/'), (g['name'], f'/money/guide/{g["slug"]}/')], ({'@context': 'https://schema.org', '@graph': [_art_g, ld]} if ld else _art_g), og=_og_g)
         urls.append(f'/money/guide/{g["slug"]}/')
         cards += f'<li><a class="card" data-c="guide" href="/money/guide/{g["slug"]}/"><span class="ic">{g["icon"]}</span><div class="cb"><h3 class="t">{E(g["name"])}</h3><p class="o">{E(g["h1"])}</p></div></a></li>'
     jcards = ''
@@ -4021,8 +4027,10 @@ def issue_json_pages():
             art = {'@context': 'https://schema.org', '@type': 'Article', 'headline': c['title'], 'description': c['desc'], 'inLanguage': 'ko',
                    'datePublished': c['date'], 'dateModified': c['date'], 'mainEntityOfPage': SITE + p_,
                    'author': {'@type': 'Organization', 'name': '루리 줍줍 편집', 'url': SITE + '/'}, 'publisher': {'@type': 'Organization', 'name': NAME, 'url': SITE + '/'}}
+            _og_i = og_art('issue', c['slug'], _dt_og(c['h1']), '이슈 · ' + c['date'][5:].replace('-', '.') + ' 기준')
+            art['image'] = SITE + _og_i   # 2026-11-06 구조화 데이터 점검: Article 에 대표 이미지가 빠져 있었다
             ld_ = {'@context': 'https://schema.org', '@graph': [art, fld]} if fld else art
-            page(p_, c['title'], c['desc'], body, [('루리 줍줍', '/'), ('이슈', '/news/'), (c['h1'][:20], p_)], ld_, full_title=True, og=og_art('issue', c['slug'], _dt_og(c['h1']), '이슈 · ' + c['date'][5:].replace('-', '.') + ' 기준'))
+            page(p_, c['title'], c['desc'], body, [('루리 줍줍', '/'), ('이슈', '/news/'), (c['h1'][:20], p_)], ld_, full_title=True, og=_og_i)
             urls.append(p_)
             _is = c.get('home_sum') or (re.split(r'(?<=[다요]\.)\s+', c['summary'].strip())[0])
             icards.append((c['date'], f'<li><div><a href="{p_}">{E(c.get("home_title") or c["h1"])}</a><p>{E(_is)}</p><small>{E(c.get("category") or "이슈")} · {c["date"][5:].replace("-", "/")} 기준</small></div>' + (f'<a href="{p_}" tabindex="-1" aria-hidden="true">{PH.thumb(_ph)}</a>' if _ph else '') + '</li>'))
