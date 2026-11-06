@@ -1,6 +1,6 @@
 {
- "at": "2026-11-06 09:06",
- "nitems": 524,
+ "at": "2026-11-06 09:30",
+ "nitems": 523,
  "cands": [
   {
    "kw": "재혼",
@@ -16,7 +16,7 @@
     "한국경제",
     "헤럴드경제"
    ],
-   "n": 12,
+   "n": 10,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -29,14 +29,14 @@
      "link": "https://sports.donga.com/ent/article/all/20261106/134976198/1"
     },
     {
-     "src": "동아일보",
-     "title": "‘재혼 황후’ 터졌다…디즈니+ 12개국 정상·글로벌 7위",
-     "link": "https://sports.donga.com/ent/article/all/20261105/134975501/1"
-    },
-    {
      "src": "한겨레",
      "title": "“유치한데 중독성 있네”…‘재혼 황후’ 호불호 속 디즈니 1위",
      "link": "https://www.hani.co.kr/arti/culture/culture_general/1285884.html"
+    },
+    {
+     "src": "한국경제",
+     "title": "서인영, 12월 26일 재혼…신랑은 6세 연상 NP 최지훈 대표",
+     "link": "https://www.hankyung.com/article/202611057401H"
     }
    ]
   },
@@ -76,37 +76,107 @@
    ]
   },
   {
-   "kw": "서인영",
+   "kw": "학폭",
    "nsrc": 6,
    "srcs": [
-    "SBS",
     "뉴시스",
+    "동아일보",
+    "세계일보",
+    "연합뉴스",
+    "조선일보",
+    "헤럴드경제"
+   ],
+   "n": 10,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "차예련 측, 학폭 의혹 재차 반박…\"허위사실 유포 강력 조치\"",
+     "link": "https://www.yna.co.kr/view/AKR20261104120800005"
+    },
+    {
+     "src": "동아일보",
+     "title": "국동호, 학폭 폭로 변호사 결국 송치…“하지 않은 일 인정 못 해” [공식]",
+     "link": "https://sports.donga.com/ent/article/all/20261106/134976498/1"
+    },
+    {
+     "src": "세계일보",
+     "title": "차예련, 학폭·골프장 갑질 의혹 이어…“드라이기 뺏고 짜증” 미용실 목격담 등장",
+     "link": "https://www.segye.com/newsView/20261106502823"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "차예련 측 ‘학폭+인성 논란’에 법적 대응 시사…“허위사실·인신공격에 강력 조치할 것”",
+     "link": "https://biz.heraldcorp.com/article/10925779"
+    }
+   ]
+  },
+  {
+   "kw": "아들",
+   "nsrc": 6,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
     "세계일보",
     "조선일보",
     "한국경제",
     "헤럴드경제"
    ],
-   "n": 12,
+   "n": 10,
    "headlines": [
     {
+     "src": "동아일보",
+     "title": "김구라 아들 그리, 결혼 준비 중…“군대 기다려준 여친”",
+     "link": "https://sports.donga.com/ent/article/all/20261106/134976541/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "이승기♥이다인, 생후 4개월 둘째 아들 첫 공개…네 식구 행복한 근황",
+     "link": "https://sports.donga.com/ent/article/all/20261105/134975754/1"
+    },
+    {
      "src": "한국경제",
-     "title": "서인영, 12월 26일 재혼…신랑은 6세 연상 NP 최지훈 대표",
-     "link": "https://www.hankyung.com/article/202611057401H"
+     "title": "강석우, 69세에 할아버지 됐다…\"아들이 아들 낳아\"",
+     "link": "https://www.hankyung.com/article/202610292398H"
     },
     {
      "src": "세계일보",
-     "title": "서인영, 과거 월 지출만 2억원이었다…“현재 통장 잔고 4만원”",
-     "link": "https://www.segye.com/newsView/20261105514385"
+     "title": "이혜정, 2년 전 절연한 아들 생각에 눈물…“언젠가는 화해하겠지”",
+     "link": "https://www.segye.com/newsView/20261106503569"
+    }
+   ]
+  },
+  {
+   "kw": "복귀",
+   "nsrc": 6,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "동아일보",
+    "세계일보",
+    "연합뉴스",
+    "조선일보"
+   ],
+   "n": 9,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "'26년만 연예계 복귀' 고지용 \"오해 풀고 싶어, 팬 서운함 이해\"",
+     "link": "https://www.yna.co.kr/view/AKR20261105151000005"
     },
     {
-     "src": "헤럴드경제",
-     "title": "‘재혼’ 서인영, 12월 26일 교회서 스몰웨딩…“축가·꽃 다 뺐다”",
-     "link": "https://biz.heraldcorp.com/article/10926292"
+     "src": "동아일보",
+     "title": "박진호, 6년 5개월 만에 ‘개콘’ 복귀…진호봇 부활",
+     "link": "https://sports.donga.com/ent/article/all/20261106/134976105/1"
+    },
+    {
+     "src": "세계일보",
+     "title": "조폭 연루설 조세호, 유튜브 복귀 시동 \"다시 한 번 사과\"",
+     "link": "https://www.segye.com/newsView/20261106500038"
     },
     {
      "src": "SBS",
-     "title": "서인영, 12월 26일 6살 연상 사업가와 재혼…\"교회서 스몰 웨딩\"",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008831629&plink=RSSLINK&cooper=RSSREADER"
+     "title": "진영, '파이터'로 스크린 복귀…본격 격투 액션 도전",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008828128&plink=RSSLINK&cooper=RSSREADER"
     }
    ]
   },
@@ -181,111 +251,6 @@
    ]
   },
   {
-   "kw": "아들",
-   "nsrc": 6,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "세계일보",
-    "조선일보",
-    "한국경제",
-    "헤럴드경제"
-   ],
-   "n": 9,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "이승기♥이다인, 생후 4개월 둘째 아들 첫 공개…네 식구 행복한 근황",
-     "link": "https://sports.donga.com/ent/article/all/20261105/134975754/1"
-    },
-    {
-     "src": "한국경제",
-     "title": "강석우, 69세에 할아버지 됐다…\"아들이 아들 낳아\"",
-     "link": "https://www.hankyung.com/article/202610292398H"
-    },
-    {
-     "src": "세계일보",
-     "title": "이혜정, 2년 전 절연한 아들 생각에 눈물…“언젠가는 화해하겠지”",
-     "link": "https://www.segye.com/newsView/20261106503569"
-    },
-    {
-     "src": "세계일보",
-     "title": "오윤아, 아들 민이 안아준 시아버지에 재혼 결심…“이런 분 또 만날까”",
-     "link": "https://www.segye.com/newsView/20261106503072"
-    }
-   ]
-  },
-  {
-   "kw": "개월",
-   "nsrc": 6,
-   "srcs": [
-    "SBS",
-    "동아일보",
-    "세계일보",
-    "연합뉴스",
-    "한겨레",
-    "한국경제"
-   ],
-   "n": 8,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "'복면가왕' 11개월 만에 재개…'황금마스크' 12월 방송",
-     "link": "https://www.yna.co.kr/view/AKR20261103068900005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "배우 신세경 괴롭힌 악플러, 2심서 징역 8개월 법정구속",
-     "link": "https://www.yna.co.kr/view/AKR20261102117700005"
-    },
-    {
-     "src": "동아일보",
-     "title": "박진호, 6년 5개월 만에 ‘개콘’ 복귀…진호봇 부활",
-     "link": "https://sports.donga.com/ent/article/all/20261106/134976105/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "이승기♥이다인, 생후 4개월 둘째 아들 첫 공개…네 식구 행복한 근황",
-     "link": "https://sports.donga.com/ent/article/all/20261105/134975754/1"
-    }
-   ]
-  },
-  {
-   "kw": "사과",
-   "nsrc": 6,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "세계일보",
-    "연합뉴스",
-    "조선일보",
-    "헤럴드경제"
-   ],
-   "n": 7,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "하이브, 사원 여권·카드번호 등 개인정보 유출…\"깊이 사과\"",
-     "link": "https://www.yna.co.kr/view/AKR20261102138300005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "심수봉, 후배 비판 논란 후 첫 무대서 재차 사과…\"해선 안될말\"",
-     "link": "https://www.yna.co.kr/view/AKR20261102086900005"
-    },
-    {
-     "src": "동아일보",
-     "title": "‘유퀴즈’ 하차 조세호, 유튜브로 전격 복귀…“반성 많이해” 사과 [DA클립]",
-     "link": "https://sports.donga.com/ent/article/all/20261105/134974467/1"
-    },
-    {
-     "src": "세계일보",
-     "title": "조세호, 새 유튜브 채널 열고 ‘조폭 친분설’ 재차 사과…“더 신중하게 행동할 것”",
-     "link": "https://www.segye.com/newsView/20261106502736"
-    }
-   ]
-  },
-  {
    "kw": "나나",
    "nsrc": 6,
    "srcs": [
@@ -356,70 +321,70 @@
    ]
   },
   {
-   "kw": "조세호",
+   "kw": "결혼",
    "nsrc": 5,
    "srcs": [
     "뉴시스",
     "동아일보",
     "세계일보",
-    "조선일보",
-    "헤럴드경제"
+    "연합뉴스",
+    "조선일보"
    ],
-   "n": 10,
+   "n": 12,
    "headlines": [
     {
+     "src": "연합뉴스",
+     "title": "배우 도상우·모델 박지혜, 내년 2월 결혼",
+     "link": "https://www.yna.co.kr/view/AKR20261105173700005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "포미닛 출신 전지윤, 22일 결혼…\"부끄럽고 설렌다\"",
+     "link": "https://www.yna.co.kr/view/AKR20261104147000005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "배우 배나라·한재아 14일 결혼…\"서로 의지하는 삶 살아가기로\"",
+     "link": "https://www.yna.co.kr/view/AKR20261103123900005"
+    },
+    {
      "src": "동아일보",
-     "title": "‘유퀴즈’ 하차 조세호, 유튜브로 전격 복귀…“반성 많이해” 사과 [DA클립]",
-     "link": "https://sports.donga.com/ent/article/all/20261105/134974467/1"
-    },
-    {
-     "src": "세계일보",
-     "title": "조세호, 새 유튜브 채널 열고 ‘조폭 친분설’ 재차 사과…“더 신중하게 행동할 것”",
-     "link": "https://www.segye.com/newsView/20261106502736"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "조세호 ‘조폭 연루설’ 후 방송 싹 끊기더니 결국…유튜브 채널 열었다",
-     "link": "https://biz.heraldcorp.com/article/10927541"
-    },
-    {
-     "src": "뉴시스",
-     "title": "조폭 연루설 조세호, 유튜브 복귀 시동 \"다시 한 번 사과\"",
-     "link": "https://www.newsis.com/view/NISX20261105_0003857032"
+     "title": "김구라 아들 그리, 결혼 준비 중…“군대 기다려준 여친”",
+     "link": "https://sports.donga.com/ent/article/all/20261106/134976541/1"
     }
    ]
   },
   {
-   "kw": "복귀",
+   "kw": "서인영",
    "nsrc": 5,
    "srcs": [
     "SBS",
     "뉴시스",
-    "동아일보",
-    "연합뉴스",
-    "조선일보"
+    "조선일보",
+    "한국경제",
+    "헤럴드경제"
    ],
-   "n": 9,
+   "n": 11,
    "headlines": [
     {
-     "src": "연합뉴스",
-     "title": "'26년만 연예계 복귀' 고지용 \"오해 풀고 싶어, 팬 서운함 이해\"",
-     "link": "https://www.yna.co.kr/view/AKR20261105151000005"
+     "src": "한국경제",
+     "title": "서인영, 12월 26일 재혼…신랑은 6세 연상 NP 최지훈 대표",
+     "link": "https://www.hankyung.com/article/202611057401H"
     },
     {
-     "src": "동아일보",
-     "title": "박진호, 6년 5개월 만에 ‘개콘’ 복귀…진호봇 부활",
-     "link": "https://sports.donga.com/ent/article/all/20261106/134976105/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "‘유퀴즈’ 하차 조세호, 유튜브로 전격 복귀…“반성 많이해” 사과 [DA클립]",
-     "link": "https://sports.donga.com/ent/article/all/20261105/134974467/1"
+     "src": "헤럴드경제",
+     "title": "‘재혼’ 서인영, 12월 26일 교회서 스몰웨딩…“축가·꽃 다 뺐다”",
+     "link": "https://biz.heraldcorp.com/article/10926292"
     },
     {
      "src": "SBS",
-     "title": "진영, '파이터'로 스크린 복귀…본격 격투 액션 도전",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008828128&plink=RSSLINK&cooper=RSSREADER"
+     "title": "서인영, 12월 26일 6살 연상 사업가와 재혼…\"교회서 스몰 웨딩\"",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008831629&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "뉴시스",
+     "title": "서인영 \"한 달 지출 2억원일 때도…지금 잔고 4만원\"",
+     "link": "https://www.newsis.com/view/NISX20261105_0003855877"
     }
    ]
   },
@@ -458,7 +423,7 @@
    ]
   },
   {
-   "kw": "학폭",
+   "kw": "유튜브",
    "nsrc": 5,
    "srcs": [
     "뉴시스",
@@ -471,42 +436,13 @@
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "차예련 측, 학폭 의혹 재차 반박…\"허위사실 유포 강력 조치\"",
-     "link": "https://www.yna.co.kr/view/AKR20261104120800005"
+     "title": "유튜브·투비·BBC 한자리에…방미통위, 서울서 국제 OTT 포럼",
+     "link": "https://www.yna.co.kr/view/AKR20261105090000017"
     },
     {
      "src": "세계일보",
-     "title": "차예련, 학폭·골프장 갑질 의혹 이어…“드라이기 뺏고 짜증” 미용실 목격담 등장",
-     "link": "https://www.segye.com/newsView/20261106502823"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "차예련 측 ‘학폭+인성 논란’에 법적 대응 시사…“허위사실·인신공격에 강력 조치할 것”",
-     "link": "https://biz.heraldcorp.com/article/10925779"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "“인천 출신 가수…학폭 폭로하려고 10년 넘게 지켜 보는 중” SNS서 확산",
-     "link": "https://biz.heraldcorp.com/article/10925056"
-    }
-   ]
-  },
-  {
-   "kw": "유튜브",
-   "nsrc": 5,
-   "srcs": [
-    "뉴시스",
-    "세계일보",
-    "연합뉴스",
-    "조선일보",
-    "헤럴드경제"
-   ],
-   "n": 7,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "유튜브·투비·BBC 한자리에…방미통위, 서울서 국제 OTT 포럼",
-     "link": "https://www.yna.co.kr/view/AKR20261105090000017"
+     "title": "조폭 연루설 조세호, 유튜브 복귀 시동 \"다시 한 번 사과\"",
+     "link": "https://www.segye.com/newsView/20261106500038"
     },
     {
      "src": "세계일보",
@@ -517,11 +453,6 @@
      "src": "헤럴드경제",
      "title": "조세호 ‘조폭 연루설’ 후 방송 싹 끊기더니 결국…유튜브 채널 열었다",
      "link": "https://biz.heraldcorp.com/article/10927541"
-    },
-    {
-     "src": "뉴시스",
-     "title": "조폭 연루설 조세호, 유튜브 복귀 시동 \"다시 한 번 사과\"",
-     "link": "https://www.newsis.com/view/NISX20261105_0003857032"
     }
    ]
   },
@@ -560,36 +491,172 @@
    ]
   },
   {
-   "kw": "까지",
+   "kw": "준비",
+   "nsrc": 5,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "세계일보",
+    "연합뉴스",
+    "조선일보"
+   ],
+   "n": 7,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "하이브, BTS 효과에 최고 실적…\"'아리랑' 이후 단체·솔로 활동 준비\"(종합2보)",
+     "link": "https://www.yna.co.kr/view/AKR20261103165000005"
+    },
+    {
+     "src": "동아일보",
+     "title": "김구라 아들 그리, 결혼 준비 중…“군대 기다려준 여친”",
+     "link": "https://sports.donga.com/ent/article/all/20261106/134976541/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "플라이 투 더 스카이, 전국투어 이어 새앨범도 준비",
+     "link": "https://sports.donga.com/ent/article/all/20261106/134976067/1"
+    },
+    {
+     "src": "세계일보",
+     "title": "김구라, 곧 며느리 본다…子 그리 \"결혼 준비 중\"",
+     "link": "https://www.segye.com/newsView/20261106503347"
+    }
+   ]
+  },
+  {
+   "kw": "개월",
+   "nsrc": 5,
+   "srcs": [
+    "SBS",
+    "동아일보",
+    "연합뉴스",
+    "한겨레",
+    "한국경제"
+   ],
+   "n": 7,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "'복면가왕' 11개월 만에 재개…'황금마스크' 12월 방송",
+     "link": "https://www.yna.co.kr/view/AKR20261103068900005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "배우 신세경 괴롭힌 악플러, 2심서 징역 8개월 법정구속",
+     "link": "https://www.yna.co.kr/view/AKR20261102117700005"
+    },
+    {
+     "src": "동아일보",
+     "title": "박진호, 6년 5개월 만에 ‘개콘’ 복귀…진호봇 부활",
+     "link": "https://sports.donga.com/ent/article/all/20261106/134976105/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "이승기♥이다인, 생후 4개월 둘째 아들 첫 공개…네 식구 행복한 근황",
+     "link": "https://sports.donga.com/ent/article/all/20261105/134975754/1"
+    }
+   ]
+  },
+  {
+   "kw": "사과",
+   "nsrc": 5,
+   "srcs": [
+    "뉴시스",
+    "세계일보",
+    "연합뉴스",
+    "조선일보",
+    "헤럴드경제"
+   ],
+   "n": 7,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "하이브, 사원 여권·카드번호 등 개인정보 유출…\"깊이 사과\"",
+     "link": "https://www.yna.co.kr/view/AKR20261102138300005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "심수봉, 후배 비판 논란 후 첫 무대서 재차 사과…\"해선 안될말\"",
+     "link": "https://www.yna.co.kr/view/AKR20261102086900005"
+    },
+    {
+     "src": "세계일보",
+     "title": "조폭 연루설 조세호, 유튜브 복귀 시동 \"다시 한 번 사과\"",
+     "link": "https://www.segye.com/newsView/20261106500038"
+    },
+    {
+     "src": "세계일보",
+     "title": "조세호, 새 유튜브 채널 열고 ‘조폭 친분설’ 재차 사과…“더 신중하게 행동할 것”",
+     "link": "https://www.segye.com/newsView/20261106502736"
+    }
+   ]
+  },
+  {
+   "kw": "도전",
+   "nsrc": 5,
+   "srcs": [
+    "SBS",
+    "동아일보",
+    "연합뉴스",
+    "한겨레",
+    "헤럴드경제"
+   ],
+   "n": 6,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "6번째 우승 도전 장동민 \"살아있는 한 서바이벌 은퇴는 없죠\"",
+     "link": "https://www.yna.co.kr/view/AKR20261105097500005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "정진운 \"첫 멜로영화 도전…느린 호흡 속 요동치는 감정 담았죠\"",
+     "link": "https://www.yna.co.kr/view/AKR20261104158200005"
+    },
+    {
+     "src": "동아일보",
+     "title": "이세돌, 51m 빌딩 외벽 청소 도전…“무서운 게 문제가 아냐”",
+     "link": "https://sports.donga.com/ent/article/all/20261106/134976614/1"
+    },
+    {
+     "src": "한겨레",
+     "title": "피부부터 장기까지…‘인체 수리’ 도전 [.txt]",
+     "link": "https://www.hani.co.kr/arti/culture/book/1286068.html"
+    }
+   ]
+  },
+  {
+   "kw": "사생활",
    "nsrc": 5,
    "srcs": [
     "SBS",
     "뉴시스",
     "동아일보",
-    "조선일보",
-    "한국경제"
+    "세계일보",
+    "조선일보"
    ],
    "n": 6,
    "headlines": [
     {
      "src": "동아일보",
-     "title": "케이팝 열풍 타고 다시 불붙은 오디션 콘텐츠…‘슈퍼스타K’부터 ‘위 고 하이’까지",
-     "link": "https://sports.donga.com/ent/article/all/20261105/134971932/1"
+     "title": "나나 폭발 “제가 무슨 큰 잘못 했나? ♥탑과 열애, 사생활” (전문)[DA피플]",
+     "link": "https://sports.donga.com/ent/article/all/20261106/134976456/1"
     },
     {
-     "src": "한국경제",
-     "title": "god 김태우, 솔로 데뷔 20주년…가수에 프로듀서까지 '영역 확장'",
-     "link": "https://www.hankyung.com/article/202610266155H"
+     "src": "세계일보",
+     "title": "나나, 탑과 열애 인정 후 악플 쏟아지자…“사생활, 미안할 일 아냐”",
+     "link": "https://www.segye.com/newsView/20261106502919"
     },
     {
      "src": "SBS",
-     "title": "[스브스夜] '런닝맨' 이현중, 농구도 예능도 '금메달'···'우승'부터 '벌칙'까지 '런닝맨 키즈'의 '런닝맨 체험'",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008825354&plink=RSSLINK&cooper=RSSREADER"
+     "title": "'솔로지옥' 프리지아 사생활 루머 부인…\"허위사실 유포시 법적 대응\"",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008832839&plink=RSSLINK&cooper=RSSREADER"
     },
     {
      "src": "뉴시스",
-     "title": "차예련, 학폭 의혹 부인에 법적대응까지 예고했는데…",
-     "link": "https://www.newsis.com/view/NISX20261105_0003856532"
+     "title": "나나, 탑과 열애 악플에 \"사생활 미안할 일 아냐\"",
+     "link": "https://www.newsis.com/view/NISX20261106_0003857179"
     }
    ]
   },
@@ -762,40 +829,7 @@
    ]
   },
   {
-   "kw": "결혼",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 9,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "포미닛 출신 전지윤, 22일 결혼…\"부끄럽고 설렌다\"",
-     "link": "https://www.yna.co.kr/view/AKR20261104147000005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "배우 배나라·한재아 14일 결혼…\"서로 의지하는 삶 살아가기로\"",
-     "link": "https://www.yna.co.kr/view/AKR20261103123900005"
-    },
-    {
-     "src": "동아일보",
-     "title": "한고은, 결혼 11년 차 남편 나이도 헷갈려…“1951년생이라고”",
-     "link": "https://sports.donga.com/ent/article/all/20261105/134975731/1"
-    },
-    {
-     "src": "뉴시스",
-     "title": "김구라, 곧 며느리 본다…子 그리 \"결혼 준비 중\"",
-     "link": "https://www.newsis.com/view/NISX20261106_0003857224"
-    }
-   ]
-  },
-  {
-   "kw": "만원",
+   "kw": "조세호",
    "nsrc": 4,
    "srcs": [
     "뉴시스",
@@ -803,60 +837,27 @@
     "조선일보",
     "헤럴드경제"
    ],
-   "n": 9,
+   "n": 10,
    "headlines": [
     {
      "src": "세계일보",
-     "title": "서인영, 과거 월 지출만 2억원이었다…“현재 통장 잔고 4만원”",
-     "link": "https://www.segye.com/newsView/20261105514385"
+     "title": "조폭 연루설 조세호, 유튜브 복귀 시동 \"다시 한 번 사과\"",
+     "link": "https://www.segye.com/newsView/20261106500038"
     },
     {
      "src": "세계일보",
-     "title": "박유천, 日 디너쇼 티켓값이 무려 45만원…또다시 고가 논란",
-     "link": "https://www.segye.com/newsView/20261105513408"
+     "title": "조세호, 새 유튜브 채널 열고 ‘조폭 친분설’ 재차 사과…“더 신중하게 행동할 것”",
+     "link": "https://www.segye.com/newsView/20261106502736"
     },
     {
      "src": "헤럴드경제",
-     "title": "디너쇼 1장에 45만원…박유천 日 팬덤 훔치기",
-     "link": "https://biz.heraldcorp.com/article/10926564"
+     "title": "조세호 ‘조폭 연루설’ 후 방송 싹 끊기더니 결국…유튜브 채널 열었다",
+     "link": "https://biz.heraldcorp.com/article/10927541"
     },
     {
      "src": "뉴시스",
-     "title": "제이블랙 \"과거 한 달 수익 3만원, 빵 6알로 3일 버텨\"",
-     "link": "https://www.newsis.com/view/NISX20261105_0003856331"
-    }
-   ]
-  },
-  {
-   "kw": "컴백",
-   "nsrc": 4,
-   "srcs": [
-    "동아일보",
-    "연합뉴스",
-    "조선일보",
-    "한국경제"
-   ],
-   "n": 8,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "드래곤포니, 3인 체제 후 첫 컴백…\"더 똘똘 뭉치고 신뢰 쌓아\"",
-     "link": "https://www.yna.co.kr/view/AKR20261104136400005"
-    },
-    {
-     "src": "동아일보",
-     "title": "청개구리처럼 통통 튀는 언차일드, ‘팅팅’으로 컴백 [종합]",
-     "link": "https://sports.donga.com/ent/article/all/20261105/134973902/1"
-    },
-    {
-     "src": "한국경제",
-     "title": "싸이커스, 에이티즈와 같은 달 컴백 \"우영 선배, 밥 사주며 응원\"",
-     "link": "https://www.hankyung.com/article/202611020876H"
-    },
-    {
-     "src": "한국경제",
-     "title": "엑스러브 현, 부상으로 컴백 쇼케이스 불참…\"하루빨리 회복하겠다\"",
-     "link": "https://www.hankyung.com/article/202610280617H"
+     "title": "조폭 연루설 조세호, 유튜브 복귀 시동 \"다시 한 번 사과\"",
+     "link": "https://www.newsis.com/view/NISX20261105_0003857032"
     }
    ]
   },
@@ -894,6 +895,39 @@
    ]
   },
   {
+   "kw": "데뷔",
+   "nsrc": 4,
+   "srcs": [
+    "연합뉴스",
+    "조선일보",
+    "한겨레",
+    "한국경제"
+   ],
+   "n": 7,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "[가요소식] 데뷔 30주년 김연우, 서울서 크리스마스 콘서트",
+     "link": "https://www.yna.co.kr/view/AKR20261105069500005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "권진아, 6∼8일 '세이브 미' 콘서트…데뷔 첫 스탠딩 공연",
+     "link": "https://www.yna.co.kr/view/AKR20261104161200005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "[방송소식] 김윤석, '유퀴즈' 출연…데뷔 38년만 첫 예능",
+     "link": "https://www.yna.co.kr/view/AKR20261103148600005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "김재원 \"드라마와는 또 다른 영화의 매력…스크린 데뷔 설레\"",
+     "link": "https://www.yna.co.kr/view/AKR20261103129100005"
+    }
+   ]
+  },
+  {
    "kw": "한국",
    "nsrc": 4,
    "srcs": [
@@ -923,6 +957,39 @@
      "src": "SBS",
      "title": "'암살자(들)', 논란의 두 달 가장 뜨거웠다…60일간 한국 영화 박스오피스 1위",
      "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008832263&plink=RSSLINK&cooper=RSSREADER"
+    }
+   ]
+  },
+  {
+   "kw": "그리",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "세계일보",
+    "조선일보"
+   ],
+   "n": 6,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "김구라 아들 그리, 결혼 준비 중…“군대 기다려준 여친”",
+     "link": "https://sports.donga.com/ent/article/all/20261106/134976541/1"
+    },
+    {
+     "src": "세계일보",
+     "title": "김구라, 곧 며느리 본다…子 그리 \"결혼 준비 중\"",
+     "link": "https://www.segye.com/newsView/20261106503347"
+    },
+    {
+     "src": "뉴시스",
+     "title": "김구라, 곧 며느리 본다…子 그리 \"결혼 준비 중\"",
+     "link": "https://www.newsis.com/view/NISX20261106_0003857224"
+    },
+    {
+     "src": "조선일보",
+     "title": "그리, 120만 원까지 오른 주식 6만 원에 샀는데…\"현재 계좌는 파란불\" ('유행꼰대')",
+     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/06/GVQWKYZUMI2GMNJXGQ2TCNJVMY/"
     }
    ]
   },
@@ -993,6 +1060,39 @@
    ]
   },
   {
+   "kw": "조폭",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "세계일보",
+    "조선일보",
+    "헤럴드경제"
+   ],
+   "n": 6,
+   "headlines": [
+    {
+     "src": "세계일보",
+     "title": "조폭 연루설 조세호, 유튜브 복귀 시동 \"다시 한 번 사과\"",
+     "link": "https://www.segye.com/newsView/20261106500038"
+    },
+    {
+     "src": "세계일보",
+     "title": "조세호, 새 유튜브 채널 열고 ‘조폭 친분설’ 재차 사과…“더 신중하게 행동할 것”",
+     "link": "https://www.segye.com/newsView/20261106502736"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "조세호 ‘조폭 연루설’ 후 방송 싹 끊기더니 결국…유튜브 채널 열었다",
+     "link": "https://biz.heraldcorp.com/article/10927541"
+    },
+    {
+     "src": "뉴시스",
+     "title": "조폭 연루설 조세호, 유튜브 복귀 시동 \"다시 한 번 사과\"",
+     "link": "https://www.newsis.com/view/NISX20261105_0003857032"
+    }
+   ]
+  },
+  {
    "kw": "고지용",
    "nsrc": 4,
    "srcs": [
@@ -1055,6 +1155,72 @@
      "src": "헤럴드경제",
      "title": "리센느 ‘위드’ 발매 2시간만에 음원차트 1위…‘국민 걸그룹’ 입증",
      "link": "https://biz.heraldcorp.com/article/10925354"
+    }
+   ]
+  },
+  {
+   "kw": "감사",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "동아일보",
+    "연합뉴스",
+    "한국경제"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "KBS 이사회, 제23대 감사 공모…12일까지 접수",
+     "link": "https://www.yna.co.kr/view/AKR20261104165000005"
+    },
+    {
+     "src": "동아일보",
+     "title": "오윤아, 시어머니와 고부 데이트…“민이 받아줘 감사” (편스토랑)",
+     "link": "https://sports.donga.com/ent/article/all/20261106/134976120/1"
+    },
+    {
+     "src": "한국경제",
+     "title": "사흘간 故최불암 빈소 지킨 김혜수 \"추모해 주신 분들 감사\"",
+     "link": "https://www.hankyung.com/article/2026110466407"
+    },
+    {
+     "src": "한국경제",
+     "title": "아일릿, 여경 의상 논란에 \"깜짝 놀라…어떤 관심이든 감사\"",
+     "link": "https://www.hankyung.com/article/202610265795H"
+    }
+   ]
+  },
+  {
+   "kw": "출신",
+   "nsrc": 4,
+   "srcs": [
+    "연합뉴스",
+    "조선일보",
+    "한국경제",
+    "헤럴드경제"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "포미닛 출신 전지윤, 22일 결혼…\"부끄럽고 설렌다\"",
+     "link": "https://www.yna.co.kr/view/AKR20261104147000005"
+    },
+    {
+     "src": "한국경제",
+     "title": "아이돌 '포미닛' 출신 전지윤, 11월 신부된다",
+     "link": "https://www.hankyung.com/article/2026110461907"
+    },
+    {
+     "src": "한국경제",
+     "title": "\"통장 압류, 수중엔 1000원\"…JBJ 출신 켄타, 4억 빚 고백",
+     "link": "https://www.hankyung.com/article/202610280689H"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "“인천 출신 가수…학폭 폭로하려고 10년 넘게 지켜 보는 중” SNS서 확산",
+     "link": "https://biz.heraldcorp.com/article/10925056"
     }
    ]
   },
@@ -1158,25 +1324,25 @@
    ]
   },
   {
-   "kw": "준비",
+   "kw": "김구라",
    "nsrc": 4,
    "srcs": [
     "뉴시스",
     "동아일보",
-    "연합뉴스",
+    "세계일보",
     "조선일보"
    ],
    "n": 5,
    "headlines": [
     {
-     "src": "연합뉴스",
-     "title": "하이브, BTS 효과에 최고 실적…\"'아리랑' 이후 단체·솔로 활동 준비\"(종합2보)",
-     "link": "https://www.yna.co.kr/view/AKR20261103165000005"
+     "src": "동아일보",
+     "title": "김구라 아들 그리, 결혼 준비 중…“군대 기다려준 여친”",
+     "link": "https://sports.donga.com/ent/article/all/20261106/134976541/1"
     },
     {
-     "src": "동아일보",
-     "title": "플라이 투 더 스카이, 전국투어 이어 새앨범도 준비",
-     "link": "https://sports.donga.com/ent/article/all/20261106/134976067/1"
+     "src": "세계일보",
+     "title": "김구라, 곧 며느리 본다…子 그리 \"결혼 준비 중\"",
+     "link": "https://www.segye.com/newsView/20261106503347"
     },
     {
      "src": "뉴시스",
@@ -1184,174 +1350,9 @@
      "link": "https://www.newsis.com/view/NISX20261106_0003857224"
     },
     {
-     "src": "조선일보",
-     "title": "故 진쓰레블 친형 “가족들 볼리비아로..귀국 후 국내 장례 준비”[Oh!쎈 이슈]",
-     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/06/GAZTCYZUMM2DIYJTMFRDONBZG4/"
-    }
-   ]
-  },
-  {
-   "kw": "이유",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "조선일보",
-    "한국경제"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "서동주, 재혼 결심한 이유…“집 없이 돈 한 푼 없어도 행복할 확신”",
-     "link": "https://sports.donga.com/ent/article/all/20261106/134976198/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "이주승, 상금 1억 기부한 이유… “욕심 비워야”",
-     "link": "https://sports.donga.com/ent/article/all/20261106/134976095/1"
-    },
-    {
-     "src": "한국경제",
-     "title": "도파민의 시대…김종관표 '작고 사소한' 영화의 존재 이유 [씬터뷰]",
-     "link": "https://www.hankyung.com/article/202611045069H"
-    },
-    {
      "src": "뉴시스",
-     "title": "\"10~20년 지나도 회당 몇 만원\"…뮤지컬배우협회 만든 이유",
-     "link": "https://www.newsis.com/view/NISX20261105_0003855494"
-    }
-   ]
-  },
-  {
-   "kw": "사생활",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "세계일보",
-    "조선일보"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "나나 폭발 “제가 무슨 큰 잘못 했나? ♥탑과 열애, 사생활” (전문)[DA피플]",
-     "link": "https://sports.donga.com/ent/article/all/20261106/134976456/1"
-    },
-    {
-     "src": "세계일보",
-     "title": "나나, 탑과 열애 인정 후 악플 쏟아지자…“사생활, 미안할 일 아냐”",
-     "link": "https://www.segye.com/newsView/20261106502919"
-    },
-    {
-     "src": "뉴시스",
-     "title": "나나, 탑과 열애 악플에 \"사생활 미안할 일 아냐\"",
-     "link": "https://www.newsis.com/view/NISX20261106_0003857179"
-    },
-    {
-     "src": "뉴시스",
-     "title": "'솔로지옥' 프리지아 측, 사생활 루머 일축…\"선처 없는 법적 대응\"",
-     "link": "https://www.newsis.com/view/NISX20261105_0003856943"
-    }
-   ]
-  },
-  {
-   "kw": "조폭",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "세계일보",
-    "조선일보",
-    "헤럴드경제"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "세계일보",
-     "title": "조세호, 새 유튜브 채널 열고 ‘조폭 친분설’ 재차 사과…“더 신중하게 행동할 것”",
-     "link": "https://www.segye.com/newsView/20261106502736"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "조세호 ‘조폭 연루설’ 후 방송 싹 끊기더니 결국…유튜브 채널 열었다",
-     "link": "https://biz.heraldcorp.com/article/10927541"
-    },
-    {
-     "src": "뉴시스",
-     "title": "조폭 연루설 조세호, 유튜브 복귀 시동 \"다시 한 번 사과\"",
-     "link": "https://www.newsis.com/view/NISX20261105_0003857032"
-    },
-    {
-     "src": "조선일보",
-     "title": "조폭 연루설 조세호, 유튜브 복귀 시동 \"다시 한 번 사과\"",
-     "link": "https://www.chosun.com/entertainments/2026/11/06/D73KK2KCCVDJ3KWMZQZFNESIJU/"
-    }
-   ]
-  },
-  {
-   "kw": "가족",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "조선일보",
-    "헤럴드경제"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "헤럴드경제",
-     "title": "송중기·케이티 목격담…유모차 끌고 가족 나들이",
-     "link": "https://biz.heraldcorp.com/article/10925029"
-    },
-    {
-     "src": "SBS",
-     "title": "'국민 아버지' 최불암, 가족·동료 배웅 속 영면…45년 후원한 어린이 재단서 마지막 인사",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008825970&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "뉴시스",
-     "title": "볼 인사 놓친 장원영 \"미처 못 봤다…가족 같은 사이\"",
-     "link": "https://www.newsis.com/view/NISX20261105_0003855860"
-    },
-    {
-     "src": "조선일보",
-     "title": "아이 셋과 함께 올린 늦깎이 웨딩… KCM, 뭉클한 가족 영상 공개에 ‘울컥’",
-     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/05/HE2TGM3EGZSDEM3DMRSTCNTFHE/"
-    }
-   ]
-  },
-  {
-   "kw": "키즈",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 4,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "스트레이 키즈 리노, 내년 1분기 병역 의무 돌입…팀 첫 사례",
-     "link": "https://www.yna.co.kr/view/AKR20261105169100005"
-    },
-    {
-     "src": "SBS",
-     "title": "[스브스夜] '런닝맨' 이현중, 농구도 예능도 '금메달'···'우승'부터 '벌칙'까지 '런닝맨 키즈'의 '런닝맨 체험'",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008825354&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "뉴시스",
-     "title": "스트레이 키즈 리노, 내년 1분기 병역의무 이행한다",
-     "link": "https://www.newsis.com/view/NISX20261105_0003857043"
-    },
-    {
-     "src": "조선일보",
-     "title": "스트레이 키즈 리노, 팬들 곁 잠시 떠난다..JYP, “입대 전 개인 활동 예정” [공식]",
-     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/06/GNRDGZBWGY4DQMJSME2DKMZUGY/"
+     "title": "\"아빠 대신 '김구라 씨!'\"…김구라, 5세 딸 왜?",
+     "link": "https://www.newsis.com/view/NISX20261105_0003855399"
     }
    ]
   }

@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-06 09:00",
+ "updated": "2026-11-06 10:00",
  "items": [
   {
    "query": "로스앤젤레스 fc 대 미네소타 유나이티드 fc 순위",
@@ -448,6 +448,18 @@
   },
   {
    "query": "호날두",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-06",
+   "expires": "2026-11-09"
+  },
+  {
+   "query": "김지민",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -1396,6 +1408,30 @@
   },
   {
    "query": "아이렌",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-06",
+   "expires": "2026-11-09"
+  },
+  {
+   "query": "헤이지니",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-06",
+   "expires": "2026-11-09"
+  },
+  {
+   "query": "아파트",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -7073,6 +7109,19 @@
    "status": "작성",
    "page": "",
    "registered": "2026-11-03",
+   "expires": "2026-11-20"
+  },
+  {
+   "query": "기초연금 복수국적자 5년 거주 요건 2027년 4월 시행, 수급자 8,176명",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 5,
+   "status": "작성",
+   "page": "/issue/basic-pension-dual-nationality-5yr-1106/",
+   "registered": "2026-11-06",
    "expires": "2026-11-20"
   },
   {

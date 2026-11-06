@@ -1,14 +1,14 @@
 {
  "date": "2026-11-06",
- "updated": "2026-11-06 08:50",
+ "updated": "2026-11-06 09:50",
  "sites": 13,
- "npost": 2765,
+ "npost": 2740,
  "note": "출처(커뮤니티)별 집계예요. 작성자·연령·성별 정보는 수집하지 않아요. posts 는 이슈별로 뽑힌 일부라 전체 글 수가 아니에요.",
  "sources": [
   {
    "name": "MLB파크",
-   "np": 12,
-   "nc": 957,
+   "np": 13,
+   "nc": 1103,
    "topics": [
     {
      "t": "어제 안재욱 라스 발언.txt",
@@ -19,8 +19,8 @@
      "issue_nc": 198,
      "kw": [
       "라스",
-      "발언",
-      "안재욱"
+      "안재욱",
+      "발언"
      ],
      "top_post": {
       "t": "어제 안재욱 라스 발언.txt",
@@ -32,36 +32,36 @@
      "t": "[단독] 韓이 백기사로…美국채 대량 매입한다",
      "nsite": 2,
      "np_here": 1,
-     "nc_here": 140,
+     "nc_here": 143,
      "issue_np": 2,
-     "issue_nc": 140,
+     "issue_nc": 143,
      "kw": [
-      "매입",
-      "단독",
       "국채",
-      "대량"
+      "대량",
+      "매입",
+      "단독"
      ],
      "top_post": {
       "t": "[단독] 韓이 백기사로…美국채 대량 매입한다",
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611050119912652&m=view",
-      "nc": 140
+      "nc": 143
      }
     },
     {
      "t": "노숙자들을 보면 안타까운 여성",
      "nsite": 2,
      "np_here": 1,
-     "nc_here": 124,
+     "nc_here": 132,
      "issue_np": 2,
-     "issue_nc": 124,
+     "issue_nc": 132,
      "kw": [
-      "여성",
-      "노숙자"
+      "노숙자",
+      "여성"
      ],
      "top_post": {
       "t": "노숙자들을 보면 안타까운 여성",
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611050119909532&m=view",
-      "nc": 124
+      "nc": 132
      }
     },
     {
@@ -84,15 +84,49 @@
      }
     },
     {
+     "t": "마지막 택배로 무인도에서 10일 버티기",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 109,
+     "issue_np": 3,
+     "issue_nc": 148,
+     "kw": [
+      "무인도",
+      "택배"
+     ],
+     "top_post": {
+      "t": "마지막 택배로 무인도에서 10일 버티기",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611050119912853&m=view",
+      "nc": 109
+     }
+    },
+    {
+     "t": "중1딸 엄마들 모임",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 98,
+     "issue_np": 2,
+     "issue_nc": 101,
+     "kw": [
+      "모임",
+      "엄마"
+     ],
+     "top_post": {
+      "t": "중1딸 엄마들 모임",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611050119902905&m=view",
+      "nc": 98
+     }
+    },
+    {
      "t": "장례식에 안왔다고 친구 손절각 보는 여자",
      "nsite": 4,
      "np_here": 1,
      "nc_here": 87,
-     "issue_np": 4,
+     "issue_np": 5,
      "issue_nc": 90,
      "kw": [
-      "여자",
       "친구",
+      "여자",
       "장례식"
      ],
      "top_post": {
@@ -109,209 +143,21 @@
      "issue_np": 2,
      "issue_nc": 144,
      "kw": [
-      "운동회",
-      "민원"
+      "민원",
+      "운동회"
      ],
      "top_post": {
       "t": "운동회 민원이 많아진 이유",
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611050119905815&m=view",
       "nc": 87
      }
-    },
-    {
-     "t": "마지막 택배로 무인도에서 10일 버티기",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 86,
-     "issue_np": 3,
-     "issue_nc": 125,
-     "kw": [
-      "무인도",
-      "택배"
-     ],
-     "top_post": {
-      "t": "마지막 택배로 무인도에서 10일 버티기",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611050119912853&m=view",
-      "nc": 86
-     }
-    },
-    {
-     "t": "이재명 대통령 \"누군가가 죽을 때 제일 슬퍼\"",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 59,
-     "issue_np": 4,
-     "issue_nc": 68,
-     "kw": [
-      "대통령",
-      "이재명"
-     ],
-     "top_post": {
-      "t": "이재명 대통령 \"누군가가 죽을 때 제일 슬퍼\"",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611050119916105&m=view",
-      "nc": 59
-     }
-    }
-   ]
-  },
-  {
-   "name": "개드립",
-   "np": 10,
-   "nc": 342,
-   "topics": [
-    {
-     "t": "여수 세계섬박람회 폐막, 성적표",
-     "nsite": 3,
-     "np_here": 2,
-     "nc_here": 58,
-     "issue_np": 4,
-     "issue_nc": 58,
-     "kw": [
-      "박람회",
-      "여수",
-      "세계섬",
-      "폐막"
-     ],
-     "top_post": {
-      "t": "여수 세계섬박람회 폐막, 성적표",
-      "u": "https://www.dogdrip.net/dogdrip/733299950?sort_index=popular&page=1",
-      "nc": 46
-     }
-    },
-    {
-     "t": "일론머스크한테 '누추한년'이라고 욕했던 계정 근황ㅋㅋ",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 47,
-     "issue_np": 3,
-     "issue_nc": 48,
-     "kw": [
-      "일론",
-      "머스크"
-     ],
-     "top_post": {
-      "t": "일론머스크한테 '누추한년'이라고 욕했던 계정 근황ㅋㅋ",
-      "u": "https://www.dogdrip.net/dogdrip/733350351?sort_index=popular&page=1",
-      "nc": 47
-     }
-    },
-    {
-     "t": "미국 선거 결과 떴냐????????",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 42,
-     "issue_np": 7,
-     "issue_nc": 67,
-     "kw": [
-      "미국",
-      "선거",
-      "속보",
-      "중간"
-     ],
-     "top_post": {
-      "t": "미국 민주당, 일론머스크 패려고 시동거는중",
-      "u": "https://www.dogdrip.net/dogdrip/733205366?sort_index=popular&page=1",
-      "nc": 42
-     }
-    },
-    {
-     "t": "소신발언.",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 40,
-     "issue_np": 6,
-     "issue_nc": 43,
-     "kw": [
-      "소신",
-      "발언",
-      "등산복",
-      "지적"
-     ],
-     "top_post": {
-      "t": "소신발언.",
-      "u": "https://www.dogdrip.net/dogdrip/733289771?sort_index=popular&page=1",
-      "nc": 40
-     }
-    },
-    {
-     "t": "마지막 택배로 무인도에서 10일 버티기",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 39,
-     "issue_np": 3,
-     "issue_nc": 125,
-     "kw": [
-      "무인도",
-      "택배"
-     ],
-     "top_post": {
-      "t": "마지막 택배로 무인도에서 10일 버티기",
-      "u": "https://www.dogdrip.net/dogdrip/733262625?sort_index=popular&page=1",
-      "nc": 39
-     }
-    },
-    {
-     "t": "텍사스 당선자의 승리 연설",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 34,
-     "issue_np": 3,
-     "issue_nc": 36,
-     "kw": [
-      "연설",
-      "당선자",
-      "텍사스",
-      "승리"
-     ],
-     "top_post": {
-      "t": "텍사스 당선자의 승리 연설",
-      "u": "https://www.dogdrip.net/dogdrip/733332249?sort_index=popular&page=1",
-      "nc": 34
-     }
-    },
-    {
-     "t": "어제 안재욱 라스 발언.txt",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 33,
-     "issue_np": 3,
-     "issue_nc": 198,
-     "kw": [
-      "라스",
-      "발언",
-      "안재욱"
-     ],
-     "top_post": {
-      "t": "어제자 라스 안재욱 발언ㄷㄷ",
-      "u": "https://www.dogdrip.net/dogdrip/733262981?sort_index=popular&page=1",
-      "nc": 33
-     }
-    },
-    {
-     "t": "미국 중간선거로 ㅈ될 예정인 ICE의 실체",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 26,
-     "issue_np": 10,
-     "issue_nc": 35,
-     "kw": [
-      "선거",
-      "중간",
-      "미국",
-      "예정"
-     ],
-     "top_post": {
-      "t": "미국 중간선거로 ㅈ될 예정인 ICE의 실체",
-      "u": "https://www.dogdrip.net/dogdrip/733341177?sort_index=popular&page=1",
-      "nc": 26
-     }
     }
    ]
   },
   {
    "name": "클리앙",
-   "np": 13,
-   "nc": 336,
+   "np": 12,
+   "nc": 323,
    "topics": [
     {
      "t": "김민석 사퇴 하라 민주당 유린하고 당원 개 돼지로 아는 김민석 사퇴하라",
@@ -321,8 +167,8 @@
      "issue_np": 4,
      "issue_nc": 131,
      "kw": [
-      "민주당",
       "김민석",
+      "민주당",
       "당원"
      ],
      "top_post": {
@@ -335,12 +181,12 @@
      "t": "현재 이상하다고 말나오는 호남반도체 근황",
      "nsite": 5,
      "np_here": 2,
-     "nc_here": 69,
+     "nc_here": 71,
      "issue_np": 7,
-     "issue_nc": 226,
+     "issue_nc": 228,
      "kw": [
-      "호남",
-      "반도체"
+      "반도체",
+      "호남"
      ],
      "top_post": {
       "t": "제빵 전문가가 호남 반도체 지원금 심의 ㅋㅋㅋ",
@@ -368,16 +214,16 @@
     },
     {
      "t": "삼전 닉스 둘 다 52주 최저가 대비",
-     "nsite": 3,
+     "nsite": 4,
      "np_here": 1,
      "nc_here": 36,
-     "issue_np": 3,
+     "issue_np": 4,
      "issue_nc": 36,
      "kw": [
-      "삼전",
       "닉스",
-      "한국",
-      "반도체"
+      "삼전",
+      "반도체",
+      "한국"
      ],
      "top_post": {
       "t": "삼전 닉스 둘 다 52주 최저가 대비",
@@ -394,9 +240,9 @@
      "issue_nc": 39,
      "kw": [
       "반도체",
+      "호남",
       "사장",
-      "디저트카페",
-      "위원"
+      "디저트카페"
      ],
      "top_post": {
       "t": "6조 호남반도체 민간심사위원에 디저트카페사장 선임",
@@ -412,10 +258,10 @@
      "issue_np": 3,
      "issue_nc": 17,
      "kw": [
-      "마라톤",
       "대회",
-      "아이디어",
-      "제시"
+      "마라톤",
+      "제시",
+      "아이디어"
      ],
      "top_post": {
       "t": "마라톤 대회에 지친 사람들이 제시한 아이디어",
@@ -424,39 +270,192 @@
      }
     },
     {
-     "t": "IP68이라는 아이폰 듀오가 먼지를 얼마나 막아주는지 방진 실험",
+     "t": "미국 선거 결과 떴냐????????",
      "nsite": 3,
      "np_here": 1,
-     "nc_here": 15,
-     "issue_np": 4,
-     "issue_nc": 15,
-     "kw": [
-      "듀오",
-      "아이폰"
-     ],
-     "top_post": {
-      "t": "아이폰 듀오 역시 애플은 다르네요",
-      "u": "https://www.clien.net/service/board/park/19287701?od=T33&po=0&category=0&groupCd=clien_all",
-      "nc": 15
-     }
-    },
-    {
-     "t": "미국 선거 결과 떴냐????????",
-     "nsite": 4,
-     "np_here": 1,
      "nc_here": 7,
-     "issue_np": 7,
-     "issue_nc": 67,
+     "issue_np": 6,
+     "issue_nc": 25,
      "kw": [
       "미국",
       "선거",
-      "속보",
       "중간"
      ],
      "top_post": {
       "t": "미국 선거를 보고 문득 생각난 분",
       "u": "https://www.clien.net/service/board/park/19287672?od=T33&po=0&category=0&groupCd=clien_all",
       "nc": 7
+     }
+    },
+    {
+     "t": "내년부터 국내 '5년 이상' 살아야 기초연금 받는다.gisa",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 6,
+     "issue_np": 3,
+     "issue_nc": 8,
+     "kw": [
+      "연금",
+      "기초",
+      "내년"
+     ],
+     "top_post": {
+      "t": "내년부터 국내 '5년 이상' 살아야 기초연금 받는다.gisa",
+      "u": "https://www.clien.net/service/board/park/19287913?od=T33&po=0&category=0&groupCd=clien_all",
+      "nc": 6
+     }
+    }
+   ]
+  },
+  {
+   "name": "개드립",
+   "np": 9,
+   "nc": 300,
+   "topics": [
+    {
+     "t": "여수 세계섬박람회 폐막, 성적표",
+     "nsite": 3,
+     "np_here": 2,
+     "nc_here": 58,
+     "issue_np": 4,
+     "issue_nc": 58,
+     "kw": [
+      "여수",
+      "박람회",
+      "폐막",
+      "성적표"
+     ],
+     "top_post": {
+      "t": "여수 세계섬박람회 폐막, 성적표",
+      "u": "https://www.dogdrip.net/dogdrip/733299950?sort_index=popular&page=1",
+      "nc": 46
+     }
+    },
+    {
+     "t": "일론머스크한테 '누추한년'이라고 욕했던 계정 근황ㅋㅋ",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 47,
+     "issue_np": 3,
+     "issue_nc": 48,
+     "kw": [
+      "머스크",
+      "일론"
+     ],
+     "top_post": {
+      "t": "일론머스크한테 '누추한년'이라고 욕했던 계정 근황ㅋㅋ",
+      "u": "https://www.dogdrip.net/dogdrip/733350351?sort_index=popular&page=1",
+      "nc": 47
+     }
+    },
+    {
+     "t": "소신발언.",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 40,
+     "issue_np": 6,
+     "issue_nc": 43,
+     "kw": [
+      "발언",
+      "소신",
+      "지적",
+      "등산복"
+     ],
+     "top_post": {
+      "t": "소신발언.",
+      "u": "https://www.dogdrip.net/dogdrip/733289771?sort_index=popular&page=1",
+      "nc": 40
+     }
+    },
+    {
+     "t": "마지막 택배로 무인도에서 10일 버티기",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 39,
+     "issue_np": 3,
+     "issue_nc": 148,
+     "kw": [
+      "무인도",
+      "택배"
+     ],
+     "top_post": {
+      "t": "마지막 택배로 무인도에서 10일 버티기",
+      "u": "https://www.dogdrip.net/dogdrip/733262625?sort_index=popular&page=1",
+      "nc": 39
+     }
+    },
+    {
+     "t": "텍사스 당선자의 승리 연설",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 34,
+     "issue_np": 3,
+     "issue_nc": 36,
+     "kw": [
+      "당선자",
+      "텍사스",
+      "연설",
+      "승리"
+     ],
+     "top_post": {
+      "t": "텍사스 당선자의 승리 연설",
+      "u": "https://www.dogdrip.net/dogdrip/733332249?sort_index=popular&page=1",
+      "nc": 34
+     }
+    },
+    {
+     "t": "어제 안재욱 라스 발언.txt",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 33,
+     "issue_np": 3,
+     "issue_nc": 198,
+     "kw": [
+      "라스",
+      "안재욱",
+      "발언"
+     ],
+     "top_post": {
+      "t": "어제자 라스 안재욱 발언ㄷㄷ",
+      "u": "https://www.dogdrip.net/dogdrip/733262981?sort_index=popular&page=1",
+      "nc": 33
+     }
+    },
+    {
+     "t": "미국 중간선거로 ㅈ될 예정인 ICE의 실체",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 26,
+     "issue_np": 10,
+     "issue_nc": 35,
+     "kw": [
+      "중간",
+      "선거",
+      "미국",
+      "ICE"
+     ],
+     "top_post": {
+      "t": "미국 중간선거로 ㅈ될 예정인 ICE의 실체",
+      "u": "https://www.dogdrip.net/dogdrip/733341177?sort_index=popular&page=1",
+      "nc": 26
+     }
+    },
+    {
+     "t": "니애미 졸업사진 대참사녀 근황",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 23,
+     "issue_np": 3,
+     "issue_nc": 23,
+     "kw": [
+      "대참사녀",
+      "니애미",
+      "졸업"
+     ],
+     "top_post": {
+      "t": "니애미 졸업사진 대참사녀 근황",
+      "u": "https://www.dogdrip.net/dogdrip/733296695?sort_index=popular&page=1",
+      "nc": 23
      }
     }
    ]
@@ -472,10 +471,10 @@
      "np_here": 1,
      "nc_here": 107,
      "issue_np": 7,
-     "issue_nc": 226,
+     "issue_nc": 228,
      "kw": [
-      "호남",
-      "반도체"
+      "반도체",
+      "호남"
      ],
      "top_post": {
       "t": "현재 이상하다고 말나오는 호남반도체 근황",
@@ -491,8 +490,8 @@
      "issue_np": 2,
      "issue_nc": 144,
      "kw": [
-      "운동회",
-      "민원"
+      "민원",
+      "운동회"
      ],
      "top_post": {
       "t": "운동회 함성 시끄럽다는 민원에 작심 발언한 안재욱",
@@ -530,10 +529,10 @@
      "np_here": 2,
      "nc_here": 15,
      "issue_np": 7,
-     "issue_nc": 226,
+     "issue_nc": 228,
      "kw": [
-      "호남",
-      "반도체"
+      "반도체",
+      "호남"
      ],
      "top_post": {
       "t": "호남반도체얘기 쏙 들어 갔죠",
@@ -550,9 +549,9 @@
      "issue_nc": 39,
      "kw": [
       "반도체",
+      "호남",
       "사장",
-      "디저트카페",
-      "위원"
+      "디저트카페"
      ],
      "top_post": {
       "t": "호남반도체 심의위원에 디저트카페 사장",
@@ -568,10 +567,10 @@
      "issue_np": 10,
      "issue_nc": 35,
      "kw": [
-      "선거",
       "중간",
+      "선거",
       "미국",
-      "예정"
+      "ICE"
      ],
      "top_post": {
       "t": "미국 민주당 중간선거 이긴 거 보고",
@@ -587,8 +586,8 @@
      "issue_np": 4,
      "issue_nc": 131,
      "kw": [
-      "민주당",
       "김민석",
+      "민주당",
       "당원"
      ],
      "top_post": {
@@ -637,50 +636,9 @@
    ]
   },
   {
-   "name": "네이트판",
-   "np": 2,
-   "nc": 25,
-   "topics": [
-    {
-     "t": "여자라서 내는 핑크텍스 개많음. 자취할때 남자들은 그냥 저렴한 저층 살면서 돈아끼...",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 22,
-     "issue_np": 4,
-     "issue_nc": 22,
-     "kw": [
-      "남자",
-      "여자"
-     ],
-     "top_post": {
-      "t": "여자라서 내는 핑크텍스 개많음. 자취할때 남자들은 그냥 저렴한 저층 살면서 돈아끼...",
-      "u": "https://pann.nate.com/talk/375703275",
-      "nc": 22
-     }
-    },
-    {
-     "t": "이재명 대통령 \"누군가가 죽을 때 제일 슬퍼\"",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 3,
-     "issue_np": 4,
-     "issue_nc": 68,
-     "kw": [
-      "대통령",
-      "이재명"
-     ],
-     "top_post": {
-      "t": "이재명, 유튜버 이재명으로 '대통령의 Y' 시작…국민 ...",
-      "u": "https://pann.nate.com/talk/375702479",
-      "nc": 3
-     }
-    }
-   ]
-  },
-  {
    "name": "보배드림",
    "np": 14,
-   "nc": 24,
+   "nc": 30,
    "topics": [
     {
      "t": "이재명 대통령 \"누군가가 죽을 때 제일 슬퍼\"",
@@ -688,10 +646,10 @@
      "np_here": 2,
      "nc_here": 6,
      "issue_np": 4,
-     "issue_nc": 68,
+     "issue_nc": 82,
      "kw": [
-      "대통령",
-      "이재명"
+      "이재명",
+      "대통령"
      ],
      "top_post": {
       "t": "이재명 대통령님",
@@ -704,11 +662,11 @@
      "nsite": 4,
      "np_here": 1,
      "nc_here": 3,
-     "issue_np": 4,
+     "issue_np": 5,
      "issue_nc": 90,
      "kw": [
-      "여자",
       "친구",
+      "여자",
       "장례식"
      ],
      "top_post": {
@@ -726,8 +684,8 @@
      "issue_nc": 198,
      "kw": [
       "라스",
-      "발언",
-      "안재욱"
+      "안재욱",
+      "발언"
      ],
      "top_post": {
       "t": "라스 안재욱 발언",
@@ -760,14 +718,49 @@
      "issue_np": 6,
      "issue_nc": 43,
      "kw": [
-      "소신",
       "발언",
-      "등산복",
-      "지적"
+      "소신",
+      "지적",
+      "등산복"
      ],
      "top_post": {
       "t": "등산복 지적에 소신발언",
       "u": "https://www.bobaedream.co.kr/view?code=best&No=1045416&vdate=",
+      "nc": 3
+     }
+    },
+    {
+     "t": "한국식 볶음밥에 빡친 중국인",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 3,
+     "issue_np": 3,
+     "issue_nc": 3,
+     "kw": [
+      "볶음밥",
+      "중국인",
+      "한국식"
+     ],
+     "top_post": {
+      "t": "한국식 볶음밥에 빡친 중국인",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1045632&vdate=",
+      "nc": 3
+     }
+    },
+    {
+     "t": "중1딸 엄마들 모임",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 3,
+     "issue_np": 2,
+     "issue_nc": 101,
+     "kw": [
+      "모임",
+      "엄마"
+     ],
+     "top_post": {
+      "t": "중1 딸래미 엄마들 모임",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1045629&vdate=",
       "nc": 3
      }
     },
@@ -779,9 +772,9 @@
      "issue_np": 3,
      "issue_nc": 36,
      "kw": [
-      "연설",
       "당선자",
       "텍사스",
+      "연설",
       "승리"
      ],
      "top_post": {
@@ -789,41 +782,46 @@
       "u": "https://www.bobaedream.co.kr/view?code=best&No=1045462&vdate=",
       "nc": 2
      }
-    },
+    }
+   ]
+  },
+  {
+   "name": "네이트판",
+   "np": 2,
+   "nc": 25,
+   "topics": [
     {
-     "t": "한국은 일본 식민지였는데 왜 일본어 안 써?",
-     "nsite": 3,
+     "t": "여자라서 내는 핑크텍스 개많음. 자취할때 남자들은 그냥 저렴한 저층 살면서 돈아끼...",
+     "nsite": 4,
      "np_here": 1,
-     "nc_here": 2,
-     "issue_np": 5,
-     "issue_nc": 2,
+     "nc_here": 22,
+     "issue_np": 4,
+     "issue_nc": 22,
      "kw": [
-      "한국",
-      "일본",
-      "식민지",
-      "일본어"
+      "남자",
+      "여자"
      ],
      "top_post": {
-      "t": "한국은 일본 식민지였는데 왜 일본어 안 써?",
-      "u": "https://www.bobaedream.co.kr/view?code=best&No=1045442&vdate=",
-      "nc": 2
+      "t": "여자라서 내는 핑크텍스 개많음. 자취할때 남자들은 그냥 저렴한 저층 살면서 돈아끼...",
+      "u": "https://pann.nate.com/talk/375703275",
+      "nc": 22
      }
     },
     {
-     "t": "일론머스크한테 '누추한년'이라고 욕했던 계정 근황ㅋㅋ",
+     "t": "이재명 대통령 \"누군가가 죽을 때 제일 슬퍼\"",
      "nsite": 3,
      "np_here": 1,
-     "nc_here": 1,
-     "issue_np": 3,
-     "issue_nc": 48,
+     "nc_here": 3,
+     "issue_np": 4,
+     "issue_nc": 82,
      "kw": [
-      "일론",
-      "머스크"
+      "이재명",
+      "대통령"
      ],
      "top_post": {
-      "t": "일론 머스크가 ㅈ된 이유",
-      "u": "https://www.bobaedream.co.kr/view?code=best&No=1045403&vdate=",
-      "nc": 1
+      "t": "이재명, 유튜버 이재명으로 '대통령의 Y' 시작…국민 ...",
+      "u": "https://pann.nate.com/talk/375702479",
+      "nc": 3
      }
     }
    ]
@@ -835,15 +833,14 @@
    "topics": [
     {
      "t": "미국 선거 결과 떴냐????????",
-     "nsite": 4,
+     "nsite": 3,
      "np_here": 2,
      "nc_here": 18,
-     "issue_np": 7,
-     "issue_nc": 67,
+     "issue_np": 6,
+     "issue_nc": 25,
      "kw": [
       "미국",
       "선거",
-      "속보",
       "중간"
      ],
      "top_post": {
@@ -904,9 +901,9 @@
      "issue_np": 3,
      "issue_nc": 36,
      "kw": [
-      "연설",
       "당선자",
       "텍사스",
+      "연설",
       "승리"
      ],
      "top_post": {
@@ -942,6 +939,25 @@
      }
     },
     {
+     "t": "삼전 닉스 둘 다 52주 최저가 대비",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 36,
+     "kw": [
+      "닉스",
+      "삼전",
+      "반도체",
+      "한국"
+     ],
+     "top_post": {
+      "t": "한국 반도체 삼전 닉스가 빠르게 무너질 거라 보는 이유",
+      "u": "https://theqoo.net/hot/4396463751",
+      "nc": 0
+     }
+    },
+    {
      "t": "여자라서 내는 핑크텍스 개많음. 자취할때 남자들은 그냥 저렴한 저층 살면서 돈아끼...",
      "nsite": 4,
      "np_here": 1,
@@ -964,7 +980,7 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 3,
-     "issue_nc": 125,
+     "issue_nc": 148,
      "kw": [
       "무인도",
       "택배"
@@ -983,8 +999,8 @@
      "issue_np": 3,
      "issue_nc": 48,
      "kw": [
-      "일론",
-      "머스크"
+      "머스크",
+      "일론"
      ],
      "top_post": {
       "t": "일론 머스크 : 머지않아 아무도 일하지 않고 초고소득을 받는 시대가 올 것",
@@ -1006,25 +1022,6 @@
      "top_post": {
       "t": "19~34세 모든 청년, 돈 받는다...'사는 지역'에 따라 금액 차이 있어",
       "u": "https://theqoo.net/hot/4396318655",
-      "nc": 0
-     }
-    },
-    {
-     "t": "삼전 닉스 둘 다 52주 최저가 대비",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 36,
-     "kw": [
-      "삼전",
-      "닉스",
-      "한국",
-      "반도체"
-     ],
-     "top_post": {
-      "t": "한국 반도체 삼전 닉스가 빠르게 무너질 거라 보는 이유",
-      "u": "https://theqoo.net/hot/4396463751",
       "nc": 0
      }
     },
@@ -1051,13 +1048,13 @@
      "nsite": 3,
      "np_here": 2,
      "nc_here": 0,
-     "issue_np": 7,
+     "issue_np": 6,
      "issue_nc": 3,
      "kw": [
       "네이버",
       "페이",
       "랜덤",
-      "보험"
+      "라이브"
      ],
      "top_post": {
       "t": "네이버페이10원+5원+5원+1원+1원+랜덤 눌러봐++10원+5원+눌러눌러 보험랜덤+보험랜덤 하나더+라이브미리보고13원받기+15원+15원+1원",
@@ -1069,7 +1066,7 @@
   },
   {
    "name": "디시인사이드",
-   "np": 11,
+   "np": 9,
    "nc": 0,
    "topics": [
     {
@@ -1077,16 +1074,35 @@
      "nsite": 4,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 4,
+     "issue_np": 5,
      "issue_nc": 90,
      "kw": [
-      "여자",
       "친구",
+      "여자",
       "장례식"
      ],
      "top_post": {
       "t": "같이 계곡 갈까?? 여자친구 게하에서 남자만나고 같이 롯데월드",
       "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=476037&_dcbest=1&page=1",
+      "nc": 0
+     }
+    },
+    {
+     "t": "삼전 닉스 둘 다 52주 최저가 대비",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 36,
+     "kw": [
+      "닉스",
+      "삼전",
+      "반도체",
+      "한국"
+     ],
+     "top_post": {
+      "t": "???: 나는...나는 반도체를... 한국을 지키고 싶었을 뿐이였다...",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=475857&_dcbest=1&page=1",
       "nc": 0
      }
     },
@@ -1098,10 +1114,10 @@
      "issue_np": 10,
      "issue_nc": 35,
      "kw": [
-      "선거",
       "중간",
+      "선거",
       "미국",
-      "예정"
+      "ICE"
      ],
      "top_post": {
       "t": "2026년 미국 중간선거 전국 출구조사 결과",
@@ -1134,33 +1150,14 @@
      "issue_np": 4,
      "issue_nc": 58,
      "kw": [
-      "박람회",
       "여수",
-      "세계섬",
-      "폐막"
+      "박람회",
+      "폐막",
+      "성적표"
      ],
      "top_post": {
       "t": "도합 1800억 들인 전라도 여수 섬박람회... 처참한 성적표 공개",
       "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=475963&_dcbest=1&page=1",
-      "nc": 0
-     }
-    },
-    {
-     "t": "삼전 닉스 둘 다 52주 최저가 대비",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 36,
-     "kw": [
-      "삼전",
-      "닉스",
-      "한국",
-      "반도체"
-     ],
-     "top_post": {
-      "t": "???: 나는...나는 반도체를... 한국을 지키고 싶었을 뿐이였다...",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=475857&_dcbest=1&page=1",
       "nc": 0
      }
     },
@@ -1184,19 +1181,20 @@
      }
     },
     {
-     "t": "IP68이라는 아이폰 듀오가 먼지를 얼마나 막아주는지 방진 실험",
+     "t": "한국식 볶음밥에 빡친 중국인",
      "nsite": 3,
-     "np_here": 2,
+     "np_here": 1,
      "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 15,
+     "issue_np": 3,
+     "issue_nc": 3,
      "kw": [
-      "듀오",
-      "아이폰"
+      "볶음밥",
+      "중국인",
+      "한국식"
      ],
      "top_post": {
-      "t": "IP68이라는 아이폰 듀오가 먼지를 얼마나 막아주는지 방진 실험",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=475686&_dcbest=1&page=1",
+      "t": "한국식 볶음밥에 빡친 중국인",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=476119&_dcbest=1&page=1",
       "nc": 0
      }
     },
@@ -1209,8 +1207,8 @@
      "issue_nc": 1,
      "kw": [
       "공항",
-      "대구공항",
-      "한국"
+      "한국",
+      "대구공항"
      ],
      "top_post": {
       "t": "가장 한국적인 공항이라는 대구공항..",
@@ -1222,43 +1220,24 @@
   },
   {
    "name": "루리웹",
-   "np": 25,
+   "np": 28,
    "nc": 0,
    "topics": [
     {
      "t": "장례식에 안왔다고 친구 손절각 보는 여자",
      "nsite": 4,
-     "np_here": 1,
+     "np_here": 2,
      "nc_here": 0,
-     "issue_np": 4,
+     "issue_np": 5,
      "issue_nc": 90,
      "kw": [
-      "여자",
       "친구",
+      "여자",
       "장례식"
      ],
      "top_post": {
       "t": "10년 후에 만난 친구가 여자였다.",
       "u": "https://bbs.ruliweb.com/best/board/300143/read/77287816?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "미국 선거 결과 떴냐????????",
-     "nsite": 4,
-     "np_here": 2,
-     "nc_here": 0,
-     "issue_np": 7,
-     "issue_nc": 67,
-     "kw": [
-      "미국",
-      "선거",
-      "속보",
-      "중간"
-     ],
-     "top_post": {
-      "t": "과연 중간선거로 54석으로 끝날것인가",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77274751?m=all&t=now",
       "nc": 0
      }
     },
@@ -1281,6 +1260,25 @@
      }
     },
     {
+     "t": "삼전 닉스 둘 다 52주 최저가 대비",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 36,
+     "kw": [
+      "닉스",
+      "삼전",
+      "반도체",
+      "한국"
+     ],
+     "top_post": {
+      "t": "장기적으로 보면 삼전이나 닉스는 놔두면 되긴 함.",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77288124?m=humor",
+      "nc": 0
+     }
+    },
+    {
      "t": "미국 중간선거로 ㅈ될 예정인 ICE의 실체",
      "nsite": 4,
      "np_here": 3,
@@ -1288,10 +1286,10 @@
      "issue_np": 10,
      "issue_nc": 35,
      "kw": [
-      "선거",
       "중간",
+      "선거",
       "미국",
-      "예정"
+      "ICE"
      ],
      "top_post": {
       "t": "푸틴, 미국 중간선거 결과에 \"트럼프는 앞으로도 평화에 애써달라\"",
@@ -1324,10 +1322,10 @@
      "issue_np": 4,
      "issue_nc": 58,
      "kw": [
-      "박람회",
       "여수",
-      "세계섬",
-      "폐막"
+      "박람회",
+      "폐막",
+      "성적표"
      ],
      "top_post": {
       "t": "여수 세계섬박람회 폐막, 성적표",
@@ -1343,10 +1341,10 @@
      "issue_np": 6,
      "issue_nc": 43,
      "kw": [
-      "소신",
       "발언",
-      "등산복",
-      "지적"
+      "소신",
+      "지적",
+      "등산복"
      ],
      "top_post": {
       "t": "소신발언",
@@ -1363,9 +1361,9 @@
      "issue_nc": 39,
      "kw": [
       "반도체",
+      "호남",
       "사장",
-      "디저트카페",
-      "위원"
+      "디저트카페"
      ],
      "top_post": {
       "t": "6조 호남반도체 예산 심의하는데 민간위원에 디저트카페 사장",
@@ -1388,10 +1386,10 @@
      "issue_np": 3,
      "issue_nc": 17,
      "kw": [
-      "마라톤",
       "대회",
-      "아이디어",
-      "제시"
+      "마라톤",
+      "제시",
+      "아이디어"
      ],
      "top_post": {
       "t": "마라톤 대회에 지친 사람들이 제시한 아이디어",
@@ -1408,8 +1406,8 @@
      "issue_nc": 2,
      "kw": [
       "한국",
-      "일본",
       "식민지",
+      "일본",
       "일본어"
      ],
      "top_post": {
