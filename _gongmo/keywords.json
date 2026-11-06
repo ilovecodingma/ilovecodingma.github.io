@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-06 17:00",
+ "updated": "2026-11-06 18:00",
  "items": [
   {
    "query": "로스앤젤레스 fc 대 미네소타 유나이티드 fc 순위",
@@ -219,6 +219,18 @@
    "expires": "2026-11-09"
   },
   {
+   "query": "나나",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 5000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-06",
+   "expires": "2026-11-09"
+  },
+  {
    "query": "서울경제tv",
    "tier": "단기",
    "signal": [
@@ -264,6 +276,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-04",
+   "expires": "2026-11-09"
+  },
+  {
+   "query": "논쟁",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 5000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-06",
    "expires": "2026-11-09"
   },
   {
@@ -484,6 +508,18 @@
   },
   {
    "query": "하이닉스 주가",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-06",
+   "expires": "2026-11-09"
+  },
+  {
+   "query": "김구라",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -760,30 +796,6 @@
   },
   {
    "query": "김영익",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 2000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-06",
-   "expires": "2026-11-09"
-  },
-  {
-   "query": "나나",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 2000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-06",
-   "expires": "2026-11-09"
-  },
-  {
-   "query": "김구라",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -1132,6 +1144,30 @@
   },
   {
    "query": "군함",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-06",
+   "expires": "2026-11-09"
+  },
+  {
+   "query": "징역형",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-06",
+   "expires": "2026-11-09"
+  },
+  {
+   "query": "안산소방서",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -7567,6 +7603,448 @@
    "expires": ""
   },
   {
+   "query": "실업급여 해외여행",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/unemployment-benefit-overseas-travel-during-period/",
+   "registered": "2026-11-06",
+   "expires": ""
+  },
+  {
+   "query": "조기재취업수당",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/early-reemployment-allowance-conditions-amount/",
+   "registered": "2026-11-06",
+   "expires": ""
+  },
+  {
+   "query": "육아휴직 6+6·1년6개월",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/parental-leave-6plus6-18months-conditions/",
+   "registered": "2026-11-06",
+   "expires": ""
+  },
+  {
+   "query": "육아휴직 사업주 지원금",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/parental-leave-employer-subsidy-replacement/",
+   "registered": "2026-11-06",
+   "expires": ""
+  },
+  {
+   "query": "4대보험 가입증명서",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/four-insurance-enrollment-certificate-issue/",
+   "registered": "2026-11-06",
+   "expires": ""
+  },
+  {
+   "query": "건강보험료 납부확인서",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/nhis-premium-payment-certificate-issue/",
+   "registered": "2026-11-06",
+   "expires": ""
+  },
+  {
+   "query": "확정일자 받는법·부여현황",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/fixed-date-grant-status-online-issue/",
+   "registered": "2026-11-06",
+   "expires": ""
+  },
+  {
+   "query": "지급명령 신청·비용·이의",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/payment-order-application-cost-objection/",
+   "registered": "2026-11-06",
+   "expires": ""
+  },
+  {
+   "query": "에너지바우처 잔액·사용",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/energy-voucher-balance-check-usage-period/",
+   "registered": "2026-11-06",
+   "expires": ""
+  },
+  {
+   "query": "피부양자 등록·상실",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/nhis-dependent-registration-loss-report/",
+   "registered": "2026-11-06",
+   "expires": ""
+  },
+  {
+   "query": "아동수당 계좌변경",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/child-allowance-parent-benefit-account-change/",
+   "registered": "2026-11-06",
+   "expires": ""
+  },
+  {
+   "query": "산재 장해급여 등급표",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/industrial-accident-disability-benefit-grades/",
+   "registered": "2026-11-06",
+   "expires": ""
+  },
+  {
+   "query": "산재 유족급여 계산",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/industrial-accident-survivor-benefit-calculation/",
+   "registered": "2026-11-06",
+   "expires": ""
+  },
+  {
+   "query": "질병 퇴사 실업급여",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/illness-resignation-unemployment-benefit/",
+   "registered": "2026-11-06",
+   "expires": ""
+  },
+  {
+   "query": "상가 소액임차인 변제금",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/commercial-small-tenant-priority-repayment-amount/",
+   "registered": "2026-11-06",
+   "expires": ""
+  },
+  {
+   "query": "권리금·위약금 필요경비",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/other-income-penalty-goodwill-necessary-expense/",
+   "registered": "2026-11-06",
+   "expires": ""
+  },
+  {
+   "query": "계약직 재입사·무기계약",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/fixed-term-2year-rehire-permanent-conversion/",
+   "registered": "2026-11-06",
+   "expires": ""
+  },
+  {
+   "query": "생활안정자금 혼례비",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/workers-welfare-loan-wedding-interest-subsidy/",
+   "registered": "2026-11-06",
+   "expires": ""
+  },
+  {
+   "query": "청년도약계좌 중도해지",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/youth-leap-account-early-cancel-penalty/",
+   "registered": "2026-11-06",
+   "expires": ""
+  },
+  {
+   "query": "국민연금 추납 유의점",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/nps-chunap-cautions-not-allowed/",
+   "registered": "2026-11-06",
+   "expires": ""
+  },
+  {
+   "query": "건강보험료 환급금 신청",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/health-insurance-refund-payment-apply/",
+   "registered": "2026-11-06",
+   "expires": ""
+  },
+  {
+   "query": "퇴직금 세후 실수령",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/severance-pay-net-after-tax-table/",
+   "registered": "2026-11-06",
+   "expires": ""
+  },
+  {
+   "query": "중간예납 미납 가산세·연장",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/interim-prepayment-late-penalty-extension/",
+   "registered": "2026-11-06",
+   "expires": ""
+  },
+  {
+   "query": "종부세 납부유예 신청",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/jongbuse-deferral-apply-collateral-interest/",
+   "registered": "2026-11-06",
+   "expires": ""
+  },
+  {
+   "query": "동거인 전입신고",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/cohabitant-move-in-report-household-head-confirm/",
+   "registered": "2026-11-06",
+   "expires": ""
+  },
+  {
+   "query": "소액체당금 한도·신청",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/small-wage-substitute-payment-limit-apply/",
+   "registered": "2026-11-06",
+   "expires": ""
+  },
+  {
+   "query": "과태료 조회 방법",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/traffic-fine-lookup-efine-wetax/",
+   "registered": "2026-11-06",
+   "expires": ""
+  },
+  {
+   "query": "내용증명 반송 효과",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/certified-mail-returned-effect-reply-period/",
+   "registered": "2026-11-06",
+   "expires": ""
+  },
+  {
+   "query": "재직자 노령연금 감액",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/nps-working-pensioner-reduction/",
+   "registered": "2026-11-06",
+   "expires": ""
+  },
+  {
+   "query": "기초연금 부부감액",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/basic-pension-couple-reduction-nps-linkage/",
+   "registered": "2026-11-06",
+   "expires": ""
+  },
+  {
+   "query": "의료급여 의뢰서·연장승인",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/medical-aid-referral-extension-approval/",
+   "registered": "2026-11-06",
+   "expires": ""
+  },
+  {
+   "query": "버팀목 이사·목적물변경",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/beotimmok-loan-property-change-move/",
+   "registered": "2026-11-06",
+   "expires": ""
+  },
+  {
+   "query": "디딤돌 원금상환유예",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/didimdol-loan-principal-repayment-deferral/",
+   "registered": "2026-11-06",
+   "expires": ""
+  },
+  {
+   "query": "신생아 특례대출 대환·조건",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/newborn-special-loan-refinance-conditions/",
+   "registered": "2026-11-06",
+   "expires": ""
+  },
+  {
    "query": "연차수당 계산기",
    "tier": "장기",
    "signal": [
@@ -8410,6 +8888,19 @@
    "page": "/issue/nts-stock-tax-refund-1104/",
    "registered": "2026-11-04",
    "expires": "2026-11-11"
+  },
+  {
+   "query": "김종철 경찰청장 후보자 청문회 절차와 지명 경위 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 3,
+   "status": "작성",
+   "page": "/issue/police-chief-nominee-kim-jongcheol-1106/",
+   "registered": "2026-11-06",
+   "expires": "2026-11-20"
   },
   {
    "query": "2026 롤드컵 4강 대진과 일정은? 젠지 8강 결과, 한국 팀 현황",
