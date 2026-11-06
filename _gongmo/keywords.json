@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-06 16:00",
+ "updated": "2026-11-06 17:00",
  "items": [
   {
    "query": "로스앤젤레스 fc 대 미네소타 유나이티드 fc 순위",
@@ -39,18 +39,6 @@
    "expires": "2026-11-09"
   },
   {
-   "query": "서킷브레이커",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 20000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-06",
-   "expires": "2026-11-09"
-  },
-  {
    "query": "우규민",
    "tier": "단기",
    "signal": [
@@ -76,18 +64,6 @@
   },
   {
    "query": "경제",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 10000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-05",
-   "expires": "2026-11-09"
-  },
-  {
-   "query": "하이닉스",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -7266,6 +7242,331 @@
    "expires": ""
   },
   {
+   "query": "근로장려금 기한 후 신청",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/eitc-late-apply-95-percent/",
+   "registered": "2026-11-06",
+   "expires": ""
+  },
+  {
+   "query": "성과급 세금",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/bonus-withholding-tax-calculation/",
+   "registered": "2026-11-06",
+   "expires": ""
+  },
+  {
+   "query": "맞벌이 의료비 공제 명의",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/medical-expense-couple-who-claims/",
+   "registered": "2026-11-06",
+   "expires": ""
+  },
+  {
+   "query": "오피스텔 세금계산서",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/officetel-tax-invoice-issue-rules/",
+   "registered": "2026-11-06",
+   "expires": ""
+  },
+  {
+   "query": "문화누리카드 온라인 사용처",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/culture-nuri-card-online-merchants-use/",
+   "registered": "2026-11-06",
+   "expires": ""
+  },
+  {
+   "query": "농협 통장 재발급",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/nonghyup-passbook-reissue-fee-documents/",
+   "registered": "2026-11-06",
+   "expires": ""
+  },
+  {
+   "query": "국민은행 통장 재발급",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/kb-kookmin-passbook-reissue-fee-starbanking/",
+   "registered": "2026-11-06",
+   "expires": ""
+  },
+  {
+   "query": "국가장학금 구간별 금액",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/national-scholarship-amount-by-bracket/",
+   "registered": "2026-11-06",
+   "expires": ""
+  },
+  {
+   "query": "국가장학금 지급일",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/national-scholarship-payment-date/",
+   "registered": "2026-11-06",
+   "expires": ""
+  },
+  {
+   "query": "국가장학금 유형 비교",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/national-scholarship-type1-type2-multichild/",
+   "registered": "2026-11-06",
+   "expires": ""
+  },
+  {
+   "query": "채용 건강검진 대체 통보서",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/employment-health-exam-substitute-notice/",
+   "registered": "2026-11-06",
+   "expires": ""
+  },
+  {
+   "query": "공무원 채용신체검사",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/civil-servant-employment-physical-exam/",
+   "registered": "2026-11-06",
+   "expires": ""
+  },
+  {
+   "query": "장기요양 의사소견서",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/long-term-care-doctor-opinion-form/",
+   "registered": "2026-11-06",
+   "expires": ""
+  },
+  {
+   "query": "연차수당 계산·지급일",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/annual-leave-pay-calculation-payment/",
+   "registered": "2026-11-06",
+   "expires": ""
+  },
+  {
+   "query": "주휴수당 조건·계산",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/weekly-holiday-pay-conditions-calculation/",
+   "registered": "2026-11-06",
+   "expires": ""
+  },
+  {
+   "query": "물류센터 일용직 4대보험",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/logistics-daily-job-insurance-weekly-holiday-pay/",
+   "registered": "2026-11-06",
+   "expires": ""
+  },
+  {
+   "query": "2027 최저임금 실수령",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/minimum-wage-2027-take-home-pay/",
+   "registered": "2026-11-06",
+   "expires": ""
+  },
+  {
+   "query": "권고사직 회사 불이익",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/recommended-resignation-employer-disadvantage/",
+   "registered": "2026-11-06",
+   "expires": ""
+  },
+  {
+   "query": "산재 보험급여 지급확인원",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/industrial-accident-benefit-payment-certificate/",
+   "registered": "2026-11-06",
+   "expires": ""
+  },
+  {
+   "query": "자동차세 환급",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/car-tax-refund-sale-scrap-prepaid/",
+   "registered": "2026-11-06",
+   "expires": ""
+  },
+  {
+   "query": "자료제공동의",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/year-end-simplified-data-dependent-consent/",
+   "registered": "2026-11-06",
+   "expires": ""
+  },
+  {
+   "query": "오피스텔 매도 세금",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/officetel-sale-capital-gains-vat/",
+   "registered": "2026-11-06",
+   "expires": ""
+  },
+  {
+   "query": "통장 압류 해제 방법",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/bank-account-seizure-release-court-application/",
+   "registered": "2026-11-06",
+   "expires": ""
+  },
+  {
+   "query": "통장 재발급 대리·미성년",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/passbook-reissue-proxy-minor-documents/",
+   "registered": "2026-11-06",
+   "expires": ""
+  },
+  {
+   "query": "우체국 통장 재발급",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/post-office-passbook-reissue-fee-loss-report/",
+   "registered": "2026-11-06",
+   "expires": ""
+  },
+  {
    "query": "연차수당 계산기",
    "tier": "장기",
    "signal": [
@@ -7512,6 +7813,19 @@
    "page": "/issue/korean-series-game2-1105/",
    "registered": "2026-11-05",
    "expires": "2026-11-12"
+  },
+  {
+   "query": "코스피 5059.69 마감, 서킷브레이커 발동 이유는? 삼성전자·SK하이닉스 하락 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 5,
+   "status": "작성",
+   "page": "/issue/kospi-close-semiconductor-plunge-1106/",
+   "registered": "2026-11-06",
+   "expires": "2026-11-20"
   },
   {
    "query": "철도노조 파업 12월 언제? 쟁의행위 찬성 77.58% 가결, 파업일은 미정",

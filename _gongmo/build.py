@@ -5934,7 +5934,7 @@ def rss_feed(live, aps):
         except Exception:
             continue
     try:
-        for g in json.load(open(KIN_F, encoding='utf-8'))['guides'][-20:][::-1]:
+        for g in json.load(open(KIN_F, encoding='utf-8'))['guides'][-60:][::-1]:   # 2026-11-06 20→60: 하루에 가이드가 40편 넘게 올라가는 날에는 앞서 올린 글이 피드에서 밀려 네이버 수집에 안 잡혔다
             u = f'/money/guide/{g["slug"]}/'
             if os.path.exists(os.path.join(ROOT, 'money', 'guide', g['slug'], 'index.html')):
                 m_ = re.search(r'확인일\s*(\d{4}-\d{2}-\d{2})', g.get('basis') or '')
@@ -5945,7 +5945,7 @@ def rss_feed(live, aps):
     it.sort(key=lambda x: x[0], reverse=True)
     def _ce(u):
         return ('<content:encoded><![CDATA[' + FULL[u].replace(']]>', ']]&gt;') + ']]></content:encoded>') if u in FULL else ''
-    items = ''.join(f'<item><title>{E(t)}</title><link>{SITE}{u}</link><guid>{SITE}{u}</guid><pubDate>{format_datetime(dt)}</pubDate><description>{E(desc)}</description>{_ce(u)}</item>\n' for dt, u, t, desc in it[:80])
+    items = ''.join(f'<item><title>{E(t)}</title><link>{SITE}{u}</link><guid>{SITE}{u}</guid><pubDate>{format_datetime(dt)}</pubDate><description>{E(desc)}</description>{_ce(u)}</item>\n' for dt, u, t, desc in it[:150])
     xml = (f'<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>루리 줍줍</title><link>{SITE}/</link>'
            f'<description>이슈·기사 확인 신호·애널리스트 분석·공모전·지원금 정보를 매일 정리하는 루리 줍줍</description><language>ko</language>\n{items}</channel></rss>\n')
     open(os.path.join(ROOT, 'rss.xml'), 'w', encoding='utf-8', newline='\n').write(xml)
