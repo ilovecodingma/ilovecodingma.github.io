@@ -1,6 +1,6 @@
 {
- "at": "2026-11-07 05:30",
- "nitems": 512,
+ "at": "2026-11-07 07:06",
+ "nitems": 513,
  "cands": [
   {
    "kw": "결혼",
@@ -111,7 +111,7 @@
    ]
   },
   {
-   "kw": "시그널",
+   "kw": "조진웅",
    "nsrc": 7,
    "srcs": [
     "SBS",
@@ -147,7 +147,7 @@
    ]
   },
   {
-   "kw": "조진웅",
+   "kw": "시그널",
    "nsrc": 7,
    "srcs": [
     "SBS",
@@ -424,6 +424,40 @@
    ]
   },
   {
+   "kw": "만원",
+   "nsrc": 5,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "세계일보",
+    "조선일보",
+    "헤럴드경제"
+   ],
+   "n": 9,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "곽윤기, 한 달 카드값 2800만원…“미래 아내는 퍼스트클래스”",
+     "link": "https://sports.donga.com/ent/article/all/20261106/134976737/1"
+    },
+    {
+     "src": "세계일보",
+     "title": "하루 3억2000만원 벌던 심현섭, 15억 빚더미 속에서 끝내 놓쳐버린 단 한 가지",
+     "link": "https://www.segye.com/newsView/20261106514648"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "디너쇼 1장에 45만원…박유천 日 팬덤 훔치기",
+     "link": "https://biz.heraldcorp.com/article/10926564"
+    },
+    {
+     "src": "뉴시스",
+     "title": "안나, 출산 앞두고 조리원 예약…2주 2500만원 수준",
+     "link": "https://www.newsis.com/view/NISX20261106_0003857728"
+    }
+   ]
+  },
+  {
    "kw": "내달",
    "nsrc": 5,
    "srcs": [
@@ -488,40 +522,6 @@
      "src": "동아일보",
      "title": "몬스타엑스 민혁, 라디오 추억 떠올리며 “마지막 생각에 눈물”",
      "link": "https://sports.donga.com/ent/article/all/20261106/134982529/1"
-    }
-   ]
-  },
-  {
-   "kw": "깜짝",
-   "nsrc": 5,
-   "srcs": [
-    "SBS",
-    "동아일보",
-    "조선일보",
-    "한국경제",
-    "헤럴드경제"
-   ],
-   "n": 7,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "송가인, 정서주 첫 소절에 깜짝…“마이크가 다른가?” (금타는 금요일)",
-     "link": "https://sports.donga.com/ent/article/all/20261106/134978778/1"
-    },
-    {
-     "src": "한국경제",
-     "title": "아일릿, 여경 의상 논란에 \"깜짝 놀라…어떤 관심이든 감사\"",
-     "link": "https://www.hankyung.com/article/202610265795H"
-    },
-    {
-     "src": "한국경제",
-     "title": "\"화환할게\" 강동원, 4개월 전 팬과 약속 지켰다…결혼식장에 깜짝 선물",
-     "link": "https://www.hankyung.com/article/202610265376H"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "“딸은 메타, 아들은 엔비디아”…김보연, 두 자녀 근황 깜짝 공개",
-     "link": "https://biz.heraldcorp.com/article/10926257"
     }
    ]
   },
@@ -662,39 +662,6 @@
    ]
   },
   {
-   "kw": "뉴진스",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "세계일보",
-    "연합뉴스",
-    "한겨레"
-   ],
-   "n": 8,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "뉴진스 '불공정 계약' 논란에…하이브 \"인권 보호 조항 포함\" 반박(종합)",
-     "link": "https://www.yna.co.kr/view/AKR20261106117600005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "연애금지에 소속사가 초상권 무기한 사용…뉴진스 비밀계약 공개",
-     "link": "https://www.yna.co.kr/view/AKR20261106094700075"
-    },
-    {
-     "src": "한겨레",
-     "title": "민희진, ‘뉴진스 불공정 전속계약’ 하이브 해명 “제 얼굴에 침 뱉기”",
-     "link": "https://www.hani.co.kr/arti/culture/music/1286167.html"
-    },
-    {
-     "src": "한겨레",
-     "title": "뉴진스 전속계약서 공개 파장…“‘부적절한 연애’ 금지, 소속사 비판 제한”",
-     "link": "https://www.hani.co.kr/arti/culture/music/1286095.html"
-    }
-   ]
-  },
-  {
    "kw": "하이브",
    "nsrc": 4,
    "srcs": [
@@ -728,6 +695,39 @@
    ]
   },
   {
+   "kw": "뉴진스",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "세계일보",
+    "연합뉴스",
+    "한겨레"
+   ],
+   "n": 8,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "뉴진스 '불공정 계약' 논란에…하이브 \"인권 보호 조항 포함\" 반박(종합)",
+     "link": "https://www.yna.co.kr/view/AKR20261106117600005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "연애금지에 소속사가 초상권 무기한 사용…뉴진스 비밀계약 공개",
+     "link": "https://www.yna.co.kr/view/AKR20261106094700075"
+    },
+    {
+     "src": "한겨레",
+     "title": "민희진, ‘뉴진스 불공정 전속계약’ 하이브 해명 “제 얼굴에 침 뱉기”",
+     "link": "https://www.hani.co.kr/arti/culture/music/1286167.html"
+    },
+    {
+     "src": "한겨레",
+     "title": "뉴진스 전속계약서 공개 파장…“‘부적절한 연애’ 금지, 소속사 비판 제한”",
+     "link": "https://www.hani.co.kr/arti/culture/music/1286095.html"
+    }
+   ]
+  },
+  {
    "kw": "최불암",
    "nsrc": 4,
    "srcs": [
@@ -757,39 +757,6 @@
      "src": "연합뉴스",
      "title": "\"김회장님 잘가세요\"…\"연기 외길 걸은 벗 최불암\" 눈물 속 작별(종합)",
      "link": "https://www.yna.co.kr/view/AKR20261102023251005"
-    }
-   ]
-  },
-  {
-   "kw": "만원",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "조선일보",
-    "헤럴드경제"
-   ],
-   "n": 8,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "곽윤기, 한 달 카드값 2800만원…“미래 아내는 퍼스트클래스”",
-     "link": "https://sports.donga.com/ent/article/all/20261106/134976737/1"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "디너쇼 1장에 45만원…박유천 日 팬덤 훔치기",
-     "link": "https://biz.heraldcorp.com/article/10926564"
-    },
-    {
-     "src": "뉴시스",
-     "title": "안나, 출산 앞두고 조리원 예약…2주 2500만원 수준",
-     "link": "https://www.newsis.com/view/NISX20261106_0003857728"
-    },
-    {
-     "src": "뉴시스",
-     "title": "곽윤기 \"간식 1+1만 사는데 지난달 카드값 2800만원\"",
-     "link": "https://www.newsis.com/view/NISX20261106_0003857712"
     }
    ]
   },
@@ -893,39 +860,6 @@
    ]
   },
   {
-   "kw": "개월",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "연합뉴스",
-    "한겨레",
-    "한국경제"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "'복면가왕' 11개월 만에 재개…'황금마스크' 12월 방송",
-     "link": "https://www.yna.co.kr/view/AKR20261103068900005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "배우 신세경 괴롭힌 악플러, 2심서 징역 8개월 법정구속",
-     "link": "https://www.yna.co.kr/view/AKR20261102117700005"
-    },
-    {
-     "src": "한겨레",
-     "title": "BTS ‘스윔’ 표절 소송 취하…미 법원 판단없이 4개월 만에 마무리",
-     "link": "https://www.hani.co.kr/arti/culture/music/1285910.html"
-    },
-    {
-     "src": "한국경제",
-     "title": "\"화환할게\" 강동원, 4개월 전 팬과 약속 지켰다…결혼식장에 깜짝 선물",
-     "link": "https://www.hankyung.com/article/202610265376H"
-    }
-   ]
-  },
-  {
    "kw": "결국",
    "nsrc": 4,
    "srcs": [
@@ -955,6 +889,72 @@
      "src": "헤럴드경제",
      "title": "조세호 ‘조폭 연루설’ 후 방송 싹 끊기더니 결국…유튜브 채널 열었다",
      "link": "https://biz.heraldcorp.com/article/10927541"
+    }
+   ]
+  },
+  {
+   "kw": "깜짝",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "동아일보",
+    "조선일보",
+    "한국경제"
+   ],
+   "n": 6,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "송가인, 정서주 첫 소절에 깜짝…“마이크가 다른가?” (금타는 금요일)",
+     "link": "https://sports.donga.com/ent/article/all/20261106/134978778/1"
+    },
+    {
+     "src": "한국경제",
+     "title": "아일릿, 여경 의상 논란에 \"깜짝 놀라…어떤 관심이든 감사\"",
+     "link": "https://www.hankyung.com/article/202610265795H"
+    },
+    {
+     "src": "한국경제",
+     "title": "\"화환할게\" 강동원, 4개월 전 팬과 약속 지켰다…결혼식장에 깜짝 선물",
+     "link": "https://www.hankyung.com/article/202610265376H"
+    },
+    {
+     "src": "SBS",
+     "title": "김구라, 곧 며느리 본다…아들 그리, '곰신' 여자친구와 깜짝 결혼 발표",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008833564&plink=RSSLINK&cooper=RSSREADER"
+    }
+   ]
+  },
+  {
+   "kw": "하지원",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "동아일보",
+    "조선일보"
+   ],
+   "n": 6,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "이서진, ♥하지원 몸에 직접 선크림…분위기 핑크빛 (비서진)",
+     "link": "https://sports.donga.com/ent/article/all/20261106/134976782/1"
+    },
+    {
+     "src": "SBS",
+     "title": "\"선크림도 직접 발라줘\"…'비서진' 이서진X하지원, 싱가포르서 묘한 핑크빛 기류",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008833781&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "뉴시스",
+     "title": "성시경, 하지원 어깨 스킨십에 돌직구 \"위험한 행동\"",
+     "link": "https://www.newsis.com/view/NISX20261106_0003857458"
+    },
+    {
+     "src": "뉴시스",
+     "title": "48세 하지원 \"30살 넘어 ·처음 술 마셔…촬영·집 반복해\"",
+     "link": "https://www.newsis.com/view/NISX20261105_0003857037"
     }
    ]
   },
@@ -1058,39 +1058,6 @@
    ]
   },
   {
-   "kw": "학폭",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "차예련 측, 학폭 의혹 재차 반박…\"허위사실 유포 강력 조치\"",
-     "link": "https://www.yna.co.kr/view/AKR20261104120800005"
-    },
-    {
-     "src": "동아일보",
-     "title": "국동호, 학폭 폭로 변호사 결국 송치…“하지 않은 일 인정 못 해” [공식]",
-     "link": "https://sports.donga.com/ent/article/all/20261106/134976498/1"
-    },
-    {
-     "src": "뉴시스",
-     "title": "국동호 측 \"학폭 주장 변호사, 공소청 송치\"",
-     "link": "https://www.newsis.com/view/NISX20261105_0003855465"
-    },
-    {
-     "src": "뉴시스",
-     "title": "\"이름 안 썼으니 무죄?\"…차예련 '학폭 폭로 논란'에 변호사가 던진 경고",
-     "link": "https://www.newsis.com/view/NISX20261105_0003856258"
-    }
-   ]
-  },
-  {
    "kw": "의혹",
    "nsrc": 4,
    "srcs": [
@@ -1120,6 +1087,39 @@
      "src": "뉴시스",
      "title": "신현준 아내 측, 서울시 수주 특혜 의혹 반박…\"절차 따라 투명하게 수행\"",
      "link": "https://www.newsis.com/view/NISX20261106_0003858379"
+    }
+   ]
+  },
+  {
+   "kw": "학폭",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "연합뉴스",
+    "조선일보"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "차예련 측, 학폭 의혹 재차 반박…\"허위사실 유포 강력 조치\"",
+     "link": "https://www.yna.co.kr/view/AKR20261104120800005"
+    },
+    {
+     "src": "동아일보",
+     "title": "국동호, 학폭 폭로 변호사 결국 송치…“하지 않은 일 인정 못 해” [공식]",
+     "link": "https://sports.donga.com/ent/article/all/20261106/134976498/1"
+    },
+    {
+     "src": "뉴시스",
+     "title": "국동호 측 \"학폭 주장 변호사, 공소청 송치\"",
+     "link": "https://www.newsis.com/view/NISX20261105_0003855465"
+    },
+    {
+     "src": "뉴시스",
+     "title": "\"이름 안 썼으니 무죄?\"…차예련 '학폭 폭로 논란'에 변호사가 던진 경고",
+     "link": "https://www.newsis.com/view/NISX20261105_0003856258"
     }
    ]
   },
@@ -1223,39 +1223,6 @@
    ]
   },
   {
-   "kw": "하지원",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "동아일보",
-    "조선일보"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "이서진, ♥하지원 몸에 직접 선크림…분위기 핑크빛 (비서진)",
-     "link": "https://sports.donga.com/ent/article/all/20261106/134976782/1"
-    },
-    {
-     "src": "SBS",
-     "title": "\"선크림도 직접 발라줘\"…'비서진' 이서진X하지원, 싱가포르서 묘한 핑크빛 기류",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008833781&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "뉴시스",
-     "title": "성시경, 하지원 어깨 스킨십에 돌직구 \"위험한 행동\"",
-     "link": "https://www.newsis.com/view/NISX20261106_0003857458"
-    },
-    {
-     "src": "뉴시스",
-     "title": "48세 하지원 \"30살 넘어 ·처음 술 마셔…촬영·집 반복해\"",
-     "link": "https://www.newsis.com/view/NISX20261105_0003857037"
-    }
-   ]
-  },
-  {
    "kw": "까지",
    "nsrc": 4,
    "srcs": [
@@ -1351,6 +1318,39 @@
      "src": "뉴시스",
      "title": "류효영, 8살 연상 이태성에 돌직구 고백…\"호감 있어, 남자로서 좋아\"",
      "link": "https://www.newsis.com/view/NISX20261106_0003858682"
+    }
+   ]
+  },
+  {
+   "kw": "복귀",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "연합뉴스",
+    "조선일보"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "'26년만 연예계 복귀' 고지용 \"오해 풀고 싶어, 팬 서운함 이해\"",
+     "link": "https://www.yna.co.kr/view/AKR20261105151000005"
+    },
+    {
+     "src": "SBS",
+     "title": "진영, '파이터'로 스크린 복귀…본격 격투 액션 도전",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008828128&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "뉴시스",
+     "title": "조폭 연루설 조세호, 유튜브 복귀 시동 \"다시 한 번 사과\"",
+     "link": "https://www.newsis.com/view/NISX20261105_0003857032"
+    },
+    {
+     "src": "조선일보",
+     "title": "'은퇴' 조진웅, 강제 복귀..'시그널2' 편성 확정→\"몰입 방해\"vs\"이해된다\" 극과 극 [Oh!쎈 이슈]",
+     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/06/GE3GIYJZGU4TMYTFGJTDOZRWGQ/"
     }
    ]
   }
