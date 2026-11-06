@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-06 19:00",
+ "updated": "2026-11-06 20:00",
  "items": [
   {
    "query": "로스앤젤레스 fc 대 미네소타 유나이티드 fc 순위",
@@ -280,6 +280,18 @@
   },
   {
    "query": "논쟁",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 5000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-06",
+   "expires": "2026-11-09"
+  },
+  {
+   "query": "죽음",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -1612,6 +1624,18 @@
   },
   {
    "query": "소형모듈원자로",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-06",
+   "expires": "2026-11-09"
+  },
+  {
+   "query": "래미안 원베일리",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -8635,6 +8659,19 @@
    "expires": "2026-11-19"
   },
   {
+   "query": "쿠팡 과징금 2011억 집행정지 인용, 정지 범위와 기간은",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 4,
+   "status": "작성",
+   "page": "/issue/coupang-fine-suspension-court-1106/",
+   "registered": "2026-11-06",
+   "expires": "2026-11-20"
+  },
+  {
    "query": "쿠팡Inc 3분기 영업손실 6423억 원, 누적 1조8318억 원 어떻게 나왔나",
    "tier": "중기",
    "signal": [
@@ -8804,6 +8841,19 @@
    "expires": "2026-12-05"
   },
   {
+   "query": "스드메 가격 미표시 과태료 17곳 1560만 원, 표시 항목과 신고 방법",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 4,
+   "status": "작성",
+   "page": "/issue/wedding-package-price-display-fine-1106/",
+   "registered": "2026-11-06",
+   "expires": "2026-11-20"
+  },
+  {
    "query": "윤석열 전 대통령 선거법 2심 징역 1년 6개월 집행유예, 국민의힘 397억 반환은 언제?",
    "tier": "중기",
    "signal": [
@@ -8940,6 +8990,19 @@
    "page": "/issue/gadeokdo-airport-cost-1104/",
    "registered": "2026-11-04",
    "expires": "2026-11-18"
+  },
+  {
+   "query": "이용철 법무부 장관 후보자 지명 경위와 인사청문회 절차 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 3,
+   "status": "작성",
+   "page": "/issue/justice-minister-nominee-lee-yongcheol-1106/",
+   "registered": "2026-11-06",
+   "expires": "2026-11-20"
   },
   {
    "query": "한경협 전기차 수출경쟁력 보고서 2030년 2.2조원 위험 추정 내용 정리",

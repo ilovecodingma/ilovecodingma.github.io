@@ -16,13 +16,17 @@ def is_pdf_path(path):
 
 
 def core_hash(html_bytes, css_bytes):
-    """PDF 에 실리는 본문만으로 해시를 만든다(2026-11-06). 예전에는 파일 전체를 해시해서, 가이드가 한 편 늘 때마다
-    모든 글의 「이전·다음 글」·옆 칸 목록이 바뀌어 PDF 445개를 전부 다시 만들었다(빌드 +15~20분)."""
+    """PDF 에 실리는 본문 글자만으로 해시를 만든다.
+    2026-11-06 ①: 예전에는 파일 전체를 해시해서, 가이드가 한 편 늘 때마다 「이전·다음 글」·옆 칸 목록이 바뀌어 PDF 445개를 전부 다시 만들었다.
+    2026-11-06 ②: 본문 안의 「마감 임박 공모전」「같이 보면 좋은 페이지」 목록은 PDF 에 인쇄하지 않는데도 해시에 들어 있어서,
+      공모전 목록이 바뀔 때마다(하루 네 번) PDF 447개가 다시 만들어지고 저장소가 하루 0.7GB 씩 커졌다. 인쇄하지 않는 목록과 태그·링크는 빼고 글자만 본다."""
     t = html_bytes.decode('utf-8', 'ignore')
     ti = re.search(r'<title>.*?</title>', t, re.S)
     m = re.search(r'<article class="wk-art".*?(?=<nav class="wk-pn"|<aside class="wk-side"|</main>)', t, re.S) or re.search(r'<main.*?</main>', t, re.S)
     body = re.sub(r'<script.*?</script>', '', m.group(0) if m else t, flags=re.S)
-    return 'c:' + hashlib.md5(((ti.group(0) if ti else '') + body).encode('utf-8') + css_bytes).hexdigest()
+    body = re.sub(r'<h2[^>]*>(?:(?!</h2>).)*?(?:같이 보면 좋은 페이지|마감 임박 공모전).*?(?=<h2|$)', '', body, flags=re.S)
+    text = re.sub(r'\s+', ' ', re.sub(r'<[^>]+>', ' ', body))
+    return 'd:' + hashlib.md5(((ti.group(0) if ti else '') + text).encode('utf-8') + css_bytes).hexdigest()
 
 
 def make(root, paths):
@@ -35,7 +39,7 @@ def make(root, paths):
         if not os.path.exists(f): continue
         raw = open(f, 'rb').read(); css = open(os.path.join(root, 'assets', 'print.css'), 'rb').read()
         h = core_hash(raw, css)
-        if st.get(p) == hashlib.md5(raw + css).hexdigest(): st[p] = h; moved += 1   # 예전 방식(파일 전체) 해시가 지금 파일과 같으면 PDF 는 최신 → 새 방식으로 옮겨 적기만 한다
+        if str(st.get(p, '')).startswith('c:') and os.path.exists(os.path.join(out, pdf_name(p))): st[p] = h; moved += 1   # 2026-11-06 ②: 앞 방식(c:)으로 적힌 것은 오늘 18:26 에 전부 다시 만든 최신본이라 새 방식(d:)으로 옮겨 적기만 한다
         if st.get(p) != h or not os.path.exists(os.path.join(out, pdf_name(p))): todo.append((p, h))
     keep = {pdf_name(p) for p in paths}
     for f in os.listdir(out):
