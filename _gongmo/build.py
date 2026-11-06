@@ -3628,6 +3628,41 @@ def xlinks():
     return _XL
 
 
+def _psplit(t, lim=240):
+    """긴 문단을 문장 경계에서 여러 문단으로 나눈다(2026-11-06 모바일에서 300자 넘는 문단이 화면 한 장을 통째로 덮었다).
+    괄호·태그 안에서는 자르지 않고, 글자는 그대로 둔다. 가이드 섹션 본문(p)에만 쓴다."""
+    if len(re.sub(r'<[^>]+>', '', t)) <= lim * 1.5:
+        return [t]
+    sents, buf, depth, tag = [], '', 0, False
+    for i, ch in enumerate(t):
+        buf += ch
+        if ch == '<':
+            tag = True
+        elif ch == '>':
+            tag = False
+        elif not tag:
+            if ch in '(（[':
+                depth += 1
+            elif ch in ')）]':
+                depth = max(0, depth - 1)
+            elif ch == '.' and depth == 0 and i + 1 < len(t) and t[i + 1] == ' ' and i > 0 and (t[i - 1] in '다요)）' or re.search(r'[가-힣]</b>$', buf[:-1])):
+                sents.append(buf); buf = ''
+    if buf.strip():
+        sents.append(buf)
+    out, cur = [], ''
+    for x in sents:
+        if cur and len(re.sub(r'<[^>]+>', '', cur + x)) > lim:
+            out.append(cur.strip()); cur = x
+        else:
+            cur += x
+    if cur.strip():
+        if out and len(re.sub(r'<[^>]+>', '', cur)) < 60:
+            out[-1] += ' ' + cur.strip()   # 꼬리 한 문장은 앞 문단에 붙인다
+        else:
+            out.append(cur.strip())
+    return out
+
+
 def kin_guides():
     """/money/guide/ 생활 돈 가이드 (2026-10-20 홍보 세션 지식iN 반복 질문): 근로장려금·내일배움카드·월세 세액공제 vs 청년월세·퇴직금. 공식 출처로 확인된 칸만 JSON 에 담고 숫자는 표로 분리."""
     if not os.path.exists(KIN_F):
@@ -3664,7 +3699,7 @@ def kin_guides():
                 tag_ = 'ol class="gs-steps"' if re.search(r'절차|순서|단계', sc['h']) else 'ul class="gm-l"'
                 h += f'<{tag_}>' + ''.join(f'<li>{x}</li>' for x in sc['ul']) + f'</{tag_.split()[0]}>'
             if sc.get('p'):
-                h += f'<p>{sc["p"]}</p>'
+                h += ''.join(f'<p>{x_}</p>' for x_ in _psplit(sc["p"]))
             if sc.get('html'):
                 h += sc['html']
             secs += f'<section class="gs gs-{kind}" id="s{n_}">{h}</section>'
