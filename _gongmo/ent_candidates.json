@@ -1,9 +1,45 @@
 {
- "at": "2026-11-06 18:30",
+ "at": "2026-11-06 19:06",
  "nitems": 517,
  "cands": [
   {
    "kw": "시그널",
+   "nsrc": 7,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "동아일보",
+    "세계일보",
+    "연합뉴스",
+    "조선일보",
+    "한겨레"
+   ],
+   "n": 11,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "'두번째 시그널', 12월 7일 첫 방송…\"조진웅 문제 옹호 아냐\"",
+     "link": "https://www.yna.co.kr/view/AKR20261106106000005"
+    },
+    {
+     "src": "동아일보",
+     "title": "조진웅, AI로 교체하려 했지만 실패…‘시그널2’ 결국 방송",
+     "link": "https://sports.donga.com/ent/article/all/20261106/134978908/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "[공식] “조진웅 AI교체 실패”, tvN ‘두번째 시그널’ 12월 7일 첫방",
+     "link": "https://sports.donga.com/ent/article/all/20261106/134978191/1"
+    },
+    {
+     "src": "한겨레",
+     "title": "“AI로 조진웅 교체 시도했지만…” 두번째 시그널 12월7일 공개",
+     "link": "https://www.hani.co.kr/arti/culture/culture_general/1286170.html"
+    }
+   ]
+  },
+  {
+   "kw": "조진웅",
    "nsrc": 7,
    "srcs": [
     "SBS",
@@ -33,7 +69,7 @@
     },
     {
      "src": "한겨레",
-     "title": "무기한 연기 ‘두번째 시그널’ 12월7일 첫 방송…“AI 인물 교체는 한계”",
+     "title": "“AI로 조진웅 교체 시도했지만…” 두번째 시그널 12월7일 공개",
      "link": "https://www.hani.co.kr/arti/culture/culture_general/1286170.html"
     }
    ]
@@ -86,7 +122,7 @@
     "한국경제",
     "헤럴드경제"
    ],
-   "n": 9,
+   "n": 8,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -121,7 +157,7 @@
     "조선일보",
     "한겨레"
    ],
-   "n": 15,
+   "n": 14,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -156,7 +192,7 @@
     "연합뉴스",
     "조선일보"
    ],
-   "n": 15,
+   "n": 13,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -181,41 +217,6 @@
    ]
   },
   {
-   "kw": "조진웅",
-   "nsrc": 6,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "동아일보",
-    "세계일보",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 8,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "'두번째 시그널', 12월 7일 첫 방송…\"조진웅 문제 옹호 아냐\"",
-     "link": "https://www.yna.co.kr/view/AKR20261106106000005"
-    },
-    {
-     "src": "동아일보",
-     "title": "조진웅, AI로 교체하려 했지만 실패…‘시그널2’ 결국 방송",
-     "link": "https://sports.donga.com/ent/article/all/20261106/134978908/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "[공식] “조진웅 AI교체 실패”, tvN ‘두번째 시그널’ 12월 7일 첫방",
-     "link": "https://sports.donga.com/ent/article/all/20261106/134978191/1"
-    },
-    {
-     "src": "세계일보",
-     "title": "'두번째 시그널', 12월 7일 첫 방송…\"조진웅 문제 옹호 아냐\"",
-     "link": "https://www.segye.com/newsView/20261106510101"
-    }
-   ]
-  },
-  {
    "kw": "깜짝",
    "nsrc": 6,
    "srcs": [
@@ -226,7 +227,7 @@
     "한국경제",
     "헤럴드경제"
    ],
-   "n": 7,
+   "n": 8,
    "headlines": [
     {
      "src": "동아일보",
@@ -275,48 +276,13 @@
     },
     {
      "src": "한겨레",
-     "title": "무기한 연기 ‘두번째 시그널’ 12월7일 첫 방송…“AI 인물 교체는 한계”",
+     "title": "“AI로 조진웅 교체 시도했지만…” 두번째 시그널 12월7일 공개",
      "link": "https://www.hani.co.kr/arti/culture/culture_general/1286170.html"
     },
     {
      "src": "세계일보",
      "title": "'두번째 시그널', 12월 7일 첫 방송…\"조진웅 문제 옹호 아냐\"",
      "link": "https://www.segye.com/newsView/20261106510101"
-    }
-   ]
-  },
-  {
-   "kw": "며느리",
-   "nsrc": 6,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "동아일보",
-    "세계일보",
-    "조선일보",
-    "헤럴드경제"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "김구라, 며느리 보나…아들 그리 “결혼 준비 중”",
-     "link": "https://sports.donga.com/ent/article/all/20261106/134977855/1"
-    },
-    {
-     "src": "세계일보",
-     "title": "김구라, 며느리 맞이하나…아들 그리 “결혼 준비 중”",
-     "link": "https://www.segye.com/newsView/20261106510328"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "오윤아 시어머니, 며느리 첫인상? “도도해 보여 떨렸다” 고백",
-     "link": "https://biz.heraldcorp.com/article/10927488"
-    },
-    {
-     "src": "SBS",
-     "title": "김구라, 곧 며느리 본다…아들 그리, '곰신' 여자친구와 깜짝 결혼 발표",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008833564&plink=RSSLINK&cooper=RSSREADER"
     }
    ]
   },
@@ -457,6 +423,40 @@
    ]
   },
   {
+   "kw": "반박",
+   "nsrc": 5,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "세계일보",
+    "연합뉴스",
+    "조선일보"
+   ],
+   "n": 8,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "뉴진스 '불공정 계약' 논란에…하이브 \"인권 보호 조항 포함\" 반박(종합)",
+     "link": "https://www.yna.co.kr/view/AKR20261106117600005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "차예련 측, 학폭 의혹 재차 반박…\"허위사실 유포 강력 조치\"",
+     "link": "https://www.yna.co.kr/view/AKR20261104120800005"
+    },
+    {
+     "src": "동아일보",
+     "title": "최우식 승무원 갑질 논란 반박 “허위사실 유포 법적 조치” [전문]",
+     "link": "https://sports.donga.com/ent/article/all/20261106/134981685/1"
+    },
+    {
+     "src": "세계일보",
+     "title": "뉴진스 계약서 논란∙해명에 민희진 반박 “또 만물 민희진설이냐…계약서 초안도 승인도 하이브”",
+     "link": "https://www.segye.com/newsView/20261106511922"
+    }
+   ]
+  },
+  {
    "kw": "도전",
    "nsrc": 5,
    "srcs": [
@@ -525,70 +525,36 @@
    ]
   },
   {
-   "kw": "김구라",
+   "kw": "법적",
    "nsrc": 5,
    "srcs": [
     "SBS",
     "뉴시스",
     "동아일보",
-    "세계일보",
-    "조선일보"
+    "조선일보",
+    "헤럴드경제"
    ],
-   "n": 8,
+   "n": 7,
    "headlines": [
     {
      "src": "동아일보",
-     "title": "김구라, 며느리 보나…아들 그리 “결혼 준비 중”",
-     "link": "https://sports.donga.com/ent/article/all/20261106/134977855/1"
+     "title": "최우식 승무원 갑질 논란 반박 “허위사실 유포 법적 조치” [전문]",
+     "link": "https://sports.donga.com/ent/article/all/20261106/134981685/1"
     },
     {
-     "src": "동아일보",
-     "title": "김구라 아들 그리, 결혼 준비 중…“군대 기다려준 여친”",
-     "link": "https://sports.donga.com/ent/article/all/20261106/134976541/1"
-    },
-    {
-     "src": "세계일보",
-     "title": "김구라, 며느리 맞이하나…아들 그리 “결혼 준비 중”",
-     "link": "https://www.segye.com/newsView/20261106510328"
+     "src": "헤럴드경제",
+     "title": "프리지아, 온라인 유포된 악성 루머에…“명백한 사실무근, 선처 없이 법적 대응”",
+     "link": "https://biz.heraldcorp.com/article/10927535"
     },
     {
      "src": "SBS",
-     "title": "김구라, 곧 며느리 본다…아들 그리, '곰신' 여자친구와 깜짝 결혼 발표",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008833564&plink=RSSLINK&cooper=RSSREADER"
-    }
-   ]
-  },
-  {
-   "kw": "그리",
-   "nsrc": 5,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "동아일보",
-    "세계일보",
-    "조선일보"
-   ],
-   "n": 8,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "김구라, 며느리 보나…아들 그리 “결혼 준비 중”",
-     "link": "https://sports.donga.com/ent/article/all/20261106/134977855/1"
+     "title": "'솔로지옥' 프리지아 사생활 루머 부인…\"허위사실 유포시 법적 대응\"",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008832839&plink=RSSLINK&cooper=RSSREADER"
     },
     {
-     "src": "동아일보",
-     "title": "김구라 아들 그리, 결혼 준비 중…“군대 기다려준 여친”",
-     "link": "https://sports.donga.com/ent/article/all/20261106/134976541/1"
-    },
-    {
-     "src": "세계일보",
-     "title": "김구라, 며느리 맞이하나…아들 그리 “결혼 준비 중”",
-     "link": "https://www.segye.com/newsView/20261106510328"
-    },
-    {
-     "src": "SBS",
-     "title": "김구라, 곧 며느리 본다…아들 그리, '곰신' 여자친구와 깜짝 결혼 발표",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008833564&plink=RSSLINK&cooper=RSSREADER"
+     "src": "뉴시스",
+     "title": "최우식 측, '기내 태도 루머' 법적 대응…\"선처 없다\"",
+     "link": "https://www.newsis.com/view/NISX20261106_0003858309"
     }
    ]
   },
@@ -627,40 +593,6 @@
    ]
   },
   {
-   "kw": "준비",
-   "nsrc": 5,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "세계일보",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "하이브, BTS 효과에 최고 실적…\"'아리랑' 이후 단체·솔로 활동 준비\"(종합2보)",
-     "link": "https://www.yna.co.kr/view/AKR20261103165000005"
-    },
-    {
-     "src": "동아일보",
-     "title": "김구라, 며느리 보나…아들 그리 “결혼 준비 중”",
-     "link": "https://sports.donga.com/ent/article/all/20261106/134977855/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "김구라 아들 그리, 결혼 준비 중…“군대 기다려준 여친”",
-     "link": "https://sports.donga.com/ent/article/all/20261106/134976541/1"
-    },
-    {
-     "src": "세계일보",
-     "title": "김구라, 며느리 맞이하나…아들 그리 “결혼 준비 중”",
-     "link": "https://www.segye.com/newsView/20261106510328"
-    }
-   ]
-  },
-  {
    "kw": "거짓말",
    "nsrc": 5,
    "srcs": [
@@ -691,6 +623,40 @@
      "src": "뉴시스",
      "title": "영화 '거짓말', 27년 만에 무삭제 완전판 개봉",
      "link": "https://www.newsis.com/view/NISX20261105_0003856325"
+    }
+   ]
+  },
+  {
+   "kw": "며느리",
+   "nsrc": 5,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "동아일보",
+    "세계일보",
+    "헤럴드경제"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "김구라, 며느리 보나…아들 그리 “결혼 준비 중”",
+     "link": "https://sports.donga.com/ent/article/all/20261106/134977855/1"
+    },
+    {
+     "src": "세계일보",
+     "title": "김구라, 며느리 맞이하나…아들 그리 “결혼 준비 중”",
+     "link": "https://www.segye.com/newsView/20261106510328"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "오윤아 시어머니, 며느리 첫인상? “도도해 보여 떨렸다” 고백",
+     "link": "https://biz.heraldcorp.com/article/10927488"
+    },
+    {
+     "src": "SBS",
+     "title": "김구라, 곧 며느리 본다…아들 그리, '곰신' 여자친구와 깜짝 결혼 발표",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008833564&plink=RSSLINK&cooper=RSSREADER"
     }
    ]
   },
@@ -736,7 +702,7 @@
     "연합뉴스",
     "조선일보"
    ],
-   "n": 12,
+   "n": 11,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -769,7 +735,7 @@
     "연합뉴스",
     "조선일보"
    ],
-   "n": 11,
+   "n": 10,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -823,39 +789,6 @@
      "src": "뉴시스",
      "title": "하이브·어도어, NYT 뉴진스 계약 보도 반박…\"민희진 계약주체\"(종합)",
      "link": "https://www.newsis.com/view/NISX20261106_0003858282"
-    }
-   ]
-  },
-  {
-   "kw": "반박",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "세계일보",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 7,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "뉴진스 '불공정 계약' 논란에…하이브 \"인권 보호 조항 포함\" 반박(종합)",
-     "link": "https://www.yna.co.kr/view/AKR20261106117600005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "차예련 측, 학폭 의혹 재차 반박…\"허위사실 유포 강력 조치\"",
-     "link": "https://www.yna.co.kr/view/AKR20261104120800005"
-    },
-    {
-     "src": "세계일보",
-     "title": "뉴진스 계약서 논란∙해명에 민희진 반박 “또 만물 민희진설이냐…계약서 초안도 승인도 하이브”",
-     "link": "https://www.segye.com/newsView/20261106511922"
-    },
-    {
-     "src": "뉴시스",
-     "title": "신현준 아내 측, 서울시 수주 특혜 의혹 반박…\"절차 따라 투명하게 수행\"",
-     "link": "https://www.newsis.com/view/NISX20261106_0003858379"
     }
    ]
   },
@@ -926,35 +859,134 @@
    ]
   },
   {
-   "kw": "연기",
+   "kw": "김구라",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "동아일보",
+    "세계일보"
+   ],
+   "n": 7,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "김구라, 며느리 보나…아들 그리 “결혼 준비 중”",
+     "link": "https://sports.donga.com/ent/article/all/20261106/134977855/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "김구라 아들 그리, 결혼 준비 중…“군대 기다려준 여친”",
+     "link": "https://sports.donga.com/ent/article/all/20261106/134976541/1"
+    },
+    {
+     "src": "세계일보",
+     "title": "김구라, 며느리 맞이하나…아들 그리 “결혼 준비 중”",
+     "link": "https://www.segye.com/newsView/20261106510328"
+    },
+    {
+     "src": "SBS",
+     "title": "김구라, 곧 며느리 본다…아들 그리, '곰신' 여자친구와 깜짝 결혼 발표",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008833564&plink=RSSLINK&cooper=RSSREADER"
+    }
+   ]
+  },
+  {
+   "kw": "그리",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "동아일보",
+    "세계일보"
+   ],
+   "n": 7,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "김구라, 며느리 보나…아들 그리 “결혼 준비 중”",
+     "link": "https://sports.donga.com/ent/article/all/20261106/134977855/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "김구라 아들 그리, 결혼 준비 중…“군대 기다려준 여친”",
+     "link": "https://sports.donga.com/ent/article/all/20261106/134976541/1"
+    },
+    {
+     "src": "세계일보",
+     "title": "김구라, 며느리 맞이하나…아들 그리 “결혼 준비 중”",
+     "link": "https://www.segye.com/newsView/20261106510328"
+    },
+    {
+     "src": "SBS",
+     "title": "김구라, 곧 며느리 본다…아들 그리, '곰신' 여자친구와 깜짝 결혼 발표",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008833564&plink=RSSLINK&cooper=RSSREADER"
+    }
+   ]
+  },
+  {
+   "kw": "만원",
    "nsrc": 4,
    "srcs": [
     "뉴시스",
+    "동아일보",
+    "조선일보",
+    "헤럴드경제"
+   ],
+   "n": 7,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "곽윤기, 한 달 카드값 2800만원…“미래 아내는 퍼스트클래스”",
+     "link": "https://sports.donga.com/ent/article/all/20261106/134976737/1"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "디너쇼 1장에 45만원…박유천 日 팬덤 훔치기",
+     "link": "https://biz.heraldcorp.com/article/10926564"
+    },
+    {
+     "src": "뉴시스",
+     "title": "안나, 출산 앞두고 조리원 예약…2주 2500만원 수준",
+     "link": "https://www.newsis.com/view/NISX20261106_0003857728"
+    },
+    {
+     "src": "뉴시스",
+     "title": "곽윤기 \"간식 1+1만 사는데 지난달 카드값 2800만원\"",
+     "link": "https://www.newsis.com/view/NISX20261106_0003857712"
+    }
+   ]
+  },
+  {
+   "kw": "복귀",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "뉴시스",
     "연합뉴스",
-    "한겨레",
-    "한국경제"
+    "조선일보"
    ],
    "n": 6,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "캣츠아이, 북미 투어 잇단 연기…\"메간 뇌진탕으로 회복 중\"",
-     "link": "https://www.yna.co.kr/view/AKR20261106086400005"
+     "title": "'26년만 연예계 복귀' 고지용 \"오해 풀고 싶어, 팬 서운함 이해\"",
+     "link": "https://www.yna.co.kr/view/AKR20261105151000005"
     },
     {
-     "src": "연합뉴스",
-     "title": "캣츠아이, 美 디트로이트 공연 당일 연기…\"메간 건강 문제\"",
-     "link": "https://www.yna.co.kr/view/AKR20261104156400005"
+     "src": "SBS",
+     "title": "진영, '파이터'로 스크린 복귀…본격 격투 액션 도전",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008828128&plink=RSSLINK&cooper=RSSREADER"
     },
     {
-     "src": "연합뉴스",
-     "title": "\"김회장님 잘가세요\"…\"연기 외길 걸은 벗 최불암\" 눈물 속 작별(종합)",
-     "link": "https://www.yna.co.kr/view/AKR20261102023251005"
+     "src": "뉴시스",
+     "title": "조폭 연루설 조세호, 유튜브 복귀 시동 \"다시 한 번 사과\"",
+     "link": "https://www.newsis.com/view/NISX20261105_0003857032"
     },
     {
-     "src": "한겨레",
-     "title": "무기한 연기 ‘두번째 시그널’ 12월7일 첫 방송…“AI 인물 교체는 한계”",
-     "link": "https://www.hani.co.kr/arti/culture/culture_general/1286170.html"
+     "src": "뉴시스",
+     "title": "고정 예능 사라진 조세호, 유튜브 개설…복귀 시동 거나",
+     "link": "https://www.newsis.com/view/NISX20261105_0003856703"
     }
    ]
   },
@@ -988,6 +1020,39 @@
      "src": "헤럴드경제",
      "title": "조세호 ‘조폭 연루설’ 후 방송 싹 끊기더니 결국…유튜브 채널 열었다",
      "link": "https://biz.heraldcorp.com/article/10927541"
+    }
+   ]
+  },
+  {
+   "kw": "의혹",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "연합뉴스",
+    "조선일보"
+   ],
+   "n": 6,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "차예련 측, 학폭 의혹 재차 반박…\"허위사실 유포 강력 조치\"",
+     "link": "https://www.yna.co.kr/view/AKR20261104120800005"
+    },
+    {
+     "src": "동아일보",
+     "title": "유리, 이효리 카피캣 의혹 “어떻게 안 따라하고 배겨?” (연애전쟁)",
+     "link": "https://sports.donga.com/ent/article/all/20261106/134977551/1"
+    },
+    {
+     "src": "뉴시스",
+     "title": "'지적장애女 학대 의혹' 유튜버 카광, 가학 생방송 전말 고발된다",
+     "link": "https://www.newsis.com/view/NISX20261106_0003858579"
+    },
+    {
+     "src": "뉴시스",
+     "title": "신현준 아내 측, 서울시 수주 특혜 의혹 반박…\"절차 따라 투명하게 수행\"",
+     "link": "https://www.newsis.com/view/NISX20261106_0003858379"
     }
    ]
   },
@@ -1058,39 +1123,6 @@
    ]
   },
   {
-   "kw": "법적",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "조선일보",
-    "헤럴드경제"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "헤럴드경제",
-     "title": "프리지아, 온라인 유포된 악성 루머에…“명백한 사실무근, 선처 없이 법적 대응”",
-     "link": "https://biz.heraldcorp.com/article/10927535"
-    },
-    {
-     "src": "SBS",
-     "title": "'솔로지옥' 프리지아 사생활 루머 부인…\"허위사실 유포시 법적 대응\"",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008832839&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "뉴시스",
-     "title": "최우식 측, '기내 태도 루머' 법적 대응…\"선처 없다\"",
-     "link": "https://www.newsis.com/view/NISX20261106_0003858309"
-    },
-    {
-     "src": "뉴시스",
-     "title": "'솔로지옥' 프리지아 측, 사생활 루머 일축…\"선처 없는 법적 대응\"",
-     "link": "https://www.newsis.com/view/NISX20261105_0003856943"
-    }
-   ]
-  },
-  {
    "kw": "아냐",
    "nsrc": 4,
    "srcs": [
@@ -1157,68 +1189,35 @@
    ]
   },
   {
-   "kw": "복귀",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "'26년만 연예계 복귀' 고지용 \"오해 풀고 싶어, 팬 서운함 이해\"",
-     "link": "https://www.yna.co.kr/view/AKR20261105151000005"
-    },
-    {
-     "src": "SBS",
-     "title": "진영, '파이터'로 스크린 복귀…본격 격투 액션 도전",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008828128&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "뉴시스",
-     "title": "조폭 연루설 조세호, 유튜브 복귀 시동 \"다시 한 번 사과\"",
-     "link": "https://www.newsis.com/view/NISX20261105_0003857032"
-    },
-    {
-     "src": "뉴시스",
-     "title": "고정 예능 사라진 조세호, 유튜브 개설…복귀 시동 거나",
-     "link": "https://www.newsis.com/view/NISX20261105_0003856703"
-    }
-   ]
-  },
-  {
-   "kw": "의혹",
+   "kw": "준비",
    "nsrc": 4,
    "srcs": [
     "뉴시스",
     "동아일보",
-    "연합뉴스",
-    "조선일보"
+    "세계일보",
+    "연합뉴스"
    ],
    "n": 5,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "차예련 측, 학폭 의혹 재차 반박…\"허위사실 유포 강력 조치\"",
-     "link": "https://www.yna.co.kr/view/AKR20261104120800005"
+     "title": "하이브, BTS 효과에 최고 실적…\"'아리랑' 이후 단체·솔로 활동 준비\"(종합2보)",
+     "link": "https://www.yna.co.kr/view/AKR20261103165000005"
     },
     {
      "src": "동아일보",
-     "title": "유리, 이효리 카피캣 의혹 “어떻게 안 따라하고 배겨?” (연애전쟁)",
-     "link": "https://sports.donga.com/ent/article/all/20261106/134977551/1"
+     "title": "김구라, 며느리 보나…아들 그리 “결혼 준비 중”",
+     "link": "https://sports.donga.com/ent/article/all/20261106/134977855/1"
     },
     {
-     "src": "뉴시스",
-     "title": "신현준 아내 측, 서울시 수주 특혜 의혹 반박…\"절차 따라 투명하게 수행\"",
-     "link": "https://www.newsis.com/view/NISX20261106_0003858379"
+     "src": "동아일보",
+     "title": "김구라 아들 그리, 결혼 준비 중…“군대 기다려준 여친”",
+     "link": "https://sports.donga.com/ent/article/all/20261106/134976541/1"
     },
     {
-     "src": "뉴시스",
-     "title": "차예련, 학폭 의혹 부인에 법적대응까지 예고했는데…",
-     "link": "https://www.newsis.com/view/NISX20261105_0003856532"
+     "src": "세계일보",
+     "title": "김구라, 며느리 맞이하나…아들 그리 “결혼 준비 중”",
+     "link": "https://www.segye.com/newsView/20261106510328"
     }
    ]
   },

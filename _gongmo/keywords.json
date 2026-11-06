@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-06 18:00",
+ "updated": "2026-11-06 19:00",
  "items": [
   {
    "query": "로스앤젤레스 fc 대 미네소타 유나이티드 fc 순위",
@@ -8041,6 +8041,97 @@
    "score": 0,
    "status": "작성",
    "page": "/money/guide/newborn-special-loan-refinance-conditions/",
+   "registered": "2026-11-06",
+   "expires": ""
+  },
+  {
+   "query": "장기요양 등급별 혜택",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/long-term-care-grade-benefits-monthly-limit/",
+   "registered": "2026-11-06",
+   "expires": ""
+  },
+  {
+   "query": "2026 최저임금 실수령",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/minimum-wage-2026-take-home-pay/",
+   "registered": "2026-11-06",
+   "expires": ""
+  },
+  {
+   "query": "1인법인 설립 비용",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/one-person-corporation-setup-cost-procedure/",
+   "registered": "2026-11-06",
+   "expires": ""
+  },
+  {
+   "query": "1인법인 대표 급여·보험",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/one-person-corporation-ceo-salary-four-insurance/",
+   "registered": "2026-11-06",
+   "expires": ""
+  },
+  {
+   "query": "보증금 반환소송 비용",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/jeonse-deposit-return-lawsuit-procedure-cost/",
+   "registered": "2026-11-06",
+   "expires": ""
+  },
+  {
+   "query": "재개발 비례율·분담금",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/redevelopment-proportional-rate-contribution/",
+   "registered": "2026-11-06",
+   "expires": ""
+  },
+  {
+   "query": "상속세 신고 안 해도 될 때",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/inheritance-tax-no-filing-needed-cases/",
    "registered": "2026-11-06",
    "expires": ""
   },
