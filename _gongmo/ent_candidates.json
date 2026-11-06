@@ -1,22 +1,21 @@
 {
- "at": "2026-11-06 13:06",
+ "at": "2026-11-06 13:30",
  "nitems": 519,
  "cands": [
   {
    "kw": "재혼",
-   "nsrc": 9,
+   "nsrc": 8,
    "srcs": [
     "SBS",
     "뉴시스",
     "동아일보",
-    "세계일보",
     "연합뉴스",
     "조선일보",
     "한겨레",
     "한국경제",
     "헤럴드경제"
    ],
-   "n": 12,
+   "n": 11,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -52,7 +51,7 @@
     "한국경제",
     "헤럴드경제"
    ],
-   "n": 11,
+   "n": 9,
    "headlines": [
     {
      "src": "동아일보",
@@ -147,6 +146,41 @@
    ]
   },
   {
+   "kw": "며느리",
+   "nsrc": 6,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "동아일보",
+    "세계일보",
+    "조선일보",
+    "헤럴드경제"
+   ],
+   "n": 6,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "김구라, 며느리 보나…아들 그리 “결혼 준비 중”",
+     "link": "https://sports.donga.com/ent/article/all/20261106/134977855/1"
+    },
+    {
+     "src": "세계일보",
+     "title": "김구라, 곧 며느리 본다…子 그리 \"결혼 준비 중\"",
+     "link": "https://www.segye.com/newsView/20261106503347"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "오윤아 시어머니, 며느리 첫인상? “도도해 보여 떨렸다” 고백",
+     "link": "https://biz.heraldcorp.com/article/10927488"
+    },
+    {
+     "src": "SBS",
+     "title": "김구라, 곧 며느리 본다…아들 그리, '곰신' 여자친구와 깜짝 결혼 발표",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008833564&plink=RSSLINK&cooper=RSSREADER"
+    }
+   ]
+  },
+  {
    "kw": "내년",
    "nsrc": 5,
    "srcs": [
@@ -211,40 +245,6 @@
      "src": "연합뉴스",
      "title": "\"김회장님 잘가세요\"…\"연기 외길 걸은 벗 최불암\" 눈물 속 작별(종합)",
      "link": "https://www.yna.co.kr/view/AKR20261102023251005"
-    }
-   ]
-  },
-  {
-   "kw": "리센느",
-   "nsrc": 5,
-   "srcs": [
-    "SBS",
-    "세계일보",
-    "연합뉴스",
-    "조선일보",
-    "한국경제"
-   ],
-   "n": 9,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "리센느 신곡 '위드', 발매 첫날 멜론 '톱 100' 1위 직행",
-     "link": "https://www.yna.co.kr/view/AKR20261103181100005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "'중소돌의 기적' 리센느 \"또 한 번 기적 이루는 그룹 되고 싶어\"",
-     "link": "https://www.yna.co.kr/view/AKR20261103133400005"
-    },
-    {
-     "src": "한국경제",
-     "title": "리센느 \"'국민 걸그룹' 호칭 과분…'믿고 듣는 리센느' 수식어 붙길\"",
-     "link": "https://www.hankyung.com/article/202611032757H"
-    },
-    {
-     "src": "한국경제",
-     "title": "리센느, 이번엔 머스크 향이다…팬들 심장 뛰게 할 '펄스'",
-     "link": "https://www.hankyung.com/article/202610278793H"
     }
    ]
   },
@@ -317,6 +317,74 @@
    ]
   },
   {
+   "kw": "김구라",
+   "nsrc": 5,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "동아일보",
+    "세계일보",
+    "조선일보"
+   ],
+   "n": 8,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "김구라, 며느리 보나…아들 그리 “결혼 준비 중”",
+     "link": "https://sports.donga.com/ent/article/all/20261106/134977855/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "김구라 아들 그리, 결혼 준비 중…“군대 기다려준 여친”",
+     "link": "https://sports.donga.com/ent/article/all/20261106/134976541/1"
+    },
+    {
+     "src": "세계일보",
+     "title": "김구라, 곧 며느리 본다…子 그리 \"결혼 준비 중\"",
+     "link": "https://www.segye.com/newsView/20261106503347"
+    },
+    {
+     "src": "SBS",
+     "title": "김구라, 곧 며느리 본다…아들 그리, '곰신' 여자친구와 깜짝 결혼 발표",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008833564&plink=RSSLINK&cooper=RSSREADER"
+    }
+   ]
+  },
+  {
+   "kw": "그리",
+   "nsrc": 5,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "동아일보",
+    "세계일보",
+    "조선일보"
+   ],
+   "n": 8,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "김구라, 며느리 보나…아들 그리 “결혼 준비 중”",
+     "link": "https://sports.donga.com/ent/article/all/20261106/134977855/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "김구라 아들 그리, 결혼 준비 중…“군대 기다려준 여친”",
+     "link": "https://sports.donga.com/ent/article/all/20261106/134976541/1"
+    },
+    {
+     "src": "세계일보",
+     "title": "김구라, 곧 며느리 본다…子 그리 \"결혼 준비 중\"",
+     "link": "https://www.segye.com/newsView/20261106503347"
+    },
+    {
+     "src": "SBS",
+     "title": "김구라, 곧 며느리 본다…아들 그리, '곰신' 여자친구와 깜짝 결혼 발표",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008833564&plink=RSSLINK&cooper=RSSREADER"
+    }
+   ]
+  },
+  {
    "kw": "도상우",
    "nsrc": 5,
    "srcs": [
@@ -351,172 +419,36 @@
    ]
   },
   {
-   "kw": "학폭",
+   "kw": "준비",
    "nsrc": 5,
    "srcs": [
     "뉴시스",
     "동아일보",
     "세계일보",
     "연합뉴스",
-    "헤럴드경제"
+    "조선일보"
    ],
-   "n": 7,
+   "n": 6,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "차예련 측, 학폭 의혹 재차 반박…\"허위사실 유포 강력 조치\"",
-     "link": "https://www.yna.co.kr/view/AKR20261104120800005"
+     "title": "하이브, BTS 효과에 최고 실적…\"'아리랑' 이후 단체·솔로 활동 준비\"(종합2보)",
+     "link": "https://www.yna.co.kr/view/AKR20261103165000005"
     },
     {
      "src": "동아일보",
-     "title": "국동호, 학폭 폭로 변호사 결국 송치…“하지 않은 일 인정 못 해” [공식]",
-     "link": "https://sports.donga.com/ent/article/all/20261106/134976498/1"
+     "title": "김구라, 며느리 보나…아들 그리 “결혼 준비 중”",
+     "link": "https://sports.donga.com/ent/article/all/20261106/134977855/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "김구라 아들 그리, 결혼 준비 중…“군대 기다려준 여친”",
+     "link": "https://sports.donga.com/ent/article/all/20261106/134976541/1"
     },
     {
      "src": "세계일보",
-     "title": "차예련, 학폭·골프장 갑질 의혹 이어…“드라이기 뺏고 짜증” 미용실 목격담 등장",
-     "link": "https://www.segye.com/newsView/20261106502823"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "차예련 측 ‘학폭+인성 논란’에 법적 대응 시사…“허위사실·인신공격에 강력 조치할 것”",
-     "link": "https://biz.heraldcorp.com/article/10925779"
-    }
-   ]
-  },
-  {
-   "kw": "고백",
-   "nsrc": 5,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "세계일보",
-    "한국경제",
-    "헤럴드경제"
-   ],
-   "n": 7,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "전현무, 연애 근황 고백…“연애세포 완전히 죽었다”",
-     "link": "https://sports.donga.com/ent/article/all/20261106/134976779/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "‘48세’ 전현무 “연애세포 완전 죽었다…심폐소생 불가” 고백 (전현무계획4)",
-     "link": "https://sports.donga.com/ent/article/all/20261106/134976467/1"
-    },
-    {
-     "src": "한국경제",
-     "title": "\"통장 압류, 수중엔 1000원\"…JBJ 출신 켄타, 4억 빚 고백",
-     "link": "https://www.hankyung.com/article/202610280689H"
-    },
-    {
-     "src": "세계일보",
-     "title": "'46세' 한채영, 변함없는 바비인형…\"출산 후 일주일 만에 운동\" 고백",
-     "link": "https://www.segye.com/newsView/20261106500075"
-    }
-   ]
-  },
-  {
-   "kw": "열애",
-   "nsrc": 5,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "동아일보",
-    "세계일보",
-    "한국경제"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "나나 폭발 “제가 무슨 큰 잘못 했나? ♥탑과 열애, 사생활” (전문)[DA피플]",
-     "link": "https://sports.donga.com/ent/article/all/20261106/134976456/1"
-    },
-    {
-     "src": "한국경제",
-     "title": "나나, 탑과 공개 열애 후…악플 쏟아지자 \"내가 무슨 잘못\" 소신 발언",
-     "link": "https://www.hankyung.com/article/202611069702H"
-    },
-    {
-     "src": "세계일보",
-     "title": "나나, 탑과 열애 인정 후 악플 쏟아지자…“사생활, 미안할 일 아냐”",
-     "link": "https://www.segye.com/newsView/20261106502919"
-    },
-    {
-     "src": "SBS",
-     "title": "\"내가 무슨 큰 잘못을 했나\"…'탑♥' 나나, 공개 열애 후 쏟아진 악플에 강력 일침",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008833503&plink=RSSLINK&cooper=RSSREADER"
-    }
-   ]
-  },
-  {
-   "kw": "나나",
-   "nsrc": 5,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "동아일보",
-    "세계일보",
-    "한국경제"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "나나 폭발 “제가 무슨 큰 잘못 했나? ♥탑과 열애, 사생활” (전문)[DA피플]",
-     "link": "https://sports.donga.com/ent/article/all/20261106/134976456/1"
-    },
-    {
-     "src": "한국경제",
-     "title": "나나, 탑과 공개 열애 후…악플 쏟아지자 \"내가 무슨 잘못\" 소신 발언",
-     "link": "https://www.hankyung.com/article/202611069702H"
-    },
-    {
-     "src": "세계일보",
-     "title": "나나, 탑과 열애 인정 후 악플 쏟아지자…“사생활, 미안할 일 아냐”",
-     "link": "https://www.segye.com/newsView/20261106502919"
-    },
-    {
-     "src": "SBS",
-     "title": "\"내가 무슨 큰 잘못을 했나\"…'탑♥' 나나, 공개 열애 후 쏟아진 악플에 강력 일침",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008833503&plink=RSSLINK&cooper=RSSREADER"
-    }
-   ]
-  },
-  {
-   "kw": "깜짝",
-   "nsrc": 5,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "조선일보",
-    "한국경제",
-    "헤럴드경제"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "한국경제",
-     "title": "아일릿, 여경 의상 논란에 \"깜짝 놀라…어떤 관심이든 감사\"",
-     "link": "https://www.hankyung.com/article/202610265795H"
-    },
-    {
-     "src": "한국경제",
-     "title": "\"화환할게\" 강동원, 4개월 전 팬과 약속 지켰다…결혼식장에 깜짝 선물",
-     "link": "https://www.hankyung.com/article/202610265376H"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "“딸은 메타, 아들은 엔비디아”…김보연, 두 자녀 근황 깜짝 공개",
-     "link": "https://biz.heraldcorp.com/article/10926257"
-    },
-    {
-     "src": "SBS",
-     "title": "김구라, 곧 며느리 본다…아들 그리, '곰신' 여자친구와 깜짝 결혼 발표",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008833564&plink=RSSLINK&cooper=RSSREADER"
+     "title": "김구라, 곧 며느리 본다…子 그리 \"결혼 준비 중\"",
+     "link": "https://www.segye.com/newsView/20261106503347"
     }
    ]
   },
@@ -555,36 +487,68 @@
    ]
   },
   {
-   "kw": "며느리",
-   "nsrc": 5,
+   "kw": "장원영",
+   "nsrc": 4,
    "srcs": [
     "SBS",
     "뉴시스",
-    "동아일보",
     "세계일보",
-    "헤럴드경제"
+    "조선일보"
    ],
-   "n": 5,
+   "n": 53,
    "headlines": [
     {
-     "src": "동아일보",
-     "title": "김구라, 며느리 보나…아들 그리 “결혼 준비 중”",
-     "link": "https://sports.donga.com/ent/article/all/20261106/134977855/1"
+     "src": "세계일보",
+     "title": "[포토] 장원영 '미소 천사'",
+     "link": "https://www.segye.com/newsView/20261106509239"
     },
     {
      "src": "세계일보",
-     "title": "김구라, 곧 며느리 본다…子 그리 \"결혼 준비 중\"",
-     "link": "https://www.segye.com/newsView/20261106503347"
+     "title": "[포토] 장원영 '심쿵'",
+     "link": "https://www.segye.com/newsView/20261106509228"
+    },
+    {
+     "src": "세계일보",
+     "title": "[포토] 장원영 '매력적인 눈빛'",
+     "link": "https://www.segye.com/newsView/20261106509218"
+    },
+    {
+     "src": "세계일보",
+     "title": "[포토] 장원영 '눈부신 미모'",
+     "link": "https://www.segye.com/newsView/20261106509206"
+    }
+   ]
+  },
+  {
+   "kw": "미모",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "세계일보",
+    "조선일보",
+    "헤럴드경제"
+   ],
+   "n": 20,
+   "headlines": [
+    {
+     "src": "세계일보",
+     "title": "[포토] 장원영 '눈부신 미모'",
+     "link": "https://www.segye.com/newsView/20261106509206"
+    },
+    {
+     "src": "세계일보",
+     "title": "[포토] 장원영 '바비인형 미모'",
+     "link": "https://www.segye.com/newsView/20261106509193"
+    },
+    {
+     "src": "세계일보",
+     "title": "[포토] 장원영 '완벽한 미모'",
+     "link": "https://www.segye.com/newsView/20261106509123"
     },
     {
      "src": "헤럴드경제",
-     "title": "오윤아 시어머니, 며느리 첫인상? “도도해 보여 떨렸다” 고백",
-     "link": "https://biz.heraldcorp.com/article/10927488"
-    },
-    {
-     "src": "SBS",
-     "title": "김구라, 곧 며느리 본다…아들 그리, '곰신' 여자친구와 깜짝 결혼 발표",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008833564&plink=RSSLINK&cooper=RSSREADER"
+     "title": "여전한 미모, 동방불패 주연 배우 72세 생일 자축",
+     "link": "https://biz.heraldcorp.com/article/10926005"
     }
    ]
   },
@@ -597,7 +561,7 @@
     "조선일보",
     "헤럴드경제"
    ],
-   "n": 9,
+   "n": 8,
    "headlines": [
     {
      "src": "동아일보",
@@ -622,77 +586,44 @@
    ]
   },
   {
-   "kw": "그리",
+   "kw": "리센느",
    "nsrc": 4,
    "srcs": [
     "SBS",
-    "뉴시스",
-    "동아일보",
-    "세계일보"
+    "연합뉴스",
+    "조선일보",
+    "한국경제"
    ],
    "n": 7,
    "headlines": [
     {
-     "src": "동아일보",
-     "title": "김구라, 며느리 보나…아들 그리 “결혼 준비 중”",
-     "link": "https://sports.donga.com/ent/article/all/20261106/134977855/1"
+     "src": "연합뉴스",
+     "title": "리센느 신곡 '위드', 발매 첫날 멜론 '톱 100' 1위 직행",
+     "link": "https://www.yna.co.kr/view/AKR20261103181100005"
     },
     {
-     "src": "동아일보",
-     "title": "김구라 아들 그리, 결혼 준비 중…“군대 기다려준 여친”",
-     "link": "https://sports.donga.com/ent/article/all/20261106/134976541/1"
+     "src": "연합뉴스",
+     "title": "'중소돌의 기적' 리센느 \"또 한 번 기적 이루는 그룹 되고 싶어\"",
+     "link": "https://www.yna.co.kr/view/AKR20261103133400005"
     },
     {
-     "src": "세계일보",
-     "title": "김구라, 곧 며느리 본다…子 그리 \"결혼 준비 중\"",
-     "link": "https://www.segye.com/newsView/20261106503347"
+     "src": "한국경제",
+     "title": "리센느 \"'국민 걸그룹' 호칭 과분…'믿고 듣는 리센느' 수식어 붙길\"",
+     "link": "https://www.hankyung.com/article/202611032757H"
     },
     {
-     "src": "SBS",
-     "title": "김구라, 곧 며느리 본다…아들 그리, '곰신' 여자친구와 깜짝 결혼 발표",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008833564&plink=RSSLINK&cooper=RSSREADER"
+     "src": "한국경제",
+     "title": "리센느, 이번엔 머스크 향이다…팬들 심장 뛰게 할 '펄스'",
+     "link": "https://www.hankyung.com/article/202610278793H"
     }
    ]
   },
   {
-   "kw": "김구라",
+   "kw": "학폭",
    "nsrc": 4,
    "srcs": [
-    "SBS",
     "뉴시스",
     "동아일보",
-    "세계일보"
-   ],
-   "n": 7,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "김구라, 며느리 보나…아들 그리 “결혼 준비 중”",
-     "link": "https://sports.donga.com/ent/article/all/20261106/134977855/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "김구라 아들 그리, 결혼 준비 중…“군대 기다려준 여친”",
-     "link": "https://sports.donga.com/ent/article/all/20261106/134976541/1"
-    },
-    {
-     "src": "세계일보",
-     "title": "김구라, 곧 며느리 본다…子 그리 \"결혼 준비 중\"",
-     "link": "https://www.segye.com/newsView/20261106503347"
-    },
-    {
-     "src": "SBS",
-     "title": "김구라, 곧 며느리 본다…아들 그리, '곰신' 여자친구와 깜짝 결혼 발표",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008833564&plink=RSSLINK&cooper=RSSREADER"
-    }
-   ]
-  },
-  {
-   "kw": "유튜브",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "세계일보",
     "연합뉴스",
     "헤럴드경제"
    ],
@@ -700,23 +631,23 @@
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "유튜브·투비·BBC 한자리에…방미통위, 서울서 국제 OTT 포럼",
-     "link": "https://www.yna.co.kr/view/AKR20261105090000017"
+     "title": "차예련 측, 학폭 의혹 재차 반박…\"허위사실 유포 강력 조치\"",
+     "link": "https://www.yna.co.kr/view/AKR20261104120800005"
     },
     {
-     "src": "세계일보",
-     "title": "조폭 연루설 조세호, 유튜브 복귀 시동 \"다시 한 번 사과\"",
-     "link": "https://www.segye.com/newsView/20261106500038"
-    },
-    {
-     "src": "세계일보",
-     "title": "조세호, 새 유튜브 채널 열고 ‘조폭 친분설’ 재차 사과…“더 신중하게 행동할 것”",
-     "link": "https://www.segye.com/newsView/20261106502736"
+     "src": "동아일보",
+     "title": "국동호, 학폭 폭로 변호사 결국 송치…“하지 않은 일 인정 못 해” [공식]",
+     "link": "https://sports.donga.com/ent/article/all/20261106/134976498/1"
     },
     {
      "src": "헤럴드경제",
-     "title": "조세호 ‘조폭 연루설’ 후 방송 싹 끊기더니 결국…유튜브 채널 열었다",
-     "link": "https://biz.heraldcorp.com/article/10927541"
+     "title": "차예련 측 ‘학폭+인성 논란’에 법적 대응 시사…“허위사실·인신공격에 강력 조치할 것”",
+     "link": "https://biz.heraldcorp.com/article/10925779"
+    },
+    {
+     "src": "뉴시스",
+     "title": "국동호 측 \"학폭 주장 변호사, 공소청 송치\"",
+     "link": "https://www.newsis.com/view/NISX20261105_0003855465"
     }
    ]
   },
@@ -754,6 +685,39 @@
    ]
   },
   {
+   "kw": "고백",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "한국경제",
+    "헤럴드경제"
+   ],
+   "n": 6,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "전현무, 연애 근황 고백…“연애세포 완전히 죽었다”",
+     "link": "https://sports.donga.com/ent/article/all/20261106/134976779/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "‘48세’ 전현무 “연애세포 완전 죽었다…심폐소생 불가” 고백 (전현무계획4)",
+     "link": "https://sports.donga.com/ent/article/all/20261106/134976467/1"
+    },
+    {
+     "src": "한국경제",
+     "title": "\"통장 압류, 수중엔 1000원\"…JBJ 출신 켄타, 4억 빚 고백",
+     "link": "https://www.hankyung.com/article/202610280689H"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "오윤아 시어머니, 며느리 첫인상? “도도해 보여 떨렸다” 고백",
+     "link": "https://biz.heraldcorp.com/article/10927488"
+    }
+   ]
+  },
+  {
    "kw": "임영웅",
    "nsrc": 4,
    "srcs": [
@@ -787,35 +751,35 @@
    ]
   },
   {
-   "kw": "조세호",
+   "kw": "사랑",
    "nsrc": 4,
    "srcs": [
+    "SBS",
     "뉴시스",
-    "세계일보",
-    "한국경제",
-    "헤럴드경제"
+    "조선일보",
+    "한겨레"
    ],
    "n": 6,
    "headlines": [
     {
-     "src": "한국경제",
-     "title": "조세호, 조폭 친분설 이후 새출발…\"주변 관계 잘 살필 것\"",
-     "link": "https://www.hankyung.com/article/202611060121H"
+     "src": "한겨레",
+     "title": "“사랑”만 200번 넘게 쓴 시집…사랑을 사랑에 가두지 않는 반칙 [.txt]",
+     "link": "https://www.hani.co.kr/arti/culture/book/1286044.html"
     },
     {
-     "src": "세계일보",
-     "title": "조폭 연루설 조세호, 유튜브 복귀 시동 \"다시 한 번 사과\"",
-     "link": "https://www.segye.com/newsView/20261106500038"
+     "src": "SBS",
+     "title": "'가능한 사랑', 제46회 영평상 작품상…조인성·전도연 남녀주연상 영예",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008832284&plink=RSSLINK&cooper=RSSREADER"
     },
     {
-     "src": "세계일보",
-     "title": "조세호, 새 유튜브 채널 열고 ‘조폭 친분설’ 재차 사과…“더 신중하게 행동할 것”",
-     "link": "https://www.segye.com/newsView/20261106502736"
+     "src": "뉴시스",
+     "title": "이창동 '가능한 사랑' 오늘부터 넷플릭스에서 본다",
+     "link": "https://www.newsis.com/view/NISX20261106_0003857626"
     },
     {
-     "src": "헤럴드경제",
-     "title": "조세호 ‘조폭 연루설’ 후 방송 싹 끊기더니 결국…유튜브 채널 열었다",
-     "link": "https://biz.heraldcorp.com/article/10927541"
+     "src": "뉴시스",
+     "title": "'느낌표' 된 한로로, 물음표 던진다…반문 끝에 끝내 가닿을 사랑",
+     "link": "https://www.newsis.com/view/NISX20261105_0003855972"
     }
    ]
   },
@@ -919,7 +883,7 @@
    ]
   },
   {
-   "kw": "차예련",
+   "kw": "유튜브",
    "nsrc": 4,
    "srcs": [
     "뉴시스",
@@ -931,23 +895,23 @@
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "차예련 측, 학폭 의혹 재차 반박…\"허위사실 유포 강력 조치\"",
-     "link": "https://www.yna.co.kr/view/AKR20261104120800005"
+     "title": "유튜브·투비·BBC 한자리에…방미통위, 서울서 국제 OTT 포럼",
+     "link": "https://www.yna.co.kr/view/AKR20261105090000017"
     },
     {
      "src": "세계일보",
-     "title": "차예련, 학폭·골프장 갑질 의혹 이어…“드라이기 뺏고 짜증” 미용실 목격담 등장",
-     "link": "https://www.segye.com/newsView/20261106502823"
+     "title": "조폭 연루설 조세호, 유튜브 복귀 시동 \"다시 한 번 사과\"",
+     "link": "https://www.segye.com/newsView/20261106500038"
     },
     {
      "src": "헤럴드경제",
-     "title": "차예련 측 ‘학폭+인성 논란’에 법적 대응 시사…“허위사실·인신공격에 강력 조치할 것”",
-     "link": "https://biz.heraldcorp.com/article/10925779"
+     "title": "조세호 ‘조폭 연루설’ 후 방송 싹 끊기더니 결국…유튜브 채널 열었다",
+     "link": "https://biz.heraldcorp.com/article/10927541"
     },
     {
      "src": "뉴시스",
-     "title": "\"이름 안 썼으니 무죄?\"…차예련 '학폭 폭로 논란'에 변호사가 던진 경고",
-     "link": "https://www.newsis.com/view/NISX20261105_0003856258"
+     "title": "조폭 연루설 조세호, 유튜브 복귀 시동 \"다시 한 번 사과\"",
+     "link": "https://www.newsis.com/view/NISX20261105_0003857032"
     }
    ]
   },
@@ -981,39 +945,6 @@
      "src": "뉴시스",
      "title": "NYT, 뉴진스 전속계약서 공개…하이브 \"신의성실 원칙 따른 계약\"",
      "link": "https://www.newsis.com/view/NISX20261106_0003857163"
-    }
-   ]
-  },
-  {
-   "kw": "준비",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "세계일보",
-    "연합뉴스"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "하이브, BTS 효과에 최고 실적…\"'아리랑' 이후 단체·솔로 활동 준비\"(종합2보)",
-     "link": "https://www.yna.co.kr/view/AKR20261103165000005"
-    },
-    {
-     "src": "동아일보",
-     "title": "김구라, 며느리 보나…아들 그리 “결혼 준비 중”",
-     "link": "https://sports.donga.com/ent/article/all/20261106/134977855/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "김구라 아들 그리, 결혼 준비 중…“군대 기다려준 여친”",
-     "link": "https://sports.donga.com/ent/article/all/20261106/134976541/1"
-    },
-    {
-     "src": "세계일보",
-     "title": "김구라, 곧 며느리 본다…子 그리 \"결혼 준비 중\"",
-     "link": "https://www.segye.com/newsView/20261106503347"
     }
    ]
   },
@@ -1084,40 +1015,7 @@
    ]
   },
   {
-   "kw": "하지원",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "동아일보",
-    "세계일보"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "이서진, ♥하지원 몸에 직접 선크림…분위기 핑크빛 (비서진)",
-     "link": "https://sports.donga.com/ent/article/all/20261106/134976782/1"
-    },
-    {
-     "src": "세계일보",
-     "title": "하지원 \"30살 넘어 처음 술 마셔…촬영·집 반복해\"",
-     "link": "https://www.segye.com/newsView/20261106500040"
-    },
-    {
-     "src": "SBS",
-     "title": "\"선크림도 직접 발라줘\"…'비서진' 이서진X하지원, 싱가포르서 묘한 핑크빛 기류",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008833781&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "뉴시스",
-     "title": "성시경, 하지원 어깨 스킨십에 돌직구 \"위험한 행동\"",
-     "link": "https://www.newsis.com/view/NISX20261106_0003857458"
-    }
-   ]
-  },
-  {
-   "kw": "무슨",
+   "kw": "나나",
    "nsrc": 4,
    "srcs": [
     "SBS",
@@ -1143,20 +1041,20 @@
      "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008833503&plink=RSSLINK&cooper=RSSREADER"
     },
     {
-     "src": "뉴시스",
-     "title": "\"사비 들여 준비했는데\"…SS501 허영생 16년 팬 탈덕했다 무슨 일?",
-     "link": "https://www.newsis.com/view/NISX20261105_0003856305"
+     "src": "SBS",
+     "title": "탑♥나나, 공개 열애 후 첫 데이트 포착…팬들 만든 생일 카페 동반 방문",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008827778&plink=RSSLINK&cooper=RSSREADER"
     }
    ]
   },
   {
-   "kw": "사생활",
+   "kw": "열애",
    "nsrc": 4,
    "srcs": [
     "SBS",
     "뉴시스",
     "동아일보",
-    "세계일보"
+    "한국경제"
    ],
    "n": 5,
    "headlines": [
@@ -1166,19 +1064,19 @@
      "link": "https://sports.donga.com/ent/article/all/20261106/134976456/1"
     },
     {
-     "src": "세계일보",
-     "title": "나나, 탑과 열애 인정 후 악플 쏟아지자…“사생활, 미안할 일 아냐”",
-     "link": "https://www.segye.com/newsView/20261106502919"
+     "src": "한국경제",
+     "title": "나나, 탑과 공개 열애 후…악플 쏟아지자 \"내가 무슨 잘못\" 소신 발언",
+     "link": "https://www.hankyung.com/article/202611069702H"
     },
     {
      "src": "SBS",
-     "title": "'솔로지옥' 프리지아 사생활 루머 부인…\"허위사실 유포시 법적 대응\"",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008832839&plink=RSSLINK&cooper=RSSREADER"
+     "title": "\"내가 무슨 큰 잘못을 했나\"…'탑♥' 나나, 공개 열애 후 쏟아진 악플에 강력 일침",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008833503&plink=RSSLINK&cooper=RSSREADER"
     },
     {
-     "src": "뉴시스",
-     "title": "나나, 탑과 열애 악플에 \"사생활 미안할 일 아냐\"",
-     "link": "https://www.newsis.com/view/NISX20261106_0003857179"
+     "src": "SBS",
+     "title": "탑♥나나, 공개 열애 후 첫 데이트 포착…팬들 만든 생일 카페 동반 방문",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008827778&plink=RSSLINK&cooper=RSSREADER"
     }
    ]
   },
@@ -1216,40 +1114,7 @@
    ]
   },
   {
-   "kw": "사랑",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "조선일보",
-    "한겨레"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "한겨레",
-     "title": "“사랑”만 200번 넘게 쓴 시집…사랑을 사랑에 가두지 않는 반칙 [.txt]",
-     "link": "https://www.hani.co.kr/arti/culture/book/1286044.html"
-    },
-    {
-     "src": "SBS",
-     "title": "'가능한 사랑', 제46회 영평상 작품상…조인성·전도연 남녀주연상 영예",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008832284&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "뉴시스",
-     "title": "이창동 '가능한 사랑' 오늘부터 넷플릭스에서 본다",
-     "link": "https://www.newsis.com/view/NISX20261106_0003857626"
-    },
-    {
-     "src": "뉴시스",
-     "title": "'느낌표' 된 한로로, 물음표 던진다…반문 끝에 끝내 가닿을 사랑",
-     "link": "https://www.newsis.com/view/NISX20261105_0003855972"
-    }
-   ]
-  },
-  {
-   "kw": "조폭",
+   "kw": "조세호",
    "nsrc": 4,
    "srcs": [
     "뉴시스",
@@ -1270,14 +1135,80 @@
      "link": "https://www.segye.com/newsView/20261106500038"
     },
     {
-     "src": "세계일보",
-     "title": "조세호, 새 유튜브 채널 열고 ‘조폭 친분설’ 재차 사과…“더 신중하게 행동할 것”",
-     "link": "https://www.segye.com/newsView/20261106502736"
-    },
-    {
      "src": "헤럴드경제",
      "title": "조세호 ‘조폭 연루설’ 후 방송 싹 끊기더니 결국…유튜브 채널 열었다",
      "link": "https://biz.heraldcorp.com/article/10927541"
+    },
+    {
+     "src": "뉴시스",
+     "title": "조폭 연루설 조세호, 유튜브 복귀 시동 \"다시 한 번 사과\"",
+     "link": "https://www.newsis.com/view/NISX20261105_0003857032"
+    }
+   ]
+  },
+  {
+   "kw": "깜짝",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "한국경제",
+    "헤럴드경제"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "한국경제",
+     "title": "아일릿, 여경 의상 논란에 \"깜짝 놀라…어떤 관심이든 감사\"",
+     "link": "https://www.hankyung.com/article/202610265795H"
+    },
+    {
+     "src": "한국경제",
+     "title": "\"화환할게\" 강동원, 4개월 전 팬과 약속 지켰다…결혼식장에 깜짝 선물",
+     "link": "https://www.hankyung.com/article/202610265376H"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "“딸은 메타, 아들은 엔비디아”…김보연, 두 자녀 근황 깜짝 공개",
+     "link": "https://biz.heraldcorp.com/article/10926257"
+    },
+    {
+     "src": "SBS",
+     "title": "김구라, 곧 며느리 본다…아들 그리, '곰신' 여자친구와 깜짝 결혼 발표",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008833564&plink=RSSLINK&cooper=RSSREADER"
+    }
+   ]
+  },
+  {
+   "kw": "본다",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "세계일보",
+    "조선일보"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "세계일보",
+     "title": "김구라, 곧 며느리 본다…子 그리 \"결혼 준비 중\"",
+     "link": "https://www.segye.com/newsView/20261106503347"
+    },
+    {
+     "src": "SBS",
+     "title": "김구라, 곧 며느리 본다…아들 그리, '곰신' 여자친구와 깜짝 결혼 발표",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008833564&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "뉴시스",
+     "title": "이창동 '가능한 사랑' 오늘부터 넷플릭스에서 본다",
+     "link": "https://www.newsis.com/view/NISX20261106_0003857626"
+    },
+    {
+     "src": "뉴시스",
+     "title": "김구라, 곧 며느리 본다…子 그리 \"결혼 준비 중\"",
+     "link": "https://www.newsis.com/view/NISX20261106_0003857224"
     }
    ]
   },
@@ -1344,6 +1275,72 @@
      "src": "조선일보",
      "title": "엑소, 오늘(6일) 앙코르 콘서트 포문..전 세계 23개 지역 라이브 뷰잉 상영",
      "link": "https://www.chosun.com/entertainments/music/2026/11/06/GBTDMZBRG5TDMOBSGA4TINBUMU/"
+    }
+   ]
+  },
+  {
+   "kw": "거짓말",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "연합뉴스",
+    "한국경제"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "장선우 감독 '거짓말', 27년 만에 무삭제 완전판 재개봉",
+     "link": "https://www.yna.co.kr/view/AKR20261105072600005"
+    },
+    {
+     "src": "동아일보",
+     "title": "김유정♥박진영 빗속 뜨거운 포옹 “숨길 수 없었다” (100일의 거짓말)",
+     "link": "https://sports.donga.com/ent/article/all/20261106/134976569/1"
+    },
+    {
+     "src": "한국경제",
+     "title": "\"일본인인 줄 알았다\"…'100일의 거짓말' 본 日 시청자 반응",
+     "link": "https://www.hankyung.com/article/202610281076H"
+    },
+    {
+     "src": "뉴시스",
+     "title": "영화 '거짓말', 27년 만에 무삭제 완전판 개봉",
+     "link": "https://www.newsis.com/view/NISX20261105_0003856325"
+    }
+   ]
+  },
+  {
+   "kw": "살생부",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "연합뉴스",
+    "한국경제"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "정우성, 냉혹한 한명회로 변신…액션 사극 영화 '살생부' 주연",
+     "link": "https://www.yna.co.kr/view/AKR20261105051400005"
+    },
+    {
+     "src": "한국경제",
+     "title": "'왕사남'과는 다른 한명회…정우성, '살생부' 출연 확정",
+     "link": "https://www.hankyung.com/article/202611057940H"
+    },
+    {
+     "src": "SBS",
+     "title": "이번엔 역적…정우성, 영화 '살생부'서 한명회 변신",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008833176&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "뉴시스",
+     "title": "정우성부터 정성일·백윤식까지…김홍선 감독 신작 '살생부'",
+     "link": "https://www.newsis.com/view/NISX20261105_0003856008"
     }
    ]
   }
