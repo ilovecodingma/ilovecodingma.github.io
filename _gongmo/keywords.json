@@ -1,7 +1,19 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-06 21:00",
+ "updated": "2026-11-06 22:00",
  "items": [
+  {
+   "query": "kt 대 삼성",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 50000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-06",
+   "expires": "2026-11-09"
+  },
   {
    "query": "로스앤젤레스 fc 대 미네소타 유나이티드 fc 순위",
    "tier": "단기",
@@ -36,6 +48,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-03",
+   "expires": "2026-11-09"
+  },
+  {
+   "query": "퇴직",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 20000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-06",
    "expires": "2026-11-09"
   },
   {
@@ -819,6 +843,18 @@
    "expires": "2026-11-09"
   },
   {
+   "query": "티빙",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-06",
+   "expires": "2026-11-09"
+  },
+  {
    "query": "박계범",
    "tier": "단기",
    "signal": [
@@ -888,6 +924,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-03",
+   "expires": "2026-11-09"
+  },
+  {
+   "query": "야구중계",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-05",
    "expires": "2026-11-09"
   },
   {
@@ -1032,18 +1080,6 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-03",
-   "expires": "2026-11-09"
-  },
-  {
-   "query": "야구중계",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 1000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-05",
    "expires": "2026-11-09"
   },
   {
@@ -1636,6 +1672,18 @@
   },
   {
    "query": "래미안 원베일리",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-06",
+   "expires": "2026-11-09"
+  },
+  {
+   "query": "어도어",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -9450,6 +9498,19 @@
    "page": "/issue/nikke-hacking-incident-1105/",
    "registered": "2026-11-05",
    "expires": "2026-11-12"
+  },
+  {
+   "query": "두번째 시그널 첫 방송 12월 7일 편성, 조진웅 출연 tvN 입장 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 2,
+   "status": "작성",
+   "page": "/issue/second-signal-jo-jinwoong-airdate-1106/",
+   "registered": "2026-11-06",
+   "expires": "2026-11-20"
   },
   {
    "query": "테슬라 FSD 한국 허용되나요? 모델 Y 승인 신청 현황 정리",
