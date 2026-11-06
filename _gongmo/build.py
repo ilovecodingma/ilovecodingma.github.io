@@ -3579,6 +3579,55 @@ def _g_appendix(g):
     return f'<details class="gx-app" id="appendix"><summary>첨부: 확인 현황 <small>확인 {sum(1 for x in L if x.get("status") == "ok")} · 미확인 {sum(1 for x in L if x.get("status") == "no")} · 불일치 {sum(1 for x in L if x.get("status") == "diff")}</small></summary><ul>{li}</ul></details>'
 
 
+_XL = {}
+XL_STOP = KIN_STOP | {'내용', '현황', '시행', '개정', '요건', '어떻게', '얼마', '언제', '무엇', '경우', '관련', '발표', '예정', '결과', '변경', '보도', '경과', '입장', '이후', '달라지는', '받나요', '되나요', '인가요', '하나요', '올해', '내년'}
+
+
+def xlinks():
+    """이슈 ↔ 생활 가이드 자동 연결(2026-11-06 마케터 요청: 같은 주제의 이슈와 가이드가 서로 이어지게).
+    제목·이름에 드문 낱말이 겹칠 때만 잇는다(조건은 아래 주석). 이슈마다 가이드 2건, 가이드마다 이슈 2건까지.
+    돌려주는 값: {'issue': {slug: [(주소, 이름)]}, 'guide': {slug: [(주소, 제목)]}}"""
+    if _XL:
+        return _XL
+    _jo = re.compile(r'(?<=[가-힣]{2})(?:에서|으로|부터|까지|이란|라는|은|는|이|가|을|를|의|에|도|로|과|와|된|한|할)$')   # 낱말 끝의 조사·어미를 떼고 비교한다(「일정과」「기간은」 같은 꼴이 드문 낱말로 잡히지 않게)
+    tok = lambda t: {x for x in (_jo.sub('', w) for w in re.findall(r'[가-힣]{2,}|[A-Za-z]{3,}', t or '')) if x not in XL_STOP and len(x) >= 2}
+    _XL.update({'issue': {}, 'guide': {}})
+    try:
+        G = json.load(open(KIN_F, encoding='utf-8'))['guides']
+    except Exception:
+        return _XL
+    GT_ = [(g, tok(g['name'] + ' ' + g['h1'])) for g in G]
+    df = collections.Counter(w for _g, gt in GT_ for w in gt)   # 낱말이 가이드 몇 편에 나오는지(흔한 낱말로는 잇지 않는다)
+    idir = os.path.join(HERE, 'issues'); I = []
+    for fn in sorted(os.listdir(idir)) if os.path.isdir(idir) else []:
+        if not fn.endswith('.json'):
+            continue
+        try:
+            c = json.load(open(os.path.join(idir, fn), encoding='utf-8'))
+            if (TODAY - datetime.date.fromisoformat(c['date'])).days > int(c.get('keep_days', 4)):
+                continue
+        except Exception:
+            continue
+        I.append(c)
+    import math
+    for c in sorted(I, key=lambda c: c['date'], reverse=True):
+        it = tok((c.get('h1') or '') + ' ' + (c.get('home_title') or ''))
+        sc = []
+        for g, gt in GT_:
+            sh = it & gt
+            # 같은 주제로 보는 조건: 가이드 6편 이하에만 나오는 4글자 이상 낱말(「기초연금」)이 겹치거나, 2편 이하에만 나오는 3글자 낱말(「유류분」)에 더해 낱말이 하나 더 겹칠 때
+            rare = [w for w in sh if (len(w) >= 4 and df[w] <= 6) or (len(w) == 3 and df[w] <= 2 and len(sh) >= 2)]
+            if rare:
+                sc.append((sum(math.log(len(GT_) / df[w]) for w in sh), g))
+        sc.sort(key=lambda x: -x[0])
+        for _n, g in sc[:2]:
+            _XL['issue'].setdefault(c['slug'], []).append((f'/money/guide/{g["slug"]}/', g['name']))
+            L = _XL['guide'].setdefault(g['slug'], [])
+            if len(L) < 2:
+                L.append((f'/issue/{c["slug"]}/', c.get('home_title') or c['h1']))
+    return _XL
+
+
 def kin_guides():
     """/money/guide/ 생활 돈 가이드 (2026-10-20 홍보 세션 지식iN 반복 질문): 근로장려금·내일배움카드·월세 세액공제 vs 청년월세·퇴직금. 공식 출처로 확인된 칸만 JSON 에 담고 숫자는 표로 분리."""
     if not os.path.exists(KIN_F):
@@ -3631,6 +3680,9 @@ def kin_guides():
                     break
                 _rl.append((f'/money/guide/{_sl_}/', GN[_sl_]['name']))
         rel = ' · '.join(f'<a href="{E(u)}">{E(t)}</a>' for u, t in _rl)
+        _xi = xlinks()['guide'].get(g['slug']) or []
+        if _xi:   # 같은 주제의 최근 이슈
+            rel = '관련 이슈: ' + ' · '.join(f'<a href="{E(u)}">{E(t)}</a>' for u, t in _xi) + (' · ' + rel if rel else '')
         if g['slug'] in DIET_GUIDES:   # 다이어트 가이드 하단 관련 링크에 허브·운동 앱을 함께 둔다
             rel = (rel + ' · ' if rel else '') + '<a href="/diet/">🥗 다이어트 도우미</a> · <a href="/diet/workout/">🏃 운동 사이클 뽑기</a>'
         body = (f'<p class="bc"><a href="/">홈</a> › <a href="/money/guide/">생활 돈 가이드</a> › {E(g["name"])}</p>' + guide_cover(g) + f'<h1 class="g-h1">{E(g["h1"])}</h1>' + g_meta
@@ -3897,7 +3949,11 @@ def issue_json_pages():
             if c.get('lury_note'):   # 2026-11-02 사용자 방침: 루리는 글 끝 「루리의 한마디」 코너에서만 말한다
                 secs += (f'<aside class="say"><img src="/assets/ruri/o_det_think_s.webp" width="56" height="77" alt="루리" loading="lazy">'
                          f'<div class="bub"><b>루리의 한마디</b><div>{E(c["lury_note"])}</div></div></aside>')
-            rel = ''.join(f'<a href="{E(u_)}">{E(n_)}</a>' for u_, n_ in c.get('related', []))
+            _rl_i = [tuple(x) for x in c.get('related', [])]
+            for _u, _n in xlinks()['issue'].get(sl) or []:   # 같은 주제의 생활 가이드를 자동으로 덧붙인다(원고에 이미 있으면 건너뜀)
+                if _u not in [x[0] for x in _rl_i]:
+                    _rl_i.append((_u, _n + ' 가이드'))
+            rel = ''.join(f'<a href="{E(u_)}">{E(n_)}</a>' for u_, n_ in _rl_i)
             body = (f'<p class="bc"><a href="/">홈</a> › 이슈 › {E(c["h1"][:30])}</p><h1>{E(c["h1"])}</h1>'
                     f'<div class="cat-st"><b>결론</b><br>{sent_list(c["summary"])}</div><p class="note">{c["date"]} 기준 · 이 글은 단기 이슈라 {int(c.get("keep_days", 4))}일 뒤 내려가요.</p>'
                     + ((PH.figure(_ph) + PH.CSS) if _ph else '') + secs + (f'<p class="hm-links">{rel}</p>' if rel else '')
