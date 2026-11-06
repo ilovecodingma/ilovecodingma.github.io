@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-07 01:00",
+ "updated": "2026-11-07 02:00",
  "items": [
   {
    "query": "kt 대 삼성",
@@ -1215,6 +1215,18 @@
    "expires": "2026-11-10"
   },
   {
+   "query": "장유빈",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-07",
+   "expires": "2026-11-10"
+  },
+  {
    "query": "자산",
    "tier": "단기",
    "signal": [
@@ -1680,6 +1692,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-06",
+   "expires": "2026-11-10"
+  },
+  {
+   "query": "카광",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-07",
    "expires": "2026-11-10"
   },
   {
@@ -9512,6 +9536,19 @@
    "page": "/issue/second-signal-jo-jinwoong-airdate-1106/",
    "registered": "2026-11-06",
    "expires": "2026-11-20"
+  },
+  {
+   "query": "태권도 북한 유네스코 인류무형유산 등재 권고 정리, 최종 결정은 언제?",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 2,
+   "status": "작성",
+   "page": "/issue/taekwondo-unesco-north-korea-1107/",
+   "registered": "2026-11-07",
+   "expires": "2026-11-21"
   },
   {
    "query": "테슬라 FSD 한국 허용되나요? 모델 Y 승인 신청 현황 정리",
