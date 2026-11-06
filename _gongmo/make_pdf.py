@@ -15,20 +15,34 @@ def is_pdf_path(path):
     return path.startswith(PDF_PREFIX) and path.count('/') == 3 and path not in SKIP
 
 
+def core_hash(html_bytes, css_bytes):
+    """PDF 에 실리는 본문만으로 해시를 만든다(2026-11-06). 예전에는 파일 전체를 해시해서, 가이드가 한 편 늘 때마다
+    모든 글의 「이전·다음 글」·옆 칸 목록이 바뀌어 PDF 445개를 전부 다시 만들었다(빌드 +15~20분)."""
+    t = html_bytes.decode('utf-8', 'ignore')
+    ti = re.search(r'<title>.*?</title>', t, re.S)
+    m = re.search(r'<article class="wk-art".*?(?=<nav class="wk-pn"|<aside class="wk-side"|</main>)', t, re.S) or re.search(r'<main.*?</main>', t, re.S)
+    body = re.sub(r'<script.*?</script>', '', m.group(0) if m else t, flags=re.S)
+    return 'c:' + hashlib.md5(((ti.group(0) if ti else '') + body).encode('utf-8') + css_bytes).hexdigest()
+
+
 def make(root, paths):
     from playwright.sync_api import sync_playwright
     out = os.path.join(root, 'pdf'); os.makedirs(out, exist_ok=True)
     stf = os.path.join(out, '_hash.json'); st = json.load(open(stf, encoding='utf-8')) if os.path.exists(stf) else {}
-    todo = []
+    todo = []; moved = 0
     for p in paths:
         f = os.path.join(root, p.strip('/'), 'index.html')
         if not os.path.exists(f): continue
-        h = hashlib.md5(open(f, 'rb').read() + open(os.path.join(root, 'assets', 'print.css'), 'rb').read()).hexdigest()
+        raw = open(f, 'rb').read(); css = open(os.path.join(root, 'assets', 'print.css'), 'rb').read()
+        h = core_hash(raw, css)
+        if st.get(p) == hashlib.md5(raw + css).hexdigest(): st[p] = h; moved += 1   # 예전 방식(파일 전체) 해시가 지금 파일과 같으면 PDF 는 최신 → 새 방식으로 옮겨 적기만 한다
         if st.get(p) != h or not os.path.exists(os.path.join(out, pdf_name(p))): todo.append((p, h))
     keep = {pdf_name(p) for p in paths}
     for f in os.listdir(out):
         if f.endswith('.pdf') and f not in keep: os.remove(os.path.join(out, f))
-    if not todo: return 0, len(paths)
+    if not todo:
+        if moved: json.dump(st, open(stf, 'w', encoding='utf-8'))
+        return 0, len(paths)
     class Q(http.server.SimpleHTTPRequestHandler):
         def log_message(self, *a): pass
     srv = socketserver.TCPServer(('127.0.0.1', 0), functools.partial(Q, directory=root)); port = srv.server_address[1]
