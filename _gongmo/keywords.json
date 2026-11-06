@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-06 22:00",
+ "updated": "2026-11-06 23:00",
  "items": [
   {
    "query": "kt 대 삼성",
@@ -855,6 +855,18 @@
    "expires": "2026-11-09"
   },
   {
+   "query": "야구중계",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-05",
+   "expires": "2026-11-09"
+  },
+  {
    "query": "박계범",
    "tier": "단기",
    "signal": [
@@ -924,18 +936,6 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-03",
-   "expires": "2026-11-09"
-  },
-  {
-   "query": "야구중계",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 1000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-05",
    "expires": "2026-11-09"
   },
   {
@@ -9602,6 +9602,19 @@
    "page": "/issue/cigarette-price-4500-eleven-years/",
    "registered": "2026-11-03",
    "expires": "2026-11-17"
+  },
+  {
+   "query": "도상우 박지혜 결혼 2027년 2월 소속사 공식 입장 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 1,
+   "status": "작성",
+   "page": "/issue/do-sangwoo-park-jiae-wedding-1106/",
+   "registered": "2026-11-06",
+   "expires": "2026-11-13"
   },
   {
    "query": "엘니뇨 2026 전망, 공식 발표와 '1000년래 최강' 엘니뇨 보도 정리",
