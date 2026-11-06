@@ -1,29 +1,41 @@
 {
- "at": "2026-11-06 10:54",
+ "at": "2026-11-06 15:59",
  "note": "그날 처음 들어온 방문자 기준(관리자·자동 점검 제외). 채널 → 첫 페이지별 방문자 수.",
  "days": [
   {
    "day": "2026-11-06",
-   "visitors": 57,
+   "visitors": 123,
    "channels": [
+    [
+     "🔍 다음·빙 검색",
+     54
+    ],
+    [
+     "🔍 네이버 검색",
+     22
+    ],
     [
      "🏷️ 기타 홍보 링크(youtube)",
      20
     ],
     [
-     "🔍 다음·빙 검색",
-     18
-    ],
-    [
-     "🔍 네이버 검색",
-     9
-    ],
-    [
      "🔗 직접 접속(주소 입력·즐겨찾기·앱 안 링크)",
-     6
+     10
     ],
     [
      "🔍 구글 검색",
+     9
+    ],
+    [
+     "💬 네이버 지식인",
+     2
+    ],
+    [
+     "🏷️ 기타 홍보 링크(chatgptcom)",
+     2
+    ],
+    [
+     "📝 블로그",
      1
     ],
     [
@@ -31,7 +43,7 @@
      1
     ],
     [
-     "💬 네이버 지식인",
+     "💻 개발자 커뮤니티",
      1
     ],
     [
@@ -42,95 +54,117 @@
    "landing": [
     [
      "/issue/insurance-rates-2027-1104/",
+     7
+    ],
+    [
+     "/money/guide/parttime-four-insurance/",
      3
+    ],
+    [
+     "/money/guide/industrial-accident-benefits/",
+     3
+    ],
+    [
+     "/issue/korean-series-game2-1105/",
+     3
+    ],
+    [
+     "/issue/kim-jong-un-rumor/",
+     3
+    ],
+    [
+     "/money/guide/housing-fund-loans/",
+     3
+    ],
+    [
+     "/contest/week/",
+     3
+    ],
+    [
+     "/money/guide/year-end-tax-simplified-data-supply-schedule/",
+     2
+    ],
+    [
+     "/money/guide/nhis-eligibility-certificate-issue/",
+     2
+    ],
+    [
+     "/money/guide/income-tax-interim-prepayment-november/",
+     2
+    ],
+    [
+     "/money/guide/four-insurance-rates-2026/",
+     2
+    ],
+    [
+     "/money/guide/fixed-term-worker-2year/",
+     2
     ],
     [
      "/issue/kimjang-price-cabbage-1104/",
      2
     ],
     [
-     "/issue/korean-series-game2-1105/",
+     "/issue/construction-risk-assessment-duty-1105/",
      2
     ],
     [
-     "/issue/us-market-close-1106/",
+     "/money/guide/housing-bond-purchase-cost-registration/",
      2
-    ],
-    [
-     "/issue/seoul-teacher-exam-smart-glasses-1105/",
-     2
-    ],
-    [
-     "/issue/pope-visit-2027-venue-1106/",
-     2
-    ],
-    [
-     "/issue/cheonghae-unit-operation-area-1105/",
-     2
-    ],
-    [
-     "/issue/avian-influenza-first-yeoncheon-1106/",
-     2
-    ],
-    [
-     "/c/Q04304/",
-     2
-    ],
-    [
-     "/c/Q04303/",
-     2
-    ],
-    [
-     "/c/Q04229/",
-     2
-    ],
-    [
-     "/c/Q03991/",
-     2
-    ],
-    [
-     "/c/Q03623/",
-     2
-    ],
-    [
-     "/contest/week/",
-     2
-    ],
-    [
-     "/vn/pool/",
-     1
     ]
    ],
    "by_channel": {
     "🔍 다음·빙 검색": [
      [
       "/issue/insurance-rates-2027-1104/",
-      3
-     ],
-     [
-      "/issue/kimjang-price-cabbage-1104/",
-      2
-     ],
-     [
-      "/money/guide/work-scholarship/",
-      1
-     ],
-     [
-      "/money/guide/traveler-duty-free-declaration-limit/",
-      1
+      5
      ],
      [
       "/money/guide/parttime-four-insurance/",
-      1
+      3
+     ],
+     [
+      "/money/guide/industrial-accident-benefits/",
+      3
+     ],
+     [
+      "/money/guide/year-end-tax-simplified-data-supply-schedule/",
+      2
+     ],
+     [
+      "/money/guide/nhis-eligibility-certificate-issue/",
+      2
      ]
     ],
     "🔍 네이버 검색": [
      [
       "/issue/korean-series-game2-1105/",
+      3
+     ],
+     [
+      "/issue/kim-jong-un-rumor/",
+      3
+     ],
+     [
+      "/money/guide/housing-bond-purchase-cost-registration/",
+      2
+     ],
+     [
+      "/issue/insurance-rates-2027-1104/",
       2
      ],
      [
       "/money/guide/severance/",
+      1
+     ]
+    ],
+    "🔍 구글 검색": [
+     [
+      "/contest/youth/",
+      2
+     ],
+     [
+      "/money/guide/walking-exercise-calorie-burn/",
       1
      ],
      [
@@ -138,12 +172,18 @@
       1
      ],
      [
-      "/issue/kim-jong-un-rumor/",
+      "/money/guide/jeonse-deposit-insurance/",
       1
      ],
      [
-      "/guide/electricity-contract-change-name-move-settle/",
+      "/issue/apbc-2026-korea-roster/",
       1
+     ]
+    ],
+    "💬 네이버 지식인": [
+     [
+      "/guide/lh-youth-jeonse-2026/",
+      2
      ]
     ],
     "🏷️ 기타 홍보 링크(youtube)": [
@@ -168,9 +208,19 @@
       2
      ]
     ],
+    "🏷️ 기타 홍보 링크(chatgptcom)": [
+     [
+      "/money/guide/housing-fund-loans/",
+      2
+     ]
+    ],
     "🔗 직접 접속(주소 입력·즐겨찾기·앱 안 링크)": [
      [
       "/vn/pool/",
+      1
+     ],
+     [
+      "/money/guide/minor-injury-future-treatment-cost-reform/",
       1
      ],
      [
@@ -182,17 +232,13 @@
       1
      ],
      [
-      "/contest/",
-      1
-     ],
-     [
-      "/community/",
+      "/contest/slogan/",
       1
      ]
     ],
-    "🔍 구글 검색": [
+    "📝 블로그": [
      [
-      "/issue/apbc-2026-korea-roster/",
+      "/c/Q03042/",
       1
      ]
     ],
@@ -202,9 +248,9 @@
       1
      ]
     ],
-    "💬 네이버 지식인": [
+    "💻 개발자 커뮤니티": [
      [
-      "/guide/lh-youth-jeonse-2026/",
+      "/fridge/",
       1
      ]
     ],
