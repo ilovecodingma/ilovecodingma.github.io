@@ -34,7 +34,7 @@ button:active{filter:brightness(1.2)}
 <div id="app">
  <section id="gate" class="screen on">
   <h1>목장의 밤</h1>
-  <p class="sub">성인 전용 이야기입니다.<br>만 19세 이상만 들어올 수 있어요.</p>
+  <p class="sub">주인공 루리는 20세의 가상 성인 캐릭터입니다.<br>성인 전용 이야기라 만 19세 이상만 들어올 수 있어요.</p>
   <button class="main" id="yes">만 19세 이상입니다</button>
   <button id="no" style="margin-top:10px">나가기</button>
  </section>
@@ -53,38 +53,27 @@ button:active{filter:brightness(1.2)}
 (function(){
 var R="루리";
 var CH=[
- {t:"1장 · 표식",n:1,line:[["","한밤의 목장. 루리의 어깨에 작은 표식이 찍힌다."],[R,"…이게 오늘 일이야? 이름표 같은 거지?"]],
-  opts:[["\"응, 금방 끝나\"","…알았어. 믿어볼게."],["\"조금 따끔해\"","괜찮아. 참을 수 있어."],["말없이 손을 잡아 준다","…고마워. 떨림이 좀 멎었어."]]},
- {t:"2장 · 장착",n:2,line:[["","장비가 하나씩 몸에 맞춰진다. 루리가 숨을 고른다."],[R,"차가워…! 잠깐, 천천히."]],
-  opts:[["천천히 맞춘다","그래… 그렇게. 거기."],["\"가만히 있어\"","…말은 쉽지."],["\"벌써 다 했어\"","뭐? 벌써? …진작 말하지."]]},
- {t:"3장 · 착유 중",n:3,line:[["","기계가 규칙적인 소리를 낸다. 루리의 목에서 방울이 딸랑거린다."],[R,"소리… 너무 커. 누가 들으면 어떡해."]],
-  opts:[["\"아무도 없어\"","그래도… 얼굴 보지 마."],["방울을 만져 본다","야…! 그건 반칙이야."],["\"잘하고 있어\"","…칭찬하지 마. 더 이상해져."]]},
- {t:"4장 · 통",n:4,line:[["","끝났다. 통에 가득 찬 우유가 달빛에 하얗게 빛난다."],[R,"…이걸 다 내가? 거짓말."]],
-  opts:[["\"수고했어\"","…내일도 하자는 말은 하지 마."],["통을 들어 보인다","보여 주지 마, 바보야."],["\"다음엔 더 많이\"","…진짜 나쁜 사람이네, 너."]]}
+ {t:"1장 · 표식",n:1,L:[["","목장 입고 첫날. 이름 대신 번호가 어깨에 찍힌다."],[R,"…이름은 이제 안 불러 주는 거지."],["","표식이 마르는 동안, 루리는 시선을 내린 채 가만히 서 있다."],[R,"…그래. 나는 오늘부터 그냥 물건이니까."]]},
+ {t:"2장 · 장착",n:2,L:[["","차가운 장비가 하나씩 몸에 맞춰진다."],[R,"…차가워."],["","고정 끈이 당겨진다. 저항이 권리가 아니라는 걸 몸이 먼저 안다."],[R,"…괜찮아. 이대로 있으면 되는 거잖아."]]},
+ {t:"3장 · 착유 중",n:3,L:[["","기계가 규칙적인 소리를 낸다. 목에 달린 방울이 딸랑인다."],[R,"방울 소리… 너무 커."],["","눈가가 젖는다. 그래도 회색 눈은 끝까지 앞을 본다."],[R,"…끝나면 말해 줘. 그때까지 참을게."]]},
+ {t:"4장 · 통",n:4,L:[["","통에 하얗게 차오르는 우유. 기록원이 눈금을 적는다."],[R,"…그게 다 내 거라고? 거짓말."],["","눈금이 사무적으로 읽힌다. 오늘 분량, 정상."],[R,"…내일도 같은 시간이지?"]]}
 ];
 var $=function(i){return document.getElementById(i)};
 var seen={};try{seen=JSON.parse(localStorage.getItem("milk_seen")||"{}")}catch(e){}
 function save(){try{localStorage.setItem("milk_seen",JSON.stringify(seen))}catch(e){}}
 function scr(id){["gate","play","gallery"].forEach(function(s){$(s).classList.toggle("on",s===id)})}
 function src(n,v){return "img/m"+n+"_"+v+".webp"}
-function mark(n,v){seen[n+"_"+v]=1;save()}
 var ci=0,li=0;
 function step(){
- var c=CH[ci];$("ch").textContent=c.t;$("opts").innerHTML="";
- if(li<c.line.length){
-  var l=c.line[li];$("cg").src=src(c.n,0);mark(c.n,0);
-  $("cap").innerHTML=l[0]?"<b>"+l[0]+"</b> "+l[1]:l[1];
-  var b=document.createElement("button");b.textContent="다음";b.onclick=function(){li++;step()};$("opts").appendChild(b);
- }else{
-  $("cap").innerHTML="어떻게 할까?";
-  c.opts.forEach(function(o,i){var b=document.createElement("button");b.textContent=o[0];b.onclick=function(){pick(i+1,o[1])};$("opts").appendChild(b)});
- }
-}
-function pick(v,reply){
- var c=CH[ci];$("cg").src=src(c.n,v);mark(c.n,v);
- $("cap").innerHTML="<b>"+R+"</b> "+reply;$("opts").innerHTML="";
- var b=document.createElement("button");b.className="main";b.textContent=ci<CH.length-1?"다음 장":"끝내고 갤러리 보기";
- b.onclick=function(){ci++;li=0;if(ci>=CH.length){ci=0;gallery()}else step()};$("opts").appendChild(b);
+ var c=CH[ci],l=c.L[li];$("ch").textContent=c.t+" ("+(li+1)+"/4)";
+ $("cg").src=src(c.n,li);seen[c.n+"_"+li]=1;save();
+ $("cap").innerHTML=l[0]?"<b>"+l[0]+"</b> "+l[1]:l[1];
+ $("opts").innerHTML="";
+ var b=document.createElement("button");b.className="main";
+ var last=li===3,end=last&&ci===CH.length-1;
+ b.textContent=end?"끝내고 갤러리 보기":last?"다음 장":"다음";
+ b.onclick=function(){if(!last){li++;step()}else if(end){ci=0;li=0;gallery()}else{ci++;li=0;step()}};
+ $("opts").appendChild(b);
 }
 function gallery(){
  scr("gallery");var g=$("grid");g.innerHTML="";var cnt=0;
@@ -94,7 +83,7 @@ function gallery(){
   else{im.className="lock";im.src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"}
   im.alt="";g.appendChild(im);
  }
- $("gcount").textContent="수집 "+cnt+"/16 · 장마다 선택지를 달리하면 다른 컷이 열려요";
+ $("gcount").textContent="수집 "+cnt+"/16";
 }
 $("yes").onclick=function(){scr("play");ci=0;li=0;step()};
 $("no").onclick=function(){location.href="/"};
