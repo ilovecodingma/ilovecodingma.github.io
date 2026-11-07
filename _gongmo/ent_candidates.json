@@ -1,5 +1,5 @@
 {
- "at": "2026-11-07 15:06",
+ "at": "2026-11-07 15:30",
  "nitems": 514,
  "cands": [
   {
@@ -39,7 +39,7 @@
    ]
   },
   {
-   "kw": "시그널",
+   "kw": "조진웅",
    "nsrc": 7,
    "srcs": [
     "SBS",
@@ -75,7 +75,7 @@
    ]
   },
   {
-   "kw": "조진웅",
+   "kw": "시그널",
    "nsrc": 7,
    "srcs": [
     "SBS",
@@ -121,7 +121,7 @@
     "조선일보",
     "헤럴드경제"
    ],
-   "n": 11,
+   "n": 12,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -181,37 +181,37 @@
    ]
   },
   {
-   "kw": "도전",
+   "kw": "하루",
    "nsrc": 6,
    "srcs": [
-    "SBS",
     "뉴시스",
-    "연합뉴스",
+    "동아일보",
+    "세계일보",
     "조선일보",
-    "한겨레",
+    "한국경제",
     "헤럴드경제"
    ],
-   "n": 9,
+   "n": 7,
    "headlines": [
     {
-     "src": "연합뉴스",
-     "title": "6번째 우승 도전 장동민 \"살아있는 한 서바이벌 은퇴는 없죠\"",
-     "link": "https://www.yna.co.kr/view/AKR20261105097500005"
+     "src": "동아일보",
+     "title": "백지영, 4.5kg 감량했는데 또 살 빼라니…“하루 5번 전화 와”",
+     "link": "https://sports.donga.com/ent/article/all/20261107/134983388/1"
     },
     {
-     "src": "연합뉴스",
-     "title": "정진운 \"첫 멜로영화 도전…느린 호흡 속 요동치는 감정 담았죠\"",
-     "link": "https://www.yna.co.kr/view/AKR20261104158200005"
+     "src": "한국경제",
+     "title": "'재혼황후', 하루 앞당겨 오늘 공개…조수원 감독 \"떨리고 기대된다\"",
+     "link": "https://www.hankyung.com/article/202611032434H"
     },
     {
-     "src": "한겨레",
-     "title": "피부부터 장기까지…‘인체 수리’ 도전 [.txt]",
-     "link": "https://www.hani.co.kr/arti/culture/book/1286068.html"
+     "src": "세계일보",
+     "title": "하루 3억2000만원 벌던 심현섭, 15억 빚더미 속에서 끝내 놓쳐버린 단 한 가지",
+     "link": "https://www.segye.com/newsView/20261106514648"
     },
     {
      "src": "헤럴드경제",
-     "title": "‘백수’ 이세돌, 51m 건물 외벽 청소 도전…웃으며 손 흔들어",
-     "link": "https://biz.heraldcorp.com/article/10927320"
+     "title": "조세호, 유튜브 개설 하루 만에 구독자 10만명 돌파",
+     "link": "https://biz.heraldcorp.com/article/10928836"
     }
    ]
   },
@@ -318,6 +318,74 @@
    ]
   },
   {
+   "kw": "결국",
+   "nsrc": 5,
+   "srcs": [
+    "동아일보",
+    "세계일보",
+    "연합뉴스",
+    "조선일보",
+    "헤럴드경제"
+   ],
+   "n": 8,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "심현보 \"결국 남는 건 사랑…일상 속 소소한 이야기로 담았죠\"",
+     "link": "https://www.yna.co.kr/view/AKR20261106140900005"
+    },
+    {
+     "src": "동아일보",
+     "title": "김준호, ♥김지민 연락 두절에 당황…결국 여동생에게 SOS (독박투어)",
+     "link": "https://sports.donga.com/ent/article/all/20261107/134983207/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "조진웅, AI로 교체하려 했지만 실패…‘시그널2’ 결국 방송",
+     "link": "https://sports.donga.com/ent/article/all/20261106/134978908/1"
+    },
+    {
+     "src": "세계일보",
+     "title": "'조진웅 논란' 두 번째 시그널 결국 한다…내달 7일 첫방송 \"조진웅 문제 옹호 아냐\"",
+     "link": "https://www.segye.com/newsView/20261106514115"
+    }
+   ]
+  },
+  {
+   "kw": "도전",
+   "nsrc": 5,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "연합뉴스",
+    "조선일보",
+    "한겨레"
+   ],
+   "n": 8,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "6번째 우승 도전 장동민 \"살아있는 한 서바이벌 은퇴는 없죠\"",
+     "link": "https://www.yna.co.kr/view/AKR20261105097500005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "정진운 \"첫 멜로영화 도전…느린 호흡 속 요동치는 감정 담았죠\"",
+     "link": "https://www.yna.co.kr/view/AKR20261104158200005"
+    },
+    {
+     "src": "한겨레",
+     "title": "피부부터 장기까지…‘인체 수리’ 도전 [.txt]",
+     "link": "https://www.hani.co.kr/arti/culture/book/1286068.html"
+    },
+    {
+     "src": "SBS",
+     "title": "'닥터X' 김지원, 동료 의사들에게 \"부탁드립니다\" 숙인 사연은…전대미문 체외 수술 도전",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008833758&plink=RSSLINK&cooper=RSSREADER"
+    }
+   ]
+  },
+  {
    "kw": "사랑",
    "nsrc": 5,
    "srcs": [
@@ -348,40 +416,6 @@
      "src": "한겨레",
      "title": "“사랑”만 200번 넘게 쓴 시집…사랑을 사랑에 가두지 않는 반칙 [.txt]",
      "link": "https://www.hani.co.kr/arti/culture/book/1286044.html"
-    }
-   ]
-  },
-  {
-   "kw": "결국",
-   "nsrc": 5,
-   "srcs": [
-    "동아일보",
-    "세계일보",
-    "연합뉴스",
-    "조선일보",
-    "헤럴드경제"
-   ],
-   "n": 7,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "심현보 \"결국 남는 건 사랑…일상 속 소소한 이야기로 담았죠\"",
-     "link": "https://www.yna.co.kr/view/AKR20261106140900005"
-    },
-    {
-     "src": "동아일보",
-     "title": "김준호, ♥김지민 연락 두절에 당황…결국 여동생에게 SOS (독박투어)",
-     "link": "https://sports.donga.com/ent/article/all/20261107/134983207/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "조진웅, AI로 교체하려 했지만 실패…‘시그널2’ 결국 방송",
-     "link": "https://sports.donga.com/ent/article/all/20261106/134978908/1"
-    },
-    {
-     "src": "세계일보",
-     "title": "'조진웅 논란' 두 번째 시그널 결국 한다…내달 7일 첫방송 \"조진웅 문제 옹호 아냐\"",
-     "link": "https://www.segye.com/newsView/20261106514115"
     }
    ]
   },
@@ -488,6 +522,40 @@
    ]
   },
   {
+   "kw": "이혼",
+   "nsrc": 5,
+   "srcs": [
+    "뉴시스",
+    "세계일보",
+    "조선일보",
+    "한국경제",
+    "헤럴드경제"
+   ],
+   "n": 7,
+   "headlines": [
+    {
+     "src": "한국경제",
+     "title": "김원효 \"주식 투자로 2억원 날려…심진화와 이혼 위기\"",
+     "link": "https://www.hankyung.com/article/202611032016H"
+    },
+    {
+     "src": "세계일보",
+     "title": "이태성, 이혼 후 만난 여친과 결별…\"상대 부모님이 교제 반대\"",
+     "link": "https://www.segye.com/newsView/20261107502911"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "혼전 출산 후 결혼 1달만에 이혼…롯데 정철원 ‘가정폭력·외도’ 의혹에 입 열었다",
+     "link": "https://biz.heraldcorp.com/article/10929049"
+    },
+    {
+     "src": "뉴시스",
+     "title": "이태성, 이혼 후 만난 여친과 결별…\"상대 부모님이 교제 반대\"",
+     "link": "https://www.newsis.com/view/NISX20261107_0003858754"
+    }
+   ]
+  },
+  {
    "kw": "주년",
    "nsrc": 5,
    "srcs": [
@@ -518,40 +586,6 @@
      "src": "한국경제",
      "title": "god 김태우, 솔로 데뷔 20주년…가수에 프로듀서까지 '영역 확장'",
      "link": "https://www.hankyung.com/article/202610266155H"
-    }
-   ]
-  },
-  {
-   "kw": "하루",
-   "nsrc": 5,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "세계일보",
-    "한국경제",
-    "헤럴드경제"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "백지영, 4.5kg 감량했는데 또 살 빼라니…“하루 5번 전화 와”",
-     "link": "https://sports.donga.com/ent/article/all/20261107/134983388/1"
-    },
-    {
-     "src": "한국경제",
-     "title": "'재혼황후', 하루 앞당겨 오늘 공개…조수원 감독 \"떨리고 기대된다\"",
-     "link": "https://www.hankyung.com/article/202611032434H"
-    },
-    {
-     "src": "세계일보",
-     "title": "하루 3억2000만원 벌던 심현섭, 15억 빚더미 속에서 끝내 놓쳐버린 단 한 가지",
-     "link": "https://www.segye.com/newsView/20261106514648"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "조세호, 유튜브 개설 하루 만에 구독자 10만명 돌파",
-     "link": "https://biz.heraldcorp.com/article/10928836"
     }
    ]
   },
@@ -658,6 +692,39 @@
    ]
   },
   {
+   "kw": "공연",
+   "nsrc": 4,
+   "srcs": [
+    "동아일보",
+    "연합뉴스",
+    "조선일보",
+    "한국경제"
+   ],
+   "n": 12,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "[가요소식] 세이마이네임, 오늘 프랑스 파리서 단독 공연",
+     "link": "https://www.yna.co.kr/view/AKR20261106060900005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "밴드 사랑과 평화, 14일 소극장 단독 공연 '펑키 투나잇'",
+     "link": "https://www.yna.co.kr/view/AKR20261106014900005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "[가요소식] 재즈 색소포니스트 남유선, 4집 발매 기념 공연",
+     "link": "https://www.yna.co.kr/view/AKR20261105145000005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "권진아, 6∼8일 '세이브 미' 콘서트…데뷔 첫 스탠딩 공연",
+     "link": "https://www.yna.co.kr/view/AKR20261104161200005"
+    }
+   ]
+  },
+  {
    "kw": "내년",
    "nsrc": 4,
    "srcs": [
@@ -687,39 +754,6 @@
      "src": "연합뉴스",
      "title": "디즈니, 내년 싱가포르서 대형 팬 행사…한국 등 신작 공개",
      "link": "https://www.yna.co.kr/view/AKR20261105096800005"
-    }
-   ]
-  },
-  {
-   "kw": "깜짝",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "동아일보",
-    "조선일보",
-    "한국경제"
-   ],
-   "n": 8,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "‘연세대 82학번’ 김광진, 모교 축제 떴다…‘편지’ 깜짝 버스킹→떼창 (전참시)",
-     "link": "https://sports.donga.com/ent/article/all/20261107/134983032/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "송가인, 정서주 첫 소절에 깜짝…“마이크가 다른가?” (금타는 금요일)",
-     "link": "https://sports.donga.com/ent/article/all/20261106/134978778/1"
-    },
-    {
-     "src": "한국경제",
-     "title": "아일릿, 여경 의상 논란에 \"깜짝 놀라…어떤 관심이든 감사\"",
-     "link": "https://www.hankyung.com/article/202610265795H"
-    },
-    {
-     "src": "한국경제",
-     "title": "\"화환할게\" 강동원, 4개월 전 팬과 약속 지켰다…결혼식장에 깜짝 선물",
-     "link": "https://www.hankyung.com/article/202610265376H"
     }
    ]
   },
@@ -757,35 +791,68 @@
    ]
   },
   {
-   "kw": "뉴진스",
+   "kw": "그리",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "세계일보",
+    "조선일보"
+   ],
+   "n": 8,
+   "headlines": [
+    {
+     "src": "세계일보",
+     "title": "김구라, 며느리 맞이하나…아들 그리 “결혼 준비 중”",
+     "link": "https://www.segye.com/newsView/20261106510328"
+    },
+    {
+     "src": "SBS",
+     "title": "김구라, 곧 며느리 본다…아들 그리, '곰신' 여자친구와 깜짝 결혼 발표",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008833564&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "뉴시스",
+     "title": "김구라, 아들 그리 결혼설에…\"살다가도 이혼하는 판\"",
+     "link": "https://www.newsis.com/view/NISX20261106_0003858616"
+    },
+    {
+     "src": "뉴시스",
+     "title": "그리, 군대서 돈 모아 차 구매…\"김구라 따라잡으려면 50번 입대\"",
+     "link": "https://www.newsis.com/view/NISX20261106_0003857456"
+    }
+   ]
+  },
+  {
+   "kw": "투어",
    "nsrc": 4,
    "srcs": [
     "뉴시스",
-    "세계일보",
+    "동아일보",
     "연합뉴스",
-    "한겨레"
+    "조선일보"
    ],
    "n": 7,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "뉴진스 '불공정 계약' 논란에…하이브 \"인권 보호 조항 포함\" 반박(종합)",
-     "link": "https://www.yna.co.kr/view/AKR20261106117600005"
+     "title": "위켄드, 투어 매출 13억 달러 돌파…남성 솔로 가수 최고",
+     "link": "https://www.yna.co.kr/view/AKR20261107025100005"
     },
     {
      "src": "연합뉴스",
-     "title": "연애금지에 소속사가 초상권 무기한 사용…뉴진스 비밀계약 공개",
-     "link": "https://www.yna.co.kr/view/AKR20261106094700075"
+     "title": "캣츠아이, 북미 투어 잇단 연기…\"메간 뇌진탕으로 회복 중\"",
+     "link": "https://www.yna.co.kr/view/AKR20261106086400005"
     },
     {
-     "src": "한겨레",
-     "title": "민희진, ‘뉴진스 불공정 전속계약’ 하이브 해명 “제 얼굴에 침 뱉기”",
-     "link": "https://www.hani.co.kr/arti/culture/music/1286167.html"
+     "src": "동아일보",
+     "title": "레드벨벳 아이린&슬기, 첫 日 투어 성료…치바 추가 공연 확정",
+     "link": "https://sports.donga.com/ent/article/all/20261107/134983249/1"
     },
     {
-     "src": "한겨레",
-     "title": "뉴진스 전속계약서 공개 파장…“‘부적절한 연애’ 금지, 소속사 비판 제한”",
-     "link": "https://www.hani.co.kr/arti/culture/music/1286095.html"
+     "src": "뉴시스",
+     "title": "위켄드, 스타디움 투어 매출 1.8조 돌파…男아티스트 역대 최고",
+     "link": "https://www.newsis.com/view/NISX20261101_0003849474"
     }
    ]
   },
@@ -823,35 +890,101 @@
    ]
   },
   {
-   "kw": "그리",
+   "kw": "뉴진스",
    "nsrc": 4,
    "srcs": [
-    "SBS",
     "뉴시스",
     "세계일보",
-    "조선일보"
+    "연합뉴스",
+    "한겨레"
    ],
    "n": 7,
    "headlines": [
     {
-     "src": "세계일보",
-     "title": "김구라, 며느리 맞이하나…아들 그리 “결혼 준비 중”",
-     "link": "https://www.segye.com/newsView/20261106510328"
+     "src": "연합뉴스",
+     "title": "뉴진스 '불공정 계약' 논란에…하이브 \"인권 보호 조항 포함\" 반박(종합)",
+     "link": "https://www.yna.co.kr/view/AKR20261106117600005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "연애금지에 소속사가 초상권 무기한 사용…뉴진스 비밀계약 공개",
+     "link": "https://www.yna.co.kr/view/AKR20261106094700075"
+    },
+    {
+     "src": "한겨레",
+     "title": "민희진, ‘뉴진스 불공정 전속계약’ 하이브 해명 “제 얼굴에 침 뱉기”",
+     "link": "https://www.hani.co.kr/arti/culture/music/1286167.html"
+    },
+    {
+     "src": "한겨레",
+     "title": "뉴진스 전속계약서 공개 파장…“‘부적절한 연애’ 금지, 소속사 비판 제한”",
+     "link": "https://www.hani.co.kr/arti/culture/music/1286095.html"
+    }
+   ]
+  },
+  {
+   "kw": "최불암",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "연합뉴스",
+    "조선일보",
+    "한국경제"
+   ],
+   "n": 7,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "\"시설 살 때 큰 힘이 돼주신 선생님\"…최불암 빈소 남겨진 편지",
+     "link": "https://www.yna.co.kr/view/AKR20261103134300371"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "[영상] \"김 회장님 잘 가세요\"…'국민 아버지' 최불암 마지막 배웅",
+     "link": "https://www.yna.co.kr/view/AKR20261102147900704"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "\"어린 나무 지켜주던 큰 나무 최불암\"…눈물 속 마지막 배웅(종합2보)",
+     "link": "https://www.yna.co.kr/view/AKR20261102023252005"
+    },
+    {
+     "src": "한국경제",
+     "title": "사흘간 故최불암 빈소 지킨 김혜수 \"추모해 주신 분들 감사\"",
+     "link": "https://www.hankyung.com/article/2026110466407"
+    }
+   ]
+  },
+  {
+   "kw": "깜짝",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "동아일보",
+    "조선일보",
+    "한국경제"
+   ],
+   "n": 7,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "‘연세대 82학번’ 김광진, 모교 축제 떴다…‘편지’ 깜짝 버스킹→떼창 (전참시)",
+     "link": "https://sports.donga.com/ent/article/all/20261107/134983032/1"
+    },
+    {
+     "src": "한국경제",
+     "title": "아일릿, 여경 의상 논란에 \"깜짝 놀라…어떤 관심이든 감사\"",
+     "link": "https://www.hankyung.com/article/202610265795H"
+    },
+    {
+     "src": "한국경제",
+     "title": "\"화환할게\" 강동원, 4개월 전 팬과 약속 지켰다…결혼식장에 깜짝 선물",
+     "link": "https://www.hankyung.com/article/202610265376H"
     },
     {
      "src": "SBS",
      "title": "김구라, 곧 며느리 본다…아들 그리, '곰신' 여자친구와 깜짝 결혼 발표",
      "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008833564&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "뉴시스",
-     "title": "김구라, 아들 그리 결혼설에…\"살다가도 이혼하는 판\"",
-     "link": "https://www.newsis.com/view/NISX20261106_0003858616"
-    },
-    {
-     "src": "뉴시스",
-     "title": "그리, 군대서 돈 모아 차 구매…\"김구라 따라잡으려면 50번 입대\"",
-     "link": "https://www.newsis.com/view/NISX20261106_0003857456"
     }
    ]
   },
@@ -1054,39 +1187,6 @@
    ]
   },
   {
-   "kw": "이혼",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "조선일보",
-    "한국경제",
-    "헤럴드경제"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "한국경제",
-     "title": "김원효 \"주식 투자로 2억원 날려…심진화와 이혼 위기\"",
-     "link": "https://www.hankyung.com/article/202611032016H"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "혼전 출산 후 결혼 1달만에 이혼…롯데 정철원 ‘가정폭력·외도’ 의혹에 입 열었다",
-     "link": "https://biz.heraldcorp.com/article/10929049"
-    },
-    {
-     "src": "뉴시스",
-     "title": "이태성, 이혼 후 만난 여친과 결별…\"상대 부모님이 교제 반대\"",
-     "link": "https://www.newsis.com/view/NISX20261107_0003858754"
-    },
-    {
-     "src": "뉴시스",
-     "title": "이혼 뒤늦게 알린 김인석 \"신봉선과 커플? 좋았을지도…\"",
-     "link": "https://www.newsis.com/view/NISX20261106_0003858029"
-    }
-   ]
-  },
-  {
    "kw": "싱글",
    "nsrc": 4,
    "srcs": [
@@ -1219,7 +1319,7 @@
    ]
   },
   {
-   "kw": "곽튜브",
+   "kw": "이창훈",
    "nsrc": 4,
    "srcs": [
     "뉴시스",
@@ -1231,122 +1331,23 @@
    "headlines": [
     {
      "src": "동아일보",
-     "title": "곽튜브, 얼마나 잘 벌길래…식당서 스태프 위해 315만 원 ‘골든벨’ (전현무계획4)",
-     "link": "https://sports.donga.com/ent/article/all/20261107/134983183/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "곽튜브, 출연료 얼마 받길래…스태프 만두값 315만원 결제",
-     "link": "https://sports.donga.com/ent/article/all/20261107/134982927/1"
+     "title": "이창훈, 송혜교와 과거 열애설 해명 “각자 연인 있었다”",
+     "link": "https://sports.donga.com/ent/article/all/20261107/134983360/1"
     },
     {
      "src": "세계일보",
-     "title": "곽튜브, 출연료 얼마나 받길래…스태프 만두값 315만원 결제",
-     "link": "https://www.segye.com/newsView/20261107504562"
+     "title": "이창훈 \"송혜교와 열애설? '원조교제' 억지에 욕하기도\"",
+     "link": "https://www.segye.com/newsView/20261107502427"
     },
     {
      "src": "뉴시스",
-     "title": "곽튜브, 출연료 얼마나 받길래…스태프 만두값 315만원 결제",
-     "link": "https://www.newsis.com/view/NISX20261107_0003858875"
-    }
-   ]
-  },
-  {
-   "kw": "최우식",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "세계일보",
-    "조선일보"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "최우식 승무원 갑질 논란 반박 “허위사실 유포 법적 조치” [전문]",
-     "link": "https://sports.donga.com/ent/article/all/20261106/134981685/1"
-    },
-    {
-     "src": "세계일보",
-     "title": "최우식 측, 승무원 갑질 의혹에 입 열었다…“허위사실 유포 법적 대응”",
-     "link": "https://www.segye.com/newsView/20261106515355"
+     "title": "이창훈, 17세 연하 아내에 \"얼굴 보고 만난 거 아냐\"",
+     "link": "https://www.newsis.com/view/NISX20261107_0003858755"
     },
     {
      "src": "뉴시스",
-     "title": "최우식 측, '기내 태도 루머' 법적 대응…\"선처 없다\"",
-     "link": "https://www.newsis.com/view/NISX20261106_0003858309"
-    },
-    {
-     "src": "조선일보",
-     "title": "'기내 짜증'부터 '인종차별'까지…최우식,  또 겪은 '억측 잔혹사' [Oh!쎈 이슈]",
-     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/07/ME3TQMBYGJQTCNDCG4YGGOLEGQ/"
-    }
-   ]
-  },
-  {
-   "kw": "까지",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "조선일보",
-    "한겨레",
-    "한국경제"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "한겨레",
-     "title": "예술인 연습 활동·관객 안전사고까지 보장…‘예술현장 안심 공제’ 첫발",
-     "link": "https://www.hani.co.kr/arti/culture/culture_general/1286157.html"
-    },
-    {
-     "src": "한국경제",
-     "title": "god 김태우, 솔로 데뷔 20주년…가수에 프로듀서까지 '영역 확장'",
-     "link": "https://www.hankyung.com/article/202610266155H"
-    },
-    {
-     "src": "뉴시스",
-     "title": "직접 배달 나선 백종원…피자 퍼포먼스까지",
-     "link": "https://www.newsis.com/view/NISX20261106_0003858331"
-    },
-    {
-     "src": "뉴시스",
-     "title": "신승환, '20㎏ 감량'까지 1년…도시락 5개로 지킨 식단",
-     "link": "https://www.newsis.com/view/NISX20261106_0003857439"
-    }
-   ]
-  },
-  {
-   "kw": "연상",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "조선일보",
-    "한국경제"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "한국경제",
-     "title": "서인영, 12월 26일 재혼…신랑은 6세 연상 NP 최지훈 대표",
-     "link": "https://www.hankyung.com/article/202611057401H"
-    },
-    {
-     "src": "SBS",
-     "title": "서인영, 12월 26일 6살 연상 사업가와 재혼…\"교회서 스몰 웨딩\"",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008831629&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "뉴시스",
-     "title": "'돌싱' 이태성, 1살 연상 수의사와 결별…\"좋은 친구로 남기로\"",
-     "link": "https://www.newsis.com/view/NISX20261106_0003858659"
-    },
-    {
-     "src": "뉴시스",
-     "title": "류효영, 8살 연상 이태성에 돌직구 고백…\"호감 있어, 남자로서 좋아\"",
-     "link": "https://www.newsis.com/view/NISX20261106_0003858682"
+     "title": "이창훈 \"송혜교와 열애설? '원조교제' 억지에 욕하기도\"",
+     "link": "https://www.newsis.com/view/NISX20261107_0003858750"
     }
    ]
   }

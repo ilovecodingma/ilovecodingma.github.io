@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-07 15:00",
+ "updated": "2026-11-07 16:00",
  "items": [
   {
    "query": "kt 대 삼성",
@@ -156,6 +156,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-06",
+   "expires": "2026-11-10"
+  },
+  {
+   "query": "잠수함",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 5000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-05",
    "expires": "2026-11-10"
   },
   {
@@ -372,18 +384,6 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-03",
-   "expires": "2026-11-10"
-  },
-  {
-   "query": "잠수함",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 2000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-05",
    "expires": "2026-11-10"
   },
   {
@@ -628,6 +628,18 @@
   },
   {
    "query": "시콜 스키 s 92",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-07",
+   "expires": "2026-11-10"
+  },
+  {
+   "query": "아이뉴스24",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -928,6 +940,18 @@
   },
   {
    "query": "치지직",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-07",
+   "expires": "2026-11-10"
+  },
+  {
+   "query": "삼전 닉스",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -8924,6 +8948,19 @@
    "page": "/issue/culture-nuri-card-expiry-1104/",
    "registered": "2026-11-04",
    "expires": "2026-12-04"
+  },
+  {
+   "query": "독감 입원환자 전년 2배 넘었나? 44주 의사환자 22.8명, 무료 접종 대상·기간 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 4,
+   "status": "작성",
+   "page": "/issue/flu-hospitalization-surge-vaccine-1107/",
+   "registered": "2026-11-07",
+   "expires": "2026-11-21"
   },
   {
    "query": "지분적립형 공공분양 고양창릉 12월 첫 공급, 25% 입주 조건 정리",
