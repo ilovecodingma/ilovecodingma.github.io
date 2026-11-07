@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-07 11:00",
+ "updated": "2026-11-07 12:00",
  "items": [
   {
    "query": "kt 대 삼성",
@@ -48,6 +48,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-03",
+   "expires": "2026-11-10"
+  },
+  {
+   "query": "매일경제신문",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 20000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-07",
    "expires": "2026-11-10"
   },
   {
@@ -1840,6 +1852,18 @@
   },
   {
    "query": "두산에너빌리티",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-07",
+   "expires": "2026-11-10"
+  },
+  {
+   "query": "공무원",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -10005,6 +10029,19 @@
    "page": "/issue/t-membership-november-2026/",
    "registered": "2026-11-03",
    "expires": "2026-11-17"
+  },
+  {
+   "query": "테슬라 사이버트럭 생산 단계적 축소 머스크 발표 정리, 언제까지 만드나?",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 1,
+   "status": "작성",
+   "page": "/issue/tesla-cybertruck-production-end-1107/",
+   "registered": "2026-11-07",
+   "expires": "2026-11-14"
   },
   {
    "query": "APBC 2026 야구 대표팀 일정은? 엔트리와 교체 선수 정리",
