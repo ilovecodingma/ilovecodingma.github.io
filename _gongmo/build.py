@@ -3993,8 +3993,11 @@ def issue_json_pages():
             # 2026-11-06 사용자 「확인하지 못했습니다 · 조언이나 전망이 아니다 이런 말은 왜 쓰는 거야」: 못 한 일 목록과 「이 글의 한계」가 답보다 먼저·크게 보였다.
             #   → 확인된 내용과 본문을 먼저 보여 주고, 확인되지 않은 것·글의 한계는 본문 뒤에 접어 둔다(지우지는 않는다).
             _lim = ''
+            def _stbl(t_):   # 2026-11-07 마케터 요청: 섹션 table([머리줄, 행...])도 그린다(가이드와 같은 형식, 좁은 화면은 가로 스크롤)
+                return ('<div class="tblw" style="overflow-x:auto"><table class="xt"><thead><tr>' + ''.join(f'<th>{E(x_)}</th>' for x_ in t_[0]) + '</tr></thead><tbody>'
+                        + ''.join('<tr>' + ''.join(f'<td>{E(x_)}</td>' for x_ in r_) + '</tr>' for r_ in t_[1:]) + '</tbody></table></div>')
             for sc in c.get('sections', []):
-                _h = f'<h2>{E(sc["h"])}</h2>' + (f'<p>{E(sc["p"])}</p>' if sc.get('p') else '') + ('<ul class="gm-l">' + ''.join(f'<li>{E(x)}</li>' for x in sc['ul']) + '</ul>' if sc.get('ul') else '')
+                _h = f'<h2>{E(sc["h"])}</h2>' + (f'<p>{E(sc["p"])}</p>' if sc.get('p') else '') + (_stbl(sc['table']) if sc.get('table') and len(sc['table']) > 1 else '') + ('<ul class="gm-l">' + ''.join(f'<li>{E(x)}</li>' for x in sc['ul']) + '</ul>' if sc.get('ul') else '')
                 if re.search(r'이 글의 한계|글의 한계|한계와 주의|다루지 않은', sc['h']):
                     _lim += _h.replace('<h2>', '<h3>').replace('</h2>', '</h3>')
                 else:
