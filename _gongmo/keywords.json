@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-08 00:00",
+ "updated": "2026-11-08 01:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -2153,8 +2153,8 @@
     "구글트렌드"
    ],
    "score": 2,
-   "status": "작성",
-   "page": "/issue/cj-joongang-1103/",
+   "status": "미작성",
+   "page": "",
    "registered": "2026-11-03",
    "expires": "2026-11-07"
   },
@@ -2166,8 +2166,8 @@
     "구글트렌드"
    ],
    "score": 2,
-   "status": "작성",
-   "page": "/issue/electronic-anklet-1103/",
+   "status": "미작성",
+   "page": "",
    "registered": "2026-11-03",
    "expires": "2026-11-07"
   },
@@ -2179,8 +2179,8 @@
     "구글트렌드"
    ],
    "score": 2,
-   "status": "작성",
-   "page": "/issue/jeonbuk-darul-takzim-1103/",
+   "status": "미작성",
+   "page": "",
    "registered": "2026-11-04",
    "expires": "2026-11-07"
   },
@@ -2218,8 +2218,8 @@
     "구글트렌드"
    ],
    "score": 2,
-   "status": "작성",
-   "page": "/issue/typhoon-inpha-korea-path-1103/",
+   "status": "미작성",
+   "page": "",
    "registered": "2026-11-03",
    "expires": "2026-11-07"
   },
@@ -2270,8 +2270,8 @@
     "구글트렌드"
    ],
    "score": 1,
-   "status": "작성",
-   "page": "/issue/korean-series-game1-1103/",
+   "status": "미작성",
+   "page": "",
    "registered": "2026-11-04",
    "expires": "2026-11-07"
   },
@@ -2309,8 +2309,8 @@
     "구글트렌드"
    ],
    "score": 1,
-   "status": "작성",
-   "page": "/issue/ucl-matchday-1104/",
+   "status": "미작성",
+   "page": "",
    "registered": "2026-11-04",
    "expires": "2026-11-07"
   },
@@ -9593,6 +9593,19 @@
    "page": "/issue/retirement-pension-fund-type-reform-1107/",
    "registered": "2026-11-07",
    "expires": "2026-11-21"
+  },
+  {
+   "query": "사이드카와 서킷브레이커 차이: 발동 조건과 11월 6일 코스피 사례",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 3,
+   "status": "작성",
+   "page": "/issue/sidecar-vs-circuit-breaker-1108/",
+   "registered": "2026-11-08",
+   "expires": "2026-12-08"
   },
   {
    "query": "2026 롤드컵 4강 대진과 일정은? 젠지 8강 결과, 한국 팀 현황",
