@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-07 17:00",
+ "updated": "2026-11-07 18:00",
  "items": [
   {
    "query": "kt 대 삼성",
@@ -432,18 +432,6 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-07",
-   "expires": "2026-11-10"
-  },
-  {
-   "query": "은마아파트",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 2000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-03",
    "expires": "2026-11-10"
   },
   {
@@ -1768,18 +1756,6 @@
   },
   {
    "query": "헤이지니",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 1000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-06",
-   "expires": "2026-11-10"
-  },
-  {
-   "query": "아파트",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -9027,6 +9003,19 @@
    "expires": "2026-12-04"
   },
   {
+   "query": "신용융자 담보비율 140% 유지의무 3개월 면제, 반대매매 유예 증권사 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 4,
+   "status": "작성",
+   "page": "/issue/margin-ratio-exemption-forced-sale-1107/",
+   "registered": "2026-11-07",
+   "expires": "2026-11-21"
+  },
+  {
    "query": "교황 방한 2027 일정 장소 정리, 광화문 대신 상암 월드컵경기장",
    "tier": "중기",
    "signal": [
@@ -9243,6 +9232,19 @@
    "expires": "2026-11-11"
   },
   {
+   "query": "은마아파트 재초환 부담금 4억6천만원 통지, 산정 기준과 납부 시기 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 3,
+   "status": "작성",
+   "page": "/issue/eunma-reconstruction-levy-notice-1107/",
+   "registered": "2026-11-07",
+   "expires": "2026-11-21"
+  },
+  {
    "query": "분당 선도지구 재건축 시공사 입찰 언제부터? 샛별·양지·더시범 단계별 정리",
    "tier": "중기",
    "signal": [
@@ -9293,6 +9295,19 @@
    "page": "/issue/korea-ev-export-competitiveness-1105/",
    "registered": "2026-11-05",
    "expires": "2026-11-19"
+  },
+  {
+   "query": "한국시리즈 4차전 결과 삼성 kt 10-5, 3승 1패 우승 조건과 5차전 일정",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 3,
+   "status": "작성",
+   "page": "/issue/korean-series-game4-1107/",
+   "registered": "2026-11-07",
+   "expires": "2026-11-14"
   },
   {
    "query": "북한 바이낸스 해킹 사건 어떻게 된 건가요? 확인된 내용 정리 2026년 11월",
