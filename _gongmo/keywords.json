@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-07 19:00",
+ "updated": "2026-11-07 20:00",
  "items": [
   {
    "query": "kt 대 삼성",
@@ -387,6 +387,18 @@
    "expires": "2026-11-10"
   },
   {
+   "query": "롯데 자이언츠",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 5000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-07",
+   "expires": "2026-11-10"
+  },
+  {
    "query": "유튜버",
    "tier": "단기",
    "signal": [
@@ -600,6 +612,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-05",
+   "expires": "2026-11-10"
+  },
+  {
+   "query": "혈당",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-07",
    "expires": "2026-11-10"
   },
   {
@@ -952,6 +976,30 @@
   },
   {
    "query": "치지직",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-07",
+   "expires": "2026-11-10"
+  },
+  {
+   "query": "이재희",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-07",
+   "expires": "2026-11-10"
+  },
+  {
+   "query": "젠슨황",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -1356,6 +1404,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-06",
+   "expires": "2026-11-10"
+  },
+  {
+   "query": "박승규",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-07",
    "expires": "2026-11-10"
   },
   {
@@ -9232,7 +9292,7 @@
    "expires": "2026-11-11"
   },
   {
-   "query": "은마아파트 재초환 부담금 4억6천만원 통지, 산정 기준과 납부 시기 정리",
+   "query": "은마아파트 재초환 부담금 4억6천만원 통지, 산정 방식과 납부 시기 정리",
    "tier": "중기",
    "signal": [
     "뉴스",
@@ -9282,6 +9342,19 @@
    "page": "/issue/justice-minister-nominee-lee-yongcheol-1106/",
    "registered": "2026-11-06",
    "expires": "2026-11-20"
+  },
+  {
+   "query": "KB아동수당통장 최고 3.1%, 가입 방법과 우대 조건·100만원 한도 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 3,
+   "status": "작성",
+   "page": "/issue/kb-child-allowance-account-1107/",
+   "registered": "2026-11-07",
+   "expires": "2026-11-21"
   },
   {
    "query": "한경협 전기차 수출경쟁력 보고서 2030년 2.2조원 위험 추정 내용 정리",
