@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>목장의 밤</title>
+<style>
+:root{color-scheme:dark;--pink:#ffb3d1;--bg:#0b0b10}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:var(--bg);color:#eee;font-family:system-ui,-apple-system,"Malgun Gothic",sans-serif}
+#app{max-width:520px;margin:0 auto;min-height:100%;display:flex;flex-direction:column}
+.screen{display:none;flex:1;flex-direction:column;padding:16px}
+.screen.on{display:flex}
+h1{margin:12vh 0 8px;font-size:28px;text-align:center;color:var(--pink)}
+p.sub{text-align:center;color:#aaa;margin:0 0 24px;line-height:1.6}
+button{font:inherit;border:0;border-radius:12px;padding:14px 16px;background:#23232e;color:#eee;cursor:pointer;min-height:48px;touch-action:manipulation}
+button.main{background:var(--pink);color:#2a0f1a;font-weight:700}
+button:active{filter:brightness(1.2)}
+.stage{position:relative;width:100%;aspect-ratio:832/1152;background:#000;border-radius:12px;overflow:hidden}
+.stage img{width:100%;height:100%;object-fit:cover;display:block}
+.cap{position:absolute;left:0;right:0;bottom:0;padding:40px 14px 14px;background:linear-gradient(transparent,rgba(0,0,0,.85));font-size:17px;line-height:1.55}
+.cap b{color:var(--pink)}
+.opts{display:grid;gap:8px;margin-top:12px}
+.bar{display:flex;justify-content:space-between;color:#999;font-size:13px;padding:4px 2px 10px}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:12px 0}
+.grid img{width:100%;aspect-ratio:832/1152;object-fit:cover;border-radius:6px;background:#15151c;cursor:pointer}
+.grid img.lock{filter:brightness(.15)}
+#zoom{position:fixed;inset:0;background:rgba(0,0,0,.94);display:none;align-items:center;justify-content:center;z-index:9}
+#zoom.on{display:flex}#zoom img{max-width:100%;max-height:100%}
+</style>
+</head>
+<body>
+<div id="app">
+ <section id="gate" class="screen on">
+  <h1>목장의 밤</h1>
+  <p class="sub">성인 전용 이야기입니다.<br>만 19세 이상만 들어올 수 있어요.</p>
+  <button class="main" id="yes">만 19세 이상입니다</button>
+  <button id="no" style="margin-top:10px">나가기</button>
+ </section>
+ <section id="play" class="screen">
+  <div class="bar"><span id="ch"></span><button id="gal" style="padding:6px 12px;min-height:0">갤러리</button></div>
+  <div class="stage"><img id="cg" alt=""><div class="cap" id="cap"></div></div>
+  <div class="opts" id="opts"></div>
+ </section>
+ <section id="gallery" class="screen">
+  <div class="bar"><span id="gcount"></span><button id="back" style="padding:6px 12px;min-height:0">돌아가기</button></div>
+  <div class="grid" id="grid"></div>
+ </section>
+</div>
+<div id="zoom"><img id="zimg" alt=""></div>
+<script>
+(function(){
+var R="루리";
+var CH=[
+ {t:"1장 · 표식",n:1,line:[["","한밤의 목장. 루리의 어깨에 작은 표식이 찍힌다."],[R,"…이게 오늘 일이야? 이름표 같은 거지?"]],
+  opts:[["\"응, 금방 끝나\"","…알았어. 믿어볼게."],["\"조금 따끔해\"","괜찮아. 참을 수 있어."],["말없이 손을 잡아 준다","…고마워. 떨림이 좀 멎었어."]]},
+ {t:"2장 · 장착",n:2,line:[["","장비가 하나씩 몸에 맞춰진다. 루리가 숨을 고른다."],[R,"차가워…! 잠깐, 천천히."]],
+  opts:[["천천히 맞춘다","그래… 그렇게. 거기."],["\"가만히 있어\"","…말은 쉽지."],["\"벌써 다 했어\"","뭐? 벌써? …진작 말하지."]]},
+ {t:"3장 · 착유 중",n:3,line:[["","기계가 규칙적인 소리를 낸다. 루리의 목에서 방울이 딸랑거린다."],[R,"소리… 너무 커. 누가 들으면 어떡해."]],
+  opts:[["\"아무도 없어\"","그래도… 얼굴 보지 마."],["방울을 만져 본다","야…! 그건 반칙이야."],["\"잘하고 있어\"","…칭찬하지 마. 더 이상해져."]]},
+ {t:"4장 · 통",n:4,line:[["","끝났다. 통에 가득 찬 우유가 달빛에 하얗게 빛난다."],[R,"…이걸 다 내가? 거짓말."]],
+  opts:[["\"수고했어\"","…내일도 하자는 말은 하지 마."],["통을 들어 보인다","보여 주지 마, 바보야."],["\"다음엔 더 많이\"","…진짜 나쁜 사람이네, 너."]]}
+];
+var $=function(i){return document.getElementById(i)};
+var seen={};try{seen=JSON.parse(localStorage.getItem("milk_seen")||"{}")}catch(e){}
+function save(){try{localStorage.setItem("milk_seen",JSON.stringify(seen))}catch(e){}}
+function scr(id){["gate","play","gallery"].forEach(function(s){$(s).classList.toggle("on",s===id)})}
+function src(n,v){return "img/m"+n+"_"+v+".webp"}
+function mark(n,v){seen[n+"_"+v]=1;save()}
+var ci=0,li=0;
+function step(){
+ var c=CH[ci];$("ch").textContent=c.t;$("opts").innerHTML="";
+ if(li<c.line.length){
+  var l=c.line[li];$("cg").src=src(c.n,0);mark(c.n,0);
+  $("cap").innerHTML=l[0]?"<b>"+l[0]+"</b> "+l[1]:l[1];
+  var b=document.createElement("button");b.textContent="다음";b.onclick=function(){li++;step()};$("opts").appendChild(b);
+ }else{
+  $("cap").innerHTML="어떻게 할까?";
+  c.opts.forEach(function(o,i){var b=document.createElement("button");b.textContent=o[0];b.onclick=function(){pick(i+1,o[1])};$("opts").appendChild(b)});
+ }
+}
+function pick(v,reply){
+ var c=CH[ci];$("cg").src=src(c.n,v);mark(c.n,v);
+ $("cap").innerHTML="<b>"+R+"</b> "+reply;$("opts").innerHTML="";
+ var b=document.createElement("button");b.className="main";b.textContent=ci<CH.length-1?"다음 장":"끝내고 갤러리 보기";
+ b.onclick=function(){ci++;li=0;if(ci>=CH.length){ci=0;gallery()}else step()};$("opts").appendChild(b);
+}
+function gallery(){
+ scr("gallery");var g=$("grid");g.innerHTML="";var cnt=0;
+ for(var n=1;n<=4;n++)for(var v=0;v<4;v++){
+  var im=document.createElement("img"),k=n+"_"+v;
+  if(seen[k]){im.src=src(n,v);cnt++;(function(s){im.onclick=function(){$("zimg").src=s;$("zoom").classList.add("on")}})(src(n,v))}
+  else{im.className="lock";im.src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"}
+  im.alt="";g.appendChild(im);
+ }
+ $("gcount").textContent="수집 "+cnt+"/16 · 장마다 선택지를 달리하면 다른 컷이 열려요";
+}
+$("yes").onclick=function(){scr("play");ci=0;li=0;step()};
+$("no").onclick=function(){location.href="/"};
+$("gal").onclick=gallery;$("back").onclick=function(){scr("play")};
+$("zoom").onclick=function(){$("zoom").classList.remove("on")};
+})();
+</script>
+</body>
+</html>
