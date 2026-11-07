@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-07 21:00",
+ "updated": "2026-11-07 22:00",
  "items": [
   {
    "query": "kt 대 삼성",
@@ -483,6 +483,18 @@
    "expires": "2026-11-10"
   },
   {
+   "query": "혈당",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-07",
+   "expires": "2026-11-10"
+  },
+  {
    "query": "삼성전자 주가",
    "tier": "단기",
    "signal": [
@@ -615,18 +627,6 @@
    "expires": "2026-11-10"
   },
   {
-   "query": "혈당",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 2000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-07",
-   "expires": "2026-11-10"
-  },
-  {
    "query": "호날두",
    "tier": "단기",
    "signal": [
@@ -676,6 +676,18 @@
   },
   {
    "query": "아이뉴스24",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-07",
+   "expires": "2026-11-10"
+  },
+  {
+   "query": "젠슨황",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -999,7 +1011,19 @@
    "expires": "2026-11-10"
   },
   {
-   "query": "젠슨황",
+   "query": "라면",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-07",
+   "expires": "2026-11-10"
+  },
+  {
+   "query": "김천상무 대 fc 안양 순위",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -1032,6 +1056,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-05",
+   "expires": "2026-11-10"
+  },
+  {
+   "query": "하희라",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-07",
    "expires": "2026-11-10"
   },
   {
@@ -1408,6 +1444,30 @@
   },
   {
    "query": "박승규",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-07",
+   "expires": "2026-11-10"
+  },
+  {
+   "query": "김영철",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-07",
+   "expires": "2026-11-10"
+  },
+  {
+   "query": "전유성",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -9063,6 +9123,19 @@
    "expires": "2026-12-04"
   },
   {
+   "query": "로또 1249회 당첨번호 2·11·16·25·34·35, 1등 14명 당첨금과 지급 방법",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 4,
+   "status": "작성",
+   "page": "/issue/lotto-1249-winning-numbers-1107/",
+   "registered": "2026-11-07",
+   "expires": "2026-11-14"
+  },
+  {
    "query": "신용융자 담보비율 140% 유지의무 3개월 면제, 반대매매 유예 증권사 정리",
    "tier": "중기",
    "signal": [
@@ -9379,6 +9452,19 @@
    "score": 3,
    "status": "작성",
    "page": "/issue/korean-series-game4-1107/",
+   "registered": "2026-11-07",
+   "expires": "2026-11-14"
+  },
+  {
+   "query": "마곡동 온수관 파열 사고, 행인 전신 화상 경위와 원인 조사 상황",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 3,
+   "status": "작성",
+   "page": "/issue/magok-hot-water-pipe-burst-1107/",
    "registered": "2026-11-07",
    "expires": "2026-11-14"
   },
