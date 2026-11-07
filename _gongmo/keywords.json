@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-08 03:00",
+ "updated": "2026-11-08 04:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -255,6 +255,18 @@
    "expires": "2026-11-11"
   },
   {
+   "query": "아스널 대 헐 시티",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 5000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-08",
+   "expires": "2026-11-11"
+  },
+  {
    "query": "선박",
    "tier": "단기",
    "signal": [
@@ -424,6 +436,18 @@
   },
   {
    "query": "마인츠 05 대 바이에른",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 5000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-08",
+   "expires": "2026-11-11"
+  },
+  {
+   "query": "복권",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -1071,18 +1095,6 @@
    "expires": "2026-11-11"
   },
   {
-   "query": "아스널 대 헐 시티",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 2000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-08",
-   "expires": "2026-11-11"
-  },
-  {
    "query": "노태문",
    "tier": "단기",
    "signal": [
@@ -1248,6 +1260,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-07",
+   "expires": "2026-11-11"
+  },
+  {
+   "query": "풀럼 대 뉴캐슬",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-08",
    "expires": "2026-11-11"
   },
   {
@@ -1800,18 +1824,6 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-04",
-   "expires": "2026-11-11"
-  },
-  {
-   "query": "원태인",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 1000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-05",
    "expires": "2026-11-11"
   },
   {
@@ -9577,6 +9589,19 @@
    "page": "/issue/korean-series-game4-1107/",
    "registered": "2026-11-07",
    "expires": "2026-11-14"
+  },
+  {
+   "query": "한국시리즈 5차전 선발 원태인 대니엘, 중계 시간과 삼성 우승 조건",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 3,
+   "status": "작성",
+   "page": "/issue/korean-series-game5-1108/",
+   "registered": "2026-11-08",
+   "expires": "2026-11-15"
   },
   {
    "query": "마곡동 온수관 파열 사고, 행인 전신 화상 경위와 원인 조사 상황",
