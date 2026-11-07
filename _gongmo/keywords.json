@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-08 05:00",
+ "updated": "2026-11-08 06:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -267,6 +267,18 @@
    "expires": "2026-11-11"
   },
   {
+   "query": "복권",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 5000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-08",
+   "expires": "2026-11-11"
+  },
+  {
    "query": "선박",
    "tier": "단기",
    "signal": [
@@ -348,6 +360,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-07",
+   "expires": "2026-11-11"
+  },
+  {
+   "query": "노팅엄 포레스트 대 맨 시티",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 5000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-08",
    "expires": "2026-11-11"
   },
   {
@@ -436,18 +460,6 @@
   },
   {
    "query": "마인츠 05 대 바이에른",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 5000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-08",
-   "expires": "2026-11-11"
-  },
-  {
-   "query": "복권",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -1336,18 +1348,6 @@
   },
   {
    "query": "장성규",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 1000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-03",
-   "expires": "2026-11-11"
-  },
-  {
-   "query": "차정원",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -9526,6 +9526,19 @@
    "expires": "2026-11-21"
   },
   {
+   "query": "GTA6 발매일과 사전 다운로드 11월 10일 시작, 용량 212GB·가격 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 3,
+   "status": "작성",
+   "page": "/issue/gta6-release-preload-schedule-1108/",
+   "registered": "2026-11-08",
+   "expires": "2026-11-22"
+  },
+  {
    "query": "구미라면축제 2026 일정 장소 프로그램 입장료, 첫날 별미라면 2만 그릇 판매",
    "tier": "중기",
    "signal": [
@@ -9537,6 +9550,19 @@
    "page": "/issue/gumi-ramen-festival-2026-1107/",
    "registered": "2026-11-07",
    "expires": "2026-11-14"
+  },
+  {
+   "query": "하정우 차정원 12월 13일 결혼식 날짜·장소·발표 경위 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 3,
+   "status": "작성",
+   "page": "/issue/ha-jungwoo-cha-jungwon-wedding-december/",
+   "registered": "2026-11-08",
+   "expires": "2026-11-22"
   },
   {
    "query": "이용철 법무부 장관 후보자 지명 경위와 인사청문회 절차 정리",
