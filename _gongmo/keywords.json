@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-07 09:00",
+ "updated": "2026-11-07 10:00",
  "items": [
   {
    "query": "kt 대 삼성",
@@ -60,18 +60,6 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-07",
-   "expires": "2026-11-10"
-  },
-  {
-   "query": "퇴직",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 20000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-06",
    "expires": "2026-11-10"
   },
   {
@@ -399,6 +387,18 @@
    "expires": "2026-11-10"
   },
   {
+   "query": "은마아파트",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-03",
+   "expires": "2026-11-10"
+  },
+  {
    "query": "파흐타코르 대 알나스르",
    "tier": "단기",
    "signal": [
@@ -483,18 +483,6 @@
    "expires": "2026-11-10"
   },
   {
-   "query": "은마아파트",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 2000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-03",
-   "expires": "2026-11-10"
-  },
-  {
    "query": "저기압",
    "tier": "단기",
    "signal": [
@@ -528,6 +516,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-03",
+   "expires": "2026-11-10"
+  },
+  {
+   "query": "토트넘 홋스퍼 fc",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-04",
    "expires": "2026-11-10"
   },
   {
@@ -676,18 +676,6 @@
   },
   {
    "query": "맨유 대 로마",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 2000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-04",
-   "expires": "2026-11-10"
-  },
-  {
-   "query": "토트넘 홋스퍼 fc",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -912,6 +900,30 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-06",
+   "expires": "2026-11-10"
+  },
+  {
+   "query": "세균",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-07",
+   "expires": "2026-11-10"
+  },
+  {
+   "query": "치지직",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-07",
    "expires": "2026-11-10"
   },
   {
@@ -1804,6 +1816,30 @@
   },
   {
    "query": "황인범",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-07",
+   "expires": "2026-11-10"
+  },
+  {
+   "query": "옥주현",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-07",
+   "expires": "2026-11-10"
+  },
+  {
+   "query": "두산에너빌리티",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -9225,6 +9261,19 @@
    "expires": "2026-11-20"
   },
   {
+   "query": "기금형 퇴직연금 뭐가 달라지나, 퇴직급여 사외적립 의무화 일정 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 3,
+   "status": "작성",
+   "page": "/issue/retirement-pension-fund-type-reform-1107/",
+   "registered": "2026-11-07",
+   "expires": "2026-11-21"
+  },
+  {
    "query": "2026 롤드컵 4강 대진과 일정은? 젠지 8강 결과, 한국 팀 현황",
    "tier": "중기",
    "signal": [
@@ -9553,6 +9602,19 @@
    "page": "/issue/highway-rest-area-price-reform/",
    "registered": "2026-11-02",
    "expires": "2026-11-09"
+  },
+  {
+   "query": "황우석 박사 UAE 국적 취득, 관보 고시 보도와 국적법 제15조 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 2,
+   "status": "작성",
+   "page": "/issue/hwang-woo-suk-uae-citizenship-1107/",
+   "registered": "2026-11-07",
+   "expires": "2026-11-14"
   },
   {
    "query": "제주 제2공항 갈등조정협의회 5일 첫 회의, 환경영향평가·찬반 입장·일정 정리",
