@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-08 01:00",
+ "updated": "2026-11-08 02:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -423,6 +423,18 @@
    "expires": "2026-11-11"
   },
   {
+   "query": "마인츠 05 대 바이에른",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 5000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-08",
+   "expires": "2026-11-11"
+  },
+  {
    "query": "유튜버",
    "tier": "단기",
    "signal": [
@@ -735,6 +747,18 @@
    "expires": "2026-11-11"
   },
   {
+   "query": "유방암",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-08",
+   "expires": "2026-11-11"
+  },
+  {
    "query": "중대범죄 수사청",
    "tier": "단기",
    "signal": [
@@ -1044,6 +1068,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-07",
+   "expires": "2026-11-11"
+  },
+  {
+   "query": "아스널 대 헐 시티",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-08",
    "expires": "2026-11-11"
   },
   {
@@ -1488,6 +1524,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-07",
+   "expires": "2026-11-11"
+  },
+  {
+   "query": "닥터x 하얀 마피아의 시대",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-08",
    "expires": "2026-11-11"
   },
   {
@@ -2020,18 +2068,6 @@
   },
   {
    "query": "이소라",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 1000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-08",
-   "expires": "2026-11-11"
-  },
-  {
-   "query": "유방암",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -9387,6 +9423,19 @@
    "expires": "2026-11-12"
   },
   {
+   "query": "닥터X 하얀 마피아의 시대 10회 줄거리 시청률 추이, 11회 예고와 방송 시간",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 3,
+   "status": "작성",
+   "page": "/issue/doctor-x-white-mafia-ep10-1108/",
+   "registered": "2026-11-08",
+   "expires": "2026-11-15"
+  },
+  {
    "query": "더존비즈온 해킹 개인정보 유출 어떻게 된 건가요? 급여 계좌·가족 주민번호 확인된 내용 정리 2026년 11월",
    "tier": "중기",
    "signal": [
@@ -9541,6 +9590,19 @@
    "page": "/issue/magok-hot-water-pipe-burst-1107/",
    "registered": "2026-11-07",
    "expires": "2026-11-14"
+  },
+  {
+   "query": "마인츠 바이에른 결과 김민재 결장 이재성 선발, 득점과 순위 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 3,
+   "status": "작성",
+   "page": "/issue/mainz-bayern-kim-minjae-lee-jaesung-1108/",
+   "registered": "2026-11-08",
+   "expires": "2026-11-15"
   },
   {
    "query": "북한 바이낸스 해킹 사건 어떻게 된 건가요? 확인된 내용 정리 2026년 11월",
