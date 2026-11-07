@@ -39,7 +39,7 @@ button:active{filter:brightness(1.2)}
   <button id="no" style="margin-top:10px">나가기</button>
  </section>
  <section id="play" class="screen">
-  <div class="bar"><span id="ch"></span><button id="gal" style="padding:6px 12px;min-height:0">갤러리</button></div>
+  <div class="bar"><span id="ch"></span><span><button id="snd" style="padding:6px 12px;min-height:0">소리 켬</button> <button id="gal" style="padding:6px 12px;min-height:0">갤러리</button></span></div>
   <div class="stage"><img id="cg" alt=""><div class="cap" id="cap"></div></div>
   <div class="opts" id="opts"></div>
  </section>
@@ -63,12 +63,14 @@ var seen={};try{seen=JSON.parse(localStorage.getItem("milk_seen")||"{}")}catch(e
 function save(){try{localStorage.setItem("milk_seen",JSON.stringify(seen))}catch(e){}}
 function scr(id){["gate","play","gallery"].forEach(function(s){$(s).classList.toggle("on",s===id)})}
 function src(n,v){return "img/m"+n+"_"+v+".webp"}
-var ci=0,li=0;
+var ci=0,li=0,on=true,au=null;
+function voice(k){try{if(au){au.pause();au=null}if(!on)return;au=new Audio("snd/"+k+".wav");au.play().catch(function(){})}catch(e){}}
 function step(){
  var c=CH[ci],l=c.L[li];$("ch").textContent=c.t+" ("+(li+1)+"/4)";
  $("cg").src=src(c.n,li);seen[c.n+"_"+li]=1;save();
  $("cap").innerHTML=l[0]?"<b>"+l[0]+"</b> "+l[1]:l[1];
  $("opts").innerHTML="";
+ if(l[0])voice(c.n+"_"+li);else if(au){au.pause();au=null}
  var b=document.createElement("button");b.className="main";
  var last=li===3,end=last&&ci===CH.length-1;
  b.textContent=end?"끝내고 갤러리 보기":last?"다음 장":"다음";
@@ -87,7 +89,8 @@ function gallery(){
 }
 $("yes").onclick=function(){scr("play");ci=0;li=0;step()};
 $("no").onclick=function(){location.href="/"};
-$("gal").onclick=gallery;$("back").onclick=function(){scr("play")};
+$("snd").onclick=function(){on=!on;$("snd").textContent=on?"소리 켬":"소리 끔";if(!on&&au){au.pause();au=null}};
+$("gal").onclick=function(){if(au){au.pause();au=null}gallery()};$("back").onclick=function(){scr("play")};
 $("zoom").onclick=function(){$("zoom").classList.remove("on")};
 })();
 </script>
