@@ -1,5 +1,5 @@
 {
- "at": "2026-11-08 07:06",
+ "at": "2026-11-08 07:30",
  "nitems": 485,
  "cands": [
   {
@@ -13,7 +13,7 @@
     "조선일보",
     "헤럴드경제"
    ],
-   "n": 14,
+   "n": 15,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -82,8 +82,13 @@
     "조선일보",
     "한국경제"
    ],
-   "n": 11,
+   "n": 12,
    "headlines": [
+    {
+     "src": "동아일보",
+     "title": "KCM, 팔토시 벗은 이유 공개…‘개콘’서 뜻밖의 고백",
+     "link": "https://sports.donga.com/ent/article/all/20261108/134983967/1"
+    },
     {
      "src": "동아일보",
      "title": "류필립, 17세 연상 ♥미나와 별거 중 고백…“우울해서 몸 방치”",
@@ -98,11 +103,6 @@
      "src": "한국경제",
      "title": "\"통장 압류, 수중엔 1000원\"…JBJ 출신 켄타, 4억 빚 고백",
      "link": "https://www.hankyung.com/article/202610280689H"
-    },
-    {
-     "src": "세계일보",
-     "title": "김영철, 가슴 아픈 가족사 고백…\"치킨 사온다던 형, 끝내 못 돌아와\"",
-     "link": "https://www.segye.com/newsView/20261108500094"
     }
    ]
   },
@@ -175,40 +175,6 @@
    ]
   },
   {
-   "kw": "발매",
-   "nsrc": 5,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "연합뉴스",
-    "조선일보",
-    "한국경제"
-   ],
-   "n": 8,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "신세계百 강남점, 에이티즈 앨범 발매 기념 팝업 매장 운영",
-     "link": "https://www.yna.co.kr/view/AKR20261107020700030"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "[가요소식] 재즈 색소포니스트 남유선, 4집 발매 기념 공연",
-     "link": "https://www.yna.co.kr/view/AKR20261105145000005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "리센느 신곡 '위드', 발매 첫날 멜론 '톱 100' 1위 직행",
-     "link": "https://www.yna.co.kr/view/AKR20261103181100005"
-    },
-    {
-     "src": "동아일보",
-     "title": "씨엔블루, 윤상 ‘달리기’ 다시 부른다… 9일 스페셜 싱글 발매",
-     "link": "https://sports.donga.com/ent/article/all/20261107/134983058/1"
-    }
-   ]
-  },
-  {
    "kw": "하이브",
    "nsrc": 5,
    "srcs": [
@@ -273,6 +239,40 @@
      "src": "한국경제",
      "title": "\"화환할게\" 강동원, 4개월 전 팬과 약속 지켰다…결혼식장에 깜짝 선물",
      "link": "https://www.hankyung.com/article/202610265376H"
+    }
+   ]
+  },
+  {
+   "kw": "발매",
+   "nsrc": 5,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "연합뉴스",
+    "조선일보",
+    "한국경제"
+   ],
+   "n": 7,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "신세계百 강남점, 에이티즈 앨범 발매 기념 팝업 매장 운영",
+     "link": "https://www.yna.co.kr/view/AKR20261107020700030"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "[가요소식] 재즈 색소포니스트 남유선, 4집 발매 기념 공연",
+     "link": "https://www.yna.co.kr/view/AKR20261105145000005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "리센느 신곡 '위드', 발매 첫날 멜론 '톱 100' 1위 직행",
+     "link": "https://www.yna.co.kr/view/AKR20261103181100005"
+    },
+    {
+     "src": "동아일보",
+     "title": "씨엔블루, 윤상 ‘달리기’ 다시 부른다… 9일 스페셜 싱글 발매",
+     "link": "https://sports.donga.com/ent/article/all/20261107/134983058/1"
     }
    ]
   },
@@ -446,6 +446,39 @@
    ]
   },
   {
+   "kw": "이유",
+   "nsrc": 4,
+   "srcs": [
+    "동아일보",
+    "조선일보",
+    "한국경제",
+    "헤럴드경제"
+   ],
+   "n": 9,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "KCM, 팔토시 벗은 이유 공개…‘개콘’서 뜻밖의 고백",
+     "link": "https://sports.donga.com/ent/article/all/20261108/134983967/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "오승근, 17년 공백 깬 이유…故 김자옥 “다시 노래해”",
+     "link": "https://sports.donga.com/ent/article/all/20261107/134983132/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "“사칭 피싱 메일에 해킹” 정주리, 유튜브 활동 중단했던 이유",
+     "link": "https://sports.donga.com/ent/article/all/20261106/134981228/1"
+    },
+    {
+     "src": "한국경제",
+     "title": "도파민의 시대…김종관표 '작고 사소한' 영화의 존재 이유 [씬터뷰]",
+     "link": "https://www.hankyung.com/article/202611045069H"
+    }
+   ]
+  },
+  {
    "kw": "리센느",
    "nsrc": 4,
    "srcs": [
@@ -475,39 +508,6 @@
      "src": "한국경제",
      "title": "리센느, 이번엔 머스크 향이다…팬들 심장 뛰게 할 '펄스'",
      "link": "https://www.hankyung.com/article/202610278793H"
-    }
-   ]
-  },
-  {
-   "kw": "이유",
-   "nsrc": 4,
-   "srcs": [
-    "동아일보",
-    "조선일보",
-    "한국경제",
-    "헤럴드경제"
-   ],
-   "n": 8,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "오승근, 17년 공백 깬 이유…故 김자옥 “다시 노래해”",
-     "link": "https://sports.donga.com/ent/article/all/20261107/134983132/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "“사칭 피싱 메일에 해킹” 정주리, 유튜브 활동 중단했던 이유",
-     "link": "https://sports.donga.com/ent/article/all/20261106/134981228/1"
-    },
-    {
-     "src": "한국경제",
-     "title": "도파민의 시대…김종관표 '작고 사소한' 영화의 존재 이유 [씬터뷰]",
-     "link": "https://www.hankyung.com/article/202611045069H"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "한가인, 운동 시작한 이유…“딸이 물에 빠졌는데 어지러워 못 들어갔다”",
-     "link": "https://biz.heraldcorp.com/article/10929171"
     }
    ]
   },
@@ -574,39 +574,6 @@
      "src": "한국경제",
      "title": "[포토+] '국민 아버지' 최불암, '향년 87세를 일기로 별세'",
      "link": "https://www.hankyung.com/article/202610317173H"
-    }
-   ]
-  },
-  {
-   "kw": "싱글",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "케데헌 '골든', 英 오피셜 싱글 차트 72주 연속 진입",
-     "link": "https://www.yna.co.kr/view/AKR20261107024200005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "한로로가 노래하는 사랑과 상처…오늘 새 싱글 '물음표'",
-     "link": "https://www.yna.co.kr/view/AKR20261105058800005"
-    },
-    {
-     "src": "동아일보",
-     "title": "루시, 싱글 ‘다시!’ 하이라이트 메들리 공개…청량·애틋 분위기",
-     "link": "https://sports.donga.com/ent/article/all/20261107/134983326/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "씨엔블루, 윤상 ‘달리기’ 다시 부른다… 9일 스페셜 싱글 발매",
-     "link": "https://sports.donga.com/ent/article/all/20261107/134983058/1"
     }
    ]
   },
@@ -772,6 +739,39 @@
      "src": "한국경제",
      "title": "'재혼황후' 주지훈, 욕받이 자처 \"삿대질 하고 현생 시원하다면 만족\"",
      "link": "https://www.hankyung.com/article/202611032480H"
+    }
+   ]
+  },
+  {
+   "kw": "음악",
+   "nsrc": 4,
+   "srcs": [
+    "동아일보",
+    "연합뉴스",
+    "한겨레",
+    "한국경제"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "[게시판] 음저협, 음악 저작권 모범업소 377곳 선정",
+     "link": "https://www.yna.co.kr/view/AKR20261103047900005"
+    },
+    {
+     "src": "동아일보",
+     "title": "‘3인 체제’ 드래곤포니, 변화의 파도 넘어 깊어진 음악 “믿음 더 커져” (종합)[DA인터뷰]",
+     "link": "https://sports.donga.com/ent/article/all/20261107/134982671/2"
+    },
+    {
+     "src": "한겨레",
+     "title": "의사 딸이 음악PD 지망생과…부모 반대 클수록 ‘로미오와 줄리엣 효과’ [.txt]",
+     "link": "https://www.hani.co.kr/arti/culture/culture_general/1286250.html"
+    },
+    {
+     "src": "한겨레",
+     "title": "한국 펑크·솔 음악 선구자 사랑과 평화, 소극장 콘서트 ‘펑키 투나잇’ 연다",
+     "link": "https://www.hani.co.kr/arti/culture/music/1286078.html"
     }
    ]
   },
@@ -1172,35 +1172,35 @@
    ]
   },
   {
-   "kw": "음악",
+   "kw": "송혜교와",
    "nsrc": 4,
    "srcs": [
+    "뉴시스",
     "동아일보",
-    "연합뉴스",
-    "한겨레",
-    "한국경제"
+    "세계일보",
+    "조선일보"
    ],
    "n": 4,
    "headlines": [
     {
-     "src": "연합뉴스",
-     "title": "[게시판] 음저협, 음악 저작권 모범업소 377곳 선정",
-     "link": "https://www.yna.co.kr/view/AKR20261103047900005"
-    },
-    {
      "src": "동아일보",
-     "title": "‘3인 체제’ 드래곤포니, 변화의 파도 넘어 깊어진 음악 “믿음 더 커져” (종합)[DA인터뷰]",
-     "link": "https://sports.donga.com/ent/article/all/20261107/134982671/2"
+     "title": "이창훈, 송혜교와 과거 열애설 해명 “각자 연인 있었다”",
+     "link": "https://sports.donga.com/ent/article/all/20261107/134983360/1"
     },
     {
-     "src": "한겨레",
-     "title": "한국 펑크·솔 음악 선구자 사랑과 평화, 소극장 콘서트 ‘펑키 투나잇’ 연다",
-     "link": "https://www.hani.co.kr/arti/culture/music/1286078.html"
+     "src": "세계일보",
+     "title": "이창훈 \"송혜교와 열애설? '원조교제' 억지에 욕하기도\"",
+     "link": "https://www.segye.com/newsView/20261107502427"
     },
     {
-     "src": "한국경제",
-     "title": "KBS 단막극 음악 입혀 명맥 잇는다…'사운드:트랙'",
-     "link": "https://www.hankyung.com/article/202610278278H"
+     "src": "뉴시스",
+     "title": "이창훈 \"송혜교와 열애설? '원조교제' 억지에 욕하기도\"",
+     "link": "https://www.newsis.com/view/NISX20261107_0003858750"
+    },
+    {
+     "src": "조선일보",
+     "title": "이창훈, 송혜교와 열애설 부인 \"\"원조교제' 표현에 쌍욕\"..이젠 \"알아서 생각해\"  ('유정 그리고 주정')",
+     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/07/GBTGMMZSME2WIMRTGFRDMNDCGA/"
     }
    ]
   },
@@ -1238,72 +1238,6 @@
    ]
   },
   {
-   "kw": "송혜교와",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "세계일보",
-    "조선일보"
-   ],
-   "n": 4,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "이창훈, 송혜교와 과거 열애설 해명 “각자 연인 있었다”",
-     "link": "https://sports.donga.com/ent/article/all/20261107/134983360/1"
-    },
-    {
-     "src": "세계일보",
-     "title": "이창훈 \"송혜교와 열애설? '원조교제' 억지에 욕하기도\"",
-     "link": "https://www.segye.com/newsView/20261107502427"
-    },
-    {
-     "src": "뉴시스",
-     "title": "이창훈 \"송혜교와 열애설? '원조교제' 억지에 욕하기도\"",
-     "link": "https://www.newsis.com/view/NISX20261107_0003858750"
-    },
-    {
-     "src": "조선일보",
-     "title": "이창훈, 송혜교와 열애설 부인 \"\"원조교제' 표현에 쌍욕\"..이젠 \"알아서 생각해\"  ('유정 그리고 주정')",
-     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/07/GBTGMMZSME2WIMRTGFRDMNDCGA/"
-    }
-   ]
-  },
-  {
-   "kw": "달리기",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "조선일보",
-    "한겨레"
-   ],
-   "n": 4,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "씨엔블루, 윤상 ‘달리기’ 다시 부른다… 9일 스페셜 싱글 발매",
-     "link": "https://sports.donga.com/ent/article/all/20261107/134983058/1"
-    },
-    {
-     "src": "한겨레",
-     "title": "아버지에게 달리기 배우고…달린다, ‘다른 버전의 나’ 찾아 [.txt]",
-     "link": "https://www.hani.co.kr/arti/culture/book/1286046.html"
-    },
-    {
-     "src": "뉴시스",
-     "title": "씨엔블루, 윤상 '달리기' 리메이크…9일 발매",
-     "link": "https://www.newsis.com/view/NISX20261107_0003858820"
-    },
-    {
-     "src": "조선일보",
-     "title": "씨엔블루, 윤상 명곡 부른다..9일 스페셜 싱글 ‘달리기’ 발매",
-     "link": "https://www.chosun.com/entertainments/music/2026/11/07/GJTGEMRRHFSTCYTCGU3DAZLCMM/"
-    }
-   ]
-  },
-  {
    "kw": "없는",
    "nsrc": 4,
    "srcs": [
@@ -1333,6 +1267,72 @@
      "src": "조선일보",
      "title": "“옆 테이블 의자에 다리를'' 차예련, '증거 없는' 식당 목격담 또...프로필 삭제[Oh!쎈 이슈]",
      "link": "https://www.chosun.com/entertainments/broadcast/2026/11/07/GEZDSNBYMYZTONTEMQ4TKNBZMI/"
+    }
+   ]
+  },
+  {
+   "kw": "반대",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "세계일보",
+    "조선일보",
+    "한겨레"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "한겨레",
+     "title": "의사 딸이 음악PD 지망생과…부모 반대 클수록 ‘로미오와 줄리엣 효과’ [.txt]",
+     "link": "https://www.hani.co.kr/arti/culture/culture_general/1286250.html"
+    },
+    {
+     "src": "세계일보",
+     "title": "이태성, 이혼 후 만난 여친과 결별…\"상대 부모님이 교제 반대\"",
+     "link": "https://www.segye.com/newsView/20261107502911"
+    },
+    {
+     "src": "뉴시스",
+     "title": "이태성, 이혼 후 만난 여친과 결별…\"상대 부모님이 교제 반대\"",
+     "link": "https://www.newsis.com/view/NISX20261107_0003858754"
+    },
+    {
+     "src": "조선일보",
+     "title": "이태성, 이혼 후 만난 여친과 결별…\"상대 부모님이 교제 반대\"",
+     "link": "https://www.chosun.com/entertainments/2026/11/07/EPJ5LY2NMVA2BEJH6ZJHVJGSMA/"
+    }
+   ]
+  },
+  {
+   "kw": "발라드",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "세계일보",
+    "한국경제"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "한국경제",
+     "title": "진하고 깊게 우려낸 잔나비 감성…가을, 발라드 콘서트, 최고의 선택 [리뷰]",
+     "link": "https://www.hankyung.com/article/202610242385H"
+    },
+    {
+     "src": "세계일보",
+     "title": "아이비, 발라드 가수 4년 준비했는데…\"박진영 한마디에 인생 바뀌어\"",
+     "link": "https://www.segye.com/newsView/20261107503406"
+    },
+    {
+     "src": "SBS",
+     "title": "'우리들의 발라드2' 한로이, '만점자' 박예승 꺾는 대이변…5주 연속 월요 예능 1위",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008827682&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "뉴시스",
+     "title": "아이비, 발라드 가수 4년 준비했는데…\"박진영 한마디에 인생 바뀌어\"",
+     "link": "https://www.newsis.com/view/NISX20261107_0003858778"
     }
    ]
   }

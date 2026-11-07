@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-08 07:00",
+ "updated": "2026-11-08 08:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -231,6 +231,18 @@
    "expires": "2026-11-11"
   },
   {
+   "query": "복권",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 5000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-08",
+   "expires": "2026-11-11"
+  },
+  {
    "query": "김도영",
    "tier": "단기",
    "signal": [
@@ -267,7 +279,7 @@
    "expires": "2026-11-11"
   },
   {
-   "query": "복권",
+   "query": "노팅엄 포레스트 대 맨 시티",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -360,18 +372,6 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-07",
-   "expires": "2026-11-11"
-  },
-  {
-   "query": "노팅엄 포레스트 대 맨 시티",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 5000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-08",
    "expires": "2026-11-11"
   },
   {
@@ -735,6 +735,18 @@
    "expires": "2026-11-11"
   },
   {
+   "query": "박수홍",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-06",
+   "expires": "2026-11-11"
+  },
+  {
    "query": "시콜 스키 s 92",
    "tier": "단기",
    "signal": [
@@ -784,6 +796,18 @@
   },
   {
    "query": "유방암",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-08",
+   "expires": "2026-11-11"
+  },
+  {
+   "query": "발렌시아 대 레알 마드리드",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -1035,18 +1059,6 @@
    "expires": "2026-11-11"
   },
   {
-   "query": "박수홍",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 2000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-06",
-   "expires": "2026-11-11"
-  },
-  {
    "query": "김영익",
    "tier": "단기",
    "signal": [
@@ -1260,6 +1272,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-06",
+   "expires": "2026-11-11"
+  },
+  {
+   "query": "배드민턴",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-08",
    "expires": "2026-11-11"
   },
   {
@@ -2092,6 +2116,30 @@
   },
   {
    "query": "thời tiết ngày mai",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-08",
+   "expires": "2026-11-11"
+  },
+  {
+   "query": "psg 대 트루아",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-08",
+   "expires": "2026-11-11"
+  },
+  {
+   "query": "엔비디아",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -9435,6 +9483,19 @@
    "expires": "2026-11-12"
   },
   {
+   "query": "안세영 코리아오픈 결승 야마구치 상대, 54연승·시즌 11승 도전 경기 시간",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 3,
+   "status": "작성",
+   "page": "/issue/an-seyoung-korea-open-final-yamaguchi-1108/",
+   "registered": "2026-11-08",
+   "expires": "2026-11-15"
+  },
+  {
    "query": "폭락장 금융상식 30가지: 반대매매·서킷브레이커·물타기·ETF 쉬운 정리",
    "tier": "중기",
    "signal": [
@@ -9604,6 +9665,19 @@
    "expires": "2026-11-21"
   },
   {
+   "query": "2026 KGMA 첫날 수상자 명단, 리센느 4관왕·크래비티 3관왕과 둘째 날 일정",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 3,
+   "status": "작성",
+   "page": "/issue/kgma-2026-winners-day1-1108/",
+   "registered": "2026-11-08",
+   "expires": "2026-11-15"
+  },
+  {
    "query": "한경협 전기차 수출경쟁력 보고서 2030년 2.2조원 위험 추정 내용 정리",
    "tier": "중기",
    "signal": [
@@ -9706,6 +9780,19 @@
    "page": "/issue/police-chief-nominee-kim-jongcheol-1106/",
    "registered": "2026-11-06",
    "expires": "2026-11-20"
+  },
+  {
+   "query": "가능한 사랑 넷플릭스 공개, 이창동 감독 전도연 설경구 줄거리·러닝타임 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 3,
+   "status": "작성",
+   "page": "/issue/possible-love-netflix-lee-changdong-1108/",
+   "registered": "2026-11-08",
+   "expires": "2026-11-22"
   },
   {
    "query": "기금형 퇴직연금 뭐가 달라지나, 퇴직급여 사외적립 의무화 일정 정리",
