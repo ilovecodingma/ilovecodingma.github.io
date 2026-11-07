@@ -1,5 +1,5 @@
 {
- "at": "2026-11-07 23:06",
+ "at": "2026-11-07 23:30",
  "nitems": 511,
  "cands": [
   {
@@ -177,6 +177,40 @@
    ]
   },
   {
+   "kw": "이유",
+   "nsrc": 5,
+   "srcs": [
+    "동아일보",
+    "세계일보",
+    "조선일보",
+    "한국경제",
+    "헤럴드경제"
+   ],
+   "n": 10,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "오승근, 17년 공백 깬 이유…故 김자옥 “다시 노래해”",
+     "link": "https://sports.donga.com/ent/article/all/20261107/134983132/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "“사칭 피싱 메일에 해킹” 정주리, 유튜브 활동 중단했던 이유",
+     "link": "https://sports.donga.com/ent/article/all/20261106/134981228/1"
+    },
+    {
+     "src": "한국경제",
+     "title": "도파민의 시대…김종관표 '작고 사소한' 영화의 존재 이유 [씬터뷰]",
+     "link": "https://www.hankyung.com/article/202611045069H"
+    },
+    {
+     "src": "세계일보",
+     "title": "조현영, 딘딘과 재회 가능성 없는 이유 밝혔다…“키가 안 크더라”",
+     "link": "https://www.segye.com/newsView/20261106510421"
+    }
+   ]
+  },
+  {
    "kw": "만원",
    "nsrc": 5,
    "srcs": [
@@ -211,36 +245,36 @@
    ]
   },
   {
-   "kw": "이유",
+   "kw": "연기",
    "nsrc": 5,
    "srcs": [
+    "뉴시스",
     "동아일보",
-    "세계일보",
+    "연합뉴스",
     "조선일보",
-    "한국경제",
-    "헤럴드경제"
+    "한국경제"
    ],
-   "n": 9,
+   "n": 7,
    "headlines": [
     {
-     "src": "동아일보",
-     "title": "오승근, 17년 공백 깬 이유…故 김자옥 “다시 노래해”",
-     "link": "https://sports.donga.com/ent/article/all/20261107/134983132/1"
+     "src": "연합뉴스",
+     "title": "캣츠아이, 북미 투어 잇단 연기…\"메간 뇌진탕으로 회복 중\"",
+     "link": "https://www.yna.co.kr/view/AKR20261106086400005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "캣츠아이, 美 디트로이트 공연 당일 연기…\"메간 건강 문제\"",
+     "link": "https://www.yna.co.kr/view/AKR20261104156400005"
     },
     {
      "src": "동아일보",
-     "title": "“사칭 피싱 메일에 해킹” 정주리, 유튜브 활동 중단했던 이유",
-     "link": "https://sports.donga.com/ent/article/all/20261106/134981228/1"
+     "title": "주지훈, 연기 혹평 대처법 공개 “극찬도 악평도 빼라”",
+     "link": "https://sports.donga.com/ent/article/all/20261107/134982944/1"
     },
     {
      "src": "한국경제",
-     "title": "도파민의 시대…김종관표 '작고 사소한' 영화의 존재 이유 [씬터뷰]",
-     "link": "https://www.hankyung.com/article/202611045069H"
-    },
-    {
-     "src": "세계일보",
-     "title": "조현영, 딘딘과 재회 가능성 없는 이유 밝혔다…“키가 안 크더라”",
-     "link": "https://www.segye.com/newsView/20261106510421"
+     "title": "'재혼황후' 이종석, 국내 최초 새 연기 \"제가 좀 새 상…사람으로 변할 때 나체로 등장\"",
+     "link": "https://www.hankyung.com/article/202611032589H"
     }
    ]
   },
@@ -881,39 +915,6 @@
    ]
   },
   {
-   "kw": "연기",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "연합뉴스",
-    "한국경제"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "캣츠아이, 북미 투어 잇단 연기…\"메간 뇌진탕으로 회복 중\"",
-     "link": "https://www.yna.co.kr/view/AKR20261106086400005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "캣츠아이, 美 디트로이트 공연 당일 연기…\"메간 건강 문제\"",
-     "link": "https://www.yna.co.kr/view/AKR20261104156400005"
-    },
-    {
-     "src": "동아일보",
-     "title": "주지훈, 연기 혹평 대처법 공개 “극찬도 악평도 빼라”",
-     "link": "https://sports.donga.com/ent/article/all/20261107/134982944/1"
-    },
-    {
-     "src": "한국경제",
-     "title": "'재혼황후' 이종석, 국내 최초 새 연기 \"제가 좀 새 상…사람으로 변할 때 나체로 등장\"",
-     "link": "https://www.hankyung.com/article/202611032589H"
-    }
-   ]
-  },
-  {
    "kw": "내달",
    "nsrc": 4,
    "srcs": [
@@ -1009,6 +1010,39 @@
      "src": "뉴시스",
      "title": "신승환, '20㎏ 감량'까지 1년…도시락 5개로 지킨 식단",
      "link": "https://www.newsis.com/view/NISX20261106_0003857439"
+    }
+   ]
+  },
+  {
+   "kw": "연상",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "조선일보",
+    "한국경제"
+   ],
+   "n": 6,
+   "headlines": [
+    {
+     "src": "한국경제",
+     "title": "서인영, 12월 26일 재혼…신랑은 6세 연상 NP 최지훈 대표",
+     "link": "https://www.hankyung.com/article/202611057401H"
+    },
+    {
+     "src": "SBS",
+     "title": "서인영, 12월 26일 6살 연상 사업가와 재혼…\"교회서 스몰 웨딩\"",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008831629&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "뉴시스",
+     "title": "'돌싱' 이태성, 1살 연상 수의사와 결별…\"좋은 친구로 남기로\"",
+     "link": "https://www.newsis.com/view/NISX20261106_0003858659"
+    },
+    {
+     "src": "뉴시스",
+     "title": "류효영, 8살 연상 이태성에 돌직구 고백…\"호감 있어, 남자로서 좋아\"",
+     "link": "https://www.newsis.com/view/NISX20261106_0003858682"
     }
    ]
   },
@@ -1178,72 +1212,6 @@
    ]
   },
   {
-   "kw": "최우식",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "세계일보",
-    "조선일보"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "최우식 승무원 갑질 논란 반박 “허위사실 유포 법적 조치” [전문]",
-     "link": "https://sports.donga.com/ent/article/all/20261106/134981685/1"
-    },
-    {
-     "src": "세계일보",
-     "title": "최우식 측, 승무원 갑질 의혹에 입 열었다…“허위사실 유포 법적 대응”",
-     "link": "https://www.segye.com/newsView/20261106515355"
-    },
-    {
-     "src": "뉴시스",
-     "title": "최우식 측, '기내 태도 루머' 법적 대응…\"선처 없다\"",
-     "link": "https://www.newsis.com/view/NISX20261106_0003858309"
-    },
-    {
-     "src": "조선일보",
-     "title": "'기내 짜증'부터 '인종차별'까지…최우식,  또 겪은 '억측 잔혹사' [Oh!쎈 이슈]",
-     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/07/ME3TQMBYGJQTCNDCG4YGGOLEGQ/"
-    }
-   ]
-  },
-  {
-   "kw": "연상",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "조선일보",
-    "한국경제"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "한국경제",
-     "title": "서인영, 12월 26일 재혼…신랑은 6세 연상 NP 최지훈 대표",
-     "link": "https://www.hankyung.com/article/202611057401H"
-    },
-    {
-     "src": "SBS",
-     "title": "서인영, 12월 26일 6살 연상 사업가와 재혼…\"교회서 스몰 웨딩\"",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008831629&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "뉴시스",
-     "title": "'돌싱' 이태성, 1살 연상 수의사와 결별…\"좋은 친구로 남기로\"",
-     "link": "https://www.newsis.com/view/NISX20261106_0003858659"
-    },
-    {
-     "src": "뉴시스",
-     "title": "류효영, 8살 연상 이태성에 돌직구 고백…\"호감 있어, 남자로서 좋아\"",
-     "link": "https://www.newsis.com/view/NISX20261106_0003858682"
-    }
-   ]
-  },
-  {
    "kw": "그리",
    "nsrc": 4,
    "srcs": [
@@ -1339,6 +1307,39 @@
      "src": "뉴시스",
      "title": "'두번째 시그널', 내달 7일 첫 방송…\"조진웅 문제 옹호 아냐\"",
      "link": "https://www.newsis.com/view/NISX20261106_0003858054"
+    }
+   ]
+  },
+  {
+   "kw": "모델",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "연합뉴스",
+    "조선일보"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "배우 도상우·모델 박지혜, 내년 2월 결혼",
+     "link": "https://www.yna.co.kr/view/AKR20261105173700005"
+    },
+    {
+     "src": "SBS",
+     "title": "배우 도상우, 모델 박지혜와 내년 2월 결혼…로맨틱 프러포즈 공개",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008833895&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "뉴시스",
+     "title": "추사랑, 키 175㎝ 넘는 근황 \"모델 엄마보다 더 커\"",
+     "link": "https://www.newsis.com/view/NISX20261107_0003858735"
+    },
+    {
+     "src": "조선일보",
+     "title": "추사랑, 키 175㎝ 넘는 근황 \"모델 엄마보다 더 커\"",
+     "link": "https://www.chosun.com/entertainments/2026/11/07/3MQDAFCMRNH75LPTSDX2Q3NIL4/"
     }
    ]
   }
