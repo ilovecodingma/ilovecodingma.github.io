@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-07 16:00",
+ "updated": "2026-11-07 17:00",
  "items": [
   {
    "query": "kt 대 삼성",
@@ -159,6 +159,18 @@
    "expires": "2026-11-10"
   },
   {
+   "query": "대치동 은마아파트",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 10000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-07",
+   "expires": "2026-11-10"
+  },
+  {
    "query": "잠수함",
    "tier": "단기",
    "signal": [
@@ -288,6 +300,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-06",
+   "expires": "2026-11-10"
+  },
+  {
+   "query": "삼전 닉스",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 5000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-07",
    "expires": "2026-11-10"
   },
   {
@@ -940,18 +964,6 @@
   },
   {
    "query": "치지직",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 2000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-07",
-   "expires": "2026-11-10"
-  },
-  {
-   "query": "삼전 닉스",
    "tier": "단기",
    "signal": [
     "구글트렌드"
