@@ -1,14 +1,14 @@
 {
  "date": "2026-11-07",
- "updated": "2026-11-07 11:50",
+ "updated": "2026-11-07 12:50",
  "sites": 13,
- "npost": 2515,
+ "npost": 2508,
  "note": "출처(커뮤니티)별 집계예요. 작성자·연령·성별 정보는 수집하지 않아요. posts 는 이슈별로 뽑힌 일부라 전체 글 수가 아니에요.",
  "sources": [
   {
    "name": "MLB파크",
-   "np": 16,
-   "nc": 1074,
+   "np": 17,
+   "nc": 1214,
    "topics": [
     {
      "t": "해외서 조회수 터진 한국 길거리(?) 음식..",
@@ -19,8 +19,8 @@
      "issue_nc": 190,
      "kw": [
       "한국",
-      "음식",
-      "길거리"
+      "길거리",
+      "음식"
      ],
      "top_post": {
       "t": "해외서 조회수 터진 한국 길거리(?) 음식..",
@@ -36,9 +36,9 @@
      "issue_np": 3,
      "issue_nc": 186,
      "kw": [
-      "TVN",
+      "시그널",
       "조진웅",
-      "시그널"
+      "TVN"
      ],
      "top_post": {
       "t": "조진웅 출연 시그널2 tvN의 공식 입장문",
@@ -54,8 +54,8 @@
      "issue_np": 2,
      "issue_nc": 144,
      "kw": [
-      "민주당",
-      "의원"
+      "의원",
+      "민주당"
      ],
      "top_post": {
       "t": "민주당 상원의원 이거 구구절절 맞는말 아님?",
@@ -64,17 +64,36 @@
      }
     },
     {
+     "t": "황우석, 아랍에미리트 국적 취득…'대한민국 국적 상실'",
+     "nsite": 3,
+     "np_here": 2,
+     "nc_here": 130,
+     "issue_np": 4,
+     "issue_nc": 130,
+     "kw": [
+      "국적",
+      "황우석",
+      "취득",
+      "아랍에미리트"
+     ],
+     "top_post": {
+      "t": "황우석, 아랍에미리트 국적 취득…'대한민국 국적 상실'",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611070119944902&m=view",
+      "nc": 106
+     }
+    },
+    {
      "t": "미국 데이터 센터 소음수준 ㄷㄷㄷ",
      "nsite": 4,
      "np_here": 1,
      "nc_here": 126,
      "issue_np": 12,
-     "issue_nc": 145,
+     "issue_nc": 154,
      "kw": [
       "센터",
       "데이터",
       "미국",
-      "소음"
+      "규제"
      ],
      "top_post": {
       "t": "미국 데이터 센터 소음수준 ㄷㄷㄷ",
@@ -83,22 +102,22 @@
      }
     },
     {
-     "t": "황우석, 아랍에미리트 국적 취득…'대한민국 국적 상실'",
-     "nsite": 3,
-     "np_here": 2,
-     "nc_here": 111,
-     "issue_np": 4,
-     "issue_nc": 111,
+     "t": "중국 김여사들 접촉사고 난투극",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 121,
+     "issue_np": 2,
+     "issue_nc": 124,
      "kw": [
-      "취득",
-      "황우석",
-      "국적",
-      "대한민국"
+      "난투극",
+      "여사",
+      "사고",
+      "접촉"
      ],
      "top_post": {
-      "t": "황우석, 아랍에미리트 국적 취득…'대한민국 국적 상실'",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611070119944902&m=view",
-      "nc": 87
+      "t": "중국 김여사들 접촉사고 난투극",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611070119944653&m=view",
+      "nc": 121
      }
     },
     {
@@ -107,10 +126,10 @@
      "np_here": 1,
      "nc_here": 93,
      "issue_np": 2,
-     "issue_nc": 139,
+     "issue_nc": 140,
      "kw": [
-      "주식",
-      "폭락"
+      "폭락",
+      "주식"
      ],
      "top_post": {
       "t": "주식 대폭락에 대한 트럼프 발언 ㄷㄷㄷ",
@@ -126,38 +145,21 @@
      "issue_np": 3,
      "issue_nc": 68,
      "kw": [
-      "특징",
-      "여자"
+      "여자",
+      "특징"
      ],
      "top_post": {
       "t": "요즘 여자들 패션 특징",
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611060119926371&m=view",
       "nc": 66
      }
-    },
-    {
-     "t": "가스비 아깝다고 빨리 씻으라는 여친",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 59,
-     "issue_np": 3,
-     "issue_nc": 62,
-     "kw": [
-      "가스",
-      "여친"
-     ],
-     "top_post": {
-      "t": "가스비 아깝다고 빨리 씻으라는 여친",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611060119928582&m=view",
-      "nc": 59
-     }
     }
    ]
   },
   {
    "name": "개드립",
-   "np": 10,
-   "nc": 273,
+   "np": 11,
+   "nc": 266,
    "topics": [
     {
      "t": "드라마 업계 \"K-드라마 산업 붕괴 위기...국가가 지원해야\"",
@@ -167,9 +169,9 @@
      "issue_np": 3,
      "issue_nc": 45,
      "kw": [
-      "업계",
       "국가",
-      "위기",
+      "업계",
+      "붕괴",
       "지원"
      ],
      "top_post": {
@@ -184,11 +186,11 @@
      "np_here": 1,
      "nc_here": 39,
      "issue_np": 2,
-     "issue_nc": 165,
+     "issue_nc": 170,
      "kw": [
-      "북한",
-      "공개",
       "교수형",
+      "아기",
+      "공개",
       "집행"
      ],
      "top_post": {
@@ -198,28 +200,11 @@
      }
     },
     {
-     "t": "남친집 개편하네",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 37,
-     "issue_np": 4,
-     "issue_nc": 40,
-     "kw": [
-      "개편",
-      "남친"
-     ],
-     "top_post": {
-      "t": "남친집 개편하네",
-      "u": "https://www.dogdrip.net/dogdrip/733409964?sort_index=popular&page=1",
-      "nc": 37
-     }
-    },
-    {
      "t": "주식시장은 이재명 잘못맞습니다",
      "nsite": 6,
      "np_here": 1,
      "nc_here": 33,
-     "issue_np": 10,
+     "issue_np": 11,
      "issue_nc": 103,
      "kw": [
       "주식",
@@ -234,6 +219,25 @@
      }
     },
     {
+     "t": "미국 데이터 센터 소음수준 ㄷㄷㄷ",
+     "nsite": 4,
+     "np_here": 2,
+     "nc_here": 28,
+     "issue_np": 12,
+     "issue_nc": 154,
+     "kw": [
+      "센터",
+      "데이터",
+      "미국",
+      "규제"
+     ],
+     "top_post": {
+      "t": "미국인들 중 데이터센터 반대 여론이 거센 이유",
+      "u": "https://www.dogdrip.net/dogdrip/733441679?sort_index=popular&page=1",
+      "nc": 19
+     }
+    },
+    {
      "t": "응급환자 1위 마라톤, '뇌가 익기' 전에 멈춰라",
      "nsite": 3,
      "np_here": 1,
@@ -242,8 +246,8 @@
      "issue_nc": 28,
      "kw": [
       "응급",
-      "환자",
-      "마라톤"
+      "마라톤",
+      "환자"
      ],
      "top_post": {
       "t": "응급환자 1위 마라톤, '뇌가 익기' 전에 멈춰라",
@@ -277,9 +281,9 @@
      "issue_nc": 28,
      "kw": [
       "캄보디아",
+      "조직원",
       "피싱",
-      "사기단",
-      "조직원"
+      "여성"
      ],
      "top_post": {
       "t": "캄보디아 64억 사기친 여성 조직원 얼굴 ㄷㄷㄷ",
@@ -288,22 +292,82 @@
      }
     },
     {
-     "t": "미국 데이터 센터 소음수준 ㄷㄷㄷ",
-     "nsite": 4,
+     "t": "한국은 일본 식민지였는데 왜 일본어 안 써?",
+     "nsite": 3,
      "np_here": 1,
-     "nc_here": 19,
-     "issue_np": 12,
-     "issue_nc": 145,
+     "nc_here": 22,
+     "issue_np": 4,
+     "issue_nc": 22,
      "kw": [
-      "센터",
-      "데이터",
-      "미국",
-      "소음"
+      "한국",
+      "일본",
+      "식민지"
      ],
      "top_post": {
-      "t": "미국인들 중 데이터센터 반대 여론이 거센 이유",
-      "u": "https://www.dogdrip.net/dogdrip/733441679?sort_index=popular&page=1",
-      "nc": 19
+      "t": "일본여자가 분석한 한국여자",
+      "u": "https://www.dogdrip.net/dogdrip/733600133?sort_index=popular&page=1",
+      "nc": 22
+     }
+    }
+   ]
+  },
+  {
+   "name": "인스티즈",
+   "np": 3,
+   "nc": 218,
+   "topics": [
+    {
+     "t": "북한, 두 살 아기에 공개 교수형 집행 \"삼대멸족”",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 131,
+     "issue_np": 2,
+     "issue_nc": 170,
+     "kw": [
+      "교수형",
+      "아기",
+      "공개",
+      "집행"
+     ],
+     "top_post": {
+      "t": "북한, 두 살 아기에 공개 교수형 집행 \"삼대멸족”",
+      "u": "https://www.instiz.net/pt/7922776?green=1",
+      "nc": 131
+     }
+    },
+    {
+     "t": "주식 대폭락에 대한 트럼프 발언 ㄷㄷㄷ",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 47,
+     "issue_np": 2,
+     "issue_nc": 140,
+     "kw": [
+      "폭락",
+      "주식"
+     ],
+     "top_post": {
+      "t": "주식 개폭락 중인 이유",
+      "u": "https://www.instiz.net/pt/7922910?green=1",
+      "nc": 47
+     }
+    },
+    {
+     "t": "하이닉스 300근처에서 물린 사람들은 걱정 안해도 됨",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 40,
+     "issue_np": 3,
+     "issue_nc": 40,
+     "kw": [
+      "하이닉스",
+      "걱정",
+      "근처"
+     ],
+     "top_post": {
+      "t": "하이닉스 300근처에서 물린 사람들은 걱정 안해도 됨",
+      "u": "https://www.instiz.net/pt/7922773?green=1",
+      "nc": 40
      }
     }
    ]
@@ -311,15 +375,15 @@
   {
    "name": "클리앙",
    "np": 7,
-   "nc": 211,
+   "nc": 212,
    "topics": [
     {
      "t": "이재명 대통령에대한 페이스북 퍼온 글입니다.",
      "nsite": 2,
      "np_here": 3,
-     "nc_here": 127,
+     "nc_here": 128,
      "issue_np": 4,
-     "issue_nc": 127,
+     "issue_nc": 128,
      "kw": [
       "이재명",
       "대통령"
@@ -335,7 +399,7 @@
      "nsite": 6,
      "np_here": 3,
      "nc_here": 67,
-     "issue_np": 10,
+     "issue_np": 11,
      "issue_nc": 103,
      "kw": [
       "주식",
@@ -357,76 +421,15 @@
      "issue_np": 3,
      "issue_nc": 17,
      "kw": [
-      "의무",
+      "면제",
       "담보",
-      "비율",
-      "면제"
+      "의무",
+      "비율"
      ],
      "top_post": {
       "t": "담보비율 유지의무 한시적 면제도 바로 엉망으로…",
       "u": "https://www.clien.net/service/board/park/19288706?od=T33&po=0&category=0&groupCd=clien_all",
       "nc": 17
-     }
-    }
-   ]
-  },
-  {
-   "name": "인스티즈",
-   "np": 3,
-   "nc": 211,
-   "topics": [
-    {
-     "t": "북한, 두 살 아기에 공개 교수형 집행 \"삼대멸족”",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 126,
-     "issue_np": 2,
-     "issue_nc": 165,
-     "kw": [
-      "북한",
-      "공개",
-      "교수형",
-      "집행"
-     ],
-     "top_post": {
-      "t": "북한, 두 살 아기에 공개 교수형 집행 \"삼대멸족”",
-      "u": "https://www.instiz.net/pt/7922776?green=1",
-      "nc": 126
-     }
-    },
-    {
-     "t": "주식 대폭락에 대한 트럼프 발언 ㄷㄷㄷ",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 46,
-     "issue_np": 2,
-     "issue_nc": 139,
-     "kw": [
-      "주식",
-      "폭락"
-     ],
-     "top_post": {
-      "t": "주식 개폭락 중인 이유",
-      "u": "https://www.instiz.net/pt/7922910?green=1",
-      "nc": 46
-     }
-    },
-    {
-     "t": "하이닉스 300근처에서 물린 사람들은 걱정 안해도 됨",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 39,
-     "issue_np": 3,
-     "issue_nc": 39,
-     "kw": [
-      "하이닉스",
-      "걱정",
-      "근처"
-     ],
-     "top_post": {
-      "t": "하이닉스 300근처에서 물린 사람들은 걱정 안해도 됨",
-      "u": "https://www.instiz.net/pt/7922773?green=1",
-      "nc": 39
      }
     }
    ]
@@ -444,9 +447,9 @@
      "issue_np": 3,
      "issue_nc": 31,
      "kw": [
-      "출국",
-      "장애",
       "학대",
+      "출국",
+      "금지",
       "유튜버"
      ],
      "top_post": {
@@ -467,7 +470,7 @@
      "nsite": 6,
      "np_here": 1,
      "nc_here": 3,
-     "issue_np": 10,
+     "issue_np": 11,
      "issue_nc": 103,
      "kw": [
       "주식",
@@ -478,6 +481,25 @@
      "top_post": {
       "t": "우울한 주식시장....",
       "u": "https://www.bobaedream.co.kr/view?code=best&No=1045703&vdate=",
+      "nc": 3
+     }
+    },
+    {
+     "t": "한국 포차 문화가 신기한 외국인",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 3,
+     "issue_np": 4,
+     "issue_nc": 17,
+     "kw": [
+      "한국",
+      "외국인",
+      "문화",
+      "방문"
+     ],
+     "top_post": {
+      "t": "한국 포차 문화가 신기한 외국인",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1045867&vdate=",
       "nc": 3
      }
     },
@@ -499,23 +521,6 @@
      }
     },
     {
-     "t": "남친집 개편하네",
-     "nsite": 3,
-     "np_here": 2,
-     "nc_here": 3,
-     "issue_np": 4,
-     "issue_nc": 40,
-     "kw": [
-      "개편",
-      "남친"
-     ],
-     "top_post": {
-      "t": "남친 집 개편하네",
-      "u": "https://www.bobaedream.co.kr/view?code=best&No=1045653&vdate=",
-      "nc": 3
-     }
-    },
-    {
      "t": "캄보디아 피싱 사기단 여성 조직원",
      "nsite": 3,
      "np_here": 1,
@@ -524,9 +529,9 @@
      "issue_nc": 28,
      "kw": [
       "캄보디아",
+      "조직원",
       "피싱",
-      "사기단",
-      "조직원"
+      "여성"
      ],
      "top_post": {
       "t": "캄보디아 피싱 사기단 검거 및 공개",
@@ -543,9 +548,9 @@
      "issue_nc": 3,
      "kw": [
       "박진영",
-      "주식",
       "JYP",
-      "주가"
+      "주가",
+      "하나님"
      ],
      "top_post": {
       "t": "박진영의 주식투자론",
@@ -571,20 +576,21 @@
      }
     },
     {
-     "t": "한국 포차 문화가 신기한 외국인",
-     "nsite": 3,
+     "t": "중국 김여사들 접촉사고 난투극",
+     "nsite": 2,
      "np_here": 1,
      "nc_here": 3,
-     "issue_np": 3,
-     "issue_nc": 3,
+     "issue_np": 2,
+     "issue_nc": 124,
      "kw": [
-      "한국",
-      "외국인",
-      "문화"
+      "난투극",
+      "여사",
+      "사고",
+      "접촉"
      ],
      "top_post": {
-      "t": "한국 포차 문화가 신기한 외국인",
-      "u": "https://www.bobaedream.co.kr/view?code=best&No=1045867&vdate=",
+      "t": "중국 김여사들 접촉사고 후 난투극",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1045869&vdate=",
       "nc": 3
      }
     },
@@ -620,8 +626,8 @@
      "issue_np": 3,
      "issue_nc": 68,
      "kw": [
-      "특징",
-      "여자"
+      "여자",
+      "특징"
      ],
      "top_post": {
       "t": "그 여자 특징 뭐야?",
@@ -641,7 +647,7 @@
      "nsite": 6,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 10,
+     "issue_np": 11,
      "issue_nc": 103,
      "kw": [
       "주식",
@@ -656,17 +662,36 @@
      }
     },
     {
+     "t": "옥주현 사태로 부동산규제의 순기능을 깨닫기 시작한 사람들",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 16,
+     "kw": [
+      "사태",
+      "옥주현",
+      "부동산",
+      "규제"
+     ],
+     "top_post": {
+      "t": "옥주현 사태로 부동산규제의 순기능을 깨닫기 시작한 사람들",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=476425&_dcbest=1&page=1",
+      "nc": 0
+     }
+    },
+    {
      "t": "황우석, 아랍에미리트 국적 취득…'대한민국 국적 상실'",
      "nsite": 3,
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 4,
-     "issue_nc": 111,
+     "issue_nc": 130,
      "kw": [
-      "취득",
-      "황우석",
       "국적",
-      "대한민국"
+      "황우석",
+      "취득",
+      "아랍에미리트"
      ],
      "top_post": {
       "t": "황우석 박사, 지난 4월 아랍에미리트 국적 취득 대한민국 국적",
@@ -699,9 +724,9 @@
      "issue_np": 3,
      "issue_nc": 31,
      "kw": [
-      "출국",
-      "장애",
       "학대",
+      "출국",
+      "금지",
       "유튜버"
      ],
      "top_post": {
@@ -711,31 +736,12 @@
      }
     },
     {
-     "t": "옥주현 사태로 부동산규제의 순기능을 깨닫기 시작한 사람들",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 16,
-     "kw": [
-      "부동산",
-      "사태",
-      "옥주현",
-      "규제"
-     ],
-     "top_post": {
-      "t": "옥주현 사태로 부동산규제의 순기능을 깨닫기 시작한 사람들",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=476425&_dcbest=1&page=1",
-      "nc": 0
-     }
-    },
-    {
      "t": "한국은 일본 식민지였는데 왜 일본어 안 써?",
      "nsite": 3,
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 4,
-     "issue_nc": 15,
+     "issue_nc": 22,
      "kw": [
       "한국",
       "일본",
@@ -757,8 +763,8 @@
      "kw": [
       "현수막",
       "트레이너",
-      "의견",
-      "사건"
+      "사건",
+      "의견"
      ],
      "top_post": {
       "t": "념글 현수막 트레이너 근황ㅋㅋㅋㅋㅋ",
@@ -775,9 +781,9 @@
      "issue_nc": 3,
      "kw": [
       "박진영",
-      "주식",
       "JYP",
-      "주가"
+      "주가",
+      "하나님"
      ],
      "top_post": {
       "t": "박진영 “주식? 하나님이 다 해주셔”…JYP 주가는 55%↓",
@@ -798,12 +804,12 @@
      "np_here": 2,
      "nc_here": 0,
      "issue_np": 12,
-     "issue_nc": 145,
+     "issue_nc": 154,
      "kw": [
       "센터",
       "데이터",
       "미국",
-      "소음"
+      "규제"
      ],
      "top_post": {
       "t": "미국은 이딴식으로 데이터 센터 지어놓고 역풍으로 규제 안 당하는걸 바라는게.이상한거 아니냐.. -_-",
@@ -836,9 +842,9 @@
      "issue_np": 3,
      "issue_nc": 45,
      "kw": [
-      "업계",
       "국가",
-      "위기",
+      "업계",
+      "붕괴",
       "지원"
      ],
      "top_post": {
@@ -853,7 +859,7 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 3,
-     "issue_nc": 39,
+     "issue_nc": 40,
      "kw": [
       "하이닉스",
       "걱정",
@@ -891,8 +897,8 @@
      "issue_np": 4,
      "issue_nc": 3,
      "kw": [
-      "네이버",
       "페이",
+      "네이버",
       "랜덤"
      ],
      "top_post": {
@@ -922,25 +928,44 @@
   },
   {
    "name": "루리웹",
-   "np": 22,
+   "np": 20,
    "nc": 0,
    "topics": [
     {
      "t": "미국 데이터 센터 소음수준 ㄷㄷㄷ",
      "nsite": 4,
-     "np_here": 2,
+     "np_here": 1,
      "nc_here": 0,
      "issue_np": 12,
-     "issue_nc": 145,
+     "issue_nc": 154,
      "kw": [
       "센터",
       "데이터",
       "미국",
-      "소음"
+      "규제"
      ],
      "top_post": {
-      "t": "버니 샌더스 \"미국 전역의 데이터센터 건설 전부 중단시킬것\"",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77287227?m=all&t=now",
+      "t": "미국 데이터센터 규제 반대여론 보면 웃긴게",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77290515?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "한국 포차 문화가 신기한 외국인",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 17,
+     "kw": [
+      "한국",
+      "외국인",
+      "문화",
+      "방문"
+     ],
+     "top_post": {
+      "t": "게임에 한국 문화 적용하는 또 다른 방법",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77301556?m=all&t=now",
       "nc": 0
      }
     },
@@ -950,12 +975,12 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 4,
-     "issue_nc": 111,
+     "issue_nc": 130,
      "kw": [
-      "취득",
-      "황우석",
       "국적",
-      "대한민국"
+      "황우석",
+      "취득",
+      "아랍에미리트"
      ],
      "top_post": {
       "t": "황우석 박사 UAE 국적 취득이 엄청난 일인 이유.uae",
@@ -971,8 +996,8 @@
      "issue_np": 3,
      "issue_nc": 68,
      "kw": [
-      "특징",
-      "여자"
+      "여자",
+      "특징"
      ],
      "top_post": {
       "t": "혼자 사는 여자들 특징",
@@ -988,9 +1013,9 @@
      "issue_np": 3,
      "issue_nc": 45,
      "kw": [
-      "업계",
       "국가",
-      "위기",
+      "업계",
+      "붕괴",
       "지원"
      ],
      "top_post": {
@@ -1000,29 +1025,12 @@
      }
     },
     {
-     "t": "남친집 개편하네",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 40,
-     "kw": [
-      "개편",
-      "남친"
-     ],
-     "top_post": {
-      "t": "남친 집 개편하네",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77292501?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
      "t": "하이닉스 300근처에서 물린 사람들은 걱정 안해도 됨",
      "nsite": 3,
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 3,
-     "issue_nc": 39,
+     "issue_nc": 40,
      "kw": [
       "하이닉스",
       "걱정",
@@ -1042,9 +1050,9 @@
      "issue_np": 3,
      "issue_nc": 31,
      "kw": [
-      "출국",
-      "장애",
       "학대",
+      "출국",
+      "금지",
       "유튜버"
      ],
      "top_post": {
@@ -1062,8 +1070,8 @@
      "issue_nc": 28,
      "kw": [
       "응급",
-      "환자",
-      "마라톤"
+      "마라톤",
+      "환자"
      ],
      "top_post": {
       "t": "응급환자 1위 마라톤, '뇌가 익기' 전에 멈춰라",
@@ -1079,6 +1087,44 @@
    "nc": 0,
    "topics": [
     {
+     "t": "한국 포차 문화가 신기한 외국인",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 17,
+     "kw": [
+      "한국",
+      "외국인",
+      "문화",
+      "방문"
+     ],
+     "top_post": {
+      "t": "한국을 방문하고 별로였다는 외국인 ㅎ ㄷ ㄷ",
+      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=676938",
+      "nc": 0
+     }
+    },
+    {
+     "t": "옥주현 사태로 부동산규제의 순기능을 깨닫기 시작한 사람들",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 16,
+     "kw": [
+      "사태",
+      "옥주현",
+      "부동산",
+      "규제"
+     ],
+     "top_post": {
+      "t": "부동산 추가규제 ㄷㄷ",
+      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=676885",
+      "nc": 0
+     }
+    },
+    {
      "t": "캄보디아 피싱 사기단 여성 조직원",
      "nsite": 3,
      "np_here": 1,
@@ -1087,9 +1133,9 @@
      "issue_nc": 28,
      "kw": [
       "캄보디아",
+      "조직원",
       "피싱",
-      "사기단",
-      "조직원"
+      "여성"
      ],
      "top_post": {
       "t": "캄보디아 피싱 사기단 여성 조직원",
@@ -1105,51 +1151,14 @@
      "issue_np": 3,
      "issue_nc": 17,
      "kw": [
-      "의무",
+      "면제",
       "담보",
-      "비율",
-      "면제"
+      "의무",
+      "비율"
      ],
      "top_post": {
       "t": "[속보] 정부, 주식 신용융자 담보비율 의무 3개월 한시 면제",
       "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=676880",
-      "nc": 0
-     }
-    },
-    {
-     "t": "옥주현 사태로 부동산규제의 순기능을 깨닫기 시작한 사람들",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 16,
-     "kw": [
-      "부동산",
-      "사태",
-      "옥주현",
-      "규제"
-     ],
-     "top_post": {
-      "t": "부동산 추가규제 ㄷㄷ",
-      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=676885",
-      "nc": 0
-     }
-    },
-    {
-     "t": "한국 포차 문화가 신기한 외국인",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 3,
-     "kw": [
-      "한국",
-      "외국인",
-      "문화"
-     ],
-     "top_post": {
-      "t": "한국을 방문하고 별로였다는 외국인 ㅎ ㄷ ㄷ",
-      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=676938",
       "nc": 0
      }
     },
@@ -1161,9 +1170,9 @@
      "issue_np": 3,
      "issue_nc": 186,
      "kw": [
-      "TVN",
+      "시그널",
       "조진웅",
-      "시그널"
+      "TVN"
      ],
      "top_post": {
       "t": "“조진웅 AI교체 실패”, tvN 두번째 시그널 12월 7일 첫방 ㄷㄷㄷ",
@@ -1179,8 +1188,8 @@
      "issue_np": 2,
      "issue_nc": 144,
      "kw": [
-      "민주당",
-      "의원"
+      "의원",
+      "민주당"
      ],
      "top_post": {
       "t": "이번에 당선된 민주당의원 ㅎㄷ ㄷ ㄷ ㄷ",
@@ -1201,7 +1210,7 @@
      "np_here": 2,
      "nc_here": 0,
      "issue_np": 4,
-     "issue_nc": 15,
+     "issue_nc": 22,
      "kw": [
       "한국",
       "일본",
