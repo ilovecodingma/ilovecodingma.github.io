@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-07 13:00",
+ "updated": "2026-11-07 14:00",
  "items": [
   {
    "query": "kt 대 삼성",
@@ -375,6 +375,18 @@
    "expires": "2026-11-10"
   },
   {
+   "query": "잠수함",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-05",
+   "expires": "2026-11-10"
+  },
+  {
    "query": "장유빈",
    "tier": "단기",
    "signal": [
@@ -444,18 +456,6 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-04",
-   "expires": "2026-11-10"
-  },
-  {
-   "query": "잠수함",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 2000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-05",
    "expires": "2026-11-10"
   },
   {
@@ -9691,6 +9691,19 @@
    "page": "/issue/minho-marathon-disqualification-claim/",
    "registered": "2026-11-03",
    "expires": "2026-11-10"
+  },
+  {
+   "query": "미래에셋증권 해킹 개인정보 유출 고객 3,800명 임직원 35,255명, 어떤 정보가 빠져나갔나?",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 2,
+   "status": "작성",
+   "page": "/issue/mirae-asset-securities-data-breach-1107/",
+   "registered": "2026-11-07",
+   "expires": "2026-11-14"
   },
   {
    "query": "마운자로 위고비 건강보험 급여 검토·허가 대상 정리",
