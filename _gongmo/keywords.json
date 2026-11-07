@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-08 06:00",
+ "updated": "2026-11-08 07:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -9433,6 +9433,19 @@
    "page": "/issue/amd-q3-2026-results-1105/",
    "registered": "2026-11-05",
    "expires": "2026-11-12"
+  },
+  {
+   "query": "폭락장 금융상식 30가지: 반대매매·서킷브레이커·물타기·ETF 쉬운 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 3,
+   "status": "작성",
+   "page": "/issue/crash-market-basics-30-1108/",
+   "registered": "2026-11-08",
+   "expires": "2026-12-08"
   },
   {
    "query": "닥터X 하얀 마피아의 시대 10회 줄거리 시청률 추이, 11회 예고와 방송 시간",
