@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-08 12:00",
+ "updated": "2026-11-08 13:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -9570,7 +9570,7 @@
    "expires": "2026-11-15"
   },
   {
-   "query": "폭락장 금융상식 30가지: 반대매매·서킷브레이커·물타기·ETF 쉬운 정리",
+   "query": "폭락장 금융상식 100가지: 반대매매·서킷브레이커·PER·환율·투자 사기까지",
    "tier": "중기",
    "signal": [
     "뉴스",
