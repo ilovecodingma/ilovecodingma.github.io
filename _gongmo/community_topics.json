@@ -1,14 +1,14 @@
 {
  "date": "2026-11-08",
- "updated": "2026-11-08 09:50",
+ "updated": "2026-11-08 10:50",
  "sites": 13,
- "npost": 2582,
+ "npost": 2568,
  "note": "출처(커뮤니티)별 집계예요. 작성자·연령·성별 정보는 수집하지 않아요. posts 는 이슈별로 뽑힌 일부라 전체 글 수가 아니에요.",
  "sources": [
   {
    "name": "MLB파크",
-   "np": 15,
-   "nc": 912,
+   "np": 16,
+   "nc": 894,
    "topics": [
     {
      "t": "중국 김여사들 접촉사고 난투극",
@@ -19,9 +19,9 @@
      "issue_nc": 124,
      "kw": [
       "접촉",
+      "난투극",
       "사고",
-      "여사",
-      "난투극"
+      "중국"
      ],
      "top_post": {
       "t": "중국 김여사들 접촉사고 난투극",
@@ -37,10 +37,10 @@
      "issue_np": 3,
      "issue_nc": 121,
      "kw": [
-      "분식집",
-      "할머니",
       "별점",
-      "테러"
+      "테러",
+      "분식집",
+      "할머니"
      ],
      "top_post": {
       "t": "별점테러 당한 할머니 분식집",
@@ -56,8 +56,8 @@
      "issue_np": 3,
      "issue_nc": 125,
      "kw": [
-      "불꽃",
-      "축제"
+      "축제",
+      "불꽃"
      ],
      "top_post": {
       "t": "역시 서울 불꽃축제가 그냥 1황이였네요",
@@ -74,8 +74,8 @@
      "issue_nc": 111,
      "kw": [
       "한국",
-      "일본인",
-      "여행"
+      "여행",
+      "일본인"
      ],
      "top_post": {
       "t": "어느 일본인의 한국 여행 후기",
@@ -84,20 +84,20 @@
      }
     },
     {
-     "t": "해외서 조회수 터진 한국 길거리(?) 음식..",
+     "t": "세무사가 ai 시대에 위험한 이유",
      "nsite": 2,
-     "np_here": 1,
-     "nc_here": 101,
-     "issue_np": 2,
-     "issue_nc": 104,
+     "np_here": 2,
+     "nc_here": 68,
+     "issue_np": 3,
+     "issue_nc": 68,
      "kw": [
-      "해외",
-      "한국"
+      "AI",
+      "시대"
      ],
      "top_post": {
-      "t": "해외서 조회수 터진 한국 길거리(?) 음식..",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611060119940942&m=view",
-      "nc": 101
+      "t": "ai시대에도 책을 읽어야 하는 이유",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611080119974647&m=view",
+      "nc": 35
      }
     },
     {
@@ -108,8 +108,8 @@
      "issue_np": 2,
      "issue_nc": 66,
      "kw": [
-      "전기",
-      "도둑"
+      "도둑",
+      "전기"
      ],
      "top_post": {
       "t": "전기 9억 5천만원 어치 도둑질 ㄷㄷ",
@@ -125,8 +125,8 @@
      "issue_np": 2,
      "issue_nc": 66,
      "kw": [
-      "부산",
-      "빌라"
+      "빌라",
+      "부산"
      ],
      "top_post": {
       "t": "ㅎㄷㄷ한 부산의 어느 빌라 위치",
@@ -135,21 +135,20 @@
      }
     },
     {
-     "t": "한국은 일본 식민지였는데 왜 일본어 안 써?",
-     "nsite": 4,
+     "t": "요즘 미국 대학강의실 상황 ㄷㄷ",
+     "nsite": 2,
      "np_here": 1,
-     "nc_here": 54,
-     "issue_np": 5,
-     "issue_nc": 84,
+     "nc_here": 62,
+     "issue_np": 2,
+     "issue_nc": 62,
      "kw": [
-      "한국",
-      "일본",
-      "식민지"
+      "강의실",
+      "대학"
      ],
      "top_post": {
-      "t": "아시아 선진국은 일본에서 한국으로 옮겨진 건 확실하네요.",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611080119974338&m=view",
-      "nc": 54
+      "t": "요즘 미국 대학강의실 상황 ㄷㄷ",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611080119974341&m=view",
+      "nc": 62
      }
     }
    ]
@@ -157,7 +156,7 @@
   {
    "name": "인스티즈",
    "np": 7,
-   "nc": 443,
+   "nc": 449,
    "topics": [
     {
      "t": "블라인드에서 댓글 1000개 넘게 달린 담배 논란",
@@ -167,9 +166,9 @@
      "issue_np": 3,
      "issue_nc": 105,
      "kw": [
-      "논란",
+      "담배",
       "블라인드",
-      "담배"
+      "논란"
      ],
      "top_post": {
       "t": "블라인드에서 댓글 1000개 넘게 달린 담배 논란",
@@ -181,19 +180,19 @@
      "t": "골수이식 철회해서 아이 죽은 일 있잖아",
      "nsite": 2,
      "np_here": 1,
-     "nc_here": 75,
+     "nc_here": 81,
      "issue_np": 2,
-     "issue_nc": 75,
+     "issue_nc": 81,
      "kw": [
-      "이식",
       "골수",
-      "철회",
-      "아이"
+      "아이",
+      "이식",
+      "철회"
      ],
      "top_post": {
       "t": "골수이식 철회해서 아이 죽은 일 있잖아",
       "u": "https://www.instiz.net/pt/7923102?green=1",
-      "nc": 75
+      "nc": 81
      }
     },
     {
@@ -204,10 +203,10 @@
      "issue_np": 2,
      "issue_nc": 74,
      "kw": [
-      "예비",
-      "강사",
+      "집안",
+      "댄스",
       "혈육",
-      "집안"
+      "신부"
      ],
      "top_post": {
       "t": "혈육 예비신부가 폴댄스 강사인데 집안 반대가 심해",
@@ -287,8 +286,8 @@
   },
   {
    "name": "개드립",
-   "np": 13,
-   "nc": 386,
+   "np": 12,
+   "nc": 354,
    "topics": [
     {
      "t": "한국을 방문하고 별로였다는 외국인 ㅎ ㄷ ㄷ",
@@ -298,8 +297,8 @@
      "issue_np": 3,
      "issue_nc": 52,
      "kw": [
-      "한국",
       "외국인",
+      "한국",
       "방문"
      ],
      "top_post": {
@@ -319,12 +318,31 @@
       "의사",
       "비만",
       "아구통",
-      "KFC"
+      "징거더블다운맥스"
      ],
      "top_post": {
       "t": "아구통 의사 : 비만인들에게 다이어트란 해병대 지옥주와 같다",
       "u": "https://www.dogdrip.net/dogdrip/733630933?sort_index=popular&page=1",
       "nc": 47
+     }
+    },
+    {
+     "t": "생각해보니 진짜 쓸모없는 신축아파트 서비스",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 46,
+     "issue_np": 3,
+     "issue_nc": 46,
+     "kw": [
+      "신축",
+      "아파트",
+      "쓸모",
+      "서비스"
+     ],
+     "top_post": {
+      "t": "생각해보니 진짜 쓸모없는 신축아파트 서비스",
+      "u": "https://www.dogdrip.net/dogdrip/733712228?sort_index=popular&page=1",
+      "nc": 46
      }
     },
     {
@@ -349,53 +367,16 @@
      "nsite": 2,
      "np_here": 1,
      "nc_here": 40,
-     "issue_np": 3,
+     "issue_np": 2,
      "issue_nc": 40,
      "kw": [
       "알바",
-      "카페",
-      "당근"
+      "카페"
      ],
      "top_post": {
       "t": "당근에 올라온 강아지 카페 동반 알바",
       "u": "https://www.dogdrip.net/dogdrip/733613495?sort_index=popular&page=1",
       "nc": 40
-     }
-    },
-    {
-     "t": "ai가 버블이 아닌이유",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 40,
-     "issue_np": 2,
-     "issue_nc": 40,
-     "kw": [
-      "버블",
-      "AI"
-     ],
-     "top_post": {
-      "t": "ai가 버블이 아닌이유",
-      "u": "https://www.dogdrip.net/dogdrip/733600353?sort_index=popular&page=1",
-      "nc": 40
-     }
-    },
-    {
-     "t": "생각해보니 진짜 쓸모없는 신축아파트 서비스",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 39,
-     "issue_np": 3,
-     "issue_nc": 39,
-     "kw": [
-      "아파트",
-      "신축",
-      "서비스",
-      "쓸모"
-     ],
-     "top_post": {
-      "t": "생각해보니 진짜 쓸모없는 신축아파트 서비스",
-      "u": "https://www.dogdrip.net/dogdrip/733712228?sort_index=popular&page=1",
-      "nc": 39
      }
     },
     {
@@ -406,8 +387,8 @@
      "issue_np": 10,
      "issue_nc": 47,
      "kw": [
-      "데이터",
       "센터",
+      "데이터",
       "미국",
       "규제"
      ],
@@ -434,31 +415,48 @@
       "u": "https://www.dogdrip.net/dogdrip/733600133?sort_index=popular&page=1",
       "nc": 30
      }
+    },
+    {
+     "t": "음식 배달시킬때 귀찮은 사람들이 시키는 메뉴특",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 24,
+     "issue_np": 3,
+     "issue_nc": 67,
+     "kw": [
+      "음식",
+      "배달"
+     ],
+     "top_post": {
+      "t": "며칠 전 음식 빼먹었다는 배달 기사의 진실",
+      "u": "https://www.dogdrip.net/dogdrip/733653856?sort_index=popular&page=1",
+      "nc": 24
+     }
     }
    ]
   },
   {
    "name": "클리앙",
    "np": 2,
-   "nc": 43,
+   "nc": 49,
    "topics": [
     {
      "t": "날 세운 이재명 '주식시장이 망가지는 건 다 정부 탓'",
      "nsite": 3,
      "np_here": 1,
-     "nc_here": 28,
+     "nc_here": 34,
      "issue_np": 4,
-     "issue_nc": 34,
+     "issue_nc": 40,
      "kw": [
-      "주식",
       "시장",
+      "주식",
       "정부",
       "이재명"
      ],
      "top_post": {
       "t": "날 세운 이재명 '주식시장이 망가지는 건 다 정부 탓'",
       "u": "https://www.clien.net/service/board/park/19289201?od=T33&po=0&category=0&groupCd=clien_all",
-      "nc": 28
+      "nc": 34
      }
     },
     {
@@ -469,8 +467,8 @@
      "issue_np": 10,
      "issue_nc": 47,
      "kw": [
-      "데이터",
       "센터",
+      "데이터",
       "미국",
       "규제"
      ],
@@ -527,7 +525,7 @@
      "np_here": 1,
      "nc_here": 4,
      "issue_np": 3,
-     "issue_nc": 19,
+     "issue_nc": 20,
      "kw": [
       "인기",
       "남자",
@@ -571,8 +569,8 @@
      "issue_np": 3,
      "issue_nc": 125,
      "kw": [
-      "불꽃",
-      "축제"
+      "축제",
+      "불꽃"
      ],
      "top_post": {
       "t": "불꽃 축제는 왜 이렇게 자주 해요?",
@@ -586,10 +584,10 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 4,
-     "issue_nc": 34,
+     "issue_nc": 40,
      "kw": [
-      "주식",
       "시장",
+      "주식",
       "정부",
       "이재명"
      ],
@@ -603,8 +601,8 @@
   },
   {
    "name": "보배드림",
-   "np": 8,
-   "nc": 18,
+   "np": 7,
+   "nc": 15,
    "topics": [
     {
      "t": "날 세운 이재명 '주식시장이 망가지는 건 다 정부 탓'",
@@ -612,10 +610,10 @@
      "np_here": 2,
      "nc_here": 6,
      "issue_np": 4,
-     "issue_nc": 34,
+     "issue_nc": 40,
      "kw": [
-      "주식",
       "시장",
+      "주식",
       "정부",
       "이재명"
      ],
@@ -633,8 +631,8 @@
      "issue_np": 3,
      "issue_nc": 52,
      "kw": [
-      "한국",
       "외국인",
+      "한국",
       "방문"
      ],
      "top_post": {
@@ -652,9 +650,9 @@
      "issue_nc": 124,
      "kw": [
       "접촉",
+      "난투극",
       "사고",
-      "여사",
-      "난투극"
+      "중국"
      ],
      "top_post": {
       "t": "중국 김여사들 접촉사고 후 난투극",
@@ -670,31 +668,14 @@
      "issue_np": 3,
      "issue_nc": 121,
      "kw": [
-      "분식집",
-      "할머니",
       "별점",
-      "테러"
+      "테러",
+      "분식집",
+      "할머니"
      ],
      "top_post": {
       "t": "별점 테러 당한 분식집 할머니",
       "u": "https://www.bobaedream.co.kr/view?code=best&No=1045904&vdate=",
-      "nc": 3
-     }
-    },
-    {
-     "t": "해외서 조회수 터진 한국 길거리(?) 음식..",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 3,
-     "issue_np": 2,
-     "issue_nc": 104,
-     "kw": [
-      "해외",
-      "한국"
-     ],
-     "top_post": {
-      "t": "해외에 이슬람이 있다면 한국엔",
-      "u": "https://www.bobaedream.co.kr/view?code=best&No=1045903&vdate=",
       "nc": 3
      }
     },
@@ -704,7 +685,7 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 3,
-     "issue_nc": 19,
+     "issue_nc": 20,
      "kw": [
       "인기",
       "남자",
@@ -719,144 +700,25 @@
    ]
   },
   {
-   "name": "더쿠",
-   "np": 5,
-   "nc": 0,
-   "topics": [
-    {
-     "t": "온수관 파열 '구멍'에 행인 빠져...전신 60% 중화상 (영상)",
-     "nsite": 5,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 43,
-     "kw": [
-      "행인",
-      "파열",
-      "온수",
-      "전신"
-     ],
-     "top_post": {
-      "t": "온수관 파열 '구멍'에 행인 빠져...전신 60% 중화상 (영상)",
-      "u": "https://theqoo.net/hot/4398705990",
-      "nc": 0
-     }
-    },
-    {
-     "t": "삼성 폴드8 광고 근황",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 1,
-     "kw": [
-      "광고",
-      "삼성"
-     ],
-     "top_post": {
-      "t": "삼성 폴드8 광고 근황",
-      "u": "https://theqoo.net/hot/4398218581",
-      "nc": 0
-     }
-    },
-    {
-     "t": "300년 전 영국 여자들이 해피엔딩 내달라고 작가 협박한 사건",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 0,
-     "kw": [
-      "작가",
-      "사건",
-      "영국",
-      "협박"
-     ],
-     "top_post": {
-      "t": "300년 전 영국 여자들이 해피엔딩 내달라고 작가 협박한 사건",
-      "u": "https://theqoo.net/hot/4398718334",
-      "nc": 0
-     }
-    },
-    {
-     "t": "골수이식 철회해서 아이 죽은 일 있잖아",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 2,
-     "issue_nc": 75,
-     "kw": [
-      "이식",
-      "골수",
-      "철회",
-      "아이"
-     ],
-     "top_post": {
-      "t": "골수이식 철회해서 아이 죽은일있잖아",
-      "u": "https://theqoo.net/hot/4398388577",
-      "nc": 0
-     }
-    },
-    {
-     "t": "혈육 예비신부가 폴댄스 강사인데 집안 반대가 심해",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 2,
-     "issue_nc": 74,
-     "kw": [
-      "예비",
-      "강사",
-      "혈육",
-      "집안"
-     ],
-     "top_post": {
-      "t": "혈육 예비신부가 폴댄스 강사인데 집안 반대가 심해",
-      "u": "https://theqoo.net/hot/4397963480",
-      "nc": 0
-     }
-    }
-   ]
-  },
-  {
-   "name": "SLR클럽",
+   "name": "오늘의유머",
    "np": 2,
    "nc": 0,
    "topics": [
     {
-     "t": "온수관 파열 '구멍'에 행인 빠져...전신 60% 중화상 (영상)",
-     "nsite": 5,
-     "np_here": 1,
+     "t": "한국은 일본 식민지였는데 왜 일본어 안 써?",
+     "nsite": 4,
+     "np_here": 2,
      "nc_here": 0,
      "issue_np": 5,
-     "issue_nc": 43,
-     "kw": [
-      "행인",
-      "파열",
-      "온수",
-      "전신"
-     ],
-     "top_post": {
-      "t": "마곡동 온수관 파열 구멍으로 행인 빠져",
-      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=676960",
-      "nc": 0
-     }
-    },
-    {
-     "t": "한국을 방문하고 별로였다는 외국인 ㅎ ㄷ ㄷ",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 52,
+     "issue_nc": 84,
      "kw": [
       "한국",
-      "외국인",
-      "방문"
+      "일본",
+      "식민지"
      ],
      "top_post": {
-      "t": "한국을 방문하고 별로였다는 외국인 ㅎ ㄷ ㄷ",
-      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=676938",
+      "t": "한국은 일본 식민지였는데 왜 일본어 안 써?",
+      "u": "https://www.todayhumor.co.kr/board/view.php?table=bestofbest&no=484096&s_no=484096&page=1",
       "nc": 0
      }
     }
@@ -867,25 +729,6 @@
    "np": 5,
    "nc": 0,
    "topics": [
-    {
-     "t": "온수관 파열 '구멍'에 행인 빠져...전신 60% 중화상 (영상)",
-     "nsite": 5,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 43,
-     "kw": [
-      "행인",
-      "파열",
-      "온수",
-      "전신"
-     ],
-     "top_post": {
-      "t": "도로 온수관 파열로 40대 행인 전신 60% 화상…중환자실 이송",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=476670&_dcbest=1&page=1",
-      "nc": 0
-     }
-    },
     {
      "t": "한국은 일본 식민지였는데 왜 일본어 안 써?",
      "nsite": 4,
@@ -910,12 +753,12 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 3,
-     "issue_nc": 39,
+     "issue_nc": 46,
      "kw": [
-      "아파트",
       "신축",
-      "서비스",
-      "쓸모"
+      "아파트",
+      "쓸모",
+      "서비스"
      ],
      "top_post": {
       "t": "실물 의외로 고퀄인 신축 아파트",
@@ -932,9 +775,9 @@
      "issue_nc": 0,
      "kw": [
       "작가",
+      "협박",
       "사건",
-      "영국",
-      "협박"
+      "영국"
      ],
      "top_post": {
       "t": "300년 전 영국 여자들이 해피엔딩 내달라고 작가 협박한 사건",
@@ -958,33 +801,33 @@
       "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=476578&_dcbest=1&page=1",
       "nc": 0
      }
+    },
+    {
+     "t": "서울 온수관 파열로 행인 전신화상",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 2,
+     "issue_nc": 43,
+     "kw": [
+      "전신",
+      "파열",
+      "행인",
+      "화상"
+     ],
+     "top_post": {
+      "t": "도로 온수관 파열로 40대 행인 전신 60% 화상…중환자실 이송",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=476670&_dcbest=1&page=1",
+      "nc": 0
+     }
     }
    ]
   },
   {
    "name": "루리웹",
-   "np": 24,
+   "np": 23,
    "nc": 0,
    "topics": [
-    {
-     "t": "온수관 파열 '구멍'에 행인 빠져...전신 60% 중화상 (영상)",
-     "nsite": 5,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 43,
-     "kw": [
-      "행인",
-      "파열",
-      "온수",
-      "전신"
-     ],
-     "top_post": {
-      "t": "온수관 파열 '구멍'에 행인 빠져...전신 60% 중화상",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77305157?m=all&t=now",
-      "nc": 0
-     }
-    },
     {
      "t": "블라인드에서 댓글 1000개 넘게 달린 담배 논란",
      "nsite": 3,
@@ -993,9 +836,9 @@
      "issue_np": 3,
      "issue_nc": 105,
      "kw": [
-      "논란",
+      "담배",
       "블라인드",
-      "담배"
+      "논란"
      ],
      "top_post": {
       "t": "블라인드에서 댓글 1000개 넘게 달린 담배 논란",
@@ -1028,8 +871,8 @@
      "issue_np": 10,
      "issue_nc": 47,
      "kw": [
-      "데이터",
       "센터",
+      "데이터",
       "미국",
       "규제"
      ],
@@ -1045,12 +888,12 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 3,
-     "issue_nc": 39,
+     "issue_nc": 46,
      "kw": [
-      "아파트",
       "신축",
-      "서비스",
-      "쓸모"
+      "아파트",
+      "쓸모",
+      "서비스"
      ],
      "top_post": {
       "t": "쓸모없는 신축아파트 서비스",
@@ -1093,6 +936,25 @@
      }
     },
     {
+     "t": "마곡동 온수관 파열 구멍으로 행인 빠져",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 0,
+     "kw": [
+      "온수",
+      "파열",
+      "구멍",
+      "행인"
+     ],
+     "top_post": {
+      "t": "온수관 파열 '구멍'에 행인 빠져...전신 60% 중화상",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77305157?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
      "t": "300년 전 영국 여자들이 해피엔딩 내달라고 작가 협박한 사건",
      "nsite": 3,
      "np_here": 1,
@@ -1101,9 +963,9 @@
      "issue_nc": 0,
      "kw": [
       "작가",
+      "협박",
       "사건",
-      "영국",
-      "협박"
+      "영국"
      ],
      "top_post": {
       "t": "300년 전 영국 여성들이 해피엔딩 내달라고 작가 협박한 사건",
@@ -1114,25 +976,144 @@
    ]
   },
   {
-   "name": "오늘의유머",
+   "name": "SLR클럽",
    "np": 2,
    "nc": 0,
    "topics": [
     {
-     "t": "한국은 일본 식민지였는데 왜 일본어 안 써?",
-     "nsite": 4,
-     "np_here": 2,
+     "t": "한국을 방문하고 별로였다는 외국인 ㅎ ㄷ ㄷ",
+     "nsite": 3,
+     "np_here": 1,
      "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 84,
+     "issue_np": 3,
+     "issue_nc": 52,
      "kw": [
+      "외국인",
       "한국",
-      "일본",
-      "식민지"
+      "방문"
      ],
      "top_post": {
-      "t": "한국은 일본 식민지였는데 왜 일본어 안 써?",
-      "u": "https://www.todayhumor.co.kr/board/view.php?table=bestofbest&no=484096&s_no=484096&page=1",
+      "t": "한국을 방문하고 별로였다는 외국인 ㅎ ㄷ ㄷ",
+      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=676938",
+      "nc": 0
+     }
+    },
+    {
+     "t": "마곡동 온수관 파열 구멍으로 행인 빠져",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 0,
+     "kw": [
+      "온수",
+      "파열",
+      "구멍",
+      "행인"
+     ],
+     "top_post": {
+      "t": "마곡동 온수관 파열 구멍으로 행인 빠져",
+      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=676960",
+      "nc": 0
+     }
+    }
+   ]
+  },
+  {
+   "name": "더쿠",
+   "np": 5,
+   "nc": 0,
+   "topics": [
+    {
+     "t": "삼성 폴드8 광고 근황",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 1,
+     "kw": [
+      "광고",
+      "삼성"
+     ],
+     "top_post": {
+      "t": "삼성 폴드8 광고 근황",
+      "u": "https://theqoo.net/hot/4398218581",
+      "nc": 0
+     }
+    },
+    {
+     "t": "마곡동 온수관 파열 구멍으로 행인 빠져",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 0,
+     "kw": [
+      "온수",
+      "파열",
+      "구멍",
+      "행인"
+     ],
+     "top_post": {
+      "t": "온수관 파열 '구멍'에 행인 빠져...전신 60% 중화상 (영상)",
+      "u": "https://theqoo.net/hot/4398705990",
+      "nc": 0
+     }
+    },
+    {
+     "t": "300년 전 영국 여자들이 해피엔딩 내달라고 작가 협박한 사건",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 0,
+     "kw": [
+      "작가",
+      "협박",
+      "사건",
+      "영국"
+     ],
+     "top_post": {
+      "t": "300년 전 영국 여자들이 해피엔딩 내달라고 작가 협박한 사건",
+      "u": "https://theqoo.net/hot/4398718334",
+      "nc": 0
+     }
+    },
+    {
+     "t": "골수이식 철회해서 아이 죽은 일 있잖아",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 2,
+     "issue_nc": 81,
+     "kw": [
+      "골수",
+      "아이",
+      "이식",
+      "철회"
+     ],
+     "top_post": {
+      "t": "골수이식 철회해서 아이 죽은일있잖아",
+      "u": "https://theqoo.net/hot/4398388577",
+      "nc": 0
+     }
+    },
+    {
+     "t": "혈육 예비신부가 폴댄스 강사인데 집안 반대가 심해",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 2,
+     "issue_nc": 74,
+     "kw": [
+      "집안",
+      "댄스",
+      "혈육",
+      "신부"
+     ],
+     "top_post": {
+      "t": "혈육 예비신부가 폴댄스 강사인데 집안 반대가 심해",
+      "u": "https://theqoo.net/hot/4397963480",
       "nc": 0
      }
     }

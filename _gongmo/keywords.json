@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-08 10:00",
+ "updated": "2026-11-08 11:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -9394,6 +9394,19 @@
    "page": "/issue/unregistered-lodging-platform-duty-1105/",
    "registered": "2026-11-05",
    "expires": "2026-12-05"
+  },
+  {
+   "query": "미국 민주당 데이터센터 AI 규제 추진 내용과 한국 반도체 영향 쟁점 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 4,
+   "status": "작성",
+   "page": "/issue/us-democrats-datacenter-ai-regulation-korea-chips-1108/",
+   "registered": "2026-11-08",
+   "expires": "2026-11-22"
   },
   {
    "query": "스드메 가격 미표시 과태료 17곳 1560만 원, 표시 항목과 신고 방법",
