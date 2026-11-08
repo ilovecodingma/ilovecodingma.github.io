@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-08 13:00",
+ "updated": "2026-11-08 14:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -100,6 +100,18 @@
   },
   {
    "query": "리즈 유나이티드 대 토트넘",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 20000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-08",
+   "expires": "2026-11-11"
+  },
+  {
+   "query": "sk하이닉스",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -927,18 +939,6 @@
    "expires": "2026-11-11"
   },
   {
-   "query": "박진영",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 2000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-04",
-   "expires": "2026-11-11"
-  },
-  {
    "query": "골프",
    "tier": "단기",
    "signal": [
@@ -1623,18 +1623,6 @@
    "expires": "2026-11-11"
   },
   {
-   "query": "자산",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 1000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-03",
-   "expires": "2026-11-11"
-  },
-  {
    "query": "오산대",
    "tier": "단기",
    "signal": [
@@ -2188,6 +2176,30 @@
   },
   {
    "query": "밥",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-08",
+   "expires": "2026-11-11"
+  },
+  {
+   "query": "코리아 그랜드 뮤직 어워즈",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-08",
+   "expires": "2026-11-11"
+  },
+  {
+   "query": "미스 베트남",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -9661,6 +9673,19 @@
    "expires": "2026-11-22"
   },
   {
+   "query": "금감원 가상자산 보안책임자 소집 19일 회의 고팍스 거래중단 빗썸 정보유출 프라뱅 탈취 사건 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 3,
+   "status": "작성",
+   "page": "/issue/fss-crypto-exchange-ciso-meeting-nov19-1108/",
+   "registered": "2026-11-08",
+   "expires": "2026-11-22"
+  },
+  {
    "query": "가덕도신공항 공사비 6200억 증액 특별법 개정 합의 보도 정리, 착공 시기는?",
    "tier": "중기",
    "signal": [
@@ -9867,6 +9892,19 @@
    "page": "/issue/nts-stock-tax-refund-1104/",
    "registered": "2026-11-04",
    "expires": "2026-11-11"
+  },
+  {
+   "query": "박진영 교회 첫열매들 종교 모임 입장 발언 타임라인과 예장통합 연구 경과",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 3,
+   "status": "작성",
+   "page": "/issue/park-jinyoung-church-statement-timeline-1108/",
+   "registered": "2026-11-08",
+   "expires": "2026-11-22"
   },
   {
    "query": "김종철 경찰청장 후보자 청문회 절차와 지명 경위 정리",
@@ -10314,6 +10352,19 @@
    "page": "/issue/k-drama-industry-crisis-support-1106/",
    "registered": "2026-11-06",
    "expires": "2026-11-13"
+  },
+  {
+   "query": "김현철 유재석 축의금 50만원 30만원 환불 발언 아는 형님 방송 내용 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 2,
+   "status": "작성",
+   "page": "/issue/kim-hyunchul-yoo-jaesuk-wedding-gift-500k-1108/",
+   "registered": "2026-11-08",
+   "expires": "2026-11-15"
   },
   {
    "query": "2026 김장 배추 풍작에 쪽파 산지 폐기, 도매가 평년 대비 37.5% 하락",
