@@ -1,14 +1,14 @@
 {
  "date": "2026-11-08",
- "updated": "2026-11-08 19:50",
+ "updated": "2026-11-08 20:50",
  "sites": 13,
- "npost": 2458,
+ "npost": 2456,
  "note": "출처(커뮤니티)별 집계예요. 작성자·연령·성별 정보는 수집하지 않아요. posts 는 이슈별로 뽑힌 일부라 전체 글 수가 아니에요.",
  "sources": [
   {
    "name": "MLB파크",
-   "np": 17,
-   "nc": 680,
+   "np": 16,
+   "nc": 731,
    "topics": [
     {
      "t": "요즘 미국 대학강의실 상황 ㄷㄷ",
@@ -35,8 +35,8 @@
      "issue_np": 3,
      "issue_nc": 83,
      "kw": [
-      "시대",
-      "AI"
+      "AI",
+      "시대"
      ],
      "top_post": {
       "t": "ai시대에도 책을 읽어야 하는 이유",
@@ -79,6 +79,40 @@
      }
     },
     {
+     "t": "우승 앞둔 삼성 세일 시작 ㄷㄷ",
+     "nsite": 4,
+     "np_here": 2,
+     "nc_here": 64,
+     "issue_np": 8,
+     "issue_nc": 74,
+     "kw": [
+      "삼성",
+      "우승"
+     ],
+     "top_post": {
+      "t": "삼성 우승 혜택 ㄷㄷㄷㄷㄷ",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611080120001812&m=view",
+      "nc": 34
+     }
+    },
+    {
+     "t": "강민호 인생 최고의 선택",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 57,
+     "issue_np": 2,
+     "issue_nc": 62,
+     "kw": [
+      "선택",
+      "인생"
+     ],
+     "top_post": {
+      "t": "강민호 인생 최고의 선택",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611080119990913&m=view",
+      "nc": 57
+     }
+    },
+    {
      "t": "한국은 일본 식민지였는데 왜 일본어 안 써?",
      "nsite": 2,
      "np_here": 1,
@@ -87,47 +121,13 @@
      "issue_nc": 54,
      "kw": [
       "한국",
-      "일본",
-      "식민지"
+      "식민지",
+      "일본"
      ],
      "top_post": {
       "t": "아시아 선진국은 일본에서 한국으로 옮겨진 건 확실하네요.",
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611080119974338&m=view",
       "nc": 54
-     }
-    },
-    {
-     "t": "우승 앞둔 삼성 세일 시작 ㄷㄷ",
-     "nsite": 4,
-     "np_here": 2,
-     "nc_here": 48,
-     "issue_np": 8,
-     "issue_nc": 58,
-     "kw": [
-      "우승",
-      "삼성"
-     ],
-     "top_post": {
-      "t": "우승 앞둔 삼성 세일 시작 ㄷㄷ",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611080119982825&m=view",
-      "nc": 30
-     }
-    },
-    {
-     "t": "강민호 인생 최고의 선택",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 47,
-     "issue_np": 2,
-     "issue_nc": 52,
-     "kw": [
-      "선택",
-      "인생"
-     ],
-     "top_post": {
-      "t": "강민호 인생 최고의 선택",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611080119990913&m=view",
-      "nc": 47
      }
     },
     {
@@ -151,8 +151,8 @@
   },
   {
    "name": "개드립",
-   "np": 9,
-   "nc": 256,
+   "np": 11,
+   "nc": 304,
    "topics": [
     {
      "t": "마곡 온수관 파열 시민 중화상 CCTV 영상",
@@ -162,10 +162,10 @@
      "issue_np": 2,
      "issue_nc": 42,
      "kw": [
-      "CCTV",
       "화상",
       "파열",
-      "마곡"
+      "마곡",
+      "CCTV"
      ],
      "top_post": {
       "t": "마곡 온수관 파열 시민 중화상 CCTV 영상",
@@ -181,10 +181,10 @@
      "issue_np": 2,
      "issue_nc": 42,
      "kw": [
-      "CCTV",
+      "공개",
       "지하철",
       "미국",
-      "공개"
+      "CCTV"
      ],
      "top_post": {
       "t": "미국 지하철이 cctv 공개를 하지 못하는 이유",
@@ -200,33 +200,14 @@
      "issue_np": 2,
      "issue_nc": 38,
      "kw": [
-      "CM",
+      "KG",
       "여자",
-      "KG"
+      "CM"
      ],
      "top_post": {
       "t": "20살 138cm 24kg 여자",
       "u": "https://www.dogdrip.net/dogdrip/733752033?sort_index=popular&page=1",
       "nc": 38
-     }
-    },
-    {
-     "t": "와들와들 심각한 수준의 미민당 데이터센터 규제....",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 32,
-     "issue_np": 4,
-     "issue_nc": 47,
-     "kw": [
-      "데이터",
-      "센터",
-      "텍사스",
-      "허용"
-     ],
-     "top_post": {
-      "t": "와들와들 심각한 수준의 미민당 데이터센터 규제....",
-      "u": "https://www.dogdrip.net/dogdrip/733622937?sort_index=popular&page=1",
-      "nc": 32
      }
     },
     {
@@ -237,9 +218,9 @@
      "issue_np": 2,
      "issue_nc": 31,
      "kw": [
-      "AI",
+      "인디",
       "게임",
-      "인디"
+      "AI"
      ],
      "top_post": {
       "t": "인디게임 시장 AI 도입 전후",
@@ -266,40 +247,55 @@
      }
     },
     {
-     "t": "한국과 미국 데이터센터 인식 차이.",
-     "nsite": 3,
+     "t": "안세영 그거 달성",
+     "nsite": 2,
      "np_here": 1,
-     "nc_here": 17,
-     "issue_np": 3,
-     "issue_nc": 17,
+     "nc_here": 27,
+     "issue_np": 2,
+     "issue_nc": 30,
      "kw": [
-      "센터",
-      "미국",
-      "데이터",
-      "한국"
+      "달성",
+      "안세영"
      ],
      "top_post": {
-      "t": "한국과 미국 데이터센터 인식 차이.",
-      "u": "https://www.dogdrip.net/dogdrip/733742694?sort_index=popular&page=1",
-      "nc": 17
+      "t": "안세영 그거 달성",
+      "u": "https://www.dogdrip.net/dogdrip/733773271?sort_index=popular&page=1",
+      "nc": 27
      }
     },
     {
-     "t": "여대생들한테 인기 많았다는 남자",
-     "nsite": 3,
+     "t": "낭만넘치는 네이버웹툰 \"협의 기준\"",
+     "nsite": 2,
      "np_here": 1,
-     "nc_here": 16,
-     "issue_np": 3,
-     "issue_nc": 22,
+     "nc_here": 24,
+     "issue_np": 2,
+     "issue_nc": 24,
      "kw": [
-      "인기",
-      "남자",
-      "여대"
+      "낭만",
+      "네이버 웹툰",
+      "협의"
      ],
      "top_post": {
-      "t": "여대생들한테 인기 많았다는 남자",
-      "u": "https://www.dogdrip.net/dogdrip/733677229?sort_index=popular&page=1",
-      "nc": 16
+      "t": "낭만넘치는 네이버웹툰 \"협의 기준\"",
+      "u": "https://www.dogdrip.net/dogdrip/733768006?sort_index=popular&page=1",
+      "nc": 24
+     }
+    },
+    {
+     "t": "며칠 전 음식 빼먹었다는 배달 기사의 진실",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 24,
+     "issue_np": 2,
+     "issue_nc": 24,
+     "kw": [
+      "음식",
+      "배달"
+     ],
+     "top_post": {
+      "t": "며칠 전 음식 빼먹었다는 배달 기사의 진실",
+      "u": "https://www.dogdrip.net/dogdrip/733653856?sort_index=popular&page=1",
+      "nc": 24
      }
     }
    ]
@@ -317,9 +313,9 @@
      "issue_np": 3,
      "issue_nc": 105,
      "kw": [
-      "논란",
+      "블라인드",
       "담배",
-      "블라인드"
+      "논란"
      ],
      "top_post": {
       "t": "블라인드에서 댓글 1000개 넘게 달린 담배 논란",
@@ -335,8 +331,8 @@
      "issue_np": 2,
      "issue_nc": 56,
      "kw": [
-      "닥터",
-      "시청"
+      "시청",
+      "닥터"
      ],
      "top_post": {
       "t": "'닥터X' 또 시청률 떨어져… 종영 앞두고 잃은 뒷심",
@@ -348,8 +344,8 @@
   },
   {
    "name": "클리앙",
-   "np": 5,
-   "nc": 68,
+   "np": 3,
+   "nc": 50,
    "topics": [
     {
      "t": "날 세운 이재명 '주식시장이 망가지는 건 다 정부 탓'",
@@ -359,34 +355,15 @@
      "issue_np": 3,
      "issue_nc": 41,
      "kw": [
+      "이재명",
       "시장",
-      "정부",
       "주식",
-      "이재명"
+      "정부"
      ],
      "top_post": {
       "t": "날 세운 이재명 '주식시장이 망가지는 건 다 정부 탓'",
       "u": "https://www.clien.net/service/board/park/19289201?od=T33&po=0&category=0&groupCd=clien_all",
       "nc": 38
-     }
-    },
-    {
-     "t": "와들와들 심각한 수준의 미민당 데이터센터 규제....",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 15,
-     "issue_np": 4,
-     "issue_nc": 47,
-     "kw": [
-      "데이터",
-      "센터",
-      "텍사스",
-      "허용"
-     ],
-     "top_post": {
-      "t": "텍사스에 데이터센터 허용",
-      "u": "https://www.clien.net/service/board/park/19289111?od=T33&po=0&category=0&groupCd=clien_all",
-      "nc": 15
      }
     },
     {
@@ -414,32 +391,15 @@
      "np_here": 1,
      "nc_here": 4,
      "issue_np": 8,
-     "issue_nc": 58,
+     "issue_nc": 74,
      "kw": [
-      "우승",
-      "삼성"
+      "삼성",
+      "우승"
      ],
      "top_post": {
       "t": "삼성 우승 오긴 오는군요",
       "u": "https://www.clien.net/service/board/park/19289389?od=T33&po=0&category=0&groupCd=clien_all",
       "nc": 4
-     }
-    },
-    {
-     "t": "넷플릭스 가능한사랑 전도연 연기는",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 3,
-     "issue_np": 3,
-     "issue_nc": 7,
-     "kw": [
-      "전도연",
-      "사랑"
-     ],
-     "top_post": {
-      "t": "넷플릭스 가능한사랑 전도연 연기는",
-      "u": "https://www.clien.net/service/board/park/19289155?od=T33&po=0&category=0&groupCd=clien_all",
-      "nc": 3
      }
     }
    ]
@@ -457,8 +417,8 @@
      "issue_np": 2,
      "issue_nc": 24,
      "kw": [
-      "회사",
-      "결혼"
+      "결혼",
+      "회사"
      ],
      "top_post": {
       "t": "회사 선배와 차 한잔 하다가우연히 결혼 얘기가 나왔는데 선배는 딩크를 하겠다는 사람과 결혼할...",
@@ -472,7 +432,7 @@
      "np_here": 1,
      "nc_here": 9,
      "issue_np": 4,
-     "issue_nc": 42,
+     "issue_nc": 59,
      "kw": [
       "남자",
       "여자"
@@ -489,7 +449,7 @@
      "np_here": 1,
      "nc_here": 5,
      "issue_np": 2,
-     "issue_nc": 52,
+     "issue_nc": 62,
      "kw": [
       "선택",
       "인생"
@@ -508,8 +468,8 @@
      "issue_np": 3,
      "issue_nc": 22,
      "kw": [
-      "인기",
       "남자",
+      "인기",
       "여대"
      ],
      "top_post": {
@@ -521,50 +481,9 @@
    ]
   },
   {
-   "name": "아카라이브",
-   "np": 2,
-   "nc": 33,
-   "topics": [
-    {
-     "t": "마왕과 반려용사.manwha",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 27,
-     "issue_np": 2,
-     "issue_nc": 27,
-     "kw": [
-      "마왕",
-      "반려용사"
-     ],
-     "top_post": {
-      "t": "마왕과 반려용사.manwha",
-      "u": "https://arca.live/b/live/188259728?p=1",
-      "nc": 27
-     }
-    },
-    {
-     "t": "우승 앞둔 삼성 세일 시작 ㄷㄷ",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 6,
-     "issue_np": 8,
-     "issue_nc": 58,
-     "kw": [
-      "우승",
-      "삼성"
-     ],
-     "top_post": {
-      "t": "직관왔는데 삼성 우승을 보다니",
-      "u": "https://arca.live/b/live/188460200?p=1",
-      "nc": 6
-     }
-    }
-   ]
-  },
-  {
    "name": "82쿡",
-   "np": 3,
-   "nc": 20,
+   "np": 2,
+   "nc": 16,
    "topics": [
     {
      "t": "이연희 랍니다 여리여리 예쁘장한여자 그남자 얼굴많이 본대요 그남자 바운더리는 무조건 예쁜여...",
@@ -572,7 +491,7 @@
      "np_here": 1,
      "nc_here": 16,
      "issue_np": 4,
-     "issue_nc": 42,
+     "issue_nc": 59,
      "kw": [
       "남자",
       "여자"
@@ -584,23 +503,6 @@
      }
     },
     {
-     "t": "넷플릭스 가능한사랑 전도연 연기는",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 4,
-     "issue_np": 3,
-     "issue_nc": 7,
-     "kw": [
-      "전도연",
-      "사랑"
-     ],
-     "top_post": {
-      "t": "가능한사랑 여주는 전도연 조여정 일수밖에",
-      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4256706&page=1",
-      "nc": 4
-     }
-    },
-    {
      "t": "날 세운 이재명 '주식시장이 망가지는 건 다 정부 탓'",
      "nsite": 3,
      "np_here": 1,
@@ -608,10 +510,10 @@
      "issue_np": 3,
      "issue_nc": 41,
      "kw": [
+      "이재명",
       "시장",
-      "정부",
       "주식",
-      "이재명"
+      "정부"
      ],
      "top_post": {
       "t": "코스닥은 이재명정부 들어 하락만 하는것 같아요.",
@@ -623,8 +525,8 @@
   },
   {
    "name": "보배드림",
-   "np": 2,
-   "nc": 5,
+   "np": 3,
+   "nc": 8,
    "topics": [
     {
      "t": "날 세운 이재명 '주식시장이 망가지는 건 다 정부 탓'",
@@ -634,14 +536,31 @@
      "issue_np": 3,
      "issue_nc": 41,
      "kw": [
+      "이재명",
       "시장",
-      "정부",
       "주식",
-      "이재명"
+      "정부"
      ],
      "top_post": {
       "t": "주식시장 대책 이게 맞습니까?",
       "u": "https://www.bobaedream.co.kr/view?code=best&No=1045933&vdate=",
+      "nc": 3
+     }
+    },
+    {
+     "t": "안세영 그거 달성",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 3,
+     "issue_np": 2,
+     "issue_nc": 30,
+     "kw": [
+      "달성",
+      "안세영"
+     ],
+     "top_post": {
+      "t": "안세영 또 우승, 오늘 달성한 기록들",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1046077&vdate=",
       "nc": 3
      }
     },
@@ -653,8 +572,8 @@
      "issue_np": 3,
      "issue_nc": 22,
      "kw": [
-      "인기",
       "남자",
+      "인기",
       "여대"
      ],
      "top_post": {
@@ -666,8 +585,32 @@
    ]
   },
   {
+   "name": "아카라이브",
+   "np": 1,
+   "nc": 6,
+   "topics": [
+    {
+     "t": "우승 앞둔 삼성 세일 시작 ㄷㄷ",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 6,
+     "issue_np": 8,
+     "issue_nc": 74,
+     "kw": [
+      "삼성",
+      "우승"
+     ],
+     "top_post": {
+      "t": "직관왔는데 삼성 우승을 보다니",
+      "u": "https://arca.live/b/live/188460200?p=1",
+      "nc": 6
+     }
+    }
+   ]
+  },
+  {
    "name": "루리웹",
-   "np": 27,
+   "np": 26,
    "nc": 0,
    "topics": [
     {
@@ -676,10 +619,10 @@
      "np_here": 2,
      "nc_here": 0,
      "issue_np": 8,
-     "issue_nc": 58,
+     "issue_nc": 74,
      "kw": [
-      "우승",
-      "삼성"
+      "삼성",
+      "우승"
      ],
      "top_post": {
       "t": "삼성 우승시 내일 일어날 일",
@@ -695,32 +638,13 @@
      "issue_np": 3,
      "issue_nc": 105,
      "kw": [
-      "논란",
+      "블라인드",
       "담배",
-      "블라인드"
+      "논란"
      ],
      "top_post": {
       "t": "블라인드에서 댓글 1000개 넘게 달린 담배 논란",
       "u": "https://bbs.ruliweb.com/best/board/300143/read/77309570?m=humor",
-      "nc": 0
-     }
-    },
-    {
-     "t": "와들와들 심각한 수준의 미민당 데이터센터 규제....",
-     "nsite": 3,
-     "np_here": 2,
-     "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 47,
-     "kw": [
-      "데이터",
-      "센터",
-      "텍사스",
-      "허용"
-     ],
-     "top_post": {
-      "t": "텍사스 데이터센터 허용",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77307301?m=all&t=now",
       "nc": 0
      }
     },
@@ -730,10 +654,10 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 3,
-     "issue_nc": 22,
+     "issue_nc": 27,
      "kw": [
-      "아파트",
       "건축",
+      "아파트",
       "은마",
       "구축"
      ],
@@ -751,8 +675,8 @@
      "issue_np": 3,
      "issue_nc": 17,
      "kw": [
-      "센터",
       "미국",
+      "센터",
       "데이터",
       "한국"
      ],
@@ -768,11 +692,11 @@
      "np_here": 2,
      "nc_here": 0,
      "issue_np": 4,
-     "issue_nc": 10,
+     "issue_nc": 15,
      "kw": [
       "난사",
-      "폴란드",
       "총기",
+      "폴란드",
       "사망"
      ],
      "top_post": {
@@ -789,10 +713,10 @@
      "issue_np": 3,
      "issue_nc": 0,
      "kw": [
-      "온수",
       "행인",
+      "구멍",
       "파열",
-      "구멍"
+      "온수"
      ],
      "top_post": {
       "t": "온수관 파열 '구멍'에 행인 빠져...전신 60% 중화상",
@@ -808,14 +732,31 @@
      "issue_np": 3,
      "issue_nc": 0,
      "kw": [
-      "작가",
-      "사건",
+      "영국",
       "협박",
-      "영국"
+      "사건",
+      "작가"
      ],
      "top_post": {
       "t": "300년 전 영국 여성들이 해피엔딩 내달라고 작가 협박한 사건",
       "u": "https://bbs.ruliweb.com/best/board/300143/read/77311178?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "요즘 미국 대학강의실 상황 ㄷㄷ",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 2,
+     "issue_nc": 97,
+     "kw": [
+      "강의실",
+      "대학"
+     ],
+     "top_post": {
+      "t": "요즘 대학강의실 상황",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77308379?m=all&t=now",
       "nc": 0
      }
     }
@@ -832,7 +773,7 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 4,
-     "issue_nc": 42,
+     "issue_nc": 59,
      "kw": [
       "남자",
       "여자"
@@ -849,10 +790,10 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 3,
-     "issue_nc": 22,
+     "issue_nc": 27,
      "kw": [
-      "아파트",
       "건축",
+      "아파트",
       "은마",
       "구축"
      ],
@@ -870,10 +811,10 @@
      "issue_np": 3,
      "issue_nc": 0,
      "kw": [
-      "온수",
       "행인",
+      "구멍",
       "파열",
-      "구멍"
+      "온수"
      ],
      "top_post": {
       "t": "온수관 파열 '구멍'에 행인 빠져...전신 60% 중화상 (영상)",
@@ -889,10 +830,10 @@
      "issue_np": 3,
      "issue_nc": 0,
      "kw": [
-      "작가",
-      "사건",
+      "영국",
       "협박",
-      "영국"
+      "사건",
+      "작가"
      ],
      "top_post": {
       "t": "300년 전 영국 여자들이 해피엔딩 내달라고 작가 협박한 사건",
@@ -932,11 +873,11 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 4,
-     "issue_nc": 10,
+     "issue_nc": 15,
      "kw": [
       "난사",
-      "폴란드",
       "총기",
+      "폴란드",
       "사망"
      ],
      "top_post": {
@@ -953,10 +894,10 @@
      "issue_np": 3,
      "issue_nc": 0,
      "kw": [
-      "작가",
-      "사건",
+      "영국",
       "협박",
-      "영국"
+      "사건",
+      "작가"
      ],
      "top_post": {
       "t": "300년 전 영국 여자들이 해피엔딩 내달라고 작가 협박한 사건",
@@ -972,8 +913,8 @@
      "issue_np": 2,
      "issue_nc": 56,
      "kw": [
-      "닥터",
-      "시청"
+      "시청",
+      "닥터"
      ],
      "top_post": {
       "t": "싱글벙글 닥터x 논란후 시청률 근황",
@@ -989,8 +930,8 @@
      "issue_np": 2,
      "issue_nc": 24,
      "kw": [
-      "회사",
-      "결혼"
+      "결혼",
+      "회사"
      ],
      "top_post": {
       "t": "김밥집 접고 결혼정보회사 운영한다는 사장님",
@@ -1013,8 +954,8 @@
      "issue_np": 3,
      "issue_nc": 17,
      "kw": [
-      "센터",
       "미국",
+      "센터",
       "데이터",
       "한국"
      ],
@@ -1032,10 +973,10 @@
      "issue_np": 3,
      "issue_nc": 0,
      "kw": [
-      "온수",
       "행인",
+      "구멍",
       "파열",
-      "구멍"
+      "온수"
      ],
      "top_post": {
       "t": "마곡동 온수관 파열 구멍으로 행인 빠져",
@@ -1059,8 +1000,8 @@
      "issue_nc": 54,
      "kw": [
       "한국",
-      "일본",
-      "식민지"
+      "식민지",
+      "일본"
      ],
      "top_post": {
       "t": "한국은 일본 식민지였는데 왜 일본어 안 써?",
