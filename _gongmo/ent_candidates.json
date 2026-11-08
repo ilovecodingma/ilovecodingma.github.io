@@ -1,5 +1,5 @@
 {
- "at": "2026-11-08 17:30",
+ "at": "2026-11-08 19:06",
  "nitems": 510,
  "cands": [
   {
@@ -14,7 +14,7 @@
     "조선일보",
     "헤럴드경제"
    ],
-   "n": 17,
+   "n": 15,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -108,36 +108,36 @@
    ]
   },
   {
-   "kw": "개월",
+   "kw": "박진영",
    "nsrc": 5,
    "srcs": [
     "뉴시스",
     "동아일보",
+    "세계일보",
     "연합뉴스",
-    "조선일보",
-    "한국경제"
+    "조선일보"
    ],
    "n": 10,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "'복면가왕' 11개월 만에 재개…'황금마스크' 12월 방송",
-     "link": "https://www.yna.co.kr/view/AKR20261103068900005"
+     "title": "박진영, 종교 모임 논란에 입 열어…\"이단·사이비라며 핍박\"",
+     "link": "https://www.yna.co.kr/view/AKR20261104071800005"
     },
     {
      "src": "동아일보",
-     "title": "데뷔 6개월 만에 최고 영예상…앤더블, ‘2026 KGMA’ 2관왕",
-     "link": "https://sports.donga.com/ent/article/all/20261108/134984727/1"
+     "title": "김유정, 폭탄 테러 후 기차 탔다…박진영 죽었나? (100일의 거짓말)",
+     "link": "https://sports.donga.com/ent/article/all/20261108/134985119/1"
     },
     {
-     "src": "한국경제",
-     "title": "\"화환할게\" 강동원, 4개월 전 팬과 약속 지켰다…결혼식장에 깜짝 선물",
-     "link": "https://www.hankyung.com/article/202610265376H"
+     "src": "세계일보",
+     "title": "아이비, 발라드 가수 4년 준비했는데…\"박진영 한마디에 인생 바뀌어\"",
+     "link": "https://www.segye.com/newsView/20261107503406"
     },
     {
      "src": "뉴시스",
-     "title": "진아름, 출산 3개월 만에 납작배…몸매 관리 비결은",
-     "link": "https://www.newsis.com/view/NISX20261108_0003859255"
+     "title": "아이비, 발라드 가수 4년 준비했는데…\"박진영 한마디에 인생 바뀌어\"",
+     "link": "https://www.newsis.com/view/NISX20261107_0003858778"
     }
    ]
   },
@@ -176,40 +176,6 @@
    ]
   },
   {
-   "kw": "박진영",
-   "nsrc": 5,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "세계일보",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 9,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "박진영, 종교 모임 논란에 입 열어…\"이단·사이비라며 핍박\"",
-     "link": "https://www.yna.co.kr/view/AKR20261104071800005"
-    },
-    {
-     "src": "동아일보",
-     "title": "김유정, 폭탄 테러 후 기차 탔다…박진영 죽었나? (100일의 거짓말)",
-     "link": "https://sports.donga.com/ent/article/all/20261108/134985119/1"
-    },
-    {
-     "src": "세계일보",
-     "title": "아이비, 발라드 가수 4년 준비했는데…\"박진영 한마디에 인생 바뀌어\"",
-     "link": "https://www.segye.com/newsView/20261107503406"
-    },
-    {
-     "src": "뉴시스",
-     "title": "아이비, 발라드 가수 4년 준비했는데…\"박진영 한마디에 인생 바뀌어\"",
-     "link": "https://www.newsis.com/view/NISX20261107_0003858778"
-    }
-   ]
-  },
-  {
    "kw": "뉴진스",
    "nsrc": 5,
    "srcs": [
@@ -219,7 +185,7 @@
     "조선일보",
     "한겨레"
    ],
-   "n": 8,
+   "n": 9,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -240,6 +206,40 @@
      "src": "한겨레",
      "title": "민희진, ‘뉴진스 불공정 전속계약’ 하이브 해명 “제 얼굴에 침 뱉기”",
      "link": "https://www.hani.co.kr/arti/culture/music/1286167.html"
+    }
+   ]
+  },
+  {
+   "kw": "개월",
+   "nsrc": 5,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "연합뉴스",
+    "조선일보",
+    "한국경제"
+   ],
+   "n": 8,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "'복면가왕' 11개월 만에 재개…'황금마스크' 12월 방송",
+     "link": "https://www.yna.co.kr/view/AKR20261103068900005"
+    },
+    {
+     "src": "동아일보",
+     "title": "데뷔 6개월 만에 최고 영예상…앤더블, ‘2026 KGMA’ 2관왕",
+     "link": "https://sports.donga.com/ent/article/all/20261108/134984727/1"
+    },
+    {
+     "src": "한국경제",
+     "title": "\"화환할게\" 강동원, 4개월 전 팬과 약속 지켰다…결혼식장에 깜짝 선물",
+     "link": "https://www.hankyung.com/article/202610265376H"
+    },
+    {
+     "src": "뉴시스",
+     "title": "진아름, 출산 3개월 만에 납작배…몸매 관리 비결은",
+     "link": "https://www.newsis.com/view/NISX20261108_0003859255"
     }
    ]
   },
@@ -274,6 +274,40 @@
      "src": "한겨레",
      "title": "피부부터 장기까지…‘인체 수리’ 도전 [.txt]",
      "link": "https://www.hani.co.kr/arti/culture/book/1286068.html"
+    }
+   ]
+  },
+  {
+   "kw": "한국",
+   "nsrc": 5,
+   "srcs": [
+    "SBS",
+    "세계일보",
+    "연합뉴스",
+    "조선일보",
+    "한겨레"
+   ],
+   "n": 7,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "디즈니, 내년 싱가포르서 대형 팬 행사…한국 등 신작 공개",
+     "link": "https://www.yna.co.kr/view/AKR20261105096800005"
+    },
+    {
+     "src": "한겨레",
+     "title": "한국 펑크·솔 음악 선구자 사랑과 평화, 소극장 콘서트 ‘펑키 투나잇’ 연다",
+     "link": "https://www.hani.co.kr/arti/culture/music/1286078.html"
+    },
+    {
+     "src": "한겨레",
+     "title": "‘미국 운영체제’ 졸업하고 이젠 한국 스스로 [.txt]",
+     "link": "https://www.hani.co.kr/arti/culture/book/1286058.html"
+    },
+    {
+     "src": "세계일보",
+     "title": "“제가 한국 남고딩인데”…스포츠·요리·가요계 대표가 된 귀화 스타들",
+     "link": "https://www.segye.com/newsView/20261104518705"
     }
    ]
   },
@@ -346,7 +380,41 @@
    ]
   },
   {
-   "kw": "시그널",
+   "kw": "음악",
+   "nsrc": 5,
+   "srcs": [
+    "동아일보",
+    "연합뉴스",
+    "조선일보",
+    "한겨레",
+    "한국경제"
+   ],
+   "n": 6,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "[게시판] 음저협, 음악 저작권 모범업소 377곳 선정",
+     "link": "https://www.yna.co.kr/view/AKR20261103047900005"
+    },
+    {
+     "src": "동아일보",
+     "title": "마이크 잡은 류수정, 턴테이블 잡은 DJ suki…특별한 음악 파티",
+     "link": "https://sports.donga.com/ent/article/all/20261108/134985873/1"
+    },
+    {
+     "src": "한겨레",
+     "title": "의사 딸이 음악PD 지망생과…부모 반대 클수록 ‘로미오와 줄리엣 효과’ [.txt]",
+     "link": "https://www.hani.co.kr/arti/culture/culture_general/1286250.html"
+    },
+    {
+     "src": "한겨레",
+     "title": "한국 펑크·솔 음악 선구자 사랑과 평화, 소극장 콘서트 ‘펑키 투나잇’ 연다",
+     "link": "https://www.hani.co.kr/arti/culture/music/1286078.html"
+    }
+   ]
+  },
+  {
+   "kw": "조진웅",
    "nsrc": 5,
    "srcs": [
     "SBS",
@@ -380,7 +448,7 @@
    ]
   },
   {
-   "kw": "조진웅",
+   "kw": "시그널",
    "nsrc": 5,
    "srcs": [
     "SBS",
@@ -448,6 +516,106 @@
    ]
   },
   {
+   "kw": "이혼",
+   "nsrc": 5,
+   "srcs": [
+    "뉴시스",
+    "세계일보",
+    "조선일보",
+    "한국경제",
+    "헤럴드경제"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "한국경제",
+     "title": "김원효 \"주식 투자로 2억원 날려…심진화와 이혼 위기\"",
+     "link": "https://www.hankyung.com/article/202611032016H"
+    },
+    {
+     "src": "세계일보",
+     "title": "이태성, 이혼 후 만난 여친과 결별…\"상대 부모님이 교제 반대\"",
+     "link": "https://www.segye.com/newsView/20261107502911"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "혼전 출산 후 결혼 1달만에 이혼…롯데 정철원 ‘가정폭력·외도’ 의혹에 입 열었다",
+     "link": "https://biz.heraldcorp.com/article/10929049"
+    },
+    {
+     "src": "뉴시스",
+     "title": "이태성, 이혼 후 만난 여친과 결별…\"상대 부모님이 교제 반대\"",
+     "link": "https://www.newsis.com/view/NISX20261107_0003858754"
+    }
+   ]
+  },
+  {
+   "kw": "거짓말",
+   "nsrc": 4,
+   "srcs": [
+    "동아일보",
+    "연합뉴스",
+    "조선일보",
+    "한국경제"
+   ],
+   "n": 8,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "장선우 감독 '거짓말', 27년 만에 무삭제 완전판 재개봉",
+     "link": "https://www.yna.co.kr/view/AKR20261105072600005"
+    },
+    {
+     "src": "동아일보",
+     "title": "외설 논란에 법정 구속까지 된 ‘거짓말’, 26년만에 무삭제 개봉",
+     "link": "https://sports.donga.com/ent/article/all/20261108/134985926/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "김유정, 폭탄 테러 후 기차 탔다…박진영 죽었나? (100일의 거짓말)",
+     "link": "https://sports.donga.com/ent/article/all/20261108/134985119/1"
+    },
+    {
+     "src": "한국경제",
+     "title": "\"일본인인 줄 알았다\"…'100일의 거짓말' 본 日 시청자 반응",
+     "link": "https://www.hankyung.com/article/202610281076H"
+    }
+   ]
+  },
+  {
+   "kw": "최고",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "연합뉴스",
+    "조선일보"
+   ],
+   "n": 7,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "위켄드, 투어 매출 13억 달러 돌파…남성 솔로 가수 최고",
+     "link": "https://www.yna.co.kr/view/AKR20261107025100005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "하이브, BTS 효과에 최고 실적…\"'아리랑' 이후 단체·솔로 활동 준비\"(종합2보)",
+     "link": "https://www.yna.co.kr/view/AKR20261103165000005"
+    },
+    {
+     "src": "동아일보",
+     "title": "최고 20.2% 뚫었다…‘닥터X’ 김지원 적수 없는 흥행 독주",
+     "link": "https://sports.donga.com/ent/article/all/20261108/134984788/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "데뷔 6개월 만에 최고 영예상…앤더블, ‘2026 KGMA’ 2관왕",
+     "link": "https://sports.donga.com/ent/article/all/20261108/134984727/1"
+    }
+   ]
+  },
+  {
    "kw": "둘째",
    "nsrc": 4,
    "srcs": [
@@ -456,7 +624,7 @@
     "세계일보",
     "조선일보"
    ],
-   "n": 8,
+   "n": 7,
    "headlines": [
     {
      "src": "동아일보",
@@ -481,35 +649,35 @@
    ]
   },
   {
-   "kw": "거짓말",
+   "kw": "얼굴",
    "nsrc": 4,
    "srcs": [
+    "SBS",
+    "뉴시스",
     "동아일보",
-    "연합뉴스",
-    "조선일보",
-    "한국경제"
+    "조선일보"
    ],
    "n": 7,
    "headlines": [
     {
-     "src": "연합뉴스",
-     "title": "장선우 감독 '거짓말', 27년 만에 무삭제 완전판 재개봉",
-     "link": "https://www.yna.co.kr/view/AKR20261105072600005"
-    },
-    {
      "src": "동아일보",
-     "title": "외설 논란에 법정 구속까지 된 ‘거짓말’, 26년만에 무삭제 개봉",
-     "link": "https://sports.donga.com/ent/article/all/20261108/134985926/1"
+     "title": "하정우, ♥11세 연하 차정원과 결혼 D-35…몰라보게 달라진 얼굴",
+     "link": "https://sports.donga.com/ent/article/all/20261108/134984605/1"
     },
     {
-     "src": "동아일보",
-     "title": "김유정, 폭탄 테러 후 기차 탔다…박진영 죽었나? (100일의 거짓말)",
-     "link": "https://sports.donga.com/ent/article/all/20261108/134985119/1"
+     "src": "SBS",
+     "title": "얼굴 한번 못 본 사위가 왜…'그알', '송파 장모 살해' 김성우 사건 추적",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008833644&plink=RSSLINK&cooper=RSSREADER"
     },
     {
-     "src": "한국경제",
-     "title": "\"일본인인 줄 알았다\"…'100일의 거짓말' 본 日 시청자 반응",
-     "link": "https://www.hankyung.com/article/202610281076H"
+     "src": "뉴시스",
+     "title": "330억 소송에도 각별한 뉴진스…하니·다니엘 얼굴 맞댔다",
+     "link": "https://www.newsis.com/view/NISX20261108_0003859383"
+    },
+    {
+     "src": "뉴시스",
+     "title": "이창훈, 17세 연하 아내에 \"얼굴 보고 만난 거 아냐\"",
+     "link": "https://www.newsis.com/view/NISX20261107_0003858755"
     }
    ]
   },
@@ -543,39 +711,6 @@
      "src": "SBS",
      "title": "김구라, 곧 며느리 본다…아들 그리, '곰신' 여자친구와 깜짝 결혼 발표",
      "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008833564&plink=RSSLINK&cooper=RSSREADER"
-    }
-   ]
-  },
-  {
-   "kw": "고백",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "세계일보",
-    "조선일보",
-    "한국경제"
-   ],
-   "n": 7,
-   "headlines": [
-    {
-     "src": "한국경제",
-     "title": "\"통장 압류, 수중엔 1000원\"…JBJ 출신 켄타, 4억 빚 고백",
-     "link": "https://www.hankyung.com/article/202610280689H"
-    },
-    {
-     "src": "세계일보",
-     "title": "김영철, 가슴 아픈 가족사 고백…\"치킨 사온다던 형, 끝내 못 돌아와\"",
-     "link": "https://www.segye.com/newsView/20261108500094"
-    },
-    {
-     "src": "세계일보",
-     "title": "조이, 학창 시절 반 1등·전교 2등 고백…“집안 형편 어려워 공부에 매달려”",
-     "link": "https://www.segye.com/newsView/20261106514425"
-    },
-    {
-     "src": "뉴시스",
-     "title": "김영철, 가슴 아픈 가족사 고백…\"치킨 사온다던 형, 끝내 못 돌아와\"",
-     "link": "https://www.newsis.com/view/NISX20261107_0003859044"
     }
    ]
   },
@@ -679,39 +814,6 @@
    ]
   },
   {
-   "kw": "최고",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "위켄드, 투어 매출 13억 달러 돌파…남성 솔로 가수 최고",
-     "link": "https://www.yna.co.kr/view/AKR20261107025100005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "하이브, BTS 효과에 최고 실적…\"'아리랑' 이후 단체·솔로 활동 준비\"(종합2보)",
-     "link": "https://www.yna.co.kr/view/AKR20261103165000005"
-    },
-    {
-     "src": "동아일보",
-     "title": "최고 20.2% 뚫었다…‘닥터X’ 김지원 적수 없는 흥행 독주",
-     "link": "https://sports.donga.com/ent/article/all/20261108/134984788/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "데뷔 6개월 만에 최고 영예상…앤더블, ‘2026 KGMA’ 2관왕",
-     "link": "https://sports.donga.com/ent/article/all/20261108/134984727/1"
-    }
-   ]
-  },
-  {
    "kw": "논란에",
    "nsrc": 4,
    "srcs": [
@@ -745,68 +847,35 @@
    ]
   },
   {
-   "kw": "한국",
+   "kw": "고백",
    "nsrc": 4,
    "srcs": [
-    "SBS",
+    "뉴시스",
     "세계일보",
-    "연합뉴스",
-    "한겨레"
+    "조선일보",
+    "한국경제"
    ],
    "n": 6,
    "headlines": [
     {
-     "src": "연합뉴스",
-     "title": "디즈니, 내년 싱가포르서 대형 팬 행사…한국 등 신작 공개",
-     "link": "https://www.yna.co.kr/view/AKR20261105096800005"
-    },
-    {
-     "src": "한겨레",
-     "title": "한국 펑크·솔 음악 선구자 사랑과 평화, 소극장 콘서트 ‘펑키 투나잇’ 연다",
-     "link": "https://www.hani.co.kr/arti/culture/music/1286078.html"
-    },
-    {
-     "src": "한겨레",
-     "title": "‘미국 운영체제’ 졸업하고 이젠 한국 스스로 [.txt]",
-     "link": "https://www.hani.co.kr/arti/culture/book/1286058.html"
+     "src": "한국경제",
+     "title": "\"통장 압류, 수중엔 1000원\"…JBJ 출신 켄타, 4억 빚 고백",
+     "link": "https://www.hankyung.com/article/202610280689H"
     },
     {
      "src": "세계일보",
-     "title": "“제가 한국 남고딩인데”…스포츠·요리·가요계 대표가 된 귀화 스타들",
-     "link": "https://www.segye.com/newsView/20261104518705"
-    }
-   ]
-  },
-  {
-   "kw": "얼굴",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "동아일보",
-    "조선일보"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "하정우, ♥11세 연하 차정원과 결혼 D-35…몰라보게 달라진 얼굴",
-     "link": "https://sports.donga.com/ent/article/all/20261108/134984605/1"
+     "title": "김영철, 가슴 아픈 가족사 고백…\"치킨 사온다던 형, 끝내 못 돌아와\"",
+     "link": "https://www.segye.com/newsView/20261108500094"
     },
     {
-     "src": "SBS",
-     "title": "얼굴 한번 못 본 사위가 왜…'그알', '송파 장모 살해' 김성우 사건 추적",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008833644&plink=RSSLINK&cooper=RSSREADER"
+     "src": "세계일보",
+     "title": "조이, 학창 시절 반 1등·전교 2등 고백…“집안 형편 어려워 공부에 매달려”",
+     "link": "https://www.segye.com/newsView/20261106514425"
     },
     {
      "src": "뉴시스",
-     "title": "330억 소송에도 각별한 뉴진스…하니·다니엘 얼굴 맞댔다",
-     "link": "https://www.newsis.com/view/NISX20261108_0003859383"
-    },
-    {
-     "src": "뉴시스",
-     "title": "이창훈, 17세 연하 아내에 \"얼굴 보고 만난 거 아냐\"",
-     "link": "https://www.newsis.com/view/NISX20261107_0003858755"
+     "title": "김영철, 가슴 아픈 가족사 고백…\"치킨 사온다던 형, 끝내 못 돌아와\"",
+     "link": "https://www.newsis.com/view/NISX20261107_0003859044"
     }
    ]
   },
@@ -877,35 +946,35 @@
    ]
   },
   {
-   "kw": "음악",
+   "kw": "모델",
    "nsrc": 4,
    "srcs": [
-    "동아일보",
+    "SBS",
+    "뉴시스",
     "연합뉴스",
-    "한겨레",
-    "한국경제"
+    "조선일보"
    ],
    "n": 5,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "[게시판] 음저협, 음악 저작권 모범업소 377곳 선정",
-     "link": "https://www.yna.co.kr/view/AKR20261103047900005"
+     "title": "배우 도상우·모델 박지혜, 내년 2월 결혼",
+     "link": "https://www.yna.co.kr/view/AKR20261105173700005"
     },
     {
-     "src": "동아일보",
-     "title": "마이크 잡은 류수정, 턴테이블 잡은 DJ suki…특별한 음악 파티",
-     "link": "https://sports.donga.com/ent/article/all/20261108/134985873/1"
+     "src": "SBS",
+     "title": "배우 도상우, 모델 박지혜와 내년 2월 결혼…로맨틱 프러포즈 공개",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008833895&plink=RSSLINK&cooper=RSSREADER"
     },
     {
-     "src": "한겨레",
-     "title": "의사 딸이 음악PD 지망생과…부모 반대 클수록 ‘로미오와 줄리엣 효과’ [.txt]",
-     "link": "https://www.hani.co.kr/arti/culture/culture_general/1286250.html"
+     "src": "뉴시스",
+     "title": "추사랑, 키 175㎝ 넘는 근황 \"모델 엄마보다 더 커\"",
+     "link": "https://www.newsis.com/view/NISX20261107_0003858735"
     },
     {
-     "src": "한겨레",
-     "title": "한국 펑크·솔 음악 선구자 사랑과 평화, 소극장 콘서트 ‘펑키 투나잇’ 연다",
-     "link": "https://www.hani.co.kr/arti/culture/music/1286078.html"
+     "src": "조선일보",
+     "title": "박남정, 8살 연하 모델 ♥아내 이렇게 예뻤어? 자식농사 대박 이유 있네 [핫피플]",
+     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/08/GFRTCMBWHEYTEMZUMFSDMNZXGY/"
     }
    ]
   },
@@ -972,72 +1041,6 @@
      "src": "뉴시스",
      "title": "아일릿, '체포하겠어'로 첫 음방 1위…\"모카에게도 고마워\"",
      "link": "https://www.newsis.com/view/NISX20261107_0003858836"
-    }
-   ]
-  },
-  {
-   "kw": "조매력",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "세계일보",
-    "조선일보"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "송하예♥조매력, 오늘 부부 된다…94년생 동갑내기의 초고속 결혼",
-     "link": "https://sports.donga.com/ent/article/all/20261108/134984192/1"
-    },
-    {
-     "src": "세계일보",
-     "title": "가수 송하예·조매력 오늘 결혼한다 \"많은 분 도움 덕분에\"",
-     "link": "https://www.segye.com/newsView/20261108502746"
-    },
-    {
-     "src": "뉴시스",
-     "title": "가수 송하예·조매력 오늘 결혼한다 \"많은 분 도움 덕분에\"",
-     "link": "https://www.newsis.com/view/NISX20261108_0003859121"
-    },
-    {
-     "src": "조선일보",
-     "title": "송하예♥조매력, 오늘(8일) 결혼…'100만 유튜버'와 8개월 만에 부부",
-     "link": "https://www.chosun.com/entertainments/enter_general/2026/11/08/MUZTEYZXGBRWKNDFGY2TMMJYMM/"
-    }
-   ]
-  },
-  {
-   "kw": "송하예",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "세계일보",
-    "조선일보"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "송하예♥조매력, 오늘 부부 된다…94년생 동갑내기의 초고속 결혼",
-     "link": "https://sports.donga.com/ent/article/all/20261108/134984192/1"
-    },
-    {
-     "src": "세계일보",
-     "title": "가수 송하예·조매력 오늘 결혼한다 \"많은 분 도움 덕분에\"",
-     "link": "https://www.segye.com/newsView/20261108502746"
-    },
-    {
-     "src": "뉴시스",
-     "title": "가수 송하예·조매력 오늘 결혼한다 \"많은 분 도움 덕분에\"",
-     "link": "https://www.newsis.com/view/NISX20261108_0003859121"
-    },
-    {
-     "src": "조선일보",
-     "title": "송하예♥조매력, 오늘(8일) 결혼…'100만 유튜버'와 8개월 만에 부부",
-     "link": "https://www.chosun.com/entertainments/enter_general/2026/11/08/MUZTEYZXGBRWKNDFGY2TMMJYMM/"
     }
    ]
   },
@@ -1141,39 +1144,6 @@
    ]
   },
   {
-   "kw": "모델",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 4,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "배우 도상우·모델 박지혜, 내년 2월 결혼",
-     "link": "https://www.yna.co.kr/view/AKR20261105173700005"
-    },
-    {
-     "src": "SBS",
-     "title": "배우 도상우, 모델 박지혜와 내년 2월 결혼…로맨틱 프러포즈 공개",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008833895&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "뉴시스",
-     "title": "추사랑, 키 175㎝ 넘는 근황 \"모델 엄마보다 더 커\"",
-     "link": "https://www.newsis.com/view/NISX20261107_0003858735"
-    },
-    {
-     "src": "조선일보",
-     "title": "이재, ♥샘김과 로맨틱 몰디브 신혼여행..비키니 입고 뽐낸 모델 몸매[핫피플]",
-     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/08/G5RTGMZUMMYGIM3BGJSTKZTBGQ/"
-    }
-   ]
-  },
-  {
    "kw": "변신",
    "nsrc": 4,
    "srcs": [
@@ -1203,6 +1173,39 @@
      "src": "SBS",
      "title": "이번엔 역적…정우성, 영화 '살생부'서 한명회 변신",
      "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008833176&plink=RSSLINK&cooper=RSSREADER"
+    }
+   ]
+  },
+  {
+   "kw": "대만",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "연합뉴스",
+    "조선일보"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "BTS 대만 가오슝·인니 자카르타 공연 80여개국 극장서 상영",
+     "link": "https://www.yna.co.kr/view/AKR20261103017400005"
+    },
+    {
+     "src": "동아일보",
+     "title": "‘삐끼삐끼’ 이주은 여전히 핫하네, 이번엔 대만 농구행",
+     "link": "https://sports.donga.com/sports/article/all/20261108/134985735/1"
+    },
+    {
+     "src": "뉴시스",
+     "title": "감정 배운 로봇·감정 숨긴 인간…대만 싱어송라이터 오한, 정규 2집 'O725'",
+     "link": "https://www.newsis.com/view/NISX20261101_0003849475"
+    },
+    {
+     "src": "조선일보",
+     "title": "82메이저, 오늘(8일) 대만 콘서트로 현지 팬들 만난다..글로벌 행보ing",
+     "link": "https://www.chosun.com/entertainments/music/2026/11/08/MFSTSZJRG5RWKZRZGEYWMNLBGM/"
     }
    ]
   },
@@ -1273,68 +1276,68 @@
    ]
   },
   {
-   "kw": "이혼",
+   "kw": "송하예",
    "nsrc": 4,
    "srcs": [
     "뉴시스",
+    "동아일보",
     "세계일보",
-    "한국경제",
-    "헤럴드경제"
+    "조선일보"
    ],
    "n": 4,
    "headlines": [
     {
-     "src": "한국경제",
-     "title": "김원효 \"주식 투자로 2억원 날려…심진화와 이혼 위기\"",
-     "link": "https://www.hankyung.com/article/202611032016H"
+     "src": "동아일보",
+     "title": "송하예♥조매력, 오늘 부부 된다…94년생 동갑내기의 초고속 결혼",
+     "link": "https://sports.donga.com/ent/article/all/20261108/134984192/1"
     },
     {
      "src": "세계일보",
-     "title": "이태성, 이혼 후 만난 여친과 결별…\"상대 부모님이 교제 반대\"",
-     "link": "https://www.segye.com/newsView/20261107502911"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "혼전 출산 후 결혼 1달만에 이혼…롯데 정철원 ‘가정폭력·외도’ 의혹에 입 열었다",
-     "link": "https://biz.heraldcorp.com/article/10929049"
+     "title": "가수 송하예·조매력 오늘 결혼한다 \"많은 분 도움 덕분에\"",
+     "link": "https://www.segye.com/newsView/20261108502746"
     },
     {
      "src": "뉴시스",
-     "title": "이태성, 이혼 후 만난 여친과 결별…\"상대 부모님이 교제 반대\"",
-     "link": "https://www.newsis.com/view/NISX20261107_0003858754"
+     "title": "가수 송하예·조매력 오늘 결혼한다 \"많은 분 도움 덕분에\"",
+     "link": "https://www.newsis.com/view/NISX20261108_0003859121"
+    },
+    {
+     "src": "조선일보",
+     "title": "송하예♥조매력, 오늘(8일) 결혼…'100만 유튜버'와 8개월 만에 부부",
+     "link": "https://www.chosun.com/entertainments/enter_general/2026/11/08/MUZTEYZXGBRWKNDFGY2TMMJYMM/"
     }
    ]
   },
   {
-   "kw": "아들",
+   "kw": "조매력",
    "nsrc": 4,
    "srcs": [
-    "SBS",
     "뉴시스",
+    "동아일보",
     "세계일보",
-    "한국경제"
+    "조선일보"
    ],
    "n": 4,
    "headlines": [
     {
-     "src": "한국경제",
-     "title": "강석우, 69세에 할아버지 됐다…\"아들이 아들 낳아\"",
-     "link": "https://www.hankyung.com/article/202610292398H"
+     "src": "동아일보",
+     "title": "송하예♥조매력, 오늘 부부 된다…94년생 동갑내기의 초고속 결혼",
+     "link": "https://sports.donga.com/ent/article/all/20261108/134984192/1"
     },
     {
      "src": "세계일보",
-     "title": "배우 윤진영 둘째 아들 안았다 \"산모·아이 모두 건강\"",
-     "link": "https://www.segye.com/newsView/20261108505072"
-    },
-    {
-     "src": "SBS",
-     "title": "김구라, 곧 며느리 본다…아들 그리, '곰신' 여자친구와 깜짝 결혼 발표",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008833564&plink=RSSLINK&cooper=RSSREADER"
+     "title": "가수 송하예·조매력 오늘 결혼한다 \"많은 분 도움 덕분에\"",
+     "link": "https://www.segye.com/newsView/20261108502746"
     },
     {
      "src": "뉴시스",
-     "title": "배우 윤진영 둘째 아들 안았다 \"산모·아이 모두 건강\"",
-     "link": "https://www.newsis.com/view/NISX20261108_0003859239"
+     "title": "가수 송하예·조매력 오늘 결혼한다 \"많은 분 도움 덕분에\"",
+     "link": "https://www.newsis.com/view/NISX20261108_0003859121"
+    },
+    {
+     "src": "조선일보",
+     "title": "송하예♥조매력, 오늘(8일) 결혼…'100만 유튜버'와 8개월 만에 부부",
+     "link": "https://www.chosun.com/entertainments/enter_general/2026/11/08/MUZTEYZXGBRWKNDFGY2TMMJYMM/"
     }
    ]
   }
