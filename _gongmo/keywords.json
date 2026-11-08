@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-08 21:00",
+ "updated": "2026-11-08 22:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -168,6 +168,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-05",
+   "expires": "2026-11-11"
+  },
+  {
+   "query": "기아",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 10000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-08",
    "expires": "2026-11-11"
   },
   {
@@ -420,6 +432,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-07",
+   "expires": "2026-11-11"
+  },
+  {
+   "query": "최태원",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 5000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-08",
    "expires": "2026-11-11"
   },
   {
@@ -940,6 +964,18 @@
   },
   {
    "query": "부천 대 포항",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-08",
+   "expires": "2026-11-11"
+  },
+  {
+   "query": "김재서",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -1791,6 +1827,18 @@
    "expires": "2026-11-11"
   },
   {
+   "query": "김우석",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-08",
+   "expires": "2026-11-11"
+  },
+  {
    "query": "오산대",
    "tier": "단기",
    "signal": [
@@ -2392,18 +2440,6 @@
   },
   {
    "query": "서울특별시",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 1000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-08",
-   "expires": "2026-11-11"
-  },
-  {
-   "query": "김재서",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -9797,6 +9833,19 @@
    "expires": "2026-11-15"
   },
   {
+   "query": "기초연금 인상분 생계급여에서 깎이는 노인 78만명, 2027년 하위 30% 38만원 적용 구조는?",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 3,
+   "status": "작성",
+   "page": "/issue/basic-pension-livelihood-benefit-offset-780k-1108/",
+   "registered": "2026-11-08",
+   "expires": "2026-11-22"
+  },
+  {
    "query": "비트코인 7만5천 달러 붕괴 하락률 ETF 순유출 청산 규모 정리",
    "tier": "중기",
    "signal": [
@@ -10070,6 +10119,19 @@
    "expires": "2026-11-21"
   },
   {
+   "query": "축구협회 연내 회장 선거 무산, FIFA·AFC 공동 서한 내용과 임시 대의원총회 취소 일정, 시한은 언제?",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 3,
+   "status": "작성",
+   "page": "/issue/kfa-president-election-postponed-fifa-letter-1108/",
+   "registered": "2026-11-08",
+   "expires": "2026-11-22"
+  },
+  {
    "query": "2026 KGMA 첫날 수상자 명단, 리센느 4관왕·크래비티 3관왕과 둘째 날 일정",
    "tier": "중기",
    "signal": [
@@ -10315,6 +10377,19 @@
    "page": "/issue/sidecar-vs-circuit-breaker-1108/",
    "registered": "2026-11-08",
    "expires": "2026-12-08"
+  },
+  {
+   "query": "서울대 차기 총장 최해천 교수 최종후보 선출, 이사회 투표 결과·약력·임기 시작일·공대 출신 20년 근거",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 3,
+   "status": "작성",
+   "page": "/issue/snu-president-candidate-choi-haecheon-1108/",
+   "registered": "2026-11-08",
+   "expires": "2026-11-22"
   },
   {
    "query": "손흥민 LAFC 시애틀전 1-2 패 서부 6위 확정, 시즌 7골 15도움과 플레이오프 세인트루이스 일정",
