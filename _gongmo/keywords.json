@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-08 17:00",
+ "updated": "2026-11-08 18:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -1527,18 +1527,6 @@
    "expires": "2026-11-11"
   },
   {
-   "query": "포스코",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 1000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-04",
-   "expires": "2026-11-11"
-  },
-  {
    "query": "이란",
    "tier": "단기",
    "signal": [
@@ -1980,6 +1968,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-04",
+   "expires": "2026-11-11"
+  },
+  {
+   "query": "원태인",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-08",
    "expires": "2026-11-11"
   },
   {
@@ -9754,6 +9754,19 @@
    "expires": "2026-11-11"
   },
   {
+   "query": "2027년 초등학교 입학생 첫 20만명대 전망, 취학통지서·예비소집 일정과 연기 신청 방법",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 3,
+   "status": "작성",
+   "page": "/issue/elementary-first-graders-200k-2027-enrollment-1108/",
+   "registered": "2026-11-08",
+   "expires": "2026-11-22"
+  },
+  {
    "query": "은마아파트 재초환 부담금 4억6천만원 통지, 산정 방식과 납부 시기 정리",
    "tier": "중기",
    "signal": [
@@ -9962,7 +9975,7 @@
    "expires": "2026-11-14"
   },
   {
-   "query": "한국시리즈 5차전 선발 원태인 대니엘, 중계 시간과 삼성 우승 조건",
+   "query": "한국시리즈 5차전 삼성 KT 12-1 우승 확정, MVP 구자욱과 통산 9번째 정상 정리",
    "tier": "중기",
    "signal": [
     "뉴스",
@@ -10066,6 +10079,19 @@
    "expires": "2026-11-20"
   },
   {
+   "query": "포스코 임금교섭 잠정합의안 부결 투표율·찬반 득표수, 인상률 일시금 내용, 이후 절차",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 3,
+   "status": "작성",
+   "page": "/issue/posco-wage-deal-rejected-vote-1108/",
+   "registered": "2026-11-08",
+   "expires": "2026-11-22"
+  },
+  {
    "query": "가능한 사랑 넷플릭스 공개, 이창동 감독 전도연 설경구 줄거리·러닝타임 정리",
    "tier": "중기",
    "signal": [
@@ -10092,6 +10118,19 @@
    "expires": "2026-11-21"
   },
   {
+   "query": "삼성전자 현금성 자산 200조 돌파 분기별 추이와 주주환원·투자 계획 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 3,
+   "status": "작성",
+   "page": "/issue/samsung-electronics-cash-200-trillion-1108/",
+   "registered": "2026-11-08",
+   "expires": "2026-11-22"
+  },
+  {
    "query": "서인영 12월 26일 재혼 발표 예비신랑 결혼식 장소 경위 정리",
    "tier": "중기",
    "signal": [
@@ -10101,6 +10140,19 @@
    "score": 3,
    "status": "작성",
    "page": "/issue/seo-inyoung-remarriage-december-26-1108/",
+   "registered": "2026-11-08",
+   "expires": "2026-11-22"
+  },
+  {
+   "query": "서울 아파트 매물 석 달 새 33% 증가 자치구별 건수와 8·3 세제 개편 내용 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 3,
+   "status": "작성",
+   "page": "/issue/seoul-apartment-listings-up-33-percent-1108/",
    "registered": "2026-11-08",
    "expires": "2026-11-22"
   },
