@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-08 09:00",
+ "updated": "2026-11-08 10:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -471,7 +471,31 @@
    "expires": "2026-11-11"
   },
   {
+   "query": "삼성 라이온즈",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 5000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-08",
+   "expires": "2026-11-11"
+  },
+  {
    "query": "유튜버",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-07",
+   "expires": "2026-11-11"
+  },
+  {
+   "query": "숲",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -496,18 +520,6 @@
   },
   {
    "query": "장유빈",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 2000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-07",
-   "expires": "2026-11-11"
-  },
-  {
-   "query": "숲",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -748,6 +760,18 @@
   },
   {
    "query": "시콜 스키 s 92",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-07",
+   "expires": "2026-11-11"
+  },
+  {
+   "query": "치지직",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -1084,18 +1108,6 @@
   },
   {
    "query": "세균",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 2000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-07",
-   "expires": "2026-11-11"
-  },
-  {
-   "query": "치지직",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -9574,6 +9586,19 @@
    "expires": "2026-11-19"
   },
   {
+   "query": "외국인 삼성전자 SK하이닉스 7.6조 순매도 보유율 최저 수치 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 3,
+   "status": "작성",
+   "page": "/issue/foreign-selling-samsung-hynix-weekly-1108/",
+   "registered": "2026-11-08",
+   "expires": "2026-11-22"
+  },
+  {
    "query": "가덕도신공항 공사비 6200억 증액 특별법 개정 합의 보도 정리, 착공 시기는?",
    "tier": "중기",
    "signal": [
@@ -9808,6 +9833,19 @@
    "expires": "2026-11-21"
   },
   {
+   "query": "서인영 12월 26일 재혼 발표 예비신랑 결혼식 장소 경위 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 3,
+   "status": "작성",
+   "page": "/issue/seo-inyoung-remarriage-december-26-1108/",
+   "registered": "2026-11-08",
+   "expires": "2026-11-22"
+  },
+  {
    "query": "사이드카와 서킷브레이커 차이: 발동 조건과 11월 6일 코스피 사례",
    "tier": "중기",
    "signal": [
@@ -9832,6 +9870,19 @@
    "page": "/issue/worlds-2026-semifinal-1105/",
    "registered": "2026-11-05",
    "expires": "2026-11-12"
+  },
+  {
+   "query": "롤드컵 4강 젠지 IG 3-0 결승 진출, T1 BLG 9일 일정과 15일 뉴욕 파이널 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 3,
+   "status": "작성",
+   "page": "/issue/worlds-2026-semifinal-gen-ig-t1-blg-1108/",
+   "registered": "2026-11-08",
+   "expires": "2026-11-15"
   },
   {
    "query": "레시피 공모전",
