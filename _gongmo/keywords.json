@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-08 15:00",
+ "updated": "2026-11-08 16:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -144,6 +144,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-03",
+   "expires": "2026-11-11"
+  },
+  {
+   "query": "자동차",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 10000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-05",
    "expires": "2026-11-11"
   },
   {
@@ -783,6 +795,18 @@
    "expires": "2026-11-11"
   },
   {
+   "query": "코리아오픈 배드민턴",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-08",
+   "expires": "2026-11-11"
+  },
+  {
    "query": "시콜 스키 s 92",
    "tier": "단기",
    "signal": [
@@ -999,18 +1023,6 @@
    "expires": "2026-11-11"
   },
   {
-   "query": "자동차",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 2000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-05",
-   "expires": "2026-11-11"
-  },
-  {
    "query": "근육",
    "tier": "단기",
    "signal": [
@@ -1140,6 +1152,30 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-07",
+   "expires": "2026-11-11"
+  },
+  {
+   "query": "fc 서울 대 울산",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-08",
+   "expires": "2026-11-11"
+  },
+  {
+   "query": "지수",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-08",
    "expires": "2026-11-11"
   },
   {
@@ -1612,6 +1648,30 @@
   },
   {
    "query": "닥터x 하얀 마피아의 시대",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-08",
+   "expires": "2026-11-11"
+  },
+  {
+   "query": "미스 베트남",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-08",
+   "expires": "2026-11-11"
+  },
+  {
+   "query": "이다현",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -2199,7 +2259,7 @@
    "expires": "2026-11-11"
   },
   {
-   "query": "미스 베트남",
+   "query": "시즈오카현",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -9764,6 +9824,19 @@
    "expires": "2026-11-22"
   },
   {
+   "query": "일본 시즈오카 지진 규모 5.7 발생 시각 최대 진도 부상자 신칸센 운행 쓰나미 여부 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 3,
+   "status": "작성",
+   "page": "/issue/japan-shizuoka-earthquake-m57-1108/",
+   "registered": "2026-11-08",
+   "expires": "2026-11-15"
+  },
+  {
    "query": "이용철 법무부 장관 후보자 지명 경위와 인사청문회 절차 정리",
    "tier": "중기",
    "signal": [
@@ -9840,6 +9913,19 @@
    "page": "/issue/korean-series-game5-1108/",
    "registered": "2026-11-08",
    "expires": "2026-11-15"
+  },
+  {
+   "query": "LNG 운반선 10월 수주 중국 한국 추월 척수 점유율 클락슨 집계 조선 3사 실적 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 3,
+   "status": "작성",
+   "page": "/issue/lng-carrier-orders-china-overtakes-korea-oct-1108/",
+   "registered": "2026-11-08",
+   "expires": "2026-11-22"
   },
   {
    "query": "마곡동 온수관 파열 사고, 행인 전신 화상 경위와 원인 조사 상황",
@@ -9957,6 +10043,19 @@
    "page": "/issue/seo-inyoung-remarriage-december-26-1108/",
    "registered": "2026-11-08",
    "expires": "2026-11-22"
+  },
+  {
+   "query": "서울 첫눈 관측 지난해보다 26일 빨라, 평년 대비·1973년 이후 역대 순위와 기상청 예보",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 3,
+   "status": "작성",
+   "page": "/issue/seoul-first-snow-2026-record-early-1108/",
+   "registered": "2026-11-08",
+   "expires": "2026-11-15"
   },
   {
    "query": "사이드카와 서킷브레이커 차이: 발동 조건과 11월 6일 코스피 사례",
