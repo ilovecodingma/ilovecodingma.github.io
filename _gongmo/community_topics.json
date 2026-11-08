@@ -1,32 +1,32 @@
 {
- "date": "2026-11-08",
- "updated": "2026-11-08 23:50",
+ "date": "2026-11-09",
+ "updated": "2026-11-09 00:50",
  "sites": 12,
- "npost": 2438,
+ "npost": 2466,
  "note": "출처(커뮤니티)별 집계예요. 작성자·연령·성별 정보는 수집하지 않아요. posts 는 이슈별로 뽑힌 일부라 전체 글 수가 아니에요.",
  "sources": [
   {
    "name": "MLB파크",
-   "np": 15,
-   "nc": 775,
+   "np": 17,
+   "nc": 884,
    "topics": [
     {
      "t": "삼성 우승 혜택 ㄷㄷㄷㄷㄷ",
      "nsite": 6,
      "np_here": 3,
-     "nc_here": 133,
+     "nc_here": 142,
      "issue_np": 13,
-     "issue_nc": 144,
+     "issue_nc": 153,
      "kw": [
-      "우승",
       "삼성",
+      "우승",
       "혜택",
       "야구"
      ],
      "top_post": {
       "t": "삼성 우승 혜택 ㄷㄷㄷㄷㄷ",
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611080120001812&m=view",
-      "nc": 64
+      "nc": 71
      }
     },
     {
@@ -37,9 +37,9 @@
      "issue_np": 2,
      "issue_nc": 127,
      "kw": [
-      "선거",
       "중간",
-      "미국"
+      "미국",
+      "선거"
      ],
      "top_post": {
       "t": "충격적인 미국 중간선거 당선자들",
@@ -55,8 +55,8 @@
      "issue_np": 3,
      "issue_nc": 83,
      "kw": [
-      "여자",
-      "남자"
+      "남자",
+      "여자"
      ],
      "top_post": {
       "t": "다른 여자 쳐다보는 남자",
@@ -89,13 +89,30 @@
      "issue_np": 2,
      "issue_nc": 66,
      "kw": [
-      "전기",
-      "도둑"
+      "도둑",
+      "전기"
      ],
      "top_post": {
       "t": "전기 9억 5천만원 어치 도둑질 ㄷㄷ",
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611070119973195&m=view",
       "nc": 66
+     }
+    },
+    {
+     "t": "한국의 엄청난 테슬라 판매량",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 56,
+     "issue_np": 2,
+     "issue_nc": 59,
+     "kw": [
+      "판매",
+      "테슬라"
+     ],
+     "top_post": {
+      "t": "한국의 엄청난 테슬라 판매량",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611080120003270&m=view",
+      "nc": 56
      }
     },
     {
@@ -132,31 +149,31 @@
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611080119974647&m=view",
       "nc": 50
      }
-    },
-    {
-     "t": "중국 게임 회사 게임 진짜 잘 만드네요..",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 44,
-     "issue_np": 2,
-     "issue_nc": 44,
-     "kw": [
-      "게임",
-      "회사"
-     ],
-     "top_post": {
-      "t": "중국 게임 회사 게임 진짜 잘 만드네요..",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611080119978394&m=view",
-      "nc": 44
-     }
     }
    ]
   },
   {
    "name": "개드립",
-   "np": 12,
-   "nc": 380,
+   "np": 9,
+   "nc": 278,
    "topics": [
+    {
+     "t": "중국차 때문에 죽을뻔했다는 유튜버",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 43,
+     "issue_np": 2,
+     "issue_nc": 46,
+     "kw": [
+      "중국",
+      "유튜버"
+     ],
+     "top_post": {
+      "t": "중국차 때문에 죽을뻔했다는 유튜버",
+      "u": "https://www.dogdrip.net/dogdrip/733601097?sort_index=popular&page=1",
+      "nc": 43
+     }
+    },
     {
      "t": "마곡 온수관 파열 시민 중화상 CCTV 영상",
      "nsite": 2,
@@ -165,10 +182,10 @@
      "issue_np": 2,
      "issue_nc": 42,
      "kw": [
+      "화상",
       "CCTV",
-      "파열",
       "마곡",
-      "화상"
+      "파열"
      ],
      "top_post": {
       "t": "마곡 온수관 파열 시민 중화상 CCTV 영상",
@@ -184,51 +201,15 @@
      "issue_np": 2,
      "issue_nc": 42,
      "kw": [
+      "미국",
       "CCTV",
       "공개",
-      "지하철",
-      "미국"
+      "지하철"
      ],
      "top_post": {
       "t": "미국 지하철이 cctv 공개를 하지 못하는 이유",
       "u": "https://www.dogdrip.net/dogdrip/733751981?sort_index=popular&page=1",
       "nc": 42
-     }
-    },
-    {
-     "t": "깨달아버린 일본 트위터 유저",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 42,
-     "issue_np": 2,
-     "issue_nc": 42,
-     "kw": [
-      "일본",
-      "트위터"
-     ],
-     "top_post": {
-      "t": "깨달아버린 일본 트위터 유저",
-      "u": "https://www.dogdrip.net/dogdrip/733812652?sort_index=popular&page=1",
-      "nc": 42
-     }
-    },
-    {
-     "t": "50% 확률로 50억 받기 vs 즉사하기, 도전 가능?",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 40,
-     "issue_np": 2,
-     "issue_nc": 40,
-     "kw": [
-      "VS",
-      "즉사",
-      "확률",
-      "도전"
-     ],
-     "top_post": {
-      "t": "50% 확률로 50억 받기 vs 즉사하기, 도전 가능?",
-      "u": "https://www.dogdrip.net/dogdrip/733823325?sort_index=popular&page=1",
-      "nc": 40
      }
     },
     {
@@ -267,39 +248,60 @@
      }
     },
     {
-     "t": "일본 다카이치 총리가 G7 정상 온라인 회의에 불참한 뒷이야기.",
-     "nsite": 2,
+     "t": "6명 사망한 폴란드 총기난사범 무장상태",
+     "nsite": 3,
      "np_here": 1,
-     "nc_here": 34,
-     "issue_np": 2,
-     "issue_nc": 34,
+     "nc_here": 23,
+     "issue_np": 6,
+     "issue_nc": 23,
      "kw": [
-      "온라인",
-      "불참",
-      "다카이치",
-      "총리"
+      "폴란드",
+      "난사",
+      "총기",
+      "사망"
      ],
      "top_post": {
-      "t": "일본 다카이치 총리가 G7 정상 온라인 회의에 불참한 뒷이야기.",
-      "u": "https://www.dogdrip.net/dogdrip/733731749?sort_index=popular&page=1",
-      "nc": 34
+      "t": "6명 사망한 폴란드 총기난사범 무장상태",
+      "u": "https://www.dogdrip.net/dogdrip/733762604?sort_index=popular&page=1",
+      "nc": 23
      }
     },
     {
-     "t": "중국차 때문에 죽을뻔했다는 유튜버",
+     "t": "전 연령대 박살나고 있다는 채용시장",
      "nsite": 2,
      "np_here": 1,
-     "nc_here": 29,
+     "nc_here": 18,
      "issue_np": 2,
-     "issue_nc": 32,
+     "issue_nc": 62,
      "kw": [
-      "중국",
-      "유튜버"
+      "박살",
+      "시장",
+      "채용",
+      "연령대"
      ],
      "top_post": {
-      "t": "중국차 때문에 죽을뻔했다는 유튜버",
-      "u": "https://www.dogdrip.net/dogdrip/733601097?sort_index=popular&page=1",
-      "nc": 29
+      "t": "전 연령대 박살나고 있다는 채용시장",
+      "u": "https://www.dogdrip.net/dogdrip/733678161?sort_index=popular&page=1",
+      "nc": 18
+     }
+    },
+    {
+     "t": "한국과 미국 데이터센터 인식 차이.",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 17,
+     "issue_np": 3,
+     "issue_nc": 17,
+     "kw": [
+      "센터",
+      "미국",
+      "데이터",
+      "한국"
+     ],
+     "top_post": {
+      "t": "한국과 미국 데이터센터 인식 차이.",
+      "u": "https://www.dogdrip.net/dogdrip/733742694?sort_index=popular&page=1",
+      "nc": 17
      }
     }
    ]
@@ -307,7 +309,7 @@
   {
    "name": "인스티즈",
    "np": 4,
-   "nc": 237,
+   "nc": 240,
    "topics": [
     {
      "t": "블라인드에서 댓글 1000개 넘게 달린 담배 논란",
@@ -317,9 +319,9 @@
      "issue_np": 3,
      "issue_nc": 105,
      "kw": [
-      "담배",
       "블라인드",
-      "논란"
+      "논란",
+      "담배"
      ],
      "top_post": {
       "t": "블라인드에서 댓글 1000개 넘게 달린 담배 논란",
@@ -335,13 +337,32 @@
      "issue_np": 2,
      "issue_nc": 70,
      "kw": [
-      "남편",
-      "와이프"
+      "와이프",
+      "남편"
      ],
      "top_post": {
       "t": "남편 차 블랙박스 몰래 보고 충격받은 와이프",
       "u": "https://www.instiz.net/pt/7922952?green=1",
       "nc": 70
+     }
+    },
+    {
+     "t": "전 연령대 박살나고 있다는 채용시장",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 44,
+     "issue_np": 2,
+     "issue_nc": 62,
+     "kw": [
+      "박살",
+      "시장",
+      "채용",
+      "연령대"
+     ],
+     "top_post": {
+      "t": "전 연령대 박살나고 있다는 채용시장",
+      "u": "https://www.instiz.net/pt/7923481?green=1",
+      "nc": 44
      }
     },
     {
@@ -352,42 +373,23 @@
      "issue_np": 2,
      "issue_nc": 42,
      "kw": [
-      "서강준",
-      "겨울",
+      "난방",
       "에어컨",
-      "난방"
+      "서강준",
+      "겨울"
      ],
      "top_post": {
       "t": "[핑계고] 몸에 열이 너무 많아서 5월부터 에어컨을 켜고 겨울엔 난방 없이 잔다는 서강준",
       "u": "https://www.instiz.net/pt/7923002?green=1",
       "nc": 42
      }
-    },
-    {
-     "t": "전 연령대 박살나고 있다는 채용시장",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 41,
-     "issue_np": 2,
-     "issue_nc": 59,
-     "kw": [
-      "시장",
-      "박살",
-      "연령대",
-      "채용"
-     ],
-     "top_post": {
-      "t": "전 연령대 박살나고 있다는 채용시장",
-      "u": "https://www.instiz.net/pt/7923481?green=1",
-      "nc": 41
-     }
     }
    ]
   },
   {
    "name": "클리앙",
-   "np": 2,
-   "nc": 42,
+   "np": 3,
+   "nc": 43,
    "topics": [
     {
      "t": "날 세운 이재명 '주식시장이 망가지는 건 다 정부 탓'",
@@ -412,10 +414,10 @@
      "np_here": 1,
      "nc_here": 4,
      "issue_np": 13,
-     "issue_nc": 144,
+     "issue_nc": 153,
      "kw": [
-      "우승",
       "삼성",
+      "우승",
       "혜택",
       "야구"
      ],
@@ -423,6 +425,25 @@
       "t": "삼성 우승 오긴 오는군요",
       "u": "https://www.clien.net/service/board/park/19289389?od=T33&po=0&category=0&groupCd=clien_all",
       "nc": 4
+     }
+    },
+    {
+     "t": "AI경쟁에서 점차 미국은 중국에 잡히지 않을까요..",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 1,
+     "issue_np": 3,
+     "issue_nc": 1,
+     "kw": [
+      "미국",
+      "AI",
+      "중국",
+      "데이터센터"
+     ],
+     "top_post": {
+      "t": "AI경쟁에서 점차 미국은 중국에 잡히지 않을까요..",
+      "u": "https://www.clien.net/service/board/park/19289246?od=T33&po=0&category=0&groupCd=clien_all",
+      "nc": 1
      }
     }
    ]
@@ -440,8 +461,8 @@
      "issue_np": 3,
      "issue_nc": 83,
      "kw": [
-      "여자",
-      "남자"
+      "남자",
+      "여자"
      ],
      "top_post": {
       "t": "이연희 랍니다 여리여리 예쁘장한여자 그남자 얼굴많이 본대요 그남자 바운더리는 무조건 예쁜여...",
@@ -488,9 +509,43 @@
   },
   {
    "name": "보배드림",
-   "np": 5,
-   "nc": 12,
+   "np": 6,
+   "nc": 15,
    "topics": [
+    {
+     "t": "한국의 엄청난 테슬라 판매량",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 3,
+     "issue_np": 2,
+     "issue_nc": 59,
+     "kw": [
+      "판매",
+      "테슬라"
+     ],
+     "top_post": {
+      "t": "2026 주요국 테슬라 판매량",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1046094&vdate=",
+      "nc": 3
+     }
+    },
+    {
+     "t": "중국차 때문에 죽을뻔했다는 유튜버",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 3,
+     "issue_np": 2,
+     "issue_nc": 46,
+     "kw": [
+      "중국",
+      "유튜버"
+     ],
+     "top_post": {
+      "t": "중국차 빨아 대는 대표 유튜버는?>.",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1046039&vdate=",
+      "nc": 3
+     }
+    },
     {
      "t": "안세영 그거 달성",
      "nsite": 2,
@@ -526,23 +581,6 @@
      }
     },
     {
-     "t": "중국차 때문에 죽을뻔했다는 유튜버",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 3,
-     "issue_np": 2,
-     "issue_nc": 32,
-     "kw": [
-      "중국",
-      "유튜버"
-     ],
-     "top_post": {
-      "t": "중국차 빨아 대는 대표 유튜버는?>.",
-      "u": "https://www.bobaedream.co.kr/view?code=best&No=1046039&vdate=",
-      "nc": 3
-     }
-    },
-    {
      "t": "여대생들한테 인기 많았다는 남자",
      "nsite": 3,
      "np_here": 1,
@@ -566,10 +604,10 @@
      "np_here": 1,
      "nc_here": 1,
      "issue_np": 13,
-     "issue_nc": 144,
+     "issue_nc": 153,
      "kw": [
-      "우승",
       "삼성",
+      "우승",
       "혜택",
       "야구"
      ],
@@ -592,10 +630,10 @@
      "np_here": 1,
      "nc_here": 6,
      "issue_np": 13,
-     "issue_nc": 144,
+     "issue_nc": 153,
      "kw": [
-      "우승",
       "삼성",
+      "우승",
       "혜택",
       "야구"
      ],
@@ -609,7 +647,7 @@
   },
   {
    "name": "루리웹",
-   "np": 22,
+   "np": 21,
    "nc": 0,
    "topics": [
     {
@@ -620,9 +658,9 @@
      "issue_np": 3,
      "issue_nc": 105,
      "kw": [
-      "담배",
       "블라인드",
-      "논란"
+      "논란",
+      "담배"
      ],
      "top_post": {
       "t": "블라인드에서 댓글 1000개 넘게 달린 담배 논란",
@@ -640,8 +678,8 @@
      "kw": [
       "건축",
       "아파트",
-      "은마",
-      "구축"
+      "구축",
+      "은마"
      ],
      "top_post": {
       "t": "구축 아파트들 재건축이 앞으로 힘든 이유",
@@ -657,9 +695,9 @@
      "issue_np": 6,
      "issue_nc": 23,
      "kw": [
-      "총기",
       "폴란드",
       "난사",
+      "총기",
       "사망"
      ],
      "top_post": {
@@ -676,14 +714,33 @@
      "issue_np": 3,
      "issue_nc": 17,
      "kw": [
-      "데이터",
       "센터",
       "미국",
+      "데이터",
       "한국"
      ],
      "top_post": {
       "t": "미국데이터센터의 실상을 보고 느낀점.cyberpunk",
       "u": "https://bbs.ruliweb.com/best/board/300143/read/77318460?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "AI경쟁에서 점차 미국은 중국에 잡히지 않을까요..",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 1,
+     "kw": [
+      "미국",
+      "AI",
+      "중국",
+      "데이터센터"
+     ],
+     "top_post": {
+      "t": "‘데이터센터’ 미국선 애물단지?…중국은 AI 인프라 확충 박차",
+      "u": "https://bbs.ruliweb.com/best/board/300010/read/2296834?m=all&t=now",
       "nc": 0
      }
     },
@@ -695,8 +752,8 @@
      "issue_np": 3,
      "issue_nc": 0,
      "kw": [
-      "협박",
       "작가",
+      "협박",
       "사건",
       "영국"
      ],
@@ -715,9 +772,9 @@
      "issue_nc": 0,
      "kw": [
       "삼성",
-      "우승",
       "라이온즈",
-      "시리즈"
+      "우승",
+      "행사"
      ],
      "top_post": {
       "t": "삼성라이온즈) 우승 대규모 할인 행사",
@@ -733,30 +790,13 @@
      "issue_np": 2,
      "issue_nc": 127,
      "kw": [
-      "선거",
       "중간",
-      "미국"
+      "미국",
+      "선거"
      ],
      "top_post": {
       "t": "미국 중간 선거에서 xxx만 투표했다면",
       "u": "https://bbs.ruliweb.com/best/board/300143/read/77320308?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "남편 차 블랙박스 몰래 보고 충격받은 와이프",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 2,
-     "issue_nc": 70,
-     "kw": [
-      "남편",
-      "와이프"
-     ],
-     "top_post": {
-      "t": "와이프한테 성과급 1700 보냈는대 욕먹은 남편",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77320053?m=all&t=now",
       "nc": 0
      }
     }
@@ -775,8 +815,8 @@
      "issue_np": 3,
      "issue_nc": 83,
      "kw": [
-      "여자",
-      "남자"
+      "남자",
+      "여자"
      ],
      "top_post": {
       "t": "여자들은 남자한테 사랑받을 수 있는게 부러움",
@@ -792,8 +832,8 @@
      "issue_np": 3,
      "issue_nc": 32,
      "kw": [
-      "아파트",
       "자제",
+      "아파트",
       "샤워"
      ],
      "top_post": {
@@ -812,8 +852,8 @@
      "kw": [
       "건축",
       "아파트",
-      "은마",
-      "구축"
+      "구축",
+      "은마"
      ],
      "top_post": {
       "t": "구축 아파트들 재건축이 앞으로 힘든이유..+은마아파트 근황",
@@ -829,8 +869,8 @@
      "issue_np": 3,
      "issue_nc": 0,
      "kw": [
-      "협박",
       "작가",
+      "협박",
       "사건",
       "영국"
      ],
@@ -849,9 +889,9 @@
      "issue_nc": 0,
      "kw": [
       "삼성",
-      "우승",
       "라이온즈",
-      "시리즈"
+      "우승",
+      "행사"
      ],
      "top_post": {
       "t": "삼성 라이온즈, 한국시리즈 우승…계열사, 대규모 할인 행사 검토(종합)",
@@ -867,10 +907,10 @@
      "issue_np": 2,
      "issue_nc": 42,
      "kw": [
-      "서강준",
-      "겨울",
+      "난방",
       "에어컨",
-      "난방"
+      "서강준",
+      "겨울"
      ],
      "top_post": {
       "t": "몸에 열이 너무 많아서 5월부터 에어컨을 켜고 겨울엔 난방 없이 잔다는 서강준",
@@ -882,7 +922,7 @@
   },
   {
    "name": "SLR클럽",
-   "np": 2,
+   "np": 3,
    "nc": 0,
    "topics": [
     {
@@ -893,8 +933,8 @@
      "issue_np": 3,
      "issue_nc": 32,
      "kw": [
-      "아파트",
       "자제",
+      "아파트",
       "샤워"
      ],
      "top_post": {
@@ -911,9 +951,9 @@
      "issue_np": 3,
      "issue_nc": 17,
      "kw": [
-      "데이터",
       "센터",
       "미국",
+      "데이터",
       "한국"
      ],
      "top_post": {
@@ -921,12 +961,29 @@
       "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=676979",
       "nc": 0
      }
+    },
+    {
+     "t": "뉴진스 대체 여자 아이돌 ㄷㄷ",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 2,
+     "issue_nc": 44,
+     "kw": [
+      "아이돌",
+      "여자"
+     ],
+     "top_post": {
+      "t": "뉴진스 대체 여자 아이돌 ㄷㄷ",
+      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=676954",
+      "nc": 0
+     }
     }
    ]
   },
   {
    "name": "디시인사이드",
-   "np": 3,
+   "np": 4,
    "nc": 0,
    "topics": [
     {
@@ -937,14 +994,33 @@
      "issue_np": 6,
      "issue_nc": 23,
      "kw": [
-      "총기",
       "폴란드",
       "난사",
+      "총기",
       "사망"
      ],
      "top_post": {
       "t": "폴란드 크라쿠프 도심서 총기 난사…\"6명 사망·16명 부상",
       "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=476839&_dcbest=1&page=1",
+      "nc": 0
+     }
+    },
+    {
+     "t": "AI경쟁에서 점차 미국은 중국에 잡히지 않을까요..",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 1,
+     "kw": [
+      "미국",
+      "AI",
+      "중국",
+      "데이터센터"
+     ],
+     "top_post": {
+      "t": "‘데이터센터’ 미국선 애물단지?…중국은 AI 인프라 확충",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=476925&_dcbest=1&page=1",
       "nc": 0
      }
     },
@@ -956,8 +1032,8 @@
      "issue_np": 3,
      "issue_nc": 0,
      "kw": [
-      "협박",
       "작가",
+      "협박",
       "사건",
       "영국"
      ],
@@ -976,9 +1052,9 @@
      "issue_nc": 0,
      "kw": [
       "삼성",
-      "우승",
       "라이온즈",
-      "시리즈"
+      "우승",
+      "행사"
      ],
      "top_post": {
       "t": "삼성 라이온즈 12년만에 한국시리즈 우승.",

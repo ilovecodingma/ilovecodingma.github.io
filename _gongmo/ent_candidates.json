@@ -1,5 +1,5 @@
 {
- "at": "2026-11-09 00:30",
+ "at": "2026-11-09 01:06",
  "nitems": 478,
  "cands": [
   {
@@ -13,7 +13,7 @@
     "연합뉴스",
     "조선일보"
    ],
-   "n": 16,
+   "n": 17,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -175,6 +175,40 @@
    ]
   },
   {
+   "kw": "출신",
+   "nsrc": 5,
+   "srcs": [
+    "뉴시스",
+    "연합뉴스",
+    "조선일보",
+    "한겨레",
+    "한국경제"
+   ],
+   "n": 7,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "포미닛 출신 전지윤, 22일 결혼…\"부끄럽고 설렌다\"",
+     "link": "https://www.yna.co.kr/view/AKR20261104147000005"
+    },
+    {
+     "src": "한겨레",
+     "title": "‘사업가 변신’ 그룹 노이즈 출신 홍종구…“그 시절 AI 있었다면 당연히 썼죠”",
+     "link": "https://www.hani.co.kr/arti/culture/music/1286278.html"
+    },
+    {
+     "src": "한국경제",
+     "title": "아이돌 '포미닛' 출신 전지윤, 11월 신부된다",
+     "link": "https://www.hankyung.com/article/2026110461907"
+    },
+    {
+     "src": "한국경제",
+     "title": "\"통장 압류, 수중엔 1000원\"…JBJ 출신 켄타, 4억 빚 고백",
+     "link": "https://www.hankyung.com/article/202610280689H"
+    }
+   ]
+  },
+  {
    "kw": "유재석",
    "nsrc": 5,
    "srcs": [
@@ -205,40 +239,6 @@
      "src": "SBS",
      "title": "\"러닝하면 무릎 나가\"…'틈만나면' 유재석, 50대 뼈아픈 부상 고백에 현장 초토화",
      "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008827712&plink=RSSLINK&cooper=RSSREADER"
-    }
-   ]
-  },
-  {
-   "kw": "출신",
-   "nsrc": 5,
-   "srcs": [
-    "뉴시스",
-    "연합뉴스",
-    "조선일보",
-    "한겨레",
-    "한국경제"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "포미닛 출신 전지윤, 22일 결혼…\"부끄럽고 설렌다\"",
-     "link": "https://www.yna.co.kr/view/AKR20261104147000005"
-    },
-    {
-     "src": "한겨레",
-     "title": "‘사업가 변신’ 그룹 노이즈 출신 홍종구…“그 시절 AI 있었다면 당연히 썼죠”",
-     "link": "https://www.hani.co.kr/arti/culture/music/1286278.html"
-    },
-    {
-     "src": "한국경제",
-     "title": "아이돌 '포미닛' 출신 전지윤, 11월 신부된다",
-     "link": "https://www.hankyung.com/article/2026110461907"
-    },
-    {
-     "src": "한국경제",
-     "title": "\"통장 압류, 수중엔 1000원\"…JBJ 출신 켄타, 4억 빚 고백",
-     "link": "https://www.hankyung.com/article/202610280689H"
     }
    ]
   },
@@ -420,7 +420,7 @@
     "조선일보",
     "한국경제"
    ],
-   "n": 9,
+   "n": 8,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -441,39 +441,6 @@
      "src": "연합뉴스",
      "title": "김재원 \"드라마와는 또 다른 영화의 매력…스크린 데뷔 설레\"",
      "link": "https://www.yna.co.kr/view/AKR20261103129100005"
-    }
-   ]
-  },
-  {
-   "kw": "얼굴",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "동아일보",
-    "조선일보"
-   ],
-   "n": 9,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "하정우, ♥11세 연하 차정원과 결혼 D-35…몰라보게 달라진 얼굴",
-     "link": "https://sports.donga.com/ent/article/all/20261108/134984605/1"
-    },
-    {
-     "src": "SBS",
-     "title": "얼굴 한번 못 본 사위가 왜…'그알', '송파 장모 살해' 김성우 사건 추적",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008833644&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "뉴시스",
-     "title": "홍은채, 갸름한 얼굴 또렷…괄사 매일 쓴다는데",
-     "link": "https://www.newsis.com/view/NISX20261102_0003850989"
-    },
-    {
-     "src": "뉴시스",
-     "title": "330억 소송에도 각별한 뉴진스…하니·다니엘 얼굴 맞댔다",
-     "link": "https://www.newsis.com/view/NISX20261108_0003859383"
     }
    ]
   },
@@ -544,35 +511,35 @@
    ]
   },
   {
-   "kw": "깜짝",
+   "kw": "얼굴",
    "nsrc": 4,
    "srcs": [
     "SBS",
+    "뉴시스",
     "동아일보",
-    "조선일보",
-    "한국경제"
+    "조선일보"
    ],
    "n": 8,
    "headlines": [
     {
      "src": "동아일보",
-     "title": "이소라, ‘놀면 뭐하니?’ 깜짝 등장…유재석도 “처음엔 안 믿었다”",
-     "link": "https://sports.donga.com/ent/article/all/20261108/134984225/1"
-    },
-    {
-     "src": "한국경제",
-     "title": "아일릿, 여경 의상 논란에 \"깜짝 놀라…어떤 관심이든 감사\"",
-     "link": "https://www.hankyung.com/article/202610265795H"
-    },
-    {
-     "src": "한국경제",
-     "title": "\"화환할게\" 강동원, 4개월 전 팬과 약속 지켰다…결혼식장에 깜짝 선물",
-     "link": "https://www.hankyung.com/article/202610265376H"
+     "title": "하정우, ♥11세 연하 차정원과 결혼 D-35…몰라보게 달라진 얼굴",
+     "link": "https://sports.donga.com/ent/article/all/20261108/134984605/1"
     },
     {
      "src": "SBS",
-     "title": "김구라, 곧 며느리 본다…아들 그리, '곰신' 여자친구와 깜짝 결혼 발표",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008833564&plink=RSSLINK&cooper=RSSREADER"
+     "title": "얼굴 한번 못 본 사위가 왜…'그알', '송파 장모 살해' 김성우 사건 추적",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008833644&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "뉴시스",
+     "title": "홍은채, 갸름한 얼굴 또렷…괄사 매일 쓴다는데",
+     "link": "https://www.newsis.com/view/NISX20261102_0003850989"
+    },
+    {
+     "src": "뉴시스",
+     "title": "330억 소송에도 각별한 뉴진스…하니·다니엘 얼굴 맞댔다",
+     "link": "https://www.newsis.com/view/NISX20261108_0003859383"
     }
    ]
   },
@@ -672,6 +639,39 @@
      "src": "뉴시스",
      "title": "\"잊지 못할 몰디브\"…'10월의 신부' 이재, 군살 없는 비키니",
      "link": "https://www.newsis.com/view/NISX20261105_0003856665"
+    }
+   ]
+  },
+  {
+   "kw": "깜짝",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "동아일보",
+    "조선일보",
+    "한국경제"
+   ],
+   "n": 7,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "이소라, ‘놀면 뭐하니?’ 깜짝 등장…유재석도 “처음엔 안 믿었다”",
+     "link": "https://sports.donga.com/ent/article/all/20261108/134984225/1"
+    },
+    {
+     "src": "한국경제",
+     "title": "아일릿, 여경 의상 논란에 \"깜짝 놀라…어떤 관심이든 감사\"",
+     "link": "https://www.hankyung.com/article/202610265795H"
+    },
+    {
+     "src": "한국경제",
+     "title": "\"화환할게\" 강동원, 4개월 전 팬과 약속 지켰다…결혼식장에 깜짝 선물",
+     "link": "https://www.hankyung.com/article/202610265376H"
+    },
+    {
+     "src": "SBS",
+     "title": "김구라, 곧 며느리 본다…아들 그리, '곰신' 여자친구와 깜짝 결혼 발표",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008833564&plink=RSSLINK&cooper=RSSREADER"
     }
    ]
   },
@@ -874,7 +874,7 @@
    ]
   },
   {
-   "kw": "조진웅",
+   "kw": "시그널",
    "nsrc": 4,
    "srcs": [
     "SBS",
@@ -907,7 +907,7 @@
    ]
   },
   {
-   "kw": "시그널",
+   "kw": "조진웅",
    "nsrc": 4,
    "srcs": [
     "SBS",

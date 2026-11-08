@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-09 00:00",
+ "updated": "2026-11-09 01:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -2494,8 +2494,8 @@
     "구글트렌드"
    ],
    "score": 6,
-   "status": "작성",
-   "page": "/issue/kospi-close-1105/",
+   "status": "미작성",
+   "page": "",
    "registered": "2026-11-05",
    "expires": "2026-11-08"
   },
@@ -2520,8 +2520,8 @@
     "구글트렌드"
    ],
    "score": 5,
-   "status": "작성",
-   "page": "/issue/weather-rain-temp-drop-1105/",
+   "status": "미작성",
+   "page": "",
    "registered": "2026-11-05",
    "expires": "2026-11-08"
   },
@@ -2572,8 +2572,8 @@
     "구글트렌드"
    ],
    "score": 3,
-   "status": "작성",
-   "page": "/issue/us-midterm-market-reaction-1105/",
+   "status": "미작성",
+   "page": "",
    "registered": "2026-11-05",
    "expires": "2026-11-08"
   },
@@ -10767,8 +10767,8 @@
     "구글트렌드"
    ],
    "score": 2,
-   "status": "작성",
-   "page": "/issue/foldable-phone-1103/",
+   "status": "미작성",
+   "page": "",
    "registered": "2026-11-03",
    "expires": "2026-11-08"
   },
@@ -11196,8 +11196,8 @@
     "구글트렌드"
    ],
    "score": 1,
-   "status": "작성",
-   "page": "/issue/roh-sihwan-mlb-1103/",
+   "status": "미작성",
+   "page": "",
    "registered": "2026-11-03",
    "expires": "2026-11-08"
   },
