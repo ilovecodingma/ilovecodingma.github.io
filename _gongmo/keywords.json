@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-08 19:00",
+ "updated": "2026-11-08 20:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -639,6 +639,18 @@
    "expires": "2026-11-11"
   },
   {
+   "query": "강민호",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-08",
+   "expires": "2026-11-11"
+  },
+  {
    "query": "신의 구슬",
    "tier": "단기",
    "signal": [
@@ -904,6 +916,30 @@
   },
   {
    "query": "발렌시아 대 레알 마드리드",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-08",
+   "expires": "2026-11-11"
+  },
+  {
+   "query": "기사",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-08",
+   "expires": "2026-11-11"
+  },
+  {
+   "query": "부천 대 포항",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -1216,6 +1252,30 @@
   },
   {
    "query": "다이소",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-08",
+   "expires": "2026-11-11"
+  },
+  {
+   "query": "강원 대 전북",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-08",
+   "expires": "2026-11-11"
+  },
+  {
+   "query": "권동진",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -1708,6 +1768,18 @@
   },
   {
    "query": "이다현",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-08",
+   "expires": "2026-11-11"
+  },
+  {
+   "query": "창원 lg 대 부산 kcc",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -2320,6 +2392,42 @@
   },
   {
    "query": "서울특별시",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-08",
+   "expires": "2026-11-11"
+  },
+  {
+   "query": "김재서",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-08",
+   "expires": "2026-11-11"
+  },
+  {
+   "query": "공기업",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-08",
+   "expires": "2026-11-11"
+  },
+  {
+   "query": "박진만",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -9702,6 +9810,19 @@
    "expires": "2026-11-15"
   },
   {
+   "query": "2027년 예산안 820조9000억 미래대응기금 162조 구조와 예결위 부별심사 일정, 여야 입장은?",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 3,
+   "status": "작성",
+   "page": "/issue/budget-2027-review-future-fund-162-trillion-1108/",
+   "registered": "2026-11-08",
+   "expires": "2026-11-22"
+  },
+  {
    "query": "폭락장 금융상식 100가지: 반대매매·서킷브레이커·PER·환율·투자 사기까지",
    "tier": "중기",
    "signal": [
@@ -9778,6 +9899,19 @@
    "page": "/issue/eunma-reconstruction-levy-notice-1107/",
    "registered": "2026-11-07",
    "expires": "2026-11-21"
+  },
+  {
+   "query": "당정 소방 필수투자 2조원 지원 검토 내용, 재원·미래대응기금 논의와 재정분권 TF 재가동 일정은?",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 3,
+   "status": "작성",
+   "page": "/issue/fire-service-budget-2-trillion-support-1108/",
+   "registered": "2026-11-08",
+   "expires": "2026-11-22"
   },
   {
    "query": "분당 선도지구 재건축 시공사 입찰 언제부터? 샛별·양지·더시범 단계별 정리",
@@ -10181,6 +10315,19 @@
    "page": "/issue/sidecar-vs-circuit-breaker-1108/",
    "registered": "2026-11-08",
    "expires": "2026-12-08"
+  },
+  {
+   "query": "손흥민 LAFC 시애틀전 1-2 패 서부 6위 확정, 시즌 7골 15도움과 플레이오프 세인트루이스 일정",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 3,
+   "status": "작성",
+   "page": "/issue/son-lafc-seattle-1-2-final-1108/",
+   "registered": "2026-11-08",
+   "expires": "2026-11-15"
   },
   {
    "query": "2026 롤드컵 4강 대진과 일정은? 젠지 8강 결과, 한국 팀 현황",
