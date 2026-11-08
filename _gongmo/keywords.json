@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-09 01:00",
+ "updated": "2026-11-09 02:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -444,6 +444,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-07",
+   "expires": "2026-11-12"
+  },
+  {
+   "query": "크리스털 팰리스 대 리버풀",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 5000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-09",
    "expires": "2026-11-12"
   },
   {
@@ -987,6 +999,18 @@
    "expires": "2026-11-12"
   },
   {
+   "query": "국민 총소득",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-09",
+   "expires": "2026-11-12"
+  },
+  {
    "query": "중대범죄 수사청",
    "tier": "단기",
    "signal": [
@@ -1320,6 +1344,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-08",
+   "expires": "2026-11-12"
+  },
+  {
+   "query": "선덜랜드 대 첼시",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-09",
    "expires": "2026-11-12"
   },
   {
@@ -2475,7 +2511,7 @@
    "expires": "2026-11-12"
   },
   {
-   "query": "국민 총소득",
+   "query": "브라이턴 대 브렌트퍼드",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -10157,6 +10193,19 @@
    "expires": "2026-11-15"
   },
   {
+   "query": "울산 서울전 2-1 야고 17호골, K리그1 2위 순위와 남은 일정",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 3,
+   "status": "작성",
+   "page": "/issue/kleague1-ulsan-seoul-2-1-second-place-1108/",
+   "registered": "2026-11-09",
+   "expires": "2026-11-16"
+  },
+  {
    "query": "유현조 KLPGA 최종전 대보 하우스디 챔피언십 우승 14언더파, 김민솔 대상·상금왕·신인왕 3관왕과 시즌 부문별 수상자",
    "tier": "중기",
    "signal": [
@@ -10760,6 +10809,19 @@
    "expires": "2026-11-09"
   },
   {
+   "query": "제5차 국가철도망 구축계획 공청회 13일 장소·사전설문·생중계 참여 방법, 4차 때 일정과 지자체 건의 노선",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 2,
+   "status": "작성",
+   "page": "/issue/fifth-national-rail-network-plan-hearing-1113/",
+   "registered": "2026-11-09",
+   "expires": "2026-11-23"
+  },
+  {
    "query": "폴더블 스마트폰 갤럭시 Z폴드8 판매 20% 증가 보도, 아이폰 듀오 출시 후",
    "tier": "중기",
    "signal": [
@@ -10797,6 +10859,19 @@
    "page": "/issue/hwang-woo-suk-uae-citizenship-1107/",
    "registered": "2026-11-07",
    "expires": "2026-11-14"
+  },
+  {
+   "query": "이스라엘 대통령 아이젠코트 정부 구성권 부여, 네타냐후 실각 위기 속 추천 67명 대 46명과 28일 시한",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 2,
+   "status": "작성",
+   "page": "/issue/israel-eisenkot-coalition-mandate-netanyahu-1109/",
+   "registered": "2026-11-09",
+   "expires": "2026-11-23"
   },
   {
    "query": "제주 제2공항 갈등조정협의회 5일 첫 회의, 환경영향평가·찬반 입장·일정 정리",
@@ -10916,7 +10991,7 @@
    "expires": "2026-11-12"
   },
   {
-   "query": "신인감독 김연경2 5회 몇 시 원더독스 흥국생명전 세트 스코어 시청률 6회 일정",
+   "query": "신인감독 김연경2 5회 내용: 원더독스 흥국생명전 3세트 승리와 4세트 작전판 장면, 시청률",
    "tier": "중기",
    "signal": [
     "뉴스",
