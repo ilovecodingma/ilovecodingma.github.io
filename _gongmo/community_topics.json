@@ -1,8 +1,8 @@
 {
  "date": "2026-11-08",
- "updated": "2026-11-08 13:50",
+ "updated": "2026-11-08 14:50",
  "sites": 13,
- "npost": 2534,
+ "npost": 2513,
  "note": "출처(커뮤니티)별 집계예요. 작성자·연령·성별 정보는 수집하지 않아요. posts 는 이슈별로 뽑힌 일부라 전체 글 수가 아니에요.",
  "sources": [
   {
@@ -18,10 +18,10 @@
      "issue_np": 3,
      "issue_nc": 121,
      "kw": [
-      "테러",
       "분식집",
       "별점",
-      "할머니"
+      "할머니",
+      "테러"
      ],
      "top_post": {
       "t": "별점테러 당한 할머니 분식집",
@@ -51,7 +51,7 @@
      "nsite": 2,
      "np_here": 2,
      "nc_here": 111,
-     "issue_np": 6,
+     "issue_np": 5,
      "issue_nc": 111,
      "kw": [
       "한국",
@@ -72,8 +72,8 @@
      "issue_np": 2,
      "issue_nc": 97,
      "kw": [
-      "강의실",
-      "대학"
+      "대학",
+      "강의실"
      ],
      "top_post": {
       "t": "요즘 미국 대학강의실 상황 ㄷㄷ",
@@ -89,8 +89,8 @@
      "issue_np": 3,
      "issue_nc": 83,
      "kw": [
-      "시대",
-      "AI"
+      "AI",
+      "시대"
      ],
      "top_post": {
       "t": "ai시대에도 책을 읽어야 하는 이유",
@@ -123,8 +123,8 @@
      "issue_np": 2,
      "issue_nc": 66,
      "kw": [
-      "부산",
-      "빌라"
+      "빌라",
+      "부산"
      ],
      "top_post": {
       "t": "ㅎㄷㄷ한 부산의 어느 빌라 위치",
@@ -153,9 +153,163 @@
    ]
   },
   {
+   "name": "개드립",
+   "np": 12,
+   "nc": 386,
+   "topics": [
+    {
+     "t": "한국을 방문하고 별로였다는 외국인 ㅎ ㄷ ㄷ",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 49,
+     "issue_np": 3,
+     "issue_nc": 52,
+     "kw": [
+      "한국",
+      "외국인",
+      "방문"
+     ],
+     "top_post": {
+      "t": "한국을 방문해 보니 별로였다는 어느 외국인 관광객",
+      "u": "https://www.dogdrip.net/dogdrip/733599994?sort_index=popular&page=1",
+      "nc": 49
+     }
+    },
+    {
+     "t": "아구통 의사 : 비만인들에게 다이어트란 해병대 지옥주와 같다",
+     "nsite": 2,
+     "np_here": 2,
+     "nc_here": 49,
+     "issue_np": 3,
+     "issue_nc": 49,
+     "kw": [
+      "비만",
+      "아구통",
+      "의사",
+      "KFC"
+     ],
+     "top_post": {
+      "t": "아구통 의사 : 비만인들에게 다이어트란 해병대 지옥주와 같다",
+      "u": "https://www.dogdrip.net/dogdrip/733630933?sort_index=popular&page=1",
+      "nc": 47
+     }
+    },
+    {
+     "t": "시작부터 꼬였다는 신태일의 깜빵 생활 근황",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 43,
+     "issue_np": 2,
+     "issue_nc": 43,
+     "kw": [
+      "생활",
+      "신태일"
+     ],
+     "top_post": {
+      "t": "시작부터 꼬였다는 신태일의 깜빵 생활 근황",
+      "u": "https://www.dogdrip.net/dogdrip/733650382?sort_index=popular&page=1",
+      "nc": 43
+     }
+    },
+    {
+     "t": "한국과 미국 데이터센터 인식 차이.",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 42,
+     "issue_np": 3,
+     "issue_nc": 42,
+     "kw": [
+      "데이터",
+      "미국",
+      "센터",
+      "한국"
+     ],
+     "top_post": {
+      "t": "한국과 미국 데이터센터 인식 차이.",
+      "u": "https://www.dogdrip.net/dogdrip/733742694?sort_index=popular&page=1",
+      "nc": 42
+     }
+    },
+    {
+     "t": "마곡 온수관 파열 시민 중화상 CCTV 영상",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 42,
+     "issue_np": 2,
+     "issue_nc": 42,
+     "kw": [
+      "화상",
+      "파열",
+      "마곡",
+      "CCTV"
+     ],
+     "top_post": {
+      "t": "마곡 온수관 파열 시민 중화상 CCTV 영상",
+      "u": "https://www.dogdrip.net/dogdrip/733684311?sort_index=popular&page=1",
+      "nc": 42
+     }
+    },
+    {
+     "t": "와들와들 심각한 수준의 미민당 데이터센터 규제....",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 32,
+     "issue_np": 7,
+     "issue_nc": 47,
+     "kw": [
+      "데이터",
+      "센터",
+      "규제",
+      "텍사스"
+     ],
+     "top_post": {
+      "t": "와들와들 심각한 수준의 미민당 데이터센터 규제....",
+      "u": "https://www.dogdrip.net/dogdrip/733622937?sort_index=popular&page=1",
+      "nc": 32
+     }
+    },
+    {
+     "t": "인디게임 시장 AI 도입 전후",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 31,
+     "issue_np": 2,
+     "issue_nc": 31,
+     "kw": [
+      "인디",
+      "AI",
+      "게임"
+     ],
+     "top_post": {
+      "t": "인디게임 시장 AI 도입 전후",
+      "u": "https://www.dogdrip.net/dogdrip/733665092?sort_index=popular&page=1",
+      "nc": 31
+     }
+    },
+    {
+     "t": "한국은 일본 식민지였는데 왜 일본어 안 써?",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 30,
+     "issue_np": 5,
+     "issue_nc": 84,
+     "kw": [
+      "한국",
+      "일본",
+      "식민지"
+     ],
+     "top_post": {
+      "t": "일본여자가 분석한 한국여자",
+      "u": "https://www.dogdrip.net/dogdrip/733600133?sort_index=popular&page=1",
+      "nc": 30
+     }
+    }
+   ]
+  },
+  {
    "name": "인스티즈",
-   "np": 7,
-   "nc": 391,
+   "np": 6,
+   "nc": 353,
    "topics": [
     {
      "t": "골수이식 철회해서 아이 죽은 일 있잖아",
@@ -165,9 +319,9 @@
      "issue_np": 2,
      "issue_nc": 93,
      "kw": [
+      "철회",
       "아이",
       "이식",
-      "철회",
       "골수"
      ],
      "top_post": {
@@ -184,8 +338,8 @@
      "issue_np": 3,
      "issue_nc": 105,
      "kw": [
-      "담배",
       "블라인드",
+      "담배",
       "논란"
      ],
      "top_post": {
@@ -202,8 +356,8 @@
      "issue_np": 2,
      "issue_nc": 56,
      "kw": [
-      "닥터",
-      "시청"
+      "시청",
+      "닥터"
      ],
      "top_post": {
       "t": "'닥터X' 또 시청률 떨어져… 종영 앞두고 잃은 뒷심",
@@ -236,30 +390,13 @@
      "issue_np": 2,
      "issue_nc": 65,
      "kw": [
-      "육아",
-      "남편"
+      "남편",
+      "육아"
      ],
      "top_post": {
       "t": "남편이 받은 씁쓸한 육아 성적표",
       "u": "https://www.instiz.net/pt/7920888?green=1",
       "nc": 41
-     }
-    },
-    {
-     "t": "재혼황후 새..이렇게 재우는거 맞아? 이거 왜 아무도 말안해..￼",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 38,
-     "issue_np": 2,
-     "issue_nc": 38,
-     "kw": [
-      "재혼",
-      "황후"
-     ],
-     "top_post": {
-      "t": "재혼황후 새..이렇게 재우는거 맞아? 이거 왜 아무도 말안해..￼",
-      "u": "https://www.instiz.net/pt/7923181?green=1",
-      "nc": 38
      }
     },
     {
@@ -282,206 +419,9 @@
    ]
   },
   {
-   "name": "개드립",
-   "np": 13,
-   "nc": 382,
-   "topics": [
-    {
-     "t": "한국을 방문하고 별로였다는 외국인 ㅎ ㄷ ㄷ",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 49,
-     "issue_np": 3,
-     "issue_nc": 52,
-     "kw": [
-      "한국",
-      "외국인",
-      "방문"
-     ],
-     "top_post": {
-      "t": "한국을 방문해 보니 별로였다는 어느 외국인 관광객",
-      "u": "https://www.dogdrip.net/dogdrip/733599994?sort_index=popular&page=1",
-      "nc": 49
-     }
-    },
-    {
-     "t": "아구통 의사 : 비만인들에게 다이어트란 해병대 지옥주와 같다",
-     "nsite": 2,
-     "np_here": 2,
-     "nc_here": 49,
-     "issue_np": 3,
-     "issue_nc": 49,
-     "kw": [
-      "아구통",
-      "비만",
-      "의사",
-      "징거더블다운맥스"
-     ],
-     "top_post": {
-      "t": "아구통 의사 : 비만인들에게 다이어트란 해병대 지옥주와 같다",
-      "u": "https://www.dogdrip.net/dogdrip/733630933?sort_index=popular&page=1",
-      "nc": 47
-     }
-    },
-    {
-     "t": "시작부터 꼬였다는 신태일의 깜빵 생활 근황",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 43,
-     "issue_np": 2,
-     "issue_nc": 43,
-     "kw": [
-      "생활",
-      "신태일"
-     ],
-     "top_post": {
-      "t": "시작부터 꼬였다는 신태일의 깜빵 생활 근황",
-      "u": "https://www.dogdrip.net/dogdrip/733650382?sort_index=popular&page=1",
-      "nc": 43
-     }
-    },
-    {
-     "t": "마곡 온수관 파열 시민 중화상 CCTV 영상",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 42,
-     "issue_np": 2,
-     "issue_nc": 42,
-     "kw": [
-      "파열",
-      "화상",
-      "마곡",
-      "CCTV"
-     ],
-     "top_post": {
-      "t": "마곡 온수관 파열 시민 중화상 CCTV 영상",
-      "u": "https://www.dogdrip.net/dogdrip/733684311?sort_index=popular&page=1",
-      "nc": 42
-     }
-    },
-    {
-     "t": "ai가 버블이 아닌이유",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 40,
-     "issue_np": 2,
-     "issue_nc": 40,
-     "kw": [
-      "버블",
-      "AI"
-     ],
-     "top_post": {
-      "t": "ai가 버블이 아닌이유",
-      "u": "https://www.dogdrip.net/dogdrip/733600353?sort_index=popular&page=1",
-      "nc": 40
-     }
-    },
-    {
-     "t": "와들와들 심각한 수준의 미민당 데이터센터 규제....",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 32,
-     "issue_np": 8,
-     "issue_nc": 47,
-     "kw": [
-      "데이터",
-      "센터",
-      "규제",
-      "허용"
-     ],
-     "top_post": {
-      "t": "와들와들 심각한 수준의 미민당 데이터센터 규제....",
-      "u": "https://www.dogdrip.net/dogdrip/733622937?sort_index=popular&page=1",
-      "nc": 32
-     }
-    },
-    {
-     "t": "인디게임 시장 AI 도입 전후",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 31,
-     "issue_np": 2,
-     "issue_nc": 31,
-     "kw": [
-      "AI",
-      "게임",
-      "인디"
-     ],
-     "top_post": {
-      "t": "인디게임 시장 AI 도입 전후",
-      "u": "https://www.dogdrip.net/dogdrip/733665092?sort_index=popular&page=1",
-      "nc": 31
-     }
-    },
-    {
-     "t": "한국은 일본 식민지였는데 왜 일본어 안 써?",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 30,
-     "issue_np": 5,
-     "issue_nc": 84,
-     "kw": [
-      "한국",
-      "일본",
-      "식민지"
-     ],
-     "top_post": {
-      "t": "일본여자가 분석한 한국여자",
-      "u": "https://www.dogdrip.net/dogdrip/733600133?sort_index=popular&page=1",
-      "nc": 30
-     }
-    }
-   ]
-  },
-  {
-   "name": "클리앙",
-   "np": 2,
-   "nc": 53,
-   "topics": [
-    {
-     "t": "날 세운 이재명 '주식시장이 망가지는 건 다 정부 탓'",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 38,
-     "issue_np": 4,
-     "issue_nc": 44,
-     "kw": [
-      "주식",
-      "시장",
-      "이재명",
-      "정부"
-     ],
-     "top_post": {
-      "t": "날 세운 이재명 '주식시장이 망가지는 건 다 정부 탓'",
-      "u": "https://www.clien.net/service/board/park/19289201?od=T33&po=0&category=0&groupCd=clien_all",
-      "nc": 38
-     }
-    },
-    {
-     "t": "와들와들 심각한 수준의 미민당 데이터센터 규제....",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 15,
-     "issue_np": 8,
-     "issue_nc": 47,
-     "kw": [
-      "데이터",
-      "센터",
-      "규제",
-      "허용"
-     ],
-     "top_post": {
-      "t": "텍사스에 데이터센터 허용",
-      "u": "https://www.clien.net/service/board/park/19289111?od=T33&po=0&category=0&groupCd=clien_all",
-      "nc": 15
-     }
-    }
-   ]
-  },
-  {
    "name": "네이트판",
-   "np": 3,
-   "nc": 37,
+   "np": 4,
+   "nc": 61,
    "topics": [
     {
      "t": "남편이 받은 씁쓸한 육아 성적표",
@@ -491,8 +431,8 @@
      "issue_np": 2,
      "issue_nc": 65,
      "kw": [
-      "육아",
-      "남편"
+      "남편",
+      "육아"
      ],
      "top_post": {
       "t": "안녕하세요돌아기 키우고 있습니다 저는 얼마전 복직했고 남편이 본인도 육아휴직하고 싶대서 신...",
@@ -501,11 +441,28 @@
      }
     },
     {
+     "t": "회사 선배와 차 한잔 하다가우연히 결혼 얘기가 나왔는데 선배는 딩크를 하겠다는 사람과 결혼할...",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 24,
+     "issue_np": 2,
+     "issue_nc": 24,
+     "kw": [
+      "회사",
+      "결혼"
+     ],
+     "top_post": {
+      "t": "회사 선배와 차 한잔 하다가우연히 결혼 얘기가 나왔는데 선배는 딩크를 하겠다는 사람과 결혼할...",
+      "u": "https://pann.nate.com/talk/375706002",
+      "nc": 24
+     }
+    },
+    {
      "t": "이연희 랍니다 여리여리 예쁘장한여자 그남자 얼굴많이 본대요 그남자 바운더리는 무조건 예쁜여...",
-     "nsite": 3,
+     "nsite": 4,
      "np_here": 1,
      "nc_here": 9,
-     "issue_np": 3,
+     "issue_np": 4,
      "issue_nc": 25,
      "kw": [
       "여자",
@@ -538,16 +495,85 @@
    ]
   },
   {
+   "name": "클리앙",
+   "np": 2,
+   "nc": 53,
+   "topics": [
+    {
+     "t": "날 세운 이재명 '주식시장이 망가지는 건 다 정부 탓'",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 38,
+     "issue_np": 3,
+     "issue_nc": 41,
+     "kw": [
+      "주식",
+      "정부",
+      "이재명",
+      "시장"
+     ],
+     "top_post": {
+      "t": "날 세운 이재명 '주식시장이 망가지는 건 다 정부 탓'",
+      "u": "https://www.clien.net/service/board/park/19289201?od=T33&po=0&category=0&groupCd=clien_all",
+      "nc": 38
+     }
+    },
+    {
+     "t": "와들와들 심각한 수준의 미민당 데이터센터 규제....",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 15,
+     "issue_np": 7,
+     "issue_nc": 47,
+     "kw": [
+      "데이터",
+      "센터",
+      "규제",
+      "텍사스"
+     ],
+     "top_post": {
+      "t": "텍사스에 데이터센터 허용",
+      "u": "https://www.clien.net/service/board/park/19289111?od=T33&po=0&category=0&groupCd=clien_all",
+      "nc": 15
+     }
+    }
+   ]
+  },
+  {
+   "name": "아카라이브",
+   "np": 1,
+   "nc": 27,
+   "topics": [
+    {
+     "t": "마왕과 반려용사.manwha",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 27,
+     "issue_np": 2,
+     "issue_nc": 27,
+     "kw": [
+      "반려용사",
+      "마왕"
+     ],
+     "top_post": {
+      "t": "마왕과 반려용사.manwha",
+      "u": "https://arca.live/b/live/188259728?p=1",
+      "nc": 27
+     }
+    }
+   ]
+  },
+  {
    "name": "82쿡",
    "np": 3,
    "nc": 26,
    "topics": [
     {
      "t": "이연희 랍니다 여리여리 예쁘장한여자 그남자 얼굴많이 본대요 그남자 바운더리는 무조건 예쁜여...",
-     "nsite": 3,
+     "nsite": 4,
      "np_here": 1,
      "nc_here": 16,
-     "issue_np": 3,
+     "issue_np": 4,
      "issue_nc": 25,
      "kw": [
       "여자",
@@ -581,13 +607,13 @@
      "nsite": 3,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 44,
+     "issue_np": 3,
+     "issue_nc": 41,
      "kw": [
       "주식",
-      "시장",
+      "정부",
       "이재명",
-      "정부"
+      "시장"
      ],
      "top_post": {
       "t": "코스닥은 이재명정부 들어 하락만 하는것 같아요.",
@@ -599,28 +625,9 @@
   },
   {
    "name": "보배드림",
-   "np": 6,
-   "nc": 14,
+   "np": 5,
+   "nc": 11,
    "topics": [
-    {
-     "t": "날 세운 이재명 '주식시장이 망가지는 건 다 정부 탓'",
-     "nsite": 3,
-     "np_here": 2,
-     "nc_here": 6,
-     "issue_np": 4,
-     "issue_nc": 44,
-     "kw": [
-      "주식",
-      "시장",
-      "이재명",
-      "정부"
-     ],
-     "top_post": {
-      "t": "주식시장 대책 이게 맞습니까?",
-      "u": "https://www.bobaedream.co.kr/view?code=best&No=1045933&vdate=",
-      "nc": 3
-     }
-    },
     {
      "t": "한국을 방문하고 별로였다는 외국인 ㅎ ㄷ ㄷ",
      "nsite": 3,
@@ -640,6 +647,25 @@
      }
     },
     {
+     "t": "날 세운 이재명 '주식시장이 망가지는 건 다 정부 탓'",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 3,
+     "issue_np": 3,
+     "issue_nc": 41,
+     "kw": [
+      "주식",
+      "정부",
+      "이재명",
+      "시장"
+     ],
+     "top_post": {
+      "t": "주식시장 대책 이게 맞습니까?",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1045933&vdate=",
+      "nc": 3
+     }
+    },
+    {
      "t": "별점테러 당한 할머니 분식집",
      "nsite": 2,
      "np_here": 2,
@@ -647,10 +673,10 @@
      "issue_np": 3,
      "issue_nc": 121,
      "kw": [
-      "테러",
       "분식집",
       "별점",
-      "할머니"
+      "할머니",
+      "테러"
      ],
      "top_post": {
       "t": "별점 테러 당한 분식집 할머니",
@@ -705,7 +731,7 @@
   },
   {
    "name": "디시인사이드",
-   "np": 4,
+   "np": 5,
    "nc": 0,
    "topics": [
     {
@@ -734,10 +760,10 @@
      "issue_np": 3,
      "issue_nc": 0,
      "kw": [
-      "작가",
       "사건",
+      "영국",
       "협박",
-      "영국"
+      "작가"
      ],
      "top_post": {
       "t": "300년 전 영국 여자들이 해피엔딩 내달라고 작가 협박한 사건",
@@ -753,8 +779,8 @@
      "issue_np": 2,
      "issue_nc": 56,
      "kw": [
-      "닥터",
-      "시청"
+      "시청",
+      "닥터"
      ],
      "top_post": {
       "t": "싱글벙글 닥터x 논란후 시청률 근황",
@@ -770,14 +796,31 @@
      "issue_np": 2,
      "issue_nc": 43,
      "kw": [
-      "파열",
+      "전신",
       "행인",
       "화상",
-      "전신"
+      "파열"
      ],
      "top_post": {
       "t": "도로 온수관 파열로 40대 행인 전신 60% 화상…중환자실 이송",
       "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=476670&_dcbest=1&page=1",
+      "nc": 0
+     }
+    },
+    {
+     "t": "회사 선배와 차 한잔 하다가우연히 결혼 얘기가 나왔는데 선배는 딩크를 하겠다는 사람과 결혼할...",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 2,
+     "issue_nc": 24,
+     "kw": [
+      "회사",
+      "결혼"
+     ],
+     "top_post": {
+      "t": "김밥집 접고 결혼정보회사 운영한다는 사장님",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=476662&_dcbest=1&page=1",
       "nc": 0
      }
     }
@@ -785,9 +828,26 @@
   },
   {
    "name": "루리웹",
-   "np": 25,
+   "np": 24,
    "nc": 0,
    "topics": [
+    {
+     "t": "이연희 랍니다 여리여리 예쁘장한여자 그남자 얼굴많이 본대요 그남자 바운더리는 무조건 예쁜여...",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 25,
+     "kw": [
+      "여자",
+      "남자"
+     ],
+     "top_post": {
+      "t": "젠슨 황도 터졌는데 ㄹㅇ 한여자만 보는 남자........",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77306620?m=all&t=now",
+      "nc": 0
+     }
+    },
     {
      "t": "블라인드에서 댓글 1000개 넘게 달린 담배 논란",
      "nsite": 3,
@@ -796,8 +856,8 @@
      "issue_np": 3,
      "issue_nc": 105,
      "kw": [
-      "담배",
       "블라인드",
+      "담배",
       "논란"
      ],
      "top_post": {
@@ -828,34 +888,17 @@
      "nsite": 3,
      "np_here": 4,
      "nc_here": 0,
-     "issue_np": 8,
+     "issue_np": 7,
      "issue_nc": 47,
      "kw": [
       "데이터",
       "센터",
       "규제",
-      "허용"
+      "텍사스"
      ],
      "top_post": {
       "t": "주식/중간선거)미국 민주당이 실시할려하는 데이터센터 규제안 정리",
       "u": "https://bbs.ruliweb.com/best/board/300143/read/77303512?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "이연희 랍니다 여리여리 예쁘장한여자 그남자 얼굴많이 본대요 그남자 바운더리는 무조건 예쁜여...",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 25,
-     "kw": [
-      "여자",
-      "남자"
-     ],
-     "top_post": {
-      "t": "젠슨 황도 터졌는데 ㄹㅇ 한여자만 보는 남자........",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77306620?m=all&t=now",
       "nc": 0
      }
     },
@@ -865,33 +908,16 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 3,
-     "issue_nc": 25,
+     "issue_nc": 42,
      "kw": [
-      "센터",
       "데이터",
       "미국",
+      "센터",
       "한국"
      ],
      "top_post": {
       "t": "미국데이터센터 소음이 심한 이유중 하나",
       "u": "https://bbs.ruliweb.com/best/board/300143/read/77303854?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "삼성 폴드8 광고 근황",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 1,
-     "kw": [
-      "삼성",
-      "광고"
-     ],
-     "top_post": {
-      "t": "앱등이, \"삼성의 광고는 상도덕 없고 저급하다\"",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77304978?m=humor",
       "nc": 0
      }
     },
@@ -903,9 +929,9 @@
      "issue_np": 3,
      "issue_nc": 0,
      "kw": [
-      "파열",
-      "행인",
       "온수",
+      "행인",
+      "파열",
       "구멍"
      ],
      "top_post": {
@@ -922,14 +948,113 @@
      "issue_np": 3,
      "issue_nc": 0,
      "kw": [
-      "작가",
       "사건",
+      "영국",
       "협박",
-      "영국"
+      "작가"
      ],
      "top_post": {
       "t": "300년 전 영국 여성들이 해피엔딩 내달라고 작가 협박한 사건",
       "u": "https://bbs.ruliweb.com/best/board/300143/read/77311178?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "어느 일본인의 한국 여행 후기",
+     "nsite": 2,
+     "np_here": 3,
+     "nc_here": 0,
+     "issue_np": 5,
+     "issue_nc": 111,
+     "kw": [
+      "한국",
+      "일본인",
+      "여행"
+     ],
+     "top_post": {
+      "t": "혼자 인도여행 떠났다가 사라졌다는 한국여성 ㄷㄷㄷ",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77305013?m=all&t=now",
+      "nc": 0
+     }
+    }
+   ]
+  },
+  {
+   "name": "더쿠",
+   "np": 4,
+   "nc": 0,
+   "topics": [
+    {
+     "t": "이연희 랍니다 여리여리 예쁘장한여자 그남자 얼굴많이 본대요 그남자 바운더리는 무조건 예쁜여...",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 25,
+     "kw": [
+      "여자",
+      "남자"
+     ],
+     "top_post": {
+      "t": "여자들은 남자한테 사랑받을 수 있는게 부러움",
+      "u": "https://theqoo.net/hot/4399363438",
+      "nc": 0
+     }
+    },
+    {
+     "t": "마곡동 온수관 파열 구멍으로 행인 빠져",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 0,
+     "kw": [
+      "온수",
+      "행인",
+      "파열",
+      "구멍"
+     ],
+     "top_post": {
+      "t": "온수관 파열 '구멍'에 행인 빠져...전신 60% 중화상 (영상)",
+      "u": "https://theqoo.net/hot/4398705990",
+      "nc": 0
+     }
+    },
+    {
+     "t": "300년 전 영국 여자들이 해피엔딩 내달라고 작가 협박한 사건",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 0,
+     "kw": [
+      "사건",
+      "영국",
+      "협박",
+      "작가"
+     ],
+     "top_post": {
+      "t": "300년 전 영국 여자들이 해피엔딩 내달라고 작가 협박한 사건",
+      "u": "https://theqoo.net/hot/4398718334",
+      "nc": 0
+     }
+    },
+    {
+     "t": "골수이식 철회해서 아이 죽은 일 있잖아",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 2,
+     "issue_nc": 93,
+     "kw": [
+      "철회",
+      "아이",
+      "이식",
+      "골수"
+     ],
+     "top_post": {
+      "t": "골수이식 철회해서 아이 죽은일있잖아",
+      "u": "https://theqoo.net/hot/4398388577",
       "nc": 0
      }
     }
@@ -964,11 +1089,11 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 3,
-     "issue_nc": 25,
+     "issue_nc": 42,
      "kw": [
-      "센터",
       "데이터",
       "미국",
+      "센터",
       "한국"
      ],
      "top_post": {
@@ -985,112 +1110,14 @@
      "issue_np": 3,
      "issue_nc": 0,
      "kw": [
-      "파열",
-      "행인",
       "온수",
+      "행인",
+      "파열",
       "구멍"
      ],
      "top_post": {
       "t": "마곡동 온수관 파열 구멍으로 행인 빠져",
       "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=676960",
-      "nc": 0
-     }
-    }
-   ]
-  },
-  {
-   "name": "더쿠",
-   "np": 5,
-   "nc": 0,
-   "topics": [
-    {
-     "t": "삼성 폴드8 광고 근황",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 1,
-     "kw": [
-      "삼성",
-      "광고"
-     ],
-     "top_post": {
-      "t": "삼성 폴드8 광고 근황",
-      "u": "https://theqoo.net/hot/4398218581",
-      "nc": 0
-     }
-    },
-    {
-     "t": "마곡동 온수관 파열 구멍으로 행인 빠져",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 0,
-     "kw": [
-      "파열",
-      "행인",
-      "온수",
-      "구멍"
-     ],
-     "top_post": {
-      "t": "온수관 파열 '구멍'에 행인 빠져...전신 60% 중화상 (영상)",
-      "u": "https://theqoo.net/hot/4398705990",
-      "nc": 0
-     }
-    },
-    {
-     "t": "300년 전 영국 여자들이 해피엔딩 내달라고 작가 협박한 사건",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 0,
-     "kw": [
-      "작가",
-      "사건",
-      "협박",
-      "영국"
-     ],
-     "top_post": {
-      "t": "300년 전 영국 여자들이 해피엔딩 내달라고 작가 협박한 사건",
-      "u": "https://theqoo.net/hot/4398718334",
-      "nc": 0
-     }
-    },
-    {
-     "t": "골수이식 철회해서 아이 죽은 일 있잖아",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 2,
-     "issue_nc": 93,
-     "kw": [
-      "아이",
-      "이식",
-      "철회",
-      "골수"
-     ],
-     "top_post": {
-      "t": "골수이식 철회해서 아이 죽은일있잖아",
-      "u": "https://theqoo.net/hot/4398388577",
-      "nc": 0
-     }
-    },
-    {
-     "t": "재혼황후 새..이렇게 재우는거 맞아? 이거 왜 아무도 말안해..￼",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 2,
-     "issue_nc": 38,
-     "kw": [
-      "재혼",
-      "황후"
-     ],
-     "top_post": {
-      "t": "재혼황후 새..이렇게 재우는거 맞아? 이거 왜 아무도 말안해..￼",
-      "u": "https://theqoo.net/hot/4398081873",
       "nc": 0
      }
     }
