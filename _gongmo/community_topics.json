@@ -1,14 +1,14 @@
 {
  "date": "2026-11-08",
- "updated": "2026-11-08 21:50",
+ "updated": "2026-11-08 22:50",
  "sites": 12,
- "npost": 2434,
+ "npost": 2441,
  "note": "출처(커뮤니티)별 집계예요. 작성자·연령·성별 정보는 수집하지 않아요. posts 는 이슈별로 뽑힌 일부라 전체 글 수가 아니에요.",
  "sources": [
   {
    "name": "MLB파크",
-   "np": 16,
-   "nc": 845,
+   "np": 17,
+   "nc": 908,
    "topics": [
     {
      "t": "충격적인 미국 중간선거 당선자들",
@@ -29,6 +29,25 @@
      }
     },
     {
+     "t": "삼성 우승 혜택 ㄷㄷㄷㄷㄷ",
+     "nsite": 6,
+     "np_here": 3,
+     "nc_here": 125,
+     "issue_np": 13,
+     "issue_nc": 135,
+     "kw": [
+      "우승",
+      "삼성",
+      "혜택",
+      "야구"
+     ],
+     "top_post": {
+      "t": "삼성 우승 혜택 ㄷㄷㄷㄷㄷ",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611080120001812&m=view",
+      "nc": 59
+     }
+    },
+    {
      "t": "요즘 미국 대학강의실 상황 ㄷㄷ",
      "nsite": 2,
      "np_here": 1,
@@ -36,48 +55,13 @@
      "issue_np": 2,
      "issue_nc": 97,
      "kw": [
-      "대학",
-      "강의실"
+      "강의실",
+      "대학"
      ],
      "top_post": {
       "t": "요즘 미국 대학강의실 상황 ㄷㄷ",
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611080119974341&m=view",
       "nc": 97
-     }
-    },
-    {
-     "t": "ai시대에도 책을 읽어야 하는 이유",
-     "nsite": 2,
-     "np_here": 2,
-     "nc_here": 83,
-     "issue_np": 3,
-     "issue_nc": 83,
-     "kw": [
-      "AI",
-      "시대"
-     ],
-     "top_post": {
-      "t": "ai시대에도 책을 읽어야 하는 이유",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611080119974647&m=view",
-      "nc": 50
-     }
-    },
-    {
-     "t": "삼성 우승 혜택 ㄷㄷㄷㄷㄷ",
-     "nsite": 4,
-     "np_here": 2,
-     "nc_here": 81,
-     "issue_np": 9,
-     "issue_nc": 91,
-     "kw": [
-      "삼성",
-      "우승",
-      "야구"
-     ],
-     "top_post": {
-      "t": "삼성 우승 혜택 ㄷㄷㄷㄷㄷ",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611080120001812&m=view",
-      "nc": 51
      }
     },
     {
@@ -88,8 +72,8 @@
      "issue_np": 2,
      "issue_nc": 72,
      "kw": [
-      "인생",
-      "선택"
+      "선택",
+      "인생"
      ],
      "top_post": {
       "t": "강민호 인생 최고의 선택",
@@ -122,13 +106,30 @@
      "issue_np": 2,
      "issue_nc": 66,
      "kw": [
-      "부산",
-      "빌라"
+      "빌라",
+      "부산"
      ],
      "top_post": {
       "t": "ㅎㄷㄷ한 부산의 어느 빌라 위치",
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611070119971497&m=view",
       "nc": 66
+     }
+    },
+    {
+     "t": "이연희 랍니다 여리여리 예쁘장한여자 그남자 얼굴많이 본대요 그남자 바운더리는 무조건 예쁜여...",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 58,
+     "issue_np": 3,
+     "issue_nc": 67,
+     "kw": [
+      "남자",
+      "여자"
+     ],
+     "top_post": {
+      "t": "다른 여자 쳐다보는 남자",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611080119998977&m=view",
+      "nc": 58
      }
     },
     {
@@ -152,160 +153,9 @@
    ]
   },
   {
-   "name": "개드립",
-   "np": 10,
-   "nc": 312,
-   "topics": [
-    {
-     "t": "중국차 때문에 죽을뻔했다는 유튜버",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 44,
-     "issue_np": 2,
-     "issue_nc": 47,
-     "kw": [
-      "중국",
-      "유튜버"
-     ],
-     "top_post": {
-      "t": "중국차 때문에 죽을뻔했다는 유튜버",
-      "u": "https://www.dogdrip.net/dogdrip/733601097?sort_index=popular&page=1",
-      "nc": 44
-     }
-    },
-    {
-     "t": "마곡 온수관 파열 시민 중화상 CCTV 영상",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 42,
-     "issue_np": 2,
-     "issue_nc": 42,
-     "kw": [
-      "파열",
-      "CCTV",
-      "마곡",
-      "화상"
-     ],
-     "top_post": {
-      "t": "마곡 온수관 파열 시민 중화상 CCTV 영상",
-      "u": "https://www.dogdrip.net/dogdrip/733684311?sort_index=popular&page=1",
-      "nc": 42
-     }
-    },
-    {
-     "t": "미국 지하철이 cctv 공개를 하지 못하는 이유",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 42,
-     "issue_np": 2,
-     "issue_nc": 42,
-     "kw": [
-      "CCTV",
-      "지하철",
-      "공개",
-      "미국"
-     ],
-     "top_post": {
-      "t": "미국 지하철이 cctv 공개를 하지 못하는 이유",
-      "u": "https://www.dogdrip.net/dogdrip/733751981?sort_index=popular&page=1",
-      "nc": 42
-     }
-    },
-    {
-     "t": "20살 138cm 24kg 여자",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 38,
-     "issue_np": 2,
-     "issue_nc": 38,
-     "kw": [
-      "CM",
-      "여자",
-      "KG"
-     ],
-     "top_post": {
-      "t": "20살 138cm 24kg 여자",
-      "u": "https://www.dogdrip.net/dogdrip/733752033?sort_index=popular&page=1",
-      "nc": 38
-     }
-    },
-    {
-     "t": "안세영 그거 달성",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 35,
-     "issue_np": 2,
-     "issue_nc": 38,
-     "kw": [
-      "달성",
-      "안세영"
-     ],
-     "top_post": {
-      "t": "안세영 그거 달성",
-      "u": "https://www.dogdrip.net/dogdrip/733773271?sort_index=popular&page=1",
-      "nc": 35
-     }
-    },
-    {
-     "t": "아빠가 탁자 위에 파프리카 세쪽을 놓아둔 이유ㅋㅋㅋㅋㅋㅋ",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 28,
-     "issue_np": 2,
-     "issue_nc": 28,
-     "kw": [
-      "탁자",
-      "파프리카"
-     ],
-     "top_post": {
-      "t": "아빠가 탁자 위에 파프리카 세쪽을 놓아둔 이유ㅋㅋㅋㅋㅋㅋ",
-      "u": "https://www.dogdrip.net/dogdrip/733667628?sort_index=popular&page=1",
-      "nc": 28
-     }
-    },
-    {
-     "t": "낭만넘치는 네이버웹툰 \"협의 기준\"",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 27,
-     "issue_np": 2,
-     "issue_nc": 27,
-     "kw": [
-      "협의",
-      "낭만",
-      "네이버 웹툰"
-     ],
-     "top_post": {
-      "t": "낭만넘치는 네이버웹툰 \"협의 기준\"",
-      "u": "https://www.dogdrip.net/dogdrip/733768006?sort_index=popular&page=1",
-      "nc": 27
-     }
-    },
-    {
-     "t": "6명 사망한 폴란드 총기난사범 무장상태",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 23,
-     "issue_np": 4,
-     "issue_nc": 23,
-     "kw": [
-      "난사",
-      "폴란드",
-      "총기",
-      "사망"
-     ],
-     "top_post": {
-      "t": "6명 사망한 폴란드 총기난사범 무장상태",
-      "u": "https://www.dogdrip.net/dogdrip/733762604?sort_index=popular&page=1",
-      "nc": 23
-     }
-    }
-   ]
-  },
-  {
    "name": "인스티즈",
-   "np": 3,
-   "nc": 210,
+   "np": 4,
+   "nc": 252,
    "topics": [
     {
      "t": "블라인드에서 댓글 1000개 넘게 달린 담배 논란",
@@ -315,9 +165,9 @@
      "issue_np": 3,
      "issue_nc": 105,
      "kw": [
+      "논란",
       "담배",
-      "블라인드",
-      "논란"
+      "블라인드"
      ],
      "top_post": {
       "t": "블라인드에서 댓글 1000개 넘게 달린 담배 논란",
@@ -350,13 +200,185 @@
      "issue_np": 2,
      "issue_nc": 56,
      "kw": [
-      "닥터",
-      "시청"
+      "시청",
+      "닥터"
      ],
      "top_post": {
       "t": "'닥터X' 또 시청률 떨어져… 종영 앞두고 잃은 뒷심",
       "u": "https://www.instiz.net/pt/7923015?green=1",
       "nc": 56
+     }
+    },
+    {
+     "t": "[핑계고] 몸에 열이 너무 많아서 5월부터 에어컨을 켜고 겨울엔 난방 없이 잔다는 서강준",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 42,
+     "issue_np": 2,
+     "issue_nc": 42,
+     "kw": [
+      "서강준",
+      "겨울",
+      "에어컨",
+      "난방"
+     ],
+     "top_post": {
+      "t": "[핑계고] 몸에 열이 너무 많아서 5월부터 에어컨을 켜고 겨울엔 난방 없이 잔다는 서강준",
+      "u": "https://www.instiz.net/pt/7923002?green=1",
+      "nc": 42
+     }
+    }
+   ]
+  },
+  {
+   "name": "개드립",
+   "np": 8,
+   "nc": 246,
+   "topics": [
+    {
+     "t": "마곡 온수관 파열 시민 중화상 CCTV 영상",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 42,
+     "issue_np": 2,
+     "issue_nc": 42,
+     "kw": [
+      "파열",
+      "마곡",
+      "화상",
+      "CCTV"
+     ],
+     "top_post": {
+      "t": "마곡 온수관 파열 시민 중화상 CCTV 영상",
+      "u": "https://www.dogdrip.net/dogdrip/733684311?sort_index=popular&page=1",
+      "nc": 42
+     }
+    },
+    {
+     "t": "미국 지하철이 cctv 공개를 하지 못하는 이유",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 42,
+     "issue_np": 2,
+     "issue_nc": 42,
+     "kw": [
+      "지하철",
+      "공개",
+      "미국",
+      "CCTV"
+     ],
+     "top_post": {
+      "t": "미국 지하철이 cctv 공개를 하지 못하는 이유",
+      "u": "https://www.dogdrip.net/dogdrip/733751981?sort_index=popular&page=1",
+      "nc": 42
+     }
+    },
+    {
+     "t": "20살 138cm 24kg 여자",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 38,
+     "issue_np": 2,
+     "issue_nc": 38,
+     "kw": [
+      "CM",
+      "여자",
+      "KG"
+     ],
+     "top_post": {
+      "t": "20살 138cm 24kg 여자",
+      "u": "https://www.dogdrip.net/dogdrip/733752033?sort_index=popular&page=1",
+      "nc": 38
+     }
+    },
+    {
+     "t": "안세영 그거 달성",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 36,
+     "issue_np": 2,
+     "issue_nc": 39,
+     "kw": [
+      "안세영",
+      "달성"
+     ],
+     "top_post": {
+      "t": "안세영 그거 달성",
+      "u": "https://www.dogdrip.net/dogdrip/733773271?sort_index=popular&page=1",
+      "nc": 36
+     }
+    },
+    {
+     "t": "깨달아버린 일본 트위터 유저",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 32,
+     "issue_np": 2,
+     "issue_nc": 32,
+     "kw": [
+      "일본",
+      "트위터"
+     ],
+     "top_post": {
+      "t": "깨달아버린 일본 트위터 유저",
+      "u": "https://www.dogdrip.net/dogdrip/733812652?sort_index=popular&page=1",
+      "nc": 32
+     }
+    },
+    {
+     "t": "6명 사망한 폴란드 총기난사범 무장상태",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 23,
+     "issue_np": 5,
+     "issue_nc": 23,
+     "kw": [
+      "폴란드",
+      "난사",
+      "총기",
+      "사망"
+     ],
+     "top_post": {
+      "t": "6명 사망한 폴란드 총기난사범 무장상태",
+      "u": "https://www.dogdrip.net/dogdrip/733762604?sort_index=popular&page=1",
+      "nc": 23
+     }
+    },
+    {
+     "t": "한국과 미국 데이터센터 인식 차이.",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 17,
+     "issue_np": 3,
+     "issue_nc": 17,
+     "kw": [
+      "데이터",
+      "미국",
+      "센터",
+      "한국"
+     ],
+     "top_post": {
+      "t": "한국과 미국 데이터센터 인식 차이.",
+      "u": "https://www.dogdrip.net/dogdrip/733742694?sort_index=popular&page=1",
+      "nc": 17
+     }
+    },
+    {
+     "t": "여대생들한테 인기 많았다는 남자",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 16,
+     "issue_np": 3,
+     "issue_nc": 22,
+     "kw": [
+      "남자",
+      "인기",
+      "여대"
+     ],
+     "top_post": {
+      "t": "여대생들한테 인기 많았다는 남자",
+      "u": "https://www.dogdrip.net/dogdrip/733677229?sort_index=popular&page=1",
+      "nc": 16
      }
     }
    ]
@@ -374,8 +396,8 @@
      "issue_np": 2,
      "issue_nc": 41,
      "kw": [
-      "시장",
-      "주식"
+      "주식",
+      "시장"
      ],
      "top_post": {
       "t": "날 세운 이재명 '주식시장이 망가지는 건 다 정부 탓'",
@@ -391,8 +413,8 @@
      "issue_np": 4,
      "issue_nc": 34,
      "kw": [
-      "이재명",
-      "대통령"
+      "대통령",
+      "이재명"
      ],
      "top_post": {
       "t": "이재명대통령이 이런 말한것이 점점 무서워지내요",
@@ -421,14 +443,15 @@
     },
     {
      "t": "삼성 우승 혜택 ㄷㄷㄷㄷㄷ",
-     "nsite": 4,
+     "nsite": 6,
      "np_here": 1,
      "nc_here": 4,
-     "issue_np": 9,
-     "issue_nc": 91,
+     "issue_np": 13,
+     "issue_nc": 135,
      "kw": [
-      "삼성",
       "우승",
+      "삼성",
+      "혜택",
       "야구"
      ],
      "top_post": {
@@ -450,7 +473,7 @@
      "np_here": 1,
      "nc_here": 9,
      "issue_np": 3,
-     "issue_nc": 43,
+     "issue_nc": 67,
      "kw": [
       "남자",
       "여자"
@@ -469,8 +492,8 @@
      "issue_np": 2,
      "issue_nc": 72,
      "kw": [
-      "인생",
-      "선택"
+      "선택",
+      "인생"
      ],
      "top_post": {
       "t": "작게 쪼개보면 복잡하다 의미에 따라 인생은 달라진다 선택은 크게정하고 작은노력들이 필요하다...",
@@ -500,26 +523,9 @@
   },
   {
    "name": "보배드림",
-   "np": 4,
-   "nc": 11,
+   "np": 3,
+   "nc": 8,
    "topics": [
-    {
-     "t": "중국차 때문에 죽을뻔했다는 유튜버",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 3,
-     "issue_np": 2,
-     "issue_nc": 47,
-     "kw": [
-      "중국",
-      "유튜버"
-     ],
-     "top_post": {
-      "t": "중국차 빨아 대는 대표 유튜버는?>.",
-      "u": "https://www.bobaedream.co.kr/view?code=best&No=1046039&vdate=",
-      "nc": 3
-     }
-    },
     {
      "t": "날 세운 이재명 '주식시장이 망가지는 건 다 정부 탓'",
      "nsite": 2,
@@ -528,8 +534,8 @@
      "issue_np": 2,
      "issue_nc": 41,
      "kw": [
-      "시장",
-      "주식"
+      "주식",
+      "시장"
      ],
      "top_post": {
       "t": "주식시장 대책 이게 맞습니까?",
@@ -543,10 +549,10 @@
      "np_here": 1,
      "nc_here": 3,
      "issue_np": 2,
-     "issue_nc": 38,
+     "issue_nc": 39,
      "kw": [
-      "달성",
-      "안세영"
+      "안세영",
+      "달성"
      ],
      "top_post": {
       "t": "안세영 또 우승, 오늘 달성한 기록들",
@@ -581,14 +587,15 @@
    "topics": [
     {
      "t": "삼성 우승 혜택 ㄷㄷㄷㄷㄷ",
-     "nsite": 4,
+     "nsite": 6,
      "np_here": 1,
      "nc_here": 6,
-     "issue_np": 9,
-     "issue_nc": 91,
+     "issue_np": 13,
+     "issue_nc": 135,
      "kw": [
-      "삼성",
       "우승",
+      "삼성",
+      "혜택",
       "야구"
      ],
      "top_post": {
@@ -601,19 +608,20 @@
   },
   {
    "name": "루리웹",
-   "np": 22,
+   "np": 21,
    "nc": 0,
    "topics": [
     {
      "t": "삼성 우승 혜택 ㄷㄷㄷㄷㄷ",
-     "nsite": 4,
-     "np_here": 2,
+     "nsite": 6,
+     "np_here": 1,
      "nc_here": 0,
-     "issue_np": 9,
-     "issue_nc": 91,
+     "issue_np": 13,
+     "issue_nc": 135,
      "kw": [
-      "삼성",
       "우승",
+      "삼성",
+      "혜택",
       "야구"
      ],
      "top_post": {
@@ -630,9 +638,9 @@
      "issue_np": 3,
      "issue_nc": 105,
      "kw": [
+      "논란",
       "담배",
-      "블라인드",
-      "논란"
+      "블라인드"
      ],
      "top_post": {
       "t": "블라인드에서 댓글 1000개 넘게 달린 담배 논란",
@@ -662,13 +670,13 @@
     {
      "t": "6명 사망한 폴란드 총기난사범 무장상태",
      "nsite": 3,
-     "np_here": 2,
+     "np_here": 3,
      "nc_here": 0,
-     "issue_np": 4,
+     "issue_np": 5,
      "issue_nc": 23,
      "kw": [
-      "난사",
       "폴란드",
+      "난사",
       "총기",
       "사망"
      ],
@@ -686,9 +694,9 @@
      "issue_np": 3,
      "issue_nc": 17,
      "kw": [
-      "센터",
       "데이터",
       "미국",
+      "센터",
       "한국"
      ],
      "top_post": {
@@ -706,9 +714,9 @@
      "issue_nc": 0,
      "kw": [
       "협박",
+      "사건",
       "영국",
-      "작가",
-      "사건"
+      "작가"
      ],
      "top_post": {
       "t": "300년 전 영국 여성들이 해피엔딩 내달라고 작가 협박한 사건",
@@ -724,10 +732,10 @@
      "issue_np": 3,
      "issue_nc": 0,
      "kw": [
-      "삼성",
       "라이온즈",
       "우승",
-      "규모"
+      "삼성",
+      "한국"
      ],
      "top_post": {
       "t": "삼성라이온즈) 우승 대규모 할인 행사",
@@ -750,6 +758,124 @@
      "top_post": {
       "t": "미국 중간 선거에서 xxx만 투표했다면",
       "u": "https://bbs.ruliweb.com/best/board/300143/read/77320308?m=all&t=now",
+      "nc": 0
+     }
+    }
+   ]
+  },
+  {
+   "name": "더쿠",
+   "np": 6,
+   "nc": 0,
+   "topics": [
+    {
+     "t": "이연희 랍니다 여리여리 예쁘장한여자 그남자 얼굴많이 본대요 그남자 바운더리는 무조건 예쁜여...",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 67,
+     "kw": [
+      "남자",
+      "여자"
+     ],
+     "top_post": {
+      "t": "여자들은 남자한테 사랑받을 수 있는게 부러움",
+      "u": "https://theqoo.net/hot/4399363438",
+      "nc": 0
+     }
+    },
+    {
+     "t": "은마아파트 보니 앞으로 재건축이라는게 어렵겠는데요",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 27,
+     "kw": [
+      "건축",
+      "아파트",
+      "은마",
+      "구축"
+     ],
+     "top_post": {
+      "t": "구축 아파트들 재건축이 앞으로 힘든이유..+은마아파트 근황",
+      "u": "https://theqoo.net/hot/4399358992",
+      "nc": 0
+     }
+    },
+    {
+     "t": "\"밤 10시 이후 샤워 자제해주세요\"…아파트 공지문",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 25,
+     "kw": [
+      "아파트",
+      "자제",
+      "샤워"
+     ],
+     "top_post": {
+      "t": "\"밤 10시 이후 샤워 자제해주세요\"…아파트 공지문에 \"야근하고 씻지말라고?\" [어떻게 생각하세요]",
+      "u": "https://theqoo.net/hot/4399238681",
+      "nc": 0
+     }
+    },
+    {
+     "t": "300년 전 영국 여자들이 해피엔딩 내달라고 작가 협박한 사건",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 0,
+     "kw": [
+      "협박",
+      "사건",
+      "영국",
+      "작가"
+     ],
+     "top_post": {
+      "t": "300년 전 영국 여자들이 해피엔딩 내달라고 작가 협박한 사건",
+      "u": "https://theqoo.net/hot/4398718334",
+      "nc": 0
+     }
+    },
+    {
+     "t": "삼성 라이온즈, 한국시리즈 우승…계열사, 대규모 할인 행사 검토(종합)",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 0,
+     "kw": [
+      "라이온즈",
+      "우승",
+      "삼성",
+      "한국"
+     ],
+     "top_post": {
+      "t": "삼성 라이온즈, 한국시리즈 우승…계열사, 대규모 할인 행사 검토(종합)",
+      "u": "https://theqoo.net/hot/4399753866",
+      "nc": 0
+     }
+    },
+    {
+     "t": "[핑계고] 몸에 열이 너무 많아서 5월부터 에어컨을 켜고 겨울엔 난방 없이 잔다는 서강준",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 2,
+     "issue_nc": 42,
+     "kw": [
+      "서강준",
+      "겨울",
+      "에어컨",
+      "난방"
+     ],
+     "top_post": {
+      "t": "몸에 열이 너무 많아서 5월부터 에어컨을 켜고 겨울엔 난방 없이 잔다는 서강준",
+      "u": "https://theqoo.net/hot/4399933118",
       "nc": 0
      }
     }
@@ -784,11 +910,11 @@
      "nsite": 3,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 4,
+     "issue_np": 5,
      "issue_nc": 23,
      "kw": [
-      "난사",
       "폴란드",
+      "난사",
       "총기",
       "사망"
      ],
@@ -807,9 +933,9 @@
      "issue_nc": 0,
      "kw": [
       "협박",
+      "사건",
       "영국",
-      "작가",
-      "사건"
+      "작가"
      ],
      "top_post": {
       "t": "300년 전 영국 여자들이 해피엔딩 내달라고 작가 협박한 사건",
@@ -825,10 +951,10 @@
      "issue_np": 3,
      "issue_nc": 0,
      "kw": [
-      "삼성",
       "라이온즈",
       "우승",
-      "규모"
+      "삼성",
+      "한국"
      ],
      "top_post": {
       "t": "삼성 라이온즈 12년만에 한국시리즈 우승.",
@@ -844,8 +970,8 @@
      "issue_np": 2,
      "issue_nc": 56,
      "kw": [
-      "닥터",
-      "시청"
+      "시청",
+      "닥터"
      ],
      "top_post": {
       "t": "싱글벙글 닥터x 논란후 시청률 근황",
@@ -861,8 +987,8 @@
      "issue_np": 4,
      "issue_nc": 34,
      "kw": [
-      "이재명",
-      "대통령"
+      "대통령",
+      "이재명"
      ],
      "top_post": {
       "t": "위대한 한국 동티모르 탄탄 동맹 이재명 대통령 근황",
@@ -873,91 +999,28 @@
    ]
   },
   {
-   "name": "더쿠",
-   "np": 4,
-   "nc": 0,
-   "topics": [
-    {
-     "t": "이연희 랍니다 여리여리 예쁘장한여자 그남자 얼굴많이 본대요 그남자 바운더리는 무조건 예쁜여...",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 43,
-     "kw": [
-      "남자",
-      "여자"
-     ],
-     "top_post": {
-      "t": "여자들은 남자한테 사랑받을 수 있는게 부러움",
-      "u": "https://theqoo.net/hot/4399363438",
-      "nc": 0
-     }
-    },
-    {
-     "t": "은마아파트 보니 앞으로 재건축이라는게 어렵겠는데요",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 27,
-     "kw": [
-      "건축",
-      "아파트",
-      "은마",
-      "구축"
-     ],
-     "top_post": {
-      "t": "구축 아파트들 재건축이 앞으로 힘든이유..+은마아파트 근황",
-      "u": "https://theqoo.net/hot/4399358992",
-      "nc": 0
-     }
-    },
-    {
-     "t": "300년 전 영국 여자들이 해피엔딩 내달라고 작가 협박한 사건",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 0,
-     "kw": [
-      "협박",
-      "영국",
-      "작가",
-      "사건"
-     ],
-     "top_post": {
-      "t": "300년 전 영국 여자들이 해피엔딩 내달라고 작가 협박한 사건",
-      "u": "https://theqoo.net/hot/4398718334",
-      "nc": 0
-     }
-    },
-    {
-     "t": "삼성 라이온즈, 한국시리즈 우승…계열사, 대규모 할인 행사 검토(종합)",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 0,
-     "kw": [
-      "삼성",
-      "라이온즈",
-      "우승",
-      "규모"
-     ],
-     "top_post": {
-      "t": "삼성 라이온즈, 한국시리즈 우승…계열사, 대규모 할인 행사 검토(종합)",
-      "u": "https://theqoo.net/hot/4399753866",
-      "nc": 0
-     }
-    }
-   ]
-  },
-  {
    "name": "SLR클럽",
-   "np": 1,
+   "np": 2,
    "nc": 0,
    "topics": [
+    {
+     "t": "\"밤 10시 이후 샤워 자제해주세요\"…아파트 공지문",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 25,
+     "kw": [
+      "아파트",
+      "자제",
+      "샤워"
+     ],
+     "top_post": {
+      "t": "\"밤 10시 이후 샤워 자제해주세요\"…아파트 공지문",
+      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=676980",
+      "nc": 0
+     }
+    },
     {
      "t": "한국과 미국 데이터센터 인식 차이.",
      "nsite": 3,
@@ -966,9 +1029,9 @@
      "issue_np": 3,
      "issue_nc": 17,
      "kw": [
-      "센터",
       "데이터",
       "미국",
+      "센터",
       "한국"
      ],
      "top_post": {
