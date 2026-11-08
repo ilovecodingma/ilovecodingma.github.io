@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-08 16:00",
+ "updated": "2026-11-08 17:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -228,6 +228,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-07",
+   "expires": "2026-11-11"
+  },
+  {
+   "query": "이민정",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 10000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-08",
    "expires": "2026-11-11"
   },
   {
@@ -1168,6 +1180,42 @@
   },
   {
    "query": "지수",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-08",
+   "expires": "2026-11-11"
+  },
+  {
+   "query": "서세원",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-08",
+   "expires": "2026-11-11"
+  },
+  {
+   "query": "경호원",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-08",
+   "expires": "2026-11-11"
+  },
+  {
+   "query": "다이소",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -2260,6 +2308,18 @@
   },
   {
    "query": "시즈오카현",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-08",
+   "expires": "2026-11-11"
+  },
+  {
+   "query": "서울특별시",
    "tier": "단기",
    "signal": [
     "구글트렌드"
