@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-08 11:00",
+ "updated": "2026-11-08 12:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -84,6 +84,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-07",
+   "expires": "2026-11-11"
+  },
+  {
+   "query": "시애틀 사운더스 대 엘에이 fc",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 20000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-08",
    "expires": "2026-11-11"
   },
   {
@@ -411,18 +423,6 @@
    "expires": "2026-11-11"
   },
   {
-   "query": "김연경",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 5000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-04",
-   "expires": "2026-11-11"
-  },
-  {
    "query": "논쟁",
    "tier": "단기",
    "signal": [
@@ -472,6 +472,18 @@
   },
   {
    "query": "삼성 라이온즈",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 5000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-08",
+   "expires": "2026-11-11"
+  },
+  {
+   "query": "솔트레이크 대 la 갤럭시",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -760,6 +772,18 @@
   },
   {
    "query": "시콜 스키 s 92",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-07",
+   "expires": "2026-11-11"
+  },
+  {
+   "query": "세균",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -1107,18 +1131,6 @@
    "expires": "2026-11-11"
   },
   {
-   "query": "세균",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 2000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-07",
-   "expires": "2026-11-11"
-  },
-  {
    "query": "이재희",
    "tier": "단기",
    "signal": [
@@ -1380,6 +1392,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-03",
+   "expires": "2026-11-11"
+  },
+  {
+   "query": "xrp 레저",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-08",
    "expires": "2026-11-11"
   },
   {
@@ -2152,6 +2176,18 @@
   },
   {
    "query": "엔비디아",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-08",
+   "expires": "2026-11-11"
+  },
+  {
+   "query": "밥",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -9521,6 +9557,19 @@
    "expires": "2026-11-15"
   },
   {
+   "query": "비트코인 7만5천 달러 붕괴 하락률 ETF 순유출 청산 규모 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 3,
+   "status": "작성",
+   "page": "/issue/bitcoin-drop-75000-etf-outflow-1108/",
+   "registered": "2026-11-08",
+   "expires": "2026-11-15"
+  },
+  {
    "query": "폭락장 금융상식 30가지: 반대매매·서킷브레이커·물타기·ETF 쉬운 정리",
    "tier": "중기",
    "signal": [
@@ -9636,6 +9685,19 @@
    "page": "/issue/gangnam-apartment-price-drop-deals-1107/",
    "registered": "2026-11-07",
    "expires": "2026-11-21"
+  },
+  {
+   "query": "금값 4000달러 하락 고점 대비 하락률 중국 인민은행 24개월 연속 매입 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 3,
+   "status": "작성",
+   "page": "/issue/gold-price-drop-pboc-24-months-buying-1108/",
+   "registered": "2026-11-08",
+   "expires": "2026-11-15"
   },
   {
    "query": "GTA6 발매일과 사전 다운로드 11월 10일 시작, 용량 212GB·가격 정리",
@@ -10317,6 +10379,19 @@
    "page": "/issue/nikke-hacking-incident-1105/",
    "registered": "2026-11-05",
    "expires": "2026-11-12"
+  },
+  {
+   "query": "신인감독 김연경2 5회 몇 시 원더독스 흥국생명전 세트 스코어 시청률 6회 일정",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 2,
+   "status": "작성",
+   "page": "/issue/rookie-coach-kim-yeonkoung-s2-ep5-1108/",
+   "registered": "2026-11-08",
+   "expires": "2026-11-15"
   },
   {
    "query": "두번째 시그널 첫 방송 12월 7일 편성, 조진웅 출연 tvN 입장 정리",
