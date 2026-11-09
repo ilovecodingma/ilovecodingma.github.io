@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-09 15:00",
+ "updated": "2026-11-09 16:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -111,6 +111,18 @@
    "expires": "2026-11-12"
   },
   {
+   "query": "삼전닉스",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 20000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-09",
+   "expires": "2026-11-12"
+  },
+  {
    "query": "리즈 유나이티드 대 토트넘",
    "tier": "단기",
    "signal": [
@@ -144,6 +156,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-05",
+   "expires": "2026-11-12"
+  },
+  {
+   "query": "최태원",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 10000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-08",
    "expires": "2026-11-12"
   },
   {
@@ -220,6 +244,18 @@
   },
   {
    "query": "아틀레티코 대 바르셀로나",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 10000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-09",
+   "expires": "2026-11-12"
+  },
+  {
+   "query": "홍창기",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -351,7 +387,7 @@
    "expires": "2026-11-12"
   },
   {
-   "query": "최태원",
+   "query": "kia 타이거즈",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -359,11 +395,11 @@
    "score": 5000,
    "status": "미작성",
    "page": "",
-   "registered": "2026-11-08",
+   "registered": "2026-11-05",
    "expires": "2026-11-12"
   },
   {
-   "query": "kia 타이거즈",
+   "query": "한남더힐 아파트",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -432,18 +468,6 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-04",
-   "expires": "2026-11-12"
-  },
-  {
-   "query": "한남더힐 아파트",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 5000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-05",
    "expires": "2026-11-12"
   },
   {
@@ -604,18 +628,6 @@
   },
   {
    "query": "닥터x: 하얀 마피아의 시대",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 5000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-09",
-   "expires": "2026-11-12"
-  },
-  {
-   "query": "홍창기",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -1095,6 +1107,18 @@
    "expires": "2026-11-12"
   },
   {
+   "query": "노점상",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-09",
+   "expires": "2026-11-12"
+  },
+  {
    "query": "중대범죄 수사청",
    "tier": "단기",
    "signal": [
@@ -1432,6 +1456,18 @@
   },
   {
    "query": "선덜랜드 대 첼시",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-09",
+   "expires": "2026-11-12"
+  },
+  {
+   "query": "김연아",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -2667,7 +2703,19 @@
    "expires": "2026-11-12"
   },
   {
-   "query": "노점상",
+   "query": "반계리 은행나무",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-09",
+   "expires": "2026-11-12"
+  },
+  {
+   "query": "연차",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -10414,6 +10462,19 @@
    "expires": "2026-11-15"
   },
   {
+   "query": "서킷브레이커 사이드카 발동 요건과 코스피 5천선 턱걸이 외국인 수급, 삼성전자 SK하이닉스 등락",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 3,
+   "status": "작성",
+   "page": "/issue/kospi-circuit-breaker-sidecar-1109/",
+   "registered": "2026-11-09",
+   "expires": "2026-11-16"
+  },
+  {
    "query": "LNG 운반선 10월 수주 중국 한국 추월 척수 점유율 클락슨 집계 조선 3사 실적 정리",
    "tier": "중기",
    "signal": [
@@ -11132,6 +11193,32 @@
    "page": "/issue/jongbuse-deduction-14-billion-one-house-1108/",
    "registered": "2026-11-08",
    "expires": "2026-11-22"
+  },
+  {
+   "query": "JTBC 매각 공고 일정, 인수의향서 접수 마감과 우선협상대상자 선정 시기 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 2,
+   "status": "작성",
+   "page": "/issue/jtbc-sale-notice-schedule-1109/",
+   "registered": "2026-11-09",
+   "expires": "2026-11-23"
+  },
+  {
+   "query": "JYP 새 보이그룹 오브더블루 데뷔 시기와 멤버 수, 공개 일정 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 2,
+   "status": "작성",
+   "page": "/issue/jyp-new-boygroup-of-the-blue-1109/",
+   "registered": "2026-11-09",
+   "expires": "2026-11-23"
   },
   {
    "query": "K드라마 업계 1조원 지원 요구 12개 단체 기자회견 내용 정리",
