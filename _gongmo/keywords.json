@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-09 17:00",
+ "updated": "2026-11-09 18:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -1119,6 +1119,18 @@
    "expires": "2026-11-12"
   },
   {
+   "query": "반계리 은행나무",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-09",
+   "expires": "2026-11-12"
+  },
+  {
    "query": "중대범죄 수사청",
    "tier": "단기",
    "signal": [
@@ -1468,6 +1480,30 @@
   },
   {
    "query": "김연아",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-09",
+   "expires": "2026-11-12"
+  },
+  {
+   "query": "아나운서",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-09",
+   "expires": "2026-11-12"
+  },
+  {
+   "query": "정지선",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -2044,6 +2080,18 @@
   },
   {
    "query": "공장",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-09",
+   "expires": "2026-11-12"
+  },
+  {
+   "query": "윤여정",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -2703,7 +2751,7 @@
    "expires": "2026-11-12"
   },
   {
-   "query": "반계리 은행나무",
+   "query": "연차",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -2715,7 +2763,7 @@
    "expires": "2026-11-12"
   },
   {
-   "query": "연차",
+   "query": "논문",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -11039,6 +11087,19 @@
    "expires": "2026-11-16"
   },
   {
+   "query": "APBC 야구대표팀 출국, 한국 경기 일정과 주요 선수·감독 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 2,
+   "status": "작성",
+   "page": "/issue/apbc-2026-korea-team-schedule-roster-1109/",
+   "registered": "2026-11-09",
+   "expires": "2026-11-23"
+  },
+  {
    "query": "아틀레티코 바르셀로나 1-2, 이강인 선발 60분 기록과 시메오네 발언 정리",
    "tier": "중기",
    "signal": [
@@ -11165,6 +11226,19 @@
    "score": 2,
    "status": "작성",
    "page": "/issue/israel-eisenkot-coalition-mandate-netanyahu-1109/",
+   "registered": "2026-11-09",
+   "expires": "2026-11-23"
+  },
+  {
+   "query": "있지 채령 솔로 데뷔 러브시크 발매 시간, 수록곡, 기자간담회 발언 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 2,
+   "status": "작성",
+   "page": "/issue/itzy-chaeryeong-solo-debut-1109/",
    "registered": "2026-11-09",
    "expires": "2026-11-23"
   },
