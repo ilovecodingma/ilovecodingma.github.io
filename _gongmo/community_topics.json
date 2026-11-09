@@ -1,14 +1,14 @@
 {
  "date": "2026-11-09",
- "updated": "2026-11-09 15:50",
+ "updated": "2026-11-09 16:50",
  "sites": 12,
- "npost": 2516,
+ "npost": 2521,
  "note": "출처(커뮤니티)별 집계예요. 작성자·연령·성별 정보는 수집하지 않아요. posts 는 이슈별로 뽑힌 일부라 전체 글 수가 아니에요.",
  "sources": [
   {
    "name": "MLB파크",
-   "np": 19,
-   "nc": 956,
+   "np": 18,
+   "nc": 951,
    "topics": [
     {
      "t": "[단독] \"너, 잡아 간다\"…금쪽이 울린 '민속촌 귀신' 날벼락",
@@ -49,6 +49,43 @@
      }
     },
     {
+     "t": "한국은 일본 식민지였는데 왜 일본어 안 써?",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 80,
+     "issue_np": 5,
+     "issue_nc": 109,
+     "kw": [
+      "한국",
+      "일본",
+      "식민지",
+      "아시아"
+     ],
+     "top_post": {
+      "t": "한국 남자에게 실망한 일본녀",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611090120011427&m=view",
+      "nc": 80
+     }
+    },
+    {
+     "t": "마운자로로 -39kg 감량하고 느낀점ㄷㄷ",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 76,
+     "issue_np": 3,
+     "issue_nc": 76,
+     "kw": [
+      "마운",
+      "감량",
+      "KG"
+     ],
+     "top_post": {
+      "t": "마운자로로 -39kg 감량하고 느낀점ㄷㄷ",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611090120016083&m=view",
+      "nc": 76
+     }
+    },
+    {
      "t": "남자 믿다가 인생망친 여자들은 수두룩해도 남자 안믿어서 인생망친 여자는 없음웬만하면 비연애...",
      "nsite": 6,
      "np_here": 1,
@@ -75,8 +112,8 @@
      "issue_np": 2,
      "issue_nc": 72,
      "kw": [
-      "인생",
-      "선택"
+      "선택",
+      "인생"
      ],
      "top_post": {
       "t": "강민호 인생 최고의 선택",
@@ -92,10 +129,10 @@
      "issue_np": 3,
      "issue_nc": 95,
      "kw": [
-      "프랑스",
-      "후보",
       "대선",
-      "공약"
+      "후보",
+      "공약",
+      "난리"
      ],
      "top_post": {
       "t": "X에서 난리난 프랑스 대선후보 공약.",
@@ -119,66 +156,29 @@
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611080120006093&m=view",
       "nc": 59
      }
-    },
-    {
-     "t": "마운자로로 -39kg 감량하고 느낀점ㄷㄷ",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 57,
-     "issue_np": 3,
-     "issue_nc": 57,
-     "kw": [
-      "마운",
-      "감량",
-      "KG"
-     ],
-     "top_post": {
-      "t": "마운자로로 -39kg 감량하고 느낀점ㄷㄷ",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611090120016083&m=view",
-      "nc": 57
-     }
-    },
-    {
-     "t": "한국은 일본 식민지였는데 왜 일본어 안 써?",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 56,
-     "issue_np": 5,
-     "issue_nc": 78,
-     "kw": [
-      "한국",
-      "일본",
-      "식민지",
-      "아시아"
-     ],
-     "top_post": {
-      "t": "한국 남자에게 실망한 일본녀",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611090120011427&m=view",
-      "nc": 56
-     }
     }
    ]
   },
   {
    "name": "개드립",
    "np": 12,
-   "nc": 312,
+   "nc": 318,
    "topics": [
     {
-     "t": "연합뉴스도 항복했습니다 집값 폭락 시작",
-     "nsite": 2,
+     "t": "로또 1등 1년차 현실",
+     "nsite": 3,
      "np_here": 1,
-     "nc_here": 48,
-     "issue_np": 2,
-     "issue_nc": 75,
+     "nc_here": 50,
+     "issue_np": 4,
+     "issue_nc": 52,
      "kw": [
-      "집값",
-      "폭락"
+      "현실",
+      "로또"
      ],
      "top_post": {
-      "t": "서울 집값 폭락 직전인데 그것도 모르고.... 참 안타깝습니다",
-      "u": "https://www.dogdrip.net/dogdrip/733934781?sort_index=popular&page=1",
-      "nc": 48
+      "t": "로또 1등 1년차 현실",
+      "u": "https://www.dogdrip.net/dogdrip/733898427?sort_index=popular&page=1",
+      "nc": 50
      }
     },
     {
@@ -206,8 +206,8 @@
      "issue_np": 7,
      "issue_nc": 74,
      "kw": [
-      "아동",
       "학대",
+      "아동",
       "민속촌",
       "귀신"
      ],
@@ -218,23 +218,6 @@
      }
     },
     {
-     "t": "로또 1등 1년차 현실",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 37,
-     "issue_np": 4,
-     "issue_nc": 39,
-     "kw": [
-      "현실",
-      "로또"
-     ],
-     "top_post": {
-      "t": "로또 1등 1년차 현실",
-      "u": "https://www.dogdrip.net/dogdrip/733898427?sort_index=popular&page=1",
-      "nc": 37
-     }
-    },
-    {
      "t": "X에서 난리난 프랑스 대선후보 공약.",
      "nsite": 3,
      "np_here": 1,
@@ -242,15 +225,72 @@
      "issue_np": 3,
      "issue_nc": 95,
      "kw": [
-      "프랑스",
-      "후보",
       "대선",
-      "공약"
+      "후보",
+      "공약",
+      "난리"
      ],
      "top_post": {
       "t": "X에서 난리난 프랑스 대선후보 공약.",
       "u": "https://www.dogdrip.net/dogdrip/733838935?sort_index=popular&page=1",
       "nc": 34
+     }
+    },
+    {
+     "t": "연합뉴스도 항복했습니다 집값 폭락 시작",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 30,
+     "issue_np": 3,
+     "issue_nc": 57,
+     "kw": [
+      "집값",
+      "폭락",
+      "서울",
+      "직전"
+     ],
+     "top_post": {
+      "t": "서울 집값 폭락 직전인데 그것도 모르고.... 참 안타깝습니다",
+      "u": "https://www.dogdrip.net/dogdrip/733934781?sort_index=popular&page=1",
+      "nc": 30
+     }
+    },
+    {
+     "t": "한국은 일본 식민지였는데 왜 일본어 안 써?",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 29,
+     "issue_np": 5,
+     "issue_nc": 109,
+     "kw": [
+      "한국",
+      "일본",
+      "식민지",
+      "아시아"
+     ],
+     "top_post": {
+      "t": "아시아1위 일본드라마인데 왜 한국을 넘어설 수 없는가?",
+      "u": "https://www.dogdrip.net/dogdrip/733896460?sort_index=popular&page=1",
+      "nc": 29
+     }
+    },
+    {
+     "t": "한국과 미국 데이터센터 인식 차이.",
+     "nsite": 3,
+     "np_here": 2,
+     "nc_here": 24,
+     "issue_np": 4,
+     "issue_nc": 24,
+     "kw": [
+      "데이터",
+      "센터",
+      "한국",
+      "미국"
+     ],
+     "top_post": {
+      "t": "한국과 미국 데이터센터 인식 차이.",
+      "u": "https://www.dogdrip.net/dogdrip/733742694?sort_index=popular&page=1",
+      "nc": 17
      }
     },
     {
@@ -262,8 +302,8 @@
      "issue_nc": 23,
      "kw": [
       "총기",
-      "난사",
       "폴란드",
+      "난사",
       "사망"
      ],
      "top_post": {
@@ -271,69 +311,31 @@
       "u": "https://www.dogdrip.net/dogdrip/733762604?sort_index=popular&page=1",
       "nc": 23
      }
-    },
-    {
-     "t": "한국은 일본 식민지였는데 왜 일본어 안 써?",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 22,
-     "issue_np": 5,
-     "issue_nc": 78,
-     "kw": [
-      "한국",
-      "일본",
-      "식민지",
-      "아시아"
-     ],
-     "top_post": {
-      "t": "아시아1위 일본드라마인데 왜 한국을 넘어설 수 없는가?",
-      "u": "https://www.dogdrip.net/dogdrip/733896460?sort_index=popular&page=1",
-      "nc": 22
-     }
-    },
-    {
-     "t": "러시아 통계청 해킹당해서 전쟁 사망자 밝혀짐.",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 20,
-     "issue_np": 4,
-     "issue_nc": 59,
-     "kw": [
-      "사망자",
-      "해킹",
-      "러시아",
-      "통계청"
-     ],
-     "top_post": {
-      "t": "러시아 통계청 해킹당해서 전쟁 사망자 밝혀짐.",
-      "u": "https://www.dogdrip.net/dogdrip/733832907?sort_index=popular&page=1",
-      "nc": 20
-     }
     }
    ]
   },
   {
    "name": "클리앙",
-   "np": 6,
-   "nc": 98,
+   "np": 8,
+   "nc": 128,
    "topics": [
     {
      "t": "'주식시장 망가지는 건 정부 탓'…부메랑 된 李 과거 발언",
-     "nsite": 3,
-     "np_here": 2,
-     "nc_here": 32,
-     "issue_np": 7,
-     "issue_nc": 44,
+     "nsite": 2,
+     "np_here": 3,
+     "nc_here": 44,
+     "issue_np": 4,
+     "issue_nc": 56,
      "kw": [
-      "시장",
       "주식",
       "정부",
+      "시장",
       "발언"
      ],
      "top_post": {
       "t": "'주식시장 망가지는 건 정부 탓'…부메랑 된 李 과거 발언",
       "u": "https://www.clien.net/service/board/park/19289716?od=T33&po=0&category=0&groupCd=clien_all",
-      "nc": 24
+      "nc": 25
      }
     },
     {
@@ -344,8 +346,8 @@
      "issue_np": 7,
      "issue_nc": 74,
      "kw": [
-      "아동",
       "학대",
+      "아동",
       "민속촌",
       "귀신"
      ],
@@ -357,19 +359,40 @@
     },
     {
      "t": "연합뉴스도 항복했습니다 집값 폭락 시작",
-     "nsite": 2,
+     "nsite": 3,
      "np_here": 1,
      "nc_here": 27,
-     "issue_np": 2,
-     "issue_nc": 75,
+     "issue_np": 3,
+     "issue_nc": 57,
      "kw": [
       "집값",
-      "폭락"
+      "폭락",
+      "서울",
+      "직전"
      ],
      "top_post": {
       "t": "연합뉴스도 항복했습니다 집값 폭락 시작",
       "u": "https://www.clien.net/service/board/park/19289297?od=T33&po=0&category=0&groupCd=clien_all",
       "nc": 27
+     }
+    },
+    {
+     "t": "[단독] 전대 투표권 가진 민주당 신천지 공개",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 18,
+     "issue_np": 3,
+     "issue_nc": 19,
+     "kw": [
+      "천지",
+      "민주당",
+      "단독",
+      "전대"
+     ],
+     "top_post": {
+      "t": "[단독] 전대 투표권 가진 민주당 신천지는 3300여명",
+      "u": "https://www.clien.net/service/board/park/19289412?od=T33&po=0&category=0&groupCd=clien_all",
+      "nc": 18
      }
     },
     {
@@ -380,8 +403,8 @@
      "issue_np": 3,
      "issue_nc": 16,
      "kw": [
-      "와퍼",
-      "버거킹"
+      "버거킹",
+      "와퍼"
      ],
      "top_post": {
       "t": "버거킹 올해 마지막 와퍼 할인 3,900원",
@@ -417,10 +440,10 @@
    "topics": [
     {
      "t": "사역마가 집착하는 만화.manhwa",
-     "nsite": 3,
+     "nsite": 2,
      "np_here": 3,
      "nc_here": 61,
-     "issue_np": 5,
+     "issue_np": 4,
      "issue_nc": 61,
      "kw": [
       "manhwa",
@@ -476,8 +499,8 @@
      "issue_np": 3,
      "issue_nc": 16,
      "kw": [
-      "와퍼",
-      "버거킹"
+      "버거킹",
+      "와퍼"
      ],
      "top_post": {
       "t": "버거킹 와퍼 3,900원 (11. 9. ~ 11. 13.) (3,900원/무료)",
@@ -560,8 +583,8 @@
      "issue_np": 2,
      "issue_nc": 72,
      "kw": [
-      "인생",
-      "선택"
+      "선택",
+      "인생"
      ],
      "top_post": {
       "t": "작게 쪼개보면 복잡하다 의미에 따라 인생은 달라진다 선택은 크게정하고 작은노력들이 필요하다...",
@@ -573,15 +596,15 @@
   },
   {
    "name": "보배드림",
-   "np": 9,
-   "nc": 23,
+   "np": 11,
+   "nc": 24,
    "topics": [
     {
      "t": "베스트 글 오늘은 내 결혼식에 흰색 입고 온 지인 결혼식 ..",
      "nsite": 3,
      "np_here": 2,
      "nc_here": 6,
-     "issue_np": 6,
+     "issue_np": 5,
      "issue_nc": 6,
      "kw": [
       "흰색",
@@ -602,8 +625,8 @@
      "issue_np": 7,
      "issue_nc": 74,
      "kw": [
-      "아동",
       "학대",
+      "아동",
       "민속촌",
       "귀신"
      ],
@@ -621,9 +644,9 @@
      "issue_np": 3,
      "issue_nc": 4,
      "kw": [
-      "신고",
       "한국민속촌",
-      "계정"
+      "계정",
+      "신고"
      ],
      "top_post": {
       "t": "한국민속촌 신고한 계정 근황",
@@ -639,9 +662,9 @@
      "issue_np": 4,
      "issue_nc": 3,
      "kw": [
+      "만화",
       "젠슨 황",
       "논란",
-      "만화",
       "이해"
      ],
      "top_post": {
@@ -658,8 +681,8 @@
      "issue_np": 2,
      "issue_nc": 59,
      "kw": [
-      "테슬라",
-      "판매"
+      "판매",
+      "테슬라"
      ],
      "top_post": {
       "t": "2026 주요국 테슬라 판매량",
@@ -690,7 +713,7 @@
      "np_here": 2,
      "nc_here": 2,
      "issue_np": 4,
-     "issue_nc": 39,
+     "issue_nc": 52,
      "kw": [
       "현실",
       "로또"
@@ -700,12 +723,31 @@
       "u": "https://www.bobaedream.co.kr/view?code=best&No=1046007&vdate=",
       "nc": 1
      }
+    },
+    {
+     "t": "[단독] 전대 투표권 가진 민주당 신천지 공개",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 1,
+     "issue_np": 3,
+     "issue_nc": 19,
+     "kw": [
+      "천지",
+      "민주당",
+      "단독",
+      "전대"
+     ],
+     "top_post": {
+      "t": "민주당 신천지 논란 공개사과+책임져야 63.5%",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1046238&vdate=",
+      "nc": 1
+     }
     }
    ]
   },
   {
    "name": "더쿠",
-   "np": 13,
+   "np": 12,
    "nc": 0,
    "topics": [
     {
@@ -735,8 +777,8 @@
      "issue_np": 7,
      "issue_nc": 74,
      "kw": [
-      "아동",
       "학대",
+      "아동",
       "민속촌",
       "귀신"
      ],
@@ -754,9 +796,9 @@
      "issue_np": 4,
      "issue_nc": 32,
      "kw": [
+      "자제",
       "샤워",
-      "아파트",
-      "자제"
+      "아파트"
      ],
      "top_post": {
       "t": "\"밤 10시 이후 샤워 자제해주세요\"…아파트 공지문에 \"야근하고 씻지말라고?\" [어떻게 생각하세요]",
@@ -789,7 +831,7 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 3,
-     "issue_nc": 57,
+     "issue_nc": 76,
      "kw": [
       "마운",
       "감량",
@@ -807,7 +849,7 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 4,
-     "issue_nc": 39,
+     "issue_nc": 52,
      "kw": [
       "현실",
       "로또"
@@ -845,10 +887,10 @@
      "issue_np": 5,
      "issue_nc": 16,
      "kw": [
-      "젠슨 황",
       "이메일",
       "사내",
-      "엔비디아"
+      "젠슨 황",
+      "직원"
      ],
      "top_post": {
       "t": "젠슨황이 엔비디아 직원들에게 보낸 사내 이메일",
@@ -860,7 +902,7 @@
   },
   {
    "name": "디시인사이드",
-   "np": 5,
+   "np": 4,
    "nc": 0,
    "topics": [
     {
@@ -883,23 +925,6 @@
      }
     },
     {
-     "t": "사역마가 집착하는 만화.manhwa",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 61,
-     "kw": [
-      "manhwa",
-      "만화"
-     ],
-     "top_post": {
-      "t": "[카연] 10년 넘게 실패한 만화.manhwa",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=476876&_dcbest=1&page=1",
-      "nc": 0
-     }
-    },
-    {
      "t": "6명 사망한 폴란드 총기난사범 무장상태",
      "nsite": 3,
      "np_here": 1,
@@ -908,8 +933,8 @@
      "issue_nc": 23,
      "kw": [
       "총기",
-      "난사",
       "폴란드",
+      "난사",
       "사망"
      ],
      "top_post": {
@@ -926,10 +951,10 @@
      "issue_np": 3,
      "issue_nc": 0,
      "kw": [
+      "삼성",
       "라이온즈",
       "우승",
-      "삼성",
-      "할인"
+      "행사"
      ],
      "top_post": {
       "t": "삼성 라이온즈 12년만에 한국시리즈 우승.",
@@ -938,20 +963,19 @@
      }
     },
     {
-     "t": "일본에서 인기 없었던 90년대 애니메이션",
+     "t": "사역마가 집착하는 만화.manhwa",
      "nsite": 2,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 2,
-     "issue_nc": 48,
+     "issue_np": 4,
+     "issue_nc": 61,
      "kw": [
-      "인기",
-      "일본",
-      "애니메이션"
+      "manhwa",
+      "만화"
      ],
      "top_post": {
-      "t": "일본에서 인기 없었던 90년대 애니메이션",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=476781&_dcbest=1&page=1",
+      "t": "[카연] 10년 넘게 실패한 만화.manhwa",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=476876&_dcbest=1&page=1",
       "nc": 0
      }
     }
@@ -959,13 +983,13 @@
   },
   {
    "name": "루리웹",
-   "np": 35,
+   "np": 31,
    "nc": 0,
    "topics": [
     {
      "t": "남자 믿다가 인생망친 여자들은 수두룩해도 남자 안믿어서 인생망친 여자는 없음웬만하면 비연애...",
      "nsite": 6,
-     "np_here": 2,
+     "np_here": 1,
      "nc_here": 0,
      "issue_np": 7,
      "issue_nc": 97,
@@ -987,7 +1011,7 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 5,
-     "issue_nc": 78,
+     "issue_nc": 109,
      "kw": [
       "한국",
       "일본",
@@ -1008,9 +1032,9 @@
      "issue_np": 4,
      "issue_nc": 32,
      "kw": [
+      "자제",
       "샤워",
-      "아파트",
-      "자제"
+      "아파트"
      ],
      "top_post": {
       "t": "밤 10시 이후 샤워 자제해주세요\"…아파트 공지문",
@@ -1045,10 +1069,10 @@
      "issue_np": 3,
      "issue_nc": 95,
      "kw": [
-      "프랑스",
-      "후보",
       "대선",
-      "공약"
+      "후보",
+      "공약",
+      "난리"
      ],
      "top_post": {
       "t": "X에서 난리난 프랑스 대선후보 공약",
@@ -1057,19 +1081,20 @@
      }
     },
     {
-     "t": "사역마가 집착하는 만화.manhwa",
+     "t": "마운자로로 -39kg 감량하고 느낀점ㄷㄷ",
      "nsite": 3,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 61,
+     "issue_np": 3,
+     "issue_nc": 76,
      "kw": [
-      "manhwa",
-      "만화"
+      "마운",
+      "감량",
+      "KG"
      ],
      "top_post": {
-      "t": "(자작만화) 정은 주지않는 만화.manhwa",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77316573?m=all&t=now",
+      "t": "마운자로로 -39kg 감량하고 느낀점",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77327569?m=all&t=now",
       "nc": 0
      }
     },
@@ -1081,10 +1106,10 @@
      "issue_np": 4,
      "issue_nc": 59,
      "kw": [
+      "통계청",
       "사망자",
       "해킹",
-      "러시아",
-      "통계청"
+      "러시아"
      ],
      "top_post": {
       "t": "러시아 통계청 해킹당해서 전쟁 사망자 밝혀졌다고 함",
@@ -1093,20 +1118,21 @@
      }
     },
     {
-     "t": "마운자로로 -39kg 감량하고 느낀점ㄷㄷ",
+     "t": "연합뉴스도 항복했습니다 집값 폭락 시작",
      "nsite": 3,
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 3,
      "issue_nc": 57,
      "kw": [
-      "마운",
-      "감량",
-      "KG"
+      "집값",
+      "폭락",
+      "서울",
+      "직전"
      ],
      "top_post": {
-      "t": "마운자로로 -39kg 감량하고 느낀점",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77327569?m=all&t=now",
+      "t": "서울 집값 폭락 직전인데 그것도 모르고.... 참 안타깝습니다",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77329033?m=all&t=now",
       "nc": 0
      }
     }
@@ -1114,7 +1140,7 @@
   },
   {
    "name": "SLR클럽",
-   "np": 4,
+   "np": 5,
    "nc": 0,
    "topics": [
     {
@@ -1125,8 +1151,8 @@
      "issue_np": 7,
      "issue_nc": 74,
      "kw": [
-      "아동",
       "학대",
+      "아동",
       "민속촌",
       "귀신"
      ],
@@ -1144,9 +1170,9 @@
      "issue_np": 4,
      "issue_nc": 32,
      "kw": [
+      "자제",
       "샤워",
-      "아파트",
-      "자제"
+      "아파트"
      ],
      "top_post": {
       "t": "\"밤 10시 이후 샤워 자제해주세요\"…아파트 공지문",
@@ -1160,7 +1186,7 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 4,
-     "issue_nc": 20,
+     "issue_nc": 24,
      "kw": [
       "데이터",
       "센터",
@@ -1170,6 +1196,25 @@
      "top_post": {
       "t": "한국 VS 미국,, 데이터센터에 대한 주민들 반응",
       "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=676979",
+      "nc": 0
+     }
+    },
+    {
+     "t": "[단독] 전대 투표권 가진 민주당 신천지 공개",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 19,
+     "kw": [
+      "천지",
+      "민주당",
+      "단독",
+      "전대"
+     ],
+     "top_post": {
+      "t": "[단독] 전대 투표권 가진 민주당 신천지 공개",
+      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677014",
       "nc": 0
      }
     }
@@ -1186,7 +1231,7 @@
      "np_here": 2,
      "nc_here": 0,
      "issue_np": 5,
-     "issue_nc": 78,
+     "issue_nc": 109,
      "kw": [
       "한국",
       "일본",
