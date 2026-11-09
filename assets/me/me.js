@@ -62,7 +62,7 @@
 <label>주택 <select data-k="house">${['선택 안 함', '무주택', '1주택', '다주택'].map(v => `<option${P.house === v ? ' selected' : ''}>${v}</option>`).join('')}</select></label></div><p class="note me-saved"></p></section>
 ${gjHTML()}
 <section class="me-sec"><h2>🏆 내 문구 진단 기록</h2><ul class="me-list">${lab.map(h => `<li><q>${esc(h.q)}</q> <b>${h.score}점</b> <small>${esc(h.th || '')}</small></li>`).join('') || '<li class="note"><a href="/lab/#diag">수상 연구소</a>에서 문구를 진단하면 여기 남아요.</li>'}</ul></section>
-<section class="me-sec me-links"><a href="/community/">🚩 원정대</a><a href="/vn/pool/">🎮 루리 옷벗기기</a><a href="/lab/">🏆 수상 연구소</a><a href="/">💬 루리 상담</a></section>`;
+<section class="me-sec me-links"><a href="/community/">🚩 원정대</a><a href="/lab/">🏆 수상 연구소</a><a href="/">💬 루리 상담</a></section>`;
     function row(x, rec) {
       const l = left(x.end);
       return `<li data-id="${esc(x.id)}"><a href="${link(x.id)}">${esc(x.title || x.id)}</a><small>${l === null ? '' : l < 0 ? '마감' : l ? 'D-' + l : 'D-DAY'}</small>

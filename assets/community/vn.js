@@ -1,6 +1,6 @@
 // 루리의 줍줍 커뮤니티 — 미연시 모드: 공모전 = 공략 대상 히로인, 팀 = 원정대, 루리 = 정보통 친구
 // 친구 초대(링크 방문 1점, 가입 3점, 히로인별 기록) 점수는 기록만 남긴다. comm.js 의 window.JUP 사용.
-// 2026-10-28: 꾸미기(의상·배경·대사창·효과·호칭 고르기)는 걷어냈다 — 그 자리는 「루리 옷벗기기」 진입구다.
+// 2026-10-28: 꾸미기(의상·배경·대사창·효과·호칭 고르기)는 걷어냈다 — 그 자리는 비웠다(2026-11-09: 「루리 옷벗기기」 진입구도 걷어냄).
 // 기존 설정값(P)은 localStorage 에 그대로 남아 배경·효과·표정에 계속 쓰인다. 고르는 화면만 없앴다.
 (function () {
   const S = document.getElementById('vn'), J = window.JUP; if (!S || !J) return;
@@ -15,7 +15,7 @@
 
   // ---- 무대 ----
   S.innerHTML = `<div class="vn-bg"></div><div class="vn-petals"></div>
-<img class="vn-ruri" alt="루리" width="300" height="415"><div class="vn-sys"><button data-s="auto">AUTO</button><button data-s="skip">SKIP</button><button data-s="ward">🎮 게임</button></div>
+<img class="vn-ruri" alt="루리" width="300" height="415"><div class="vn-sys"><button data-s="auto">AUTO</button><button data-s="skip">SKIP</button></div>
 <div class="vn-choices" hidden></div><div class="vn-panel" hidden></div>
 <div class="vn-box"><span class="vn-name">루리</span><p class="vn-text"></p><span class="vn-next">▼</span></div>`;
   const img = $('.vn-ruri'), txt = $('.vn-text'), box = $('.vn-box'), ch = $('.vn-choices'), panel = $('.vn-panel');
@@ -65,8 +65,7 @@
   function menu() {
     const n = [...tcount.values()].reduce((a, b) => a + b, 0);
     say([['outfit', `지금 원정대 <b>${n}</b>개가 히로인을 노리고 있어. 뭐부터 할래?`]]).then(() => choose([
-      ['💗 오늘의 히로인 보기', () => heroines()], ['💘 원정대 구경하기', parties], ['✨ 내가 원정대 결성하기', () => J.createTeam('', '', reboot)],
-      ['🎮 루리 옷벗기기 · 경찰서 엔딩', dress]]));
+      ['💗 오늘의 히로인 보기', () => heroines()], ['💘 원정대 구경하기', parties], ['✨ 내가 원정대 결성하기', () => J.createTeam('', '', reboot)]]));
   }
   function heroines(q = '') {
     const pool = (q ? cs.filter(c => c.t.includes(q)) : [...cs].sort((a, b) => (tcount.get(b.id) || 0) - (tcount.get(a.id) || 0) || (dday(a.e) ?? 99) - (dday(b.e) ?? 99))).slice(0, 12);
@@ -126,30 +125,15 @@
     panel.querySelector('.naver').onclick = () => J.ga('invite_share', { method: 'naver', contest_id: c ? c.id : '' }); panel.querySelector('.mail').onclick = () => J.ga('invite_share', { method: 'mail', contest_id: c ? c.id : '' });
   }
 
-  // 꾸미기 자리 — 「루리 옷벗기기」로 넘긴다. 게임은 /vn/pool/ 에 따로 산다.
-  async function dress() {
-    showPanel(`<div class="vn-ph"><b>🎮 루리 옷벗기기</b><button class="vn-back">✕</button></div>
-<div class="vn-inv"><p>가위바위보 다섯 단계. 루리한테 버릇이 있으니 잘 보면 이겨.</p>
-<p class="note">다만 끝까지 이기면 네가 경찰서에 간다. 그건 해 보면 알고.</p>
-<div class="vn-share"><button class="vn-go-game">▶ 시작하기</button></div></div>`,
-      '이길 자신 있어? 끝까지 가면 후회할 텐데.', 'wink');
-    panel.querySelector('.vn-go-game').onclick = () => {
-      J.ga('ruri_game_go', {});
-      location.href = '/vn/pool/?from=community';
-    };
-  }
-  function reboot() { load().then(menu); }
-
   S.querySelector('.vn-sys').onclick = e => {
     const k = e.target.dataset.s; if (!k) return;
     if (k === 'auto') { auto = !auto; e.target.classList.toggle('on', auto); }
     if (k === 'skip') { clearInterval(typing); typing = null; menu(); }
-    if (k === 'ward') dress();
   };
   async function load() {
     const [c, t] = await Promise.all([fetch('/assets/community/contests.json').then(r => r.json()).catch(() => []), J.api('/api/teams').catch(() => ({ teams: [] })), J.st.t ? getMe() : null]);
     cs = c; tcount = new Map(); (t.teams || []).forEach(x => tcount.set(x.contest_id, (tcount.get(x.contest_id) || 0) + 1));
   }
   apply();
-  load().then(() => location.hash === '#dress' ? dress() : intro());
+  load().then(() => intro());
 })();
