@@ -1,32 +1,32 @@
 {
- "at": "2026-11-02 09:41",
+ "at": "2026-11-09 09:41",
  "sample": 90,
  "errors": 0,
- "sitemap_urls": 2689,
- "indexed_in_sample": 48,
- "indexed_pct": 53.3,
+ "sitemap_urls": 1529,
+ "indexed_in_sample": 41,
+ "indexed_pct": 45.6,
  "states": [
   [
    "Submitted and indexed",
-   48
-  ],
-  [
-   "URL is unknown to Google",
-   28
+   41
   ],
   [
    "Discovered - currently not indexed",
-   14
+   36
+  ],
+  [
+   "URL is unknown to Google",
+   13
   ]
  ],
  "top3_not_indexed": [
   [
-   "URL is unknown to Google",
-   28
+   "Discovered - currently not indexed",
+   36
   ],
   [
-   "Discovered - currently not indexed",
-   14
+   "URL is unknown to Google",
+   13
   ]
  ],
  "note": "표본(사이트맵 주소를 분야별로 약 90개 골라 URL 검사)이라 서치콘솔 「페이지」 보고서의 전체 숫자와 달라요.",
@@ -49,6 +49,11 @@
   {
    "at": "2026-11-02 09:41",
    "indexed_pct": 53.3,
+   "sample": 90
+  },
+  {
+   "at": "2026-11-09 09:41",
+   "indexed_pct": 45.6,
    "sample": 90
   }
  ]

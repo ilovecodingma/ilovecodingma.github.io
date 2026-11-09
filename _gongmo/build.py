@@ -32,7 +32,7 @@ TXT_SRC = [os.path.join(DATA, 'txt'),
 E = html.escape
 
 
-def _tn(t):   # 2026-11-09 마케터 요청: 섹션 table 이 {head, rows} 딕셔너리여도 [머리줄, 행...] 로 받는다
+def _tbl_norm(t):   # 2026-11-09 마케터 요청: 섹션 table 이 {head, rows} 딕셔너리여도 [머리줄, 행...] 로 받는다
     if isinstance(t, dict):
         return [t.get('head') or t.get('headers') or []] + list(t.get('rows') or [])
     return t
@@ -3699,7 +3699,7 @@ def kin_guides():
             kind, ic_ = _sec_kind(sc['h'])
             h = f'<h2><span class="gs-n">{n_}</span>{E(sc["h"])}</h2>'
             if sc.get('table'):
-                sc['table'] = _tn(sc['table']); head, rows = sc['table'][0], sc['table'][1:]
+                sc['table'] = _tbl_norm(sc['table']); head, rows = sc['table'][0], sc['table'][1:]
                 h += '<div class="tblw"><table class="xb"><thead><tr>' + ''.join(f'<th>{E(c)}</th>' for c in head) + '</tr></thead><tbody>' + ''.join('<tr>' + ''.join((f'<td class="hl"><b>{E(c[1:])}</b></td>' if isinstance(c, str) and c.startswith('*') else f'<td>{_hl(E(c))}</td>') for c in r) + '</tr>' for r in rows) + '</tbody></table></div>'
             if sc.get('ul'):
                 tag_ = 'ol class="gs-steps"' if re.search(r'절차|순서|단계', sc['h']) else 'ul class="gm-l"'
@@ -4000,11 +4000,11 @@ def issue_json_pages():
             #   → 확인된 내용과 본문을 먼저 보여 주고, 확인되지 않은 것·글의 한계는 본문 뒤에 접어 둔다(지우지는 않는다).
             _lim = ''
             def _stbl(t_):   # 2026-11-07 마케터 요청: 섹션 table([머리줄, 행...])도 그린다(가이드와 같은 형식, 좁은 화면은 가로 스크롤)
-                t_ = _tn(t_)
+                t_ = _tbl_norm(t_)
                 return ('<div class="tblw" style="overflow-x:auto"><table class="xt"><thead><tr>' + ''.join(f'<th>{E(x_)}</th>' for x_ in t_[0]) + '</tr></thead><tbody>'
                         + ''.join('<tr>' + ''.join(f'<td>{E(x_)}</td>' for x_ in r_) + '</tr>' for r_ in t_[1:]) + '</tbody></table></div>')
             for sc in c.get('sections', []):
-                _h = f'<h2>{E(sc["h"])}</h2>' + (f'<p>{E(sc["p"])}</p>' if sc.get('p') else '') + (_stbl(sc['table']) if sc.get('table') and len(_tn(sc['table'])) > 1 else '') + ('<ul class="gm-l">' + ''.join(f'<li>{E(x)}</li>' for x in sc['ul']) + '</ul>' if sc.get('ul') else '')
+                _h = f'<h2>{E(sc["h"])}</h2>' + (f'<p>{E(sc["p"])}</p>' if sc.get('p') else '') + (_stbl(sc['table']) if sc.get('table') and len(_tbl_norm(sc['table'])) > 1 else '') + ('<ul class="gm-l">' + ''.join(f'<li>{E(x)}</li>' for x in sc['ul']) + '</ul>' if sc.get('ul') else '')
                 if re.search(r'이 글의 한계|글의 한계|한계와 주의|다루지 않은', sc['h']):
                     _lim += _h.replace('<h2>', '<h3>').replace('</h2>', '</h3>')
                 else:
@@ -5966,7 +5966,7 @@ def rss_feed(live, aps):
             if sec.get('ul'):
                 parts.append('<ul>' + ''.join(f'<li>{E(x)}</li>' for x in sec['ul']) + '</ul>')
             if sec.get('table'):
-                parts.append('<table>' + ''.join('<tr>' + ''.join(f'<td>{E(x)}</td>' for x in r) + '</tr>' for r in _tn(sec['table'])) + '</table>')
+                parts.append('<table>' + ''.join('<tr>' + ''.join(f'<td>{E(x)}</td>' for x in r) + '</tr>' for r in _tbl_norm(sec['table'])) + '</table>')
         for qa in c.get('faq') or []:
             if len(qa) >= 2:
                 parts.append(f'<h3>{E(qa[0])}</h3><p>{E(qa[1])}</p>')

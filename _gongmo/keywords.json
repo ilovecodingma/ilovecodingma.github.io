@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-09 03:00",
+ "updated": "2026-11-09 15:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -51,18 +51,6 @@
    "expires": "2026-11-12"
   },
   {
-   "query": "시체",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 20000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-03",
-   "expires": "2026-11-12"
-  },
-  {
    "query": "매일경제신문",
    "tier": "단기",
    "signal": [
@@ -72,6 +60,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-07",
+   "expires": "2026-11-12"
+  },
+  {
+   "query": "시체",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 20000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-03",
    "expires": "2026-11-12"
   },
   {
@@ -96,6 +96,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-08",
+   "expires": "2026-11-12"
+  },
+  {
+   "query": "젠슨 황 부인",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 20000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-09",
    "expires": "2026-11-12"
   },
   {
@@ -135,6 +147,18 @@
    "expires": "2026-11-12"
   },
   {
+   "query": "경제",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 10000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-05",
+   "expires": "2026-11-12"
+  },
+  {
    "query": "기아",
    "tier": "단기",
    "signal": [
@@ -144,6 +168,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-08",
+   "expires": "2026-11-12"
+  },
+  {
+   "query": "맨유 대 애스턴 빌라",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 10000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-09",
    "expires": "2026-11-12"
   },
   {
@@ -159,6 +195,18 @@
    "expires": "2026-11-12"
   },
   {
+   "query": "송중기",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 10000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-04",
+   "expires": "2026-11-12"
+  },
+  {
    "query": "자동차",
    "tier": "단기",
    "signal": [
@@ -171,7 +219,7 @@
    "expires": "2026-11-12"
   },
   {
-   "query": "경제",
+   "query": "아틀레티코 대 바르셀로나",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -179,7 +227,7 @@
    "score": 10000,
    "status": "미작성",
    "page": "",
-   "registered": "2026-11-05",
+   "registered": "2026-11-09",
    "expires": "2026-11-12"
   },
   {
@@ -196,18 +244,6 @@
   },
   {
    "query": "전북 현대 대 조호르 다룰 탁짐 fc 순위",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 10000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-04",
-   "expires": "2026-11-12"
-  },
-  {
-   "query": "송중기",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -267,6 +303,18 @@
    "expires": "2026-11-12"
   },
   {
+   "query": "김도영",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 5000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-03",
+   "expires": "2026-11-12"
+  },
+  {
    "query": "이효리",
    "tier": "단기",
    "signal": [
@@ -312,18 +360,6 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-08",
-   "expires": "2026-11-12"
-  },
-  {
-   "query": "김도영",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 5000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-03",
    "expires": "2026-11-12"
   },
   {
@@ -567,7 +603,31 @@
    "expires": "2026-11-12"
   },
   {
-   "query": "유튜버",
+   "query": "닥터x: 하얀 마피아의 시대",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 5000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-09",
+   "expires": "2026-11-12"
+  },
+  {
+   "query": "홍창기",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 5000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-09",
+   "expires": "2026-11-12"
+  },
+  {
+   "query": "숲",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -579,7 +639,7 @@
    "expires": "2026-11-12"
   },
   {
-   "query": "숲",
+   "query": "유튜버",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -612,6 +672,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-07",
+   "expires": "2026-11-12"
+  },
+  {
+   "query": "은마아파트",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-09",
    "expires": "2026-11-12"
   },
   {
@@ -672,18 +744,6 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-05",
-   "expires": "2026-11-12"
-  },
-  {
-   "query": "강민호",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 2000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-08",
    "expires": "2026-11-12"
   },
   {
@@ -1000,6 +1060,30 @@
   },
   {
    "query": "국민 총소득",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-09",
+   "expires": "2026-11-12"
+  },
+  {
+   "query": "브라이턴 대 브렌트퍼드",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-09",
+   "expires": "2026-11-12"
+  },
+  {
+   "query": "이찬혁",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -1467,6 +1551,18 @@
    "expires": "2026-11-12"
   },
   {
+   "query": "압구정동",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-09",
+   "expires": "2026-11-12"
+  },
+  {
    "query": "노동조합",
    "tier": "단기",
    "signal": [
@@ -1872,6 +1968,54 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-08",
+   "expires": "2026-11-12"
+  },
+  {
+   "query": "베식타시 대 겐칠레르빌리이",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-09",
+   "expires": "2026-11-12"
+  },
+  {
+   "query": "사랑이 온다",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-09",
+   "expires": "2026-11-12"
+  },
+  {
+   "query": "노동법",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-09",
+   "expires": "2026-11-12"
+  },
+  {
+   "query": "공장",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-09",
    "expires": "2026-11-12"
   },
   {
@@ -2307,18 +2451,6 @@
    "expires": "2026-11-12"
   },
   {
-   "query": "어도어",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 1000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-06",
-   "expires": "2026-11-12"
-  },
-  {
    "query": "카광",
    "tier": "단기",
    "signal": [
@@ -2511,7 +2643,31 @@
    "expires": "2026-11-12"
   },
   {
-   "query": "브라이턴 대 브렌트퍼드",
+   "query": "สภาพอากาศ",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-09",
+   "expires": "2026-11-12"
+  },
+  {
+   "query": "개발제한구역",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-09",
+   "expires": "2026-11-12"
+  },
+  {
+   "query": "노점상",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -9907,7 +10063,7 @@
    "expires": "2026-11-15"
   },
   {
-   "query": "2027년 예산안 820조9000억 미래대응기금 162조 구조와 예결위 부별심사 일정, 여야 입장은?",
+   "query": "2027년 예산안 820조9000억 예결위 부처별 심사 착수, 미래대응기금 162조 쟁점과 여야 27조 삭감 요구",
    "tier": "중기",
    "signal": [
     "뉴스",
@@ -9985,7 +10141,7 @@
    "expires": "2026-11-22"
   },
   {
-   "query": "은마아파트 재초환 부담금 4억6천만원 통지, 산정 방식과 납부 시기 정리",
+   "query": "은마 재초환 1인당 4.6억, 반포현대 가구당 2.2억대 사전통지, 산정 방식·납부 시기와 조합 반발 정리",
    "tier": "중기",
    "signal": [
     "뉴스",
@@ -10375,6 +10531,32 @@
    "expires": "2026-11-22"
   },
   {
+   "query": "국민의힘 법사위원 예산심사 불참 선언 사유와 특검법 재의 요구 주장, 일정 영향 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 3,
+   "status": "작성",
+   "page": "/issue/ppp-judiciary-committee-budget-boycott-1109/",
+   "registered": "2026-11-09",
+   "expires": "2026-11-16"
+  },
+  {
+   "query": "이재명 대통령 지지율 이번 주 리얼미터 35.9% 한국갤럽 41% 기관별 수치와 조사 방법 비교, NBS 직전 결과",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 3,
+   "status": "작성",
+   "page": "/issue/presidential-approval-polls-nov-week1-1109/",
+   "registered": "2026-11-09",
+   "expires": "2026-11-23"
+  },
+  {
    "query": "기금형 퇴직연금 뭐가 달라지나, 퇴직급여 사외적립 의무화 일정 정리",
    "tier": "중기",
    "signal": [
@@ -10399,6 +10581,19 @@
    "page": "/issue/samsung-electronics-cash-200-trillion-1108/",
    "registered": "2026-11-08",
    "expires": "2026-11-22"
+  },
+  {
+   "query": "삼성 우승 세일 확정됐나: 계열사 행사 검토 보도 내용, 2014년 당시 혜택과 48%·63% 할인 글의 정체",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 3,
+   "status": "작성",
+   "page": "/issue/samsung-lions-championship-sale-status-1109/",
+   "registered": "2026-11-09",
+   "expires": "2026-11-16"
   },
   {
    "query": "서인영 12월 26일 재혼 발표 예비신랑 결혼식 장소 경위 정리",
@@ -10505,7 +10700,7 @@
    "expires": "2026-11-12"
   },
   {
-   "query": "롤드컵 4강 젠지 IG 3-0 결승 진출, T1 BLG 9일 일정과 15일 뉴욕 파이널 정리",
+   "query": "롤드컵 4강 BLG 3-1 승, T1 탈락과 젠지 상대 결승 일정, 세트별 결과",
    "tier": "중기",
    "signal": [
     "뉴스",
@@ -10770,6 +10965,45 @@
    "expires": "2026-11-23"
   },
   {
+   "query": "악뮤 강릉 콘서트 시야 제한 좌석 17만원대 VIP석 불만 내용과 소속사 입장 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 2,
+   "status": "작성",
+   "page": "/issue/akmu-gangneung-concert-view-obstruction-1109/",
+   "registered": "2026-11-09",
+   "expires": "2026-11-16"
+  },
+  {
+   "query": "아틀레티코 바르셀로나 1-2, 이강인 선발 60분 기록과 시메오네 발언 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 2,
+   "status": "작성",
+   "page": "/issue/atletico-barcelona-1-2-lee-kangin-start-1109/",
+   "registered": "2026-11-09",
+   "expires": "2026-11-16"
+  },
+  {
+   "query": "주말 박스오피스 6~8일 극장판 치이카와 5주 연속 1위 순위표와 관객 수, 매출 점유율",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 2,
+   "status": "작성",
+   "page": "/issue/boxoffice-weekend-nov6-8-chiikawa-1109/",
+   "registered": "2026-11-09",
+   "expires": "2026-11-16"
+  },
+  {
    "query": "BYD 차주 불만 보도 정리: 사고수리 센터 5곳, 평균 9.8일",
    "tier": "중기",
    "signal": [
@@ -10913,6 +11147,19 @@
    "expires": "2026-11-13"
   },
   {
+   "query": "강민호 데뷔 23년 만 첫 한국시리즈 우승, 롯데 입단부터 삼성 이적까지 통산 기록과 직후 발언 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 2,
+   "status": "작성",
+   "page": "/issue/kang-minho-first-championship-23-years-1108/",
+   "registered": "2026-11-09",
+   "expires": "2026-11-16"
+  },
+  {
    "query": "김현철 유재석 축의금 50만원 30만원 환불 발언 아는 형님 방송 내용 정리",
    "tier": "중기",
    "signal": [
@@ -10937,6 +11184,19 @@
    "page": "/issue/kimjang-price-cabbage-1104/",
    "registered": "2026-11-04",
    "expires": "2026-11-11"
+  },
+  {
+   "query": "영화 거짓말 무삭제 완전판 등급·상영시간·배급사, 1999년 심의 경과 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 2,
+   "status": "작성",
+   "page": "/issue/lies-jang-sunwoo-uncut-rerelease-1111/",
+   "registered": "2026-11-09",
+   "expires": "2026-11-16"
   },
   {
    "query": "샤이니 민호 마라톤 실격 주장 보도, 주최측 규정과 입장 정리",
@@ -10978,6 +11238,19 @@
    "expires": "2026-11-10"
   },
   {
+   "query": "뉴진스 전속계약 NYT 보도 내용과 하이브 어도어 반박, 민희진 입장 확인 상태 표",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 2,
+   "status": "작성",
+   "page": "/issue/newjeans-contract-nyt-report-hybe-response-1109/",
+   "registered": "2026-11-09",
+   "expires": "2026-11-23"
+  },
+  {
    "query": "니케 PC 런처 악성코드 유포 보고, 무슨 일이고 공식 입장은? 사실 정리",
    "tier": "중기",
    "signal": [
@@ -10989,6 +11262,19 @@
    "page": "/issue/nikke-hacking-incident-1105/",
    "registered": "2026-11-05",
    "expires": "2026-11-12"
+  },
+  {
+   "query": "3분기 상용직 증가분 75% 60대 이상, 20대 15분기 연속 감소 연령대별 수치와 근거 자료",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 2,
+   "status": "작성",
+   "page": "/issue/regular-workers-60s-75-percent-q3-1109/",
+   "registered": "2026-11-09",
+   "expires": "2026-11-23"
   },
   {
    "query": "신인감독 김연경2 5회 내용: 원더독스 흥국생명전 3세트 승리와 4세트 작전판 장면, 시청률",
@@ -11041,6 +11327,19 @@
    "page": "/issue/tesla-fsd-korea-approval/",
    "registered": "2026-11-03",
    "expires": "2026-11-17"
+  },
+  {
+   "query": "테슬라 10월 수입차 등록 1위 9165대, 머스크 태극기 게시물 내용과 브랜드별 순위표",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 2,
+   "status": "작성",
+   "page": "/issue/tesla-korea-import-car-october-musk-flag-1109/",
+   "registered": "2026-11-09",
+   "expires": "2026-11-23"
   },
   {
    "query": "유언 15억 전 재산 동거녀에게, 친자녀 몫 0원? 유류분 비율과 청구 기한 정리",
