@@ -1,14 +1,14 @@
 {
  "date": "2026-11-09",
- "updated": "2026-11-09 21:50",
+ "updated": "2026-11-09 22:50",
  "sites": 13,
- "npost": 2607,
+ "npost": 2612,
  "note": "출처(커뮤니티)별 집계예요. 작성자·연령·성별 정보는 수집하지 않아요. posts 는 이슈별로 뽑힌 일부라 전체 글 수가 아니에요.",
  "sources": [
   {
    "name": "MLB파크",
    "np": 20,
-   "nc": 1105,
+   "nc": 1067,
    "topics": [
     {
      "t": "[단독] \"너, 잡아 간다\"…금쪽이 울린 '민속촌 귀신' 날벼락",
@@ -16,10 +16,10 @@
      "np_here": 2,
      "nc_here": 217,
      "issue_np": 6,
-     "issue_nc": 232,
+     "issue_nc": 239,
      "kw": [
-      "민속촌",
       "귀신",
+      "민속촌",
       "벼락",
       "단독"
      ],
@@ -75,8 +75,8 @@
      "issue_np": 3,
      "issue_nc": 106,
      "kw": [
-      "감량",
       "마운",
+      "감량",
       "KG"
      ],
      "top_post": {
@@ -90,7 +90,7 @@
      "nsite": 6,
      "np_here": 1,
      "nc_here": 74,
-     "issue_np": 7,
+     "issue_np": 8,
      "issue_nc": 99,
      "kw": [
       "남자",
@@ -111,10 +111,10 @@
      "issue_np": 2,
      "issue_nc": 72,
      "kw": [
-      "퇴사",
-      "자발",
       "청년",
-      "검토"
+      "검토",
+      "자발",
+      "퇴사"
      ],
      "top_post": {
       "t": "'자발적 퇴사' 청년에 월 100만원 검토",
@@ -123,60 +123,121 @@
      }
     },
     {
-     "t": "X에서 난리난 프랑스 대선후보 공약.",
-     "nsite": 3,
+     "t": "젠슨 황 와이프 사진보니 좀 이해가 가긴하네요",
+     "nsite": 2,
      "np_here": 1,
-     "nc_here": 61,
-     "issue_np": 3,
-     "issue_nc": 95,
+     "nc_here": 68,
+     "issue_np": 2,
+     "issue_nc": 68,
      "kw": [
-      "대선",
-      "공약",
-      "후보",
-      "프랑스"
+      "와이프",
+      "젠슨"
      ],
      "top_post": {
-      "t": "X에서 난리난 프랑스 대선후보 공약.",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611090120008424&m=view",
-      "nc": 61
+      "t": "젠슨 황 와이프 사진보니 좀 이해가 가긴하네요",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611090120018444&m=view",
+      "nc": 68
      }
     },
     {
-     "t": "위기에 빠진..젠슨황을 구원 할 인물.",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 61,
-     "issue_np": 2,
-     "issue_nc": 61,
+     "t": "러시아 통계청 해킹당해서 전쟁 사망자 밝혀짐.",
+     "nsite": 3,
+     "np_here": 2,
+     "nc_here": 65,
+     "issue_np": 5,
+     "issue_nc": 85,
      "kw": [
-      "인물",
-      "위기"
+      "러시아",
+      "사망자",
+      "해킹",
+      "전쟁"
      ],
      "top_post": {
-      "t": "위기에 빠진..젠슨황을 구원 할 인물.",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611090120011004&m=view",
-      "nc": 61
+      "t": "러시아 통계청 해킹한 그룹이 밝힌 러시아 사망자 숫자",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611080120000174&m=view",
+      "nc": 39
+     }
+    }
+   ]
+  },
+  {
+   "name": "인스티즈",
+   "np": 3,
+   "nc": 249,
+   "topics": [
+    {
+     "t": "커피 안 마시는데 49잔이나 산 신입",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 129,
+     "issue_np": 2,
+     "issue_nc": 129,
+     "kw": [
+      "신입",
+      "커피"
+     ],
+     "top_post": {
+      "t": "커피 안 마시는데 49잔이나 산 신입",
+      "u": "https://www.instiz.net/pt/7923799?green=1",
+      "nc": 129
+     }
+    },
+    {
+     "t": "\"밤 10시 이후 샤워 자제해주세요\"…아파트 공지문에 \"야근하고 씻지말라고?\" [어떻게 생각하세요]",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 98,
+     "issue_np": 3,
+     "issue_nc": 130,
+     "kw": [
+      "아파트",
+      "샤워",
+      "자제"
+     ],
+     "top_post": {
+      "t": "\"밤 10시 이후 샤워 자제해주세요\"…아파트 공지문에 \"야근하고 씻지말라고?\" [어떻게 생각하세요]",
+      "u": "https://www.instiz.net/pt/7923838?green=1",
+      "nc": 98
+     }
+    },
+    {
+     "t": "[단독] \"너, 잡아 간다\"…금쪽이 울린 '민속촌 귀신' 날벼락",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 22,
+     "issue_np": 6,
+     "issue_nc": 239,
+     "kw": [
+      "귀신",
+      "민속촌",
+      "벼락",
+      "단독"
+     ],
+     "top_post": {
+      "t": "[단독] \"너, 잡아 간다”…금쪽이 울린 '민속촌 귀신' 날벼락",
+      "u": "https://www.instiz.net/pt/7923787?green=1",
+      "nc": 22
      }
     }
    ]
   },
   {
    "name": "개드립",
-   "np": 11,
-   "nc": 235,
+   "np": 10,
+   "nc": 217,
    "topics": [
     {
      "t": "연합뉴스도 항복했습니다 집값 폭락 시작",
      "nsite": 3,
      "np_here": 1,
      "nc_here": 45,
-     "issue_np": 3,
+     "issue_np": 4,
      "issue_nc": 72,
      "kw": [
       "폭락",
       "집값",
-      "직전",
-      "서울"
+      "서울",
+      "직전"
      ],
      "top_post": {
       "t": "서울 집값 폭락 직전인데 그것도 모르고.... 참 안타깝습니다",
@@ -192,8 +253,8 @@
      "issue_np": 10,
      "issue_nc": 74,
      "kw": [
-      "아동",
       "학대",
+      "아동",
       "민속촌",
       "귀신"
      ],
@@ -224,16 +285,16 @@
     },
     {
      "t": "X에서 난리난 프랑스 대선후보 공약.",
-     "nsite": 3,
+     "nsite": 4,
      "np_here": 1,
      "nc_here": 34,
-     "issue_np": 3,
+     "issue_np": 4,
      "issue_nc": 95,
      "kw": [
-      "대선",
-      "공약",
       "후보",
-      "프랑스"
+      "프랑스",
+      "난리",
+      "대선"
      ],
      "top_post": {
       "t": "X에서 난리난 프랑스 대선후보 공약.",
@@ -242,34 +303,15 @@
      }
     },
     {
-     "t": "6명 사망한 폴란드 총기난사범 무장상태",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 23,
-     "issue_np": 6,
-     "issue_nc": 23,
-     "kw": [
-      "폴란드",
-      "총기",
-      "난사",
-      "무장"
-     ],
-     "top_post": {
-      "t": "6명 사망한 폴란드 총기난사범 무장상태",
-      "u": "https://www.dogdrip.net/dogdrip/733762604?sort_index=popular&page=1",
-      "nc": 23
-     }
-    },
-    {
      "t": "러시아 통계청 해킹당해서 전쟁 사망자 밝혀짐.",
      "nsite": 3,
      "np_here": 1,
      "nc_here": 20,
      "issue_np": 5,
-     "issue_nc": 80,
+     "issue_nc": 85,
      "kw": [
-      "사망자",
       "러시아",
+      "사망자",
       "해킹",
       "전쟁"
      ],
@@ -290,7 +332,7 @@
       "이메일",
       "젠슨 황",
       "사내",
-      "직원"
+      "엔비디아"
      ],
      "top_post": {
       "t": "젠슨황이 임직원들에게 전체 메일 보냈다는 사내 이메일 공개 ㄷㄷㄷ",
@@ -302,88 +344,44 @@
      "t": "가수 아이유, 113일만에 악플러 잡는다",
      "nsite": 3,
      "np_here": 1,
-     "nc_here": 8,
+     "nc_here": 13,
      "issue_np": 3,
-     "issue_nc": 11,
+     "issue_nc": 16,
      "kw": [
       "악플",
       "아이유",
       "표절",
-      "중국"
+      "국적"
      ],
      "top_post": {
       "t": "아이유 ‘표절·중국 국적설’ 악플러 113일 만에 잡는다",
       "u": "https://www.dogdrip.net/dogdrip/733972972?sort_index=popular&page=1",
-      "nc": 8
-     }
-    }
-   ]
-  },
-  {
-   "name": "인스티즈",
-   "np": 3,
-   "nc": 216,
-   "topics": [
-    {
-     "t": "커피 안 마시는데 49잔이나 산 신입",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 117,
-     "issue_np": 2,
-     "issue_nc": 117,
-     "kw": [
-      "커피",
-      "신입"
-     ],
-     "top_post": {
-      "t": "커피 안 마시는데 49잔이나 산 신입",
-      "u": "https://www.instiz.net/pt/7923799?green=1",
-      "nc": 117
+      "nc": 13
      }
     },
     {
-     "t": "\"밤 10시 이후 샤워 자제해주세요\"…아파트 공지문에 \"야근하고 씻지말라고?\" [어떻게 생각하세요]",
+     "t": "훌쩍훌쩍 국세청 게이..",
      "nsite": 3,
      "np_here": 1,
-     "nc_here": 84,
+     "nc_here": 5,
      "issue_np": 3,
-     "issue_nc": 116,
+     "issue_nc": 5,
      "kw": [
-      "샤워",
-      "아파트",
-      "자제"
+      "게이",
+      "국세청"
      ],
      "top_post": {
-      "t": "\"밤 10시 이후 샤워 자제해주세요\"…아파트 공지문에 \"야근하고 씻지말라고?\" [어떻게 생각하세요]",
-      "u": "https://www.instiz.net/pt/7923838?green=1",
-      "nc": 84
-     }
-    },
-    {
-     "t": "[단독] \"너, 잡아 간다\"…금쪽이 울린 '민속촌 귀신' 날벼락",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 15,
-     "issue_np": 6,
-     "issue_nc": 232,
-     "kw": [
-      "민속촌",
-      "귀신",
-      "벼락",
-      "단독"
-     ],
-     "top_post": {
-      "t": "[단독] \"너, 잡아 간다”…금쪽이 울린 '민속촌 귀신' 날벼락",
-      "u": "https://www.instiz.net/pt/7923787?green=1",
-      "nc": 15
+      "t": "훌쩍훌쩍 국세청 게이..",
+      "u": "https://www.dogdrip.net/dogdrip/733799511?sort_index=popular&page=1",
+      "nc": 5
      }
     }
    ]
   },
   {
    "name": "클리앙",
-   "np": 9,
-   "nc": 168,
+   "np": 10,
+   "nc": 182,
    "topics": [
     {
      "t": "'주식시장 망가지는 건 정부 탓'…부메랑 된 李 과거 발언",
@@ -391,11 +389,11 @@
      "np_here": 3,
      "nc_here": 55,
      "issue_np": 5,
-     "issue_nc": 67,
+     "issue_nc": 70,
      "kw": [
       "정부",
-      "주식",
       "시장",
+      "주식",
       "발언"
      ],
      "top_post": {
@@ -429,8 +427,8 @@
      "issue_np": 10,
      "issue_nc": 74,
      "kw": [
-      "아동",
       "학대",
+      "아동",
       "민속촌",
       "귀신"
      ],
@@ -445,13 +443,13 @@
      "nsite": 3,
      "np_here": 1,
      "nc_here": 27,
-     "issue_np": 3,
+     "issue_np": 4,
      "issue_nc": 72,
      "kw": [
       "폭락",
       "집값",
-      "직전",
-      "서울"
+      "서울",
+      "직전"
      ],
      "top_post": {
       "t": "연합뉴스도 항복했습니다 집값 폭락 시작",
@@ -470,12 +468,30 @@
       "천지",
       "민주당",
       "투표",
-      "공개"
+      "전대"
      ],
      "top_post": {
       "t": "[단독] 전대 투표권 가진 민주당 신천지는 3300여명",
       "u": "https://www.clien.net/service/board/park/19289412?od=T33&po=0&category=0&groupCd=clien_all",
       "nc": 18
+     }
+    },
+    {
+     "t": "젠슨황 내연녀의 분홍드레스",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 14,
+     "issue_np": 3,
+     "issue_nc": 16,
+     "kw": [
+      "젠슨 황",
+      "내연녀",
+      "공개"
+     ],
+     "top_post": {
+      "t": "젠슨황 내연녀의 분홍드레스",
+      "u": "https://www.clien.net/service/board/park/19289569?od=T33&po=0&category=0&groupCd=clien_all",
+      "nc": 14
      }
     },
     {
@@ -486,8 +502,8 @@
      "issue_np": 3,
      "issue_nc": 16,
      "kw": [
-      "버거킹",
-      "와퍼"
+      "와퍼",
+      "버거킹"
      ],
      "top_post": {
       "t": "버거킹 올해 마지막 와퍼 할인 3,900원",
@@ -565,8 +581,8 @@
      "issue_np": 3,
      "issue_nc": 16,
      "kw": [
-      "버거킹",
-      "와퍼"
+      "와퍼",
+      "버거킹"
      ],
      "top_post": {
       "t": "버거킹 와퍼 3,900원 (11. 9. ~ 11. 13.) (3,900원/무료)",
@@ -586,7 +602,7 @@
      "nsite": 6,
      "np_here": 1,
      "nc_here": 23,
-     "issue_np": 7,
+     "issue_np": 8,
      "issue_nc": 99,
      "kw": [
       "남자",
@@ -620,7 +636,7 @@
   },
   {
    "name": "보배드림",
-   "np": 12,
+   "np": 11,
    "nc": 29,
    "topics": [
     {
@@ -650,14 +666,33 @@
      "issue_np": 10,
      "issue_nc": 74,
      "kw": [
-      "아동",
       "학대",
+      "아동",
       "민속촌",
       "귀신"
      ],
      "top_post": {
       "t": "‘민속촌 귀신’, 아동학대 조사 예정",
       "u": "https://www.bobaedream.co.kr/view?code=best&No=1046160&vdate=",
+      "nc": 3
+     }
+    },
+    {
+     "t": "'주식시장 망가지는 건 정부 탓'…부메랑 된 李 과거 발언",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 3,
+     "issue_np": 5,
+     "issue_nc": 70,
+     "kw": [
+      "정부",
+      "시장",
+      "주식",
+      "발언"
+     ],
+     "top_post": {
+      "t": "“주식시장 망가지는 건 다 정부 탓”",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1046325&vdate=",
       "nc": 3
      }
     },
@@ -669,8 +704,8 @@
      "issue_np": 3,
      "issue_nc": 48,
      "kw": [
-      "쿠폰",
-      "남친"
+      "남친",
+      "쿠폰"
      ],
      "top_post": {
       "t": "쿠폰으로만 먹는 남친",
@@ -689,7 +724,7 @@
       "천지",
       "민주당",
       "투표",
-      "공개"
+      "전대"
      ],
      "top_post": {
       "t": "민주당 신천지 논란 공개사과+책임져야 63.5%",
@@ -703,12 +738,12 @@
      "np_here": 1,
      "nc_here": 3,
      "issue_np": 3,
-     "issue_nc": 11,
+     "issue_nc": 16,
      "kw": [
       "악플",
       "아이유",
       "표절",
-      "중국"
+      "국적"
      ],
      "top_post": {
       "t": "가수 아이유, 113일만에 악플러 잡는다",
@@ -752,29 +787,37 @@
       "u": "https://www.bobaedream.co.kr/view?code=best&No=1046183&vdate=",
       "nc": 3
      }
-    },
+    }
+   ]
+  },
+  {
+   "name": "82쿡",
+   "np": 1,
+   "nc": 2,
+   "topics": [
     {
-     "t": "한국의 엄청난 테슬라 판매량",
-     "nsite": 2,
+     "t": "젠슨황 내연녀의 분홍드레스",
+     "nsite": 3,
      "np_here": 1,
-     "nc_here": 3,
-     "issue_np": 2,
-     "issue_nc": 59,
+     "nc_here": 2,
+     "issue_np": 3,
+     "issue_nc": 16,
      "kw": [
-      "판매",
-      "테슬라"
+      "젠슨 황",
+      "내연녀",
+      "공개"
      ],
      "top_post": {
-      "t": "2026 주요국 테슬라 판매량",
-      "u": "https://www.bobaedream.co.kr/view?code=best&No=1046094&vdate=",
-      "nc": 3
+      "t": "젠슨황 추가공개요",
+      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4257344&page=1",
+      "nc": 2
      }
     }
    ]
   },
   {
    "name": "디시인사이드",
-   "np": 6,
+   "np": 7,
    "nc": 0,
    "topics": [
     {
@@ -782,7 +825,7 @@
      "nsite": 6,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 7,
+     "issue_np": 8,
      "issue_nc": 99,
      "kw": [
       "남자",
@@ -792,6 +835,25 @@
      "top_post": {
       "t": "잘생긴 남자 못잊는 여자들",
       "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=477195&_dcbest=1&page=1",
+      "nc": 0
+     }
+    },
+    {
+     "t": "X에서 난리난 프랑스 대선후보 공약.",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 95,
+     "kw": [
+      "후보",
+      "프랑스",
+      "난리",
+      "대선"
+     ],
+     "top_post": {
+      "t": "X에서 난리난 프랑스 대선후보 공약 근황..",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=477352&_dcbest=1&page=1",
       "nc": 0
      }
     },
@@ -837,9 +899,9 @@
      "issue_np": 3,
      "issue_nc": 25,
      "kw": [
+      "제로",
       "고질라",
       "마이너스",
-      "제로",
       "흥행"
      ],
      "top_post": {
@@ -849,21 +911,20 @@
      }
     },
     {
-     "t": "6명 사망한 폴란드 총기난사범 무장상태",
+     "t": "젠슨황 내연녀의 분홍드레스",
      "nsite": 3,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 6,
-     "issue_nc": 23,
+     "issue_np": 3,
+     "issue_nc": 16,
      "kw": [
-      "폴란드",
-      "총기",
-      "난사",
-      "무장"
+      "젠슨 황",
+      "내연녀",
+      "공개"
      ],
      "top_post": {
-      "t": "폴란드 크라쿠프 도심서 총기 난사…\"6명 사망·16명 부상",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=476839&_dcbest=1&page=1",
+      "t": "젠슨황과 내연녀 추가 사진 공개",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=477336&_dcbest=1&page=1",
       "nc": 0
      }
     },
@@ -875,8 +936,8 @@
      "issue_np": 3,
      "issue_nc": 5,
      "kw": [
-      "국세청",
-      "게이"
+      "게이",
+      "국세청"
      ],
      "top_post": {
       "t": "훌쩍훌쩍 국세청 게이게이",
@@ -887,16 +948,79 @@
    ]
   },
   {
-   "name": "루리웹",
-   "np": 29,
+   "name": "SLR클럽",
+   "np": 5,
    "nc": 0,
    "topics": [
     {
      "t": "남자 믿다가 인생망친 여자들은 수두룩해도 남자 안믿어서 인생망친 여자는 없음웬만하면 비연애...",
      "nsite": 6,
-     "np_here": 2,
+     "np_here": 1,
      "nc_here": 0,
-     "issue_np": 7,
+     "issue_np": 8,
+     "issue_nc": 99,
+     "kw": [
+      "남자",
+      "여자",
+      "인생"
+     ],
+     "top_post": {
+      "t": "여자가 싫어하는 남자 외모 순위 ㄷㄷㄷ",
+      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677084",
+      "nc": 0
+     }
+    },
+    {
+     "t": "민속촌 귀신들을 아동학대로 민원을 넣었다네요",
+     "nsite": 5,
+     "np_here": 3,
+     "nc_here": 0,
+     "issue_np": 10,
+     "issue_nc": 74,
+     "kw": [
+      "학대",
+      "아동",
+      "민속촌",
+      "귀신"
+     ],
+     "top_post": {
+      "t": "민속촌 아동학대 논란",
+      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677025",
+      "nc": 0
+     }
+    },
+    {
+     "t": "[단독] 전대 투표권 가진 민주당 신천지 공개",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 21,
+     "kw": [
+      "천지",
+      "민주당",
+      "투표",
+      "전대"
+     ],
+     "top_post": {
+      "t": "[단독] 전대 투표권 가진 민주당 신천지 공개",
+      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677014",
+      "nc": 0
+     }
+    }
+   ]
+  },
+  {
+   "name": "루리웹",
+   "np": 26,
+   "nc": 0,
+   "topics": [
+    {
+     "t": "남자 믿다가 인생망친 여자들은 수두룩해도 남자 안믿어서 인생망친 여자는 없음웬만하면 비연애...",
+     "nsite": 6,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 8,
      "issue_nc": 99,
      "kw": [
       "남자",
@@ -934,10 +1058,10 @@
      "np_here": 2,
      "nc_here": 0,
      "issue_np": 6,
-     "issue_nc": 232,
+     "issue_nc": 239,
      "kw": [
-      "민속촌",
       "귀신",
+      "민속촌",
       "벼락",
       "단독"
      ],
@@ -948,15 +1072,34 @@
      }
     },
     {
+     "t": "X에서 난리난 프랑스 대선후보 공약.",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 95,
+     "kw": [
+      "후보",
+      "프랑스",
+      "난리",
+      "대선"
+     ],
+     "top_post": {
+      "t": "X에서 난리난 프랑스 대선후보 공약",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77322333?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
      "t": "\"밤 10시 이후 샤워 자제해주세요\"…아파트 공지문에 \"야근하고 씻지말라고?\" [어떻게 생각하세요]",
      "nsite": 3,
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 3,
-     "issue_nc": 116,
+     "issue_nc": 130,
      "kw": [
-      "샤워",
       "아파트",
+      "샤워",
       "자제"
      ],
      "top_post": {
@@ -973,8 +1116,8 @@
      "issue_np": 3,
      "issue_nc": 106,
      "kw": [
-      "감량",
       "마운",
+      "감량",
       "KG"
      ],
      "top_post": {
@@ -984,34 +1127,15 @@
      }
     },
     {
-     "t": "X에서 난리난 프랑스 대선후보 공약.",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 95,
-     "kw": [
-      "대선",
-      "공약",
-      "후보",
-      "프랑스"
-     ],
-     "top_post": {
-      "t": "X에서 난리난 프랑스 대선후보 공약",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77322333?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
      "t": "러시아 통계청 해킹당해서 전쟁 사망자 밝혀짐.",
      "nsite": 3,
      "np_here": 2,
      "nc_here": 0,
      "issue_np": 5,
-     "issue_nc": 80,
+     "issue_nc": 85,
      "kw": [
-      "사망자",
       "러시아",
+      "사망자",
       "해킹",
       "전쟁"
      ],
@@ -1024,15 +1148,15 @@
     {
      "t": "연합뉴스도 항복했습니다 집값 폭락 시작",
      "nsite": 3,
-     "np_here": 1,
+     "np_here": 2,
      "nc_here": 0,
-     "issue_np": 3,
+     "issue_np": 4,
      "issue_nc": 72,
      "kw": [
       "폭락",
       "집값",
-      "직전",
-      "서울"
+      "서울",
+      "직전"
      ],
      "top_post": {
       "t": "서울 집값 폭락 직전인데 그것도 모르고.... 참 안타깝습니다",
@@ -1069,53 +1193,8 @@
    ]
   },
   {
-   "name": "SLR클럽",
-   "np": 4,
-   "nc": 0,
-   "topics": [
-    {
-     "t": "민속촌 귀신들을 아동학대로 민원을 넣었다네요",
-     "nsite": 5,
-     "np_here": 3,
-     "nc_here": 0,
-     "issue_np": 10,
-     "issue_nc": 74,
-     "kw": [
-      "아동",
-      "학대",
-      "민속촌",
-      "귀신"
-     ],
-     "top_post": {
-      "t": "민속촌 아동학대 논란",
-      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677025",
-      "nc": 0
-     }
-    },
-    {
-     "t": "[단독] 전대 투표권 가진 민주당 신천지 공개",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 21,
-     "kw": [
-      "천지",
-      "민주당",
-      "투표",
-      "공개"
-     ],
-     "top_post": {
-      "t": "[단독] 전대 투표권 가진 민주당 신천지 공개",
-      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677014",
-      "nc": 0
-     }
-    }
-   ]
-  },
-  {
    "name": "더쿠",
-   "np": 10,
+   "np": 11,
    "nc": 0,
    "topics": [
     {
@@ -1124,10 +1203,10 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 6,
-     "issue_nc": 232,
+     "issue_nc": 239,
      "kw": [
-      "민속촌",
       "귀신",
+      "민속촌",
       "벼락",
       "단독"
      ],
@@ -1145,8 +1224,8 @@
      "issue_np": 3,
      "issue_nc": 106,
      "kw": [
-      "감량",
       "마운",
+      "감량",
       "KG"
      ],
      "top_post": {
@@ -1163,8 +1242,8 @@
      "issue_np": 3,
      "issue_nc": 48,
      "kw": [
-      "쿠폰",
-      "남친"
+      "남친",
+      "쿠폰"
      ],
      "top_post": {
       "t": "쿠폰으로만 먹는 남친",
@@ -1183,7 +1262,7 @@
       "이메일",
       "젠슨 황",
       "사내",
-      "직원"
+      "엔비디아"
      ],
      "top_post": {
       "t": "젠슨황이 엔비디아 직원들에게 보낸 사내 이메일",
@@ -1197,16 +1276,34 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 3,
-     "issue_nc": 11,
+     "issue_nc": 16,
      "kw": [
       "악플",
       "아이유",
       "표절",
-      "중국"
+      "국적"
      ],
      "top_post": {
       "t": "아이유 ‘표절·중국 국적설’ 악플러 113일 만에 잡는다",
       "u": "https://theqoo.net/hot/4400757882",
+      "nc": 0
+     }
+    },
+    {
+     "t": "세계에는 은근 비슷한 음식이 많네요",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 6,
+     "kw": [
+      "음식",
+      "은근",
+      "세계"
+     ],
+     "top_post": {
+      "t": "짹에서 전세계가 욕하는중인 파키스탄 길거리음식",
+      "u": "https://theqoo.net/hot/4400987989",
       "nc": 0
      }
     },
@@ -1218,8 +1315,8 @@
      "issue_np": 3,
      "issue_nc": 5,
      "kw": [
-      "현실",
-      "로또"
+      "로또",
+      "현실"
      ],
      "top_post": {
       "t": "로또 1등 1년차 현실",
@@ -1243,24 +1340,6 @@
      "top_post": {
       "t": "젠슨황 논란 4컷만화로 이해하기",
       "u": "https://theqoo.net/hot/4400545235",
-      "nc": 0
-     }
-    },
-    {
-     "t": "네이버페이10원+10원+1원+1원+1원+1원+1원+랜덤 눌러봐++10원+5원+눌러눌러 보험랜덤+보험랜덤 하…",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 2,
-     "kw": [
-      "페이",
-      "네이버",
-      "랜덤"
-     ],
-     "top_post": {
-      "t": "네이버페이10원+10원+1원+1원+1원+1원+1원+랜덤 눌러봐++10원+5원+눌러눌러 보험랜덤+보험랜덤 하나더+라이브미리보고8원받기+15원+1…",
-      "u": "https://theqoo.net/hot/4400096334",
       "nc": 0
      }
     }
