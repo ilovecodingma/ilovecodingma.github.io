@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-09 21:00",
+ "updated": "2026-11-09 22:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -339,6 +339,18 @@
    "expires": "2026-11-12"
   },
   {
+   "query": "김장훈",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 5000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-03",
+   "expires": "2026-11-12"
+  },
+  {
    "query": "김도영",
    "tier": "단기",
    "signal": [
@@ -384,18 +396,6 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-08",
-   "expires": "2026-11-12"
-  },
-  {
-   "query": "김장훈",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 5000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-03",
    "expires": "2026-11-12"
   },
   {
@@ -520,6 +520,18 @@
   },
   {
    "query": "크리스털 팰리스 대 리버풀",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 5000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-09",
+   "expires": "2026-11-12"
+  },
+  {
+   "query": "김부선",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -1131,6 +1143,18 @@
    "expires": "2026-11-12"
   },
   {
+   "query": "한국 민속촌",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-09",
+   "expires": "2026-11-12"
+  },
+  {
    "query": "중대범죄 수사청",
    "tier": "단기",
    "signal": [
@@ -1503,18 +1527,6 @@
    "expires": "2026-11-12"
   },
   {
-   "query": "한국 민속촌",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 2000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-09",
-   "expires": "2026-11-12"
-  },
-  {
    "query": "노태문",
    "tier": "단기",
    "signal": [
@@ -1716,6 +1728,30 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-08",
+   "expires": "2026-11-12"
+  },
+  {
+   "query": "류지현",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-09",
+   "expires": "2026-11-12"
+  },
+  {
+   "query": "볼더링",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-09",
    "expires": "2026-11-12"
   },
   {
@@ -2116,6 +2152,18 @@
   },
   {
    "query": "논문",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-09",
+   "expires": "2026-11-12"
+  },
+  {
+   "query": "스타틴",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -2776,6 +2824,18 @@
   },
   {
    "query": "연차",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-09",
+   "expires": "2026-11-12"
+  },
+  {
+   "query": "아놀드 슈워제네거",
    "tier": "단기",
    "signal": [
     "구글트렌드"
