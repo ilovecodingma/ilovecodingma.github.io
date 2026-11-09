@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-10 00:00",
+ "updated": "2026-11-10 01:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -2927,8 +2927,8 @@
     "구글트렌드"
    ],
    "score": 5,
-   "status": "작성",
-   "page": "/issue/us-market-close-1106/",
+   "status": "미작성",
+   "page": "",
    "registered": "2026-11-06",
    "expires": "2026-11-09"
   },
@@ -9636,8 +9636,8 @@
     "구글트렌드"
    ],
    "score": 5,
-   "status": "작성",
-   "page": "/issue/choi-bul-am-obituary/",
+   "status": "미작성",
+   "page": "",
    "registered": "2026-11-02",
    "expires": "2026-11-09"
   },
@@ -11265,8 +11265,8 @@
     "구글트렌드"
    ],
    "score": 2,
-   "status": "작성",
-   "page": "/issue/byd-owners-complaints-1104/",
+   "status": "미작성",
+   "page": "",
    "registered": "2026-11-04",
    "expires": "2026-11-09"
   },
@@ -11291,8 +11291,8 @@
     "구글트렌드"
    ],
    "score": 2,
-   "status": "작성",
-   "page": "/issue/emart-jung-yongjin-ceo-1104/",
+   "status": "미작성",
+   "page": "",
    "registered": "2026-11-04",
    "expires": "2026-11-09"
   },
@@ -11330,8 +11330,8 @@
     "구글트렌드"
    ],
    "score": 2,
-   "status": "작성",
-   "page": "/issue/highway-rest-area-price-reform/",
+   "status": "미작성",
+   "page": "",
    "registered": "2026-11-02",
    "expires": "2026-11-09"
   },
@@ -11798,8 +11798,8 @@
     "구글트렌드"
    ],
    "score": 1,
-   "status": "작성",
-   "page": "/issue/kai-q3-2026-1104/",
+   "status": "미작성",
+   "page": "",
    "registered": "2026-11-04",
    "expires": "2026-11-09"
   },
@@ -11941,8 +11941,8 @@
     "구글트렌드"
    ],
    "score": 0,
-   "status": "작성",
-   "page": "/issue/apbc-2026-korea-roster/",
+   "status": "미작성",
+   "page": "",
    "registered": "2026-11-02",
    "expires": "2026-11-09"
   },
@@ -11954,8 +11954,8 @@
     "구글트렌드"
    ],
    "score": 0,
-   "status": "작성",
-   "page": "/issue/kimjang-origin-labeling-crackdown/",
+   "status": "미작성",
+   "page": "",
    "registered": "2026-11-02",
    "expires": "2026-11-09"
   },
@@ -11967,8 +11967,8 @@
     "구글트렌드"
    ],
    "score": 0,
-   "status": "작성",
-   "page": "/issue/kleague-promotion-race-2026/",
+   "status": "미작성",
+   "page": "",
    "registered": "2026-11-02",
    "expires": "2026-11-09"
   }
