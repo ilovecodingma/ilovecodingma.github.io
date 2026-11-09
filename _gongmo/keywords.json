@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-10 07:00",
+ "updated": "2026-11-10 08:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -747,6 +747,18 @@
    "expires": "2026-11-13"
   },
   {
+   "query": "kf-21 보라매",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-10",
+   "expires": "2026-11-13"
+  },
+  {
    "query": "은마아파트",
    "tier": "단기",
    "signal": [
@@ -832,18 +844,6 @@
   },
   {
    "query": "이지혜",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 2000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-10",
-   "expires": "2026-11-13"
-  },
-  {
-   "query": "kf-21 보라매",
    "tier": "단기",
    "signal": [
     "구글트렌드"
