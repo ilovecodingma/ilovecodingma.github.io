@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-09 19:00",
+ "updated": "2026-11-09 20:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -387,6 +387,18 @@
    "expires": "2026-11-12"
   },
   {
+   "query": "김장훈",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 5000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-03",
+   "expires": "2026-11-12"
+  },
+  {
    "query": "kia 타이거즈",
    "tier": "단기",
    "signal": [
@@ -675,18 +687,6 @@
    "expires": "2026-11-12"
   },
   {
-   "query": "장유빈",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 2000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-07",
-   "expires": "2026-11-12"
-  },
-  {
    "query": "은마아파트",
    "tier": "단기",
    "signal": [
@@ -760,18 +760,6 @@
   },
   {
    "query": "신의 구슬",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 2000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-03",
-   "expires": "2026-11-12"
-  },
-  {
-   "query": "김장훈",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -1120,6 +1108,18 @@
   },
   {
    "query": "반계리 은행나무",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-09",
+   "expires": "2026-11-12"
+  },
+  {
+   "query": "정지선",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -1503,7 +1503,7 @@
    "expires": "2026-11-12"
   },
   {
-   "query": "정지선",
+   "query": "한국 민속촌",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -2092,6 +2092,30 @@
   },
   {
    "query": "윤여정",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-09",
+   "expires": "2026-11-12"
+  },
+  {
+   "query": "이규한",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-09",
+   "expires": "2026-11-12"
+  },
+  {
+   "query": "논문",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -2752,18 +2776,6 @@
   },
   {
    "query": "연차",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 1000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-09",
-   "expires": "2026-11-12"
-  },
-  {
-   "query": "논문",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -11345,6 +11357,19 @@
    "page": "/issue/kimjang-price-cabbage-1104/",
    "registered": "2026-11-04",
    "expires": "2026-11-11"
+  },
+  {
+   "query": "2026 KPGA 투어 최종전 우승 정재현, 제네시스 대상 신상훈, 장유빈 실격 경위와 Q스쿨 일정",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 2,
+   "status": "작성",
+   "page": "/issue/kpga-tour-finale-genesis-award-shin-sanghun-1109/",
+   "registered": "2026-11-09",
+   "expires": "2026-11-23"
   },
   {
    "query": "영화 거짓말 무삭제 완전판 등급·상영시간·배급사, 1999년 심의 경과 정리",
