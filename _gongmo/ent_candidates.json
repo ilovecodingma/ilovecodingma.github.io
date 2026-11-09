@@ -1,6 +1,6 @@
 {
- "at": "2026-11-10 05:30",
- "nitems": 507,
+ "at": "2026-11-10 07:06",
+ "nitems": 516,
  "cands": [
   {
    "kw": "내년",
@@ -109,6 +109,41 @@
    ]
   },
   {
+   "kw": "한국",
+   "nsrc": 6,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "동아일보",
+    "세계일보",
+    "연합뉴스",
+    "한겨레"
+   ],
+   "n": 9,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "디즈니, 내년 싱가포르서 대형 팬 행사…한국 등 신작 공개",
+     "link": "https://www.yna.co.kr/view/AKR20261105096800005"
+    },
+    {
+     "src": "동아일보",
+     "title": "‘노벨평화상’ 하무스 오르타 동티모르 대통령 “한국 국민도 받을 자격 충분”",
+     "link": "https://sports.donga.com/ent/article/all/20261109/134993019/1"
+    },
+    {
+     "src": "한겨레",
+     "title": "한국 펑크·솔 음악 선구자 사랑과 평화, 소극장 콘서트 ‘펑키 투나잇’ 연다",
+     "link": "https://www.hani.co.kr/arti/culture/music/1286078.html"
+    },
+    {
+     "src": "한겨레",
+     "title": "‘미국 운영체제’ 졸업하고 이젠 한국 스스로 [.txt]",
+     "link": "https://www.hani.co.kr/arti/culture/book/1286058.html"
+    }
+   ]
+  },
+  {
    "kw": "솔로",
    "nsrc": 5,
    "srcs": [
@@ -152,7 +187,7 @@
     "연합뉴스",
     "조선일보"
    ],
-   "n": 13,
+   "n": 14,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -166,13 +201,13 @@
     },
     {
      "src": "동아일보",
-     "title": "진이한 결혼 접었다는데…“내년 기회, 일 저질러라” (귀묘한 이야기2)",
-     "link": "https://sports.donga.com/ent/article/all/20261109/134995217/1"
+     "title": "장우영, 결혼 생각은 20살 때부터…“외로울 땐 2PM 멤버들”",
+     "link": "https://sports.donga.com/ent/article/all/20261109/134995801/1"
     },
     {
      "src": "동아일보",
-     "title": "‘SOS 부부’ 아내 “죽고 싶다” 호소…남편도 문제 있었다 (결혼 지옥)",
-     "link": "https://sports.donga.com/ent/article/all/20261109/134993254/1"
+     "title": "진이한 결혼 접었다는데…“내년 기회, 일 저질러라” (귀묘한 이야기2)",
+     "link": "https://sports.donga.com/ent/article/all/20261109/134995217/1"
     }
    ]
   },
@@ -245,36 +280,70 @@
    ]
   },
   {
-   "kw": "한국",
+   "kw": "거짓말",
    "nsrc": 5,
    "srcs": [
-    "SBS",
     "뉴시스",
     "동아일보",
     "연합뉴스",
-    "한겨레"
+    "조선일보",
+    "한국경제"
    ],
    "n": 8,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "디즈니, 내년 싱가포르서 대형 팬 행사…한국 등 신작 공개",
-     "link": "https://www.yna.co.kr/view/AKR20261105096800005"
+     "title": "장선우 감독 '거짓말', 27년 만에 무삭제 완전판 재개봉",
+     "link": "https://www.yna.co.kr/view/AKR20261105072600005"
     },
     {
      "src": "동아일보",
-     "title": "‘노벨평화상’ 하무스 오르타 동티모르 대통령 “한국 국민도 받을 자격 충분”",
-     "link": "https://sports.donga.com/ent/article/all/20261109/134993019/1"
+     "title": "유인식 표 메가 IP ‘우영우’→‘100일의 거짓말’로 이어질까",
+     "link": "https://sports.donga.com/ent/article/all/20261109/134993168/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "있지 채령 “섹시 콘셉트? 안 노렸다면 거짓말…다 계산된 것”",
+     "link": "https://sports.donga.com/ent/article/all/20261109/134992084/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "있지 채령 “섹시 안 노렸다면 거짓말, 다음 위해 조금은 아껴뒀다”",
+     "link": "https://sports.donga.com/ent/article/all/20261109/134991974/1"
+    }
+   ]
+  },
+  {
+   "kw": "출신",
+   "nsrc": 5,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "연합뉴스",
+    "한겨레",
+    "한국경제"
+   ],
+   "n": 7,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "포미닛 출신 전지윤, 22일 결혼…\"부끄럽고 설렌다\"",
+     "link": "https://www.yna.co.kr/view/AKR20261104147000005"
+    },
+    {
+     "src": "동아일보",
+     "title": "‘미래소년 출신’ 유도현, 오크컴퍼니와 전속계약 [공식]",
+     "link": "https://sports.donga.com/ent/article/all/20261109/134993285/1"
     },
     {
      "src": "한겨레",
-     "title": "한국 펑크·솔 음악 선구자 사랑과 평화, 소극장 콘서트 ‘펑키 투나잇’ 연다",
-     "link": "https://www.hani.co.kr/arti/culture/music/1286078.html"
+     "title": "‘사업가 변신’ 그룹 노이즈 출신 홍종구…“그 시절 AI 있었다면 당연히 썼죠”",
+     "link": "https://www.hani.co.kr/arti/culture/music/1286278.html"
     },
     {
-     "src": "한겨레",
-     "title": "‘미국 운영체제’ 졸업하고 이젠 한국 스스로 [.txt]",
-     "link": "https://www.hani.co.kr/arti/culture/book/1286058.html"
+     "src": "한국경제",
+     "title": "아이돌 '포미닛' 출신 전지윤, 11월 신부된다",
+     "link": "https://www.hankyung.com/article/2026110461907"
     }
    ]
   },
@@ -309,40 +378,6 @@
      "src": "SBS",
      "title": "'닥터X' 김지원, 동료 의사들에게 \"부탁드립니다\" 숙인 사연은…전대미문 체외 수술 도전",
      "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008833758&plink=RSSLINK&cooper=RSSREADER"
-    }
-   ]
-  },
-  {
-   "kw": "출신",
-   "nsrc": 5,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "연합뉴스",
-    "한겨레",
-    "한국경제"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "포미닛 출신 전지윤, 22일 결혼…\"부끄럽고 설렌다\"",
-     "link": "https://www.yna.co.kr/view/AKR20261104147000005"
-    },
-    {
-     "src": "동아일보",
-     "title": "‘미래소년 출신’ 유도현, 오크컴퍼니와 전속계약 [공식]",
-     "link": "https://sports.donga.com/ent/article/all/20261109/134993285/1"
-    },
-    {
-     "src": "한겨레",
-     "title": "‘사업가 변신’ 그룹 노이즈 출신 홍종구…“그 시절 AI 있었다면 당연히 썼죠”",
-     "link": "https://www.hani.co.kr/arti/culture/music/1286278.html"
-    },
-    {
-     "src": "한국경제",
-     "title": "아이돌 '포미닛' 출신 전지윤, 11월 신부된다",
-     "link": "https://www.hankyung.com/article/2026110461907"
     }
    ]
   },
@@ -517,6 +552,39 @@
    ]
   },
   {
+   "kw": "사랑",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "세계일보",
+    "연합뉴스",
+    "조선일보"
+   ],
+   "n": 9,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "이창동이 그린 해고노동자 가족…'심장소리'와 '가능한 사랑'",
+     "link": "https://www.yna.co.kr/view/AKR20261106188700005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "심현보 \"결국 남는 건 사랑…일상 속 소소한 이야기로 담았죠\"",
+     "link": "https://www.yna.co.kr/view/AKR20261106140900005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "'가능한 사랑' 넷플 공개…이창동 \"거대 자본 빌리지만 독립성 추구\"",
+     "link": "https://www.yna.co.kr/view/AKR20261106118700005"
+    },
+    {
+     "src": "세계일보",
+     "title": "이창동 감독 “관계가 무너져도, 그걸 유지하는 건 사랑”",
+     "link": "https://www.segye.com/newsView/20261109514316"
+    }
+   ]
+  },
+  {
    "kw": "로맨스",
    "nsrc": 4,
    "srcs": [
@@ -546,39 +614,6 @@
      "src": "동아일보",
      "title": "남지현♥김재영 성인용품 감수성 차 로맨스→해피엔딩 (내가 떨릴 수 있게)",
      "link": "https://sports.donga.com/ent/article/all/20261109/134991852/1"
-    }
-   ]
-  },
-  {
-   "kw": "거짓말",
-   "nsrc": 4,
-   "srcs": [
-    "동아일보",
-    "연합뉴스",
-    "조선일보",
-    "한국경제"
-   ],
-   "n": 7,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "장선우 감독 '거짓말', 27년 만에 무삭제 완전판 재개봉",
-     "link": "https://www.yna.co.kr/view/AKR20261105072600005"
-    },
-    {
-     "src": "동아일보",
-     "title": "유인식 표 메가 IP ‘우영우’→‘100일의 거짓말’로 이어질까",
-     "link": "https://sports.donga.com/ent/article/all/20261109/134993168/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "있지 채령 “섹시 콘셉트? 안 노렸다면 거짓말…다 계산된 것”",
-     "link": "https://sports.donga.com/ent/article/all/20261109/134992084/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "있지 채령 “섹시 안 노렸다면 거짓말, 다음 위해 조금은 아껴뒀다”",
-     "link": "https://sports.donga.com/ent/article/all/20261109/134991974/1"
     }
    ]
   },
@@ -810,6 +845,39 @@
      "src": "SBS",
      "title": "\"제가 그렇게 잘했어요?\"…'가능한 사랑' 전도연, 쏟아지는 연기 호평에 던진 질문",
      "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008837498&plink=RSSLINK&cooper=RSSREADER"
+    }
+   ]
+  },
+  {
+   "kw": "신민아",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "연합뉴스",
+    "조선일보"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "신민아·이진욱의 휴먼 멜로…'수목금' 내년 상반기 방송",
+     "link": "https://www.yna.co.kr/view/AKR20261105032500005"
+    },
+    {
+     "src": "동아일보",
+     "title": "신민아, 파리 브이로그 촬영 사흘 만에 눈치 “찍고 있었어요?”",
+     "link": "https://sports.donga.com/ent/article/all/20261109/134995818/1"
+    },
+    {
+     "src": "뉴시스",
+     "title": "신민아♥김우빈, 결혼 후 첫 동반 포착…나란히 결혼식 참석",
+     "link": "https://www.newsis.com/view/NISX20261109_0003860369"
+    },
+    {
+     "src": "조선일보",
+     "title": "'재혼황후' 신민아, 로맨틱 왈츠 '반전' 있었다..이종석과 '현실' 자각 폭소",
+     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/09/GYYTCZRWGRTDMNBRGYYDINBXME/"
     }
    ]
   },
@@ -1210,38 +1278,6 @@
    ]
   },
   {
-   "kw": "사랑",
-   "nsrc": 3,
-   "srcs": [
-    "SBS",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 8,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "이창동이 그린 해고노동자 가족…'심장소리'와 '가능한 사랑'",
-     "link": "https://www.yna.co.kr/view/AKR20261106188700005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "심현보 \"결국 남는 건 사랑…일상 속 소소한 이야기로 담았죠\"",
-     "link": "https://www.yna.co.kr/view/AKR20261106140900005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "'가능한 사랑' 넷플 공개…이창동 \"거대 자본 빌리지만 독립성 추구\"",
-     "link": "https://www.yna.co.kr/view/AKR20261106118700005"
-    },
-    {
-     "src": "SBS",
-     "title": "\"제가 그렇게 잘했어요?\"…'가능한 사랑' 전도연, 쏟아지는 연기 호평에 던진 질문",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008837498&plink=RSSLINK&cooper=RSSREADER"
-    }
-   ]
-  },
-  {
    "kw": "아내",
    "nsrc": 3,
    "srcs": [
@@ -1302,38 +1338,6 @@
      "src": "SBS",
      "title": "'가능한 사랑', 제46회 영평상 작품상…조인성·전도연 남녀주연상 영예",
      "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008832284&plink=RSSLINK&cooper=RSSREADER"
-    }
-   ]
-  },
-  {
-   "kw": "재혼황후",
-   "nsrc": 3,
-   "srcs": [
-    "뉴시스",
-    "조선일보",
-    "한국경제"
-   ],
-   "n": 7,
-   "headlines": [
-    {
-     "src": "한국경제",
-     "title": "'재혼황후' 한국판 '브리저튼'?…선입견 넘고 K-로판 새 역사 쓸까 [종합]",
-     "link": "https://www.hankyung.com/article/202611032647H"
-    },
-    {
-     "src": "한국경제",
-     "title": "'재혼황후' 이종석, 국내 최초 새 연기 \"제가 좀 새 상…사람으로 변할 때 나체로 등장\"",
-     "link": "https://www.hankyung.com/article/202611032589H"
-    },
-    {
-     "src": "한국경제",
-     "title": "'재혼황후' 주지훈, 욕받이 자처 \"삿대질 하고 현생 시원하다면 만족\"",
-     "link": "https://www.hankyung.com/article/202611032480H"
-    },
-    {
-     "src": "한국경제",
-     "title": "'재혼황후', 하루 앞당겨 오늘 공개…조수원 감독 \"떨리고 기대된다\"",
-     "link": "https://www.hankyung.com/article/202611032434H"
     }
    ]
   }
