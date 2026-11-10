@@ -105,3 +105,8 @@ main .qk a{display:flex;gap:10px;align-items:flex-start;min-height:56px;padding:
 .rd-cr{margin:6px 0 14px;font-size:12px;line-height:1.45;color:#64748b}main .rd-cr a{color:inherit;text-decoration:underline}
 @media(max-width:700px){.rd-im{margin:-20px -20px 0}}
 @media(min-width:1001px){.rd-im img{aspect-ratio:2/1}}
+
+/* ⑦ 많이 찾는 글(2026-11-10): 구분선 2열 목록에 순위 숫자 */
+.pp-l{counter-reset:pp}
+.pp-l li{position:relative;padding-left:34px;counter-increment:pp}
+.pp-l li::before{content:counter(pp);position:absolute;left:2px;top:15px;font-size:19px;line-height:1.3;font-weight:800;color:var(--br)}

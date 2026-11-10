@@ -509,6 +509,100 @@ def _sec_guides(seen):
     return f'<section class="h2-sec" aria-labelledby="s-gd"><div class="h2-hd"><h2 id="s-gd">생활 가이드</h2><a href="/money/guide/">가이드 전체 {_ic("arrow", "sv s")}</a></div><ul class="gd-l">{li}</ul></section>'
 
 
+def _page_meta(root, url):
+    """배포본에서 제목(h1)·설명을 읽는다. 없는 페이지·색인 제외 페이지는 None (홈에서 빈 곳·막힌 곳으로 보내지 않는다)."""
+    import os
+    try:
+        t = open(os.path.join(root, *url.strip('/').split('/'), 'index.html'), encoding='utf-8').read()
+    except Exception:
+        return None
+    if re.search(r'<meta[^>]+name=["\']?robots["\']?[^>]+noindex', t):
+        return None
+    m = re.search(r'<h1[^>]*>(.*?)</h1>', t, re.S)
+    if not m:
+        return None
+    d = re.search(r'<meta name="description" content="([^"]*)"', t)
+    return H.unescape(re.sub(r'<[^>]+>', '', m.group(1))).strip(), (H.unescape(d.group(1)).strip() if d else '')
+
+
+def _sec_pop(cands, seen, n=6, max_issue=2):
+    """많이 찾는 글(2026-11-10 사용자 「접근 기록들 기반으로 개편」): 최근 7일 방문자 수 순(pop_fetch.py → pop.json).
+    글 페이지만(생활 가이드·고민 해결·이슈). 이슈는 보관 기간 안의 글만, 최대 2건(나머지는 바로 아래 「지금 읽을 글」). 실패하면 빈 구역 — 홈 빌드를 멈추지 않는다."""
+    try:
+        import os
+        import pop_fetch
+        pop_fetch.refresh()   # 6시간에 한 번만 실제로 읽는다(그 사이엔 파일 그대로). 실패해도 예외를 내지 않는다
+        pop = pop_fetch.load()
+        if not pop:
+            return ''
+        root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        live = {c[0]: c for c in cands}
+        pick, n_is = [], 0
+        for u, v in sorted(pop.items(), key=lambda x: (-x[1], x[0])):
+            if u in seen or v < 3:
+                continue
+            m = re.fullmatch(r'/(money/guide|guide|issue)/[a-z0-9][a-z0-9\-]*/', u)
+            if not m:
+                continue
+            if m.group(1) == 'issue':
+                c = live.get(u)
+                if not c or n_is >= max_issue:
+                    continue
+                n_is += 1
+                pick.append((u, c[1] or '이슈', c[2], c[3]))
+            else:
+                pm = _page_meta(root, u)
+                if not pm or not pm[0]:
+                    continue
+                pick.append((u, '생활 가이드' if m.group(1) == 'money/guide' else '고민 해결', pm[0], pm[1]))
+            if len(pick) == n:
+                break
+        if len(pick) < 4:
+            return ''
+        pick = pick[:len(pick) // 2 * 2]   # 2열 목록이라 짝수로
+        for p in pick:
+            seen.add(p[0])
+        def ttl(t):   # 질문 꼬리를 떼다 「…요율은」처럼 조사에서 끊기면 질문까지 그대로 쓴다
+            s = _dt(t)
+            return t.split('?')[0].strip() + '?' if '?' in t and re.search(r'[은는]$', s) else s
+        li = ''.join(f'<li><p class="kk">{E(k)}</p><h3><a href="{E(u)}">{E(_short(ttl(t), 60))}</a></h3><p class="sm">{E(_first_sentences(s, 70))}</p></li>' for u, k, t, s in pick)
+        return (f'<section class="h2-sec" aria-labelledby="s-pop"><div class="h2-hd"><h2 id="s-pop">많이 찾는 글</h2><a href="/money/guide/">가이드 전체 {_ic("arrow", "sv s")}</a></div>'
+                f'<ol class="gd-l pp-l">{li}</ol><p class="h2-nt">최근 7일 동안 방문이 많았던 글 순서입니다.</p></section>')
+    except Exception as e:
+        print('홈 「많이 찾는 글」 건너뜀', repr(e)[:160])
+        return ''
+
+
+def _sec_season(seen, n=6):
+    """이번 달 챙길 일정(2026-11-10 마케터 제안: 종부세·연말정산·정시처럼 날짜가 정해진 수요). guide_topics.json 의 season:[{label, when, until, slug}].
+    기한(until)이 지난 줄·가이드 페이지가 없는 줄은 건너뛴다. 2건 미만이면 구역을 만들지 않는다."""
+    try:
+        import os
+        here = os.path.dirname(os.path.abspath(__file__)); root = os.path.dirname(here)
+        L = json.load(open(os.path.join(here, 'guide_topics.json'), encoding='utf-8')).get('season') or []
+        today = datetime.date.today().isoformat(); rows = []
+        for s in sorted(L, key=lambda s: s.get('until') or ''):
+            if not s.get('label') or not s.get('slug') or (s.get('until') or '') < today:
+                continue
+            u = next((p for p in (f'/money/guide/{s["slug"]}/', f'/guide/{s["slug"]}/') if _page_meta(root, p)), None)
+            if not u or u in {r[0] for r in rows}:
+                continue
+            rows.append((u, s['label'], s.get('when') or '', _page_meta(root, u)[0]))
+            if len(rows) == n:
+                break
+        if len(rows) < 2:
+            return ''
+        rows = rows[:len(rows) // 2 * 2]
+        for r in rows:
+            seen.add(r[0])
+        li = ''.join(f'<li><p class="kk">{E(w)}</p><h3><a href="{E(u)}">{E(_short(lb, 40))}</a></h3><p class="sm">{E(_short(_dt(t), 60))}</p></li>' for u, lb, w, t in rows)
+        return (f'<section class="h2-sec" aria-labelledby="s-ssn"><div class="h2-hd"><h2 id="s-ssn">이번 달 챙길 일정</h2><a href="/money/guide/">가이드 전체 {_ic("arrow", "sv s")}</a></div>'
+                f'<ul class="gd-l">{li}</ul></section>')
+    except Exception as e:
+        print('홈 「이번 달 챙길 일정」 건너뜀', repr(e)[:160])
+        return ''
+
+
 def _kw_chips(seen, n=10):
     """읽을 수 있는 주요 주제: 작성 완료된 키워드 글(단기→중기 순, 점수순)을 글자 칩으로."""
     import os
@@ -528,9 +622,10 @@ def _kw_chips(seen, n=10):
 
 
 def _sec_topics(ctx, seen):
-    tp = [('이슈', '/issue/', 'issue', '요즘 화제를 출처와 함께'), ('지원금·청약', '/apply/', 'apply', '신청 기간·대상 정리'), ('공모전', '/contest/', 'contest', f'진행 중 {ctx["n_contest"]}건'),
-          ('생활 가이드', '/money/guide/', 'guide', '세금·일·집·건강'), ('경품 이벤트', '/event/', 'event', '마감순 정리'), ('레시피', '/fridge/', 'recipe', '재료로 찾는 집밥'),
-          ('계산기', '/money/tools/salary/', 'calc', '실수령액·퇴직금'), ('전자책', '/book/', 'guide', '가이드를 묶은 무료 책'), ('루리 위키', '/wiki/', 'wiki', '문서로 묶은 정보'), ('고민 해결', '/qa/', 'guide', '자주 묻는 질문 400여 개')]
+    # 2026-11-10: 11월 방문 기록에서 방문자가 많은 주제 순(생활 가이드 835 · 이슈 408 · 공모전 402 · 고민 해결 205 · 지원금 48 · 레시피 39 …)
+    tp = [('생활 가이드', '/money/guide/', 'guide', '세금·보험·일·집'), ('이슈', '/issue/', 'issue', '요즘 화제를 출처와 함께'), ('공모전', '/contest/', 'contest', f'진행 중 {ctx["n_contest"]}건'),
+          ('고민 해결', '/qa/', 'guide', '자주 묻는 질문 400여 개'), ('지원금·청약', '/apply/', 'apply', '신청 기간·대상 정리'), ('레시피', '/fridge/', 'recipe', '재료로 찾는 집밥'),
+          ('계산기', '/money/tools/salary/', 'calc', '실수령액·퇴직금'), ('경품 이벤트', '/event/', 'event', '마감순 정리'), ('전자책', '/book/', 'guide', '가이드를 묶은 무료 책'), ('루리 위키', '/wiki/', 'wiki', '문서로 묶은 정보')]
     cards = ''.join(f'<li><a href="{u}">{_ic(ic)}<span><b>{E(n)}</b><small>{E(s)}</small></span></a></li>' for n, u, ic, s in tp)
     ch = _kw_chips(seen)
     mp = f'<a class="mp" href="/map/">{_ic("map", "sv s")}키워드 지도에서 탐색</a>'
@@ -552,19 +647,21 @@ def _sec_ent(ent, seen):
 def home_html(ctx):
     seen = set()
     cands = _read_candidates(ctx)
-    top = ('<section class="h2-top" aria-labelledby="h2-t"><h1 id="h2-t">지원금·공모전·생활 정보, 필요한 것을 바로 찾으세요</h1>'
-           '<p class="lead">이슈부터 지원금·공모전까지, 출처와 함께 정리합니다. 자료는 AI로 수집·정리합니다. <a href="/about/#method">만드는 방식</a></p>'
+    # 2026-11-10 방문 기록 기준 개편: 들어오는 글의 44%가 생활 가이드·고민 해결, 13~25%가 이슈, 19%가 공모전. 홈에서 다음으로 누르는 곳은 공모전이 가장 많다.
+    # → 첫 문장·검색 예시·바로가기를 그 순서로, 「많이 찾는 글」(실제 방문 순)을 맨 앞 구역으로.
+    top = ('<section class="h2-top" aria-labelledby="h2-t"><h1 id="h2-t">생활 가이드·이슈·공모전, 필요한 것을 바로 찾으세요</h1>'
+           '<p class="lead">세금·보험·장학금 같은 생활 정보부터 요즘 이슈, 공모전·지원금까지 출처와 함께 정리합니다. 자료는 AI로 수집·정리합니다. <a href="/about/#method">만드는 방식</a></p>'
            f'<form class="h2-s" role="search" action="/wiki/"><div class="row"><label class="sr" for="hs">검색 범위</label><select id="hs"><option value="">전체</option><option value="c">공모전</option><option value="a">지원금</option><option value="w">가이드</option><option value="r">레시피</option></select>'
-           '<label class="sr" for="hq">검색어</label><input id="hq" type="search" placeholder="예: 청년 월세, 영상 공모전, 근로장려금" autocomplete="off" enterkeyhint="search"><button type="submit" class="go">검색</button></div>'
+           '<label class="sr" for="hq">검색어</label><input id="hq" type="search" placeholder="예: 4대보험 요율, 국가장학금, 영상 공모전" autocomplete="off" enterkeyhint="search"><button type="submit" class="go">검색</button></div>'
            '<div class="res" id="hr" aria-live="polite"></div></form>'
            '<ul class="qk" aria-label="목적별 바로가기">'
-           f'<li><a href="/apply/">{_ic("apply")}<span><b>지원금 찾기</b><small>대상·지역으로 확인</small></span></a></li>'
+           f'<li><a href="/money/guide/">{_ic("guide")}<span><b>생활 가이드</b><small>세금·보험·일·집 정보</small></span></a></li>'
            f'<li><a href="/contest/">{_ic("contest")}<span><b>공모전 찾기</b><small>분야·마감으로 비교</small></span></a></li>'
-           f'<li><a href="/money/guide/">{_ic("guide")}<span><b>생활 가이드</b><small>세금·일·집 정보</small></span></a></li>'
-           f'<li><a href="/money/tools/salary/">{_ic("calc")}<span><b>계산기</b><small>필요한 금액 바로 계산</small></span></a></li></ul></section>')
+           f'<li><a href="/apply/">{_ic("apply")}<span><b>지원금 찾기</b><small>대상·지역으로 확인</small></span></a></li>'
+           f'<li><a href="/issue/">{_ic("issue")}<span><b>요즘 이슈</b><small>출처와 함께 정리</small></span></a></li></ul></section>')
     ent = [c for c in cands if c[1] == '연예']; cands = [c for c in cands if c[1] != '연예']
-    return (top + _sec_read(cands, seen) + _opp_cards(ctx, seen) + _sec_guides(seen) + _sec_ent(ent, seen) + _sec_topics(ctx, seen)
-            + '<link rel="stylesheet" href="/assets/home/home2.css?v=10"><script defer src="/assets/home/home2.js?v=3"></script>')
+    return (top + _sec_pop(cands, seen) + _sec_season(seen) + _sec_read(cands, seen) + _opp_cards(ctx, seen) + _sec_guides(seen) + _sec_ent(ent, seen) + _sec_topics(ctx, seen)
+            + '<link rel="stylesheet" href="/assets/home/home2.css?v=11"><script defer src="/assets/home/home2.js?v=3"></script>')
 
 
 def kwmap_page_html():

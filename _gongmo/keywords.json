@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-10 15:00",
+ "updated": "2026-11-10 16:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -867,6 +867,18 @@
    "expires": "2026-11-13"
   },
   {
+   "query": "테슬라 모델 y",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-03",
+   "expires": "2026-11-13"
+  },
+  {
    "query": "저기압",
    "tier": "단기",
    "signal": [
@@ -1608,6 +1620,42 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-09",
+   "expires": "2026-11-13"
+  },
+  {
+   "query": "ssg 랜더스",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-10",
+   "expires": "2026-11-13"
+  },
+  {
+   "query": "부부",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-10",
+   "expires": "2026-11-13"
+  },
+  {
+   "query": "분당 신도시",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-10",
    "expires": "2026-11-13"
   },
   {
@@ -2367,18 +2415,6 @@
    "expires": "2026-11-13"
   },
   {
-   "query": "테슬라 모델 y",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 1000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-03",
-   "expires": "2026-11-13"
-  },
-  {
    "query": "권상우",
    "tier": "단기",
    "signal": [
@@ -2932,6 +2968,18 @@
   },
   {
    "query": "김치",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-10",
+   "expires": "2026-11-13"
+  },
+  {
+   "query": "회사",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -11645,6 +11693,19 @@
    "expires": "2026-11-23"
   },
   {
+   "query": "1기 신도시 아파트 거래량 늘었는데 분당·평촌은 줄었다, 지역별 거래건수와 집값 변동 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 2,
+   "status": "작성",
+   "page": "/issue/first-gen-newtown-trades-nov-1110/",
+   "registered": "2026-11-10",
+   "expires": "2026-11-17"
+  },
+  {
    "query": "폴더블 스마트폰 갤럭시 Z폴드8 판매 20% 증가 보도, 아이폰 듀오 출시 후",
    "tier": "중기",
    "signal": [
@@ -11866,6 +11927,19 @@
    "expires": "2026-11-16"
   },
   {
+   "query": "임영웅 아임 히어로 더 스타디움 2 IMAX 상영 일정과 예매 방법, CGV 개봉일 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 2,
+   "status": "작성",
+   "page": "/issue/lim-youngwoong-stadium-imax-1110/",
+   "registered": "2026-11-10",
+   "expires": "2026-11-17"
+  },
+  {
    "query": "연애박사 편성 시간 시청률 출연진, 최근 회차 줄거리 정리",
    "tier": "중기",
    "signal": [
@@ -11981,6 +12055,19 @@
    "page": "/issue/remarried-empress-buzz-rank-1110/",
    "registered": "2026-11-10",
    "expires": "2026-11-24"
+  },
+  {
+   "query": "리센느 미니 4집 PULSE 첫주 판매량 60만장 하프 밀리언셀러, 발매일·타이틀곡 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 2,
+   "status": "작성",
+   "page": "/issue/rescene-mini4-comeback-1103/",
+   "registered": "2026-11-03",
+   "expires": "2026-11-10"
   },
   {
    "query": "신인감독 김연경2 5회 내용: 원더독스 흥국생명전 3대2 역전승과 세트 점수, 시청률 5.2%, 6회 예고",
@@ -12278,19 +12365,6 @@
    "score": 1,
    "status": "작성",
    "page": "/issue/real-estate-lecturer-12-5b-fraud-referral/",
-   "registered": "2026-11-03",
-   "expires": "2026-11-10"
-  },
-  {
-   "query": "리센느 컴백 미니 4집 PULSE 발매일·타이틀곡 정리",
-   "tier": "중기",
-   "signal": [
-    "뉴스",
-    "구글트렌드"
-   ],
-   "score": 1,
-   "status": "작성",
-   "page": "/issue/rescene-mini4-comeback-1103/",
    "registered": "2026-11-03",
    "expires": "2026-11-10"
   },

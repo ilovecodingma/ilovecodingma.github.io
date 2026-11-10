@@ -100,7 +100,7 @@ THEMES = [next(t for t in THEMES if t[0] == k) for k in ('today', 'recipe', 'wat
 # 2026-11-05 모바일 점검: 생활 가이드·계산기·고민 해결 글에 「애널리스트 종합·전문가 코멘트」 하위 메뉴가 떠서, 이 주소들은 가이드용 하위 메뉴를 쓴다
 GUIDE_SUB = [('/money/guide/', '생활 가이드'), ('/qa/', '고민 해결'), ('/money/tools/salary/', '계산기'), ('/book/', '전자책'), ('/wiki/', '위키')]
 GUIDE_SUB_PX = ('/money/guide/', '/money/tools/', '/qa/')
-GN_MAIN = ('issue', 'apply', 'contest', 'money', 'wiki')   # 헤더에 항상 보이는 주요 주제(나머지는 「전체」)
+GN_MAIN = ('money', 'issue', 'contest', 'apply')   # 헤더에 항상 보이는 주요 주제(나머지는 「전체」). 2026-11-10 방문 기록 순: 생활 가이드(들어오는 글의 44%) → 이슈 → 공모전 → 지원금. 위키(11월 방문자 5명)는 「전체」로
 GN_HOME = {'money': '/money/guide/', 'issue': '/issue/'}
 GN_LABEL = {'apply': '지원금<span class="x">·청약</span>', 'money': '생활 가이드', 'wiki': '위키'}
 
@@ -805,7 +805,7 @@ def ref_pages():
         ld = {'@context': 'https://schema.org', '@type': 'Article', 'headline': title, 'description': desc, 'inLanguage': 'ko', 'datePublished': '2026-10-30', 'dateModified': '2026-10-30',
               'mainEntityOfPage': SITE + u, 'author': {'@type': 'Organization', 'name': '루리 줍줍 편집', 'url': SITE + '/'}, 'publisher': {'@type': 'Organization', 'name': NAME, 'url': SITE + '/'}}
         _REFS.append((u, title, desc))
-        page(u, title, desc, f'<p class="bc"><a href="/">홈</a> › <a href="/guide/">가이드</a> › 기준 자료</p><h1>{E(title)}</h1><div class="art">{body}</div><link rel="stylesheet" href="/assets/guide/guide.css?v=7">',
+        page(u, title, desc, f'<p class="bc"><a href="/">홈</a> › <a href="/guide/">가이드</a> › 기준 자료</p><h1>{E(title)}</h1><div class="art">{body}</div><link rel="stylesheet" href="/assets/guide/guide.css?v=8">',
              [('루리 줍줍', '/'), ('가이드', '/guide/'), ('기준 자료', u)], ld)
 
 
@@ -3313,7 +3313,7 @@ def game_extra_pages():
                    '<p class="kwn">테마 페스티벌은 특정 장르 게임을 모아 홍보하는 행사이고 할인 게임이 우선이에요. Next Fest 는 출시 전 게임의 체험판을 해 보는 행사예요(공식 설명 기준).</p>' if fr else '')
                 + '<h2>자주 묻는 질문</h2>' + faq + cp_box('게임 게이밍 PC', '게임할 때 많이 찾는 물건:', 2, strict=True) + join_cta('game') + _cite_box({'basis': f'확인일 {td.isoformat()}', 'sources': [('Steamworks 「Upcoming Steam Events」', ''), ('SteamDB', '')], 'sections': [{'table': 1}]}, '/game/steam-sale/')
                 + f'<p class="hm-links"><a href="/game/">🎮 게임 허브</a> · <a href="/game/refund/">↩️ 스팀 환불 규정</a> · <a href="/game/free/">🎁 에픽 무료 게임 기록</a></p>' + GAME_CSS)
-        page('/game/steam-sale/', f'스팀 세일 언제 하나요? 시즌 세일 달력 {td.year}~{td.year + 1} (겨울·봄·여름·가을, Next Fest)', '스팀 시즌 세일과 테마 페스티벌, Next Fest 일정을 스팀 공식 일정 문서 기준으로 정리했어요. 다음 세일까지 며칠 남았는지도 매일 갱신해요.',
+        page('/game/steam-sale/', f'스팀 세일 언제 하나요? {td.year} 가을(블랙 프라이데이)·겨울 세일 달력 {td.year}~{td.year + 1}, Next Fest', '스팀 시즌 세일과 테마 페스티벌, Next Fest 일정을 스팀 공식 일정 문서 기준으로 정리했어요. 다음 세일까지 며칠 남았는지도 매일 갱신해요.',
              body, [('루리 줍줍', '/'), ('게임', '/game/'), ('스팀 세일 달력', '/game/steam-sale/')], ld)
         urls.append('/game/steam-sale/')
     # ---- 신작 출시 일정 (스팀 인기 출시 예정 중 날짜가 확정된 것만)
@@ -3511,7 +3511,7 @@ def article_enhance(path, body):
         i = body.find('<h2')
         body = body[:i] + nav + body[i:] if i >= 0 else body
     body = re.sub(r'(?<!tblw">)(<table\b.*?</table>)', r'<div class="tblw">\1</div>', body, flags=re.S) if '<div class="tblw"' not in body else body
-    return '<div class="art">' + body + '</div><link rel="stylesheet" href="/assets/guide/guide.css?v=7">'
+    return '<div class="art">' + body + '</div><link rel="stylesheet" href="/assets/guide/guide.css?v=8">'
 
 
 def _hl(t):
@@ -3669,6 +3669,67 @@ def _psplit(t, lim=240):
     return out
 
 
+_GT_CACHE = []
+TOPIC_TOP_F = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'topic_top.json')
+
+
+def guide_topics():
+    """guide_topics.json(마케터 관리, 2026-11-10): ({key: 주제}, {slug: key}). 파일이 없거나 깨졌으면 빈 값 — 빌드는 계속."""
+    if not _GT_CACHE:
+        try:
+            d = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'guide_topics.json'), encoding='utf-8'))
+            _GT_CACHE.append(({t['key']: t for t in d.get('topics', [])}, dict(d.get('map', {}))))
+        except Exception as e:
+            print('guide_topics.json 읽기 실패(주제 묶음 없이 계속)', repr(e)[:120]); _GT_CACHE.append(({}, {}))
+    return _GT_CACHE[0]
+
+
+def topic_top(G, days=7, keep=5):
+    """주제별 「많이 찾는 글」 순서 {key: [slug…]}. 최근 7일 방문자 순(pop.json), 모자라면 같은 주제의 최신 글로 채운다.
+    한 번 정한 순서는 7일 동안 그대로 쓴다(topic_top.json) — 방문 수가 바뀔 때마다 가이드 수백 쪽이 다시 바뀌지 않게."""
+    try:
+        d = json.load(open(TOPIC_TOP_F, encoding='utf-8'))
+        if time.time() - d.get('gen', 0) < days * 86400 and d.get('top'):
+            return d['top']
+    except Exception:
+        pass
+    T, M = guide_topics()
+    if not M:
+        return {}
+    try:
+        import pop_fetch
+        pop = pop_fetch.load()
+    except Exception:
+        pop = {}
+    by = {}
+    for i, g in enumerate(G):
+        k = M.get(g['slug'])
+        if k in T:
+            by.setdefault(k, []).append((-(pop.get(f'/money/guide/{g["slug"]}/', 0)), -i, g['slug']))
+    top = {k: [[s, -v] for v, _i, s in sorted(L)[:keep]] for k, L in by.items()}   # [slug, 최근 7일 방문자 수(2명 미만은 0)]
+    try:
+        json.dump({'gen': int(time.time()), 'top': top}, open(TOPIC_TOP_F, 'w', encoding='utf-8'), ensure_ascii=False, indent=0)
+    except Exception as e:
+        print('topic_top.json 쓰기 실패', repr(e)[:120])
+    return top
+
+
+def _topic_more(g, GN, top, n=3):
+    """가이드 본문 첫 섹션 뒤 「같은 주제에서 많이 찾는 글」(2026-11-10 방문 기록: 가이드로 들어온 사람의 8%만 다음 글로 가고, 절반 가까이가 화면 4분의 1 전에 나간다 → 다음 글을 앞쪽에)."""
+    try:
+        T, M = guide_topics()
+        k = M.get(g['slug'])
+        L = [(s, v) for s, v in top.get(k, []) if s != g['slug'] and s in GN][:n] if k else []
+        if len(L) < 2:
+            return ''
+        li = ''.join(f'<li><a href="/money/guide/{s}/">{E(_dt_og(GN[s]["h1"]))}</a></li>' for s, _v in L)
+        ttl = f'「{E(T[k]["name"])}」에서 많이 찾는 글' if all(v >= 2 for _s, v in L) else f'「{E(T[k]["name"])}」 주제의 다른 글'   # 방문 기록이 없는 글이 섞이면 「많이 찾는」이라고 쓰지 않는다
+        return f'<aside class="g-more"><b>{ttl}</b><ul>{li}</ul></aside>'
+    except Exception as e:
+        print('같은 주제 글 묶음 건너뜀', g.get('slug'), repr(e)[:120])
+        return ''
+
+
 def kin_guides():
     """/money/guide/ 생활 돈 가이드 (2026-10-20 홍보 세션 지식iN 반복 질문): 근로장려금·내일배움카드·월세 세액공제 vs 청년월세·퇴직금. 공식 출처로 확인된 칸만 JSON 에 담고 숫자는 표로 분리."""
     if not os.path.exists(KIN_F):
@@ -3693,9 +3754,16 @@ def kin_guides():
         urls += BK.build(G, JR, page, ROOT)
     except Exception as _e:
         print('전자책 만들기 실패(사이트는 계속)', repr(_e)[:120])
+    _TOP = topic_top(G)   # 주제별 많이 찾는 글(7일마다 다시 정함)
     for g in G:
         secs, toc = '', []
-        for n_, sc in enumerate(g['sections'], 1):
+        _unf_g, n_ = '', 0
+        for sc in g['sections']:
+            # 2026-11-10: 「확인하지 못한 것」만 모은 섹션(22쪽, 모두 마지막 섹션·목록뿐)은 본문 뒤에 접어 둔다. 11/06 이슈에 적용한 기준과 같게 — 지우지 않는다.
+            if re.fullmatch(r'(줍줍이 )?확인하지 못한 (것|항목)', sc['h'].strip()) and sc.get('ul') and not (sc.get('table') or sc.get('p') or sc.get('html')):
+                _unf_g += '<ul class="gm-l">' + ''.join(f'<li>{x}</li>' for x in sc['ul']) + '</ul>'
+                continue
+            n_ += 1
             kind, ic_ = _sec_kind(sc['h'])
             h = f'<h2><span class="gs-n">{n_}</span>{E(sc["h"])}</h2>'
             if sc.get('table'):
@@ -3710,6 +3778,12 @@ def kin_guides():
                 h += sc['html']
             secs += f'<section class="gs gs-{kind}" id="s{n_}">{h}</section>'
             toc.append(f'<a href="#s{n_}"><i>{ic_}</i>{E(re.sub(chr(92) + "s*[(（].*?[)）]", "", sc["h"]))}</a>')
+        _tm = _topic_more(g, GN, _TOP)
+        if _tm:   # 첫 섹션 바로 뒤(읽다 나가기 전에 보이는 자리)
+            secs = secs.replace('</section>', '</section>' + _tm, 1)
+        if _unf_g:
+            secs += ('<details class="gs-un" style="margin:20px 0 8px;border:1px solid var(--bd,#e2e8f0);border-radius:12px;padding:0 16px"><summary style="cursor:pointer;padding:12px 0;min-height:44px;font-weight:700">'
+                     f'이 글에서 확인하지 못한 것</summary>{_unf_g}</details>')
         toc.append('<a href="#faq"><i>❓</i>자주 묻는 질문</a>'); toc.append('<a href="#src"><i>📎</i>공식 출처</a>')
         g_toc = '<nav class="g-toc" aria-label="이 글의 목차">' + ''.join(toc) + '</nav>'
         _m = re.search(r'확인일\s*(\d{4}-\d{2}-\d{2})', g.get('basis', ''))
@@ -3744,7 +3818,7 @@ def kin_guides():
                 + f'<p class="note">AI가 위 공식 출처를 바탕으로 확인일 기준으로 정리한 내용이고, 운영자가 한 건씩 직접 검토한 것은 아니에요. 기준 금액과 신청 기간은 해마다 바뀔 수 있어요. 신청 전에 위 공식 출처를 꼭 확인하고, 개별 사정은 {E(g["contact"])}에 문의하세요. 법률·세무 상담이 아니에요.</p></section>'
                 + _g_appendix(g)
                 + (f'<aside class="say"><img src="/assets/ruri/o_det_think_s.webp" width="56" height="77" alt="루리" loading="lazy"><div class="bub"><b>루리의 한마디</b><div>{E(g["lury_note"])}</div></div></aside>' if g.get('lury_note') else '')
-                + f'<p class="hm-links">{rel} · <a href="/money/guide/">다른 생활 돈 가이드</a></p>' + GAME_CSS + '<link rel="stylesheet" href="/assets/guide/guide.css?v=7">' + (f'<script defer src="{E(g["script"])}"></script>' if g.get('script') else ''))
+                + f'<p class="hm-links">{rel} · <a href="/money/guide/">다른 생활 돈 가이드</a></p>' + GAME_CSS + '<link rel="stylesheet" href="/assets/guide/guide.css?v=8">' + (f'<script defer src="{E(g["script"])}"></script>' if g.get('script') else ''))
         _og_g = og_art('guide', g['slug'], _dt_og(g['h1']), '생활 가이드 · ' + g['name'])
         _art_g = {'@context': 'https://schema.org', '@type': 'Article', 'headline': g['title'][:110], 'description': g['desc'], 'inLanguage': 'ko',
                   'mainEntityOfPage': SITE + f'/money/guide/{g["slug"]}/', 'image': SITE + _og_g,
@@ -4024,23 +4098,30 @@ def issue_json_pages():
             for _u, _n in xlinks()['issue'].get(sl) or []:   # 같은 주제의 생활 가이드를 자동으로 덧붙인다(원고에 이미 있으면 건너뜀)
                 if _u not in [x[0] for x in _rl_i]:
                     _rl_i.append((_u, _n + ' 가이드'))
+            _lv = {x[1] for x in _live}   # 2026-11-10: 내려간 이슈(단기 키워드 정리)로 가는 관련 링크는 빼서 깨진 링크를 만들지 않는다
+            _rl_i = [x for x in _rl_i if not (re.fullmatch(r'/issue/([^/]+)/', x[0]) and re.fullmatch(r'/issue/([^/]+)/', x[0]).group(1) not in _lv)]
             rel = ''.join(f'<a href="{E(u_)}">{E(n_)}</a>' for u_, n_ in _rl_i)
             _cat = set(re.split(r'[/·,\s]+', c.get('category') or '')) - {''}
             _oth = [x for x in _live if x[1] != sl]
             _mo = ([x for x in _oth if x[2] & _cat] + [x for x in _oth if not (x[2] & _cat)])[:5]   # 같은 분류 먼저(최신순), 모자라면 다른 분류 최신 글로 채운다
+            # 2026-11-10 방문 기록: 이슈로 들어온 사람의 4%만 다음 글로 가고 절반이 화면 4분의 1 전에 나간다 → 이어 볼 글 2~3건을 첫 단락(확인된 것) 바로 뒤에도 둔다.
+            _nx = [(u_, n_) for u_, n_ in _rl_i if u_.startswith('/money/guide/')][:1] + [(f'/issue/{x[1]}/', x[3]) for x in _mo[:2]]
+            if len(_nx) >= 2 and secs.count('<h2>') >= 2:
+                _i2 = secs.find('<h2>', secs.find('<h2>') + 4)
+                secs = (secs[:_i2] + '<aside class="g-more"><b>이어서 볼 글</b><ul>' + ''.join(f'<li><a href="{E(u_)}">{E(n_)}</a></li>' for u_, n_ in _nx) + '</ul></aside>' + secs[_i2:])
             if _mo:
                 rel += '</p><h2>최근 이슈 더 보기</h2><ul class="gm-l">' + ''.join(f'<li><a href="/issue/{E(x[1])}/">{E(x[3])}</a> <small>{x[0][5:].replace("-", "/")}</small></li>' for x in _mo) + '</ul><p class="hm-links"><a href="/issue/">이슈 전체 보기</a>'
-            body = (f'<p class="bc"><a href="/">홈</a> › 이슈 › {E(c["h1"][:30])}</p><h1>{E(c["h1"])}</h1>'
+            body = (f'<p class="bc"><a href="/">홈</a> › <a href="/issue/">이슈</a> › {E(c["h1"][:30])}</p><h1>{E(c["h1"])}</h1>'
                     f'<div class="cat-st"><b>결론</b><br>{sent_list(c["summary"])}</div><p class="note">{c["date"]} 기준 · 이 글은 단기 이슈라 {int(c.get("keep_days", 4))}일 뒤 내려가요.</p>'
                     + ((PH.figure(_ph) + PH.CSS) if _ph else '') + secs + (f'<p class="hm-links">{rel}</p>' if rel else '')
-                    + '<style>.xt{border-collapse:collapse;width:100%;font-size:14px}.xt th,.xt td{border:1px solid #e5e7eb;padding:6px 8px;text-align:left;vertical-align:top}.xt th{background:#f8fafc}.xt td{overflow-wrap:anywhere}.is-un{margin:28px 0 0;border:1px solid var(--bd,#e2e8f0);border-radius:8px;padding:0 14px}.is-un>summary{min-height:48px;display:flex;align-items:center;cursor:pointer;font-weight:700;font-size:15px;color:var(--mu,#475569)}.is-un[open]{padding-bottom:12px}.is-un h3{font-size:16px;margin:16px 0 6px}.cat-ul{margin:6px 0 0;padding-left:18px}.cat-ul li{margin:6px 0;line-height:1.65}</style>')
+                    + '<style>.xt{border-collapse:collapse;width:100%;font-size:14px}.xt th,.xt td{border:1px solid #e5e7eb;padding:6px 8px;text-align:left;vertical-align:top}.xt th{background:#f8fafc}.xt td{overflow-wrap:anywhere}.is-un{margin:28px 0 0;border:1px solid var(--bd,#e2e8f0);border-radius:8px;padding:0 14px}.is-un>summary{min-height:48px;display:flex;align-items:center;cursor:pointer;font-weight:700;font-size:15px;color:var(--mu,#475569)}.is-un[open]{padding-bottom:12px}.is-un h3{font-size:16px;margin:16px 0 6px}.cat-ul{margin:6px 0 0;padding-left:18px}.cat-ul li{margin:6px 0;line-height:1.65}.g-more{margin:22px 0;padding:14px 16px 6px;border:1px solid var(--bd,#e2e8f0);border-radius:12px}.g-more>b{display:block;font-size:14px;color:var(--mu,#475569);margin-bottom:2px}.g-more ul{list-style:none;margin:0;padding:0}.g-more li+li{border-top:1px solid var(--bd,#e2e8f0)}main .g-more a{display:block;padding:11px 0;font-size:16px;line-height:1.45;font-weight:700;text-decoration:none}</style>')
             art = {'@context': 'https://schema.org', '@type': 'Article', 'headline': c['title'], 'description': c['desc'], 'inLanguage': 'ko',
                    'datePublished': c['date'], 'dateModified': c['date'], 'mainEntityOfPage': SITE + p_,
                    'author': {'@type': 'Organization', 'name': '루리 줍줍 편집', 'url': SITE + '/'}, 'publisher': {'@type': 'Organization', 'name': NAME, 'url': SITE + '/'}}
             _og_i = og_art('issue', c['slug'], _dt_og(c['h1']), '이슈 · ' + c['date'][5:].replace('-', '.') + ' 기준')
             art['image'] = SITE + _og_i   # 2026-11-06 구조화 데이터 점검: Article 에 대표 이미지가 빠져 있었다
             ld_ = {'@context': 'https://schema.org', '@graph': [art, fld]} if fld else art
-            page(p_, c['title'], c['desc'], body, [('루리 줍줍', '/'), ('이슈', '/news/'), (c['h1'][:20], p_)], ld_, full_title=True, og=_og_i)
+            page(p_, c['title'], c['desc'], body, [('루리 줍줍', '/'), ('이슈', '/issue/'), (c['h1'][:20], p_)], ld_, full_title=True, og=_og_i)
             urls.append(p_)
             _is = c.get('home_sum') or (re.split(r'(?<=[다요]\.)\s+', c['summary'].strip())[0])
             icards.append((c['date'], f'<li><div><a href="{p_}">{E(c.get("home_title") or c["h1"])}</a><p>{E(_is)}</p><small>{E(c.get("category") or "이슈")} · {c["date"][5:].replace("-", "/")} 기준</small></div>' + (f'<a href="{p_}" tabindex="-1" aria-hidden="true">{PH.thumb(_ph)}</a>' if _ph else '') + '</li>'))
@@ -4408,8 +4489,9 @@ def talk_pages():
                  '<p class="bc"><a href="/">홈</a> › 커뮤니티 이슈</p><h1>💬 루리의 커뮤니티 이슈</h1>' + body, [('루리 줍줍', '/'), ('커뮤니티 이슈', '/talk/')])
         page(f'/talk/{d}/', f'{kdate(d)} 커뮤니티 이슈 TOP{len(iss)} — 더쿠·클리앙·디시 등 지금 뜨는 화제', dsc,
              f'<p class="bc"><a href="/">홈</a> › <a href="/talk/">커뮤니티 이슈</a> › {kdate(d)}</p><h1>💬 {kdate(d)} 커뮤니티 이슈</h1>' + body,
-             [('루리 줍줍', '/'), ('커뮤니티 이슈', '/talk/'), (kdate(d), f'/talk/{d}/')])
-        urls.append(f'/talk/{d}/')
+             [('루리 줍줍', '/'), ('커뮤니티 이슈', '/talk/'), (kdate(d), f'/talk/{d}/')], canon='/talk/' if i == 0 else None)
+        if i:   # 2026-11-10: 오늘 날짜 페이지는 /talk/ 와 본문이 같아서 대표 주소를 /talk/ 로 두고 사이트맵에서 뺀다(날이 지나 확정되면 따로 색인)
+            urls.append(f'/talk/{d}/')
     return urls
 
 
