@@ -1,5 +1,5 @@
 {
- "at": "2026-11-11 03:30",
+ "at": "2026-11-11 05:06",
  "nitems": 530,
  "cands": [
   {
@@ -415,7 +415,7 @@
    ]
   },
   {
-   "kw": "바람이",
+   "kw": "분다",
    "nsrc": 5,
    "srcs": [
     "뉴시스",
@@ -449,7 +449,7 @@
    ]
   },
   {
-   "kw": "분다",
+   "kw": "바람이",
    "nsrc": 5,
    "srcs": [
     "뉴시스",
@@ -879,6 +879,39 @@
    ]
   },
   {
+   "kw": "정승제",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "조선일보",
+    "헤럴드경제"
+   ],
+   "n": 6,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "정승제, 4살 의대반 비판하더니…“선행학습 제대로 하면 1살도 가능”",
+     "link": "https://sports.donga.com/ent/article/all/20261110/135003022/1"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "정승제 “요즘 스타강사, 대학교 1학년 때부터 아이돌 연습생처럼 키워”",
+     "link": "https://biz.heraldcorp.com/article/10932757"
+    },
+    {
+     "src": "뉴시스",
+     "title": "정승제, 주우재도 놀란 외모 관리 \"피부과 2주마다 간다\"",
+     "link": "https://www.newsis.com/view/NISX20261110_0003862867"
+    },
+    {
+     "src": "뉴시스",
+     "title": "정승제 \"아이돌처럼 대학 때부터 키운다\"…스타 강사도 '연습생' 시대",
+     "link": "https://www.newsis.com/view/NISX20261110_0003862893"
+    }
+   ]
+  },
+  {
    "kw": "싱가포르",
    "nsrc": 4,
    "srcs": [
@@ -1304,39 +1337,6 @@
      "src": "조선일보",
      "title": "11월 결혼 이유진♥차경은, 혼전임신 고백 “살림 이미 합쳤다”",
      "link": "https://www.chosun.com/entertainments/broadcast/2026/11/11/MM3DEZDBMY4DCZRRMU4WIMDBMM/"
-    }
-   ]
-  },
-  {
-   "kw": "민속촌",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "조선일보",
-    "헤럴드경제"
-   ],
-   "n": 4,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "이지혜, 민속촌 인기 귀신에 돌직구…“성과금 얘기 없나요?”",
-     "link": "https://sports.donga.com/ent/article/all/20261110/134997460/1"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "이지혜 딸, ‘아동학대 논란’ 민속촌 귀신 만났다…“숙제 잘 할게요”오열",
-     "link": "https://biz.heraldcorp.com/article/10931655"
-    },
-    {
-     "src": "뉴시스",
-     "title": "이지혜, '112 신고 논란' 민속촌 귀신에 \"성과금 얘기 없나?\"",
-     "link": "https://www.newsis.com/view/NISX20261110_0003861281"
-    },
-    {
-     "src": "조선일보",
-     "title": "하필 논란인데..이지혜, 민속촌 귀신 훈육 괜히 건드렸나 '갑론을박' [Oh!쎈 이슈]",
-     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/10/MNSGEMRQMIZWKMZWG4ZDGMJXMQ/"
     }
    ]
   }
