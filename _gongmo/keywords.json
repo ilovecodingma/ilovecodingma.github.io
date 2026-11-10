@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-11 01:00",
+ "updated": "2026-11-11 02:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -924,6 +924,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-10",
+   "expires": "2026-11-14"
+  },
+  {
+   "query": "뉴데일리",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-11",
    "expires": "2026-11-14"
   },
   {
@@ -3100,18 +3112,6 @@
   },
   {
    "query": "울산 현대모비스 대 고양 소노",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 1000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-11",
-   "expires": "2026-11-14"
-  },
-  {
-   "query": "뉴데일리",
    "tier": "단기",
    "signal": [
     "구글트렌드"
