@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-10 11:00",
+ "updated": "2026-11-10 12:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -1212,6 +1212,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-09",
+   "expires": "2026-11-13"
+  },
+  {
+   "query": "치어리더",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-10",
    "expires": "2026-11-13"
   },
   {
@@ -9581,7 +9593,7 @@
    ],
    "score": 0,
    "status": "작성",
-   "page": "",
+   "page": "/money/guide/four-insurance-loss-report-late-cancel/",
    "registered": "2026-11-10",
    "expires": ""
   },
@@ -9594,7 +9606,7 @@
    ],
    "score": 0,
    "status": "작성",
-   "page": "",
+   "page": "/money/guide/unemployment-apply-deadline-missed-12-months/",
    "registered": "2026-11-10",
    "expires": ""
   },
@@ -9607,7 +9619,7 @@
    ],
    "score": 0,
    "status": "작성",
-   "page": "",
+   "page": "/money/guide/unemployment-apply-online-steps/",
    "registered": "2026-11-10",
    "expires": ""
   },
@@ -9620,7 +9632,7 @@
    ],
    "score": 0,
    "status": "작성",
-   "page": "",
+   "page": "/money/guide/health-insurance-continuing-enrollment-apply/",
    "registered": "2026-11-10",
    "expires": ""
   },
@@ -9633,7 +9645,7 @@
    ],
    "score": 0,
    "status": "작성",
-   "page": "",
+   "page": "/money/guide/eitc-single-household-conditions/",
    "registered": "2026-11-10",
    "expires": ""
   },
@@ -9646,7 +9658,7 @@
    ],
    "score": 0,
    "status": "작성",
-   "page": "",
+   "page": "/money/guide/car-insurance-driving-record-child-retroactive/",
    "registered": "2026-11-10",
    "expires": ""
   },
@@ -9659,7 +9671,7 @@
    ],
    "score": 0,
    "status": "작성",
-   "page": "",
+   "page": "/money/guide/ev-car-tax-calculation/",
    "registered": "2026-11-10",
    "expires": ""
   },
@@ -9672,7 +9684,7 @@
    ],
    "score": 0,
    "status": "작성",
-   "page": "",
+   "page": "/money/guide/property-tax-late-penalty-virtual-account/",
    "registered": "2026-11-10",
    "expires": ""
   },
@@ -9685,7 +9697,7 @@
    ],
    "score": 0,
    "status": "작성",
-   "page": "",
+   "page": "/money/guide/capital-gains-tax-deadline-missed-penalty/",
    "registered": "2026-11-10",
    "expires": ""
   },
@@ -9698,7 +9710,7 @@
    ],
    "score": 0,
    "status": "작성",
-   "page": "",
+   "page": "/money/guide/vat-filing-deadline-missed-penalty/",
    "registered": "2026-11-10",
    "expires": ""
   },
@@ -9711,7 +9723,7 @@
    ],
    "score": 0,
    "status": "작성",
-   "page": "",
+   "page": "/money/guide/year-end-tax-2027-changes/",
    "registered": "2026-11-10",
    "expires": ""
   },
@@ -9724,7 +9736,7 @@
    ],
    "score": 0,
    "status": "작성",
-   "page": "",
+   "page": "/money/guide/industrial-accident-insurance-rate-2027/",
    "registered": "2026-11-10",
    "expires": ""
   },
@@ -9737,7 +9749,7 @@
    ],
    "score": 0,
    "status": "작성",
-   "page": "",
+   "page": "/money/guide/severance-calculation-3-months-average-wage/",
    "registered": "2026-11-10",
    "expires": ""
   },
@@ -11853,6 +11865,19 @@
    "expires": "2026-11-16"
   },
   {
+   "query": "연애박사 편성 시간 시청률 출연진, 최근 회차 줄거리 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 2,
+   "status": "작성",
+   "page": "/issue/love-doctor-drama-chuyoungwoo-kimsohyun-1110/",
+   "registered": "2026-11-10",
+   "expires": "2026-11-24"
+  },
+  {
    "query": "샤이니 민호 마라톤 실격 주장 보도, 주최측 규정과 입장 정리",
    "tier": "중기",
    "signal": [
@@ -11929,6 +11954,19 @@
    "page": "/issue/regular-workers-60s-75-percent-q3-1109/",
    "registered": "2026-11-09",
    "expires": "2026-11-23"
+  },
+  {
+   "query": "재혼 황후 드라마 화제성 1위 순위표와 출연자 TOP10 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 2,
+   "status": "작성",
+   "page": "/issue/remarried-empress-buzz-rank-1110/",
+   "registered": "2026-11-10",
+   "expires": "2026-11-24"
   },
   {
    "query": "신인감독 김연경2 5회 내용: 원더독스 흥국생명전 3대2 역전승과 세트 점수, 시청률 5.2%, 6회 예고",
