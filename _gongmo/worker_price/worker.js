@@ -2,11 +2,13 @@
 //   GET /api/price/search?q=겨울 장갑        → 제품 후보(제품 코드·이름·최저가)
 //   GET /api/price/scan?pcode=6807997&uq=..  → 새 상품 판매처별 가격 + 중고 장터 글, 싼 순서
 //   GET /api/price/scan?uq=겨울 장갑         → 제품 코드 없이 중고 장터만
-// - 새 상품: 다나와 가격비교(판매처 목록). 중고: 당근·중고나라 검색 결과.
+// - 새 상품: 다나와 가격비교(판매처 목록). 중고: 중고나라 검색 결과.
+//   당근은 이 서버에서 물으면 빈 목록만 돌려준다(2026-11-10 확인) → 글을 긁지 않고 검색 결과로 바로 가는 주소만 준다. 번개장터도 같다.
 // - 같은 검색은 1시간 동안 저장해 둔 값을 돌려준다(상대 사이트에 같은 요청을 거듭 보내지 않는다).
 // - 한 번 조회에 사이트마다 페이지 1장만 읽는다. 원본 글·판매처로 바로 가는 주소를 그대로 돌려준다.
 const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36 jupjup-price/1.0 (+https://sungprofile.cloud/price/)';
 const TTL = 3600;
+const VER = 'v5';   // 추출 방식이 바뀌면 올린다(저장해 둔 옛 결과를 쓰지 않게)
 const ORIGINS = ['https://sungprofile.cloud', 'https://www.sungprofile.cloud', 'http://localhost:8000', 'http://127.0.0.1:8000'];
 const WANT = /삽니다|삽니당|구합니다|구해요|구해봅니다|구매합니다|구매원함|구매 원함|매입|구함|교환만/;
 
@@ -52,7 +54,7 @@ export function parseDanawaProduct(h, pcode) {
     const b = b0.split('</li>')[0];
     const mall = (b.match(/class='image' alt='([^']*)'/) || b.match(/class="image" alt="([^"]*)"/) || b.match(/aria-label="([^"]*)"/) || [])[1];
     const price = num((b.match(/data-base-price="(\d+)"/) || b.match(/text__num">([\d,]+)/) || [])[1]);
-    const lk = (b.match(/href="(https:\/\/prod\.danawa\.com\/bridge\/[^"]+)"/) || [])[1];
+    const lk = (b.match(/href="(https:\/\/prod\.danawa\.com\/bridge\/(?:[^"\\]|\\u0026)+)"/) || [])[1];
     if (!mall || mall === '상품보기' || !price || !lk) continue;
     let ship = null;
     const dp = b.match(/data-delivery-price="(\d+)"/);
@@ -68,8 +70,25 @@ export function parseDanawaProduct(h, pcode) {
     seen.add(key);
     rows.push({ mall, price, ship, total: price + (ship || 0), link: lk.replace(/&amp;/g, '&') });
   }
+  if (!rows.length) {   // 새 화면(자료가 스크립트 안 따옴표 처리된 JSON 으로 들어 있음)
+    const re = /\{\\"logo\\":\\"([^"\\]*)\\",\\"logoSrc\\":\\"[^"]*?\\",\\"companyCode\\":\\"([^"\\]*)\\"[\s\S]{0,400}?\\"price\\":\\"([\d,]+)\\",\\"delivery\\":\\"([^"\\]*)\\"[\s\S]{0,900}?\\"url\\":\\"(https:\/\/prod\.danawa\.com\/bridge\/(?:[^"\\]|\\u0026)+)\\"[\s\S]{0,200}?\\"deliveryPrice\\":(\d+|null)/g;
+    let m;
+    while ((m = re.exec(h))) {
+      const price = num(m[3]);
+      let ship = m[6] === 'null' ? null : num(m[6]);
+      if (ship === null && /무료/.test(m[4])) ship = 0;
+      const key = m[2] + '|' + price;
+      if (!m[1] || !price || seen.has(key)) continue;
+      seen.add(key);
+      rows.push({ mall: m[1], price, ship, total: price + (ship || 0), link: m[5].replace(/\\u0026/g, '&') });
+    }
+  }
+  const lo2 = h.match(/metaLowestPrice\\?":(\d+)/);
+  const oc2 = h.match(/\\"productCode\\":(\d+),\\"name\\":\\"[^"\\]*\\",\\"minPrice\\":\d+,\\"shopCount\\":(\d+)/g);
+  let offers = oc ? num(oc[1]) : null;
+  if (offers === null && oc2) for (const t of oc2) { const k = t.match(/productCode\\":(\d+)[\s\S]*shopCount\\":(\d+)/); if (k && k[1] === String(pcode)) offers = num(k[2]); }
   rows.sort((a, b) => a.total - b.total);
-  return { pcode, name: nm ? nm[1] : '', low: lo ? num(lo[1]) : null, offers: oc ? num(oc[1]) : null, img: im ? im[0] + '?shrink=330:330' : '', page: 'https://prod.danawa.com/info/?pcode=' + pcode, rows };
+  return { pcode, name: nm ? nm[1] : strip((h.match(/<title>([\s\S]*?)<\/title>/) || [])[1]).replace(/\s*:\s*다나와.*$/, ''), low: lo ? num(lo[1]) : (lo2 ? num(lo2[1]) : null), offers, img: im ? im[0] + '?shrink=330:330' : '', page: 'https://prod.danawa.com/info/?pcode=' + pcode, rows };
 }
 
 // ── 당근 검색 → 중고 글
@@ -152,25 +171,36 @@ async function search(q) {
   return out;
 }
 
-async function scan(pcode, uq) {
+async function scan(pcode, uq, q0) {
   const errs = {}, diag = {}, out = { pcode: pcode || '', uq: uq || '', at: Date.now() };
   const jobs = [];
-  if (pcode) jobs.push(get('https://prod.danawa.com/info/?pcode=' + pcode).then(h => { out.prod = parseDanawaProduct(h, pcode); diag.다나와 = [h.length, out.prod.rows.length, h.indexOf('list__mall-price'), h.split('list-item').length - 1, h.split('bridge/loadingBridge').length - 1, strip((h.match(/<title>([\s\S]*?)<\/title>/) || [])[1]).slice(0, 60), (h.match(/class="[^"]*(?:mall|price)[^"]*"/g) || []).slice(0, 12).join(' ')]; }).catch(e => { errs['다나와'] = String(e.message || e); }));
+  if (pcode) jobs.push(get('https://prod.danawa.com/info/?pcode=' + pcode).then(h => { out.prod = parseDanawaProduct(h, pcode); diag.다나와 = [h.length, out.prod.rows.length]; }).catch(e => { errs['다나와'] = String(e.message || e); }));
   await Promise.all(jobs);
   const name = uq || (out.prod && out.prod.name) || '';
   out.uq = name.replace(/\([^)]*\)/g, ' ').replace(/\s+/g, ' ').trim();
-  let used = [];
+  // 중고: 제품 이름 전체 → 앞 두 낱말(브랜드+모델) → 처음 넣은 이름 순서로 넓혀 가며, 맞는 글이 3건 이상 나오면 멈춘다(요청은 차례로, 많아야 3번)
+  out.uqFull = out.uq;
+  const tries = out.uq ? [out.uq] : [];
+  if (pcode && !uq) {
+    const w = out.uq.split(' ');
+    if (w.length > 2) tries.push(w.slice(0, 2).join(' '));
+    if (q0 && !tries.includes(q0)) tries.push(q0);
+  }
+  let pk = { keep: [], drop: {} }, seen = 0, first = true;
+  for (const t of tries) {
+    let r;
+    try { const h = await get('https://web.joongna.com/search/' + encodeURIComponent(t)); r = parseJoongna(h); diag['중고나라 ' + t] = [h.length, r.length]; delete errs['중고나라']; }
+    catch (e2) { errs['중고나라'] = String(e2.message || e2); continue; }
+    const p = pickUsed(r, t);
+    if (first || p.keep.length > pk.keep.length) { pk = p; seen = r.length; out.uq = t; first = false; }
+    if (pk.keep.length >= 3) break;
+  }
   if (out.uq) {
     const e = encodeURIComponent(out.uq);
     out.links = { 당근: 'https://www.daangn.com/kr/buy-sell/?search=' + e, 중고나라: 'https://web.joongna.com/search/' + e, 번개장터: 'https://m.bunjang.co.kr/search/products?q=' + e };
-    await Promise.all([
-      get(out.links.당근).then(h => { const r = parseDaangn(h); diag.당근 = [h.length, r.length, strip((h.match(/<title>([\s\S]*?)<\/title>/) || [])[1]).slice(0, 60), h.indexOf('buySellArticles'), strip(h.slice(h.indexOf('<body'), h.indexOf('<body') + 6000)).slice(0, 300)]; used = used.concat(r); }).catch(e2 => { errs['당근'] = String(e2.message || e2); }),
-      get(out.links.중고나라).then(h => { const r = parseJoongna(h); diag.중고나라 = [h.length, r.length]; used = used.concat(r); }).catch(e2 => { errs['중고나라'] = String(e2.message || e2); }),
-    ]);
   }
-  const pk = pickUsed(used, out.uq);
   out.used = pk.keep.slice(0, 40);
-  out.usedSeen = used.length;
+  out.usedSeen = seen;
   out.usedDrop = pk.drop;
   out.errs = errs;
   out.diag = diag;
@@ -201,9 +231,9 @@ export default {
     } else if (u.pathname === '/api/price/scan') {
       if (pcode && !/^\d{3,12}$/.test(pcode)) return json(req, { error: '제품 코드가 올바르지 않습니다.' }, 400);
       if (!pcode && uq.length < 2) return json(req, { error: '제품 코드나 검색어가 필요합니다.' }, 400);
-      key = 'c|' + pcode + '|' + uq; run = () => scan(pcode, uq);
+      key = 'c|' + pcode + '|' + uq + '|' + (pcode && !uq ? q : ''); run = () => scan(pcode, uq, q);
     } else return json(req, { error: '없는 주소입니다.' }, 404);
-    const ck = new Request('https://price-cache.local/' + encodeURIComponent(key));
+    const ck = new Request('https://price-cache.local/' + VER + '/' + encodeURIComponent(key));
     const cache = caches.default;
     try {
       const hit = await cache.match(ck);

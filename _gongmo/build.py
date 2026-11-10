@@ -365,7 +365,7 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False, noinde
 <footer class="ft"><div class="w ft-in"><div class="ft-top"><div class="ft-b"><b>루리 줍줍</b><p>이슈부터 지원금·공모전까지, 출처와 함께 정리하는 정보 서비스입니다. 분석 코너는 「루리 애널리스트」, 문서 모음은 「루리 위키」입니다.</p><p class="ft-m">문의 <a href="mailto:{MAIL}">{MAIL}</a>{"" if PARTNER == MAIL else f' · 제휴 <a href="mailto:{PARTNER}">{PARTNER}</a>'}</p></div>
 <nav class="ft-g" aria-label="사이트 메뉴"><div><b>읽을거리</b><a href="/issue/">이슈</a><a href="/money/guide/">생활 가이드</a><a href="/analyst/">애널리스트</a><a href="/fridge/">레시피</a></div>
 <div><b>기회 찾기</b><a href="/apply/">지원금·청약</a><a href="/contest/">공모전</a><a href="/today/">오늘 마감</a><a href="/event/">경품 이벤트</a></div>
-<div><b>도구·탐색</b><a href="/wiki/">루리 위키</a><a href="/map/">키워드 지도</a><a href="/money/tools/salary/">계산기</a><a href="/book/">전자책</a><a href="/all/">전체 메뉴</a></div>
+<div><b>도구·탐색</b><a href="/wiki/">루리 위키</a><a href="/map/">키워드 지도</a><a href="/money/tools/salary/">계산기</a><a href="/price/">최저가 찾기</a><a href="/book/">전자책</a><a href="/all/">전체 메뉴</a></div>
 <div><b>운영 정보</b><a href="/about/">소개·만드는 방식</a><a href="/corrections/">정정 기록</a><a href="/privacy/">개인정보처리방침</a><a href="/terms/">이용약관</a><a href="/contact/">문의</a></div></nav></div>
 {('<p class="ft-c"><span>외부 채널</span> ' + comm_btns() + '</p>') if COMM_LINKS else ''}
 <p class="ft-n">정보는 각 기관의 공고·언론 보도·공개 자료를 AI로 수집·정리한 것입니다. 정확한 내용은 반드시 공식 공고와 원문에서 확인하세요. 일부 링크는 쿠팡 파트너스 활동의 일환으로 수수료를 받을 수 있습니다. © 2026 루리 줍줍 · sungprofile.cloud</p></div></footer>{CL_CSS if COMM_LINKS else ''}
@@ -805,7 +805,7 @@ def ref_pages():
         ld = {'@context': 'https://schema.org', '@type': 'Article', 'headline': title, 'description': desc, 'inLanguage': 'ko', 'datePublished': '2026-10-30', 'dateModified': '2026-10-30',
               'mainEntityOfPage': SITE + u, 'author': {'@type': 'Organization', 'name': '루리 줍줍 편집', 'url': SITE + '/'}, 'publisher': {'@type': 'Organization', 'name': NAME, 'url': SITE + '/'}}
         _REFS.append((u, title, desc))
-        page(u, title, desc, f'<p class="bc"><a href="/">홈</a> › <a href="/guide/">가이드</a> › 기준 자료</p><h1>{E(title)}</h1><div class="art">{body}</div><link rel="stylesheet" href="/assets/guide/guide.css?v=8">',
+        page(u, title, desc, f'<p class="bc"><a href="/">홈</a> › <a href="/guide/">가이드</a> › 기준 자료</p><h1>{E(title)}</h1><div class="art">{body}</div><link rel="stylesheet" href="/assets/guide/guide.css?v=9">',
              [('루리 줍줍', '/'), ('가이드', '/guide/'), ('기준 자료', u)], ld)
 
 
@@ -3511,7 +3511,7 @@ def article_enhance(path, body):
         i = body.find('<h2')
         body = body[:i] + nav + body[i:] if i >= 0 else body
     body = re.sub(r'(?<!tblw">)(<table\b.*?</table>)', r'<div class="tblw">\1</div>', body, flags=re.S) if '<div class="tblw"' not in body else body
-    return '<div class="art">' + body + '</div><link rel="stylesheet" href="/assets/guide/guide.css?v=8">'
+    return '<div class="art">' + body + '</div><link rel="stylesheet" href="/assets/guide/guide.css?v=9">'
 
 
 def _hl(t):
@@ -3714,7 +3714,53 @@ def topic_top(G, days=7, keep=5):
     return top
 
 
-def _topic_more(g, GN, top, n=3):
+def topic_hubs(G):
+    """주제 허브(2026-11-10): ({key: [가이드…] 최신순}, {key: 허브 주소}). 머리말이 있고 글이 3편 이상인 주제만 허브를 만든다."""
+    T, M = guide_topics()
+    by = collections.OrderedDict()
+    for t in sorted(T.values(), key=lambda t: t.get('order', 99)):
+        L = [g for g in G[::-1] if M.get(g['slug']) == t['key']]
+        if L:
+            by[t['key']] = L
+    return by, {k: f'/money/guide/t/{k}/' for k, L in by.items() if len(L) >= 3 and (T[k].get('intro') or '').strip()}
+
+
+TH_CSS = ('<style>.th-h1{font-size:clamp(26px,5.4vw,36px);margin:4px 0 12px;letter-spacing:-.02em}.th-in p{margin:0 0 12px;line-height:1.75;max-width:720px}.th-h2{font-size:20px;margin:30px 0 10px;letter-spacing:-.02em}.th-h2 small{color:var(--mu);font-size:14px;font-weight:600;margin-left:6px}'
+          '.th-l{list-style:none;margin:0;padding:0;border-top:1px solid var(--bd)}.th-l li{border-bottom:1px solid var(--bd)}main .th-l a{display:block;padding:13px 0;color:var(--tx);text-decoration:none}.th-l b{display:block;font-size:16.5px;line-height:1.45}.th-l a:hover b{text-decoration:underline;text-underline-offset:3px}'
+          '.th-l span{display:block;margin-top:4px;font-size:14px;line-height:1.55;color:var(--mu);overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}.th-top{counter-reset:th}.th-top li{counter-increment:th;position:relative;padding-left:30px}.th-top li::before{content:counter(th);position:absolute;left:2px;top:13px;font-weight:800;font-size:17px;color:var(--brand,#6d28d9)}'
+          '.th-c{display:flex;flex-wrap:wrap;gap:8px}main .th-c a{display:inline-flex;align-items:center;min-height:44px;padding:0 14px;border:1px solid var(--bd);border-radius:8px;background:var(--card);color:var(--tx);text-decoration:none;font-size:15px;font-weight:700}.th-c small{margin-left:6px;color:var(--mu);font-weight:600}</style>')
+
+
+def topic_hub_pages(G, GN, top):
+    """주제 허브 화면을 만들고 주소 목록을 돌려준다. 하나가 실패해도 나머지와 빌드는 계속 간다."""
+    urls = []
+    try:
+        T, _M = guide_topics()
+        by, hubs = topic_hubs(G)
+        chips = lambda cur: ''.join(f'<a href="{hubs[k]}">{E(T[k]["name"])}<small>{len(by[k])}편</small></a>' for k in hubs if k != cur)
+        row = lambda g: f'<li><a href="/money/guide/{g["slug"]}/"><b>{E(_dt_og(g["h1"]))}</b><span>{E(re.sub(chr(92) + "s+", " ", g["lead"])[:110])}</span></a></li>'
+        for k, hp in hubs.items():
+            try:
+                t = T[k]; L = by[k]
+                paras = [x.strip() for x in t['intro'].split(chr(10) * 2) if x.strip()]
+                tp = [GN[sl] for sl, v in top.get(k, []) if v >= 2 and sl in GN][:5]
+                tops = f'<h2 class="th-h2">많이 찾는 글 <small>최근 7일 방문 기준</small></h2><ul class="th-l th-top">{"".join(row(g) for g in tp)}</ul>' if len(tp) >= 2 else ''
+                desc = re.sub(chr(92) + 's+', ' ', paras[0])
+                desc = desc if len(desc) <= 150 else desc[:150].rsplit(' ', 1)[0] + '…'
+                body = (f'<p class="bc"><a href="/">홈</a> › <a href="/money/guide/">생활 가이드</a> › {E(t["name"])}</p><h1 class="th-h1">{E(t["name"])}</h1>'
+                        f'<div class="th-in">{"".join(f"<p>{E(x)}</p>" for x in paras)}</div>{tops}'
+                        f'<h2 class="th-h2">「{E(t["name"])}」 글 전체 <small>{len(L)}편 · 최신순</small></h2><ul class="th-l">{"".join(row(g) for g in L)}</ul>'
+                        f'<h2 class="th-h2">다른 주제</h2><div class="th-c">{chips(k)}<a href="/money/guide/">생활 가이드 전체</a></div>' + TH_CSS)
+                page(hp, f'{t["name"]} 가이드 {len(L)}편 — 공식 출처로 정리한 생활 가이드', desc, body, [('루리 줍줍', '/'), ('생활 가이드', '/money/guide/'), (t['name'], hp)], full_title=True)
+                urls.append(hp)
+            except Exception as e:
+                print('주제 허브 건너뜀', k, repr(e)[:160])
+    except Exception as e:
+        print('주제 허브 전체 건너뜀', repr(e)[:160])
+    return urls
+
+
+def _topic_more(g, GN, top, n=3, hubs=None):
     """가이드 본문 첫 섹션 뒤 「같은 주제에서 많이 찾는 글」(2026-11-10 방문 기록: 가이드로 들어온 사람의 8%만 다음 글로 가고, 절반 가까이가 화면 4분의 1 전에 나간다 → 다음 글을 앞쪽에)."""
     try:
         T, M = guide_topics()
@@ -3724,7 +3770,8 @@ def _topic_more(g, GN, top, n=3):
             return ''
         li = ''.join(f'<li><a href="/money/guide/{s}/">{E(_dt_og(GN[s]["h1"]))}</a></li>' for s, _v in L)
         ttl = f'「{E(T[k]["name"])}」에서 많이 찾는 글' if all(v >= 2 for _s, v in L) else f'「{E(T[k]["name"])}」 주제의 다른 글'   # 방문 기록이 없는 글이 섞이면 「많이 찾는」이라고 쓰지 않는다
-        return f'<aside class="g-more"><b>{ttl}</b><ul>{li}</ul></aside>'
+        al = f'<a class="g-more-all" href="{hubs[k]}">「{E(T[k]["name"])}」 글 모두 보기</a>' if hubs and k in hubs else ''
+        return f'<aside class="g-more"><b>{ttl}</b><ul>{li}</ul>{al}</aside>'
     except Exception as e:
         print('같은 주제 글 묶음 건너뜀', g.get('slug'), repr(e)[:120])
         return ''
@@ -3755,30 +3802,44 @@ def kin_guides():
     except Exception as _e:
         print('전자책 만들기 실패(사이트는 계속)', repr(_e)[:120])
     _TOP = topic_top(G)   # 주제별 많이 찾는 글(7일마다 다시 정함)
+    try:
+        _TBY, _THUB = topic_hubs(G)   # 주제 허브 주소(글 3편 이상·머리말 있는 주제)
+    except Exception as _e:
+        print('주제 허브 준비 실패(허브 없이 계속)', repr(_e)[:120]); _TBY, _THUB = {}, {}
     for g in G:
         secs, toc = '', []
         _unf_g, n_ = '', 0
         for sc in g['sections']:
             # 2026-11-10: 「확인하지 못한 것」만 모은 섹션(22쪽, 모두 마지막 섹션·목록뿐)은 본문 뒤에 접어 둔다. 11/06 이슈에 적용한 기준과 같게 — 지우지 않는다.
-            if re.fullmatch(r'(줍줍이 )?확인하지 못한 (것|항목)', sc['h'].strip()) and sc.get('ul') and not (sc.get('table') or sc.get('p') or sc.get('html')):
+            _sh = (sc.get('h') or '').strip()   # 2026-11-10: 제목 없는 섹션(표 뒤에 덧붙인 설명)이 오면 앞 섹션에 이어 붙인다 — 예전엔 KeyError 로 빌드가 멈췄다
+            if re.fullmatch(r'(줍줍이 )?확인하지 못한 (것|항목)', _sh) and sc.get('ul') and not (sc.get('table') or sc.get('p') or sc.get('html')):
                 _unf_g += '<ul class="gm-l">' + ''.join(f'<li>{x}</li>' for x in sc['ul']) + '</ul>'
                 continue
-            n_ += 1
-            kind, ic_ = _sec_kind(sc['h'])
-            h = f'<h2><span class="gs-n">{n_}</span>{E(sc["h"])}</h2>'
+            if _sh:
+                n_ += 1
+                kind, ic_ = _sec_kind(_sh)
+                h = f'<h2><span class="gs-n">{n_}</span>{E(_sh)}</h2>'
+            else:
+                h = ''
             if sc.get('table'):
                 sc['table'] = _tbl_norm(sc['table']); head, rows = sc['table'][0], sc['table'][1:]
                 h += '<div class="tblw"><table class="xb"><thead><tr>' + ''.join(f'<th>{E(c)}</th>' for c in head) + '</tr></thead><tbody>' + ''.join('<tr>' + ''.join((f'<td class="hl"><b>{E(c[1:])}</b></td>' if isinstance(c, str) and c.startswith('*') else f'<td>{_hl(E(c))}</td>') for c in r) + '</tr>' for r in rows) + '</tbody></table></div>'
             if sc.get('ul'):
-                tag_ = 'ol class="gs-steps"' if re.search(r'절차|순서|단계', sc['h']) else 'ul class="gm-l"'
+                tag_ = 'ol class="gs-steps"' if re.search(r'절차|순서|단계', _sh) else 'ul class="gm-l"'
                 h += f'<{tag_}>' + ''.join(f'<li>{x}</li>' for x in sc['ul']) + f'</{tag_.split()[0]}>'
             if sc.get('p'):
                 h += ''.join(f'<p>{x_}</p>' for x_ in _psplit(sc["p"]))
             if sc.get('html'):
                 h += sc['html']
+            if not _sh:
+                if secs.endswith('</section>'):
+                    secs = secs[:-len('</section>')] + h + '</section>'
+                elif h:
+                    secs += f'<section class="gs">{h}</section>'
+                continue
             secs += f'<section class="gs gs-{kind}" id="s{n_}">{h}</section>'
-            toc.append(f'<a href="#s{n_}"><i>{ic_}</i>{E(re.sub(chr(92) + "s*[(（].*?[)）]", "", sc["h"]))}</a>')
-        _tm = _topic_more(g, GN, _TOP)
+            toc.append(f'<a href="#s{n_}"><i>{ic_}</i>{E(re.sub(chr(92) + "s*[(（].*?[)）]", "", _sh))}</a>')
+        _tm = _topic_more(g, GN, _TOP, hubs=_THUB)
         if _tm:   # 첫 섹션 바로 뒤(읽다 나가기 전에 보이는 자리)
             secs = secs.replace('</section>', '</section>' + _tm, 1)
         if _unf_g:
@@ -3818,7 +3879,7 @@ def kin_guides():
                 + f'<p class="note">AI가 위 공식 출처를 바탕으로 확인일 기준으로 정리한 내용이고, 운영자가 한 건씩 직접 검토한 것은 아니에요. 기준 금액과 신청 기간은 해마다 바뀔 수 있어요. 신청 전에 위 공식 출처를 꼭 확인하고, 개별 사정은 {E(g["contact"])}에 문의하세요. 법률·세무 상담이 아니에요.</p></section>'
                 + _g_appendix(g)
                 + (f'<aside class="say"><img src="/assets/ruri/o_det_think_s.webp" width="56" height="77" alt="루리" loading="lazy"><div class="bub"><b>루리의 한마디</b><div>{E(g["lury_note"])}</div></div></aside>' if g.get('lury_note') else '')
-                + f'<p class="hm-links">{rel} · <a href="/money/guide/">다른 생활 돈 가이드</a></p>' + GAME_CSS + '<link rel="stylesheet" href="/assets/guide/guide.css?v=8">' + (f'<script defer src="{E(g["script"])}"></script>' if g.get('script') else ''))
+                + f'<p class="hm-links">{rel} · <a href="/money/guide/">다른 생활 돈 가이드</a></p>' + GAME_CSS + '<link rel="stylesheet" href="/assets/guide/guide.css?v=9">' + (f'<script defer src="{E(g["script"])}"></script>' if g.get('script') else ''))
         _og_g = og_art('guide', g['slug'], _dt_og(g['h1']), '생활 가이드 · ' + g['name'])
         _art_g = {'@context': 'https://schema.org', '@type': 'Article', 'headline': g['title'][:110], 'description': g['desc'], 'inLanguage': 'ko',
                   'mainEntityOfPage': SITE + f'/money/guide/{g["slug"]}/', 'image': SITE + _og_g,
@@ -3880,8 +3941,17 @@ def kin_guides():
         _t = g['name'] + ' ' + g['h1']
         _tg[next((k for k, _n, rx in GT if re.search(rx, _t)), 'etc')].append(g)
     _tn = dict((k, n) for k, n, _r in GT); _tn['etc'] = '그 밖의 생활 정보'
+    if _THUB:   # 2026-11-10: 주제 표(guide_topics.json)가 있으면 그 16개 주제로 묶고 허브로 잇는다
+        _T16, _M16 = guide_topics()
+        _tg = collections.OrderedDict((k, list(v)) for k, v in _TBY.items())
+        _rest = [g for g in G if _M16.get(g['slug']) not in _TBY]
+        if _rest:
+            _tg['etc'] = _rest
+        _tn = {k: _T16[k]['name'] for k in _TBY}; _tn['etc'] = '그 밖의 생활 정보'
+        urls.extend(topic_hub_pages(G, GN, _TOP))
     _row = lambda g: f'<li data-q="{E((g["name"] + " " + g["h1"]).lower())}"><a href="/money/guide/{g["slug"]}/"><b>{E(g["name"])}</b><span>{E(g["h1"])}</span></a></li>'
-    _topics = ''.join(f'<details class="mg-t" id="t-{k}"><summary><b>{E(_tn[k])}</b><small>{len(v)}편</small></summary><ul class="mg-d">{"".join(_row(g) for g in v)}</ul></details>' for k, v in _tg.items() if v)
+    _tall = lambda k: ('<p class="mg-all"><a href="' + _THUB[k] + '">「' + E(_tn[k]) + '」 머리말과 글 전체 보기</a></p>') if k in _THUB else ''
+    _topics = ''.join(f'<details class="mg-t" id="t-{k}"><summary><b>{E(_tn[k])}</b><small>{len(v)}편</small></summary>{_tall(k)}<ul class="mg-d">{"".join(_row(g) for g in v)}</ul></details>' for k, v in _tg.items() if v)
     import random as _rnd
     _rg = _rnd.Random(f'{TODAY.isoformat()}-{datetime.datetime.now().hour}')
     _pick = _rg.sample(G, min(8, len(G)))
@@ -3906,7 +3976,7 @@ def kin_guides():
            '.mg-re{min-height:40px;padding:0 14px;border:1px solid var(--bd);border-radius:8px;background:var(--card);color:var(--tx);font:inherit;font-size:14px;font-weight:700;cursor:pointer}.mg-re:hover{border-color:var(--brand,#6d28d9)}'
            '.mg-p{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:32px;border-top:1px solid #cbd5e1}.mg-p li{border-bottom:1px solid var(--bd)}main .mg-p a{display:block;padding:14px 0;color:var(--tx);text-decoration:none}.mg-p b{display:block;font-size:16.5px;line-height:1.45;letter-spacing:-.01em}.mg-p a:hover b{text-decoration:underline;text-underline-offset:3px}.mg-p span{display:block;margin-top:4px;font-size:14px;line-height:1.55;color:var(--mu);overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}'
            '.mg-j{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.mg-jc{display:flex;flex-direction:column;gap:3px;padding:12px 14px;border:1px solid var(--bd);border-radius:8px;background:var(--card);color:var(--tx);text-decoration:none}.mg-jc i{display:none}.mg-jc b{font-size:15.5px}.mg-jc span{font-size:13px;color:var(--mu);line-height:1.5}.mg-h{grid-template-columns:repeat(3,minmax(0,1fr));margin-bottom:14px}'
-           '.mg-ts{border-top:1px solid #cbd5e1}.mg-t{border-bottom:1px solid var(--bd)}.mg-t>summary{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:52px;padding:0 2px;cursor:pointer;list-style:none;font-size:16.5px}.mg-t>summary::-webkit-details-marker{display:none}.mg-t>summary small{color:var(--mu);font-size:13.5px;font-weight:600}.mg-t>summary::after{content:"+";margin-left:8px;color:var(--mu);font-size:20px;font-weight:400}.mg-t[open]>summary::after{content:"−"}.mg-t>summary b{flex:1}'
+           '.mg-all{margin:0 0 4px}main .mg-all a{display:inline-flex;align-items:center;min-height:44px;font-weight:700;font-size:15px}.mg-ts{border-top:1px solid #cbd5e1}.mg-t{border-bottom:1px solid var(--bd)}.mg-t>summary{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:52px;padding:0 2px;cursor:pointer;list-style:none;font-size:16.5px}.mg-t>summary::-webkit-details-marker{display:none}.mg-t>summary small{color:var(--mu);font-size:13.5px;font-weight:600}.mg-t>summary::after{content:"+";margin-left:8px;color:var(--mu);font-size:20px;font-weight:400}.mg-t[open]>summary::after{content:"−"}.mg-t>summary b{flex:1}'
            '.mg-d{list-style:none;margin:0;padding:0 0 12px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:32px}main .mg-d a{display:block;padding:9px 0;color:var(--tx);text-decoration:none;border-bottom:1px solid #f1f5f9}.mg-d a b{display:block;font-size:15px}.mg-d a span{display:block;font-size:13px;color:var(--mu);line-height:1.45;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}.mg-d a:hover b{text-decoration:underline}.mg-r{margin-top:12px;border-top:1px solid #cbd5e1}'
            '@media(max-width:700px){.mg-p,.mg-d{grid-template-columns:1fr}.mg-j{grid-template-columns:repeat(2,minmax(0,1fr))}.mg-h{grid-template-columns:1fr}.mg-jc span{display:none}.mg-h .mg-jc span{display:block}}</style>'
          + '<script>(function(){var q=document.getElementById("mgq"),A=[].slice.call(document.querySelectorAll("#mgl li")),n=document.getElementById("mgn"),r=document.getElementById("mgr"),b=document.getElementById("mgb"),p=document.getElementById("mgp"),re=document.getElementById("mgre");'
@@ -5013,9 +5083,17 @@ def calc_pages():
             cards = f'<li><a href="/money/tools/{k_}/"><b>🧮 {E(n_)}</b><span>{E(n_)} — 입력하면 바로 계산해요</span></a></li>' + cards
     if cards:
         page('/money/tools/', '계산기 모음 2026 — 연봉 실수령액·퇴직금·주휴수당·실업급여', '연봉 실수령액, 퇴직금, 실업급여, 주휴수당 같은 돈 계산을 숫자만 넣으면 바로 해 주는 계산기 모음이에요. 기준일과 공식 근거를 함께 적었어요.',
-             f'<p class="bc"><a href="/">홈</a> › 계산기</p><h1>🧮 계산기 모음</h1><p>숫자만 넣으면 바로 계산돼요. 계산 방법과 공식 근거는 각 계산기 아래에 적었어요.</p><ul class="gm-g">{cards}</ul>',
+             f'<p class="bc"><a href="/">홈</a> › 계산기</p><h1>🧮 계산기 모음</h1><p>숫자만 넣으면 바로 계산돼요. 계산 방법과 공식 근거는 각 계산기 아래에 적었어요.</p><p>물건 값을 비교할 때는 <a href="/price/">최저가 찾기</a>에서 새 상품 판매처와 중고 장터를 한 번에 조회할 수 있어요.</p><ul class="gm-g">{cards}</ul>',
              [('루리 줍줍', '/'), ('계산기', '/money/tools/')])
         urls.append('/money/tools/')
+    try:   # 최저가 찾기(11/10) — 화면만 여기서 만들고 조회는 따로 둔 Worker(worker_price)가 한다. 실패해도 빌드는 간다.
+        import price_page
+        pp_ = price_page.render()
+        if pp_:
+            page('/price/', pp_[0], pp_[1], pp_[2], [('루리 줍줍', '/'), ('최저가 찾기', '/price/')], full_title=True)
+            urls.append('/price/')
+    except Exception as e:
+        print('최저가 찾기 화면 실패(건너뜀)', repr(e)[:160])
     return urls
 
 

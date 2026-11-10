@@ -625,7 +625,7 @@ def _sec_topics(ctx, seen):
     # 2026-11-10: 11월 방문 기록에서 방문자가 많은 주제 순(생활 가이드 835 · 이슈 408 · 공모전 402 · 고민 해결 205 · 지원금 48 · 레시피 39 …)
     tp = [('생활 가이드', '/money/guide/', 'guide', '세금·보험·일·집'), ('이슈', '/issue/', 'issue', '요즘 화제를 출처와 함께'), ('공모전', '/contest/', 'contest', f'진행 중 {ctx["n_contest"]}건'),
           ('고민 해결', '/qa/', 'guide', '자주 묻는 질문 400여 개'), ('지원금·청약', '/apply/', 'apply', '신청 기간·대상 정리'), ('레시피', '/fridge/', 'recipe', '재료로 찾는 집밥'),
-          ('계산기', '/money/tools/salary/', 'calc', '실수령액·퇴직금'), ('경품 이벤트', '/event/', 'event', '마감순 정리'), ('전자책', '/book/', 'guide', '가이드를 묶은 무료 책'), ('루리 위키', '/wiki/', 'wiki', '문서로 묶은 정보')]
+          ('계산기', '/money/tools/salary/', 'calc', '실수령액·퇴직금'), ('최저가 찾기', '/price/', 'calc', '판매처·중고 한 번에'), ('경품 이벤트', '/event/', 'event', '마감순 정리'), ('전자책', '/book/', 'guide', '가이드를 묶은 무료 책'), ('루리 위키', '/wiki/', 'wiki', '문서로 묶은 정보')]
     cards = ''.join(f'<li><a href="{u}">{_ic(ic)}<span><b>{E(n)}</b><small>{E(s)}</small></span></a></li>' for n, u, ic, s in tp)
     ch = _kw_chips(seen)
     mp = f'<a class="mp" href="/map/">{_ic("map", "sv s")}키워드 지도에서 탐색</a>'

@@ -55,13 +55,14 @@ def _pick(spec, G, JR):
 
 
 def _sec_html(sc, lvl=3):
-    h = f'<h{lvl}>{E(sc["h"])}</h{lvl}>'
+    _sh = (sc.get('h') or '').strip()   # 제목 없는 섹션(앞 섹션에 덧붙인 설명)은 제목 줄 없이 잇는다
+    h = f'<h{lvl}>{E(_sh)}</h{lvl}>' if _sh else ''
     if sc.get('table'):
         head, rows = sc['table'][0], sc['table'][1:]
         h += ('<table class="bk-t"><thead><tr>' + ''.join(f'<th>{E(c)}</th>' for c in head) + '</tr></thead><tbody>'
               + ''.join('<tr>' + ''.join(f'<td>{E(str(c)[1:] if isinstance(c, str) and c.startswith("*") else c)}</td>' for c in r) + '</tr>' for r in rows) + '</tbody></table>')
     if sc.get('ul'):
-        tag = 'ol' if re.search(r'절차|순서|단계', sc['h']) else 'ul'
+        tag = 'ol' if re.search(r'절차|순서|단계', _sh) else 'ul'
         h += f'<{tag}>' + ''.join(f'<li>{x}</li>' for x in sc['ul']) + f'</{tag}>'
     if sc.get('p'):
         h += f'<p>{sc["p"]}</p>'

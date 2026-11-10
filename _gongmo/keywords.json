@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-10 16:00",
+ "updated": "2026-11-10 17:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -1191,6 +1191,18 @@
    "expires": "2026-11-13"
   },
   {
+   "query": "kbo 리그",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-10",
+   "expires": "2026-11-13"
+  },
+  {
    "query": "이찬혁",
    "tier": "단기",
    "signal": [
@@ -1252,6 +1264,30 @@
   },
   {
    "query": "치어리더",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-10",
+   "expires": "2026-11-13"
+  },
+  {
+   "query": "분당 신도시",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-10",
+   "expires": "2026-11-13"
+  },
+  {
+   "query": "시어머니",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -1636,18 +1672,6 @@
   },
   {
    "query": "부부",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 2000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-10",
-   "expires": "2026-11-13"
-  },
-  {
-   "query": "분당 신도시",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -2343,6 +2367,18 @@
    "expires": "2026-11-13"
   },
   {
+   "query": "정웅인",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-10",
+   "expires": "2026-11-13"
+  },
+  {
    "query": "오산대",
    "tier": "단기",
    "signal": [
@@ -2980,6 +3016,18 @@
   },
   {
    "query": "회사",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-10",
+   "expires": "2026-11-13"
+  },
+  {
+   "query": "공포탄",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -9786,6 +9834,253 @@
    "score": 0,
    "status": "작성",
    "page": "/money/guide/severance-calculation-3-months-average-wage/",
+   "registered": "2026-11-10",
+   "expires": ""
+  },
+  {
+   "query": "교사 봉급표·호봉",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/teacher-pay-2027-salary-table/",
+   "registered": "2026-11-10",
+   "expires": ""
+  },
+  {
+   "query": "경찰·소방 봉급표",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/police-fire-pay-2027-salary-table/",
+   "registered": "2026-11-10",
+   "expires": ""
+  },
+  {
+   "query": "군 간부 봉급표",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/military-officer-pay-2027-salary-table/",
+   "registered": "2026-11-10",
+   "expires": ""
+  },
+  {
+   "query": "2027 공무원연금 인상",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/civil-servant-pension-increase-2027/",
+   "registered": "2026-11-10",
+   "expires": ""
+  },
+  {
+   "query": "2027 보훈연금 인상",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/veterans-benefit-increase-2027/",
+   "registered": "2026-11-10",
+   "expires": ""
+  },
+  {
+   "query": "2027 공무원 수당 인상",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/civil-servant-allowance-2027/",
+   "registered": "2026-11-10",
+   "expires": ""
+  },
+  {
+   "query": "2027 근로장려금 일정",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/eitc-2027-apply-period-amount/",
+   "registered": "2026-11-10",
+   "expires": ""
+  },
+  {
+   "query": "2027 노인일자리 신청",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/senior-jobs-2027-apply-period/",
+   "registered": "2026-11-10",
+   "expires": ""
+  },
+  {
+   "query": "2027 장기요양보험료율",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/long-term-care-insurance-rate-2027/",
+   "registered": "2026-11-10",
+   "expires": ""
+  },
+  {
+   "query": "2027 전기차 보조금",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/ev-subsidy-2027/",
+   "registered": "2026-11-10",
+   "expires": ""
+  },
+  {
+   "query": "2027 연봉 실수령액 표",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/salary-take-home-2027-table/",
+   "registered": "2026-11-10",
+   "expires": ""
+  },
+  {
+   "query": "2027 설날 연휴",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/lunar-new-year-2027-holiday-dates/",
+   "registered": "2026-11-10",
+   "expires": ""
+  },
+  {
+   "query": "11월 12월 세금 달력",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/tax-due-dates-november-december/",
+   "registered": "2026-11-10",
+   "expires": ""
+  },
+  {
+   "query": "종부세 공동명의 특례",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/jongbuse-couple-joint-ownership-special/",
+   "registered": "2026-11-10",
+   "expires": ""
+  },
+  {
+   "query": "민방위 나이·교육",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/civil-defense-training-age-cyber-education/",
+   "registered": "2026-11-10",
+   "expires": ""
+  },
+  {
+   "query": "2027 임용고시 일정",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/teacher-exam-2027-schedule/",
+   "registered": "2026-11-10",
+   "expires": ""
+  },
+  {
+   "query": "2027 공무원 시험 일정",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/civil-servant-exam-2027-schedule/",
+   "registered": "2026-11-10",
+   "expires": ""
+  },
+  {
+   "query": "수능 성적 발표일",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "",
+   "registered": "2026-11-10",
+   "expires": ""
+  },
+  {
+   "query": "수능 가채점표",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "",
    "registered": "2026-11-10",
    "expires": ""
   },

@@ -108,4 +108,5 @@ td.hl{background:#fef9c3}td.hl b{font-weight:800}
 .g-more li+li{border-top:1px solid var(--bd,#e2e8f0)}
 .g-more a{display:block;padding:11px 0;min-height:44px;font-size:16px;line-height:1.45;font-weight:700;text-decoration:none}
 .g-more a:hover{text-decoration:underline}
+.g-more .g-more-all{border-top:1px solid var(--bd,#e2e8f0);font-size:14.5px;font-weight:600;color:var(--mu,#475569)}
 @media print{.g-more{display:none}}
