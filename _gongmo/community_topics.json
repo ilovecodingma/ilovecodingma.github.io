@@ -1,14 +1,14 @@
 {
  "date": "2026-11-10",
- "updated": "2026-11-10 21:50",
+ "updated": "2026-11-10 22:50",
  "sites": 13,
- "npost": 2813,
+ "npost": 2810,
  "note": "출처(커뮤니티)별 집계예요. 작성자·연령·성별 정보는 수집하지 않아요. posts 는 이슈별로 뽑힌 일부라 전체 글 수가 아니에요.",
  "sources": [
   {
    "name": "MLB파크",
    "np": 11,
-   "nc": 980,
+   "nc": 982,
    "topics": [
     {
      "t": "결혼 전에 파토난 이유",
@@ -31,9 +31,9 @@
      "t": "세후 350만원 받는데 여친이 만족을.",
      "nsite": 2,
      "np_here": 1,
-     "nc_here": 176,
+     "nc_here": 178,
      "issue_np": 2,
-     "issue_nc": 179,
+     "issue_nc": 181,
      "kw": [
       "만족",
       "여친"
@@ -41,19 +41,21 @@
      "top_post": {
       "t": "세후 350만원 받는데 여친이 만족을.",
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611100120029103&m=view",
-      "nc": 176
+      "nc": 178
      }
     },
     {
      "t": "사귀다가 여자 30중반 이상이면 남자가 결혼 책임지라던데",
-     "nsite": 7,
+     "nsite": 9,
      "np_here": 2,
      "nc_here": 155,
-     "issue_np": 10,
-     "issue_nc": 189,
+     "issue_np": 15,
+     "issue_nc": 240,
      "kw": [
       "여자",
-      "남자"
+      "남자",
+      "친구",
+      "일본인"
      ],
      "top_post": {
       "t": "사귀다가 여자 30중반 이상이면 남자가 결혼 책임지라던데",
@@ -69,8 +71,8 @@
      "issue_np": 2,
      "issue_nc": 233,
      "kw": [
-      "사항",
-      "요청"
+      "요청",
+      "사항"
      ],
      "top_post": {
       "t": "요즘 자영업자가 실제로 받는 요청사항",
@@ -86,10 +88,10 @@
      "issue_np": 2,
      "issue_nc": 126,
      "kw": [
-      "체감",
+      "대수",
       "주차",
-      "아파트",
-      "대수"
+      "체감",
+      "아파트"
      ],
      "top_post": {
       "t": "아파트 주차 대수별 체감",
@@ -122,8 +124,8 @@
      "issue_np": 3,
      "issue_nc": 17,
      "kw": [
-      "음식",
       "길거리",
+      "음식",
       "파키스탄"
      ],
      "top_post": {
@@ -154,116 +156,36 @@
    ]
   },
   {
-   "name": "인스티즈",
-   "np": 4,
-   "nc": 372,
-   "topics": [
-    {
-     "t": "유치원 탈락이라는 워딩이 기분나쁜 학부모들.",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 127,
-     "issue_np": 4,
-     "issue_nc": 127,
-     "kw": [
-      "기분",
-      "학부모",
-      "탈락",
-      "표현"
-     ],
-     "top_post": {
-      "t": "유치원 탈락이라는 워딩이 기분나쁜 학부모들.",
-      "u": "https://www.instiz.net/pt/7924212?green=1",
-      "nc": 127
-     }
-    },
-    {
-     "t": "언니가 고딩때 사고쳐서 집 나갔는데 나한테 연락이 왔어...",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 107,
-     "issue_np": 3,
-     "issue_nc": 113,
-     "kw": [
-      "연락",
-      "언니",
-      "사고",
-      "고딩"
-     ],
-     "top_post": {
-      "t": "언니가 고딩때 사고쳐서 집 나갔는데 나한테 연락이 왔어...",
-      "u": "https://www.instiz.net/pt/7924204?green=1",
-      "nc": 107
-     }
-    },
-    {
-     "t": "요즘 자영업자가 실제로 받는 요청사항",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 96,
-     "issue_np": 2,
-     "issue_nc": 233,
-     "kw": [
-      "사항",
-      "요청"
-     ],
-     "top_post": {
-      "t": "횟집에 예약된 요청사항",
-      "u": "https://www.instiz.net/pt/7923981?green=1",
-      "nc": 96
-     }
-    },
-    {
-     "t": "젠슨황과 내연녀 추가 사진 공개",
-     "nsite": 7,
-     "np_here": 1,
-     "nc_here": 42,
-     "issue_np": 10,
-     "issue_nc": 88,
-     "kw": [
-      "젠슨 황",
-      "내연녀",
-      "앨리스",
-      "공개"
-     ],
-     "top_post": {
-      "t": "젠슨황 내연녀 앨리스 황 근황",
-      "u": "https://www.instiz.net/pt/7924172?green=1",
-      "nc": 42
-     }
-    }
-   ]
-  },
-  {
    "name": "개드립",
-   "np": 11,
-   "nc": 249,
+   "np": 13,
+   "nc": 321,
    "topics": [
     {
-     "t": "연금 받을 나이가 된 김장훈",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 48,
-     "issue_np": 3,
-     "issue_nc": 49,
+     "t": "사귀다가 여자 30중반 이상이면 남자가 결혼 책임지라던데",
+     "nsite": 9,
+     "np_here": 2,
+     "nc_here": 49,
+     "issue_np": 15,
+     "issue_nc": 240,
      "kw": [
-      "김장훈",
-      "연금",
-      "나이"
+      "여자",
+      "남자",
+      "친구",
+      "일본인"
      ],
      "top_post": {
-      "t": "연금 받을 나이가 된 김장훈",
-      "u": "https://www.dogdrip.net/dogdrip/734016673?sort_index=popular&page=1",
-      "nc": 48
+      "t": "남자들이 원하는 여자에 대한 여자들의 망상",
+      "u": "https://www.dogdrip.net/dogdrip/734169242?sort_index=popular&page=1",
+      "nc": 38
      }
     },
     {
      "t": "민속촌 '귀신 참교육' 인기 속…\"아동학대\" 민원 9건 접수",
      "nsite": 3,
      "np_here": 1,
-     "nc_here": 44,
+     "nc_here": 49,
      "issue_np": 3,
-     "issue_nc": 46,
+     "issue_nc": 51,
      "kw": [
       "귀신",
       "학대",
@@ -273,7 +195,25 @@
      "top_post": {
       "t": "민속촌 귀신 훈육 아동학대 고소사건 근황",
       "u": "https://www.dogdrip.net/dogdrip/734130076?sort_index=popular&page=1",
-      "nc": 44
+      "nc": 49
+     }
+    },
+    {
+     "t": "연금 받을 나이가 된 김장훈",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 48,
+     "issue_np": 3,
+     "issue_nc": 49,
+     "kw": [
+      "연금",
+      "나이",
+      "김장훈"
+     ],
+     "top_post": {
+      "t": "연금 받을 나이가 된 김장훈",
+      "u": "https://www.dogdrip.net/dogdrip/734016673?sort_index=popular&page=1",
+      "nc": 48
      }
     },
     {
@@ -284,9 +224,9 @@
      "issue_np": 3,
      "issue_nc": 79,
      "kw": [
-      "이전",
       "세종",
       "추진",
+      "이전",
       "인권위"
      ],
      "top_post": {
@@ -303,8 +243,8 @@
      "issue_np": 7,
      "issue_nc": 29,
      "kw": [
-      "국적",
       "황우석",
+      "국적",
       "한국",
       "신청"
      ],
@@ -316,20 +256,39 @@
     },
     {
      "t": "아이유 ‘표절·중국 국적설’ 악플러 113일 만에 잡는다",
-     "nsite": 4,
+     "nsite": 3,
      "np_here": 1,
      "nc_here": 26,
-     "issue_np": 5,
+     "issue_np": 4,
      "issue_nc": 29,
      "kw": [
       "아이유",
       "악플",
-      "중국",
+      "표절",
       "국적"
      ],
      "top_post": {
       "t": "아이유 ‘표절·중국 국적설’ 악플러 113일 만에 잡는다",
       "u": "https://www.dogdrip.net/dogdrip/733972972?sort_index=popular&page=1",
+      "nc": 26
+     }
+    },
+    {
+     "t": "탈락이라는 표현이 기분나쁜 아이엄마들",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 26,
+     "issue_np": 3,
+     "issue_nc": 26,
+     "kw": [
+      "표현",
+      "탈락",
+      "기분",
+      "학부모"
+     ],
+     "top_post": {
+      "t": "탈락이라는 표현이 기분나쁜 아이엄마들",
+      "u": "https://www.dogdrip.net/dogdrip/734099467?sort_index=popular&page=1",
       "nc": 26
      }
     },
@@ -341,51 +300,15 @@
      "issue_np": 3,
      "issue_nc": 26,
      "kw": [
-      "중국",
-      "블라인",
       "후회",
-      "구매"
+      "프라이어",
+      "에어",
+      "중국"
      ],
      "top_post": {
       "t": "중국산 에어프라이어를 구매하고 후회하는 블라인 ㄷ",
       "u": "https://www.dogdrip.net/dogdrip/734021903?sort_index=popular&page=1",
       "nc": 24
-     }
-    },
-    {
-     "t": "젠슨황과 내연녀 추가 사진 공개",
-     "nsite": 7,
-     "np_here": 1,
-     "nc_here": 19,
-     "issue_np": 10,
-     "issue_nc": 88,
-     "kw": [
-      "젠슨 황",
-      "내연녀",
-      "앨리스",
-      "공개"
-     ],
-     "top_post": {
-      "t": "젠슨황 내연녀 앨리스 황 근황 ㄷㄷㄷ",
-      "u": "https://www.dogdrip.net/dogdrip/734066190?sort_index=popular&page=1",
-      "nc": 19
-     }
-    },
-    {
-     "t": "IQ가 낮은 사람을 알아보는 3가지 신호",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 10,
-     "issue_np": 3,
-     "issue_nc": 64,
-     "kw": [
-      "IQ",
-      "신호"
-     ],
-     "top_post": {
-      "t": "IQ가 낮은 사람을 알아보는 3가지 신호 근황",
-      "u": "https://www.dogdrip.net/dogdrip/733973035?sort_index=popular&page=1",
-      "nc": 10
      }
     }
    ]
@@ -393,15 +316,15 @@
   {
    "name": "클리앙",
    "np": 6,
-   "nc": 241,
+   "nc": 255,
    "topics": [
     {
      "t": "추미애 지사는 뭐 성역이에요?",
      "nsite": 2,
      "np_here": 1,
-     "nc_here": 94,
+     "nc_here": 108,
      "issue_np": 2,
-     "issue_nc": 102,
+     "issue_nc": 116,
      "kw": [
       "지사",
       "추미애"
@@ -409,7 +332,7 @@
      "top_post": {
       "t": "추미애 지사는 뭐 성역이에요?",
       "u": "https://www.clien.net/service/board/park/19290364?od=T33&po=0&category=0&groupCd=clien_all",
-      "nc": 94
+      "nc": 108
      }
     },
     {
@@ -421,8 +344,8 @@
      "issue_nc": 62,
      "kw": [
       "총선",
-      "차기",
       "심판",
+      "차기",
       "민주당"
      ],
      "top_post": {
@@ -439,9 +362,9 @@
      "issue_np": 3,
      "issue_nc": 79,
      "kw": [
-      "이전",
       "세종",
       "추진",
+      "이전",
       "인권위"
      ],
      "top_post": {
@@ -475,9 +398,9 @@
      "issue_np": 4,
      "issue_nc": 14,
      "kw": [
-      "날치기",
       "입법",
       "투표",
+      "날치기",
       "전자"
      ],
      "top_post": {
@@ -489,9 +412,71 @@
    ]
   },
   {
+   "name": "인스티즈",
+   "np": 3,
+   "nc": 145,
+   "topics": [
+    {
+     "t": "요즘 자영업자가 실제로 받는 요청사항",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 96,
+     "issue_np": 2,
+     "issue_nc": 233,
+     "kw": [
+      "요청",
+      "사항"
+     ],
+     "top_post": {
+      "t": "횟집에 예약된 요청사항",
+      "u": "https://www.instiz.net/pt/7923981?green=1",
+      "nc": 96
+     }
+    },
+    {
+     "t": "젠슨황과 내연녀 추가 사진 공개",
+     "nsite": 7,
+     "np_here": 1,
+     "nc_here": 42,
+     "issue_np": 10,
+     "issue_nc": 88,
+     "kw": [
+      "젠슨 황",
+      "내연녀",
+      "앨리스",
+      "공개"
+     ],
+     "top_post": {
+      "t": "젠슨황 내연녀 앨리스 황 근황",
+      "u": "https://www.instiz.net/pt/7924172?green=1",
+      "nc": 42
+     }
+    },
+    {
+     "t": "언니가 고딩때 사고쳐서 집 나갔는데 나한테 연락이 왔어...",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 7,
+     "issue_np": 3,
+     "issue_nc": 13,
+     "kw": [
+      "연락",
+      "언니",
+      "사고",
+      "고딩"
+     ],
+     "top_post": {
+      "t": "언니가 고딩때 사고쳐서 집 나갔는데 나한테 연락이 왔어...",
+      "u": "https://www.instiz.net/pt/7924204?green=1",
+      "nc": 7
+     }
+    }
+   ]
+  },
+  {
    "name": "82쿡",
-   "np": 12,
-   "nc": 68,
+   "np": 11,
+   "nc": 64,
    "topics": [
     {
      "t": "젠슨황과 내연녀 추가 사진 공개",
@@ -522,8 +507,8 @@
      "kw": [
       "황우석",
       "국적",
-      "박사",
-      "취득"
+      "취득",
+      "박사"
      ],
      "top_post": {
       "t": "황우석 박사 근황(펌)",
@@ -537,7 +522,7 @@
      "np_here": 1,
      "nc_here": 8,
      "issue_np": 2,
-     "issue_nc": 102,
+     "issue_nc": 116,
      "kw": [
       "지사",
       "추미애"
@@ -556,10 +541,10 @@
      "issue_np": 4,
      "issue_nc": 16,
      "kw": [
-      "범죄",
-      "예멘",
-      "소송",
-      "반복"
+      "반복",
+      "출국",
+      "신청자",
+      "취소"
      ],
      "top_post": {
       "t": "‘반복 범죄’ 예멘 난민 신청자, 출국명령 취소소송 이겼다…“돌..",
@@ -573,7 +558,7 @@
      "np_here": 1,
      "nc_here": 6,
      "issue_np": 3,
-     "issue_nc": 113,
+     "issue_nc": 13,
      "kw": [
       "연락",
       "언니",
@@ -587,23 +572,6 @@
      }
     },
     {
-     "t": "사귀다가 여자 30중반 이상이면 남자가 결혼 책임지라던데",
-     "nsite": 7,
-     "np_here": 1,
-     "nc_here": 4,
-     "issue_np": 10,
-     "issue_nc": 189,
-     "kw": [
-      "여자",
-      "남자"
-     ],
-     "top_post": {
-      "t": "50대남자도 20대 여자를",
-      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4257403&page=1",
-      "nc": 4
-     }
-    },
-    {
      "t": "[단독] 민주당, 전자투표 '날치기' 입법... 예고기간 단 하루",
      "nsite": 3,
      "np_here": 2,
@@ -611,9 +579,9 @@
      "issue_np": 4,
      "issue_nc": 14,
      "kw": [
-      "날치기",
       "입법",
       "투표",
+      "날치기",
       "전자"
      ],
      "top_post": {
@@ -628,7 +596,7 @@
      "np_here": 1,
      "nc_here": 2,
      "issue_np": 3,
-     "issue_nc": 46,
+     "issue_nc": 51,
      "kw": [
       "귀신",
       "학대",
@@ -640,13 +608,30 @@
       "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4257391&page=1",
       "nc": 2
      }
+    },
+    {
+     "t": "주식시장에서 다들 불만이 많은 이유",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 1,
+     "issue_np": 4,
+     "issue_nc": 31,
+     "kw": [
+      "시장",
+      "주식"
+     ],
+     "top_post": {
+      "t": "주식시장 오늘은 오르네요",
+      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4257409&page=1",
+      "nc": 1
+     }
     }
    ]
   },
   {
    "name": "보배드림",
-   "np": 17,
-   "nc": 40,
+   "np": 18,
+   "nc": 41,
    "topics": [
     {
      "t": "한국은 일본 식민지였는데 왜 일본어 안 써?",
@@ -675,8 +660,8 @@
      "issue_np": 4,
      "issue_nc": 6,
      "kw": [
-      "배우",
       "분노",
+      "배우",
       "군대"
      ],
      "top_post": {
@@ -703,25 +688,6 @@
      }
     },
     {
-     "t": "아이유 ‘표절·중국 국적설’ 악플러 113일 만에 잡는다",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 3,
-     "issue_np": 5,
-     "issue_nc": 29,
-     "kw": [
-      "아이유",
-      "악플",
-      "중국",
-      "국적"
-     ],
-     "top_post": {
-      "t": "가수 아이유, 113일만에 악플러 잡는다",
-      "u": "https://www.bobaedream.co.kr/view?code=best&No=1046290&vdate=",
-      "nc": 3
-     }
-    },
-    {
      "t": "[속보] ‘반복 범죄’ 예멘 난민 신청자, 출국명령 취소소송 이겼다…“돌아가면 생명 위험”",
      "nsite": 4,
      "np_here": 1,
@@ -729,14 +695,33 @@
      "issue_np": 4,
      "issue_nc": 16,
      "kw": [
-      "범죄",
-      "예멘",
-      "소송",
-      "반복"
+      "반복",
+      "출국",
+      "신청자",
+      "취소"
      ],
      "top_post": {
       "t": "‘반복 범죄’ 예멘 난민 신청자, 출국명령 취소소송 승소",
       "u": "https://www.bobaedream.co.kr/view?code=best&No=1046366&vdate=",
+      "nc": 3
+     }
+    },
+    {
+     "t": "아이유 ‘표절·중국 국적설’ 악플러 113일 만에 잡는다",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 3,
+     "issue_np": 4,
+     "issue_nc": 29,
+     "kw": [
+      "아이유",
+      "악플",
+      "표절",
+      "국적"
+     ],
+     "top_post": {
+      "t": "가수 아이유, 113일만에 악플러 잡는다",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1046290&vdate=",
       "nc": 3
      }
     },
@@ -750,8 +735,8 @@
      "kw": [
       "황우석",
       "국적",
-      "박사",
-      "취득"
+      "취득",
+      "박사"
      ],
      "top_post": {
       "t": "황우석 박사 UAE 국적취득이 엄청난 일인 이유",
@@ -798,23 +783,25 @@
   {
    "name": "네이트판",
    "np": 1,
-   "nc": 22,
+   "nc": 23,
    "topics": [
     {
      "t": "사귀다가 여자 30중반 이상이면 남자가 결혼 책임지라던데",
-     "nsite": 7,
+     "nsite": 9,
      "np_here": 1,
-     "nc_here": 22,
-     "issue_np": 10,
-     "issue_nc": 189,
+     "nc_here": 23,
+     "issue_np": 15,
+     "issue_nc": 240,
      "kw": [
       "여자",
-      "남자"
+      "남자",
+      "친구",
+      "일본인"
      ],
      "top_post": {
       "t": "남자친구랑 만난지 2년됐어요 나이는 제가 더 많아요 분명 저도 예쁜 편인데 예쁜 여자는 많으...",
       "u": "https://pann.nate.com/talk/375710983",
-      "nc": 22
+      "nc": 23
      }
     }
    ]
@@ -822,49 +809,114 @@
   {
    "name": "아카라이브",
    "np": 1,
-   "nc": 8,
+   "nc": 9,
    "topics": [
     {
-     "t": "친구가 20살 베트남 여자 소개받아서",
-     "nsite": 3,
+     "t": "사귀다가 여자 30중반 이상이면 남자가 결혼 책임지라던데",
+     "nsite": 9,
      "np_here": 1,
-     "nc_here": 8,
-     "issue_np": 3,
-     "issue_nc": 8,
+     "nc_here": 9,
+     "issue_np": 15,
+     "issue_nc": 240,
      "kw": [
       "여자",
-      "친구"
+      "남자",
+      "친구",
+      "일본인"
      ],
      "top_post": {
       "t": "\"박현준, 여자친구 만들어줘\"",
       "u": "https://arca.live/b/live/188623229?p=1",
-      "nc": 8
+      "nc": 9
+     }
+    }
+   ]
+  },
+  {
+   "name": "디시인사이드",
+   "np": 4,
+   "nc": 0,
+   "topics": [
+    {
+     "t": "젠슨황과 내연녀 추가 사진 공개",
+     "nsite": 7,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 10,
+     "issue_nc": 88,
+     "kw": [
+      "젠슨 황",
+      "내연녀",
+      "앨리스",
+      "공개"
+     ],
+     "top_post": {
+      "t": "젠슨황과 내연녀 추가 사진 공개",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=477336&_dcbest=1&page=1",
+      "nc": 0
+     }
+    },
+    {
+     "t": "탈락이라는 표현이 기분나쁜 아이엄마들",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 26,
+     "kw": [
+      "표현",
+      "탈락",
+      "기분",
+      "학부모"
+     ],
+     "top_post": {
+      "t": "탈락이라는 표현이 기분나쁜 학부모들",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=477593&_dcbest=1&page=1",
+      "nc": 0
+     }
+    },
+    {
+     "t": "젠슨황 사태를 예견한 치킨집",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 2,
+     "kw": [
+      "젠슨 황",
+      "사태"
+     ],
+     "top_post": {
+      "t": "젠슨황 사태를 예견한 치킨집",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=477461&_dcbest=1&page=1",
+      "nc": 0
+     }
+    },
+    {
+     "t": "【긴급】 트럼프, 부정선거 입갤ㅋㅋㅋㅋㅋㅋㅋ",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 1,
+     "kw": [
+      "부정",
+      "선거",
+      "트럼프"
+     ],
+     "top_post": {
+      "t": "【긴급】 트럼프, 부정선거 입갤ㅋㅋㅋㅋㅋㅋㅋ",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=477501&_dcbest=1&page=1",
+      "nc": 0
      }
     }
    ]
   },
   {
    "name": "SLR클럽",
-   "np": 11,
+   "np": 9,
    "nc": 0,
    "topics": [
-    {
-     "t": "사귀다가 여자 30중반 이상이면 남자가 결혼 책임지라던데",
-     "nsite": 7,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 10,
-     "issue_nc": 189,
-     "kw": [
-      "여자",
-      "남자"
-     ],
-     "top_post": {
-      "t": "여자가 싫어하는 남자 외모 순위 ㄷㄷㄷ",
-      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677084",
-      "nc": 0
-     }
-    },
     {
      "t": "황우석 한국 국적 회복 신청 사건 요약",
      "nsite": 5,
@@ -873,8 +925,8 @@
      "issue_np": 7,
      "issue_nc": 29,
      "kw": [
-      "국적",
       "황우석",
+      "국적",
       "한국",
       "신청"
      ],
@@ -930,9 +982,9 @@
      "issue_np": 3,
      "issue_nc": 79,
      "kw": [
-      "이전",
       "세종",
       "추진",
+      "이전",
       "인권위"
      ],
      "top_post": {
@@ -950,8 +1002,8 @@
      "issue_nc": 62,
      "kw": [
       "총선",
-      "차기",
       "심판",
+      "차기",
       "민주당"
      ],
      "top_post": {
@@ -966,7 +1018,7 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 3,
-     "issue_nc": 46,
+     "issue_nc": 51,
      "kw": [
       "귀신",
       "학대",
@@ -980,81 +1032,19 @@
      }
     },
     {
-     "t": "친구가 20살 베트남 여자 소개받아서",
+     "t": "신입사원 모친이 팀장에게 한 문자",
      "nsite": 3,
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 3,
-     "issue_nc": 8,
+     "issue_nc": 3,
      "kw": [
-      "여자",
-      "친구"
+      "신입",
+      "사원"
      ],
      "top_post": {
-      "t": "친구가 20살 베트남 여자 소개받아서",
-      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677132",
-      "nc": 0
-     }
-    }
-   ]
-  },
-  {
-   "name": "디시인사이드",
-   "np": 3,
-   "nc": 0,
-   "topics": [
-    {
-     "t": "젠슨황과 내연녀 추가 사진 공개",
-     "nsite": 7,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 10,
-     "issue_nc": 88,
-     "kw": [
-      "젠슨 황",
-      "내연녀",
-      "앨리스",
-      "공개"
-     ],
-     "top_post": {
-      "t": "젠슨황과 내연녀 추가 사진 공개",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=477336&_dcbest=1&page=1",
-      "nc": 0
-     }
-    },
-    {
-     "t": "유치원 탈락이라는 워딩이 기분나쁜 학부모들.",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 127,
-     "kw": [
-      "기분",
-      "학부모",
-      "탈락",
-      "표현"
-     ],
-     "top_post": {
-      "t": "탈락이라는 표현이 기분나쁜 학부모들",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=477593&_dcbest=1&page=1",
-      "nc": 0
-     }
-    },
-    {
-     "t": "젠슨황 사태를 예견한 치킨집",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 2,
-     "kw": [
-      "사태",
-      "젠슨 황"
-     ],
-     "top_post": {
-      "t": "젠슨황 사태를 예견한 치킨집",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=477461&_dcbest=1&page=1",
+      "t": "신입사원 모친이 팀장에게 한 문자",
+      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677073",
       "nc": 0
      }
     }
@@ -1062,7 +1052,7 @@
   },
   {
    "name": "더쿠",
-   "np": 11,
+   "np": 10,
    "nc": 0,
    "topics": [
     {
@@ -1073,52 +1063,14 @@
      "issue_np": 7,
      "issue_nc": 29,
      "kw": [
-      "국적",
       "황우석",
+      "국적",
       "한국",
       "신청"
      ],
      "top_post": {
       "t": "[속보] 황우석 “차 한잔 하자더니 UAE 국적 줬다…한국 국적 회복 신청”",
       "u": "https://theqoo.net/hot/4401421690",
-      "nc": 0
-     }
-    },
-    {
-     "t": "유치원 탈락이라는 워딩이 기분나쁜 학부모들.",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 127,
-     "kw": [
-      "기분",
-      "학부모",
-      "탈락",
-      "표현"
-     ],
-     "top_post": {
-      "t": "탈락이라는 표현이 기분나쁜 학부모들",
-      "u": "https://theqoo.net/hot/4401771161",
-      "nc": 0
-     }
-    },
-    {
-     "t": "아이유 ‘표절·중국 국적설’ 악플러 113일 만에 잡는다",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 29,
-     "kw": [
-      "아이유",
-      "악플",
-      "중국",
-      "국적"
-     ],
-     "top_post": {
-      "t": "아이유 ‘표절·중국 국적설’ 악플러 113일 만에 잡는다",
-      "u": "https://theqoo.net/hot/4400757882",
       "nc": 0
      }
     },
@@ -1130,33 +1082,14 @@
      "issue_np": 4,
      "issue_nc": 16,
      "kw": [
-      "범죄",
-      "예멘",
-      "소송",
-      "반복"
+      "반복",
+      "출국",
+      "신청자",
+      "취소"
      ],
      "top_post": {
       "t": "[속보] ‘반복 범죄’ 예멘 난민 신청자, 출국명령 취소소송 이겼다…“돌아가면 생명 위험”",
       "u": "https://theqoo.net/hot/4400859259",
-      "nc": 0
-     }
-    },
-    {
-     "t": "언니가 고딩때 사고쳐서 집 나갔는데 나한테 연락이 왔어...",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 113,
-     "kw": [
-      "연락",
-      "언니",
-      "사고",
-      "고딩"
-     ],
-     "top_post": {
-      "t": "언니가 고딩때 사고쳐서 집나갔는데 나한테 연락이 왔어…",
-      "u": "https://theqoo.net/hot/4401899952",
       "nc": 0
      }
     },
@@ -1169,13 +1102,32 @@
      "issue_nc": 62,
      "kw": [
       "총선",
-      "차기",
       "심판",
+      "차기",
       "민주당"
      ],
      "top_post": {
       "t": "[속보] 차기 총선, '절대 민주당 안찍어' 50.6%…'정부·여당 심판론' 57.7%",
       "u": "https://theqoo.net/hot/4401486436",
+      "nc": 0
+     }
+    },
+    {
+     "t": "탈락이라는 표현이 기분나쁜 아이엄마들",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 26,
+     "kw": [
+      "표현",
+      "탈락",
+      "기분",
+      "학부모"
+     ],
+     "top_post": {
+      "t": "탈락이라는 표현이 기분나쁜 학부모들",
+      "u": "https://theqoo.net/hot/4401771161",
       "nc": 0
      }
     },
@@ -1187,8 +1139,8 @@
      "issue_np": 3,
      "issue_nc": 17,
      "kw": [
-      "음식",
       "길거리",
+      "음식",
       "파키스탄"
      ],
      "top_post": {
@@ -1205,9 +1157,9 @@
      "issue_np": 4,
      "issue_nc": 14,
      "kw": [
-      "날치기",
       "입법",
       "투표",
+      "날치기",
       "전자"
      ],
      "top_post": {
@@ -1215,12 +1167,49 @@
       "u": "https://theqoo.net/hot/4401352684",
       "nc": 0
      }
+    },
+    {
+     "t": "언니가 고딩때 사고쳐서 집 나갔는데 나한테 연락이 왔어...",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 13,
+     "kw": [
+      "연락",
+      "언니",
+      "사고",
+      "고딩"
+     ],
+     "top_post": {
+      "t": "언니가 고딩때 사고쳐서 집나갔는데 나한테 연락이 왔어…",
+      "u": "https://theqoo.net/hot/4401899952",
+      "nc": 0
+     }
+    },
+    {
+     "t": "네이버페이10원+10원+1원+1원+1원+1원+랜덤 눌러봐++10원+5원+눌러눌러 보험랜덤+보험랜덤 하나더+…",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 7,
+     "issue_nc": 1,
+     "kw": [
+      "페이",
+      "네이버",
+      "랜덤"
+     ],
+     "top_post": {
+      "t": "네이버페이10원+10원+1원+1원+1원+1원+랜덤 눌러봐++10원+5원+눌러눌러 보험랜덤+보험랜덤 하나더+라이브미리보고12원받기+5원",
+      "u": "https://theqoo.net/hot/4401217342",
+      "nc": 0
+     }
     }
    ]
   },
   {
    "name": "루리웹",
-   "np": 21,
+   "np": 20,
    "nc": 0,
    "topics": [
     {
@@ -1231,33 +1220,14 @@
      "issue_np": 7,
      "issue_nc": 29,
      "kw": [
-      "국적",
       "황우석",
+      "국적",
       "한국",
       "신청"
      ],
      "top_post": {
       "t": "황우석 \"법무부에 한국 국적 회복 신청...심사 결과 기다려\"",
       "u": "https://bbs.ruliweb.com/best/board/300143/read/77336038?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "유치원 탈락이라는 워딩이 기분나쁜 학부모들.",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 127,
-     "kw": [
-      "기분",
-      "학부모",
-      "탈락",
-      "표현"
-     ],
-     "top_post": {
-      "t": "'탈락'이라는 단어자체도 기분나쁜 학부모들",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77340931?m=all&t=now",
       "nc": 0
      }
     },
@@ -1275,25 +1245,6 @@
      "top_post": {
       "t": "전세게 주식시장의 희망",
       "u": "https://bbs.ruliweb.com/best/board/300143/read/77334321?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "아이유 ‘표절·중국 국적설’ 악플러 113일 만에 잡는다",
-     "nsite": 4,
-     "np_here": 2,
-     "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 29,
-     "kw": [
-      "아이유",
-      "악플",
-      "중국",
-      "국적"
-     ],
-     "top_post": {
-      "t": "아이유 ‘표절·중국 국적설’ 악플러 113일 만에 잡는다",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77333452?m=all&t=now",
       "nc": 0
      }
     },
@@ -1341,13 +1292,32 @@
      "issue_np": 3,
      "issue_nc": 49,
      "kw": [
-      "김장훈",
       "연금",
-      "나이"
+      "나이",
+      "김장훈"
      ],
      "top_post": {
       "t": "연금 받을 나이가 된 김장훈",
       "u": "https://bbs.ruliweb.com/best/board/300143/read/77334576?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "아이유 ‘표절·중국 국적설’ 악플러 113일 만에 잡는다",
+     "nsite": 3,
+     "np_here": 2,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 29,
+     "kw": [
+      "아이유",
+      "악플",
+      "표절",
+      "국적"
+     ],
+     "top_post": {
+      "t": "아이유 ‘표절·중국 국적설’ 악플러 113일 만에 잡는다",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77333452?m=all&t=now",
       "nc": 0
      }
     },
@@ -1359,14 +1329,32 @@
      "issue_np": 3,
      "issue_nc": 26,
      "kw": [
-      "중국",
-      "블라인",
       "후회",
-      "구매"
+      "프라이어",
+      "에어",
+      "중국"
      ],
      "top_post": {
       "t": "중국산 에어프라이어를 구매하고 후회하는 블라인",
       "u": "https://bbs.ruliweb.com/best/board/300143/read/77337618?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "짹에서 전세계가 욕하는중인 파키스탄 길거리음식",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 17,
+     "kw": [
+      "길거리",
+      "음식",
+      "파키스탄"
+     ],
+     "top_post": {
+      "t": "일본 길거리음식 위생 레전드",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77339956?m=all&t=now",
       "nc": 0
      }
     }
@@ -1404,8 +1392,8 @@
      "issue_np": 4,
      "issue_nc": 6,
      "kw": [
-      "배우",
       "분노",
+      "배우",
       "군대"
      ],
      "top_post": {
