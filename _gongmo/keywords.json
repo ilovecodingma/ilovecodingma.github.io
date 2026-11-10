@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-10 10:00",
+ "updated": "2026-11-10 11:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -9453,6 +9453,292 @@
    "status": "작성",
    "page": "/money/guide/inheritance-tax-no-filing-needed-cases/",
    "registered": "2026-11-06",
+   "expires": ""
+  },
+  {
+   "query": "소득분위 조회·지급일",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/national-scholarship-income-bracket-lookup-payment-date/",
+   "registered": "2026-11-10",
+   "expires": ""
+  },
+  {
+   "query": "다자녀 국가장학금",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/national-scholarship-multi-child/",
+   "registered": "2026-11-10",
+   "expires": ""
+  },
+  {
+   "query": "중간예납 대상자·면제",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/interim-prepayment-who-must-pay-exemption/",
+   "registered": "2026-11-10",
+   "expires": ""
+  },
+  {
+   "query": "퇴사 후 피부양자·지역",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/resign-health-insurance-dependent-vs-regional/",
+   "registered": "2026-11-10",
+   "expires": ""
+  },
+  {
+   "query": "장애인연금 3급 확대",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/disability-pension-grade3-supplement-2027/",
+   "registered": "2026-11-10",
+   "expires": ""
+  },
+  {
+   "query": "자동차보험 경력인정",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/car-insurance-driving-career-recognition-apply/",
+   "registered": "2026-11-10",
+   "expires": ""
+  },
+  {
+   "query": "알바 4대보험 미가입",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/parttime-four-insurance-nonenrollment-refund/",
+   "registered": "2026-11-10",
+   "expires": ""
+  },
+  {
+   "query": "오피스텔 세금 감면",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/officetel-tax-exemption-reduction/",
+   "registered": "2026-11-10",
+   "expires": ""
+  },
+  {
+   "query": "국민주택채권 할인율",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/housing-bond-discount-rate-calculation/",
+   "registered": "2026-11-10",
+   "expires": ""
+  },
+  {
+   "query": "4대보험 상실신고 지연",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "",
+   "registered": "2026-11-10",
+   "expires": ""
+  },
+  {
+   "query": "실업급여 신청 시기",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "",
+   "registered": "2026-11-10",
+   "expires": ""
+  },
+  {
+   "query": "실업급여 온라인 신청",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "",
+   "registered": "2026-11-10",
+   "expires": ""
+  },
+  {
+   "query": "임의계속가입 신청",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "",
+   "registered": "2026-11-10",
+   "expires": ""
+  },
+  {
+   "query": "근로장려금 단독가구",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "",
+   "registered": "2026-11-10",
+   "expires": ""
+  },
+  {
+   "query": "자동차보험 자녀 경력인정",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "",
+   "registered": "2026-11-10",
+   "expires": ""
+  },
+  {
+   "query": "전기차 자동차세 계산",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "",
+   "registered": "2026-11-10",
+   "expires": ""
+  },
+  {
+   "query": "재산세 납기 지나면",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "",
+   "registered": "2026-11-10",
+   "expires": ""
+  },
+  {
+   "query": "양도세 신고기한 놓치면",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "",
+   "registered": "2026-11-10",
+   "expires": ""
+  },
+  {
+   "query": "부가세 신고 놓치면",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "",
+   "registered": "2026-11-10",
+   "expires": ""
+  },
+  {
+   "query": "2026귀속 연말정산 변경",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "",
+   "registered": "2026-11-10",
+   "expires": ""
+  },
+  {
+   "query": "2027 산재보험료율",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "",
+   "registered": "2026-11-10",
+   "expires": ""
+  },
+  {
+   "query": "퇴직금 계산방법",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "",
+   "registered": "2026-11-10",
    "expires": ""
   },
   {
