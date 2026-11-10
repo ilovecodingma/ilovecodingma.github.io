@@ -1037,7 +1037,9 @@
   "youth-rent-faq": "welfare",
   "youth-rent-support-documents": "welfare",
   "youth-support-eligibility-check-order": "welfare",
-  "youtube-premium-family-plan-rule": "life"
+  "youtube-premium-family-plan-rule": "life",
+  "suneung-2027-score-release-date-check": "edu",
+  "suneung-2027-gachaejeom-after-exam": "edu"
  },
  "season": [
   {
@@ -1111,6 +1113,12 @@
    "when": "2027/4/30까지",
    "until": "2027-04-30",
    "slug": "flu-vaccine"
+  },
+  {
+   "label": "수능 성적 통지",
+   "when": "12/11(금)",
+   "until": "2026-12-11",
+   "slug": "suneung-2027-score-release-date-check"
   }
  ]
 }
