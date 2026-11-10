@@ -200,7 +200,7 @@ def main():
             k = key(l)
             if freq[k] >= 2:
                 for j in inv[k]:
-                    if j != i: share[j] += len(l)
+                    if j != i and (r['noindex'] or not recs[j]['noindex']): share[j] += len(l)   # 11/10: 색인 대상 글의 중복 상대는 색인 대상만(noindex 읽기 화면 /book/ 은 검색에 안 나가므로 중복 근거가 아님)
         if share and base:
             j, n = share.most_common(1)[0]
             r['dup_ratio'] = round(min(n / base, 1), 2); r['dup_with'] = recs[j]['u']

@@ -3747,9 +3747,26 @@ def topic_hub_pages(G, GN, top):
                 tops = f'<h2 class="th-h2">많이 찾는 글 <small>최근 7일 방문 기준</small></h2><ul class="th-l th-top">{"".join(row(g) for g in tp)}</ul>' if len(tp) >= 2 else ''
                 desc = re.sub(chr(92) + 's+', ' ', paras[0])
                 desc = desc if len(desc) <= 150 else desc[:150].rsplit(' ', 1)[0] + '…'
+                import urllib.parse as _up   # 2026-11-10 감사: 허브에 공식 출처가 없어 C등급 → 이 주제 글들이 가장 많이 인용한 공식 기관 누리집을 모아 보여 준다
+                _hc = {}
+                for g in L:
+                    for _s in g.get('sources', []):
+                        try:
+                            _nm, _ur = _s[0], _s[1]
+                            _h = _up.urlparse(_ur).netloc.lower()
+                        except Exception:
+                            continue
+                        if _ur.startswith('https://') and (_h.endswith('.go.kr') or _h.endswith('.or.kr') or _h.endswith('.re.kr')):
+                            _hc.setdefault(_h, {}).setdefault((_nm, _ur), 0)
+                            _hc[_h][(_nm, _ur)] += 1
+                _top = sorted(_hc.items(), key=lambda kv: -sum(kv[1].values()))[:6]
+                srcs = ''
+                if _top:
+                    _li = ''.join(f'<li><a href="{E(max(v.items(), key=lambda x: x[1])[0][1])}" rel="noopener nofollow" target="_blank">{E(max(v.items(), key=lambda x: x[1])[0][0])}</a> <small>{h}</small></li>' for h, v in _top)
+                    srcs = f'<h2 class="th-h2">이 주제의 공식 출처 <small>글들이 가장 많이 인용한 기관</small></h2><ul class="th-l th-src">{_li}</ul>'
                 body = (f'<p class="bc"><a href="/">홈</a> › <a href="/money/guide/">생활 가이드</a> › {E(t["name"])}</p><h1 class="th-h1">{E(t["name"])}</h1>'
                         f'<div class="th-in">{"".join(f"<p>{E(x)}</p>" for x in paras)}</div>{tops}'
-                        f'<h2 class="th-h2">「{E(t["name"])}」 글 전체 <small>{len(L)}편 · 최신순</small></h2><ul class="th-l">{"".join(row(g) for g in L)}</ul>'
+                        f'<h2 class="th-h2">「{E(t["name"])}」 글 전체 <small>{len(L)}편 · 최신순</small></h2><ul class="th-l">{"".join(row(g) for g in L)}</ul>{srcs}'
                         f'<h2 class="th-h2">다른 주제</h2><div class="th-c">{chips(k)}<a href="/money/guide/">생활 가이드 전체</a></div>' + TH_CSS)
                 page(hp, f'{t["name"]} 가이드 {len(L)}편 — 공식 출처로 정리한 생활 가이드', desc, body, [('루리 줍줍', '/'), ('생활 가이드', '/money/guide/'), (t['name'], hp)], full_title=True)
                 urls.append(hp)
