@@ -1,5 +1,5 @@
 {
- "at": "2026-11-10 23:06",
+ "at": "2026-11-10 23:30",
  "nitems": 530,
  "cands": [
   {
@@ -13,7 +13,7 @@
     "조선일보",
     "한국경제"
    ],
-   "n": 34,
+   "n": 30,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -381,7 +381,41 @@
    ]
   },
   {
-   "kw": "바람이",
+   "kw": "결혼",
+   "nsrc": 5,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "동아일보",
+    "연합뉴스",
+    "조선일보"
+   ],
+   "n": 6,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "배우 도상우·모델 박지혜, 내년 2월 결혼",
+     "link": "https://www.yna.co.kr/view/AKR20261105173700005"
+    },
+    {
+     "src": "동아일보",
+     "title": "‘이규한♥’ 솔비, 내년 결혼 앞두고 열일…갤러리 개관전 초청",
+     "link": "https://sports.donga.com/ent/article/all/20261110/135002266/1"
+    },
+    {
+     "src": "SBS",
+     "title": "배우 도상우, 모델 박지혜와 내년 2월 결혼…로맨틱 프러포즈 공개",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008833895&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "SBS",
+     "title": "김구라, 곧 며느리 본다…아들 그리, '곰신' 여자친구와 깜짝 결혼 발표",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008833564&plink=RSSLINK&cooper=RSSREADER"
+    }
+   ]
+  },
+  {
+   "kw": "분다",
    "nsrc": 5,
    "srcs": [
     "뉴시스",
@@ -415,7 +449,7 @@
    ]
   },
   {
-   "kw": "분다",
+   "kw": "바람이",
    "nsrc": 5,
    "srcs": [
     "뉴시스",
@@ -680,6 +714,39 @@
    ]
   },
   {
+   "kw": "주년",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "동아일보",
+    "연합뉴스",
+    "한겨레"
+   ],
+   "n": 7,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "10주년 NCT 드림, 6집 '드림 애프터 드림'…\"희망 드리고 싶어\"",
+     "link": "https://www.yna.co.kr/view/AKR20261109071700005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "[가요소식] 디어클라우드, 8일 신곡 '꿈의 장면'…19주년 기념",
+     "link": "https://www.yna.co.kr/view/AKR20261106169800005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "[가요소식] 데뷔 30주년 김연우, 서울서 크리스마스 콘서트",
+     "link": "https://www.yna.co.kr/view/AKR20261105069500005"
+    },
+    {
+     "src": "동아일보",
+     "title": "볼빨간사춘기, 데뷔 10주년 글로벌 투어 포문…“곁 지켜줘서 감사”",
+     "link": "https://sports.donga.com/ent/article/all/20261110/135002528/1"
+    }
+   ]
+  },
+  {
    "kw": "한국",
    "nsrc": 4,
    "srcs": [
@@ -907,39 +974,6 @@
      "src": "뉴시스",
      "title": "'강의 중단 후 예능' 이도, 결국 활동 중단 \"여러분 시간 빼앗았다\"",
      "link": "https://www.newsis.com/view/NISX20261110_0003862513"
-    }
-   ]
-  },
-  {
-   "kw": "결혼",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "동아일보",
-    "연합뉴스"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "배우 도상우·모델 박지혜, 내년 2월 결혼",
-     "link": "https://www.yna.co.kr/view/AKR20261105173700005"
-    },
-    {
-     "src": "동아일보",
-     "title": "‘이규한♥’ 솔비, 내년 결혼 앞두고 열일…갤러리 개관전 초청",
-     "link": "https://sports.donga.com/ent/article/all/20261110/135002266/1"
-    },
-    {
-     "src": "SBS",
-     "title": "배우 도상우, 모델 박지혜와 내년 2월 결혼…로맨틱 프러포즈 공개",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008833895&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "SBS",
-     "title": "김구라, 곧 며느리 본다…아들 그리, '곰신' 여자친구와 깜짝 결혼 발표",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008833564&plink=RSSLINK&cooper=RSSREADER"
     }
    ]
   },
@@ -1303,39 +1337,6 @@
      "src": "조선일보",
      "title": "“사약 수준으로 마셔” 지수, 1일 2커피는 기본..‘보리차’ 유재석도 깜짝 (‘틈만나면’)[순간포착]",
      "link": "https://www.chosun.com/entertainments/broadcast/2026/11/10/GA2TIYRVMM3TMODBGAYGMNDFHE/"
-    }
-   ]
-  },
-  {
-   "kw": "민속촌",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "조선일보",
-    "헤럴드경제"
-   ],
-   "n": 4,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "이지혜, 민속촌 인기 귀신에 돌직구…“성과금 얘기 없나요?”",
-     "link": "https://sports.donga.com/ent/article/all/20261110/134997460/1"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "이지혜 딸, ‘아동학대 논란’ 민속촌 귀신 만났다…“숙제 잘 할게요”오열",
-     "link": "https://biz.heraldcorp.com/article/10931655"
-    },
-    {
-     "src": "뉴시스",
-     "title": "이지혜, '112 신고 논란' 민속촌 귀신에 \"성과금 얘기 없나?\"",
-     "link": "https://www.newsis.com/view/NISX20261110_0003861281"
-    },
-    {
-     "src": "조선일보",
-     "title": "하필 논란인데..이지혜, 민속촌 귀신 훈육 괜히 건드렸나 '갑론을박' [Oh!쎈 이슈]",
-     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/10/MNSGEMRQMIZWKMZWG4ZDGMJXMQ/"
     }
    ]
   }
