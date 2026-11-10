@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-10 19:00",
+ "updated": "2026-11-10 20:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -675,6 +675,18 @@
    "expires": "2026-11-13"
   },
   {
+   "query": "젠슨 황 스캔들",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 5000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-10",
+   "expires": "2026-11-13"
+  },
+  {
    "query": "숲",
    "tier": "단기",
    "signal": [
@@ -712,6 +724,18 @@
   },
   {
    "query": "해커",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-10",
+   "expires": "2026-11-13"
+  },
+  {
+   "query": "kbo 리그",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -844,6 +868,30 @@
   },
   {
    "query": "이지혜",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-10",
+   "expires": "2026-11-13"
+  },
+  {
+   "query": "시어머니",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-10",
+   "expires": "2026-11-13"
+  },
+  {
+   "query": "공포탄",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -1191,18 +1239,6 @@
    "expires": "2026-11-13"
   },
   {
-   "query": "kbo 리그",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 2000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-10",
-   "expires": "2026-11-13"
-  },
-  {
    "query": "이찬혁",
    "tier": "단기",
    "signal": [
@@ -1287,7 +1323,7 @@
    "expires": "2026-11-13"
   },
   {
-   "query": "시어머니",
+   "query": "백용환",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -1960,6 +1996,30 @@
   },
   {
    "query": "ai 데이터 센터",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-10",
+   "expires": "2026-11-13"
+  },
+  {
+   "query": "대만 해협",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-10",
+   "expires": "2026-11-13"
+  },
+  {
+   "query": "골프존카운티",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -2859,18 +2919,6 @@
    "expires": "2026-11-13"
   },
   {
-   "query": "이소라",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 1000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-08",
-   "expires": "2026-11-13"
-  },
-  {
    "query": "thời tiết ngày mai",
    "tier": "단기",
    "signal": [
@@ -3027,18 +3075,6 @@
    "expires": "2026-11-13"
   },
   {
-   "query": "공포탄",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 1000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-10",
-   "expires": "2026-11-13"
-  },
-  {
    "query": "코스피 5383.80 종가, 5.28% 내린 이유는? 사이드카 발동과 매체 분석 정리",
    "tier": "단기",
    "signal": [
@@ -3130,6 +3166,19 @@
    "expires": "2026-11-08"
   },
   {
+   "query": "빅뱅 방콕 콘서트 중단 이유와 환불 안내 정리",
+   "tier": "단기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 2,
+   "status": "작성",
+   "page": "/issue/bigbang-bangkok-concert-halted-1110/",
+   "registered": "2026-11-10",
+   "expires": "2026-11-14"
+  },
+  {
    "query": "중앙일보 인수 CJ 다우키움 신세계 컨소시엄 현황, 계약 11월 6일 시한",
    "tier": "단기",
    "signal": [
@@ -3208,6 +3257,19 @@
    "expires": "2026-11-05"
   },
   {
+   "query": "이소라 바람이 분다 등 45곡 압류 전 소속사 대표 상대 저작인접권 보도 정리",
+   "tier": "단기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 2,
+   "status": "작성",
+   "page": "/issue/lee-sora-former-agency-rights-seizure-1110/",
+   "registered": "2026-11-10",
+   "expires": "2026-11-14"
+  },
+  {
    "query": "젝스키스 이재진 디너쇼 불참 선언, 주최 측 행사 재정비 입장 정리",
    "tier": "단기",
    "signal": [
@@ -3217,6 +3279,19 @@
    "score": 2,
    "status": "작성",
    "page": "/issue/sechskies-dinner-show-lee-jaejin-absence-1110/",
+   "registered": "2026-11-10",
+   "expires": "2026-11-14"
+  },
+  {
+   "query": "SM엔터 개인정보 유출 사과, 주민번호·계좌번호 유출 항목과 대처 안내 정리",
+   "tier": "단기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 2,
+   "status": "작성",
+   "page": "/issue/sm-entertainment-personal-data-leak-1110/",
    "registered": "2026-11-10",
    "expires": "2026-11-14"
   },
