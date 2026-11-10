@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-10 08:00",
+ "updated": "2026-11-10 10:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -171,6 +171,18 @@
    "expires": "2026-11-13"
   },
   {
+   "query": "자동차",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 10000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-05",
+   "expires": "2026-11-13"
+  },
+  {
    "query": "경제",
    "tier": "단기",
    "signal": [
@@ -207,18 +219,6 @@
    "expires": "2026-11-13"
   },
   {
-   "query": "김부선",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 10000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-09",
-   "expires": "2026-11-13"
-  },
-  {
    "query": "비야 디",
    "tier": "단기",
    "signal": [
@@ -228,30 +228,6 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-03",
-   "expires": "2026-11-13"
-  },
-  {
-   "query": "송중기",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 10000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-04",
-   "expires": "2026-11-13"
-  },
-  {
-   "query": "자동차",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 10000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-05",
    "expires": "2026-11-13"
   },
   {
@@ -1719,6 +1695,18 @@
    "expires": "2026-11-13"
   },
   {
+   "query": "xrp 레저",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-08",
+   "expires": "2026-11-13"
+  },
+  {
    "query": "담배",
    "tier": "단기",
    "signal": [
@@ -1944,18 +1932,6 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-03",
-   "expires": "2026-11-13"
-  },
-  {
-   "query": "xrp 레저",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 1000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-08",
    "expires": "2026-11-13"
   },
   {
@@ -2940,6 +2916,30 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-09",
+   "expires": "2026-11-13"
+  },
+  {
+   "query": "커피",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-10",
+   "expires": "2026-11-13"
+  },
+  {
+   "query": "김치",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-10",
    "expires": "2026-11-13"
   },
   {
@@ -11320,6 +11320,19 @@
    "expires": "2026-11-10"
   },
   {
+   "query": "드래곤포니 3인 체제 첫 싱글 콜링 백 수록곡과 12월 단독 콘서트 일정",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 2,
+   "status": "작성",
+   "page": "/issue/dragonpony-comeback-1110/",
+   "registered": "2026-11-10",
+   "expires": "2026-11-24"
+  },
+  {
    "query": "정용진 이마트 대표 복귀 13년 만, 언제 어떻게 선임되나 정리",
    "tier": "중기",
    "signal": [
@@ -11489,6 +11502,19 @@
    "expires": "2026-11-16"
   },
   {
+   "query": "김부선 월 300만원 무상 지원 소송 1심 판결 내용과 유족 항소 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 2,
+   "status": "작성",
+   "page": "/issue/kim-bu-sun-support-money-lawsuit-1110/",
+   "registered": "2026-11-10",
+   "expires": "2026-11-24"
+  },
+  {
    "query": "김현철 유재석 축의금 50만원 30만원 환불 발언 아는 형님 방송 내용 정리",
    "tier": "중기",
    "signal": [
@@ -11643,6 +11669,32 @@
    "page": "/issue/second-signal-jo-jinwoong-airdate-1106/",
    "registered": "2026-11-06",
    "expires": "2026-11-20"
+  },
+  {
+   "query": "SK그룹 CEO 세미나 일정과 새 사장단 인사, 리밸런싱 계열사 재편 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 2,
+   "status": "작성",
+   "page": "/issue/sk-group-rebalancing-ai-monetization-1110/",
+   "registered": "2026-11-10",
+   "expires": "2026-11-24"
+  },
+  {
+   "query": "송중기 근황 운동 중 영상통화 보도와 러브 클라우드 방송 일정",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 2,
+   "status": "작성",
+   "page": "/issue/song-joongki-latest-1110/",
+   "registered": "2026-11-10",
+   "expires": "2026-11-24"
   },
   {
    "query": "태권도 북한 유네스코 인류무형유산 등재 권고 정리, 최종 결정은 언제?",
