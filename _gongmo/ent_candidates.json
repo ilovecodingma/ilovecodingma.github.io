@@ -1,5 +1,5 @@
 {
- "at": "2026-11-10 13:06",
+ "at": "2026-11-10 13:30",
  "nitems": 525,
  "cands": [
   {
@@ -48,8 +48,13 @@
     "한겨레",
     "한국경제"
    ],
-   "n": 9,
+   "n": 10,
    "headlines": [
+    {
+     "src": "동아일보",
+     "title": "임영웅, 스타디움 공연 아이맥스로 재현…드론쇼·불꽃놀이까지",
+     "link": "https://sports.donga.com/ent/article/all/20261110/134998380/1"
+    },
     {
      "src": "동아일보",
      "title": "장한별, 트로트 남성 부문 투표 1위…‘불후의 명곡’까지 출격",
@@ -64,11 +69,6 @@
      "src": "한겨레",
      "title": "예술인 연습 활동·관객 안전사고까지 보장…‘예술현장 안심 공제’ 첫발",
      "link": "https://www.hani.co.kr/arti/culture/culture_general/1286157.html"
-    },
-    {
-     "src": "한국경제",
-     "title": "제로베이스원 EMP, 대학축제에 음악방송까지…신나게 '런'",
-     "link": "https://www.hankyung.com/article/202611095916H"
     }
    ]
   },
@@ -150,7 +150,7 @@
     "연합뉴스",
     "한국경제"
    ],
-   "n": 14,
+   "n": 13,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -218,7 +218,7 @@
     "조선일보",
     "한국경제"
    ],
-   "n": 9,
+   "n": 8,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -375,6 +375,74 @@
      "src": "뉴시스",
      "title": "나연 \"재석 선배님이랑 같은 논현 아파트 산다\"",
      "link": "https://www.newsis.com/view/NISX20261110_0003861234"
+    }
+   ]
+  },
+  {
+   "kw": "싱가포르",
+   "nsrc": 5,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "연합뉴스",
+    "조선일보",
+    "헤럴드경제"
+   ],
+   "n": 6,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "BTS, 12월 한 달간 싱가포르 물들인다…월드투어 기념 '더 시티'",
+     "link": "https://www.yna.co.kr/view/AKR20261110079900005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "디즈니, 내년 싱가포르서 대형 팬 행사…한국 등 신작 공개",
+     "link": "https://www.yna.co.kr/view/AKR20261105096800005"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "신정환, ‘월 매출 2억’ 싱가포르 사업 접고 귀국한 이유",
+     "link": "https://biz.heraldcorp.com/article/10931067"
+    },
+    {
+     "src": "SBS",
+     "title": "\"선크림도 직접 발라줘\"…'비서진' 이서진X하지원, 싱가포르서 묘한 핑크빛 기류",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008833781&plink=RSSLINK&cooper=RSSREADER"
+    }
+   ]
+  },
+  {
+   "kw": "리센느",
+   "nsrc": 5,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "연합뉴스",
+    "조선일보",
+    "한국경제"
+   ],
+   "n": 6,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "리센느 '펄스', 첫주 판매량 60만장…첫 하프 밀리언셀러",
+     "link": "https://www.yna.co.kr/view/AKR20261110068400005"
+    },
+    {
+     "src": "한국경제",
+     "title": "리센느 \"'국민 걸그룹' 호칭 과분…'믿고 듣는 리센느' 수식어 붙길\"",
+     "link": "https://www.hankyung.com/article/202611032757H"
+    },
+    {
+     "src": "한국경제",
+     "title": "리센느, 이번엔 머스크 향이다…팬들 심장 뛰게 할 '펄스'",
+     "link": "https://www.hankyung.com/article/202610278793H"
+    },
+    {
+     "src": "SBS",
+     "title": "리센느, 초동 60만 장 뚫고 첫 하프 밀리언셀러…전작 대비 5.8배 껑충",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008838879&plink=RSSLINK&cooper=RSSREADER"
     }
    ]
   },
@@ -580,39 +648,6 @@
    ]
   },
   {
-   "kw": "투어",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "연합뉴스",
-    "조선일보",
-    "한국경제"
-   ],
-   "n": 7,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "스트레이 키즈, LA·파리 등 공연 추가…31곳으로 투어 확장",
-     "link": "https://www.yna.co.kr/view/AKR20261110050400005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "YG, 3분기 영업익 135억원…투어 비용 등 영향 56.8%↓(종합)",
-     "link": "https://www.yna.co.kr/view/AKR20261109105600005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "위켄드, 투어 매출 13억 달러 돌파…남성 솔로 가수 최고",
-     "link": "https://www.yna.co.kr/view/AKR20261107025100005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "캣츠아이, 북미 투어 잇단 연기…\"메간 뇌진탕으로 회복 중\"",
-     "link": "https://www.yna.co.kr/view/AKR20261106086400005"
-    }
-   ]
-  },
-  {
    "kw": "정규",
    "nsrc": 4,
    "srcs": [
@@ -811,72 +846,6 @@
    ]
   },
   {
-   "kw": "싱가포르",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "연합뉴스",
-    "조선일보",
-    "헤럴드경제"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "BTS, 12월 한 달간 싱가포르 물들인다…월드투어 기념 '더 시티'",
-     "link": "https://www.yna.co.kr/view/AKR20261110079900005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "디즈니, 내년 싱가포르서 대형 팬 행사…한국 등 신작 공개",
-     "link": "https://www.yna.co.kr/view/AKR20261105096800005"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "신정환, ‘월 매출 2억’ 싱가포르 사업 접고 귀국한 이유",
-     "link": "https://biz.heraldcorp.com/article/10931067"
-    },
-    {
-     "src": "SBS",
-     "title": "\"선크림도 직접 발라줘\"…'비서진' 이서진X하지원, 싱가포르서 묘한 핑크빛 기류",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008833781&plink=RSSLINK&cooper=RSSREADER"
-    }
-   ]
-  },
-  {
-   "kw": "리센느",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "연합뉴스",
-    "조선일보",
-    "한국경제"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "리센느 '펄스', 첫주 판매량 60만장…첫 하프 밀리언셀러",
-     "link": "https://www.yna.co.kr/view/AKR20261110068400005"
-    },
-    {
-     "src": "한국경제",
-     "title": "리센느 \"'국민 걸그룹' 호칭 과분…'믿고 듣는 리센느' 수식어 붙길\"",
-     "link": "https://www.hankyung.com/article/202611032757H"
-    },
-    {
-     "src": "한국경제",
-     "title": "리센느, 이번엔 머스크 향이다…팬들 심장 뛰게 할 '펄스'",
-     "link": "https://www.hankyung.com/article/202610278793H"
-    },
-    {
-     "src": "뉴시스",
-     "title": "리센느, 음반도 만화방창…미니 4집으로 첫 하프 밀리언",
-     "link": "https://www.newsis.com/view/NISX20261110_0003861693"
-    }
-   ]
-  },
-  {
    "kw": "드림",
    "nsrc": 4,
    "srcs": [
@@ -1009,39 +978,6 @@
    ]
   },
   {
-   "kw": "도전",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "연합뉴스",
-    "한겨레"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "6번째 우승 도전 장동민 \"살아있는 한 서바이벌 은퇴는 없죠\"",
-     "link": "https://www.yna.co.kr/view/AKR20261105097500005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "정진운 \"첫 멜로영화 도전…느린 호흡 속 요동치는 감정 담았죠\"",
-     "link": "https://www.yna.co.kr/view/AKR20261104158200005"
-    },
-    {
-     "src": "한겨레",
-     "title": "피부부터 장기까지…‘인체 수리’ 도전 [.txt]",
-     "link": "https://www.hani.co.kr/arti/culture/book/1286068.html"
-    },
-    {
-     "src": "SBS",
-     "title": "'닥터X' 김지원, 동료 의사들에게 \"부탁드립니다\" 숙인 사연은…전대미문 체외 수술 도전",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008833758&plink=RSSLINK&cooper=RSSREADER"
-    }
-   ]
-  },
-  {
    "kw": "유튜브",
    "nsrc": 4,
    "srcs": [
@@ -1071,39 +1007,6 @@
      "src": "뉴시스",
      "title": "이하늘, 여자친구 유튜브 홍보 \"팔로우 부탁\"",
      "link": "https://www.newsis.com/view/NISX20261109_0003860565"
-    }
-   ]
-  },
-  {
-   "kw": "신민아",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "신민아·이진욱의 휴먼 멜로…'수목금' 내년 상반기 방송",
-     "link": "https://www.yna.co.kr/view/AKR20261105032500005"
-    },
-    {
-     "src": "동아일보",
-     "title": "신민아, 파리 브이로그 촬영 사흘 만에 눈치 “찍고 있었어요?”",
-     "link": "https://sports.donga.com/ent/article/all/20261109/134995818/1"
-    },
-    {
-     "src": "뉴시스",
-     "title": "신민아♥김우빈, 결혼 후 첫 동반 포착…나란히 결혼식 참석",
-     "link": "https://www.newsis.com/view/NISX20261109_0003860369"
-    },
-    {
-     "src": "조선일보",
-     "title": "신민아, 유럽에 뜬 나비에..파피 거리서 환호 사랑스런 '밍로그'",
-     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/10/GU2TAMDCGY4TQMRSGJQTSYRXGM/"
     }
    ]
   },
@@ -1174,6 +1077,39 @@
    ]
   },
   {
+   "kw": "깜짝",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "조선일보",
+    "한국경제"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "한국경제",
+     "title": "아일릿, 여경 의상 논란에 \"깜짝 놀라…어떤 관심이든 감사\"",
+     "link": "https://www.hankyung.com/article/202610265795H"
+    },
+    {
+     "src": "SBS",
+     "title": "김구라, 곧 며느리 본다…아들 그리, '곰신' 여자친구와 깜짝 결혼 발표",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008833564&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "뉴시스",
+     "title": "김범, 해외서 의문의 여성과 포착…턱에 손대자 '깜짝'",
+     "link": "https://www.newsis.com/view/NISX20261110_0003862006"
+    },
+    {
+     "src": "뉴시스",
+     "title": "던, 깜짝 2세 계획 고백 \"딸 낳고 싶어\"",
+     "link": "https://www.newsis.com/view/NISX20261109_0003860048"
+    }
+   ]
+  },
+  {
    "kw": "아파트",
    "nsrc": 4,
    "srcs": [
@@ -1236,6 +1172,39 @@
      "src": "SBS",
      "title": "\"내가 무슨 큰 잘못을 했나\"…'탑♥' 나나, 공개 열애 후 쏟아진 악플에 강력 일침",
      "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008833503&plink=RSSLINK&cooper=RSSREADER"
+    }
+   ]
+  },
+  {
+   "kw": "하프",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "연합뉴스",
+    "조선일보"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "리센느 '펄스', 첫주 판매량 60만장…첫 하프 밀리언셀러",
+     "link": "https://www.yna.co.kr/view/AKR20261110068400005"
+    },
+    {
+     "src": "SBS",
+     "title": "리센느, 초동 60만 장 뚫고 첫 하프 밀리언셀러…전작 대비 5.8배 껑충",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008838879&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "뉴시스",
+     "title": "리센느, 음반도 만화방창…미니 4집으로 첫 하프 밀리언",
+     "link": "https://www.newsis.com/view/NISX20261110_0003861693"
+    },
+    {
+     "src": "조선일보",
+     "title": "리센느, 초동 60만 자체 최고 기록..첫 하프 밀리언셀러 등극",
+     "link": "https://www.chosun.com/entertainments/music/2026/11/10/MVRGIZJXGY4DGY3EMJSTGNZVGA/"
     }
    ]
   },
@@ -1335,6 +1304,39 @@
      "src": "뉴시스",
      "title": "풍자, 다리 골절로 3주 깁스…\"방송 활동 어려웠다\"",
      "link": "https://www.newsis.com/view/NISX20261110_0003861761"
+    }
+   ]
+  },
+  {
+   "kw": "등장",
+   "nsrc": 4,
+   "srcs": [
+    "동아일보",
+    "조선일보",
+    "한국경제",
+    "헤럴드경제"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "덱스, 116만 유튜브 중단 후 근황…두 달 만에 SNS 등장 [SD셀픽]",
+     "link": "https://sports.donga.com/ent/article/all/20261110/134997584/1"
+    },
+    {
+     "src": "한국경제",
+     "title": "'재혼황후' 이종석, 국내 최초 새 연기 \"제가 좀 새 상…사람으로 변할 때 나체로 등장\"",
+     "link": "https://www.hankyung.com/article/202611032589H"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "‘남대문 스카프 아저씨’ 등장 SBS ‘생활의 달인’ 시청률 4.3% 올해 최고",
+     "link": "https://biz.heraldcorp.com/article/10932113"
+    },
+    {
+     "src": "조선일보",
+     "title": "김민 ‘나혼산’ 인기 후폭풍..사칭 계정까지 등장 “금전 요구·사적 대화 NO” [공식]",
+     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/10/HAZTANZXMVRDCYRXGUYWCMLCG4/"
     }
    ]
   }

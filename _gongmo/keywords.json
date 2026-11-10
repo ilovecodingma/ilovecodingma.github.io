@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-10 13:00",
+ "updated": "2026-11-10 14:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -88,6 +88,18 @@
   },
   {
    "query": "시애틀 사운더스 대 엘에이 fc",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 20000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-08",
+   "expires": "2026-11-13"
+  },
+  {
+   "query": "박진만",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -735,6 +747,18 @@
    "expires": "2026-11-13"
   },
   {
+   "query": "중대범죄 수사청",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-03",
+   "expires": "2026-11-13"
+  },
+  {
    "query": "은마아파트",
    "tier": "단기",
    "signal": [
@@ -1224,18 +1248,6 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-10",
-   "expires": "2026-11-13"
-  },
-  {
-   "query": "중대범죄 수사청",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 2000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-03",
    "expires": "2026-11-13"
   },
   {
@@ -2031,6 +2043,18 @@
    "expires": "2026-11-13"
   },
   {
+   "query": "원태인",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-08",
+   "expires": "2026-11-13"
+  },
+  {
    "query": "한화 이글스",
    "tier": "단기",
    "signal": [
@@ -2523,18 +2547,6 @@
    "expires": "2026-11-13"
   },
   {
-   "query": "원태인",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 1000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-08",
-   "expires": "2026-11-13"
-  },
-  {
    "query": "이다해",
    "tier": "단기",
    "signal": [
@@ -2811,18 +2823,6 @@
    "expires": "2026-11-13"
   },
   {
-   "query": "엔비디아",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 1000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-08",
-   "expires": "2026-11-13"
-  },
-  {
    "query": "밥",
    "tier": "단기",
    "signal": [
@@ -2872,18 +2872,6 @@
   },
   {
    "query": "공기업",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 1000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-08",
-   "expires": "2026-11-13"
-  },
-  {
-   "query": "박진만",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -11839,6 +11827,19 @@
    "expires": "2026-11-11"
   },
   {
+   "query": "코스피 5200선 반등 출발 시황과 CPI·순매수·옵션 최종거래일 뜻",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 2,
+   "status": "작성",
+   "page": "/issue/kospi-market-wrap-terms-1110/",
+   "registered": "2026-11-10",
+   "expires": "2026-11-17"
+  },
+  {
    "query": "2026 KPGA 투어 최종전 우승 정재현, 제네시스 대상 신상훈, 장유빈 실격 경위와 Q스쿨 일정",
    "tier": "중기",
    "signal": [
@@ -11941,6 +11942,19 @@
    "page": "/issue/nikke-hacking-incident-1105/",
    "registered": "2026-11-05",
    "expires": "2026-11-12"
+  },
+  {
+   "query": "엔비디아 젠슨 황 이사회 독립 조사 착수, 시가총액 하락과 주주 집단소송 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 2,
+   "status": "작성",
+   "page": "/issue/nvidia-jensen-huang-board-probe-1110/",
+   "registered": "2026-11-10",
+   "expires": "2026-11-17"
   },
   {
    "query": "3분기 상용직 증가분 75% 60대 이상, 20대 15분기 연속 감소 연령대별 수치와 근거 자료",
