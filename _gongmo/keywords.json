@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-10 17:00",
+ "updated": "2026-11-10 18:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -3143,6 +3143,19 @@
    "expires": "2026-11-07"
   },
   {
+   "query": "듀스 정규 4집 발매일 11월 21일 타이틀곡과 김성재 AI 목소리 방식 정리",
+   "tier": "단기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 2,
+   "status": "작성",
+   "page": "/issue/deux-fourth-album-ai-voice-1110/",
+   "registered": "2026-11-10",
+   "expires": "2026-11-14"
+  },
+  {
    "query": "전자팔찌",
    "tier": "단기",
    "signal": [
@@ -3154,6 +3167,19 @@
    "page": "",
    "registered": "2026-11-03",
    "expires": "2026-11-07"
+  },
+  {
+   "query": "황우석 국적 회복 신청 정리, 당사자 발언과 국적상실 고시",
+   "tier": "단기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 2,
+   "status": "작성",
+   "page": "/issue/hwang-woo-suk-citizenship-restoration-1110/",
+   "registered": "2026-11-10",
+   "expires": "2026-11-14"
   },
   {
    "query": "전북현대 조호르 다룰 탁짐 2대0 ACLE 4차전 결과",
@@ -3180,6 +3206,19 @@
    "page": "",
    "registered": "2026-11-02",
    "expires": "2026-11-05"
+  },
+  {
+   "query": "젝스키스 이재진 디너쇼 불참 선언, 주최 측 행사 재정비 입장 정리",
+   "tier": "단기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 2,
+   "status": "작성",
+   "page": "/issue/sechskies-dinner-show-lee-jaejin-absence-1110/",
+   "registered": "2026-11-10",
+   "expires": "2026-11-14"
   },
   {
    "query": "주식 결제주기 T+1 언제부터? 달라지는 점 정리",
@@ -10067,12 +10106,77 @@
    ],
    "score": 0,
    "status": "작성",
-   "page": "",
+   "page": "/money/guide/suneung-2027-score-release-date-check/",
    "registered": "2026-11-10",
    "expires": ""
   },
   {
    "query": "수능 가채점표",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/suneung-2027-gachaejeom-after-exam/",
+   "registered": "2026-11-10",
+   "expires": ""
+  },
+  {
+   "query": "노로바이러스 감염증",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/norovirus-symptoms-incubation-prevention/",
+   "registered": "2026-11-10",
+   "expires": ""
+  },
+  {
+   "query": "한랭질환 예방",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/cold-related-illness-types-prevention/",
+   "registered": "2026-11-10",
+   "expires": ""
+  },
+  {
+   "query": "2027 검정고시 일정",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "",
+   "registered": "2026-11-10",
+   "expires": ""
+  },
+  {
+   "query": "컴활 시험 일정",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "",
+   "registered": "2026-11-10",
+   "expires": ""
+  },
+  {
+   "query": "한능검 시험 일정",
    "tier": "장기",
    "signal": [
     "지식iN",
