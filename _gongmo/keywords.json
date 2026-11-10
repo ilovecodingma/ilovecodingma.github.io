@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-10 21:00",
+ "updated": "2026-11-10 22:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -555,6 +555,18 @@
    "expires": "2026-11-13"
   },
   {
+   "query": "젠슨 황 스캔들",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 5000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-10",
+   "expires": "2026-11-13"
+  },
+  {
    "query": "서울경제tv",
    "tier": "단기",
    "signal": [
@@ -675,7 +687,7 @@
    "expires": "2026-11-13"
   },
   {
-   "query": "젠슨 황 스캔들",
+   "query": "조혜련",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -892,6 +904,18 @@
   },
   {
    "query": "공포탄",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-10",
+   "expires": "2026-11-13"
+  },
+  {
+   "query": "백용환",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -1312,18 +1336,6 @@
   },
   {
    "query": "분당 신도시",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 2000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-10",
-   "expires": "2026-11-13"
-  },
-  {
-   "query": "백용환",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -3242,6 +3254,19 @@
    "page": "",
    "registered": "2026-11-04",
    "expires": "2026-11-07"
+  },
+  {
+   "query": "정우성 한명회 역 영화 살생부 촬영 시작, 출연진·감독·개봉 목표 정리",
+   "tier": "단기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 2,
+   "status": "작성",
+   "page": "/issue/jung-woo-sung-salsaengbu-han-myeong-hoe-1110/",
+   "registered": "2026-11-10",
+   "expires": "2026-11-14"
   },
   {
    "query": "코스피 11월 2일 마감 2.24% 상승, 인텔 하락 속 투자자별 동향 정리",

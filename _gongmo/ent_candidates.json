@@ -1,5 +1,5 @@
 {
- "at": "2026-11-10 21:06",
+ "at": "2026-11-10 21:30",
  "nitems": 529,
  "cands": [
   {
@@ -73,41 +73,6 @@
    ]
   },
   {
-   "kw": "변신",
-   "nsrc": 6,
-   "srcs": [
-    "SBS",
-    "동아일보",
-    "세계일보",
-    "연합뉴스",
-    "조선일보",
-    "한겨레"
-   ],
-   "n": 7,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "정우성, 냉혹한 한명회로 변신…액션 사극 영화 '살생부' 주연",
-     "link": "https://www.yna.co.kr/view/AKR20261105051400005"
-    },
-    {
-     "src": "동아일보",
-     "title": "육성재, 12월 단독 팬미팅 개최…슈트 입고 직장인 변신",
-     "link": "https://sports.donga.com/ent/article/all/20261110/135001456/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "육성재, 슈트 입고 ‘칼퇴’ 외치는 직장인 변신…12월 팬미팅 [공식]",
-     "link": "https://sports.donga.com/ent/article/all/20261110/134999587/1"
-    },
-    {
-     "src": "한겨레",
-     "title": "‘사업가 변신’ 그룹 노이즈 출신 홍종구…“그 시절 AI 있었다면 당연히 썼죠”",
-     "link": "https://www.hani.co.kr/arti/culture/music/1286278.html"
-    }
-   ]
-  },
-  {
    "kw": "듀스",
    "nsrc": 6,
    "srcs": [
@@ -118,7 +83,7 @@
     "한겨레",
     "헤럴드경제"
    ],
-   "n": 6,
+   "n": 7,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -137,8 +102,8 @@
     },
     {
      "src": "세계일보",
-     "title": "듀스, 31년 만에 새 앨범…故 김성재 유족에게 수익 일부 배분된다",
-     "link": "https://www.segye.com/newsView/20261110510828"
+     "title": "31년 만에 듀스 컴백… 故 김성재 AI로 재현",
+     "link": "https://www.segye.com/newsView/20261110514258"
     }
    ]
   },
@@ -313,6 +278,40 @@
    ]
   },
   {
+   "kw": "컴백",
+   "nsrc": 5,
+   "srcs": [
+    "동아일보",
+    "세계일보",
+    "연합뉴스",
+    "한국경제",
+    "헤럴드경제"
+   ],
+   "n": 8,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "드래곤포니, 3인 체제 후 첫 컴백…\"더 똘똘 뭉치고 신뢰 쌓아\"",
+     "link": "https://www.yna.co.kr/view/AKR20261104136400005"
+    },
+    {
+     "src": "동아일보",
+     "title": "태연, 정규 4집 ‘언스페셜’ 11월 30일 컴백 카운트다운 돌입",
+     "link": "https://sports.donga.com/ent/article/all/20261110/134997076/1"
+    },
+    {
+     "src": "한국경제",
+     "title": "'컴백' NCT 드림, 이름값 제대로…음반·음원 차트 1위",
+     "link": "https://www.hankyung.com/article/202611106884H"
+    },
+    {
+     "src": "한국경제",
+     "title": "싸이커스, 에이티즈와 같은 달 컴백 \"우영 선배, 밥 사주며 응원\"",
+     "link": "https://www.hankyung.com/article/202611020876H"
+    }
+   ]
+  },
+  {
    "kw": "불참",
    "nsrc": 5,
    "srcs": [
@@ -381,6 +380,40 @@
    ]
   },
   {
+   "kw": "김성재",
+   "nsrc": 5,
+   "srcs": [
+    "SBS",
+    "세계일보",
+    "연합뉴스",
+    "한겨레",
+    "헤럴드경제"
+   ],
+   "n": 6,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "듀스, 31년 만에 정규 4집…故 김성재 목소리 AI로 구현",
+     "link": "https://www.yna.co.kr/view/AKR20261109129900005"
+    },
+    {
+     "src": "한겨레",
+     "title": "듀스, 김성재 목소리 담은 4집 발표…31년 만에 AI로 재현",
+     "link": "https://www.hani.co.kr/arti/culture/music/1286489.html"
+    },
+    {
+     "src": "세계일보",
+     "title": "31년 만에 듀스 컴백… 故 김성재 AI로 재현",
+     "link": "https://www.segye.com/newsView/20261110514258"
+    },
+    {
+     "src": "세계일보",
+     "title": "듀스, 31년 만에 새 앨범…故 김성재 유족에게 수익 일부 배분된다",
+     "link": "https://www.segye.com/newsView/20261110510828"
+    }
+   ]
+  },
+  {
    "kw": "활동",
    "nsrc": 5,
    "srcs": [
@@ -415,36 +448,36 @@
    ]
   },
   {
-   "kw": "바람이",
+   "kw": "변신",
    "nsrc": 5,
    "srcs": [
-    "뉴시스",
+    "SBS",
+    "동아일보",
     "세계일보",
     "연합뉴스",
-    "한겨레",
-    "헤럴드경제"
+    "한겨레"
    ],
-   "n": 5,
+   "n": 6,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "이소라, 前소속사와 분쟁…'바람이 분다' 등 45곡 저작인접권 압류",
-     "link": "https://www.yna.co.kr/view/AKR20261110172900005"
+     "title": "정우성, 냉혹한 한명회로 변신…액션 사극 영화 '살생부' 주연",
+     "link": "https://www.yna.co.kr/view/AKR20261105051400005"
+    },
+    {
+     "src": "동아일보",
+     "title": "육성재, 12월 단독 팬미팅 개최…슈트 입고 직장인 변신",
+     "link": "https://sports.donga.com/ent/article/all/20261110/135001456/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "육성재, 슈트 입고 ‘칼퇴’ 외치는 직장인 변신…12월 팬미팅 [공식]",
+     "link": "https://sports.donga.com/ent/article/all/20261110/134999587/1"
     },
     {
      "src": "한겨레",
-     "title": "이소라, 전 소속사 상대 ‘바람이 분다’ 등 45곡 권리 압류",
-     "link": "https://www.hani.co.kr/arti/culture/music/1286682.html"
-    },
-    {
-     "src": "세계일보",
-     "title": "이소라, 바람이 분다 등 45곡 압류 신청…상대는 전 소속사 대표",
-     "link": "https://www.segye.com/newsView/20261110504836"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "이소라, ‘바람이 분다’ 등 45곡 권리 압류…전 소속사 대표와 법적 분쟁",
-     "link": "https://biz.heraldcorp.com/article/10931891"
+     "title": "‘사업가 변신’ 그룹 노이즈 출신 홍종구…“그 시절 AI 있었다면 당연히 썼죠”",
+     "link": "https://www.hani.co.kr/arti/culture/music/1286278.html"
     }
    ]
   },
@@ -483,10 +516,10 @@
    ]
   },
   {
-   "kw": "김성재",
+   "kw": "바람이",
    "nsrc": 5,
    "srcs": [
-    "SBS",
+    "뉴시스",
     "세계일보",
     "연합뉴스",
     "한겨레",
@@ -496,23 +529,23 @@
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "듀스, 31년 만에 정규 4집…故 김성재 목소리 AI로 구현",
-     "link": "https://www.yna.co.kr/view/AKR20261109129900005"
+     "title": "이소라, 前소속사와 분쟁…'바람이 분다' 등 45곡 저작인접권 압류",
+     "link": "https://www.yna.co.kr/view/AKR20261110172900005"
     },
     {
      "src": "한겨레",
-     "title": "듀스, 김성재 목소리 담은 4집 발표…31년 만에 AI로 재현",
-     "link": "https://www.hani.co.kr/arti/culture/music/1286489.html"
+     "title": "이소라, 전 소속사 상대 ‘바람이 분다’ 등 45곡 권리 압류",
+     "link": "https://www.hani.co.kr/arti/culture/music/1286682.html"
     },
     {
      "src": "세계일보",
-     "title": "듀스, 31년 만에 새 앨범…故 김성재 유족에게 수익 일부 배분된다",
-     "link": "https://www.segye.com/newsView/20261110510828"
+     "title": "이소라, 바람이 분다 등 45곡 압류 신청…상대는 전 소속사 대표",
+     "link": "https://www.segye.com/newsView/20261110504836"
     },
     {
      "src": "헤럴드경제",
-     "title": "듀스 31년만에 4집 컴백…김성재 유족과 저작인접권 나눈다",
-     "link": "https://biz.heraldcorp.com/article/10932121"
+     "title": "이소라, ‘바람이 분다’ 등 45곡 권리 압류…전 소속사 대표와 법적 분쟁",
+     "link": "https://biz.heraldcorp.com/article/10931891"
     }
    ]
   },
@@ -550,6 +583,39 @@
    ]
   },
   {
+   "kw": "발매",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "동아일보",
+    "연합뉴스",
+    "한국경제"
+   ],
+   "n": 8,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "신세계百 강남점, 에이티즈 앨범 발매 기념 팝업 매장 운영",
+     "link": "https://www.yna.co.kr/view/AKR20261107020700030"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "[가요소식] 재즈 색소포니스트 남유선, 4집 발매 기념 공연",
+     "link": "https://www.yna.co.kr/view/AKR20261105145000005"
+    },
+    {
+     "src": "동아일보",
+     "title": "NCT DREAM, 정규 6집 발매 동시에 1위…中 차트까지 석권",
+     "link": "https://sports.donga.com/ent/article/all/20261110/135002663/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "규현, 11일 ‘CONTINUE’ 발매…발라드→시티팝 스펙트럼 확장",
+     "link": "https://sports.donga.com/ent/article/all/20261110/135001769/1"
+    }
+   ]
+  },
+  {
    "kw": "투어",
    "nsrc": 4,
    "srcs": [
@@ -583,72 +649,6 @@
    ]
   },
   {
-   "kw": "발매",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "동아일보",
-    "연합뉴스",
-    "한국경제"
-   ],
-   "n": 7,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "신세계百 강남점, 에이티즈 앨범 발매 기념 팝업 매장 운영",
-     "link": "https://www.yna.co.kr/view/AKR20261107020700030"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "[가요소식] 재즈 색소포니스트 남유선, 4집 발매 기념 공연",
-     "link": "https://www.yna.co.kr/view/AKR20261105145000005"
-    },
-    {
-     "src": "동아일보",
-     "title": "규현, 11일 ‘CONTINUE’ 발매…발라드→시티팝 스펙트럼 확장",
-     "link": "https://sports.donga.com/ent/article/all/20261110/135001769/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "31년 만의 귀환…듀스, 21일 정규 4집 ‘포스 듀스’ 발매",
-     "link": "https://sports.donga.com/ent/article/all/20261110/134996965/1"
-    }
-   ]
-  },
-  {
-   "kw": "컴백",
-   "nsrc": 4,
-   "srcs": [
-    "동아일보",
-    "연합뉴스",
-    "한국경제",
-    "헤럴드경제"
-   ],
-   "n": 7,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "드래곤포니, 3인 체제 후 첫 컴백…\"더 똘똘 뭉치고 신뢰 쌓아\"",
-     "link": "https://www.yna.co.kr/view/AKR20261104136400005"
-    },
-    {
-     "src": "동아일보",
-     "title": "태연, 정규 4집 ‘언스페셜’ 11월 30일 컴백 카운트다운 돌입",
-     "link": "https://sports.donga.com/ent/article/all/20261110/134997076/1"
-    },
-    {
-     "src": "한국경제",
-     "title": "'컴백' NCT 드림, 이름값 제대로…음반·음원 차트 1위",
-     "link": "https://www.hankyung.com/article/202611106884H"
-    },
-    {
-     "src": "한국경제",
-     "title": "싸이커스, 에이티즈와 같은 달 컴백 \"우영 선배, 밥 사주며 응원\"",
-     "link": "https://www.hankyung.com/article/202611020876H"
-    }
-   ]
-  },
-  {
    "kw": "정규",
    "nsrc": 4,
    "srcs": [
@@ -657,12 +657,17 @@
     "동아일보",
     "연합뉴스"
    ],
-   "n": 6,
+   "n": 7,
    "headlines": [
     {
      "src": "연합뉴스",
      "title": "듀스, 31년 만에 정규 4집…故 김성재 목소리 AI로 구현",
      "link": "https://www.yna.co.kr/view/AKR20261109129900005"
+    },
+    {
+     "src": "동아일보",
+     "title": "NCT DREAM, 정규 6집 발매 동시에 1위…中 차트까지 석권",
+     "link": "https://sports.donga.com/ent/article/all/20261110/135002663/1"
     },
     {
      "src": "동아일보",
@@ -673,11 +678,6 @@
      "src": "동아일보",
      "title": "태연, 정규 4집 ‘언스페셜’ 11월 30일 컴백 카운트다운 돌입",
      "link": "https://sports.donga.com/ent/article/all/20261110/134997076/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "31년 만의 귀환…듀스, 21일 정규 4집 ‘포스 듀스’ 발매",
-     "link": "https://sports.donga.com/ent/article/all/20261110/134996965/1"
     }
    ]
   },
@@ -1144,6 +1144,39 @@
    ]
   },
   {
+   "kw": "목소리",
+   "nsrc": 4,
+   "srcs": [
+    "동아일보",
+    "연합뉴스",
+    "조선일보",
+    "한겨레"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "듀스, 31년 만에 정규 4집…故 김성재 목소리 AI로 구현",
+     "link": "https://www.yna.co.kr/view/AKR20261109129900005"
+    },
+    {
+     "src": "동아일보",
+     "title": "김현철, 박명수 ‘바다의 왕자’에 내 목소리?…“작곡가 찾아갔다”(라스)",
+     "link": "https://sports.donga.com/ent/article/all/20261110/134998364/1"
+    },
+    {
+     "src": "한겨레",
+     "title": "듀스, 김성재 목소리 담은 4집 발표…31년 만에 AI로 재현",
+     "link": "https://www.hani.co.kr/arti/culture/music/1286489.html"
+    },
+    {
+     "src": "조선일보",
+     "title": "[사진]샤오쥔, 달달한 목소리",
+     "link": "https://www.chosun.com/entertainments/entertain_photo/2026/11/10/GFSDOOJTGM4TQNDDG43WGNJQHE/"
+    }
+   ]
+  },
+  {
    "kw": "차트",
    "nsrc": 4,
    "srcs": [
@@ -1305,38 +1338,6 @@
      "src": "뉴시스",
      "title": "피프티피프티 전 멤버 130억 소송 1심 선고 취소…내년 1월 변론 재개",
      "link": "https://www.newsis.com/view/NISX20261109_0003861111"
-    }
-   ]
-  },
-  {
-   "kw": "번째",
-   "nsrc": 3,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "연합뉴스"
-   ],
-   "n": 7,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "[가요소식] 밴드 까망, 내달 두 번째 공연 '당신, 아프지마'",
-     "link": "https://www.yna.co.kr/view/AKR20261110114500005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "[가요소식] 버추얼 걸그룹 이세계아이돌, 두 번째 미니앨범",
-     "link": "https://www.yna.co.kr/view/AKR20261110059500005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "6번째 우승 도전 장동민 \"살아있는 한 서바이벌 은퇴는 없죠\"",
-     "link": "https://www.yna.co.kr/view/AKR20261105097500005"
-    },
-    {
-     "src": "동아일보",
-     "title": "‘싱글맘’ 지연수, 46번째 생일에 아들이 “48세 축하”…“숫자 중요하지 않아”",
-     "link": "https://sports.donga.com/ent/article/all/20261110/134999342/1"
     }
    ]
   }
