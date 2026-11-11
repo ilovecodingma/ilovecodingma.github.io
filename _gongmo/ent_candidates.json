@@ -1,21 +1,20 @@
 {
- "at": "2026-11-11 21:30",
+ "at": "2026-11-11 22:30",
  "nitems": 528,
  "cands": [
   {
    "kw": "리센느",
-   "nsrc": 8,
+   "nsrc": 7,
    "srcs": [
     "SBS",
     "뉴시스",
     "세계일보",
     "연합뉴스",
-    "조선일보",
     "한겨레",
     "한국경제",
     "헤럴드경제"
    ],
-   "n": 40,
+   "n": 12,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -76,15 +75,16 @@
   },
   {
    "kw": "데뷔",
-   "nsrc": 5,
+   "nsrc": 6,
    "srcs": [
     "SBS",
     "뉴시스",
     "세계일보",
     "연합뉴스",
+    "조선일보",
     "한국경제"
    ],
-   "n": 8,
+   "n": 9,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -109,6 +109,40 @@
    ]
   },
   {
+   "kw": "사과",
+   "nsrc": 5,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "동아일보",
+    "연합뉴스",
+    "조선일보"
+   ],
+   "n": 6,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "SM엔터, 주민·계좌번호 등 개인정보 유출…\"진심으로 사과\"",
+     "link": "https://www.yna.co.kr/view/AKR20261108033900005"
+    },
+    {
+     "src": "동아일보",
+     "title": "‘나나♥’ 탑, 사과 끝에 팬심 돌렸나…팬사이트 폐쇄→재개",
+     "link": "https://sports.donga.com/ent/article/all/20261111/135010583/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "“당분간 DM 안 볼 것” 전현무, 녹화 중 대국민 사과…무슨 일? (전현무계획4)",
+     "link": "https://sports.donga.com/ent/article/all/20261111/135007082/1"
+    },
+    {
+     "src": "SBS",
+     "title": "이도 \"변명의 여지 없이 내 잘못\"…'수능 3주 전 강의 중단→방송 출격' 논란에 자필 사과",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008839702&plink=RSSLINK&cooper=RSSREADER"
+    }
+   ]
+  },
+  {
    "kw": "옥순",
    "nsrc": 5,
    "srcs": [
@@ -118,7 +152,7 @@
     "조선일보",
     "헤럴드경제"
    ],
-   "n": 6,
+   "n": 5,
    "headlines": [
     {
      "src": "동아일보",
@@ -143,40 +177,6 @@
    ]
   },
   {
-   "kw": "사과",
-   "nsrc": 5,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "동아일보",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "SM엔터, 주민·계좌번호 등 개인정보 유출…\"진심으로 사과\"",
-     "link": "https://www.yna.co.kr/view/AKR20261108033900005"
-    },
-    {
-     "src": "동아일보",
-     "title": "“당분간 DM 안 볼 것” 전현무, 녹화 중 대국민 사과…무슨 일? (전현무계획4)",
-     "link": "https://sports.donga.com/ent/article/all/20261111/135007082/1"
-    },
-    {
-     "src": "SBS",
-     "title": "이도 \"변명의 여지 없이 내 잘못\"…'수능 3주 전 강의 중단→방송 출격' 논란에 자필 사과",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008839702&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "뉴시스",
-     "title": "\"흑인은 수박·치킨 좋아해\"…카니, 인종차별 논란에 사과",
-     "link": "https://www.newsis.com/view/NISX20261111_0003862957"
-    }
-   ]
-  },
-  {
    "kw": "공연",
    "nsrc": 4,
    "srcs": [
@@ -185,7 +185,7 @@
     "연합뉴스",
     "한겨레"
    ],
-   "n": 11,
+   "n": 10,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -206,72 +206,6 @@
      "src": "연합뉴스",
      "title": "마이 케미컬 로맨스, 18년만 내한 공연…추위 녹인 2만명 떼창",
      "link": "https://www.yna.co.kr/view/AKR20261108001800005"
-    }
-   ]
-  },
-  {
-   "kw": "연속",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "동아일보",
-    "연합뉴스"
-   ],
-   "n": 8,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "JYP, 美 타임지 선정 '지속가능 성장기업' 3년 연속 한국 1위",
-     "link": "https://www.yna.co.kr/view/AKR20261111123300005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "[박스오피스] '치이카와' 5주 연속 주말 1위…애니메이션 강세",
-     "link": "https://www.yna.co.kr/view/AKR20261109030900005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "케데헌 '골든', 英 오피셜 싱글 차트 72주 연속 진입",
-     "link": "https://www.yna.co.kr/view/AKR20261107024200005"
-    },
-    {
-     "src": "동아일보",
-     "title": "박보검, 올해도 연탄 나눔 나섰다…2년 연속 직접 배달 봉사",
-     "link": "https://sports.donga.com/ent/article/all/20261111/135005849/1"
-    }
-   ]
-  },
-  {
-   "kw": "사랑",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 8,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "이창동이 그린 해고노동자 가족…'심장소리'와 '가능한 사랑'",
-     "link": "https://www.yna.co.kr/view/AKR20261106188700005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "심현보 \"결국 남는 건 사랑…일상 속 소소한 이야기로 담았죠\"",
-     "link": "https://www.yna.co.kr/view/AKR20261106140900005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "'가능한 사랑' 넷플 공개…이창동 \"거대 자본 빌리지만 독립성 추구\"",
-     "link": "https://www.yna.co.kr/view/AKR20261106118700005"
-    },
-    {
-     "src": "SBS",
-     "title": "'가능한 사랑' 조여정 \"美 아카데미 회원이지만 회비 미납해 투표권 없을 수도\"",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008840384&plink=RSSLINK&cooper=RSSREADER"
     }
    ]
   },
@@ -342,7 +276,7 @@
    ]
   },
   {
-   "kw": "가능한",
+   "kw": "사랑",
    "nsrc": 4,
    "srcs": [
     "SBS",
@@ -354,13 +288,13 @@
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "전자음악밴드 이디오테잎 \"자유로운 해석 가능한 모호함이 매력\"",
-     "link": "https://www.yna.co.kr/view/AKR20261110155600005"
+     "title": "이창동이 그린 해고노동자 가족…'심장소리'와 '가능한 사랑'",
+     "link": "https://www.yna.co.kr/view/AKR20261106188700005"
     },
     {
      "src": "연합뉴스",
-     "title": "이창동이 그린 해고노동자 가족…'심장소리'와 '가능한 사랑'",
-     "link": "https://www.yna.co.kr/view/AKR20261106188700005"
+     "title": "심현보 \"결국 남는 건 사랑…일상 속 소소한 이야기로 담았죠\"",
+     "link": "https://www.yna.co.kr/view/AKR20261106140900005"
     },
     {
      "src": "연합뉴스",
@@ -371,39 +305,6 @@
      "src": "SBS",
      "title": "'가능한 사랑' 조여정 \"美 아카데미 회원이지만 회비 미납해 투표권 없을 수도\"",
      "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008840384&plink=RSSLINK&cooper=RSSREADER"
-    }
-   ]
-  },
-  {
-   "kw": "넷플릭스",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 7,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "\"한국 예능선 카메라 200대 쓴다\"…넷플릭스가 주목한 제작 방식",
-     "link": "https://www.yna.co.kr/view/AKR20261111079200017"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "넷플릭스, 예능 '흑백가수' 내년 공개…'흑백' 세계관 음악으로",
-     "link": "https://www.yna.co.kr/view/AKR20261111052100005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "'꿀알바' 넷플릭스 비영어 쇼 1위…김지원 '닥터X'는 4위",
-     "link": "https://www.yna.co.kr/view/AKR20261111009200005"
-    },
-    {
-     "src": "SBS",
-     "title": "'흑백요리사' 세계관 음악으로 확장…넷플릭스, '흑백 가수: 보컬 계급 전쟁' 내년 공개",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008840614&plink=RSSLINK&cooper=RSSREADER"
     }
    ]
   },
@@ -474,39 +375,6 @@
    ]
   },
   {
-   "kw": "이창동",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "연합뉴스",
-    "조선일보",
-    "한겨레"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "조여정 \"이창동 감독 앞에서 감독 연기, 제 숙제였죠\"",
-     "link": "https://www.yna.co.kr/view/AKR20261110100800005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "'가능한 사랑' 넷플 공개…이창동 \"거대 자본 빌리지만 독립성 추구\"",
-     "link": "https://www.yna.co.kr/view/AKR20261106118700005"
-    },
-    {
-     "src": "한겨레",
-     "title": "“밀양·박하사탕 때 힘들었지만…이창동 감독 영화가 그리웠죠”",
-     "link": "https://www.hani.co.kr/arti/culture/culture_general/1286636.html"
-    },
-    {
-     "src": "SBS",
-     "title": "봉준호·이창동·황동혁 '픽' 받은 조여정 \"왜일까요? 저도 궁금해요\"",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008839840&plink=RSSLINK&cooper=RSSREADER"
-    }
-   ]
-  },
-  {
    "kw": "솔로",
    "nsrc": 4,
    "srcs": [
@@ -569,6 +437,39 @@
      "src": "한국경제",
      "title": "가을엔 규현…내달 11일 EP '컨티뉴' 발매",
      "link": "https://www.hankyung.com/article/202610278838H"
+    }
+   ]
+  },
+  {
+   "kw": "출신",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "한겨레",
+    "한국경제"
+   ],
+   "n": 6,
+   "headlines": [
+    {
+     "src": "한겨레",
+     "title": "‘사업가 변신’ 그룹 노이즈 출신 홍종구…“그 시절 AI 있었다면 당연히 썼죠”",
+     "link": "https://www.hani.co.kr/arti/culture/music/1286278.html"
+    },
+    {
+     "src": "한국경제",
+     "title": "아이돌 '포미닛' 출신 전지윤, 11월 신부된다",
+     "link": "https://www.hankyung.com/article/2026110461907"
+    },
+    {
+     "src": "한국경제",
+     "title": "\"통장 압류, 수중엔 1000원\"…JBJ 출신 켄타, 4억 빚 고백",
+     "link": "https://www.hankyung.com/article/202610280689H"
+    },
+    {
+     "src": "SBS",
+     "title": "'틈만나면' 유연석, \"배우 서강준, 블랙핑크 지수도 산본 출신\"···'틈 친구' 추측",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008839988&plink=RSSLINK&cooper=RSSREADER"
     }
    ]
   },
@@ -705,39 +606,6 @@
    ]
   },
   {
-   "kw": "아냐",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "연합뉴스",
-    "헤럴드경제"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "나나 역고소한 강도, 무고 혐의 부인…\"피해신고 허위 아냐\"",
-     "link": "https://www.yna.co.kr/view/AKR20261110081000004"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "'두번째 시그널', 12월 7일 첫 방송…\"조진웅 문제 옹호 아냐\"",
-     "link": "https://www.yna.co.kr/view/AKR20261106106000005"
-    },
-    {
-     "src": "동아일보",
-     "title": "박신영, 사망 사고 5년 만에 입 열었다…“차 안에 숨었다? 사실 아냐”",
-     "link": "https://sports.donga.com/ent/article/all/20261111/135005993/1"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "‘충주맨’ 김선태, 연예기획사 설립?…“사실 아냐. 유튜브 콘텐츠 제작 법인”",
-     "link": "https://biz.heraldcorp.com/article/10934086"
-    }
-   ]
-  },
-  {
    "kw": "까지",
    "nsrc": 4,
    "srcs": [
@@ -800,39 +668,6 @@
      "src": "헤럴드경제",
      "title": "리센느, 내년 2월 첫 단독 콘서트 개최…“팬분들께 소중한 시간 선물”",
      "link": "https://biz.heraldcorp.com/article/10933209"
-    }
-   ]
-  },
-  {
-   "kw": "출신",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "한겨레",
-    "한국경제"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "한겨레",
-     "title": "‘사업가 변신’ 그룹 노이즈 출신 홍종구…“그 시절 AI 있었다면 당연히 썼죠”",
-     "link": "https://www.hani.co.kr/arti/culture/music/1286278.html"
-    },
-    {
-     "src": "한국경제",
-     "title": "아이돌 '포미닛' 출신 전지윤, 11월 신부된다",
-     "link": "https://www.hankyung.com/article/2026110461907"
-    },
-    {
-     "src": "한국경제",
-     "title": "\"통장 압류, 수중엔 1000원\"…JBJ 출신 켄타, 4억 빚 고백",
-     "link": "https://www.hankyung.com/article/202610280689H"
-    },
-    {
-     "src": "SBS",
-     "title": "'틈만나면' 유연석, \"배우 서강준, 블랙핑크 지수도 산본 출신\"···'틈 친구' 추측",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008839988&plink=RSSLINK&cooper=RSSREADER"
     }
    ]
   },
@@ -1134,35 +969,35 @@
    ]
   },
   {
-   "kw": "걸그룹",
+   "kw": "나나",
    "nsrc": 4,
    "srcs": [
-    "SBS",
+    "동아일보",
     "연합뉴스",
-    "조선일보",
-    "한국경제"
+    "한국경제",
+    "헤럴드경제"
    ],
    "n": 4,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "[가요소식] 버추얼 걸그룹 이세계아이돌, 두 번째 미니앨범",
-     "link": "https://www.yna.co.kr/view/AKR20261110059500005"
+     "title": "나나 역고소한 강도, 무고 혐의 부인…\"피해신고 허위 아냐\"",
+     "link": "https://www.yna.co.kr/view/AKR20261110081000004"
+    },
+    {
+     "src": "동아일보",
+     "title": "‘나나♥’ 탑, 사과 끝에 팬심 돌렸나…팬사이트 폐쇄→재개",
+     "link": "https://sports.donga.com/ent/article/all/20261111/135010583/1"
     },
     {
      "src": "한국경제",
-     "title": "리센느 \"'국민 걸그룹' 호칭 과분…'믿고 듣는 리센느' 수식어 붙길\"",
-     "link": "https://www.hankyung.com/article/202611032757H"
+     "title": "나나, 탑과 공개 열애 후…악플 쏟아지자 \"내가 무슨 잘못\" 소신 발언",
+     "link": "https://www.hankyung.com/article/202611069702H"
     },
     {
-     "src": "SBS",
-     "title": "'대세 걸그룹' 리센느, 데뷔 첫 단독 콘서트 개최…\"꿈만 같다\"",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008840687&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "조선일보",
-     "title": "EXID 정화는 카페 정직원·혜린은 월매출 1억4000만원 사장님…쥬얼리 이지현·하주연까지, 무대 밖 일터 찾은 걸그룹 [Oh! 쎈 이슈]",
-     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/11/GYZTEZDBMM4TEYRUMFRTOOBSHE/"
+     "src": "헤럴드경제",
+     "title": "나나 자택 침입 강도, 오늘 무고 혐의 1차 공판",
+     "link": "https://biz.heraldcorp.com/article/10931725"
     }
    ]
   },
@@ -1266,6 +1101,39 @@
    ]
   },
   {
+   "kw": "집중",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "세계일보",
+    "연합뉴스",
+    "조선일보"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "테이, '굿모닝FM' 3년 6개월만 하차…\"새 앨범에 집중\"",
+     "link": "https://www.yna.co.kr/view/AKR20261109052100005"
+    },
+    {
+     "src": "세계일보",
+     "title": "“월드스타 가면 전 세계 움직여”…제니 방문한 충주 온천 관심 집중",
+     "link": "https://www.segye.com/newsView/20261111504936"
+    },
+    {
+     "src": "뉴시스",
+     "title": "[집중 인터뷰]이창동이 달아 놓은 '가능한 사랑'에 관한 주석들",
+     "link": "https://www.newsis.com/view/NISX20261110_0003862887"
+    },
+    {
+     "src": "조선일보",
+     "title": "[사진]싸이커스 유준,'시선 집중 레드 헤어'",
+     "link": "https://www.chosun.com/entertainments/entertain_photo/2026/11/11/MVQTKZJYMMYDCYRSMVQTGOBYGM/"
+    }
+   ]
+  },
+  {
    "kw": "엑소",
    "nsrc": 4,
    "srcs": [
@@ -1328,6 +1196,138 @@
      "src": "SBS",
      "title": "'흑백요리사' 세계관 음악으로 확장…넷플릭스, '흑백 가수: 보컬 계급 전쟁' 내년 공개",
      "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008840614&plink=RSSLINK&cooper=RSSREADER"
+    }
+   ]
+  },
+  {
+   "kw": "돌파",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "세계일보",
+    "연합뉴스"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "위켄드, 투어 매출 13억 달러 돌파…남성 솔로 가수 최고",
+     "link": "https://www.yna.co.kr/view/AKR20261107025100005"
+    },
+    {
+     "src": "세계일보",
+     "title": "‘초동 60만장 돌파’ 흥행 질주 리센느, 내년 2월 첫 단독 콘서트…“꿈만 같아, 최선 다해 준비”",
+     "link": "https://www.segye.com/newsView/20261111512589"
+    },
+    {
+     "src": "SBS",
+     "title": "'닥터X' 최고 20.2% 돌파, 5주 연속 1위…'가나디' 원작자 화답까지 '신드롬 지속'",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008840506&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "뉴시스",
+     "title": "폴 매카트니, 순자산 '2조 원' 돌파…제이지·스위프트 이어 세계 3위",
+     "link": "https://www.newsis.com/view/NISX20261111_0003863817"
+    }
+   ]
+  },
+  {
+   "kw": "역사",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "연합뉴스",
+    "한국경제",
+    "헤럴드경제"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "안동 역사·문화유산 조명…'헤리티지영화제' 7일 개막",
+     "link": "https://www.yna.co.kr/view/AKR20261106080200053"
+    },
+    {
+     "src": "한국경제",
+     "title": "'재혼황후' 한국판 '브리저튼'?…선입견 넘고 K-로판 새 역사 쓸까 [종합]",
+     "link": "https://www.hankyung.com/article/202611032647H"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "연매출 200억 포기…‘역사 강사’ 최태성, 무료강의 오픈 한 이유",
+     "link": "https://biz.heraldcorp.com/article/10932189"
+    },
+    {
+     "src": "뉴시스",
+     "title": "젠슨 황마저?…엔비디아 흔든 외도에 '유퀴즈' 불똥 역사 재조명",
+     "link": "https://www.newsis.com/view/NISX20261111_0003863071"
+    }
+   ]
+  },
+  {
+   "kw": "전현무",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "세계일보",
+    "헤럴드경제"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "“당분간 DM 안 볼 것” 전현무, 녹화 중 대국민 사과…무슨 일? (전현무계획4)",
+     "link": "https://sports.donga.com/ent/article/all/20261111/135007082/1"
+    },
+    {
+     "src": "세계일보",
+     "title": "전현무, 생일 맞아 유기견 봉사…카메라 없이 구슬땀",
+     "link": "https://www.segye.com/newsView/20261111509127"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "전현무, 봉사활동 가서 ‘즉흥 촬영’…“버려진 아이들과 시간 보내”",
+     "link": "https://biz.heraldcorp.com/article/10933641"
+    },
+    {
+     "src": "뉴시스",
+     "title": "전현무, 생일에도 유기견 봉사…카메라 없이 구슬땀",
+     "link": "https://www.newsis.com/view/NISX20261111_0003863460"
+    }
+   ]
+  },
+  {
+   "kw": "거짓말",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "한국경제",
+    "헤럴드경제"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "한국경제",
+     "title": "\"일본인인 줄 알았다\"…'100일의 거짓말' 본 日 시청자 반응",
+     "link": "https://www.hankyung.com/article/202610281076H"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "아이돌 일본인 멤버가 항일운동 드라마를?…카즈하, ‘100일의 거짓말’ 시청 인증 눈길",
+     "link": "https://biz.heraldcorp.com/article/10933973"
+    },
+    {
+     "src": "SBS",
+     "title": "신민아 사칭한 이세영의 뻔뻔한 거짓말 이후…'재혼황후' 주지훈, 이종석에 결투 신청",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008841145&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "뉴시스",
+     "title": "日 출신 카즈하, 요즘 빠진 드라마는 \"100일의 거짓말\"",
+     "link": "https://www.newsis.com/view/NISX20261111_0003863840"
     }
    ]
   }
