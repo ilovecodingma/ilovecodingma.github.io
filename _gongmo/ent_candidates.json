@@ -1,5 +1,5 @@
 {
- "at": "2026-11-11 20:30",
+ "at": "2026-11-11 21:30",
  "nitems": 528,
  "cands": [
   {
@@ -15,7 +15,7 @@
     "한국경제",
     "헤럴드경제"
    ],
-   "n": 49,
+   "n": 40,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -75,40 +75,6 @@
    ]
   },
   {
-   "kw": "소속사",
-   "nsrc": 5,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "조선일보",
-    "한겨레",
-    "헤럴드경제"
-   ],
-   "n": 9,
-   "headlines": [
-    {
-     "src": "한겨레",
-     "title": "존박·곽진언 ‘맥도날드 랩’ 해외서 무단 유통…소속사 “삭제·차단”",
-     "link": "https://www.hani.co.kr/arti/culture/music/1286784.html"
-    },
-    {
-     "src": "한겨레",
-     "title": "이소라, 전 소속사 상대 ‘바람이 분다’ 등 45곡 권리 압류",
-     "link": "https://www.hani.co.kr/arti/culture/music/1286682.html"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "이소라, 수십억 횡령 피해 입었다…전 소속사 대표에 법적 조치한 이유",
-     "link": "https://biz.heraldcorp.com/article/10932454"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "백현 ‘차가원에 630억 피해’ 주장 나오더니 결국…새 소속사 설립",
-     "link": "https://biz.heraldcorp.com/article/10932102"
-    }
-   ]
-  },
-  {
    "kw": "데뷔",
    "nsrc": 5,
    "srcs": [
@@ -143,74 +109,6 @@
    ]
   },
   {
-   "kw": "선물",
-   "nsrc": 5,
-   "srcs": [
-    "뉴시스",
-    "세계일보",
-    "조선일보",
-    "한겨레",
-    "헤럴드경제"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "한겨레",
-     "title": "‘발레 거장’ 한스 판마넌, 세상 뜨기 나흘 전 한국 무대에 남긴 선물",
-     "link": "https://www.hani.co.kr/arti/culture/music/1286637.html"
-    },
-    {
-     "src": "세계일보",
-     "title": "“특별한 선물”…션, 빼빼로데이에 2011만 1111원 수표 공개한 사연",
-     "link": "https://www.segye.com/newsView/20261111515046"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "소지섭, 이번엔 대만 팬에 금 선물…당첨된 팬 “눈물”",
-     "link": "https://biz.heraldcorp.com/article/10933636"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "리센느, 내년 2월 첫 단독 콘서트 개최…“팬분들께 소중한 시간 선물”",
-     "link": "https://biz.heraldcorp.com/article/10933209"
-    }
-   ]
-  },
-  {
-   "kw": "음원",
-   "nsrc": 5,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "연합뉴스",
-    "조선일보",
-    "한국경제"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "존박 맥도날드 광고 음원 해외서 무단 유통…\"삭제 협의 중\"",
-     "link": "https://www.yna.co.kr/view/AKR20261111090700005"
-    },
-    {
-     "src": "한국경제",
-     "title": "'컴백' NCT 드림, 이름값 제대로…음반·음원 차트 1위",
-     "link": "https://www.hankyung.com/article/202611106884H"
-    },
-    {
-     "src": "SBS",
-     "title": "존박 '맥도날드 주문 랩', 해외서 무단 도용…소속사 \"음원 삭제 진행 중\"",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008840583&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "뉴시스",
-     "title": "존박·곽진언 '맥도날드 주문 랩', 해외 음원 플랫폼에 무단 등록…작사·작곡자도 제3자",
-     "link": "https://www.newsis.com/view/NISX20261110_0003862456"
-    }
-   ]
-  },
-  {
    "kw": "옥순",
    "nsrc": 5,
    "srcs": [
@@ -220,7 +118,7 @@
     "조선일보",
     "헤럴드경제"
    ],
-   "n": 5,
+   "n": 6,
    "headlines": [
     {
      "src": "동아일보",
@@ -245,6 +143,40 @@
    ]
   },
   {
+   "kw": "사과",
+   "nsrc": 5,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "동아일보",
+    "연합뉴스",
+    "조선일보"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "SM엔터, 주민·계좌번호 등 개인정보 유출…\"진심으로 사과\"",
+     "link": "https://www.yna.co.kr/view/AKR20261108033900005"
+    },
+    {
+     "src": "동아일보",
+     "title": "“당분간 DM 안 볼 것” 전현무, 녹화 중 대국민 사과…무슨 일? (전현무계획4)",
+     "link": "https://sports.donga.com/ent/article/all/20261111/135007082/1"
+    },
+    {
+     "src": "SBS",
+     "title": "이도 \"변명의 여지 없이 내 잘못\"…'수능 3주 전 강의 중단→방송 출격' 논란에 자필 사과",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008839702&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "뉴시스",
+     "title": "\"흑인은 수박·치킨 좋아해\"…카니, 인종차별 논란에 사과",
+     "link": "https://www.newsis.com/view/NISX20261111_0003862957"
+    }
+   ]
+  },
+  {
    "kw": "공연",
    "nsrc": 4,
    "srcs": [
@@ -253,7 +185,7 @@
     "연합뉴스",
     "한겨레"
    ],
-   "n": 12,
+   "n": 11,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -344,6 +276,72 @@
    ]
   },
   {
+   "kw": "악플",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "한국경제",
+    "헤럴드경제"
+   ],
+   "n": 8,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "카리나, ‘절친’ 한수아 악플 논란 속 심경…“누구도 상처받지 않길”",
+     "link": "https://sports.donga.com/ent/article/all/20261111/135010166/1"
+    },
+    {
+     "src": "한국경제",
+     "title": "나나, 탑과 공개 열애 후…악플 쏟아지자 \"내가 무슨 잘못\" 소신 발언",
+     "link": "https://www.hankyung.com/article/202611069702H"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "‘아이브’ 장원영, 악플 뿌리 뽑는다…‘탈덕수용소’ 잡은 법무법인과 다시 맞손",
+     "link": "https://biz.heraldcorp.com/article/10932733"
+    },
+    {
+     "src": "뉴시스",
+     "title": "'박위 논란 악플' 김기리, 3개월 만에 근황 공개했다",
+     "link": "https://www.newsis.com/view/NISX20261111_0003864191"
+    }
+   ]
+  },
+  {
+   "kw": "소속사",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "한겨레",
+    "헤럴드경제"
+   ],
+   "n": 8,
+   "headlines": [
+    {
+     "src": "한겨레",
+     "title": "존박·곽진언 ‘맥도날드 랩’ 해외서 무단 유통…소속사 “삭제·차단”",
+     "link": "https://www.hani.co.kr/arti/culture/music/1286784.html"
+    },
+    {
+     "src": "한겨레",
+     "title": "이소라, 전 소속사 상대 ‘바람이 분다’ 등 45곡 권리 압류",
+     "link": "https://www.hani.co.kr/arti/culture/music/1286682.html"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "이소라, 수십억 횡령 피해 입었다…전 소속사 대표에 법적 조치한 이유",
+     "link": "https://biz.heraldcorp.com/article/10932454"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "백현 ‘차가원에 630억 피해’ 주장 나오더니 결국…새 소속사 설립",
+     "link": "https://biz.heraldcorp.com/article/10932102"
+    }
+   ]
+  },
+  {
    "kw": "가능한",
    "nsrc": 4,
    "srcs": [
@@ -410,39 +408,6 @@
    ]
   },
   {
-   "kw": "발매",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "동아일보",
-    "연합뉴스",
-    "한국경제"
-   ],
-   "n": 7,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "신세계百 강남점, 에이티즈 앨범 발매 기념 팝업 매장 운영",
-     "link": "https://www.yna.co.kr/view/AKR20261107020700030"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "[가요소식] 재즈 색소포니스트 남유선, 4집 발매 기념 공연",
-     "link": "https://www.yna.co.kr/view/AKR20261105145000005"
-    },
-    {
-     "src": "동아일보",
-     "title": "앳하트, 글로벌 듀오 R2와 협업…‘Say It’ 리믹스 발매",
-     "link": "https://sports.donga.com/ent/article/all/20261111/135007225/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "김동준, 7년 만에 日 무대 복귀…“2027년 솔로 앨범 발매” 발표",
-     "link": "https://sports.donga.com/ent/article/all/20261111/135006964/1"
-    }
-   ]
-  },
-  {
    "kw": "에이티즈",
    "nsrc": 4,
    "srcs": [
@@ -472,6 +437,39 @@
      "src": "한국경제",
      "title": "에이티즈, 타이틀곡 'UP' 뮤직비디오 첫 티저 공개",
      "link": "https://www.hankyung.com/article/202611107743H"
+    }
+   ]
+  },
+  {
+   "kw": "결국",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "연합뉴스",
+    "조선일보",
+    "헤럴드경제"
+   ],
+   "n": 7,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "심현보 \"결국 남는 건 사랑…일상 속 소소한 이야기로 담았죠\"",
+     "link": "https://www.yna.co.kr/view/AKR20261106140900005"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "“팬들이 호구냐” 논란된 ‘젝스키스 디너쇼’ 결국 취소…무슨 일?",
+     "link": "https://biz.heraldcorp.com/article/10933370"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "백현 ‘차가원에 630억 피해’ 주장 나오더니 결국…새 소속사 설립",
+     "link": "https://biz.heraldcorp.com/article/10932102"
+    },
+    {
+     "src": "뉴시스",
+     "title": "'큰별쌤' 최태성 \"거액 사교육 스카우트에 원형탈모…결국 계약서 찢어\"",
+     "link": "https://www.newsis.com/view/NISX20261111_0003864497"
     }
    ]
   },
@@ -542,25 +540,25 @@
    ]
   },
   {
-   "kw": "복귀",
+   "kw": "발매",
    "nsrc": 4,
    "srcs": [
-    "뉴시스",
+    "SBS",
     "동아일보",
-    "세계일보",
-    "연합뉴스"
+    "연합뉴스",
+    "한국경제"
    ],
    "n": 6,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "'26년만 연예계 복귀' 고지용 \"오해 풀고 싶어, 팬 서운함 이해\"",
-     "link": "https://www.yna.co.kr/view/AKR20261105151000005"
+     "title": "신세계百 강남점, 에이티즈 앨범 발매 기념 팝업 매장 운영",
+     "link": "https://www.yna.co.kr/view/AKR20261107020700030"
     },
     {
      "src": "동아일보",
-     "title": "강지영, 15년 만에 MBC 복귀…테이 이어 ‘굿모닝FM’ 새 DJ",
-     "link": "https://sports.donga.com/ent/article/all/20261111/135008774/1"
+     "title": "앳하트, 글로벌 듀오 R2와 협업…‘Say It’ 리믹스 발매",
+     "link": "https://sports.donga.com/ent/article/all/20261111/135007225/1"
     },
     {
      "src": "동아일보",
@@ -568,42 +566,9 @@
      "link": "https://sports.donga.com/ent/article/all/20261111/135006964/1"
     },
     {
-     "src": "세계일보",
-     "title": "‘러시아 귀화’ 빅토르 안, 7년 만에 국내 예능 복귀…‘스피드퀸’ 코치",
-     "link": "https://www.segye.com/newsView/20261111504792"
-    }
-   ]
-  },
-  {
-   "kw": "코첼라",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "블핑 지수·이날치·NCT·베이비몬스터, 내년 '코첼라' 뜬다",
-     "link": "https://www.yna.co.kr/view/AKR20261111150900005"
-    },
-    {
-     "src": "동아일보",
-     "title": "베이비몬스터, 블랙핑크 계보 잇는다…5세대 최초 ‘코첼라’ 입성",
-     "link": "https://sports.donga.com/ent/article/all/20261111/135009872/1"
-    },
-    {
-     "src": "뉴시스",
-     "title": "지수·NCT·베몬·페기구·이날치, 내년 코첼라 간다(종합)",
-     "link": "https://www.newsis.com/view/NISX20261111_0003864324"
-    },
-    {
-     "src": "뉴시스",
-     "title": "블랙핑크 지수·NCT·베이비몬스터, 내년 코첼라 간다",
-     "link": "https://www.newsis.com/view/NISX20261111_0003864015"
+     "src": "한국경제",
+     "title": "가을엔 규현…내달 11일 EP '컨티뉴' 발매",
+     "link": "https://www.hankyung.com/article/202610278838H"
     }
    ]
   },
@@ -641,72 +606,6 @@
    ]
   },
   {
-   "kw": "맥도날드",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "연합뉴스",
-    "한겨레"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "존박 맥도날드 광고 음원 해외서 무단 유통…\"삭제 협의 중\"",
-     "link": "https://www.yna.co.kr/view/AKR20261111090700005"
-    },
-    {
-     "src": "한겨레",
-     "title": "존박·곽진언 ‘맥도날드 랩’ 해외서 무단 유통…소속사 “삭제·차단”",
-     "link": "https://www.hani.co.kr/arti/culture/music/1286784.html"
-    },
-    {
-     "src": "SBS",
-     "title": "존박 '맥도날드 주문 랩', 해외서 무단 도용…소속사 \"음원 삭제 진행 중\"",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008840583&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "뉴시스",
-     "title": "존박·곽진언 소속사, '맥도날드 랩' 해외 무단등록에 \"삭제 협의·법적 대응\"",
-     "link": "https://www.newsis.com/view/NISX20261111_0003863049"
-    }
-   ]
-  },
-  {
-   "kw": "존박",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "연합뉴스",
-    "한겨레"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "존박 맥도날드 광고 음원 해외서 무단 유통…\"삭제 협의 중\"",
-     "link": "https://www.yna.co.kr/view/AKR20261111090700005"
-    },
-    {
-     "src": "한겨레",
-     "title": "존박·곽진언 ‘맥도날드 랩’ 해외서 무단 유통…소속사 “삭제·차단”",
-     "link": "https://www.hani.co.kr/arti/culture/music/1286784.html"
-    },
-    {
-     "src": "SBS",
-     "title": "존박 '맥도날드 주문 랩', 해외서 무단 도용…소속사 \"음원 삭제 진행 중\"",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008840583&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "뉴시스",
-     "title": "존박·곽진언 소속사, '맥도날드 랩' 해외 무단등록에 \"삭제 협의·법적 대응\"",
-     "link": "https://www.newsis.com/view/NISX20261111_0003863049"
-    }
-   ]
-  },
-  {
    "kw": "굿모닝",
    "nsrc": 4,
    "srcs": [
@@ -740,35 +639,68 @@
    ]
   },
   {
-   "kw": "연기",
+   "kw": "이재진",
    "nsrc": 4,
    "srcs": [
-    "SBS",
+    "뉴시스",
+    "세계일보",
     "연합뉴스",
-    "조선일보",
-    "한국경제"
+    "헤럴드경제"
    ],
    "n": 5,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "조여정 \"이창동 감독 앞에서 감독 연기, 제 숙제였죠\"",
-     "link": "https://www.yna.co.kr/view/AKR20261110100800005"
+     "title": "이재진, 젝키 3인 디너쇼 불참 선언…주최측 \"행사 구성 재정비\"",
+     "link": "https://www.yna.co.kr/view/AKR20261110125200005"
     },
+    {
+     "src": "세계일보",
+     "title": "젝스키스 디너쇼 무산 후폭풍…이재진, 주최사 대표에 명예훼손 피소",
+     "link": "https://www.segye.com/newsView/20261111518603"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "‘젝키’ 이재진, 연말 디너쇼 불참 선언 “대표가 개인 계좌로 현금 입금 받아”",
+     "link": "https://biz.heraldcorp.com/article/10932450"
+    },
+    {
+     "src": "뉴시스",
+     "title": "젝스키스 디너쇼 무산 후폭풍…이재진, 주최사 대표에 명예훼손 피소",
+     "link": "https://www.newsis.com/view/NISX20261111_0003864410"
+    }
+   ]
+  },
+  {
+   "kw": "디너쇼",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "세계일보",
+    "연합뉴스",
+    "헤럴드경제"
+   ],
+   "n": 5,
+   "headlines": [
     {
      "src": "연합뉴스",
-     "title": "캣츠아이, 북미 투어 잇단 연기…\"메간 뇌진탕으로 회복 중\"",
-     "link": "https://www.yna.co.kr/view/AKR20261106086400005"
+     "title": "이재진, 젝키 3인 디너쇼 불참 선언…주최측 \"행사 구성 재정비\"",
+     "link": "https://www.yna.co.kr/view/AKR20261110125200005"
     },
     {
-     "src": "한국경제",
-     "title": "'재혼황후' 이종석, 국내 최초 새 연기 \"제가 좀 새 상…사람으로 변할 때 나체로 등장\"",
-     "link": "https://www.hankyung.com/article/202611032589H"
+     "src": "세계일보",
+     "title": "젝스키스 디너쇼 무산 후폭풍…이재진, 주최사 대표에 명예훼손 피소",
+     "link": "https://www.segye.com/newsView/20261111518603"
     },
     {
-     "src": "SBS",
-     "title": "\"제가 그렇게 잘했어요?\"…'가능한 사랑' 전도연, 쏟아지는 연기 호평에 던진 질문",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008837498&plink=RSSLINK&cooper=RSSREADER"
+     "src": "헤럴드경제",
+     "title": "“팬들이 호구냐” 논란된 ‘젝스키스 디너쇼’ 결국 취소…무슨 일?",
+     "link": "https://biz.heraldcorp.com/article/10933370"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "‘젝키’ 이재진, 연말 디너쇼 불참 선언 “대표가 개인 계좌로 현금 입금 받아”",
+     "link": "https://biz.heraldcorp.com/article/10932450"
     }
    ]
   },
@@ -806,39 +738,6 @@
    ]
   },
   {
-   "kw": "만장",
-   "nsrc": 4,
-   "srcs": [
-    "세계일보",
-    "연합뉴스",
-    "조선일보",
-    "한국경제"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "리센느 '펄스', 첫주 판매량 60만장…첫 하프 밀리언셀러",
-     "link": "https://www.yna.co.kr/view/AKR20261110068400005"
-    },
-    {
-     "src": "한국경제",
-     "title": "리센느, 확신의 대세…초동 60만장·음방 1위·내년 콘서트",
-     "link": "https://www.hankyung.com/article/202611119221H"
-    },
-    {
-     "src": "한국경제",
-     "title": "피원하모니, 첫날부터 날았다…신보 판매량 54만장 '커리어 하이'",
-     "link": "https://www.hankyung.com/article/202611072145H"
-    },
-    {
-     "src": "세계일보",
-     "title": "‘초동 60만장 돌파’ 흥행 질주 리센느, 내년 2월 첫 단독 콘서트…“꿈만 같아, 최선 다해 준비”",
-     "link": "https://www.segye.com/newsView/20261111512589"
-    }
-   ]
-  },
-  {
    "kw": "까지",
    "nsrc": 4,
    "srcs": [
@@ -868,6 +767,39 @@
      "src": "뉴시스",
      "title": "'아빠 힘내세요' 한수성, 빚더미서 月 3000만원 저작권료까지",
      "link": "https://www.newsis.com/view/NISX20261111_0003864491"
+    }
+   ]
+  },
+  {
+   "kw": "선물",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "세계일보",
+    "한겨레",
+    "헤럴드경제"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "한겨레",
+     "title": "‘발레 거장’ 한스 판마넌, 세상 뜨기 나흘 전 한국 무대에 남긴 선물",
+     "link": "https://www.hani.co.kr/arti/culture/music/1286637.html"
+    },
+    {
+     "src": "세계일보",
+     "title": "“특별한 선물”…션, 빼빼로데이에 2011만 1111원 수표 공개한 사연",
+     "link": "https://www.segye.com/newsView/20261111515046"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "소지섭, 이번엔 대만 팬에 금 선물…당첨된 팬 “눈물”",
+     "link": "https://biz.heraldcorp.com/article/10933636"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "리센느, 내년 2월 첫 단독 콘서트 개최…“팬분들께 소중한 시간 선물”",
+     "link": "https://biz.heraldcorp.com/article/10933209"
     }
    ]
   },
@@ -905,68 +837,68 @@
    ]
   },
   {
-   "kw": "베이비몬",
+   "kw": "존박",
    "nsrc": 4,
    "srcs": [
+    "SBS",
     "뉴시스",
-    "동아일보",
     "연합뉴스",
-    "조선일보"
+    "한겨레"
    ],
    "n": 4,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "블핑 지수·이날치·NCT·베이비몬스터, 내년 '코첼라' 뜬다",
-     "link": "https://www.yna.co.kr/view/AKR20261111150900005"
+     "title": "존박 맥도날드 광고 음원 해외서 무단 유통…\"삭제 협의 중\"",
+     "link": "https://www.yna.co.kr/view/AKR20261111090700005"
     },
     {
-     "src": "동아일보",
-     "title": "베이비몬스터, 블랙핑크 계보 잇는다…5세대 최초 ‘코첼라’ 입성",
-     "link": "https://sports.donga.com/ent/article/all/20261111/135009872/1"
+     "src": "한겨레",
+     "title": "존박·곽진언 ‘맥도날드 랩’ 해외서 무단 유통…소속사 “삭제·차단”",
+     "link": "https://www.hani.co.kr/arti/culture/music/1286784.html"
+    },
+    {
+     "src": "SBS",
+     "title": "존박 '맥도날드 주문 랩', 해외서 무단 도용…소속사 \"음원 삭제 진행 중\"",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008840583&plink=RSSLINK&cooper=RSSREADER"
     },
     {
      "src": "뉴시스",
-     "title": "블랙핑크 지수·NCT·베이비몬스터, 내년 코첼라 간다",
-     "link": "https://www.newsis.com/view/NISX20261111_0003864015"
-    },
-    {
-     "src": "조선일보",
-     "title": "\"코첼라 갈 실력\"..베이비몬스터, 3년 만에 팬들 염원 이뤘다[Oh!쎈 이슈]",
-     "link": "https://www.chosun.com/entertainments/music/2026/11/11/GEYDQYRYHFQWCMRWG42DCMTDHE/"
+     "title": "존박·곽진언 소속사, '맥도날드 랩' 해외 무단등록에 \"삭제 협의·법적 대응\"",
+     "link": "https://www.newsis.com/view/NISX20261111_0003863049"
     }
    ]
   },
   {
-   "kw": "스터",
+   "kw": "맥도날드",
    "nsrc": 4,
    "srcs": [
+    "SBS",
     "뉴시스",
-    "동아일보",
     "연합뉴스",
-    "조선일보"
+    "한겨레"
    ],
    "n": 4,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "블핑 지수·이날치·NCT·베이비몬스터, 내년 '코첼라' 뜬다",
-     "link": "https://www.yna.co.kr/view/AKR20261111150900005"
+     "title": "존박 맥도날드 광고 음원 해외서 무단 유통…\"삭제 협의 중\"",
+     "link": "https://www.yna.co.kr/view/AKR20261111090700005"
     },
     {
-     "src": "동아일보",
-     "title": "베이비몬스터, 블랙핑크 계보 잇는다…5세대 최초 ‘코첼라’ 입성",
-     "link": "https://sports.donga.com/ent/article/all/20261111/135009872/1"
+     "src": "한겨레",
+     "title": "존박·곽진언 ‘맥도날드 랩’ 해외서 무단 유통…소속사 “삭제·차단”",
+     "link": "https://www.hani.co.kr/arti/culture/music/1286784.html"
+    },
+    {
+     "src": "SBS",
+     "title": "존박 '맥도날드 주문 랩', 해외서 무단 도용…소속사 \"음원 삭제 진행 중\"",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008840583&plink=RSSLINK&cooper=RSSREADER"
     },
     {
      "src": "뉴시스",
-     "title": "블랙핑크 지수·NCT·베이비몬스터, 내년 코첼라 간다",
-     "link": "https://www.newsis.com/view/NISX20261111_0003864015"
-    },
-    {
-     "src": "조선일보",
-     "title": "\"코첼라 갈 실력\"..베이비몬스터, 3년 만에 팬들 염원 이뤘다[Oh!쎈 이슈]",
-     "link": "https://www.chosun.com/entertainments/music/2026/11/11/GEYDQYRYHFQWCMRWG42DCMTDHE/"
+     "title": "존박·곽진언 소속사, '맥도날드 랩' 해외 무단등록에 \"삭제 협의·법적 대응\"",
+     "link": "https://www.newsis.com/view/NISX20261111_0003863049"
     }
    ]
   },
@@ -1004,35 +936,35 @@
    ]
   },
   {
-   "kw": "무단",
+   "kw": "카메라",
    "nsrc": 4,
    "srcs": [
-    "SBS",
     "뉴시스",
+    "세계일보",
     "연합뉴스",
-    "한겨레"
+    "조선일보"
    ],
    "n": 4,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "존박 맥도날드 광고 음원 해외서 무단 유통…\"삭제 협의 중\"",
-     "link": "https://www.yna.co.kr/view/AKR20261111090700005"
+     "title": "\"한국 예능선 카메라 200대 쓴다\"…넷플릭스가 주목한 제작 방식",
+     "link": "https://www.yna.co.kr/view/AKR20261111079200017"
     },
     {
-     "src": "한겨레",
-     "title": "존박·곽진언 ‘맥도날드 랩’ 해외서 무단 유통…소속사 “삭제·차단”",
-     "link": "https://www.hani.co.kr/arti/culture/music/1286784.html"
-    },
-    {
-     "src": "SBS",
-     "title": "존박 '맥도날드 주문 랩', 해외서 무단 도용…소속사 \"음원 삭제 진행 중\"",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008840583&plink=RSSLINK&cooper=RSSREADER"
+     "src": "세계일보",
+     "title": "전현무, 생일 맞아 유기견 봉사…카메라 없이 구슬땀",
+     "link": "https://www.segye.com/newsView/20261111509127"
     },
     {
      "src": "뉴시스",
-     "title": "존박·곽진언 '맥도날드 주문 랩', 해외 음원 플랫폼에 무단 등록…작사·작곡자도 제3자",
-     "link": "https://www.newsis.com/view/NISX20261110_0003862456"
+     "title": "전현무, 생일에도 유기견 봉사…카메라 없이 구슬땀",
+     "link": "https://www.newsis.com/view/NISX20261111_0003863460"
+    },
+    {
+     "src": "조선일보",
+     "title": "\"카메라 숨어 있어\"...22기 옥순♥경수가 폭로한 '나솔' 촬영장의 소름 돋는 리얼리티",
+     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/11/GY3DKNBVMMYDIN3DGAZTIYZXGY/"
     }
    ]
   },
@@ -1196,7 +1128,7 @@
     },
     {
      "src": "조선일보",
-     "title": "김선태, '충주맨' 퇴사후 유튜버 되더니..1인 기획사 설립? \"콘텐츠 제작사\" 해명[Oh!쎈 이슈]",
+     "title": "김선태, ‘충주맨’ 퇴사후 유튜버 되더니... 1인 기획사 설립? “콘텐츠 제작사”",
      "link": "https://www.chosun.com/entertainments/broadcast/2026/11/11/MM4DSZJWGYZTSYZUMJQTIMTGHA/"
     }
    ]
@@ -1330,6 +1262,72 @@
      "src": "뉴시스",
      "title": "'큰별쌤' 최태성 \"거액 사교육 스카우트에 원형탈모…결국 계약서 찢어\"",
      "link": "https://www.newsis.com/view/NISX20261111_0003864497"
+    }
+   ]
+  },
+  {
+   "kw": "엑소",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "동아일보",
+    "연합뉴스"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "엑소, '첫눈' 내린 날 1만여 명과 떼창…\"새록새록 추억 속으로\"",
+     "link": "https://www.yna.co.kr/view/AKR20261108044300005"
+    },
+    {
+     "src": "동아일보",
+     "title": "엑소, ‘94즈’ 카이·세훈 뭉쳤다…12월 1일 유닛 출격",
+     "link": "https://sports.donga.com/ent/article/all/20261111/135010269/1"
+    },
+    {
+     "src": "SBS",
+     "title": "\"3만 3천 관객 열광\"… 엑소, 단독 투어 앙코르 콘서트 성황리 마무리",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008837436&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "뉴시스",
+     "title": "엑소 카이·세훈, 새 유닛 결성…12월 '웨이킹 업 더 시티'",
+     "link": "https://www.newsis.com/view/NISX20261111_0003863283"
+    }
+   ]
+  },
+  {
+   "kw": "전쟁",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "동아일보",
+    "연합뉴스",
+    "한겨레"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "영화 '김의 전쟁'·'테러리스트' 김영빈 감독 별세",
+     "link": "https://www.yna.co.kr/view/AKR20261108047000005"
+    },
+    {
+     "src": "동아일보",
+     "title": "DAY6 올해 클콘도 체조에서…마이데이 티켓팅 전쟁 채비",
+     "link": "https://sports.donga.com/ent/article/all/20261111/135009536/1"
+    },
+    {
+     "src": "한겨레",
+     "title": "영화 ‘김의 전쟁’, ‘테러리스트’ 김영빈 감독 별세",
+     "link": "https://www.hani.co.kr/arti/culture/culture_general/1286350.html"
+    },
+    {
+     "src": "SBS",
+     "title": "'흑백요리사' 세계관 음악으로 확장…넷플릭스, '흑백 가수: 보컬 계급 전쟁' 내년 공개",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008840614&plink=RSSLINK&cooper=RSSREADER"
     }
    ]
   }
