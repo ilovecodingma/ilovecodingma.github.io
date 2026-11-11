@@ -1,14 +1,14 @@
 {
  "date": "2026-11-12",
- "updated": "2026-11-12 06:50",
+ "updated": "2026-11-12 07:50",
  "sites": 12,
- "npost": 2636,
+ "npost": 2626,
  "note": "출처(커뮤니티)별 집계예요. 작성자·연령·성별 정보는 수집하지 않아요. posts 는 이슈별로 뽑힌 일부라 전체 글 수가 아니에요.",
  "sources": [
   {
    "name": "MLB파크",
-   "np": 15,
-   "nc": 1040,
+   "np": 14,
+   "nc": 811,
    "topics": [
     {
      "t": "민속촌 귀신 훈육.. 저라면 안데려갑니다;",
@@ -18,8 +18,8 @@
      "issue_np": 6,
      "issue_nc": 405,
      "kw": [
-      "귀신",
       "민속촌",
+      "귀신",
       "누나"
      ],
      "top_post": {
@@ -39,7 +39,7 @@
       "귀신",
       "고소장",
       "논란",
-      "민속"
+      "훈육"
      ],
      "top_post": {
       "t": "고소장 받은 민속촌 '귀신 훈육'...논란 커지자 결국",
@@ -48,35 +48,17 @@
      }
     },
     {
-     "t": "판교 영끌러 신혼부부의 최후 ㄷㄷ",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 231,
-     "issue_np": 2,
-     "issue_nc": 284,
-     "kw": [
-      "신혼부부",
-      "판교",
-      "최후"
-     ],
-     "top_post": {
-      "t": "판교 영끌러 신혼부부의 최후 ㄷㄷ",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611110120040884&m=view",
-      "nc": 231
-     }
-    },
-    {
      "t": "역대급 횟집 예약 요구사항",
-     "nsite": 4,
+     "nsite": 3,
      "np_here": 1,
      "nc_here": 54,
-     "issue_np": 4,
+     "issue_np": 3,
      "issue_nc": 62,
      "kw": [
-      "횟집",
+      "역대",
       "예약",
       "사항",
-      "역대"
+      "횟집"
      ],
      "top_post": {
       "t": "역대급 횟집 예약 요구사항",
@@ -92,10 +74,10 @@
      "issue_np": 3,
      "issue_nc": 68,
      "kw": [
-      "합의",
       "살해",
       "아들",
-      "거부"
+      "합의",
+      "범행"
      ],
      "top_post": {
       "t": "아들 성범죄 합의 안해주자 피해자 살해한 아빠",
@@ -109,10 +91,10 @@
      "np_here": 1,
      "nc_here": 18,
      "issue_np": 10,
-     "issue_nc": 192,
+     "issue_nc": 195,
      "kw": [
-      "마운자",
       "반입",
+      "마운자",
       "허용",
       "국내"
      ],
@@ -130,8 +112,8 @@
      "issue_np": 4,
      "issue_nc": 59,
      "kw": [
-      "정체",
-      "소음"
+      "소음",
+      "정체"
      ],
      "top_post": {
       "t": "3개월 넘게 집에서 나던 소음의 정체",
@@ -149,21 +131,40 @@
      "kw": [
       "후임",
       "거론",
-      "엔비디아",
-      "CEO"
+      "CEO",
+      "엔비디아"
      ],
      "top_post": {
       "t": "젠슨황 후임으로 리사수가 거론 된다는데",
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611110120046452&m=view",
       "nc": 14
      }
+    },
+    {
+     "t": "이젠 AI 안경 없이도 뚫린다는 고시 근황 ㄷㄷㄷ",
+     "nsite": 4,
+     "np_here": 2,
+     "nc_here": 11,
+     "issue_np": 13,
+     "issue_nc": 35,
+     "kw": [
+      "AI",
+      "안경",
+      "고시",
+      "세무사"
+     ],
+     "top_post": {
+      "t": "인생 망한 사람은 진짜 ai안경 도박 할만할듯?",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611120120051903&m=view",
+      "nc": 9
+     }
     }
    ]
   },
   {
    "name": "인스티즈",
-   "np": 11,
-   "nc": 642,
+   "np": 12,
+   "nc": 704,
    "topics": [
     {
      "t": "\"계속 민원 넣어줄게\"…이지혜, '민속촌 귀신' 아동학대 논란 언급에 댓글 '활활'",
@@ -194,7 +195,7 @@
      "kw": [
       "삼성",
       "기술",
-      "유일",
+      "개발",
       "세계"
      ],
      "top_post": {
@@ -207,19 +208,19 @@
      "t": "[단독] 일본서 산 마운자로, 국내 반입 허용된다…최대 12개",
      "nsite": 8,
      "np_here": 1,
-     "nc_here": 90,
+     "nc_here": 93,
      "issue_np": 10,
-     "issue_nc": 192,
+     "issue_nc": 195,
      "kw": [
-      "마운자",
       "반입",
+      "마운자",
       "허용",
       "국내"
      ],
      "top_post": {
       "t": "[단독] 일본서 산 마운자로, 국내 반입 허용된다…최대 12개",
       "u": "https://www.instiz.net/pt/7924730?green=1",
-      "nc": 90
+      "nc": 93
      }
     },
     {
@@ -263,56 +264,56 @@
      "t": "ai안경 사용 추정중인 세무사 수석 본인이 쓴 글들 및 의혹정리",
      "nsite": 3,
      "np_here": 1,
-     "nc_here": 56,
+     "nc_here": 63,
      "issue_np": 3,
-     "issue_nc": 105,
+     "issue_nc": 112,
      "kw": [
+      "AI",
       "수석",
       "무사",
-      "안경",
-      "AI"
+      "안경"
      ],
      "top_post": {
       "t": "ai안경 사용 추정중인 세무사 수석 본인이 쓴 글들 및 의혹정리",
       "u": "https://www.instiz.net/pt/7924936?green=1",
-      "nc": 56
+      "nc": 63
      }
     },
     {
      "t": "육회비빔밥+김치전 SET 배달 논란",
      "nsite": 3,
      "np_here": 1,
-     "nc_here": 44,
+     "nc_here": 47,
      "issue_np": 3,
-     "issue_nc": 74,
+     "issue_nc": 77,
      "kw": [
-      "육회",
-      "SET",
       "비빔밥",
-      "김치전"
+      "김치전",
+      "SET",
+      "육회"
      ],
      "top_post": {
       "t": "육회비빔밥+김치전 SET 배달 논란",
       "u": "https://www.instiz.net/pt/7924824?green=1",
-      "nc": 44
+      "nc": 47
      }
     },
     {
-     "t": "민속촌 귀신 훈육.. 저라면 안데려갑니다;",
-     "nsite": 3,
+     "t": "한국은 일본 식민지였는데 왜 일본어 안 써?",
+     "nsite": 4,
      "np_here": 1,
-     "nc_here": 43,
-     "issue_np": 6,
-     "issue_nc": 405,
+     "nc_here": 46,
+     "issue_np": 5,
+     "issue_nc": 46,
      "kw": [
-      "귀신",
-      "민속촌",
-      "누나"
+      "한국",
+      "일본",
+      "식민지"
      ],
      "top_post": {
-      "t": "[단독] \"너, 잡아 간다”…금쪽이 울린 '민속촌 귀신' 날벼락",
-      "u": "https://www.instiz.net/pt/7923787?green=1",
-      "nc": 43
+      "t": "일본 호스트바 빠져서 한국에서 대기업때려치고 일본간 후기",
+      "u": "https://www.instiz.net/pt/7924911?green=1",
+      "nc": 46
      }
     }
    ]
@@ -320,7 +321,7 @@
   {
    "name": "개드립",
    "np": 20,
-   "nc": 427,
+   "nc": 445,
    "topics": [
     {
      "t": "ai안경 사용 추정중인 세무사 수석 본인이 쓴 글들 및 의혹정리",
@@ -328,12 +329,12 @@
      "np_here": 1,
      "nc_here": 49,
      "issue_np": 3,
-     "issue_nc": 105,
+     "issue_nc": 112,
      "kw": [
+      "AI",
       "수석",
       "무사",
-      "안경",
-      "AI"
+      "안경"
      ],
      "top_post": {
       "t": "AI 안경 의심받는 세무사 수석합격자",
@@ -349,8 +350,8 @@
      "issue_np": 4,
      "issue_nc": 59,
      "kw": [
-      "정체",
-      "소음"
+      "소음",
+      "정체"
      ],
      "top_post": {
       "t": "3개월 넘게 집에서 나던 소음의 정체",
@@ -364,10 +365,10 @@
      "np_here": 1,
      "nc_here": 35,
      "issue_np": 10,
-     "issue_nc": 192,
+     "issue_nc": 195,
      "kw": [
-      "마운자",
       "반입",
+      "마운자",
       "허용",
       "국내"
      ],
@@ -375,6 +376,25 @@
       "t": "[속보] 일본에서산 마운자로 국내반입 허용",
       "u": "https://www.dogdrip.net/dogdrip/734308793?sort_index=popular&page=1",
       "nc": 35
+     }
+    },
+    {
+     "t": "슬슬 커지는것 같다는 세무사 시험 ai 논란",
+     "nsite": 3,
+     "np_here": 2,
+     "nc_here": 35,
+     "issue_np": 9,
+     "issue_nc": 35,
+     "kw": [
+      "세무사",
+      "AI",
+      "시험",
+      "논란"
+     ],
+     "top_post": {
+      "t": "슬슬 커지는것 같다는 세무사 시험 ai 논란",
+      "u": "https://www.dogdrip.net/dogdrip/734341334?sort_index=popular&page=1",
+      "nc": 23
      }
     },
     {
@@ -404,8 +424,8 @@
      "issue_np": 3,
      "issue_nc": 34,
      "kw": [
-      "중국",
       "헬스장",
+      "중국",
       "매너",
       "싸움"
      ],
@@ -421,12 +441,12 @@
      "np_here": 1,
      "nc_here": 30,
      "issue_np": 3,
-     "issue_nc": 74,
+     "issue_nc": 77,
      "kw": [
-      "육회",
-      "SET",
       "비빔밥",
-      "김치전"
+      "김치전",
+      "SET",
+      "육회"
      ],
      "top_post": {
       "t": "육회비빔밥+김치전 set인데 김치전은 빼주세요",
@@ -451,88 +471,6 @@
       "u": "https://www.dogdrip.net/dogdrip/734258119?sort_index=popular&page=1",
       "nc": 28
      }
-    },
-    {
-     "t": "슬슬 커지는것 같다는 세무사 시험 ai 논란",
-     "nsite": 3,
-     "np_here": 2,
-     "nc_here": 28,
-     "issue_np": 9,
-     "issue_nc": 28,
-     "kw": [
-      "세무사",
-      "AI",
-      "시험",
-      "논란"
-     ],
-     "top_post": {
-      "t": "슬슬 커지는것 같다는 세무사 시험 ai 논란",
-      "u": "https://www.dogdrip.net/dogdrip/734341334?sort_index=popular&page=1",
-      "nc": 20
-     }
-    }
-   ]
-  },
-  {
-   "name": "클리앙",
-   "np": 3,
-   "nc": 97,
-   "topics": [
-    {
-     "t": "판교 영끌러 신혼부부의 최후 ㄷㄷ",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 53,
-     "issue_np": 2,
-     "issue_nc": 284,
-     "kw": [
-      "신혼부부",
-      "판교",
-      "최후"
-     ],
-     "top_post": {
-      "t": "(펌) 판교 영끌러 신혼부부의 최후 ㄷㄷ",
-      "u": "https://www.clien.net/service/board/park/19290614?od=T33&po=0&category=0&groupCd=clien_all",
-      "nc": 53
-     }
-    },
-    {
-     "t": "[단독] 일본서 산 마운자로, 국내 반입 허용된다…최대 12개",
-     "nsite": 8,
-     "np_here": 1,
-     "nc_here": 22,
-     "issue_np": 10,
-     "issue_nc": 192,
-     "kw": [
-      "마운자",
-      "반입",
-      "허용",
-      "국내"
-     ],
-     "top_post": {
-      "t": "마운자로 반입 허용된거 보니 좀 어이없네요..",
-      "u": "https://www.clien.net/service/board/park/19290811?od=T33&po=0&category=0&groupCd=clien_all",
-      "nc": 22
-     }
-    },
-    {
-     "t": "10대 살해 50대…아들 범죄 합의 거부하자 범행",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 22,
-     "issue_np": 3,
-     "issue_nc": 68,
-     "kw": [
-      "합의",
-      "살해",
-      "아들",
-      "거부"
-     ],
-     "top_post": {
-      "t": "10대 살해 50대…아들 범죄 합의 거부하자 범행",
-      "u": "https://www.clien.net/service/board/park/19290727?od=T33&po=0&category=0&groupCd=clien_all",
-      "nc": 22
-     }
     }
    ]
   },
@@ -547,10 +485,10 @@
      "np_here": 1,
      "nc_here": 27,
      "issue_np": 10,
-     "issue_nc": 192,
+     "issue_nc": 195,
      "kw": [
-      "마운자",
       "반입",
+      "마운자",
       "허용",
       "국내"
      ],
@@ -565,11 +503,11 @@
      "nsite": 3,
      "np_here": 1,
      "nc_here": 10,
-     "issue_np": 13,
+     "issue_np": 10,
      "issue_nc": 16,
      "kw": [
-      "데이",
       "빼빼로",
+      "데이",
       "기념",
       "트릭컬"
      ],
@@ -599,8 +537,53 @@
    ]
   },
   {
+   "name": "클리앙",
+   "np": 2,
+   "nc": 44,
+   "topics": [
+    {
+     "t": "[단독] 일본서 산 마운자로, 국내 반입 허용된다…최대 12개",
+     "nsite": 8,
+     "np_here": 1,
+     "nc_here": 22,
+     "issue_np": 10,
+     "issue_nc": 195,
+     "kw": [
+      "반입",
+      "마운자",
+      "허용",
+      "국내"
+     ],
+     "top_post": {
+      "t": "마운자로 반입 허용된거 보니 좀 어이없네요..",
+      "u": "https://www.clien.net/service/board/park/19290811?od=T33&po=0&category=0&groupCd=clien_all",
+      "nc": 22
+     }
+    },
+    {
+     "t": "10대 살해 50대…아들 범죄 합의 거부하자 범행",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 22,
+     "issue_np": 3,
+     "issue_nc": 68,
+     "kw": [
+      "살해",
+      "아들",
+      "합의",
+      "범행"
+     ],
+     "top_post": {
+      "t": "10대 살해 50대…아들 범죄 합의 거부하자 범행",
+      "u": "https://www.clien.net/service/board/park/19290727?od=T33&po=0&category=0&groupCd=clien_all",
+      "nc": 22
+     }
+    }
+   ]
+  },
+  {
    "name": "보배드림",
-   "np": 11,
+   "np": 12,
    "nc": 26,
    "topics": [
     {
@@ -611,8 +594,8 @@
      "issue_np": 6,
      "issue_nc": 405,
      "kw": [
-      "귀신",
       "민속촌",
+      "귀신",
       "누나"
      ],
      "top_post": {
@@ -627,12 +610,12 @@
      "np_here": 2,
      "nc_here": 4,
      "issue_np": 7,
-     "issue_nc": 43,
+     "issue_nc": 46,
      "kw": [
-      "피해자",
-      "성범죄",
       "살해",
-      "아들"
+      "성범죄",
+      "아들",
+      "피해자"
      ],
      "top_post": {
       "t": "아들성범죄사건 피해자를 살해한 아빠",
@@ -686,7 +669,7 @@
      "kw": [
       "삼성",
       "기술",
-      "유일",
+      "개발",
       "세계"
      ],
      "top_post": {
@@ -703,8 +686,8 @@
      "issue_np": 3,
      "issue_nc": 34,
      "kw": [
-      "중국",
       "헬스장",
+      "중국",
       "매너",
       "싸움"
      ],
@@ -722,8 +705,8 @@
      "issue_np": 3,
      "issue_nc": 3,
      "kw": [
-      "폐기",
-      "빵집"
+      "빵집",
+      "폐기"
      ],
      "top_post": {
       "t": "빵집들이 남은 빵 폐기하는 이유",
@@ -780,11 +763,11 @@
      "nsite": 3,
      "np_here": 1,
      "nc_here": 6,
-     "issue_np": 13,
+     "issue_np": 10,
      "issue_nc": 16,
      "kw": [
-      "데이",
       "빼빼로",
+      "데이",
       "기념",
       "트릭컬"
      ],
@@ -807,10 +790,10 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 10,
-     "issue_nc": 192,
+     "issue_nc": 195,
      "kw": [
-      "마운자",
       "반입",
+      "마운자",
       "허용",
       "국내"
      ],
@@ -845,12 +828,12 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 7,
-     "issue_nc": 43,
+     "issue_nc": 46,
      "kw": [
-      "피해자",
-      "성범죄",
       "살해",
-      "아들"
+      "성범죄",
+      "아들",
+      "피해자"
      ],
      "top_post": {
       "t": "성북구서 아들 성범죄 사건 피해자 살해한 50대 검거",
@@ -877,6 +860,25 @@
      }
     },
     {
+     "t": "450억 들여 300대 도입 예정이라는 순찰 로봇",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 12,
+     "kw": [
+      "로봇",
+      "순찰",
+      "도입",
+      "예정"
+     ],
+     "top_post": {
+      "t": "순찰 로봇 도입에 450억을 태움 ㄷㄷ",
+      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677194",
+      "nc": 0
+     }
+    },
+    {
      "t": "고소장 받은 민속촌 '귀신 훈육'...논란 커지자 결국",
      "nsite": 3,
      "np_here": 1,
@@ -887,7 +889,7 @@
       "귀신",
       "고소장",
       "논란",
-      "민속"
+      "훈육"
      ],
      "top_post": {
       "t": "고소장 받은 민속촌 '귀신 훈육'... 논란 커지자 결국",
@@ -901,34 +903,15 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 3,
-     "issue_nc": 20,
+     "issue_nc": 23,
      "kw": [
-      "삼성",
       "기술",
+      "삼성",
       "투자"
      ],
      "top_post": {
       "t": "1조6천억 들여서 만든 삼성의 기술 클라스 ㅎㄷㄷ",
       "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677223",
-      "nc": 0
-     }
-    },
-    {
-     "t": "450억 들여 300대 도입 예정이라는 순찰 로봇",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 12,
-     "kw": [
-      "로봇",
-      "도입",
-      "순찰",
-      "예정"
-     ],
-     "top_post": {
-      "t": "순찰 로봇 도입에 450억을 태움 ㄷㄷ",
-      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677194",
       "nc": 0
      }
     },
@@ -940,8 +923,8 @@
      "issue_np": 3,
      "issue_nc": 3,
      "kw": [
-      "폐기",
-      "빵집"
+      "빵집",
+      "폐기"
      ],
      "top_post": {
       "t": "빵집들이 남은 빵 폐기하는 이유 ㄷㄷㄷㄷㄷㄷㄷ",
@@ -981,12 +964,12 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 7,
-     "issue_nc": 43,
+     "issue_nc": 46,
      "kw": [
-      "피해자",
-      "성범죄",
       "살해",
-      "아들"
+      "성범죄",
+      "아들",
+      "피해자"
      ],
      "top_post": {
       "t": "'아들 성범죄 사건' 피해자 살해…50대 남성 검거",
@@ -995,21 +978,20 @@
      }
     },
     {
-     "t": "역대급 횟집 예약 요구사항",
+     "t": "한국은 일본 식민지였는데 왜 일본어 안 써?",
      "nsite": 4,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 62,
+     "issue_np": 5,
+     "issue_nc": 46,
      "kw": [
-      "횟집",
-      "예약",
-      "사항",
-      "역대"
+      "한국",
+      "일본",
+      "식민지"
      ],
      "top_post": {
-      "t": "횟집예약 레전드 갱신",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77345360?m=all&t=now",
+      "t": "한국과 별다를 바 없는 일본의 지역 드립",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77355804?m=all&t=now",
       "nc": 0
      }
     },
@@ -1057,14 +1039,33 @@
      "issue_np": 4,
      "issue_nc": 17,
      "kw": [
-      "전동",
       "아파트",
       "드라이버",
+      "전동",
       "단톡"
      ],
      "top_post": {
       "t": "아파트 단톡에 전동 드라이버 잠깐 빌릴 수 있냐고 올림",
       "u": "https://bbs.ruliweb.com/best/board/300143/read/77349348?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "450억 들여 300대 도입 예정이라는 순찰 로봇",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 12,
+     "kw": [
+      "로봇",
+      "순찰",
+      "도입",
+      "예정"
+     ],
+     "top_post": {
+      "t": "450억 들여 300대 도입 예정이라는 순찰 로봇 근황",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77348174?m=humor",
       "nc": 0
      }
     },
@@ -1086,25 +1087,6 @@
       "u": "https://bbs.ruliweb.com/best/board/300143/read/77352768?m=all&t=now",
       "nc": 0
      }
-    },
-    {
-     "t": "육회비빔밥+김치전 SET 배달 논란",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 74,
-     "kw": [
-      "육회",
-      "SET",
-      "비빔밥",
-      "김치전"
-     ],
-     "top_post": {
-      "t": "육회비빔밥+김치전 set 근황 feat. 김치전 빼주세요",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77347373?m=all&t=now",
-      "nc": 0
-     }
     }
    ]
   },
@@ -1119,12 +1101,12 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 7,
-     "issue_nc": 43,
+     "issue_nc": 46,
      "kw": [
-      "피해자",
-      "성범죄",
       "살해",
-      "아들"
+      "성범죄",
+      "아들",
+      "피해자"
      ],
      "top_post": {
       "t": "[단독] '아들 성범죄 사건' 피해자 살해…50대 남성 검거",
@@ -1133,21 +1115,20 @@
      }
     },
     {
-     "t": "역대급 횟집 예약 요구사항",
+     "t": "한국은 일본 식민지였는데 왜 일본어 안 써?",
      "nsite": 4,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 62,
+     "issue_np": 5,
+     "issue_nc": 46,
      "kw": [
-      "횟집",
-      "예약",
-      "사항",
-      "역대"
+      "한국",
+      "일본",
+      "식민지"
      ],
      "top_post": {
-      "t": "역대급 횟집 예약 요청사항",
-      "u": "https://theqoo.net/hot/4402234455",
+      "t": "한국 일본 마운자로 가격 비교",
+      "u": "https://theqoo.net/hot/4402828237",
       "nc": 0
      }
     },
@@ -1176,12 +1157,12 @@
      "np_here": 3,
      "nc_here": 0,
      "issue_np": 13,
-     "issue_nc": 27,
+     "issue_nc": 35,
      "kw": [
-      "안경",
       "AI",
+      "안경",
       "고시",
-      "난리"
+      "세무사"
      ],
      "top_post": {
       "t": "핫게 AI 안경 대책 글에서 나오는 각종 대안이 불가능한 이유",
@@ -1197,9 +1178,9 @@
      "issue_np": 4,
      "issue_nc": 17,
      "kw": [
-      "전동",
       "아파트",
       "드라이버",
+      "전동",
       "단톡"
      ],
      "top_post": {
@@ -1219,11 +1200,30 @@
       "귀신",
       "고소장",
       "논란",
-      "민속"
+      "훈육"
      ],
      "top_post": {
       "t": "고소장 받은 민속촌 '귀신 훈육'...논란 커지자 결국",
       "u": "https://theqoo.net/hot/4402340885",
+      "nc": 0
+     }
+    },
+    {
+     "t": "ai안경 사용 추정중인 세무사 수석 본인이 쓴 글들 및 의혹정리",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 112,
+     "kw": [
+      "AI",
+      "수석",
+      "무사",
+      "안경"
+     ],
+     "top_post": {
+      "t": "ai안경 사용 추정중인 세무사 수석 본인이 쓴 글들 및 의혹정리",
+      "u": "https://theqoo.net/hot/4403288959",
       "nc": 0
      }
     },
@@ -1237,7 +1237,7 @@
      "kw": [
       "삼성",
       "기술",
-      "유일",
+      "개발",
       "세계"
      ],
      "top_post": {
@@ -1245,31 +1245,12 @@
       "u": "https://theqoo.net/hot/4402333959",
       "nc": 0
      }
-    },
-    {
-     "t": "ai안경 사용 추정중인 세무사 수석 본인이 쓴 글들 및 의혹정리",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 105,
-     "kw": [
-      "수석",
-      "무사",
-      "안경",
-      "AI"
-     ],
-     "top_post": {
-      "t": "ai안경 사용 추정중인 세무사 수석 본인이 쓴 글들 및 의혹정리",
-      "u": "https://theqoo.net/hot/4403288959",
-      "nc": 0
-     }
     }
    ]
   },
   {
    "name": "디시인사이드",
-   "np": 2,
+   "np": 4,
    "nc": 0,
    "topics": [
     {
@@ -1291,6 +1272,25 @@
      }
     },
     {
+     "t": "450억 들여 300대 도입 예정이라는 순찰 로봇",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 12,
+     "kw": [
+      "로봇",
+      "순찰",
+      "도입",
+      "예정"
+     ],
+     "top_post": {
+      "t": "450억 들여 300대 도입 예정이라는 순찰 로봇 근황",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=477983&_dcbest=1&page=1",
+      "nc": 0
+     }
+    },
+    {
      "t": "게임 개발에 Ai 썼다고 난리 난 \" 빅 워크 \" 사태..",
      "nsite": 3,
      "np_here": 1,
@@ -1299,13 +1299,32 @@
      "issue_nc": 25,
      "kw": [
       "난리",
-      "사태",
-      "개발",
-      "게임"
+      "워크",
+      "AI",
+      "사태"
      ],
      "top_post": {
       "t": "현재 난리난 IGF 빅워크 사태",
       "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=477889&_dcbest=1&page=1",
+      "nc": 0
+     }
+    },
+    {
+     "t": "사이비종교가 바꾼 한국의 문화",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 0,
+     "kw": [
+      "사이비",
+      "종교",
+      "문화",
+      "한국"
+     ],
+     "top_post": {
+      "t": "사이비종교가 바꾼 한국의 문화",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=477751&_dcbest=1&page=1",
       "nc": 0
      }
     }
@@ -1318,11 +1337,11 @@
    "topics": [
     {
      "t": "한국은 일본 식민지였는데 왜 일본어 안 써?",
-     "nsite": 3,
+     "nsite": 4,
      "np_here": 2,
      "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 0,
+     "issue_np": 5,
+     "issue_nc": 46,
      "kw": [
       "한국",
       "일본",
