@@ -1,14 +1,13 @@
 {
- "at": "2026-11-11 19:30",
+ "at": "2026-11-11 20:30",
  "nitems": 528,
  "cands": [
   {
    "kw": "리센느",
-   "nsrc": 9,
+   "nsrc": 8,
    "srcs": [
     "SBS",
     "뉴시스",
-    "동아일보",
     "세계일보",
     "연합뉴스",
     "조선일보",
@@ -16,7 +15,7 @@
     "한국경제",
     "헤럴드경제"
    ],
-   "n": 28,
+   "n": 49,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -29,14 +28,14 @@
      "link": "https://www.yna.co.kr/view/AKR20261110068400005"
     },
     {
-     "src": "동아일보",
-     "title": "리센느, 유튜브 예능도 강세…존박과 출연자 화제성 1·2위",
-     "link": "https://sports.donga.com/ent/article/all/20261111/135005408/1"
-    },
-    {
      "src": "한겨레",
      "title": "‘역주행 대세’ 리센느 “간절히 바라던 첫 단독 콘서트” 연다",
      "link": "https://www.hani.co.kr/arti/culture/music/1286762.html"
+    },
+    {
+     "src": "한국경제",
+     "title": "리센느, 확신의 대세…초동 60만장·음방 1위·내년 콘서트",
+     "link": "https://www.hankyung.com/article/202611119221H"
     }
    ]
   },
@@ -144,74 +143,6 @@
    ]
   },
   {
-   "kw": "발매",
-   "nsrc": 5,
-   "srcs": [
-    "SBS",
-    "동아일보",
-    "연합뉴스",
-    "조선일보",
-    "한국경제"
-   ],
-   "n": 8,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "신세계百 강남점, 에이티즈 앨범 발매 기념 팝업 매장 운영",
-     "link": "https://www.yna.co.kr/view/AKR20261107020700030"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "[가요소식] 재즈 색소포니스트 남유선, 4집 발매 기념 공연",
-     "link": "https://www.yna.co.kr/view/AKR20261105145000005"
-    },
-    {
-     "src": "동아일보",
-     "title": "앳하트, 글로벌 듀오 R2와 협업…‘Say It’ 리믹스 발매",
-     "link": "https://sports.donga.com/ent/article/all/20261111/135007225/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "김동준, 7년 만에 日 무대 복귀…“2027년 솔로 앨범 발매” 발표",
-     "link": "https://sports.donga.com/ent/article/all/20261111/135006964/1"
-    }
-   ]
-  },
-  {
-   "kw": "굿모닝",
-   "nsrc": 5,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "연합뉴스",
-    "조선일보",
-    "헤럴드경제"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "방송인 강지영, MBC 라디오 '굿모닝FM' 새 DJ",
-     "link": "https://www.yna.co.kr/view/AKR20261111055000005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "테이, '굿모닝FM' 3년 6개월만 하차…\"새 앨범에 집중\"",
-     "link": "https://www.yna.co.kr/view/AKR20261109052100005"
-    },
-    {
-     "src": "동아일보",
-     "title": "강지영, 15년 만에 MBC 복귀…테이 이어 ‘굿모닝FM’ 새 DJ",
-     "link": "https://sports.donga.com/ent/article/all/20261111/135008774/1"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "강지영, 15년 만의 MBC 귀환…테이 이어 ‘굿모닝FM’ 새 DJ로 발탁",
-     "link": "https://biz.heraldcorp.com/article/10933414"
-    }
-   ]
-  },
-  {
    "kw": "선물",
    "nsrc": 5,
    "srcs": [
@@ -280,41 +211,7 @@
    ]
   },
   {
-   "kw": "강지영",
-   "nsrc": 5,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "연합뉴스",
-    "조선일보",
-    "헤럴드경제"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "방송인 강지영, MBC 라디오 '굿모닝FM' 새 DJ",
-     "link": "https://www.yna.co.kr/view/AKR20261111055000005"
-    },
-    {
-     "src": "동아일보",
-     "title": "강지영, 15년 만에 MBC 복귀…테이 이어 ‘굿모닝FM’ 새 DJ",
-     "link": "https://sports.donga.com/ent/article/all/20261111/135008774/1"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "강지영, 15년 만의 MBC 귀환…테이 이어 ‘굿모닝FM’ 새 DJ로 발탁",
-     "link": "https://biz.heraldcorp.com/article/10933414"
-    },
-    {
-     "src": "뉴시스",
-     "title": "강지영, MBC 라디오 '굿모닝FM' 새 DJ로 발탁",
-     "link": "https://www.newsis.com/view/NISX20261111_0003863279"
-    }
-   ]
-  },
-  {
-   "kw": "전현무",
+   "kw": "옥순",
    "nsrc": 5,
    "srcs": [
     "뉴시스",
@@ -327,57 +224,23 @@
    "headlines": [
     {
      "src": "동아일보",
-     "title": "“당분간 DM 안 볼 것” 전현무, 녹화 중 대국민 사과…무슨 일? (전현무계획4)",
-     "link": "https://sports.donga.com/ent/article/all/20261111/135007082/1"
+     "title": "‘나솔’ 31기 옥순, 악플도 돈 받고 썼다니…“누가 시킨 거야?” [SD톡톡]",
+     "link": "https://sports.donga.com/ent/article/all/20261111/135006724/1"
     },
     {
      "src": "세계일보",
-     "title": "전현무, 생일 맞아 유기견 봉사…카메라 없이 구슬땀",
-     "link": "https://www.segye.com/newsView/20261111509127"
+     "title": "‘나는 솔로’ 31기 옥순, 맘카페 악성 게시글 폭로…“업체가 키워드까지 줬다”",
+     "link": "https://www.segye.com/newsView/20261111514354"
     },
     {
      "src": "헤럴드경제",
-     "title": "전현무, 봉사활동 가서 ‘즉흥 촬영’…“버려진 아이들과 시간 보내”",
-     "link": "https://biz.heraldcorp.com/article/10933641"
+     "title": "‘뒷담화 논란’ 31기 옥순 루머 유포자 “맘카페가 키워드 줘서 알바했다”",
+     "link": "https://biz.heraldcorp.com/article/10933726"
     },
     {
      "src": "뉴시스",
-     "title": "전현무, 생일에도 유기견 봉사…카메라 없이 구슬땀",
-     "link": "https://www.newsis.com/view/NISX20261111_0003863460"
-    }
-   ]
-  },
-  {
-   "kw": "거짓말",
-   "nsrc": 5,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "조선일보",
-    "한국경제",
-    "헤럴드경제"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "한국경제",
-     "title": "\"일본인인 줄 알았다\"…'100일의 거짓말' 본 日 시청자 반응",
-     "link": "https://www.hankyung.com/article/202610281076H"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "아이돌 일본인 멤버가 항일운동 드라마를?…카즈하, ‘100일의 거짓말’ 시청 인증 눈길",
-     "link": "https://biz.heraldcorp.com/article/10933973"
-    },
-    {
-     "src": "SBS",
-     "title": "신민아 사칭한 이세영의 뻔뻔한 거짓말 이후…'재혼황후' 주지훈, 이종석에 결투 신청",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008841145&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "뉴시스",
-     "title": "日 출신 카즈하, 요즘 빠진 드라마는 \"100일의 거짓말\"",
-     "link": "https://www.newsis.com/view/NISX20261111_0003863840"
+     "title": "'나솔' 31기 옥순, 맘카페 악플 알바 폭로…\"돈 받고 썼다\"",
+     "link": "https://www.newsis.com/view/NISX20261111_0003863583"
     }
    ]
   },
@@ -411,72 +274,6 @@
      "src": "연합뉴스",
      "title": "마이 케미컬 로맨스, 18년만 내한 공연…추위 녹인 2만명 떼창",
      "link": "https://www.yna.co.kr/view/AKR20261108001800005"
-    }
-   ]
-  },
-  {
-   "kw": "아들",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "조선일보",
-    "한국경제"
-   ],
-   "n": 11,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "권오중, 아들 숨 쉬는지 매일 확인했다…“15세 전에 죽을 수도”",
-     "link": "https://sports.donga.com/ent/article/all/20261111/135005383/1"
-    },
-    {
-     "src": "한국경제",
-     "title": "\"가정부와 불륜으로 낳은 아들\" 슈워제네거 혼외자, 보디빌더 데뷔",
-     "link": "https://www.hankyung.com/article/2026111086337"
-    },
-    {
-     "src": "한국경제",
-     "title": "강석우, 69세에 할아버지 됐다…\"아들이 아들 낳아\"",
-     "link": "https://www.hankyung.com/article/202610292398H"
-    },
-    {
-     "src": "뉴시스",
-     "title": "이효정 아들 이유진 \"다시 태어나도 엄마·아빠 아들로\"",
-     "link": "https://www.newsis.com/view/NISX20261111_0003864154"
-    }
-   ]
-  },
-  {
-   "kw": "지수",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 8,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "블핑 지수·이날치·NCT·베이비몬스터, 내년 '코첼라' 뜬다",
-     "link": "https://www.yna.co.kr/view/AKR20261111150900005"
-    },
-    {
-     "src": "SBS",
-     "title": "블랙핑크 지수X트와이스 나연 뭉치니 터졌다…'틈만나면', 13주 연속 시청률 1위",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008840465&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "SBS",
-     "title": "'틈만나면' 지수, \"라떼는 소속사 달라도 연습생들끼리 왕래···나연이 유명했다\"",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008839991&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "뉴시스",
-     "title": "지수·NCT·베몬·페기구·이날치, 내년 코첼라 간다(종합)",
-     "link": "https://www.newsis.com/view/NISX20261111_0003864324"
     }
    ]
   },
@@ -613,35 +410,68 @@
    ]
   },
   {
-   "kw": "코첼라",
+   "kw": "발매",
    "nsrc": 4,
    "srcs": [
-    "뉴시스",
+    "SBS",
     "동아일보",
     "연합뉴스",
-    "조선일보"
+    "한국경제"
    ],
-   "n": 6,
+   "n": 7,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "블핑 지수·이날치·NCT·베이비몬스터, 내년 '코첼라' 뜬다",
-     "link": "https://www.yna.co.kr/view/AKR20261111150900005"
+     "title": "신세계百 강남점, 에이티즈 앨범 발매 기념 팝업 매장 운영",
+     "link": "https://www.yna.co.kr/view/AKR20261107020700030"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "[가요소식] 재즈 색소포니스트 남유선, 4집 발매 기념 공연",
+     "link": "https://www.yna.co.kr/view/AKR20261105145000005"
     },
     {
      "src": "동아일보",
-     "title": "베이비몬스터, 블랙핑크 계보 잇는다…5세대 최초 ‘코첼라’ 입성",
-     "link": "https://sports.donga.com/ent/article/all/20261111/135009872/1"
+     "title": "앳하트, 글로벌 듀오 R2와 협업…‘Say It’ 리믹스 발매",
+     "link": "https://sports.donga.com/ent/article/all/20261111/135007225/1"
     },
     {
-     "src": "뉴시스",
-     "title": "지수·NCT·베몬·페기구·이날치, 내년 코첼라 간다(종합)",
-     "link": "https://www.newsis.com/view/NISX20261111_0003864324"
+     "src": "동아일보",
+     "title": "김동준, 7년 만에 日 무대 복귀…“2027년 솔로 앨범 발매” 발표",
+     "link": "https://sports.donga.com/ent/article/all/20261111/135006964/1"
+    }
+   ]
+  },
+  {
+   "kw": "에이티즈",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "동아일보",
+    "연합뉴스",
+    "한국경제"
+   ],
+   "n": 7,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "신세계百 강남점, 에이티즈 앨범 발매 기념 팝업 매장 운영",
+     "link": "https://www.yna.co.kr/view/AKR20261107020700030"
     },
     {
-     "src": "뉴시스",
-     "title": "블랙핑크 지수·NCT·베이비몬스터, 내년 코첼라 간다",
-     "link": "https://www.newsis.com/view/NISX20261111_0003864015"
+     "src": "동아일보",
+     "title": "‘김연아♥’ 고우림, 원조 ‘북부대공’이었다…“에이티즈 산보다 4년 먼저” (라디오스타)",
+     "link": "https://sports.donga.com/ent/article/all/20261111/135010089/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "에이티즈 산, 눈빛 하나로 분위기 압도…치명적 매력 [화보]",
+     "link": "https://sports.donga.com/ent/article/all/20261111/135006152/1"
+    },
+    {
+     "src": "한국경제",
+     "title": "에이티즈, 타이틀곡 'UP' 뮤직비디오 첫 티저 공개",
+     "link": "https://www.hankyung.com/article/202611107743H"
     }
    ]
   },
@@ -712,39 +542,6 @@
    ]
   },
   {
-   "kw": "에이티즈",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "동아일보",
-    "연합뉴스",
-    "한국경제"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "신세계百 강남점, 에이티즈 앨범 발매 기념 팝업 매장 운영",
-     "link": "https://www.yna.co.kr/view/AKR20261107020700030"
-    },
-    {
-     "src": "동아일보",
-     "title": "에이티즈 산, 눈빛 하나로 분위기 압도…치명적 매력 [화보]",
-     "link": "https://sports.donga.com/ent/article/all/20261111/135006152/1"
-    },
-    {
-     "src": "한국경제",
-     "title": "에이티즈, 타이틀곡 'UP' 뮤직비디오 첫 티저 공개",
-     "link": "https://www.hankyung.com/article/202611107743H"
-    },
-    {
-     "src": "한국경제",
-     "title": "싸이커스, 에이티즈와 같은 달 컴백 \"우영 선배, 밥 사주며 응원\"",
-     "link": "https://www.hankyung.com/article/202611020876H"
-    }
-   ]
-  },
-  {
    "kw": "복귀",
    "nsrc": 4,
    "srcs": [
@@ -778,7 +575,7 @@
    ]
   },
   {
-   "kw": "베이비몬",
+   "kw": "코첼라",
    "nsrc": 4,
    "srcs": [
     "뉴시스",
@@ -800,46 +597,13 @@
     },
     {
      "src": "뉴시스",
-     "title": "블랙핑크 지수·NCT·베이비몬스터, 내년 코첼라 간다",
-     "link": "https://www.newsis.com/view/NISX20261111_0003864015"
-    },
-    {
-     "src": "조선일보",
-     "title": "\"코첼라 갈 실력\"..베이비몬스터, 3년 만에 팬들 염원 이뤘다[Oh!쎈 이슈]",
-     "link": "https://www.chosun.com/entertainments/music/2026/11/11/GEYDQYRYHFQWCMRWG42DCMTDHE/"
-    }
-   ]
-  },
-  {
-   "kw": "스터",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "블핑 지수·이날치·NCT·베이비몬스터, 내년 '코첼라' 뜬다",
-     "link": "https://www.yna.co.kr/view/AKR20261111150900005"
-    },
-    {
-     "src": "동아일보",
-     "title": "베이비몬스터, 블랙핑크 계보 잇는다…5세대 최초 ‘코첼라’ 입성",
-     "link": "https://sports.donga.com/ent/article/all/20261111/135009872/1"
+     "title": "지수·NCT·베몬·페기구·이날치, 내년 코첼라 간다(종합)",
+     "link": "https://www.newsis.com/view/NISX20261111_0003864324"
     },
     {
      "src": "뉴시스",
      "title": "블랙핑크 지수·NCT·베이비몬스터, 내년 코첼라 간다",
      "link": "https://www.newsis.com/view/NISX20261111_0003864015"
-    },
-    {
-     "src": "조선일보",
-     "title": "\"코첼라 갈 실력\"..베이비몬스터, 3년 만에 팬들 염원 이뤘다[Oh!쎈 이슈]",
-     "link": "https://www.chosun.com/entertainments/music/2026/11/11/GEYDQYRYHFQWCMRWG42DCMTDHE/"
     }
    ]
   },
@@ -943,35 +707,35 @@
    ]
   },
   {
-   "kw": "불참",
+   "kw": "굿모닝",
    "nsrc": 4,
    "srcs": [
     "뉴시스",
+    "동아일보",
     "연합뉴스",
-    "한국경제",
     "헤럴드경제"
    ],
    "n": 5,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "이재진, 젝키 3인 디너쇼 불참 선언…주최측 \"행사 구성 재정비\"",
-     "link": "https://www.yna.co.kr/view/AKR20261110125200005"
+     "title": "방송인 강지영, MBC 라디오 '굿모닝FM' 새 DJ",
+     "link": "https://www.yna.co.kr/view/AKR20261111055000005"
     },
     {
-     "src": "한국경제",
-     "title": "엑스러브 현, 부상으로 컴백 쇼케이스 불참…\"하루빨리 회복하겠다\"",
-     "link": "https://www.hankyung.com/article/202610280617H"
+     "src": "연합뉴스",
+     "title": "테이, '굿모닝FM' 3년 6개월만 하차…\"새 앨범에 집중\"",
+     "link": "https://www.yna.co.kr/view/AKR20261109052100005"
+    },
+    {
+     "src": "동아일보",
+     "title": "강지영, 15년 만에 MBC 복귀…테이 이어 ‘굿모닝FM’ 새 DJ",
+     "link": "https://sports.donga.com/ent/article/all/20261111/135008774/1"
     },
     {
      "src": "헤럴드경제",
-     "title": "‘젝키’ 이재진, 연말 디너쇼 불참 선언 “대표가 개인 계좌로 현금 입금 받아”",
-     "link": "https://biz.heraldcorp.com/article/10932450"
-    },
-    {
-     "src": "뉴시스",
-     "title": "젝스키스 3인 연말 행사, 이재진 불참 선언에 결국 취소",
-     "link": "https://www.newsis.com/view/NISX20261110_0003862851"
+     "title": "강지영, 15년 만의 MBC 귀환…테이 이어 ‘굿모닝FM’ 새 DJ로 발탁",
+     "link": "https://biz.heraldcorp.com/article/10933414"
     }
    ]
   },
@@ -1075,35 +839,35 @@
    ]
   },
   {
-   "kw": "됐다",
+   "kw": "까지",
    "nsrc": 4,
    "srcs": [
+    "SBS",
     "뉴시스",
-    "조선일보",
-    "한겨레",
+    "동아일보",
     "한국경제"
    ],
    "n": 5,
    "headlines": [
     {
-     "src": "한겨레",
-     "title": "부마항쟁 투쟁선언문·남북탁구단일팀 금메달 예비문화유산 됐다",
-     "link": "https://www.hani.co.kr/arti/culture/culture_general/1286805.html"
+     "src": "동아일보",
+     "title": "서울서 싱가포르까지…피프티피프티, 첫 아시아 투어로 채운 2026년",
+     "link": "https://sports.donga.com/ent/article/all/20261111/135006698/1"
     },
     {
      "src": "한국경제",
-     "title": "강석우, 69세에 할아버지 됐다…\"아들이 아들 낳아\"",
-     "link": "https://www.hankyung.com/article/202610292398H"
+     "title": "제로베이스원 EMP, 대학축제에 음악방송까지…신나게 '런'",
+     "link": "https://www.hankyung.com/article/202611095916H"
+    },
+    {
+     "src": "SBS",
+     "title": "보아부터 A2O LITE까지…30주년 'SBS 가요대전', 양일간 44팀 출격",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008837439&plink=RSSLINK&cooper=RSSREADER"
     },
     {
      "src": "뉴시스",
-     "title": "EXID 정화, 카페 직원 됐다",
-     "link": "https://www.newsis.com/view/NISX20261110_0003862809"
-    },
-    {
-     "src": "조선일보",
-     "title": "신은정, '무형문화재 명인' 됐다…'파이널 테이블'서 한식 대모의 품격",
-     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/11/MM2DAMRRMZQTQZJWHFRTQNJXGE/"
+     "title": "'아빠 힘내세요' 한수성, 빚더미서 月 3000만원 저작권료까지",
+     "link": "https://www.newsis.com/view/NISX20261111_0003864491"
     }
    ]
   },
@@ -1137,6 +901,72 @@
      "src": "SBS",
      "title": "'틈만나면' 유연석, \"배우 서강준, 블랙핑크 지수도 산본 출신\"···'틈 친구' 추측",
      "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008839988&plink=RSSLINK&cooper=RSSREADER"
+    }
+   ]
+  },
+  {
+   "kw": "베이비몬",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "연합뉴스",
+    "조선일보"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "블핑 지수·이날치·NCT·베이비몬스터, 내년 '코첼라' 뜬다",
+     "link": "https://www.yna.co.kr/view/AKR20261111150900005"
+    },
+    {
+     "src": "동아일보",
+     "title": "베이비몬스터, 블랙핑크 계보 잇는다…5세대 최초 ‘코첼라’ 입성",
+     "link": "https://sports.donga.com/ent/article/all/20261111/135009872/1"
+    },
+    {
+     "src": "뉴시스",
+     "title": "블랙핑크 지수·NCT·베이비몬스터, 내년 코첼라 간다",
+     "link": "https://www.newsis.com/view/NISX20261111_0003864015"
+    },
+    {
+     "src": "조선일보",
+     "title": "\"코첼라 갈 실력\"..베이비몬스터, 3년 만에 팬들 염원 이뤘다[Oh!쎈 이슈]",
+     "link": "https://www.chosun.com/entertainments/music/2026/11/11/GEYDQYRYHFQWCMRWG42DCMTDHE/"
+    }
+   ]
+  },
+  {
+   "kw": "스터",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "연합뉴스",
+    "조선일보"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "블핑 지수·이날치·NCT·베이비몬스터, 내년 '코첼라' 뜬다",
+     "link": "https://www.yna.co.kr/view/AKR20261111150900005"
+    },
+    {
+     "src": "동아일보",
+     "title": "베이비몬스터, 블랙핑크 계보 잇는다…5세대 최초 ‘코첼라’ 입성",
+     "link": "https://sports.donga.com/ent/article/all/20261111/135009872/1"
+    },
+    {
+     "src": "뉴시스",
+     "title": "블랙핑크 지수·NCT·베이비몬스터, 내년 코첼라 간다",
+     "link": "https://www.newsis.com/view/NISX20261111_0003864015"
+    },
+    {
+     "src": "조선일보",
+     "title": "\"코첼라 갈 실력\"..베이비몬스터, 3년 만에 팬들 염원 이뤘다[Oh!쎈 이슈]",
+     "link": "https://www.chosun.com/entertainments/music/2026/11/11/GEYDQYRYHFQWCMRWG42DCMTDHE/"
     }
    ]
   },
@@ -1207,72 +1037,6 @@
    ]
   },
   {
-   "kw": "카메라",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "세계일보",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 4,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "\"한국 예능선 카메라 200대 쓴다\"…넷플릭스가 주목한 제작 방식",
-     "link": "https://www.yna.co.kr/view/AKR20261111079200017"
-    },
-    {
-     "src": "세계일보",
-     "title": "전현무, 생일 맞아 유기견 봉사…카메라 없이 구슬땀",
-     "link": "https://www.segye.com/newsView/20261111509127"
-    },
-    {
-     "src": "뉴시스",
-     "title": "전현무, 생일에도 유기견 봉사…카메라 없이 구슬땀",
-     "link": "https://www.newsis.com/view/NISX20261111_0003863460"
-    },
-    {
-     "src": "조선일보",
-     "title": "‘증인 출석’ 김수현, 카메라 피해 비밀 통로로... “사생활 보호 위해 비공개”",
-     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/11/GAZTAOBSMI4DEMZZMY2TMYRYG4/"
-    }
-   ]
-  },
-  {
-   "kw": "권오중",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 4,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "첫 에세이 낸 권오중 \"희망 있다면, 아픔은 아물 수 있는 상처죠\"",
-     "link": "https://www.yna.co.kr/view/AKR20261110159800005"
-    },
-    {
-     "src": "동아일보",
-     "title": "권오중, 아들 숨 쉬는지 매일 확인했다…“15세 전에 죽을 수도”",
-     "link": "https://sports.donga.com/ent/article/all/20261111/135005383/1"
-    },
-    {
-     "src": "뉴시스",
-     "title": "권오중 \"희소병 아들, 15살 전 죽을 수 있다고…아내에 숨겼다\"",
-     "link": "https://www.newsis.com/view/NISX20261111_0003863636"
-    },
-    {
-     "src": "조선일보",
-     "title": "전세계 15명..권오중 희귀병 아들, “의사가 15세 전에 죽는다고... 아내에 숨기고 생사 확인” [Oh!쎈 이슈]",
-     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/11/HFRTINRRGMYDMZDFGI3TQOLGG4/"
-    }
-   ]
-  },
-  {
    "kw": "꿈만",
    "nsrc": 4,
    "srcs": [
@@ -1306,10 +1070,142 @@
    ]
   },
   {
-   "kw": "연애박사",
+   "kw": "강지영",
    "nsrc": 4,
    "srcs": [
     "뉴시스",
+    "동아일보",
+    "연합뉴스",
+    "헤럴드경제"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "방송인 강지영, MBC 라디오 '굿모닝FM' 새 DJ",
+     "link": "https://www.yna.co.kr/view/AKR20261111055000005"
+    },
+    {
+     "src": "동아일보",
+     "title": "강지영, 15년 만에 MBC 복귀…테이 이어 ‘굿모닝FM’ 새 DJ",
+     "link": "https://sports.donga.com/ent/article/all/20261111/135008774/1"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "강지영, 15년 만의 MBC 귀환…테이 이어 ‘굿모닝FM’ 새 DJ로 발탁",
+     "link": "https://biz.heraldcorp.com/article/10933414"
+    },
+    {
+     "src": "뉴시스",
+     "title": "강지영, MBC 라디오 '굿모닝FM' 새 DJ로 발탁",
+     "link": "https://www.newsis.com/view/NISX20261111_0003863279"
+    }
+   ]
+  },
+  {
+   "kw": "압류",
+   "nsrc": 4,
+   "srcs": [
+    "연합뉴스",
+    "한겨레",
+    "한국경제",
+    "헤럴드경제"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "이소라, 前소속사와 분쟁…'바람이 분다' 등 45곡 저작인접권 압류",
+     "link": "https://www.yna.co.kr/view/AKR20261110172900005"
+    },
+    {
+     "src": "한겨레",
+     "title": "이소라, 전 소속사 상대 ‘바람이 분다’ 등 45곡 권리 압류",
+     "link": "https://www.hani.co.kr/arti/culture/music/1286682.html"
+    },
+    {
+     "src": "한국경제",
+     "title": "\"통장 압류, 수중엔 1000원\"…JBJ 출신 켄타, 4억 빚 고백",
+     "link": "https://www.hankyung.com/article/202610280689H"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "이소라, ‘바람이 분다’ 등 45곡 권리 압류…전 소속사 대표와 법적 분쟁",
+     "link": "https://biz.heraldcorp.com/article/10931891"
+    }
+   ]
+  },
+  {
+   "kw": "불참",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "연합뉴스",
+    "한국경제",
+    "헤럴드경제"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "이재진, 젝키 3인 디너쇼 불참 선언…주최측 \"행사 구성 재정비\"",
+     "link": "https://www.yna.co.kr/view/AKR20261110125200005"
+    },
+    {
+     "src": "한국경제",
+     "title": "엑스러브 현, 부상으로 컴백 쇼케이스 불참…\"하루빨리 회복하겠다\"",
+     "link": "https://www.hankyung.com/article/202610280617H"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "‘젝키’ 이재진, 연말 디너쇼 불참 선언 “대표가 개인 계좌로 현금 입금 받아”",
+     "link": "https://biz.heraldcorp.com/article/10932450"
+    },
+    {
+     "src": "뉴시스",
+     "title": "젝스키스 3인 연말 행사, 이재진 불참 선언에 결국 취소",
+     "link": "https://www.newsis.com/view/NISX20261110_0003862851"
+    }
+   ]
+  },
+  {
+   "kw": "콘텐츠",
+   "nsrc": 4,
+   "srcs": [
+    "연합뉴스",
+    "조선일보",
+    "한겨레",
+    "헤럴드경제"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "춘천 토이로봇관에 AI로 그림 구현하는 XR 콘텐츠 구축",
+     "link": "https://www.yna.co.kr/view/AKR20261110105700062"
+    },
+    {
+     "src": "한겨레",
+     "title": "도깨비 9억·오겜 28억…넷플 10년, K콘텐츠 돌풍 속 솟구친 제작비",
+     "link": "https://www.hani.co.kr/arti/culture/culture_general/1286277.html"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "‘충주맨’ 김선태, 연예기획사 설립?…“사실 아냐. 유튜브 콘텐츠 제작 법인”",
+     "link": "https://biz.heraldcorp.com/article/10934086"
+    },
+    {
+     "src": "조선일보",
+     "title": "김선태, '충주맨' 퇴사후 유튜버 되더니..1인 기획사 설립? \"콘텐츠 제작사\" 해명[Oh!쎈 이슈]",
+     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/11/MM4DSZJWGYZTSYZUMJQTIMTGHA/"
+    }
+   ]
+  },
+  {
+   "kw": "걸그룹",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
     "연합뉴스",
     "조선일보",
     "한국경제"
@@ -1318,23 +1214,122 @@
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "평생을 약속한 추영우·김소현…'연애박사' 3.5% 자체 최고 종영",
-     "link": "https://www.yna.co.kr/view/AKR20261111048400005"
+     "title": "[가요소식] 버추얼 걸그룹 이세계아이돌, 두 번째 미니앨범",
+     "link": "https://www.yna.co.kr/view/AKR20261110059500005"
     },
     {
      "src": "한국경제",
-     "title": "'연애박사' 음악의 감동, LP로 더 따뜻하게…추영우 가창곡도 포함",
-     "link": "https://www.hankyung.com/article/202611108301H"
+     "title": "리센느 \"'국민 걸그룹' 호칭 과분…'믿고 듣는 리센느' 수식어 붙길\"",
+     "link": "https://www.hankyung.com/article/202611032757H"
     },
     {
-     "src": "뉴시스",
-     "title": "故 안판석 유작 '연애박사' 3.5% 자체 최고 종영",
-     "link": "https://www.newsis.com/view/NISX20261111_0003863366"
+     "src": "SBS",
+     "title": "'대세 걸그룹' 리센느, 데뷔 첫 단독 콘서트 개최…\"꿈만 같다\"",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008840687&plink=RSSLINK&cooper=RSSREADER"
     },
     {
      "src": "조선일보",
-     "title": "\"골육종 아픔부터 풋풋 로맨스까지\" 추영우, '연애박사'로 입증한 한계 없는 스펙트럼..차기작 더 기대 [핫피플]",
-     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/11/MZQTOZRUG4YDINDBHE3WMZTBGU/"
+     "title": "EXID 정화는 카페 정직원·혜린은 월매출 1억4000만원 사장님…쥬얼리 이지현·하주연까지, 무대 밖 일터 찾은 걸그룹 [Oh! 쎈 이슈]",
+     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/11/GYZTEZDBMM4TEYRUMFRTOOBSHE/"
+    }
+   ]
+  },
+  {
+   "kw": "김성재",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "연합뉴스",
+    "한겨레",
+    "헤럴드경제"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "듀스, 31년 만에 정규 4집…故 김성재 목소리 AI로 구현",
+     "link": "https://www.yna.co.kr/view/AKR20261109129900005"
+    },
+    {
+     "src": "한겨레",
+     "title": "듀스, 김성재 목소리 담은 4집 발표…31년 만에 AI로 재현",
+     "link": "https://www.hani.co.kr/arti/culture/music/1286489.html"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "듀스 31년만에 4집 컴백…김성재 유족과 저작인접권 나눈다",
+     "link": "https://biz.heraldcorp.com/article/10932121"
+    },
+    {
+     "src": "SBS",
+     "title": "AI 기술로 다시 돌아온 故 김성재…듀스, 31년 만에 정규 4집 발매",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008838651&plink=RSSLINK&cooper=RSSREADER"
+    }
+   ]
+  },
+  {
+   "kw": "듀스",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "연합뉴스",
+    "한겨레",
+    "헤럴드경제"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "듀스, 31년 만에 정규 4집…故 김성재 목소리 AI로 구현",
+     "link": "https://www.yna.co.kr/view/AKR20261109129900005"
+    },
+    {
+     "src": "한겨레",
+     "title": "듀스, 김성재 목소리 담은 4집 발표…31년 만에 AI로 재현",
+     "link": "https://www.hani.co.kr/arti/culture/music/1286489.html"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "듀스 31년만에 4집 컴백…김성재 유족과 저작인접권 나눈다",
+     "link": "https://biz.heraldcorp.com/article/10932121"
+    },
+    {
+     "src": "SBS",
+     "title": "AI 기술로 다시 돌아온 故 김성재…듀스, 31년 만에 정규 4집 발매",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008838651&plink=RSSLINK&cooper=RSSREADER"
+    }
+   ]
+  },
+  {
+   "kw": "계약서",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "연합뉴스",
+    "한겨레",
+    "한국경제"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "대음협, NYT '뉴진스 계약서 보도'에 \"개별 논란 확대해석 유감\"",
+     "link": "https://www.yna.co.kr/view/AKR20261109128700005"
+    },
+    {
+     "src": "한겨레",
+     "title": "‘뉴진스 계약서’ 보도로 다시 드러난 K팝 산업 민낯",
+     "link": "https://www.hani.co.kr/arti/culture/music/1286638.html"
+    },
+    {
+     "src": "한국경제",
+     "title": "\"성형비까지 멤버 부담\"…14살 뉴진스가 사인한 계약서 공개",
+     "link": "https://www.hankyung.com/article/2026110604917"
+    },
+    {
+     "src": "뉴시스",
+     "title": "'큰별쌤' 최태성 \"거액 사교육 스카우트에 원형탈모…결국 계약서 찢어\"",
+     "link": "https://www.newsis.com/view/NISX20261111_0003864497"
     }
    ]
   }
