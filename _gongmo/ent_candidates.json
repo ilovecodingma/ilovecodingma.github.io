@@ -1,21 +1,22 @@
 {
- "at": "2026-11-11 16:30",
- "nitems": 529,
+ "at": "2026-11-11 17:30",
+ "nitems": 528,
  "cands": [
   {
    "kw": "리센느",
-   "nsrc": 8,
+   "nsrc": 9,
    "srcs": [
     "SBS",
     "뉴시스",
     "동아일보",
     "세계일보",
     "연합뉴스",
+    "조선일보",
     "한겨레",
     "한국경제",
     "헤럴드경제"
    ],
-   "n": 13,
+   "n": 14,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -144,40 +145,6 @@
    ]
   },
   {
-   "kw": "공연",
-   "nsrc": 5,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "연합뉴스",
-    "조선일보",
-    "한겨레"
-   ],
-   "n": 13,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "[가요소식] 김필, 14∼15일 '저니' 콘서트…\"공연 상상하며 곡 작업\"",
-     "link": "https://www.yna.co.kr/view/AKR20261111126300005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "[가요소식] 밴드 까망, 내달 두 번째 공연 '당신, 아프지마'",
-     "link": "https://www.yna.co.kr/view/AKR20261110114500005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "스트레이 키즈, LA·파리 등 공연 추가…31곳으로 투어 확장",
-     "link": "https://www.yna.co.kr/view/AKR20261110050400005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "마이 케미컬 로맨스, 18년만 내한 공연…추위 녹인 2만명 떼창",
-     "link": "https://www.yna.co.kr/view/AKR20261108001800005"
-    }
-   ]
-  },
-  {
    "kw": "연속",
    "nsrc": 5,
    "srcs": [
@@ -187,7 +154,7 @@
     "연합뉴스",
     "조선일보"
    ],
-   "n": 8,
+   "n": 9,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -208,6 +175,40 @@
      "src": "동아일보",
      "title": "박보검, 올해도 연탄 나눔 나섰다…2년 연속 직접 배달 봉사",
      "link": "https://sports.donga.com/ent/article/all/20261111/135005849/1"
+    }
+   ]
+  },
+  {
+   "kw": "소속사",
+   "nsrc": 5,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "조선일보",
+    "한겨레",
+    "헤럴드경제"
+   ],
+   "n": 9,
+   "headlines": [
+    {
+     "src": "한겨레",
+     "title": "존박·곽진언 ‘맥도날드 랩’ 해외서 무단 유통…소속사 “삭제·차단”",
+     "link": "https://www.hani.co.kr/arti/culture/music/1286784.html"
+    },
+    {
+     "src": "한겨레",
+     "title": "이소라, 전 소속사 상대 ‘바람이 분다’ 등 45곡 권리 압류",
+     "link": "https://www.hani.co.kr/arti/culture/music/1286682.html"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "이소라, 수십억 횡령 피해 입었다…전 소속사 대표에 법적 조치한 이유",
+     "link": "https://biz.heraldcorp.com/article/10932454"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "백현 ‘차가원에 630억 피해’ 주장 나오더니 결국…새 소속사 설립",
+     "link": "https://biz.heraldcorp.com/article/10932102"
     }
    ]
   },
@@ -246,6 +247,74 @@
    ]
   },
   {
+   "kw": "됐다",
+   "nsrc": 5,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "조선일보",
+    "한겨레",
+    "한국경제"
+   ],
+   "n": 6,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "임창정, 20세 장남 KPGA 프로 됐다…“아빠 저만 믿으세요” 현실로",
+     "link": "https://sports.donga.com/ent/article/all/20261111/135005202/1"
+    },
+    {
+     "src": "한겨레",
+     "title": "부마항쟁 투쟁선언문·남북탁구단일팀 금메달 예비문화유산 됐다",
+     "link": "https://www.hani.co.kr/arti/culture/culture_general/1286805.html"
+    },
+    {
+     "src": "한국경제",
+     "title": "강석우, 69세에 할아버지 됐다…\"아들이 아들 낳아\"",
+     "link": "https://www.hankyung.com/article/202610292398H"
+    },
+    {
+     "src": "뉴시스",
+     "title": "EXID 정화, 카페 직원 됐다",
+     "link": "https://www.newsis.com/view/NISX20261110_0003862809"
+    }
+   ]
+  },
+  {
+   "kw": "음원",
+   "nsrc": 5,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "연합뉴스",
+    "조선일보",
+    "한국경제"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "존박 맥도날드 광고 음원 해외서 무단 유통…\"삭제 협의 중\"",
+     "link": "https://www.yna.co.kr/view/AKR20261111090700005"
+    },
+    {
+     "src": "한국경제",
+     "title": "'컴백' NCT 드림, 이름값 제대로…음반·음원 차트 1위",
+     "link": "https://www.hankyung.com/article/202611106884H"
+    },
+    {
+     "src": "SBS",
+     "title": "존박 '맥도날드 주문 랩', 해외서 무단 도용…소속사 \"음원 삭제 진행 중\"",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008840583&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "뉴시스",
+     "title": "존박·곽진언 '맥도날드 주문 랩', 해외 음원 플랫폼에 무단 등록…작사·작곡자도 제3자",
+     "link": "https://www.newsis.com/view/NISX20261110_0003862456"
+    }
+   ]
+  },
+  {
    "kw": "삭제",
    "nsrc": 5,
    "srcs": [
@@ -255,7 +324,7 @@
     "조선일보",
     "한겨레"
    ],
-   "n": 6,
+   "n": 5,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -289,7 +358,7 @@
     "조선일보",
     "헤럴드경제"
    ],
-   "n": 6,
+   "n": 5,
    "headlines": [
     {
      "src": "동아일보",
@@ -310,74 +379,6 @@
      "src": "뉴시스",
      "title": "전현무, 생일에도 유기견 봉사…카메라 없이 구슬땀",
      "link": "https://www.newsis.com/view/NISX20261111_0003863460"
-    }
-   ]
-  },
-  {
-   "kw": "봉사",
-   "nsrc": 5,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "세계일보",
-    "조선일보",
-    "헤럴드경제"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "박보검, 올해도 연탄 나눔 나섰다…2년 연속 직접 배달 봉사",
-     "link": "https://sports.donga.com/ent/article/all/20261111/135005849/1"
-    },
-    {
-     "src": "세계일보",
-     "title": "전현무, 생일 맞아 유기견 봉사…카메라 없이 구슬땀",
-     "link": "https://www.segye.com/newsView/20261111509127"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "요가·제주도·유기견 봉사… “왜 이효리 따라해?”에 ‘소시’ 유리가 한 답변",
-     "link": "https://biz.heraldcorp.com/article/10932389"
-    },
-    {
-     "src": "뉴시스",
-     "title": "전현무, 생일에도 유기견 봉사…카메라 없이 구슬땀",
-     "link": "https://www.newsis.com/view/NISX20261111_0003863460"
-    }
-   ]
-  },
-  {
-   "kw": "됐다",
-   "nsrc": 5,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "조선일보",
-    "한겨레",
-    "한국경제"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "임창정, 20세 장남 KPGA 프로 됐다…“아빠 저만 믿으세요” 현실로",
-     "link": "https://sports.donga.com/ent/article/all/20261111/135005202/1"
-    },
-    {
-     "src": "한겨레",
-     "title": "부마항쟁 투쟁선언문·남북탁구단일팀 금메달 예비문화유산 됐다",
-     "link": "https://www.hani.co.kr/arti/culture/culture_general/1286805.html"
-    },
-    {
-     "src": "한국경제",
-     "title": "강석우, 69세에 할아버지 됐다…\"아들이 아들 낳아\"",
-     "link": "https://www.hankyung.com/article/202610292398H"
-    },
-    {
-     "src": "뉴시스",
-     "title": "EXID 정화, 카페 직원 됐다",
-     "link": "https://www.newsis.com/view/NISX20261110_0003862809"
     }
    ]
   },
@@ -412,6 +413,39 @@
      "src": "뉴시스",
      "title": "日 출신 카즈하, 요즘 빠진 드라마는 \"100일의 거짓말\"",
      "link": "https://www.newsis.com/view/NISX20261111_0003863840"
+    }
+   ]
+  },
+  {
+   "kw": "공연",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "연합뉴스",
+    "한겨레"
+   ],
+   "n": 12,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "[가요소식] 김필, 14∼15일 '저니' 콘서트…\"공연 상상하며 곡 작업\"",
+     "link": "https://www.yna.co.kr/view/AKR20261111126300005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "[가요소식] 밴드 까망, 내달 두 번째 공연 '당신, 아프지마'",
+     "link": "https://www.yna.co.kr/view/AKR20261110114500005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "스트레이 키즈, LA·파리 등 공연 추가…31곳으로 투어 확장",
+     "link": "https://www.yna.co.kr/view/AKR20261110050400005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "마이 케미컬 로맨스, 18년만 내한 공연…추위 녹인 2만명 떼창",
+     "link": "https://www.yna.co.kr/view/AKR20261108001800005"
     }
    ]
   },
@@ -482,39 +516,6 @@
    ]
   },
   {
-   "kw": "소속사",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "한겨레",
-    "헤럴드경제"
-   ],
-   "n": 8,
-   "headlines": [
-    {
-     "src": "한겨레",
-     "title": "존박·곽진언 ‘맥도날드 랩’ 해외서 무단 유통…소속사 “삭제·차단”",
-     "link": "https://www.hani.co.kr/arti/culture/music/1286784.html"
-    },
-    {
-     "src": "한겨레",
-     "title": "이소라, 전 소속사 상대 ‘바람이 분다’ 등 45곡 권리 압류",
-     "link": "https://www.hani.co.kr/arti/culture/music/1286682.html"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "이소라, 수십억 횡령 피해 입었다…전 소속사 대표에 법적 조치한 이유",
-     "link": "https://biz.heraldcorp.com/article/10932454"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "백현 ‘차가원에 630억 피해’ 주장 나오더니 결국…새 소속사 설립",
-     "link": "https://biz.heraldcorp.com/article/10932102"
-    }
-   ]
-  },
-  {
    "kw": "사랑",
    "nsrc": 4,
    "srcs": [
@@ -548,39 +549,6 @@
    ]
   },
   {
-   "kw": "한국",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "연합뉴스",
-    "한겨레"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "JYP, 美 타임지 선정 '지속가능 성장기업' 3년 연속 한국 1위",
-     "link": "https://www.yna.co.kr/view/AKR20261111123300005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "\"한국 예능선 카메라 200대 쓴다\"…넷플릭스가 주목한 제작 방식",
-     "link": "https://www.yna.co.kr/view/AKR20261111079200017"
-    },
-    {
-     "src": "한겨레",
-     "title": "‘발레 거장’ 한스 판마넌, 세상 뜨기 나흘 전 한국 무대에 남긴 선물",
-     "link": "https://www.hani.co.kr/arti/culture/music/1286637.html"
-    },
-    {
-     "src": "SBS",
-     "title": "넷플릭스, 한국 영화 세계에 알린다…임권택·봉준호·이창동 대표작 모은 컬렉션 공개",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008836871&plink=RSSLINK&cooper=RSSREADER"
-    }
-   ]
-  },
-  {
    "kw": "최고",
    "nsrc": 4,
    "srcs": [
@@ -610,72 +578,6 @@
      "src": "동아일보",
      "title": "국민 동요 ‘아빠 힘내세요’ 저작권료 공개…“최고 월 3000만 원”",
      "link": "https://sports.donga.com/ent/article/all/20261111/135004931/1"
-    }
-   ]
-  },
-  {
-   "kw": "디너쇼",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "연합뉴스",
-    "조선일보",
-    "헤럴드경제"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "이재진, 젝키 3인 디너쇼 불참 선언…주최측 \"행사 구성 재정비\"",
-     "link": "https://www.yna.co.kr/view/AKR20261110125200005"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "“팬들이 호구냐” 논란된 ‘젝스키스 디너쇼’ 결국 취소…무슨 일?",
-     "link": "https://biz.heraldcorp.com/article/10933370"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "‘젝키’ 이재진, 연말 디너쇼 불참 선언 “대표가 개인 계좌로 현금 입금 받아”",
-     "link": "https://biz.heraldcorp.com/article/10932450"
-    },
-    {
-     "src": "뉴시스",
-     "title": "젝키 이재진 \"디너쇼 불참\" vs 주최측 반박…행사 결국 파행 수순(종합)",
-     "link": "https://www.newsis.com/view/NISX20261110_0003862492"
-    }
-   ]
-  },
-  {
-   "kw": "불참",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "연합뉴스",
-    "한국경제",
-    "헤럴드경제"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "이재진, 젝키 3인 디너쇼 불참 선언…주최측 \"행사 구성 재정비\"",
-     "link": "https://www.yna.co.kr/view/AKR20261110125200005"
-    },
-    {
-     "src": "한국경제",
-     "title": "엑스러브 현, 부상으로 컴백 쇼케이스 불참…\"하루빨리 회복하겠다\"",
-     "link": "https://www.hankyung.com/article/202610280617H"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "‘젝키’ 이재진, 연말 디너쇼 불참 선언 “대표가 개인 계좌로 현금 입금 받아”",
-     "link": "https://biz.heraldcorp.com/article/10932450"
-    },
-    {
-     "src": "뉴시스",
-     "title": "젝스키스 3인 연말 행사, 이재진 불참 선언에 결국 취소",
-     "link": "https://www.newsis.com/view/NISX20261110_0003862851"
     }
    ]
   },
@@ -742,6 +644,39 @@
      "src": "헤럴드경제",
      "title": "“팬들이 호구냐” 논란된 ‘젝스키스 디너쇼’ 결국 취소…무슨 일?",
      "link": "https://biz.heraldcorp.com/article/10933370"
+    }
+   ]
+  },
+  {
+   "kw": "한국",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "연합뉴스",
+    "한겨레"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "JYP, 美 타임지 선정 '지속가능 성장기업' 3년 연속 한국 1위",
+     "link": "https://www.yna.co.kr/view/AKR20261111123300005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "\"한국 예능선 카메라 200대 쓴다\"…넷플릭스가 주목한 제작 방식",
+     "link": "https://www.yna.co.kr/view/AKR20261111079200017"
+    },
+    {
+     "src": "한겨레",
+     "title": "‘발레 거장’ 한스 판마넌, 세상 뜨기 나흘 전 한국 무대에 남긴 선물",
+     "link": "https://www.hani.co.kr/arti/culture/music/1286637.html"
+    },
+    {
+     "src": "SBS",
+     "title": "넷플릭스, 한국 영화 세계에 알린다…임권택·봉준호·이창동 대표작 모은 컬렉션 공개",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008836871&plink=RSSLINK&cooper=RSSREADER"
     }
    ]
   },
@@ -845,39 +780,6 @@
    ]
   },
   {
-   "kw": "카메라",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "세계일보",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "\"한국 예능선 카메라 200대 쓴다\"…넷플릭스가 주목한 제작 방식",
-     "link": "https://www.yna.co.kr/view/AKR20261111079200017"
-    },
-    {
-     "src": "세계일보",
-     "title": "전현무, 생일 맞아 유기견 봉사…카메라 없이 구슬땀",
-     "link": "https://www.segye.com/newsView/20261111509127"
-    },
-    {
-     "src": "뉴시스",
-     "title": "전현무, 생일에도 유기견 봉사…카메라 없이 구슬땀",
-     "link": "https://www.newsis.com/view/NISX20261111_0003863460"
-    },
-    {
-     "src": "조선일보",
-     "title": "‘증인 출석’ 김수현, 카메라 피해 비밀 통로로... “사생활 보호 위해 비공개”",
-     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/11/GAZTAOBSMI4DEMZZMY2TMYRYG4/"
-    }
-   ]
-  },
-  {
    "kw": "권오중",
    "nsrc": 4,
    "srcs": [
@@ -905,7 +807,7 @@
     },
     {
      "src": "조선일보",
-     "title": "전세계 15명..권오중 희귀병子, \"의사가 15세 전에 죽는다고..아내에 숨기고 생사 확인\" [Oh!쎈 이슈]",
+     "title": "전세계 15명..권오중 희귀병 아들, “의사가 15세 전에 죽는다고... 아내에 숨기고 생사 확인” [Oh!쎈 이슈]",
      "link": "https://www.chosun.com/entertainments/broadcast/2026/11/11/HFRTINRRGMYDMZDFGI3TQOLGG4/"
     }
    ]
@@ -944,40 +846,7 @@
    ]
   },
   {
-   "kw": "연애박사",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "연합뉴스",
-    "조선일보",
-    "한국경제"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "평생을 약속한 추영우·김소현…'연애박사' 3.5% 자체 최고 종영",
-     "link": "https://www.yna.co.kr/view/AKR20261111048400005"
-    },
-    {
-     "src": "한국경제",
-     "title": "'연애박사' 음악의 감동, LP로 더 따뜻하게…추영우 가창곡도 포함",
-     "link": "https://www.hankyung.com/article/202611108301H"
-    },
-    {
-     "src": "뉴시스",
-     "title": "故 안판석 유작 '연애박사' 3.5% 자체 최고 종영",
-     "link": "https://www.newsis.com/view/NISX20261111_0003863366"
-    },
-    {
-     "src": "조선일보",
-     "title": "\"골육종 아픔부터 풋풋 로맨스까지\" 추영우, '연애박사'로 입증한 한계 없는 스펙트럼..차기작 더 기대 [핫피플]",
-     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/11/MZQTOZRUG4YDINDBHE3WMZTBGU/"
-    }
-   ]
-  },
-  {
-   "kw": "젝키",
+   "kw": "디너쇼",
    "nsrc": 4,
    "srcs": [
     "뉴시스",
@@ -994,6 +863,11 @@
     },
     {
      "src": "헤럴드경제",
+     "title": "“팬들이 호구냐” 논란된 ‘젝스키스 디너쇼’ 결국 취소…무슨 일?",
+     "link": "https://biz.heraldcorp.com/article/10933370"
+    },
+    {
+     "src": "헤럴드경제",
      "title": "‘젝키’ 이재진, 연말 디너쇼 불참 선언 “대표가 개인 계좌로 현금 입금 받아”",
      "link": "https://biz.heraldcorp.com/article/10932450"
     },
@@ -1001,11 +875,138 @@
      "src": "뉴시스",
      "title": "젝키 이재진 \"디너쇼 불참\" vs 주최측 반박…행사 결국 파행 수순(종합)",
      "link": "https://www.newsis.com/view/NISX20261110_0003862492"
+    }
+   ]
+  },
+  {
+   "kw": "불참",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "연합뉴스",
+    "한국경제",
+    "헤럴드경제"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "이재진, 젝키 3인 디너쇼 불참 선언…주최측 \"행사 구성 재정비\"",
+     "link": "https://www.yna.co.kr/view/AKR20261110125200005"
+    },
+    {
+     "src": "한국경제",
+     "title": "엑스러브 현, 부상으로 컴백 쇼케이스 불참…\"하루빨리 회복하겠다\"",
+     "link": "https://www.hankyung.com/article/202610280617H"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "‘젝키’ 이재진, 연말 디너쇼 불참 선언 “대표가 개인 계좌로 현금 입금 받아”",
+     "link": "https://biz.heraldcorp.com/article/10932450"
     },
     {
      "src": "뉴시스",
-     "title": "젝키 연말 디너쇼 파열음…이재진 \"불참\"에 주최사 \"사실 왜곡\"(종합)",
-     "link": "https://www.newsis.com/view/NISX20261110_0003862148"
+     "title": "젝스키스 3인 연말 행사, 이재진 불참 선언에 결국 취소",
+     "link": "https://www.newsis.com/view/NISX20261110_0003862851"
+    }
+   ]
+  },
+  {
+   "kw": "연기",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "연합뉴스",
+    "조선일보",
+    "한국경제"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "조여정 \"이창동 감독 앞에서 감독 연기, 제 숙제였죠\"",
+     "link": "https://www.yna.co.kr/view/AKR20261110100800005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "캣츠아이, 북미 투어 잇단 연기…\"메간 뇌진탕으로 회복 중\"",
+     "link": "https://www.yna.co.kr/view/AKR20261106086400005"
+    },
+    {
+     "src": "한국경제",
+     "title": "'재혼황후' 이종석, 국내 최초 새 연기 \"제가 좀 새 상…사람으로 변할 때 나체로 등장\"",
+     "link": "https://www.hankyung.com/article/202611032589H"
+    },
+    {
+     "src": "SBS",
+     "title": "\"제가 그렇게 잘했어요?\"…'가능한 사랑' 전도연, 쏟아지는 연기 호평에 던진 질문",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008837498&plink=RSSLINK&cooper=RSSREADER"
+    }
+   ]
+  },
+  {
+   "kw": "아냐",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "연합뉴스",
+    "헤럴드경제"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "나나 역고소한 강도, 무고 혐의 부인…\"피해신고 허위 아냐\"",
+     "link": "https://www.yna.co.kr/view/AKR20261110081000004"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "'두번째 시그널', 12월 7일 첫 방송…\"조진웅 문제 옹호 아냐\"",
+     "link": "https://www.yna.co.kr/view/AKR20261106106000005"
+    },
+    {
+     "src": "동아일보",
+     "title": "박신영, 사망 사고 5년 만에 입 열었다…“차 안에 숨었다? 사실 아냐”",
+     "link": "https://sports.donga.com/ent/article/all/20261111/135005993/1"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "‘충주맨’ 김선태, 연예기획사 설립?…“사실 아냐. 유튜브 콘텐츠 제작 법인”",
+     "link": "https://biz.heraldcorp.com/article/10934086"
+    }
+   ]
+  },
+  {
+   "kw": "만장",
+   "nsrc": 4,
+   "srcs": [
+    "세계일보",
+    "연합뉴스",
+    "조선일보",
+    "한국경제"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "리센느 '펄스', 첫주 판매량 60만장…첫 하프 밀리언셀러",
+     "link": "https://www.yna.co.kr/view/AKR20261110068400005"
+    },
+    {
+     "src": "한국경제",
+     "title": "리센느, 확신의 대세…초동 60만장·음방 1위·내년 콘서트",
+     "link": "https://www.hankyung.com/article/202611119221H"
+    },
+    {
+     "src": "한국경제",
+     "title": "피원하모니, 첫날부터 날았다…신보 판매량 54만장 '커리어 하이'",
+     "link": "https://www.hankyung.com/article/202611072145H"
+    },
+    {
+     "src": "세계일보",
+     "title": "‘초동 60만장 돌파’ 흥행 질주 리센느, 내년 2월 첫 단독 콘서트…“꿈만 같아, 최선 다해 준비”",
+     "link": "https://www.segye.com/newsView/20261111512589"
     }
    ]
   },
@@ -1076,35 +1077,35 @@
    ]
   },
   {
-   "kw": "연말",
+   "kw": "선물",
    "nsrc": 4,
    "srcs": [
     "뉴시스",
-    "동아일보",
     "조선일보",
+    "한겨레",
     "헤럴드경제"
    ],
    "n": 5,
    "headlines": [
     {
-     "src": "동아일보",
-     "title": "올 연말도 마이데이와…‘믿듣데’ 데이식스, 연말 공연 확정",
-     "link": "https://sports.donga.com/ent/article/all/20261111/135006109/1"
+     "src": "한겨레",
+     "title": "‘발레 거장’ 한스 판마넌, 세상 뜨기 나흘 전 한국 무대에 남긴 선물",
+     "link": "https://www.hani.co.kr/arti/culture/music/1286637.html"
     },
     {
      "src": "헤럴드경제",
-     "title": "‘젝키’ 이재진, 연말 디너쇼 불참 선언 “대표가 개인 계좌로 현금 입금 받아”",
-     "link": "https://biz.heraldcorp.com/article/10932450"
+     "title": "소지섭, 이번엔 대만 팬에 금 선물…당첨된 팬 “눈물”",
+     "link": "https://biz.heraldcorp.com/article/10933636"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "리센느, 내년 2월 첫 단독 콘서트 개최…“팬분들께 소중한 시간 선물”",
+     "link": "https://biz.heraldcorp.com/article/10933209"
     },
     {
      "src": "뉴시스",
-     "title": "젝스키스 3인 연말 행사, 이재진 불참 선언에 결국 취소",
-     "link": "https://www.newsis.com/view/NISX20261110_0003862851"
-    },
-    {
-     "src": "뉴시스",
-     "title": "젝키 연말 디너쇼 파열음…이재진 \"불참\"에 주최사 \"사실 왜곡\"(종합)",
-     "link": "https://www.newsis.com/view/NISX20261110_0003862148"
+     "title": "소지섭, '김부장' 스태프에 이어 대만 팬에 금 선물",
+     "link": "https://www.newsis.com/view/NISX20261110_0003862865"
     }
    ]
   },
@@ -1208,39 +1209,6 @@
    ]
   },
   {
-   "kw": "음원",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "연합뉴스",
-    "한국경제"
-   ],
-   "n": 4,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "존박 맥도날드 광고 음원 해외서 무단 유통…\"삭제 협의 중\"",
-     "link": "https://www.yna.co.kr/view/AKR20261111090700005"
-    },
-    {
-     "src": "한국경제",
-     "title": "'컴백' NCT 드림, 이름값 제대로…음반·음원 차트 1위",
-     "link": "https://www.hankyung.com/article/202611106884H"
-    },
-    {
-     "src": "SBS",
-     "title": "존박 '맥도날드 주문 랩', 해외서 무단 도용…소속사 \"음원 삭제 진행 중\"",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008840583&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "뉴시스",
-     "title": "존박·곽진언 '맥도날드 주문 랩', 해외 음원 플랫폼에 무단 등록…작사·작곡자도 제3자",
-     "link": "https://www.newsis.com/view/NISX20261110_0003862456"
-    }
-   ]
-  },
-  {
    "kw": "세계",
    "nsrc": 4,
    "srcs": [
@@ -1270,6 +1238,39 @@
      "src": "조선일보",
      "title": "JYP, 美 타임지 '세계 최고의 지속가능 성장기업' 3년 연속 국내 1위",
      "link": "https://www.chosun.com/entertainments/music/2026/11/11/MMZTOYJTMU3DGZTEME2WMZLEGI/"
+    }
+   ]
+  },
+  {
+   "kw": "카메라",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "세계일보",
+    "연합뉴스",
+    "조선일보"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "\"한국 예능선 카메라 200대 쓴다\"…넷플릭스가 주목한 제작 방식",
+     "link": "https://www.yna.co.kr/view/AKR20261111079200017"
+    },
+    {
+     "src": "세계일보",
+     "title": "전현무, 생일 맞아 유기견 봉사…카메라 없이 구슬땀",
+     "link": "https://www.segye.com/newsView/20261111509127"
+    },
+    {
+     "src": "뉴시스",
+     "title": "전현무, 생일에도 유기견 봉사…카메라 없이 구슬땀",
+     "link": "https://www.newsis.com/view/NISX20261111_0003863460"
+    },
+    {
+     "src": "조선일보",
+     "title": "‘증인 출석’ 김수현, 카메라 피해 비밀 통로로... “사생활 보호 위해 비공개”",
+     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/11/GAZTAOBSMI4DEMZZMY2TMYRYG4/"
     }
    ]
   },
