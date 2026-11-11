@@ -5067,7 +5067,8 @@ def calc_pages():
                    'outputs': [{'label': o_['label'], 'expr': o_['expr'], 'fmt': o_.get('fmt', 'num')} for o_ in C['outputs']]}
             secs = ''
             for sc in C.get('sections', []):
-                secs += f'<h2>{E(sc["h"])}</h2>' + (f'<p>{E(sc["p"])}</p>' if sc.get('p') else '') + ('<ul class="gm-l">' + ''.join(f'<li>{E(x)}</li>' for x in sc['ul']) + '</ul>' if sc.get('ul') else '')
+                _tb = ('<div class="tblw"><table class="xt"><thead><tr>' + ''.join(f'<th>{E(x_)}</th>' for x_ in sc['table'][0]) + '</tr></thead><tbody>' + ''.join('<tr>' + ''.join(f'<td>{E(x_)}</td>' for x_ in r_) + '</tr>' for r_ in sc['table'][1:]) + '</tbody></table></div>') if sc.get('table') else ''   # 2026-11-12: 표(table) 구역이 그려지지 않던 것
+                secs += f'<h2>{E(sc["h"])}</h2>' + _tb + (f'<p>{E(sc["p"])}</p>' if sc.get('p') else '') + ('<ul class="gm-l">' + ''.join(f'<li>{E(x)}</li>' for x in sc['ul']) + '</ul>' if sc.get('ul') else '')
             faq, fld_ = _faq([tuple(x) for x in C.get('faq', [])]) if C.get('faq') else ('', None)
             if faq:
                 secs += f'<h2>자주 묻는 질문</h2>{faq}'
@@ -5081,7 +5082,7 @@ def calc_pages():
                   'root.addEventListener("input",go);root.addEventListener("change",go);go()})();</script>')
             css = ('<style>.cc{border:1px solid var(--bd,#e5e7eb);border-radius:14px;padding:14px 16px;margin:14px 0;background:var(--card,#fff)}.cc label{display:block;margin:8px 0;font-size:14.5px}'
                    '.cc input,.cc select{width:100%;max-width:320px;padding:8px 10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;display:block;margin-top:4px}'
-                   '.xt{border-collapse:collapse;width:100%;font-size:15px;margin-top:10px}.xt th,.xt td{border:1px solid #e5e7eb;padding:8px 10px;text-align:left}.xt th{background:#f8fafc;font-weight:600}</style>')
+                   '.xt{border-collapse:collapse;width:100%;font-size:15px;margin-top:10px}.xt th,.xt td{border:1px solid #e5e7eb;padding:8px 10px;text-align:left}.xt th{background:#f8fafc;font-weight:600;color:#0f172a}.xt td{color:#0f172a;background:#fff}.xt{min-width:0}</style>')
             body = (f'<p class="bc"><a href="/">홈</a> › <a href="/money/tools/">계산기</a> › {E(C["name"])}</p><h1>🧮 {E(C["h1"])}</h1>'
                     f'<div class="cat-st"><b>결론</b><br>{E(C["lead"])}</div><p class="note">기준: {E(C.get("basis", ""))}</p>'
                     f'<div class="cc" id="cc">{fld}<div id="co" aria-live="polite"></div></div>'
