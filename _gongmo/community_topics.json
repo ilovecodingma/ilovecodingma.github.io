@@ -1,14 +1,14 @@
 {
  "date": "2026-11-12",
- "updated": "2026-11-12 00:50",
+ "updated": "2026-11-12 01:50",
  "sites": 12,
- "npost": 2638,
+ "npost": 2639,
  "note": "출처(커뮤니티)별 집계예요. 작성자·연령·성별 정보는 수집하지 않아요. posts 는 이슈별로 뽑힌 일부라 전체 글 수가 아니에요.",
  "sources": [
   {
    "name": "MLB파크",
-   "np": 13,
-   "nc": 1072,
+   "np": 14,
+   "nc": 1094,
    "topics": [
     {
      "t": "민속촌 귀신 훈육.. 저라면 안데려갑니다;",
@@ -18,8 +18,8 @@
      "issue_np": 6,
      "issue_nc": 405,
      "kw": [
-      "귀신",
       "민속촌",
+      "귀신",
       "누나"
      ],
      "top_post": {
@@ -36,10 +36,10 @@
      "issue_np": 3,
      "issue_nc": 289,
      "kw": [
+      "고소장",
+      "민속",
       "논란",
-      "훈육",
-      "귀신",
-      "민속"
+      "귀신"
      ],
      "top_post": {
       "t": "고소장 받은 민속촌 '귀신 훈육'...논란 커지자 결국",
@@ -56,8 +56,8 @@
      "issue_nc": 284,
      "kw": [
       "판교",
-      "신혼부부",
-      "최후"
+      "최후",
+      "신혼부부"
      ],
      "top_post": {
       "t": "판교 영끌러 신혼부부의 최후 ㄷㄷ",
@@ -66,17 +66,36 @@
      }
     },
     {
+     "t": "나이 공개 거부하는 돌싱N모솔의 돌싱녀",
+     "nsite": 2,
+     "np_here": 2,
+     "nc_here": 70,
+     "issue_np": 3,
+     "issue_nc": 70,
+     "kw": [
+      "공개",
+      "나이",
+      "돌싱",
+      "거부"
+     ],
+     "top_post": {
+      "t": "나이 공개 거부하는 돌싱N모솔의 돌싱녀",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611110120048993&m=view",
+      "nc": 61
+     }
+    },
+    {
      "t": "역대급 횟집 예약 요구사항",
      "nsite": 4,
      "np_here": 1,
      "nc_here": 54,
-     "issue_np": 5,
+     "issue_np": 4,
      "issue_nc": 62,
      "kw": [
-      "예약",
       "횟집",
+      "예약",
       "사항",
-      "요청"
+      "역대"
      ],
      "top_post": {
       "t": "역대급 횟집 예약 요구사항",
@@ -95,49 +114,12 @@
       "아들",
       "합의",
       "살해",
-      "거부"
+      "범행"
      ],
      "top_post": {
       "t": "아들 성범죄 합의 안해주자 피해자 살해한 아빠",
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611110120045903&m=view",
       "nc": 46
-     }
-    },
-    {
-     "t": "민속촌 학대 결국 종료되네요",
-     "nsite": 5,
-     "np_here": 1,
-     "nc_here": 42,
-     "issue_np": 5,
-     "issue_nc": 55,
-     "kw": [
-      "민속촌",
-      "종료",
-      "귀신",
-      "훈육"
-     ],
-     "top_post": {
-      "t": "민속촌 학대 결국 종료되네요",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611100120035607&m=view",
-      "nc": 42
-     }
-    },
-    {
-     "t": "리센느 라이브 레전드네요",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 18,
-     "issue_np": 3,
-     "issue_nc": 18,
-     "kw": [
-      "리센느",
-      "WITH",
-      "라이브"
-     ],
-     "top_post": {
-      "t": "리센느 라이브 레전드네요",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611110120038712&m=view",
-      "nc": 18
      }
     },
     {
@@ -148,29 +130,48 @@
      "issue_np": 4,
      "issue_nc": 59,
      "kw": [
-      "정체",
-      "소음"
+      "소음",
+      "정체"
      ],
      "top_post": {
       "t": "3개월 넘게 집에서 나던 소음의 정체",
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611110120039927&m=view",
       "nc": 16
      }
+    },
+    {
+     "t": "엔비디아 후임 CEO 거론되는데, 벌써 ㅈ된거같다는 디시인",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 14,
+     "issue_np": 5,
+     "issue_nc": 32,
+     "kw": [
+      "후임",
+      "거론",
+      "CEO",
+      "엔비디아"
+     ],
+     "top_post": {
+      "t": "젠슨황 후임으로 리사수가 거론 된다는데",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611110120046452&m=view",
+      "nc": 14
+     }
     }
    ]
   },
   {
    "name": "인스티즈",
-   "np": 11,
-   "nc": 678,
+   "np": 14,
+   "nc": 913,
    "topics": [
     {
      "t": "\"계속 민원 넣어줄게\"…이지혜, '민속촌 귀신' 아동학대 논란 언급에 댓글 '활활'",
      "nsite": 5,
      "np_here": 1,
      "nc_here": 110,
-     "issue_np": 6,
-     "issue_nc": 128,
+     "issue_np": 5,
+     "issue_nc": 121,
      "kw": [
       "학대",
       "민속촌",
@@ -185,21 +186,21 @@
     },
     {
      "t": "삼성이 1조 6천억 들여서 개발한 전세계에서 유일한 기술 근황",
-     "nsite": 5,
+     "nsite": 4,
      "np_here": 1,
-     "nc_here": 94,
-     "issue_np": 5,
-     "issue_nc": 97,
+     "nc_here": 96,
+     "issue_np": 4,
+     "issue_nc": 99,
      "kw": [
       "삼성",
       "기술",
       "세계",
-      "개발"
+      "유일"
      ],
      "top_post": {
       "t": "삼성이 1조 6천억 들여서 개발한 전세계에서 유일한 기술 근황",
       "u": "https://www.instiz.net/pt/7924584?green=1",
-      "nc": 94
+      "nc": 96
      }
     },
     {
@@ -223,11 +224,11 @@
     },
     {
      "t": "[단독] 일본서 산 마운자로, 국내 반입 허용된다…최대 12개",
-     "nsite": 7,
+     "nsite": 8,
      "np_here": 1,
-     "nc_here": 86,
-     "issue_np": 9,
-     "issue_nc": 154,
+     "nc_here": 87,
+     "issue_np": 10,
+     "issue_nc": 176,
      "kw": [
       "반입",
       "마운자",
@@ -237,7 +238,7 @@
      "top_post": {
       "t": "[단독] 일본서 산 마운자로, 국내 반입 허용된다…최대 12개",
       "u": "https://www.instiz.net/pt/7924730?green=1",
-      "nc": 86
+      "nc": 87
      }
     },
     {
@@ -248,8 +249,8 @@
      "issue_np": 2,
      "issue_nc": 90,
      "kw": [
-      "논란",
-      "담배"
+      "담배",
+      "논란"
      ],
      "top_post": {
       "t": "블라인드에서 댓글 1000개 넘게 달린 담배 논란",
@@ -258,105 +259,67 @@
      }
     },
     {
-     "t": "젠슨황 내연녀 앨리스 황 근황",
-     "nsite": 4,
-     "np_here": 2,
-     "nc_here": 68,
-     "issue_np": 5,
-     "issue_nc": 69,
+     "t": "현재 스레드에서 난리난 고3딸아이 코트.",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 83,
+     "issue_np": 2,
+     "issue_nc": 83,
      "kw": [
-      "젠슨 황",
-      "내연녀",
-      "앨리스"
+      "스레드",
+      "난리",
+      "코트"
      ],
      "top_post": {
-      "t": "젠슨황 내연녀 앨리스 황 근황",
-      "u": "https://www.instiz.net/pt/7924172?green=1",
-      "nc": 43
+      "t": "현재 스레드에서 난리난 고3딸아이 코트.",
+      "u": "https://www.instiz.net/pt/7924543?green=1",
+      "nc": 83
      }
     },
     {
-     "t": "속보 스시자로 허용",
-     "nsite": 3,
+     "t": "이도 인스타 사과문에 달린 댓글 몇 개(수강생으로 추정)",
+     "nsite": 2,
      "np_here": 1,
-     "nc_here": 62,
-     "issue_np": 4,
-     "issue_nc": 79,
+     "nc_here": 71,
+     "issue_np": 2,
+     "issue_nc": 71,
      "kw": [
-      "허용",
-      "속보",
-      "스시",
-      "만약"
+      "인스타",
+      "수강",
+      "사과문"
      ],
      "top_post": {
-      "t": "속보 스시자로 허용",
-      "u": "https://www.instiz.net/pt/7924745?green=1",
-      "nc": 62
+      "t": "이도 인스타 사과문에 달린 댓글 몇 개(수강생으로 추정)",
+      "u": "https://www.instiz.net/pt/7924532?green=1",
+      "nc": 71
      }
     },
     {
-     "t": "민속촌 귀신 훈육.. 저라면 안데려갑니다;",
-     "nsite": 3,
+     "t": "자연분만 무섭다고 했다가 남편한테 쌍욕 먹고 쫓겨났어",
+     "nsite": 2,
      "np_here": 1,
-     "nc_here": 43,
-     "issue_np": 6,
-     "issue_nc": 405,
+     "nc_here": 71,
+     "issue_np": 2,
+     "issue_nc": 71,
      "kw": [
-      "귀신",
-      "민속촌",
-      "누나"
+      "분만",
+      "자연",
+      "남편",
+      "쌍욕"
      ],
      "top_post": {
-      "t": "[단독] \"너, 잡아 간다”…금쪽이 울린 '민속촌 귀신' 날벼락",
-      "u": "https://www.instiz.net/pt/7923787?green=1",
-      "nc": 43
+      "t": "자연분만 무섭다고 했다가 남편한테 쌍욕 먹고 쫓겨났어",
+      "u": "https://www.instiz.net/pt/7924776?green=1",
+      "nc": 71
      }
     }
    ]
   },
   {
    "name": "개드립",
-   "np": 17,
-   "nc": 367,
+   "np": 13,
+   "nc": 245,
    "topics": [
-    {
-     "t": "서울우유 디시 싱갤러 고소 사건 충격 사실 근황",
-     "nsite": 2,
-     "np_here": 2,
-     "nc_here": 80,
-     "issue_np": 3,
-     "issue_nc": 81,
-     "kw": [
-      "서울우유",
-      "고소",
-      "사건",
-      "충격"
-     ],
-     "top_post": {
-      "t": "서울우유 디시 싱갤러 고소 사건 충격 사실",
-      "u": "https://www.dogdrip.net/dogdrip/734350573?sort_index=popular&page=1",
-      "nc": 48
-     }
-    },
-    {
-     "t": "이젠 AI 안경 없이도 뚫린다는 고시 근황 ㄷㄷㄷ",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 44,
-     "issue_np": 7,
-     "issue_nc": 44,
-     "kw": [
-      "안경",
-      "AI",
-      "세무사",
-      "난리"
-     ],
-     "top_post": {
-      "t": "이젠 AI 안경 없이도 뚫린다는 고시 근황 ㄷㄷㄷ",
-      "u": "https://www.dogdrip.net/dogdrip/734353758?sort_index=popular&page=1",
-      "nc": 44
-     }
-    },
     {
      "t": "3개월 넘게 집에서 나던 소음의 정체",
      "nsite": 3,
@@ -365,8 +328,8 @@
      "issue_np": 4,
      "issue_nc": 59,
      "kw": [
-      "정체",
-      "소음"
+      "소음",
+      "정체"
      ],
      "top_post": {
       "t": "3개월 넘게 집에서 나던 소음의 정체",
@@ -382,8 +345,8 @@
      "issue_np": 4,
      "issue_nc": 43,
      "kw": [
-      "여자",
       "남자",
+      "여자",
       "친구"
      ],
      "top_post": {
@@ -393,30 +356,12 @@
      }
     },
     {
-     "t": "현재 반응싸늘한 모쏠연프 나이 비공개 사태.",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 28,
-     "issue_np": 3,
-     "issue_nc": 33,
-     "kw": [
-      "사태",
-      "공개",
-      "최초"
-     ],
-     "top_post": {
-      "t": "연애프로그램 최초 나이 비공개 사태",
-      "u": "https://www.dogdrip.net/dogdrip/734258119?sort_index=popular&page=1",
-      "nc": 28
-     }
-    },
-    {
      "t": "[단독] 일본서 산 마운자로, 국내 반입 허용된다…최대 12개",
-     "nsite": 7,
+     "nsite": 8,
      "np_here": 1,
-     "nc_here": 23,
-     "issue_np": 9,
-     "issue_nc": 154,
+     "nc_here": 30,
+     "issue_np": 10,
+     "issue_nc": 176,
      "kw": [
       "반입",
       "마운자",
@@ -426,26 +371,44 @@
      "top_post": {
       "t": "[속보] 일본에서산 마운자로 국내반입 허용",
       "u": "https://www.dogdrip.net/dogdrip/734308793?sort_index=popular&page=1",
-      "nc": 23
+      "nc": 30
+     }
+    },
+    {
+     "t": "현재 반응싸늘한 모쏠연프 나이 비공개 사태.",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 28,
+     "issue_np": 3,
+     "issue_nc": 38,
+     "kw": [
+      "공개",
+      "사태",
+      "최초"
+     ],
+     "top_post": {
+      "t": "연애프로그램 최초 나이 비공개 사태",
+      "u": "https://www.dogdrip.net/dogdrip/734258119?sort_index=popular&page=1",
+      "nc": 28
      }
     },
     {
      "t": "게임 개발에 Ai 썼다고 난리 난 \" 빅 워크 \" 사태..",
      "nsite": 3,
      "np_here": 1,
-     "nc_here": 20,
+     "nc_here": 22,
      "issue_np": 3,
-     "issue_nc": 20,
+     "issue_nc": 22,
      "kw": [
       "난리",
+      "워크",
       "AI",
-      "사태",
-      "워크"
+      "사태"
      ],
      "top_post": {
       "t": "게임 개발에 Ai 썼다고 난리 난 \" 빅 워크 \" 사태..",
       "u": "https://www.dogdrip.net/dogdrip/734309961?sort_index=popular&page=1",
-      "nc": 20
+      "nc": 22
      }
     },
     {
@@ -466,13 +429,51 @@
       "u": "https://www.dogdrip.net/dogdrip/734284307?sort_index=popular&page=1",
       "nc": 18
      }
+    },
+    {
+     "t": "아파트 단톡에 전동 드라이버 잠깐 빌릴 수 있냐고 올림",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 17,
+     "issue_np": 4,
+     "issue_nc": 17,
+     "kw": [
+      "아파트",
+      "전동",
+      "드라이버",
+      "단톡"
+     ],
+     "top_post": {
+      "t": "아파트 단톡에 전동 드라이버 잠깐 빌릴 수 있냐고 올림",
+      "u": "https://www.dogdrip.net/dogdrip/734295697?sort_index=popular&page=1",
+      "nc": 17
+     }
+    },
+    {
+     "t": "속보 스시자로 허용",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 17,
+     "issue_np": 4,
+     "issue_nc": 81,
+     "kw": [
+      "속보",
+      "허용",
+      "스시",
+      "국내"
+     ],
+     "top_post": {
+      "t": "스시자로 허용",
+      "u": "https://www.dogdrip.net/dogdrip/734296260?sort_index=popular&page=1",
+      "nc": 17
+     }
     }
    ]
   },
   {
    "name": "클리앙",
-   "np": 6,
-   "nc": 122,
+   "np": 5,
+   "nc": 113,
    "topics": [
     {
      "t": "판교 영끌러 신혼부부의 최후 ㄷㄷ",
@@ -483,13 +484,32 @@
      "issue_nc": 284,
      "kw": [
       "판교",
-      "신혼부부",
-      "최후"
+      "최후",
+      "신혼부부"
      ],
      "top_post": {
       "t": "(펌) 판교 영끌러 신혼부부의 최후 ㄷㄷ",
       "u": "https://www.clien.net/service/board/park/19290614?od=T33&po=0&category=0&groupCd=clien_all",
       "nc": 53
+     }
+    },
+    {
+     "t": "[단독] 일본서 산 마운자로, 국내 반입 허용된다…최대 12개",
+     "nsite": 8,
+     "np_here": 1,
+     "nc_here": 22,
+     "issue_np": 10,
+     "issue_nc": 176,
+     "kw": [
+      "반입",
+      "마운자",
+      "허용",
+      "국내"
+     ],
+     "top_post": {
+      "t": "마운자로 반입 허용된거 보니 좀 어이없네요..",
+      "u": "https://www.clien.net/service/board/park/19290811?od=T33&po=0&category=0&groupCd=clien_all",
+      "nc": 22
      }
     },
     {
@@ -503,50 +523,12 @@
       "아들",
       "합의",
       "살해",
-      "거부"
+      "범행"
      ],
      "top_post": {
       "t": "10대 살해 50대…아들 범죄 합의 거부하자 범행",
       "u": "https://www.clien.net/service/board/park/19290727?od=T33&po=0&category=0&groupCd=clien_all",
       "nc": 22
-     }
-    },
-    {
-     "t": "[단독] 일본서 산 마운자로, 국내 반입 허용된다…최대 12개",
-     "nsite": 7,
-     "np_here": 1,
-     "nc_here": 21,
-     "issue_np": 9,
-     "issue_nc": 154,
-     "kw": [
-      "반입",
-      "마운자",
-      "허용",
-      "국내"
-     ],
-     "top_post": {
-      "t": "마운자로 반입 허용된거 보니 좀 어이없네요..",
-      "u": "https://www.clien.net/service/board/park/19290811?od=T33&po=0&category=0&groupCd=clien_all",
-      "nc": 21
-     }
-    },
-    {
-     "t": "민속촌 학대 결국 종료되네요",
-     "nsite": 5,
-     "np_here": 1,
-     "nc_here": 10,
-     "issue_np": 5,
-     "issue_nc": 55,
-     "kw": [
-      "민속촌",
-      "종료",
-      "귀신",
-      "훈육"
-     ],
-     "top_post": {
-      "t": "민속촌 귀신 프로그램 15일을 끝으로 완전 종료..용인시에 들어온 민원은 9건",
-      "u": "https://www.clien.net/service/board/park/19290923?od=T33&po=0&category=0&groupCd=clien_all",
-      "nc": 10
      }
     },
     {
@@ -576,8 +558,8 @@
      "issue_np": 2,
      "issue_nc": 90,
      "kw": [
-      "논란",
-      "담배"
+      "담배",
+      "논란"
      ],
      "top_post": {
       "t": "논란의 담배값 인상, 상황을 두어 개 더 가져왔습니다.",
@@ -590,15 +572,15 @@
   {
    "name": "아카라이브",
    "np": 3,
-   "nc": 37,
+   "nc": 41,
    "topics": [
     {
      "t": "[단독] 일본서 산 마운자로, 국내 반입 허용된다…최대 12개",
-     "nsite": 7,
+     "nsite": 8,
      "np_here": 1,
-     "nc_here": 24,
-     "issue_np": 9,
-     "issue_nc": 154,
+     "nc_here": 25,
+     "issue_np": 10,
+     "issue_nc": 176,
      "kw": [
       "반입",
       "마운자",
@@ -608,7 +590,7 @@
      "top_post": {
       "t": "[단독] 일본서 산 마운자로, 국내 반입 허용된다…최대 12개",
       "u": "https://arca.live/b/live/188775922?p=1",
-      "nc": 24
+      "nc": 25
      }
     },
     {
@@ -632,9 +614,9 @@
      "t": "11월 11일은 빼빼로 데이입니다.",
      "nsite": 3,
      "np_here": 1,
-     "nc_here": 4,
+     "nc_here": 7,
      "issue_np": 13,
-     "issue_nc": 10,
+     "issue_nc": 13,
      "kw": [
       "빼빼로",
       "데이",
@@ -644,15 +626,15 @@
      "top_post": {
       "t": "11월 11일은 빼빼로 데이입니다.",
       "u": "https://arca.live/b/live/188733161?p=1",
-      "nc": 4
+      "nc": 7
      }
     }
    ]
   },
   {
    "name": "보배드림",
-   "np": 13,
-   "nc": 31,
+   "np": 12,
+   "nc": 27,
    "topics": [
     {
      "t": "민속촌 귀신 훈육.. 저라면 안데려갑니다;",
@@ -662,8 +644,8 @@
      "issue_np": 6,
      "issue_nc": 405,
      "kw": [
-      "귀신",
       "민속촌",
+      "귀신",
       "누나"
      ],
      "top_post": {
@@ -680,9 +662,9 @@
      "issue_np": 8,
      "issue_nc": 41,
      "kw": [
-      "성범죄",
       "아들",
       "살해",
+      "성범죄",
       "피해자"
      ],
      "top_post": {
@@ -696,8 +678,8 @@
      "nsite": 5,
      "np_here": 1,
      "nc_here": 3,
-     "issue_np": 6,
-     "issue_nc": 128,
+     "issue_np": 5,
+     "issue_nc": 121,
      "kw": [
       "학대",
       "민속촌",
@@ -712,39 +694,20 @@
     },
     {
      "t": "삼성이 1조 6천억 들여서 개발한 전세계에서 유일한 기술 근황",
-     "nsite": 5,
+     "nsite": 4,
      "np_here": 1,
      "nc_here": 3,
-     "issue_np": 5,
-     "issue_nc": 97,
+     "issue_np": 4,
+     "issue_nc": 99,
      "kw": [
       "삼성",
       "기술",
       "세계",
-      "개발"
+      "유일"
      ],
      "top_post": {
       "t": "삼성이 1조 넘게 투자한 기술",
       "u": "https://www.bobaedream.co.kr/view?code=best&No=1046849&vdate=",
-      "nc": 3
-     }
-    },
-    {
-     "t": "민속촌 학대 결국 종료되네요",
-     "nsite": 5,
-     "np_here": 1,
-     "nc_here": 3,
-     "issue_np": 5,
-     "issue_nc": 55,
-     "kw": [
-      "민속촌",
-      "종료",
-      "귀신",
-      "훈육"
-     ],
-     "top_post": {
-      "t": "민속촌 귀신들 고소 당하고, 귀신 훈육 종료",
-      "u": "https://www.bobaedream.co.kr/view?code=best&No=1046572&vdate=",
       "nc": 3
      }
     },
@@ -798,6 +761,24 @@
       "u": "https://www.bobaedream.co.kr/view?code=best&No=1046732&vdate=",
       "nc": 3
      }
+    },
+    {
+     "t": "젠슨황 내연녀 앨리스 황 근황",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 1,
+     "issue_np": 5,
+     "issue_nc": 69,
+     "kw": [
+      "내연녀",
+      "젠슨 황",
+      "앨리스"
+     ],
+     "top_post": {
+      "t": "젠슨황 내연녀 앨리스 황 근황",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1046704&vdate=",
+      "nc": 1
+     }
     }
    ]
   },
@@ -814,8 +795,8 @@
      "issue_np": 4,
      "issue_nc": 43,
      "kw": [
-      "여자",
       "남자",
+      "여자",
       "친구"
      ],
      "top_post": {
@@ -830,7 +811,7 @@
      "np_here": 1,
      "nc_here": 6,
      "issue_np": 13,
-     "issue_nc": 10,
+     "issue_nc": 13,
      "kw": [
       "빼빼로",
       "데이",
@@ -847,16 +828,16 @@
   },
   {
    "name": "SLR클럽",
-   "np": 10,
+   "np": 9,
    "nc": 0,
    "topics": [
     {
      "t": "[단독] 일본서 산 마운자로, 국내 반입 허용된다…최대 12개",
-     "nsite": 7,
+     "nsite": 8,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 9,
-     "issue_nc": 154,
+     "issue_np": 10,
+     "issue_nc": 176,
      "kw": [
       "반입",
       "마운자",
@@ -874,8 +855,8 @@
      "nsite": 5,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 6,
-     "issue_nc": 128,
+     "issue_np": 5,
+     "issue_nc": 121,
      "kw": [
       "학대",
       "민속촌",
@@ -889,44 +870,6 @@
      }
     },
     {
-     "t": "삼성이 1조 6천억 들여서 개발한 전세계에서 유일한 기술 근황",
-     "nsite": 5,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 97,
-     "kw": [
-      "삼성",
-      "기술",
-      "세계",
-      "개발"
-     ],
-     "top_post": {
-      "t": "1조6천억 들여서 만든 삼성의 기술 클라스 ㅎㄷㄷ",
-      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677223",
-      "nc": 0
-     }
-    },
-    {
-     "t": "민속촌 학대 결국 종료되네요",
-     "nsite": 5,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 55,
-     "kw": [
-      "민속촌",
-      "종료",
-      "귀신",
-      "훈육"
-     ],
-     "top_post": {
-      "t": "...,.,. 민속촌 참교육 종료",
-      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677201",
-      "nc": 0
-     }
-    },
-    {
      "t": "아들 성범죄 피해자 살해' 현장서 50대 피의자 유서·번개탄 발견",
      "nsite": 5,
      "np_here": 1,
@@ -934,14 +877,33 @@
      "issue_np": 8,
      "issue_nc": 41,
      "kw": [
-      "성범죄",
       "아들",
       "살해",
+      "성범죄",
       "피해자"
      ],
      "top_post": {
       "t": "성북구서 아들 성범죄 사건 피해자 살해한 50대 검거",
       "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677183",
+      "nc": 0
+     }
+    },
+    {
+     "t": "삼성이 1조 6천억 들여서 개발한 전세계에서 유일한 기술 근황",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 99,
+     "kw": [
+      "삼성",
+      "기술",
+      "세계",
+      "유일"
+     ],
+     "top_post": {
+      "t": "1조6천억 들여서 만든 삼성의 기술 클라스 ㅎㄷㄷ",
+      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677223",
       "nc": 0
      }
     },
@@ -953,8 +915,8 @@
      "issue_np": 5,
      "issue_nc": 69,
      "kw": [
-      "젠슨 황",
       "내연녀",
+      "젠슨 황",
       "앨리스"
      ],
      "top_post": {
@@ -971,10 +933,10 @@
      "issue_np": 3,
      "issue_nc": 289,
      "kw": [
+      "고소장",
+      "민속",
       "논란",
-      "훈육",
-      "귀신",
-      "민속"
+      "귀신"
      ],
      "top_post": {
       "t": "고소장 받은 민속촌 '귀신 훈육'... 논란 커지자 결국",
@@ -990,9 +952,9 @@
      "issue_np": 3,
      "issue_nc": 12,
      "kw": [
+      "로봇",
       "도입",
       "순찰",
-      "로봇",
       "예정"
      ],
      "top_post": {
@@ -1000,45 +962,199 @@
       "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677194",
       "nc": 0
      }
+    },
+    {
+     "t": "기초수급자때문에 개빡친 공무원",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 8,
+     "kw": [
+      "수급자",
+      "기초"
+     ],
+     "top_post": {
+      "t": "기초수급자때문에 개빡친 공무원",
+      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677162",
+      "nc": 0
+     }
+    }
+   ]
+  },
+  {
+   "name": "루리웹",
+   "np": 23,
+   "nc": 0,
+   "topics": [
+    {
+     "t": "\"계속 민원 넣어줄게\"…이지혜, '민속촌 귀신' 아동학대 논란 언급에 댓글 '활활'",
+     "nsite": 5,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 5,
+     "issue_nc": 121,
+     "kw": [
+      "학대",
+      "민속촌",
+      "논란",
+      "아동"
+     ],
+     "top_post": {
+      "t": "민속촌 학대 논란 결과 나옴",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77345988?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "아들 성범죄 피해자 살해' 현장서 50대 피의자 유서·번개탄 발견",
+     "nsite": 5,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 8,
+     "issue_nc": 41,
+     "kw": [
+      "아들",
+      "살해",
+      "성범죄",
+      "피해자"
+     ],
+     "top_post": {
+      "t": "'아들 성범죄 사건' 피해자 살해…50대 남성 검거",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77346599?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "역대급 횟집 예약 요구사항",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 62,
+     "kw": [
+      "횟집",
+      "예약",
+      "사항",
+      "역대"
+     ],
+     "top_post": {
+      "t": "횟집예약 레전드 갱신",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77345360?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "아파트 단톡에 전동 드라이버 잠깐 빌릴 수 있냐고 올림",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 17,
+     "kw": [
+      "아파트",
+      "전동",
+      "드라이버",
+      "단톡"
+     ],
+     "top_post": {
+      "t": "아파트 단톡에 전동 드라이버 잠깐 빌릴 수 있냐고 올림",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77349348?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "속보 스시자로 허용",
+     "nsite": 3,
+     "np_here": 2,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 81,
+     "kw": [
+      "속보",
+      "허용",
+      "스시",
+      "국내"
+     ],
+     "top_post": {
+      "t": "[속보]국내 가격의 7분의 1…비만약 ‘스시자로’ 허용된다",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77352768?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "3개월 넘게 집에서 나던 소음의 정체",
+     "nsite": 3,
+     "np_here": 2,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 59,
+     "kw": [
+      "소음",
+      "정체"
+     ],
+     "top_post": {
+      "t": "3개월 넘게 집에서 나던 소음의 정체",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77346225?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "남자들이 원하는 여자에 대한 여자들의 망상",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 43,
+     "kw": [
+      "남자",
+      "여자",
+      "친구"
+     ],
+     "top_post": {
+      "t": "남자와 여자 항문 차이",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77353781?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "엔비디아 후임 CEO 거론되는데, 벌써 ㅈ된거같다는 디시인",
+     "nsite": 3,
+     "np_here": 3,
+     "nc_here": 0,
+     "issue_np": 5,
+     "issue_nc": 32,
+     "kw": [
+      "후임",
+      "거론",
+      "CEO",
+      "엔비디아"
+     ],
+     "top_post": {
+      "t": "벌써 CEO 후임 거론되는 젠슨황 근황",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77348330?m=all&t=now",
+      "nc": 0
+     }
     }
    ]
   },
   {
    "name": "더쿠",
-   "np": 15,
+   "np": 12,
    "nc": 0,
    "topics": [
     {
-     "t": "[단독] 일본서 산 마운자로, 국내 반입 허용된다…최대 12개",
-     "nsite": 7,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 9,
-     "issue_nc": 154,
-     "kw": [
-      "반입",
-      "마운자",
-      "허용",
-      "국내"
-     ],
-     "top_post": {
-      "t": "[단독] 일본서 산 마운자로, 국내 반입 허용된다…최대 12개",
-      "u": "https://theqoo.net/hot/4402822804",
-      "nc": 0
-     }
-    },
-    {
      "t": "삼성이 1조 6천억 들여서 개발한 전세계에서 유일한 기술 근황",
-     "nsite": 5,
+     "nsite": 4,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 97,
+     "issue_np": 4,
+     "issue_nc": 99,
      "kw": [
       "삼성",
       "기술",
       "세계",
-      "개발"
+      "유일"
      ],
      "top_post": {
       "t": "삼성이 1조 6천억 들여서 개발한 전세계에서 유일한 기술 근황...",
@@ -1051,17 +1167,36 @@
      "nsite": 4,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 5,
+     "issue_np": 4,
      "issue_nc": 62,
      "kw": [
-      "예약",
       "횟집",
+      "예약",
       "사항",
-      "요청"
+      "역대"
      ],
      "top_post": {
       "t": "역대급 횟집 예약 요청사항",
       "u": "https://theqoo.net/hot/4402234455",
+      "nc": 0
+     }
+    },
+    {
+     "t": "아파트 단톡에 전동 드라이버 잠깐 빌릴 수 있냐고 올림",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 17,
+     "kw": [
+      "아파트",
+      "전동",
+      "드라이버",
+      "단톡"
+     ],
+     "top_post": {
+      "t": "아파트 단톡방에 전동 드라이버 잠깐 빌려줄 수 있는 분 계시냐고 올림",
+      "u": "https://theqoo.net/hot/4402679852",
       "nc": 0
      }
     },
@@ -1073,10 +1208,10 @@
      "issue_np": 3,
      "issue_nc": 289,
      "kw": [
+      "고소장",
+      "민속",
       "논란",
-      "훈육",
-      "귀신",
-      "민속"
+      "귀신"
      ],
      "top_post": {
       "t": "고소장 받은 민속촌 '귀신 훈육'...논란 커지자 결국",
@@ -1095,30 +1230,11 @@
       "아들",
       "합의",
       "살해",
-      "거부"
+      "범행"
      ],
      "top_post": {
       "t": "[단독] '10대 여성 살해' 50대, 아들 성범죄 합의 거부하자 범행",
       "u": "https://theqoo.net/hot/4402433339",
-      "nc": 0
-     }
-    },
-    {
-     "t": "이젠 AI 안경 없이도 뚫린다는 고시 근황 ㄷㄷㄷ",
-     "nsite": 3,
-     "np_here": 4,
-     "nc_here": 0,
-     "issue_np": 7,
-     "issue_nc": 44,
-     "kw": [
-      "안경",
-      "AI",
-      "세무사",
-      "난리"
-     ],
-     "top_post": {
-      "t": "현재 AI 안경 뚫린것 같아서 난리났다는 세무사 근황",
-      "u": "https://theqoo.net/hot/4402739887",
       "nc": 0
      }
     },
@@ -1128,10 +1244,10 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 3,
-     "issue_nc": 33,
+     "issue_nc": 38,
      "kw": [
-      "사태",
       "공개",
+      "사태",
       "최초"
      ],
      "top_post": {
@@ -1141,177 +1257,38 @@
      }
     },
     {
-     "t": "리센느 라이브 레전드네요",
+     "t": "네이버페이10원+10원+1원+1원+1원+1원+랜덤 눌러봐++10원+5원+눌러눌러 보험랜덤+보험랜덤 하나더+…",
      "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 18,
-     "kw": [
-      "리센느",
-      "WITH",
-      "라이브"
-     ],
-     "top_post": {
-      "t": "오늘자 1위한 리센느의 With 쌩 앵콜 라이브",
-      "u": "https://theqoo.net/hot/4402084267",
-      "nc": 0
-     }
-    }
-   ]
-  },
-  {
-   "name": "루리웹",
-   "np": 28,
-   "nc": 0,
-   "topics": [
-    {
-     "t": "\"계속 민원 넣어줄게\"…이지혜, '민속촌 귀신' 아동학대 논란 언급에 댓글 '활활'",
-     "nsite": 5,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 6,
-     "issue_nc": 128,
-     "kw": [
-      "학대",
-      "민속촌",
-      "논란",
-      "아동"
-     ],
-     "top_post": {
-      "t": "민속촌 학대 논란 결과 나옴",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77345988?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "삼성이 1조 6천억 들여서 개발한 전세계에서 유일한 기술 근황",
-     "nsite": 5,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 97,
-     "kw": [
-      "삼성",
-      "기술",
-      "세계",
-      "개발"
-     ],
-     "top_post": {
-      "t": "삼성이 1조넘게 투자한 기술",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77345838?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "민속촌 학대 결국 종료되네요",
-     "nsite": 5,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 55,
-     "kw": [
-      "민속촌",
-      "종료",
-      "귀신",
-      "훈육"
-     ],
-     "top_post": {
-      "t": "민속촌의 귀신분장으로 아이 훈육 유도 프로그램 아동학대로 고소한 아이 부모",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77341315?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "아들 성범죄 피해자 살해' 현장서 50대 피의자 유서·번개탄 발견",
-     "nsite": 5,
-     "np_here": 1,
+     "np_here": 2,
      "nc_here": 0,
      "issue_np": 8,
-     "issue_nc": 41,
+     "issue_nc": 1,
      "kw": [
-      "성범죄",
-      "아들",
-      "살해",
-      "피해자"
+      "페이",
+      "네이버",
+      "랜덤"
      ],
      "top_post": {
-      "t": "'아들 성범죄 사건' 피해자 살해…50대 남성 검거",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77346599?m=all&t=now",
+      "t": "네이버페이10원+10원+1원+1원+1원+1원+랜덤 눌러봐++10원+5원+눌러눌러 보험랜덤+보험랜덤 하나더+라이브미리보고15원받기+1원+1원+1…",
+      "u": "https://theqoo.net/hot/4402213781",
       "nc": 0
      }
     },
     {
-     "t": "역대급 횟집 예약 요구사항",
-     "nsite": 4,
-     "np_here": 2,
-     "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 62,
-     "kw": [
-      "예약",
-      "횟집",
-      "사항",
-      "요청"
-     ],
-     "top_post": {
-      "t": "횟집예약 레전드 갱신",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77345360?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "속보 스시자로 허용",
-     "nsite": 3,
-     "np_here": 2,
-     "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 79,
-     "kw": [
-      "허용",
-      "속보",
-      "스시",
-      "만약"
-     ],
-     "top_post": {
-      "t": "[속보]국내 가격의 7분의 1…비만약 ‘스시자로’ 허용된다",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77352768?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "3개월 넘게 집에서 나던 소음의 정체",
-     "nsite": 3,
-     "np_here": 2,
-     "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 59,
-     "kw": [
-      "정체",
-      "소음"
-     ],
-     "top_post": {
-      "t": "3개월 넘게 집에서 나던 소음의 정체",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77346225?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "이젠 AI 안경 없이도 뚫린다는 고시 근황 ㄷㄷㄷ",
+     "t": "한국은 일본 식민지였는데 왜 일본어 안 써?",
      "nsite": 3,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 7,
-     "issue_nc": 44,
+     "issue_np": 4,
+     "issue_nc": 0,
      "kw": [
-      "안경",
-      "AI",
-      "세무사",
-      "난리"
+      "한국",
+      "일본",
+      "식민지"
      ],
      "top_post": {
-      "t": "현재 AI 안경 뚫린것 같아서 난리났다는 세무사 근황",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77350336?m=all&t=now",
+      "t": "한국 일본 마운자로 가격 비교",
+      "u": "https://theqoo.net/hot/4402828237",
       "nc": 0
      }
     }
@@ -1319,7 +1296,7 @@
   },
   {
    "name": "디시인사이드",
-   "np": 3,
+   "np": 4,
    "nc": 0,
    "topics": [
     {
@@ -1330,8 +1307,8 @@
      "issue_np": 5,
      "issue_nc": 69,
      "kw": [
-      "젠슨 황",
       "내연녀",
+      "젠슨 황",
       "앨리스"
      ],
      "top_post": {
@@ -1365,16 +1342,35 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 3,
-     "issue_nc": 20,
+     "issue_nc": 22,
      "kw": [
       "난리",
+      "워크",
       "AI",
-      "사태",
-      "워크"
+      "사태"
      ],
      "top_post": {
       "t": "현재 난리난 IGF 빅워크 사태",
       "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=477889&_dcbest=1&page=1",
+      "nc": 0
+     }
+    },
+    {
+     "t": "나이 공개 거부하는 돌싱N모솔의 돌싱녀",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 70,
+     "kw": [
+      "공개",
+      "나이",
+      "돌싱",
+      "거부"
+     ],
+     "top_post": {
+      "t": "연프인데 나이 공개 거부하는 돌싱 아줌마",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=477801&_dcbest=1&page=1",
       "nc": 0
      }
     }
