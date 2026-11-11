@@ -1,6 +1,6 @@
 {
- "at": "2026-11-11 23:40",
- "nitems": 528,
+ "at": "2026-11-12 00:30",
+ "nitems": 527,
  "cands": [
   {
    "kw": "리센느",
@@ -177,6 +177,74 @@
    ]
   },
   {
+   "kw": "삭제",
+   "nsrc": 5,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "연합뉴스",
+    "조선일보",
+    "한겨레"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "존박 맥도날드 광고 음원 해외서 무단 유통…\"삭제 협의 중\"",
+     "link": "https://www.yna.co.kr/view/AKR20261111090700005"
+    },
+    {
+     "src": "한겨레",
+     "title": "존박·곽진언 ‘맥도날드 랩’ 해외서 무단 유통…소속사 “삭제·차단”",
+     "link": "https://www.hani.co.kr/arti/culture/music/1286784.html"
+    },
+    {
+     "src": "SBS",
+     "title": "존박 '맥도날드 주문 랩', 해외서 무단 도용…소속사 \"음원 삭제 진행 중\"",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008840583&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "뉴시스",
+     "title": "존박·곽진언 소속사, '맥도날드 랩' 해외 무단등록에 \"삭제 협의·법적 대응\"",
+     "link": "https://www.newsis.com/view/NISX20261111_0003863049"
+    }
+   ]
+  },
+  {
+   "kw": "나나",
+   "nsrc": 5,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "연합뉴스",
+    "한국경제",
+    "헤럴드경제"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "나나 역고소한 강도, 무고 혐의 부인…\"피해신고 허위 아냐\"",
+     "link": "https://www.yna.co.kr/view/AKR20261110081000004"
+    },
+    {
+     "src": "동아일보",
+     "title": "‘나나♥’ 탑, 사과 끝에 팬심 돌렸나…팬사이트 폐쇄→재개",
+     "link": "https://sports.donga.com/ent/article/all/20261111/135010583/1"
+    },
+    {
+     "src": "한국경제",
+     "title": "나나, 탑과 공개 열애 후…악플 쏟아지자 \"내가 무슨 잘못\" 소신 발언",
+     "link": "https://www.hankyung.com/article/202611069702H"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "나나 자택 침입 강도, 오늘 무고 혐의 1차 공판",
+     "link": "https://biz.heraldcorp.com/article/10931725"
+    }
+   ]
+  },
+  {
    "kw": "옥순",
    "nsrc": 5,
    "srcs": [
@@ -207,39 +275,6 @@
      "src": "뉴시스",
      "title": "'나솔' 31기 옥순, 맘카페 악플 알바 폭로…\"돈 받고 썼다\"",
      "link": "https://www.newsis.com/view/NISX20261111_0003863583"
-    }
-   ]
-  },
-  {
-   "kw": "공연",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "연합뉴스",
-    "한겨레"
-   ],
-   "n": 10,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "[가요소식] 김필, 14∼15일 '저니' 콘서트…\"공연 상상하며 곡 작업\"",
-     "link": "https://www.yna.co.kr/view/AKR20261111126300005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "[가요소식] 밴드 까망, 내달 두 번째 공연 '당신, 아프지마'",
-     "link": "https://www.yna.co.kr/view/AKR20261110114500005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "스트레이 키즈, LA·파리 등 공연 추가…31곳으로 투어 확장",
-     "link": "https://www.yna.co.kr/view/AKR20261110050400005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "마이 케미컬 로맨스, 18년만 내한 공연…추위 녹인 2만명 떼창",
-     "link": "https://www.yna.co.kr/view/AKR20261108001800005"
     }
    ]
   },
@@ -277,39 +312,6 @@
    ]
   },
   {
-   "kw": "악플",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "한국경제",
-    "헤럴드경제"
-   ],
-   "n": 8,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "카리나, ‘절친’ 한수아 악플 논란 속 심경…“누구도 상처받지 않길”",
-     "link": "https://sports.donga.com/ent/article/all/20261111/135010166/1"
-    },
-    {
-     "src": "한국경제",
-     "title": "나나, 탑과 공개 열애 후…악플 쏟아지자 \"내가 무슨 잘못\" 소신 발언",
-     "link": "https://www.hankyung.com/article/202611069702H"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "‘아이브’ 장원영, 악플 뿌리 뽑는다…‘탈덕수용소’ 잡은 법무법인과 다시 맞손",
-     "link": "https://biz.heraldcorp.com/article/10932733"
-    },
-    {
-     "src": "뉴시스",
-     "title": "'박위 논란 악플' 김기리, 3개월 만에 근황 공개했다",
-     "link": "https://www.newsis.com/view/NISX20261111_0003864191"
-    }
-   ]
-  },
-  {
    "kw": "소속사",
    "nsrc": 4,
    "srcs": [
@@ -343,35 +345,68 @@
    ]
   },
   {
-   "kw": "사랑",
+   "kw": "악플",
    "nsrc": 4,
    "srcs": [
-    "SBS",
     "뉴시스",
-    "연합뉴스",
-    "조선일보"
+    "동아일보",
+    "한국경제",
+    "헤럴드경제"
    ],
    "n": 7,
    "headlines": [
     {
+     "src": "동아일보",
+     "title": "카리나, ‘절친’ 한수아 악플 논란 속 심경…“누구도 상처받지 않길”",
+     "link": "https://sports.donga.com/ent/article/all/20261111/135010166/1"
+    },
+    {
+     "src": "한국경제",
+     "title": "나나, 탑과 공개 열애 후…악플 쏟아지자 \"내가 무슨 잘못\" 소신 발언",
+     "link": "https://www.hankyung.com/article/202611069702H"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "‘아이브’ 장원영, 악플 뿌리 뽑는다…‘탈덕수용소’ 잡은 법무법인과 다시 맞손",
+     "link": "https://biz.heraldcorp.com/article/10932733"
+    },
+    {
+     "src": "뉴시스",
+     "title": "'박위 논란 악플' 김기리, 3개월 만에 근황 공개했다",
+     "link": "https://www.newsis.com/view/NISX20261111_0003864191"
+    }
+   ]
+  },
+  {
+   "kw": "최고",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "동아일보",
+    "연합뉴스"
+   ],
+   "n": 6,
+   "headlines": [
+    {
      "src": "연합뉴스",
-     "title": "이창동이 그린 해고노동자 가족…'심장소리'와 '가능한 사랑'",
-     "link": "https://www.yna.co.kr/view/AKR20261106188700005"
+     "title": "평생을 약속한 추영우·김소현…'연애박사' 3.5% 자체 최고 종영",
+     "link": "https://www.yna.co.kr/view/AKR20261111048400005"
     },
     {
      "src": "연합뉴스",
-     "title": "심현보 \"결국 남는 건 사랑…일상 속 소소한 이야기로 담았죠\"",
-     "link": "https://www.yna.co.kr/view/AKR20261106140900005"
+     "title": "제니 '드라큘라', 빌보드 싱글 3위…K팝 여가수 최고 타이 기록",
+     "link": "https://www.yna.co.kr/view/AKR20261111044700005"
     },
     {
      "src": "연합뉴스",
-     "title": "'가능한 사랑' 넷플 공개…이창동 \"거대 자본 빌리지만 독립성 추구\"",
-     "link": "https://www.yna.co.kr/view/AKR20261106118700005"
+     "title": "위켄드, 투어 매출 13억 달러 돌파…남성 솔로 가수 최고",
+     "link": "https://www.yna.co.kr/view/AKR20261107025100005"
     },
     {
-     "src": "SBS",
-     "title": "'가능한 사랑' 조여정 \"美 아카데미 회원이지만 회비 미납해 투표권 없을 수도\"",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008840384&plink=RSSLINK&cooper=RSSREADER"
+     "src": "동아일보",
+     "title": "고경표, 런던 다녀와 90kg 됐다…“최고 몸무게는 94kg”",
+     "link": "https://sports.donga.com/ent/article/all/20261112/135010787/1"
     }
    ]
   },
@@ -442,6 +477,39 @@
    ]
   },
   {
+   "kw": "변신",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "동아일보",
+    "한겨레"
+   ],
+   "n": 6,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "신은정, ‘파이널 테이블’ 한식 대모 변신…심사위원 존재감",
+     "link": "https://sports.donga.com/ent/article/all/20261111/135007669/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "권은비, 오피스룩이 찰떡…청순 신입사원→부장 완벽 변신",
+     "link": "https://sports.donga.com/ent/article/all/20261111/135006960/1"
+    },
+    {
+     "src": "한겨레",
+     "title": "‘사업가 변신’ 그룹 노이즈 출신 홍종구…“그 시절 AI 있었다면 당연히 썼죠”",
+     "link": "https://www.hani.co.kr/arti/culture/music/1286278.html"
+    },
+    {
+     "src": "SBS",
+     "title": "로버트 다우니 주니어, 영웅에서 빌런으로…'어벤져스: 둠스데이'의 파격 변신",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008841010&plink=RSSLINK&cooper=RSSREADER"
+    }
+   ]
+  },
+  {
    "kw": "출신",
    "nsrc": 4,
    "srcs": [
@@ -508,6 +576,39 @@
    ]
   },
   {
+   "kw": "그룹",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "세계일보",
+    "연합뉴스",
+    "한겨레"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "BTS '스윔', 애플뮤직 '2026 베스트 송'…K팝 그룹 유일",
+     "link": "https://www.yna.co.kr/view/AKR20261111113500005"
+    },
+    {
+     "src": "한겨레",
+     "title": "민중가요 그룹 꽃다지, 멤버 정혜윤 ‘음악인생 조명’ 공연 한다",
+     "link": "https://www.hani.co.kr/arti/culture/music/1286397.html"
+    },
+    {
+     "src": "한겨레",
+     "title": "‘사업가 변신’ 그룹 노이즈 출신 홍종구…“그 시절 AI 있었다면 당연히 썼죠”",
+     "link": "https://www.hani.co.kr/arti/culture/music/1286278.html"
+    },
+    {
+     "src": "세계일보",
+     "title": "BTS ‘스윔’, 애플뮤직 선정 글로벌 ‘베스트 송’…K팝 그룹 유일",
+     "link": "https://www.segye.com/newsView/20261111514666"
+    }
+   ]
+  },
+  {
    "kw": "굿모닝",
    "nsrc": 4,
    "srcs": [
@@ -541,39 +642,6 @@
    ]
   },
   {
-   "kw": "이재진",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "세계일보",
-    "연합뉴스",
-    "헤럴드경제"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "이재진, 젝키 3인 디너쇼 불참 선언…주최측 \"행사 구성 재정비\"",
-     "link": "https://www.yna.co.kr/view/AKR20261110125200005"
-    },
-    {
-     "src": "세계일보",
-     "title": "젝스키스 디너쇼 무산 후폭풍…이재진, 주최사 대표에 명예훼손 피소",
-     "link": "https://www.segye.com/newsView/20261111518603"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "‘젝키’ 이재진, 연말 디너쇼 불참 선언 “대표가 개인 계좌로 현금 입금 받아”",
-     "link": "https://biz.heraldcorp.com/article/10932450"
-    },
-    {
-     "src": "뉴시스",
-     "title": "젝스키스 디너쇼 무산 후폭풍…이재진, 주최사 대표에 명예훼손 피소",
-     "link": "https://www.newsis.com/view/NISX20261111_0003864410"
-    }
-   ]
-  },
-  {
    "kw": "디너쇼",
    "nsrc": 4,
    "srcs": [
@@ -603,6 +671,39 @@
      "src": "헤럴드경제",
      "title": "‘젝키’ 이재진, 연말 디너쇼 불참 선언 “대표가 개인 계좌로 현금 입금 받아”",
      "link": "https://biz.heraldcorp.com/article/10932450"
+    }
+   ]
+  },
+  {
+   "kw": "별세",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "연합뉴스",
+    "한겨레",
+    "한국경제"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "영화 '김의 전쟁'·'테러리스트' 김영빈 감독 별세",
+     "link": "https://www.yna.co.kr/view/AKR20261108047000005"
+    },
+    {
+     "src": "한겨레",
+     "title": "‘천마총 발굴’ 김동현 전 국립문화재연구소장 별세…향년 89",
+     "link": "https://www.hani.co.kr/arti/culture/culture_general/1286647.html"
+    },
+    {
+     "src": "한겨레",
+     "title": "영화 ‘김의 전쟁’, ‘테러리스트’ 김영빈 감독 별세",
+     "link": "https://www.hani.co.kr/arti/culture/culture_general/1286350.html"
+    },
+    {
+     "src": "한국경제",
+     "title": "[포토+] '국민 아버지' 최불암, '향년 87세를 일기로 별세'",
+     "link": "https://www.hankyung.com/article/202610317173H"
     }
    ]
   },
@@ -669,72 +770,6 @@
      "src": "뉴시스",
      "title": "'아빠 힘내세요' 한수성, 빚더미서 月 3000만원 저작권료까지",
      "link": "https://www.newsis.com/view/NISX20261111_0003864491"
-    }
-   ]
-  },
-  {
-   "kw": "선물",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "세계일보",
-    "한겨레",
-    "헤럴드경제"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "한겨레",
-     "title": "‘발레 거장’ 한스 판마넌, 세상 뜨기 나흘 전 한국 무대에 남긴 선물",
-     "link": "https://www.hani.co.kr/arti/culture/music/1286637.html"
-    },
-    {
-     "src": "세계일보",
-     "title": "“특별한 선물”…션, 빼빼로데이에 2011만 1111원 수표 공개한 사연",
-     "link": "https://www.segye.com/newsView/20261111515046"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "소지섭, 이번엔 대만 팬에 금 선물…당첨된 팬 “눈물”",
-     "link": "https://biz.heraldcorp.com/article/10933636"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "리센느, 내년 2월 첫 단독 콘서트 개최…“팬분들께 소중한 시간 선물”",
-     "link": "https://biz.heraldcorp.com/article/10933209"
-    }
-   ]
-  },
-  {
-   "kw": "삭제",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "연합뉴스",
-    "한겨레"
-   ],
-   "n": 4,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "존박 맥도날드 광고 음원 해외서 무단 유통…\"삭제 협의 중\"",
-     "link": "https://www.yna.co.kr/view/AKR20261111090700005"
-    },
-    {
-     "src": "한겨레",
-     "title": "존박·곽진언 ‘맥도날드 랩’ 해외서 무단 유통…소속사 “삭제·차단”",
-     "link": "https://www.hani.co.kr/arti/culture/music/1286784.html"
-    },
-    {
-     "src": "SBS",
-     "title": "존박 '맥도날드 주문 랩', 해외서 무단 도용…소속사 \"음원 삭제 진행 중\"",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008840583&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "뉴시스",
-     "title": "존박·곽진언 소속사, '맥도날드 랩' 해외 무단등록에 \"삭제 협의·법적 대응\"",
-     "link": "https://www.newsis.com/view/NISX20261111_0003863049"
     }
    ]
   },
@@ -937,12 +972,12 @@
    ]
   },
   {
-   "kw": "불참",
+   "kw": "이재진",
    "nsrc": 4,
    "srcs": [
     "뉴시스",
+    "세계일보",
     "연합뉴스",
-    "한국경제",
     "헤럴드경제"
    ],
    "n": 4,
@@ -953,9 +988,9 @@
      "link": "https://www.yna.co.kr/view/AKR20261110125200005"
     },
     {
-     "src": "한국경제",
-     "title": "엑스러브 현, 부상으로 컴백 쇼케이스 불참…\"하루빨리 회복하겠다\"",
-     "link": "https://www.hankyung.com/article/202610280617H"
+     "src": "세계일보",
+     "title": "젝스키스 디너쇼 무산 후폭풍…이재진, 주최사 대표에 명예훼손 피소",
+     "link": "https://www.segye.com/newsView/20261111518603"
     },
     {
      "src": "헤럴드경제",
@@ -964,41 +999,8 @@
     },
     {
      "src": "뉴시스",
-     "title": "젝스키스 3인 연말 행사, 이재진 불참 선언에 결국 취소",
-     "link": "https://www.newsis.com/view/NISX20261110_0003862851"
-    }
-   ]
-  },
-  {
-   "kw": "나나",
-   "nsrc": 4,
-   "srcs": [
-    "동아일보",
-    "연합뉴스",
-    "한국경제",
-    "헤럴드경제"
-   ],
-   "n": 4,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "나나 역고소한 강도, 무고 혐의 부인…\"피해신고 허위 아냐\"",
-     "link": "https://www.yna.co.kr/view/AKR20261110081000004"
-    },
-    {
-     "src": "동아일보",
-     "title": "‘나나♥’ 탑, 사과 끝에 팬심 돌렸나…팬사이트 폐쇄→재개",
-     "link": "https://sports.donga.com/ent/article/all/20261111/135010583/1"
-    },
-    {
-     "src": "한국경제",
-     "title": "나나, 탑과 공개 열애 후…악플 쏟아지자 \"내가 무슨 잘못\" 소신 발언",
-     "link": "https://www.hankyung.com/article/202611069702H"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "나나 자택 침입 강도, 오늘 무고 혐의 1차 공판",
-     "link": "https://biz.heraldcorp.com/article/10931725"
+     "title": "젝스키스 디너쇼 무산 후폭풍…이재진, 주최사 대표에 명예훼손 피소",
+     "link": "https://www.newsis.com/view/NISX20261111_0003864410"
     }
    ]
   },
@@ -1098,39 +1100,6 @@
      "src": "뉴시스",
      "title": "'큰별쌤' 최태성 \"거액 사교육 스카우트에 원형탈모…결국 계약서 찢어\"",
      "link": "https://www.newsis.com/view/NISX20261111_0003864497"
-    }
-   ]
-  },
-  {
-   "kw": "집중",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "세계일보",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 4,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "테이, '굿모닝FM' 3년 6개월만 하차…\"새 앨범에 집중\"",
-     "link": "https://www.yna.co.kr/view/AKR20261109052100005"
-    },
-    {
-     "src": "세계일보",
-     "title": "“월드스타 가면 전 세계 움직여”…제니 방문한 충주 온천 관심 집중",
-     "link": "https://www.segye.com/newsView/20261111504936"
-    },
-    {
-     "src": "뉴시스",
-     "title": "[집중 인터뷰]이창동이 달아 놓은 '가능한 사랑'에 관한 주석들",
-     "link": "https://www.newsis.com/view/NISX20261110_0003862887"
-    },
-    {
-     "src": "조선일보",
-     "title": "[사진]싸이커스 유준,'시선 집중 레드 헤어'",
-     "link": "https://www.chosun.com/entertainments/entertain_photo/2026/11/11/MVQTKZJYMMYDCYRSMVQTGOBYGM/"
     }
    ]
   },
@@ -1267,35 +1236,35 @@
    ]
   },
   {
-   "kw": "최초",
+   "kw": "미모",
    "nsrc": 4,
    "srcs": [
+    "뉴시스",
     "동아일보",
     "세계일보",
-    "조선일보",
-    "한국경제"
+    "조선일보"
    ],
    "n": 4,
    "headlines": [
     {
      "src": "동아일보",
-     "title": "베이비몬스터, 블랙핑크 계보 잇는다…5세대 최초 ‘코첼라’ 입성",
-     "link": "https://sports.donga.com/ent/article/all/20261111/135009872/1"
-    },
-    {
-     "src": "한국경제",
-     "title": "'재혼황후' 이종석, 국내 최초 새 연기 \"제가 좀 새 상…사람으로 변할 때 나체로 등장\"",
-     "link": "https://www.hankyung.com/article/202611032589H"
+     "title": "송혜교, 흰 드레스 입으니 더 우아하네…청순 미모 [DA★]",
+     "link": "https://sports.donga.com/ent/article/all/20261111/135010457/1"
     },
     {
      "src": "세계일보",
-     "title": "BTS ‘스윔’ K팝그룹 최초 애플뮤직 베스트송",
-     "link": "https://www.segye.com/newsView/20261111514666"
+     "title": "[포토] 성훈-오세훈 '선남선녀의 빛나는 미모'",
+     "link": "https://www.segye.com/newsView/20261111508258"
+    },
+    {
+     "src": "뉴시스",
+     "title": "'전희철 딸' 전지우, 연예인급 미모 \"이대 무용과 수석\"",
+     "link": "https://www.newsis.com/view/NISX20261111_0003864567"
     },
     {
      "src": "조선일보",
-     "title": "연프 최초 '쌍둥이' 출연..이동국 딸 재시, '내새연3' 메기녀 깜짝 등장 '충격'[순간포착]",
-     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/11/MM4WKNRVME3TSNJVME4WKMLFHA/"
+     "title": "전희철 둘째딸 전지우, 이대 무용과 수석입학→인형 미모 ‘깜짝’... “하루에 번호 두번 따여“(내새연3)",
+     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/11/GA3DCZTEMYYDCY3CGE2TQYZVG4/"
     }
    ]
   },
@@ -1329,6 +1298,39 @@
      "src": "뉴시스",
      "title": "전현무, 생일에도 유기견 봉사…카메라 없이 구슬땀",
      "link": "https://www.newsis.com/view/NISX20261111_0003863460"
+    }
+   ]
+  },
+  {
+   "kw": "거짓말",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "한국경제",
+    "헤럴드경제"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "한국경제",
+     "title": "\"일본인인 줄 알았다\"…'100일의 거짓말' 본 日 시청자 반응",
+     "link": "https://www.hankyung.com/article/202610281076H"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "아이돌 일본인 멤버가 항일운동 드라마를?…카즈하, ‘100일의 거짓말’ 시청 인증 눈길",
+     "link": "https://biz.heraldcorp.com/article/10933973"
+    },
+    {
+     "src": "SBS",
+     "title": "신민아 사칭한 이세영의 뻔뻔한 거짓말 이후…'재혼황후' 주지훈, 이종석에 결투 신청",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008841145&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "뉴시스",
+     "title": "日 출신 카즈하, 요즘 빠진 드라마는 \"100일의 거짓말\"",
+     "link": "https://www.newsis.com/view/NISX20261111_0003863840"
     }
    ]
   }
