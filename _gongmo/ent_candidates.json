@@ -1,20 +1,54 @@
 {
- "at": "2026-11-12 15:30",
- "nitems": 526,
+ "at": "2026-11-12 16:30",
+ "nitems": 525,
  "cands": [
   {
+   "kw": "에이티즈",
+   "nsrc": 6,
+   "srcs": [
+    "SBS",
+    "동아일보",
+    "세계일보",
+    "연합뉴스",
+    "조선일보",
+    "한국경제"
+   ],
+   "n": 87,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "에이티즈, '배드' 인기 잇는다…\"가장 높은 곳 그 이상까지\"",
+     "link": "https://www.yna.co.kr/view/AKR20261112112300005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "신세계百 강남점, 에이티즈 앨범 발매 기념 팝업 매장 운영",
+     "link": "https://www.yna.co.kr/view/AKR20261107020700030"
+    },
+    {
+     "src": "동아일보",
+     "title": "작두 탄 에이티즈, 올해 세 번째 앨범 “본질은 무대와 음악” (종합)[DA현장]",
+     "link": "https://sports.donga.com/ent/article/all/20261112/135014489/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "에이티즈 우영 “다음 시리즈 가도 좋을 듯”…홍중 “메시지가 중요”",
+     "link": "https://sports.donga.com/ent/article/all/20261112/135014436/1"
+    }
+   ]
+  },
+  {
    "kw": "리센느",
-   "nsrc": 7,
+   "nsrc": 6,
    "srcs": [
     "SBS",
     "뉴시스",
     "연합뉴스",
-    "조선일보",
     "한겨레",
     "한국경제",
     "헤럴드경제"
    ],
-   "n": 14,
+   "n": 13,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -39,52 +73,16 @@
    ]
   },
   {
-   "kw": "에이티즈",
-   "nsrc": 6,
-   "srcs": [
-    "SBS",
-    "동아일보",
-    "세계일보",
-    "연합뉴스",
-    "조선일보",
-    "한국경제"
-   ],
-   "n": 66,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "신세계百 강남점, 에이티즈 앨범 발매 기념 팝업 매장 운영",
-     "link": "https://www.yna.co.kr/view/AKR20261107020700030"
-    },
-    {
-     "src": "동아일보",
-     "title": "작두 탄 에이티즈, 올해 세 번째 앨범 “본질은 무대와 음악” (종합)[DA현장]",
-     "link": "https://sports.donga.com/ent/article/all/20261112/135014489/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "에이티즈 우영 “다음 시리즈 가도 좋을 듯”…홍중 “메시지가 중요”",
-     "link": "https://sports.donga.com/ent/article/all/20261112/135014436/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "이유리, 에이티즈 산에 푹 빠졌다…“요즘 이 남자가 자꾸 눈에 밟혀”",
-     "link": "https://sports.donga.com/ent/article/all/20261112/135014383/1"
-    }
-   ]
-  },
-  {
    "kw": "내년",
-   "nsrc": 6,
+   "nsrc": 5,
    "srcs": [
     "SBS",
     "뉴시스",
-    "동아일보",
     "연합뉴스",
     "한국경제",
     "헤럴드경제"
    ],
-   "n": 15,
+   "n": 14,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -109,6 +107,40 @@
    ]
   },
   {
+   "kw": "주년",
+   "nsrc": 5,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "연합뉴스",
+    "조선일보",
+    "한겨레"
+   ],
+   "n": 9,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "[가요소식] 산울림 50주년 기념 네 번째 앨범",
+     "link": "https://www.yna.co.kr/view/AKR20261112086000005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "10주년 NCT 드림, 6집 '드림 애프터 드림'…\"희망 드리고 싶어\"",
+     "link": "https://www.yna.co.kr/view/AKR20261109071700005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "[가요소식] 디어클라우드, 8일 신곡 '꿈의 장면'…19주년 기념",
+     "link": "https://www.yna.co.kr/view/AKR20261106169800005"
+    },
+    {
+     "src": "동아일보",
+     "title": "에이티즈 “8명이서 8주년 의미 깊어, 우리만이 할 수 있는 무대 고민”",
+     "link": "https://sports.donga.com/ent/article/all/20261112/135014035/1"
+    }
+   ]
+  },
+  {
    "kw": "시간",
    "nsrc": 5,
    "srcs": [
@@ -118,7 +150,7 @@
     "연합뉴스",
     "헤럴드경제"
    ],
-   "n": 10,
+   "n": 9,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -136,43 +168,111 @@
      "link": "https://sports.donga.com/ent/article/all/20261112/135012906/1"
     },
     {
-     "src": "동아일보",
-     "title": "강동원·김고은 만났다…넷플릭스 사극 ‘혼: 삼각의 시간’ 제작 확정",
-     "link": "https://sports.donga.com/ent/article/all/20261112/135011631/1"
+     "src": "헤럴드경제",
+     "title": "전현무, 봉사활동 가서 ‘즉흥 촬영’…“버려진 아이들과 시간 보내”",
+     "link": "https://biz.heraldcorp.com/article/10933641"
     }
    ]
   },
   {
-   "kw": "합류",
+   "kw": "그룹",
+   "nsrc": 5,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "동아일보",
+    "연합뉴스",
+    "한겨레"
+   ],
+   "n": 7,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "포레스텔라, 한국 그룹 첫 미국 뉴욕 카네기홀 단독 공연",
+     "link": "https://www.yna.co.kr/view/AKR20261112061300005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "BTS '스윔', 애플뮤직 '2026 베스트 송'…K팝 그룹 유일",
+     "link": "https://www.yna.co.kr/view/AKR20261111113500005"
+    },
+    {
+     "src": "동아일보",
+     "title": "에이티즈 산 “‘해외서 잘된 그룹’ 설명하던 때 지나…요즘 꿈같다”",
+     "link": "https://sports.donga.com/ent/article/all/20261112/135014294/1"
+    },
+    {
+     "src": "한겨레",
+     "title": "민중가요 그룹 꽃다지, 멤버 정혜윤 ‘음악인생 조명’ 공연 한다",
+     "link": "https://www.hani.co.kr/arti/culture/music/1286397.html"
+    }
+   ]
+  },
+  {
+   "kw": "데뷔",
+   "nsrc": 5,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "동아일보",
+    "연합뉴스",
+    "한국경제"
+   ],
+   "n": 7,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "있지 채령, 7년 만 솔로 데뷔…\"구미호처럼 홀리는 가수 꿈꿔\"",
+     "link": "https://www.yna.co.kr/view/AKR20261109106000005"
+    },
+    {
+     "src": "동아일보",
+     "title": "드래곤포니, 데뷔 첫 ‘MMA’ 출격…에너제틱 매력 기대",
+     "link": "https://sports.donga.com/ent/article/all/20261112/135015173/1"
+    },
+    {
+     "src": "한국경제",
+     "title": "\"가정부와 불륜으로 낳은 아들\" 슈워제네거 혼외자, 보디빌더 데뷔",
+     "link": "https://www.hankyung.com/article/2026111086337"
+    },
+    {
+     "src": "SBS",
+     "title": "에이티즈 산, 데뷔 첫 OST 도전…'나인 투 식스' 화려한 OST 라인업 공개",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008841570&plink=RSSLINK&cooper=RSSREADER"
+    }
+   ]
+  },
+  {
+   "kw": "연기",
    "nsrc": 5,
    "srcs": [
     "뉴시스",
     "동아일보",
     "연합뉴스",
     "조선일보",
-    "헤럴드경제"
+    "한국경제"
    ],
    "n": 6,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "[방송소식] '솔로라서' 시즌2 12월 첫선…조윤희 MC 합류",
-     "link": "https://www.yna.co.kr/view/AKR20261109036500005"
+     "title": "조여정 \"이창동 감독 앞에서 감독 연기, 제 숙제였죠\"",
+     "link": "https://www.yna.co.kr/view/AKR20261110100800005"
     },
     {
      "src": "동아일보",
-     "title": "[공식] 곽윤기, 여배우들 코치 됐다… ‘무쇠소녀단3’ 합류",
-     "link": "https://sports.donga.com/ent/article/all/20261112/135012745/1"
+     "title": "‘문무’ 김강우 “실존인물 연기, 부담되지만 즐거운 스트레스”",
+     "link": "https://sports.donga.com/ent/article/all/20261112/135014330/1"
     },
     {
-     "src": "헤럴드경제",
-     "title": "‘원조 몸짱’ 클라라, 10년만에 한국 예능 복귀…‘솔로라서2’ 합류",
-     "link": "https://biz.heraldcorp.com/article/10934667"
+     "src": "한국경제",
+     "title": "'재혼황후' 이종석, 국내 최초 새 연기 \"제가 좀 새 상…사람으로 변할 때 나체로 등장\"",
+     "link": "https://www.hankyung.com/article/202611032589H"
     },
     {
      "src": "뉴시스",
-     "title": "클라라, 10년 만에 국내 예능 복귀…'솔로라서2' MC 합류",
-     "link": "https://www.newsis.com/view/NISX20261112_0003865135"
+     "title": "김현철 \"대학 때 황정민·정재영 연기 가르친 적 있다\"",
+     "link": "https://www.newsis.com/view/NISX20261112_0003864931"
     }
    ]
   },
@@ -207,40 +307,6 @@
      "src": "세계일보",
      "title": "[포토] 에이티즈 종호 '아이돌 최강 보컬'",
      "link": "https://www.segye.com/newsView/20261112511756"
-    }
-   ]
-  },
-  {
-   "kw": "발매",
-   "nsrc": 5,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "연합뉴스",
-    "조선일보",
-    "한국경제"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "신세계百 강남점, 에이티즈 앨범 발매 기념 팝업 매장 운영",
-     "link": "https://www.yna.co.kr/view/AKR20261107020700030"
-    },
-    {
-     "src": "한국경제",
-     "title": "가을엔 규현…내달 11일 EP '컨티뉴' 발매",
-     "link": "https://www.hankyung.com/article/202610278838H"
-    },
-    {
-     "src": "SBS",
-     "title": "도경수, 오늘(11일) 신곡 '달링' 발매…팬들 향한 진심 담은 발라드",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008840634&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "뉴시스",
-     "title": "산울림 50주년 프로젝트, 이제 10곡만 남았다…'Vol. 4' 13일 발매",
-     "link": "https://www.newsis.com/view/NISX20261112_0003865343"
     }
    ]
   },
@@ -297,7 +363,7 @@
     },
     {
      "src": "한겨레",
-     "title": "‘100일의 거짓말’ 속 역사의 한 장면, 어디까지 진짜일까",
+     "title": "1932년 경성 모습 그린 ‘100일의 거짓말’…어디까지 진짜일까",
      "link": "https://www.hani.co.kr/arti/culture/culture_general/1287015.html"
     },
     {
@@ -313,39 +379,6 @@
    ]
   },
   {
-   "kw": "주년",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "연합뉴스",
-    "한겨레"
-   ],
-   "n": 8,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "[가요소식] 산울림 50주년 기념 네 번째 앨범",
-     "link": "https://www.yna.co.kr/view/AKR20261112086000005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "10주년 NCT 드림, 6집 '드림 애프터 드림'…\"희망 드리고 싶어\"",
-     "link": "https://www.yna.co.kr/view/AKR20261109071700005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "[가요소식] 디어클라우드, 8일 신곡 '꿈의 장면'…19주년 기념",
-     "link": "https://www.yna.co.kr/view/AKR20261106169800005"
-    },
-    {
-     "src": "동아일보",
-     "title": "에이티즈 “8명이서 8주년 의미 깊어, 우리만이 할 수 있는 무대 고민”",
-     "link": "https://sports.donga.com/ent/article/all/20261112/135014035/1"
-    }
-   ]
-  },
-  {
    "kw": "사랑",
    "nsrc": 4,
    "srcs": [
@@ -354,7 +387,7 @@
     "연합뉴스",
     "조선일보"
    ],
-   "n": 8,
+   "n": 7,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -379,68 +412,35 @@
    ]
   },
   {
-   "kw": "넷플릭스",
+   "kw": "김윤석",
    "nsrc": 4,
    "srcs": [
     "SBS",
     "뉴시스",
     "동아일보",
-    "연합뉴스"
+    "조선일보"
    ],
    "n": 7,
    "headlines": [
     {
-     "src": "연합뉴스",
-     "title": "\"한국 예능선 카메라 200대 쓴다\"…넷플릭스가 주목한 제작 방식",
-     "link": "https://www.yna.co.kr/view/AKR20261111079200017"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "넷플릭스, 예능 '흑백가수' 내년 공개…'흑백' 세계관 음악으로",
-     "link": "https://www.yna.co.kr/view/AKR20261111052100005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "'꿀알바' 넷플릭스 비영어 쇼 1위…김지원 '닥터X'는 4위",
-     "link": "https://www.yna.co.kr/view/AKR20261111009200005"
+     "src": "동아일보",
+     "title": "‘폭설’ 김윤석 “이번에도 브로맨스, 구교환이 1등…다음은 김선호”",
+     "link": "https://sports.donga.com/ent/article/all/20261112/135014947/1"
     },
     {
      "src": "동아일보",
-     "title": "강동원·김고은 만났다…넷플릭스 사극 ‘혼: 삼각의 시간’ 제작 확정",
-     "link": "https://sports.donga.com/ent/article/all/20261112/135011631/1"
-    }
-   ]
-  },
-  {
-   "kw": "그룹",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "동아일보",
-    "연합뉴스",
-    "한겨레"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "포레스텔라, 한국 그룹 첫 미국 뉴욕 카네기홀 단독 공연",
-     "link": "https://www.yna.co.kr/view/AKR20261112061300005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "BTS '스윔', 애플뮤직 '2026 베스트 송'…K팝 그룹 유일",
-     "link": "https://www.yna.co.kr/view/AKR20261111113500005"
+     "title": "‘폭설’ 김윤석 “노윤서, 보면 볼수록 마스크가 너무 매력적인 배우”",
+     "link": "https://sports.donga.com/ent/article/all/20261112/135014886/1"
     },
     {
      "src": "동아일보",
-     "title": "에이티즈 산 “‘해외서 잘된 그룹’ 설명하던 때 지나…요즘 꿈같다”",
-     "link": "https://sports.donga.com/ent/article/all/20261112/135014294/1"
+     "title": "‘폭설’ 김윤석 “구교환은 에겐남…그럼에도 대단한 에너지”",
+     "link": "https://sports.donga.com/ent/article/all/20261112/135014851/1"
     },
     {
-     "src": "한겨레",
-     "title": "민중가요 그룹 꽃다지, 멤버 정혜윤 ‘음악인생 조명’ 공연 한다",
-     "link": "https://www.hani.co.kr/arti/culture/music/1286397.html"
+     "src": "SBS",
+     "title": "김윤석, '추격자' 나홍진 감독과 불화설 직접 해명 \"40시간 촬영은 갈등 때문 아니야\"",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008842294&plink=RSSLINK&cooper=RSSREADER"
     }
    ]
   },
@@ -478,7 +478,7 @@
    ]
   },
   {
-   "kw": "데뷔",
+   "kw": "투어",
    "nsrc": 4,
    "srcs": [
     "SBS",
@@ -490,23 +490,56 @@
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "있지 채령, 7년 만 솔로 데뷔…\"구미호처럼 홀리는 가수 꿈꿔\"",
-     "link": "https://www.yna.co.kr/view/AKR20261109106000005"
+     "title": "스트레이 키즈, LA·파리 등 공연 추가…31곳으로 투어 확장",
+     "link": "https://www.yna.co.kr/view/AKR20261110050400005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "YG, 3분기 영업익 135억원…투어 비용 등 영향 56.8%↓(종합)",
+     "link": "https://www.yna.co.kr/view/AKR20261109105600005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "위켄드, 투어 매출 13억 달러 돌파…남성 솔로 가수 최고",
+     "link": "https://www.yna.co.kr/view/AKR20261107025100005"
     },
     {
      "src": "한국경제",
-     "title": "\"가정부와 불륜으로 낳은 아들\" 슈워제네거 혼외자, 보디빌더 데뷔",
-     "link": "https://www.hankyung.com/article/2026111086337"
+     "title": "코요태, 'K-흥' 알리러 세계로…북미 투어 돌입",
+     "link": "https://www.hankyung.com/article/202611095927H"
+    }
+   ]
+  },
+  {
+   "kw": "억원",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "연합뉴스",
+    "조선일보",
+    "한국경제"
+   ],
+   "n": 6,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "YG, 3분기 영업익 135억원…투어 비용 등 영향 56.8%↓(종합)",
+     "link": "https://www.yna.co.kr/view/AKR20261109105600005"
     },
     {
-     "src": "SBS",
-     "title": "에이티즈 산, 데뷔 첫 OST 도전…'나인 투 식스' 화려한 OST 라인업 공개",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008841570&plink=RSSLINK&cooper=RSSREADER"
+     "src": "연합뉴스",
+     "title": "CGV 3분기 영업익 736억원 '역대 최대'…'오디세이' 흥행에 개선",
+     "link": "https://www.yna.co.kr/view/AKR20261106164500005"
     },
     {
-     "src": "SBS",
-     "title": "'대세 걸그룹' 리센느, 데뷔 첫 단독 콘서트 개최…\"꿈만 같다\"",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008840687&plink=RSSLINK&cooper=RSSREADER"
+     "src": "한국경제",
+     "title": "김원효 \"주식 투자로 2억원 날려…심진화와 이혼 위기\"",
+     "link": "https://www.hankyung.com/article/202611032016H"
+    },
+    {
+     "src": "뉴시스",
+     "title": "월 2억원 쓰던 서인영 \"이제 백화점만 봐도 무서워\"",
+     "link": "https://www.newsis.com/view/NISX20261112_0003865464"
     }
    ]
   },
@@ -538,8 +571,8 @@
     },
     {
      "src": "조선일보",
-     "title": "[사진]에이티즈 우영, '더 멋진 모습으로 컴백'",
-     "link": "https://www.chosun.com/entertainments/entertain_photo/2026/11/12/MI2DOZRRHAYGEYRVMNRWINRSGY/"
+     "title": "[포토] 에이티즈 우영, 시크한 하트",
+     "link": "https://www.chosun.com/entertainments/entertain_photo/2026/11/12/GNQWKNJVGM3GENBQMRSWGZRZG4/"
     }
    ]
   },
@@ -577,167 +610,101 @@
    ]
   },
   {
-   "kw": "까지",
+   "kw": "대세",
    "nsrc": 4,
    "srcs": [
     "SBS",
-    "뉴시스",
     "조선일보",
+    "한겨레",
     "한국경제"
    ],
    "n": 6,
    "headlines": [
     {
+     "src": "한겨레",
+     "title": "‘역주행 대세’ 리센느 “간절히 바라던 첫 단독 콘서트” 연다",
+     "link": "https://www.hani.co.kr/arti/culture/music/1286762.html"
+    },
+    {
      "src": "한국경제",
-     "title": "제로베이스원 EMP, 대학축제에 음악방송까지…신나게 '런'",
-     "link": "https://www.hankyung.com/article/202611095916H"
+     "title": "리센느, 확신의 대세…초동 60만장·음방 1위·내년 콘서트",
+     "link": "https://www.hankyung.com/article/202611119221H"
     },
     {
      "src": "SBS",
-     "title": "임영웅 콘서트부터 '진격의 거인'까지…CGV, 11월 기술 특별관 라인업 공개",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008842411&plink=RSSLINK&cooper=RSSREADER"
+     "title": "'대세 걸그룹' 리센느, 데뷔 첫 단독 콘서트 개최…\"꿈만 같다\"",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008840687&plink=RSSLINK&cooper=RSSREADER"
     },
     {
-     "src": "뉴시스",
-     "title": "최태성 \"거액 스카우트 제안에 원형탈모까지…결국 계약서 찢어\"",
-     "link": "https://www.newsis.com/view/NISX20261112_0003864600"
-    },
-    {
-     "src": "뉴시스",
-     "title": "'아빠 힘내세요' 한수성, 빚더미서 月 3000만원 저작권료까지",
-     "link": "https://www.newsis.com/view/NISX20261111_0003864491"
+     "src": "조선일보",
+     "title": "[포토] 에이티즈 산, 대세",
+     "link": "https://www.chosun.com/entertainments/entertain_photo/2026/11/12/GZTDMNBYMJTDEZRYGJRWGYLFGQ/"
     }
    ]
   },
   {
-   "kw": "강동원",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "동아일보",
-    "연합뉴스"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "강동원·김고은의 로맨스 액션 사극…'혼: 삼각의 시간' 제작",
-     "link": "https://www.yna.co.kr/view/AKR20261112044700005"
-    },
-    {
-     "src": "동아일보",
-     "title": "[공식] 강동원·김고은, 로미오와 줄리엣? ‘혼: 삼각의 시간’ 출연확정",
-     "link": "https://sports.donga.com/ent/article/all/20261112/135012906/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "강동원·김고은 만났다…넷플릭스 사극 ‘혼: 삼각의 시간’ 제작 확정",
-     "link": "https://sports.donga.com/ent/article/all/20261112/135011631/1"
-    },
-    {
-     "src": "SBS",
-     "title": "강동원X김고은, 백년 원수 가문에서 부부로…넷플릭스 '혼: 삼각의 시간' 제작 확정",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008842336&plink=RSSLINK&cooper=RSSREADER"
-    }
-   ]
-  },
-  {
-   "kw": "삼각의",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "동아일보",
-    "연합뉴스"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "강동원·김고은의 로맨스 액션 사극…'혼: 삼각의 시간' 제작",
-     "link": "https://www.yna.co.kr/view/AKR20261112044700005"
-    },
-    {
-     "src": "동아일보",
-     "title": "[공식] 강동원·김고은, 로미오와 줄리엣? ‘혼: 삼각의 시간’ 출연확정",
-     "link": "https://sports.donga.com/ent/article/all/20261112/135012906/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "강동원·김고은 만났다…넷플릭스 사극 ‘혼: 삼각의 시간’ 제작 확정",
-     "link": "https://sports.donga.com/ent/article/all/20261112/135011631/1"
-    },
-    {
-     "src": "SBS",
-     "title": "강동원X김고은, 백년 원수 가문에서 부부로…넷플릭스 '혼: 삼각의 시간' 제작 확정",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008842336&plink=RSSLINK&cooper=RSSREADER"
-    }
-   ]
-  },
-  {
-   "kw": "디너쇼",
+   "kw": "국내",
    "nsrc": 4,
    "srcs": [
     "뉴시스",
-    "세계일보",
     "연합뉴스",
+    "한국경제",
     "헤럴드경제"
    ],
    "n": 5,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "이재진, 젝키 3인 디너쇼 불참 선언…주최측 \"행사 구성 재정비\"",
-     "link": "https://www.yna.co.kr/view/AKR20261110125200005"
+     "title": "울산울주세계산악영화제 움프서밋 지원작 4편, 국내 영화제 진출",
+     "link": "https://www.yna.co.kr/view/AKR20261112138100057"
     },
     {
-     "src": "세계일보",
-     "title": "젝스키스 디너쇼 무산 후폭풍…이재진, 주최사 대표에 명예훼손 피소",
-     "link": "https://www.segye.com/newsView/20261111518603"
+     "src": "연합뉴스",
+     "title": "'러시아 귀화' 빅토르 안, '스피드퀸' 출연…7년만 국내 예능",
+     "link": "https://www.yna.co.kr/view/AKR20261110148200005"
+    },
+    {
+     "src": "한국경제",
+     "title": "'재혼황후' 이종석, 국내 최초 새 연기 \"제가 좀 새 상…사람으로 변할 때 나체로 등장\"",
+     "link": "https://www.hankyung.com/article/202611032589H"
     },
     {
      "src": "헤럴드경제",
-     "title": "“팬들이 호구냐” 논란된 ‘젝스키스 디너쇼’ 결국 취소…무슨 일?",
-     "link": "https://biz.heraldcorp.com/article/10933370"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "‘젝키’ 이재진, 연말 디너쇼 불참 선언 “대표가 개인 계좌로 현금 입금 받아”",
-     "link": "https://biz.heraldcorp.com/article/10932450"
+     "title": "리센느, 국내 걸그룹 최초 디즈니 영화 엔딩크레딧 장식…협업 MV 공개",
+     "link": "https://biz.heraldcorp.com/article/10934767"
     }
    ]
   },
   {
-   "kw": "연기",
+   "kw": "뜨거운",
    "nsrc": 4,
    "srcs": [
     "뉴시스",
-    "동아일보",
     "연합뉴스",
+    "조선일보",
     "한국경제"
    ],
    "n": 5,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "조여정 \"이창동 감독 앞에서 감독 연기, 제 숙제였죠\"",
-     "link": "https://www.yna.co.kr/view/AKR20261110100800005"
+     "title": "[가요소식] 에반, 14일 '뜨거운 안녕' OST '블랙 & 블루' 공개",
+     "link": "https://www.yna.co.kr/view/AKR20261112074900005"
     },
     {
      "src": "연합뉴스",
-     "title": "캣츠아이, 북미 투어 잇단 연기…\"메간 뇌진탕으로 회복 중\"",
-     "link": "https://www.yna.co.kr/view/AKR20261106086400005"
-    },
-    {
-     "src": "동아일보",
-     "title": "‘문무’ 김강우 “실존인물 연기, 부담되지만 즐거운 스트레스”",
-     "link": "https://sports.donga.com/ent/article/all/20261112/135014330/1"
+     "title": "10년 개그 무명 벗어나려는 강훈…'뜨거운 안녕' 1.7% 출발",
+     "link": "https://www.yna.co.kr/view/AKR20261112034000005"
     },
     {
      "src": "한국경제",
-     "title": "'재혼황후' 이종석, 국내 최초 새 연기 \"제가 좀 새 상…사람으로 변할 때 나체로 등장\"",
-     "link": "https://www.hankyung.com/article/202611032589H"
+     "title": "신곡 떼창까지…'미스터트롯3' 톱7, 대구서 팬들과 뜨거운 재회",
+     "link": "https://www.hankyung.com/article/202611095931H"
+    },
+    {
+     "src": "뉴시스",
+     "title": "10년 무명에도 꿈을 포기 못 하는 강훈…'뜨거운 안녕' 1.7% 출발",
+     "link": "https://www.newsis.com/view/NISX20261112_0003864991"
     }
    ]
   },
@@ -808,39 +775,6 @@
    ]
   },
   {
-   "kw": "드림",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "연합뉴스",
-    "한국경제"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "10주년 NCT 드림, 6집 '드림 애프터 드림'…\"희망 드리고 싶어\"",
-     "link": "https://www.yna.co.kr/view/AKR20261109071700005"
-    },
-    {
-     "src": "동아일보",
-     "title": "10년 내공 싣고 코첼라로…NCT 127·NCT 드림, 내년 나란히 첫 출격",
-     "link": "https://sports.donga.com/ent/article/all/20261112/135011539/1"
-    },
-    {
-     "src": "한국경제",
-     "title": "'컴백' NCT 드림, 이름값 제대로…음반·음원 차트 1위",
-     "link": "https://www.hankyung.com/article/202611106884H"
-    },
-    {
-     "src": "한국경제",
-     "title": "\"매일 너와 셀러브레이트\"…NCT 드림 그 자체, '부기 우기' [신곡in가요]",
-     "link": "https://www.hankyung.com/article/202611095903H"
-    }
-   ]
-  },
-  {
    "kw": "별세",
    "nsrc": 4,
    "srcs": [
@@ -870,39 +804,6 @@
      "src": "한국경제",
      "title": "[포토+] '국민 아버지' 최불암, '향년 87세를 일기로 별세'",
      "link": "https://www.hankyung.com/article/202610317173H"
-    }
-   ]
-  },
-  {
-   "kw": "결국",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "연합뉴스",
-    "헤럴드경제"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "심현보 \"결국 남는 건 사랑…일상 속 소소한 이야기로 담았죠\"",
-     "link": "https://www.yna.co.kr/view/AKR20261106140900005"
-    },
-    {
-     "src": "동아일보",
-     "title": "세븐틴 승관 눈물 쏟았다, 결국 제작진 사과 “미안” (대탈출)",
-     "link": "https://sports.donga.com/ent/article/all/20261112/135011784/1"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "“팬들이 호구냐” 논란된 ‘젝스키스 디너쇼’ 결국 취소…무슨 일?",
-     "link": "https://biz.heraldcorp.com/article/10933370"
-    },
-    {
-     "src": "뉴시스",
-     "title": "최태성 \"거액 스카우트 제안에 원형탈모까지…결국 계약서 찢어\"",
-     "link": "https://www.newsis.com/view/NISX20261112_0003864600"
     }
    ]
   },
@@ -940,39 +841,6 @@
    ]
   },
   {
-   "kw": "서인영",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "조선일보",
-    "한국경제"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "서인영, 남자친구 공개 언급…“가장 안정감 주는 사람” (유행꼰대)",
-     "link": "https://sports.donga.com/ent/article/all/20261112/135012128/1"
-    },
-    {
-     "src": "한국경제",
-     "title": "서인영, 12월 26일 재혼…신랑은 6세 연상 NP 최지훈 대표",
-     "link": "https://www.hankyung.com/article/202611057401H"
-    },
-    {
-     "src": "뉴시스",
-     "title": "12월 결혼 서인영 \"남자친구 안정감 줘…회피형 싫어\"",
-     "link": "https://www.newsis.com/view/NISX20261112_0003865391"
-    },
-    {
-     "src": "뉴시스",
-     "title": "월 2억원 쓰던 서인영 \"이제 백화점만 봐도 무서워\"",
-     "link": "https://www.newsis.com/view/NISX20261112_0003865464"
-    }
-   ]
-  },
-  {
    "kw": "출신",
    "nsrc": 4,
    "srcs": [
@@ -1002,6 +870,39 @@
      "src": "SBS",
      "title": "'틈만나면' 유연석, \"배우 서강준, 블랙핑크 지수도 산본 출신\"···'틈 친구' 추측",
      "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008839988&plink=RSSLINK&cooper=RSSREADER"
+    }
+   ]
+  },
+  {
+   "kw": "서인영",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "세계일보",
+    "조선일보",
+    "한국경제"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "한국경제",
+     "title": "서인영, 12월 26일 재혼…신랑은 6세 연상 NP 최지훈 대표",
+     "link": "https://www.hankyung.com/article/202611057401H"
+    },
+    {
+     "src": "세계일보",
+     "title": "100억 탕진했던 서인영…“백화점만 봐도 무섭다”",
+     "link": "https://www.segye.com/newsView/20261112513942"
+    },
+    {
+     "src": "뉴시스",
+     "title": "12월 결혼 서인영 \"남자친구 안정감 줘…회피형 싫어\"",
+     "link": "https://www.newsis.com/view/NISX20261112_0003865391"
+    },
+    {
+     "src": "뉴시스",
+     "title": "월 2억원 쓰던 서인영 \"이제 백화점만 봐도 무서워\"",
+     "link": "https://www.newsis.com/view/NISX20261112_0003865464"
     }
    ]
   },
@@ -1039,68 +940,134 @@
    ]
   },
   {
-   "kw": "존박",
+   "kw": "인기",
    "nsrc": 4,
    "srcs": [
-    "SBS",
     "뉴시스",
+    "동아일보",
     "연합뉴스",
-    "한겨레"
+    "조선일보"
    ],
    "n": 4,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "존박 맥도날드 광고 음원 해외서 무단 유통…\"삭제 협의 중\"",
-     "link": "https://www.yna.co.kr/view/AKR20261111090700005"
+     "title": "에이티즈, '배드' 인기 잇는다…\"가장 높은 곳 그 이상까지\"",
+     "link": "https://www.yna.co.kr/view/AKR20261112112300005"
     },
     {
-     "src": "한겨레",
-     "title": "존박·곽진언 ‘맥도날드 랩’ 해외서 무단 유통…소속사 “삭제·차단”",
-     "link": "https://www.hani.co.kr/arti/culture/music/1286784.html"
-    },
-    {
-     "src": "SBS",
-     "title": "존박 '맥도날드 주문 랩', 해외서 무단 도용…소속사 \"음원 삭제 진행 중\"",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008840583&plink=RSSLINK&cooper=RSSREADER"
+     "src": "동아일보",
+     "title": "에이티즈 산 “‘BAD’ 성공 후 꿈같은 나날, 인기 걸맞은 사람 될 것”",
+     "link": "https://sports.donga.com/ent/article/all/20261112/135014176/1"
     },
     {
      "src": "뉴시스",
      "title": "존박 \"맥도날드 랩 인기 무서워…너무 고평가 됐다\"",
      "link": "https://www.newsis.com/view/NISX20261112_0003864868"
+    },
+    {
+     "src": "조선일보",
+     "title": "[포토] 에이티즈 산, 인기 절정",
+     "link": "https://www.chosun.com/entertainments/entertain_photo/2026/11/12/GM3DOZJUGI4TQZLCGI3DKMJZGA/"
     }
    ]
   },
   {
-   "kw": "맥도날드",
+   "kw": "년째",
    "nsrc": 4,
    "srcs": [
-    "SBS",
     "뉴시스",
+    "동아일보",
     "연합뉴스",
-    "한겨레"
+    "조선일보"
    ],
    "n": 4,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "존박 맥도날드 광고 음원 해외서 무단 유통…\"삭제 협의 중\"",
-     "link": "https://www.yna.co.kr/view/AKR20261111090700005"
+     "title": "[게시판] 효성, 10년째 배리어프리영화 제작 지원",
+     "link": "https://www.yna.co.kr/view/AKR20261112063200003"
     },
     {
-     "src": "한겨레",
-     "title": "존박·곽진언 ‘맥도날드 랩’ 해외서 무단 유통…소속사 “삭제·차단”",
-     "link": "https://www.hani.co.kr/arti/culture/music/1286784.html"
-    },
-    {
-     "src": "SBS",
-     "title": "존박 '맥도날드 주문 랩', 해외서 무단 도용…소속사 \"음원 삭제 진행 중\"",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008840583&plink=RSSLINK&cooper=RSSREADER"
+     "src": "동아일보",
+     "title": "크러쉬♥조이, 6년째 열애 이상無…깜짝 듀엣으로 애정 과시",
+     "link": "https://sports.donga.com/ent/article/all/20261112/135014027/1"
     },
     {
      "src": "뉴시스",
-     "title": "존박 \"맥도날드 랩 인기 무서워…너무 고평가 됐다\"",
-     "link": "https://www.newsis.com/view/NISX20261112_0003864868"
+     "title": "데뷔 23년째 첫 우승 강민호 '유퀴즈'서 유재석 만난다",
+     "link": "https://www.newsis.com/view/NISX20261112_0003865357"
+    },
+    {
+     "src": "조선일보",
+     "title": "강수정, 20년째 '머리 스타일 바꾸라'는 오지랖에 \"너나 바꿔”...\"이마 좁고 못생겨\"",
+     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/12/GRTDSZBWMJTDQODGMQ2TGZTDMQ/"
+    }
+   ]
+  },
+  {
+   "kw": "삼각의",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "동아일보",
+    "연합뉴스"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "강동원·김고은의 로맨스 액션 사극…'혼: 삼각의 시간' 제작",
+     "link": "https://www.yna.co.kr/view/AKR20261112044700005"
+    },
+    {
+     "src": "동아일보",
+     "title": "[공식] 강동원·김고은, 로미오와 줄리엣? ‘혼: 삼각의 시간’ 출연확정",
+     "link": "https://sports.donga.com/ent/article/all/20261112/135012906/1"
+    },
+    {
+     "src": "SBS",
+     "title": "강동원X김고은, 백년 원수 가문에서 부부로…넷플릭스 '혼: 삼각의 시간' 제작 확정",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008842336&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "뉴시스",
+     "title": "강동원·김고은, 원수 집안 부부…'혼: 삼각의 시간'",
+     "link": "https://www.newsis.com/view/NISX20261112_0003865669"
+    }
+   ]
+  },
+  {
+   "kw": "강동원",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "동아일보",
+    "연합뉴스"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "강동원·김고은의 로맨스 액션 사극…'혼: 삼각의 시간' 제작",
+     "link": "https://www.yna.co.kr/view/AKR20261112044700005"
+    },
+    {
+     "src": "동아일보",
+     "title": "[공식] 강동원·김고은, 로미오와 줄리엣? ‘혼: 삼각의 시간’ 출연확정",
+     "link": "https://sports.donga.com/ent/article/all/20261112/135012906/1"
+    },
+    {
+     "src": "SBS",
+     "title": "강동원X김고은, 백년 원수 가문에서 부부로…넷플릭스 '혼: 삼각의 시간' 제작 확정",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008842336&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "뉴시스",
+     "title": "강동원·김고은, 원수 집안 부부…'혼: 삼각의 시간'",
+     "link": "https://www.newsis.com/view/NISX20261112_0003865669"
     }
    ]
   },
@@ -1138,167 +1105,68 @@
    ]
   },
   {
-   "kw": "음악",
+   "kw": "맥도날드",
    "nsrc": 4,
    "srcs": [
-    "동아일보",
+    "SBS",
+    "뉴시스",
     "연합뉴스",
-    "한겨레",
-    "한국경제"
+    "한겨레"
    ],
    "n": 4,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "캣츠아이, 내년 헝가리 대형 음악 축제 '시게트' 헤드라이너",
-     "link": "https://www.yna.co.kr/view/AKR20261111053200005"
-    },
-    {
-     "src": "동아일보",
-     "title": "작두 탄 에이티즈, 올해 세 번째 앨범 “본질은 무대와 음악” (종합)[DA현장]",
-     "link": "https://sports.donga.com/ent/article/all/20261112/135014489/1"
+     "title": "존박 맥도날드 광고 음원 해외서 무단 유통…\"삭제 협의 중\"",
+     "link": "https://www.yna.co.kr/view/AKR20261111090700005"
     },
     {
      "src": "한겨레",
-     "title": "“의사 딸이 음악 PD 지망생과…” 반대 클수록 ‘로미오와 줄리엣 효과’ [.txt]",
-     "link": "https://www.hani.co.kr/arti/culture/culture_general/1286250.html"
+     "title": "존박·곽진언 ‘맥도날드 랩’ 해외서 무단 유통…소속사 “삭제·차단”",
+     "link": "https://www.hani.co.kr/arti/culture/music/1286784.html"
     },
     {
-     "src": "한국경제",
-     "title": "KBS 단막극 음악 입혀 명맥 잇는다…'사운드:트랙'",
-     "link": "https://www.hankyung.com/article/202610278278H"
+     "src": "SBS",
+     "title": "존박 '맥도날드 주문 랩', 해외서 무단 도용…소속사 \"음원 삭제 진행 중\"",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008840583&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "뉴시스",
+     "title": "존박 \"맥도날드 랩 인기 무서워…너무 고평가 됐다\"",
+     "link": "https://www.newsis.com/view/NISX20261112_0003864868"
     }
    ]
   },
   {
-   "kw": "아버지",
+   "kw": "존박",
    "nsrc": 4,
    "srcs": [
+    "SBS",
+    "뉴시스",
     "연합뉴스",
-    "조선일보",
-    "한겨레",
-    "한국경제"
+    "한겨레"
    ],
    "n": 4,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "군복 입고 주먹 불끈 '국민 아버지'…故최불암 9년전 사진 공개",
-     "link": "https://www.yna.co.kr/view/AKR20261111021200071"
+     "title": "존박 맥도날드 광고 음원 해외서 무단 유통…\"삭제 협의 중\"",
+     "link": "https://www.yna.co.kr/view/AKR20261111090700005"
     },
     {
      "src": "한겨레",
-     "title": "배우 문성근 “아버지 문익환, 영웅 아닌 한 인간으로 무대에 살리고파”",
-     "link": "https://www.hani.co.kr/arti/culture/music/1286920.html"
+     "title": "존박·곽진언 ‘맥도날드 랩’ 해외서 무단 유통…소속사 “삭제·차단”",
+     "link": "https://www.hani.co.kr/arti/culture/music/1286784.html"
     },
     {
-     "src": "한국경제",
-     "title": "[포토+] '국민 아버지' 최불암, '향년 87세를 일기로 별세'",
-     "link": "https://www.hankyung.com/article/202610317173H"
-    },
-    {
-     "src": "조선일보",
-     "title": "7살 연상 형에게 “아버지”..‘문무’ 이현욱, “다독여주고 끌어주셔서 호흡 퍼펙트” [Oh!쎈 현장]",
-     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/12/MIYGEYZQGQZWINJWHEZWCZTGG4/"
-    }
-   ]
-  },
-  {
-   "kw": "국내",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "연합뉴스",
-    "한국경제",
-    "헤럴드경제"
-   ],
-   "n": 4,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "'러시아 귀화' 빅토르 안, '스피드퀸' 출연…7년만 국내 예능",
-     "link": "https://www.yna.co.kr/view/AKR20261110148200005"
-    },
-    {
-     "src": "한국경제",
-     "title": "'재혼황후' 이종석, 국내 최초 새 연기 \"제가 좀 새 상…사람으로 변할 때 나체로 등장\"",
-     "link": "https://www.hankyung.com/article/202611032589H"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "리센느, 국내 걸그룹 최초 디즈니 영화 엔딩크레딧 장식…협업 MV 공개",
-     "link": "https://biz.heraldcorp.com/article/10934767"
+     "src": "SBS",
+     "title": "존박 '맥도날드 주문 랩', 해외서 무단 도용…소속사 \"음원 삭제 진행 중\"",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008840583&plink=RSSLINK&cooper=RSSREADER"
     },
     {
      "src": "뉴시스",
-     "title": "클라라, 10년 만에 국내 예능 복귀…'솔로라서2' MC 합류",
-     "link": "https://www.newsis.com/view/NISX20261112_0003865135"
-    }
-   ]
-  },
-  {
-   "kw": "이재진",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "세계일보",
-    "연합뉴스",
-    "헤럴드경제"
-   ],
-   "n": 4,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "이재진, 젝키 3인 디너쇼 불참 선언…주최측 \"행사 구성 재정비\"",
-     "link": "https://www.yna.co.kr/view/AKR20261110125200005"
-    },
-    {
-     "src": "세계일보",
-     "title": "젝스키스 디너쇼 무산 후폭풍…이재진, 주최사 대표에 명예훼손 피소",
-     "link": "https://www.segye.com/newsView/20261111518603"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "‘젝키’ 이재진, 연말 디너쇼 불참 선언 “대표가 개인 계좌로 현금 입금 받아”",
-     "link": "https://biz.heraldcorp.com/article/10932450"
-    },
-    {
-     "src": "뉴시스",
-     "title": "젝스키스 디너쇼 무산 후폭풍…이재진, 주최사 대표에 명예훼손 피소",
-     "link": "https://www.newsis.com/view/NISX20261111_0003864410"
-    }
-   ]
-  },
-  {
-   "kw": "불참",
-   "nsrc": 4,
-   "srcs": [
-    "동아일보",
-    "연합뉴스",
-    "한국경제",
-    "헤럴드경제"
-   ],
-   "n": 4,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "이재진, 젝키 3인 디너쇼 불참 선언…주최측 \"행사 구성 재정비\"",
-     "link": "https://www.yna.co.kr/view/AKR20261110125200005"
-    },
-    {
-     "src": "동아일보",
-     "title": "박성웅 ‘문무’ 제작발표회 불참 “해외촬영 때문에 부득이하게”",
-     "link": "https://sports.donga.com/ent/article/all/20261112/135013677/1"
-    },
-    {
-     "src": "한국경제",
-     "title": "엑스러브 현, 부상으로 컴백 쇼케이스 불참…\"하루빨리 회복하겠다\"",
-     "link": "https://www.hankyung.com/article/202610280617H"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "‘젝키’ 이재진, 연말 디너쇼 불참 선언 “대표가 개인 계좌로 현금 입금 받아”",
-     "link": "https://biz.heraldcorp.com/article/10932450"
+     "title": "존박 \"맥도날드 랩 인기 무서워…너무 고평가 됐다\"",
+     "link": "https://www.newsis.com/view/NISX20261112_0003864868"
     }
    ]
   },
@@ -1332,6 +1200,138 @@
      "src": "SBS",
      "title": "'대세 걸그룹' 리센느, 데뷔 첫 단독 콘서트 개최…\"꿈만 같다\"",
      "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008840687&plink=RSSLINK&cooper=RSSREADER"
+    }
+   ]
+  },
+  {
+   "kw": "합류",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "연합뉴스",
+    "헤럴드경제"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "[방송소식] '솔로라서' 시즌2 12월 첫선…조윤희 MC 합류",
+     "link": "https://www.yna.co.kr/view/AKR20261109036500005"
+    },
+    {
+     "src": "동아일보",
+     "title": "[공식] 곽윤기, 여배우들 코치 됐다… ‘무쇠소녀단3’ 합류",
+     "link": "https://sports.donga.com/ent/article/all/20261112/135012745/1"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "‘원조 몸짱’ 클라라, 10년만에 한국 예능 복귀…‘솔로라서2’ 합류",
+     "link": "https://biz.heraldcorp.com/article/10934667"
+    },
+    {
+     "src": "뉴시스",
+     "title": "클라라, 10년 만에 국내 예능 복귀…'솔로라서2' MC 합류",
+     "link": "https://www.newsis.com/view/NISX20261112_0003865135"
+    }
+   ]
+  },
+  {
+   "kw": "발매",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "연합뉴스",
+    "한국경제"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "신세계百 강남점, 에이티즈 앨범 발매 기념 팝업 매장 운영",
+     "link": "https://www.yna.co.kr/view/AKR20261107020700030"
+    },
+    {
+     "src": "한국경제",
+     "title": "가을엔 규현…내달 11일 EP '컨티뉴' 발매",
+     "link": "https://www.hankyung.com/article/202610278838H"
+    },
+    {
+     "src": "SBS",
+     "title": "도경수, 오늘(11일) 신곡 '달링' 발매…팬들 향한 진심 담은 발라드",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008840634&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "뉴시스",
+     "title": "산울림 50주년 프로젝트, 이제 10곡만 남았다…'Vol. 4' 13일 발매",
+     "link": "https://www.newsis.com/view/NISX20261112_0003865343"
+    }
+   ]
+  },
+  {
+   "kw": "열애",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "동아일보",
+    "한국경제"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "크러쉬♥조이, 6년째 열애 이상無…깜짝 듀엣으로 애정 과시",
+     "link": "https://sports.donga.com/ent/article/all/20261112/135014027/1"
+    },
+    {
+     "src": "한국경제",
+     "title": "나나, 탑과 공개 열애 후…악플 쏟아지자 \"내가 무슨 잘못\" 소신 발언",
+     "link": "https://www.hankyung.com/article/202611069702H"
+    },
+    {
+     "src": "SBS",
+     "title": "'6년 열애' 크러쉬♥조이, '삐그덕' 듀엣 라이브 공개…반려견 안고 달달 케미",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008842316&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "뉴시스",
+     "title": "나나 열애 후폭풍 딛고…탑 20년 팬사이트 '최승현닷컴' 운영 재개",
+     "link": "https://www.newsis.com/view/NISX20261111_0003864506"
+    }
+   ]
+  },
+  {
+   "kw": "보컬",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "동아일보",
+    "세계일보"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "‘괴물 신인’ 튜이드, 장르 넘나드는 보컬 매력 과시",
+     "link": "https://sports.donga.com/ent/article/all/20261112/135012537/1"
+    },
+    {
+     "src": "세계일보",
+     "title": "[포토] 에이티즈 종호 '아이돌 최강 보컬'",
+     "link": "https://www.segye.com/newsView/20261112511756"
+    },
+    {
+     "src": "SBS",
+     "title": "'흑백요리사' 세계관 음악으로 확장…넷플릭스, '흑백 가수: 보컬 계급 전쟁' 내년 공개",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008840614&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "뉴시스",
+     "title": "이디오테잎, 9년 만에 정규 4집 '서브휴먼'…첫 보컬 피처링 도입",
+     "link": "https://www.newsis.com/view/NISX20261112_0003864589"
     }
    ]
   }
