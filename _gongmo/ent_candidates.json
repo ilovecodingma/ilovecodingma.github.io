@@ -1,5 +1,5 @@
 {
- "at": "2026-11-12 18:30",
+ "at": "2026-11-12 19:30",
  "nitems": 525,
  "cands": [
   {
@@ -76,16 +76,17 @@
   },
   {
    "kw": "리센느",
-   "nsrc": 6,
+   "nsrc": 7,
    "srcs": [
     "SBS",
     "뉴시스",
     "연합뉴스",
+    "조선일보",
     "한겨레",
     "한국경제",
     "헤럴드경제"
    ],
-   "n": 12,
+   "n": 13,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -349,6 +350,40 @@
    ]
   },
   {
+   "kw": "변신",
+   "nsrc": 5,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "동아일보",
+    "조선일보",
+    "한겨레"
+   ],
+   "n": 6,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "“답답하면 내가 뛰어볼까”…‘신인감독 김연경2’·‘솔로지옥’ 게임으로 변신",
+     "link": "https://sports.donga.com/ent/article/all/20261112/135016125/1"
+    },
+    {
+     "src": "한겨레",
+     "title": "‘사업가 변신’ 그룹 노이즈 출신 홍종구…“그 시절 AI 있었다면 당연히 썼죠”",
+     "link": "https://www.hani.co.kr/arti/culture/music/1286278.html"
+    },
+    {
+     "src": "SBS",
+     "title": "로버트 다우니 주니어, 영웅에서 빌런으로…'어벤져스: 둠스데이'의 파격 변신",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008841010&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "뉴시스",
+     "title": "송지효 '명예 해녀' 변신…'10㎞ 달리기' 관리 비결 눈길",
+     "link": "https://www.newsis.com/view/NISX20261110_0003862473"
+    }
+   ]
+  },
+  {
    "kw": "삭제",
    "nsrc": 5,
    "srcs": [
@@ -485,6 +520,39 @@
    ]
   },
   {
+   "kw": "문무",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "연합뉴스",
+    "조선일보"
+   ],
+   "n": 16,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "300억 대하사극 KBS '문무'…\"삼국통일 과정, 갈등의 시대 시사점\"",
+     "link": "https://www.yna.co.kr/view/AKR20261112155400005"
+    },
+    {
+     "src": "동아일보",
+     "title": "KBS 사장 “‘문무’, KBS 이름에 부끄럽지 않은 작품”",
+     "link": "https://sports.donga.com/ent/article/all/20261112/135014764/2"
+    },
+    {
+     "src": "동아일보",
+     "title": "도파민 좇는 숏폼 시대, 28부작 대하사극 ‘문무’가 던진 승부수",
+     "link": "https://sports.donga.com/ent/article/all/20261112/135014693/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "“AI 기술 多·역사 고증 최서”, 이현욱·김강우·장혁 ‘문무’ 어떨까  (종합)[DA현장]",
+     "link": "https://sports.donga.com/ent/article/all/20261112/135014684/1"
+    }
+   ]
+  },
+  {
    "kw": "김윤석",
    "nsrc": 4,
    "srcs": [
@@ -526,7 +594,7 @@
     "연합뉴스",
     "한겨레"
    ],
-   "n": 9,
+   "n": 8,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -584,39 +652,6 @@
    ]
   },
   {
-   "kw": "사랑",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 8,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "이창동이 그린 해고노동자 가족…'심장소리'와 '가능한 사랑'",
-     "link": "https://www.yna.co.kr/view/AKR20261106188700005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "심현보 \"결국 남는 건 사랑…일상 속 소소한 이야기로 담았죠\"",
-     "link": "https://www.yna.co.kr/view/AKR20261106140900005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "'가능한 사랑' 넷플 공개…이창동 \"거대 자본 빌리지만 독립성 추구\"",
-     "link": "https://www.yna.co.kr/view/AKR20261106118700005"
-    },
-    {
-     "src": "SBS",
-     "title": "'가능한 사랑' 조여정 \"전도연·김혜수, 후배들 천장 높여주는 선배\"",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008842866&plink=RSSLINK&cooper=RSSREADER"
-    }
-   ]
-  },
-  {
    "kw": "번째",
    "nsrc": 4,
    "srcs": [
@@ -646,6 +681,105 @@
      "src": "동아일보",
      "title": "올해만 세 번째 컴백…에이티즈 “데뷔 8주년, 여전히 위를 바라본다” (종합)",
      "link": "https://sports.donga.com/ent/article/all/20261112/135016095/1"
+    }
+   ]
+  },
+  {
+   "kw": "최고",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "연합뉴스",
+    "조선일보"
+   ],
+   "n": 7,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "평생을 약속한 추영우·김소현…'연애박사' 3.5% 자체 최고 종영",
+     "link": "https://www.yna.co.kr/view/AKR20261111048400005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "제니 '드라큘라', 빌보드 싱글 3위…K팝 여가수 최고 타이 기록",
+     "link": "https://www.yna.co.kr/view/AKR20261111044700005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "위켄드, 투어 매출 13억 달러 돌파…남성 솔로 가수 최고",
+     "link": "https://www.yna.co.kr/view/AKR20261107025100005"
+    },
+    {
+     "src": "SBS",
+     "title": "'닥터X' 최고 20.2% 돌파, 5주 연속 1위…'가나디' 원작자 화답까지 '신드롬 지속'",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008840506&plink=RSSLINK&cooper=RSSREADER"
+    }
+   ]
+  },
+  {
+   "kw": "혐의",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "연합뉴스",
+    "조선일보"
+   ],
+   "n": 7,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "나나 역고소한 강도, 무고 혐의 부인…\"피해신고 허위 아냐\"",
+     "link": "https://www.yna.co.kr/view/AKR20261110081000004"
+    },
+    {
+     "src": "동아일보",
+     "title": "[공식] 김승우 측, 2200만원 절도 혐의 반박…“술자리 장난, 즉시 반환 했다”",
+     "link": "https://sports.donga.com/ent/article/all/20261112/135017128/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "‘건강왕’ 측 “김승우 절도 혐의 피소, 보도 통해 알아…파악 중”",
+     "link": "https://sports.donga.com/ent/article/all/20261112/135016881/1"
+    },
+    {
+     "src": "뉴시스",
+     "title": "김승우 절도 혐의 피소…\"술자리 장난, 이미 변제했다\"",
+     "link": "https://www.newsis.com/view/NISX20261112_0003865833"
+    }
+   ]
+  },
+  {
+   "kw": "사랑",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "연합뉴스",
+    "조선일보"
+   ],
+   "n": 7,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "이창동이 그린 해고노동자 가족…'심장소리'와 '가능한 사랑'",
+     "link": "https://www.yna.co.kr/view/AKR20261106188700005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "심현보 \"결국 남는 건 사랑…일상 속 소소한 이야기로 담았죠\"",
+     "link": "https://www.yna.co.kr/view/AKR20261106140900005"
+    },
+    {
+     "src": "SBS",
+     "title": "'가능한 사랑' 조여정 \"전도연·김혜수, 후배들 천장 높여주는 선배\"",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008842866&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "SBS",
+     "title": "'가능한 사랑' 조여정 \"美 아카데미 회원이지만 회비 미납해 투표권 없을 수도\"",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008840384&plink=RSSLINK&cooper=RSSREADER"
     }
    ]
   },
@@ -782,39 +916,6 @@
    ]
   },
   {
-   "kw": "억원",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "연합뉴스",
-    "조선일보",
-    "한국경제"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "YG, 3분기 영업익 135억원…투어 비용 등 영향 56.8%↓(종합)",
-     "link": "https://www.yna.co.kr/view/AKR20261109105600005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "CGV 3분기 영업익 736억원 '역대 최대'…'오디세이' 흥행에 개선",
-     "link": "https://www.yna.co.kr/view/AKR20261106164500005"
-    },
-    {
-     "src": "한국경제",
-     "title": "김원효 \"주식 투자로 2억원 날려…심진화와 이혼 위기\"",
-     "link": "https://www.hankyung.com/article/202611032016H"
-    },
-    {
-     "src": "뉴시스",
-     "title": "월 2억원 쓰던 서인영 \"이제 백화점만 봐도 무서워\"",
-     "link": "https://www.newsis.com/view/NISX20261112_0003865464"
-    }
-   ]
-  },
-  {
    "kw": "개월",
    "nsrc": 4,
    "srcs": [
@@ -844,39 +945,6 @@
      "src": "뉴시스",
      "title": "곽튜브 \"학폭 피해 자퇴…가해자 찾아올까 4개월 간 못 나가\"",
      "link": "https://www.newsis.com/view/NISX20261112_0003865065"
-    }
-   ]
-  },
-  {
-   "kw": "서인영",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "세계일보",
-    "조선일보",
-    "한국경제"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "한국경제",
-     "title": "서인영, 12월 26일 재혼…신랑은 6세 연상 NP 최지훈 대표",
-     "link": "https://www.hankyung.com/article/202611057401H"
-    },
-    {
-     "src": "세계일보",
-     "title": "100억 탕진했던 서인영…“백화점만 봐도 무섭다”",
-     "link": "https://www.segye.com/newsView/20261112513942"
-    },
-    {
-     "src": "뉴시스",
-     "title": "12월 결혼 서인영 \"남자친구 안정감 줘…회피형 싫어\"",
-     "link": "https://www.newsis.com/view/NISX20261112_0003865391"
-    },
-    {
-     "src": "뉴시스",
-     "title": "월 2억원 쓰던 서인영 \"이제 백화점만 봐도 무서워\"",
-     "link": "https://www.newsis.com/view/NISX20261112_0003865464"
     }
    ]
   },
@@ -914,43 +982,10 @@
    ]
   },
   {
-   "kw": "이창동",
+   "kw": "음악",
    "nsrc": 4,
    "srcs": [
-    "SBS",
-    "뉴시스",
-    "연합뉴스",
-    "한겨레"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "조여정 \"이창동 감독 앞에서 감독 연기, 제 숙제였죠\"",
-     "link": "https://www.yna.co.kr/view/AKR20261110100800005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "'가능한 사랑' 넷플 공개…이창동 \"거대 자본 빌리지만 독립성 추구\"",
-     "link": "https://www.yna.co.kr/view/AKR20261106118700005"
-    },
-    {
-     "src": "한겨레",
-     "title": "“밀양·박하사탕 때 힘들었지만…이창동 감독 영화가 그리웠죠”",
-     "link": "https://www.hani.co.kr/arti/culture/culture_general/1286636.html"
-    },
-    {
-     "src": "SBS",
-     "title": "봉준호·이창동·황동혁 '픽' 받은 조여정 \"왜일까요? 저도 궁금해요\"",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008839840&plink=RSSLINK&cooper=RSSREADER"
-    }
-   ]
-  },
-  {
-   "kw": "별세",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
+    "동아일보",
     "연합뉴스",
     "한겨레",
     "한국경제"
@@ -959,46 +994,41 @@
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "영화 '김의 전쟁'·'테러리스트' 김영빈 감독 별세",
-     "link": "https://www.yna.co.kr/view/AKR20261108047000005"
+     "title": "캣츠아이, 내년 헝가리 대형 음악 축제 '시게트' 헤드라이너",
+     "link": "https://www.yna.co.kr/view/AKR20261111053200005"
+    },
+    {
+     "src": "동아일보",
+     "title": "작두 탄 에이티즈, 올해 세 번째 앨범 “본질은 무대와 음악” (종합)[DA현장]",
+     "link": "https://sports.donga.com/ent/article/all/20261112/135014489/1"
     },
     {
      "src": "한겨레",
-     "title": "‘천마총 발굴’ 김동현 전 국립문화재연구소장 별세…향년 89",
-     "link": "https://www.hani.co.kr/arti/culture/culture_general/1286647.html"
-    },
-    {
-     "src": "한겨레",
-     "title": "영화 ‘김의 전쟁’, ‘테러리스트’ 김영빈 감독 별세",
-     "link": "https://www.hani.co.kr/arti/culture/culture_general/1286350.html"
+     "title": "젊은 작곡가 이하느리, 제네바 국제 음악 콩쿠르 우승",
+     "link": "https://www.hani.co.kr/arti/culture/culture_general/1287061.html"
     },
     {
      "src": "한국경제",
-     "title": "[포토+] '국민 아버지' 최불암, '향년 87세를 일기로 별세'",
-     "link": "https://www.hankyung.com/article/202610317173H"
+     "title": "귀로 듣고 머리로 그려지는 음악…루시가 펼쳐낸 마법 '다시!' [신곡in가요]",
+     "link": "https://www.hankyung.com/article/202610076910H"
     }
    ]
   },
   {
-   "kw": "변신",
+   "kw": "파격",
    "nsrc": 4,
    "srcs": [
     "SBS",
     "뉴시스",
     "동아일보",
-    "한겨레"
+    "조선일보"
    ],
    "n": 5,
    "headlines": [
     {
      "src": "동아일보",
-     "title": "“답답하면 내가 뛰어볼까”…‘신인감독 김연경2’·‘솔로지옥’ 게임으로 변신",
-     "link": "https://sports.donga.com/ent/article/all/20261112/135016125/1"
-    },
-    {
-     "src": "한겨레",
-     "title": "‘사업가 변신’ 그룹 노이즈 출신 홍종구…“그 시절 AI 있었다면 당연히 썼죠”",
-     "link": "https://www.hani.co.kr/arti/culture/music/1286278.html"
+     "title": "주지훈, ‘재혼황후’ 파격 의상에 당황…“이렇게까지 시스루여도 되나”",
+     "link": "https://sports.donga.com/ent/article/all/20261112/135017089/1"
     },
     {
      "src": "SBS",
@@ -1007,41 +1037,46 @@
     },
     {
      "src": "뉴시스",
-     "title": "송지효 '명예 해녀' 변신…'10㎞ 달리기' 관리 비결 눈길",
-     "link": "https://www.newsis.com/view/NISX20261110_0003862473"
+     "title": "'완벽한 자태' 前 WWE 스타, 신간 출간 앞두고 드레스로 '파격' 근황",
+     "link": "https://www.newsis.com/view/NISX20261112_0003864766"
+    },
+    {
+     "src": "뉴시스",
+     "title": "나연, 자주색 머리+극세사 몸매 파격 변신…비결은 '폼롤러'",
+     "link": "https://www.newsis.com/view/NISX20261111_0003863848"
     }
    ]
   },
   {
-   "kw": "출신",
+   "kw": "서인영",
    "nsrc": 4,
    "srcs": [
-    "SBS",
     "뉴시스",
-    "한겨레",
+    "세계일보",
+    "조선일보",
     "한국경제"
    ],
    "n": 5,
    "headlines": [
     {
-     "src": "한겨레",
-     "title": "‘사업가 변신’ 그룹 노이즈 출신 홍종구…“그 시절 AI 있었다면 당연히 썼죠”",
-     "link": "https://www.hani.co.kr/arti/culture/music/1286278.html"
-    },
-    {
      "src": "한국경제",
-     "title": "아이돌 '포미닛' 출신 전지윤, 11월 신부된다",
-     "link": "https://www.hankyung.com/article/2026110461907"
+     "title": "서인영, 12월 26일 재혼…신랑은 6세 연상 NP 최지훈 대표",
+     "link": "https://www.hankyung.com/article/202611057401H"
     },
     {
-     "src": "한국경제",
-     "title": "\"통장 압류, 수중엔 1000원\"…JBJ 출신 켄타, 4억 빚 고백",
-     "link": "https://www.hankyung.com/article/202610280689H"
+     "src": "세계일보",
+     "title": "100억 탕진했던 서인영…“백화점만 봐도 무섭다”",
+     "link": "https://www.segye.com/newsView/20261112513942"
     },
     {
-     "src": "SBS",
-     "title": "'틈만나면' 유연석, \"배우 서강준, 블랙핑크 지수도 산본 출신\"···'틈 친구' 추측",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008839988&plink=RSSLINK&cooper=RSSREADER"
+     "src": "뉴시스",
+     "title": "12월 결혼 서인영 \"남자친구 안정감 줘…회피형 싫어\"",
+     "link": "https://www.newsis.com/view/NISX20261112_0003865391"
+    },
+    {
+     "src": "뉴시스",
+     "title": "월 2억원 쓰던 서인영 \"이제 백화점만 봐도 무서워\"",
+     "link": "https://www.newsis.com/view/NISX20261112_0003865464"
     }
    ]
   },
@@ -1211,35 +1246,35 @@
    ]
   },
   {
-   "kw": "음악",
+   "kw": "이창동",
    "nsrc": 4,
    "srcs": [
-    "동아일보",
+    "SBS",
+    "뉴시스",
     "연합뉴스",
-    "한겨레",
-    "한국경제"
+    "한겨레"
    ],
    "n": 4,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "캣츠아이, 내년 헝가리 대형 음악 축제 '시게트' 헤드라이너",
-     "link": "https://www.yna.co.kr/view/AKR20261111053200005"
-    },
-    {
-     "src": "동아일보",
-     "title": "작두 탄 에이티즈, 올해 세 번째 앨범 “본질은 무대와 음악” (종합)[DA현장]",
-     "link": "https://sports.donga.com/ent/article/all/20261112/135014489/1"
+     "title": "조여정 \"이창동 감독 앞에서 감독 연기, 제 숙제였죠\"",
+     "link": "https://www.yna.co.kr/view/AKR20261110100800005"
     },
     {
      "src": "한겨레",
-     "title": "젊은 작곡가 이하느리, 제네바 국제 음악 콩쿠르 우승",
-     "link": "https://www.hani.co.kr/arti/culture/culture_general/1287061.html"
+     "title": "“밀양·박하사탕 때 힘들었지만…이창동 감독 영화가 그리웠죠”",
+     "link": "https://www.hani.co.kr/arti/culture/culture_general/1286636.html"
     },
     {
-     "src": "한국경제",
-     "title": "KBS 단막극 음악 입혀 명맥 잇는다…'사운드:트랙'",
-     "link": "https://www.hankyung.com/article/202610278278H"
+     "src": "SBS",
+     "title": "봉준호·이창동·황동혁 '픽' 받은 조여정 \"왜일까요? 저도 궁금해요\"",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008839840&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "뉴시스",
+     "title": "[인터뷰]설경구 \"이창동 영화는 제 경력의 자존감입니다\"",
+     "link": "https://www.newsis.com/view/NISX20261112_0003864598"
     }
    ]
   },
@@ -1306,39 +1341,6 @@
      "src": "뉴시스",
      "title": "최태성 \"거액 스카우트 제안에 원형탈모까지…결국 계약서 찢어\"",
      "link": "https://www.newsis.com/view/NISX20261112_0003864600"
-    }
-   ]
-  },
-  {
-   "kw": "보이그룹",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "연합뉴스",
-    "한국경제"
-   ],
-   "n": 4,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "JYP, 내년 새 보이그룹 오브더블루…킥플립 이후 2년만",
-     "link": "https://www.yna.co.kr/view/AKR20261109041400005"
-    },
-    {
-     "src": "동아일보",
-     "title": "‘JYP 새 보이그룹’ 오브더블루, 내년 1월 11일 정식 데뷔",
-     "link": "https://sports.donga.com/ent/article/all/20261112/135015390/1"
-    },
-    {
-     "src": "한국경제",
-     "title": "JYP 새 보이그룹 나온다…엔믹스 남동생 '오브더블루' 내년 론칭",
-     "link": "https://www.hankyung.com/article/202611094129H"
-    },
-    {
-     "src": "뉴시스",
-     "title": "코르티스, 스포티파이 15억 스밍↑…5년 내 데뷔 보이그룹 최다",
-     "link": "https://www.newsis.com/view/NISX20261112_0003865277"
     }
    ]
   }
