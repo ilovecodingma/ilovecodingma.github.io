@@ -2004,5 +2004,34 @@
    ]
   ],
   "en_summary": "How a 2026 Korean year-end tax settlement calculator was verified against statute text: downloading the in-force Income Tax Act and Restriction of Special Taxation Act from law.go.kr (POST with the statute serial number and effective date), the trap that tables are missing from the extracted article text (the only table-like match was an obsolete 2003 transitional rule, so the deduction tables were cross-checked on the tax agency's pages), reading the addenda to learn that the amended credit-card deduction limits apply to spending from 2026-01-01, implementing the same calculation twice (formula strings run in the browser versus an independent Python version, 7 matching cases), a hand-worked example that ends at 2,378,750 won, and what screenshots revealed (tables not rendered, a mobile-width capture artifact, an explanatory sentence that contradicted the statute)."
+ },
+ {
+  "slug": "gift-tax-calculator-statute-verification",
+  "lang": "ko",
+  "date": "2026-11-12",
+  "title": "증여세 계산기를 법령 원문으로 검증한 방법 — 시행본이 두 개로 읽힌 일과 손으로 맞춘 사례",
+  "desc": "같은 법에 시행일이 두 개로 읽혔을 때 조문별로 비교한 과정, 법이 더하는 식으로 적은 세율표를 계산기 식으로 바꾼 일, 손으로 따라간 일곱 가지 사례, 설명 문장이 조문과 달랐던 실수를 정리했습니다.",
+  "tags": [
+   "automation",
+   "data",
+   "ai-agents"
+  ],
+  "hub": [
+   "개발 지식 전체",
+   "/ailog/"
+  ],
+  "sources": [
+   [
+    "국가법령정보센터: 상속세 및 증여세법",
+    "https://www.law.go.kr/법령/상속세및증여세법",
+    "2026-11-12"
+   ],
+   [
+    "국세청: 증여세 안내",
+    "https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=2337&cntntsId=7728",
+    "2026-11-12"
+   ]
+  ],
+  "en_summary": "Verifying a Korean gift tax calculator against statute text: the same act appeared with two effective dates (20251001 from the info page, 20260102 from the act page link), so both versions were downloaded and compared article by article (13 articles differed, none of the ones the calculator uses); a request for a third date returned a short non-text page. The statute writes each rate bracket as a base amount plus a percentage of the excess, which was converted to rate times base minus a progressive deduction and checked by hand (4.5 hundred million won gives 80 million either way) and against the tax agency's page. Seven cases were worked by hand and pinned with assertions (for example 100 million won from a parent gives 4,850,000 won; a second 100 million won within ten years gives 24,250,000 won), and an explanatory sentence that contradicted the statute's definition of lineal ascendant was caught before publication."
  }
 ]
