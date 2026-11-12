@@ -88,7 +88,7 @@ def pages(page):
     crumbs = [('루리 줍줍', '/'), ('가난한 박과장의 서비스팀 수업', '/park/')]
     intro = ('<div class="hx"><p class="bc">가난한 박과장의 서비스팀 수업</p><h1>가난한 박과장의 서비스팀 수업 — 한 줄씩 말해서 내 서비스를 만들고 굴리기</h1>'
              '<p class="cat-st">책 『가난한 박과장과 퇴근후 나의 서비스팀 관리하기』의 실습 수업입니다. AI 세션에게 한 줄씩 말해서 사이트를 만들고, 올리고, 고치고, 사람이 없어도 돌게 하는 실습입니다. 실습은 내 PC의 하네스 저장소에서 하고, 이 쪽은 지금 어디까지 왔는지와 그 자리에서 볼 만한 것을 보여 줍니다.</p>'
-             '<p><a class="hx-btn" href="/park/start/">토큰 넣고 내 진도 보기</a></p>'
+             '<p><a class="hx-btn" href="/park/start/">토큰 넣고 내 진도 보기</a> &nbsp; <a href="/park/archive/">운영 기록 보기</a></p>'
              '<h2>관문 여덟 개</h2><p>글 사이트를 만들고 올리고 고친 뒤, 가게를 만들고 올리고 기능을 붙였다 떼고, 운영팀을 세웁니다. 하네스가 관문을 지날 때마다 진도를 보내고, 이 사이트가 그 자리에 맞는 보기를 꺼냅니다.</p>' + _road(False)
              + '<h2>토큰은 이렇게 씁니다</h2><ol><li>하네스를 연 세션에게 「토큰 발급해 줘」라고 말합니다.</li><li>세션이 <code>HX-ABCD-EFGH-JKMN</code> 꼴의 토큰을 알려 줍니다.</li>'
              '<li><a href="/park/start/">내 진도 보기</a>에 그 토큰을 넣습니다.</li><li>관문을 지날 때마다 진도가 채워지고 「다음에 할 말」과 볼 만한 것이 바뀝니다.</li></ol>'
@@ -101,4 +101,16 @@ def pages(page):
              + '<p class="note">토큰이 없으면 하네스를 연 세션에게 「토큰 발급해 줘」라고 말하면 됩니다. <a href="/park/">수업 소개</a></p></div>' + CSS + data + '<script>' + JS + '</script>')
     page('/park/', '가난한 박과장의 서비스팀 수업 — 한 줄씩 말해서 내 서비스를 만들고 굴리기', '책 『가난한 박과장과 퇴근후 나의 서비스팀 관리하기』의 실습 수업. AI 세션에게 한 줄씩 말해 사이트를 만들고 올리고 고치고 운영팀을 세우는 실습 과정. 하네스에서 받은 토큰을 넣으면 내 진도와 그 자리에 맞는 보기가 나옵니다.', intro, crumbs)
     page('/park/start/', '가난한 박과장의 서비스팀 수업 — 내 진도 보기', '하네스에서 받은 토큰을 넣으면 지나온 관문과 다음에 할 말, 지금 자리에서 볼 만한 것이 나옵니다.', start, crumbs + [('내 진도', '/park/start/')], noindex=True)
+    arch = os.path.join(os.path.dirname(HERE), 'park', 'archive', 'index.json')   # 운영 기록과 집필 과정(가린 판). 파일은 make_archive 가 놓는다
+    if os.path.exists(arch):
+        A = json.load(open(arch, encoding='utf-8'))
+        rows = ''.join(f'<tr><td><a href="{E(x["url"])}">{E(x["name"])}</a></td><td style="text-align:right;white-space:nowrap">{x["bytes"] / 1024:,.0f} KB</td></tr>' for x in A['files'])
+        body = ('<div class="hx"><p class="bc"><a href="/park/">가난한 박과장의 서비스팀 수업</a> › 운영 기록</p><h1>운영 기록과 집필 과정</h1>'
+                '<p class="cat-st">책에 다 싣기에는 너무 긴 실제 기록입니다. 2026년 10월 12일부터 11월 10일까지 실제 PC에서 세션들에 입력한 말, 그때 실행된 것과 결과, 주제별 정리, 이 책을 쓴 세션의 대화가 들어 있습니다. 읽고 분석하는 데 쓰시면 됩니다.</p>'
+                f'<p><a class="hx-btn" href="{E(A["zip"])}">한 번에 받기 (zip)</a> &nbsp; <a href="/park/archive/index.json">파일 목록(index.json)</a></p>'
+                '<h2>읽기 전에</h2><ul><li>비밀번호·인증번호·접근 키, 메일 주소, 전화번호, 이름과 계정 아이디는 지웠습니다. 회사 업무, 상대방이 있는 분쟁, 성인 표현이 든 작업에 관한 줄은 「범위 밖 내용 — 생략」으로 바꿨습니다.</li>'
+                '<li>그 밖의 내용은 맞춤법을 포함해 원문 그대로입니다. 「에이전트 보고」로 적힌 수치는 따로 확인하지 않은 값입니다.</li><li>먼저 「읽어두기.md」와 「책_절별_원자료_찾기.md」를 보면 어느 파일을 볼지 알 수 있습니다.</li>'
+                '<li>하네스에서는 세션에게 「운영 기록을 받아서 분석해 줘」라고 말하면 됩니다.</li></ul>'
+                f'<h2>파일 {len(A["files"])}개</h2><div class="tblw"><table class="xt" style="width:100%"><tbody>{rows}</tbody></table></div></div>' + CSS)
+        page('/park/archive/', '가난한 박과장의 서비스팀 수업 — 운영 기록과 집필 과정', '책에 다 싣기에는 긴 실제 운영 기록과 집필 과정(가린 판)을 파일로 받아 볼 수 있습니다.', body, crumbs + [('운영 기록', '/park/archive/')], noindex=True)
     return ['/park/']
