@@ -1,5 +1,5 @@
 {
- "at": "2026-11-13 04:30",
+ "at": "2026-11-13 05:30",
  "nitems": 524,
  "cands": [
   {
@@ -145,15 +145,16 @@
   },
   {
    "kw": "시간",
-   "nsrc": 5,
+   "nsrc": 6,
    "srcs": [
     "SBS",
     "뉴시스",
     "연합뉴스",
     "조선일보",
+    "한겨레",
     "헤럴드경제"
    ],
-   "n": 9,
+   "n": 10,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -166,28 +167,29 @@
      "link": "https://www.yna.co.kr/view/AKR20261111122651004"
     },
     {
-     "src": "헤럴드경제",
-     "title": "전현무, 봉사활동 가서 ‘즉흥 촬영’…“버려진 아이들과 시간 보내”",
-     "link": "https://biz.heraldcorp.com/article/10933641"
+     "src": "한겨레",
+     "title": "세찬 고요함, 흠뻑 젖은 뒷모습…다시 ‘피어남’의 시간 [.txt]",
+     "link": "https://www.hani.co.kr/arti/culture/book/1287127.html"
     },
     {
      "src": "헤럴드경제",
-     "title": "리센느, 내년 2월 첫 단독 콘서트 개최…“팬분들께 소중한 시간 선물”",
-     "link": "https://biz.heraldcorp.com/article/10933209"
+     "title": "전현무, 봉사활동 가서 ‘즉흥 촬영’…“버려진 아이들과 시간 보내”",
+     "link": "https://biz.heraldcorp.com/article/10933641"
     }
    ]
   },
   {
    "kw": "아들",
-   "nsrc": 5,
+   "nsrc": 6,
    "srcs": [
     "뉴시스",
+    "세계일보",
     "연합뉴스",
     "조선일보",
     "한국경제",
     "헤럴드경제"
    ],
-   "n": 7,
+   "n": 8,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -205,43 +207,43 @@
      "link": "https://www.hankyung.com/article/202610292398H"
     },
     {
-     "src": "헤럴드경제",
-     "title": "‘태진아 아들’ 이루, 수액 맞으며 격리…무슨 일?",
-     "link": "https://biz.heraldcorp.com/article/10935306"
+     "src": "세계일보",
+     "title": "부동산 자산 800억인데…이민정이 아들 학원 대신 택한 남다른 교육법",
+     "link": "https://www.segye.com/newsView/20261110516366"
     }
    ]
   },
   {
-   "kw": "그룹",
+   "kw": "예능",
    "nsrc": 5,
    "srcs": [
-    "SBS",
     "뉴시스",
     "동아일보",
+    "세계일보",
     "연합뉴스",
-    "한겨레"
+    "헤럴드경제"
    ],
-   "n": 7,
+   "n": 9,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "포레스텔라, 한국 그룹 첫 미국 뉴욕 카네기홀 단독 공연",
-     "link": "https://www.yna.co.kr/view/AKR20261112061300005"
+     "title": "넷플릭스, 예능 '흑백가수' 내년 공개…'흑백' 세계관 음악으로",
+     "link": "https://www.yna.co.kr/view/AKR20261111052100005"
     },
     {
      "src": "연합뉴스",
-     "title": "BTS '스윔', 애플뮤직 '2026 베스트 송'…K팝 그룹 유일",
-     "link": "https://www.yna.co.kr/view/AKR20261111113500005"
+     "title": "'러시아 귀화' 빅토르 안, '스피드퀸' 출연…7년만 국내 예능",
+     "link": "https://www.yna.co.kr/view/AKR20261110148200005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "혜리 \"첫 서바이벌 예능 MC…참가자들 마음에 공감할게요\"",
+     "link": "https://www.yna.co.kr/view/AKR20261109082700005"
     },
     {
      "src": "동아일보",
-     "title": "포레스텔라, 韓 그룹 최초 뉴욕 카네기홀 입성…북미 투어 스케일 확장",
-     "link": "https://sports.donga.com/ent/article/all/20261112/135017479/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "에이티즈 산 “‘해외서 잘된 그룹’ 설명하던 때 지나…요즘 꿈같다”",
-     "link": "https://sports.donga.com/ent/article/all/20261112/135014294/1"
+     "title": "‘추격자’ 4885 비화…김윤석, 꽝 없는 예능 복귄 (유퀴즈)",
+     "link": "https://sports.donga.com/ent/article/all/20261112/135016531/1"
     }
    ]
   },
@@ -382,40 +384,6 @@
    ]
   },
   {
-   "kw": "삭제",
-   "nsrc": 5,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "세계일보",
-    "연합뉴스",
-    "한겨레"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "존박 맥도날드 광고 음원 해외서 무단 유통…\"삭제 협의 중\"",
-     "link": "https://www.yna.co.kr/view/AKR20261111090700005"
-    },
-    {
-     "src": "한겨레",
-     "title": "존박·곽진언 ‘맥도날드 랩’ 해외서 무단 유통…소속사 “삭제·차단”",
-     "link": "https://www.hani.co.kr/arti/culture/music/1286784.html"
-    },
-    {
-     "src": "세계일보",
-     "title": "차예련, 학폭 의혹 속 SNS 공구 링크 삭제…소속사 “판매 종료 때문”",
-     "link": "https://www.segye.com/newsView/20261112502594"
-    },
-    {
-     "src": "SBS",
-     "title": "존박 '맥도날드 주문 랩', 해외서 무단 도용…소속사 \"음원 삭제 진행 중\"",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008840583&plink=RSSLINK&cooper=RSSREADER"
-    }
-   ]
-  },
-  {
    "kw": "해외서",
    "nsrc": 5,
    "srcs": [
@@ -480,40 +448,6 @@
      "src": "SBS",
      "title": "도경수, 오늘(11일) 신곡 '달링' 발매…팬들 향한 진심 담은 발라드",
      "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008840634&plink=RSSLINK&cooper=RSSREADER"
-    }
-   ]
-  },
-  {
-   "kw": "눈물",
-   "nsrc": 5,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "세계일보",
-    "조선일보",
-    "헤럴드경제"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "KCM, 아내·큰딸 쿠팡 알바에 눈물…“혼자 엄청 울었다”",
-     "link": "https://sports.donga.com/ent/article/all/20261112/135017758/1"
-    },
-    {
-     "src": "세계일보",
-     "title": "정웅인, 빚 고백하며 눈물 쏟았는데…누리꾼들 “아내는 골프 치던데”",
-     "link": "https://www.segye.com/newsView/20261112502735"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "소지섭, 이번엔 대만 팬에 금 선물…당첨된 팬 “눈물”",
-     "link": "https://biz.heraldcorp.com/article/10933636"
-    },
-    {
-     "src": "뉴시스",
-     "title": "KCM \"아내, 큰딸 선물 사려 쿠팡 알바까지 해\" 눈물",
-     "link": "https://www.newsis.com/view/NISX20261112_0003866238"
     }
    ]
   },
@@ -584,39 +518,6 @@
    ]
   },
   {
-   "kw": "예능",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "연합뉴스",
-    "헤럴드경제"
-   ],
-   "n": 8,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "넷플릭스, 예능 '흑백가수' 내년 공개…'흑백' 세계관 음악으로",
-     "link": "https://www.yna.co.kr/view/AKR20261111052100005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "'러시아 귀화' 빅토르 안, '스피드퀸' 출연…7년만 국내 예능",
-     "link": "https://www.yna.co.kr/view/AKR20261110148200005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "혜리 \"첫 서바이벌 예능 MC…참가자들 마음에 공감할게요\"",
-     "link": "https://www.yna.co.kr/view/AKR20261109082700005"
-    },
-    {
-     "src": "동아일보",
-     "title": "‘추격자’ 4885 비화…김윤석, 꽝 없는 예능 복귄 (유퀴즈)",
-     "link": "https://sports.donga.com/ent/article/all/20261112/135016531/1"
-    }
-   ]
-  },
-  {
    "kw": "문무",
    "nsrc": 4,
    "srcs": [
@@ -646,39 +547,6 @@
      "src": "동아일보",
      "title": "“AI 기술 多·역사 고증 최서”, 이현욱·김강우·장혁 ‘문무’ 어떨까  (종합)[DA현장]",
      "link": "https://sports.donga.com/ent/article/all/20261112/135014684/1"
-    }
-   ]
-  },
-  {
-   "kw": "주년",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "연합뉴스",
-    "한겨레"
-   ],
-   "n": 7,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "[가요소식] 산울림 50주년 기념 네 번째 앨범",
-     "link": "https://www.yna.co.kr/view/AKR20261112086000005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "10주년 NCT 드림, 6집 '드림 애프터 드림'…\"희망 드리고 싶어\"",
-     "link": "https://www.yna.co.kr/view/AKR20261109071700005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "[가요소식] 디어클라우드, 8일 신곡 '꿈의 장면'…19주년 기념",
-     "link": "https://www.yna.co.kr/view/AKR20261106169800005"
-    },
-    {
-     "src": "동아일보",
-     "title": "문가영, 어느새 데뷔 20주년…“사람 관계 냉철·여유 생겨” [화보]",
-     "link": "https://sports.donga.com/ent/article/all/20261112/135017296/1"
     }
    ]
   },
@@ -815,13 +683,13 @@
    ]
   },
   {
-   "kw": "한국",
+   "kw": "그룹",
    "nsrc": 4,
    "srcs": [
     "SBS",
-    "연합뉴스",
-    "한겨레",
-    "헤럴드경제"
+    "뉴시스",
+    "동아일보",
+    "연합뉴스"
    ],
    "n": 6,
    "headlines": [
@@ -832,18 +700,18 @@
     },
     {
      "src": "연합뉴스",
-     "title": "JYP, 美 타임지 선정 '지속가능 성장기업' 3년 연속 한국 1위",
-     "link": "https://www.yna.co.kr/view/AKR20261111123300005"
+     "title": "BTS '스윔', 애플뮤직 '2026 베스트 송'…K팝 그룹 유일",
+     "link": "https://www.yna.co.kr/view/AKR20261111113500005"
     },
     {
-     "src": "연합뉴스",
-     "title": "\"한국 예능선 카메라 200대 쓴다\"…넷플릭스가 주목한 제작 방식",
-     "link": "https://www.yna.co.kr/view/AKR20261111079200017"
+     "src": "동아일보",
+     "title": "포레스텔라, 韓 그룹 최초 뉴욕 카네기홀 입성…북미 투어 스케일 확장",
+     "link": "https://sports.donga.com/ent/article/all/20261112/135017479/1"
     },
     {
-     "src": "한겨레",
-     "title": "‘발레 거장’ 한스 판마넌, 세상 뜨기 나흘 전 한국 무대에 남긴 선물",
-     "link": "https://www.hani.co.kr/arti/culture/music/1286637.html"
+     "src": "동아일보",
+     "title": "에이티즈 산 “‘해외서 잘된 그룹’ 설명하던 때 지나…요즘 꿈같다”",
+     "link": "https://sports.donga.com/ent/article/all/20261112/135014294/1"
     }
    ]
   },
@@ -980,68 +848,35 @@
    ]
   },
   {
-   "kw": "의혹",
+   "kw": "아빠",
    "nsrc": 4,
    "srcs": [
     "뉴시스",
+    "동아일보",
     "세계일보",
-    "조선일보",
-    "헤럴드경제"
+    "조선일보"
    ],
    "n": 5,
    "headlines": [
     {
-     "src": "세계일보",
-     "title": "차예련, 학폭 의혹 속 SNS 공구 링크 삭제…소속사 “판매 종료 때문”",
-     "link": "https://www.segye.com/newsView/20261112502594"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "‘모텔 논란’ 양홍원 제작진도 양홍원 언팔…‘불륜 의혹 앙금’ 안 가셨나",
-     "link": "https://biz.heraldcorp.com/article/10933876"
-    },
-    {
-     "src": "뉴시스",
-     "title": "'학폭 의혹' 차예련, 유튜브서 가족 영상 삭제",
-     "link": "https://www.newsis.com/view/NISX20261112_0003865144"
-    },
-    {
-     "src": "조선일보",
-     "title": "'절도 의혹'에 김승우 입장 팽팽..엇갈린 주장 속 진실은? 일단 '중립' 기어[핫피플]",
-     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/12/G5RTCOJVMQ3WMN3EGAZGKNBZMI/"
-    }
-   ]
-  },
-  {
-   "kw": "카네기홀",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "동아일보",
-    "연합뉴스"
-   ],
-   "n": 4,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "포레스텔라, 한국 그룹 첫 미국 뉴욕 카네기홀 단독 공연",
-     "link": "https://www.yna.co.kr/view/AKR20261112061300005"
-    },
-    {
      "src": "동아일보",
-     "title": "포레스텔라, 韓 그룹 최초 뉴욕 카네기홀 입성…북미 투어 스케일 확장",
-     "link": "https://sports.donga.com/ent/article/all/20261112/135017479/1"
+     "title": "“손준호가 두 명?”…♥김소현 14살 子, 아빠 붕어빵 비주얼 [DA★]",
+     "link": "https://sports.donga.com/ent/article/all/20261112/135016925/1"
     },
     {
-     "src": "SBS",
-     "title": "포레스텔라, 한국 그룹 최초 뉴욕 카네기홀 입성…북미 8개 도시 투어 확정",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008842644&plink=RSSLINK&cooper=RSSREADER"
+     "src": "세계일보",
+     "title": "‘아빠 힘내세요’로 인생 역전…작곡가 한수성 “저작권료 월 3000만원”",
+     "link": "https://www.segye.com/newsView/20261112506053"
     },
     {
      "src": "뉴시스",
-     "title": "포레스텔라, 韓 그룹 첫 뉴욕 카네기홀 입성…북미 8개 도시 투어",
-     "link": "https://www.newsis.com/view/NISX20261112_0003865553"
+     "title": "한수성 \"'아빠 힘내세요' 저작권료 월 3000만원…빚 청산\"",
+     "link": "https://www.newsis.com/view/NISX20261112_0003864905"
+    },
+    {
+     "src": "뉴시스",
+     "title": "이천수 둘째딸 공개…아빠 안 닮았네",
+     "link": "https://www.newsis.com/view/NISX20261112_0003864615"
     }
    ]
   },
@@ -1079,35 +914,35 @@
    ]
   },
   {
-   "kw": "존박",
+   "kw": "카네기홀",
    "nsrc": 4,
    "srcs": [
     "SBS",
     "뉴시스",
-    "연합뉴스",
-    "한겨레"
+    "동아일보",
+    "연합뉴스"
    ],
    "n": 4,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "존박 맥도날드 광고 음원 해외서 무단 유통…\"삭제 협의 중\"",
-     "link": "https://www.yna.co.kr/view/AKR20261111090700005"
+     "title": "포레스텔라, 한국 그룹 첫 미국 뉴욕 카네기홀 단독 공연",
+     "link": "https://www.yna.co.kr/view/AKR20261112061300005"
     },
     {
-     "src": "한겨레",
-     "title": "존박·곽진언 ‘맥도날드 랩’ 해외서 무단 유통…소속사 “삭제·차단”",
-     "link": "https://www.hani.co.kr/arti/culture/music/1286784.html"
+     "src": "동아일보",
+     "title": "포레스텔라, 韓 그룹 최초 뉴욕 카네기홀 입성…북미 투어 스케일 확장",
+     "link": "https://sports.donga.com/ent/article/all/20261112/135017479/1"
     },
     {
      "src": "SBS",
-     "title": "존박 '맥도날드 주문 랩', 해외서 무단 도용…소속사 \"음원 삭제 진행 중\"",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008840583&plink=RSSLINK&cooper=RSSREADER"
+     "title": "포레스텔라, 한국 그룹 최초 뉴욕 카네기홀 입성…북미 8개 도시 투어 확정",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008842644&plink=RSSLINK&cooper=RSSREADER"
     },
     {
      "src": "뉴시스",
-     "title": "존박 \"맥도날드 랩 인기 무서워…너무 고평가 됐다\"",
-     "link": "https://www.newsis.com/view/NISX20261112_0003864868"
+     "title": "포레스텔라, 韓 그룹 첫 뉴욕 카네기홀 입성…북미 8개 도시 투어",
+     "link": "https://www.newsis.com/view/NISX20261112_0003865553"
     }
    ]
   },
@@ -1141,6 +976,72 @@
      "src": "뉴시스",
      "title": "존박 \"맥도날드 랩 인기 무서워…너무 고평가 됐다\"",
      "link": "https://www.newsis.com/view/NISX20261112_0003864868"
+    }
+   ]
+  },
+  {
+   "kw": "존박",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "연합뉴스",
+    "한겨레"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "존박 맥도날드 광고 음원 해외서 무단 유통…\"삭제 협의 중\"",
+     "link": "https://www.yna.co.kr/view/AKR20261111090700005"
+    },
+    {
+     "src": "한겨레",
+     "title": "존박·곽진언 ‘맥도날드 랩’ 해외서 무단 유통…소속사 “삭제·차단”",
+     "link": "https://www.hani.co.kr/arti/culture/music/1286784.html"
+    },
+    {
+     "src": "SBS",
+     "title": "존박 '맥도날드 주문 랩', 해외서 무단 도용…소속사 \"음원 삭제 진행 중\"",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008840583&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "뉴시스",
+     "title": "존박 \"맥도날드 랩 인기 무서워…너무 고평가 됐다\"",
+     "link": "https://www.newsis.com/view/NISX20261112_0003864868"
+    }
+   ]
+  },
+  {
+   "kw": "삭제",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "연합뉴스",
+    "한겨레"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "존박 맥도날드 광고 음원 해외서 무단 유통…\"삭제 협의 중\"",
+     "link": "https://www.yna.co.kr/view/AKR20261111090700005"
+    },
+    {
+     "src": "한겨레",
+     "title": "존박·곽진언 ‘맥도날드 랩’ 해외서 무단 유통…소속사 “삭제·차단”",
+     "link": "https://www.hani.co.kr/arti/culture/music/1286784.html"
+    },
+    {
+     "src": "SBS",
+     "title": "존박 '맥도날드 주문 랩', 해외서 무단 도용…소속사 \"음원 삭제 진행 중\"",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008840583&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "뉴시스",
+     "title": "'학폭 의혹' 차예련, 유튜브서 가족 영상 삭제",
+     "link": "https://www.newsis.com/view/NISX20261112_0003865144"
     }
    ]
   },
@@ -1281,9 +1182,9 @@
    "nsrc": 4,
    "srcs": [
     "뉴시스",
+    "세계일보",
     "연합뉴스",
-    "조선일보",
-    "한겨레"
+    "조선일보"
    ],
    "n": 4,
    "headlines": [
@@ -1293,9 +1194,9 @@
      "link": "https://www.yna.co.kr/view/AKR20261107023500005"
     },
     {
-     "src": "한겨레",
-     "title": "도자기 대신 도자 그림…“여백 두고 그냥 멍 때리며 보세요”",
-     "link": "https://www.hani.co.kr/arti/culture/music/1286624.html"
+     "src": "세계일보",
+     "title": "부동산 자산 800억인데…이민정이 아들 학원 대신 택한 남다른 교육법",
+     "link": "https://www.segye.com/newsView/20261110516366"
     },
     {
      "src": "뉴시스",
@@ -1339,6 +1240,105 @@
      "src": "조선일보",
      "title": "\"오디션은 5분, 설교는 1시간 반\"…이민기, 영화 '해운대' 촬영 무렵 겪은 비하인드 ('거장항준')",
      "link": "https://www.chosun.com/entertainments/broadcast/2026/11/12/MVSWKYJZMNRGKZJZMRRGINRYMU/"
+    }
+   ]
+  },
+  {
+   "kw": "눈물",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "조선일보",
+    "헤럴드경제"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "KCM, 아내·큰딸 쿠팡 알바에 눈물…“혼자 엄청 울었다”",
+     "link": "https://sports.donga.com/ent/article/all/20261112/135017758/1"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "소지섭, 이번엔 대만 팬에 금 선물…당첨된 팬 “눈물”",
+     "link": "https://biz.heraldcorp.com/article/10933636"
+    },
+    {
+     "src": "뉴시스",
+     "title": "KCM \"아내, 큰딸 선물 사려 쿠팡 알바까지 해\" 눈물",
+     "link": "https://www.newsis.com/view/NISX20261112_0003866238"
+    },
+    {
+     "src": "조선일보",
+     "title": "'싱글맘' 이지현, 미용실 퇴사에 눈물 \"아이들 케어, 현실적으로 혼자는 불가\"('현생모드퀸지현')",
+     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/13/GVRWKMBUGBSWCMLBHAYWMYLCGY/"
+    }
+   ]
+  },
+  {
+   "kw": "최초",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "동아일보",
+    "한국경제",
+    "헤럴드경제"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "포레스텔라, 韓 그룹 최초 뉴욕 카네기홀 입성…북미 투어 스케일 확장",
+     "link": "https://sports.donga.com/ent/article/all/20261112/135017479/1"
+    },
+    {
+     "src": "한국경제",
+     "title": "'재혼황후' 이종석, 국내 최초 새 연기 \"제가 좀 새 상…사람으로 변할 때 나체로 등장\"",
+     "link": "https://www.hankyung.com/article/202611032589H"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "리센느, 국내 걸그룹 최초 디즈니 영화 엔딩크레딧 장식…협업 MV 공개",
+     "link": "https://biz.heraldcorp.com/article/10934767"
+    },
+    {
+     "src": "SBS",
+     "title": "포레스텔라, 한국 그룹 최초 뉴욕 카네기홀 입성…북미 8개 도시 투어 확정",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008842644&plink=RSSLINK&cooper=RSSREADER"
+    }
+   ]
+  },
+  {
+   "kw": "북미",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "동아일보",
+    "한국경제"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "포레스텔라, 韓 그룹 최초 뉴욕 카네기홀 입성…북미 투어 스케일 확장",
+     "link": "https://sports.donga.com/ent/article/all/20261112/135017479/1"
+    },
+    {
+     "src": "한국경제",
+     "title": "코요태, 'K-흥' 알리러 세계로…북미 투어 돌입",
+     "link": "https://www.hankyung.com/article/202611095927H"
+    },
+    {
+     "src": "SBS",
+     "title": "포레스텔라, 한국 그룹 최초 뉴욕 카네기홀 입성…북미 8개 도시 투어 확정",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008842644&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "뉴시스",
+     "title": "포레스텔라, 韓 그룹 첫 뉴욕 카네기홀 입성…북미 8개 도시 투어",
+     "link": "https://www.newsis.com/view/NISX20261112_0003865553"
     }
    ]
   }
