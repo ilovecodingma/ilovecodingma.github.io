@@ -1,34 +1,874 @@
 {
- "at": "2026-11-09 16:16",
+ "at": "2026-11-12 15:12",
  "note": "그날 처음 들어온 방문자 기준(관리자·자동 점검 제외). 채널 → 첫 페이지별 방문자 수.",
  "days": [
   {
-   "day": "2026-11-09",
-   "visitors": 221,
+   "day": "2026-11-12",
+   "visitors": 169,
    "channels": [
     [
      "🔍 다음·빙 검색",
-     126
-    ],
-    [
-     "🔍 네이버 검색",
-     29
-    ],
-    [
-     "🔍 구글 검색",
-     23
+     109
     ],
     [
      "🔗 직접 접속(주소 입력·즐겨찾기·앱 안 링크)",
-     19
+     15
     ],
     [
-     "🏷️ 기타 홍보 링크(chatgptcom)",
-     18
+     "🔍 네이버 검색",
+     13
     ],
     [
      "🏷️ 기타 홍보 링크(youtube)",
+     12
+    ],
+    [
+     "🔍 구글 검색",
+     10
+    ],
+    [
+     "🏷️ 기타 홍보 링크(chatgptcom)",
+     6
+    ],
+    [
+     "🏷️ 기타 홍보 링크(naver_kin)",
      2
+    ],
+    [
+     "🌍 해외 개발 커뮤니티(레딧·HN·Medium·dev.to)",
+     2
+    ]
+   ],
+   "landing": [
+    [
+     "/money/guide/insurance-rates-2027-table/",
+     33
+    ],
+    [
+     "/money/guide/teacher-exam-2027-schedule/",
+     6
+    ],
+    [
+     "/money/guide/susi-2027-result-registration-schedule/",
+     4
+    ],
+    [
+     "/money/guide/national-scholarship/",
+     4
+    ],
+    [
+     "/",
+     3
+    ],
+    [
+     "/money/guide/public-hire-medical-exam-hospital-cost-validity/",
+     3
+    ],
+    [
+     "/issue/insurance-rates-2027-1104/",
+     3
+    ],
+    [
+     "/issue/mounjaro-japan-import-allowed-1112/",
+     3
+    ],
+    [
+     "/money/tools/year-end-tax-settlement-calculator-2026/",
+     2
+    ],
+    [
+     "/money/guide/teacher-pay-2027-salary-table/",
+     2
+    ],
+    [
+     "/money/guide/susi-pass-jeongsi-apply-ban-double-registration/",
+     2
+    ],
+    [
+     "/money/guide/recommended-resignation-employer-disadvantage/",
+     2
+    ],
+    [
+     "/money/guide/civil-servant-pay-2027-schedule/",
+     2
+    ],
+    [
+     "/issue/treasury-bond-bid-rigging-fine-1112/",
+     2
+    ],
+    [
+     "/issue/kim-jong-un-rumor/",
+     2
+    ]
+   ],
+   "by_channel": {
+    "🔍 다음·빙 검색": [
+     [
+      "/money/guide/insurance-rates-2027-table/",
+      33
+     ],
+     [
+      "/money/guide/teacher-exam-2027-schedule/",
+      5
+     ],
+     [
+      "/money/guide/susi-2027-result-registration-schedule/",
+      4
+     ],
+     [
+      "/money/guide/national-scholarship/",
+      4
+     ],
+     [
+      "/money/tools/year-end-tax-settlement-calculator-2026/",
+      2
+     ]
+    ],
+    "🔗 직접 접속(주소 입력·즐겨찾기·앱 안 링크)": [
+     [
+      "/",
+      3
+     ],
+     [
+      "/talk/",
+      1
+     ],
+     [
+      "/money/guide/unfair-dismissal/",
+      1
+     ],
+     [
+      "/money/guide/unemployment-apply-deadline-missed-12-months/",
+      1
+     ],
+     [
+      "/money/guide/teacher-exam-2027-schedule/",
+      1
+     ]
+    ],
+    "🔍 네이버 검색": [
+     [
+      "/issue/kim-jong-un-rumor/",
+      2
+     ],
+     [
+      "/issue/insurance-rates-2027-1104/",
+      2
+     ],
+     [
+      "/money/guide/other-income-necessary-expense-report/",
+      1
+     ],
+     [
+      "/money/guide/housing-bond-purchase-cost-registration/",
+      1
+     ],
+     [
+      "/guide/workers-welfare-livelihood-loan-apply/",
+      1
+     ]
+    ],
+    "🔍 구글 검색": [
+     [
+      "/contest/video/",
+      2
+     ],
+     [
+      "/guide/employment-support-target-veterans-apply/",
+      1
+     ],
+     [
+      "/guide/dark-pattern-subscription-rules/",
+      1
+     ],
+     [
+      "/contest/youth/",
+      1
+     ],
+     [
+      "/contest/poem/",
+      1
+     ]
+    ],
+    "🏷️ 기타 홍보 링크(youtube)": [
+     [
+      "/money/guide/parental-leave-pay-2027/",
+      2
+     ],
+     [
+      "/money/guide/medical-expense-tax-deduction-year-end/",
+      2
+     ],
+     [
+      "/money/guide/housing-benefit-2027-rent-table/",
+      2
+     ],
+     [
+      "/issue/mounjaro-japan-import-allowed-1112/",
+      2
+     ],
+     [
+      "/issue/minsokchon-ghost-child-abuse-dispute-1112/",
+      2
+     ]
+    ],
+    "🏷️ 기타 홍보 링크(naver_kin)": [
+     [
+      "/money/guide/parttime-unpaid-wages/",
+      1
+     ],
+     [
+      "/money/guide/lease-renewal-right/",
+      1
+     ]
+    ],
+    "🏷️ 기타 홍보 링크(chatgptcom)": [
+     [
+      "/talk/2026-11-11/",
+      1
+     ],
+     [
+      "/money/guide/buttimok-jeonse-loan-conditions/",
+      1
+     ],
+     [
+      "/issue/seoul-apartment-listings-up-33-percent-1108/",
+      1
+     ],
+     [
+      "/issue/insurance-rates-2027-1104/",
+      1
+     ],
+     [
+      "/issue/gumi-ramen-festival-2026-1107/",
+      1
+     ]
+    ],
+    "🌍 해외 개발 커뮤니티(레딧·HN·Medium·dev.to)": [
+     [
+      "/money/guide/health-checkup-scaling/",
+      1
+     ],
+     [
+      "/money/guide/gym-contract-refund/",
+      1
+     ]
+    ]
+   }
+  },
+  {
+   "day": "2026-11-11",
+   "visitors": 248,
+   "channels": [
+    [
+     "🔍 다음·빙 검색",
+     139
+    ],
+    [
+     "🔗 직접 접속(주소 입력·즐겨찾기·앱 안 링크)",
+     33
+    ],
+    [
+     "🔍 네이버 검색",
+     32
+    ],
+    [
+     "🔍 구글 검색",
+     17
+    ],
+    [
+     "🏷️ 기타 홍보 링크(chatgptcom)",
+     13
+    ],
+    [
+     "🏷️ 기타 홍보 링크(youtube)",
+     6
+    ],
+    [
+     "📝 블로그",
+     2
+    ],
+    [
+     "💬 네이버 지식인",
+     2
+    ],
+    [
+     "🏷️ 기타 홍보 링크(naver_kin)",
+     2
+    ],
+    [
+     "🌐 기타 사이트(perplexity.ai)",
+     1
+    ],
+    [
+     "🌐 기타 사이트(kap-instance.onkakao.net)",
+     1
+    ]
+   ],
+   "landing": [
+    [
+     "/money/guide/insurance-rates-2027-table/",
+     48
+    ],
+    [
+     "/contest/slogan/",
+     6
+    ],
+    [
+     "/",
+     6
+    ],
+    [
+     "/issue/insurance-rates-2027-1104/",
+     6
+    ],
+    [
+     "/money/guide/susi-2027-result-registration-schedule/",
+     6
+    ],
+    [
+     "/money/guide/disability-pension-2027-amount/",
+     5
+    ],
+    [
+     "/guide/bank-passbook-reissue-fee-period/",
+     5
+    ],
+    [
+     "/money/guide/civil-servant-pay-2027-schedule/",
+     4
+    ],
+    [
+     "/issue/justice-minister-nominee-lee-yongcheol-1106/",
+     4
+    ],
+    [
+     "/money/guide/minimum-wage-2027-take-home-pay/",
+     4
+    ],
+    [
+     "/money/guide/minimum-wage-2026-take-home-pay/",
+     3
+    ],
+    [
+     "/money/guide/industrial-accident-disability-benefit-grades/",
+     3
+    ],
+    [
+     "/money/guide/dismissal-notice-allowance-claim/",
+     3
+    ],
+    [
+     "/money/guide/basic-pension-2027-increase-announce/",
+     3
+    ],
+    [
+     "/money/guide/electricity-bill-calculation/",
+     3
+    ]
+   ],
+   "by_channel": {
+    "🔍 다음·빙 검색": [
+     [
+      "/money/guide/insurance-rates-2027-table/",
+      48
+     ],
+     [
+      "/money/guide/disability-pension-2027-amount/",
+      5
+     ],
+     [
+      "/money/guide/susi-2027-result-registration-schedule/",
+      4
+     ],
+     [
+      "/money/guide/civil-servant-pay-2027-schedule/",
+      4
+     ],
+     [
+      "/issue/justice-minister-nominee-lee-yongcheol-1106/",
+      4
+     ]
+    ],
+    "🔗 직접 접속(주소 입력·즐겨찾기·앱 안 링크)": [
+     [
+      "/contest/slogan/",
+      6
+     ],
+     [
+      "/",
+      5
+     ],
+     [
+      "/apply/",
+      2
+     ],
+     [
+      "/money/guide/used-trade-fraud-report-steps/",
+      1
+     ],
+     [
+      "/money/guide/nhis-refund/",
+      1
+     ]
+    ],
+    "🔍 네이버 검색": [
+     [
+      "/issue/insurance-rates-2027-1104/",
+      5
+     ],
+     [
+      "/guide/bank-passbook-reissue-fee-period/",
+      4
+     ],
+     [
+      "/money/guide/mobile-micropayment-dispute/",
+      2
+     ],
+     [
+      "/issue/kim-jong-un-rumor/",
+      2
+     ],
+     [
+      "/guide/workers-welfare-livelihood-loan-apply/",
+      2
+     ]
+    ],
+    "🔍 구글 검색": [
+     [
+      "/game/battlefield-6-editions/",
+      2
+     ],
+     [
+      "/money/guide/wolse-tax-credit/",
+      1
+     ],
+     [
+      "/issue/suneung-day-checklist-1104/",
+      1
+     ],
+     [
+      "/guide/video-portfolio/",
+      1
+     ],
+     [
+      "/guide/phone-device-change-condition-method/",
+      1
+     ]
+    ],
+    "🏷️ 기타 홍보 링크(youtube)": [
+     [
+      "/money/guide/culture-nuri-card-2026-deadline/",
+      2
+     ],
+     [
+      "/money/guide/checkup-2026-missed-extension-apply/",
+      2
+     ],
+     [
+      "/money/guide/basic-pension-2027-increase-announce/",
+      2
+     ]
+    ],
+    "🏷️ 기타 홍보 링크(chatgptcom)": [
+     [
+      "/money/guide/susi-2027-result-registration-schedule/",
+      2
+     ],
+     [
+      "/money/guide/unemployment-apply-online-steps/",
+      1
+     ],
+     [
+      "/money/guide/early-reemployment-allowance-conditions-amount/",
+      1
+     ],
+     [
+      "/issue/insurance-rates-2027-1104/",
+      1
+     ],
+     [
+      "/issue/fifth-national-rail-network-plan-hearing-1113/",
+      1
+     ]
+    ],
+    "📝 블로그": [
+     [
+      "/cat/food/",
+      1
+     ],
+     [
+      "/c/Q02409/",
+      1
+     ]
+    ],
+    "💬 네이버 지식인": [
+     [
+      "/money/guide/parttime-weekly-holiday-pay/",
+      1
+     ],
+     [
+      "/fridge/",
+      1
+     ]
+    ],
+    "🏷️ 기타 홍보 링크(naver_kin)": [
+     [
+      "/money/guide/wage-claim-guarantee-fund/",
+      1
+     ],
+     [
+      "/money/guide/parttime-four-insurance/",
+      1
+     ]
+    ],
+    "🌐 기타 사이트(perplexity.ai)": [
+     [
+      "/contest/novel/",
+      1
+     ]
+    ],
+    "🌐 기타 사이트(kap-instance.onkakao.net)": [
+     [
+      "/money/guide/electricity-bill-calculation/",
+      1
+     ]
+    ]
+   }
+  },
+  {
+   "day": "2026-11-10",
+   "visitors": 364,
+   "channels": [
+    [
+     "🔍 다음·빙 검색",
+     197
+    ],
+    [
+     "🏷️ 기타 홍보 링크(youtube)",
+     54
+    ],
+    [
+     "🔍 네이버 검색",
+     35
+    ],
+    [
+     "🔗 직접 접속(주소 입력·즐겨찾기·앱 안 링크)",
+     29
+    ],
+    [
+     "🏷️ 기타 홍보 링크(chatgptcom)",
+     22
+    ],
+    [
+     "🔍 구글 검색",
+     19
+    ],
+    [
+     "📝 블로그",
+     1
+    ],
+    [
+     "💻 개발자 커뮤니티",
+     1
+    ],
+    [
+     "💬 네이버 지식인",
+     1
+    ],
+    [
+     "🏷️ 기타 홍보 링크(ph)",
+     1
+    ],
+    [
+     "🏷️ 기타 홍보 링크(perplexity)",
+     1
+    ],
+    [
+     "🏷️ 기타 홍보 링크(okky)",
+     1
+    ],
+    [
+     "🏷️ 기타 홍보 링크(naver_kin)",
+     1
+    ],
+    [
+     "🏷️ 기타 홍보 링크(naver_blog)",
+     1
+    ]
+   ],
+   "landing": [
+    [
+     "/money/guide/insurance-rates-2027-table/",
+     66
+    ],
+    [
+     "/",
+     9
+    ],
+    [
+     "/money/guide/civil-servant-pay-2027-schedule/",
+     8
+    ],
+    [
+     "/issue/kim-jong-un-rumor/",
+     7
+    ],
+    [
+     "/issue/samsung-lions-championship-sale-status-1109/",
+     6
+    ],
+    [
+     "/cat/literature/",
+     5
+    ],
+    [
+     "/issue/insurance-rates-2027-1104/",
+     5
+    ],
+    [
+     "/money/guide/tax-payment-extension-installment-guide/",
+     4
+    ],
+    [
+     "/money/guide/civil-defense-shelter-lookup/",
+     4
+    ],
+    [
+     "/issue/suneung-score-report-1105/",
+     4
+    ],
+    [
+     "/issue/douzone-bizon-data-breach/",
+     4
+    ],
+    [
+     "/guide/bank-passbook-reissue-fee-period/",
+     4
+    ],
+    [
+     "/issue/kospi-circuit-breaker-sidecar-1109/",
+     4
+    ],
+    [
+     "/contest/slogan/",
+     4
+    ],
+    [
+     "/money/guide/parttime-four-insurance/",
+     4
+    ]
+   ],
+   "by_channel": {
+    "🔍 다음·빙 검색": [
+     [
+      "/money/guide/insurance-rates-2027-table/",
+      63
+     ],
+     [
+      "/money/guide/civil-servant-pay-2027-schedule/",
+      6
+     ],
+     [
+      "/money/guide/tax-payment-extension-installment-guide/",
+      4
+     ],
+     [
+      "/money/guide/civil-defense-shelter-lookup/",
+      4
+     ],
+     [
+      "/issue/suneung-score-report-1105/",
+      4
+     ]
+    ],
+    "🔍 네이버 검색": [
+     [
+      "/issue/kim-jong-un-rumor/",
+      6
+     ],
+     [
+      "/guide/bank-passbook-reissue-fee-period/",
+      4
+     ],
+     [
+      "/guide/court-auction-bidder-payment-eviction-order/",
+      3
+     ],
+     [
+      "/money/guide/transit-card-compare/",
+      2
+     ],
+     [
+      "/money/guide/other-income-necessary-expense-report/",
+      2
+     ]
+    ],
+    "🔗 직접 접속(주소 입력·즐겨찾기·앱 안 링크)": [
+     [
+      "/cat/literature/",
+      4
+     ],
+     [
+      "/",
+      4
+     ],
+     [
+      "/money/guide/online-purchase-withdrawal/",
+      3
+     ],
+     [
+      "/issue/samsung-lions-championship-sale-status-1109/",
+      3
+     ],
+     [
+      "/contest/slogan/",
+      3
+     ]
+    ],
+    "🏷️ 기타 홍보 링크(youtube)": [
+     [
+      "/issue/kospi-circuit-breaker-sidecar-1109/",
+      4
+     ],
+     [
+      "/money/guide/soldier-pay-2027/",
+      2
+     ],
+     [
+      "/money/guide/parttime-four-insurance/",
+      2
+     ],
+     [
+      "/money/guide/insurance-rates-2027-table/",
+      2
+     ],
+     [
+      "/money/guide/four-insurance-rates-2026/",
+      2
+     ]
+    ],
+    "🏷️ 기타 홍보 링크(chatgptcom)": [
+     [
+      "/cat/design/",
+      2
+     ],
+     [
+      "/c/Q03737/",
+      2
+     ],
+     [
+      "/money/guide/newborn-special-loan-refinance-conditions/",
+      1
+     ],
+     [
+      "/money/guide/buttimok-jeonse-loan-conditions/",
+      1
+     ],
+     [
+      "/lab/",
+      1
+     ]
+    ],
+    "🔍 구글 검색": [
+     [
+      "/money/guide/parttime-unpaid-wages/",
+      1
+     ],
+     [
+      "/money/guide/health-insurance-after-quit/",
+      1
+     ],
+     [
+      "/money/guide/fine-installment-deferral/",
+      1
+     ],
+     [
+      "/money/guide/apartment-defect-warranty-claim-period/",
+      1
+     ],
+     [
+      "/issue/suneung-smart-glasses-1104/",
+      1
+     ]
+    ],
+    "📝 블로그": [
+     [
+      "/contest/deadline-10/",
+      1
+     ]
+    ],
+    "💻 개발자 커뮤니티": [
+     [
+      "/fridge/",
+      1
+     ]
+    ],
+    "💬 네이버 지식인": [
+     [
+      "/c/Q03634/",
+      1
+     ]
+    ],
+    "🏷️ 기타 홍보 링크(ph)": [
+     [
+      "/",
+      1
+     ]
+    ],
+    "🏷️ 기타 홍보 링크(perplexity)": [
+     [
+      "/money/guide/nhis-dependent/",
+      1
+     ]
+    ],
+    "🏷️ 기타 홍보 링크(okky)": [
+     [
+      "/ailog/",
+      1
+     ]
+    ],
+    "🏷️ 기타 홍보 링크(naver_kin)": [
+     [
+      "/guide/overseas-purchase-agent-customs-delay-refund/",
+      1
+     ]
+    ],
+    "🏷️ 기타 홍보 링크(naver_blog)": [
+     [
+      "/",
+      1
+     ]
+    ]
+   }
+  },
+  {
+   "day": "2026-11-09",
+   "visitors": 345,
+   "channels": [
+    [
+     "🔍 다음·빙 검색",
+     188
+    ],
+    [
+     "🔍 네이버 검색",
+     44
+    ],
+    [
+     "🔍 구글 검색",
+     42
+    ],
+    [
+     "🔗 직접 접속(주소 입력·즐겨찾기·앱 안 링크)",
+     29
+    ],
+    [
+     "🏷️ 기타 홍보 링크(chatgptcom)",
+     27
+    ],
+    [
+     "🏷️ 기타 홍보 링크(youtube)",
+     10
     ],
     [
      "📝 블로그",
@@ -41,134 +881,160 @@
     [
      "💬 네이버 지식인",
      1
+    ],
+    [
+     "🌐 기타 사이트(perplexity.ai)",
+     1
     ]
    ],
    "landing": [
     [
      "/money/guide/insurance-rates-2027-table/",
-     23
-    ],
-    [
-     "/guide/bank-passbook-reissue-fee-period/",
-     7
-    ],
-    [
-     "/issue/samsung-lions-championship-sale-status-1109/",
-     7
+     32
     ],
     [
      "/issue/kim-jong-un-rumor/",
+     13
+    ],
+    [
+     "/contest/deadline-11/",
+     10
+    ],
+    [
+     "/guide/bank-passbook-reissue-fee-period/",
+     9
+    ],
+    [
+     "/issue/samsung-lions-championship-sale-status-1109/",
+     9
+    ],
+    [
+     "/issue/margin-ratio-exemption-forced-sale-1107/",
+     9
+    ],
+    [
+     "/money/guide/minimum-wage-2027-monthly-salary-table/",
      7
+    ],
+    [
+     "/money/guide/susi-2027-result-registration-schedule/",
+     6
+    ],
+    [
+     "/money/guide/civil-servant-pay-2027-schedule/",
+     6
     ],
     [
      "/money/guide/national-scholarship/",
      6
     ],
     [
-     "/contest/deadline-11/",
-     6
-    ],
-    [
-     "/money/guide/minimum-wage-2027-monthly-salary-table/",
+     "/money/guide/medical-expense-couple-who-claims/",
      5
     ],
     [
-     "/money/guide/susi-2027-result-registration-schedule/",
-     4
-    ],
-    [
-     "/money/guide/minimum-wage-2026-take-home-pay/",
-     3
-    ],
-    [
-     "/money/guide/medical-expense-couple-who-claims/",
-     3
+     "/issue/insurance-rates-2027-1104/",
+     5
     ],
     [
      "/money/guide/income-tax-interim-prepayment-november/",
-     3
+     4
     ],
     [
-     "/money/guide/fixed-term-contract-expiry-unemployment/",
-     3
-    ],
-    [
-     "/money/guide/civil-servant-pay-2027-schedule/",
-     3
+     "/fridge/",
+     4
     ],
     [
      "/",
-     3
-    ],
-    [
-     "/issue/margin-ratio-exemption-forced-sale-1107/",
-     3
+     4
     ]
    ],
    "by_channel": {
     "🔍 다음·빙 검색": [
      [
       "/money/guide/insurance-rates-2027-table/",
-      23
+      32
      ],
      [
-      "/money/guide/national-scholarship/",
-      5
+      "/issue/margin-ratio-exemption-forced-sale-1107/",
+      8
      ],
      [
       "/money/guide/minimum-wage-2027-monthly-salary-table/",
-      5
+      7
      ],
      [
       "/money/guide/susi-2027-result-registration-schedule/",
-      4
+      6
      ],
      [
-      "/money/guide/minimum-wage-2026-take-home-pay/",
-      3
+      "/money/guide/civil-servant-pay-2027-schedule/",
+      6
      ]
     ],
     "🔍 네이버 검색": [
      [
-      "/guide/bank-passbook-reissue-fee-period/",
-      7
+      "/issue/kim-jong-un-rumor/",
+      12
      ],
      [
-      "/issue/kim-jong-un-rumor/",
-      6
+      "/guide/bank-passbook-reissue-fee-period/",
+      9
+     ],
+     [
+      "/money/guide/housing-bond-purchase-cost-registration/",
+      3
      ],
      [
       "/money/guide/other-income-necessary-expense-report/",
       2
      ],
      [
-      "/money/guide/housing-bond-purchase-cost-registration/",
+      "/guide/conditional-recipient-self-support-work-duty/",
       2
-     ],
-     [
-      "/money/guide/no-rank-subscription/",
-      1
      ]
     ],
     "🔍 구글 검색": [
      [
       "/issue/samsung-lions-championship-sale-status-1109/",
-      7
+      9
      ],
      [
       "/contest/deadline-11/",
+      6
+     ],
+     [
+      "/fridge/",
+      4
+     ],
+     [
+      "/game/steam-sale/",
+      3
+     ],
+     [
+      "/money/guide/income-proof-documents-issue-guide/",
       2
+     ]
+    ],
+    "🔗 직접 접속(주소 입력·즐겨찾기·앱 안 링크)": [
+     [
+      "/",
+      3
      ],
      [
-      "/money/guide/no-rank-subscription/",
+      "/talk/",
       1
      ],
      [
-      "/money/guide/national-scholarship/",
+      "/money/guide/suneung-2027-objection-answer/",
       1
      ],
      [
-      "/money/guide/family-member-four-insurance-obligation/",
+      "/money/guide/subscription-rewin-restriction-period/",
+      1
+     ],
+     [
+      "/money/guide/recommended-resignation-employer-disadvantage/",
       1
      ]
     ],
@@ -176,6 +1042,10 @@
      [
       "/contest/deadline-11/",
       3
+     ],
+     [
+      "/contest/slogan/",
+      2
      ],
      [
       "/talk/2026-11-08/",
@@ -188,37 +1058,27 @@
      [
       "/money/guide/youth-monthly-rent-local-support-2026/",
       1
-     ],
-     [
-      "/money/guide/electricity-bill-calculation/",
-      1
-     ]
-    ],
-    "🔗 직접 접속(주소 입력·즐겨찾기·앱 안 링크)": [
-     [
-      "/",
-      2
-     ],
-     [
-      "/talk/",
-      1
-     ],
-     [
-      "/money/guide/health-insurance-after-quit/",
-      1
-     ],
-     [
-      "/money/guide/four-insurance-rates-2026/",
-      1
-     ],
-     [
-      "/money/guide/call-recording-evidence-communications-secrecy-act/",
-      1
      ]
     ],
     "🏷️ 기타 홍보 링크(youtube)": [
      [
       "/issue/presidential-approval-polls-nov-week1-1109/",
+      2
+     ],
+     [
+      "/issue/newjeans-contract-nyt-report-hybe-response-1109/",
+      2
+     ],
+     [
+      "/issue/boxoffice-weekend-nov6-8-chiikawa-1109/",
+      2
+     ],
+     [
+      "/issue/atletico-barcelona-1-2-lee-kangin-start-1109/",
+      2
+     ],
+     [
+      "/issue/akmu-gangneung-concert-view-obstruction-1109/",
       2
      ]
     ],
@@ -241,6 +1101,12 @@
     "💬 네이버 지식인": [
      [
       "/guide/lh-youth-jeonse-2026/",
+      1
+     ]
+    ],
+    "🌐 기타 사이트(perplexity.ai)": [
+     [
+      "/issue/insurance-rates-2027-1104/",
       1
      ]
     ]
