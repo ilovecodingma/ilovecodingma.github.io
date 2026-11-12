@@ -4070,6 +4070,11 @@ def class_pages():
     page('/class/', '루리의 AI교실 — 프롬프트 기본부터 엑셀·이메일·PPT까지 10강', '프롬프트 복사 버튼과 체크리스트로 따라 하는 AI 활용 10강. 엑셀 수식, 매크로, 업무 이메일, 회의록, PPT, 문서 요약.', idx,
          [('루리 줍줍', '/'), ('루리의 AI교실', '/class/')])
     urls.append('/class/')
+    try:   # 2026-11-12 하네스 과정(/class/harness/): 토큰을 넣으면 진도와 샘플이 나오는 학습 구역
+        import harness_lms
+        urls += harness_lms.pages(page)
+    except Exception as e:
+        print('하네스 과정 쪽 건너뜀', repr(e)[:100])
     return urls
 
 
