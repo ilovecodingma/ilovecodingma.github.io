@@ -1,0 +1,100 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>지워진 것을 알아차리고 되돌리는 흐름 — 운영 기록 보관소</title><link rel="stylesheet" href="flow.css"></head><body><p class="back"><a href="/park/archive/">← 운영 기록 보관소</a> · 책에서 뺀 실제 흐름</p><header class="chap">
+  <div class="part">제2부 팀으로 운영하기</div>
+  <h1>지워진 것을 알아차리고 되돌리는 흐름</h1>
+</header>
+
+<p>운영하다 보면 지우려던 것이 아닌 것이 지워져 올라가는 날이 온다. 처음 하는 독자에게는 올린 직후에 무엇이 바뀌었는지를 수로 확인하게 하고, 원본이 되는 자료와 그것으로 생성한 화면을 따로 두기를 권한다. 저자의 정보 사이트에서 요리법 페이지 340개가 지워진 채 올라갔다가 5분 안에 되돌아온 일이 있는데, 되돌릴 수 있었던 것은 이 두 가지가 그렇게 되어 있었기 때문이다.</p>
+
+<div class="flow"><h4>실제 흐름 · 페이지 340개가 지워져 올라갔다가 돌아오기까지 (2026년 10월 30일 14시 6분 ~ 11분)</h4>
+<div class="sit">업무: 올린 뒤에 무엇이 바뀌었는지 확인한다. 개발 세션이 안내 글과 요리법 화면의 모양을 고친 뒤 사이트 전체를 다시 생성했고, 한 시간마다 도는 예약도 같은 작업 폴더를 쓰고 있었다.</div>
+<div class="fg">
+<div class="st ag"><b>14:06 · 개발</b>다시 생성이 끝나자 바뀐 폴더를 묶어서 올렸다. 출력에는 파일 1,796개가 바뀌었고 지워진 줄이 13,497줄이라고 나왔다</div>
+<div class="st ag"><b>14:08 · 개발</b>공개 주소를 열어 새 모양이 반영된 것을 확인했다</div>
+<div class="st out un"><b>14:09 · 개발이 찾은 것</b>올린 내용을 다시 훑다가 지워지기만 한 파일이 줄지어 있는 것을 보았다. 세어 보니 340개였고 모두 요리법 페이지였다</div>
+<div class="st ag"><b>14:09 · 개발</b>요리법의 원본 자료는 1,313건 그대로인 것을 확인했다. 작업 폴더에는 페이지 파일 1,353개가 그대로 남아 있었다</div>
+<div class="st ag"><b>14:09 · 개발</b>남아 있던 340개를 다시 넣어 올렸다</div>
+<div class="st out ok"><b>14:11 · 결과</b>지워졌던 페이지 가운데 하나를 반복해 열어 보았다. 세 번은 열리지 않았고 네 번째에 열렸다. 그 뒤 지워진 파일이 0건인 것을 확인하고 저자에게 알렸다</div>
+</div>
+<div class="fin ok">페이지가 열리지 않은 시간은 짧게는 2분, 길게는 4분 30초쯤이다. 찾은 것도 되돌린 것도 올린 세션 자신이었고, 찾게 된 계기는 올린 뒤에 바뀐 파일의 수를 다시 본 것이었다.</div>
+<p class="nt">세션은 예약으로 도는 생성과 겹쳐서 페이지를 다시 쓰는 도중의 상태가 올라간 것으로 보인다고 보고했다. 이 원인은 기록으로 확인되지 않았다. 세션은 큰 폴더를 올릴 때에는 생성이 끝난 것을 확인하고 지워지는 것이 섞이지 않았는지를 검사한 뒤 올리겠다고 적었다.</p></div>
+
+<p>이 흐름을 다시 보면, 첫 출력에 이미 지워진 줄이 만 줄이 넘는다고 나와 있었지만 세션은 그것을 지나쳤고, 공개 주소에서 새 모양이 보이는 것만 확인했다. 확인하려던 것이 반영되었는지와, 확인하려 하지 않은 것이 바뀌지 않았는지는 따로 보아야 한다. 그리고 되돌리는 데 다시 생성할 필요가 없었던 것은 원본 자료가 건드려지지 않았고 생성된 파일도 작업 폴더에 남아 있었기 때문이며, 지워진 것은 올라간 쪽뿐이었다.</p>
+
+
+
+<h2>데이터의 종류와 저장 위치</h2>
+
+<p>이 책의 사이트에서 관리해야 하는 데이터는 크게 다섯 가지이며, 성격이 서로 달라서 저장하는 위치와 다루는 방법도 다르다.</p>
+
+<div class="box"><div class="scroll"><table>
+ <tr><th style="width:16%">데이터</th><th style="width:24%">내용</th><th style="width:26%">저장 위치</th><th>주의할 점</th></tr>
+ <tr><td>콘텐츠</td><td>글, 사진, 상품 정보</td><td>프로젝트 폴더의 파일</td><td>저장소에 함께 올라간다</td></tr>
+ <tr><td>설정</td><td>사이트 이름과 색상</td><td>프로젝트 폴더의 설정 파일</td><td>내 컴퓨터 전용 설정은 저장소에 올리지 않는다</td></tr>
+ <tr><td>고객 데이터</td><td>주문, 장바구니, 상품평</td><td>쇼핑몰 서버의 데이터베이스 파일</td><td>개인정보가 들어 있어 저장소에 올리지 않는다</td></tr>
+ <tr><td>작업 기록</td><td>세션별 기록, 전달 폴더의 파일</td><td>기록 폴더와 전달 폴더</td><td>새 세션이 작업을 이어받는 근거가 된다</td></tr>
+ <tr><td>비밀 정보</td><td>메일 비밀번호, 인증 키, 입금 계좌</td><td>내 컴퓨터 전용 파일</td><td>에이전트가 읽지 못하게 차단 규칙으로 막는다</td></tr>
+</table></div></div>
+
+<p>여기서 중요한 구분은 저장소에 올려도 되는 것과 올리면 안 되는 것이다. 저장소를 공개로 만들면 그 안의 파일을 누구나 볼 수 있기 때문에, 고객의 연락처가 들어 있는 주문 데이터나 비밀번호가 들어 있는 설정 파일이 저장소에 포함되면 안 된다. 하네스는 이런 파일들을 저장소 제외 목록에 미리 넣어 두었고, 비밀 정보가 든 파일은 에이전트가 읽지 못하도록 차단 규칙에도 등록해 두었다. 독자가 새로운 종류의 데이터를 추가할 때도 이 구분을 먼저 확인하는 것이 좋다.</p>
+
+<figure class="scr big" data-fig="data_map"><svg viewBox="0 0 720 418" width="100%" style="font-family:'Malgun Gothic','Noto Sans KR',sans-serif;max-width:100%;height:auto" xmlns="http://www.w3.org/2000/svg"><defs><marker id="ag" markerUnits="userSpaceOnUse" markerWidth="13" markerHeight="11" refX="11" refY="5.5" orient="auto"><path d="M0,0 L13,5.5 L0,11 z" fill="#6b7785"/></marker><marker id="an" markerUnits="userSpaceOnUse" markerWidth="13" markerHeight="11" refX="11" refY="5.5" orient="auto"><path d="M0,0 L13,5.5 L0,11 z" fill="#2f7d4f"/></marker><marker id="ar" markerUnits="userSpaceOnUse" markerWidth="13" markerHeight="11" refX="11" refY="5.5" orient="auto"><path d="M0,0 L13,5.5 L0,11 z" fill="#b3372f"/></marker><marker id="ab" markerUnits="userSpaceOnUse" markerWidth="13" markerHeight="11" refX="11" refY="5.5" orient="auto"><path d="M0,0 L13,5.5 L0,11 z" fill="#2f6fb3"/></marker></defs><rect x="0" y="0" width="720" height="418" rx="14" fill="#fbfcfd"/><rect x="14" y="12" width="476" height="286" rx="14" fill="#f7fbf8" stroke="#2f7d4f" stroke-width="2.5" stroke-dasharray="8 6"/><text x="30" y="32" text-anchor="start" font-size="13.5" font-weight="700" fill="#2f7d4f">내 컴퓨터</text><rect x="62" y="42" width="318" height="44" rx="8" fill="#fff" stroke="#6b7785" stroke-width="2.2"/><path d="M80 48 h16.12 l7.4399999999999995 7.4399999999999995 v23.56 h-23.56 z" fill="#fff" stroke="#2f7d4f" stroke-width="2.5" stroke-linejoin="round"/><line x1="84.34" y1="61.64" x2="99.22" y2="61.64" stroke="#aab4be" stroke-width="2"/><line x1="84.34" y1="67.22" x2="99.22" y2="67.22" stroke="#aab4be" stroke-width="2"/><line x1="84.34" y1="72.8" x2="99.22" y2="72.8" stroke="#aab4be" stroke-width="2"/><text x="132" y="61" text-anchor="start" font-size="13.5" font-weight="700" fill="#22303c">콘텐츠</text><text x="132" y="77" text-anchor="start" font-size="11.5" font-weight="400" fill="#22303c">글 · 사진 · 상품 정보</text><rect x="62" y="92" width="318" height="44" rx="8" fill="#fff" stroke="#6b7785" stroke-width="2.2"/><g stroke="#2f7d4f" stroke-width="5" stroke-linecap="round"><line x1="102.4" y1="114.0" x2="108.0" y2="114.0"/><line x1="99.4" y1="121.4" x2="103.3" y2="125.3"/><line x1="92.0" y1="124.4" x2="92.0" y2="130.0"/><line x1="84.6" y1="121.4" x2="80.7" y2="125.3"/><line x1="81.6" y1="114.0" x2="76.0" y2="114.0"/><line x1="84.6" y1="106.6" x2="80.7" y2="102.7"/><line x1="92.0" y1="103.6" x2="92.0" y2="98.0"/><line x1="99.4" y1="106.6" x2="103.3" y2="102.7"/></g><circle cx="92" cy="114" r="9.600000000000001" fill="#fff" stroke="#2f7d4f" stroke-width="4"/><text x="132" y="111" text-anchor="start" font-size="13.5" font-weight="700" fill="#22303c">설정</text><text x="132" y="127" text-anchor="start" font-size="11.5" font-weight="400" fill="#22303c">이름 · 색상</text><rect x="62" y="142" width="318" height="44" rx="8" fill="#fff" stroke="#6b7785" stroke-width="2.2"/><path d="M76.0 156 v16 a16.0 7 0 0 0 32 0 v-16" fill="#fff" stroke="#2f7d4f" stroke-width="2.5"/><ellipse cx="92" cy="156" rx="16.0" ry="7" fill="#dff1e5" stroke="#2f7d4f" stroke-width="2.5"/><path d="M76.0 161.33333333333334 a16.0 7 0 0 0 32 0" fill="none" stroke="#2f7d4f" stroke-width="2"/><path d="M76.0 166.66666666666666 a16.0 7 0 0 0 32 0" fill="none" stroke="#2f7d4f" stroke-width="2"/><text x="132" y="161" text-anchor="start" font-size="13.5" font-weight="700" fill="#22303c">고객 데이터</text><text x="132" y="177" text-anchor="start" font-size="11.5" font-weight="400" fill="#22303c">주문 · 상품평</text><rect x="62" y="192" width="318" height="44" rx="8" fill="#fff" stroke="#6b7785" stroke-width="2.2"/><path d="M76 201 h16.0 l5.6000000000000005 6.4 h23.200000000000003 v25.6 h-44.800000000000004 z" fill="#fff" stroke="#2f7d4f" stroke-width="2.5" stroke-linejoin="round"/><text x="132" y="211" text-anchor="start" font-size="13.5" font-weight="700" fill="#22303c">작업 기록</text><text x="132" y="227" text-anchor="start" font-size="11.5" font-weight="400" fill="#22303c">기록 · 전달 폴더</text><rect x="62" y="242" width="318" height="44" rx="8" fill="#fdf3f2" stroke="#b3372f" stroke-width="2.2"/><path d="M83.45 258.3 v-5.699999999999999 a8.549999999999999 8.549999999999999 0 0 1 17.099999999999998 0 v5.699999999999999" fill="none" stroke="#b3372f" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><rect x="77.75" y="258.3" width="28.5" height="22.799999999999997" rx="4" fill="#fff" stroke="#b3372f" stroke-width="3"/><circle cx="92" cy="267.8" r="3.04" fill="#b3372f"/><rect x="90.67" y="268.75" width="2.6599999999999997" height="6.6499999999999995" fill="#b3372f"/><text x="132" y="261" text-anchor="start" font-size="13.5" font-weight="700" fill="#b3372f">비밀 정보</text><text x="132" y="277" text-anchor="start" font-size="11.5" font-weight="400" fill="#22303c">메일 비밀번호 · 계좌</text><g fill="#eef1f4" stroke="#6b7785" stroke-width="3"><path d="M578.0 100.0 a26.0 26.0 0 0 1 8.0 -50.0 a34.0 34.0 0 0 1 62.0 -14.0 a30.0 30.0 0 0 1 46.0 22.0 a24.0 24.0 0 0 1 -6.0 44.0 h-110.0 a2.0 2.0 0 0 1 0 -2.0 z"/></g><text x="630" y="126" text-anchor="middle" font-size="13.5" font-weight="700" fill="#6b7785">저장소 (공개 가능)</text><path d="M382 64 H542" fill="none" stroke="#2f7d4f" stroke-width="3" stroke-linecap="round" marker-end="url(#an)"/><text x="432" y="56" text-anchor="middle" font-size="12" font-weight="700" fill="#2f7d4f">올림</text><path d="M382 114 H542" fill="none" stroke="#2f7d4f" stroke-width="3" stroke-linecap="round" marker-end="url(#an)"/><text x="432" y="106" text-anchor="middle" font-size="12" font-weight="700" fill="#2f7d4f">공개용 설정만</text><path d="M382 164 H500" fill="none" stroke="#b3372f" stroke-width="3" stroke-linecap="round"/><circle cx="514" cy="164" r="10" fill="#fff" stroke="#b3372f" stroke-width="2.5"/><path d="M509.5 159.5 l9 9 M518.5 159.5 l-9 9" fill="none" stroke="#b3372f" stroke-width="2.5" stroke-linecap="round"/><text x="532" y="168" text-anchor="start" font-size="12.5" font-weight="700" fill="#b3372f">올리지 않음</text><path d="M382 264 H500" fill="none" stroke="#b3372f" stroke-width="3" stroke-linecap="round"/><circle cx="514" cy="264" r="10" fill="#fff" stroke="#b3372f" stroke-width="2.5"/><path d="M509.5 259.5 l9 9 M518.5 259.5 l-9 9" fill="none" stroke="#b3372f" stroke-width="2.5" stroke-linecap="round"/><text x="532" y="268" text-anchor="start" font-size="12.5" font-weight="700" fill="#b3372f">올리지 않음</text><path d="M40 64 V318" fill="none" stroke="#6b7785" stroke-width="3" stroke-linecap="round" marker-end="url(#ag)"/><path d="M62 64 H40" fill="none" stroke="#6b7785" stroke-width="2.5" stroke-linecap="round"/><path d="M62 114 H40" fill="none" stroke="#6b7785" stroke-width="2.5" stroke-linecap="round"/><path d="M62 164 H40" fill="none" stroke="#6b7785" stroke-width="2.5" stroke-linecap="round"/><text x="48" y="314" text-anchor="start" font-size="12" font-weight="700" fill="#6b7785">백업</text><rect x="20" y="322" width="250" height="68" rx="10" fill="#eef1f4" stroke="#6b7785" stroke-width="2.5"/><rect x="26" y="342" width="60" height="42" rx="4" fill="#dcebf8" stroke="#1d4e89" stroke-width="2.8"/><path d="M26 354 h60" fill="none" stroke="#1d4e89" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><rect x="49" y="342" width="14" height="10" fill="#fff" stroke="#1d4e89" stroke-width="2"/><text x="96" y="349" text-anchor="start" font-size="14" font-weight="700" fill="#22303c">백업 폴더</text><text x="96" y="368" text-anchor="start" font-size="11.5" font-weight="400" fill="#22303c">콘텐츠 · 설정 · 고객 데이터</text><path d="M270 336 H500" fill="none" stroke="#b3372f" stroke-width="3" stroke-linecap="round"/><circle cx="514" cy="336" r="10" fill="#fff" stroke="#b3372f" stroke-width="2.5"/><path d="M509.5 331.5 l9 9 M518.5 331.5 l-9 9" fill="none" stroke="#b3372f" stroke-width="2.5" stroke-linecap="round"/><text x="532" y="340" text-anchor="start" font-size="12.5" font-weight="700" fill="#b3372f">올리지 않음</text><path d="M272 372 H328" fill="none" stroke="#2f6fb3" stroke-width="3" stroke-linecap="round" marker-end="url(#ab)"/><rect x="336" y="356" width="52" height="32" rx="6" fill="#eef1f4" stroke="#6b7785" stroke-width="2.5"/><rect x="388" y="364" width="9" height="16" rx="2" fill="#fff" stroke="#6b7785" stroke-width="2.2"/><circle cx="348" cy="372" r="3" fill="#2f7d4f"/><rect x="360" y="370" width="20" height="5" rx="2.5" fill="#c9d2db"/><text x="366" y="408" text-anchor="middle" font-size="12.5" font-weight="700" fill="#2f6fb3">다른 곳에 복사 (사람)</text></svg><figcaption>데이터의 종류와 저장 위치. 콘텐츠와 공개용 설정만 저장소에 올리고 고객 데이터와 비밀 정보는 올리지 않는다.</figcaption></figure>
+
+<h2>현황 확인과 백업</h2>
+
+<p>데이터 관리의 시작은 지금 무엇이 얼마나 있는지를 아는 것이다. 에이전트에게 데이터 현황을 물으면 글과 상품, 주문의 수와 마지막 백업 시점을 한 화면으로 정리해 보여 준다. 저자가 저장소를 새로 내려받은 직후에 확인한 현황은 다음과 같다.</p>
+
+<pre class="cmd">┌─ 데이터 현황 ────────────────────────────────────────
+│ 글 2편 · 확인 노트 5건
+│ 가게: 아직 켠 적이 없습니다
+│ 올린 주소: 아직
+│ 마지막 백업: 없음 — python run.py 데이터 백업
+└────────────────────────────────────────────────────</pre>
+
+<p>백업을 요청하면 콘텐츠와 설정, 고객 데이터를 하나의 압축 파일로 묶어 백업 폴더에 저장한다. 저자가 실행했을 때는 파일 38개가 4.9MB 크기의 압축 파일 하나로 저장되었고 0.4초가 걸렸다. 백업 파일은 최근 14개까지만 보관하고 오래된 것부터 자동으로 삭제한다.</p>
+
+<pre class="cmd">백업했습니다: 백업/2026-11-12_100710.zip  (파일 38개, 4940KB) — 최근 14개만 남깁니다</pre>
+
+<p>이 백업은 앞에서 본 수정 전 백업과는 목적이 다르다. 수정 전 백업은 방금 한 수정을 취소하기 위한 것이어서 에이전트가 무언가를 고칠 때마다 자동으로 만들어지고, 데이터 백업은 며칠 전의 상태로 돌아가야 하는 상황에 대비해 정기적으로 만들어 두는 것이다. 또 백업 폴더는 내 컴퓨터에 있으므로 컴퓨터 자체가 고장 나는 경우까지 대비하려면 백업 파일을 외장 저장 장치나 클라우드 저장소에 따로 복사해 두어야 한다.</p>
+
+<h2>복구</h2>
+
+<p>백업은 실제로 복구가 되는 것을 확인해야 의미가 있으므로, 저자는 글이 들어 있는 폴더를 통째로 없앤 다음 복구를 요청해 보았다.</p>
+
+<pre class="cmd">백업했습니다: 백업/2026-11-12_100710_복구직전.zip  (파일 34개, 4682KB) — 최근 14개만 남깁니다
+복구했습니다: 백업/2026-11-12_100710.zip. 복구 직전 상태도 백업/ 에 남겨 두었습니다. 올려 둔 사이트에 반영하려면 python run.py 올려.</pre>
+
+<p>복구를 실행하자 없앴던 글 두 편이 원래대로 돌아왔다. 출력의 첫 줄에서 볼 수 있듯이 복구를 실행하면 복구하기 직전의 상태도 먼저 백업해 두기 때문에, 복구한 뒤에 오히려 잘못됐다는 것을 알게 되더라도 복구 전으로 다시 돌아갈 수 있다. 복구는 현재 데이터를 과거의 데이터로 덮어쓰는 작업이어서 에이전트가 스스로 판단해서 실행하지 않으며, 독자가 복구하라고 분명하게 요청했을 때만 실행한다. 복구한 내용은 내 컴퓨터에만 적용되므로 이미 배포한 사이트에 반영하려면 다시 배포해야 한다.</p>
+
+<h2>세션별 담당</h2>
+
+<p>데이터를 누가 관리하는지도 정해 두어야 하는데, 화면과 기능, 설정을 수정하는 것은 기본 세션이므로 백업과 복구도 기본 세션이 맡고, 매일 반복되는 현황 확인과 백업은 앞에서 소개한 데이터 서브에이전트에게 맡긴다. 데이터 서브에이전트는 현황을 확인하고 백업한 다음, 쇼핑몰에 주문이 있으면 주문 목록을 표로 내보내고, 사람이 처리해야 할 일을 맨 위에 정리해서 돌려준다. 이 서브에이전트의 정의 파일에는 하지 말아야 할 일도 적혀 있어서 복구를 실행하지 않고, 주문 목록을 외부로 옮기지 않으며, 주문 상태를 바꾸지 않는다.</p>
+
+<div class="box"><div class="scroll"><table>
+ <tr><th style="width:26%">작업</th><th style="width:24%">담당</th><th>주기와 조건</th></tr>
+ <tr><td>현황 확인과 백업</td><td>데이터 서브에이전트</td><td>매일 아침, 또는 기본 세션이 요청할 때</td></tr>
+ <tr><td>주문 목록 내보내기</td><td>데이터 서브에이전트</td><td>주문이 있을 때. 파일은 외부에 올리지 않는다</td></tr>
+ <tr><td>입금 확인과 발송 처리</td><td>독자</td><td>통장을 확인한 뒤 운영자 화면에서 직접 처리한다</td></tr>
+ <tr><td>복구</td><td>기본 세션</td><td>독자가 요청했을 때만</td></tr>
+ <tr><td>백업 파일을 다른 곳에 복사</td><td>독자</td><td>주 1회 정도</td></tr>
+</table></div></div>
+
+<p>이렇게 나눠 두면 매일 아침 독자가 확인할 것은 데이터 서브에이전트가 정리한 한 줄뿐이어서, 입금 대기 주문이 몇 건인지와 백업이 정상적으로 만들어졌는지를 보고 필요한 처리만 하면 된다.</p>
+
+<div data-diff="1">
+
+
+
+</div>
+
+<h2>그래서 하네스는 이렇게 짜여 있다</h2>
+
+<div class="box"><div class="scroll"><table>
+  <tr><th style="width:46%">흐름에서 본 것</th><th>하네스에 들어 있는 것</th></tr>
+  <tr><td>원본 자료는 그대로였고 지워진 것은 생성된 화면이었다</td><td>글과 설정이 원본이고 사이트의 화면은 명령으로 다시 생성한다. 백업은 원본을 묶는다</td></tr>
+  <tr><td>올린 뒤에 바뀐 파일의 수를 다시 보고 알아차렸다</td><td>수정이 끝났다고 알리는 명령이 고친 파일의 목록을 보여 주고, 사이트를 생성할 때마다 글과 페이지의 수를 출력한다</td></tr>
+  <tr><td>되돌린 뒤에 공개 주소를 반복해 열어 확인했다</td><td>올리는 명령은 주소가 열리는지를 확인한 뒤에 알리고, 복구한 뒤에는 다시 올려야 공개된 쪽에 반영된다고 출력에 적는다</td></tr>
+  <tr><td>같은 폴더를 세션과 예약이 함께 썼다</td><td>올리는 일은 기본 세션 하나에 두었다. 예약에는 하루 작업 하나만 건다</td></tr>
+</table></div></div>
+
+<p>독자가 할 일은 글의 수와 페이지의 수를 기억해 두는 것이고, 「첫 캠핑」이라면 글 여섯 편에 페이지 10개다. 요청하지 않았는데 이 수가 줄어 있으면 올리기 전에 이유를 묻는다.</p>
+</body></html>

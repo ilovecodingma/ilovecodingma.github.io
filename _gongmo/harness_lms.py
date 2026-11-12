@@ -111,6 +111,8 @@ def pages(page):
                 '<h2>읽기 전에</h2><ul><li>비밀번호·인증번호·접근 키, 메일 주소, 전화번호, 이름과 계정 아이디는 지웠습니다. 회사 업무, 상대방이 있는 분쟁, 성인 표현이 든 작업에 관한 줄은 「범위 밖 내용 — 생략」으로 바꿨습니다.</li>'
                 '<li>그 밖의 내용은 맞춤법을 포함해 원문 그대로입니다. 「에이전트 보고」로 적힌 수치는 따로 확인하지 않은 값입니다.</li><li>먼저 「읽어두기.md」와 「책_절별_원자료_찾기.md」를 보면 어느 파일을 볼지 알 수 있습니다.</li>'
                 '<li>하네스에서는 세션에게 「운영 기록을 받아서 분석해 줘」라고 말하면 됩니다.</li></ul>'
-                f'<h2>파일 {len(A["files"])}개</h2><div class="tblw"><table class="xt" style="width:100%"><tbody>{rows}</tbody></table></div></div>' + CSS)
+                + (('<h2>책에서 뺀 실제 흐름 ' + str(len(A['flows'])) + '편</h2><p>시각, 보낸 쪽과 받는 쪽, 메시지 발췌로 그린 흐름 그림입니다. 책에는 짧게만 실었습니다.</p><ul class="hx-smp">'
+                    + ''.join(f'<li><a href="{E(x["url"])}">{E(x["title"])}</a></li>' for x in A['flows']) + '</ul>') if A.get('flows') else '')
+                + f'<h2>파일 {len(A["files"])}개</h2><div class="tblw"><table class="xt" style="width:100%"><tbody>{rows}</tbody></table></div></div>' + CSS)
         page('/park/archive/', '가난한 박과장의 서비스팀 수업 — 운영 기록과 집필 과정', '책에 다 싣기에는 긴 실제 운영 기록과 집필 과정(가린 판)을 파일로 받아 볼 수 있습니다.', body, crumbs + [('운영 기록', '/park/archive/')], noindex=True)
     return ['/park/']
