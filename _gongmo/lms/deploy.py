@@ -29,7 +29,12 @@ DBID = db['uuid']; print('D1', DBID)
 for stmt in [s.strip() for s in open(os.path.join(HERE, 'schema.sql'), encoding='utf-8').read().split(';') if s.strip()]:
     call('POST', f'/d1/database/{DBID}/query', {'sql': stmt})
 bd = '----lms' + os.urandom(6).hex()
-meta = {'main_module': 'worker.js', 'compatibility_date': '2026-10-01', 'bindings': [{'type': 'd1', 'name': 'DB', 'id': DBID}]}
+KF = os.path.expanduser('~/.lms_admin_key')   # 운영자 열쇠: 이 PC 에만 둔다(저장소에 넣지 않는다)
+if not os.path.exists(KF):
+    import secrets
+    open(KF, 'w').write(secrets.token_urlsafe(32))
+ADMIN = open(KF).read().strip()
+meta = {'main_module': 'worker.js', 'compatibility_date': '2026-10-01', 'bindings': [{'type': 'd1', 'name': 'DB', 'id': DBID}, {'type': 'secret_text', 'name': 'ADMIN_KEY', 'text': ADMIN}]}
 parts = [f'--{bd}\r\nContent-Disposition: form-data; name="metadata"; filename="metadata.json"\r\nContent-Type: application/json\r\n\r\n'.encode() + json.dumps(meta).encode() + b'\r\n',
          f'--{bd}\r\nContent-Disposition: form-data; name="worker.js"; filename="worker.js"\r\nContent-Type: application/javascript+module\r\n\r\n'.encode() + open(os.path.join(HERE, 'worker.js'), 'rb').read() + b'\r\n',
          f'--{bd}--\r\n'.encode()]

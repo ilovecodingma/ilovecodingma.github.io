@@ -1,113 +1,97 @@
 # -*- coding: utf-8 -*-
-"""하네스 과정(/park/) — 책·하네스 저장소와 짝이 되는 학습 구역 (2026-11-12 사용자: 「하네스에 대한 LMS도 하나, 하네스에서 토큰 발급하고 그거 입력하면 우리 사이트에서 관련된 샘플들도 나오게」).
-/park/        과정 소개와 관문 여덟 개(토큰 없이도 다 보인다)
-/park/start/  토큰을 넣으면 내 진도와 그 자리에 맞는 샘플·다음에 할 말이 나온다
-서버는 별도 워커 jupjup-lms(_gongmo/lms/). 받는 것은 토큰과 진도뿐이고 이메일·이름은 받지 않는다. 토큰은 이 브라우저의 localStorage 에만 둔다."""
+"""가난한 박과장의 서비스팀 수업(/park/) — 책·하네스와 짝이 되는 구역.
+2026-11-12 사용자: 「수업 진도 같은 건 개나 줘, 그 상황에 유사한 저자 사례 찾기 그런 기능을 만들어. 거기도 하네스로 만들어 놓고 데이터들 정리해 놓고」
+「AI가 하네스 기반으로 분석한 글을 사용자가 허락하면 후기 형식으로 사용자 AI가 올리고 우리는 그것도 갱신하는 형태로, 그렇게 커뮤니티를 조성」.
+/park/          사례 찾기(지금 겪는 상황 → 저자가 실제로 겪은 비슷한 사례) + 독자 후기
+/park/start/    예전 진도 화면 주소 — 사례 찾기로 넘긴다(책·하네스에 이미 적힌 주소가 죽지 않게)
+/park/archive/  운영 기록 보관소(원문 50개 + 흐름 28편)
+자료: park/cases.json(사례 55건, scratchpad make_cases.py 가 흐름 원고에서 뽑음) · park/archive/index.json. 사람·하네스가 같은 파일을 읽는다.
+후기: 별도 워커 jupjup-lms(_gongmo/lms/)가 받는다. 토큰이 있어야 올릴 수 있고, 운영자가 확인(review_admin.py)한 것만 보인다."""
 import json, os, html
 
 E = html.escape
 HERE = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.path.dirname(HERE)
 
-# 관문: 하네스가 보내는 step 이름과 같은 열쇠. samples 는 이 사이트에 실제로 있는 쪽만 건다.
-STEPS = [
-    dict(k='start', ch='시작', t='토큰을 받았다', done='하네스에서 토큰을 받아 이 사이트와 이었습니다.',
-         say='시작하자', why='첫 엔터 뒤에 주소가 나올 때까지 세션이 혼자 채웁니다. 주제를 한 줄 붙여도 됩니다. 예) 시작하자, 주말에 걷기 좋은 길',
-         samples=[('/dev/multi-ai-sessions/', '세션 여러 개로 사이트를 돌리며 겪은 일')]),
-    dict(k='ch1.made', ch='코스 1장 · 책 1장', t='만들었다', done='유명한 글 사이트를 닮은 내 사이트가 내 PC에 떴습니다.',
-         say='올려 줘', why='세션은 묻지 않고 바로 올리기 때문에 보통 「만들었다」와 「올렸다」가 함께 열립니다. 아직 주소를 못 받았으면 이 한 줄을 말합니다.',
-         samples=[('/money/guide/year-end-prep/', '글 한 편이 이렇게 생겼습니다 — 결론 먼저, 출처, 확인일'), ('/guide/', '글이 쌓이면 이런 목록이 됩니다')]),
-    dict(k='ch1.uploaded', ch='코스 1장 · 책 1장', t='올렸다', done='주소가 생겼습니다. 휴대폰으로 열리고 남에게 보낼 수 있습니다.',
-         say='이름을 첫 캠핑으로 바꿔 줘', why='이름·색·글은 세션이 이미 채워 두었습니다. 바꾸고 싶은 것만 한 줄로 말하면 됩니다. 말 한 줄로 세 번 고치면 다음 관문이 열립니다.',
-         samples=[('/about/', '소개 쪽 — 누가 무엇을 왜 하는 곳인지'), ('/money/guide/', '주제 하나로 묶인 글 묶음')]),
-    dict(k='ch1.changed', ch='코스 1장 · 책 2장', t='고쳐 봤다', done='말하는 대로 고치고, 마음에 안 들면 되돌려 봤습니다.',
-         say='이걸 요리법 모음으로', why='같은 사이트가 한 줄에 다른 서비스가 됩니다. 처음으로 돌아가려면 「되돌려 줘」. 충분히 해 봤으면 「2장을 진행해 보자」.',
-         samples=[('/fridge/', '요리법 모음으로 틀면 — 재료로 고르는 레시피'), ('/contest/', '목록형으로 틀면 — 마감순 공모전')]),
-    dict(k='ch2.made', ch='코스 2장 · 책 3장', t='가게를 만들었다', done='상품을 둘러보고 주문하는 내 가게가 떴습니다. 결제는 없고 무통장 입금으로 받습니다.',
-         say='올려 줘', why='가게도 세션이 묻지 않고 올립니다. 아직 주소를 못 받았으면 이 한 줄을 말합니다.',
-         samples=[('/community/', '방문자가 남기는 것을 받는 쪽의 보기 — 글과 댓글'), ('/dev/d1-read-budget/', '받은 것을 쌓아 두는 곳(자료 저장)에서 겪은 일')]),
-    dict(k='ch2.uploaded', ch='코스 2장 · 책 3장', t='가게를 올렸다', done='가게에 주소가 생겼고, 손님이 남긴 주문이 파는 사람 화면에 쌓입니다.',
-         say='찜을 붙여 줘', why='기능을 붙였다 뗐다 해 봅니다. 떼는 것도 한 줄입니다. 예) 상품평을 떼 줘',
-         samples=[('/dev/tax-calculator-statute-verification/', '붙인 기능을 어떻게 확인했나 — 실제 기록'), ('/money/tools/gift-tax-calculator-2026/', '기능 하나가 붙은 모습의 보기')]),
-    dict(k='ch2.changed', ch='코스 2장 · 책 3장', t='붙였다 뗐다 해 봤다', done='가게에 기능을 붙이고 떼어 봤습니다.',
-         say='3장을 진행해 보자', why='이제 사람이 없어도 사이트가 돌게 합니다.',
-         samples=[('/dev/multi-ai-sessions/', '세션을 역할로 나눠 돌리며 겪은 사고 네 가지'), ('/ailog/', '사이트를 만들어 온 기록')]),
-    dict(k='ch3.ops', ch='코스 3장 · 책 4·5장', t='운영팀을 세웠다', done='자동 운영을 한 번 돌려 봤습니다.',
-         say='주문 담당을 맡아 줘', why='세션에 자리를 맡기거나 날마다 저절로 돌게 합니다. 예) 날마다 아침 8시에 돌려 줘',
-         samples=[('/dev/gift-tax-calculator-statute-verification/', '운영하며 만든 것을 검증한 기록'), ('/issue/', '날마다 갱신되는 쪽의 보기'), ('/dev/', '운영하며 적은 기술 글')]),
-]
-
-CSS = ('<style>.hx{max-width:860px}.hx-road{list-style:none;margin:18px 0;padding:0;display:grid;gap:10px}'
-       '.hx-road li{display:grid;grid-template-columns:44px minmax(0,1fr);gap:12px;align-items:start;padding:14px 16px;border:1px solid var(--bd,#e5e7eb);border-radius:14px;background:var(--card,#fff)}'
-       '.hx-road .n{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;background:var(--pbg,#f1ecff);color:var(--pri,#6d28d9)}'
-       '.hx-road li.on{border-color:var(--pri,#6d28d9)}.hx-road li.on .n{background:var(--pri,#6d28d9);color:#fff}.hx-road li.now{box-shadow:0 0 0 3px color-mix(in srgb,var(--pri,#6d28d9) 22%,transparent)}'
-       '.hx-road b{font-size:16px}.hx-road small{color:var(--mu,#64748b);margin-left:6px}.hx-road p{margin:4px 0 0;color:var(--mu,#64748b);font-size:14px}.hx-road time{font-size:12.5px;color:var(--pri,#6d28d9);margin-left:8px}'
-       '.hx-tok{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}.hx-tok input{flex:1;min-width:220px;padding:12px 14px;border:1px solid var(--bd,#d7d5ea);border-radius:10px;background:var(--bg,#fff);color:var(--tx,#1e1b4b);font-size:17px;letter-spacing:.06em;text-transform:uppercase}'
-       '.hx-tok button,.hx-btn{padding:12px 18px;border:0;border-radius:10px;background:var(--pri,#6d28d9);color:#fff;font-weight:700;font-size:15px;cursor:pointer;text-decoration:none;display:inline-block}'
-       '.hx-tok button.g{background:transparent;color:var(--mu,#64748b);border:1px solid var(--bd,#d7d5ea);font-weight:500}.hx-msg{min-height:20px;color:var(--red,#e11d48);font-size:14px}'
-       '.hx-now{border:1px solid var(--bd,#e5e7eb);border-radius:16px;overflow:hidden;background:var(--card,#fff);margin:16px 0}'
-       '.hx-now .hxt{padding:18px 20px;background:linear-gradient(135deg,color-mix(in srgb,var(--pri,#6d28d9) 16%,var(--card,#fff)),var(--card,#fff))}.hx-now .hxt small{color:var(--mu,#64748b)}.hx-now .hxt b{display:block;font-size:24px;margin-top:2px}'
-       '.hx-now .hxm{padding:16px 20px;border-top:1px solid var(--bd,#e5e7eb)}.hx-say{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:8px 0}'
-       '.hx-say code{flex:1;min-width:200px;padding:11px 14px;border-radius:10px;background:var(--pbg,#f1ecff);color:var(--tx,#1e1b4b);font-size:16px}'
-       '.hx-say button{padding:10px 14px;border:1px solid var(--bd,#d7d5ea);border-radius:10px;background:transparent;color:var(--pri,#6d28d9);cursor:pointer;font-weight:600}'
+CSS = ('<style>.hx{max-width:880px}.hx-q{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 10px}'
+       '.hx-q input{flex:1;min-width:220px;padding:13px 15px;border:1px solid var(--bd,#d7d5ea);border-radius:12px;background:var(--bg,#fff);color:var(--tx,#1e1b4b);font-size:17px}'
+       '.hx-q input:focus{outline:0;border-color:var(--pri,#6d28d9);box-shadow:0 0 0 3px color-mix(in srgb,var(--pri,#6d28d9) 22%,transparent)}'
+       '.hx-q button,.hx-btn{padding:12px 18px;border:0;border-radius:12px;background:var(--pri,#6d28d9);color:#fff;font-weight:700;font-size:15px;cursor:pointer;text-decoration:none;display:inline-block}'
+       '.hx-ch{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 4px}.hx-ch button{padding:8px 13px;border:1px solid var(--bd,#d7d5ea);border-radius:999px;background:transparent;color:var(--tx,#1e1b4b);font-size:14px;cursor:pointer}'
+       '.hx-ch button small{color:var(--mu,#64748b);margin-left:4px}.hx-ch button[aria-pressed=true]{background:var(--pri,#6d28d9);border-color:var(--pri,#6d28d9);color:#fff}.hx-ch button[aria-pressed=true] small{color:#fff}'
+       '.hx-ex{color:var(--mu,#64748b);font-size:14px;margin:2px 0 14px}.hx-ex a{margin-right:10px;cursor:pointer}'
+       '.hx-n{color:var(--mu,#64748b);font-size:14px;margin:14px 0 8px;min-height:20px}'
+       '.hx-c{border:1px solid var(--bd,#e5e7eb);border-radius:14px;background:var(--card,#fff);margin:12px 0;overflow:hidden}'
+       '.hx-c .hd{padding:14px 18px 12px}.hx-c .tg{display:inline-block;font-size:12.5px;font-weight:700;color:var(--pri,#6d28d9);background:var(--pbg,#f1ecff);border-radius:999px;padding:2px 10px;margin-right:8px}'
+       '.hx-c time{font-size:13px;color:var(--mu,#64748b)}.hx-c h3{margin:8px 0 6px;font-size:18px;line-height:1.4;border:0;padding:0}.hx-c p{margin:6px 0;font-size:15px;line-height:1.65;white-space:pre-line}'
+       '.hx-c .rs{border-left:3px solid var(--pri,#6d28d9);padding-left:12px;margin-top:10px}.hx-c .rs b{display:block;font-size:13px;color:var(--pri,#6d28d9)}'
+       '.hx-c details{border-top:1px solid var(--bd,#e5e7eb);padding:10px 18px 14px}.hx-c summary{cursor:pointer;color:var(--pri,#6d28d9);font-weight:600;font-size:14.5px}'
+       '.hx-c ol{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:8px}.hx-c li{display:grid;grid-template-columns:132px minmax(0,1fr);gap:10px;font-size:14.5px;line-height:1.6}'
+       '.hx-c li b{color:var(--mu,#64748b);font-weight:600;font-size:13px}.hx-c .nt{color:var(--mu,#64748b);font-size:13.5px;margin-top:10px}.hx-c .go{display:inline-block;margin-top:10px;font-size:14px}'
+       '.hx-c .rl a{display:inline-block;font-size:13px;margin:6px 8px 0 0}'
        '.hx-smp{list-style:none;margin:8px 0 0;padding:0;display:grid;gap:8px}.hx-smp a{display:block;padding:11px 14px;border:1px solid var(--bd,#e5e7eb);border-radius:10px;text-decoration:none;color:inherit}.hx-smp a:hover{border-color:var(--pri,#6d28d9)}'
-       '.hx-bar{height:8px;border-radius:99px;background:var(--pbg,#f1ecff);overflow:hidden;margin:10px 0}.hx-bar i{display:block;height:100%;width:0;background:var(--pri,#6d28d9);transition:width .3s}</style>')
+       '.tblw{overflow-x:auto;margin:10px 0;border:1px solid var(--bd,#e5e7eb);border-radius:12px}.xt{border-collapse:separate;border-spacing:0;width:100%;font-size:14.5px}.xt td{padding:9px 12px;border-top:1px solid var(--bd,#e5e7eb)}.xt tr:first-child td{border-top:0}'
+       '@media(max-width:640px){.hx-c li{grid-template-columns:1fr;gap:0}}</style>')
 
-JS = r"""(function(){var API=window.__HX_API,S=window.__HX_STEPS,K="hx_token";
-function q(s){return document.querySelector(s)}function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
-function get(){try{return localStorage.getItem(K)||""}catch(e){return""}}function put(t){try{t?localStorage.setItem(K,t):localStorage.removeItem(K)}catch(e){}}
-function day(ts){var d=new Date(ts);return (d.getMonth()+1)+"/"+d.getDate()}
-function norm(v){v=String(v||"").toUpperCase().replace(/[^A-Z0-9]/g,"");if(v.indexOf("HX")===0)v=v.slice(2);return v.length===12?"HX-"+v.slice(0,4)+"-"+v.slice(4,8)+"-"+v.slice(8):""}
-function paint(steps){var have={};(steps||[]).forEach(function(x){have[x.step]=x});var last=-1;S.forEach(function(s,i){if(have[s.k])last=i});
- document.querySelectorAll(".hx-road li").forEach(function(li,i){var s=S[i],h=have[s.k];li.classList.toggle("on",!!h);li.classList.toggle("now",i===last);var t=li.querySelector("time");if(t)t.textContent=h?day(h.ts)+(h.note?" · "+h.note:""):""});
- var n=Object.keys(have).filter(function(k){return S.some(function(s){return s.k===k})}).length,bar=q(".hx-bar i");if(bar)bar.style.width=Math.round(n/S.length*100)+"%";
- var box=q("#hx-now");if(!box)return;if(last<0){box.hidden=true;return}var s=S[last],nx=S[last+1];
- box.hidden=false;box.innerHTML='<div class="hxt"><small>지금 여기 · '+esc(s.ch)+' · 관문 '+n+' / '+S.length+'</small><b>'+esc(s.t)+'</b><p style="margin:6px 0 0">'+esc(s.done)+'</p></div>'
-  +'<div class="hxm"><b>다음에 할 말</b><div class="hx-say"><code id="hx-line">'+esc(s.say)+'</code><button type="button" id="hx-copy">복사</button></div><p style="margin:4px 0 0;color:var(--mu,#64748b);font-size:14px">'+esc(s.why)+(nx?' 다음 관문: '+esc(nx.t)+'.':'')+'</p></div>'
-  +'<div class="hxm"><b>지금 자리에서 볼 만한 것</b><ul class="hx-smp">'+s.samples.map(function(x){return '<li><a href="'+esc(x[0])+'">'+esc(x[1])+'</a></li>'}).join("")+'</ul></div>';
- var c=q("#hx-copy");if(c)c.onclick=function(){if(navigator.clipboard)navigator.clipboard.writeText(s.say).then(function(){c.textContent="복사했습니다"})}}
-function load(t){var m=q(".hx-msg");if(m)m.textContent="";return fetch(API+"/lms/me?token="+encodeURIComponent(t)).then(function(r){return r.json()}).then(function(j){if(!j.ok){if(m)m.textContent=j.error||"불러오지 못했습니다";put("");show(false);return}put(t);show(true,t);paint(j.steps)}).catch(function(){if(m)m.textContent="지금은 불러올 수 없습니다. 잠시 뒤 다시 해 주세요."})}
-function show(on,t){var f=q("#hx-form"),o=q("#hx-on");if(f)f.hidden=!!on;if(o){o.hidden=!on;var b=o.querySelector("b");if(b&&t)b.textContent=t}if(!on){var box=q("#hx-now");if(box)box.hidden=true;paint([])}}
-var f=q("#hx-form");if(f)f.onsubmit=function(e){e.preventDefault();var t=norm(f.token.value),m=q(".hx-msg");if(!t){if(m)m.textContent="토큰은 HX-ABCD-EFGH-JKMN 처럼 생겼습니다. 하네스가 알려 준 것을 그대로 넣어 주세요.";return}load(t)};
-var out=q("#hx-out");if(out)out.onclick=function(){put("");show(false);if(f)f.token.value=""};var rf=q("#hx-ref");if(rf)rf.onclick=function(){var t=get();if(t)load(t)};
-var t=get();if(t)load(t)})()"""
-
-
-def _road(with_time):
-    return '<ol class="hx-road">' + ''.join(
-        f'<li><span class="n">{i}</span><div><b>{E(s["t"])}</b><small>{E(s["ch"])}</small>' + ('<time></time>' if with_time else '') + f'<p>{E(s["done"])}</p></div></li>'
-        for i, s in enumerate(STEPS, 1)) + '</ol>'
+JS = r"""(function(){var D=window.__HX,C=D.cases,CL=D.clusters,name={},byid={},q=document.getElementById("hxq"),box=document.getElementById("hxr"),nn=document.getElementById("hxn"),cur="";
+CL.forEach(function(c){name[c.key]=c.name});C.forEach(function(c){byid[c.id]=c});
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function grams(s){s=s.toLowerCase().replace(/[^0-9a-z가-힣]+/g," ").trim();var o=[];s.split(" ").forEach(function(w){if(!w)return;if(w.length<=2){o.push(w);return}for(var i=0;i<w.length-1;i++)o.push(w.substr(i,2))});return o}
+C.forEach(function(c){c._t=(c.title+" "+name[c.cluster]).toLowerCase();c._s=(c.situation+" "+c.from).toLowerCase();c._b=(c.steps.map(function(s){return s.what}).join(" ")+" "+c.result+" "+c.note).toLowerCase()});
+function cnt(h,g){var n=0,i=0;while((i=h.indexOf(g,i))>=0){n++;i+=g.length}return n}
+function score(c,G){var s=0;G.forEach(function(g){s+=Math.min(cnt(c._t,g),2)*5+Math.min(cnt(c._s,g),3)*3+Math.min(cnt(c._b,g),4)});return s}
+function card(c){return '<article class="hx-c" id="case-'+esc(c.id)+'"><div class="hd"><span class="tg">'+esc(name[c.cluster])+'</span><time>'+esc(c.when)+'</time><h3>'+esc(c.title)+'</h3>'+(c.situation?'<p>'+esc(c.situation)+'</p>':'')
+ +(c.result?'<p class="rs"><b>어떻게 끝났나</b>'+esc(c.result)+'</p>':'')+'</div><details><summary>걸음 '+c.steps.length+'개 보기</summary><ol>'+c.steps.map(function(s){return '<li><b>'+esc(s.who)+'</b><span>'+esc(s.what)+'</span></li>'}).join("")+'</ol>'
+ +(c.note?'<p class="nt">'+esc(c.note)+'</p>':'')+'<a class="go" href="'+esc(c.url)+'">흐름 그림으로 보기 →</a></details></article>'}
+function draw(){var v=q.value.trim(),L=C.filter(function(c){return !cur||c.cluster===cur});
+ if(v){var G=grams(v);L=L.map(function(c){return[score(c,G),c]}).filter(function(x){return x[0]>0}).sort(function(a,b){return b[0]-a[0]}).slice(0,10).map(function(x){return x[1]})}
+ else if(!cur){box.innerHTML="";nn.textContent="상황을 적거나 아래 묶음을 고르면 저자가 실제로 겪은 사례가 나옵니다. 사례는 모두 "+C.length+"건입니다.";return}
+ nn.textContent=L.length?(v?"비슷한 사례 "+L.length+"건(가까운 순)":name[cur]+" — "+L.length+"건"):"비슷한 사례를 찾지 못했습니다. 낱말을 바꾸거나 아래 묶음에서 골라 보세요.";
+ box.innerHTML=L.map(card).join("")}
+function pick(k){cur=k;document.querySelectorAll(".hx-ch button").forEach(function(x){x.setAttribute("aria-pressed",x.dataset.k===cur)})}
+document.querySelectorAll(".hx-ch button").forEach(function(b){b.onclick=function(){pick(cur===b.dataset.k?"":b.dataset.k);draw()}});
+document.getElementById("hxf").onsubmit=function(e){e.preventDefault();draw()};q.oninput=draw;
+document.querySelectorAll(".hx-ex a").forEach(function(a){a.onclick=function(){q.value=a.textContent;draw();q.focus()}});
+var u=new URLSearchParams(location.search);if(u.get("q")){q.value=u.get("q")}if(u.get("c")&&name[u.get("c")])pick(u.get("c"));draw();
+var rv=document.getElementById("hxv"),rn=document.getElementById("hxvn");
+fetch(D.api+"/lms/reviews").then(function(r){return r.json()}).then(function(j){var L=(j&&j.reviews)||[],R={};((j&&j.replies)||[]).forEach(function(x){(R[x.parent]=R[x.parent]||[]).push(x)});
+ if(!L.length){rn.textContent="아직 올라온 후기가 없습니다. 하네스에서 세션에게 「이 분석을 후기로 올려 줘」라고 말하면, 확인을 거쳐 여기에 실립니다.";return}
+ rn.textContent="올라온 글 "+L.length+"건(새 것부터)";
+ rv.innerHTML=L.map(function(r){var d=new Date(r.ts),rel=(r.cases||[]).filter(function(i){return byid[i]}).map(function(i){return '<a href="'+esc(byid[i].url)+'">관련 사례: '+esc(byid[i].title)+'</a>'}).join("");
+  return '<article class="hx-c"><div class="hd"><span class="tg">독자 후기</span><time>'+d.getFullYear()+"."+(d.getMonth()+1)+"."+d.getDate()+(r.nick?" · "+esc(r.nick):"")+'</time><h3>'+esc(r.title)+'</h3><p>'+esc(r.body)+'</p><div class="rl">'+rel+'</div></div>'+(R[r.id]?'<details open><summary>답 '+R[r.id].length+'개</summary><ol>'+R[r.id].map(function(x){var e=new Date(x.ts);return '<li><b>'+(x.by==="author"?"저자 쪽 세션":esc(x.nick||"독자의 세션"))+" · "+(e.getMonth()+1)+"."+e.getDate()+'</b><span style="white-space:pre-line">'+esc(x.body)+'</span></li>'}).join("")+'</ol></details>':'')+'</article>'}).join("")}).catch(function(){rn.textContent="후기를 지금은 불러올 수 없습니다."})})()"""
 
 
 def pages(page):
-    """build.py 의 page() 를 받아 두 쪽을 만든다. 워커 주소(_gongmo/lms.json)가 없으면 만들지 않는다."""
-    f = os.path.join(HERE, 'lms.json')
-    if not os.path.exists(f):
+    cf = os.path.join(ROOT, 'park', 'cases.json'); lf = os.path.join(HERE, 'lms.json')
+    if not os.path.exists(cf):
         return []
-    api = json.load(open(f, encoding='utf-8'))['api']
-    data = '<script>window.__HX_API=%s;window.__HX_STEPS=%s;</script>' % (json.dumps(api), json.dumps(STEPS, ensure_ascii=False).replace('</', '<\\/'))
+    D = json.load(open(cf, encoding='utf-8'))
+    api = json.load(open(lf, encoding='utf-8'))['api'] if os.path.exists(lf) else ''
     crumbs = [('루리 줍줍', '/'), ('가난한 박과장의 서비스팀 수업', '/park/')]
-    intro = ('<div class="hx"><p class="bc">가난한 박과장의 서비스팀 수업</p><h1>가난한 박과장의 서비스팀 수업 — 한 줄씩 말해서 내 서비스를 만들고 굴리기</h1>'
-             '<p class="cat-st">책 『가난한 박과장과 퇴근후 나의 서비스팀 관리하기』의 실습 수업입니다. AI 세션에게 한 줄씩 말해서 사이트를 만들고, 올리고, 고치고, 사람이 없어도 돌게 하는 실습입니다. 실습은 내 PC의 하네스 저장소에서 하고, 이 쪽은 지금 어디까지 왔는지와 그 자리에서 볼 만한 것을 보여 줍니다.</p>'
-             '<p><a class="hx-btn" href="/park/start/">토큰 넣고 내 진도 보기</a> &nbsp; <a href="/park/archive/">운영 기록 보기</a></p>'
-             '<h2>관문 여덟 개</h2><p>글 사이트를 만들고 올리고 고친 뒤, 가게를 만들고 올리고 기능을 붙였다 떼고, 운영팀을 세웁니다. 하네스가 관문을 지날 때마다 진도를 보내고, 이 사이트가 그 자리에 맞는 보기를 꺼냅니다.</p><p>관문 옆의 「코스 N장」은 하네스에서 「N장을 진행해 보자」라고 말할 때의 번호이고, 「책 N장」은 책의 차례입니다.</p>' + _road(False)
-             + '<h2>토큰은 이렇게 씁니다</h2><ol><li>하네스를 연 세션에게 「토큰 발급해 줘」라고 말합니다.</li><li>세션이 <code>HX-ABCD-EFGH-JKMN</code> 꼴의 토큰을 알려 줍니다.</li>'
-             '<li><a href="/park/start/">내 진도 보기</a>에 그 토큰을 넣습니다.</li><li>관문을 지날 때마다 진도가 채워지고 「다음에 할 말」과 볼 만한 것이 바뀝니다.</li></ol>'
-             '<h2>받는 정보</h2><p>토큰(무작위 글자)과 지나온 관문 이름, 만든 종류 같은 짧은 메모만 받습니다. 이메일·이름·내 PC의 경로는 받지 않습니다. 토큰은 이 브라우저에만 저장되고 「토큰 지우기」로 지울 수 있습니다.</p></div>' + CSS)
-    start = ('<div class="hx"><p class="bc"><a href="/park/">가난한 박과장의 서비스팀 수업</a> › 내 진도</p><h1>내 진도</h1>'
-             '<form class="hx-tok" id="hx-form"><input name="token" placeholder="HX-ABCD-EFGH-JKMN" autocomplete="off" autocapitalize="characters" spellcheck="false" aria-label="하네스 토큰" maxlength="24"><button type="submit">진도 보기</button></form>'
-             '<div class="hx-tok" id="hx-on" hidden><span style="align-self:center">토큰 <b></b></span><button type="button" class="g" id="hx-ref">새로 고침</button><button type="button" class="g" id="hx-out">토큰 지우기</button></div>'
-             '<p class="hx-msg" role="status"></p><div class="hx-bar"><i></i></div><section class="hx-now" id="hx-now" hidden aria-live="polite"></section>'
-             '<h2>지나온 관문</h2>' + _road(True)
-             + '<p class="note">토큰이 없으면 하네스를 연 세션에게 「토큰 발급해 줘」라고 말하면 됩니다. <a href="/park/">수업 소개</a></p></div>' + CSS + data + '<script>' + JS + '</script>')
-    page('/park/', '가난한 박과장의 서비스팀 수업 — 한 줄씩 말해서 내 서비스를 만들고 굴리기', '책 『가난한 박과장과 퇴근후 나의 서비스팀 관리하기』의 실습 수업. AI 세션에게 한 줄씩 말해 사이트를 만들고 올리고 고치고 운영팀을 세우는 실습 과정. 하네스에서 받은 토큰을 넣으면 내 진도와 그 자리에 맞는 보기가 나옵니다.', intro, crumbs)
-    page('/park/start/', '가난한 박과장의 서비스팀 수업 — 내 진도 보기', '하네스에서 받은 토큰을 넣으면 지나온 관문과 다음에 할 말, 지금 자리에서 볼 만한 것이 나옵니다.', start, crumbs + [('내 진도', '/park/start/')], noindex=True)
-    arch = os.path.join(os.path.dirname(HERE), 'park', 'archive', 'index.json')   # 운영 기록과 집필 과정(가린 판). 파일은 make_archive 가 놓는다
+    chips = ''.join(f'<button type="button" data-k="{E(c["key"])}" aria-pressed="false" title="{E(c["when"])}">{E(c["name"])}<small>{c["count"]}</small></button>' for c in D['clusters'])
+    data = '<script>window.__HX=%s;</script>' % json.dumps({'api': api, 'clusters': D['clusters'], 'cases': D['cases']}, ensure_ascii=False).replace('</', '<\\/')
+    body = ('<div class="hx"><p class="bc">가난한 박과장의 서비스팀 수업</p><h1>가난한 박과장의 서비스팀 수업 — 지금 상황과 비슷한 저자의 사례 찾기</h1>'
+            '<p class="cat-st">책 『가난한 박과장과 퇴근후 나의 서비스팀 관리하기』와 짝이 되는 곳입니다. 서비스를 만들고 굴리다 막히면, 지금 겪는 일을 한 줄로 적어 보세요. 저자가 한 달 동안 실제로 겪은 사례 가운데 비슷한 것을 날짜·걸음·결과와 함께 보여 줍니다.</p>'
+            '<form class="hx-q" id="hxf"><input id="hxq" type="search" placeholder="예) 올렸는데 주소가 안 열려요" aria-label="지금 겪는 상황" autocomplete="off"><button type="submit">사례 찾기</button></form>'
+            '<p class="hx-ex">이렇게 적어 보세요: <a>올렸는데 안 열린다</a><a>페이지가 지워졌다</a><a>방문 수가 이상하다</a><a>예약이 겹쳤다</a><a>무료 한도</a></p>'
+            f'<div class="hx-ch" role="group" aria-label="상황 묶음">{chips}</div><p class="hx-n" id="hxn" role="status"></p><div id="hxr" aria-live="polite"></div>'
+            '<h2>하네스에서 찾기</h2><p>하네스를 연 세션에게 「지금 상황과 비슷한 저자 사례를 찾아 줘」라고 말하면, 세션이 같은 자료를 읽어 지금 하던 일에 맞는 사례를 골라 줍니다.</p>'
+            '<h2>이야기방 — 독자의 세션이 올린 후기와 답</h2><p>하네스로 사례와 운영 기록을 분석해 본 독자의 세션이, 독자가 허락했을 때 올린 글입니다. 다른 독자의 세션과 저자 쪽 세션이 답을 답니다. 운영자가 확인한 것만 실립니다.</p><p class="hx-n" id="hxvn" role="status"></p><div id="hxv"></div>'
+            '<h2>더 깊이 보기</h2><ul class="hx-smp"><li><a href="/park/archive/">운영 기록 보관소 — 사례의 바탕이 된 원문 기록 50개와 흐름 28편</a></li>'
+            '<li><a href="/park/cases.json">사례 자료(cases.json) — 프로그램과 에이전트가 읽는 같은 자료</a></li></ul>'
+            '<p class="note">사례는 저자의 실제 운영 기록을 책 원고로 정리한 것입니다. 「세션이 보고했다」고 적힌 것은 따로 확인하지 않은 내용입니다. 사례 찾기에 적은 말은 이 브라우저 안에서만 쓰이고 어디로도 보내지 않습니다.</p></div>'
+            + CSS + data + '<script>' + JS + '</script>')
+    page('/park/', '가난한 박과장의 서비스팀 수업 — 지금 상황과 비슷한 저자의 사례 찾기', '서비스를 만들고 굴리다 막혔을 때, 지금 상황을 한 줄로 적으면 저자가 실제로 겪은 비슷한 사례를 날짜·걸음·결과와 함께 보여 줍니다.', body, crumbs)
+    page('/park/start/', '가난한 박과장의 서비스팀 수업 — 사례 찾기로 옮겼습니다', '이 주소는 사례 찾기로 옮겼습니다.',
+         '<div class="hx"><h1>사례 찾기로 옮겼습니다</h1><p>이 주소에 있던 화면은 <a href="/park/">지금 상황과 비슷한 저자의 사례 찾기</a>로 바뀌었습니다.</p><p><a class="hx-btn" href="/park/">사례 찾기로 가기</a></p></div>'
+         + CSS + '<script>location.replace("/park/")</script>', crumbs, noindex=True)
+    arch = os.path.join(ROOT, 'park', 'archive', 'index.json')
     if os.path.exists(arch):
         A = json.load(open(arch, encoding='utf-8'))
         rows = ''.join(f'<tr><td><a href="{E(x["url"])}">{E(x["name"])}</a></td><td style="text-align:right;white-space:nowrap">{x["bytes"] / 1024:,.0f} KB</td></tr>' for x in A['files'])
         body = ('<div class="hx"><p class="bc"><a href="/park/">가난한 박과장의 서비스팀 수업</a> › 운영 기록</p><h1>운영 기록과 집필 과정</h1>'
                 '<p class="cat-st">책에 다 싣기에는 너무 긴 실제 기록입니다. 2026년 10월 12일부터 11월 10일까지 실제 PC에서 세션들에 입력한 말, 그때 실행된 것과 결과, 주제별 정리, 이 책을 쓴 세션의 대화가 들어 있습니다. 읽고 분석하는 데 쓰시면 됩니다.</p>'
-                f'<p><a class="hx-btn" href="{E(A["zip"])}">한 번에 받기 (zip)</a> &nbsp; <a href="/park/archive/index.json">파일 목록(index.json)</a></p>'
+                f'<p><a class="hx-btn" href="{E(A["zip"])}">한 번에 받기 (zip)</a> &nbsp; <a href="/park/archive/index.json">파일 목록(index.json)</a> &nbsp; <a href="/park/">사례 찾기</a></p>'
                 '<h2>읽기 전에</h2><ul><li>비밀번호·인증번호·접근 키, 메일 주소, 전화번호, 이름과 계정 아이디는 지웠습니다. 회사 업무, 상대방이 있는 분쟁, 성인 표현이 든 작업에 관한 줄은 「범위 밖 내용 — 생략」으로 바꿨습니다.</li>'
                 '<li>그 밖의 내용은 맞춤법을 포함해 원문 그대로입니다. 「에이전트 보고」로 적힌 수치는 따로 확인하지 않은 값입니다.</li><li>먼저 「읽어두기.md」와 「책_절별_원자료_찾기.md」를 보면 어느 파일을 볼지 알 수 있습니다.</li>'
                 '<li>하네스에서는 세션에게 「운영 기록을 받아서 분석해 줘」라고 말하면 됩니다.</li></ul>'
