@@ -43,7 +43,7 @@ function score(c,G){var s=0;G.forEach(function(g){s+=Math.min(cnt(c._t,g),2)*5+M
 function card(c){return '<article class="hx-c" id="case-'+esc(c.id)+'"><div class="hd"><span class="tg">'+esc(name[c.cluster])+'</span><time>'+esc(c.when)+'</time><h3>'+esc(c.title)+'</h3>'+(c.situation?'<p>'+esc(c.situation)+'</p>':'')
  +(c.result?'<p class="rs"><b>어떻게 끝났나</b>'+esc(c.result)+'</p>':'')+'</div><details><summary>걸음 '+c.steps.length+'개 보기</summary><ol>'+c.steps.map(function(s){return '<li><b>'+esc(s.who)+'</b><span>'+esc(s.what)+'</span></li>'}).join("")+'</ol>'
  +(c.note?'<p class="nt">'+esc(c.note)+'</p>':'')+'<a class="go" href="'+esc(c.url)+'">흐름 그림으로 보기 →</a></details></article>'}
-function draw(){var v=q.value.trim(),L=C.filter(function(c){return !cur||c.cluster===cur});
+function draw(){var v=q.value.trim(),L=C.filter(function(c){return !cur||c.cluster===cur||(c.also||[]).indexOf(cur)>=0});
  if(v){var G=grams(v);L=L.map(function(c){return[score(c,G),c]}).filter(function(x){return x[0]>0}).sort(function(a,b){return b[0]-a[0]}).slice(0,10).map(function(x){return x[1]})}
  else if(!cur){box.innerHTML="";nn.textContent="상황을 적거나 아래 묶음을 고르면 저자가 실제로 겪은 사례가 나옵니다. 사례는 모두 "+C.length+"건입니다.";return}
  nn.textContent=L.length?(v?"비슷한 사례 "+L.length+"건(가까운 순)":name[cur]+" — "+L.length+"건"):"비슷한 사례를 찾지 못했습니다. 낱말을 바꾸거나 아래 묶음에서 골라 보세요.";
