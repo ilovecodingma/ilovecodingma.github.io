@@ -1,5 +1,5 @@
 {
- "at": "2026-11-12 19:30",
+ "at": "2026-11-12 20:30",
  "nitems": 525,
  "cands": [
   {
@@ -14,7 +14,7 @@
     "조선일보",
     "한국경제"
    ],
-   "n": 55,
+   "n": 26,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -86,7 +86,7 @@
     "한국경제",
     "헤럴드경제"
    ],
-   "n": 13,
+   "n": 14,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -146,6 +146,40 @@
    ]
   },
   {
+   "kw": "데뷔",
+   "nsrc": 5,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "동아일보",
+    "연합뉴스",
+    "한국경제"
+   ],
+   "n": 10,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "있지 채령, 7년 만 솔로 데뷔…\"구미호처럼 홀리는 가수 꿈꿔\"",
+     "link": "https://www.yna.co.kr/view/AKR20261109106000005"
+    },
+    {
+     "src": "동아일보",
+     "title": "문가영, 어느새 데뷔 20주년…“사람 관계 냉철·여유 생겨” [화보]",
+     "link": "https://sports.donga.com/ent/article/all/20261112/135017296/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "올해만 세 번째 컴백…에이티즈 “데뷔 8주년, 여전히 위를 바라본다” (종합)",
+     "link": "https://sports.donga.com/ent/article/all/20261112/135016095/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "‘JYP 새 보이그룹’ 오브더블루, 내년 1월 11일 정식 데뷔",
+     "link": "https://sports.donga.com/ent/article/all/20261112/135015390/1"
+    }
+   ]
+  },
+  {
    "kw": "시간",
    "nsrc": 5,
    "srcs": [
@@ -180,40 +214,6 @@
    ]
   },
   {
-   "kw": "데뷔",
-   "nsrc": 5,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "동아일보",
-    "연합뉴스",
-    "한국경제"
-   ],
-   "n": 9,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "있지 채령, 7년 만 솔로 데뷔…\"구미호처럼 홀리는 가수 꿈꿔\"",
-     "link": "https://www.yna.co.kr/view/AKR20261109106000005"
-    },
-    {
-     "src": "동아일보",
-     "title": "올해만 세 번째 컴백…에이티즈 “데뷔 8주년, 여전히 위를 바라본다” (종합)",
-     "link": "https://sports.donga.com/ent/article/all/20261112/135016095/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "‘JYP 새 보이그룹’ 오브더블루, 내년 1월 11일 정식 데뷔",
-     "link": "https://sports.donga.com/ent/article/all/20261112/135015390/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "드래곤포니, 데뷔 첫 ‘MMA’ 출격…에너제틱 매력 기대",
-     "link": "https://sports.donga.com/ent/article/all/20261112/135015173/1"
-    }
-   ]
-  },
-  {
    "kw": "뜨거운",
    "nsrc": 5,
    "srcs": [
@@ -223,7 +223,7 @@
     "조선일보",
     "한국경제"
    ],
-   "n": 8,
+   "n": 7,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -257,7 +257,7 @@
     "조선일보",
     "한국경제"
    ],
-   "n": 8,
+   "n": 7,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -291,7 +291,7 @@
     "연합뉴스",
     "한겨레"
    ],
-   "n": 7,
+   "n": 6,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -350,40 +350,6 @@
    ]
   },
   {
-   "kw": "변신",
-   "nsrc": 5,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "동아일보",
-    "조선일보",
-    "한겨레"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "“답답하면 내가 뛰어볼까”…‘신인감독 김연경2’·‘솔로지옥’ 게임으로 변신",
-     "link": "https://sports.donga.com/ent/article/all/20261112/135016125/1"
-    },
-    {
-     "src": "한겨레",
-     "title": "‘사업가 변신’ 그룹 노이즈 출신 홍종구…“그 시절 AI 있었다면 당연히 썼죠”",
-     "link": "https://www.hani.co.kr/arti/culture/music/1286278.html"
-    },
-    {
-     "src": "SBS",
-     "title": "로버트 다우니 주니어, 영웅에서 빌런으로…'어벤져스: 둠스데이'의 파격 변신",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008841010&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "뉴시스",
-     "title": "송지효 '명예 해녀' 변신…'10㎞ 달리기' 관리 비결 눈길",
-     "link": "https://www.newsis.com/view/NISX20261110_0003862473"
-    }
-   ]
-  },
-  {
    "kw": "삭제",
    "nsrc": 5,
    "srcs": [
@@ -409,6 +375,40 @@
      "src": "세계일보",
      "title": "차예련, 학폭 의혹 속 SNS 공구 링크 삭제…소속사 “판매 종료 때문”",
      "link": "https://www.segye.com/newsView/20261112502594"
+    },
+    {
+     "src": "SBS",
+     "title": "존박 '맥도날드 주문 랩', 해외서 무단 도용…소속사 \"음원 삭제 진행 중\"",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008840583&plink=RSSLINK&cooper=RSSREADER"
+    }
+   ]
+  },
+  {
+   "kw": "해외서",
+   "nsrc": 5,
+   "srcs": [
+    "SBS",
+    "동아일보",
+    "연합뉴스",
+    "조선일보",
+    "한겨레"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "존박 맥도날드 광고 음원 해외서 무단 유통…\"삭제 협의 중\"",
+     "link": "https://www.yna.co.kr/view/AKR20261111090700005"
+    },
+    {
+     "src": "동아일보",
+     "title": "에이티즈 산 “‘해외서 잘된 그룹’ 설명하던 때 지나…요즘 꿈같다”",
+     "link": "https://sports.donga.com/ent/article/all/20261112/135014294/1"
+    },
+    {
+     "src": "한겨레",
+     "title": "존박·곽진언 ‘맥도날드 랩’ 해외서 무단 유통…소속사 “삭제·차단”",
+     "link": "https://www.hani.co.kr/arti/culture/music/1286784.html"
     },
     {
      "src": "SBS",
@@ -528,7 +528,7 @@
     "연합뉴스",
     "조선일보"
    ],
-   "n": 16,
+   "n": 15,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -561,7 +561,7 @@
     "동아일보",
     "조선일보"
    ],
-   "n": 12,
+   "n": 15,
    "headlines": [
     {
      "src": "동아일보",
@@ -613,8 +613,8 @@
     },
     {
      "src": "동아일보",
-     "title": "올해만 세 번째 컴백…에이티즈 “데뷔 8주년, 여전히 위를 바라본다” (종합)",
-     "link": "https://sports.donga.com/ent/article/all/20261112/135016095/1"
+     "title": "문가영, 어느새 데뷔 20주년…“사람 관계 냉철·여유 생겨” [화보]",
+     "link": "https://sports.donga.com/ent/article/all/20261112/135017296/1"
     }
    ]
   },
@@ -784,72 +784,6 @@
    ]
   },
   {
-   "kw": "배드",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "에이티즈, '배드' 인기 잇는다…\"가장 높은 곳 그 이상까지\"",
-     "link": "https://www.yna.co.kr/view/AKR20261112112300005"
-    },
-    {
-     "src": "동아일보",
-     "title": "에이티즈 여상 “‘배드’ 산 이어 킬링 파트…부담 없다면 거짓말”",
-     "link": "https://sports.donga.com/ent/article/all/20261112/135014359/1"
-    },
-    {
-     "src": "뉴시스",
-     "title": "'중소돌 기적' 에이티즈, '배드' 대중성 품고 '업'…'빌보드 200' 4번째 정상 정조준",
-     "link": "https://www.newsis.com/view/NISX20261112_0003865529"
-    },
-    {
-     "src": "조선일보",
-     "title": "[SC현장]\"우리 자신 이길 것\"…에이티즈, '배드'로 알고리즘 점령하고 더 위로 '업'(종합)",
-     "link": "https://www.chosun.com/entertainments/music/2026/11/12/GM2TANDEMI3TCZJWGU4TEYZXG4/"
-    }
-   ]
-  },
-  {
-   "kw": "안녕",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "[가요소식] 에반, 14일 '뜨거운 안녕' OST '블랙 & 블루' 공개",
-     "link": "https://www.yna.co.kr/view/AKR20261112074900005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "10년 개그 무명 벗어나려는 강훈…'뜨거운 안녕' 1.7% 출발",
-     "link": "https://www.yna.co.kr/view/AKR20261112034000005"
-    },
-    {
-     "src": "동아일보",
-     "title": "‘너의 말이 그냥 웃겨야 할텐데…’ 강훈 ‘치리치리뱅뱅’ 몰골 (뜨거운 안녕)",
-     "link": "https://sports.donga.com/ent/article/all/20261112/135016435/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "강훈, 방송국 회식서 PD 갑질에 분노 (뜨거운 안녕)",
-     "link": "https://sports.donga.com/ent/article/all/20261112/135016026/1"
-    }
-   ]
-  },
-  {
    "kw": "한국",
    "nsrc": 4,
    "srcs": [
@@ -912,6 +846,39 @@
      "src": "한국경제",
      "title": "코요태, 'K-흥' 알리러 세계로…북미 투어 돌입",
      "link": "https://www.hankyung.com/article/202611095927H"
+    }
+   ]
+  },
+  {
+   "kw": "파격",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "동아일보",
+    "조선일보"
+   ],
+   "n": 6,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "주지훈, ‘재혼황후’ 파격 의상에 당황…“이렇게까지 시스루여도 되나”",
+     "link": "https://sports.donga.com/ent/article/all/20261112/135017089/1"
+    },
+    {
+     "src": "SBS",
+     "title": "로버트 다우니 주니어, 영웅에서 빌런으로…'어벤져스: 둠스데이'의 파격 변신",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008841010&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "뉴시스",
+     "title": "'완벽한 자태' 前 WWE 스타, 신간 출간 앞두고 드레스로 '파격' 근황",
+     "link": "https://www.newsis.com/view/NISX20261112_0003864766"
+    },
+    {
+     "src": "뉴시스",
+     "title": "나연, 자주색 머리+극세사 몸매 파격 변신…비결은 '폼롤러'",
+     "link": "https://www.newsis.com/view/NISX20261111_0003863848"
     }
    ]
   },
@@ -1015,7 +982,7 @@
    ]
   },
   {
-   "kw": "파격",
+   "kw": "변신",
    "nsrc": 4,
    "srcs": [
     "SBS",
@@ -1027,8 +994,8 @@
    "headlines": [
     {
      "src": "동아일보",
-     "title": "주지훈, ‘재혼황후’ 파격 의상에 당황…“이렇게까지 시스루여도 되나”",
-     "link": "https://sports.donga.com/ent/article/all/20261112/135017089/1"
+     "title": "“답답하면 내가 뛰어볼까”…‘신인감독 김연경2’·‘솔로지옥’ 게임으로 변신",
+     "link": "https://sports.donga.com/ent/article/all/20261112/135016125/1"
     },
     {
      "src": "SBS",
@@ -1037,8 +1004,8 @@
     },
     {
      "src": "뉴시스",
-     "title": "'완벽한 자태' 前 WWE 스타, 신간 출간 앞두고 드레스로 '파격' 근황",
-     "link": "https://www.newsis.com/view/NISX20261112_0003864766"
+     "title": "송지효 '명예 해녀' 변신…'10㎞ 달리기' 관리 비결 눈길",
+     "link": "https://www.newsis.com/view/NISX20261110_0003862473"
     },
     {
      "src": "뉴시스",
@@ -1081,39 +1048,6 @@
    ]
   },
   {
-   "kw": "반응",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "조선일보",
-    "한국경제",
-    "헤럴드경제"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "한국경제",
-     "title": "\"일본인인 줄 알았다\"…'100일의 거짓말' 본 日 시청자 반응",
-     "link": "https://www.hankyung.com/article/202610281076H"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "“중학교 장기자랑 같다”…로제, 美 무대서 라이브 가창력 엇갈린 반응",
-     "link": "https://biz.heraldcorp.com/article/10935155"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "줄리엔강, 2년만에 결혼반지 분실 사고…“다른 커플들 얘기인줄” 제이제이 반응",
-     "link": "https://biz.heraldcorp.com/article/10935151"
-    },
-    {
-     "src": "뉴시스",
-     "title": "빅토르 안 예능 복귀에 엇갈린 반응…\"굳이 왜?\" vs \"실력은 최고\"",
-     "link": "https://www.newsis.com/view/NISX20261112_0003864740"
-    }
-   ]
-  },
-  {
    "kw": "향한",
    "nsrc": 4,
    "srcs": [
@@ -1147,40 +1081,40 @@
    ]
   },
   {
-   "kw": "해외서",
+   "kw": "배드",
    "nsrc": 4,
    "srcs": [
-    "SBS",
+    "뉴시스",
     "동아일보",
     "연합뉴스",
-    "한겨레"
+    "조선일보"
    ],
    "n": 4,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "존박 맥도날드 광고 음원 해외서 무단 유통…\"삭제 협의 중\"",
-     "link": "https://www.yna.co.kr/view/AKR20261111090700005"
+     "title": "에이티즈, '배드' 인기 잇는다…\"가장 높은 곳 그 이상까지\"",
+     "link": "https://www.yna.co.kr/view/AKR20261112112300005"
     },
     {
      "src": "동아일보",
-     "title": "에이티즈 산 “‘해외서 잘된 그룹’ 설명하던 때 지나…요즘 꿈같다”",
-     "link": "https://sports.donga.com/ent/article/all/20261112/135014294/1"
+     "title": "에이티즈 여상 “‘배드’ 산 이어 킬링 파트…부담 없다면 거짓말”",
+     "link": "https://sports.donga.com/ent/article/all/20261112/135014359/1"
     },
     {
-     "src": "한겨레",
-     "title": "존박·곽진언 ‘맥도날드 랩’ 해외서 무단 유통…소속사 “삭제·차단”",
-     "link": "https://www.hani.co.kr/arti/culture/music/1286784.html"
+     "src": "뉴시스",
+     "title": "'중소돌 기적' 에이티즈, '배드' 대중성 품고 '업'…'빌보드 200' 4번째 정상 정조준",
+     "link": "https://www.newsis.com/view/NISX20261112_0003865529"
     },
     {
-     "src": "SBS",
-     "title": "존박 '맥도날드 주문 랩', 해외서 무단 도용…소속사 \"음원 삭제 진행 중\"",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008840583&plink=RSSLINK&cooper=RSSREADER"
+     "src": "조선일보",
+     "title": "[SC현장]\"우리 자신 이길 것\"…에이티즈, '배드'로 알고리즘 점령하고 더 위로 '업'(종합)",
+     "link": "https://www.chosun.com/entertainments/music/2026/11/12/GM2TANDEMI3TCZJWGU4TEYZXG4/"
     }
    ]
   },
   {
-   "kw": "맥도날드",
+   "kw": "존박",
    "nsrc": 4,
    "srcs": [
     "SBS",
@@ -1213,7 +1147,7 @@
    ]
   },
   {
-   "kw": "존박",
+   "kw": "맥도날드",
    "nsrc": 4,
    "srcs": [
     "SBS",
@@ -1275,6 +1209,39 @@
      "src": "뉴시스",
      "title": "[인터뷰]설경구 \"이창동 영화는 제 경력의 자존감입니다\"",
      "link": "https://www.newsis.com/view/NISX20261112_0003864598"
+    }
+   ]
+  },
+  {
+   "kw": "아냐",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "연합뉴스",
+    "조선일보",
+    "헤럴드경제"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "나나 역고소한 강도, 무고 혐의 부인…\"피해신고 허위 아냐\"",
+     "link": "https://www.yna.co.kr/view/AKR20261110081000004"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "‘충주맨’ 김선태, 연예기획사 설립?…“사실 아냐. 유튜브 콘텐츠 제작 법인”",
+     "link": "https://biz.heraldcorp.com/article/10934086"
+    },
+    {
+     "src": "뉴시스",
+     "title": "곽튜브 \"미혼 전현무, 결혼기념일에 대해 뭘 아냐\"",
+     "link": "https://www.newsis.com/view/NISX20261112_0003865349"
+    },
+    {
+     "src": "조선일보",
+     "title": "KCM♥방예원, 생활고에 물류센터 아르바이트까지 \"부끄러운 일 아냐\"('관종언니')",
+     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/12/GA4DEYJQMMZWGMZTMQ2GGMDFGY/"
     }
    ]
   },
@@ -1341,6 +1308,39 @@
      "src": "뉴시스",
      "title": "최태성 \"거액 스카우트 제안에 원형탈모까지…결국 계약서 찢어\"",
      "link": "https://www.newsis.com/view/NISX20261112_0003864600"
+    }
+   ]
+  },
+  {
+   "kw": "보이그룹",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "연합뉴스",
+    "한국경제"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "JYP, 내년 새 보이그룹 오브더블루…킥플립 이후 2년만",
+     "link": "https://www.yna.co.kr/view/AKR20261109041400005"
+    },
+    {
+     "src": "동아일보",
+     "title": "‘JYP 새 보이그룹’ 오브더블루, 내년 1월 11일 정식 데뷔",
+     "link": "https://sports.donga.com/ent/article/all/20261112/135015390/1"
+    },
+    {
+     "src": "한국경제",
+     "title": "JYP 새 보이그룹 나온다…엔믹스 남동생 '오브더블루' 내년 론칭",
+     "link": "https://www.hankyung.com/article/202611094129H"
+    },
+    {
+     "src": "뉴시스",
+     "title": "코르티스, 스포티파이 15억 스밍↑…5년 내 데뷔 보이그룹 최다",
+     "link": "https://www.newsis.com/view/NISX20261112_0003865277"
     }
    ]
   }
