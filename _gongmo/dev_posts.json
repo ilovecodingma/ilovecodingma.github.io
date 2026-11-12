@@ -1965,5 +1965,44 @@
     "2026-10-20"
    ]
   ]
+ },
+ {
+  "slug": "tax-calculator-statute-verification",
+  "lang": "ko",
+  "date": "2026-11-12",
+  "title": "공식 조문으로 계산기를 검증한 방법 — 연말정산 계산기를 만들며 걸린 함정",
+  "desc": "법령 원문을 직접 받아 읽는 순서, 조문 텍스트에서 표가 빠지는 함정, 개정 조문의 부칙으로 적용 시기를 확인한 과정, 같은 계산을 두 번 구현하고 손으로도 맞춰 본 검산을 실제 숫자로 정리했습니다.",
+  "tags": [
+   "automation",
+   "data",
+   "ai-agents"
+  ],
+  "hub": [
+   "개발 지식 전체",
+   "/ailog/"
+  ],
+  "sources": [
+   [
+    "국가법령정보센터: 소득세법",
+    "https://www.law.go.kr/법령/소득세법",
+    "2026-11-12"
+   ],
+   [
+    "국가법령정보센터: 조세특례제한법",
+    "https://www.law.go.kr/법령/조세특례제한법",
+    "2026-11-12"
+   ],
+   [
+    "국세청: 근로소득 공제 안내",
+    "https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=6435&cntntsId=7871",
+    "2026-11-12"
+   ],
+   [
+    "국세청: 근로소득 세액공제 안내",
+    "https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?cntntsId=7875&mi=6596",
+    "2026-11-12"
+   ]
+  ],
+  "en_summary": "How a 2026 Korean year-end tax settlement calculator was verified against statute text: downloading the in-force Income Tax Act and Restriction of Special Taxation Act from law.go.kr (POST with the statute serial number and effective date), the trap that tables are missing from the extracted article text (the only table-like match was an obsolete 2003 transitional rule, so the deduction tables were cross-checked on the tax agency's pages), reading the addenda to learn that the amended credit-card deduction limits apply to spending from 2026-01-01, implementing the same calculation twice (formula strings run in the browser versus an independent Python version, 7 matching cases), a hand-worked example that ends at 2,378,750 won, and what screenshots revealed (tables not rendered, a mobile-width capture artifact, an explanatory sentence that contradicted the statute)."
  }
 ]
