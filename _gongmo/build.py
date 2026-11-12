@@ -5055,16 +5055,21 @@ def calc_pages():
                 print('계산기 건너뜀', sl, bad)
                 continue
             p_ = f'/money/tools/{sl}/'
-            fld = ''
+            fld = ''; g_ = None
             for i in C['inputs']:
+                if i.get('group') and i['group'] != g_:
+                    fld += f'<h3 class="cc-g">{E(i["group"])}</h3>'; g_ = i['group']
+                money_ = i.get('type') != 'select' and ('원)' in i['label'] or '(원' in i['label'])
                 if i.get('type') == 'select':
                     opts = ''.join(f'<option value="{E(str(v_))}"' + (' selected' if v_ == i.get('default') else '') + f'>{E(n_)}</option>' for n_, v_ in i['options'])
-                    fld += f'<label>{E(i["label"])} <select data-i="{E(i["id"])}">{opts}</select></label>'
+                    fld += f'<label class="cc-f"><span class="cc-l">{E(i["label"])}</span><select data-i="{E(i["id"])}">{opts}</select></label>'
                 else:
-                    fld += (f'<label>{E(i["label"])} <input type="number" inputmode="decimal" data-i="{E(i["id"])}" value="{E(str(i.get("default", 0)))}"'
-                            f' min="{E(str(i.get("min", 0)))}" step="{E(str(i.get("step", 1)))}"></label>')
+                    fld += (f'<label class="cc-f"><span class="cc-l">{E(i["label"])}</span><span class="cc-w"><input type="number" inputmode="decimal" data-i="{E(i["id"])}" value="{E(str(i.get("default", 0)))}"'
+                            f' min="{E(str(i.get("min", 0)))}" step="{E(str(i.get("step", 1)))}">' + ('<em>원</em>' if money_ else '') + '</span>'
+                            + (f'<i class="cc-kr" data-kr="{E(i["id"])}"></i>' if money_ else '') + '</label>')
             cfg = {'inputs': [{'id': i['id'], 'default': i.get('default', 0)} for i in C['inputs']], 'steps': [{'id': s_['id'], 'label': s_['label'], 'expr': s_['expr'], 'fmt': s_.get('fmt', 'num')} for s_ in C['steps']],
-                   'outputs': [{'label': o_['label'], 'expr': o_['expr'], 'fmt': o_.get('fmt', 'num')} for o_ in C['outputs']]}
+                   'outputs': [{'label': o_['label'], 'expr': o_['expr'], 'fmt': o_.get('fmt', 'num')} for o_ in C['outputs']],
+                   'hero': next((k_ for k_, o_ in enumerate(C['outputs']) if o_['label'] == C.get('hero')), 0)}
             secs = ''
             for sc in C.get('sections', []):
                 _tb = ('<div class="tblw"><table class="xt"><thead><tr>' + ''.join(f'<th>{E(x_)}</th>' for x_ in sc['table'][0]) + '</tr></thead><tbody>' + ''.join('<tr>' + ''.join(f'<td>{E(x_)}</td>' for x_ in r_) + '</tr>' for r_ in sc['table'][1:]) + '</tbody></table></div>') if sc.get('table') else ''   # 2026-11-12: 표(table) 구역이 그려지지 않던 것
@@ -5076,18 +5081,50 @@ def calc_pages():
                 secs += '<h2>출처</h2><ul class="gm-l">' + ''.join(f'<li><a href="{E(u_)}" target="_blank" rel="noopener nofollow">{E(n_)}</a></li>' for n_, u_ in C['sources']) + '</ul>'
             rel = ''.join(f'<a href="{E(u_)}">{E(n_)}</a>' for u_, n_ in C.get('related', []) if os.path.exists(os.path.join(ROOT, u_.strip('/'), 'index.html')))
             js = ('<script>(function(){' + CALC_JS + 'var C=' + json.dumps(cfg, ensure_ascii=False).replace('</', '<\\/') + ';var root=document.getElementById("cc");'
+                  'function kr(n){n=Math.round(n);if(!(n>0))return "";var e=Math.floor(n/1e8),m=Math.floor(n%1e8/1e4),r=n%1e4,t="";if(e)t+=e.toLocaleString("ko-KR")+"억 ";if(m)t+=m.toLocaleString("ko-KR")+"만 ";if(r)t+=r.toLocaleString("ko-KR");return t.trim()+"원"}'
                   'function go(){var vals={};root.querySelectorAll("[data-i]").forEach(function(e){vals[e.getAttribute("data-i")]=e.value});var v;try{v=run(C,vals)}catch(x){return}'
-                  'var h="<table class=\\"xt\\"><tbody>";C.outputs.forEach(function(o){h+="<tr><th>"+o.label+"</th><td><b>"+fm(ev(o.expr,v),o.fmt)+"</b></td></tr>"});h+="</tbody></table>";'
-                  'h+="<details><summary>계산 과정 보기</summary><ul>";C.steps.forEach(function(s){h+="<li>"+s.label+": "+fm(v[s.id],s.fmt)+"</li>"});h+="</ul></details>";document.getElementById("co").innerHTML=h}'
-                  'root.addEventListener("input",go);root.addEventListener("change",go);go()})();</script>')
-            css = ('<style>.cc{border:1px solid var(--bd,#e5e7eb);border-radius:14px;padding:14px 16px;margin:14px 0;background:var(--card,#fff)}.cc label{display:block;margin:8px 0;font-size:14.5px}'
-                   '.cc input,.cc select{width:100%;max-width:320px;padding:8px 10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;display:block;margin-top:4px}'
-                   '.xt{border-collapse:collapse;width:100%;font-size:15px;margin-top:10px}.xt th,.xt td{border:1px solid #e5e7eb;padding:8px 10px;text-align:left}.xt th{background:#f8fafc;font-weight:600;color:#0f172a}.xt td{color:#0f172a;background:#fff}.xt{min-width:0}</style>')
+                  'root.querySelectorAll("[data-kr]").forEach(function(k){var e=root.querySelector("[data-i=\\""+k.getAttribute("data-kr")+"\\"]");k.textContent=e?kr(Number(e.value)):""});'
+                  'var hv=ev(C.outputs[C.hero].expr,v),hf=fm(hv,C.outputs[C.hero].fmt);var hl=document.getElementById("ch-l"),hh=document.getElementById("ch-v"),bb=document.getElementById("cbar");'
+                  'hl.textContent=C.outputs[C.hero].label;hh.textContent=hf;hh.className="cc-hv"+(hv<0?" neg":"");if(bb){bb.querySelector("span").textContent=C.outputs[C.hero].label;bb.querySelector("b").textContent=hf}'
+                  'var h="";C.outputs.forEach(function(o,k){if(k===C.hero)return;h+="<div><dt>"+o.label+"</dt><dd>"+fm(ev(o.expr,v),o.fmt)+"</dd></div>"});document.getElementById("co").innerHTML=h;'
+                  'var d="";C.steps.forEach(function(s){d+="<li><span>"+s.label+"</span><b>"+fm(v[s.id],s.fmt)+"</b></li>"});document.getElementById("cs").innerHTML=d}'
+                  'root.addEventListener("input",go);root.addEventListener("change",go);'
+                  'var rs=document.getElementById("cc-reset");if(rs)rs.addEventListener("click",function(){C.inputs.forEach(function(i){var e=root.querySelector("[data-i=\\""+i.id+"\\"]");if(e)e.value=i.default});go()});go()})();</script>')
+            css = ('<style>.cc2{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(300px,1fr);gap:18px;margin:16px 0;align-items:start}'
+                   '.cc-in{background:var(--card,#fff);border:1px solid var(--bd,#e5e7eb);border-radius:16px;padding:6px 18px 18px;box-shadow:var(--sh,0 1px 2px rgba(0,0,0,.05))}'
+                   '.cc-g{margin:20px 0 4px;font-size:13px;font-weight:700;letter-spacing:.02em;color:var(--pri,#6d28d9);display:flex;align-items:center;gap:8px;border:0;padding:0}'
+                   '.cc-g:before{content:"";width:4px;height:14px;border-radius:2px;background:var(--pri,#6d28d9)}'
+                   '.cc-f{display:block;margin:12px 0 0}.cc-l{display:block;font-size:13.5px;color:var(--mu,#64748b);margin-bottom:5px;line-height:1.4}'
+                   '.cc-w{display:flex;align-items:center;border:1px solid var(--bd,#d7d5ea);border-radius:10px;background:var(--bg,#fff);transition:border-color .15s,box-shadow .15s}'
+                   '.cc-w:focus-within,.cc-f select:focus{border-color:var(--pri,#6d28d9);box-shadow:0 0 0 3px color-mix(in srgb,var(--pri,#6d28d9) 22%,transparent);outline:0}'
+                   '.cc-w input{flex:1;min-width:0;width:auto;max-width:none;border:0;background:transparent;color:var(--tx,#1e1b4b);padding:11px 12px;font-size:16px;font-variant-numeric:tabular-nums;text-align:right;outline:0;margin:0;display:block}'
+                   '.cc-w em{font-style:normal;color:var(--mu,#64748b);padding-right:12px;font-size:14px}'
+                   '.cc-f select{width:100%;max-width:none;border:1px solid var(--bd,#d7d5ea);border-radius:10px;background:var(--bg,#fff);color:var(--tx,#1e1b4b);padding:11px 12px;font-size:15px;margin:0;display:block}'
+                   '.cc-kr{display:block;min-height:16px;margin-top:3px;font-style:normal;font-size:12.5px;color:var(--pri,#6d28d9);text-align:right}'
+                   '.cc-btn{margin-top:18px;padding:9px 14px;border:1px solid var(--bd,#d7d5ea);border-radius:999px;background:transparent;color:var(--mu,#64748b);font-size:13.5px;cursor:pointer}.cc-btn:hover{border-color:var(--pri,#6d28d9);color:var(--pri,#6d28d9)}'
+                   '.cc-out{position:sticky;top:76px;background:var(--card,#fff);border:1px solid var(--bd,#e5e7eb);border-radius:16px;overflow:hidden;box-shadow:var(--sh,0 1px 2px rgba(0,0,0,.05))}'
+                   '.cc-hero{padding:20px 20px 16px;background:linear-gradient(135deg,color-mix(in srgb,var(--pri,#6d28d9) 16%,var(--card,#fff)),var(--card,#fff))}'
+                   '.cc-hl{font-size:13.5px;color:var(--mu,#64748b);display:block}.cc-hv{display:block;margin-top:4px;font-size:30px;font-weight:800;line-height:1.15;color:var(--pri,#6d28d9);font-variant-numeric:tabular-nums;overflow-wrap:anywhere}.cc-hv.neg{color:var(--red,#e11d48)}'
+                   '.cc-list{margin:0;padding:6px 20px}.cc-list div{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-top:1px solid var(--bd,#e5e7eb);font-size:14.5px}.cc-list dt{color:var(--mu,#64748b)}.cc-list dd{margin:0;font-weight:700;color:var(--tx,#1e1b4b);font-variant-numeric:tabular-nums;text-align:right}'
+                   '.cc-out details{border-top:1px solid var(--bd,#e5e7eb);padding:10px 20px 14px;font-size:13.5px}.cc-out summary{cursor:pointer;color:var(--pri,#6d28d9);font-weight:600}.cc-out ul{list-style:none;margin:8px 0 0;padding:0}'
+                   '.cc-out li{display:flex;justify-content:space-between;gap:12px;padding:5px 0;color:var(--mu,#64748b)}.cc-out li b{color:var(--tx,#1e1b4b);font-weight:600;white-space:nowrap}'
+                   '.cc-bar{display:none}'
+                   '.cc2>*{min-width:0}.cc-f select{min-width:0;text-overflow:ellipsis}'
+                   '@media(max-width:900px){.cc2{grid-template-columns:minmax(0,1fr)}.cc-out{position:static}'
+                   '.cc-bar{display:flex;position:fixed;left:10px;right:76px;bottom:10px;z-index:40;justify-content:space-between;align-items:center;gap:10px;padding:10px 14px;border-radius:14px;background:var(--pri,#6d28d9);color:#fff;box-shadow:0 8px 24px rgba(0,0,0,.28);font-size:13px}'
+                   '.cc-bar b{font-size:16px;font-variant-numeric:tabular-nums}.cc-hv{font-size:26px}}'
+                   '.tblw{overflow-x:auto;margin:10px 0;border:1px solid var(--bd,#e5e7eb);border-radius:12px}'
+                   '.xt{border-collapse:separate;border-spacing:0;width:100%;font-size:14.5px;min-width:0}.xt th,.xt td{padding:10px 12px;text-align:left;border:0;border-top:1px solid var(--bd,#e5e7eb);color:var(--tx,#1e1b4b);vertical-align:top}'
+                   '.xt thead th{background:var(--pbg,#f1ecff);color:var(--pri,#6d28d9);font-weight:700;border-top:0;font-size:13.5px}.xt td{background:transparent}.xt tbody tr:nth-child(even) td{background:color-mix(in srgb,var(--pbg,#f1ecff) 38%,transparent)}'
+                   '.cc-sec h2{display:flex;align-items:center;gap:10px}.cc-sec h2:before{content:"";width:5px;height:22px;border-radius:3px;background:var(--pri,#6d28d9);flex:none}</style>')
             body = (f'<p class="bc"><a href="/">홈</a> › <a href="/money/tools/">계산기</a> › {E(C["name"])}</p><h1>🧮 {E(C["h1"])}</h1>'
                     f'<div class="cat-st"><b>결론</b><br>{E(C["lead"])}</div><p class="note">기준: {E(C.get("basis", ""))}</p>'
-                    f'<div class="cc" id="cc">{fld}<div id="co" aria-live="polite"></div></div>'
+                    f'<div class="cc2" id="cc"><div class="cc-in">{fld}<button type="button" class="cc-btn" id="cc-reset">처음 값으로</button></div>'
+                    '<aside class="cc-out" aria-live="polite"><div class="cc-hero"><span class="cc-hl" id="ch-l"></span><b class="cc-hv" id="ch-v"></b></div><dl class="cc-list" id="co"></dl>'
+                    '<details><summary>계산 과정 보기</summary><ul id="cs"></ul></details></aside></div>'
+                    '<div class="cc-bar" id="cbar"><span></span><b></b></div>'
                     '<p class="note">참고용 계산이에요. 실제 금액은 사업장 규정·계약·공식 안내에 따라 달라질 수 있어요.</p>'
-                    + secs + (f'<p class="hm-links">{rel}</p>' if rel else '') + css + js)
+                    + '<div class="cc-sec">' + secs + '</div>' + (f'<p class="hm-links">{rel}</p>' if rel else '') + css + js)
             ld_ = {'@context': 'https://schema.org', '@graph': [{'@type': 'WebApplication', 'name': C['name'], 'url': SITE + p_, 'applicationCategory': 'FinanceApplication', 'operatingSystem': 'Web', 'inLanguage': 'ko',
                                                                     'offers': {'@type': 'Offer', 'price': '0', 'priceCurrency': 'KRW'}}] + ([fld_] if fld_ else [])}
             page(p_, C['title'], C['desc'], body, [('루리 줍줍', '/'), ('계산기', '/money/tools/'), (C['name'], p_)], ld_)
