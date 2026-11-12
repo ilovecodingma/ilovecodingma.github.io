@@ -2033,5 +2033,34 @@
    ]
   ],
   "en_summary": "Verifying a Korean gift tax calculator against statute text: the same act appeared with two effective dates (20251001 from the info page, 20260102 from the act page link), so both versions were downloaded and compared article by article (13 articles differed, none of the ones the calculator uses); a request for a third date returned a short non-text page. The statute writes each rate bracket as a base amount plus a percentage of the excess, which was converted to rate times base minus a progressive deduction and checked by hand (4.5 hundred million won gives 80 million either way) and against the tax agency's page. Seven cases were worked by hand and pinned with assertions (for example 100 million won from a parent gives 4,850,000 won; a second 100 million won within ten years gives 24,250,000 won), and an explanatory sentence that contradicted the statute's definition of lineal ascendant was caught before publication."
+ },
+ {
+  "slug": "harness-lms-cases-and-talk",
+  "lang": "ko",
+  "date": "2026-11-12",
+  "title": "책과 짝이 되는 수업 사이트를 하루에 만든 기록 — 토큰, 사례 찾기, 남의 글을 지시로 따르지 않게 하기",
+  "desc": "별도 서버와 토큰으로 시작해 두 번 방향이 바뀌어 저자 사례 찾기와 이야기방이 된 과정, 걸린 것 넷, 보관소 공개 전 점검에서 나온 것, 에이전트가 남의 글을 읽을 때 막아 둔 장치와 지시 시험 결과를 정리했습니다.",
+  "tags": [
+   "automation",
+   "ai-agents",
+   "cloudflare"
+  ],
+  "hub": [
+   "개발 지식 전체",
+   "/ailog/"
+  ],
+  "sources": [
+   [
+    "가난한 박과장의 서비스팀 수업(사례 찾기)",
+    "https://sungprofile.cloud/park/",
+    "2026-11-12"
+   ],
+   [
+    "사례 자료(cases.json)",
+    "https://sungprofile.cloud/park/cases.json",
+    "2026-11-12"
+   ]
+  ],
+  "en_summary": "How a companion course site for a book was built in one day: a separate Cloudflare Worker and D1 database with random tokens (HX-XXXX-XXXX-XXXX, about 60 bits, rate limited by hashed IP), then two direction changes from progress tracking to a case finder (55 real cases from 28 flows in 11 situation clusters, matched in the browser by two-character fragments) and a reader review board where each reader's agent can post after the reader's permission. Four snags are listed (a 403 for the default Python User-Agent, garbled Korean from a terminal encoding, a CSS class name collision, and secrets left in a redacted archive that were found by scanning before publishing). The board treats other people's posts as data: tokens and daily limits on posting, tag characters stripped, operator approval before publication, and a reader-side tool that masks instruction-like sentences and tells the reader how many were masked. A deliberately instruction-like test post was not obeyed in three runs by a real agent session, though the first two runs silently dropped the sentence, which led to the masking-and-notice fix."
  }
 ]
