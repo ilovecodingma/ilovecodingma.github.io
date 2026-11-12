@@ -1,14 +1,14 @@
 {
  "date": "2026-11-12",
- "updated": "2026-11-12 11:51",
+ "updated": "2026-11-12 12:51",
  "sites": 12,
- "npost": 2622,
+ "npost": 2626,
  "note": "출처(커뮤니티)별 집계예요. 작성자·연령·성별 정보는 수집하지 않아요. posts 는 이슈별로 뽑힌 일부라 전체 글 수가 아니에요.",
  "sources": [
   {
    "name": "MLB파크",
-   "np": 21,
-   "nc": 1364,
+   "np": 19,
+   "nc": 1305,
    "topics": [
     {
      "t": "[단독] \"너, 잡아 간다”…금쪽이 울린 '민속촌 귀신' 날벼락",
@@ -18,8 +18,8 @@
      "issue_np": 7,
      "issue_nc": 415,
      "kw": [
-      "귀신",
       "민속촌",
+      "귀신",
       "누나",
       "부모"
      ],
@@ -37,10 +37,10 @@
      "issue_np": 3,
      "issue_nc": 289,
      "kw": [
-      "훈육",
+      "고소장",
       "논란",
       "귀신",
-      "민속"
+      "훈육"
      ],
      "top_post": {
       "t": "고소장 받은 민속촌 '귀신 훈육'...논란 커지자 결국",
@@ -67,55 +67,36 @@
      }
     },
     {
-     "t": "이젠 AI 안경 없이도 뚫린다는 고시 근황 ㄷㄷㄷ",
+     "t": "현직 세무사가 보는 ai안경 사태",
      "nsite": 5,
-     "np_here": 4,
-     "nc_here": 153,
-     "issue_np": 18,
-     "issue_nc": 251,
+     "np_here": 3,
+     "nc_here": 221,
+     "issue_np": 22,
+     "issue_nc": 377,
      "kw": [
-      "AI",
       "안경",
+      "AI",
       "세무사",
-      "구분"
+      "고시"
      ],
      "top_post": {
       "t": "현직 세무사가 보는 ai안경 사태",
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611120120055356&m=view",
-      "nc": 80
-     }
-    },
-    {
-     "t": "\"회사 부장님 부인 사망\"...위로 표현 논란. jpg",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 128,
-     "issue_np": 2,
-     "issue_nc": 128,
-     "kw": [
-      "위로",
-      "논란",
-      "부장",
-      "사망"
-     ],
-     "top_post": {
-      "t": "\"회사 부장님 부인 사망\"...위로 표현 논란. jpg",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611110120043281&m=view",
-      "nc": 128
+      "nc": 112
      }
     },
     {
      "t": "\"중국은 머스크에게도 스파이를 보냈다\"",
-     "nsite": 4,
+     "nsite": 5,
      "np_here": 2,
      "nc_here": 50,
-     "issue_np": 5,
-     "issue_nc": 51,
+     "issue_np": 6,
+     "issue_nc": 53,
      "kw": [
       "스파이",
       "중국",
       "머스크",
-      "일론"
+      "미녀"
      ],
      "top_post": {
       "t": "\"중국은 머스크에게도 스파이를 보냈다\"",
@@ -131,9 +112,9 @@
      "issue_np": 8,
      "issue_nc": 98,
      "kw": [
+      "피해자",
       "살해",
       "아들",
-      "피해자",
       "성범죄"
      ],
      "top_post": {
@@ -144,14 +125,14 @@
     },
     {
      "t": "엔비디아 새로운 CEO 후보로 팀쿡이 거론",
-     "nsite": 4,
+     "nsite": 5,
      "np_here": 1,
      "nc_here": 40,
-     "issue_np": 6,
-     "issue_nc": 58,
+     "issue_np": 7,
+     "issue_nc": 70,
      "kw": [
-      "CEO",
       "엔비디아",
+      "CEO",
       "후보",
       "거론"
      ],
@@ -160,40 +141,40 @@
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611120120054318&m=view",
       "nc": 40
      }
+    },
+    {
+     "t": "[단독] 일본서 산 마운자로, 국내 반입 허용된다…최대 12개",
+     "nsite": 8,
+     "np_here": 1,
+     "nc_here": 18,
+     "issue_np": 13,
+     "issue_nc": 268,
+     "kw": [
+      "반입",
+      "마운자",
+      "허용",
+      "일본"
+     ],
+     "top_post": {
+      "t": "마운자로 한국 반입 가능해진 일본 근황",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611110120051639&m=view",
+      "nc": 18
+     }
     }
    ]
   },
   {
    "name": "인스티즈",
    "np": 13,
-   "nc": 987,
+   "nc": 810,
    "topics": [
-    {
-     "t": "ai안경 사용 추정중인 세무사 수석 본인이 쓴 글들 및 의혹정리",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 122,
-     "issue_np": 4,
-     "issue_nc": 187,
-     "kw": [
-      "수석",
-      "AI",
-      "무사",
-      "안경"
-     ],
-     "top_post": {
-      "t": "ai안경 사용 추정중인 세무사 수석 본인이 쓴 글들 및 의혹정리",
-      "u": "https://www.instiz.net/pt/7924936?green=1",
-      "nc": 122
-     }
-    },
     {
      "t": "[단독] 일본서 산 마운자로, 국내 반입 허용된다…최대 12개",
      "nsite": 8,
      "np_here": 1,
      "nc_here": 114,
      "issue_np": 13,
-     "issue_nc": 239,
+     "issue_nc": 268,
      "kw": [
       "반입",
       "마운자",
@@ -214,34 +195,15 @@
      "issue_np": 4,
      "issue_nc": 121,
      "kw": [
-      "학대",
       "민속촌",
-      "아동",
-      "논란"
+      "학대",
+      "논란",
+      "아동"
      ],
      "top_post": {
       "t": "\"계속 민원 넣어줄게\"…이지혜, '민속촌 귀신' 아동학대 논란 언급에 댓글 '활활'",
       "u": "https://www.instiz.net/pt/7924489?green=1",
       "nc": 110
-     }
-    },
-    {
-     "t": "자연분만 무섭다고 했다가 남편한테 쌍욕 먹고 쫓겨났어",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 109,
-     "issue_np": 2,
-     "issue_nc": 109,
-     "kw": [
-      "남편",
-      "자연",
-      "분만",
-      "쌍욕"
-     ],
-     "top_post": {
-      "t": "자연분만 무섭다고 했다가 남편한테 쌍욕 먹고 쫓겨났어",
-      "u": "https://www.instiz.net/pt/7924776?green=1",
-      "nc": 109
      }
     },
     {
@@ -252,10 +214,10 @@
      "issue_np": 3,
      "issue_nc": 107,
      "kw": [
-      "삼성",
       "기술",
+      "삼성",
       "개발",
-      "세계"
+      "유일"
      ],
      "top_post": {
       "t": "삼성이 1조 6천억 들여서 개발한 전세계에서 유일한 기술 근황",
@@ -267,28 +229,65 @@
      "t": "63회 세무사시험 수석 한원석씨 \"매일 새벽 2시30분 싸주신 김밥...어머니가 합격 시켰다”",
      "nsite": 3,
      "np_here": 1,
-     "nc_here": 94,
+     "nc_here": 103,
      "issue_np": 4,
-     "issue_nc": 111,
+     "issue_nc": 120,
      "kw": [
+      "시험",
       "수석",
       "세무사",
-      "시험",
       "새벽"
      ],
      "top_post": {
       "t": "63회 세무사시험 수석 한원석씨 \"매일 새벽 2시30분 싸주신 김밥...어머니가 합격 시켰다”",
       "u": "https://www.instiz.net/pt/7925012?green=1",
-      "nc": 94
+      "nc": 103
+     }
+    },
+    {
+     "t": "현직 세무사가 보는 ai안경 사태",
+     "nsite": 5,
+     "np_here": 2,
+     "nc_here": 91,
+     "issue_np": 22,
+     "issue_nc": 377,
+     "kw": [
+      "안경",
+      "AI",
+      "세무사",
+      "고시"
+     ],
+     "top_post": {
+      "t": "ai안경으로 온갖 시험 통과한 사람 이미 정말 많은 이유ㄷㄷㄷ",
+      "u": "https://www.instiz.net/pt/7924995?green=1",
+      "nc": 64
+     }
+    },
+    {
+     "t": "한국은 일본 식민지였는데 왜 일본어 안 써?",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 72,
+     "issue_np": 6,
+     "issue_nc": 72,
+     "kw": [
+      "한국",
+      "일본",
+      "식민지"
+     ],
+     "top_post": {
+      "t": "일본 호스트바 빠져서 한국에서 대기업때려치고 일본간 후기",
+      "u": "https://www.instiz.net/pt/7924911?green=1",
+      "nc": 72
      }
     },
     {
      "t": "속보 스시자로 허용",
      "nsite": 3,
      "np_here": 1,
-     "nc_here": 69,
+     "nc_here": 71,
      "issue_np": 4,
-     "issue_nc": 86,
+     "issue_nc": 88,
      "kw": [
       "허용",
       "속보",
@@ -298,41 +297,42 @@
      "top_post": {
       "t": "속보 스시자로 허용",
       "u": "https://www.instiz.net/pt/7924745?green=1",
-      "nc": 69
+      "nc": 71
      }
     },
     {
-     "t": "한국은 일본 식민지였는데 왜 일본어 안 써?",
-     "nsite": 4,
+     "t": "아들 성범죄 피해자 살해' 현장서 50대 피의자 유서·번개탄 발견",
+     "nsite": 6,
      "np_here": 1,
-     "nc_here": 67,
-     "issue_np": 6,
-     "issue_nc": 67,
+     "nc_here": 48,
+     "issue_np": 8,
+     "issue_nc": 98,
      "kw": [
-      "한국",
-      "일본",
-      "식민지"
+      "피해자",
+      "살해",
+      "아들",
+      "성범죄"
      ],
      "top_post": {
-      "t": "일본 호스트바 빠져서 한국에서 대기업때려치고 일본간 후기",
-      "u": "https://www.instiz.net/pt/7924911?green=1",
-      "nc": 67
+      "t": "아들 성범죄 피해자 살해' 현장서 50대 피의자 유서·번개탄 발견",
+      "u": "https://www.instiz.net/pt/7924725?green=1",
+      "nc": 48
      }
     }
    ]
   },
   {
    "name": "개드립",
-   "np": 18,
-   "nc": 427,
+   "np": 22,
+   "nc": 518,
    "topics": [
     {
      "t": "슬슬 커지는것 같다는 세무사 시험 ai 논란",
      "nsite": 4,
-     "np_here": 3,
-     "nc_here": 79,
-     "issue_np": 15,
-     "issue_nc": 79,
+     "np_here": 4,
+     "nc_here": 128,
+     "issue_np": 17,
+     "issue_nc": 128,
      "kw": [
       "AI",
       "세무사",
@@ -340,21 +340,40 @@
       "논란"
      ],
      "top_post": {
-      "t": "슬슬 커지는것 같다는 세무사 시험 ai 논란",
-      "u": "https://www.dogdrip.net/dogdrip/734341334?sort_index=popular&page=1",
-      "nc": 31
+      "t": "이번 세무사 시험 차석이 범상치 않은 이유",
+      "u": "https://www.dogdrip.net/dogdrip/734396077?sort_index=popular&page=1",
+      "nc": 40
      }
     },
     {
-     "t": "ai안경 사용 추정중인 세무사 수석 본인이 쓴 글들 및 의혹정리",
+     "t": "[단독] 일본서 산 마운자로, 국내 반입 허용된다…최대 12개",
+     "nsite": 8,
+     "np_here": 2,
+     "nc_here": 79,
+     "issue_np": 13,
+     "issue_nc": 268,
+     "kw": [
+      "반입",
+      "마운자",
+      "허용",
+      "일본"
+     ],
+     "top_post": {
+      "t": "마운자로 한국 반입 허용 소식에 노젓는 일본 병원들",
+      "u": "https://www.dogdrip.net/dogdrip/734397055?sort_index=popular&page=1",
+      "nc": 44
+     }
+    },
+    {
+     "t": "AI 안경 의심받는 세무사 수석합격자",
      "nsite": 3,
      "np_here": 2,
      "nc_here": 65,
      "issue_np": 4,
-     "issue_nc": 187,
+     "issue_nc": 66,
      "kw": [
-      "수석",
       "AI",
+      "수석",
       "무사",
       "안경"
      ],
@@ -365,36 +384,17 @@
      }
     },
     {
-     "t": "[단독] 일본서 산 마운자로, 국내 반입 허용된다…최대 12개",
-     "nsite": 8,
-     "np_here": 2,
-     "nc_here": 50,
-     "issue_np": 13,
-     "issue_nc": 239,
-     "kw": [
-      "반입",
-      "마운자",
-      "허용",
-      "일본"
-     ],
-     "top_post": {
-      "t": "[속보] 일본에서산 마운자로 국내반입 허용",
-      "u": "https://www.dogdrip.net/dogdrip/734308793?sort_index=popular&page=1",
-      "nc": 35
-     }
-    },
-    {
-     "t": "이젠 AI 안경 없이도 뚫린다는 고시 근황 ㄷㄷㄷ",
+     "t": "현직 세무사가 보는 ai안경 사태",
      "nsite": 5,
      "np_here": 1,
      "nc_here": 35,
-     "issue_np": 18,
-     "issue_nc": 251,
+     "issue_np": 22,
+     "issue_nc": 377,
      "kw": [
-      "AI",
       "안경",
+      "AI",
       "세무사",
-      "구분"
+      "고시"
      ],
      "top_post": {
       "t": "이젠 AI 안경 없이도 뚫린다는 고시 근황 ㄷㄷㄷ",
@@ -410,8 +410,8 @@
      "issue_np": 3,
      "issue_nc": 34,
      "kw": [
-      "헬스장",
       "중국",
+      "헬스장",
       "매너",
       "싸움"
      ],
@@ -419,6 +419,25 @@
       "t": "중국 헬스장 덤벨 비매너 싸움",
       "u": "https://www.dogdrip.net/dogdrip/734238574?sort_index=popular&page=1",
       "nc": 31
+     }
+    },
+    {
+     "t": "안녕하세요 30대 여자입니다결혼은 아직이고 오래만난 남자친구는 있습니다안좋은 가정환경 때문...",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 29,
+     "issue_np": 7,
+     "issue_nc": 46,
+     "kw": [
+      "친구",
+      "남자",
+      "결혼",
+      "여자"
+     ],
+     "top_post": {
+      "t": "못생겼다고 하니 결혼공격하는 여자",
+      "u": "https://www.dogdrip.net/dogdrip/734378362?sort_index=popular&page=1",
+      "nc": 29
      }
     },
     {
@@ -440,25 +459,6 @@
      }
     },
     {
-     "t": "안녕하세요 30대 여자입니다결혼은 아직이고 오래만난 남자친구는 있습니다안좋은 가정환경 때문...",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 27,
-     "issue_np": 8,
-     "issue_nc": 44,
-     "kw": [
-      "친구",
-      "남자",
-      "여자",
-      "결혼"
-     ],
-     "top_post": {
-      "t": "못생겼다고 하니 결혼공격하는 여자",
-      "u": "https://www.dogdrip.net/dogdrip/734378362?sort_index=popular&page=1",
-      "nc": 27
-     }
-    },
-    {
      "t": "게임 개발에 Ai 썼다고 난리 난 \" 빅 워크 \" 사태..",
      "nsite": 3,
      "np_here": 1,
@@ -467,9 +467,9 @@
      "issue_nc": 25,
      "kw": [
       "난리",
-      "AI",
+      "워크",
       "개발",
-      "워크"
+      "사태"
      ],
      "top_post": {
       "t": "게임 개발에 Ai 썼다고 난리 난 \" 빅 워크 \" 사태..",
@@ -481,8 +481,8 @@
   },
   {
    "name": "클리앙",
-   "np": 4,
-   "nc": 82,
+   "np": 5,
+   "nc": 105,
    "topics": [
     {
      "t": "판교 영끌러 신혼부부의 최후 ㄷㄷ",
@@ -508,7 +508,7 @@
      "np_here": 1,
      "nc_here": 22,
      "issue_np": 13,
-     "issue_nc": 239,
+     "issue_nc": 268,
      "kw": [
       "반입",
       "마운자",
@@ -522,30 +522,49 @@
      }
     },
     {
+     "t": "엔비디아 새로운 CEO 후보로 팀쿡이 거론",
+     "nsite": 5,
+     "np_here": 1,
+     "nc_here": 12,
+     "issue_np": 7,
+     "issue_nc": 70,
+     "kw": [
+      "엔비디아",
+      "CEO",
+      "후보",
+      "거론"
+     ],
+     "top_post": {
+      "t": "위기의 엔비디아를 구원해줄 차기 CEO 후보...",
+      "u": "https://www.clien.net/service/board/park/19291095?od=T33&po=0&category=0&groupCd=clien_all",
+      "nc": 12
+     }
+    },
+    {
      "t": "안경 안 써서 그런지 오늘따라 더 이건희가 보이는 이재용",
      "nsite": 3,
      "np_here": 1,
-     "nc_here": 6,
+     "nc_here": 11,
      "issue_np": 3,
-     "issue_nc": 6,
+     "issue_nc": 11,
      "kw": [
-      "이재용",
       "안경",
+      "이재용",
       "이건희"
      ],
      "top_post": {
       "t": "안경 안 써서 그런지 오늘따라 더 이건희가 보이는 이재용",
       "u": "https://www.clien.net/service/board/park/19291116?od=T33&po=0&category=0&groupCd=clien_all",
-      "nc": 6
+      "nc": 11
      }
     },
     {
      "t": "중국 ai 기기 부정행위 대처 근황",
      "nsite": 5,
      "np_here": 1,
-     "nc_here": 1,
+     "nc_here": 7,
      "issue_np": 5,
-     "issue_nc": 7,
+     "issue_nc": 13,
      "kw": [
       "부정",
       "행위",
@@ -555,7 +574,7 @@
      "top_post": {
       "t": "중국의 AI 부정행위 대처법",
       "u": "https://www.clien.net/service/board/park/19291129?od=T33&po=0&category=0&groupCd=clien_all",
-      "nc": 1
+      "nc": 7
      }
     }
    ]
@@ -571,7 +590,7 @@
      "np_here": 1,
      "nc_here": 35,
      "issue_np": 13,
-     "issue_nc": 239,
+     "issue_nc": 268,
      "kw": [
       "반입",
       "마운자",
@@ -589,13 +608,13 @@
      "nsite": 3,
      "np_here": 1,
      "nc_here": 10,
-     "issue_np": 8,
+     "issue_np": 7,
      "issue_nc": 16,
      "kw": [
-      "빼빼로",
       "데이",
-      "트릭컬",
-      "기념"
+      "빼빼로",
+      "안내",
+      "쿠폰"
      ],
      "top_post": {
       "t": "11월 11일은 빼빼로 데이입니다.",
@@ -615,13 +634,13 @@
      "nsite": 4,
      "np_here": 1,
      "nc_here": 17,
-     "issue_np": 8,
-     "issue_nc": 44,
+     "issue_np": 7,
+     "issue_nc": 46,
      "kw": [
       "친구",
       "남자",
-      "여자",
-      "결혼"
+      "결혼",
+      "여자"
      ],
      "top_post": {
       "t": "안녕하세요 30대 여자입니다결혼은 아직이고 오래만난 남자친구는 있습니다안좋은 가정환경 때문...",
@@ -634,13 +653,13 @@
      "nsite": 3,
      "np_here": 1,
      "nc_here": 6,
-     "issue_np": 8,
+     "issue_np": 7,
      "issue_nc": 16,
      "kw": [
-      "빼빼로",
       "데이",
-      "트릭컬",
-      "기념"
+      "빼빼로",
+      "안내",
+      "쿠폰"
      ],
      "top_post": {
       "t": "답답해 이번 한번은 먼저 손 내밀어 주면 안 됐을까 생일도 빼빼로데이도 다 지나버렸네 슬프다",
@@ -653,13 +672,13 @@
      "nsite": 4,
      "np_here": 1,
      "nc_here": 3,
-     "issue_np": 13,
-     "issue_nc": 7,
+     "issue_np": 14,
+     "issue_nc": 8,
      "kw": [
-      "네이버",
       "페이",
+      "네이버",
       "랜덤",
-      "일일"
+      "적립"
      ],
      "top_post": {
       "t": "ㅈㄱㄴ..⭐ 이거 설문조사 앱인데 설문조사 하고나면 네이버페이 포인트나 현금으로 받을수있음 ...",
@@ -671,8 +690,8 @@
   },
   {
    "name": "보배드림",
-   "np": 11,
-   "nc": 23,
+   "np": 10,
+   "nc": 22,
    "topics": [
     {
      "t": "아들 성범죄 피해자 살해' 현장서 50대 피의자 유서·번개탄 발견",
@@ -682,9 +701,9 @@
      "issue_np": 8,
      "issue_nc": 98,
      "kw": [
+      "피해자",
       "살해",
       "아들",
-      "피해자",
       "성범죄"
      ],
      "top_post": {
@@ -720,10 +739,10 @@
      "issue_np": 4,
      "issue_nc": 121,
      "kw": [
-      "학대",
       "민속촌",
-      "아동",
-      "논란"
+      "학대",
+      "논란",
+      "아동"
      ],
      "top_post": {
       "t": "민속촌 아동학대 민원 골때리네요ㅋㅋ",
@@ -739,8 +758,8 @@
      "issue_np": 7,
      "issue_nc": 415,
      "kw": [
-      "귀신",
       "민속촌",
+      "귀신",
       "누나",
       "부모"
      ],
@@ -758,10 +777,10 @@
      "issue_np": 3,
      "issue_nc": 107,
      "kw": [
-      "삼성",
       "기술",
+      "삼성",
       "개발",
-      "세계"
+      "유일"
      ],
      "top_post": {
       "t": "삼성이 1조 넘게 투자한 기술",
@@ -777,8 +796,8 @@
      "issue_np": 3,
      "issue_nc": 34,
      "kw": [
-      "헬스장",
       "중국",
+      "헬스장",
       "매너",
       "싸움"
      ],
@@ -794,7 +813,7 @@
      "np_here": 1,
      "nc_here": 2,
      "issue_np": 5,
-     "issue_nc": 7,
+     "issue_nc": 13,
      "kw": [
       "부정",
       "행위",
@@ -809,16 +828,16 @@
     },
     {
      "t": "\"중국은 머스크에게도 스파이를 보냈다\"",
-     "nsite": 4,
+     "nsite": 5,
      "np_here": 1,
      "nc_here": 1,
-     "issue_np": 5,
-     "issue_nc": 51,
+     "issue_np": 6,
+     "issue_nc": 53,
      "kw": [
       "스파이",
       "중국",
       "머스크",
-      "일론"
+      "미녀"
      ],
      "top_post": {
       "t": "중국이 일론 머스크에게 보낸 미녀 스파이들",
@@ -830,7 +849,7 @@
   },
   {
    "name": "루리웹",
-   "np": 26,
+   "np": 29,
    "nc": 0,
    "topics": [
     {
@@ -841,14 +860,52 @@
      "issue_np": 8,
      "issue_nc": 98,
      "kw": [
+      "피해자",
       "살해",
       "아들",
-      "피해자",
       "성범죄"
      ],
      "top_post": {
       "t": "'아들 성범죄 사건' 피해자 살해…50대 남성 검거",
       "u": "https://bbs.ruliweb.com/best/board/300143/read/77346599?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "엔비디아 새로운 CEO 후보로 팀쿡이 거론",
+     "nsite": 5,
+     "np_here": 2,
+     "nc_here": 0,
+     "issue_np": 7,
+     "issue_nc": 70,
+     "kw": [
+      "엔비디아",
+      "CEO",
+      "후보",
+      "거론"
+     ],
+     "top_post": {
+      "t": "젠슨황이 엔비디아 CEO에서 짤리면 보게될 상황",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77358044?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "\"중국은 머스크에게도 스파이를 보냈다\"",
+     "nsite": 5,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 6,
+     "issue_nc": 53,
+     "kw": [
+      "스파이",
+      "중국",
+      "머스크",
+      "미녀"
+     ],
+     "top_post": {
+      "t": "중국에서 미녀 스파이를 받는 방법",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77357823?m=all&t=now",
       "nc": 0
      }
     },
@@ -877,7 +934,7 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 5,
-     "issue_nc": 7,
+     "issue_nc": 13,
      "kw": [
       "부정",
       "행위",
@@ -891,31 +948,12 @@
      }
     },
     {
-     "t": "슬슬 커지는것 같다는 세무사 시험 ai 논란",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 15,
-     "issue_nc": 79,
-     "kw": [
-      "AI",
-      "세무사",
-      "시험",
-      "논란"
-     ],
-     "top_post": {
-      "t": "ai 세무사 시험 근황",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77356352?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
      "t": "한국은 일본 식민지였는데 왜 일본어 안 써?",
      "nsite": 4,
      "np_here": 2,
      "nc_here": 0,
      "issue_np": 6,
-     "issue_nc": 67,
+     "issue_nc": 72,
      "kw": [
       "한국",
       "일본",
@@ -928,59 +966,40 @@
      }
     },
     {
-     "t": "엔비디아 새로운 CEO 후보로 팀쿡이 거론",
-     "nsite": 4,
-     "np_here": 3,
-     "nc_here": 0,
-     "issue_np": 6,
-     "issue_nc": 58,
-     "kw": [
-      "CEO",
-      "엔비디아",
-      "후보",
-      "거론"
-     ],
-     "top_post": {
-      "t": "젠슨황이 엔비디아 CEO에서 짤리면 보게될 상황",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77358044?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "\"중국은 머스크에게도 스파이를 보냈다\"",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 51,
-     "kw": [
-      "스파이",
-      "중국",
-      "머스크",
-      "일론"
-     ],
-     "top_post": {
-      "t": "중국에서 미녀 스파이를 받는 방법",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77357823?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
      "t": "안녕하세요 30대 여자입니다결혼은 아직이고 오래만난 남자친구는 있습니다안좋은 가정환경 때문...",
      "nsite": 4,
      "np_here": 3,
      "nc_here": 0,
-     "issue_np": 8,
-     "issue_nc": 44,
+     "issue_np": 7,
+     "issue_nc": 46,
      "kw": [
       "친구",
       "남자",
-      "여자",
-      "결혼"
+      "결혼",
+      "여자"
      ],
      "top_post": {
-      "t": "남자친구가 눈치없는 이유",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77347900?m=all&t=now",
+      "t": "치이키와때문에 친구를 잃은 남자",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77353019?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "아파트 단톡에 전동 드라이버 잠깐 빌릴 수 있냐고 올림",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 17,
+     "kw": [
+      "드라이버",
+      "아파트",
+      "전동",
+      "단톡"
+     ],
+     "top_post": {
+      "t": "아파트 단톡에 전동 드라이버 잠깐 빌릴 수 있냐고 올림",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77349348?m=all&t=now",
       "nc": 0
      }
     }
@@ -988,7 +1007,7 @@
   },
   {
    "name": "SLR클럽",
-   "np": 8,
+   "np": 6,
    "nc": 0,
    "topics": [
     {
@@ -999,14 +1018,33 @@
      "issue_np": 8,
      "issue_nc": 98,
      "kw": [
+      "피해자",
       "살해",
       "아들",
-      "피해자",
       "성범죄"
      ],
      "top_post": {
       "t": "성북구서 아들 성범죄 사건 피해자 살해한 50대 검거",
       "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677183",
+      "nc": 0
+     }
+    },
+    {
+     "t": "엔비디아 새로운 CEO 후보로 팀쿡이 거론",
+     "nsite": 5,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 7,
+     "issue_nc": 70,
+     "kw": [
+      "엔비디아",
+      "CEO",
+      "후보",
+      "거론"
+     ],
+     "top_post": {
+      "t": "팀쿡, 엔비디아 CEO 거론",
+      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677277",
       "nc": 0
      }
     },
@@ -1037,51 +1075,14 @@
      "issue_np": 4,
      "issue_nc": 121,
      "kw": [
-      "학대",
       "민속촌",
-      "아동",
-      "논란"
+      "학대",
+      "논란",
+      "아동"
      ],
      "top_post": {
       "t": "민속촌 학대 논란 결말 ㄷㄷㄷㄷㄷㄷ",
       "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677211",
-      "nc": 0
-     }
-    },
-    {
-     "t": "엔비디아 새로운 CEO 후보로 팀쿡이 거론",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 6,
-     "issue_nc": 58,
-     "kw": [
-      "CEO",
-      "엔비디아",
-      "후보",
-      "거론"
-     ],
-     "top_post": {
-      "t": "팀쿡, 엔비디아 CEO 거론",
-      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677277",
-      "nc": 0
-     }
-    },
-    {
-     "t": "젠슨황 내연녀 엘리스 황 사망설이 뜨는군요 ㄷ",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 26,
-     "kw": [
-      "내연녀",
-      "젠슨 황",
-      "앨리스"
-     ],
-     "top_post": {
-      "t": "젠슨황 내연녀 엘리스 황 사망설이 뜨는군요 ㄷ",
-      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677259",
       "nc": 0
      }
     },
@@ -1093,10 +1094,10 @@
      "issue_np": 3,
      "issue_nc": 289,
      "kw": [
-      "훈육",
+      "고소장",
       "논란",
       "귀신",
-      "민속"
+      "훈육"
      ],
      "top_post": {
       "t": "고소장 받은 민속촌 '귀신 훈육'... 논란 커지자 결국",
@@ -1120,23 +1121,162 @@
       "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677202",
       "nc": 0
      }
-    },
+    }
+   ]
+  },
+  {
+   "name": "더쿠",
+   "np": 18,
+   "nc": 0,
+   "topics": [
     {
-     "t": "\"회사 부장님 부인 사망\"...위로 표현 논란. jpg",
-     "nsite": 2,
+     "t": "\"중국은 머스크에게도 스파이를 보냈다\"",
+     "nsite": 5,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 2,
-     "issue_nc": 128,
+     "issue_np": 6,
+     "issue_nc": 53,
      "kw": [
-      "위로",
-      "논란",
-      "부장",
-      "사망"
+      "스파이",
+      "중국",
+      "머스크",
+      "미녀"
      ],
      "top_post": {
-      "t": "\"회사 부장님 부인 사망\"...위로 표현 논란. jpg",
-      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677265",
+      "t": "일론머스크에게 보내진 스파이들",
+      "u": "https://theqoo.net/hot/4403411753",
+      "nc": 0
+     }
+    },
+    {
+     "t": "중국 ai 기기 부정행위 대처 근황",
+     "nsite": 5,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 5,
+     "issue_nc": 13,
+     "kw": [
+      "부정",
+      "행위",
+      "AI",
+      "중국"
+     ],
+     "top_post": {
+      "t": "중국 ai 기기 부정행위 대처 근황",
+      "u": "https://theqoo.net/hot/4403332378",
+      "nc": 0
+     }
+    },
+    {
+     "t": "슬슬 커지는것 같다는 세무사 시험 ai 논란",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 17,
+     "issue_nc": 128,
+     "kw": [
+      "AI",
+      "세무사",
+      "시험",
+      "논란"
+     ],
+     "top_post": {
+      "t": "에타에서 나온 ai 시험 의혹",
+      "u": "https://theqoo.net/hot/4403264709",
+      "nc": 0
+     }
+    },
+    {
+     "t": "한국은 일본 식민지였는데 왜 일본어 안 써?",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 6,
+     "issue_nc": 72,
+     "kw": [
+      "한국",
+      "일본",
+      "식민지"
+     ],
+     "top_post": {
+      "t": "한국 일본 마운자로 가격 비교",
+      "u": "https://theqoo.net/hot/4402828237",
+      "nc": 0
+     }
+    },
+    {
+     "t": "안녕하세요 30대 여자입니다결혼은 아직이고 오래만난 남자친구는 있습니다안좋은 가정환경 때문...",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 7,
+     "issue_nc": 46,
+     "kw": [
+      "친구",
+      "남자",
+      "결혼",
+      "여자"
+     ],
+     "top_post": {
+      "t": "남자친구랑 같이볼건데 대체 누가 잘못한건지 말해줘",
+      "u": "https://theqoo.net/hot/4402979639",
+      "nc": 0
+     }
+    },
+    {
+     "t": "아파트 단톡에 전동 드라이버 잠깐 빌릴 수 있냐고 올림",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 17,
+     "kw": [
+      "드라이버",
+      "아파트",
+      "전동",
+      "단톡"
+     ],
+     "top_post": {
+      "t": "아파트 단톡방에 전동 드라이버 잠깐 빌려줄 수 있는 분 계시냐고 올림",
+      "u": "https://theqoo.net/hot/4402679852",
+      "nc": 0
+     }
+    },
+    {
+     "t": "네이버페이 53원 (신속히 받으세요)",
+     "nsite": 4,
+     "np_here": 2,
+     "nc_here": 0,
+     "issue_np": 14,
+     "issue_nc": 8,
+     "kw": [
+      "페이",
+      "네이버",
+      "랜덤",
+      "적립"
+     ],
+     "top_post": {
+      "t": "네페 네이버페이 20원",
+      "u": "https://theqoo.net/hot/4403017174",
+      "nc": 0
+     }
+    },
+    {
+     "t": "고소장 받은 민속촌 '귀신 훈육'...논란 커지자 결국",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 289,
+     "kw": [
+      "고소장",
+      "논란",
+      "귀신",
+      "훈육"
+     ],
+     "top_post": {
+      "t": "고소장 받은 민속촌 '귀신 훈육'...논란 커지자 결국",
+      "u": "https://theqoo.net/hot/4402340885",
       "nc": 0
      }
     }
@@ -1144,7 +1284,7 @@
   },
   {
    "name": "디시인사이드",
-   "np": 3,
+   "np": 4,
    "nc": 0,
    "topics": [
     {
@@ -1167,20 +1307,21 @@
      }
     },
     {
-     "t": "젠슨황 내연녀 엘리스 황 사망설이 뜨는군요 ㄷ",
+     "t": "슬슬 커지는것 같다는 세무사 시험 ai 논란",
      "nsite": 4,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 26,
+     "issue_np": 17,
+     "issue_nc": 128,
      "kw": [
-      "내연녀",
-      "젠슨 황",
-      "앨리스"
+      "AI",
+      "세무사",
+      "시험",
+      "논란"
      ],
      "top_post": {
-      "t": "젠슨황 내연녀 앨리스 황 근황",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=477825&_dcbest=1&page=1",
+      "t": "ai시대였으면 백프로 논란 터지셨을분…jpg",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=478030&_dcbest=1&page=1",
       "nc": 0
      }
     },
@@ -1193,171 +1334,32 @@
      "issue_nc": 25,
      "kw": [
       "난리",
-      "AI",
+      "워크",
       "개발",
-      "워크"
+      "사태"
      ],
      "top_post": {
       "t": "현재 난리난 IGF 빅워크 사태",
       "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=477889&_dcbest=1&page=1",
       "nc": 0
      }
-    }
-   ]
-  },
-  {
-   "name": "더쿠",
-   "np": 18,
-   "nc": 0,
-   "topics": [
-    {
-     "t": "중국 ai 기기 부정행위 대처 근황",
-     "nsite": 5,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 7,
-     "kw": [
-      "부정",
-      "행위",
-      "AI",
-      "중국"
-     ],
-     "top_post": {
-      "t": "중국 ai 기기 부정행위 대처 근황",
-      "u": "https://theqoo.net/hot/4403332378",
-      "nc": 0
-     }
     },
     {
-     "t": "슬슬 커지는것 같다는 세무사 시험 ai 논란",
-     "nsite": 4,
-     "np_here": 2,
-     "nc_here": 0,
-     "issue_np": 15,
-     "issue_nc": 79,
-     "kw": [
-      "AI",
-      "세무사",
-      "시험",
-      "논란"
-     ],
-     "top_post": {
-      "t": "에타에서 나온 ai 시험 의혹",
-      "u": "https://theqoo.net/hot/4403264709",
-      "nc": 0
-     }
-    },
-    {
-     "t": "한국은 일본 식민지였는데 왜 일본어 안 써?",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 6,
-     "issue_nc": 67,
-     "kw": [
-      "한국",
-      "일본",
-      "식민지"
-     ],
-     "top_post": {
-      "t": "한국 일본 마운자로 가격 비교",
-      "u": "https://theqoo.net/hot/4402828237",
-      "nc": 0
-     }
-    },
-    {
-     "t": "\"중국은 머스크에게도 스파이를 보냈다\"",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 51,
-     "kw": [
-      "스파이",
-      "중국",
-      "머스크",
-      "일론"
-     ],
-     "top_post": {
-      "t": "일론머스크에게 보내진 스파이들",
-      "u": "https://theqoo.net/hot/4403411753",
-      "nc": 0
-     }
-    },
-    {
-     "t": "안녕하세요 30대 여자입니다결혼은 아직이고 오래만난 남자친구는 있습니다안좋은 가정환경 때문...",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 8,
-     "issue_nc": 44,
-     "kw": [
-      "친구",
-      "남자",
-      "여자",
-      "결혼"
-     ],
-     "top_post": {
-      "t": "남자친구랑 같이볼건데 대체 누가 잘못한건지 말해줘",
-      "u": "https://theqoo.net/hot/4402979639",
-      "nc": 0
-     }
-    },
-    {
-     "t": "아파트 단톡에 전동 드라이버 잠깐 빌릴 수 있냐고 올림",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 17,
-     "kw": [
-      "아파트",
-      "전동",
-      "드라이버",
-      "단톡"
-     ],
-     "top_post": {
-      "t": "아파트 단톡방에 전동 드라이버 잠깐 빌려줄 수 있는 분 계시냐고 올림",
-      "u": "https://theqoo.net/hot/4402679852",
-      "nc": 0
-     }
-    },
-    {
-     "t": "네이버페이 53원 (신속히 받으세요)",
-     "nsite": 4,
-     "np_here": 2,
-     "nc_here": 0,
-     "issue_np": 13,
-     "issue_nc": 7,
-     "kw": [
-      "네이버",
-      "페이",
-      "랜덤",
-      "일일"
-     ],
-     "top_post": {
-      "t": "네페 네이버페이 20원",
-      "u": "https://theqoo.net/hot/4403017174",
-      "nc": 0
-     }
-    },
-    {
-     "t": "고소장 받은 민속촌 '귀신 훈육'...논란 커지자 결국",
+     "t": "오싹오싹 올해 AI안경 부정시험 걸린 사례들",
      "nsite": 3,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 289,
+     "issue_np": 5,
+     "issue_nc": 4,
      "kw": [
-      "훈육",
-      "논란",
-      "귀신",
-      "민속"
+      "시험",
+      "AI",
+      "안경",
+      "부정"
      ],
      "top_post": {
-      "t": "고소장 받은 민속촌 '귀신 훈육'...논란 커지자 결국",
-      "u": "https://theqoo.net/hot/4402340885",
+      "t": "오싹오싹 올해 AI안경 부정시험 걸린 사례들",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=478036&_dcbest=1&page=1",
       "nc": 0
      }
     }
@@ -1374,7 +1376,7 @@
      "np_here": 2,
      "nc_here": 0,
      "issue_np": 6,
-     "issue_nc": 67,
+     "issue_nc": 72,
      "kw": [
       "한국",
       "일본",
