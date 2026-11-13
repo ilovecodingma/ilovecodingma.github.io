@@ -1,5 +1,5 @@
 {
- "at": "2026-11-13 09:24",
+ "at": "2026-11-13 09:30",
  "nitems": 527,
  "cands": [
   {
@@ -120,8 +120,13 @@
     "조선일보",
     "헤럴드경제"
    ],
-   "n": 12,
+   "n": 14,
    "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "[방송소식] 이경규, TV조선 새 예능 '어른왕자' 출연",
+     "link": "https://www.yna.co.kr/view/AKR20261113041500005"
+    },
     {
      "src": "연합뉴스",
      "title": "넷플릭스, 예능 '흑백가수' 내년 공개…'흑백' 세계관 음악으로",
@@ -136,11 +141,6 @@
      "src": "연합뉴스",
      "title": "혜리 \"첫 서바이벌 예능 MC…참가자들 마음에 공감할게요\"",
      "link": "https://www.yna.co.kr/view/AKR20261109082700005"
-    },
-    {
-     "src": "동아일보",
-     "title": "이경규 “내 라스트 댄스”…새 예능 ‘어른왕자’ 출격",
-     "link": "https://sports.donga.com/ent/article/all/20261113/135018464/1"
     }
    ]
   },
@@ -1181,6 +1181,39 @@
    ]
   },
   {
+   "kw": "임영웅",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "동아일보",
+    "연합뉴스",
+    "한국경제"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "[주말극장가] '치이카와' 선두 유지…예매율 1위는 임영웅 공연실황",
+     "link": "https://www.yna.co.kr/view/AKR20261113039800005"
+    },
+    {
+     "src": "동아일보",
+     "title": "임영웅, 4000만 번 울린 감성…‘어느날문득’ 무대 화제",
+     "link": "https://sports.donga.com/ent/article/all/20261113/135018137/1"
+    },
+    {
+     "src": "한국경제",
+     "title": "임영웅 '아임 히어로 더 스타디움 2' IMAX 상영 확정",
+     "link": "https://www.hankyung.com/article/202611107927H"
+    },
+    {
+     "src": "SBS",
+     "title": "임영웅 콘서트부터 '진격의 거인'까지…CGV, 11월 기술 특별관 라인업 공개",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008842411&plink=RSSLINK&cooper=RSSREADER"
+    }
+   ]
+  },
+  {
    "kw": "문무",
    "nsrc": 4,
    "srcs": [
@@ -1214,7 +1247,7 @@
    ]
   },
   {
-   "kw": "카네기홀",
+   "kw": "포레스텔",
    "nsrc": 4,
    "srcs": [
     "SBS",
@@ -1247,7 +1280,7 @@
    ]
   },
   {
-   "kw": "포레스텔",
+   "kw": "카네기홀",
    "nsrc": 4,
    "srcs": [
     "SBS",
@@ -1309,39 +1342,6 @@
      "src": "조선일보",
      "title": "\"음악 재능 몰랏다\" 개코, H대 미대 햡격 후 음악 시작···기안84 \"음대를 가지\"('인생84')",
      "link": "https://www.chosun.com/entertainments/broadcast/2026/11/12/MQZWCYRQGU2TAMZVHE3DIZLBME/"
-    }
-   ]
-  },
-  {
-   "kw": "아이돌",
-   "nsrc": 4,
-   "srcs": [
-    "세계일보",
-    "연합뉴스",
-    "한국경제",
-    "헤럴드경제"
-   ],
-   "n": 4,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "\"아이돌 90%는 중소社서 데뷔했지만…활동 기간은 대형 소속이 2배\"",
-     "link": "https://www.yna.co.kr/view/AKR20261109033500005"
-    },
-    {
-     "src": "한국경제",
-     "title": "아이돌 '포미닛' 출신 전지윤, 11월 신부된다",
-     "link": "https://www.hankyung.com/article/2026110461907"
-    },
-    {
-     "src": "세계일보",
-     "title": "[포토] 에이티즈 종호 '아이돌 최강 보컬'",
-     "link": "https://www.segye.com/newsView/20261112511756"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "아이돌 일본인 멤버가 항일운동 드라마를?…카즈하, ‘100일의 거짓말’ 시청 인증 눈길",
-     "link": "https://biz.heraldcorp.com/article/10933973"
     }
    ]
   }

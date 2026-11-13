@@ -2,3 +2,4 @@ CREATE TABLE IF NOT EXISTS lms_tokens (token TEXT PRIMARY KEY, kind TEXT, create
 CREATE TABLE IF NOT EXISTS lms_progress (token TEXT NOT NULL, step TEXT NOT NULL, ts INTEGER NOT NULL, note TEXT, PRIMARY KEY (token, step));
 CREATE TABLE IF NOT EXISTS lms_rate (k TEXT PRIMARY KEY, win INTEGER NOT NULL, n INTEGER NOT NULL);
 CREATE TABLE IF NOT EXISTS lms_reviews (id TEXT PRIMARY KEY, token TEXT, parent TEXT, title TEXT, body TEXT NOT NULL, cases TEXT, nick TEXT, who TEXT, tag TEXT, status TEXT NOT NULL, ts INTEGER NOT NULL);
+CREATE TABLE IF NOT EXISTS lms_shares (id TEXT PRIMARY KEY, token TEXT NOT NULL, title TEXT, what TEXT, why TEXT, tools TEXT, success TEXT, problem TEXT, solution TEXT, learned TEXT, link TEXT, image TEXT, nick TEXT, scope TEXT NOT NULL, status TEXT NOT NULL, ts INTEGER NOT NULL, upd INTEGER NOT NULL);
