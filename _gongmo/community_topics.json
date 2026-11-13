@@ -1,22 +1,22 @@
 {
  "date": "2026-11-13",
- "updated": "2026-11-13 10:51",
+ "updated": "2026-11-13 11:51",
  "sites": 13,
- "npost": 2818,
+ "npost": 2857,
  "note": "출처(커뮤니티)별 집계예요. 작성자·연령·성별 정보는 수집하지 않아요. posts 는 이슈별로 뽑힌 일부라 전체 글 수가 아니에요.",
  "sources": [
   {
    "name": "MLB파크",
-   "np": 23,
-   "nc": 1184,
+   "np": 26,
+   "nc": 1468,
    "topics": [
     {
      "t": "현직 세무사가 보는 ai안경 사태",
      "nsite": 5,
-     "np_here": 4,
-     "nc_here": 421,
-     "issue_np": 14,
-     "issue_nc": 463,
+     "np_here": 5,
+     "nc_here": 448,
+     "issue_np": 13,
+     "issue_nc": 504,
      "kw": [
       "AI",
       "안경",
@@ -30,22 +30,40 @@
      }
     },
     {
+     "t": "시어머니 자랑하는 요즘 새댁..",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 223,
+     "issue_np": 4,
+     "issue_nc": 226,
+     "kw": [
+      "시어머니",
+      "자랑",
+      "새댁"
+     ],
+     "top_post": {
+      "t": "시어머니 자랑하는 요즘 새댁..",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611120120059313&m=view",
+      "nc": 223
+     }
+    },
+    {
      "t": "세무사 수석 연락두절이라네요",
      "nsite": 4,
      "np_here": 3,
-     "nc_here": 147,
+     "nc_here": 158,
      "issue_np": 12,
-     "issue_nc": 178,
+     "issue_nc": 189,
      "kw": [
       "세무사",
       "수석",
-      "두절",
-      "연락"
+      "연락",
+      "두절"
      ],
      "top_post": {
       "t": "세무사 수석 연락두절이라네요",
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611130120071691&m=view",
-      "nc": 112
+      "nc": 123
      }
     },
     {
@@ -54,7 +72,7 @@
      "np_here": 1,
      "nc_here": 111,
      "issue_np": 3,
-     "issue_nc": 150,
+     "issue_nc": 151,
      "kw": [
       "수석",
       "무사"
@@ -73,8 +91,8 @@
      "issue_np": 5,
      "issue_nc": 119,
      "kw": [
-      "피소",
       "김승우",
+      "피소",
       "절도",
       "혐의"
      ],
@@ -86,16 +104,16 @@
     },
     {
      "t": "LEET 만점자 정면돌파 선언",
-     "nsite": 3,
+     "nsite": 4,
      "np_here": 1,
      "nc_here": 78,
-     "issue_np": 4,
+     "issue_np": 5,
      "issue_nc": 114,
      "kw": [
-      "LEET",
       "만점자",
-      "정면",
-      "돌파"
+      "LEET",
+      "돌파",
+      "선언"
      ],
      "top_post": {
       "t": "LEET 만점자 정면돌파 선언",
@@ -105,15 +123,15 @@
     },
     {
      "t": "소방관 남편을 둔 아내가 개빡친 이유",
-     "nsite": 3,
+     "nsite": 4,
      "np_here": 1,
      "nc_here": 69,
-     "issue_np": 3,
+     "issue_np": 4,
      "issue_nc": 72,
      "kw": [
       "아내",
-      "남편",
-      "소방관"
+      "소방관",
+      "남편"
      ],
      "top_post": {
       "t": "소방관 남편을 둔 아내가 개빡친 이유",
@@ -137,32 +155,13 @@
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611120120052812&m=view",
       "nc": 42
      }
-    },
-    {
-     "t": "엔비디아 새로운 CEO 후보로 팀쿡이 거론",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 40,
-     "issue_np": 3,
-     "issue_nc": 52,
-     "kw": [
-      "엔비디아",
-      "CEO",
-      "거론",
-      "팀쿡"
-     ],
-     "top_post": {
-      "t": "엔비디아 새로운 CEO 후보로 팀쿡이 거론",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611120120054318&m=view",
-      "nc": 40
-     }
     }
    ]
   },
   {
    "name": "인스티즈",
-   "np": 14,
-   "nc": 824,
+   "np": 15,
+   "nc": 826,
    "topics": [
     {
      "t": "ai안경으로 온갖 시험 통과한 사람 이미 정말 많은 이유ㄷㄷㄷ",
@@ -172,8 +171,8 @@
      "issue_np": 11,
      "issue_nc": 284,
      "kw": [
-      "AI",
       "시험",
+      "AI",
       "안경",
       "통과"
      ],
@@ -191,10 +190,10 @@
      "issue_np": 4,
      "issue_nc": 180,
      "kw": [
+      "반입",
       "허용",
       "마운자",
-      "일본",
-      "반입"
+      "일본"
      ],
      "top_post": {
       "t": "[단독] 일본서 산 마운자로, 국내 반입 허용된다…최대 12개",
@@ -205,10 +204,10 @@
     {
      "t": "말 나오는 세무사시험 수석 차석 책 차이",
      "nsite": 5,
-     "np_here": 2,
-     "nc_here": 99,
-     "issue_np": 11,
-     "issue_nc": 230,
+     "np_here": 3,
+     "nc_here": 101,
+     "issue_np": 10,
+     "issue_nc": 196,
      "kw": [
       "세무사",
       "시험",
@@ -246,8 +245,8 @@
      "issue_np": 6,
      "issue_nc": 86,
      "kw": [
-      "일본",
-      "한국"
+      "한국",
+      "일본"
      ],
      "top_post": {
       "t": "일본 호스트바 빠져서 한국에서 대기업때려치고 일본간 후기",
@@ -257,15 +256,15 @@
     },
     {
      "t": "AI 안경 의혹 세무사 시험 수석 입장 발표",
-     "nsite": 4,
+     "nsite": 3,
      "np_here": 2,
      "nc_here": 82,
-     "issue_np": 6,
-     "issue_nc": 98,
+     "issue_np": 5,
+     "issue_nc": 82,
      "kw": [
-      "AI",
-      "의혹",
       "안경",
+      "의혹",
+      "AI",
       "수석"
      ],
      "top_post": {
@@ -276,11 +275,11 @@
     },
     {
      "t": "안경 안 써서 그런지 오늘 따라 이건희 빙의 됐다는 이재용",
-     "nsite": 5,
+     "nsite": 6,
      "np_here": 1,
      "nc_here": 57,
-     "issue_np": 6,
-     "issue_nc": 70,
+     "issue_np": 8,
+     "issue_nc": 76,
      "kw": [
       "이재용",
       "안경",
@@ -297,13 +296,13 @@
      "nsite": 4,
      "np_here": 1,
      "nc_here": 56,
-     "issue_np": 5,
-     "issue_nc": 96,
+     "issue_np": 4,
+     "issue_nc": 99,
      "kw": [
-      "속보",
       "젠슨 황",
-      "CEO",
-      "엔비디아"
+      "속보",
+      "엔비디아",
+      "CEO"
      ],
      "top_post": {
       "t": "[속보] 젠슨 황, 엔비디아 CEO 사퇴",
@@ -315,16 +314,16 @@
   },
   {
    "name": "개드립",
-   "np": 18,
-   "nc": 506,
+   "np": 16,
+   "nc": 492,
    "topics": [
     {
      "t": "말 나오는 세무사시험 수석 차석 책 차이",
      "nsite": 5,
-     "np_here": 4,
-     "nc_here": 129,
-     "issue_np": 11,
-     "issue_nc": 230,
+     "np_here": 3,
+     "nc_here": 95,
+     "issue_np": 10,
+     "issue_nc": 196,
      "kw": [
       "세무사",
       "시험",
@@ -338,6 +337,25 @@
      }
     },
     {
+     "t": "(속보) 젠슨황 사임",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 43,
+     "issue_np": 4,
+     "issue_nc": 99,
+     "kw": [
+      "젠슨 황",
+      "속보",
+      "엔비디아",
+      "CEO"
+     ],
+     "top_post": {
+      "t": "(속보) 젠슨황 사임",
+      "u": "https://www.dogdrip.net/dogdrip/734521475?sort_index=popular&page=1",
+      "nc": 43
+     }
+    },
+    {
      "t": "넉살 \"존박은 랩하면 안된다\"",
      "nsite": 3,
      "np_here": 1,
@@ -345,8 +363,8 @@
      "issue_np": 3,
      "issue_nc": 41,
      "kw": [
-      "존박",
-      "넉살"
+      "넉살",
+      "존박"
      ],
      "top_post": {
       "t": "넉살 \"존박은 랩하면 안된다\"",
@@ -355,31 +373,12 @@
      }
     },
     {
-     "t": "(속보) 젠슨황 사임",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 40,
-     "issue_np": 5,
-     "issue_nc": 96,
-     "kw": [
-      "속보",
-      "젠슨 황",
-      "CEO",
-      "엔비디아"
-     ],
-     "top_post": {
-      "t": "(속보) 젠슨황 사임",
-      "u": "https://www.dogdrip.net/dogdrip/734521475?sort_index=popular&page=1",
-      "nc": 40
-     }
-    },
-    {
      "t": "올해 세무사 수석의 과거",
      "nsite": 3,
      "np_here": 1,
-     "nc_here": 39,
+     "nc_here": 40,
      "issue_np": 3,
-     "issue_nc": 150,
+     "issue_nc": 151,
      "kw": [
       "수석",
       "무사"
@@ -387,25 +386,44 @@
      "top_post": {
       "t": "63회 세무사 수석, 차석 책상태 공개 …JPG",
       "u": "https://www.dogdrip.net/dogdrip/734515123?sort_index=popular&page=1",
-      "nc": 39
+      "nc": 40
      }
     },
     {
      "t": "지인에게 잠깐 맡긴 6개월 반려견이 '개소주'가 됐다",
-     "nsite": 4,
+     "nsite": 5,
      "np_here": 1,
      "nc_here": 38,
-     "issue_np": 5,
-     "issue_nc": 42,
+     "issue_np": 6,
+     "issue_nc": 62,
      "kw": [
-      "지인",
       "개소주",
-      "반려견"
+      "반려견",
+      "지인"
      ],
      "top_post": {
       "t": "지인에게 잠깐 맡긴 6개월 반려견 알고 보니 '개소주'가 됐다",
       "u": "https://www.dogdrip.net/dogdrip/734409737?sort_index=popular&page=1",
       "nc": 38
+     }
+    },
+    {
+     "t": "현직 세무사가 보는 ai안경 사태",
+     "nsite": 5,
+     "np_here": 1,
+     "nc_here": 37,
+     "issue_np": 13,
+     "issue_nc": 504,
+     "kw": [
+      "AI",
+      "안경",
+      "세무사",
+      "현직"
+     ],
+     "top_post": {
+      "t": "[스압] 현직 회계사가 떠먹여주는 세무사 AI 안경 사건 총정리",
+      "u": "https://www.dogdrip.net/dogdrip/734538418?sort_index=popular&page=1",
+      "nc": 37
      }
     },
     {
@@ -416,8 +434,8 @@
      "issue_np": 11,
      "issue_nc": 284,
      "kw": [
-      "AI",
       "시험",
+      "AI",
       "안경",
       "통과"
      ],
@@ -429,39 +447,21 @@
     },
     {
      "t": "LEET 만점자 정면돌파 선언",
-     "nsite": 3,
+     "nsite": 4,
      "np_here": 1,
      "nc_here": 36,
-     "issue_np": 4,
+     "issue_np": 5,
      "issue_nc": 114,
      "kw": [
-      "LEET",
       "만점자",
-      "정면",
-      "돌파"
+      "LEET",
+      "돌파",
+      "선언"
      ],
      "top_post": {
       "t": "의심의심 20년만에 Leet 만점자 근황..",
       "u": "https://www.dogdrip.net/dogdrip/734390845?sort_index=popular&page=1",
       "nc": 36
-     }
-    },
-    {
-     "t": "못생겼다고 하니 결혼공격하는 여자",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 29,
-     "issue_np": 3,
-     "issue_nc": 32,
-     "kw": [
-      "여자",
-      "결혼",
-      "대학"
-     ],
-     "top_post": {
-      "t": "못생겼다고 하니 결혼공격하는 여자",
-      "u": "https://www.dogdrip.net/dogdrip/734378362?sort_index=popular&page=1",
-      "nc": 29
      }
     }
    ]
@@ -469,7 +469,7 @@
   {
    "name": "클리앙",
    "np": 7,
-   "nc": 121,
+   "nc": 128,
    "topics": [
     {
      "t": "김민석, 최민희 '언행 논란'에 윤리감찰 지시…'심각하게 인식'",
@@ -479,8 +479,8 @@
      "issue_np": 4,
      "issue_nc": 65,
      "kw": [
-      "지시",
       "감찰",
+      "지시",
       "김민석",
       "최민희"
      ],
@@ -498,15 +498,32 @@
      "issue_np": 3,
      "issue_nc": 29,
      "kw": [
-      "살림",
       "최소",
       "나라",
+      "살림",
       "속보"
      ],
      "top_post": {
       "t": "'나라살림 적자, 8년만 최소'",
       "u": "https://www.clien.net/service/board/park/19291179?od=T33&po=0&category=0&groupCd=clien_all",
       "nc": 26
+     }
+    },
+    {
+     "t": "아들 다음주에 수능보고 안경끼는데. ㅜ",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 19,
+     "issue_np": 4,
+     "issue_nc": 72,
+     "kw": [
+      "수능",
+      "안경"
+     ],
+     "top_post": {
+      "t": "수능-스마트안경 문제 해결법",
+      "u": "https://www.clien.net/service/board/park/19291128?od=T33&po=0&category=0&groupCd=clien_all",
+      "nc": 19
      }
     },
     {
@@ -529,31 +546,12 @@
      }
     },
     {
-     "t": "엔비디아 새로운 CEO 후보로 팀쿡이 거론",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 12,
-     "issue_np": 3,
-     "issue_nc": 52,
-     "kw": [
-      "엔비디아",
-      "CEO",
-      "거론",
-      "팀쿡"
-     ],
-     "top_post": {
-      "t": "위기의 엔비디아를 구원해줄 차기 CEO 후보...",
-      "u": "https://www.clien.net/service/board/park/19291095?od=T33&po=0&category=0&groupCd=clien_all",
-      "nc": 12
-     }
-    },
-    {
      "t": "안경 안 써서 그런지 오늘 따라 이건희 빙의 됐다는 이재용",
-     "nsite": 5,
+     "nsite": 6,
      "np_here": 1,
      "nc_here": 11,
-     "issue_np": 6,
-     "issue_nc": 70,
+     "issue_np": 8,
+     "issue_nc": 76,
      "kw": [
       "이재용",
       "안경",
@@ -573,8 +571,8 @@
      "issue_np": 3,
      "issue_nc": 63,
      "kw": [
-      "수석",
-      "합격자"
+      "합격자",
+      "수석"
      ],
      "top_post": {
       "t": "역대급 기적 5급 수석 합격자",
@@ -586,8 +584,8 @@
   },
   {
    "name": "82쿡",
-   "np": 14,
-   "nc": 118,
+   "np": 16,
+   "nc": 124,
    "topics": [
     {
      "t": "세무사 수석 연락두절이라네요",
@@ -595,12 +593,12 @@
      "np_here": 3,
      "nc_here": 29,
      "issue_np": 12,
-     "issue_nc": 178,
+     "issue_nc": 189,
      "kw": [
       "세무사",
       "수석",
-      "두절",
-      "연락"
+      "연락",
+      "두절"
      ],
      "top_post": {
       "t": "수석세무사는 ㅋㅋ",
@@ -613,11 +611,11 @@
      "nsite": 6,
      "np_here": 4,
      "nc_here": 24,
-     "issue_np": 23,
+     "issue_np": 25,
      "issue_nc": 61,
      "kw": [
-      "안경",
       "AI",
+      "안경",
       "실제",
       "장면"
      ],
@@ -635,8 +633,8 @@
      "issue_np": 5,
      "issue_nc": 119,
      "kw": [
-      "피소",
       "김승우",
+      "피소",
       "절도",
       "혐의"
      ],
@@ -673,8 +671,8 @@
      "issue_np": 4,
      "issue_nc": 65,
      "kw": [
-      "지시",
       "감찰",
+      "지시",
       "김민석",
       "최민희"
      ],
@@ -692,8 +690,8 @@
      "issue_np": 11,
      "issue_nc": 284,
      "kw": [
-      "AI",
       "시험",
+      "AI",
       "안경",
       "통과"
      ],
@@ -704,6 +702,24 @@
      }
     },
     {
+     "t": "안경 안 써서 그런지 오늘 따라 이건희 빙의 됐다는 이재용",
+     "nsite": 6,
+     "np_here": 1,
+     "nc_here": 6,
+     "issue_np": 8,
+     "issue_nc": 76,
+     "kw": [
+      "이재용",
+      "안경",
+      "이건희"
+     ],
+     "top_post": {
+      "t": "안경벗은 이재용은 이건희랑 똑같네요",
+      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4258433&page=1",
+      "nc": 6
+     }
+    },
+    {
      "t": "[단독]\"12년 만의 우승에 가전 할인\"…삼성스토어, 13일부터 할인",
      "nsite": 4,
      "np_here": 1,
@@ -711,9 +727,9 @@
      "issue_np": 4,
      "issue_nc": 15,
      "kw": [
-      "우승",
       "삼성",
       "할인",
+      "우승",
       "가전"
      ],
      "top_post": {
@@ -726,8 +742,8 @@
   },
   {
    "name": "아카라이브",
-   "np": 3,
-   "nc": 73,
+   "np": 1,
+   "nc": 39,
    "topics": [
     {
      "t": "[단독] 일본서 산 마운자로, 국내 반입 허용된다…최대 12개",
@@ -737,51 +753,39 @@
      "issue_np": 4,
      "issue_nc": 180,
      "kw": [
+      "반입",
       "허용",
       "마운자",
-      "일본",
-      "반입"
+      "일본"
      ],
      "top_post": {
       "t": "[단독] 일본서 산 마운자로, 국내 반입 허용된다…최대 12개",
       "u": "https://arca.live/b/live/188775922?p=1",
       "nc": 39
      }
-    },
+    }
+   ]
+  },
+  {
+   "name": "네이트판",
+   "np": 1,
+   "nc": 25,
+   "topics": [
     {
-     "t": "답답해 이번 한번은 먼저 손 내밀어 주면 안 됐을까 생일도 빼빼로데이도 다 지나버렸네 슬프다",
+     "t": "리센느 미나미 원이 제나 리브 메이 다 개성있고 예쁘긴 한데 난 원이 빠는게 ㅈㄴ ...",
      "nsite": 3,
      "np_here": 1,
-     "nc_here": 22,
-     "issue_np": 4,
-     "issue_nc": 28,
+     "nc_here": 25,
+     "issue_np": 3,
+     "issue_nc": 32,
      "kw": [
-      "데이",
-      "빼빼로"
+      "리센느",
+      "리브"
      ],
      "top_post": {
-      "t": "돌아온 빼빼로데이 사변",
-      "u": "https://arca.live/b/live/188920263?p=1",
-      "nc": 22
-     }
-    },
-    {
-     "t": "현직 세무사가 보는 ai안경 사태",
-     "nsite": 5,
-     "np_here": 1,
-     "nc_here": 12,
-     "issue_np": 14,
-     "issue_nc": 463,
-     "kw": [
-      "AI",
-      "안경",
-      "세무사",
-      "현직"
-     ],
-     "top_post": {
-      "t": "AI 안경 대책 떴다",
-      "u": "https://arca.live/b/live/188877187?p=1",
-      "nc": 12
+      "t": "리센느 미나미 원이 제나 리브 메이 다 개성있고 예쁘긴 한데 난 원이 빠는게 ㅈㄴ ...",
+      "u": "https://pann.nate.com/talk/375713209",
+      "nc": 25
      }
     }
    ]
@@ -789,19 +793,19 @@
   {
    "name": "보배드림",
    "np": 8,
-   "nc": 18,
+   "nc": 20,
    "topics": [
     {
      "t": "지인에게 잠깐 맡긴 6개월 반려견이 '개소주'가 됐다",
-     "nsite": 4,
+     "nsite": 5,
      "np_here": 2,
      "nc_here": 4,
-     "issue_np": 5,
-     "issue_nc": 42,
+     "issue_np": 6,
+     "issue_nc": 62,
      "kw": [
-      "지인",
       "개소주",
-      "반려견"
+      "반려견",
+      "지인"
      ],
      "top_post": {
       "t": "지인에게 잠깐 맡긴 6개월 반려견 알고 보니 '개소주'가 됐..",
@@ -817,8 +821,8 @@
      "issue_np": 6,
      "issue_nc": 86,
      "kw": [
-      "일본",
-      "한국"
+      "한국",
+      "일본"
      ],
      "top_post": {
       "t": "한국 부모님들이 일본 여성들은 찾는 이유?",
@@ -828,19 +832,37 @@
     },
     {
      "t": "소방관 남편을 둔 아내가 개빡친 이유",
-     "nsite": 3,
+     "nsite": 4,
      "np_here": 1,
      "nc_here": 3,
-     "issue_np": 3,
+     "issue_np": 4,
      "issue_nc": 72,
      "kw": [
       "아내",
-      "남편",
-      "소방관"
+      "소방관",
+      "남편"
      ],
      "top_post": {
       "t": "소방관 남편을 둔 아내가 개빡친 이유",
       "u": "https://www.bobaedream.co.kr/view?code=best&No=1047014&vdate=",
+      "nc": 3
+     }
+    },
+    {
+     "t": "시어머니 자랑하는 요즘 새댁..",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 3,
+     "issue_np": 4,
+     "issue_nc": 226,
+     "kw": [
+      "시어머니",
+      "자랑",
+      "새댁"
+     ],
+     "top_post": {
+      "t": "시어머니 자랑하는 요즘 새댁",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1047213&vdate=",
       "nc": 3
      }
     },
@@ -870,9 +892,9 @@
      "issue_np": 3,
      "issue_nc": 29,
      "kw": [
-      "살림",
       "최소",
       "나라",
+      "살림",
       "속보"
      ],
      "top_post": {
@@ -889,8 +911,8 @@
      "issue_np": 4,
      "issue_nc": 65,
      "kw": [
-      "지시",
       "감찰",
+      "지시",
       "김민석",
       "최민희"
      ],
@@ -898,49 +920,6 @@
       "t": "김민석, 與 윤감단에 최민희 감찰 지시…\"최근 언행 심각하게..",
       "u": "https://www.bobaedream.co.kr/view?code=best&No=1047109&vdate=",
       "nc": 1
-     }
-    },
-    {
-     "t": "중국 스파이학원",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 1,
-     "issue_np": 3,
-     "issue_nc": 18,
-     "kw": [
-      "중국",
-      "스파이",
-      "미녀",
-      "머스크"
-     ],
-     "top_post": {
-      "t": "중국이 일론 머스크에게 보낸 미녀 스파이들",
-      "u": "https://www.bobaedream.co.kr/view?code=best&No=1046933&vdate=",
-      "nc": 1
-     }
-    }
-   ]
-  },
-  {
-   "name": "네이트판",
-   "np": 1,
-   "nc": 6,
-   "topics": [
-    {
-     "t": "답답해 이번 한번은 먼저 손 내밀어 주면 안 됐을까 생일도 빼빼로데이도 다 지나버렸네 슬프다",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 6,
-     "issue_np": 4,
-     "issue_nc": 28,
-     "kw": [
-      "데이",
-      "빼빼로"
-     ],
-     "top_post": {
-      "t": "답답해 이번 한번은 먼저 손 내밀어 주면 안 됐을까 생일도 빼빼로데이도 다 지나버렸네 슬프다",
-      "u": "https://pann.nate.com/talk/375713158",
-      "nc": 6
      }
     }
    ]
@@ -952,11 +931,11 @@
    "topics": [
     {
      "t": "안경 안 써서 그런지 오늘 따라 이건희 빙의 됐다는 이재용",
-     "nsite": 5,
+     "nsite": 6,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 6,
-     "issue_nc": 70,
+     "issue_np": 8,
+     "issue_nc": 76,
      "kw": [
       "이재용",
       "안경",
@@ -969,6 +948,24 @@
      }
     },
     {
+     "t": "지인에게 잠깐 맡긴 6개월 반려견이 '개소주'가 됐다",
+     "nsite": 5,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 6,
+     "issue_nc": 62,
+     "kw": [
+      "개소주",
+      "반려견",
+      "지인"
+     ],
+     "top_post": {
+      "t": "지인에게 잠깐 맡긴 6개월 반려견 알고 보니 '개소주'가 됐다",
+      "u": "https://theqoo.net/hot/4403388767",
+      "nc": 0
+     }
+    },
+    {
      "t": "배우 김승우 ‘절도 혐의’ 피소",
      "nsite": 4,
      "np_here": 1,
@@ -976,8 +973,8 @@
      "issue_np": 5,
      "issue_nc": 119,
      "kw": [
-      "피소",
       "김승우",
+      "피소",
       "절도",
       "혐의"
      ],
@@ -988,21 +985,21 @@
      }
     },
     {
-     "t": "AI 안경 의혹 세무사 시험 수석 입장 발표",
+     "t": "LEET 만점자 정면돌파 선언",
      "nsite": 4,
-     "np_here": 1,
+     "np_here": 2,
      "nc_here": 0,
-     "issue_np": 6,
-     "issue_nc": 98,
+     "issue_np": 5,
+     "issue_nc": 114,
      "kw": [
-      "AI",
-      "의혹",
-      "안경",
-      "수석"
+      "만점자",
+      "LEET",
+      "돌파",
+      "선언"
      ],
      "top_post": {
-      "t": "세무사 시험 수석 'AI 안경' 의혹 일파만파…공단 \"특이사항 없어\"",
-      "u": "https://theqoo.net/hot/4403864625",
+      "t": "LEET 만점자 정면돌파 선언 ++추가",
+      "u": "https://theqoo.net/hot/4403805934",
       "nc": 0
      }
     },
@@ -1011,13 +1008,13 @@
      "nsite": 4,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 96,
+     "issue_np": 4,
+     "issue_nc": 99,
      "kw": [
-      "속보",
       "젠슨 황",
-      "CEO",
-      "엔비디아"
+      "속보",
+      "엔비디아",
+      "CEO"
      ],
      "top_post": {
       "t": "엔비디아 CEO 젠슨 황 사임",
@@ -1026,38 +1023,20 @@
      }
     },
     {
-     "t": "지인에게 잠깐 맡긴 6개월 반려견이 '개소주'가 됐다",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 42,
-     "kw": [
-      "지인",
-      "개소주",
-      "반려견"
-     ],
-     "top_post": {
-      "t": "지인에게 잠깐 맡긴 6개월 반려견 알고 보니 '개소주'가 됐다",
-      "u": "https://theqoo.net/hot/4403388767",
-      "nc": 0
-     }
-    },
-    {
-     "t": "개판난 세무사시험 또다른 의혹 논란 ㄷㄷㄷ",
+     "t": "소방관 남편을 둔 아내가 개빡친 이유",
      "nsite": 4,
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 4,
-     "issue_nc": 29,
+     "issue_nc": 72,
      "kw": [
-      "세무사",
-      "논란",
-      "시험"
+      "아내",
+      "소방관",
+      "남편"
      ],
      "top_post": {
-      "t": "세무사 시험 논란에 대해 입장 밝힌 한 현직 강사",
-      "u": "https://theqoo.net/hot/4404373864",
+      "t": "소방관 남편을 둔 아내가 개빡친 이유",
+      "u": "https://theqoo.net/hot/4404437110",
       "nc": 0
      }
     },
@@ -1069,9 +1048,9 @@
      "issue_np": 4,
      "issue_nc": 15,
      "kw": [
-      "우승",
       "삼성",
       "할인",
+      "우승",
       "가전"
      ],
      "top_post": {
@@ -1081,21 +1060,21 @@
      }
     },
     {
-     "t": "LEET 만점자 정면돌파 선언",
+     "t": "AI 안경 의혹 세무사 시험 수석 입장 발표",
      "nsite": 3,
-     "np_here": 2,
+     "np_here": 1,
      "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 114,
+     "issue_np": 5,
+     "issue_nc": 82,
      "kw": [
-      "LEET",
-      "만점자",
-      "정면",
-      "돌파"
+      "안경",
+      "의혹",
+      "AI",
+      "수석"
      ],
      "top_post": {
-      "t": "LEET 만점자 정면돌파 선언 ++추가",
-      "u": "https://theqoo.net/hot/4403805934",
+      "t": "세무사 시험 수석 'AI 안경' 의혹 일파만파…공단 \"특이사항 없어\"",
+      "u": "https://theqoo.net/hot/4403864625",
       "nc": 0
      }
     }
@@ -1103,24 +1082,24 @@
   },
   {
    "name": "루리웹",
-   "np": 28,
+   "np": 23,
    "nc": 0,
    "topics": [
     {
      "t": "안경 안 써서 그런지 오늘 따라 이건희 빙의 됐다는 이재용",
-     "nsite": 5,
-     "np_here": 2,
+     "nsite": 6,
+     "np_here": 1,
      "nc_here": 0,
-     "issue_np": 6,
-     "issue_nc": 70,
+     "issue_np": 8,
+     "issue_nc": 76,
      "kw": [
       "이재용",
       "안경",
       "이건희"
      ],
      "top_post": {
-      "t": "이재용에게 이건희 닮은 구석은 있었어도",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77362359?m=all&t=now",
+      "t": "삼성 이재용 안경벗은 짤",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77362009?m=all&t=now",
       "nc": 0
      }
     },
@@ -1132,10 +1111,10 @@
      "issue_np": 4,
      "issue_nc": 180,
      "kw": [
+      "반입",
       "허용",
       "마운자",
-      "일본",
-      "반입"
+      "일본"
      ],
      "top_post": {
       "t": "마운자로 한국 반입 허용 소식에 노젓는 일본 병원들",
@@ -1144,40 +1123,40 @@
      }
     },
     {
-     "t": "AI 안경 의혹 세무사 시험 수석 입장 발표",
+     "t": "LEET 만점자 정면돌파 선언",
      "nsite": 4,
-     "np_here": 2,
+     "np_here": 1,
      "nc_here": 0,
-     "issue_np": 6,
-     "issue_nc": 98,
+     "issue_np": 5,
+     "issue_nc": 114,
      "kw": [
-      "AI",
-      "의혹",
-      "안경",
-      "수석"
+      "만점자",
+      "LEET",
+      "돌파",
+      "선언"
      ],
      "top_post": {
-      "t": "AI 안경 의혹 세무사 시험 수석 입장 발표",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77364368?m=humor",
+      "t": "AI 안경 의혹 정면 돌파 선언",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77366105?m=all&t=now",
       "nc": 0
      }
     },
     {
      "t": "(속보) 젠슨황 사임",
      "nsite": 4,
-     "np_here": 2,
+     "np_here": 1,
      "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 96,
+     "issue_np": 4,
+     "issue_nc": 99,
      "kw": [
-      "속보",
       "젠슨 황",
-      "CEO",
-      "엔비디아"
+      "속보",
+      "엔비디아",
+      "CEO"
      ],
      "top_post": {
-      "t": "젠슨황 간첩녀 근황",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77359294?m=all&t=now",
+      "t": "젠슨황 사임",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77366803?m=all&t=now",
       "nc": 0
      }
     },
@@ -1189,12 +1168,30 @@
      "issue_np": 6,
      "issue_nc": 86,
      "kw": [
-      "일본",
-      "한국"
+      "한국",
+      "일본"
      ],
      "top_post": {
       "t": "중국: 어이 한국 일본 니들은 왜 미국이랑 팀하는거야?",
       "u": "https://bbs.ruliweb.com/best/board/300143/read/77358612?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "소방관 남편을 둔 아내가 개빡친 이유",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 72,
+     "kw": [
+      "아내",
+      "소방관",
+      "남편"
+     ],
+     "top_post": {
+      "t": "소방관 남편을 둔 아내가 개빡친 이유",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77368702?m=all&t=now",
       "nc": 0
      }
     },
@@ -1218,24 +1215,6 @@
      }
     },
     {
-     "t": "개판난 세무사시험 또다른 의혹 논란 ㄷㄷㄷ",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 29,
-     "kw": [
-      "세무사",
-      "논란",
-      "시험"
-     ],
-     "top_post": {
-      "t": "세무사 시험 AI논란은 다른게 문제가 아니라",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77358839?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
      "t": "[단독]\"12년 만의 우승에 가전 할인\"…삼성스토어, 13일부터 할인",
      "nsite": 4,
      "np_here": 1,
@@ -1243,9 +1222,9 @@
      "issue_np": 4,
      "issue_nc": 15,
      "kw": [
-      "우승",
       "삼성",
       "할인",
+      "우승",
       "가전"
      ],
      "top_post": {
@@ -1257,55 +1236,28 @@
    ]
   },
   {
-   "name": "SLR클럽",
-   "np": 2,
+   "name": "디시인사이드",
+   "np": 8,
    "nc": 0,
    "topics": [
     {
-     "t": "배우 김승우 ‘절도 혐의’ 피소",
-     "nsite": 4,
+     "t": "지인에게 잠깐 맡긴 6개월 반려견이 '개소주'가 됐다",
+     "nsite": 5,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 119,
+     "issue_np": 6,
+     "issue_nc": 62,
      "kw": [
-      "피소",
-      "김승우",
-      "절도",
-      "혐의"
+      "개소주",
+      "반려견",
+      "지인"
      ],
      "top_post": {
-      "t": "김승우 절도죄 피소 ㄷㄷㄷ",
-      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677308",
+      "t": "지인에게 잠깐 맡긴 6개월 반려견이 '개소주'가 됐다",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=478161&_dcbest=1&page=1",
       "nc": 0
      }
     },
-    {
-     "t": "엔비디아 새로운 CEO 후보로 팀쿡이 거론",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 52,
-     "kw": [
-      "엔비디아",
-      "CEO",
-      "거론",
-      "팀쿡"
-     ],
-     "top_post": {
-      "t": "팀쿡, 엔비디아 CEO 거론",
-      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677277",
-      "nc": 0
-     }
-    }
-   ]
-  },
-  {
-   "name": "디시인사이드",
-   "np": 7,
-   "nc": 0,
-   "topics": [
     {
      "t": "일본 호스트바 빠져서 한국에서 대기업때려치고 일본간 후기",
      "nsite": 4,
@@ -1314,30 +1266,12 @@
      "issue_np": 6,
      "issue_nc": 86,
      "kw": [
-      "일본",
-      "한국"
+      "한국",
+      "일본"
      ],
      "top_post": {
       "t": "싱글벙글 한국남자한테는 절대 없고 일본남자한테만 있는것",
       "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=478157&_dcbest=1&page=1",
-      "nc": 0
-     }
-    },
-    {
-     "t": "지인에게 잠깐 맡긴 6개월 반려견이 '개소주'가 됐다",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 42,
-     "kw": [
-      "지인",
-      "개소주",
-      "반려견"
-     ],
-     "top_post": {
-      "t": "지인에게 잠깐 맡긴 6개월 반려견이 '개소주'가 됐다",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=478161&_dcbest=1&page=1",
       "nc": 0
      }
     },
@@ -1366,7 +1300,7 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 3,
-     "issue_nc": 150,
+     "issue_nc": 151,
      "kw": [
       "수석",
       "무사"
@@ -1395,6 +1329,23 @@
      }
     },
     {
+     "t": "아들 다음주에 수능보고 안경끼는데. ㅜ",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 72,
+     "kw": [
+      "수능",
+      "안경"
+     ],
+     "top_post": {
+      "t": "\"오늘 안경 주문하면 수능 전까지 도착 가능 할까요?“",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=478313&_dcbest=1&page=1",
+      "nc": 0
+     }
+    },
+    {
      "t": "넉살 \"존박은 랩하면 안된다\"",
      "nsite": 3,
      "np_here": 1,
@@ -1402,8 +1353,8 @@
      "issue_np": 3,
      "issue_nc": 41,
      "kw": [
-      "존박",
-      "넉살"
+      "넉살",
+      "존박"
      ],
      "top_post": {
       "t": "존박은 랩하면 안 된다는 넉살",
@@ -1420,12 +1371,56 @@
      "issue_nc": 29,
      "kw": [
       "AI",
-      "시대",
-      "논란"
+      "논란",
+      "시대"
      ],
      "top_post": {
       "t": "ai시대였으면 백프로 논란 터지셨을분…jpg",
       "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=478030&_dcbest=1&page=1",
+      "nc": 0
+     }
+    }
+   ]
+  },
+  {
+   "name": "SLR클럽",
+   "np": 3,
+   "nc": 0,
+   "topics": [
+    {
+     "t": "배우 김승우 ‘절도 혐의’ 피소",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 5,
+     "issue_nc": 119,
+     "kw": [
+      "김승우",
+      "피소",
+      "절도",
+      "혐의"
+     ],
+     "top_post": {
+      "t": "김승우 절도죄 피소 ㄷㄷㄷ",
+      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677308",
+      "nc": 0
+     }
+    },
+    {
+     "t": "시어머니 자랑하는 요즘 새댁..",
+     "nsite": 3,
+     "np_here": 2,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 226,
+     "kw": [
+      "시어머니",
+      "자랑",
+      "새댁"
+     ],
+     "top_post": {
+      "t": "시어머니 자랑하는 며느리",
+      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677302",
       "nc": 0
      }
     }
