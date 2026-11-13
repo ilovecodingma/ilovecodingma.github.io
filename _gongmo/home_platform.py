@@ -32,9 +32,9 @@ CSS = ('<style>.pk{max-width:920px}.pk h1{margin:6px 0 10px;font-size:clamp(28px
        '</style>')
 
 
-FLOW_JS = ("""<script>(function(){var S=[["빈 폴더에서 한 줄로 시작해 첫 결과물을 봅니다. 하네스가 환경을 갖추고, 에이전트가 만들고, 결과를 확인하고 고치는 흐름까지 함께 갑니다.",[["하네스로 시작하기","/park/#start"]]],
-["만든 것을 인터넷 주소로 열고, 정말 열렸는지 확인합니다. 주소가 안 열리거나 고쳤는데 그대로일 때는 증상부터 찾아보세요.",[["증상으로 찾기","/park/stuck/"],["시작 안내","/park/#start"]]],
-["열어 둔 서비스를 굴립니다. 저절로 돌던 것이 멈추고, 틀린 내용이 나가고, 지워지는 일을 저자는 어떻게 겪고 풀었는지 사례로 볼 수 있습니다.",[["비슷한 저자 사례","/park/"],["운영 기록","/park/archive/"]]],
+FLOW_JS = ("""<script>(function(){var S=[["빈 폴더에서 한 줄로 시작해 첫 결과물을 봅니다. 요구사항 정의, 환경 구성, 스캐폴딩, 구현, 빌드, 검증, 롤백·디버깅까지 일곱 단계입니다. 하네스가 환경을 갖추고 에이전트가 만들며, 결과를 확인하고 고치는 데까지 함께 갑니다.",[["하네스로 시작하기","/park/#start"]]],
+["여덟 번째 단계, 배포입니다. 만든 것을 인터넷 주소로 열고 정말 열렸는지 확인합니다. 주소가 안 열리거나 고쳤는데 그대로일 때는 증상부터 찾아보세요.",[["증상으로 찾기","/park/stuck/"],["시작 안내","/park/#start"]]],
+["아홉 번째 단계, 운영입니다. 열어 둔 서비스를 굴립니다. 저절로 돌던 것이 멈추고, 틀린 내용이 나가고, 지워지는 일을 저자는 어떻게 겪고 풀었는지 사례로 볼 수 있습니다.",[["비슷한 저자 사례","/park/"],["운영 기록","/park/archive/"]]],
 ["필수는 아닙니다. 손님이 크게 늘어나는 날에 대비해 서버와 구조를 키우는 길입니다. 낯선 말은 용어 사전에서 뜻을 보고, 그 자리의 질문을 내 에이전트에게 붙여 넣으세요.",[["용어 사전","/park/terms/"]]]];
 var bs=[].slice.call(document.querySelectorAll("#pkfl button")),p=document.getElementById("pkfp");
 function show(i){bs.forEach(function(b,k){b.setAttribute("aria-pressed",k===i?"true":"false")});p.innerHTML="";var d=document.createElement("p");d.textContent=S[i][0];p.appendChild(d);S[i][1].forEach(function(l){var a=document.createElement("a");a.href=l[1];a.textContent=l[0]+" →";p.appendChild(a)})}
