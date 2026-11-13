@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-14 00:00",
+ "updated": "2026-11-14 01:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -13341,8 +13341,8 @@
     "구글트렌드"
    ],
    "score": 2,
-   "status": "작성",
-   "page": "/issue/k-drama-industry-crisis-support-1106/",
+   "status": "미작성",
+   "page": "",
    "registered": "2026-11-06",
    "expires": "2026-11-13"
   },
@@ -13757,8 +13757,8 @@
     "구글트렌드"
    ],
    "score": 1,
-   "status": "작성",
-   "page": "/issue/do-sangwoo-park-jiae-wedding-1106/",
+   "status": "미작성",
+   "page": "",
    "registered": "2026-11-06",
    "expires": "2026-11-13"
   },
@@ -13835,8 +13835,8 @@
     "구글트렌드"
    ],
    "score": 1,
-   "status": "작성",
-   "page": "/issue/kim-gura-son-grii-marriage-1106/",
+   "status": "미작성",
+   "page": "",
    "registered": "2026-11-06",
    "expires": "2026-11-13"
   },
