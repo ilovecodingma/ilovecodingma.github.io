@@ -24,7 +24,21 @@ CSS = ('<style>.pk{max-width:920px}.pk h1{margin:6px 0 10px;font-size:clamp(28px
        '.pk .sv b{display:block;font-size:18px;margin:2px 0 6px}.pk .sv span.pd{font-size:14.5px;line-height:1.65;color:var(--mu,#475569);display:block}'
        '.pk .sv .go{display:block;margin-top:10px;font-size:14px;font-weight:600;color:var(--pri,#6d28d9)}'
        '.pk ul.rd{margin:0;padding:0;list-style:none;display:grid;gap:8px}.pk ul.rd li{border-bottom:1px solid var(--bd,#e5e7eb);padding:8px 0}.pk ul.rd time{color:var(--mu,#64748b);font-size:13px;margin-right:8px}'
+       '.pk .fl{display:flex;gap:0;flex-wrap:wrap;margin:6px 0 0;padding:0;list-style:none;align-items:stretch}.pk .fl li{display:flex;align-items:center}'
+       '.pk .fl button{border:1px solid var(--bd,#e5e7eb);border-radius:14px;background:var(--card,#fff);color:inherit;padding:12px 18px;cursor:pointer;text-align:left;min-width:132px}.pk .fl button b{display:block;font-size:17px}.pk .fl button small{color:var(--mu,#64748b);font-size:13px}'
+       '.pk .fl button[aria-pressed=true]{border-color:var(--pri,#6d28d9);background:var(--pbg,#f1ecff);box-shadow:0 0 0 2px color-mix(in srgb,var(--pri,#6d28d9) 30%,transparent)}.pk .fl .ar{padding:0 8px;color:var(--mu,#64748b);font-size:20px}.pk .fl .opt button{border-style:dashed}'
+       '.pk .fp{border:1px solid var(--bd,#e5e7eb);border-radius:14px;background:var(--card,#fff);padding:16px 18px;margin-top:12px}.pk .fp p{margin:0 0 8px;font-size:15.5px;line-height:1.7}.pk .fp a{display:inline-block;margin-right:14px;font-weight:600;font-size:14.5px}'
+       '@media(max-width:640px){.pk .fl{display:grid;gap:4px}.pk .fl li{display:block}.pk .fl .ar{display:block;padding:0 0 0 22px;line-height:1}.pk .fl button{width:100%}}'
        '</style>')
+
+
+FLOW_JS = ("""<script>(function(){var S=[["빈 폴더에서 한 줄로 시작해 첫 결과물을 봅니다. 하네스가 환경을 갖추고, 에이전트가 만들고, 결과를 확인하고 고치는 흐름까지 함께 갑니다.",[["하네스로 시작하기","/park/#start"]]],
+["만든 것을 인터넷 주소로 열고, 정말 열렸는지 확인합니다. 주소가 안 열리거나 고쳤는데 그대로일 때는 증상부터 찾아보세요.",[["증상으로 찾기","/park/stuck/"],["시작 안내","/park/#start"]]],
+["열어 둔 서비스를 굴립니다. 저절로 돌던 것이 멈추고, 틀린 내용이 나가고, 지워지는 일을 저자는 어떻게 겪고 풀었는지 사례로 볼 수 있습니다.",[["비슷한 저자 사례","/park/"],["운영 기록","/park/archive/"]]],
+["필수는 아닙니다. 손님이 크게 늘어나는 날에 대비해 서버와 구조를 키우는 길입니다. 낯선 말은 용어 사전에서 뜻을 보고, 그 자리의 질문을 내 에이전트에게 붙여 넣으세요.",[["용어 사전","/park/terms/"]]]];
+var bs=[].slice.call(document.querySelectorAll("#pkfl button")),p=document.getElementById("pkfp");
+function show(i){bs.forEach(function(b,k){b.setAttribute("aria-pressed",k===i?"true":"false")});p.innerHTML="";var d=document.createElement("p");d.textContent=S[i][0];p.appendChild(d);S[i][1].forEach(function(l){var a=document.createElement("a");a.href=l[1];a.textContent=l[0]+" →";p.appendChild(a)})}
+bs.forEach(function(b,k){b.addEventListener("click",function(){show(k)})});show(0)})()</script>""")
 
 
 def home_html(devs):
@@ -35,6 +49,13 @@ def home_html(devs):
             '<p class="lead">AI 사용법을 가르치는 곳이 아닙니다. 하네스(저자가 쓰는 에이전트 개발 환경)를 열고 한 줄로 시킨 뒤 첫 결과물을 보는 데까지 도와드립니다. 그다음은 정해진 진도도 정답도 없습니다. 막히면 저자가 실제로 겪은 비슷한 일을 찾아보고, 원하면 내 경험도 남기세요.</p>'
             '<div class="cta"><a class="p" href="/park/#start">하네스로 시작하기</a><a class="s" href="/park/">비슷한 저자 사례 찾기</a></div>'
             '<p class="fine">안내는 Windows 기준입니다. 2~3시간 안에 첫 결과물을 보는 것이 목표이고, 완성은 그다음 이야기입니다.</p>'
+            '<h2>개발의 흐름 <small style="font-weight:400;color:var(--mu,#64748b);font-size:15px">지금 내가 어디인지 골라 보세요</small></h2>'
+            '<ol class="fl" id="pkfl"><li><button type="button" data-i="0" aria-pressed="true"><b>만들기</b><small>한 줄로 첫 결과물</small></button></li><li class="ar" aria-hidden="true">→</li>'
+            '<li><button type="button" data-i="1" aria-pressed="false"><b>올리기</b><small>주소를 받아 공개</small></button></li><li class="ar" aria-hidden="true">→</li>'
+            '<li><button type="button" data-i="2" aria-pressed="false"><b>운영하기</b><small>굴리고 지키기</small></button></li><li class="ar" aria-hidden="true">→</li>'
+            '<li class="opt"><button type="button" data-i="3" aria-pressed="false"><b>확장하기</b><small>필수는 아닙니다</small></button></li></ol>'
+            '<div class="fp" id="pkfp" aria-live="polite"></div>'
+            + FLOW_JS +
             '<h2>이렇게 써 보세요 <small style="font-weight:400;color:var(--mu,#64748b);font-size:15px">순서를 강제하지 않습니다</small></h2>'
             '<ol class="st">'
             '<li><b>하네스로 먼저 하나 만든다</b><span>빈 폴더에서 한 줄을 넣고, 첫 결과물이 나오는 것까지 봅니다.</span><a href="/park/#start">시작 안내 →</a></li>'
