@@ -318,6 +318,10 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False, noinde
     if noindex:
         NOINDEX.add(path)
     body = rsp_tables(body)
+    if PLAT and not noindex and path.count('/') == 4 and path.startswith(('/money/guide/', '/money/tools/')) or (PLAT and not noindex and path.count('/') == 3 and path.startswith('/guide/')):   # 2026-11-13 사용자: 사이트의 큰 방향은 책의 LMS 커뮤니티. 정보 글에서 수업으로 이어지는 안내 한 칸
+        body += ('<aside class="pk-cta" style="margin:28px 0 8px;border:1px solid var(--bd,#e5e7eb);border-radius:14px;background:var(--card,#fff);padding:16px 18px"><b style="display:block;font-size:16px;margin-bottom:4px">이 사이트도 AI 에이전트로 만들었습니다</b>'
+                 '<span style="font-size:14.5px;line-height:1.7;color:var(--mu,#475569)">퇴근 후 2~3시간, 같은 방법으로 내 서비스를 만들어 보는 수업 사이트 「가난한 박과장」입니다. 한 줄로 시작해 첫 결과물을 보는 데까지 안내합니다.</span>'
+                 '<a href="/park/#start" style="display:inline-block;margin-top:8px;font-weight:700;font-size:14.5px">하네스로 만들어 보기 →</a></aside>')
     if path in _seo_exp_links():   # 2026-10-23 검색 유입 실험군: 색인된 허브에 주제가 맞는 가이드 링크 (seo_exp_links.json, 실험 종료 시 파일만 지우면 사라짐)
         body += ('<section class="seo-q"><h2>📌 많이 찾는 질문</h2><ul class="gm-l">' + ''.join(f'<li><a href="{E(x["path"])}">{E(x["text"])}</a></li>' for x in _seo_exp_links()[path]) + '</ul></section>')
     if path.startswith(('/money/guide/', '/money/tools/', '/guide/', '/ai/', '/qa/')) and not noindex:
