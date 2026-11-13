@@ -1,14 +1,14 @@
 {
  "date": "2026-11-14",
- "updated": "2026-11-14 04:50",
+ "updated": "2026-11-14 05:50",
  "sites": 13,
- "npost": 2894,
+ "npost": 2899,
  "note": "출처(커뮤니티)별 집계예요. 작성자·연령·성별 정보는 수집하지 않아요. posts 는 이슈별로 뽑힌 일부라 전체 글 수가 아니에요.",
  "sources": [
   {
    "name": "MLB파크",
-   "np": 19,
-   "nc": 1014,
+   "np": 21,
+   "nc": 1085,
    "topics": [
     {
      "t": "아이들 우기, 시진핑 '하나의 중국' 공개 지지...",
@@ -16,12 +16,12 @@
      "np_here": 1,
      "nc_here": 141,
      "issue_np": 4,
-     "issue_nc": 220,
+     "issue_nc": 222,
      "kw": [
       "아이",
-      "중국",
       "지지",
-      "우기"
+      "우기",
+      "중국"
      ],
      "top_post": {
       "t": "아이들 우기, 시진핑 '하나의 중국' 공개 지지...",
@@ -71,19 +71,19 @@
      "t": "AI 안경 의혹 세무사 시험 수석 입장 발표",
      "nsite": 5,
      "np_here": 2,
-     "nc_here": 95,
+     "nc_here": 97,
      "issue_np": 6,
-     "issue_nc": 194,
+     "issue_nc": 196,
      "kw": [
       "세무사",
       "안경",
-      "시험",
-      "AI"
+      "AI",
+      "시험"
      ],
      "top_post": {
       "t": "유튜버 ai 세무사 시험 400점 만점받음 jpg",
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611130120087882&m=view",
-      "nc": 54
+      "nc": 56
      }
     },
     {
@@ -92,7 +92,7 @@
      "np_here": 2,
      "nc_here": 93,
      "issue_np": 7,
-     "issue_nc": 136,
+     "issue_nc": 137,
      "kw": [
       "세무사",
       "수석",
@@ -114,9 +114,9 @@
      "issue_nc": 81,
      "kw": [
       "수석",
-      "회계사",
       "시험",
-      "세무사"
+      "회계사",
+      "소거법"
      ],
      "top_post": {
       "t": "회계사 시험도 봤었다는 세무 수석 ㄷㄷㄷ…JPG",
@@ -132,8 +132,8 @@
      "issue_np": 3,
      "issue_nc": 77,
      "kw": [
-      "개소주",
       "반려견",
+      "개소주",
       "지인"
      ],
      "top_post": {
@@ -165,7 +165,7 @@
   {
    "name": "인스티즈",
    "np": 11,
-   "nc": 635,
+   "nc": 643,
    "topics": [
     {
      "t": "AI 안경 의혹 세무사 시험 수석 입장 발표",
@@ -173,12 +173,12 @@
      "np_here": 1,
      "nc_here": 99,
      "issue_np": 6,
-     "issue_nc": 194,
+     "issue_nc": 196,
      "kw": [
       "세무사",
       "안경",
-      "시험",
-      "AI"
+      "AI",
+      "시험"
      ],
      "top_post": {
       "t": "AI 안경 의혹 세무사 시험 수석 입장 발표",
@@ -188,14 +188,16 @@
     },
     {
      "t": "리트 만점자 블로그 구경하는데 이거 뭐야",
-     "nsite": 4,
+     "nsite": 5,
      "np_here": 2,
      "nc_here": 91,
-     "issue_np": 7,
-     "issue_nc": 129,
+     "issue_np": 9,
+     "issue_nc": 139,
      "kw": [
+      "만점자",
       "리트",
-      "만점자"
+      "정면",
+      "돌파"
      ],
      "top_post": {
       "t": "리트 만점자 블로그 구경하는데 이거 뭐야",
@@ -207,19 +209,19 @@
      "t": "아이들 우기, 시진핑 '하나의 중국' 공개 지지...",
      "nsite": 4,
      "np_here": 1,
-     "nc_here": 79,
+     "nc_here": 81,
      "issue_np": 4,
-     "issue_nc": 220,
+     "issue_nc": 222,
      "kw": [
       "아이",
-      "중국",
       "지지",
-      "우기"
+      "우기",
+      "중국"
      ],
      "top_post": {
       "t": "아이들 우기 중국 대만 통일 지지 선언",
       "u": "https://www.instiz.net/pt/7925508?green=1",
-      "nc": 79
+      "nc": 81
      }
     },
     {
@@ -242,6 +244,25 @@
      }
     },
     {
+     "t": "블라 : 회식하다가 여직원이 남직원한테 키스 갈김 ㅋㅋㅋ",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 60,
+     "issue_np": 4,
+     "issue_nc": 91,
+     "kw": [
+      "키스",
+      "회식",
+      "여직원",
+      "남직원"
+     ],
+     "top_post": {
+      "t": "블라 : 회식하다가 여직원이 남직원한테 키스 갈김 ㅋㅋㅋ",
+      "u": "https://www.instiz.net/pt/7925510?green=1",
+      "nc": 60
+     }
+    },
+    {
      "t": "시어머니 자랑하는 요즘 새댁",
      "nsite": 3,
      "np_here": 1,
@@ -257,25 +278,6 @@
       "t": "시어머니 자랑하는 요즘 새댁",
       "u": "https://www.instiz.net/pt/7925562?green=1",
       "nc": 59
-     }
-    },
-    {
-     "t": "블라 : 회식하다가 여직원이 남직원한테 키스 갈김 ㅋㅋㅋ",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 57,
-     "issue_np": 4,
-     "issue_nc": 88,
-     "kw": [
-      "여직원",
-      "남직원",
-      "회식",
-      "키스"
-     ],
-     "top_post": {
-      "t": "블라 : 회식하다가 여직원이 남직원한테 키스 갈김 ㅋㅋㅋ",
-      "u": "https://www.instiz.net/pt/7925510?green=1",
-      "nc": 57
      }
     },
     {
@@ -299,27 +301,27 @@
      "t": "[속보] 박수홍, 친형 부부 상대 98억 손배소 1심 패소",
      "nsite": 3,
      "np_here": 1,
-     "nc_here": 51,
+     "nc_here": 52,
      "issue_np": 4,
-     "issue_nc": 51,
+     "issue_nc": 52,
      "kw": [
       "패소",
+      "손배소",
       "1심",
-      "속보",
-      "박수홍"
+      "속보"
      ],
      "top_post": {
       "t": "[속보] 박수홍, 친형 부부 상대 98억 손배소 1심 패소",
       "u": "https://www.instiz.net/pt/7925476?green=1",
-      "nc": 51
+      "nc": 52
      }
     }
    ]
   },
   {
    "name": "개드립",
-   "np": 14,
-   "nc": 363,
+   "np": 15,
+   "nc": 369,
    "topics": [
     {
      "t": "ai 안경 절대 안걸리는 방법. jpg",
@@ -403,8 +405,8 @@
      "issue_np": 3,
      "issue_nc": 35,
      "kw": [
-      "오빠",
       "연락",
+      "오빠",
       "여친"
      ],
      "top_post": {
@@ -457,12 +459,12 @@
      "np_here": 1,
      "nc_here": 28,
      "issue_np": 4,
-     "issue_nc": 88,
+     "issue_nc": 91,
      "kw": [
-      "여직원",
-      "남직원",
+      "키스",
       "회식",
-      "키스"
+      "여직원",
+      "남직원"
      ],
      "top_post": {
       "t": "블라 : 회식하다가 여직원이 남직원한테 키스 갈김 ㅋㅋㅋ",
@@ -473,44 +475,109 @@
    ]
   },
   {
-   "name": "82쿡",
-   "np": 6,
-   "nc": 86,
+   "name": "클리앙",
+   "np": 4,
+   "nc": 65,
    "topics": [
     {
-     "t": "헬스장에서 여자 트레이너와 난투극 (중국)",
-     "nsite": 3,
+     "t": "ai 안경 절대 안걸리는 방법. jpg",
+     "nsite": 8,
      "np_here": 1,
-     "nc_here": 33,
-     "issue_np": 3,
-     "issue_nc": 33,
+     "nc_here": 24,
+     "issue_np": 26,
+     "issue_nc": 228,
      "kw": [
-      "중국",
-      "여자"
+      "안경",
+      "AI",
+      "대책",
+      "세무"
      ],
      "top_post": {
-      "t": "미국애서 느꼈던 중국계 여자들에 대한 느낌",
-      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4258568&page=1",
-      "nc": 33
+      "t": "AI 안경 반수가 대세라네요",
+      "u": "https://www.clien.net/service/board/park/19291756?od=T33&po=0&category=0&groupCd=clien_all",
+      "nc": 24
      }
     },
+    {
+     "t": "젠슨이 엔비디아 겨우 3.98% 가지고 있군요",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 19,
+     "issue_np": 4,
+     "issue_nc": 41,
+     "kw": [
+      "엔비디아",
+      "젠슨",
+      "해임"
+     ],
+     "top_post": {
+      "t": "엔비디아 직원들 '젠슨황 돌려놓아라' 연판장 서명 및 선언",
+      "u": "https://www.clien.net/service/board/park/19291860?od=T33&po=0&category=0&groupCd=clien_all",
+      "nc": 19
+     }
+    },
+    {
+     "t": "AI 안경 학습시켜서 세무시험 만점받은 테크몽",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 13,
+     "issue_np": 5,
+     "issue_nc": 19,
+     "kw": [
+      "안경",
+      "시험",
+      "AI",
+      "만점"
+     ],
+     "top_post": {
+      "t": "AI 안경 학습시켜서 세무시험 만점받은 테크몽",
+      "u": "https://www.clien.net/service/board/park/19291963?od=T33&po=0&category=0&groupCd=clien_all",
+      "nc": 13
+     }
+    },
+    {
+     "t": "국립묘지에서 호통 친 병사에게 훈장 달아준 헤그세스 장관",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 9,
+     "issue_np": 3,
+     "issue_nc": 31,
+     "kw": [
+      "헤그세스",
+      "병사",
+      "호통",
+      "포상"
+     ],
+     "top_post": {
+      "t": "국립묘지에서 호통 친 병사에게 훈장 달아준 헤그세스 장관",
+      "u": "https://www.clien.net/service/board/park/19291915?od=T33&po=0&category=0&groupCd=clien_all",
+      "nc": 9
+     }
+    }
+   ]
+  },
+  {
+   "name": "82쿡",
+   "np": 5,
+   "nc": 59,
+   "topics": [
     {
      "t": "JTBC) 최민희 “통일교가 김민석 밀었다…이재명 대통령도 '윤석열 하야' 쪽이었다\"",
      "nsite": 3,
      "np_here": 1,
-     "nc_here": 21,
+     "nc_here": 27,
      "issue_np": 5,
-     "issue_nc": 30,
+     "issue_nc": 36,
      "kw": [
-      "최민희",
       "김민석",
+      "최민희",
       "대통령",
       "통일교"
      ],
      "top_post": {
       "t": "최민희 \"통일교-신천지가 김민석 밀었다더라\"",
       "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4258686&page=1",
-      "nc": 21
+      "nc": 27
      }
     },
     {
@@ -574,7 +641,7 @@
      "np_here": 1,
      "nc_here": 5,
      "issue_np": 7,
-     "issue_nc": 136,
+     "issue_nc": 137,
      "kw": [
       "세무사",
       "수석",
@@ -590,91 +657,9 @@
    ]
   },
   {
-   "name": "클리앙",
-   "np": 4,
-   "nc": 65,
-   "topics": [
-    {
-     "t": "ai 안경 절대 안걸리는 방법. jpg",
-     "nsite": 8,
-     "np_here": 1,
-     "nc_here": 24,
-     "issue_np": 26,
-     "issue_nc": 228,
-     "kw": [
-      "안경",
-      "AI",
-      "대책",
-      "세무"
-     ],
-     "top_post": {
-      "t": "AI 안경 반수가 대세라네요",
-      "u": "https://www.clien.net/service/board/park/19291756?od=T33&po=0&category=0&groupCd=clien_all",
-      "nc": 24
-     }
-    },
-    {
-     "t": "젠슨이 엔비디아 겨우 3.98% 가지고 있군요",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 19,
-     "issue_np": 4,
-     "issue_nc": 41,
-     "kw": [
-      "젠슨",
-      "엔비디아",
-      "해임"
-     ],
-     "top_post": {
-      "t": "엔비디아 직원들 '젠슨황 돌려놓아라' 연판장 서명 및 선언",
-      "u": "https://www.clien.net/service/board/park/19291860?od=T33&po=0&category=0&groupCd=clien_all",
-      "nc": 19
-     }
-    },
-    {
-     "t": "AI 안경 학습시켜서 세무시험 만점받은 테크몽",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 13,
-     "issue_np": 5,
-     "issue_nc": 19,
-     "kw": [
-      "안경",
-      "시험",
-      "AI",
-      "만점"
-     ],
-     "top_post": {
-      "t": "AI 안경 학습시켜서 세무시험 만점받은 테크몽",
-      "u": "https://www.clien.net/service/board/park/19291963?od=T33&po=0&category=0&groupCd=clien_all",
-      "nc": 13
-     }
-    },
-    {
-     "t": "국립묘지에서 호통 친 병사에게 훈장 달아준 헤그세스 장관",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 9,
-     "issue_np": 3,
-     "issue_nc": 31,
-     "kw": [
-      "병사",
-      "호통",
-      "헤그세스",
-      "포상"
-     ],
-     "top_post": {
-      "t": "국립묘지에서 호통 친 병사에게 훈장 달아준 헤그세스 장관",
-      "u": "https://www.clien.net/service/board/park/19291915?od=T33&po=0&category=0&groupCd=clien_all",
-      "nc": 9
-     }
-    }
-   ]
-  },
-  {
    "name": "보배드림",
-   "np": 13,
-   "nc": 27,
+   "np": 14,
+   "nc": 29,
    "topics": [
     {
      "t": "JTBC) 최민희 “통일교가 김민석 밀었다…이재명 대통령도 '윤석열 하야' 쪽이었다\"",
@@ -682,10 +667,10 @@
      "np_here": 3,
      "nc_here": 9,
      "issue_np": 5,
-     "issue_nc": 30,
+     "issue_nc": 36,
      "kw": [
-      "최민희",
       "김민석",
+      "최민희",
       "대통령",
       "통일교"
      ],
@@ -720,12 +705,12 @@
      "np_here": 1,
      "nc_here": 3,
      "issue_np": 4,
-     "issue_nc": 88,
+     "issue_nc": 91,
      "kw": [
-      "여직원",
-      "남직원",
+      "키스",
       "회식",
-      "키스"
+      "여직원",
+      "남직원"
      ],
      "top_post": {
       "t": "회식하다가 여직원이 남직원한테 키스 갈김 ㅋㅋㅋ",
@@ -771,6 +756,23 @@
      }
     },
     {
+     "t": "2026년 올 한해 나온 시험이슈 7개",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 2,
+     "issue_np": 3,
+     "issue_nc": 62,
+     "kw": [
+      "이슈",
+      "시험"
+     ],
+     "top_post": {
+      "t": "오늘 하루 만에 나온 시험 이슈",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1047387&vdate=",
+      "nc": 2
+     }
+    },
+    {
      "t": "국립묘지에서 호통 친 병사에게 훈장 달아준 헤그세스 장관",
      "nsite": 3,
      "np_here": 1,
@@ -778,9 +780,9 @@
      "issue_np": 3,
      "issue_nc": 31,
      "kw": [
+      "헤그세스",
       "병사",
       "호통",
-      "헤그세스",
       "포상"
      ],
      "top_post": {
@@ -797,32 +799,14 @@
      "issue_np": 3,
      "issue_nc": 28,
      "kw": [
-      "소속사",
       "리센느",
+      "소속사",
       "대응"
      ],
      "top_post": {
       "t": "리센느 소속사 법적 대응 공지 후 상황",
       "u": "https://www.bobaedream.co.kr/view?code=best&No=1047253&vdate=",
       "nc": 2
-     }
-    },
-    {
-     "t": "반려견 잠시 맡겼더니 '개소주' 만든 20년 지인",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 1,
-     "issue_np": 3,
-     "issue_nc": 77,
-     "kw": [
-      "개소주",
-      "반려견",
-      "지인"
-     ],
-     "top_post": {
-      "t": "지인에게 잠깐 맡긴 6개월 반려견이 '개소주'가 됐다",
-      "u": "https://www.bobaedream.co.kr/view?code=best&No=1047136&vdate=",
-      "nc": 1
      }
     }
    ]
@@ -855,7 +839,7 @@
   },
   {
    "name": "디시인사이드",
-   "np": 6,
+   "np": 5,
    "nc": 0,
    "topics": [
     {
@@ -864,33 +848,16 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 6,
-     "issue_nc": 194,
+     "issue_nc": 196,
      "kw": [
       "세무사",
       "안경",
-      "시험",
-      "AI"
+      "AI",
+      "시험"
      ],
      "top_post": {
       "t": "세무사시험 160문제중 1개만 틀린 수석…'스마트안경",
       "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=478398&_dcbest=1&page=1",
-      "nc": 0
-     }
-    },
-    {
-     "t": "리트 만점자 블로그 구경하는데 이거 뭐야",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 7,
-     "issue_nc": 129,
-     "kw": [
-      "리트",
-      "만점자"
-     ],
-     "top_post": {
-      "t": "리트 만점자님 대단하시네",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=478212&_dcbest=1&page=1",
       "nc": 0
      }
     },
@@ -902,8 +869,8 @@
      "issue_np": 3,
      "issue_nc": 77,
      "kw": [
-      "개소주",
       "반려견",
+      "개소주",
       "지인"
      ],
      "top_post": {
@@ -917,8 +884,8 @@
      "nsite": 3,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 43,
+     "issue_np": 4,
+     "issue_nc": 49,
      "kw": [
       "AI",
       "안경",
@@ -932,34 +899,15 @@
      }
     },
     {
-     "t": "엔비디아 새 CEO",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 32,
-     "kw": [
-      "CEO",
-      "엔비디아",
-      "젠슨 황",
-      "사임"
-     ],
-     "top_post": {
-      "t": "젠슨 황, 엔비디아 CEO 및 이사직 전부 사임",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=478275&_dcbest=1&page=1",
-      "nc": 0
-     }
-    },
-    {
      "t": "JTBC) 최민희 “통일교가 김민석 밀었다…이재명 대통령도 '윤석열 하야' 쪽이었다\"",
      "nsite": 3,
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 5,
-     "issue_nc": 30,
+     "issue_nc": 36,
      "kw": [
-      "최민희",
       "김민석",
+      "최민희",
       "대통령",
       "통일교"
      ],
@@ -968,12 +916,29 @@
       "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=478392&_dcbest=1&page=1",
       "nc": 0
      }
+    },
+    {
+     "t": "엔비디아 새 CEO",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 32,
+     "kw": [
+      "CEO",
+      "엔비디아"
+     ],
+     "top_post": {
+      "t": "젠슨 황, 엔비디아 CEO 및 이사직 전부 사임",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=478275&_dcbest=1&page=1",
+      "nc": 0
+     }
     }
    ]
   },
   {
    "name": "더쿠",
-   "np": 15,
+   "np": 13,
    "nc": 0,
    "topics": [
     {
@@ -982,12 +947,12 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 6,
-     "issue_nc": 194,
+     "issue_nc": 196,
      "kw": [
       "세무사",
       "안경",
-      "시험",
-      "AI"
+      "AI",
+      "시험"
      ],
      "top_post": {
       "t": "테크 유튜버가 AI안경 끼고 세무사 시험 본 결과",
@@ -998,15 +963,15 @@
     {
      "t": "엔비디아 직원들 “젠슨 황 유임 찬성 88%”",
      "nsite": 4,
-     "np_here": 2,
+     "np_here": 1,
      "nc_here": 0,
-     "issue_np": 7,
+     "issue_np": 4,
      "issue_nc": 39,
      "kw": [
       "젠슨 황",
       "엔비디아",
       "직원",
-      "복귀"
+      "찬성"
      ],
      "top_post": {
       "t": "엔비디아 직원들 “충격이지만”…젠슨 황 유임 찬성 88%",
@@ -1080,9 +1045,9 @@
      "issue_nc": 81,
      "kw": [
       "수석",
-      "회계사",
       "시험",
-      "세무사"
+      "회계사",
+      "소거법"
      ],
      "top_post": {
       "t": "세무사 수석 소거법좌 회계사 시험도 봄",
@@ -1114,12 +1079,12 @@
      "np_here": 2,
      "nc_here": 0,
      "issue_np": 4,
-     "issue_nc": 51,
+     "issue_nc": 52,
      "kw": [
       "패소",
+      "손배소",
       "1심",
-      "속보",
-      "박수홍"
+      "속보"
      ],
      "top_post": {
       "t": "[속보] 빌리프랩·쏘스뮤직, 민희진 상대 25억 손배소 1심 패소",
@@ -1131,7 +1096,7 @@
   },
   {
    "name": "루리웹",
-   "np": 26,
+   "np": 24,
    "nc": 0,
    "topics": [
     {
@@ -1140,12 +1105,12 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 6,
-     "issue_nc": 194,
+     "issue_nc": 196,
      "kw": [
       "세무사",
       "안경",
-      "시험",
-      "AI"
+      "AI",
+      "시험"
      ],
      "top_post": {
       "t": "AI안경 사용의혹 수석좌, 지상파 뉴스 입갤",
@@ -1159,12 +1124,12 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 4,
-     "issue_nc": 220,
+     "issue_nc": 222,
      "kw": [
       "아이",
-      "중국",
       "지지",
-      "우기"
+      "우기",
+      "중국"
      ],
      "top_post": {
       "t": "아이들 우기, 시진핑 ‘하나의 중국’ 공개 지지…대만 출신 슈화 어쩌나",
@@ -1197,7 +1162,7 @@
      "np_here": 2,
      "nc_here": 0,
      "issue_np": 7,
-     "issue_nc": 136,
+     "issue_nc": 137,
      "kw": [
       "세무사",
       "수석",
@@ -1216,12 +1181,12 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 4,
-     "issue_nc": 88,
+     "issue_nc": 91,
      "kw": [
-      "여직원",
-      "남직원",
+      "키스",
       "회식",
-      "키스"
+      "여직원",
+      "남직원"
      ],
      "top_post": {
       "t": "블라 : 회식하다가 여직원이 남직원한테 키스 갈김 ㅋㅋㅋ",
@@ -1232,15 +1197,15 @@
     {
      "t": "엔비디아 직원들 “젠슨 황 유임 찬성 88%”",
      "nsite": 4,
-     "np_here": 2,
+     "np_here": 1,
      "nc_here": 0,
-     "issue_np": 7,
+     "issue_np": 4,
      "issue_nc": 39,
      "kw": [
       "젠슨 황",
       "엔비디아",
       "직원",
-      "복귀"
+      "찬성"
      ],
      "top_post": {
       "t": "엔비디아 직원들, 제발 젠슨황 복귀해달라고 서명중 ㄷㄷ",
@@ -1290,7 +1255,7 @@
   },
   {
    "name": "SLR클럽",
-   "np": 4,
+   "np": 3,
    "nc": 0,
    "topics": [
     {
@@ -1299,12 +1264,12 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 4,
-     "issue_nc": 220,
+     "issue_nc": 222,
      "kw": [
       "아이",
-      "중국",
       "지지",
-      "우기"
+      "우기",
+      "중국"
      ],
      "top_post": {
       "t": "걸그룹 '아이들' 우기, '하나의 중국' 공개 지지",
@@ -1346,23 +1311,6 @@
      "top_post": {
       "t": "시어머니 자랑하는 요즘 새댁 ㄷㄷㄷㄷㄷㄷㄷ",
       "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677355",
-      "nc": 0
-     }
-    },
-    {
-     "t": "헬스장에서 여자 트레이너와 난투극 (중국)",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 33,
-     "kw": [
-      "중국",
-      "여자"
-     ],
-     "top_post": {
-      "t": "헬스장에서 여자 트레이너와 난투극 (중국)",
-      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677383",
       "nc": 0
      }
     }
