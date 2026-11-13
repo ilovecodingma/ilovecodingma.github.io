@@ -1,22 +1,22 @@
 {
  "date": "2026-11-13",
- "updated": "2026-11-13 19:50",
+ "updated": "2026-11-13 20:50",
  "sites": 13,
- "npost": 2933,
+ "npost": 2932,
  "note": "출처(커뮤니티)별 집계예요. 작성자·연령·성별 정보는 수집하지 않아요. posts 는 이슈별로 뽑힌 일부라 전체 글 수가 아니에요.",
  "sources": [
   {
    "name": "MLB파크",
-   "np": 28,
-   "nc": 1567,
+   "np": 26,
+   "nc": 1416,
    "topics": [
     {
      "t": "[리센느] 소속사에서 법적 대응 공지 나왔네요",
      "nsite": 3,
      "np_here": 2,
-     "nc_here": 167,
+     "nc_here": 172,
      "issue_np": 4,
-     "issue_nc": 169,
+     "issue_nc": 174,
      "kw": [
       "소속사",
       "리센느",
@@ -48,55 +48,36 @@
      }
     },
     {
-     "t": "회계사 시험도 봤었다는 세무 수석 ㄷㄷㄷ…JPG",
-     "nsite": 4,
-     "np_here": 2,
-     "nc_here": 150,
-     "issue_np": 6,
-     "issue_nc": 162,
-     "kw": [
-      "수석",
-      "세무",
-      "시험",
-      "회계사"
-     ],
-     "top_post": {
-      "t": "회계사 시험도 봤었다는 세무 수석 ㄷㄷㄷ…JPG",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611130120075264&m=view",
-      "nc": 81
-     }
-    },
-    {
      "t": "ai안경으로 온갖 시험 통과한 사람 이미 정말 많은 이유ㄷㄷㄷ",
-     "nsite": 7,
+     "nsite": 6,
      "np_here": 2,
-     "nc_here": 144,
-     "issue_np": 17,
-     "issue_nc": 467,
+     "nc_here": 145,
+     "issue_np": 14,
+     "issue_nc": 457,
      "kw": [
       "안경",
       "AI",
       "시험",
-      "세무사"
+      "통과"
      ],
      "top_post": {
       "t": "ai 안경 절대 안걸리는 방법. jpg",
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611130120077343&m=view",
-      "nc": 103
+      "nc": 104
      }
     },
     {
      "t": "아이들 우기, 시진핑 '하나의 중국' 공개 지지...",
-     "nsite": 3,
+     "nsite": 4,
      "np_here": 1,
      "nc_here": 141,
-     "issue_np": 3,
-     "issue_nc": 141,
+     "issue_np": 4,
+     "issue_nc": 196,
      "kw": [
-      "지지",
       "중국",
       "우기",
-      "공개"
+      "지지",
+      "아이"
      ],
      "top_post": {
       "t": "아이들 우기, 시진핑 '하나의 중국' 공개 지지...",
@@ -123,62 +104,81 @@
      }
     },
     {
-     "t": "배우 김승우 ‘절도 혐의’ 피소",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 98,
-     "issue_np": 3,
-     "issue_nc": 98,
-     "kw": [
-      "김승우",
-      "피소",
-      "절도",
-      "배우"
-     ],
-     "top_post": {
-      "t": "배우 김승우 ‘절도 혐의’ 피소",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611120120061857&m=view",
-      "nc": 98
-     }
-    },
-    {
      "t": "세무사수석 합격자 이돈호 변호사 선임 ㄷㄷㄷ",
      "nsite": 4,
      "np_here": 2,
-     "nc_here": 85,
-     "issue_np": 8,
-     "issue_nc": 126,
+     "nc_here": 89,
+     "issue_np": 7,
+     "issue_nc": 131,
      "kw": [
       "세무사",
       "수석",
-      "합격자",
-      "변호사"
+      "변호사",
+      "합격자"
      ],
      "top_post": {
       "t": "세무사수석 합격자 이돈호 변호사 선임 ㄷㄷㄷ",
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611130120079236&m=view",
-      "nc": 56
+      "nc": 60
+     }
+    },
+    {
+     "t": "회계사 시험도 봤었다는 세무 수석 ㄷㄷㄷ…JPG",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 81,
+     "issue_np": 4,
+     "issue_nc": 93,
+     "kw": [
+      "시험",
+      "회계사",
+      "수석",
+      "세무"
+     ],
+     "top_post": {
+      "t": "회계사 시험도 봤었다는 세무 수석 ㄷㄷㄷ…JPG",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611130120075264&m=view",
+      "nc": 81
+     }
+    },
+    {
+     "t": "LEET 만점자 정면돌파 선언",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 78,
+     "issue_np": 3,
+     "issue_nc": 78,
+     "kw": [
+      "선언",
+      "돌파",
+      "정면",
+      "만점자"
+     ],
+     "top_post": {
+      "t": "LEET 만점자 정면돌파 선언",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611120120064764&m=view",
+      "nc": 78
      }
     }
    ]
   },
   {
    "name": "인스티즈",
-   "np": 13,
-   "nc": 685,
+   "np": 16,
+   "nc": 841,
    "topics": [
     {
      "t": "ai안경으로 온갖 시험 통과한 사람 이미 정말 많은 이유ㄷㄷㄷ",
-     "nsite": 7,
+     "nsite": 6,
      "np_here": 4,
      "nc_here": 294,
-     "issue_np": 17,
-     "issue_nc": 467,
+     "issue_np": 14,
+     "issue_nc": 457,
      "kw": [
       "안경",
       "AI",
       "시험",
-      "세무사"
+      "통과"
      ],
      "top_post": {
       "t": "ai안경으로 온갖 시험 통과한 사람 이미 정말 많은 이유ㄷㄷㄷ",
@@ -232,8 +232,8 @@
      "kw": [
       "속보",
       "젠슨 황",
-      "CEO",
-      "엔비디아"
+      "엔비디아",
+      "CEO"
      ],
      "top_post": {
       "t": "[속보] 젠슨 황, 엔비디아 CEO 사퇴",
@@ -245,56 +245,74 @@
      "t": "안경 안 써서 그런지 오늘 따라 이건희 빙의 됐다는 이재용",
      "nsite": 4,
      "np_here": 1,
-     "nc_here": 58,
+     "nc_here": 57,
      "issue_np": 4,
-     "issue_nc": 77,
+     "issue_nc": 76,
      "kw": [
-      "이재용",
       "안경",
+      "이재용",
       "이건희"
      ],
      "top_post": {
       "t": "안경 안 써서 그런지 오늘 따라 이건희 빙의 됐다는 이재용",
       "u": "https://www.instiz.net/pt/7925076?green=1",
-      "nc": 58
+      "nc": 57
      }
     },
     {
-     "t": "블라 : 회식하다가 여직원이 남직원한테 키스 갈김 ㅋㅋㅋ",
+     "t": "아이들 우기, 시진핑 '하나의 중국' 공개 지지...",
      "nsite": 4,
      "np_here": 1,
-     "nc_here": 37,
+     "nc_here": 55,
      "issue_np": 4,
-     "issue_nc": 48,
+     "issue_nc": 196,
      "kw": [
-      "남직원",
-      "키스",
-      "회식",
-      "여직원"
+      "중국",
+      "우기",
+      "지지",
+      "아이"
      ],
      "top_post": {
-      "t": "블라 : 회식하다가 여직원이 남직원한테 키스 갈김 ㅋㅋㅋ",
-      "u": "https://www.instiz.net/pt/7925510?green=1",
-      "nc": 37
+      "t": "아이들 우기 중국 대만 통일 지지 선언",
+      "u": "https://www.instiz.net/pt/7925508?green=1",
+      "nc": 55
      }
     },
     {
-     "t": "세무사수석 합격자 이돈호 변호사 선임 ㄷㄷㄷ",
-     "nsite": 4,
+     "t": "2026년 수석 합격자 필기 + 교재 인증샷",
+     "nsite": 3,
      "np_here": 1,
-     "nc_here": 36,
-     "issue_np": 8,
-     "issue_nc": 126,
+     "nc_here": 54,
+     "issue_np": 3,
+     "issue_nc": 64,
      "kw": [
-      "세무사",
-      "수석",
       "합격자",
-      "변호사"
+      "수석",
+      "역대"
      ],
      "top_post": {
-      "t": "제 63회 세무사시험 수석 합격자 변호사 고용",
-      "u": "https://www.instiz.net/pt/7925455?green=1",
-      "nc": 36
+      "t": "2026년 수석 합격자 필기 + 교재 인증샷",
+      "u": "https://www.instiz.net/pt/7925051?green=1",
+      "nc": 54
+     }
+    },
+    {
+     "t": "[속보] 박수홍, 친형 부부 상대 98억 손배소 1심 패소",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 44,
+     "issue_np": 4,
+     "issue_nc": 44,
+     "kw": [
+      "패소",
+      "속보",
+      "부부",
+      "손배소"
+     ],
+     "top_post": {
+      "t": "[속보] 박수홍, 친형 부부 상대 98억 손배소 1심 패소",
+      "u": "https://www.instiz.net/pt/7925476?green=1",
+      "nc": 44
      }
     }
    ]
@@ -302,7 +320,7 @@
   {
    "name": "개드립",
    "np": 11,
-   "nc": 258,
+   "nc": 275,
    "topics": [
     {
      "t": "(속보) 젠슨황 사임",
@@ -314,8 +332,8 @@
      "kw": [
       "속보",
       "젠슨 황",
-      "CEO",
-      "엔비디아"
+      "엔비디아",
+      "CEO"
      ],
      "top_post": {
       "t": "(속보) 젠슨황 사임",
@@ -349,15 +367,32 @@
      "issue_np": 4,
      "issue_nc": 39,
      "kw": [
-      "회사",
-      "출장",
       "직원",
-      "중국"
+      "중국",
+      "회사",
+      "출장"
      ],
      "top_post": {
       "t": "회사 직원 2명이 같이 중국 출장 간 이유",
       "u": "https://www.dogdrip.net/dogdrip/734660724?sort_index=popular&page=1",
       "nc": 39
+     }
+    },
+    {
+     "t": "중국인이 제안하는 대동아공영권",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 38,
+     "issue_np": 3,
+     "issue_nc": 38,
+     "kw": [
+      "중국인",
+      "제안"
+     ],
+     "top_post": {
+      "t": "중국인이 제안하는 대동아공영권",
+      "u": "https://www.dogdrip.net/dogdrip/734641705?sort_index=popular&page=1",
+      "nc": 38
      }
     },
     {
@@ -388,8 +423,8 @@
      "kw": [
       "한국",
       "GTA",
-      "3국",
-      "동아시아"
+      "동아시아",
+      "검열"
      ],
      "top_post": {
       "t": "GTA6, 동아시아 3국 중 한국만 '검열' 없어",
@@ -398,20 +433,22 @@
      }
     },
     {
-     "t": "중국인이 제안하는 대동아공영권",
-     "nsite": 3,
+     "t": "블라 : 회식하다가 여직원이 남직원한테 키스 갈김 ㅋㅋㅋ",
+     "nsite": 4,
      "np_here": 1,
-     "nc_here": 31,
-     "issue_np": 3,
-     "issue_nc": 31,
+     "nc_here": 20,
+     "issue_np": 4,
+     "issue_nc": 62,
      "kw": [
-      "제안",
-      "중국인"
+      "키스",
+      "남직원",
+      "여직원",
+      "회식"
      ],
      "top_post": {
-      "t": "중국인이 제안하는 대동아공영권",
-      "u": "https://www.dogdrip.net/dogdrip/734641705?sort_index=popular&page=1",
-      "nc": 31
+      "t": "블라 : 회식하다가 여직원이 남직원한테 키스 갈김 ㅋㅋㅋ",
+      "u": "https://www.dogdrip.net/dogdrip/734635128?sort_index=popular&page=1",
+      "nc": 20
      }
     },
     {
@@ -432,43 +469,24 @@
       "u": "https://www.dogdrip.net/dogdrip/734475251?sort_index=popular&page=1",
       "nc": 12
      }
-    },
-    {
-     "t": "블라 : 회식하다가 여직원이 남직원한테 키스 갈김 ㅋㅋㅋ",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 10,
-     "issue_np": 4,
-     "issue_nc": 48,
-     "kw": [
-      "남직원",
-      "키스",
-      "회식",
-      "여직원"
-     ],
-     "top_post": {
-      "t": "블라 : 회식하다가 여직원이 남직원한테 키스 갈김 ㅋㅋㅋ",
-      "u": "https://www.dogdrip.net/dogdrip/734635128?sort_index=popular&page=1",
-      "nc": 10
-     }
     }
    ]
   },
   {
    "name": "82쿡",
    "np": 15,
-   "nc": 144,
+   "nc": 160,
    "topics": [
     {
      "t": "현재 중국인들 \"중국여자\"로 국뽕 거하게 먹고있는 이유...",
      "nsite": 5,
      "np_here": 2,
-     "nc_here": 40,
+     "nc_here": 56,
      "issue_np": 7,
-     "issue_nc": 48,
+     "issue_nc": 64,
      "kw": [
-      "여자",
       "중국",
+      "여자",
       "중국인"
      ],
      "top_post": {
@@ -504,8 +522,8 @@
      "issue_np": 23,
      "issue_nc": 57,
      "kw": [
-      "안경",
       "AI",
+      "안경",
       "기능"
      ],
      "top_post": {
@@ -541,9 +559,9 @@
      "issue_np": 5,
      "issue_nc": 79,
      "kw": [
+      "김민석",
       "지시",
       "감찰",
-      "김민석",
       "최민희"
      ],
      "top_post": {
@@ -557,13 +575,13 @@
      "nsite": 4,
      "np_here": 1,
      "nc_here": 12,
-     "issue_np": 6,
-     "issue_nc": 162,
+     "issue_np": 4,
+     "issue_nc": 93,
      "kw": [
-      "수석",
-      "세무",
       "시험",
-      "회계사"
+      "회계사",
+      "수석",
+      "세무"
      ],
      "top_post": {
       "t": "세무시험 수석자 합격수기 ....",
@@ -577,10 +595,10 @@
      "np_here": 1,
      "nc_here": 6,
      "issue_np": 4,
-     "issue_nc": 77,
+     "issue_nc": 76,
      "kw": [
-      "이재용",
       "안경",
+      "이재용",
       "이건희"
      ],
      "top_post": {
@@ -594,13 +612,13 @@
      "nsite": 4,
      "np_here": 1,
      "nc_here": 5,
-     "issue_np": 8,
-     "issue_nc": 126,
+     "issue_np": 7,
+     "issue_nc": 131,
      "kw": [
       "세무사",
       "수석",
-      "합격자",
-      "변호사"
+      "변호사",
+      "합격자"
      ],
      "top_post": {
       "t": "세무사 수석 합격자, 변호사 선임",
@@ -612,8 +630,8 @@
   },
   {
    "name": "클리앙",
-   "np": 5,
-   "nc": 96,
+   "np": 6,
+   "nc": 105,
    "topics": [
     {
      "t": "김민석, 최민희 '언행 논란'에 윤리감찰 지시…'심각하게 인식'",
@@ -623,9 +641,9 @@
      "issue_np": 5,
      "issue_nc": 79,
      "kw": [
+      "김민석",
       "지시",
       "감찰",
-      "김민석",
       "최민희"
      ],
      "top_post": {
@@ -642,8 +660,8 @@
      "issue_np": 23,
      "issue_nc": 57,
      "kw": [
-      "안경",
       "AI",
+      "안경",
       "기능"
      ],
      "top_post": {
@@ -658,10 +676,10 @@
      "np_here": 1,
      "nc_here": 11,
      "issue_np": 4,
-     "issue_nc": 77,
+     "issue_nc": 76,
      "kw": [
-      "이재용",
       "안경",
+      "이재용",
       "이건희"
      ],
      "top_post": {
@@ -669,37 +687,31 @@
       "u": "https://www.clien.net/service/board/park/19291116?od=T33&po=0&category=0&groupCd=clien_all",
       "nc": 11
      }
-    }
-   ]
-  },
-  {
-   "name": "아카라이브",
-   "np": 1,
-   "nc": 25,
-   "topics": [
+    },
     {
-     "t": "돌아온 빼빼로데이 사변",
+     "t": "2026년 수석 합격자 필기 + 교재 인증샷",
      "nsite": 3,
      "np_here": 1,
-     "nc_here": 25,
+     "nc_here": 9,
      "issue_np": 3,
-     "issue_nc": 25,
+     "issue_nc": 64,
      "kw": [
-      "데이",
-      "빼빼로"
+      "합격자",
+      "수석",
+      "역대"
      ],
      "top_post": {
-      "t": "돌아온 빼빼로데이 사변",
-      "u": "https://arca.live/b/live/188920263?p=1",
-      "nc": 25
+      "t": "역대급 기적 5급 수석 합격자",
+      "u": "https://www.clien.net/service/board/park/19291353?od=T33&po=0&category=0&groupCd=clien_all",
+      "nc": 9
      }
     }
    ]
   },
   {
    "name": "보배드림",
-   "np": 6,
-   "nc": 8,
+   "np": 8,
+   "nc": 10,
    "topics": [
     {
      "t": "올해 세무사 수석의 과거",
@@ -720,12 +732,31 @@
      }
     },
     {
+     "t": "블라 : 회식하다가 여직원이 남직원한테 키스 갈김 ㅋㅋㅋ",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 2,
+     "issue_np": 4,
+     "issue_nc": 62,
+     "kw": [
+      "키스",
+      "남직원",
+      "여직원",
+      "회식"
+     ],
+     "top_post": {
+      "t": "회식하다가 여직원이 남직원한테 키스 갈김 ㅋㅋㅋ",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1047284&vdate=",
+      "nc": 2
+     }
+    },
+    {
      "t": "[리센느] 소속사에서 법적 대응 공지 나왔네요",
      "nsite": 3,
      "np_here": 1,
      "nc_here": 2,
      "issue_np": 4,
-     "issue_nc": 169,
+     "issue_nc": 174,
      "kw": [
       "소속사",
       "리센느",
@@ -738,25 +769,6 @@
      }
     },
     {
-     "t": "블라 : 회식하다가 여직원이 남직원한테 키스 갈김 ㅋㅋㅋ",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 1,
-     "issue_np": 4,
-     "issue_nc": 48,
-     "kw": [
-      "남직원",
-      "키스",
-      "회식",
-      "여직원"
-     ],
-     "top_post": {
-      "t": "회식하다가 여직원이 남직원한테 키스 갈김 ㅋㅋㅋ",
-      "u": "https://www.bobaedream.co.kr/view?code=best&No=1047284&vdate=",
-      "nc": 1
-     }
-    },
-    {
      "t": "김민석, 최민희 '언행 논란'에 윤리감찰 지시…'심각하게 인식'",
      "nsite": 3,
      "np_here": 1,
@@ -764,9 +776,9 @@
      "issue_np": 5,
      "issue_nc": 79,
      "kw": [
+      "김민석",
       "지시",
       "감찰",
-      "김민석",
       "최민희"
      ],
      "top_post": {
@@ -783,8 +795,8 @@
      "issue_np": 3,
      "issue_nc": 77,
      "kw": [
-      "반려견",
       "개소주",
+      "반려견",
       "지인"
      ],
      "top_post": {
@@ -794,21 +806,58 @@
      }
     },
     {
+     "t": "2026년 수석 합격자 필기 + 교재 인증샷",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 1,
+     "issue_np": 3,
+     "issue_nc": 64,
+     "kw": [
+      "합격자",
+      "수석",
+      "역대"
+     ],
+     "top_post": {
+      "t": "세무사 역대 최고점합격자 근황",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1047314&vdate=",
+      "nc": 1
+     }
+    },
+    {
      "t": "종로 막걸리 할배",
      "nsite": 3,
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 3,
-     "issue_nc": 46,
+     "issue_nc": 47,
      "kw": [
+      "종로",
       "막걸리",
       "할배",
-      "종로",
-      "일대"
+      "유명"
      ],
      "top_post": {
       "t": "종로 일대 유명한 막걸리 할배근황",
       "u": "https://www.bobaedream.co.kr/view?code=best&No=1047238&vdate=",
+      "nc": 0
+     }
+    },
+    {
+     "t": "[속보] 박수홍, 친형 부부 상대 98억 손배소 1심 패소",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 44,
+     "kw": [
+      "패소",
+      "속보",
+      "부부",
+      "손배소"
+     ],
+     "top_post": {
+      "t": "박수홍이 친형 부부에게 왜 패소인지 납득할 수가 없네요",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1047313&vdate=",
       "nc": 0
      }
     }
@@ -820,6 +869,24 @@
    "nc": 0,
    "topics": [
     {
+     "t": "현재 중국인들 \"중국여자\"로 국뽕 거하게 먹고있는 이유...",
+     "nsite": 5,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 7,
+     "issue_nc": 64,
+     "kw": [
+      "중국",
+      "여자",
+      "중국인"
+     ],
+     "top_post": {
+      "t": "현재 중국인들 \"중국여자\"로 국뽕 거하게 먹고있는 이유...",
+      "u": "https://theqoo.net/hot/4404058093",
+      "nc": 0
+     }
+    },
+    {
      "t": "ai안경 실제 사용장면.....",
      "nsite": 5,
      "np_here": 1,
@@ -827,31 +894,13 @@
      "issue_np": 23,
      "issue_nc": 57,
      "kw": [
-      "안경",
       "AI",
+      "안경",
       "기능"
      ],
      "top_post": {
       "t": "AI안경이 문제가 아닌 지금 상황",
       "u": "https://theqoo.net/hot/4403769498",
-      "nc": 0
-     }
-    },
-    {
-     "t": "현재 중국인들 \"중국여자\"로 국뽕 거하게 먹고있는 이유...",
-     "nsite": 5,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 7,
-     "issue_nc": 48,
-     "kw": [
-      "여자",
-      "중국",
-      "중국인"
-     ],
-     "top_post": {
-      "t": "현재 중국인들 \"중국여자\"로 국뽕 거하게 먹고있는 이유...",
-      "u": "https://theqoo.net/hot/4404058093",
       "nc": 0
      }
     },
@@ -875,25 +924,6 @@
      }
     },
     {
-     "t": "회계사 시험도 봤었다는 세무 수석 ㄷㄷㄷ…JPG",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 6,
-     "issue_nc": 162,
-     "kw": [
-      "수석",
-      "세무",
-      "시험",
-      "회계사"
-     ],
-     "top_post": {
-      "t": "세무사 수석 소거법좌 회계사 시험도 봄",
-      "u": "https://theqoo.net/hot/4404482893",
-      "nc": 0
-     }
-    },
-    {
      "t": "(속보) 젠슨황 사임",
      "nsite": 4,
      "np_here": 1,
@@ -903,12 +933,31 @@
      "kw": [
       "속보",
       "젠슨 황",
-      "CEO",
-      "엔비디아"
+      "엔비디아",
+      "CEO"
      ],
      "top_post": {
       "t": "엔비디아 CEO 젠슨 황 사임",
       "u": "https://theqoo.net/hot/4404166052",
+      "nc": 0
+     }
+    },
+    {
+     "t": "회계사 시험도 봤었다는 세무 수석 ㄷㄷㄷ…JPG",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 93,
+     "kw": [
+      "시험",
+      "회계사",
+      "수석",
+      "세무"
+     ],
+     "top_post": {
+      "t": "세무사 수석 소거법좌 회계사 시험도 봄",
+      "u": "https://theqoo.net/hot/4404482893",
       "nc": 0
      }
     },
@@ -918,11 +967,11 @@
      "np_here": 2,
      "nc_here": 0,
      "issue_np": 8,
-     "issue_nc": 34,
+     "issue_nc": 39,
      "kw": [
-      "젠슨 황",
-      "직원",
       "엔비디아",
+      "직원",
+      "젠슨 황",
       "복귀"
      ],
      "top_post": {
@@ -939,8 +988,8 @@
      "issue_np": 4,
      "issue_nc": 15,
      "kw": [
-      "할인",
       "우승",
+      "할인",
       "삼성",
       "가전"
      ],
@@ -951,21 +1000,21 @@
      }
     },
     {
-     "t": "배우 김승우 ‘절도 혐의’ 피소",
+     "t": "LEET 만점자 정면돌파 선언",
      "nsite": 3,
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 3,
-     "issue_nc": 98,
+     "issue_nc": 78,
      "kw": [
-      "김승우",
-      "피소",
-      "절도",
-      "배우"
+      "선언",
+      "돌파",
+      "정면",
+      "만점자"
      ],
      "top_post": {
-      "t": "[단독] 술자리 중 지갑에서 쓱? 배우 김승우 ‘절도 혐의’ 피소",
-      "u": "https://theqoo.net/hot/4403739157",
+      "t": "LEET 만점자 정면돌파 선언 ++추가",
+      "u": "https://theqoo.net/hot/4403805934",
       "nc": 0
      }
     }
@@ -973,7 +1022,7 @@
   },
   {
    "name": "SLR클럽",
-   "np": 3,
+   "np": 2,
    "nc": 0,
    "topics": [
     {
@@ -982,10 +1031,10 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 7,
-     "issue_nc": 48,
+     "issue_nc": 64,
      "kw": [
-      "여자",
       "중국",
+      "여자",
       "중국인"
      ],
      "top_post": {
@@ -996,39 +1045,20 @@
     },
     {
      "t": "아이들 우기, 시진핑 '하나의 중국' 공개 지지...",
-     "nsite": 3,
+     "nsite": 4,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 141,
+     "issue_np": 4,
+     "issue_nc": 196,
      "kw": [
-      "지지",
       "중국",
       "우기",
-      "공개"
+      "지지",
+      "아이"
      ],
      "top_post": {
       "t": "걸그룹 '아이들' 우기, '하나의 중국' 공개 지지",
       "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677386",
-      "nc": 0
-     }
-    },
-    {
-     "t": "배우 김승우 ‘절도 혐의’ 피소",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 98,
-     "kw": [
-      "김승우",
-      "피소",
-      "절도",
-      "배우"
-     ],
-     "top_post": {
-      "t": "김승우 절도죄 피소 ㄷㄷㄷ",
-      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677308",
       "nc": 0
      }
     }
@@ -1036,7 +1066,7 @@
   },
   {
    "name": "루리웹",
-   "np": 29,
+   "np": 26,
    "nc": 0,
    "topics": [
     {
@@ -1045,10 +1075,10 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 7,
-     "issue_nc": 48,
+     "issue_nc": 64,
      "kw": [
-      "여자",
       "중국",
+      "여자",
       "중국인"
      ],
      "top_post": {
@@ -1077,21 +1107,21 @@
      }
     },
     {
-     "t": "회계사 시험도 봤었다는 세무 수석 ㄷㄷㄷ…JPG",
+     "t": "아이들 우기, 시진핑 '하나의 중국' 공개 지지...",
      "nsite": 4,
-     "np_here": 2,
+     "np_here": 1,
      "nc_here": 0,
-     "issue_np": 6,
-     "issue_nc": 162,
+     "issue_np": 4,
+     "issue_nc": 196,
      "kw": [
-      "수석",
-      "세무",
-      "시험",
-      "회계사"
+      "중국",
+      "우기",
+      "지지",
+      "아이"
      ],
      "top_post": {
-      "t": "드디어 해명 떴다는 AI 안경좌 세무 수석 근황 ㄷㄷㄷ",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77364190?m=all&t=now",
+      "t": "아이들 우기, 시진핑 ‘하나의 중국’ 공개 지지…대만 출신 슈화 어쩌나",
+      "u": "https://bbs.ruliweb.com/best/board/300446/read/3827047?m=all&t=now",
       "nc": 0
      }
     },
@@ -1100,17 +1130,17 @@
      "nsite": 4,
      "np_here": 2,
      "nc_here": 0,
-     "issue_np": 8,
-     "issue_nc": 126,
+     "issue_np": 7,
+     "issue_nc": 131,
      "kw": [
       "세무사",
       "수석",
-      "합격자",
-      "변호사"
+      "변호사",
+      "합격자"
      ],
      "top_post": {
-      "t": "수석 합격자 후기글",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77364641?m=all&t=now",
+      "t": "세무사 수석합격자 블로그 재밌네",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77371744?m=all&t=now",
       "nc": 0
      }
     },
@@ -1124,12 +1154,50 @@
      "kw": [
       "속보",
       "젠슨 황",
-      "CEO",
-      "엔비디아"
+      "엔비디아",
+      "CEO"
      ],
      "top_post": {
       "t": "젠슨황 사임",
       "u": "https://bbs.ruliweb.com/best/board/300143/read/77366803?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "회계사 시험도 봤었다는 세무 수석 ㄷㄷㄷ…JPG",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 93,
+     "kw": [
+      "시험",
+      "회계사",
+      "수석",
+      "세무"
+     ],
+     "top_post": {
+      "t": "세무사 수석 소거법좌 회계사 시험도 봤었네요 ㅋㅋㅋㅋㅋ",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77370795?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "블라 : 회식하다가 여직원이 남직원한테 키스 갈김 ㅋㅋㅋ",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 62,
+     "kw": [
+      "키스",
+      "남직원",
+      "여직원",
+      "회식"
+     ],
+     "top_post": {
+      "t": "블라 : 회식하다가 여직원이 남직원한테 키스 갈김 ㅋㅋㅋ",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77374712?m=all&t=now",
       "nc": 0
      }
     },
@@ -1151,50 +1219,12 @@
       "u": "https://bbs.ruliweb.com/best/board/300143/read/77366807?m=all&t=now",
       "nc": 0
      }
-    },
-    {
-     "t": "블라 : 회식하다가 여직원이 남직원한테 키스 갈김 ㅋㅋㅋ",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 48,
-     "kw": [
-      "남직원",
-      "키스",
-      "회식",
-      "여직원"
-     ],
-     "top_post": {
-      "t": "블라 : 회식하다가 여직원이 남직원한테 키스 갈김 ㅋㅋㅋ",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77374712?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "AI안경 의심 세무사 게이가 초천재였으면 하는 이유.eu",
-     "nsite": 4,
-     "np_here": 2,
-     "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 42,
-     "kw": [
-      "AI",
-      "세무사",
-      "안경",
-      "EU"
-     ],
-     "top_post": {
-      "t": "가짜광기 Ai 안경 사용 세무사 수석에 묻혀버린 진짜 광기",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77365848?m=all&t=now",
-      "nc": 0
-     }
     }
    ]
   },
   {
    "name": "디시인사이드",
-   "np": 10,
+   "np": 11,
    "nc": 0,
    "topics": [
     {
@@ -1264,7 +1294,7 @@
       "AI",
       "세무사",
       "안경",
-      "EU"
+      "천재"
      ],
      "top_post": {
       "t": "싱글벙글 ai 세무사게이가 초천재였으면 하는 이유.eu",
@@ -1316,8 +1346,8 @@
      "issue_np": 3,
      "issue_nc": 77,
      "kw": [
-      "반려견",
       "개소주",
+      "반려견",
       "지인"
      ],
      "top_post": {
@@ -1329,43 +1359,19 @@
     {
      "t": "GTA6, 동아시아 3국 중 한국만 '검열' 없어",
      "nsite": 3,
-     "np_here": 1,
+     "np_here": 2,
      "nc_here": 0,
      "issue_np": 7,
      "issue_nc": 34,
      "kw": [
       "한국",
       "GTA",
-      "3국",
-      "동아시아"
+      "동아시아",
+      "검열"
      ],
      "top_post": {
       "t": "싱글벙글 GTA6 한국 마케팅 근황",
       "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=478352&_dcbest=1&page=1",
-      "nc": 0
-     }
-    }
-   ]
-  },
-  {
-   "name": "네이트판",
-   "np": 1,
-   "nc": 0,
-   "topics": [
-    {
-     "t": "돌아온 빼빼로데이 사변",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 25,
-     "kw": [
-      "데이",
-      "빼빼로"
-     ],
-     "top_post": {
-      "t": "해찬이 빼빼로데이에 250만원어치 팬들한테 선물 했대",
-      "u": "https://pann.nate.com/talk/375715383",
       "nc": 0
      }
     }
