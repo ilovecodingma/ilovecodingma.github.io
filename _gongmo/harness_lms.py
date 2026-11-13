@@ -27,7 +27,7 @@ CSS = ('<style>.hx{max-width:880px}.hx-q{display:flex;gap:8px;flex-wrap:wrap;mar
        '.hx-c .rs{border-left:3px solid var(--pri,#6d28d9);padding-left:12px;margin-top:10px}.hx-c .rs b{display:block;font-size:13px;color:var(--pri,#6d28d9)}'
        '.hx-c details{border-top:1px solid var(--bd,#e5e7eb);padding:10px 18px 14px}.hx-c summary{cursor:pointer;color:var(--pri,#6d28d9);font-weight:600;font-size:14.5px}'
        '.hx-c ol{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:8px}.hx-c li{display:grid;grid-template-columns:132px minmax(0,1fr);gap:10px;font-size:14.5px;line-height:1.6}'
-       '.hx-c li b{color:var(--mu,#64748b);font-weight:600;font-size:13px}.hx-c .nt{color:var(--mu,#64748b);font-size:13.5px;margin-top:10px}.hx-c .go{display:inline-block;margin-top:10px;font-size:14px}'
+       '.hx-c li b{color:var(--mu,#64748b);font-weight:600;font-size:13px}.hx-c .nt{color:var(--mu,#64748b);font-size:13.5px;margin-top:10px}.hx-c .bk2{margin:10px 0 0;font-size:13.5px;color:var(--mu,#64748b)}.hx-c .go{display:inline-block;margin-top:10px;font-size:14px}'
        '.hx-c .rl a{display:inline-block;font-size:13px;margin:6px 8px 0 0}'
        '.hx-smp{list-style:none;margin:8px 0 0;padding:0;display:grid;gap:8px}.hx-smp a{display:block;padding:11px 14px;border:1px solid var(--bd,#e5e7eb);border-radius:10px;text-decoration:none;color:inherit}.hx-smp a:hover{border-color:var(--pri,#6d28d9)}'
        '.tblw{overflow-x:auto;margin:10px 0;border:1px solid var(--bd,#e5e7eb);border-radius:12px}.xt{border-collapse:separate;border-spacing:0;width:100%;font-size:14.5px}.xt td{padding:9px 12px;border-top:1px solid var(--bd,#e5e7eb)}.xt tr:first-child td{border-top:0}'
@@ -40,8 +40,9 @@ function grams(s){s=s.toLowerCase().replace(/[^0-9a-z가-힣]+/g," ").trim();var
 C.forEach(function(c){c._t=(c.title+" "+name[c.cluster]).toLowerCase();c._s=(c.situation+" "+c.from).toLowerCase();c._b=(c.steps.map(function(s){return s.what}).join(" ")+" "+c.result+" "+c.note).toLowerCase()});
 function cnt(h,g){var n=0,i=0;while((i=h.indexOf(g,i))>=0){n++;i+=g.length}return n}
 function score(c,G){var s=0;G.forEach(function(g){s+=Math.min(cnt(c._t,g),2)*5+Math.min(cnt(c._s,g),3)*3+Math.min(cnt(c._b,g),4)});return s}
+function bk(c){var k=[c.cluster].concat(c.also||[]),o=[];k.forEach(function(x){((D.book||{})[x]||[]).slice(0,2).forEach(function(t){if(o.indexOf(t)<0)o.push(t)})});o=o.slice(0,3);return o.length?'<p class="bk2">책에서는 이 절: '+o.map(esc).join(" · ")+' <a href="/park/book/">책의 구성 →</a></p>':''}
 function card(c){return '<article class="hx-c" id="case-'+esc(c.id)+'"><div class="hd"><span class="tg">'+esc(name[c.cluster])+'</span><time>'+esc(c.when)+'</time><h3>'+esc(c.title)+'</h3>'+(c.situation?'<p>'+esc(c.situation)+'</p>':'')
- +(c.result?'<p class="rs"><b>어떻게 끝났나</b>'+esc(c.result)+'</p>':'')+'</div><details><summary>걸음 '+c.steps.length+'개 보기</summary><ol>'+c.steps.map(function(s){return '<li><b>'+esc(s.who)+'</b><span>'+esc(s.what)+'</span></li>'}).join("")+'</ol>'
+ +(c.result?'<p class="rs"><b>어떻게 끝났나</b>'+esc(c.result)+'</p>':'')+bk(c)+'</div><details><summary>걸음 '+c.steps.length+'개 보기</summary><ol>'+c.steps.map(function(s){return '<li><b>'+esc(s.who)+'</b><span>'+esc(s.what)+'</span></li>'}).join("")+'</ol>'
  +(c.note?'<p class="nt">'+esc(c.note)+'</p>':'')+'<a class="go" href="'+esc(c.url)+'">흐름 그림으로 보기 →</a></details></article>'}
 function draw(){var v=q.value.trim(),L=C.filter(function(c){return !cur||c.cluster===cur||(c.also||[]).indexOf(cur)>=0});
  if(v){var G=grams(v);L=L.map(function(c){return[score(c,G),c]}).filter(function(x){return x[0]>0}).sort(function(a,b){return b[0]-a[0]}).slice(0,10).map(function(x){return x[1]})}
@@ -192,7 +193,9 @@ def pages(page):
     api = json.load(open(lf, encoding='utf-8'))['api'] if os.path.exists(lf) else ''
     crumbs = [('루리 줍줍', '/'), ('가난한 박과장의 서비스팀 수업', '/park/')]
     chips = ''.join(f'<button type="button" data-k="{E(c["key"])}" aria-pressed="false" title="{E(c["when"])}">{E(c["name"])}<small>{c["count"]}</small></button>' for c in D['clusters'])
-    data = '<script>window.__HX=%s;</script>' % json.dumps({'api': api, 'clusters': D['clusters'], 'cases': D['cases']}, ensure_ascii=False).replace('</', '<\\/')
+    mf = os.path.join(ROOT, 'park', 'map.json')
+    BK = {x['묶음']: [s['절'] for s in x.get('책의 절', [])] for x in json.load(open(mf, encoding='utf-8'))} if os.path.exists(mf) else {}
+    data = '<script>window.__HX=%s;</script>' % json.dumps({'api': api, 'clusters': D['clusters'], 'cases': D['cases'], 'book': BK}, ensure_ascii=False).replace('</', '<\\/')
     body = ('<div class="hx"><p class="bc">가난한 박과장의 서비스팀 수업</p><h1>가난한 박과장의 서비스팀 수업 — 지금 상황과 비슷한 저자의 사례 찾기</h1>'
             '<p class="cat-st">책 『가난한 박과장과 퇴근후 나의 서비스팀 관리하기』와 짝이 되는 곳입니다. 서비스를 만들고 굴리다 막히면, 지금 겪는 일을 한 줄로 적어 보세요. 저자가 한 달 동안 실제로 겪은 사례 가운데 비슷한 것을 날짜·걸음·결과와 함께 보여 줍니다.</p>'
             '<form class="hx-q" id="hxf"><input id="hxq" type="search" placeholder="예) 올렸는데 주소가 안 열려요" aria-label="지금 겪는 상황" autocomplete="off"><button type="submit">사례 찾기</button></form>'
