@@ -157,6 +157,33 @@ SHARE_CSS = ('<style>.shf .fld{margin:12px 0}.shf label{display:block;font-weigh
              '.sk .hx-c .tg{display:inline-block;font-size:12.5px;font-weight:700;color:var(--pri,#6d28d9);background:var(--pbg,#f1ecff);border-radius:999px;padding:2px 10px;margin-right:8px}.sk .hx-c h3{margin:8px 0;font-size:18px;border:0;padding:0}</style>')
 
 
+def book_page(page, crumbs):
+    bf = os.path.join(ROOT, 'park', 'book.json')
+    if not os.path.exists(bf):
+        return
+    B = json.load(open(bf, encoding='utf-8'))
+    order, intro = [], {'제1부 만들기': '하네스로 한 줄을 넣어 첫 결과물을 만들고, 고치고, 확인하는 흐름입니다.', '제2부 올리기': '만든 것을 인터넷 주소로 열고, 검색과 방문까지 이어지는 흐름입니다.',
+                        '제3부 운영하기': '열어 둔 서비스를 매일 굴리며 저자가 실제로 겪은 일을 다룹니다.', '제4부 확장하기': '손님이 크게 늘어나는 날에 대비한 길입니다. 필수는 아닙니다.'}
+    for r in B:
+        if r['part'] and r['part'] not in order:
+            order.append(r['part'])
+    html_ = ''
+    for pt in order:
+        chs = []
+        for r in B:
+            if r['part'] == pt and r['chapter'] not in chs:
+                chs.append(r['chapter'])
+        inner = ''.join(f'<h3>{E(c)}</h3><ul class="bk">' + ''.join(f'<li>{E(r["title"])}</li>' for r in B if r['part'] == pt and r['chapter'] == c) + '</ul>' for c in chs)
+        html_ += f'<section class="bkp"><h2>{E(pt)}</h2><p class="bkd">{E(intro.get(pt, ""))}</p>{inner}</section>'
+    tail = ''.join(f'<li>{E(r["title"])}</li>' for r in B if r['part'] == '부록')
+    body = ('<div class="sk"><p class="bc">가난한 박과장 › 책의 구성</p><h1>책의 구성 — 『가난한 박과장과 퇴근후 나의 서비스팀 관리하기』</h1>'
+            '<p class="cat-st">책은 하네스의 참고서입니다. 하네스에서 지나간 일이 개발 전체의 어디이고, 그 밑에서 무엇이 움직였는지를 흐름으로 설명합니다. 부 이름은 첫 화면의 개발의 흐름(만들기, 올리기, 운영하기, 확장하기)과 같습니다. 처음부터 읽지 않아도 되고, 하네스로 만들다 궁금해진 자리에서 해당 절을 찾아 읽으면 됩니다.</p>'
+            + html_ + f'<section class="bkp"><h2>부록</h2><ul class="bk">{tail}</ul><p class="bkd">같은 용어 사전이 수업 사이트에 있습니다. <a href="/park/terms/">용어 사전</a>에는 지금 겪는 증상으로 찾는 길(<a href="/park/stuck/">막혔을 때</a>)도 이어져 있습니다.</p></section>'
+            '<p class="note">목차 자료 파일은 <a href="/park/book.json">book.json</a>입니다. 절 제목은 집필이 끝나는 대로 바뀔 수 있습니다.</p></div>'
+            '<style>.bkp{margin:28px 0}.bkp h2{margin:0 0 4px}.bkp h3{margin:16px 0 6px;font-size:16.5px;border:0;padding:0}.bkd{color:var(--mu,#64748b);font-size:14.5px;margin:2px 0 8px}.bk{margin:0;padding-left:20px;font-size:15px;line-height:1.85}</style>')
+    page('/park/book/', '책의 구성 — 하네스의 참고서 『가난한 박과장과 퇴근후 나의 서비스팀 관리하기』', '만들기, 올리기, 운영하기, 확장하기 네 부로 나뉜 책의 부·장·절 제목을 공개합니다. 하네스로 만들다 궁금해진 자리에서 해당 절을 찾아 읽는 참고서입니다.', body, crumbs + [('책의 구성', '/park/book/')])
+
+
 def pages(page):
     cf = os.path.join(ROOT, 'park', 'cases.json'); lf = os.path.join(HERE, 'lms.json')
     if not os.path.exists(cf):
@@ -182,7 +209,7 @@ def pages(page):
             '<h2>막혔을 때 — 증상으로 찾기</h2><p>주소가 안 열린다, 고쳤는데 안 보인다, 자동으로 돌던 것이 멈췄다처럼 증상이 먼저 보이면 <a href="/park/stuck/">증상별로 원인과 에이전트에게 할 말</a>을 찾아보세요.</p>'
             '<h2>하네스에서 찾기</h2><p>하네스를 연 세션에게 「지금 상황과 비슷한 저자 사례를 찾아 줘」라고 말하면, 세션이 같은 자료를 읽어 지금 하던 일에 맞는 사례를 골라 줍니다.</p>'
             '<h2>프로젝트 공유 — 내가 만든 것 남기기</h2><p>하네스로 만든 것을 일곱 항목으로 남기고 다른 독자의 경험을 봅니다. 공개는 선택입니다. <a href="/park/share/">프로젝트 공유 열기</a></p><h2 id="talk">이야기방 — 독자의 세션이 올린 후기와 답</h2><p>하네스로 사례와 운영 기록을 분석해 본 독자의 세션이, 독자가 허락했을 때 올린 글입니다. 다른 독자의 세션과 저자 쪽 세션이 답을 답니다. 운영자가 확인한 것만 실립니다.</p><p class="hx-n" id="hxvn" role="status"></p><div id="hxv"></div>'
-            '<h2>더 깊이 보기</h2><ul class="hx-smp"><li><a href="/park/share/">프로젝트 공유 — 독자가 만든 것과 겪은 일</a></li><li><a href="/park/archive/">운영 기록 보관소 — 사례의 바탕이 된 원문 기록 50개와 흐름 28편</a></li>'
+            '<h2>더 깊이 보기</h2><ul class="hx-smp"><li><a href="/park/book/">책의 구성 — 하네스의 참고서, 부·장·절 제목</a></li><li><a href="/park/share/">프로젝트 공유 — 독자가 만든 것과 겪은 일</a></li><li><a href="/park/archive/">운영 기록 보관소 — 사례의 바탕이 된 원문 기록 50개와 흐름 28편</a></li>'
             '<li><a href="/park/terms/">용어 사전 — 낯선 개발 용어의 뜻과 에이전트에게 물어볼 말</a></li><li><a href="/park/cases.json">사례 자료(cases.json) — 프로그램과 에이전트가 읽는 같은 자료</a></li></ul>'
             '<p class="note">사례는 저자의 실제 운영 기록을 책 원고로 정리한 것입니다. 「세션이 보고했다」고 적힌 것은 따로 확인하지 않은 내용입니다. 사례 찾기에 적은 말은 이 브라우저 안에서만 쓰이고 어디로도 보내지 않습니다.</p></div>'
             + CSS + data + '<script>' + JS + '</script>')
@@ -190,6 +217,7 @@ def pages(page):
     stuck_page(page, crumbs)
     terms_page(page, crumbs)
     share_page(page, crumbs)
+    book_page(page, crumbs)
     page('/park/start/', '가난한 박과장의 서비스팀 수업 — 사례 찾기로 옮겼습니다', '이 주소는 사례 찾기로 옮겼습니다.',
          '<div class="hx"><h1>사례 찾기로 옮겼습니다</h1><p>이 주소에 있던 화면은 <a href="/park/">지금 상황과 비슷한 저자의 사례 찾기</a>로 바뀌었습니다.</p><p><a class="hx-btn" href="/park/">사례 찾기로 가기</a></p></div>'
          + CSS + '<script>location.replace("/park/")</script>', crumbs, noindex=True)
@@ -207,4 +235,4 @@ def pages(page):
                     + ''.join(f'<li><a href="{E(x["url"])}">{E(x["title"])}</a></li>' for x in A['flows']) + '</ul>') if A.get('flows') else '')
                 + f'<h2>파일 {len(A["files"])}개</h2><div class="tblw"><table class="xt" style="width:100%"><tbody>{rows}</tbody></table></div></div>' + CSS)
         page('/park/archive/', '가난한 박과장의 서비스팀 수업 — 운영 기록과 집필 과정', '책에 다 싣기에는 긴 실제 운영 기록과 집필 과정(가린 판)을 파일로 받아 볼 수 있습니다.', body, crumbs + [('운영 기록', '/park/archive/')])
-    return ['/park/'] + (['/park/stuck/'] if os.path.exists(os.path.join(ROOT, 'park', 'symptoms.json')) else []) + (['/park/terms/'] if os.path.exists(os.path.join(ROOT, 'park', 'terms.json')) else []) + (['/park/share/'] if os.path.exists(os.path.join(HERE, 'lms.json')) else [])
+    return ['/park/'] + (['/park/stuck/'] if os.path.exists(os.path.join(ROOT, 'park', 'symptoms.json')) else []) + (['/park/terms/'] if os.path.exists(os.path.join(ROOT, 'park', 'terms.json')) else []) + (['/park/share/'] if os.path.exists(os.path.join(HERE, 'lms.json')) else []) + (['/park/book/'] if os.path.exists(os.path.join(ROOT, 'park', 'book.json')) else [])

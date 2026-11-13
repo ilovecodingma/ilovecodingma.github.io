@@ -70,4 +70,4 @@ def home_html(devs):
             '<a href="/dev/"><span class="t">개발 기록</span><b>개발 지식</b><span class="pd">직접 만들고 고치며 확인한 방법을 근거와 함께 적은 글입니다.</span><span class="go">글 보기 →</span></a></div>'
             + '<p class="fine" style="margin-top:14px">루리는 이미지 모델을 파인튜닝하다가 그림이 잘 나와서 버리기 아까워 만든 캐릭터입니다. AI로 만든 마스코트이고, 사이트에서 말을 거는 역할만 합니다.</p>'
             + (f'<h2>최근 개발 기록</h2><ul class="rd">{reads}</ul>' if reads else '')
-            + '<p class="fine" style="margin-top:28px">수업 사이트는 책 『가난한 박과장과 퇴근후 나의 서비스팀 관리하기』와 짝입니다. 책은 참고서이고, 주인공은 하네스입니다.</p></div>')
+            + '<p class="fine" style="margin-top:28px">수업 사이트는 책 『가난한 박과장과 퇴근후 나의 서비스팀 관리하기』와 짝입니다. 책은 참고서이고, 주인공은 하네스입니다. <a href="/park/book/">책의 구성 보기</a></p></div>')
