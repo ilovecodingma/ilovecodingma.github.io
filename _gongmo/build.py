@@ -19,6 +19,7 @@ if not os.path.exists(MASTER):
 SHOTS = os.path.join(DATA, 'shots')  # 공식 공고 캡처 <id>.webp 640x400
 SITE = 'https://sungprofile.cloud'
 NAME = '루리 줍줍'
+PLAT = os.path.exists(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'platform_home.on'))   # 2026-11-13 메인=가난한 박과장 수업 플랫폼(켜는 스위치 파일)
 _CT = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'contact.json'), encoding='utf-8'))
 MAIL, PARTNER = _CT['contact'], _CT['partner']
 _CM = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'community.json')
@@ -93,8 +94,9 @@ THEMES += [   # 2026-10-23 사용자 「런처·주제별 메인 분리」: 생�
     ('watch', '웹툰·애니', '🎯', '#9333ea', '/watch/', [('/watch/', '오늘의 추천'), ('/watch/#webtoon', '웹툰'), ('/watch/#anime', '애니')], ['/watch/']),
     ('wiki', '루리 위키', '📚', '#0f766e', '/wiki/', [('/wiki/', '위키 홈'), ('/money/guide/', '생활 돈 가이드'), ('/guide/', '응모 가이드'), ('/ailog/', '개발 지식')], ['/wiki/'])]
 THEMES = [t for t in THEMES if t[0] != 'life']
+THEMES.append(('park', '가난한 박과장 수업', '🎓', '#4338ca', '/park/', [('/park/', '수업 홈'), ('/park/#start', '하네스 시작'), ('/park/archive/', '운영 기록'), ('/dev/', '개발 지식')], ['/park/']))
 THEMES.append(('diet', '다이어트', '🥗', '#16a34a', '/diet/', [('/diet/', '다이어트 허브'), ('/diet/meal/', '레시피 식단표'), ('/diet/workout/', '운동 사이클'), ('/diet/workout/#log', '기록'), ('/money/guide/meal-calorie-per-meal/', '식사 칼로리 가이드')], ['/diet/']))
-THEMES = [next(t for t in THEMES if t[0] == k) for k in ('today', 'recipe', 'watch', 'apply', 'contest', 'event', 'issue', 'money', 'game', 'plaza', 'diet', 'ai', 'wiki')]
+THEMES = [next(t for t in THEMES if t[0] == k) for k in ('today', 'recipe', 'watch', 'apply', 'contest', 'event', 'issue', 'money', 'game', 'plaza', 'diet', 'ai', 'wiki', 'park')]
 
 
 # 2026-11-05 모바일 점검: 생활 가이드·계산기·고민 해결 글에 「애널리스트 종합·전문가 코멘트」 하위 메뉴가 떠서, 이 주소들은 가이드용 하위 메뉴를 쓴다
@@ -110,6 +112,8 @@ def GN_HTML(TH):
     by = {t[0]: t for t in THEMES}
     cur = TH[0] if TH else ''
     items = ''.join(f'<a href="{GN_HOME.get(k, by[k][4])}"{" class=on aria-current=page" if k == cur else ""}>{GN_LABEL.get(k, by[k][1])}</a>' for k in GN_MAIN if k in by)
+    if PLAT:
+        items = f'<a href="/park/"{" class=on aria-current=page" if cur == "park" else ""}>수업</a><a href="/ruri/">루리 줍줍</a>' + items
     return (f'<nav class="gn" aria-label="주요 주제">{items}<a href="/all/">전체</a>{(f'<span class="gn-cur" aria-current="page">{by[cur][2]} {by[cur][1]}</span>' if cur and cur not in GN_MAIN and cur in by else '')}</nav>'
             '<a class="hd-s" href="/#hq" aria-label="통합 검색"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4 4"/></svg><span>검색</span></a>')
 
@@ -357,18 +361,18 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False, noinde
 {TH_CSS}
 {GTAG}
 </head><body data-th="{TH[0] if TH else 'hub'}"{(' data-api="' + COMM_API + '"') if COMM_API else ''}>
-<header class="hd"><div class="w hd-in"><a class="logo" href="/"><img class="logo-av" src="/assets/ruri/avatar.webp" width="36" height="36" alt="루리 줍줍"><span>루리 <b>줍줍</b></span></a>{GN_HTML(TH)}</div>
+<header class="hd"><div class="w hd-in"><a class="logo" href="/"><img class="logo-av" src="/assets/ruri/avatar.webp" width="36" height="36" alt="루리 줍줍"><span>{('가난한 <b>박과장</b>' if PLAT else '루리 <b>줍줍</b>')}</span></a>{GN_HTML(TH)}</div>
 {('<nav class="tb w" aria-label="' + TH[1] + ' 세부 메뉴">' + "".join(f'<a href="{u}"{" class=on aria-current=page" if (path == u or (u != TH[4] and path.startswith(u))) else ""}>{n}</a>' for u, n in (GUIDE_SUB if path.startswith(GUIDE_SUB_PX) else TH[5])) + '</nav>') if TH else ''}</header>
 <main class="w">
 {body}{PAGE_INTRO.get(path, '')}
 </main>
-<footer class="ft"><div class="w ft-in"><div class="ft-top"><div class="ft-b"><b>루리 줍줍</b><p>이슈부터 지원금·공모전까지, 출처와 함께 정리하는 정보 서비스입니다. 분석 코너는 「루리 애널리스트」, 문서 모음은 「루리 위키」입니다.</p><p class="ft-m">문의 <a href="mailto:{MAIL}">{MAIL}</a>{"" if PARTNER == MAIL else f' · 제휴 <a href="mailto:{PARTNER}">{PARTNER}</a>'}</p></div>
-<nav class="ft-g" aria-label="사이트 메뉴"><div><b>읽을거리</b><a href="/issue/">이슈</a><a href="/money/guide/">생활 가이드</a><a href="/analyst/">애널리스트</a><a href="/fridge/">레시피</a></div>
+<footer class="ft"><div class="w ft-in"><div class="ft-top"><div class="ft-b">{('<b>가난한 박과장</b><p>퇴근 후 AI 에이전트와 서비스를 만들어 보는 수업 사이트입니다. 루리 줍줍은 저자가 만든 정보성 사이트이고, 문서 모음은 「루리 위키」입니다.</p>' if PLAT else '<b>루리 줍줍</b><p>이슈부터 지원금·공모전까지, 출처와 함께 정리하는 정보 서비스입니다. 분석 코너는 「루리 애널리스트」, 문서 모음은 「루리 위키」입니다.</p>')}<p class="ft-m">문의 <a href="mailto:{MAIL}">{MAIL}</a>{"" if PARTNER == MAIL else f' · 제휴 <a href="mailto:{PARTNER}">{PARTNER}</a>'}</p></div>
+<nav class="ft-g" aria-label="사이트 메뉴">{('<div><b>가난한 박과장</b><a href="/park/#start">하네스 시작</a><a href="/park/">사례 찾기</a><a href="/park/archive/">운영 기록</a><a href="/dev/">개발 지식</a></div>' if PLAT else '')}<div><b>읽을거리</b><a href="/issue/">이슈</a><a href="/money/guide/">생활 가이드</a><a href="/analyst/">애널리스트</a><a href="/fridge/">레시피</a></div>
 <div><b>기회 찾기</b><a href="/apply/">지원금·청약</a><a href="/contest/">공모전</a><a href="/today/">오늘 마감</a><a href="/event/">경품 이벤트</a></div>
 <div><b>도구·탐색</b><a href="/wiki/">루리 위키</a><a href="/map/">키워드 지도</a><a href="/money/tools/salary/">계산기</a><a href="/price/">최저가 찾기</a><a href="/book/">전자책</a><a href="/all/">전체 메뉴</a></div>
 <div><b>운영 정보</b><a href="/about/">소개·만드는 방식</a><a href="/corrections/">정정 기록</a><a href="/privacy/">개인정보처리방침</a><a href="/terms/">이용약관</a><a href="/contact/">문의</a></div></nav></div>
 {('<p class="ft-c"><span>외부 채널</span> ' + comm_btns() + '</p>') if COMM_LINKS else ''}
-<p class="ft-n">정보는 각 기관의 공고·언론 보도·공개 자료를 AI로 수집·정리한 것입니다. 정확한 내용은 반드시 공식 공고와 원문에서 확인하세요. 일부 링크는 쿠팡 파트너스 활동의 일환으로 수수료를 받을 수 있습니다. © 2026 루리 줍줍 · sungprofile.cloud</p></div></footer>{CL_CSS if COMM_LINKS else ''}
+<p class="ft-n">정보는 각 기관의 공고·언론 보도·공개 자료를 AI로 수집·정리한 것입니다. 정확한 내용은 반드시 공식 공고와 원문에서 확인하세요. 일부 링크는 쿠팡 파트너스 활동의 일환으로 수수료를 받을 수 있습니다. © 2026 {('가난한 박과장 · 루리 줍줍' if PLAT else '루리 줍줍')} · sungprofile.cloud</p></div></footer>{CL_CSS if COMM_LINKS else ''}
 <script defer src="/assets/dday.js?v=1"></script></body></html>'''
     doc = RURI_IMG_RX.sub(lambda m_: m_.group(0) if m_.group(1) else '', doc)   # 2026-11-03 사용자 방침: 루리는 메인이 아닌 요소(루리의 한마디 코너)로만. 헤더·푸터·히어로 그림은 뺀다(자산 파일 보존)
     d = os.path.join(ROOT, path.strip('/'))
@@ -2811,7 +2815,13 @@ def build():
          f'{TODAY.month}월 {TODAY.day}일(한국 시간) 오늘 마감하는 공모전·경품 이벤트·지원금·주거 청약·공모주를 유형별로 모았어요. 마감 시각을 모르면 시각 미확인으로 표시해요.', SC.today_html(sc_ctx),
          crumbs=[('루리 줍줍', '/'), ('오늘 마감', '/today/')])
     PAGE_INTRO.pop('/', None)   # 긴 사이트 소개 대신 홈 본문의 두 문장 소개
-    page('/', '루리 줍줍 — 사람들이 궁금해하는 것을 분석합니다',
+    if PLAT:
+        import home_platform as _HP
+        _dv = sorted([p for p in json.load(open(os.path.join(HERE, 'dev_posts.json'), encoding='utf-8')) if p['lang'] == 'ko'], key=lambda p: p['date'], reverse=True)[:3]
+        page('/ruri/', '루리 줍줍 — 사람들이 궁금해하는 것을 분석합니다', '가난한 박과장이 만든 정보성 사이트. 이슈, 지원금·세금·청약 같은 돈 정보, 공모전, 집밥 레시피를 근거와 함께 정리하고 매시간 갱신합니다.', SC.home_html(sc_ctx), crumbs=[('가난한 박과장', '/'), ('루리 줍줍', '/ruri/')], full_title=True)
+        page('/', '가난한 박과장 — 퇴근 후 AI 에이전트와 내 서비스를 만드는 곳', '퇴근 후 2~3시간, 하네스로 AI 에이전트와 내가 원하는 서비스를 만들어 보는 수업 사이트. 정해진 진도 없이 시작 안내, 저자의 실제 개발 사례, 이야기방을 제공합니다.', _HP.home_html([(p['title'], dev_url(p), p['date']) for p in _dv]), full_title=True, ld={'@context': 'https://schema.org', '@graph': [{'@type': 'WebSite', '@id': SITE + '/#website', 'name': '가난한 박과장', 'alternateName': ['루리 줍줍'], 'url': SITE + '/', 'publisher': {'@id': SITE + '/#org'}}, {'@type': 'Organization', '@id': SITE + '/#org', 'name': '가난한 박과장', 'url': SITE + '/', 'logo': {'@type': 'ImageObject', 'url': SITE + '/assets/icons/icon-512.png', 'width': 512, 'height': 512}}]})
+    if not PLAT:
+      page('/', '루리 줍줍 — 사람들이 궁금해하는 것을 분석합니다',
          f'사람들이 지금 궁금해하는 이슈, 해마다 반복해 찾는 제도, 돈 되는 생활 정보를 근거와 숫자로 분석해 정리하고, 지원금·세금·청약 같은 돈 정보와 진행 중 공모전 {len(live)}건, 집밥 레시피 {NR_HOME}개를 매시간 갱신합니다.',
          SC.home_html(sc_ctx), full_title=True, ld={'@context': 'https://schema.org', '@graph': [  # 2026-10-19 구글 검색 결과 사이트 이름·로고
              {'@type': 'WebSite', '@id': SITE + '/#website', 'name': NAME, 'alternateName': ['루리 줍줍', '루리의 줍줍'], 'url': SITE + '/', 'publisher': {'@id': SITE + '/#org'}},
