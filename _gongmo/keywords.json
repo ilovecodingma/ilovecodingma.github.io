@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-13 10:00",
+ "updated": "2026-11-13 11:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -11236,6 +11236,32 @@
    "expires": ""
   },
   {
+   "query": "수능 후 미성년 면허·알바",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "",
+   "registered": "2026-11-13",
+   "expires": ""
+  },
+  {
+   "query": "블랙프라이데이 환불 기준",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "",
+   "registered": "2026-11-13",
+   "expires": ""
+  },
+  {
    "query": "연차수당 계산기",
    "tier": "장기",
    "signal": [
@@ -11285,6 +11311,19 @@
    "status": "작성",
    "page": "/money/tools/income-tax-bracket-calculator/",
    "registered": "2026-11-03",
+   "expires": ""
+  },
+  {
+   "query": "최저임금 계산기(2027·2026 적용)",
+   "tier": "장기",
+   "signal": [
+    "서치콘솔",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/tools/minimum-wage-calculator-2027/",
+   "registered": "2026-11-13",
    "expires": ""
   },
   {
