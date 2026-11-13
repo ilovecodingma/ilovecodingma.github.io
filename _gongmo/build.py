@@ -361,7 +361,7 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False, noinde
 {TH_CSS}
 {GTAG}
 </head><body data-th="{TH[0] if TH else 'hub'}"{(' data-api="' + COMM_API + '"') if COMM_API else ''}>
-<header class="hd"><div class="w hd-in"><a class="logo" href="/"><img class="logo-av" src="/assets/ruri/avatar.webp" width="36" height="36" alt="루리 줍줍"><span>{('가난한 <b>박과장</b>' if PLAT else '루리 <b>줍줍</b>')}</span></a>{GN_HTML(TH)}</div>
+<header class="hd"><div class="w hd-in"><a class="logo" href="/">{('' if PLAT else '<img class="logo-av" src="/assets/ruri/avatar.webp" width="36" height="36" alt="루리 줍줍">')}<span>{('가난한 <b>박과장</b>' if PLAT else '루리 <b>줍줍</b>')}</span></a>{GN_HTML(TH)}</div>
 {('<nav class="tb w" aria-label="' + TH[1] + ' 세부 메뉴">' + "".join(f'<a href="{u}"{" class=on aria-current=page" if (path == u or (u != TH[4] and path.startswith(u))) else ""}>{n}</a>' for u, n in (GUIDE_SUB if path.startswith(GUIDE_SUB_PX) else TH[5])) + '</nav>') if TH else ''}</header>
 <main class="w">
 {body}{PAGE_INTRO.get(path, '')}
@@ -2879,7 +2879,7 @@ def build():
     statics(len(live), len(events))
     ref_pages()
     _ref_hub_urls = ref_hub()
-    urls = ['/', '/contest/', '/apply/', '/event/', '/guide/', '/ssul/', '/today/'] + lab_urls + [f'/ssul/{x["slug"]}/' for x in ss] + [f'/a/{a["id"]}/' for a in aps] + [f'/cat/{s}/' for s, _ in CATS] + [f'/guide/{g[0]}/' for g in GUIDES] + ['/qa/', '/prep/', '/fridge/', '/app/', '/news/'] + extra_urls + [f'/guide/{q["slug"]}/' for q in QA] + \
+    urls = ['/'] + (['/ruri/'] if PLAT else []) + ['/contest/', '/apply/', '/event/', '/guide/', '/ssul/', '/today/'] + lab_urls + [f'/ssul/{x["slug"]}/' for x in ss] + [f'/a/{a["id"]}/' for a in aps] + [f'/cat/{s}/' for s, _ in CATS] + [f'/guide/{g[0]}/' for g in GUIDES] + ['/qa/', '/prep/', '/fridge/', '/app/', '/news/'] + extra_urls + [f'/guide/{q["slug"]}/' for q in QA] + \
            ['/about/', '/privacy/', '/terms/', '/contact/', '/collab/', '/play/', '/play/survivor/', '/play/dice/', '/play/2048/', '/play/memory/', '/play/runner/', '/play/dodge/', '/play/clicker/', '/play/mole/', '/play/snake/'] + ref_urls() + _ref_hub_urls + [f'/c/{c["id"]}/' for c in contests]
     gone_pages()
     import finder   # 공모전 자동 자료 찾기 색인·질의 (2026-10-19)

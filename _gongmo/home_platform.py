@@ -21,7 +21,7 @@ CSS = ('<style>.pk{max-width:920px}.pk h1{margin:6px 0 10px;font-size:clamp(28px
        '.pk .sv{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}'
        '.pk .sv a{display:block;border:1px solid var(--bd,#e5e7eb);border-radius:14px;background:var(--card,#fff);padding:16px 18px;text-decoration:none;color:inherit}'
        '.pk .sv a:hover{border-color:var(--pri,#6d28d9)}.pk .sv .t{display:inline-block;font-size:12.5px;font-weight:700;color:var(--pri,#6d28d9);background:var(--pbg,#f1ecff);border-radius:999px;padding:2px 10px;margin-bottom:6px}'
-       '.pk .sv b{display:block;font-size:18px;margin:2px 0 6px}.pk .sv span.d{font-size:14.5px;line-height:1.65;color:var(--mu,#475569);display:block}'
+       '.pk .sv b{display:block;font-size:18px;margin:2px 0 6px}.pk .sv span.pd{font-size:14.5px;line-height:1.65;color:var(--mu,#475569);display:block}'
        '.pk .sv .go{display:block;margin-top:10px;font-size:14px;font-weight:600;color:var(--pri,#6d28d9)}'
        '.pk ul.rd{margin:0;padding:0;list-style:none;display:grid;gap:8px}.pk ul.rd li{border-bottom:1px solid var(--bd,#e5e7eb);padding:8px 0}.pk ul.rd time{color:var(--mu,#64748b);font-size:13px;margin-right:8px}'
        '</style>')
@@ -34,7 +34,7 @@ def home_html(devs):
             '<h1>가난한 박과장 — 퇴근 후 2~3시간, AI 에이전트와 내 서비스를 만들어 봅니다</h1>'
             '<p class="lead">AI 사용법을 가르치는 곳이 아닙니다. 하네스(저자가 쓰는 에이전트 개발 환경)를 열고 한 줄로 시킨 뒤 첫 결과물을 보는 데까지 도와드립니다. 그다음은 정해진 진도도 정답도 없습니다. 막히면 저자가 실제로 겪은 비슷한 일을 찾아보고, 원하면 내 경험도 남기세요.</p>'
             '<div class="cta"><a class="p" href="/park/#start">하네스로 시작하기</a><a class="s" href="/park/">비슷한 저자 사례 찾기</a></div>'
-            '<p class="fine">완성된 서비스를 약속하지 않습니다. 지금은 Windows에서 돌려 본 것이 전부이고, 확인한 것과 못 한 것을 시작 안내에 그대로 적어 두었습니다.</p>'
+            '<p class="fine">안내는 Windows 기준입니다. 2~3시간 안에 첫 결과물을 보는 것이 목표이고, 완성은 그다음 이야기입니다.</p>'
             '<h2>이렇게 써 보세요 <small style="font-weight:400;color:var(--mu,#64748b);font-size:15px">순서를 강제하지 않습니다</small></h2>'
             '<ol class="st">'
             '<li><b>하네스로 먼저 하나 만든다</b><span>빈 폴더에서 한 줄을 넣고, 첫 결과물이 나오는 것까지 봅니다.</span><a href="/park/#start">시작 안내 →</a></li>'
@@ -44,9 +44,9 @@ def home_html(devs):
             '<h2>가난한 박과장이 만든 서비스</h2>'
             '<p class="fine" style="margin:0 0 12px">모두 저자가 AI 에이전트와 함께 만들고 직접 운영합니다. 이 기록이 수업의 재료입니다.</p>'
             '<div class="sv">'
-            '<a href="/ruri/"><span class="t">정보성 사이트</span><b>루리 줍줍</b><span class="d">이슈, 생활 돈 가이드·계산기, 지원금, 공모전, 레시피를 출처와 함께 정리하고 매시간 갱신합니다.</span><span class="go">루리 줍줍 열기 →</span></a>'
-            '<a href="/wiki/"><span class="t">문서 모음</span><b>루리 위키</b><span class="d">생활 돈 가이드, 응모 가이드, 개발 지식을 문서 형식으로 묶어 둔 곳입니다.</span><span class="go">위키 열기 →</span></a>'
-            '<a href="/dev/"><span class="t">개발 기록</span><b>개발 지식</b><span class="d">직접 만들고 고치며 확인한 방법을 근거와 함께 적은 글입니다.</span><span class="go">글 보기 →</span></a></div>'
+            '<a href="/ruri/"><span class="t">정보성 사이트</span><b>루리 줍줍</b><span class="pd">이슈, 생활 돈 가이드·계산기, 지원금, 공모전, 레시피를 출처와 함께 정리하고 매시간 갱신합니다.</span><span class="go">루리 줍줍 열기 →</span></a>'
+            '<a href="/wiki/"><span class="t">문서 모음</span><b>루리 위키</b><span class="pd">생활 돈 가이드, 응모 가이드, 개발 지식을 문서 형식으로 묶어 둔 곳입니다.</span><span class="go">위키 열기 →</span></a>'
+            '<a href="/dev/"><span class="t">개발 기록</span><b>개발 지식</b><span class="pd">직접 만들고 고치며 확인한 방법을 근거와 함께 적은 글입니다.</span><span class="go">글 보기 →</span></a></div>'
             + '<p class="fine" style="margin-top:14px">루리는 이미지 모델을 파인튜닝하다가 그림이 잘 나와서 버리기 아까워 만든 캐릭터입니다. AI로 만든 마스코트이고, 사이트에서 말을 거는 역할만 합니다.</p>'
             + (f'<h2>최근 개발 기록</h2><ul class="rd">{reads}</ul>' if reads else '')
             + '<p class="fine" style="margin-top:28px">수업 사이트는 책 『가난한 박과장과 퇴근후 나의 서비스팀 관리하기』와 짝입니다. 책은 참고서이고, 주인공은 하네스입니다.</p></div>')
