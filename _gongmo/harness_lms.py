@@ -148,4 +148,4 @@ def pages(page):
                     + ''.join(f'<li><a href="{E(x["url"])}">{E(x["title"])}</a></li>' for x in A['flows']) + '</ul>') if A.get('flows') else '')
                 + f'<h2>파일 {len(A["files"])}개</h2><div class="tblw"><table class="xt" style="width:100%"><tbody>{rows}</tbody></table></div></div>' + CSS)
         page('/park/archive/', '가난한 박과장의 서비스팀 수업 — 운영 기록과 집필 과정', '책에 다 싣기에는 긴 실제 운영 기록과 집필 과정(가린 판)을 파일로 받아 볼 수 있습니다.', body, crumbs + [('운영 기록', '/park/archive/')], noindex=True)
-    return ['/park/']
+    return ['/park/'] + (['/park/stuck/'] if os.path.exists(os.path.join(ROOT, 'park', 'symptoms.json')) else [])
