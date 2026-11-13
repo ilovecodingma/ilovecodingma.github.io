@@ -1,6 +1,6 @@
 {
- "at": "2026-11-13 11:30",
- "nitems": 524,
+ "at": "2026-11-13 12:30",
+ "nitems": 522,
  "cands": [
   {
    "kw": "리센느",
@@ -14,7 +14,7 @@
     "한국경제",
     "헤럴드경제"
    ],
-   "n": 20,
+   "n": 18,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -146,41 +146,6 @@
    ]
   },
   {
-   "kw": "데뷔",
-   "nsrc": 6,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "동아일보",
-    "연합뉴스",
-    "조선일보",
-    "한국경제"
-   ],
-   "n": 11,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "이승철, 데뷔 40년 만에 공식 팬클럽 모집…\"오래 추억 쌓을 것\"",
-     "link": "https://www.yna.co.kr/view/AKR20261113074400005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "있지 채령, 7년 만 솔로 데뷔…\"구미호처럼 홀리는 가수 꿈꿔\"",
-     "link": "https://www.yna.co.kr/view/AKR20261109106000005"
-    },
-    {
-     "src": "동아일보",
-     "title": "에이티즈, 데뷔 전 단체 이탈→멤버 간 몸싸움 ‘폭로전’ (아는 형님)",
-     "link": "https://sports.donga.com/ent/article/all/20261113/135018407/1"
-    },
-    {
-     "src": "한국경제",
-     "title": "\"가정부와 불륜으로 낳은 아들\" 슈워제네거 혼외자, 보디빌더 데뷔",
-     "link": "https://www.hankyung.com/article/2026111086337"
-    }
-   ]
-  },
-  {
    "kw": "예능",
    "nsrc": 6,
    "srcs": [
@@ -216,17 +181,51 @@
    ]
   },
   {
-   "kw": "시간",
+   "kw": "데뷔",
    "nsrc": 6,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "동아일보",
+    "연합뉴스",
+    "조선일보",
+    "한국경제"
+   ],
+   "n": 10,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "이승철, 데뷔 40년 만에 공식 팬클럽 모집…\"오래 추억 쌓을 것\"",
+     "link": "https://www.yna.co.kr/view/AKR20261113074400005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "있지 채령, 7년 만 솔로 데뷔…\"구미호처럼 홀리는 가수 꿈꿔\"",
+     "link": "https://www.yna.co.kr/view/AKR20261109106000005"
+    },
+    {
+     "src": "동아일보",
+     "title": "에이티즈, 데뷔 전 단체 이탈→멤버 간 몸싸움 ‘폭로전’ (아는 형님)",
+     "link": "https://sports.donga.com/ent/article/all/20261113/135018407/1"
+    },
+    {
+     "src": "한국경제",
+     "title": "\"가정부와 불륜으로 낳은 아들\" 슈워제네거 혼외자, 보디빌더 데뷔",
+     "link": "https://www.hankyung.com/article/2026111086337"
+    }
+   ]
+  },
+  {
+   "kw": "시간",
+   "nsrc": 5,
    "srcs": [
     "SBS",
     "뉴시스",
     "연합뉴스",
     "조선일보",
-    "한겨레",
-    "헤럴드경제"
+    "한겨레"
    ],
-   "n": 11,
+   "n": 9,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -244,24 +243,57 @@
      "link": "https://www.hani.co.kr/arti/culture/book/1287127.html"
     },
     {
-     "src": "헤럴드경제",
-     "title": "전현무, 봉사활동 가서 ‘즉흥 촬영’…“버려진 아이들과 시간 보내”",
-     "link": "https://biz.heraldcorp.com/article/10933641"
+     "src": "SBS",
+     "title": "강동원X김고은, 백년 원수 가문에서 부부로…넷플릭스 '혼: 삼각의 시간' 제작 확정",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008842336&plink=RSSLINK&cooper=RSSREADER"
+    }
+   ]
+  },
+  {
+   "kw": "혐의",
+   "nsrc": 5,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "동아일보",
+    "연합뉴스",
+    "한국경제"
+   ],
+   "n": 6,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "나나 역고소한 강도, 무고 혐의 부인…\"피해신고 허위 아냐\"",
+     "link": "https://www.yna.co.kr/view/AKR20261110081000004"
+    },
+    {
+     "src": "동아일보",
+     "title": "김승우, 2200만원 절도 혐의 피소…“다음 날 돌려줬다”[SD이슈]",
+     "link": "https://sports.donga.com/ent/article/all/20261112/135017701/1"
+    },
+    {
+     "src": "한국경제",
+     "title": "[포토] '음주측정 방해 혐의' 배우 이재룡, 첫 공판 법정 출석",
+     "link": "https://www.hankyung.com/article/202611134876i"
+    },
+    {
+     "src": "SBS",
+     "title": "김승우, 지인 돈 2200만 원 절도 혐의 피소…\"술자리 장난, 계좌이체 통해 반환\" 해명",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008844492&plink=RSSLINK&cooper=RSSREADER"
     }
    ]
   },
   {
    "kw": "이유",
-   "nsrc": 6,
+   "nsrc": 5,
    "srcs": [
     "SBS",
-    "뉴시스",
     "동아일보",
     "세계일보",
     "조선일보",
     "한국경제"
    ],
-   "n": 7,
+   "n": 6,
    "headlines": [
     {
      "src": "동아일보",
@@ -282,40 +314,6 @@
      "src": "SBS",
      "title": "\"에이티니가 우리의 원동력\"…'컴백' 에이티즈, 쉼 없이 달리는 이유",
      "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008843257&plink=RSSLINK&cooper=RSSREADER"
-    }
-   ]
-  },
-  {
-   "kw": "눈물",
-   "nsrc": 5,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "동아일보",
-    "조선일보",
-    "헤럴드경제"
-   ],
-   "n": 8,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "이지현, 싱글맘 현실에 결국 눈물…“좋은 직장 포기했다”",
-     "link": "https://sports.donga.com/ent/article/all/20261113/135019296/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "KCM, 아내·큰딸 쿠팡 알바에 눈물…“혼자 엄청 울었다”",
-     "link": "https://sports.donga.com/ent/article/all/20261112/135017758/1"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "소지섭, 이번엔 대만 팬에 금 선물…당첨된 팬 “눈물”",
-     "link": "https://biz.heraldcorp.com/article/10933636"
-    },
-    {
-     "src": "SBS",
-     "title": "전국환 숨겨진 비밀은?…'닥터X' 김우석, 김지원에 \"이번만 실패해 달라\" 눈물 애원",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008844475&plink=RSSLINK&cooper=RSSREADER"
     }
    ]
   },
@@ -422,72 +420,6 @@
    ]
   },
   {
-   "kw": "서인영",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "세계일보",
-    "조선일보",
-    "한국경제"
-   ],
-   "n": 10,
-   "headlines": [
-    {
-     "src": "한국경제",
-     "title": "서인영, 12월 26일 재혼…신랑은 6세 연상 NP 최지훈 대표",
-     "link": "https://www.hankyung.com/article/202611057401H"
-    },
-    {
-     "src": "세계일보",
-     "title": "서인영, 우울증 극복한 이유 있었다…“남자친구 덕분에 다시 일할 수 있어”",
-     "link": "https://www.segye.com/newsView/20261113504788"
-    },
-    {
-     "src": "세계일보",
-     "title": "100억 탕진했던 서인영…“백화점만 봐도 무섭다”",
-     "link": "https://www.segye.com/newsView/20261112513942"
-    },
-    {
-     "src": "뉴시스",
-     "title": "12월 결혼 앞둔 서인영 \"남친 덕에 우울증 이기고 활동\"",
-     "link": "https://www.newsis.com/view/NISX20261113_0003866552"
-    }
-   ]
-  },
-  {
-   "kw": "공식",
-   "nsrc": 4,
-   "srcs": [
-    "동아일보",
-    "연합뉴스",
-    "조선일보",
-    "한국경제"
-   ],
-   "n": 9,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "이승철, 데뷔 40년 만에 공식 팬클럽 모집…\"오래 추억 쌓을 것\"",
-     "link": "https://www.yna.co.kr/view/AKR20261113074400005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "지스타, 네이버 치지직과 손잡았다…공식 방송 단독 생중계",
-     "link": "https://www.yna.co.kr/view/AKR20261112145100017"
-    },
-    {
-     "src": "동아일보",
-     "title": "CL, 테디 품으로…더블랙레이블과 전속계약 체결 [공식]",
-     "link": "https://sports.donga.com/ent/article/all/20261113/135018268/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "트와이스 지효, 독자 행보 본격화…EMITHAUS 설립 후 첫 공식 석상",
-     "link": "https://sports.donga.com/ent/article/all/20261113/135018118/1"
-    }
-   ]
-  },
-  {
    "kw": "아내",
    "nsrc": 4,
    "srcs": [
@@ -521,6 +453,72 @@
    ]
   },
   {
+   "kw": "서인영",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "세계일보",
+    "조선일보",
+    "한국경제"
+   ],
+   "n": 9,
+   "headlines": [
+    {
+     "src": "한국경제",
+     "title": "서인영, 12월 26일 재혼…신랑은 6세 연상 NP 최지훈 대표",
+     "link": "https://www.hankyung.com/article/202611057401H"
+    },
+    {
+     "src": "세계일보",
+     "title": "서인영, 우울증 극복한 이유 있었다…“남자친구 덕분에 다시 일할 수 있어”",
+     "link": "https://www.segye.com/newsView/20261113504788"
+    },
+    {
+     "src": "세계일보",
+     "title": "100억 탕진했던 서인영…“백화점만 봐도 무섭다”",
+     "link": "https://www.segye.com/newsView/20261112513942"
+    },
+    {
+     "src": "뉴시스",
+     "title": "12월 결혼 앞둔 서인영 \"남친 덕에 우울증 이기고 활동\"",
+     "link": "https://www.newsis.com/view/NISX20261113_0003866552"
+    }
+   ]
+  },
+  {
+   "kw": "공식",
+   "nsrc": 4,
+   "srcs": [
+    "동아일보",
+    "연합뉴스",
+    "조선일보",
+    "한국경제"
+   ],
+   "n": 8,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "이승철, 데뷔 40년 만에 공식 팬클럽 모집…\"오래 추억 쌓을 것\"",
+     "link": "https://www.yna.co.kr/view/AKR20261113074400005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "지스타, 네이버 치지직과 손잡았다…공식 방송 단독 생중계",
+     "link": "https://www.yna.co.kr/view/AKR20261112145100017"
+    },
+    {
+     "src": "동아일보",
+     "title": "CL, 테디 품으로…더블랙레이블과 전속계약 체결 [공식]",
+     "link": "https://sports.donga.com/ent/article/all/20261113/135018268/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "트와이스 지효, 독자 행보 본격화…EMITHAUS 설립 후 첫 공식 석상",
+     "link": "https://sports.donga.com/ent/article/all/20261113/135018118/1"
+    }
+   ]
+  },
+  {
    "kw": "김승우",
    "nsrc": 4,
    "srcs": [
@@ -550,6 +548,105 @@
      "src": "뉴시스",
      "title": "김승우 절도 혐의 피소…\"술자리 장난, 이미 변제했다\"",
      "link": "https://www.newsis.com/view/NISX20261112_0003865833"
+    }
+   ]
+  },
+  {
+   "kw": "한국",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "연합뉴스",
+    "조선일보",
+    "헤럴드경제"
+   ],
+   "n": 7,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "한국 다큐멘터리 7편, 암스테르담서 해외 투자 모색",
+     "link": "https://www.yna.co.kr/view/AKR20261113062400017"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "포레스텔라, 한국 그룹 첫 미국 뉴욕 카네기홀 단독 공연",
+     "link": "https://www.yna.co.kr/view/AKR20261112061300005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "JYP, 美 타임지 선정 '지속가능 성장기업' 3년 연속 한국 1위",
+     "link": "https://www.yna.co.kr/view/AKR20261111123300005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "\"한국 예능선 카메라 200대 쓴다\"…넷플릭스가 주목한 제작 방식",
+     "link": "https://www.yna.co.kr/view/AKR20261111079200017"
+    }
+   ]
+  },
+  {
+   "kw": "눈물",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "동아일보",
+    "조선일보"
+   ],
+   "n": 7,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "이지현, 싱글맘 현실에 결국 눈물…“좋은 직장 포기했다”",
+     "link": "https://sports.donga.com/ent/article/all/20261113/135019296/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "KCM, 아내·큰딸 쿠팡 알바에 눈물…“혼자 엄청 울었다”",
+     "link": "https://sports.donga.com/ent/article/all/20261112/135017758/1"
+    },
+    {
+     "src": "SBS",
+     "title": "전국환 숨겨진 비밀은?…'닥터X' 김우석, 김지원에 \"이번만 실패해 달라\" 눈물 애원",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008844475&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "뉴시스",
+     "title": "KCM \"아내, 큰딸 선물 사려 쿠팡 알바까지 해\" 눈물",
+     "link": "https://www.newsis.com/view/NISX20261112_0003866238"
+    }
+   ]
+  },
+  {
+   "kw": "고백",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "세계일보",
+    "조선일보",
+    "한국경제"
+   ],
+   "n": 7,
+   "headlines": [
+    {
+     "src": "한국경제",
+     "title": "\"통장 압류, 수중엔 1000원\"…JBJ 출신 켄타, 4억 빚 고백",
+     "link": "https://www.hankyung.com/article/202610280689H"
+    },
+    {
+     "src": "세계일보",
+     "title": "이상순, 미주신경 기능 저하 후유증 고백…“오래 서 있기 힘들다”",
+     "link": "https://www.segye.com/newsView/20261113503652"
+    },
+    {
+     "src": "뉴시스",
+     "title": "전현무, 부상 고백 \"운동하다 발목 접질렀다\"",
+     "link": "https://www.newsis.com/view/NISX20261113_0003866943"
+    },
+    {
+     "src": "뉴시스",
+     "title": "빨간 하이힐? 노홍철 과거 슈퍼모델과 교제 고백",
+     "link": "https://www.newsis.com/view/NISX20261113_0003866390"
     }
    ]
   },
@@ -616,39 +713,6 @@
      "src": "조선일보",
      "title": "사유리, 6살 子에 6개 국어 '사교육 풀코스'…\"중국어가 어렵다더라\"",
      "link": "https://www.chosun.com/entertainments/enter_general/2026/11/13/GM4WMZTGGYYDINJQMEZTMY3CHE/"
-    }
-   ]
-  },
-  {
-   "kw": "고백",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "세계일보",
-    "조선일보",
-    "한국경제"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "한국경제",
-     "title": "\"통장 압류, 수중엔 1000원\"…JBJ 출신 켄타, 4억 빚 고백",
-     "link": "https://www.hankyung.com/article/202610280689H"
-    },
-    {
-     "src": "세계일보",
-     "title": "이상순, 미주신경 기능 저하 후유증 고백…“오래 서 있기 힘들다”",
-     "link": "https://www.segye.com/newsView/20261113503652"
-    },
-    {
-     "src": "뉴시스",
-     "title": "빨간 하이힐? 노홍철 과거 슈퍼모델과 교제 고백",
-     "link": "https://www.newsis.com/view/NISX20261113_0003866390"
-    },
-    {
-     "src": "뉴시스",
-     "title": "진서연, 산후우울증 고백 \"아이가 자지러져도 가만히 있었다\"",
-     "link": "https://www.newsis.com/view/NISX20261112_0003866166"
     }
    ]
   },
@@ -785,7 +849,7 @@
    ]
   },
   {
-   "kw": "더블랙레",
+   "kw": "테디",
    "nsrc": 4,
    "srcs": [
     "뉴시스",
@@ -818,7 +882,7 @@
    ]
   },
   {
-   "kw": "테디",
+   "kw": "더블랙레",
    "nsrc": 4,
    "srcs": [
     "뉴시스",
@@ -1049,6 +1113,39 @@
    ]
   },
   {
+   "kw": "법정",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "연합뉴스",
+    "조선일보",
+    "한국경제"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "김수현, 김세의 재판서 4시간 비공개 증언…법정 대면은 안해(종합)",
+     "link": "https://www.yna.co.kr/view/AKR20261111122651004"
+    },
+    {
+     "src": "한국경제",
+     "title": "[포토] '음주측정 방해 혐의' 배우 이재룡, 첫 공판 법정 출석",
+     "link": "https://www.hankyung.com/article/202611134876i"
+    },
+    {
+     "src": "SBS",
+     "title": "법정 라이벌서 굿파트너로…장나라X김혜윤, 불꽃 대립→신뢰의 눈맞춤 '워맨스 출격'",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008842612&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "조선일보",
+     "title": "[사진]법정 향하는 이재룡",
+     "link": "https://www.chosun.com/entertainments/entertain_photo/2026/11/13/MNRGIMTGMJTDOOJZMU3WKNRUGM/"
+    }
+   ]
+  },
+  {
    "kw": "음악",
    "nsrc": 4,
    "srcs": [
@@ -1181,39 +1278,6 @@
    ]
   },
   {
-   "kw": "혐의",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "동아일보",
-    "연합뉴스"
-   ],
-   "n": 4,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "나나 역고소한 강도, 무고 혐의 부인…\"피해신고 허위 아냐\"",
-     "link": "https://www.yna.co.kr/view/AKR20261110081000004"
-    },
-    {
-     "src": "동아일보",
-     "title": "김승우, 2200만원 절도 혐의 피소…“다음 날 돌려줬다”[SD이슈]",
-     "link": "https://sports.donga.com/ent/article/all/20261112/135017701/1"
-    },
-    {
-     "src": "SBS",
-     "title": "김승우, 지인 돈 2200만 원 절도 혐의 피소…\"술자리 장난, 계좌이체 통해 반환\" 해명",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008844492&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "뉴시스",
-     "title": "김승우 절도 혐의 피소…\"술자리 장난, 이미 변제했다\"",
-     "link": "https://www.newsis.com/view/NISX20261112_0003865833"
-    }
-   ]
-  },
-  {
    "kw": "아빠",
    "nsrc": 4,
    "srcs": [
@@ -1247,101 +1311,35 @@
    ]
   },
   {
-   "kw": "있어",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "세계일보",
-    "조선일보"
-   ],
-   "n": 4,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "김종민, 아빠 될 준비 중…“맞춤법·띄어쓰기 배우고 있어” (1박2일)",
-     "link": "https://sports.donga.com/ent/article/all/20261113/135018756/1"
-    },
-    {
-     "src": "세계일보",
-     "title": "서인영, 우울증 극복한 이유 있었다…“남자친구 덕분에 다시 일할 수 있어”",
-     "link": "https://www.segye.com/newsView/20261113504788"
-    },
-    {
-     "src": "뉴시스",
-     "title": "장도연 \"허경환 보고 설렌 적 있어…완성형 방송인 느낌\"",
-     "link": "https://www.newsis.com/view/NISX20261112_0003865384"
-    },
-    {
-     "src": "조선일보",
-     "title": "김종민, 벌써 아빠 될 준비 마쳤다…\"아들 위해 국어 공부 하고 있어\" ('1박 2일')",
-     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/13/GMYDSYRUGM2WCMTFMI3DCZBWG4/"
-    }
-   ]
-  },
-  {
-   "kw": "선처",
+   "kw": "정조준",
    "nsrc": 4,
    "srcs": [
     "뉴시스",
     "동아일보",
     "조선일보",
-    "헤럴드경제"
+    "한국경제"
    ],
    "n": 4,
    "headlines": [
     {
      "src": "동아일보",
-     "title": "리센느, 악플러에 초강수…“반성문 제출해도 선처 없다”",
-     "link": "https://sports.donga.com/ent/article/all/20261113/135018218/1"
+     "title": "4연타석 홈런 쇼박스…김윤석·구교환 ‘폭설’로 5연속 흥행 정조준",
+     "link": "https://sports.donga.com/ent/article/all/20261112/135012982/1"
     },
     {
-     "src": "헤럴드경제",
-     "title": "리센느 측, 악성 게시물 1차 형사 고소…“반성문 제출해도 선처 없다” 초강수",
-     "link": "https://biz.heraldcorp.com/article/10935847"
-    },
-    {
-     "src": "뉴시스",
-     "title": "리센느 측, 악성 게시물 1차 형사 고소…\"선처 없다\"",
-     "link": "https://www.newsis.com/view/NISX20261113_0003866362"
-    },
-    {
-     "src": "조선일보",
-     "title": "리센느, 소속사 학대설·성희롱 법적대응 \"반성문 내도 선처 안해\"[종합]",
-     "link": "https://www.chosun.com/entertainments/enter_general/2026/11/13/MRRTMZTCGU2GMZJXGBRDCZRSMI/"
-    }
-   ]
-  },
-  {
-   "kw": "만난",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "세계일보",
-    "조선일보",
-    "한겨레"
-   ],
-   "n": 4,
-   "headlines": [
-    {
-     "src": "한겨레",
-     "title": "일본 사진기자가 만난 조선인 피폭자들의 증언 [.txt]",
-     "link": "https://www.hani.co.kr/arti/culture/book/1287135.html"
-    },
-    {
-     "src": "세계일보",
-     "title": "구재이, 두 아이 엄마 됐다…“드디어 만난 하루”",
-     "link": "https://www.segye.com/newsView/20261113506697"
+     "src": "한국경제",
+     "title": "\"엑스러브가 하면 다르다\"…'최고의 아름다움'으로 음방 1위 정조준 [종합]",
+     "link": "https://www.hankyung.com/article/202610280721H"
     },
     {
      "src": "뉴시스",
-     "title": "구재이, 둘째 딸 출산 \"드디어 만난 하루\"",
-     "link": "https://www.newsis.com/view/NISX20261113_0003866846"
+     "title": "'중소돌 기적' 에이티즈, '배드' 대중성 품고 '업'…'빌보드 200' 4번째 정상 정조준",
+     "link": "https://www.newsis.com/view/NISX20261112_0003865529"
     },
     {
      "src": "조선일보",
-     "title": "'범죄도시' '카지노' 감독 만난 이이경..오디션 눈빛 발사 \"자연스럽게\" ('형수다3')",
-     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/13/G4YDOMTDGU4TINLBMI2TKN3FGM/"
+     "title": "한국 대표 선발전 1위 준희, ‘유로비전 아시아’ 결승 무대 오른다…글로벌 팬심 정조준",
+     "link": "https://www.chosun.com/entertainments/music/2026/11/13/G42TOZBRMMYGGMRWMI3DOOBTMU/"
     }
    ]
   }
