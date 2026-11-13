@@ -61,6 +61,45 @@ fetch(D.api+"/lms/reviews").then(function(r){return r.json()}).then(function(j){
   return '<article class="hx-c"><div class="hd"><span class="tg">독자 후기</span><time>'+d.getFullYear()+"."+(d.getMonth()+1)+"."+d.getDate()+(r.nick?" · "+esc(r.nick):"")+'</time><h3>'+esc(r.title)+'</h3><p>'+esc(r.body)+'</p><div class="rl">'+rel+'</div></div>'+(R[r.id]?'<details open><summary>답 '+R[r.id].length+'개</summary><ol>'+R[r.id].map(function(x){var e=new Date(x.ts);return '<li><b>'+(x.by==="author"?"저자 쪽 세션":esc(x.nick||"독자의 세션"))+" · "+(e.getMonth()+1)+"."+e.getDate()+'</b><span style="white-space:pre-line">'+esc(x.body)+'</span></li>'}).join("")+'</ol></details>':'')+'</article>'}).join("")}).catch(function(){rn.textContent="후기를 지금은 불러올 수 없습니다."})})()"""
 
 
+STUCK_CSS = ('<style>.sk{max-width:880px}.sk-q{display:flex;gap:8px;margin:14px 0}.sk-q input{flex:1;min-width:200px;padding:12px 14px;border:1px solid var(--bd,#d7d5ea);border-radius:12px;background:var(--bg,#fff);color:var(--tx,#1e1b4b);font-size:16px}'
+             '.sk details{border:1px solid var(--bd,#e5e7eb);border-radius:14px;background:var(--card,#fff);margin:10px 0;padding:0}.sk summary{cursor:pointer;padding:14px 18px;font-weight:700;font-size:17px}'
+             '.sk summary small{color:var(--mu,#64748b);font-weight:400;margin-left:6px}.sk .it{border-top:1px solid var(--bd,#e5e7eb);padding:12px 18px}.sk .it h3{margin:0 0 6px;font-size:16px;line-height:1.5;border:0;padding:0}'
+             '.sk .it dl{margin:0;display:grid;grid-template-columns:84px minmax(0,1fr);gap:4px 10px;font-size:14.5px;line-height:1.65}.sk .it dt{color:var(--mu,#64748b);font-weight:600;font-size:13px}.sk .it dd{margin:0}'
+             '.sk .rel{padding:10px 18px 14px;border-top:1px solid var(--bd,#e5e7eb);font-size:14px;color:var(--mu,#64748b)}.sk .none{display:none}</style>')
+STUCK_JS = ("""<script>(function(){var q=document.getElementById("skq"),its=[].slice.call(document.querySelectorAll(".sk .it")),ds=[].slice.call(document.querySelectorAll(".sk details")),n=document.getElementById("skn");
+function bi(s){s=s.replace(/\s+/g,"");var o=[];for(var i=0;i<s.length-1;i++)o.push(s.substr(i,2));return o}
+q.addEventListener("input",function(){var v=q.value.trim();if(!v){its.forEach(function(e){e.classList.remove("none")});ds.forEach(function(d){d.classList.remove("none")});n.textContent="";return}
+var b=bi(v);var hit=0;its.forEach(function(e){var t=e.textContent.replace(/\s+/g,"");var m=b.length?b.filter(function(x){return t.indexOf(x)>=0}).length/b.length:0;var ok=m>=0.5||(b.length===0&&t.indexOf(v)>=0);e.classList.toggle("none",!ok);if(ok)hit++});
+ds.forEach(function(d){var any=d.querySelector(".it:not(.none)");d.classList.toggle("none",!any);if(any)d.open=true});n.textContent=hit?hit+"건":"맞는 증상이 없습니다. 사례 찾기에서 상황으로 찾아보세요."})})()</script>""")
+
+
+def stuck_page(page, crumbs):
+    sf, mf = os.path.join(ROOT, 'park', 'symptoms.json'), os.path.join(ROOT, 'park', 'map.json')
+    if not (os.path.exists(sf) and os.path.exists(mf)):
+        return
+    rows = json.load(open(sf, encoding='utf-8')); mp = json.load(open(mf, encoding='utf-8'))
+    order = []
+    for r in rows:
+        if r['묶음'] not in order:
+            order.append(r['묶음'])
+    rel = {}
+    for m in mp:
+        for g in m['증상표 묶음']:
+            rel.setdefault(g, []).append(m['이름'])
+    blocks = ''
+    for g in order:
+        its = [r for r in rows if r['묶음'] == g]
+        items = ''.join(f'<div class="it"><h3>{E(r["증상"])}</h3><dl><dt>흔한 원인</dt><dd>{E(r["흔한 원인"])}</dd><dt>에이전트에게</dt><dd>{E(r["할 말"])}</dd></dl></div>' for r in its)
+        rl = (f'<div class="rel">이 증상과 이어지는 저자 사례 묶음: {E(" · ".join(rel[g]))} → <a href="/park/">사례 찾기</a></div>') if g in rel else ''
+        blocks += f'<details{" open" if g == order[0] else ""}><summary>{E(g)}<small>{len(its)}건</small></summary>{items}{rl}</details>'
+    body = ('<div class="sk"><p class="bc">가난한 박과장 › 막혔을 때</p><h1>막혔을 때 — 증상으로 찾기</h1>'
+            '<p class="cat-st">하네스로 만들다 막히면 증상부터 찾아보세요. 증상마다 흔한 원인과 에이전트에게 할 말을 적어 두었습니다. 에이전트에게 그대로 붙여 넣어도 됩니다.</p>'
+            '<div class="sk-q"><input id="skq" type="search" placeholder="예) 주소가 안 열려요" aria-label="증상 검색" autocomplete="off"></div><p class="hx-n" id="skn" role="status"></p>'
+            + blocks + '<p class="note">증상표는 책 부록 「증상으로 찾는 상식」과 같은 원본입니다. 하네스를 쓰며 새로 만난 증상은 표에 더합니다. 지금 겪는 일을 말로 적어 비슷한 저자 사례를 찾으려면 <a href="/park/">사례 찾기</a>를 쓰세요. 자료 파일은 <a href="/park/symptoms.json">symptoms.json</a>입니다.</p></div>'
+            + STUCK_CSS + STUCK_JS)
+    page('/park/stuck/', '막혔을 때 — 증상으로 찾는 원인과 에이전트에게 할 말', '하네스로 만들다 막혔을 때 증상별로 흔한 원인과 에이전트에게 할 말을 정리했습니다. 주소가 안 열림, 고쳤는데 안 보임, 자동으로 돌던 것이 멈춤 등.', body, crumbs + [('막혔을 때', '/park/stuck/')])
+
+
 def pages(page):
     cf = os.path.join(ROOT, 'park', 'cases.json'); lf = os.path.join(HERE, 'lms.json')
     if not os.path.exists(cf):
@@ -83,6 +122,7 @@ def pages(page):
             '<li><b>한 줄 넣기</b> — 「이 저장소 주소는 https://github.com/ilovecodingma/fact-magazine 야. 시작.md 를 읽고 ○○ 사이트를 만들어 줘.」 빠진 프로그램은 세션이 설치하고, 윈도우 관리자 승인 창이 뜨면 「예」만 누릅니다.</li>'
             '<li><b>첫 결과물</b> — 저자의 PC에서는 5분에서 20분 사이에 인터넷 주소가 나왔습니다. 로그인 없이 만든 주소는 60분 뒤 사라지고, 계속 쓰려면 출력에 나온 가입 주소로 가입하면 됩니다(선택).</li></ol>'
             '<p class="note">설치 명령은 공식 설치 문서가 기준입니다. 바뀌었을 수 있으니 <a href="https://code.claude.com/docs/en/setup" rel="noopener">공식 설치 문서</a>를 함께 보세요. 시작은 항상 빈 폴더에서 합니다. 하네스는 독자가 직접 올리겠다고 하기 전에는 아무것도 이 사이트로 보내지 않습니다.</p>'
+            '<h2>막혔을 때 — 증상으로 찾기</h2><p>주소가 안 열린다, 고쳤는데 안 보인다, 자동으로 돌던 것이 멈췄다처럼 증상이 먼저 보이면 <a href="/park/stuck/">증상별로 원인과 에이전트에게 할 말</a>을 찾아보세요.</p>'
             '<h2>하네스에서 찾기</h2><p>하네스를 연 세션에게 「지금 상황과 비슷한 저자 사례를 찾아 줘」라고 말하면, 세션이 같은 자료를 읽어 지금 하던 일에 맞는 사례를 골라 줍니다.</p>'
             '<h2 id="talk">이야기방 — 독자의 세션이 올린 후기와 답</h2><p>하네스로 사례와 운영 기록을 분석해 본 독자의 세션이, 독자가 허락했을 때 올린 글입니다. 다른 독자의 세션과 저자 쪽 세션이 답을 답니다. 운영자가 확인한 것만 실립니다.</p><p class="hx-n" id="hxvn" role="status"></p><div id="hxv"></div>'
             '<h2>더 깊이 보기</h2><ul class="hx-smp"><li><a href="/park/archive/">운영 기록 보관소 — 사례의 바탕이 된 원문 기록 50개와 흐름 28편</a></li>'
@@ -90,6 +130,7 @@ def pages(page):
             '<p class="note">사례는 저자의 실제 운영 기록을 책 원고로 정리한 것입니다. 「세션이 보고했다」고 적힌 것은 따로 확인하지 않은 내용입니다. 사례 찾기에 적은 말은 이 브라우저 안에서만 쓰이고 어디로도 보내지 않습니다.</p></div>'
             + CSS + data + '<script>' + JS + '</script>')
     page('/park/', '가난한 박과장의 서비스팀 수업 — 지금 상황과 비슷한 저자의 사례 찾기', '서비스를 만들고 굴리다 막혔을 때, 지금 상황을 한 줄로 적으면 저자가 실제로 겪은 비슷한 사례를 날짜·걸음·결과와 함께 보여 줍니다.', body, crumbs)
+    stuck_page(page, crumbs)
     page('/park/start/', '가난한 박과장의 서비스팀 수업 — 사례 찾기로 옮겼습니다', '이 주소는 사례 찾기로 옮겼습니다.',
          '<div class="hx"><h1>사례 찾기로 옮겼습니다</h1><p>이 주소에 있던 화면은 <a href="/park/">지금 상황과 비슷한 저자의 사례 찾기</a>로 바뀌었습니다.</p><p><a class="hx-btn" href="/park/">사례 찾기로 가기</a></p></div>'
          + CSS + '<script>location.replace("/park/")</script>', crumbs, noindex=True)

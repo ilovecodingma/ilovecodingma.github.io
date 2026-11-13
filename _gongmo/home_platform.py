@@ -38,7 +38,7 @@ def home_html(devs):
             '<h2>이렇게 써 보세요 <small style="font-weight:400;color:var(--mu,#64748b);font-size:15px">순서를 강제하지 않습니다</small></h2>'
             '<ol class="st">'
             '<li><b>하네스로 먼저 하나 만든다</b><span>빈 폴더에서 한 줄을 넣고, 첫 결과물이 나오는 것까지 봅니다.</span><a href="/park/#start">시작 안내 →</a></li>'
-            '<li><b>막히면 찾아본다</b><span>증상으로 찾거나, 지금 상황을 한 줄로 적으면 저자의 비슷한 사례를 보여 줍니다.</span><a href="/park/">사례 찾기 →</a></li>'
+            '<li><b>막히면 찾아본다</b><span>증상으로 찾거나, 지금 상황을 한 줄로 적으면 저자의 비슷한 사례를 보여 줍니다.</span><a href="/park/stuck/">증상으로 찾기 →</a><a href="/park/">사례 찾기 →</a></li>'
             '<li><b>저자가 겪은 일을 본다</b><span>한 달 동안 실제로 운영하며 겪은 기록을 가려서 공개했습니다. 정답이 아니라 자료입니다.</span><a href="/park/archive/">운영 기록 →</a></li>'
             '<li><b>원하면 이야기방에 남긴다</b><span>공유는 선택입니다. 올린 글은 운영자가 확인한 것만 실립니다.</span><a href="/park/#talk">이야기방 →</a></li></ol>'
             '<h2>가난한 박과장이 만든 서비스</h2>'

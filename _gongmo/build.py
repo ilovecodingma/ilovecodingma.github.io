@@ -114,7 +114,7 @@ def GN_HTML(TH):
     items = ''.join(f'<a href="{GN_HOME.get(k, by[k][4])}"{" class=on aria-current=page" if k == cur else ""}>{GN_LABEL.get(k, by[k][1])}</a>' for k in GN_MAIN if k in by)
     if PLAT:
         items = f'<a href="/park/"{" class=on aria-current=page" if cur == "park" else ""}>수업</a><a href="/ruri/">루리 줍줍</a>' + items
-    return (f'<nav class="gn" aria-label="주요 주제">{items}<a href="/all/">전체</a>{(f'<span class="gn-cur" aria-current="page">{by[cur][2]} {by[cur][1]}</span>' if cur and cur not in GN_MAIN and cur in by else '')}</nav>'
+    return (f'<nav class="gn" aria-label="주요 주제">{items}<a href="/all/">전체</a>{(f'<span class="gn-cur" aria-current="page">{by[cur][2]} {by[cur][1]}</span>' if cur and cur not in GN_MAIN and cur in by and not (PLAT and cur == 'park') else '')}</nav>'
             '<a class="hd-s" href="/#hq" aria-label="통합 검색"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4 4"/></svg><span>검색</span></a>')
 
 
