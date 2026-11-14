@@ -1,5 +1,5 @@
 {
- "at": "2026-11-15 01:30",
+ "at": "2026-11-15 02:30",
  "nitems": 499,
  "cands": [
   {
@@ -80,7 +80,7 @@
     "조선일보",
     "한국경제"
    ],
-   "n": 15,
+   "n": 14,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -215,8 +215,13 @@
     "조선일보",
     "한국경제"
    ],
-   "n": 11,
+   "n": 12,
    "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "BTS 3관왕·에스파 2관왕…'MMA2026' 첫날 나란히 대상",
+     "link": "https://www.yna.co.kr/view/AKR20261114049700005"
+    },
     {
      "src": "연합뉴스",
      "title": "에스파, 인기 캐럴 '산타 베이비' 재해석…\"즐거움 전하길\"",
@@ -231,11 +236,6 @@
      "src": "뉴시스",
      "title": "방탄소년단, 'MMA2026' 첫날 '올해의 앨범' 등 3관왕…에스파 '올해의 글로벌-K 아티스트'",
      "link": "https://www.newsis.com/view/NISX20261114_0003868229"
-    },
-    {
-     "src": "조선일보",
-     "title": "[사진]에스파 '개성 살린 흑백 드레스'",
-     "link": "https://www.chosun.com/entertainments/entertain_photo/2026/11/14/GFSWKY3GG5TDOZJYHAZTAYZZME/"
     }
    ]
   },
@@ -693,8 +693,8 @@
     },
     {
      "src": "조선일보",
-     "title": "[사진]최예나 '성숙한 미소'",
-     "link": "https://www.chosun.com/entertainments/entertain_photo/2026/11/14/MI3TKMDEME3WGZJXGE2DCNZRGE/"
+     "title": "[사진]최예나 '구미호 미소'",
+     "link": "https://www.chosun.com/entertainments/entertain_photo/2026/11/14/HA2TINZWMEZWKOLBGM4TKMBTG4/"
     }
    ]
   },
@@ -827,38 +827,6 @@
    ]
   },
   {
-   "kw": "사고",
-   "nsrc": 3,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "헤럴드경제"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "고경표 만취 음주운전 사고…‘보검매직컬2’·‘대탈출’ 초비상 [DA피플]",
-     "link": "https://sports.donga.com/ent/article/all/20261114/135024212/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "고경표, 음주운전 사고 당일 ‘놀뭐’ 편집 결정…“최대한 삭제”",
-     "link": "https://sports.donga.com/ent/article/all/20261114/135024029/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "고경표, 음주운전 중 청소차 충돌 사고…면허 취소 수치 [공식]",
-     "link": "https://sports.donga.com/ent/article/all/20261114/135023984/1"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "고경표 측 ‘만취 운전 사고’ 사과…“잘못 인정하고 깊이 반성”",
-     "link": "https://biz.heraldcorp.com/article/10936970"
-    }
-   ]
-  },
-  {
    "kw": "만취",
    "nsrc": 3,
    "srcs": [
@@ -887,6 +855,38 @@
      "src": "뉴시스",
      "title": "배우 고경표, 만취 상태로 청소차 들이받아…면허취소 수준",
      "link": "https://www.newsis.com/view/NISX20261114_0003868025"
+    }
+   ]
+  },
+  {
+   "kw": "사고",
+   "nsrc": 3,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "헤럴드경제"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "고경표 만취 음주운전 사고…‘보검매직컬2’·‘대탈출’ 초비상 [DA피플]",
+     "link": "https://sports.donga.com/ent/article/all/20261114/135024212/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "고경표, 음주운전 사고 당일 ‘놀뭐’ 편집 결정…“최대한 삭제”",
+     "link": "https://sports.donga.com/ent/article/all/20261114/135024029/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "고경표, 음주운전 중 청소차 충돌 사고…면허 취소 수치 [공식]",
+     "link": "https://sports.donga.com/ent/article/all/20261114/135023984/1"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "고경표 측 ‘만취 운전 사고’ 사과…“잘못 인정하고 깊이 반성”",
+     "link": "https://biz.heraldcorp.com/article/10936970"
     }
    ]
   },
@@ -1243,7 +1243,7 @@
    ]
   },
   {
-   "kw": "모텔",
+   "kw": "박지현",
    "nsrc": 3,
    "srcs": [
     "뉴시스",
@@ -1275,7 +1275,7 @@
    ]
   },
   {
-   "kw": "박지현",
+   "kw": "모텔",
    "nsrc": 3,
    "srcs": [
     "뉴시스",
