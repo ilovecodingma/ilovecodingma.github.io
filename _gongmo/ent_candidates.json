@@ -1,42 +1,7 @@
 {
- "at": "2026-11-14 23:30",
- "nitems": 520,
+ "at": "2026-11-15 00:30",
+ "nitems": 497,
  "cands": [
-  {
-   "kw": "에이티즈",
-   "nsrc": 6,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "동아일보",
-    "연합뉴스",
-    "조선일보",
-    "한국경제"
-   ],
-   "n": 16,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "에이티즈, '배드' 인기 잇는다…\"가장 높은 곳 그 이상까지\"",
-     "link": "https://www.yna.co.kr/view/AKR20261112112300005"
-    },
-    {
-     "src": "동아일보",
-     "title": "에이티즈 산, ‘가슴 춤’만 600번…“챌린지 열풍 예상 못 해” (고막남친)",
-     "link": "https://sports.donga.com/ent/article/all/20261114/135024161/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "역시 에이티즈, 가장 잘하는 음악으로 통했다…‘UP’ 국내외 차트 강타",
-     "link": "https://sports.donga.com/ent/article/all/20261114/135024003/1"
-    },
-    {
-     "src": "한국경제",
-     "title": "에이티즈, 타이틀곡 'UP' 뮤직비디오 첫 티저 공개",
-     "link": "https://www.hankyung.com/article/202611107743H"
-    }
-   ]
-  },
   {
    "kw": "고경표",
    "nsrc": 5,
@@ -47,7 +12,7 @@
     "조선일보",
     "헤럴드경제"
    ],
-   "n": 20,
+   "n": 21,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -72,6 +37,74 @@
    ]
   },
   {
+   "kw": "음주운전",
+   "nsrc": 5,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "연합뉴스",
+    "조선일보",
+    "헤럴드경제"
+   ],
+   "n": 17,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "고경표 음주운전, 방송가에 불똥…'놀뭐'·'식스센스' 등 편집",
+     "link": "https://www.yna.co.kr/view/AKR20261114032600005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "배우 고경표 음주운전 중 청소차 들이받아…\"깊이 반성\"(종합)",
+     "link": "https://www.yna.co.kr/view/AKR20261114025051004"
+    },
+    {
+     "src": "동아일보",
+     "title": "[공식] ‘음주운전’ 고경표, ‘대탈출’ 출연 분량 편집…“최대한 조정”",
+     "link": "https://sports.donga.com/ent/article/all/20261114/135024260/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "고경표 만취 음주운전 사고…‘보검매직컬2’·‘대탈출’ 초비상 [DA피플]",
+     "link": "https://sports.donga.com/ent/article/all/20261114/135024212/1"
+    }
+   ]
+  },
+  {
+   "kw": "에이티즈",
+   "nsrc": 5,
+   "srcs": [
+    "SBS",
+    "동아일보",
+    "연합뉴스",
+    "조선일보",
+    "한국경제"
+   ],
+   "n": 15,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "에이티즈, '배드' 인기 잇는다…\"가장 높은 곳 그 이상까지\"",
+     "link": "https://www.yna.co.kr/view/AKR20261112112300005"
+    },
+    {
+     "src": "동아일보",
+     "title": "에이티즈 산, ‘가슴 춤’만 600번…“챌린지 열풍 예상 못 해” (고막남친)",
+     "link": "https://sports.donga.com/ent/article/all/20261114/135024161/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "역시 에이티즈, 가장 잘하는 음악으로 통했다…‘UP’ 국내외 차트 강타",
+     "link": "https://sports.donga.com/ent/article/all/20261114/135024003/1"
+    },
+    {
+     "src": "한국경제",
+     "title": "에이티즈, 타이틀곡 'UP' 뮤직비디오 첫 티저 공개",
+     "link": "https://www.hankyung.com/article/202611107743H"
+    }
+   ]
+  },
+  {
    "kw": "리센느",
    "nsrc": 5,
    "srcs": [
@@ -81,7 +114,7 @@
     "한국경제",
     "헤럴드경제"
    ],
-   "n": 13,
+   "n": 12,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -140,101 +173,69 @@
    ]
   },
   {
-   "kw": "음주운전",
-   "nsrc": 4,
+   "kw": "고백",
+   "nsrc": 5,
    "srcs": [
     "뉴시스",
     "동아일보",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 16,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "고경표 음주운전, 방송가에 불똥…'놀뭐'·'식스센스' 등 편집",
-     "link": "https://www.yna.co.kr/view/AKR20261114032600005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "배우 고경표 음주운전 중 청소차 들이받아…\"깊이 반성\"(종합)",
-     "link": "https://www.yna.co.kr/view/AKR20261114025051004"
-    },
-    {
-     "src": "동아일보",
-     "title": "[공식] ‘음주운전’ 고경표, ‘대탈출’ 출연 분량 편집…“최대한 조정”",
-     "link": "https://sports.donga.com/ent/article/all/20261114/135024260/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "고경표 만취 음주운전 사고…‘보검매직컬2’·‘대탈출’ 초비상 [DA피플]",
-     "link": "https://sports.donga.com/ent/article/all/20261114/135024212/1"
-    }
-   ]
-  },
-  {
-   "kw": "투어",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "연합뉴스",
-    "한국경제"
-   ],
-   "n": 8,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "[가요소식] 엑소 카이·세훈, 내년 팬콘 투어 '사일런트 시티'",
-     "link": "https://www.yna.co.kr/view/AKR20261113114200005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "[가요소식] 청각 장애 아이돌 빅오션, 미국·유럽 투어…\"큰 의미\"",
-     "link": "https://www.yna.co.kr/view/AKR20261113060000005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "스트레이 키즈, LA·파리 등 공연 추가…31곳으로 투어 확장",
-     "link": "https://www.yna.co.kr/view/AKR20261110050400005"
-    },
-    {
-     "src": "한국경제",
-     "title": "빅오션, 미국·유럽에 퍼트린 목소리…두 달간의 투어 마무리",
-     "link": "https://www.hankyung.com/article/202611135484H"
-    }
-   ]
-  },
-  {
-   "kw": "이유",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "뉴시스",
     "세계일보",
-    "한국경제"
+    "조선일보",
+    "헤럴드경제"
    ],
-   "n": 8,
+   "n": 5,
    "headlines": [
     {
-     "src": "한국경제",
-     "title": "도파민의 시대…김종관표 '작고 사소한' 영화의 존재 이유 [씬터뷰]",
-     "link": "https://www.hankyung.com/article/202611045069H"
+     "src": "동아일보",
+     "title": "박지현, 바쁜 스케줄에 모텔 전전…“혼밥도 어려워” 고백",
+     "link": "https://sports.donga.com/ent/article/all/20261114/135023937/1"
     },
     {
      "src": "세계일보",
-     "title": "서인영, 우울증 극복한 이유 있었다…“남자친구 덕분에 다시 일할 수 있어”",
-     "link": "https://www.segye.com/newsView/20261113504788"
+     "title": "이상순, 미주신경 기능 저하 후유증 고백…“오래 서 있기 힘들다”",
+     "link": "https://www.segye.com/newsView/20261113503652"
     },
     {
-     "src": "SBS",
-     "title": "\"에이티니가 우리의 원동력\"…'컴백' 에이티즈, 쉼 없이 달리는 이유",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008843257&plink=RSSLINK&cooper=RSSREADER"
+     "src": "헤럴드경제",
+     "title": "전소미, 학폭 피해 트라우마 고백…“지금도 눈물 흘려”",
+     "link": "https://biz.heraldcorp.com/article/10936781"
     },
     {
      "src": "뉴시스",
-     "title": "'47세 미혼' 이희진 \"남자 바람피울까 무서워\"…결혼 망설이는 이유",
-     "link": "https://www.newsis.com/view/NISX20261114_0003867941"
+     "title": "전소미, 학폭 상처 고백 \"지금도 눈물 난다\"",
+     "link": "https://www.newsis.com/view/NISX20261114_0003868083"
+    }
+   ]
+  },
+  {
+   "kw": "에스파",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "연합뉴스",
+    "조선일보",
+    "한국경제"
+   ],
+   "n": 11,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "에스파, 인기 캐럴 '산타 베이비' 재해석…\"즐거움 전하길\"",
+     "link": "https://www.yna.co.kr/view/AKR20261113047000005"
+    },
+    {
+     "src": "한국경제",
+     "title": "BTS·에스파, 'MMA 2026' 첫날 대상…윈터 \"내년도 기대해 달라\" [종합]",
+     "link": "https://www.hankyung.com/article/202611146620H"
+    },
+    {
+     "src": "뉴시스",
+     "title": "방탄소년단, 'MMA2026' 첫날 '올해의 앨범' 등 3관왕…에스파 '올해의 글로벌-K 아티스트'",
+     "link": "https://www.newsis.com/view/NISX20261114_0003868229"
+    },
+    {
+     "src": "조선일보",
+     "title": "[사진]에스파 '개성 살린 흑백 드레스'",
+     "link": "https://www.chosun.com/entertainments/entertain_photo/2026/11/14/GFSWKY3GG5TDOZJYHAZTAYZZME/"
     }
    ]
   },
@@ -247,7 +248,7 @@
     "연합뉴스",
     "헤럴드경제"
    ],
-   "n": 7,
+   "n": 9,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -266,8 +267,8 @@
     },
     {
      "src": "뉴시스",
-     "title": "이유진♥차경은, 오늘 결혼…임신 겹경사",
-     "link": "https://www.newsis.com/view/NISX20261114_0003867991"
+     "title": "장윤정, 도경완과 결혼 고민한 이유 \"옷 입은 거 보고\"",
+     "link": "https://www.newsis.com/view/NISX20261114_0003868198"
     }
    ]
   },
@@ -305,35 +306,35 @@
    ]
   },
   {
-   "kw": "공식",
+   "kw": "투어",
    "nsrc": 4,
    "srcs": [
+    "SBS",
     "뉴시스",
-    "동아일보",
     "연합뉴스",
     "한국경제"
    ],
-   "n": 6,
+   "n": 7,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "이승철, 데뷔 40년 만에 공식 팬클럽 모집…\"오래 추억 쌓을 것\"",
-     "link": "https://www.yna.co.kr/view/AKR20261113074400005"
+     "title": "[가요소식] 엑소 카이·세훈, 내년 팬콘 투어 '사일런트 시티'",
+     "link": "https://www.yna.co.kr/view/AKR20261113114200005"
     },
     {
      "src": "연합뉴스",
-     "title": "지스타, 네이버 치지직과 손잡았다…공식 방송 단독 생중계",
-     "link": "https://www.yna.co.kr/view/AKR20261112145100017"
+     "title": "[가요소식] 청각 장애 아이돌 빅오션, 미국·유럽 투어…\"큰 의미\"",
+     "link": "https://www.yna.co.kr/view/AKR20261113060000005"
     },
     {
-     "src": "동아일보",
-     "title": "[공식] ‘음주운전’ 고경표, ‘대탈출’ 출연 분량 편집…“최대한 조정”",
-     "link": "https://sports.donga.com/ent/article/all/20261114/135024260/1"
+     "src": "연합뉴스",
+     "title": "스트레이 키즈, LA·파리 등 공연 추가…31곳으로 투어 확장",
+     "link": "https://www.yna.co.kr/view/AKR20261110050400005"
     },
     {
-     "src": "동아일보",
-     "title": "고경표, 음주운전 중 청소차 충돌 사고…면허 취소 수치 [공식]",
-     "link": "https://sports.donga.com/ent/article/all/20261114/135023984/1"
+     "src": "한국경제",
+     "title": "빅오션, 미국·유럽에 퍼트린 목소리…두 달간의 투어 마무리",
+     "link": "https://www.hankyung.com/article/202611135484H"
     }
    ]
   },
@@ -346,7 +347,7 @@
     "연합뉴스",
     "헤럴드경제"
    ],
-   "n": 5,
+   "n": 6,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -365,41 +366,41 @@
     },
     {
      "src": "뉴시스",
-     "title": "'52세' 주진모, 아빠 된다…11세 연하 아내 민혜연 임신",
-     "link": "https://www.newsis.com/view/NISX20261114_0003868088"
+     "title": "민혜연, 결혼 8년차 임신 \"노력해보자 했는데 바로 찾아왔다\"",
+     "link": "https://www.newsis.com/view/NISX20261114_0003868240"
     }
    ]
   },
   {
-   "kw": "까지",
+   "kw": "이유",
    "nsrc": 4,
    "srcs": [
     "SBS",
     "뉴시스",
-    "동아일보",
+    "세계일보",
     "한국경제"
    ],
-   "n": 5,
+   "n": 6,
    "headlines": [
     {
-     "src": "동아일보",
-     "title": "별사랑, ‘놀아나보세’부터 ‘나야 나’까지…흥겨운 트로트 무대 (가요쇼)",
-     "link": "https://sports.donga.com/ent/article/all/20261114/135024201/1"
-    },
-    {
      "src": "한국경제",
-     "title": "제로베이스원 EMP, 대학축제에 음악방송까지…신나게 '런'",
-     "link": "https://www.hankyung.com/article/202611095916H"
+     "title": "도파민의 시대…김종관표 '작고 사소한' 영화의 존재 이유 [씬터뷰]",
+     "link": "https://www.hankyung.com/article/202611045069H"
+    },
+    {
+     "src": "세계일보",
+     "title": "서인영, 우울증 극복한 이유 있었다…“남자친구 덕분에 다시 일할 수 있어”",
+     "link": "https://www.segye.com/newsView/20261113504788"
     },
     {
      "src": "SBS",
-     "title": "연상호·변우석· CJ CGV·넷플릭스까지…서울독립영화제 빛내는 영화계 연대",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008844468&plink=RSSLINK&cooper=RSSREADER"
+     "title": "\"에이티니가 우리의 원동력\"…'컴백' 에이티즈, 쉼 없이 달리는 이유",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008843257&plink=RSSLINK&cooper=RSSREADER"
     },
     {
-     "src": "SBS",
-     "title": "임영웅 콘서트부터 '진격의 거인'까지…CGV, 11월 기술 특별관 라인업 공개",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008842411&plink=RSSLINK&cooper=RSSREADER"
+     "src": "뉴시스",
+     "title": "장윤정, 도경완과 결혼 고민한 이유 \"옷 입은 거 보고\"",
+     "link": "https://www.newsis.com/view/NISX20261114_0003868198"
     }
    ]
   },
@@ -503,73 +504,7 @@
    ]
   },
   {
-   "kw": "꿈꾸던",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "세계일보",
-    "연합뉴스",
-    "한겨레"
-   ],
-   "n": 4,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "머무르 '꿈꾸던…', AI 활용곡 사상 첫 멜론 '톱 100' 1위",
-     "link": "https://www.yna.co.kr/view/AKR20261113157000005"
-    },
-    {
-     "src": "한겨레",
-     "title": "‘퇴사할게여’ ‘꿈꾸던 어른이 되었나요?’…불안한 청춘의 노래가 뜬다",
-     "link": "https://www.hani.co.kr/arti/culture/music/1287303.html"
-    },
-    {
-     "src": "세계일보",
-     "title": "사람이 쓴 가사, AI가 부른 노래… 머무르 ‘꿈꾸던…’, 멜론 첫 정상",
-     "link": "https://www.segye.com/newsView/20261113514501"
-    },
-    {
-     "src": "뉴시스",
-     "title": "AI 활용 노래 첫 멜론 톱100 1위…머무르 '꿈꾸던 어른이 되었나요?'",
-     "link": "https://www.newsis.com/view/NISX20261113_0003867765"
-    }
-   ]
-  },
-  {
-   "kw": "멜론",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "세계일보",
-    "연합뉴스",
-    "한겨레"
-   ],
-   "n": 4,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "머무르 '꿈꾸던…', AI 활용곡 사상 첫 멜론 '톱 100' 1위",
-     "link": "https://www.yna.co.kr/view/AKR20261113157000005"
-    },
-    {
-     "src": "한겨레",
-     "title": "AI가 작곡하고 노래한 음악, ‘멜론 톱100’ 첫 1위 올랐다",
-     "link": "https://www.hani.co.kr/arti/culture/music/1287281.html"
-    },
-    {
-     "src": "세계일보",
-     "title": "사람이 쓴 가사, AI가 부른 노래… 머무르 ‘꿈꾸던…’, 멜론 첫 정상",
-     "link": "https://www.segye.com/newsView/20261113514501"
-    },
-    {
-     "src": "뉴시스",
-     "title": "AI 활용 노래 첫 멜론 톱100 1위…머무르 '꿈꾸던 어른이 되었나요?'",
-     "link": "https://www.newsis.com/view/NISX20261113_0003867765"
-    }
-   ]
-  },
-  {
-   "kw": "데뷔",
+   "kw": "혐의",
    "nsrc": 4,
    "srcs": [
     "SBS",
@@ -581,155 +516,23 @@
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "이승철, 데뷔 40년 만에 공식 팬클럽 모집…\"오래 추억 쌓을 것\"",
-     "link": "https://www.yna.co.kr/view/AKR20261113074400005"
+     "title": "나나 역고소한 강도, 무고 혐의 부인…\"피해신고 허위 아냐\"",
+     "link": "https://www.yna.co.kr/view/AKR20261110081000004"
     },
     {
      "src": "한국경제",
-     "title": "\"가정부와 불륜으로 낳은 아들\" 슈워제네거 혼외자, 보디빌더 데뷔",
-     "link": "https://www.hankyung.com/article/2026111086337"
+     "title": "[포토] '음주측정 방해 혐의' 배우 이재룡, 첫 공판 법정 출석",
+     "link": "https://www.hankyung.com/article/202611134876i"
     },
     {
      "src": "SBS",
-     "title": "에이티즈 산, 데뷔 첫 OST 도전…'나인 투 식스' 화려한 OST 라인업 공개",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008841570&plink=RSSLINK&cooper=RSSREADER"
+     "title": "김승우, 지인 돈 2200만 원 절도 혐의 피소…\"술자리 장난, 계좌이체 통해 반환\" 해명",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008844492&plink=RSSLINK&cooper=RSSREADER"
     },
     {
      "src": "뉴시스",
-     "title": "이승철, 데뷔 40주년 공식 팬클럽 개설…비스테이지서 모집",
-     "link": "https://www.newsis.com/view/NISX20261113_0003867222"
-    }
-   ]
-  },
-  {
-   "kw": "아이돌",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "연합뉴스",
-    "한국경제",
-    "헤럴드경제"
-   ],
-   "n": 4,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "[가요소식] 청각 장애 아이돌 빅오션, 미국·유럽 투어…\"큰 의미\"",
-     "link": "https://www.yna.co.kr/view/AKR20261113060000005"
-    },
-    {
-     "src": "한국경제",
-     "title": "아이돌 '포미닛' 출신 전지윤, 11월 신부된다",
-     "link": "https://www.hankyung.com/article/2026110461907"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "‘음주 뺑소니·폭행’ 잘 나갔던 아이돌, 개명 고민까지…“친구 자녀들이 이름 검색해”",
-     "link": "https://biz.heraldcorp.com/article/10937035"
-    },
-    {
-     "src": "뉴시스",
-     "title": "'수어 아이돌' 빅오션, 미·유럽 투어 마무리",
-     "link": "https://www.newsis.com/view/NISX20261113_0003867725"
-    }
-   ]
-  },
-  {
-   "kw": "지수",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "연합뉴스",
-    "한국경제"
-   ],
-   "n": 4,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "블핑 지수·이날치·NCT·베이비몬스터, 내년 '코첼라' 뜬다",
-     "link": "https://www.yna.co.kr/view/AKR20261111150900005"
-    },
-    {
-     "src": "동아일보",
-     "title": "블랙핑크 지수, 수염 그리고 양세찬과 먹방…“귀한 분이 누추한 곳에”",
-     "link": "https://sports.donga.com/ent/article/all/20261114/135023888/1"
-    },
-    {
-     "src": "한국경제",
-     "title": "[포토] 디올 CEO 명예박사 수여식 참석한 블랙핑크 지수",
-     "link": "https://www.hankyung.com/article/202611122723i"
-    },
-    {
-     "src": "뉴시스",
-     "title": "지수 \"라우럴\" 영어 발음에 온라인 난리…넷플릭스까지 등판",
-     "link": "https://www.newsis.com/view/NISX20261113_0003867156"
-    }
-   ]
-  },
-  {
-   "kw": "김지원",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "연합뉴스",
-    "헤럴드경제"
-   ],
-   "n": 4,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "'꿀알바' 넷플릭스 비영어 쇼 1위…김지원 '닥터X'는 4위",
-     "link": "https://www.yna.co.kr/view/AKR20261111009200005"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "김지원 ‘닥터X’ 촬영장 밖에서도 천사였다…“아역 배우 엄마도 찐팬 됐어요”",
-     "link": "https://biz.heraldcorp.com/article/10936155"
-    },
-    {
-     "src": "SBS",
-     "title": "\"의사들이 하나의 팀이 된 순간\"…'닥터X' 김지원·이정은·손현주·김우석, 직접 뽑은 명장면 공개",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008842503&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "뉴시스",
-     "title": "김지원, 아역배우 남매에 깜짝 선물…촬영장 미담",
-     "link": "https://www.newsis.com/view/NISX20261113_0003867558"
-    }
-   ]
-  },
-  {
-   "kw": "고백",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "세계일보",
-    "헤럴드경제"
-   ],
-   "n": 4,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "박지현, 바쁜 스케줄에 모텔 전전…“혼밥도 어려워” 고백",
-     "link": "https://sports.donga.com/ent/article/all/20261114/135023937/1"
-    },
-    {
-     "src": "세계일보",
-     "title": "이상순, 미주신경 기능 저하 후유증 고백…“오래 서 있기 힘들다”",
-     "link": "https://www.segye.com/newsView/20261113503652"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "전소미, 학폭 피해 트라우마 고백…“지금도 눈물 흘려”",
-     "link": "https://biz.heraldcorp.com/article/10936781"
-    },
-    {
-     "src": "뉴시스",
-     "title": "전소미, 학폭 상처 고백 \"지금도 눈물 난다\"",
-     "link": "https://www.newsis.com/view/NISX20261114_0003868083"
+     "title": "김승우 '절도 혐의' 피소 여파…김남주 '170억 삼성동 대저택' 재소환",
+     "link": "https://www.newsis.com/view/NISX20261113_0003866501"
     }
    ]
   },
@@ -763,38 +566,6 @@
      "src": "조선일보",
      "title": "'13년만 재혼' 은지원, '9살 연하♥' 스타일리스트와 천생연분..\"신발·옷 관심 없어\" [핫피플]",
      "link": "https://www.chosun.com/entertainments/broadcast/2026/11/14/MMYTQMBQGAZDMYRRMI2WCY3EHE/"
-    }
-   ]
-  },
-  {
-   "kw": "에스파",
-   "nsrc": 3,
-   "srcs": [
-    "연합뉴스",
-    "조선일보",
-    "한국경제"
-   ],
-   "n": 10,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "에스파, 인기 캐럴 '산타 베이비' 재해석…\"즐거움 전하길\"",
-     "link": "https://www.yna.co.kr/view/AKR20261113047000005"
-    },
-    {
-     "src": "한국경제",
-     "title": "BTS·에스파, 'MMA 2026' 첫날 대상…윈터 \"내년도 기대해 달라\" [종합]",
-     "link": "https://www.hankyung.com/article/202611146620H"
-    },
-    {
-     "src": "조선일보",
-     "title": "[사진]에스파 '개성 살린 흑백 드레스'",
-     "link": "https://www.chosun.com/entertainments/entertain_photo/2026/11/14/GFSWKY3GG5TDOZJYHAZTAYZZME/"
-    },
-    {
-     "src": "조선일보",
-     "title": "[사진]에스파 윈터 '압도적 비주얼'",
-     "link": "https://www.chosun.com/entertainments/entertain_photo/2026/11/14/HAZTEYJVMI2GGYLBMI2GKMZVHE/"
     }
    ]
   },
@@ -863,102 +634,6 @@
    ]
   },
   {
-   "kw": "넷플릭스",
-   "nsrc": 3,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "연합뉴스"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "\"한국 예능선 카메라 200대 쓴다\"…넷플릭스가 주목한 제작 방식",
-     "link": "https://www.yna.co.kr/view/AKR20261111079200017"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "넷플릭스, 예능 '흑백가수' 내년 공개…'흑백' 세계관 음악으로",
-     "link": "https://www.yna.co.kr/view/AKR20261111052100005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "'꿀알바' 넷플릭스 비영어 쇼 1위…김지원 '닥터X'는 4위",
-     "link": "https://www.yna.co.kr/view/AKR20261111009200005"
-    },
-    {
-     "src": "SBS",
-     "title": "연상호·변우석· CJ CGV·넷플릭스까지…서울독립영화제 빛내는 영화계 연대",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008844468&plink=RSSLINK&cooper=RSSREADER"
-    }
-   ]
-  },
-  {
-   "kw": "얼굴",
-   "nsrc": 3,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "조선일보"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "맹승지, 옛날 얼굴 아예 없네 …금발의 배우 비주얼 [DA★]",
-     "link": "https://sports.donga.com/ent/article/all/20261114/135024534/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "환희, 붕어빵 조카 얼굴 공개…삼촌 닮은 끼까지 (살림남)",
-     "link": "https://sports.donga.com/ent/article/all/20261114/135024232/1"
-    },
-    {
-     "src": "뉴시스",
-     "title": "이효리, 세월 따라 달라진 얼굴…당당한 모습에 호평",
-     "link": "https://www.newsis.com/view/NISX20261113_0003866867"
-    },
-    {
-     "src": "조선일보",
-     "title": "정웅인 첫째 딸은 배우, 둘째 딸은 미대..얼굴 그대로 몸만 큰 '한국의 수리 크루즈'",
-     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/14/MM3DGMBRMVRTMMJUME4WIMLFGE/"
-    }
-   ]
-  },
-  {
-   "kw": "사고",
-   "nsrc": 3,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "헤럴드경제"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "고경표 만취 음주운전 사고…‘보검매직컬2’·‘대탈출’ 초비상 [DA피플]",
-     "link": "https://sports.donga.com/ent/article/all/20261114/135024212/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "고경표, 음주운전 사고 당일 ‘놀뭐’ 편집 결정…“최대한 삭제”",
-     "link": "https://sports.donga.com/ent/article/all/20261114/135024029/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "고경표, 음주운전 중 청소차 충돌 사고…면허 취소 수치 [공식]",
-     "link": "https://sports.donga.com/ent/article/all/20261114/135023984/1"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "고경표 측 ‘만취 운전 사고’ 사과…“잘못 인정하고 깊이 반성”",
-     "link": "https://biz.heraldcorp.com/article/10936970"
-    }
-   ]
-  },
-  {
    "kw": "미소",
    "nsrc": 3,
    "srcs": [
@@ -985,8 +660,8 @@
     },
     {
      "src": "조선일보",
-     "title": "[사진]오나라 '눈부신 미소'",
-     "link": "https://www.chosun.com/entertainments/entertain_photo/2026/11/14/MQYTENTFGE4DGYTEGRRWMZTGG4/"
+     "title": "[사진]최예나 '성숙한 미소'",
+     "link": "https://www.chosun.com/entertainments/entertain_photo/2026/11/14/MI3TKMDEME3WGZJXGE2DCNZRGE/"
     }
    ]
   },
@@ -1087,6 +762,38 @@
    ]
   },
   {
+   "kw": "공식",
+   "nsrc": 3,
+   "srcs": [
+    "동아일보",
+    "연합뉴스",
+    "한국경제"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "이승철, 데뷔 40년 만에 공식 팬클럽 모집…\"오래 추억 쌓을 것\"",
+     "link": "https://www.yna.co.kr/view/AKR20261113074400005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "지스타, 네이버 치지직과 손잡았다…공식 방송 단독 생중계",
+     "link": "https://www.yna.co.kr/view/AKR20261112145100017"
+    },
+    {
+     "src": "동아일보",
+     "title": "[공식] ‘음주운전’ 고경표, ‘대탈출’ 출연 분량 편집…“최대한 조정”",
+     "link": "https://sports.donga.com/ent/article/all/20261114/135024260/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "고경표, 음주운전 중 청소차 충돌 사고…면허 취소 수치 [공식]",
+     "link": "https://sports.donga.com/ent/article/all/20261114/135023984/1"
+    }
+   ]
+  },
+  {
    "kw": "시간",
    "nsrc": 3,
    "srcs": [
@@ -1115,6 +822,38 @@
      "src": "SBS",
      "title": "강동원X김고은, 백년 원수 가문에서 부부로…넷플릭스 '혼: 삼각의 시간' 제작 확정",
      "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008842336&plink=RSSLINK&cooper=RSSREADER"
+    }
+   ]
+  },
+  {
+   "kw": "사고",
+   "nsrc": 3,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "헤럴드경제"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "고경표 만취 음주운전 사고…‘보검매직컬2’·‘대탈출’ 초비상 [DA피플]",
+     "link": "https://sports.donga.com/ent/article/all/20261114/135024212/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "고경표, 음주운전 사고 당일 ‘놀뭐’ 편집 결정…“최대한 삭제”",
+     "link": "https://sports.donga.com/ent/article/all/20261114/135024029/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "고경표, 음주운전 중 청소차 충돌 사고…면허 취소 수치 [공식]",
+     "link": "https://sports.donga.com/ent/article/all/20261114/135023984/1"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "고경표 측 ‘만취 운전 사고’ 사과…“잘못 인정하고 깊이 반성”",
+     "link": "https://biz.heraldcorp.com/article/10936970"
     }
    ]
   },
@@ -1151,6 +890,38 @@
    ]
   },
   {
+   "kw": "민혜연",
+   "nsrc": 3,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "연합뉴스"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "주진모·민혜연 부부, 결혼 7년 만에 부모 된다…\"임신 초기\"",
+     "link": "https://www.yna.co.kr/view/AKR20261114036000005"
+    },
+    {
+     "src": "동아일보",
+     "title": "주진모♥민혜연, 결혼 8년 만에 임신",
+     "link": "https://sports.donga.com/ent/article/all/20261114/135024513/1"
+    },
+    {
+     "src": "뉴시스",
+     "title": "민혜연, 결혼 8년차 임신 \"노력해보자 했는데 바로 찾아왔다\"",
+     "link": "https://www.newsis.com/view/NISX20261114_0003868240"
+    },
+    {
+     "src": "뉴시스",
+     "title": "'52세' 주진모, 아빠 된다…11세 연하 아내 민혜연 임신",
+     "link": "https://www.newsis.com/view/NISX20261114_0003868088"
+    }
+   ]
+  },
+  {
    "kw": "청소차",
    "nsrc": 3,
    "srcs": [
@@ -1179,6 +950,38 @@
      "src": "뉴시스",
      "title": "배우 고경표, 만취 상태로 청소차 들이받아…면허취소 수준",
      "link": "https://www.newsis.com/view/NISX20261114_0003868025"
+    }
+   ]
+  },
+  {
+   "kw": "문무",
+   "nsrc": 3,
+   "srcs": [
+    "동아일보",
+    "연합뉴스",
+    "조선일보"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "300억 대하사극 KBS '문무'…\"삼국통일 과정, 갈등의 시대 시사점\"",
+     "link": "https://www.yna.co.kr/view/AKR20261112155400005"
+    },
+    {
+     "src": "동아일보",
+     "title": "이현욱·장혁·김강우·박성웅 ‘문무’, 첫 방송…삼국의 권력 다툼 시작 [DA투데이]",
+     "link": "https://sports.donga.com/ent/article/all/20261114/135024248/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "김강우, 신라 왕 김춘추로 변신…“삼한일통” 선언 (문무)",
+     "link": "https://sports.donga.com/ent/article/all/20261114/135023963/1"
+    },
+    {
+     "src": "조선일보",
+     "title": "\"장혁 연기가 미쳤어요\"..300억 들어간 '문무', 첫 방송부터 이뤄낸 수신료의 가치 [Oh!쎈 이슈]",
+     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/14/MQ3WIOBRGVTGGOBUMIYGCZBXG4/"
     }
    ]
   },
@@ -1307,6 +1110,198 @@
      "src": "한겨레",
      "title": "유은실이라는 세계, 언제까지나 기다릴 거야 [.txt]",
      "link": "https://www.hani.co.kr/arti/culture/book/1287126.html"
+    }
+   ]
+  },
+  {
+   "kw": "같아",
+   "nsrc": 3,
+   "srcs": [
+    "뉴시스",
+    "연합뉴스",
+    "헤럴드경제"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "리센느, 내년 2월 첫 단독 콘서트…\"꿈만 같아, 최선 다해 준비\"",
+     "link": "https://www.yna.co.kr/view/AKR20261111063700005"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "전현무, 식사하다  뜨거운 짬뽕 쏟더니...“장가 진짜 못갈것 같아”",
+     "link": "https://biz.heraldcorp.com/article/10937069"
+    },
+    {
+     "src": "뉴시스",
+     "title": "전현무, 중요 부위에 짬뽕 국물 쏟았다 \"진짜 장가 못 갈 거 같아\"",
+     "link": "https://www.newsis.com/view/NISX20261114_0003868027"
+    },
+    {
+     "src": "뉴시스",
+     "title": "'컴퓨터 미인' 한가인, AI 미모에 위기의식 \"대체될 것 같아\"",
+     "link": "https://www.newsis.com/view/NISX20261113_0003867561"
+    }
+   ]
+  },
+  {
+   "kw": "국민",
+   "nsrc": 3,
+   "srcs": [
+    "동아일보",
+    "연합뉴스",
+    "한국경제"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "군복 입고 주먹 불끈 '국민 아버지'…故최불암 9년전 사진 공개",
+     "link": "https://www.yna.co.kr/view/AKR20261111021200071"
+    },
+    {
+     "src": "동아일보",
+     "title": "김석훈, 2천만 명 앓는 국민 질환에 ‘충격’ (세 개의 시선)",
+     "link": "https://sports.donga.com/ent/article/all/20261114/135024132/1"
+    },
+    {
+     "src": "한국경제",
+     "title": "리센느 \"'국민 걸그룹' 호칭 과분…'믿고 듣는 리센느' 수식어 붙길\"",
+     "link": "https://www.hankyung.com/article/202611032757H"
+    },
+    {
+     "src": "한국경제",
+     "title": "[포토+] '국민 아버지' 최불암, '향년 87세를 일기로 별세'",
+     "link": "https://www.hankyung.com/article/202610317173H"
+    }
+   ]
+  },
+  {
+   "kw": "닥터",
+   "nsrc": 3,
+   "srcs": [
+    "SBS",
+    "연합뉴스",
+    "헤럴드경제"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "'꿀알바' 넷플릭스 비영어 쇼 1위…김지원 '닥터X'는 4위",
+     "link": "https://www.yna.co.kr/view/AKR20261111009200005"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "김지원 ‘닥터X’ 촬영장 밖에서도 천사였다…“아역 배우 엄마도 찐팬 됐어요”",
+     "link": "https://biz.heraldcorp.com/article/10936155"
+    },
+    {
+     "src": "SBS",
+     "title": "전국환 숨겨진 비밀은?…'닥터X' 김우석, 김지원에 \"이번만 실패해 달라\" 눈물 애원",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008844475&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "SBS",
+     "title": "\"의사들이 하나의 팀이 된 순간\"…'닥터X' 김지원·이정은·손현주·김우석, 직접 뽑은 명장면 공개",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008842503&plink=RSSLINK&cooper=RSSREADER"
+    }
+   ]
+  },
+  {
+   "kw": "선언",
+   "nsrc": 3,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "연합뉴스"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "이재진, 젝키 3인 디너쇼 불참 선언…주최측 \"행사 구성 재정비\"",
+     "link": "https://www.yna.co.kr/view/AKR20261110125200005"
+    },
+    {
+     "src": "동아일보",
+     "title": "김강우, 신라 왕 김춘추로 변신…“삼한일통” 선언 (문무)",
+     "link": "https://sports.donga.com/ent/article/all/20261114/135023963/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "규현, 스스로 ‘아시아 스타’ 선언…“아시아 찾아갈 예정”",
+     "link": "https://sports.donga.com/ent/article/all/20261114/135023791/1"
+    },
+    {
+     "src": "뉴시스",
+     "title": "정호영, 연예대상 4년 무관에 \"나는 연미셰\" 선언",
+     "link": "https://www.newsis.com/view/NISX20261114_0003868155"
+    }
+   ]
+  },
+  {
+   "kw": "허경환",
+   "nsrc": 3,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "조선일보"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "허경환, ‘책받침 누나’ 김희선 만나자 땀 뻘뻘…“기억하시죠?” (놀뭐)",
+     "link": "https://sports.donga.com/ent/article/all/20261114/135024177/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "허경환, 김희선 만나 땀 범벅…“누나 기억하시죠?” (놀뭐)",
+     "link": "https://sports.donga.com/ent/article/all/20261114/135024276/1"
+    },
+    {
+     "src": "뉴시스",
+     "title": "허경환, 김희선 등장에 땀샘 폭발 \"기억하시죠?\"",
+     "link": "https://www.newsis.com/view/NISX20261114_0003868185"
+    },
+    {
+     "src": "조선일보",
+     "title": "허경환, 김희선 '찐팬'이었네→함께 찍은 사진 공개 \"저 기억하시죠?\"",
+     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/14/GE4TONJRMY2GIZRXMUZTOMJSMM/"
+    }
+   ]
+  },
+  {
+   "kw": "기억하시",
+   "nsrc": 3,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "조선일보"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "허경환, ‘책받침 누나’ 김희선 만나자 땀 뻘뻘…“기억하시죠?” (놀뭐)",
+     "link": "https://sports.donga.com/ent/article/all/20261114/135024177/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "허경환, 김희선 만나 땀 범벅…“누나 기억하시죠?” (놀뭐)",
+     "link": "https://sports.donga.com/ent/article/all/20261114/135024276/1"
+    },
+    {
+     "src": "뉴시스",
+     "title": "허경환, 김희선 등장에 땀샘 폭발 \"기억하시죠?\"",
+     "link": "https://www.newsis.com/view/NISX20261114_0003868185"
+    },
+    {
+     "src": "조선일보",
+     "title": "허경환, 김희선 '찐팬'이었네→함께 찍은 사진 공개 \"저 기억하시죠?\"",
+     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/14/GE4TONJRMY2GIZRXMUZTOMJSMM/"
     }
    ]
   }
