@@ -1,13 +1,13 @@
 {
  "date": "2026-11-14",
- "updated": "2026-11-14 18:50",
+ "updated": "2026-11-14 19:50",
  "sites": 13,
- "npost": 2728,
+ "npost": 2729,
  "note": "출처(커뮤니티)별 집계예요. 작성자·연령·성별 정보는 수집하지 않아요. posts 는 이슈별로 뽑힌 일부라 전체 글 수가 아니에요.",
  "sources": [
   {
    "name": "MLB파크",
-   "np": 22,
+   "np": 20,
    "nc": 1108,
    "topics": [
     {
@@ -16,12 +16,12 @@
      "np_here": 2,
      "nc_here": 218,
      "issue_np": 9,
-     "issue_nc": 347,
+     "issue_nc": 352,
      "kw": [
-      "음주",
       "고경표",
+      "음주",
       "사고",
-      "면허"
+      "취소"
      ],
      "top_post": {
       "t": "배우 고경표 음주사고…면허취소 만취상태",
@@ -57,8 +57,8 @@
      "issue_nc": 136,
      "kw": [
       "만점자",
-      "검증",
-      "LEET"
+      "LEET",
+      "검증"
      ],
      "top_post": {
       "t": "LEET 만점자 검증 미션 대단하네요 ㄷㄷ",
@@ -84,50 +84,12 @@
      }
     },
     {
-     "t": "남자 소변 보고 휴지로 닦는다가 1위..다들 그렇게 하시나요",
-     "nsite": 2,
-     "np_here": 3,
-     "nc_here": 100,
-     "issue_np": 4,
-     "issue_nc": 115,
-     "kw": [
-      "소변",
-      "남자",
-      "휴지",
-      "처리"
-     ],
-     "top_post": {
-      "t": "남자 소변 보고 휴지로 닦는다가 1위..다들 그렇게 하시나요",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611130120084717&m=view",
-      "nc": 77
-     }
-    },
-    {
-     "t": "유튜버 ai 세무사 시험 400점 만점받음 jpg",
-     "nsite": 8,
-     "np_here": 2,
-     "nc_here": 91,
-     "issue_np": 12,
-     "issue_nc": 244,
-     "kw": [
-      "시험",
-      "세무사",
-      "AI",
-      "만점"
-     ],
-     "top_post": {
-      "t": "유튜버 ai 세무사 시험 400점 만점받음 jpg",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611130120087882&m=view",
-      "nc": 56
-     }
-    },
-    {
-     "t": "리트 만점자 정면돌파 ㅎㄷㄷㄷㄷ",
+     "t": "리트 만점자는 역대급 괴수네요 ㄷㄷㄷ",
      "nsite": 4,
      "np_here": 3,
-     "nc_here": 77,
+     "nc_here": 99,
      "issue_np": 7,
-     "issue_nc": 86,
+     "issue_nc": 108,
      "kw": [
       "리트",
       "만점자",
@@ -137,24 +99,218 @@
      "top_post": {
       "t": "리트 만점자는 역대급 괴수네요 ㄷㄷㄷ",
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611140120106218&m=view",
-      "nc": 53
+      "nc": 75
      }
     },
     {
-     "t": "2026년 올 한해 나온 시험이슈 7개",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 60,
-     "issue_np": 3,
-     "issue_nc": 64,
+     "t": "유튜버 ai 세무사 시험 400점 만점받음 jpg",
+     "nsite": 8,
+     "np_here": 2,
+     "nc_here": 82,
+     "issue_np": 11,
+     "issue_nc": 209,
      "kw": [
       "시험",
-      "이슈"
+      "세무사",
+      "AI",
+      "수석"
      ],
      "top_post": {
-      "t": "2026년 올 한해 나온 시험이슈 7개",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611130120077673&m=view",
-      "nc": 60
+      "t": "유튜버 ai 세무사 시험 400점 만점받음 jpg",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611130120087882&m=view",
+      "nc": 56
+     }
+    },
+    {
+     "t": "고경표 갤러리 입장문 ㄷㄷㄷ",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 79,
+     "issue_np": 2,
+     "issue_nc": 125,
+     "kw": [
+      "고경표",
+      "갤러리",
+      "입장"
+     ],
+     "top_post": {
+      "t": "고경표 갤러리 입장문 ㄷㄷㄷ",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611140120107337&m=view",
+      "nc": 79
+     }
+    },
+    {
+     "t": "좀 이해 안 되는 거>>성공한 연예인들 음주운전",
+     "nsite": 8,
+     "np_here": 2,
+     "nc_here": 67,
+     "issue_np": 18,
+     "issue_nc": 171,
+     "kw": [
+      "운전",
+      "음주",
+      "연예인",
+      "성시경"
+     ],
+     "top_post": {
+      "t": "신동엽이 절대 음주운전 안걸리는 이유",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611140120104847&m=view",
+      "nc": 41
+     }
+    }
+   ]
+  },
+  {
+   "name": "인스티즈",
+   "np": 8,
+   "nc": 600,
+   "topics": [
+    {
+     "t": "빵 고르는데 어떤 아줌마가 앙버터 먹말 고민하길래 그거 맛있어요라고 했는데",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 144,
+     "issue_np": 2,
+     "issue_nc": 144,
+     "kw": [
+      "먹말",
+      "앙버터",
+      "아줌마"
+     ],
+     "top_post": {
+      "t": "빵 고르는데 어떤 아줌마가 앙버터 먹말 고민하길래 그거 맛있어요라고 했는데",
+      "u": "https://www.instiz.net/pt/7925550?green=1",
+      "nc": 144
+     }
+    },
+    {
+     "t": "배우 고경표 음주사고…면허취소 만취상태",
+     "nsite": 7,
+     "np_here": 1,
+     "nc_here": 105,
+     "issue_np": 9,
+     "issue_nc": 352,
+     "kw": [
+      "고경표",
+      "음주",
+      "사고",
+      "취소"
+     ],
+     "top_post": {
+      "t": "[단독] 배우 고경표 음주사고…면허취소 만취상태 367 9:17 l 조회 86005 l 추천",
+      "u": "https://www.instiz.net/pt/7925770?green=1",
+      "nc": 105
+     }
+    },
+    {
+     "t": "시어머니 자랑하는 요즘 새댁",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 89,
+     "issue_np": 2,
+     "issue_nc": 137,
+     "kw": [
+      "자랑",
+      "새댁",
+      "시어머니"
+     ],
+     "top_post": {
+      "t": "시어머니 자랑하는 요즘 새댁",
+      "u": "https://www.instiz.net/pt/7925562?green=1",
+      "nc": 89
+     }
+    },
+    {
+     "t": "블라 : 회식하다가 여직원이 남직원한테 키스 갈김 ㅋㅋㅋ",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 81,
+     "issue_np": 3,
+     "issue_nc": 112,
+     "kw": [
+      "남직원",
+      "회식",
+      "키스",
+      "여직원"
+     ],
+     "top_post": {
+      "t": "블라 : 회식하다가 여직원이 남직원한테 키스 갈김 ㅋㅋㅋ",
+      "u": "https://www.instiz.net/pt/7925510?green=1",
+      "nc": 81
+     }
+    },
+    {
+     "t": "[속보] 박수홍, 친형 부부 상대 98억 손배소 1심 패소",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 52,
+     "issue_np": 3,
+     "issue_nc": 52,
+     "kw": [
+      "패소",
+      "부부",
+      "속보",
+      "1심"
+     ],
+     "top_post": {
+      "t": "[속보] 박수홍, 친형 부부 상대 98억 손배소 1심 패소",
+      "u": "https://www.instiz.net/pt/7925476?green=1",
+      "nc": 52
+     }
+    },
+    {
+     "t": "고경표 갤러리 입장문 ㄷㄷㄷ",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 46,
+     "issue_np": 2,
+     "issue_nc": 125,
+     "kw": [
+      "고경표",
+      "갤러리",
+      "입장"
+     ],
+     "top_post": {
+      "t": "DC 고경표 갤러리 공식 입장문",
+      "u": "https://www.instiz.net/pt/7925879?green=1",
+      "nc": 46
+     }
+    },
+    {
+     "t": "젠슨황 사임 이슈 미국인들 반응",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 43,
+     "issue_np": 3,
+     "issue_nc": 43,
+     "kw": [
+      "젠슨 황",
+      "사임",
+      "미국인"
+     ],
+     "top_post": {
+      "t": "젠슨황 사임 이슈 미국인들 반응",
+      "u": "https://www.instiz.net/pt/7925695?green=1",
+      "nc": 43
+     }
+    },
+    {
+     "t": "유튜버 ai 세무사 시험 400점 만점받음 jpg",
+     "nsite": 8,
+     "np_here": 1,
+     "nc_here": 40,
+     "issue_np": 11,
+     "issue_nc": 209,
+     "kw": [
+      "시험",
+      "세무사",
+      "AI",
+      "수석"
+     ],
+     "top_post": {
+      "t": "제 63회 세무사시험 수석 합격자 변호사 고용",
+      "u": "https://www.instiz.net/pt/7925455?green=1",
+      "nc": 40
      }
     }
    ]
@@ -162,18 +318,18 @@
   {
    "name": "개드립",
    "np": 23,
-   "nc": 586,
+   "nc": 589,
    "topics": [
     {
      "t": "좀 이해 안 되는 거>>성공한 연예인들 음주운전",
      "nsite": 8,
      "np_here": 3,
-     "nc_here": 85,
-     "issue_np": 16,
-     "issue_nc": 162,
+     "nc_here": 86,
+     "issue_np": 18,
+     "issue_nc": 171,
      "kw": [
-      "음주",
       "운전",
+      "음주",
       "연예인",
       "성시경"
      ],
@@ -188,12 +344,12 @@
      "nsite": 8,
      "np_here": 2,
      "nc_here": 68,
-     "issue_np": 12,
-     "issue_nc": 130,
+     "issue_np": 13,
+     "issue_nc": 131,
      "kw": [
-      "음주",
       "고경표",
       "운전",
+      "음주",
       "비상"
      ],
      "top_post": {
@@ -242,18 +398,18 @@
      "t": "시어머니 자랑하는 요즘 새댁",
      "nsite": 2,
      "np_here": 1,
-     "nc_here": 47,
+     "nc_here": 48,
      "issue_np": 2,
-     "issue_nc": 136,
+     "issue_nc": 137,
      "kw": [
+      "자랑",
       "새댁",
-      "시어머니",
-      "자랑"
+      "시어머니"
      ],
      "top_post": {
       "t": "시어머니 자랑하는 요즘 새댁",
       "u": "https://www.dogdrip.net/dogdrip/734741190?sort_index=popular&page=1",
-      "nc": 47
+      "nc": 48
      }
     },
     {
@@ -264,8 +420,8 @@
      "issue_np": 3,
      "issue_nc": 54,
      "kw": [
-      "AI",
       "시대",
+      "AI",
       "경제학자",
       "우려"
      ],
@@ -283,8 +439,8 @@
      "issue_np": 3,
      "issue_nc": 102,
      "kw": [
-      "한국",
       "이란",
+      "한국",
       "가랑이"
      ],
      "top_post": {
@@ -301,10 +457,10 @@
      "issue_np": 3,
      "issue_nc": 112,
      "kw": [
-      "여직원",
       "남직원",
       "회식",
-      "키스"
+      "키스",
+      "여직원"
      ],
      "top_post": {
       "t": "블라 : 회식하다가 여직원이 남직원한테 키스 갈김 ㅋㅋㅋ",
@@ -315,139 +471,22 @@
    ]
   },
   {
-   "name": "인스티즈",
-   "np": 6,
-   "nc": 506,
-   "topics": [
-    {
-     "t": "빵 고르는데 어떤 아줌마가 앙버터 먹말 고민하길래 그거 맛있어요라고 했는데",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 144,
-     "issue_np": 2,
-     "issue_nc": 144,
-     "kw": [
-      "먹말",
-      "아줌마",
-      "앙버터"
-     ],
-     "top_post": {
-      "t": "빵 고르는데 어떤 아줌마가 앙버터 먹말 고민하길래 그거 맛있어요라고 했는데",
-      "u": "https://www.instiz.net/pt/7925550?green=1",
-      "nc": 144
-     }
-    },
-    {
-     "t": "배우 고경표 음주사고…면허취소 만취상태",
-     "nsite": 7,
-     "np_here": 1,
-     "nc_here": 100,
-     "issue_np": 9,
-     "issue_nc": 347,
-     "kw": [
-      "음주",
-      "고경표",
-      "사고",
-      "면허"
-     ],
-     "top_post": {
-      "t": "[단독] 배우 고경표 음주사고…면허취소 만취상태 356 9:17 l 조회 81883 l 추천",
-      "u": "https://www.instiz.net/pt/7925770?green=1",
-      "nc": 100
-     }
-    },
-    {
-     "t": "시어머니 자랑하는 요즘 새댁",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 89,
-     "issue_np": 2,
-     "issue_nc": 136,
-     "kw": [
-      "새댁",
-      "시어머니",
-      "자랑"
-     ],
-     "top_post": {
-      "t": "시어머니 자랑하는 요즘 새댁",
-      "u": "https://www.instiz.net/pt/7925562?green=1",
-      "nc": 89
-     }
-    },
-    {
-     "t": "블라 : 회식하다가 여직원이 남직원한테 키스 갈김 ㅋㅋㅋ",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 81,
-     "issue_np": 3,
-     "issue_nc": 112,
-     "kw": [
-      "여직원",
-      "남직원",
-      "회식",
-      "키스"
-     ],
-     "top_post": {
-      "t": "블라 : 회식하다가 여직원이 남직원한테 키스 갈김 ㅋㅋㅋ",
-      "u": "https://www.instiz.net/pt/7925510?green=1",
-      "nc": 81
-     }
-    },
-    {
-     "t": "[속보] 박수홍, 친형 부부 상대 98억 손배소 1심 패소",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 52,
-     "issue_np": 3,
-     "issue_nc": 52,
-     "kw": [
-      "패소",
-      "속보",
-      "박수홍",
-      "손배소"
-     ],
-     "top_post": {
-      "t": "[속보] 박수홍, 친형 부부 상대 98억 손배소 1심 패소",
-      "u": "https://www.instiz.net/pt/7925476?green=1",
-      "nc": 52
-     }
-    },
-    {
-     "t": "유튜버 ai 세무사 시험 400점 만점받음 jpg",
-     "nsite": 8,
-     "np_here": 1,
-     "nc_here": 40,
-     "issue_np": 12,
-     "issue_nc": 244,
-     "kw": [
-      "시험",
-      "세무사",
-      "AI",
-      "만점"
-     ],
-     "top_post": {
-      "t": "제 63회 세무사시험 수석 합격자 변호사 고용",
-      "u": "https://www.instiz.net/pt/7925455?green=1",
-      "nc": 40
-     }
-    }
-   ]
-  },
-  {
    "name": "클리앙",
    "np": 8,
-   "nc": 221,
+   "nc": 218,
    "topics": [
     {
      "t": "최민희 발언, '하야'하게 하고 탄핵은 반대. 뭐가 문제죠?",
-     "nsite": 2,
+     "nsite": 3,
      "np_here": 3,
      "nc_here": 109,
-     "issue_np": 4,
-     "issue_nc": 112,
+     "issue_np": 5,
+     "issue_nc": 113,
      "kw": [
+      "최민희",
       "발언",
-      "최민희"
+      "하야",
+      "탄핵"
      ],
      "top_post": {
       "t": "최민희 발언, '하야'하게 하고 탄핵은 반대. 뭐가 문제죠?",
@@ -460,13 +499,13 @@
      "nsite": 8,
      "np_here": 1,
      "nc_here": 31,
-     "issue_np": 12,
-     "issue_nc": 244,
+     "issue_np": 11,
+     "issue_nc": 209,
      "kw": [
       "시험",
       "세무사",
       "AI",
-      "만점"
+      "수석"
      ],
      "top_post": {
       "t": "세무사시험수석 '너의 결백을 증명해라...'",
@@ -479,12 +518,12 @@
      "nsite": 8,
      "np_here": 1,
      "nc_here": 28,
-     "issue_np": 12,
-     "issue_nc": 130,
+     "issue_np": 13,
+     "issue_nc": 131,
      "kw": [
-      "음주",
       "고경표",
       "운전",
+      "음주",
       "비상"
      ],
      "top_post": {
@@ -515,11 +554,11 @@
      "nsite": 8,
      "np_here": 1,
      "nc_here": 15,
-     "issue_np": 16,
-     "issue_nc": 162,
+     "issue_np": 18,
+     "issue_nc": 171,
      "kw": [
-      "음주",
       "운전",
+      "음주",
       "연예인",
       "성시경"
      ],
@@ -530,22 +569,21 @@
      }
     },
     {
-     "t": "대마도 마운자로 병원들 대박 나겠네요...",
+     "t": "테슬라 사이버캡 개인판매 시작 발표(다음달부터)",
      "nsite": 3,
      "np_here": 1,
-     "nc_here": 14,
+     "nc_here": 11,
      "issue_np": 4,
-     "issue_nc": 14,
+     "issue_nc": 11,
      "kw": [
-      "마운자",
-      "병원",
-      "대마도",
-      "일본"
+      "판매",
+      "테슬라",
+      "사이버"
      ],
      "top_post": {
-      "t": "대마도에 마운자로 보내주겠다는 일본 병원 근황",
-      "u": "https://www.clien.net/service/board/park/19291988?od=T33&po=0&category=0&groupCd=clien_all",
-      "nc": 14
+      "t": "테슬라 사이버캡 개인판매 시작 발표(다음달부터)",
+      "u": "https://www.clien.net/service/board/cm_car/19292121?od=T33&po=0&category=0&groupCd=clien_all",
+      "nc": 11
      }
     }
    ]
@@ -553,20 +591,20 @@
   {
    "name": "82쿡",
    "np": 12,
-   "nc": 166,
+   "nc": 152,
    "topics": [
     {
      "t": "유튜버 ai 세무사 시험 400점 만점받음 jpg",
      "nsite": 8,
      "np_here": 1,
      "nc_here": 29,
-     "issue_np": 12,
-     "issue_nc": 244,
+     "issue_np": 11,
+     "issue_nc": 209,
      "kw": [
       "시험",
       "세무사",
       "AI",
-      "만점"
+      "수석"
      ],
      "top_post": {
       "t": "갑자기 세무사 시험 준비한다던",
@@ -598,12 +636,12 @@
      "nsite": 8,
      "np_here": 1,
      "nc_here": 24,
-     "issue_np": 12,
-     "issue_nc": 130,
+     "issue_np": 13,
+     "issue_nc": 131,
      "kw": [
-      "음주",
       "고경표",
       "운전",
+      "음주",
       "비상"
      ],
      "top_post": {
@@ -618,12 +656,12 @@
      "np_here": 1,
      "nc_here": 24,
      "issue_np": 9,
-     "issue_nc": 347,
+     "issue_nc": 352,
      "kw": [
-      "음주",
       "고경표",
+      "음주",
       "사고",
-      "면허"
+      "취소"
      ],
      "top_post": {
       "t": "고경표씨 음주 사고냈네요",
@@ -646,25 +684,6 @@
       "t": "과거제와 ai안경",
       "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4258832&page=1",
       "nc": 7
-     }
-    },
-    {
-     "t": "남자 소변 보고 휴지로 닦는다가 1위..다들 그렇게 하시나요",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 15,
-     "issue_np": 4,
-     "issue_nc": 115,
-     "kw": [
-      "소변",
-      "남자",
-      "휴지",
-      "처리"
-     ],
-     "top_post": {
-      "t": "건강,소변을 휴지로 닦으면",
-      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4258588&page=1",
-      "nc": 15
      }
     },
     {
@@ -692,8 +711,8 @@
      "issue_np": 3,
      "issue_nc": 102,
      "kw": [
-      "한국",
       "이란",
+      "한국",
       "가랑이"
      ],
      "top_post": {
@@ -701,13 +720,32 @@
       "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4258649&page=1",
       "nc": 10
      }
+    },
+    {
+     "t": "RPG게임하면서 이해안되는 퀘스트.....ㄹㅇ",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 7,
+     "issue_np": 3,
+     "issue_nc": 32,
+     "kw": [
+      "이해",
+      "게임",
+      "RPG",
+      "퀘스트"
+     ],
+     "top_post": {
+      "t": "데블스 플랜 게임 다 이해가 안돼요.",
+      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4258813&page=1",
+      "nc": 7
+     }
     }
    ]
   },
   {
    "name": "보배드림",
-   "np": 14,
-   "nc": 33,
+   "np": 15,
+   "nc": 35,
    "topics": [
     {
      "t": "세무사 수석합격자 입장 발표 “내가 왜 해명해야 하는지 모르겠다···찍는 것도 기술이다”",
@@ -730,14 +768,14 @@
     },
     {
      "t": "서울우유가 고소하고 얻은것",
-     "nsite": 3,
+     "nsite": 4,
      "np_here": 2,
      "nc_here": 5,
-     "issue_np": 5,
+     "issue_np": 6,
      "issue_nc": 28,
      "kw": [
-      "서울",
       "우유",
+      "서울",
       "고소",
       "소비자"
      ],
@@ -748,17 +786,36 @@
      }
     },
     {
+     "t": "어제 난리난 송도 센트럴파크 ㄷㄷ",
+     "nsite": 3,
+     "np_here": 2,
+     "nc_here": 4,
+     "issue_np": 4,
+     "issue_nc": 14,
+     "kw": [
+      "송도",
+      "난리",
+      "센트럴파크",
+      "실시간"
+     ],
+     "top_post": {
+      "t": "어제 난리난 송도 센트럴파크 ㄷㄷ",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1047438&vdate=",
+      "nc": 3
+     }
+    },
+    {
      "t": "배우 고경표 음주사고…면허취소 만취상태",
      "nsite": 7,
      "np_here": 1,
      "nc_here": 3,
      "issue_np": 9,
-     "issue_nc": 347,
+     "issue_nc": 352,
      "kw": [
-      "음주",
       "고경표",
+      "음주",
       "사고",
-      "면허"
+      "취소"
      ],
      "top_post": {
       "t": "배우 고경표 음주사고면허취소 만취상태",
@@ -767,12 +824,12 @@
      }
     },
     {
-     "t": "리트 만점자 정면돌파 ㅎㄷㄷㄷㄷ",
+     "t": "리트 만점자는 역대급 괴수네요 ㄷㄷㄷ",
      "nsite": 4,
      "np_here": 1,
      "nc_here": 3,
      "issue_np": 7,
-     "issue_nc": 86,
+     "issue_nc": 108,
      "kw": [
       "리트",
       "만점자",
@@ -786,6 +843,25 @@
      }
     },
     {
+     "t": "최민희 발언, '하야'하게 하고 탄핵은 반대. 뭐가 문제죠?",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 3,
+     "issue_np": 5,
+     "issue_nc": 113,
+     "kw": [
+      "최민희",
+      "발언",
+      "하야",
+      "탄핵"
+     ],
+     "top_post": {
+      "t": "최민희 녹취록 속 발언",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1047276&vdate=",
+      "nc": 3
+     }
+    },
+    {
      "t": "블라 : 회식하다가 여직원이 남직원한테 키스 갈김 ㅋㅋㅋ",
      "nsite": 3,
      "np_here": 1,
@@ -793,10 +869,10 @@
      "issue_np": 3,
      "issue_nc": 112,
      "kw": [
-      "여직원",
       "남직원",
       "회식",
-      "키스"
+      "키스",
+      "여직원"
      ],
      "top_post": {
       "t": "회식하다가 여직원이 남직원한테 키스 갈김 ㅋㅋㅋ",
@@ -818,42 +894,6 @@
      "top_post": {
       "t": "오늘 하루 만에 나온 시험 이슈",
       "u": "https://www.bobaedream.co.kr/view?code=best&No=1047387&vdate=",
-      "nc": 3
-     }
-    },
-    {
-     "t": "어제 난리난 송도 센트럴파크 ㄷㄷ",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 3,
-     "issue_np": 3,
-     "issue_nc": 12,
-     "kw": [
-      "송도",
-      "난리",
-      "센트럴파크"
-     ],
-     "top_post": {
-      "t": "어제 난리난 송도 센트럴파크 ㄷㄷ",
-      "u": "https://www.bobaedream.co.kr/view?code=best&No=1047438&vdate=",
-      "nc": 3
-     }
-    },
-    {
-     "t": "서울우유 고소사건 근황",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 3,
-     "issue_np": 3,
-     "issue_nc": 3,
-     "kw": [
-      "고소",
-      "서울우유",
-      "사건"
-     ],
-     "top_post": {
-      "t": "서울우유 고소사건 근황",
-      "u": "https://www.bobaedream.co.kr/view?code=best&No=1047376&vdate=",
       "nc": 3
      }
     }
@@ -889,8 +929,8 @@
      "issue_np": 3,
      "issue_nc": 4,
      "kw": [
-      "외국인",
-      "한국"
+      "한국",
+      "외국인"
      ],
      "top_post": {
       "t": "올해 20대 초반 들어갔습니다.. 제가 외국인이지만 어릴때 한국에 와서 학교도 거의 한국에서 졸...",
@@ -901,29 +941,109 @@
    ]
   },
   {
-   "name": "더쿠",
-   "np": 10,
+   "name": "디시인사이드",
+   "np": 5,
    "nc": 0,
    "topics": [
     {
-     "t": "고경표 음주운전으로 비상걸린게 한두개가 아님",
-     "nsite": 8,
+     "t": "리트 만점자는 역대급 괴수네요 ㄷㄷㄷ",
+     "nsite": 4,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 12,
-     "issue_nc": 130,
+     "issue_np": 7,
+     "issue_nc": 108,
      "kw": [
-      "음주",
-      "고경표",
-      "운전",
-      "비상"
+      "리트",
+      "만점자",
+      "정면",
+      "돌파"
      ],
      "top_post": {
-      "t": "음주운전 고경표, 비상걸린 예능 방송들 모음",
-      "u": "https://theqoo.net/hot/4405427537",
+      "t": "리트만점자 역대급 초강수 ….. ㄷㄷㄷㄷ",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=478570&_dcbest=1&page=1",
       "nc": 0
      }
     },
+    {
+     "t": "서울우유가 고소하고 얻은것",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 6,
+     "issue_nc": 28,
+     "kw": [
+      "우유",
+      "서울",
+      "고소",
+      "소비자"
+     ],
+     "top_post": {
+      "t": "서울우유가 소비자 고소할때 빙그레 근황",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=478639&_dcbest=1&page=1",
+      "nc": 0
+     }
+    },
+    {
+     "t": "젠슨황 사임 이슈 미국인들 반응",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 43,
+     "kw": [
+      "젠슨 황",
+      "사임",
+      "미국인"
+     ],
+     "top_post": {
+      "t": "갤떡정리) 젠슨 황 사임에 왜 닌갤이 불탈까?",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=478432&_dcbest=1&page=1",
+      "nc": 0
+     }
+    },
+    {
+     "t": "왜 리트가 아닌 수능 국어로 검증하냐는 반발에 리트 만점자 반응",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 19,
+     "kw": [
+      "수능",
+      "만점자",
+      "리트",
+      "국어"
+     ],
+     "top_post": {
+      "t": "수능25년 만점자 순혈이야?",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=478592&_dcbest=1&page=1",
+      "nc": 0
+     }
+    },
+    {
+     "t": "싱글벙글 한국 편의점 꿀팁 알려주는 외국인",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 4,
+     "kw": [
+      "한국",
+      "외국인"
+     ],
+     "top_post": {
+      "t": "싱글벙글 한국 편의점 꿀팁 알려주는 외국인",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=478536&_dcbest=1&page=1",
+      "nc": 0
+     }
+    }
+   ]
+  },
+  {
+   "name": "더쿠",
+   "np": 9,
+   "nc": 0,
+   "topics": [
     {
      "t": "중국인이 제안하는 대동아공영권",
      "nsite": 4,
@@ -952,9 +1072,9 @@
      "issue_nc": 52,
      "kw": [
       "패소",
+      "부부",
       "속보",
-      "박수홍",
-      "손배소"
+      "1심"
      ],
      "top_post": {
       "t": "[속보] 빌리프랩·쏘스뮤직, 민희진 상대 25억 손배소 1심 패소",
@@ -989,8 +1109,8 @@
      "issue_np": 3,
      "issue_nc": 16,
      "kw": [
-      "젠슨 황",
-      "대만"
+      "대만",
+      "젠슨 황"
      ],
      "top_post": {
       "t": "젠슨황 억울하다는 대만 사람.twt",
@@ -1003,12 +1123,13 @@
      "nsite": 3,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 12,
+     "issue_np": 4,
+     "issue_nc": 14,
      "kw": [
       "송도",
       "난리",
-      "센트럴파크"
+      "센트럴파크",
+      "실시간"
      ],
      "top_post": {
       "t": "논란중인 송도 센트럴파크 근황",
@@ -1042,8 +1163,8 @@
      "issue_np": 4,
      "issue_nc": 2,
      "kw": [
-      "현지",
       "한국",
+      "현지",
       "음식"
      ],
      "top_post": {
@@ -1051,66 +1172,22 @@
       "u": "https://theqoo.net/hot/4405658766",
       "nc": 0
      }
-    }
-   ]
-  },
-  {
-   "name": "디시인사이드",
-   "np": 3,
-   "nc": 0,
-   "topics": [
-    {
-     "t": "리트 만점자 정면돌파 ㅎㄷㄷㄷㄷ",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 7,
-     "issue_nc": 86,
-     "kw": [
-      "리트",
-      "만점자",
-      "정면",
-      "돌파"
-     ],
-     "top_post": {
-      "t": "리트 만점자의 한 마디 : “ 오래 안 걸릴 거예요”",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=478360&_dcbest=1&page=1",
-      "nc": 0
-     }
     },
     {
-     "t": "왜 리트가 아닌 수능 국어로 검증하냐는 반발에 리트 만점자 반응",
-     "nsite": 3,
+     "t": "빵 고르는데 어떤 아줌마가 앙버터 먹말 고민하길래 그거 맛있어요라고 했는데",
+     "nsite": 2,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 19,
+     "issue_np": 2,
+     "issue_nc": 144,
      "kw": [
-      "수능",
-      "만점자",
-      "국어",
-      "리트"
+      "먹말",
+      "앙버터",
+      "아줌마"
      ],
      "top_post": {
-      "t": "수능25년 만점자 순혈이야?",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=478592&_dcbest=1&page=1",
-      "nc": 0
-     }
-    },
-    {
-     "t": "싱글벙글 한국 편의점 꿀팁 알려주는 외국인",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 4,
-     "kw": [
-      "외국인",
-      "한국"
-     ],
-     "top_post": {
-      "t": "싱글벙글 한국 편의점 꿀팁 알려주는 외국인",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=478536&_dcbest=1&page=1",
+      "t": "빵 고르는데 어떤아줌마가 앙버터 먹말 고민하길래 그거맛잇어요 라고 햇는데",
+      "u": "https://theqoo.net/hot/4404733348",
       "nc": 0
      }
     }
@@ -1118,7 +1195,7 @@
   },
   {
    "name": "루리웹",
-   "np": 19,
+   "np": 15,
    "nc": 0,
    "topics": [
     {
@@ -1141,6 +1218,25 @@
      }
     },
     {
+     "t": "서울우유가 고소하고 얻은것",
+     "nsite": 4,
+     "np_here": 2,
+     "nc_here": 0,
+     "issue_np": 6,
+     "issue_nc": 28,
+     "kw": [
+      "우유",
+      "서울",
+      "고소",
+      "소비자"
+     ],
+     "top_post": {
+      "t": "서울우유가 국민들 고소한 결과 ㅋㅋㅋㅋㅋㅋ",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77381094?m=humor",
+      "nc": 0
+     }
+    },
+    {
      "t": "경제학자들이 가장 우려하는 AI 시대",
      "nsite": 3,
      "np_here": 1,
@@ -1148,14 +1244,32 @@
      "issue_np": 3,
      "issue_nc": 54,
      "kw": [
-      "AI",
       "시대",
+      "AI",
       "경제학자",
       "우려"
      ],
      "top_post": {
       "t": "경제학자들이 가장 우려하는 AI 시대",
       "u": "https://bbs.ruliweb.com/best/board/300143/read/77377427?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "젠슨황 사임 이슈 미국인들 반응",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 43,
+     "kw": [
+      "젠슨 황",
+      "사임",
+      "미국인"
+     ],
+     "top_post": {
+      "t": "젠슨 황 사태 미국인들 반응",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77385205?m=all&t=now",
       "nc": 0
      }
     },
@@ -1169,31 +1283,12 @@
      "kw": [
       "이해",
       "게임",
-      "퀘스트",
-      "RPG"
+      "RPG",
+      "퀘스트"
      ],
      "top_post": {
       "t": "RPG게임하면서 이해안되는 퀘스트",
       "u": "https://bbs.ruliweb.com/best/board/300143/read/77380080?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "서울우유가 고소하고 얻은것",
-     "nsite": 3,
-     "np_here": 2,
-     "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 28,
-     "kw": [
-      "서울",
-      "우유",
-      "고소",
-      "소비자"
-     ],
-     "top_post": {
-      "t": "서울우유가 국민들 고소한 결과 ㅋㅋㅋㅋㅋㅋ",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77381094?m=humor",
       "nc": 0
      }
     },
@@ -1226,8 +1321,8 @@
      "kw": [
       "수능",
       "만점자",
-      "국어",
-      "리트"
+      "리트",
+      "국어"
      ],
      "top_post": {
       "t": "리트 만점자 수능 국어 친다는 건 그게 논란이라 그럼",
@@ -1251,23 +1346,6 @@
       "u": "https://bbs.ruliweb.com/best/board/300143/read/77380987?m=all&t=now",
       "nc": 0
      }
-    },
-    {
-     "t": "솔직히 젠슨황 너무 억울하다는 대만 사람..",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 16,
-     "kw": [
-      "젠슨 황",
-      "대만"
-     ],
-     "top_post": {
-      "t": "솔직히 젠슨황 너무 억울하다는 대만 사람..",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77381039?m=all&t=now",
-      "nc": 0
-     }
     }
    ]
   },
@@ -1277,21 +1355,20 @@
    "nc": 0,
    "topics": [
     {
-     "t": "대마도 마운자로 병원들 대박 나겠네요...",
+     "t": "테슬라 사이버캡 개인판매 시작 발표(다음달부터)",
      "nsite": 3,
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 4,
-     "issue_nc": 14,
+     "issue_nc": 11,
      "kw": [
-      "마운자",
-      "병원",
-      "대마도",
-      "일본"
+      "판매",
+      "테슬라",
+      "사이버"
      ],
      "top_post": {
-      "t": "대마도 마운자로 병원들 대박 나겠네요...",
-      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677362",
+      "t": "테슬라, 사이버캡 개인 판매 전격 시작, 가격 $29,990",
+      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677435",
       "nc": 0
      }
     }
