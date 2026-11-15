@@ -920,6 +920,34 @@ THIN_FORCE_NOINDEX = {'/community/', '/me/', '/plaza/', '/ssul/', '/dev/tag/wind
                       '/vn/pool/', '/play/', '/dev/tag/seo/', '/dev/tag/data/', '/dev/tag/analytics/', '/dev/tag/cloudflare/', '/satire/2026-10-19/'}   # 2026-11-04 사용자 「애드센스 통과·구글 유입」: 본문 120~530자인 빈 화면·태그·풍자 1건을 검색에서 뺌
 
 
+def prune_1116(urls):
+    """2026-11-16 사장님 지시(방향 전환: AI 격동기 분석 + 생활 정보): 방문·검색 근거가 없는 영역을 단계별로 검색 제외한다.
+    prune_1116.json 의 areas 에 든 영역에서 keep_pages_1116.txt(방문·검색 클릭이 있던 주소)와 keep_extra 를 뺀 나머지를 noindex 로 돌리고 사이트맵에서 뺀다.
+    파일은 지우지 않는다(git 이력과 파일이 남아 되돌리기 쉬움). 영역을 늘리려면 json 의 areas 에 접두를 더한다."""
+    pf, kf = os.path.join(HERE, 'prune_1116.json'), os.path.join(HERE, 'keep_pages_1116.txt')
+    if not os.path.exists(pf):
+        return 0
+    cfg = json.load(open(pf, encoding='utf-8'))
+    keep = {l.strip() for l in open(kf, encoding='utf-8') if l.strip()} if os.path.exists(kf) else set()
+    keep |= set(cfg.get('keep_extra', []))
+    keep |= {u for u in urls if u.startswith('/park/') or u.startswith('/ruri/')}
+    n = 0
+    for u in list(urls):
+        if u in keep or u in NOINDEX or not any(u.startswith(a) for a in cfg.get('areas', [])):
+            continue
+        f = os.path.join(ROOT, u.strip('/'), 'index.html')
+        NOINDEX.add(u); n += 1
+        if os.path.exists(f):
+            doc = open(f, encoding='utf-8').read()
+            if 'name="robots" content="noindex' not in doc:
+                _m = '<meta name="robots" content="noindex,follow">'
+                _nd = doc.replace('<link rel="canonical"', _m + '\n<link rel="canonical"', 1)
+                if _nd == doc:
+                    _nd = doc.replace('<head>', '<head>\n' + _m, 1)
+                open(f, 'w', encoding='utf-8', newline='\n').write(_nd)
+    return n
+
+
 def stale_month_noindex(urls):
     """지난 달 모음(/apply/month/YYYY-MM/, /contest/deadline-M/)은 달이 바뀌면 빌드가 더 만들지 않아 파일만 남는다(2026-11-05 품질 감사: 만료된 모음이 색인 대상으로 남아 있었음).
     주소는 지우지 않고 검색 제외만 건다. 그 달이 다시 오면 빌드가 새로 써서 자동으로 풀린다."""
@@ -2917,6 +2945,7 @@ def build():
     except Exception as e:
         print('전자책 PDF 실패(사이트는 계속)', repr(e)[:100])
     print('지난 달 모음 검색 제외', stale_month_noindex(urls))
+    print('방향 전환 정리(검색 제외)', prune_1116(urls))
     global NEW_URLS
     sm = os.path.join(ROOT, 'sitemap.xml')
     SENT = os.path.join(HERE, 'indexnow_sent.json')   # 2026-10-19: 로컬 빌드가 먼저 돌아도 새 주소를 놓치지 않게, 실제로 보낸 주소를 기록해서 비교
