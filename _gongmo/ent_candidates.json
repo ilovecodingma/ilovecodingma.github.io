@@ -1,5 +1,5 @@
 {
- "at": "2026-11-15 12:30",
+ "at": "2026-11-15 13:30",
  "nitems": 518,
  "cands": [
   {
@@ -83,7 +83,7 @@
     "조선일보",
     "한겨레"
    ],
-   "n": 6,
+   "n": 7,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -117,7 +117,7 @@
     "조선일보",
     "헤럴드경제"
    ],
-   "n": 25,
+   "n": 26,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -479,35 +479,68 @@
    ]
   },
   {
-   "kw": "투어",
+   "kw": "번째",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "연합뉴스",
+    "조선일보"
+   ],
+   "n": 8,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "기안84, 세 번째 개인전 '기원'…초기 습작 첫 공개",
+     "link": "https://www.yna.co.kr/view/AKR20261113115100005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "[가요소식] 산울림 50주년 기념 네 번째 앨범",
+     "link": "https://www.yna.co.kr/view/AKR20261112086000005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "[가요소식] 밴드 까망, 내달 두 번째 공연 '당신, 아프지마'",
+     "link": "https://www.yna.co.kr/view/AKR20261110114500005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "[가요소식] 버추얼 걸그룹 이세계아이돌, 두 번째 미니앨범",
+     "link": "https://www.yna.co.kr/view/AKR20261110059500005"
+    }
+   ]
+  },
+  {
+   "kw": "관왕",
    "nsrc": 4,
    "srcs": [
     "SBS",
     "뉴시스",
-    "연합뉴스",
-    "한국경제"
+    "동아일보",
+    "연합뉴스"
    ],
    "n": 7,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "[가요소식] 엑소 카이·세훈, 내년 팬콘 투어 '사일런트 시티'",
-     "link": "https://www.yna.co.kr/view/AKR20261113114200005"
+     "title": "BTS, 美 '2026 키즈 초이스 어워즈' 3관왕",
+     "link": "https://www.yna.co.kr/view/AKR20261115025700005"
     },
     {
      "src": "연합뉴스",
-     "title": "[가요소식] 청각 장애 아이돌 빅오션, 미국·유럽 투어…\"큰 의미\"",
-     "link": "https://www.yna.co.kr/view/AKR20261113060000005"
+     "title": "BTS 3관왕·에스파 2관왕…'MMA2026' 첫날 나란히 대상",
+     "link": "https://www.yna.co.kr/view/AKR20261114049700005"
     },
     {
-     "src": "연합뉴스",
-     "title": "스트레이 키즈, LA·파리 등 공연 추가…31곳으로 투어 확장",
-     "link": "https://www.yna.co.kr/view/AKR20261110050400005"
+     "src": "동아일보",
+     "title": "임영웅, MMA 통산 16관왕 달성…베스트 솔로 남자 3번째 수상",
+     "link": "https://sports.donga.com/ent/article/all/20261115/135025140/1"
     },
     {
-     "src": "한국경제",
-     "title": "빅오션, 미국·유럽에 퍼트린 목소리…두 달간의 투어 마무리",
-     "link": "https://www.hankyung.com/article/202611135484H"
+     "src": "동아일보",
+     "title": "‘MMA 2026’ BTS·리센느·하츠투하츠 3관왕 기염…에스파 신설 대상 수상",
+     "link": "https://sports.donga.com/ent/article/all/20261115/135024984/1"
     }
    ]
   },
@@ -545,39 +578,6 @@
    ]
   },
   {
-   "kw": "관왕",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "동아일보",
-    "연합뉴스"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "BTS 3관왕·에스파 2관왕…'MMA2026' 첫날 나란히 대상",
-     "link": "https://www.yna.co.kr/view/AKR20261114049700005"
-    },
-    {
-     "src": "동아일보",
-     "title": "임영웅, MMA 통산 16관왕 달성…베스트 솔로 남자 3번째 수상",
-     "link": "https://sports.donga.com/ent/article/all/20261115/135025140/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "‘MMA 2026’ BTS·리센느·하츠투하츠 3관왕 기염…에스파 신설 대상 수상",
-     "link": "https://sports.donga.com/ent/article/all/20261115/135024984/1"
-    },
-    {
-     "src": "SBS",
-     "title": "'내 이름은', 바르셀로나 아시안영화제 각본상…우디네·뉴욕 이어 해외 영화제 3관왕",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008841579&plink=RSSLINK&cooper=RSSREADER"
-    }
-   ]
-  },
-  {
    "kw": "민혜연",
    "nsrc": 4,
    "srcs": [
@@ -607,6 +607,39 @@
      "src": "뉴시스",
      "title": "민혜연, 결혼 8년차 임신 \"노력해보자 했는데 바로 찾아왔다\"",
      "link": "https://www.newsis.com/view/NISX20261114_0003868240"
+    }
+   ]
+  },
+  {
+   "kw": "투어",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "연합뉴스",
+    "한국경제"
+   ],
+   "n": 6,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "[가요소식] 엑소 카이·세훈, 내년 팬콘 투어 '사일런트 시티'",
+     "link": "https://www.yna.co.kr/view/AKR20261113114200005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "[가요소식] 청각 장애 아이돌 빅오션, 미국·유럽 투어…\"큰 의미\"",
+     "link": "https://www.yna.co.kr/view/AKR20261113060000005"
+    },
+    {
+     "src": "한국경제",
+     "title": "빅오션, 미국·유럽에 퍼트린 목소리…두 달간의 투어 마무리",
+     "link": "https://www.hankyung.com/article/202611135484H"
+    },
+    {
+     "src": "한국경제",
+     "title": "코요태, 'K-흥' 알리러 세계로…북미 투어 돌입",
+     "link": "https://www.hankyung.com/article/202611095927H"
     }
    ]
   },
@@ -809,6 +842,39 @@
    ]
   },
   {
+   "kw": "운전",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "조선일보",
+    "헤럴드경제"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "김희선 솔직함 “시술 받겠죠?”…만취 운전 고경표 통편집 (놀면 뭐하니?)",
+     "link": "https://sports.donga.com/ent/article/all/20261115/135024941/1"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "고경표 측 ‘만취 운전 사고’ 사과…“잘못 인정하고 깊이 반성”",
+     "link": "https://biz.heraldcorp.com/article/10936970"
+    },
+    {
+     "src": "뉴시스",
+     "title": "고경표 논란…김희철 발언 재조명 \"술 대신 운전 끊어\"",
+     "link": "https://www.newsis.com/view/NISX20261115_0003868411"
+    },
+    {
+     "src": "조선일보",
+     "title": "고경표 논란…김희철 발언 재조명 \"술 대신 운전 끊어\"",
+     "link": "https://www.chosun.com/entertainments/2026/11/15/QAPCP66SB5DCXJZC7GQN5UWNBA/"
+    }
+   ]
+  },
+  {
    "kw": "만취",
    "nsrc": 4,
    "srcs": [
@@ -842,39 +908,6 @@
    ]
   },
   {
-   "kw": "멜론",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "세계일보",
-    "연합뉴스",
-    "한겨레"
-   ],
-   "n": 4,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "머무르 '꿈꾸던…', AI 활용곡 사상 첫 멜론 '톱 100' 1위",
-     "link": "https://www.yna.co.kr/view/AKR20261113157000005"
-    },
-    {
-     "src": "한겨레",
-     "title": "AI가 작곡하고 노래한 음악, ‘멜론 톱100’ 첫 1위 올랐다",
-     "link": "https://www.hani.co.kr/arti/culture/music/1287281.html"
-    },
-    {
-     "src": "세계일보",
-     "title": "사람이 쓴 가사, AI가 부른 노래… 머무르 ‘꿈꾸던…’, 멜론 첫 정상",
-     "link": "https://www.segye.com/newsView/20261113514501"
-    },
-    {
-     "src": "뉴시스",
-     "title": "머무르 '꿈꾸던 어른이 되었나요?', 어떻게 멜론 1위가 되었나요 [AI & 음악]",
-     "link": "https://www.newsis.com/view/NISX20261115_0003868276"
-    }
-   ]
-  },
-  {
    "kw": "꿈꾸던",
    "nsrc": 4,
    "srcs": [
@@ -894,6 +927,39 @@
      "src": "한겨레",
      "title": "‘퇴사할게여’ ‘꿈꾸던 어른이 되었나요?’…불안한 청춘의 노래가 뜬다",
      "link": "https://www.hani.co.kr/arti/culture/music/1287303.html"
+    },
+    {
+     "src": "세계일보",
+     "title": "사람이 쓴 가사, AI가 부른 노래… 머무르 ‘꿈꾸던…’, 멜론 첫 정상",
+     "link": "https://www.segye.com/newsView/20261113514501"
+    },
+    {
+     "src": "뉴시스",
+     "title": "머무르 '꿈꾸던 어른이 되었나요?', 어떻게 멜론 1위가 되었나요 [AI & 음악]",
+     "link": "https://www.newsis.com/view/NISX20261115_0003868276"
+    }
+   ]
+  },
+  {
+   "kw": "멜론",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "세계일보",
+    "연합뉴스",
+    "한겨레"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "머무르 '꿈꾸던…', AI 활용곡 사상 첫 멜론 '톱 100' 1위",
+     "link": "https://www.yna.co.kr/view/AKR20261113157000005"
+    },
+    {
+     "src": "한겨레",
+     "title": "AI가 작곡하고 노래한 음악, ‘멜론 톱100’ 첫 1위 올랐다",
+     "link": "https://www.hani.co.kr/arti/culture/music/1287281.html"
     },
     {
      "src": "세계일보",
@@ -941,6 +1007,39 @@
    ]
   },
   {
+   "kw": "자체",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "연합뉴스",
+    "조선일보",
+    "한국경제"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "평생을 약속한 추영우·김소현…'연애박사' 3.5% 자체 최고 종영",
+     "link": "https://www.yna.co.kr/view/AKR20261111048400005"
+    },
+    {
+     "src": "한국경제",
+     "title": "\"매일 너와 셀러브레이트\"…NCT 드림 그 자체, '부기 우기' [신곡in가요]",
+     "link": "https://www.hankyung.com/article/202611095903H"
+    },
+    {
+     "src": "뉴시스",
+     "title": "트레저 '쇼크' 뮤비, 11일 만에 1억뷰…자체 최단 기록",
+     "link": "https://www.newsis.com/view/NISX20261115_0003868553"
+    },
+    {
+     "src": "조선일보",
+     "title": "트레저, 'SHOCK' MV 11일 만에 1억 뷰 돌파..또 자체 신기록 경신",
+     "link": "https://www.chosun.com/entertainments/music/2026/11/15/HBQTQNJTME4TIMDCHE4WMYLCME/"
+    }
+   ]
+  },
+  {
    "kw": "혐의",
    "nsrc": 4,
    "srcs": [
@@ -970,39 +1069,6 @@
      "src": "뉴시스",
      "title": "김승우 '절도 혐의' 피소 여파…김남주 '170억 삼성동 대저택' 재소환",
      "link": "https://www.newsis.com/view/NISX20261113_0003866501"
-    }
-   ]
-  },
-  {
-   "kw": "운전",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "조선일보",
-    "헤럴드경제"
-   ],
-   "n": 4,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "김희선 솔직함 “시술 받겠죠?”…만취 운전 고경표 통편집 (놀면 뭐하니?)",
-     "link": "https://sports.donga.com/ent/article/all/20261115/135024941/1"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "고경표 측 ‘만취 운전 사고’ 사과…“잘못 인정하고 깊이 반성”",
-     "link": "https://biz.heraldcorp.com/article/10936970"
-    },
-    {
-     "src": "뉴시스",
-     "title": "고경표 논란…김희철 발언 재조명 \"술 대신 운전 끊어\"",
-     "link": "https://www.newsis.com/view/NISX20261115_0003868411"
-    },
-    {
-     "src": "조선일보",
-     "title": "차 없앤지 10년..김희철 \"술 못 끊어서 운전 끊었다\" 고경표 음주운전 파문 속 재주목 [Oh!쎈 이슈]",
-     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/15/MQ3DMZBRGU3WGZTCGY4WENBTHA/"
     }
    ]
   },
@@ -1233,38 +1299,6 @@
    ]
   },
   {
-   "kw": "번째",
-   "nsrc": 3,
-   "srcs": [
-    "동아일보",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 7,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "기안84, 세 번째 개인전 '기원'…초기 습작 첫 공개",
-     "link": "https://www.yna.co.kr/view/AKR20261113115100005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "[가요소식] 산울림 50주년 기념 네 번째 앨범",
-     "link": "https://www.yna.co.kr/view/AKR20261112086000005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "[가요소식] 밴드 까망, 내달 두 번째 공연 '당신, 아프지마'",
-     "link": "https://www.yna.co.kr/view/AKR20261110114500005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "[가요소식] 버추얼 걸그룹 이세계아이돌, 두 번째 미니앨범",
-     "link": "https://www.yna.co.kr/view/AKR20261110059500005"
-    }
-   ]
-  },
-  {
    "kw": "하리수",
    "nsrc": 3,
    "srcs": [
@@ -1293,38 +1327,6 @@
      "src": "뉴시스",
      "title": "하리수 \"중학생 때부터 父와 대화 단절…몰래 성전환 수술\"",
      "link": "https://www.newsis.com/view/NISX20261115_0003868296"
-    }
-   ]
-  },
-  {
-   "kw": "갈등",
-   "nsrc": 3,
-   "srcs": [
-    "SBS",
-    "동아일보",
-    "연합뉴스"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "삼국 갈등 속 격변의 서막…KBS 대하드라마 '문무' 4.7% 출발",
-     "link": "https://www.yna.co.kr/view/AKR20261115017900005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "LG헬로비전 이어 딜라이브도…CJ ENM 채널 송출 갈등 확산",
-     "link": "https://www.yna.co.kr/view/AKR20261112090300017"
-    },
-    {
-     "src": "동아일보",
-     "title": "이현욱, 아버지 김강우와 갈등… 전쟁터 갈 결심 (문무)",
-     "link": "https://sports.donga.com/ent/article/all/20261115/135025208/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "김강우, 이지훈 앞에 무릎 꿇고, 아들 이현욱과도 갈등 (문무)",
-     "link": "https://sports.donga.com/ent/article/all/20261115/135025198/1"
     }
    ]
   }
