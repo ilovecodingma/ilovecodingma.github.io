@@ -930,6 +930,8 @@ def prune_1116(urls):
     cfg = json.load(open(pf, encoding='utf-8'))
     keep = {l.strip() for l in open(kf, encoding='utf-8') if l.strip()} if os.path.exists(kf) else set()
     keep |= set(cfg.get('keep_extra', []))
+    import urllib.parse as _up
+    keep |= {_up.unquote(x) for x in keep} | {_up.quote(x, safe='/') for x in keep}   # 한글 주소는 인코딩 형태가 달라도 같은 주소로 본다
     keep |= {u for u in urls if u.startswith('/park/') or u.startswith('/ruri/')}
     n = 0
     for u in list(urls):
