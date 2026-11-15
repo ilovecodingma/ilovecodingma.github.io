@@ -1,7 +1,42 @@
 {
- "at": "2026-11-15 10:30",
- "nitems": 515,
+ "at": "2026-11-15 11:30",
+ "nitems": 517,
  "cands": [
+  {
+   "kw": "아들",
+   "nsrc": 6,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "세계일보",
+    "연합뉴스",
+    "한겨레",
+    "한국경제"
+   ],
+   "n": 11,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "자폐 아들 위한 '네버랜드'의 꿈…故전경철 작가 마지막 담긴 다큐",
+     "link": "https://www.yna.co.kr/view/AKR20261112186400005"
+    },
+    {
+     "src": "동아일보",
+     "title": "김강우, 이지훈 앞에 무릎 꿇고, 아들 이현욱과도 갈등 (문무)",
+     "link": "https://sports.donga.com/ent/article/all/20261115/135025198/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "장혁, 조성하 아들 살해… ‘문무’ 첫방 미쳤다",
+     "link": "https://sports.donga.com/ent/article/all/20261115/135025038/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "유연석, 아들 거짓 증언까지 이용…악어의 눈물 (라이어)",
+     "link": "https://sports.donga.com/ent/article/all/20261115/135024825/1"
+    }
+   ]
+  },
   {
    "kw": "데뷔",
    "nsrc": 6,
@@ -47,7 +82,7 @@
     "조선일보",
     "헤럴드경제"
    ],
-   "n": 21,
+   "n": 24,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -66,8 +101,8 @@
     },
     {
      "src": "헤럴드경제",
-     "title": "‘음주운전’ 고경표, 지난해 무속인 소름 끼치는 사주 재조명",
-     "link": "https://biz.heraldcorp.com/article/10937240"
+     "title": "‘고경표 음주운전’ 사고 직후 CCTV 공개…청소노동자가 뒤쫓자 내려서 차량 상태 확인",
+     "link": "https://biz.heraldcorp.com/article/10937403"
     }
    ]
   },
@@ -106,74 +141,6 @@
    ]
   },
   {
-   "kw": "아들",
-   "nsrc": 5,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "세계일보",
-    "연합뉴스",
-    "한국경제"
-   ],
-   "n": 10,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "자폐 아들 위한 '네버랜드'의 꿈…故전경철 작가 마지막 담긴 다큐",
-     "link": "https://www.yna.co.kr/view/AKR20261112186400005"
-    },
-    {
-     "src": "동아일보",
-     "title": "김강우, 이지훈 앞에 무릎 꿇고, 아들 이현욱과도 갈등 (문무)",
-     "link": "https://sports.donga.com/ent/article/all/20261115/135025198/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "장혁, 조성하 아들 살해… ‘문무’ 첫방 미쳤다",
-     "link": "https://sports.donga.com/ent/article/all/20261115/135025038/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "유연석, 아들 거짓 증언까지 이용…악어의 눈물 (라이어)",
-     "link": "https://sports.donga.com/ent/article/all/20261115/135024825/1"
-    }
-   ]
-  },
-  {
-   "kw": "에스파",
-   "nsrc": 5,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "연합뉴스",
-    "조선일보",
-    "한국경제"
-   ],
-   "n": 8,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "BTS 3관왕·에스파 2관왕…'MMA2026' 첫날 나란히 대상",
-     "link": "https://www.yna.co.kr/view/AKR20261114049700005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "에스파, 인기 캐럴 '산타 베이비' 재해석…\"즐거움 전하길\"",
-     "link": "https://www.yna.co.kr/view/AKR20261113047000005"
-    },
-    {
-     "src": "동아일보",
-     "title": "‘MMA 2026’ BTS·리센느·하츠투하츠 3관왕 기염…에스파 신설 대상 수상",
-     "link": "https://sports.donga.com/ent/article/all/20261115/135024984/1"
-    },
-    {
-     "src": "한국경제",
-     "title": "BTS·에스파, 'MMA 2026' 첫날 대상…윈터 \"내년도 기대해 달라\" [종합]",
-     "link": "https://www.hankyung.com/article/202611146620H"
-    }
-   ]
-  },
-  {
    "kw": "임신",
    "nsrc": 5,
    "srcs": [
@@ -183,12 +150,17 @@
     "조선일보",
     "헤럴드경제"
    ],
-   "n": 7,
+   "n": 8,
    "headlines": [
     {
      "src": "연합뉴스",
      "title": "주진모·민혜연 부부, 결혼 7년 만에 부모 된다…\"임신 초기\"",
      "link": "https://www.yna.co.kr/view/AKR20261114036000005"
+    },
+    {
+     "src": "동아일보",
+     "title": "‘♥주진모’ 민혜연, 임신 발표 후 바빠진 댓글창…축하에 직접 화답",
+     "link": "https://sports.donga.com/ent/article/all/20261115/135025257/1"
     },
     {
      "src": "동아일보",
@@ -199,11 +171,74 @@
      "src": "헤럴드경제",
      "title": "주진모 53살에 아빠 된다…11살 연하 아내 결혼 7년만에 임신",
      "link": "https://biz.heraldcorp.com/article/10937041"
+    }
+   ]
+  },
+  {
+   "kw": "에이티즈",
+   "nsrc": 5,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "동아일보",
+    "연합뉴스",
+    "한국경제"
+   ],
+   "n": 7,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "에이티즈, '배드' 인기 잇는다…\"가장 높은 곳 그 이상까지\"",
+     "link": "https://www.yna.co.kr/view/AKR20261112112300005"
+    },
+    {
+     "src": "동아일보",
+     "title": "지수, 에이티즈 산vs우영 보더니 “블랙핑크도 저래” (냉부)",
+     "link": "https://sports.donga.com/ent/article/all/20261115/135025052/1"
+    },
+    {
+     "src": "한국경제",
+     "title": "에이티즈, 타이틀곡 'UP' 뮤직비디오 첫 티저 공개",
+     "link": "https://www.hankyung.com/article/202611107743H"
+    },
+    {
+     "src": "한국경제",
+     "title": "싸이커스, 에이티즈와 같은 달 컴백 \"우영 선배, 밥 사주며 응원\"",
+     "link": "https://www.hankyung.com/article/202611020876H"
+    }
+   ]
+  },
+  {
+   "kw": "이유",
+   "nsrc": 5,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "세계일보",
+    "조선일보",
+    "한국경제"
+   ],
+   "n": 7,
+   "headlines": [
+    {
+     "src": "한국경제",
+     "title": "도파민의 시대…김종관표 '작고 사소한' 영화의 존재 이유 [씬터뷰]",
+     "link": "https://www.hankyung.com/article/202611045069H"
+    },
+    {
+     "src": "세계일보",
+     "title": "서인영, 우울증 극복한 이유 있었다…“남자친구 덕분에 다시 일할 수 있어”",
+     "link": "https://www.segye.com/newsView/20261113504788"
+    },
+    {
+     "src": "SBS",
+     "title": "\"에이티니가 우리의 원동력\"…'컴백' 에이티즈, 쉼 없이 달리는 이유",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008843257&plink=RSSLINK&cooper=RSSREADER"
     },
     {
      "src": "뉴시스",
-     "title": "민혜연, 결혼 8년차 임신 \"노력해보자 했는데 바로 찾아왔다\"",
-     "link": "https://www.newsis.com/view/NISX20261114_0003868240"
+     "title": "장윤정, 도경완과 결혼 고민한 이유 \"옷 입은 거 보고\"",
+     "link": "https://www.newsis.com/view/NISX20261114_0003868198"
     }
    ]
   },
@@ -217,12 +252,17 @@
     "조선일보",
     "헤럴드경제"
    ],
-   "n": 5,
+   "n": 6,
    "headlines": [
     {
      "src": "연합뉴스",
      "title": "주진모·민혜연 부부, 결혼 7년 만에 부모 된다…\"임신 초기\"",
      "link": "https://www.yna.co.kr/view/AKR20261114036000005"
+    },
+    {
+     "src": "동아일보",
+     "title": "‘♥주진모’ 민혜연, 임신 발표 후 바빠진 댓글창…축하에 직접 화답",
+     "link": "https://sports.donga.com/ent/article/all/20261115/135025257/1"
     },
     {
      "src": "동아일보",
@@ -233,11 +273,40 @@
      "src": "헤럴드경제",
      "title": "주진모 53살에 아빠 된다…11살 연하 아내 결혼 7년만에 임신",
      "link": "https://biz.heraldcorp.com/article/10937041"
+    }
+   ]
+  },
+  {
+   "kw": "대신",
+   "nsrc": 5,
+   "srcs": [
+    "뉴시스",
+    "세계일보",
+    "연합뉴스",
+    "조선일보",
+    "한겨레"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "복수 대신 신념 지킨 천재 외과의 김지원…'닥터X' 15.2% 종영",
+     "link": "https://www.yna.co.kr/view/AKR20261115015700005"
+    },
+    {
+     "src": "한겨레",
+     "title": "“약속 왜 취소해?” 엄마도 친구한테 못 물었어…6살 아들 울린 그 말 대신 [.txt]",
+     "link": "https://www.hani.co.kr/arti/culture/book/1287346.html"
+    },
+    {
+     "src": "세계일보",
+     "title": "박하나, 김태술과 결혼반지 대신 주식 주고받았다…수익률 75%",
+     "link": "https://www.segye.com/newsView/20261113504988"
     },
     {
      "src": "뉴시스",
-     "title": "'52세' 주진모, 아빠 된다…11세 연하 아내 민혜연 임신",
-     "link": "https://www.newsis.com/view/NISX20261114_0003868088"
+     "title": "고경표 논란…김희철 발언 재조명 \"술 대신 운전 끊어\"",
+     "link": "https://www.newsis.com/view/NISX20261115_0003868411"
     }
    ]
   },
@@ -276,6 +345,40 @@
    ]
   },
   {
+   "kw": "일의",
+   "nsrc": 5,
+   "srcs": [
+    "SBS",
+    "동아일보",
+    "조선일보",
+    "한겨레",
+    "한국경제"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "김유정♥박진영, 서로 본명 불렀다…로맨스 눈빛 (100일의 거짓말)",
+     "link": "https://sports.donga.com/ent/article/all/20261115/135024765/1"
+    },
+    {
+     "src": "한겨레",
+     "title": "살고 죽는 일의 무게를 몰랐던 날의 ‘글쓰기’ [.txt]",
+     "link": "https://www.hani.co.kr/arti/culture/book/1287343.html"
+    },
+    {
+     "src": "한국경제",
+     "title": "\"일본인인 줄 알았다\"…'100일의 거짓말' 본 日 시청자 반응",
+     "link": "https://www.hankyung.com/article/202610281076H"
+    },
+    {
+     "src": "SBS",
+     "title": "여객기 참사로 떠난 딸, AI로 되살아나다…'나의 이방인', 모녀에게 허락된 단 7일의 만남",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008844487&plink=RSSLINK&cooper=RSSREADER"
+    }
+   ]
+  },
+  {
    "kw": "음주운전",
    "nsrc": 4,
    "srcs": [
@@ -284,7 +387,7 @@
     "조선일보",
     "헤럴드경제"
    ],
-   "n": 16,
+   "n": 18,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -298,13 +401,13 @@
     },
     {
      "src": "헤럴드경제",
-     "title": "‘음주운전’ 고경표, 지난해 무속인 소름 끼치는 사주 재조명",
-     "link": "https://biz.heraldcorp.com/article/10937240"
+     "title": "‘고경표 음주운전’ 사고 직후 CCTV 공개…청소노동자가 뒤쫓자 내려서 차량 상태 확인",
+     "link": "https://biz.heraldcorp.com/article/10937403"
     },
     {
-     "src": "뉴시스",
-     "title": "'음주운전' 고경표, '놀면 뭐하니?'서 사라졌다",
-     "link": "https://www.newsis.com/view/NISX20261114_0003868237"
+     "src": "헤럴드경제",
+     "title": "‘음주운전’ 고경표, 지난해 무속인 소름 끼치는 사주 재조명",
+     "link": "https://biz.heraldcorp.com/article/10937240"
     }
    ]
   },
@@ -375,39 +478,6 @@
    ]
   },
   {
-   "kw": "닥터",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "연합뉴스",
-    "조선일보",
-    "헤럴드경제"
-   ],
-   "n": 7,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "복수 대신 신념 지킨 천재 외과의 김지원…'닥터X' 15.2% 종영",
-     "link": "https://www.yna.co.kr/view/AKR20261115015700005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "'꿀알바' 넷플릭스 비영어 쇼 1위…김지원 '닥터X'는 4위",
-     "link": "https://www.yna.co.kr/view/AKR20261111009200005"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "김지원 ‘닥터X’ 촬영장 밖에서도 천사였다…“아역 배우 엄마도 찐팬 됐어요”",
-     "link": "https://biz.heraldcorp.com/article/10936155"
-    },
-    {
-     "src": "SBS",
-     "title": "[스브스夜] '닥터X' 김지원, 손현주의 '정식 의사' 채용 제안에도 '자기 길' 선택···\"가라, 계수정\"",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008846242&plink=RSSLINK&cooper=RSSREADER"
-    }
-   ]
-  },
-  {
    "kw": "투어",
    "nsrc": 4,
    "srcs": [
@@ -441,35 +511,35 @@
    ]
   },
   {
-   "kw": "김지원",
+   "kw": "에스파",
    "nsrc": 4,
    "srcs": [
-    "SBS",
+    "뉴시스",
+    "동아일보",
     "연합뉴스",
-    "조선일보",
-    "헤럴드경제"
+    "한국경제"
    ],
    "n": 6,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "복수 대신 신념 지킨 천재 외과의 김지원…'닥터X' 15.2% 종영",
-     "link": "https://www.yna.co.kr/view/AKR20261115015700005"
+     "title": "BTS 3관왕·에스파 2관왕…'MMA2026' 첫날 나란히 대상",
+     "link": "https://www.yna.co.kr/view/AKR20261114049700005"
     },
     {
      "src": "연합뉴스",
-     "title": "'꿀알바' 넷플릭스 비영어 쇼 1위…김지원 '닥터X'는 4위",
-     "link": "https://www.yna.co.kr/view/AKR20261111009200005"
+     "title": "에스파, 인기 캐럴 '산타 베이비' 재해석…\"즐거움 전하길\"",
+     "link": "https://www.yna.co.kr/view/AKR20261113047000005"
     },
     {
-     "src": "헤럴드경제",
-     "title": "김지원 ‘닥터X’ 촬영장 밖에서도 천사였다…“아역 배우 엄마도 찐팬 됐어요”",
-     "link": "https://biz.heraldcorp.com/article/10936155"
+     "src": "동아일보",
+     "title": "‘MMA 2026’ BTS·리센느·하츠투하츠 3관왕 기염…에스파 신설 대상 수상",
+     "link": "https://sports.donga.com/ent/article/all/20261115/135024984/1"
     },
     {
-     "src": "SBS",
-     "title": "[스브스夜] '닥터X' 김지원, 손현주의 '정식 의사' 채용 제안에도 '자기 길' 선택···\"가라, 계수정\"",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008846242&plink=RSSLINK&cooper=RSSREADER"
+     "src": "한국경제",
+     "title": "BTS·에스파, 'MMA 2026' 첫날 대상…윈터 \"내년도 기대해 달라\" [종합]",
+     "link": "https://www.hankyung.com/article/202611146620H"
     }
    ]
   },
@@ -507,35 +577,35 @@
    ]
   },
   {
-   "kw": "에이티즈",
+   "kw": "민혜연",
    "nsrc": 4,
    "srcs": [
-    "SBS",
+    "뉴시스",
     "동아일보",
     "연합뉴스",
-    "한국경제"
+    "조선일보"
    ],
    "n": 6,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "에이티즈, '배드' 인기 잇는다…\"가장 높은 곳 그 이상까지\"",
-     "link": "https://www.yna.co.kr/view/AKR20261112112300005"
+     "title": "주진모·민혜연 부부, 결혼 7년 만에 부모 된다…\"임신 초기\"",
+     "link": "https://www.yna.co.kr/view/AKR20261114036000005"
     },
     {
      "src": "동아일보",
-     "title": "지수, 에이티즈 산vs우영 보더니 “블랙핑크도 저래” (냉부)",
-     "link": "https://sports.donga.com/ent/article/all/20261115/135025052/1"
+     "title": "‘♥주진모’ 민혜연, 임신 발표 후 바빠진 댓글창…축하에 직접 화답",
+     "link": "https://sports.donga.com/ent/article/all/20261115/135025257/1"
     },
     {
-     "src": "한국경제",
-     "title": "에이티즈, 타이틀곡 'UP' 뮤직비디오 첫 티저 공개",
-     "link": "https://www.hankyung.com/article/202611107743H"
+     "src": "동아일보",
+     "title": "주진모♥민혜연, 결혼 8년 만에 임신",
+     "link": "https://sports.donga.com/ent/article/all/20261114/135024513/1"
     },
     {
-     "src": "한국경제",
-     "title": "싸이커스, 에이티즈와 같은 달 컴백 \"우영 선배, 밥 사주며 응원\"",
-     "link": "https://www.hankyung.com/article/202611020876H"
+     "src": "뉴시스",
+     "title": "민혜연, 결혼 8년차 임신 \"노력해보자 했는데 바로 찾아왔다\"",
+     "link": "https://www.newsis.com/view/NISX20261114_0003868240"
     }
    ]
   },
@@ -573,39 +643,6 @@
    ]
   },
   {
-   "kw": "이유",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "세계일보",
-    "한국경제"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "한국경제",
-     "title": "도파민의 시대…김종관표 '작고 사소한' 영화의 존재 이유 [씬터뷰]",
-     "link": "https://www.hankyung.com/article/202611045069H"
-    },
-    {
-     "src": "세계일보",
-     "title": "서인영, 우울증 극복한 이유 있었다…“남자친구 덕분에 다시 일할 수 있어”",
-     "link": "https://www.segye.com/newsView/20261113504788"
-    },
-    {
-     "src": "SBS",
-     "title": "\"에이티니가 우리의 원동력\"…'컴백' 에이티즈, 쉼 없이 달리는 이유",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008843257&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "뉴시스",
-     "title": "장윤정, 도경완과 결혼 고민한 이유 \"옷 입은 거 보고\"",
-     "link": "https://www.newsis.com/view/NISX20261114_0003868198"
-    }
-   ]
-  },
-  {
    "kw": "대상",
    "nsrc": 4,
    "srcs": [
@@ -635,39 +672,6 @@
      "src": "한국경제",
      "title": "BTS·에스파, 'MMA 2026' 첫날 대상…윈터 \"내년도 기대해 달라\" [종합]",
      "link": "https://www.hankyung.com/article/202611146620H"
-    }
-   ]
-  },
-  {
-   "kw": "민혜연",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "주진모·민혜연 부부, 결혼 7년 만에 부모 된다…\"임신 초기\"",
-     "link": "https://www.yna.co.kr/view/AKR20261114036000005"
-    },
-    {
-     "src": "동아일보",
-     "title": "주진모♥민혜연, 결혼 8년 만에 임신",
-     "link": "https://sports.donga.com/ent/article/all/20261114/135024513/1"
-    },
-    {
-     "src": "뉴시스",
-     "title": "민혜연, 결혼 8년차 임신 \"노력해보자 했는데 바로 찾아왔다\"",
-     "link": "https://www.newsis.com/view/NISX20261114_0003868240"
-    },
-    {
-     "src": "뉴시스",
-     "title": "'52세' 주진모, 아빠 된다…11세 연하 아내 민혜연 임신",
-     "link": "https://www.newsis.com/view/NISX20261114_0003868088"
     }
    ]
   },
@@ -732,7 +736,7 @@
     },
     {
      "src": "조선일보",
-     "title": "김광규, 송도 아파트 팔고 연희동 자가 마련..깔끔한 인테리어 최초 공개(미우새)",
+     "title": "김광규, 송도 아파트 팔고 연희동 자가 마련... 깔끔한 인테리어 최초 공개(미우새)",
      "link": "https://www.chosun.com/entertainments/broadcast/2026/11/15/GIYTAMRZMNSTOYJTGA2TKM3CGI/"
     }
    ]
@@ -903,6 +907,72 @@
    ]
   },
   {
+   "kw": "운전",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "조선일보",
+    "헤럴드경제"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "김희선 솔직함 “시술 받겠죠?”…만취 운전 고경표 통편집 (놀면 뭐하니?)",
+     "link": "https://sports.donga.com/ent/article/all/20261115/135024941/1"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "고경표 측 ‘만취 운전 사고’ 사과…“잘못 인정하고 깊이 반성”",
+     "link": "https://biz.heraldcorp.com/article/10936970"
+    },
+    {
+     "src": "뉴시스",
+     "title": "고경표 논란…김희철 발언 재조명 \"술 대신 운전 끊어\"",
+     "link": "https://www.newsis.com/view/NISX20261115_0003868411"
+    },
+    {
+     "src": "조선일보",
+     "title": "차 없앤지 10년..김희철 \"술 못 끊어서 운전 끊었다\" 고경표 음주운전 파문 속 재주목 [Oh!쎈 이슈]",
+     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/15/MQ3DMZBRGU3WGZTCGY4WENBTHA/"
+    }
+   ]
+  },
+  {
+   "kw": "소름",
+   "nsrc": 4,
+   "srcs": [
+    "동아일보",
+    "조선일보",
+    "한겨레",
+    "헤럴드경제"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "유연석, 아들에 거짓 증언 시키고 눈물까지…소름 돋는 두 얼굴 (라이어)",
+     "link": "https://sports.donga.com/ent/article/all/20261115/135024854/1"
+    },
+    {
+     "src": "한겨레",
+     "title": "소름 돋는 ‘K-공포’의 인문학적 독해 [.txt]",
+     "link": "https://www.hani.co.kr/arti/culture/book/1287139.html"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "‘음주운전’ 고경표, 지난해 무속인 소름 끼치는 사주 재조명",
+     "link": "https://biz.heraldcorp.com/article/10937240"
+    },
+    {
+     "src": "조선일보",
+     "title": "유연석 소름 돋는다…아들까지 이용한 잔인함 ‘최고시청률 4.5%’[美친시청률]",
+     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/15/GFRDCZBXMUZTQZJVMI2GKOJXMM/"
+    }
+   ]
+  },
+  {
    "kw": "아내",
    "nsrc": 4,
    "srcs": [
@@ -932,39 +1002,6 @@
      "src": "조선일보",
      "title": "쓰레기집 만들고 장애 있는 친자식에 농담한 남편..'해녀 아내 오열'(결혼지옥)",
      "link": "https://www.chosun.com/entertainments/broadcast/2026/11/15/MUYTCMJTG43TGMTGMY3DAYRQMU/"
-    }
-   ]
-  },
-  {
-   "kw": "일의",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "동아일보",
-    "한겨레",
-    "한국경제"
-   ],
-   "n": 4,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "김유정♥박진영, 서로 본명 불렀다…로맨스 눈빛 (100일의 거짓말)",
-     "link": "https://sports.donga.com/ent/article/all/20261115/135024765/1"
-    },
-    {
-     "src": "한겨레",
-     "title": "살고 죽는 일의 무게를 몰랐던 날의 ‘글쓰기’ [.txt]",
-     "link": "https://www.hani.co.kr/arti/culture/book/1287343.html"
-    },
-    {
-     "src": "한국경제",
-     "title": "\"일본인인 줄 알았다\"…'100일의 거짓말' 본 日 시청자 반응",
-     "link": "https://www.hankyung.com/article/202610281076H"
-    },
-    {
-     "src": "SBS",
-     "title": "여객기 참사로 떠난 딸, AI로 되살아나다…'나의 이방인', 모녀에게 허락된 단 7일의 만남",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008844487&plink=RSSLINK&cooper=RSSREADER"
     }
    ]
   },
@@ -1001,6 +1038,38 @@
    ]
   },
   {
+   "kw": "닥터",
+   "nsrc": 3,
+   "srcs": [
+    "SBS",
+    "연합뉴스",
+    "조선일보"
+   ],
+   "n": 9,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "복수 대신 신념 지킨 천재 외과의 김지원…'닥터X' 15.2% 종영",
+     "link": "https://www.yna.co.kr/view/AKR20261115015700005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "'꿀알바' 넷플릭스 비영어 쇼 1위…김지원 '닥터X'는 4위",
+     "link": "https://www.yna.co.kr/view/AKR20261111009200005"
+    },
+    {
+     "src": "SBS",
+     "title": "[스브스夜] '닥터X' 김지원, 손현주의 '정식 의사' 채용 제안에도 '자기 길' 선택···\"가라, 계수정\"",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008846242&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "SBS",
+     "title": "전국환 숨겨진 비밀은?…'닥터X' 김우석, 김지원에 \"이번만 실패해 달라\" 눈물 애원",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008844475&plink=RSSLINK&cooper=RSSREADER"
+    }
+   ]
+  },
+  {
    "kw": "문무",
    "nsrc": 3,
    "srcs": [
@@ -1008,7 +1077,7 @@
     "연합뉴스",
     "조선일보"
    ],
-   "n": 6,
+   "n": 7,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -1022,13 +1091,77 @@
     },
     {
      "src": "동아일보",
-     "title": "김강우, 이지훈 앞에 무릎 꿇고, 아들 이현욱과도 갈등 (문무)",
-     "link": "https://sports.donga.com/ent/article/all/20261115/135025198/1"
+     "title": "이현욱, 아버지 김강우와 갈등… 전쟁터 갈 결심 (문무)",
+     "link": "https://sports.donga.com/ent/article/all/20261115/135025208/1"
     },
     {
      "src": "동아일보",
-     "title": "장혁, 조성하 아들 살해… ‘문무’ 첫방 미쳤다",
-     "link": "https://sports.donga.com/ent/article/all/20261115/135025038/1"
+     "title": "김강우, 이지훈 앞에 무릎 꿇고, 아들 이현욱과도 갈등 (문무)",
+     "link": "https://sports.donga.com/ent/article/all/20261115/135025198/1"
+    }
+   ]
+  },
+  {
+   "kw": "김지원",
+   "nsrc": 3,
+   "srcs": [
+    "SBS",
+    "연합뉴스",
+    "조선일보"
+   ],
+   "n": 7,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "복수 대신 신념 지킨 천재 외과의 김지원…'닥터X' 15.2% 종영",
+     "link": "https://www.yna.co.kr/view/AKR20261115015700005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "'꿀알바' 넷플릭스 비영어 쇼 1위…김지원 '닥터X'는 4위",
+     "link": "https://www.yna.co.kr/view/AKR20261111009200005"
+    },
+    {
+     "src": "SBS",
+     "title": "[스브스夜] '닥터X' 김지원, 손현주의 '정식 의사' 채용 제안에도 '자기 길' 선택···\"가라, 계수정\"",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008846242&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "SBS",
+     "title": "\"의사들이 하나의 팀이 된 순간\"…'닥터X' 김지원·이정은·손현주·김우석, 직접 뽑은 명장면 공개",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008842503&plink=RSSLINK&cooper=RSSREADER"
+    }
+   ]
+  },
+  {
+   "kw": "더보이즈",
+   "nsrc": 3,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "연합뉴스"
+   ],
+   "n": 7,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "[가요소식] 더보이즈 에릭, 단독 팬미팅 '꽃보다 손영재'",
+     "link": "https://www.yna.co.kr/view/AKR20261114033600005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "더보이즈, 연말 서울 KSPO돔서 4일간 단독 콘서트",
+     "link": "https://www.yna.co.kr/view/AKR20261113172100005"
+    },
+    {
+     "src": "동아일보",
+     "title": "에릭 첫 팬미팅 성료…더보이즈 현재·큐·제이콥·주연 총출동",
+     "link": "https://sports.donga.com/ent/article/all/20261115/135025273/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "“다시 만나자” 약속 지킨 더보이즈, 9인 체제로 12월 KSPO돔 단독 콘서트",
+     "link": "https://sports.donga.com/ent/article/all/20261115/135025012/1"
     }
    ]
   },
@@ -1040,7 +1173,7 @@
     "연합뉴스",
     "조선일보"
    ],
-   "n": 6,
+   "n": 7,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -1059,8 +1192,104 @@
     },
     {
      "src": "조선일보",
-     "title": "김희선, 50세 동안 미모 비결에 발칵..\"시술 받겠죠?\" 쿨한 고백('놀뭐')[핫피플]",
-     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/15/HBSGCOJUMEZTSOJUGJRDQNBRGU/"
+     "title": "'음주운전' 고경표 통편집 '놀뭐', 논란 직격타 김희선으로 해소할까?",
+     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/15/MJRTCZDBHA3DQN3EMEYTKMBQGM/"
+    }
+   ]
+  },
+  {
+   "kw": "갈등",
+   "nsrc": 3,
+   "srcs": [
+    "SBS",
+    "동아일보",
+    "연합뉴스"
+   ],
+   "n": 6,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "삼국 갈등 속 격변의 서막…KBS 대하드라마 '문무' 4.7% 출발",
+     "link": "https://www.yna.co.kr/view/AKR20261115017900005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "LG헬로비전 이어 딜라이브도…CJ ENM 채널 송출 갈등 확산",
+     "link": "https://www.yna.co.kr/view/AKR20261112090300017"
+    },
+    {
+     "src": "동아일보",
+     "title": "이현욱, 아버지 김강우와 갈등… 전쟁터 갈 결심 (문무)",
+     "link": "https://sports.donga.com/ent/article/all/20261115/135025208/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "김강우, 이지훈 앞에 무릎 꿇고, 아들 이현욱과도 갈등 (문무)",
+     "link": "https://sports.donga.com/ent/article/all/20261115/135025198/1"
+    }
+   ]
+  },
+  {
+   "kw": "베스트",
+   "nsrc": 3,
+   "srcs": [
+    "동아일보",
+    "연합뉴스",
+    "조선일보"
+   ],
+   "n": 6,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "BTS '스윔', 애플뮤직 '2026 베스트 송'…제니·임윤찬도 포함(종합)",
+     "link": "https://www.yna.co.kr/view/AKR20261111113551005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "BTS '스윔', 애플뮤직 '2026 베스트 송'…K팝 그룹 유일",
+     "link": "https://www.yna.co.kr/view/AKR20261111113500005"
+    },
+    {
+     "src": "동아일보",
+     "title": "임영웅, MMA 통산 16관왕 달성…베스트 솔로 남자 3번째 수상",
+     "link": "https://sports.donga.com/ent/article/all/20261115/135025140/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "“혼자서는 어렵겠지 싶었는데…” 최예나, 데뷔 8년 만에 ‘베스트 솔로’ 영예",
+     "link": "https://sports.donga.com/ent/article/all/20261115/135025086/1"
+    }
+   ]
+  },
+  {
+   "kw": "솔로",
+   "nsrc": 3,
+   "srcs": [
+    "동아일보",
+    "조선일보",
+    "한국경제"
+   ],
+   "n": 6,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "임영웅, MMA 통산 16관왕 달성…베스트 솔로 남자 3번째 수상",
+     "link": "https://sports.donga.com/ent/article/all/20261115/135025140/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "“혼자서는 어렵겠지 싶었는데…” 최예나, 데뷔 8년 만에 ‘베스트 솔로’ 영예",
+     "link": "https://sports.donga.com/ent/article/all/20261115/135025086/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "미키광수, ‘나는 솔로’ 18기 광수와 비교에 발끈…“은퇴하겠다”",
+     "link": "https://sports.donga.com/ent/article/all/20261115/135024666/1"
+    },
+    {
+     "src": "한국경제",
+     "title": "아이브 리즈, 못 하는 게 뭐야…MC·솔로 무대·수상까지 '만능캐 입증'",
+     "link": "https://www.hankyung.com/article/202611096058H"
     }
    ]
   },
@@ -1093,230 +1322,6 @@
      "src": "조선일보",
      "title": "\"여장으로 '풍기문란죄' 걸려\" 하리수, 모욕 겪은 母에 불효 고백",
      "link": "https://www.chosun.com/entertainments/broadcast/2026/11/15/GJQTGNJQGY2GKMBYG5SGMNBZGI/"
-    }
-   ]
-  },
-  {
-   "kw": "김희선",
-   "nsrc": 3,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "조선일보"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "김희선 솔직함 “시술 받겠죠?”…만취 운전 고경표 통편집 (놀면 뭐하니?)",
-     "link": "https://sports.donga.com/ent/article/all/20261115/135024941/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "50세 김희선, 동안 비결 묻자 “시술 받겠죠?”…솔직한 답변에 폭소",
-     "link": "https://sports.donga.com/ent/article/all/20261115/135024812/1"
-    },
-    {
-     "src": "뉴시스",
-     "title": "허경환, 김희선 등장에 땀샘 폭발 \"기억하시죠?\"",
-     "link": "https://www.newsis.com/view/NISX20261114_0003868185"
-    },
-    {
-     "src": "조선일보",
-     "title": "김희선, 50세 동안 미모 비결에 발칵..\"시술 받겠죠?\" 쿨한 고백('놀뭐')[핫피플]",
-     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/15/HBSGCOJUMEZTSOJUGJRDQNBRGU/"
-    }
-   ]
-  },
-  {
-   "kw": "갈등",
-   "nsrc": 3,
-   "srcs": [
-    "SBS",
-    "동아일보",
-    "연합뉴스"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "삼국 갈등 속 격변의 서막…KBS 대하드라마 '문무' 4.7% 출발",
-     "link": "https://www.yna.co.kr/view/AKR20261115017900005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "LG헬로비전 이어 딜라이브도…CJ ENM 채널 송출 갈등 확산",
-     "link": "https://www.yna.co.kr/view/AKR20261112090300017"
-    },
-    {
-     "src": "동아일보",
-     "title": "김강우, 이지훈 앞에 무릎 꿇고, 아들 이현욱과도 갈등 (문무)",
-     "link": "https://sports.donga.com/ent/article/all/20261115/135025198/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "안효섭, 홍화연 향한 믿음…장률과 갈등 폭발 (파이널 테이블)",
-     "link": "https://sports.donga.com/ent/article/all/20261115/135024972/1"
-    }
-   ]
-  },
-  {
-   "kw": "더보이즈",
-   "nsrc": 3,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "연합뉴스"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "[가요소식] 더보이즈 에릭, 단독 팬미팅 '꽃보다 손영재'",
-     "link": "https://www.yna.co.kr/view/AKR20261114033600005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "더보이즈, 연말 서울 KSPO돔서 4일간 단독 콘서트",
-     "link": "https://www.yna.co.kr/view/AKR20261113172100005"
-    },
-    {
-     "src": "동아일보",
-     "title": "“다시 만나자” 약속 지킨 더보이즈, 9인 체제로 12월 KSPO돔 단독 콘서트",
-     "link": "https://sports.donga.com/ent/article/all/20261115/135025012/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "더보이즈, 크리스마스에 9인 완전체 콘서트",
-     "link": "https://sports.donga.com/ent/article/all/20261114/135024497/1"
-    }
-   ]
-  },
-  {
-   "kw": "영화제",
-   "nsrc": 3,
-   "srcs": [
-    "SBS",
-    "연합뉴스",
-    "한국경제"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "울산울주세계산악영화제 움프서밋 지원작 4편, 국내 영화제 진출",
-     "link": "https://www.yna.co.kr/view/AKR20261112138100057"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "\"P에게, 언젠가 만날\"…제주4·3영화제 22일 개막",
-     "link": "https://www.yna.co.kr/view/AKR20261110101400056"
-    },
-    {
-     "src": "한국경제",
-     "title": "'ICN 26영화제 × 29초영화제' 대상에 정지현 감독",
-     "link": "https://www.hankyung.com/article/2026110957521"
-    },
-    {
-     "src": "SBS",
-     "title": "연상호·변우석· CJ CGV·넷플릭스까지…서울독립영화제 빛내는 영화계 연대",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008844468&plink=RSSLINK&cooper=RSSREADER"
-    }
-   ]
-  },
-  {
-   "kw": "시간",
-   "nsrc": 3,
-   "srcs": [
-    "SBS",
-    "연합뉴스",
-    "한겨레"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "강동원·김고은의 로맨스 액션 사극…'혼: 삼각의 시간' 제작",
-     "link": "https://www.yna.co.kr/view/AKR20261112044700005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "김수현, 김세의 재판서 4시간 비공개 증언…법정 대면은 안해(종합)",
-     "link": "https://www.yna.co.kr/view/AKR20261111122651004"
-    },
-    {
-     "src": "한겨레",
-     "title": "세찬 고요함, 흠뻑 젖은 뒷모습…다시 ‘피어남’의 시간 [.txt]",
-     "link": "https://www.hani.co.kr/arti/culture/book/1287127.html"
-    },
-    {
-     "src": "SBS",
-     "title": "강동원X김고은, 백년 원수 가문에서 부부로…넷플릭스 '혼: 삼각의 시간' 제작 확정",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008842336&plink=RSSLINK&cooper=RSSREADER"
-    }
-   ]
-  },
-  {
-   "kw": "베스트",
-   "nsrc": 3,
-   "srcs": [
-    "동아일보",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "BTS '스윔', 애플뮤직 '2026 베스트 송'…제니·임윤찬도 포함(종합)",
-     "link": "https://www.yna.co.kr/view/AKR20261111113551005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "BTS '스윔', 애플뮤직 '2026 베스트 송'…K팝 그룹 유일",
-     "link": "https://www.yna.co.kr/view/AKR20261111113500005"
-    },
-    {
-     "src": "동아일보",
-     "title": "임영웅, MMA 통산 16관왕 달성…베스트 솔로 남자 3번째 수상",
-     "link": "https://sports.donga.com/ent/article/all/20261115/135025140/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "“혼자서는 어렵겠지 싶었는데…” 최예나, 데뷔 8년 만에 ‘베스트 솔로’ 영예",
-     "link": "https://sports.donga.com/ent/article/all/20261115/135025086/1"
-    }
-   ]
-  },
-  {
-   "kw": "연속",
-   "nsrc": 3,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "연합뉴스"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "JYP, 美 타임지 선정 '지속가능 성장기업' 3년 연속 한국 1위",
-     "link": "https://www.yna.co.kr/view/AKR20261111123300005"
-    },
-    {
-     "src": "동아일보",
-     "title": "113주 연속 베스트셀러 판타지 원작…‘오리샤의 후예’, 2027년 1월 개봉",
-     "link": "https://sports.donga.com/ent/article/all/20261115/135024782/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "장한별, 母 영상편지에 눈물 펑펑…‘불후’ 2회 연속 우승",
-     "link": "https://sports.donga.com/ent/article/all/20261115/135024733/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "장한별, ‘말레이시아 프린스’의 저력…‘불후’ 2회 연속 우승",
-     "link": "https://sports.donga.com/ent/article/all/20261114/135024520/1"
     }
    ]
   }
