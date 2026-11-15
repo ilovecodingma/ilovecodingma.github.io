@@ -1,15 +1,34 @@
 {
  "date": "2026-11-15",
- "updated": "2026-11-15 11:50",
+ "updated": "2026-11-15 12:50",
  "sites": 13,
- "npost": 2679,
+ "npost": 2683,
  "note": "출처(커뮤니티)별 집계예요. 작성자·연령·성별 정보는 수집하지 않아요. posts 는 이슈별로 뽑힌 일부라 전체 글 수가 아니에요.",
  "sources": [
   {
    "name": "MLB파크",
-   "np": 19,
-   "nc": 1135,
+   "np": 17,
+   "nc": 1234,
    "topics": [
+    {
+     "t": "세무사 수석 '세무냥이' 자수...",
+     "nsite": 7,
+     "np_here": 3,
+     "nc_here": 261,
+     "issue_np": 11,
+     "issue_nc": 282,
+     "kw": [
+      "세무사",
+      "수석",
+      "합격자",
+      "세무냥이"
+     ],
+     "top_post": {
+      "t": "세무사 수석 '세무냥이' 자수...",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611150120122109&m=view",
+      "nc": 193
+     }
+    },
     {
      "t": "고경표 갤러리 입장문 ㄷㄷㄷ",
      "nsite": 4,
@@ -19,32 +38,13 @@
      "issue_nc": 358,
      "kw": [
       "갤러리",
-      "고경표",
-      "입장"
+      "입장",
+      "고경표"
      ],
      "top_post": {
       "t": "고경표 갤러리 입장문 ㄷㄷㄷ",
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611140120107337&m=view",
       "nc": 243
-     }
-    },
-    {
-     "t": "세무사 수석 '세무냥이' 자수...",
-     "nsite": 7,
-     "np_here": 3,
-     "nc_here": 223,
-     "issue_np": 11,
-     "issue_nc": 244,
-     "kw": [
-      "수석",
-      "세무사",
-      "합격자",
-      "세무냥이"
-     ],
-     "top_post": {
-      "t": "세무사 수석 '세무냥이' 자수...",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611150120122109&m=view",
-      "nc": 155
      }
     },
     {
@@ -57,8 +57,8 @@
      "kw": [
       "배우",
       "고경표",
-      "만취",
-      "사고"
+      "음주",
+      "면허"
      ],
      "top_post": {
       "t": "배우 고경표 음주사고…면허취소 만취상태",
@@ -68,16 +68,16 @@
     },
     {
      "t": "세무사 수석합격자 입장 발표 “내가 왜 해명해야 하는지 모르겠다···찍는 것도 기술이다”",
-     "nsite": 5,
+     "nsite": 4,
      "np_here": 1,
      "nc_here": 126,
-     "issue_np": 6,
-     "issue_nc": 177,
+     "issue_np": 5,
+     "issue_nc": 152,
      "kw": [
-      "합격자",
       "수석",
       "세무사",
-      "해명"
+      "합격자",
+      "기술"
      ],
      "top_post": {
       "t": "세무사 수석합격자 입장 발표 “내가 왜 해명해야 하는지 모르겠다···찍는 것도 기술이다”",
@@ -86,15 +86,33 @@
      }
     },
     {
-     "t": "리트 만점자는 역대급 괴수네요 ㄷㄷㄷ",
-     "nsite": 5,
-     "np_here": 3,
-     "nc_here": 108,
-     "issue_np": 8,
-     "issue_nc": 127,
+     "t": "배달 삼겹살 모양이 다 같은 이유라고...",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 115,
+     "issue_np": 3,
+     "issue_nc": 152,
      "kw": [
-      "리트",
+      "배달",
+      "모양",
+      "삼겹살"
+     ],
+     "top_post": {
+      "t": "배달 삼겹살 모양이 다 같은 이유라고...",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611140120111459&m=view",
+      "nc": 115
+     }
+    },
+    {
+     "t": "리트 만점자는 역대급 괴수네요 ㄷㄷㄷ",
+     "nsite": 4,
+     "np_here": 3,
+     "nc_here": 111,
+     "issue_np": 7,
+     "issue_nc": 154,
+     "kw": [
       "만점자",
+      "리트",
       "돌파",
       "정면"
      ],
@@ -105,29 +123,12 @@
      }
     },
     {
-     "t": "세무수석 안경빨 아니었네요",
-     "nsite": 3,
-     "np_here": 2,
-     "nc_here": 69,
-     "issue_np": 5,
-     "issue_nc": 78,
-     "kw": [
-      "수석",
-      "세무"
-     ],
-     "top_post": {
-      "t": "세무수석 안경빨 아니었네요",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611150120122772&m=view",
-      "nc": 58
-     }
-    },
-    {
      "t": "고경표 음주운전으로 비상걸린곳이 한두군데가 아님",
      "nsite": 10,
      "np_here": 1,
      "nc_here": 54,
-     "issue_np": 41,
-     "issue_nc": 471,
+     "issue_np": 37,
+     "issue_nc": 427,
      "kw": [
       "음주",
       "운전",
@@ -141,22 +142,20 @@
      }
     },
     {
-     "t": "이번 세무사시험 397.5점 1문제 틀린게 왜 말이 안되냐하면...",
-     "nsite": 7,
+     "t": "세무사 자수 내용중 골때리는 점",
+     "nsite": 3,
      "np_here": 1,
-     "nc_here": 26,
-     "issue_np": 16,
-     "issue_nc": 166,
+     "nc_here": 33,
+     "issue_np": 4,
+     "issue_nc": 56,
      "kw": [
-      "시험",
       "세무사",
-      "수석",
-      "안경"
+      "자수"
      ],
      "top_post": {
-      "t": "세무사 시험이 왜 이슈인거임?",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611140120099960&m=view",
-      "nc": 26
+      "t": "세무사 자수 내용중 골때리는 점",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611150120123618&m=view",
+      "nc": 33
      }
     }
    ]
@@ -164,7 +163,7 @@
   {
    "name": "개드립",
    "np": 18,
-   "nc": 404,
+   "nc": 430,
    "topics": [
     {
      "t": "북한 개헌 성공, 대한민국을 공식 인정",
@@ -174,9 +173,9 @@
      "issue_np": 4,
      "issue_nc": 70,
      "kw": [
-      "공식",
-      "북한",
       "대한민국",
+      "북한",
+      "인정",
       "개헌"
      ],
      "top_post": {
@@ -190,8 +189,8 @@
      "nsite": 10,
      "np_here": 2,
      "nc_here": 68,
-     "issue_np": 41,
-     "issue_nc": 471,
+     "issue_np": 37,
+     "issue_nc": 427,
      "kw": [
       "음주",
       "운전",
@@ -208,9 +207,9 @@
      "t": "오늘 미국 공항 이착륙 금지 시간 동안 있었던 일",
      "nsite": 3,
      "np_here": 1,
-     "nc_here": 40,
+     "nc_here": 44,
      "issue_np": 3,
-     "issue_nc": 49,
+     "issue_nc": 53,
      "kw": [
       "미국",
       "금지",
@@ -219,7 +218,7 @@
      "top_post": {
       "t": "오늘 미국 공항 이착륙 금지 시간 동안 있었던 일",
       "u": "https://www.dogdrip.net/dogdrip/734827253?sort_index=popular&page=1",
-      "nc": 40
+      "nc": 44
      }
     },
     {
@@ -227,13 +226,13 @@
      "nsite": 6,
      "np_here": 1,
      "nc_here": 37,
-     "issue_np": 16,
-     "issue_nc": 100,
+     "issue_np": 17,
+     "issue_nc": 112,
      "kw": [
-      "안경",
       "AI",
-      "난리",
-      "자수"
+      "안경",
+      "단속",
+      "난리"
      ],
      "top_post": {
       "t": "AI 안경 대책 떴다!!!!",
@@ -249,9 +248,9 @@
      "issue_np": 3,
      "issue_nc": 29,
      "kw": [
+      "브랜드",
       "난리",
       "카다시안",
-      "브랜드",
       "속옷"
      ],
      "top_post": {
@@ -265,11 +264,11 @@
      "nsite": 7,
      "np_here": 1,
      "nc_here": 27,
-     "issue_np": 16,
-     "issue_nc": 166,
+     "issue_np": 17,
+     "issue_nc": 143,
      "kw": [
-      "시험",
       "세무사",
+      "시험",
       "수석",
       "안경"
      ],
@@ -299,21 +298,101 @@
      }
     },
     {
-     "t": "싹 틔워 키운 뒤 반납, '씨앗 도서관' 인기",
+     "t": "초딩이라고 오해받는 28살 애 둘 엄마",
      "nsite": 3,
      "np_here": 1,
      "nc_here": 24,
      "issue_np": 3,
      "issue_nc": 24,
      "kw": [
-      "씨앗",
-      "도서관",
-      "식물",
-      "화제"
+      "오해",
+      "엄마",
+      "초딩"
      ],
      "top_post": {
-      "t": "싹 틔워 키운 뒤 반납, '씨앗 도서관' 인기",
-      "u": "https://www.dogdrip.net/dogdrip/734744147?sort_index=popular&page=1",
+      "t": "초딩이라고 오해받는 28살 애 둘 엄마",
+      "u": "https://www.dogdrip.net/dogdrip/734824570?sort_index=popular&page=1",
+      "nc": 24
+     }
+    }
+   ]
+  },
+  {
+   "name": "인스티즈",
+   "np": 4,
+   "nc": 266,
+   "topics": [
+    {
+     "t": "고경표 갤러리 입장문 ㄷㄷㄷ",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 109,
+     "issue_np": 4,
+     "issue_nc": 358,
+     "kw": [
+      "갤러리",
+      "입장",
+      "고경표"
+     ],
+     "top_post": {
+      "t": "DC 고경표 갤러리 공식 입장문",
+      "u": "https://www.instiz.net/pt/7925879?green=1",
+      "nc": 109
+     }
+    },
+    {
+     "t": "고경표 음주운전으로 비상걸린곳이 한두군데가 아님",
+     "nsite": 10,
+     "np_here": 1,
+     "nc_here": 98,
+     "issue_np": 37,
+     "issue_nc": 427,
+     "kw": [
+      "음주",
+      "운전",
+      "고경표",
+      "비상"
+     ],
+     "top_post": {
+      "t": "고경표 음주운전으로 비상걸린곳이 한두군데가 아님",
+      "u": "https://www.instiz.net/pt/7925890?green=1",
+      "nc": 98
+     }
+    },
+    {
+     "t": "배달 삼겹살 모양이 다 같은 이유라고...",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 35,
+     "issue_np": 3,
+     "issue_nc": 152,
+     "kw": [
+      "배달",
+      "모양",
+      "삼겹살"
+     ],
+     "top_post": {
+      "t": "배달 삼겹살 모양이 다 같은 이유",
+      "u": "https://www.instiz.net/pt/7925599?green=1",
+      "nc": 35
+     }
+    },
+    {
+     "t": "배우 고경표 음주사고…면허취소 만취상태",
+     "nsite": 6,
+     "np_here": 1,
+     "nc_here": 24,
+     "issue_np": 7,
+     "issue_nc": 247,
+     "kw": [
+      "배우",
+      "고경표",
+      "음주",
+      "면허"
+     ],
+     "top_post": {
+      "t": "[단독] 배우 고경표 음주사고…면허취소 만취상태",
+      "u": "https://www.instiz.net/pt/7925770?green=1",
       "nc": 24
      }
     }
@@ -321,16 +400,16 @@
   },
   {
    "name": "클리앙",
-   "np": 11,
-   "nc": 251,
+   "np": 13,
+   "nc": 261,
    "topics": [
     {
      "t": "고경표 음주운전으로 비상걸린곳이 한두군데가 아님",
      "nsite": 10,
      "np_here": 2,
      "nc_here": 113,
-     "issue_np": 41,
-     "issue_nc": 471,
+     "issue_np": 37,
+     "issue_nc": 427,
      "kw": [
       "음주",
       "운전",
@@ -344,15 +423,34 @@
      }
     },
     {
+     "t": "AI 안경 대책 떴다!!!!",
+     "nsite": 6,
+     "np_here": 3,
+     "nc_here": 41,
+     "issue_np": 17,
+     "issue_nc": 112,
+     "kw": [
+      "AI",
+      "안경",
+      "단속",
+      "난리"
+     ],
+     "top_post": {
+      "t": "지금까지 나온 AI안경 단속법 중 가장 신박한...",
+      "u": "https://www.clien.net/service/board/park/19292418?od=T33&po=0&category=0&groupCd=clien_all",
+      "nc": 22
+     }
+    },
+    {
      "t": "이번 세무사시험 397.5점 1문제 틀린게 왜 말이 안되냐하면...",
      "nsite": 7,
      "np_here": 1,
      "nc_here": 37,
-     "issue_np": 16,
-     "issue_nc": 166,
+     "issue_np": 17,
+     "issue_nc": 143,
      "kw": [
-      "시험",
       "세무사",
+      "시험",
       "수석",
       "안경"
      ],
@@ -363,34 +461,15 @@
      }
     },
     {
-     "t": "AI 안경 대책 떴다!!!!",
-     "nsite": 6,
-     "np_here": 2,
-     "nc_here": 32,
-     "issue_np": 16,
-     "issue_nc": 100,
-     "kw": [
-      "안경",
-      "AI",
-      "난리",
-      "자수"
-     ],
-     "top_post": {
-      "t": "지금까지 나온 AI안경 단속법 중 가장 신박한...",
-      "u": "https://www.clien.net/service/board/park/19292418?od=T33&po=0&category=0&groupCd=clien_all",
-      "nc": 22
-     }
-    },
-    {
      "t": "세무사 자수 내용중 골때리는 점",
      "nsite": 3,
      "np_here": 2,
      "nc_here": 23,
      "issue_np": 4,
-     "issue_nc": 49,
+     "issue_nc": 56,
      "kw": [
-      "자수",
-      "세무사"
+      "세무사",
+      "자수"
      ],
      "top_post": {
       "t": "자수한 세무사 수석은 다크나이트 아니었을까요?",
@@ -400,16 +479,16 @@
     },
     {
      "t": "세무사 수석합격자 입장 발표 “내가 왜 해명해야 하는지 모르겠다···찍는 것도 기술이다”",
-     "nsite": 5,
+     "nsite": 4,
      "np_here": 1,
      "nc_here": 21,
-     "issue_np": 6,
-     "issue_nc": 177,
+     "issue_np": 5,
+     "issue_nc": 152,
      "kw": [
-      "합격자",
       "수석",
       "세무사",
-      "해명"
+      "합격자",
+      "기술"
      ],
      "top_post": {
       "t": "세무사 수석합격자 부정행위 인정했습니다",
@@ -418,34 +497,17 @@
      }
     },
     {
-     "t": "테슬라, 사이버캡 개인 판매 전격 시작, 가격 $29,990",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 11,
-     "issue_np": 5,
-     "issue_nc": 11,
-     "kw": [
-      "테슬라",
-      "사이버",
-      "판매"
-     ],
-     "top_post": {
-      "t": "테슬라 사이버캡 개인판매 시작 발표(다음달부터)",
-      "u": "https://www.clien.net/service/board/cm_car/19292121?od=T33&po=0&category=0&groupCd=clien_all",
-      "nc": 11
-     }
-    },
-    {
      "t": "세무사 부정행위에 AI안경을 안썼다는게 반전이긴 하네요..",
      "nsite": 4,
-     "np_here": 1,
-     "nc_here": 9,
-     "issue_np": 5,
-     "issue_nc": 12,
+     "np_here": 2,
+     "nc_here": 13,
+     "issue_np": 9,
+     "issue_nc": 18,
      "kw": [
+      "AI",
       "부정",
       "행위",
-      "AI"
+      "시험"
      ],
      "top_post": {
       "t": "세무사 부정행위에 AI안경을 안썼다는게 반전이긴 하네요..",
@@ -454,17 +516,36 @@
      }
     },
     {
+     "t": "공인시험 주관기관 산업인력공단도 문제죠",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 8,
+     "issue_np": 3,
+     "issue_nc": 11,
+     "kw": [
+      "인력",
+      "산업",
+      "공단",
+      "시험"
+     ],
+     "top_post": {
+      "t": "시험내 ai치팅에 대한 산업인력공단 입장",
+      "u": "https://www.clien.net/service/board/park/19292549?od=T33&po=0&category=0&groupCd=clien_all",
+      "nc": 8
+     }
+    },
+    {
      "t": "세무사 수석합격자 ai안경 산 내역만",
-     "nsite": 4,
+     "nsite": 5,
      "np_here": 1,
      "nc_here": 5,
-     "issue_np": 6,
+     "issue_np": 8,
      "issue_nc": 22,
      "kw": [
       "수석",
-      "합격자",
       "세무사",
-      "시험"
+      "AI",
+      "합격자"
      ],
      "top_post": {
       "t": "[AI 부정행위 자수 AI 요약] 세무사시험 수석 논란 당사자 인터뷰",
@@ -475,83 +556,20 @@
    ]
   },
   {
-   "name": "인스티즈",
-   "np": 3,
-   "nc": 227,
-   "topics": [
-    {
-     "t": "고경표 갤러리 입장문 ㄷㄷㄷ",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 109,
-     "issue_np": 4,
-     "issue_nc": 358,
-     "kw": [
-      "갤러리",
-      "고경표",
-      "입장"
-     ],
-     "top_post": {
-      "t": "DC 고경표 갤러리 공식 입장문",
-      "u": "https://www.instiz.net/pt/7925879?green=1",
-      "nc": 109
-     }
-    },
-    {
-     "t": "고경표 음주운전으로 비상걸린곳이 한두군데가 아님",
-     "nsite": 10,
-     "np_here": 1,
-     "nc_here": 94,
-     "issue_np": 41,
-     "issue_nc": 471,
-     "kw": [
-      "음주",
-      "운전",
-      "고경표",
-      "비상"
-     ],
-     "top_post": {
-      "t": "고경표 음주운전으로 비상걸린곳이 한두군데가 아님",
-      "u": "https://www.instiz.net/pt/7925890?green=1",
-      "nc": 94
-     }
-    },
-    {
-     "t": "배우 고경표 음주사고…면허취소 만취상태",
-     "nsite": 6,
-     "np_here": 1,
-     "nc_here": 24,
-     "issue_np": 7,
-     "issue_nc": 247,
-     "kw": [
-      "배우",
-      "고경표",
-      "만취",
-      "사고"
-     ],
-     "top_post": {
-      "t": "[단독] 배우 고경표 음주사고…면허취소 만취상태",
-      "u": "https://www.instiz.net/pt/7925770?green=1",
-      "nc": 24
-     }
-    }
-   ]
-  },
-  {
    "name": "82쿡",
-   "np": 16,
-   "nc": 164,
+   "np": 17,
+   "nc": 168,
    "topics": [
     {
      "t": "이번 세무사시험 397.5점 1문제 틀린게 왜 말이 안되냐하면...",
      "nsite": 7,
      "np_here": 3,
-     "nc_here": 75,
-     "issue_np": 16,
-     "issue_nc": 166,
+     "nc_here": 53,
+     "issue_np": 17,
+     "issue_nc": 143,
      "kw": [
-      "시험",
       "세무사",
+      "시험",
       "수석",
       "안경"
      ],
@@ -562,77 +580,57 @@
      }
     },
     {
-     "t": "세무사 수석합격자 입장 발표 “내가 왜 해명해야 하는지 모르겠다···찍는 것도 기술이다”",
-     "nsite": 5,
-     "np_here": 1,
-     "nc_here": 25,
-     "issue_np": 6,
-     "issue_nc": 177,
-     "kw": [
-      "합격자",
-      "수석",
-      "세무사",
-      "해명"
-     ],
-     "top_post": {
-      "t": "세무 수석합격자 \"왜 해명해야 하는지 모르겠다&quot..",
-      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4258741&page=1",
-      "nc": 25
-     }
-    },
-    {
-     "t": "AI 안경 대책 떴다!!!!",
-     "nsite": 6,
-     "np_here": 2,
-     "nc_here": 13,
-     "issue_np": 16,
-     "issue_nc": 100,
-     "kw": [
-      "안경",
-      "AI",
-      "난리",
-      "자수"
-     ],
-     "top_post": {
-      "t": "과거제와 ai안경",
-      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4258832&page=1",
-      "nc": 7
-     }
-    },
-    {
      "t": "리트 만점자는 역대급 괴수네요 ㄷㄷㄷ",
-     "nsite": 5,
+     "nsite": 4,
      "np_here": 1,
-     "nc_here": 10,
-     "issue_np": 8,
-     "issue_nc": 127,
+     "nc_here": 37,
+     "issue_np": 7,
+     "issue_nc": 154,
      "kw": [
-      "리트",
       "만점자",
+      "리트",
       "돌파",
       "정면"
      ],
      "top_post": {
       "t": "리트 만점자 새로운 의혹 제기 나왔어요",
       "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4259014&page=1",
-      "nc": 10
+      "nc": 37
      }
     },
     {
-     "t": "세무수석 안경빨 아니었네요",
+     "t": "(ㅇㅎ) 시험경쟁자를 AI 없이 물리친 사람",
      "nsite": 3,
-     "np_here": 1,
-     "nc_here": 9,
+     "np_here": 2,
+     "nc_here": 23,
      "issue_np": 5,
-     "issue_nc": 78,
+     "issue_nc": 26,
      "kw": [
-      "수석",
-      "세무"
+      "시험",
+      "AI",
+      "사건"
      ],
      "top_post": {
-      "t": "세무시험 수석, 나무위키에 벌써 떴어요",
-      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4258746&page=1",
-      "nc": 9
+      "t": "세무 수석 자수 전 돌던 ai 시험 댓글이래요",
+      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4259007&page=1",
+      "nc": 21
+     }
+    },
+    {
+     "t": "세무사 사건으로 지금 가장 짜증나는사람",
+     "nsite": 3,
+     "np_here": 2,
+     "nc_here": 14,
+     "issue_np": 5,
+     "issue_nc": 29,
+     "kw": [
+      "세무사",
+      "사건"
+     ],
+     "top_post": {
+      "t": "세무사 사건을 보며 느낀 점",
+      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4259015&page=1",
+      "nc": 13
      }
     },
     {
@@ -641,7 +639,7 @@
      "np_here": 1,
      "nc_here": 9,
      "issue_np": 3,
-     "issue_nc": 49,
+     "issue_nc": 53,
      "kw": [
       "미국",
       "금지",
@@ -659,10 +657,10 @@
      "np_here": 1,
      "nc_here": 8,
      "issue_np": 11,
-     "issue_nc": 244,
+     "issue_nc": 282,
      "kw": [
-      "수석",
       "세무사",
+      "수석",
       "합격자",
       "세무냥이"
      ],
@@ -670,6 +668,25 @@
       "t": "세무사 수석 자백했잖아요 이분한테 자문해서",
       "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4258982&page=1",
       "nc": 8
+     }
+    },
+    {
+     "t": "AI 안경 대책 떴다!!!!",
+     "nsite": 6,
+     "np_here": 1,
+     "nc_here": 7,
+     "issue_np": 17,
+     "issue_nc": 112,
+     "kw": [
+      "AI",
+      "안경",
+      "단속",
+      "난리"
+     ],
+     "top_post": {
+      "t": "과거제와 ai안경",
+      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4258832&page=1",
+      "nc": 7
      }
     },
     {
@@ -703,13 +720,13 @@
      "nsite": 6,
      "np_here": 1,
      "nc_here": 18,
-     "issue_np": 16,
-     "issue_nc": 100,
+     "issue_np": 17,
+     "issue_nc": 112,
      "kw": [
-      "안경",
       "AI",
-      "난리",
-      "자수"
+      "안경",
+      "단속",
+      "난리"
      ],
      "top_post": {
       "t": "요즘 ai 안경 난리래서 진짜 써봤는데 ㅈ사기네 ㅋㅋ",
@@ -726,8 +743,8 @@
      "issue_nc": 358,
      "kw": [
       "갤러리",
-      "고경표",
-      "입장"
+      "입장",
+      "고경표"
      ],
      "top_post": {
       "t": "고경표 갤러리 입장문 떴다 ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ",
@@ -743,10 +760,10 @@
      "issue_np": 3,
      "issue_nc": 6,
      "kw": [
-      "등록금",
       "소년",
-      "서울대",
-      "합격"
+      "합격",
+      "등록금",
+      "서울대"
      ],
      "top_post": {
       "t": "서울대 합격하고도 등록금 없어 울던 가난한 소년",
@@ -758,21 +775,21 @@
   },
   {
    "name": "보배드림",
-   "np": 11,
-   "nc": 28,
+   "np": 12,
+   "nc": 27,
    "topics": [
     {
      "t": "세무사 수석합격자 입장 발표 “내가 왜 해명해야 하는지 모르겠다···찍는 것도 기술이다”",
-     "nsite": 5,
+     "nsite": 4,
      "np_here": 2,
      "nc_here": 5,
-     "issue_np": 6,
-     "issue_nc": 177,
+     "issue_np": 5,
+     "issue_nc": 152,
      "kw": [
-      "합격자",
       "수석",
       "세무사",
-      "해명"
+      "합격자",
+      "기술"
      ],
      "top_post": {
       "t": "찍는 것도 기술, 세무사 수석 합격자 반박 ㄷㄷㄷ",
@@ -788,8 +805,8 @@
      "issue_np": 4,
      "issue_nc": 5,
      "kw": [
-      "우유",
       "서울",
+      "우유",
       "고소",
       "소비자"
      ],
@@ -808,8 +825,8 @@
      "issue_nc": 14,
      "kw": [
       "송도",
-      "센트럴파크",
       "난리",
+      "센트럴파크",
       "실시간"
      ],
      "top_post": {
@@ -824,10 +841,10 @@
      "np_here": 1,
      "nc_here": 3,
      "issue_np": 11,
-     "issue_nc": 244,
+     "issue_nc": 282,
      "kw": [
-      "수석",
       "세무사",
+      "수석",
       "합격자",
       "세무냥이"
      ],
@@ -847,8 +864,8 @@
      "kw": [
       "배우",
       "고경표",
-      "만취",
-      "사고"
+      "음주",
+      "면허"
      ],
      "top_post": {
       "t": "배우 고경표 음주사고면허취소 만취상태",
@@ -857,40 +874,39 @@
      }
     },
     {
-     "t": "리트 만점자는 역대급 괴수네요 ㄷㄷㄷ",
-     "nsite": 5,
+     "t": "(ㅇㅎ) 시험경쟁자를 AI 없이 물리친 사람",
+     "nsite": 3,
      "np_here": 1,
      "nc_here": 3,
-     "issue_np": 8,
-     "issue_nc": 127,
+     "issue_np": 5,
+     "issue_nc": 26,
      "kw": [
-      "리트",
-      "만점자",
-      "돌파",
-      "정면"
+      "시험",
+      "AI",
+      "사건"
      ],
      "top_post": {
-      "t": "리트 만점자 정면돌파 ㅎㄷㄷ",
-      "u": "https://www.bobaedream.co.kr/view?code=best&No=1047386&vdate=",
+      "t": "(ㅇㅎ) 시험경쟁자를 AI 없이 물리친 사람",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1047530&vdate=",
       "nc": 3
      }
     },
     {
-     "t": "하라는 연기는 안하고 진짜 몰입한 av배우",
+     "t": "배달 삼겹살 모양이 다 같은 이유라고...",
      "nsite": 3,
      "np_here": 1,
-     "nc_here": 3,
+     "nc_here": 2,
      "issue_np": 3,
-     "issue_nc": 3,
+     "issue_nc": 152,
      "kw": [
-      "배우",
-      "연기",
-      "AV"
+      "배달",
+      "모양",
+      "삼겹살"
      ],
      "top_post": {
-      "t": "하라는 연기는 안하고 진짜 몰입한 av배우",
-      "u": "https://www.bobaedream.co.kr/view?code=best&No=1047474&vdate=",
-      "nc": 3
+      "t": "배달 삼겹살 모양이 다 같은 이유",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1047606&vdate=",
+      "nc": 2
      }
     },
     {
@@ -914,7 +930,7 @@
   },
   {
    "name": "네이트판",
-   "np": 3,
+   "np": 4,
    "nc": 8,
    "topics": [
     {
@@ -950,14 +966,7 @@
       "u": "https://pann.nate.com/talk/375717059",
       "nc": 2
      }
-    }
-   ]
-  },
-  {
-   "name": "더쿠",
-   "np": 11,
-   "nc": 0,
-   "topics": [
+    },
     {
      "t": "배우 고경표 음주사고…면허취소 만취상태",
      "nsite": 6,
@@ -968,27 +977,34 @@
      "kw": [
       "배우",
       "고경표",
-      "만취",
-      "사고"
+      "음주",
+      "면허"
      ],
      "top_post": {
-      "t": "[단독] 배우 고경표 음주사고…면허취소 만취상태",
-      "u": "https://theqoo.net/hot/4405416414",
+      "t": "면허취소 수준…\"향후 내려지는 처분 겸허히 받아들일 것\" 배우 고경표씨가 술을 마신 채 운전...",
+      "u": "https://pann.nate.com/talk/375718297",
       "nc": 0
      }
-    },
+    }
+   ]
+  },
+  {
+   "name": "더쿠",
+   "np": 10,
+   "nc": 0,
+   "topics": [
     {
      "t": "세무사 수석합격자 ai안경 산 내역만",
-     "nsite": 4,
+     "nsite": 5,
      "np_here": 2,
      "nc_here": 0,
-     "issue_np": 6,
+     "issue_np": 8,
      "issue_nc": 22,
      "kw": [
       "수석",
-      "합격자",
       "세무사",
-      "시험"
+      "AI",
+      "합격자"
      ],
      "top_post": {
       "t": "세무냥이 Ai 부정행위 자수 (세무사 시험 수석 합격자)",
@@ -999,13 +1015,13 @@
     {
      "t": "수능 국어 풀어서 인증받겠다고 한 2027 LEET 만점자 근황",
      "nsite": 4,
-     "np_here": 1,
+     "np_here": 2,
      "nc_here": 0,
-     "issue_np": 4,
+     "issue_np": 5,
      "issue_nc": 19,
      "kw": [
-      "만점자",
       "수능",
+      "만점자",
       "국어",
       "리트"
      ],
@@ -1023,9 +1039,9 @@
      "issue_np": 3,
      "issue_nc": 29,
      "kw": [
+      "브랜드",
       "난리",
       "카다시안",
-      "브랜드",
       "속옷"
      ],
      "top_post": {
@@ -1044,8 +1060,8 @@
      "kw": [
       "씨앗",
       "도서관",
-      "식물",
-      "화제"
+      "화제",
+      "식물"
      ],
      "top_post": {
       "t": "최근 화제가 되고있는 식물 씨앗 도서관",
@@ -1096,8 +1112,8 @@
      "issue_nc": 14,
      "kw": [
       "송도",
-      "센트럴파크",
       "난리",
+      "센트럴파크",
       "실시간"
      ],
      "top_post": {
@@ -1105,66 +1121,23 @@
       "u": "https://theqoo.net/hot/4405449605",
       "nc": 0
      }
-    }
-   ]
-  },
-  {
-   "name": "SLR클럽",
-   "np": 3,
-   "nc": 0,
-   "topics": [
-    {
-     "t": "세무사 수석합격자 입장 발표 “내가 왜 해명해야 하는지 모르겠다···찍는 것도 기술이다”",
-     "nsite": 5,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 6,
-     "issue_nc": 177,
-     "kw": [
-      "합격자",
-      "수석",
-      "세무사",
-      "해명"
-     ],
-     "top_post": {
-      "t": "세무사 수석 합격자 한원석씨 \"AI 안경? 말도 안 된다\"",
-      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677410",
-      "nc": 0
-     }
     },
     {
-     "t": "고경표 갤러리 입장문 ㄷㄷㄷ",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 358,
-     "kw": [
-      "갤러리",
-      "고경표",
-      "입장"
-     ],
-     "top_post": {
-      "t": "고경표 갤러리 입장문 발표",
-      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677442",
-      "nc": 0
-     }
-    },
-    {
-     "t": "테슬라, 사이버캡 개인 판매 전격 시작, 가격 $29,990",
+     "t": "서울대 합격하고도 등록금 없어 울던 가난한 소년",
      "nsite": 3,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 11,
+     "issue_np": 3,
+     "issue_nc": 6,
      "kw": [
-      "테슬라",
-      "사이버",
-      "판매"
+      "소년",
+      "합격",
+      "등록금",
+      "서울대"
      ],
      "top_post": {
-      "t": "테슬라, 사이버캡 개인 판매 전격 시작, 가격 $29,990",
-      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677435",
+      "t": "서울대 합격하고도 등록금 낼 돈 없어 울던 소년",
+      "u": "https://theqoo.net/hot/4406552761",
       "nc": 0
      }
     }
@@ -1172,25 +1145,25 @@
   },
   {
    "name": "루리웹",
-   "np": 25,
+   "np": 21,
    "nc": 0,
    "topics": [
     {
      "t": "세무사 수석합격자 ai안경 산 내역만",
-     "nsite": 4,
+     "nsite": 5,
      "np_here": 2,
      "nc_here": 0,
-     "issue_np": 6,
+     "issue_np": 8,
      "issue_nc": 22,
      "kw": [
       "수석",
-      "합격자",
       "세무사",
-      "시험"
+      "AI",
+      "합격자"
      ],
      "top_post": {
-      "t": "63기 세무사 시험 수석 합격자",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77393656?m=all&t=now",
+      "t": "세무 수석합격자 경찰 자수. AI부정행위 시인",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77394395?m=all&t=now",
       "nc": 0
      }
     },
@@ -1199,52 +1172,17 @@
      "nsite": 4,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 4,
+     "issue_np": 5,
      "issue_nc": 19,
      "kw": [
-      "만점자",
       "수능",
+      "만점자",
       "국어",
       "리트"
      ],
      "top_post": {
       "t": "리트 만점자 수능 국어 친다는 건 그게 논란이라 그럼",
       "u": "https://bbs.ruliweb.com/best/board/300143/read/77383178?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "세무사 부정행위에 AI안경을 안썼다는게 반전이긴 하네요..",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 12,
-     "kw": [
-      "부정",
-      "행위",
-      "AI"
-     ],
-     "top_post": {
-      "t": "세무냥이가 AI 부정행위를 저지른 경로",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77393402?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "세무수석 안경빨 아니었네요",
-     "nsite": 3,
-     "np_here": 2,
-     "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 78,
-     "kw": [
-      "수석",
-      "세무"
-     ],
-     "top_post": {
-      "t": "세무 수석이 사실상 만점이 맞는 이유",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77382339?m=all&t=now",
       "nc": 0
      }
     },
@@ -1256,9 +1194,9 @@
      "issue_np": 4,
      "issue_nc": 70,
      "kw": [
-      "공식",
-      "북한",
       "대한민국",
+      "북한",
+      "인정",
       "개헌"
      ],
      "top_post": {
@@ -1268,12 +1206,29 @@
      }
     },
     {
+     "t": "세무사 자수 내용중 골때리는 점",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 56,
+     "kw": [
+      "세무사",
+      "자수"
+     ],
+     "top_post": {
+      "t": "세무사 수석 범행 수법, 자수 이유",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77393587?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
      "t": "오늘 미국 공항 이착륙 금지 시간 동안 있었던 일",
      "nsite": 3,
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 3,
-     "issue_nc": 49,
+     "issue_nc": 53,
      "kw": [
       "미국",
       "금지",
@@ -1282,23 +1237,6 @@
      "top_post": {
       "t": "미국 공항들 근황",
       "u": "https://bbs.ruliweb.com/best/board/300143/read/77394708?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "세무사 자수 내용중 골때리는 점",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 49,
-     "kw": [
-      "자수",
-      "세무사"
-     ],
-     "top_post": {
-      "t": "세무사 수석 범행 수법, 자수 이유",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77393587?m=all&t=now",
       "nc": 0
      }
     },
@@ -1320,24 +1258,123 @@
       "u": "https://bbs.ruliweb.com/best/board/300143/read/77392630?m=all&t=now",
       "nc": 0
      }
+    },
+    {
+     "t": "지금 전체 환불 엔딩 터지고 난리가 났다는 킴 카다시안 브랜드 '스킴스' 어드벤트 캘린더...",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 29,
+     "kw": [
+      "브랜드",
+      "난리",
+      "카다시안",
+      "속옷"
+     ],
+     "top_post": {
+      "t": "현재 해외에서 난리난 킴 카다시안 속옷 브랜드",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77390648?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "세무사 사건으로 지금 가장 짜증나는사람",
+     "nsite": 3,
+     "np_here": 2,
+     "nc_here": 0,
+     "issue_np": 5,
+     "issue_nc": 29,
+     "kw": [
+      "세무사",
+      "사건"
+     ],
+     "top_post": {
+      "t": "세무사 사건 가장 안타까운 점",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77388215?m=humor",
+      "nc": 0
+     }
+    }
+   ]
+  },
+  {
+   "name": "SLR클럽",
+   "np": 2,
+   "nc": 0,
+   "topics": [
+    {
+     "t": "고경표 갤러리 입장문 ㄷㄷㄷ",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 358,
+     "kw": [
+      "갤러리",
+      "입장",
+      "고경표"
+     ],
+     "top_post": {
+      "t": "고경표 갤러리 입장문 발표",
+      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677442",
+      "nc": 0
+     }
+    },
+    {
+     "t": "세무사 수석합격자 입장 발표 “내가 왜 해명해야 하는지 모르겠다···찍는 것도 기술이다”",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 5,
+     "issue_nc": 152,
+     "kw": [
+      "수석",
+      "세무사",
+      "합격자",
+      "기술"
+     ],
+     "top_post": {
+      "t": "세무사 수석 합격자 한원석씨 \"AI 안경? 말도 안 된다\"",
+      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677410",
+      "nc": 0
+     }
     }
    ]
   },
   {
    "name": "디시인사이드",
-   "np": 8,
+   "np": 9,
    "nc": 0,
    "topics": [
+    {
+     "t": "리트 만점자는 역대급 괴수네요 ㄷㄷㄷ",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 7,
+     "issue_nc": 154,
+     "kw": [
+      "만점자",
+      "리트",
+      "돌파",
+      "정면"
+     ],
+     "top_post": {
+      "t": "리트만점자 역대급 초강수 ….. ㄷㄷㄷㄷ",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=478570&_dcbest=1&page=1",
+      "nc": 0
+     }
+    },
     {
      "t": "수능 국어 풀어서 인증받겠다고 한 2027 LEET 만점자 근황",
      "nsite": 4,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 4,
+     "issue_np": 5,
      "issue_nc": 19,
      "kw": [
-      "만점자",
       "수능",
+      "만점자",
       "국어",
       "리트"
      ],
@@ -1352,12 +1389,13 @@
      "nsite": 4,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 12,
+     "issue_np": 9,
+     "issue_nc": 18,
      "kw": [
+      "AI",
       "부정",
       "행위",
-      "AI"
+      "시험"
      ],
      "top_post": {
       "t": "싱글벙글 부정행위 하면 또 레전드였던 분..",
@@ -1373,9 +1411,9 @@
      "issue_np": 4,
      "issue_nc": 70,
      "kw": [
-      "공식",
-      "북한",
       "대한민국",
+      "북한",
+      "인정",
       "개헌"
      ],
      "top_post": {
@@ -1427,8 +1465,8 @@
      "issue_np": 4,
      "issue_nc": 5,
      "kw": [
-      "우유",
       "서울",
+      "우유",
       "고소",
       "소비자"
      ],
