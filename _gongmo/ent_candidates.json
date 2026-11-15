@@ -1,6 +1,6 @@
 {
- "at": "2026-11-15 23:30",
- "nitems": 520,
+ "at": "2026-11-16 00:30",
+ "nitems": 504,
  "cands": [
   {
    "kw": "시간",
@@ -74,41 +74,6 @@
    ]
   },
   {
-   "kw": "아들",
-   "nsrc": 6,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "세계일보",
-    "연합뉴스",
-    "한겨레",
-    "한국경제"
-   ],
-   "n": 8,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "자폐 아들 위한 '네버랜드'의 꿈…故전경철 작가 마지막 담긴 다큐",
-     "link": "https://www.yna.co.kr/view/AKR20261112186400005"
-    },
-    {
-     "src": "동아일보",
-     "title": "김강우, 이지훈 앞에 무릎 꿇고, 아들 이현욱과도 갈등 (문무)",
-     "link": "https://sports.donga.com/ent/article/all/20261115/135025198/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "장혁, 조성하 아들 살해… ‘문무’ 첫방 미쳤다",
-     "link": "https://sports.donga.com/ent/article/all/20261115/135025038/1"
-    },
-    {
-     "src": "한겨레",
-     "title": "“약속 왜 취소해?” 엄마도 친구한테 못 물었어…6살 아들 울린 그 말 대신 [.txt]",
-     "link": "https://www.hani.co.kr/arti/culture/book/1287346.html"
-    }
-   ]
-  },
-  {
    "kw": "고경표",
    "nsrc": 5,
    "srcs": [
@@ -118,7 +83,7 @@
     "조선일보",
     "헤럴드경제"
    ],
-   "n": 20,
+   "n": 16,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -152,7 +117,7 @@
     "조선일보",
     "헤럴드경제"
    ],
-   "n": 15,
+   "n": 11,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -186,8 +151,13 @@
     "연합뉴스",
     "한국경제"
    ],
-   "n": 9,
+   "n": 10,
    "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "BTS, MMA2026서 대상 2개 등 6관왕 '최다'…\"늘 멋지게 빛날 것\"",
+     "link": "https://www.yna.co.kr/view/AKR20261115056300005"
+    },
     {
      "src": "연합뉴스",
      "title": "BTS, 美 '2026 키즈 초이스 어워즈' 3관왕",
@@ -202,11 +172,6 @@
      "src": "동아일보",
      "title": "임영웅, MMA 통산 16관왕 달성…베스트 솔로 남자 3번째 수상",
      "link": "https://sports.donga.com/ent/article/all/20261115/135025140/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "‘MMA 2026’ BTS·리센느·하츠투하츠 3관왕 기염…에스파 신설 대상 수상",
-     "link": "https://sports.donga.com/ent/article/all/20261115/135024984/1"
     }
    ]
   },
@@ -220,7 +185,7 @@
     "조선일보",
     "헤럴드경제"
    ],
-   "n": 9,
+   "n": 10,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -239,8 +204,8 @@
     },
     {
      "src": "뉴시스",
-     "title": "'명량' 김한민 감독, 오늘 15세 연하 이소영 명창과 결혼",
-     "link": "https://www.newsis.com/view/NISX20261115_0003868774"
+     "title": "'45세 미혼' 허경환, 결혼 임박? \"여자 없으면 거짓말\"",
+     "link": "https://www.newsis.com/view/NISX20261115_0003868821"
     }
    ]
   },
@@ -288,7 +253,7 @@
     "한국경제",
     "헤럴드경제"
    ],
-   "n": 6,
+   "n": 7,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -309,6 +274,40 @@
      "src": "헤럴드경제",
      "title": "박태환 맞아? 확 달라진 얼굴…볼살 빠지고 아이돌 비주얼",
      "link": "https://biz.heraldcorp.com/article/10937654"
+    }
+   ]
+  },
+  {
+   "kw": "아들",
+   "nsrc": 5,
+   "srcs": [
+    "동아일보",
+    "세계일보",
+    "연합뉴스",
+    "한겨레",
+    "한국경제"
+   ],
+   "n": 7,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "자폐 아들 위한 '네버랜드'의 꿈…故전경철 작가 마지막 담긴 다큐",
+     "link": "https://www.yna.co.kr/view/AKR20261112186400005"
+    },
+    {
+     "src": "동아일보",
+     "title": "김강우, 이지훈 앞에 무릎 꿇고, 아들 이현욱과도 갈등 (문무)",
+     "link": "https://sports.donga.com/ent/article/all/20261115/135025198/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "장혁, 조성하 아들 살해… ‘문무’ 첫방 미쳤다",
+     "link": "https://sports.donga.com/ent/article/all/20261115/135025038/1"
+    },
+    {
+     "src": "한겨레",
+     "title": "“약속 왜 취소해?” 엄마도 친구한테 못 물었어…6살 아들 울린 그 말 대신 [.txt]",
+     "link": "https://www.hani.co.kr/arti/culture/book/1287346.html"
     }
    ]
   },
@@ -381,6 +380,72 @@
    ]
   },
   {
+   "kw": "코르티스",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "연합뉴스",
+    "조선일보",
+    "한국경제"
+   ],
+   "n": 9,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "코르티스, 스포티파이서 누적 15억 스트리밍",
+     "link": "https://www.yna.co.kr/view/AKR20261112077700005"
+    },
+    {
+     "src": "한국경제",
+     "title": "패닉, 'MAMA'서 코르티스·하투하 등과 컬래버…빅뱅은 둘리와 협업",
+     "link": "https://www.hankyung.com/article/202610292863H"
+    },
+    {
+     "src": "뉴시스",
+     "title": "방탄소년단, 'MMA 2026' 대상 포함 6관왕…코르티스·아이브·에스파도 大賞",
+     "link": "https://www.newsis.com/view/NISX20261115_0003868822"
+    },
+    {
+     "src": "조선일보",
+     "title": "[사진]코르티스 마틴, 멜론뮤직어워드 무대 기대해주세요",
+     "link": "https://www.chosun.com/entertainments/entertain_photo/2026/11/15/MIYGIZJZGEZTEOJVMZSGIYTDMI/"
+    }
+   ]
+  },
+  {
+   "kw": "대상",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "연합뉴스",
+    "한국경제"
+   ],
+   "n": 8,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "BTS, MMA2026서 대상 2개 등 6관왕 '최다'…\"늘 멋지게 빛날 것\"",
+     "link": "https://www.yna.co.kr/view/AKR20261115056300005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "BTS 3관왕·에스파 2관왕…'MMA2026' 첫날 나란히 대상",
+     "link": "https://www.yna.co.kr/view/AKR20261114049700005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "피아니스트 지현규, 제33회 KBS한전음악콩쿠르 대상",
+     "link": "https://www.yna.co.kr/view/AKR20261113120500005"
+    },
+    {
+     "src": "동아일보",
+     "title": "‘MMA 2026’ BTS·리센느·하츠투하츠 3관왕 기염…에스파 신설 대상 수상",
+     "link": "https://sports.donga.com/ent/article/all/20261115/135024984/1"
+    }
+   ]
+  },
+  {
    "kw": "활동",
    "nsrc": 4,
    "srcs": [
@@ -410,72 +475,6 @@
      "src": "뉴시스",
      "title": "'음주운전' 고경표, 활동 중단 선언 \"부끄러움 잊지 않겠다\"",
      "link": "https://www.newsis.com/view/NISX20261115_0003868761"
-    }
-   ]
-  },
-  {
-   "kw": "임신",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "연합뉴스",
-    "헤럴드경제"
-   ],
-   "n": 7,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "주진모·민혜연 부부, 결혼 7년 만에 부모 된다…\"임신 초기\"",
-     "link": "https://www.yna.co.kr/view/AKR20261114036000005"
-    },
-    {
-     "src": "동아일보",
-     "title": "‘♥주진모’ 민혜연, 임신 발표 후 바빠진 댓글창…축하에 직접 화답",
-     "link": "https://sports.donga.com/ent/article/all/20261115/135025257/1"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "박슬기, 셋째 임신…“이번이 마지막”",
-     "link": "https://biz.heraldcorp.com/article/10937571"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "주진모 53살에 아빠 된다…11살 연하 아내 결혼 7년만에 임신",
-     "link": "https://biz.heraldcorp.com/article/10937041"
-    }
-   ]
-  },
-  {
-   "kw": "고백",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "세계일보",
-    "조선일보"
-   ],
-   "n": 7,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "권상우, ♥손태영에 “가장 오래 만난 여자”…결혼 18주년 고백",
-     "link": "https://sports.donga.com/ent/article/all/20261115/135026574/1"
-    },
-    {
-     "src": "세계일보",
-     "title": "이상순, 미주신경 기능 저하 후유증 고백…“오래 서 있기 힘들다”",
-     "link": "https://www.segye.com/newsView/20261113503652"
-    },
-    {
-     "src": "뉴시스",
-     "title": "강미나, 한 달 만에 13㎏ 감량 고백…비법은?",
-     "link": "https://www.newsis.com/view/NISX20261115_0003868368"
-    },
-    {
-     "src": "뉴시스",
-     "title": "'강레오♥' 박선주 \"외로움 달래준 남사친 있다\" 고백",
-     "link": "https://www.newsis.com/view/NISX20261115_0003868341"
     }
    ]
   },
@@ -513,6 +512,105 @@
    ]
   },
   {
+   "kw": "임신",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "연합뉴스",
+    "헤럴드경제"
+   ],
+   "n": 6,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "주진모·민혜연 부부, 결혼 7년 만에 부모 된다…\"임신 초기\"",
+     "link": "https://www.yna.co.kr/view/AKR20261114036000005"
+    },
+    {
+     "src": "동아일보",
+     "title": "‘♥주진모’ 민혜연, 임신 발표 후 바빠진 댓글창…축하에 직접 화답",
+     "link": "https://sports.donga.com/ent/article/all/20261115/135025257/1"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "박슬기, 셋째 임신…“이번이 마지막”",
+     "link": "https://biz.heraldcorp.com/article/10937571"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "주진모 53살에 아빠 된다…11살 연하 아내 결혼 7년만에 임신",
+     "link": "https://biz.heraldcorp.com/article/10937041"
+    }
+   ]
+  },
+  {
+   "kw": "고백",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "세계일보",
+    "조선일보"
+   ],
+   "n": 6,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "권상우, ♥손태영에 “가장 오래 만난 여자”…결혼 18주년 고백",
+     "link": "https://sports.donga.com/ent/article/all/20261115/135026574/1"
+    },
+    {
+     "src": "세계일보",
+     "title": "이상순, 미주신경 기능 저하 후유증 고백…“오래 서 있기 힘들다”",
+     "link": "https://www.segye.com/newsView/20261113503652"
+    },
+    {
+     "src": "뉴시스",
+     "title": "강미나, 한 달 만에 13㎏ 감량 고백…비법은?",
+     "link": "https://www.newsis.com/view/NISX20261115_0003868368"
+    },
+    {
+     "src": "뉴시스",
+     "title": "'강레오♥' 박선주 \"외로움 달래준 남사친 있다\" 고백",
+     "link": "https://www.newsis.com/view/NISX20261115_0003868341"
+    }
+   ]
+  },
+  {
+   "kw": "만원",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "세계일보",
+    "헤럴드경제"
+   ],
+   "n": 6,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "박서진, 팬 위해 5000만원 플렉스…떼창에 울컥 (살림남)",
+     "link": "https://sports.donga.com/ent/article/all/20261115/135025250/1"
+    },
+    {
+     "src": "세계일보",
+     "title": "선우용여, 화장품에만 1000만원 넘게 썼다…\"투자해야 예뻐져\"",
+     "link": "https://www.segye.com/newsView/20261113505726"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "‘2200만원 절도?’ 김승우의 반박 “1년간 경제 지원했는데…지원 끊자 고소”",
+     "link": "https://biz.heraldcorp.com/article/10937429"
+    },
+    {
+     "src": "뉴시스",
+     "title": "홍윤화, 280만원 명품백 공개…\"내돈내산\"",
+     "link": "https://www.newsis.com/view/NISX20261115_0003868780"
+    }
+   ]
+  },
+  {
    "kw": "에스파",
    "nsrc": 4,
    "srcs": [
@@ -521,7 +619,7 @@
     "연합뉴스",
     "한국경제"
    ],
-   "n": 6,
+   "n": 5,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -542,72 +640,6 @@
      "src": "한국경제",
      "title": "BTS·에스파, 'MMA 2026' 첫날 대상…윈터 \"내년도 기대해 달라\" [종합]",
      "link": "https://www.hankyung.com/article/202611146620H"
-    }
-   ]
-  },
-  {
-   "kw": "대상",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "연합뉴스",
-    "한국경제"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "BTS 3관왕·에스파 2관왕…'MMA2026' 첫날 나란히 대상",
-     "link": "https://www.yna.co.kr/view/AKR20261114049700005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "피아니스트 지현규, 제33회 KBS한전음악콩쿠르 대상",
-     "link": "https://www.yna.co.kr/view/AKR20261113120500005"
-    },
-    {
-     "src": "동아일보",
-     "title": "‘MMA 2026’ BTS·리센느·하츠투하츠 3관왕 기염…에스파 신설 대상 수상",
-     "link": "https://sports.donga.com/ent/article/all/20261115/135024984/1"
-    },
-    {
-     "src": "한국경제",
-     "title": "BTS 대상 2개 포함 '6관왕'·아이브 눈물의 '5관왕'…MMA 2026 피날레 [종합]",
-     "link": "https://www.hankyung.com/article/202611157614H"
-    }
-   ]
-  },
-  {
-   "kw": "투어",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "연합뉴스",
-    "한국경제"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "[가요소식] 엑소 카이·세훈, 내년 팬콘 투어 '사일런트 시티'",
-     "link": "https://www.yna.co.kr/view/AKR20261113114200005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "[가요소식] 청각 장애 아이돌 빅오션, 미국·유럽 투어…\"큰 의미\"",
-     "link": "https://www.yna.co.kr/view/AKR20261113060000005"
-    },
-    {
-     "src": "한국경제",
-     "title": "빅오션, 미국·유럽에 퍼트린 목소리…두 달간의 투어 마무리",
-     "link": "https://www.hankyung.com/article/202611135484H"
-    },
-    {
-     "src": "한국경제",
-     "title": "코요태, 'K-흥' 알리러 세계로…북미 투어 돌입",
-     "link": "https://www.hankyung.com/article/202611095927H"
     }
    ]
   },
@@ -678,39 +710,6 @@
    ]
   },
   {
-   "kw": "만원",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "세계일보",
-    "헤럴드경제"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "박서진, 팬 위해 5000만원 플렉스…떼창에 울컥 (살림남)",
-     "link": "https://sports.donga.com/ent/article/all/20261115/135025250/1"
-    },
-    {
-     "src": "세계일보",
-     "title": "선우용여, 화장품에만 1000만원 넘게 썼다…\"투자해야 예뻐져\"",
-     "link": "https://www.segye.com/newsView/20261113505726"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "‘2200만원 절도?’ 김승우의 반박 “1년간 경제 지원했는데…지원 끊자 고소”",
-     "link": "https://biz.heraldcorp.com/article/10937429"
-    },
-    {
-     "src": "뉴시스",
-     "title": "김준호, 55만원 '플렉스' \"지민이 꼬실 때 오려던 식당인데\"",
-     "link": "https://www.newsis.com/view/NISX20261115_0003868408"
-    }
-   ]
-  },
-  {
    "kw": "잘못",
    "nsrc": 4,
    "srcs": [
@@ -744,68 +743,35 @@
    ]
   },
   {
-   "kw": "주진모",
+   "kw": "하루",
    "nsrc": 4,
    "srcs": [
     "뉴시스",
-    "동아일보",
+    "세계일보",
     "연합뉴스",
-    "헤럴드경제"
+    "한국경제"
    ],
    "n": 4,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "주진모·민혜연 부부, 결혼 7년 만에 부모 된다…\"임신 초기\"",
-     "link": "https://www.yna.co.kr/view/AKR20261114036000005"
+     "title": "영화관 발길 '뚝'…이달 하루 평균 관객 수 올해 들어 최소",
+     "link": "https://www.yna.co.kr/view/AKR20261114020200005"
     },
     {
-     "src": "동아일보",
-     "title": "‘♥주진모’ 민혜연, 임신 발표 후 바빠진 댓글창…축하에 직접 화답",
-     "link": "https://sports.donga.com/ent/article/all/20261115/135025257/1"
+     "src": "한국경제",
+     "title": "'재혼황후', 하루 앞당겨 오늘 공개…조수원 감독 \"떨리고 기대된다\"",
+     "link": "https://www.hankyung.com/article/202611032434H"
     },
     {
-     "src": "헤럴드경제",
-     "title": "주진모 53살에 아빠 된다…11살 연하 아내 결혼 7년만에 임신",
-     "link": "https://biz.heraldcorp.com/article/10937041"
-    },
-    {
-     "src": "뉴시스",
-     "title": "'52세' 주진모, 아빠 된다…11세 연하 아내 민혜연 임신",
-     "link": "https://www.newsis.com/view/NISX20261114_0003868088"
-    }
-   ]
-  },
-  {
-   "kw": "편집",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 4,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "고경표 음주운전, 방송가에 불똥…'놀뭐'·'식스센스' 등 편집",
-     "link": "https://www.yna.co.kr/view/AKR20261114032600005"
-    },
-    {
-     "src": "동아일보",
-     "title": "음주운전 고경표 활동 쉬면 그만이나 ‘보검 매직컬2’ 편집 골머리 [DA이슈]",
-     "link": "https://sports.donga.com/ent/article/all/20261115/135028635/1"
+     "src": "세계일보",
+     "title": "구재이, 두 아이 엄마 됐다…“드디어 만난 하루”",
+     "link": "https://www.segye.com/newsView/20261113506697"
     },
     {
      "src": "뉴시스",
-     "title": "고경표 음주운전 여파…'놀뭐' 이어 '식스센스'도 편집(종합)",
-     "link": "https://www.newsis.com/view/NISX20261114_0003868084"
-    },
-    {
-     "src": "조선일보",
-     "title": "'음주운전' 고경표, 편집 예고에도 결국 풀샷 등장..목소리 그대로 노출 ('식스센스')",
-     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/15/GA3WIYZTGE4GMODBMJTGEOLFG4/"
+     "title": "강민경, 하루 한 끼 먹는다더니…뉴욕서 뽐낸 군살 없는 '납작배'",
+     "link": "https://www.newsis.com/view/NISX20261111_0003863823"
     }
    ]
   },
@@ -1199,8 +1165,8 @@
     },
     {
      "src": "조선일보",
-     "title": "[사진]아일릿 이로하, 체포하겠어",
-     "link": "https://www.chosun.com/entertainments/entertain_photo/2026/11/15/MRQWIYZXMQYTSN3FMJQTMNLFGU/"
+     "title": "[사진]아일릿 이로하, 당당한 워킹",
+     "link": "https://www.chosun.com/entertainments/entertain_photo/2026/11/15/HA3TKYJVMJQTCNZZMRQTKYLDMM/"
     }
    ]
   },
@@ -1263,8 +1229,8 @@
     },
     {
      "src": "조선일보",
-     "title": "'개코와 이혼' 김수미, 180도 달라진 파격 비주얼...\"겨울에 숏컷하는 사람 나밖에 없나\"",
-     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/15/HEZTCMRSGBTDIOBVGIYTINLGG4/"
+     "title": "윤은혜, 42세 안 믿기는 비주얼..다시 ‘아이돌’ 데뷔해도 될듯",
+     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/16/MM2TCOJYHAZTKMZTMI2WKZJRHA/"
     }
    ]
   },
@@ -1301,34 +1267,66 @@
    ]
   },
   {
-   "kw": "코르티스",
+   "kw": "문무",
    "nsrc": 3,
    "srcs": [
-    "연합뉴스",
-    "조선일보",
-    "한국경제"
+    "뉴시스",
+    "동아일보",
+    "연합뉴스"
    ],
-   "n": 8,
+   "n": 7,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "코르티스, 스포티파이서 누적 15억 스트리밍",
-     "link": "https://www.yna.co.kr/view/AKR20261112077700005"
+     "title": "삼국 갈등 속 격변의 서막…KBS 대하드라마 '문무' 4.7% 출발",
+     "link": "https://www.yna.co.kr/view/AKR20261115017900005"
     },
     {
-     "src": "한국경제",
-     "title": "패닉, 'MAMA'서 코르티스·하투하 등과 컬래버…빅뱅은 둘리와 협업",
-     "link": "https://www.hankyung.com/article/202610292863H"
+     "src": "연합뉴스",
+     "title": "300억 대하사극 KBS '문무'…\"삼국통일 과정, 갈등의 시대 시사점\"",
+     "link": "https://www.yna.co.kr/view/AKR20261112155400005"
     },
     {
-     "src": "조선일보",
-     "title": "[사진]코르티스 마틴, 멜론뮤직어워드 무대 기대해주세요",
-     "link": "https://www.chosun.com/entertainments/entertain_photo/2026/11/15/MIYGIZJZGEZTEOJVMZSGIYTDMI/"
+     "src": "동아일보",
+     "title": "이현욱 목에 칼이…,김강우 뜻 거스르더니 ‘위기’ (문무)",
+     "link": "https://sports.donga.com/ent/article/all/20261115/135026141/1"
     },
     {
-     "src": "조선일보",
-     "title": "[사진]코르티스, 강렬",
-     "link": "https://www.chosun.com/entertainments/entertain_photo/2026/11/15/GJRDGMZQGQ4TSMRYGE3TOOJZMI/"
+     "src": "동아일보",
+     "title": "이현욱, 아버지 김강우와 갈등… 전쟁터 갈 결심 (문무)",
+     "link": "https://sports.donga.com/ent/article/all/20261115/135025208/1"
+    }
+   ]
+  },
+  {
+   "kw": "직접",
+   "nsrc": 3,
+   "srcs": [
+    "SBS",
+    "동아일보",
+    "조선일보"
+   ],
+   "n": 7,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "변우석, 주우재에 직접 연락…“탑백귀 되고파” (우리들의 발라드2)",
+     "link": "https://sports.donga.com/ent/article/all/20261115/135028490/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "‘♥주진모’ 민혜연, 임신 발표 후 바빠진 댓글창…축하에 직접 화답",
+     "link": "https://sports.donga.com/ent/article/all/20261115/135025257/1"
+    },
+    {
+     "src": "SBS",
+     "title": "\"의사들이 하나의 팀이 된 순간\"…'닥터X' 김지원·이정은·손현주·김우석, 직접 뽑은 명장면 공개",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008842503&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "SBS",
+     "title": "김윤석, '추격자' 나홍진 감독과 불화설 직접 해명 \"40시간 촬영은 갈등 때문 아니야\"",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008842294&plink=RSSLINK&cooper=RSSREADER"
     }
    ]
   }
