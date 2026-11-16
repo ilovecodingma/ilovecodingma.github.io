@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-16 08:00",
+ "updated": "2026-11-16 09:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -1768,18 +1768,6 @@
   },
   {
    "query": "코시",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 2000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-05",
-   "expires": "2026-11-19"
-  },
-  {
-   "query": "주가",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -4214,6 +4202,19 @@
    "page": "",
    "registered": "2026-11-10",
    "expires": "2026-11-14"
+  },
+  {
+   "query": "증권사 삼성전자 SK하이닉스 목표주가 반도체 전망 정리, 모건스탠리 하향 vs 노무라 유지",
+   "tier": "단기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 2,
+   "status": "작성",
+   "page": "/issue/semiconductor-brokerage-outlook-summary-1116/",
+   "registered": "2026-11-16",
+   "expires": "2026-11-20"
   },
   {
    "query": "SM엔터 개인정보 유출 사과, 주민번호·계좌번호 유출 항목과 대처 안내 정리",
@@ -12008,6 +12009,19 @@
    "expires": "2026-11-25"
   },
   {
+   "query": "트럼프 행정부 AI 반도체 수출통제와 엔비디아 중국 판매 정책, 내각별 입장과 비판·옹호 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 4,
+   "status": "작성",
+   "page": "/issue/trump-administration-ai-chip-export-policy-critics-1116/",
+   "registered": "2026-11-16",
+   "expires": "2026-11-23"
+  },
+  {
    "query": "온라인 미신고 숙소 중개 금지, 영업신고증 확인 의무 시행일은?",
    "tier": "중기",
    "signal": [
@@ -12809,6 +12823,19 @@
    "expires": "2026-11-15"
   },
   {
+   "query": "미국 AI 반도체 정책 중국 추격 한국 영향 전망 5개 차원 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 3,
+   "status": "작성",
+   "page": "/issue/us-chip-policy-china-korea-impact-multidimensional-1116/",
+   "registered": "2026-11-16",
+   "expires": "2026-11-23"
+  },
+  {
    "query": "2026 롤드컵 4강 대진과 일정은? 젠지 8강 결과, 한국 팀 현황",
    "tier": "중기",
    "signal": [
@@ -13100,6 +13127,19 @@
    "expires": "2026-11-16"
   },
   {
+   "query": "앨리스 황 엔비디아 칩 중국 밀반입 의혹 정리, 제기 주체와 확인 상태",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 2,
+   "status": "작성",
+   "page": "/issue/alice-hwang-nvidia-chip-smuggling-allegation-1116/",
+   "registered": "2026-11-16",
+   "expires": "2026-11-21"
+  },
+  {
    "query": "APBC 야구대표팀 출국, 한국 경기 일정과 주요 선수·감독 정리",
    "tier": "중기",
    "signal": [
@@ -13163,6 +13203,19 @@
    "page": "",
    "registered": "2026-11-03",
    "expires": "2026-11-10"
+  },
+  {
+   "query": "중국 AI 반도체 메모리 추격 전망, 기관별 낙관 비관 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 2,
+   "status": "작성",
+   "page": "/issue/china-ai-chip-catchup-outlook-1116/",
+   "registered": "2026-11-16",
+   "expires": "2026-11-23"
   },
   {
    "query": "드래곤포니 3인 체제 첫 싱글 콜링 백 수록곡과 12월 단독 콘서트 일정",
@@ -13230,6 +13283,19 @@
    "expires": "2026-11-08"
   },
   {
+   "query": "삼성전자 SK하이닉스 HBM 엔비디아 공급 현황 정리, HBM4 베라 루빈 점유율 보도",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 2,
+   "status": "작성",
+   "page": "/issue/hbm-nvidia-supply-samsung-skhynix-1116/",
+   "registered": "2026-11-16",
+   "expires": "2026-11-21"
+  },
+  {
    "query": "고속도로 휴게소 가격 언제 내려가나요? 바뀌는 제도 정리",
    "tier": "중기",
    "signal": [
@@ -13293,6 +13359,19 @@
    "page": "/issue/jeju-second-airport-deep-1104/",
    "registered": "2026-11-04",
    "expires": "2026-11-18"
+  },
+  {
+   "query": "젠슨 황 최근 발언·행사 일정 정리, 베를린 GTC부터 CEO 사임 발표까지",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 2,
+   "status": "작성",
+   "page": "/issue/jensen-huang-recent-remarks-timeline-1116/",
+   "registered": "2026-11-16",
+   "expires": "2026-11-21"
   },
   {
    "query": "종부세 공제 14억 실거주 구분 없이 통일 요구, 청와대 입장과 현행·정부안 비교표",
@@ -13397,6 +13476,19 @@
    "page": "",
    "registered": "2026-11-04",
    "expires": "2026-11-11"
+  },
+  {
+   "query": "반도체 수출 통계 정리 2026: 10월 월간 수출입동향과 11월 초순 수출은 얼마였나",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 2,
+   "status": "작성",
+   "page": "/issue/korea-semiconductor-export-stats-nov-1116/",
+   "registered": "2026-11-16",
+   "expires": "2026-11-21"
   },
   {
    "query": "코스피 5200선 반등 출발 시황과 CPI·순매수·옵션 최종거래일 뜻",
@@ -13539,7 +13631,20 @@
    "status": "작성",
    "page": "/issue/nvidia-jensen-huang-board-probe-1110/",
    "registered": "2026-11-10",
-   "expires": "2026-11-17"
+   "expires": "2026-11-24"
+  },
+  {
+   "query": "엔비디아 3분기 실적 발표 언제? 한국 시간 11월 18일 새벽, 시장 예상치 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 2,
+   "status": "작성",
+   "page": "/issue/nvidia-q3-earnings-date-consensus-1116/",
+   "registered": "2026-11-16",
+   "expires": "2026-11-21"
   },
   {
    "query": "3분기 상용직 증가분 75% 60대 이상, 20대 15분기 연속 감소 연령대별 수치와 근거 자료",
