@@ -1,7 +1,43 @@
 {
- "at": "2026-11-16 18:30",
+ "at": "2026-11-16 19:30",
  "nitems": 518,
  "cands": [
+  {
+   "kw": "결국",
+   "nsrc": 7,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "동아일보",
+    "연합뉴스",
+    "조선일보",
+    "한국경제",
+    "헤럴드경제"
+   ],
+   "n": 9,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "'회생절차' JTBC, 결국 올림픽 중계 포기…\"재무 불확실성 해소\"(종합)",
+     "link": "https://www.yna.co.kr/view/AKR20261116076451005"
+    },
+    {
+     "src": "동아일보",
+     "title": "유동성 위기 직격탄 맞은 JTBC, 결국 올림픽 중계권 반납",
+     "link": "https://sports.donga.com/ent/article/all/20261116/135032040/1"
+    },
+    {
+     "src": "한국경제",
+     "title": "결국 스며들었다…임시완, 화제성 넘어 새 얼굴 증명해낸 '유죄인간' [스타:라이트]",
+     "link": "https://www.hankyung.com/article/202611168180H"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "“많아야 1시간 자” 리센느 미나미 결국…건강 이상에 스케줄 불참",
+     "link": "https://biz.heraldcorp.com/article/10937542"
+    }
+   ]
+  },
   {
    "kw": "활동",
    "nsrc": 7,
@@ -39,7 +75,7 @@
    ]
   },
   {
-   "kw": "고경표",
+   "kw": "음주운전",
    "nsrc": 6,
    "srcs": [
     "SBS",
@@ -74,7 +110,7 @@
    ]
   },
   {
-   "kw": "음주운전",
+   "kw": "고경표",
    "nsrc": 6,
    "srcs": [
     "SBS",
@@ -84,7 +120,7 @@
     "조선일보",
     "헤럴드경제"
    ],
-   "n": 12,
+   "n": 13,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -284,41 +320,6 @@
    ]
   },
   {
-   "kw": "결국",
-   "nsrc": 6,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "동아일보",
-    "조선일보",
-    "한국경제",
-    "헤럴드경제"
-   ],
-   "n": 8,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "유동성 위기 직격탄 맞은 JTBC, 결국 올림픽 중계권 반납",
-     "link": "https://sports.donga.com/ent/article/all/20261116/135032040/1"
-    },
-    {
-     "src": "한국경제",
-     "title": "결국 스며들었다…임시완, 화제성 넘어 새 얼굴 증명해낸 '유죄인간' [스타:라이트]",
-     "link": "https://www.hankyung.com/article/202611168180H"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "“많아야 1시간 자” 리센느 미나미 결국…건강 이상에 스케줄 불참",
-     "link": "https://biz.heraldcorp.com/article/10937542"
-    },
-    {
-     "src": "SBS",
-     "title": "'기업회생 절차' JTBC, 결국 올림픽 중계권 계약 해지…\"재무 불확실성 제거\"",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008847742&plink=RSSLINK&cooper=RSSREADER"
-    }
-   ]
-  },
-  {
    "kw": "임신",
    "nsrc": 6,
    "srcs": [
@@ -354,6 +355,40 @@
    ]
   },
   {
+   "kw": "번째",
+   "nsrc": 5,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "동아일보",
+    "연합뉴스",
+    "조선일보"
+   ],
+   "n": 11,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "기안84, 세 번째 개인전 '기원'…초기 습작 첫 공개",
+     "link": "https://www.yna.co.kr/view/AKR20261113115100005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "[가요소식] 산울림 50주년 기념 네 번째 앨범",
+     "link": "https://www.yna.co.kr/view/AKR20261112086000005"
+    },
+    {
+     "src": "동아일보",
+     "title": "입대 앞두고 팬들 향한 진심…인어미닛 준태, ‘일곱 번째 계절’ 발매",
+     "link": "https://sports.donga.com/ent/article/all/20261116/135032292/1"
+    },
+    {
+     "src": "SBS",
+     "title": "기안84, 내년 1월 3번째 개인전 '기원'…3년 만",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008846903&plink=RSSLINK&cooper=RSSREADER"
+    }
+   ]
+  },
+  {
    "kw": "결혼",
    "nsrc": 5,
    "srcs": [
@@ -363,7 +398,7 @@
     "연합뉴스",
     "조선일보"
    ],
-   "n": 11,
+   "n": 10,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -388,7 +423,41 @@
    ]
   },
   {
-   "kw": "번째",
+   "kw": "혐의",
+   "nsrc": 5,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "세계일보",
+    "조선일보",
+    "한국경제"
+   ],
+   "n": 8,
+   "headlines": [
+    {
+     "src": "한국경제",
+     "title": "[포토] '음주측정 방해 혐의' 배우 이재룡, 첫 공판 법정 출석",
+     "link": "https://www.hankyung.com/article/202611134876i"
+    },
+    {
+     "src": "세계일보",
+     "title": "‘불량연애2’ 출연 앗슨 日서 체포…무허가 유흥업소 운영 혐의",
+     "link": "https://www.segye.com/newsView/20261116509292"
+    },
+    {
+     "src": "SBS",
+     "title": "김승우, 지인 돈 2200만 원 절도 혐의 피소…\"술자리 장난, 계좌이체 통해 반환\" 해명",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008844492&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "뉴시스",
+     "title": "경찰, 민희진 업무상 배임 혐의 송치 \"뉴진스 계약해지 관여\"(종합)",
+     "link": "https://www.newsis.com/view/NISX20261116_0003870342"
+    }
+   ]
+  },
+  {
+   "kw": "올림픽",
    "nsrc": 5,
    "srcs": [
     "SBS",
@@ -397,27 +466,27 @@
     "연합뉴스",
     "조선일보"
    ],
-   "n": 10,
+   "n": 7,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "기안84, 세 번째 개인전 '기원'…초기 습작 첫 공개",
-     "link": "https://www.yna.co.kr/view/AKR20261113115100005"
+     "title": "'회생절차' JTBC, 결국 올림픽 중계 포기…\"재무 불확실성 해소\"(종합)",
+     "link": "https://www.yna.co.kr/view/AKR20261116076451005"
     },
     {
      "src": "연합뉴스",
-     "title": "[가요소식] 산울림 50주년 기념 네 번째 앨범",
-     "link": "https://www.yna.co.kr/view/AKR20261112086000005"
+     "title": "JTBC, 올림픽 중계권 계약 해지…\"재무 불확실성 제거\"",
+     "link": "https://www.yna.co.kr/view/AKR20261116076400005"
     },
     {
      "src": "동아일보",
-     "title": "입대 앞두고 팬들 향한 진심…인어미닛 준태, ‘일곱 번째 계절’ 발매",
-     "link": "https://sports.donga.com/ent/article/all/20261116/135032292/1"
+     "title": "유동성 위기 직격탄 맞은 JTBC, 결국 올림픽 중계권 반납",
+     "link": "https://sports.donga.com/ent/article/all/20261116/135032040/1"
     },
     {
      "src": "SBS",
-     "title": "기안84, 내년 1월 3번째 개인전 '기원'…3년 만",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008846903&plink=RSSLINK&cooper=RSSREADER"
+     "title": "'기업회생 절차' JTBC, 결국 올림픽 중계권 계약 해지…\"재무 불확실성 제거\"",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008847742&plink=RSSLINK&cooper=RSSREADER"
     }
    ]
   },
@@ -452,74 +521,6 @@
      "src": "뉴시스",
      "title": "이호선 교수, 모친상 조의금 1억90만원 기부…자립준비청년 지원",
      "link": "https://www.newsis.com/view/NISX20261116_0003869467"
-    }
-   ]
-  },
-  {
-   "kw": "혐의",
-   "nsrc": 5,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "세계일보",
-    "조선일보",
-    "한국경제"
-   ],
-   "n": 7,
-   "headlines": [
-    {
-     "src": "한국경제",
-     "title": "[포토] '음주측정 방해 혐의' 배우 이재룡, 첫 공판 법정 출석",
-     "link": "https://www.hankyung.com/article/202611134876i"
-    },
-    {
-     "src": "세계일보",
-     "title": "‘불량연애2’ 출연 앗슨 日서 체포…무허가 유흥업소 운영 혐의",
-     "link": "https://www.segye.com/newsView/20261116509292"
-    },
-    {
-     "src": "SBS",
-     "title": "김승우, 지인 돈 2200만 원 절도 혐의 피소…\"술자리 장난, 계좌이체 통해 반환\" 해명",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008844492&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "뉴시스",
-     "title": "경찰, 민희진 업무상 배임 혐의 송치 \"뉴진스 계약해지 관여\"(종합)",
-     "link": "https://www.newsis.com/view/NISX20261116_0003870342"
-    }
-   ]
-  },
-  {
-   "kw": "올림픽",
-   "nsrc": 5,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "동아일보",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "JTBC, 올림픽 중계권 계약 해지…\"재무 불확실성 제거\"",
-     "link": "https://www.yna.co.kr/view/AKR20261116076400005"
-    },
-    {
-     "src": "동아일보",
-     "title": "유동성 위기 직격탄 맞은 JTBC, 결국 올림픽 중계권 반납",
-     "link": "https://sports.donga.com/ent/article/all/20261116/135032040/1"
-    },
-    {
-     "src": "SBS",
-     "title": "'기업회생 절차' JTBC, 결국 올림픽 중계권 계약 해지…\"재무 불확실성 제거\"",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008847742&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "뉴시스",
-     "title": "JTBC, 올림픽 중계권 포기…\"사업 지속 어려워\"",
-     "link": "https://www.newsis.com/view/NISX20261116_0003869754"
     }
    ]
   },
@@ -702,7 +703,7 @@
     "조선일보",
     "헤럴드경제"
    ],
-   "n": 13,
+   "n": 12,
    "headlines": [
     {
      "src": "동아일보",
@@ -756,39 +757,6 @@
      "src": "동아일보",
      "title": "[공식] ‘이숙캠’ 이호선, 모친상 조의금 1억 전액 기부",
      "link": "https://sports.donga.com/ent/article/all/20261116/135032395/1"
-    }
-   ]
-  },
-  {
-   "kw": "연기",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "조선일보",
-    "한국경제"
-   ],
-   "n": 9,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "미미미누, AI 부정행위 논란에 목소리…“수능 연기 검토해야”",
-     "link": "https://sports.donga.com/ent/article/all/20261116/135030669/1"
-    },
-    {
-     "src": "한국경제",
-     "title": "'재혼황후' 이종석, 국내 최초 새 연기 \"제가 좀 새 상…사람으로 변할 때 나체로 등장\"",
-     "link": "https://www.hankyung.com/article/202611032589H"
-    },
-    {
-     "src": "뉴시스",
-     "title": "백지연, '리트 최초 만점자' 인터뷰 공개 연기…\"신중한 검토 필요\"",
-     "link": "https://www.newsis.com/view/NISX20261116_0003870148"
-    },
-    {
-     "src": "뉴시스",
-     "title": "김강우, 육아 위해 1년 연기 중단 \"일 안 들어온다고 했다\"",
-     "link": "https://www.newsis.com/view/NISX20261116_0003869242"
     }
    ]
   },
@@ -859,6 +827,39 @@
    ]
   },
   {
+   "kw": "연기",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "조선일보",
+    "한국경제"
+   ],
+   "n": 8,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "미미미누, AI 부정행위 논란에 목소리…“수능 연기 검토해야”",
+     "link": "https://sports.donga.com/ent/article/all/20261116/135030669/1"
+    },
+    {
+     "src": "한국경제",
+     "title": "'재혼황후' 이종석, 국내 최초 새 연기 \"제가 좀 새 상…사람으로 변할 때 나체로 등장\"",
+     "link": "https://www.hankyung.com/article/202611032589H"
+    },
+    {
+     "src": "뉴시스",
+     "title": "백지연, '리트 최초 만점자' 인터뷰 공개 연기…\"신중한 검토 필요\"",
+     "link": "https://www.newsis.com/view/NISX20261116_0003870148"
+    },
+    {
+     "src": "뉴시스",
+     "title": "김강우, 육아 위해 1년 연기 중단 \"일 안 들어온다고 했다\"",
+     "link": "https://www.newsis.com/view/NISX20261116_0003869242"
+    }
+   ]
+  },
+  {
    "kw": "블랙핑크",
    "nsrc": 4,
    "srcs": [
@@ -921,6 +922,39 @@
      "src": "한국경제",
      "title": "투어스 \"스스로 못 믿는 순간도…이름 불러주는 팬 있어 용기 생기죠\" [인터뷰+]",
      "link": "https://www.hankyung.com/article/202611146527H"
+    }
+   ]
+  },
+  {
+   "kw": "뉴진스",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "연합뉴스",
+    "조선일보"
+   ],
+   "n": 7,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "[가요소식] 뉴진스 데뷔곡 '어텐션', 스포티파이 6억 스트리밍 돌파",
+     "link": "https://www.yna.co.kr/view/AKR20261116060100005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "빌리프랩, '아일릿이 뉴진스 표절' 주장 민희진 상대 손배소 패소",
+     "link": "https://www.yna.co.kr/view/AKR20261113166600004"
+    },
+    {
+     "src": "동아일보",
+     "title": "민희진, ‘뉴진스 계약 해지 개입’ 업무상 배임 송치",
+     "link": "https://sports.donga.com/ent/article/all/20261116/135033376/1"
+    },
+    {
+     "src": "뉴시스",
+     "title": "경찰, 민희진 업무상 배임 혐의 송치 \"뉴진스 계약해지 관여\"(종합)",
+     "link": "https://www.newsis.com/view/NISX20261116_0003870342"
     }
    ]
   },
@@ -1024,35 +1058,35 @@
    ]
   },
   {
-   "kw": "일의",
+   "kw": "민희진",
    "nsrc": 4,
    "srcs": [
-    "SBS",
+    "뉴시스",
     "동아일보",
-    "조선일보",
-    "한겨레"
+    "연합뉴스",
+    "조선일보"
    ],
    "n": 7,
    "headlines": [
     {
+     "src": "연합뉴스",
+     "title": "빌리프랩·쏘스뮤직, 민희진 상대 손배소 1심서 패소(종합)",
+     "link": "https://www.yna.co.kr/view/AKR20261113166651004"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "빌리프랩, '아일릿이 뉴진스 표절' 주장 민희진 상대 손배소 패소",
+     "link": "https://www.yna.co.kr/view/AKR20261113166600004"
+    },
+    {
      "src": "동아일보",
-     "title": "박진영, 김유정에 총 겨눴다…진선규 관저 폭발 (100일의 거짓말)",
-     "link": "https://sports.donga.com/ent/article/all/20261116/135032583/1"
+     "title": "민희진, ‘뉴진스 계약 해지 개입’ 업무상 배임 송치",
+     "link": "https://sports.donga.com/ent/article/all/20261116/135033376/1"
     },
     {
-     "src": "한겨레",
-     "title": "살고 죽는 일의 무게를 몰랐던 날의 ‘글쓰기’ [.txt]",
-     "link": "https://www.hani.co.kr/arti/culture/book/1287343.html"
-    },
-    {
-     "src": "SBS",
-     "title": "여객기 참사로 떠난 딸, AI로 되살아나다…'나의 이방인', 모녀에게 허락된 단 7일의 만남",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008844487&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "조선일보",
-     "title": "김유정·박진영, 이름 부르던 사이에서 총구 대치까지…‘100일의 거짓말’ 뒤집은 두 얼굴",
-     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/16/MI3GGZTCHBSDKOBUMFSWKOBQGQ/"
+     "src": "뉴시스",
+     "title": "경찰, 민희진 업무상 배임 혐의 송치 \"뉴진스 계약해지 관여\"(종합)",
+     "link": "https://www.newsis.com/view/NISX20261116_0003870342"
     }
    ]
   },
@@ -1152,6 +1186,39 @@
      "src": "뉴시스",
      "title": "방탄소년단, 'MMA 2026' 대상 포함 6관왕…코르티스·아이브·에스파도 大賞",
      "link": "https://www.newsis.com/view/NISX20261115_0003868822"
+    }
+   ]
+  },
+  {
+   "kw": "일의",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "동아일보",
+    "조선일보",
+    "한겨레"
+   ],
+   "n": 6,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "박진영, 김유정에 총 겨눴다…진선규 관저 폭발 (100일의 거짓말)",
+     "link": "https://sports.donga.com/ent/article/all/20261116/135032583/1"
+    },
+    {
+     "src": "한겨레",
+     "title": "살고 죽는 일의 무게를 몰랐던 날의 ‘글쓰기’ [.txt]",
+     "link": "https://www.hani.co.kr/arti/culture/book/1287343.html"
+    },
+    {
+     "src": "SBS",
+     "title": "여객기 참사로 떠난 딸, AI로 되살아나다…'나의 이방인', 모녀에게 허락된 단 7일의 만남",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008844487&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "조선일보",
+     "title": "김유정·박진영, 이름 부르던 사이에서 총구 대치까지…‘100일의 거짓말’ 뒤집은 두 얼굴",
+     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/16/MI3GGZTCHBSDKOBUMFSWKOBQGQ/"
     }
    ]
   },
@@ -1284,72 +1351,6 @@
      "src": "뉴시스",
      "title": "'젠슨 황 불륜설 알고 있었다는' MZ 무속인, 이번엔 ○○○ 사망설 '무리수'",
      "link": "https://www.newsis.com/view/NISX20261115_0003868815"
-    }
-   ]
-  },
-  {
-   "kw": "발매",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "라이즈·플레이브 만났다…협업 싱글 '로키' 30일 발매",
-     "link": "https://www.yna.co.kr/view/AKR20261116143400005"
-    },
-    {
-     "src": "동아일보",
-     "title": "입대 앞두고 팬들 향한 진심…인어미닛 준태, ‘일곱 번째 계절’ 발매",
-     "link": "https://sports.donga.com/ent/article/all/20261116/135032292/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "플라이 투 더 스카이, 8년 만에 완전체 컴백…21일 새 싱글 발매",
-     "link": "https://sports.donga.com/ent/article/all/20261116/135030755/1"
-    },
-    {
-     "src": "뉴시스",
-     "title": "인어미닛 준태, 입대 전 솔로곡 '일곱 번째 계절' 발매",
-     "link": "https://www.newsis.com/view/NISX20261116_0003869685"
-    }
-   ]
-  },
-  {
-   "kw": "지수",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "연합뉴스",
-    "한국경제"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "[방송소식] SBS '비서진' 4회 연장…블랙핑크 지수 등 출연",
-     "link": "https://www.yna.co.kr/view/AKR20261116133700005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "블핑 지수·이날치·NCT·베이비몬스터, 내년 '코첼라' 뜬다",
-     "link": "https://www.yna.co.kr/view/AKR20261111150900005"
-    },
-    {
-     "src": "한국경제",
-     "title": "[포토] 디올 CEO 명예박사 수여식 참석한 블랙핑크 지수",
-     "link": "https://www.hankyung.com/article/202611122723i"
-    },
-    {
-     "src": "SBS",
-     "title": "'의외의 케미 맛집' 통했다…'비서진', 16회 연장 확정→김종국·지수·화사 릴레이 출격",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008848021&plink=RSSLINK&cooper=RSSREADER"
     }
    ]
   }

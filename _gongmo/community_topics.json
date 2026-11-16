@@ -1,22 +1,22 @@
 {
  "date": "2026-11-16",
- "updated": "2026-11-16 18:50",
+ "updated": "2026-11-16 19:50",
  "sites": 13,
- "npost": 2965,
+ "npost": 2948,
  "note": "출처(커뮤니티)별 집계예요. 작성자·연령·성별 정보는 수집하지 않아요. posts 는 이슈별로 뽑힌 일부라 전체 글 수가 아니에요.",
  "sources": [
   {
    "name": "MLB파크",
-   "np": 25,
-   "nc": 1223,
+   "np": 24,
+   "nc": 1160,
    "topics": [
     {
      "t": "교육부장관 ㄹㅇ 정신 나갔네요 ㅋㅋㅋㅋ",
      "nsite": 5,
      "np_here": 2,
      "nc_here": 362,
-     "issue_np": 8,
-     "issue_nc": 415,
+     "issue_np": 7,
+     "issue_nc": 395,
      "kw": [
       "교육부",
       "장관",
@@ -30,34 +30,17 @@
      }
     },
     {
-     "t": "리트 만점자가 암산한 문제 ㅋㅋㅋㅋ",
-     "nsite": 6,
-     "np_here": 3,
-     "nc_here": 123,
-     "issue_np": 15,
-     "issue_nc": 281,
-     "kw": [
-      "리트",
-      "만점자"
-     ],
-     "top_post": {
-      "t": "리트 만점자가 암산한 문제 ㅋㅋㅋㅋ",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611160120144309&m=view",
-      "nc": 69
-     }
-    },
-    {
      "t": "리트만점자가 수능 국어 7등급 출신 이라니",
      "nsite": 3,
-     "np_here": 2,
-     "nc_here": 121,
-     "issue_np": 6,
-     "issue_nc": 144,
+     "np_here": 3,
+     "nc_here": 140,
+     "issue_np": 7,
+     "issue_nc": 163,
      "kw": [
-      "수능",
       "만점자",
+      "수능",
       "리트",
-      "등급"
+      "국어"
      ],
      "top_post": {
       "t": "리트만점자가 수능 국어 7등급 출신 이라니",
@@ -66,12 +49,29 @@
      }
     },
     {
+     "t": "리트 만점자가 암산한 문제 ㅋㅋㅋㅋ",
+     "nsite": 6,
+     "np_here": 3,
+     "nc_here": 123,
+     "issue_np": 16,
+     "issue_nc": 288,
+     "kw": [
+      "만점자",
+      "리트"
+     ],
+     "top_post": {
+      "t": "리트 만점자가 암산한 문제 ㅋㅋㅋㅋ",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611160120144309&m=view",
+      "nc": 69
+     }
+    },
+    {
      "t": "Ai 안경 잡는게 답이 아닌이유",
      "nsite": 12,
      "np_here": 3,
      "nc_here": 113,
-     "issue_np": 43,
-     "issue_nc": 229,
+     "issue_np": 45,
+     "issue_nc": 228,
      "kw": [
       "안경",
       "AI",
@@ -86,11 +86,11 @@
     },
     {
      "t": "수능 연기 없다네요",
-     "nsite": 4,
+     "nsite": 6,
      "np_here": 2,
      "nc_here": 91,
-     "issue_np": 5,
-     "issue_nc": 135,
+     "issue_np": 8,
+     "issue_nc": 146,
      "kw": [
       "수능",
       "연기",
@@ -123,16 +123,16 @@
     },
     {
      "t": "AI가 수학 다 풀어주니, 인간은 수학공부할 필요 없다라...",
-     "nsite": 4,
+     "nsite": 3,
      "np_here": 1,
      "nc_here": 65,
-     "issue_np": 4,
-     "issue_nc": 116,
+     "issue_np": 3,
+     "issue_nc": 72,
      "kw": [
-      "공부",
-      "AI",
       "인간",
-      "수학"
+      "공부",
+      "수학",
+      "AI"
      ],
      "top_post": {
       "t": "의대 공부는 그냥 암기임. 수학 전혀 필요 없음 ㅋㅋㅋ",
@@ -163,19 +163,19 @@
   },
   {
    "name": "개드립",
-   "np": 27,
-   "nc": 683,
+   "np": 25,
+   "nc": 610,
    "topics": [
     {
      "t": "리트 만점자가 암산한 문제 ㅋㅋㅋㅋ",
      "nsite": 6,
      "np_here": 3,
      "nc_here": 94,
-     "issue_np": 15,
-     "issue_nc": 281,
+     "issue_np": 16,
+     "issue_nc": 288,
      "kw": [
-      "리트",
-      "만점자"
+      "만점자",
+      "리트"
      ],
      "top_post": {
       "t": "리트 만점자가 부정행위 인정 안하고 버티는 이유.",
@@ -210,8 +210,8 @@
      "issue_np": 8,
      "issue_nc": 73,
      "kw": [
-      "수능",
       "만점자",
+      "수능",
       "상승"
      ],
      "top_post": {
@@ -228,10 +228,10 @@
      "issue_np": 5,
      "issue_nc": 56,
      "kw": [
-      "경찰대",
       "커트라인",
-      "편입",
-      "올해"
+      "경찰대",
+      "상승",
+      "편입"
      ],
      "top_post": {
       "t": "올해 경찰대 편입 커트라인 20점이상 상승",
@@ -294,22 +294,22 @@
      }
     },
     {
-     "t": "AI가 수학 다 풀어주니, 인간은 수학공부할 필요 없다라...",
+     "t": "중국의 AI 시험 부정행위 대처",
      "nsite": 4,
      "np_here": 1,
-     "nc_here": 44,
-     "issue_np": 4,
-     "issue_nc": 116,
+     "nc_here": 39,
+     "issue_np": 5,
+     "issue_nc": 50,
      "kw": [
-      "공부",
-      "AI",
-      "인간",
-      "수학"
+      "부정행위",
+      "시험",
+      "대처",
+      "AI"
      ],
      "top_post": {
-      "t": "AI 를 써도 공부를 하긴 해야 하는 이유",
-      "u": "https://www.dogdrip.net/dogdrip/734886924?sort_index=popular&page=1",
-      "nc": 44
+      "t": "중국의 AI 시험 부정행위 대처",
+      "u": "https://www.dogdrip.net/dogdrip/734982109?sort_index=popular&page=1",
+      "nc": 39
      }
     }
    ]
@@ -317,26 +317,8 @@
   {
    "name": "인스티즈",
    "np": 6,
-   "nc": 215,
+   "nc": 270,
    "topics": [
-    {
-     "t": "제 63기 세무사 진짜 수석 합격자",
-     "nsite": 5,
-     "np_here": 2,
-     "nc_here": 62,
-     "issue_np": 8,
-     "issue_nc": 98,
-     "kw": [
-      "수석",
-      "세무사",
-      "합격자"
-     ],
-     "top_post": {
-      "t": "제 63기 세무사 진짜 수석 합격자",
-      "u": "https://www.instiz.net/pt/7926167?green=1",
-      "nc": 40
-     }
-    },
     {
      "t": "고경표 인스타그램 사과문",
      "nsite": 4,
@@ -355,12 +337,48 @@
      }
     },
     {
+     "t": "[속보] 정부, 수능 시험장 공공 와이파이 차단 추진",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 49,
+     "issue_np": 4,
+     "issue_nc": 61,
+     "kw": [
+      "와이파이",
+      "차단",
+      "수능",
+      "공공"
+     ],
+     "top_post": {
+      "t": "[속보] 정부, 수능 시험장 공공 와이파이 차단 추진",
+      "u": "https://www.instiz.net/pt/7926494?green=1",
+      "nc": 49
+     }
+    },
+    {
+     "t": "LEET 만점자 신기한거 중하나가",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 48,
+     "issue_np": 4,
+     "issue_nc": 98,
+     "kw": [
+      "만점자",
+      "LEET"
+     ],
+     "top_post": {
+      "t": "LEET 만점자 '불똥'에 입장 냈다..\"귀·코·입 내시경 받겠다\" 했지만...",
+      "u": "https://www.instiz.net/pt/7926526?green=1",
+      "nc": 48
+     }
+    },
+    {
      "t": "Ai 안경 잡는게 답이 아닌이유",
      "nsite": 12,
      "np_here": 1,
      "nc_here": 42,
-     "issue_np": 43,
-     "issue_nc": 229,
+     "issue_np": 45,
+     "issue_nc": 228,
      "kw": [
       "안경",
       "AI",
@@ -374,6 +392,24 @@
      }
     },
     {
+     "t": "제 63기 세무사 진짜 수석 합격자",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 40,
+     "issue_np": 5,
+     "issue_nc": 74,
+     "kw": [
+      "수석",
+      "세무사",
+      "합격자"
+     ],
+     "top_post": {
+      "t": "제 63기 세무사 진짜 수석 합격자",
+      "u": "https://www.instiz.net/pt/7926167?green=1",
+      "nc": 40
+     }
+    },
+    {
      "t": "올해 세무사 시험 감독관 인터뷰",
      "nsite": 4,
      "np_here": 1,
@@ -381,38 +417,21 @@
      "issue_np": 4,
      "issue_nc": 82,
      "kw": [
-      "시험",
-      "세무사"
+      "세무사",
+      "시험"
      ],
      "top_post": {
       "t": "올해 세무사 시험 감독관 인터뷰",
       "u": "https://www.instiz.net/pt/7926186?green=1",
       "nc": 37
      }
-    },
-    {
-     "t": "LEET 만점자 신기한거 중하나가",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 20,
-     "issue_np": 4,
-     "issue_nc": 70,
-     "kw": [
-      "LEET",
-      "만점자"
-     ],
-     "top_post": {
-      "t": "LEET 만점자 '불똥'에 입장 냈다..\"귀·코·입 내시경 받겠다\" 했지만...",
-      "u": "https://www.instiz.net/pt/7926526?green=1",
-      "nc": 20
-     }
     }
    ]
   },
   {
    "name": "82쿡",
-   "np": 20,
-   "nc": 172,
+   "np": 22,
+   "nc": 189,
    "topics": [
     {
      "t": "[속보] \"과거 범죄 끝까지 추적해 잡는다\"…靑, 국가자격지시험 의심 사례 전수조사",
@@ -434,36 +453,17 @@
      }
     },
     {
-     "t": "교육부장관 ㄹㅇ 정신 나갔네요 ㅋㅋㅋㅋ",
-     "nsite": 5,
-     "np_here": 2,
-     "nc_here": 24,
-     "issue_np": 8,
-     "issue_nc": 415,
-     "kw": [
-      "교육부",
-      "장관",
-      "최교진",
-      "실시간"
-     ],
-     "top_post": {
-      "t": "교육부 장관 \"서로가 믿음을 가지고 시험을 보는 게 가..",
-      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4259427&page=1",
-      "nc": 21
-     }
-    },
-    {
      "t": "리트만점자가 수능 국어 7등급 출신 이라니",
      "nsite": 3,
      "np_here": 2,
      "nc_here": 23,
-     "issue_np": 6,
-     "issue_nc": 144,
+     "issue_np": 7,
+     "issue_nc": 163,
      "kw": [
-      "수능",
       "만점자",
+      "수능",
       "리트",
-      "등급"
+      "국어"
      ],
      "top_post": {
       "t": "리트 만점자 수능 라이브 진행하네요",
@@ -477,10 +477,10 @@
      "np_here": 2,
      "nc_here": 20,
      "issue_np": 9,
-     "issue_nc": 40,
+     "issue_nc": 42,
      "kw": [
-      "부정",
       "행위",
+      "부정",
       "수능",
       "카메라"
      ],
@@ -488,6 +488,23 @@
       "t": "수능 AI 부정 행위는 대부분 쉽게 잡을 수 있어요",
       "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4259292&page=1",
       "nc": 15
+     }
+    },
+    {
+     "t": "이재명 대통령, 오늘도 개혁에 대해 일침~!",
+     "nsite": 3,
+     "np_here": 2,
+     "nc_here": 20,
+     "issue_np": 6,
+     "issue_nc": 61,
+     "kw": [
+      "대통령",
+      "이재명"
+     ],
+     "top_post": {
+      "t": "이재명 이외의 전과자 대통령.",
+      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4259272&page=1",
+      "nc": 17
      }
     },
     {
@@ -510,12 +527,31 @@
      }
     },
     {
+     "t": "[속보] 정부, 수능 시험장 공공 와이파이 차단 추진",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 12,
+     "issue_np": 4,
+     "issue_nc": 61,
+     "kw": [
+      "와이파이",
+      "차단",
+      "수능",
+      "공공"
+     ],
+     "top_post": {
+      "t": "데이터 완전차단이 아니라 공공와이파이 차단이라니",
+      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4259423&page=1",
+      "nc": 12
+     }
+    },
+    {
      "t": "제 63기 세무사 진짜 수석 합격자",
-     "nsite": 5,
+     "nsite": 4,
      "np_here": 1,
      "nc_here": 11,
-     "issue_np": 8,
-     "issue_nc": 98,
+     "issue_np": 5,
+     "issue_nc": 74,
      "kw": [
       "수석",
       "세무사",
@@ -535,41 +571,40 @@
      "issue_np": 4,
      "issue_nc": 45,
      "kw": [
-      "부정",
       "행위",
-      "AI"
+      "AI",
+      "부정"
      ],
      "top_post": {
       "t": "AI 부정행위 이미 대치동에서는 하고있다는",
       "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4259470&page=1",
       "nc": 9
      }
-    },
-    {
-     "t": "귓 속 뿐만이 아니라 입 안도 봐야할 것 같은 AI 컨닝방법",
-     "nsite": 4,
-     "np_here": 2,
-     "nc_here": 9,
-     "issue_np": 8,
-     "issue_nc": 9,
-     "kw": [
-      "AI",
-      "컨닝",
-      "중국"
-     ],
-     "top_post": {
-      "t": "중국이 ai컨닝 막는 방법",
-      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4259319&page=1",
-      "nc": 5
-     }
     }
    ]
   },
   {
    "name": "클리앙",
-   "np": 11,
-   "nc": 138,
+   "np": 13,
+   "nc": 180,
    "topics": [
+    {
+     "t": "이재명 대통령, 오늘도 개혁에 대해 일침~!",
+     "nsite": 3,
+     "np_here": 2,
+     "nc_here": 37,
+     "issue_np": 6,
+     "issue_nc": 61,
+     "kw": [
+      "대통령",
+      "이재명"
+     ],
+     "top_post": {
+      "t": "이재명 대통령, 오늘도 개혁에 대해 일침~!",
+      "u": "https://www.clien.net/service/board/park/19292611?od=T33&po=0&category=0&groupCd=clien_all",
+      "nc": 20
+     }
+    },
     {
      "t": "\"어려도 너무 어려\" 13살도 데뷔..아이돌 인권 \"내년 첫 전수조사\"",
      "nsite": 4,
@@ -594,8 +629,8 @@
      "nsite": 5,
      "np_here": 1,
      "nc_here": 23,
-     "issue_np": 8,
-     "issue_nc": 415,
+     "issue_np": 7,
+     "issue_nc": 395,
      "kw": [
       "교육부",
       "장관",
@@ -647,32 +682,15 @@
      }
     },
     {
-     "t": "올해 세무사 시험 감독관 인터뷰",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 12,
-     "issue_np": 4,
-     "issue_nc": 82,
-     "kw": [
-      "시험",
-      "세무사"
-     ],
-     "top_post": {
-      "t": "세무사 시험 만점자 님께서 큰 일 하셨네요.",
-      "u": "https://www.clien.net/service/board/park/19292902?od=T33&po=0&category=0&groupCd=clien_all",
-      "nc": 12
-     }
-    },
-    {
      "t": "LEET 만점자 신기한거 중하나가",
      "nsite": 4,
      "np_here": 1,
      "nc_here": 12,
      "issue_np": 4,
-     "issue_nc": 70,
+     "issue_nc": 98,
      "kw": [
-      "LEET",
-      "만점자"
+      "만점자",
+      "LEET"
      ],
      "top_post": {
       "t": "올해 Leet 만점자",
@@ -681,12 +699,29 @@
      }
     },
     {
-     "t": "수능 연기 없다네요",
+     "t": "올해 세무사 시험 감독관 인터뷰",
      "nsite": 4,
      "np_here": 1,
+     "nc_here": 12,
+     "issue_np": 4,
+     "issue_nc": 82,
+     "kw": [
+      "세무사",
+      "시험"
+     ],
+     "top_post": {
+      "t": "세무사 시험 만점자 님께서 큰 일 하셨네요.",
+      "u": "https://www.clien.net/service/board/park/19292902?od=T33&po=0&category=0&groupCd=clien_all",
+      "nc": 12
+     }
+    },
+    {
+     "t": "수능 연기 없다네요",
+     "nsite": 6,
+     "np_here": 1,
      "nc_here": 11,
-     "issue_np": 5,
-     "issue_nc": 135,
+     "issue_np": 8,
+     "issue_nc": 146,
      "kw": [
       "수능",
       "연기",
@@ -697,40 +732,21 @@
       "u": "https://www.clien.net/service/board/park/19292916?od=T33&po=0&category=0&groupCd=clien_all",
       "nc": 11
      }
-    },
-    {
-     "t": "중국의 AI 시험 부정행위 대처",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 10,
-     "issue_np": 5,
-     "issue_nc": 50,
-     "kw": [
-      "시험",
-      "부정행위",
-      "중국",
-      "대처"
-     ],
-     "top_post": {
-      "t": "잃을거 많은 사람도 시험 부정행위 잘만 저지릅니다.",
-      "u": "https://www.clien.net/service/board/park/19292759?od=T33&po=0&category=0&groupCd=clien_all",
-      "nc": 10
-     }
     }
    ]
   },
   {
    "name": "아카라이브",
-   "np": 4,
-   "nc": 46,
+   "np": 3,
+   "nc": 39,
    "topics": [
     {
      "t": "Ai 안경 잡는게 답이 아닌이유",
      "nsite": 12,
      "np_here": 1,
      "nc_here": 17,
-     "issue_np": 43,
-     "issue_nc": 229,
+     "issue_np": 45,
+     "issue_nc": 228,
      "kw": [
       "안경",
       "AI",
@@ -749,10 +765,10 @@
      "np_here": 1,
      "nc_here": 15,
      "issue_np": 9,
-     "issue_nc": 40,
+     "issue_nc": 42,
      "kw": [
-      "부정",
       "행위",
+      "부정",
       "수능",
       "카메라"
      ],
@@ -763,31 +779,12 @@
      }
     },
     {
-     "t": "중국은 ai부정행위가 없는 이유.List",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 8,
-     "issue_np": 6,
-     "issue_nc": 73,
-     "kw": [
-      "부정",
-      "중국",
-      "행위",
-      "AI"
-     ],
-     "top_post": {
-      "t": "중국에는 AI 부정이 없는 이유",
-      "u": "https://arca.live/b/live/189250152?p=1",
-      "nc": 8
-     }
-    },
-    {
      "t": "교육부장관 ㄹㅇ 정신 나갔네요 ㅋㅋㅋㅋ",
      "nsite": 5,
      "np_here": 1,
-     "nc_here": 6,
-     "issue_np": 8,
-     "issue_nc": 415,
+     "nc_here": 7,
+     "issue_np": 7,
+     "issue_nc": 395,
      "kw": [
       "교육부",
       "장관",
@@ -797,7 +794,7 @@
      "top_post": {
       "t": "미미미누 나중에 교육부 장관 후보로 나오면",
       "u": "https://arca.live/b/live/189307817?p=1",
-      "nc": 6
+      "nc": 7
      }
     }
    ]
@@ -805,7 +802,7 @@
   {
    "name": "보배드림",
    "np": 16,
-   "nc": 29,
+   "nc": 26,
    "topics": [
     {
      "t": "음주운전 한 연예인중 가장 욕을 덜 먹는 연예인",
@@ -827,21 +824,37 @@
      }
     },
     {
-     "t": "중국은 ai부정행위가 없는 이유.List",
-     "nsite": 4,
+     "t": "이재명 대통령, 오늘도 개혁에 대해 일침~!",
+     "nsite": 3,
      "np_here": 2,
-     "nc_here": 5,
+     "nc_here": 4,
      "issue_np": 6,
-     "issue_nc": 73,
+     "issue_nc": 61,
      "kw": [
-      "부정",
-      "중국",
-      "행위",
-      "AI"
+      "대통령",
+      "이재명"
      ],
      "top_post": {
-      "t": "X에 올라온 중국에는 AI 부정행위가 없는 이유",
-      "u": "https://www.bobaedream.co.kr/view?code=best&No=1047737&vdate=",
+      "t": "이게 지금 이재명 대통령님 지지한다는자의 글 수준",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1047880&vdate=",
+      "nc": 3
+     }
+    },
+    {
+     "t": "수능 연기 없다네요",
+     "nsite": 6,
+     "np_here": 1,
+     "nc_here": 3,
+     "issue_np": 8,
+     "issue_nc": 146,
+     "kw": [
+      "수능",
+      "연기",
+      "실시간"
+     ],
+     "top_post": {
+      "t": "수능 연기해야만 하는 이유",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1047848&vdate=",
       "nc": 3
      }
     },
@@ -853,8 +866,8 @@
      "issue_np": 8,
      "issue_nc": 73,
      "kw": [
-      "수능",
       "만점자",
+      "수능",
       "상승"
      ],
      "top_post": {
@@ -880,42 +893,6 @@
       "t": "진짜 전수조사 필요함",
       "u": "https://www.bobaedream.co.kr/view?code=best&No=1047794&vdate=",
       "nc": 3
-     }
-    },
-    {
-     "t": "세무냥이님 만점 받고 왜 자수하신 건가요?",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 3,
-     "issue_np": 5,
-     "issue_nc": 32,
-     "kw": [
-      "자수",
-      "세무냥이",
-      "결정"
-     ],
-     "top_post": {
-      "t": "세무냥이가 자수한 결정적인 이유",
-      "u": "https://www.bobaedream.co.kr/view?code=best&No=1047775&vdate=",
-      "nc": 3
-     }
-    },
-    {
-     "t": "제 63기 세무사 진짜 수석 합격자",
-     "nsite": 5,
-     "np_here": 1,
-     "nc_here": 2,
-     "issue_np": 8,
-     "issue_nc": 98,
-     "kw": [
-      "수석",
-      "세무사",
-      "합격자"
-     ],
-     "top_post": {
-      "t": "세무사 수석합격자--부정행위시인-회계사시험도 부정.있다는 고..",
-      "u": "https://www.bobaedream.co.kr/view?code=best&No=1047630&vdate=",
-      "nc": 2
      }
     },
     {
@@ -953,25 +930,45 @@
       "u": "https://www.bobaedream.co.kr/view?code=best&No=1047695&vdate=",
       "nc": 1
      }
+    },
+    {
+     "t": "올해 경찰대 편입 커트라인 20점이상 상승",
+     "nsite": 5,
+     "np_here": 1,
+     "nc_here": 1,
+     "issue_np": 5,
+     "issue_nc": 56,
+     "kw": [
+      "커트라인",
+      "경찰대",
+      "상승",
+      "편입"
+     ],
+     "top_post": {
+      "t": "올해 경찰대 편입 커트라인 20점이상 상승",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1047732&vdate=",
+      "nc": 1
+     }
     }
    ]
   },
   {
    "name": "네이트판",
-   "np": 1,
-   "nc": 7,
+   "np": 2,
+   "nc": 11,
    "topics": [
     {
      "t": "네이버페이 191원 (신속히 받으세요)",
      "nsite": 4,
-     "np_here": 1,
-     "nc_here": 7,
-     "issue_np": 6,
-     "issue_nc": 15,
+     "np_here": 2,
+     "nc_here": 11,
+     "issue_np": 7,
+     "issue_nc": 19,
      "kw": [
-      "페이",
       "네이버",
-      "적립"
+      "페이",
+      "포인트",
+      "조사"
      ],
      "top_post": {
       "t": "ㅈㄱㄴ..⭐ 이거 설문조사 앱인데 설문조사 하고나면 네이버페이 포인트나 현금으로 받을수있음 ...",
@@ -1011,10 +1008,10 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 9,
-     "issue_nc": 40,
+     "issue_nc": 42,
      "kw": [
-      "부정",
       "행위",
+      "부정",
       "수능",
       "카메라"
      ],
@@ -1043,25 +1040,6 @@
      }
     },
     {
-     "t": "AI가 수학 다 풀어주니, 인간은 수학공부할 필요 없다라...",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 116,
-     "kw": [
-      "공부",
-      "AI",
-      "인간",
-      "수학"
-     ],
-     "top_post": {
-      "t": "AI가 수학 다 풀어주니, 인간은 수학공부할 필요 없다라...",
-      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677467",
-      "nc": 0
-     }
-    },
-    {
      "t": "올해 세무사 시험 감독관 인터뷰",
      "nsite": 4,
      "np_here": 1,
@@ -1069,12 +1047,30 @@
      "issue_np": 4,
      "issue_nc": 82,
      "kw": [
-      "시험",
-      "세무사"
+      "세무사",
+      "시험"
      ],
      "top_post": {
       "t": "세무사시험 부정행위 아니라네요",
       "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677494",
+      "nc": 0
+     }
+    },
+    {
+     "t": "제 63기 세무사 진짜 수석 합격자",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 5,
+     "issue_nc": 74,
+     "kw": [
+      "수석",
+      "세무사",
+      "합격자"
+     ],
+     "top_post": {
+      "t": "세무사 수석 자수했네요?",
+      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677469",
       "nc": 0
      }
     },
@@ -1086,32 +1082,13 @@
      "issue_np": 4,
      "issue_nc": 45,
      "kw": [
-      "부정",
       "행위",
-      "AI"
+      "AI",
+      "부정"
      ],
      "top_post": {
       "t": "\"AI 컨닝해 수도권 의대 갔다\"…부정행위 자백글 쏟아져",
       "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677515",
-      "nc": 0
-     }
-    },
-    {
-     "t": "중국 수능 ai 대책이라는 짤",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 28,
-     "kw": [
-      "중국",
-      "AI",
-      "방지",
-      "대책"
-     ],
-     "top_post": {
-      "t": "중국 ai방지대책들ㄷㄷㄷ",
-      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677509",
       "nc": 0
      }
     },
@@ -1129,6 +1106,25 @@
      "top_post": {
       "t": "수능 감독관 이런것도 잡아낼 수 있을까?",
       "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677536",
+      "nc": 0
+     }
+    },
+    {
+     "t": "아이폰 듀오 신규 업데이트 근황ㄷㄷㄷㄷㄷ",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 7,
+     "issue_nc": 5,
+     "kw": [
+      "아이폰",
+      "듀오",
+      "신규",
+      "업뎃"
+     ],
+     "top_post": {
+      "t": "아이폰 듀오 신규 업데이트 근황ㄷㄷㄷㄷㄷ",
+      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677502",
       "nc": 0
      }
     }
@@ -1164,16 +1160,35 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 9,
-     "issue_nc": 40,
+     "issue_nc": 42,
      "kw": [
-      "부정",
       "행위",
+      "부정",
       "수능",
       "카메라"
      ],
      "top_post": {
       "t": "중국에는 AI 부정행위가 없는 이유, 수능기간엔 AI가 문제를 아예 안풀어줌",
       "u": "https://theqoo.net/hot/4407356855",
+      "nc": 0
+     }
+    },
+    {
+     "t": "교육부장관 ㄹㅇ 정신 나갔네요 ㅋㅋㅋㅋ",
+     "nsite": 5,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 7,
+     "issue_nc": 395,
+     "kw": [
+      "교육부",
+      "장관",
+      "최교진",
+      "실시간"
+     ],
+     "top_post": {
+      "t": "실시간 교육부장관 해결방안ㅋㅋㅋ",
+      "u": "https://theqoo.net/hot/4407837027",
       "nc": 0
      }
     },
@@ -1185,8 +1200,8 @@
      "issue_np": 8,
      "issue_nc": 73,
      "kw": [
-      "수능",
       "만점자",
+      "수능",
       "상승"
      ],
      "top_post": {
@@ -1203,10 +1218,10 @@
      "issue_np": 5,
      "issue_nc": 56,
      "kw": [
-      "경찰대",
       "커트라인",
-      "편입",
-      "올해"
+      "경찰대",
+      "상승",
+      "편입"
      ],
      "top_post": {
       "t": "올해 경찰대 편입 커트라인 20점이상 상승",
@@ -1234,25 +1249,6 @@
      }
     },
     {
-     "t": "중국은 ai부정행위가 없는 이유.List",
-     "nsite": 4,
-     "np_here": 2,
-     "nc_here": 0,
-     "issue_np": 6,
-     "issue_nc": 73,
-     "kw": [
-      "부정",
-      "중국",
-      "행위",
-      "AI"
-     ],
-     "top_post": {
-      "t": "인도는 부정행위 못하게 빤스만 입고 시험봄",
-      "u": "https://theqoo.net/hot/4406859697",
-      "nc": 0
-     }
-    },
-    {
      "t": "고경표 인스타그램 사과문",
      "nsite": 4,
      "np_here": 1,
@@ -1274,11 +1270,11 @@
      "nsite": 4,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 8,
+     "issue_np": 7,
      "issue_nc": 9,
      "kw": [
-      "AI",
       "컨닝",
+      "AI",
       "중국"
      ],
      "top_post": {
@@ -1291,7 +1287,7 @@
   },
   {
    "name": "루리웹",
-   "np": 23,
+   "np": 20,
    "nc": 0,
    "topics": [
     {
@@ -1320,32 +1316,14 @@
      "issue_np": 5,
      "issue_nc": 56,
      "kw": [
-      "경찰대",
       "커트라인",
-      "편입",
-      "올해"
+      "경찰대",
+      "상승",
+      "편입"
      ],
      "top_post": {
       "t": "올해 경찰대 편입 커트라인 20점이상 상승",
       "u": "https://bbs.ruliweb.com/best/board/300143/read/77404797?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "수능 연기 없다네요",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 135,
-     "kw": [
-      "수능",
-      "연기",
-      "실시간"
-     ],
-     "top_post": {
-      "t": "교육부장관, \"수능 연기 없어\" 못 박아",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77406672?m=all&t=now",
       "nc": 0
      }
     },
@@ -1393,10 +1371,10 @@
      "issue_np": 5,
      "issue_nc": 50,
      "kw": [
-      "시험",
       "부정행위",
-      "중국",
-      "대처"
+      "시험",
+      "대처",
+      "AI"
      ],
      "top_post": {
       "t": "시험 부정행위는 계속 나올 수 밖에 없는 이유",
@@ -1429,13 +1407,30 @@
      "issue_np": 4,
      "issue_nc": 45,
      "kw": [
-      "부정",
       "행위",
-      "AI"
+      "AI",
+      "부정"
      ],
      "top_post": {
       "t": "세무냥이, 개조된 계산기로 AI 부정행위",
       "u": "https://bbs.ruliweb.com/best/board/300143/read/77410694?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "수능 3일 남았는데 감독관들 근황",
+     "nsite": 4,
+     "np_here": 3,
+     "nc_here": 0,
+     "issue_np": 6,
+     "issue_nc": 20,
+     "kw": [
+      "감독관",
+      "수능"
+     ],
+     "top_post": {
+      "t": "수능 3일 남았는데 감독관들 근황",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77405318?m=all&t=now",
       "nc": 0
      }
     }
@@ -1443,7 +1438,7 @@
   },
   {
    "name": "디시인사이드",
-   "np": 3,
+   "np": 4,
    "nc": 0,
    "topics": [
     {
@@ -1452,32 +1447,14 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 4,
-     "issue_nc": 70,
+     "issue_nc": 98,
      "kw": [
-      "LEET",
-      "만점자"
+      "만점자",
+      "LEET"
      ],
      "top_post": {
       "t": "싱글벙글 세무냥이 다음 타겟으로 지목된 LEET 만점자",
       "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=479116&_dcbest=1&page=1",
-      "nc": 0
-     }
-    },
-    {
-     "t": "세무냥이님 만점 받고 왜 자수하신 건가요?",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 32,
-     "kw": [
-      "자수",
-      "세무냥이",
-      "결정"
-     ],
-     "top_post": {
-      "t": "세무냥이님 만점 받고 왜 자수하신 건가요?",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=478934&_dcbest=1&page=1",
       "nc": 0
      }
     },
@@ -1489,13 +1466,30 @@
      "issue_np": 6,
      "issue_nc": 15,
      "kw": [
-      "일본인",
       "한국",
+      "일본인",
       "병원"
      ],
      "top_post": {
       "t": "한국 축구 현상황에 대한 일본인들의 평가..",
       "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=478938&_dcbest=1&page=1",
+      "nc": 0
+     }
+    },
+    {
+     "t": "싱글벙글 초소형 카메라 컨닝...여초 근황....",
+     "nsite": 4,
+     "np_here": 2,
+     "nc_here": 0,
+     "issue_np": 5,
+     "issue_nc": 9,
+     "kw": [
+      "소형",
+      "카메라"
+     ],
+     "top_post": {
+      "t": "싱글벙글 초소형 카메라 컨닝...여초 근황....",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=478862&_dcbest=1&page=1",
       "nc": 0
      }
     }
