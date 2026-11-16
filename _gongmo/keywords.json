@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-16 10:00",
+ "updated": "2026-11-16 11:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -12615,6 +12615,19 @@
    "expires": "2026-11-11"
   },
   {
+   "query": "젠슨 황 사임 발표 전후 엔비디아 삼성전자 SK하이닉스 코스피 시장 움직임 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 3,
+   "status": "작성",
+   "page": "/issue/nvidia-ceo-exit-kospi-semiconductor-market-reaction-1116/",
+   "registered": "2026-11-16",
+   "expires": "2026-11-23"
+  },
+  {
    "query": "박진영 교회 첫열매들 종교 모임 입장 발언 타임라인과 예장통합 연구 경과",
    "tier": "중기",
    "signal": [
@@ -13621,6 +13634,58 @@
    "expires": "2026-11-12"
   },
   {
+   "query": "젠슨 황 사임이 중국 AI 반도체·AI 개발에 주는 영향, 화웨이·수출통제 전망은 누가 어떻게 봤나",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 2,
+   "status": "작성",
+   "page": "/issue/nvidia-ceo-exit-china-ai-ambitions-impact-1116/",
+   "registered": "2026-11-16",
+   "expires": "2026-11-26"
+  },
+  {
+   "query": "젠슨 황 사임 뒤 엔비디아 중국 판매·수출통제 쟁점, H200 허가는 누가 바꿀 수 있나",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 2,
+   "status": "작성",
+   "page": "/issue/nvidia-ceo-exit-china-sales-export-control-issues-1116/",
+   "registered": "2026-11-16",
+   "expires": "2026-11-23"
+  },
+  {
+   "query": "젠슨 황 엔비디아 CEO 복귀 논의 FT 보도·청원 15만 명·머스크 동참, 확인 상태 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 2,
+   "status": "작성",
+   "page": "/issue/nvidia-ceo-exit-return-talk-petition-fact-check-1116/",
+   "registered": "2026-11-16",
+   "expires": "2026-11-23"
+  },
+  {
+   "query": "엔비디아 후임 CEO는 누가 어떻게 정하나, 이사회 권한과 젠슨 황 지분 3.58% 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 2,
+   "status": "작성",
+   "page": "/issue/nvidia-ceo-exit-successor-governance-scenarios-1116/",
+   "registered": "2026-11-16",
+   "expires": "2026-11-26"
+  },
+  {
    "query": "엔비디아 젠슨 황 이사회 독립 조사 착수, 시가총액 하락과 주주 집단소송 정리",
    "tier": "중기",
    "signal": [
@@ -13905,6 +13970,19 @@
    "page": "",
    "registered": "2026-11-03",
    "expires": "2026-11-10"
+  },
+  {
+   "query": "젠슨 황 사임, 엔비디아와 AI 시장 흐름은 어떻게 바뀔까: 수출통제·중국·HBM·코스피 시나리오 총정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 1,
+   "status": "작성",
+   "page": "/issue/jensen-huang-exit-ai-market-scenarios-1116/",
+   "registered": "2026-11-16",
+   "expires": "2026-11-30"
   },
   {
    "query": "지민 아버지 카페 폐업 공지 정리 — 지밀레니얼 D-365, 일정과 보도 범위",
