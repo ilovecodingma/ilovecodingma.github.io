@@ -51,12 +51,18 @@ def pages(page):
     latest = items[0].get('date', '')
     trig = next((d for d in items if d['slug'].startswith('jensen-huang-recent-remarks-timeline')), None)
     chain = [d for d in items if d['slug'].startswith('nvidia-ceo-exit')]
+    pillar = next((d for d in items if d['slug'] == 'jensen-huang-exit-ai-market-scenarios-1116'), None)
+    pre = ''
+    if pillar:
+        pre = (f'<section class="aih aih-p"><h2>종합: 젠슨 황 사임과 AI 시장의 시나리오</h2><p class="cat-st">젠슨 황의 이력부터 사임 경과, 이후 전개를 5개 축의 시나리오로 한 번에 정리한 글입니다. '
+               f'<a href="/issue/{E(pillar["slug"])}/">{E(pillar.get("home_title") or pillar["title"])}</a></p></section>')
     if trig:
         blocks = (f'<section class="aih aih-t"><h2>출발점: 젠슨 황의 사임<small>11월 12일</small></h2>'
                   f'<p class="cat-st">엔비디아 창업자이자 CEO인 젠슨 황의 사임 발표가 AI 반도체 공급망과 미중 정책, 한국 시장에 어떤 연쇄로 이어지는지 아래 글들을 따라 살펴봅니다. 출발점이 되는 정리: '
                   f'<a href="/issue/{E(trig["slug"])}/">{E(trig.get("home_title") or trig["title"])}</a></p>'
                   + (('<p class="cat-st">이어지는 연결고리:</p><ul class="gm-l">' + ''.join(f'<li><a href="/issue/{E(d["slug"])}/">{E(d.get("home_title") or d["title"])}</a> <small>{E(d.get("date", ""))}</small></li>' for d in chain) + '</ul>') if chain else '')
                   + '</section>') + blocks
+    blocks = pre + blocks
     body = ('<div class="sk"><p class="bc">AI 격동기</p><h1>AI 격동기 — 세상이 어떻게 흘러가는지 모아 보는 곳</h1>'
             '<p class="cat-st">AI와 반도체, 미국의 정책, 중국의 추격, 시장의 반응을 공식 자료와 기관별 입장으로 나눠 정리한 글을 한곳에 모았습니다. 글마다 날짜와 확인 상태가 적혀 있고, 새 글은 올라오는 대로 이 목록에 붙습니다.</p>'
             + blocks + f'<p class="note">가장 최근 글은 {E(latest)} 것입니다. 전망은 말한 기관과 사람에게 귀속해 적었고 필자의 예측이나 투자 권유는 없습니다.</p></div>'
