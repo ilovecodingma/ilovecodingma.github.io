@@ -51,11 +51,11 @@ def pages(page):
     latest = items[0].get('date', '')
     trig = next((d for d in items if d['slug'].startswith('jensen-huang-recent-remarks-timeline')), None)
     chain = [d for d in items if d['slug'].startswith('nvidia-ceo-exit')]
-    pillar = next((d for d in items if d['slug'] == 'jensen-huang-exit-ai-market-scenarios-1116'), None)
+    pillars = [d for d in items if d['slug'] == 'jensen-huang-exit-ai-market-scenarios-1116' or d['slug'].startswith('nvidia-stock-')]
     pre = ''
-    if pillar:
-        pre = (f'<section class="aih aih-p"><h2>종합: 젠슨 황 사임과 AI 시장의 시나리오</h2><p class="cat-st">젠슨 황의 이력부터 사임 경과, 이후 전개를 5개 축의 시나리오로 한 번에 정리한 글입니다. '
-               f'<a href="/issue/{E(pillar["slug"])}/">{E(pillar.get("home_title") or pillar["title"])}</a></p></section>')
+    if pillars:
+        pre = ('<section class="aih aih-p"><h2>종합: 젠슨 황 사임과 AI 시장의 시나리오</h2><p class="cat-st">젠슨 황의 이력부터 사임 경과, 이후 전개를 시나리오로 한 번에 정리한 종합 글입니다.</p><ul class="gm-l">'
+               + ''.join(f'<li><a href="/issue/{E(d["slug"])}/">{E(d.get("home_title") or d["title"])}</a> <small>{E(d.get("date", ""))}</small></li>' for d in pillars) + '</ul></section>')
     if trig:
         blocks = (f'<section class="aih aih-t"><h2>출발점: 젠슨 황의 사임<small>11월 12일</small></h2>'
                   f'<p class="cat-st">엔비디아 창업자이자 CEO인 젠슨 황의 사임 발표가 AI 반도체 공급망과 미중 정책, 한국 시장에 어떤 연쇄로 이어지는지 아래 글들을 따라 살펴봅니다. 출발점이 되는 정리: '
