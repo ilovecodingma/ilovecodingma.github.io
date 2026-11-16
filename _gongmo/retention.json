@@ -1,60 +1,25 @@
 {
- "at": "2026-11-09 09:20",
- "since": "2026-10-26",
+ "at": "2026-11-16 09:20",
+ "since": "2026-11-02",
  "stable_since": "2026-10-20",
  "days_observed": 15,
- "visitors": 4405,
- "returning_2plus_days": 48,
+ "visitors": 4770,
+ "returning_2plus_days": 94,
  "daily": [
-  {
-   "day": "2026-10-26",
-   "visitors": 130,
-   "returning": 0
-  },
-  {
-   "day": "2026-10-27",
-   "visitors": 125,
-   "returning": 2
-  },
-  {
-   "day": "2026-10-28",
-   "visitors": 113,
-   "returning": 7
-  },
-  {
-   "day": "2026-10-29",
-   "visitors": 237,
-   "returning": 11
-  },
-  {
-   "day": "2026-10-30",
-   "visitors": 237,
-   "returning": 10
-  },
-  {
-   "day": "2026-10-31",
-   "visitors": 110,
-   "returning": 4
-  },
-  {
-   "day": "2026-11-01",
-   "visitors": 893,
-   "returning": 5
-  },
   {
    "day": "2026-11-02",
    "visitors": 428,
-   "returning": 7
+   "returning": 0
   },
   {
    "day": "2026-11-03",
    "visitors": 231,
-   "returning": 6
+   "returning": 3
   },
   {
    "day": "2026-11-04",
    "visitors": 830,
-   "returning": 6
+   "returning": 4
   },
   {
    "day": "2026-11-05",
@@ -78,10 +43,45 @@
   },
   {
    "day": "2026-11-09",
-   "visitors": 61,
-   "returning": 2
+   "visitors": 379,
+   "returning": 11
+  },
+  {
+   "day": "2026-11-10",
+   "visitors": 406,
+   "returning": 13
+  },
+  {
+   "day": "2026-11-11",
+   "visitors": 360,
+   "returning": 15
+  },
+  {
+   "day": "2026-11-12",
+   "visitors": 378,
+   "returning": 11
+  },
+  {
+   "day": "2026-11-13",
+   "visitors": 344,
+   "returning": 18
+  },
+  {
+   "day": "2026-11-14",
+   "visitors": 185,
+   "returning": 16
+  },
+  {
+   "day": "2026-11-15",
+   "visitors": 214,
+   "returning": 14
+  },
+  {
+   "day": "2026-11-16",
+   "visitors": 57,
+   "returning": 7
   }
  ],
  "note": "같은 방문 번호가 2일 이상 방문한 비율. 번호는 브라우저 저장소 기준이라 브라우저·기기를 바꾸거나 저장소를 지우면 새 방문자로 셈해요.",
- "rate": 1.1
+ "rate": 2.0
 }
