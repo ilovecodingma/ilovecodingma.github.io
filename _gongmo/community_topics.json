@@ -1,25 +1,25 @@
 {
  "date": "2026-11-17",
- "updated": "2026-11-17 01:50",
+ "updated": "2026-11-17 02:50",
  "sites": 13,
- "npost": 2993,
+ "npost": 2984,
  "note": "출처(커뮤니티)별 집계예요. 작성자·연령·성별 정보는 수집하지 않아요. posts 는 이슈별로 뽑힌 일부라 전체 글 수가 아니에요.",
  "sources": [
   {
    "name": "MLB파크",
-   "np": 25,
-   "nc": 1372,
+   "np": 26,
+   "nc": 1404,
    "topics": [
     {
      "t": "교육부장관 ㄹㅇ 정신 나갔네요 ㅋㅋㅋㅋ",
      "nsite": 5,
-     "np_here": 2,
-     "nc_here": 362,
-     "issue_np": 11,
-     "issue_nc": 410,
+     "np_here": 3,
+     "nc_here": 378,
+     "issue_np": 12,
+     "issue_nc": 426,
      "kw": [
-      "장관",
       "교육부",
+      "장관",
       "최교진",
       "나이"
      ],
@@ -34,7 +34,7 @@
      "nsite": 6,
      "np_here": 4,
      "nc_here": 196,
-     "issue_np": 20,
+     "issue_np": 19,
      "issue_nc": 334,
      "kw": [
       "만점자",
@@ -52,9 +52,9 @@
      "t": "초5 딸아이 방 침대밑에 누런액체가 담긴 생수병",
      "nsite": 4,
      "np_here": 1,
-     "nc_here": 97,
+     "nc_here": 98,
      "issue_np": 5,
-     "issue_nc": 155,
+     "issue_nc": 156,
      "kw": [
       "액체",
       "생수",
@@ -64,7 +64,7 @@
      "top_post": {
       "t": "초5 딸아이 방 침대밑에 누런액체가 담긴 생수병",
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611160120154830&m=view",
-      "nc": 97
+      "nc": 98
      }
     },
     {
@@ -93,10 +93,10 @@
      "issue_np": 4,
      "issue_nc": 112,
      "kw": [
-      "전수",
       "조사",
-      "데뷔",
-      "내년"
+      "전수",
+      "내년",
+      "데뷔"
      ],
      "top_post": {
       "t": "\"어려도 너무 어려\" 13살도 데뷔..아이돌 인권 \"내년 첫 전수조사\"",
@@ -106,14 +106,14 @@
     },
     {
      "t": "중국은 ai부정행위가 없는 이유.List",
-     "nsite": 9,
+     "nsite": 8,
      "np_here": 1,
      "nc_here": 78,
-     "issue_np": 14,
-     "issue_nc": 163,
+     "issue_np": 11,
+     "issue_nc": 151,
      "kw": [
-      "행위",
       "부정",
+      "행위",
       "AI",
       "중국"
      ],
@@ -150,10 +150,10 @@
      "issue_np": 3,
      "issue_nc": 72,
      "kw": [
-      "공부",
-      "AI",
+      "수학",
       "인간",
-      "수학"
+      "공부",
+      "AI"
      ],
      "top_post": {
       "t": "의대 공부는 그냥 암기임. 수학 전혀 필요 없음 ㅋㅋㅋ",
@@ -166,14 +166,14 @@
   {
    "name": "개드립",
    "np": 24,
-   "nc": 638,
+   "nc": 654,
    "topics": [
     {
      "t": "리트 만점자가 암산한 문제 ㅋㅋㅋㅋ",
      "nsite": 6,
      "np_here": 2,
      "nc_here": 70,
-     "issue_np": 20,
+     "issue_np": 19,
      "issue_nc": 334,
      "kw": [
       "만점자",
@@ -193,7 +193,7 @@
      "np_here": 3,
      "nc_here": 70,
      "issue_np": 17,
-     "issue_nc": 146,
+     "issue_nc": 161,
      "kw": [
       "AI",
       "치팅",
@@ -230,7 +230,7 @@
      "np_here": 2,
      "nc_here": 55,
      "issue_np": 5,
-     "issue_nc": 155,
+     "issue_nc": 156,
      "kw": [
       "액체",
       "생수",
@@ -263,6 +263,25 @@
      }
     },
     {
+     "t": "중국은 ai부정행위가 없는 이유.List",
+     "nsite": 8,
+     "np_here": 1,
+     "nc_here": 48,
+     "issue_np": 11,
+     "issue_nc": 151,
+     "kw": [
+      "부정",
+      "행위",
+      "AI",
+      "중국"
+     ],
+     "top_post": {
+      "t": "[오목교 전자상가] AI부정행위 게시글에 달린 최다추천 댓글",
+      "u": "https://www.dogdrip.net/dogdrip/735118477?sort_index=popular&page=1",
+      "nc": 48
+     }
+    },
+    {
      "t": "음주운전 한 연예인중 가장 욕을 덜 먹는 연예인",
      "nsite": 4,
      "np_here": 1,
@@ -281,105 +300,67 @@
      }
     },
     {
-     "t": "중국은 ai부정행위가 없는 이유.List",
-     "nsite": 9,
-     "np_here": 1,
-     "nc_here": 46,
-     "issue_np": 14,
-     "issue_nc": 163,
-     "kw": [
-      "행위",
-      "부정",
-      "AI",
-      "중국"
-     ],
-     "top_post": {
-      "t": "[오목교 전자상가] AI부정행위 게시글에 달린 최다추천 댓글",
-      "u": "https://www.dogdrip.net/dogdrip/735118477?sort_index=popular&page=1",
-      "nc": 46
-     }
-    },
-    {
-     "t": "중국의 AI 시험 부정행위 대처",
+     "t": "미리보는 서울대 의대 신입생 환영회",
      "nsite": 4,
      "np_here": 1,
-     "nc_here": 39,
-     "issue_np": 5,
-     "issue_nc": 50,
+     "nc_here": 41,
+     "issue_np": 4,
+     "issue_nc": 41,
      "kw": [
-      "부정행위",
-      "시험",
-      "중국",
-      "AI"
+      "서울대",
+      "신입",
+      "의대",
+      "환영회"
      ],
      "top_post": {
-      "t": "중국의 AI 시험 부정행위 대처",
-      "u": "https://www.dogdrip.net/dogdrip/734982109?sort_index=popular&page=1",
-      "nc": 39
+      "t": "미리보는 서울대 의대 신입생 환영회",
+      "u": "https://www.dogdrip.net/dogdrip/735025103?sort_index=popular&page=1",
+      "nc": 41
      }
     }
    ]
   },
   {
    "name": "인스티즈",
-   "np": 6,
-   "nc": 298,
+   "np": 5,
+   "nc": 237,
    "topics": [
-    {
-     "t": "현재 난리났다는 국내 택시업계 근황",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 63,
-     "issue_np": 4,
-     "issue_nc": 92,
-     "kw": [
-      "AI",
-      "난리",
-      "업계",
-      "위기"
-     ],
-     "top_post": {
-      "t": "현재 난리났다는 국내 택시업계 근황",
-      "u": "https://www.instiz.net/pt/7926509?green=1",
-      "nc": 63
-     }
-    },
     {
      "t": "[속보] 정부, 수능 시험장 공공 와이파이 차단 추진",
      "nsite": 3,
      "np_here": 1,
-     "nc_here": 63,
+     "nc_here": 64,
      "issue_np": 5,
-     "issue_nc": 75,
+     "issue_nc": 76,
      "kw": [
       "차단",
       "수능",
       "와이파이",
-      "시험장"
+      "속보"
      ],
      "top_post": {
       "t": "[속보] 정부, 수능 시험장 공공 와이파이 차단 추진",
       "u": "https://www.instiz.net/pt/7926494?green=1",
-      "nc": 63
+      "nc": 64
      }
     },
     {
      "t": "\"이건 정신병동 냄새인데\"…지하철서 탈출 환자 신고한 간호대생",
      "nsite": 4,
      "np_here": 1,
-     "nc_here": 53,
+     "nc_here": 54,
      "issue_np": 4,
-     "issue_nc": 86,
+     "issue_nc": 87,
      "kw": [
-      "환자",
+      "냄새",
       "간호",
       "탈출",
-      "냄새"
+      "환자"
      ],
      "top_post": {
       "t": "\"이건 정신병동 냄새인데\"…지하철서 탈출 환자 신고한 간호대생",
       "u": "https://www.instiz.net/pt/7926563?green=1",
-      "nc": 53
+      "nc": 54
      }
     },
     {
@@ -387,11 +368,11 @@
      "nsite": 12,
      "np_here": 1,
      "nc_here": 42,
-     "issue_np": 48,
+     "issue_np": 49,
      "issue_nc": 186,
      "kw": [
-      "AI",
       "안경",
+      "AI",
       "시험",
       "수능"
      ],
@@ -403,15 +384,16 @@
     },
     {
      "t": "제 63기 세무사 진짜 수석 합격자",
-     "nsite": 5,
+     "nsite": 6,
      "np_here": 1,
      "nc_here": 40,
-     "issue_np": 6,
-     "issue_nc": 74,
+     "issue_np": 7,
+     "issue_nc": 77,
      "kw": [
       "세무사",
       "수석",
-      "합격자"
+      "합격자",
+      "시험"
      ],
      "top_post": {
       "t": "제 63기 세무사 진짜 수석 합격자",
@@ -421,11 +403,11 @@
     },
     {
      "t": "올해 세무사 시험 감독관 인터뷰",
-     "nsite": 4,
+     "nsite": 3,
      "np_here": 1,
      "nc_here": 37,
-     "issue_np": 4,
-     "issue_nc": 82,
+     "issue_np": 3,
+     "issue_nc": 70,
      "kw": [
       "시험",
       "세무사"
@@ -440,15 +422,15 @@
   },
   {
    "name": "82쿡",
-   "np": 20,
-   "nc": 161,
+   "np": 21,
+   "nc": 164,
    "topics": [
     {
      "t": "수능에서 몰래 카메라 부정 행위 모두 잡아낼 수 있을까?",
      "nsite": 7,
      "np_here": 2,
      "nc_here": 28,
-     "issue_np": 8,
+     "issue_np": 9,
      "issue_nc": 53,
      "kw": [
       "부정",
@@ -471,8 +453,8 @@
      "issue_nc": 63,
      "kw": [
       "리트",
-      "수능",
       "만점자",
+      "수능",
       "라이브"
      ],
      "top_post": {
@@ -487,7 +469,7 @@
      "np_here": 1,
      "nc_here": 15,
      "issue_np": 17,
-     "issue_nc": 146,
+     "issue_nc": 161,
      "kw": [
       "AI",
       "치팅",
@@ -501,52 +483,15 @@
      }
     },
     {
-     "t": "[속보] 정부, 수능 시험장 공공 와이파이 차단 추진",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 12,
-     "issue_np": 5,
-     "issue_nc": 75,
-     "kw": [
-      "차단",
-      "수능",
-      "와이파이",
-      "시험장"
-     ],
-     "top_post": {
-      "t": "데이터 완전차단이 아니라 공공와이파이 차단이라니",
-      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4259423&page=1",
-      "nc": 12
-     }
-    },
-    {
-     "t": "제 63기 세무사 진짜 수석 합격자",
-     "nsite": 5,
-     "np_here": 1,
-     "nc_here": 11,
-     "issue_np": 6,
-     "issue_nc": 74,
-     "kw": [
-      "세무사",
-      "수석",
-      "합격자"
-     ],
-     "top_post": {
-      "t": "세무사 수석 죄질이 나쁜게",
-      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4259257&page=1",
-      "nc": 11
-     }
-    },
-    {
      "t": "중국은 ai부정행위가 없는 이유.List",
-     "nsite": 9,
-     "np_here": 1,
-     "nc_here": 9,
-     "issue_np": 14,
-     "issue_nc": 163,
+     "nsite": 8,
+     "np_here": 2,
+     "nc_here": 12,
+     "issue_np": 11,
+     "issue_nc": 151,
      "kw": [
-      "행위",
       "부정",
+      "행위",
       "AI",
       "중국"
      ],
@@ -557,6 +502,44 @@
      }
     },
     {
+     "t": "[속보] 정부, 수능 시험장 공공 와이파이 차단 추진",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 12,
+     "issue_np": 5,
+     "issue_nc": 76,
+     "kw": [
+      "차단",
+      "수능",
+      "와이파이",
+      "속보"
+     ],
+     "top_post": {
+      "t": "데이터 완전차단이 아니라 공공와이파이 차단이라니",
+      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4259423&page=1",
+      "nc": 12
+     }
+    },
+    {
+     "t": "제 63기 세무사 진짜 수석 합격자",
+     "nsite": 6,
+     "np_here": 1,
+     "nc_here": 11,
+     "issue_np": 7,
+     "issue_nc": 77,
+     "kw": [
+      "세무사",
+      "수석",
+      "합격자",
+      "시험"
+     ],
+     "top_post": {
+      "t": "세무사 수석 죄질이 나쁜게",
+      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4259257&page=1",
+      "nc": 11
+     }
+    },
+    {
      "t": "수능 연기 제안 호소문",
      "nsite": 4,
      "np_here": 1,
@@ -564,8 +547,8 @@
      "issue_np": 5,
      "issue_nc": 14,
      "kw": [
-      "연기",
-      "수능"
+      "수능",
+      "연기"
      ],
      "top_post": {
       "t": "수능 연기한다해도",
@@ -595,19 +578,19 @@
   },
   {
    "name": "클리앙",
-   "np": 11,
-   "nc": 139,
+   "np": 8,
+   "nc": 107,
    "topics": [
     {
      "t": "교육부장관 ㄹㅇ 정신 나갔네요 ㅋㅋㅋㅋ",
      "nsite": 5,
-     "np_here": 3,
-     "nc_here": 38,
-     "issue_np": 11,
-     "issue_nc": 410,
+     "np_here": 2,
+     "nc_here": 32,
+     "issue_np": 12,
+     "issue_nc": 426,
      "kw": [
-      "장관",
       "교육부",
+      "장관",
       "최교진",
       "나이"
      ],
@@ -625,51 +608,15 @@
      "issue_np": 4,
      "issue_nc": 112,
      "kw": [
-      "전수",
       "조사",
-      "데뷔",
-      "내년"
+      "전수",
+      "내년",
+      "데뷔"
      ],
      "top_post": {
       "t": "어려도 너무 어려' 13살도 데뷔…아이돌 인권 '내년 첫 전수조사'",
       "u": "https://www.clien.net/service/board/park/19292806?od=T33&po=0&category=0&groupCd=clien_all",
       "nc": 29
-     }
-    },
-    {
-     "t": "중국은 ai부정행위가 없는 이유.List",
-     "nsite": 9,
-     "np_here": 1,
-     "nc_here": 14,
-     "issue_np": 14,
-     "issue_nc": 163,
-     "kw": [
-      "행위",
-      "부정",
-      "AI",
-      "중국"
-     ],
-     "top_post": {
-      "t": "ai 답변을 고봉밥으로 퍼오는 행위",
-      "u": "https://www.clien.net/service/board/park/19292650?od=T33&po=0&category=0&groupCd=clien_all",
-      "nc": 14
-     }
-    },
-    {
-     "t": "올해 세무사 시험 감독관 인터뷰",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 12,
-     "issue_np": 4,
-     "issue_nc": 82,
-     "kw": [
-      "시험",
-      "세무사"
-     ],
-     "top_post": {
-      "t": "세무사 시험 만점자 님께서 큰 일 하셨네요.",
-      "u": "https://www.clien.net/service/board/park/19292902?od=T33&po=0&category=0&groupCd=clien_all",
-      "nc": 12
      }
     },
     {
@@ -692,16 +639,16 @@
     },
     {
      "t": "중국의 AI 시험 부정행위 대처",
-     "nsite": 4,
+     "nsite": 5,
      "np_here": 1,
      "nc_here": 10,
-     "issue_np": 5,
-     "issue_nc": 50,
+     "issue_np": 6,
+     "issue_nc": 52,
      "kw": [
       "부정행위",
       "시험",
-      "중국",
-      "AI"
+      "AI",
+      "중국"
      ],
      "top_post": {
       "t": "잃을거 많은 사람도 시험 부정행위 잘만 저지릅니다.",
@@ -732,7 +679,7 @@
      "np_here": 1,
      "nc_here": 9,
      "issue_np": 17,
-     "issue_nc": 146,
+     "issue_nc": 161,
      "kw": [
       "AI",
       "치팅",
@@ -743,6 +690,25 @@
       "t": "AI 치팅을 막는 확실한 방법",
       "u": "https://www.clien.net/service/board/park/19292894?od=T33&po=0&category=0&groupCd=clien_all",
       "nc": 9
+     }
+    },
+    {
+     "t": "수능에서 몰래 카메라 부정 행위 모두 잡아낼 수 있을까?",
+     "nsite": 7,
+     "np_here": 1,
+     "nc_here": 7,
+     "issue_np": 9,
+     "issue_nc": 53,
+     "kw": [
+      "부정",
+      "행위",
+      "수능",
+      "차단"
+     ],
+     "top_post": {
+      "t": "수능 부정행위 대책이 공공 와이파이 차단...",
+      "u": "https://www.clien.net/service/board/park/19293382?od=T33&po=0&category=0&groupCd=clien_all",
+      "nc": 7
      }
     }
    ]
@@ -757,11 +723,11 @@
      "nsite": 12,
      "np_here": 1,
      "nc_here": 17,
-     "issue_np": 48,
+     "issue_np": 49,
      "issue_nc": 186,
      "kw": [
-      "AI",
       "안경",
+      "AI",
       "시험",
       "수능"
      ],
@@ -776,7 +742,7 @@
      "nsite": 7,
      "np_here": 1,
      "nc_here": 15,
-     "issue_np": 8,
+     "issue_np": 9,
      "issue_nc": 53,
      "kw": [
       "부정",
@@ -792,14 +758,14 @@
     },
     {
      "t": "중국은 ai부정행위가 없는 이유.List",
-     "nsite": 9,
+     "nsite": 8,
      "np_here": 1,
      "nc_here": 8,
-     "issue_np": 14,
-     "issue_nc": 163,
+     "issue_np": 11,
+     "issue_nc": 151,
      "kw": [
-      "행위",
       "부정",
+      "행위",
       "AI",
       "중국"
      ],
@@ -814,11 +780,11 @@
      "nsite": 5,
      "np_here": 1,
      "nc_here": 7,
-     "issue_np": 11,
-     "issue_nc": 410,
+     "issue_np": 12,
+     "issue_nc": 426,
      "kw": [
-      "장관",
       "교육부",
+      "장관",
       "최교진",
       "나이"
      ],
@@ -832,8 +798,8 @@
   },
   {
    "name": "보배드림",
-   "np": 17,
-   "nc": 31,
+   "np": 19,
+   "nc": 34,
    "topics": [
     {
      "t": "음주운전 한 연예인중 가장 욕을 덜 먹는 연예인",
@@ -861,8 +827,8 @@
      "issue_np": 5,
      "issue_nc": 14,
      "kw": [
-      "연기",
-      "수능"
+      "수능",
+      "연기"
      ],
      "top_post": {
       "t": "수능 연기해야만 하는 이유",
@@ -891,14 +857,14 @@
     },
     {
      "t": "중국은 ai부정행위가 없는 이유.List",
-     "nsite": 9,
+     "nsite": 8,
      "np_here": 1,
      "nc_here": 3,
-     "issue_np": 14,
-     "issue_nc": 163,
+     "issue_np": 11,
+     "issue_nc": 151,
      "kw": [
-      "행위",
       "부정",
+      "행위",
       "AI",
       "중국"
      ],
@@ -913,7 +879,7 @@
      "nsite": 7,
      "np_here": 1,
      "nc_here": 3,
-     "issue_np": 8,
+     "issue_np": 9,
      "issue_nc": 53,
      "kw": [
       "부정",
@@ -924,6 +890,25 @@
      "top_post": {
       "t": "부정행위를 막지 못한 이유",
       "u": "https://www.bobaedream.co.kr/view?code=best&No=1047959&vdate=",
+      "nc": 3
+     }
+    },
+    {
+     "t": "제 63기 세무사 진짜 수석 합격자",
+     "nsite": 6,
+     "np_here": 1,
+     "nc_here": 3,
+     "issue_np": 7,
+     "issue_nc": 77,
+     "kw": [
+      "세무사",
+      "수석",
+      "합격자",
+      "시험"
+     ],
+     "top_post": {
+      "t": "세무사 부정시험 수석이 멍청해서 만점 받은게 아님",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1047712&vdate=",
       "nc": 3
      }
     },
@@ -951,7 +936,7 @@
      "np_here": 1,
      "nc_here": 3,
      "issue_np": 5,
-     "issue_nc": 155,
+     "issue_nc": 156,
      "kw": [
       "액체",
       "생수",
@@ -961,25 +946,6 @@
      "top_post": {
       "t": "초5 딸아이 방 침대밑에 누런액체가 담긴 생수병.",
       "u": "https://www.bobaedream.co.kr/view?code=best&No=1047731&vdate=",
-      "nc": 3
-     }
-    },
-    {
-     "t": "\"어려도 너무 어려\" 13살도 데뷔..아이돌 인권 \"내년 첫 전수조사\"",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 3,
-     "issue_np": 4,
-     "issue_nc": 112,
-     "kw": [
-      "전수",
-      "조사",
-      "데뷔",
-      "내년"
-     ],
-     "top_post": {
-      "t": "진짜 전수조사 필요함",
-      "u": "https://www.bobaedream.co.kr/view?code=best&No=1047794&vdate=",
       "nc": 3
      }
     }
@@ -1021,7 +987,7 @@
      "nsite": 7,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 8,
+     "issue_np": 9,
      "issue_nc": 53,
      "kw": [
       "부정",
@@ -1037,15 +1003,16 @@
     },
     {
      "t": "제 63기 세무사 진짜 수석 합격자",
-     "nsite": 5,
+     "nsite": 6,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 6,
-     "issue_nc": 74,
+     "issue_np": 7,
+     "issue_nc": 77,
      "kw": [
       "세무사",
       "수석",
-      "합격자"
+      "합격자",
+      "시험"
      ],
      "top_post": {
       "t": "세무사 수석 자수했네요?",
@@ -1079,8 +1046,8 @@
      "issue_np": 7,
      "issue_nc": 20,
      "kw": [
-      "감독관",
       "수능",
+      "감독관",
       "실시간"
      ],
      "top_post": {
@@ -1095,33 +1062,16 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 4,
-     "issue_nc": 86,
+     "issue_nc": 87,
      "kw": [
-      "환자",
+      "냄새",
       "간호",
       "탈출",
-      "냄새"
+      "환자"
      ],
      "top_post": {
       "t": "냄새로 정신병 탈출 환자 판단한 간호대생",
       "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677545",
-      "nc": 0
-     }
-    },
-    {
-     "t": "올해 세무사 시험 감독관 인터뷰",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 82,
-     "kw": [
-      "시험",
-      "세무사"
-     ],
-     "top_post": {
-      "t": "세무사시험 부정행위 아니라네요",
-      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677494",
       "nc": 0
      }
     },
@@ -1133,8 +1083,8 @@
      "issue_np": 5,
      "issue_nc": 14,
      "kw": [
-      "연기",
-      "수능"
+      "수능",
+      "연기"
      ],
      "top_post": {
       "t": "수능을 연기하면 왜 더 큰 혼란이 온다는 걸까요...?",
@@ -1150,14 +1100,31 @@
      "issue_np": 3,
      "issue_nc": 72,
      "kw": [
-      "공부",
-      "AI",
+      "수학",
       "인간",
-      "수학"
+      "공부",
+      "AI"
      ],
      "top_post": {
       "t": "AI가 수학 다 풀어주니, 인간은 수학공부할 필요 없다라...",
       "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677467",
+      "nc": 0
+     }
+    },
+    {
+     "t": "올해 세무사 시험 감독관 인터뷰",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 70,
+     "kw": [
+      "시험",
+      "세무사"
+     ],
+     "top_post": {
+      "t": "세무사시험 부정행위 아니라네요",
+      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677494",
       "nc": 0
      }
     }
@@ -1193,8 +1160,8 @@
      "issue_np": 7,
      "issue_nc": 20,
      "kw": [
-      "감독관",
       "수능",
+      "감독관",
       "실시간"
      ],
      "top_post": {
@@ -1222,25 +1189,6 @@
      }
     },
     {
-     "t": "현재 난리났다는 국내 택시업계 근황",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 92,
-     "kw": [
-      "AI",
-      "난리",
-      "업계",
-      "위기"
-     ],
-     "top_post": {
-      "t": "부들부들 현재 대위기 터져서 난리난 AI 업계",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=478893&_dcbest=1&page=1",
-      "nc": 0
-     }
-    },
-    {
      "t": "음주운전 한 연예인중 가장 욕을 덜 먹는 연예인",
      "nsite": 4,
      "np_here": 1,
@@ -1259,6 +1207,25 @@
      }
     },
     {
+     "t": "미리보는 서울대 의대 신입생 환영회",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 41,
+     "kw": [
+      "서울대",
+      "신입",
+      "의대",
+      "환영회"
+     ],
+     "top_post": {
+      "t": "2027 서울대 로스쿨 신입생 단체사진떴다",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=479114&_dcbest=1&page=1",
+      "nc": 0
+     }
+    },
+    {
      "t": "경찰, '뉴진스 계약 해지' 민희진 업무상 배임 혐의 송치",
      "nsite": 4,
      "np_here": 1,
@@ -1266,9 +1233,9 @@
      "issue_np": 4,
      "issue_nc": 27,
      "kw": [
-      "배임",
-      "계약",
+      "업무",
       "뉴진스",
+      "계약",
       "해지"
      ],
      "top_post": {
@@ -1285,8 +1252,8 @@
      "issue_np": 5,
      "issue_nc": 14,
      "kw": [
-      "연기",
-      "수능"
+      "수능",
+      "연기"
      ],
      "top_post": {
       "t": "수능 연기 제안 호소문",
@@ -1315,24 +1282,6 @@
      "top_post": {
       "t": "초소형 카메라 근황",
       "u": "https://bbs.ruliweb.com/best/board/300143/read/77411959?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "제 63기 세무사 진짜 수석 합격자",
-     "nsite": 5,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 6,
-     "issue_nc": 74,
-     "kw": [
-      "세무사",
-      "수석",
-      "합격자"
-     ],
-     "top_post": {
-      "t": "63회 세무사 시험 합격자입니다",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77413331?m=all&t=now",
       "nc": 0
      }
     },
@@ -1374,6 +1323,25 @@
      }
     },
     {
+     "t": "중국의 AI 시험 부정행위 대처",
+     "nsite": 5,
+     "np_here": 2,
+     "nc_here": 0,
+     "issue_np": 6,
+     "issue_nc": 52,
+     "kw": [
+      "부정행위",
+      "시험",
+      "AI",
+      "중국"
+     ],
+     "top_post": {
+      "t": "시험 부정행위는 계속 나올 수 밖에 없는 이유",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77403816?m=humor",
+      "nc": 0
+     }
+    },
+    {
      "t": "수능 감독관 이런것도 잡아낼 수 있을까?",
      "nsite": 5,
      "np_here": 2,
@@ -1381,8 +1349,8 @@
      "issue_np": 7,
      "issue_nc": 20,
      "kw": [
-      "감독관",
       "수능",
+      "감독관",
       "실시간"
      ],
      "top_post": {
@@ -1434,7 +1402,7 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 5,
-     "issue_nc": 155,
+     "issue_nc": 156,
      "kw": [
       "액체",
       "생수",
@@ -1499,10 +1467,10 @@
      "issue_np": 4,
      "issue_nc": 112,
      "kw": [
-      "전수",
       "조사",
-      "데뷔",
-      "내년"
+      "전수",
+      "내년",
+      "데뷔"
      ],
      "top_post": {
       "t": "[단독] \"어려도 너무 어려\" 13살도 데뷔…아이돌 인권 \"내년 첫 전수조사\"",
@@ -1516,12 +1484,12 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 4,
-     "issue_nc": 86,
+     "issue_nc": 87,
      "kw": [
-      "환자",
+      "냄새",
       "간호",
       "탈출",
-      "냄새"
+      "환자"
      ],
      "top_post": {
       "t": "“이건 정신병동 냄새인데”…전철서 탈출 환자 신고한 간호대생",
@@ -1537,9 +1505,9 @@
      "issue_np": 4,
      "issue_nc": 27,
      "kw": [
-      "배임",
-      "계약",
+      "업무",
       "뉴진스",
+      "계약",
       "해지"
      ],
      "top_post": {
@@ -1572,12 +1540,12 @@
      "np_here": 3,
      "nc_here": 0,
      "issue_np": 5,
-     "issue_nc": 75,
+     "issue_nc": 76,
      "kw": [
       "차단",
       "수능",
       "와이파이",
-      "시험장"
+      "속보"
      ],
      "top_post": {
       "t": "[속보] 교육부 \"수능 시험장 전파 차단, 법적·기술적 한계로 검토 안 한다\"",
