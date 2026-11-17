@@ -1,5 +1,5 @@
 {
- "at": "2026-11-17 16:30",
+ "at": "2026-11-17 17:30",
  "nitems": 517,
  "cands": [
   {
@@ -38,37 +38,72 @@
    ]
   },
   {
-   "kw": "부부",
+   "kw": "제니",
    "nsrc": 6,
    "srcs": [
+    "SBS",
     "뉴시스",
     "동아일보",
     "연합뉴스",
     "조선일보",
-    "한국경제",
-    "헤럴드경제"
+    "한겨레"
    ],
-   "n": 9,
+   "n": 16,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "여주시, 개그맨 부부 권재관·김경아 홍보대사 위촉",
-     "link": "https://www.yna.co.kr/view/AKR20261117063600061"
+     "title": "'그래미 후보' 제니 '드라큘라', 美 빌보드 싱글 3위 유지",
+     "link": "https://www.yna.co.kr/view/AKR20261117038500005"
     },
     {
      "src": "연합뉴스",
-     "title": "주진모·민혜연 부부, 결혼 7년 만에 부모 된다…\"임신 초기\"",
-     "link": "https://www.yna.co.kr/view/AKR20261114036000005"
+     "title": "블핑 제니, 美 그래미 본상 '올해의 레코드' 포함 2개 부문 후보(종합)",
+     "link": "https://www.yna.co.kr/view/AKR20261116180251005"
     },
     {
      "src": "연합뉴스",
-     "title": "박수홍, 친형 부부 상대 98억원대 민사소송 1심서 패소",
-     "link": "https://www.yna.co.kr/view/AKR20261113113300004"
+     "title": "제니, 美 그래미서 본상 '올해의 레코드' 포함 2개 부문 후보",
+     "link": "https://www.yna.co.kr/view/AKR20261116180200005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "[속보] 제니, '드라큘라'로 그래미 본상 '올해의 레코드' 후보 지명",
+     "link": "https://www.yna.co.kr/view/AKR20261116179800005"
+    }
+   ]
+  },
+  {
+   "kw": "데뷔",
+   "nsrc": 6,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "동아일보",
+    "연합뉴스",
+    "조선일보",
+    "한국경제"
+   ],
+   "n": 11,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "이승철, 데뷔 40년 만에 공식 팬클럽 모집…\"오래 추억 쌓을 것\"",
+     "link": "https://www.yna.co.kr/view/AKR20261113074400005"
     },
     {
      "src": "동아일보",
-     "title": "[공식] 오정세·전혜진 부부 된다…‘써닝야구단’ 출연",
-     "link": "https://sports.donga.com/ent/article/all/20261117/135040198/1"
+     "title": "데뷔 3주년 맞물려 첫 정규 1집, 앰퍼샌드원이 개척한 ‘왕의 길’",
+     "link": "https://sports.donga.com/ent/article/all/20261117/135040134/1"
+    },
+    {
+     "src": "한국경제",
+     "title": "[단독] SM 신인 보이그룹, 내년 1월 데뷔",
+     "link": "https://www.hankyung.com/article/202611169565H"
+    },
+    {
+     "src": "한국경제",
+     "title": "\"가정부와 불륜으로 낳은 아들\" 슈워제네거 혼외자, 보디빌더 데뷔",
+     "link": "https://www.hankyung.com/article/2026111086337"
     }
    ]
   },
@@ -143,6 +178,40 @@
    ]
   },
   {
+   "kw": "앰퍼샌드",
+   "nsrc": 5,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "세계일보",
+    "연합뉴스",
+    "조선일보"
+   ],
+   "n": 69,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "앰퍼샌드원 칼갈고 나왔다…\"3년만에 첫 정규, K팝의 왕 되고파\"",
+     "link": "https://www.yna.co.kr/view/AKR20261117124400005"
+    },
+    {
+     "src": "동아일보",
+     "title": "데뷔 3주년 맞물려 첫 정규 1집, 앰퍼샌드원이 개척한 ‘왕의 길’",
+     "link": "https://sports.donga.com/ent/article/all/20261117/135040134/1"
+    },
+    {
+     "src": "세계일보",
+     "title": "[포토] 앰퍼샌드원 '화려한 컴백 무대'",
+     "link": "https://www.segye.com/newsView/20261117512534"
+    },
+    {
+     "src": "세계일보",
+     "title": "[포토] 앰퍼샌드원 '완벽한 호흡'",
+     "link": "https://www.segye.com/newsView/20261117512075"
+    }
+   ]
+  },
+  {
    "kw": "그래미",
    "nsrc": 5,
    "srcs": [
@@ -168,40 +237,6 @@
      "src": "연합뉴스",
      "title": "블핑 제니, 美 그래미 본상 '올해의 레코드' 포함 2개 부문 후보(종합)",
      "link": "https://www.yna.co.kr/view/AKR20261116180251005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "[속보] 제니, '드라큘라'로 그래미 본상 '올해의 레코드' 후보 지명",
-     "link": "https://www.yna.co.kr/view/AKR20261116179800005"
-    }
-   ]
-  },
-  {
-   "kw": "제니",
-   "nsrc": 5,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "동아일보",
-    "연합뉴스",
-    "한겨레"
-   ],
-   "n": 15,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "'그래미 후보' 제니 '드라큘라', 美 빌보드 싱글 3위 유지",
-     "link": "https://www.yna.co.kr/view/AKR20261117038500005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "블핑 제니, 美 그래미 본상 '올해의 레코드' 포함 2개 부문 후보(종합)",
-     "link": "https://www.yna.co.kr/view/AKR20261116180251005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "제니, 美 그래미서 본상 '올해의 레코드' 포함 2개 부문 후보",
-     "link": "https://www.yna.co.kr/view/AKR20261116180200005"
     },
     {
      "src": "연합뉴스",
@@ -279,36 +314,36 @@
    ]
   },
   {
-   "kw": "데뷔",
+   "kw": "블랙핑크",
    "nsrc": 5,
    "srcs": [
-    "SBS",
-    "동아일보",
+    "뉴시스",
     "연합뉴스",
     "조선일보",
+    "한겨레",
     "한국경제"
    ],
-   "n": 10,
+   "n": 9,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "이승철, 데뷔 40년 만에 공식 팬클럽 모집…\"오래 추억 쌓을 것\"",
-     "link": "https://www.yna.co.kr/view/AKR20261113074400005"
+     "title": "블랙핑크, YG 전속계약 명단서 빠져…\"그룹 활동에 대해 논의중\"",
+     "link": "https://www.yna.co.kr/view/AKR20261116160000005"
     },
     {
-     "src": "동아일보",
-     "title": "데뷔 3주년 맞물려 첫 정규 1집, 앰퍼샌드원이 개척한 ‘왕의 길’",
-     "link": "https://sports.donga.com/ent/article/all/20261117/135040134/1"
+     "src": "연합뉴스",
+     "title": "[방송소식] SBS '비서진' 4회 연장…블랙핑크 지수 등 출연",
+     "link": "https://www.yna.co.kr/view/AKR20261116133700005"
+    },
+    {
+     "src": "한겨레",
+     "title": "블랙핑크 제니, 그래미 ‘올해의 레코드’ 후보…2개 부문 지명",
+     "link": "https://www.hani.co.kr/arti/culture/music/1287634.html"
     },
     {
      "src": "한국경제",
-     "title": "[단독] SM 신인 보이그룹, 내년 1월 데뷔",
-     "link": "https://www.hankyung.com/article/202611169565H"
-    },
-    {
-     "src": "한국경제",
-     "title": "\"가정부와 불륜으로 낳은 아들\" 슈워제네거 혼외자, 보디빌더 데뷔",
-     "link": "https://www.hankyung.com/article/2026111086337"
+     "title": "YG 전속계약 명단서 빠진 블랙핑크…\"그룹 활동 논의 중\"",
+     "link": "https://www.hankyung.com/article/202611169801H"
     }
    ]
   },
@@ -347,36 +382,70 @@
    ]
   },
   {
-   "kw": "에이티즈",
+   "kw": "부부",
+   "nsrc": 5,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "연합뉴스",
+    "한국경제",
+    "헤럴드경제"
+   ],
+   "n": 8,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "여주시, 개그맨 부부 권재관·김경아 홍보대사 위촉",
+     "link": "https://www.yna.co.kr/view/AKR20261117063600061"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "주진모·민혜연 부부, 결혼 7년 만에 부모 된다…\"임신 초기\"",
+     "link": "https://www.yna.co.kr/view/AKR20261114036000005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "박수홍, 친형 부부 상대 98억원대 민사소송 1심서 패소",
+     "link": "https://www.yna.co.kr/view/AKR20261113113300004"
+    },
+    {
+     "src": "동아일보",
+     "title": "[공식] 오정세·전혜진 부부 된다…‘써닝야구단’ 출연",
+     "link": "https://sports.donga.com/ent/article/all/20261117/135040198/1"
+    }
+   ]
+  },
+  {
+   "kw": "로버트",
    "nsrc": 5,
    "srcs": [
     "SBS",
     "뉴시스",
     "동아일보",
     "연합뉴스",
-    "한국경제"
+    "조선일보"
    ],
    "n": 7,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "에이티즈 홍중·팬들, 함께 달려 식수위생사업에 1억원 후원",
-     "link": "https://www.yna.co.kr/view/AKR20261117043600371"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "에이티즈, '배드' 인기 잇는다…\"가장 높은 곳 그 이상까지\"",
-     "link": "https://www.yna.co.kr/view/AKR20261112112300005"
+     "title": "로버트 패틴슨, 7대 제임스 본드 된다…'007시리즈' 주인공 낙점",
+     "link": "https://www.yna.co.kr/view/AKR20261117002400075"
     },
     {
      "src": "동아일보",
-     "title": "향기 가득 머금은 에이티즈 산, 치명적 눈빛 [화보]",
-     "link": "https://sports.donga.com/ent/article/all/20261117/135038169/1"
+     "title": "7대 007은 로버트 패틴슨이었다, 영국 왕실도 ‘신입 본드’ 반겨",
+     "link": "https://sports.donga.com/ent/article/all/20261117/135040065/1"
     },
     {
-     "src": "한국경제",
-     "title": "에이티즈, 타이틀곡 'UP' 뮤직비디오 첫 티저 공개",
-     "link": "https://www.hankyung.com/article/202611107743H"
+     "src": "SBS",
+     "title": "로버트 패틴슨과 호흡 맞출 '본드걸'은 누구?…후보군에 정호연도 거론",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008850159&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "SBS",
+     "title": "'배트맨' 로버트 패틴슨, 7대 제임스 본드 발탁…호불호 나뉘는 이유는?",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008849057&plink=RSSLINK&cooper=RSSREADER"
     }
    ]
   },
@@ -384,10 +453,10 @@
    "kw": "연기",
    "nsrc": 5,
    "srcs": [
+    "SBS",
     "뉴시스",
     "동아일보",
     "세계일보",
-    "조선일보",
     "한국경제"
    ],
    "n": 7,
@@ -449,7 +518,7 @@
    ]
   },
   {
-   "kw": "로버트",
+   "kw": "본드",
    "nsrc": 5,
    "srcs": [
     "SBS",
@@ -458,7 +527,7 @@
     "연합뉴스",
     "조선일보"
    ],
-   "n": 6,
+   "n": 5,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -477,42 +546,8 @@
     },
     {
      "src": "뉴시스",
-     "title": "로버트 패틴슨의 첫 '본드걸'은 누구…정호연·젠데이아·플로렌스 퓨 물망",
-     "link": "https://www.newsis.com/view/NISX20261117_0003871304"
-    }
-   ]
-  },
-  {
-   "kw": "마지막",
-   "nsrc": 5,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "연합뉴스",
-    "한겨레",
-    "헤럴드경제"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "[가요소식] 심아일랜드, 3부작 마지막 미니앨범 '바둑이'",
-     "link": "https://www.yna.co.kr/view/AKR20261116054600005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "자폐 아들 위한 '네버랜드'의 꿈…故전경철 작가 마지막 담긴 다큐",
-     "link": "https://www.yna.co.kr/view/AKR20261112186400005"
-    },
-    {
-     "src": "한겨레",
-     "title": "사라진 단원의 ‘걸작’ 되살릴 마지막 열쇠, 일본서 돌아올까",
-     "link": "https://www.hani.co.kr/arti/culture/culture_general/1287345.html"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "박슬기, 셋째 임신…“이번이 마지막”",
-     "link": "https://biz.heraldcorp.com/article/10937571"
+     "title": "로버트 패틴슨, 차기 제임스 본드 낙점…역대 7번째 '007'",
+     "link": "https://www.newsis.com/view/NISX20261117_0003870631"
     }
    ]
   },
@@ -537,40 +572,6 @@
      "src": "한겨레",
      "title": "뱀파이어, 배트맨 거쳐 이젠 첩보원…7대 제임스 본드에 패틴슨",
      "link": "https://www.hani.co.kr/arti/culture/culture_general/1287659.html"
-    },
-    {
-     "src": "SBS",
-     "title": "'배트맨' 로버트 패틴슨, 7대 제임스 본드 발탁…호불호 나뉘는 이유는?",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008849057&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "뉴시스",
-     "title": "로버트 패틴슨, 차기 제임스 본드 낙점…역대 7번째 '007'",
-     "link": "https://www.newsis.com/view/NISX20261117_0003870631"
-    }
-   ]
-  },
-  {
-   "kw": "본드",
-   "nsrc": 5,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "동아일보",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "로버트 패틴슨, 7대 제임스 본드 된다…'007시리즈' 주인공 낙점",
-     "link": "https://www.yna.co.kr/view/AKR20261117002400075"
-    },
-    {
-     "src": "동아일보",
-     "title": "7대 007은 로버트 패틴슨이었다, 영국 왕실도 ‘신입 본드’ 반겨",
-     "link": "https://sports.donga.com/ent/article/all/20261117/135040065/1"
     },
     {
      "src": "SBS",
@@ -619,6 +620,40 @@
    ]
   },
   {
+   "kw": "너무",
+   "nsrc": 5,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "동아일보",
+    "조선일보",
+    "헤럴드경제"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "“팬덤 커트라인 너무 높네요”…리센느가 쏘아 올린 ‘고스펙 덕질’ 문화",
+     "link": "https://sports.donga.com/ent/article/all/20261117/135038983/1"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "“너무 사랑스러워서”…변요한·티파니 영 부부, 시상하랬더니 애정행각",
+     "link": "https://biz.heraldcorp.com/article/10937762"
+    },
+    {
+     "src": "SBS",
+     "title": "팔불출 변요한 \"우리 티파니 씨 너무 사랑스러워\"…고척돔 녹인 부부의 첫 동반 외출",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008847883&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "뉴시스",
+     "title": "배윤정, 안면 거상술 3주 차 얼굴 공개 \"너무 만족해\"",
+     "link": "https://www.newsis.com/view/NISX20261117_0003871813"
+    }
+   ]
+  },
+  {
    "kw": "변요한",
    "nsrc": 5,
    "srcs": [
@@ -649,39 +684,6 @@
      "src": "SBS",
      "title": "팔불출 변요한 \"우리 티파니 씨 너무 사랑스러워\"…고척돔 녹인 부부의 첫 동반 외출",
      "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008847883&plink=RSSLINK&cooper=RSSREADER"
-    }
-   ]
-  },
-  {
-   "kw": "앰퍼샌드",
-   "nsrc": 4,
-   "srcs": [
-    "동아일보",
-    "세계일보",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 68,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "앰퍼샌드원 칼갈고 나왔다…\"3년만에 첫 정규, K팝의 왕 되고파\"",
-     "link": "https://www.yna.co.kr/view/AKR20261117124400005"
-    },
-    {
-     "src": "동아일보",
-     "title": "데뷔 3주년 맞물려 첫 정규 1집, 앰퍼샌드원이 개척한 ‘왕의 길’",
-     "link": "https://sports.donga.com/ent/article/all/20261117/135040134/1"
-    },
-    {
-     "src": "세계일보",
-     "title": "[포토] 앰퍼샌드원 '화려한 컴백 무대'",
-     "link": "https://www.segye.com/newsView/20261117512534"
-    },
-    {
-     "src": "세계일보",
-     "title": "[포토] 앰퍼샌드원 '완벽한 호흡'",
-     "link": "https://www.segye.com/newsView/20261117512075"
     }
    ]
   },
@@ -752,6 +754,39 @@
    ]
   },
   {
+   "kw": "고경표",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "연합뉴스",
+    "조선일보"
+   ],
+   "n": 9,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "'음주운전' 고경표, 팬미팅 취소…\"실망 안겨드리게 돼 사과\"",
+     "link": "https://www.yna.co.kr/view/AKR20261116175800005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "'음주운전' 고경표 \"전적으로 제 잘못…활동 중단\"",
+     "link": "https://www.yna.co.kr/view/AKR20261115044500005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "고경표 음주운전, 방송가에 불똥…'놀뭐'·'식스센스' 등 편집",
+     "link": "https://www.yna.co.kr/view/AKR20261114032600005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "배우 고경표 음주운전 중 청소차 들이받아…\"깊이 반성\"(종합)",
+     "link": "https://www.yna.co.kr/view/AKR20261114025051004"
+    }
+   ]
+  },
+  {
    "kw": "부문",
    "nsrc": 4,
    "srcs": [
@@ -781,39 +816,6 @@
      "src": "한겨레",
      "title": "블랙핑크 제니, 그래미 ‘올해의 레코드’ 후보…2개 부문 지명",
      "link": "https://www.hani.co.kr/arti/culture/music/1287634.html"
-    }
-   ]
-  },
-  {
-   "kw": "고경표",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 8,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "'음주운전' 고경표, 팬미팅 취소…\"실망 안겨드리게 돼 사과\"",
-     "link": "https://www.yna.co.kr/view/AKR20261116175800005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "'음주운전' 고경표 \"전적으로 제 잘못…활동 중단\"",
-     "link": "https://www.yna.co.kr/view/AKR20261115044500005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "고경표 음주운전, 방송가에 불똥…'놀뭐'·'식스센스' 등 편집",
-     "link": "https://www.yna.co.kr/view/AKR20261114032600005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "배우 고경표 음주운전 중 청소차 들이받아…\"깊이 반성\"(종합)",
-     "link": "https://www.yna.co.kr/view/AKR20261114025051004"
     }
    ]
   },
@@ -851,73 +853,7 @@
    ]
   },
   {
-   "kw": "블랙핑크",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "연합뉴스",
-    "한겨레",
-    "한국경제"
-   ],
-   "n": 8,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "블랙핑크, YG 전속계약 명단서 빠져…\"그룹 활동에 대해 논의중\"",
-     "link": "https://www.yna.co.kr/view/AKR20261116160000005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "[방송소식] SBS '비서진' 4회 연장…블랙핑크 지수 등 출연",
-     "link": "https://www.yna.co.kr/view/AKR20261116133700005"
-    },
-    {
-     "src": "한겨레",
-     "title": "블랙핑크 제니, 그래미 ‘올해의 레코드’ 후보…2개 부문 지명",
-     "link": "https://www.hani.co.kr/arti/culture/music/1287634.html"
-    },
-    {
-     "src": "한국경제",
-     "title": "YG 전속계약 명단서 빠진 블랙핑크…\"그룹 활동 논의 중\"",
-     "link": "https://www.hankyung.com/article/202611169801H"
-    }
-   ]
-  },
-  {
-   "kw": "닥터",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 8,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "복수 대신 신념 지킨 천재 외과의 김지원…'닥터X' 15.2% 종영",
-     "link": "https://www.yna.co.kr/view/AKR20261115015700005"
-    },
-    {
-     "src": "SBS",
-     "title": "[스브스夜] '닥터X' 김지원, 손현주의 '정식 의사' 채용 제안에도 '자기 길' 선택···\"가라, 계수정\"",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008846242&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "SBS",
-     "title": "전국환 숨겨진 비밀은?…'닥터X' 김우석, 김지원에 \"이번만 실패해 달라\" 눈물 애원",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008844475&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "뉴시스",
-     "title": "[현장]'닥터 둠 아지트'로 변신한 KFC…'초록 소스' 뒤집어 쓴 둠징거",
-     "link": "https://www.newsis.com/view/NISX20261117_0003871392"
-    }
-   ]
-  },
-  {
-   "kw": "결혼",
+   "kw": "본상",
    "nsrc": 4,
    "srcs": [
     "뉴시스",
@@ -929,23 +865,23 @@
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "주진모·민혜연 부부, 결혼 7년 만에 부모 된다…\"임신 초기\"",
-     "link": "https://www.yna.co.kr/view/AKR20261114036000005"
+     "title": "블핑 제니, 美 그래미 본상 '올해의 레코드' 포함 2개 부문 후보(종합)",
+     "link": "https://www.yna.co.kr/view/AKR20261116180251005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "제니, 美 그래미서 본상 '올해의 레코드' 포함 2개 부문 후보",
+     "link": "https://www.yna.co.kr/view/AKR20261116180200005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "[속보] 제니, '드라큘라'로 그래미 본상 '올해의 레코드' 후보 지명",
+     "link": "https://www.yna.co.kr/view/AKR20261116179800005"
     },
     {
      "src": "동아일보",
-     "title": "해녀 남편 코인 빚 8천만원…아내도 7천만원 사기 (결혼 지옥)",
-     "link": "https://sports.donga.com/ent/article/all/20261117/135038769/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "이정현, 12월 결혼 발표…배우 은퇴 고민까지 (말자쇼)",
-     "link": "https://sports.donga.com/ent/article/all/20261117/135038226/1"
-    },
-    {
-     "src": "뉴시스",
-     "title": "결혼 앞둔 솔비, 이규한에 \"꿈 이뤄줘서 고마워\"…무슨 일?",
-     "link": "https://www.newsis.com/view/NISX20261117_0003871395"
+     "title": "제니는 그래미 본상 후보, BTS는 출품 거부",
+     "link": "https://sports.donga.com/ent/article/all/20261117/135038386/1"
     }
    ]
   },
@@ -979,6 +915,72 @@
      "src": "뉴시스",
      "title": "NCT 드림, 11연속 밀리언셀러작 내놨다…정규 6집도 100만장↑",
      "link": "https://www.newsis.com/view/NISX20261116_0003869846"
+    }
+   ]
+  },
+  {
+   "kw": "본드걸",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "연합뉴스",
+    "조선일보"
+   ],
+   "n": 6,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "한국계 본드걸 나올까…퀄리·젠데이야 관측 속 정호연도 거론",
+     "link": "https://www.yna.co.kr/view/AKR20261117057400075"
+    },
+    {
+     "src": "SBS",
+     "title": "로버트 패틴슨과 호흡 맞출 '본드걸'은 누구?…후보군에 정호연도 거론",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008850159&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "뉴시스",
+     "title": "로버트 패틴슨의 첫 '본드걸'은 누구…정호연·젠데이아·플로렌스 퓨 물망",
+     "link": "https://www.newsis.com/view/NISX20261117_0003871304"
+    },
+    {
+     "src": "조선일보",
+     "title": "정호연, 첫 한국인 본드걸 자리 꿰찰까…보그가 꼽은 패틴슨 상대역 후보",
+     "link": "https://www.chosun.com/entertainments/enter_general/2026/11/17/HEYWCMDEME2GIN3CMY4WCNTDHE/"
+    }
+   ]
+  },
+  {
+   "kw": "에이티즈",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "연합뉴스",
+    "한국경제"
+   ],
+   "n": 6,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "에이티즈 홍중·팬들, 함께 달려 식수위생사업에 1억원 후원",
+     "link": "https://www.yna.co.kr/view/AKR20261117043600371"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "에이티즈, '배드' 인기 잇는다…\"가장 높은 곳 그 이상까지\"",
+     "link": "https://www.yna.co.kr/view/AKR20261112112300005"
+    },
+    {
+     "src": "한국경제",
+     "title": "에이티즈, 타이틀곡 'UP' 뮤직비디오 첫 티저 공개",
+     "link": "https://www.hankyung.com/article/202611107743H"
+    },
+    {
+     "src": "SBS",
+     "title": "에이티즈 최산, 아이돌 데뷔 숨은 공신은 트로트 가수 나상도…'남해 의형제' 인연",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008847573&plink=RSSLINK&cooper=RSSREADER"
     }
    ]
   },
@@ -1049,35 +1051,35 @@
    ]
   },
   {
-   "kw": "혐의",
+   "kw": "결혼",
    "nsrc": 4,
    "srcs": [
-    "SBS",
     "뉴시스",
-    "조선일보",
-    "한국경제"
+    "동아일보",
+    "연합뉴스",
+    "조선일보"
    ],
    "n": 6,
    "headlines": [
     {
-     "src": "한국경제",
-     "title": "[포토] '음주측정 방해 혐의' 배우 이재룡, 첫 공판 법정 출석",
-     "link": "https://www.hankyung.com/article/202611134876i"
+     "src": "연합뉴스",
+     "title": "주진모·민혜연 부부, 결혼 7년 만에 부모 된다…\"임신 초기\"",
+     "link": "https://www.yna.co.kr/view/AKR20261114036000005"
     },
     {
-     "src": "SBS",
-     "title": "김승우, 지인 돈 2200만 원 절도 혐의 피소…\"술자리 장난, 계좌이체 통해 반환\" 해명",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008844492&plink=RSSLINK&cooper=RSSREADER"
+     "src": "동아일보",
+     "title": "해녀 남편 코인 빚 8천만원…아내도 7천만원 사기 (결혼 지옥)",
+     "link": "https://sports.donga.com/ent/article/all/20261117/135038769/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "이정현, 12월 결혼 발표…배우 은퇴 고민까지 (말자쇼)",
+     "link": "https://sports.donga.com/ent/article/all/20261117/135038226/1"
     },
     {
      "src": "뉴시스",
-     "title": "경찰, 민희진 업무상 배임 혐의 송치 \"뉴진스 계약해지 관여\"(종합)",
-     "link": "https://www.newsis.com/view/NISX20261116_0003870342"
-    },
-    {
-     "src": "뉴시스",
-     "title": "경찰, 민희진 배임 혐의 송치…뉴진스 계약해지 개입 의혹",
-     "link": "https://www.newsis.com/view/NISX20261116_0003870240"
+     "title": "결혼 앞둔 솔비, 이규한에 \"꿈 이뤄줘서 고마워\"…무슨 일?",
+     "link": "https://www.newsis.com/view/NISX20261117_0003871395"
     }
    ]
   },
@@ -1111,6 +1113,39 @@
      "src": "한겨레",
      "title": "블랙핑크 제니, 그래미 ‘올해의 레코드’ 후보…2개 부문 지명",
      "link": "https://www.hani.co.kr/arti/culture/music/1287634.html"
+    }
+   ]
+  },
+  {
+   "kw": "마지막",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "연합뉴스",
+    "한겨레"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "[가요소식] 심아일랜드, 3부작 마지막 미니앨범 '바둑이'",
+     "link": "https://www.yna.co.kr/view/AKR20261116054600005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "자폐 아들 위한 '네버랜드'의 꿈…故전경철 작가 마지막 담긴 다큐",
+     "link": "https://www.yna.co.kr/view/AKR20261112186400005"
+    },
+    {
+     "src": "한겨레",
+     "title": "사라진 단원의 ‘걸작’ 되살릴 마지막 열쇠, 일본서 돌아올까",
+     "link": "https://www.hani.co.kr/arti/culture/culture_general/1287345.html"
+    },
+    {
+     "src": "SBS",
+     "title": "\"우리 가족의 마지막 조각 환영해\"…박슬기, 셋째 임신 깜짝 발표",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008847446&plink=RSSLINK&cooper=RSSREADER"
     }
    ]
   },
@@ -1181,6 +1216,39 @@
    ]
   },
   {
+   "kw": "김우석",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "동아일보",
+    "연합뉴스",
+    "조선일보"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "김우석 \"'환자 바라기'…어떻게든 돕고 싶단 생각만 했죠\"",
+     "link": "https://www.yna.co.kr/view/AKR20261117096200005"
+    },
+    {
+     "src": "동아일보",
+     "title": "김우석 파격 새깅룩…“‘닥터X’, 선배들 덕분에 완성” [화보]",
+     "link": "https://sports.donga.com/ent/article/all/20261117/135040686/1"
+    },
+    {
+     "src": "SBS",
+     "title": "\"야, 네가 김지원·손현주와 연기를 해?\"…김우석, 친형 멜로망스 김민석의 현실 반응 공개",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008849744&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "조선일보",
+     "title": "[인터뷰⑤]김우석 \"'김민석 동생' 꼬리표라 생각 안 해…형은 '너 아직 부족한 거 알지?'라고\"",
+     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/17/MRQWMYLGG5RTIM3CMVRDKNBXMQ/"
+    }
+   ]
+  },
+  {
    "kw": "지수",
    "nsrc": 4,
    "srcs": [
@@ -1247,101 +1315,35 @@
    ]
   },
   {
-   "kw": "임신",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "연합뉴스",
-    "조선일보",
-    "헤럴드경제"
-   ],
-   "n": 4,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "주진모·민혜연 부부, 결혼 7년 만에 부모 된다…\"임신 초기\"",
-     "link": "https://www.yna.co.kr/view/AKR20261114036000005"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "박슬기, 셋째 임신…“이번이 마지막”",
-     "link": "https://biz.heraldcorp.com/article/10937571"
-    },
-    {
-     "src": "SBS",
-     "title": "\"우리 가족의 마지막 조각 환영해\"…박슬기, 셋째 임신 깜짝 발표",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008847446&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "조선일보",
-     "title": "23세 연하 모델 여친 임신 포착에 초음파 사진?... 52세 디카프리오, 아빠 되나 했더니",
-     "link": "https://www.chosun.com/entertainments/enter_general/2026/11/17/GVTDEMLBMFSTEMTBMMYTOYRTHA/"
-    }
-   ]
-  },
-  {
-   "kw": "너무",
+   "kw": "닥터",
    "nsrc": 4,
    "srcs": [
     "SBS",
     "뉴시스",
     "동아일보",
-    "헤럴드경제"
+    "연합뉴스"
    ],
    "n": 4,
    "headlines": [
     {
-     "src": "동아일보",
-     "title": "“팬덤 커트라인 너무 높네요”…리센느가 쏘아 올린 ‘고스펙 덕질’ 문화",
-     "link": "https://sports.donga.com/ent/article/all/20261117/135038983/1"
+     "src": "연합뉴스",
+     "title": "복수 대신 신념 지킨 천재 외과의 김지원…'닥터X' 15.2% 종영",
+     "link": "https://www.yna.co.kr/view/AKR20261115015700005"
     },
     {
-     "src": "헤럴드경제",
-     "title": "“너무 사랑스러워서”…변요한·티파니 영 부부, 시상하랬더니 애정행각",
-     "link": "https://biz.heraldcorp.com/article/10937762"
+     "src": "동아일보",
+     "title": "김우석 파격 새깅룩…“‘닥터X’, 선배들 덕분에 완성” [화보]",
+     "link": "https://sports.donga.com/ent/article/all/20261117/135040686/1"
     },
     {
      "src": "SBS",
-     "title": "팔불출 변요한 \"우리 티파니 씨 너무 사랑스러워\"…고척돔 녹인 부부의 첫 동반 외출",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008847883&plink=RSSLINK&cooper=RSSREADER"
+     "title": "[스브스夜] '닥터X' 김지원, 손현주의 '정식 의사' 채용 제안에도 '자기 길' 선택···\"가라, 계수정\"",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008846242&plink=RSSLINK&cooper=RSSREADER"
     },
     {
      "src": "뉴시스",
-     "title": "배윤정, 안면 거상술 3주 차 얼굴 공개 \"너무 만족해\"",
-     "link": "https://www.newsis.com/view/NISX20261117_0003871813"
-    }
-   ]
-  },
-  {
-   "kw": "그리",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "조선일보",
-    "한겨레",
-    "헤럴드경제"
-   ],
-   "n": 4,
-   "headlines": [
-    {
-     "src": "한겨레",
-     "title": "좀더 우울하고 어둡게…드라마·웹툰 속 ‘고아 서사’ 왜 그리 뻔할까 [.txt]",
-     "link": "https://www.hani.co.kr/arti/culture/book/1287300.html"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "김구라, 아들 그리 결혼설에 “아직 준비 안 됐다…중1한테 대입 준비 물어본 셈”",
-     "link": "https://biz.heraldcorp.com/article/10939085"
-    },
-    {
-     "src": "뉴시스",
-     "title": "김구라, 아들 그리 결혼설에 \"아직 준비 안 됐다\"",
-     "link": "https://www.newsis.com/view/NISX20261116_0003870032"
-    },
-    {
-     "src": "조선일보",
-     "title": "김구라, 아들 그리 결혼설에 입 열었다 “아들 여친 종종 봐… 좋아 보이지 않아”",
-     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/17/G4ZDSMDFGU3TIZJTMJQWMYRVHA/"
+     "title": "[현장]'닥터 둠 아지트'로 변신한 KFC…'초록 소스' 뒤집어 쓴 둠징거",
+     "link": "https://www.newsis.com/view/NISX20261117_0003871392"
     }
    ]
   }
