@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-18 05:00",
+ "updated": "2026-11-18 06:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -87,6 +87,18 @@
    "expires": "2026-11-21"
   },
   {
+   "query": "상주 지진",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 20000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-18",
+   "expires": "2026-11-21"
+  },
+  {
    "query": "시체",
    "tier": "단기",
    "signal": [
@@ -144,18 +156,6 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-09",
-   "expires": "2026-11-21"
-  },
-  {
-   "query": "상주 지진",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 20000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-18",
    "expires": "2026-11-21"
   },
   {
@@ -3171,6 +3171,18 @@
    "expires": "2026-11-21"
   },
   {
+   "query": "데블스플랜3",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-18",
+   "expires": "2026-11-21"
+  },
+  {
    "query": "수술",
    "tier": "단기",
    "signal": [
@@ -3216,6 +3228,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-11",
+   "expires": "2026-11-21"
+  },
+  {
+   "query": "둠스데이",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-18",
    "expires": "2026-11-21"
   },
   {
@@ -4443,6 +4467,18 @@
    "expires": "2026-11-21"
   },
   {
+   "query": "데블스플랜",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-18",
+   "expires": "2026-11-21"
+  },
+  {
    "query": "오산대",
    "tier": "단기",
    "signal": [
@@ -5416,6 +5452,18 @@
   },
   {
    "query": "미스터트롯",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-18",
+   "expires": "2026-11-21"
+  },
+  {
+   "query": "친선경기",
    "tier": "단기",
    "signal": [
     "구글트렌드"
