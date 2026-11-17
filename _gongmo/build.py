@@ -2948,6 +2948,15 @@ def build():
         print('전자책 PDF 실패(사이트는 계속)', repr(e)[:100])
     print('지난 달 모음 검색 제외', stale_month_noindex(urls))
     print('방향 전환 정리(검색 제외)', prune_1116(urls))
+    try:   # 2026-11-17 마케터 요청: 일별 유입(D1)을 하루 한 번 자동 갱신. 읽기는 hit_daily 요약만, 최근 3일(실패해도 빌드는 계속)
+        _ifp = os.path.join(HERE, 'inflow_daily.json')
+        _today = (datetime.datetime.utcnow() + datetime.timedelta(hours=9)).strftime('%Y-%m-%d')
+        if not os.path.exists(_ifp) or json.load(open(_ifp, encoding='utf-8')).get('at', '')[:10] != _today:
+            import subprocess as _sp
+            _r = _sp.run([sys.executable, '-X', 'utf8', os.path.join(HERE, 'inflow_report.py'), '--days', '3'], capture_output=True, timeout=120)
+            print('일별 유입 갱신', _r.returncode)
+    except Exception as _e:
+        print('일별 유입 갱신 건너뜀', repr(_e)[:80])
     global NEW_URLS
     sm = os.path.join(ROOT, 'sitemap.xml')
     SENT = os.path.join(HERE, 'indexnow_sent.json')   # 2026-10-19: 로컬 빌드가 먼저 돌아도 새 주소를 놓치지 않게, 실제로 보낸 주소를 기록해서 비교
