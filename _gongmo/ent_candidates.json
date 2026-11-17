@@ -1,21 +1,20 @@
 {
- "at": "2026-11-17 12:30",
+ "at": "2026-11-17 13:30",
  "nitems": 519,
  "cands": [
   {
    "kw": "아들",
-   "nsrc": 8,
+   "nsrc": 7,
    "srcs": [
     "뉴시스",
     "동아일보",
     "세계일보",
     "연합뉴스",
-    "조선일보",
     "한겨레",
     "한국경제",
     "헤럴드경제"
    ],
-   "n": 12,
+   "n": 8,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -28,49 +27,14 @@
      "link": "https://sports.donga.com/ent/article/all/20261117/135037894/1"
     },
     {
-     "src": "동아일보",
-     "title": "‘차범근 아들’ 차세찌, 이런 아빠였어?…딸 생일에 3년째 직접 요리",
-     "link": "https://sports.donga.com/ent/article/all/20261117/135036395/1"
-    },
-    {
      "src": "한겨레",
      "title": "“약속 왜 취소해?” 엄마도 친구한테 못 물었어…6살 아들 울린 그 말 대신 [.txt]",
      "link": "https://www.hani.co.kr/arti/culture/book/1287346.html"
-    }
-   ]
-  },
-  {
-   "kw": "후보",
-   "nsrc": 6,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "동아일보",
-    "연합뉴스",
-    "조선일보",
-    "한겨레"
-   ],
-   "n": 19,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "'그래미 후보' 제니 '드라큘라', 美 빌보드 싱글 3위 유지",
-     "link": "https://www.yna.co.kr/view/AKR20261117038500005"
     },
     {
-     "src": "연합뉴스",
-     "title": "英가수 레이, 그래미 11개 부문서 후보…과거 비욘세와 동률기록",
-     "link": "https://www.yna.co.kr/view/AKR20261117001000075"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "블핑 제니, 美 그래미 본상 '올해의 레코드' 포함 2개 부문 후보(종합)",
-     "link": "https://www.yna.co.kr/view/AKR20261116180251005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "제니, 美 그래미서 본상 '올해의 레코드' 포함 2개 부문 후보",
-     "link": "https://www.yna.co.kr/view/AKR20261116180200005"
+     "src": "한국경제",
+     "title": "\"가정부와 불륜으로 낳은 아들\" 슈워제네거 혼외자, 보디빌더 데뷔",
+     "link": "https://www.hankyung.com/article/2026111086337"
     }
    ]
   },
@@ -180,16 +144,16 @@
    ]
   },
   {
-   "kw": "그래미",
+   "kw": "후보",
    "nsrc": 5,
    "srcs": [
     "SBS",
     "뉴시스",
+    "동아일보",
     "연합뉴스",
-    "조선일보",
     "한겨레"
    ],
-   "n": 19,
+   "n": 18,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -208,8 +172,42 @@
     },
     {
      "src": "연합뉴스",
-     "title": "[속보] 제니, '드라큘라'로 그래미 본상 '올해의 레코드' 후보 지명",
-     "link": "https://www.yna.co.kr/view/AKR20261116179800005"
+     "title": "제니, 美 그래미서 본상 '올해의 레코드' 포함 2개 부문 후보",
+     "link": "https://www.yna.co.kr/view/AKR20261116180200005"
+    }
+   ]
+  },
+  {
+   "kw": "공식",
+   "nsrc": 5,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "연합뉴스",
+    "조선일보",
+    "한국경제"
+   ],
+   "n": 11,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "이승철, 데뷔 40년 만에 공식 팬클럽 모집…\"오래 추억 쌓을 것\"",
+     "link": "https://www.yna.co.kr/view/AKR20261113074400005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "지스타, 네이버 치지직과 손잡았다…공식 방송 단독 생중계",
+     "link": "https://www.yna.co.kr/view/AKR20261112145100017"
+    },
+    {
+     "src": "동아일보",
+     "title": "[공식] 주현영, 주종혁과 부부 된다… ‘써닝야구단’ 출연",
+     "link": "https://sports.donga.com/ent/article/all/20261117/135038732/1"
+    },
+    {
+     "src": "한국경제",
+     "title": "CL, 테디 손 잡았다…더블랙레이블 전속계약 [공식]",
+     "link": "https://www.hankyung.com/article/202611134339H"
     }
    ]
   },
@@ -248,36 +246,36 @@
    ]
   },
   {
-   "kw": "아이브",
+   "kw": "부부",
    "nsrc": 5,
    "srcs": [
-    "뉴시스",
     "동아일보",
     "연합뉴스",
     "조선일보",
-    "한국경제"
+    "한국경제",
+    "헤럴드경제"
    ],
    "n": 9,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "[방송소식] 아이브 가을, ENA 다큐 '하지 못한 말' 프리젠터 참여",
-     "link": "https://www.yna.co.kr/view/AKR20261117063000005"
+     "title": "여주시, 개그맨 부부 권재관·김경아 홍보대사 위촉",
+     "link": "https://www.yna.co.kr/view/AKR20261117063600061"
     },
     {
      "src": "연합뉴스",
-     "title": "[속보] 아이브·키키, 그래미 신설 '아시안팝' 부문 후보 지명",
-     "link": "https://www.yna.co.kr/view/AKR20261116179400005"
+     "title": "주진모·민혜연 부부, 결혼 7년 만에 부모 된다…\"임신 초기\"",
+     "link": "https://www.yna.co.kr/view/AKR20261114036000005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "박수홍, 친형 부부 상대 98억원대 민사소송 1심서 패소",
+     "link": "https://www.yna.co.kr/view/AKR20261113113300004"
     },
     {
      "src": "동아일보",
-     "title": "“소개팅 안 하실래요?” 아이브 가을, 성인 ADHD 소개팅 이끈다",
-     "link": "https://sports.donga.com/ent/article/all/20261117/135037250/1"
-    },
-    {
-     "src": "한국경제",
-     "title": "BTS 대상 2개 포함 '6관왕'·아이브 눈물의 '5관왕'…MMA 2026 피날레 [종합]",
-     "link": "https://www.hankyung.com/article/202611157614H"
+     "title": "[공식] 주현영, 주종혁과 부부 된다… ‘써닝야구단’ 출연",
+     "link": "https://sports.donga.com/ent/article/all/20261117/135038732/1"
     }
    ]
   },
@@ -350,74 +348,6 @@
    ]
   },
   {
-   "kw": "부부",
-   "nsrc": 5,
-   "srcs": [
-    "동아일보",
-    "연합뉴스",
-    "조선일보",
-    "한국경제",
-    "헤럴드경제"
-   ],
-   "n": 8,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "여주시, 개그맨 부부 권재관·김경아 홍보대사 위촉",
-     "link": "https://www.yna.co.kr/view/AKR20261117063600061"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "주진모·민혜연 부부, 결혼 7년 만에 부모 된다…\"임신 초기\"",
-     "link": "https://www.yna.co.kr/view/AKR20261114036000005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "박수홍, 친형 부부 상대 98억원대 민사소송 1심서 패소",
-     "link": "https://www.yna.co.kr/view/AKR20261113113300004"
-    },
-    {
-     "src": "동아일보",
-     "title": "오정세·전혜진, 부부 됐다…‘써닝야구단’서 현실 부부 호흡",
-     "link": "https://sports.donga.com/ent/article/all/20261117/135037348/1"
-    }
-   ]
-  },
-  {
-   "kw": "로버트",
-   "nsrc": 5,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "동아일보",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 8,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "로버트 패틴슨, 7대 제임스 본드 된다…'007시리즈' 주인공 낙점",
-     "link": "https://www.yna.co.kr/view/AKR20261117002400075"
-    },
-    {
-     "src": "동아일보",
-     "title": "“환영합니다, 본드 씨”…로버트 패티슨 ‘007’ 발탁, 영국 왕실도 축하",
-     "link": "https://sports.donga.com/ent/article/all/20261117/135036702/1"
-    },
-    {
-     "src": "SBS",
-     "title": "'배트맨' 로버트 패틴슨, 7대 제임스 본드 발탁…호불호 나뉘는 이유는?",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008849057&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "뉴시스",
-     "title": "로버트 패틴슨의 첫 '본드걸'은 누구…정호연·젠데이아·플로렌스 퓨 물망",
-     "link": "https://www.newsis.com/view/NISX20261117_0003871304"
-    }
-   ]
-  },
-  {
    "kw": "에이티즈",
    "nsrc": 5,
    "srcs": [
@@ -486,40 +416,6 @@
    ]
   },
   {
-   "kw": "까지",
-   "nsrc": 5,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "동아일보",
-    "조선일보",
-    "한국경제"
-   ],
-   "n": 7,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "에반, 한·일 ‘싱글즈’ 12월호 동시 커버에 ‘디어워즈 파리’까지",
-     "link": "https://sports.donga.com/ent/article/all/20261117/135038500/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "‘파이어’부터 ‘아이코닉’까지…CL·테디, 17년 인연의 새로운 챕터",
-     "link": "https://sports.donga.com/ent/article/all/20261117/135036645/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "초겨울 극장가에 돌아온 로맨스 명작들…‘라라랜드’부터 ‘이터널 선샤인’까지",
-     "link": "https://sports.donga.com/ent/article/all/20261116/135032005/1"
-    },
-    {
-     "src": "한국경제",
-     "title": "제로베이스원 EMP, 대학축제에 음악방송까지…신나게 '런'",
-     "link": "https://www.hankyung.com/article/202611095916H"
-    }
-   ]
-  },
-  {
    "kw": "기부",
    "nsrc": 5,
    "srcs": [
@@ -554,14 +450,14 @@
    ]
   },
   {
-   "kw": "제임스",
+   "kw": "로버트",
    "nsrc": 5,
    "srcs": [
     "SBS",
     "뉴시스",
+    "동아일보",
     "연합뉴스",
-    "조선일보",
-    "한겨레"
+    "조선일보"
    ],
    "n": 6,
    "headlines": [
@@ -571,9 +467,9 @@
      "link": "https://www.yna.co.kr/view/AKR20261117002400075"
     },
     {
-     "src": "한겨레",
-     "title": "뱀파이어, 배트맨 거쳐 이젠 첩보원…7대 제임스 본드에 패틴슨",
-     "link": "https://www.hani.co.kr/arti/culture/culture_general/1287659.html"
+     "src": "동아일보",
+     "title": "“환영합니다, 본드 씨”…로버트 패티슨 ‘007’ 발탁, 영국 왕실도 축하",
+     "link": "https://sports.donga.com/ent/article/all/20261117/135036702/1"
     },
     {
      "src": "SBS",
@@ -582,42 +478,8 @@
     },
     {
      "src": "뉴시스",
-     "title": "로버트 패틴슨, 차기 제임스 본드 낙점…역대 7번째 '007'",
-     "link": "https://www.newsis.com/view/NISX20261117_0003870631"
-    }
-   ]
-  },
-  {
-   "kw": "패틴슨",
-   "nsrc": 5,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "연합뉴스",
-    "조선일보",
-    "한겨레"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "로버트 패틴슨, 7대 제임스 본드 된다…'007시리즈' 주인공 낙점",
-     "link": "https://www.yna.co.kr/view/AKR20261117002400075"
-    },
-    {
-     "src": "한겨레",
-     "title": "뱀파이어, 배트맨 거쳐 이젠 첩보원…7대 제임스 본드에 패틴슨",
-     "link": "https://www.hani.co.kr/arti/culture/culture_general/1287659.html"
-    },
-    {
-     "src": "SBS",
-     "title": "'배트맨' 로버트 패틴슨, 7대 제임스 본드 발탁…호불호 나뉘는 이유는?",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008849057&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "뉴시스",
-     "title": "로버트 패틴슨, 차기 제임스 본드 낙점…역대 7번째 '007'",
-     "link": "https://www.newsis.com/view/NISX20261117_0003870631"
+     "title": "로버트 패틴슨의 첫 '본드걸'은 누구…정호연·젠데이아·플로렌스 퓨 물망",
+     "link": "https://www.newsis.com/view/NISX20261117_0003871304"
     }
    ]
   },
@@ -656,16 +518,128 @@
    ]
   },
   {
-   "kw": "올해의",
-   "nsrc": 4,
+   "kw": "까지",
+   "nsrc": 5,
    "srcs": [
+    "SBS",
     "뉴시스",
     "동아일보",
+    "조선일보",
+    "한국경제"
+   ],
+   "n": 6,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "에반, 한·일 ‘싱글즈’ 12월호 동시 커버에 ‘디어워즈 파리’까지",
+     "link": "https://sports.donga.com/ent/article/all/20261117/135038500/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "‘파이어’부터 ‘아이코닉’까지…CL·테디, 17년 인연의 새로운 챕터",
+     "link": "https://sports.donga.com/ent/article/all/20261117/135036645/1"
+    },
+    {
+     "src": "한국경제",
+     "title": "제로베이스원 EMP, 대학축제에 음악방송까지…신나게 '런'",
+     "link": "https://www.hankyung.com/article/202611095916H"
+    },
+    {
+     "src": "SBS",
+     "title": "연상호·변우석· CJ CGV·넷플릭스까지…서울독립영화제 빛내는 영화계 연대",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008844468&plink=RSSLINK&cooper=RSSREADER"
+    }
+   ]
+  },
+  {
+   "kw": "패틴슨",
+   "nsrc": 5,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "연합뉴스",
+    "조선일보",
+    "한겨레"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "로버트 패틴슨, 7대 제임스 본드 된다…'007시리즈' 주인공 낙점",
+     "link": "https://www.yna.co.kr/view/AKR20261117002400075"
+    },
+    {
+     "src": "한겨레",
+     "title": "뱀파이어, 배트맨 거쳐 이젠 첩보원…7대 제임스 본드에 패틴슨",
+     "link": "https://www.hani.co.kr/arti/culture/culture_general/1287659.html"
+    },
+    {
+     "src": "SBS",
+     "title": "'배트맨' 로버트 패틴슨, 7대 제임스 본드 발탁…호불호 나뉘는 이유는?",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008849057&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "뉴시스",
+     "title": "로버트 패틴슨, 차기 제임스 본드 낙점…역대 7번째 '007'",
+     "link": "https://www.newsis.com/view/NISX20261117_0003870631"
+    }
+   ]
+  },
+  {
+   "kw": "제임스",
+   "nsrc": 5,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "연합뉴스",
+    "조선일보",
+    "한겨레"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "로버트 패틴슨, 7대 제임스 본드 된다…'007시리즈' 주인공 낙점",
+     "link": "https://www.yna.co.kr/view/AKR20261117002400075"
+    },
+    {
+     "src": "한겨레",
+     "title": "뱀파이어, 배트맨 거쳐 이젠 첩보원…7대 제임스 본드에 패틴슨",
+     "link": "https://www.hani.co.kr/arti/culture/culture_general/1287659.html"
+    },
+    {
+     "src": "SBS",
+     "title": "'배트맨' 로버트 패틴슨, 7대 제임스 본드 발탁…호불호 나뉘는 이유는?",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008849057&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "뉴시스",
+     "title": "로버트 패틴슨, 차기 제임스 본드 낙점…역대 7번째 '007'",
+     "link": "https://www.newsis.com/view/NISX20261117_0003870631"
+    }
+   ]
+  },
+  {
+   "kw": "그래미",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "뉴시스",
     "연합뉴스",
     "한겨레"
    ],
-   "n": 9,
+   "n": 18,
    "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "'그래미 후보' 제니 '드라큘라', 美 빌보드 싱글 3위 유지",
+     "link": "https://www.yna.co.kr/view/AKR20261117038500005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "英가수 레이, 그래미 11개 부문서 후보…과거 비욘세와 동률기록",
+     "link": "https://www.yna.co.kr/view/AKR20261117001000075"
+    },
     {
      "src": "연합뉴스",
      "title": "블핑 제니, 美 그래미 본상 '올해의 레코드' 포함 2개 부문 후보(종합)",
@@ -673,18 +647,8 @@
     },
     {
      "src": "연합뉴스",
-     "title": "제니, 美 그래미서 본상 '올해의 레코드' 포함 2개 부문 후보",
-     "link": "https://www.yna.co.kr/view/AKR20261116180200005"
-    },
-    {
-     "src": "연합뉴스",
      "title": "[속보] 제니, '드라큘라'로 그래미 본상 '올해의 레코드' 후보 지명",
      "link": "https://www.yna.co.kr/view/AKR20261116179800005"
-    },
-    {
-     "src": "동아일보",
-     "title": "제니, 첫 그래미부터 ‘올해의 레코드’ 후보…2개 부문 노미네이트",
-     "link": "https://sports.donga.com/ent/article/all/20261117/135036831/1"
     }
    ]
   },
@@ -722,35 +686,35 @@
    ]
   },
   {
-   "kw": "고경표",
+   "kw": "올해의",
    "nsrc": 4,
    "srcs": [
-    "SBS",
     "뉴시스",
+    "동아일보",
     "연합뉴스",
-    "조선일보"
+    "한겨레"
    ],
    "n": 9,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "'음주운전' 고경표, 팬미팅 취소…\"실망 안겨드리게 돼 사과\"",
-     "link": "https://www.yna.co.kr/view/AKR20261116175800005"
+     "title": "블핑 제니, 美 그래미 본상 '올해의 레코드' 포함 2개 부문 후보(종합)",
+     "link": "https://www.yna.co.kr/view/AKR20261116180251005"
     },
     {
      "src": "연합뉴스",
-     "title": "'음주운전' 고경표 \"전적으로 제 잘못…활동 중단\"",
-     "link": "https://www.yna.co.kr/view/AKR20261115044500005"
+     "title": "제니, 美 그래미서 본상 '올해의 레코드' 포함 2개 부문 후보",
+     "link": "https://www.yna.co.kr/view/AKR20261116180200005"
     },
     {
      "src": "연합뉴스",
-     "title": "고경표 음주운전, 방송가에 불똥…'놀뭐'·'식스센스' 등 편집",
-     "link": "https://www.yna.co.kr/view/AKR20261114032600005"
+     "title": "[속보] 제니, '드라큘라'로 그래미 본상 '올해의 레코드' 후보 지명",
+     "link": "https://www.yna.co.kr/view/AKR20261116179800005"
     },
     {
-     "src": "연합뉴스",
-     "title": "배우 고경표 음주운전 중 청소차 들이받아…\"깊이 반성\"(종합)",
-     "link": "https://www.yna.co.kr/view/AKR20261114025051004"
+     "src": "동아일보",
+     "title": "제니, 첫 그래미부터 ‘올해의 레코드’ 후보…2개 부문 노미네이트",
+     "link": "https://sports.donga.com/ent/article/all/20261117/135036831/1"
     }
    ]
   },
@@ -788,35 +752,35 @@
    ]
   },
   {
-   "kw": "공식",
+   "kw": "고경표",
    "nsrc": 4,
    "srcs": [
+    "SBS",
     "뉴시스",
     "연합뉴스",
-    "조선일보",
-    "한국경제"
+    "조선일보"
    ],
    "n": 9,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "이승철, 데뷔 40년 만에 공식 팬클럽 모집…\"오래 추억 쌓을 것\"",
-     "link": "https://www.yna.co.kr/view/AKR20261113074400005"
+     "title": "'음주운전' 고경표, 팬미팅 취소…\"실망 안겨드리게 돼 사과\"",
+     "link": "https://www.yna.co.kr/view/AKR20261116175800005"
     },
     {
      "src": "연합뉴스",
-     "title": "지스타, 네이버 치지직과 손잡았다…공식 방송 단독 생중계",
-     "link": "https://www.yna.co.kr/view/AKR20261112145100017"
+     "title": "'음주운전' 고경표 \"전적으로 제 잘못…활동 중단\"",
+     "link": "https://www.yna.co.kr/view/AKR20261115044500005"
     },
     {
-     "src": "한국경제",
-     "title": "CL, 테디 손 잡았다…더블랙레이블 전속계약 [공식]",
-     "link": "https://www.hankyung.com/article/202611134339H"
+     "src": "연합뉴스",
+     "title": "고경표 음주운전, 방송가에 불똥…'놀뭐'·'식스센스' 등 편집",
+     "link": "https://www.yna.co.kr/view/AKR20261114032600005"
     },
     {
-     "src": "뉴시스",
-     "title": "'그래미 2개 부문 후보' 제니, 'GTA6' 공식 앨범 참여…韓 가수 유일",
-     "link": "https://www.newsis.com/view/NISX20261117_0003870761"
+     "src": "연합뉴스",
+     "title": "배우 고경표 음주운전 중 청소차 들이받아…\"깊이 반성\"(종합)",
+     "link": "https://www.yna.co.kr/view/AKR20261114025051004"
     }
    ]
   },
@@ -854,35 +818,35 @@
    ]
   },
   {
-   "kw": "넷플릭스",
+   "kw": "아이브",
    "nsrc": 4,
    "srcs": [
-    "SBS",
     "뉴시스",
+    "동아일보",
     "연합뉴스",
-    "조선일보"
+    "한국경제"
    ],
-   "n": 7,
+   "n": 8,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "넷플릭스 '불량연애2' 출연 여성 무허가 접대업소 운영혐의 체포",
-     "link": "https://www.yna.co.kr/view/AKR20261116099400009"
+     "title": "[방송소식] 아이브 가을, ENA 다큐 '하지 못한 말' 프리젠터 참여",
+     "link": "https://www.yna.co.kr/view/AKR20261117063000005"
     },
     {
      "src": "연합뉴스",
-     "title": "넷플릭스, 케데헌 월드투어 내년 6월 개막…50개 도시 대형공연",
-     "link": "https://www.yna.co.kr/view/AKR20261115004600091"
+     "title": "[속보] 아이브·키키, 그래미 신설 '아시안팝' 부문 후보 지명",
+     "link": "https://www.yna.co.kr/view/AKR20261116179400005"
     },
     {
-     "src": "SBS",
-     "title": "연상호·변우석· CJ CGV·넷플릭스까지…서울독립영화제 빛내는 영화계 연대",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008844468&plink=RSSLINK&cooper=RSSREADER"
+     "src": "동아일보",
+     "title": "“소개팅 안 하실래요?” 아이브 가을, 성인 ADHD 소개팅 이끈다",
+     "link": "https://sports.donga.com/ent/article/all/20261117/135037250/1"
     },
     {
-     "src": "뉴시스",
-     "title": "넷플릭스 '불량연애2' 출연자 체포…무허가 유흥업소 운영 혐의",
-     "link": "https://www.newsis.com/view/NISX20261116_0003870102"
+     "src": "한국경제",
+     "title": "BTS 대상 2개 포함 '6관왕'·아이브 눈물의 '5관왕'…MMA 2026 피날레 [종합]",
+     "link": "https://www.hankyung.com/article/202611157614H"
     }
    ]
   },
@@ -895,7 +859,7 @@
     "연합뉴스",
     "조선일보"
    ],
-   "n": 7,
+   "n": 8,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -928,12 +892,17 @@
     "연합뉴스",
     "조선일보"
    ],
-   "n": 7,
+   "n": 8,
    "headlines": [
     {
      "src": "연합뉴스",
      "title": "주진모·민혜연 부부, 결혼 7년 만에 부모 된다…\"임신 초기\"",
      "link": "https://www.yna.co.kr/view/AKR20261114036000005"
+    },
+    {
+     "src": "동아일보",
+     "title": "해녀 남편 코인 빚 8천만원…아내도 7천만원 사기 (결혼 지옥)",
+     "link": "https://sports.donga.com/ent/article/all/20261117/135038769/1"
     },
     {
      "src": "동아일보",
@@ -944,11 +913,39 @@
      "src": "동아일보",
      "title": "‘해녀 부부’ 남편, 코인으로 8000만원 빚…아내에 “내가 네 ATM기냐” (결혼 지옥)",
      "link": "https://sports.donga.com/ent/article/all/20261117/135036654/1"
+    }
+   ]
+  },
+  {
+   "kw": "넷플릭스",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "연합뉴스",
+    "조선일보"
+   ],
+   "n": 7,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "넷플릭스 '불량연애2' 출연 여성 무허가 접대업소 운영혐의 체포",
+     "link": "https://www.yna.co.kr/view/AKR20261116099400009"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "넷플릭스, 케데헌 월드투어 내년 6월 개막…50개 도시 대형공연",
+     "link": "https://www.yna.co.kr/view/AKR20261115004600091"
+    },
+    {
+     "src": "SBS",
+     "title": "연상호·변우석· CJ CGV·넷플릭스까지…서울독립영화제 빛내는 영화계 연대",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008844468&plink=RSSLINK&cooper=RSSREADER"
     },
     {
      "src": "뉴시스",
-     "title": "이정현, 12월 결혼 깜짝 발표…\"잘 살겠다\"",
-     "link": "https://www.newsis.com/view/NISX20261116_0003870583"
+     "title": "넷플릭스 '불량연애2' 출연자 체포…무허가 유흥업소 운영 혐의",
+     "link": "https://www.newsis.com/view/NISX20261116_0003870102"
     }
    ]
   },
@@ -1184,39 +1181,6 @@
    ]
   },
   {
-   "kw": "어벤져스",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "동아일보",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "롯데온, '어벤져스: 둠스데이' 협업 할인전…최대 20% 쿠폰",
-     "link": "https://www.yna.co.kr/view/AKR20261115042500030"
-    },
-    {
-     "src": "동아일보",
-     "title": "“타노스보다 강하다”…‘어벤져스: 둠스데이’ 로다주의 ‘닥터 둠’, 최강 빌런 등판",
-     "link": "https://sports.donga.com/ent/article/all/20261117/135036436/1"
-    },
-    {
-     "src": "SBS",
-     "title": "'어벤져스5' 크리스 에반스X크리스 헴스워스X케빈 파이기, 그린카펫으로 팬과 만난다",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008844894&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "조선일보",
-     "title": "‘아이언맨’ 로다주, 극악 빌런 됐다..타노스보다 더 강력한 ‘닥터 둠’ (‘어벤져스:둠스데이’)",
-     "link": "https://www.chosun.com/entertainments/movie/2026/11/17/HEYGKMDDME2TQYJRHEYDSOBUGE/"
-    }
-   ]
-  },
-  {
    "kw": "에스파",
    "nsrc": 4,
    "srcs": [
@@ -1312,6 +1276,39 @@
      "src": "뉴시스",
      "title": "김구라, 아들 그리 결혼설에 \"아직 준비 안 됐다\"",
      "link": "https://www.newsis.com/view/NISX20261116_0003870032"
+    }
+   ]
+  },
+  {
+   "kw": "만남",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "동아일보",
+    "조선일보"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "‘예나 코어’와 ‘가와이이’의 만남…최예나, 日 걸그룹 큐티스트리트와 ‘사쿠란보’ 협업",
+     "link": "https://sports.donga.com/ent/article/all/20261117/135036826/1"
+    },
+    {
+     "src": "SBS",
+     "title": "여객기 참사로 떠난 딸, AI로 되살아나다…'나의 이방인', 모녀에게 허락된 단 7일의 만남",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008844487&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "뉴시스",
+     "title": "라이즈·플레이브, 30일 협업 싱글 '로우키' 공개…현실·버추얼 만남",
+     "link": "https://www.newsis.com/view/NISX20261116_0003869847"
+    },
+    {
+     "src": "조선일보",
+     "title": "[SC현장] \"언어 장벽 넘어 교류\"…'푸른길' 손석구X나가야마 에이타, 그로테스크한 만남 통할까(종합)",
+     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/17/HFRTOMJSMRRTMMDFGZQTKOBZG4/"
     }
    ]
   },
