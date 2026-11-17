@@ -20,7 +20,7 @@ AXES = [
     ('시장과 자본시장', 'AI 기대와 우려가 주가·수급·기업 재편에 미친 영향.',
      r'코스피|서킷브레이커|사이드카|외국인|AI 우려|AI 수익화|리밸런싱|삼성전자|SK그룹'),
 ]
-INC = re.compile(r'엔비디아|nvidia|반도체|HBM|GPU|AI 반도체|AI 규제|AI 우려|AI 수익화|데이터센터|인공지능|오픈AI|openai|딥시크|TSMC|AMD|젠슨 황|파운드리', re.I)
+INC = re.compile(r'엔비디아|nvidia|반도체|HBM|GPU|AI 반도체|AI 규제|AI 우려|AI 수익화|데이터센터|인공지능|오픈AI|openai|딥시크|TSMC|AMD|젠슨 황|파운드리|앤트로픽|anthropic', re.I)
 EXC = re.compile(r'안경|부정행위|조류|고병원성|AI 목소리|세일|시그널|논술|노조')
 
 

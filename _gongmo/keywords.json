@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-17 21:00",
+ "updated": "2026-11-17 22:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -964,6 +964,18 @@
   },
   {
    "query": "카타르 축구 국가대표팀",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 5000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-17",
+   "expires": "2026-11-20"
+  },
+  {
+   "query": "싱가포르 대 브라질",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -2331,18 +2343,6 @@
    "expires": "2026-11-20"
   },
   {
-   "query": "환승",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 2000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-17",
-   "expires": "2026-11-20"
-  },
-  {
    "query": "실종자",
    "tier": "단기",
    "signal": [
@@ -2955,6 +2955,18 @@
    "expires": "2026-11-20"
   },
   {
+   "query": "박선주",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-17",
+   "expires": "2026-11-20"
+  },
+  {
    "query": "대한민국",
    "tier": "단기",
    "signal": [
@@ -3064,18 +3076,6 @@
   },
   {
    "query": "김수현",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 1000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-17",
-   "expires": "2026-11-20"
-  },
-  {
-   "query": "로버트 패틴슨",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -3543,6 +3543,18 @@
    "expires": "2026-11-20"
   },
   {
+   "query": "파운드리",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-17",
+   "expires": "2026-11-20"
+  },
+  {
    "query": "광교 신도시",
    "tier": "단기",
    "signal": [
@@ -3996,18 +4008,6 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-17",
-   "expires": "2026-11-20"
-  },
-  {
-   "query": "버스",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 1000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-12",
    "expires": "2026-11-20"
   },
   {
@@ -5319,6 +5319,18 @@
    "expires": "2026-11-20"
   },
   {
+   "query": "로베르트 모레노",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-17",
+   "expires": "2026-11-20"
+  },
+  {
    "query": "코스피 5383.80 종가, 5.28% 내린 이유는? 사이드카 발동과 매체 분석 정리",
    "tier": "단기",
    "signal": [
@@ -5369,6 +5381,19 @@
    "page": "",
    "registered": "2026-11-05",
    "expires": "2026-11-08"
+  },
+  {
+   "query": "경기도 버스 환승할인 폐지 사실일까? 2027년 예산 8개월치만 편성, 9월부터 어떻게 되나",
+   "tier": "단기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 4,
+   "status": "작성",
+   "page": "/issue/gyeonggi-transfer-discount-budget-8months-1117/",
+   "registered": "2026-11-17",
+   "expires": "2026-11-21"
   },
   {
    "query": "청년 문화지원금 언제부터? 대상·금액·신청 방법 정리",
@@ -5655,6 +5680,19 @@
    "page": "",
    "registered": "2026-11-12",
    "expires": "2026-11-16"
+  },
+  {
+   "query": "로버트 패틴슨 제임스 본드 확정? 아마존 MGM 발표 내용 정리",
+   "tier": "단기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 2,
+   "status": "작성",
+   "page": "/issue/robert-pattinson-james-bond-announced-1117/",
+   "registered": "2026-11-17",
+   "expires": "2026-11-21"
   },
   {
    "query": "젝스키스 이재진 디너쇼 불참 선언, 주최 측 행사 재정비 입장 정리",
@@ -13624,6 +13662,19 @@
    "page": "",
    "registered": "2026-11-08",
    "expires": "2026-11-15"
+  },
+  {
+   "query": "앤트로픽 상장 언제 공모가 얼마 종목코드 ANT 일정 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 3,
+   "status": "작성",
+   "page": "/issue/anthropic-ipo-ant-price-range-schedule-korea-link-1117/",
+   "registered": "2026-11-17",
+   "expires": "2026-11-24"
   },
   {
    "query": "기초연금 인상분 생계급여에서 깎이는 노인 78만명, 2027년 하위 30% 38만원 적용 구조는?",
