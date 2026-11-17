@@ -1,27 +1,27 @@
 {
  "date": "2026-11-17",
- "updated": "2026-11-17 13:50",
+ "updated": "2026-11-17 14:51",
  "sites": 13,
- "npost": 2979,
+ "npost": 2988,
  "note": "출처(커뮤니티)별 집계예요. 작성자·연령·성별 정보는 수집하지 않아요. posts 는 이슈별로 뽑힌 일부라 전체 글 수가 아니에요.",
  "sources": [
   {
    "name": "MLB파크",
-   "np": 24,
-   "nc": 1623,
+   "np": 25,
+   "nc": 1701,
    "topics": [
     {
      "t": "교육부장관 ㄹㅇ 정신 나갔네요 ㅋㅋㅋㅋ",
      "nsite": 7,
      "np_here": 3,
      "nc_here": 385,
-     "issue_np": 16,
-     "issue_nc": 534,
+     "issue_np": 15,
+     "issue_nc": 535,
      "kw": [
-      "교육부",
       "장관",
-      "방안",
-      "최교진"
+      "교육부",
+      "최교진",
+      "발언"
      ],
      "top_post": {
       "t": "교육부장관 ㄹㅇ 정신 나갔네요 ㅋㅋㅋㅋ",
@@ -33,19 +33,19 @@
      "t": "한국의 불법주차 문화",
      "nsite": 4,
      "np_here": 1,
-     "nc_here": 310,
+     "nc_here": 334,
      "issue_np": 4,
-     "issue_nc": 317,
+     "issue_nc": 341,
      "kw": [
       "불법",
       "주차",
       "한국",
-      "시흥"
+      "도시"
      ],
      "top_post": {
       "t": "한국의 불법주차 문화",
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611170120163392&m=view",
-      "nc": 310
+      "nc": 334
      }
     },
     {
@@ -54,12 +54,12 @@
      "np_here": 1,
      "nc_here": 146,
      "issue_np": 4,
-     "issue_nc": 182,
+     "issue_nc": 213,
      "kw": [
-      "할인",
       "버스",
       "환승",
-      "폐지"
+      "할인",
+      "경기도"
      ],
      "top_post": {
       "t": "경기도 27년 9월부터 버스 환승 할인 폐지",
@@ -73,10 +73,10 @@
      "np_here": 3,
      "nc_here": 126,
      "issue_np": 12,
-     "issue_nc": 137,
+     "issue_nc": 139,
      "kw": [
-      "소형",
       "카메라",
+      "소형",
       "오프라인",
       "시험"
      ],
@@ -95,8 +95,8 @@
      "issue_nc": 161,
      "kw": [
       "액체",
-      "침대",
       "생수",
+      "침대",
       "딸아이"
      ],
      "top_post": {
@@ -106,11 +106,28 @@
      }
     },
     {
+     "t": "정부대책 떴다ㅋㅋㅋㅋ부정행위가들 ㅈ1됨",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 97,
+     "issue_np": 3,
+     "issue_nc": 106,
+     "kw": [
+      "대책",
+      "정부"
+     ],
+     "top_post": {
+      "t": "정부대책 떴다ㅋㅋㅋㅋ부정행위가들 ㅈ1됨",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611170120166341&m=view",
+      "nc": 97
+     }
+    },
+    {
      "t": "중국은 ai부정행위가 없는 이유.List",
      "nsite": 8,
      "np_here": 1,
      "nc_here": 78,
-     "issue_np": 14,
+     "issue_np": 15,
      "issue_nc": 110,
      "kw": [
       "부정",
@@ -125,41 +142,22 @@
      }
     },
     {
-     "t": "이번 세무사ai 사태는 ai에 대한 사람들의 생각을 완전히 바꿔놓을듯",
-     "nsite": 10,
+     "t": "로버트 패틴슨이 새로운 제임스 본드군요 ㄷㄷ",
+     "nsite": 5,
      "np_here": 2,
-     "nc_here": 66,
-     "issue_np": 34,
-     "issue_nc": 193,
+     "nc_here": 70,
+     "issue_np": 8,
+     "issue_nc": 131,
      "kw": [
-      "AI",
-      "안경",
-      "사태",
-      "공무원"
+      "본드",
+      "제임스",
+      "발표",
+      "로버트"
      ],
      "top_post": {
-      "t": "이번 세무사ai 사태는 ai에 대한 사람들의 생각을 완전히 바꿔놓을듯",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611160120145677&m=view",
-      "nc": 37
-     }
-    },
-    {
-     "t": "리트 만점자 17일 수능라이브 어떻게 예측하십니까???",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 62,
-     "issue_np": 9,
-     "issue_nc": 110,
-     "kw": [
-      "리트",
-      "만점자",
-      "수능",
-      "라이브"
-     ],
-     "top_post": {
-      "t": "리트 만점자 17일 수능라이브 어떻게 예측하십니까???",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611160120156453&m=view",
-      "nc": 62
+      "t": "로버트 패틴슨이 새로운 제임스 본드군요 ㄷㄷ",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611170120163128&m=view",
+      "nc": 48
      }
     }
    ]
@@ -167,7 +165,7 @@
   {
    "name": "개드립",
    "np": 17,
-   "nc": 413,
+   "nc": 375,
    "topics": [
     {
      "t": "이번 세무사ai 사태는 ai에 대한 사람들의 생각을 완전히 바꿔놓을듯",
@@ -175,12 +173,12 @@
      "np_here": 3,
      "nc_here": 81,
      "issue_np": 34,
-     "issue_nc": 193,
+     "issue_nc": 164,
      "kw": [
       "AI",
       "안경",
       "사태",
-      "공무원"
+      "직렬"
      ],
      "top_post": {
       "t": "AI 안경 쓰고 오라는 공무원 직렬",
@@ -197,8 +195,8 @@
      "issue_nc": 161,
      "kw": [
       "액체",
-      "침대",
       "생수",
+      "침대",
       "딸아이"
      ],
      "top_post": {
@@ -208,33 +206,15 @@
      }
     },
     {
-     "t": "음주운전 한 연예인중 가장 욕을 덜 먹는 연예인",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 48,
-     "issue_np": 4,
-     "issue_nc": 51,
-     "kw": [
-      "음주",
-      "운전",
-      "연예인"
-     ],
-     "top_post": {
-      "t": "음주운전 한 연예인중 가장 욕을 덜 먹는 연예인",
-      "u": "https://www.dogdrip.net/dogdrip/735010089?sort_index=popular&page=1",
-      "nc": 48
-     }
-    },
-    {
      "t": "결혼 한달전에 여자친구가 바람폈네요",
      "nsite": 3,
      "np_here": 2,
      "nc_here": 46,
-     "issue_np": 5,
-     "issue_nc": 61,
+     "issue_np": 4,
+     "issue_nc": 66,
      "kw": [
-      "여자",
       "친구",
+      "여자",
       "결혼"
      ],
      "top_post": {
@@ -251,8 +231,8 @@
      "issue_np": 4,
      "issue_nc": 66,
      "kw": [
-      "의대",
       "서울대",
+      "의대",
       "신입",
       "환영회"
      ],
@@ -263,6 +243,25 @@
      }
     },
     {
+     "t": "경기도 27년 9월부터 버스 환승 할인 폐지",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 37,
+     "issue_np": 4,
+     "issue_nc": 213,
+     "kw": [
+      "버스",
+      "환승",
+      "할인",
+      "경기도"
+     ],
+     "top_post": {
+      "t": "경기 버스 환승할인 내년 8월 폐지...재정 쥐어짜 민생예산만 편성",
+      "u": "https://www.dogdrip.net/dogdrip/735174469?sort_index=popular&page=1",
+      "nc": 37
+     }
+    },
+    {
      "t": "\"이건 정신병동 냄새인데\"…지하철서 탈출 환자 신고한 간호대생",
      "nsite": 5,
      "np_here": 1,
@@ -270,34 +269,15 @@
      "issue_np": 5,
      "issue_nc": 99,
      "kw": [
-      "탈출",
+      "냄새",
       "환자",
-      "간호",
-      "냄새"
+      "탈출",
+      "간호"
      ],
      "top_post": {
       "t": "“이건 정신병동 냄새인데?”…전철서 탈출 환자 신고한 간호대생",
       "u": "https://www.dogdrip.net/dogdrip/735086461?sort_index=popular&page=1",
       "nc": 33
-     }
-    },
-    {
-     "t": "경기도 27년 9월부터 버스 환승 할인 폐지",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 29,
-     "issue_np": 4,
-     "issue_nc": 182,
-     "kw": [
-      "할인",
-      "버스",
-      "환승",
-      "폐지"
-     ],
-     "top_post": {
-      "t": "경기 버스 환승할인 내년 8월 폐지...재정 쥐어짜 민생예산만 편성",
-      "u": "https://www.dogdrip.net/dogdrip/735174469?sort_index=popular&page=1",
-      "nc": 29
      }
     },
     {
@@ -316,31 +296,50 @@
       "u": "https://www.dogdrip.net/dogdrip/735027956?sort_index=popular&page=1",
       "nc": 24
      }
+    },
+    {
+     "t": "대 AI 시대, 재평가되는 누나",
+     "nsite": 5,
+     "np_here": 1,
+     "nc_here": 17,
+     "issue_np": 11,
+     "issue_nc": 39,
+     "kw": [
+      "시대",
+      "AI",
+      "누나",
+      "평가"
+     ],
+     "top_post": {
+      "t": "대 AI 시대, 재평가되는 누나",
+      "u": "https://www.dogdrip.net/dogdrip/735169178?sort_index=popular&page=1",
+      "nc": 17
+     }
     }
    ]
   },
   {
    "name": "인스티즈",
    "np": 5,
-   "nc": 288,
+   "nc": 299,
    "topics": [
     {
      "t": "mbc 뉴스에 나온 1mm 초소형 카메라",
      "nsite": 3,
      "np_here": 1,
-     "nc_here": 73,
+     "nc_here": 78,
      "issue_np": 3,
-     "issue_nc": 82,
+     "issue_nc": 87,
      "kw": [
-      "뉴스",
+      "카메라",
       "MBC",
-      "MM",
-      "카메라"
+      "소형",
+      "MM"
      ],
      "top_post": {
       "t": "mbc 뉴스에 나온 1mm 초소형 카메라",
       "u": "https://www.instiz.net/pt/7926606?green=1",
-      "nc": 73
+      "nc": 78
      }
     },
     {
@@ -370,10 +369,10 @@
      "issue_np": 5,
      "issue_nc": 99,
      "kw": [
-      "탈출",
+      "냄새",
       "환자",
-      "간호",
-      "냄새"
+      "탈출",
+      "간호"
      ],
      "top_post": {
       "t": "\"이건 정신병동 냄새인데\"…지하철서 탈출 환자 신고한 간호대생",
@@ -385,28 +384,28 @@
      "t": "교육부장관 ㄹㅇ 정신 나갔네요 ㅋㅋㅋㅋ",
      "nsite": 7,
      "np_here": 1,
-     "nc_here": 50,
-     "issue_np": 16,
-     "issue_nc": 534,
+     "nc_here": 51,
+     "issue_np": 15,
+     "issue_nc": 535,
      "kw": [
-      "교육부",
       "장관",
-      "방안",
-      "최교진"
+      "교육부",
+      "최교진",
+      "발언"
      ],
      "top_post": {
       "t": "현 교육부 장관 입장 발표!",
       "u": "https://www.instiz.net/pt/7926745?green=1",
-      "nc": 50
+      "nc": 51
      }
     },
     {
      "t": "로버트 패틴슨이 새로운 제임스 본드군요 ㄷㄷ",
      "nsite": 5,
      "np_here": 1,
-     "nc_here": 27,
-     "issue_np": 7,
-     "issue_nc": 104,
+     "nc_here": 32,
+     "issue_np": 8,
+     "issue_nc": 131,
      "kw": [
       "본드",
       "제임스",
@@ -416,15 +415,15 @@
      "top_post": {
       "t": "현재 p든 n이든 난리난 새 제임스본드.",
       "u": "https://www.instiz.net/pt/7926756?green=1",
-      "nc": 27
+      "nc": 32
      }
     }
    ]
   },
   {
    "name": "82쿡",
-   "np": 28,
-   "nc": 233,
+   "np": 30,
+   "nc": 271,
    "topics": [
     {
      "t": "수능 하루 전, 대한민국을 구해낸 문재인 대통령의 결단",
@@ -436,8 +435,8 @@
      "kw": [
       "수능",
       "대통령",
-      "결단",
-      "문재인"
+      "문재인",
+      "결단"
      ],
      "top_post": {
       "t": "수능 하루 전, 대한민국을 구해낸 문재인 대통령의 결단",
@@ -465,17 +464,36 @@
      }
     },
     {
+     "t": "경기도 27년 9월부터 버스 환승 할인 폐지",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 22,
+     "issue_np": 4,
+     "issue_nc": 213,
+     "kw": [
+      "버스",
+      "환승",
+      "할인",
+      "경기도"
+     ],
+     "top_post": {
+      "t": "내년부터 경기도버스 환승할인 안된다네요",
+      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4259804&page=1",
+      "nc": 22
+     }
+    },
+    {
      "t": "교육부장관 ㄹㅇ 정신 나갔네요 ㅋㅋㅋㅋ",
      "nsite": 7,
      "np_here": 1,
      "nc_here": 21,
-     "issue_np": 16,
-     "issue_nc": 534,
+     "issue_np": 15,
+     "issue_nc": 535,
      "kw": [
-      "교육부",
       "장관",
-      "방안",
-      "최교진"
+      "교육부",
+      "최교진",
+      "발언"
      ],
      "top_post": {
       "t": "교육부 장관 \"서로가 믿음을 가지고 시험을 보는 게 가..",
@@ -506,7 +524,7 @@
      "nsite": 8,
      "np_here": 2,
      "nc_here": 12,
-     "issue_np": 14,
+     "issue_np": 15,
      "issue_nc": 110,
      "kw": [
       "부정",
@@ -544,7 +562,7 @@
      "nsite": 6,
      "np_here": 2,
      "nc_here": 11,
-     "issue_np": 11,
+     "issue_np": 12,
      "issue_nc": 49,
      "kw": [
       "연기",
@@ -556,32 +574,13 @@
       "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4259520&page=1",
       "nc": 9
      }
-    },
-    {
-     "t": "오프라인 초소형카메라도 품절 ㄷㄷㄷㄷㄷㄷ",
-     "nsite": 5,
-     "np_here": 2,
-     "nc_here": 9,
-     "issue_np": 12,
-     "issue_nc": 137,
-     "kw": [
-      "소형",
-      "카메라",
-      "오프라인",
-      "시험"
-     ],
-     "top_post": {
-      "t": "차라리 초소형 카메라 산 사람들 전수조사를 하죠",
-      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4259546&page=1",
-      "nc": 8
-     }
     }
    ]
   },
   {
    "name": "클리앙",
-   "np": 10,
-   "nc": 168,
+   "np": 11,
+   "nc": 177,
    "topics": [
     {
      "t": "정의감으로 민주당 지지하시는 분들",
@@ -606,7 +605,7 @@
      "nsite": 6,
      "np_here": 2,
      "nc_here": 33,
-     "issue_np": 11,
+     "issue_np": 12,
      "issue_nc": 49,
      "kw": [
       "연기",
@@ -624,8 +623,8 @@
      "nsite": 5,
      "np_here": 1,
      "nc_here": 29,
-     "issue_np": 7,
-     "issue_nc": 104,
+     "issue_np": 8,
+     "issue_nc": 131,
      "kw": [
       "본드",
       "제임스",
@@ -643,13 +642,13 @@
      "nsite": 7,
      "np_here": 1,
      "nc_here": 23,
-     "issue_np": 16,
-     "issue_nc": 534,
+     "issue_np": 15,
+     "issue_nc": 535,
      "kw": [
-      "교육부",
       "장관",
-      "방안",
-      "최교진"
+      "교육부",
+      "최교진",
+      "발언"
      ],
      "top_post": {
       "t": "최교진 같은사람이 교육부 장관인데 막을수가 있을까요?",
@@ -667,7 +666,7 @@
      "kw": [
       "최교진",
       "장관",
-      "여중",
+      "제자",
       "교육부"
      ],
      "top_post": {
@@ -696,6 +695,23 @@
      }
     },
     {
+     "t": "정부대책 떴다ㅋㅋㅋㅋ부정행위가들 ㅈ1됨",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 9,
+     "issue_np": 3,
+     "issue_nc": 106,
+     "kw": [
+      "대책",
+      "정부"
+     ],
+     "top_post": {
+      "t": "대책이 없으면 정부는 뭐하러 있나요",
+      "u": "https://www.clien.net/service/board/park/19293772?od=T33&po=0&category=0&groupCd=clien_all",
+      "nc": 9
+     }
+    },
+    {
      "t": "[속보] 정부, 수능 시험장 공공 와이파이 차단 추진",
      "nsite": 4,
      "np_here": 1,
@@ -719,8 +735,26 @@
   {
    "name": "네이트판",
    "np": 3,
-   "nc": 47,
+   "nc": 52,
    "topics": [
+    {
+     "t": "결혼 한달전에 여자친구가 바람폈네요",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 20,
+     "issue_np": 4,
+     "issue_nc": 66,
+     "kw": [
+      "친구",
+      "여자",
+      "결혼"
+     ],
+     "top_post": {
+      "t": "안녕하세요 저는 30초 여자입니다고등학교때부터 친했던 친구가 최근에 결혼을 했어요친구 결혼...",
+      "u": "https://pann.nate.com/talk/375722979",
+      "nc": 20
+     }
+    },
     {
      "t": "아니 남자들이 언제나 여자보다 힘쌔다고 자랑 많이하던데 그럼 당연히 집안일은 남...",
      "nsite": 4,
@@ -729,8 +763,8 @@
      "issue_np": 4,
      "issue_nc": 19,
      "kw": [
-      "남자",
       "여자",
+      "남자",
       "야구장",
       "절대"
      ],
@@ -741,24 +775,6 @@
      }
     },
     {
-     "t": "결혼 한달전에 여자친구가 바람폈네요",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 15,
-     "issue_np": 5,
-     "issue_nc": 61,
-     "kw": [
-      "여자",
-      "친구",
-      "결혼"
-     ],
-     "top_post": {
-      "t": "안녕하세요 저는 30초 여자입니다고등학교때부터 친했던 친구가 최근에 결혼을 했어요친구 결혼...",
-      "u": "https://pann.nate.com/talk/375722979",
-      "nc": 15
-     }
-    },
-    {
      "t": ",.,.., 근데 Ai로 의대가면 뭐하나요?,..,",
      "nsite": 4,
      "np_here": 1,
@@ -766,8 +782,8 @@
      "issue_np": 4,
      "issue_nc": 17,
      "kw": [
-      "의대",
       "AI",
+      "의대",
       "자백"
      ],
      "top_post": {
@@ -781,7 +797,7 @@
   {
    "name": "아카라이브",
    "np": 3,
-   "nc": 43,
+   "nc": 44,
    "topics": [
     {
      "t": "이번 세무사ai 사태는 ai에 대한 사람들의 생각을 완전히 바꿔놓을듯",
@@ -789,12 +805,12 @@
      "np_here": 1,
      "nc_here": 28,
      "issue_np": 34,
-     "issue_nc": 193,
+     "issue_nc": 164,
      "kw": [
       "AI",
       "안경",
       "사태",
-      "공무원"
+      "직렬"
      ],
      "top_post": {
       "t": "AI 안경 대처법으로 이건 ㅈㄴ웃기네",
@@ -807,7 +823,7 @@
      "nsite": 8,
      "np_here": 1,
      "nc_here": 8,
-     "issue_np": 14,
+     "issue_np": 15,
      "issue_nc": 110,
      "kw": [
       "부정",
@@ -825,27 +841,27 @@
      "t": "경기도 27년 9월부터 버스 환승 할인 폐지",
      "nsite": 4,
      "np_here": 1,
-     "nc_here": 7,
+     "nc_here": 8,
      "issue_np": 4,
-     "issue_nc": 182,
+     "issue_nc": 213,
      "kw": [
-      "할인",
       "버스",
       "환승",
-      "폐지"
+      "할인",
+      "경기도"
      ],
      "top_post": {
       "t": "경기도 버스 환승할인 내년 8월 폐지",
       "u": "https://arca.live/b/live/189357348?p=1",
-      "nc": 7
+      "nc": 8
      }
     }
    ]
   },
   {
    "name": "보배드림",
-   "np": 13,
-   "nc": 32,
+   "np": 12,
+   "nc": 29,
    "topics": [
     {
      "t": "정의감으로 민주당 지지하시는 분들",
@@ -870,7 +886,7 @@
      "nsite": 6,
      "np_here": 2,
      "nc_here": 4,
-     "issue_np": 11,
+     "issue_np": 12,
      "issue_nc": 49,
      "kw": [
       "연기",
@@ -888,7 +904,7 @@
      "nsite": 8,
      "np_here": 1,
      "nc_here": 3,
-     "issue_np": 14,
+     "issue_np": 15,
      "issue_nc": 110,
      "kw": [
       "부정",
@@ -908,34 +924,16 @@
      "np_here": 1,
      "nc_here": 3,
      "issue_np": 4,
-     "issue_nc": 317,
+     "issue_nc": 341,
      "kw": [
       "불법",
       "주차",
       "한국",
-      "시흥"
+      "도시"
      ],
      "top_post": {
       "t": "불법주차의 도시 시흥",
       "u": "https://www.bobaedream.co.kr/view?code=best&No=1048062&vdate=",
-      "nc": 3
-     }
-    },
-    {
-     "t": "음주운전 한 연예인중 가장 욕을 덜 먹는 연예인",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 3,
-     "issue_np": 4,
-     "issue_nc": 51,
-     "kw": [
-      "음주",
-      "운전",
-      "연예인"
-     ],
-     "top_post": {
-      "t": "연예인 음주운전 레전드",
-      "u": "https://www.bobaedream.co.kr/view?code=best&No=1047789&vdate=",
       "nc": 3
      }
     },
@@ -947,8 +945,8 @@
      "issue_np": 4,
      "issue_nc": 17,
      "kw": [
-      "의대",
       "AI",
+      "의대",
       "자백"
      ],
      "top_post": {
@@ -981,16 +979,35 @@
      "np_here": 1,
      "nc_here": 2,
      "issue_np": 12,
-     "issue_nc": 137,
+     "issue_nc": 139,
      "kw": [
-      "소형",
       "카메라",
+      "소형",
       "오프라인",
       "시험"
      ],
      "top_post": {
       "t": "시험용 초소형 카메라 모두 완판되었습니다",
       "u": "https://www.bobaedream.co.kr/view?code=best&No=1048063&vdate=",
+      "nc": 2
+     }
+    },
+    {
+     "t": "수능날 AI 치팅을 막아주겠다는 공공기관 등장",
+     "nsite": 5,
+     "np_here": 1,
+     "nc_here": 2,
+     "issue_np": 6,
+     "issue_nc": 17,
+     "kw": [
+      "AI",
+      "공공",
+      "기관",
+      "치팅"
+     ],
+     "top_post": {
+      "t": "ai 안경 잡아내는거 누구보다 자신있다는 공공기관",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1047882&vdate=",
       "nc": 2
      }
     }
@@ -1006,8 +1023,8 @@
      "nsite": 5,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 7,
-     "issue_nc": 104,
+     "issue_np": 8,
+     "issue_nc": 131,
      "kw": [
       "본드",
       "제임스",
@@ -1028,10 +1045,10 @@
      "issue_np": 5,
      "issue_nc": 99,
      "kw": [
-      "탈출",
+      "냄새",
       "환자",
-      "간호",
-      "냄새"
+      "탈출",
+      "간호"
      ],
      "top_post": {
       "t": "“이건 정신병동 냄새인데”…전철서 탈출 환자 신고한 간호대생",
@@ -1102,10 +1119,10 @@
      "issue_np": 4,
      "issue_nc": 27,
      "kw": [
-      "뉴진스",
+      "송치",
+      "해지",
       "배임",
-      "계약",
-      "업무"
+      "뉴진스"
      ],
      "top_post": {
       "t": "[단독] 경찰, '뉴진스 계약 해지' 민희진 업무상 배임 혐의 송치",
@@ -1121,10 +1138,10 @@
      "issue_np": 6,
      "issue_nc": 22,
      "kw": [
-      "본드",
-      "로버트",
+      "패틴슨",
       "제임스",
-      "패틴슨"
+      "본드",
+      "로버트"
      ],
      "top_post": {
       "t": "제임스 본드도 로버트 패틴슨이 한다는 거에 질려버린 트위터 사람들",
@@ -1140,8 +1157,8 @@
      "issue_np": 4,
      "issue_nc": 19,
      "kw": [
-      "남자",
       "여자",
+      "남자",
       "야구장",
       "절대"
      ],
@@ -1155,16 +1172,16 @@
   },
   {
    "name": "루리웹",
-   "np": 20,
+   "np": 16,
    "nc": 0,
    "topics": [
     {
      "t": "로버트 패틴슨이 새로운 제임스 본드군요 ㄷㄷ",
      "nsite": 5,
-     "np_here": 2,
+     "np_here": 1,
      "nc_here": 0,
-     "issue_np": 7,
-     "issue_nc": 104,
+     "issue_np": 8,
+     "issue_nc": 131,
      "kw": [
       "본드",
       "제임스",
@@ -1185,10 +1202,10 @@
      "issue_np": 5,
      "issue_nc": 99,
      "kw": [
-      "탈출",
+      "냄새",
       "환자",
-      "간호",
-      "냄새"
+      "탈출",
+      "간호"
      ],
      "top_post": {
       "t": "“이건 정신병동 냄새인데”…전철서 탈출 환자 신고한 간호대생",
@@ -1221,12 +1238,12 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 4,
-     "issue_nc": 317,
+     "issue_nc": 341,
      "kw": [
       "불법",
       "주차",
       "한국",
-      "시흥"
+      "도시"
      ],
      "top_post": {
       "t": "일본인 : \"한국에서는 교육이 불법입니까?\"",
@@ -1242,32 +1259,14 @@
      "issue_np": 4,
      "issue_nc": 66,
      "kw": [
-      "의대",
       "서울대",
+      "의대",
       "신입",
       "환영회"
      ],
      "top_post": {
       "t": "2027 서울대 의대 신입생 환영회",
       "u": "https://bbs.ruliweb.com/best/board/300143/read/77415796?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "음주운전 한 연예인중 가장 욕을 덜 먹는 연예인",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 51,
-     "kw": [
-      "음주",
-      "운전",
-      "연예인"
-     ],
-     "top_post": {
-      "t": "성시경이 절대 음주운전 하지 않는 이유",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77416517?m=all&t=now",
       "nc": 0
      }
     },
@@ -1279,10 +1278,10 @@
      "issue_np": 4,
      "issue_nc": 27,
      "kw": [
-      "뉴진스",
+      "송치",
+      "해지",
       "배임",
-      "계약",
-      "업무"
+      "뉴진스"
      ],
      "top_post": {
       "t": "민희진, 업무상 배임 혐의로 송치… 뉴진스 계약 해지 개입 의혹",
@@ -1298,14 +1297,33 @@
      "issue_np": 6,
      "issue_nc": 22,
      "kw": [
-      "본드",
-      "로버트",
+      "패틴슨",
       "제임스",
-      "패틴슨"
+      "본드",
+      "로버트"
      ],
      "top_post": {
       "t": "새로운 제임스 본드로 로버트 패틴슨 공식 발표, 공식 스틸",
       "u": "https://bbs.ruliweb.com/best/board/300013/read/3827993?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "아니 남자들이 언제나 여자보다 힘쌔다고 자랑 많이하던데 그럼 당연히 집안일은 남...",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 19,
+     "kw": [
+      "여자",
+      "남자",
+      "야구장",
+      "절대"
+     ],
+     "top_post": {
+      "t": "남자가 여자랑 절대 야구장 같이 안간다는 이유",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77418298?m=all&t=now",
       "nc": 0
      }
     }
@@ -1313,7 +1331,7 @@
   },
   {
    "name": "SLR클럽",
-   "np": 4,
+   "np": 5,
    "nc": 0,
    "topics": [
     {
@@ -1324,10 +1342,10 @@
      "issue_np": 5,
      "issue_nc": 99,
      "kw": [
-      "탈출",
+      "냄새",
       "환자",
-      "간호",
-      "냄새"
+      "탈출",
+      "간호"
      ],
      "top_post": {
       "t": "냄새로 정신병 탈출 환자 판단한 간호대생",
@@ -1345,12 +1363,31 @@
      "kw": [
       "최교진",
       "장관",
-      "여중",
+      "제자",
       "교육부"
      ],
      "top_post": {
       "t": "최교진 장관 \"서로 믿음 갖고 시험 보는 게 중요\"",
       "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677530",
+      "nc": 0
+     }
+    },
+    {
+     "t": "중국 ai방지대책들ㄷㄷㄷ",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 26,
+     "kw": [
+      "방지",
+      "AI",
+      "대책",
+      "중국"
+     ],
+     "top_post": {
+      "t": "중국 ai방지대책들ㄷㄷㄷ",
+      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677509",
       "nc": 0
      }
     },
@@ -1362,8 +1399,8 @@
      "issue_np": 4,
      "issue_nc": 17,
      "kw": [
-      "의대",
       "AI",
+      "의대",
       "자백"
      ],
      "top_post": {
@@ -1394,21 +1431,21 @@
   },
   {
    "name": "디시인사이드",
-   "np": 8,
+   "np": 7,
    "nc": 0,
    "topics": [
     {
-     "t": "공무원은 ai시대 백프로 살아남습니다.",
+     "t": "대 AI 시대, 재평가되는 누나",
      "nsite": 5,
      "np_here": 2,
      "nc_here": 0,
-     "issue_np": 12,
+     "issue_np": 11,
      "issue_nc": 39,
      "kw": [
-      "AI",
       "시대",
-      "평가",
-      "누나"
+      "AI",
+      "누나",
+      "평가"
      ],
      "top_post": {
       "t": "깜짝 .. ai 딸깍시대에 진짜 대단하신분 ㄹㅇ .",
@@ -1434,24 +1471,6 @@
      }
     },
     {
-     "t": "음주운전 한 연예인중 가장 욕을 덜 먹는 연예인",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 51,
-     "kw": [
-      "음주",
-      "운전",
-      "연예인"
-     ],
-     "top_post": {
-      "t": "싱글벙글 음주운전 전과 7범이라고 본인이 얘기한 배우",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=479299&_dcbest=1&page=1",
-      "nc": 0
-     }
-    },
-    {
      "t": "경찰, '뉴진스 계약 해지' 민희진 업무상 배임 혐의 송치",
      "nsite": 4,
      "np_here": 1,
@@ -1459,10 +1478,10 @@
      "issue_np": 4,
      "issue_nc": 27,
      "kw": [
-      "뉴진스",
+      "송치",
+      "해지",
       "배임",
-      "계약",
-      "업무"
+      "뉴진스"
      ],
      "top_post": {
       "t": "[단독] 경찰, '뉴진스 계약 해지' 민희진 업무상 배임 혐의 송치",
@@ -1507,21 +1526,19 @@
      }
     },
     {
-     "t": "세무냥이 계산기 개조 ㅋㅋㅋㅋㅋㅋ",
+     "t": "정부대책 떴다ㅋㅋㅋㅋ부정행위가들 ㅈ1됨",
      "nsite": 3,
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 3,
-     "issue_nc": 56,
+     "issue_nc": 106,
      "kw": [
-      "세무",
-      "개조",
-      "계산기",
-      "오피셜"
+      "대책",
+      "정부"
      ],
      "top_post": {
-      "t": "[오피셜] 세무.냥.이 개조된 쌀집 계산기로 Al 부정행위",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=479420&_dcbest=1&page=1",
+      "t": "싱글벙글 방금자 유출된 정부의 비밀 수능 대책..",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=479464&_dcbest=1&page=1",
       "nc": 0
      }
     }
