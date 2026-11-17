@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-17 08:00",
+ "updated": "2026-11-17 09:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -14048,6 +14048,19 @@
    "page": "",
    "registered": "2026-11-03",
    "expires": "2026-11-10"
+  },
+  {
+   "query": "엔비디아 젠슨 황 복귀 시나리오와 주가 분석 리포트: 종가·월가 목표주가·실적 체크리스트",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 1,
+   "status": "작성",
+   "page": "/issue/nvidia-stock-analysis-report-huang-return-scenarios-1117/",
+   "registered": "2026-11-17",
+   "expires": "2026-12-01"
   },
   {
    "query": "125억 원 투자사기 유명 부동산 강사 구속 송치, 경찰 발표 내용 정리",
