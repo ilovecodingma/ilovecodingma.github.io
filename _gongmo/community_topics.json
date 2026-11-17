@@ -1,27 +1,27 @@
 {
  "date": "2026-11-18",
- "updated": "2026-11-18 00:50",
+ "updated": "2026-11-18 01:50",
  "sites": 13,
- "npost": 2989,
+ "npost": 2998,
  "note": "출처(커뮤니티)별 집계예요. 작성자·연령·성별 정보는 수집하지 않아요. posts 는 이슈별로 뽑힌 일부라 전체 글 수가 아니에요.",
  "sources": [
   {
    "name": "MLB파크",
-   "np": 17,
-   "nc": 1179,
+   "np": 15,
+   "nc": 1076,
    "topics": [
     {
      "t": "한국의 불법주차 문화",
-     "nsite": 4,
+     "nsite": 5,
      "np_here": 1,
      "nc_here": 334,
-     "issue_np": 4,
+     "issue_np": 5,
      "issue_nc": 341,
      "kw": [
       "불법",
       "주차",
-      "한국",
-      "도시"
+      "도시",
+      "시흥"
      ],
      "top_post": {
       "t": "한국의 불법주차 문화",
@@ -38,8 +38,8 @@
      "issue_nc": 215,
      "kw": [
       "할인",
-      "버스",
       "환승",
+      "버스",
       "폐지"
      ],
      "top_post": {
@@ -68,24 +68,6 @@
      }
     },
     {
-     "t": "오프라인 초소형카메라도 품절 ㄷㄷㄷㄷㄷㄷ",
-     "nsite": 5,
-     "np_here": 2,
-     "nc_here": 99,
-     "issue_np": 7,
-     "issue_nc": 104,
-     "kw": [
-      "소형",
-      "카메라",
-      "시험"
-     ],
-     "top_post": {
-      "t": "오프라인 초소형카메라도 품절 ㄷㄷㄷㄷㄷㄷ",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611160120157464&m=view",
-      "nc": 77
-     }
-    },
-    {
      "t": "세무사 시험 숨은 냥이들이 많네요 ㄷㄷㄷㄷㄷ",
      "nsite": 6,
      "np_here": 1,
@@ -96,7 +78,7 @@
       "시험",
       "세무사",
       "컨닝",
-      "합격자"
+      "라섹"
      ],
      "top_post": {
       "t": "세무사 시험 숨은 냥이들이 많네요 ㄷㄷㄷㄷㄷ",
@@ -109,11 +91,11 @@
      "nsite": 4,
      "np_here": 2,
      "nc_here": 91,
-     "issue_np": 6,
-     "issue_nc": 156,
+     "issue_np": 5,
+     "issue_nc": 158,
      "kw": [
-      "본드",
-      "제임스"
+      "제임스",
+      "본드"
      ],
      "top_post": {
       "t": "로버트 패틴슨이 새로운 제임스 본드군요 ㄷㄷ",
@@ -129,8 +111,8 @@
      "issue_np": 3,
      "issue_nc": 62,
      "kw": [
-      "사직",
       "권고",
+      "사직",
       "기업"
      ],
      "top_post": {
@@ -156,14 +138,68 @@
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611170120161271&m=view",
       "nc": 58
      }
+    },
+    {
+     "t": "수능을 연기하면 왜 더 큰 혼란이 온다는 걸까요...?",
+     "nsite": 6,
+     "np_here": 1,
+     "nc_here": 56,
+     "issue_np": 12,
+     "issue_nc": 99,
+     "kw": [
+      "수능",
+      "연기",
+      "혼란"
+     ],
+     "top_post": {
+      "t": "수능 연기하자는 분들이 알아야할것.",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611170120169899&m=view",
+      "nc": 56
+     }
     }
    ]
   },
   {
    "name": "인스티즈",
-   "np": 9,
-   "nc": 498,
+   "np": 8,
+   "nc": 458,
    "topics": [
+    {
+     "t": "최근 등장한 연금복권 1등 2번 당첨자",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 70,
+     "issue_np": 5,
+     "issue_nc": 70,
+     "kw": [
+      "연금",
+      "복권",
+      "당첨",
+      "당첨자"
+     ],
+     "top_post": {
+      "t": "최근 등장한 연금복권 1등 2번 당첨자",
+      "u": "https://www.instiz.net/pt/7926788?green=1",
+      "nc": 70
+     }
+    },
+    {
+     "t": "현재 p든 n이든 난리난 새 제임스본드.",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 67,
+     "issue_np": 5,
+     "issue_nc": 158,
+     "kw": [
+      "제임스",
+      "본드"
+     ],
+     "top_post": {
+      "t": "현재 p든 n이든 난리난 새 제임스본드.",
+      "u": "https://www.instiz.net/pt/7926756?green=1",
+      "nc": 67
+     }
+    },
     {
      "t": "\"이건 정신병동 냄새인데\"…지하철서 탈출 환자 신고한 간호대생",
      "nsite": 3,
@@ -172,10 +208,10 @@
      "issue_np": 3,
      "issue_nc": 66,
      "kw": [
-      "냄새",
-      "간호",
       "환자",
-      "탈출"
+      "간호",
+      "탈출",
+      "냄새"
      ],
      "top_post": {
       "t": "\"이건 정신병동 냄새인데\"…지하철서 탈출 환자 신고한 간호대생",
@@ -187,9 +223,9 @@
      "t": "현 교육부 장관 입장 발표!",
      "nsite": 7,
      "np_here": 1,
-     "nc_here": 65,
+     "nc_here": 64,
      "issue_np": 9,
-     "issue_nc": 129,
+     "issue_nc": 128,
      "kw": [
       "장관",
       "교육부",
@@ -199,42 +235,6 @@
      "top_post": {
       "t": "현 교육부 장관 입장 발표!",
       "u": "https://www.instiz.net/pt/7926745?green=1",
-      "nc": 65
-     }
-    },
-    {
-     "t": "현재 p든 n이든 난리난 새 제임스본드.",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 65,
-     "issue_np": 6,
-     "issue_nc": 156,
-     "kw": [
-      "본드",
-      "제임스"
-     ],
-     "top_post": {
-      "t": "현재 p든 n이든 난리난 새 제임스본드.",
-      "u": "https://www.instiz.net/pt/7926756?green=1",
-      "nc": 65
-     }
-    },
-    {
-     "t": "최근 등장한 연금복권 1등 2번 당첨자",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 64,
-     "issue_np": 5,
-     "issue_nc": 64,
-     "kw": [
-      "복권",
-      "연금",
-      "당첨",
-      "당첨자"
-     ],
-     "top_post": {
-      "t": "최근 등장한 연금복권 1등 2번 당첨자",
-      "u": "https://www.instiz.net/pt/7926788?green=1",
       "nc": 64
      }
     },
@@ -242,9 +242,9 @@
      "t": "김정은 딸 김주애 근황",
      "nsite": 3,
      "np_here": 1,
-     "nc_here": 61,
+     "nc_here": 63,
      "issue_np": 3,
-     "issue_nc": 61,
+     "issue_nc": 63,
      "kw": [
       "김정",
       "김주애"
@@ -252,24 +252,7 @@
      "top_post": {
       "t": "김정은 딸 김주애 근황",
       "u": "https://www.instiz.net/pt/7926825?green=1",
-      "nc": 61
-     }
-    },
-    {
-     "t": "감정평가사 합격후기도 갑자기 내려감 (+추가)",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 55,
-     "issue_np": 3,
-     "issue_nc": 55,
-     "kw": [
-      "감정평가사",
-      "합격"
-     ],
-     "top_post": {
-      "t": "감정평가사 합격후기도 갑자기 내려감 (+추가)",
-      "u": "https://www.instiz.net/pt/7926867?green=1",
-      "nc": 55
+      "nc": 63
      }
     },
     {
@@ -283,7 +266,7 @@
       "시험",
       "세무사",
       "컨닝",
-      "합격자"
+      "라섹"
      ],
      "top_post": {
       "t": "세무사 시험 고득점자 2명 -> 66명",
@@ -295,9 +278,9 @@
      "t": "수능 부정행위 단속 총정리",
      "nsite": 6,
      "np_here": 1,
-     "nc_here": 38,
+     "nc_here": 44,
      "issue_np": 12,
-     "issue_nc": 65,
+     "issue_nc": 71,
      "kw": [
       "부정",
       "행위",
@@ -307,7 +290,26 @@
      "top_post": {
       "t": "수능 부정행위 단속 총정리",
       "u": "https://www.instiz.net/pt/7926834?green=1",
-      "nc": 38
+      "nc": 44
+     }
+    },
+    {
+     "t": "'교육부장관' 나는 나이가 많아 AI 컨닝을 잡을 수 없다",
+     "nsite": 5,
+     "np_here": 1,
+     "nc_here": 30,
+     "issue_np": 6,
+     "issue_nc": 43,
+     "kw": [
+      "AI",
+      "나이",
+      "장관",
+      "컨닝"
+     ],
+     "top_post": {
+      "t": "\"AI커닝 100% 잡겠나\" 묻자, 교육장관 \"제 나이가 있어서…\"",
+      "u": "https://www.instiz.net/pt/7926796?green=1",
+      "nc": 30
      }
     }
    ]
@@ -315,19 +317,19 @@
   {
    "name": "82쿡",
    "np": 30,
-   "nc": 256,
+   "nc": 270,
    "topics": [
     {
      "t": "수능 하루 전, 대한민국을 구해낸 문재인 대통령의 결단",
      "nsite": 3,
-     "np_here": 3,
-     "nc_here": 72,
-     "issue_np": 5,
-     "issue_nc": 72,
+     "np_here": 2,
+     "nc_here": 71,
+     "issue_np": 4,
+     "issue_nc": 71,
      "kw": [
       "대통령",
-      "수능",
       "결단",
+      "수능",
       "현우"
      ],
      "top_post": {
@@ -342,10 +344,10 @@
      "np_here": 4,
      "nc_here": 35,
      "issue_np": 8,
-     "issue_nc": 61,
+     "issue_nc": 65,
      "kw": [
-      "만점자",
-      "리트"
+      "리트",
+      "만점자"
      ],
      "top_post": {
       "t": "리트만점자랑 ㅈㅇㅇ이 너무 닮았어요",
@@ -357,19 +359,19 @@
      "t": "오 재난 문자로 미제출 폰 적발",
      "nsite": 4,
      "np_here": 2,
-     "nc_here": 25,
+     "nc_here": 35,
      "issue_np": 5,
-     "issue_nc": 28,
+     "issue_nc": 38,
      "kw": [
-      "재난",
       "문자",
+      "재난",
       "제출",
       "적발"
      ],
      "top_post": {
       "t": "재난문자 보낸다는걸 왜 미리 말했을까요",
       "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4260033&page=1",
-      "nc": 14
+      "nc": 24
      }
     },
     {
@@ -381,9 +383,9 @@
      "issue_nc": 87,
      "kw": [
       "지지",
-      "대통령",
       "이재명",
-      "조국혁신당"
+      "대통령",
+      "돌파"
      ],
      "top_post": {
       "t": "대박~! 여론조사 조국혁신당 지지율 10% 돌파",
@@ -400,8 +402,8 @@
      "issue_nc": 215,
      "kw": [
       "할인",
-      "버스",
       "환승",
+      "버스",
       "폐지"
      ],
      "top_post": {
@@ -415,7 +417,7 @@
      "nsite": 8,
      "np_here": 3,
      "nc_here": 19,
-     "issue_np": 38,
+     "issue_np": 37,
      "issue_nc": 128,
      "kw": [
       "AI",
@@ -440,7 +442,7 @@
       "시험",
       "세무사",
       "컨닝",
-      "합격자"
+      "라섹"
      ],
      "top_post": {
       "t": "연고대 시험 컨닝",
@@ -458,8 +460,8 @@
      "kw": [
       "부정",
       "행위",
-      "응시",
-      "제한"
+      "제한",
+      "응시"
      ],
      "top_post": {
       "t": "27학번이 부정행위가 가장 적은 학번이 될겁니다",
@@ -479,7 +481,7 @@
      "nsite": 8,
      "np_here": 2,
      "nc_here": 73,
-     "issue_np": 38,
+     "issue_np": 37,
      "issue_nc": 128,
      "kw": [
       "AI",
@@ -521,8 +523,8 @@
      "issue_nc": 215,
      "kw": [
       "할인",
-      "버스",
       "환승",
+      "버스",
       "폐지"
      ],
      "top_post": {
@@ -542,7 +544,7 @@
       "시험",
       "세무사",
       "컨닝",
-      "합격자"
+      "라섹"
      ],
      "top_post": {
       "t": "라섹하고 세무사 시험 본 합격자",
@@ -556,7 +558,7 @@
      "np_here": 1,
      "nc_here": 17,
      "issue_np": 12,
-     "issue_nc": 65,
+     "issue_nc": 71,
      "kw": [
       "부정",
       "행위",
@@ -577,8 +579,8 @@
      "issue_np": 6,
      "issue_nc": 37,
      "kw": [
-      "시대",
       "AI",
+      "시대",
       "누나",
       "평가"
      ],
@@ -596,8 +598,8 @@
      "issue_np": 4,
      "issue_nc": 14,
      "kw": [
-      "한국",
       "전통",
+      "한국",
       "음식"
      ],
      "top_post": {
@@ -628,8 +630,8 @@
   },
   {
    "name": "클리앙",
-   "np": 10,
-   "nc": 181,
+   "np": 11,
+   "nc": 209,
    "topics": [
     {
      "t": "오늘 조국혁신당 10% 돌파. 이재명 대통령 4050 지지율 폭망",
@@ -640,9 +642,9 @@
      "issue_nc": 87,
      "kw": [
       "지지",
-      "대통령",
       "이재명",
-      "조국혁신당"
+      "대통령",
+      "돌파"
      ],
      "top_post": {
       "t": "오늘 조국혁신당 10% 돌파. 이재명 대통령 4050 지지율 폭망",
@@ -677,9 +679,9 @@
      "issue_nc": 51,
      "kw": [
       "본드",
+      "제임스",
       "패틴슨",
-      "로버트",
-      "제임스"
+      "로버트"
      ],
      "top_post": {
       "t": "[007] 차기 제임스 본드 - 로버트 패틴슨 공식 발표",
@@ -688,12 +690,31 @@
      }
     },
     {
+     "t": "日당국자 “조국 입국 거부, 전과자 비자 절차 안밟은 듯”",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 28,
+     "issue_np": 4,
+     "issue_nc": 36,
+     "kw": [
+      "거부",
+      "입국",
+      "조국",
+      "전과자"
+     ],
+     "top_post": {
+      "t": "日당국자 “조국 입국 거부, 전과자 비자 절차 안밟은 듯”",
+      "u": "https://www.clien.net/service/board/park/19294147?od=T33&po=0&category=0&groupCd=clien_all",
+      "nc": 28
+     }
+    },
+    {
      "t": "현 교육부 장관 입장 발표!",
      "nsite": 7,
      "np_here": 2,
      "nc_here": 19,
      "issue_np": 9,
-     "issue_nc": 129,
+     "issue_nc": 128,
      "kw": [
       "장관",
       "교육부",
@@ -716,8 +737,8 @@
      "kw": [
       "부정",
       "행위",
-      "응시",
-      "제한"
+      "제한",
+      "응시"
      ],
      "top_post": {
       "t": "부정행위 응시제한3년 너무 나이브합니다",
@@ -775,7 +796,7 @@
      "nsite": 8,
      "np_here": 1,
      "nc_here": 30,
-     "issue_np": 38,
+     "issue_np": 37,
      "issue_nc": 128,
      "kw": [
       "AI",
@@ -814,7 +835,7 @@
      "np_here": 1,
      "nc_here": 12,
      "issue_np": 9,
-     "issue_nc": 129,
+     "issue_nc": 128,
      "kw": [
       "장관",
       "교육부",
@@ -836,8 +857,8 @@
      "issue_nc": 215,
      "kw": [
       "할인",
-      "버스",
       "환승",
+      "버스",
       "폐지"
      ],
      "top_post": {
@@ -849,52 +870,9 @@
    ]
   },
   {
-   "name": "네이트판",
-   "np": 2,
-   "nc": 43,
-   "topics": [
-    {
-     "t": "안녕하세요 저는 30초 여자입니다고등학교때부터 친했던 친구가 최근에 결혼을 했어요친구 결혼...",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 25,
-     "issue_np": 4,
-     "issue_nc": 55,
-     "kw": [
-      "친구",
-      "여자",
-      "결혼"
-     ],
-     "top_post": {
-      "t": "안녕하세요 저는 30초 여자입니다고등학교때부터 친했던 친구가 최근에 결혼을 했어요친구 결혼...",
-      "u": "https://pann.nate.com/talk/375722979",
-      "nc": 25
-     }
-    },
-    {
-     "t": "2024년에 AI쓰고 의대 갔다고 자백글 올라왔자나 ㅋㅋ",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 18,
-     "issue_np": 4,
-     "issue_nc": 21,
-     "kw": [
-      "의대",
-      "AI",
-      "자백"
-     ],
-     "top_post": {
-      "t": "2024년에 AI쓰고 의대 갔다고 자백글 올라왔자나 ㅋㅋ",
-      "u": "https://pann.nate.com/talk/375722740",
-      "nc": 18
-     }
-    }
-   ]
-  },
-  {
    "name": "보배드림",
-   "np": 12,
-   "nc": 27,
+   "np": 14,
+   "nc": 30,
    "topics": [
     {
      "t": "수능 부정행위 단속 총정리",
@@ -902,7 +880,7 @@
      "np_here": 1,
      "nc_here": 3,
      "issue_np": 12,
-     "issue_nc": 65,
+     "issue_nc": 71,
      "kw": [
       "부정",
       "행위",
@@ -916,6 +894,25 @@
      }
     },
     {
+     "t": "한국의 불법주차 문화",
+     "nsite": 5,
+     "np_here": 1,
+     "nc_here": 3,
+     "issue_np": 5,
+     "issue_nc": 341,
+     "kw": [
+      "불법",
+      "주차",
+      "도시",
+      "시흥"
+     ],
+     "top_post": {
+      "t": "불법주차의 도시 시흥",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1048062&vdate=",
+      "nc": 3
+     }
+    },
+    {
      "t": "부정행위 응시제한3년 너무 나이브합니다",
      "nsite": 5,
      "np_here": 1,
@@ -925,31 +922,12 @@
      "kw": [
       "부정",
       "행위",
-      "응시",
-      "제한"
+      "제한",
+      "응시"
      ],
      "top_post": {
       "t": "부정행위를 막지 못한 이유",
       "u": "https://www.bobaedream.co.kr/view?code=best&No=1047959&vdate=",
-      "nc": 3
-     }
-    },
-    {
-     "t": "한국의 불법주차 문화",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 3,
-     "issue_np": 4,
-     "issue_nc": 341,
-     "kw": [
-      "불법",
-      "주차",
-      "한국",
-      "도시"
-     ],
-     "top_post": {
-      "t": "불법주차의 도시 시흥",
-      "u": "https://www.bobaedream.co.kr/view?code=best&No=1048062&vdate=",
       "nc": 3
      }
     },
@@ -959,16 +937,35 @@
      "np_here": 1,
      "nc_here": 3,
      "issue_np": 5,
-     "issue_nc": 28,
+     "issue_nc": 38,
      "kw": [
-      "재난",
       "문자",
+      "재난",
       "제출",
       "적발"
      ],
      "top_post": {
       "t": "재난문자로 미제출 전화기 적발\" ㄷㄷ",
       "u": "https://www.bobaedream.co.kr/view?code=best&No=1048187&vdate=",
+      "nc": 3
+     }
+    },
+    {
+     "t": "日당국자 “조국 입국 거부, 전과자 비자 절차 안밟은 듯”",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 3,
+     "issue_np": 4,
+     "issue_nc": 36,
+     "kw": [
+      "거부",
+      "입국",
+      "조국",
+      "전과자"
+     ],
+     "top_post": {
+      "t": "조국 입시비리 전과자라서 입국 거부 된 것",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1048272&vdate=",
       "nc": 3
      }
     },
@@ -998,8 +995,8 @@
      "issue_np": 4,
      "issue_nc": 14,
      "kw": [
-      "한국",
       "전통",
+      "한국",
       "음식"
      ],
      "top_post": {
@@ -1016,8 +1013,8 @@
      "issue_np": 3,
      "issue_nc": 62,
      "kw": [
-      "사직",
       "권고",
+      "사직",
       "기업"
      ],
      "top_post": {
@@ -1025,30 +1022,37 @@
       "u": "https://www.bobaedream.co.kr/view?code=best&No=1048012&vdate=",
       "nc": 3
      }
-    },
+    }
+   ]
+  },
+  {
+   "name": "네이트판",
+   "np": 1,
+   "nc": 18,
+   "topics": [
     {
-     "t": "오프라인 초소형카메라도 품절 ㄷㄷㄷㄷㄷㄷ",
-     "nsite": 5,
+     "t": "2024년에 AI쓰고 의대 갔다고 자백글 올라왔자나 ㅋㅋ",
+     "nsite": 4,
      "np_here": 1,
-     "nc_here": 2,
-     "issue_np": 7,
-     "issue_nc": 104,
+     "nc_here": 18,
+     "issue_np": 4,
+     "issue_nc": 21,
      "kw": [
-      "소형",
-      "카메라",
-      "시험"
+      "의대",
+      "AI",
+      "자백"
      ],
      "top_post": {
-      "t": "시험용 초소형 카메라 모두 완판되었습니다",
-      "u": "https://www.bobaedream.co.kr/view?code=best&No=1048063&vdate=",
-      "nc": 2
+      "t": "2024년에 AI쓰고 의대 갔다고 자백글 올라왔자나 ㅋㅋ",
+      "u": "https://pann.nate.com/talk/375722740",
+      "nc": 18
      }
     }
    ]
   },
   {
    "name": "SLR클럽",
-   "np": 11,
+   "np": 10,
    "nc": 0,
    "topics": [
     {
@@ -1062,29 +1066,11 @@
       "시험",
       "세무사",
       "컨닝",
-      "합격자"
+      "라섹"
      ],
      "top_post": {
       "t": "세무사 시험 컨닝 한 사람은 왜 자수 했을까염",
       "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677551",
-      "nc": 0
-     }
-    },
-    {
-     "t": "오프라인 초소형카메라도 품절 ㄷㄷㄷㄷㄷㄷ",
-     "nsite": 5,
-     "np_here": 2,
-     "nc_here": 0,
-     "issue_np": 7,
-     "issue_nc": 104,
-     "kw": [
-      "소형",
-      "카메라",
-      "시험"
-     ],
-     "top_post": {
-      "t": "초소형 카메라 크기 ㄷㄷㄷ",
-      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677630",
       "nc": 0
      }
     },
@@ -1098,8 +1084,8 @@
      "kw": [
       "부정",
       "행위",
-      "응시",
-      "제한"
+      "제한",
+      "응시"
      ],
      "top_post": {
       "t": "[속보]수능부정행위시 10년간 응시제한 조치시행ㄷㄷㄷ",
@@ -1113,16 +1099,35 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 5,
-     "issue_nc": 28,
+     "issue_nc": 38,
      "kw": [
-      "재난",
       "문자",
+      "재난",
       "제출",
       "적발"
      ],
      "top_post": {
       "t": "오 재난 문자로 미제출 폰 적발",
       "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677620",
+      "nc": 0
+     }
+    },
+    {
+     "t": "日당국자 “조국 입국 거부, 전과자 비자 절차 안밟은 듯”",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 36,
+     "kw": [
+      "거부",
+      "입국",
+      "조국",
+      "전과자"
+     ],
+     "top_post": {
+      "t": "아니 조국 일본 입국 거부당한게 왜 잘못된거죠?",
+      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677626",
       "nc": 0
      }
     },
@@ -1188,10 +1193,10 @@
      "issue_np": 3,
      "issue_nc": 66,
      "kw": [
-      "냄새",
-      "간호",
       "환자",
-      "탈출"
+      "간호",
+      "탈출",
+      "냄새"
      ],
      "top_post": {
       "t": "냄새로 정신병 탈출 환자 판단한 간호대생",
@@ -1212,7 +1217,7 @@
      "np_here": 2,
      "nc_here": 0,
      "issue_np": 12,
-     "issue_nc": 65,
+     "issue_nc": 71,
      "kw": [
       "부정",
       "행위",
@@ -1234,9 +1239,9 @@
      "issue_nc": 51,
      "kw": [
       "본드",
+      "제임스",
       "패틴슨",
-      "로버트",
-      "제임스"
+      "로버트"
      ],
      "top_post": {
       "t": "제임스 본드도 로버트 패틴슨이 한다는 거에 질려버린 트위터 사람들",
@@ -1254,8 +1259,8 @@
      "kw": [
       "부정",
       "행위",
-      "응시",
-      "제한"
+      "제한",
+      "응시"
      ],
      "top_post": {
       "t": "김민석 “AI 부정행위 적발시 응시 자격 10년 제한 입법 추진” [지금뉴스]",
@@ -1268,11 +1273,11 @@
      "nsite": 4,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 6,
-     "issue_nc": 156,
+     "issue_np": 5,
+     "issue_nc": 158,
      "kw": [
-      "본드",
-      "제임스"
+      "제임스",
+      "본드"
      ],
      "top_post": {
       "t": "방금 발표된 새 제임스 본드",
@@ -1286,10 +1291,10 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 5,
-     "issue_nc": 64,
+     "issue_nc": 70,
      "kw": [
-      "복권",
       "연금",
+      "복권",
       "당첨",
       "당첨자"
      ],
@@ -1305,10 +1310,10 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 8,
-     "issue_nc": 61,
+     "issue_nc": 65,
      "kw": [
-      "만점자",
-      "리트"
+      "리트",
+      "만점자"
      ],
      "top_post": {
       "t": "'리트 만점자' 오늘 갑자기 연락두절",
@@ -1335,19 +1340,176 @@
      }
     },
     {
-     "t": "수능 감독관 이런것도 잡아낼 수 있을까?",
+     "t": "일본인이 생각하는 한국 드라마가 세계적으로 히트한 이유",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 6,
+     "issue_nc": 0,
+     "kw": [
+      "한국",
+      "일본인",
+      "과자"
+     ],
+     "top_post": {
+      "t": "일본인이 만든 한국 과자 티어표",
+      "u": "https://theqoo.net/hot/4409784687",
+      "nc": 0
+     }
+    }
+   ]
+  },
+  {
+   "name": "루리웹",
+   "np": 20,
+   "nc": 0,
+   "topics": [
+    {
+     "t": "한국의 불법주차 문화",
+     "nsite": 5,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 5,
+     "issue_nc": 341,
+     "kw": [
+      "불법",
+      "주차",
+      "도시",
+      "시흥"
+     ],
+     "top_post": {
+      "t": "일본인 : \"한국에서는 교육이 불법입니까?\"",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77416505?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "[007] 차기 제임스 본드 - 로버트 패틴슨 공식 발표",
+     "nsite": 5,
+     "np_here": 2,
+     "nc_here": 0,
+     "issue_np": 8,
+     "issue_nc": 51,
+     "kw": [
+      "본드",
+      "제임스",
+      "패틴슨",
+      "로버트"
+     ],
+     "top_post": {
+      "t": "007, 제임스 본드 공식 계정 신규 티저",
+      "u": "https://bbs.ruliweb.com/best/board/300013/read/3827992?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "'교육부장관' 나는 나이가 많아 AI 컨닝을 잡을 수 없다",
+     "nsite": 5,
+     "np_here": 2,
+     "nc_here": 0,
+     "issue_np": 6,
+     "issue_nc": 43,
+     "kw": [
+      "AI",
+      "나이",
+      "장관",
+      "컨닝"
+     ],
+     "top_post": {
+      "t": "Ai가 컨닝을 못 도와주도록 합의받아옴",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77415859?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "대 AI 시대, 재평가되는 누나",
+     "nsite": 5,
+     "np_here": 2,
+     "nc_here": 0,
+     "issue_np": 6,
+     "issue_nc": 37,
+     "kw": [
+      "AI",
+      "시대",
+      "누나",
+      "평가"
+     ],
+     "top_post": {
+      "t": "대 AI 시대, 재평가되는 누나",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77417591?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "현재 p든 n이든 난리난 새 제임스본드.",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 5,
+     "issue_nc": 158,
+     "kw": [
+      "제임스",
+      "본드"
+     ],
+     "top_post": {
+      "t": "배트맨과 제임스 본드가 싸우면 누가 이겨요?",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77417306?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "최근 등장한 연금복권 1등 2번 당첨자",
+     "nsite": 4,
+     "np_here": 2,
+     "nc_here": 0,
+     "issue_np": 5,
+     "issue_nc": 70,
+     "kw": [
+      "연금",
+      "복권",
+      "당첨",
+      "당첨자"
+     ],
+     "top_post": {
+      "t": "연금복권 1등 2번 당첨된 사람",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77417183?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "강성태 : 수능날 ai업체가 수능질문와도 답변안오게 하면 된다 이거보다 좋은방법이 없다 ㄷㄷㄷㄷㄷㄷㄷㄷㄷㄷ",
      "nsite": 4,
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 4,
-     "issue_nc": 0,
+     "issue_nc": 58,
      "kw": [
+      "AI",
       "수능",
-      "감독관"
+      "업체"
      ],
      "top_post": {
-      "t": "재난문자 매 교시 시작 전 울리는것에 찬성하는 사람 모여라. +추가된 수능 감독관 대책",
-      "u": "https://theqoo.net/hot/4409329133",
+      "t": "수능 AI글 또 그새 삭튀했네",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77415648?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "오 재난 문자로 미제출 폰 적발",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 5,
+     "issue_nc": 38,
+     "kw": [
+      "문자",
+      "재난",
+      "제출",
+      "적발"
+     ],
+     "top_post": {
+      "t": "재난문자로 미제출 스마트폰 적발 ㅋㅋㅋㅋㅋ",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77421161?m=all&t=now",
       "nc": 0
      }
     }
@@ -1359,6 +1521,25 @@
    "nc": 0,
    "topics": [
     {
+     "t": "한국의 불법주차 문화",
+     "nsite": 5,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 5,
+     "issue_nc": 341,
+     "kw": [
+      "불법",
+      "주차",
+      "도시",
+      "시흥"
+     ],
+     "top_post": {
+      "t": "싱글벙글 불법주차의 도시 시흥",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=479672&_dcbest=1&page=1",
+      "nc": 0
+     }
+    },
+    {
      "t": "경기도 27년 9월부터 버스 환승 할인 폐지",
      "nsite": 5,
      "np_here": 1,
@@ -1367,8 +1548,8 @@
      "issue_nc": 215,
      "kw": [
       "할인",
-      "버스",
       "환승",
+      "버스",
       "폐지"
      ],
      "top_post": {
@@ -1404,8 +1585,8 @@
      "issue_np": 6,
      "issue_nc": 37,
      "kw": [
-      "시대",
       "AI",
+      "시대",
       "누나",
       "평가"
      ],
@@ -1441,8 +1622,8 @@
      "issue_np": 4,
      "issue_nc": 14,
      "kw": [
-      "한국",
       "전통",
+      "한국",
       "음식"
      ],
      "top_post": {
@@ -1473,12 +1654,12 @@
      "nsite": 3,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 72,
+     "issue_np": 4,
+     "issue_nc": 71,
      "kw": [
       "대통령",
-      "수능",
       "결단",
+      "수능",
       "현우"
      ],
      "top_post": {
@@ -1486,177 +1667,29 @@
       "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=479634&_dcbest=1&page=1",
       "nc": 0
      }
-    },
-    {
-     "t": "감정평가사 합격후기도 갑자기 내려감 (+추가)",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 55,
-     "kw": [
-      "감정평가사",
-      "합격"
-     ],
-     "top_post": {
-      "t": "오싹오싹 6개월만에 합격한 감정평가사 수석 근황",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=479502&_dcbest=1&page=1",
-      "nc": 0
-     }
     }
    ]
   },
   {
-   "name": "루리웹",
-   "np": 20,
+   "name": "오늘의유머",
+   "np": 2,
    "nc": 0,
    "topics": [
     {
-     "t": "[007] 차기 제임스 본드 - 로버트 패틴슨 공식 발표",
-     "nsite": 5,
-     "np_here": 2,
-     "nc_here": 0,
-     "issue_np": 8,
-     "issue_nc": 51,
-     "kw": [
-      "본드",
-      "패틴슨",
-      "로버트",
-      "제임스"
-     ],
-     "top_post": {
-      "t": "007, 제임스 본드 공식 계정 신규 티저",
-      "u": "https://bbs.ruliweb.com/best/board/300013/read/3827992?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "'교육부장관' 나는 나이가 많아 AI 컨닝을 잡을 수 없다",
-     "nsite": 5,
-     "np_here": 2,
-     "nc_here": 0,
-     "issue_np": 6,
-     "issue_nc": 43,
-     "kw": [
-      "AI",
-      "나이",
-      "장관",
-      "컨닝"
-     ],
-     "top_post": {
-      "t": "Ai가 컨닝을 못 도와주도록 합의받아옴",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77415859?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "대 AI 시대, 재평가되는 누나",
-     "nsite": 5,
-     "np_here": 2,
-     "nc_here": 0,
-     "issue_np": 6,
-     "issue_nc": 37,
-     "kw": [
-      "시대",
-      "AI",
-      "누나",
-      "평가"
-     ],
-     "top_post": {
-      "t": "대 AI 시대, 재평가되는 누나",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77417591?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "한국의 불법주차 문화",
+     "t": "일본인이 생각하는 한국 드라마가 세계적으로 히트한 이유",
      "nsite": 4,
-     "np_here": 1,
+     "np_here": 2,
      "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 341,
+     "issue_np": 6,
+     "issue_nc": 0,
      "kw": [
-      "불법",
-      "주차",
       "한국",
-      "도시"
+      "일본인",
+      "과자"
      ],
      "top_post": {
-      "t": "일본인 : \"한국에서는 교육이 불법입니까?\"",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77416505?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "현재 p든 n이든 난리난 새 제임스본드.",
-     "nsite": 4,
-     "np_here": 2,
-     "nc_here": 0,
-     "issue_np": 6,
-     "issue_nc": 156,
-     "kw": [
-      "본드",
-      "제임스"
-     ],
-     "top_post": {
-      "t": "헨리카빌 제임스 본드가 좌초된 이유",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77415397?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "최근 등장한 연금복권 1등 2번 당첨자",
-     "nsite": 4,
-     "np_here": 2,
-     "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 64,
-     "kw": [
-      "복권",
-      "연금",
-      "당첨",
-      "당첨자"
-     ],
-     "top_post": {
-      "t": "연금복권 1등 2번 당첨된 사람",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77417183?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "강성태 : 수능날 ai업체가 수능질문와도 답변안오게 하면 된다 이거보다 좋은방법이 없다 ㄷㄷㄷㄷㄷㄷㄷㄷㄷㄷ",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 58,
-     "kw": [
-      "AI",
-      "수능",
-      "업체"
-     ],
-     "top_post": {
-      "t": "수능 AI글 또 그새 삭튀했네",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77415648?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "오 재난 문자로 미제출 폰 적발",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 28,
-     "kw": [
-      "재난",
-      "문자",
-      "제출",
-      "적발"
-     ],
-     "top_post": {
-      "t": "재난문자로 미제출 스마트폰 적발 ㅋㅋㅋㅋㅋ",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77421161?m=all&t=now",
+      "t": "일본인이 생각하는 한국 드라마가 세계적으로 히트한 이유",
+      "u": "https://www.todayhumor.co.kr/board/view.php?table=bestofbest&no=484135&s_no=484135&page=1",
       "nc": 0
      }
     }
