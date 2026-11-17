@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-18 07:00",
+ "updated": "2026-11-18 08:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -2991,6 +2991,18 @@
    "expires": "2026-11-21"
   },
   {
+   "query": "알렉산더 즈베레프",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-05",
+   "expires": "2026-11-21"
+  },
+  {
    "query": "대한민국",
    "tier": "단기",
    "signal": [
@@ -3012,18 +3024,6 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-17",
-   "expires": "2026-11-21"
-  },
-  {
-   "query": "알렉산더 즈베레프",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 1000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-05",
    "expires": "2026-11-21"
   },
   {
@@ -3684,6 +3684,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-17",
+   "expires": "2026-11-21"
+  },
+  {
+   "query": "데블스플랜",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-18",
    "expires": "2026-11-21"
   },
   {
@@ -4467,7 +4479,7 @@
    "expires": "2026-11-21"
   },
   {
-   "query": "데블스플랜",
+   "query": "친선경기",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -5452,18 +5464,6 @@
   },
   {
    "query": "미스터트롯",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 1000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-18",
-   "expires": "2026-11-21"
-  },
-  {
-   "query": "친선경기",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -13603,6 +13603,19 @@
    "page": "/issue/margin-ratio-exemption-forced-sale-1107/",
    "registered": "2026-11-07",
    "expires": "2026-11-21"
+  },
+  {
+   "query": "엔비디아 3분기 실적 매출 1158억달러, 중국 수출통제·HBM·코스피 영향 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 4,
+   "status": "작성",
+   "page": "/issue/nvidia-q3-results-china-export-control-korea-hbm-1118/",
+   "registered": "2026-11-18",
+   "expires": "2026-11-25"
   },
   {
    "query": "교황 방한 2027 일정 장소 정리, 광화문 대신 상암 월드컵경기장",
