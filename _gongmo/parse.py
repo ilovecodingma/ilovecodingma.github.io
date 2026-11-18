@@ -289,7 +289,7 @@ def main():
             continue
         title = clean(x['title'])
         title = re.sub(r'\s*\d{4}\.\d{2}\.\d{2}\.?\s*$', '', title)
-        title = re.sub(r'\s*(새글|마감임박)\s*$', '', title).strip()
+        title = re.sub(r'\s*(새글|마감임박|신규)\s*$', '', title).strip()
         if title in ('', 'N/A'):
             continue
         src = source_of(x['url'])
@@ -322,13 +322,13 @@ def main():
         if x.get('start_override'):   # 2026-10-21 일정 변경 공고 등 공식 페이지 확인값(manual.json)
             s = datetime.date.fromisoformat(x['start_override'])
         fld0 = parse_field(src, core, x) if t else ''
-        if not x.get('force') and (not CONTESTY.search(title) or (re.search(r'봉사|교육|동아리|서포터즈|채용|인턴|대외활동', fld0) and not re.search(r'공모전|경진|콘테스트|콩쿠르', title))):
+        if not x.get('force') and ((not CONTESTY.search(title) and kind not in ('contest', 'hackathon', 'idea')) or (re.search(r'봉사|교육|동아리|서포터즈|채용|인턴|대외활동', fld0) and not re.search(r'공모전|경진|콘테스트|콩쿠르', title))):
             if not (x['reg'] != 'KR' and x['kind'] in ('hackathon', 'contest')):
                 stat['noncontest'] += 1
                 continue
         unreliable_end = src in ('contestkorea', 'all-con', 'wevity', 'thinkyou', 'linkareer') or x['reg'] == 'KR'
         if e is None:
-            if unreliable_end and src != 'other' and not listurl:
+            if unreliable_end and src != 'other' and not listurl and not (x.get('verified') and kind in ('contest', 'hackathon', 'idea')):   # 2026-11-18 수집기 확인(verified) 공모전은 원장 마감일로 받는다
                 continue  # 접수기간 못 읽으면 심사일일 수 있어 제외
             e = datetime.date.fromisoformat(x['end'])
         if e < TODAY:

@@ -1,27 +1,27 @@
 {
  "date": "2026-11-18",
- "updated": "2026-11-18 15:50",
+ "updated": "2026-11-18 16:51",
  "sites": 13,
- "npost": 2973,
+ "npost": 2975,
  "note": "출처(커뮤니티)별 집계예요. 작성자·연령·성별 정보는 수집하지 않아요. posts 는 이슈별로 뽑힌 일부라 전체 글 수가 아니에요.",
  "sources": [
   {
    "name": "MLB파크",
    "np": 20,
-   "nc": 1221,
+   "nc": 1175,
    "topics": [
     {
      "t": "대구 수성구 모자 교통사망사고 CCTV 영상",
      "nsite": 3,
-     "np_here": 3,
-     "nc_here": 308,
-     "issue_np": 5,
-     "issue_nc": 335,
+     "np_here": 4,
+     "nc_here": 349,
+     "issue_np": 6,
+     "issue_nc": 376,
      "kw": [
-      "대구",
       "모자",
-      "사망",
-      "CCTV"
+      "대구",
+      "사고",
+      "사망"
      ],
      "top_post": {
       "t": "대구 수성구 모자 교통사망사고 CCTV 영상",
@@ -56,8 +56,8 @@
      "issue_np": 4,
      "issue_nc": 120,
      "kw": [
-      "문자",
       "재난",
+      "문자",
       "거부",
       "위급"
      ],
@@ -69,14 +69,14 @@
     },
     {
      "t": "현재 일본에서 난리난 바이든",
-     "nsite": 5,
+     "nsite": 4,
      "np_here": 1,
      "nc_here": 113,
-     "issue_np": 5,
-     "issue_nc": 142,
+     "issue_np": 4,
+     "issue_nc": 140,
      "kw": [
-      "일본",
       "난리",
+      "일본",
       "회고록",
       "바이든"
      ],
@@ -84,25 +84,6 @@
       "t": "현재 일본에서 난리난 바이든",
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611170120178245&m=view",
       "nc": 113
-     }
-    },
-    {
-     "t": "정부대책 떴다ㅋㅋㅋㅋ부정행위자들 ㅈ1됨",
-     "nsite": 7,
-     "np_here": 1,
-     "nc_here": 111,
-     "issue_np": 9,
-     "issue_nc": 177,
-     "kw": [
-      "대책",
-      "수능",
-      "정부",
-      "부정"
-     ],
-     "top_post": {
-      "t": "정부대책 떴다ㅋㅋㅋㅋ부정행위자들 ㅈ1됨",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611170120166341&m=view",
-      "nc": 111
      }
     },
     {
@@ -126,19 +107,19 @@
      "t": "[디스패치] \"매출 40억 넘기면, 10:0\"…이정재, 대주주의 얌체 경영",
      "nsite": 4,
      "np_here": 1,
-     "nc_here": 76,
+     "nc_here": 89,
      "issue_np": 4,
-     "issue_nc": 78,
+     "issue_nc": 91,
      "kw": [
-      "이정재",
       "주주",
-      "얌체",
-      "경영"
+      "경영",
+      "이정재",
+      "얌체"
      ],
      "top_post": {
       "t": "[디스패치] \"매출 40억 넘기면, 10:0\"…이정재, 대주주의 얌체 경영",
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611180120183417&m=view",
-      "nc": 76
+      "nc": 89
      }
     },
     {
@@ -158,13 +139,31 @@
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611170120169899&m=view",
       "nc": 56
      }
+    },
+    {
+     "t": "\"2등 당첨되는 꿈\" 회사에서 확인한 로또, 31억 대박 직장인",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 55,
+     "issue_np": 4,
+     "issue_nc": 60,
+     "kw": [
+      "당첨",
+      "로또",
+      "회사"
+     ],
+     "top_post": {
+      "t": "\"2등 당첨되는 꿈\" 회사에서 확인한 로또, 31억 대박 직장인",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611180120182895&m=view",
+      "nc": 55
+     }
     }
    ]
   },
   {
    "name": "개드립",
-   "np": 21,
-   "nc": 502,
+   "np": 22,
+   "nc": 564,
    "topics": [
     {
      "t": "세무사 시험 고득점자 2명 -> 66명",
@@ -186,12 +185,29 @@
      }
     },
     {
+     "t": "고3인데 직장인이 벼슬임?",
+     "nsite": 4,
+     "np_here": 2,
+     "nc_here": 62,
+     "issue_np": 6,
+     "issue_nc": 109,
+     "kw": [
+      "직장인",
+      "벼슬"
+     ],
+     "top_post": {
+      "t": "\"고3인데 직장인이 무슨 벼슬임?\"",
+      "u": "https://www.dogdrip.net/dogdrip/735389641?sort_index=popular&page=1",
+      "nc": 45
+     }
+    },
+    {
      "t": "AI 안경 대처법으로 이건 ㅈㄴ웃기네",
      "nsite": 5,
      "np_here": 3,
      "nc_here": 56,
      "issue_np": 26,
-     "issue_nc": 109,
+     "issue_nc": 110,
      "kw": [
       "AI",
       "안경",
@@ -228,36 +244,17 @@
      "np_here": 1,
      "nc_here": 45,
      "issue_np": 4,
-     "issue_nc": 89,
+     "issue_nc": 93,
      "kw": [
-      "컨닝",
-      "AI",
       "업체",
+      "AI",
+      "컨닝",
       "제품"
      ],
      "top_post": {
       "t": "현재 난리 났다는 ai 컨닝업체 근황",
       "u": "https://www.dogdrip.net/dogdrip/735320445?sort_index=popular&page=1",
       "nc": 45
-     }
-    },
-    {
-     "t": "스마트안경 금지 몰랐다는 법학적성시험 수험생",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 43,
-     "issue_np": 4,
-     "issue_nc": 58,
-     "kw": [
-      "안경",
-      "법학적성시험",
-      "수험",
-      "스마트"
-     ],
-     "top_post": {
-      "t": "스마트안경 금지 몰랐다는 법학적성시험 수험생",
-      "u": "https://www.dogdrip.net/dogdrip/735401259?sort_index=popular&page=1",
-      "nc": 43
      }
     },
     {
@@ -268,8 +265,8 @@
      "issue_np": 3,
      "issue_nc": 46,
      "kw": [
-      "횡단보도",
       "아들",
+      "횡단보도",
       "어머니",
       "참변"
      ],
@@ -281,11 +278,11 @@
     },
     {
      "t": "한국여자를 보고 한탄하는 일본인",
-     "nsite": 4,
+     "nsite": 3,
      "np_here": 1,
      "nc_here": 41,
-     "issue_np": 8,
-     "issue_nc": 99,
+     "issue_np": 7,
+     "issue_nc": 74,
      "kw": [
       "한국",
       "일본인",
@@ -298,37 +295,36 @@
      }
     },
     {
-     "t": "대구 수성구 모자 교통사망사고 CCTV 영상",
+     "t": "저도 AI로 부정행위했어요.. 자수합니다",
      "nsite": 3,
      "np_here": 1,
-     "nc_here": 27,
-     "issue_np": 5,
-     "issue_nc": 335,
+     "nc_here": 37,
+     "issue_np": 4,
+     "issue_nc": 39,
      "kw": [
-      "대구",
-      "모자",
-      "사망",
-      "CCTV"
+      "부정행위",
+      "AI",
+      "자수"
      ],
      "top_post": {
-      "t": "[공포] 대구 횡단보도 모자 사망사건 cctv",
-      "u": "https://www.dogdrip.net/dogdrip/735360776?sort_index=popular&page=1",
-      "nc": 27
+      "t": "저도 AI로 부정행위했어요.. 자수합니다",
+      "u": "https://www.dogdrip.net/dogdrip/735291507?sort_index=popular&page=1",
+      "nc": 37
      }
     }
    ]
   },
   {
    "name": "인스티즈",
-   "np": 8,
-   "nc": 488,
+   "np": 7,
+   "nc": 418,
    "topics": [
     {
      "t": "수능 부정행위 단속 총정리",
      "nsite": 8,
      "np_here": 1,
      "nc_here": 84,
-     "issue_np": 12,
+     "issue_np": 11,
      "issue_nc": 128,
      "kw": [
       "행위",
@@ -343,23 +339,6 @@
      }
     },
     {
-     "t": "김정은 딸 김주애 근황",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 79,
-     "issue_np": 3,
-     "issue_nc": 79,
-     "kw": [
-      "김주애",
-      "김정"
-     ],
-     "top_post": {
-      "t": "김정은 딸 김주애 근황",
-      "u": "https://www.instiz.net/pt/7926825?green=1",
-      "nc": 79
-     }
-    },
-    {
      "t": "현재 p든 n이든 난리난 새 제임스본드.",
      "nsite": 3,
      "np_here": 1,
@@ -367,8 +346,8 @@
      "issue_np": 3,
      "issue_nc": 111,
      "kw": [
-      "본드",
-      "제임스"
+      "제임스",
+      "본드"
      ],
      "top_post": {
       "t": "현재 p든 n이든 난리난 새 제임스본드.",
@@ -377,12 +356,30 @@
      }
     },
     {
+     "t": "일본인이 생각하는 한국 드라마가 세계적으로 히트한 이유",
+     "nsite": 5,
+     "np_here": 1,
+     "nc_here": 66,
+     "issue_np": 6,
+     "issue_nc": 92,
+     "kw": [
+      "한국",
+      "일본인",
+      "과자"
+     ],
+     "top_post": {
+      "t": "일본인이 만든 한국 과자 티어표",
+      "u": "https://www.instiz.net/pt/7927002?green=1",
+      "nc": 66
+     }
+    },
+    {
      "t": "현 교육부 장관 입장 발표!",
      "nsite": 3,
      "np_here": 1,
      "nc_here": 64,
      "issue_np": 7,
-     "issue_nc": 100,
+     "issue_nc": 104,
      "kw": [
       "장관",
       "교육부"
@@ -413,52 +410,34 @@
      }
     },
     {
-     "t": "일본인이 생각하는 한국 드라마가 세계적으로 히트한 이유",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 61,
-     "issue_np": 5,
-     "issue_nc": 61,
-     "kw": [
-      "한국",
-      "일본인",
-      "과자"
-     ],
-     "top_post": {
-      "t": "일본인이 만든 한국 과자 티어표",
-      "u": "https://www.instiz.net/pt/7927002?green=1",
-      "nc": 61
-     }
-    },
-    {
      "t": "중국제 AI 컨닝업체 제품 구매한 애들이 ㅈ된 이유",
      "nsite": 4,
      "np_here": 1,
-     "nc_here": 44,
+     "nc_here": 48,
      "issue_np": 4,
-     "issue_nc": 89,
+     "issue_nc": 93,
      "kw": [
-      "컨닝",
-      "AI",
       "업체",
+      "AI",
+      "컨닝",
       "제품"
      ],
      "top_post": {
       "t": "중국제 AI 컨닝업체 제품 구매한 애들이 ㅈ된 이유",
       "u": "https://www.instiz.net/pt/7927058?green=1",
-      "nc": 44
+      "nc": 48
      }
     },
     {
      "t": "현재 일본에서 난리난 바이든",
-     "nsite": 5,
+     "nsite": 4,
      "np_here": 1,
      "nc_here": 27,
-     "issue_np": 5,
-     "issue_nc": 142,
+     "issue_np": 4,
+     "issue_nc": 140,
      "kw": [
-      "일본",
       "난리",
+      "일본",
       "회고록",
       "바이든"
      ],
@@ -472,15 +451,15 @@
   },
   {
    "name": "82쿡",
-   "np": 26,
-   "nc": 311,
+   "np": 25,
+   "nc": 302,
    "topics": [
     {
      "t": "오 재난 문자로 미제출 폰 적발",
-     "nsite": 4,
+     "nsite": 3,
      "np_here": 3,
      "nc_here": 63,
-     "issue_np": 7,
+     "issue_np": 6,
      "issue_nc": 66,
      "kw": [
       "재난",
@@ -514,17 +493,16 @@
      }
     },
     {
-     "t": "정부대책 떴다ㅋㅋㅋㅋ부정행위자들 ㅈ1됨",
-     "nsite": 7,
+     "t": "정부의 수능 대책.news",
+     "nsite": 6,
      "np_here": 1,
      "nc_here": 39,
-     "issue_np": 9,
-     "issue_nc": 177,
+     "issue_np": 6,
+     "issue_nc": 50,
      "kw": [
-      "대책",
       "수능",
-      "정부",
-      "부정"
+      "대책",
+      "정부"
      ],
      "top_post": {
       "t": "수능대책 욕하는것도 너무 멍청한거 아녜요",
@@ -541,9 +519,9 @@
      "issue_nc": 87,
      "kw": [
       "지지",
-      "대통령",
       "이재명",
-      "돌파"
+      "대통령",
+      "조국혁신당"
      ],
      "top_post": {
       "t": "대박~! 여론조사 조국혁신당 지지율 10% 돌파",
@@ -556,7 +534,7 @@
      "nsite": 8,
      "np_here": 2,
      "nc_here": 21,
-     "issue_np": 12,
+     "issue_np": 11,
      "issue_nc": 128,
      "kw": [
       "행위",
@@ -611,11 +589,11 @@
      "nsite": 4,
      "np_here": 2,
      "nc_here": 18,
-     "issue_np": 5,
+     "issue_np": 6,
      "issue_nc": 39,
      "kw": [
-      "부정",
       "시험",
+      "부정",
       "행위",
       "AI"
      ],
@@ -629,8 +607,8 @@
   },
   {
    "name": "클리앙",
-   "np": 17,
-   "nc": 231,
+   "np": 16,
+   "nc": 234,
    "topics": [
     {
      "t": "아니 조국 일본 입국 거부당한게 왜 잘못된거죠?",
@@ -638,7 +616,7 @@
      "np_here": 4,
      "nc_here": 61,
      "issue_np": 13,
-     "issue_nc": 96,
+     "issue_nc": 107,
      "kw": [
       "입국",
       "조국",
@@ -660,9 +638,9 @@
      "issue_nc": 87,
      "kw": [
       "지지",
-      "대통령",
       "이재명",
-      "돌파"
+      "대통령",
+      "조국혁신당"
      ],
      "top_post": {
       "t": "오늘 조국혁신당 10% 돌파. 이재명 대통령 4050 지지율 폭망",
@@ -674,9 +652,9 @@
      "t": "현 교육부 장관 입장 발표!",
      "nsite": 3,
      "np_here": 3,
-     "nc_here": 26,
+     "nc_here": 27,
      "issue_np": 7,
-     "issue_nc": 100,
+     "issue_nc": 104,
      "kw": [
       "장관",
       "교육부"
@@ -684,16 +662,16 @@
      "top_post": {
       "t": "교육부 장관은 경질해야 한다고 봅니다",
       "u": "https://www.clien.net/service/board/park/19294528?od=T33&po=0&category=0&groupCd=clien_all",
-      "nc": 18
+      "nc": 19
      }
     },
     {
-     "t": "한국여자를 보고 한탄하는 일본인",
-     "nsite": 4,
+     "t": "일본인이 생각하는 한국 드라마가 세계적으로 히트한 이유",
+     "nsite": 5,
      "np_here": 1,
-     "nc_here": 25,
-     "issue_np": 8,
-     "issue_nc": 99,
+     "nc_here": 26,
+     "issue_np": 6,
+     "issue_nc": 92,
      "kw": [
       "한국",
       "일본인",
@@ -702,26 +680,26 @@
      "top_post": {
       "t": "일본인이 만든 한국 과자 티어표",
       "u": "https://www.clien.net/service/board/park/19294487?od=T33&po=0&category=0&groupCd=clien_all",
-      "nc": 25
+      "nc": 26
      }
     },
     {
-     "t": "정부대책 떴다ㅋㅋㅋㅋ부정행위자들 ㅈ1됨",
-     "nsite": 7,
-     "np_here": 3,
-     "nc_here": 22,
-     "issue_np": 9,
-     "issue_nc": 177,
+     "t": "개열받은 세무사회 근황",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 17,
+     "issue_np": 3,
+     "issue_nc": 44,
      "kw": [
-      "대책",
-      "수능",
-      "정부",
-      "부정"
+      "사회",
+      "세무",
+      "수습",
+      "검증"
      ],
      "top_post": {
-      "t": "대책이 없으면 정부는 뭐하러 있나요",
-      "u": "https://www.clien.net/service/board/park/19293772?od=T33&po=0&category=0&groupCd=clien_all",
-      "nc": 9
+      "t": "세무사회 “수습세무사 전원 실력 검증, 부정행위자 걸러낼 것”",
+      "u": "https://www.clien.net/service/board/park/19294452?od=T33&po=0&category=0&groupCd=clien_all",
+      "nc": 17
      }
     },
     {
@@ -749,10 +727,10 @@
      "np_here": 1,
      "nc_here": 12,
      "issue_np": 4,
-     "issue_nc": 29,
+     "issue_nc": 30,
      "kw": [
-      "연소",
       "합격자",
+      "연소",
       "역대",
       "스펙"
      ],
@@ -786,15 +764,15 @@
   {
    "name": "아카라이브",
    "np": 3,
-   "nc": 68,
+   "nc": 69,
    "topics": [
     {
      "t": "AI 안경 대처법으로 이건 ㅈㄴ웃기네",
      "nsite": 5,
      "np_here": 2,
-     "nc_here": 47,
+     "nc_here": 48,
      "issue_np": 26,
-     "issue_nc": 109,
+     "issue_nc": 110,
      "kw": [
       "AI",
       "안경",
@@ -829,15 +807,15 @@
   },
   {
    "name": "보배드림",
-   "np": 7,
-   "nc": 14,
+   "np": 9,
+   "nc": 16,
    "topics": [
     {
      "t": "수능 부정행위 단속 총정리",
      "nsite": 8,
      "np_here": 1,
      "nc_here": 3,
-     "issue_np": 12,
+     "issue_np": 11,
      "issue_nc": 128,
      "kw": [
       "행위",
@@ -852,11 +830,30 @@
      }
     },
     {
-     "t": "오 재난 문자로 미제출 폰 적발",
+     "t": "[속보] 수능날 위급재난문자 불시에 추가 발송",
      "nsite": 4,
      "np_here": 1,
      "nc_here": 3,
-     "issue_np": 7,
+     "issue_np": 4,
+     "issue_nc": 21,
+     "kw": [
+      "발송",
+      "수능",
+      "위급재난문자",
+      "불시"
+     ],
+     "top_post": {
+      "t": "수능 당일 ‘위급재난문자’가 발송됩니다!",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1048384&vdate=",
+      "nc": 3
+     }
+    },
+    {
+     "t": "오 재난 문자로 미제출 폰 적발",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 3,
+     "issue_np": 6,
      "issue_nc": 66,
      "kw": [
       "재난",
@@ -871,25 +868,6 @@
      }
     },
     {
-     "t": "[속보] 수능날 위급재난문자 불시에 추가 발송",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 3,
-     "issue_np": 4,
-     "issue_nc": 21,
-     "kw": [
-      "위급재난문자",
-      "발송",
-      "수능",
-      "불시"
-     ],
-     "top_post": {
-      "t": "수능 당일 ‘위급재난문자’가 발송됩니다!",
-      "u": "https://www.bobaedream.co.kr/view?code=best&No=1048384&vdate=",
-      "nc": 3
-     }
-    },
-    {
      "t": "대구서 횡단보도 건너다 참변…40대 어머니·5세 아들 숨져",
      "nsite": 3,
      "np_here": 1,
@@ -897,8 +875,8 @@
      "issue_np": 3,
      "issue_nc": 46,
      "kw": [
-      "횡단보도",
       "아들",
+      "횡단보도",
       "어머니",
       "참변"
      ],
@@ -917,9 +895,9 @@
      "issue_nc": 87,
      "kw": [
       "지지",
-      "대통령",
       "이재명",
-      "돌파"
+      "대통령",
+      "조국혁신당"
      ],
      "top_post": {
       "t": "가짜 이재명 대통령님 지지자 명단",
@@ -928,12 +906,30 @@
      }
     },
     {
+     "t": "저도 AI로 부정행위했어요.. 자수합니다",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 2,
+     "issue_np": 4,
+     "issue_nc": 39,
+     "kw": [
+      "부정행위",
+      "AI",
+      "자수"
+     ],
+     "top_post": {
+      "t": "저도 AI로 부정행위 했어요.. 자수합니다",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1048373&vdate=",
+      "nc": 2
+     }
+    },
+    {
      "t": "일본인이 생각하는 한국 드라마가 세계적으로 히트한 이유",
-     "nsite": 4,
+     "nsite": 5,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 61,
+     "issue_np": 6,
+     "issue_nc": 92,
      "kw": [
       "한국",
       "일본인",
@@ -944,157 +940,22 @@
       "u": "https://www.bobaedream.co.kr/view?code=best&No=1048278&vdate=",
       "nc": 0
      }
-    }
-   ]
-  },
-  {
-   "name": "더쿠",
-   "np": 13,
-   "nc": 0,
-   "topics": [
-    {
-     "t": "\"흑색 연필이 뭐죠?\" 수능 '연필만 허용'에 대혼란",
-     "nsite": 6,
-     "np_here": 2,
-     "nc_here": 0,
-     "issue_np": 10,
-     "issue_nc": 44,
-     "kw": [
-      "연필",
-      "수능",
-      "흑색",
-      "허용"
-     ],
-     "top_post": {
-      "t": "[속보] 올 수능 시험장에 ‘흑색 연필’만 반입 허용…나머지 필기구 불가",
-      "u": "https://theqoo.net/hot/4410014235",
-      "nc": 0
-     }
     },
     {
-     "t": "리트 만점자 책 리뷰 극찬",
-     "nsite": 5,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 9,
-     "issue_nc": 114,
-     "kw": [
-      "만점자",
-      "리트"
-     ],
-     "top_post": {
-      "t": "'리트 만점자' 오늘 갑자기 연락두절",
-      "u": "https://theqoo.net/hot/4409528897",
-      "nc": 0
-     }
-    },
-    {
-     "t": "중국제 AI 컨닝업체 제품 구매한 애들이 ㅈ된 이유",
+     "t": "\"2등 당첨되는 꿈\" 회사에서 확인한 로또, 31억 대박 직장인",
      "nsite": 4,
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 4,
-     "issue_nc": 89,
+     "issue_nc": 60,
      "kw": [
-      "컨닝",
-      "AI",
-      "업체",
-      "제품"
+      "당첨",
+      "로또",
+      "회사"
      ],
      "top_post": {
-      "t": "중국제 AI 컨닝업체 제품 구매한 애들이 ㅈ된 이유",
-      "u": "https://theqoo.net/hot/4409793212",
-      "nc": 0
-     }
-    },
-    {
-     "t": "[디스패치] \"매출 40억 넘기면, 10:0\"…이정재, 대주주의 얌체 경영",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 78,
-     "kw": [
-      "이정재",
-      "주주",
-      "얌체",
-      "경영"
-     ],
-     "top_post": {
-      "t": "[단독] \"매출 40억 넘기면, 10:0\"…이정재, 대주주의 얌체 경영",
-      "u": "https://theqoo.net/hot/4410009048",
-      "nc": 0
-     }
-    },
-    {
-     "t": "시즌종료) 수능 만점자 8천명",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 74,
-     "kw": [
-      "수능",
-      "만점자",
-      "종료"
-     ],
-     "top_post": {
-      "t": "수능 만점자 점심메뉴",
-      "u": "https://theqoo.net/hot/4410191503",
-      "nc": 0
-     }
-    },
-    {
-     "t": "고3인데 직장인이 벼슬임?",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 64,
-     "kw": [
-      "벼슬",
-      "직장인"
-     ],
-     "top_post": {
-      "t": "고3인데 직장인이 벼슬임?",
-      "u": "https://theqoo.net/hot/4409349691",
-      "nc": 0
-     }
-    },
-    {
-     "t": "일본인이 생각하는 한국 드라마가 세계적으로 히트한 이유",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 61,
-     "kw": [
-      "한국",
-      "일본인",
-      "과자"
-     ],
-     "top_post": {
-      "t": "일본인이 만든 한국 과자 티어표",
-      "u": "https://theqoo.net/hot/4409784687",
-      "nc": 0
-     }
-    },
-    {
-     "t": "세무사 최연소 합격자 근황",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 29,
-     "kw": [
-      "연소",
-      "합격자",
-      "역대",
-      "스펙"
-     ],
-     "top_post": {
-      "t": "세무사 최연소 합격자",
-      "u": "https://theqoo.net/hot/4410016880",
+      "t": "\"2등 당첨되는 꿈\" 회사에서 확인한 로또, 31억 대박",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1048452&vdate=",
       "nc": 0
      }
     }
@@ -1105,6 +966,24 @@
    "np": 7,
    "nc": 0,
    "topics": [
+    {
+     "t": "정부의 수능 대책.news",
+     "nsite": 6,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 6,
+     "issue_nc": 50,
+     "kw": [
+      "수능",
+      "대책",
+      "정부"
+     ],
+     "top_post": {
+      "t": "정부의 수능 대책.news",
+      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677622",
+      "nc": 0
+     }
+    },
     {
      "t": "\"흑색 연필이 뭐죠?\" 수능 '연필만 허용'에 대혼란",
      "nsite": 6,
@@ -1126,14 +1005,14 @@
     },
     {
      "t": "현재 일본에서 난리난 바이든",
-     "nsite": 5,
+     "nsite": 4,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 142,
+     "issue_np": 4,
+     "issue_nc": 140,
      "kw": [
-      "일본",
       "난리",
+      "일본",
       "회고록",
       "바이든"
      ],
@@ -1149,12 +1028,12 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 4,
-     "issue_nc": 78,
+     "issue_nc": 91,
      "kw": [
-      "이정재",
       "주주",
-      "얌체",
-      "경영"
+      "경영",
+      "이정재",
+      "얌체"
      ],
      "top_post": {
       "t": "\"매출 40억 넘기면, 10:0\"…이정재, 대주주의 얌체 경영",
@@ -1164,10 +1043,10 @@
     },
     {
      "t": "오 재난 문자로 미제출 폰 적발",
-     "nsite": 4,
+     "nsite": 3,
      "np_here": 2,
      "nc_here": 0,
-     "issue_np": 7,
+     "issue_np": 6,
      "issue_nc": 66,
      "kw": [
       "재난",
@@ -1182,23 +1061,6 @@
      }
     },
     {
-     "t": "김정은 딸 김주애 근황",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 79,
-     "kw": [
-      "김주애",
-      "김정"
-     ],
-     "top_post": {
-      "t": "스키 타는 김정은 딸 김주애 ,jpg",
-      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677611",
-      "nc": 0
-     }
-    },
-    {
      "t": "대구서 횡단보도 건너다 참변…40대 어머니·5세 아들 숨져",
      "nsite": 3,
      "np_here": 1,
@@ -1206,8 +1068,8 @@
      "issue_np": 3,
      "issue_nc": 46,
      "kw": [
-      "횡단보도",
       "아들",
+      "횡단보도",
       "어머니",
       "참변"
      ],
@@ -1220,166 +1082,28 @@
    ]
   },
   {
-   "name": "루리웹",
-   "np": 15,
-   "nc": 0,
-   "topics": [
-    {
-     "t": "현재 일본에서 난리난 바이든",
-     "nsite": 5,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 142,
-     "kw": [
-      "일본",
-      "난리",
-      "회고록",
-      "바이든"
-     ],
-     "top_post": {
-      "t": "일본서 난리난 바이든 회고록",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77429827?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "한국여자를 보고 한탄하는 일본인",
-     "nsite": 4,
-     "np_here": 2,
-     "nc_here": 0,
-     "issue_np": 8,
-     "issue_nc": 99,
-     "kw": [
-      "한국",
-      "일본인",
-      "과자"
-     ],
-     "top_post": {
-      "t": "일본인이 만든 한국 과자 티어표",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77424227?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "중국제 AI 컨닝업체 제품 구매한 애들이 ㅈ된 이유",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 89,
-     "kw": [
-      "컨닝",
-      "AI",
-      "업체",
-      "제품"
-     ],
-     "top_post": {
-      "t": "현재 난리 났다는 ai 컨닝업체 근황",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77426519?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "고3인데 직장인이 벼슬임?",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 64,
-     "kw": [
-      "벼슬",
-      "직장인"
-     ],
-     "top_post": {
-      "t": "직장인들이 무슨 벼슬임?",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77430137?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "세무사시험 AI 부정행위가 문제가 아니다",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 39,
-     "kw": [
-      "부정",
-      "시험",
-      "행위",
-      "AI"
-     ],
-     "top_post": {
-      "t": "이번에 사람들이 가장 놀란 시험 AI 부정행위 방법",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77431137?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "세무사 최연소 합격자 근황",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 29,
-     "kw": [
-      "연소",
-      "합격자",
-      "역대",
-      "스펙"
-     ],
-     "top_post": {
-      "t": "역대 최연소 회계사 합격자 스펙",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77433180?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "[속보] 수능날 위급재난문자 불시에 추가 발송",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 21,
-     "kw": [
-      "위급재난문자",
-      "발송",
-      "수능",
-      "불시"
-     ],
-     "top_post": {
-      "t": "[속보] 수능날 위급재난문자 불시에 추가 발송",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77430797?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "여기 수능생들 로컬AI는 생각못하고 있는거같아서 글남김",
-     "nsite": 4,
-     "np_here": 2,
-     "nc_here": 0,
-     "issue_np": 11,
-     "issue_nc": 19,
-     "kw": [
-      "AI",
-      "수능",
-      "로컬",
-      "컨닝"
-     ],
-     "top_post": {
-      "t": "수능 ai 근황",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77428489?m=humor",
-      "nc": 0
-     }
-    }
-   ]
-  },
-  {
    "name": "디시인사이드",
-   "np": 5,
+   "np": 6,
    "nc": 0,
    "topics": [
+    {
+     "t": "정부의 수능 대책.news",
+     "nsite": 6,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 6,
+     "issue_nc": 50,
+     "kw": [
+      "수능",
+      "대책",
+      "정부"
+     ],
+     "top_post": {
+      "t": "싱글벙글 방금자 유출된 정부의 비밀 수능 대책..",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=479464&_dcbest=1&page=1",
+      "nc": 0
+     }
+    },
     {
      "t": "시즌종료) 수능 만점자 8천명",
      "nsite": 4,
@@ -1403,11 +1127,11 @@
      "nsite": 4,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 5,
+     "issue_np": 6,
      "issue_nc": 39,
      "kw": [
-      "부정",
       "시험",
+      "부정",
       "행위",
       "AI"
      ],
@@ -1457,17 +1181,325 @@
    ]
   },
   {
+   "name": "루리웹",
+   "np": 20,
+   "nc": 0,
+   "topics": [
+    {
+     "t": "정부의 수능 대책.news",
+     "nsite": 6,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 6,
+     "issue_nc": 50,
+     "kw": [
+      "수능",
+      "대책",
+      "정부"
+     ],
+     "top_post": {
+      "t": "수능 대책 떴다!",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77422261?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "현재 일본에서 난리난 바이든",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 140,
+     "kw": [
+      "난리",
+      "일본",
+      "회고록",
+      "바이든"
+     ],
+     "top_post": {
+      "t": "일본서 난리난 바이든 회고록",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77429827?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "고3인데 직장인이 벼슬임?",
+     "nsite": 4,
+     "np_here": 2,
+     "nc_here": 0,
+     "issue_np": 6,
+     "issue_nc": 109,
+     "kw": [
+      "직장인",
+      "벼슬"
+     ],
+     "top_post": {
+      "t": "직장인들이 무슨 벼슬임?",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77430137?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "중국제 AI 컨닝업체 제품 구매한 애들이 ㅈ된 이유",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 93,
+     "kw": [
+      "업체",
+      "AI",
+      "컨닝",
+      "제품"
+     ],
+     "top_post": {
+      "t": "현재 난리 났다는 ai 컨닝업체 근황",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77426519?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "\"2등 당첨되는 꿈\" 회사에서 확인한 로또, 31억 대박 직장인",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 60,
+     "kw": [
+      "당첨",
+      "로또",
+      "회사"
+     ],
+     "top_post": {
+      "t": "로또 당첨된 주딱",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77426457?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "세무사시험 AI 부정행위가 문제가 아니다",
+     "nsite": 4,
+     "np_here": 2,
+     "nc_here": 0,
+     "issue_np": 6,
+     "issue_nc": 39,
+     "kw": [
+      "시험",
+      "부정",
+      "행위",
+      "AI"
+     ],
+     "top_post": {
+      "t": "이번에 사람들이 가장 놀란 시험 AI 부정행위 방법",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77431137?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "세무사 최연소 합격자 근황",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 30,
+     "kw": [
+      "합격자",
+      "연소",
+      "역대",
+      "스펙"
+     ],
+     "top_post": {
+      "t": "역대 최연소 회계사 합격자 스펙",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77433180?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "[속보] 수능날 위급재난문자 불시에 추가 발송",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 21,
+     "kw": [
+      "발송",
+      "수능",
+      "위급재난문자",
+      "불시"
+     ],
+     "top_post": {
+      "t": "[속보] 수능날 위급재난문자 불시에 추가 발송",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77430797?m=all&t=now",
+      "nc": 0
+     }
+    }
+   ]
+  },
+  {
+   "name": "더쿠",
+   "np": 12,
+   "nc": 0,
+   "topics": [
+    {
+     "t": "\"흑색 연필이 뭐죠?\" 수능 '연필만 허용'에 대혼란",
+     "nsite": 6,
+     "np_here": 2,
+     "nc_here": 0,
+     "issue_np": 10,
+     "issue_nc": 44,
+     "kw": [
+      "연필",
+      "수능",
+      "흑색",
+      "허용"
+     ],
+     "top_post": {
+      "t": "\"흑색 연필이 뭐죠?\" 수능 '연필만 허용'에 대혼란",
+      "u": "https://theqoo.net/hot/4410099173",
+      "nc": 0
+     }
+    },
+    {
+     "t": "리트 만점자 책 리뷰 극찬",
+     "nsite": 5,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 9,
+     "issue_nc": 114,
+     "kw": [
+      "만점자",
+      "리트"
+     ],
+     "top_post": {
+      "t": "'리트 만점자' 오늘 갑자기 연락두절",
+      "u": "https://theqoo.net/hot/4409528897",
+      "nc": 0
+     }
+    },
+    {
+     "t": "일본인이 생각하는 한국 드라마가 세계적으로 히트한 이유",
+     "nsite": 5,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 6,
+     "issue_nc": 92,
+     "kw": [
+      "한국",
+      "일본인",
+      "과자"
+     ],
+     "top_post": {
+      "t": "일본인이 만든 한국 과자 티어표",
+      "u": "https://theqoo.net/hot/4409784687",
+      "nc": 0
+     }
+    },
+    {
+     "t": "고3인데 직장인이 벼슬임?",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 6,
+     "issue_nc": 109,
+     "kw": [
+      "직장인",
+      "벼슬"
+     ],
+     "top_post": {
+      "t": "고3인데 직장인이 벼슬임?",
+      "u": "https://theqoo.net/hot/4409349691",
+      "nc": 0
+     }
+    },
+    {
+     "t": "중국제 AI 컨닝업체 제품 구매한 애들이 ㅈ된 이유",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 93,
+     "kw": [
+      "업체",
+      "AI",
+      "컨닝",
+      "제품"
+     ],
+     "top_post": {
+      "t": "중국제 AI 컨닝업체 제품 구매한 애들이 ㅈ된 이유",
+      "u": "https://theqoo.net/hot/4409793212",
+      "nc": 0
+     }
+    },
+    {
+     "t": "[디스패치] \"매출 40억 넘기면, 10:0\"…이정재, 대주주의 얌체 경영",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 91,
+     "kw": [
+      "주주",
+      "경영",
+      "이정재",
+      "얌체"
+     ],
+     "top_post": {
+      "t": "[단독] \"매출 40억 넘기면, 10:0\"…이정재, 대주주의 얌체 경영",
+      "u": "https://theqoo.net/hot/4410009048",
+      "nc": 0
+     }
+    },
+    {
+     "t": "시즌종료) 수능 만점자 8천명",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 5,
+     "issue_nc": 74,
+     "kw": [
+      "수능",
+      "만점자",
+      "종료"
+     ],
+     "top_post": {
+      "t": "수능 만점자 점심메뉴",
+      "u": "https://theqoo.net/hot/4410191503",
+      "nc": 0
+     }
+    },
+    {
+     "t": "세무사 최연소 합격자 근황",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 30,
+     "kw": [
+      "합격자",
+      "연소",
+      "역대",
+      "스펙"
+     ],
+     "top_post": {
+      "t": "세무사 최연소 합격자",
+      "u": "https://theqoo.net/hot/4410016880",
+      "nc": 0
+     }
+    }
+   ]
+  },
+  {
    "name": "오늘의유머",
    "np": 2,
    "nc": 0,
    "topics": [
     {
      "t": "일본인이 생각하는 한국 드라마가 세계적으로 히트한 이유",
-     "nsite": 4,
+     "nsite": 5,
      "np_here": 2,
      "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 61,
+     "issue_np": 6,
+     "issue_nc": 92,
      "kw": [
       "한국",
       "일본인",
