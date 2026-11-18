@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-19 01:00",
+ "updated": "2026-11-19 02:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -1080,6 +1080,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-18",
+   "expires": "2026-11-22"
+  },
+  {
+   "query": "마린 르펜",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 5000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-19",
    "expires": "2026-11-22"
   },
   {
@@ -3123,6 +3135,18 @@
    "expires": "2026-11-22"
   },
   {
+   "query": "강형욱",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-19",
+   "expires": "2026-11-22"
+  },
+  {
    "query": "알렉산더 즈베레프",
    "tier": "단기",
    "signal": [
@@ -3412,6 +3436,18 @@
   },
   {
    "query": "외교관",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-12",
+   "expires": "2026-11-22"
+  },
+  {
+   "query": "교통 사고",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -4312,18 +4348,6 @@
   },
   {
    "query": "포틀랜드 대 오클라호마시티",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 1000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-12",
-   "expires": "2026-11-22"
-  },
-  {
-   "query": "교통 사고",
    "tier": "단기",
    "signal": [
     "구글트렌드"
