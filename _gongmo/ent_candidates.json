@@ -1,19 +1,52 @@
 {
- "at": "2026-11-18 17:11",
+ "at": "2026-11-18 17:30",
  "nitems": 515,
  "cands": [
   {
-   "kw": "음주운전",
-   "nsrc": 6,
+   "kw": "디즈니",
+   "nsrc": 5,
    "srcs": [
     "SBS",
     "뉴시스",
     "동아일보",
     "연합뉴스",
+    "조선일보"
+   ],
+   "n": 13,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "디즈니+ 한국 진출 5년…\"OTT 경쟁은 장기전, 韓 콘텐츠 강화\"",
+     "link": "https://www.yna.co.kr/view/AKR20261118115600005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "디즈니, 어닝 서프라이즈에도 허리띠 졸라매기…\"성장위한 투자\"",
+     "link": "https://www.yna.co.kr/view/AKR20261118068500075"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "[테크스냅] 디즈니, 'D23 아시아' 티켓 25일부터 국내 선예매",
+     "link": "https://www.yna.co.kr/view/AKR20261116125500017"
+    },
+    {
+     "src": "동아일보",
+     "title": "장원영, 디즈니 공주가 현실로…홍콩 홀린 비주얼 [DAY컷]",
+     "link": "https://sports.donga.com/ent/article/all/20261118/135045277/1"
+    }
+   ]
+  },
+  {
+   "kw": "음주운전",
+   "nsrc": 5,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "연합뉴스",
     "조선일보",
     "한겨레"
    ],
-   "n": 11,
+   "n": 10,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -39,16 +72,15 @@
   },
   {
    "kw": "고경표",
-   "nsrc": 6,
+   "nsrc": 5,
    "srcs": [
     "SBS",
     "뉴시스",
-    "동아일보",
     "연합뉴스",
     "조선일보",
     "한겨레"
    ],
-   "n": 11,
+   "n": 10,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -82,7 +114,7 @@
     "한국경제",
     "헤럴드경제"
    ],
-   "n": 9,
+   "n": 10,
    "headlines": [
     {
      "src": "한겨레",
@@ -209,40 +241,6 @@
    ]
   },
   {
-   "kw": "불편",
-   "nsrc": 5,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "동아일보",
-    "연합뉴스",
-    "한겨레"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "'보검 매직컬2' 측 \"고경표 음주운전 유감…시청 불편 최소화\"",
-     "link": "https://www.yna.co.kr/view/AKR20261118043900005"
-    },
-    {
-     "src": "동아일보",
-     "title": "[공식] 고경표 음주운전 불똥 튄 ‘보검 매직컬2’…“불편 최소화할 것”",
-     "link": "https://sports.donga.com/ent/article/all/20261118/135043917/1"
-    },
-    {
-     "src": "한겨레",
-     "title": "고경표 음주운전에 ‘보검 매직컬2’ 제작진 “시청자 불편 최소화”",
-     "link": "https://www.hani.co.kr/arti/culture/culture_general/1287884.html"
-    },
-    {
-     "src": "SBS",
-     "title": "'보검 매직컬2', 음주운전 고경표 최대한 덜어낸다…\"시청자 불편 최소화할 것\"",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008851542&plink=RSSLINK&cooper=RSSREADER"
-    }
-   ]
-  },
-  {
    "kw": "재혼",
    "nsrc": 5,
    "srcs": [
@@ -285,7 +283,7 @@
     "조선일보",
     "한국경제"
    ],
-   "n": 16,
+   "n": 15,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -306,39 +304,6 @@
      "src": "조선일보",
      "title": "눈에 파묻힌 듯한 명품 트위드 투피스, 에스파 카리나[O! STAR 숏폼]",
      "link": "https://www.chosun.com/entertainments/broadcast/2026/11/18/MZTDIZJTMU3DQNJYMM3DCODFGE/"
-    }
-   ]
-  },
-  {
-   "kw": "디즈니",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "동아일보",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 12,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "디즈니+ 한국 진출 5년…\"OTT 경쟁은 장기전, 韓 콘텐츠 강화\"",
-     "link": "https://www.yna.co.kr/view/AKR20261118115600005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "디즈니, 어닝 서프라이즈에도 허리띠 졸라매기…\"성장위한 투자\"",
-     "link": "https://www.yna.co.kr/view/AKR20261118068500075"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "[테크스냅] 디즈니, 'D23 아시아' 티켓 25일부터 국내 선예매",
-     "link": "https://www.yna.co.kr/view/AKR20261116125500017"
-    },
-    {
-     "src": "동아일보",
-     "title": "장원영, 디즈니 공주가 현실로…홍콩 홀린 비주얼 [DAY컷]",
-     "link": "https://sports.donga.com/ent/article/all/20261118/135045277/1"
     }
    ]
   },
@@ -372,6 +337,39 @@
      "src": "연합뉴스",
      "title": "제니, 美 그래미서 본상 '올해의 레코드' 포함 2개 부문 후보",
      "link": "https://www.yna.co.kr/view/AKR20261116180200005"
+    }
+   ]
+  },
+  {
+   "kw": "주년",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "연합뉴스",
+    "조선일보"
+   ],
+   "n": 8,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "경북 영천서 신성일기념관 개관 1주년 기념음악회 열린다",
+     "link": "https://www.yna.co.kr/view/AKR20261118127200053"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "결성 40주년 신촌블루스, 28∼29일 소극장 콘서트 '40+1'",
+     "link": "https://www.yna.co.kr/view/AKR20261117043400005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "전남 첫 근대식 극장 '목포', 개관 100주년 기념행사 다채",
+     "link": "https://www.yna.co.kr/view/AKR20261116068100054"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "CJ문화재단, 설립 20주년 학술대회…\"창작 지원에 917억원 후원\"",
+     "link": "https://www.yna.co.kr/view/AKR20261116045900030"
     }
    ]
   },
@@ -471,39 +469,6 @@
      "src": "뉴시스",
      "title": "이광수, 팬들에 수백개 메시지 보내더니…얼굴 새긴 트로피 받았다",
      "link": "https://www.newsis.com/view/NISX20261118_0003872491"
-    }
-   ]
-  },
-  {
-   "kw": "기분",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "'폭설' 구교환 \"예측불가 얼굴로 기분 좋은 혼란 주고 싶어\"",
-     "link": "https://www.yna.co.kr/view/AKR20261118099700005"
-    },
-    {
-     "src": "SBS",
-     "title": "\"연기 차력쇼 보는 기분\"…'굿파트너2' 장나라X김혜윤X박해진X표지훈, 완벽 호흡 예고",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008850058&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "뉴시스",
-     "title": "양홍원 \"가족 잃은 기분 아무도 모를 것\"…아내와는 여전히 언팔",
-     "link": "https://www.newsis.com/view/NISX20261118_0003873374"
-    },
-    {
-     "src": "조선일보",
-     "title": "양홍원 “가족 잃은 기분 아무도 모를 것”…아내와는 여전히 언팔",
-     "link": "https://www.chosun.com/entertainments/celebrity/2026/11/18/PHP75NV4RJDRNOPISZ6AZLZHPI/"
     }
    ]
   },
@@ -640,6 +605,39 @@
    ]
   },
   {
+   "kw": "기분",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "연합뉴스",
+    "조선일보"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "'폭설' 구교환 \"예측불가 얼굴로 기분 좋은 혼란 주고 싶어\"",
+     "link": "https://www.yna.co.kr/view/AKR20261118099700005"
+    },
+    {
+     "src": "SBS",
+     "title": "\"연기 차력쇼 보는 기분\"…'굿파트너2' 장나라X김혜윤X박해진X표지훈, 완벽 호흡 예고",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008850058&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "뉴시스",
+     "title": "양홍원 \"가족 잃은 기분 아무도 모를 것\"…아내와는 여전히 언팔",
+     "link": "https://www.newsis.com/view/NISX20261118_0003873374"
+    },
+    {
+     "src": "조선일보",
+     "title": "양홍원 “가족 잃은 기분 아무도 모를 것”…아내와는 여전히 언팔",
+     "link": "https://www.chosun.com/entertainments/celebrity/2026/11/18/PHP75NV4RJDRNOPISZ6AZLZHPI/"
+    }
+   ]
+  },
+  {
    "kw": "피원하모",
    "nsrc": 4,
    "srcs": [
@@ -673,11 +671,11 @@
    ]
   },
   {
-   "kw": "매직컬",
+   "kw": "불편",
    "nsrc": 4,
    "srcs": [
     "SBS",
-    "동아일보",
+    "뉴시스",
     "연합뉴스",
     "한겨레"
    ],
@@ -689,11 +687,6 @@
      "link": "https://www.yna.co.kr/view/AKR20261118043900005"
     },
     {
-     "src": "동아일보",
-     "title": "[공식] 고경표 음주운전 불똥 튄 ‘보검 매직컬2’…“불편 최소화할 것”",
-     "link": "https://sports.donga.com/ent/article/all/20261118/135043917/1"
-    },
-    {
      "src": "한겨레",
      "title": "고경표 음주운전에 ‘보검 매직컬2’ 제작진 “시청자 불편 최소화”",
      "link": "https://www.hani.co.kr/arti/culture/culture_general/1287884.html"
@@ -702,39 +695,11 @@
      "src": "SBS",
      "title": "'보검 매직컬2', 음주운전 고경표 최대한 덜어낸다…\"시청자 불편 최소화할 것\"",
      "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008851542&plink=RSSLINK&cooper=RSSREADER"
-    }
-   ]
-  },
-  {
-   "kw": "보검",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "동아일보",
-    "연합뉴스",
-    "한겨레"
-   ],
-   "n": 4,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "'보검 매직컬2' 측 \"고경표 음주운전 유감…시청 불편 최소화\"",
-     "link": "https://www.yna.co.kr/view/AKR20261118043900005"
     },
     {
-     "src": "동아일보",
-     "title": "[공식] 고경표 음주운전 불똥 튄 ‘보검 매직컬2’…“불편 최소화할 것”",
-     "link": "https://sports.donga.com/ent/article/all/20261118/135043917/1"
-    },
-    {
-     "src": "한겨레",
-     "title": "고경표 음주운전에 ‘보검 매직컬2’ 제작진 “시청자 불편 최소화”",
-     "link": "https://www.hani.co.kr/arti/culture/culture_general/1287884.html"
-    },
-    {
-     "src": "SBS",
-     "title": "'보검 매직컬2', 음주운전 고경표 최대한 덜어낸다…\"시청자 불편 최소화할 것\"",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008851542&plink=RSSLINK&cooper=RSSREADER"
+     "src": "뉴시스",
+     "title": "'보검매직컬2' 측 \"고경표 음주운전 당혹·유감…불편 최소화\"",
+     "link": "https://www.newsis.com/view/NISX20261118_0003872758"
     }
    ]
   },
@@ -838,38 +803,6 @@
    ]
   },
   {
-   "kw": "내년",
-   "nsrc": 3,
-   "srcs": [
-    "뉴시스",
-    "연합뉴스",
-    "한국경제"
-   ],
-   "n": 12,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "[가요소식] 태연, 내년 1월 KSPO돔서 콘서트",
-     "link": "https://www.yna.co.kr/view/AKR20261118126000005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "일본 록밴드 아시안 쿵푸 제너레이션, 내년 5월 내한 공연",
-     "link": "https://www.yna.co.kr/view/AKR20261118087900005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "교향악으로 듣는 '진격의 거인'…내년 3월 '오케스트라 콘서트'",
-     "link": "https://www.yna.co.kr/view/AKR20261118042500005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "[가요소식] 헤일리 윌리엄스, 내년 3월 첫 내한 공연",
-     "link": "https://www.yna.co.kr/view/AKR20261117087700005"
-    }
-   ]
-  },
-  {
    "kw": "미모",
    "nsrc": 3,
    "srcs": [
@@ -877,7 +810,7 @@
     "세계일보",
     "조선일보"
    ],
-   "n": 11,
+   "n": 14,
    "headlines": [
     {
      "src": "세계일보",
@@ -898,6 +831,38 @@
      "src": "세계일보",
      "title": "[포토] 카리나 '완벽한 미모'",
      "link": "https://www.segye.com/newsView/20261118513749"
+    }
+   ]
+  },
+  {
+   "kw": "내년",
+   "nsrc": 3,
+   "srcs": [
+    "뉴시스",
+    "연합뉴스",
+    "한국경제"
+   ],
+   "n": 11,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "[가요소식] 태연, 내년 1월 KSPO돔서 콘서트",
+     "link": "https://www.yna.co.kr/view/AKR20261118126000005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "일본 록밴드 아시안 쿵푸 제너레이션, 내년 5월 내한 공연",
+     "link": "https://www.yna.co.kr/view/AKR20261118087900005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "교향악으로 듣는 '진격의 거인'…내년 3월 '오케스트라 콘서트'",
+     "link": "https://www.yna.co.kr/view/AKR20261118042500005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "[가요소식] 헤일리 윌리엄스, 내년 3월 첫 내한 공연",
+     "link": "https://www.yna.co.kr/view/AKR20261117087700005"
     }
    ]
   },
@@ -930,38 +895,6 @@
      "src": "연합뉴스",
      "title": "제니, 美 그래미서 본상 '올해의 레코드' 포함 2개 부문 후보",
      "link": "https://www.yna.co.kr/view/AKR20261116180200005"
-    }
-   ]
-  },
-  {
-   "kw": "주년",
-   "nsrc": 3,
-   "srcs": [
-    "동아일보",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 8,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "경북 영천서 신성일기념관 개관 1주년 기념음악회 열린다",
-     "link": "https://www.yna.co.kr/view/AKR20261118127200053"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "결성 40주년 신촌블루스, 28∼29일 소극장 콘서트 '40+1'",
-     "link": "https://www.yna.co.kr/view/AKR20261117043400005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "전남 첫 근대식 극장 '목포', 개관 100주년 기념행사 다채",
-     "link": "https://www.yna.co.kr/view/AKR20261116068100054"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "CJ문화재단, 설립 20주년 학술대회…\"창작 지원에 917억원 후원\"",
-     "link": "https://www.yna.co.kr/view/AKR20261116045900030"
     }
    ]
   },
@@ -1037,7 +970,7 @@
     "조선일보",
     "한국경제"
    ],
-   "n": 7,
+   "n": 6,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -1062,34 +995,34 @@
    ]
   },
   {
-   "kw": "공식",
+   "kw": "부정행위",
    "nsrc": 3,
    "srcs": [
+    "뉴시스",
     "동아일보",
-    "조선일보",
-    "한국경제"
+    "헤럴드경제"
    ],
    "n": 6,
    "headlines": [
     {
      "src": "동아일보",
-     "title": "‘8연속 밀리언셀러’ TXT, 익숙한 공식 깬 ‘감정 연기’ 승부수",
-     "link": "https://sports.donga.com/ent/article/all/20261118/135046678/1"
+     "title": "‘뇌과학자’ 정재승, AI 안경 부정행위에 수능 비상…새 시험 방식 제안",
+     "link": "https://sports.donga.com/ent/article/all/20261118/135044707/1"
     },
     {
-     "src": "동아일보",
-     "title": "[공식] 고경표 음주운전 불똥 튄 ‘보검 매직컬2’…“불편 최소화할 것”",
-     "link": "https://sports.donga.com/ent/article/all/20261118/135043917/1"
+     "src": "헤럴드경제",
+     "title": "고3 학부모 박명수 “추잡스러운 인간들” AI 부정행위자 직격",
+     "link": "https://biz.heraldcorp.com/article/10941539"
     },
     {
-     "src": "한국경제",
-     "title": "CL, 테디 손 잡았다…더블랙레이블 전속계약 [공식]",
-     "link": "https://www.hankyung.com/article/202611134339H"
+     "src": "뉴시스",
+     "title": "'고3 딸 아빠' 박명수, AI 부정행위에 일침…\"추잡스러운 인간들\"",
+     "link": "https://www.newsis.com/view/NISX20261118_0003873699"
     },
     {
-     "src": "조선일보",
-     "title": "아이덴티티 박경률, 사생활 의혹 부인..\"법률적·도의적 문제 無\" [공식]",
-     "link": "https://www.chosun.com/entertainments/music/2026/11/18/MJSTONJYMJRDANZXGYYTAMJXMI/"
+     "src": "뉴시스",
+     "title": "AI 부정행위 속 빛나는 성실함…'자격증 31개' 조민아 재평가됐다",
+     "link": "https://www.newsis.com/view/NISX20261118_0003873632"
     }
    ]
   },
@@ -1154,38 +1087,6 @@
      "src": "SBS",
      "title": "\"연기 차력쇼 보는 기분\"…'굿파트너2' 장나라X김혜윤X박해진X표지훈, 완벽 호흡 예고",
      "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008850058&plink=RSSLINK&cooper=RSSREADER"
-    }
-   ]
-  },
-  {
-   "kw": "태연",
-   "nsrc": 3,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "연합뉴스"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "[가요소식] 태연, 내년 1월 KSPO돔서 콘서트",
-     "link": "https://www.yna.co.kr/view/AKR20261118126000005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "[방송소식] 소녀시대 태연·임윤아 '저스트 메이크업' 시즌2 MC",
-     "link": "https://www.yna.co.kr/view/AKR20261117048700005"
-    },
-    {
-     "src": "동아일보",
-     "title": "태연 체조서 새 투어 시작…2027년 4월까지 바쁜 행보",
-     "link": "https://sports.donga.com/ent/article/all/20261118/135048175/1"
-    },
-    {
-     "src": "뉴시스",
-     "title": "'그룹·솔로 케이스포돔 매진시킨 첫 女가수' 태연, 또 같은 곳서 콘서트",
-     "link": "https://www.newsis.com/view/NISX20261118_0003873459"
     }
    ]
   },
@@ -1314,6 +1215,102 @@
      "src": "한국경제",
      "title": "YG 전속계약 명단서 빠진 블랙핑크…\"그룹 활동 논의 중\"",
      "link": "https://www.hankyung.com/article/202611169801H"
+    }
+   ]
+  },
+  {
+   "kw": "연속",
+   "nsrc": 3,
+   "srcs": [
+    "SBS",
+    "동아일보",
+    "연합뉴스"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "NCT 드림, 6집으로 11개 앨범 연속 밀리언셀러 달성",
+     "link": "https://www.yna.co.kr/view/AKR20261116060000005"
+    },
+    {
+     "src": "동아일보",
+     "title": "‘8연속 밀리언셀러’ TXT, 익숙한 공식 깬 ‘감정 연기’ 승부수",
+     "link": "https://sports.donga.com/ent/article/all/20261118/135046678/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "데뷔 10주년도 거뜬…NCT DREAM, 정규 6집으로 11연속 밀리언셀러",
+     "link": "https://sports.donga.com/ent/article/all/20261118/135045868/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "‘반짝 흥행’은 없다…피원하모니, 3연속 美 빌보드 톱10 안착",
+     "link": "https://sports.donga.com/ent/article/all/20261118/135043996/1"
+    }
+   ]
+  },
+  {
+   "kw": "음악",
+   "nsrc": 3,
+   "srcs": [
+    "연합뉴스",
+    "한겨레",
+    "한국경제"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "하이브, 버추얼 크리에이터 음악 첫 선…20일 신곡 '클릭 플릭'",
+     "link": "https://www.yna.co.kr/view/AKR20261116040200005"
+    },
+    {
+     "src": "한겨레",
+     "title": "강허달림 20년 음악 인생 콘서트…50곡에 얽힌 사연 토크도",
+     "link": "https://www.hani.co.kr/arti/culture/music/1287874.html"
+    },
+    {
+     "src": "한겨레",
+     "title": "“아기처럼 꾸밈없는 음악”…베이스 거장 송홍섭이 일흔 넘어 밴드 꾸린 이유",
+     "link": "https://www.hani.co.kr/arti/culture/music/1287698.html"
+    },
+    {
+     "src": "한겨레",
+     "title": "AI가 작곡하고 노래한 음악, ‘멜론 톱100’ 첫 1위 올랐다",
+     "link": "https://www.hani.co.kr/arti/culture/music/1287281.html"
+    }
+   ]
+  },
+  {
+   "kw": "결혼",
+   "nsrc": 3,
+   "srcs": [
+    "뉴시스",
+    "연합뉴스",
+    "조선일보"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "주진모·민혜연 부부, 결혼 7년 만에 부모 된다…\"임신 초기\"",
+     "link": "https://www.yna.co.kr/view/AKR20261114036000005"
+    },
+    {
+     "src": "뉴시스",
+     "title": "박세미, 결혼 후 남편과 외모 비교…\"아줌마랑 아들이 만나네\"",
+     "link": "https://www.newsis.com/view/NISX20261118_0003873417"
+    },
+    {
+     "src": "뉴시스",
+     "title": "결혼 앞둔 솔비, 이규한에 \"꿈 이뤄줘서 고마워\"…무슨 일?",
+     "link": "https://www.newsis.com/view/NISX20261117_0003871395"
+    },
+    {
+     "src": "조선일보",
+     "title": "신지 맞아? 결혼 6개월만에 확 달라진 얼굴…'7살 연하' ♥문원 사랑이 과했나",
+     "link": "https://www.chosun.com/entertainments/enter_general/2026/11/18/G5RDSYRQHE3TINRVGVSDMYLEGI/"
     }
    ]
   }

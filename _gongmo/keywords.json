@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-18 17:00",
+ "updated": "2026-11-18 18:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -2175,6 +2175,18 @@
    "expires": "2026-11-21"
   },
   {
+   "query": "김치",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-10",
+   "expires": "2026-11-21"
+  },
+  {
    "query": "치어리더",
    "tier": "단기",
    "signal": [
@@ -2208,6 +2220,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-12",
+   "expires": "2026-11-21"
+  },
+  {
+   "query": "보스턴다이내믹스",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-18",
    "expires": "2026-11-21"
   },
   {
@@ -3292,6 +3316,18 @@
   },
   {
    "query": "둠스데이",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-18",
+   "expires": "2026-11-21"
+  },
+  {
+   "query": "병무청",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -4563,6 +4599,18 @@
    "expires": "2026-11-21"
   },
   {
+   "query": "부산광역시",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-18",
+   "expires": "2026-11-21"
+  },
+  {
    "query": "오산대",
    "tier": "단기",
    "signal": [
@@ -5103,18 +5151,6 @@
    "expires": "2026-11-21"
   },
   {
-   "query": "김치",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 1000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-10",
-   "expires": "2026-11-21"
-  },
-  {
    "query": "회사",
    "tier": "단기",
    "signal": [
@@ -5559,6 +5595,18 @@
    "expires": "2026-11-21"
   },
   {
+   "query": "네이버 뉴스",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-18",
+   "expires": "2026-11-21"
+  },
+  {
    "query": "코스피 5383.80 종가, 5.28% 내린 이유는? 사이드카 발동과 매체 분석 정리",
    "tier": "단기",
    "signal": [
@@ -5607,6 +5655,19 @@
    "score": 5,
    "status": "작성",
    "page": "/issue/ai-glasses-series-03-suneung-day-crackdown-1118/",
+   "registered": "2026-11-18",
+   "expires": "2026-11-22"
+  },
+  {
+   "query": "코스피 5067.44 마감 하루 만에 5000선 회복, 삼성전자 SK하이닉스 종가와 외국인 수급",
+   "tier": "단기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 5,
+   "status": "작성",
+   "page": "/issue/kospi-5000-recovery-samsung-skhynix-1118-close/",
    "registered": "2026-11-18",
    "expires": "2026-11-22"
   },
