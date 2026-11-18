@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-18 15:00",
+ "updated": "2026-11-18 16:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -1251,6 +1251,18 @@
    "expires": "2026-11-21"
   },
   {
+   "query": "서강대",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 5000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-18",
+   "expires": "2026-11-21"
+  },
+  {
    "query": "숲",
    "tier": "단기",
    "signal": [
@@ -1632,6 +1644,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-12",
+   "expires": "2026-11-21"
+  },
+  {
+   "query": "국제 a 매치",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-13",
    "expires": "2026-11-21"
   },
   {
@@ -2439,18 +2463,6 @@
    "expires": "2026-11-21"
   },
   {
-   "query": "무죄",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 2000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-05",
-   "expires": "2026-11-21"
-  },
-  {
    "query": "한국시리즈 연장전",
    "tier": "단기",
    "signal": [
@@ -3015,6 +3027,18 @@
    "expires": "2026-11-21"
   },
   {
+   "query": "nh농협은행",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-18",
+   "expires": "2026-11-21"
+  },
+  {
    "query": "알렉산더 즈베레프",
    "tier": "단기",
    "signal": [
@@ -3120,6 +3144,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-07",
+   "expires": "2026-11-21"
+  },
+  {
+   "query": "대한민국 해군",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-18",
    "expires": "2026-11-21"
   },
   {
@@ -4192,18 +4228,6 @@
   },
   {
    "query": "방화",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 1000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-13",
-   "expires": "2026-11-21"
-  },
-  {
-   "query": "국제 a 매치",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -5574,6 +5598,19 @@
    "expires": "2026-11-22"
   },
   {
+   "query": "수능 당일 AI 안경 단속 어떻게 하나, 안경 전수검사와 금속탐지기 기준",
+   "tier": "단기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 5,
+   "status": "작성",
+   "page": "/issue/ai-glasses-series-03-suneung-day-crackdown-1118/",
+   "registered": "2026-11-18",
+   "expires": "2026-11-22"
+  },
+  {
    "query": "수능 AI 부정행위 정부 대책 총정리, 총리 담화 응시제한 10년·감독관 8,400명 추가",
    "tier": "단기",
    "signal": [
@@ -5613,6 +5650,19 @@
    "expires": "2026-11-08"
   },
   {
+   "query": "세무사 시험 수석 합격자 AI 부정행위 시인, 합격 취소 절차와 수사 현황 정리",
+   "tier": "단기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 4,
+   "status": "작성",
+   "page": "/issue/ai-glasses-series-02-tax-accountant-exam-1118/",
+   "registered": "2026-11-18",
+   "expires": "2026-11-22"
+  },
+  {
    "query": "경기도 버스 환승할인 폐지 사실일까? 2027년 예산 8개월치만 편성, 9월부터 어떻게 되나",
    "tier": "단기",
    "signal": [
@@ -5650,6 +5700,19 @@
    "page": "",
    "registered": "2026-11-02",
    "expires": "2026-11-06"
+  },
+  {
+   "query": "추경호 1심 무죄 선고, 재판부 판단과 특검 구형·항소 여부 정리",
+   "tier": "단기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 3,
+   "status": "작성",
+   "page": "/issue/choo-kyungho-first-trial-sentencing-1118/",
+   "registered": "2026-11-18",
+   "expires": "2026-11-22"
   },
   {
    "query": "하이브 개인정보 유출 어떤 정보가 나갔나요? 확인된 내용 정리",
