@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-18 08:00",
+ "updated": "2026-11-18 10:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -327,6 +327,18 @@
    "expires": "2026-11-21"
   },
   {
+   "query": "이민정",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 10000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-08",
+   "expires": "2026-11-21"
+  },
+  {
    "query": "아틀레티코 대 바르셀로나",
    "tier": "단기",
    "signal": [
@@ -435,18 +447,6 @@
    "expires": "2026-11-21"
   },
   {
-   "query": "이민정",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 10000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-08",
-   "expires": "2026-11-21"
-  },
-  {
    "query": "이효정",
    "tier": "단기",
    "signal": [
@@ -484,18 +484,6 @@
   },
   {
    "query": "조세",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 10000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-17",
-   "expires": "2026-11-21"
-  },
-  {
-   "query": "한국은행",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -759,6 +747,18 @@
    "expires": "2026-11-21"
   },
   {
+   "query": "운세",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 5000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-17",
+   "expires": "2026-11-21"
+  },
+  {
    "query": "선박",
    "tier": "단기",
    "signal": [
@@ -939,7 +939,7 @@
    "expires": "2026-11-21"
   },
   {
-   "query": "운세",
+   "query": "박혜연",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -951,7 +951,7 @@
    "expires": "2026-11-21"
   },
   {
-   "query": "박혜연",
+   "query": "뉴스",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -1192,18 +1192,6 @@
   },
   {
    "query": "패딩",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 5000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-17",
-   "expires": "2026-11-21"
-  },
-  {
-   "query": "뉴스",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -1632,6 +1620,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-12",
+   "expires": "2026-11-21"
+  },
+  {
+   "query": "погода",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-17",
    "expires": "2026-11-21"
   },
   {
@@ -2236,18 +2236,6 @@
   },
   {
    "query": "아시아 프로야구 챔피언십",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 2000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-17",
-   "expires": "2026-11-21"
-  },
-  {
-   "query": "погода",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -2988,6 +2976,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-17",
+   "expires": "2026-11-21"
+  },
+  {
+   "query": "배당",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-18",
    "expires": "2026-11-21"
   },
   {
@@ -4275,6 +4275,18 @@
    "expires": "2026-11-21"
   },
   {
+   "query": "김현태",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-18",
+   "expires": "2026-11-21"
+  },
+  {
    "query": "원주 db 대 수원 kt",
    "tier": "단기",
    "signal": [
@@ -5501,6 +5513,19 @@
    "expires": "2026-11-21"
   },
   {
+   "query": "AI 컨닝 장비 구매자도 처벌받나요? 경찰 TF 수사 대상과 판매업자 협박 보도 정리",
+   "tier": "단기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 5,
+   "status": "작성",
+   "page": "/issue/ai-cheating-buyers-seller-probe-1118/",
+   "registered": "2026-11-18",
+   "expires": "2026-11-22"
+  },
+  {
    "query": "수능 AI 부정행위 정부 대책 총정리, 총리 담화 응시제한 10년·감독관 8,400명 추가",
    "tier": "단기",
    "signal": [
@@ -5642,6 +5667,19 @@
    "page": "/issue/blackpink-yg-exclusive-list-removed-1117/",
    "registered": "2026-11-17",
    "expires": "2026-11-21"
+  },
+  {
+   "query": "조국 일본 입국 거부 이유는? 日당국자 발언·조국 반박·외교부 입장 정리",
+   "tier": "단기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 2,
+   "status": "작성",
+   "page": "/issue/cho-kuk-japan-entry-denied-1118/",
+   "registered": "2026-11-18",
+   "expires": "2026-11-22"
   },
   {
    "query": "중앙일보 인수 CJ 다우키움 신세계 컨소시엄 현황, 계약 11월 6일 시한",
@@ -13821,6 +13859,32 @@
    "expires": "2026-12-02"
   },
   {
+   "query": "AI 데이터센터 전력 부족 왜 문제인가 한국 전력계통영향평가 시행·미국 송전망 소식 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 3,
+   "status": "작성",
+   "page": "/issue/ai-datacenter-power-grid-bottleneck-korea-us-1118/",
+   "registered": "2026-11-18",
+   "expires": "2026-11-25"
+  },
+  {
+   "query": "AI 일자리 영향 공식 통계로 보면 청년 고용 한국은행 이슈노트 10월 고용동향 미국 고용 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 3,
+   "status": "작성",
+   "page": "/issue/ai-employment-korea-us-official-statistics-youth-1118/",
+   "registered": "2026-11-18",
+   "expires": "2026-11-28"
+  },
+  {
    "query": "AMD 3분기 실적 매출 얼마? 데이터센터 부문 정리",
    "tier": "중기",
    "signal": [
@@ -15202,6 +15266,19 @@
    "page": "",
    "registered": "2026-11-04",
    "expires": "2026-11-11"
+  },
+  {
+   "query": "한국 정부 AI 반도체 발표 정리 2026, 온양 HBM 착공과 8,002억 온디바이스 사업은 확정인가",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 2,
+   "status": "작성",
+   "page": "/issue/korea-gov-ai-chip-announcements-onyang-hbm-on-device-1118/",
+   "registered": "2026-11-18",
+   "expires": "2026-11-25"
   },
   {
    "query": "반도체 수출 통계 정리 2026: 10월 월간 수출입동향과 11월 초순 수출은 얼마였나",
