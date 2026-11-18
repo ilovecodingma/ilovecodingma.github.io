@@ -4134,6 +4134,11 @@ def class_pages():
         urls += ai_hub.pages(page)
     except Exception as e:
         print('AI 격동기 허브 건너뜀', repr(e)[:100])
+    try:   # 2026-11-18 AI 안경 의혹 시리즈 허브(/ai-glasses/): ai-glasses-series- 글을 편 번호순으로 모은다
+        import ai_glasses
+        urls += ai_glasses.pages(page)
+    except Exception as e:
+        print('AI 안경 시리즈 허브 건너뜀', repr(e)[:100])
     try:   # 2026-11-12 하네스 과정(/class/harness/): 토큰을 넣으면 진도와 샘플이 나오는 학습 구역
         import harness_lms
         urls += harness_lms.pages(page)
