@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-19 05:00",
+ "updated": "2026-11-19 06:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -255,6 +255,18 @@
    "expires": "2026-11-22"
   },
   {
+   "query": "마린 르펜",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 10000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-19",
+   "expires": "2026-11-22"
+  },
+  {
    "query": "자동차",
    "tier": "단기",
    "signal": [
@@ -291,7 +303,7 @@
    "expires": "2026-11-22"
   },
   {
-   "query": "마린 르펜",
+   "query": "수능 재난문자 시간",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -444,18 +456,6 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-17",
-   "expires": "2026-11-22"
-  },
-  {
-   "query": "수능 재난문자 시간",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 10000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-19",
    "expires": "2026-11-22"
   },
   {
@@ -3288,6 +3288,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-17",
+   "expires": "2026-11-22"
+  },
+  {
+   "query": "기인",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-19",
    "expires": "2026-11-22"
   },
   {
