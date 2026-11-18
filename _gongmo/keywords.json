@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-19 00:00",
+ "updated": "2026-11-19 01:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -13618,8 +13618,8 @@
     "구글트렌드"
    ],
    "score": 5,
-   "status": "작성",
-   "page": "/issue/us-midterm-2026-results-1104/",
+   "status": "미작성",
+   "page": "",
    "registered": "2026-11-04",
    "expires": "2026-11-18"
   },
@@ -13856,8 +13856,8 @@
     "구글트렌드"
    ],
    "score": 4,
-   "status": "작성",
-   "page": "/issue/i-bada-pass-change-1104/",
+   "status": "미작성",
+   "page": "",
    "registered": "2026-11-04",
    "expires": "2026-11-18"
   },
@@ -14371,8 +14371,8 @@
     "구글트렌드"
    ],
    "score": 3,
-   "status": "작성",
-   "page": "/issue/gadeokdo-airport-cost-1104/",
+   "status": "미작성",
+   "page": "",
    "registered": "2026-11-04",
    "expires": "2026-11-18"
   },
@@ -15416,8 +15416,8 @@
     "구글트렌드"
    ],
    "score": 2,
-   "status": "작성",
-   "page": "/issue/jeju-second-airport-deep-1104/",
+   "status": "미작성",
+   "page": "",
    "registered": "2026-11-04",
    "expires": "2026-11-18"
   },
