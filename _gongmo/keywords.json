@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-19 07:00",
+ "updated": "2026-11-19 08:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -52,6 +52,18 @@
   },
   {
    "query": "매일경제신문",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 20000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-07",
+   "expires": "2026-11-22"
+  },
+  {
+   "query": "삼전 닉스",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -196,6 +208,18 @@
   },
   {
    "query": "우규민",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 10000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-05",
+   "expires": "2026-11-22"
+  },
+  {
+   "query": "한화 이글스",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -615,18 +639,6 @@
    "expires": "2026-11-22"
   },
   {
-   "query": "한화 이글스",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 5000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-05",
-   "expires": "2026-11-22"
-  },
-  {
    "query": "복권",
    "tier": "단기",
    "signal": [
@@ -912,18 +924,6 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-06",
-   "expires": "2026-11-22"
-  },
-  {
-   "query": "삼전 닉스",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 5000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-07",
    "expires": "2026-11-22"
   },
   {
@@ -1479,6 +1479,18 @@
    "expires": "2026-11-22"
   },
   {
+   "query": "한화오션",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-19",
+   "expires": "2026-11-22"
+  },
+  {
    "query": "간호",
    "tier": "단기",
    "signal": [
@@ -1780,6 +1792,18 @@
   },
   {
    "query": "부산 kcc 대 대구 한국가스공사",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-17",
+   "expires": "2026-11-22"
+  },
+  {
+   "query": "김건희",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -2476,18 +2500,6 @@
   },
   {
    "query": "ตรวจหวย",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 2000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-17",
-   "expires": "2026-11-22"
-  },
-  {
-   "query": "김건희",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -3207,6 +3219,18 @@
    "expires": "2026-11-22"
   },
   {
+   "query": "기인",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-19",
+   "expires": "2026-11-22"
+  },
+  {
    "query": "노동조합",
    "tier": "단기",
    "signal": [
@@ -3288,18 +3312,6 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-17",
-   "expires": "2026-11-22"
-  },
-  {
-   "query": "기인",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 1000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-19",
    "expires": "2026-11-22"
   },
   {
@@ -4392,6 +4404,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-13",
+   "expires": "2026-11-22"
+  },
+  {
+   "query": "김상식",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-19",
    "expires": "2026-11-22"
   },
   {
@@ -5713,6 +5737,19 @@
    "page": "",
    "registered": "2026-11-18",
    "expires": "2026-11-22"
+  },
+  {
+   "query": "앤트로픽 공모가 83달러 확정 ANT 나스닥 첫 거래 한국시간 언제, 공모 규모 685억달러 940억달러 차이",
+   "tier": "단기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 6,
+   "status": "작성",
+   "page": "/issue/anthropic-ipo-priced-83-dollars-first-trade-1119/",
+   "registered": "2026-11-19",
+   "expires": "2026-11-23"
   },
   {
    "query": "코스피 5383.80 종가, 5.28% 내린 이유는? 사이드카 발동과 매체 분석 정리",

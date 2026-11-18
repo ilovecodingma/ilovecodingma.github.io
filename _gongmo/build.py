@@ -4139,6 +4139,16 @@ def class_pages():
         urls += ai_glasses.pages(page)
     except Exception as e:
         print('AI 안경 시리즈 허브 건너뜀', repr(e)[:100])
+    try:   # 2026-11-19 책 「가난한 박과장과 퇴근 후 나만의 팀 운영하기」 읽기 화면(/book/park/, 검색 제외)
+        import bookview
+        urls += bookview.pages(page, ROOT)
+    except Exception as e:
+        print('책 읽기 화면 건너뜀', repr(e)[:100])
+    try:   # 2026-11-19 개발 업무일지(/devlog/): 매일 밤 12시 세션별 하루 한 일을 그림으로 공개
+        import devlog
+        urls += devlog.pages(page, ROOT)
+    except Exception as e:
+        print('개발 업무일지 건너뜀', repr(e)[:100])
     try:   # 2026-11-12 하네스 과정(/class/harness/): 토큰을 넣으면 진도와 샘플이 나오는 학습 구역
         import harness_lms
         urls += harness_lms.pages(page)
