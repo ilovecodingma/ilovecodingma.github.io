@@ -9,7 +9,7 @@ import os
 HERE = os.path.dirname(os.path.abspath(__file__))
 E = html.escape
 FIRST = 'ai-cheating-buyers-seller-probe-1118'          # 1편
-RELATED = ['suneung-ai-cheating-measures-1117', 'leet-perfect-score-ai-allegation-1118']
+RELATED = ['suneung-ai-cheating-measures-1117', 'leet-perfect-score-ai-allegation-1118', 'suneung-pencil-only-black-pencil-rule-1118']
 
 
 def _load(slug):

@@ -21,7 +21,7 @@ AXES = [
     ('AI 반도체·GPU 공급망', '엔비디아, HBM, 삼성전자·SK하이닉스, 실적과 공급 이야기.',
      r'엔비디아|nvidia|젠슨 황|HBM|GPU|AMD|파운드리|TSMC|반도체|하이닉스'),
     ('시장과 자본시장', 'AI 기대와 우려가 주가·수급·기업 재편에 미친 영향.',
-     r'코스피|서킷브레이커|사이드카|외국인|AI 우려|AI 수익화|리밸런싱|삼성전자|SK그룹'),
+     r'상장|나스닥|공모가|IPO|코스피|서킷브레이커|사이드카|외국인|AI 우려|AI 수익화|리밸런싱|삼성전자|SK그룹'),
 ]
 INC = re.compile(r'엔비디아|nvidia|반도체|HBM|GPU|AI 반도체|AI 규제|AI 우려|AI 수익화|데이터센터|인공지능|오픈AI|openai|딥시크|TSMC|AMD|젠슨 황|파운드리|앤트로픽|anthropic|AI 일자리|AI 고용', re.I)
 EXC = re.compile(r'안경|부정행위|조류|고병원성|AI 목소리|세일|시그널|논술|노조')
@@ -35,7 +35,10 @@ def pages(page):
         except Exception:
             continue
         t = d.get('title', '') + ' ' + d.get('desc', '')
-        if not INC.search(t) or EXC.search(d.get('title', '')):
+        sl = d.get('slug', '')
+        if re.match(r'ai-glasses|ai-cheating', sl):   # AI 안경 시리즈는 /ai-glasses/ 몫
+            continue
+        if (not INC.search(t) and not re.match(r'(ai-|nvidia-|anthropic-|china-ai-|kospi-5000|samsung-skhynix)', sl)) or EXC.search(d.get('title', '')):   # 2026-11-19 마케터: AI·반도체 글은 slug 접두로도 모은다
             continue
         if not os.path.exists(os.path.join(os.path.dirname(HERE), 'issue', d.get('slug', ''), 'index.html')):   # 보관 기간이 지나 내려간 글은 링크하지 않는다
             continue
