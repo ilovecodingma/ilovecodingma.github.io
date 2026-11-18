@@ -1,42 +1,7 @@
 {
- "at": "2026-11-18 11:11",
- "nitems": 514,
+ "at": "2026-11-18 11:30",
+ "nitems": 515,
  "cands": [
-  {
-   "kw": "제니",
-   "nsrc": 6,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "세계일보",
-    "연합뉴스",
-    "조선일보",
-    "한겨레"
-   ],
-   "n": 15,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "제니, 美 빌보드 메인 싱글차트 3위…피원하모니, 앨범 4위 진입",
-     "link": "https://www.yna.co.kr/view/AKR20261118050600005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "'그래미 후보' 제니 '드라큘라', 美 빌보드 싱글 3위 유지",
-     "link": "https://www.yna.co.kr/view/AKR20261117038500005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "블핑 제니, 美 그래미 본상 '올해의 레코드' 포함 2개 부문 후보(종합)",
-     "link": "https://www.yna.co.kr/view/AKR20261116180251005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "제니, 美 그래미서 본상 '올해의 레코드' 포함 2개 부문 후보",
-     "link": "https://www.yna.co.kr/view/AKR20261116180200005"
-    }
-   ]
-  },
   {
    "kw": "후보",
    "nsrc": 6,
@@ -73,37 +38,72 @@
    ]
   },
   {
-   "kw": "그래미",
+   "kw": "고경표",
    "nsrc": 6,
    "srcs": [
     "SBS",
     "뉴시스",
-    "세계일보",
+    "동아일보",
     "연합뉴스",
     "조선일보",
     "한겨레"
    ],
-   "n": 14,
+   "n": 12,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "'그래미 후보' 제니 '드라큘라', 美 빌보드 싱글 3위 유지",
-     "link": "https://www.yna.co.kr/view/AKR20261117038500005"
+     "title": "'보검 매직컬2' 측 \"고경표 음주운전 유감…시청 불편 최소화\"",
+     "link": "https://www.yna.co.kr/view/AKR20261118043900005"
     },
     {
      "src": "연합뉴스",
-     "title": "英가수 레이, 그래미 11개 부문서 후보…과거 비욘세와 동률기록",
-     "link": "https://www.yna.co.kr/view/AKR20261117001000075"
+     "title": "'음주운전' 고경표, 팬미팅 취소…\"실망 안겨드리게 돼 사과\"",
+     "link": "https://www.yna.co.kr/view/AKR20261116175800005"
     },
     {
      "src": "연합뉴스",
-     "title": "블핑 제니, 美 그래미 본상 '올해의 레코드' 포함 2개 부문 후보(종합)",
-     "link": "https://www.yna.co.kr/view/AKR20261116180251005"
+     "title": "'음주운전' 고경표 \"전적으로 제 잘못…활동 중단\"",
+     "link": "https://www.yna.co.kr/view/AKR20261115044500005"
     },
     {
      "src": "연합뉴스",
-     "title": "[속보] 제니, '드라큘라'로 그래미 본상 '올해의 레코드' 후보 지명",
-     "link": "https://www.yna.co.kr/view/AKR20261116179800005"
+     "title": "고경표 음주운전, 방송가에 불똥…'놀뭐'·'식스센스' 등 편집",
+     "link": "https://www.yna.co.kr/view/AKR20261114032600005"
+    }
+   ]
+  },
+  {
+   "kw": "음주운전",
+   "nsrc": 6,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "동아일보",
+    "연합뉴스",
+    "조선일보",
+    "한겨레"
+   ],
+   "n": 11,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "'보검 매직컬2' 측 \"고경표 음주운전 유감…시청 불편 최소화\"",
+     "link": "https://www.yna.co.kr/view/AKR20261118043900005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "'음주운전' 고경표, 팬미팅 취소…\"실망 안겨드리게 돼 사과\"",
+     "link": "https://www.yna.co.kr/view/AKR20261116175800005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "'음주운전' 고경표 \"전적으로 제 잘못…활동 중단\"",
+     "link": "https://www.yna.co.kr/view/AKR20261115044500005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "고경표 음주운전, 방송가에 불똥…'놀뭐'·'식스센스' 등 편집",
+     "link": "https://www.yna.co.kr/view/AKR20261114032600005"
     }
    ]
   },
@@ -118,12 +118,17 @@
     "조선일보",
     "한국경제"
    ],
-   "n": 7,
+   "n": 8,
    "headlines": [
     {
      "src": "연합뉴스",
      "title": "이승철, 데뷔 40년 만에 공식 팬클럽 모집…\"오래 추억 쌓을 것\"",
      "link": "https://www.yna.co.kr/view/AKR20261113074400005"
+    },
+    {
+     "src": "동아일보",
+     "title": "김명민, 데뷔 30년 만에 첫 예능…뉴질랜드 이민 결심까지 (유퀴즈)",
+     "link": "https://sports.donga.com/ent/article/all/20261118/135045019/1"
     },
     {
      "src": "동아일보",
@@ -134,11 +139,6 @@
      "src": "한국경제",
      "title": "[단독] SM 신인 보이그룹, 내년 1월 데뷔",
      "link": "https://www.hankyung.com/article/202611169565H"
-    },
-    {
-     "src": "한국경제",
-     "title": "\"가정부와 불륜으로 낳은 아들\" 슈워제네거 혼외자, 보디빌더 데뷔",
-     "link": "https://www.hankyung.com/article/2026111086337"
     }
    ]
   },
@@ -178,36 +178,70 @@
    ]
   },
   {
-   "kw": "고경표",
+   "kw": "제니",
    "nsrc": 5,
    "srcs": [
     "SBS",
     "뉴시스",
-    "동아일보",
     "연합뉴스",
-    "조선일보"
+    "조선일보",
+    "한겨레"
    ],
-   "n": 12,
+   "n": 14,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "'보검 매직컬2' 측 \"고경표 음주운전 유감…시청 불편 최소화\"",
-     "link": "https://www.yna.co.kr/view/AKR20261118043900005"
+     "title": "제니, 美 빌보드 메인 싱글차트 3위…피원하모니, 앨범 4위 진입",
+     "link": "https://www.yna.co.kr/view/AKR20261118050600005"
     },
     {
      "src": "연합뉴스",
-     "title": "'음주운전' 고경표, 팬미팅 취소…\"실망 안겨드리게 돼 사과\"",
-     "link": "https://www.yna.co.kr/view/AKR20261116175800005"
+     "title": "'그래미 후보' 제니 '드라큘라', 美 빌보드 싱글 3위 유지",
+     "link": "https://www.yna.co.kr/view/AKR20261117038500005"
     },
     {
      "src": "연합뉴스",
-     "title": "'음주운전' 고경표 \"전적으로 제 잘못…활동 중단\"",
-     "link": "https://www.yna.co.kr/view/AKR20261115044500005"
+     "title": "블핑 제니, 美 그래미 본상 '올해의 레코드' 포함 2개 부문 후보(종합)",
+     "link": "https://www.yna.co.kr/view/AKR20261116180251005"
     },
     {
      "src": "연합뉴스",
-     "title": "고경표 음주운전, 방송가에 불똥…'놀뭐'·'식스센스' 등 편집",
-     "link": "https://www.yna.co.kr/view/AKR20261114032600005"
+     "title": "제니, 美 그래미서 본상 '올해의 레코드' 포함 2개 부문 후보",
+     "link": "https://www.yna.co.kr/view/AKR20261116180200005"
+    }
+   ]
+  },
+  {
+   "kw": "그래미",
+   "nsrc": 5,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "연합뉴스",
+    "조선일보",
+    "한겨레"
+   ],
+   "n": 13,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "'그래미 후보' 제니 '드라큘라', 美 빌보드 싱글 3위 유지",
+     "link": "https://www.yna.co.kr/view/AKR20261117038500005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "英가수 레이, 그래미 11개 부문서 후보…과거 비욘세와 동률기록",
+     "link": "https://www.yna.co.kr/view/AKR20261117001000075"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "블핑 제니, 美 그래미 본상 '올해의 레코드' 포함 2개 부문 후보(종합)",
+     "link": "https://www.yna.co.kr/view/AKR20261116180251005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "[속보] 제니, '드라큘라'로 그래미 본상 '올해의 레코드' 후보 지명",
+     "link": "https://www.yna.co.kr/view/AKR20261116179800005"
     }
    ]
   },
@@ -221,7 +255,7 @@
     "한국경제",
     "헤럴드경제"
    ],
-   "n": 11,
+   "n": 10,
    "headlines": [
     {
      "src": "한겨레",
@@ -242,40 +276,6 @@
      "src": "뉴시스",
      "title": "K-팝 아이돌, 올해도 수능 치르지 않는 이유",
      "link": "https://www.newsis.com/view/NISX20261118_0003872358"
-    }
-   ]
-  },
-  {
-   "kw": "음주운전",
-   "nsrc": 5,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "동아일보",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 10,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "'보검 매직컬2' 측 \"고경표 음주운전 유감…시청 불편 최소화\"",
-     "link": "https://www.yna.co.kr/view/AKR20261118043900005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "'음주운전' 고경표, 팬미팅 취소…\"실망 안겨드리게 돼 사과\"",
-     "link": "https://www.yna.co.kr/view/AKR20261116175800005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "'음주운전' 고경표 \"전적으로 제 잘못…활동 중단\"",
-     "link": "https://www.yna.co.kr/view/AKR20261115044500005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "고경표 음주운전, 방송가에 불똥…'놀뭐'·'식스센스' 등 편집",
-     "link": "https://www.yna.co.kr/view/AKR20261114032600005"
     }
    ]
   },
@@ -310,6 +310,40 @@
      "src": "헤럴드경제",
      "title": "김구라, 아들 그리 결혼설에 “아직 준비 안 됐다…중1한테 대입 준비 물어본 셈”",
      "link": "https://biz.heraldcorp.com/article/10939085"
+    }
+   ]
+  },
+  {
+   "kw": "공연",
+   "nsrc": 5,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "연합뉴스",
+    "조선일보",
+    "한국경제"
+   ],
+   "n": 7,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "일본 록밴드 아시안 쿵푸 제너레이션, 내년 5월 내한 공연",
+     "link": "https://www.yna.co.kr/view/AKR20261118087900005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "[가요소식] 헤일리 윌리엄스, 내년 3월 첫 내한 공연",
+     "link": "https://www.yna.co.kr/view/AKR20261117087700005"
+    },
+    {
+     "src": "동아일보",
+     "title": "일회성 방문 넘어 현지 팬덤 다지기…피프티피프티, 내년 1월 타이베이 공연",
+     "link": "https://sports.donga.com/ent/article/all/20261118/135043759/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "‘영웅시대’ 새 놀이터 된 극장…임영웅 공연 실황 영화 개봉",
+     "link": "https://sports.donga.com/ent/article/all/20261118/135043581/1"
     }
    ]
   },
@@ -382,40 +416,6 @@
    ]
   },
   {
-   "kw": "공식",
-   "nsrc": 5,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "연합뉴스",
-    "조선일보",
-    "한국경제"
-   ],
-   "n": 7,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "이승철, 데뷔 40년 만에 공식 팬클럽 모집…\"오래 추억 쌓을 것\"",
-     "link": "https://www.yna.co.kr/view/AKR20261113074400005"
-    },
-    {
-     "src": "동아일보",
-     "title": "[공식] 고경표 음주운전 불똥 튄 ‘보검 매직컬2’…“불편 최소화할 것”",
-     "link": "https://sports.donga.com/ent/article/all/20261118/135043917/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "[공식] 박훈, 현빈·유해진과 식구 됐다…VAST엔터테인먼트 전속계약",
-     "link": "https://sports.donga.com/ent/article/all/20261118/135043657/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "“톰 형도, 빵 형도 안 통하네”…할리우드 톱스타 흥행 공식 깨졌다",
-     "link": "https://sports.donga.com/ent/article/all/20261117/135039052/1"
-    }
-   ]
-  },
-  {
    "kw": "얼굴",
    "nsrc": 5,
    "srcs": [
@@ -446,6 +446,40 @@
      "src": "뉴시스",
      "title": "이광수, 팬들에 수백개 메시지 보내더니…얼굴 새긴 트로피 받았다",
      "link": "https://www.newsis.com/view/NISX20261118_0003872491"
+    }
+   ]
+  },
+  {
+   "kw": "리센느",
+   "nsrc": 5,
+   "srcs": [
+    "동아일보",
+    "연합뉴스",
+    "조선일보",
+    "한국경제",
+    "헤럴드경제"
+   ],
+   "n": 6,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "수능 대신 무대 오르는 08년생 아이돌들…코르티스·리센느 등",
+     "link": "https://www.yna.co.kr/view/AKR20261117153900005"
+    },
+    {
+     "src": "동아일보",
+     "title": "‘듄3’ 품은 엔하이픈·디즈니 손잡은 리센느…할리우드 대작 손잡고 세계관 확장",
+     "link": "https://sports.donga.com/ent/article/all/20261117/135040079/1"
+    },
+    {
+     "src": "한국경제",
+     "title": "리센느, 확신의 대세…초동 60만장·음방 1위·내년 콘서트",
+     "link": "https://www.hankyung.com/article/202611119221H"
+    },
+    {
+     "src": "한국경제",
+     "title": "리센느 \"'국민 걸그룹' 호칭 과분…'믿고 듣는 리센느' 수식어 붙길\"",
+     "link": "https://www.hankyung.com/article/202611032757H"
     }
    ]
   },
@@ -484,7 +518,7 @@
    ]
   },
   {
-   "kw": "공연",
+   "kw": "공식",
    "nsrc": 5,
    "srcs": [
     "뉴시스",
@@ -497,57 +531,23 @@
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "[가요소식] 헤일리 윌리엄스, 내년 3월 첫 내한 공연",
-     "link": "https://www.yna.co.kr/view/AKR20261117087700005"
+     "title": "이승철, 데뷔 40년 만에 공식 팬클럽 모집…\"오래 추억 쌓을 것\"",
+     "link": "https://www.yna.co.kr/view/AKR20261113074400005"
     },
     {
      "src": "동아일보",
-     "title": "일회성 방문 넘어 현지 팬덤 다지기…피프티피프티, 내년 1월 타이베이 공연",
-     "link": "https://sports.donga.com/ent/article/all/20261118/135043759/1"
+     "title": "[공식] 고경표 음주운전 불똥 튄 ‘보검 매직컬2’…“불편 최소화할 것”",
+     "link": "https://sports.donga.com/ent/article/all/20261118/135043917/1"
     },
     {
      "src": "동아일보",
-     "title": "‘영웅시대’ 새 놀이터 된 극장…임영웅 공연 실황 영화 개봉",
-     "link": "https://sports.donga.com/ent/article/all/20261118/135043581/1"
+     "title": "[공식] 박훈, 현빈·유해진과 식구 됐다…VAST엔터테인먼트 전속계약",
+     "link": "https://sports.donga.com/ent/article/all/20261118/135043657/1"
     },
     {
      "src": "한국경제",
-     "title": "이디오테잎, 홍대서 펼친 음악세계…단독 공연 통해 '15년 여정 집약'",
-     "link": "https://www.hankyung.com/article/202611160031H"
-    }
-   ]
-  },
-  {
-   "kw": "활동",
-   "nsrc": 5,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "연합뉴스",
-    "조선일보",
-    "한국경제"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "'음주운전' 고경표 \"전적으로 제 잘못…활동 중단\"",
-     "link": "https://www.yna.co.kr/view/AKR20261115044500005"
-    },
-    {
-     "src": "한국경제",
-     "title": "YG 전속계약 명단서 빠진 블랙핑크…\"그룹 활동 논의 중\"",
-     "link": "https://www.hankyung.com/article/202611169801H"
-    },
-    {
-     "src": "SBS",
-     "title": "'만취 음주운전' 고경표, 모든 활동 중단…방송가 '통편집·재편집' 초비상",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008847327&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "뉴시스",
-     "title": "에이티즈 우영 \"휴가 일주일에 7㎏ 찐다\"…활동 중엔 '1일 1식'",
-     "link": "https://www.newsis.com/view/NISX20261117_0003871214"
+     "title": "CL, 테디 손 잡았다…더블랙레이블 전속계약 [공식]",
+     "link": "https://www.hankyung.com/article/202611134339H"
     }
    ]
   },
@@ -586,36 +586,70 @@
    ]
   },
   {
-   "kw": "컴백",
+   "kw": "등장",
    "nsrc": 5,
    "srcs": [
+    "뉴시스",
     "동아일보",
     "세계일보",
-    "연합뉴스",
     "조선일보",
     "한국경제"
+   ],
+   "n": 6,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "트와이스 나연, 날개 달고 등장…‘BABY ANGEL’ MV 티저 공개",
+     "link": "https://sports.donga.com/ent/article/all/20261118/135043561/1"
+    },
+    {
+     "src": "한국경제",
+     "title": "'재혼황후' 이종석, 국내 최초 새 연기 \"제가 좀 새 상…사람으로 변할 때 나체로 등장\"",
+     "link": "https://www.hankyung.com/article/202611032589H"
+    },
+    {
+     "src": "세계일보",
+     "title": "[포토] 트와이스 사나 '눈부신 등장'",
+     "link": "https://www.segye.com/newsView/20261118507925"
+    },
+    {
+     "src": "뉴시스",
+     "title": "\"여성들 태운 흰색 버스 등장\"…디카프리오 생일 파티 '시끌'",
+     "link": "https://www.newsis.com/view/NISX20261117_0003871048"
+    }
+   ]
+  },
+  {
+   "kw": "불편",
+   "nsrc": 5,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "연합뉴스",
+    "조선일보",
+    "한겨레"
    ],
    "n": 5,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "씨엘, 20일 신곡 '아이코닉'…더블랙 이적 후 첫 컴백",
-     "link": "https://www.yna.co.kr/view/AKR20261117107200005"
+     "title": "'보검 매직컬2' 측 \"고경표 음주운전 유감…시청 불편 최소화\"",
+     "link": "https://www.yna.co.kr/view/AKR20261118043900005"
     },
     {
      "src": "동아일보",
-     "title": "키스오브라이프, 25일 신곡 ‘Greedy’로 데뷔 첫 겨울 컴백",
-     "link": "https://sports.donga.com/ent/article/all/20261118/135043512/1"
+     "title": "[공식] 고경표 음주운전 불똥 튄 ‘보검 매직컬2’…“불편 최소화할 것”",
+     "link": "https://sports.donga.com/ent/article/all/20261118/135043917/1"
     },
     {
-     "src": "한국경제",
-     "title": "'컴백' NCT 드림, 이름값 제대로…음반·음원 차트 1위",
-     "link": "https://www.hankyung.com/article/202611106884H"
+     "src": "한겨레",
+     "title": "고경표 음주운전에 ‘보검 매직컬2’ 제작진 “시청자 불편 최소화”",
+     "link": "https://www.hani.co.kr/arti/culture/culture_general/1287884.html"
     },
     {
-     "src": "세계일보",
-     "title": "[포토] 앰퍼샌드원 '화려한 컴백 무대'",
-     "link": "https://www.segye.com/newsView/20261117512534"
+     "src": "뉴시스",
+     "title": "'보검매직컬2' 측 \"고경표 음주운전 당혹·유감…불편 최소화\"",
+     "link": "https://www.newsis.com/view/NISX20261118_0003872758"
     }
    ]
   },
@@ -654,36 +688,36 @@
    ]
   },
   {
-   "kw": "까지",
+   "kw": "활동",
    "nsrc": 5,
    "srcs": [
+    "SBS",
     "뉴시스",
-    "동아일보",
-    "세계일보",
+    "연합뉴스",
     "조선일보",
     "한국경제"
    ],
    "n": 5,
    "headlines": [
     {
-     "src": "동아일보",
-     "title": "영케이, 이적 ‘놀토’ 로고송 교체했다…‘라스’까지 도전",
-     "link": "https://sports.donga.com/ent/article/all/20261118/135044437/1"
+     "src": "연합뉴스",
+     "title": "'음주운전' 고경표 \"전적으로 제 잘못…활동 중단\"",
+     "link": "https://www.yna.co.kr/view/AKR20261115044500005"
     },
     {
      "src": "한국경제",
-     "title": "제로베이스원 EMP, 대학축제에 음악방송까지…신나게 '런'",
-     "link": "https://www.hankyung.com/article/202611095916H"
+     "title": "YG 전속계약 명단서 빠진 블랙핑크…\"그룹 활동 논의 중\"",
+     "link": "https://www.hankyung.com/article/202611169801H"
     },
     {
-     "src": "세계일보",
-     "title": "이민정, 미국 저택 주방 공개…대형 가스레인지부터 고급스러운 인테리어까지",
-     "link": "https://www.segye.com/newsView/20261118502794"
+     "src": "SBS",
+     "title": "'만취 음주운전' 고경표, 모든 활동 중단…방송가 '통편집·재편집' 초비상",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008847327&plink=RSSLINK&cooper=RSSREADER"
     },
     {
      "src": "뉴시스",
-     "title": "고지용 \"건강 악화로 63㎏까지 빠져…술에 의존해\"",
-     "link": "https://www.newsis.com/view/NISX20261116_0003870556"
+     "title": "에이티즈 우영 \"휴가 일주일에 7㎏ 찐다\"…활동 중엔 '1일 1식'",
+     "link": "https://www.newsis.com/view/NISX20261117_0003871214"
     }
    ]
   },
@@ -696,8 +730,13 @@
     "연합뉴스",
     "한국경제"
    ],
-   "n": 11,
+   "n": 12,
    "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "일본 록밴드 아시안 쿵푸 제너레이션, 내년 5월 내한 공연",
+     "link": "https://www.yna.co.kr/view/AKR20261118087900005"
+    },
     {
      "src": "연합뉴스",
      "title": "교향악으로 듣는 '진격의 거인'…내년 3월 '오케스트라 콘서트'",
@@ -712,11 +751,6 @@
      "src": "연합뉴스",
      "title": "넷플릭스, 케데헌 월드투어 내년 6월 개막…50개 도시 대형공연",
      "link": "https://www.yna.co.kr/view/AKR20261115004600091"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "[가요소식] 엑소 카이·세훈, 내년 팬콘 투어 '사일런트 시티'",
-     "link": "https://www.yna.co.kr/view/AKR20261113114200005"
     }
    ]
   },
@@ -750,6 +784,39 @@
      "src": "동아일보",
      "title": "캐럴 공세 뚫고 3주 연속 역주행…아일릿 ‘체포하겠어’ 빌보드 차트 성과",
      "link": "https://sports.donga.com/ent/article/all/20261118/135043467/1"
+    }
+   ]
+  },
+  {
+   "kw": "수능",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "연합뉴스",
+    "조선일보"
+   ],
+   "n": 7,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "수능 대신 무대 오르는 08년생 아이돌들…코르티스·리센느 등",
+     "link": "https://www.yna.co.kr/view/AKR20261117153900005"
+    },
+    {
+     "src": "동아일보",
+     "title": "‘뇌과학자’ 정재승, AI 안경 부정행위에 수능 비상…새 시험 방식 제안",
+     "link": "https://sports.donga.com/ent/article/all/20261118/135044707/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "“힘든 시간 버틴 여러분 응원”…엔하이픈, 2027학년도 수능 격려 메시지",
+     "link": "https://sports.donga.com/ent/article/all/20261118/135043713/1"
+    },
+    {
+     "src": "뉴시스",
+     "title": "K-팝 아이돌, 올해도 수능 치르지 않는 이유",
+     "link": "https://www.newsis.com/view/NISX20261118_0003872358"
     }
    ]
   },
@@ -853,39 +920,6 @@
    ]
   },
   {
-   "kw": "드라큘라",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "세계일보",
-    "연합뉴스"
-   ],
-   "n": 7,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "'그래미 후보' 제니 '드라큘라', 美 빌보드 싱글 3위 유지",
-     "link": "https://www.yna.co.kr/view/AKR20261117038500005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "[속보] 제니, '드라큘라'로 그래미 본상 '올해의 레코드' 후보 지명",
-     "link": "https://www.yna.co.kr/view/AKR20261116179800005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "[속보] 제니, '드라큘라'로 그래미 '베스트 팝 듀오/그룹' 후보",
-     "link": "https://www.yna.co.kr/view/AKR20261116179300005"
-    },
-    {
-     "src": "세계일보",
-     "title": "‘드라큘라’ 역주행 히트 제니, 그래미 받는거니",
-     "link": "https://www.segye.com/newsView/20261117514068"
-    }
-   ]
-  },
-  {
    "kw": "음악",
    "nsrc": 4,
    "srcs": [
@@ -919,68 +953,35 @@
    ]
   },
   {
-   "kw": "결혼",
+   "kw": "장나라",
    "nsrc": 4,
    "srcs": [
+    "SBS",
     "뉴시스",
-    "동아일보",
-    "연합뉴스",
+    "세계일보",
     "조선일보"
    ],
    "n": 7,
    "headlines": [
     {
-     "src": "연합뉴스",
-     "title": "주진모·민혜연 부부, 결혼 7년 만에 부모 된다…\"임신 초기\"",
-     "link": "https://www.yna.co.kr/view/AKR20261114036000005"
+     "src": "세계일보",
+     "title": "장나라, 6세 연하 남편에게 먼저 고백…“거절하면 어쩔 수 없는 거고”",
+     "link": "https://www.segye.com/newsView/20261118502732"
     },
     {
-     "src": "동아일보",
-     "title": "박세미, 제롬 앞에서 결혼 비밀 고백…“공개 연애 싫었다”",
-     "link": "https://sports.donga.com/ent/article/all/20261118/135043638/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "정만식 “결혼 잘한 걸로 0.01% 들어”…♥린다전 내조에 장항준도 감탄 (거장항준)",
-     "link": "https://sports.donga.com/ent/article/all/20261118/135043575/1"
+     "src": "SBS",
+     "title": "\"연기 차력쇼 보는 기분\"…'굿파트너2' 장나라X김혜윤X박해진X표지훈, 완벽 호흡 예고",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008850058&plink=RSSLINK&cooper=RSSREADER"
     },
     {
      "src": "뉴시스",
-     "title": "결혼 앞둔 솔비, 이규한에 \"꿈 이뤄줘서 고마워\"…무슨 일?",
-     "link": "https://www.newsis.com/view/NISX20261117_0003871395"
-    }
-   ]
-  },
-  {
-   "kw": "수능",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "수능 대신 무대 오르는 08년생 아이돌들…코르티스·리센느 등",
-     "link": "https://www.yna.co.kr/view/AKR20261117153900005"
-    },
-    {
-     "src": "동아일보",
-     "title": "‘뇌과학자’ 정재승, AI 안경 부정행위에 수능 비상…새 시험 방식 제안",
-     "link": "https://sports.donga.com/ent/article/all/20261118/135044707/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "“힘든 시간 버틴 여러분 응원”…엔하이픈, 2027학년도 수능 격려 메시지",
-     "link": "https://sports.donga.com/ent/article/all/20261118/135043713/1"
+     "title": "\"상간녀만 5명, 월화수목금 느낌\"…장나라, 불륜 사례에 경악",
+     "link": "https://www.newsis.com/view/NISX20261118_0003872903"
     },
     {
      "src": "뉴시스",
-     "title": "K-팝 아이돌, 올해도 수능 치르지 않는 이유",
-     "link": "https://www.newsis.com/view/NISX20261118_0003872358"
+     "title": "남편에 먼저 고백한 장나라 \"연애 오래 안 해 용기 냈다\"",
+     "link": "https://www.newsis.com/view/NISX20261117_0003872260"
     }
    ]
   },
@@ -1084,35 +1085,35 @@
    ]
   },
   {
-   "kw": "장나라",
+   "kw": "결혼",
    "nsrc": 4,
    "srcs": [
-    "SBS",
     "뉴시스",
-    "세계일보",
+    "동아일보",
+    "연합뉴스",
     "조선일보"
    ],
    "n": 6,
    "headlines": [
     {
-     "src": "세계일보",
-     "title": "장나라, 6세 연하 남편에게 먼저 고백…“거절하면 어쩔 수 없는 거고”",
-     "link": "https://www.segye.com/newsView/20261118502732"
+     "src": "연합뉴스",
+     "title": "주진모·민혜연 부부, 결혼 7년 만에 부모 된다…\"임신 초기\"",
+     "link": "https://www.yna.co.kr/view/AKR20261114036000005"
     },
     {
-     "src": "SBS",
-     "title": "\"연기 차력쇼 보는 기분\"…'굿파트너2' 장나라X김혜윤X박해진X표지훈, 완벽 호흡 예고",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008850058&plink=RSSLINK&cooper=RSSREADER"
+     "src": "동아일보",
+     "title": "박세미, 제롬 앞에서 결혼 비밀 고백…“공개 연애 싫었다”",
+     "link": "https://sports.donga.com/ent/article/all/20261118/135043638/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "정만식 “결혼 잘한 걸로 0.01% 들어”…♥린다전 내조에 장항준도 감탄 (거장항준)",
+     "link": "https://sports.donga.com/ent/article/all/20261118/135043575/1"
     },
     {
      "src": "뉴시스",
-     "title": "남편에 먼저 고백한 장나라 \"연애 오래 안 해 용기 냈다\"",
-     "link": "https://www.newsis.com/view/NISX20261117_0003872260"
-    },
-    {
-     "src": "조선일보",
-     "title": "\"나 시집가겠는데?\"...장나라, 6살 연하남에 결혼 직감한 순간 (살롱드립)",
-     "link": "https://www.chosun.com/entertainments/enter_general/2026/11/18/HEZTOMRRGM2DCZLEGM3GCZTGGE/"
+     "title": "결혼 앞둔 솔비, 이규한에 \"꿈 이뤄줘서 고마워\"…무슨 일?",
+     "link": "https://www.newsis.com/view/NISX20261117_0003871395"
     }
    ]
   },
@@ -1150,35 +1151,68 @@
    ]
   },
   {
-   "kw": "리센느",
+   "kw": "보검",
    "nsrc": 4,
    "srcs": [
     "동아일보",
     "연합뉴스",
-    "한국경제",
-    "헤럴드경제"
+    "조선일보",
+    "한겨레"
    ],
    "n": 5,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "수능 대신 무대 오르는 08년생 아이돌들…코르티스·리센느 등",
-     "link": "https://www.yna.co.kr/view/AKR20261117153900005"
+     "title": "'보검 매직컬2' 측 \"고경표 음주운전 유감…시청 불편 최소화\"",
+     "link": "https://www.yna.co.kr/view/AKR20261118043900005"
     },
     {
      "src": "동아일보",
-     "title": "‘듄3’ 품은 엔하이픈·디즈니 손잡은 리센느…할리우드 대작 손잡고 세계관 확장",
-     "link": "https://sports.donga.com/ent/article/all/20261117/135040079/1"
+     "title": "[공식] 고경표 음주운전 불똥 튄 ‘보검 매직컬2’…“불편 최소화할 것”",
+     "link": "https://sports.donga.com/ent/article/all/20261118/135043917/1"
     },
     {
-     "src": "한국경제",
-     "title": "리센느, 확신의 대세…초동 60만장·음방 1위·내년 콘서트",
-     "link": "https://www.hankyung.com/article/202611119221H"
+     "src": "한겨레",
+     "title": "고경표 음주운전에 ‘보검 매직컬2’ 제작진 “시청자 불편 최소화”",
+     "link": "https://www.hani.co.kr/arti/culture/culture_general/1287884.html"
     },
     {
-     "src": "한국경제",
-     "title": "리센느 \"'국민 걸그룹' 호칭 과분…'믿고 듣는 리센느' 수식어 붙길\"",
-     "link": "https://www.hankyung.com/article/202611032757H"
+     "src": "조선일보",
+     "title": "박보검, 미용사 자격증까지 땄는데…고경표 사고에 '보검 매직컬2' 편집 피해",
+     "link": "https://www.chosun.com/entertainments/enter_general/2026/11/18/GVSDANBZMRTGEOBUME2DEZLBMM/"
+    }
+   ]
+  },
+  {
+   "kw": "매직컬",
+   "nsrc": 4,
+   "srcs": [
+    "동아일보",
+    "연합뉴스",
+    "조선일보",
+    "한겨레"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "'보검 매직컬2' 측 \"고경표 음주운전 유감…시청 불편 최소화\"",
+     "link": "https://www.yna.co.kr/view/AKR20261118043900005"
+    },
+    {
+     "src": "동아일보",
+     "title": "[공식] 고경표 음주운전 불똥 튄 ‘보검 매직컬2’…“불편 최소화할 것”",
+     "link": "https://sports.donga.com/ent/article/all/20261118/135043917/1"
+    },
+    {
+     "src": "한겨레",
+     "title": "고경표 음주운전에 ‘보검 매직컬2’ 제작진 “시청자 불편 최소화”",
+     "link": "https://www.hani.co.kr/arti/culture/culture_general/1287884.html"
+    },
+    {
+     "src": "조선일보",
+     "title": "박보검, 미용사 자격증까지 땄는데…고경표 사고에 '보검 매직컬2' 편집 피해",
+     "link": "https://www.chosun.com/entertainments/enter_general/2026/11/18/GVSDANBZMRTGEOBUME2DEZLBMM/"
     }
    ]
   },
@@ -1311,39 +1345,6 @@
      "src": "뉴시스",
      "title": "이적, 국민 축가 '다행이다' 은퇴 선언…이달 말이 마지막",
      "link": "https://www.newsis.com/view/NISX20261117_0003872138"
-    }
-   ]
-  },
-  {
-   "kw": "사랑",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "연합뉴스",
-    "한겨레"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "가요계는 '멸종위기사랑'?…쌀쌀한 가을인데 러브송 찾기 어렵네",
-     "link": "https://www.yna.co.kr/view/AKR20261113122100005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "제이슨 므라즈, 돌아온 '사랑 전도사'…\"오늘이 가장 젊은 날\"",
-     "link": "https://www.yna.co.kr/view/AKR20261114048900005"
-    },
-    {
-     "src": "동아일보",
-     "title": "수지, 끝난 사랑 앞에 흔들리는 얼굴…‘실조찬’ 캐릭터 4종 공개",
-     "link": "https://sports.donga.com/ent/article/all/20261118/135043479/1"
-    },
-    {
-     "src": "한겨레",
-     "title": "‘가능한 사랑’이 깨워낸 R.ef ‘이별공식’…“90년대 음악엔 정서가 있어”",
-     "link": "https://www.hani.co.kr/arti/culture/culture_general/1287540.html"
     }
    ]
   }
