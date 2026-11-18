@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-18 19:00",
+ "updated": "2026-11-18 20:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -264,6 +264,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-05",
+   "expires": "2026-11-21"
+  },
+  {
+   "query": "솔비",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 10000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-18",
    "expires": "2026-11-21"
   },
   {
@@ -1731,6 +1743,18 @@
    "expires": "2026-11-21"
   },
   {
+   "query": "네이버 뉴스",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-18",
+   "expires": "2026-11-21"
+  },
+  {
    "query": "신의 구슬",
    "tier": "단기",
    "signal": [
@@ -1908,6 +1932,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-17",
+   "expires": "2026-11-21"
+  },
+  {
+   "query": "치매",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-06",
    "expires": "2026-11-21"
   },
   {
@@ -2559,18 +2595,6 @@
    "expires": "2026-11-21"
   },
   {
-   "query": "치매",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 2000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-06",
-   "expires": "2026-11-21"
-  },
-  {
    "query": "삼전주가",
    "tier": "단기",
    "signal": [
@@ -3052,6 +3076,18 @@
   },
   {
    "query": "nh농협은행",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-18",
+   "expires": "2026-11-21"
+  },
+  {
+   "query": "한한령",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -5595,18 +5631,6 @@
    "expires": "2026-11-21"
   },
   {
-   "query": "네이버 뉴스",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 1000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-18",
-   "expires": "2026-11-21"
-  },
-  {
    "query": "코스피 5383.80 종가, 5.28% 내린 이유는? 사이드카 발동과 매체 분석 정리",
    "tier": "단기",
    "signal": [
@@ -5631,6 +5655,19 @@
    "page": "/issue/suneung-day-public-measures-1117/",
    "registered": "2026-11-17",
    "expires": "2026-11-21"
+  },
+  {
+   "query": "수능 흑색 연필만 허용 무슨 뜻? 사인펜 수정테이프 지우개 샤프심 시험장 지급, 지우개 달린 연필 되나",
+   "tier": "단기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 6,
+   "status": "작성",
+   "page": "/issue/suneung-pencil-only-black-pencil-rule-1118/",
+   "registered": "2026-11-18",
+   "expires": "2026-11-22"
   },
   {
    "query": "AI 컨닝 장비 구매자도 처벌받나요? 경찰 TF 수사 대상과 판매업자 협박 보도 정리",
