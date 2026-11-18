@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-18 13:00",
+ "updated": "2026-11-18 14:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -63,18 +63,6 @@
    "expires": "2026-11-21"
   },
   {
-   "query": "sk하이닉스",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 20000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-08",
-   "expires": "2026-11-21"
-  },
-  {
    "query": "삼전닉스",
    "tier": "단기",
    "signal": [
@@ -84,6 +72,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-09",
+   "expires": "2026-11-21"
+  },
+  {
+   "query": "sk하이닉스",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 20000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-08",
    "expires": "2026-11-21"
   },
   {
@@ -567,6 +567,18 @@
    "expires": "2026-11-21"
   },
   {
+   "query": "한화 이글스",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 5000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-05",
+   "expires": "2026-11-21"
+  },
+  {
    "query": "복권",
    "tier": "단기",
    "signal": [
@@ -612,6 +624,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-03",
+   "expires": "2026-11-21"
+  },
+  {
+   "query": "혈당",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 5000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-07",
    "expires": "2026-11-21"
   },
   {
@@ -1323,18 +1347,6 @@
    "expires": "2026-11-21"
   },
   {
-   "query": "한화 이글스",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 2000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-05",
-   "expires": "2026-11-21"
-  },
-  {
    "query": "두산에너빌리티",
    "tier": "단기",
    "signal": [
@@ -1479,18 +1491,6 @@
    "expires": "2026-11-21"
   },
   {
-   "query": "혈당",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 2000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-07",
-   "expires": "2026-11-21"
-  },
-  {
    "query": "고지용",
    "tier": "단기",
    "signal": [
@@ -1632,6 +1632,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-12",
+   "expires": "2026-11-21"
+  },
+  {
+   "query": "국제 a매치",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-13",
    "expires": "2026-11-21"
   },
   {
@@ -2200,18 +2212,6 @@
   },
   {
    "query": "천위페이",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 2000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-13",
-   "expires": "2026-11-21"
-  },
-  {
-   "query": "국제 a매치",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -2992,6 +2992,18 @@
   },
   {
    "query": "배당",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-18",
+   "expires": "2026-11-21"
+  },
+  {
+   "query": "수능 샤프심",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -4515,6 +4527,18 @@
    "expires": "2026-11-21"
   },
   {
+   "query": "음료",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-18",
+   "expires": "2026-11-21"
+  },
+  {
    "query": "오산대",
    "tier": "단기",
    "signal": [
@@ -5499,6 +5523,18 @@
    "expires": "2026-11-21"
   },
   {
+   "query": "10억",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-18",
+   "expires": "2026-11-21"
+  },
+  {
    "query": "코스피 5383.80 종가, 5.28% 내린 이유는? 사이드카 발동과 매체 분석 정리",
    "tier": "단기",
    "signal": [
@@ -5588,6 +5624,19 @@
    "page": "/issue/gyeonggi-transfer-discount-budget-8months-1117/",
    "registered": "2026-11-17",
    "expires": "2026-11-21"
+  },
+  {
+   "query": "리트 만점자 AI 사용 의혹, 법학전문대학원협의회 입장과 본인 해명 정리",
+   "tier": "단기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 4,
+   "status": "작성",
+   "page": "/issue/leet-perfect-score-ai-allegation-1118/",
+   "registered": "2026-11-18",
+   "expires": "2026-11-22"
   },
   {
    "query": "청년 문화지원금 언제부터? 대상·금액·신청 방법 정리",
@@ -13627,6 +13676,19 @@
    "page": "/issue/insurance-rates-2027-1104/",
    "registered": "2026-11-04",
    "expires": "2026-12-04"
+  },
+  {
+   "query": "잠실래미안아이파크 무순위 줍줍 3가구 신청일 공급가 자격 정리",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 4,
+   "status": "작성",
+   "page": "/issue/jamsil-raemian-ipark-jupjup-3units-1118/",
+   "registered": "2026-11-18",
+   "expires": "2026-11-25"
   },
   {
    "query": "로또 1249회 당첨번호 2·11·16·25·34·35, 1등 14명 당첨금과 지급 방법",
