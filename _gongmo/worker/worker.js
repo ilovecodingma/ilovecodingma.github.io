@@ -580,6 +580,15 @@ export default {
           .bind(d, now(), vid, u ? u.id : 0, clean(body.p, 120), clean(ref, 60), clean(cf.country || '', 4), clean(cf.city || '', 40), /Mobi|Android|iPhone/i.test(ua) ? 1 : 0, camp, uab + '|' + uos, asn, org, dc)];
         if (pg) q.push(env.DB.prepare("INSERT INTO page_stats (page, title, views, updated) VALUES (?, ?, 1, ?) ON CONFLICT(page) DO UPDATE SET views = views + 1, updated = excluded.updated, title = CASE WHEN page_stats.title = '' THEN excluded.title ELSE page_stats.title END")
           .bind(pg, clean(body.t, 90), now()));
+        // 2026-11-19 마케터 요청: 검색엔진 리퍼러에 검색어가 오는지/어떤 말인지 (day, 엔진, 검색어, 도착 주소) 요약만 저장. 검색어가 안 붙어 오면 q='' 칸으로 센다
+        try {
+          const rh = body.r ? new URL(body.r) : null, hn = rh ? rh.hostname : '';
+          const en = /daum\.net$/.test(hn) ? 'daum' : /bing\.com$/.test(hn) ? 'bing' : /naver\.com$/.test(hn) ? 'naver' : /google\./.test(hn) ? 'google' : /zum\.com$/.test(hn) ? 'zum' : '';
+          if (en) {
+            const qs = rh.searchParams, qq = (qs.get('q') || qs.get('query') || qs.get('wd') || '').replace(/\s+/g, ' ').trim().slice(0, 60);
+            q.push(env.DB.prepare('INSERT INTO ref_q (day, eng, q, path, n) VALUES (?, ?, ?, ?, 1) ON CONFLICT(day, eng, q, path) DO UPDATE SET n = n + 1').bind(d, en, qq, clean(body.p, 120)));
+          }
+        } catch {}
         const br = await env.DB.batch(q);
         const hid = br && br[0] && br[0].meta ? br[0].meta.last_row_id : 0;
         return json(req, { ok: 1, id: hid || 0 });

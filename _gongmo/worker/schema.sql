@@ -224,3 +224,6 @@ CREATE INDEX IF NOT EXISTS watch_votes_k ON watch_votes(kind, id);
 
 -- 2026-11-02 일별 유입 경로: 그날 처음 들어온 방문자의 (채널 × 첫 페이지) 방문자 수. 원본 hits 가 아니라 요약이라 읽기 부담이 작다
 CREATE TABLE IF NOT EXISTS hit_daily (day TEXT NOT NULL, ch TEXT NOT NULL, path TEXT NOT NULL, v INTEGER NOT NULL DEFAULT 0, PRIMARY KEY (day, ch, path));
+
+-- 2026-11-19 검색엔진 유입 검색어 요약(리퍼러에 검색어가 붙어 올 때만 q 가 채워진다, 안 붙으면 q='')
+CREATE TABLE IF NOT EXISTS ref_q (day TEXT NOT NULL, eng TEXT NOT NULL, q TEXT NOT NULL DEFAULT '', path TEXT NOT NULL, n INTEGER NOT NULL DEFAULT 0, PRIMARY KEY (day, eng, q, path));

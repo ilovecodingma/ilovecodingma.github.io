@@ -20,6 +20,10 @@ HOSTS_A = ['/', '/money/guide/', '/guide/', '/issue/', '/contest/', '/money/guid
            '/issue/suneung-day-checklist-1104/', '/issue/insurance-rates-2027-1104/']
 AREA_HUBS = {'/lab/': '/lab/', '/issue/': '/issue/', '/analyst/': '/analyst/', '/money/': '/money/guide/', '/hot/': '/hot/', '/pick/': '/pick/', '/fridge/': '/fridge/', '/ssul/': '/ssul/'}
 MARK = re.compile(r'<!--pl-->.*?<!--/pl-->', re.S)
+HOTM = re.compile(r'<!--plh-->.*?<!--/plh-->', re.S)
+HOT = [('/issue/suneung-2027-grade-cut-difficulty-answers-1119/', '2027 수능 등급컷·난이도·정답 (표 저녁 갱신)')]   # 마케터 요청 11/19: 오늘 저녁 수능 등급컷 검색. 글이 없으면 아무것도 끼우지 않는다
+HOT_TOP = ['/', '/issue/']
+HOT_HOSTS = ['/money/guide/suneung-2027-timetable/', '/money/guide/suneung-2027-gachaejeom-after-exam/', '/money/guide/suneung-2027-score-release-date-check/', '/money/guide/suneung-2027-objection-answer/', '/issue/suneung-day-checklist-1104/']
 CSS = '<style>.pl{margin:28px 0;padding:14px 16px;border:1px solid #e2e8f0;border-radius:10px}.pl h2{font-size:18px;margin:0 0 8px}.pl ul{margin:0;padding-left:18px}.pl li{margin:4px 0;line-height:1.6}</style>'
 
 
@@ -54,6 +58,42 @@ def _inject(u, block):
             open(p, 'w', encoding='utf-8', newline='\n').write(h)
             return True
     return False
+
+
+def _inject_hot(u, block, top):
+    p = _f(u)
+    if not os.path.exists(p):
+        return False
+    h = HOTM.sub('', open(p, encoding='utf-8').read())
+    b = '<!--plh-->' + block + '<!--/plh-->'
+    if top and '</h1>' in h:
+        h = h.replace('</h1>', '</h1>' + b, 1)
+    else:
+        for tag in ('</main>', '<footer', '</body>'):
+            if tag in h:
+                h = h.replace(tag, b + tag, 1)
+                break
+        else:
+            return False
+    open(p, 'w', encoding='utf-8', newline=chr(10)).write(h)
+    return True
+
+
+def hot(urls):
+    live = [(u, t) for u, t in HOT if os.path.exists(_f(u))]
+    n = 0
+    for u in HOT_TOP + HOT_HOSTS:
+        p = _f(u)
+        if not os.path.exists(p):
+            continue
+        if not live:
+            h = open(p, encoding='utf-8').read()
+            if '<!--plh-->' in h:
+                open(p, 'w', encoding='utf-8', newline=chr(10)).write(HOTM.sub('', h))
+            continue
+        blk = '<p class="plh" style="margin:12px 0;padding:12px 14px;border:2px solid #dc2626;border-radius:10px;font-weight:700">🔥 ' + ' · '.join(f'<a href="{E(a)}">{E(t)}</a>' for a, t in live) + '</p>'
+        n += _inject_hot(u, blk, u in HOT_TOP)
+    return n
 
 
 def fix_ld(urls):
@@ -97,7 +137,7 @@ def run(urls, page):
     for u in sm:
         if u == '/more/':
             continue   # 모음 페이지의 링크는 세지 않는다(세면 다음 빌드에서 목록이 비어 오락가락한다)
-        h = MARK.sub('', _read(u))
+        h = HOTM.sub('', MARK.sub('', _read(u)))
         for m in set(re.findall(r'href="(/[^"#?]*)', h)):
             m = up.unquote(m)
             if not m.endswith('/') and '.' not in m.rsplit('/', 1)[-1]:
@@ -130,4 +170,4 @@ def run(urls, page):
             continue
         blk = ('<section class="pl"><h2>이 분야의 다른 글</h2><ul>' + ''.join(f'<li><a href="{E(u)}">{E(_title(u) or u)}</a></li>' for u in lst[:60]) + '</ul></section>' + CSS)
         nB += _inject(hub, blk)
-    return dict(ld_fixed=fix_ld(urls), low=len(low), hosts_a=nA, hubs_b=nB, by={k: len(v) for k, v in by.items()}), low
+    return dict(hot=hot(urls), ld_fixed=fix_ld(urls), low=len(low), hosts_a=nA, hubs_b=nB, by={k: len(v) for k, v in by.items()}), low

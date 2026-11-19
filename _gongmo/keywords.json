@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-19 12:00",
+ "updated": "2026-11-19 13:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -11400,19 +11400,6 @@
    "expires": ""
   },
   {
-   "query": "2027년 기초연금",
-   "tier": "장기",
-   "signal": [
-    "지식iN",
-    "자동완성"
-   ],
-   "score": 0,
-   "status": "작성",
-   "page": "/money/guide/basic-pension-2027-increase-announce/",
-   "registered": "2026-11-05",
-   "expires": ""
-  },
-  {
    "query": "2027년 부모급여·아동수당",
    "tier": "장기",
    "signal": [
@@ -13774,7 +13761,7 @@
    ],
    "score": 0,
    "status": "작성",
-   "page": "",
+   "page": "/money/guide/care-worker-2027-exam-schedule/",
    "registered": "2026-11-19",
    "expires": ""
   },
@@ -13787,7 +13774,85 @@
    ],
    "score": 0,
    "status": "작성",
-   "page": "",
+   "page": "/money/guide/doctor-pharmacist-national-exam-2027-schedule/",
+   "registered": "2026-11-19",
+   "expires": ""
+  },
+  {
+   "query": "2027 공인중개사 시험일정",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/licensed-realtor-2027-exam-schedule/",
+   "registered": "2026-11-19",
+   "expires": ""
+  },
+  {
+   "query": "2027 건강보험·국민연금 상한액·하한액 표",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/health-insurance-nps-premium-cap-floor-2027-table/",
+   "registered": "2026-11-19",
+   "expires": ""
+  },
+  {
+   "query": "2027 공무원 봉급표 직종별",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/civil-servant-pay-2027-salary-table-all-occupations/",
+   "registered": "2026-11-19",
+   "expires": ""
+  },
+  {
+   "query": "2027년 기초연금",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/basic-pension-2027-increase-announce/",
+   "registered": "2026-11-05",
+   "expires": ""
+  },
+  {
+   "query": "2026귀속 연말정산 제출 달력",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/year-end-tax-2026-company-submission-calendar/",
+   "registered": "2026-11-19",
+   "expires": ""
+  },
+  {
+   "query": "2027 정시 합격자 발표일 표",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/jeongsi-2027-result-announcement-dates-by-university/",
    "registered": "2026-11-19",
    "expires": ""
   },
