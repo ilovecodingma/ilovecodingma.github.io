@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-19 13:00",
+ "updated": "2026-11-19 14:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -411,6 +411,18 @@
    "expires": "2026-11-22"
   },
   {
+   "query": "시즌2",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 10000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-19",
+   "expires": "2026-11-22"
+  },
+  {
    "query": "비야 디",
    "tier": "단기",
    "signal": [
@@ -480,6 +492,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-17",
+   "expires": "2026-11-22"
+  },
+  {
+   "query": "정치",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 10000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-19",
    "expires": "2026-11-22"
   },
   {
@@ -1335,7 +1359,7 @@
    "expires": "2026-11-22"
   },
   {
-   "query": "시즌2",
+   "query": "수능 문제",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -1440,6 +1464,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-10",
+   "expires": "2026-11-22"
+  },
+  {
+   "query": "양민혁",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-04",
    "expires": "2026-11-22"
   },
   {
@@ -1584,18 +1620,6 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-13",
-   "expires": "2026-11-22"
-  },
-  {
-   "query": "양민혁",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 2000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-04",
    "expires": "2026-11-22"
   },
   {
@@ -2592,6 +2616,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-18",
+   "expires": "2026-11-22"
+  },
+  {
+   "query": "이혼",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-19",
    "expires": "2026-11-22"
   },
   {
@@ -4815,6 +4851,18 @@
    "expires": "2026-11-22"
   },
   {
+   "query": "이적 시장",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-19",
+   "expires": "2026-11-22"
+  },
+  {
    "query": "오산대",
    "tier": "단기",
    "signal": [
@@ -5799,7 +5847,7 @@
    "expires": "2026-11-22"
   },
   {
-   "query": "이적 시장",
+   "query": "수원 fc 위민",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -5811,7 +5859,7 @@
    "expires": "2026-11-22"
   },
   {
-   "query": "수원 fc 위민",
+   "query": "한국교육과정평가원",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -5821,6 +5869,43 @@
    "page": "",
    "registered": "2026-11-19",
    "expires": "2026-11-22"
+  },
+  {
+   "query": "남태현",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-19",
+   "expires": "2026-11-22"
+  },
+  {
+   "query": "전역",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-19",
+   "expires": "2026-11-22"
+  },
+  {
+   "query": "불법사채 피해구제 온라인 신청 방법 신용회복위원회 홈페이지·앱, 센터 방문 없이 무료 채무자대리인까지",
+   "tier": "단기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 7,
+   "status": "작성",
+   "page": "/issue/illegal-loan-relief-online-apply-ccrs-1119/",
+   "registered": "2026-11-19",
+   "expires": "2026-11-23"
   },
   {
    "query": "앤트로픽 공모가 83달러 확정 ANT 나스닥 첫 거래 한국시간 언제, 공모 규모 685억달러 940억달러 차이",
@@ -13857,6 +13942,19 @@
    "expires": ""
   },
   {
+   "query": "수능 이후 일정·주말 논술 대학",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "",
+   "registered": "2026-11-19",
+   "expires": ""
+  },
+  {
    "query": "연차수당 계산기",
    "tier": "장기",
    "signal": [
@@ -14220,6 +14318,32 @@
    "page": "/issue/special-counsel-fabricated-indictment-bill-1105/",
    "registered": "2026-11-05",
    "expires": "2026-11-19"
+  },
+  {
+   "query": "2027 수능 정답 — 국어·수학·영어·한국사 평가원 정답표와 공개 시각",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 5,
+   "status": "작성",
+   "page": "/issue/suneung-2027-answers-official-by-subject-1119/",
+   "registered": "2026-11-19",
+   "expires": "2026-11-26"
+  },
+  {
+   "query": "2027 수능 등급컷 — 국어·수학·영어 예상 1~3등급 컷과 난이도 총평",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 5,
+   "status": "작성",
+   "page": "/issue/suneung-2027-grade-cut-difficulty-answers-1119/",
+   "registered": "2026-11-19",
+   "expires": "2026-11-26"
   },
   {
    "query": "2027 수능 당일 준비물·입실·시험 시간표 정리",

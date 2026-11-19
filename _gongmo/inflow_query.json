@@ -1,13 +1,35 @@
 {
- "at": "2026-11-19 13:22",
+ "at": "2026-11-19 13:42",
  "note": "날짜, 검색엔진, 검색어, 도착 주소, 수. 검색어 없음(q 빈칸)은 리퍼러에 검색어가 안 붙은 방문.",
  "coverage": {
+  "google": {
+   "검색어 있음": 0,
+   "없음": 1
+  },
+  "naver": {
+   "검색어 있음": 0,
+   "없음": 3
+  },
   "daum": {
-   "검색어 있음": 1,
-   "없음": 0
+   "검색어 있음": 3,
+   "없음": 3
   }
  },
  "rows": [
+  {
+   "day": "2026-11-19",
+   "eng": "daum",
+   "q": "조정대상지역 임차인 거주중 매매",
+   "path": "/guide/regulated-area-land-permit-residence-obligation/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-19",
+   "eng": "daum",
+   "q": "의료급여 투약일수 알려면",
+   "path": "/money/guide/medical-aid-referral-extension-approval/",
+   "n": 1
+  },
   {
    "day": "2026-11-19",
    "eng": "daum",
