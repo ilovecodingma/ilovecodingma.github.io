@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-20 05:00",
+ "updated": "2026-11-20 06:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -1863,6 +1863,18 @@
    "expires": "2026-11-23"
   },
   {
+   "query": "천위페이",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-13",
+   "expires": "2026-11-23"
+  },
+  {
    "query": "국제 a매치",
    "tier": "단기",
    "signal": [
@@ -2463,18 +2475,6 @@
    "expires": "2026-11-23"
   },
   {
-   "query": "천위페이",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 2000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-13",
-   "expires": "2026-11-23"
-  },
-  {
    "query": "thời tiết",
    "tier": "단기",
    "signal": [
@@ -2676,6 +2676,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-19",
+   "expires": "2026-11-23"
+  },
+  {
+   "query": "앤트로픽 주가",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-20",
    "expires": "2026-11-23"
   },
   {
@@ -3339,18 +3351,6 @@
    "expires": "2026-11-23"
   },
   {
-   "query": "앤트로픽 주가",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 2000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-20",
-   "expires": "2026-11-23"
-  },
-  {
    "query": "알렉산더 즈베레프",
    "tier": "단기",
    "signal": [
@@ -3468,6 +3468,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-07",
+   "expires": "2026-11-23"
+  },
+  {
+   "query": "습관",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-20",
    "expires": "2026-11-23"
   },
   {
@@ -3864,18 +3876,6 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-08",
-   "expires": "2026-11-23"
-  },
-  {
-   "query": "습관",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 1000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-20",
    "expires": "2026-11-23"
   },
   {
