@@ -36,6 +36,15 @@ def main():
         out['days'].append({'day': day, 'visitors': d['total'], 'channels': d['ch'].most_common(),
                             'landing': d['land'].most_common(15),
                             'by_channel': {c: l.most_common(5) for c, l in d['ch_land'].items()}})
+    # 2026-11-19 마케터 요청 5번: 주소별 일별 첫 방문자 수를 누적 보관(전체 주소, 채널 합계). 11/26 효과 비교용
+    hp = os.path.join(HERE, 'inflow_land_hist.json')
+    try:
+        hist = json.load(open(hp, encoding='utf-8'))
+    except Exception:
+        hist = {}
+    for day, d in by.items():
+        hist[day] = dict(d['land'])
+    json.dump(hist, open(hp, 'w', encoding='utf-8', newline=''), ensure_ascii=False)
     json.dump(out, open(OUT, 'w', encoding='utf-8', newline=''), ensure_ascii=False, indent=1)
     for x in out['days']:
         print(x['day'], '방문자', x['visitors'])

@@ -3942,6 +3942,15 @@ def kin_guides():
                 if _sc_ < 1 or len(_rl) >= 5:
                     break
                 _rl.append((f'/money/guide/{_sl_}/', GN[_sl_]['name']))
+        try:   # 2026-11-19 마케터 「하루 1000명」: 방문 많은 글에서 새 2027 글로 가는 링크(related_1119.json) + 2027 글은 모음 허브로
+            _have2 = {u for u, _t in _rl}
+            for _u2, _t2 in json.load(open(os.path.join(HERE, 'related_1119.json'), encoding='utf-8')).get(g['slug'], []):
+                if _u2 not in _have2:
+                    _rl.append((_u2, _t2))
+            if '2027' in g['slug']:
+                _rl.append(('/money/guide/hub/2027/', '2027 표·일정 모음'))
+        except Exception:
+            pass
         rel = ' · '.join(f'<a href="{E(u)}">{E(t)}</a>' for u, t in _rl)
         _xi = xlinks()['guide'].get(g['slug']) or []
         if _xi:   # 같은 주제의 최근 이슈
@@ -3986,7 +3995,8 @@ def kin_guides():
     _JT = {'resign': ('퇴사할 때', '퇴직금·보험·실업급여를 순서대로 확인하세요.'), 'housing': ('이사·집 구할 때', '집을 구하고 이사하는 순서대로 확인하세요.'),
            'parttime': ('알바할 때', '알바 시작부터 임금 받기까지 순서대로 확인하세요.'), 'finance': ('결제·빚 문제가 생겼을 때', '결제 문제부터 큰 빚 문제까지 순서대로 확인하세요.')}
     _jg = ''.join(f'<a class="mg-jc" href="/money/guide/journey/{j["slug"]}/"><i>{j["icon"]}</i><b>{E(_JT.get(j["slug"], (j["name"], ""))[0])}</b><span>{E(_JT.get(j["slug"], ("", re.sub(chr(32) + "+", " ", j["lead"])[:46]))[1])}</span></a>' for j in JR)
-    GUIDE_HUBS = [('year-end', '연말정산', '🧾', r'^year-end|medical-expense-tax|tax-refund', '연말정산 준비 순서, 공제 항목, 간소화 자료 제공 일정과 환급 시기를 한곳에 모았습니다.'),
+    GUIDE_HUBS = [('2027', '2027 표·일정', '📅', r'2027', '2027년 보험료율·공휴일·시험 일정·봉급표·세율 등 연말~연초에 많이 찾는 표와 일정을 한곳에 모았습니다.'),
+                  ('year-end', '연말정산', '🧾', r'^year-end|medical-expense-tax|tax-refund', '연말정산 준비 순서, 공제 항목, 간소화 자료 제공 일정과 환급 시기를 한곳에 모았습니다.'),
                   ('heating', '난방·에너지', '🔥', r'energy|heating|electric|water-pipe|boiler|gas-', '난방비·전기요금 계산과 에너지 지원 제도, 겨울철 동파 예방까지 모았습니다.'),
                   ('work', '일·직장', '💼', r'minimum-wage|retire|four-insur|nps|unemploy|overtime|severance|parttime|weekly', '최저임금, 4대보험, 퇴직금·퇴직연금, 실업급여, 알바 권리를 모았습니다.')]
     _hub_cards = ''
