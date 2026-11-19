@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-20 03:00",
+ "updated": "2026-11-20 04:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -3339,6 +3339,18 @@
    "expires": "2026-11-23"
   },
   {
+   "query": "앤트로픽 주가",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-20",
+   "expires": "2026-11-23"
+  },
+  {
    "query": "알렉산더 즈베레프",
    "tier": "단기",
    "signal": [
@@ -3852,6 +3864,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-08",
+   "expires": "2026-11-23"
+  },
+  {
+   "query": "습관",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-20",
    "expires": "2026-11-23"
   },
   {
@@ -6358,6 +6382,19 @@
    "page": "",
    "registered": "2026-11-02",
    "expires": "2026-11-06"
+  },
+  {
+   "query": "AMD 주가 장중 7~9% 하락, 공매도 투자자 헌터브룩 중국 노출 주장 보고서와 AMD 입장",
+   "tier": "단기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 3,
+   "status": "작성",
+   "page": "/issue/amd-short-seller-china-exposure-report-1120/",
+   "registered": "2026-11-20",
+   "expires": "2026-11-24"
   },
   {
    "query": "추경호 1심 무죄 선고, 재판부 판단과 특검 구형·항소 여부 정리",

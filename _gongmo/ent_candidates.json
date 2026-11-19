@@ -1,5 +1,5 @@
 {
- "at": "2026-11-20 03:11",
+ "at": "2026-11-20 03:30",
  "nitems": 512,
  "cands": [
   {
@@ -674,7 +674,7 @@
    ]
   },
   {
-   "kw": "박하나",
+   "kw": "김태술",
    "nsrc": 4,
    "srcs": [
     "뉴시스",
@@ -707,7 +707,7 @@
    ]
   },
   {
-   "kw": "김태술",
+   "kw": "박하나",
    "nsrc": 4,
    "srcs": [
     "뉴시스",
@@ -872,39 +872,6 @@
    ]
   },
   {
-   "kw": "미미미누",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "동아일보",
-    "조선일보"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "리트 만점자, 심정지 상태로 발견→미미미누·백지연 영상 비공개 [DA이슈]",
-     "link": "https://sports.donga.com/ent/article/all/20261119/135054321/2"
-    },
-    {
-     "src": "동아일보",
-     "title": "미미미누 ‘AI 부정행위’ 시뮬레이션 화제 [주간SD]",
-     "link": "https://sports.donga.com/ent/article/all/20261119/135053411/1"
-    },
-    {
-     "src": "SBS",
-     "title": "미미미누, '리트 만점자' 출연 영상 내렸다…백지연 유튜브도 비공개",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008854022&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "뉴시스",
-     "title": "미미미누·백지연, 이진우 출연 영상 비공개 처리",
-     "link": "https://www.newsis.com/view/NISX20261119_0003875097"
-    }
-   ]
-  },
-  {
    "kw": "비공개",
    "nsrc": 4,
    "srcs": [
@@ -924,6 +891,39 @@
      "src": "동아일보",
      "title": "‘리트 만점자’ 이진우, 심정지 상태 발견…유튜브 영상 잇따라 비공개 [SD이슈]",
      "link": "https://sports.donga.com/ent/article/all/20261119/135054105/1"
+    },
+    {
+     "src": "SBS",
+     "title": "미미미누, '리트 만점자' 출연 영상 내렸다…백지연 유튜브도 비공개",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008854022&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "뉴시스",
+     "title": "미미미누·백지연, 이진우 출연 영상 비공개 처리",
+     "link": "https://www.newsis.com/view/NISX20261119_0003875097"
+    }
+   ]
+  },
+  {
+   "kw": "미미미누",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "동아일보",
+    "조선일보"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "리트 만점자, 심정지 상태로 발견→미미미누·백지연 영상 비공개 [DA이슈]",
+     "link": "https://sports.donga.com/ent/article/all/20261119/135054321/2"
+    },
+    {
+     "src": "동아일보",
+     "title": "미미미누 ‘AI 부정행위’ 시뮬레이션 화제 [주간SD]",
+     "link": "https://sports.donga.com/ent/article/all/20261119/135053411/1"
     },
     {
      "src": "SBS",
@@ -1201,6 +1201,38 @@
    ]
   },
   {
+   "kw": "깜짝",
+   "nsrc": 3,
+   "srcs": [
+    "동아일보",
+    "조선일보",
+    "한국경제"
+   ],
+   "n": 7,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "문채원, 선화예고 생기부 열었다가 깜짝…“의욕이 조금 뒤떨어짐”",
+     "link": "https://sports.donga.com/ent/article/all/20261119/135057876/1"
+    },
+    {
+     "src": "한국경제",
+     "title": "'두 도시 이야기' 신성록, 기상캐스터로 깜짝 변신한다",
+     "link": "https://www.hankyung.com/article/202611197375H"
+    },
+    {
+     "src": "조선일보",
+     "title": "'고위험산모' 백진경(명예영국인), 깜짝 '제왕절개' 출산",
+     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/20/GFTDKMRQGIZGGMTGMMYTKOJTGE/"
+    },
+    {
+     "src": "조선일보",
+     "title": "‘1만 구독자’ 최정윤, 깜짝 선물에 얼떨떨..”우리도 이벤트 할 수 있어” (맘대로 뛰는)",
+     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/20/GVSTAZBSMEYTSMBQGBTDEZLBGA/"
+    }
+   ]
+  },
+  {
    "kw": "임신",
    "nsrc": 3,
    "srcs": [
@@ -1293,38 +1325,6 @@
      "src": "뉴시스",
      "title": "리트 만점자, 백지연에 비결 직접 공개…생중계 검증 앞두고 연락두절",
      "link": "https://www.newsis.com/view/NISX20261119_0003874260"
-    }
-   ]
-  },
-  {
-   "kw": "플레이브",
-   "nsrc": 3,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "연합뉴스"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "[가요소식] 플레이브, 내년 1월 고척돔서 앙코르 콘서트",
-     "link": "https://www.yna.co.kr/view/AKR20261119129400005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "라이즈·플레이브 만났다…협업 싱글 '로키' 30일 발매",
-     "link": "https://www.yna.co.kr/view/AKR20261116143400005"
-    },
-    {
-     "src": "동아일보",
-     "title": "고척돔 사흘 연속 채운다…플레이브, 1월 월드투어 앙코르 콘서트 확정",
-     "link": "https://sports.donga.com/ent/article/all/20261119/135054063/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "플레이브, 첫 월드투어 고척돔서 마무리…2027년 1월 개최",
-     "link": "https://sports.donga.com/ent/article/all/20261119/135054064/1"
     }
    ]
   }
