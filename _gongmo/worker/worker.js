@@ -238,6 +238,19 @@ export default {
         if (u.banned) return err(req, '이용이 제한된 계정이에요.', 403);
         return json(req, { token: await newSession(env, u.id), nick: u.nick });
       }
+      if (p === '/api/me/delete' && req.method === 'POST') {   // 2026-11-19 회원 탈퇴: 비밀번호(소셜 가입은 「탈퇴」 입력)로 확인한 뒤 이 계정의 모든 정보를 지운다
+        const u0 = await me(req, env); if (!u0) return err(req, '로그인이 필요해요.', 401);
+        const row = await env.DB.prepare('SELECT pw FROM users WHERE id = ?').bind(u0.id).first();
+        if (!row) return err(req, '계정을 찾을 수 없어요.', 404);
+        const okc = row.pw.startsWith('oauth$') ? String(body.confirm || '') === '탈퇴' : await checkPw(String(body.password || ''), row.pw);
+        if (!okc) return err(req, row.pw.startsWith('oauth$') ? '확인 칸에 「탈퇴」라고 입력해 주세요.' : '비밀번호가 맞지 않아요.', 403);
+        const id = u0.id, st = [];
+        for (const t of ['sessions', 'posts', 'comments', 'reports', 'team_members', 'invite_codes', 'invited', 'user_prefs', 'team_images', 'oauth_links', 'user_items', 'prep', 'post_likes', 'seekers', 'crew_invites', 'kakao_alert', 'kakao_alert_nonce', 'page_comments', 'page_likes', 'page_ratings'])
+          st.push(env.DB.prepare('DELETE FROM ' + t + ' WHERE user_id = ?').bind(id));
+        st.push(env.DB.prepare('DELETE FROM push_subs WHERE uid = ?').bind(id), env.DB.prepare('UPDATE hits SET uid = 0 WHERE uid = ?').bind(id), env.DB.prepare('DELETE FROM users WHERE id = ?').bind(id));
+        await env.DB.batch(st);
+        return json(req, { ok: true });
+      }
       if (p === '/api/logout' && req.method === 'POST') {
         const t = (req.headers.get('Authorization') || '').replace(/^Bearer\s+/, '');
         if (t) await env.DB.prepare('DELETE FROM sessions WHERE token = ?').bind(t).run();

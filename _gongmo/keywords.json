@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-19 16:00",
+ "updated": "2026-11-19 17:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -1876,18 +1876,6 @@
   },
   {
    "query": "부산 kcc 대 대구 한국가스공사",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 2000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-17",
-   "expires": "2026-11-22"
-  },
-  {
-   "query": "김건희",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -6251,6 +6239,19 @@
    "page": "",
    "registered": "2026-11-02",
    "expires": "2026-11-06"
+  },
+  {
+   "query": "김건희 씨 대법원 징역 4년 확정, 상고심 주문과 대법관 의견 정리",
+   "tier": "단기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 3,
+   "status": "작성",
+   "page": "/issue/supreme-court-kim-han-rulings-1119/",
+   "registered": "2026-11-19",
+   "expires": "2026-11-23"
   },
   {
    "query": "미국 중간선거 후 증시 어떻게 움직였나, 다우 3% 급등과 코스피 하락 정리",

@@ -58,11 +58,19 @@
     b.innerHTML = st.t ? `<button class="cm-me">${esc(st.n)} ▾</button><div class="cm-menu" hidden>
 <a href="/me/">🏠 내 공간 <small>찜·응모 기록·알림</small></a><a href="/prep/">📋 내 응모 준비 <small>준비 보드·꿀팁</small></a><a href="/news/">🕵️ 기사 확인 신호 <small>출처·제목-본문 일치 신호</small></a><a href="/app/">🔔 앱·알림 <small>공모전 폰 알림</small></a><a href="/community/">🚩 팀원 모집</a><a href="/lab/">🏆 수상작 분석</a>${(() => { try { return localStorage.getItem('jupjup_adm') ? '<a href="/admin/">📊 관리자 <small>방문자·가입자</small></a>' : ''; } catch { return ''; } })()}
 <b>⭐ 찜한 공모전</b>${fl.length ? fl.map(f => `<a class="cm-fv" href="/c/${esc(f.id)}/"><em>${f.l ? 'D-' + f.l : 'D-DAY'}</em>${esc(f.title)}</a>`).join('') : '<p>챗봇 카드의 ☆로 찜해 두면 여기 모여요.</p>'}
-<button class="cm-out">로그아웃</button></div>` : '<button class="cm-in">로그인</button>';
+<button class="cm-out">로그아웃</button> <button class="cm-del" style="background:none;border:0;color:#94a3b8;font-size:12px;text-decoration:underline;cursor:pointer">회원 탈퇴</button></div>` : '<button class="cm-in">로그인</button>';
     const me = b.querySelector('.cm-me'), menu = b.querySelector('.cm-menu');
     if (me) { me.onclick = e => { e.stopPropagation(); menu.hidden = !menu.hidden; }; document.addEventListener('click', e => { if (!b.contains(e.target)) menu.hidden = true; }); }
     const i = b.querySelector('.cm-in'), o = b.querySelector('.cm-out');
     if (i) i.onclick = () => authModal(() => location.reload());
+    const dlb = b.querySelector('.cm-del');
+    if (dlb) dlb.onclick = async () => {   // 회원 탈퇴(2026-11-19): 비밀번호 확인 후 이 계정의 모든 정보 삭제
+      if (!confirm('탈퇴하면 계정과 작성한 글·댓글·찜 등 모든 정보가 삭제되고 되돌릴 수 없어요. 계속할까요?')) return;
+      const pw = prompt('비밀번호를 입력해 주세요. (구글·카카오로 가입했다면 「탈퇴」라고 입력)');
+      if (pw === null) return;
+      try { await api('/api/me/delete', { method: 'POST', body: { password: pw, confirm: pw } }); st.set(''); try { localStorage.removeItem('jupjup_prefs'); localStorage.removeItem('jupjup_prefs_t'); } catch {} alert('탈퇴 처리가 끝났어요.'); location.reload(); }
+      catch (e) { alert((e && e.message) || '탈퇴하지 못했어요. 비밀번호를 확인해 주세요.'); }
+    };
     if (o) o.onclick = async () => { await api('/api/logout', { method: 'POST' }).catch(() => {}); st.set(''); try { localStorage.removeItem('jupjup_prefs'); localStorage.removeItem('jupjup_prefs_t'); } catch {} location.reload(); };
   }
 
