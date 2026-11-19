@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-19 15:00",
+ "updated": "2026-11-19 16:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -12,6 +12,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-08",
+   "expires": "2026-11-22"
+  },
+  {
+   "query": "이진우 심정지",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 100000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-19",
    "expires": "2026-11-22"
   },
   {
@@ -423,6 +435,18 @@
    "expires": "2026-11-22"
   },
   {
+   "query": "주식시장",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 10000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-03",
+   "expires": "2026-11-22"
+  },
+  {
    "query": "비야 디",
    "tier": "단기",
    "signal": [
@@ -504,18 +528,6 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-19",
-   "expires": "2026-11-22"
-  },
-  {
-   "query": "주식시장",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 10000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-03",
    "expires": "2026-11-22"
   },
   {
@@ -1383,6 +1395,18 @@
    "expires": "2026-11-22"
   },
   {
+   "query": "양민혁",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-04",
+   "expires": "2026-11-22"
+  },
+  {
    "query": "유튜버",
    "tier": "단기",
    "signal": [
@@ -1467,18 +1491,6 @@
    "expires": "2026-11-22"
   },
   {
-   "query": "양민혁",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 2000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-04",
-   "expires": "2026-11-22"
-  },
-  {
    "query": "원태인",
    "tier": "단기",
    "signal": [
@@ -1560,6 +1572,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-17",
+   "expires": "2026-11-22"
+  },
+  {
+   "query": "네이버 뉴스",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-18",
    "expires": "2026-11-22"
   },
   {
@@ -1872,18 +1896,6 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-17",
-   "expires": "2026-11-22"
-  },
-  {
-   "query": "네이버 뉴스",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 2000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-18",
    "expires": "2026-11-22"
   },
   {
@@ -2631,6 +2643,18 @@
    "expires": "2026-11-22"
   },
   {
+   "query": "전역",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-19",
+   "expires": "2026-11-22"
+  },
+  {
    "query": "뉴캐슬 대 에버튼 순위",
    "tier": "단기",
    "signal": [
@@ -3256,6 +3280,18 @@
   },
   {
    "query": "수능날 주식",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-19",
+   "expires": "2026-11-22"
+  },
+  {
+   "query": "조선일보",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -4863,6 +4899,30 @@
    "expires": "2026-11-22"
   },
   {
+   "query": "남태현",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-19",
+   "expires": "2026-11-22"
+  },
+  {
+   "query": "수능 수학",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-19",
+   "expires": "2026-11-22"
+  },
+  {
    "query": "오산대",
    "tier": "단기",
    "signal": [
@@ -5871,7 +5931,7 @@
    "expires": "2026-11-22"
   },
   {
-   "query": "남태현",
+   "query": "크리스 페덱",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -5883,7 +5943,19 @@
    "expires": "2026-11-22"
   },
   {
-   "query": "전역",
+   "query": "체포",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-19",
+   "expires": "2026-11-22"
+  },
+  {
+   "query": "박찬종",
    "tier": "단기",
    "signal": [
     "구글트렌드"
