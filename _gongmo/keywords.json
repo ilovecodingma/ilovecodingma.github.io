@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-19 17:00",
+ "updated": "2026-11-19 18:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -12,6 +12,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-08",
+   "expires": "2026-11-22"
+  },
+  {
+   "query": "리트 만점자 천호동",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 200000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-19",
    "expires": "2026-11-22"
   },
   {
@@ -1455,6 +1467,18 @@
    "expires": "2026-11-22"
   },
   {
+   "query": "네이버 뉴스",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-18",
+   "expires": "2026-11-22"
+  },
+  {
    "query": "김지영",
    "tier": "단기",
    "signal": [
@@ -1572,18 +1596,6 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-17",
-   "expires": "2026-11-22"
-  },
-  {
-   "query": "네이버 뉴스",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 2000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-18",
    "expires": "2026-11-22"
   },
   {
@@ -3423,6 +3435,18 @@
    "expires": "2026-11-22"
   },
   {
+   "query": "양홍원",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-19",
+   "expires": "2026-11-22"
+  },
+  {
    "query": "김수현",
    "tier": "단기",
    "signal": [
@@ -4911,6 +4935,30 @@
    "expires": "2026-11-22"
   },
   {
+   "query": "체포",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-19",
+   "expires": "2026-11-22"
+  },
+  {
+   "query": "도이치모터스 주가조작 사건",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-19",
+   "expires": "2026-11-22"
+  },
+  {
    "query": "오산대",
    "tier": "단기",
    "signal": [
@@ -5931,18 +5979,6 @@
    "expires": "2026-11-22"
   },
   {
-   "query": "체포",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 1000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-19",
-   "expires": "2026-11-22"
-  },
-  {
    "query": "박찬종",
    "tier": "단기",
    "signal": [
@@ -6096,6 +6132,19 @@
    "page": "/issue/kospi-5000-recovery-samsung-skhynix-1118-close/",
    "registered": "2026-11-18",
    "expires": "2026-11-22"
+  },
+  {
+   "query": "코스피 5137.89 마감 수능일 4963 찍고 반전, 삼성전자 SK하이닉스 종가와 외국인 순매도",
+   "tier": "단기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 5,
+   "status": "작성",
+   "page": "/issue/kospi-close-samsung-skhynix-1119/",
+   "registered": "2026-11-19",
+   "expires": "2026-11-23"
   },
   {
    "query": "수능 AI 부정행위 정부 대책 총정리, 총리 담화 응시제한 10년·감독관 8,400명 추가",
@@ -14406,7 +14455,7 @@
    "expires": "2026-11-19"
   },
   {
-   "query": "2027 수능 정답 — 국어·수학·영어·한국사 평가원 정답표와 공개 시각",
+   "query": "2027 수능 정답 — 국어·수학·영어 평가원 정답표와 한국사 공개 시각",
    "tier": "중기",
    "signal": [
     "뉴스",
