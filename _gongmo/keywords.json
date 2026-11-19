@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-19 14:00",
+ "updated": "2026-11-19 15:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -13950,7 +13950,7 @@
    ],
    "score": 0,
    "status": "작성",
-   "page": "",
+   "page": "/money/guide/suneung-2027-after-exam-schedule-nonsul-dates/",
    "registered": "2026-11-19",
    "expires": ""
   },
@@ -14151,6 +14151,19 @@
    "status": "작성",
    "page": "",
    "registered": "2026-11-03",
+   "expires": "2026-12-03"
+  },
+  {
+   "query": "리트 만점자 AI 부정행위 의혹 총정리 — 처음부터 11월 19일까지 타임라인",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 6,
+   "status": "작성",
+   "page": "/issue/ai-glasses-series-06-leet-case-full-timeline-1119/",
+   "registered": "2026-11-19",
    "expires": "2026-12-03"
   },
   {
