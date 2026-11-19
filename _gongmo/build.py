@@ -3843,7 +3843,15 @@ def _topic_more(g, GN, top, n=3, hubs=None):
     try:
         T, M = guide_topics()
         k = M.get(g['slug'])
-        L = [(s, v) for s, v in top.get(k, []) if s != g['slug'] and s in GN][:n] if k else []
+        # 2026-11-19 마케터·작가: 글과 상관없는 분류 인기글이 뜬다 → 그 글의 related(가이드)를 먼저 쓰고, 모자랄 때만 분류 인기순으로 채운다
+        _rel = []
+        for _u_, _t_ in g.get('related', []):
+            _m_ = re.match(r'/money/guide/([^/]+)/$', _u_)
+            if _m_ and _m_.group(1) in GN and _m_.group(1) != g['slug'] and _m_.group(1) not in _rel:
+                _rel.append(_m_.group(1))
+        _rel = _rel[:n]
+        L = [(s_, 2) for s_ in _rel]
+        L += [(s, v) for s, v in (top.get(k, []) if k else []) if s != g['slug'] and s in GN and s not in _rel][:max(0, n - len(L))]
         if len(L) < 2:
             return ''
         li = ''.join(f'<li><a href="/money/guide/{s}/">{E(_dt_og(GN[s]["h1"]))}</a></li>' for s, _v in L)
@@ -3917,6 +3925,9 @@ def kin_guides():
                 continue
             secs += f'<section class="gs gs-{kind}" id="s{n_}">{h}</section>'
             toc.append(f'<a href="#s{n_}"><i>{ic_}</i>{E(re.sub(chr(92) + "s*[(（].*?[)）]", "", _sh))}</a>')
+        _nx = g.get('next')   # 2026-11-19 마케터·작가: 「다음 글」 한 줄(첫 섹션 바로 뒤). "next": [주소, 한 문장]
+        if isinstance(_nx, list) and len(_nx) == 2 and str(_nx[0]).startswith('/'):
+            secs = secs.replace('</section>', '</section>' + f'<p class="g-next" style="margin:14px 0;padding:12px 14px;border:1px solid var(--bd,#e2e8f0);border-radius:10px;font-weight:600">다음 글 → <a href="{E(_nx[0])}">{E(_nx[1])}</a></p>', 1)
         _tm = _topic_more(g, GN, _TOP, hubs=_THUB)
         if _tm:   # 첫 섹션 바로 뒤(읽다 나가기 전에 보이는 자리)
             secs = secs.replace('</section>', '</section>' + _tm, 1)

@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-19 11:00",
+ "updated": "2026-11-19 12:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -1324,6 +1324,18 @@
   },
   {
    "query": "관광",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 5000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-19",
+   "expires": "2026-11-22"
+  },
+  {
+   "query": "시즌2",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -3196,6 +3208,18 @@
   },
   {
    "query": "미역국",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-19",
+   "expires": "2026-11-22"
+  },
+  {
+   "query": "수능날 주식",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -5775,6 +5799,30 @@
    "expires": "2026-11-22"
   },
   {
+   "query": "이적 시장",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-19",
+   "expires": "2026-11-22"
+  },
+  {
+   "query": "수원 fc 위민",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-19",
+   "expires": "2026-11-22"
+  },
+  {
    "query": "앤트로픽 공모가 83달러 확정 ANT 나스닥 첫 거래 한국시간 언제, 공모 규모 685억달러 940억달러 차이",
    "tier": "단기",
    "signal": [
@@ -5862,6 +5910,32 @@
    "score": 5,
    "status": "작성",
    "page": "/issue/ai-glasses-series-04-suneung-day-tf-reward-1119/",
+   "registered": "2026-11-19",
+   "expires": "2026-11-23"
+  },
+  {
+   "query": "수능 당일 스마트폰 22대 적발, 리트 만점자 공개검증 불참 경찰 수사 정리",
+   "tier": "단기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 5,
+   "status": "작성",
+   "page": "/issue/ai-glasses-series-05-suneung-day-22-phones-leet-1119/",
+   "registered": "2026-11-19",
+   "expires": "2026-11-23"
+  },
+  {
+   "query": "구글 제미나이 4 네온 공개 가격 API 단가 이용 방법 컨텍스트 100만 토큰",
+   "tier": "단기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 5,
+   "status": "작성",
+   "page": "/issue/gemini-4-neon-release-price-availability-1119/",
    "registered": "2026-11-19",
    "expires": "2026-11-23"
   },
@@ -13419,6 +13493,305 @@
    "expires": ""
   },
   {
+   "query": "2027 손없는날 달력 표",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/sonupneunnal-2027-calendar-table/",
+   "registered": "2026-11-19",
+   "expires": ""
+  },
+  {
+   "query": "2027 기사 시험일정",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/national-technical-qualification-2027-exam-schedule/",
+   "registered": "2026-11-19",
+   "expires": ""
+  },
+  {
+   "query": "2027 초등학교 입학 일정",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/elementary-school-2027-admission-notice-orientation-date/",
+   "registered": "2026-11-19",
+   "expires": ""
+  },
+  {
+   "query": "2027 경찰 채용 일정",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/police-officer-2027-recruitment-exam-schedule/",
+   "registered": "2026-11-19",
+   "expires": ""
+  },
+  {
+   "query": "2027 설 기차표 예매",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/seollal-2027-train-ticket-booking-date/",
+   "registered": "2026-11-19",
+   "expires": ""
+  },
+  {
+   "query": "토익 2027 시험 일정",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/toeic-2027-test-schedule/",
+   "registered": "2026-11-19",
+   "expires": ""
+  },
+  {
+   "query": "2027 해돋이 시간 표",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/sunrise-time-2027-new-year-by-region/",
+   "registered": "2026-11-19",
+   "expires": ""
+  },
+  {
+   "query": "2027 음력 달력 표",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/lunar-calendar-2027-table/",
+   "registered": "2026-11-19",
+   "expires": ""
+  },
+  {
+   "query": "2027년 띠 정미년 양띠",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/zodiac-2027-year-of-sheep-samjae/",
+   "registered": "2026-11-19",
+   "expires": ""
+  },
+  {
+   "query": "2027 법인세율 표",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/corporate-tax-rate-2027-table/",
+   "registered": "2026-11-19",
+   "expires": ""
+  },
+  {
+   "query": "공안직 봉급표",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/public-security-pay-2027-salary-table/",
+   "registered": "2026-11-19",
+   "expires": ""
+  },
+  {
+   "query": "2027 임용 티오 표",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/teacher-exam-2027-to-quota-by-region/",
+   "registered": "2026-11-19",
+   "expires": ""
+  },
+  {
+   "query": "2026 바우처 사용기한 모음 표",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/voucher-2026-year-end-expiry-dates-table/",
+   "registered": "2026-11-19",
+   "expires": ""
+  },
+  {
+   "query": "2027 임용 1차 합격자 발표",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/teacher-exam-2027-first-round-result-second-round-schedule/",
+   "registered": "2026-11-19",
+   "expires": ""
+  },
+  {
+   "query": "2026 증시 폐장일·2027 휴장일",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/stock-market-2026-closing-day-2027-holidays/",
+   "registered": "2026-11-19",
+   "expires": ""
+  },
+  {
+   "query": "2027 군무원 채용 시험일정",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/military-civilian-2027-exam-schedule/",
+   "registered": "2026-11-19",
+   "expires": ""
+  },
+  {
+   "query": "2027 국시원 시험일정",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/kuksiwon-2027-exam-schedule/",
+   "registered": "2026-11-19",
+   "expires": ""
+  },
+  {
+   "query": "2027 공무원 시험 변경",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/civil-servant-exam-2027-changes/",
+   "registered": "2026-11-19",
+   "expires": ""
+  },
+  {
+   "query": "2027 입영 일정",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/military-enlistment-2027-date-selection-schedule/",
+   "registered": "2026-11-19",
+   "expires": ""
+  },
+  {
+   "query": "2027 사회복지사 1급 시험일정",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/social-worker-1st-grade-2027-exam-schedule/",
+   "registered": "2026-11-19",
+   "expires": ""
+  },
+  {
+   "query": "2027 간호사 국가고시 일정",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/nurse-national-exam-2027-schedule/",
+   "registered": "2026-11-19",
+   "expires": ""
+  },
+  {
+   "query": "2027 요양보호사 시험일정",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "",
+   "registered": "2026-11-19",
+   "expires": ""
+  },
+  {
+   "query": "2027 의사·약사 국가고시 일정",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "",
+   "registered": "2026-11-19",
+   "expires": ""
+  },
+  {
    "query": "연차수당 계산기",
    "tier": "장기",
    "signal": [
@@ -13616,6 +13989,19 @@
    "page": "",
    "registered": "2026-11-03",
    "expires": "2026-12-03"
+  },
+  {
+   "query": "nginx 취약점 CVE-2026-123007 CVE-2026-123633 내 버전 확인과 패치 1.31.9 1.30.7 방법",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 6,
+   "status": "작성",
+   "page": "/issue/nginx-unauth-rce-cve-patch-version-check-1119/",
+   "registered": "2026-11-19",
+   "expires": "2026-11-26"
   },
   {
    "query": "2027년 1학기 국가장학금 신청기간",
