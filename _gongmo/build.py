@@ -2948,6 +2948,13 @@ def build():
         print('전자책 PDF 실패(사이트는 계속)', repr(e)[:100])
     print('지난 달 모음 검색 제외', stale_month_noindex(urls))
     print('방향 전환 정리(검색 제외)', prune_1116(urls))
+    try:   # 2026-11-19 내부 링크 보강(마케터 구글 전술): 우선 가이드 블록·놓치기 쉬운 글 모음
+        import plinks
+        _r, _low = plinks.run(urls, page)
+        urls.append('/more/')
+        print('내부 링크 보강', _r)
+    except Exception as e:
+        print('내부 링크 보강 건너뜀', repr(e)[:120])
     try:   # 2026-11-17 마케터 요청: 일별 유입(D1)을 하루 한 번 자동 갱신. 읽기는 hit_daily 요약만, 최근 3일(실패해도 빌드는 계속)
         _ifp = os.path.join(HERE, 'inflow_daily.json')
         _today = (datetime.datetime.utcnow() + datetime.timedelta(hours=9)).strftime('%Y-%m-%d')
