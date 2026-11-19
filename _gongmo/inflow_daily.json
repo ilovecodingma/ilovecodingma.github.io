@@ -1,41 +1,73 @@
 {
- "at": "2026-11-19 19:21",
+ "at": "2026-11-20 00:13",
  "note": "그날 처음 들어온 방문자 기준(관리자·자동 점검 제외). 채널 → 첫 페이지별 방문자 수.",
  "days": [
   {
-   "day": "2026-11-19",
-   "visitors": 744,
+   "day": "2026-11-20",
+   "visitors": 2,
    "channels": [
     [
      "🔍 다음·빙 검색",
-     399
+     2
+    ]
+   ],
+   "landing": [
+    [
+     "/money/guide/teacher-exam-2027-schedule/",
+     1
+    ],
+    [
+     "/issue/nginx-unauth-rce-cve-patch-version-check-1119/",
+     1
+    ]
+   ],
+   "by_channel": {
+    "🔍 다음·빙 검색": [
+     [
+      "/money/guide/teacher-exam-2027-schedule/",
+      1
+     ],
+     [
+      "/issue/nginx-unauth-rce-cve-patch-version-check-1119/",
+      1
+     ]
+    ]
+   }
+  },
+  {
+   "day": "2026-11-19",
+   "visitors": 1072,
+   "channels": [
+    [
+     "🔍 다음·빙 검색",
+     604
     ],
     [
      "🔍 구글 검색",
-     211
+     290
     ],
     [
      "🔗 직접 접속(주소 입력·즐겨찾기·앱 안 링크)",
-     79
+     111
     ],
     [
      "🔍 네이버 검색",
-     32
+     36
     ],
     [
      "🏷️ 기타 홍보 링크(chatgptcom)",
-     10
+     15
     ],
     [
      "🏷️ 기타 홍보 링크(youtube)",
      4
     ],
     [
-     "☕ 카페",
-     3
+     "🏷️ 기타 홍보 링크(naver_kin)",
+     4
     ],
     [
-     "🏷️ 기타 홍보 링크(naver_kin)",
+     "☕ 카페",
      3
     ],
     [
@@ -47,33 +79,49 @@
      1
     ],
     [
+     "🏷️ 기타 홍보 링크(perplexity)",
+     1
+    ],
+    [
      "🏷️ 기타 홍보 링크(naver_cafe)",
+     1
+    ],
+    [
+     "🌐 기타 사이트(perplexity.ai)",
      1
     ]
    ],
    "landing": [
     [
      "/issue/suneung-2027-grade-cut-difficulty-answers-1119/",
-     262
+     468
     ],
     [
      "/issue/suneung-2027-answers-official-by-subject-1119/",
-     155
-    ],
-    [
-     "/money/guide/suneung-2027-timetable/",
-     45
+     224
     ],
     [
      "/money/guide/insurance-rates-2027-table/",
-     45
+     47
+    ],
+    [
+     "/money/guide/suneung-2027-timetable/",
+     46
     ],
     [
      "/money/guide/teacher-exam-2027-schedule/",
-     23
+     29
     ],
     [
      "/event/",
+     13
+    ],
+    [
+     "/issue/suneung-score-report-1105/",
+     12
+    ],
+    [
+     "/money/guide/susi-pass-jeongsi-apply-ban-double-registration/",
      10
     ],
     [
@@ -81,113 +129,105 @@
      9
     ],
     [
-     "/issue/suneung-score-report-1105/",
-     9
-    ],
-    [
-     "/money/guide/susi-pass-jeongsi-apply-ban-double-registration/",
-     7
+     "/contest/slogan/",
+     8
     ],
     [
      "/money/guide/susi-2027-result-registration-schedule/",
-     7
-    ],
-    [
-     "/contest/slogan/",
-     6
+     8
     ],
     [
      "/",
-     6
+     7
     ],
     [
      "/money/guide/industrial-accident-insurance-rate-2027/",
-     6
+     7
     ],
     [
      "/money/guide/suneung-2027-admit-card-reissue/",
-     5
+     6
     ],
     [
      "/issue/insurance-rates-2027-1104/",
-     5
+     6
     ]
    ],
    "by_channel": {
     "🔍 다음·빙 검색": [
      [
       "/issue/suneung-2027-grade-cut-difficulty-answers-1119/",
-      192
-     ],
-     [
-      "/money/guide/suneung-2027-timetable/",
-      43
+      373
      ],
      [
       "/money/guide/insurance-rates-2027-table/",
-      43
+      45
+     ],
+     [
+      "/money/guide/suneung-2027-timetable/",
+      44
      ],
      [
       "/money/guide/teacher-exam-2027-schedule/",
-      21
+      24
      ],
      [
-      "/issue/suneung-day-checklist-1104/",
-      8
+      "/money/guide/susi-pass-jeongsi-apply-ban-double-registration/",
+      10
      ]
     ],
     "🔍 구글 검색": [
      [
       "/issue/suneung-2027-answers-official-by-subject-1119/",
-      138
+      199
      ],
      [
       "/issue/suneung-2027-grade-cut-difficulty-answers-1119/",
-      45
+      55
      ],
      [
       "/money/guide/industrial-accident-insurance-rate-2027/",
+      3
+     ],
+     [
+      "/guide/pre-placement-health-exam-private-apply-cost/",
       2
      ],
      [
-      "/c/Q04413/",
+      "/contest/photo/",
       2
-     ],
-     [
-      "/money/guide/suneung-2027-admit-card-reissue/",
-      1
      ]
     ],
     "🔗 직접 접속(주소 입력·즐겨찾기·앱 안 링크)": [
      [
       "/issue/suneung-2027-grade-cut-difficulty-answers-1119/",
-      16
+      27
      ],
      [
       "/issue/suneung-2027-answers-official-by-subject-1119/",
-      15
+      21
      ],
      [
       "/event/",
-      10
+      13
      ],
      [
       "/contest/slogan/",
-      6
+      8
      ],
      [
-      "/",
-      4
+      "/money/guide/teacher-exam-2027-schedule/",
+      5
      ]
     ],
     "🏷️ 기타 홍보 링크(chatgptcom)": [
      [
       "/issue/suneung-2027-grade-cut-difficulty-answers-1119/",
-      5
+      7
      ],
      [
       "/issue/suneung-2027-answers-official-by-subject-1119/",
-      2
+      4
      ],
      [
       "/talk/2026-11-19/",
@@ -208,6 +248,10 @@
       3
      ],
      [
+      "/issue/insurance-rates-2027-1104/",
+      3
+     ],
+     [
       "/guide/one-person-corporation-closure-liquidation-tax/",
       3
      ],
@@ -218,10 +262,6 @@
      [
       "/guide/bank-passbook-reissue-fee-period/",
       3
-     ],
-     [
-      "/issue/insurance-rates-2027-1104/",
-      2
      ]
     ],
     "🏷️ 기타 홍보 링크(youtube)": [
@@ -232,6 +272,20 @@
      [
       "/issue/ai-glasses-series-05-suneung-day-22-phones-leet-1119/",
       2
+     ]
+    ],
+    "🏷️ 기타 홍보 링크(naver_kin)": [
+     [
+      "/guide/overseas-purchase-agent-customs-delay-refund/",
+      2
+     ],
+     [
+      "/money/guide/card-loss-theft-fraud-liability-60days/",
+      1
+     ],
+     [
+      "/guide/account-hacked-suspended-recovery-118/",
+      1
      ]
     ],
     "☕ 카페": [
@@ -256,23 +310,21 @@
       1
      ]
     ],
-    "🏷️ 기타 홍보 링크(naver_kin)": [
+    "🏷️ 기타 홍보 링크(perplexity)": [
      [
-      "/money/guide/card-loss-theft-fraud-liability-60days/",
-      1
-     ],
-     [
-      "/guide/overseas-purchase-agent-customs-delay-refund/",
-      1
-     ],
-     [
-      "/guide/account-hacked-suspended-recovery-118/",
+      "/issue/suneung-2027-grade-cut-difficulty-answers-1119/",
       1
      ]
     ],
     "🏷️ 기타 홍보 링크(naver_cafe)": [
      [
       "/issue/nvidia-ceo-exit-kospi-semiconductor-market-reaction-1116/",
+      1
+     ]
+    ],
+    "🌐 기타 사이트(perplexity.ai)": [
+     [
+      "/issue/suneung-2027-grade-cut-difficulty-answers-1119/",
       1
      ]
     ]
@@ -783,226 +835,6 @@
     "▶️ 유튜브": [
      [
       "/",
-      1
-     ]
-    ]
-   }
-  },
-  {
-   "day": "2026-11-16",
-   "visitors": 356,
-   "channels": [
-    [
-     "🔍 다음·빙 검색",
-     212
-    ],
-    [
-     "🔍 네이버 검색",
-     49
-    ],
-    [
-     "🔗 직접 접속(주소 입력·즐겨찾기·앱 안 링크)",
-     37
-    ],
-    [
-     "🔍 구글 검색",
-     31
-    ],
-    [
-     "🏷️ 기타 홍보 링크(chatgptcom)",
-     24
-    ],
-    [
-     "💻 개발자 커뮤니티",
-     2
-    ],
-    [
-     "🏷️ 기타 홍보 링크(app)",
-     1
-    ]
-   ],
-   "landing": [
-    [
-     "/money/guide/insurance-rates-2027-table/",
-     69
-    ],
-    [
-     "/money/guide/teacher-exam-2027-schedule/",
-     33
-    ],
-    [
-     "/issue/insurance-rates-2027-1104/",
-     12
-    ],
-    [
-     "/money/guide/civil-servant-exam-2027-schedule/",
-     7
-    ],
-    [
-     "/contest/deadline-12/",
-     7
-    ],
-    [
-     "/contest/slogan/",
-     6
-    ],
-    [
-     "/money/guide/teacher-pay-2027-salary-table/",
-     5
-    ],
-    [
-     "/guide/court-auction-bidder-payment-eviction-order/",
-     5
-    ],
-    [
-     "/guide/bank-passbook-reissue-fee-period/",
-     5
-    ],
-    [
-     "/guide/conditional-recipient-self-support-work-duty/",
-     5
-    ],
-    [
-     "/money/guide/civil-servant-pay-2027-schedule/",
-     4
-    ],
-    [
-     "/money/guide/susi-pass-jeongsi-apply-ban-double-registration/",
-     3
-    ],
-    [
-     "/money/guide/suneung-2027-timetable/",
-     3
-    ],
-    [
-     "/money/guide/car-insurance-driving-record-recognition-apply/",
-     3
-    ],
-    [
-     "/issue/suneung-score-report-1105/",
-     3
-    ]
-   ],
-   "by_channel": {
-    "🔍 다음·빙 검색": [
-     [
-      "/money/guide/insurance-rates-2027-table/",
-      66
-     ],
-     [
-      "/money/guide/teacher-exam-2027-schedule/",
-      33
-     ],
-     [
-      "/money/guide/civil-servant-exam-2027-schedule/",
-      6
-     ],
-     [
-      "/money/guide/teacher-pay-2027-salary-table/",
-      5
-     ],
-     [
-      "/money/guide/susi-pass-jeongsi-apply-ban-double-registration/",
-      3
-     ]
-    ],
-    "🏷️ 기타 홍보 링크(chatgptcom)": [
-     [
-      "/issue/insurance-rates-2027-1104/",
-      7
-     ],
-     [
-      "/contest/slogan/",
-      4
-     ],
-     [
-      "/talk/2026-11-16/",
-      1
-     ],
-     [
-      "/money/guide/workers-welfare-loan-wedding-interest-subsidy/",
-      1
-     ],
-     [
-      "/money/guide/national-scholarship-payment-date/",
-      1
-     ]
-    ],
-    "🔗 직접 접속(주소 입력·즐겨찾기·앱 안 링크)": [
-     [
-      "/contest/deadline-12/",
-      5
-     ],
-     [
-      "/money/guide/insurance-rates-2027-table/",
-      3
-     ],
-     [
-      "/money/guide/car-liability-insurance-uninsured-penalty/",
-      2
-     ],
-     [
-      "/issue/suneung-score-report-1105/",
-      2
-     ],
-     [
-      "/contest/slogan/",
-      2
-     ]
-    ],
-    "🔍 네이버 검색": [
-     [
-      "/guide/court-auction-bidder-payment-eviction-order/",
-      5
-     ],
-     [
-      "/guide/bank-passbook-reissue-fee-period/",
-      5
-     ],
-     [
-      "/money/guide/car-insurance-driving-record-recognition-apply/",
-      3
-     ],
-     [
-      "/guide/conditional-recipient-self-support-work-duty/",
-      3
-     ],
-     [
-      "/money/guide/other-income-necessary-expense-report/",
-      2
-     ]
-    ],
-    "🔍 구글 검색": [
-     [
-      "/money/guide/civil-servant-pay-2027-schedule/",
-      2
-     ],
-     [
-      "/guide/ulsan-youth-rent-support-2026-apply/",
-      2
-     ],
-     [
-      "/guide/conditional-recipient-self-support-work-duty/",
-      2
-     ],
-     [
-      "/contest/deadline-12/",
-      2
-     ],
-     [
-      "/money/guide/suneung-2027-admit-card-reissue/",
-      1
-     ]
-    ],
-    "💻 개발자 커뮤니티": [
-     [
-      "/fridge/",
-      2
-     ]
-    ],
-    "🏷️ 기타 홍보 링크(app)": [
-     [
-      "/fridge/",
       1
      ]
     ]
