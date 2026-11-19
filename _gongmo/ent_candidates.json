@@ -1,6 +1,6 @@
 {
- "at": "2026-11-20 03:30",
- "nitems": 512,
+ "at": "2026-11-20 05:11",
+ "nitems": 514,
  "cands": [
   {
    "kw": "활동",
@@ -174,40 +174,6 @@
    ]
   },
   {
-   "kw": "이유",
-   "nsrc": 5,
-   "srcs": [
-    "뉴시스",
-    "조선일보",
-    "한겨레",
-    "한국경제",
-    "헤럴드경제"
-   ],
-   "n": 9,
-   "headlines": [
-    {
-     "src": "한겨레",
-     "title": "“아기처럼 꾸밈없는 음악”…베이스 거장 송홍섭이 일흔 넘어 밴드 꾸린 이유",
-     "link": "https://www.hani.co.kr/arti/culture/music/1287698.html"
-    },
-    {
-     "src": "한국경제",
-     "title": "도파민의 시대…김종관표 '작고 사소한' 영화의 존재 이유 [씬터뷰]",
-     "link": "https://www.hankyung.com/article/202611045069H"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "‘이혼 15억·상간 3000만원’ 받는 최동석…박지윤 “생활비 제가 책임·수입 격차로 ‘의처증’”, 파경 이유 밝혀",
-     "link": "https://biz.heraldcorp.com/article/10942971"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "“박지윤, 男과 여행서 잠옷 입고 같은 방…영화 감상” 최동석 ‘상간자 소송’ 뒤집힌 이유",
-     "link": "https://biz.heraldcorp.com/article/10942077"
-    }
-   ]
-  },
-  {
    "kw": "서인영",
    "nsrc": 5,
    "srcs": [
@@ -352,7 +318,7 @@
     "세계일보",
     "조선일보"
    ],
-   "n": 16,
+   "n": 14,
    "headlines": [
     {
      "src": "동아일보",
@@ -509,6 +475,39 @@
    ]
   },
   {
+   "kw": "장나라",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "조선일보",
+    "한겨레"
+   ],
+   "n": 9,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "장나라, 동안 미녀 비결 공개 “100% 내돈내산 건강식” (편스토랑)",
+     "link": "https://sports.donga.com/ent/article/all/20261119/135055063/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "장나라, 가방에 강아지 간식까지…10년째 유기견 보호 봉사",
+     "link": "https://sports.donga.com/ent/article/all/20261119/135054228/1"
+    },
+    {
+     "src": "한겨레",
+     "title": "이혼 전문 변호사 장나라·이발사 박보검 돌아온다…시즌1 넘어설까",
+     "link": "https://www.hani.co.kr/arti/culture/culture_general/1288001.html"
+    },
+    {
+     "src": "뉴시스",
+     "title": "장나라, 6살 연하 촬영감독 남편 공개…\"잘생긴 당나귀 닮았다\"",
+     "link": "https://www.newsis.com/view/NISX20261119_0003875906"
+    }
+   ]
+  },
+  {
    "kw": "만원",
    "nsrc": 4,
    "srcs": [
@@ -538,6 +537,39 @@
      "src": "뉴시스",
      "title": "최동석 승소…박지윤 '상간 위자료 3000만원' 이례적 판결 이유는",
      "link": "https://www.newsis.com/view/NISX20261119_0003874396"
+    }
+   ]
+  },
+  {
+   "kw": "이유",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "조선일보",
+    "한국경제",
+    "헤럴드경제"
+   ],
+   "n": 8,
+   "headlines": [
+    {
+     "src": "한국경제",
+     "title": "도파민의 시대…김종관표 '작고 사소한' 영화의 존재 이유 [씬터뷰]",
+     "link": "https://www.hankyung.com/article/202611045069H"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "‘이혼 15억·상간 3000만원’ 받는 최동석…박지윤 “생활비 제가 책임·수입 격차로 ‘의처증’”, 파경 이유 밝혀",
+     "link": "https://biz.heraldcorp.com/article/10942971"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "“박지윤, 男과 여행서 잠옷 입고 같은 방…영화 감상” 최동석 ‘상간자 소송’ 뒤집힌 이유",
+     "link": "https://biz.heraldcorp.com/article/10942077"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "고지용 “아들 더 못보게 돼서”…전처와 면접교섭권 소송 이유",
+     "link": "https://biz.heraldcorp.com/article/10940497"
     }
    ]
   },
@@ -773,39 +805,6 @@
    ]
   },
   {
-   "kw": "건강",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "아일릿, 건강 문제로 활동 축소…\"고열·몸살에 발목 부상\"",
-     "link": "https://www.yna.co.kr/view/AKR20261119062900005"
-    },
-    {
-     "src": "동아일보",
-     "title": "아일릿 전원 건강 빨간불…불안 증세+몸살+부상 “활동 축소” [전문]",
-     "link": "https://sports.donga.com/ent/article/all/20261119/135057602/1"
-    },
-    {
-     "src": "뉴시스",
-     "title": "아일릿, 멤버 잇단 건강 이상에 활동 축소…\"'마마'는 협의 진행\"",
-     "link": "https://www.newsis.com/view/NISX20261119_0003874317"
-    },
-    {
-     "src": "조선일보",
-     "title": "\"간 안 좋아져\" 장나라, 건강 이상 고백…초동안 비결까지 ('편스토랑')",
-     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/20/MMYWIYZZHA3DGMZXME2TIOBVMM/"
-    }
-   ]
-  },
-  {
    "kw": "아일릿",
    "nsrc": 4,
    "srcs": [
@@ -835,6 +834,39 @@
      "src": "SBS",
      "title": "수능 하루 앞…아이유→황민현·엔하이픈·아일릿, 따뜻한 응원 릴레이",
      "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008852197&plink=RSSLINK&cooper=RSSREADER"
+    }
+   ]
+  },
+  {
+   "kw": "건강",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "연합뉴스",
+    "조선일보"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "아일릿, 건강 문제로 활동 축소…\"고열·몸살에 발목 부상\"",
+     "link": "https://www.yna.co.kr/view/AKR20261119062900005"
+    },
+    {
+     "src": "동아일보",
+     "title": "아일릿 전원 건강 빨간불…불안 증세+몸살+부상 “활동 축소” [전문]",
+     "link": "https://sports.donga.com/ent/article/all/20261119/135057602/1"
+    },
+    {
+     "src": "뉴시스",
+     "title": "아일릿, 멤버 잇단 건강 이상에 활동 축소…\"'마마'는 협의 진행\"",
+     "link": "https://www.newsis.com/view/NISX20261119_0003874317"
+    },
+    {
+     "src": "조선일보",
+     "title": "\"간 안 좋아져\" 장나라, 건강 이상 고백…초동안 비결까지 ('편스토랑')",
+     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/20/MMYWIYZZHA3DGMZXME2TIOBVMM/"
     }
    ]
   },
@@ -872,35 +904,68 @@
    ]
   },
   {
-   "kw": "비공개",
+   "kw": "있어",
    "nsrc": 4,
    "srcs": [
     "SBS",
-    "뉴시스",
     "동아일보",
-    "조선일보"
+    "조선일보",
+    "한국경제"
    ],
    "n": 5,
    "headlines": [
     {
      "src": "동아일보",
-     "title": "리트 만점자, 심정지 상태로 발견→미미미누·백지연 영상 비공개 [DA이슈]",
-     "link": "https://sports.donga.com/ent/article/all/20261119/135054321/2"
+     "title": "이지현, 12살 아들 “엄마가 해준 게 뭐 있어”에 상처와 배신감 느껴",
+     "link": "https://sports.donga.com/ent/article/all/20261119/135057764/1"
     },
     {
-     "src": "동아일보",
-     "title": "‘리트 만점자’ 이진우, 심정지 상태 발견…유튜브 영상 잇따라 비공개 [SD이슈]",
-     "link": "https://sports.donga.com/ent/article/all/20261119/135054105/1"
+     "src": "한국경제",
+     "title": "투어스 \"스스로 못 믿는 순간도…이름 불러주는 팬 있어 용기 생기죠\" [인터뷰+]",
+     "link": "https://www.hankyung.com/article/202611146527H"
     },
     {
      "src": "SBS",
-     "title": "미미미누, '리트 만점자' 출연 영상 내렸다…백지연 유튜브도 비공개",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008854022&plink=RSSLINK&cooper=RSSREADER"
+     "title": "'거장항준' 장항준, '왕사남' 인센티브 셀프 미담 폭주…\"예상 금액의 5배 받은 배우도 있어\"",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008853341&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "조선일보",
+     "title": "‘1만 구독자’ 최정윤, 깜짝 선물에 얼떨떨..”우리도 이벤트 할 수 있어” (맘대로 뛰는)",
+     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/20/GVSTAZBSMEYTSMBQGBTDEZLBGA/"
+    }
+   ]
+  },
+  {
+   "kw": "아들",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "한국경제",
+    "헤럴드경제"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "이지현, 12살 아들 “엄마가 해준 게 뭐 있어”에 상처와 배신감 느껴",
+     "link": "https://sports.donga.com/ent/article/all/20261119/135057764/1"
+    },
+    {
+     "src": "한국경제",
+     "title": "\"가정부와 불륜으로 낳은 아들\" 슈워제네거 혼외자, 보디빌더 데뷔",
+     "link": "https://www.hankyung.com/article/2026111086337"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "고지용 “아들 더 못보게 돼서”…전처와 면접교섭권 소송 이유",
+     "link": "https://biz.heraldcorp.com/article/10940497"
     },
     {
      "src": "뉴시스",
-     "title": "미미미누·백지연, 이진우 출연 영상 비공개 처리",
-     "link": "https://www.newsis.com/view/NISX20261119_0003875097"
+     "title": "한다감, 46세에 얻은 첫 아들 육아 근황…행복한 미소",
+     "link": "https://www.newsis.com/view/NISX20261119_0003875237"
     }
    ]
   },
@@ -924,6 +989,39 @@
      "src": "동아일보",
      "title": "미미미누 ‘AI 부정행위’ 시뮬레이션 화제 [주간SD]",
      "link": "https://sports.donga.com/ent/article/all/20261119/135053411/1"
+    },
+    {
+     "src": "SBS",
+     "title": "미미미누, '리트 만점자' 출연 영상 내렸다…백지연 유튜브도 비공개",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008854022&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "뉴시스",
+     "title": "미미미누·백지연, 이진우 출연 영상 비공개 처리",
+     "link": "https://www.newsis.com/view/NISX20261119_0003875097"
+    }
+   ]
+  },
+  {
+   "kw": "비공개",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "동아일보",
+    "조선일보"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "리트 만점자, 심정지 상태로 발견→미미미누·백지연 영상 비공개 [DA이슈]",
+     "link": "https://sports.donga.com/ent/article/all/20261119/135054321/2"
+    },
+    {
+     "src": "동아일보",
+     "title": "‘리트 만점자’ 이진우, 심정지 상태 발견…유튜브 영상 잇따라 비공개 [SD이슈]",
+     "link": "https://sports.donga.com/ent/article/all/20261119/135054105/1"
     },
     {
      "src": "SBS",
@@ -967,39 +1065,6 @@
      "src": "뉴시스",
      "title": "\"지인은 성소수자\"…박지윤, 최동석과 상간·이혼 소송 직접 반박",
      "link": "https://www.newsis.com/view/NISX20261119_0003874235"
-    }
-   ]
-  },
-  {
-   "kw": "있어",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "조선일보",
-    "한겨레",
-    "한국경제"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "한겨레",
-     "title": "‘가능한 사랑’이 깨워낸 R.ef ‘이별공식’…“90년대 음악엔 정서가 있어”",
-     "link": "https://www.hani.co.kr/arti/culture/culture_general/1287540.html"
-    },
-    {
-     "src": "한국경제",
-     "title": "투어스 \"스스로 못 믿는 순간도…이름 불러주는 팬 있어 용기 생기죠\" [인터뷰+]",
-     "link": "https://www.hankyung.com/article/202611146527H"
-    },
-    {
-     "src": "SBS",
-     "title": "'거장항준' 장항준, '왕사남' 인센티브 셀프 미담 폭주…\"예상 금액의 5배 받은 배우도 있어\"",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008853341&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "조선일보",
-     "title": "‘1만 구독자’ 최정윤, 깜짝 선물에 얼떨떨..”우리도 이벤트 할 수 있어” (맘대로 뛰는)",
-     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/20/GVSTAZBSMEYTSMBQGBTDEZLBGA/"
     }
    ]
   },
@@ -1169,38 +1234,6 @@
    ]
   },
   {
-   "kw": "장나라",
-   "nsrc": 3,
-   "srcs": [
-    "동아일보",
-    "조선일보",
-    "한겨레"
-   ],
-   "n": 8,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "장나라, 동안 미녀 비결 공개 “100% 내돈내산 건강식” (편스토랑)",
-     "link": "https://sports.donga.com/ent/article/all/20261119/135055063/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "장나라, 가방에 강아지 간식까지…10년째 유기견 보호 봉사",
-     "link": "https://sports.donga.com/ent/article/all/20261119/135054228/1"
-    },
-    {
-     "src": "한겨레",
-     "title": "이혼 전문 변호사 장나라·이발사 박보검 돌아온다…시즌1 넘어설까",
-     "link": "https://www.hani.co.kr/arti/culture/culture_general/1288001.html"
-    },
-    {
-     "src": "조선일보",
-     "title": "누적 기부액만 무려 200억 원…장나라, 3년만에 광고 '30개' 회상 ('편스토랑')",
-     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/20/GJTDMZLGGIYDINBQMQYGKMJQMU/"
-    }
-   ]
-  },
-  {
    "kw": "깜짝",
    "nsrc": 3,
    "srcs": [
@@ -1265,66 +1298,34 @@
    ]
   },
   {
-   "kw": "좋은",
+   "kw": "연하",
    "nsrc": 3,
    "srcs": [
-    "연합뉴스",
-    "조선일보",
-    "한겨레"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "코바코 '환경오염-푸른자연', 대학생 선정 좋은 광고 대상",
-     "link": "https://www.yna.co.kr/view/AKR20261119054700017"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "방미심위 9월 좋은 프로그램에 KBS '추심면허'",
-     "link": "https://www.yna.co.kr/view/AKR20261118160000017"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "'폭설' 구교환 \"예측불가 얼굴로 기분 좋은 혼란 주고 싶어\"",
-     "link": "https://www.yna.co.kr/view/AKR20261118099700005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "신현준 \"따뜻하던 故최불암·안성기 선배처럼 좋은 어른 되고파\"",
-     "link": "https://www.yna.co.kr/view/AKR20261116034800005"
-    }
-   ]
-  },
-  {
-   "kw": "직접",
-   "nsrc": 3,
-   "srcs": [
-    "SBS",
     "뉴시스",
+    "동아일보",
     "조선일보"
    ],
-   "n": 6,
+   "n": 7,
    "headlines": [
     {
-     "src": "SBS",
-     "title": "\"여전히 통쾌하고 유쾌함은 더했다\"…'굿파트너2' 작가·감독이 직접 밝힌 시즌2 관전 포인트",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008851328&plink=RSSLINK&cooper=RSSREADER"
+     "src": "동아일보",
+     "title": "한예슬, 임신설로 떠들썩했는데…♥10세 연하 남편과 달달한 근황",
+     "link": "https://sports.donga.com/ent/article/all/20261119/135054651/1"
     },
     {
      "src": "뉴시스",
-     "title": "AI가 직접 질문하고 구성한 다큐…EBS '안녕, 휴먼'",
-     "link": "https://www.newsis.com/view/NISX20261119_0003874386"
+     "title": "장나라, 6살 연하 촬영감독 남편 공개…\"잘생긴 당나귀 닮았다\"",
+     "link": "https://www.newsis.com/view/NISX20261119_0003875906"
     },
     {
      "src": "뉴시스",
-     "title": "김간지 \"중학교 때 문희준 안티 카페 활동…직접 사과해\"",
-     "link": "https://www.newsis.com/view/NISX20261119_0003874444"
+     "title": "유부녀 한예슬, 10살 연하 남편과 데이트 포착",
+     "link": "https://www.newsis.com/view/NISX20261119_0003875138"
     },
     {
      "src": "뉴시스",
-     "title": "리트 만점자, 백지연에 비결 직접 공개…생중계 검증 앞두고 연락두절",
-     "link": "https://www.newsis.com/view/NISX20261119_0003874260"
+     "title": "미나, 17세 연하 류필립과 이혼설 부인 \"잘 살고 있다\"",
+     "link": "https://www.newsis.com/view/NISX20261119_0003874496"
     }
    ]
   }
