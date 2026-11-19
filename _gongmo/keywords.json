@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-20 01:00",
+ "updated": "2026-11-20 02:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -807,6 +807,18 @@
    "expires": "2026-11-23"
   },
   {
+   "query": "thời tiết ngày mai",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 5000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-08",
+   "expires": "2026-11-23"
+  },
+  {
    "query": "기사",
    "tier": "단기",
    "signal": [
@@ -876,18 +888,6 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-06",
-   "expires": "2026-11-23"
-  },
-  {
-   "query": "thời tiết ngày mai",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 5000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-08",
    "expires": "2026-11-23"
   },
   {
@@ -3327,6 +3327,18 @@
    "expires": "2026-11-23"
   },
   {
+   "query": "앤트로픽 상장 시간",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-20",
+   "expires": "2026-11-23"
+  },
+  {
    "query": "알렉산더 즈베레프",
    "tier": "단기",
    "signal": [
@@ -4104,6 +4116,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-18",
+   "expires": "2026-11-23"
+  },
+  {
+   "query": "이재시",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-20",
    "expires": "2026-11-23"
   },
   {
@@ -6051,6 +6075,18 @@
    "expires": "2026-11-23"
   },
   {
+   "query": "김민지",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-20",
+   "expires": "2026-11-23"
+  },
+  {
    "query": "불법사채 피해구제 온라인 신청 방법 신용회복위원회 홈페이지·앱, 센터 방문 없이 무료 채무자대리인까지",
    "tier": "단기",
    "signal": [
@@ -6064,7 +6100,7 @@
    "expires": "2026-11-23"
   },
   {
-   "query": "앤트로픽 공모가 83달러 확정 ANT 나스닥 첫 거래 한국시간 언제, 공모 규모 685억달러 940억달러 차이",
+   "query": "앤트로픽 공모가 83달러 확정 ANT 나스닥 첫 거래 한국시간 언제, 공모 규모 813억달러 1073억달러 차이",
    "tier": "단기",
    "signal": [
     "뉴스",
