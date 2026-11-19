@@ -1,5 +1,5 @@
 {
- "at": "2026-11-19 19:11",
+ "at": "2026-11-19 19:30",
  "nitems": 523,
  "cands": [
   {
@@ -12,7 +12,7 @@
     "조선일보",
     "헤럴드경제"
    ],
-   "n": 13,
+   "n": 14,
    "headlines": [
     {
      "src": "동아일보",
@@ -283,7 +283,7 @@
     "세계일보",
     "조선일보"
    ],
-   "n": 38,
+   "n": 32,
    "headlines": [
     {
      "src": "동아일보",
@@ -296,14 +296,14 @@
      "link": "https://sports.donga.com/ent/article/all/20261119/135055226/1"
     },
     {
-     "src": "동아일보",
-     "title": "김명민, 故안판석 향한 그리움 “한 작품 더 못한 게 한” (유퀴즈)",
-     "link": "https://sports.donga.com/ent/article/all/20261119/135052839/1"
-    },
-    {
      "src": "세계일보",
      "title": "김명민, 경찰서장인 줄 모르고 호객했다가 봉변…“1박 2일 유치장 신세”",
      "link": "https://www.segye.com/newsView/20261119515326"
+    },
+    {
+     "src": "세계일보",
+     "title": "[포토] 김명민 '스크린 복귀'",
+     "link": "https://www.segye.com/newsView/20261119514576"
     }
    ]
   },
@@ -349,7 +349,7 @@
     "세계일보",
     "조선일보"
    ],
-   "n": 13,
+   "n": 14,
    "headlines": [
     {
      "src": "동아일보",
@@ -416,6 +416,39 @@
     "헤럴드경제"
    ],
    "n": 11,
+   "headlines": [
+    {
+     "src": "헤럴드경제",
+     "title": "박지윤 “의처증에 집 나왔는데, 최동석 집에서 여자와 관계”…‘부정행위 인정’ 판결에 입장 밝혀",
+     "link": "https://biz.heraldcorp.com/article/10942421"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "최동석-박지윤 상간 소송 2심 판결문 속 ‘365일’ 어떤 영화길래…",
+     "link": "https://biz.heraldcorp.com/article/10943013"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "‘이혼 15억·상간 3000만원’ 받는 최동석…박지윤 “생활비 제가 책임·수입 격차로 ‘의처증’”, 파경 이유 밝혀",
+     "link": "https://biz.heraldcorp.com/article/10942971"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "“박지윤, 男과 여행서 잠옷 입고 같은 방…영화 감상” 최동석 ‘상간자 소송’ 뒤집힌 이유",
+     "link": "https://biz.heraldcorp.com/article/10942077"
+    }
+   ]
+  },
+  {
+   "kw": "최동석",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "조선일보",
+    "헤럴드경제"
+   ],
+   "n": 10,
    "headlines": [
     {
      "src": "헤럴드경제",
@@ -638,6 +671,72 @@
    ]
   },
   {
+   "kw": "박하나",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "연합뉴스",
+    "조선일보"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "김태술·박하나 부부 부모 된다…\"모든 난임 부부들 응원\"",
+     "link": "https://www.yna.co.kr/view/AKR20261119154100005"
+    },
+    {
+     "src": "동아일보",
+     "title": "‘김태술♥’ 박하나 임신, 가득 쌓인 난임 치료 주사기 눈길",
+     "link": "https://sports.donga.com/ent/article/all/20261119/135057005/1"
+    },
+    {
+     "src": "뉴시스",
+     "title": "박하나♥김태술, 부모된다…시험관 실패 끝에 쌍둥이 임신",
+     "link": "https://www.newsis.com/view/NISX20261119_0003875440"
+    },
+    {
+     "src": "조선일보",
+     "title": "박하나♥김태술, 깜짝 임신 발표! \"이제 세 가족\"..초음파 사진 공개",
+     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/19/MFRGKNBZMM4GGYJUGZRTCYRQG4/"
+    }
+   ]
+  },
+  {
+   "kw": "김태술",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "연합뉴스",
+    "조선일보"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "김태술·박하나 부부 부모 된다…\"모든 난임 부부들 응원\"",
+     "link": "https://www.yna.co.kr/view/AKR20261119154100005"
+    },
+    {
+     "src": "동아일보",
+     "title": "‘김태술♥’ 박하나 임신, 가득 쌓인 난임 치료 주사기 눈길",
+     "link": "https://sports.donga.com/ent/article/all/20261119/135057005/1"
+    },
+    {
+     "src": "뉴시스",
+     "title": "박하나♥김태술, 부모된다…시험관 실패 끝에 쌍둥이 임신",
+     "link": "https://www.newsis.com/view/NISX20261119_0003875440"
+    },
+    {
+     "src": "조선일보",
+     "title": "박하나♥김태술, 깜짝 임신 발표! \"이제 세 가족\"..초음파 사진 공개",
+     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/19/MFRGKNBZMM4GGYJUGZRTCYRQG4/"
+    }
+   ]
+  },
+  {
    "kw": "솔로",
    "nsrc": 4,
    "srcs": [
@@ -737,39 +836,6 @@
    ]
   },
   {
-   "kw": "미미미누",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "동아일보",
-    "조선일보"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "리트 만점자, 심정지 상태로 발견→미미미누·백지연 영상 비공개 [DA이슈]",
-     "link": "https://sports.donga.com/ent/article/all/20261119/135054321/2"
-    },
-    {
-     "src": "동아일보",
-     "title": "미미미누 ‘AI 부정행위’ 시뮬레이션 화제 [주간SD]",
-     "link": "https://sports.donga.com/ent/article/all/20261119/135053411/1"
-    },
-    {
-     "src": "SBS",
-     "title": "미미미누, '리트 만점자' 출연 영상 내렸다…백지연 유튜브도 비공개",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008854022&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "뉴시스",
-     "title": "미미미누·백지연, 이진우 출연 영상 비공개 처리",
-     "link": "https://www.newsis.com/view/NISX20261119_0003875097"
-    }
-   ]
-  },
-  {
    "kw": "비공개",
    "nsrc": 4,
    "srcs": [
@@ -789,6 +855,39 @@
      "src": "동아일보",
      "title": "‘리트 만점자’ 이진우, 심정지 상태 발견…유튜브 영상 잇따라 비공개 [SD이슈]",
      "link": "https://sports.donga.com/ent/article/all/20261119/135054105/1"
+    },
+    {
+     "src": "SBS",
+     "title": "미미미누, '리트 만점자' 출연 영상 내렸다…백지연 유튜브도 비공개",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008854022&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "뉴시스",
+     "title": "미미미누·백지연, 이진우 출연 영상 비공개 처리",
+     "link": "https://www.newsis.com/view/NISX20261119_0003875097"
+    }
+   ]
+  },
+  {
+   "kw": "미미미누",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "동아일보",
+    "조선일보"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "리트 만점자, 심정지 상태로 발견→미미미누·백지연 영상 비공개 [DA이슈]",
+     "link": "https://sports.donga.com/ent/article/all/20261119/135054321/2"
+    },
+    {
+     "src": "동아일보",
+     "title": "미미미누 ‘AI 부정행위’ 시뮬레이션 화제 [주간SD]",
+     "link": "https://sports.donga.com/ent/article/all/20261119/135053411/1"
     },
     {
      "src": "SBS",
@@ -1001,7 +1100,7 @@
    ]
   },
   {
-   "kw": "보검",
+   "kw": "매직컬",
    "nsrc": 4,
    "srcs": [
     "SBS",
@@ -1034,7 +1133,7 @@
    ]
   },
   {
-   "kw": "매직컬",
+   "kw": "보검",
    "nsrc": 4,
    "srcs": [
     "SBS",
@@ -1199,130 +1298,35 @@
    ]
   },
   {
-   "kw": "최동석",
-   "nsrc": 3,
+   "kw": "전도연",
+   "nsrc": 4,
    "srcs": [
     "SBS",
     "뉴시스",
-    "헤럴드경제"
-   ],
-   "n": 9,
-   "headlines": [
-    {
-     "src": "헤럴드경제",
-     "title": "박지윤 “의처증에 집 나왔는데, 최동석 집에서 여자와 관계”…‘부정행위 인정’ 판결에 입장 밝혀",
-     "link": "https://biz.heraldcorp.com/article/10942421"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "최동석-박지윤 상간 소송 2심 판결문 속 ‘365일’ 어떤 영화길래…",
-     "link": "https://biz.heraldcorp.com/article/10943013"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "‘이혼 15억·상간 3000만원’ 받는 최동석…박지윤 “생활비 제가 책임·수입 격차로 ‘의처증’”, 파경 이유 밝혀",
-     "link": "https://biz.heraldcorp.com/article/10942971"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "“박지윤, 男과 여행서 잠옷 입고 같은 방…영화 감상” 최동석 ‘상간자 소송’ 뒤집힌 이유",
-     "link": "https://biz.heraldcorp.com/article/10942077"
-    }
-   ]
-  },
-  {
-   "kw": "액션",
-   "nsrc": 3,
-   "srcs": [
-    "동아일보",
     "세계일보",
     "조선일보"
    ],
-   "n": 8,
+   "n": 4,
    "headlines": [
     {
-     "src": "동아일보",
-     "title": "‘슬픈 열대’ 김명민 “액션 연습, 몸이 부서져라 죽기살기로 연습”",
-     "link": "https://sports.donga.com/ent/article/all/20261119/135055226/1"
+     "src": "세계일보",
+     "title": "사생활 노출 안 하던 전도연, 19년 만에 SNS 개설…팬들 ‘술렁’",
+     "link": "https://www.segye.com/newsView/20261119504475"
     },
     {
-     "src": "세계일보",
-     "title": "[포토] 박유림 '액션 연기 기대하세요!'",
-     "link": "https://www.segye.com/newsView/20261119514413"
+     "src": "SBS",
+     "title": "'53세' 전도연, 데뷔 첫 SNS 개설…글로벌 소통 나섰다",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008853199&plink=RSSLINK&cooper=RSSREADER"
     },
     {
-     "src": "세계일보",
-     "title": "[포토] 김명민 '액션 연기 기대하세요!'",
-     "link": "https://www.segye.com/newsView/20261119513975"
+     "src": "뉴시스",
+     "title": "전도연, 오스카 레이스 뛰어드나…데뷔 후 첫 SNS 개설",
+     "link": "https://www.newsis.com/view/NISX20261118_0003873770"
     },
     {
      "src": "조선일보",
-     "title": "[SC현장] \"살인 병기 만들었더니 해병대行\"…'슬픈열대' 軍이신영→김명민 완성한 핏빛 액션(종합)",
-     "link": "https://www.chosun.com/entertainments/movie/2026/11/19/G5QTOMBYGM3GMZBWMMZTAMTEHE/"
-    }
-   ]
-  },
-  {
-   "kw": "좋은",
-   "nsrc": 3,
-   "srcs": [
-    "뉴시스",
-    "연합뉴스",
-    "한겨레"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "코바코 '환경오염-푸른자연', 대학생 선정 좋은 광고 대상",
-     "link": "https://www.yna.co.kr/view/AKR20261119054700017"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "방미심위 9월 좋은 프로그램에 KBS '추심면허'",
-     "link": "https://www.yna.co.kr/view/AKR20261118160000017"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "'폭설' 구교환 \"예측불가 얼굴로 기분 좋은 혼란 주고 싶어\"",
-     "link": "https://www.yna.co.kr/view/AKR20261118099700005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "신현준 \"따뜻하던 故최불암·안성기 선배처럼 좋은 어른 되고파\"",
-     "link": "https://www.yna.co.kr/view/AKR20261116034800005"
-    }
-   ]
-  },
-  {
-   "kw": "주년",
-   "nsrc": 3,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "연합뉴스"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "경북 영천서 신성일기념관 개관 1주년 기념음악회 열린다",
-     "link": "https://www.yna.co.kr/view/AKR20261118127200053"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "결성 40주년 신촌블루스, 28∼29일 소극장 콘서트 '40+1'",
-     "link": "https://www.yna.co.kr/view/AKR20261117043400005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "전남 첫 근대식 극장 '목포', 개관 100주년 기념행사 다채",
-     "link": "https://www.yna.co.kr/view/AKR20261116068100054"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "CJ문화재단, 설립 20주년 학술대회…\"창작 지원에 917억원 후원\"",
-     "link": "https://www.yna.co.kr/view/AKR20261116045900030"
+     "title": "전도연, 무섭다더니 SNS 체질이었네..24시간 만에 美 근황 대방출[핫피플]",
+     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/19/MFSWIZBTGYZDIOBSMNQTSN3FGY/"
     }
    ]
   }

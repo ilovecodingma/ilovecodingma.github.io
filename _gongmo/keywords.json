@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-19 19:00",
+ "updated": "2026-11-19 20:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -72,6 +72,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-03",
+   "expires": "2026-11-22"
+  },
+  {
+   "query": "수능 답지",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 50000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-19",
    "expires": "2026-11-22"
   },
   {
@@ -3303,6 +3315,18 @@
    "expires": "2026-11-22"
   },
   {
+   "query": "수능 등급컷",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-19",
+   "expires": "2026-11-22"
+  },
+  {
    "query": "알렉산더 즈베레프",
    "tier": "단기",
    "signal": [
@@ -4959,6 +4983,18 @@
    "expires": "2026-11-22"
   },
   {
+   "query": "주얼리",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-19",
+   "expires": "2026-11-22"
+  },
+  {
    "query": "오산대",
    "tier": "단기",
    "signal": [
@@ -6288,6 +6324,19 @@
    "page": "",
    "registered": "2026-11-02",
    "expires": "2026-11-06"
+  },
+  {
+   "query": "한덕수 전 총리 징역 15년 대법원 파기환송, 상고심 주문과 대법관 9대 3 의견 정리",
+   "tier": "단기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 3,
+   "status": "작성",
+   "page": "/issue/supreme-court-han-duck-soo-insurrection-ruling-1119/",
+   "registered": "2026-11-19",
+   "expires": "2026-11-23"
   },
   {
    "query": "김건희 씨 대법원 징역 4년 확정, 상고심 주문과 대법관 의견 정리",
@@ -14468,7 +14517,7 @@
    "expires": "2026-11-26"
   },
   {
-   "query": "2027 수능 등급컷 — 국어·수학·영어 예상 1~3등급 컷과 난이도 총평",
+   "query": "2027 수능 예상 1등급컷 국어 화작 92~94·미적분 85~88점",
    "tier": "중기",
    "signal": [
     "뉴스",
