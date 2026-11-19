@@ -1,14 +1,14 @@
 {
  "date": "2026-11-19",
- "updated": "2026-11-19 13:51",
+ "updated": "2026-11-19 14:51",
  "sites": 13,
- "npost": 3072,
+ "npost": 3087,
  "note": "출처(커뮤니티)별 집계예요. 작성자·연령·성별 정보는 수집하지 않아요. posts 는 이슈별로 뽑힌 일부라 전체 글 수가 아니에요.",
  "sources": [
   {
    "name": "MLB파크",
-   "np": 18,
-   "nc": 1023,
+   "np": 17,
+   "nc": 844,
    "topics": [
     {
      "t": "박지윤 인스타 입장문",
@@ -19,8 +19,8 @@
      "issue_nc": 161,
      "kw": [
       "박지윤",
-      "입장",
-      "인스타"
+      "인스타",
+      "입장"
      ],
      "top_post": {
       "t": "박지윤 인스타 입장문",
@@ -33,8 +33,8 @@
      "nsite": 8,
      "np_here": 3,
      "nc_here": 150,
-     "issue_np": 17,
-     "issue_nc": 289,
+     "issue_np": 15,
+     "issue_nc": 270,
      "kw": [
       "리트",
       "만점자",
@@ -47,25 +47,6 @@
      }
     },
     {
-     "t": "[디스패치] \"매출 40억 넘기면, 10:0\"…이정재, 대주주의 얌체 경영",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 126,
-     "issue_np": 3,
-     "issue_nc": 126,
-     "kw": [
-      "이정재",
-      "얌체",
-      "매출",
-      "주주"
-     ],
-     "top_post": {
-      "t": "[디스패치] \"매출 40억 넘기면, 10:0\"…이정재, 대주주의 얌체 경영",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611180120183417&m=view",
-      "nc": 126
-     }
-    },
-    {
      "t": "눈물바다 된 리트 만점자 검증방송",
      "nsite": 4,
      "np_here": 2,
@@ -74,8 +55,8 @@
      "issue_nc": 149,
      "kw": [
       "검증",
-      "만점자",
       "리트",
+      "만점자",
       "공개"
      ],
      "top_post": {
@@ -85,41 +66,22 @@
      }
     },
     {
-     "t": "대구 모자 사망 사고난 도로",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 118,
-     "issue_np": 4,
-     "issue_nc": 145,
-     "kw": [
-      "대구",
-      "모자",
-      "사망",
-      "횡단보도"
-     ],
-     "top_post": {
-      "t": "대구 모자 사망 사고난 도로",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611180120186687&m=view",
-      "nc": 118
-     }
-    },
-    {
      "t": "[단독] 서울 중구 수능 수험장에서 전자기기 발견…학생 3명 부정행위 여부 파악 중",
      "nsite": 4,
      "np_here": 1,
-     "nc_here": 67,
+     "nc_here": 79,
      "issue_np": 4,
-     "issue_nc": 79,
+     "issue_nc": 91,
      "kw": [
-      "전자",
-      "발견",
-      "기기",
-      "중구"
+      "학생",
+      "행위",
+      "수험",
+      "여부"
      ],
      "top_post": {
       "t": "[단독] 서울 중구 수능 수험장에서 전자기기 발견…학생 3명 부정행위 여부 파악 중",
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611190120203745&m=view",
-      "nc": 67
+      "nc": 79
      }
     },
     {
@@ -130,13 +92,31 @@
      "issue_np": 4,
      "issue_nc": 64,
      "kw": [
-      "목록",
-      "금지"
+      "금지",
+      "목록"
      ],
      "top_post": {
       "t": "sns에 올라온 40대 이상 금지 목록",
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611180120191808&m=view",
       "nc": 61
+     }
+    },
+    {
+     "t": "이진우발견ㄷㄷㄷ",
+     "nsite": 5,
+     "np_here": 1,
+     "nc_here": 50,
+     "issue_np": 5,
+     "issue_nc": 70,
+     "kw": [
+      "발견",
+      "이진우",
+      "정지"
+     ],
+     "top_post": {
+      "t": "이진우발견ㄷㄷㄷ",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611190120205509&m=view",
+      "nc": 50
      }
     },
     {
@@ -147,8 +127,8 @@
      "issue_np": 4,
      "issue_nc": 52,
      "kw": [
-      "두절",
       "연락",
+      "두절",
       "이진우"
      ],
      "top_post": {
@@ -156,13 +136,32 @@
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611190120203394&m=view",
       "nc": 49
      }
+    },
+    {
+     "t": "ai안경 의심받은 세무사최연소합격자",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 46,
+     "issue_np": 4,
+     "issue_nc": 82,
+     "kw": [
+      "연소",
+      "세무사",
+      "합격자",
+      "의심"
+     ],
+     "top_post": {
+      "t": "ai안경 의심받은 세무사최연소합격자",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611180120189039&m=view",
+      "nc": 46
+     }
     }
    ]
   },
   {
    "name": "인스티즈",
-   "np": 8,
-   "nc": 440,
+   "np": 7,
+   "nc": 408,
    "topics": [
     {
      "t": "수능 부정행위 단속 총정리",
@@ -188,8 +187,8 @@
      "nsite": 8,
      "np_here": 1,
      "nc_here": 78,
-     "issue_np": 17,
-     "issue_nc": 289,
+     "issue_np": 15,
+     "issue_nc": 270,
      "kw": [
       "리트",
       "만점자",
@@ -211,8 +210,8 @@
      "kw": [
       "한국",
       "일본인",
-      "히트",
-      "세계"
+      "세계",
+      "히트"
      ],
      "top_post": {
       "t": "일본인이 만든 한국 과자 티어표",
@@ -225,7 +224,7 @@
      "nsite": 5,
      "np_here": 1,
      "nc_here": 66,
-     "issue_np": 9,
+     "issue_np": 8,
      "issue_nc": 82,
      "kw": [
       "부정",
@@ -241,14 +240,14 @@
     },
     {
      "t": "일본에서 난리난 바이든 전대통령 회고록",
-     "nsite": 7,
+     "nsite": 5,
      "np_here": 1,
      "nc_here": 37,
-     "issue_np": 7,
-     "issue_nc": 67,
+     "issue_np": 5,
+     "issue_nc": 65,
      "kw": [
-      "바이든",
       "일본",
+      "바이든",
       "회고록",
       "난리"
      ],
@@ -278,199 +277,22 @@
      }
     },
     {
-     "t": "실시간 세무사 시험 난리난 이유",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 33,
-     "issue_np": 4,
-     "issue_nc": 41,
-     "kw": [
-      "시험",
-      "세무사",
-      "난리"
-     ],
-     "top_post": {
-      "t": "실시간 세무사 시험 난리난 이유",
-      "u": "https://www.instiz.net/pt/7927353?green=1",
-      "nc": 33
-     }
-    },
-    {
      "t": "[속보] 또 음주운전 남태현, 결국 법정구속",
      "nsite": 4,
      "np_here": 1,
-     "nc_here": 31,
+     "nc_here": 32,
      "issue_np": 4,
-     "issue_nc": 31,
+     "issue_nc": 32,
      "kw": [
+      "구속",
       "법정",
       "음주",
-      "구속",
       "운전"
      ],
      "top_post": {
       "t": "[속보] 또 음주운전 남태현, 결국 법정구속",
       "u": "https://www.instiz.net/pt/7927450?green=1",
-      "nc": 31
-     }
-    }
-   ]
-  },
-  {
-   "name": "클리앙",
-   "np": 15,
-   "nc": 321,
-   "topics": [
-    {
-     "t": "조작기소 특검법 재가했네요",
-     "nsite": 3,
-     "np_here": 5,
-     "nc_here": 174,
-     "issue_np": 7,
-     "issue_nc": 180,
-     "kw": [
-      "조작",
-      "기소",
-      "특검",
-      "특검법"
-     ],
-     "top_post": {
-      "t": "조작기소 특검법 재가했네요",
-      "u": "https://www.clien.net/service/board/park/19294935?od=T33&po=0&category=0&groupCd=clien_all",
-      "nc": 79
-     }
-    },
-    {
-     "t": "일본인이 생각하는 한국 드라마가 세계적으로 히트한 이유",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 26,
-     "issue_np": 5,
-     "issue_nc": 114,
-     "kw": [
-      "한국",
-      "일본인",
-      "히트",
-      "세계"
-     ],
-     "top_post": {
-      "t": "일본인이 만든 한국 과자 티어표",
-      "u": "https://www.clien.net/service/board/park/19294487?od=T33&po=0&category=0&groupCd=clien_all",
-      "nc": 26
-     }
-    },
-    {
-     "t": "재난문자로 ㅈ 된 사람",
-     "nsite": 7,
-     "np_here": 1,
-     "nc_here": 20,
-     "issue_np": 24,
-     "issue_nc": 127,
-     "kw": [
-      "재난",
-      "문자",
-      "수능",
-      "발송"
-     ],
-     "top_post": {
-      "t": "재난문자로 스마트폰22개적발",
-      "u": "https://www.clien.net/service/board/park/19295133?od=T33&po=0&category=0&groupCd=clien_all",
-      "nc": 20
-     }
-    },
-    {
-     "t": "외교부 '조국 日입국거부 요인은 형 선고 이력'…독도 방문과 무관",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 19,
-     "issue_np": 4,
-     "issue_nc": 32,
-     "kw": [
-      "독도",
-      "조국",
-      "입국",
-      "거부"
-     ],
-     "top_post": {
-      "t": "외교부 '조국 日입국거부 요인은 형 선고 이력'…독도 방문과 무관",
-      "u": "https://www.clien.net/service/board/park/19294895?od=T33&po=0&category=0&groupCd=clien_all",
-      "nc": 19
-     }
-    },
-    {
-     "t": "중국 '한한령' 해제…'K기업, 중국 내 매장 운영하고 여행객 모집 가능'",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 18,
-     "issue_np": 4,
-     "issue_nc": 60,
-     "kw": [
-      "해제",
-      "중국",
-      "매장",
-      "여행객"
-     ],
-     "top_post": {
-      "t": "중국 '한한령' 해제…'K기업, 중국 내 매장 운영하고 여행객 모집 가능'",
-      "u": "https://www.clien.net/service/board/park/19294671?od=T33&po=0&category=0&groupCd=clien_all",
-      "nc": 18
-     }
-    },
-    {
-     "t": "일본에서 난리난 바이든 전대통령 회고록",
-     "nsite": 7,
-     "np_here": 1,
-     "nc_here": 15,
-     "issue_np": 7,
-     "issue_nc": 67,
-     "kw": [
-      "바이든",
-      "일본",
-      "회고록",
-      "난리"
-     ],
-     "top_post": {
-      "t": "바이든 회고록에 발작하는 일본 넷우익들.",
-      "u": "https://www.clien.net/service/board/park/19294642?od=T33&po=0&category=0&groupCd=clien_all",
-      "nc": 15
-     }
-    },
-    {
-     "t": "[속보]실종신고 이진우, 천호역 일대서 포착…경찰 수색 중",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 15,
-     "issue_np": 6,
-     "issue_nc": 24,
-     "kw": [
-      "경찰",
-      "이진우",
-      "속보",
-      "신고"
-     ],
-     "top_post": {
-      "t": "[속보]실종신고 이진우, 천호역 일대서 포착…경찰 수색 중",
-      "u": "https://www.clien.net/service/board/park/19295176?od=T33&po=0&category=0&groupCd=clien_all",
-      "nc": 15
-     }
-    },
-    {
-     "t": "[단독]\"리트만점 이진우와 구치소 수감\" 재소자 증언...'이름·생년월일' 일치 '공갈 판결문' 확인",
-     "nsite": 6,
-     "np_here": 2,
-     "nc_here": 14,
-     "issue_np": 8,
-     "issue_nc": 70,
-     "kw": [
-      "이진우",
-      "구치소",
-      "리트만점",
-      "수감"
-     ],
-     "top_post": {
-      "t": "[단독] '리트 만점 이진우와 구치소 방 함께 썼다' 재소자 증언.. 판결문도 확인",
-      "u": "https://www.clien.net/service/board/park/19295012?od=T33&po=0&category=0&groupCd=clien_all",
-      "nc": 12
+      "nc": 32
      }
     }
    ]
@@ -478,18 +300,18 @@
   {
    "name": "82쿡",
    "np": 22,
-   "nc": 276,
+   "nc": 280,
    "topics": [
     {
      "t": "재난문자로 ㅈ 된 사람",
-     "nsite": 7,
-     "np_here": 3,
-     "nc_here": 48,
-     "issue_np": 24,
-     "issue_nc": 127,
+     "nsite": 8,
+     "np_here": 2,
+     "nc_here": 45,
+     "issue_np": 31,
+     "issue_nc": 177,
      "kw": [
-      "재난",
       "문자",
+      "재난",
       "수능",
       "발송"
      ],
@@ -497,24 +319,6 @@
       "t": "재난 문자 왔어요.저는 안 울렸어요",
       "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4260455&page=1",
       "nc": 26
-     }
-    },
-    {
-     "t": "리트 만점자 의혹 또 터졌네요",
-     "nsite": 8,
-     "np_here": 2,
-     "nc_here": 37,
-     "issue_np": 17,
-     "issue_nc": 289,
-     "kw": [
-      "리트",
-      "만점자",
-      "의혹"
-     ],
-     "top_post": {
-      "t": "리트 만점자 고등학교 궁금",
-      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4260194&page=1",
-      "nc": 19
      }
     },
     {
@@ -544,10 +348,10 @@
      "issue_np": 8,
      "issue_nc": 70,
      "kw": [
-      "이진우",
       "구치소",
+      "이진우",
       "리트만점",
-      "수감"
+      "재소자"
      ],
      "top_post": {
       "t": "\"리트만점 이진우와 구치소 수감\" 동료 재소자..",
@@ -561,7 +365,7 @@
      "np_here": 1,
      "nc_here": 25,
      "issue_np": 4,
-     "issue_nc": 50,
+     "issue_nc": 52,
      "kw": [
       "리트만점자",
       "송강",
@@ -576,20 +380,38 @@
     {
      "t": "ai 안경쓰고 수능보러갔다가 ㅈ된 썰",
      "nsite": 6,
-     "np_here": 2,
-     "nc_here": 19,
-     "issue_np": 22,
-     "issue_nc": 93,
+     "np_here": 3,
+     "nc_here": 21,
+     "issue_np": 17,
+     "issue_nc": 78,
      "kw": [
       "AI",
-      "안경",
       "수능",
-      "컨닝"
+      "안경",
+      "시험"
      ],
      "top_post": {
       "t": "24년 수능은 ai 상용화가 안됐던 때 아닌가요?",
       "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4260514&page=1",
       "nc": 11
+     }
+    },
+    {
+     "t": "리트 만점자 의혹 또 터졌네요",
+     "nsite": 8,
+     "np_here": 1,
+     "nc_here": 18,
+     "issue_np": 15,
+     "issue_nc": 270,
+     "kw": [
+      "리트",
+      "만점자",
+      "의혹"
+     ],
+     "top_post": {
+      "t": "리트 만점자라는 사람 실시간 수능 국어 진짜 하네요",
+      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4260442&page=1",
+      "nc": 18
      }
     },
     {
@@ -616,7 +438,7 @@
      "nsite": 5,
      "np_here": 2,
      "nc_here": 16,
-     "issue_np": 9,
+     "issue_np": 8,
      "issue_nc": 82,
      "kw": [
       "부정",
@@ -634,38 +456,19 @@
   },
   {
    "name": "개드립",
-   "np": 13,
-   "nc": 243,
+   "np": 12,
+   "nc": 210,
    "topics": [
     {
-     "t": "ai 안경쓰고 수능보러갔다가 ㅈ된 썰",
-     "nsite": 6,
-     "np_here": 2,
-     "nc_here": 49,
-     "issue_np": 22,
-     "issue_nc": 93,
-     "kw": [
-      "AI",
-      "안경",
-      "수능",
-      "컨닝"
-     ],
-     "top_post": {
-      "t": "ai 안경쓰고 수능보러갔다가 ㅈ된 썰",
-      "u": "https://www.dogdrip.net/dogdrip/735485409?sort_index=popular&page=1",
-      "nc": 34
-     }
-    },
-    {
      "t": "ai안경 의심받은 세무사최연소합격자",
-     "nsite": 5,
+     "nsite": 4,
      "np_here": 1,
      "nc_here": 36,
-     "issue_np": 5,
+     "issue_np": 4,
      "issue_nc": 82,
      "kw": [
-      "세무사",
       "연소",
+      "세무사",
       "합격자",
       "의심"
      ],
@@ -676,15 +479,34 @@
      }
     },
     {
+     "t": "ai 안경쓰고 수능보러갔다가 ㅈ된 썰",
+     "nsite": 6,
+     "np_here": 1,
+     "nc_here": 34,
+     "issue_np": 17,
+     "issue_nc": 78,
+     "kw": [
+      "AI",
+      "수능",
+      "안경",
+      "시험"
+     ],
+     "top_post": {
+      "t": "ai 안경쓰고 수능보러갔다가 ㅈ된 썰",
+      "u": "https://www.dogdrip.net/dogdrip/735485409?sort_index=popular&page=1",
+      "nc": 34
+     }
+    },
+    {
      "t": "재난문자로 ㅈ 된 사람",
-     "nsite": 7,
+     "nsite": 8,
      "np_here": 1,
      "nc_here": 29,
-     "issue_np": 24,
-     "issue_nc": 127,
+     "issue_np": 31,
+     "issue_nc": 177,
      "kw": [
-      "재난",
       "문자",
+      "재난",
       "수능",
       "발송"
      ],
@@ -692,25 +514,6 @@
       "t": "재난문자로 ㅈ 된 사람",
       "u": "https://www.dogdrip.net/dogdrip/735524516?sort_index=popular&page=1",
       "nc": 29
-     }
-    },
-    {
-     "t": "대구 모자 사망 사고난 도로",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 27,
-     "issue_np": 4,
-     "issue_nc": 145,
-     "kw": [
-      "대구",
-      "모자",
-      "사망",
-      "횡단보도"
-     ],
-     "top_post": {
-      "t": "[공포] 대구 횡단보도 모자 사망사건 cctv",
-      "u": "https://www.dogdrip.net/dogdrip/735360776?sort_index=popular&page=1",
-      "nc": 27
      }
     },
     {
@@ -722,8 +525,8 @@
      "issue_nc": 149,
      "kw": [
       "검증",
-      "만점자",
       "리트",
+      "만점자",
       "공개"
      ],
      "top_post": {
@@ -737,12 +540,12 @@
      "nsite": 5,
      "np_here": 1,
      "nc_here": 23,
-     "issue_np": 8,
+     "issue_np": 7,
      "issue_nc": 23,
      "kw": [
       "수능",
-      "연필",
       "허용",
+      "연필",
       "흑색"
      ],
      "top_post": {
@@ -759,10 +562,10 @@
      "issue_np": 6,
      "issue_nc": 34,
      "kw": [
-      "회계사",
       "합격자",
-      "스펙",
-      "연소"
+      "회계사",
+      "연소",
+      "스펙"
      ],
      "top_post": {
       "t": "역대 최연소 (18세) 회계사 합격자 스펙ㄷㄷㄷㄷ",
@@ -778,9 +581,9 @@
      "issue_np": 6,
      "issue_nc": 28,
      "kw": [
-      "발송",
-      "수능",
       "위급재난문자",
+      "수능",
+      "발송",
       "불시"
      ],
      "top_post": {
@@ -788,12 +591,189 @@
       "u": "https://www.dogdrip.net/dogdrip/735379752?sort_index=popular&page=1",
       "nc": 18
      }
+    },
+    {
+     "t": "[단독] 서울 중구 수능 수험장에서 전자기기 발견…학생 3명 부정행위 여부 파악 중",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 12,
+     "issue_np": 4,
+     "issue_nc": 91,
+     "kw": [
+      "학생",
+      "행위",
+      "수험",
+      "여부"
+     ],
+     "top_post": {
+      "t": "[단독] 서울 중구 수능 수험장에서 전자기기 발견…학생 3명 부정행위 여부 파악",
+      "u": "https://www.dogdrip.net/dogdrip/735549843?sort_index=popular&page=1",
+      "nc": 12
+     }
+    }
+   ]
+  },
+  {
+   "name": "클리앙",
+   "np": 11,
+   "nc": 174,
+   "topics": [
+    {
+     "t": "재난문자로 ㅈ 된 사람",
+     "nsite": 8,
+     "np_here": 2,
+     "nc_here": 43,
+     "issue_np": 31,
+     "issue_nc": 177,
+     "kw": [
+      "문자",
+      "재난",
+      "수능",
+      "발송"
+     ],
+     "top_post": {
+      "t": "재난 문자 또 울렸네요..",
+      "u": "https://www.clien.net/service/board/park/19295271?od=T33&po=0&category=0&groupCd=clien_all",
+      "nc": 23
+     }
+    },
+    {
+     "t": "일본인이 생각하는 한국 드라마가 세계적으로 히트한 이유",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 26,
+     "issue_np": 5,
+     "issue_nc": 114,
+     "kw": [
+      "한국",
+      "일본인",
+      "세계",
+      "히트"
+     ],
+     "top_post": {
+      "t": "일본인이 만든 한국 과자 티어표",
+      "u": "https://www.clien.net/service/board/park/19294487?od=T33&po=0&category=0&groupCd=clien_all",
+      "nc": 26
+     }
+    },
+    {
+     "t": "외교부 '조국 日입국거부 요인은 형 선고 이력'…독도 방문과 무관",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 19,
+     "issue_np": 4,
+     "issue_nc": 32,
+     "kw": [
+      "독도",
+      "조국",
+      "입국",
+      "거부"
+     ],
+     "top_post": {
+      "t": "외교부 '조국 日입국거부 요인은 형 선고 이력'…독도 방문과 무관",
+      "u": "https://www.clien.net/service/board/park/19294895?od=T33&po=0&category=0&groupCd=clien_all",
+      "nc": 19
+     }
+    },
+    {
+     "t": "중국 '한한령' 해제…'K기업, 중국 내 매장 운영하고 여행객 모집 가능'",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 18,
+     "issue_np": 4,
+     "issue_nc": 60,
+     "kw": [
+      "중국",
+      "모집",
+      "해제",
+      "기업"
+     ],
+     "top_post": {
+      "t": "중국 '한한령' 해제…'K기업, 중국 내 매장 운영하고 여행객 모집 가능'",
+      "u": "https://www.clien.net/service/board/park/19294671?od=T33&po=0&category=0&groupCd=clien_all",
+      "nc": 18
+     }
+    },
+    {
+     "t": "일본에서 난리난 바이든 전대통령 회고록",
+     "nsite": 5,
+     "np_here": 1,
+     "nc_here": 15,
+     "issue_np": 5,
+     "issue_nc": 65,
+     "kw": [
+      "일본",
+      "바이든",
+      "회고록",
+      "난리"
+     ],
+     "top_post": {
+      "t": "바이든 회고록에 발작하는 일본 넷우익들.",
+      "u": "https://www.clien.net/service/board/park/19294642?od=T33&po=0&category=0&groupCd=clien_all",
+      "nc": 15
+     }
+    },
+    {
+     "t": "[속보]실종신고 이진우, 천호역 일대서 포착…경찰 수색 중",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 15,
+     "issue_np": 6,
+     "issue_nc": 24,
+     "kw": [
+      "실종",
+      "경찰",
+      "속보",
+      "이진우"
+     ],
+     "top_post": {
+      "t": "[속보]실종신고 이진우, 천호역 일대서 포착…경찰 수색 중",
+      "u": "https://www.clien.net/service/board/park/19295176?od=T33&po=0&category=0&groupCd=clien_all",
+      "nc": 15
+     }
+    },
+    {
+     "t": "[단독]\"리트만점 이진우와 구치소 수감\" 재소자 증언...'이름·생년월일' 일치 '공갈 판결문' 확인",
+     "nsite": 6,
+     "np_here": 2,
+     "nc_here": 14,
+     "issue_np": 8,
+     "issue_nc": 70,
+     "kw": [
+      "구치소",
+      "이진우",
+      "리트만점",
+      "재소자"
+     ],
+     "top_post": {
+      "t": "[단독] '리트 만점 이진우와 구치소 방 함께 썼다' 재소자 증언.. 판결문도 확인",
+      "u": "https://www.clien.net/service/board/park/19295012?od=T33&po=0&category=0&groupCd=clien_all",
+      "nc": 12
+     }
+    },
+    {
+     "t": "리트 만점자 의혹 또 터졌네요",
+     "nsite": 8,
+     "np_here": 1,
+     "nc_here": 12,
+     "issue_np": 15,
+     "issue_nc": 270,
+     "kw": [
+      "리트",
+      "만점자",
+      "의혹"
+     ],
+     "top_post": {
+      "t": "리트 만점자 결론은.....",
+      "u": "https://www.clien.net/service/board/park/19295004?od=T33&po=0&category=0&groupCd=clien_all",
+      "nc": 12
+     }
     }
    ]
   },
   {
    "name": "보배드림",
-   "np": 12,
+   "np": 13,
    "nc": 25,
    "topics": [
     {
@@ -804,10 +784,10 @@
      "issue_np": 6,
      "issue_nc": 34,
      "kw": [
-      "회계사",
       "합격자",
-      "스펙",
-      "연소"
+      "회계사",
+      "연소",
+      "스펙"
      ],
      "top_post": {
       "t": "누구도 의심 안하는 18살 최연소 회계사 합격자",
@@ -823,9 +803,9 @@
      "issue_np": 6,
      "issue_nc": 28,
      "kw": [
-      "발송",
-      "수능",
       "위급재난문자",
+      "수능",
+      "발송",
       "불시"
      ],
      "top_post": {
@@ -842,12 +822,30 @@
      "issue_np": 4,
      "issue_nc": 64,
      "kw": [
-      "목록",
-      "금지"
+      "금지",
+      "목록"
      ],
      "top_post": {
       "t": "40대 이상 금지목록",
       "u": "https://www.bobaedream.co.kr/view?code=best&No=1048573&vdate=",
+      "nc": 3
+     }
+    },
+    {
+     "t": "송강닮은꼴 리트만점자 이진우",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 3,
+     "issue_np": 4,
+     "issue_nc": 52,
+     "kw": [
+      "리트만점자",
+      "송강",
+      "이진우"
+     ],
+     "top_post": {
+      "t": "리트만점자 이진우가 작성한 글",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1048678&vdate=",
       "nc": 3
      }
     },
@@ -859,31 +857,13 @@
      "issue_np": 4,
      "issue_nc": 52,
      "kw": [
-      "두절",
       "연락",
+      "두절",
       "이진우"
      ],
      "top_post": {
       "t": "니트 만점자 이진우 현 시간 연락 두절",
       "u": "https://www.bobaedream.co.kr/view?code=best&No=1048639&vdate=",
-      "nc": 3
-     }
-    },
-    {
-     "t": "송강닮은꼴 리트만점자 이진우",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 3,
-     "issue_np": 4,
-     "issue_nc": 50,
-     "kw": [
-      "리트만점자",
-      "송강",
-      "이진우"
-     ],
-     "top_post": {
-      "t": "리트만점자 이진우가 작성한 글",
-      "u": "https://www.bobaedream.co.kr/view?code=best&No=1048678&vdate=",
       "nc": 3
      }
     },
@@ -907,7 +887,7 @@
      }
     },
     {
-     "t": "[단독] 수능 ‘단추 스티커’ 부착, 학생 자율에 맡겨…부정행위 방지 실효성 논란",
+     "t": "단추에 스티커 부착한 학생들",
      "nsite": 4,
      "np_here": 1,
      "nc_here": 3,
@@ -915,9 +895,9 @@
      "issue_nc": 10,
      "kw": [
       "학생",
+      "부착",
       "단추",
-      "스티커",
-      "부착"
+      "스티커"
      ],
      "top_post": {
       "t": "단추에 스티커 부착한 학생들",
@@ -956,13 +936,13 @@
      "nsite": 6,
      "np_here": 1,
      "nc_here": 20,
-     "issue_np": 22,
-     "issue_nc": 93,
+     "issue_np": 17,
+     "issue_nc": 78,
      "kw": [
       "AI",
-      "안경",
       "수능",
-      "컨닝"
+      "안경",
+      "시험"
      ],
      "top_post": {
       "t": "\"감히 AI안경으로 컨닝을 해?\"",
@@ -994,15 +974,15 @@
   {
    "name": "네이트판",
    "np": 2,
-   "nc": 16,
+   "nc": 18,
    "topics": [
     {
      "t": "송강닮은꼴 리트만점자 이진우",
      "nsite": 4,
      "np_here": 1,
-     "nc_here": 13,
+     "nc_here": 15,
      "issue_np": 4,
-     "issue_nc": 50,
+     "issue_nc": 52,
      "kw": [
       "리트만점자",
       "송강",
@@ -1011,7 +991,7 @@
      "top_post": {
       "t": "송강닮은꼴 리트만점자 이진우",
       "u": "https://pann.nate.com/talk/375725530",
-      "nc": 13
+      "nc": 15
      }
     },
     {
@@ -1019,13 +999,13 @@
      "nsite": 6,
      "np_here": 1,
      "nc_here": 3,
-     "issue_np": 22,
-     "issue_nc": 93,
+     "issue_np": 17,
+     "issue_nc": 78,
      "kw": [
       "AI",
-      "안경",
       "수능",
-      "컨닝"
+      "안경",
+      "시험"
      ],
      "top_post": {
       "t": "그냥 궁금ai 안경때문에 난리난 상황인데열심히 준비한 학생들도 있을거고수능연기에 대해 어떻...",
@@ -1036,200 +1016,16 @@
    ]
   },
   {
-   "name": "디시인사이드",
-   "np": 7,
+   "name": "SLR클럽",
+   "np": 15,
    "nc": 0,
    "topics": [
     {
-     "t": "일본에서 난리난 바이든 전대통령 회고록",
-     "nsite": 7,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 7,
-     "issue_nc": 67,
-     "kw": [
-      "바이든",
-      "일본",
-      "회고록",
-      "난리"
-     ],
-     "top_post": {
-      "t": "싱글벙글 일본에서 난리난 바이든 회고록",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=479833&_dcbest=1&page=1",
-      "nc": 0
-     }
-    },
-    {
      "t": "세무사시험 AI 부정행위가 문제가 아니다",
      "nsite": 5,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 9,
-     "issue_nc": 82,
-     "kw": [
-      "부정",
-      "행위",
-      "시험",
-      "AI"
-     ],
-     "top_post": {
-      "t": "한국에서는 부정행위해서라도 시험에서 인생쇼부봐야 되는 이유",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=479715&_dcbest=1&page=1",
-      "nc": 0
-     }
-    },
-    {
-     "t": "ai안경 의심받은 세무사최연소합격자",
-     "nsite": 5,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 82,
-     "kw": [
-      "세무사",
-      "연소",
-      "합격자",
-      "의심"
-     ],
-     "top_post": {
-      "t": "치팅 의심받은 세무사 시험 최연소 합격자 근황",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=479902&_dcbest=1&page=1",
-      "nc": 0
-     }
-    },
-    {
-     "t": "수능시험장 연필만 반입 허용…나머지 불가",
-     "nsite": 5,
-     "np_here": 1,
+     "np_here": 2,
      "nc_here": 0,
      "issue_np": 8,
-     "issue_nc": 23,
-     "kw": [
-      "수능",
-      "연필",
-      "허용",
-      "흑색"
-     ],
-     "top_post": {
-      "t": "수능시험장 연필만 반입 허용…나머지 불가",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=479909&_dcbest=1&page=1",
-      "nc": 0
-     }
-    },
-    {
-     "t": "중국 '한한령' 해제…'K기업, 중국 내 매장 운영하고 여행객 모집 가능'",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 60,
-     "kw": [
-      "해제",
-      "중국",
-      "매장",
-      "여행객"
-     ],
-     "top_post": {
-      "t": "중국 한한령 해제, K기업 중국 내 매장운영 및 여행객 모집 가능",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=479889&_dcbest=1&page=1",
-      "nc": 0
-     }
-    },
-    {
-     "t": "실시간 세무사 시험 난리난 이유",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 41,
-     "kw": [
-      "시험",
-      "세무사",
-      "난리"
-     ],
-     "top_post": {
-      "t": "싱글벙글 세무사 시험 컨닝하는 방법~",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=479698&_dcbest=1&page=1",
-      "nc": 0
-     }
-    },
-    {
-     "t": "[속보] 추경호, ‘계엄 해제 표결 방해 혐의’로 1심 무죄 선고",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 36,
-     "kw": [
-      "1심",
-      "무죄",
-      "추경호",
-      "방해"
-     ],
-     "top_post": {
-      "t": "[속보] 추경호, ‘계엄 해제 표결 방해 혐의’로 1심 무죄 선고",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=479911&_dcbest=1&page=1",
-      "nc": 0
-     }
-    }
-   ]
-  },
-  {
-   "name": "오늘의유머",
-   "np": 3,
-   "nc": 0,
-   "topics": [
-    {
-     "t": "일본에서 난리난 바이든 전대통령 회고록",
-     "nsite": 7,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 7,
-     "issue_nc": 67,
-     "kw": [
-      "바이든",
-      "일본",
-      "회고록",
-      "난리"
-     ],
-     "top_post": {
-      "t": "일본에서 난리난 바이든 전대통령 회고록",
-      "u": "https://www.todayhumor.co.kr/board/view.php?table=bestofbest&no=484143&s_no=484143&page=1",
-      "nc": 0
-     }
-    },
-    {
-     "t": "일본인이 생각하는 한국 드라마가 세계적으로 히트한 이유",
-     "nsite": 4,
-     "np_here": 2,
-     "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 114,
-     "kw": [
-      "한국",
-      "일본인",
-      "히트",
-      "세계"
-     ],
-     "top_post": {
-      "t": "일본인이 생각하는 한국 드라마가 세계적으로 히트한 이유",
-      "u": "https://www.todayhumor.co.kr/board/view.php?table=bestofbest&no=484135&s_no=484135&page=1",
-      "nc": 0
-     }
-    }
-   ]
-  },
-  {
-   "name": "SLR클럽",
-   "np": 11,
-   "nc": 0,
-   "topics": [
-    {
-     "t": "세무사시험 AI 부정행위가 문제가 아니다",
-     "nsite": 5,
-     "np_here": 2,
-     "nc_here": 0,
-     "issue_np": 9,
      "issue_nc": 82,
      "kw": [
       "부정",
@@ -1244,6 +1040,24 @@
      }
     },
     {
+     "t": "이진우발견ㄷㄷㄷ",
+     "nsite": 5,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 5,
+     "issue_nc": 70,
+     "kw": [
+      "발견",
+      "이진우",
+      "정지"
+     ],
+     "top_post": {
+      "t": "이진우 심정지 발견",
+      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677763",
+      "nc": 0
+     }
+    },
+    {
      "t": "역대 최연소 (18세) 회계사 합격자 스펙ㄷㄷㄷㄷ",
      "nsite": 5,
      "np_here": 1,
@@ -1251,10 +1065,10 @@
      "issue_np": 6,
      "issue_nc": 34,
      "kw": [
-      "회계사",
       "합격자",
-      "스펙",
-      "연소"
+      "회계사",
+      "연소",
+      "스펙"
      ],
      "top_post": {
       "t": "최연소 회계사 스펙",
@@ -1267,12 +1081,12 @@
      "nsite": 5,
      "np_here": 2,
      "nc_here": 0,
-     "issue_np": 8,
+     "issue_np": 7,
      "issue_nc": 23,
      "kw": [
       "수능",
-      "연필",
       "허용",
+      "연필",
       "흑색"
      ],
      "top_post": {
@@ -1290,8 +1104,8 @@
      "issue_nc": 161,
      "kw": [
       "박지윤",
-      "입장",
-      "인스타"
+      "인스타",
+      "입장"
      ],
      "top_post": {
       "t": "박지윤 인스타 입장문 근황 ㄷㄷㄷ",
@@ -1307,8 +1121,8 @@
      "issue_np": 4,
      "issue_nc": 64,
      "kw": [
-      "목록",
-      "금지"
+      "금지",
+      "목록"
      ],
      "top_post": {
       "t": "40대 금지목록",
@@ -1324,8 +1138,8 @@
      "issue_np": 4,
      "issue_nc": 52,
      "kw": [
-      "두절",
       "연락",
+      "두절",
       "이진우"
      ],
      "top_post": {
@@ -1352,23 +1166,144 @@
       "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677738",
       "nc": 0
      }
+    }
+   ]
+  },
+  {
+   "name": "디시인사이드",
+   "np": 7,
+   "nc": 0,
+   "topics": [
+    {
+     "t": "세무사시험 AI 부정행위가 문제가 아니다",
+     "nsite": 5,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 8,
+     "issue_nc": 82,
+     "kw": [
+      "부정",
+      "행위",
+      "시험",
+      "AI"
+     ],
+     "top_post": {
+      "t": "한국에서는 부정행위해서라도 시험에서 인생쇼부봐야 되는 이유",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=479715&_dcbest=1&page=1",
+      "nc": 0
+     }
     },
     {
-     "t": "[단독] 수능 ‘단추 스티커’ 부착, 학생 자율에 맡겨…부정행위 방지 실효성 논란",
+     "t": "일본에서 난리난 바이든 전대통령 회고록",
+     "nsite": 5,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 5,
+     "issue_nc": 65,
+     "kw": [
+      "일본",
+      "바이든",
+      "회고록",
+      "난리"
+     ],
+     "top_post": {
+      "t": "싱글벙글 일본에서 난리난 바이든 회고록",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=479833&_dcbest=1&page=1",
+      "nc": 0
+     }
+    },
+    {
+     "t": "수능시험장 연필만 반입 허용…나머지 불가",
+     "nsite": 5,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 7,
+     "issue_nc": 23,
+     "kw": [
+      "수능",
+      "허용",
+      "연필",
+      "흑색"
+     ],
+     "top_post": {
+      "t": "수능시험장 연필만 반입 허용…나머지 불가",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=479909&_dcbest=1&page=1",
+      "nc": 0
+     }
+    },
+    {
+     "t": "ai안경 의심받은 세무사최연소합격자",
      "nsite": 4,
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 4,
-     "issue_nc": 10,
+     "issue_nc": 82,
      "kw": [
-      "학생",
-      "단추",
-      "스티커",
-      "부착"
+      "연소",
+      "세무사",
+      "합격자",
+      "의심"
      ],
      "top_post": {
-      "t": "단추에 스티커 부착한 학생들",
-      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677751",
+      "t": "치팅 의심받은 세무사 시험 최연소 합격자 근황",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=479902&_dcbest=1&page=1",
+      "nc": 0
+     }
+    },
+    {
+     "t": "중국 '한한령' 해제…'K기업, 중국 내 매장 운영하고 여행객 모집 가능'",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 60,
+     "kw": [
+      "중국",
+      "모집",
+      "해제",
+      "기업"
+     ],
+     "top_post": {
+      "t": "중국 한한령 해제, K기업 중국 내 매장운영 및 여행객 모집 가능",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=479889&_dcbest=1&page=1",
+      "nc": 0
+     }
+    },
+    {
+     "t": "[속보] 추경호, ‘계엄 해제 표결 방해 혐의’로 1심 무죄 선고",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 36,
+     "kw": [
+      "1심",
+      "무죄",
+      "추경호",
+      "방해"
+     ],
+     "top_post": {
+      "t": "[속보] 추경호, ‘계엄 해제 표결 방해 혐의’로 1심 무죄 선고",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=479911&_dcbest=1&page=1",
+      "nc": 0
+     }
+    },
+    {
+     "t": "[속보] 리트 만점자 이진우 최종 사망확인",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 6,
+     "issue_nc": 6,
+     "kw": [
+      "이진우",
+      "리트",
+      "발견",
+      "속보"
+     ],
+     "top_post": {
+      "t": "리트냥이 이진우 심정지 상태로 발견.. jpg",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=480094&_dcbest=1&page=1",
       "nc": 0
      }
     }
@@ -1376,25 +1311,24 @@
   },
   {
    "name": "더쿠",
-   "np": 19,
+   "np": 24,
    "nc": 0,
    "topics": [
     {
-     "t": "ai안경 의심받은 세무사최연소합격자",
+     "t": "이진우발견ㄷㄷㄷ",
      "nsite": 5,
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 5,
-     "issue_nc": 82,
+     "issue_nc": 70,
      "kw": [
-      "세무사",
-      "연소",
-      "합격자",
-      "의심"
+      "발견",
+      "이진우",
+      "정지"
      ],
      "top_post": {
-      "t": "세무사 최연소 합격자",
-      "u": "https://theqoo.net/hot/4410016880",
+      "t": "리트 이진우 발견된 천호동 맷돌순두부 특징",
+      "u": "https://theqoo.net/hot/4411420982",
       "nc": 0
      }
     },
@@ -1425,9 +1359,9 @@
      "issue_np": 6,
      "issue_nc": 28,
      "kw": [
-      "발송",
-      "수능",
       "위급재난문자",
+      "수능",
+      "발송",
       "불시"
      ],
      "top_post": {
@@ -1441,12 +1375,12 @@
      "nsite": 5,
      "np_here": 2,
      "nc_here": 0,
-     "issue_np": 8,
+     "issue_np": 7,
      "issue_nc": 23,
      "kw": [
       "수능",
-      "연필",
       "허용",
+      "연필",
       "흑색"
      ],
      "top_post": {
@@ -1464,8 +1398,8 @@
      "issue_nc": 161,
      "kw": [
       "박지윤",
-      "입장",
-      "인스타"
+      "인스타",
+      "입장"
      ],
      "top_post": {
       "t": "박지윤 인스타 전문",
@@ -1482,8 +1416,8 @@
      "issue_nc": 149,
      "kw": [
       "검증",
-      "만점자",
       "리트",
+      "만점자",
       "공개"
      ],
      "top_post": {
@@ -1498,12 +1432,12 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 4,
-     "issue_nc": 79,
+     "issue_nc": 91,
      "kw": [
-      "전자",
-      "발견",
-      "기기",
-      "중구"
+      "학생",
+      "행위",
+      "수험",
+      "여부"
      ],
      "top_post": {
       "t": "[단독] 서울 중구 수능 수험장에서 전자기기 발견…학생 3명 부정행위 여부 파악 중",
@@ -1519,14 +1453,59 @@
      "issue_np": 4,
      "issue_nc": 60,
      "kw": [
-      "해제",
       "중국",
-      "매장",
-      "여행객"
+      "모집",
+      "해제",
+      "기업"
      ],
      "top_post": {
       "t": "중국 '한한령' 해제…\"K기업, 중국 내 매장 운영하고 여행객 모집 가능\"",
       "u": "https://theqoo.net/hot/4410440243",
+      "nc": 0
+     }
+    }
+   ]
+  },
+  {
+   "name": "오늘의유머",
+   "np": 3,
+   "nc": 0,
+   "topics": [
+    {
+     "t": "일본에서 난리난 바이든 전대통령 회고록",
+     "nsite": 5,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 5,
+     "issue_nc": 65,
+     "kw": [
+      "일본",
+      "바이든",
+      "회고록",
+      "난리"
+     ],
+     "top_post": {
+      "t": "일본에서 난리난 바이든 전대통령 회고록",
+      "u": "https://www.todayhumor.co.kr/board/view.php?table=bestofbest&no=484143&s_no=484143&page=1",
+      "nc": 0
+     }
+    },
+    {
+     "t": "일본인이 생각하는 한국 드라마가 세계적으로 히트한 이유",
+     "nsite": 4,
+     "np_here": 2,
+     "nc_here": 0,
+     "issue_np": 5,
+     "issue_nc": 114,
+     "kw": [
+      "한국",
+      "일본인",
+      "세계",
+      "히트"
+     ],
+     "top_post": {
+      "t": "일본인이 생각하는 한국 드라마가 세계적으로 히트한 이유",
+      "u": "https://www.todayhumor.co.kr/board/view.php?table=bestofbest&no=484135&s_no=484135&page=1",
       "nc": 0
      }
     }
@@ -1564,10 +1543,10 @@
      "issue_np": 6,
      "issue_nc": 34,
      "kw": [
-      "회계사",
       "합격자",
-      "스펙",
-      "연소"
+      "회계사",
+      "연소",
+      "스펙"
      ],
      "top_post": {
       "t": "누구도 의심 안하는 18살 최연소 회계사 합격자",
@@ -1583,9 +1562,9 @@
      "issue_np": 6,
      "issue_nc": 28,
      "kw": [
-      "발송",
-      "수능",
       "위급재난문자",
+      "수능",
+      "발송",
       "불시"
      ],
      "top_post": {
@@ -1619,12 +1598,12 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 4,
-     "issue_nc": 79,
+     "issue_nc": 91,
      "kw": [
-      "전자",
-      "발견",
-      "기기",
-      "중구"
+      "학생",
+      "행위",
+      "수험",
+      "여부"
      ],
      "top_post": {
       "t": "서울 중구 수능 수험장에서 전자기기 발견…학생 3명 부정행위 여부 파악 중",
@@ -1640,8 +1619,8 @@
      "issue_np": 4,
      "issue_nc": 64,
      "kw": [
-      "목록",
-      "금지"
+      "금지",
+      "목록"
      ],
      "top_post": {
       "t": "40대 아상 금지목록",
@@ -1657,8 +1636,8 @@
      "issue_np": 4,
      "issue_nc": 52,
      "kw": [
-      "두절",
       "연락",
+      "두절",
       "이진우"
      ],
      "top_post": {
@@ -1673,11 +1652,11 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 4,
-     "issue_nc": 31,
+     "issue_nc": 32,
      "kw": [
+      "구속",
       "법정",
       "음주",
-      "구속",
       "운전"
      ],
      "top_post": {
