@@ -1,7 +1,42 @@
 {
- "at": "2026-11-19 21:30",
+ "at": "2026-11-19 22:30",
  "nitems": 523,
  "cands": [
+  {
+   "kw": "활동",
+   "nsrc": 6,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "연합뉴스",
+    "조선일보",
+    "한국경제",
+    "헤럴드경제"
+   ],
+   "n": 8,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "아일릿, 건강 문제로 활동 축소…\"고열·몸살에 발목 부상\"",
+     "link": "https://www.yna.co.kr/view/AKR20261119062900005"
+    },
+    {
+     "src": "동아일보",
+     "title": "아일릿 전원 건강 빨간불…불안 증세+몸살+부상 “활동 축소” [전문]",
+     "link": "https://sports.donga.com/ent/article/all/20261119/135057602/1"
+    },
+    {
+     "src": "한국경제",
+     "title": "YG 전속계약 명단서 빠진 블랙핑크…\"그룹 활동 논의 중\"",
+     "link": "https://www.hankyung.com/article/202611169801H"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "‘노동 착취 논란’ 헤이지니, 한 달 만에 유튜브 활동 재개",
+     "link": "https://biz.heraldcorp.com/article/10942716"
+    }
+   ]
+  },
   {
    "kw": "내년",
    "nsrc": 5,
@@ -46,7 +81,7 @@
     "조선일보",
     "헤럴드경제"
    ],
-   "n": 13,
+   "n": 14,
    "headlines": [
     {
      "src": "동아일보",
@@ -67,6 +102,40 @@
      "src": "동아일보",
      "title": "리트 만점자, 심정지 상태로 발견",
      "link": "https://sports.donga.com/ent/article/all/20261119/135053826/1"
+    }
+   ]
+  },
+  {
+   "kw": "수능",
+   "nsrc": 5,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "연합뉴스",
+    "조선일보",
+    "헤럴드경제"
+   ],
+   "n": 13,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "수능 대신 무대 오르는 08년생 아이돌들…코르티스·리센느 등",
+     "link": "https://www.yna.co.kr/view/AKR20261117153900005"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "‘공신’ 강성태, 수능 포기했다…“모든 학생이 잠재적 부정행위자 됐다”",
+     "link": "https://biz.heraldcorp.com/article/10942358"
+    },
+    {
+     "src": "SBS",
+     "title": "수능 하루 앞…아이유→황민현·엔하이픈·아일릿, 따뜻한 응원 릴레이",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008852197&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "뉴시스",
+     "title": "수능 재난문자 울렸는데 \"전혀 몰랐다\"…김연자, 경보음 집어삼킨 '아모르파티'",
+     "link": "https://www.newsis.com/view/NISX20261119_0003875323"
     }
    ]
   },
@@ -105,40 +174,6 @@
    ]
   },
   {
-   "kw": "수능",
-   "nsrc": 5,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "연합뉴스",
-    "조선일보",
-    "헤럴드경제"
-   ],
-   "n": 10,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "수능 대신 무대 오르는 08년생 아이돌들…코르티스·리센느 등",
-     "link": "https://www.yna.co.kr/view/AKR20261117153900005"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "‘공신’ 강성태, 수능 포기했다…“모든 학생이 잠재적 부정행위자 됐다”",
-     "link": "https://biz.heraldcorp.com/article/10942358"
-    },
-    {
-     "src": "SBS",
-     "title": "수능 하루 앞…아이유→황민현·엔하이픈·아일릿, 따뜻한 응원 릴레이",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008852197&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "뉴시스",
-     "title": "수능 재난문자 울렸는데 \"전혀 몰랐다\"…김연자, 경보음 집어삼킨 '아모르파티'",
-     "link": "https://www.newsis.com/view/NISX20261119_0003875323"
-    }
-   ]
-  },
-  {
    "kw": "이유",
    "nsrc": 5,
    "srcs": [
@@ -173,36 +208,36 @@
    ]
   },
   {
-   "kw": "활동",
+   "kw": "디즈니",
    "nsrc": 5,
    "srcs": [
+    "SBS",
     "뉴시스",
+    "세계일보",
     "연합뉴스",
-    "조선일보",
-    "한국경제",
-    "헤럴드경제"
+    "한국경제"
    ],
-   "n": 7,
+   "n": 8,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "아일릿, 건강 문제로 활동 축소…\"고열·몸살에 발목 부상\"",
-     "link": "https://www.yna.co.kr/view/AKR20261119062900005"
+     "title": "디즈니+ 한국 진출 5년…\"OTT 경쟁은 장기전, 韓 콘텐츠 강화\"",
+     "link": "https://www.yna.co.kr/view/AKR20261118115600005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "디즈니, 어닝 서프라이즈에도 허리띠 졸라매기…\"성장위한 투자\"",
+     "link": "https://www.yna.co.kr/view/AKR20261118068500075"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "[테크스냅] 디즈니, 'D23 아시아' 티켓 25일부터 국내 선예매",
+     "link": "https://www.yna.co.kr/view/AKR20261116125500017"
     },
     {
      "src": "한국경제",
-     "title": "YG 전속계약 명단서 빠진 블랙핑크…\"그룹 활동 논의 중\"",
-     "link": "https://www.hankyung.com/article/202611169801H"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "‘노동 착취 논란’ 헤이지니, 한 달 만에 유튜브 활동 재개",
-     "link": "https://biz.heraldcorp.com/article/10942716"
-    },
-    {
-     "src": "뉴시스",
-     "title": "'노동 착취·산재 시비' 헤이지니, 한 달 만에 유튜브 활동 재개",
-     "link": "https://www.newsis.com/view/NISX20261119_0003875022"
+     "title": "장원영, 디즈니 공주님이 여기 있네…홍콩 밝힌 비주얼",
+     "link": "https://www.hankyung.com/article/202611185624H"
     }
    ]
   },
@@ -275,40 +310,6 @@
    ]
   },
   {
-   "kw": "백지연",
-   "nsrc": 5,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "동아일보",
-    "세계일보",
-    "조선일보"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "리트 만점자, 심정지 상태로 발견→미미미누·백지연 영상 비공개 [DA이슈]",
-     "link": "https://sports.donga.com/ent/article/all/20261119/135054321/2"
-    },
-    {
-     "src": "세계일보",
-     "title": "이진우, 백지연 영상서 “글 안 들어와…옛날로 돌아간 기분”",
-     "link": "https://www.segye.com/newsView/20261119504492"
-    },
-    {
-     "src": "SBS",
-     "title": "미미미누, '리트 만점자' 출연 영상 내렸다…백지연 유튜브도 비공개",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008854022&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "뉴시스",
-     "title": "미미미누·백지연, 이진우 출연 영상 비공개 처리",
-     "link": "https://www.newsis.com/view/NISX20261119_0003875097"
-    }
-   ]
-  },
-  {
    "kw": "김명민",
    "nsrc": 4,
    "srcs": [
@@ -317,7 +318,7 @@
     "세계일보",
     "조선일보"
    ],
-   "n": 29,
+   "n": 28,
    "headlines": [
     {
      "src": "동아일보",
@@ -342,39 +343,6 @@
    ]
   },
   {
-   "kw": "이진우",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "세계일보",
-    "조선일보"
-   ],
-   "n": 12,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "‘리트 만점자’ 이진우 사망…AI 부정행위 의혹 수사 종결 수순",
-     "link": "https://sports.donga.com/ent/article/all/20261119/135054918/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "‘리트 만점자’ 이진우, 심정지 상태 발견…유튜브 영상 잇따라 비공개 [SD이슈]",
-     "link": "https://sports.donga.com/ent/article/all/20261119/135054105/1"
-    },
-    {
-     "src": "세계일보",
-     "title": "이진우, 백지연 영상서 “글 안 들어와…옛날로 돌아간 기분”",
-     "link": "https://www.segye.com/newsView/20261119504492"
-    },
-    {
-     "src": "뉴시스",
-     "title": "'궁금한 이야기 Y', 리트 만점자 이진우 제보 받는다…\"피해자 연락 달라\"",
-     "link": "https://www.newsis.com/view/NISX20261119_0003875286"
-    }
-   ]
-  },
-  {
    "kw": "부정행위",
    "nsrc": 4,
    "srcs": [
@@ -383,7 +351,7 @@
     "조선일보",
     "헤럴드경제"
    ],
-   "n": 11,
+   "n": 12,
    "headlines": [
     {
      "src": "동아일보",
@@ -416,6 +384,72 @@
     "조선일보",
     "헤럴드경제"
    ],
+   "n": 12,
+   "headlines": [
+    {
+     "src": "헤럴드경제",
+     "title": "박지윤 “의처증에 집 나왔는데, 최동석 집에서 여자와 관계”…‘부정행위 인정’ 판결에 입장 밝혀",
+     "link": "https://biz.heraldcorp.com/article/10942421"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "최동석-박지윤 상간 소송 2심 판결문 속 ‘365일’ 어떤 영화길래…",
+     "link": "https://biz.heraldcorp.com/article/10943013"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "‘이혼 15억·상간 3000만원’ 받는 최동석…박지윤 “생활비 제가 책임·수입 격차로 ‘의처증’”, 파경 이유 밝혀",
+     "link": "https://biz.heraldcorp.com/article/10942971"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "“박지윤, 男과 여행서 잠옷 입고 같은 방…영화 감상” 최동석 ‘상간자 소송’ 뒤집힌 이유",
+     "link": "https://biz.heraldcorp.com/article/10942077"
+    }
+   ]
+  },
+  {
+   "kw": "이진우",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "세계일보",
+    "조선일보"
+   ],
+   "n": 11,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "‘리트 만점자’ 이진우 사망…AI 부정행위 의혹 수사 종결 수순",
+     "link": "https://sports.donga.com/ent/article/all/20261119/135054918/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "‘리트 만점자’ 이진우, 심정지 상태 발견…유튜브 영상 잇따라 비공개 [SD이슈]",
+     "link": "https://sports.donga.com/ent/article/all/20261119/135054105/1"
+    },
+    {
+     "src": "세계일보",
+     "title": "이진우, 백지연 영상서 “글 안 들어와…옛날로 돌아간 기분”",
+     "link": "https://www.segye.com/newsView/20261119504492"
+    },
+    {
+     "src": "뉴시스",
+     "title": "'궁금한 이야기 Y', 리트 만점자 이진우 제보 받는다…\"피해자 연락 달라\"",
+     "link": "https://www.newsis.com/view/NISX20261119_0003875286"
+    }
+   ]
+  },
+  {
+   "kw": "최동석",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "조선일보",
+    "헤럴드경제"
+   ],
    "n": 11,
    "headlines": [
     {
@@ -441,35 +475,68 @@
    ]
   },
   {
-   "kw": "최동석",
+   "kw": "응원",
    "nsrc": 4,
    "srcs": [
     "SBS",
-    "뉴시스",
+    "연합뉴스",
     "조선일보",
     "헤럴드경제"
    ],
-   "n": 10,
+   "n": 7,
    "headlines": [
     {
-     "src": "헤럴드경제",
-     "title": "박지윤 “의처증에 집 나왔는데, 최동석 집에서 여자와 관계”…‘부정행위 인정’ 판결에 입장 밝혀",
-     "link": "https://biz.heraldcorp.com/article/10942421"
+     "src": "연합뉴스",
+     "title": "김태술·박하나 부부 부모 된다…\"모든 난임 부부들 응원\"",
+     "link": "https://www.yna.co.kr/view/AKR20261119154100005"
     },
     {
      "src": "헤럴드경제",
-     "title": "최동석-박지윤 상간 소송 2심 판결문 속 ‘365일’ 어떤 영화길래…",
-     "link": "https://biz.heraldcorp.com/article/10943013"
+     "title": "성유리 ‘무죄 확정’ 남편 게시물에 ‘좋아요’ 꾹…공개 응원",
+     "link": "https://biz.heraldcorp.com/article/10940592"
     },
     {
-     "src": "헤럴드경제",
-     "title": "‘이혼 15억·상간 3000만원’ 받는 최동석…박지윤 “생활비 제가 책임·수입 격차로 ‘의처증’”, 파경 이유 밝혀",
-     "link": "https://biz.heraldcorp.com/article/10942971"
+     "src": "SBS",
+     "title": "수능 하루 앞…아이유→황민현·엔하이픈·아일릿, 따뜻한 응원 릴레이",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008852197&plink=RSSLINK&cooper=RSSREADER"
     },
     {
-     "src": "헤럴드경제",
-     "title": "“박지윤, 男과 여행서 잠옷 입고 같은 방…영화 감상” 최동석 ‘상간자 소송’ 뒤집힌 이유",
-     "link": "https://biz.heraldcorp.com/article/10942077"
+     "src": "조선일보",
+     "title": "‘이대 미대 졸업’ 노윤서, 수능 수험생들 응원..“노력한 결실 맺을 수 있길”",
+     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/19/GU3GCNJXG42TCYZYMZTGGYJWMU/"
+    }
+   ]
+  },
+  {
+   "kw": "좋은",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "연합뉴스",
+    "조선일보",
+    "한겨레"
+   ],
+   "n": 7,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "코바코 '환경오염-푸른자연', 대학생 선정 좋은 광고 대상",
+     "link": "https://www.yna.co.kr/view/AKR20261119054700017"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "방미심위 9월 좋은 프로그램에 KBS '추심면허'",
+     "link": "https://www.yna.co.kr/view/AKR20261118160000017"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "'폭설' 구교환 \"예측불가 얼굴로 기분 좋은 혼란 주고 싶어\"",
+     "link": "https://www.yna.co.kr/view/AKR20261118099700005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "신현준 \"따뜻하던 故최불암·안성기 선배처럼 좋은 어른 되고파\"",
+     "link": "https://www.yna.co.kr/view/AKR20261116034800005"
     }
    ]
   },
@@ -540,40 +607,7 @@
    ]
   },
   {
-   "kw": "디즈니",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "연합뉴스",
-    "한국경제"
-   ],
-   "n": 7,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "디즈니+ 한국 진출 5년…\"OTT 경쟁은 장기전, 韓 콘텐츠 강화\"",
-     "link": "https://www.yna.co.kr/view/AKR20261118115600005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "디즈니, 어닝 서프라이즈에도 허리띠 졸라매기…\"성장위한 투자\"",
-     "link": "https://www.yna.co.kr/view/AKR20261118068500075"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "[테크스냅] 디즈니, 'D23 아시아' 티켓 25일부터 국내 선예매",
-     "link": "https://www.yna.co.kr/view/AKR20261116125500017"
-    },
-    {
-     "src": "한국경제",
-     "title": "장원영, 디즈니 공주님이 여기 있네…홍콩 밝힌 비주얼",
-     "link": "https://www.hankyung.com/article/202611185624H"
-    }
-   ]
-  },
-  {
-   "kw": "김태술",
+   "kw": "박하나",
    "nsrc": 4,
    "srcs": [
     "뉴시스",
@@ -606,7 +640,7 @@
    ]
   },
   {
-   "kw": "박하나",
+   "kw": "김태술",
    "nsrc": 4,
    "srcs": [
     "뉴시스",
@@ -672,6 +706,39 @@
    ]
   },
   {
+   "kw": "데뷔",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "동아일보",
+    "한국경제"
+   ],
+   "n": 6,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "알파드라이브원, 27년 1월 27일 日 정식 데뷔…열도 접수 나선다",
+     "link": "https://sports.donga.com/ent/article/all/20261119/135057647/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "코이키즈, 데뷔 첫 연말 시상식…21일 ‘마마 어워즈’ 출격",
+     "link": "https://sports.donga.com/ent/article/all/20261119/135054973/1"
+    },
+    {
+     "src": "한국경제",
+     "title": "[단독] SM 신인 보이그룹, 내년 1월 데뷔",
+     "link": "https://www.hankyung.com/article/202611169565H"
+    },
+    {
+     "src": "한국경제",
+     "title": "\"가정부와 불륜으로 낳은 아들\" 슈워제네거 혼외자, 보디빌더 데뷔",
+     "link": "https://www.hankyung.com/article/2026111086337"
+    }
+   ]
+  },
+  {
    "kw": "서인영",
    "nsrc": 4,
    "srcs": [
@@ -701,6 +768,72 @@
      "src": "뉴시스",
      "title": "서인영 \"뇌졸중 母 받아달라 무릎 꿇었다…병원서 나가라고\"",
      "link": "https://www.newsis.com/view/NISX20261119_0003875142"
+    }
+   ]
+  },
+  {
+   "kw": "상간",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "조선일보",
+    "헤럴드경제"
+   ],
+   "n": 6,
+   "headlines": [
+    {
+     "src": "헤럴드경제",
+     "title": "최동석-박지윤 상간 소송 2심 판결문 속 ‘365일’ 어떤 영화길래…",
+     "link": "https://biz.heraldcorp.com/article/10943013"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "‘이혼 15억·상간 3000만원’ 받는 최동석…박지윤 “생활비 제가 책임·수입 격차로 ‘의처증’”, 파경 이유 밝혀",
+     "link": "https://biz.heraldcorp.com/article/10942971"
+    },
+    {
+     "src": "SBS",
+     "title": "\"성적 소수자 지인과 불륜? 현실적으로 불가능\"…박지윤, 상간 의혹 반박→최동석 이중행보 폭로",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008853429&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "뉴시스",
+     "title": "\"지인은 성소수자\"…박지윤, 최동석과 상간·이혼 소송 직접 반박",
+     "link": "https://www.newsis.com/view/NISX20261119_0003874235"
+    }
+   ]
+  },
+  {
+   "kw": "아일릿",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "동아일보",
+    "연합뉴스"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "아일릿, 건강 문제로 활동 축소…\"고열·몸살에 발목 부상\"",
+     "link": "https://www.yna.co.kr/view/AKR20261119062900005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "아일릿, '일일 경찰관' 변신…남양주서 청소년 안전 교육",
+     "link": "https://www.yna.co.kr/view/AKR20261118092600005"
+    },
+    {
+     "src": "동아일보",
+     "title": "아일릿 전원 건강 빨간불…불안 증세+몸살+부상 “활동 축소” [전문]",
+     "link": "https://sports.donga.com/ent/article/all/20261119/135057602/1"
+    },
+    {
+     "src": "SBS",
+     "title": "수능 하루 앞…아이유→황민현·엔하이픈·아일릿, 따뜻한 응원 릴레이",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008852197&plink=RSSLINK&cooper=RSSREADER"
     }
    ]
   },
@@ -771,105 +904,6 @@
    ]
   },
   {
-   "kw": "데뷔",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "동아일보",
-    "한국경제"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "코이키즈, 데뷔 첫 연말 시상식…21일 ‘마마 어워즈’ 출격",
-     "link": "https://sports.donga.com/ent/article/all/20261119/135054973/1"
-    },
-    {
-     "src": "한국경제",
-     "title": "[단독] SM 신인 보이그룹, 내년 1월 데뷔",
-     "link": "https://www.hankyung.com/article/202611169565H"
-    },
-    {
-     "src": "한국경제",
-     "title": "\"가정부와 불륜으로 낳은 아들\" 슈워제네거 혼외자, 보디빌더 데뷔",
-     "link": "https://www.hankyung.com/article/2026111086337"
-    },
-    {
-     "src": "SBS",
-     "title": "'53세' 전도연, 데뷔 첫 SNS 개설…글로벌 소통 나섰다",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008853199&plink=RSSLINK&cooper=RSSREADER"
-    }
-   ]
-  },
-  {
-   "kw": "미미미누",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "동아일보",
-    "조선일보"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "리트 만점자, 심정지 상태로 발견→미미미누·백지연 영상 비공개 [DA이슈]",
-     "link": "https://sports.donga.com/ent/article/all/20261119/135054321/2"
-    },
-    {
-     "src": "동아일보",
-     "title": "미미미누 ‘AI 부정행위’ 시뮬레이션 화제 [주간SD]",
-     "link": "https://sports.donga.com/ent/article/all/20261119/135053411/1"
-    },
-    {
-     "src": "SBS",
-     "title": "미미미누, '리트 만점자' 출연 영상 내렸다…백지연 유튜브도 비공개",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008854022&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "뉴시스",
-     "title": "미미미누·백지연, 이진우 출연 영상 비공개 처리",
-     "link": "https://www.newsis.com/view/NISX20261119_0003875097"
-    }
-   ]
-  },
-  {
-   "kw": "비공개",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "동아일보",
-    "조선일보"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "리트 만점자, 심정지 상태로 발견→미미미누·백지연 영상 비공개 [DA이슈]",
-     "link": "https://sports.donga.com/ent/article/all/20261119/135054321/2"
-    },
-    {
-     "src": "동아일보",
-     "title": "‘리트 만점자’ 이진우, 심정지 상태 발견…유튜브 영상 잇따라 비공개 [SD이슈]",
-     "link": "https://sports.donga.com/ent/article/all/20261119/135054105/1"
-    },
-    {
-     "src": "SBS",
-     "title": "미미미누, '리트 만점자' 출연 영상 내렸다…백지연 유튜브도 비공개",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008854022&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "뉴시스",
-     "title": "미미미누·백지연, 이진우 출연 영상 비공개 처리",
-     "link": "https://www.newsis.com/view/NISX20261119_0003875097"
-    }
-   ]
-  },
-  {
    "kw": "이혼",
    "nsrc": 4,
    "srcs": [
@@ -903,72 +937,6 @@
    ]
   },
   {
-   "kw": "해명",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "세계일보",
-    "헤럴드경제"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "세계일보",
-     "title": "장영란, 남편 한방병원 폐업설 해명…“쫄망한 것 아냐, 양도한 것”",
-     "link": "https://www.segye.com/newsView/20261119502720"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "김병만, 제주 사업 중단설 해명…“민원으로 일부 시설 정리”",
-     "link": "https://biz.heraldcorp.com/article/10941112"
-    },
-    {
-     "src": "SBS",
-     "title": "이정재, 200억 벌었는데 소속사 몫은 4억 뿐?…최대주주 특혜 논란과 해명",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008852029&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "뉴시스",
-     "title": "미나, '17세 연하' 류필립과 파경설 해명 \"우리 이혼 안 했다\"",
-     "link": "https://www.newsis.com/view/NISX20261118_0003874052"
-    }
-   ]
-  },
-  {
-   "kw": "응원",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "연합뉴스",
-    "조선일보",
-    "헤럴드경제"
-   ],
-   "n": 4,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "김태술·박하나 부부 부모 된다…\"모든 난임 부부들 응원\"",
-     "link": "https://www.yna.co.kr/view/AKR20261119154100005"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "성유리 ‘무죄 확정’ 남편 게시물에 ‘좋아요’ 꾹…공개 응원",
-     "link": "https://biz.heraldcorp.com/article/10940592"
-    },
-    {
-     "src": "SBS",
-     "title": "수능 하루 앞…아이유→황민현·엔하이픈·아일릿, 따뜻한 응원 릴레이",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008852197&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "조선일보",
-     "title": "산더미처럼 쌓인 주사기..'김태술♥' 박하나, 시험관 임신 얼마나 힘들었나 \"난임부부 응원\"  [Oh!쎈 이슈]",
-     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/19/HE3DGM3FGA3DCZBYGQZWIZTGMI/"
-    }
-   ]
-  },
-  {
    "kw": "재혼",
    "nsrc": 4,
    "srcs": [
@@ -998,6 +966,39 @@
      "src": "SBS",
      "title": "디즈니+ 최연우 로컬 총괄 \"'재혼 황후' 우려컸지만, 팬덤 덕분에 성공\"",
      "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008851650&plink=RSSLINK&cooper=RSSREADER"
+    }
+   ]
+  },
+  {
+   "kw": "건강",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "연합뉴스",
+    "조선일보"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "아일릿, 건강 문제로 활동 축소…\"고열·몸살에 발목 부상\"",
+     "link": "https://www.yna.co.kr/view/AKR20261119062900005"
+    },
+    {
+     "src": "동아일보",
+     "title": "아일릿 전원 건강 빨간불…불안 증세+몸살+부상 “활동 축소” [전문]",
+     "link": "https://sports.donga.com/ent/article/all/20261119/135057602/1"
+    },
+    {
+     "src": "뉴시스",
+     "title": "아일릿, 멤버 잇단 건강 이상에 활동 축소…\"'마마'는 협의 진행\"",
+     "link": "https://www.newsis.com/view/NISX20261119_0003874317"
+    },
+    {
+     "src": "조선일보",
+     "title": "‘투자사기’ 장윤정母, 항소심서도 ‘눈물’... “건강 안좋아 생활고” 호소",
+     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/19/GBTDGMZYHE2DGZJUGQ3TGNJSMI/"
     }
    ]
   },
@@ -1167,35 +1168,35 @@
    ]
   },
   {
-   "kw": "의혹",
+   "kw": "백지연",
    "nsrc": 4,
    "srcs": [
     "SBS",
+    "뉴시스",
     "동아일보",
-    "조선일보",
-    "헤럴드경제"
+    "세계일보"
    ],
    "n": 4,
    "headlines": [
     {
      "src": "동아일보",
-     "title": "‘리트 만점자’ 이진우 사망…AI 부정행위 의혹 수사 종결 수순",
-     "link": "https://sports.donga.com/ent/article/all/20261119/135054918/1"
+     "title": "리트 만점자, 심정지 상태로 발견→미미미누·백지연 영상 비공개 [DA이슈]",
+     "link": "https://sports.donga.com/ent/article/all/20261119/135054321/2"
     },
     {
-     "src": "헤럴드경제",
-     "title": "원현주, SNS 계정 공개 전환…‘불륜 의혹’ 양홍원 사진은 모두 삭제",
-     "link": "https://biz.heraldcorp.com/article/10940746"
+     "src": "세계일보",
+     "title": "이진우, 백지연 영상서 “글 안 들어와…옛날로 돌아간 기분”",
+     "link": "https://www.segye.com/newsView/20261119504492"
     },
     {
      "src": "SBS",
-     "title": "\"성적 소수자 지인과 불륜? 현실적으로 불가능\"…박지윤, 상간 의혹 반박→최동석 이중행보 폭로",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008853429&plink=RSSLINK&cooper=RSSREADER"
+     "title": "미미미누, '리트 만점자' 출연 영상 내렸다…백지연 유튜브도 비공개",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008854022&plink=RSSLINK&cooper=RSSREADER"
     },
     {
-     "src": "조선일보",
-     "title": "'불륜 의혹' 양홍원, 포르쉐 흡연 욕설 운전 누가 찍었나…도로교통법 위반 가능성[SC이슈]",
-     "link": "https://www.chosun.com/entertainments/enter_general/2026/11/19/MIYDSNZYGI4WKMLGMJRTOY3EHE/"
+     "src": "뉴시스",
+     "title": "미미미누·백지연, 이진우 출연 영상 비공개 처리",
+     "link": "https://www.newsis.com/view/NISX20261119_0003875097"
     }
    ]
   },

@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-19 22:00",
+ "updated": "2026-11-19 23:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -6152,6 +6152,19 @@
    "score": 5,
    "status": "작성",
    "page": "/issue/ai-glasses-series-05-suneung-day-22-phones-leet-1119/",
+   "registered": "2026-11-19",
+   "expires": "2026-11-23"
+  },
+  {
+   "query": "수능 당일 부정행위 적발 98명, 교육부 저녁 집계와 후속 조치 정리",
+   "tier": "단기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 5,
+   "status": "작성",
+   "page": "/issue/ai-glasses-series-07-suneung-day-final-count-1119/",
    "registered": "2026-11-19",
    "expires": "2026-11-23"
   },
