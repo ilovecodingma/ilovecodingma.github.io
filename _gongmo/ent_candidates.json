@@ -1,42 +1,7 @@
 {
- "at": "2026-11-19 14:30",
+ "at": "2026-11-19 15:30",
  "nitems": 519,
  "cands": [
-  {
-   "kw": "수능",
-   "nsrc": 6,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "세계일보",
-    "연합뉴스",
-    "조선일보",
-    "헤럴드경제"
-   ],
-   "n": 13,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "수능 대신 무대 오르는 08년생 아이돌들…코르티스·리센느 등",
-     "link": "https://www.yna.co.kr/view/AKR20261117153900005"
-    },
-    {
-     "src": "세계일보",
-     "title": "정시 이대 합격부터 수능 380점·상위 5%까지…‘수능 레전드’ 스타들",
-     "link": "https://www.segye.com/newsView/20261118517718"
-    },
-    {
-     "src": "세계일보",
-     "title": "“수능 마치고 7000원에 영화 즐기세요”",
-     "link": "https://www.segye.com/newsView/20261118515168"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "‘공신’ 강성태, 수능 포기했다…“모든 학생이 잠재적 부정행위자 됐다”",
-     "link": "https://biz.heraldcorp.com/article/10942358"
-    }
-   ]
-  },
   {
    "kw": "음주운전",
    "nsrc": 6,
@@ -73,6 +38,41 @@
    ]
   },
   {
+   "kw": "수능",
+   "nsrc": 6,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "세계일보",
+    "연합뉴스",
+    "조선일보",
+    "헤럴드경제"
+   ],
+   "n": 10,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "수능 대신 무대 오르는 08년생 아이돌들…코르티스·리센느 등",
+     "link": "https://www.yna.co.kr/view/AKR20261117153900005"
+    },
+    {
+     "src": "세계일보",
+     "title": "정시 이대 합격부터 수능 380점·상위 5%까지…‘수능 레전드’ 스타들",
+     "link": "https://www.segye.com/newsView/20261118517718"
+    },
+    {
+     "src": "세계일보",
+     "title": "“수능 마치고 7000원에 영화 즐기세요”",
+     "link": "https://www.segye.com/newsView/20261118515168"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "‘공신’ 강성태, 수능 포기했다…“모든 학생이 잠재적 부정행위자 됐다”",
+     "link": "https://biz.heraldcorp.com/article/10942358"
+    }
+   ]
+  },
+  {
    "kw": "서인영",
    "nsrc": 6,
    "srcs": [
@@ -83,7 +83,7 @@
     "한국경제",
     "헤럴드경제"
    ],
-   "n": 8,
+   "n": 9,
    "headlines": [
     {
      "src": "동아일보",
@@ -211,7 +211,7 @@
    ]
   },
   {
-   "kw": "승리",
+   "kw": "남편과",
    "nsrc": 5,
    "srcs": [
     "뉴시스",
@@ -224,38 +224,9 @@
    "headlines": [
     {
      "src": "동아일보",
-     "title": "승리, 혼인신고+임신 아내와 공항 포착 “여기까지 찍으시죠” [DA피플]",
-     "link": "https://sports.donga.com/ent/article/all/20261119/135052111/1"
+     "title": "한예슬, 임신설로 떠들썩했는데…♥10세 연하 남편과 달달한 근황",
+     "link": "https://sports.donga.com/ent/article/all/20261119/135054651/1"
     },
-    {
-     "src": "세계일보",
-     "title": "승리, 임신 8개월 아내와 홍콩서 귀국…취재진에 “여기까지 찍으시죠”",
-     "link": "https://www.segye.com/newsView/20261119502462"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "승리, 만삭 아내와 인천공항 입국 포착…취재진에 촬영중단 요청",
-     "link": "https://biz.heraldcorp.com/article/10942232"
-    },
-    {
-     "src": "뉴시스",
-     "title": "승리, 임신한 20대 아내와 공항 포착…얼굴 가리는 아내",
-     "link": "https://www.newsis.com/view/NISX20261119_0003874236"
-    }
-   ]
-  },
-  {
-   "kw": "남편과",
-   "nsrc": 5,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "세계일보",
-    "조선일보",
-    "헤럴드경제"
-   ],
-   "n": 7,
-   "headlines": [
     {
      "src": "동아일보",
      "title": "장나라, ♥남편과 결혼생활 공개…지승현 “쇼윈도네” (편스토랑)",
@@ -270,79 +241,40 @@
      "src": "헤럴드경제",
      "title": "‘재혼’ 앞둔 서인영 “예비 남편과 신혼집 반반 부담”",
      "link": "https://biz.heraldcorp.com/article/10942420"
-    },
-    {
-     "src": "뉴시스",
-     "title": "박세미, 결혼 후 남편과 외모 비교…\"아줌마랑 아들이 만나네\"",
-     "link": "https://www.newsis.com/view/NISX20261118_0003873417"
     }
    ]
   },
   {
-   "kw": "해명",
-   "nsrc": 5,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "세계일보",
-    "조선일보",
-    "헤럴드경제"
-   ],
-   "n": 7,
-   "headlines": [
-    {
-     "src": "세계일보",
-     "title": "장영란, 남편 한방병원 폐업설 해명…“쫄망한 것 아냐, 양도한 것”",
-     "link": "https://www.segye.com/newsView/20261119502720"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "김병만, 제주 사업 중단설 해명…“민원으로 일부 시설 정리”",
-     "link": "https://biz.heraldcorp.com/article/10941112"
-    },
-    {
-     "src": "SBS",
-     "title": "이정재, 200억 벌었는데 소속사 몫은 4억 뿐?…최대주주 특혜 논란과 해명",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008852029&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "뉴시스",
-     "title": "미나, '17세 연하' 류필립과 파경설 해명 \"우리 이혼 안 했다\"",
-     "link": "https://www.newsis.com/view/NISX20261118_0003874052"
-    }
-   ]
-  },
-  {
-   "kw": "만원",
+   "kw": "승리",
    "nsrc": 5,
    "srcs": [
     "뉴시스",
     "동아일보",
-    "연합뉴스",
+    "세계일보",
     "조선일보",
     "헤럴드경제"
    ],
-   "n": 6,
+   "n": 8,
    "headlines": [
     {
-     "src": "연합뉴스",
-     "title": "포레스텔라 조민규 팬들, 강원인재원에 장학금 523만원 기탁",
-     "link": "https://www.yna.co.kr/view/AKR20261119025500062"
+     "src": "동아일보",
+     "title": "승리, 만삭 아내와 귀국 포착… 취재진에 “여기까지 찍으시죠”",
+     "link": "https://sports.donga.com/ent/article/all/20261119/135051555/1"
     },
     {
      "src": "동아일보",
-     "title": "양상국, 유럽 축구 직관에 3000만원 썼다…서인영도 깜짝",
-     "link": "https://sports.donga.com/ent/article/all/20261119/135051979/1"
+     "title": "승리, 혼인신고+임신 아내와 공항 포착 “여기까지 찍으시죠” [DA피플]",
+     "link": "https://sports.donga.com/ent/article/all/20261119/135052111/1"
+    },
+    {
+     "src": "세계일보",
+     "title": "승리, 임신 8개월 아내와 홍콩서 귀국…취재진에 “여기까지 찍으시죠”",
+     "link": "https://www.segye.com/newsView/20261119502462"
     },
     {
      "src": "헤럴드경제",
-     "title": "“박지윤 ‘성소수자’와 부정행위” 승소한 최동석, 위자료 3000만원 받는다…‘이례적 거액’",
-     "link": "https://biz.heraldcorp.com/article/10941349"
-    },
-    {
-     "src": "뉴시스",
-     "title": "서인영, 신혼집 반반 부담…폭풍 쇼핑 후 2000만원 기부",
-     "link": "https://www.newsis.com/view/NISX20261118_0003874014"
+     "title": "승리, 만삭 아내와 인천공항 입국 포착…취재진에 촬영중단 요청",
+     "link": "https://biz.heraldcorp.com/article/10942232"
     }
    ]
   },
@@ -415,6 +347,40 @@
    ]
   },
   {
+   "kw": "해명",
+   "nsrc": 5,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "세계일보",
+    "조선일보",
+    "헤럴드경제"
+   ],
+   "n": 6,
+   "headlines": [
+    {
+     "src": "세계일보",
+     "title": "장영란, 남편 한방병원 폐업설 해명…“쫄망한 것 아냐, 양도한 것”",
+     "link": "https://www.segye.com/newsView/20261119502720"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "김병만, 제주 사업 중단설 해명…“민원으로 일부 시설 정리”",
+     "link": "https://biz.heraldcorp.com/article/10941112"
+    },
+    {
+     "src": "SBS",
+     "title": "이정재, 200억 벌었는데 소속사 몫은 4억 뿐?…최대주주 특혜 논란과 해명",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008852029&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "뉴시스",
+     "title": "미나, '17세 연하' 류필립과 파경설 해명 \"우리 이혼 안 했다\"",
+     "link": "https://www.newsis.com/view/NISX20261118_0003874052"
+    }
+   ]
+  },
+  {
    "kw": "내년",
    "nsrc": 4,
    "srcs": [
@@ -456,7 +422,7 @@
     "세계일보",
     "조선일보"
    ],
-   "n": 13,
+   "n": 14,
    "headlines": [
     {
      "src": "동아일보",
@@ -475,8 +441,107 @@
     },
     {
      "src": "뉴시스",
-     "title": "리트 만점 이진우, 영어 공부법 공개…\"1년 안 돼 완벽 마스터\"",
-     "link": "https://www.newsis.com/view/NISX20261119_0003874432"
+     "title": "미미미누·백지연, 이진우 출연 영상 비공개 처리",
+     "link": "https://www.newsis.com/view/NISX20261119_0003875097"
+    }
+   ]
+  },
+  {
+   "kw": "부정행위",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "조선일보",
+    "헤럴드경제"
+   ],
+   "n": 12,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "미미미누 ‘AI 부정행위’ 시뮬레이션 화제 [주간SD]",
+     "link": "https://sports.donga.com/ent/article/all/20261119/135053411/1"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "‘공신’ 강성태, 수능 포기했다…“모든 학생이 잠재적 부정행위자 됐다”",
+     "link": "https://biz.heraldcorp.com/article/10942358"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "고3 학부모 박명수 “추잡스러운 인간들” AI 부정행위자 직격",
+     "link": "https://biz.heraldcorp.com/article/10941539"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "“박지윤 ‘성소수자’와 부정행위” 승소한 최동석, 위자료 3000만원 받는다…‘이례적 거액’",
+     "link": "https://biz.heraldcorp.com/article/10941349"
+    }
+   ]
+  },
+  {
+   "kw": "박지윤",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "조선일보",
+    "헤럴드경제"
+   ],
+   "n": 11,
+   "headlines": [
+    {
+     "src": "헤럴드경제",
+     "title": "“박지윤, 男과 여행서 잠옷 입고 같은 방…영화 감상” 최동석 ‘상간자 소송’ 뒤집힌 이유",
+     "link": "https://biz.heraldcorp.com/article/10942077"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "“박지윤 ‘성소수자’와 부정행위” 승소한 최동석, 위자료 3000만원 받는다…‘이례적 거액’",
+     "link": "https://biz.heraldcorp.com/article/10941349"
+    },
+    {
+     "src": "SBS",
+     "title": "\"성적 소수자 지인과 불륜? 현실적으로 불가능\"…박지윤, 상간 의혹 반박→최동석 이중행보 폭로",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008853429&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "뉴시스",
+     "title": "\"지인은 성소수자\"…박지윤, 최동석과 상간·이혼 소송 직접 반박",
+     "link": "https://www.newsis.com/view/NISX20261119_0003874235"
+    }
+   ]
+  },
+  {
+   "kw": "연하",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "세계일보",
+    "조선일보"
+   ],
+   "n": 8,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "한예슬, 임신설로 떠들썩했는데…♥10세 연하 남편과 달달한 근황",
+     "link": "https://sports.donga.com/ent/article/all/20261119/135054651/1"
+    },
+    {
+     "src": "세계일보",
+     "title": "미나, 17세 연하 류필립과 이혼설 일축…\"잘 살고 있어요\"",
+     "link": "https://www.segye.com/newsView/20261119502565"
+    },
+    {
+     "src": "뉴시스",
+     "title": "유부녀 한예슬, 10살 연하 남편과 데이트 포착",
+     "link": "https://www.newsis.com/view/NISX20261119_0003875138"
+    },
+    {
+     "src": "뉴시스",
+     "title": "미나, 17세 연하 류필립과 이혼설 부인 \"잘 살고 있다\"",
+     "link": "https://www.newsis.com/view/NISX20261119_0003874496"
     }
    ]
   },
@@ -489,7 +554,7 @@
     "조선일보",
     "한겨레"
    ],
-   "n": 10,
+   "n": 8,
    "headlines": [
     {
      "src": "동아일보",
@@ -510,105 +575,6 @@
      "src": "뉴시스",
      "title": "미나, '17세 연하' 류필립과 파경설 해명 \"우리 이혼 안 했다\"",
      "link": "https://www.newsis.com/view/NISX20261118_0003874052"
-    }
-   ]
-  },
-  {
-   "kw": "아시아",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 9,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "방탄소년단, 오늘부터 아시아·호주 투어…9개 도시·26회 공연",
-     "link": "https://www.yna.co.kr/view/AKR20261119045200005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "넷플릭스 '피지컬: 아시아' 시즌2 내년 공개",
-     "link": "https://www.yna.co.kr/view/AKR20261119043100005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "[테크스냅] 디즈니, 'D23 아시아' 티켓 25일부터 국내 선예매",
-     "link": "https://www.yna.co.kr/view/AKR20261116125500017"
-    },
-    {
-     "src": "동아일보",
-     "title": "‘피지컬: 아시아2’ 제작 확정…“시즌1과 완전히 달라”",
-     "link": "https://sports.donga.com/ent/article/all/20261119/135051882/1"
-    }
-   ]
-  },
-  {
-   "kw": "마약",
-   "nsrc": 4,
-   "srcs": [
-    "동아일보",
-    "연합뉴스",
-    "조선일보",
-    "헤럴드경제"
-   ],
-   "n": 7,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "'마약 집행유예중 음주운전' 남태현 2심도 실형…법정구속",
-     "link": "https://www.yna.co.kr/view/AKR20261119062300004"
-    },
-    {
-     "src": "동아일보",
-     "title": "남태현 마약→두번째 음주운전, 걀국 징역 1년 법정구속 [DA이슈]",
-     "link": "https://sports.donga.com/ent/article/all/20261119/135052879/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "‘마약 집유 중 시속 182㎞ 만취 질주’ 남태현, 항소심도 징역 1년 실형",
-     "link": "https://sports.donga.com/ent/article/all/20261119/135052799/1"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "‘마약 실형’ 돈스파이크, 출소 후 확 달라진 비주얼",
-     "link": "https://biz.heraldcorp.com/article/10942379"
-    }
-   ]
-  },
-  {
-   "kw": "아일릿",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 7,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "아일릿, 건강 문제로 활동 축소…\"고열·몸살에 발목 부상\"",
-     "link": "https://www.yna.co.kr/view/AKR20261119062900005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "아일릿, '일일 경찰관' 변신…남양주서 청소년 안전 교육",
-     "link": "https://www.yna.co.kr/view/AKR20261118092600005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "[가요소식] 아일릿 '잇츠 미' 스포티파이 2억 스트리밍",
-     "link": "https://www.yna.co.kr/view/AKR20261115032300005"
-    },
-    {
-     "src": "SBS",
-     "title": "수능 하루 앞…아이유→황민현·엔하이픈·아일릿, 따뜻한 응원 릴레이",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008852197&plink=RSSLINK&cooper=RSSREADER"
     }
    ]
   },
@@ -646,6 +612,72 @@
    ]
   },
   {
+   "kw": "아내와",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "세계일보",
+    "헤럴드경제"
+   ],
+   "n": 7,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "승리, 만삭 아내와 귀국 포착… 취재진에 “여기까지 찍으시죠”",
+     "link": "https://sports.donga.com/ent/article/all/20261119/135051555/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "승리, 혼인신고+임신 아내와 공항 포착 “여기까지 찍으시죠” [DA피플]",
+     "link": "https://sports.donga.com/ent/article/all/20261119/135052111/1"
+    },
+    {
+     "src": "세계일보",
+     "title": "승리, 임신 8개월 아내와 홍콩서 귀국…취재진에 “여기까지 찍으시죠”",
+     "link": "https://www.segye.com/newsView/20261119502462"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "승리, 만삭 아내와 인천공항 입국 포착…취재진에 촬영중단 요청",
+     "link": "https://biz.heraldcorp.com/article/10942232"
+    }
+   ]
+  },
+  {
+   "kw": "최동석",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "조선일보",
+    "헤럴드경제"
+   ],
+   "n": 7,
+   "headlines": [
+    {
+     "src": "헤럴드경제",
+     "title": "“박지윤, 男과 여행서 잠옷 입고 같은 방…영화 감상” 최동석 ‘상간자 소송’ 뒤집힌 이유",
+     "link": "https://biz.heraldcorp.com/article/10942077"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "“박지윤 ‘성소수자’와 부정행위” 승소한 최동석, 위자료 3000만원 받는다…‘이례적 거액’",
+     "link": "https://biz.heraldcorp.com/article/10941349"
+    },
+    {
+     "src": "SBS",
+     "title": "\"성적 소수자 지인과 불륜? 현실적으로 불가능\"…박지윤, 상간 의혹 반박→최동석 이중행보 폭로",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008853429&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "뉴시스",
+     "title": "최동석 상간소송 일부 승소…\"박지윤 남사친이 '위장 게이'라는 건가\"",
+     "link": "https://www.newsis.com/view/NISX20261118_0003873500"
+    }
+   ]
+  },
+  {
    "kw": "결혼",
    "nsrc": 4,
    "srcs": [
@@ -679,11 +711,44 @@
    ]
   },
   {
-   "kw": "피지컬",
+   "kw": "마약",
    "nsrc": 4,
    "srcs": [
-    "뉴시스",
     "동아일보",
+    "연합뉴스",
+    "조선일보",
+    "헤럴드경제"
+   ],
+   "n": 6,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "'마약 집행유예중 음주운전' 남태현 2심도 실형…법정구속",
+     "link": "https://www.yna.co.kr/view/AKR20261119062300004"
+    },
+    {
+     "src": "동아일보",
+     "title": "남태현 마약→두번째 음주운전, 걀국 징역 1년 법정구속 [DA이슈]",
+     "link": "https://sports.donga.com/ent/article/all/20261119/135052879/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "‘마약 집유 중 시속 182㎞ 만취 질주’ 남태현, 항소심도 징역 1년 실형",
+     "link": "https://sports.donga.com/ent/article/all/20261119/135052799/1"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "‘마약 실형’ 돈스파이크, 출소 후 확 달라진 비주얼",
+     "link": "https://biz.heraldcorp.com/article/10942379"
+    }
+   ]
+  },
+  {
+   "kw": "아일릿",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "뉴시스",
     "연합뉴스",
     "조선일보"
    ],
@@ -691,23 +756,23 @@
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "넷플릭스 '피지컬: 아시아' 시즌2 내년 공개",
-     "link": "https://www.yna.co.kr/view/AKR20261119043100005"
+     "title": "아일릿, 건강 문제로 활동 축소…\"고열·몸살에 발목 부상\"",
+     "link": "https://www.yna.co.kr/view/AKR20261119062900005"
     },
     {
-     "src": "동아일보",
-     "title": "‘피지컬: 아시아2’ 제작 확정…“시즌1과 완전히 달라”",
-     "link": "https://sports.donga.com/ent/article/all/20261119/135051882/1"
+     "src": "연합뉴스",
+     "title": "아일릿, '일일 경찰관' 변신…남양주서 청소년 안전 교육",
+     "link": "https://www.yna.co.kr/view/AKR20261118092600005"
     },
     {
-     "src": "동아일보",
-     "title": "‘피지컬: 아시아’, 2027년 시즌2로 귀환…더 커진 스케일·새 퀘스트 예고",
-     "link": "https://sports.donga.com/ent/article/all/20261119/135051869/1"
+     "src": "연합뉴스",
+     "title": "[가요소식] 아일릿 '잇츠 미' 스포티파이 2억 스트리밍",
+     "link": "https://www.yna.co.kr/view/AKR20261115032300005"
     },
     {
-     "src": "뉴시스",
-     "title": "넷플릭스, '피지컬: 아시아' 시즌2 내년 공개",
-     "link": "https://www.newsis.com/view/NISX20261119_0003874452"
+     "src": "SBS",
+     "title": "수능 하루 앞…아이유→황민현·엔하이픈·아일릿, 따뜻한 응원 릴레이",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008852197&plink=RSSLINK&cooper=RSSREADER"
     }
    ]
   },
@@ -811,105 +876,6 @@
    ]
   },
   {
-   "kw": "류필립과",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "세계일보",
-    "조선일보"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "미나, ♥류필립과 이혼설에 발끈…“이혼 잘했다는 댓글 많은데, 안 했다”",
-     "link": "https://sports.donga.com/ent/article/all/20261119/135053810/1"
-    },
-    {
-     "src": "세계일보",
-     "title": "미나, 17세 연하 류필립과 이혼설 일축…\"잘 살고 있어요\"",
-     "link": "https://www.segye.com/newsView/20261119502565"
-    },
-    {
-     "src": "뉴시스",
-     "title": "미나, 17세 연하 류필립과 이혼설 부인 \"잘 살고 있다\"",
-     "link": "https://www.newsis.com/view/NISX20261119_0003874496"
-    },
-    {
-     "src": "뉴시스",
-     "title": "미나, '17세 연하' 류필립과 파경설 해명 \"우리 이혼 안 했다\"",
-     "link": "https://www.newsis.com/view/NISX20261118_0003874052"
-    }
-   ]
-  },
-  {
-   "kw": "미나",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "세계일보",
-    "조선일보"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "미나, ♥류필립과 이혼설에 발끈…“이혼 잘했다는 댓글 많은데, 안 했다”",
-     "link": "https://sports.donga.com/ent/article/all/20261119/135053810/1"
-    },
-    {
-     "src": "세계일보",
-     "title": "미나, 17세 연하 류필립과 이혼설 일축…\"잘 살고 있어요\"",
-     "link": "https://www.segye.com/newsView/20261119502565"
-    },
-    {
-     "src": "뉴시스",
-     "title": "미나, 17세 연하 류필립과 이혼설 부인 \"잘 살고 있다\"",
-     "link": "https://www.newsis.com/view/NISX20261119_0003874496"
-    },
-    {
-     "src": "뉴시스",
-     "title": "미나, '17세 연하' 류필립과 파경설 해명 \"우리 이혼 안 했다\"",
-     "link": "https://www.newsis.com/view/NISX20261118_0003874052"
-    }
-   ]
-  },
-  {
-   "kw": "아내와",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "세계일보",
-    "헤럴드경제"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "승리, 혼인신고+임신 아내와 공항 포착 “여기까지 찍으시죠” [DA피플]",
-     "link": "https://sports.donga.com/ent/article/all/20261119/135052111/1"
-    },
-    {
-     "src": "세계일보",
-     "title": "승리, 임신 8개월 아내와 홍콩서 귀국…취재진에 “여기까지 찍으시죠”",
-     "link": "https://www.segye.com/newsView/20261119502462"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "승리, 만삭 아내와 인천공항 입국 포착…취재진에 촬영중단 요청",
-     "link": "https://biz.heraldcorp.com/article/10942232"
-    },
-    {
-     "src": "뉴시스",
-     "title": "승리, 임신한 20대 아내와 공항 포착…얼굴 가리는 아내",
-     "link": "https://www.newsis.com/view/NISX20261119_0003874236"
-    }
-   ]
-  },
-  {
    "kw": "아들",
    "nsrc": 4,
    "srcs": [
@@ -976,10 +942,10 @@
    ]
   },
   {
-   "kw": "실형",
+   "kw": "만원",
    "nsrc": 4,
    "srcs": [
-    "동아일보",
+    "뉴시스",
     "연합뉴스",
     "조선일보",
     "헤럴드경제"
@@ -988,56 +954,56 @@
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "'마약 집행유예중 음주운전' 남태현 2심도 실형…법정구속",
-     "link": "https://www.yna.co.kr/view/AKR20261119062300004"
-    },
-    {
-     "src": "동아일보",
-     "title": "‘마약 집유 중 시속 182㎞ 만취 질주’ 남태현, 항소심도 징역 1년 실형",
-     "link": "https://sports.donga.com/ent/article/all/20261119/135052799/1"
+     "title": "포레스텔라 조민규 팬들, 강원인재원에 장학금 523만원 기탁",
+     "link": "https://www.yna.co.kr/view/AKR20261119025500062"
     },
     {
      "src": "헤럴드경제",
-     "title": "‘마약 실형’ 돈스파이크, 출소 후 확 달라진 비주얼",
-     "link": "https://biz.heraldcorp.com/article/10942379"
+     "title": "“박지윤 ‘성소수자’와 부정행위” 승소한 최동석, 위자료 3000만원 받는다…‘이례적 거액’",
+     "link": "https://biz.heraldcorp.com/article/10941349"
     },
     {
-     "src": "조선일보",
-     "title": "[속보] ’집유 중 음주운전’ 남태현, 항소심도 징역 1년 실형..법정 구속",
-     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/19/GUZGKYRZGMZDGMBWGQ4WGZLDMU/"
+     "src": "뉴시스",
+     "title": "숏드라마 플랫폼 비글루, 3000만원 규모 공모전 개최",
+     "link": "https://www.newsis.com/view/NISX20261119_0003875068"
+    },
+    {
+     "src": "뉴시스",
+     "title": "서인영, 신혼집 반반 부담…폭풍 쇼핑 후 2000만원 기부",
+     "link": "https://www.newsis.com/view/NISX20261118_0003874014"
     }
    ]
   },
   {
-   "kw": "투어",
+   "kw": "하이브",
    "nsrc": 4,
    "srcs": [
     "뉴시스",
+    "동아일보",
     "연합뉴스",
-    "조선일보",
-    "한국경제"
+    "조선일보"
    ],
    "n": 5,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "방탄소년단, 오늘부터 아시아·호주 투어…9개 도시·26회 공연",
-     "link": "https://www.yna.co.kr/view/AKR20261119045200005"
+     "title": "하이브, 日 엔터사 키홀더 인수…노기자카46 지분 절반 보유",
+     "link": "https://www.yna.co.kr/view/AKR20261118157700005"
     },
     {
-     "src": "한국경제",
-     "title": "빅오션, 미국·유럽에 퍼트린 목소리…두 달간의 투어 마무리",
-     "link": "https://www.hankyung.com/article/202611135484H"
+     "src": "연합뉴스",
+     "title": "하이브, 버추얼 크리에이터 음악 첫 선…20일 신곡 '클릭 플릭'",
+     "link": "https://www.yna.co.kr/view/AKR20261116040200005"
     },
     {
-     "src": "한국경제",
-     "title": "코요태, 'K-흥' 알리러 세계로…북미 투어 돌입",
-     "link": "https://www.hankyung.com/article/202611095927H"
+     "src": "동아일보",
+     "title": "日 인수·美 제휴·中 유통…하이브, 시장별 ‘맞춤형 영토 확장’ 가속",
+     "link": "https://sports.donga.com/ent/article/all/20261119/135054409/1"
     },
     {
      "src": "뉴시스",
-     "title": "방탄소년단, 오늘 가오슝서 亞·호주 투어 포문…9개 도시 26회 규모",
-     "link": "https://www.newsis.com/view/NISX20261119_0003874198"
+     "title": "하이브, 日 키홀더 인수로 세계 음악시장 '빅4' 공고화",
+     "link": "https://www.newsis.com/view/NISX20261119_0003874121"
     }
    ]
   },
@@ -1104,6 +1070,72 @@
      "src": "한국경제",
      "title": "YG 전속계약 명단서 빠진 블랙핑크…\"그룹 활동 논의 중\"",
      "link": "https://www.hankyung.com/article/202611169801H"
+    }
+   ]
+  },
+  {
+   "kw": "백지연",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "세계일보",
+    "조선일보"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "리트 만점자, 심정지 상태로 발견→미미미누·백지연 영상 비공개 [DA이슈]",
+     "link": "https://sports.donga.com/ent/article/all/20261119/135054321/2"
+    },
+    {
+     "src": "세계일보",
+     "title": "이진우, 백지연 영상서 “글 안 들어와…옛날로 돌아간 기분”",
+     "link": "https://www.segye.com/newsView/20261119504492"
+    },
+    {
+     "src": "뉴시스",
+     "title": "미미미누·백지연, 이진우 출연 영상 비공개 처리",
+     "link": "https://www.newsis.com/view/NISX20261119_0003875097"
+    },
+    {
+     "src": "조선일보",
+     "title": "백지연-미미미누, '리트 만점' 이진우 인터뷰 영상 내렸다…\"신뢰 잃어\"",
+     "link": "https://www.chosun.com/entertainments/enter_general/2026/11/19/GRRTKMJZMEYGMOJQMFRTMYTCHE/"
+    }
+   ]
+  },
+  {
+   "kw": "장나라",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "동아일보",
+    "조선일보",
+    "한겨레"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "장나라, 가방에 강아지 간식까지…10년째 유기견 보호 봉사",
+     "link": "https://sports.donga.com/ent/article/all/20261119/135054228/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "장나라, ♥남편과 결혼생활 공개…지승현 “쇼윈도네” (편스토랑)",
+     "link": "https://sports.donga.com/ent/article/all/20261119/135052665/1"
+    },
+    {
+     "src": "한겨레",
+     "title": "이혼 전문 변호사 장나라·이발사 박보검 돌아온다…시즌1 넘어설까",
+     "link": "https://www.hani.co.kr/arti/culture/culture_general/1288001.html"
+    },
+    {
+     "src": "SBS",
+     "title": "\"연기 차력쇼 보는 기분\"…'굿파트너2' 장나라X김혜윤X박해진X표지훈, 완벽 호흡 예고",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008850058&plink=RSSLINK&cooper=RSSREADER"
     }
    ]
   },
@@ -1273,68 +1305,35 @@
    ]
   },
   {
-   "kw": "나의",
+   "kw": "실형",
    "nsrc": 4,
    "srcs": [
-    "뉴시스",
-    "세계일보",
+    "동아일보",
     "연합뉴스",
-    "한겨레"
+    "조선일보",
+    "헤럴드경제"
    ],
    "n": 4,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "[방송소식] MBC, '2026 대학가요제-나의 드라마' 19일 방송",
-     "link": "https://www.yna.co.kr/view/AKR20261118125400005"
+     "title": "'마약 집행유예중 음주운전' 남태현 2심도 실형…법정구속",
+     "link": "https://www.yna.co.kr/view/AKR20261119062300004"
     },
     {
-     "src": "한겨레",
-     "title": "나의 아랍어, 법정에 선 이주민의 ‘말할 권리’를 위해 [.txt]",
-     "link": "https://www.hani.co.kr/arti/culture/book/1287350.html"
+     "src": "동아일보",
+     "title": "‘마약 집유 중 시속 182㎞ 만취 질주’ 남태현, 항소심도 징역 1년 실형",
+     "link": "https://sports.donga.com/ent/article/all/20261119/135052799/1"
     },
     {
-     "src": "세계일보",
-     "title": "황석정, 강박증·우울증 고백…“반려견 훔이, 나의 은인”",
-     "link": "https://www.segye.com/newsView/20261119503477"
-    },
-    {
-     "src": "뉴시스",
-     "title": "MBC, '2026 대학가요제-나의 드라마' 19일 방송",
-     "link": "https://www.newsis.com/view/NISX20261118_0003873621"
-    }
-   ]
-  },
-  {
-   "kw": "구교환",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "세계일보",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 4,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "'폭설' 구교환 \"예측불가 얼굴로 기분 좋은 혼란 주고 싶어\"",
-     "link": "https://www.yna.co.kr/view/AKR20261118099700005"
-    },
-    {
-     "src": "세계일보",
-     "title": "‘올해 다섯 작품’ 구교환 “난 자영업자…손님 계속 오는데 쉴 수 없어”",
-     "link": "https://www.segye.com/newsView/20261118514212"
-    },
-    {
-     "src": "뉴시스",
-     "title": "김윤석·구교환 '폭설' 공개 첫 1위 출발…주말까지 간다",
-     "link": "https://www.newsis.com/view/NISX20261119_0003874182"
+     "src": "헤럴드경제",
+     "title": "‘마약 실형’ 돈스파이크, 출소 후 확 달라진 비주얼",
+     "link": "https://biz.heraldcorp.com/article/10942379"
     },
     {
      "src": "조선일보",
-     "title": "김윤석X구교환 '폭설', \"스포 피하자\" 전략 통했다..개봉 첫날 흥행 1위",
-     "link": "https://www.chosun.com/entertainments/movie/2026/11/19/HE3GKMBZGM4TGNTFMQ2TAYJYMM/"
+     "title": "[속보] ’집유 중 음주운전’ 남태현, 항소심도 징역 1년 실형..법정 구속",
+     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/19/GUZGKYRZGMZDGMBWGQ4WGZLDMU/"
     }
    ]
   }
