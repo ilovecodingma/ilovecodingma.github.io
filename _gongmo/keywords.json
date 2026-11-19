@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-20 06:00",
+ "updated": "2026-11-20 07:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -6109,6 +6109,19 @@
    "page": "",
    "registered": "2026-11-20",
    "expires": "2026-11-23"
+  },
+  {
+   "query": "앤트로픽 나스닥 첫날 97.17달러 마감, 공모가 83달러 대비 17.1%",
+   "tier": "단기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 7,
+   "status": "작성",
+   "page": "/issue/anthropic-ipo-first-day-close-1120/",
+   "registered": "2026-11-20",
+   "expires": "2026-11-24"
   },
   {
    "query": "불법사채 피해구제 온라인 신청 방법 신용회복위원회 홈페이지·앱, 센터 방문 없이 무료 채무자대리인까지",
