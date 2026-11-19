@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-19 09:00",
+ "updated": "2026-11-19 10:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -363,6 +363,18 @@
    "expires": "2026-11-22"
   },
   {
+   "query": "이민정",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 10000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-08",
+   "expires": "2026-11-22"
+  },
+  {
    "query": "맨유 대 애스턴 빌라",
    "tier": "단기",
    "signal": [
@@ -408,18 +420,6 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-03",
-   "expires": "2026-11-22"
-  },
-  {
-   "query": "이민정",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 10000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-08",
    "expires": "2026-11-22"
   },
   {
@@ -927,6 +927,18 @@
    "expires": "2026-11-22"
   },
   {
+   "query": "롯데 자이언츠",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 5000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-07",
+   "expires": "2026-11-22"
+  },
+  {
    "query": "크리스털 팰리스 대 리버풀",
    "tier": "단기",
    "signal": [
@@ -1155,18 +1167,6 @@
    "expires": "2026-11-22"
   },
   {
-   "query": "롯데 자이언츠",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 5000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-07",
-   "expires": "2026-11-22"
-  },
-  {
    "query": "마인츠 05 대 바이에른",
    "tier": "단기",
    "signal": [
@@ -1323,6 +1323,18 @@
    "expires": "2026-11-22"
   },
   {
+   "query": "관광",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 5000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-19",
+   "expires": "2026-11-22"
+  },
+  {
    "query": "숲",
    "tier": "단기",
    "signal": [
@@ -1344,6 +1356,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-07",
+   "expires": "2026-11-22"
+  },
+  {
+   "query": "kbo 리그",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-10",
    "expires": "2026-11-22"
   },
   {
@@ -1428,18 +1452,6 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-07",
-   "expires": "2026-11-22"
-  },
-  {
-   "query": "kbo 리그",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 2000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-10",
    "expires": "2026-11-22"
   },
   {
@@ -1572,6 +1584,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-04",
+   "expires": "2026-11-22"
+  },
+  {
+   "query": "택시",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-19",
    "expires": "2026-11-22"
   },
   {
@@ -3168,6 +3192,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-18",
+   "expires": "2026-11-22"
+  },
+  {
+   "query": "미역국",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-19",
    "expires": "2026-11-22"
   },
   {
@@ -5817,6 +5853,19 @@
    "expires": "2026-11-22"
   },
   {
+   "query": "수능 당일 범정부 TF 신고 포상금 1억원 어떻게 되나, 스마트안경 전담인력 기준",
+   "tier": "단기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 5,
+   "status": "작성",
+   "page": "/issue/ai-glasses-series-04-suneung-day-tf-reward-1119/",
+   "registered": "2026-11-19",
+   "expires": "2026-11-23"
+  },
+  {
    "query": "코스피 5067.44 마감 하루 만에 5000선 회복, 삼성전자 SK하이닉스 종가와 외국인 수급",
    "tier": "단기",
    "signal": [
@@ -5984,6 +6033,19 @@
    "page": "",
    "registered": "2026-11-05",
    "expires": "2026-11-08"
+  },
+  {
+   "query": "경주한수원 WK리그 챔피언결정전 우승 창단 첫 정상, 수원FC위민 꺾은 2차전 스코어와 정규리그 순위",
+   "tier": "단기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 3,
+   "status": "작성",
+   "page": "/issue/wk-league-gyeongju-hydro-first-title-1119/",
+   "registered": "2026-11-19",
+   "expires": "2026-11-23"
   },
   {
    "query": "빅뱅 방콕 콘서트 중단 이유와 환불 안내 정리",
@@ -13315,6 +13377,45 @@
    "status": "작성",
    "page": "/money/guide/black-friday-refund-withdrawal-rules/",
    "registered": "2026-11-13",
+   "expires": ""
+  },
+  {
+   "query": "2027 공휴일 달력 표",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "",
+   "registered": "2026-11-19",
+   "expires": ""
+  },
+  {
+   "query": "2027 주휴수당 표",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "",
+   "registered": "2026-11-19",
+   "expires": ""
+  },
+  {
+   "query": "2027 장애수당 금액",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "",
+   "registered": "2026-11-19",
    "expires": ""
   },
   {
