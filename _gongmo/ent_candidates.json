@@ -1,5 +1,5 @@
 {
- "at": "2026-11-21 00:30",
+ "at": "2026-11-21 01:11",
  "nitems": 521,
  "cands": [
   {
@@ -48,7 +48,7 @@
     "한국경제",
     "헤럴드경제"
    ],
-   "n": 12,
+   "n": 13,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -210,7 +210,7 @@
    ]
   },
   {
-   "kw": "어워즈",
+   "kw": "마마",
    "nsrc": 5,
    "srcs": [
     "뉴시스",
@@ -219,7 +219,7 @@
     "조선일보",
     "한국경제"
    ],
-   "n": 7,
+   "n": 8,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -244,7 +244,7 @@
    ]
   },
   {
-   "kw": "마마",
+   "kw": "어워즈",
    "nsrc": 5,
    "srcs": [
     "뉴시스",
@@ -709,6 +709,39 @@
    ]
   },
   {
+   "kw": "연말",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "세계일보",
+    "연합뉴스",
+    "조선일보"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "에스파, 美 디즈니 연말 특집 출연…'산타 베이비' 등 열창",
+     "link": "https://www.yna.co.kr/view/AKR20261120039400005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "미키 옷 입은 카카오프렌즈…카카오, 디즈니와 연말 굿즈 출시",
+     "link": "https://www.yna.co.kr/view/AKR20261119066000017"
+    },
+    {
+     "src": "세계일보",
+     "title": "‘듄3’·‘어벤져스’ 연말 격돌…한국영화 대작은 실종",
+     "link": "https://www.segye.com/newsView/20261120509996"
+    },
+    {
+     "src": "뉴시스",
+     "title": "에스파, 美 디즈니 연말 특집 출연…30일 ABC 방송",
+     "link": "https://www.newsis.com/view/NISX20261120_0003876906"
+    }
+   ]
+  },
+  {
    "kw": "방탄소년",
    "nsrc": 4,
    "srcs": [
@@ -771,6 +804,39 @@
      "src": "뉴시스",
      "title": "김태리, 강렬한 빨간 드레스에 호피 구두…파격 변신",
      "link": "https://www.newsis.com/view/NISX20261120_0003877109"
+    }
+   ]
+  },
+  {
+   "kw": "리센느",
+   "nsrc": 4,
+   "srcs": [
+    "동아일보",
+    "연합뉴스",
+    "조선일보",
+    "한국경제"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "수능 대신 무대 오르는 08년생 아이돌들…코르티스·리센느 등",
+     "link": "https://www.yna.co.kr/view/AKR20261117153900005"
+    },
+    {
+     "src": "동아일보",
+     "title": "리센느 원이, 이선민과 약속 지켰다…눈물의 ‘엔딩 요정’",
+     "link": "https://sports.donga.com/ent/article/all/20261120/135063718/1"
+    },
+    {
+     "src": "한국경제",
+     "title": "리센느, 확신의 대세…초동 60만장·음방 1위·내년 콘서트",
+     "link": "https://www.hankyung.com/article/202611119221H"
+    },
+    {
+     "src": "조선일보",
+     "title": "리센느 원이, 눈물의 '마마' 무대서 이선민과 약속 지켰다…엔딩 포즈에 뭉클",
+     "link": "https://www.chosun.com/entertainments/music/2026/11/21/HBSTGZTGMFTDMY3EGVTDIMTFMU/"
     }
    ]
   },
@@ -1002,39 +1068,6 @@
      "src": "조선일보",
      "title": "지예은♥바타, 결혼 앞두고 달달샷 터졌다..놀이터 커플 댄스 '찰떡 호흡'",
      "link": "https://www.chosun.com/entertainments/broadcast/2026/11/21/HA4TEODDGQYWGOJYMU4DQNZWG4/"
-    }
-   ]
-  },
-  {
-   "kw": "리센느",
-   "nsrc": 4,
-   "srcs": [
-    "동아일보",
-    "연합뉴스",
-    "조선일보",
-    "한국경제"
-   ],
-   "n": 4,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "수능 대신 무대 오르는 08년생 아이돌들…코르티스·리센느 등",
-     "link": "https://www.yna.co.kr/view/AKR20261117153900005"
-    },
-    {
-     "src": "동아일보",
-     "title": "리센느 원이, 이선민과 약속 지켰다…눈물의 ‘엔딩 요정’",
-     "link": "https://sports.donga.com/ent/article/all/20261120/135063718/1"
-    },
-    {
-     "src": "한국경제",
-     "title": "리센느, 확신의 대세…초동 60만장·음방 1위·내년 콘서트",
-     "link": "https://www.hankyung.com/article/202611119221H"
-    },
-    {
-     "src": "조선일보",
-     "title": "'야호' 리센느 미나미, 고향 일본에서 MAMA 레드카펫  [O! STAR 숏폼]",
-     "link": "https://www.chosun.com/entertainments/music/2026/11/20/HEYTKN3FGRRTONDGGM4TANJTG4/"
     }
    ]
   },
@@ -1295,38 +1328,6 @@
      "src": "동아일보",
      "title": "장나라vs김혜윤, 승소 확률 1%…‘굿파트너2’ 오늘 첫방",
      "link": "https://sports.donga.com/ent/article/all/20261120/135058720/1"
-    }
-   ]
-  },
-  {
-   "kw": "비서진",
-   "nsrc": 3,
-   "srcs": [
-    "SBS",
-    "동아일보",
-    "조선일보"
-   ],
-   "n": 8,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "김종국 2세 소망…“무조건 ♥아내 닮아야” (비서진)",
-     "link": "https://sports.donga.com/ent/article/all/20261120/135058664/1"
-    },
-    {
-     "src": "SBS",
-     "title": "\"아내라면 냉장고 열어놔도 못 본 척\"…'비서진' 김종국, 짠돌이의 반전 사랑꾼 면모",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008855328&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "SBS",
-     "title": "\"유일하게 돈 빌려줄 수 있는 사람\"…'비서진' 이서진, 김종국 향한 특급 의리",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008853938&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "조선일보",
-     "title": "\"월세 2억\" 뉴욕대 금수저 이서진도 놀랐다···김종국 초호화 소속사 소개('비서진')",
-     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/21/GBRDAZTCGUZWEZLGGU2GGZRZMQ/"
     }
    ]
   }
