@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-20 13:00",
+ "updated": "2026-11-20 14:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -204,6 +204,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-09",
+   "expires": "2026-11-23"
+  },
+  {
+   "query": "영장",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 20000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-20",
    "expires": "2026-11-23"
   },
   {
@@ -1200,6 +1212,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-18",
+   "expires": "2026-11-23"
+  },
+  {
+   "query": "논현동",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 5000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-20",
    "expires": "2026-11-23"
   },
   {
@@ -3339,18 +3363,6 @@
    "expires": "2026-11-23"
   },
   {
-   "query": "논현동",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 2000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-20",
-   "expires": "2026-11-23"
-  },
-  {
    "query": "알렉산더 즈베레프",
    "tier": "단기",
    "signal": [
@@ -5043,6 +5055,42 @@
    "expires": "2026-11-23"
   },
   {
+   "query": "이의리",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-20",
+   "expires": "2026-11-23"
+  },
+  {
+   "query": "유니클로",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-20",
+   "expires": "2026-11-23"
+  },
+  {
+   "query": "샌안토니오 대 la 클리퍼스",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-20",
+   "expires": "2026-11-23"
+  },
+  {
    "query": "오산대",
    "tier": "단기",
    "signal": [
@@ -6076,6 +6124,42 @@
   },
   {
    "query": "김민지",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-20",
+   "expires": "2026-11-23"
+  },
+  {
+   "query": "물수리",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-20",
+   "expires": "2026-11-23"
+  },
+  {
+   "query": "경기도교육청",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-20",
+   "expires": "2026-11-23"
+  },
+  {
+   "query": "시애틀 사운더스 대 솔트레이크",
    "tier": "단기",
    "signal": [
     "구글트렌드"

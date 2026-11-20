@@ -1,19 +1,20 @@
 {
- "at": "2026-11-20 13:11",
- "nitems": 521,
+ "at": "2026-11-20 13:30",
+ "nitems": 522,
  "cands": [
   {
    "kw": "깜짝",
-   "nsrc": 6,
+   "nsrc": 7,
    "srcs": [
     "뉴시스",
     "동아일보",
     "세계일보",
     "연합뉴스",
+    "조선일보",
     "한국경제",
     "헤럴드경제"
    ],
-   "n": 9,
+   "n": 10,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -343,6 +344,39 @@
    ]
   },
   {
+   "kw": "남편",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "세계일보",
+    "조선일보"
+   ],
+   "n": 8,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "최소라 남편 이코베, 집에 카메라만 60대…냉장고엔 필름까지 (전집시)",
+     "link": "https://sports.donga.com/ent/article/all/20261120/135058550/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "서동주, 남편 만나 달라졌다…“출장 중 불안 1도 없었다”",
+     "link": "https://sports.donga.com/ent/article/all/20261120/135058215/1"
+    },
+    {
+     "src": "세계일보",
+     "title": "이지혜 남편 문재완, 세무사 시험 5년 고생했는데…AI 부정행위에 “분노 치밀어”",
+     "link": "https://www.segye.com/newsView/20261120502821"
+    },
+    {
+     "src": "뉴시스",
+     "title": "장나라, 6살 연하 촬영감독 남편 공개…\"잘생긴 당나귀 닮았다\"",
+     "link": "https://www.newsis.com/view/NISX20261119_0003875906"
+    }
+   ]
+  },
+  {
    "kw": "디즈니",
    "nsrc": 4,
    "srcs": [
@@ -376,35 +410,68 @@
    ]
   },
   {
-   "kw": "남편",
+   "kw": "결혼",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "연합뉴스",
+    "조선일보",
+    "헤럴드경제"
+   ],
+   "n": 6,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "배우 이가섭, 비연예인과 결혼…\"오랜 시간 든든한 버팀목\"",
+     "link": "https://www.yna.co.kr/view/AKR20261119085400005"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "‘12월 결혼’ 하정우, 10년 함께한 반려견 떠나보냈다",
+     "link": "https://biz.heraldcorp.com/article/10944038"
+    },
+    {
+     "src": "뉴시스",
+     "title": "'12월 결혼' 하정우, 경사 앞두고 10년 반려견 떠나보냈다",
+     "link": "https://www.newsis.com/view/NISX20261120_0003875954"
+    },
+    {
+     "src": "뉴시스",
+     "title": "이가섭, 12월5일 결혼…\"소중한 인연과 백년가약\"",
+     "link": "https://www.newsis.com/view/NISX20261119_0003875317"
+    }
+   ]
+  },
+  {
+   "kw": "장나라",
    "nsrc": 4,
    "srcs": [
     "뉴시스",
     "동아일보",
-    "세계일보",
-    "조선일보"
+    "조선일보",
+    "한겨레"
    ],
-   "n": 7,
+   "n": 6,
    "headlines": [
     {
      "src": "동아일보",
-     "title": "최소라 남편 이코베, 집에 카메라만 60대…냉장고엔 필름까지 (전집시)",
-     "link": "https://sports.donga.com/ent/article/all/20261120/135058550/1"
+     "title": "장나라vs김혜윤, 승소 확률 1%…‘굿파트너2’ 오늘 첫방",
+     "link": "https://sports.donga.com/ent/article/all/20261120/135058720/1"
     },
     {
      "src": "동아일보",
-     "title": "서동주, 남편 만나 달라졌다…“출장 중 불안 1도 없었다”",
-     "link": "https://sports.donga.com/ent/article/all/20261120/135058215/1"
+     "title": "장나라·김혜윤, 첫 만남부터 적으로…‘오픈 메리지’ 법정 전쟁 (굿파트너2)",
+     "link": "https://sports.donga.com/ent/article/all/20261120/135058589/1"
     },
     {
-     "src": "세계일보",
-     "title": "이지혜 남편 문재완, 세무사 시험 5년 고생했는데…AI 부정행위에 “분노 치밀어”",
-     "link": "https://www.segye.com/newsView/20261120502821"
+     "src": "동아일보",
+     "title": "장나라 충격고백 “전성기 때? 건강 안 좋고 기억 안 나” (편스토랑)",
+     "link": "https://sports.donga.com/ent/article/all/20261120/135058323/1"
     },
     {
-     "src": "뉴시스",
-     "title": "장나라, 6살 연하 촬영감독 남편 공개…\"잘생긴 당나귀 닮았다\"",
-     "link": "https://www.newsis.com/view/NISX20261119_0003875906"
+     "src": "한겨레",
+     "title": "이혼 전문 변호사 장나라·이발사 박보검 돌아온다…시즌1 넘어설까",
+     "link": "https://www.hani.co.kr/arti/culture/culture_general/1288001.html"
     }
    ]
   },
@@ -438,39 +505,6 @@
      "src": "SBS",
      "title": "\"신발 들고 화장실에 숨어 기다려\"…'궁금한이야기Y', 스토킹 살인범 권종필의 두 얼굴",
      "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008855326&plink=RSSLINK&cooper=RSSREADER"
-    }
-   ]
-  },
-  {
-   "kw": "데뷔",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "조선일보",
-    "한국경제"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "한국경제",
-     "title": "[단독] SM 신인 보이그룹, 내년 1월 데뷔",
-     "link": "https://www.hankyung.com/article/202611169565H"
-    },
-    {
-     "src": "한국경제",
-     "title": "\"가정부와 불륜으로 낳은 아들\" 슈워제네거 혼외자, 보디빌더 데뷔",
-     "link": "https://www.hankyung.com/article/2026111086337"
-    },
-    {
-     "src": "SBS",
-     "title": "빅뱅, 오늘(20일) 새 디지털 싱글 기습 공개…데뷔 20주년 대미 장식",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008855191&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "SBS",
-     "title": "'53세' 전도연, 데뷔 첫 SNS 개설…글로벌 소통 나섰다",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008853199&plink=RSSLINK&cooper=RSSREADER"
     }
    ]
   },
@@ -944,7 +978,7 @@
     "동아일보",
     "조선일보"
    ],
-   "n": 9,
+   "n": 10,
    "headlines": [
     {
      "src": "동아일보",
@@ -1061,38 +1095,6 @@
      "src": "연합뉴스",
      "title": "전남 첫 근대식 극장 '목포', 개관 100주년 기념행사 다채",
      "link": "https://www.yna.co.kr/view/AKR20261116068100054"
-    }
-   ]
-  },
-  {
-   "kw": "김명민",
-   "nsrc": 3,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "세계일보"
-   ],
-   "n": 7,
-   "headlines": [
-    {
-     "src": "세계일보",
-     "title": "김명민, 경찰서장인 줄 모르고 호객했다가 봉변…“1박 2일 유치장 신세”",
-     "link": "https://www.segye.com/newsView/20261119515326"
-    },
-    {
-     "src": "세계일보",
-     "title": "[포토] 김명민 '스크린 복귀'",
-     "link": "https://www.segye.com/newsView/20261119514576"
-    },
-    {
-     "src": "세계일보",
-     "title": "[포토] 김명민-박유림-박훈정 '슬픈열대'",
-     "link": "https://www.segye.com/newsView/20261119514519"
-    },
-    {
-     "src": "세계일보",
-     "title": "[포토] 김명민-박유림 '슬픈열대'",
-     "link": "https://www.segye.com/newsView/20261119514505"
     }
    ]
   },
@@ -1225,6 +1227,70 @@
    ]
   },
   {
+   "kw": "연하",
+   "nsrc": 3,
+   "srcs": [
+    "뉴시스",
+    "세계일보",
+    "조선일보"
+   ],
+   "n": 6,
+   "headlines": [
+    {
+     "src": "세계일보",
+     "title": "한예슬, 임신설 부인 두 달 만…10세 연하 남편과 달달한 투샷",
+     "link": "https://www.segye.com/newsView/20261120502656"
+    },
+    {
+     "src": "뉴시스",
+     "title": "제갈성렬, 19살 연하 아내와 재혼…\"지탄받아 마땅\"",
+     "link": "https://www.newsis.com/view/NISX20261120_0003875979"
+    },
+    {
+     "src": "뉴시스",
+     "title": "장나라, 6살 연하 촬영감독 남편 공개…\"잘생긴 당나귀 닮았다\"",
+     "link": "https://www.newsis.com/view/NISX20261119_0003875906"
+    },
+    {
+     "src": "뉴시스",
+     "title": "유부녀 한예슬, 10살 연하 남편과 데이트 포착",
+     "link": "https://www.newsis.com/view/NISX20261119_0003875138"
+    }
+   ]
+  },
+  {
+   "kw": "김명민",
+   "nsrc": 3,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "세계일보"
+   ],
+   "n": 6,
+   "headlines": [
+    {
+     "src": "세계일보",
+     "title": "김명민, 경찰서장인 줄 모르고 호객했다가 봉변…“1박 2일 유치장 신세”",
+     "link": "https://www.segye.com/newsView/20261119515326"
+    },
+    {
+     "src": "세계일보",
+     "title": "[포토] 김명민 '스크린 복귀'",
+     "link": "https://www.segye.com/newsView/20261119514576"
+    },
+    {
+     "src": "세계일보",
+     "title": "[포토] 김명민-박유림-박훈정 '슬픈열대'",
+     "link": "https://www.segye.com/newsView/20261119514519"
+    },
+    {
+     "src": "세계일보",
+     "title": "[포토] 김명민-박유림 '슬픈열대'",
+     "link": "https://www.segye.com/newsView/20261119514505"
+    }
+   ]
+  },
+  {
    "kw": "리트",
    "nsrc": 3,
    "srcs": [
@@ -1253,70 +1319,6 @@
      "src": "뉴시스",
      "title": "김대범, 리트 만점자 사망에 \"처벌 받으면 될 것을\"",
      "link": "https://www.newsis.com/view/NISX20261119_0003875671"
-    }
-   ]
-  },
-  {
-   "kw": "결혼",
-   "nsrc": 3,
-   "srcs": [
-    "뉴시스",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "배우 이가섭, 비연예인과 결혼…\"오랜 시간 든든한 버팀목\"",
-     "link": "https://www.yna.co.kr/view/AKR20261119085400005"
-    },
-    {
-     "src": "뉴시스",
-     "title": "'12월 결혼' 하정우, 경사 앞두고 10년 반려견 떠나보냈다",
-     "link": "https://www.newsis.com/view/NISX20261120_0003875954"
-    },
-    {
-     "src": "뉴시스",
-     "title": "이가섭, 12월5일 결혼…\"소중한 인연과 백년가약\"",
-     "link": "https://www.newsis.com/view/NISX20261119_0003875317"
-    },
-    {
-     "src": "조선일보",
-     "title": "'극비 결혼' 김종국, ♥아내 얼마나 예뻤으면..\"나 닮은 2세 원치 않아\"('비서진')",
-     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/20/GY3TQZJWMFQTCNJUMQ4DSOBWMM/"
-    }
-   ]
-  },
-  {
-   "kw": "기부",
-   "nsrc": 3,
-   "srcs": [
-    "동아일보",
-    "세계일보",
-    "연합뉴스"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "하나은행, JYP엔터와 '나눔 적금' 출시…\"K팝팬들 기부 동참\"",
-     "link": "https://www.yna.co.kr/view/AKR20261117071800002"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "[방송소식] 염정아, 사랑의열매·JTBC 캠페인 재능 기부",
-     "link": "https://www.yna.co.kr/view/AKR20261116137700005"
-    },
-    {
-     "src": "동아일보",
-     "title": "전현무, 독립유공자 후손 위해 815만 원 기부…“의미있는 일 하고파” (사당귀)",
-     "link": "https://sports.donga.com/ent/article/all/20261120/135058327/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "전현무·김숙, 815만 원씩 쾌척…웬디는 ‘1억 기부 클럽’ (사당귀)",
-     "link": "https://sports.donga.com/ent/article/all/20261120/135058285/1"
     }
    ]
   }
