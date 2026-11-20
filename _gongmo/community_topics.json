@@ -1,14 +1,14 @@
 {
  "date": "2026-11-21",
- "updated": "2026-11-21 05:50",
+ "updated": "2026-11-21 06:50",
  "sites": 13,
- "npost": 2867,
+ "npost": 2837,
  "note": "출처(커뮤니티)별 집계예요. 작성자·연령·성별 정보는 수집하지 않아요. posts 는 이슈별로 뽑힌 일부라 전체 글 수가 아니에요.",
  "sources": [
   {
    "name": "MLB파크",
-   "np": 13,
-   "nc": 703,
+   "np": 14,
+   "nc": 706,
    "topics": [
     {
      "t": "초5 딸이 올해 수능 영어를 풀어봤습니다",
@@ -19,8 +19,8 @@
      "issue_nc": 261,
      "kw": [
       "수능",
-      "올해",
-      "영어"
+      "영어",
+      "올해"
      ],
      "top_post": {
       "t": "초5 딸이 올해 수능 영어를 풀어봤습니다",
@@ -36,8 +36,8 @@
      "issue_np": 4,
      "issue_nc": 191,
      "kw": [
-      "경찰서",
       "전청조",
+      "경찰서",
       "남현희"
      ],
      "top_post": {
@@ -71,8 +71,8 @@
      "issue_np": 7,
      "issue_nc": 65,
      "kw": [
-      "MAMA",
       "리센느",
+      "MAMA",
       "무대"
      ],
      "top_post": {
@@ -108,8 +108,8 @@
      "issue_np": 4,
      "issue_nc": 112,
      "kw": [
-      "아빠",
-      "수능"
+      "수능",
+      "아빠"
      ],
      "top_post": {
       "t": "수능이 끝난 딸을 기다리는 아빠",
@@ -122,11 +122,12 @@
      "nsite": 4,
      "np_here": 1,
      "nc_here": 29,
-     "issue_np": 4,
-     "issue_nc": 69,
+     "issue_np": 5,
+     "issue_nc": 86,
      "kw": [
       "손실",
       "개미",
+      "코스피",
       "하반기"
      ],
      "top_post": {
@@ -136,22 +137,138 @@
      }
     },
     {
-     "t": "리만가설 증명을 본 수학자 실시간 반응",
-     "nsite": 4,
+     "t": "엔트로픽 리만가설 풀어 ㄷㄷㄷ",
+     "nsite": 3,
      "np_here": 1,
-     "nc_here": 16,
-     "issue_np": 6,
-     "issue_nc": 65,
+     "nc_here": 18,
+     "issue_np": 4,
+     "issue_nc": 26,
      "kw": [
-      "가설",
       "리만",
-      "증명",
+      "가설",
       "AI"
      ],
      "top_post": {
       "t": "엔트로픽 리만가설 풀어 ㄷㄷㄷ",
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611210120238974&m=view",
-      "nc": 16
+      "nc": 18
+     }
+    }
+   ]
+  },
+  {
+   "name": "클리앙",
+   "np": 13,
+   "nc": 335,
+   "topics": [
+    {
+     "t": "대법원에서 계엄은 내란이라는데 왜 조희대를 탄핵한다는 거예요?",
+     "nsite": 3,
+     "np_here": 6,
+     "nc_here": 200,
+     "issue_np": 11,
+     "issue_nc": 243,
+     "kw": [
+      "탄핵",
+      "조희대"
+     ],
+     "top_post": {
+      "t": "대법원에서 계엄은 내란이라는데 왜 조희대를 탄핵한다는 거예요?",
+      "u": "https://www.clien.net/service/board/park/19295748?od=T33&po=0&category=0&groupCd=clien_all",
+      "nc": 63
+     }
+    },
+    {
+     "t": "코스피 9000에서 5000으로 개미 손실 563조원 추산",
+     "nsite": 4,
+     "np_here": 2,
+     "nc_here": 50,
+     "issue_np": 5,
+     "issue_nc": 86,
+     "kw": [
+      "손실",
+      "개미",
+      "코스피",
+      "하반기"
+     ],
+     "top_post": {
+      "t": "코스피 9000에서 5000으로 개미 손실 563조원 추산",
+      "u": "https://www.clien.net/service/board/park/19295788?od=T33&po=0&category=0&groupCd=clien_all",
+      "nc": 33
+     }
+    },
+    {
+     "t": "반도체로만 수출 1조 달성했다고요?",
+     "nsite": 3,
+     "np_here": 2,
+     "nc_here": 39,
+     "issue_np": 4,
+     "issue_nc": 42,
+     "kw": [
+      "수출",
+      "달성",
+      "반도체",
+      "한국"
+     ],
+     "top_post": {
+      "t": "반도체로만 수출 1조 달성했다고요?",
+      "u": "https://www.clien.net/service/board/park/19296029?od=T33&po=0&category=0&groupCd=clien_all",
+      "nc": 33
+     }
+    },
+    {
+     "t": "수능 부정행위 단속 총정리",
+     "nsite": 8,
+     "np_here": 1,
+     "nc_here": 38,
+     "issue_np": 13,
+     "issue_nc": 169,
+     "kw": [
+      "부정",
+      "행위",
+      "수능",
+      "속보"
+     ],
+     "top_post": {
+      "t": "[속보] 수능 부정행위 98명 적발…위급문자로 49명 드러나",
+      "u": "https://www.clien.net/service/board/park/19295555?od=T33&po=0&category=0&groupCd=clien_all",
+      "nc": 38
+     }
+    },
+    {
+     "t": "MAMA에서 리센느 제대로 챙겨줬네요.",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 5,
+     "issue_np": 7,
+     "issue_nc": 65,
+     "kw": [
+      "리센느",
+      "MAMA",
+      "무대"
+     ],
+     "top_post": {
+      "t": "리센느 2026 MAMA 무대",
+      "u": "https://www.clien.net/service/board/park/19296193?od=T33&po=0&category=0&groupCd=clien_all",
+      "nc": 5
+     }
+    },
+    {
+     "t": "[속보] 민주당, 진보정당과 함께 조희대 탄핵 진행",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 3,
+     "issue_np": 3,
+     "issue_nc": 4,
+     "kw": [
+      "탄핵",
+      "조희대",
+      "민주당"
+     ],
+     "top_post": {
+      "t": "조희대 탄핵으로 민주당 의원직 걸었으면",
+      "u": "https://www.clien.net/service/board/park/19295653?od=T33&po=0&category=0&groupCd=clien_all",
+      "nc": 3
      }
     }
    ]
@@ -159,27 +276,8 @@
   {
    "name": "개드립",
    "np": 12,
-   "nc": 357,
+   "nc": 316,
    "topics": [
-    {
-     "t": "리만가설 증명을 본 수학자 실시간 반응",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 49,
-     "issue_np": 6,
-     "issue_nc": 65,
-     "kw": [
-      "가설",
-      "리만",
-      "증명",
-      "AI"
-     ],
-     "top_post": {
-      "t": "리만가설 증명을 본 수학자 실시간 반응",
-      "u": "https://www.dogdrip.net/dogdrip/735871771?sort_index=popular&page=1",
-      "nc": 49
-     }
-    },
     {
      "t": "경찰서에서 만난 전청조 남현희",
      "nsite": 4,
@@ -188,8 +286,8 @@
      "issue_np": 4,
      "issue_nc": 191,
      "kw": [
-      "경찰서",
       "전청조",
+      "경찰서",
       "남현희"
      ],
      "top_post": {
@@ -242,9 +340,9 @@
      "issue_np": 4,
      "issue_nc": 37,
      "kw": [
-      "안경",
       "아버지",
-      "의대"
+      "의대",
+      "안경"
      ],
      "top_post": {
       "t": "안경 맞춰주고 의대가라는 아버지",
@@ -277,8 +375,8 @@
      "issue_np": 3,
      "issue_nc": 35,
      "kw": [
-      "세계사",
       "수능",
+      "세계사",
       "킬링"
      ],
      "top_post": {
@@ -305,121 +403,22 @@
       "u": "https://www.dogdrip.net/dogdrip/735738909?sort_index=popular&page=1",
       "nc": 21
      }
-    }
-   ]
-  },
-  {
-   "name": "클리앙",
-   "np": 12,
-   "nc": 318,
-   "topics": [
-    {
-     "t": "대법원에서 계엄은 내란이라는데 왜 조희대를 탄핵한다는 거예요?",
-     "nsite": 3,
-     "np_here": 6,
-     "nc_here": 200,
-     "issue_np": 11,
-     "issue_nc": 243,
-     "kw": [
-      "탄핵",
-      "조희대"
-     ],
-     "top_post": {
-      "t": "대법원에서 계엄은 내란이라는데 왜 조희대를 탄핵한다는 거예요?",
-      "u": "https://www.clien.net/service/board/park/19295748?od=T33&po=0&category=0&groupCd=clien_all",
-      "nc": 63
-     }
     },
     {
-     "t": "반도체로만 수출 1조 달성했다고요?",
-     "nsite": 3,
-     "np_here": 2,
-     "nc_here": 39,
-     "issue_np": 4,
-     "issue_nc": 42,
-     "kw": [
-      "수출",
-      "달성",
-      "반도체",
-      "한국"
-     ],
-     "top_post": {
-      "t": "반도체로만 수출 1조 달성했다고요?",
-      "u": "https://www.clien.net/service/board/park/19296029?od=T33&po=0&category=0&groupCd=clien_all",
-      "nc": 33
-     }
-    },
-    {
-     "t": "수능 부정행위 단속 총정리",
-     "nsite": 8,
-     "np_here": 1,
-     "nc_here": 38,
-     "issue_np": 13,
-     "issue_nc": 169,
-     "kw": [
-      "부정",
-      "행위",
-      "수능",
-      "속보"
-     ],
-     "top_post": {
-      "t": "[속보] 수능 부정행위 98명 적발…위급문자로 49명 드러나",
-      "u": "https://www.clien.net/service/board/park/19295555?od=T33&po=0&category=0&groupCd=clien_all",
-      "nc": 38
-     }
-    },
-    {
-     "t": "코스피 9000에서 5000으로 개미 손실 563조원 추산",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 33,
-     "issue_np": 4,
-     "issue_nc": 69,
-     "kw": [
-      "손실",
-      "개미",
-      "하반기"
-     ],
-     "top_post": {
-      "t": "코스피 9000에서 5000으로 개미 손실 563조원 추산",
-      "u": "https://www.clien.net/service/board/park/19295788?od=T33&po=0&category=0&groupCd=clien_all",
-      "nc": 33
-     }
-    },
-    {
-     "t": "MAMA에서 리센느 제대로 챙겨줬네요.",
+     "t": "박지윤, 악플러 한 명 잡음",
      "nsite": 3,
      "np_here": 1,
-     "nc_here": 5,
-     "issue_np": 7,
-     "issue_nc": 65,
-     "kw": [
-      "MAMA",
-      "리센느",
-      "무대"
-     ],
-     "top_post": {
-      "t": "리센느 2026 MAMA 무대",
-      "u": "https://www.clien.net/service/board/park/19296193?od=T33&po=0&category=0&groupCd=clien_all",
-      "nc": 5
-     }
-    },
-    {
-     "t": "[속보] 민주당, 진보정당과 함께 조희대 탄핵 진행",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 3,
+     "nc_here": 15,
      "issue_np": 3,
-     "issue_nc": 4,
+     "issue_nc": 35,
      "kw": [
-      "민주당",
-      "조희대",
-      "탄핵"
+      "박지윤",
+      "악플"
      ],
      "top_post": {
-      "t": "조희대 탄핵으로 민주당 의원직 걸었으면",
-      "u": "https://www.clien.net/service/board/park/19295653?od=T33&po=0&category=0&groupCd=clien_all",
-      "nc": 3
+      "t": "박지윤, 악플러 한 명 잡음",
+      "u": "https://www.dogdrip.net/dogdrip/735812954?sort_index=popular&page=1",
+      "nc": 15
      }
     }
    ]
@@ -456,8 +455,8 @@
      "issue_np": 4,
      "issue_nc": 112,
      "kw": [
-      "아빠",
-      "수능"
+      "수능",
+      "아빠"
      ],
      "top_post": {
       "t": "수능끝난 딸을 기다리는 꽃을든 아빠.jpgif",
@@ -496,11 +495,11 @@
      "nsite": 5,
      "np_here": 1,
      "nc_here": 33,
-     "issue_np": 8,
+     "issue_np": 7,
      "issue_nc": 48,
      "kw": [
-      "재난",
       "문자",
+      "재난",
       "수능"
      ],
      "top_post": {
@@ -536,8 +535,8 @@
      "issue_np": 3,
      "issue_nc": 35,
      "kw": [
-      "악플",
-      "박지윤"
+      "박지윤",
+      "악플"
      ],
      "top_post": {
       "t": "박지윤 악플러 잡혔다네요",
@@ -589,8 +588,8 @@
      "issue_np": 6,
      "issue_nc": 22,
      "kw": [
-      "재난문자",
-      "수능"
+      "수능",
+      "재난문자"
      ],
      "top_post": {
       "t": "李 \"수능 재난문자, 화낼 줄 알았는데 의외로 재밌어해..",
@@ -603,11 +602,12 @@
      "nsite": 4,
      "np_here": 1,
      "nc_here": 7,
-     "issue_np": 4,
-     "issue_nc": 69,
+     "issue_np": 5,
+     "issue_nc": 86,
      "kw": [
       "손실",
       "개미",
+      "코스피",
       "하반기"
      ],
      "top_post": {
@@ -624,8 +624,8 @@
      "issue_np": 3,
      "issue_nc": 6,
      "kw": [
-      "김건",
       "이해",
+      "김건",
       "징역",
       "억울"
      ],
@@ -651,8 +651,8 @@
      "issue_nc": 41,
      "kw": [
       "수능",
-      "부정",
       "행위자",
+      "부정",
       "적발"
      ],
      "top_post": {
@@ -690,11 +690,11 @@
      "nsite": 5,
      "np_here": 2,
      "nc_here": 5,
-     "issue_np": 8,
+     "issue_np": 7,
      "issue_nc": 48,
      "kw": [
-      "재난",
       "문자",
+      "재난",
       "수능"
      ],
      "top_post": {
@@ -711,8 +711,8 @@
      "issue_np": 6,
      "issue_nc": 22,
      "kw": [
-      "재난문자",
-      "수능"
+      "수능",
+      "재난문자"
      ],
      "top_post": {
       "t": "수능땜에 쏜 재난문자 효과",
@@ -747,8 +747,8 @@
      "issue_np": 4,
      "issue_nc": 191,
      "kw": [
-      "경찰서",
       "전청조",
+      "경찰서",
       "남현희"
      ],
      "top_post": {
@@ -765,8 +765,8 @@
      "issue_np": 4,
      "issue_nc": 112,
      "kw": [
-      "아빠",
-      "수능"
+      "수능",
+      "아빠"
      ],
      "top_post": {
       "t": "수능 끝난 딸을 기다리는 아빠",
@@ -844,8 +844,8 @@
      "issue_np": 6,
      "issue_nc": 22,
      "kw": [
-      "재난문자",
-      "수능"
+      "수능",
+      "재난문자"
      ],
      "top_post": {
       "t": "수능 재난문자 진짜 개빡치네ㅆㅂ 아무 상관 없는 사람들한테까지 이렇게 무작위로 몇번이나 ...",
@@ -858,13 +858,13 @@
      "nsite": 4,
      "np_here": 1,
      "nc_here": 3,
-     "issue_np": 10,
-     "issue_nc": 6,
+     "issue_np": 12,
+     "issue_nc": 7,
      "kw": [
-      "페이",
       "네이버",
+      "페이",
       "랜덤",
-      "클릭"
+      "적립"
      ],
      "top_post": {
       "t": "ㅈㄱㄴ..⭐ 이거 설문조사 앱인데 설문조사 하고나면 네이버페이 포인트나 현금으로 받을수있음 ...",
@@ -887,8 +887,8 @@
      "issue_np": 6,
      "issue_nc": 22,
      "kw": [
-      "재난문자",
-      "수능"
+      "수능",
+      "재난문자"
      ],
      "top_post": {
       "t": "수능 재난문자 질문요.",
@@ -923,8 +923,8 @@
      "issue_np": 4,
      "issue_nc": 112,
      "kw": [
-      "아빠",
-      "수능"
+      "수능",
+      "아빠"
      ],
      "top_post": {
       "t": "수능 끝난 딸 기다리는 아빠",
@@ -960,8 +960,8 @@
      "issue_nc": 41,
      "kw": [
       "수능",
-      "부정",
       "행위자",
+      "부정",
       "적발"
      ],
      "top_post": {
@@ -978,8 +978,8 @@
      "issue_np": 3,
      "issue_nc": 35,
      "kw": [
-      "세계사",
       "수능",
+      "세계사",
       "킬링"
      ],
      "top_post": {
@@ -1026,7 +1026,7 @@
   },
   {
    "name": "더쿠",
-   "np": 12,
+   "np": 11,
    "nc": 0,
    "topics": [
     {
@@ -1037,8 +1037,8 @@
      "issue_np": 6,
      "issue_nc": 22,
      "kw": [
-      "재난문자",
-      "수능"
+      "수능",
+      "재난문자"
      ],
      "top_post": {
       "t": "수능 재난문자 매년 해줬으면 좋겠다",
@@ -1051,11 +1051,11 @@
      "nsite": 5,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 8,
+     "issue_np": 7,
      "issue_nc": 48,
      "kw": [
-      "재난",
       "문자",
+      "재난",
       "수능"
      ],
      "top_post": {
@@ -1072,8 +1072,8 @@
      "issue_np": 4,
      "issue_nc": 191,
      "kw": [
-      "경찰서",
       "전청조",
+      "경찰서",
       "남현희"
      ],
      "top_post": {
@@ -1087,11 +1087,12 @@
      "nsite": 4,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 69,
+     "issue_np": 5,
+     "issue_nc": 86,
      "kw": [
       "손실",
       "개미",
+      "코스피",
       "하반기"
      ],
      "top_post": {
@@ -1103,19 +1104,19 @@
     {
      "t": "네이버페이 40원 (신속히 받으세요)",
      "nsite": 4,
-     "np_here": 2,
+     "np_here": 1,
      "nc_here": 0,
-     "issue_np": 10,
-     "issue_nc": 6,
+     "issue_np": 12,
+     "issue_nc": 7,
      "kw": [
-      "페이",
       "네이버",
+      "페이",
       "랜덤",
-      "클릭"
+      "적립"
      ],
      "top_post": {
-      "t": "네이버페이15원+10원+10원+1원+1원+1원+1원+1원+랜덤 눌러봐++10원+5원+눌러눌러 보험랜덤+보험랜덤 하나더+라이브미리보고9원받기",
-      "u": "https://theqoo.net/hot/4412236962",
+      "t": "네이버페이180원+15원+1원+1원+1원+1원+랜덤 눌러봐++10원+5원+눌러눌러 보험랜덤+보험랜덤 하나더+라이브미리보고5원받기",
+      "u": "https://theqoo.net/hot/4413390343",
       "nc": 0
      }
     },
@@ -1144,9 +1145,9 @@
      "issue_np": 4,
      "issue_nc": 37,
      "kw": [
-      "안경",
       "아버지",
-      "의대"
+      "의대",
+      "안경"
      ],
      "top_post": {
       "t": "안경 맞춰주고 의대가라는 아버지",
@@ -1175,7 +1176,7 @@
   },
   {
    "name": "루리웹",
-   "np": 24,
+   "np": 23,
    "nc": 0,
    "topics": [
     {
@@ -1186,8 +1187,8 @@
      "issue_np": 6,
      "issue_nc": 22,
      "kw": [
-      "재난문자",
-      "수능"
+      "수능",
+      "재난문자"
      ],
      "top_post": {
       "t": "의외로 수능 재난문자 득을 본 곳",
@@ -1200,35 +1201,16 @@
      "nsite": 5,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 8,
+     "issue_np": 7,
      "issue_nc": 48,
      "kw": [
-      "재난",
       "문자",
+      "재난",
       "수능"
      ],
      "top_post": {
-      "t": "수능 재난 문자 꽤 걸렸네",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77449895?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "리만가설 증명을 본 수학자 실시간 반응",
-     "nsite": 4,
-     "np_here": 3,
-     "nc_here": 0,
-     "issue_np": 6,
-     "issue_nc": 65,
-     "kw": [
-      "가설",
-      "리만",
-      "증명",
-      "AI"
-     ],
-     "top_post": {
-      "t": "드디어 리만 가설 해결했다는 AI 근황 ㄷㄷㄷㄷㄷㄷㄷ",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77465689?m=all&t=now",
+      "t": "이번 수능 재난문자가 무서웠던 이유",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77464913?m=all&t=now",
       "nc": 0
      }
     },
@@ -1275,17 +1257,17 @@
      "nsite": 4,
      "np_here": 2,
      "nc_here": 0,
-     "issue_np": 10,
-     "issue_nc": 6,
+     "issue_np": 12,
+     "issue_nc": 7,
      "kw": [
-      "페이",
       "네이버",
+      "페이",
       "랜덤",
-      "클릭"
+      "적립"
      ],
      "top_post": {
-      "t": "핫딜 [네이버페이] 일일적립, 클릭 28원, 라이브예고 12원",
-      "u": "https://bbs.ruliweb.com/market/board/1020/read/109122",
+      "t": "핫딜 [네이버페이] 100원",
+      "u": "https://bbs.ruliweb.com/best/board/184778/read/109177?m=all&t=now",
       "nc": 0
      }
     },
@@ -1298,8 +1280,8 @@
      "issue_nc": 261,
      "kw": [
       "수능",
-      "올해",
-      "영어"
+      "영어",
+      "올해"
      ],
      "top_post": {
       "t": "올해 어려워진 수능 과목",
@@ -1315,8 +1297,8 @@
      "issue_np": 7,
      "issue_nc": 65,
      "kw": [
-      "MAMA",
       "리센느",
+      "MAMA",
       "무대"
      ],
      "top_post": {
@@ -1324,33 +1306,33 @@
       "u": "https://bbs.ruliweb.com/best/board/300143/read/77463796?m=all&t=now",
       "nc": 0
      }
+    },
+    {
+     "t": "GTA6 지금까지 나온 모든 선동들 반박.txt",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 42,
+     "kw": [
+      "선동",
+      "GTA",
+      "TXT",
+      "반박"
+     ],
+     "top_post": {
+      "t": "GTA６선동글들 다 중갤에서 역류하는 거였네",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77462097?m=all&t=now",
+      "nc": 0
+     }
     }
    ]
   },
   {
    "name": "디시인사이드",
-   "np": 8,
+   "np": 7,
    "nc": 0,
    "topics": [
-    {
-     "t": "리만가설 증명을 본 수학자 실시간 반응",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 6,
-     "issue_nc": 65,
-     "kw": [
-      "가설",
-      "리만",
-      "증명",
-      "AI"
-     ],
-     "top_post": {
-      "t": "앤트로픽 레벤트 알푀게, 리만 가설 증명했다고 주장 ㄷㄷ",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=480523&_dcbest=1&page=1",
-      "nc": 0
-     }
-    },
     {
      "t": "2027년 수능 국어 오답률 높았다는 문제",
      "nsite": 4,
@@ -1379,8 +1361,8 @@
      "issue_nc": 261,
      "kw": [
       "수능",
-      "올해",
-      "영어"
+      "영어",
+      "올해"
      ],
      "top_post": {
       "t": "와들와들 수능 영어문제를 본 미국인들 반응.",
@@ -1453,9 +1435,9 @@
      "issue_np": 3,
      "issue_nc": 4,
      "kw": [
-      "민주당",
+      "탄핵",
       "조희대",
-      "탄핵"
+      "민주당"
      ],
      "top_post": {
       "t": "[속보] 민주당, 진보정당과 함께 조희대 탄핵 진행",
