@@ -372,7 +372,7 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False, noinde
 </main>
 <footer class="ft"><div class="w ft-in"><div class="ft-top"><div class="ft-b">{('<b>가난한 박과장</b><p>퇴근 후 AI 에이전트와 서비스를 만들어 보는 수업 사이트입니다. 루리 줍줍은 저자가 만든 정보성 사이트이고, 문서 모음은 「루리 위키」입니다.</p>' if PLAT else '<b>루리 줍줍</b><p>이슈부터 지원금·공모전까지, 출처와 함께 정리하는 정보 서비스입니다. 분석 코너는 「루리 애널리스트」, 문서 모음은 「루리 위키」입니다.</p>')}<p class="ft-m">문의 <a href="mailto:{MAIL}">{MAIL}</a>{"" if PARTNER == MAIL else f' · 제휴 <a href="mailto:{PARTNER}">{PARTNER}</a>'}</p></div>
 <nav class="ft-g" aria-label="사이트 메뉴">{('<div><b>가난한 박과장</b><a href="/park/#start">하네스 시작</a><a href="/park/">사례 찾기</a><a href="/park/archive/">운영 기록</a><a href="/dev/">개발 지식</a></div>' if PLAT else '')}<div><b>읽을거리</b><a href="/issue/">이슈</a><a href="/money/guide/">생활 가이드</a><a href="/analyst/">애널리스트</a><a href="/fridge/">레시피</a></div>
-<div><b>기회 찾기</b><a href="/apply/">지원금·청약</a><a href="/contest/">공모전</a><a href="/today/">오늘 마감</a><a href="/event/">경품 이벤트</a></div>
+<div><b>기회 찾기</b><a href="/apply/">지원금·청약</a><a href="/contest/">공모전</a><a href="/today/">오늘 마감</a><a href="/event/">경품 이벤트</a><a href="/exam/">시험 일정·컷</a><a href="/exam/bank/">시험 문제은행</a></div>
 <div><b>도구·탐색</b><a href="/wiki/">루리 위키</a><a href="/map/">키워드 지도</a><a href="/money/tools/salary/">계산기</a><a href="/price/">최저가 찾기</a><a href="/book/">전자책</a><a href="/all/">전체 메뉴</a></div>
 <div><b>운영 정보</b><a href="/about/">소개·만드는 방식</a><a href="/corrections/">정정 기록</a><a href="/privacy/">개인정보처리방침</a><a href="/terms/">이용약관</a><a href="/contact/">문의</a></div></nav></div>
 {('<p class="ft-c"><span>외부 채널</span> ' + comm_btns() + '</p>') if COMM_LINKS else ''}
