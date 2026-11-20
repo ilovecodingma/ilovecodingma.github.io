@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-20 21:00",
+ "updated": "2026-11-20 22:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -2016,6 +2016,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-19",
+   "expires": "2026-11-23"
+  },
+  {
+   "query": "이지영",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-20",
    "expires": "2026-11-23"
   },
   {
@@ -5151,18 +5163,6 @@
    "expires": "2026-11-23"
   },
   {
-   "query": "이지영",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 1000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-20",
-   "expires": "2026-11-23"
-  },
-  {
    "query": "이의리",
    "tier": "단기",
    "signal": [
@@ -5188,6 +5188,18 @@
   },
   {
    "query": "샌안토니오 대 la 클리퍼스",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-20",
+   "expires": "2026-11-23"
+  },
+  {
+   "query": "황재균",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -6256,6 +6268,30 @@
   },
   {
    "query": "경기도교육청",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-20",
+   "expires": "2026-11-23"
+  },
+  {
+   "query": "벼",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-20",
+   "expires": "2026-11-23"
+  },
+  {
+   "query": "굿파트너2",
    "tier": "단기",
    "signal": [
     "구글트렌드"

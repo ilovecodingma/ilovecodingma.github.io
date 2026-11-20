@@ -1,5 +1,5 @@
 {
- "at": "2026-11-20 21:11",
+ "at": "2026-11-20 21:30",
  "nitems": 520,
  "cands": [
   {
@@ -177,40 +177,6 @@
    ]
   },
   {
-   "kw": "발매",
-   "nsrc": 5,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "세계일보",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 9,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "[가요소식] 딘딘, 생일에 신곡 '케이크' 발매",
-     "link": "https://www.yna.co.kr/view/AKR20261120066300005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "라이즈·플레이브 만났다…협업 싱글 '로키' 30일 발매",
-     "link": "https://www.yna.co.kr/view/AKR20261116143400005"
-    },
-    {
-     "src": "세계일보",
-     "title": "빅뱅, 3개월 만에 초고속 컴백… MAMA 앞두고 신곡 ‘기립(GiiiRIP)’ 깜짝 발매",
-     "link": "https://www.segye.com/newsView/20261120510066"
-    },
-    {
-     "src": "SBS",
-     "title": "윤하, 인기 웹툰 '전독시'와 협업…24일 OST 발매",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008854845&plink=RSSLINK&cooper=RSSREADER"
-    }
-   ]
-  },
-  {
    "kw": "활동",
    "nsrc": 5,
    "srcs": [
@@ -279,39 +245,6 @@
   },
   {
    "kw": "최동석",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "연합뉴스",
-    "헤럴드경제"
-   ],
-   "n": 10,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "박지윤 악플러, 잡고 보니 전남편 최동석…명예훼손 혐의 송치",
-     "link": "https://www.yna.co.kr/view/AKR20261120126400004"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "박지윤 “의처증에 집 나왔는데, 최동석 집에서 여자와 관계”…‘부정행위 인정’ 판결에 입장 밝혀",
-     "link": "https://biz.heraldcorp.com/article/10942421"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "최동석-박지윤 상간 소송 2심 판결문 속 ‘365일’ 어떤 영화길래…",
-     "link": "https://biz.heraldcorp.com/article/10943013"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "‘이혼 15억·상간 3000만원’ 받는 최동석…박지윤 “생활비 제가 책임·수입 격차로 ‘의처증’”, 파경 이유 밝혀",
-     "link": "https://biz.heraldcorp.com/article/10942971"
-    }
-   ]
-  },
-  {
-   "kw": "박지윤",
    "nsrc": 4,
    "srcs": [
     "SBS",
@@ -406,6 +339,72 @@
      "src": "연합뉴스",
      "title": "라이즈·플레이브 만났다…협업 싱글 '로키' 30일 발매",
      "link": "https://www.yna.co.kr/view/AKR20261116143400005"
+    }
+   ]
+  },
+  {
+   "kw": "박지윤",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "연합뉴스",
+    "헤럴드경제"
+   ],
+   "n": 8,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "박지윤 악플러, 잡고 보니 전남편 최동석…명예훼손 혐의 송치",
+     "link": "https://www.yna.co.kr/view/AKR20261120126400004"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "박지윤 “의처증에 집 나왔는데, 최동석 집에서 여자와 관계”…‘부정행위 인정’ 판결에 입장 밝혀",
+     "link": "https://biz.heraldcorp.com/article/10942421"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "최동석-박지윤 상간 소송 2심 판결문 속 ‘365일’ 어떤 영화길래…",
+     "link": "https://biz.heraldcorp.com/article/10943013"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "‘이혼 15억·상간 3000만원’ 받는 최동석…박지윤 “생활비 제가 책임·수입 격차로 ‘의처증’”, 파경 이유 밝혀",
+     "link": "https://biz.heraldcorp.com/article/10942971"
+    }
+   ]
+  },
+  {
+   "kw": "발매",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "세계일보",
+    "연합뉴스"
+   ],
+   "n": 8,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "[가요소식] 딘딘, 생일에 신곡 '케이크' 발매",
+     "link": "https://www.yna.co.kr/view/AKR20261120066300005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "라이즈·플레이브 만났다…협업 싱글 '로키' 30일 발매",
+     "link": "https://www.yna.co.kr/view/AKR20261116143400005"
+    },
+    {
+     "src": "세계일보",
+     "title": "빅뱅, 3개월 만에 초고속 컴백… MAMA 앞두고 신곡 ‘기립(GiiiRIP)’ 깜짝 발매",
+     "link": "https://www.segye.com/newsView/20261120510066"
+    },
+    {
+     "src": "SBS",
+     "title": "윤하, 인기 웹툰 '전독시'와 협업…24일 OST 발매",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008854845&plink=RSSLINK&cooper=RSSREADER"
     }
    ]
   },
@@ -674,39 +673,6 @@
    ]
   },
   {
-   "kw": "공식",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "조선일보",
-    "한국경제"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "[공식] 패닉·빅뱅·CL 특별 무대, ‘2026 MAMA’ 오늘 개막",
-     "link": "https://sports.donga.com/ent/article/all/20261120/135061089/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "[공식] 유지훈, 박규영·이수혁과 한솥밥…사람엔터와 전속계약",
-     "link": "https://sports.donga.com/ent/article/all/20261120/135058834/1"
-    },
-    {
-     "src": "한국경제",
-     "title": "CL, 테디 손 잡았다…더블랙레이블 전속계약 [공식]",
-     "link": "https://www.hankyung.com/article/202611134339H"
-    },
-    {
-     "src": "뉴시스",
-     "title": "두아 리파·카디 비, 'GTA 6' 공식 OST 발매…제니 韓 유일",
-     "link": "https://www.newsis.com/view/NISX20261120_0003877214"
-    }
-   ]
-  },
-  {
    "kw": "비주얼",
    "nsrc": 4,
    "srcs": [
@@ -963,8 +929,8 @@
     },
     {
      "src": "조선일보",
-     "title": "[사진]엔하이픈 정원, '슬림 수트 핏'",
-     "link": "https://www.chosun.com/entertainments/entertain_photo/2026/11/20/MQZWEOJWGJSWKOBQGQYWKNLDGU/"
+     "title": "[사진]엔하이픈 성훈 '바람의 왕자님'",
+     "link": "https://www.chosun.com/entertainments/entertain_photo/2026/11/20/HE3TOMTCGYZTQNDCGMZDKMBZHA/"
     }
    ]
   },
@@ -1093,38 +1059,6 @@
      "src": "연합뉴스",
      "title": "일본 록밴드 아시안 쿵푸 제너레이션, 내년 5월 내한 공연",
      "link": "https://www.yna.co.kr/view/AKR20261118087900005"
-    }
-   ]
-  },
-  {
-   "kw": "이유",
-   "nsrc": 3,
-   "srcs": [
-    "뉴시스",
-    "조선일보",
-    "헤럴드경제"
-   ],
-   "n": 7,
-   "headlines": [
-    {
-     "src": "헤럴드경제",
-     "title": "‘재산 300억설’ 김구라, 강남 집 안 산 이유…“연예인 미래 수입 장담 못해”",
-     "link": "https://biz.heraldcorp.com/article/10944314"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "‘이혼 15억·상간 3000만원’ 받는 최동석…박지윤 “생활비 제가 책임·수입 격차로 ‘의처증’”, 파경 이유 밝혀",
-     "link": "https://biz.heraldcorp.com/article/10942971"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "“박지윤, 男과 여행서 잠옷 입고 같은 방…영화 감상” 최동석 ‘상간자 소송’ 뒤집힌 이유",
-     "link": "https://biz.heraldcorp.com/article/10942077"
-    },
-    {
-     "src": "뉴시스",
-     "title": "전소미, 아이오아이 무대서 혼자 검은 옷 입은 이유 \"오히려 안 튀려고\"",
-     "link": "https://www.newsis.com/view/NISX20261120_0003877021"
     }
    ]
   },
@@ -1317,6 +1251,70 @@
      "src": "뉴시스",
      "title": "최동석·박지윤 끝없는 폭로전…상간 소송 판결 뒤 이어진 날 선 공방",
      "link": "https://www.newsis.com/view/NISX20261120_0003876125"
+    }
+   ]
+  },
+  {
+   "kw": "만점자",
+   "nsrc": 3,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "헤럴드경제"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "헤럴드경제",
+     "title": "코미디언 김대범 “처벌 받으면 될 걸…” 리트 만점자 허망한 결말에 착잡",
+     "link": "https://biz.heraldcorp.com/article/10942982"
+    },
+    {
+     "src": "SBS",
+     "title": "미미미누, '리트 만점자' 출연 영상 내렸다…백지연 유튜브도 비공개",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008854022&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "뉴시스",
+     "title": "미미미누, 리트 만점자 비보 후 심경…\"수능 본 친구들 더 응원을\"",
+     "link": "https://www.newsis.com/view/NISX20261120_0003876032"
+    },
+    {
+     "src": "뉴시스",
+     "title": "김대범, 리트 만점자 사망에 \"처벌 받으면 될 것을\"",
+     "link": "https://www.newsis.com/view/NISX20261119_0003875671"
+    }
+   ]
+  },
+  {
+   "kw": "월드투어",
+   "nsrc": 3,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "연합뉴스"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "아이브, 내년 1월 서울 KSPO돔서 월드투어 앙코르",
+     "link": "https://www.yna.co.kr/view/AKR20261120145400005"
+    },
+    {
+     "src": "동아일보",
+     "title": "아이브 월드투어 체조서 마무리…2027년 1월 앙코르",
+     "link": "https://sports.donga.com/ent/article/all/20261120/135063678/1"
+    },
+    {
+     "src": "뉴시스",
+     "title": "아이브, 내년 1월 KSPO돔서 월드투어 앙코르 콘서트",
+     "link": "https://www.newsis.com/view/NISX20261120_0003877313"
+    },
+    {
+     "src": "뉴시스",
+     "title": "플레이브, 내년 1월 고척스카이돔 재입성…첫 월드투어 대미 장식",
+     "link": "https://www.newsis.com/view/NISX20261119_0003874926"
     }
    ]
   }
