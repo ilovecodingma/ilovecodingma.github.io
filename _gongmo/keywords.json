@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-20 19:00",
+ "updated": "2026-11-20 20:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -384,6 +384,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-12",
+   "expires": "2026-11-23"
+  },
+  {
+   "query": "이부진",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 10000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-20",
    "expires": "2026-11-23"
   },
   {
@@ -951,18 +963,6 @@
    "expires": "2026-11-23"
   },
   {
-   "query": "이부진",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 5000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-20",
-   "expires": "2026-11-23"
-  },
-  {
    "query": "운세",
    "tier": "단기",
    "signal": [
@@ -1468,6 +1468,18 @@
   },
   {
    "query": "수출규제",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 5000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-20",
+   "expires": "2026-11-23"
+  },
+  {
+   "query": "임지열",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -2139,6 +2151,18 @@
    "expires": "2026-11-23"
   },
   {
+   "query": "이범호",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-05",
+   "expires": "2026-11-23"
+  },
+  {
    "query": "호날두",
    "tier": "단기",
    "signal": [
@@ -2607,6 +2631,18 @@
    "expires": "2026-11-23"
   },
   {
+   "query": "레버리지",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-20",
+   "expires": "2026-11-23"
+  },
+  {
    "query": "스페인 대 잉글랜드",
    "tier": "단기",
    "signal": [
@@ -2751,6 +2787,18 @@
    "expires": "2026-11-23"
   },
   {
+   "query": "장승수",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-20",
+   "expires": "2026-11-23"
+  },
+  {
    "query": "뉴캐슬 대 에버튼 순위",
    "tier": "단기",
    "signal": [
@@ -2836,18 +2884,6 @@
   },
   {
    "query": "김숙",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 2000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-05",
-   "expires": "2026-11-23"
-  },
-  {
-   "query": "이범호",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -3400,18 +3436,6 @@
   },
   {
    "query": "배치표",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 2000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-20",
-   "expires": "2026-11-23"
-  },
-  {
-   "query": "장승수",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -5124,6 +5148,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-19",
+   "expires": "2026-11-23"
+  },
+  {
+   "query": "이지영",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-20",
    "expires": "2026-11-23"
   },
   {
