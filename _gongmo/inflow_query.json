@@ -1,30 +1,86 @@
 {
- "at": "2026-11-20 06:57",
+ "at": "2026-11-20 09:17",
  "note": "날짜, 검색엔진, 검색어, 도착 주소, 수. 검색어 없음(q 빈칸)은 리퍼러에 검색어가 안 붙은 방문.",
  "coverage": {
+  "daum": {
+   "검색어 있음": 281,
+   "없음": 418
+  },
   "naver": {
    "검색어 있음": 2,
-   "없음": 34
+   "없음": 38
   },
   "google": {
    "검색어 있음": 0,
-   "없음": 331
+   "없음": 335
   },
   "bing": {
    "검색어 있음": 0,
    "없음": 2
-  },
-  "daum": {
-   "검색어 있음": 228,
-   "없음": 381
   }
  },
  "rows": [
   {
    "day": "2026-11-20",
    "eng": "daum",
+   "q": "2027학년도 수능 수학 예상 등급컷",
+   "path": "/issue/suneung-2027-grade-cut-difficulty-answers-1119/",
+   "n": 16
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "수능 등급컷",
+   "path": "/issue/suneung-2027-grade-cut-difficulty-answers-1119/",
+   "n": 11
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "2027학년도 수능 국어 예상 등급컷",
+   "path": "/issue/suneung-2027-grade-cut-difficulty-answers-1119/",
+   "n": 7
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "수능 결과 발표일",
+   "path": "/issue/suneung-score-report-1105/",
+   "n": 4
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "2027학년도 수능 예상 등급컷",
+   "path": "/issue/suneung-2027-grade-cut-difficulty-answers-1119/",
+   "n": 3
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "2027년 4대보험요율표",
+   "path": "/money/guide/insurance-rates-2027-table/",
+   "n": 3
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "2027학년도 수능 영어 예상 등급컷",
+   "path": "/issue/suneung-2027-grade-cut-difficulty-answers-1119/",
+   "n": 2
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
    "q": "보증채무이행청구서",
    "path": "/money/guide/jeonse-deposit-return-guarantee-claim-process/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "국세 분납일",
+   "path": "/money/guide/income-tax-interim-estimate-installment/",
    "n": 1
   },
   {
@@ -37,8 +93,50 @@
   {
    "day": "2026-11-20",
    "eng": "daum",
+   "q": "2027학년도 수능 국어 예상 등급컷 원점수",
+   "path": "/issue/suneung-2027-grade-cut-difficulty-answers-1119/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "2027학년도 수능 결과 발표일",
+   "path": "/money/guide/suneung-2027-score-release-date-check/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "2027초등 임용고시 일정",
+   "path": "/money/guide/teacher-exam-2027-schedule/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "2027년 장애인 연금",
+   "path": "/money/guide/disability-pension-2027-amount/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "2027년 성령강림대축일",
+   "path": "/money/guide/lunar-calendar-2027-table/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
    "q": "2027년 기초연금액",
    "path": "/money/guide/basic-pension-2027-increase-announce/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "2027 중.고 특수교육 임용고시 일정",
+   "path": "/money/guide/teacher-exam-2027-schedule/",
    "n": 1
   },
   {
