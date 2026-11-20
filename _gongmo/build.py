@@ -4172,6 +4172,16 @@ def class_pages():
         urls += bookview.pages(page, ROOT)
     except Exception as e:
         print('책 읽기 화면 건너뜀', repr(e)[:100])
+    try:   # 2026-11-20 시험 허브(/exam/): 시험별 일정·접수·발표일·예상 컷 (원자료 _gongmo/exam_data, 마케터 작성)
+        import exam
+        urls += exam.pages(page)
+    except Exception as _e:
+        print('시험 허브 건너뜀(사이트는 계속)', repr(_e)[:120])
+    try:   # 2026-11-20 시험 문제은행(/exam/bank/): 공식 공개 기출·공식 자료 기반 연습문제 (_gongmo/exam_data/bank/*.json)
+        import exambank
+        urls += exambank.pages(page)
+    except Exception as _e:
+        print('시험 문제은행 건너뜀(사이트는 계속)', repr(_e)[:120])
     try:   # 2026-11-19 개발 업무일지(/devlog/): 매일 밤 12시 세션별 하루 한 일을 그림으로 공개
         import devlog
         urls += devlog.pages(page, ROOT)

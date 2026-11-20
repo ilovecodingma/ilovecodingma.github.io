@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-20 09:00",
+ "updated": "2026-11-20 10:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -339,6 +339,18 @@
    "expires": "2026-11-23"
   },
   {
+   "query": "경제",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 10000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-05",
+   "expires": "2026-11-23"
+  },
+  {
    "query": "솔비",
    "tier": "단기",
    "signal": [
@@ -372,18 +384,6 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-19",
-   "expires": "2026-11-23"
-  },
-  {
-   "query": "경제",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 10000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-05",
    "expires": "2026-11-23"
   },
   {
@@ -555,18 +555,6 @@
    "expires": "2026-11-23"
   },
   {
-   "query": "수능 등급컷",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 10000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-19",
-   "expires": "2026-11-23"
-  },
-  {
    "query": "전북 현대 대 조호르 다룰 탁짐 fc 순위",
    "tier": "단기",
    "signal": [
@@ -708,6 +696,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-03",
+   "expires": "2026-11-23"
+  },
+  {
+   "query": "택시",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 5000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-19",
    "expires": "2026-11-23"
   },
   {
@@ -1716,18 +1716,6 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-13",
-   "expires": "2026-11-23"
-  },
-  {
-   "query": "택시",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 2000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-19",
    "expires": "2026-11-23"
   },
   {
@@ -3747,6 +3735,18 @@
    "expires": "2026-11-23"
   },
   {
+   "query": "마우리시오 포체티노",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-17",
+   "expires": "2026-11-23"
+  },
+  {
    "query": "당구",
    "tier": "단기",
    "signal": [
@@ -4044,18 +4044,6 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-12",
-   "expires": "2026-11-23"
-  },
-  {
-   "query": "파운드리",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 1000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-17",
    "expires": "2026-11-23"
   },
   {
@@ -4659,18 +4647,6 @@
    "expires": "2026-11-23"
   },
   {
-   "query": "마우리시오 포체티노",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 1000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-17",
-   "expires": "2026-11-23"
-  },
-  {
    "query": "오산시",
    "tier": "단기",
    "signal": [
@@ -4924,6 +4900,18 @@
   },
   {
    "query": "심우정",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-18",
+   "expires": "2026-11-23"
+  },
+  {
+   "query": "미스터트롯",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -6003,18 +5991,6 @@
    "expires": "2026-11-23"
   },
   {
-   "query": "미스터트롯",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 1000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-18",
-   "expires": "2026-11-23"
-  },
-  {
    "query": "10억",
    "tier": "단기",
    "signal": [
@@ -6460,6 +6436,19 @@
    "page": "",
    "registered": "2026-11-02",
    "expires": "2026-11-06"
+  },
+  {
+   "query": "삼성 파운드리 중국 AI 칩 심사 소문에 쑤이위안 20% 급락, 정식 규정은 미발표",
+   "tier": "단기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 3,
+   "status": "작성",
+   "page": "/issue/samsung-foundry-china-ai-chip-screening-rumor-1120/",
+   "registered": "2026-11-20",
+   "expires": "2026-11-24"
   },
   {
    "query": "한덕수 전 총리 징역 15년 대법원 파기환송, 상고심 주문과 대법관 9대 3 의견 정리",
@@ -14666,7 +14655,7 @@
    "expires": "2026-11-26"
   },
   {
-   "query": "2027 수능 예상 1등급컷 — 메가스터디 국어 130점, 수학 131점",
+   "query": "수능 등급컷 2027 예상 — 메가스터디 국어 130점·수학 131점",
    "tier": "중기",
    "signal": [
     "뉴스",
@@ -14675,8 +14664,8 @@
    "score": 5,
    "status": "작성",
    "page": "/issue/suneung-2027-grade-cut-difficulty-answers-1119/",
-   "registered": "2026-11-19",
-   "expires": "2026-11-26"
+   "registered": "2026-11-20",
+   "expires": "2026-11-27"
   },
   {
    "query": "2027 수능 당일 준비물·입실·시험 시간표 정리",
