@@ -1,5 +1,5 @@
 {
- "at": "2026-11-21 05:11",
+ "at": "2026-11-21 05:30",
  "nitems": 522,
  "cands": [
   {
@@ -13,7 +13,7 @@
     "한겨레",
     "한국경제"
    ],
-   "n": 17,
+   "n": 16,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -117,7 +117,7 @@
     "연합뉴스",
     "한국경제"
    ],
-   "n": 14,
+   "n": 13,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -244,6 +244,40 @@
    ]
   },
   {
+   "kw": "아이브",
+   "nsrc": 5,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "세계일보",
+    "연합뉴스",
+    "한국경제"
+   ],
+   "n": 8,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "아이브, 내년 1월 서울 KSPO돔서 월드투어 앙코르",
+     "link": "https://www.yna.co.kr/view/AKR20261120145400005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "[방송소식] 아이브 가을, ENA 다큐 '하지 못한 말' 프리젠터 참여",
+     "link": "https://www.yna.co.kr/view/AKR20261117063000005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "[속보] 아이브·키키, 그래미 신설 '아시안팝' 부문 후보 지명",
+     "link": "https://www.yna.co.kr/view/AKR20261116179400005"
+    },
+    {
+     "src": "동아일보",
+     "title": "아이브 월드투어 체조서 마무리…2027년 1월 앙코르",
+     "link": "https://sports.donga.com/ent/article/all/20261120/135063678/1"
+    }
+   ]
+  },
+  {
    "kw": "어워즈",
    "nsrc": 5,
    "srcs": [
@@ -308,40 +342,6 @@
      "src": "뉴시스",
      "title": "'12월 재혼' 서인영 \"이번에도 프러포즈 못 받아\"",
      "link": "https://www.newsis.com/view/NISX20261120_0003876264"
-    }
-   ]
-  },
-  {
-   "kw": "활동",
-   "nsrc": 5,
-   "srcs": [
-    "뉴시스",
-    "세계일보",
-    "연합뉴스",
-    "한국경제",
-    "헤럴드경제"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "아일릿, 건강 문제로 활동 축소…\"고열·몸살에 발목 부상\"",
-     "link": "https://www.yna.co.kr/view/AKR20261119062900005"
-    },
-    {
-     "src": "한국경제",
-     "title": "YG 전속계약 명단서 빠진 블랙핑크…\"그룹 활동 논의 중\"",
-     "link": "https://www.hankyung.com/article/202611169801H"
-    },
-    {
-     "src": "세계일보",
-     "title": "조세호, 1년 만에 활동 재개…“시기상조 쓴소리 많아”",
-     "link": "https://www.segye.com/newsView/20261120503336"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "‘노동 착취 논란’ 헤이지니, 한 달 만에 유튜브 활동 재개",
-     "link": "https://biz.heraldcorp.com/article/10942716"
     }
    ]
   },
@@ -540,39 +540,6 @@
      "src": "세계일보",
      "title": "서인영, 12월 재혼 앞두고 깜짝 고백 “이번에도 프러포즈 안 받았다”",
      "link": "https://www.segye.com/newsView/20261120507664"
-    }
-   ]
-  },
-  {
-   "kw": "아이브",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "연합뉴스",
-    "한국경제"
-   ],
-   "n": 7,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "아이브, 내년 1월 서울 KSPO돔서 월드투어 앙코르",
-     "link": "https://www.yna.co.kr/view/AKR20261120145400005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "[방송소식] 아이브 가을, ENA 다큐 '하지 못한 말' 프리젠터 참여",
-     "link": "https://www.yna.co.kr/view/AKR20261117063000005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "[속보] 아이브·키키, 그래미 신설 '아시안팝' 부문 후보 지명",
-     "link": "https://www.yna.co.kr/view/AKR20261116179400005"
-    },
-    {
-     "src": "동아일보",
-     "title": "아이브 월드투어 체조서 마무리…2027년 1월 앙코르",
-     "link": "https://sports.donga.com/ent/article/all/20261120/135063678/1"
     }
    ]
   },
@@ -1006,6 +973,39 @@
    ]
   },
   {
+   "kw": "활동",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "연합뉴스",
+    "한국경제",
+    "헤럴드경제"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "아일릿, 건강 문제로 활동 축소…\"고열·몸살에 발목 부상\"",
+     "link": "https://www.yna.co.kr/view/AKR20261119062900005"
+    },
+    {
+     "src": "한국경제",
+     "title": "YG 전속계약 명단서 빠진 블랙핑크…\"그룹 활동 논의 중\"",
+     "link": "https://www.hankyung.com/article/202611169801H"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "‘노동 착취 논란’ 헤이지니, 한 달 만에 유튜브 활동 재개",
+     "link": "https://biz.heraldcorp.com/article/10942716"
+    },
+    {
+     "src": "뉴시스",
+     "title": "조세호, 유튜브로 활동 재개에 \"시기상조 쓴소리\"",
+     "link": "https://www.newsis.com/view/NISX20261120_0003876042"
+    }
+   ]
+  },
+  {
    "kw": "호흡",
    "nsrc": 4,
    "srcs": [
@@ -1035,39 +1035,6 @@
      "src": "조선일보",
      "title": "지예은♥바타, 결혼 앞두고 달달샷 터졌다..놀이터 커플 댄스 '찰떡 호흡'",
      "link": "https://www.chosun.com/entertainments/broadcast/2026/11/21/HA4TEODDGQYWGOJYMU4DQNZWG4/"
-    }
-   ]
-  },
-  {
-   "kw": "유튜브",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "조선일보",
-    "헤럴드경제"
-   ],
-   "n": 4,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "조세호, 유튜브 복귀 성적표 씁쓸…♥아내까지 구독 호소",
-     "link": "https://sports.donga.com/ent/article/all/20261120/135064096/1"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "‘노동 착취 논란’ 헤이지니, 한 달 만에 유튜브 활동 재개",
-     "link": "https://biz.heraldcorp.com/article/10942716"
-    },
-    {
-     "src": "뉴시스",
-     "title": "조세호 아내, 남편 유튜브 구독 호소 했지만…반응 싸늘",
-     "link": "https://www.newsis.com/view/NISX20261120_0003876687"
-    },
-    {
-     "src": "조선일보",
-     "title": "최민호, 유튜브 채널에 작가 없어···조정석 \"난 대본을 안 봐\"('채널 조정석')",
-     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/20/GQ2TQZBVGU4GMMBYGE3TIOBWGY/"
     }
    ]
   },
@@ -1105,6 +1072,72 @@
    ]
   },
   {
+   "kw": "유튜브",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "조선일보",
+    "헤럴드경제"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "조세호, 유튜브 복귀 성적표 씁쓸…♥아내까지 구독 호소",
+     "link": "https://sports.donga.com/ent/article/all/20261120/135064096/1"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "‘노동 착취 논란’ 헤이지니, 한 달 만에 유튜브 활동 재개",
+     "link": "https://biz.heraldcorp.com/article/10942716"
+    },
+    {
+     "src": "뉴시스",
+     "title": "조세호 아내, 남편 유튜브 구독 호소 했지만…반응 싸늘",
+     "link": "https://www.newsis.com/view/NISX20261120_0003876687"
+    },
+    {
+     "src": "조선일보",
+     "title": "최민호, 유튜브 채널에 작가 없어···조정석 \"난 대본을 안 봐\"('채널 조정석')",
+     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/20/GQ2TQZBVGU4GMMBYGE3TIOBWGY/"
+    }
+   ]
+  },
+  {
+   "kw": "유재석",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "세계일보",
+    "조선일보"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "유재석, 최예나·투어스 도훈에 파격 파트너 제안…“대박 날 것” (놀뭐)",
+     "link": "https://sports.donga.com/ent/article/all/20261120/135061480/1"
+    },
+    {
+     "src": "세계일보",
+     "title": "‘현금 198억 매입’ 유재석 강남 신축 건물 완공…어떻게 활용할까",
+     "link": "https://www.segye.com/newsView/20261120505000"
+    },
+    {
+     "src": "뉴시스",
+     "title": "유재석, 논현동 198억 현금 매입 부지 신축 건물 완공…\"얼마나 더 오를까\"",
+     "link": "https://www.newsis.com/view/NISX20261119_0003874712"
+    },
+    {
+     "src": "조선일보",
+     "title": "유재석 \"오래 하네?\" vs 이서진 \"'런닝맨' 그만 해\"('비서진')",
+     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/20/MU3DGOLFG5RTEMBTGMZTGZDBME/"
+    }
+   ]
+  },
+  {
    "kw": "부담",
    "nsrc": 4,
    "srcs": [
@@ -1134,39 +1167,6 @@
      "src": "조선일보",
      "title": "홍현희, 子 준범 위해 문어 마녀 변신 \"개그맨 엄마라고 기대해서 부담\"('홍쓴TV')",
      "link": "https://www.chosun.com/entertainments/broadcast/2026/11/20/HAYTCZRZMI2TCMTGMRQTANRRGA/"
-    }
-   ]
-  },
-  {
-   "kw": "쓴소리",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "세계일보",
-    "조선일보",
-    "헤럴드경제"
-   ],
-   "n": 4,
-   "headlines": [
-    {
-     "src": "세계일보",
-     "title": "조세호, 1년 만에 활동 재개…“시기상조 쓴소리 많아”",
-     "link": "https://www.segye.com/newsView/20261120503336"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "배종옥 “요즘 젊은 배우들, 차에 꿀 발라놨나”…쓴소리",
-     "link": "https://biz.heraldcorp.com/article/10942598"
-    },
-    {
-     "src": "뉴시스",
-     "title": "조세호, 유튜브로 활동 재개에 \"시기상조 쓴소리\"",
-     "link": "https://www.newsis.com/view/NISX20261120_0003876042"
-    },
-    {
-     "src": "조선일보",
-     "title": "“밴에 꿀을 묻혀놨는지”… 배종옥의 쓴소리, 14년 전 대선배 박근형·故 안성기도 했던 일침",
-     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/20/HA2DKZTFGBRGIZTCGIZDAZLDHE/"
     }
    ]
   },
@@ -1267,38 +1267,6 @@
    ]
   },
   {
-   "kw": "김혜윤",
-   "nsrc": 3,
-   "srcs": [
-    "동아일보",
-    "세계일보",
-    "한국경제"
-   ],
-   "n": 8,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "이혼 후 장나라 곁에 김혜윤 등장…‘김앤장’ 케미 ‘굿파트너’ 시즌2 (종합)[DA현장]",
-     "link": "https://sports.donga.com/ent/article/all/20261120/135060997/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "김혜윤 “장나라 선배 눈빛에 홀려, 캐릭터와 차이 극명” (굿파트너2)",
-     "link": "https://sports.donga.com/ent/article/all/20261120/135060745/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "김혜윤 “부담감 없었다면 거짓말, 법정물+전문직 욕심 있었다” (굿파트너2)",
-     "link": "https://sports.donga.com/ent/article/all/20261120/135060674/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "장나라vs김혜윤, 승소 확률 1%…‘굿파트너2’ 오늘 첫방",
-     "link": "https://sports.donga.com/ent/article/all/20261120/135058720/1"
-    }
-   ]
-  },
-  {
    "kw": "공연",
    "nsrc": 3,
    "srcs": [
@@ -1327,6 +1295,38 @@
      "src": "연합뉴스",
      "title": "일본 록밴드 아시안 쿵푸 제너레이션, 내년 5월 내한 공연",
      "link": "https://www.yna.co.kr/view/AKR20261118087900005"
+    }
+   ]
+  },
+  {
+   "kw": "김혜윤",
+   "nsrc": 3,
+   "srcs": [
+    "동아일보",
+    "세계일보",
+    "한국경제"
+   ],
+   "n": 7,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "이혼 후 장나라 곁에 김혜윤 등장…‘김앤장’ 케미 ‘굿파트너’ 시즌2 (종합)[DA현장]",
+     "link": "https://sports.donga.com/ent/article/all/20261120/135060997/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "김혜윤 “장나라 선배 눈빛에 홀려, 캐릭터와 차이 극명” (굿파트너2)",
+     "link": "https://sports.donga.com/ent/article/all/20261120/135060745/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "김혜윤 “부담감 없었다면 거짓말, 법정물+전문직 욕심 있었다” (굿파트너2)",
+     "link": "https://sports.donga.com/ent/article/all/20261120/135060674/1"
+    },
+    {
+     "src": "한국경제",
+     "title": "'굿파트너2' 변호사 장나라·김혜윤, '김앤장' 조합 이름값 할까 [종합]",
+     "link": "https://www.hankyung.com/article/202611200300H"
     }
    ]
   }
