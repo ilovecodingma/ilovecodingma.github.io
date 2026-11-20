@@ -1,7 +1,42 @@
 {
- "at": "2026-11-20 11:11",
+ "at": "2026-11-20 11:30",
  "nitems": 521,
  "cands": [
+  {
+   "kw": "깜짝",
+   "nsrc": 6,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "연합뉴스",
+    "조선일보",
+    "한국경제",
+    "헤럴드경제"
+   ],
+   "n": 11,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "20주년 빅뱅, 오늘 신곡 깜짝 발표…내일 '마마 어워즈' 출연",
+     "link": "https://www.yna.co.kr/view/AKR20261120036800005"
+    },
+    {
+     "src": "동아일보",
+     "title": "빅뱅, 신곡 제목도 숨겼다…오늘(20일) 오후 2시 깜짝 공개",
+     "link": "https://sports.donga.com/ent/article/all/20261120/135058336/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "빅뱅, 오늘(20일) 신곡 깜짝 발매…‘BiiiG’ 이후 3개월 만",
+     "link": "https://sports.donga.com/ent/article/all/20261120/135058303/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "문채원, 선화예고 생기부 열었다가 깜짝…“의욕이 조금 뒤떨어짐”",
+     "link": "https://sports.donga.com/ent/article/all/20261119/135057876/1"
+    }
+   ]
+  },
   {
    "kw": "활동",
    "nsrc": 6,
@@ -73,16 +108,17 @@
    ]
   },
   {
-   "kw": "깜짝",
-   "nsrc": 5,
+   "kw": "빅뱅",
+   "nsrc": 6,
    "srcs": [
+    "SBS",
+    "뉴시스",
     "동아일보",
     "연합뉴스",
     "조선일보",
-    "한국경제",
-    "헤럴드경제"
+    "한국경제"
    ],
-   "n": 10,
+   "n": 8,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -100,9 +136,9 @@
      "link": "https://sports.donga.com/ent/article/all/20261120/135058303/1"
     },
     {
-     "src": "동아일보",
-     "title": "문채원, 선화예고 생기부 열었다가 깜짝…“의욕이 조금 뒤떨어짐”",
-     "link": "https://sports.donga.com/ent/article/all/20261119/135057876/1"
+     "src": "한국경제",
+     "title": "빅뱅, 오늘 신곡 깜짝 발표…'마마 어워즈' 기대감 ↑",
+     "link": "https://www.hankyung.com/article/202611209274H"
     }
    ]
   },
@@ -171,74 +207,6 @@
      "src": "연합뉴스",
      "title": "[가요소식] 헤일리 윌리엄스, 내년 3월 첫 내한 공연",
      "link": "https://www.yna.co.kr/view/AKR20261117087700005"
-    }
-   ]
-  },
-  {
-   "kw": "데뷔",
-   "nsrc": 5,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "동아일보",
-    "조선일보",
-    "한국경제"
-   ],
-   "n": 8,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "홍진경, 데뷔 33년째 몸매 관리 비결…아보카도·김 도시락 공개",
-     "link": "https://sports.donga.com/ent/article/all/20261119/135057685/1"
-    },
-    {
-     "src": "한국경제",
-     "title": "[단독] SM 신인 보이그룹, 내년 1월 데뷔",
-     "link": "https://www.hankyung.com/article/202611169565H"
-    },
-    {
-     "src": "한국경제",
-     "title": "\"가정부와 불륜으로 낳은 아들\" 슈워제네거 혼외자, 보디빌더 데뷔",
-     "link": "https://www.hankyung.com/article/2026111086337"
-    },
-    {
-     "src": "SBS",
-     "title": "빅뱅, 오늘(20일) 새 디지털 싱글 기습 공개…데뷔 20주년 대미 장식",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008855191&plink=RSSLINK&cooper=RSSREADER"
-    }
-   ]
-  },
-  {
-   "kw": "빅뱅",
-   "nsrc": 5,
-   "srcs": [
-    "SBS",
-    "동아일보",
-    "연합뉴스",
-    "조선일보",
-    "한국경제"
-   ],
-   "n": 7,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "20주년 빅뱅, 오늘 신곡 깜짝 발표…내일 '마마 어워즈' 출연",
-     "link": "https://www.yna.co.kr/view/AKR20261120036800005"
-    },
-    {
-     "src": "동아일보",
-     "title": "빅뱅, 신곡 제목도 숨겼다…오늘(20일) 오후 2시 깜짝 공개",
-     "link": "https://sports.donga.com/ent/article/all/20261120/135058336/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "빅뱅, 오늘(20일) 신곡 깜짝 발매…‘BiiiG’ 이후 3개월 만",
-     "link": "https://sports.donga.com/ent/article/all/20261120/135058303/1"
-    },
-    {
-     "src": "한국경제",
-     "title": "빅뱅, 오늘 신곡 깜짝 발표…'마마 어워즈' 기대감 ↑",
-     "link": "https://www.hankyung.com/article/202611209274H"
     }
    ]
   },
@@ -342,6 +310,39 @@
    ]
   },
   {
+   "kw": "발매",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "동아일보",
+    "연합뉴스"
+   ],
+   "n": 8,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "[가요소식] 딘딘, 생일에 신곡 '케이크' 발매",
+     "link": "https://www.yna.co.kr/view/AKR20261120066300005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "라이즈·플레이브 만났다…협업 싱글 '로키' 30일 발매",
+     "link": "https://www.yna.co.kr/view/AKR20261116143400005"
+    },
+    {
+     "src": "동아일보",
+     "title": "빅뱅, 오늘(20일) 신곡 깜짝 발매…‘BiiiG’ 이후 3개월 만",
+     "link": "https://sports.donga.com/ent/article/all/20261120/135058303/1"
+    },
+    {
+     "src": "SBS",
+     "title": "윤하, 인기 웹툰 '전독시'와 협업…24일 OST 발매",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008854845&plink=RSSLINK&cooper=RSSREADER"
+    }
+   ]
+  },
+  {
    "kw": "리트",
    "nsrc": 4,
    "srcs": [
@@ -375,35 +376,35 @@
    ]
   },
   {
-   "kw": "발매",
+   "kw": "싱글",
    "nsrc": 4,
    "srcs": [
     "SBS",
     "뉴시스",
-    "동아일보",
-    "연합뉴스"
+    "연합뉴스",
+    "조선일보"
    ],
    "n": 7,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "[가요소식] 딘딘, 생일에 신곡 '케이크' 발매",
-     "link": "https://www.yna.co.kr/view/AKR20261120066300005"
+     "title": "트와이스 나연, 오늘 새 싱글 '나스티'…\"많은 고민·노력 담아\"",
+     "link": "https://www.yna.co.kr/view/AKR20261120048400005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "스트레이 키즈 아이엔, 솔로 디지털 싱글 '노 리턴' 발표",
+     "link": "https://www.yna.co.kr/view/AKR20261117085500005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "'그래미 후보' 제니 '드라큘라', 美 빌보드 싱글 3위 유지",
+     "link": "https://www.yna.co.kr/view/AKR20261117038500005"
     },
     {
      "src": "연합뉴스",
      "title": "라이즈·플레이브 만났다…협업 싱글 '로키' 30일 발매",
      "link": "https://www.yna.co.kr/view/AKR20261116143400005"
-    },
-    {
-     "src": "동아일보",
-     "title": "빅뱅, 오늘(20일) 신곡 깜짝 발매…‘BiiiG’ 이후 3개월 만",
-     "link": "https://sports.donga.com/ent/article/all/20261120/135058303/1"
-    },
-    {
-     "src": "SBS",
-     "title": "윤하, 인기 웹툰 '전독시'와 협업…24일 OST 발매",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008854845&plink=RSSLINK&cooper=RSSREADER"
     }
    ]
   },
@@ -437,39 +438,6 @@
      "src": "연합뉴스",
      "title": "[테크스냅] 디즈니, 'D23 아시아' 티켓 25일부터 국내 선예매",
      "link": "https://www.yna.co.kr/view/AKR20261116125500017"
-    }
-   ]
-  },
-  {
-   "kw": "장나라",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "조선일보",
-    "한겨레"
-   ],
-   "n": 7,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "장나라vs김혜윤, 승소 확률 1%…‘굿파트너2’ 오늘 첫방",
-     "link": "https://sports.donga.com/ent/article/all/20261120/135058720/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "장나라·김혜윤, 첫 만남부터 적으로…‘오픈 메리지’ 법정 전쟁 (굿파트너2)",
-     "link": "https://sports.donga.com/ent/article/all/20261120/135058589/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "장나라 충격고백 “전성기 때? 건강 안 좋고 기억 안 나” (편스토랑)",
-     "link": "https://sports.donga.com/ent/article/all/20261120/135058323/1"
-    },
-    {
-     "src": "한겨레",
-     "title": "이혼 전문 변호사 장나라·이발사 박보검 돌아온다…시즌1 넘어설까",
-     "link": "https://www.hani.co.kr/arti/culture/culture_general/1288001.html"
     }
    ]
   },
@@ -540,68 +508,134 @@
    ]
   },
   {
-   "kw": "수능",
+   "kw": "데뷔",
    "nsrc": 4,
    "srcs": [
     "SBS",
     "뉴시스",
+    "조선일보",
+    "한국경제"
+   ],
+   "n": 7,
+   "headlines": [
+    {
+     "src": "한국경제",
+     "title": "[단독] SM 신인 보이그룹, 내년 1월 데뷔",
+     "link": "https://www.hankyung.com/article/202611169565H"
+    },
+    {
+     "src": "한국경제",
+     "title": "\"가정부와 불륜으로 낳은 아들\" 슈워제네거 혼외자, 보디빌더 데뷔",
+     "link": "https://www.hankyung.com/article/2026111086337"
+    },
+    {
+     "src": "SBS",
+     "title": "빅뱅, 오늘(20일) 새 디지털 싱글 기습 공개…데뷔 20주년 대미 장식",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008855191&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "SBS",
+     "title": "'53세' 전도연, 데뷔 첫 SNS 개설…글로벌 소통 나섰다",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008853199&plink=RSSLINK&cooper=RSSREADER"
+    }
+   ]
+  },
+  {
+   "kw": "장나라",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "조선일보",
+    "한겨레"
+   ],
+   "n": 6,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "장나라vs김혜윤, 승소 확률 1%…‘굿파트너2’ 오늘 첫방",
+     "link": "https://sports.donga.com/ent/article/all/20261120/135058720/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "장나라·김혜윤, 첫 만남부터 적으로…‘오픈 메리지’ 법정 전쟁 (굿파트너2)",
+     "link": "https://sports.donga.com/ent/article/all/20261120/135058589/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "장나라 충격고백 “전성기 때? 건강 안 좋고 기억 안 나” (편스토랑)",
+     "link": "https://sports.donga.com/ent/article/all/20261120/135058323/1"
+    },
+    {
+     "src": "한겨레",
+     "title": "이혼 전문 변호사 장나라·이발사 박보검 돌아온다…시즌1 넘어설까",
+     "link": "https://www.hani.co.kr/arti/culture/culture_general/1288001.html"
+    }
+   ]
+  },
+  {
+   "kw": "변신",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "세계일보",
     "연합뉴스",
-    "헤럴드경제"
+    "조선일보"
    ],
    "n": 5,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "수능 대신 무대 오르는 08년생 아이돌들…코르티스·리센느 등",
-     "link": "https://www.yna.co.kr/view/AKR20261117153900005"
+     "title": "아일릿, '일일 경찰관' 변신…남양주서 청소년 안전 교육",
+     "link": "https://www.yna.co.kr/view/AKR20261118092600005"
     },
     {
-     "src": "헤럴드경제",
-     "title": "‘공신’ 강성태, 수능 포기했다…“모든 학생이 잠재적 부정행위자 됐다”",
-     "link": "https://biz.heraldcorp.com/article/10942358"
+     "src": "세계일보",
+     "title": "‘성범죄 유죄’ 강지환, 7년 만에 '뜨개질' 틱톡커 변신 “보고 싶었다”",
+     "link": "https://www.segye.com/newsView/20261120502595"
     },
     {
      "src": "SBS",
-     "title": "수능 하루 앞…아이유→황민현·엔하이픈·아일릿, 따뜻한 응원 릴레이",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008852197&plink=RSSLINK&cooper=RSSREADER"
+     "title": "배우 오유진, '너의 그라운드' 합류…스포츠 데이터 분석가 변신",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008855356&plink=RSSLINK&cooper=RSSREADER"
     },
     {
-     "src": "뉴시스",
-     "title": "미미미누, 리트 만점자 비보 후 심경…\"수능 본 친구들 더 응원을\"",
-     "link": "https://www.newsis.com/view/NISX20261120_0003876032"
+     "src": "SBS",
+     "title": "이민호, '버추얼 아이돌'로 변신…박규영과 호흡",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008854843&plink=RSSLINK&cooper=RSSREADER"
     }
    ]
   },
   {
-   "kw": "까지",
+   "kw": "얼굴",
    "nsrc": 4,
    "srcs": [
     "SBS",
+    "뉴시스",
     "동아일보",
-    "조선일보",
     "한국경제"
    ],
    "n": 5,
    "headlines": [
     {
      "src": "동아일보",
-     "title": "솔비, ♥이규한과 첫 키스때 ‘이것’까지…깔끔함이 이 정도였어? (미우새)",
-     "link": "https://sports.donga.com/ent/article/all/20261120/135059275/1"
+     "title": "유연석, 母 앞에 무릎 꿇더니 돌변…섬뜩한 두 얼굴 (라이어)",
+     "link": "https://sports.donga.com/ent/article/all/20261120/135058663/1"
     },
     {
      "src": "동아일보",
-     "title": "은가은 母, 손녀 못 안고 가족사진까지 거절…모녀 갈등 위기 (살림남)",
-     "link": "https://sports.donga.com/ent/article/all/20261120/135058244/1"
+     "title": "김다미·신시아 이을까…박훈정 감독이 택한 ‘슬픈 열대’ 새 얼굴 박유림",
+     "link": "https://sports.donga.com/ent/article/all/20261119/135043761/1"
     },
     {
      "src": "한국경제",
-     "title": "제로베이스원 EMP, 대학축제에 음악방송까지…신나게 '런'",
-     "link": "https://www.hankyung.com/article/202611095916H"
+     "title": "결국 스며들었다…임시완, 화제성 넘어 새 얼굴 증명해낸 '유죄인간' [스타:라이트]",
+     "link": "https://www.hankyung.com/article/202611168180H"
     },
     {
      "src": "SBS",
-     "title": "'닥터X' 이어 '마제스티'까지 접수…김우석, 안방·무대 넘나든 열일 행보",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008851605&plink=RSSLINK&cooper=RSSREADER"
+     "title": "\"신발 들고 화장실에 숨어 기다려\"…'궁금한이야기Y', 스토킹 살인범 권종필의 두 얼굴",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008855326&plink=RSSLINK&cooper=RSSREADER"
     }
    ]
   },
@@ -633,7 +667,7 @@
     },
     {
      "src": "조선일보",
-     "title": "“밴에 꿀을 묻혀놨는지”…배종옥의 쓴소리, 14년 전 '대선배' 박근형·故 안성기도 했던 일침 [Oh!쎈 이슈]",
+     "title": "“밴에 꿀을 묻혀놨는지”… 배종옥의 쓴소리, 14년 전 대선배 박근형·故 안성기도 했던 일침",
      "link": "https://www.chosun.com/entertainments/broadcast/2026/11/20/HA2DKZTFGBRGIZTCGIZDAZLDHE/"
     }
    ]
@@ -734,39 +768,6 @@
      "src": "뉴시스",
      "title": "이민호·박규영 '버츄얼 러브' 캐스팅…내년 하반기 방송",
      "link": "https://www.newsis.com/view/NISX20261119_0003874358"
-    }
-   ]
-  },
-  {
-   "kw": "변신",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "세계일보",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 4,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "아일릿, '일일 경찰관' 변신…남양주서 청소년 안전 교육",
-     "link": "https://www.yna.co.kr/view/AKR20261118092600005"
-    },
-    {
-     "src": "세계일보",
-     "title": "‘성범죄 유죄’ 강지환, 7년 만에 '뜨개질' 틱톡커 변신 “보고 싶었다”",
-     "link": "https://www.segye.com/newsView/20261120502595"
-    },
-    {
-     "src": "SBS",
-     "title": "이민호, '버추얼 아이돌'로 변신…박규영과 호흡",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008854843&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "조선일보",
-     "title": "최유진, 드라마 ‘크래시2’ 캐스팅..미스터리한 인물 ‘나해주’로 연기 변신",
-     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/20/GJSGENTDMYYTKMRQGNQTQYRVMU/"
     }
    ]
   },
@@ -1002,6 +1003,38 @@
    ]
   },
   {
+   "kw": "주년",
+   "nsrc": 3,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "연합뉴스"
+   ],
+   "n": 7,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "20주년 빅뱅, 오늘 신곡 깜짝 발표…내일 '마마 어워즈' 출연",
+     "link": "https://www.yna.co.kr/view/AKR20261120036800005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "경북 영천서 신성일기념관 개관 1주년 기념음악회 열린다",
+     "link": "https://www.yna.co.kr/view/AKR20261118127200053"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "결성 40주년 신촌블루스, 28∼29일 소극장 콘서트 '40+1'",
+     "link": "https://www.yna.co.kr/view/AKR20261117043400005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "전남 첫 근대식 극장 '목포', 개관 100주년 기념행사 다채",
+     "link": "https://www.yna.co.kr/view/AKR20261116068100054"
+    }
+   ]
+  },
+  {
    "kw": "연하",
    "nsrc": 3,
    "srcs": [
@@ -1062,38 +1095,6 @@
      "src": "세계일보",
      "title": "[포토] 김명민-박유림 '슬픈열대'",
      "link": "https://www.segye.com/newsView/20261119514505"
-    }
-   ]
-  },
-  {
-   "kw": "싱글",
-   "nsrc": 3,
-   "srcs": [
-    "SBS",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "트와이스 나연, 오늘 새 싱글 '나스티'…\"많은 고민·노력 담아\"",
-     "link": "https://www.yna.co.kr/view/AKR20261120048400005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "스트레이 키즈 아이엔, 솔로 디지털 싱글 '노 리턴' 발표",
-     "link": "https://www.yna.co.kr/view/AKR20261117085500005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "'그래미 후보' 제니 '드라큘라', 美 빌보드 싱글 3위 유지",
-     "link": "https://www.yna.co.kr/view/AKR20261117038500005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "라이즈·플레이브 만났다…협업 싱글 '로키' 30일 발매",
-     "link": "https://www.yna.co.kr/view/AKR20261116143400005"
     }
    ]
   },
@@ -1194,38 +1195,6 @@
    ]
   },
   {
-   "kw": "직접",
-   "nsrc": 3,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "동아일보"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "이세돌, 고향 마을회관 직접 고쳤다…멘토도 “완벽” 극찬 (백수 이세돌)",
-     "link": "https://sports.donga.com/ent/article/all/20261120/135058347/1"
-    },
-    {
-     "src": "SBS",
-     "title": "\"여전히 통쾌하고 유쾌함은 더했다\"…'굿파트너2' 작가·감독이 직접 밝힌 시즌2 관전 포인트",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008851328&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "뉴시스",
-     "title": "AI가 직접 질문하고 구성한 다큐…EBS '안녕, 휴먼'",
-     "link": "https://www.newsis.com/view/NISX20261119_0003874386"
-    },
-    {
-     "src": "뉴시스",
-     "title": "김간지 \"중학교 때 문희준 안티 카페 활동…직접 사과해\"",
-     "link": "https://www.newsis.com/view/NISX20261119_0003874444"
-    }
-   ]
-  },
-  {
    "kw": "부정행위",
    "nsrc": 3,
    "srcs": [
@@ -1318,6 +1287,38 @@
      "src": "뉴시스",
      "title": "김대범, 리트 만점자 사망에 \"처벌 받으면 될 것을\"",
      "link": "https://www.newsis.com/view/NISX20261119_0003875671"
+    }
+   ]
+  },
+  {
+   "kw": "부부",
+   "nsrc": 3,
+   "srcs": [
+    "연합뉴스",
+    "조선일보",
+    "한국경제"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "김태술·박하나 부부 부모 된다…\"모든 난임 부부들 응원\"",
+     "link": "https://www.yna.co.kr/view/AKR20261119154100005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "여주시, 개그맨 부부 권재관·김경아 홍보대사 위촉",
+     "link": "https://www.yna.co.kr/view/AKR20261117063600061"
+    },
+    {
+     "src": "한국경제",
+     "title": "변요한·티파니 영 부부, 첫 공식석상…\"사랑스러워\" 애정 뚝뚝",
+     "link": "https://www.hankyung.com/article/202611168183H"
+    },
+    {
+     "src": "조선일보",
+     "title": "'쇼윈도 부부'라더니? 장나라, ♥6살 연하 남편 위해 도시락까지 ('편스토랑')",
+     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/20/MI2WKYTCMI2TAMZSMQ3DCNZRGY/"
     }
    ]
   }

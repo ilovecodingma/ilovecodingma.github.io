@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-20 11:00",
+ "updated": "2026-11-20 12:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -2895,18 +2895,6 @@
    "expires": "2026-11-23"
   },
   {
-   "query": "지수",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 2000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-08",
-   "expires": "2026-11-23"
-  },
-  {
    "query": "서세원",
    "tier": "단기",
    "signal": [
@@ -3351,6 +3339,18 @@
    "expires": "2026-11-23"
   },
   {
+   "query": "논현동",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-20",
+   "expires": "2026-11-23"
+  },
+  {
    "query": "알렉산더 즈베레프",
    "tier": "단기",
    "signal": [
@@ -3624,6 +3624,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-09",
+   "expires": "2026-11-23"
+  },
+  {
+   "query": "ai 데이터 센터",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-10",
    "expires": "2026-11-23"
   },
   {
@@ -3952,18 +3964,6 @@
   },
   {
    "query": "고양이",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 1000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-10",
-   "expires": "2026-11-23"
-  },
-  {
-   "query": "ai 데이터 센터",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -14692,6 +14692,19 @@
    "page": "/issue/suneung-day-checklist-1104/",
    "registered": "2026-11-04",
    "expires": "2026-11-25"
+  },
+  {
+   "query": "UN 전자정부평가 한국 1위, 전자정부발전지수 0.9794점",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 5,
+   "status": "작성",
+   "page": "/issue/un-egovernment-survey-2026-korea-ranking-1120/",
+   "registered": "2026-11-20",
+   "expires": "2026-12-04"
   },
   {
    "query": "서울시립대 논술 스마트안경 수험생 2명 업무방해 고소, 학교 발표와 적발 경위 정리",
