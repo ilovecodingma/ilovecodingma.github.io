@@ -1,25 +1,43 @@
 {
  "date": "2026-11-20",
- "updated": "2026-11-20 11:50",
+ "updated": "2026-11-20 12:50",
  "sites": 13,
- "npost": 3074,
+ "npost": 3052,
  "note": "출처(커뮤니티)별 집계예요. 작성자·연령·성별 정보는 수집하지 않아요. posts 는 이슈별로 뽑힌 일부라 전체 글 수가 아니에요.",
  "sources": [
   {
    "name": "MLB파크",
-   "np": 16,
-   "nc": 686,
+   "np": 18,
+   "nc": 1112,
    "topics": [
+    {
+     "t": "박지윤 인스타 입장문",
+     "nsite": 3,
+     "np_here": 2,
+     "nc_here": 341,
+     "issue_np": 4,
+     "issue_nc": 341,
+     "kw": [
+      "박지윤",
+      "입장",
+      "인스타"
+     ],
+     "top_post": {
+      "t": "박지윤 인스타 입장문",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611190120204312&m=view",
+      "nc": 229
+     }
+    },
     {
      "t": "재난문자로 부정행위 걸린 수험생 35명",
      "nsite": 8,
      "np_here": 3,
      "nc_here": 149,
-     "issue_np": 34,
-     "issue_nc": 346,
+     "issue_np": 33,
+     "issue_nc": 303,
      "kw": [
-      "재난",
       "문자",
+      "재난",
       "발송",
       "위급"
      ],
@@ -27,6 +45,23 @@
       "t": "재난문자로 부정행위 걸린 수험생 35명",
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611190120210864&m=view",
       "nc": 107
+     }
+    },
+    {
+     "t": "서울대 치대에서.. 실형 산 전과자를 받을 줄은...몰랐네요",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 112,
+     "issue_np": 3,
+     "issue_nc": 131,
+     "kw": [
+      "서울대",
+      "치대"
+     ],
+     "top_post": {
+      "t": "서울대 치대에서.. 실형 산 전과자를 받을 줄은...몰랐네요",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611190120216111&m=view",
+      "nc": 112
      }
     },
     {
@@ -53,13 +88,13 @@
      "nsite": 5,
      "np_here": 1,
      "nc_here": 79,
-     "issue_np": 6,
+     "issue_np": 5,
      "issue_nc": 93,
      "kw": [
-      "수능",
-      "행위",
       "학생",
-      "수험"
+      "부정",
+      "행위",
+      "수능"
      ],
      "top_post": {
       "t": "[단독] 서울 중구 수능 수험장에서 전자기기 발견…학생 3명 부정행위 여부 파악 중",
@@ -85,12 +120,31 @@
      }
     },
     {
+     "t": "초5 딸이 올해 수능 영어를 풀어봤습니다",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 56,
+     "issue_np": 6,
+     "issue_nc": 74,
+     "kw": [
+      "수능",
+      "영어",
+      "올해",
+      "시험"
+     ],
+     "top_post": {
+      "t": "초5 딸이 올해 수능 영어를 풀어봤습니다",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611200120223533&m=view",
+      "nc": 56
+     }
+    },
+    {
      "t": "리트 이진우 심정지 상태로 발견",
      "nsite": 9,
      "np_here": 1,
      "nc_here": 52,
-     "issue_np": 18,
-     "issue_nc": 141,
+     "issue_np": 17,
+     "issue_nc": 134,
      "kw": [
       "이진우",
       "발견",
@@ -102,300 +156,42 @@
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611190120205509&m=view",
       "nc": 52
      }
-    },
-    {
-     "t": ".,.,., 이분 연락 두절이란느데 맞나요?.,,.",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 49,
-     "issue_np": 4,
-     "issue_nc": 52,
-     "kw": [
-      "두절",
-      "연락",
-      "이진우"
-     ],
-     "top_post": {
-      "t": "'리트냥이' 이진우, 연락두절... CCTV 마지막 모습",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611190120203394&m=view",
-      "nc": 49
-     }
-    },
-    {
-     "t": "오늘자 재난문자 최고 피해자",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 43,
-     "issue_np": 4,
-     "issue_nc": 62,
-     "kw": [
-      "재난문자",
-      "피해자",
-      "최고",
-      "최대"
-     ],
-     "top_post": {
-      "t": "오늘자 재난문자 최고 피해자",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611190120214473&m=view",
-      "nc": 43
-     }
-    },
-    {
-     "t": "초5 딸이 올해 수능 영어를 풀어봤습니다",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 34,
-     "issue_np": 7,
-     "issue_nc": 54,
-     "kw": [
-      "수능",
-      "올해",
-      "영어",
-      "시험"
-     ],
-     "top_post": {
-      "t": "초5 딸이 올해 수능 영어를 풀어봤습니다",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611200120223533&m=view",
-      "nc": 34
-     }
-    }
-   ]
-  },
-  {
-   "name": "개드립",
-   "np": 13,
-   "nc": 252,
-   "topics": [
-    {
-     "t": "나 오늘 수능장에서 부정행위자 실제로 목격함",
-     "nsite": 6,
-     "np_here": 2,
-     "nc_here": 53,
-     "issue_np": 16,
-     "issue_nc": 80,
-     "kw": [
-      "부정",
-      "행위자",
-      "수능",
-      "적발"
-     ],
-     "top_post": {
-      "t": "실시간 수능 부정행위자 적발 상황.txt",
-      "u": "https://www.dogdrip.net/dogdrip/735623619?sort_index=popular&page=1",
-      "nc": 39
-     }
-    },
-    {
-     "t": "AI 부정행위 사태에 흑화한 한 그림쟁이",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 32,
-     "issue_np": 4,
-     "issue_nc": 34,
-     "kw": [
-      "AI",
-      "부정행위"
-     ],
-     "top_post": {
-      "t": "AI 부정행위 사태에 흑화한 한 그림쟁이",
-      "u": "https://www.dogdrip.net/dogdrip/735728176?sort_index=popular&page=1",
-      "nc": 32
-     }
-    },
-    {
-     "t": "리트냥이 이진우 결말 명문대생의 일침",
-     "nsite": 4,
-     "np_here": 2,
-     "nc_here": 31,
-     "issue_np": 6,
-     "issue_nc": 111,
-     "kw": [
-      "일침",
-      "리트냥이",
-      "명문대",
-      "사태"
-     ],
-     "top_post": {
-      "t": "리트냥이 결말에 더쿠언냐 통렬한 일침.real",
-      "u": "https://www.dogdrip.net/dogdrip/735586817?sort_index=popular&page=1",
-      "nc": 23
-     }
-    },
-    {
-     "t": "리트 이진우 심정지 상태로 발견",
-     "nsite": 9,
-     "np_here": 1,
-     "nc_here": 29,
-     "issue_np": 18,
-     "issue_nc": 141,
-     "kw": [
-      "이진우",
-      "발견",
-      "리트",
-      "정지"
-     ],
-     "top_post": {
-      "t": "속보 이진우 심정지 상태로 발견",
-      "u": "https://www.dogdrip.net/dogdrip/735575318?sort_index=popular&page=1",
-      "nc": 29
-     }
-    },
-    {
-     "t": "재난문자로 부정행위 걸린 수험생 35명",
-     "nsite": 8,
-     "np_here": 1,
-     "nc_here": 29,
-     "issue_np": 34,
-     "issue_nc": 346,
-     "kw": [
-      "재난",
-      "문자",
-      "발송",
-      "위급"
-     ],
-     "top_post": {
-      "t": "재난문자로 ㅈ 된 사람",
-      "u": "https://www.dogdrip.net/dogdrip/735524516?sort_index=popular&page=1",
-      "nc": 29
-     }
-    },
-    {
-     "t": "'리트 만점자' 이진우 사망…\"힘들었다\" 유서 추정 5줄...",
-     "nsite": 5,
-     "np_here": 1,
-     "nc_here": 25,
-     "issue_np": 6,
-     "issue_nc": 38,
-     "kw": [
-      "만점자",
-      "리트",
-      "이진우",
-      "사망"
-     ],
-     "top_post": {
-      "t": "[속보] 리트 만점자 이진우 최종 사망확인",
-      "u": "https://www.dogdrip.net/dogdrip/735584283?sort_index=popular&page=1",
-      "nc": 25
-     }
-    },
-    {
-     "t": "오늘자 재난문자 최고 피해자",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 19,
-     "issue_np": 4,
-     "issue_nc": 62,
-     "kw": [
-      "재난문자",
-      "피해자",
-      "최고",
-      "최대"
-     ],
-     "top_post": {
-      "t": "오늘 재난문자 최고 피해자 ㅇㅈ?",
-      "u": "https://www.dogdrip.net/dogdrip/735654647?sort_index=popular&page=1",
-      "nc": 19
-     }
-    },
-    {
-     "t": "[단독] 서울 중구 수능 수험장에서 전자기기 발견…학생 3명 부정행위 여부 파악 중",
-     "nsite": 5,
-     "np_here": 1,
-     "nc_here": 12,
-     "issue_np": 6,
-     "issue_nc": 93,
-     "kw": [
-      "수능",
-      "행위",
-      "학생",
-      "수험"
-     ],
-     "top_post": {
-      "t": "[단독] 서울 중구 수능 수험장에서 전자기기 발견…학생 3명 부정행위 여부 파악",
-      "u": "https://www.dogdrip.net/dogdrip/735549843?sort_index=popular&page=1",
-      "nc": 12
-     }
-    }
-   ]
-  },
-  {
-   "name": "인스티즈",
-   "np": 3,
-   "nc": 170,
-   "topics": [
-    {
-     "t": "수능 부정행위 단속 총정리",
-     "nsite": 7,
-     "np_here": 1,
-     "nc_here": 84,
-     "issue_np": 15,
-     "issue_nc": 145,
-     "kw": [
-      "수능",
-      "행위",
-      "부정",
-      "적발"
-     ],
-     "top_post": {
-      "t": "수능 부정행위 단속 총정리",
-      "u": "https://www.instiz.net/pt/7926834?green=1",
-      "nc": 84
-     }
-    },
-    {
-     "t": "리트 만점자 궤뚫어 보는 여시의 통찰력",
-     "nsite": 6,
-     "np_here": 1,
-     "nc_here": 78,
-     "issue_np": 7,
-     "issue_nc": 109,
-     "kw": [
-      "만점자",
-      "리트",
-      "전과"
-     ],
-     "top_post": {
-      "t": "리트 만점자 궤뚫어 보는 여시의 통찰력",
-      "u": "https://www.instiz.net/pt/7927233?green=1",
-      "nc": 78
-     }
-    },
-    {
-     "t": "리트 이진우 심정지 상태로 발견",
-     "nsite": 9,
-     "np_here": 1,
-     "nc_here": 8,
-     "issue_np": 18,
-     "issue_nc": 141,
-     "kw": [
-      "이진우",
-      "발견",
-      "리트",
-      "정지"
-     ],
-     "top_post": {
-      "t": "\"리트 만점자\" 이진우 이미 심정지 후 사후 강직 상태로 사망한채 발견 돼",
-      "u": "https://www.instiz.net/pt/7927497?green=1",
-      "nc": 8
-     }
     }
    ]
   },
   {
    "name": "클리앙",
-   "np": 9,
-   "nc": 148,
+   "np": 13,
+   "nc": 380,
    "topics": [
+    {
+     "t": "조희대 탄핵을 진작 했어야죠",
+     "nsite": 3,
+     "np_here": 6,
+     "nc_here": 266,
+     "issue_np": 16,
+     "issue_nc": 359,
+     "kw": [
+      "탄핵",
+      "조희대",
+      "내란"
+     ],
+     "top_post": {
+      "t": "거듭 말씀드리지만 조희대 탄핵은 안된다니까요?",
+      "u": "https://www.clien.net/service/board/park/19295446?od=T33&po=0&category=0&groupCd=clien_all",
+      "nc": 78
+     }
+    },
     {
      "t": "재난문자로 부정행위 걸린 수험생 35명",
      "nsite": 8,
      "np_here": 2,
      "nc_here": 51,
-     "issue_np": 34,
-     "issue_nc": 346,
+     "issue_np": 33,
+     "issue_nc": 303,
      "kw": [
-      "재난",
       "문자",
+      "재난",
       "발송",
       "위급"
      ],
@@ -413,9 +209,9 @@
      "issue_np": 15,
      "issue_nc": 145,
      "kw": [
-      "수능",
-      "행위",
       "부정",
+      "행위",
+      "수능",
       "적발"
      ],
      "top_post": {
@@ -425,55 +221,17 @@
      }
     },
     {
-     "t": "외교부 “조국 日입국 거부는 전과 때문인 것으로 확인”",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 19,
-     "issue_np": 4,
-     "issue_nc": 26,
-     "kw": [
-      "입국",
-      "거부",
-      "조국",
-      "독도"
-     ],
-     "top_post": {
-      "t": "외교부 '조국 日입국거부 요인은 형 선고 이력'…독도 방문과 무관",
-      "u": "https://www.clien.net/service/board/park/19294895?od=T33&po=0&category=0&groupCd=clien_all",
-      "nc": 19
-     }
-    },
-    {
-     "t": "[속보]실종신고 이진우, 천호역 일대서 포착…경찰 수색 중",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 15,
-     "issue_np": 5,
-     "issue_nc": 24,
-     "kw": [
-      "이진우",
-      "경찰",
-      "포착",
-      "속보"
-     ],
-     "top_post": {
-      "t": "[속보]실종신고 이진우, 천호역 일대서 포착…경찰 수색 중",
-      "u": "https://www.clien.net/service/board/park/19295176?od=T33&po=0&category=0&groupCd=clien_all",
-      "nc": 15
-     }
-    },
-    {
      "t": "어떤 학생 수능장에서 초소형 카메라 사용하다 적발됐대 수능장에 초소형카메라는 진짜 레전드네",
      "nsite": 5,
      "np_here": 1,
      "nc_here": 12,
      "issue_np": 8,
-     "issue_nc": 20,
+     "issue_nc": 21,
      "kw": [
       "카메라",
       "소형",
       "재수",
-      "수능장"
+      "적발"
      ],
      "top_post": {
       "t": "재수생이 소형 초소형 카메라쓰다 걸렸다는군요.",
@@ -486,11 +244,11 @@
      "nsite": 7,
      "np_here": 1,
      "nc_here": 6,
-     "issue_np": 12,
-     "issue_nc": 28,
+     "issue_np": 14,
+     "issue_nc": 34,
      "kw": [
-      "재난문자",
       "수능",
+      "재난문자",
       "피해자"
      ],
      "top_post": {
@@ -523,12 +281,12 @@
      "nsite": 4,
      "np_here": 1,
      "nc_here": 2,
-     "issue_np": 7,
-     "issue_nc": 54,
+     "issue_np": 6,
+     "issue_nc": 74,
      "kw": [
       "수능",
-      "올해",
       "영어",
+      "올해",
       "시험"
      ],
      "top_post": {
@@ -540,9 +298,231 @@
    ]
   },
   {
+   "name": "개드립",
+   "np": 12,
+   "nc": 195,
+   "topics": [
+    {
+     "t": "나 오늘 수능장에서 부정행위자 실제로 목격함",
+     "nsite": 6,
+     "np_here": 2,
+     "nc_here": 53,
+     "issue_np": 16,
+     "issue_nc": 80,
+     "kw": [
+      "행위자",
+      "부정",
+      "수능",
+      "적발"
+     ],
+     "top_post": {
+      "t": "실시간 수능 부정행위자 적발 상황.txt",
+      "u": "https://www.dogdrip.net/dogdrip/735623619?sort_index=popular&page=1",
+      "nc": 39
+     }
+    },
+    {
+     "t": "리트 이진우 심정지 상태로 발견",
+     "nsite": 9,
+     "np_here": 2,
+     "nc_here": 33,
+     "issue_np": 17,
+     "issue_nc": 134,
+     "kw": [
+      "이진우",
+      "발견",
+      "리트",
+      "정지"
+     ],
+     "top_post": {
+      "t": "속보 이진우 심정지 상태로 발견",
+      "u": "https://www.dogdrip.net/dogdrip/735575318?sort_index=popular&page=1",
+      "nc": 29
+     }
+    },
+    {
+     "t": "리트냥이 이진우 결말 명문대생의 일침",
+     "nsite": 4,
+     "np_here": 2,
+     "nc_here": 31,
+     "issue_np": 6,
+     "issue_nc": 111,
+     "kw": [
+      "일침",
+      "리트냥이",
+      "명문대",
+      "사태"
+     ],
+     "top_post": {
+      "t": "리트냥이 결말에 더쿠언냐 통렬한 일침.real",
+      "u": "https://www.dogdrip.net/dogdrip/735586817?sort_index=popular&page=1",
+      "nc": 23
+     }
+    },
+    {
+     "t": "'리트 만점자' 이진우 사망…\"힘들었다\" 유서 추정 5줄...",
+     "nsite": 5,
+     "np_here": 1,
+     "nc_here": 25,
+     "issue_np": 6,
+     "issue_nc": 38,
+     "kw": [
+      "만점자",
+      "이진우",
+      "리트",
+      "사망"
+     ],
+     "top_post": {
+      "t": "[속보] 리트 만점자 이진우 최종 사망확인",
+      "u": "https://www.dogdrip.net/dogdrip/735584283?sort_index=popular&page=1",
+      "nc": 25
+     }
+    },
+    {
+     "t": "오늘자 재난문자 최고 피해자",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 19,
+     "issue_np": 4,
+     "issue_nc": 62,
+     "kw": [
+      "피해자",
+      "재난문자",
+      "최고",
+      "최대"
+     ],
+     "top_post": {
+      "t": "오늘 재난문자 최고 피해자 ㅇㅈ?",
+      "u": "https://www.dogdrip.net/dogdrip/735654647?sort_index=popular&page=1",
+      "nc": 19
+     }
+    },
+    {
+     "t": "[단독] 서울 중구 수능 수험장에서 전자기기 발견…학생 3명 부정행위 여부 파악 중",
+     "nsite": 5,
+     "np_here": 1,
+     "nc_here": 12,
+     "issue_np": 5,
+     "issue_nc": 93,
+     "kw": [
+      "학생",
+      "부정",
+      "행위",
+      "수능"
+     ],
+     "top_post": {
+      "t": "[단독] 서울 중구 수능 수험장에서 전자기기 발견…학생 3명 부정행위 여부 파악",
+      "u": "https://www.dogdrip.net/dogdrip/735549843?sort_index=popular&page=1",
+      "nc": 12
+     }
+    },
+    {
+     "t": "[속보] “용인 모 고교 수능 고사장서 초소형카메라·이어폰 발견”",
+     "nsite": 5,
+     "np_here": 1,
+     "nc_here": 9,
+     "issue_np": 10,
+     "issue_nc": 27,
+     "kw": [
+      "수능",
+      "카메라",
+      "발견",
+      "용인"
+     ],
+     "top_post": {
+      "t": "[속보] 경기도 용인 수능 시험장에서 카메라 발견",
+      "u": "https://www.dogdrip.net/dogdrip/735595659?sort_index=popular&page=1",
+      "nc": 9
+     }
+    },
+    {
+     "t": "수능 부정행위 단속 총정리",
+     "nsite": 7,
+     "np_here": 1,
+     "nc_here": 8,
+     "issue_np": 15,
+     "issue_nc": 145,
+     "kw": [
+      "부정",
+      "행위",
+      "수능",
+      "적발"
+     ],
+     "top_post": {
+      "t": "수능 당국조차 고의성이 없는것 같다는 부정행위",
+      "u": "https://www.dogdrip.net/dogdrip/735660543?sort_index=popular&page=1",
+      "nc": 8
+     }
+    }
+   ]
+  },
+  {
+   "name": "인스티즈",
+   "np": 3,
+   "nc": 170,
+   "topics": [
+    {
+     "t": "수능 부정행위 단속 총정리",
+     "nsite": 7,
+     "np_here": 1,
+     "nc_here": 84,
+     "issue_np": 15,
+     "issue_nc": 145,
+     "kw": [
+      "부정",
+      "행위",
+      "수능",
+      "적발"
+     ],
+     "top_post": {
+      "t": "수능 부정행위 단속 총정리",
+      "u": "https://www.instiz.net/pt/7926834?green=1",
+      "nc": 84
+     }
+    },
+    {
+     "t": "리트 만점자 궤뚫어 보는 여시의 통찰력",
+     "nsite": 7,
+     "np_here": 1,
+     "nc_here": 78,
+     "issue_np": 8,
+     "issue_nc": 109,
+     "kw": [
+      "만점자",
+      "리트",
+      "전과"
+     ],
+     "top_post": {
+      "t": "리트 만점자 궤뚫어 보는 여시의 통찰력",
+      "u": "https://www.instiz.net/pt/7927233?green=1",
+      "nc": 78
+     }
+    },
+    {
+     "t": "리트 이진우 심정지 상태로 발견",
+     "nsite": 9,
+     "np_here": 1,
+     "nc_here": 8,
+     "issue_np": 17,
+     "issue_nc": 134,
+     "kw": [
+      "이진우",
+      "발견",
+      "리트",
+      "정지"
+     ],
+     "top_post": {
+      "t": "\"리트 만점자\" 이진우 이미 심정지 후 사후 강직 상태로 사망한채 발견 돼",
+      "u": "https://www.instiz.net/pt/7927497?green=1",
+      "nc": 8
+     }
+    }
+   ]
+  },
+  {
    "name": "82쿡",
    "np": 27,
-   "nc": 147,
+   "nc": 164,
    "topics": [
     {
      "t": "친구 결혼식에 갔다가 여자를 만난 썰",
@@ -550,7 +530,7 @@
      "np_here": 1,
      "nc_here": 23,
      "issue_np": 4,
-     "issue_nc": 42,
+     "issue_nc": 43,
      "kw": [
       "여자",
       "친구",
@@ -563,12 +543,67 @@
      }
     },
     {
+     "t": "재난문자로 부정행위 걸린 수험생 35명",
+     "nsite": 8,
+     "np_here": 1,
+     "nc_here": 19,
+     "issue_np": 33,
+     "issue_nc": 303,
+     "kw": [
+      "문자",
+      "재난",
+      "발송",
+      "위급"
+     ],
+     "top_post": {
+      "t": "재난방지문자로 안걸러졌을듯",
+      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4260639&page=1",
+      "nc": 19
+     }
+    },
+    {
+     "t": "초5 딸이 올해 수능 영어를 풀어봤습니다",
+     "nsite": 4,
+     "np_here": 2,
+     "nc_here": 16,
+     "issue_np": 6,
+     "issue_nc": 74,
+     "kw": [
+      "수능",
+      "영어",
+      "올해",
+      "시험"
+     ],
+     "top_post": {
+      "t": "오늘 수능 영어 최고난이도 문제라네요",
+      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4260797&page=1",
+      "nc": 16
+     }
+    },
+    {
+     "t": "서울대 치대에서.. 실형 산 전과자를 받을 줄은...몰랐네요",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 16,
+     "issue_np": 3,
+     "issue_nc": 131,
+     "kw": [
+      "서울대",
+      "치대"
+     ],
+     "top_post": {
+      "t": "한쪽선 쓰레기로 보였어도 좋은 형이었다\" 서울대 치대 ..",
+      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4261019&page=1",
+      "nc": 16
+     }
+    },
+    {
      "t": "리트 이진우 심정지 상태로 발견",
      "nsite": 9,
-     "np_here": 2,
-     "nc_here": 22,
-     "issue_np": 18,
-     "issue_nc": 141,
+     "np_here": 1,
+     "nc_here": 15,
+     "issue_np": 17,
+     "issue_nc": 134,
      "kw": [
       "이진우",
       "발견",
@@ -582,25 +617,6 @@
      }
     },
     {
-     "t": "초5 딸이 올해 수능 영어를 풀어봤습니다",
-     "nsite": 4,
-     "np_here": 3,
-     "nc_here": 18,
-     "issue_np": 7,
-     "issue_nc": 54,
-     "kw": [
-      "수능",
-      "올해",
-      "영어",
-      "시험"
-     ],
-     "top_post": {
-      "t": "오늘 수능 영어 최고난이도 문제라네요",
-      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4260797&page=1",
-      "nc": 16
-     }
-    },
-    {
      "t": "[속보] “용인 모 고교 수능 고사장서 초소형카메라·이어폰 발견”",
      "nsite": 5,
      "np_here": 2,
@@ -608,8 +624,8 @@
      "issue_np": 10,
      "issue_nc": 27,
      "kw": [
-      "카메라",
       "수능",
+      "카메라",
       "발견",
       "용인"
      ],
@@ -627,9 +643,9 @@
      "issue_np": 15,
      "issue_nc": 145,
      "kw": [
-      "수능",
-      "행위",
       "부정",
+      "행위",
+      "수능",
       "적발"
      ],
      "top_post": {
@@ -647,8 +663,8 @@
      "issue_nc": 38,
      "kw": [
       "만점자",
-      "리트",
       "이진우",
+      "리트",
       "사망"
      ],
      "top_post": {
@@ -656,59 +672,21 @@
       "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4260681&page=1",
       "nc": 12
      }
-    },
-    {
-     "t": "AI 안경등을 통한 부정행위 보다 진짜 무서운건...",
-     "nsite": 5,
-     "np_here": 3,
-     "nc_here": 10,
-     "issue_np": 12,
-     "issue_nc": 18,
-     "kw": [
-      "부정",
-      "행위",
-      "AI",
-      "안경"
-     ],
-     "top_post": {
-      "t": "스마트폰이 없으면 부정행위를 할수가 없는건가요?",
-      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4260929&page=1",
-      "nc": 4
-     }
-    },
-    {
-     "t": "[속보]실종신고 이진우, 천호역 일대서 포착…경찰 수색 중",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 9,
-     "issue_np": 5,
-     "issue_nc": 24,
-     "kw": [
-      "이진우",
-      "경찰",
-      "포착",
-      "속보"
-     ],
-     "top_post": {
-      "t": "[속보]실종신고 이진우, 천호역 일대서 포착…경찰 수색 중",
-      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4260585&page=1",
-      "nc": 9
-     }
     }
    ]
   },
   {
    "name": "네이트판",
    "np": 6,
-   "nc": 57,
+   "nc": 59,
    "topics": [
     {
      "t": "친구 결혼식에 갔다가 여자를 만난 썰",
      "nsite": 4,
      "np_here": 1,
-     "nc_here": 19,
+     "nc_here": 20,
      "issue_np": 4,
-     "issue_nc": 42,
+     "issue_nc": 43,
      "kw": [
       "여자",
       "친구",
@@ -717,7 +695,7 @@
      "top_post": {
       "t": "사촌 결혼식 하객룩 뭐가 나음 30살 여자 키 166",
       "u": "https://pann.nate.com/talk/375727712",
-      "nc": 19
+      "nc": 20
      }
     },
     {
@@ -725,8 +703,8 @@
      "nsite": 9,
      "np_here": 1,
      "nc_here": 17,
-     "issue_np": 18,
-     "issue_nc": 141,
+     "issue_np": 17,
+     "issue_nc": 134,
      "kw": [
       "이진우",
       "발견",
@@ -767,7 +745,7 @@
       "네이버",
       "페이",
       "랜덤",
-      "클릭"
+      "라이브예고"
      ],
      "top_post": {
       "t": "ㅈㄱㄴ..⭐ 이거 설문조사 앱인데 설문조사 하고나면 네이버페이 포인트나 현금으로 받을수있음 ...",
@@ -779,19 +757,19 @@
      "t": "어떤 학생 수능장에서 초소형 카메라 사용하다 적발됐대 수능장에 초소형카메라는 진짜 레전드네",
      "nsite": 5,
      "np_here": 1,
-     "nc_here": 2,
+     "nc_here": 3,
      "issue_np": 8,
-     "issue_nc": 20,
+     "issue_nc": 21,
      "kw": [
       "카메라",
       "소형",
       "재수",
-      "수능장"
+      "적발"
      ],
      "top_post": {
       "t": "어떤 학생 수능장에서 초소형 카메라 사용하다 적발됐대 수능장에 초소형카메라는 진짜 레전드네",
       "u": "https://pann.nate.com/talk/375727229",
-      "nc": 2
+      "nc": 3
      }
     },
     {
@@ -803,8 +781,8 @@
      "issue_nc": 38,
      "kw": [
       "만점자",
-      "리트",
       "이진우",
+      "리트",
       "사망"
      ],
      "top_post": {
@@ -817,9 +795,27 @@
   },
   {
    "name": "보배드림",
-   "np": 20,
-   "nc": 42,
+   "np": 22,
+   "nc": 49,
    "topics": [
+    {
+     "t": "재난문자 수능대응은 잘한거 같네요.",
+     "nsite": 7,
+     "np_here": 4,
+     "nc_here": 10,
+     "issue_np": 14,
+     "issue_nc": 34,
+     "kw": [
+      "수능",
+      "재난문자",
+      "피해자"
+     ],
+     "top_post": {
+      "t": "수능땜에 쏜 재난문자 효과",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1048821&vdate=",
+      "nc": 3
+     }
+    },
     {
      "t": "나 오늘 수능장에서 부정행위자 실제로 목격함",
      "nsite": 6,
@@ -828,8 +824,8 @@
      "issue_np": 16,
      "issue_nc": 80,
      "kw": [
-      "부정",
       "행위자",
+      "부정",
       "수능",
       "적발"
      ],
@@ -847,32 +843,14 @@
      "issue_np": 10,
      "issue_nc": 27,
      "kw": [
-      "카메라",
       "수능",
+      "카메라",
       "발견",
       "용인"
      ],
      "top_post": {
       "t": "용인 모 고교 수능 고사장서 초소형카메라·이어폰 발견",
       "u": "https://www.bobaedream.co.kr/view?code=best&No=1048741&vdate=",
-      "nc": 3
-     }
-    },
-    {
-     "t": "재난문자 수능대응은 잘한거 같네요.",
-     "nsite": 7,
-     "np_here": 2,
-     "nc_here": 4,
-     "issue_np": 12,
-     "issue_nc": 28,
-     "kw": [
-      "재난문자",
-      "수능",
-      "피해자"
-     ],
-     "top_post": {
-      "t": "수능땜에 쏜 재난문자 효과",
-      "u": "https://www.bobaedream.co.kr/view?code=best&No=1048821&vdate=",
       "nc": 3
      }
     },
@@ -884,10 +862,10 @@
      "issue_np": 12,
      "issue_nc": 18,
      "kw": [
-      "부정",
       "행위",
-      "AI",
-      "안경"
+      "부정",
+      "안경",
+      "AI"
      ],
      "top_post": {
       "t": "으메이징한 부정행위 방법",
@@ -922,9 +900,9 @@
      "issue_np": 15,
      "issue_nc": 145,
      "kw": [
-      "수능",
-      "행위",
       "부정",
+      "행위",
+      "수능",
       "적발"
      ],
      "top_post": {
@@ -942,9 +920,9 @@
      "issue_nc": 7,
      "kw": [
       "적발",
-      "서초구",
       "수능",
-      "신발"
+      "신발",
+      "스마트폰"
      ],
      "top_post": {
       "t": "서초구 수능시험장에서 신발 속 스마트폰 적발",
@@ -953,20 +931,19 @@
      }
     },
     {
-     "t": ".,.,., 이분 연락 두절이란느데 맞나요?.,,.",
+     "t": "수능이 끝난 딸을 기다리는 아빠",
      "nsite": 4,
      "np_here": 1,
      "nc_here": 3,
      "issue_np": 4,
-     "issue_nc": 52,
+     "issue_nc": 36,
      "kw": [
-      "두절",
-      "연락",
-      "이진우"
+      "수능",
+      "아빠"
      ],
      "top_post": {
-      "t": "니트 만점자 이진우 현 시간 연락 두절",
-      "u": "https://www.bobaedream.co.kr/view?code=best&No=1048639&vdate=",
+      "t": "수능 끝난 딸을 기다리는 아빠",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1048881&vdate=",
       "nc": 3
      }
     }
@@ -974,26 +951,45 @@
   },
   {
    "name": "아카라이브",
-   "np": 5,
-   "nc": 40,
+   "np": 4,
+   "nc": 37,
    "topics": [
     {
      "t": "이번 수능 컨닝 적발된 애들이 100명도 안된댑니다 ㅋㅋㅋㅋㅋ",
      "nsite": 5,
      "np_here": 1,
      "nc_here": 13,
-     "issue_np": 7,
+     "issue_np": 6,
      "issue_nc": 18,
      "kw": [
       "수능",
       "적발",
-      "사용자",
-      "군대"
+      "컨닝",
+      "알람"
      ],
      "top_post": {
       "t": "오늘 수능 알바했는데 부정행위자 적발함",
       "u": "https://arca.live/b/live/189664188?p=1",
       "nc": 13
+     }
+    },
+    {
+     "t": "모텔서 찢어진 2018학년도 수능수험표 나옴",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 11,
+     "issue_np": 5,
+     "issue_nc": 24,
+     "kw": [
+      "수능",
+      "수험표",
+      "모텔",
+      "학년도"
+     ],
+     "top_post": {
+      "t": "2027학년도 대입 수능 전체 결과",
+      "u": "https://arca.live/b/live/189692514?p=1",
+      "nc": 11
      }
     },
     {
@@ -1004,8 +1000,8 @@
      "issue_np": 16,
      "issue_nc": 80,
      "kw": [
-      "부정",
       "행위자",
+      "부정",
       "수능",
       "적발"
      ],
@@ -1016,44 +1012,6 @@
      }
     },
     {
-     "t": "외교부 “조국 日입국 거부는 전과 때문인 것으로 확인”",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 7,
-     "issue_np": 4,
-     "issue_nc": 26,
-     "kw": [
-      "입국",
-      "거부",
-      "조국",
-      "독도"
-     ],
-     "top_post": {
-      "t": "일본 \"조국 입국 거부는 전과때문... 독도 상관없다\"",
-      "u": "https://arca.live/b/live/189560249?p=1",
-      "nc": 7
-     }
-    },
-    {
-     "t": "모텔서 찢어진 2018학년도 수능수험표 나옴",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 7,
-     "issue_np": 6,
-     "issue_nc": 20,
-     "kw": [
-      "수능",
-      "수험표",
-      "모텔",
-      "학년도"
-     ],
-     "top_post": {
-      "t": "2027학년도 대입 수능 전체 결과",
-      "u": "https://arca.live/b/live/189692514?p=1",
-      "nc": 7
-     }
-    },
-    {
      "t": "AI 안경등을 통한 부정행위 보다 진짜 무서운건...",
      "nsite": 5,
      "np_here": 1,
@@ -1061,10 +1019,10 @@
      "issue_np": 12,
      "issue_nc": 18,
      "kw": [
-      "부정",
       "행위",
-      "AI",
-      "안경"
+      "부정",
+      "안경",
+      "AI"
      ],
      "top_post": {
       "t": "눈앞에서 ai안경 적발됐는데 개무섭네",
@@ -1076,33 +1034,15 @@
   },
   {
    "name": "SLR클럽",
-   "np": 10,
+   "np": 8,
    "nc": 0,
    "topics": [
     {
-     "t": "재난문자 수능대응은 잘한거 같네요.",
-     "nsite": 7,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 12,
-     "issue_nc": 28,
-     "kw": [
-      "재난문자",
-      "수능",
-      "피해자"
-     ],
-     "top_post": {
-      "t": "수능 재난문자 질문요.",
-      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677800",
-      "nc": 0
-     }
-    },
-    {
      "t": "리트 만점자 궤뚫어 보는 여시의 통찰력",
-     "nsite": 6,
+     "nsite": 7,
      "np_here": 2,
      "nc_here": 0,
-     "issue_np": 7,
+     "issue_np": 8,
      "issue_nc": 109,
      "kw": [
       "만점자",
@@ -1120,13 +1060,13 @@
      "nsite": 5,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 7,
+     "issue_np": 6,
      "issue_nc": 18,
      "kw": [
       "수능",
       "적발",
-      "사용자",
-      "군대"
+      "컨닝",
+      "알람"
      ],
      "top_post": {
       "t": "이번 수능 컨닝 적발된 애들이 100명도 안된댑니다 ㅋㅋㅋㅋㅋ",
@@ -1143,31 +1083,13 @@
      "issue_nc": 7,
      "kw": [
       "적발",
-      "서초구",
       "수능",
-      "신발"
+      "신발",
+      "스마트폰"
      ],
      "top_post": {
       "t": "[단독] 서초구 모 고교 수능시험장에서 신발 속 스마트폰 적발",
       "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677780",
-      "nc": 0
-     }
-    },
-    {
-     "t": ".,.,., 이분 연락 두절이란느데 맞나요?.,,.",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 52,
-     "kw": [
-      "두절",
-      "연락",
-      "이진우"
-     ],
-     "top_post": {
-      "t": ".,.,., 이분 연락 두절이란느데 맞나요?.,,.",
-      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677723",
       "nc": 0
      }
     },
@@ -1189,194 +1111,54 @@
      }
     },
     {
-     "t": "AI 부정행위 사태에 흑화한 한 그림쟁이",
+     "t": "송강닮은꼴 리트만점자 이진우",
      "nsite": 4,
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 4,
-     "issue_nc": 34,
-     "kw": [
-      "AI",
-      "부정행위"
-     ],
-     "top_post": {
-      "t": "조민이 AI 캠으로 부정행위 했으면...",
-      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677729",
-      "nc": 0
-     }
-    },
-    {
-     "t": "외교부 “조국 日입국 거부는 전과 때문인 것으로 확인”",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 26,
-     "kw": [
-      "입국",
-      "거부",
-      "조국",
-      "독도"
-     ],
-     "top_post": {
-      "t": "조국 일본 입국거부는 독도 때문이 맞다고 독도 지킴이 서경덕 교수 예를 드니",
-      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677738",
-      "nc": 0
-     }
-    }
-   ]
-  },
-  {
-   "name": "루리웹",
-   "np": 25,
-   "nc": 0,
-   "topics": [
-    {
-     "t": "재난문자 수능대응은 잘한거 같네요.",
-     "nsite": 7,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 12,
-     "issue_nc": 28,
-     "kw": [
-      "재난문자",
-      "수능",
-      "피해자"
-     ],
-     "top_post": {
-      "t": "수능 재난문자 호들갑이라고 욕하던 유게이들이 있었다",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77446571?m=humor",
-      "nc": 0
-     }
-    },
-    {
-     "t": "[단독] 서울 중구 수능 수험장에서 전자기기 발견…학생 3명 부정행위 여부 파악 중",
-     "nsite": 5,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 6,
-     "issue_nc": 93,
-     "kw": [
-      "수능",
-      "행위",
-      "학생",
-      "수험"
-     ],
-     "top_post": {
-      "t": "서울 중구 수능 수험장에서 전자기기 발견…학생 3명 부정행위 여부 파악 중",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77443187?m=humor",
-      "nc": 0
-     }
-    },
-    {
-     "t": "어떤 학생 수능장에서 초소형 카메라 사용하다 적발됐대 수능장에 초소형카메라는 진짜 레전드네",
-     "nsite": 5,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 8,
-     "issue_nc": 20,
-     "kw": [
-      "카메라",
-      "소형",
-      "재수",
-      "수능장"
-     ],
-     "top_post": {
-      "t": "수능 고사장에서 초소형카메라 이어폰 적발",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77446415?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "이번 수능 컨닝 적발된 애들이 100명도 안된댑니다 ㅋㅋㅋㅋㅋ",
-     "nsite": 5,
-     "np_here": 2,
-     "nc_here": 0,
-     "issue_np": 7,
      "issue_nc": 18,
      "kw": [
-      "수능",
-      "적발",
-      "사용자",
-      "군대"
+      "이진우",
+      "리트만점자"
      ],
      "top_post": {
-      "t": "수능알람으로 군대 폰사용자 적발",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77443147?m=all&t=now",
+      "t": "리트만점자 이진우, 몸과 마음이 지쳤다는 내용의 유서 발견",
+      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677767",
       "nc": 0
      }
     },
     {
-     "t": "[단독] 서초구 모 고교 수능시험장에서 신발 속 스마트폰 적발",
-     "nsite": 5,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 7,
-     "issue_nc": 7,
-     "kw": [
-      "적발",
-      "서초구",
-      "수능",
-      "신발"
-     ],
-     "top_post": {
-      "t": "[단독] 서초구 모 고교 수능시험장에서 신발 속 스마트폰 적발",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77447611?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "리트냥이 이진우 결말 명문대생의 일침",
-     "nsite": 4,
-     "np_here": 2,
-     "nc_here": 0,
-     "issue_np": 6,
-     "issue_nc": 111,
-     "kw": [
-      "일침",
-      "리트냥이",
-      "명문대",
-      "사태"
-     ],
-     "top_post": {
-      "t": "리트냥이 사태 명문대의 일침 ㅋㅋㅋㅋㅋ",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77447439?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "27수능 수학 1번 문제",
+     "t": "Ai시대에 대해 착각하시는 분들이 있는데..",
      "nsite": 4,
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 4,
-     "issue_nc": 71,
+     "issue_nc": 3,
      "kw": [
-      "수능",
-      "수학"
+      "시대",
+      "AI"
      ],
      "top_post": {
-      "t": "AI 6종에 올해 수능 수학 풀게 했더니…모두 ‘만점권’",
-      "u": "https://bbs.ruliweb.com/best/board/300010/read/2297388?m=all&t=now",
+      "t": "Ai시대에 대해 착각하시는 분들이 있는데..",
+      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677806",
       "nc": 0
      }
     },
     {
-     "t": "오늘자 재난문자 최고 피해자",
-     "nsite": 4,
+     "t": "박지윤 인스타 입장문",
+     "nsite": 3,
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 4,
-     "issue_nc": 62,
+     "issue_nc": 341,
      "kw": [
-      "재난문자",
-      "피해자",
-      "최고",
-      "최대"
+      "박지윤",
+      "입장",
+      "인스타"
      ],
      "top_post": {
-      "t": "오늘 재난문자 최대 피해자",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77450744?m=all&t=now",
+      "t": "박지윤 인스타 입장문 근황 ㄷㄷㄷ",
+      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677749",
       "nc": 0
      }
     }
@@ -1384,15 +1166,15 @@
   },
   {
    "name": "디시인사이드",
-   "np": 6,
+   "np": 5,
    "nc": 0,
    "topics": [
     {
      "t": "리트 만점자 궤뚫어 보는 여시의 통찰력",
-     "nsite": 6,
+     "nsite": 7,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 7,
+     "issue_np": 8,
      "issue_nc": 109,
      "kw": [
       "만점자",
@@ -1413,8 +1195,8 @@
      "issue_np": 10,
      "issue_nc": 27,
      "kw": [
-      "카메라",
       "수능",
+      "카메라",
       "발견",
       "용인"
      ],
@@ -1449,7 +1231,7 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 4,
-     "issue_nc": 42,
+     "issue_nc": 43,
      "kw": [
       "여자",
       "친구",
@@ -1458,25 +1240,6 @@
      "top_post": {
       "t": "임신이 하고싶은 일본인 여자친구.",
       "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=480330&_dcbest=1&page=1",
-      "nc": 0
-     }
-    },
-    {
-     "t": "외교부 “조국 日입국 거부는 전과 때문인 것으로 확인”",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 26,
-     "kw": [
-      "입국",
-      "거부",
-      "조국",
-      "독도"
-     ],
-     "top_post": {
-      "t": "외교부 “조국 日입국 거부는 전과 때문인 것으로 확인”",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=480199&_dcbest=1&page=1",
       "nc": 0
      }
     },
@@ -1501,15 +1264,15 @@
   },
   {
    "name": "더쿠",
-   "np": 17,
+   "np": 16,
    "nc": 0,
    "topics": [
     {
      "t": "리트 만점자 궤뚫어 보는 여시의 통찰력",
-     "nsite": 6,
+     "nsite": 7,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 7,
+     "issue_np": 8,
      "issue_nc": 109,
      "kw": [
       "만점자",
@@ -1525,19 +1288,19 @@
     {
      "t": "[단독] 서울 중구 수능 수험장에서 전자기기 발견…학생 3명 부정행위 여부 파악 중",
      "nsite": 5,
-     "np_here": 2,
+     "np_here": 1,
      "nc_here": 0,
-     "issue_np": 6,
+     "issue_np": 5,
      "issue_nc": 93,
      "kw": [
-      "수능",
-      "행위",
       "학생",
-      "수험"
+      "부정",
+      "행위",
+      "수능"
      ],
      "top_post": {
-      "t": "[단독] 서울 중구 수능 수험장에서 전자기기 발견…학생 3명 부정행위 여부 파악 중",
-      "u": "https://theqoo.net/hot/4411268758",
+      "t": "[단독] 서울 서초구 수능 수험장에서 부정행위 의심 학생 적발…'휴대전화 미제출'",
+      "u": "https://theqoo.net/hot/4411673906",
       "nc": 0
      }
     },
@@ -1550,8 +1313,8 @@
      "issue_nc": 38,
      "kw": [
       "만점자",
-      "리트",
       "이진우",
+      "리트",
       "사망"
      ],
      "top_post": {
@@ -1566,12 +1329,12 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 8,
-     "issue_nc": 20,
+     "issue_nc": 21,
      "kw": [
       "카메라",
       "소형",
       "재수",
-      "수능장"
+      "적발"
      ],
      "top_post": {
       "t": "[단독] 용인 수능장 발견된 초소형 카메라 재수생이 사용",
@@ -1607,9 +1370,9 @@
      "issue_nc": 7,
      "kw": [
       "적발",
-      "서초구",
       "수능",
-      "신발"
+      "신발",
+      "스마트폰"
      ],
      "top_post": {
       "t": "[단독] 서초구 모 고교 수능시험장에서 신발 속 스마트폰 적발",
@@ -1656,6 +1419,163 @@
    ]
   },
   {
+   "name": "루리웹",
+   "np": 21,
+   "nc": 0,
+   "topics": [
+    {
+     "t": "[단독] 서울 중구 수능 수험장에서 전자기기 발견…학생 3명 부정행위 여부 파악 중",
+     "nsite": 5,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 5,
+     "issue_nc": 93,
+     "kw": [
+      "학생",
+      "부정",
+      "행위",
+      "수능"
+     ],
+     "top_post": {
+      "t": "서울 중구 수능 수험장에서 전자기기 발견…학생 3명 부정행위 여부 파악 중",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77443187?m=humor",
+      "nc": 0
+     }
+    },
+    {
+     "t": "어떤 학생 수능장에서 초소형 카메라 사용하다 적발됐대 수능장에 초소형카메라는 진짜 레전드네",
+     "nsite": 5,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 8,
+     "issue_nc": 21,
+     "kw": [
+      "카메라",
+      "소형",
+      "재수",
+      "적발"
+     ],
+     "top_post": {
+      "t": "수능 고사장에서 초소형카메라 이어폰 적발",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77446415?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "이번 수능 컨닝 적발된 애들이 100명도 안된댑니다 ㅋㅋㅋㅋㅋ",
+     "nsite": 5,
+     "np_here": 2,
+     "nc_here": 0,
+     "issue_np": 6,
+     "issue_nc": 18,
+     "kw": [
+      "수능",
+      "적발",
+      "컨닝",
+      "알람"
+     ],
+     "top_post": {
+      "t": "현재 계속해서 붙잡히고 있는 수능 컨닝사태 요약",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77447741?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "[단독] 서초구 모 고교 수능시험장에서 신발 속 스마트폰 적발",
+     "nsite": 5,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 7,
+     "issue_nc": 7,
+     "kw": [
+      "적발",
+      "수능",
+      "신발",
+      "스마트폰"
+     ],
+     "top_post": {
+      "t": "[단독] 서초구 모 고교 수능시험장에서 신발 속 스마트폰 적발",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77447611?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "리트냥이 이진우 결말 명문대생의 일침",
+     "nsite": 4,
+     "np_here": 2,
+     "nc_here": 0,
+     "issue_np": 6,
+     "issue_nc": 111,
+     "kw": [
+      "일침",
+      "리트냥이",
+      "명문대",
+      "사태"
+     ],
+     "top_post": {
+      "t": "리트냥이 사태 명문대의 일침 ㅋㅋㅋㅋㅋ",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77447439?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "초5 딸이 올해 수능 영어를 풀어봤습니다",
+     "nsite": 4,
+     "np_here": 2,
+     "nc_here": 0,
+     "issue_np": 6,
+     "issue_nc": 74,
+     "kw": [
+      "수능",
+      "영어",
+      "올해",
+      "시험"
+     ],
+     "top_post": {
+      "t": "블루아카) \"아야네, 올해 수능 본다며?\"",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77444881?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "27수능 수학 1번 문제",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 71,
+     "kw": [
+      "수능",
+      "수학"
+     ],
+     "top_post": {
+      "t": "AI 6종에 올해 수능 수학 풀게 했더니…모두 ‘만점권’",
+      "u": "https://bbs.ruliweb.com/best/board/300010/read/2297388?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "오늘자 재난문자 최고 피해자",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 62,
+     "kw": [
+      "피해자",
+      "재난문자",
+      "최고",
+      "최대"
+     ],
+     "top_post": {
+      "t": "오늘 재난문자 최대 피해자",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77450744?m=all&t=now",
+      "nc": 0
+     }
+    }
+   ]
+  },
+  {
    "name": "오늘의유머",
    "np": 3,
    "nc": 0,
@@ -1666,7 +1586,7 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 4,
-     "issue_nc": 42,
+     "issue_nc": 43,
      "kw": [
       "여자",
       "친구",
@@ -1686,8 +1606,8 @@
      "issue_np": 6,
      "issue_nc": 4,
      "kw": [
-      "한국",
       "일본인",
+      "한국",
       "버그"
      ],
      "top_post": {
