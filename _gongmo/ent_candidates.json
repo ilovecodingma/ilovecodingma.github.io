@@ -1,43 +1,7 @@
 {
- "at": "2026-11-20 15:11",
+ "at": "2026-11-20 15:30",
  "nitems": 521,
  "cands": [
-  {
-   "kw": "깜짝",
-   "nsrc": 7,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "세계일보",
-    "연합뉴스",
-    "조선일보",
-    "한국경제",
-    "헤럴드경제"
-   ],
-   "n": 11,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "20주년 빅뱅, 오늘 신곡 깜짝 발표…내일 '마마 어워즈' 출연",
-     "link": "https://www.yna.co.kr/view/AKR20261120036800005"
-    },
-    {
-     "src": "동아일보",
-     "title": "빅뱅, 신곡 제목도 숨겼다…오늘(20일) 오후 2시 깜짝 공개",
-     "link": "https://sports.donga.com/ent/article/all/20261120/135058336/1"
-    },
-    {
-     "src": "한국경제",
-     "title": "빅뱅, 오늘 신곡 깜짝 발표…'마마 어워즈' 기대감 ↑",
-     "link": "https://www.hankyung.com/article/202611209274H"
-    },
-    {
-     "src": "한국경제",
-     "title": "'두 도시 이야기' 신성록, 기상캐스터로 깜짝 변신한다",
-     "link": "https://www.hankyung.com/article/202611197375H"
-    }
-   ]
-  },
   {
    "kw": "빅뱅",
    "nsrc": 7,
@@ -75,6 +39,41 @@
    ]
   },
   {
+   "kw": "깜짝",
+   "nsrc": 6,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "세계일보",
+    "연합뉴스",
+    "한국경제",
+    "헤럴드경제"
+   ],
+   "n": 10,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "20주년 빅뱅, 오늘 신곡 깜짝 발표…내일 '마마 어워즈' 출연",
+     "link": "https://www.yna.co.kr/view/AKR20261120036800005"
+    },
+    {
+     "src": "동아일보",
+     "title": "빅뱅, 신곡 제목도 숨겼다…오늘(20일) 오후 2시 깜짝 공개",
+     "link": "https://sports.donga.com/ent/article/all/20261120/135058336/1"
+    },
+    {
+     "src": "한국경제",
+     "title": "빅뱅, 오늘 신곡 깜짝 발표…'마마 어워즈' 기대감 ↑",
+     "link": "https://www.hankyung.com/article/202611209274H"
+    },
+    {
+     "src": "한국경제",
+     "title": "'두 도시 이야기' 신성록, 기상캐스터로 깜짝 변신한다",
+     "link": "https://www.hankyung.com/article/202611197375H"
+    }
+   ]
+  },
+  {
    "kw": "장나라",
    "nsrc": 5,
    "srcs": [
@@ -86,6 +85,11 @@
    ],
    "n": 31,
    "headlines": [
+    {
+     "src": "동아일보",
+     "title": "이혼 후 장나라 곁에 김혜윤 등장…‘김앤장’ 케미 ‘굿파트너’ 시즌2 (종합)[DA현장]",
+     "link": "https://sports.donga.com/ent/article/all/20261120/135060997/1"
+    },
     {
      "src": "동아일보",
      "title": "장나라, ‘모택’ 이끄는 이제훈에 존경심 고백 “대상 욕심은 無” (굿파트너2)",
@@ -100,11 +104,6 @@
      "src": "동아일보",
      "title": "장나라vs김혜윤, 승소 확률 1%…‘굿파트너2’ 오늘 첫방",
      "link": "https://sports.donga.com/ent/article/all/20261120/135058720/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "장나라·김혜윤, 첫 만남부터 적으로…‘오픈 메리지’ 법정 전쟁 (굿파트너2)",
-     "link": "https://sports.donga.com/ent/article/all/20261120/135058589/1"
     }
    ]
   },
@@ -211,40 +210,7 @@
    ]
   },
   {
-   "kw": "남편",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "세계일보",
-    "조선일보"
-   ],
-   "n": 9,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "최소라 남편 이코베, 집에 카메라만 60대…냉장고엔 필름까지 (전집시)",
-     "link": "https://sports.donga.com/ent/article/all/20261120/135058550/1"
-    },
-    {
-     "src": "세계일보",
-     "title": "이지혜 남편 문재완, 세무사 시험 5년 고생했는데…AI 부정행위에 “분노 치밀어”",
-     "link": "https://www.segye.com/newsView/20261120502821"
-    },
-    {
-     "src": "뉴시스",
-     "title": "이지혜 세무사 남편 문재완, AI 부정행위 일침…\"분노 치밀어\"",
-     "link": "https://www.newsis.com/view/NISX20261120_0003876795"
-    },
-    {
-     "src": "뉴시스",
-     "title": "조세호 아내, 남편 유튜브 구독 호소 했지만…반응 싸늘",
-     "link": "https://www.newsis.com/view/NISX20261120_0003876687"
-    }
-   ]
-  },
-  {
-   "kw": "박지윤",
+   "kw": "최동석",
    "nsrc": 4,
    "srcs": [
     "SBS",
@@ -273,39 +239,6 @@
      "src": "헤럴드경제",
      "title": "“박지윤, 男과 여행서 잠옷 입고 같은 방…영화 감상” 최동석 ‘상간자 소송’ 뒤집힌 이유",
      "link": "https://biz.heraldcorp.com/article/10942077"
-    }
-   ]
-  },
-  {
-   "kw": "공연",
-   "nsrc": 4,
-   "srcs": [
-    "세계일보",
-    "연합뉴스",
-    "한겨레",
-    "한국경제"
-   ],
-   "n": 8,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "바닐라 라테 같은 달콤한 위로…스테이시 켄트 내한 공연",
-     "link": "https://www.yna.co.kr/view/AKR20261120086700005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "방탄소년단, 오늘부터 아시아·호주 투어…9개 도시·26회 공연",
-     "link": "https://www.yna.co.kr/view/AKR20261119045200005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "故 김광석 31주기…내년 1월 '광석이 다시 만나기' 공연·경연",
-     "link": "https://www.yna.co.kr/view/AKR20261119043500005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "일본 록밴드 아시안 쿵푸 제너레이션, 내년 5월 내한 공연",
-     "link": "https://www.yna.co.kr/view/AKR20261118087900005"
     }
    ]
   },
@@ -376,35 +309,68 @@
    ]
   },
   {
-   "kw": "결혼",
+   "kw": "컴백",
    "nsrc": 4,
    "srcs": [
-    "뉴시스",
+    "세계일보",
     "연합뉴스",
     "조선일보",
-    "헤럴드경제"
+    "한국경제"
    ],
-   "n": 8,
+   "n": 7,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "배우 이가섭, 비연예인과 결혼…\"오랜 시간 든든한 버팀목\"",
-     "link": "https://www.yna.co.kr/view/AKR20261119085400005"
+     "title": "엔하이픈, 오늘 컴백…\"어떤 콘셉트든 잘하는 팀 되고파\"",
+     "link": "https://www.yna.co.kr/view/AKR20261120122300005"
     },
     {
-     "src": "헤럴드경제",
-     "title": "‘12월 결혼’ 하정우, 10년 함께한 반려견 떠나보냈다",
-     "link": "https://biz.heraldcorp.com/article/10944038"
+     "src": "연합뉴스",
+     "title": "씨엘, 20일 신곡 '아이코닉'…더블랙 이적 후 첫 컴백",
+     "link": "https://www.yna.co.kr/view/AKR20261117107200005"
     },
     {
-     "src": "뉴시스",
-     "title": "'12월 결혼' 하정우, 경사 앞두고 10년 반려견 떠나보냈다",
-     "link": "https://www.newsis.com/view/NISX20261120_0003875954"
+     "src": "한국경제",
+     "title": "'컴백' NCT 드림, 이름값 제대로…음반·음원 차트 1위",
+     "link": "https://www.hankyung.com/article/202611106884H"
     },
     {
-     "src": "뉴시스",
-     "title": "이가섭, 12월5일 결혼…\"소중한 인연과 백년가약\"",
-     "link": "https://www.newsis.com/view/NISX20261119_0003875317"
+     "src": "세계일보",
+     "title": "빅뱅, 3개월 만에 초고속 컴백… MAMA 앞두고 신곡 ‘기립(GiiiRIP)’ 깜짝 발매",
+     "link": "https://www.segye.com/newsView/20261120510066"
+    }
+   ]
+  },
+  {
+   "kw": "최초",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "동아일보",
+    "연합뉴스"
+   ],
+   "n": 7,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "BTS, 日 누적 스트리밍 100억회…해외 가수 최초 기록",
+     "link": "https://www.yna.co.kr/view/AKR20261120108900005"
+    },
+    {
+     "src": "동아일보",
+     "title": "김용빈, ‘금타는 금요일’ 최초 그랜드 슬램 눈앞…또 우승할까",
+     "link": "https://sports.donga.com/ent/article/all/20261120/135058386/1"
+    },
+    {
+     "src": "SBS",
+     "title": "방탄소년단, 日 누적 스트리밍 100억 회 돌파…해외 아티스트 최초",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008855782&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "SBS",
+     "title": "[꼬꼬무 찐리뷰]\"갓난아기까지 죽였다\" 55일간 17명 살해…'대한민국 최초 연쇄살인마' 김대두의 소름 돋는 전말",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008855694&plink=RSSLINK&cooper=RSSREADER"
     }
    ]
   },
@@ -442,68 +408,68 @@
    ]
   },
   {
-   "kw": "최초",
+   "kw": "남편",
    "nsrc": 4,
    "srcs": [
-    "SBS",
     "뉴시스",
     "동아일보",
-    "연합뉴스"
+    "세계일보",
+    "조선일보"
    ],
-   "n": 6,
+   "n": 7,
    "headlines": [
     {
-     "src": "연합뉴스",
-     "title": "BTS, 日 누적 스트리밍 100억회…해외 가수 최초 기록",
-     "link": "https://www.yna.co.kr/view/AKR20261120108900005"
-    },
-    {
      "src": "동아일보",
-     "title": "김용빈, ‘금타는 금요일’ 최초 그랜드 슬램 눈앞…또 우승할까",
-     "link": "https://sports.donga.com/ent/article/all/20261120/135058386/1"
+     "title": "최소라 남편 이코베, 집에 카메라만 60대…냉장고엔 필름까지 (전집시)",
+     "link": "https://sports.donga.com/ent/article/all/20261120/135058550/1"
     },
     {
-     "src": "SBS",
-     "title": "방탄소년단, 日 누적 스트리밍 100억 회 돌파…해외 아티스트 최초",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008855782&plink=RSSLINK&cooper=RSSREADER"
+     "src": "세계일보",
+     "title": "이지혜 남편 문재완, 세무사 시험 5년 고생했는데…AI 부정행위에 “분노 치밀어”",
+     "link": "https://www.segye.com/newsView/20261120502821"
     },
     {
-     "src": "SBS",
-     "title": "[꼬꼬무 찐리뷰]\"갓난아기까지 죽였다\" 55일간 17명 살해…'대한민국 최초 연쇄살인마' 김대두의 소름 돋는 전말",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008855694&plink=RSSLINK&cooper=RSSREADER"
+     "src": "뉴시스",
+     "title": "이지혜 세무사 남편 문재완, AI 부정행위 일침…\"분노 치밀어\"",
+     "link": "https://www.newsis.com/view/NISX20261120_0003876795"
+    },
+    {
+     "src": "뉴시스",
+     "title": "조세호 아내, 남편 유튜브 구독 호소 했지만…반응 싸늘",
+     "link": "https://www.newsis.com/view/NISX20261120_0003876687"
     }
    ]
   },
   {
-   "kw": "연애남매",
+   "kw": "결혼",
    "nsrc": 4,
    "srcs": [
     "뉴시스",
-    "동아일보",
     "연합뉴스",
-    "조선일보"
+    "조선일보",
+    "헤럴드경제"
    ],
    "n": 6,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "한혜진 \"'연애남매2' 시즌1보다 마라맛…보면서 조마조마했죠\"",
-     "link": "https://www.yna.co.kr/view/AKR20261120089200005"
+     "title": "배우 이가섭, 비연예인과 결혼…\"오랜 시간 든든한 버팀목\"",
+     "link": "https://www.yna.co.kr/view/AKR20261119085400005"
     },
     {
-     "src": "동아일보",
-     "title": "‘연애남매2’ 코드 쿤스트 “남매 구하고 싶다…내 인생에 남매 필요해”",
-     "link": "https://sports.donga.com/ent/article/all/20261120/135059756/1"
+     "src": "헤럴드경제",
+     "title": "‘12월 결혼’ 하정우, 10년 함께한 반려견 떠나보냈다",
+     "link": "https://biz.heraldcorp.com/article/10944038"
     },
     {
-     "src": "동아일보",
-     "title": "‘연애남매2’ 미연 “외동이라 남매 부러워…시즌2가 더 재밌다”",
-     "link": "https://sports.donga.com/ent/article/all/20261120/135059747/1"
+     "src": "뉴시스",
+     "title": "'12월 결혼' 하정우, 경사 앞두고 10년 반려견 떠나보냈다",
+     "link": "https://www.newsis.com/view/NISX20261120_0003875954"
     },
     {
-     "src": "동아일보",
-     "title": "‘연애남매2’ 한혜진 “시즌2, 속도감 달라…너무 마라맛이라 PD 걱정”",
-     "link": "https://sports.donga.com/ent/article/all/20261120/135059721/1"
+     "src": "뉴시스",
+     "title": "이가섭, 12월5일 결혼…\"소중한 인연과 백년가약\"",
+     "link": "https://www.newsis.com/view/NISX20261119_0003875317"
     }
    ]
   },
@@ -541,72 +507,6 @@
    ]
   },
   {
-   "kw": "컴백",
-   "nsrc": 4,
-   "srcs": [
-    "세계일보",
-    "연합뉴스",
-    "조선일보",
-    "한국경제"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "씨엘, 20일 신곡 '아이코닉'…더블랙 이적 후 첫 컴백",
-     "link": "https://www.yna.co.kr/view/AKR20261117107200005"
-    },
-    {
-     "src": "한국경제",
-     "title": "'컴백' NCT 드림, 이름값 제대로…음반·음원 차트 1위",
-     "link": "https://www.hankyung.com/article/202611106884H"
-    },
-    {
-     "src": "세계일보",
-     "title": "빅뱅, 3개월 만에 초고속 컴백… MAMA 앞두고 신곡 ‘기립(GiiiRIP)’ 깜짝 발매",
-     "link": "https://www.segye.com/newsView/20261120510066"
-    },
-    {
-     "src": "세계일보",
-     "title": "싱글 컴백 나연 “당당하고 자신있고 앙큼한…‘나연다움’ 보여드릴게요”",
-     "link": "https://www.segye.com/newsView/20261120509304"
-    }
-   ]
-  },
-  {
-   "kw": "이유",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "세계일보",
-    "한국경제",
-    "헤럴드경제"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "한국경제",
-     "title": "도파민의 시대…김종관표 '작고 사소한' 영화의 존재 이유 [씬터뷰]",
-     "link": "https://www.hankyung.com/article/202611045069H"
-    },
-    {
-     "src": "세계일보",
-     "title": "김구라, 강남 집 안 산 이유 밝혔다…”내가 이만큼 계속 벌 수 있을까“",
-     "link": "https://www.segye.com/newsView/20261119511339"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "‘이혼 15억·상간 3000만원’ 받는 최동석…박지윤 “생활비 제가 책임·수입 격차로 ‘의처증’”, 파경 이유 밝혀",
-     "link": "https://biz.heraldcorp.com/article/10942971"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "“박지윤, 男과 여행서 잠옷 입고 같은 방…영화 감상” 최동석 ‘상간자 소송’ 뒤집힌 이유",
-     "link": "https://biz.heraldcorp.com/article/10942077"
-    }
-   ]
-  },
-  {
    "kw": "호흡",
    "nsrc": 4,
    "srcs": [
@@ -615,7 +515,7 @@
     "연합뉴스",
     "조선일보"
    ],
-   "n": 5,
+   "n": 6,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -634,74 +534,8 @@
     },
     {
      "src": "조선일보",
-     "title": "[사진]장나라-김혜윤, '호흡 기대하세요'",
-     "link": "https://www.chosun.com/entertainments/entertain_photo/2026/11/20/MQ2WKOLDMEYDEYTBMY2WKZRWHA/"
-    }
-   ]
-  },
-  {
-   "kw": "비서진",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "동아일보",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "[방송소식] SBS '비서진' 4회 연장…블랙핑크 지수 등 출연",
-     "link": "https://www.yna.co.kr/view/AKR20261116133700005"
-    },
-    {
-     "src": "동아일보",
-     "title": "김종국 2세 소망…“무조건 ♥아내 닮아야” (비서진)",
-     "link": "https://sports.donga.com/ent/article/all/20261120/135058664/1"
-    },
-    {
-     "src": "SBS",
-     "title": "\"아내라면 냉장고 열어놔도 못 본 척\"…'비서진' 김종국, 짠돌이의 반전 사랑꾼 면모",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008855328&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "SBS",
-     "title": "\"유일하게 돈 빌려줄 수 있는 사람\"…'비서진' 이서진, 김종국 향한 특급 의리",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008853938&plink=RSSLINK&cooper=RSSREADER"
-    }
-   ]
-  },
-  {
-   "kw": "김종국",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "동아일보",
-    "조선일보"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "김종국 2세 소망…“무조건 ♥아내 닮아야” (비서진)",
-     "link": "https://sports.donga.com/ent/article/all/20261120/135058664/1"
-    },
-    {
-     "src": "SBS",
-     "title": "\"아내라면 냉장고 열어놔도 못 본 척\"…'비서진' 김종국, 짠돌이의 반전 사랑꾼 면모",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008855328&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "SBS",
-     "title": "\"유일하게 돈 빌려줄 수 있는 사람\"…'비서진' 이서진, 김종국 향한 특급 의리",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008853938&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "뉴시스",
-     "title": "김종국 소속사, 매달 월세만 2억…이서진도 '깜짝'",
-     "link": "https://www.newsis.com/view/NISX20261120_0003876658"
+     "title": "[사진]이대휘-최미나수 'MC 호흡'",
+     "link": "https://www.chosun.com/entertainments/entertain_photo/2026/11/20/HEYTGZDBGRQTIMLBMRQTMZRTGI/"
     }
    ]
   },
@@ -805,35 +639,68 @@
    ]
   },
   {
-   "kw": "주기",
+   "kw": "결국",
    "nsrc": 4,
    "srcs": [
     "뉴시스",
-    "세계일보",
     "연합뉴스",
-    "한겨레"
+    "조선일보",
+    "한국경제"
    ],
    "n": 4,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "故 김광석 31주기…내년 1월 '광석이 다시 만나기' 공연·경연",
-     "link": "https://www.yna.co.kr/view/AKR20261119043500005"
+     "title": "'회생절차' JTBC, 결국 올림픽 중계 포기…\"재무 불확실성 해소\"(종합)",
+     "link": "https://www.yna.co.kr/view/AKR20261116076451005"
     },
     {
-     "src": "한겨레",
-     "title": "김광석 31주기 추모 공연…강승원·동물원·박학기 한자리에",
-     "link": "https://www.hani.co.kr/arti/culture/music/1288080.html"
-    },
-    {
-     "src": "세계일보",
-     "title": "김광석 31주기 추모 공연·경연 2027년 1월 개최",
-     "link": "https://www.segye.com/newsView/20261119514477"
+     "src": "한국경제",
+     "title": "결국 스며들었다…임시완, 화제성 넘어 새 얼굴 증명해낸 '유죄인간' [스타:라이트]",
+     "link": "https://www.hankyung.com/article/202611168180H"
     },
     {
      "src": "뉴시스",
-     "title": "'영원한 아이콘' 김성재 오늘 31주기…내일 듀스 31년 만의 정규 4집",
-     "link": "https://www.newsis.com/view/NISX20261120_0003876012"
+     "title": "서동주, 결국 미국행…\"남편이 어련히 잘하겠지\"",
+     "link": "https://www.newsis.com/view/NISX20261120_0003876019"
+    },
+    {
+     "src": "조선일보",
+     "title": "'조폭 연루설' 조세호, '고정 0'개 되는 순간..5년 함께했는데 결국 '결별'(도라이버)",
+     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/20/MEYDAYZTMZRGGNBVME2DOMTCMM/"
+    }
+   ]
+  },
+  {
+   "kw": "이혼",
+   "nsrc": 4,
+   "srcs": [
+    "동아일보",
+    "조선일보",
+    "한겨레",
+    "헤럴드경제"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "이혼 후 장나라 곁에 김혜윤 등장…‘김앤장’ 케미 ‘굿파트너’ 시즌2 (종합)[DA현장]",
+     "link": "https://sports.donga.com/ent/article/all/20261120/135060997/1"
+    },
+    {
+     "src": "한겨레",
+     "title": "이혼 전문 변호사 장나라·이발사 박보검 돌아온다…시즌1 넘어설까",
+     "link": "https://www.hani.co.kr/arti/culture/culture_general/1288001.html"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "‘이혼 15억·상간 3000만원’ 받는 최동석…박지윤 “생활비 제가 책임·수입 격차로 ‘의처증’”, 파경 이유 밝혀",
+     "link": "https://biz.heraldcorp.com/article/10942971"
+    },
+    {
+     "src": "조선일보",
+     "title": "최동석, 양육비 논란에 직접 입 열었다 “박지윤이 이혼 전부터 내 돈 거부”[Oh!쎈 이슈]",
+     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/20/GQ4DSNJUGVTDKOJYGFSDGNRQGI/"
     }
    ]
   },
@@ -937,39 +804,6 @@
    ]
   },
   {
-   "kw": "내가",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "세계일보",
-    "조선일보",
-    "한국경제"
-   ],
-   "n": 4,
-   "headlines": [
-    {
-     "src": "한국경제",
-     "title": "나나, 탑과 공개 열애 후…악플 쏟아지자 \"내가 무슨 잘못\" 소신 발언",
-     "link": "https://www.hankyung.com/article/202611069702H"
-    },
-    {
-     "src": "세계일보",
-     "title": "김구라, 강남 집 안 산 이유 밝혔다…”내가 이만큼 계속 벌 수 있을까“",
-     "link": "https://www.segye.com/newsView/20261119511339"
-    },
-    {
-     "src": "뉴시스",
-     "title": "전진, 유산 겪은 아내에 손편지 \"내가 최선 다할게\"",
-     "link": "https://www.newsis.com/view/NISX20261120_0003876289"
-    },
-    {
-     "src": "조선일보",
-     "title": "[인터뷰①] '완벽한 집' 배종옥 \"오랜만에 액션 도전…미련 곰탱이 같아도 내가 직접하고파\"",
-     "link": "https://www.chosun.com/entertainments/movie/2026/11/20/MVQTONRRGJTGMMRZG5TDIODGGM/"
-    }
-   ]
-  },
-  {
    "kw": "굿파트너",
    "nsrc": 3,
    "srcs": [
@@ -977,8 +811,13 @@
     "세계일보",
     "조선일보"
    ],
-   "n": 26,
+   "n": 33,
    "headlines": [
+    {
+     "src": "동아일보",
+     "title": "이혼 후 장나라 곁에 김혜윤 등장…‘김앤장’ 케미 ‘굿파트너’ 시즌2 (종합)[DA현장]",
+     "link": "https://sports.donga.com/ent/article/all/20261120/135060997/1"
+    },
     {
      "src": "동아일보",
      "title": "장나라, ‘모택’ 이끄는 이제훈에 존경심 고백 “대상 욕심은 無” (굿파트너2)",
@@ -993,11 +832,6 @@
      "src": "동아일보",
      "title": "김혜윤 “부담감 없었다면 거짓말, 법정물+전문직 욕심 있었다” (굿파트너2)",
      "link": "https://sports.donga.com/ent/article/all/20261120/135060674/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "장나라vs김혜윤, 승소 확률 1%…‘굿파트너2’ 오늘 첫방",
-     "link": "https://sports.donga.com/ent/article/all/20261120/135058720/1"
     }
    ]
   },
@@ -1009,8 +843,13 @@
     "세계일보",
     "조선일보"
    ],
-   "n": 16,
+   "n": 23,
    "headlines": [
+    {
+     "src": "동아일보",
+     "title": "이혼 후 장나라 곁에 김혜윤 등장…‘김앤장’ 케미 ‘굿파트너’ 시즌2 (종합)[DA현장]",
+     "link": "https://sports.donga.com/ent/article/all/20261120/135060997/1"
+    },
     {
      "src": "동아일보",
      "title": "김혜윤 “장나라 선배 눈빛에 홀려, 캐릭터와 차이 극명” (굿파트너2)",
@@ -1025,11 +864,6 @@
      "src": "동아일보",
      "title": "장나라vs김혜윤, 승소 확률 1%…‘굿파트너2’ 오늘 첫방",
      "link": "https://sports.donga.com/ent/article/all/20261120/135058720/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "장나라·김혜윤, 첫 만남부터 적으로…‘오픈 메리지’ 법정 전쟁 (굿파트너2)",
-     "link": "https://sports.donga.com/ent/article/all/20261120/135058589/1"
     }
    ]
   },
@@ -1041,7 +875,7 @@
     "연합뉴스",
     "한국경제"
    ],
-   "n": 13,
+   "n": 12,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -1066,7 +900,7 @@
    ]
   },
   {
-   "kw": "최동석",
+   "kw": "박지윤",
    "nsrc": 3,
    "srcs": [
     "SBS",
@@ -1094,6 +928,38 @@
      "src": "헤럴드경제",
      "title": "“박지윤, 男과 여행서 잠옷 입고 같은 방…영화 감상” 최동석 ‘상간자 소송’ 뒤집힌 이유",
      "link": "https://biz.heraldcorp.com/article/10942077"
+    }
+   ]
+  },
+  {
+   "kw": "공연",
+   "nsrc": 3,
+   "srcs": [
+    "연합뉴스",
+    "한겨레",
+    "한국경제"
+   ],
+   "n": 7,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "바닐라 라테 같은 달콤한 위로…스테이시 켄트 내한 공연",
+     "link": "https://www.yna.co.kr/view/AKR20261120086700005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "방탄소년단, 오늘부터 아시아·호주 투어…9개 도시·26회 공연",
+     "link": "https://www.yna.co.kr/view/AKR20261119045200005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "故 김광석 31주기…내년 1월 '광석이 다시 만나기' 공연·경연",
+     "link": "https://www.yna.co.kr/view/AKR20261119043500005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "일본 록밴드 아시안 쿵푸 제너레이션, 내년 5월 내한 공연",
+     "link": "https://www.yna.co.kr/view/AKR20261118087900005"
     }
    ]
   },
@@ -1130,38 +996,6 @@
    ]
   },
   {
-   "kw": "좋은",
-   "nsrc": 3,
-   "srcs": [
-    "연합뉴스",
-    "조선일보",
-    "한겨레"
-   ],
-   "n": 7,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "'기타없는 밴드' 송차앤 꾸린 송홍섭…\"덜어낼수록 좋은 음악\"",
-     "link": "https://www.yna.co.kr/view/AKR20261118182100005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "코바코 '환경오염-푸른자연', 대학생 선정 좋은 광고 대상",
-     "link": "https://www.yna.co.kr/view/AKR20261119054700017"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "방미심위 9월 좋은 프로그램에 KBS '추심면허'",
-     "link": "https://www.yna.co.kr/view/AKR20261118160000017"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "'폭설' 구교환 \"예측불가 얼굴로 기분 좋은 혼란 주고 싶어\"",
-     "link": "https://www.yna.co.kr/view/AKR20261118099700005"
-    }
-   ]
-  },
-  {
    "kw": "배종옥",
    "nsrc": 3,
    "srcs": [
@@ -1190,38 +1024,6 @@
      "src": "조선일보",
      "title": "[인터뷰③] '완벽한 집' 배종옥 \"나이를 먹을수록 젊어지고 싶은 욕망 생겨\"",
      "link": "https://www.chosun.com/entertainments/movie/2026/11/20/GQ2GGOBSHAYTQMBTGM2TQZBTME/"
-    }
-   ]
-  },
-  {
-   "kw": "만나는",
-   "nsrc": 3,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "조선일보"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "전현무, 황재균과 집까지 오가는 사이…“사적으로 만나는 5명 중 한 명”",
-     "link": "https://sports.donga.com/ent/article/all/20261120/135058400/1"
-    },
-    {
-     "src": "뉴시스",
-     "title": "전현무 \"밖서 만나는 사람 다섯…한 명이 황재균\"",
-     "link": "https://www.newsis.com/view/NISX20261120_0003876691"
-    },
-    {
-     "src": "조선일보",
-     "title": "[사진]'굿파트너2'로 시청자 만나는 표지훈",
-     "link": "https://www.chosun.com/entertainments/entertain_photo/2026/11/20/MIYTONTEMQZDEMRWMQ2GKYJVMI/"
-    },
-    {
-     "src": "조선일보",
-     "title": "[사진]'굿파트너2'로 시청자 만나는 박해진",
-     "link": "https://www.chosun.com/entertainments/entertain_photo/2026/11/20/MQ2GEY3EGVRWENBUMI4WEMTEGI/"
     }
    ]
   },
@@ -1258,6 +1060,38 @@
    ]
   },
   {
+   "kw": "연애남매",
+   "nsrc": 3,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "연합뉴스"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "한혜진 \"'연애남매2' 시즌1보다 마라맛…보면서 조마조마했죠\"",
+     "link": "https://www.yna.co.kr/view/AKR20261120089200005"
+    },
+    {
+     "src": "동아일보",
+     "title": "‘연애남매2’ 코드 쿤스트 “남매 구하고 싶다…내 인생에 남매 필요해”",
+     "link": "https://sports.donga.com/ent/article/all/20261120/135059756/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "‘연애남매2’ 미연 “외동이라 남매 부러워…시즌2가 더 재밌다”",
+     "link": "https://sports.donga.com/ent/article/all/20261120/135059747/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "‘연애남매2’ 한혜진 “시즌2, 속도감 달라…너무 마라맛이라 PD 걱정”",
+     "link": "https://sports.donga.com/ent/article/all/20261120/135059721/1"
+    }
+   ]
+  },
+  {
    "kw": "만원",
    "nsrc": 3,
    "srcs": [
@@ -1290,6 +1124,38 @@
    ]
   },
   {
+   "kw": "만나는",
+   "nsrc": 3,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "조선일보"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "전현무, 황재균과 집까지 오가는 사이…“사적으로 만나는 5명 중 한 명”",
+     "link": "https://sports.donga.com/ent/article/all/20261120/135058400/1"
+    },
+    {
+     "src": "뉴시스",
+     "title": "전현무 \"밖서 만나는 사람 다섯…한 명이 황재균\"",
+     "link": "https://www.newsis.com/view/NISX20261120_0003876691"
+    },
+    {
+     "src": "조선일보",
+     "title": "[사진]'굿파트너2'로 시청자 만나는 표지훈",
+     "link": "https://www.chosun.com/entertainments/entertain_photo/2026/11/20/MIYTONTEMQZDEMRWMQ2GKYJVMI/"
+    },
+    {
+     "src": "조선일보",
+     "title": "[사진]'굿파트너2'로 시청자 만나는 김혜윤",
+     "link": "https://www.chosun.com/entertainments/entertain_photo/2026/11/20/GU4DCNRYMNRGMNZYG5TGGMDGMY/"
+    }
+   ]
+  },
+  {
    "kw": "데뷔",
    "nsrc": 3,
    "srcs": [
@@ -1318,6 +1184,134 @@
      "src": "SBS",
      "title": "'53세' 전도연, 데뷔 첫 SNS 개설…글로벌 소통 나섰다",
      "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008853199&plink=RSSLINK&cooper=RSSREADER"
+    }
+   ]
+  },
+  {
+   "kw": "이유",
+   "nsrc": 3,
+   "srcs": [
+    "뉴시스",
+    "한국경제",
+    "헤럴드경제"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "한국경제",
+     "title": "도파민의 시대…김종관표 '작고 사소한' 영화의 존재 이유 [씬터뷰]",
+     "link": "https://www.hankyung.com/article/202611045069H"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "‘이혼 15억·상간 3000만원’ 받는 최동석…박지윤 “생활비 제가 책임·수입 격차로 ‘의처증’”, 파경 이유 밝혀",
+     "link": "https://biz.heraldcorp.com/article/10942971"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "“박지윤, 男과 여행서 잠옷 입고 같은 방…영화 감상” 최동석 ‘상간자 소송’ 뒤집힌 이유",
+     "link": "https://biz.heraldcorp.com/article/10942077"
+    },
+    {
+     "src": "뉴시스",
+     "title": "이승기, 어린이병원에 20억 쾌척한 이유…\"없다고 생각한 돈이라\"",
+     "link": "https://www.newsis.com/view/NISX20261119_0003875876"
+    }
+   ]
+  },
+  {
+   "kw": "미소",
+   "nsrc": 3,
+   "srcs": [
+    "뉴시스",
+    "세계일보",
+    "조선일보"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "세계일보",
+     "title": "[포토] 장나라 '해맑은 미소'",
+     "link": "https://www.segye.com/newsView/20261120510393"
+    },
+    {
+     "src": "뉴시스",
+     "title": "한다감, 46세에 얻은 첫 아들 육아 근황…행복한 미소",
+     "link": "https://www.newsis.com/view/NISX20261119_0003875237"
+    },
+    {
+     "src": "조선일보",
+     "title": "[사진]박해진, '멋진 미소 뽐내며'",
+     "link": "https://www.chosun.com/entertainments/entertain_photo/2026/11/20/GM2WIZJWGBSGMMJYG44GEMBSMU/"
+    },
+    {
+     "src": "조선일보",
+     "title": "[사진]장나라, '멋진 미소 뽐내며'",
+     "link": "https://www.chosun.com/entertainments/entertain_photo/2026/11/20/HFRWMYJVGNSTOZRZGRTGCNBYGE/"
+    }
+   ]
+  },
+  {
+   "kw": "조세호",
+   "nsrc": 3,
+   "srcs": [
+    "뉴시스",
+    "세계일보",
+    "조선일보"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "세계일보",
+     "title": "조세호, 1년 만에 활동 재개…“시기상조 쓴소리 많아”",
+     "link": "https://www.segye.com/newsView/20261120503336"
+    },
+    {
+     "src": "뉴시스",
+     "title": "조세호 아내, 남편 유튜브 구독 호소 했지만…반응 싸늘",
+     "link": "https://www.newsis.com/view/NISX20261120_0003876687"
+    },
+    {
+     "src": "뉴시스",
+     "title": "조세호, 유튜브로 활동 재개에 \"시기상조 쓴소리\"",
+     "link": "https://www.newsis.com/view/NISX20261120_0003876042"
+    },
+    {
+     "src": "조선일보",
+     "title": "'조폭 연루설' 조세호, '고정 0'개 되는 순간..5년 함께했는데 결국 '결별'(도라이버)",
+     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/20/MEYDAYZTMZRGGNBVME2DOMTCMM/"
+    }
+   ]
+  },
+  {
+   "kw": "상간",
+   "nsrc": 3,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "헤럴드경제"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "헤럴드경제",
+     "title": "최동석-박지윤 상간 소송 2심 판결문 속 ‘365일’ 어떤 영화길래…",
+     "link": "https://biz.heraldcorp.com/article/10943013"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "‘이혼 15억·상간 3000만원’ 받는 최동석…박지윤 “생활비 제가 책임·수입 격차로 ‘의처증’”, 파경 이유 밝혀",
+     "link": "https://biz.heraldcorp.com/article/10942971"
+    },
+    {
+     "src": "SBS",
+     "title": "\"성적 소수자 지인과 불륜? 현실적으로 불가능\"…박지윤, 상간 의혹 반박→최동석 이중행보 폭로",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008853429&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "뉴시스",
+     "title": "최동석·박지윤 끝없는 폭로전…상간 소송 판결 뒤 이어진 날 선 공방",
+     "link": "https://www.newsis.com/view/NISX20261120_0003876125"
     }
    ]
   }

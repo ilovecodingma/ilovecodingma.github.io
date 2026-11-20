@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-20 15:00",
+ "updated": "2026-11-20 16:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -2715,6 +2715,18 @@
    "expires": "2026-11-23"
   },
   {
+   "query": "시애틀 사운더스 대 솔트레이크",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-20",
+   "expires": "2026-11-23"
+  },
+  {
    "query": "뉴캐슬 대 에버튼 순위",
    "tier": "단기",
    "signal": [
@@ -3352,6 +3364,18 @@
   },
   {
    "query": "앤트로픽 상장 시간",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-20",
+   "expires": "2026-11-23"
+  },
+  {
+   "query": "배치표",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -6148,18 +6172,6 @@
   },
   {
    "query": "경기도교육청",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 1000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-20",
-   "expires": "2026-11-23"
-  },
-  {
-   "query": "시애틀 사운더스 대 솔트레이크",
    "tier": "단기",
    "signal": [
     "구글트렌드"
