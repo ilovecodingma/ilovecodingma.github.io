@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-21 01:00",
+ "updated": "2026-11-21 02:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -1488,6 +1488,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-20",
+   "expires": "2026-11-24"
+  },
+  {
+   "query": "미국 반도체 수출 통제로 인한 삼성전자와 tsmc의 중국 출하 중단 뉴스 알려줘",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 5000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-21",
    "expires": "2026-11-24"
   },
   {
@@ -3471,6 +3483,18 @@
    "expires": "2026-11-24"
   },
   {
+   "query": "컴포즈",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-21",
+   "expires": "2026-11-24"
+  },
+  {
    "query": "알렉산더 즈베레프",
    "tier": "단기",
    "signal": [
@@ -3504,6 +3528,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-17",
+   "expires": "2026-11-24"
+  },
+  {
+   "query": "농구",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-12",
    "expires": "2026-11-24"
   },
   {
@@ -3552,18 +3588,6 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-13",
-   "expires": "2026-11-24"
-  },
-  {
-   "query": "농구",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 1000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-12",
    "expires": "2026-11-24"
   },
   {
