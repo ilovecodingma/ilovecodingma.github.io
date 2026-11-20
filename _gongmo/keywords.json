@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-20 10:00",
+ "updated": "2026-11-20 11:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -14248,6 +14248,19 @@
    "status": "작성",
    "page": "/money/guide/suneung-2027-after-exam-schedule-nonsul-dates/",
    "registered": "2026-11-19",
+   "expires": ""
+  },
+  {
+   "query": "2027 정시 모집요강 읽는 법",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/jeongsi-2027-how-to-read-admission-guide/",
+   "registered": "2026-11-20",
    "expires": ""
   },
   {
