@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-20 17:00",
+ "updated": "2026-11-20 18:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -951,6 +951,18 @@
    "expires": "2026-11-23"
   },
   {
+   "query": "이부진",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 5000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-20",
+   "expires": "2026-11-23"
+  },
+  {
    "query": "운세",
    "tier": "단기",
    "signal": [
@@ -1452,6 +1464,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-19",
+   "expires": "2026-11-23"
+  },
+  {
+   "query": "수출규제",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 5000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-20",
    "expires": "2026-11-23"
   },
   {
@@ -3387,6 +3411,18 @@
    "expires": "2026-11-23"
   },
   {
+   "query": "장승수",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-20",
+   "expires": "2026-11-23"
+  },
+  {
    "query": "알렉산더 즈베레프",
    "tier": "단기",
    "signal": [
@@ -3840,6 +3876,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-08",
+   "expires": "2026-11-23"
+  },
+  {
+   "query": "레미콘",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-20",
    "expires": "2026-11-23"
   },
   {

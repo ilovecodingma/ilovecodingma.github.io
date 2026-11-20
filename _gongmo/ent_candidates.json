@@ -1,7 +1,43 @@
 {
- "at": "2026-11-20 17:11",
+ "at": "2026-11-20 17:30",
  "nitems": 522,
  "cands": [
+  {
+   "kw": "장나라",
+   "nsrc": 7,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "세계일보",
+    "연합뉴스",
+    "조선일보",
+    "한겨레",
+    "한국경제"
+   ],
+   "n": 22,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "'굿파트너2'서 로펌대표 된 장나라 \"전작 재미 유지하려 애썼죠\"",
+     "link": "https://www.yna.co.kr/view/AKR20261120147300005"
+    },
+    {
+     "src": "동아일보",
+     "title": "이혼 후 장나라 곁에 김혜윤 등장…‘김앤장’ 케미 ‘굿파트너’ 시즌2 (종합)[DA현장]",
+     "link": "https://sports.donga.com/ent/article/all/20261120/135060997/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "장나라, ‘모택’ 이끄는 이제훈에 존경심 고백 “대상 욕심은 無” (굿파트너2)",
+     "link": "https://sports.donga.com/ent/article/all/20261120/135060827/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "김혜윤 “장나라 선배 눈빛에 홀려, 캐릭터와 차이 극명” (굿파트너2)",
+     "link": "https://sports.donga.com/ent/article/all/20261120/135060745/1"
+    }
+   ]
+  },
   {
    "kw": "빅뱅",
    "nsrc": 7,
@@ -39,18 +75,22 @@
    ]
   },
   {
-   "kw": "장나라",
-   "nsrc": 6,
+   "kw": "굿파트너",
+   "nsrc": 5,
    "srcs": [
-    "뉴시스",
     "동아일보",
     "세계일보",
+    "연합뉴스",
     "조선일보",
-    "한겨레",
     "한국경제"
    ],
-   "n": 25,
+   "n": 24,
    "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "'굿파트너2'서 로펌대표 된 장나라 \"전작 재미 유지하려 애썼죠\"",
+     "link": "https://www.yna.co.kr/view/AKR20261120147300005"
+    },
     {
      "src": "동아일보",
      "title": "이혼 후 장나라 곁에 김혜윤 등장…‘김앤장’ 케미 ‘굿파트너’ 시즌2 (종합)[DA현장]",
@@ -65,11 +105,6 @@
      "src": "동아일보",
      "title": "김혜윤 “장나라 선배 눈빛에 홀려, 캐릭터와 차이 극명” (굿파트너2)",
      "link": "https://sports.donga.com/ent/article/all/20261120/135060745/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "장나라vs김혜윤, 승소 확률 1%…‘굿파트너2’ 오늘 첫방",
-     "link": "https://sports.donga.com/ent/article/all/20261120/135058720/1"
     }
    ]
   },
@@ -219,7 +254,7 @@
     "연합뉴스",
     "조선일보"
    ],
-   "n": 9,
+   "n": 10,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -380,39 +415,6 @@
    ]
   },
   {
-   "kw": "굿파트너",
-   "nsrc": 4,
-   "srcs": [
-    "동아일보",
-    "세계일보",
-    "조선일보",
-    "한국경제"
-   ],
-   "n": 25,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "이혼 후 장나라 곁에 김혜윤 등장…‘김앤장’ 케미 ‘굿파트너’ 시즌2 (종합)[DA현장]",
-     "link": "https://sports.donga.com/ent/article/all/20261120/135060997/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "장나라, ‘모택’ 이끄는 이제훈에 존경심 고백 “대상 욕심은 無” (굿파트너2)",
-     "link": "https://sports.donga.com/ent/article/all/20261120/135060827/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "김혜윤 “장나라 선배 눈빛에 홀려, 캐릭터와 차이 극명” (굿파트너2)",
-     "link": "https://sports.donga.com/ent/article/all/20261120/135060745/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "김혜윤 “부담감 없었다면 거짓말, 법정물+전문직 욕심 있었다” (굿파트너2)",
-     "link": "https://sports.donga.com/ent/article/all/20261120/135060674/1"
-    }
-   ]
-  },
-  {
    "kw": "김혜윤",
    "nsrc": 4,
    "srcs": [
@@ -545,39 +547,6 @@
    ]
   },
   {
-   "kw": "결혼",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "연합뉴스",
-    "조선일보",
-    "헤럴드경제"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "배우 이가섭, 비연예인과 결혼…\"오랜 시간 든든한 버팀목\"",
-     "link": "https://www.yna.co.kr/view/AKR20261119085400005"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "‘12월 결혼’ 하정우, 10년 함께한 반려견 떠나보냈다",
-     "link": "https://biz.heraldcorp.com/article/10944038"
-    },
-    {
-     "src": "뉴시스",
-     "title": "'12월 결혼' 하정우, 경사 앞두고 10년 반려견 떠나보냈다",
-     "link": "https://www.newsis.com/view/NISX20261120_0003875954"
-    },
-    {
-     "src": "뉴시스",
-     "title": "이가섭, 12월5일 결혼…\"소중한 인연과 백년가약\"",
-     "link": "https://www.newsis.com/view/NISX20261119_0003875317"
-    }
-   ]
-  },
-  {
    "kw": "만원",
    "nsrc": 4,
    "srcs": [
@@ -607,6 +576,105 @@
      "src": "뉴시스",
      "title": "장윤정 모친, '3100만원 사기' 항소심서도 눈물로 혐의 인정",
      "link": "https://www.newsis.com/view/NISX20261119_0003875691"
+    }
+   ]
+  },
+  {
+   "kw": "공식",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "조선일보",
+    "한국경제"
+   ],
+   "n": 6,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "[공식] 패닉·빅뱅·CL 특별 무대, ‘2026 MAMA’ 오늘 개막",
+     "link": "https://sports.donga.com/ent/article/all/20261120/135061089/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "[공식] 유지훈, 박규영·이수혁과 한솥밥…사람엔터와 전속계약",
+     "link": "https://sports.donga.com/ent/article/all/20261120/135058834/1"
+    },
+    {
+     "src": "한국경제",
+     "title": "CL, 테디 손 잡았다…더블랙레이블 전속계약 [공식]",
+     "link": "https://www.hankyung.com/article/202611134339H"
+    },
+    {
+     "src": "뉴시스",
+     "title": "두아 리파·카디 비, 'GTA 6' 공식 OST 발매…제니 韓 유일",
+     "link": "https://www.newsis.com/view/NISX20261120_0003877214"
+    }
+   ]
+  },
+  {
+   "kw": "데뷔",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "조선일보",
+    "한국경제"
+   ],
+   "n": 6,
+   "headlines": [
+    {
+     "src": "한국경제",
+     "title": "[단독] SM 신인 보이그룹, 내년 1월 데뷔",
+     "link": "https://www.hankyung.com/article/202611169565H"
+    },
+    {
+     "src": "한국경제",
+     "title": "\"가정부와 불륜으로 낳은 아들\" 슈워제네거 혼외자, 보디빌더 데뷔",
+     "link": "https://www.hankyung.com/article/2026111086337"
+    },
+    {
+     "src": "SBS",
+     "title": "빅뱅, 오늘(20일) 새 디지털 싱글 기습 공개…데뷔 20주년 대미 장식",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008855191&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "SBS",
+     "title": "'53세' 전도연, 데뷔 첫 SNS 개설…글로벌 소통 나섰다",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008853199&plink=RSSLINK&cooper=RSSREADER"
+    }
+   ]
+  },
+  {
+   "kw": "내가",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "조선일보",
+    "한국경제",
+    "헤럴드경제"
+   ],
+   "n": 6,
+   "headlines": [
+    {
+     "src": "한국경제",
+     "title": "나나, 탑과 공개 열애 후…악플 쏟아지자 \"내가 무슨 잘못\" 소신 발언",
+     "link": "https://www.hankyung.com/article/202611069702H"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "장항준 “이 사람한테 받은 설움, 분노 때문에 내가 있다”",
+     "link": "https://biz.heraldcorp.com/article/10944340"
+    },
+    {
+     "src": "뉴시스",
+     "title": "전진, 유산 겪은 아내에 손편지 \"내가 최선 다할게\"",
+     "link": "https://www.newsis.com/view/NISX20261120_0003876289"
+    },
+    {
+     "src": "조선일보",
+     "title": "전소미, 아이오아이 의상 차별 논란에 입 열었다 “내가 튀려고 했다고?”[Oh!쎈 이슈]",
+     "link": "https://www.chosun.com/entertainments/music/2026/11/20/HA3DCMZTHAYTSZBYGFSDCNZRGE/"
     }
    ]
   },
@@ -673,6 +741,39 @@
      "src": "조선일보",
      "title": "[공식] 빅뱅, 신곡 제목은 '기립'…3개월 만 초고속 컴백, 테디까지 가세",
      "link": "https://www.chosun.com/entertainments/enter_general/2026/11/20/GRTDOMBXGIYTCMZZG43DEMBYMQ/"
+    }
+   ]
+  },
+  {
+   "kw": "결혼",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "연합뉴스",
+    "조선일보",
+    "헤럴드경제"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "배우 이가섭, 비연예인과 결혼…\"오랜 시간 든든한 버팀목\"",
+     "link": "https://www.yna.co.kr/view/AKR20261119085400005"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "‘12월 결혼’ 하정우, 10년 함께한 반려견 떠나보냈다",
+     "link": "https://biz.heraldcorp.com/article/10944038"
+    },
+    {
+     "src": "뉴시스",
+     "title": "'12월 결혼' 하정우, 경사 앞두고 10년 반려견 떠나보냈다",
+     "link": "https://www.newsis.com/view/NISX20261120_0003875954"
+    },
+    {
+     "src": "뉴시스",
+     "title": "이가섭, 12월5일 결혼…\"소중한 인연과 백년가약\"",
+     "link": "https://www.newsis.com/view/NISX20261119_0003875317"
     }
    ]
   },
@@ -776,35 +877,35 @@
    ]
   },
   {
-   "kw": "내가",
+   "kw": "누적",
    "nsrc": 4,
    "srcs": [
+    "SBS",
     "뉴시스",
-    "조선일보",
-    "한국경제",
-    "헤럴드경제"
+    "연합뉴스",
+    "조선일보"
    ],
-   "n": 5,
+   "n": 4,
    "headlines": [
     {
-     "src": "한국경제",
-     "title": "나나, 탑과 공개 열애 후…악플 쏟아지자 \"내가 무슨 잘못\" 소신 발언",
-     "link": "https://www.hankyung.com/article/202611069702H"
+     "src": "연합뉴스",
+     "title": "BTS, 日 누적 스트리밍 100억회…해외 가수 최초 기록",
+     "link": "https://www.yna.co.kr/view/AKR20261120108900005"
     },
     {
-     "src": "헤럴드경제",
-     "title": "장항준 “이 사람한테 받은 설움, 분노 때문에 내가 있다”",
-     "link": "https://biz.heraldcorp.com/article/10944340"
+     "src": "SBS",
+     "title": "방탄소년단, 日 누적 스트리밍 100억 회 돌파…해외 아티스트 최초",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008855782&plink=RSSLINK&cooper=RSSREADER"
     },
     {
      "src": "뉴시스",
-     "title": "전진, 유산 겪은 아내에 손편지 \"내가 최선 다할게\"",
-     "link": "https://www.newsis.com/view/NISX20261120_0003876289"
+     "title": "방탄소년단, 日 누적 스밍 100억회 돌파…해외 아티스트 최초",
+     "link": "https://www.newsis.com/view/NISX20261120_0003877094"
     },
     {
      "src": "조선일보",
-     "title": "미미미누, ‘리트 만점’ 이진우 비보에 심경..“내가 해야 할 것 하면서 지낼 것”",
-     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/20/MNQWMZJWGM4TOMBUGJQTCOJVMU/"
+     "title": "방탄소년단, 日 누적 스트리밍 100억회 돌파…해외 아티스트 최초 대기록",
+     "link": "https://www.chosun.com/entertainments/music/2026/11/20/GQ3TQMZYGQ3DEMRSG44DSMZRGI/"
     }
    ]
   },
@@ -842,35 +943,35 @@
    ]
   },
   {
-   "kw": "누적",
+   "kw": "나연",
    "nsrc": 4,
    "srcs": [
     "SBS",
     "뉴시스",
-    "연합뉴스",
-    "조선일보"
+    "세계일보",
+    "연합뉴스"
    ],
    "n": 4,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "BTS, 日 누적 스트리밍 100억회…해외 가수 최초 기록",
-     "link": "https://www.yna.co.kr/view/AKR20261120108900005"
+     "title": "트와이스 나연, 오늘 새 싱글 '나스티'…\"많은 고민·노력 담아\"",
+     "link": "https://www.yna.co.kr/view/AKR20261120048400005"
+    },
+    {
+     "src": "세계일보",
+     "title": "싱글 컴백 나연 “당당하고 자신있고 앙큼한…‘나연다움’ 보여드릴게요”",
+     "link": "https://www.segye.com/newsView/20261120509304"
     },
     {
      "src": "SBS",
-     "title": "방탄소년단, 日 누적 스트리밍 100억 회 돌파…해외 아티스트 최초",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008855782&plink=RSSLINK&cooper=RSSREADER"
+     "title": "트와이스 나연, 내일 새 앨범 '나스티' 발매",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008852795&plink=RSSLINK&cooper=RSSREADER"
     },
     {
      "src": "뉴시스",
-     "title": "방탄소년단, 日 누적 스밍 100억회 돌파…해외 아티스트 최초",
-     "link": "https://www.newsis.com/view/NISX20261120_0003877094"
-    },
-    {
-     "src": "조선일보",
-     "title": "방탄소년단, 日 누적 스트리밍 100억회 돌파…해외 아티스트 최초 대기록",
-     "link": "https://www.chosun.com/entertainments/music/2026/11/20/GQ3TQMZYGQ3DEMRSG44DSMZRGI/"
+     "title": "트와이스 나연, '서머퀸'·'핫걸' 넘어 '베이비 엔젤'로…가장 나다운 변주 '나스티'",
+     "link": "https://www.newsis.com/view/NISX20261120_0003876078"
     }
    ]
   },
@@ -904,39 +1005,6 @@
      "src": "조선일보",
      "title": "[사진]'트와이스 지효 동생' 튜이드 서연 '마마 출격'",
      "link": "https://www.chosun.com/entertainments/entertain_photo/2026/11/20/HE4GEMBQGM4TENTBHEYWMZRSGY/"
-    }
-   ]
-  },
-  {
-   "kw": "나연",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "세계일보",
-    "연합뉴스"
-   ],
-   "n": 4,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "트와이스 나연, 오늘 새 싱글 '나스티'…\"많은 고민·노력 담아\"",
-     "link": "https://www.yna.co.kr/view/AKR20261120048400005"
-    },
-    {
-     "src": "세계일보",
-     "title": "싱글 컴백 나연 “당당하고 자신있고 앙큼한…‘나연다움’ 보여드릴게요”",
-     "link": "https://www.segye.com/newsView/20261120509304"
-    },
-    {
-     "src": "SBS",
-     "title": "트와이스 나연, 내일 새 앨범 '나스티' 발매",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008852795&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "뉴시스",
-     "title": "트와이스 나연, '서머퀸'·'핫걸' 넘어 '베이비 엔젤'로…가장 나다운 변주 '나스티'",
-     "link": "https://www.newsis.com/view/NISX20261120_0003876078"
     }
    ]
   },
@@ -1265,70 +1333,6 @@
      "src": "연합뉴스",
      "title": "결성 40주년 신촌블루스, 28∼29일 소극장 콘서트 '40+1'",
      "link": "https://www.yna.co.kr/view/AKR20261117043400005"
-    }
-   ]
-  },
-  {
-   "kw": "엔하이픈",
-   "nsrc": 3,
-   "srcs": [
-    "뉴시스",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 8,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "엔하이픈, 오늘 컴백…\"어떤 콘셉트든 잘하는 팀 되고파\"",
-     "link": "https://www.yna.co.kr/view/AKR20261120122300005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "[가요소식] 엔하이픈, 내달 MBC서 단독 특집 쇼 '미드나잇 러브 송'",
-     "link": "https://www.yna.co.kr/view/AKR20261117073200005"
-    },
-    {
-     "src": "뉴시스",
-     "title": "엔하이픈, 첫 싱글로 '1년 3컴백' 방점…\"'딸기 우유맛' 달콤함 전할 것\"",
-     "link": "https://www.newsis.com/view/NISX20261120_0003876899"
-    },
-    {
-     "src": "조선일보",
-     "title": "[사진]엔하이픈 니키 '카리스마'",
-     "link": "https://www.chosun.com/entertainments/entertain_photo/2026/11/20/MU3DCZRWMZSDGMRXGQ3TAOBWGA/"
-    }
-   ]
-  },
-  {
-   "kw": "공연",
-   "nsrc": 3,
-   "srcs": [
-    "연합뉴스",
-    "한겨레",
-    "한국경제"
-   ],
-   "n": 7,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "바닐라 라테 같은 달콤한 위로…스테이시 켄트 내한 공연",
-     "link": "https://www.yna.co.kr/view/AKR20261120086700005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "방탄소년단, 오늘부터 아시아·호주 투어…9개 도시·26회 공연",
-     "link": "https://www.yna.co.kr/view/AKR20261119045200005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "故 김광석 31주기…내년 1월 '광석이 다시 만나기' 공연·경연",
-     "link": "https://www.yna.co.kr/view/AKR20261119043500005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "일본 록밴드 아시안 쿵푸 제너레이션, 내년 5월 내한 공연",
-     "link": "https://www.yna.co.kr/view/AKR20261118087900005"
     }
    ]
   }
