@@ -3855,8 +3855,8 @@ def _topic_more(g, GN, top, n=3, hubs=None):
         if len(L) < 2:
             return ''
         li = ''.join(f'<li><a href="/money/guide/{s}/">{E(_dt_og(GN[s]["h1"]))}</a></li>' for s, _v in L)
-        ttl = f'「{E(T[k]["name"])}」에서 많이 찾는 글' if all(v >= 2 for _s, v in L) else f'「{E(T[k]["name"])}」 주제의 다른 글'   # 방문 기록이 없는 글이 섞이면 「많이 찾는」이라고 쓰지 않는다
-        al = f'<a class="g-more-all" href="{hubs[k]}">「{E(T[k]["name"])}」 글 모두 보기</a>' if hubs and k in hubs else ''
+        ttl = (f'「{E(T[k]["name"])}」에서 많이 찾는 글' if all(v >= 2 for _s, v in L) else f'「{E(T[k]["name"])}」 주제의 다른 글') if k in T else '함께 보면 좋은 글'   # 방문 기록이 없는 글이 섞이면 「많이 찾는」이라고 쓰지 않는다
+        al = f'<a class="g-more-all" href="{hubs[k]}">「{E(T[k]["name"])}」 글 모두 보기</a>' if hubs and k in hubs and k in T else ''
         return f'<aside class="g-more"><b>{ttl}</b><ul>{li}</ul>{al}</aside>'
     except Exception as e:
         print('같은 주제 글 묶음 건너뜀', g.get('slug'), repr(e)[:120])
