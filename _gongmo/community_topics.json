@@ -1,22 +1,22 @@
 {
  "date": "2026-11-20",
- "updated": "2026-11-20 17:50",
+ "updated": "2026-11-20 18:50",
  "sites": 13,
- "npost": 2887,
+ "npost": 2889,
  "note": "출처(커뮤니티)별 집계예요. 작성자·연령·성별 정보는 수집하지 않아요. posts 는 이슈별로 뽑힌 일부라 전체 글 수가 아니에요.",
  "sources": [
   {
    "name": "MLB파크",
    "np": 22,
-   "nc": 1300,
+   "nc": 1292,
    "topics": [
     {
      "t": "초5 딸이 올해 수능 영어를 풀어봤습니다",
-     "nsite": 3,
+     "nsite": 4,
      "np_here": 2,
-     "nc_here": 220,
-     "issue_np": 4,
-     "issue_nc": 236,
+     "nc_here": 244,
+     "issue_np": 5,
+     "issue_nc": 260,
      "kw": [
       "수능",
       "영어",
@@ -25,26 +25,44 @@
      "top_post": {
       "t": "초5 딸이 올해 수능 영어를 풀어봤습니다",
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611200120223533&m=view",
-      "nc": 139
+      "nc": 148
      }
     },
     {
      "t": "재난문자로 부정행위 걸린 수험생 35명",
-     "nsite": 7,
+     "nsite": 5,
      "np_here": 3,
      "nc_here": 137,
-     "issue_np": 14,
-     "issue_nc": 213,
+     "issue_np": 11,
+     "issue_nc": 175,
      "kw": [
       "문자",
       "재난",
       "부정행위",
-      "수능"
+      "스마트폰"
      ],
      "top_post": {
       "t": "재난문자로 부정행위 걸린 수험생 35명",
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611190120210864&m=view",
       "nc": 107
+     }
+    },
+    {
+     "t": "경찰서에서 만난 전청조 남현희",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 128,
+     "issue_np": 4,
+     "issue_nc": 179,
+     "kw": [
+      "남현희",
+      "전청조",
+      "경찰서"
+     ],
+     "top_post": {
+      "t": "경찰서에서 만난 전청조 남현희",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611200120223680&m=view",
+      "nc": 128
      }
     },
     {
@@ -66,24 +84,6 @@
      }
     },
     {
-     "t": "경찰서에서 만난 전청조 남현희",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 122,
-     "issue_np": 4,
-     "issue_nc": 167,
-     "kw": [
-      "남현희",
-      "경찰서",
-      "전청조"
-     ],
-     "top_post": {
-      "t": "경찰서에서 만난 전청조 남현희",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611200120223680&m=view",
-      "nc": 122
-     }
-    },
-    {
      "t": "서울대 치대에서.. 실형 산 전과자를 받을 줄은...몰랐네요",
      "nsite": 3,
      "np_here": 1,
@@ -91,8 +91,8 @@
      "issue_np": 3,
      "issue_nc": 131,
      "kw": [
-      "치대",
-      "서울대"
+      "서울대",
+      "치대"
      ],
      "top_post": {
       "t": "서울대 치대에서.. 실형 산 전과자를 받을 줄은...몰랐네요",
@@ -126,8 +126,8 @@
      "issue_np": 3,
      "issue_nc": 146,
      "kw": [
-      "이진우",
-      "서울대"
+      "서울대",
+      "이진우"
      ],
      "top_post": {
       "t": "서울대교수님: 죄는 미워도 사람을 미워해서는 안된다 이진우씨를 퇴로없이 몰아붙여서는 안됐다",
@@ -137,10 +137,10 @@
     },
     {
      "t": "2027년 수능 국어 오답률 높았다는 문제",
-     "nsite": 4,
+     "nsite": 5,
      "np_here": 2,
      "nc_here": 87,
-     "issue_np": 6,
+     "issue_np": 7,
      "issue_nc": 88,
      "kw": [
       "수능",
@@ -157,163 +157,9 @@
    ]
   },
   {
-   "name": "개드립",
-   "np": 18,
-   "nc": 422,
-   "topics": [
-    {
-     "t": "리트냥이 사망사건이 불편한 이유",
-     "nsite": 3,
-     "np_here": 3,
-     "nc_here": 67,
-     "issue_np": 7,
-     "issue_nc": 67,
-     "kw": [
-      "리트냥이",
-      "사건",
-      "사망"
-     ],
-     "top_post": {
-      "t": "리트냥이 사건의 진짜 공포가 뭔지 앎?",
-      "u": "https://www.dogdrip.net/dogdrip/735730609?sort_index=popular&page=1",
-      "nc": 32
-     }
-    },
-    {
-     "t": "오늘 수능 알바했는데 부정행위자 적발함",
-     "nsite": 6,
-     "np_here": 2,
-     "nc_here": 53,
-     "issue_np": 13,
-     "issue_nc": 102,
-     "kw": [
-      "수능",
-      "행위자",
-      "부정",
-      "적발"
-     ],
-     "top_post": {
-      "t": "실시간 수능 부정행위자 적발 상황.txt",
-      "u": "https://www.dogdrip.net/dogdrip/735623619?sort_index=popular&page=1",
-      "nc": 39
-     }
-    },
-    {
-     "t": "영국남자 유튜브 근황 ㄷㄷ",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 50,
-     "issue_np": 3,
-     "issue_nc": 50,
-     "kw": [
-      "영국",
-      "남자",
-      "유튜브"
-     ],
-     "top_post": {
-      "t": "영국남자 유튜브 근황 ㄷㄷ",
-      "u": "https://www.dogdrip.net/dogdrip/735773136?sort_index=popular&page=1",
-      "nc": 50
-     }
-    },
-    {
-     "t": "서울대교수님: 죄는 미워도 사람을 미워해서는 안된다 이진우씨를 퇴로없이 몰아붙여서는 안됐다",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 48,
-     "issue_np": 3,
-     "issue_nc": 146,
-     "kw": [
-      "이진우",
-      "서울대"
-     ],
-     "top_post": {
-      "t": "서울대생으로 디진 이진우.news",
-      "u": "https://www.dogdrip.net/dogdrip/735663420?sort_index=popular&page=1",
-      "nc": 48
-     }
-    },
-    {
-     "t": "감정평가사 6개월 합격 글쓴이 2차 해명문",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 45,
-     "issue_np": 3,
-     "issue_nc": 45,
-     "kw": [
-      "평가사",
-      "감정",
-      "합격",
-      "해명"
-     ],
-     "top_post": {
-      "t": "감정평가사 6개월 합격 글쓴이 2차 해명문",
-      "u": "https://www.dogdrip.net/dogdrip/735743551?sort_index=popular&page=1",
-      "nc": 45
-     }
-    },
-    {
-     "t": "경찰서에서 만난 전청조 남현희",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 42,
-     "issue_np": 4,
-     "issue_nc": 167,
-     "kw": [
-      "남현희",
-      "경찰서",
-      "전청조"
-     ],
-     "top_post": {
-      "t": "경찰서에서 만난 전청조, 남현희",
-      "u": "https://www.dogdrip.net/dogdrip/735768323?sort_index=popular&page=1",
-      "nc": 42
-     }
-    },
-    {
-     "t": "안경 맞춰주고 의대가라는 아버지",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 27,
-     "issue_np": 4,
-     "issue_nc": 27,
-     "kw": [
-      "의대",
-      "안경",
-      "아버지",
-      "AI"
-     ],
-     "top_post": {
-      "t": "안경 맞춰주고 의대가라는 아버지",
-      "u": "https://www.dogdrip.net/dogdrip/735801549?sort_index=popular&page=1",
-      "nc": 27
-     }
-    },
-    {
-     "t": "\"여성 부정행위자 좀 신기하지 않냐?\"",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 21,
-     "issue_np": 8,
-     "issue_nc": 32,
-     "kw": [
-      "부정",
-      "시험",
-      "행위자",
-      "여성"
-     ],
-     "top_post": {
-      "t": "\"여성 부정행위자 좀 신기하지 않냐?\"",
-      "u": "https://www.dogdrip.net/dogdrip/735738909?sort_index=popular&page=1",
-      "nc": 21
-     }
-    }
-   ]
-  },
-  {
    "name": "클리앙",
    "np": 11,
-   "nc": 381,
+   "nc": 362,
    "topics": [
     {
      "t": "대법원에서 계엄은 내란이라는데 왜 조희대를 탄핵한다는 거예요?",
@@ -323,8 +169,8 @@
      "issue_np": 16,
      "issue_nc": 360,
      "kw": [
-      "탄핵",
       "조희대",
+      "탄핵",
       "내란"
      ],
      "top_post": {
@@ -341,8 +187,8 @@
      "issue_np": 18,
      "issue_nc": 175,
      "kw": [
-      "행위",
       "부정",
+      "행위",
       "수능",
       "적발"
      ],
@@ -356,38 +202,19 @@
      "t": "한국 수출 ‘꿈의 1조달러’ 달성…세계 4번째",
      "nsite": 3,
      "np_here": 1,
-     "nc_here": 30,
+     "nc_here": 33,
      "issue_np": 3,
-     "issue_nc": 33,
+     "issue_nc": 36,
      "kw": [
       "수출",
       "달성",
-      "세계",
-      "한국"
+      "한국",
+      "세계"
      ],
      "top_post": {
       "t": "반도체로만 수출 1조 달성했다고요?",
       "u": "https://www.clien.net/service/board/park/19296029?od=T33&po=0&category=0&groupCd=clien_all",
-      "nc": 30
-     }
-    },
-    {
-     "t": "재난문자로 부정행위 걸린 수험생 35명",
-     "nsite": 7,
-     "np_here": 1,
-     "nc_here": 29,
-     "issue_np": 14,
-     "issue_nc": 213,
-     "kw": [
-      "문자",
-      "재난",
-      "부정행위",
-      "수능"
-     ],
-     "top_post": {
-      "t": "재난 문자 또 울렸네요..",
-      "u": "https://www.clien.net/service/board/park/19295271?od=T33&po=0&category=0&groupCd=clien_all",
-      "nc": 29
+      "nc": 33
      }
     },
     {
@@ -409,6 +236,24 @@
      }
     },
     {
+     "t": "[댓글여론] ‘한덕수 파기환송’ 화나요 67%",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 7,
+     "issue_np": 3,
+     "issue_nc": 21,
+     "kw": [
+      "파기",
+      "한덕수",
+      "환송"
+     ],
+     "top_post": {
+      "t": "[댓글여론] ‘한덕수 파기환송’ 화나요 67%",
+      "u": "https://www.clien.net/service/board/park/19295547?od=T33&po=0&category=0&groupCd=clien_all",
+      "nc": 7
+     }
+    },
+    {
      "t": "재난문자 수능대응은 잘한거 같네요.",
      "nsite": 8,
      "np_here": 1,
@@ -416,8 +261,8 @@
      "issue_np": 12,
      "issue_nc": 50,
      "kw": [
-      "수능",
-      "재난문자"
+      "재난문자",
+      "수능"
      ],
      "top_post": {
       "t": "재난문자 수능대응은 잘한거 같네요.",
@@ -428,26 +273,200 @@
    ]
   },
   {
+   "name": "개드립",
+   "np": 13,
+   "nc": 333,
+   "topics": [
+    {
+     "t": "경찰서에서 만난 전청조 남현희",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 48,
+     "issue_np": 4,
+     "issue_nc": 179,
+     "kw": [
+      "남현희",
+      "전청조",
+      "경찰서"
+     ],
+     "top_post": {
+      "t": "경찰서에서 만난 전청조, 남현희",
+      "u": "https://www.dogdrip.net/dogdrip/735768323?sort_index=popular&page=1",
+      "nc": 48
+     }
+    },
+    {
+     "t": "서울대교수님: 죄는 미워도 사람을 미워해서는 안된다 이진우씨를 퇴로없이 몰아붙여서는 안됐다",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 48,
+     "issue_np": 3,
+     "issue_nc": 146,
+     "kw": [
+      "서울대",
+      "이진우"
+     ],
+     "top_post": {
+      "t": "서울대생으로 디진 이진우.news",
+      "u": "https://www.dogdrip.net/dogdrip/735663420?sort_index=popular&page=1",
+      "nc": 48
+     }
+    },
+    {
+     "t": "감정평가사 6개월 합격 글쓴이 2차 해명문",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 45,
+     "issue_np": 3,
+     "issue_nc": 45,
+     "kw": [
+      "평가사",
+      "해명",
+      "합격",
+      "감정"
+     ],
+     "top_post": {
+      "t": "감정평가사 6개월 합격 글쓴이 2차 해명문",
+      "u": "https://www.dogdrip.net/dogdrip/735743551?sort_index=popular&page=1",
+      "nc": 45
+     }
+    },
+    {
+     "t": "오늘 수능 알바했는데 부정행위자 적발함",
+     "nsite": 6,
+     "np_here": 1,
+     "nc_here": 39,
+     "issue_np": 12,
+     "issue_nc": 88,
+     "kw": [
+      "행위자",
+      "수능",
+      "부정",
+      "적발"
+     ],
+     "top_post": {
+      "t": "실시간 수능 부정행위자 적발 상황.txt",
+      "u": "https://www.dogdrip.net/dogdrip/735623619?sort_index=popular&page=1",
+      "nc": 39
+     }
+    },
+    {
+     "t": "요번 수능 세계사 정답률 7.4%짜리 문제",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 35,
+     "issue_np": 3,
+     "issue_nc": 35,
+     "kw": [
+      "세계사",
+      "수능",
+      "정답"
+     ],
+     "top_post": {
+      "t": "요번 수능 세계사 정답률 7.4%짜리 문제",
+      "u": "https://www.dogdrip.net/dogdrip/735755931?sort_index=popular&page=1",
+      "nc": 35
+     }
+    },
+    {
+     "t": "안경 맞춰주고 의대가라는 아버지",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 34,
+     "issue_np": 5,
+     "issue_nc": 34,
+     "kw": [
+      "안경",
+      "의대",
+      "아버지",
+      "AI"
+     ],
+     "top_post": {
+      "t": "안경 맞춰주고 의대가라는 아버지",
+      "u": "https://www.dogdrip.net/dogdrip/735801549?sort_index=popular&page=1",
+      "nc": 34
+     }
+    },
+    {
+     "t": "\"여성 부정행위자 좀 신기하지 않냐?\"",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 21,
+     "issue_np": 8,
+     "issue_nc": 32,
+     "kw": [
+      "부정",
+      "행위자",
+      "시험",
+      "여성"
+     ],
+     "top_post": {
+      "t": "\"여성 부정행위자 좀 신기하지 않냐?\"",
+      "u": "https://www.dogdrip.net/dogdrip/735738909?sort_index=popular&page=1",
+      "nc": 21
+     }
+    },
+    {
+     "t": "오늘자 재난문자 최고 피해자",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 19,
+     "issue_np": 5,
+     "issue_nc": 62,
+     "kw": [
+      "재난문자",
+      "피해자",
+      "최고",
+      "최대"
+     ],
+     "top_post": {
+      "t": "오늘 재난문자 최고 피해자 ㅇㅈ?",
+      "u": "https://www.dogdrip.net/dogdrip/735654647?sort_index=popular&page=1",
+      "nc": 19
+     }
+    }
+   ]
+  },
+  {
    "name": "82쿡",
-   "np": 20,
-   "nc": 182,
+   "np": 23,
+   "nc": 206,
    "topics": [
     {
      "t": "박지윤 최동석 보니 부부는 적당히 데면데면 한게 오히려 더 좋은..",
      "nsite": 3,
      "np_here": 4,
-     "nc_here": 39,
-     "issue_np": 7,
-     "issue_nc": 40,
+     "nc_here": 36,
+     "issue_np": 6,
+     "issue_nc": 37,
      "kw": [
-      "최동석",
       "박지윤",
+      "최동석",
       "부부"
      ],
      "top_post": {
       "t": "박지윤 최동석 보니 부부는 적당히 데면데면 한게 오히려 더 좋은..",
       "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4260951&page=1",
       "nc": 19
+     }
+    },
+    {
+     "t": "재난문자로 부정행위 걸린 수험생 35명",
+     "nsite": 5,
+     "np_here": 2,
+     "nc_here": 35,
+     "issue_np": 11,
+     "issue_nc": 175,
+     "kw": [
+      "문자",
+      "재난",
+      "부정행위",
+      "스마트폰"
+     ],
+     "top_post": {
+      "t": "수능 재난문자 재미있으셨나요?",
+      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4261139&page=1",
+      "nc": 33
      }
     },
     {
@@ -458,8 +477,8 @@
      "issue_np": 18,
      "issue_nc": 175,
      "kw": [
-      "행위",
       "부정",
+      "행위",
       "수능",
       "적발"
      ],
@@ -467,25 +486,6 @@
       "t": "정부의 향후 수능 부정행위 대응 내용 발표 - 한성숙",
       "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4261157&page=1",
       "nc": 22
-     }
-    },
-    {
-     "t": "재난문자로 부정행위 걸린 수험생 35명",
-     "nsite": 7,
-     "np_here": 1,
-     "nc_here": 33,
-     "issue_np": 14,
-     "issue_nc": 213,
-     "kw": [
-      "문자",
-      "재난",
-      "부정행위",
-      "수능"
-     ],
-     "top_post": {
-      "t": "수능 재난문자 재미있으셨나요?",
-      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4261139&page=1",
-      "nc": 33
      }
     },
     {
@@ -507,12 +507,29 @@
      }
     },
     {
-     "t": "초5 딸이 올해 수능 영어를 풀어봤습니다",
+     "t": "친구 결혼식에 갔다가 여자를 만난 썰",
      "nsite": 3,
      "np_here": 1,
+     "nc_here": 23,
+     "issue_np": 3,
+     "issue_nc": 23,
+     "kw": [
+      "여자",
+      "친구"
+     ],
+     "top_post": {
+      "t": "게이친구 있는 여자",
+      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4260844&page=1",
+      "nc": 23
+     }
+    },
+    {
+     "t": "초5 딸이 올해 수능 영어를 풀어봤습니다",
+     "nsite": 4,
+     "np_here": 1,
      "nc_here": 16,
-     "issue_np": 4,
-     "issue_nc": 236,
+     "issue_np": 5,
+     "issue_nc": 260,
      "kw": [
       "수능",
       "영어",
@@ -532,8 +549,8 @@
      "issue_np": 3,
      "issue_nc": 131,
      "kw": [
-      "치대",
-      "서울대"
+      "서울대",
+      "치대"
      ],
      "top_post": {
       "t": "한쪽선 쓰레기로 보였어도 좋은 형이었다\" 서울대 치대 ..",
@@ -550,8 +567,8 @@
      "issue_nc": 32,
      "kw": [
       "부정",
-      "시험",
       "행위자",
+      "시험",
       "여성"
      ],
      "top_post": {
@@ -559,30 +576,13 @@
       "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4260807&page=1",
       "nc": 5
      }
-    },
-    {
-     "t": "재난문자 수능대응은 잘한거 같네요.",
-     "nsite": 8,
-     "np_here": 1,
-     "nc_here": 7,
-     "issue_np": 12,
-     "issue_nc": 50,
-     "kw": [
-      "수능",
-      "재난문자"
-     ],
-     "top_post": {
-      "t": "李 \"수능 재난문자, 화낼 줄 알았는데 의외로 재밌어해..",
-      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4261169&page=1",
-      "nc": 7
-     }
     }
    ]
   },
   {
    "name": "인스티즈",
-   "np": 1,
-   "nc": 84,
+   "np": 2,
+   "nc": 110,
    "topics": [
     {
      "t": "수능 부정행위 단속 총정리",
@@ -592,8 +592,8 @@
      "issue_np": 18,
      "issue_nc": 175,
      "kw": [
-      "행위",
       "부정",
+      "행위",
       "수능",
       "적발"
      ],
@@ -602,13 +602,30 @@
       "u": "https://www.instiz.net/pt/7926834?green=1",
       "nc": 84
      }
+    },
+    {
+     "t": "수능이 끝난 딸을 기다리는 아빠",
+     "nsite": 5,
+     "np_here": 1,
+     "nc_here": 26,
+     "issue_np": 5,
+     "issue_nc": 62,
+     "kw": [
+      "아빠",
+      "수능"
+     ],
+     "top_post": {
+      "t": "수능끝난 딸을 기다리는 꽃을든 아빠.jpgif 309 8:28 l 조회 66589 l 추천",
+      "u": "https://www.instiz.net/pt/7927760?page=1&srt=3&k=",
+      "nc": 26
+     }
     }
    ]
   },
   {
    "name": "네이트판",
-   "np": 4,
-   "nc": 58,
+   "np": 5,
+   "nc": 82,
    "topics": [
     {
      "t": "리트냥이의 인생..",
@@ -618,8 +635,8 @@
      "issue_np": 4,
      "issue_nc": 34,
      "kw": [
-      "인생",
-      "리트냥이"
+      "리트냥이",
+      "인생"
      ],
      "top_post": {
       "t": "리트냥이의 인생..",
@@ -628,12 +645,30 @@
      }
     },
     {
+     "t": "솔직히 동양남자는 눈에 들어오지도 않음 일단 동양남자들이 전체적으로 여자를 대하는 마인드 ...",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 24,
+     "issue_np": 4,
+     "issue_nc": 26,
+     "kw": [
+      "여자",
+      "남자",
+      "동양"
+     ],
+     "top_post": {
+      "t": "솔직히 동양남자는 눈에 들어오지도 않음 일단 동양남자들이 전체적으로 여자를 대하는 마인드 ...",
+      "u": "https://pann.nate.com/talk/375726179",
+      "nc": 24
+     }
+    },
+    {
      "t": "리트 이진우 심정지 상태로 발견",
-     "nsite": 5,
+     "nsite": 4,
      "np_here": 1,
      "nc_here": 17,
-     "issue_np": 7,
-     "issue_nc": 73,
+     "issue_np": 6,
+     "issue_nc": 21,
      "kw": [
       "이진우",
       "발견",
@@ -654,8 +689,8 @@
      "issue_np": 12,
      "issue_nc": 50,
      "kw": [
-      "수능",
-      "재난문자"
+      "재난문자",
+      "수능"
      ],
      "top_post": {
       "t": "수능 재난문자 진짜 개빡치네ㅆㅂ 아무 상관 없는 사람들한테까지 이렇게 무작위로 몇번이나 ...",
@@ -686,19 +721,19 @@
   },
   {
    "name": "아카라이브",
-   "np": 5,
-   "nc": 54,
+   "np": 4,
+   "nc": 43,
    "topics": [
     {
      "t": "오늘 수능 알바했는데 부정행위자 적발함",
      "nsite": 6,
      "np_here": 3,
      "nc_here": 39,
-     "issue_np": 13,
-     "issue_nc": 102,
+     "issue_np": 12,
+     "issue_nc": 88,
      "kw": [
-      "수능",
       "행위자",
+      "수능",
       "부정",
       "적발"
      ],
@@ -709,25 +744,6 @@
      }
     },
     {
-     "t": "ai 논란 속 치뤄진 2027학년도 수능 이모저모",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 11,
-     "issue_np": 9,
-     "issue_nc": 12,
-     "kw": [
-      "수능",
-      "AI",
-      "논란",
-      "학년도"
-     ],
-     "top_post": {
-      "t": "2027학년도 대입 수능 전체 결과",
-      "u": "https://arca.live/b/live/189692514?p=1",
-      "nc": 11
-     }
-    },
-    {
      "t": "AI안경 쓰고 면접보니...수치까지 척척",
      "nsite": 4,
      "np_here": 1,
@@ -735,10 +751,10 @@
      "issue_np": 6,
      "issue_nc": 19,
      "kw": [
-      "AI",
       "안경",
-      "수치",
-      "면접"
+      "AI",
+      "면접",
+      "수치"
      ],
      "top_post": {
       "t": "눈앞에서 ai안경 적발됐는데 개무섭네",
@@ -751,7 +767,7 @@
   {
    "name": "보배드림",
    "np": 13,
-   "nc": 33,
+   "nc": 34,
    "topics": [
     {
      "t": "재난문자 수능대응은 잘한거 같네요.",
@@ -761,8 +777,8 @@
      "issue_np": 12,
      "issue_nc": 50,
      "kw": [
-      "수능",
-      "재난문자"
+      "재난문자",
+      "수능"
      ],
      "top_post": {
       "t": "수능땜에 쏜 재난문자 효과",
@@ -773,13 +789,13 @@
     {
      "t": "오늘 수능 알바했는데 부정행위자 적발함",
      "nsite": 6,
-     "np_here": 1,
-     "nc_here": 3,
-     "issue_np": 13,
-     "issue_nc": 102,
+     "np_here": 2,
+     "nc_here": 6,
+     "issue_np": 12,
+     "issue_nc": 88,
      "kw": [
-      "수능",
       "행위자",
+      "수능",
       "부정",
       "적발"
      ],
@@ -790,37 +806,37 @@
      }
     },
     {
+     "t": "수능이 끝난 딸을 기다리는 아빠",
+     "nsite": 5,
+     "np_here": 1,
+     "nc_here": 3,
+     "issue_np": 5,
+     "issue_nc": 62,
+     "kw": [
+      "아빠",
+      "수능"
+     ],
+     "top_post": {
+      "t": "수능 끝난 딸을 기다리는 아빠",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1048881&vdate=",
+      "nc": 3
+     }
+    },
+    {
      "t": "경찰서에서 만난 전청조 남현희",
      "nsite": 4,
      "np_here": 1,
      "nc_here": 3,
      "issue_np": 4,
-     "issue_nc": 167,
+     "issue_nc": 179,
      "kw": [
       "남현희",
-      "경찰서",
-      "전청조"
+      "전청조",
+      "경찰서"
      ],
      "top_post": {
       "t": "경찰서에서 만난 전청조 남현희",
       "u": "https://www.bobaedream.co.kr/view?code=best&No=1048983&vdate=",
-      "nc": 3
-     }
-    },
-    {
-     "t": "수능이 끝난 딸을 기다리는 아빠",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 3,
-     "issue_np": 4,
-     "issue_nc": 36,
-     "kw": [
-      "수능",
-      "아빠"
-     ],
-     "top_post": {
-      "t": "수능 끝난 딸을 기다리는 아빠",
-      "u": "https://www.bobaedream.co.kr/view?code=best&No=1048881&vdate=",
       "nc": 3
      }
     },
@@ -833,30 +849,13 @@
      "issue_nc": 32,
      "kw": [
       "부정",
-      "시험",
       "행위자",
+      "시험",
       "여성"
      ],
      "top_post": {
       "t": "세무사시험 부정행위자가 쏘아올린 작은공 2..",
       "u": "https://www.bobaedream.co.kr/view?code=best&No=1048889&vdate=",
-      "nc": 3
-     }
-    },
-    {
-     "t": "[속보] 리트 만점자 비법",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 3,
-     "issue_np": 5,
-     "issue_nc": 3,
-     "kw": [
-      "만점자",
-      "리트"
-     ],
-     "top_post": {
-      "t": "리트 만점자... 여러모로 대단하긴 하네요",
-      "u": "https://www.bobaedream.co.kr/view?code=best&No=1048942&vdate=",
       "nc": 3
      }
     },
@@ -868,8 +867,8 @@
      "issue_np": 3,
      "issue_nc": 131,
      "kw": [
-      "치대",
-      "서울대"
+      "서울대",
+      "치대"
      ],
      "top_post": {
       "t": "서울대 치대 이미지 개X 되겠구나",
@@ -894,183 +893,24 @@
       "u": "https://www.bobaedream.co.kr/view?code=best&No=1048859&vdate=",
       "nc": 3
      }
-    }
-   ]
-  },
-  {
-   "name": "디시인사이드",
-   "np": 7,
-   "nc": 0,
-   "topics": [
-    {
-     "t": "리트 이진우 심정지 상태로 발견",
-     "nsite": 5,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 7,
-     "issue_nc": 73,
-     "kw": [
-      "이진우",
-      "발견",
-      "리트",
-      "정지"
-     ],
-     "top_post": {
-      "t": "리트냥이 이진우 심정지 상태로 발견.. jpg",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=480094&_dcbest=1&page=1",
-      "nc": 0
-     }
-    },
-    {
-     "t": "AI안경 쓰고 면접보니...수치까지 척척",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 6,
-     "issue_nc": 19,
-     "kw": [
-      "AI",
-      "안경",
-      "수치",
-      "면접"
-     ],
-     "top_post": {
-      "t": "AI안경 쓰고 면접보니...수치까지 척척",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=480288&_dcbest=1&page=1",
-      "nc": 0
-     }
-    },
-    {
-     "t": "ai 논란 속 치뤄진 2027학년도 수능 이모저모",
-     "nsite": 4,
-     "np_here": 2,
-     "nc_here": 0,
-     "issue_np": 9,
-     "issue_nc": 12,
-     "kw": [
-      "수능",
-      "AI",
-      "논란",
-      "학년도"
-     ],
-     "top_post": {
-      "t": "ai 논란 속 치뤄진 2027학년도 수능 이모저모",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=480176&_dcbest=1&page=1",
-      "nc": 0
-     }
-    },
-    {
-     "t": "[속보] 리트 만점자 비법",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 3,
-     "kw": [
-      "만점자",
-      "리트"
-     ],
-     "top_post": {
-      "t": "싱글벙글 리트만점자가 세상에 나온 날, 싱갤 반응",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=480044&_dcbest=1&page=1",
-      "nc": 0
-     }
-    },
-    {
-     "t": "리트냥이 사망사건이 불편한 이유",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 7,
-     "issue_nc": 67,
-     "kw": [
-      "리트냥이",
-      "사건",
-      "사망"
-     ],
-     "top_post": {
-      "t": "리트냥이 사건으로 재평가 되는 인물",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=480154&_dcbest=1&page=1",
-      "nc": 0
-     }
     },
     {
      "t": "한국 수출 ‘꿈의 1조달러’ 달성…세계 4번째",
      "nsite": 3,
      "np_here": 1,
-     "nc_here": 0,
+     "nc_here": 3,
      "issue_np": 3,
-     "issue_nc": 33,
+     "issue_nc": 36,
      "kw": [
       "수출",
       "달성",
-      "세계",
-      "한국"
+      "한국",
+      "세계"
      ],
      "top_post": {
-      "t": "한국 수출 ‘꿈의 1조달러’ 달성…세계 4번째",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=480181&_dcbest=1&page=1",
-      "nc": 0
-     }
-    }
-   ]
-  },
-  {
-   "name": "SLR클럽",
-   "np": 5,
-   "nc": 0,
-   "topics": [
-    {
-     "t": "리트 이진우 심정지 상태로 발견",
-     "nsite": 5,
-     "np_here": 2,
-     "nc_here": 0,
-     "issue_np": 7,
-     "issue_nc": 73,
-     "kw": [
-      "이진우",
-      "발견",
-      "리트",
-      "정지"
-     ],
-     "top_post": {
-      "t": "이진우 심정지 발견",
-      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677763",
-      "nc": 0
-     }
-    },
-    {
-     "t": "수능이 끝난 딸을 기다리는 아빠",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 36,
-     "kw": [
-      "수능",
-      "아빠"
-     ],
-     "top_post": {
-      "t": "수능 끝난 딸 기다리는 아빠",
-      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677820",
-      "nc": 0
-     }
-    },
-    {
-     "t": "[속보] 리트 만점자 비법",
-     "nsite": 4,
-     "np_here": 2,
-     "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 3,
-     "kw": [
-      "만점자",
-      "리트"
-     ],
-     "top_post": {
-      "t": "[속보] 리트 만점자 비법",
-      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677774",
-      "nc": 0
+      "t": "한국, 일본보다 먼저 수출 1조달러 달성, 세계4강",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1048829&vdate=",
+      "nc": 3
      }
     }
    ]
@@ -1081,16 +921,35 @@
    "nc": 0,
    "topics": [
     {
+     "t": "2027년 수능 국어 오답률 높았다는 문제",
+     "nsite": 5,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 7,
+     "issue_nc": 88,
+     "kw": [
+      "수능",
+      "국어",
+      "오답",
+      "만점"
+     ],
+     "top_post": {
+      "t": "충격적인 오늘 수능 국어 예상 오답률 1위 ㄷㄷ..",
+      "u": "https://theqoo.net/hot/4411984677",
+      "nc": 0
+     }
+    },
+    {
      "t": "경찰서에서 만난 전청조 남현희",
      "nsite": 4,
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 4,
-     "issue_nc": 167,
+     "issue_nc": 179,
      "kw": [
       "남현희",
-      "경찰서",
-      "전청조"
+      "전청조",
+      "경찰서"
      ],
      "top_post": {
       "t": "경찰서에서 만난 전청조와 남현희",
@@ -1118,25 +977,6 @@
      }
     },
     {
-     "t": "2027년 수능 국어 오답률 높았다는 문제",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 6,
-     "issue_nc": 88,
-     "kw": [
-      "수능",
-      "국어",
-      "오답",
-      "만점"
-     ],
-     "top_post": {
-      "t": "충격적인 오늘 수능 국어 예상 오답률 1위 ㄷㄷ..",
-      "u": "https://theqoo.net/hot/4411984677",
-      "nc": 0
-     }
-    },
-    {
      "t": "27수능 수학 1번 문제",
      "nsite": 4,
      "np_here": 1,
@@ -1144,8 +984,8 @@
      "issue_np": 5,
      "issue_nc": 71,
      "kw": [
-      "수능",
-      "수학"
+      "수학",
+      "수능"
      ],
      "top_post": {
       "t": "27수능 수학 1번 문제",
@@ -1161,8 +1001,8 @@
      "issue_np": 5,
      "issue_nc": 62,
      "kw": [
-      "피해자",
       "재난문자",
+      "피해자",
       "최고",
       "최대"
      ],
@@ -1180,30 +1020,12 @@
      "issue_np": 3,
      "issue_nc": 146,
      "kw": [
-      "이진우",
-      "서울대"
+      "서울대",
+      "이진우"
      ],
      "top_post": {
       "t": "이진우 서울대 치대 그대로 다녔으면 졸업 가능 했을까?",
       "u": "https://theqoo.net/hot/4412474421",
-      "nc": 0
-     }
-    },
-    {
-     "t": "영국남자 유튜브 근황 ㄷㄷ",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 50,
-     "kw": [
-      "영국",
-      "남자",
-      "유튜브"
-     ],
-     "top_post": {
-      "t": "메인이 바뀌어 버린 영국남자 유튜브 근황",
-      "u": "https://theqoo.net/hot/4412622275",
       "nc": 0
      }
     },
@@ -1216,13 +1038,31 @@
      "issue_nc": 45,
      "kw": [
       "평가사",
-      "감정",
+      "해명",
       "합격",
-      "해명"
+      "감정"
      ],
      "top_post": {
       "t": "감정평가사 6개월 합격 글쓴이 2차 해명문(원래 서울대 학사-도시계획학 석사라고 함)",
       "u": "https://theqoo.net/hot/4411813311",
+      "nc": 0
+     }
+    },
+    {
+     "t": "박지윤 최동석 보니 부부는 적당히 데면데면 한게 오히려 더 좋은..",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 6,
+     "issue_nc": 37,
+     "kw": [
+      "박지윤",
+      "최동석",
+      "부부"
+     ],
+     "top_post": {
+      "t": "최동석 공식 입장문 - 박지윤 씨의 입장문에 대한 제 입장을 밝힙니다.",
+      "u": "https://theqoo.net/hot/4412257765",
       "nc": 0
      }
     }
@@ -1230,9 +1070,63 @@
   },
   {
    "name": "루리웹",
-   "np": 29,
+   "np": 26,
    "nc": 0,
    "topics": [
+    {
+     "t": "2027년 수능 국어 오답률 높았다는 문제",
+     "nsite": 5,
+     "np_here": 2,
+     "nc_here": 0,
+     "issue_np": 7,
+     "issue_nc": 88,
+     "kw": [
+      "수능",
+      "국어",
+      "오답",
+      "만점"
+     ],
+     "top_post": {
+      "t": "이번 수능 세계사 오답률 90% 문제",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77458713?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "수능이 끝난 딸을 기다리는 아빠",
+     "nsite": 5,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 5,
+     "issue_nc": 62,
+     "kw": [
+      "아빠",
+      "수능"
+     ],
+     "top_post": {
+      "t": "수능이 끝난 딸을 기다리는 꽃을든 아빠",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77454092?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "초5 딸이 올해 수능 영어를 풀어봤습니다",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 5,
+     "issue_nc": 260,
+     "kw": [
+      "수능",
+      "영어",
+      "올해"
+     ],
+     "top_post": {
+      "t": "한국 수능 영어시험을 본 영어권 작가",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77453325?m=all&t=now",
+      "nc": 0
+     }
+    },
     {
      "t": "리트냥이 이진우 결말 명문대생의 일침",
      "nsite": 4,
@@ -1253,25 +1147,6 @@
      }
     },
     {
-     "t": "2027년 수능 국어 오답률 높았다는 문제",
-     "nsite": 4,
-     "np_here": 2,
-     "nc_here": 0,
-     "issue_np": 6,
-     "issue_nc": 88,
-     "kw": [
-      "수능",
-      "국어",
-      "오답",
-      "만점"
-     ],
-     "top_post": {
-      "t": "이번 수능 세계사 오답률 90% 문제",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77458713?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
      "t": "27수능 수학 1번 문제",
      "nsite": 4,
      "np_here": 1,
@@ -1279,8 +1154,8 @@
      "issue_np": 5,
      "issue_nc": 71,
      "kw": [
-      "수능",
-      "수학"
+      "수학",
+      "수능"
      ],
      "top_post": {
       "t": "AI 6종에 올해 수능 수학 풀게 했더니…모두 ‘만점권’",
@@ -1296,31 +1171,14 @@
      "issue_np": 5,
      "issue_nc": 62,
      "kw": [
-      "피해자",
       "재난문자",
+      "피해자",
       "최고",
       "최대"
      ],
      "top_post": {
       "t": "오늘 재난문자 최대 피해자",
       "u": "https://bbs.ruliweb.com/best/board/300143/read/77450744?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "수능이 끝난 딸을 기다리는 아빠",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 36,
-     "kw": [
-      "수능",
-      "아빠"
-     ],
-     "top_post": {
-      "t": "수능이 끝난 딸을 기다리는 꽃을든 아빠",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77454092?m=all&t=now",
       "nc": 0
      }
     },
@@ -1333,8 +1191,8 @@
      "issue_nc": 32,
      "kw": [
       "부정",
-      "시험",
       "행위자",
+      "시험",
       "여성"
      ],
      "top_post": {
@@ -1344,40 +1202,222 @@
      }
     },
     {
-     "t": "AI안경 쓰고 면접보니...수치까지 척척",
+     "t": "솔직히 동양남자는 눈에 들어오지도 않음 일단 동양남자들이 전체적으로 여자를 대하는 마인드 ...",
      "nsite": 4,
-     "np_here": 3,
+     "np_here": 1,
      "nc_here": 0,
-     "issue_np": 6,
-     "issue_nc": 19,
+     "issue_np": 4,
+     "issue_nc": 26,
      "kw": [
-      "AI",
-      "안경",
-      "수치",
-      "면접"
+      "여자",
+      "남자",
+      "동양"
      ],
      "top_post": {
-      "t": "AI안경 문제 해결 획기적인 방법 나왔다",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77449891?m=all&t=now",
+      "t": "여자가 남자를 좋아할 때의 생리현상",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77459280?m=all&t=now",
+      "nc": 0
+     }
+    }
+   ]
+  },
+  {
+   "name": "SLR클럽",
+   "np": 5,
+   "nc": 0,
+   "topics": [
+    {
+     "t": "수능이 끝난 딸을 기다리는 아빠",
+     "nsite": 5,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 5,
+     "issue_nc": 62,
+     "kw": [
+      "아빠",
+      "수능"
+     ],
+     "top_post": {
+      "t": "수능 끝난 딸 기다리는 아빠",
+      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677820",
       "nc": 0
      }
     },
     {
-     "t": "ai 논란 속 치뤄진 2027학년도 수능 이모저모",
+     "t": "솔직히 동양남자는 눈에 들어오지도 않음 일단 동양남자들이 전체적으로 여자를 대하는 마인드 ...",
      "nsite": 4,
-     "np_here": 2,
+     "np_here": 1,
      "nc_here": 0,
-     "issue_np": 9,
-     "issue_nc": 12,
+     "issue_np": 4,
+     "issue_nc": 26,
      "kw": [
-      "수능",
-      "AI",
-      "논란",
-      "학년도"
+      "여자",
+      "남자",
+      "동양"
      ],
      "top_post": {
-      "t": "이번 수능 AI 3개로 돌려본 결과",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77452101?m=humor",
+      "t": "백인들이 좋아하는 동양여자. JPG",
+      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677761",
+      "nc": 0
+     }
+    },
+    {
+     "t": "리트 이진우 심정지 상태로 발견",
+     "nsite": 4,
+     "np_here": 3,
+     "nc_here": 0,
+     "issue_np": 6,
+     "issue_nc": 21,
+     "kw": [
+      "이진우",
+      "발견",
+      "리트",
+      "정지"
+     ],
+     "top_post": {
+      "t": "이진우 심정지 발견",
+      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677763",
+      "nc": 0
+     }
+    }
+   ]
+  },
+  {
+   "name": "디시인사이드",
+   "np": 6,
+   "nc": 0,
+   "topics": [
+    {
+     "t": "초5 딸이 올해 수능 영어를 풀어봤습니다",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 5,
+     "issue_nc": 260,
+     "kw": [
+      "수능",
+      "영어",
+      "올해"
+     ],
+     "top_post": {
+      "t": "싱글벙글 외국인이 보는 수능 영어 요약..",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=480419&_dcbest=1&page=1",
+      "nc": 0
+     }
+    },
+    {
+     "t": "리트 이진우 심정지 상태로 발견",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 6,
+     "issue_nc": 21,
+     "kw": [
+      "이진우",
+      "발견",
+      "리트",
+      "정지"
+     ],
+     "top_post": {
+      "t": "리트냥이 이진우 심정지 상태로 발견.. jpg",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=480094&_dcbest=1&page=1",
+      "nc": 0
+     }
+    },
+    {
+     "t": "AI안경 쓰고 면접보니...수치까지 척척",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 6,
+     "issue_nc": 19,
+     "kw": [
+      "안경",
+      "AI",
+      "면접",
+      "수치"
+     ],
+     "top_post": {
+      "t": "AI안경 쓰고 면접보니...수치까지 척척",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=480288&_dcbest=1&page=1",
+      "nc": 0
+     }
+    },
+    {
+     "t": "한국 수출 ‘꿈의 1조달러’ 달성…세계 4번째",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 36,
+     "kw": [
+      "수출",
+      "달성",
+      "한국",
+      "세계"
+     ],
+     "top_post": {
+      "t": "한국 수출 ‘꿈의 1조달러’ 달성…세계 4번째",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=480181&_dcbest=1&page=1",
+      "nc": 0
+     }
+    },
+    {
+     "t": "요번 수능 세계사 정답률 7.4%짜리 문제",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 35,
+     "kw": [
+      "세계사",
+      "수능",
+      "정답"
+     ],
+     "top_post": {
+      "t": "싱글벙글 수능 세계사 오답률 92% 문제 정답..",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=480387&_dcbest=1&page=1",
+      "nc": 0
+     }
+    },
+    {
+     "t": "친구 결혼식에 갔다가 여자를 만난 썰",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 23,
+     "kw": [
+      "여자",
+      "친구"
+     ],
+     "top_post": {
+      "t": "임신이 하고싶은 일본인 여자친구.",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=480330&_dcbest=1&page=1",
+      "nc": 0
+     }
+    }
+   ]
+  },
+  {
+   "name": "오늘의유머",
+   "np": 1,
+   "nc": 0,
+   "topics": [
+    {
+     "t": "친구 결혼식에 갔다가 여자를 만난 썰",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 23,
+     "kw": [
+      "여자",
+      "친구"
+     ],
+     "top_post": {
+      "t": "친구 결혼식에 갔다가 여자를 만난 썰",
+      "u": "https://www.todayhumor.co.kr/board/view.php?table=bestofbest&no=484144&s_no=484144&page=1",
       "nc": 0
      }
     }
