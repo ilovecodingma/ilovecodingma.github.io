@@ -4177,6 +4177,11 @@ def class_pages():
         urls += exam.pages(page)
     except Exception as _e:
         print('시험 허브 건너뜀(사이트는 계속)', repr(_e)[:120])
+    try:   # 2026-11-21 시험 글 모음(/exam/articles/): 기존 글 주소 유지, 시험별로 묶어 보여 줌
+        import exam_articles
+        urls += exam_articles.pages(page)
+    except Exception as _e:
+        print('시험 글 모음 건너뜀(사이트는 계속)', repr(_e)[:120])
     try:   # 2026-11-20 시험 문제은행(/exam/bank/): 공식 공개 기출·공식 자료 기반 연습문제 (_gongmo/exam_data/bank/*.json)
         import exambank
         urls += exambank.pages(page)

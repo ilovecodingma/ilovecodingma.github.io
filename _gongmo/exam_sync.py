@@ -19,6 +19,11 @@ for nm in ('jeongsi_2027_universities.json', 'nonsul_2026_2027.json'):
         json.load(open(q, encoding='utf-8'))
         shutil.copyfile(q, os.path.join(DST, nm))
         print('표', nm)
+q = os.path.join(SRC, 'exam_articles.json')
+if os.path.exists(q):
+    json.load(open(q, encoding='utf-8'))
+    shutil.copyfile(q, os.path.join(DST, 'exam_articles.json'))
+    print('시험 글 목록')
 for f in glob.glob(os.path.join(SRC, 'cut_*.json')):
     d = json.load(open(f, encoding='utf-8'))
     eid = {'suneung-2027': 'csat-2027'}.get(d['exam_id'], d['exam_id'])   # 마케터 컷 파일의 exam_id 와 일정표 id 가 다를 때 맞춘다
