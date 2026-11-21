@@ -1,79 +1,604 @@
 {
- "at": "2026-11-20 09:17",
+ "at": "2026-11-21 09:17",
  "note": "날짜, 검색엔진, 검색어, 도착 주소, 수. 검색어 없음(q 빈칸)은 리퍼러에 검색어가 안 붙은 방문.",
  "coverage": {
-  "daum": {
-   "검색어 있음": 281,
-   "없음": 418
-  },
-  "naver": {
-   "검색어 있음": 2,
-   "없음": 38
-  },
   "google": {
    "검색어 있음": 0,
-   "없음": 335
+   "없음": 363
+  },
+  "daum": {
+   "검색어 있음": 741,
+   "없음": 717
   },
   "bing": {
    "검색어 있음": 0,
    "없음": 2
+  },
+  "naver": {
+   "검색어 있음": 2,
+   "없음": 99
   }
  },
  "rows": [
   {
-   "day": "2026-11-20",
+   "day": "2026-11-21",
+   "eng": "daum",
+   "q": "2027학년도 수능 국어 예상 등급컷",
+   "path": "/issue/suneung-2027-grade-cut-difficulty-answers-1119/",
+   "n": 3
+  },
+  {
+   "day": "2026-11-21",
+   "eng": "daum",
+   "q": "상속세 신고 안해도 되나요",
+   "path": "/money/guide/inheritance-tax-no-filing-needed-cases/",
+   "n": 2
+  },
+  {
+   "day": "2026-11-21",
+   "eng": "daum",
+   "q": "쿠팡 일용직 연차수당",
+   "path": "/money/guide/logistics-daily-job-insurance-weekly-holiday-pay/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-21",
+   "eng": "daum",
+   "q": "수능 결과 발표일",
+   "path": "/issue/suneung-score-report-1105/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-21",
+   "eng": "daum",
+   "q": "등급컷",
+   "path": "/issue/suneung-2027-grade-cut-difficulty-answers-1119/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-21",
+   "eng": "daum",
+   "q": "내용증명 반송시효과",
+   "path": "/money/guide/certified-mail-returned-effect-reply-period/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-21",
+   "eng": "daum",
+   "q": "2027학년도 수능 예상 등급컷",
+   "path": "/issue/suneung-2027-grade-cut-difficulty-answers-1119/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-21",
    "eng": "daum",
    "q": "2027학년도 수능 수학 예상 등급컷",
    "path": "/issue/suneung-2027-grade-cut-difficulty-answers-1119/",
-   "n": 16
+   "n": 1
+  },
+  {
+   "day": "2026-11-21",
+   "eng": "daum",
+   "q": "2027초등 임용고시 일정",
+   "path": "/money/guide/teacher-exam-2027-schedule/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-21",
+   "eng": "daum",
+   "q": "2027 수능 수학 등급컷",
+   "path": "/issue/suneung-2027-grade-cut-difficulty-answers-1119/",
+   "n": 1
   },
   {
    "day": "2026-11-20",
    "eng": "daum",
    "q": "수능 등급컷",
    "path": "/issue/suneung-2027-grade-cut-difficulty-answers-1119/",
-   "n": 11
+   "n": 135
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "2027학년도 수능 수학 예상 등급컷",
+   "path": "/issue/suneung-2027-grade-cut-difficulty-answers-1119/",
+   "n": 62
   },
   {
    "day": "2026-11-20",
    "eng": "daum",
    "q": "2027학년도 수능 국어 예상 등급컷",
    "path": "/issue/suneung-2027-grade-cut-difficulty-answers-1119/",
-   "n": 7
-  },
-  {
-   "day": "2026-11-20",
-   "eng": "daum",
-   "q": "수능 결과 발표일",
-   "path": "/issue/suneung-score-report-1105/",
-   "n": 4
-  },
-  {
-   "day": "2026-11-20",
-   "eng": "daum",
-   "q": "2027학년도 수능 예상 등급컷",
-   "path": "/issue/suneung-2027-grade-cut-difficulty-answers-1119/",
-   "n": 3
+   "n": 51
   },
   {
    "day": "2026-11-20",
    "eng": "daum",
    "q": "2027년 4대보험요율표",
    "path": "/money/guide/insurance-rates-2027-table/",
-   "n": 3
+   "n": 25
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "2027학년도 수능 예상 등급컷",
+   "path": "/issue/suneung-2027-grade-cut-difficulty-answers-1119/",
+   "n": 23
   },
   {
    "day": "2026-11-20",
    "eng": "daum",
    "q": "2027학년도 수능 영어 예상 등급컷",
    "path": "/issue/suneung-2027-grade-cut-difficulty-answers-1119/",
+   "n": 16
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "수능 결과 발표일",
+   "path": "/issue/suneung-score-report-1105/",
+   "n": 14
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "2027년 4대보험요율",
+   "path": "/money/guide/insurance-rates-2027-table/",
+   "n": 12
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "2027학년도 수능 한국사 예상 등급컷",
+   "path": "/issue/suneung-2027-grade-cut-difficulty-answers-1119/",
+   "n": 9
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "2027년 중등 임용고시 일정",
+   "path": "/money/guide/teacher-exam-2027-schedule/",
+   "n": 9
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "임용고시 일정",
+   "path": "/money/guide/teacher-exam-2027-schedule/",
+   "n": 6
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "2027년 건강보험 요율",
+   "path": "/money/guide/insurance-rates-2027-table/",
+   "n": 5
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "수시 합격자 발표일",
+   "path": "/money/guide/susi-2027-result-registration-schedule/",
+   "n": 4
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "국어 수능 등급컷",
+   "path": "/issue/suneung-2027-grade-cut-difficulty-answers-1119/",
+   "n": 4
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "수시 대학 추가합격자발표일",
+   "path": "/money/guide/susi-2027-result-registration-schedule/",
+   "n": 3
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "2027 수능 예상컷",
+   "path": "/issue/suneung-2027-grade-cut-difficulty-answers-1119/",
+   "n": 3
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "2027 수능",
+   "path": "/issue/suneung-2027-grade-cut-difficulty-answers-1119/",
+   "n": 3
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "질병으로 사직 후, 고용보험이나 산업재해로 인한 보상을 받을수 있나요?",
+   "path": "/money/guide/industrial-accident-benefits/",
    "n": 2
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "임용고시 일정",
+   "path": "/money/guide/teacher-exam-2027-first-round-result-second-round-schedule/",
+   "n": 2
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "상증법상 과소신고수정신고시 신고세액공제",
+   "path": "/money/guide/gift-tax-filing-howto/",
+   "n": 2
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "부산 초등 임용 합격자 발표",
+   "path": "/money/guide/teacher-exam-2027-first-round-result-second-round-schedule/",
+   "n": 2
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "노동부진정신청후 임금 지불 은 언제 되나요??",
+   "path": "/money/guide/unpaid-wage-petition-labor-office-process/",
+   "n": 2
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "38회 공인중개사시험 전망?",
+   "path": "/money/guide/licensed-realtor-2027-exam-schedule/",
+   "n": 2
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "2027초등 임용고시 일정",
+   "path": "/money/guide/teacher-exam-2027-schedule/",
+   "n": 2
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "2027년도 4대보험 요율",
+   "path": "/money/guide/insurance-rates-2027-table/",
+   "n": 2
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "2027년 장애인 연금",
+   "path": "/money/guide/disability-pension-2027-amount/",
+   "n": 2
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "2027년 4대보험요율",
+   "path": "/issue/insurance-rates-2027-1104/",
+   "n": 2
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "2027년 4대보험 요율",
+   "path": "/money/guide/insurance-rates-2027-table/",
+   "n": 2
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "2027 수능 예상 등급컷",
+   "path": "/issue/suneung-2027-grade-cut-difficulty-answers-1119/",
+   "n": 2
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "2027 국어 등급컷",
+   "path": "/issue/suneung-2027-grade-cut-difficulty-answers-1119/",
+   "n": 2
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "2027 검정고시 일정",
+   "path": "/money/guide/gumjeong-gosi-2027-schedule/",
+   "n": 2
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "2026년 기준 중위소득 표",
+   "path": "/money/guide/median-income-2027-table/",
+   "n": 2
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "희귀·중증난치질환 산정특례 본인부담률",
+   "path": "/issue/rare-disease-copay-7pct-1104/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "피부양자 자격의 인정기준 중 소득 및 재산요건",
+   "path": "/money/guide/nhis-dependent/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "취학통지서",
+   "path": "/money/guide/elementary-school-2027-admission-notice-orientation-date/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "출산전후 휴가",
+   "path": "/money/guide/maternity-leave/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "체당금 한도",
+   "path": "/money/guide/small-wage-substitute-payment-limit-apply/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "청년미래센터",
+   "path": "/money/guide/isolated-youth-support/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "중앙대 수시 합격자 발표일",
+   "path": "/money/guide/jeongsi-2027-result-announcement-dates-by-university/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "종부세 납부시기",
+   "path": "/money/guide/property-tax/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "제37회 공인중개사 시험",
+   "path": "/money/guide/licensed-realtor-2027-exam-schedule/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "자동차사고시 치료비120만원",
+   "path": "/money/guide/minor-injury-4week-certificate-fault-share/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "입사일기준 연차 지급일",
+   "path": "/money/guide/annual-leave-pay-calculation-payment/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "양도소득세 확정신고후1개월이내신고가산세",
+   "path": "/money/guide/capital-gains-tax-deadline-missed-penalty/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "약사 국가고시",
+   "path": "/money/guide/doctor-pharmacist-national-exam-2027-schedule/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "야쿠르트사료",
+   "path": "/c/Q02752/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "아들사망시 4000만원재산 상속신고여부",
+   "path": "/money/guide/death-report-inheritance-one-stop-service/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "승용차 정기검사주기",
+   "path": "/money/guide/car-inspection/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "숭실대학교 1차 수시 합격자",
+   "path": "/money/guide/jeongsi-2027-result-announcement-dates-by-university/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "수시 합격자 정시 지원",
+   "path": "/money/guide/susi-pass-jeongsi-apply-ban-double-registration/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "수시 예비합격자 정시에 지원가능",
+   "path": "/money/guide/susi-pass-jeongsi-apply-ban-double-registration/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "수능등급컷",
+   "path": "/issue/suneung-2027-grade-cut-difficulty-answers-1119/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "수능 국어 등급컷",
+   "path": "/issue/suneung-2027-grade-cut-difficulty-answers-1119/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "수능 국어 3등급 컷",
+   "path": "/issue/suneung-2027-grade-cut-difficulty-answers-1119/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "수능 결과 발표일 site:sungprofile.cloud",
+   "path": "/issue/suneung-score-report-1105/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "수급기간 별 실업수당",
+   "path": "/money/guide/unemployment-reemployment-allowance/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "소유주택 이력",
+   "path": "/money/guide/special-supply-first-home/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "서울 2027 중등 임용고시 일정",
+   "path": "/money/guide/teacher-exam-2027-to-quota-by-region/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "상사에서 원사 진급",
+   "path": "/money/guide/military-officer-pay-2027-salary-table/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "산업재해등급표",
+   "path": "/money/guide/industrial-accident-disability-benefit-grades/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "사망신고 기한",
+   "path": "/money/guide/death-report-inheritance-one-stop-service/",
+   "n": 1
   },
   {
    "day": "2026-11-20",
    "eng": "daum",
    "q": "보증채무이행청구서",
    "path": "/money/guide/jeonse-deposit-return-guarantee-claim-process/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "법인세율표",
+   "path": "/money/guide/corporate-tax-rate-2027-table/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "미성년자 상금 원천징수",
+   "path": "/guide/contest-prize-tax-other-income/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "마약류검사",
+   "path": "/money/guide/public-hire-medical-exam-hospital-cost-validity/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "마약검사 유효기간",
+   "path": "/money/guide/public-hire-medical-exam-hospital-cost-validity/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "대학 정시 발표일",
+   "path": "/money/guide/jeongsi-2027-result-announcement-dates-by-university/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "대출 상환방식",
+   "path": "/guide/loan-repayment-methods-comparison/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "김장배추 음식물 쓰레기",
+   "path": "/money/guide/kimjang-waste-disposal/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "기간제법 제4조",
+   "path": "/money/guide/fixed-term-worker-2year/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "권리금 기타소득 필요경비",
+   "path": "/money/guide/other-income-penalty-goodwill-necessary-expense/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "국어 등급컷 3등급예상",
+   "path": "/issue/suneung-2027-grade-cut-difficulty-answers-1119/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "국시원 26년 10월 시험일정",
+   "path": "/money/guide/kuksiwon-2027-exam-schedule/",
    "n": 1
   },
   {
@@ -86,8 +611,99 @@
   {
    "day": "2026-11-20",
    "eng": "daum",
+   "q": "국민연금 상한금액",
+   "path": "/money/guide/health-insurance-nps-premium-cap-floor-2027-table/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "교통사고 향후치료비",
+   "path": "/money/guide/minor-injury-future-treatment-cost-reform/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "공무직인 경우 산재보험 신청은 누가하나요?",
+   "path": "/money/guide/industrial-accident-benefits/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "공모전 상금 세금",
+   "path": "/guide/contest-prize-tax-other-income/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "고등 검정고시 일정 인천 2027",
+   "path": "/money/guide/gumjeong-gosi-2027-schedule/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "경북 중등임용 티오",
+   "path": "/money/guide/teacher-exam-2027-to-quota-by-region/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "건강보험료 법인체납시 근로자 통장압류",
+   "path": "/money/guide/account-seizure-release-tax-arrears-notice/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "건강보험 소득요건에 실업급여도 포함인가요?",
+   "path": "/money/guide/resign-health-insurance-dependent-vs-regional/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
    "q": "NGINX 버전확인 방법",
    "path": "/issue/nginx-unauth-rce-cve-patch-version-check-1119/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "3대 군인 가족 혜택",
+   "path": "/money/guide/military-merit-family-benefits/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "27학년도 수능 결과 발표일",
+   "path": "/issue/suneung-score-report-1105/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "27년 중등임용고시시험일",
+   "path": "/money/guide/teacher-exam-2027-schedule/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "27 간호사 시험일정",
+   "path": "/money/guide/kuksiwon-2027-exam-schedule/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "2027학년도 처음학교로 원아모집",
+   "path": "/money/guide/kindergarten-2027-portal/",
    "n": 1
   },
   {
@@ -107,15 +723,43 @@
   {
    "day": "2026-11-20",
    "eng": "daum",
-   "q": "2027초등 임용고시 일정",
-   "path": "/money/guide/teacher-exam-2027-schedule/",
+   "q": "2027수능",
+   "path": "/issue/suneung-2027-grade-cut-difficulty-answers-1119/",
    "n": 1
   },
   {
    "day": "2026-11-20",
    "eng": "daum",
-   "q": "2027년 장애인 연금",
-   "path": "/money/guide/disability-pension-2027-amount/",
+   "q": "2027년9월 경기도환승폐지",
+   "path": "/issue/gyeonggi-transfer-discount-budget-8months-1117/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "2027년 현충일 대체공휴일",
+   "path": "/money/guide/public-holidays-2027-calendar-table/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "2027년 초등교사 임용 1차시험성적 발표일",
+   "path": "/money/guide/teacher-exam-2027-first-round-result-second-round-schedule/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "2027년 중등 임용고시 일정",
+   "path": "/money/guide/teacher-exam-2027-to-quota-by-region/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "2027년 중등 임용고시 일정",
+   "path": "/money/guide/teacher-exam-2027-first-round-result-second-round-schedule/",
    "n": 1
   },
   {
@@ -128,6 +772,20 @@
   {
    "day": "2026-11-20",
    "eng": "daum",
+   "q": "2027년 부산 중등 임용고시 1차 시험 장소",
+   "path": "/money/guide/teacher-exam-2027-first-round-result-second-round-schedule/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "2027년 부사관 봉급표",
+   "path": "/money/guide/military-officer-pay-2027-salary-table/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
    "q": "2027년 기초연금액",
    "path": "/money/guide/basic-pension-2027-increase-announce/",
    "n": 1
@@ -135,8 +793,148 @@
   {
    "day": "2026-11-20",
    "eng": "daum",
+   "q": "2027년 교육급여",
+   "path": "/money/guide/education-benefit-2027-activity-support/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "2027년 공무원 봉급 인상률",
+   "path": "/money/guide/civil-servant-pay-2027-salary-table-all-occupations/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "2027년 건강보험요율",
+   "path": "/money/guide/insurance-rates-2027-table/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "2027년 5대 보험 요율표",
+   "path": "/money/guide/insurance-rates-2027-table/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "2027년 4대보험요율표",
+   "path": "/money/guide/median-income-2027-table/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "2027년 4대보험료율",
+   "path": "/issue/insurance-rates-2027-1104/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "2027교육급여",
+   "path": "/money/guide/education-benefit-2027-activity-support/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
    "q": "2027 중.고 특수교육 임용고시 일정",
    "path": "/money/guide/teacher-exam-2027-schedule/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "2027 수능컷",
+   "path": "/issue/suneung-2027-grade-cut-difficulty-answers-1119/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "2027 수능 등급",
+   "path": "/issue/suneung-2027-grade-cut-difficulty-answers-1119/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "2027 수능 국어 등급컷",
+   "path": "/issue/suneung-2027-grade-cut-difficulty-answers-1119/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "2027 교사 호봉표",
+   "path": "/money/guide/teacher-pay-2027-salary-table/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "2027 교사 호봉표",
+   "path": "/money/guide/civil-servant-pay-2027-salary-table-all-occupations/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "2027 가톨릭 대학교 수시 합격자 발표일",
+   "path": "/money/guide/susi-2027-result-registration-schedule/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "2026컴활 시험일정",
+   "path": "/money/guide/computer-skills-license-2027-schedule/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "2026 최저임금",
+   "path": "/money/guide/minimum-wage-2026-take-home-pay/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "2026 수능수험생 응시료",
+   "path": "/money/guide/after-suneung-license-parttime-rules/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "2026 수능 등급컷",
+   "path": "/issue/suneung-2027-grade-cut-difficulty-answers-1119/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "2026 공안직 공무원 봉급표",
+   "path": "/money/guide/public-security-pay-2027-salary-table/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "2007년생 11월 입대신청",
+   "path": "/money/guide/military-enlistment-2027-date-selection-schedule/",
+   "n": 1
+  },
+  {
+   "day": "2026-11-20",
+   "eng": "daum",
+   "q": "11월6일코스피지수",
+   "path": "/issue/sidecar-vs-circuit-breaker-1108/",
    "n": 1
   },
   {
