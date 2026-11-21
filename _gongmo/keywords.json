@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-22 01:00",
+ "updated": "2026-11-22 02:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -2619,6 +2619,18 @@
    "expires": "2026-11-25"
   },
   {
+   "query": "ai 버블",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-22",
+   "expires": "2026-11-25"
+  },
+  {
    "query": "메이저 리그 사커",
    "tier": "단기",
    "signal": [
@@ -3627,6 +3639,18 @@
    "expires": "2026-11-25"
   },
   {
+   "query": "첼시 대 리즈 유나이티드",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-22",
+   "expires": "2026-11-25"
+  },
+  {
    "query": "알렉산더 즈베레프",
    "tier": "단기",
    "signal": [
@@ -3888,6 +3912,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-21",
+   "expires": "2026-11-25"
+  },
+  {
+   "query": "맨시티",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-22",
    "expires": "2026-11-25"
   },
   {
