@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-21 19:00",
+ "updated": "2026-11-21 20:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -891,6 +891,18 @@
    "expires": "2026-11-24"
   },
   {
+   "query": "카타르 축구 국가대표팀",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 5000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-17",
+   "expires": "2026-11-24"
+  },
+  {
    "query": "국민연금공단",
    "tier": "단기",
    "signal": [
@@ -988,18 +1000,6 @@
   },
   {
    "query": "운세",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 5000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-17",
-   "expires": "2026-11-24"
-  },
-  {
-   "query": "카타르 축구 국가대표팀",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -1275,6 +1275,18 @@
    "expires": "2026-11-24"
   },
   {
+   "query": "손정의",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 5000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-21",
+   "expires": "2026-11-24"
+  },
+  {
    "query": "서울경제tv",
    "tier": "단기",
    "signal": [
@@ -1527,7 +1539,7 @@
    "expires": "2026-11-24"
   },
   {
-   "query": "손정의",
+   "query": "전북 현대 대 fc 서울 순위",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -2100,6 +2112,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-20",
+   "expires": "2026-11-24"
+  },
+  {
+   "query": "리야드",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-21",
    "expires": "2026-11-24"
   },
   {
@@ -2931,6 +2955,18 @@
    "expires": "2026-11-24"
   },
   {
+   "query": "마피아42",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-21",
+   "expires": "2026-11-24"
+  },
+  {
    "query": "뉴캐슬 대 에버튼 순위",
    "tier": "단기",
    "signal": [
@@ -3580,18 +3616,6 @@
   },
   {
    "query": "2026 mama - 오사카 (11/20)",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 2000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-21",
-   "expires": "2026-11-24"
-  },
-  {
-   "query": "마피아42",
    "tier": "단기",
    "signal": [
     "구글트렌드"
