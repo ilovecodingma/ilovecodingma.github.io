@@ -1,14 +1,14 @@
 {
  "date": "2026-11-22",
- "updated": "2026-11-22 03:50",
+ "updated": "2026-11-22 04:50",
  "sites": 13,
- "npost": 456,
+ "npost": 505,
  "note": "출처(커뮤니티)별 집계예요. 작성자·연령·성별 정보는 수집하지 않아요. posts 는 이슈별로 뽑힌 일부라 전체 글 수가 아니에요.",
  "sources": [
   {
    "name": "MLB파크",
    "np": 9,
-   "nc": 778,
+   "nc": 806,
    "topics": [
     {
      "t": "도대체 누가 왜 사먹는지도 모르는데 계속 생산되는 식품......",
@@ -18,8 +18,8 @@
      "issue_np": 1,
      "issue_nc": 148,
      "kw": [
-      "생산",
-      "식품"
+      "식품",
+      "생산"
      ],
      "top_post": {
       "t": "도대체 누가 왜 사먹는지도 모르는데 계속 생산되는 식품......",
@@ -31,27 +31,27 @@
      "t": "배종옥 요즘 mz배우들 태도에 일침",
      "nsite": 1,
      "np_here": 1,
-     "nc_here": 129,
+     "nc_here": 131,
      "issue_np": 1,
-     "issue_nc": 129,
+     "issue_nc": 131,
      "kw": [
-      "배우",
-      "태도",
-      "일침"
+      "일침",
+      "MZ",
+      "배우"
      ],
      "top_post": {
       "t": "배종옥 요즘 mz배우들 태도에 일침",
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611210120248172&m=view",
-      "nc": 129
+      "nc": 131
      }
     },
     {
      "t": "수능 지각생 속출… 한 맺힌 절규",
      "nsite": 1,
      "np_here": 1,
-     "nc_here": 105,
+     "nc_here": 106,
      "issue_np": 1,
-     "issue_nc": 105,
+     "issue_nc": 106,
      "kw": [
       "속출",
       "수능",
@@ -60,16 +60,16 @@
      "top_post": {
       "t": "수능 지각생 속출… 한 맺힌 절규",
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611210120249810&m=view",
-      "nc": 105
+      "nc": 106
      }
     },
     {
      "t": "충격적인 지드래곤 근황 ㄷㄷㄷ",
      "nsite": 1,
      "np_here": 1,
-     "nc_here": 99,
+     "nc_here": 100,
      "issue_np": 1,
-     "issue_nc": 99,
+     "issue_nc": 100,
      "kw": [
       "충격",
       "지드래곤"
@@ -77,24 +77,24 @@
      "top_post": {
       "t": "충격적인 지드래곤 근황 ㄷㄷㄷ",
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611210120247572&m=view",
-      "nc": 99
+      "nc": 100
      }
     },
     {
      "t": "저도 주식 꺼드럭글 중에 기억나는 글",
      "nsite": 1,
      "np_here": 1,
-     "nc_here": 85,
+     "nc_here": 88,
      "issue_np": 1,
-     "issue_nc": 85,
+     "issue_nc": 88,
      "kw": [
-      "주식",
-      "꺼드럭글"
+      "꺼드럭글",
+      "주식"
      ],
      "top_post": {
       "t": "저도 주식 꺼드럭글 중에 기억나는 글",
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611210120248364&m=view",
-      "nc": 85
+      "nc": 88
      }
     },
     {
@@ -105,13 +105,32 @@
      "issue_np": 1,
      "issue_nc": 85,
      "kw": [
-      "어제",
-      "김정은"
+      "김정은",
+      "어제"
      ],
      "top_post": {
       "t": "어제자 김정은 모습..",
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611210120251031&m=view",
       "nc": 85
+     }
+    },
+    {
+     "t": "현재 리만가설 증명 수학자협회 성명문 근황 올라왔네요.",
+     "nsite": 5,
+     "np_here": 1,
+     "nc_here": 68,
+     "issue_np": 5,
+     "issue_nc": 77,
+     "kw": [
+      "리만",
+      "가설",
+      "증명",
+      "협회"
+     ],
+     "top_post": {
+      "t": "현재 리만가설 증명 수학자협회 성명문 근황 올라왔네요.",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611220120253092&m=view",
+      "nc": 68
      }
     },
     {
@@ -122,32 +141,13 @@
      "issue_np": 2,
      "issue_nc": 62,
      "kw": [
-      "한국",
-      "영국"
+      "영국",
+      "한국"
      ],
      "top_post": {
       "t": "영국 여성이 한국 돌아다니며 느낀점",
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611210120246912&m=view",
       "nc": 59
-     }
-    },
-    {
-     "t": "현재 리만가설 증명 수학자협회 성명문 근황 올라왔네요.",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 47,
-     "issue_np": 4,
-     "issue_nc": 53,
-     "kw": [
-      "리만",
-      "증명",
-      "가설",
-      "수학자"
-     ],
-     "top_post": {
-      "t": "현재 리만가설 증명 수학자협회 성명문 근황 올라왔네요.",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611220120253092&m=view",
-      "nc": 47
      }
     }
    ]
@@ -182,9 +182,9 @@
      "issue_np": 1,
      "issue_nc": 147,
      "kw": [
-      "추천",
       "조회",
-      "이상"
+      "이상",
+      "추천"
      ],
      "top_post": {
       "t": "와 이상화 입 진짜 무겁다",
@@ -200,9 +200,9 @@
      "issue_np": 1,
      "issue_nc": 107,
      "kw": [
-      "이기심",
+      "행복",
       "아기",
-      "행복"
+      "이기심"
      ],
      "top_post": {
       "t": "아기가 주는 행복이 있다< <이 말도 ㄹㅇ 엄빠의 이기심 아님?",
@@ -218,8 +218,8 @@
      "issue_np": 2,
      "issue_nc": 87,
      "kw": [
-      "수능",
       "행위",
+      "수능",
       "부정"
      ],
      "top_post": {
@@ -233,15 +233,15 @@
   {
    "name": "개드립",
    "np": 7,
-   "nc": 129,
+   "nc": 141,
    "topics": [
     {
      "t": "중국:독도는 한국땅.",
      "nsite": 2,
      "np_here": 1,
-     "nc_here": 38,
+     "nc_here": 39,
      "issue_np": 2,
-     "issue_nc": 39,
+     "issue_nc": 40,
      "kw": [
       "한국",
       "독도"
@@ -249,16 +249,16 @@
      "top_post": {
       "t": "중국:독도는 한국땅.",
       "u": "https://www.dogdrip.net/dogdrip/735978759?sort_index=popular&page=1",
-      "nc": 38
+      "nc": 39
      }
     },
     {
      "t": "Gta 때문에 게임계가 시끄럽네",
      "nsite": 3,
      "np_here": 1,
-     "nc_here": 30,
+     "nc_here": 34,
      "issue_np": 4,
-     "issue_nc": 87,
+     "issue_nc": 91,
      "kw": [
       "게임",
       "GTA"
@@ -266,16 +266,16 @@
      "top_post": {
       "t": "게임 스트리머 gta6 솔직한 평가",
       "u": "https://www.dogdrip.net/dogdrip/735978991?sort_index=popular&page=1",
-      "nc": 30
+      "nc": 34
      }
     },
     {
      "t": "서울대 의대 26학번끼리 서로 AI안경 썼는지 검증",
      "nsite": 2,
      "np_here": 1,
-     "nc_here": 30,
+     "nc_here": 31,
      "issue_np": 2,
-     "issue_nc": 30,
+     "issue_nc": 31,
      "kw": [
       "의대",
       "AI",
@@ -284,52 +284,52 @@
      "top_post": {
       "t": "서울대 의대 26학번끼리 서로 AI안경 썼는지 검증",
       "u": "https://www.dogdrip.net/dogdrip/735978084?sort_index=popular&page=1",
-      "nc": 30
+      "nc": 31
      }
     },
     {
      "t": "ㅇㅎ) 의외로 좋아하는 남자들이 있다는 여자 신체부위",
      "nsite": 2,
      "np_here": 1,
-     "nc_here": 17,
+     "nc_here": 19,
      "issue_np": 2,
-     "issue_nc": 18,
+     "issue_nc": 20,
      "kw": [
-      "남자",
-      "여자"
+      "여자",
+      "남자"
      ],
      "top_post": {
       "t": "ㅇㅎ) 의외로 좋아하는 남자들이 있다는 여자 신체부위",
       "u": "https://www.dogdrip.net/dogdrip/735965859?sort_index=popular&page=1",
-      "nc": 17
+      "nc": 19
      }
     },
     {
      "t": "현재 리만가설 증명 수학자협회 성명문 근황 올라왔네요.",
-     "nsite": 4,
+     "nsite": 5,
      "np_here": 1,
-     "nc_here": 6,
-     "issue_np": 4,
-     "issue_nc": 53,
+     "nc_here": 8,
+     "issue_np": 5,
+     "issue_nc": 77,
      "kw": [
       "리만",
-      "증명",
       "가설",
-      "수학자"
+      "증명",
+      "협회"
      ],
      "top_post": {
       "t": "리만가설 증명보고 개빡친 수학자협회 성명문..",
       "u": "https://www.dogdrip.net/dogdrip/735992206?sort_index=popular&page=1",
-      "nc": 6
+      "nc": 8
      }
     },
     {
      "t": "아이 사진을 SNS에 올리고 싶지 않았던 부부",
      "nsite": 2,
      "np_here": 1,
-     "nc_here": 6,
+     "nc_here": 7,
      "issue_np": 2,
-     "issue_nc": 6,
+     "issue_nc": 7,
      "kw": [
       "부부",
       "SNS"
@@ -337,16 +337,16 @@
      "top_post": {
       "t": "아이 사진을 SNS에 올리고 싶지 않았던 부부",
       "u": "https://www.dogdrip.net/dogdrip/735958393?sort_index=popular&page=1",
-      "nc": 6
+      "nc": 7
      }
     },
     {
      "t": "진짜 역대급 판결",
      "nsite": 2,
      "np_here": 1,
-     "nc_here": 2,
+     "nc_here": 3,
      "issue_np": 2,
-     "issue_nc": 5,
+     "issue_nc": 6,
      "kw": [
       "판결",
       "역대"
@@ -354,7 +354,7 @@
      "top_post": {
       "t": "역대급으로 스윗한 판결.",
       "u": "https://www.dogdrip.net/dogdrip/735970269?sort_index=popular&page=1",
-      "nc": 2
+      "nc": 3
      }
     }
    ]
@@ -370,7 +370,7 @@
      "np_here": 1,
      "nc_here": 57,
      "issue_np": 4,
-     "issue_nc": 87,
+     "issue_nc": 91,
      "kw": [
       "게임",
       "GTA"
@@ -406,8 +406,8 @@
      "issue_np": 2,
      "issue_nc": 9,
      "kw": [
-      "세계사",
-      "수능"
+      "수능",
+      "세계사"
      ],
      "top_post": {
       "t": "수능 세계사 오답률 92%의 문제",
@@ -430,8 +430,8 @@
      "issue_np": 2,
      "issue_nc": 87,
      "kw": [
-      "수능",
       "행위",
+      "수능",
       "부정"
      ],
      "top_post": {
@@ -448,8 +448,8 @@
      "issue_np": 2,
      "issue_nc": 62,
      "kw": [
-      "한국",
-      "영국"
+      "영국",
+      "한국"
      ],
      "top_post": {
       "t": "영국 처자가 한국 올때마다 느끼는 것",
@@ -463,7 +463,7 @@
      "np_here": 1,
      "nc_here": 3,
      "issue_np": 2,
-     "issue_nc": 5,
+     "issue_nc": 6,
      "kw": [
       "판결",
       "역대"
@@ -482,8 +482,8 @@
      "issue_np": 2,
      "issue_nc": 3,
      "kw": [
-      "시장",
-      "주식"
+      "주식",
+      "시장"
      ],
      "top_post": {
       "t": "요즘 주식 시장에 대한 개인적인 소견",
@@ -497,7 +497,7 @@
      "np_here": 1,
      "nc_here": 1,
      "issue_np": 2,
-     "issue_nc": 39,
+     "issue_nc": 40,
      "kw": [
       "한국",
       "독도"
@@ -513,15 +513,15 @@
   {
    "name": "82쿡",
    "np": 1,
-   "nc": 7,
+   "nc": 11,
    "topics": [
     {
      "t": "주식 토론방마다 난리네요",
      "nsite": 2,
      "np_here": 1,
-     "nc_here": 7,
+     "nc_here": 11,
      "issue_np": 2,
-     "issue_nc": 7,
+     "issue_nc": 11,
      "kw": [
       "난리",
       "주식"
@@ -529,7 +529,7 @@
      "top_post": {
       "t": "주식 토론방마다 난리네요",
       "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4261633&page=1",
-      "nc": 7
+      "nc": 11
      }
     }
    ]
@@ -545,10 +545,10 @@
      "np_here": 1,
      "nc_here": 1,
      "issue_np": 2,
-     "issue_nc": 18,
+     "issue_nc": 20,
      "kw": [
-      "남자",
-      "여자"
+      "여자",
+      "남자"
      ],
      "top_post": {
       "t": "너네들 계속 그녀 괴롭히다 그녀가 알게되면 바로 그남자 찾아갈 여자다 니네가 제일 우려하는...",
@@ -564,12 +564,38 @@
      "issue_np": 2,
      "issue_nc": 1,
      "kw": [
-      "장원영",
-      "안유진"
+      "안유진",
+      "장원영"
      ],
      "top_post": {
       "t": "안 그래도 장원영 안유진 김채원 사쿠라도 참석함",
       "u": "https://pann.nate.com/talk/375730037",
+      "nc": 1
+     }
+    }
+   ]
+  },
+  {
+   "name": "클리앙",
+   "np": 1,
+   "nc": 1,
+   "topics": [
+    {
+     "t": "현재 리만가설 증명 수학자협회 성명문 근황 올라왔네요.",
+     "nsite": 5,
+     "np_here": 1,
+     "nc_here": 1,
+     "issue_np": 5,
+     "issue_nc": 77,
+     "kw": [
+      "리만",
+      "가설",
+      "증명",
+      "협회"
+     ],
+     "top_post": {
+      "t": "이제 리만가설이라고 부르면 안 되겠네요",
+      "u": "https://www.clien.net/service/board/park/19296718?od=T33&po=0&category=0&groupCd=clien_all",
       "nc": 1
      }
     }
@@ -582,16 +608,16 @@
    "topics": [
     {
      "t": "현재 리만가설 증명 수학자협회 성명문 근황 올라왔네요.",
-     "nsite": 4,
+     "nsite": 5,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 53,
+     "issue_np": 5,
+     "issue_nc": 77,
      "kw": [
       "리만",
-      "증명",
       "가설",
-      "수학자"
+      "증명",
+      "협회"
      ],
      "top_post": {
       "t": "Lean : 리만 가설 증명완료 축하드림",
@@ -603,21 +629,21 @@
   },
   {
    "name": "루리웹",
-   "np": 8,
+   "np": 9,
    "nc": 0,
    "topics": [
     {
      "t": "현재 리만가설 증명 수학자협회 성명문 근황 올라왔네요.",
-     "nsite": 4,
+     "nsite": 5,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 53,
+     "issue_np": 5,
+     "issue_nc": 77,
      "kw": [
       "리만",
-      "증명",
       "가설",
-      "수학자"
+      "증명",
+      "협회"
      ],
      "top_post": {
       "t": "다른 분도 AI 도움없이 리만 가설 증명 주장 하셨네",
@@ -631,7 +657,7 @@
      "np_here": 2,
      "nc_here": 0,
      "issue_np": 4,
-     "issue_nc": 87,
+     "issue_nc": 91,
      "kw": [
       "게임",
       "GTA"
@@ -643,12 +669,30 @@
      }
     },
     {
+     "t": "일본인 한국 병원 후기",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 0,
+     "kw": [
+      "일본인",
+      "한국",
+      "여행"
+     ],
+     "top_post": {
+      "t": "일본인이 한국여행에서 느낀점",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77477884?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
      "t": "서울대 의대 26학번끼리 서로 AI안경 썼는지 검증",
      "nsite": 2,
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 2,
-     "issue_nc": 30,
+     "issue_nc": 31,
      "kw": [
       "의대",
       "AI",
@@ -672,8 +716,8 @@
       "안경"
      ],
      "top_post": {
-      "t": "AI안경으로 난리인데 컴활 1급만 조용한 이유 ㅋㅋㅋ",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77477478?m=all&t=now",
+      "t": "님들 이제 큰일났음. 이제 AI 안경을 막을 방법이 없음.",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77477770?m=all&t=now",
       "nc": 0
      }
     },
@@ -683,7 +727,7 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 2,
-     "issue_nc": 6,
+     "issue_nc": 7,
      "kw": [
       "부부",
       "SNS"
@@ -702,12 +746,37 @@
      "issue_np": 2,
      "issue_nc": 0,
      "kw": [
-      "대표",
-      "명언"
+      "명언",
+      "대표"
      ],
      "top_post": {
       "t": "루리웹 대표 명언 중 하나",
       "u": "https://bbs.ruliweb.com/best/board/300143/read/77477774?m=all&t=now",
+      "nc": 0
+     }
+    }
+   ]
+  },
+  {
+   "name": "오늘의유머",
+   "np": 2,
+   "nc": 0,
+   "topics": [
+    {
+     "t": "일본인 한국 병원 후기",
+     "nsite": 3,
+     "np_here": 2,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 0,
+     "kw": [
+      "일본인",
+      "한국",
+      "여행"
+     ],
+     "top_post": {
+      "t": "일본인 한국 병원 후기",
+      "u": "https://www.todayhumor.co.kr/board/view.php?table=bestofbest&no=484138&s_no=484138&page=1",
       "nc": 0
      }
     }
@@ -719,6 +788,24 @@
    "nc": 0,
    "topics": [
     {
+     "t": "일본인 한국 병원 후기",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 0,
+     "kw": [
+      "일본인",
+      "한국",
+      "여행"
+     ],
+     "top_post": {
+      "t": "일본인들의 한국 여행은 정말 저렴하군요.",
+      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677913",
+      "nc": 0
+     }
+    },
+    {
      "t": "월요일에 못 들어가는 분은 주식판을 떠나는게 좋을 듯",
      "nsite": 2,
      "np_here": 1,
@@ -726,8 +813,8 @@
      "issue_np": 2,
      "issue_nc": 21,
      "kw": [
-      "월요일",
-      "주식"
+      "주식",
+      "월요일"
      ],
      "top_post": {
       "t": "월요일 주식 사실건가요 ㄷㄷㄷㄷ",
@@ -743,29 +830,12 @@
      "issue_np": 2,
      "issue_nc": 1,
      "kw": [
-      "장원영",
-      "안유진"
+      "안유진",
+      "장원영"
      ],
      "top_post": {
       "t": "장원영, 안유진 투샷",
       "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677920",
-      "nc": 0
-     }
-    },
-    {
-     "t": "일본인 한국 병원 후기",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 0,
-     "kw": [
-      "일본인",
-      "한국"
-     ],
-     "top_post": {
-      "t": "일본인들의 한국 여행은 정말 저렴하군요.",
-      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677913",
       "nc": 0
      }
     }
@@ -777,29 +847,12 @@
    "nc": 0,
    "topics": [
     {
-     "t": "수능 세계사 오답률 92%의 문제",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 2,
-     "issue_nc": 9,
-     "kw": [
-      "세계사",
-      "수능"
-     ],
-     "top_post": {
-      "t": "수능 세계사 문제를 본 중국인 반응",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=480698&_dcbest=1&page=1",
-      "nc": 0
-     }
-    },
-    {
      "t": "주식 토론방마다 난리네요",
      "nsite": 2,
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 2,
-     "issue_nc": 7,
+     "issue_nc": 11,
      "kw": [
       "난리",
       "주식"
@@ -811,6 +864,23 @@
      }
     },
     {
+     "t": "수능 세계사 오답률 92%의 문제",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 2,
+     "issue_nc": 9,
+     "kw": [
+      "수능",
+      "세계사"
+     ],
+     "top_post": {
+      "t": "수능 세계사 문제를 본 중국인 반응",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=480698&_dcbest=1&page=1",
+      "nc": 0
+     }
+    },
+    {
      "t": "요즘 주식 시장에 대한 개인적인 소견",
      "nsite": 2,
      "np_here": 1,
@@ -818,8 +888,8 @@
      "issue_np": 2,
      "issue_nc": 3,
      "kw": [
-      "시장",
-      "주식"
+      "주식",
+      "시장"
      ],
      "top_post": {
       "t": "아시아 주식 시장 대참사...",
@@ -835,36 +905,12 @@
      "issue_np": 2,
      "issue_nc": 0,
      "kw": [
-      "대표",
-      "명언"
+      "명언",
+      "대표"
      ],
      "top_post": {
       "t": "휴먼스토리 중 검정대표의 명언!!!",
       "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=480782&_dcbest=1&page=1",
-      "nc": 0
-     }
-    }
-   ]
-  },
-  {
-   "name": "오늘의유머",
-   "np": 2,
-   "nc": 0,
-   "topics": [
-    {
-     "t": "일본인 한국 병원 후기",
-     "nsite": 2,
-     "np_here": 2,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 0,
-     "kw": [
-      "일본인",
-      "한국"
-     ],
-     "top_post": {
-      "t": "일본인 한국 병원 후기",
-      "u": "https://www.todayhumor.co.kr/board/view.php?table=bestofbest&no=484138&s_no=484138&page=1",
       "nc": 0
      }
     }
