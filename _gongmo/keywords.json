@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-21 15:00",
+ "updated": "2026-11-21 16:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -1504,6 +1504,18 @@
   },
   {
    "query": "바이에른 대 쾰른",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 5000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-21",
+   "expires": "2026-11-24"
+  },
+  {
+   "query": "빅터 레이예스",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -3543,6 +3555,30 @@
    "expires": "2026-11-24"
   },
   {
+   "query": "전북 대 fc 서울",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-21",
+   "expires": "2026-11-24"
+  },
+  {
+   "query": "2026 mama - 오사카 (11/20)",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-21",
+   "expires": "2026-11-24"
+  },
+  {
    "query": "알렉산더 즈베레프",
    "tier": "단기",
    "signal": [
@@ -4863,6 +4899,18 @@
    "expires": "2026-11-24"
   },
   {
+   "query": "전현무",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-13",
+   "expires": "2026-11-24"
+  },
+  {
    "query": "김상식",
    "tier": "단기",
    "signal": [
@@ -6051,18 +6099,6 @@
    "expires": "2026-11-24"
   },
   {
-   "query": "전현무",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 1000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-13",
-   "expires": "2026-11-24"
-  },
-  {
    "query": "삼성 우승 할인",
    "tier": "단기",
    "signal": [
@@ -6448,6 +6484,30 @@
   },
   {
    "query": "코레일",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-21",
+   "expires": "2026-11-24"
+  },
+  {
+   "query": "김혜성",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-21",
+   "expires": "2026-11-24"
+  },
+  {
+   "query": "탈선",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -7458,6 +7518,19 @@
    "page": "",
    "registered": "2026-11-02",
    "expires": "2026-11-06"
+  },
+  {
+   "query": "퇴직금",
+   "tier": "장기",
+   "signal": [
+    "지식iN",
+    "자동완성"
+   ],
+   "score": 0,
+   "status": "작성",
+   "page": "/money/guide/severance/",
+   "registered": "2026-11-03",
+   "expires": ""
   },
   {
    "query": "근로장려금",
@@ -11525,19 +11598,6 @@
    "score": 0,
    "status": "작성",
    "page": "/money/guide/child-incentive-payment-conditions-amount/",
-   "registered": "2026-11-03",
-   "expires": ""
-  },
-  {
-   "query": "퇴직금",
-   "tier": "장기",
-   "signal": [
-    "지식iN",
-    "자동완성"
-   ],
-   "score": 0,
-   "status": "작성",
-   "page": "/money/guide/severance/",
    "registered": "2026-11-03",
    "expires": ""
   },
