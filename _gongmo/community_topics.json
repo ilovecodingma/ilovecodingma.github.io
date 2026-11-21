@@ -1,14 +1,14 @@
 {
  "date": "2026-11-21",
- "updated": "2026-11-21 16:50",
+ "updated": "2026-11-21 17:50",
  "sites": 13,
- "npost": 2667,
+ "npost": 2659,
  "note": "출처(커뮤니티)별 집계예요. 작성자·연령·성별 정보는 수집하지 않아요. posts 는 이슈별로 뽑힌 일부라 전체 글 수가 아니에요.",
  "sources": [
   {
    "name": "MLB파크",
-   "np": 18,
-   "nc": 904,
+   "np": 20,
+   "nc": 1003,
    "topics": [
     {
      "t": "초5 딸이 올해 수능 영어를 풀어봤습니다",
@@ -19,8 +19,8 @@
      "issue_nc": 333,
      "kw": [
       "수능",
-      "올해",
       "영어",
+      "올해",
       "미국인"
      ],
      "top_post": {
@@ -37,9 +37,9 @@
      "issue_np": 3,
      "issue_nc": 188,
      "kw": [
-      "남현희",
+      "경찰서",
       "전청조",
-      "경찰서"
+      "남현희"
      ],
      "top_post": {
       "t": "경찰서에서 만난 전청조 남현희",
@@ -55,9 +55,9 @@
      "issue_np": 2,
      "issue_nc": 69,
      "kw": [
-      "공부",
       "카이스트",
-      "재능"
+      "재능",
+      "공부"
      ],
      "top_post": {
       "t": "카이스트 학생 \"공부는 재능이다\"",
@@ -105,7 +105,7 @@
      "nsite": 2,
      "np_here": 2,
      "nc_here": 61,
-     "issue_np": 7,
+     "issue_np": 6,
      "issue_nc": 61,
      "kw": [
       "GTA",
@@ -127,8 +127,8 @@
      "issue_np": 7,
      "issue_nc": 65,
      "kw": [
-      "MAMA",
       "리센느",
+      "MAMA",
       "무대"
      ],
      "top_post": {
@@ -138,28 +138,30 @@
      }
     },
     {
-     "t": "키 174cm로 인생을 산다면, 남자 vs 여자",
-     "nsite": 3,
+     "t": "주식 폭락에 정신 놔버린 치과의사",
+     "nsite": 2,
      "np_here": 1,
-     "nc_here": 41,
+     "nc_here": 54,
      "issue_np": 3,
-     "issue_nc": 57,
+     "issue_nc": 54,
      "kw": [
-      "남자",
-      "여자"
+      "폭락",
+      "의사",
+      "치과",
+      "주식"
      ],
      "top_post": {
-      "t": "키 174cm로 인생을 산다면, 남자 vs 여자",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611200120226629&m=view",
-      "nc": 41
+      "t": "주식 폭락에 정신 놔버린 치과의사",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611210120241350&m=view",
+      "nc": 54
      }
     }
    ]
   },
   {
    "name": "개드립",
-   "np": 14,
-   "nc": 382,
+   "np": 13,
+   "nc": 387,
    "topics": [
     {
      "t": "경찰서에서 만난 전청조 남현희",
@@ -169,14 +171,48 @@
      "issue_np": 3,
      "issue_nc": 188,
      "kw": [
-      "남현희",
+      "경찰서",
       "전청조",
-      "경찰서"
+      "남현희"
      ],
      "top_post": {
       "t": "경찰서에서 만난 전청조, 남현희",
       "u": "https://www.dogdrip.net/dogdrip/735768323?sort_index=popular&page=1",
       "nc": 48
+     }
+    },
+    {
+     "t": "중학생도 이해가능한 리만가설 간단요약",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 45,
+     "issue_np": 5,
+     "issue_nc": 63,
+     "kw": [
+      "가설",
+      "리만"
+     ],
+     "top_post": {
+      "t": "중학생도 이해가능한 리만가설 간단요약",
+      "u": "https://www.dogdrip.net/dogdrip/735904852?sort_index=popular&page=1",
+      "nc": 45
+     }
+    },
+    {
+     "t": "배달시켰다가 양심 없어진 사람 돼버림",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 45,
+     "issue_np": 3,
+     "issue_nc": 48,
+     "kw": [
+      "양심",
+      "배달"
+     ],
+     "top_post": {
+      "t": "배달시켰다가 양심 없어진 사람 돼버림",
+      "u": "https://www.dogdrip.net/dogdrip/735794605?sort_index=popular&page=1",
+      "nc": 45
      }
     },
     {
@@ -187,9 +223,9 @@
      "issue_np": 3,
      "issue_nc": 46,
      "kw": [
-      "차별",
       "인종",
       "한국인",
+      "차별",
       "영국"
      ],
      "top_post": {
@@ -206,8 +242,8 @@
      "issue_np": 4,
      "issue_nc": 46,
      "kw": [
-      "알바",
       "임금",
+      "알바",
       "체불"
      ],
      "top_post": {
@@ -217,22 +253,22 @@
      }
     },
     {
-     "t": "이번 세계사 킬링 문제 ㅎㄷㄷ",
-     "nsite": 5,
-     "np_here": 2,
-     "nc_here": 39,
-     "issue_np": 9,
-     "issue_nc": 48,
+     "t": "리만가설 증명을 본 수학자 실시간 반응",
+     "nsite": 4,
+     "np_here": 3,
+     "nc_here": 38,
+     "issue_np": 7,
+     "issue_nc": 56,
      "kw": [
-      "세계사",
-      "수능",
-      "오답",
-      "킬링"
+      "가설",
+      "증명",
+      "리만",
+      "주장"
      ],
      "top_post": {
-      "t": "요번 수능 세계사 정답률 7.4%짜리 문제",
-      "u": "https://www.dogdrip.net/dogdrip/735755931?sort_index=popular&page=1",
-      "nc": 35
+      "t": "앤트로픽 리만가설 증명 진행상황 만와",
+      "u": "https://www.dogdrip.net/dogdrip/735918854?sort_index=popular&page=1",
+      "nc": 18
      }
     },
     {
@@ -255,47 +291,12 @@
      }
     },
     {
-     "t": "중학생도 이해가능한 리만가설 간단요약",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 36,
-     "issue_np": 8,
-     "issue_nc": 54,
-     "kw": [
-      "리만",
-      "가설",
-      "AI"
-     ],
-     "top_post": {
-      "t": "중학생도 이해가능한 리만가설 간단요약",
-      "u": "https://www.dogdrip.net/dogdrip/735904852?sort_index=popular&page=1",
-      "nc": 36
-     }
-    },
-    {
-     "t": "전국에 한명 뿐인 수능보다 '1억 잭팟' 터진 수험생 ㄷㄷㄷ",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 36,
-     "issue_np": 3,
-     "issue_nc": 36,
-     "kw": [
-      "수험",
-      "수능"
-     ],
-     "top_post": {
-      "t": "전국에 한명 뿐인 수능보다 '1억 잭팟' 터진 수험생 ㄷㄷㄷ",
-      "u": "https://www.dogdrip.net/dogdrip/735820846?sort_index=popular&page=1",
-      "nc": 36
-     }
-    },
-    {
      "t": "리트냥이 유서 짧은 이유 알거같아",
      "nsite": 3,
      "np_here": 1,
-     "nc_here": 23,
+     "nc_here": 34,
      "issue_np": 3,
-     "issue_nc": 39,
+     "issue_nc": 50,
      "kw": [
       "리트냥이",
       "유서"
@@ -303,7 +304,7 @@
      "top_post": {
       "t": "리트냥이 유서 내용 공개",
       "u": "https://www.dogdrip.net/dogdrip/735925434?sort_index=popular&page=1",
-      "nc": 23
+      "nc": 34
      }
     }
    ]
@@ -335,8 +336,8 @@
      "nsite": 5,
      "np_here": 1,
      "nc_here": 84,
-     "issue_np": 7,
-     "issue_nc": 120,
+     "issue_np": 6,
+     "issue_nc": 98,
      "kw": [
       "행위",
       "부정",
@@ -369,123 +370,6 @@
    ]
   },
   {
-   "name": "82쿡",
-   "np": 8,
-   "nc": 88,
-   "topics": [
-    {
-     "t": "수능 부정행위 단속 총정리",
-     "nsite": 5,
-     "np_here": 3,
-     "nc_here": 36,
-     "issue_np": 7,
-     "issue_nc": 120,
-     "kw": [
-      "행위",
-      "부정",
-      "수능"
-     ],
-     "top_post": {
-      "t": "정부의 향후 수능 부정행위 대응 내용 발표 - 한성숙",
-      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4261157&page=1",
-      "nc": 22
-     }
-    },
-    {
-     "t": "수능재난문자때문에 아이가 죽을뻔했다는 아줌마",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 33,
-     "issue_np": 7,
-     "issue_nc": 36,
-     "kw": [
-      "수능",
-      "문자",
-      "재난"
-     ],
-     "top_post": {
-      "t": "수능 재난문자 재미있으셨나요?",
-      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4261139&page=1",
-      "nc": 33
-     }
-    },
-    {
-     "t": "죽어도 이해 못하는 김건희",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 6,
-     "issue_np": 3,
-     "issue_nc": 6,
-     "kw": [
-      "김건",
-      "이해",
-      "억울",
-      "징역"
-     ],
-     "top_post": {
-      "t": "'징역 4년' 김건희 \"죽어도 이해 못 하겠다…억울하고..",
-      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4261183&page=1",
-      "nc": 6
-     }
-    },
-    {
-     "t": "한성숙 “어제 수능서 의심되는 와이파이·블루투스 신호 기록 저장…수사 의뢰할 것”",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 6,
-     "issue_np": 3,
-     "issue_nc": 6,
-     "kw": [
-      "의심",
-      "와이파이",
-      "블루투스",
-      "수능"
-     ],
-     "top_post": {
-      "t": "올해 수능, 의심되는 와이파이와 블루투스 기록 조사한다",
-      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4261244&page=1",
-      "nc": 6
-     }
-    },
-    {
-     "t": "부동산 규제 풀어야할거같은디",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 5,
-     "issue_np": 4,
-     "issue_nc": 39,
-     "kw": [
-      "규제",
-      "부동산",
-      "대출",
-      "열풍"
-     ],
-     "top_post": {
-      "t": "“대통령도 했잖아?” 부동산 규제 비웃는 ‘주인 대출’ 열풍",
-      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4261397&page=1",
-      "nc": 5
-     }
-    },
-    {
-     "t": "키 174cm로 인생을 산다면, 남자 vs 여자",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 2,
-     "issue_np": 3,
-     "issue_nc": 57,
-     "kw": [
-      "남자",
-      "여자"
-     ],
-     "top_post": {
-      "t": "남자는 대부분 여자랑 노는걸 재미없어 한다던데",
-      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4261199&page=1",
-      "nc": 2
-     }
-    }
-   ]
-  },
-  {
    "name": "네이트판",
    "np": 4,
    "nc": 67,
@@ -496,7 +380,7 @@
      "np_here": 3,
      "nc_here": 53,
      "issue_np": 5,
-     "issue_nc": 74,
+     "issue_nc": 85,
      "kw": [
       "남자",
       "친구",
@@ -528,34 +412,194 @@
    ]
   },
   {
-   "name": "아카라이브",
-   "np": 3,
-   "nc": 42,
+   "name": "클리앙",
+   "np": 6,
+   "nc": 41,
    "topics": [
     {
-     "t": "원신도 부정행위자가 있구나",
-     "nsite": 3,
+     "t": "리만가설 증명을 본 수학자 실시간 반응",
+     "nsite": 4,
      "np_here": 1,
-     "nc_here": 17,
-     "issue_np": 3,
-     "issue_nc": 41,
+     "nc_here": 18,
+     "issue_np": 7,
+     "issue_nc": 56,
      "kw": [
-      "행위자",
-      "부정"
+      "가설",
+      "증명",
+      "리만",
+      "주장"
      ],
      "top_post": {
-      "t": "원신도 부정행위자가 있구나",
-      "u": "https://arca.live/b/live/189662762?p=1",
-      "nc": 17
+      "t": "AI 없이 리만 가설 증명했다는 사람 논문 서문 정말 멋지네요..",
+      "u": "https://www.clien.net/service/board/park/19296472?od=T33&po=0&category=0&groupCd=clien_all",
+      "nc": 18
      }
     },
+    {
+     "t": "부동산 규제 풀어야할거같은디",
+     "nsite": 3,
+     "np_here": 2,
+     "nc_here": 9,
+     "issue_np": 4,
+     "issue_nc": 40,
+     "kw": [
+      "부동산",
+      "규제",
+      "주인",
+      "열풍"
+     ],
+     "top_post": {
+      "t": "'대통령도 했잖아?' 부동산 규제 비웃는 '주인 대출' 열풍",
+      "u": "https://www.clien.net/service/board/park/19296506?od=T33&po=0&category=0&groupCd=clien_all",
+      "nc": 5
+     }
+    },
+    {
+     "t": "역대급 폭락장이라는 코스피 상황",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 6,
+     "issue_np": 2,
+     "issue_nc": 51,
+     "kw": [
+      "코스피",
+      "폭락"
+     ],
+     "top_post": {
+      "t": "코스피 역사적 폭락장과 현재 비교",
+      "u": "https://www.clien.net/service/board/park/19296371?od=T33&po=0&category=0&groupCd=clien_all",
+      "nc": 6
+     }
+    },
+    {
+     "t": "MAMA에서 리센느 제대로 챙겨줬네요.",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 5,
+     "issue_np": 7,
+     "issue_nc": 65,
+     "kw": [
+      "리센느",
+      "MAMA",
+      "무대"
+     ],
+     "top_post": {
+      "t": "리센느 2026 MAMA 무대",
+      "u": "https://www.clien.net/service/board/park/19296193?od=T33&po=0&category=0&groupCd=clien_all",
+      "nc": 5
+     }
+    },
+    {
+     "t": "이번주 로또 당첨기원",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 3,
+     "issue_np": 4,
+     "issue_nc": 4,
+     "kw": [
+      "로또",
+      "당첨"
+     ],
+     "top_post": {
+      "t": "1억 로또에 당첨되었네요",
+      "u": "https://www.clien.net/service/board/park/19296238?od=T33&po=0&category=0&groupCd=clien_all",
+      "nc": 3
+     }
+    }
+   ]
+  },
+  {
+   "name": "82쿡",
+   "np": 5,
+   "nc": 27,
+   "topics": [
+    {
+     "t": "수능 부정행위 단속 총정리",
+     "nsite": 5,
+     "np_here": 2,
+     "nc_here": 14,
+     "issue_np": 6,
+     "issue_nc": 98,
+     "kw": [
+      "행위",
+      "부정",
+      "수능"
+     ],
+     "top_post": {
+      "t": "수능 부정행위와 별개로 이번 수능 물품들",
+      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4261479&page=1",
+      "nc": 9
+     }
+    },
+    {
+     "t": "죽어도 이해 못하는 김건희",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 6,
+     "issue_np": 3,
+     "issue_nc": 6,
+     "kw": [
+      "김건",
+      "이해",
+      "징역",
+      "억울"
+     ],
+     "top_post": {
+      "t": "'징역 4년' 김건희 \"죽어도 이해 못 하겠다…억울하고..",
+      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4261183&page=1",
+      "nc": 6
+     }
+    },
+    {
+     "t": "부동산 규제 풀어야할거같은디",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 5,
+     "issue_np": 4,
+     "issue_nc": 40,
+     "kw": [
+      "부동산",
+      "규제",
+      "주인",
+      "열풍"
+     ],
+     "top_post": {
+      "t": "“대통령도 했잖아?” 부동산 규제 비웃는 ‘주인 대출’ 열풍",
+      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4261397&page=1",
+      "nc": 5
+     }
+    },
+    {
+     "t": "키 174cm로 인생을 산다면, 남자 vs 여자",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 2,
+     "issue_np": 3,
+     "issue_nc": 57,
+     "kw": [
+      "남자",
+      "여자"
+     ],
+     "top_post": {
+      "t": "남자는 대부분 여자랑 노는걸 재미없어 한다던데",
+      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4261199&page=1",
+      "nc": 2
+     }
+    }
+   ]
+  },
+  {
+   "name": "아카라이브",
+   "np": 2,
+   "nc": 25,
+   "topics": [
     {
      "t": "리트냥이 유서 짧은 이유 알거같아",
      "nsite": 3,
      "np_here": 1,
      "nc_here": 16,
      "issue_np": 3,
-     "issue_nc": 39,
+     "issue_nc": 50,
      "kw": [
       "리트냥이",
       "유서"
@@ -572,7 +616,7 @@
      "np_here": 1,
      "nc_here": 9,
      "issue_np": 9,
-     "issue_nc": 48,
+     "issue_nc": 16,
      "kw": [
       "세계사",
       "수능",
@@ -588,97 +632,52 @@
    ]
   },
   {
-   "name": "클리앙",
-   "np": 5,
-   "nc": 33,
+   "name": "보배드림",
+   "np": 9,
+   "nc": 19,
    "topics": [
     {
-     "t": "리만가설 증명을 본 수학자 실시간 반응",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 17,
-     "issue_np": 6,
-     "issue_nc": 37,
-     "kw": [
-      "증명",
-      "리만",
-      "가설",
-      "주장"
-     ],
-     "top_post": {
-      "t": "AI 없이 리만 가설 증명했다는 사람 논문 서문 정말 멋지네요..",
-      "u": "https://www.clien.net/service/board/park/19296472?od=T33&po=0&category=0&groupCd=clien_all",
-      "nc": 17
-     }
-    },
-    {
-     "t": "부동산 규제 풀어야할거같은디",
-     "nsite": 3,
-     "np_here": 2,
-     "nc_here": 8,
-     "issue_np": 4,
-     "issue_nc": 39,
-     "kw": [
-      "규제",
-      "부동산",
-      "대출",
-      "열풍"
-     ],
-     "top_post": {
-      "t": "'대통령도 했잖아?' 부동산 규제 비웃는 '주인 대출' 열풍",
-      "u": "https://www.clien.net/service/board/park/19296506?od=T33&po=0&category=0&groupCd=clien_all",
-      "nc": 5
-     }
-    },
-    {
-     "t": "MAMA에서 리센느 제대로 챙겨줬네요.",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 5,
-     "issue_np": 7,
-     "issue_nc": 65,
-     "kw": [
-      "MAMA",
-      "리센느",
-      "무대"
-     ],
-     "top_post": {
-      "t": "리센느 2026 MAMA 무대",
-      "u": "https://www.clien.net/service/board/park/19296193?od=T33&po=0&category=0&groupCd=clien_all",
-      "nc": 5
-     }
-    },
-    {
-     "t": "이번주 로또 당첨기원",
+     "t": "배달시켰다가 양심 없어진 사람 돼버림",
      "nsite": 3,
      "np_here": 1,
      "nc_here": 3,
      "issue_np": 3,
-     "issue_nc": 4,
+     "issue_nc": 48,
      "kw": [
-      "당첨",
-      "로또"
+      "양심",
+      "배달"
      ],
      "top_post": {
-      "t": "1억 로또에 당첨되었네요",
-      "u": "https://www.clien.net/service/board/park/19296238?od=T33&po=0&category=0&groupCd=clien_all",
+      "t": "배달시켰다가 양심 없어진 사람 돼버림",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1049022&vdate=",
       "nc": 3
      }
-    }
-   ]
-  },
-  {
-   "name": "보배드림",
-   "np": 8,
-   "nc": 19,
-   "topics": [
+    },
     {
-     "t": "수능재난문자때문에 아이가 죽을뻔했다는 아줌마",
-     "nsite": 4,
+     "t": "9개월 만에 임금체불 받은 알바생",
+     "nsite": 3,
      "np_here": 1,
      "nc_here": 3,
-     "issue_np": 7,
-     "issue_nc": 36,
+     "issue_np": 4,
+     "issue_nc": 46,
+     "kw": [
+      "임금",
+      "알바",
+      "체불"
+     ],
+     "top_post": {
+      "t": "9개월 만에 임금체불 받은 알바생",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1049089&vdate=",
+      "nc": 3
+     }
+    },
+    {
+     "t": "수능재난문자때문에 아이가 죽을뻔했다는 아줌마",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 3,
+     "issue_np": 6,
+     "issue_nc": 3,
      "kw": [
       "수능",
       "문자",
@@ -691,41 +690,6 @@
      }
     },
     {
-     "t": "9개월 만에 임금체불 받은 알바생",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 3,
-     "issue_np": 4,
-     "issue_nc": 46,
-     "kw": [
-      "알바",
-      "임금",
-      "체불"
-     ],
-     "top_post": {
-      "t": "9개월 만에 임금체불 받은 알바생",
-      "u": "https://www.bobaedream.co.kr/view?code=best&No=1049089&vdate=",
-      "nc": 3
-     }
-    },
-    {
-     "t": "원신도 부정행위자가 있구나",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 3,
-     "issue_np": 3,
-     "issue_nc": 41,
-     "kw": [
-      "행위자",
-      "부정"
-     ],
-     "top_post": {
-      "t": "수능때 안걸린 부정행위자들 ㅈ됐음",
-      "u": "https://www.bobaedream.co.kr/view?code=best&No=1049151&vdate=",
-      "nc": 3
-     }
-    },
-    {
      "t": "배우 김민 산불 번지자 소화기 들고 진화",
      "nsite": 3,
      "np_here": 1,
@@ -734,8 +698,8 @@
      "issue_nc": 3,
      "kw": [
       "진화",
-      "소화기",
       "산불",
+      "소화기",
       "김민"
      ],
      "top_post": {
@@ -770,9 +734,9 @@
      "issue_np": 3,
      "issue_nc": 46,
      "kw": [
-      "차별",
       "인종",
       "한국인",
+      "차별",
       "영국"
      ],
      "top_post": {
@@ -805,11 +769,11 @@
      "nsite": 3,
      "np_here": 1,
      "nc_here": 1,
-     "issue_np": 3,
+     "issue_np": 4,
      "issue_nc": 4,
      "kw": [
-      "당첨",
-      "로또"
+      "로또",
+      "당첨"
      ],
      "top_post": {
       "t": "이번주 로또 당첨기원",
@@ -821,7 +785,7 @@
   },
   {
    "name": "더쿠",
-   "np": 8,
+   "np": 6,
    "nc": 0,
    "topics": [
     {
@@ -829,8 +793,8 @@
      "nsite": 5,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 7,
-     "issue_nc": 120,
+     "issue_np": 6,
+     "issue_nc": 98,
      "kw": [
       "행위",
       "부정",
@@ -869,30 +833,13 @@
      "issue_np": 3,
      "issue_nc": 188,
      "kw": [
-      "남현희",
+      "경찰서",
       "전청조",
-      "경찰서"
+      "남현희"
      ],
      "top_post": {
       "t": "경찰서에서 만난 전청조와 남현희",
       "u": "https://theqoo.net/hot/4412826840",
-      "nc": 0
-     }
-    },
-    {
-     "t": "전국에 한명 뿐인 수능보다 '1억 잭팟' 터진 수험생 ㄷㄷㄷ",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 36,
-     "kw": [
-      "수험",
-      "수능"
-     ],
-     "top_post": {
-      "t": "수능 보러 갔다가 1억 당첨된 수험생",
-      "u": "https://theqoo.net/hot/4412595609",
       "nc": 0
      }
     },
@@ -906,31 +853,12 @@
      "kw": [
       "김건",
       "이해",
-      "억울",
-      "징역"
+      "징역",
+      "억울"
      ],
      "top_post": {
       "t": "[속보] '징역 4년' 김건희 \"죽어도 이해 못 하겠다…억울하고 비통\"",
       "u": "https://theqoo.net/hot/4412763088",
-      "nc": 0
-     }
-    },
-    {
-     "t": "한성숙 “어제 수능서 의심되는 와이파이·블루투스 신호 기록 저장…수사 의뢰할 것”",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 6,
-     "kw": [
-      "의심",
-      "와이파이",
-      "블루투스",
-      "수능"
-     ],
-     "top_post": {
-      "t": "한성숙 “어제 수능서 의심되는 와이파이·블루투스 신호 기록 저장…수사 의뢰할 것”",
-      "u": "https://theqoo.net/hot/4412777126",
       "nc": 0
      }
     },
@@ -943,8 +871,8 @@
      "issue_nc": 3,
      "kw": [
       "진화",
-      "소화기",
       "산불",
+      "소화기",
       "김민"
      ],
      "top_post": {
@@ -961,13 +889,165 @@
      "issue_np": 5,
      "issue_nc": 2,
      "kw": [
-      "페이",
       "네이버",
+      "페이",
       "랜덤"
      ],
      "top_post": {
       "t": "네이버페이180원+15원+1원+1원+1원+1원+랜덤 눌러봐++10원+5원+눌러눌러 보험랜덤+보험랜덤 하나더+라이브미리보고5원받기",
       "u": "https://theqoo.net/hot/4413390343",
+      "nc": 0
+     }
+    }
+   ]
+  },
+  {
+   "name": "루리웹",
+   "np": 37,
+   "nc": 0,
+   "topics": [
+    {
+     "t": "수능 부정행위 단속 총정리",
+     "nsite": 5,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 6,
+     "issue_nc": 98,
+     "kw": [
+      "행위",
+      "부정",
+      "수능"
+     ],
+     "top_post": {
+      "t": "부정행위는 누군가의 꿈을 짓밟는거임",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77462894?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "이번 세계사 킬링 문제 ㅎㄷㄷ",
+     "nsite": 5,
+     "np_here": 2,
+     "nc_here": 0,
+     "issue_np": 9,
+     "issue_nc": 16,
+     "kw": [
+      "세계사",
+      "수능",
+      "오답",
+      "킬링"
+     ],
+     "top_post": {
+      "t": "현재 중국,대만에서도 이슈인 이번 수능 세계사 문제 ㄷㄷㄷ",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77468607?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "중학생도 이해가능한 리만가설 간단요약",
+     "nsite": 4,
+     "np_here": 2,
+     "nc_here": 0,
+     "issue_np": 5,
+     "issue_nc": 63,
+     "kw": [
+      "가설",
+      "리만"
+     ],
+     "top_post": {
+      "t": "드디어 리만 가설 해결했다는 AI 근황 ㄷㄷㄷㄷㄷㄷㄷ",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77465689?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "리만가설 증명을 본 수학자 실시간 반응",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 7,
+     "issue_nc": 56,
+     "kw": [
+      "가설",
+      "증명",
+      "리만",
+      "주장"
+     ],
+     "top_post": {
+      "t": "리만가설 증명 제3자가 컴파일 성공",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77466661?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "안경 맞춰주고 의대가라는 아버지",
+     "nsite": 4,
+     "np_here": 3,
+     "nc_here": 0,
+     "issue_np": 6,
+     "issue_nc": 38,
+     "kw": [
+      "안경",
+      "아버지",
+      "의대",
+      "기대"
+     ],
+     "top_post": {
+      "t": "안경하나 사주고 딸이 의대가길 기대하는 아버지",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77461266?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "현 주식시장 상황.....(슬픔 주의)",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 33,
+     "kw": [
+      "주식",
+      "시장"
+     ],
+     "top_post": {
+      "t": "한국 주식시장 근황",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77464193?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "어제 남자친구랑 헤어졌는데 이제 다신 남자 못사귈것같아 나랑 남친(이제 전남친이지만 그냥 남...",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 5,
+     "issue_nc": 85,
+     "kw": [
+      "남자",
+      "친구",
+      "남친"
+     ],
+     "top_post": {
+      "t": "남자친구 안 만드는 소꿉친구.manga",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77471701?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "MAMA에서 리센느 제대로 챙겨줬네요.",
+     "nsite": 3,
+     "np_here": 2,
+     "nc_here": 0,
+     "issue_np": 7,
+     "issue_nc": 65,
+     "kw": [
+      "리센느",
+      "MAMA",
+      "무대"
+     ],
+     "top_post": {
+      "t": "MAMA2026 리센느 엄마들 메세지의 맴버들 반응",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77463796?m=all&t=now",
       "nc": 0
      }
     }
@@ -984,7 +1064,7 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 9,
-     "issue_nc": 48,
+     "issue_nc": 16,
      "kw": [
       "세계사",
       "수능",
@@ -1007,8 +1087,8 @@
      "kw": [
       "김건",
       "이해",
-      "억울",
-      "징역"
+      "징역",
+      "억울"
      ],
      "top_post": {
       "t": "죽어도 이해 못하는 김건희",
@@ -1064,7 +1144,7 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 9,
-     "issue_nc": 48,
+     "issue_nc": 16,
      "kw": [
       "세계사",
       "수능",
@@ -1086,8 +1166,8 @@
      "issue_nc": 333,
      "kw": [
       "수능",
-      "올해",
       "영어",
+      "올해",
       "미국인"
      ],
      "top_post": {
@@ -1101,12 +1181,11 @@
      "nsite": 4,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 8,
-     "issue_nc": 54,
+     "issue_np": 5,
+     "issue_nc": 63,
      "kw": [
-      "리만",
       "가설",
-      "AI"
+      "리만"
      ],
      "top_post": {
       "t": "두근두근 리만 가설이 풀리면 생활에 바뀌는 점??!",
@@ -1119,12 +1198,12 @@
      "nsite": 4,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 6,
-     "issue_nc": 37,
+     "issue_np": 7,
+     "issue_nc": 56,
      "kw": [
+      "가설",
       "증명",
       "리만",
-      "가설",
       "주장"
      ],
      "top_post": {
@@ -1134,29 +1213,11 @@
      }
     },
     {
-     "t": "수능재난문자때문에 아이가 죽을뻔했다는 아줌마",
+     "t": "현 주식시장 상황.....(슬픔 주의)",
      "nsite": 4,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 7,
-     "issue_nc": 36,
-     "kw": [
-      "수능",
-      "문자",
-      "재난"
-     ],
-     "top_post": {
-      "t": "정부에서 보낸 수능 재난문자에대한 민심을 araboza",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=480579&_dcbest=1&page=1",
-      "nc": 0
-     }
-    },
-    {
-     "t": "현 주식시장 상황.....(슬픔 주의)",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
+     "issue_np": 4,
      "issue_nc": 33,
      "kw": [
       "주식",
@@ -1165,6 +1226,24 @@
      "top_post": {
       "t": "아시아 주식 시장 대참사...",
       "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=480666&_dcbest=1&page=1",
+      "nc": 0
+     }
+    },
+    {
+     "t": "수능재난문자때문에 아이가 죽을뻔했다는 아줌마",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 6,
+     "issue_nc": 3,
+     "kw": [
+      "수능",
+      "문자",
+      "재난"
+     ],
+     "top_post": {
+      "t": "정부에서 보낸 수능 재난문자에대한 민심을 araboza",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=480579&_dcbest=1&page=1",
       "nc": 0
      }
     },
@@ -1193,167 +1272,13 @@
      "issue_np": 2,
      "issue_nc": 69,
      "kw": [
-      "공부",
       "카이스트",
-      "재능"
+      "재능",
+      "공부"
      ],
      "top_post": {
       "t": "싱글벙글 카이스트 천재가 말하는 공부 재능 vs 노력",
       "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=480328&_dcbest=1&page=1",
-      "nc": 0
-     }
-    }
-   ]
-  },
-  {
-   "name": "루리웹",
-   "np": 34,
-   "nc": 0,
-   "topics": [
-    {
-     "t": "이번 세계사 킬링 문제 ㅎㄷㄷ",
-     "nsite": 5,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 9,
-     "issue_nc": 48,
-     "kw": [
-      "세계사",
-      "수능",
-      "오답",
-      "킬링"
-     ],
-     "top_post": {
-      "t": "이번 수능 세계사 오답률 90% 문제",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77458713?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "중학생도 이해가능한 리만가설 간단요약",
-     "nsite": 4,
-     "np_here": 3,
-     "nc_here": 0,
-     "issue_np": 8,
-     "issue_nc": 54,
-     "kw": [
-      "리만",
-      "가설",
-      "AI"
-     ],
-     "top_post": {
-      "t": "드디어 리만 가설 해결했다는 AI 근황 ㄷㄷㄷㄷㄷㄷㄷ",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77465689?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "안경 맞춰주고 의대가라는 아버지",
-     "nsite": 4,
-     "np_here": 3,
-     "nc_here": 0,
-     "issue_np": 6,
-     "issue_nc": 38,
-     "kw": [
-      "안경",
-      "아버지",
-      "의대",
-      "기대"
-     ],
-     "top_post": {
-      "t": "안경하나 사주고 딸이 의대가길 기대하는 아버지",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77461266?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "리만가설 증명을 본 수학자 실시간 반응",
-     "nsite": 4,
-     "np_here": 2,
-     "nc_here": 0,
-     "issue_np": 6,
-     "issue_nc": 37,
-     "kw": [
-      "증명",
-      "리만",
-      "가설",
-      "주장"
-     ],
-     "top_post": {
-      "t": "리만가설 증명 제3자가 컴파일 성공",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77466661?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "수능재난문자때문에 아이가 죽을뻔했다는 아줌마",
-     "nsite": 4,
-     "np_here": 3,
-     "nc_here": 0,
-     "issue_np": 7,
-     "issue_nc": 36,
-     "kw": [
-      "수능",
-      "문자",
-      "재난"
-     ],
-     "top_post": {
-      "t": "재난문자 한 통에 수능 끝났다…51세 늦깎이 수험생의 사연",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77467755?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "어제 남자친구랑 헤어졌는데 이제 다신 남자 못사귈것같아 나랑 남친(이제 전남친이지만 그냥 남...",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 74,
-     "kw": [
-      "남자",
-      "친구",
-      "남친"
-     ],
-     "top_post": {
-      "t": "남자친구 안 만드는 소꿉친구.manga",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77471701?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "MAMA에서 리센느 제대로 챙겨줬네요.",
-     "nsite": 3,
-     "np_here": 2,
-     "nc_here": 0,
-     "issue_np": 7,
-     "issue_nc": 65,
-     "kw": [
-      "MAMA",
-      "리센느",
-      "무대"
-     ],
-     "top_post": {
-      "t": "MAMA2026 리센느 엄마들 메세지의 맴버들 반응",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77463796?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "9개월 만에 임금체불 받은 알바생",
-     "nsite": 3,
-     "np_here": 2,
-     "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 46,
-     "kw": [
-      "알바",
-      "임금",
-      "체불"
-     ],
-     "top_post": {
-      "t": "9개월 만에 체불된 임금 받은 알바생",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77463906?m=all&t=now",
       "nc": 0
      }
     }
