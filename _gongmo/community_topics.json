@@ -1,14 +1,14 @@
 {
  "date": "2026-11-21",
- "updated": "2026-11-21 08:50",
+ "updated": "2026-11-21 09:50",
  "sites": 13,
- "npost": 2810,
+ "npost": 2801,
  "note": "출처(커뮤니티)별 집계예요. 작성자·연령·성별 정보는 수집하지 않아요. posts 는 이슈별로 뽑힌 일부라 전체 글 수가 아니에요.",
  "sources": [
   {
    "name": "MLB파크",
    "np": 13,
-   "nc": 663,
+   "nc": 647,
    "topics": [
     {
      "t": "초5 딸이 올해 수능 영어를 풀어봤습니다",
@@ -36,8 +36,8 @@
      "issue_np": 4,
      "issue_nc": 191,
      "kw": [
-      "경찰서",
       "남현희",
+      "경찰서",
       "전청조"
      ],
      "top_post": {
@@ -55,8 +55,8 @@
      "issue_nc": 98,
      "kw": [
       "서울대",
-      "이진우",
-      "교수"
+      "교수",
+      "이진우"
      ],
      "top_post": {
       "t": "서울대교수님: 죄는 미워도 사람을 미워해서는 안된다 이진우씨를 퇴로없이 몰아붙여서는 안됐다",
@@ -90,8 +90,8 @@
      "issue_np": 3,
      "issue_nc": 53,
      "kw": [
-      "국어",
       "수능",
+      "국어",
       "오답"
      ],
      "top_post": {
@@ -101,35 +101,15 @@
      }
     },
     {
-     "t": "코스피 9000에서 5000으로 개미 손실 563조원 추산",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 29,
-     "issue_np": 5,
-     "issue_nc": 99,
-     "kw": [
-      "손실",
-      "개미",
-      "코스피",
-      "하반기"
-     ],
-     "top_post": {
-      "t": "개미들 추정손실 563조원이라고 하네요",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611200120222354&m=view",
-      "nc": 29
-     }
-    },
-    {
-     "t": "리만가설 증명을 본 수학자 실시간 반응",
-     "nsite": 4,
+     "t": "엔트로픽 리만가설 풀어 ㄷㄷㄷ",
+     "nsite": 3,
      "np_here": 1,
      "nc_here": 18,
-     "issue_np": 6,
-     "issue_nc": 56,
+     "issue_np": 5,
+     "issue_nc": 21,
      "kw": [
       "리만",
       "가설",
-      "증명",
       "AI"
      ],
      "top_post": {
@@ -139,17 +119,36 @@
      }
     },
     {
+     "t": "주식 폭락에 정신 놔버린 치과의사",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 12,
+     "issue_np": 5,
+     "issue_nc": 18,
+     "kw": [
+      "주식",
+      "폭락",
+      "치과",
+      "의사"
+     ],
+     "top_post": {
+      "t": "주식 폭락에 정신 놔버린 치과의사",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611210120241350&m=view",
+      "nc": 12
+     }
+    },
+    {
      "t": "네이버페이 40원 (신속히 받으세요)",
      "nsite": 4,
      "np_here": 2,
-     "nc_here": 4,
-     "issue_np": 12,
-     "issue_nc": 7,
+     "nc_here": 5,
+     "issue_np": 11,
+     "issue_nc": 8,
      "kw": [
       "네이버",
       "페이",
       "랜덤",
-      "클릭"
+      "라이브"
      ],
      "top_post": {
       "t": "네이버페이 40원 (신속히 받으세요)",
@@ -160,162 +159,9 @@
    ]
   },
   {
-   "name": "개드립",
-   "np": 9,
-   "nc": 244,
-   "topics": [
-    {
-     "t": "경찰서에서 만난 전청조 남현희",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 48,
-     "issue_np": 4,
-     "issue_nc": 191,
-     "kw": [
-      "경찰서",
-      "남현희",
-      "전청조"
-     ],
-     "top_post": {
-      "t": "경찰서에서 만난 전청조, 남현희",
-      "u": "https://www.dogdrip.net/dogdrip/735768323?sort_index=popular&page=1",
-      "nc": 48
-     }
-    },
-    {
-     "t": "안경 맞춰주고 의대가라는 아버지",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 37,
-     "issue_np": 4,
-     "issue_nc": 37,
-     "kw": [
-      "의대",
-      "안경",
-      "아버지"
-     ],
-     "top_post": {
-      "t": "안경 맞춰주고 의대가라는 아버지",
-      "u": "https://www.dogdrip.net/dogdrip/735801549?sort_index=popular&page=1",
-      "nc": 37
-     }
-    },
-    {
-     "t": "전국에 한명 뿐인 수능보다 '1억 잭팟' 터진 수험생 ㄷㄷㄷ",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 36,
-     "issue_np": 3,
-     "issue_nc": 36,
-     "kw": [
-      "수능",
-      "수험"
-     ],
-     "top_post": {
-      "t": "전국에 한명 뿐인 수능보다 '1억 잭팟' 터진 수험생 ㄷㄷㄷ",
-      "u": "https://www.dogdrip.net/dogdrip/735820846?sort_index=popular&page=1",
-      "nc": 36
-     }
-    },
-    {
-     "t": "이번 세계사 킬링 문제 ㅎㄷㄷ",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 35,
-     "issue_np": 5,
-     "issue_nc": 35,
-     "kw": [
-      "수능",
-      "세계사",
-      "킬링",
-      "오답"
-     ],
-     "top_post": {
-      "t": "요번 수능 세계사 정답률 7.4%짜리 문제",
-      "u": "https://www.dogdrip.net/dogdrip/735755931?sort_index=popular&page=1",
-      "nc": 35
-     }
-    },
-    {
-     "t": "리만가설 증명을 본 수학자 실시간 반응",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 33,
-     "issue_np": 6,
-     "issue_nc": 56,
-     "kw": [
-      "리만",
-      "가설",
-      "증명",
-      "AI"
-     ],
-     "top_post": {
-      "t": "리만가설 증명을 본 수학자 실시간 반응",
-      "u": "https://www.dogdrip.net/dogdrip/735871771?sort_index=popular&page=1",
-      "nc": 33
-     }
-    },
-    {
-     "t": "\"여성 부정행위자 좀 신기하지 않냐?\"",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 21,
-     "issue_np": 7,
-     "issue_nc": 27,
-     "kw": [
-      "부정",
-      "시험",
-      "행위자",
-      "여성"
-     ],
-     "top_post": {
-      "t": "\"여성 부정행위자 좀 신기하지 않냐?\"",
-      "u": "https://www.dogdrip.net/dogdrip/735738909?sort_index=popular&page=1",
-      "nc": 21
-     }
-    },
-    {
-     "t": "박지윤, 악플러 한 명 잡음",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 15,
-     "issue_np": 3,
-     "issue_nc": 35,
-     "kw": [
-      "악플",
-      "박지윤"
-     ],
-     "top_post": {
-      "t": "박지윤, 악플러 한 명 잡음",
-      "u": "https://www.dogdrip.net/dogdrip/735812954?sort_index=popular&page=1",
-      "nc": 15
-     }
-    },
-    {
-     "t": "AI안경 쓰고 면접보니...수치까지 척척",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 15,
-     "issue_np": 3,
-     "issue_nc": 15,
-     "kw": [
-      "안경",
-      "면접",
-      "AI",
-      "수치"
-     ],
-     "top_post": {
-      "t": "AI안경 쓰고 면접보니...수치까지 척척",
-      "u": "https://www.dogdrip.net/dogdrip/735730841?sort_index=popular&page=1",
-      "nc": 15
-     }
-    }
-   ]
-  },
-  {
    "name": "인스티즈",
    "np": 3,
-   "nc": 213,
+   "nc": 215,
    "topics": [
     {
      "t": "수능 부정행위 단속 총정리",
@@ -357,38 +203,189 @@
      "t": "\"한쪽선 쓰레기로 보였어도 좋은 형이었다\" 서울대 치대 동기들 이진우 애도",
      "nsite": 5,
      "np_here": 1,
-     "nc_here": 53,
+     "nc_here": 55,
      "issue_np": 9,
-     "issue_nc": 73,
+     "issue_nc": 75,
      "kw": [
-      "서울대",
       "치대",
+      "서울대",
       "동기",
-      "이진우"
+      "쓰레기"
      ],
      "top_post": {
       "t": "\"한쪽선 쓰레기로 보였어도 좋은 형이었다\" 서울대 치대 동기들 이진우 애도",
       "u": "https://www.instiz.net/pt/7927816?page=1&srt=3&k=",
-      "nc": 53
+      "nc": 55
+     }
+    }
+   ]
+  },
+  {
+   "name": "개드립",
+   "np": 8,
+   "nc": 199,
+   "topics": [
+    {
+     "t": "경찰서에서 만난 전청조 남현희",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 48,
+     "issue_np": 4,
+     "issue_nc": 191,
+     "kw": [
+      "남현희",
+      "경찰서",
+      "전청조"
+     ],
+     "top_post": {
+      "t": "경찰서에서 만난 전청조, 남현희",
+      "u": "https://www.dogdrip.net/dogdrip/735768323?sort_index=popular&page=1",
+      "nc": 48
+     }
+    },
+    {
+     "t": "안경 맞춰주고 의대가라는 아버지",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 37,
+     "issue_np": 5,
+     "issue_nc": 37,
+     "kw": [
+      "안경",
+      "의대",
+      "아버지"
+     ],
+     "top_post": {
+      "t": "안경 맞춰주고 의대가라는 아버지",
+      "u": "https://www.dogdrip.net/dogdrip/735801549?sort_index=popular&page=1",
+      "nc": 37
+     }
+    },
+    {
+     "t": "전국에 한명 뿐인 수능보다 '1억 잭팟' 터진 수험생 ㄷㄷㄷ",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 36,
+     "issue_np": 3,
+     "issue_nc": 36,
+     "kw": [
+      "수능",
+      "수험"
+     ],
+     "top_post": {
+      "t": "전국에 한명 뿐인 수능보다 '1억 잭팟' 터진 수험생 ㄷㄷㄷ",
+      "u": "https://www.dogdrip.net/dogdrip/735820846?sort_index=popular&page=1",
+      "nc": 36
+     }
+    },
+    {
+     "t": "이번 세계사 킬링 문제 ㅎㄷㄷ",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 35,
+     "issue_np": 5,
+     "issue_nc": 35,
+     "kw": [
+      "세계사",
+      "수능",
+      "킬링",
+      "정답"
+     ],
+     "top_post": {
+      "t": "요번 수능 세계사 정답률 7.4%짜리 문제",
+      "u": "https://www.dogdrip.net/dogdrip/735755931?sort_index=popular&page=1",
+      "nc": 35
+     }
+    },
+    {
+     "t": "\"여성 부정행위자 좀 신기하지 않냐?\"",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 21,
+     "issue_np": 7,
+     "issue_nc": 27,
+     "kw": [
+      "부정",
+      "시험",
+      "행위자",
+      "여성"
+     ],
+     "top_post": {
+      "t": "\"여성 부정행위자 좀 신기하지 않냐?\"",
+      "u": "https://www.dogdrip.net/dogdrip/735738909?sort_index=popular&page=1",
+      "nc": 21
+     }
+    },
+    {
+     "t": "박지윤, 악플러 한 명 잡음",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 15,
+     "issue_np": 3,
+     "issue_nc": 35,
+     "kw": [
+      "악플",
+      "박지윤"
+     ],
+     "top_post": {
+      "t": "박지윤, 악플러 한 명 잡음",
+      "u": "https://www.dogdrip.net/dogdrip/735812954?sort_index=popular&page=1",
+      "nc": 15
+     }
+    },
+    {
+     "t": "메인이 바뀌어 버린 영국남자 유튜브 근황",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 4,
+     "issue_np": 3,
+     "issue_nc": 4,
+     "kw": [
+      "남자",
+      "영국",
+      "유튜브"
+     ],
+     "top_post": {
+      "t": "영국남자 유튜브 근황 ㄷㄷ",
+      "u": "https://www.dogdrip.net/dogdrip/735773136?sort_index=popular&page=1",
+      "nc": 4
+     }
+    },
+    {
+     "t": "엔트로픽 리만가설 풀어 ㄷㄷㄷ",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 3,
+     "issue_np": 5,
+     "issue_nc": 21,
+     "kw": [
+      "리만",
+      "가설",
+      "AI"
+     ],
+     "top_post": {
+      "t": "리만가설 증명을 본 수학자 실시간 반응",
+      "u": "https://www.dogdrip.net/dogdrip/735871771?sort_index=popular&page=1",
+      "nc": 3
      }
     }
    ]
   },
   {
    "name": "82쿡",
-   "np": 15,
-   "nc": 140,
+   "np": 16,
+   "nc": 146,
    "topics": [
     {
      "t": "수능재난문자때문에 아이가 죽을뻔했다는 아줌마",
      "nsite": 3,
      "np_here": 1,
      "nc_here": 33,
-     "issue_np": 5,
+     "issue_np": 6,
      "issue_nc": 38,
      "kw": [
-      "재난",
       "문자",
+      "재난",
       "수능"
      ],
      "top_post": {
@@ -439,12 +436,12 @@
      "np_here": 2,
      "nc_here": 17,
      "issue_np": 9,
-     "issue_nc": 73,
+     "issue_nc": 75,
      "kw": [
-      "서울대",
       "치대",
+      "서울대",
       "동기",
-      "이진우"
+      "쓰레기"
      ],
      "top_post": {
       "t": "한쪽선 쓰레기로 보였어도 좋은 형이었다\" 서울대 치대 ..",
@@ -460,32 +457,13 @@
      "issue_np": 4,
      "issue_nc": 13,
      "kw": [
-      "손실",
-      "주식"
+      "주식",
+      "손실"
      ],
      "top_post": {
       "t": "주식 손실로 저처럼 짠순이 모드로 살아가시는분들 많으신가요?",
       "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4260971&page=1",
       "nc": 13
-     }
-    },
-    {
-     "t": "코스피 9000에서 5000으로 개미 손실 563조원 추산",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 7,
-     "issue_np": 5,
-     "issue_nc": 99,
-     "kw": [
-      "손실",
-      "개미",
-      "코스피",
-      "하반기"
-     ],
-     "top_post": {
-      "t": "“韓 개미, 하반기만 563조 손실”",
-      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4261289&page=1",
-      "nc": 7
      }
     },
     {
@@ -506,38 +484,12 @@
      }
     },
     {
-     "t": "죽어도 이해 못하는 김건희",
+     "t": "코스피 9000에서 5000으로 개미 손실 563조원 추산",
      "nsite": 3,
      "np_here": 1,
-     "nc_here": 6,
-     "issue_np": 3,
-     "issue_nc": 6,
-     "kw": [
-      "김건",
-      "이해",
-      "징역",
-      "억울"
-     ],
-     "top_post": {
-      "t": "'징역 4년' 김건희 \"죽어도 이해 못 하겠다…억울하고..",
-      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4261183&page=1",
-      "nc": 6
-     }
-    }
-   ]
-  },
-  {
-   "name": "클리앙",
-   "np": 6,
-   "nc": 82,
-   "topics": [
-    {
-     "t": "코스피 9000에서 5000으로 개미 손실 563조원 추산",
-     "nsite": 4,
-     "np_here": 2,
-     "nc_here": 63,
-     "issue_np": 5,
-     "issue_nc": 99,
+     "nc_here": 7,
+     "issue_np": 4,
+     "issue_nc": 81,
      "kw": [
       "손실",
       "개미",
@@ -545,9 +497,54 @@
       "하반기"
      ],
      "top_post": {
-      "t": "코스피 9000에서 5000으로 개미 손실 563조원 추산",
-      "u": "https://www.clien.net/service/board/park/19295788?od=T33&po=0&category=0&groupCd=clien_all",
-      "nc": 33
+      "t": "“韓 개미, 하반기만 563조 손실”",
+      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4261289&page=1",
+      "nc": 7
+     }
+    },
+    {
+     "t": "주식 폭락에 정신 놔버린 치과의사",
+     "nsite": 3,
+     "np_here": 2,
+     "nc_here": 6,
+     "issue_np": 5,
+     "issue_nc": 18,
+     "kw": [
+      "주식",
+      "폭락",
+      "치과",
+      "의사"
+     ],
+     "top_post": {
+      "t": "주식폭락하니 박지윤 얘기가 많이 올라오는 느낌",
+      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4261088&page=1",
+      "nc": 5
+     }
+    }
+   ]
+  },
+  {
+   "name": "클리앙",
+   "np": 5,
+   "nc": 89,
+   "topics": [
+    {
+     "t": "코스피 9000에서 5000으로 개미 손실 563조원 추산",
+     "nsite": 3,
+     "np_here": 2,
+     "nc_here": 74,
+     "issue_np": 4,
+     "issue_nc": 81,
+     "kw": [
+      "손실",
+      "개미",
+      "코스피",
+      "하반기"
+     ],
+     "top_post": {
+      "t": "코스피 개인손실만 500조면 매국급아닌가요",
+      "u": "https://www.clien.net/service/board/park/19296338?od=T33&po=0&category=0&groupCd=clien_all",
+      "nc": 41
      }
     },
     {
@@ -565,25 +562,6 @@
       "t": "AI가 수능을 다 풀면, 우리는 모두 같은 실력일까요?",
       "u": "https://www.clien.net/service/board/park/19296346?od=T33&po=0&category=0&groupCd=clien_all",
       "nc": 7
-     }
-    },
-    {
-     "t": "리만가설 증명을 본 수학자 실시간 반응",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 5,
-     "issue_np": 6,
-     "issue_nc": 56,
-     "kw": [
-      "리만",
-      "가설",
-      "증명",
-      "AI"
-     ],
-     "top_post": {
-      "t": "클로드 리만가설 증명 소식 (25만 페이지 / 코드로는 1700만줄)",
-      "u": "https://www.clien.net/service/board/park/19296330?od=T33&po=0&category=0&groupCd=clien_all",
-      "nc": 5
      }
     },
     {
@@ -605,41 +583,82 @@
      }
     },
     {
-     "t": "[단독] 정부 확보한 '리트 만점자' 수능시험지에 비정상적 풀이 정황",
+     "t": "이번주 로또 당첨기원",
      "nsite": 3,
      "np_here": 1,
-     "nc_here": 2,
-     "issue_np": 4,
-     "issue_nc": 2,
+     "nc_here": 3,
+     "issue_np": 3,
+     "issue_nc": 4,
      "kw": [
-      "수능",
-      "시험지",
-      "정상",
-      "풀이"
+      "당첨",
+      "로또"
      ],
      "top_post": {
-      "t": "[단독] 정부 확보한 '리트 만점자' 수능시험지에 비정상적 풀이 정황",
-      "u": "https://www.clien.net/service/board/park/19295931?od=T33&po=0&category=0&groupCd=clien_all",
-      "nc": 2
+      "t": "1억 로또에 당첨되었네요",
+      "u": "https://www.clien.net/service/board/park/19296238?od=T33&po=0&category=0&groupCd=clien_all",
+      "nc": 3
+     }
+    }
+   ]
+  },
+  {
+   "name": "아카라이브",
+   "np": 4,
+   "nc": 59,
+   "topics": [
+    {
+     "t": "오늘 수능 알바했는데 부정행위자 적발함",
+     "nsite": 3,
+     "np_here": 3,
+     "nc_here": 39,
+     "issue_np": 5,
+     "issue_nc": 41,
+     "kw": [
+      "행위자",
+      "부정",
+      "수능",
+      "적발"
+     ],
+     "top_post": {
+      "t": "원신도 부정행위자가 있구나",
+      "u": "https://arca.live/b/live/189662762?p=1",
+      "nc": 17
+     }
+    },
+    {
+     "t": "나중에 인간이 ai를 위한 소설을 써주는 시대도 오지 않을까",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 20,
+     "issue_np": 3,
+     "issue_nc": 23,
+     "kw": [
+      "시대",
+      "AI"
+     ],
+     "top_post": {
+      "t": "나중에 인간이 ai를 위한 소설을 써주는 시대도 오지 않을까",
+      "u": "https://arca.live/b/live/189715623?p=1",
+      "nc": 20
      }
     }
    ]
   },
   {
    "name": "보배드림",
-   "np": 14,
-   "nc": 30,
+   "np": 15,
+   "nc": 32,
    "topics": [
     {
      "t": "수능재난문자때문에 아이가 죽을뻔했다는 아줌마",
      "nsite": 3,
      "np_here": 2,
      "nc_here": 5,
-     "issue_np": 5,
+     "issue_np": 6,
      "issue_nc": 38,
      "kw": [
-      "재난",
       "문자",
+      "재난",
       "수능"
      ],
      "top_post": {
@@ -654,12 +673,12 @@
      "np_here": 1,
      "nc_here": 3,
      "issue_np": 9,
-     "issue_nc": 73,
+     "issue_nc": 75,
      "kw": [
-      "서울대",
       "치대",
+      "서울대",
       "동기",
-      "이진우"
+      "쓰레기"
      ],
      "top_post": {
       "t": "서울대 치대 이미지 개X 되겠구나",
@@ -675,8 +694,8 @@
      "issue_np": 4,
      "issue_nc": 191,
      "kw": [
-      "경찰서",
       "남현희",
+      "경찰서",
       "전청조"
      ],
      "top_post": {
@@ -722,15 +741,15 @@
      }
     },
     {
-     "t": "Ai시대에 대해 착각하시는 분들이 있는데..",
+     "t": "나중에 인간이 ai를 위한 소설을 써주는 시대도 오지 않을까",
      "nsite": 3,
      "np_here": 1,
      "nc_here": 3,
      "issue_np": 3,
      "issue_nc": 23,
      "kw": [
-      "AI",
-      "시대"
+      "시대",
+      "AI"
      ],
      "top_post": {
       "t": "ai 시대의 대응은 구술 시험이 답이다.",
@@ -764,8 +783,8 @@
      "issue_np": 3,
      "issue_nc": 3,
      "kw": [
-      "산불",
       "진화",
+      "산불",
       "소화기",
       "공개"
      ],
@@ -773,30 +792,6 @@
       "t": "배우 김민 산불 번지자 소화기 들고 진화",
       "u": "https://www.bobaedream.co.kr/view?code=best&No=1049100&vdate=",
       "nc": 3
-     }
-    }
-   ]
-  },
-  {
-   "name": "아카라이브",
-   "np": 1,
-   "nc": 20,
-   "topics": [
-    {
-     "t": "Ai시대에 대해 착각하시는 분들이 있는데..",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 20,
-     "issue_np": 3,
-     "issue_nc": 23,
-     "kw": [
-      "AI",
-      "시대"
-     ],
-     "top_post": {
-      "t": "나중에 인간이 ai를 위한 소설을 써주는 시대도 오지 않을까",
-      "u": "https://arca.live/b/live/189715623?p=1",
-      "nc": 20
      }
     }
    ]
@@ -828,13 +823,13 @@
      "nsite": 4,
      "np_here": 1,
      "nc_here": 3,
-     "issue_np": 12,
-     "issue_nc": 7,
+     "issue_np": 11,
+     "issue_nc": 8,
      "kw": [
       "네이버",
       "페이",
       "랜덤",
-      "클릭"
+      "라이브"
      ],
      "top_post": {
       "t": "ㅈㄱㄴ..⭐ 이거 설문조사 앱인데 설문조사 하고나면 네이버페이 포인트나 현금으로 받을수있음 ...",
@@ -846,7 +841,7 @@
   },
   {
    "name": "더쿠",
-   "np": 15,
+   "np": 14,
    "nc": 0,
    "topics": [
     {
@@ -876,32 +871,13 @@
      "issue_np": 4,
      "issue_nc": 191,
      "kw": [
-      "경찰서",
       "남현희",
+      "경찰서",
       "전청조"
      ],
      "top_post": {
       "t": "경찰서에서 만난 전청조와 남현희",
       "u": "https://theqoo.net/hot/4412826840",
-      "nc": 0
-     }
-    },
-    {
-     "t": "코스피 9000에서 5000으로 개미 손실 563조원 추산",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 99,
-     "kw": [
-      "손실",
-      "개미",
-      "코스피",
-      "하반기"
-     ],
-     "top_post": {
-      "t": "“韓 개미, 하반기만 563조 손실”",
-      "u": "https://theqoo.net/hot/4413113404",
       "nc": 0
      }
     },
@@ -923,6 +899,25 @@
      }
     },
     {
+     "t": "네이버페이 40원 (신속히 받으세요)",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 11,
+     "issue_nc": 8,
+     "kw": [
+      "네이버",
+      "페이",
+      "랜덤",
+      "라이브"
+     ],
+     "top_post": {
+      "t": "네이버페이180원+15원+1원+1원+1원+1원+랜덤 눌러봐++10원+5원+눌러눌러 보험랜덤+보험랜덤 하나더+라이브미리보고5원받기",
+      "u": "https://theqoo.net/hot/4413390343",
+      "nc": 0
+     }
+    },
+    {
      "t": "싱글벙글 그래도 ai가 수능에 남긴 순기능 하나",
      "nsite": 4,
      "np_here": 1,
@@ -940,25 +935,6 @@
      }
     },
     {
-     "t": "네이버페이 40원 (신속히 받으세요)",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 12,
-     "issue_nc": 7,
-     "kw": [
-      "네이버",
-      "페이",
-      "랜덤",
-      "클릭"
-     ],
-     "top_post": {
-      "t": "네이버페이180원+15원+1원+1원+1원+1원+랜덤 눌러봐++10원+5원+눌러눌러 보험랜덤+보험랜덤 하나더+라이브미리보고5원받기",
-      "u": "https://theqoo.net/hot/4413390343",
-      "nc": 0
-     }
-    },
-    {
      "t": "서울대교수님: 죄는 미워도 사람을 미워해서는 안된다 이진우씨를 퇴로없이 몰아붙여서는 안됐다",
      "nsite": 3,
      "np_here": 1,
@@ -967,8 +943,8 @@
      "issue_nc": 98,
      "kw": [
       "서울대",
-      "이진우",
-      "교수"
+      "교수",
+      "이진우"
      ],
      "top_post": {
       "t": "“마지막 선택마저 손가락질”…이진우씨 사망에 서울대 교수 작심 발언",
@@ -977,15 +953,34 @@
      }
     },
     {
-     "t": "안경 맞춰주고 의대가라는 아버지",
+     "t": "코스피 9000에서 5000으로 개미 손실 563조원 추산",
      "nsite": 3,
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 4,
+     "issue_nc": 81,
+     "kw": [
+      "손실",
+      "개미",
+      "코스피",
+      "하반기"
+     ],
+     "top_post": {
+      "t": "“韓 개미, 하반기만 563조 손실”",
+      "u": "https://theqoo.net/hot/4413113404",
+      "nc": 0
+     }
+    },
+    {
+     "t": "안경 맞춰주고 의대가라는 아버지",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 5,
      "issue_nc": 37,
      "kw": [
-      "의대",
       "안경",
+      "의대",
       "아버지"
      ],
      "top_post": {
@@ -998,7 +993,7 @@
   },
   {
    "name": "SLR클럽",
-   "np": 11,
+   "np": 12,
    "nc": 0,
    "topics": [
     {
@@ -1007,12 +1002,12 @@
      "np_here": 2,
      "nc_here": 0,
      "issue_np": 9,
-     "issue_nc": 73,
+     "issue_nc": 75,
      "kw": [
-      "서울대",
       "치대",
+      "서울대",
       "동기",
-      "이진우"
+      "쓰레기"
      ],
      "top_post": {
       "t": "\"좋은 형이었는데\"…서울대 치대 동기들 애도글",
@@ -1028,10 +1023,10 @@
      "issue_np": 5,
      "issue_nc": 35,
      "kw": [
-      "수능",
       "세계사",
+      "수능",
       "킬링",
-      "오답"
+      "정답"
      ],
      "top_post": {
       "t": "이번 세계사 킬링 문제 ㅎㄷㄷ",
@@ -1065,8 +1060,8 @@
      "issue_nc": 98,
      "kw": [
       "서울대",
-      "이진우",
-      "교수"
+      "교수",
+      "이진우"
      ],
      "top_post": {
       "t": "이진우 사태에 서울대 교수의 일침",
@@ -1099,8 +1094,8 @@
      "issue_np": 3,
      "issue_nc": 53,
      "kw": [
-      "국어",
       "수능",
+      "국어",
       "오답"
      ],
      "top_post": {
@@ -1110,36 +1105,99 @@
      }
     },
     {
-     "t": "Ai시대에 대해 착각하시는 분들이 있는데..",
+     "t": "오늘 수능 알바했는데 부정행위자 적발함",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 5,
+     "issue_nc": 41,
+     "kw": [
+      "행위자",
+      "부정",
+      "수능",
+      "적발"
+     ],
+     "top_post": {
+      "t": "이번 수능 컨닝 적발된 애들이 100명도 안된댑니다 ㅋㅋㅋㅋㅋ",
+      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677792",
+      "nc": 0
+     }
+    },
+    {
+     "t": "나중에 인간이 ai를 위한 소설을 써주는 시대도 오지 않을까",
      "nsite": 3,
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 3,
      "issue_nc": 23,
      "kw": [
-      "AI",
-      "시대"
+      "시대",
+      "AI"
      ],
      "top_post": {
       "t": "Ai시대에 대해 착각하시는 분들이 있는데..",
       "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677806",
       "nc": 0
      }
+    }
+   ]
+  },
+  {
+   "name": "디시인사이드",
+   "np": 4,
+   "nc": 0,
+   "topics": [
+    {
+     "t": "이번 세계사 킬링 문제 ㅎㄷㄷ",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 5,
+     "issue_nc": 35,
+     "kw": [
+      "세계사",
+      "수능",
+      "킬링",
+      "정답"
+     ],
+     "top_post": {
+      "t": "싱글벙글 수능 세계사 오답률 92% 문제 정답..",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=480387&_dcbest=1&page=1",
+      "nc": 0
+     }
     },
     {
-     "t": "국내 주식 개인 손실이 5백조 넘는다는데...",
-     "nsite": 3,
+     "t": "싱글벙글 그래도 ai가 수능에 남긴 순기능 하나",
+     "nsite": 4,
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 4,
-     "issue_nc": 13,
+     "issue_nc": 7,
      "kw": [
-      "손실",
-      "주식"
+      "수능",
+      "AI"
      ],
      "top_post": {
-      "t": "국내 주식 개인 손실이 5백조 넘는다는데...",
-      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677866",
+      "t": "싱글벙글 그래도 ai가 수능에 남긴 순기능 하나",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=480217&_dcbest=1&page=1",
+      "nc": 0
+     }
+    },
+    {
+     "t": "초5 딸이 올해 수능 영어를 풀어봤습니다",
+     "nsite": 3,
+     "np_here": 2,
+     "nc_here": 0,
+     "issue_np": 5,
+     "issue_nc": 261,
+     "kw": [
+      "수능",
+      "영어",
+      "올해"
+     ],
+     "top_post": {
+      "t": "와들와들 수능 영어문제를 본 미국인들 반응.",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=480474&_dcbest=1&page=1",
       "nc": 0
      }
     }
@@ -1147,28 +1205,9 @@
   },
   {
    "name": "루리웹",
-   "np": 28,
+   "np": 29,
    "nc": 0,
    "topics": [
-    {
-     "t": "리만가설 증명을 본 수학자 실시간 반응",
-     "nsite": 4,
-     "np_here": 3,
-     "nc_here": 0,
-     "issue_np": 6,
-     "issue_nc": 56,
-     "kw": [
-      "리만",
-      "가설",
-      "증명",
-      "AI"
-     ],
-     "top_post": {
-      "t": "드디어 리만 가설 해결했다는 AI 근황 ㄷㄷㄷㄷㄷㄷㄷ",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77465689?m=all&t=now",
-      "nc": 0
-     }
-    },
     {
      "t": "이번 세계사 킬링 문제 ㅎㄷㄷ",
      "nsite": 4,
@@ -1177,10 +1216,10 @@
      "issue_np": 5,
      "issue_nc": 35,
      "kw": [
-      "수능",
       "세계사",
+      "수능",
       "킬링",
-      "오답"
+      "정답"
      ],
      "top_post": {
       "t": "이번 수능 세계사 오답률 90% 문제",
@@ -1208,6 +1247,25 @@
      }
     },
     {
+     "t": "네이버페이 40원 (신속히 받으세요)",
+     "nsite": 4,
+     "np_here": 2,
+     "nc_here": 0,
+     "issue_np": 11,
+     "issue_nc": 8,
+     "kw": [
+      "네이버",
+      "페이",
+      "랜덤",
+      "라이브"
+     ],
+     "top_post": {
+      "t": "핫딜 [네이버페이] 100원",
+      "u": "https://bbs.ruliweb.com/best/board/184778/read/109177?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
      "t": "싱글벙글 그래도 ai가 수능에 남긴 순기능 하나",
      "nsite": 4,
      "np_here": 1,
@@ -1221,25 +1279,6 @@
      "top_post": {
       "t": "수능 AI 선동당하는 사람 진짜 많겠네",
       "u": "https://bbs.ruliweb.com/best/board/300143/read/77444377?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "네이버페이 40원 (신속히 받으세요)",
-     "nsite": 4,
-     "np_here": 2,
-     "nc_here": 0,
-     "issue_np": 12,
-     "issue_nc": 7,
-     "kw": [
-      "네이버",
-      "페이",
-      "랜덤",
-      "클릭"
-     ],
-     "top_post": {
-      "t": "핫딜 [네이버페이] 100원",
-      "u": "https://bbs.ruliweb.com/best/board/184778/read/109177?m=all&t=now",
       "nc": 0
      }
     },
@@ -1287,8 +1326,8 @@
      "issue_np": 3,
      "issue_nc": 53,
      "kw": [
-      "국어",
       "수능",
+      "국어",
       "오답"
      ],
      "top_post": {
@@ -1296,84 +1335,22 @@
       "u": "https://bbs.ruliweb.com/best/board/300143/read/77459835?m=all&t=now",
       "nc": 0
      }
-    }
-   ]
-  },
-  {
-   "name": "디시인사이드",
-   "np": 5,
-   "nc": 0,
-   "topics": [
-    {
-     "t": "이번 세계사 킬링 문제 ㅎㄷㄷ",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 35,
-     "kw": [
-      "수능",
-      "세계사",
-      "킬링",
-      "오답"
-     ],
-     "top_post": {
-      "t": "싱글벙글 수능 세계사 오답률 92% 문제 정답..",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=480387&_dcbest=1&page=1",
-      "nc": 0
-     }
     },
     {
-     "t": "싱글벙글 그래도 ai가 수능에 남긴 순기능 하나",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 7,
-     "kw": [
-      "수능",
-      "AI"
-     ],
-     "top_post": {
-      "t": "싱글벙글 그래도 ai가 수능에 남긴 순기능 하나",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=480217&_dcbest=1&page=1",
-      "nc": 0
-     }
-    },
-    {
-     "t": "초5 딸이 올해 수능 영어를 풀어봤습니다",
+     "t": "수능재난문자때문에 아이가 죽을뻔했다는 아줌마",
      "nsite": 3,
-     "np_here": 2,
+     "np_here": 3,
      "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 261,
+     "issue_np": 6,
+     "issue_nc": 38,
      "kw": [
-      "수능",
-      "영어",
-      "올해"
+      "문자",
+      "재난",
+      "수능"
      ],
      "top_post": {
-      "t": "와들와들 수능 영어문제를 본 미국인들 반응.",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=480474&_dcbest=1&page=1",
-      "nc": 0
-     }
-    },
-    {
-     "t": "AI안경 쓰고 면접보니...수치까지 척척",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 15,
-     "kw": [
-      "안경",
-      "면접",
-      "AI",
-      "수치"
-     ],
-     "top_post": {
-      "t": "AI안경 쓰고 면접보니...수치까지 척척",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=480288&_dcbest=1&page=1",
+      "t": "이번 수능 재난문자가 무서웠던 이유",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77464913?m=all&t=now",
       "nc": 0
      }
     }

@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-21 09:00",
+ "updated": "2026-11-21 10:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -2019,6 +2019,18 @@
    "expires": "2026-11-24"
   },
   {
+   "query": "카리나",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-17",
+   "expires": "2026-11-24"
+  },
+  {
    "query": "부산 kcc 대 대구 한국가스공사",
    "tier": "단기",
    "signal": [
@@ -2644,18 +2656,6 @@
   },
   {
    "query": "100일의 거짓말",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 2000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-17",
-   "expires": "2026-11-24"
-  },
-  {
-   "query": "카리나",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -3504,6 +3504,30 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-20",
+   "expires": "2026-11-24"
+  },
+  {
+   "query": "연예인",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-21",
+   "expires": "2026-11-24"
+  },
+  {
+   "query": "파기 환송",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-21",
    "expires": "2026-11-24"
   },
   {
@@ -6388,6 +6412,18 @@
   },
   {
    "query": "두산",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-21",
+   "expires": "2026-11-24"
+  },
+  {
+   "query": "코레일",
    "tier": "단기",
    "signal": [
     "구글트렌드"
