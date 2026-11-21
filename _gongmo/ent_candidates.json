@@ -1,42 +1,7 @@
 {
- "at": "2026-11-21 11:11",
+ "at": "2026-11-21 11:30",
  "nitems": 517,
  "cands": [
-  {
-   "kw": "굿파트너",
-   "nsrc": 6,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "세계일보",
-    "연합뉴스",
-    "조선일보",
-    "한국경제"
-   ],
-   "n": 17,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "김혜윤 능력 알아본 장나라…'굿파트너2' 8.4% 출발",
-     "link": "https://www.yna.co.kr/view/AKR20261121023000005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "'굿파트너2'서 로펌대표 된 장나라 \"전작 재미 유지하려 애썼죠\"",
-     "link": "https://www.yna.co.kr/view/AKR20261120147300005"
-    },
-    {
-     "src": "동아일보",
-     "title": "‘굿파트너2’, 첫 방송 시청률 8.4%…장나라X김혜윤 인연 시작 예고",
-     "link": "https://sports.donga.com/ent/article/all/20261121/135064605/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "장나라·김혜윤의 첫 법정 대결 ‘굿파트너2’…8.4% 출발",
-     "link": "https://sports.donga.com/ent/article/all/20261121/135064395/1"
-    }
-   ]
-  },
   {
    "kw": "장나라",
    "nsrc": 6,
@@ -73,6 +38,41 @@
    ]
   },
   {
+   "kw": "굿파트너",
+   "nsrc": 6,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "세계일보",
+    "연합뉴스",
+    "조선일보",
+    "한국경제"
+   ],
+   "n": 16,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "김혜윤 능력 알아본 장나라…'굿파트너2' 8.4% 출발",
+     "link": "https://www.yna.co.kr/view/AKR20261121023000005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "'굿파트너2'서 로펌대표 된 장나라 \"전작 재미 유지하려 애썼죠\"",
+     "link": "https://www.yna.co.kr/view/AKR20261120147300005"
+    },
+    {
+     "src": "동아일보",
+     "title": "‘굿파트너2’, 첫 방송 시청률 8.4%…장나라X김혜윤 인연 시작 예고",
+     "link": "https://sports.donga.com/ent/article/all/20261121/135064605/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "장나라·김혜윤의 첫 법정 대결 ‘굿파트너2’…8.4% 출발",
+     "link": "https://sports.donga.com/ent/article/all/20261121/135064395/1"
+    }
+   ]
+  },
+  {
    "kw": "대상",
    "nsrc": 5,
    "srcs": [
@@ -82,7 +82,7 @@
     "조선일보",
     "한국경제"
    ],
-   "n": 11,
+   "n": 12,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -379,6 +379,39 @@
    ]
   },
   {
+   "kw": "발매",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "동아일보",
+    "연합뉴스"
+   ],
+   "n": 9,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "[가요소식] 딘딘, 생일에 신곡 '케이크' 발매",
+     "link": "https://www.yna.co.kr/view/AKR20261120066300005"
+    },
+    {
+     "src": "동아일보",
+     "title": "CL, 5년 만에 솔로 컴백…테디와 손잡고 ‘ICONIC’ 발매",
+     "link": "https://sports.donga.com/ent/article/all/20261121/135064688/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "플라이 투 더 스카이, 8년 만에 완전체 컴백…오늘(21일) 신곡 발매",
+     "link": "https://sports.donga.com/ent/article/all/20261121/135064590/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "온앤오프, 핑클 명곡 ‘화이트 (White)’ 9번째 리메이크 주자…12월 2일 발매",
+     "link": "https://sports.donga.com/ent/article/all/20261120/135063998/1"
+    }
+   ]
+  },
+  {
    "kw": "결혼",
    "nsrc": 4,
    "srcs": [
@@ -387,7 +420,7 @@
     "조선일보",
     "헤럴드경제"
    ],
-   "n": 10,
+   "n": 9,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -420,7 +453,7 @@
     "연합뉴스",
     "한국경제"
    ],
-   "n": 9,
+   "n": 8,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -474,39 +507,6 @@
      "src": "헤럴드경제",
      "title": "최동석-박지윤 상간 소송 2심 판결문 속 ‘365일’ 어떤 영화길래…",
      "link": "https://biz.heraldcorp.com/article/10943013"
-    }
-   ]
-  },
-  {
-   "kw": "발매",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "동아일보",
-    "연합뉴스"
-   ],
-   "n": 8,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "[가요소식] 딘딘, 생일에 신곡 '케이크' 발매",
-     "link": "https://www.yna.co.kr/view/AKR20261120066300005"
-    },
-    {
-     "src": "동아일보",
-     "title": "플라이 투 더 스카이, 8년 만에 완전체 컴백…오늘(21일) 신곡 발매",
-     "link": "https://sports.donga.com/ent/article/all/20261121/135064590/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "온앤오프, 핑클 명곡 ‘화이트 (White)’ 9번째 리메이크 주자…12월 2일 발매",
-     "link": "https://sports.donga.com/ent/article/all/20261120/135063998/1"
-    },
-    {
-     "src": "SBS",
-     "title": "윤하, 인기 웹툰 '전독시'와 협업…24일 OST 발매",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008854845&plink=RSSLINK&cooper=RSSREADER"
     }
    ]
   },
@@ -643,6 +643,39 @@
    ]
   },
   {
+   "kw": "컴백",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "연합뉴스",
+    "한국경제"
+   ],
+   "n": 7,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "엔하이픈, 오늘 컴백…\"어떤 콘셉트든 잘하는 팀 되고파\"",
+     "link": "https://www.yna.co.kr/view/AKR20261120122300005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "씨엘, 20일 신곡 '아이코닉'…더블랙 이적 후 첫 컴백",
+     "link": "https://www.yna.co.kr/view/AKR20261117107200005"
+    },
+    {
+     "src": "동아일보",
+     "title": "CL, 5년 만에 솔로 컴백…테디와 손잡고 ‘ICONIC’ 발매",
+     "link": "https://sports.donga.com/ent/article/all/20261121/135064688/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "플라이 투 더 스카이, 8년 만에 완전체 컴백…오늘(21일) 신곡 발매",
+     "link": "https://sports.donga.com/ent/article/all/20261121/135064590/1"
+    }
+   ]
+  },
+  {
    "kw": "걸그룹",
    "nsrc": 4,
    "srcs": [
@@ -676,7 +709,7 @@
    ]
   },
   {
-   "kw": "컴백",
+   "kw": "솔로",
    "nsrc": 4,
    "srcs": [
     "뉴시스",
@@ -688,23 +721,23 @@
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "엔하이픈, 오늘 컴백…\"어떤 콘셉트든 잘하는 팀 되고파\"",
-     "link": "https://www.yna.co.kr/view/AKR20261120122300005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "씨엘, 20일 신곡 '아이코닉'…더블랙 이적 후 첫 컴백",
-     "link": "https://www.yna.co.kr/view/AKR20261117107200005"
+     "title": "스트레이 키즈 아이엔, 솔로 디지털 싱글 '노 리턴' 발표",
+     "link": "https://www.yna.co.kr/view/AKR20261117085500005"
     },
     {
      "src": "동아일보",
-     "title": "플라이 투 더 스카이, 8년 만에 완전체 컴백…오늘(21일) 신곡 발매",
-     "link": "https://sports.donga.com/ent/article/all/20261121/135064590/1"
+     "title": "5년 만의 솔로…CL, ‘ICONIC’으로 독보적 아이콘 증명",
+     "link": "https://sports.donga.com/ent/article/all/20261121/135064695/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "CL, 5년 만에 솔로 컴백…테디와 손잡고 ‘ICONIC’ 발매",
+     "link": "https://sports.donga.com/ent/article/all/20261121/135064688/1"
     },
     {
      "src": "한국경제",
-     "title": "'컴백' NCT 드림, 이름값 제대로…음반·음원 차트 1위",
-     "link": "https://www.hankyung.com/article/202611106884H"
+     "title": "아이브 리즈, 못 하는 게 뭐야…MC·솔로 무대·수상까지 '만능캐 입증'",
+     "link": "https://www.hankyung.com/article/202611096058H"
     }
    ]
   },
@@ -1105,6 +1138,39 @@
    ]
   },
   {
+   "kw": "결국",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "조선일보",
+    "한국경제"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "유연석, 경찰에 체포되더니 결국 폭주…‘라이어’ 충격 전개",
+     "link": "https://sports.donga.com/ent/article/all/20261121/135064629/1"
+    },
+    {
+     "src": "한국경제",
+     "title": "결국 스며들었다…임시완, 화제성 넘어 새 얼굴 증명해낸 '유죄인간' [스타:라이트]",
+     "link": "https://www.hankyung.com/article/202611168180H"
+    },
+    {
+     "src": "뉴시스",
+     "title": "서동주, 결국 미국행…\"남편이 어련히 잘하겠지\"",
+     "link": "https://www.newsis.com/view/NISX20261120_0003876019"
+    },
+    {
+     "src": "조선일보",
+     "title": "\"사실 울었어\"..올데프 애니, '우상' 씨엘 칭찬에 결국 눈물 쏟았다[Oh!쎈 이슈]",
+     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/21/MFSGIOLDMY3TEYTCGNRDMN3BMQ/"
+    }
+   ]
+  },
+  {
    "kw": "틱톡",
    "nsrc": 4,
    "srcs": [
@@ -1262,70 +1328,6 @@
      "src": "조선일보",
      "title": "김나영, 패션의 악마·가을의 여자 등장···낭만 가득 미소",
      "link": "https://www.chosun.com/entertainments/broadcast/2026/11/21/GY4GMYZWGJRTEOLBHFTDAZJZHE/"
-    }
-   ]
-  },
-  {
-   "kw": "김종국",
-   "nsrc": 3,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "조선일보"
-   ],
-   "n": 8,
-   "headlines": [
-    {
-     "src": "SBS",
-     "title": "\"아내라면 냉장고 열어놔도 못 본 척\"…'비서진' 김종국, 짠돌이의 반전 사랑꾼 면모",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008855328&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "SBS",
-     "title": "\"유일하게 돈 빌려줄 수 있는 사람\"…'비서진' 이서진, 김종국 향한 특급 의리",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008853938&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "뉴시스",
-     "title": "50세 김종국 \"아이는 아내 닮아야…아들 강하게 키운다\"",
-     "link": "https://www.newsis.com/view/NISX20261121_0003877572"
-    },
-    {
-     "src": "뉴시스",
-     "title": "김종국 소속사, 매달 월세만 2억…이서진도 '깜짝'",
-     "link": "https://www.newsis.com/view/NISX20261120_0003876658"
-    }
-   ]
-  },
-  {
-   "kw": "일본",
-   "nsrc": 3,
-   "srcs": [
-    "연합뉴스",
-    "조선일보",
-    "한겨레"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "아일릿, 일본 레코드 대상 우수작품상…코르티스 특별국제음악상",
-     "link": "https://www.yna.co.kr/view/AKR20261121027900005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "일본 록밴드 아시안 쿵푸 제너레이션, 내년 5월 내한 공연",
-     "link": "https://www.yna.co.kr/view/AKR20261118087900005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "일본 오사카서 '마마 어워즈' 맞아 팬 페스타",
-     "link": "https://www.yna.co.kr/view/AKR20261117159500005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "[글로벌 코리안] \"어릴 땐 그저 일본 이름을 가지고 싶었습니다\"",
-     "link": "https://www.yna.co.kr/view/AKR20261116148200371"
     }
    ]
   }

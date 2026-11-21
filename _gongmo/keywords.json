@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-21 11:00",
+ "updated": "2026-11-21 12:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -1179,6 +1179,18 @@
    "expires": "2026-11-24"
   },
   {
+   "query": "패딩",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 5000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-17",
+   "expires": "2026-11-24"
+  },
+  {
    "query": "박혜연",
    "tier": "단기",
    "signal": [
@@ -1408,18 +1420,6 @@
   },
   {
    "query": "아시아 프로 야구 챔피언십",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 5000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-17",
-   "expires": "2026-11-24"
-  },
-  {
-   "query": "패딩",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -2871,6 +2871,18 @@
    "expires": "2026-11-24"
   },
   {
+   "query": "연예인",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-21",
+   "expires": "2026-11-24"
+  },
+  {
    "query": "뉴캐슬 대 에버튼 순위",
    "tier": "단기",
    "signal": [
@@ -3504,18 +3516,6 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-20",
-   "expires": "2026-11-24"
-  },
-  {
-   "query": "연예인",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 2000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-21",
    "expires": "2026-11-24"
   },
   {
@@ -5040,6 +5040,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-17",
+   "expires": "2026-11-24"
+  },
+  {
+   "query": "동아일보",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-21",
    "expires": "2026-11-24"
   },
   {
