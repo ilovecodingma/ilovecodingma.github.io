@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-22 03:00",
+ "updated": "2026-11-22 04:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -2979,6 +2979,18 @@
    "expires": "2026-11-25"
   },
   {
+   "query": "첼시 대 리즈 유나이티드",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-22",
+   "expires": "2026-11-25"
+  },
+  {
    "query": "뉴캐슬 대 에버튼 순위",
    "tier": "단기",
    "signal": [
@@ -3636,18 +3648,6 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-21",
-   "expires": "2026-11-25"
-  },
-  {
-   "query": "첼시 대 리즈 유나이티드",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 2000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-22",
    "expires": "2026-11-25"
   },
   {
@@ -4467,6 +4467,30 @@
    "expires": "2026-11-25"
   },
   {
+   "query": "장동혁",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-17",
+   "expires": "2026-11-25"
+  },
+  {
+   "query": "권순우",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-18",
+   "expires": "2026-11-25"
+  },
+  {
    "query": "데블스플랜",
    "tier": "단기",
    "signal": [
@@ -5235,18 +5259,6 @@
    "expires": "2026-11-25"
   },
   {
-   "query": "권순우",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 1000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-18",
-   "expires": "2026-11-25"
-  },
-  {
    "query": "로베르트 모레노",
    "tier": "단기",
    "signal": [
@@ -5520,6 +5532,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-21",
+   "expires": "2026-11-25"
+  },
+  {
+   "query": "코번트리 대 크리스털 팰리스",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-22",
    "expires": "2026-11-25"
   },
   {
@@ -6424,18 +6448,6 @@
   },
   {
    "query": "너구리",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 1000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-17",
-   "expires": "2026-11-25"
-  },
-  {
-   "query": "장동혁",
    "tier": "단기",
    "signal": [
     "구글트렌드"
