@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-22 17:00",
+ "updated": "2026-11-22 18:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -3915,6 +3915,18 @@
    "expires": "2026-11-25"
   },
   {
+   "query": "김정은",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-22",
+   "expires": "2026-11-25"
+  },
+  {
    "query": "한진칼",
    "tier": "단기",
    "signal": [
@@ -6784,6 +6796,18 @@
   },
   {
    "query": "울산광역시",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-22",
+   "expires": "2026-11-25"
+  },
+  {
+   "query": "최민정",
    "tier": "단기",
    "signal": [
     "구글트렌드"
