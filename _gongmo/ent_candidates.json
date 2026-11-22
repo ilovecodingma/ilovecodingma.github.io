@@ -1,6 +1,6 @@
 {
- "at": "2026-11-22 13:30",
- "nitems": 503,
+ "at": "2026-11-22 15:11",
+ "nitems": 508,
  "cands": [
   {
    "kw": "장나라",
@@ -38,6 +38,41 @@
    ]
   },
   {
+   "kw": "결혼",
+   "nsrc": 6,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "동아일보",
+    "연합뉴스",
+    "조선일보",
+    "한겨레"
+   ],
+   "n": 15,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "배우 이가섭, 비연예인과 결혼…\"오랜 시간 든든한 버팀목\"",
+     "link": "https://www.yna.co.kr/view/AKR20261119085400005"
+    },
+    {
+     "src": "동아일보",
+     "title": "비, 김태희와 결혼 10년 차…“아침마다 감동 있어” (냉부해)",
+     "link": "https://sports.donga.com/ent/article/all/20261122/135065969/1"
+    },
+    {
+     "src": "한겨레",
+     "title": "가족과 연 끊고 10년…삶이 무서워 ‘결혼’에 매달릴 때 [.txt]",
+     "link": "https://www.hani.co.kr/arti/culture/book/1288448.html"
+    },
+    {
+     "src": "SBS",
+     "title": "[스브스夜] '비서진' 김종국, \"결혼은 진짜 내 편이 한 명 생기는 것\"…김광규에 '결혼 추천'",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008856713&plink=RSSLINK&cooper=RSSREADER"
+    }
+   ]
+  },
+  {
    "kw": "굿파트너",
    "nsrc": 6,
    "srcs": [
@@ -69,41 +104,6 @@
      "src": "동아일보",
      "title": "장나라, 김혜윤 스카우트 작전 돌입? 제대로 꽂혔다 (굿파트너2)",
      "link": "https://sports.donga.com/ent/article/all/20261121/135064887/1"
-    }
-   ]
-  },
-  {
-   "kw": "결혼",
-   "nsrc": 6,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "동아일보",
-    "연합뉴스",
-    "조선일보",
-    "한겨레"
-   ],
-   "n": 14,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "배우 이가섭, 비연예인과 결혼…\"오랜 시간 든든한 버팀목\"",
-     "link": "https://www.yna.co.kr/view/AKR20261119085400005"
-    },
-    {
-     "src": "동아일보",
-     "title": "비, 김태희와 결혼 10년 차…“아침마다 감동 있어” (냉부해)",
-     "link": "https://sports.donga.com/ent/article/all/20261122/135065969/1"
-    },
-    {
-     "src": "한겨레",
-     "title": "가족과 연 끊고 10년…삶이 무서워 ‘결혼’에 매달릴 때 [.txt]",
-     "link": "https://www.hani.co.kr/arti/culture/book/1288448.html"
-    },
-    {
-     "src": "SBS",
-     "title": "[스브스夜] '비서진' 김종국, \"결혼은 진짜 내 편이 한 명 생기는 것\"…김광규에 '결혼 추천'",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008856713&plink=RSSLINK&cooper=RSSREADER"
     }
    ]
   },
@@ -152,7 +152,7 @@
     "조선일보",
     "한국경제"
    ],
-   "n": 21,
+   "n": 17,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -578,6 +578,72 @@
    ]
   },
   {
+   "kw": "눈물",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "연합뉴스",
+    "조선일보"
+   ],
+   "n": 7,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "로이킴, 13년만 첫 KSPO돔 입성…\"노래로 눈물 닦였기를\"",
+     "link": "https://www.yna.co.kr/view/AKR20261120178900005"
+    },
+    {
+     "src": "동아일보",
+     "title": "14살 차 아내 “우린 떨어져 살 운명”…눈물 (결혼지옥)",
+     "link": "https://sports.donga.com/ent/article/all/20261122/135065509/1"
+    },
+    {
+     "src": "뉴시스",
+     "title": "은가은, 육아 문제로 친정엄마와 갈등…사돈 위로에 눈물",
+     "link": "https://www.newsis.com/view/NISX20261122_0003877953"
+    },
+    {
+     "src": "조선일보",
+     "title": "'♥동성 연인과 결혼' 김나라, 양가 부모님 반응? \"父, '왜 고민했냐' 눈물\" 뭉클",
+     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/22/MIZWCZRYGRQWEOJWMU2GKYZTGA/"
+    }
+   ]
+  },
+  {
+   "kw": "음주운전",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "연합뉴스",
+    "조선일보"
+   ],
+   "n": 7,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "'마약 집행유예중 음주운전' 남태현 2심도 실형…법정구속",
+     "link": "https://www.yna.co.kr/view/AKR20261119062300004"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "'보검 매직컬2' 측 \"고경표 음주운전 유감…시청 불편 최소화\"",
+     "link": "https://www.yna.co.kr/view/AKR20261118043900005"
+    },
+    {
+     "src": "동아일보",
+     "title": "고경표, 음주운전 8일 만에 인기상 후보…논란 끝 제외 [SD이슈]",
+     "link": "https://sports.donga.com/ent/article/all/20261122/135066911/1"
+    },
+    {
+     "src": "뉴시스",
+     "title": "'음주운전' 고경표, 결국 '핑계고' 시상식 후보 제외(종합)",
+     "link": "https://www.newsis.com/view/NISX20261122_0003878103"
+    }
+   ]
+  },
+  {
    "kw": "아일릿",
    "nsrc": 4,
    "srcs": [
@@ -640,72 +706,6 @@
      "src": "동아일보",
      "title": "엔하이픈, 360도 무대 꽉 채운 압도적 서사극",
      "link": "https://sports.donga.com/ent/article/all/20261122/135066688/1"
-    }
-   ]
-  },
-  {
-   "kw": "눈물",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "로이킴, 13년만 첫 KSPO돔 입성…\"노래로 눈물 닦였기를\"",
-     "link": "https://www.yna.co.kr/view/AKR20261120178900005"
-    },
-    {
-     "src": "동아일보",
-     "title": "14살 차 아내 “우린 떨어져 살 운명”…눈물 (결혼지옥)",
-     "link": "https://sports.donga.com/ent/article/all/20261122/135065509/1"
-    },
-    {
-     "src": "뉴시스",
-     "title": "은가은, 육아 문제로 친정엄마와 갈등…사돈 위로에 눈물",
-     "link": "https://www.newsis.com/view/NISX20261122_0003877953"
-    },
-    {
-     "src": "조선일보",
-     "title": "가수 혜은이, 이혼 후 생이별한 딸에 눈물 “엄마 보고 싶어 꾀병도”",
-     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/22/HFSTOMDEGA3GENLFMQ2GGYZTGY/"
-    }
-   ]
-  },
-  {
-   "kw": "깜짝",
-   "nsrc": 4,
-   "srcs": [
-    "동아일보",
-    "연합뉴스",
-    "조선일보",
-    "한국경제"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "20주년 빅뱅, 신곡 '기립' 깜짝 발표…GD 작사·작곡(종합)",
-     "link": "https://www.yna.co.kr/view/AKR20261120036851005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "20주년 빅뱅, 오늘 신곡 깜짝 발표…내일 '마마 어워즈' 출연",
-     "link": "https://www.yna.co.kr/view/AKR20261120036800005"
-    },
-    {
-     "src": "동아일보",
-     "title": "유영우·원이·이선민, 함께 콘서트 섰다…“깜짝 카메라 같아” (전참시)",
-     "link": "https://sports.donga.com/ent/article/all/20261121/135064817/1"
-    },
-    {
-     "src": "한국경제",
-     "title": "빅뱅, 오늘 신곡 깜짝 발표…'마마 어워즈' 기대감 ↑",
-     "link": "https://www.hankyung.com/article/202611209274H"
     }
    ]
   },
@@ -776,6 +776,39 @@
    ]
   },
   {
+   "kw": "고경표",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "연합뉴스",
+    "조선일보"
+   ],
+   "n": 6,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "'보검 매직컬2' 측 \"고경표 음주운전 유감…시청 불편 최소화\"",
+     "link": "https://www.yna.co.kr/view/AKR20261118043900005"
+    },
+    {
+     "src": "동아일보",
+     "title": "고경표, 음주운전 8일 만에 인기상 후보…논란 끝 제외 [SD이슈]",
+     "link": "https://sports.donga.com/ent/article/all/20261122/135066911/1"
+    },
+    {
+     "src": "뉴시스",
+     "title": "'음주운전' 고경표, 결국 '핑계고' 시상식 후보 제외(종합)",
+     "link": "https://www.newsis.com/view/NISX20261122_0003878103"
+    },
+    {
+     "src": "뉴시스",
+     "title": "'음주운전' 고경표, '핑계고' 시상식 후보…적절성 논란",
+     "link": "https://www.newsis.com/view/NISX20261122_0003877952"
+    }
+   ]
+  },
+  {
    "kw": "컴백",
    "nsrc": 4,
    "srcs": [
@@ -805,6 +838,39 @@
      "src": "한국경제",
      "title": "'컴백' NCT 드림, 이름값 제대로…음반·음원 차트 1위",
      "link": "https://www.hankyung.com/article/202611106884H"
+    }
+   ]
+  },
+  {
+   "kw": "후보",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "연합뉴스",
+    "조선일보"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "'그래미 후보' 제니 '드라큘라', 美 빌보드 싱글 3위 유지",
+     "link": "https://www.yna.co.kr/view/AKR20261117038500005"
+    },
+    {
+     "src": "동아일보",
+     "title": "고경표, 음주운전 8일 만에 인기상 후보…논란 끝 제외 [SD이슈]",
+     "link": "https://sports.donga.com/ent/article/all/20261122/135066911/1"
+    },
+    {
+     "src": "뉴시스",
+     "title": "'음주운전' 고경표, 결국 '핑계고' 시상식 후보 제외(종합)",
+     "link": "https://www.newsis.com/view/NISX20261122_0003878103"
+    },
+    {
+     "src": "뉴시스",
+     "title": "'음주운전' 고경표, '핑계고' 시상식 후보…적절성 논란",
+     "link": "https://www.newsis.com/view/NISX20261122_0003877952"
     }
    ]
   },
@@ -1007,7 +1073,7 @@
    ]
   },
   {
-   "kw": "김민",
+   "kw": "산불",
    "nsrc": 4,
    "srcs": [
     "SBS",
@@ -1040,7 +1106,7 @@
    ]
   },
   {
-   "kw": "산불",
+   "kw": "김민",
    "nsrc": 4,
    "srcs": [
     "SBS",
@@ -1201,34 +1267,34 @@
    ]
   },
   {
-   "kw": "음주운전",
+   "kw": "아내",
    "nsrc": 3,
    "srcs": [
     "뉴시스",
-    "연합뉴스",
+    "동아일보",
     "조선일보"
    ],
    "n": 6,
    "headlines": [
     {
-     "src": "연합뉴스",
-     "title": "'마약 집행유예중 음주운전' 남태현 2심도 실형…법정구속",
-     "link": "https://www.yna.co.kr/view/AKR20261119062300004"
+     "src": "동아일보",
+     "title": "이코베, 아내 최소라 사진만 10만 장…출산 순간도 촬영 (전착시)",
+     "link": "https://sports.donga.com/ent/article/all/20261122/135065702/1"
     },
     {
-     "src": "연합뉴스",
-     "title": "'보검 매직컬2' 측 \"고경표 음주운전 유감…시청 불편 최소화\"",
-     "link": "https://www.yna.co.kr/view/AKR20261118043900005"
-    },
-    {
-     "src": "뉴시스",
-     "title": "'음주운전' 고경표, 결국 '핑계고' 시상식 후보 제외(종합)",
-     "link": "https://www.newsis.com/view/NISX20261122_0003878103"
+     "src": "동아일보",
+     "title": "14살 차 아내 “우린 떨어져 살 운명”…눈물 (결혼지옥)",
+     "link": "https://sports.donga.com/ent/article/all/20261122/135065509/1"
     },
     {
      "src": "뉴시스",
-     "title": "'음주운전' 고경표, '핑계고' 시상식 후보…적절성 논란",
-     "link": "https://www.newsis.com/view/NISX20261122_0003877952"
+     "title": "김원효, 트랜스젠더 바 방문 해프닝…\"아내 심진화도 알았다\"",
+     "link": "https://www.newsis.com/view/NISX20261122_0003878147"
+    },
+    {
+     "src": "뉴시스",
+     "title": "이코베, 10년간 10만 장 담은 아내 최소라 사진전 연다",
+     "link": "https://www.newsis.com/view/NISX20261122_0003878072"
     }
    ]
   },
@@ -1261,70 +1327,6 @@
      "src": "뉴시스",
      "title": "지드래곤 청담동 빌딩, 9년 만에 2배…173억원 육박",
      "link": "https://www.newsis.com/view/NISX20261120_0003876901"
-    }
-   ]
-  },
-  {
-   "kw": "디즈니",
-   "nsrc": 3,
-   "srcs": [
-    "연합뉴스",
-    "조선일보",
-    "한국경제"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "에스파, 美 디즈니 연말 특집 출연…'산타 베이비' 등 열창",
-     "link": "https://www.yna.co.kr/view/AKR20261120039400005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "디즈니+ 한국 진출 5년…\"OTT 경쟁은 장기전, 韓 콘텐츠 강화\"",
-     "link": "https://www.yna.co.kr/view/AKR20261118115600005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "디즈니, 어닝 서프라이즈에도 허리띠 졸라매기…\"성장위한 투자\"",
-     "link": "https://www.yna.co.kr/view/AKR20261118068500075"
-    },
-    {
-     "src": "한국경제",
-     "title": "장원영, 디즈니 공주님이 여기 있네…홍콩 밝힌 비주얼",
-     "link": "https://www.hankyung.com/article/202611185624H"
-    }
-   ]
-  },
-  {
-   "kw": "재혼",
-   "nsrc": 3,
-   "srcs": [
-    "뉴시스",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "'재혼 황후' 인기에 웹툰 글로벌 조회수 35배 증가",
-     "link": "https://www.yna.co.kr/view/AKR20261119119100005"
-    },
-    {
-     "src": "뉴시스",
-     "title": "'흑백요리사' 트리플스타 강승원 재혼…\"부끄럽지 않은 남편 될 것\"",
-     "link": "https://www.newsis.com/view/NISX20261122_0003877875"
-    },
-    {
-     "src": "뉴시스",
-     "title": "'재혼 황후' 신민아, 화려한 드레스 속 늘씬한 몸매…달라진 식습관 눈길",
-     "link": "https://www.newsis.com/view/NISX20261120_0003876825"
-    },
-    {
-     "src": "조선일보",
-     "title": "'흑백' 트리플스타, 재혼 발표..\"부족한 저를 감싸 안아준 사람\" [전문]",
-     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/22/MZRGMN3FG43WEN3GGY3DEZBSMY/"
     }
    ]
   }
