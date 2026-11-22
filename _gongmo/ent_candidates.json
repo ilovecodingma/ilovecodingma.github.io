@@ -1,6 +1,6 @@
 {
- "at": "2026-11-22 15:30",
- "nitems": 508,
+ "at": "2026-11-22 17:11",
+ "nitems": 506,
  "cands": [
   {
    "kw": "장나라",
@@ -143,7 +143,7 @@
    ]
   },
   {
-   "kw": "대상",
+   "kw": "마마",
    "nsrc": 5,
    "srcs": [
     "뉴시스",
@@ -153,6 +153,40 @@
     "한국경제"
    ],
    "n": 15,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "BTS·코르티스, 마마 둘째날 대상…3관왕 빅뱅, 신곡 무대 첫선",
+     "link": "https://www.yna.co.kr/view/AKR20261121047200005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "오사카 달군 '2026 마마 어워즈'…첫날 대상에 BTS·엔하이픈",
+     "link": "https://www.yna.co.kr/view/AKR20261120179200005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "20주년 빅뱅, 오늘 신곡 깜짝 발표…내일 '마마 어워즈' 출연",
+     "link": "https://www.yna.co.kr/view/AKR20261120036800005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "일본 오사카서 '마마 어워즈' 맞아 팬 페스타",
+     "link": "https://www.yna.co.kr/view/AKR20261117159500005"
+    }
+   ]
+  },
+  {
+   "kw": "대상",
+   "nsrc": 5,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "연합뉴스",
+    "조선일보",
+    "한국경제"
+   ],
+   "n": 14,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -186,7 +220,7 @@
     "조선일보",
     "한국경제"
    ],
-   "n": 15,
+   "n": 12,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -241,6 +275,40 @@
      "src": "동아일보",
      "title": "‘기립 (GiiiRIP)’ 무대 최초 공개‘ 빅뱅, ’2026 MAMA‘서 4관왕 쾌거",
      "link": "https://sports.donga.com/ent/article/all/20261122/135066394/1"
+    }
+   ]
+  },
+  {
+   "kw": "아이브",
+   "nsrc": 5,
+   "srcs": [
+    "동아일보",
+    "세계일보",
+    "연합뉴스",
+    "조선일보",
+    "한국경제"
+   ],
+   "n": 9,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "아이브, 내년 1월 서울 KSPO돔서 월드투어 앙코르",
+     "link": "https://www.yna.co.kr/view/AKR20261120145400005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "[방송소식] 아이브 가을, ENA 다큐 '하지 못한 말' 프리젠터 참여",
+     "link": "https://www.yna.co.kr/view/AKR20261117063000005"
+    },
+    {
+     "src": "동아일보",
+     "title": "아이브, ‘2026 마마 어워즈’ 2관왕…여자 그룹상·베스트 송 톱 10 석권",
+     "link": "https://sports.donga.com/ent/article/all/20261122/135067659/1"
+    },
+    {
+     "src": "한국경제",
+     "title": "BTS 대상 2개 포함 '6관왕'·아이브 눈물의 '5관왕'…MMA 2026 피날레 [종합]",
+     "link": "https://www.hankyung.com/article/202611157614H"
     }
    ]
   },
@@ -380,21 +448,49 @@
    ]
   },
   {
-   "kw": "마마",
+   "kw": "관왕",
    "nsrc": 4,
    "srcs": [
-    "뉴시스",
+    "동아일보",
     "연합뉴스",
     "조선일보",
     "한국경제"
    ],
-   "n": 14,
+   "n": 9,
    "headlines": [
     {
      "src": "연합뉴스",
      "title": "BTS·코르티스, 마마 둘째날 대상…3관왕 빅뱅, 신곡 무대 첫선",
      "link": "https://www.yna.co.kr/view/AKR20261121047200005"
     },
+    {
+     "src": "동아일보",
+     "title": "아이브, ‘2026 마마 어워즈’ 2관왕…여자 그룹상·베스트 송 톱 10 석권",
+     "link": "https://sports.donga.com/ent/article/all/20261122/135067659/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "‘기립 (GiiiRIP)’ 무대 최초 공개‘ 빅뱅, ’2026 MAMA‘서 4관왕 쾌거",
+     "link": "https://sports.donga.com/ent/article/all/20261122/135066394/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "방탄소년단, ‘2026 MAMA 어워즈’ 5관왕…완전체·솔로 합산 대상 24개 금자탑",
+     "link": "https://sports.donga.com/ent/article/all/20261122/135065612/1"
+    }
+   ]
+  },
+  {
+   "kw": "어워즈",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "연합뉴스",
+    "한국경제"
+   ],
+   "n": 8,
+   "headlines": [
     {
      "src": "연합뉴스",
      "title": "오사카 달군 '2026 마마 어워즈'…첫날 대상에 BTS·엔하이픈",
@@ -409,72 +505,11 @@
      "src": "연합뉴스",
      "title": "일본 오사카서 '마마 어워즈' 맞아 팬 페스타",
      "link": "https://www.yna.co.kr/view/AKR20261117159500005"
-    }
-   ]
-  },
-  {
-   "kw": "관왕",
-   "nsrc": 4,
-   "srcs": [
-    "동아일보",
-    "연합뉴스",
-    "조선일보",
-    "한국경제"
-   ],
-   "n": 8,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "BTS·코르티스, 마마 둘째날 대상…3관왕 빅뱅, 신곡 무대 첫선",
-     "link": "https://www.yna.co.kr/view/AKR20261121047200005"
     },
     {
      "src": "동아일보",
-     "title": "‘기립 (GiiiRIP)’ 무대 최초 공개‘ 빅뱅, ’2026 MAMA‘서 4관왕 쾌거",
-     "link": "https://sports.donga.com/ent/article/all/20261122/135066394/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "방탄소년단, ‘2026 MAMA 어워즈’ 5관왕…완전체·솔로 합산 대상 24개 금자탑",
-     "link": "https://sports.donga.com/ent/article/all/20261122/135065612/1"
-    },
-    {
-     "src": "한국경제",
-     "title": "BTS 대상 2개 포함 '6관왕'·아이브 눈물의 '5관왕'…MMA 2026 피날레 [종합]",
-     "link": "https://www.hankyung.com/article/202611157614H"
-    }
-   ]
-  },
-  {
-   "kw": "아이브",
-   "nsrc": 4,
-   "srcs": [
-    "세계일보",
-    "연합뉴스",
-    "조선일보",
-    "한국경제"
-   ],
-   "n": 8,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "아이브, 내년 1월 서울 KSPO돔서 월드투어 앙코르",
-     "link": "https://www.yna.co.kr/view/AKR20261120145400005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "[방송소식] 아이브 가을, ENA 다큐 '하지 못한 말' 프리젠터 참여",
-     "link": "https://www.yna.co.kr/view/AKR20261117063000005"
-    },
-    {
-     "src": "한국경제",
-     "title": "BTS 대상 2개 포함 '6관왕'·아이브 눈물의 '5관왕'…MMA 2026 피날레 [종합]",
-     "link": "https://www.hankyung.com/article/202611157614H"
-    },
-    {
-     "src": "한국경제",
-     "title": "아이브 리즈, 못 하는 게 뭐야…MC·솔로 무대·수상까지 '만능캐 입증'",
-     "link": "https://www.hankyung.com/article/202611096058H"
+     "title": "아이브, ‘2026 마마 어워즈’ 2관왕…여자 그룹상·베스트 송 톱 10 석권",
+     "link": "https://sports.donga.com/ent/article/all/20261122/135067659/1"
     }
    ]
   },
@@ -541,39 +576,6 @@
      "src": "동아일보",
      "title": "허각, 몰라보게 달라진 근황…24kg 감량 고백 (고막남친)",
      "link": "https://sports.donga.com/ent/article/all/20261121/135065043/1"
-    }
-   ]
-  },
-  {
-   "kw": "어워즈",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "연합뉴스",
-    "한국경제"
-   ],
-   "n": 7,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "오사카 달군 '2026 마마 어워즈'…첫날 대상에 BTS·엔하이픈",
-     "link": "https://www.yna.co.kr/view/AKR20261120179200005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "20주년 빅뱅, 오늘 신곡 깜짝 발표…내일 '마마 어워즈' 출연",
-     "link": "https://www.yna.co.kr/view/AKR20261120036800005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "일본 오사카서 '마마 어워즈' 맞아 팬 페스타",
-     "link": "https://www.yna.co.kr/view/AKR20261117159500005"
-    },
-    {
-     "src": "동아일보",
-     "title": "방탄소년단, ‘2026 MAMA 어워즈’ 5관왕…완전체·솔로 합산 대상 24개 금자탑",
-     "link": "https://sports.donga.com/ent/article/all/20261122/135065612/1"
     }
    ]
   },
@@ -737,7 +739,7 @@
     },
     {
      "src": "SBS",
-     "title": "[꼬꼬무 찐리뷰]\"갓난아기까지 죽였다\" 55일간 17명 살해…'대한민국 최초 연쇄살인마' 김대두의 소름 돋는 전말",
+     "title": "[꼬꼬무 찐리뷰] \"갓난아기까지 죽였다\" 55일간 17명 살해…'대한민국 최초 연쇄살인마' 김대두의 소름 돋는 전말",
      "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008855694&plink=RSSLINK&cooper=RSSREADER"
     }
    ]
@@ -809,6 +811,39 @@
    ]
   },
   {
+   "kw": "후보",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "연합뉴스",
+    "조선일보"
+   ],
+   "n": 6,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "'그래미 후보' 제니 '드라큘라', 美 빌보드 싱글 3위 유지",
+     "link": "https://www.yna.co.kr/view/AKR20261117038500005"
+    },
+    {
+     "src": "동아일보",
+     "title": "고경표, 음주운전 8일 만에 인기상 후보…논란 끝 제외 [SD이슈]",
+     "link": "https://sports.donga.com/ent/article/all/20261122/135066911/1"
+    },
+    {
+     "src": "뉴시스",
+     "title": "'음주운전' 고경표, 결국 '핑계고' 시상식 후보 제외(종합)",
+     "link": "https://www.newsis.com/view/NISX20261122_0003878103"
+    },
+    {
+     "src": "뉴시스",
+     "title": "'음주운전' 고경표, '핑계고' 시상식 후보…적절성 논란",
+     "link": "https://www.newsis.com/view/NISX20261122_0003877952"
+    }
+   ]
+  },
+  {
    "kw": "컴백",
    "nsrc": 4,
    "srcs": [
@@ -838,72 +873,6 @@
      "src": "한국경제",
      "title": "'컴백' NCT 드림, 이름값 제대로…음반·음원 차트 1위",
      "link": "https://www.hankyung.com/article/202611106884H"
-    }
-   ]
-  },
-  {
-   "kw": "후보",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "'그래미 후보' 제니 '드라큘라', 美 빌보드 싱글 3위 유지",
-     "link": "https://www.yna.co.kr/view/AKR20261117038500005"
-    },
-    {
-     "src": "동아일보",
-     "title": "고경표, 음주운전 8일 만에 인기상 후보…논란 끝 제외 [SD이슈]",
-     "link": "https://sports.donga.com/ent/article/all/20261122/135066911/1"
-    },
-    {
-     "src": "뉴시스",
-     "title": "'음주운전' 고경표, 결국 '핑계고' 시상식 후보 제외(종합)",
-     "link": "https://www.newsis.com/view/NISX20261122_0003878103"
-    },
-    {
-     "src": "뉴시스",
-     "title": "'음주운전' 고경표, '핑계고' 시상식 후보…적절성 논란",
-     "link": "https://www.newsis.com/view/NISX20261122_0003877952"
-    }
-   ]
-  },
-  {
-   "kw": "내가",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "조선일보",
-    "한국경제",
-    "헤럴드경제"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "한국경제",
-     "title": "나나, 탑과 공개 열애 후…악플 쏟아지자 \"내가 무슨 잘못\" 소신 발언",
-     "link": "https://www.hankyung.com/article/202611069702H"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "장항준 “이 사람한테 받은 설움, 분노 때문에 내가 있다”",
-     "link": "https://biz.heraldcorp.com/article/10944340"
-    },
-    {
-     "src": "뉴시스",
-     "title": "김미려 \"대출 다 내 이름…내가 바깥양반으로 활동\"",
-     "link": "https://www.newsis.com/view/NISX20261121_0003877707"
-    },
-    {
-     "src": "조선일보",
-     "title": "채령, JYP 떠난 언니 채연에 죄책감 “내가 대신 나갔어야 했는데”",
-     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/22/GM4DQZTGGAYDANZVGAYDKYZTMM/"
     }
    ]
   },
@@ -1040,40 +1009,40 @@
    ]
   },
   {
-   "kw": "리센느",
+   "kw": "감동",
    "nsrc": 4,
    "srcs": [
+    "뉴시스",
     "동아일보",
-    "연합뉴스",
     "조선일보",
     "한국경제"
    ],
    "n": 4,
    "headlines": [
     {
-     "src": "연합뉴스",
-     "title": "수능 대신 무대 오르는 08년생 아이돌들…코르티스·리센느 등",
-     "link": "https://www.yna.co.kr/view/AKR20261117153900005"
-    },
-    {
      "src": "동아일보",
-     "title": "유영우, 리센느 원이 母에게 절 받았다…무슨 사연 (전참시)",
-     "link": "https://sports.donga.com/ent/article/all/20261121/135064849/1"
+     "title": "비, 김태희와 결혼 10년 차…“아침마다 감동 있어” (냉부해)",
+     "link": "https://sports.donga.com/ent/article/all/20261122/135065969/1"
     },
     {
      "src": "한국경제",
-     "title": "리센느, 확신의 대세…초동 60만장·음방 1위·내년 콘서트",
-     "link": "https://www.hankyung.com/article/202611119221H"
+     "title": "'연애박사' 음악의 감동, LP로 더 따뜻하게…추영우 가창곡도 포함",
+     "link": "https://www.hankyung.com/article/202611108301H"
+    },
+    {
+     "src": "뉴시스",
+     "title": "비 \"아침마다 김태희 보면 감동\"",
+     "link": "https://www.newsis.com/view/NISX20261122_0003878109"
     },
     {
      "src": "조선일보",
-     "title": "리센느 원이, 지금이 얼마나 꿈같으면 “몰카 같기도..한순간에 사라질 것 같아”",
-     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/22/GBTGKZRVGJQWCNLGHFQWCNDDGI/"
+     "title": "비♥김태희, 결혼 10년 차에도 신혼ing…\"아침마다 감동 있다\"('냉부')",
+     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/22/MVSTCNTEGEYGEOJRMRTDEODFGA/"
     }
    ]
   },
   {
-   "kw": "산불",
+   "kw": "김민",
    "nsrc": 4,
    "srcs": [
     "SBS",
@@ -1106,7 +1075,7 @@
    ]
   },
   {
-   "kw": "김민",
+   "kw": "산불",
    "nsrc": 4,
    "srcs": [
     "SBS",
@@ -1167,38 +1136,6 @@
      "src": "뉴시스",
      "title": "51세 추성훈, 은퇴전서 아쉬운 판정패…22년 파이터 인생 마침표",
      "link": "https://www.newsis.com/view/NISX20261121_0003877843"
-    }
-   ]
-  },
-  {
-   "kw": "일본",
-   "nsrc": 3,
-   "srcs": [
-    "연합뉴스",
-    "조선일보",
-    "한겨레"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "아일릿, 일본 레코드 대상 우수작품상…코르티스 특별국제음악상",
-     "link": "https://www.yna.co.kr/view/AKR20261121027900005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "일본 록밴드 아시안 쿵푸 제너레이션, 내년 5월 내한 공연",
-     "link": "https://www.yna.co.kr/view/AKR20261118087900005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "일본 오사카서 '마마 어워즈' 맞아 팬 페스타",
-     "link": "https://www.yna.co.kr/view/AKR20261117159500005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "[글로벌 코리안] \"어릴 땐 그저 일본 이름을 가지고 싶었습니다\"",
-     "link": "https://www.yna.co.kr/view/AKR20261116148200371"
     }
    ]
   },
@@ -1299,6 +1236,38 @@
    ]
   },
   {
+   "kw": "일본",
+   "nsrc": 3,
+   "srcs": [
+    "연합뉴스",
+    "조선일보",
+    "한겨레"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "아일릿, 일본 레코드 대상 우수작품상…코르티스 특별국제음악상",
+     "link": "https://www.yna.co.kr/view/AKR20261121027900005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "일본 록밴드 아시안 쿵푸 제너레이션, 내년 5월 내한 공연",
+     "link": "https://www.yna.co.kr/view/AKR20261118087900005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "일본 오사카서 '마마 어워즈' 맞아 팬 페스타",
+     "link": "https://www.yna.co.kr/view/AKR20261117159500005"
+    },
+    {
+     "src": "한겨레",
+     "title": "낯선 사상 받아들인 변방 일본, 아래로부터 만들어져 위로 간 보편성 [.txt]",
+     "link": "https://www.hani.co.kr/arti/culture/religion/1288256.html"
+    }
+   ]
+  },
+  {
    "kw": "억원",
    "nsrc": 3,
    "srcs": [
@@ -1327,6 +1296,38 @@
      "src": "뉴시스",
      "title": "지드래곤 청담동 빌딩, 9년 만에 2배…173억원 육박",
      "link": "https://www.newsis.com/view/NISX20261120_0003876901"
+    }
+   ]
+  },
+  {
+   "kw": "깜짝",
+   "nsrc": 3,
+   "srcs": [
+    "연합뉴스",
+    "조선일보",
+    "한국경제"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "20주년 빅뱅, 신곡 '기립' 깜짝 발표…GD 작사·작곡(종합)",
+     "link": "https://www.yna.co.kr/view/AKR20261120036851005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "20주년 빅뱅, 오늘 신곡 깜짝 발표…내일 '마마 어워즈' 출연",
+     "link": "https://www.yna.co.kr/view/AKR20261120036800005"
+    },
+    {
+     "src": "한국경제",
+     "title": "빅뱅, 오늘 신곡 깜짝 발표…'마마 어워즈' 기대감 ↑",
+     "link": "https://www.hankyung.com/article/202611209274H"
+    },
+    {
+     "src": "한국경제",
+     "title": "'두 도시 이야기' 신성록, 기상캐스터로 깜짝 변신한다",
+     "link": "https://www.hankyung.com/article/202611197375H"
     }
    ]
   }
