@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-22 11:00",
+ "updated": "2026-11-22 12:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -87,7 +87,7 @@
    "expires": "2026-11-25"
   },
   {
-   "query": "매일경제신문",
+   "query": "삼전 닉스",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -99,7 +99,7 @@
    "expires": "2026-11-25"
   },
   {
-   "query": "삼전 닉스",
+   "query": "매일경제신문",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -1035,6 +1035,18 @@
    "expires": "2026-11-25"
   },
   {
+   "query": "수출규제",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 5000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-20",
+   "expires": "2026-11-25"
+  },
+  {
    "query": "미국 반도체 수출 통제로 인한 삼성전자와 tsmc의 중국 출하 중단 뉴스 알려줘",
    "tier": "단기",
    "signal": [
@@ -1500,18 +1512,6 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-19",
-   "expires": "2026-11-25"
-  },
-  {
-   "query": "수출규제",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 5000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-20",
    "expires": "2026-11-25"
   },
   {
@@ -3732,6 +3732,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-17",
+   "expires": "2026-11-25"
+  },
+  {
+   "query": "알테오젠",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-22",
    "expires": "2026-11-25"
   },
   {
