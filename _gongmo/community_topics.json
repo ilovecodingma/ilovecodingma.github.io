@@ -1,14 +1,14 @@
 {
  "date": "2026-11-22",
- "updated": "2026-11-22 07:50",
+ "updated": "2026-11-22 08:50",
  "sites": 13,
- "npost": 654,
+ "npost": 759,
  "note": "출처(커뮤니티)별 집계예요. 작성자·연령·성별 정보는 수집하지 않아요. posts 는 이슈별로 뽑힌 일부라 전체 글 수가 아니에요.",
  "sources": [
   {
    "name": "MLB파크",
-   "np": 8,
-   "nc": 658,
+   "np": 6,
+   "nc": 340,
    "topics": [
     {
      "t": "도대체 누가 왜 사먹는지도 모르는데 계속 생산되는 식품......",
@@ -18,8 +18,8 @@
      "issue_np": 1,
      "issue_nc": 148,
      "kw": [
-      "생산",
-      "식품"
+      "식품",
+      "생산"
      ],
      "top_post": {
       "t": "도대체 누가 왜 사먹는지도 모르는데 계속 생산되는 식품......",
@@ -28,65 +28,12 @@
      }
     },
     {
-     "t": "배종옥 요즘 mz배우들 태도에 일침",
-     "nsite": 1,
-     "np_here": 1,
-     "nc_here": 140,
-     "issue_np": 1,
-     "issue_nc": 140,
-     "kw": [
-      "MZ",
-      "일침",
-      "태도"
-     ],
-     "top_post": {
-      "t": "배종옥 요즘 mz배우들 태도에 일침",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611210120248172&m=view",
-      "nc": 140
-     }
-    },
-    {
-     "t": "수능 지각생 속출… 한 맺힌 절규",
-     "nsite": 1,
-     "np_here": 1,
-     "nc_here": 109,
-     "issue_np": 1,
-     "issue_nc": 109,
-     "kw": [
-      "속출",
-      "절규",
-      "수능"
-     ],
-     "top_post": {
-      "t": "수능 지각생 속출… 한 맺힌 절규",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611210120249810&m=view",
-      "nc": 109
-     }
-    },
-    {
-     "t": "충격적인 지드래곤 근황 ㄷㄷㄷ",
-     "nsite": 1,
-     "np_here": 1,
-     "nc_here": 100,
-     "issue_np": 1,
-     "issue_nc": 100,
-     "kw": [
-      "충격",
-      "지드래곤"
-     ],
-     "top_post": {
-      "t": "충격적인 지드래곤 근황 ㄷㄷㄷ",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611210120247572&m=view",
-      "nc": 100
-     }
-    },
-    {
      "t": "현재 리만가설 증명 수학자협회 성명문 근황 올라왔네요.",
      "nsite": 5,
      "np_here": 1,
-     "nc_here": 74,
+     "nc_here": 84,
      "issue_np": 7,
-     "issue_nc": 90,
+     "issue_nc": 113,
      "kw": [
       "가설",
       "리만",
@@ -96,7 +43,7 @@
      "top_post": {
       "t": "현재 리만가설 증명 수학자협회 성명문 근황 올라왔네요.",
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611220120253092&m=view",
-      "nc": 74
+      "nc": 84
      }
     },
     {
@@ -107,8 +54,8 @@
      "issue_np": 2,
      "issue_nc": 62,
      "kw": [
-      "한국",
-      "영국"
+      "영국",
+      "한국"
      ],
      "top_post": {
       "t": "영국 여성이 한국 돌아다니며 느낀점",
@@ -117,7 +64,7 @@
      }
     },
     {
-     "t": "월요일에 못 들어가는 분은 주식판을 떠나는게 좋을 듯",
+     "t": "월요일 주식 사실건가요 ㄷㄷㄷㄷ",
      "nsite": 2,
      "np_here": 1,
      "nc_here": 21,
@@ -134,12 +81,29 @@
      }
     },
     {
+     "t": "남친을 벌레처럼 보는 엄마, 아빠",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 18,
+     "issue_np": 2,
+     "issue_nc": 18,
+     "kw": [
+      "엄마",
+      "아빠"
+     ],
+     "top_post": {
+      "t": "남친을 벌레처럼 보는 엄마, 아빠",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611220120253569&m=view",
+      "nc": 18
+     }
+    },
+    {
      "t": "세무냥이 리트냥이 쌍으로 골로 가니 기분 좋네요",
      "nsite": 2,
      "np_here": 1,
-     "nc_here": 7,
+     "nc_here": 10,
      "issue_np": 2,
-     "issue_nc": 7,
+     "issue_nc": 10,
      "kw": [
       "리트냥이",
       "세무"
@@ -147,15 +111,15 @@
      "top_post": {
       "t": "세무냥이 리트냥이 쌍으로 골로 가니 기분 좋네요",
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611220120253560&m=view",
-      "nc": 7
+      "nc": 10
      }
     }
    ]
   },
   {
    "name": "인스티즈",
-   "np": 4,
-   "nc": 500,
+   "np": 2,
+   "nc": 246,
    "topics": [
     {
      "t": "ටㅏ 갑자기 이재명식 수능운영 𝙅𝙊𝙉𝙉𝘼 웃기네",
@@ -165,8 +129,8 @@
      "issue_np": 1,
      "issue_nc": 162,
      "kw": [
-      "이재명",
-      "수능"
+      "수능",
+      "이재명"
      ],
      "top_post": {
       "t": "ටㅏ 갑자기 이재명식 수능운영 𝙅𝙊𝙉𝙉𝘼 웃기네",
@@ -175,51 +139,15 @@
      }
     },
     {
-     "t": "와 이상화 입 진짜 무겁다",
-     "nsite": 1,
-     "np_here": 1,
-     "nc_here": 147,
-     "issue_np": 1,
-     "issue_nc": 147,
-     "kw": [
-      "추천",
-      "조회",
-      "이상"
-     ],
-     "top_post": {
-      "t": "와 이상화 입 진짜 무겁다",
-      "u": "https://www.instiz.net/pt/7927256?page=1&srt=3&k=",
-      "nc": 147
-     }
-    },
-    {
-     "t": "아기가 주는 행복이 있다< <이 말도 ㄹㅇ 엄빠의 이기심 아님?",
-     "nsite": 1,
-     "np_here": 1,
-     "nc_here": 107,
-     "issue_np": 1,
-     "issue_nc": 107,
-     "kw": [
-      "이기심",
-      "행복",
-      "아기"
-     ],
-     "top_post": {
-      "t": "아기가 주는 행복이 있다< <이 말도 ㄹㅇ 엄빠의 이기심 아님?",
-      "u": "https://www.instiz.net/pt/7926995?page=1&srt=3&k=",
-      "nc": 107
-     }
-    },
-    {
      "t": "수능 부정행위 단속 총정리",
      "nsite": 3,
      "np_here": 1,
      "nc_here": 84,
-     "issue_np": 3,
+     "issue_np": 4,
      "issue_nc": 87,
      "kw": [
-      "수능",
       "부정",
+      "수능",
       "행위"
      ],
      "top_post": {
@@ -233,33 +161,15 @@
   {
    "name": "개드립",
    "np": 8,
-   "nc": 213,
+   "nc": 193,
    "topics": [
-    {
-     "t": "\"꿈꾸던 어른이 되었나요\" 저작권료 공개 ㄷㄷ",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 49,
-     "issue_np": 2,
-     "issue_nc": 49,
-     "kw": [
-      "저작권료",
-      "어른",
-      "공개"
-     ],
-     "top_post": {
-      "t": "\"꿈꾸던 어른이 되었나요\" 저작권료 공개 ㄷㄷ",
-      "u": "https://www.dogdrip.net/dogdrip/735990331?sort_index=popular&page=1",
-      "nc": 49
-     }
-    },
     {
      "t": "Gta 때문에 게임계가 시끄럽네",
      "nsite": 3,
      "np_here": 1,
-     "nc_here": 42,
+     "nc_here": 48,
      "issue_np": 4,
-     "issue_nc": 99,
+     "issue_nc": 105,
      "kw": [
       "GTA",
       "게임"
@@ -267,16 +177,16 @@
      "top_post": {
       "t": "게임 스트리머 gta6 솔직한 평가",
       "u": "https://www.dogdrip.net/dogdrip/735978991?sort_index=popular&page=1",
-      "nc": 42
+      "nc": 48
      }
     },
     {
      "t": "중국:독도는 한국땅.",
      "nsite": 2,
      "np_here": 1,
-     "nc_here": 41,
+     "nc_here": 43,
      "issue_np": 2,
-     "issue_nc": 44,
+     "issue_nc": 46,
      "kw": [
       "독도",
       "한국"
@@ -284,51 +194,34 @@
      "top_post": {
       "t": "중국:독도는 한국땅.",
       "u": "https://www.dogdrip.net/dogdrip/735978759?sort_index=popular&page=1",
-      "nc": 41
+      "nc": 43
      }
     },
     {
      "t": "서울대 의대 26학번끼리 서로 AI안경 썼는지 검증",
      "nsite": 2,
      "np_here": 1,
-     "nc_here": 32,
+     "nc_here": 33,
      "issue_np": 2,
-     "issue_nc": 32,
+     "issue_nc": 33,
      "kw": [
-      "안경",
       "의대",
-      "AI"
+      "AI",
+      "안경"
      ],
      "top_post": {
       "t": "서울대 의대 26학번끼리 서로 AI안경 썼는지 검증",
       "u": "https://www.dogdrip.net/dogdrip/735978084?sort_index=popular&page=1",
-      "nc": 32
-     }
-    },
-    {
-     "t": "ㅇㅎ) 의외로 좋아하는 남자들이 있다는 여자 신체부위",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 21,
-     "issue_np": 2,
-     "issue_nc": 22,
-     "kw": [
-      "남자",
-      "여자"
-     ],
-     "top_post": {
-      "t": "ㅇㅎ) 의외로 좋아하는 남자들이 있다는 여자 신체부위",
-      "u": "https://www.dogdrip.net/dogdrip/735965859?sort_index=popular&page=1",
-      "nc": 21
+      "nc": 33
      }
     },
     {
      "t": "현재 리만가설 증명 수학자협회 성명문 근황 올라왔네요.",
      "nsite": 5,
      "np_here": 1,
-     "nc_here": 15,
+     "nc_here": 28,
      "issue_np": 7,
-     "issue_nc": 90,
+     "issue_nc": 113,
      "kw": [
       "가설",
       "리만",
@@ -338,7 +231,41 @@
      "top_post": {
       "t": "리만가설 증명보고 개빡친 수학자협회 성명문..",
       "u": "https://www.dogdrip.net/dogdrip/735992206?sort_index=popular&page=1",
-      "nc": 15
+      "nc": 28
+     }
+    },
+    {
+     "t": "ㅇㅎ) 의외로 좋아하는 남자들이 있다는 여자 신체부위",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 22,
+     "issue_np": 2,
+     "issue_nc": 23,
+     "kw": [
+      "여자",
+      "남자"
+     ],
+     "top_post": {
+      "t": "ㅇㅎ) 의외로 좋아하는 남자들이 있다는 여자 신체부위",
+      "u": "https://www.dogdrip.net/dogdrip/735965859?sort_index=popular&page=1",
+      "nc": 22
+     }
+    },
+    {
+     "t": "역대급으로 스윗한 판결.",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 7,
+     "issue_np": 2,
+     "issue_nc": 10,
+     "kw": [
+      "판결",
+      "역대"
+     ],
+     "top_post": {
+      "t": "역대급으로 스윗한 판결.",
+      "u": "https://www.dogdrip.net/dogdrip/735970269?sort_index=popular&page=1",
+      "nc": 7
      }
     },
     {
@@ -346,7 +273,7 @@
      "nsite": 2,
      "np_here": 1,
      "nc_here": 7,
-     "issue_np": 2,
+     "issue_np": 3,
      "issue_nc": 7,
      "kw": [
       "SNS",
@@ -359,20 +286,21 @@
      }
     },
     {
-     "t": "역대급으로 스윗한 판결.",
+     "t": "\"꿈꾸던 어른이 되었나요\" 저작권료 공개 ㄷㄷ",
      "nsite": 2,
      "np_here": 1,
-     "nc_here": 6,
+     "nc_here": 5,
      "issue_np": 2,
-     "issue_nc": 9,
+     "issue_nc": 5,
      "kw": [
-      "역대",
-      "판결"
+      "공개",
+      "어른",
+      "저작권료"
      ],
      "top_post": {
-      "t": "역대급으로 스윗한 판결.",
-      "u": "https://www.dogdrip.net/dogdrip/735970269?sort_index=popular&page=1",
-      "nc": 6
+      "t": "\"꿈꾸던 어른이 되었나요\" 저작권료 공개 ㄷㄷ",
+      "u": "https://www.dogdrip.net/dogdrip/735990331?sort_index=popular&page=1",
+      "nc": 5
      }
     }
    ]
@@ -388,7 +316,7 @@
      "np_here": 1,
      "nc_here": 57,
      "issue_np": 4,
-     "issue_nc": 99,
+     "issue_nc": 105,
      "kw": [
       "GTA",
       "게임"
@@ -417,7 +345,7 @@
      }
     },
     {
-     "t": "수능 세계사 오답률 92%의 문제",
+     "t": "수능 세계사 문제를 본 중국인 반응",
      "nsite": 2,
      "np_here": 1,
      "nc_here": 9,
@@ -436,8 +364,66 @@
    ]
   },
   {
+   "name": "82쿡",
+   "np": 3,
+   "nc": 18,
+   "topics": [
+    {
+     "t": "주식 토론방마다 난리네요",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 18,
+     "issue_np": 2,
+     "issue_nc": 18,
+     "kw": [
+      "난리",
+      "주식"
+     ],
+     "top_post": {
+      "t": "주식 토론방마다 난리네요",
+      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4261633&page=1",
+      "nc": 18
+     }
+    },
+    {
+     "t": "남친을 벌레처럼 보는 엄마, 아빠",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 2,
+     "issue_nc": 18,
+     "kw": [
+      "엄마",
+      "아빠"
+     ],
+     "top_post": {
+      "t": "엄마는 자식만나면 밥잘사주는편인데 꼭 이건 아빠돈으로 사주는거야..",
+      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4261656&page=1",
+      "nc": 0
+     }
+    },
+    {
+     "t": "AI 시대에 맞춰 등장한 NTR물",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 2,
+     "issue_nc": 0,
+     "kw": [
+      "시대",
+      "AI"
+     ],
+     "top_post": {
+      "t": "AI시대에 전문직들의 위상은 앞으로 어떻게 될려나요.",
+      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4261655&page=1",
+      "nc": 0
+     }
+    }
+   ]
+  },
+  {
    "name": "보배드림",
-   "np": 6,
+   "np": 7,
    "nc": 15,
    "topics": [
     {
@@ -445,11 +431,11 @@
      "nsite": 3,
      "np_here": 1,
      "nc_here": 3,
-     "issue_np": 3,
+     "issue_np": 4,
      "issue_nc": 87,
      "kw": [
-      "수능",
       "부정",
+      "수능",
       "행위"
      ],
      "top_post": {
@@ -466,8 +452,8 @@
      "issue_np": 2,
      "issue_nc": 62,
      "kw": [
-      "한국",
-      "영국"
+      "영국",
+      "한국"
      ],
      "top_post": {
       "t": "영국 처자가 한국 올때마다 느끼는 것",
@@ -481,7 +467,7 @@
      "np_here": 1,
      "nc_here": 3,
      "issue_np": 2,
-     "issue_nc": 44,
+     "issue_nc": 46,
      "kw": [
       "독도",
       "한국"
@@ -498,10 +484,10 @@
      "np_here": 1,
      "nc_here": 3,
      "issue_np": 2,
-     "issue_nc": 9,
+     "issue_nc": 10,
      "kw": [
-      "역대",
-      "판결"
+      "판결",
+      "역대"
      ],
      "top_post": {
       "t": "진짜 역대급 판결",
@@ -517,8 +503,8 @@
      "issue_np": 2,
      "issue_nc": 3,
      "kw": [
-      "주식",
-      "시장"
+      "시장",
+      "주식"
      ],
      "top_post": {
       "t": "요즘 주식 시장에 대한 개인적인 소견",
@@ -534,9 +520,9 @@
      "issue_np": 2,
      "issue_nc": 0,
      "kw": [
-      "만점자",
-      "정상",
       "시험지",
+      "정황",
+      "수능",
       "MBC"
      ],
      "top_post": {
@@ -544,48 +530,59 @@
       "u": "https://www.bobaedream.co.kr/view?code=best&No=1049258&vdate=",
       "nc": 0
      }
-    }
-   ]
-  },
-  {
-   "name": "82쿡",
-   "np": 1,
-   "nc": 13,
-   "topics": [
+    },
     {
-     "t": "주식 토론방마다 난리네요",
+     "t": "베트남은 지들 도로도 제대로 못깔면서;; ㄷㄷㄷ",
      "nsite": 2,
      "np_here": 1,
-     "nc_here": 13,
+     "nc_here": 0,
      "issue_np": 2,
-     "issue_nc": 13,
+     "issue_nc": 0,
      "kw": [
-      "주식",
-      "난리"
+      "베트남",
+      "도로"
      ],
      "top_post": {
-      "t": "주식 토론방마다 난리네요",
-      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4261633&page=1",
-      "nc": 13
+      "t": "베트남은 지들 도로도 제대로 못깔면서..",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1049261&vdate=",
+      "nc": 0
      }
     }
    ]
   },
   {
    "name": "클리앙",
-   "np": 3,
-   "nc": 4,
+   "np": 4,
+   "nc": 9,
    "topics": [
+    {
+     "t": "테슬라가 fsd를 gta급으로 업데이트 하네요",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 5,
+     "issue_np": 2,
+     "issue_nc": 5,
+     "kw": [
+      "업데이트",
+      "FSD",
+      "테슬라"
+     ],
+     "top_post": {
+      "t": "테슬라가 fsd를 gta급으로 업데이트 하네요",
+      "u": "https://www.clien.net/service/board/park/19296736?od=T33&po=0&category=0&groupCd=clien_all",
+      "nc": 5
+     }
+    },
     {
      "t": "고졸은 누구나 이해할 수 있는 리만 가설",
      "nsite": 2,
      "np_here": 2,
      "nc_here": 3,
-     "issue_np": 4,
+     "issue_np": 5,
      "issue_nc": 3,
      "kw": [
-      "리만",
-      "가설"
+      "가설",
+      "리만"
      ],
      "top_post": {
       "t": "현재 리만가설 정보들을 종합하면",
@@ -599,7 +596,7 @@
      "np_here": 1,
      "nc_here": 1,
      "issue_np": 7,
-     "issue_nc": 90,
+     "issue_nc": 113,
      "kw": [
       "가설",
       "리만",
@@ -625,10 +622,10 @@
      "np_here": 1,
      "nc_here": 1,
      "issue_np": 2,
-     "issue_nc": 22,
+     "issue_nc": 23,
      "kw": [
-      "남자",
-      "여자"
+      "여자",
+      "남자"
      ],
      "top_post": {
       "t": "너네들 계속 그녀 괴롭히다 그녀가 알게되면 바로 그남자 찾아갈 여자다 니네가 제일 우려하는...",
@@ -684,7 +681,7 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 7,
-     "issue_nc": 90,
+     "issue_nc": 113,
      "kw": [
       "가설",
       "리만",
@@ -719,7 +716,7 @@
   },
   {
    "name": "루리웹",
-   "np": 16,
+   "np": 22,
    "nc": 0,
    "topics": [
     {
@@ -728,7 +725,7 @@
      "np_here": 2,
      "nc_here": 0,
      "issue_np": 7,
-     "issue_nc": 90,
+     "issue_nc": 113,
      "kw": [
       "가설",
       "리만",
@@ -747,7 +744,7 @@
      "np_here": 2,
      "nc_here": 0,
      "issue_np": 4,
-     "issue_nc": 99,
+     "issue_nc": 105,
      "kw": [
       "GTA",
       "게임"
@@ -761,13 +758,13 @@
     {
      "t": "수능 부정행위 단속 총정리",
      "nsite": 3,
-     "np_here": 1,
+     "np_here": 2,
      "nc_here": 0,
-     "issue_np": 3,
+     "issue_np": 4,
      "issue_nc": 87,
      "kw": [
-      "수능",
       "부정",
+      "수능",
       "행위"
      ],
      "top_post": {
@@ -795,34 +792,16 @@
      }
     },
     {
-     "t": "\"꿈꾸던 어른이 되었나요\" 저작권료 공개 ㄷㄷ",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 2,
-     "issue_nc": 49,
-     "kw": [
-      "저작권료",
-      "어른",
-      "공개"
-     ],
-     "top_post": {
-      "t": "\"꿈꾸던 어른이 되었나요\" 저작권료 공개 ㄷㄷ",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77474290?m=humor",
-      "nc": 0
-     }
-    },
-    {
      "t": "서울대 의대 26학번끼리 서로 AI안경 썼는지 검증",
      "nsite": 2,
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 2,
-     "issue_nc": 32,
+     "issue_nc": 33,
      "kw": [
-      "안경",
       "의대",
-      "AI"
+      "AI",
+      "안경"
      ],
      "top_post": {
       "t": "AI안경 사용 의혹 해명하는 의대생들",
@@ -848,11 +827,28 @@
      }
     },
     {
-     "t": "아이 사진을 SNS에 올리고 싶지 않았던 부부",
+     "t": "세무냥이 리트냥이 쌍으로 골로 가니 기분 좋네요",
      "nsite": 2,
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 2,
+     "issue_nc": 10,
+     "kw": [
+      "리트냥이",
+      "세무"
+     ],
+     "top_post": {
+      "t": "솔직히 리트냥이가 최저점 보여줘서 망정이지 세무냥이 처음 터졌을 때만 해도",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77477528?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "아이 사진을 SNS에 올리고 싶지 않았던 부부",
+     "nsite": 2,
+     "np_here": 2,
+     "nc_here": 0,
+     "issue_np": 3,
      "issue_nc": 7,
      "kw": [
       "SNS",
@@ -893,7 +889,7 @@
   },
   {
    "name": "SLR클럽",
-   "np": 4,
+   "np": 5,
    "nc": 0,
    "topics": [
     {
@@ -915,7 +911,7 @@
      }
     },
     {
-     "t": "월요일에 못 들어가는 분은 주식판을 떠나는게 좋을 듯",
+     "t": "월요일 주식 사실건가요 ㄷㄷㄷㄷ",
      "nsite": 2,
      "np_here": 1,
      "nc_here": 0,
@@ -957,12 +953,29 @@
      "issue_nc": 0,
      "kw": [
       "대란",
-      "품절",
-      "신발"
+      "신발",
+      "품절"
      ],
      "top_post": {
       "t": "현재 품절 대란 났다는 신발 ㄷㄷㄷㄷㄷㄷㄷ",
       "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677918",
+      "nc": 0
+     }
+    },
+    {
+     "t": "베트남은 지들 도로도 제대로 못깔면서;; ㄷㄷㄷ",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 2,
+     "issue_nc": 0,
+     "kw": [
+      "베트남",
+      "도로"
+     ],
+     "top_post": {
+      "t": "베트남은 지들 도로도 제대로 못깔면서;; ㄷㄷㄷ",
+      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677907",
       "nc": 0
      }
     }
@@ -970,7 +983,7 @@
   },
   {
    "name": "디시인사이드",
-   "np": 5,
+   "np": 6,
    "nc": 0,
    "topics": [
     {
@@ -979,10 +992,10 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 2,
-     "issue_nc": 13,
+     "issue_nc": 18,
      "kw": [
-      "주식",
-      "난리"
+      "난리",
+      "주식"
      ],
      "top_post": {
       "t": "주말에 민심 난리난 주식 투자자들 근황 ㄷㄷ",
@@ -991,7 +1004,7 @@
      }
     },
     {
-     "t": "수능 세계사 오답률 92%의 문제",
+     "t": "수능 세계사 문제를 본 중국인 반응",
      "nsite": 2,
      "np_here": 1,
      "nc_here": 0,
@@ -1015,8 +1028,8 @@
      "issue_np": 2,
      "issue_nc": 3,
      "kw": [
-      "주식",
-      "시장"
+      "시장",
+      "주식"
      ],
      "top_post": {
       "t": "아시아 주식 시장 대참사...",
@@ -1032,8 +1045,8 @@
      "issue_np": 2,
      "issue_nc": 0,
      "kw": [
-      "명언",
-      "대표"
+      "대표",
+      "명언"
      ],
      "top_post": {
       "t": "휴먼스토리 중 검정대표의 명언!!!",
@@ -1049,14 +1062,31 @@
      "issue_np": 2,
      "issue_nc": 0,
      "kw": [
-      "만점자",
-      "정상",
       "시험지",
+      "정황",
+      "수능",
       "MBC"
      ],
      "top_post": {
       "t": "리트 만점자 수능 시험지, 비정상 풀이 정황",
       "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=480750&_dcbest=1&page=1",
+      "nc": 0
+     }
+    },
+    {
+     "t": "JTBC) 재난 문자를 보내면 생기는 일",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 2,
+     "issue_nc": 0,
+     "kw": [
+      "문자",
+      "재난"
+     ],
+     "top_post": {
+      "t": "JTBC) 재난 문자를 보내면 생기는 일",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=480790&_dcbest=1&page=1",
       "nc": 0
      }
     }
