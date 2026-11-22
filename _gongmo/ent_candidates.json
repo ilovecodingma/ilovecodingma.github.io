@@ -1,43 +1,7 @@
 {
- "at": "2026-11-22 13:11",
+ "at": "2026-11-22 13:30",
  "nitems": 503,
  "cands": [
-  {
-   "kw": "결혼",
-   "nsrc": 7,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "동아일보",
-    "연합뉴스",
-    "조선일보",
-    "한겨레",
-    "헤럴드경제"
-   ],
-   "n": 15,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "배우 이가섭, 비연예인과 결혼…\"오랜 시간 든든한 버팀목\"",
-     "link": "https://www.yna.co.kr/view/AKR20261119085400005"
-    },
-    {
-     "src": "동아일보",
-     "title": "비, 김태희와 결혼 10년 차…“아침마다 감동 있어” (냉부해)",
-     "link": "https://sports.donga.com/ent/article/all/20261122/135065969/1"
-    },
-    {
-     "src": "한겨레",
-     "title": "가족과 연 끊고 10년…삶이 무서워 ‘결혼’에 매달릴 때 [.txt]",
-     "link": "https://www.hani.co.kr/arti/culture/book/1288448.html"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "‘12월 결혼’ 하정우, 10년 함께한 반려견 떠나보냈다",
-     "link": "https://biz.heraldcorp.com/article/10944038"
-    }
-   ]
-  },
   {
    "kw": "장나라",
    "nsrc": 6,
@@ -105,6 +69,41 @@
      "src": "동아일보",
      "title": "장나라, 김혜윤 스카우트 작전 돌입? 제대로 꽂혔다 (굿파트너2)",
      "link": "https://sports.donga.com/ent/article/all/20261121/135064887/1"
+    }
+   ]
+  },
+  {
+   "kw": "결혼",
+   "nsrc": 6,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "동아일보",
+    "연합뉴스",
+    "조선일보",
+    "한겨레"
+   ],
+   "n": 14,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "배우 이가섭, 비연예인과 결혼…\"오랜 시간 든든한 버팀목\"",
+     "link": "https://www.yna.co.kr/view/AKR20261119085400005"
+    },
+    {
+     "src": "동아일보",
+     "title": "비, 김태희와 결혼 10년 차…“아침마다 감동 있어” (냉부해)",
+     "link": "https://sports.donga.com/ent/article/all/20261122/135065969/1"
+    },
+    {
+     "src": "한겨레",
+     "title": "가족과 연 끊고 10년…삶이 무서워 ‘결혼’에 매달릴 때 [.txt]",
+     "link": "https://www.hani.co.kr/arti/culture/book/1288448.html"
+    },
+    {
+     "src": "SBS",
+     "title": "[스브스夜] '비서진' 김종국, \"결혼은 진짜 내 편이 한 명 생기는 것\"…김광규에 '결혼 추천'",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008856713&plink=RSSLINK&cooper=RSSREADER"
     }
    ]
   },
@@ -612,6 +611,39 @@
    ]
   },
   {
+   "kw": "엔하이픈",
+   "nsrc": 4,
+   "srcs": [
+    "동아일보",
+    "연합뉴스",
+    "조선일보",
+    "한국경제"
+   ],
+   "n": 6,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "오사카 달군 '2026 마마 어워즈'…첫날 대상에 BTS·엔하이픈",
+     "link": "https://www.yna.co.kr/view/AKR20261120179200005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "엔하이픈, 오늘 컴백…\"어떤 콘셉트든 잘하는 팀 되고파\"",
+     "link": "https://www.yna.co.kr/view/AKR20261120122300005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "[가요소식] 엔하이픈, 내달 MBC서 단독 특집 쇼 '미드나잇 러브 송'",
+     "link": "https://www.yna.co.kr/view/AKR20261117073200005"
+    },
+    {
+     "src": "동아일보",
+     "title": "엔하이픈, 360도 무대 꽉 채운 압도적 서사극",
+     "link": "https://sports.donga.com/ent/article/all/20261122/135066688/1"
+    }
+   ]
+  },
+  {
    "kw": "눈물",
    "nsrc": 4,
    "srcs": [
@@ -975,7 +1007,7 @@
    ]
   },
   {
-   "kw": "산불",
+   "kw": "김민",
    "nsrc": 4,
    "srcs": [
     "SBS",
@@ -1008,7 +1040,7 @@
    ]
   },
   {
-   "kw": "김민",
+   "kw": "산불",
    "nsrc": 4,
    "srcs": [
     "SBS",
@@ -1169,34 +1201,34 @@
    ]
   },
   {
-   "kw": "엔하이픈",
+   "kw": "음주운전",
    "nsrc": 3,
    "srcs": [
+    "뉴시스",
     "연합뉴스",
-    "조선일보",
-    "한국경제"
+    "조선일보"
    ],
-   "n": 5,
+   "n": 6,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "오사카 달군 '2026 마마 어워즈'…첫날 대상에 BTS·엔하이픈",
-     "link": "https://www.yna.co.kr/view/AKR20261120179200005"
+     "title": "'마약 집행유예중 음주운전' 남태현 2심도 실형…법정구속",
+     "link": "https://www.yna.co.kr/view/AKR20261119062300004"
     },
     {
      "src": "연합뉴스",
-     "title": "엔하이픈, 오늘 컴백…\"어떤 콘셉트든 잘하는 팀 되고파\"",
-     "link": "https://www.yna.co.kr/view/AKR20261120122300005"
+     "title": "'보검 매직컬2' 측 \"고경표 음주운전 유감…시청 불편 최소화\"",
+     "link": "https://www.yna.co.kr/view/AKR20261118043900005"
     },
     {
-     "src": "연합뉴스",
-     "title": "[가요소식] 엔하이픈, 내달 MBC서 단독 특집 쇼 '미드나잇 러브 송'",
-     "link": "https://www.yna.co.kr/view/AKR20261117073200005"
+     "src": "뉴시스",
+     "title": "'음주운전' 고경표, 결국 '핑계고' 시상식 후보 제외(종합)",
+     "link": "https://www.newsis.com/view/NISX20261122_0003878103"
     },
     {
-     "src": "한국경제",
-     "title": "'마마 어워즈' BTS·코르티스·엔하이픈 '대상'…빅뱅 '기립' 공개 [종합]",
-     "link": "https://www.hankyung.com/article/202611211440H"
+     "src": "뉴시스",
+     "title": "'음주운전' 고경표, '핑계고' 시상식 후보…적절성 논란",
+     "link": "https://www.newsis.com/view/NISX20261122_0003877952"
     }
    ]
   },
@@ -1293,38 +1325,6 @@
      "src": "조선일보",
      "title": "'흑백' 트리플스타, 재혼 발표..\"부족한 저를 감싸 안아준 사람\" [전문]",
      "link": "https://www.chosun.com/entertainments/broadcast/2026/11/22/MZRGMN3FG43WEN3GGY3DEZBSMY/"
-    }
-   ]
-  },
-  {
-   "kw": "음주운전",
-   "nsrc": 3,
-   "srcs": [
-    "뉴시스",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "'마약 집행유예중 음주운전' 남태현 2심도 실형…법정구속",
-     "link": "https://www.yna.co.kr/view/AKR20261119062300004"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "'보검 매직컬2' 측 \"고경표 음주운전 유감…시청 불편 최소화\"",
-     "link": "https://www.yna.co.kr/view/AKR20261118043900005"
-    },
-    {
-     "src": "뉴시스",
-     "title": "'음주운전' 고경표, '핑계고' 시상식 후보…적절성 논란",
-     "link": "https://www.newsis.com/view/NISX20261122_0003877952"
-    },
-    {
-     "src": "뉴시스",
-     "title": "음주운전 고경표…유재석 \"여기 자숙하러 오기 좋다\"",
-     "link": "https://www.newsis.com/view/NISX20261121_0003877608"
     }
    ]
   }

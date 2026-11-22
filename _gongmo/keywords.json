@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-22 13:00",
+ "updated": "2026-11-22 14:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -903,6 +903,18 @@
    "expires": "2026-11-25"
   },
   {
+   "query": "수출규제",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 5000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-20",
+   "expires": "2026-11-25"
+  },
+  {
    "query": "뉴캐슬 대 아스널",
    "tier": "단기",
    "signal": [
@@ -1032,18 +1044,6 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-17",
-   "expires": "2026-11-25"
-  },
-  {
-   "query": "수출규제",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 5000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-20",
    "expires": "2026-11-25"
   },
   {
@@ -3003,6 +3003,18 @@
    "expires": "2026-11-25"
   },
   {
+   "query": "도경완",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-22",
+   "expires": "2026-11-25"
+  },
+  {
    "query": "뉴캐슬 대 에버튼 순위",
    "tier": "단기",
    "signal": [
@@ -3855,6 +3867,18 @@
    "expires": "2026-11-25"
   },
   {
+   "query": "담보 대출",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-22",
+   "expires": "2026-11-25"
+  },
+  {
    "query": "양홍원",
    "tier": "단기",
    "signal": [
@@ -4140,6 +4164,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-17",
+   "expires": "2026-11-25"
+  },
+  {
+   "query": "인공지능",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-22",
    "expires": "2026-11-25"
   },
   {
@@ -6708,6 +6744,42 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-21",
+   "expires": "2026-11-25"
+  },
+  {
+   "query": "플라이 투 더 스카이",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-22",
+   "expires": "2026-11-25"
+  },
+  {
+   "query": "영구자석",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-22",
+   "expires": "2026-11-25"
+  },
+  {
+   "query": "울산광역시",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-22",
    "expires": "2026-11-25"
   },
   {
