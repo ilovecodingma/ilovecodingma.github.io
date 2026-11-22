@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-23 07:00",
+ "updated": "2026-11-23 08:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -216,6 +216,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-20",
+   "expires": "2026-11-26"
+  },
+  {
+   "query": "헤타페 대 아틀레티코",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 20000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-23",
    "expires": "2026-11-26"
   },
   {
@@ -723,18 +735,6 @@
    "expires": "2026-11-26"
   },
   {
-   "query": "김장훈",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 5000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-03",
-   "expires": "2026-11-26"
-  },
-  {
    "query": "잠수함",
    "tier": "단기",
    "signal": [
@@ -744,6 +744,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-05",
+   "expires": "2026-11-26"
+  },
+  {
+   "query": "김장훈",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 5000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-03",
    "expires": "2026-11-26"
   },
   {
@@ -4143,6 +4155,18 @@
    "expires": "2026-11-26"
   },
   {
+   "query": "카를로스 알카라스",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-23",
+   "expires": "2026-11-26"
+  },
+  {
    "query": "지스타",
    "tier": "단기",
    "signal": [
@@ -4816,6 +4840,18 @@
   },
   {
    "query": "이재아",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-03",
+   "expires": "2026-11-26"
+  },
+  {
+   "query": "비야디",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -5872,18 +5908,6 @@
   },
   {
    "query": "옌스 카스트로프",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 1000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-03",
-   "expires": "2026-11-26"
-  },
-  {
-   "query": "비야디",
    "tier": "단기",
    "signal": [
     "구글트렌드"

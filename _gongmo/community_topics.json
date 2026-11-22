@@ -1,14 +1,14 @@
 {
  "date": "2026-11-23",
- "updated": "2026-11-23 06:50",
+ "updated": "2026-11-23 07:50",
  "sites": 13,
- "npost": 2648,
+ "npost": 2661,
  "note": "출처(커뮤니티)별 집계예요. 작성자·연령·성별 정보는 수집하지 않아요. posts 는 이슈별로 뽑힌 일부라 전체 글 수가 아니에요.",
  "sources": [
   {
    "name": "MLB파크",
-   "np": 15,
-   "nc": 833,
+   "np": 13,
+   "nc": 782,
    "topics": [
     {
      "t": "현재 리만가설 증명 수학자협회 성명문 근황 올라왔네요.",
@@ -18,8 +18,8 @@
      "issue_np": 7,
      "issue_nc": 185,
      "kw": [
-      "가설",
       "리만",
+      "가설",
       "증명",
       "수학자"
      ],
@@ -37,8 +37,8 @@
      "issue_np": 2,
      "issue_nc": 105,
      "kw": [
-      "프랑스",
-      "무슬림"
+      "무슬림",
+      "프랑스"
      ],
      "top_post": {
       "t": "무슬림 때문에 완전히 망해버린 프랑스",
@@ -54,8 +54,8 @@
      "issue_np": 2,
      "issue_nc": 89,
      "kw": [
-      "한국",
-      "영화"
+      "영화",
+      "한국"
      ],
      "top_post": {
       "t": "한국 영화 악역 티어. jpg",
@@ -71,8 +71,8 @@
      "issue_np": 2,
      "issue_nc": 112,
      "kw": [
-      "세계",
       "임박",
+      "반도체",
       "한국",
       "수출국"
      ],
@@ -90,8 +90,8 @@
      "issue_np": 2,
      "issue_nc": 62,
      "kw": [
-      "열혈강호",
-      "마침표"
+      "마침표",
+      "열혈강호"
      ],
      "top_post": {
       "t": "[열혈강호] 30년만에 마침표.",
@@ -125,8 +125,8 @@
      "issue_np": 2,
      "issue_nc": 53,
      "kw": [
-      "팀장",
-      "유부남"
+      "유부남",
+      "팀장"
      ],
      "top_post": {
       "t": "유부남 팀장님 때문에 괴로운 20대 여직원. jpg",
@@ -135,21 +135,83 @@
      }
     },
     {
-     "t": "테슬라 FSD 최신 버전 V15 근황 ㄷㄷ.swf",
-     "nsite": 2,
+     "t": "룸서비스가 대단한 경산 모텔 수준",
+     "nsite": 3,
      "np_here": 1,
-     "nc_here": 50,
-     "issue_np": 2,
-     "issue_nc": 50,
+     "nc_here": 49,
+     "issue_np": 4,
+     "issue_nc": 52,
      "kw": [
-      "테슬라",
-      "버전",
-      "FSD"
+      "모텔",
+      "경산",
+      "서비스"
      ],
      "top_post": {
-      "t": "테슬라 FSD 최신 버전 V15 근황 ㄷㄷ.swf",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611220120254541&m=view",
-      "nc": 50
+      "t": "룸서비스가 대단한 경산 모텔 수준",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611220120262569&m=view",
+      "nc": 49
+     }
+    }
+   ]
+  },
+  {
+   "name": "인스티즈",
+   "np": 3,
+   "nc": 237,
+   "topics": [
+    {
+     "t": "과즙세연 출연한 영상 보는데 이런게 요즘 개그야?",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 101,
+     "issue_np": 2,
+     "issue_nc": 101,
+     "kw": [
+      "과즙",
+      "출연",
+      "개그"
+     ],
+     "top_post": {
+      "t": "과즙세연 출연한 영상 보는데 이런게 요즘 개그야?",
+      "u": "https://www.instiz.net/pt/7928445?page=1&srt=3&k=",
+      "nc": 101
+     }
+    },
+    {
+     "t": "수능 부정행위 단속 총정리",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 83,
+     "issue_np": 6,
+     "issue_nc": 86,
+     "kw": [
+      "행위",
+      "수능",
+      "부정"
+     ],
+     "top_post": {
+      "t": "수능 부정행위 단속 총정리",
+      "u": "https://www.instiz.net/pt/7926834?page=1&srt=3&k=",
+      "nc": 83
+     }
+    },
+    {
+     "t": "오늘자 온에어 난리난 런닝맨 명품지갑 논란.",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 53,
+     "issue_np": 2,
+     "issue_nc": 53,
+     "kw": [
+      "명품",
+      "지갑",
+      "난리",
+      "런닝맨"
+     ],
+     "top_post": {
+      "t": "오늘자 온에어 난리난 런닝맨 명품지갑 논란.",
+      "u": "https://www.instiz.net/pt/7928622?page=1&srt=3&k=",
+      "nc": 53
      }
     }
    ]
@@ -157,7 +219,7 @@
   {
    "name": "개드립",
    "np": 10,
-   "nc": 204,
+   "nc": 212,
    "topics": [
     {
      "t": "도심 마라톤 때문에 화가 많이 난 시민들",
@@ -167,8 +229,8 @@
      "issue_np": 3,
      "issue_nc": 39,
      "kw": [
-      "시민",
       "마라톤",
+      "시민",
       "도심"
      ],
      "top_post": {
@@ -185,8 +247,8 @@
      "issue_np": 3,
      "issue_nc": 32,
      "kw": [
-      "조끼",
       "발열",
+      "조끼",
       "퇴실조치"
      ],
      "top_post": {
@@ -203,8 +265,8 @@
      "issue_np": 4,
      "issue_nc": 56,
      "kw": [
-      "컨닝",
-      "AI"
+      "AI",
+      "컨닝"
      ],
      "top_post": {
       "t": "현재 ㅈ됐다는 ai컨닝 하려던 사람들 근황",
@@ -220,8 +282,8 @@
      "issue_np": 5,
      "issue_nc": 85,
      "kw": [
-      "게임",
-      "GTA"
+      "GTA",
+      "게임"
      ],
      "top_post": {
       "t": "게임 스트리머 gta6 솔직한 평가",
@@ -237,8 +299,8 @@
      "issue_np": 7,
      "issue_nc": 185,
      "kw": [
-      "가설",
       "리만",
+      "가설",
       "증명",
       "수학자"
      ],
@@ -249,6 +311,24 @@
      }
     },
     {
+     "t": "엑셀방송 2년 했다는 스트리머의 수익",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 22,
+     "issue_np": 3,
+     "issue_nc": 53,
+     "kw": [
+      "방송",
+      "엑셀",
+      "수익"
+     ],
+     "top_post": {
+      "t": "엑셀방송 2년 했다는 스트리머의 수익",
+      "u": "https://www.dogdrip.net/dogdrip/736103398?sort_index=popular&page=1",
+      "nc": 22
+     }
+    },
+    {
      "t": "영창이 없어진 군대 근황.",
      "nsite": 3,
      "np_here": 1,
@@ -256,31 +336,13 @@
      "issue_np": 3,
      "issue_nc": 21,
      "kw": [
-      "영창",
-      "군대"
+      "군대",
+      "영창"
      ],
      "top_post": {
       "t": "영창이 없어진 군대 근황.",
       "u": "https://www.dogdrip.net/dogdrip/736014945?sort_index=popular&page=1",
       "nc": 18
-     }
-    },
-    {
-     "t": "엑셀방송 2년 했다는 스트리머의 수익",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 14,
-     "issue_np": 3,
-     "issue_nc": 45,
-     "kw": [
-      "엑셀",
-      "방송",
-      "수익"
-     ],
-     "top_post": {
-      "t": "엑셀방송 2년 했다는 스트리머의 수익",
-      "u": "https://www.dogdrip.net/dogdrip/736103398?sort_index=popular&page=1",
-      "nc": 14
      }
     },
     {
@@ -292,8 +354,8 @@
      "issue_nc": 63,
      "kw": [
       "한국",
-      "독도",
-      "중국"
+      "중국",
+      "독도"
      ],
      "top_post": {
       "t": "중국:독도는 한국땅.",
@@ -304,70 +366,26 @@
    ]
   },
   {
-   "name": "인스티즈",
-   "np": 2,
-   "nc": 184,
-   "topics": [
-    {
-     "t": "과즙세연 출연한 영상 보는데 이런게 요즘 개그야?",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 101,
-     "issue_np": 2,
-     "issue_nc": 101,
-     "kw": [
-      "출연",
-      "개그",
-      "과즙"
-     ],
-     "top_post": {
-      "t": "과즙세연 출연한 영상 보는데 이런게 요즘 개그야?",
-      "u": "https://www.instiz.net/pt/7928445?page=1&srt=3&k=",
-      "nc": 101
-     }
-    },
-    {
-     "t": "수능 부정행위 단속 총정리",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 83,
-     "issue_np": 6,
-     "issue_nc": 86,
-     "kw": [
-      "수능",
-      "부정",
-      "행위"
-     ],
-     "top_post": {
-      "t": "수능 부정행위 단속 총정리",
-      "u": "https://www.instiz.net/pt/7926834?page=1&srt=3&k=",
-      "nc": 83
-     }
-    }
-   ]
-  },
-  {
    "name": "클리앙",
    "np": 7,
-   "nc": 101,
+   "nc": 102,
    "topics": [
     {
      "t": "테슬라 FSD의 새로운 시각화 수준이 충격적이네요.",
-     "nsite": 4,
+     "nsite": 3,
      "np_here": 4,
-     "nc_here": 52,
-     "issue_np": 7,
-     "issue_nc": 88,
+     "nc_here": 53,
+     "issue_np": 6,
+     "issue_nc": 89,
      "kw": [
-      "테슬라",
       "FSD",
-      "업데이트",
-      "화면"
+      "테슬라",
+      "업데이트"
      ],
      "top_post": {
       "t": "테슬라 FSD 2만킬로 후기",
       "u": "https://www.clien.net/service/board/park/19296970?od=T33&po=0&category=0&groupCd=clien_all",
-      "nc": 17
+      "nc": 18
      }
     },
     {
@@ -378,8 +396,8 @@
      "issue_np": 2,
      "issue_nc": 112,
      "kw": [
-      "세계",
       "임박",
+      "반도체",
       "한국",
       "수출국"
      ],
@@ -391,10 +409,10 @@
     },
     {
      "t": "주식 시장이 망가지는 이유.",
-     "nsite": 6,
+     "nsite": 5,
      "np_here": 1,
      "nc_here": 19,
-     "issue_np": 6,
+     "issue_np": 5,
      "issue_nc": 26,
      "kw": [
       "주식",
@@ -415,8 +433,8 @@
      "issue_np": 7,
      "issue_nc": 185,
      "kw": [
-      "가설",
       "리만",
+      "가설",
       "증명",
       "수학자"
      ],
@@ -441,8 +459,8 @@
      "issue_np": 5,
      "issue_nc": 85,
      "kw": [
-      "게임",
-      "GTA"
+      "GTA",
+      "게임"
      ],
      "top_post": {
       "t": "Gta 때문에 게임계가 시끄럽네",
@@ -458,8 +476,8 @@
      "issue_np": 4,
      "issue_nc": 56,
      "kw": [
-      "컨닝",
-      "AI"
+      "AI",
+      "컨닝"
      ],
      "top_post": {
       "t": "ai수능 컨닝은 걍 음모론 아님?",
@@ -475,8 +493,8 @@
      "issue_np": 3,
      "issue_nc": 16,
      "kw": [
-      "안경",
-      "AI"
+      "AI",
+      "안경"
      ],
      "top_post": {
       "t": "Ai안경.manhwa",
@@ -489,7 +507,7 @@
   {
    "name": "82쿡",
    "np": 14,
-   "nc": 58,
+   "nc": 60,
    "topics": [
     {
      "t": "ai시대를 예상한 서울대학교 ㄷㄷ. jpg",
@@ -499,8 +517,8 @@
      "issue_np": 10,
      "issue_nc": 43,
      "kw": [
-      "시대",
       "AI",
+      "시대",
       "공무원",
       "전문직"
      ],
@@ -519,8 +537,8 @@
      "issue_nc": 15,
      "kw": [
       "표명",
-      "사의",
       "통감",
+      "장관",
       "최교진"
      ],
      "top_post": {
@@ -548,10 +566,10 @@
     },
     {
      "t": "주식 시장이 망가지는 이유.",
-     "nsite": 6,
+     "nsite": 5,
      "np_here": 1,
      "nc_here": 4,
-     "issue_np": 6,
+     "issue_np": 5,
      "issue_nc": 26,
      "kw": [
       "주식",
@@ -572,10 +590,10 @@
      "issue_np": 3,
      "issue_nc": 4,
      "kw": [
+      "트랜스젠더",
       "개그맨",
       "확산",
-      "트랜스젠더",
-      "김원효"
+      "방문"
      ],
      "top_post": {
       "t": "개그맨 김원효, 트랜스젠더 바 방문 영상 확산",
@@ -591,13 +609,32 @@
      "issue_np": 7,
      "issue_nc": 11,
      "kw": [
-      "머스크",
       "일론",
+      "머스크",
       "농담"
      ],
      "top_post": {
       "t": "오늘 일론 머스크 트위터 글",
       "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4261808&page=1",
+      "nc": 3
+     }
+    },
+    {
+     "t": "네이버페이1원+1원+1원+1원+랜덤 눌러봐++10원+5원+눌러눌러 보험랜덤+보험랜덤 하나더+라이브미리보고4…",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 3,
+     "issue_np": 6,
+     "issue_nc": 3,
+     "kw": [
+      "페이",
+      "네이버",
+      "랜덤",
+      "보험"
+     ],
+     "top_post": {
+      "t": "네이버페이 줍줍",
+      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4261930&page=1",
       "nc": 3
      }
     },
@@ -610,39 +647,20 @@
      "issue_nc": 63,
      "kw": [
       "한국",
-      "독도",
-      "중국"
+      "중국",
+      "독도"
      ],
      "top_post": {
       "t": "중국에 퍼진 한국정착법 체류중국인 102만명",
       "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4261832&page=1",
       "nc": 2
      }
-    },
-    {
-     "t": "네이버페이1원+1원+1원+1원+랜덤 눌러봐++10원+5원+눌러눌러 보험랜덤+보험랜덤 하나더+라이브미리보고4…",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 1,
-     "issue_np": 7,
-     "issue_nc": 3,
-     "kw": [
-      "네이버",
-      "페이",
-      "랜덤",
-      "보험"
-     ],
-     "top_post": {
-      "t": "네이버페이 줍줍",
-      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4261930&page=1",
-      "nc": 1
-     }
     }
    ]
   },
   {
    "name": "보배드림",
-   "np": 14,
+   "np": 15,
    "nc": 39,
    "topics": [
     {
@@ -654,8 +672,8 @@
      "issue_nc": 63,
      "kw": [
       "한국",
-      "독도",
-      "중국"
+      "중국",
+      "독도"
      ],
      "top_post": {
       "t": "씨진핑: 독도는 한국땅",
@@ -671,8 +689,8 @@
      "issue_np": 7,
      "issue_nc": 11,
      "kw": [
-      "머스크",
       "일론",
+      "머스크",
       "농담"
      ],
      "top_post": {
@@ -683,10 +701,10 @@
     },
     {
      "t": "주식 시장이 망가지는 이유.",
-     "nsite": 6,
+     "nsite": 5,
      "np_here": 1,
      "nc_here": 3,
-     "issue_np": 6,
+     "issue_np": 5,
      "issue_nc": 26,
      "kw": [
       "주식",
@@ -707,9 +725,9 @@
      "issue_np": 6,
      "issue_nc": 86,
      "kw": [
+      "행위",
       "수능",
-      "부정",
-      "행위"
+      "부정"
      ],
      "top_post": {
       "t": "수능 부정행위 보상금 1억, 여학생들 불만",
@@ -725,8 +743,8 @@
      "issue_np": 4,
      "issue_nc": 56,
      "kw": [
-      "컨닝",
-      "AI"
+      "AI",
+      "컨닝"
      ],
      "top_post": {
       "t": "현재 ㅈ됐다는 ai컨닝 하려던 사람들 근황",
@@ -740,11 +758,11 @@
      "np_here": 1,
      "nc_here": 3,
      "issue_np": 4,
-     "issue_nc": 51,
+     "issue_nc": 52,
      "kw": [
-      "서비스",
+      "모텔",
       "경산",
-      "모텔"
+      "서비스"
      ],
      "top_post": {
       "t": "룸서비스가 대단한 경산 모텔 수준",
@@ -760,8 +778,8 @@
      "issue_np": 3,
      "issue_nc": 39,
      "kw": [
-      "시민",
       "마라톤",
+      "시민",
       "도심"
      ],
      "top_post": {
@@ -778,8 +796,8 @@
      "issue_np": 3,
      "issue_nc": 21,
      "kw": [
-      "영창",
-      "군대"
+      "군대",
+      "영창"
      ],
      "top_post": {
       "t": "영창이 없어진 군대 근황",
@@ -802,8 +820,8 @@
      "issue_np": 5,
      "issue_nc": 16,
      "kw": [
-      "여자",
-      "친구"
+      "친구",
+      "여자"
      ],
      "top_post": {
       "t": "나 오늘 친구들이랑 카페에서 수다떨면서 앉아있었다? 근데 모르는 여자분이 트레이들고 일어나...",
@@ -831,16 +849,318 @@
    ]
   },
   {
+   "name": "더쿠",
+   "np": 11,
+   "nc": 0,
+   "topics": [
+    {
+     "t": "현재 리만가설 증명 수학자협회 성명문 근황 올라왔네요.",
+     "nsite": 5,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 7,
+     "issue_nc": 185,
+     "kw": [
+      "리만",
+      "가설",
+      "증명",
+      "수학자"
+     ],
+     "top_post": {
+      "t": "Lean : 리만 가설 증명완료 축하드림",
+      "u": "https://theqoo.net/hot/4414283064",
+      "nc": 0
+     }
+    },
+    {
+     "t": "친구 결혼식에 갔다가 여자를 만난 썰",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 5,
+     "issue_nc": 16,
+     "kw": [
+      "친구",
+      "여자"
+     ],
+     "top_post": {
+      "t": "디즈니 비평글 같은거 본적 있는데 어린 여자애의 좋은 친구로",
+      "u": "https://theqoo.net/hot/4414613833",
+      "nc": 0
+     }
+    },
+    {
+     "t": "일본인 한국 병원 후기",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 8,
+     "issue_nc": 0,
+     "kw": [
+      "한국",
+      "일본인"
+     ],
+     "top_post": {
+      "t": "브라질이 얼마나 개같은 소릴했길래 일본인이 한국편을 드냐",
+      "u": "https://theqoo.net/hot/4414696577",
+      "nc": 0
+     }
+    },
+    {
+     "t": "도심 마라톤 때문에 화가 많이 난 시민들",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 39,
+     "kw": [
+      "마라톤",
+      "시민",
+      "도심"
+     ],
+     "top_post": {
+      "t": "도심 마라톤 때문에 화가 많이 난 시민들",
+      "u": "https://theqoo.net/hot/4414391827",
+      "nc": 0
+     }
+    },
+    {
+     "t": "발열조끼 입은 수험생 퇴실조치",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 32,
+     "kw": [
+      "발열",
+      "조끼",
+      "퇴실조치"
+     ],
+     "top_post": {
+      "t": "수능당일 발열조끼 입은 학생 퇴실조치",
+      "u": "https://theqoo.net/hot/4414842032",
+      "nc": 0
+     }
+    },
+    {
+     "t": "최교진 교육장관 사의 표명…“수능 준비 미흡 책임 통감”",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 15,
+     "kw": [
+      "표명",
+      "통감",
+      "장관",
+      "최교진"
+     ],
+     "top_post": {
+      "t": "[속보] 최교진 교육부 장관 사의 표명…\"수능 혼란 책임 통감\"",
+      "u": "https://theqoo.net/hot/4414458754",
+      "nc": 0
+     }
+    },
+    {
+     "t": "개그맨 김원효, 트랜스젠더 바 방문 영상 확산…소속사 “방문 날짜 확인 중”",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 4,
+     "kw": [
+      "트랜스젠더",
+      "개그맨",
+      "확산",
+      "방문"
+     ],
+     "top_post": {
+      "t": "[단독] 개그맨 김원효, 트랜스젠더 바 방문 영상 확산…소속사 “방문 날짜 확인 중”",
+      "u": "https://theqoo.net/hot/4414388953",
+      "nc": 0
+     }
+    },
+    {
+     "t": "네이버페이1원+1원+1원+1원+랜덤 눌러봐++10원+5원+눌러눌러 보험랜덤+보험랜덤 하나더+라이브미리보고4…",
+     "nsite": 3,
+     "np_here": 2,
+     "nc_here": 0,
+     "issue_np": 6,
+     "issue_nc": 3,
+     "kw": [
+      "페이",
+      "네이버",
+      "랜덤",
+      "보험"
+     ],
+     "top_post": {
+      "t": "네이버페이1원+1원+1원+1원+랜덤 눌러봐++10원+5원+눌러눌러 보험랜덤+보험랜덤 하나더+라이브미리보고4원받기",
+      "u": "https://theqoo.net/hot/4414219008",
+      "nc": 0
+     }
+    }
+   ]
+  },
+  {
+   "name": "루리웹",
+   "np": 24,
+   "nc": 0,
+   "topics": [
+    {
+     "t": "현재 리만가설 증명 수학자협회 성명문 근황 올라왔네요.",
+     "nsite": 5,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 7,
+     "issue_nc": 185,
+     "kw": [
+      "리만",
+      "가설",
+      "증명",
+      "수학자"
+     ],
+     "top_post": {
+      "t": "리만가설이 증명됐다고?",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77478534?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "주식 시장이 망가지는 이유.",
+     "nsite": 5,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 5,
+     "issue_nc": 26,
+     "kw": [
+      "주식",
+      "시장",
+      "정부"
+     ],
+     "top_post": {
+      "t": "벌써 크리스마스 준비를 하는 주식시장",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77484160?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "일론 머스크가 구상하는 앞으로 다가올 미래",
+     "nsite": 5,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 7,
+     "issue_nc": 11,
+     "kw": [
+      "일론",
+      "머스크",
+      "농담"
+     ],
+     "top_post": {
+      "t": "\"테슬라의 일론 머스크조차 만들수 없는거.\"",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77478243?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "수능 부정행위 단속 총정리",
+     "nsite": 4,
+     "np_here": 3,
+     "nc_here": 0,
+     "issue_np": 6,
+     "issue_nc": 86,
+     "kw": [
+      "행위",
+      "수능",
+      "부정"
+     ],
+     "top_post": {
+      "t": "수능 부정행위자 기기 압수 모습",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77450086?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "친구 결혼식에 갔다가 여자를 만난 썰",
+     "nsite": 4,
+     "np_here": 2,
+     "nc_here": 0,
+     "issue_np": 5,
+     "issue_nc": 16,
+     "kw": [
+      "친구",
+      "여자"
+     ],
+     "top_post": {
+      "t": "부엉이 여자친구 manhaw",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77482188?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "일본인 한국 병원 후기",
+     "nsite": 4,
+     "np_here": 2,
+     "nc_here": 0,
+     "issue_np": 8,
+     "issue_nc": 0,
+     "kw": [
+      "한국",
+      "일본인"
+     ],
+     "top_post": {
+      "t": "한국 온 김에 북한 구경하는 일본인",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77481692?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "Gta 때문에 게임계가 시끄럽네",
+     "nsite": 3,
+     "np_here": 3,
+     "nc_here": 0,
+     "issue_np": 5,
+     "issue_nc": 85,
+     "kw": [
+      "GTA",
+      "게임"
+     ],
+     "top_post": {
+      "t": "gta6) 자율성 높은 게임의 종착점",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77481481?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "룸서비스가 대단한 경산 모텔 수준",
+     "nsite": 3,
+     "np_here": 2,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 52,
+     "kw": [
+      "모텔",
+      "경산",
+      "서비스"
+     ],
+     "top_post": {
+      "t": "룸서비스가 대단한 경산 모텔 수준",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77479277?m=all&t=now",
+      "nc": 0
+     }
+    }
+   ]
+  },
+  {
    "name": "SLR클럽",
    "np": 4,
    "nc": 0,
    "topics": [
     {
      "t": "주식 시장이 망가지는 이유.",
-     "nsite": 6,
+     "nsite": 5,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 6,
+     "issue_np": 5,
      "issue_nc": 26,
      "kw": [
       "주식",
@@ -861,8 +1181,8 @@
      "issue_np": 8,
      "issue_nc": 0,
      "kw": [
-      "일본인",
-      "한국"
+      "한국",
+      "일본인"
      ],
      "top_post": {
       "t": "일본인들의 한국 여행은 정말 저렴하군요.",
@@ -878,8 +1198,8 @@
      "issue_np": 3,
      "issue_nc": 16,
      "kw": [
-      "안경",
-      "AI"
+      "AI",
+      "안경"
      ],
      "top_post": {
       "t": "삼성 AI안경 관심있네요",
@@ -895,10 +1215,10 @@
      "issue_np": 3,
      "issue_nc": 4,
      "kw": [
+      "트랜스젠더",
       "개그맨",
       "확산",
-      "트랜스젠더",
-      "김원효"
+      "방문"
      ],
      "top_post": {
       "t": "개그맨 김원효, 트랜스젠더 바 방문 영상 확산…소속사 “방문 날짜 확인 중”",
@@ -910,27 +1230,9 @@
   },
   {
    "name": "디시인사이드",
-   "np": 5,
+   "np": 3,
    "nc": 0,
    "topics": [
-    {
-     "t": "주식 시장이 망가지는 이유.",
-     "nsite": 6,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 6,
-     "issue_nc": 26,
-     "kw": [
-      "주식",
-      "시장",
-      "정부"
-     ],
-     "top_post": {
-      "t": "아시아 주식 시장 대참사...",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=480666&_dcbest=1&page=1",
-      "nc": 0
-     }
-    },
     {
      "t": "일론 머스크가 구상하는 앞으로 다가올 미래",
      "nsite": 5,
@@ -939,8 +1241,8 @@
      "issue_np": 7,
      "issue_nc": 11,
      "kw": [
-      "머스크",
       "일론",
+      "머스크",
       "농담"
      ],
      "top_post": {
@@ -957,8 +1259,8 @@
      "issue_np": 4,
      "issue_nc": 56,
      "kw": [
-      "컨닝",
-      "AI"
+      "AI",
+      "컨닝"
      ],
      "top_post": {
       "t": "싱글벙글 AI 컨닝으로 난리난 나라들",
@@ -975,336 +1277,13 @@
      "issue_nc": 15,
      "kw": [
       "표명",
-      "사의",
       "통감",
+      "장관",
       "최교진"
      ],
      "top_post": {
       "t": "최교진 교육장관 사의 표명…“수능 준비 미흡 책임 통감”",
       "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=480924&_dcbest=1&page=1",
-      "nc": 0
-     }
-    },
-    {
-     "t": "테슬라 FSD 최신 버전 V15 근황 ㄷㄷ.swf",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 2,
-     "issue_nc": 50,
-     "kw": [
-      "테슬라",
-      "버전",
-      "FSD"
-     ],
-     "top_post": {
-      "t": "테슬라 FSD 버전 15 정리 ㄷㄷ",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=480937&_dcbest=1&page=1",
-      "nc": 0
-     }
-    }
-   ]
-  },
-  {
-   "name": "루리웹",
-   "np": 24,
-   "nc": 0,
-   "topics": [
-    {
-     "t": "주식 시장이 망가지는 이유.",
-     "nsite": 6,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 6,
-     "issue_nc": 26,
-     "kw": [
-      "주식",
-      "시장",
-      "정부"
-     ],
-     "top_post": {
-      "t": "벌써 크리스마스 준비를 하는 주식시장",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77484160?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "현재 리만가설 증명 수학자협회 성명문 근황 올라왔네요.",
-     "nsite": 5,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 7,
-     "issue_nc": 185,
-     "kw": [
-      "가설",
-      "리만",
-      "증명",
-      "수학자"
-     ],
-     "top_post": {
-      "t": "리만가설이 증명됐다고?",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77478534?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "일론 머스크가 구상하는 앞으로 다가올 미래",
-     "nsite": 5,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 7,
-     "issue_nc": 11,
-     "kw": [
-      "머스크",
-      "일론",
-      "농담"
-     ],
-     "top_post": {
-      "t": "\"테슬라의 일론 머스크조차 만들수 없는거.\"",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77478243?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "테슬라 FSD의 새로운 시각화 수준이 충격적이네요.",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 7,
-     "issue_nc": 88,
-     "kw": [
-      "테슬라",
-      "FSD",
-      "업데이트",
-      "화면"
-     ],
-     "top_post": {
-      "t": "이번에 업데이트 된다는 테슬라 FSD 화면",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77478170?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "수능 부정행위 단속 총정리",
-     "nsite": 4,
-     "np_here": 3,
-     "nc_here": 0,
-     "issue_np": 6,
-     "issue_nc": 86,
-     "kw": [
-      "수능",
-      "부정",
-      "행위"
-     ],
-     "top_post": {
-      "t": "수능 부정행위자 기기 압수 모습",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77450086?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "친구 결혼식에 갔다가 여자를 만난 썰",
-     "nsite": 4,
-     "np_here": 2,
-     "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 16,
-     "kw": [
-      "여자",
-      "친구"
-     ],
-     "top_post": {
-      "t": "부엉이 여자친구 manhaw",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77482188?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "네이버페이1원+1원+1원+1원+랜덤 눌러봐++10원+5원+눌러눌러 보험랜덤+보험랜덤 하나더+라이브미리보고4…",
-     "nsite": 4,
-     "np_here": 2,
-     "nc_here": 0,
-     "issue_np": 7,
-     "issue_nc": 3,
-     "kw": [
-      "네이버",
-      "페이",
-      "랜덤",
-      "보험"
-     ],
-     "top_post": {
-      "t": "핫딜 [네이버페이] 라방 랜덤 5원",
-      "u": "https://bbs.ruliweb.com/market/board/1020/read/109270",
-      "nc": 0
-     }
-    },
-    {
-     "t": "일본인 한국 병원 후기",
-     "nsite": 4,
-     "np_here": 2,
-     "nc_here": 0,
-     "issue_np": 8,
-     "issue_nc": 0,
-     "kw": [
-      "일본인",
-      "한국"
-     ],
-     "top_post": {
-      "t": "한국 온 김에 북한 구경하는 일본인",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77481692?m=all&t=now",
-      "nc": 0
-     }
-    }
-   ]
-  },
-  {
-   "name": "더쿠",
-   "np": 10,
-   "nc": 0,
-   "topics": [
-    {
-     "t": "현재 리만가설 증명 수학자협회 성명문 근황 올라왔네요.",
-     "nsite": 5,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 7,
-     "issue_nc": 185,
-     "kw": [
-      "가설",
-      "리만",
-      "증명",
-      "수학자"
-     ],
-     "top_post": {
-      "t": "Lean : 리만 가설 증명완료 축하드림",
-      "u": "https://theqoo.net/hot/4414283064",
-      "nc": 0
-     }
-    },
-    {
-     "t": "친구 결혼식에 갔다가 여자를 만난 썰",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 16,
-     "kw": [
-      "여자",
-      "친구"
-     ],
-     "top_post": {
-      "t": "디즈니 비평글 같은거 본적 있는데 어린 여자애의 좋은 친구로",
-      "u": "https://theqoo.net/hot/4414613833",
-      "nc": 0
-     }
-    },
-    {
-     "t": "네이버페이1원+1원+1원+1원+랜덤 눌러봐++10원+5원+눌러눌러 보험랜덤+보험랜덤 하나더+라이브미리보고4…",
-     "nsite": 4,
-     "np_here": 2,
-     "nc_here": 0,
-     "issue_np": 7,
-     "issue_nc": 3,
-     "kw": [
-      "네이버",
-      "페이",
-      "랜덤",
-      "보험"
-     ],
-     "top_post": {
-      "t": "네이버페이1원+1원+1원+1원+랜덤 눌러봐++10원+5원+눌러눌러 보험랜덤+보험랜덤 하나더+라이브미리보고4원받기",
-      "u": "https://theqoo.net/hot/4414219008",
-      "nc": 0
-     }
-    },
-    {
-     "t": "일본인 한국 병원 후기",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 8,
-     "issue_nc": 0,
-     "kw": [
-      "일본인",
-      "한국"
-     ],
-     "top_post": {
-      "t": "브라질이 얼마나 개같은 소릴했길래 일본인이 한국편을 드냐",
-      "u": "https://theqoo.net/hot/4414696577",
-      "nc": 0
-     }
-    },
-    {
-     "t": "도심 마라톤 때문에 화가 많이 난 시민들",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 39,
-     "kw": [
-      "시민",
-      "마라톤",
-      "도심"
-     ],
-     "top_post": {
-      "t": "도심 마라톤 때문에 화가 많이 난 시민들",
-      "u": "https://theqoo.net/hot/4414391827",
-      "nc": 0
-     }
-    },
-    {
-     "t": "발열조끼 입은 수험생 퇴실조치",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 32,
-     "kw": [
-      "조끼",
-      "발열",
-      "퇴실조치"
-     ],
-     "top_post": {
-      "t": "수능당일 발열조끼 입은 학생 퇴실조치",
-      "u": "https://theqoo.net/hot/4414842032",
-      "nc": 0
-     }
-    },
-    {
-     "t": "최교진 교육장관 사의 표명…“수능 준비 미흡 책임 통감”",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 15,
-     "kw": [
-      "표명",
-      "사의",
-      "통감",
-      "최교진"
-     ],
-     "top_post": {
-      "t": "[속보] 최교진 교육부 장관 사의 표명…\"수능 혼란 책임 통감\"",
-      "u": "https://theqoo.net/hot/4414458754",
-      "nc": 0
-     }
-    },
-    {
-     "t": "개그맨 김원효, 트랜스젠더 바 방문 영상 확산…소속사 “방문 날짜 확인 중”",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 4,
-     "kw": [
-      "개그맨",
-      "확산",
-      "트랜스젠더",
-      "김원효"
-     ],
-     "top_post": {
-      "t": "[단독] 개그맨 김원효, 트랜스젠더 바 방문 영상 확산…소속사 “방문 날짜 확인 중”",
-      "u": "https://theqoo.net/hot/4414388953",
       "nc": 0
      }
     }
@@ -1323,8 +1302,8 @@
      "issue_np": 5,
      "issue_nc": 16,
      "kw": [
-      "여자",
-      "친구"
+      "친구",
+      "여자"
      ],
      "top_post": {
       "t": "친구 결혼식에 갔다가 여자를 만난 썰",
@@ -1340,8 +1319,8 @@
      "issue_np": 8,
      "issue_nc": 0,
      "kw": [
-      "일본인",
-      "한국"
+      "한국",
+      "일본인"
      ],
      "top_post": {
       "t": "일본인 한국 병원 후기",
@@ -1359,8 +1338,8 @@
      "kw": [
       "멸종",
       "위기",
-      "팝글",
-      "AI"
+      "AI",
+      "팝글"
      ],
      "top_post": {
       "t": "멸종위기로부터 자신의 종족을 구한 아다 영웅",
