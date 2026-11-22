@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-22 19:00",
+ "updated": "2026-11-22 20:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -1572,6 +1572,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-07",
+   "expires": "2026-11-25"
+  },
+  {
+   "query": "김정은",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-22",
    "expires": "2026-11-25"
   },
   {
@@ -3711,6 +3723,18 @@
    "expires": "2026-11-25"
   },
   {
+   "query": "검은 월요일",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-22",
+   "expires": "2026-11-25"
+  },
+  {
    "query": "알렉산더 즈베레프",
    "tier": "단기",
    "signal": [
@@ -3912,18 +3936,6 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-19",
-   "expires": "2026-11-25"
-  },
-  {
-   "query": "김정은",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 1000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-22",
    "expires": "2026-11-25"
   },
   {
@@ -4632,6 +4644,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-21",
+   "expires": "2026-11-25"
+  },
+  {
+   "query": "해저",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-22",
    "expires": "2026-11-25"
   },
   {
