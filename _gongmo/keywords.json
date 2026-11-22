@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-22 21:00",
+ "updated": "2026-11-22 22:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -2115,6 +2115,18 @@
    "expires": "2026-11-25"
   },
   {
+   "query": "남진",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-22",
+   "expires": "2026-11-25"
+  },
+  {
    "query": "강형욱",
    "tier": "단기",
    "signal": [
@@ -3051,6 +3063,30 @@
    "expires": "2026-11-25"
   },
   {
+   "query": "무신사",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-22",
+   "expires": "2026-11-25"
+  },
+  {
+   "query": "금융위기",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-22",
+   "expires": "2026-11-25"
+  },
+  {
    "query": "뉴캐슬 대 에버튼 순위",
    "tier": "단기",
    "signal": [
@@ -3888,6 +3924,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-07",
+   "expires": "2026-11-25"
+  },
+  {
+   "query": "노동자",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-22",
    "expires": "2026-11-25"
   },
   {

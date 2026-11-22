@@ -1,15 +1,34 @@
 {
  "date": "2026-11-22",
- "updated": "2026-11-22 20:50",
+ "updated": "2026-11-22 21:50",
  "sites": 13,
- "npost": 2131,
+ "npost": 2256,
  "note": "출처(커뮤니티)별 집계예요. 작성자·연령·성별 정보는 수집하지 않아요. posts 는 이슈별로 뽑힌 일부라 전체 글 수가 아니에요.",
  "sources": [
   {
    "name": "MLB파크",
-   "np": 8,
-   "nc": 581,
+   "np": 10,
+   "nc": 661,
    "topics": [
+    {
+     "t": "현재 리만가설 증명 수학자협회 성명문 근황 올라왔네요.",
+     "nsite": 5,
+     "np_here": 2,
+     "nc_here": 150,
+     "issue_np": 10,
+     "issue_nc": 174,
+     "kw": [
+      "가설",
+      "리만",
+      "증명",
+      "수학자"
+     ],
+     "top_post": {
+      "t": "현재 리만가설 증명 수학자협회 성명문 근황 올라왔네요.",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611220120253092&m=view",
+      "nc": 132
+     }
+    },
     {
      "t": "도대체 누가 왜 사먹는지도 모르는데 계속 생산되는 식품......",
      "nsite": 2,
@@ -28,25 +47,6 @@
      }
     },
     {
-     "t": "현재 리만가설 증명 수학자협회 성명문 근황 올라왔네요.",
-     "nsite": 5,
-     "np_here": 1,
-     "nc_here": 132,
-     "issue_np": 9,
-     "issue_nc": 156,
-     "kw": [
-      "리만",
-      "가설",
-      "증명",
-      "성명"
-     ],
-     "top_post": {
-      "t": "현재 리만가설 증명 수학자협회 성명문 근황 올라왔네요.",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611220120253092&m=view",
-      "nc": 132
-     }
-    },
-    {
      "t": "무슬림 때문에 완전히 망해버린 프랑스",
      "nsite": 2,
      "np_here": 1,
@@ -54,8 +54,8 @@
      "issue_np": 2,
      "issue_nc": 105,
      "kw": [
-      "프랑스",
-      "무슬림"
+      "무슬림",
+      "프랑스"
      ],
      "top_post": {
       "t": "무슬림 때문에 완전히 망해버린 프랑스",
@@ -98,67 +98,83 @@
      }
     },
     {
+     "t": "한국 영화 악역 티어. jpg",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 49,
+     "issue_np": 2,
+     "issue_nc": 49,
+     "kw": [
+      "한국",
+      "영화"
+     ],
+     "top_post": {
+      "t": "한국 영화 악역 티어. jpg",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611220120262731&m=view",
+      "nc": 49
+     }
+    },
+    {
      "t": "[열혈강호] 30년만에 마침표.",
      "nsite": 2,
      "np_here": 1,
-     "nc_here": 37,
+     "nc_here": 47,
      "issue_np": 2,
-     "issue_nc": 40,
+     "issue_nc": 50,
      "kw": [
-      "마침표",
-      "열혈강호"
+      "열혈강호",
+      "마침표"
      ],
      "top_post": {
       "t": "[열혈강호] 30년만에 마침표.",
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611220120260970&m=view",
-      "nc": 37
+      "nc": 47
      }
     },
     {
      "t": "테슬라 FSD의 새로운 시각화 수준이 충격적이네요.",
      "nsite": 4,
      "np_here": 1,
-     "nc_here": 27,
+     "nc_here": 30,
      "issue_np": 8,
-     "issue_nc": 87,
+     "issue_nc": 90,
      "kw": [
-      "FSD",
       "테슬라",
+      "FSD",
       "업데이트",
       "화면"
      ],
      "top_post": {
       "t": "테슬라 FSD V15 대단하다고 정신승리중",
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611220120261012&m=view",
-      "nc": 27
-     }
-    },
-    {
-     "t": "ai시대를 예상한 서울대학교 ㄷㄷ. jpg",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 26,
-     "issue_np": 10,
-     "issue_nc": 43,
-     "kw": [
-      "AI",
-      "시대",
-      "공무원",
-      "전문직"
-     ],
-     "top_post": {
-      "t": "ai시대를 예상한 서울대학교 ㄷㄷ. jpg",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611220120254787&m=view",
-      "nc": 26
+      "nc": 30
      }
     }
    ]
   },
   {
    "name": "개드립",
-   "np": 13,
-   "nc": 365,
+   "np": 10,
+   "nc": 269,
    "topics": [
+    {
+     "t": "과즙세연한테 별창이라고 하지 말라는 이돈호 변호사",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 43,
+     "issue_np": 2,
+     "issue_nc": 45,
+     "kw": [
+      "이돈호",
+      "과즙",
+      "변호사"
+     ],
+     "top_post": {
+      "t": "과즙세연한테 별창이라고 하지 말라는 이돈호 변호사",
+      "u": "https://www.dogdrip.net/dogdrip/736056413?sort_index=popular&page=1",
+      "nc": 43
+     }
+    },
     {
      "t": "서울대 의대 26학번끼리 서로 AI안경 썼는지 검증",
      "nsite": 2,
@@ -168,9 +184,9 @@
      "issue_nc": 40,
      "kw": [
       "안경",
-      "AI",
       "의대",
-      "학번"
+      "AI",
+      "서울대"
      ],
      "top_post": {
       "t": "서울대 의대 26학번끼리 서로 AI안경 썼는지 검증",
@@ -186,31 +202,13 @@
      "issue_np": 2,
      "issue_nc": 40,
      "kw": [
-      "여친",
-      "남자"
+      "남자",
+      "여친"
      ],
      "top_post": {
       "t": "결혼하자는 여친한테 쎄함을 느끼는 남자",
       "u": "https://www.dogdrip.net/dogdrip/735964898?sort_index=popular&page=1",
       "nc": 40
-     }
-    },
-    {
-     "t": "과즙세연한테 별창이라고 하지 말라는 이돈호 변호사",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 38,
-     "issue_np": 2,
-     "issue_nc": 40,
-     "kw": [
-      "이돈호",
-      "변호사",
-      "과즙"
-     ],
-     "top_post": {
-      "t": "과즙세연한테 별창이라고 하지 말라는 이돈호 변호사",
-      "u": "https://www.dogdrip.net/dogdrip/736056413?sort_index=popular&page=1",
-      "nc": 38
      }
     },
     {
@@ -232,61 +230,6 @@
      }
     },
     {
-     "t": "동양인 인종차별 값 = 25달러 상품권",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 35,
-     "issue_np": 3,
-     "issue_nc": 35,
-     "kw": [
-      "인종",
-      "차별",
-      "인 앤 아웃",
-      "사건"
-     ],
-     "top_post": {
-      "t": "동양인 인종차별 값 = 25달러 상품권",
-      "u": "https://www.dogdrip.net/dogdrip/735995187?sort_index=popular&page=1",
-      "nc": 35
-     }
-    },
-    {
-     "t": "\"꿈꾸던 어른이 되었나요\" 저작권료 공개 ㄷㄷ",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 34,
-     "issue_np": 2,
-     "issue_nc": 34,
-     "kw": [
-      "어른",
-      "저작권료",
-      "공개"
-     ],
-     "top_post": {
-      "t": "\"꿈꾸던 어른이 되었나요\" 저작권료 공개 ㄷㄷ",
-      "u": "https://www.dogdrip.net/dogdrip/735990331?sort_index=popular&page=1",
-      "nc": 34
-     }
-    },
-    {
-     "t": "인간 VS 곰의 대결 결과",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 32,
-     "issue_np": 2,
-     "issue_nc": 32,
-     "kw": [
-      "대결",
-      "인간",
-      "VS"
-     ],
-     "top_post": {
-      "t": "인간 VS 곰의 대결 결과",
-      "u": "https://www.dogdrip.net/dogdrip/736036396?sort_index=popular&page=1",
-      "nc": 32
-     }
-    },
-    {
      "t": "현재 ㅈ됐다는 ai컨닝 하려던 사람들 근황",
      "nsite": 3,
      "np_here": 1,
@@ -294,32 +237,85 @@
      "issue_np": 3,
      "issue_nc": 32,
      "kw": [
-      "컨닝",
-      "AI"
+      "AI",
+      "컨닝"
      ],
      "top_post": {
       "t": "현재 ㅈ됐다는 ai컨닝 하려던 사람들 근황",
       "u": "https://www.dogdrip.net/dogdrip/736009033?sort_index=popular&page=1",
       "nc": 29
      }
+    },
+    {
+     "t": "Gta 때문에 게임계가 시끄럽네",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 24,
+     "issue_np": 5,
+     "issue_nc": 85,
+     "kw": [
+      "게임",
+      "GTA"
+     ],
+     "top_post": {
+      "t": "게임 스트리머 gta6 솔직한 평가",
+      "u": "https://www.dogdrip.net/dogdrip/735978991?sort_index=popular&page=1",
+      "nc": 24
+     }
+    },
+    {
+     "t": "현재 리만가설 증명 수학자협회 성명문 근황 올라왔네요.",
+     "nsite": 5,
+     "np_here": 1,
+     "nc_here": 23,
+     "issue_np": 10,
+     "issue_nc": 174,
+     "kw": [
+      "가설",
+      "리만",
+      "증명",
+      "수학자"
+     ],
+     "top_post": {
+      "t": "리만가설 증명보고 개빡친 수학자협회 성명문..",
+      "u": "https://www.dogdrip.net/dogdrip/735992206?sort_index=popular&page=1",
+      "nc": 23
+     }
+    },
+    {
+     "t": "영창이 없어진 군대 근황.",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 18,
+     "issue_np": 4,
+     "issue_nc": 21,
+     "kw": [
+      "군대",
+      "영창"
+     ],
+     "top_post": {
+      "t": "영창이 없어진 군대 근황.",
+      "u": "https://www.dogdrip.net/dogdrip/736014945?sort_index=popular&page=1",
+      "nc": 18
+     }
     }
    ]
   },
   {
    "name": "인스티즈",
-   "np": 3,
-   "nc": 162,
+   "np": 4,
+   "nc": 203,
    "topics": [
     {
      "t": "수능 부정행위 단속 총정리",
      "nsite": 4,
      "np_here": 1,
      "nc_here": 84,
-     "issue_np": 6,
+     "issue_np": 7,
      "issue_nc": 87,
      "kw": [
-      "행위",
       "부정",
+      "행위",
       "수능"
      ],
      "top_post": {
@@ -346,6 +342,24 @@
      }
     },
     {
+     "t": "과즙세연 출연한 영상 보는데 이런게 요즘 개그야? 209 12:09 l 조회",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 41,
+     "issue_np": 2,
+     "issue_nc": 41,
+     "kw": [
+      "개그",
+      "과즙",
+      "출연"
+     ],
+     "top_post": {
+      "t": "과즙세연 출연한 영상 보는데 이런게 요즘 개그야? 209 12:09 l 조회",
+      "u": "https://www.instiz.net/pt/7928445?page=1&srt=3&k=",
+      "nc": 41
+     }
+    },
+    {
      "t": "사귄지 2개월 된 커플 여행이 파토난 이유",
      "nsite": 2,
      "np_here": 1,
@@ -353,8 +367,8 @@
      "issue_np": 2,
      "issue_nc": 41,
      "kw": [
-      "커플",
-      "여행"
+      "여행",
+      "커플"
      ],
      "top_post": {
       "t": "사귄지 2개월 된 커플 여행이 파토난 이유",
@@ -375,10 +389,10 @@
      "np_here": 5,
      "nc_here": 60,
      "issue_np": 8,
-     "issue_nc": 87,
+     "issue_nc": 90,
      "kw": [
-      "FSD",
       "테슬라",
+      "FSD",
       "업데이트",
       "화면"
      ],
@@ -413,8 +427,8 @@
      "issue_np": 2,
      "issue_nc": 36,
      "kw": [
-      "테슬라",
-      "현기"
+      "현기",
+      "테슬라"
      ],
      "top_post": {
       "t": "솔직히 현기가 차값만 테슬라에 맞췄어도 반응 안 이러죠",
@@ -445,13 +459,13 @@
      "nsite": 5,
      "np_here": 1,
      "nc_here": 1,
-     "issue_np": 9,
-     "issue_nc": 156,
+     "issue_np": 10,
+     "issue_nc": 174,
      "kw": [
-      "리만",
       "가설",
+      "리만",
       "증명",
-      "성명"
+      "수학자"
      ],
      "top_post": {
       "t": "이제 리만가설이라고 부르면 안 되겠네요",
@@ -504,8 +518,8 @@
   },
   {
    "name": "82쿡",
-   "np": 12,
-   "nc": 38,
+   "np": 14,
+   "nc": 53,
    "topics": [
     {
      "t": "ai시대를 예상한 서울대학교 ㄷㄷ. jpg",
@@ -527,6 +541,25 @@
      }
     },
     {
+     "t": "[속보] 최교진 교육부 장관 사의 표명…\"수능 혼란 책임 통감\"",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 15,
+     "issue_np": 3,
+     "issue_nc": 15,
+     "kw": [
+      "최교진",
+      "통감",
+      "사의",
+      "수능"
+     ],
+     "top_post": {
+      "t": "최교진 교육장관, 사의 표명‥\"수능 책임 통감&quot..",
+      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4261722&page=1",
+      "nc": 15
+     }
+    },
+    {
      "t": "사귄지 2개월 된 커플 여행이 파토난 이유",
      "nsite": 2,
      "np_here": 1,
@@ -534,8 +567,8 @@
      "issue_np": 2,
      "issue_nc": 41,
      "kw": [
-      "커플",
-      "여행"
+      "여행",
+      "커플"
      ],
      "top_post": {
       "t": "프랑스 여행 게이 커플집 에어비앤비 했어요.",
@@ -570,9 +603,9 @@
      "issue_nc": 4,
      "kw": [
       "김원효",
-      "트랜스젠더",
+      "확산",
       "방문",
-      "확산"
+      "개그맨"
      ],
      "top_post": {
       "t": "개그맨 김원효, 트랜스젠더 바 방문 영상 확산",
@@ -585,11 +618,11 @@
      "nsite": 5,
      "np_here": 1,
      "nc_here": 3,
-     "issue_np": 6,
+     "issue_np": 7,
      "issue_nc": 10,
      "kw": [
-      "일론",
       "머스크",
+      "일론",
       "농담"
      ],
      "top_post": {
@@ -632,24 +665,6 @@
       "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4261794&page=1",
       "nc": 1
      }
-    },
-    {
-     "t": "수능 부정행위 단속 총정리",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 6,
-     "issue_nc": 87,
-     "kw": [
-      "행위",
-      "부정",
-      "수능"
-     ],
-     "top_post": {
-      "t": "수능 부정행위 중에 서초구 신발이요",
-      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4261690&page=1",
-      "nc": 0
-     }
     }
    ]
   },
@@ -671,8 +686,8 @@
       "중국"
      ],
      "top_post": {
-      "t": "일본이 3시간이면 뺏는다던 한국 독도",
-      "u": "https://www.bobaedream.co.kr/view?code=best&No=1049246&vdate=",
+      "t": "씨진핑: 독도는 한국땅",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1049320&vdate=",
       "nc": 3
      }
     },
@@ -699,11 +714,11 @@
      "nsite": 5,
      "np_here": 1,
      "nc_here": 3,
-     "issue_np": 6,
+     "issue_np": 7,
      "issue_nc": 10,
      "kw": [
-      "일론",
       "머스크",
+      "일론",
       "농담"
      ],
      "top_post": {
@@ -717,11 +732,11 @@
      "nsite": 4,
      "np_here": 1,
      "nc_here": 3,
-     "issue_np": 6,
+     "issue_np": 7,
      "issue_nc": 87,
      "kw": [
-      "행위",
       "부정",
+      "행위",
       "수능"
      ],
      "top_post": {
@@ -756,8 +771,8 @@
      "issue_np": 3,
      "issue_nc": 32,
      "kw": [
-      "컨닝",
-      "AI"
+      "AI",
+      "컨닝"
      ],
      "top_post": {
       "t": "현재 ㅈ됐다는 ai컨닝 하려던 사람들 근황",
@@ -773,8 +788,8 @@
      "issue_np": 4,
      "issue_nc": 21,
      "kw": [
-      "영창",
-      "군대"
+      "군대",
+      "영창"
      ],
      "top_post": {
       "t": "영창이 없어진 군대 근황",
@@ -790,8 +805,8 @@
      "issue_np": 2,
      "issue_nc": 105,
      "kw": [
-      "프랑스",
-      "무슬림"
+      "무슬림",
+      "프랑스"
      ],
      "top_post": {
       "t": "무슬림 때문에 고통받는 프랑스 학생들",
@@ -804,15 +819,15 @@
   {
    "name": "네이트판",
    "np": 1,
-   "nc": 13,
+   "nc": 16,
    "topics": [
     {
      "t": "친구 결혼식에 갔다가 여자를 만난 썰",
      "nsite": 4,
      "np_here": 1,
-     "nc_here": 13,
+     "nc_here": 16,
      "issue_np": 5,
-     "issue_nc": 13,
+     "issue_nc": 16,
      "kw": [
       "여자",
       "친구"
@@ -820,14 +835,14 @@
      "top_post": {
       "t": "나 오늘 친구들이랑 카페에서 수다떨면서 앉아있었다? 근데 모르는 여자분이 트레이들고 일어나...",
       "u": "https://pann.nate.com/talk/375731119",
-      "nc": 13
+      "nc": 16
      }
     }
    ]
   },
   {
    "name": "더쿠",
-   "np": 6,
+   "np": 8,
    "nc": 0,
    "topics": [
     {
@@ -835,13 +850,13 @@
      "nsite": 5,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 9,
-     "issue_nc": 156,
+     "issue_np": 10,
+     "issue_nc": 174,
      "kw": [
-      "리만",
       "가설",
+      "리만",
       "증명",
-      "성명"
+      "수학자"
      ],
      "top_post": {
       "t": "Lean : 리만 가설 증명완료 축하드림",
@@ -855,7 +870,7 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 5,
-     "issue_nc": 13,
+     "issue_nc": 16,
      "kw": [
       "여자",
       "친구"
@@ -871,7 +886,7 @@
      "nsite": 4,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 6,
+     "issue_np": 8,
      "issue_nc": 0,
      "kw": [
       "한국",
@@ -903,6 +918,25 @@
      }
     },
     {
+     "t": "[속보] 최교진 교육부 장관 사의 표명…\"수능 혼란 책임 통감\"",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 15,
+     "kw": [
+      "최교진",
+      "통감",
+      "사의",
+      "수능"
+     ],
+     "top_post": {
+      "t": "[속보] 최교진 교육부 장관 사의 표명…\"수능 혼란 책임 통감\"",
+      "u": "https://theqoo.net/hot/4414458754",
+      "nc": 0
+     }
+    },
+    {
      "t": "개그맨 김원효, 트랜스젠더 바 방문 영상 확산…소속사 “방문 날짜 확인 중”",
      "nsite": 3,
      "np_here": 1,
@@ -911,9 +945,9 @@
      "issue_nc": 4,
      "kw": [
       "김원효",
-      "트랜스젠더",
+      "확산",
       "방문",
-      "확산"
+      "개그맨"
      ],
      "top_post": {
       "t": "[단독] 개그맨 김원효, 트랜스젠더 바 방문 영상 확산…소속사 “방문 날짜 확인 중”",
@@ -937,26 +971,44 @@
       "u": "https://theqoo.net/hot/4414524324",
       "nc": 0
      }
+    },
+    {
+     "t": "과즙세연 출연한 영상 보는데 이런게 요즘 개그야? 209 12:09 l 조회",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 2,
+     "issue_nc": 41,
+     "kw": [
+      "개그",
+      "과즙",
+      "출연"
+     ],
+     "top_post": {
+      "t": "과즙세연 출연한 영상 보는데 이런게 요즘 개그야?",
+      "u": "https://theqoo.net/hot/4414417323",
+      "nc": 0
+     }
     }
    ]
   },
   {
    "name": "루리웹",
-   "np": 25,
+   "np": 20,
    "nc": 0,
    "topics": [
     {
      "t": "현재 리만가설 증명 수학자협회 성명문 근황 올라왔네요.",
      "nsite": 5,
-     "np_here": 2,
+     "np_here": 1,
      "nc_here": 0,
-     "issue_np": 9,
-     "issue_nc": 156,
+     "issue_np": 10,
+     "issue_nc": 174,
      "kw": [
-      "리만",
       "가설",
+      "리만",
       "증명",
-      "성명"
+      "수학자"
      ],
      "top_post": {
       "t": "리만가설 증명에 쓰인 lean코드는 수학 증명보조기이다.",
@@ -969,11 +1021,11 @@
      "nsite": 5,
      "np_here": 2,
      "nc_here": 0,
-     "issue_np": 6,
+     "issue_np": 7,
      "issue_nc": 10,
      "kw": [
-      "일론",
       "머스크",
+      "일론",
       "농담"
      ],
      "top_post": {
@@ -987,11 +1039,11 @@
      "nsite": 4,
      "np_here": 3,
      "nc_here": 0,
-     "issue_np": 6,
+     "issue_np": 7,
      "issue_nc": 87,
      "kw": [
-      "행위",
       "부정",
+      "행위",
       "수능"
      ],
      "top_post": {
@@ -1006,7 +1058,7 @@
      "np_here": 2,
      "nc_here": 0,
      "issue_np": 5,
-     "issue_nc": 13,
+     "issue_nc": 16,
      "kw": [
       "여자",
       "친구"
@@ -1022,7 +1074,7 @@
      "nsite": 4,
      "np_here": 2,
      "nc_here": 0,
-     "issue_np": 6,
+     "issue_np": 8,
      "issue_nc": 0,
      "kw": [
       "한국",
@@ -1060,8 +1112,8 @@
      "issue_np": 4,
      "issue_nc": 21,
      "kw": [
-      "영창",
-      "군대"
+      "군대",
+      "영창"
      ],
      "top_post": {
       "t": "영창이 폐지된 요즘 군대",
@@ -1090,7 +1142,7 @@
   },
   {
    "name": "디시인사이드",
-   "np": 4,
+   "np": 5,
    "nc": 0,
    "topics": [
     {
@@ -1116,11 +1168,11 @@
      "nsite": 5,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 6,
+     "issue_np": 7,
      "issue_nc": 10,
      "kw": [
-      "일론",
       "머스크",
+      "일론",
       "농담"
      ],
      "top_post": {
@@ -1137,12 +1189,31 @@
      "issue_np": 3,
      "issue_nc": 32,
      "kw": [
-      "컨닝",
-      "AI"
+      "AI",
+      "컨닝"
      ],
      "top_post": {
       "t": "싱글벙글 AI 컨닝으로 난리난 나라들",
       "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=480921&_dcbest=1&page=1",
+      "nc": 0
+     }
+    },
+    {
+     "t": "[속보] 최교진 교육부 장관 사의 표명…\"수능 혼란 책임 통감\"",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 15,
+     "kw": [
+      "최교진",
+      "통감",
+      "사의",
+      "수능"
+     ],
+     "top_post": {
+      "t": "최교진 교육장관 사의 표명…“수능 준비 미흡 책임 통감”",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=480924&_dcbest=1&page=1",
       "nc": 0
      }
     },
@@ -1193,7 +1264,7 @@
      "nsite": 4,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 6,
+     "issue_np": 8,
      "issue_nc": 0,
      "kw": [
       "한국",
@@ -1232,9 +1303,9 @@
      "issue_nc": 4,
      "kw": [
       "김원효",
-      "트랜스젠더",
+      "확산",
       "방문",
-      "확산"
+      "개그맨"
      ],
      "top_post": {
       "t": "개그맨 김원효, 트랜스젠더 바 방문 영상 확산…소속사 “방문 날짜 확인 중”",
@@ -1250,8 +1321,8 @@
      "issue_np": 2,
      "issue_nc": 36,
      "kw": [
-      "테슬라",
-      "현기"
+      "현기",
+      "테슬라"
      ],
      "top_post": {
       "t": "현기랑 테슬라 자율주행 격차가...",
@@ -1272,7 +1343,7 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 5,
-     "issue_nc": 13,
+     "issue_nc": 16,
      "kw": [
       "여자",
       "친구"
@@ -1288,7 +1359,7 @@
      "nsite": 4,
      "np_here": 2,
      "nc_here": 0,
-     "issue_np": 6,
+     "issue_np": 8,
      "issue_nc": 0,
      "kw": [
       "한국",
