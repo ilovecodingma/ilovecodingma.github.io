@@ -1,27 +1,27 @@
 {
  "date": "2026-11-22",
- "updated": "2026-11-22 21:50",
+ "updated": "2026-11-22 22:50",
  "sites": 13,
- "npost": 2256,
+ "npost": 2370,
  "note": "출처(커뮤니티)별 집계예요. 작성자·연령·성별 정보는 수집하지 않아요. posts 는 이슈별로 뽑힌 일부라 전체 글 수가 아니에요.",
  "sources": [
   {
    "name": "MLB파크",
-   "np": 10,
-   "nc": 661,
+   "np": 13,
+   "nc": 800,
    "topics": [
     {
      "t": "현재 리만가설 증명 수학자협회 성명문 근황 올라왔네요.",
      "nsite": 5,
      "np_here": 2,
-     "nc_here": 150,
+     "nc_here": 161,
      "issue_np": 10,
-     "issue_nc": 174,
+     "issue_nc": 185,
      "kw": [
-      "가설",
       "리만",
+      "가설",
       "증명",
-      "수학자"
+      "성명"
      ],
      "top_post": {
       "t": "현재 리만가설 증명 수학자협회 성명문 근황 올라왔네요.",
@@ -37,8 +37,8 @@
      "issue_np": 2,
      "issue_nc": 148,
      "kw": [
-      "생산",
-      "식품"
+      "식품",
+      "생산"
      ],
      "top_post": {
       "t": "도대체 누가 왜 사먹는지도 모르는데 계속 생산되는 식품......",
@@ -64,6 +64,23 @@
      }
     },
     {
+     "t": "한국 영화 악역 티어. jpg",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 68,
+     "issue_np": 2,
+     "issue_nc": 68,
+     "kw": [
+      "한국",
+      "영화"
+     ],
+     "top_post": {
+      "t": "한국 영화 악역 티어. jpg",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611220120262731&m=view",
+      "nc": 68
+     }
+    },
+    {
      "t": "영국 여성이 한국 돌아다니며 느낀점",
      "nsite": 2,
      "np_here": 1,
@@ -71,13 +88,30 @@
      "issue_np": 2,
      "issue_nc": 62,
      "kw": [
-      "영국",
-      "한국"
+      "한국",
+      "영국"
      ],
      "top_post": {
       "t": "영국 여성이 한국 돌아다니며 느낀점",
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611210120246912&m=view",
       "nc": 59
+     }
+    },
+    {
+     "t": "[열혈강호] 30년만에 마침표.",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 53,
+     "issue_np": 2,
+     "issue_nc": 56,
+     "kw": [
+      "마침표",
+      "열혈강호"
+     ],
+     "top_post": {
+      "t": "[열혈강호] 30년만에 마침표.",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611220120260970&m=view",
+      "nc": 53
      }
     },
     {
@@ -88,8 +122,8 @@
      "issue_np": 2,
      "issue_nc": 53,
      "kw": [
-      "팀장",
-      "유부남"
+      "유부남",
+      "팀장"
      ],
      "top_post": {
       "t": "유부남 팀장님 때문에 괴로운 20대 여직원. jpg",
@@ -98,56 +132,21 @@
      }
     },
     {
-     "t": "한국 영화 악역 티어. jpg",
+     "t": "테슬라 FSD 최신 버전 V15 근황 ㄷㄷ.swf",
      "nsite": 2,
      "np_here": 1,
-     "nc_here": 49,
-     "issue_np": 2,
-     "issue_nc": 49,
-     "kw": [
-      "한국",
-      "영화"
-     ],
-     "top_post": {
-      "t": "한국 영화 악역 티어. jpg",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611220120262731&m=view",
-      "nc": 49
-     }
-    },
-    {
-     "t": "[열혈강호] 30년만에 마침표.",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 47,
+     "nc_here": 50,
      "issue_np": 2,
      "issue_nc": 50,
      "kw": [
-      "열혈강호",
-      "마침표"
-     ],
-     "top_post": {
-      "t": "[열혈강호] 30년만에 마침표.",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611220120260970&m=view",
-      "nc": 47
-     }
-    },
-    {
-     "t": "테슬라 FSD의 새로운 시각화 수준이 충격적이네요.",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 30,
-     "issue_np": 8,
-     "issue_nc": 90,
-     "kw": [
       "테슬라",
       "FSD",
-      "업데이트",
-      "화면"
+      "버전"
      ],
      "top_post": {
-      "t": "테슬라 FSD V15 대단하다고 정신승리중",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611220120261012&m=view",
-      "nc": 30
+      "t": "테슬라 FSD 최신 버전 V15 근황 ㄷㄷ.swf",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611220120254541&m=view",
+      "nc": 50
      }
     }
    ]
@@ -155,15 +154,15 @@
   {
    "name": "개드립",
    "np": 10,
-   "nc": 269,
+   "nc": 247,
    "topics": [
     {
      "t": "과즙세연한테 별창이라고 하지 말라는 이돈호 변호사",
      "nsite": 2,
      "np_here": 1,
-     "nc_here": 43,
+     "nc_here": 44,
      "issue_np": 2,
-     "issue_nc": 45,
+     "issue_nc": 47,
      "kw": [
       "이돈호",
       "과즙",
@@ -172,43 +171,7 @@
      "top_post": {
       "t": "과즙세연한테 별창이라고 하지 말라는 이돈호 변호사",
       "u": "https://www.dogdrip.net/dogdrip/736056413?sort_index=popular&page=1",
-      "nc": 43
-     }
-    },
-    {
-     "t": "서울대 의대 26학번끼리 서로 AI안경 썼는지 검증",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 40,
-     "issue_np": 3,
-     "issue_nc": 40,
-     "kw": [
-      "안경",
-      "의대",
-      "AI",
-      "서울대"
-     ],
-     "top_post": {
-      "t": "서울대 의대 26학번끼리 서로 AI안경 썼는지 검증",
-      "u": "https://www.dogdrip.net/dogdrip/735978084?sort_index=popular&page=1",
-      "nc": 40
-     }
-    },
-    {
-     "t": "결혼하자는 여친한테 쎄함을 느끼는 남자",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 40,
-     "issue_np": 2,
-     "issue_nc": 40,
-     "kw": [
-      "남자",
-      "여친"
-     ],
-     "top_post": {
-      "t": "결혼하자는 여친한테 쎄함을 느끼는 남자",
-      "u": "https://www.dogdrip.net/dogdrip/735964898?sort_index=popular&page=1",
-      "nc": 40
+      "nc": 44
      }
     },
     {
@@ -219,14 +182,32 @@
      "issue_np": 3,
      "issue_nc": 39,
      "kw": [
-      "마라톤",
       "시민",
+      "마라톤",
       "도심"
      ],
      "top_post": {
       "t": "도심 마라톤 때문에 화가 많이 난 시민들",
       "u": "https://www.dogdrip.net/dogdrip/735972705?sort_index=popular&page=1",
       "nc": 36
+     }
+    },
+    {
+     "t": "발열조끼 입은 수험생 퇴실조치",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 32,
+     "issue_np": 3,
+     "issue_nc": 32,
+     "kw": [
+      "조끼",
+      "발열",
+      "퇴실조치"
+     ],
+     "top_post": {
+      "t": "발열조끼 입은 수험생 퇴실조치",
+      "u": "https://www.dogdrip.net/dogdrip/736055737?sort_index=popular&page=1",
+      "nc": 32
      }
     },
     {
@@ -244,6 +225,23 @@
       "t": "현재 ㅈ됐다는 ai컨닝 하려던 사람들 근황",
       "u": "https://www.dogdrip.net/dogdrip/736009033?sort_index=popular&page=1",
       "nc": 29
+     }
+    },
+    {
+     "t": "ㅇㅎ) 의외로 좋아하는 남자들이 있다는 여자 신체부위",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 25,
+     "issue_np": 4,
+     "issue_nc": 26,
+     "kw": [
+      "남자",
+      "여자"
+     ],
+     "top_post": {
+      "t": "ㅇㅎ) 의외로 좋아하는 남자들이 있다는 여자 신체부위",
+      "u": "https://www.dogdrip.net/dogdrip/735965859?sort_index=popular&page=1",
+      "nc": 25
      }
     },
     {
@@ -269,12 +267,12 @@
      "np_here": 1,
      "nc_here": 23,
      "issue_np": 10,
-     "issue_nc": 174,
+     "issue_nc": 185,
      "kw": [
-      "가설",
       "리만",
+      "가설",
       "증명",
-      "수학자"
+      "성명"
      ],
      "top_post": {
       "t": "리만가설 증명보고 개빡친 수학자협회 성명문..",
@@ -303,8 +301,8 @@
   },
   {
    "name": "인스티즈",
-   "np": 4,
-   "nc": 203,
+   "np": 3,
+   "nc": 183,
    "topics": [
     {
      "t": "수능 부정행위 단속 총정리",
@@ -325,6 +323,24 @@
      }
     },
     {
+     "t": "과즙세연 출연한 영상 보는데 이런게 요즘 개그야? 226 12:09 l 조회",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 54,
+     "issue_np": 2,
+     "issue_nc": 54,
+     "kw": [
+      "출연",
+      "과즙",
+      "개그"
+     ],
+     "top_post": {
+      "t": "과즙세연 출연한 영상 보는데 이런게 요즘 개그야? 226 12:09 l 조회",
+      "u": "https://www.instiz.net/pt/7928445?page=1&srt=3&k=",
+      "nc": 54
+     }
+    },
+    {
      "t": "대처 잘하는거 같은 ITZY 채령",
      "nsite": 2,
      "np_here": 1,
@@ -340,56 +356,21 @@
       "u": "https://www.instiz.net/pt/7928262?page=1&srt=3&k=",
       "nc": 45
      }
-    },
-    {
-     "t": "과즙세연 출연한 영상 보는데 이런게 요즘 개그야? 209 12:09 l 조회",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 41,
-     "issue_np": 2,
-     "issue_nc": 41,
-     "kw": [
-      "개그",
-      "과즙",
-      "출연"
-     ],
-     "top_post": {
-      "t": "과즙세연 출연한 영상 보는데 이런게 요즘 개그야? 209 12:09 l 조회",
-      "u": "https://www.instiz.net/pt/7928445?page=1&srt=3&k=",
-      "nc": 41
-     }
-    },
-    {
-     "t": "사귄지 2개월 된 커플 여행이 파토난 이유",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 33,
-     "issue_np": 2,
-     "issue_nc": 41,
-     "kw": [
-      "여행",
-      "커플"
-     ],
-     "top_post": {
-      "t": "사귄지 2개월 된 커플 여행이 파토난 이유",
-      "u": "https://www.instiz.net/pt/7926206?page=1&srt=3&k=",
-      "nc": 33
-     }
     }
    ]
   },
   {
    "name": "클리앙",
-   "np": 9,
-   "nc": 157,
+   "np": 8,
+   "nc": 124,
    "topics": [
     {
      "t": "테슬라 FSD의 새로운 시각화 수준이 충격적이네요.",
      "nsite": 4,
      "np_here": 5,
-     "nc_here": 60,
-     "issue_np": 8,
-     "issue_nc": 90,
+     "nc_here": 63,
+     "issue_np": 9,
+     "issue_nc": 106,
      "kw": [
       "테슬라",
       "FSD",
@@ -410,30 +391,13 @@
      "issue_np": 2,
      "issue_nc": 42,
      "kw": [
-      "전세",
-      "보증금"
+      "보증금",
+      "전세"
      ],
      "top_post": {
       "t": "전세보증금으로 주식하는 분들 많다고 하던데요",
       "u": "https://www.clien.net/service/board/park/19296834?od=T33&po=0&category=0&groupCd=clien_all",
       "nc": 41
-     }
-    },
-    {
-     "t": "솔직히 현기가 차값만 테슬라에 맞췄어도 반응 안 이러죠",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 36,
-     "issue_np": 2,
-     "issue_nc": 36,
-     "kw": [
-      "현기",
-      "테슬라"
-     ],
-     "top_post": {
-      "t": "솔직히 현기가 차값만 테슬라에 맞췄어도 반응 안 이러죠",
-      "u": "https://www.clien.net/service/board/park/19296811?od=T33&po=0&category=0&groupCd=clien_all",
-      "nc": 36
      }
     },
     {
@@ -444,8 +408,8 @@
      "issue_np": 5,
      "issue_nc": 26,
      "kw": [
-      "시장",
       "주식",
+      "시장",
       "정부"
      ],
      "top_post": {
@@ -460,12 +424,12 @@
      "np_here": 1,
      "nc_here": 1,
      "issue_np": 10,
-     "issue_nc": 174,
+     "issue_nc": 185,
      "kw": [
-      "가설",
       "리만",
+      "가설",
       "증명",
-      "수학자"
+      "성명"
      ],
      "top_post": {
       "t": "이제 리만가설이라고 부르면 안 되겠네요",
@@ -518,8 +482,8 @@
   },
   {
    "name": "82쿡",
-   "np": 14,
-   "nc": 53,
+   "np": 13,
+   "nc": 45,
    "topics": [
     {
      "t": "ai시대를 예상한 서울대학교 ㄷㄷ. jpg",
@@ -548,32 +512,15 @@
      "issue_np": 3,
      "issue_nc": 15,
      "kw": [
-      "최교진",
       "통감",
       "사의",
-      "수능"
+      "최교진",
+      "책임"
      ],
      "top_post": {
       "t": "최교진 교육장관, 사의 표명‥\"수능 책임 통감&quot..",
       "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4261722&page=1",
       "nc": 15
-     }
-    },
-    {
-     "t": "사귄지 2개월 된 커플 여행이 파토난 이유",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 8,
-     "issue_np": 2,
-     "issue_nc": 41,
-     "kw": [
-      "여행",
-      "커플"
-     ],
-     "top_post": {
-      "t": "프랑스 여행 게이 커플집 에어비앤비 했어요.",
-      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4261753&page=1",
-      "nc": 8
      }
     },
     {
@@ -584,8 +531,8 @@
      "issue_np": 5,
      "issue_nc": 26,
      "kw": [
-      "시장",
       "주식",
+      "시장",
       "정부"
      ],
      "top_post": {
@@ -602,10 +549,10 @@
      "issue_np": 3,
      "issue_nc": 4,
      "kw": [
-      "김원효",
-      "확산",
+      "트랜스젠더",
+      "개그맨",
       "방문",
-      "개그맨"
+      "확산"
      ],
      "top_post": {
       "t": "개그맨 김원효, 트랜스젠더 바 방문 영상 확산",
@@ -619,10 +566,10 @@
      "np_here": 1,
      "nc_here": 3,
      "issue_np": 7,
-     "issue_nc": 10,
+     "issue_nc": 11,
      "kw": [
-      "머스크",
       "일론",
+      "머스크",
       "농담"
      ],
      "top_post": {
@@ -633,11 +580,11 @@
     },
     {
      "t": "중국:독도는 한국땅.",
-     "nsite": 3,
+     "nsite": 4,
      "np_here": 1,
      "nc_here": 2,
-     "issue_np": 4,
-     "issue_nc": 20,
+     "issue_np": 5,
+     "issue_nc": 39,
      "kw": [
       "한국",
       "독도",
@@ -657,29 +604,47 @@
      "issue_np": 2,
      "issue_nc": 42,
      "kw": [
-      "전세",
-      "보증금"
+      "보증금",
+      "전세"
      ],
      "top_post": {
       "t": "Hug에서 전세보증금 받아보신분",
       "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4261794&page=1",
       "nc": 1
      }
+    },
+    {
+     "t": "수능 부정행위 단속 총정리",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 7,
+     "issue_nc": 87,
+     "kw": [
+      "부정",
+      "행위",
+      "수능"
+     ],
+     "top_post": {
+      "t": "수능 부정행위 중에 서초구 신발이요",
+      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4261690&page=1",
+      "nc": 0
+     }
     }
    ]
   },
   {
    "name": "보배드림",
-   "np": 13,
-   "nc": 38,
+   "np": 15,
+   "nc": 41,
    "topics": [
     {
      "t": "중국:독도는 한국땅.",
-     "nsite": 3,
+     "nsite": 4,
      "np_here": 2,
      "nc_here": 6,
-     "issue_np": 4,
-     "issue_nc": 20,
+     "issue_np": 5,
+     "issue_nc": 39,
      "kw": [
       "한국",
       "독도",
@@ -692,6 +657,24 @@
      }
     },
     {
+     "t": "일론 머스크가 제일 좋아하는 농담",
+     "nsite": 5,
+     "np_here": 2,
+     "nc_here": 4,
+     "issue_np": 7,
+     "issue_nc": 11,
+     "kw": [
+      "일론",
+      "머스크",
+      "농담"
+     ],
+     "top_post": {
+      "t": "일론 머스크가 구상하는 앞으로 다가올 미래",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1049381&vdate=",
+      "nc": 3
+     }
+    },
+    {
      "t": "주식 시장이 망가지는 이유.",
      "nsite": 5,
      "np_here": 1,
@@ -699,31 +682,13 @@
      "issue_np": 5,
      "issue_nc": 26,
      "kw": [
-      "시장",
       "주식",
+      "시장",
       "정부"
      ],
      "top_post": {
       "t": "요즘 주식 시장에 대한 개인적인 소견",
       "u": "https://www.bobaedream.co.kr/view?code=best&No=1049202&vdate=",
-      "nc": 3
-     }
-    },
-    {
-     "t": "일론 머스크가 제일 좋아하는 농담",
-     "nsite": 5,
-     "np_here": 1,
-     "nc_here": 3,
-     "issue_np": 7,
-     "issue_nc": 10,
-     "kw": [
-      "머스크",
-      "일론",
-      "농담"
-     ],
-     "top_post": {
-      "t": "일론 머스크가 구상하는 앞으로 다가올 미래",
-      "u": "https://www.bobaedream.co.kr/view?code=best&No=1049381&vdate=",
       "nc": 3
      }
     },
@@ -753,8 +718,8 @@
      "issue_np": 3,
      "issue_nc": 39,
      "kw": [
-      "마라톤",
       "시민",
+      "마라톤",
       "도심"
      ],
      "top_post": {
@@ -818,8 +783,8 @@
   },
   {
    "name": "네이트판",
-   "np": 1,
-   "nc": 16,
+   "np": 2,
+   "nc": 17,
    "topics": [
     {
      "t": "친구 결혼식에 갔다가 여자를 만난 썰",
@@ -837,12 +802,29 @@
       "u": "https://pann.nate.com/talk/375731119",
       "nc": 16
      }
+    },
+    {
+     "t": "ㅇㅎ) 의외로 좋아하는 남자들이 있다는 여자 신체부위",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 1,
+     "issue_np": 4,
+     "issue_nc": 26,
+     "kw": [
+      "남자",
+      "여자"
+     ],
+     "top_post": {
+      "t": "너네들 계속 그녀 괴롭히다 그녀가 알게되면 바로 그남자 찾아갈 여자다 니네가 제일 우려하는...",
+      "u": "https://pann.nate.com/talk/375730264",
+      "nc": 1
+     }
     }
    ]
   },
   {
    "name": "더쿠",
-   "np": 8,
+   "np": 9,
    "nc": 0,
    "topics": [
     {
@@ -851,12 +833,12 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 10,
-     "issue_nc": 174,
+     "issue_nc": 185,
      "kw": [
-      "가설",
       "리만",
+      "가설",
       "증명",
-      "수학자"
+      "성명"
      ],
      "top_post": {
       "t": "Lean : 리만 가설 증명완료 축하드림",
@@ -889,8 +871,8 @@
      "issue_np": 8,
      "issue_nc": 0,
      "kw": [
-      "한국",
       "일본인",
+      "한국",
       "여행"
      ],
      "top_post": {
@@ -907,13 +889,31 @@
      "issue_np": 3,
      "issue_nc": 39,
      "kw": [
-      "마라톤",
       "시민",
+      "마라톤",
       "도심"
      ],
      "top_post": {
       "t": "도심 마라톤 때문에 화가 많이 난 시민들",
       "u": "https://theqoo.net/hot/4414391827",
+      "nc": 0
+     }
+    },
+    {
+     "t": "발열조끼 입은 수험생 퇴실조치",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 32,
+     "kw": [
+      "조끼",
+      "발열",
+      "퇴실조치"
+     ],
+     "top_post": {
+      "t": "수능당일 발열조끼 입은 학생 퇴실조치",
+      "u": "https://theqoo.net/hot/4414842032",
       "nc": 0
      }
     },
@@ -925,10 +925,10 @@
      "issue_np": 3,
      "issue_nc": 15,
      "kw": [
-      "최교진",
       "통감",
       "사의",
-      "수능"
+      "최교진",
+      "책임"
      ],
      "top_post": {
       "t": "[속보] 최교진 교육부 장관 사의 표명…\"수능 혼란 책임 통감\"",
@@ -944,10 +944,10 @@
      "issue_np": 3,
      "issue_nc": 4,
      "kw": [
-      "김원효",
-      "확산",
+      "트랜스젠더",
+      "개그맨",
       "방문",
-      "개그맨"
+      "확산"
      ],
      "top_post": {
       "t": "[단독] 개그맨 김원효, 트랜스젠더 바 방문 영상 확산…소속사 “방문 날짜 확인 중”",
@@ -963,30 +963,12 @@
      "issue_np": 2,
      "issue_nc": 148,
      "kw": [
-      "생산",
-      "식품"
+      "식품",
+      "생산"
      ],
      "top_post": {
       "t": "도대체 누가 왜 사먹는지도 모르는데 계속 생산되는 식품......",
       "u": "https://theqoo.net/hot/4414524324",
-      "nc": 0
-     }
-    },
-    {
-     "t": "과즙세연 출연한 영상 보는데 이런게 요즘 개그야? 209 12:09 l 조회",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 2,
-     "issue_nc": 41,
-     "kw": [
-      "개그",
-      "과즙",
-      "출연"
-     ],
-     "top_post": {
-      "t": "과즙세연 출연한 영상 보는데 이런게 요즘 개그야?",
-      "u": "https://theqoo.net/hot/4414417323",
       "nc": 0
      }
     }
@@ -994,7 +976,7 @@
   },
   {
    "name": "루리웹",
-   "np": 20,
+   "np": 21,
    "nc": 0,
    "topics": [
     {
@@ -1003,12 +985,12 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 10,
-     "issue_nc": 174,
+     "issue_nc": 185,
      "kw": [
-      "가설",
       "리만",
+      "가설",
       "증명",
-      "수학자"
+      "성명"
      ],
      "top_post": {
       "t": "리만가설 증명에 쓰인 lean코드는 수학 증명보조기이다.",
@@ -1019,13 +1001,13 @@
     {
      "t": "일론 머스크가 제일 좋아하는 농담",
      "nsite": 5,
-     "np_here": 2,
+     "np_here": 1,
      "nc_here": 0,
      "issue_np": 7,
-     "issue_nc": 10,
+     "issue_nc": 11,
      "kw": [
-      "머스크",
       "일론",
+      "머스크",
       "농담"
      ],
      "top_post": {
@@ -1077,8 +1059,8 @@
      "issue_np": 8,
      "issue_nc": 0,
      "kw": [
-      "한국",
       "일본인",
+      "한국",
       "여행"
      ],
      "top_post": {
@@ -1105,36 +1087,38 @@
      }
     },
     {
-     "t": "영창이 없어진 군대 근황.",
+     "t": "발열조끼 입은 수험생 퇴실조치",
      "nsite": 3,
-     "np_here": 2,
+     "np_here": 1,
      "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 21,
+     "issue_np": 3,
+     "issue_nc": 32,
      "kw": [
-      "군대",
-      "영창"
+      "조끼",
+      "발열",
+      "퇴실조치"
      ],
      "top_post": {
-      "t": "영창이 폐지된 요즘 군대",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77475949?m=humor",
+      "t": "아버지가 입혀주신 발열조끼...",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77484223?m=all&t=now",
       "nc": 0
      }
     },
     {
-     "t": "Ai안경.manhwa",
+     "t": "룸서비스가 대단한 경산 모텔 수준",
      "nsite": 3,
      "np_here": 2,
      "nc_here": 0,
      "issue_np": 4,
-     "issue_nc": 16,
+     "issue_nc": 32,
      "kw": [
-      "AI",
-      "안경"
+      "모텔",
+      "서비스",
+      "경산"
      ],
      "top_post": {
-      "t": "님들 이제 큰일났음. 이제 AI 안경을 막을 방법이 없음.",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77477770?m=all&t=now",
+      "t": "룸서비스가 대단한 경산 모텔 수준",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77479277?m=all&t=now",
       "nc": 0
      }
     }
@@ -1142,7 +1126,7 @@
   },
   {
    "name": "디시인사이드",
-   "np": 5,
+   "np": 6,
    "nc": 0,
    "topics": [
     {
@@ -1153,8 +1137,8 @@
      "issue_np": 5,
      "issue_nc": 26,
      "kw": [
-      "시장",
       "주식",
+      "시장",
       "정부"
      ],
      "top_post": {
@@ -1169,10 +1153,10 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 7,
-     "issue_nc": 10,
+     "issue_nc": 11,
      "kw": [
-      "머스크",
       "일론",
+      "머스크",
       "농담"
      ],
      "top_post": {
@@ -1206,14 +1190,32 @@
      "issue_np": 3,
      "issue_nc": 15,
      "kw": [
-      "최교진",
       "통감",
       "사의",
-      "수능"
+      "최교진",
+      "책임"
      ],
      "top_post": {
       "t": "최교진 교육장관 사의 표명…“수능 준비 미흡 책임 통감”",
       "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=480924&_dcbest=1&page=1",
+      "nc": 0
+     }
+    },
+    {
+     "t": "테슬라 FSD 최신 버전 V15 근황 ㄷㄷ.swf",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 2,
+     "issue_nc": 50,
+     "kw": [
+      "테슬라",
+      "FSD",
+      "버전"
+     ],
+     "top_post": {
+      "t": "테슬라 FSD 버전 15 정리 ㄷㄷ",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=480937&_dcbest=1&page=1",
       "nc": 0
      }
     },
@@ -1238,7 +1240,7 @@
   },
   {
    "name": "SLR클럽",
-   "np": 5,
+   "np": 4,
    "nc": 0,
    "topics": [
     {
@@ -1249,8 +1251,8 @@
      "issue_np": 5,
      "issue_nc": 26,
      "kw": [
-      "시장",
       "주식",
+      "시장",
       "정부"
      ],
      "top_post": {
@@ -1267,8 +1269,8 @@
      "issue_np": 8,
      "issue_nc": 0,
      "kw": [
-      "한국",
       "일본인",
+      "한국",
       "여행"
      ],
      "top_post": {
@@ -1302,31 +1304,14 @@
      "issue_np": 3,
      "issue_nc": 4,
      "kw": [
-      "김원효",
-      "확산",
+      "트랜스젠더",
+      "개그맨",
       "방문",
-      "개그맨"
+      "확산"
      ],
      "top_post": {
       "t": "개그맨 김원효, 트랜스젠더 바 방문 영상 확산…소속사 “방문 날짜 확인 중”",
       "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677937",
-      "nc": 0
-     }
-    },
-    {
-     "t": "솔직히 현기가 차값만 테슬라에 맞췄어도 반응 안 이러죠",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 2,
-     "issue_nc": 36,
-     "kw": [
-      "현기",
-      "테슬라"
-     ],
-     "top_post": {
-      "t": "현기랑 테슬라 자율주행 격차가...",
-      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677954",
       "nc": 0
      }
     }
@@ -1362,8 +1347,8 @@
      "issue_np": 8,
      "issue_nc": 0,
      "kw": [
-      "한국",
       "일본인",
+      "한국",
       "여행"
      ],
      "top_post": {
