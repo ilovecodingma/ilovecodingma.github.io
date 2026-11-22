@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-22 09:00",
+ "updated": "2026-11-22 10:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -291,6 +291,18 @@
    "expires": "2026-11-25"
   },
   {
+   "query": "경제",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 10000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-05",
+   "expires": "2026-11-25"
+  },
+  {
    "query": "공무원",
    "tier": "단기",
    "signal": [
@@ -340,18 +352,6 @@
   },
   {
    "query": "자동차",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 10000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-05",
-   "expires": "2026-11-25"
-  },
-  {
-   "query": "경제",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -1023,6 +1023,18 @@
    "expires": "2026-11-25"
   },
   {
+   "query": "뉴스",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 5000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-17",
+   "expires": "2026-11-25"
+  },
+  {
    "query": "미국 반도체 수출 통제로 인한 삼성전자와 tsmc의 중국 출하 중단 뉴스 알려줘",
    "tier": "단기",
    "signal": [
@@ -1228,18 +1240,6 @@
   },
   {
    "query": "박혜연",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 5000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-17",
-   "expires": "2026-11-25"
-  },
-  {
-   "query": "뉴스",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -3819,6 +3819,18 @@
    "expires": "2026-11-25"
   },
   {
+   "query": "ai 데이터 센터",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-10",
+   "expires": "2026-11-25"
+  },
+  {
    "query": "대한민국 해군",
    "tier": "단기",
    "signal": [
@@ -3984,18 +3996,6 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-09",
-   "expires": "2026-11-25"
-  },
-  {
-   "query": "ai 데이터 센터",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 1000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-10",
    "expires": "2026-11-25"
   },
   {
