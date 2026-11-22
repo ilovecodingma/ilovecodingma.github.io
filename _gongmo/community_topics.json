@@ -1,14 +1,14 @@
 {
  "date": "2026-11-22",
- "updated": "2026-11-22 19:50",
+ "updated": "2026-11-22 20:50",
  "sites": 13,
- "npost": 2013,
+ "npost": 2131,
  "note": "출처(커뮤니티)별 집계예요. 작성자·연령·성별 정보는 수집하지 않아요. posts 는 이슈별로 뽑힌 일부라 전체 글 수가 아니에요.",
  "sources": [
   {
    "name": "MLB파크",
    "np": 8,
-   "nc": 556,
+   "nc": 581,
    "topics": [
     {
      "t": "도대체 누가 왜 사먹는지도 모르는데 계속 생산되는 식품......",
@@ -54,8 +54,8 @@
      "issue_np": 2,
      "issue_nc": 105,
      "kw": [
-      "무슬림",
-      "프랑스"
+      "프랑스",
+      "무슬림"
      ],
      "top_post": {
       "t": "무슬림 때문에 완전히 망해버린 프랑스",
@@ -71,8 +71,8 @@
      "issue_np": 2,
      "issue_nc": 62,
      "kw": [
-      "한국",
-      "영국"
+      "영국",
+      "한국"
      ],
      "top_post": {
       "t": "영국 여성이 한국 돌아다니며 느낀점",
@@ -98,6 +98,42 @@
      }
     },
     {
+     "t": "[열혈강호] 30년만에 마침표.",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 37,
+     "issue_np": 2,
+     "issue_nc": 40,
+     "kw": [
+      "마침표",
+      "열혈강호"
+     ],
+     "top_post": {
+      "t": "[열혈강호] 30년만에 마침표.",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611220120260970&m=view",
+      "nc": 37
+     }
+    },
+    {
+     "t": "테슬라 FSD의 새로운 시각화 수준이 충격적이네요.",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 27,
+     "issue_np": 8,
+     "issue_nc": 87,
+     "kw": [
+      "FSD",
+      "테슬라",
+      "업데이트",
+      "화면"
+     ],
+     "top_post": {
+      "t": "테슬라 FSD V15 대단하다고 정신승리중",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611220120261012&m=view",
+      "nc": 27
+     }
+    },
+    {
      "t": "ai시대를 예상한 서울대학교 ㄷㄷ. jpg",
      "nsite": 3,
      "np_here": 1,
@@ -115,49 +151,13 @@
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611220120254787&m=view",
       "nc": 26
      }
-    },
-    {
-     "t": "테슬라 FSD의 새로운 시각화 수준이 충격적이네요.",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 21,
-     "issue_np": 8,
-     "issue_nc": 81,
-     "kw": [
-      "FSD",
-      "테슬라",
-      "업데이트",
-      "화면"
-     ],
-     "top_post": {
-      "t": "테슬라 FSD V15 대단하다고 정신승리중",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611220120261012&m=view",
-      "nc": 21
-     }
-    },
-    {
-     "t": "남친을 벌레처럼 보는 엄마, 아빠",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 18,
-     "issue_np": 2,
-     "issue_nc": 31,
-     "kw": [
-      "아빠",
-      "엄마"
-     ],
-     "top_post": {
-      "t": "남친을 벌레처럼 보는 엄마, 아빠",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611220120253569&m=view",
-      "nc": 18
-     }
     }
    ]
   },
   {
    "name": "개드립",
-   "np": 14,
-   "nc": 386,
+   "np": 13,
+   "nc": 365,
    "topics": [
     {
      "t": "서울대 의대 26학번끼리 서로 AI안경 썼는지 검증",
@@ -167,10 +167,10 @@
      "issue_np": 3,
      "issue_nc": 40,
      "kw": [
-      "의대",
-      "AI",
       "안경",
-      "서울대"
+      "AI",
+      "의대",
+      "학번"
      ],
      "top_post": {
       "t": "서울대 의대 26학번끼리 서로 AI안경 썼는지 검증",
@@ -186,13 +186,31 @@
      "issue_np": 2,
      "issue_nc": 40,
      "kw": [
-      "남자",
-      "여친"
+      "여친",
+      "남자"
      ],
      "top_post": {
       "t": "결혼하자는 여친한테 쎄함을 느끼는 남자",
       "u": "https://www.dogdrip.net/dogdrip/735964898?sort_index=popular&page=1",
       "nc": 40
+     }
+    },
+    {
+     "t": "과즙세연한테 별창이라고 하지 말라는 이돈호 변호사",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 38,
+     "issue_np": 2,
+     "issue_nc": 40,
+     "kw": [
+      "이돈호",
+      "변호사",
+      "과즙"
+     ],
+     "top_post": {
+      "t": "과즙세연한테 별창이라고 하지 말라는 이돈호 변호사",
+      "u": "https://www.dogdrip.net/dogdrip/736056413?sort_index=popular&page=1",
+      "nc": 38
      }
     },
     {
@@ -223,8 +241,8 @@
      "kw": [
       "인종",
       "차별",
-      "사건",
-      "인 앤 아웃"
+      "인 앤 아웃",
+      "사건"
      ],
      "top_post": {
       "t": "동양인 인종차별 값 = 25달러 상품권",
@@ -240,8 +258,8 @@
      "issue_np": 2,
      "issue_nc": 34,
      "kw": [
-      "저작권료",
       "어른",
+      "저작권료",
       "공개"
      ],
      "top_post": {
@@ -269,37 +287,79 @@
      }
     },
     {
-     "t": "살찌면 나타나는 얼굴 변화",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 31,
-     "issue_np": 2,
-     "issue_nc": 31,
-     "kw": [
-      "얼굴",
-      "변화"
-     ],
-     "top_post": {
-      "t": "살찌면 나타나는 얼굴 변화",
-      "u": "https://www.dogdrip.net/dogdrip/735990457?sort_index=popular&page=1",
-      "nc": 31
-     }
-    },
-    {
      "t": "현재 ㅈ됐다는 ai컨닝 하려던 사람들 근황",
-     "nsite": 2,
+     "nsite": 3,
      "np_here": 1,
      "nc_here": 29,
-     "issue_np": 2,
+     "issue_np": 3,
      "issue_nc": 32,
      "kw": [
-      "AI",
-      "컨닝"
+      "컨닝",
+      "AI"
      ],
      "top_post": {
       "t": "현재 ㅈ됐다는 ai컨닝 하려던 사람들 근황",
       "u": "https://www.dogdrip.net/dogdrip/736009033?sort_index=popular&page=1",
       "nc": 29
+     }
+    }
+   ]
+  },
+  {
+   "name": "인스티즈",
+   "np": 3,
+   "nc": 162,
+   "topics": [
+    {
+     "t": "수능 부정행위 단속 총정리",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 84,
+     "issue_np": 6,
+     "issue_nc": 87,
+     "kw": [
+      "행위",
+      "부정",
+      "수능"
+     ],
+     "top_post": {
+      "t": "수능 부정행위 단속 총정리",
+      "u": "https://www.instiz.net/pt/7926834?page=1&srt=3&k=",
+      "nc": 84
+     }
+    },
+    {
+     "t": "대처 잘하는거 같은 ITZY 채령",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 45,
+     "issue_np": 2,
+     "issue_nc": 45,
+     "kw": [
+      "대처",
+      "ITZY"
+     ],
+     "top_post": {
+      "t": "대처 잘하는거 같은 ITZY 채령",
+      "u": "https://www.instiz.net/pt/7928262?page=1&srt=3&k=",
+      "nc": 45
+     }
+    },
+    {
+     "t": "사귄지 2개월 된 커플 여행이 파토난 이유",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 33,
+     "issue_np": 2,
+     "issue_nc": 41,
+     "kw": [
+      "커플",
+      "여행"
+     ],
+     "top_post": {
+      "t": "사귄지 2개월 된 커플 여행이 파토난 이유",
+      "u": "https://www.instiz.net/pt/7926206?page=1&srt=3&k=",
+      "nc": 33
      }
     }
    ]
@@ -315,7 +375,7 @@
      "np_here": 5,
      "nc_here": 60,
      "issue_np": 8,
-     "issue_nc": 81,
+     "issue_nc": 87,
      "kw": [
       "FSD",
       "테슬라",
@@ -353,8 +413,8 @@
      "issue_np": 2,
      "issue_nc": 36,
      "kw": [
-      "현기",
-      "테슬라"
+      "테슬라",
+      "현기"
      ],
      "top_post": {
       "t": "솔직히 현기가 차값만 테슬라에 맞췄어도 반응 안 이러죠",
@@ -363,15 +423,16 @@
      }
     },
     {
-     "t": "요즘 주식 시장에 대한 개인적인 소견",
-     "nsite": 4,
+     "t": "주식 시장이 망가지는 이유.",
+     "nsite": 5,
      "np_here": 1,
      "nc_here": 19,
-     "issue_np": 4,
-     "issue_nc": 22,
+     "issue_np": 5,
+     "issue_nc": 26,
      "kw": [
+      "시장",
       "주식",
-      "시장"
+      "정부"
      ],
      "top_post": {
       "t": "주식 시장이 망가지는 이유.",
@@ -396,48 +457,6 @@
       "t": "이제 리만가설이라고 부르면 안 되겠네요",
       "u": "https://www.clien.net/service/board/park/19296718?od=T33&po=0&category=0&groupCd=clien_all",
       "nc": 1
-     }
-    }
-   ]
-  },
-  {
-   "name": "인스티즈",
-   "np": 2,
-   "nc": 117,
-   "topics": [
-    {
-     "t": "수능 부정행위 단속 총정리",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 84,
-     "issue_np": 6,
-     "issue_nc": 87,
-     "kw": [
-      "부정",
-      "행위",
-      "수능"
-     ],
-     "top_post": {
-      "t": "수능 부정행위 단속 총정리",
-      "u": "https://www.instiz.net/pt/7926834?page=1&srt=3&k=",
-      "nc": 84
-     }
-    },
-    {
-     "t": "사귄지 2개월 된 커플 여행이 파토난 이유",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 33,
-     "issue_np": 2,
-     "issue_nc": 41,
-     "kw": [
-      "여행",
-      "커플"
-     ],
-     "top_post": {
-      "t": "사귄지 2개월 된 커플 여행이 파토난 이유",
-      "u": "https://www.instiz.net/pt/7926206?page=1&srt=3&k=",
-      "nc": 33
      }
     }
    ]
@@ -486,7 +505,7 @@
   {
    "name": "82쿡",
    "np": 12,
-   "nc": 47,
+   "nc": 38,
    "topics": [
     {
      "t": "ai시대를 예상한 서울대학교 ㄷㄷ. jpg",
@@ -508,23 +527,6 @@
      }
     },
     {
-     "t": "남친을 벌레처럼 보는 엄마, 아빠",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 13,
-     "issue_np": 2,
-     "issue_nc": 31,
-     "kw": [
-      "아빠",
-      "엄마"
-     ],
-     "top_post": {
-      "t": "엄마는 자식만나면 밥잘사주는편인데 꼭 이건 아빠돈으로 사주는거야..",
-      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4261656&page=1",
-      "nc": 13
-     }
-    },
-    {
      "t": "사귄지 2개월 된 커플 여행이 파토난 이유",
      "nsite": 2,
      "np_here": 1,
@@ -532,13 +534,31 @@
      "issue_np": 2,
      "issue_nc": 41,
      "kw": [
-      "여행",
-      "커플"
+      "커플",
+      "여행"
      ],
      "top_post": {
       "t": "프랑스 여행 게이 커플집 에어비앤비 했어요.",
       "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4261753&page=1",
       "nc": 8
+     }
+    },
+    {
+     "t": "주식 시장이 망가지는 이유.",
+     "nsite": 5,
+     "np_here": 1,
+     "nc_here": 4,
+     "issue_np": 5,
+     "issue_nc": 26,
+     "kw": [
+      "시장",
+      "주식",
+      "정부"
+     ],
+     "top_post": {
+      "t": "주식시장이 망가지는 건 다 정부 탓이 명백하다",
+      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4261864&page=1",
+      "nc": 4
      }
     },
     {
@@ -549,10 +569,10 @@
      "issue_np": 3,
      "issue_nc": 4,
      "kw": [
-      "확산",
+      "김원효",
       "트랜스젠더",
       "방문",
-      "김원효"
+      "확산"
      ],
      "top_post": {
       "t": "개그맨 김원효, 트랜스젠더 바 방문 영상 확산",
@@ -565,11 +585,12 @@
      "nsite": 5,
      "np_here": 1,
      "nc_here": 3,
-     "issue_np": 5,
-     "issue_nc": 9,
+     "issue_np": 6,
+     "issue_nc": 10,
      "kw": [
+      "일론",
       "머스크",
-      "일론"
+      "농담"
      ],
      "top_post": {
       "t": "오늘 일론 머스크 트위터 글",
@@ -583,7 +604,7 @@
      "np_here": 1,
      "nc_here": 2,
      "issue_np": 4,
-     "issue_nc": 19,
+     "issue_nc": 20,
      "kw": [
       "한국",
       "독도",
@@ -620,8 +641,8 @@
      "issue_np": 6,
      "issue_nc": 87,
      "kw": [
-      "부정",
       "행위",
+      "부정",
       "수능"
      ],
      "top_post": {
@@ -634,16 +655,16 @@
   },
   {
    "name": "보배드림",
-   "np": 12,
-   "nc": 33,
+   "np": 13,
+   "nc": 38,
    "topics": [
     {
      "t": "중국:독도는 한국땅.",
      "nsite": 3,
      "np_here": 2,
-     "nc_here": 5,
+     "nc_here": 6,
      "issue_np": 4,
-     "issue_nc": 19,
+     "issue_nc": 20,
      "kw": [
       "한국",
       "독도",
@@ -656,6 +677,42 @@
      }
     },
     {
+     "t": "주식 시장이 망가지는 이유.",
+     "nsite": 5,
+     "np_here": 1,
+     "nc_here": 3,
+     "issue_np": 5,
+     "issue_nc": 26,
+     "kw": [
+      "시장",
+      "주식",
+      "정부"
+     ],
+     "top_post": {
+      "t": "요즘 주식 시장에 대한 개인적인 소견",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1049202&vdate=",
+      "nc": 3
+     }
+    },
+    {
+     "t": "일론 머스크가 제일 좋아하는 농담",
+     "nsite": 5,
+     "np_here": 1,
+     "nc_here": 3,
+     "issue_np": 6,
+     "issue_nc": 10,
+     "kw": [
+      "일론",
+      "머스크",
+      "농담"
+     ],
+     "top_post": {
+      "t": "일론 머스크가 구상하는 앞으로 다가올 미래",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1049381&vdate=",
+      "nc": 3
+     }
+    },
+    {
      "t": "수능 부정행위 단속 총정리",
      "nsite": 4,
      "np_here": 1,
@@ -663,30 +720,13 @@
      "issue_np": 6,
      "issue_nc": 87,
      "kw": [
-      "부정",
       "행위",
+      "부정",
       "수능"
      ],
      "top_post": {
       "t": "수능 부정행위 보상금 1억, 여학생들 불만",
       "u": "https://www.bobaedream.co.kr/view?code=best&No=1049241&vdate=",
-      "nc": 3
-     }
-    },
-    {
-     "t": "요즘 주식 시장에 대한 개인적인 소견",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 3,
-     "issue_np": 4,
-     "issue_nc": 22,
-     "kw": [
-      "주식",
-      "시장"
-     ],
-     "top_post": {
-      "t": "요즘 주식 시장에 대한 개인적인 소견",
-      "u": "https://www.bobaedream.co.kr/view?code=best&No=1049202&vdate=",
       "nc": 3
      }
     },
@@ -709,6 +749,23 @@
      }
     },
     {
+     "t": "현재 ㅈ됐다는 ai컨닝 하려던 사람들 근황",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 3,
+     "issue_np": 3,
+     "issue_nc": 32,
+     "kw": [
+      "컨닝",
+      "AI"
+     ],
+     "top_post": {
+      "t": "현재 ㅈ됐다는 ai컨닝 하려던 사람들 근황",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1049257&vdate=",
+      "nc": 3
+     }
+    },
+    {
      "t": "영창이 없어진 군대 근황.",
      "nsite": 3,
      "np_here": 1,
@@ -716,8 +773,8 @@
      "issue_np": 4,
      "issue_nc": 21,
      "kw": [
-      "군대",
-      "영창"
+      "영창",
+      "군대"
      ],
      "top_post": {
       "t": "영창이 없어진 군대 근황",
@@ -733,46 +790,12 @@
      "issue_np": 2,
      "issue_nc": 105,
      "kw": [
-      "무슬림",
-      "프랑스"
+      "프랑스",
+      "무슬림"
      ],
      "top_post": {
       "t": "무슬림 때문에 고통받는 프랑스 학생들",
       "u": "https://www.bobaedream.co.kr/view?code=best&No=1049309&vdate=",
-      "nc": 3
-     }
-    },
-    {
-     "t": "영국 여성이 한국 돌아다니며 느낀점",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 3,
-     "issue_np": 2,
-     "issue_nc": 62,
-     "kw": [
-      "한국",
-      "영국"
-     ],
-     "top_post": {
-      "t": "영국 처자가 한국 올때마다 느끼는 것",
-      "u": "https://www.bobaedream.co.kr/view?code=best&No=1049228&vdate=",
-      "nc": 3
-     }
-    },
-    {
-     "t": "유부남 팀장님 때문에 괴로운 20대 여직원. jpg",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 3,
-     "issue_np": 2,
-     "issue_nc": 53,
-     "kw": [
-      "팀장",
-      "유부남"
-     ],
-     "top_post": {
-      "t": "외로워서 유부남 팀장한테 호감 보였는데",
-      "u": "https://www.bobaedream.co.kr/view?code=best&No=1049321&vdate=",
       "nc": 3
      }
     }
@@ -785,14 +808,14 @@
    "topics": [
     {
      "t": "친구 결혼식에 갔다가 여자를 만난 썰",
-     "nsite": 3,
+     "nsite": 4,
      "np_here": 1,
      "nc_here": 13,
-     "issue_np": 4,
+     "issue_np": 5,
      "issue_nc": 13,
      "kw": [
-      "친구",
-      "여자"
+      "여자",
+      "친구"
      ],
      "top_post": {
       "t": "나 오늘 친구들이랑 카페에서 수다떨면서 앉아있었다? 근데 모르는 여자분이 트레이들고 일어나...",
@@ -804,7 +827,7 @@
   },
   {
    "name": "더쿠",
-   "np": 5,
+   "np": 6,
    "nc": 0,
    "topics": [
     {
@@ -827,6 +850,23 @@
      }
     },
     {
+     "t": "친구 결혼식에 갔다가 여자를 만난 썰",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 5,
+     "issue_nc": 13,
+     "kw": [
+      "여자",
+      "친구"
+     ],
+     "top_post": {
+      "t": "디즈니 비평글 같은거 본적 있는데 어린 여자애의 좋은 친구로",
+      "u": "https://theqoo.net/hot/4414613833",
+      "nc": 0
+     }
+    },
+    {
      "t": "일본인 한국 병원 후기",
      "nsite": 4,
      "np_here": 1,
@@ -834,8 +874,8 @@
      "issue_np": 6,
      "issue_nc": 0,
      "kw": [
-      "일본인",
       "한국",
+      "일본인",
       "여행"
      ],
      "top_post": {
@@ -870,10 +910,10 @@
      "issue_np": 3,
      "issue_nc": 4,
      "kw": [
-      "확산",
+      "김원효",
       "트랜스젠더",
       "방문",
-      "김원효"
+      "확산"
      ],
      "top_post": {
       "t": "[단독] 개그맨 김원효, 트랜스젠더 바 방문 영상 확산…소속사 “방문 날짜 확인 중”",
@@ -927,13 +967,14 @@
     {
      "t": "일론 머스크가 제일 좋아하는 농담",
      "nsite": 5,
-     "np_here": 1,
+     "np_here": 2,
      "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 9,
+     "issue_np": 6,
+     "issue_nc": 10,
      "kw": [
+      "일론",
       "머스크",
-      "일론"
+      "농담"
      ],
      "top_post": {
       "t": "\"테슬라의 일론 머스크조차 만들수 없는거.\"",
@@ -949,13 +990,30 @@
      "issue_np": 6,
      "issue_nc": 87,
      "kw": [
-      "부정",
       "행위",
+      "부정",
       "수능"
      ],
      "top_post": {
       "t": "지금 수능 끝나고 부정행위 혹여나 안걸린 사람 보셈",
       "u": "https://bbs.ruliweb.com/best/board/300143/read/77478089?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "친구 결혼식에 갔다가 여자를 만난 썰",
+     "nsite": 4,
+     "np_here": 2,
+     "nc_here": 0,
+     "issue_np": 5,
+     "issue_nc": 13,
+     "kw": [
+      "여자",
+      "친구"
+     ],
+     "top_post": {
+      "t": "부엉이 여자친구 manhaw",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77482188?m=all&t=now",
       "nc": 0
      }
     },
@@ -967,8 +1025,8 @@
      "issue_np": 6,
      "issue_nc": 0,
      "kw": [
-      "일본인",
       "한국",
+      "일본인",
       "여행"
      ],
      "top_post": {
@@ -1002,8 +1060,8 @@
      "issue_np": 4,
      "issue_nc": 21,
      "kw": [
-      "군대",
-      "영창"
+      "영창",
+      "군대"
      ],
      "top_post": {
       "t": "영창이 폐지된 요즘 군대",
@@ -1027,41 +1085,43 @@
       "u": "https://bbs.ruliweb.com/best/board/300143/read/77477770?m=all&t=now",
       "nc": 0
      }
-    },
-    {
-     "t": "친구 결혼식에 갔다가 여자를 만난 썰",
-     "nsite": 3,
-     "np_here": 2,
-     "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 13,
-     "kw": [
-      "친구",
-      "여자"
-     ],
-     "top_post": {
-      "t": "부엉이 여자친구 manhaw",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77482188?m=all&t=now",
-      "nc": 0
-     }
     }
    ]
   },
   {
    "name": "디시인사이드",
-   "np": 2,
+   "np": 4,
    "nc": 0,
    "topics": [
+    {
+     "t": "주식 시장이 망가지는 이유.",
+     "nsite": 5,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 5,
+     "issue_nc": 26,
+     "kw": [
+      "시장",
+      "주식",
+      "정부"
+     ],
+     "top_post": {
+      "t": "아시아 주식 시장 대참사...",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=480666&_dcbest=1&page=1",
+      "nc": 0
+     }
+    },
     {
      "t": "일론 머스크가 제일 좋아하는 농담",
      "nsite": 5,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 9,
+     "issue_np": 6,
+     "issue_nc": 10,
      "kw": [
+      "일론",
       "머스크",
-      "일론"
+      "농담"
      ],
      "top_post": {
       "t": "ㅅㄱㅂㄱ 일론머스크의 최애넝담",
@@ -1070,19 +1130,36 @@
      }
     },
     {
-     "t": "요즘 주식 시장에 대한 개인적인 소견",
-     "nsite": 4,
+     "t": "현재 ㅈ됐다는 ai컨닝 하려던 사람들 근황",
+     "nsite": 3,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 22,
+     "issue_np": 3,
+     "issue_nc": 32,
      "kw": [
-      "주식",
-      "시장"
+      "컨닝",
+      "AI"
      ],
      "top_post": {
-      "t": "아시아 주식 시장 대참사...",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=480666&_dcbest=1&page=1",
+      "t": "싱글벙글 AI 컨닝으로 난리난 나라들",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=480921&_dcbest=1&page=1",
+      "nc": 0
+     }
+    },
+    {
+     "t": "대처 잘하는거 같은 ITZY 채령",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 2,
+     "issue_nc": 45,
+     "kw": [
+      "대처",
+      "ITZY"
+     ],
+     "top_post": {
+      "t": "대처 잘하는거 같은 ITZY 채령",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=480906&_dcbest=1&page=1",
       "nc": 0
      }
     }
@@ -1094,15 +1171,16 @@
    "nc": 0,
    "topics": [
     {
-     "t": "요즘 주식 시장에 대한 개인적인 소견",
-     "nsite": 4,
+     "t": "주식 시장이 망가지는 이유.",
+     "nsite": 5,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 22,
+     "issue_np": 5,
+     "issue_nc": 26,
      "kw": [
+      "시장",
       "주식",
-      "시장"
+      "정부"
      ],
      "top_post": {
       "t": "주식시장이 망가지는건 정부탓이라고함",
@@ -1118,8 +1196,8 @@
      "issue_np": 6,
      "issue_nc": 0,
      "kw": [
-      "일본인",
       "한국",
+      "일본인",
       "여행"
      ],
      "top_post": {
@@ -1153,10 +1231,10 @@
      "issue_np": 3,
      "issue_nc": 4,
      "kw": [
-      "확산",
+      "김원효",
       "트랜스젠더",
       "방문",
-      "김원효"
+      "확산"
      ],
      "top_post": {
       "t": "개그맨 김원효, 트랜스젠더 바 방문 영상 확산…소속사 “방문 날짜 확인 중”",
@@ -1172,8 +1250,8 @@
      "issue_np": 2,
      "issue_nc": 36,
      "kw": [
-      "현기",
-      "테슬라"
+      "테슬라",
+      "현기"
      ],
      "top_post": {
       "t": "현기랑 테슬라 자율주행 격차가...",
@@ -1189,6 +1267,23 @@
    "nc": 0,
    "topics": [
     {
+     "t": "친구 결혼식에 갔다가 여자를 만난 썰",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 5,
+     "issue_nc": 13,
+     "kw": [
+      "여자",
+      "친구"
+     ],
+     "top_post": {
+      "t": "친구 결혼식에 갔다가 여자를 만난 썰",
+      "u": "https://www.todayhumor.co.kr/board/view.php?table=bestofbest&no=484144&s_no=484144&page=1",
+      "nc": 0
+     }
+    },
+    {
      "t": "일본인 한국 병원 후기",
      "nsite": 4,
      "np_here": 2,
@@ -1196,30 +1291,13 @@
      "issue_np": 6,
      "issue_nc": 0,
      "kw": [
-      "일본인",
       "한국",
+      "일본인",
       "여행"
      ],
      "top_post": {
       "t": "일본인 한국 병원 후기",
       "u": "https://www.todayhumor.co.kr/board/view.php?table=bestofbest&no=484138&s_no=484138&page=1",
-      "nc": 0
-     }
-    },
-    {
-     "t": "친구 결혼식에 갔다가 여자를 만난 썰",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 13,
-     "kw": [
-      "친구",
-      "여자"
-     ],
-     "top_post": {
-      "t": "친구 결혼식에 갔다가 여자를 만난 썰",
-      "u": "https://www.todayhumor.co.kr/board/view.php?table=bestofbest&no=484144&s_no=484144&page=1",
       "nc": 0
      }
     }
