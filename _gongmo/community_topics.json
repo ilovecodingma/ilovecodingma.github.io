@@ -1,14 +1,14 @@
 {
  "date": "2026-11-23",
- "updated": "2026-11-23 21:50",
+ "updated": "2026-11-23 22:50",
  "sites": 13,
- "npost": 2880,
+ "npost": 2868,
  "note": "출처(커뮤니티)별 집계예요. 작성자·연령·성별 정보는 수집하지 않아요. posts 는 이슈별로 뽑힌 일부라 전체 글 수가 아니에요.",
  "sources": [
   {
    "name": "MLB파크",
-   "np": 16,
-   "nc": 844,
+   "np": 15,
+   "nc": 808,
    "topics": [
     {
      "t": "박지윤 패드립 카톡 내용",
@@ -39,13 +39,31 @@
      "kw": [
       "반도체",
       "한국",
-      "임박",
-      "수출국"
+      "수출국",
+      "임박"
      ],
      "top_post": {
       "t": "‘세계 4위 수출국’ 임박한 한국, 반도체 빼면 8위",
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611220120263871&m=view",
       "nc": 83
+     }
+    },
+    {
+     "t": "여자들 남자 키 좋아하는 거 이해가 안 가는게",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 62,
+     "issue_np": 6,
+     "issue_nc": 74,
+     "kw": [
+      "여자",
+      "남자",
+      "이해"
+     ],
+     "top_post": {
+      "t": "여자들 남자 키 좋아하는 거 이해가 안 가는게",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611230120275430&m=view",
+      "nc": 62
      }
     },
     {
@@ -67,24 +85,6 @@
      }
     },
     {
-     "t": "여자들 남자 키 좋아하는 거 이해가 안 가는게",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 55,
-     "issue_np": 8,
-     "issue_nc": 67,
-     "kw": [
-      "여자",
-      "남자",
-      "이해"
-     ],
-     "top_post": {
-      "t": "여자들 남자 키 좋아하는 거 이해가 안 가는게",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611230120275430&m=view",
-      "nc": 55
-     }
-    },
-    {
      "t": "요즘 인생에서 가장힘들지만 행복한것",
      "nsite": 3,
      "np_here": 1,
@@ -102,24 +102,6 @@
      }
     },
     {
-     "t": "룸서비스가 대단한 경산 모텔 수준",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 49,
-     "issue_np": 3,
-     "issue_nc": 52,
-     "kw": [
-      "경산",
-      "모텔",
-      "서비스"
-     ],
-     "top_post": {
-      "t": "룸서비스가 대단한 경산 모텔 수준",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611220120262569&m=view",
-      "nc": 49
-     }
-    },
-    {
      "t": "삼성 이부진 아들 근황 ㄷㄷㄷ",
      "nsite": 3,
      "np_here": 1,
@@ -127,8 +109,8 @@
      "issue_np": 5,
      "issue_nc": 68,
      "kw": [
-      "아들",
-      "이부진"
+      "이부진",
+      "아들"
      ],
      "top_post": {
       "t": "삼성 이부진 아들 근황 ㄷㄷㄷ",
@@ -144,30 +126,47 @@
      "issue_np": 4,
      "issue_nc": 47,
      "kw": [
-      "아이유",
-      "입성",
       "최초",
-      "솔로"
+      "솔로",
+      "입성",
+      "아이유"
      ],
      "top_post": {
       "t": "아이유, 韓 여성 솔로 최초 도쿄돔 입성",
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611230120268248&m=view",
       "nc": 47
      }
+    },
+    {
+     "t": "테슬라 FSD V15 영상 보니 어마어마하네요 ㄷㄷㄷ",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 36,
+     "issue_np": 6,
+     "issue_nc": 79,
+     "kw": [
+      "테슬라",
+      "FSD"
+     ],
+     "top_post": {
+      "t": "테슬라 FSD V15 대단하다고 정신승리중",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611220120261012&m=view",
+      "nc": 36
+     }
     }
    ]
   },
   {
    "name": "개드립",
-   "np": 12,
-   "nc": 285,
+   "np": 11,
+   "nc": 255,
    "topics": [
     {
      "t": "리만가설 증명검증 진행사항 근황..",
      "nsite": 3,
      "np_here": 2,
      "nc_here": 59,
-     "issue_np": 15,
+     "issue_np": 14,
      "issue_nc": 88,
      "kw": [
       "가설",
@@ -200,38 +199,19 @@
     },
     {
      "t": "일본인 한국 병원 후기",
-     "nsite": 4,
+     "nsite": 3,
      "np_here": 1,
-     "nc_here": 39,
+     "nc_here": 41,
      "issue_np": 5,
-     "issue_nc": 39,
+     "issue_nc": 41,
      "kw": [
-      "일본인",
-      "한국"
+      "한국",
+      "일본인"
      ],
      "top_post": {
       "t": "한국서 일하는 일본인이 느끼는 한국인특징",
       "u": "https://www.dogdrip.net/dogdrip/736237973?sort_index=popular&page=1",
-      "nc": 39
-     }
-    },
-    {
-     "t": "발열조끼 입은 수험생 퇴실조치",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 32,
-     "issue_np": 4,
-     "issue_nc": 32,
-     "kw": [
-      "발열",
-      "조끼",
-      "수험",
-      "퇴실조치"
-     ],
-     "top_post": {
-      "t": "발열조끼 입은 수험생 퇴실조치",
-      "u": "https://www.dogdrip.net/dogdrip/736055737?sort_index=popular&page=1",
-      "nc": 32
+      "nc": 41
      }
     },
     {
@@ -242,8 +222,8 @@
      "issue_np": 3,
      "issue_nc": 31,
      "kw": [
-      "중국",
       "일본",
+      "중국",
       "총리",
       "다카이치"
      ],
@@ -261,8 +241,8 @@
      "issue_np": 4,
      "issue_nc": 59,
      "kw": [
-      "방송",
       "엑셀",
+      "방송",
       "수익"
      ],
      "top_post": {
@@ -297,30 +277,48 @@
      "issue_nc": 16,
      "kw": [
       "유턴",
-      "수원",
       "사고",
-      "불법"
+      "불법",
+      "수원"
      ],
      "top_post": {
       "t": "수원 불법유턴 사고 ㄷㄷ",
       "u": "https://www.dogdrip.net/dogdrip/736135691?sort_index=popular&page=1",
       "nc": 12
      }
+    },
+    {
+     "t": "학폭 기록 때문에 수시 전부 떨어진 아들",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 8,
+     "issue_np": 8,
+     "issue_nc": 14,
+     "kw": [
+      "수시",
+      "기록",
+      "아들"
+     ],
+     "top_post": {
+      "t": "학폭 기록 때문에 수시 전부 떨어진 아들 ㄷㄷㄷ;;;",
+      "u": "https://www.dogdrip.net/dogdrip/736167822?sort_index=popular&page=1",
+      "nc": 8
+     }
     }
    ]
   },
   {
    "name": "클리앙",
-   "np": 8,
-   "nc": 170,
+   "np": 11,
+   "nc": 215,
    "topics": [
     {
-     "t": "주식시장이 망가지는건 정부탓이라고함",
+     "t": "주식에 있어 정부 책임이 없는건 아닙니다",
      "nsite": 4,
      "np_here": 4,
      "nc_here": 86,
-     "issue_np": 14,
-     "issue_nc": 125,
+     "issue_np": 15,
+     "issue_nc": 131,
      "kw": [
       "주식",
       "시장",
@@ -334,6 +332,23 @@
      }
     },
     {
+     "t": "테슬라 FSD V15 영상 보니 어마어마하네요 ㄷㄷㄷ",
+     "nsite": 4,
+     "np_here": 3,
+     "nc_here": 43,
+     "issue_np": 6,
+     "issue_nc": 79,
+     "kw": [
+      "테슬라",
+      "FSD"
+     ],
+     "top_post": {
+      "t": "테슬라 FSD 2만킬로 후기",
+      "u": "https://www.clien.net/service/board/park/19296970?od=T33&po=0&category=0&groupCd=clien_all",
+      "nc": 18
+     }
+    },
+    {
      "t": "솔직히 현기가 차값만 테슬라에 맞췄어도 반응 안 이러죠",
      "nsite": 3,
      "np_here": 1,
@@ -342,9 +357,9 @@
      "issue_nc": 61,
      "kw": [
       "테슬라",
-      "주행",
+      "현기",
       "자율",
-      "현기"
+      "주행"
      ],
      "top_post": {
       "t": "솔직히 현기가 차값만 테슬라에 맞췄어도 반응 안 이러죠",
@@ -362,8 +377,8 @@
      "kw": [
       "반도체",
       "한국",
-      "임박",
-      "수출국"
+      "수출국",
+      "임박"
      ],
      "top_post": {
       "t": "‘세계 4위 수출국’ 임박한 한국, 반도체 빼면 8위",
@@ -375,9 +390,9 @@
      "t": "친명 박선원 “신천지 당원 1만4388명 일치…4만3000명 추산”",
      "nsite": 3,
      "np_here": 2,
-     "nc_here": 19,
+     "nc_here": 21,
      "issue_np": 4,
-     "issue_nc": 22,
+     "issue_nc": 24,
      "kw": [
       "당원",
       "천지",
@@ -394,16 +409,16 @@
   },
   {
    "name": "82쿡",
-   "np": 11,
-   "nc": 95,
+   "np": 12,
+   "nc": 97,
    "topics": [
     {
-     "t": "주식시장이 망가지는건 정부탓이라고함",
+     "t": "주식에 있어 정부 책임이 없는건 아닙니다",
      "nsite": 4,
      "np_here": 2,
      "nc_here": 25,
-     "issue_np": 14,
-     "issue_nc": 125,
+     "issue_np": 15,
+     "issue_nc": 131,
      "kw": [
       "주식",
       "시장",
@@ -426,8 +441,8 @@
      "kw": [
       "반도체",
       "한국",
-      "임박",
-      "수출국"
+      "수출국",
+      "임박"
      ],
      "top_post": {
       "t": "한국 반도체는 끝났다네요 ㅠㅠ",
@@ -443,8 +458,8 @@
      "issue_np": 5,
      "issue_nc": 68,
      "kw": [
-      "아들",
-      "이부진"
+      "이부진",
+      "아들"
      ],
      "top_post": {
       "t": "이부진 아들의 성을 개명했다네요.",
@@ -457,8 +472,8 @@
      "nsite": 3,
      "np_here": 1,
      "nc_here": 12,
-     "issue_np": 8,
-     "issue_nc": 67,
+     "issue_np": 6,
+     "issue_nc": 74,
      "kw": [
       "여자",
       "남자",
@@ -478,8 +493,8 @@
      "issue_np": 4,
      "issue_nc": 18,
      "kw": [
-      "수출",
-      "반도체"
+      "반도체",
+      "수출"
      ],
      "top_post": {
       "t": "11월 1~20일 수출 774억·반도체 385억 달러…모두 역대..",
@@ -511,7 +526,7 @@
      "np_here": 1,
      "nc_here": 3,
      "issue_np": 4,
-     "issue_nc": 22,
+     "issue_nc": 24,
      "kw": [
       "당원",
       "천지",
@@ -525,21 +540,22 @@
      }
     },
     {
-     "t": "마라톤 또 다시 사망사고.gisa",
+     "t": "서울사이버대학 개인정보 유출",
      "nsite": 3,
      "np_here": 1,
-     "nc_here": 0,
+     "nc_here": 2,
      "issue_np": 3,
-     "issue_nc": 59,
+     "issue_nc": 2,
      "kw": [
-      "사망",
-      "마라톤",
-      "사고"
+      "서울",
+      "사이버",
+      "대학",
+      "유출"
      ],
      "top_post": {
-      "t": "마라톤 사망사고 와 예전 체력장 사망뉴스와 비슷한 경우인가요?",
-      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4262015&page=1",
-      "nc": 0
+      "t": "서울사이버대학 개인정보 유출",
+      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4261938&page=1",
+      "nc": 2
      }
     }
    ]
@@ -557,9 +573,9 @@
      "issue_np": 4,
      "issue_nc": 91,
      "kw": [
+      "행위",
       "수능",
-      "부정",
-      "행위"
+      "부정"
      ],
      "top_post": {
       "t": "수능 부정행위 단속 총정리",
@@ -571,8 +587,8 @@
   },
   {
    "name": "보배드림",
-   "np": 15,
-   "nc": 38,
+   "np": 16,
+   "nc": 41,
    "topics": [
     {
      "t": "박지윤 패드립 카톡 내용",
@@ -619,8 +635,8 @@
      "issue_np": 5,
      "issue_nc": 10,
      "kw": [
-      "일론",
       "머스크",
+      "일론",
       "최애넝담"
      ],
      "top_post": {
@@ -638,9 +654,9 @@
      "issue_nc": 16,
      "kw": [
       "유턴",
-      "수원",
       "사고",
-      "불법"
+      "불법",
+      "수원"
      ],
      "top_post": {
       "t": "수원 불법유턴 사고",
@@ -658,8 +674,8 @@
      "kw": [
       "반도체",
       "한국",
-      "임박",
-      "수출국"
+      "수출국",
+      "임박"
      ],
      "top_post": {
       "t": "'아' 다르고 '어' 다르다고, 반도체 빼면 한국 8위",
@@ -675,8 +691,8 @@
      "issue_np": 4,
      "issue_nc": 59,
      "kw": [
-      "방송",
       "엑셀",
+      "방송",
       "수익"
      ],
      "top_post": {
@@ -704,114 +720,20 @@
      }
     },
     {
-     "t": "룸서비스가 대단한 경산 모텔 수준",
+     "t": "부정행위 잡았더니 \"인생 망가뜨려줄게\"",
      "nsite": 3,
      "np_here": 1,
      "nc_here": 3,
      "issue_np": 3,
-     "issue_nc": 52,
+     "issue_nc": 46,
      "kw": [
-      "경산",
-      "모텔",
-      "서비스"
-     ],
-     "top_post": {
-      "t": "룸서비스가 대단한 경산 모텔 수준",
-      "u": "https://www.bobaedream.co.kr/view?code=best&No=1049392&vdate=",
-      "nc": 3
-     }
-    }
-   ]
-  },
-  {
-   "name": "네이트판",
-   "np": 5,
-   "nc": 33,
-   "topics": [
-    {
-     "t": "친구 결혼식에 갔다가 여자를 만난 썰",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 16,
-     "issue_np": 3,
-     "issue_nc": 16,
-     "kw": [
-      "친구",
-      "여자"
-     ],
-     "top_post": {
-      "t": "나 오늘 친구들이랑 카페에서 수다떨면서 앉아있었다? 근데 모르는 여자분이 트레이들고 일어나...",
-      "u": "https://pann.nate.com/talk/375731119",
-      "nc": 16
-     }
-    },
-    {
-     "t": "수능 부정행위 단속 총정리",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 8,
-     "issue_np": 4,
-     "issue_nc": 91,
-     "kw": [
-      "수능",
-      "부정",
-      "행위"
-     ],
-     "top_post": {
-      "t": "수능 부정행위 1020대뿐만 아니라 그 나잇대 자식을 둔 4050대도 다 분노하는 주제잖음 얼굴+개...",
-      "u": "https://pann.nate.com/talk/375732686",
-      "nc": 8
-     }
-    },
-    {
-     "t": "친구 외조모상에 조의금 보냈는데 연락이없네요",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 5,
-     "issue_np": 3,
-     "issue_nc": 28,
-     "kw": [
-      "친구",
-      "연락"
-     ],
-     "top_post": {
-      "t": "조금 연락하다가 얼굴 봤는데 내가 친구없다하니깐 심심할때 자기 불러라 맛있는 밥 ...",
-      "u": "https://pann.nate.com/talk/375733089",
-      "nc": 5
-     }
-    },
-    {
-     "t": "요즘 인생에서 가장힘들지만 행복한것",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 2,
-     "issue_np": 3,
-     "issue_nc": 66,
-     "kw": [
-      "행복",
+      "부정행위",
       "인생"
      ],
      "top_post": {
-      "t": "내인생 무슨 의미가 있는걸까 행복한만큼 너무 힘들어서 떠났는데 고통도 행복도 없는 지금의 나...",
-      "u": "https://pann.nate.com/talk/375732857",
-      "nc": 2
-     }
-    },
-    {
-     "t": "엄마아빠 길 땜에 차에서 한시간 냉전ㅠㅠ",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 2,
-     "issue_np": 3,
-     "issue_nc": 3,
-     "kw": [
-      "아빠",
-      "엄마"
-     ],
-     "top_post": {
-      "t": "엄마아빠 길 땜에 차에서 한시간 냉전ㅠㅠ",
-      "u": "https://pann.nate.com/talk/375731761",
-      "nc": 2
+      "t": "부정행위 잡았더니 “인생 망가뜨려 줄게”",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1049405&vdate=",
+      "nc": 3
      }
     }
    ]
@@ -846,8 +768,8 @@
      "issue_np": 5,
      "issue_nc": 10,
      "kw": [
-      "일론",
       "머스크",
+      "일론",
       "최애넝담"
      ],
      "top_post": {
@@ -859,8 +781,84 @@
    ]
   },
   {
+   "name": "네이트판",
+   "np": 4,
+   "nc": 18,
+   "topics": [
+    {
+     "t": "수능 부정행위 단속 총정리",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 8,
+     "issue_np": 4,
+     "issue_nc": 91,
+     "kw": [
+      "행위",
+      "수능",
+      "부정"
+     ],
+     "top_post": {
+      "t": "수능 부정행위 1020대뿐만 아니라 그 나잇대 자식을 둔 4050대도 다 분노하는 주제잖음 얼굴+개...",
+      "u": "https://pann.nate.com/talk/375732686",
+      "nc": 8
+     }
+    },
+    {
+     "t": "친구 외조모상에 조의금 보냈는데 연락이없네요",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 6,
+     "issue_np": 3,
+     "issue_nc": 29,
+     "kw": [
+      "연락",
+      "친구"
+     ],
+     "top_post": {
+      "t": "조금 연락하다가 얼굴 봤는데 내가 친구없다하니깐 심심할때 자기 불러라 맛있는 밥 ...",
+      "u": "https://pann.nate.com/talk/375733089",
+      "nc": 6
+     }
+    },
+    {
+     "t": "요즘 인생에서 가장힘들지만 행복한것",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 2,
+     "issue_np": 3,
+     "issue_nc": 66,
+     "kw": [
+      "행복",
+      "인생"
+     ],
+     "top_post": {
+      "t": "내인생 무슨 의미가 있는걸까 행복한만큼 너무 힘들어서 떠났는데 고통도 행복도 없는 지금의 나...",
+      "u": "https://pann.nate.com/talk/375732857",
+      "nc": 2
+     }
+    },
+    {
+     "t": "엄마아빠 길 땜에 차에서 한시간 냉전ㅠㅠ",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 2,
+     "issue_np": 3,
+     "issue_nc": 4,
+     "kw": [
+      "엄마",
+      "아빠"
+     ],
+     "top_post": {
+      "t": "엄마아빠 길 땜에 차에서 한시간 냉전ㅠㅠ",
+      "u": "https://pann.nate.com/talk/375731761",
+      "nc": 2
+     }
+    }
+   ]
+  },
+  {
    "name": "더쿠",
-   "np": 10,
+   "np": 7,
    "nc": 0,
    "topics": [
     {
@@ -883,23 +881,6 @@
      }
     },
     {
-     "t": "일본인 한국 병원 후기",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 39,
-     "kw": [
-      "일본인",
-      "한국"
-     ],
-     "top_post": {
-      "t": "브라질이 얼마나 개같은 소릴했길래 일본인이 한국편을 드냐",
-      "u": "https://theqoo.net/hot/4414696577",
-      "nc": 0
-     }
-    },
-    {
      "t": "삼성 이부진 아들 근황 ㄷㄷㄷ",
      "nsite": 3,
      "np_here": 1,
@@ -907,8 +888,8 @@
      "issue_np": 5,
      "issue_nc": 68,
      "kw": [
-      "아들",
-      "이부진"
+      "이부진",
+      "아들"
      ],
      "top_post": {
       "t": "이부진 아들, 엄마 성으로 바꿨다…임씨에서 이씨로",
@@ -924,33 +905,14 @@
      "issue_np": 4,
      "issue_nc": 47,
      "kw": [
-      "아이유",
-      "입성",
       "최초",
-      "솔로"
+      "솔로",
+      "입성",
+      "아이유"
      ],
      "top_post": {
       "t": "아이유, 한국 여자 솔로 가수 최초 ‘도쿄돔’ 입성한다…2027 월드투어 포문",
       "u": "https://theqoo.net/hot/4415174300",
-      "nc": 0
-     }
-    },
-    {
-     "t": "발열조끼 입은 수험생 퇴실조치",
-     "nsite": 3,
-     "np_here": 2,
-     "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 32,
-     "kw": [
-      "발열",
-      "조끼",
-      "수험",
-      "퇴실조치"
-     ],
-     "top_post": {
-      "t": "아빠가 입혀준 발열 조끼 탓 퇴실당한 수험생…\"감독 선생님들도 울먹\"",
-      "u": "https://theqoo.net/hot/4415294708",
       "nc": 0
      }
     },
@@ -962,8 +924,8 @@
      "issue_np": 3,
      "issue_nc": 31,
      "kw": [
-      "중국",
       "일본",
+      "중국",
       "총리",
       "다카이치"
      ],
@@ -981,10 +943,10 @@
      "issue_np": 3,
      "issue_nc": 21,
      "kw": [
-      "참사",
       "강아지",
-      "AI",
-      "유가족"
+      "참사",
+      "유가족",
+      "AI"
      ],
      "top_post": {
       "t": "아 에바임 제주항공 참사 유가족이 ai로 딸 다시 만나는건데 강아지가 ai 보고 이정도로좋아함",
@@ -993,19 +955,39 @@
      }
     },
     {
-     "t": "친구 결혼식에 갔다가 여자를 만난 썰",
+     "t": "달려라달려‍‍네이버페이10원+10원+1원+1원+1원+15원+15원+15원+15원+15원+15원+15원+15…",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 5,
+     "issue_nc": 4,
+     "kw": [
+      "네이버",
+      "페이",
+      "랜덤"
+     ],
+     "top_post": {
+      "t": "달려라달려‍‍네이버페이10원+10원+1원+1원+1원+15원+15원+15원+15원+15원+15원+15원+15원+5원+1원+1원+랜덤 눌러봐++1…",
+      "u": "https://theqoo.net/hot/4415076262",
+      "nc": 0
+     }
+    },
+    {
+     "t": "서울사이버대학 개인정보 유출",
      "nsite": 3,
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 3,
-     "issue_nc": 16,
+     "issue_nc": 2,
      "kw": [
-      "친구",
-      "여자"
+      "서울",
+      "사이버",
+      "대학",
+      "유출"
      ],
      "top_post": {
-      "t": "디즈니 비평글 같은거 본적 있는데 어린 여자애의 좋은 친구로",
-      "u": "https://theqoo.net/hot/4414613833",
+      "t": "서울사이버대학 개인정보 유출",
+      "u": "https://theqoo.net/hot/4415024806",
       "nc": 0
      }
     }
@@ -1013,7 +995,7 @@
   },
   {
    "name": "루리웹",
-   "np": 30,
+   "np": 34,
    "nc": 0,
    "topics": [
     {
@@ -1026,8 +1008,8 @@
      "kw": [
       "반도체",
       "한국",
-      "임박",
-      "수출국"
+      "수출국",
+      "임박"
      ],
      "top_post": {
       "t": "‘세계 4위 수출국’ 임박한 한국, 반도체 빼면 8위",
@@ -1043,13 +1025,30 @@
      "issue_np": 4,
      "issue_nc": 91,
      "kw": [
+      "행위",
       "수능",
-      "부정",
-      "행위"
+      "부정"
      ],
      "top_post": {
       "t": "AI안경 아니라고 억울하다는 수능 부정행위 무효처리 수험생",
       "u": "https://bbs.ruliweb.com/best/board/300143/read/77488009?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "테슬라 FSD V15 영상 보니 어마어마하네요 ㄷㄷㄷ",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 6,
+     "issue_nc": 79,
+     "kw": [
+      "테슬라",
+      "FSD"
+     ],
+     "top_post": {
+      "t": "테슬라 fsd v15 안개속 무단횡단 대응",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77494046?m=all&t=now",
       "nc": 0
      }
     },
@@ -1061,30 +1060,13 @@
      "issue_np": 4,
      "issue_nc": 59,
      "kw": [
-      "방송",
       "엑셀",
+      "방송",
       "수익"
      ],
      "top_post": {
       "t": "엑셀방송으로 유명한 커맨드지코 근황",
       "u": "https://bbs.ruliweb.com/best/board/300143/read/77489260?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "일본인 한국 병원 후기",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 39,
-     "kw": [
-      "일본인",
-      "한국"
-     ],
-     "top_post": {
-      "t": "일본인 : \"우리는 한국을 보고 배워야한다!\"",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77486453?m=all&t=now",
       "nc": 0
      }
     },
@@ -1096,8 +1078,8 @@
      "issue_np": 4,
      "issue_nc": 18,
      "kw": [
-      "수출",
-      "반도체"
+      "반도체",
+      "수출"
      ],
      "top_post": {
       "t": "박살나는중에 반도체 수출 근황",
@@ -1131,8 +1113,8 @@
      "issue_np": 5,
      "issue_nc": 10,
      "kw": [
-      "일론",
       "머스크",
+      "일론",
       "최애넝담"
      ],
      "top_post": {
@@ -1146,7 +1128,7 @@
      "nsite": 3,
      "np_here": 3,
      "nc_here": 0,
-     "issue_np": 15,
+     "issue_np": 14,
      "issue_nc": 88,
      "kw": [
       "가설",
@@ -1164,7 +1146,7 @@
   },
   {
    "name": "디시인사이드",
-   "np": 5,
+   "np": 4,
    "nc": 0,
    "topics": [
     {
@@ -1175,13 +1157,30 @@
      "issue_np": 4,
      "issue_nc": 91,
      "kw": [
+      "행위",
       "수능",
-      "부정",
-      "행위"
+      "부정"
      ],
      "top_post": {
       "t": "교육부 \"작년 수능 부정행위 전수조사 안한다\"",
       "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481106&_dcbest=1&page=1",
+      "nc": 0
+     }
+    },
+    {
+     "t": "테슬라 FSD V15 영상 보니 어마어마하네요 ㄷㄷㄷ",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 6,
+     "issue_nc": 79,
+     "kw": [
+      "테슬라",
+      "FSD"
+     ],
+     "top_post": {
+      "t": "테슬라 FSD 버전 15 정리 ㄷㄷ",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=480937&_dcbest=1&page=1",
       "nc": 0
      }
     },
@@ -1193,8 +1192,8 @@
      "issue_np": 5,
      "issue_nc": 10,
      "kw": [
-      "일론",
       "머스크",
+      "일론",
       "최애넝담"
      ],
      "top_post": {
@@ -1204,30 +1203,12 @@
      }
     },
     {
-     "t": "GTA6가 상당히 논란이군요",
-     "nsite": 3,
-     "np_here": 2,
-     "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 30,
-     "kw": [
-      "GTA",
-      "논란",
-      "유출"
-     ],
-     "top_post": {
-      "t": "GTA6 사용자 데이터 유출 논란 뭐노ㅋㅋㅋㅋ",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=480993&_dcbest=1&page=1",
-      "nc": 0
-     }
-    },
-    {
      "t": "친명 박선원 “신천지 당원 1만4388명 일치…4만3000명 추산”",
      "nsite": 3,
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 4,
-     "issue_nc": 22,
+     "issue_nc": 24,
      "kw": [
       "당원",
       "천지",
@@ -1237,47 +1218,6 @@
      "top_post": {
       "t": "與박선원 “당내 신천지 당원 1만4388명 일치…4만3000명 추산”",
       "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481131&_dcbest=1&page=1",
-      "nc": 0
-     }
-    }
-   ]
-  },
-  {
-   "name": "오늘의유머",
-   "np": 3,
-   "nc": 0,
-   "topics": [
-    {
-     "t": "일본인 한국 병원 후기",
-     "nsite": 4,
-     "np_here": 2,
-     "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 39,
-     "kw": [
-      "일본인",
-      "한국"
-     ],
-     "top_post": {
-      "t": "일본인 한국 병원 후기",
-      "u": "https://www.todayhumor.co.kr/board/view.php?table=bestofbest&no=484138&s_no=484138&page=1",
-      "nc": 0
-     }
-    },
-    {
-     "t": "친구 결혼식에 갔다가 여자를 만난 썰",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 16,
-     "kw": [
-      "친구",
-      "여자"
-     ],
-     "top_post": {
-      "t": "친구 결혼식에 갔다가 여자를 만난 썰",
-      "u": "https://www.todayhumor.co.kr/board/view.php?table=bestofbest&no=484144&s_no=484144&page=1",
       "nc": 0
      }
     }
@@ -1296,8 +1236,8 @@
      "issue_np": 4,
      "issue_nc": 18,
      "kw": [
-      "수출",
-      "반도체"
+      "반도체",
+      "수출"
      ],
      "top_post": {
       "t": "수출 1조달러 세계 4위 - 반도체 빼면.gisa",
@@ -1332,32 +1272,13 @@
      "issue_nc": 61,
      "kw": [
       "테슬라",
-      "주행",
+      "현기",
       "자율",
-      "현기"
+      "주행"
      ],
      "top_post": {
       "t": "현기랑 테슬라 자율주행 격차가...",
       "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677954",
-      "nc": 0
-     }
-    },
-    {
-     "t": "발열조끼 입은 수험생 퇴실조치",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 32,
-     "kw": [
-      "발열",
-      "조끼",
-      "수험",
-      "퇴실조치"
-     ],
-     "top_post": {
-      "t": "\"아빠가 입혀준 발열 조끼 때문에\"…수능장서 쫓겨난 수험생",
-      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677979",
       "nc": 0
      }
     },
@@ -1369,8 +1290,8 @@
      "issue_np": 3,
      "issue_nc": 31,
      "kw": [
-      "중국",
       "일본",
+      "중국",
       "총리",
       "다카이치"
      ],
@@ -1388,14 +1309,72 @@
      "issue_np": 4,
      "issue_nc": 8,
      "kw": [
-      "아들",
-      "사장",
       "이부진",
-      "성인"
+      "사장",
+      "성인",
+      "아들"
      ],
      "top_post": {
       "t": "[속보] 이부진 사장 아들, 성인되자 아버지 성 임씨 버리고 어머니 성 이씨로",
       "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677990",
+      "nc": 0
+     }
+    },
+    {
+     "t": "한전 개인정보 유출",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 2,
+     "kw": [
+      "유출",
+      "한전"
+     ],
+     "top_post": {
+      "t": "한전 개인정보 유출",
+      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677965",
+      "nc": 0
+     }
+    }
+   ]
+  },
+  {
+   "name": "오늘의유머",
+   "np": 3,
+   "nc": 0,
+   "topics": [
+    {
+     "t": "일본인 한국 병원 후기",
+     "nsite": 3,
+     "np_here": 2,
+     "nc_here": 0,
+     "issue_np": 5,
+     "issue_nc": 41,
+     "kw": [
+      "한국",
+      "일본인"
+     ],
+     "top_post": {
+      "t": "일본인 한국 병원 후기",
+      "u": "https://www.todayhumor.co.kr/board/view.php?table=bestofbest&no=484138&s_no=484138&page=1",
+      "nc": 0
+     }
+    },
+    {
+     "t": "전 야구선수의 뭔가.. 뭔가 스러운 음주운전 사고",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 3,
+     "kw": [
+      "운전",
+      "음주"
+     ],
+     "top_post": {
+      "t": "전 야구선수의 뭔가.. 뭔가 스러운 음주운전 사고",
+      "u": "https://www.todayhumor.co.kr/board/view.php?table=bestofbest&no=484163&s_no=484163&page=1",
       "nc": 0
      }
     }
