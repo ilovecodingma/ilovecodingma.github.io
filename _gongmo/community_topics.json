@@ -1,34 +1,15 @@
 {
  "date": "2026-11-23",
- "updated": "2026-11-23 10:50",
+ "updated": "2026-11-23 11:50",
  "sites": 13,
- "npost": 2680,
+ "npost": 2698,
  "note": "출처(커뮤니티)별 집계예요. 작성자·연령·성별 정보는 수집하지 않아요. posts 는 이슈별로 뽑힌 일부라 전체 글 수가 아니에요.",
  "sources": [
   {
    "name": "MLB파크",
-   "np": 13,
-   "nc": 700,
+   "np": 12,
+   "nc": 607,
    "topics": [
-    {
-     "t": "현재 리만가설 증명 수학자협회 성명문 근황 올라왔네요.",
-     "nsite": 3,
-     "np_here": 2,
-     "nc_here": 161,
-     "issue_np": 5,
-     "issue_nc": 204,
-     "kw": [
-      "가설",
-      "리만",
-      "증명",
-      "수학자"
-     ],
-     "top_post": {
-      "t": "현재 리만가설 증명 수학자협회 성명문 근황 올라왔네요.",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611220120253092&m=view",
-      "nc": 132
-     }
-    },
     {
      "t": "무슬림 때문에 완전히 망해버린 프랑스",
      "nsite": 2,
@@ -71,8 +52,8 @@
      "issue_np": 3,
      "issue_nc": 112,
      "kw": [
-      "임박",
       "수출국",
+      "임박",
       "반도체",
       "한국"
      ],
@@ -88,15 +69,32 @@
      "np_here": 2,
      "nc_here": 71,
      "issue_np": 3,
-     "issue_nc": 100,
+     "issue_nc": 110,
      "kw": [
-      "하승진",
-      "과즙세연"
+      "과즙세연",
+      "하승진"
      ],
      "top_post": {
       "t": "하승진 디스하는 과즙세연",
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611220120262527&m=view",
       "nc": 51
+     }
+    },
+    {
+     "t": "[열혈강호] 30년만에 마침표.",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 59,
+     "issue_np": 2,
+     "issue_nc": 77,
+     "kw": [
+      "열혈강호",
+      "마침표"
+     ],
+     "top_post": {
+      "t": "[열혈강호] 30년만에 마침표.",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611220120260970&m=view",
+      "nc": 59
      }
     },
     {
@@ -107,8 +105,8 @@
      "issue_np": 3,
      "issue_nc": 52,
      "kw": [
-      "서비스",
       "경산",
+      "서비스",
       "모텔"
      ],
      "top_post": {
@@ -143,8 +141,8 @@
      "issue_np": 5,
      "issue_nc": 71,
      "kw": [
-      "테슬라",
       "FSD",
+      "테슬라",
       "업데이트"
      ],
      "top_post": {
@@ -157,19 +155,38 @@
   },
   {
    "name": "개드립",
-   "np": 13,
-   "nc": 329,
+   "np": 12,
+   "nc": 322,
    "topics": [
     {
-     "t": "현재 리만가설 증명 수학자협회 성명문 근황 올라왔네요.",
+     "t": "수원 불법유턴 사고 ㄷㄷ",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 50,
+     "issue_np": 3,
+     "issue_nc": 53,
+     "kw": [
+      "사고",
+      "불법",
+      "수원",
+      "유턴"
+     ],
+     "top_post": {
+      "t": "수원 불법유턴 사고 ㄷㄷ",
+      "u": "https://www.dogdrip.net/dogdrip/736135691?sort_index=popular&page=1",
+      "nc": 50
+     }
+    },
+    {
+     "t": "리만가설 증명보고 개빡친 수학자협회 성명문..",
      "nsite": 3,
      "np_here": 2,
-     "nc_here": 43,
-     "issue_np": 5,
-     "issue_nc": 204,
+     "nc_here": 46,
+     "issue_np": 4,
+     "issue_nc": 75,
      "kw": [
-      "가설",
       "리만",
+      "가설",
       "증명",
       "수학자"
      ],
@@ -197,40 +214,20 @@
      }
     },
     {
-     "t": "도심 마라톤 때문에 화가 많이 난 시민들",
-     "nsite": 3,
+     "t": "하승진 디스하는 과즙세연",
+     "nsite": 2,
      "np_here": 1,
-     "nc_here": 36,
+     "nc_here": 39,
      "issue_np": 3,
-     "issue_nc": 39,
+     "issue_nc": 110,
      "kw": [
-      "시민",
-      "마라톤",
-      "도심"
+      "과즙세연",
+      "하승진"
      ],
      "top_post": {
-      "t": "도심 마라톤 때문에 화가 많이 난 시민들",
-      "u": "https://www.dogdrip.net/dogdrip/735972705?sort_index=popular&page=1",
-      "nc": 36
-     }
-    },
-    {
-     "t": "수원 불법유턴 사고 ㄷㄷ",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 34,
-     "issue_np": 3,
-     "issue_nc": 35,
-     "kw": [
-      "사고",
-      "불법",
-      "유턴",
-      "수원"
-     ],
-     "top_post": {
-      "t": "수원 불법유턴 사고 ㄷㄷ",
-      "u": "https://www.dogdrip.net/dogdrip/736135691?sort_index=popular&page=1",
-      "nc": 34
+      "t": "하승진 씨게 맥이는 과즙세연",
+      "u": "https://www.dogdrip.net/dogdrip/736150877?sort_index=popular&page=1",
+      "nc": 39
      }
     },
     {
@@ -238,13 +235,13 @@
      "nsite": 4,
      "np_here": 1,
      "nc_here": 32,
-     "issue_np": 4,
+     "issue_np": 5,
      "issue_nc": 32,
      "kw": [
       "발열",
       "조끼",
-      "퇴실조치",
-      "수험"
+      "수험",
+      "퇴실조치"
      ],
      "top_post": {
       "t": "발열조끼 입은 수험생 퇴실조치",
@@ -258,7 +255,7 @@
      "np_here": 1,
      "nc_here": 29,
      "issue_np": 4,
-     "issue_nc": 57,
+     "issue_nc": 58,
      "kw": [
       "AI",
       "컨닝"
@@ -270,23 +267,6 @@
      }
     },
     {
-     "t": "하승진 디스하는 과즙세연",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 29,
-     "issue_np": 3,
-     "issue_nc": 100,
-     "kw": [
-      "하승진",
-      "과즙세연"
-     ],
-     "top_post": {
-      "t": "하승진 씨게 맥이는 과즙세연",
-      "u": "https://www.dogdrip.net/dogdrip/736150877?sort_index=popular&page=1",
-      "nc": 29
-     }
-    },
-    {
      "t": "엑셀방송 2년 했다는 스트리머의 수익",
      "nsite": 4,
      "np_here": 1,
@@ -294,14 +274,31 @@
      "issue_np": 4,
      "issue_nc": 59,
      "kw": [
-      "엑셀",
       "방송",
+      "엑셀",
       "수익"
      ],
      "top_post": {
       "t": "엑셀방송 2년 했다는 스트리머의 수익",
       "u": "https://www.dogdrip.net/dogdrip/736103398?sort_index=popular&page=1",
       "nc": 27
+     }
+    },
+    {
+     "t": "Gta 때문에 게임계가 시끄럽네",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 24,
+     "issue_np": 7,
+     "issue_nc": 85,
+     "kw": [
+      "GTA",
+      "게임"
+     ],
+     "top_post": {
+      "t": "게임 스트리머 gta6 솔직한 평가",
+      "u": "https://www.dogdrip.net/dogdrip/735978991?sort_index=popular&page=1",
+      "nc": 24
      }
     }
    ]
@@ -331,10 +328,10 @@
     },
     {
      "t": "수능 부정행위 단속 총정리",
-     "nsite": 3,
+     "nsite": 2,
      "np_here": 1,
      "nc_here": 83,
-     "issue_np": 4,
+     "issue_np": 3,
      "issue_nc": 83,
      "kw": [
       "수능",
@@ -350,16 +347,96 @@
    ]
   },
   {
+   "name": "클리앙",
+   "np": 10,
+   "nc": 166,
+   "topics": [
+    {
+     "t": "주식시장이 망가지는건 정부탓이라고함",
+     "nsite": 4,
+     "np_here": 5,
+     "nc_here": 84,
+     "issue_np": 8,
+     "issue_nc": 88,
+     "kw": [
+      "주식",
+      "시장",
+      "정부",
+      "책임"
+     ],
+     "top_post": {
+      "t": "주식 시장이 계엄때보다 안좋다라는 표현",
+      "u": "https://www.clien.net/service/board/park/19297180?od=T33&po=0&category=0&groupCd=clien_all",
+      "nc": 27
+     }
+    },
+    {
+     "t": "테슬라 FSD의 새로운 시각화 수준이 충격적이네요.",
+     "nsite": 3,
+     "np_here": 3,
+     "nc_here": 35,
+     "issue_np": 5,
+     "issue_nc": 71,
+     "kw": [
+      "FSD",
+      "테슬라",
+      "업데이트"
+     ],
+     "top_post": {
+      "t": "테슬라 FSD의 새로운 시각화 수준이 충격적이네요.",
+      "u": "https://www.clien.net/service/board/park/19296762?od=T33&po=0&category=0&groupCd=clien_all",
+      "nc": 14
+     }
+    },
+    {
+     "t": "‘세계 4위 수출국’ 임박한 한국, 반도체 빼면 8위",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 29,
+     "issue_np": 3,
+     "issue_nc": 112,
+     "kw": [
+      "수출국",
+      "임박",
+      "반도체",
+      "한국"
+     ],
+     "top_post": {
+      "t": "‘세계 4위 수출국’ 임박한 한국, 반도체 빼면 8위",
+      "u": "https://www.clien.net/service/board/park/19296932?od=T33&po=0&category=0&groupCd=clien_all",
+      "nc": 29
+     }
+    },
+    {
+     "t": "[열혈강호] 30년만에 마침표.",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 18,
+     "issue_np": 2,
+     "issue_nc": 77,
+     "kw": [
+      "열혈강호",
+      "마침표"
+     ],
+     "top_post": {
+      "t": "열혈강호' 30여년만에 마침표…전극진·양재현 '은퇴하는 기분'",
+      "u": "https://www.clien.net/service/board/park/19297079?od=T33&po=0&category=0&groupCd=clien_all",
+      "nc": 18
+     }
+    }
+   ]
+  },
+  {
    "name": "아카라이브",
    "np": 4,
-   "nc": 106,
+   "nc": 108,
    "topics": [
     {
      "t": "Gta 때문에 게임계가 시끄럽네",
      "nsite": 3,
      "np_here": 1,
      "nc_here": 61,
-     "issue_np": 5,
+     "issue_np": 7,
      "issue_nc": 85,
      "kw": [
       "GTA",
@@ -375,9 +452,9 @@
      "t": "ai수능 컨닝은 걍 음모론 아님?",
      "nsite": 4,
      "np_here": 1,
-     "nc_here": 25,
+     "nc_here": 26,
      "issue_np": 4,
-     "issue_nc": 57,
+     "issue_nc": 58,
      "kw": [
       "AI",
       "컨닝"
@@ -385,7 +462,7 @@
      "top_post": {
       "t": "ai수능 컨닝은 걍 음모론 아님?",
       "u": "https://arca.live/b/live/189942619?p=1",
-      "nc": 25
+      "nc": 26
      }
     },
     {
@@ -394,7 +471,7 @@
      "np_here": 1,
      "nc_here": 16,
      "issue_np": 5,
-     "issue_nc": 16,
+     "issue_nc": 18,
      "kw": [
       "AI",
       "안경"
@@ -409,108 +486,28 @@
      "t": "ㅅㄱㅂㄱ 일론머스크의 최애넝담",
      "nsite": 6,
      "np_here": 1,
-     "nc_here": 4,
+     "nc_here": 5,
      "issue_np": 8,
-     "issue_nc": 15,
+     "issue_nc": 16,
      "kw": [
-      "일론",
       "머스크",
+      "일론",
       "최애넝담",
       "농담"
      ],
      "top_post": {
       "t": "ㅅㄱㅂㄱ 일론머스크의 최애넝담",
       "u": "https://arca.live/b/live/189900103?p=1",
-      "nc": 4
-     }
-    }
-   ]
-  },
-  {
-   "name": "클리앙",
-   "np": 7,
-   "nc": 93,
-   "topics": [
-    {
-     "t": "테슬라 FSD의 새로운 시각화 수준이 충격적이네요.",
-     "nsite": 3,
-     "np_here": 3,
-     "nc_here": 35,
-     "issue_np": 5,
-     "issue_nc": 71,
-     "kw": [
-      "테슬라",
-      "FSD",
-      "업데이트"
-     ],
-     "top_post": {
-      "t": "테슬라 FSD의 새로운 시각화 수준이 충격적이네요.",
-      "u": "https://www.clien.net/service/board/park/19296762?od=T33&po=0&category=0&groupCd=clien_all",
-      "nc": 14
-     }
-    },
-    {
-     "t": "주식시장이 망가지는건 정부탓이라고함",
-     "nsite": 4,
-     "np_here": 3,
-     "nc_here": 29,
-     "issue_np": 6,
-     "issue_nc": 33,
-     "kw": [
-      "시장",
-      "주식",
-      "정부"
-     ],
-     "top_post": {
-      "t": "주식 시장이 망가지는 이유.",
-      "u": "https://www.clien.net/service/board/park/19296892?od=T33&po=0&category=0&groupCd=clien_all",
-      "nc": 19
-     }
-    },
-    {
-     "t": "‘세계 4위 수출국’ 임박한 한국, 반도체 빼면 8위",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 29,
-     "issue_np": 3,
-     "issue_nc": 112,
-     "kw": [
-      "임박",
-      "수출국",
-      "반도체",
-      "한국"
-     ],
-     "top_post": {
-      "t": "‘세계 4위 수출국’ 임박한 한국, 반도체 빼면 8위",
-      "u": "https://www.clien.net/service/board/park/19296932?od=T33&po=0&category=0&groupCd=clien_all",
-      "nc": 29
+      "nc": 5
      }
     }
    ]
   },
   {
    "name": "82쿡",
-   "np": 14,
-   "nc": 50,
+   "np": 9,
+   "nc": 34,
    "topics": [
-    {
-     "t": "ai시대를 예상한 서울대학교 ㄷㄷ. jpg",
-     "nsite": 3,
-     "np_here": 5,
-     "nc_here": 16,
-     "issue_np": 8,
-     "issue_nc": 42,
-     "kw": [
-      "AI",
-      "시대",
-      "공무원"
-     ],
-     "top_post": {
-      "t": "Ai시대에 공무원이 인기일거라고요?",
-      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4261737&page=1",
-      "nc": 7
-     }
-    },
     {
      "t": "최교진 교육장관 사의 표명…“수능 준비 미흡 책임 통감”",
      "nsite": 3,
@@ -519,10 +516,10 @@
      "issue_np": 3,
      "issue_nc": 15,
      "kw": [
-      "사의",
-      "책임",
-      "최교진",
-      "장관"
+      "수능",
+      "장관",
+      "표명",
+      "책임"
      ],
      "top_post": {
       "t": "최교진 교육장관, 사의 표명‥\"수능 책임 통감&quot..",
@@ -535,35 +532,17 @@
      "nsite": 4,
      "np_here": 1,
      "nc_here": 4,
-     "issue_np": 6,
-     "issue_nc": 33,
+     "issue_np": 8,
+     "issue_nc": 88,
      "kw": [
-      "시장",
       "주식",
-      "정부"
+      "시장",
+      "정부",
+      "책임"
      ],
      "top_post": {
       "t": "주식시장이 망가지는 건 다 정부 탓이 명백하다",
       "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4261864&page=1",
-      "nc": 4
-     }
-    },
-    {
-     "t": "개그맨 김원효, 트랜스젠더 바 방문 영상 확산…소속사 “방문 날짜 확인 중”",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 4,
-     "issue_np": 3,
-     "issue_nc": 4,
-     "kw": [
-      "확산",
-      "개그맨",
-      "방문",
-      "김원효"
-     ],
-     "top_post": {
-      "t": "개그맨 김원효, 트랜스젠더 바 방문 영상 확산",
-      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4261745&page=1",
       "nc": 4
      }
     },
@@ -575,8 +554,8 @@
      "issue_np": 7,
      "issue_nc": 4,
      "kw": [
-      "페이",
       "네이버",
+      "페이",
       "랜덤",
       "라이브"
      ],
@@ -587,15 +566,34 @@
      }
     },
     {
+     "t": "개그맨 김원효, 트랜스젠더 바 방문 영상 확산…소속사 “방문 날짜 확인 중”",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 4,
+     "issue_np": 3,
+     "issue_nc": 4,
+     "kw": [
+      "김원효",
+      "트랜스젠더",
+      "개그맨",
+      "확산"
+     ],
+     "top_post": {
+      "t": "개그맨 김원효, 트랜스젠더 바 방문 영상 확산",
+      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4261745&page=1",
+      "nc": 4
+     }
+    },
+    {
      "t": "ㅅㄱㅂㄱ 일론머스크의 최애넝담",
      "nsite": 6,
      "np_here": 1,
      "nc_here": 3,
      "issue_np": 8,
-     "issue_nc": 15,
+     "issue_nc": 16,
      "kw": [
-      "일론",
       "머스크",
+      "일론",
       "최애넝담",
       "농담"
      ],
@@ -632,14 +630,32 @@
      "issue_nc": 2,
      "kw": [
       "대학",
-      "유출",
       "서울",
-      "사이버"
+      "사이버",
+      "유출"
      ],
      "top_post": {
       "t": "서울사이버대학 개인정보 유출",
       "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4261938&page=1",
       "nc": 2
+     }
+    },
+    {
+     "t": "\"지 애미가 더럽게 키워 구질구질\"…박지윤 카톡 본 최동석,..",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 1,
+     "kw": [
+      "박지윤",
+      "최동석",
+      "카톡"
+     ],
+     "top_post": {
+      "t": "우연히 뜬 과거 박지윤최동석 부부",
+      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4262002&page=1",
+      "nc": 0
      }
     }
    ]
@@ -647,7 +663,7 @@
   {
    "name": "보배드림",
    "np": 13,
-   "nc": 28,
+   "nc": 30,
    "topics": [
     {
      "t": "ㅅㄱㅂㄱ 일론머스크의 최애넝담",
@@ -655,10 +671,10 @@
      "np_here": 2,
      "nc_here": 4,
      "issue_np": 8,
-     "issue_nc": 15,
+     "issue_nc": 16,
      "kw": [
-      "일론",
       "머스크",
+      "일론",
       "최애넝담",
       "농담"
      ],
@@ -694,8 +710,8 @@
      "issue_np": 4,
      "issue_nc": 59,
      "kw": [
-      "엑셀",
       "방송",
+      "엑셀",
       "수익"
      ],
      "top_post": {
@@ -710,7 +726,7 @@
      "np_here": 1,
      "nc_here": 3,
      "issue_np": 4,
-     "issue_nc": 57,
+     "issue_nc": 58,
      "kw": [
       "AI",
       "컨닝"
@@ -722,6 +738,25 @@
      }
     },
     {
+     "t": "수원 불법유턴 사고 ㄷㄷ",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 3,
+     "issue_np": 3,
+     "issue_nc": 53,
+     "kw": [
+      "사고",
+      "불법",
+      "수원",
+      "유턴"
+     ],
+     "top_post": {
+      "t": "수원 불법유턴 사고",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1049444&vdate=",
+      "nc": 3
+     }
+    },
+    {
      "t": "룸서비스가 대단한 경산 모텔 수준",
      "nsite": 3,
      "np_here": 1,
@@ -729,8 +764,8 @@
      "issue_np": 3,
      "issue_nc": 52,
      "kw": [
-      "서비스",
       "경산",
+      "서비스",
       "모텔"
      ],
      "top_post": {
@@ -753,24 +788,6 @@
      "top_post": {
       "t": "부정행위 잡았더니 “인생 망가뜨려 줄게”",
       "u": "https://www.bobaedream.co.kr/view?code=best&No=1049405&vdate=",
-      "nc": 3
-     }
-    },
-    {
-     "t": "도심 마라톤 때문에 화가 많이 난 시민들",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 3,
-     "issue_np": 3,
-     "issue_nc": 39,
-     "kw": [
-      "시민",
-      "마라톤",
-      "도심"
-     ],
-     "top_post": {
-      "t": "마라톤때문에 빡친 시민들 ..경찰이 대신 사과함....ㄷㄷ",
-      "u": "https://www.bobaedream.co.kr/view?code=best&No=1049316&vdate=",
       "nc": 3
      }
     },
@@ -828,10 +845,10 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 8,
-     "issue_nc": 15,
+     "issue_nc": 16,
      "kw": [
-      "일론",
       "머스크",
+      "일론",
       "최애넝담",
       "농담"
      ],
@@ -847,7 +864,7 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 4,
-     "issue_nc": 57,
+     "issue_nc": 58,
      "kw": [
       "AI",
       "컨닝"
@@ -866,10 +883,10 @@
      "issue_np": 3,
      "issue_nc": 15,
      "kw": [
-      "사의",
-      "책임",
-      "최교진",
-      "장관"
+      "수능",
+      "장관",
+      "표명",
+      "책임"
      ],
      "top_post": {
       "t": "최교진 교육장관 사의 표명…“수능 준비 미흡 책임 통감”",
@@ -881,7 +898,7 @@
   },
   {
    "name": "루리웹",
-   "np": 26,
+   "np": 27,
    "nc": 0,
    "topics": [
     {
@@ -892,8 +909,8 @@
      "issue_np": 4,
      "issue_nc": 59,
      "kw": [
-      "엑셀",
       "방송",
+      "엑셀",
       "수익"
      ],
      "top_post": {
@@ -903,39 +920,38 @@
      }
     },
     {
-     "t": "주식시장이 망가지는건 정부탓이라고함",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 6,
-     "issue_nc": 33,
-     "kw": [
-      "시장",
-      "주식",
-      "정부"
-     ],
-     "top_post": {
-      "t": "벌써 크리스마스 준비를 하는 주식시장",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77484160?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
      "t": "발열조끼 입은 수험생 퇴실조치",
      "nsite": 4,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 4,
+     "issue_np": 5,
      "issue_nc": 32,
      "kw": [
       "발열",
       "조끼",
-      "퇴실조치",
-      "수험"
+      "수험",
+      "퇴실조치"
      ],
      "top_post": {
       "t": "아버지가 입혀주신 발열조끼...",
       "u": "https://bbs.ruliweb.com/best/board/300143/read/77484223?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "Ai안경.manhwa",
+     "nsite": 4,
+     "np_here": 2,
+     "nc_here": 0,
+     "issue_np": 5,
+     "issue_nc": 18,
+     "kw": [
+      "AI",
+      "안경"
+     ],
+     "top_post": {
+      "t": "ai 안경이 보편화된 미래의 소개팅 ㅋㅋㅋ",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77487572?m=all&t=now",
       "nc": 0
      }
     },
@@ -957,23 +973,6 @@
      }
     },
     {
-     "t": "Ai안경.manhwa",
-     "nsite": 4,
-     "np_here": 2,
-     "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 16,
-     "kw": [
-      "AI",
-      "안경"
-     ],
-     "top_post": {
-      "t": "ai 안경이 보편화된 미래의 소개팅 ㅋㅋㅋ",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77487572?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
      "t": "일본인 한국 병원 후기",
      "nsite": 4,
      "np_here": 2,
@@ -981,8 +980,8 @@
      "issue_np": 8,
      "issue_nc": 0,
      "kw": [
-      "한국",
-      "일본인"
+      "일본인",
+      "한국"
      ],
      "top_post": {
       "t": "한국 온 김에 북한 구경하는 일본인",
@@ -998,8 +997,8 @@
      "issue_np": 3,
      "issue_nc": 112,
      "kw": [
-      "임박",
       "수출국",
+      "임박",
       "반도체",
       "한국"
      ],
@@ -1012,9 +1011,9 @@
     {
      "t": "Gta 때문에 게임계가 시끄럽네",
      "nsite": 3,
-     "np_here": 3,
+     "np_here": 4,
      "nc_here": 0,
-     "issue_np": 5,
+     "issue_np": 7,
      "issue_nc": 85,
      "kw": [
       "GTA",
@@ -1025,118 +1024,23 @@
       "u": "https://bbs.ruliweb.com/best/board/300143/read/77481481?m=all&t=now",
       "nc": 0
      }
-    }
-   ]
-  },
-  {
-   "name": "SLR클럽",
-   "np": 6,
-   "nc": 0,
-   "topics": [
-    {
-     "t": "주식시장이 망가지는건 정부탓이라고함",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 6,
-     "issue_nc": 33,
-     "kw": [
-      "시장",
-      "주식",
-      "정부"
-     ],
-     "top_post": {
-      "t": "주식시장이 망가지는건 정부탓이라고함",
-      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677958",
-      "nc": 0
-     }
     },
     {
-     "t": "발열조끼 입은 수험생 퇴실조치",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 32,
-     "kw": [
-      "발열",
-      "조끼",
-      "퇴실조치",
-      "수험"
-     ],
-     "top_post": {
-      "t": "\"아빠가 입혀준 발열 조끼 때문에\"…수능장서 쫓겨난 수험생",
-      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677979",
-      "nc": 0
-     }
-    },
-    {
-     "t": "Ai안경.manhwa",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 16,
-     "kw": [
-      "AI",
-      "안경"
-     ],
-     "top_post": {
-      "t": "삼성 AI안경 관심있네요",
-      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677949",
-      "nc": 0
-     }
-    },
-    {
-     "t": "일본인 한국 병원 후기",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 8,
-     "issue_nc": 0,
-     "kw": [
-      "한국",
-      "일본인"
-     ],
-     "top_post": {
-      "t": "일본인들의 한국 여행은 정말 저렴하군요.",
-      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677913",
-      "nc": 0
-     }
-    },
-    {
-     "t": "개그맨 김원효, 트랜스젠더 바 방문 영상 확산…소속사 “방문 날짜 확인 중”",
+     "t": "수원 불법유턴 사고 ㄷㄷ",
      "nsite": 3,
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 3,
-     "issue_nc": 4,
+     "issue_nc": 53,
      "kw": [
-      "확산",
-      "개그맨",
-      "방문",
-      "김원효"
+      "사고",
+      "불법",
+      "수원",
+      "유턴"
      ],
      "top_post": {
-      "t": "개그맨 김원효, 트랜스젠더 바 방문 영상 확산…소속사 “방문 날짜 확인 중”",
-      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677937",
-      "nc": 0
-     }
-    },
-    {
-     "t": "한전 개인정보 유출",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 2,
-     "kw": [
-      "유출",
-      "한전"
-     ],
-     "top_post": {
-      "t": "한전 개인정보 유출",
-      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677965",
+      "t": "수원 불법유턴 사고",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77488772?m=all&t=now",
       "nc": 0
      }
     }
@@ -1144,21 +1048,21 @@
   },
   {
    "name": "더쿠",
-   "np": 12,
+   "np": 13,
    "nc": 0,
    "topics": [
     {
      "t": "발열조끼 입은 수험생 퇴실조치",
      "nsite": 4,
-     "np_here": 1,
+     "np_here": 2,
      "nc_here": 0,
-     "issue_np": 4,
+     "issue_np": 5,
      "issue_nc": 32,
      "kw": [
       "발열",
       "조끼",
-      "퇴실조치",
-      "수험"
+      "수험",
+      "퇴실조치"
      ],
      "top_post": {
       "t": "수능당일 발열조끼 입은 학생 퇴실조치",
@@ -1191,8 +1095,8 @@
      "issue_np": 8,
      "issue_nc": 0,
      "kw": [
-      "한국",
-      "일본인"
+      "일본인",
+      "한국"
      ],
      "top_post": {
       "t": "브라질이 얼마나 개같은 소릴했길래 일본인이 한국편을 드냐",
@@ -1201,15 +1105,15 @@
      }
     },
     {
-     "t": "현재 리만가설 증명 수학자협회 성명문 근황 올라왔네요.",
+     "t": "리만가설 증명보고 개빡친 수학자협회 성명문..",
      "nsite": 3,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 204,
+     "issue_np": 4,
+     "issue_nc": 75,
      "kw": [
-      "가설",
       "리만",
+      "가설",
       "증명",
       "수학자"
      ],
@@ -1220,20 +1124,21 @@
      }
     },
     {
-     "t": "도심 마라톤 때문에 화가 많이 난 시민들",
+     "t": "아이유, 韓 여성 솔로 최초 도쿄돔 입성",
      "nsite": 3,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 39,
+     "issue_np": 4,
+     "issue_nc": 17,
      "kw": [
-      "시민",
-      "마라톤",
-      "도심"
+      "아이유",
+      "입성",
+      "솔로",
+      "최초"
      ],
      "top_post": {
-      "t": "도심 마라톤 때문에 화가 많이 난 시민들",
-      "u": "https://theqoo.net/hot/4414391827",
+      "t": "아이유, 한국 여자 솔로 가수 최초 ‘도쿄돔’ 입성한다…2027 월드투어 포문",
+      "u": "https://theqoo.net/hot/4415174300",
       "nc": 0
      }
     },
@@ -1245,10 +1150,10 @@
      "issue_np": 3,
      "issue_nc": 15,
      "kw": [
-      "사의",
-      "책임",
-      "최교진",
-      "장관"
+      "수능",
+      "장관",
+      "표명",
+      "책임"
      ],
      "top_post": {
       "t": "[속보] 최교진 교육부 장관 사의 표명…\"수능 혼란 책임 통감\"",
@@ -1257,21 +1162,21 @@
      }
     },
     {
-     "t": "아이유, 韓 여성 솔로 최초 도쿄돔 입성",
+     "t": "달려라달려‍‍네이버페이10원+10원+1원+1원+1원+15원+15원+15원+15원+15원+15원+15원+15…",
      "nsite": 3,
-     "np_here": 1,
+     "np_here": 2,
      "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 11,
+     "issue_np": 7,
+     "issue_nc": 4,
      "kw": [
-      "솔로",
-      "최초",
-      "아이유",
-      "입성"
+      "네이버",
+      "페이",
+      "랜덤",
+      "라이브"
      ],
      "top_post": {
-      "t": "아이유, 한국 여자 솔로 가수 최초 ‘도쿄돔’ 입성한다…2027 월드투어 포문",
-      "u": "https://theqoo.net/hot/4415174300",
+      "t": "달려라달려‍‍네이버페이10원+10원+1원+1원+1원+15원+15원+15원+15원+15원+15원+15원+15원+5원+1원+1원+랜덤 눌러봐++1…",
+      "u": "https://theqoo.net/hot/4415076262",
       "nc": 0
      }
     },
@@ -1283,14 +1188,110 @@
      "issue_np": 3,
      "issue_nc": 4,
      "kw": [
-      "확산",
+      "김원효",
+      "트랜스젠더",
       "개그맨",
-      "방문",
-      "김원효"
+      "확산"
      ],
      "top_post": {
       "t": "[단독] 개그맨 김원효, 트랜스젠더 바 방문 영상 확산…소속사 “방문 날짜 확인 중”",
       "u": "https://theqoo.net/hot/4414388953",
+      "nc": 0
+     }
+    }
+   ]
+  },
+  {
+   "name": "SLR클럽",
+   "np": 5,
+   "nc": 0,
+   "topics": [
+    {
+     "t": "발열조끼 입은 수험생 퇴실조치",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 5,
+     "issue_nc": 32,
+     "kw": [
+      "발열",
+      "조끼",
+      "수험",
+      "퇴실조치"
+     ],
+     "top_post": {
+      "t": "\"아빠가 입혀준 발열 조끼 때문에\"…수능장서 쫓겨난 수험생",
+      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677979",
+      "nc": 0
+     }
+    },
+    {
+     "t": "Ai안경.manhwa",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 5,
+     "issue_nc": 18,
+     "kw": [
+      "AI",
+      "안경"
+     ],
+     "top_post": {
+      "t": "삼성 AI안경 관심있네요",
+      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677949",
+      "nc": 0
+     }
+    },
+    {
+     "t": "일본인 한국 병원 후기",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 8,
+     "issue_nc": 0,
+     "kw": [
+      "일본인",
+      "한국"
+     ],
+     "top_post": {
+      "t": "일본인들의 한국 여행은 정말 저렴하군요.",
+      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677913",
+      "nc": 0
+     }
+    },
+    {
+     "t": "개그맨 김원효, 트랜스젠더 바 방문 영상 확산…소속사 “방문 날짜 확인 중”",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 4,
+     "kw": [
+      "김원효",
+      "트랜스젠더",
+      "개그맨",
+      "확산"
+     ],
+     "top_post": {
+      "t": "개그맨 김원효, 트랜스젠더 바 방문 영상 확산…소속사 “방문 날짜 확인 중”",
+      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677937",
+      "nc": 0
+     }
+    },
+    {
+     "t": "한전 개인정보 유출",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 2,
+     "kw": [
+      "한전",
+      "유출"
+     ],
+     "top_post": {
+      "t": "한전 개인정보 유출",
+      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677965",
       "nc": 0
      }
     }
@@ -1326,8 +1327,8 @@
      "issue_np": 8,
      "issue_nc": 0,
      "kw": [
-      "한국",
-      "일본인"
+      "일본인",
+      "한국"
      ],
      "top_post": {
       "t": "일본인 한국 병원 후기",
