@@ -1,20 +1,19 @@
 {
- "at": "2026-11-23 13:30",
- "nitems": 509,
+ "at": "2026-11-23 14:30",
+ "nitems": 511,
  "cands": [
   {
    "kw": "에이티즈",
-   "nsrc": 7,
+   "nsrc": 6,
    "srcs": [
     "SBS",
     "뉴시스",
     "동아일보",
     "연합뉴스",
-    "조선일보",
     "한겨레",
     "한국경제"
    ],
-   "n": 15,
+   "n": 14,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -39,7 +38,42 @@
    ]
   },
   {
-   "kw": "빌보드",
+   "kw": "결혼",
+   "nsrc": 6,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "세계일보",
+    "연합뉴스",
+    "조선일보",
+    "한겨레"
+   ],
+   "n": 10,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "배우 이가섭, 비연예인과 결혼…\"오랜 시간 든든한 버팀목\"",
+     "link": "https://www.yna.co.kr/view/AKR20261119085400005"
+    },
+    {
+     "src": "한겨레",
+     "title": "가족과 연 끊고 10년…삶이 무서워 ‘결혼’에 매달릴 때 [.txt]",
+     "link": "https://www.hani.co.kr/arti/culture/book/1288448.html"
+    },
+    {
+     "src": "세계일보",
+     "title": "비, 김태희와 결혼 10년 차에도 여전한 사랑꾼…“아침에 눈 떠도 예뻐”",
+     "link": "https://www.segye.com/newsView/20261123509285"
+    },
+    {
+     "src": "SBS",
+     "title": "'미우새' 솔비, \"네 손은 그림 그릴 때만 쓰라는 이규한에 감동\"…이규한과 결혼 결심한 '진짜 이유'",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008858119&plink=RSSLINK&cooper=RSSREADER"
+    }
+   ]
+  },
+  {
+   "kw": "정승환",
    "nsrc": 6,
    "srcs": [
     "SBS",
@@ -47,29 +81,63 @@
     "동아일보",
     "연합뉴스",
     "조선일보",
-    "한겨레"
+    "헤럴드경제"
    ],
-   "n": 12,
+   "n": 7,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "에이티즈 빌보드 네번째 1위에 \"벅차고 감사…초심 잃지 않겠다\"",
-     "link": "https://www.yna.co.kr/view/AKR20261123089400005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "에이티즈, '골든아워 : 파트6'로 美 '빌보드 200' 네 번째 1위",
-     "link": "https://www.yna.co.kr/view/AKR20261122049200005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "제니, 美 빌보드 메인 싱글차트 3위…피원하모니, 앨범 4위 진입",
-     "link": "https://www.yna.co.kr/view/AKR20261118050600005"
+     "title": "정승환, 안테나와 전속계약 만료…11년 동행 마무리",
+     "link": "https://www.yna.co.kr/view/AKR20261123056900005"
     },
     {
      "src": "동아일보",
-     "title": "이게 바로 ‘월드클래스의 멋’…에이티즈, 美 ‘빌보드 200’ 또 1위",
-     "link": "https://sports.donga.com/ent/article/all/20261123/135071951/1"
+     "title": "정승환, 11년 만에 안테나 떠난다…12월 단독 공연이 마지막 [공식]",
+     "link": "https://sports.donga.com/ent/article/all/20261123/135071637/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "정승환, 11년 만에 결별…안테나 전속계약 종료 [공식]",
+     "link": "https://sports.donga.com/ent/article/all/20261123/135071549/1"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "정승환, 유희열 품 떠난다…11년만에 안테나와 계약 종료",
+     "link": "https://biz.heraldcorp.com/article/10946089"
+    }
+   ]
+  },
+  {
+   "kw": "내년",
+   "nsrc": 5,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "연합뉴스",
+    "조선일보",
+    "한국경제"
+   ],
+   "n": 16,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "[가요소식] 제로베이스원, 내년 1월 18일 컴백",
+     "link": "https://www.yna.co.kr/view/AKR20261123038300005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "아이브, 내년 1월 서울 KSPO돔서 월드투어 앙코르",
+     "link": "https://www.yna.co.kr/view/AKR20261120145400005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "[가요소식] 김재중·김준수 JX, 내년 1월 부산서 앙코르 콘서트",
+     "link": "https://www.yna.co.kr/view/AKR20261120142600005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "[가요소식] 플레이브, 내년 1월 고척돔서 앙코르 콘서트",
+     "link": "https://www.yna.co.kr/view/AKR20261119129400005"
     }
    ]
   },
@@ -108,6 +176,40 @@
    ]
   },
   {
+   "kw": "빌보드",
+   "nsrc": 5,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "동아일보",
+    "연합뉴스",
+    "한겨레"
+   ],
+   "n": 11,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "에이티즈 빌보드 네번째 1위에 \"벅차고 감사…초심 잃지 않겠다\"",
+     "link": "https://www.yna.co.kr/view/AKR20261123089400005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "에이티즈, '골든아워 : 파트6'로 美 '빌보드 200' 네 번째 1위",
+     "link": "https://www.yna.co.kr/view/AKR20261122049200005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "제니, 美 빌보드 메인 싱글차트 3위…피원하모니, 앨범 4위 진입",
+     "link": "https://www.yna.co.kr/view/AKR20261118050600005"
+    },
+    {
+     "src": "동아일보",
+     "title": "이게 바로 ‘월드클래스의 멋’…에이티즈, 美 ‘빌보드 200’ 또 1위",
+     "link": "https://sports.donga.com/ent/article/all/20261123/135071951/1"
+    }
+   ]
+  },
+  {
    "kw": "공식",
    "nsrc": 5,
    "srcs": [
@@ -117,7 +219,7 @@
     "조선일보",
     "한국경제"
    ],
-   "n": 9,
+   "n": 8,
    "headlines": [
     {
      "src": "동아일보",
@@ -130,62 +232,164 @@
      "link": "https://sports.donga.com/ent/article/all/20261123/135071549/1"
     },
     {
-     "src": "동아일보",
-     "title": "[공식] 강지영, 15년 만에 MBC 복귀…‘굿모닝FM’ 새 DJ 발탁",
-     "link": "https://sports.donga.com/ent/article/all/20261123/135071075/1"
-    },
-    {
      "src": "한국경제",
      "title": "CL, 테디 손 잡았다…더블랙레이블 전속계약 [공식]",
      "link": "https://www.hankyung.com/article/202611134339H"
+    },
+    {
+     "src": "세계일보",
+     "title": "전원주, 공식 행사서 휘청…최근 영상에 건강 우려 커져",
+     "link": "https://www.segye.com/newsView/20261123502180"
     }
    ]
   },
   {
-   "kw": "결혼",
+   "kw": "깜짝",
    "nsrc": 5,
    "srcs": [
     "SBS",
-    "뉴시스",
     "연합뉴스",
     "조선일보",
-    "한겨레"
+    "한국경제",
+    "헤럴드경제"
    ],
-   "n": 8,
+   "n": 7,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "배우 이가섭, 비연예인과 결혼…\"오랜 시간 든든한 버팀목\"",
-     "link": "https://www.yna.co.kr/view/AKR20261119085400005"
+     "title": "20주년 빅뱅, 신곡 '기립' 깜짝 발표…GD 작사·작곡(종합)",
+     "link": "https://www.yna.co.kr/view/AKR20261120036851005"
     },
     {
-     "src": "한겨레",
-     "title": "가족과 연 끊고 10년…삶이 무서워 ‘결혼’에 매달릴 때 [.txt]",
-     "link": "https://www.hani.co.kr/arti/culture/book/1288448.html"
+     "src": "연합뉴스",
+     "title": "20주년 빅뱅, 오늘 신곡 깜짝 발표…내일 '마마 어워즈' 출연",
+     "link": "https://www.yna.co.kr/view/AKR20261120036800005"
     },
     {
-     "src": "SBS",
-     "title": "'미우새' 솔비, \"네 손은 그림 그릴 때만 쓰라는 이규한에 감동\"…이규한과 결혼 결심한 '진짜 이유'",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008858119&plink=RSSLINK&cooper=RSSREADER"
+     "src": "한국경제",
+     "title": "빅뱅, 오늘 신곡 깜짝 발표…'마마 어워즈' 기대감 ↑",
+     "link": "https://www.hankyung.com/article/202611209274H"
     },
     {
-     "src": "SBS",
-     "title": "[스브스夜] '비서진' 김종국, \"결혼은 진짜 내 편이 한 명 생기는 것\"…김광규에 '결혼 추천'",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008856713&plink=RSSLINK&cooper=RSSREADER"
+     "src": "한국경제",
+     "title": "'두 도시 이야기' 신성록, 기상캐스터로 깜짝 변신한다",
+     "link": "https://www.hankyung.com/article/202611197375H"
     }
    ]
   },
   {
-   "kw": "정승환",
+   "kw": "부부",
    "nsrc": 5,
    "srcs": [
     "뉴시스",
     "동아일보",
     "연합뉴스",
     "조선일보",
+    "한국경제"
+   ],
+   "n": 6,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "김태술·박하나 부부 부모 된다…\"모든 난임 부부들 응원\"",
+     "link": "https://www.yna.co.kr/view/AKR20261119154100005"
+    },
+    {
+     "src": "동아일보",
+     "title": "‘파주 부부’ 정현, 결혼반지 빼버렸다…사상 초유의 위기 (계약결혼)",
+     "link": "https://sports.donga.com/ent/article/all/20261123/135073206/1"
+    },
+    {
+     "src": "한국경제",
+     "title": "변요한·티파니 영 부부, 첫 공식석상…\"사랑스러워\" 애정 뚝뚝",
+     "link": "https://www.hankyung.com/article/202611168183H"
+    },
+    {
+     "src": "뉴시스",
+     "title": "개그 부부 또 탄생…박강균·구혜리 3월에 부부 된다",
+     "link": "https://www.newsis.com/view/NISX20261123_0003878933"
+    }
+   ]
+  },
+  {
+   "kw": "건강",
+   "nsrc": 5,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "세계일보",
+    "연합뉴스",
+    "조선일보"
+   ],
+   "n": 6,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "아일릿, 건강 문제로 활동 축소…\"고열·몸살에 발목 부상\"",
+     "link": "https://www.yna.co.kr/view/AKR20261119062900005"
+    },
+    {
+     "src": "세계일보",
+     "title": "전원주, 공식 행사서 휘청…최근 영상에 건강 우려 커져",
+     "link": "https://www.segye.com/newsView/20261123502180"
+    },
+    {
+     "src": "SBS",
+     "title": "\"매일 운동하는데 지방간 있다\"…'틈만나면' 비, 뜻밖의 건강 이상 고백",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008858542&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "뉴시스",
+     "title": "전원주, 공식석상서 다소 불안한 걸음…건강 응원 이어져",
+     "link": "https://www.newsis.com/view/NISX20261122_0003878357"
+    }
+   ]
+  },
+  {
+   "kw": "떠난다",
+   "nsrc": 5,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "동아일보",
+    "조선일보",
     "헤럴드경제"
    ],
    "n": 6,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "정승환, 11년 만에 안테나 떠난다…12월 단독 공연이 마지막 [공식]",
+     "link": "https://sports.donga.com/ent/article/all/20261123/135071637/1"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "정승환, 유희열 품 떠난다…11년만에 안테나와 계약 종료",
+     "link": "https://biz.heraldcorp.com/article/10946089"
+    },
+    {
+     "src": "SBS",
+     "title": "정승환, 유재석·유희열 품 떠난다…안테나와 11년 만에 아름다운 이별",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008859028&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "뉴시스",
+     "title": "김신영 '정오의 희망곡' 떠난다…29일 마지막 방송",
+     "link": "https://www.newsis.com/view/NISX20261123_0003878948"
+    }
+   ]
+  },
+  {
+   "kw": "안테나와",
+   "nsrc": 5,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "연합뉴스",
+    "조선일보",
+    "헤럴드경제"
+   ],
+   "n": 5,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -193,119 +397,52 @@
      "link": "https://www.yna.co.kr/view/AKR20261123056900005"
     },
     {
-     "src": "동아일보",
-     "title": "정승환, 11년 만에 안테나 떠난다…12월 단독 공연이 마지막 [공식]",
-     "link": "https://sports.donga.com/ent/article/all/20261123/135071637/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "정승환, 11년 만에 결별…안테나 전속계약 종료 [공식]",
-     "link": "https://sports.donga.com/ent/article/all/20261123/135071549/1"
-    },
-    {
      "src": "헤럴드경제",
      "title": "정승환, 유희열 품 떠난다…11년만에 안테나와 계약 종료",
      "link": "https://biz.heraldcorp.com/article/10946089"
+    },
+    {
+     "src": "SBS",
+     "title": "정승환, 유재석·유희열 품 떠난다…안테나와 11년 만에 아름다운 이별",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008859028&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "뉴시스",
+     "title": "정승환, 안테나와 11년 동행 마무리",
+     "link": "https://www.newsis.com/view/NISX20261123_0003879149"
     }
    ]
   },
   {
-   "kw": "치이카와",
-   "nsrc": 5,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "세계일보",
-    "연합뉴스",
-    "한겨레"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "'치이카와' 300만명 돌파…'토이 스토리 5' 꺾고 애니 흥행 1위",
-     "link": "https://www.yna.co.kr/view/AKR20261121027500005"
-    },
-    {
-     "src": "한겨레",
-     "title": "‘먼작귀’ 열풍 ‘치이카와’ 300만 돌파…올해 애니 흥행 1위",
-     "link": "https://www.hani.co.kr/arti/culture/culture_general/1288426.html"
-    },
-    {
-     "src": "세계일보",
-     "title": "日 애니 ‘치이카와’ 관객 300만명 돌파",
-     "link": "https://www.segye.com/newsView/20261122508228"
-    },
-    {
-     "src": "세계일보",
-     "title": "‘극장판 치이카와’ 300만 관객 돌파…올해 애니메이션 흥행 1위",
-     "link": "https://www.segye.com/newsView/20261121505385"
-    }
-   ]
-  },
-  {
-   "kw": "내년",
+   "kw": "대리수능",
    "nsrc": 4,
    "srcs": [
-    "뉴시스",
     "동아일보",
     "연합뉴스",
+    "조선일보",
     "한국경제"
    ],
    "n": 17,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "[가요소식] 제로베이스원, 내년 1월 18일 컴백",
-     "link": "https://www.yna.co.kr/view/AKR20261123038300005"
+     "title": "\"수능 공정성 이슈 무겁게 느껴…'대리수능' 메시지에 집중하길\"",
+     "link": "https://www.yna.co.kr/view/AKR20261123091400005"
     },
     {
-     "src": "연합뉴스",
-     "title": "아이브, 내년 1월 서울 KSPO돔서 월드투어 앙코르",
-     "link": "https://www.yna.co.kr/view/AKR20261120145400005"
+     "src": "동아일보",
+     "title": "‘대리수능’ 배현성·차강윤·박윤호 “수능 누 끼칠지 걱정하며 촬영”",
+     "link": "https://sports.donga.com/ent/article/all/20261123/135072601/1"
     },
     {
-     "src": "연합뉴스",
-     "title": "[가요소식] 김재중·김준수 JX, 내년 1월 부산서 앙코르 콘서트",
-     "link": "https://www.yna.co.kr/view/AKR20261120142600005"
+     "src": "동아일보",
+     "title": "“선택엔 대가”, ‘AI 부정행위’ 난리 속 배현성·차강윤·박윤호 ‘대리수능’ (종합)[DA현장]",
+     "link": "https://sports.donga.com/ent/article/all/20261123/135072586/1"
     },
     {
-     "src": "연합뉴스",
-     "title": "[가요소식] 플레이브, 내년 1월 고척돔서 앙코르 콘서트",
-     "link": "https://www.yna.co.kr/view/AKR20261119129400005"
-    }
-   ]
-  },
-  {
-   "kw": "번째",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 11,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "에이티즈, 美 빌보드앨범 네 번째 1위…2020년대 그룹 최다 톱10(종합)",
-     "link": "https://www.yna.co.kr/view/AKR20261122049251005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "에이티즈, '골든아워 : 파트6'로 美 '빌보드 200' 네 번째 1위",
-     "link": "https://www.yna.co.kr/view/AKR20261122049200005"
-    },
-    {
-     "src": "SBS",
-     "title": "에이티즈, 美 '빌보드 200' 통산 네 번째 1위 대기록…한미 차트 동시 점령",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008858718&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "SBS",
-     "title": "듀스, 31년 만에 4번째 정규앨범 발매…총 9곡",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008858021&plink=RSSLINK&cooper=RSSREADER"
+     "src": "동아일보",
+     "title": "‘대리수능’ 배현성 “대본 흥미로워…가면 벗고 억눌린 감정 폭발”",
+     "link": "https://sports.donga.com/ent/article/all/20261123/135072503/1"
     }
    ]
   },
@@ -376,6 +513,39 @@
    ]
   },
   {
+   "kw": "김원효",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "세계일보",
+    "조선일보"
+   ],
+   "n": 9,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "“이미 알고 있었다” 심진화, ♥김원효 ‘트랜스젠더 바’ 해프닝 일축",
+     "link": "https://sports.donga.com/ent/article/all/20261123/135071546/1"
+    },
+    {
+     "src": "세계일보",
+     "title": "심진화, 김원효 트랜스젠더 바 방문에…“후배 있어 잠시 들른 것”",
+     "link": "https://www.segye.com/newsView/20261123502476"
+    },
+    {
+     "src": "뉴시스",
+     "title": "심진화, 김원효 '트랜스젠더 바' 해프닝 뒤 올린 사진",
+     "link": "https://www.newsis.com/view/NISX20261123_0003879165"
+    },
+    {
+     "src": "뉴시스",
+     "title": "김원효, 트랜스젠더 바 방문 해프닝…\"아내 심진화도 알았다\"",
+     "link": "https://www.newsis.com/view/NISX20261122_0003878147"
+    }
+   ]
+  },
+  {
    "kw": "공연",
    "nsrc": 4,
    "srcs": [
@@ -409,110 +579,11 @@
    ]
   },
   {
-   "kw": "김원효",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "세계일보",
-    "조선일보"
-   ],
-   "n": 8,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "“이미 알고 있었다” 심진화, ♥김원효 ‘트랜스젠더 바’ 해프닝 일축",
-     "link": "https://sports.donga.com/ent/article/all/20261123/135071546/1"
-    },
-    {
-     "src": "세계일보",
-     "title": "심진화, 김원효 트랜스젠더 바 방문에…“후배 있어 잠시 들른 것”",
-     "link": "https://www.segye.com/newsView/20261123502476"
-    },
-    {
-     "src": "뉴시스",
-     "title": "심진화, 김원효 '트랜스젠더 바' 해프닝 뒤 올린 사진",
-     "link": "https://www.newsis.com/view/NISX20261123_0003879165"
-    },
-    {
-     "src": "뉴시스",
-     "title": "김원효, 트랜스젠더 바 방문 해프닝…\"아내 심진화도 알았다\"",
-     "link": "https://www.newsis.com/view/NISX20261122_0003878147"
-    }
-   ]
-  },
-  {
-   "kw": "돌파",
+   "kw": "발매",
    "nsrc": 4,
    "srcs": [
     "SBS",
-    "세계일보",
-    "연합뉴스",
-    "한겨레"
-   ],
-   "n": 7,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "'치이카와' 300만명 돌파…'토이 스토리 5' 꺾고 애니 흥행 1위",
-     "link": "https://www.yna.co.kr/view/AKR20261121027500005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "인천펜타포트, 올해 외국인관람객 1만명 돌파…2년만에 3배로",
-     "link": "https://www.yna.co.kr/view/AKR20261119119500005"
-    },
-    {
-     "src": "한겨레",
-     "title": "‘먼작귀’ 열풍 ‘치이카와’ 300만 돌파…올해 애니 흥행 1위",
-     "link": "https://www.hani.co.kr/arti/culture/culture_general/1288426.html"
-    },
-    {
-     "src": "세계일보",
-     "title": "日 애니 ‘치이카와’ 관객 300만명 돌파",
-     "link": "https://www.segye.com/newsView/20261122508228"
-    }
-   ]
-  },
-  {
-   "kw": "깜짝",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "연합뉴스",
-    "한국경제",
-    "헤럴드경제"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "20주년 빅뱅, 신곡 '기립' 깜짝 발표…GD 작사·작곡(종합)",
-     "link": "https://www.yna.co.kr/view/AKR20261120036851005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "20주년 빅뱅, 오늘 신곡 깜짝 발표…내일 '마마 어워즈' 출연",
-     "link": "https://www.yna.co.kr/view/AKR20261120036800005"
-    },
-    {
-     "src": "한국경제",
-     "title": "빅뱅, 오늘 신곡 깜짝 발표…'마마 어워즈' 기대감 ↑",
-     "link": "https://www.hankyung.com/article/202611209274H"
-    },
-    {
-     "src": "한국경제",
-     "title": "'두 도시 이야기' 신성록, 기상캐스터로 깜짝 변신한다",
-     "link": "https://www.hankyung.com/article/202611197375H"
-    }
-   ]
-  },
-  {
-   "kw": "재혼",
-   "nsrc": 4,
-   "srcs": [
     "뉴시스",
-    "세계일보",
     "연합뉴스",
     "조선일보"
    ],
@@ -520,23 +591,23 @@
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "'재혼 황후' 인기에 웹툰 글로벌 조회수 35배 증가",
-     "link": "https://www.yna.co.kr/view/AKR20261119119100005"
+     "title": "[가요소식] 딘딘, 생일에 신곡 '케이크' 발매",
+     "link": "https://www.yna.co.kr/view/AKR20261120066300005"
     },
     {
-     "src": "세계일보",
-     "title": "디즈니+ ‘재혼 황후’ TV쇼 글로벌 1위",
-     "link": "https://www.segye.com/newsView/20261122508232"
-    },
-    {
-     "src": "뉴시스",
-     "title": "마일리 사이러스, 5세 연하 드러머와 재혼",
-     "link": "https://www.newsis.com/view/NISX20261122_0003878362"
+     "src": "SBS",
+     "title": "듀스, 31년 만에 4번째 정규앨범 발매…총 9곡",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008858021&plink=RSSLINK&cooper=RSSREADER"
     },
     {
      "src": "뉴시스",
-     "title": "'흑백요리사' 트리플스타 강승원 재혼…\"부끄럽지 않은 남편 될 것\"",
-     "link": "https://www.newsis.com/view/NISX20261122_0003877875"
+     "title": "日 보이그룹 2xFE, 韓 활동 본격화…싱글 '2시7분' 발매",
+     "link": "https://www.newsis.com/view/NISX20261123_0003879177"
+    },
+    {
+     "src": "뉴시스",
+     "title": "마크, 내달 스튜디오 앨범 발매…'윈드밀'",
+     "link": "https://www.newsis.com/view/NISX20261123_0003878664"
     }
    ]
   },
@@ -574,39 +645,6 @@
    ]
   },
   {
-   "kw": "지드래곤",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "지드래곤 예능 '굿데이' 시즌2…스키즈 쓰리라차·한로로 출연",
-     "link": "https://www.yna.co.kr/view/AKR20261123042700005"
-    },
-    {
-     "src": "동아일보",
-     "title": "갤럭시코퍼레이션, 지드래곤·김종국 소속사다운 이색 사옥 눈길",
-     "link": "https://sports.donga.com/ent/article/all/20261123/135072632/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "지드래곤, 박명수 재회→역대급 음악 프로젝트 예고…‘굿데이2’ 제작 확정",
-     "link": "https://sports.donga.com/ent/article/all/20261123/135071289/1"
-    },
-    {
-     "src": "뉴시스",
-     "title": "지드래곤 청담동 빌딩, 9년 만에 2배…173억원 육박",
-     "link": "https://www.newsis.com/view/NISX20261120_0003876901"
-    }
-   ]
-  },
-  {
    "kw": "컴백",
    "nsrc": 4,
    "srcs": [
@@ -640,7 +678,7 @@
    ]
   },
   {
-   "kw": "발매",
+   "kw": "싱글",
    "nsrc": 4,
    "srcs": [
     "SBS",
@@ -652,23 +690,56 @@
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "[가요소식] 딘딘, 생일에 신곡 '케이크' 발매",
-     "link": "https://www.yna.co.kr/view/AKR20261120066300005"
+     "title": "케데헌 '골든', 英 오피셜 싱글 차트 롱런…74주째 '톱 100'",
+     "link": "https://www.yna.co.kr/view/AKR20261121023500005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "트와이스 나연, 오늘 새 싱글 '나스티'…\"많은 고민·노력 담아\"",
+     "link": "https://www.yna.co.kr/view/AKR20261120048400005"
     },
     {
      "src": "SBS",
-     "title": "듀스, 31년 만에 4번째 정규앨범 발매…총 9곡",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008858021&plink=RSSLINK&cooper=RSSREADER"
+     "title": "빅뱅, 오늘(20일) 새 디지털 싱글 기습 공개…데뷔 20주년 대미 장식",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008855191&plink=RSSLINK&cooper=RSSREADER"
     },
     {
      "src": "뉴시스",
-     "title": "마크, 내달 스튜디오 앨범 발매…'윈드밀'",
-     "link": "https://www.newsis.com/view/NISX20261123_0003878664"
+     "title": "日 보이그룹 2xFE, 韓 활동 본격화…싱글 '2시7분' 발매",
+     "link": "https://www.newsis.com/view/NISX20261123_0003879177"
+    }
+   ]
+  },
+  {
+   "kw": "나의",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "동아일보",
+    "연합뉴스",
+    "조선일보"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "[방송소식] MBC, '2026 대학가요제-나의 드라마' 19일 방송",
+     "link": "https://www.yna.co.kr/view/AKR20261118125400005"
     },
     {
-     "src": "뉴시스",
-     "title": "듀스, 31년 만에 정규 4집 발매…이현도·AI 김성재가 그린 '우리'의 내일",
-     "link": "https://www.newsis.com/view/NISX20261122_0003877880"
+     "src": "동아일보",
+     "title": "‘나의 유죄인간’ 정한설, 임시완 옆 능청 비서로 활약 “많이 배웠다”",
+     "link": "https://sports.donga.com/ent/article/all/20261123/135073351/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "‘나의 유죄인간’ 임시완, 진범 잡기 위한 직진 순애보",
+     "link": "https://sports.donga.com/ent/article/all/20261123/135073264/1"
+    },
+    {
+     "src": "SBS",
+     "title": "떠난 딸의 AI 복원부터 래퍼 도플갱어까지…'나의 이방인' 3부작, 묵직한 질문 던졌다",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008858479&plink=RSSLINK&cooper=RSSREADER"
     }
    ]
   },
@@ -706,106 +777,40 @@
    ]
   },
   {
-   "kw": "떠난다",
+   "kw": "보고",
    "nsrc": 4,
    "srcs": [
     "뉴시스",
-    "동아일보",
+    "연합뉴스",
     "조선일보",
     "헤럴드경제"
    ],
-   "n": 5,
+   "n": 4,
    "headlines": [
     {
-     "src": "동아일보",
-     "title": "정승환, 11년 만에 안테나 떠난다…12월 단독 공연이 마지막 [공식]",
-     "link": "https://sports.donga.com/ent/article/all/20261123/135071637/1"
+     "src": "연합뉴스",
+     "title": "포천시 \"시 대표 캐릭터 영상 보고 퀴즈 풀면 선물\"",
+     "link": "https://www.yna.co.kr/view/AKR20261123108600060"
     },
     {
      "src": "헤럴드경제",
-     "title": "정승환, 유희열 품 떠난다…11년만에 안테나와 계약 종료",
-     "link": "https://biz.heraldcorp.com/article/10946089"
+     "title": "조권, ‘양성애자’ 구용규 루머에 일침?…“보고 싶은 대로 보는 세상”",
+     "link": "https://biz.heraldcorp.com/article/10945622"
     },
     {
      "src": "뉴시스",
-     "title": "김신영 '정오의 희망곡' 떠난다…29일 마지막 방송",
-     "link": "https://www.newsis.com/view/NISX20261123_0003878948"
+     "title": "조권, 남성 지인과 관계 추측에 \"보고 싶은 대로 보는 세상\"",
+     "link": "https://www.newsis.com/view/NISX20261123_0003878832"
     },
     {
      "src": "조선일보",
-     "title": "김신영, 14년 지킨 ‘정오의 희망곡’ 스스로 떠난다… “또 다른 도전 위해” 29일 마지막 인사 [공식]",
-     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/23/MEYDENBVMMYTSODCME2DKMJZMU/"
+     "title": "조권, '스탠바이미' 용규와 친분 공개 후 \"보고 싶은 대로 보는 세상\"",
+     "link": "https://www.chosun.com/entertainments/music/2026/11/23/GZRDEZBUMFSTCYZWG4YGENDFG4/"
     }
    ]
   },
   {
-   "kw": "시작",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "동아일보",
-    "조선일보"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "배우 된 스윙스, 본격 팬 소통 시작…하이앤드 합류",
-     "link": "https://sports.donga.com/ent/article/all/20261123/135071268/1"
-    },
-    {
-     "src": "SBS",
-     "title": "\"내 인생 이제 시작\"…추성훈, 22년 격투기 인생 '마침표'",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008858020&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "뉴시스",
-     "title": "김용빈 타이틀 방어…뉴시스 '제2대 트로트 4대천왕', 오늘 예선투표 시작",
-     "link": "https://www.newsis.com/view/NISX20261123_0003878436"
-    },
-    {
-     "src": "뉴시스",
-     "title": "추성훈, '48년 격투 인생' 마침표' 찍고 다시 시작…\"인생은 안 끝나\"",
-     "link": "https://www.newsis.com/view/NISX20261122_0003877999"
-    }
-   ]
-  },
-  {
-   "kw": "솔비",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "세계일보",
-    "조선일보"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "세계일보",
-     "title": "솔비, 예비 남편 이규한 자랑…“집안일 다 해줘, 첫 키스 때 가글도”",
-     "link": "https://www.segye.com/newsView/20261123501977"
-    },
-    {
-     "src": "SBS",
-     "title": "'미우새' 솔비, \"네 손은 그림 그릴 때만 쓰라는 이규한에 감동\"…이규한과 결혼 결심한 '진짜 이유'",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008858119&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "SBS",
-     "title": "\"네 귀한 손은 그림 그릴 때만 써\"…'미우새' 솔비, 예비 신랑 이규한 사랑꾼 면모 자랑",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008855427&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "뉴시스",
-     "title": "솔비 \"이규한, 첫키스 전 가글…내게도 시켜\"",
-     "link": "https://www.newsis.com/view/NISX20261122_0003878360"
-    }
-   ]
-  },
-  {
-   "kw": "희망곡",
+   "kw": "정오의",
    "nsrc": 4,
    "srcs": [
     "뉴시스",
@@ -829,39 +834,6 @@
      "src": "뉴시스",
      "title": "김신영 '정오의 희망곡' 떠난다…29일 마지막 방송",
      "link": "https://www.newsis.com/view/NISX20261123_0003878948"
-    },
-    {
-     "src": "조선일보",
-     "title": "김신영, 14년 지킨 ‘정오의 희망곡’ 스스로 떠난다… “또 다른 도전 위해” 29일 마지막 인사 [공식]",
-     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/23/MEYDENBVMMYTSODCME2DKMJZMU/"
-    }
-   ]
-  },
-  {
-   "kw": "위해",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 4,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "김신영, 14년 만에 '정오의 희망곡' 하차…\"또 다른 도전 위해\"",
-     "link": "https://www.yna.co.kr/view/AKR20261123072500005"
-    },
-    {
-     "src": "동아일보",
-     "title": "효민, 먹기 위해 운동한다더니…애플힙이 이 정도였어? [DA★]",
-     "link": "https://sports.donga.com/ent/article/all/20261123/135071183/1"
-    },
-    {
-     "src": "뉴시스",
-     "title": "사유리 \"남친에 '정자 달라'고…결혼 위해 4년 기다려\"",
-     "link": "https://www.newsis.com/view/NISX20261122_0003877885"
     },
     {
      "src": "조선일보",
@@ -904,7 +876,7 @@
    ]
   },
   {
-   "kw": "정오의",
+   "kw": "희망곡",
    "nsrc": 4,
    "srcs": [
     "뉴시스",
@@ -937,35 +909,35 @@
    ]
   },
   {
-   "kw": "안테나와",
+   "kw": "지드래곤",
    "nsrc": 4,
    "srcs": [
     "뉴시스",
+    "동아일보",
     "연합뉴스",
-    "조선일보",
-    "헤럴드경제"
+    "조선일보"
    ],
    "n": 4,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "정승환, 안테나와 전속계약 만료…11년 동행 마무리",
-     "link": "https://www.yna.co.kr/view/AKR20261123056900005"
+     "title": "지드래곤 예능 '굿데이' 시즌2…스키즈 쓰리라차·한로로 출연",
+     "link": "https://www.yna.co.kr/view/AKR20261123042700005"
     },
     {
-     "src": "헤럴드경제",
-     "title": "정승환, 유희열 품 떠난다…11년만에 안테나와 계약 종료",
-     "link": "https://biz.heraldcorp.com/article/10946089"
+     "src": "동아일보",
+     "title": "갤럭시코퍼레이션, 지드래곤·김종국 소속사다운 이색 사옥 눈길",
+     "link": "https://sports.donga.com/ent/article/all/20261123/135072632/1"
     },
     {
      "src": "뉴시스",
-     "title": "정승환, 안테나와 11년 동행 마무리",
-     "link": "https://www.newsis.com/view/NISX20261123_0003879149"
+     "title": "지드래곤 청담동 빌딩, 9년 만에 2배…173억원 육박",
+     "link": "https://www.newsis.com/view/NISX20261120_0003876901"
     },
     {
      "src": "조선일보",
-     "title": "정승환, 11년 만에 유희열 품 떠난다..12월 안테나와 계약 종료 [공식",
-     "link": "https://www.chosun.com/entertainments/music/2026/11/23/MJTDQYTBGMZGIYZVHAZTANDCGE/"
+     "title": "\"지드래곤 파격 장발\" 빅뱅, 신곡 '기립' 압도적 비주얼 포토 공개",
+     "link": "https://www.chosun.com/entertainments/music/2026/11/23/ME4TSZBXGA4DSNLEGZRTKNBVGE/"
     }
    ]
   },
@@ -999,6 +971,39 @@
      "src": "조선일보",
      "title": "정승환, 11년 만에 유희열 품 떠난다..12월 안테나와 계약 종료 [공식",
      "link": "https://www.chosun.com/entertainments/music/2026/11/23/MJTDQYTBGMZGIYZVHAZTANDCGE/"
+    }
+   ]
+  },
+  {
+   "kw": "치이카와",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "연합뉴스",
+    "한겨레"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "'치이카와' 300만명 돌파…'토이 스토리 5' 꺾고 애니 흥행 1위",
+     "link": "https://www.yna.co.kr/view/AKR20261121027500005"
+    },
+    {
+     "src": "한겨레",
+     "title": "‘먼작귀’ 열풍 ‘치이카와’ 300만 돌파…올해 애니 흥행 1위",
+     "link": "https://www.hani.co.kr/arti/culture/culture_general/1288426.html"
+    },
+    {
+     "src": "SBS",
+     "title": "'치이카와', 53일 만에 300만 돌파…'토이 스토리5' 넘은 '먼작귀' 열풍",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008858716&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "뉴시스",
+     "title": "김윤석·구교환 '폭설' 첫 주말 1위…'치이카와' 300만명↑",
+     "link": "https://www.newsis.com/view/NISX20261123_0003878434"
     }
    ]
   },
@@ -1069,35 +1074,35 @@
    ]
   },
   {
-   "kw": "건강",
+   "kw": "달라",
    "nsrc": 4,
    "srcs": [
-    "SBS",
     "뉴시스",
+    "동아일보",
     "세계일보",
-    "연합뉴스"
+    "한국경제"
    ],
    "n": 4,
    "headlines": [
     {
-     "src": "연합뉴스",
-     "title": "아일릿, 건강 문제로 활동 축소…\"고열·몸살에 발목 부상\"",
-     "link": "https://www.yna.co.kr/view/AKR20261119062900005"
+     "src": "동아일보",
+     "title": "‘대리수능’ 감독 “잘못된 선택에 이야기…‘피라미드게임’과 달라”",
+     "link": "https://sports.donga.com/ent/article/all/20261123/135072442/1"
+    },
+    {
+     "src": "한국경제",
+     "title": "BTS·에스파, 'MMA 2026' 첫날 대상…윈터 \"내년도 기대해 달라\" [종합]",
+     "link": "https://www.hankyung.com/article/202611146620H"
     },
     {
      "src": "세계일보",
-     "title": "전원주, 공식 행사서 휘청…최근 영상에 건강 우려 커져",
-     "link": "https://www.segye.com/newsView/20261123502180"
-    },
-    {
-     "src": "SBS",
-     "title": "\"매일 운동하는데 지방간 있다\"…'틈만나면' 비, 뜻밖의 건강 이상 고백",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008858542&plink=RSSLINK&cooper=RSSREADER"
+     "title": "같은 신체활동도 목적 따라 스트레스 수준 달라",
+     "link": "https://www.segye.com/newsView/20261123508387"
     },
     {
      "src": "뉴시스",
-     "title": "전원주, 공식석상서 다소 불안한 걸음…건강 응원 이어져",
-     "link": "https://www.newsis.com/view/NISX20261122_0003878357"
+     "title": "사유리 \"남친에 '정자 달라'고…결혼 위해 4년 기다려\"",
+     "link": "https://www.newsis.com/view/NISX20261122_0003877885"
     }
    ]
   },
@@ -1267,67 +1272,66 @@
    ]
   },
   {
-   "kw": "이규한",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "세계일보",
-    "조선일보"
-   ],
-   "n": 4,
-   "headlines": [
-    {
-     "src": "세계일보",
-     "title": "솔비, 예비 남편 이규한 자랑…“집안일 다 해줘, 첫 키스 때 가글도”",
-     "link": "https://www.segye.com/newsView/20261123501977"
-    },
-    {
-     "src": "SBS",
-     "title": "\"네 귀한 손은 그림 그릴 때만 써\"…'미우새' 솔비, 예비 신랑 이규한 사랑꾼 면모 자랑",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008855427&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "뉴시스",
-     "title": "솔비 \"이규한, 첫키스 전 가글…내게도 시켜\"",
-     "link": "https://www.newsis.com/view/NISX20261122_0003878360"
-    },
-    {
-     "src": "조선일보",
-     "title": "“첫키스 전 가글해”..솔비, ♥이규한 결벽증 수준 폭로 (‘미우새’)",
-     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/23/GI2DMZBQGUZWGMRWMYYTQYJYGU/"
-    }
-   ]
-  },
-  {
-   "kw": "대리수능",
+   "kw": "보이그룹",
    "nsrc": 3,
    "srcs": [
-    "동아일보",
+    "뉴시스",
     "조선일보",
     "한국경제"
    ],
    "n": 16,
    "headlines": [
     {
-     "src": "동아일보",
-     "title": "‘대리수능’ 배현성·차강윤·박윤호 “수능 누 끼칠지 걱정하며 촬영”",
-     "link": "https://sports.donga.com/ent/article/all/20261123/135072601/1"
+     "src": "한국경제",
+     "title": "[단독] SM 신인 보이그룹, 내년 1월 데뷔",
+     "link": "https://www.hankyung.com/article/202611169565H"
     },
     {
-     "src": "동아일보",
-     "title": "“선택엔 대가”, ‘AI 부정행위’ 난리 속 배현성·차강윤·박윤호 ‘대리수능’ (종합)[DA현장]",
-     "link": "https://sports.donga.com/ent/article/all/20261123/135072586/1"
+     "src": "한국경제",
+     "title": "JYP 새 보이그룹 나온다…엔믹스 남동생 '오브더블루' 내년 론칭",
+     "link": "https://www.hankyung.com/article/202611094129H"
     },
     {
-     "src": "동아일보",
-     "title": "‘대리수능’ 배현성 “대본 흥미로워…가면 벗고 억눌린 감정 폭발”",
-     "link": "https://sports.donga.com/ent/article/all/20261123/135072503/1"
+     "src": "뉴시스",
+     "title": "日 보이그룹 2xFE, 韓 활동 본격화…싱글 '2시7분' 발매",
+     "link": "https://www.newsis.com/view/NISX20261123_0003879177"
     },
     {
-     "src": "동아일보",
-     "title": "‘대리수능’ 감독 “잘못된 선택에 이야기…‘피라미드게임’과 달라”",
-     "link": "https://sports.donga.com/ent/article/all/20261123/135072442/1"
+     "src": "조선일보",
+     "title": "[사진]일본 보이그룹 투에프이(2xFE), '한국 데뷔 무대 즐기면서'",
+     "link": "https://www.chosun.com/entertainments/entertain_photo/2026/11/23/HE2TGOLEHA2WKZJVHEYDSMRSMI/"
+    }
+   ]
+  },
+  {
+   "kw": "일본",
+   "nsrc": 3,
+   "srcs": [
+    "연합뉴스",
+    "조선일보",
+    "한겨레"
+   ],
+   "n": 15,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "아일릿, 일본 레코드 대상 우수작품상…코르티스 특별국제음악상",
+     "link": "https://www.yna.co.kr/view/AKR20261121027900005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "일본 록밴드 아시안 쿵푸 제너레이션, 내년 5월 내한 공연",
+     "link": "https://www.yna.co.kr/view/AKR20261118087900005"
+    },
+    {
+     "src": "한겨레",
+     "title": "낯선 사상 받아들인 변방 일본, 아래로부터 만들어져 위로 간 보편성 [.txt]",
+     "link": "https://www.hani.co.kr/arti/culture/religion/1288256.html"
+    },
+    {
+     "src": "조선일보",
+     "title": "[사진]일본 보이그룹 투에프이(2xFE), '한국 데뷔 무대 즐기면서'",
+     "link": "https://www.chosun.com/entertainments/entertain_photo/2026/11/23/HE2TGOLEHA2WKZJVHEYDSMRSMI/"
     }
    ]
   }

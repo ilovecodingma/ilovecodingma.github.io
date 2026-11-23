@@ -1,15 +1,34 @@
 {
  "date": "2026-11-23",
- "updated": "2026-11-23 13:50",
+ "updated": "2026-11-23 14:50",
  "sites": 13,
- "npost": 2753,
+ "npost": 2761,
  "note": "출처(커뮤니티)별 집계예요. 작성자·연령·성별 정보는 수집하지 않아요. posts 는 이슈별로 뽑힌 일부라 전체 글 수가 아니에요.",
  "sources": [
   {
    "name": "MLB파크",
-   "np": 11,
-   "nc": 601,
+   "np": 13,
+   "nc": 698,
    "topics": [
+    {
+     "t": "박지윤 패드립 카톡 내용",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 107,
+     "issue_np": 4,
+     "issue_nc": 121,
+     "kw": [
+      "카톡",
+      "박지윤",
+      "최동석",
+      "도화선"
+     ],
+     "top_post": {
+      "t": "박지윤 패드립 카톡 내용",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611230120271380&m=view",
+      "nc": 107
+     }
+    },
     {
      "t": "현대차 블라인드",
      "nsite": 2,
@@ -35,30 +54,13 @@
      "issue_np": 2,
      "issue_nc": 105,
      "kw": [
-      "무슬림",
-      "프랑스"
+      "프랑스",
+      "무슬림"
      ],
      "top_post": {
       "t": "무슬림 때문에 완전히 망해버린 프랑스",
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611220120255165&m=view",
       "nc": 102
-     }
-    },
-    {
-     "t": "한국 영화 악역 티어. jpg",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 89,
-     "issue_np": 2,
-     "issue_nc": 89,
-     "kw": [
-      "한국",
-      "영화"
-     ],
-     "top_post": {
-      "t": "한국 영화 악역 티어. jpg",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611220120262731&m=view",
-      "nc": 89
      }
     },
     {
@@ -69,15 +71,32 @@
      "issue_np": 3,
      "issue_nc": 112,
      "kw": [
-      "수출국",
       "반도체",
       "세계",
+      "수출국",
       "임박"
      ],
      "top_post": {
       "t": "‘세계 4위 수출국’ 임박한 한국, 반도체 빼면 8위",
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611220120263871&m=view",
       "nc": 83
+     }
+    },
+    {
+     "t": "하승진 디스하는 과즙세연",
+     "nsite": 2,
+     "np_here": 2,
+     "nc_here": 71,
+     "issue_np": 3,
+     "issue_nc": 89,
+     "kw": [
+      "과즙세연",
+      "하승진"
+     ],
+     "top_post": {
+      "t": "하승진 디스하는 과즙세연",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611220120262527&m=view",
+      "nc": 51
      }
     },
     {
@@ -88,9 +107,9 @@
      "issue_np": 3,
      "issue_nc": 52,
      "kw": [
+      "경산",
       "서비스",
-      "모텔",
-      "경산"
+      "모텔"
      ],
      "top_post": {
       "t": "룸서비스가 대단한 경산 모텔 수준",
@@ -100,21 +119,21 @@
     },
     {
      "t": "성인되자 성전환한 이부진 사장 아들",
-     "nsite": 5,
+     "nsite": 6,
      "np_here": 1,
-     "nc_here": 36,
-     "issue_np": 5,
-     "issue_nc": 77,
+     "nc_here": 39,
+     "issue_np": 9,
+     "issue_nc": 106,
      "kw": [
-      "아들",
       "이부진",
-      "사장",
-      "성인"
+      "아들",
+      "성인",
+      "사장"
      ],
      "top_post": {
       "t": "삼성 이부진 아들 근황 ㄷㄷㄷ",
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611230120269463&m=view",
-      "nc": 36
+      "nc": 39
      }
     },
     {
@@ -134,32 +153,13 @@
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611220120261012&m=view",
       "nc": 36
      }
-    },
-    {
-     "t": "아이유, 韓 여성 솔로 최초 도쿄돔 입성",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 31,
-     "issue_np": 4,
-     "issue_nc": 31,
-     "kw": [
-      "최초",
-      "솔로",
-      "아이유",
-      "입성"
-     ],
-     "top_post": {
-      "t": "아이유, 韓 여성 솔로 최초 도쿄돔 입성",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611230120268248&m=view",
-      "nc": 31
-     }
     }
    ]
   },
   {
    "name": "개드립",
-   "np": 12,
-   "nc": 319,
+   "np": 15,
+   "nc": 380,
    "topics": [
     {
      "t": "리만가설 증명보고 개빡친 수학자협회 성명문..",
@@ -169,8 +169,8 @@
      "issue_np": 4,
      "issue_nc": 84,
      "kw": [
-      "가설",
       "리만",
+      "가설",
       "증명",
       "수학자"
      ],
@@ -181,6 +181,25 @@
      }
     },
     {
+     "t": "성인되자 성전환한 이부진 사장 아들",
+     "nsite": 6,
+     "np_here": 1,
+     "nc_here": 46,
+     "issue_np": 9,
+     "issue_nc": 106,
+     "kw": [
+      "이부진",
+      "아들",
+      "성인",
+      "사장"
+     ],
+     "top_post": {
+      "t": "성인되자 성전환한 이부진 사장 아들",
+      "u": "https://www.dogdrip.net/dogdrip/736174325?sort_index=popular&page=1",
+      "nc": 46
+     }
+    },
+    {
      "t": "부정행위 잡았더니 \"인생 망가뜨려줄게\"",
      "nsite": 3,
      "np_here": 1,
@@ -188,8 +207,8 @@
      "issue_np": 3,
      "issue_nc": 46,
      "kw": [
-      "부정행위",
-      "인생"
+      "인생",
+      "부정행위"
      ],
      "top_post": {
       "t": "부정행위 잡았더니 \"인생 망가뜨려줄게\"",
@@ -198,41 +217,40 @@
      }
     },
     {
-     "t": "성인되자 성전환한 이부진 사장 아들",
-     "nsite": 5,
-     "np_here": 1,
-     "nc_here": 39,
-     "issue_np": 5,
-     "issue_nc": 77,
-     "kw": [
-      "아들",
-      "이부진",
-      "사장",
-      "성인"
-     ],
-     "top_post": {
-      "t": "성인되자 성전환한 이부진 사장 아들",
-      "u": "https://www.dogdrip.net/dogdrip/736174325?sort_index=popular&page=1",
-      "nc": 39
-     }
-    },
-    {
      "t": "동양인 인종차별 값 = 25달러 상품권",
      "nsite": 3,
      "np_here": 1,
      "nc_here": 35,
      "issue_np": 4,
-     "issue_nc": 36,
+     "issue_nc": 38,
      "kw": [
-      "인종",
       "차별",
-      "유럽",
-      "국가"
+      "인종",
+      "국가",
+      "유럽"
      ],
      "top_post": {
       "t": "동양인 인종차별 값 = 25달러 상품권",
       "u": "https://www.dogdrip.net/dogdrip/735995187?sort_index=popular&page=1",
       "nc": 35
+     }
+    },
+    {
+     "t": "학폭 기록 때문에 수시 전부 떨어진 아들 ㄷㄷㄷ;;;",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 34,
+     "issue_np": 6,
+     "issue_nc": 37,
+     "kw": [
+      "수시",
+      "기록",
+      "아들"
+     ],
+     "top_post": {
+      "t": "학폭 기록 때문에 수시 전부 떨어진 아들 ㄷㄷㄷ;;;",
+      "u": "https://www.dogdrip.net/dogdrip/736167822?sort_index=popular&page=1",
+      "nc": 34
      }
     },
     {
@@ -243,8 +261,8 @@
      "issue_np": 5,
      "issue_nc": 32,
      "kw": [
-      "발열",
       "조끼",
+      "발열",
       "수험",
       "퇴실조치"
      ],
@@ -262,8 +280,8 @@
      "issue_np": 4,
      "issue_nc": 32,
      "kw": [
-      "컨닝",
-      "AI"
+      "AI",
+      "컨닝"
      ],
      "top_post": {
       "t": "현재 ㅈ됐다는 ai컨닝 하려던 사람들 근황",
@@ -288,67 +306,6 @@
       "u": "https://www.dogdrip.net/dogdrip/736103398?sort_index=popular&page=1",
       "nc": 27
      }
-    },
-    {
-     "t": "학폭 기록 때문에 수시 전부 떨어진 아들",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 27,
-     "issue_np": 6,
-     "issue_nc": 30,
-     "kw": [
-      "기록",
-      "수시",
-      "아들"
-     ],
-     "top_post": {
-      "t": "학폭 기록 때문에 수시 전부 떨어진 아들 ㄷㄷㄷ;;;",
-      "u": "https://www.dogdrip.net/dogdrip/736167822?sort_index=popular&page=1",
-      "nc": 27
-     }
-    }
-   ]
-  },
-  {
-   "name": "인스티즈",
-   "np": 2,
-   "nc": 187,
-   "topics": [
-    {
-     "t": "과즙세연 출연한 영상 보는데 이런게 요즘 개그야?",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 104,
-     "issue_np": 2,
-     "issue_nc": 104,
-     "kw": [
-      "개그",
-      "출연",
-      "과즙"
-     ],
-     "top_post": {
-      "t": "과즙세연 출연한 영상 보는데 이런게 요즘 개그야?",
-      "u": "https://www.instiz.net/pt/7928445?page=1&srt=3&k=",
-      "nc": 104
-     }
-    },
-    {
-     "t": "수능 부정행위 단속 총정리",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 83,
-     "issue_np": 3,
-     "issue_nc": 83,
-     "kw": [
-      "행위",
-      "수능",
-      "부정"
-     ],
-     "top_post": {
-      "t": "수능 부정행위 단속 총정리",
-      "u": "https://www.instiz.net/pt/7926834?page=1&srt=3&k=",
-      "nc": 83
-     }
     }
    ]
   },
@@ -362,7 +319,7 @@
      "nsite": 4,
      "np_here": 5,
      "nc_here": 90,
-     "issue_np": 9,
+     "issue_np": 10,
      "issue_nc": 100,
      "kw": [
       "시장",
@@ -402,9 +359,9 @@
      "issue_np": 3,
      "issue_nc": 112,
      "kw": [
-      "수출국",
       "반도체",
       "세계",
+      "수출국",
       "임박"
      ],
      "top_post": {
@@ -416,161 +373,54 @@
    ]
   },
   {
-   "name": "보배드림",
-   "np": 14,
-   "nc": 33,
+   "name": "인스티즈",
+   "np": 1,
+   "nc": 104,
    "topics": [
     {
-     "t": "ㅅㄱㅂㄱ 일론머스크의 최애넝담",
-     "nsite": 6,
-     "np_here": 2,
-     "nc_here": 4,
-     "issue_np": 8,
-     "issue_nc": 16,
-     "kw": [
-      "머스크",
-      "일론",
-      "최애넝담",
-      "농담"
-     ],
-     "top_post": {
-      "t": "일론 머스크가 구상하는 앞으로 다가올 미래",
-      "u": "https://www.bobaedream.co.kr/view?code=best&No=1049381&vdate=",
-      "nc": 3
-     }
-    },
-    {
-     "t": "엑셀방송 2년 했다는 스트리머의 수익",
-     "nsite": 4,
+     "t": "과즙세연 출연한 영상 보는데 이런게 요즘 개그야?",
+     "nsite": 2,
      "np_here": 1,
-     "nc_here": 3,
-     "issue_np": 4,
-     "issue_nc": 59,
+     "nc_here": 104,
+     "issue_np": 2,
+     "issue_nc": 104,
      "kw": [
-      "엑셀",
-      "방송",
-      "수익"
+      "출연",
+      "과즙",
+      "개그"
      ],
      "top_post": {
-      "t": "엑셀방송 2년 했다는 BJ의 수익 ㄷㄷ",
-      "u": "https://www.bobaedream.co.kr/view?code=best&No=1049411&vdate=",
-      "nc": 3
-     }
-    },
-    {
-     "t": "싱글벙글 AI 컨닝으로 난리난 나라들",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 3,
-     "issue_np": 4,
-     "issue_nc": 32,
-     "kw": [
-      "컨닝",
-      "AI"
-     ],
-     "top_post": {
-      "t": "현재 ㅈ됐다는 ai컨닝 하려던 사람들 근황",
-      "u": "https://www.bobaedream.co.kr/view?code=best&No=1049257&vdate=",
-      "nc": 3
-     }
-    },
-    {
-     "t": "학폭 기록 때문에 수시 전부 떨어진 아들",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 3,
-     "issue_np": 6,
-     "issue_nc": 30,
-     "kw": [
-      "기록",
-      "수시",
-      "아들"
-     ],
-     "top_post": {
-      "t": "학폭 기록 때문에 수시 전부 떨어진 아들",
-      "u": "https://www.bobaedream.co.kr/view?code=best&No=1049418&vdate=",
-      "nc": 3
-     }
-    },
-    {
-     "t": "룸서비스가 대단한 경산 모텔 수준",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 3,
-     "issue_np": 3,
-     "issue_nc": 52,
-     "kw": [
-      "서비스",
-      "모텔",
-      "경산"
-     ],
-     "top_post": {
-      "t": "룸서비스가 대단한 경산 모텔 수준",
-      "u": "https://www.bobaedream.co.kr/view?code=best&No=1049392&vdate=",
-      "nc": 3
-     }
-    },
-    {
-     "t": "부정행위 잡았더니 \"인생 망가뜨려줄게\"",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 3,
-     "issue_np": 3,
-     "issue_nc": 46,
-     "kw": [
-      "부정행위",
-      "인생"
-     ],
-     "top_post": {
-      "t": "부정행위 잡았더니 “인생 망가뜨려 줄게”",
-      "u": "https://www.bobaedream.co.kr/view?code=best&No=1049405&vdate=",
-      "nc": 3
-     }
-    },
-    {
-     "t": "수원 불법유턴 사고 ㄷㄷ",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 3,
-     "issue_np": 3,
-     "issue_nc": 15,
-     "kw": [
-      "수원",
-      "사고",
-      "유턴",
-      "불법"
-     ],
-     "top_post": {
-      "t": "수원 불법유턴 사고",
-      "u": "https://www.bobaedream.co.kr/view?code=best&No=1049444&vdate=",
-      "nc": 3
-     }
-    },
-    {
-     "t": "\"지 애미가 더럽게 키워 구질구질\"…박지윤 카톡 본 최동석,..",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 3,
-     "issue_np": 3,
-     "issue_nc": 3,
-     "kw": [
-      "최동석",
-      "박지윤",
-      "카톡"
-     ],
-     "top_post": {
-      "t": "\"지 애미가 더럽게 키워 구질구질\"…박지윤 카톡 본 최동석,..",
-      "u": "https://www.bobaedream.co.kr/view?code=best&No=1049472&vdate=",
-      "nc": 3
+      "t": "과즙세연 출연한 영상 보는데 이런게 요즘 개그야?",
+      "u": "https://www.instiz.net/pt/7928445?page=1&srt=3&k=",
+      "nc": 104
      }
     }
    ]
   },
   {
    "name": "82쿡",
-   "np": 9,
-   "nc": 29,
+   "np": 8,
+   "nc": 44,
    "topics": [
+    {
+     "t": "성인되자 성전환한 이부진 사장 아들",
+     "nsite": 6,
+     "np_here": 3,
+     "nc_here": 21,
+     "issue_np": 9,
+     "issue_nc": 106,
+     "kw": [
+      "이부진",
+      "아들",
+      "성인",
+      "사장"
+     ],
+     "top_post": {
+      "t": "이부진 아들의 성을 개명했다네요.",
+      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4262078&page=1",
+      "nc": 14
+     }
+    },
     {
      "t": "반도체가 수출 잘하고 이익 엄청나지만",
      "nsite": 3,
@@ -579,8 +429,8 @@
      "issue_np": 3,
      "issue_nc": 18,
      "kw": [
-      "반도체",
-      "수출"
+      "수출",
+      "반도체"
      ],
      "top_post": {
       "t": "11월 1~20일 수출 774억·반도체 385억 달러…모두 역대..",
@@ -593,7 +443,7 @@
      "nsite": 4,
      "np_here": 1,
      "nc_here": 6,
-     "issue_np": 9,
+     "issue_np": 10,
      "issue_nc": 100,
      "kw": [
       "시장",
@@ -626,25 +476,6 @@
      }
     },
     {
-     "t": "개그맨 김원효, 트랜스젠더 바 방문 영상 확산…소속사 “방문 날짜 확인 중”",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 4,
-     "issue_np": 3,
-     "issue_nc": 4,
-     "kw": [
-      "방문",
-      "확산",
-      "개그맨",
-      "트랜스젠더"
-     ],
-     "top_post": {
-      "t": "개그맨 김원효, 트랜스젠더 바 방문 영상 확산",
-      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4261745&page=1",
-      "nc": 4
-     }
-    },
-    {
      "t": "ㅅㄱㅂㄱ 일론머스크의 최애넝담",
      "nsite": 6,
      "np_here": 1,
@@ -664,25 +495,6 @@
      }
     },
     {
-     "t": "성인되자 성전환한 이부진 사장 아들",
-     "nsite": 5,
-     "np_here": 1,
-     "nc_here": 2,
-     "issue_np": 5,
-     "issue_nc": 77,
-     "kw": [
-      "아들",
-      "이부진",
-      "사장",
-      "성인"
-     ],
-     "top_post": {
-      "t": "이부진 아들, 이씨로 성본변경",
-      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4262010&page=1",
-      "nc": 2
-     }
-    },
-    {
      "t": "서울사이버대학 개인정보 유출",
      "nsite": 3,
      "np_here": 1,
@@ -690,41 +502,175 @@
      "issue_np": 3,
      "issue_nc": 2,
      "kw": [
+      "대학",
       "서울",
       "사이버",
-      "유출",
-      "대학"
+      "유출"
      ],
      "top_post": {
       "t": "서울사이버대학 개인정보 유출",
       "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4261938&page=1",
       "nc": 2
      }
-    },
+    }
+   ]
+  },
+  {
+   "name": "보배드림",
+   "np": 16,
+   "nc": 38,
+   "topics": [
     {
-     "t": "\"지 애미가 더럽게 키워 구질구질\"…박지윤 카톡 본 최동석,..",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 3,
+     "t": "ㅅㄱㅂㄱ 일론머스크의 최애넝담",
+     "nsite": 6,
+     "np_here": 2,
+     "nc_here": 4,
+     "issue_np": 8,
+     "issue_nc": 16,
      "kw": [
-      "최동석",
-      "박지윤",
-      "카톡"
+      "머스크",
+      "일론",
+      "최애넝담",
+      "농담"
      ],
      "top_post": {
-      "t": "우연히 뜬 과거 박지윤최동석 부부",
-      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4262002&page=1",
-      "nc": 0
+      "t": "일론 머스크가 구상하는 앞으로 다가올 미래",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1049381&vdate=",
+      "nc": 3
+     }
+    },
+    {
+     "t": "박지윤 패드립 카톡 내용",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 3,
+     "issue_np": 4,
+     "issue_nc": 121,
+     "kw": [
+      "카톡",
+      "박지윤",
+      "최동석",
+      "도화선"
+     ],
+     "top_post": {
+      "t": "\"지 애미가 더럽게 키워 구질구질\"…박지윤 카톡 본 최동석,..",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1049472&vdate=",
+      "nc": 3
+     }
+    },
+    {
+     "t": "엑셀방송 2년 했다는 스트리머의 수익",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 3,
+     "issue_np": 4,
+     "issue_nc": 59,
+     "kw": [
+      "엑셀",
+      "방송",
+      "수익"
+     ],
+     "top_post": {
+      "t": "엑셀방송 2년 했다는 BJ의 수익 ㄷㄷ",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1049411&vdate=",
+      "nc": 3
+     }
+    },
+    {
+     "t": "학폭 기록 때문에 수시 전부 떨어진 아들 ㄷㄷㄷ;;;",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 3,
+     "issue_np": 6,
+     "issue_nc": 37,
+     "kw": [
+      "수시",
+      "기록",
+      "아들"
+     ],
+     "top_post": {
+      "t": "학폭 기록 때문에 수시 전부 떨어진 아들",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1049418&vdate=",
+      "nc": 3
+     }
+    },
+    {
+     "t": "싱글벙글 AI 컨닝으로 난리난 나라들",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 3,
+     "issue_np": 4,
+     "issue_nc": 32,
+     "kw": [
+      "AI",
+      "컨닝"
+     ],
+     "top_post": {
+      "t": "현재 ㅈ됐다는 ai컨닝 하려던 사람들 근황",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1049257&vdate=",
+      "nc": 3
+     }
+    },
+    {
+     "t": "룸서비스가 대단한 경산 모텔 수준",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 3,
+     "issue_np": 3,
+     "issue_nc": 52,
+     "kw": [
+      "경산",
+      "서비스",
+      "모텔"
+     ],
+     "top_post": {
+      "t": "룸서비스가 대단한 경산 모텔 수준",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1049392&vdate=",
+      "nc": 3
+     }
+    },
+    {
+     "t": "부정행위 잡았더니 \"인생 망가뜨려줄게\"",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 3,
+     "issue_np": 3,
+     "issue_nc": 46,
+     "kw": [
+      "인생",
+      "부정행위"
+     ],
+     "top_post": {
+      "t": "부정행위 잡았더니 “인생 망가뜨려 줄게”",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1049405&vdate=",
+      "nc": 3
+     }
+    },
+    {
+     "t": "동양인 인종차별 값 = 25달러 상품권",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 3,
+     "issue_np": 4,
+     "issue_nc": 38,
+     "kw": [
+      "차별",
+      "인종",
+      "국가",
+      "유럽"
+     ],
+     "top_post": {
+      "t": "유럽에서 인종차별이 가장 적은 국가",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1049480&vdate=",
+      "nc": 3
      }
     }
    ]
   },
   {
    "name": "아카라이브",
-   "np": 3,
-   "nc": 21,
+   "np": 4,
+   "nc": 28,
    "topics": [
     {
      "t": "Ai안경.manhwa",
@@ -734,13 +680,30 @@
      "issue_np": 5,
      "issue_nc": 18,
      "kw": [
-      "안경",
-      "AI"
+      "AI",
+      "안경"
      ],
      "top_post": {
       "t": "Ai안경.manhwa",
       "u": "https://arca.live/b/live/189819030?p=1",
       "nc": 16
+     }
+    },
+    {
+     "t": "영창이 없어진 군대 근황.",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 7,
+     "issue_np": 3,
+     "issue_nc": 28,
+     "kw": [
+      "영창",
+      "군대"
+     ],
+     "top_post": {
+      "t": "영창 없어지고 난 뒤의 군대 징계 근황",
+      "u": "https://arca.live/b/live/189983364?p=1",
+      "nc": 7
      }
     },
     {
@@ -770,8 +733,8 @@
      "issue_np": 4,
      "issue_nc": 32,
      "kw": [
-      "컨닝",
-      "AI"
+      "AI",
+      "컨닝"
      ],
      "top_post": {
       "t": "ai수능 컨닝은 걍 음모론 아님?",
@@ -806,8 +769,162 @@
    ]
   },
   {
+   "name": "더쿠",
+   "np": 10,
+   "nc": 0,
+   "topics": [
+    {
+     "t": "성인되자 성전환한 이부진 사장 아들",
+     "nsite": 6,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 9,
+     "issue_nc": 106,
+     "kw": [
+      "이부진",
+      "아들",
+      "성인",
+      "사장"
+     ],
+     "top_post": {
+      "t": "이부진 아들, 엄마 성으로 바꿨다…임씨에서 이씨로",
+      "u": "https://theqoo.net/hot/4415234395",
+      "nc": 0
+     }
+    },
+    {
+     "t": "박지윤 패드립 카톡 내용",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 121,
+     "kw": [
+      "카톡",
+      "박지윤",
+      "최동석",
+      "도화선"
+     ],
+     "top_post": {
+      "t": "\"지 애미가 더럽게 키워 구질구질\"…박지윤 카톡 본 최동석, 파경 도화선",
+      "u": "https://theqoo.net/hot/4415298790",
+      "nc": 0
+     }
+    },
+    {
+     "t": "발열조끼 입은 수험생 퇴실조치",
+     "nsite": 4,
+     "np_here": 2,
+     "nc_here": 0,
+     "issue_np": 5,
+     "issue_nc": 32,
+     "kw": [
+      "조끼",
+      "발열",
+      "수험",
+      "퇴실조치"
+     ],
+     "top_post": {
+      "t": "아빠가 입혀준 발열 조끼 탓 퇴실당한 수험생…\"감독 선생님들도 울먹\"",
+      "u": "https://theqoo.net/hot/4415294708",
+      "nc": 0
+     }
+    },
+    {
+     "t": "친구 결혼식에 갔다가 여자를 만난 썰",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 5,
+     "issue_nc": 16,
+     "kw": [
+      "친구",
+      "여자"
+     ],
+     "top_post": {
+      "t": "디즈니 비평글 같은거 본적 있는데 어린 여자애의 좋은 친구로",
+      "u": "https://theqoo.net/hot/4414613833",
+      "nc": 0
+     }
+    },
+    {
+     "t": "일본인 한국 병원 후기",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 8,
+     "issue_nc": 0,
+     "kw": [
+      "일본인",
+      "한국"
+     ],
+     "top_post": {
+      "t": "브라질이 얼마나 개같은 소릴했길래 일본인이 한국편을 드냐",
+      "u": "https://theqoo.net/hot/4414696577",
+      "nc": 0
+     }
+    },
+    {
+     "t": "아이유, 韓 여성 솔로 최초 도쿄돔 입성",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 36,
+     "kw": [
+      "아이유",
+      "솔로",
+      "최초",
+      "입성"
+     ],
+     "top_post": {
+      "t": "아이유, 한국 여자 솔로 가수 최초 ‘도쿄돔’ 입성한다…2027 월드투어 포문",
+      "u": "https://theqoo.net/hot/4415174300",
+      "nc": 0
+     }
+    },
+    {
+     "t": "달려라달려‍‍네이버페이10원+10원+1원+1원+1원+15원+15원+15원+15원+15원+15원+15원+15…",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 6,
+     "issue_nc": 4,
+     "kw": [
+      "페이",
+      "네이버",
+      "랜덤"
+     ],
+     "top_post": {
+      "t": "달려라달려‍‍네이버페이10원+10원+1원+1원+1원+15원+15원+15원+15원+15원+15원+15원+15원+5원+1원+1원+랜덤 눌러봐++1…",
+      "u": "https://theqoo.net/hot/4415076262",
+      "nc": 0
+     }
+    },
+    {
+     "t": "서울사이버대학 개인정보 유출",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 2,
+     "kw": [
+      "대학",
+      "서울",
+      "사이버",
+      "유출"
+     ],
+     "top_post": {
+      "t": "서울사이버대학 개인정보 유출",
+      "u": "https://theqoo.net/hot/4415024806",
+      "nc": 0
+     }
+    }
+   ]
+  },
+  {
    "name": "디시인사이드",
-   "np": 2,
+   "np": 3,
    "nc": 0,
    "topics": [
     {
@@ -837,162 +954,29 @@
      "issue_np": 4,
      "issue_nc": 32,
      "kw": [
-      "컨닝",
-      "AI"
+      "AI",
+      "컨닝"
      ],
      "top_post": {
       "t": "싱글벙글 AI 컨닝으로 난리난 나라들",
       "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=480921&_dcbest=1&page=1",
       "nc": 0
      }
-    }
-   ]
-  },
-  {
-   "name": "SLR클럽",
-   "np": 9,
-   "nc": 0,
-   "topics": [
-    {
-     "t": "성인되자 성전환한 이부진 사장 아들",
-     "nsite": 5,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 77,
-     "kw": [
-      "아들",
-      "이부진",
-      "사장",
-      "성인"
-     ],
-     "top_post": {
-      "t": "[속보] 이부진 사장 아들, 성인되자 아버지 성 임씨 버리고 어머니 성 이씨로",
-      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677990",
-      "nc": 0
-     }
     },
     {
-     "t": "발열조끼 입은 수험생 퇴실조치",
-     "nsite": 4,
+     "t": "바둑에서 부정행위를 대처하는 방법",
+     "nsite": 3,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 32,
-     "kw": [
-      "발열",
-      "조끼",
-      "수험",
-      "퇴실조치"
-     ],
-     "top_post": {
-      "t": "\"아빠가 입혀준 발열 조끼 때문에\"…수능장서 쫓겨난 수험생",
-      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677979",
-      "nc": 0
-     }
-    },
-    {
-     "t": "학폭 기록 때문에 수시 전부 떨어진 아들",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 6,
-     "issue_nc": 30,
-     "kw": [
-      "기록",
-      "수시",
-      "아들"
-     ],
-     "top_post": {
-      "t": "학폭 기록 때문에 수시 전부 떨어진 아들 ㄷㄷㄷ",
-      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677992",
-      "nc": 0
-     }
-    },
-    {
-     "t": "Ai안경.manhwa",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 18,
-     "kw": [
-      "안경",
-      "AI"
-     ],
-     "top_post": {
-      "t": "삼성 AI안경 관심있네요",
-      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677949",
-      "nc": 0
-     }
-    },
-    {
-     "t": "일본인 한국 병원 후기",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 8,
+     "issue_np": 3,
      "issue_nc": 0,
      "kw": [
-      "한국",
-      "일본인"
+      "부정",
+      "행위"
      ],
      "top_post": {
-      "t": "일본인들의 한국 여행은 정말 저렴하군요.",
-      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677913",
-      "nc": 0
-     }
-    },
-    {
-     "t": "반도체가 수출 잘하고 이익 엄청나지만",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 18,
-     "kw": [
-      "반도체",
-      "수출"
-     ],
-     "top_post": {
-      "t": "수출 1조달러 세계 4위 - 반도체 빼면.gisa",
-      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677997",
-      "nc": 0
-     }
-    },
-    {
-     "t": "개그맨 김원효, 트랜스젠더 바 방문 영상 확산…소속사 “방문 날짜 확인 중”",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 4,
-     "kw": [
-      "방문",
-      "확산",
-      "개그맨",
-      "트랜스젠더"
-     ],
-     "top_post": {
-      "t": "개그맨 김원효, 트랜스젠더 바 방문 영상 확산…소속사 “방문 날짜 확인 중”",
-      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677937",
-      "nc": 0
-     }
-    },
-    {
-     "t": "한전 개인정보 유출",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 2,
-     "kw": [
-      "한전",
-      "유출"
-     ],
-     "top_post": {
-      "t": "한전 개인정보 유출",
-      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677965",
+      "t": "바둑에서 부정행위를 대처하는 방법",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=480945&_dcbest=1&page=1",
       "nc": 0
      }
     }
@@ -1000,28 +984,9 @@
   },
   {
    "name": "루리웹",
-   "np": 31,
+   "np": 29,
    "nc": 0,
    "topics": [
-    {
-     "t": "성인되자 성전환한 이부진 사장 아들",
-     "nsite": 5,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 77,
-     "kw": [
-      "아들",
-      "이부진",
-      "사장",
-      "성인"
-     ],
-     "top_post": {
-      "t": "성인되자 성전환한 이부진 사장 아들",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77490092?m=all&t=now",
-      "nc": 0
-     }
-    },
     {
      "t": "엑셀방송 2년 했다는 스트리머의 수익",
      "nsite": 4,
@@ -1041,6 +1006,24 @@
      }
     },
     {
+     "t": "학폭 기록 때문에 수시 전부 떨어진 아들 ㄷㄷㄷ;;;",
+     "nsite": 4,
+     "np_here": 3,
+     "nc_here": 0,
+     "issue_np": 6,
+     "issue_nc": 37,
+     "kw": [
+      "수시",
+      "기록",
+      "아들"
+     ],
+     "top_post": {
+      "t": "학폭 기록 때문에 수시 전부 떨어진 아들",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77485529?m=humor",
+      "nc": 0
+     }
+    },
+    {
      "t": "발열조끼 입은 수험생 퇴실조치",
      "nsite": 4,
      "np_here": 1,
@@ -1048,32 +1031,14 @@
      "issue_np": 5,
      "issue_nc": 32,
      "kw": [
-      "발열",
       "조끼",
+      "발열",
       "수험",
       "퇴실조치"
      ],
      "top_post": {
       "t": "아버지가 입혀주신 발열조끼...",
       "u": "https://bbs.ruliweb.com/best/board/300143/read/77484223?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "학폭 기록 때문에 수시 전부 떨어진 아들",
-     "nsite": 4,
-     "np_here": 3,
-     "nc_here": 0,
-     "issue_np": 6,
-     "issue_nc": 30,
-     "kw": [
-      "기록",
-      "수시",
-      "아들"
-     ],
-     "top_post": {
-      "t": "학폭 기록 때문에 수시 전부 떨어진 아들",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77485529?m=humor",
       "nc": 0
      }
     },
@@ -1085,8 +1050,8 @@
      "issue_np": 5,
      "issue_nc": 18,
      "kw": [
-      "안경",
-      "AI"
+      "AI",
+      "안경"
      ],
      "top_post": {
       "t": "ai 안경이 보편화된 미래의 소개팅 ㅋㅋㅋ",
@@ -1119,8 +1084,8 @@
      "issue_np": 8,
      "issue_nc": 0,
      "kw": [
-      "한국",
-      "일본인"
+      "일본인",
+      "한국"
      ],
      "top_post": {
       "t": "한국 온 김에 북한 구경하는 일본인",
@@ -1136,9 +1101,9 @@
      "issue_np": 3,
      "issue_nc": 112,
      "kw": [
-      "수출국",
       "반도체",
       "세계",
+      "수출국",
       "임박"
      ],
      "top_post": {
@@ -1146,47 +1111,84 @@
       "u": "https://bbs.ruliweb.com/best/board/300143/read/77489364?m=all&t=now",
       "nc": 0
      }
+    },
+    {
+     "t": "리만가설 증명보고 개빡친 수학자협회 성명문..",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 84,
+     "kw": [
+      "리만",
+      "가설",
+      "증명",
+      "수학자"
+     ],
+     "top_post": {
+      "t": "리만가설 증명 lean코드 시각화",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77490600?m=all&t=now",
+      "nc": 0
+     }
     }
    ]
   },
   {
-   "name": "더쿠",
-   "np": 10,
+   "name": "SLR클럽",
+   "np": 7,
    "nc": 0,
    "topics": [
     {
-     "t": "발열조끼 입은 수험생 퇴실조치",
+     "t": "학폭 기록 때문에 수시 전부 떨어진 아들 ㄷㄷㄷ;;;",
      "nsite": 4,
-     "np_here": 2,
+     "np_here": 1,
      "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 32,
+     "issue_np": 6,
+     "issue_nc": 37,
      "kw": [
-      "발열",
-      "조끼",
-      "수험",
-      "퇴실조치"
+      "수시",
+      "기록",
+      "아들"
      ],
      "top_post": {
-      "t": "수능당일 발열조끼 입은 학생 퇴실조치",
-      "u": "https://theqoo.net/hot/4414842032",
+      "t": "학폭 기록 때문에 수시 전부 떨어진 아들 ㄷㄷㄷ",
+      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677992",
       "nc": 0
      }
     },
     {
-     "t": "친구 결혼식에 갔다가 여자를 만난 썰",
+     "t": "발열조끼 입은 수험생 퇴실조치",
      "nsite": 4,
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 5,
-     "issue_nc": 16,
+     "issue_nc": 32,
      "kw": [
-      "친구",
-      "여자"
+      "조끼",
+      "발열",
+      "수험",
+      "퇴실조치"
      ],
      "top_post": {
-      "t": "디즈니 비평글 같은거 본적 있는데 어린 여자애의 좋은 친구로",
-      "u": "https://theqoo.net/hot/4414613833",
+      "t": "\"아빠가 입혀준 발열 조끼 때문에\"…수능장서 쫓겨난 수험생",
+      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677979",
+      "nc": 0
+     }
+    },
+    {
+     "t": "Ai안경.manhwa",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 5,
+     "issue_nc": 18,
+     "kw": [
+      "AI",
+      "안경"
+     ],
+     "top_post": {
+      "t": "삼성 AI안경 관심있네요",
+      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677949",
       "nc": 0
      }
     },
@@ -1198,105 +1200,63 @@
      "issue_np": 8,
      "issue_nc": 0,
      "kw": [
-      "한국",
-      "일본인"
+      "일본인",
+      "한국"
      ],
      "top_post": {
-      "t": "브라질이 얼마나 개같은 소릴했길래 일본인이 한국편을 드냐",
-      "u": "https://theqoo.net/hot/4414696577",
+      "t": "일본인들의 한국 여행은 정말 저렴하군요.",
+      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677913",
       "nc": 0
      }
     },
     {
-     "t": "아이유, 韓 여성 솔로 최초 도쿄돔 입성",
+     "t": "반도체가 수출 잘하고 이익 엄청나지만",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 18,
+     "kw": [
+      "수출",
+      "반도체"
+     ],
+     "top_post": {
+      "t": "수출 1조달러 세계 4위 - 반도체 빼면.gisa",
+      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677997",
+      "nc": 0
+     }
+    },
+    {
+     "t": "한전 개인정보 유출",
      "nsite": 3,
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 4,
-     "issue_nc": 31,
-     "kw": [
-      "최초",
-      "솔로",
-      "아이유",
-      "입성"
-     ],
-     "top_post": {
-      "t": "아이유, 한국 여자 솔로 가수 최초 ‘도쿄돔’ 입성한다…2027 월드투어 포문",
-      "u": "https://theqoo.net/hot/4415174300",
-      "nc": 0
-     }
-    },
-    {
-     "t": "달려라달려‍‍네이버페이10원+10원+1원+1원+1원+15원+15원+15원+15원+15원+15원+15원+15…",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 6,
-     "issue_nc": 4,
-     "kw": [
-      "페이",
-      "네이버",
-      "랜덤"
-     ],
-     "top_post": {
-      "t": "달려라달려‍‍네이버페이10원+10원+1원+1원+1원+15원+15원+15원+15원+15원+15원+15원+15원+5원+1원+1원+랜덤 눌러봐++1…",
-      "u": "https://theqoo.net/hot/4415076262",
-      "nc": 0
-     }
-    },
-    {
-     "t": "개그맨 김원효, 트랜스젠더 바 방문 영상 확산…소속사 “방문 날짜 확인 중”",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 4,
-     "kw": [
-      "방문",
-      "확산",
-      "개그맨",
-      "트랜스젠더"
-     ],
-     "top_post": {
-      "t": "[단독] 개그맨 김원효, 트랜스젠더 바 방문 영상 확산…소속사 “방문 날짜 확인 중”",
-      "u": "https://theqoo.net/hot/4414388953",
-      "nc": 0
-     }
-    },
-    {
-     "t": "\"지 애미가 더럽게 키워 구질구질\"…박지윤 카톡 본 최동석,..",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 3,
-     "kw": [
-      "최동석",
-      "박지윤",
-      "카톡"
-     ],
-     "top_post": {
-      "t": "\"지 애미가 더럽게 키워 구질구질\"…박지윤 카톡 본 최동석, 파경 도화선",
-      "u": "https://theqoo.net/hot/4415298790",
-      "nc": 0
-     }
-    },
-    {
-     "t": "서울사이버대학 개인정보 유출",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
      "issue_nc": 2,
      "kw": [
-      "서울",
-      "사이버",
-      "유출",
-      "대학"
+      "한전",
+      "유출"
      ],
      "top_post": {
-      "t": "서울사이버대학 개인정보 유출",
-      "u": "https://theqoo.net/hot/4415024806",
+      "t": "한전 개인정보 유출",
+      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677965",
+      "nc": 0
+     }
+    },
+    {
+     "t": "현대차 블라인드",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 2,
+     "issue_nc": 107,
+     "kw": [
+      "현대차",
+      "블라인드"
+     ],
+     "top_post": {
+      "t": "현대차 블라인드",
+      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677975",
       "nc": 0
      }
     }
@@ -1332,8 +1292,8 @@
      "issue_np": 8,
      "issue_nc": 0,
      "kw": [
-      "한국",
-      "일본인"
+      "일본인",
+      "한국"
      ],
      "top_post": {
       "t": "일본인 한국 병원 후기",
@@ -1349,8 +1309,8 @@
      "issue_np": 3,
      "issue_nc": 16,
      "kw": [
-      "위기",
       "멸종",
+      "위기",
       "AI",
       "팝글"
      ],
