@@ -1,87 +1,87 @@
 {
- "at": "2026-11-16 09:20",
- "since": "2026-11-02",
+ "at": "2026-11-23 09:20",
+ "since": "2026-11-09",
  "stable_since": "2026-10-20",
  "days_observed": 15,
- "visitors": 4770,
- "returning_2plus_days": 94,
+ "visitors": 6321,
+ "returning_2plus_days": 164,
  "daily": [
-  {
-   "day": "2026-11-02",
-   "visitors": 428,
-   "returning": 0
-  },
-  {
-   "day": "2026-11-03",
-   "visitors": 231,
-   "returning": 3
-  },
-  {
-   "day": "2026-11-04",
-   "visitors": 830,
-   "returning": 4
-  },
-  {
-   "day": "2026-11-05",
-   "visitors": 305,
-   "returning": 4
-  },
-  {
-   "day": "2026-11-06",
-   "visitors": 258,
-   "returning": 6
-  },
-  {
-   "day": "2026-11-07",
-   "visitors": 330,
-   "returning": 7
-  },
-  {
-   "day": "2026-11-08",
-   "visitors": 197,
-   "returning": 3
-  },
   {
    "day": "2026-11-09",
    "visitors": 379,
-   "returning": 11
+   "returning": 0
   },
   {
    "day": "2026-11-10",
    "visitors": 406,
-   "returning": 13
+   "returning": 7
   },
   {
    "day": "2026-11-11",
    "visitors": 360,
-   "returning": 15
+   "returning": 10
   },
   {
    "day": "2026-11-12",
    "visitors": 378,
-   "returning": 11
+   "returning": 6
   },
   {
    "day": "2026-11-13",
    "visitors": 344,
-   "returning": 18
+   "returning": 14
   },
   {
    "day": "2026-11-14",
    "visitors": 185,
-   "returning": 16
+   "returning": 13
   },
   {
    "day": "2026-11-15",
    "visitors": 214,
-   "returning": 14
+   "returning": 12
   },
   {
    "day": "2026-11-16",
-   "visitors": 57,
+   "visitors": 387,
+   "returning": 19
+  },
+  {
+   "day": "2026-11-17",
+   "visitors": 653,
+   "returning": 28
+  },
+  {
+   "day": "2026-11-18",
+   "visitors": 507,
+   "returning": 12
+  },
+  {
+   "day": "2026-11-19",
+   "visitors": 1113,
+   "returning": 23
+  },
+  {
+   "day": "2026-11-20",
+   "visitors": 996,
+   "returning": 37
+  },
+  {
+   "day": "2026-11-21",
+   "visitors": 300,
+   "returning": 28
+  },
+  {
+   "day": "2026-11-22",
+   "visitors": 243,
+   "returning": 27
+  },
+  {
+   "day": "2026-11-23",
+   "visitors": 99,
    "returning": 7
   }
  ],
  "note": "같은 방문 번호가 2일 이상 방문한 비율. 번호는 브라우저 저장소 기준이라 브라우저·기기를 바꾸거나 저장소를 지우면 새 방문자로 셈해요.",
- "rate": 2.0
+ "rate": 2.6
 }
