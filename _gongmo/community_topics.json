@@ -1,14 +1,14 @@
 {
  "date": "2026-11-24",
- "updated": "2026-11-24 06:50",
+ "updated": "2026-11-24 07:50",
  "sites": 13,
- "npost": 2911,
+ "npost": 2906,
  "note": "출처(커뮤니티)별 집계예요. 작성자·연령·성별 정보는 수집하지 않아요. posts 는 이슈별로 뽑힌 일부라 전체 글 수가 아니에요.",
  "sources": [
   {
    "name": "MLB파크",
-   "np": 13,
-   "nc": 627,
+   "np": 14,
+   "nc": 618,
    "topics": [
     {
      "t": "박지윤 패드립 카톡 내용",
@@ -55,8 +55,8 @@
      "issue_np": 3,
      "issue_nc": 59,
      "kw": [
-      "사망",
       "마라톤",
+      "사망",
       "사고"
      ],
      "top_post": {
@@ -90,8 +90,8 @@
      "issue_np": 5,
      "issue_nc": 68,
      "kw": [
-      "이부진",
-      "아들"
+      "아들",
+      "이부진"
      ],
      "top_post": {
       "t": "삼성 이부진 아들 근황 ㄷㄷㄷ",
@@ -107,34 +107,15 @@
      "issue_np": 4,
      "issue_nc": 47,
      "kw": [
-      "아이유",
-      "솔로",
       "입성",
-      "최초"
+      "최초",
+      "아이유",
+      "솔로"
      ],
      "top_post": {
       "t": "아이유, 韓 여성 솔로 최초 도쿄돔 입성",
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611230120268248&m=view",
       "nc": 47
-     }
-    },
-    {
-     "t": "변호사 피셜) 현재 커맨더지코 임금체불보다 심각한 문제",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 24,
-     "issue_np": 3,
-     "issue_nc": 24,
-     "kw": [
-      "피셜",
-      "체불",
-      "커맨더지코",
-      "임금"
-     ],
-     "top_post": {
-      "t": "커맨더지코 피셜 빚 액수",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611230120270567&m=view",
-      "nc": 24
      }
     },
     {
@@ -145,13 +126,184 @@
      "issue_np": 3,
      "issue_nc": 29,
      "kw": [
-      "연락",
-      "친구"
+      "친구",
+      "연락"
      ],
      "top_post": {
       "t": "친구 외조모상에 조의금 보냈는데 연락이없네요",
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611230120272826&m=view",
       "nc": 23
+     }
+    },
+    {
+     "t": "젠슨황 복귀여론의 현실..",
+     "nsite": 3,
+     "np_here": 2,
+     "nc_here": 15,
+     "issue_np": 13,
+     "issue_nc": 15,
+     "kw": [
+      "복귀",
+      "젠슨 황",
+      "여론"
+     ],
+     "top_post": {
+      "t": "고경표는 여론보니까 복귀 가능하겠는데요",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611240120283485&m=view",
+      "nc": 9
+     }
+    }
+   ]
+  },
+  {
+   "name": "개드립",
+   "np": 9,
+   "nc": 154,
+   "topics": [
+    {
+     "t": "121만부 찍은 해외 유튜브에 올라온 한국 빈민가ㅎㄷㄷ",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 31,
+     "issue_np": 4,
+     "issue_nc": 31,
+     "kw": [
+      "한국",
+      "해외",
+      "빈민가",
+      "유튜브"
+     ],
+     "top_post": {
+      "t": "해외트윗 \"한국 미의 기준\"",
+      "u": "https://www.dogdrip.net/dogdrip/736289756?sort_index=popular&page=1",
+      "nc": 31
+     }
+    },
+    {
+     "t": "일본 다카이치 총리가 중국 방문했을 때 환영 인원이 적었던 이유.",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 31,
+     "issue_np": 3,
+     "issue_nc": 31,
+     "kw": [
+      "총리",
+      "일본",
+      "중국",
+      "다카이치"
+     ],
+     "top_post": {
+      "t": "일본 다카이치 총리가 중국 방문했을 때 환영 인원이 적었던 이유.",
+      "u": "https://www.dogdrip.net/dogdrip/736167901?sort_index=popular&page=1",
+      "nc": 31
+     }
+    },
+    {
+     "t": "엑셀방송 2년 했다는 스트리머의 수익",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 27,
+     "issue_np": 3,
+     "issue_nc": 30,
+     "kw": [
+      "엑셀",
+      "방송",
+      "수익"
+     ],
+     "top_post": {
+      "t": "엑셀방송 2년 했다는 스트리머의 수익",
+      "u": "https://www.dogdrip.net/dogdrip/736103398?sort_index=popular&page=1",
+      "nc": 27
+     }
+    },
+    {
+     "t": "넌 무슨 고백을 카톡으로 하냐?",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 20,
+     "issue_np": 3,
+     "issue_nc": 22,
+     "kw": [
+      "카톡",
+      "고백"
+     ],
+     "top_post": {
+      "t": "넌 무슨 고백을 카톡으로 하냐?",
+      "u": "https://www.dogdrip.net/dogdrip/736099624?sort_index=popular&page=1",
+      "nc": 20
+     }
+    },
+    {
+     "t": "수원 불법유턴 사고 ㄷㄷ",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 12,
+     "issue_np": 4,
+     "issue_nc": 16,
+     "kw": [
+      "수원",
+      "불법",
+      "유턴",
+      "사고"
+     ],
+     "top_post": {
+      "t": "수원 불법유턴 사고 ㄷㄷ",
+      "u": "https://www.dogdrip.net/dogdrip/736135691?sort_index=popular&page=1",
+      "nc": 12
+     }
+    },
+    {
+     "t": "돈 필요없는 세상 온다던 AI회사 대표 근황",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 12,
+     "issue_np": 3,
+     "issue_nc": 15,
+     "kw": [
+      "AI",
+      "세상",
+      "대표",
+      "회사"
+     ],
+     "top_post": {
+      "t": "돈 필요없는 세상 온다던 AI회사 대표 근황",
+      "u": "https://www.dogdrip.net/dogdrip/736259895?sort_index=popular&page=1",
+      "nc": 12
+     }
+    },
+    {
+     "t": "학폭 기록 때문에 수시 전부 떨어진 아들",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 8,
+     "issue_np": 6,
+     "issue_nc": 14,
+     "kw": [
+      "수시",
+      "기록",
+      "아들"
+     ],
+     "top_post": {
+      "t": "학폭 기록 때문에 수시 전부 떨어진 아들 ㄷㄷㄷ;;;",
+      "u": "https://www.dogdrip.net/dogdrip/736167822?sort_index=popular&page=1",
+      "nc": 8
+     }
+    },
+    {
+     "t": "일본인 한국 병원 후기",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 7,
+     "issue_np": 5,
+     "issue_nc": 8,
+     "kw": [
+      "일본인",
+      "한국"
+     ],
+     "top_post": {
+      "t": "한국서 일하는 일본인이 느끼는 한국인특징",
+      "u": "https://www.dogdrip.net/dogdrip/736237973?sort_index=popular&page=1",
+      "nc": 7
      }
     }
    ]
@@ -169,8 +321,8 @@
      "issue_np": 14,
      "issue_nc": 132,
      "kw": [
-      "시장",
       "주식",
+      "시장",
       "정부",
       "책임"
      ],
@@ -205,8 +357,8 @@
      "issue_np": 5,
      "issue_nc": 68,
      "kw": [
-      "이부진",
-      "아들"
+      "아들",
+      "이부진"
      ],
      "top_post": {
       "t": "이부진 아들의 성을 개명했다네요.",
@@ -216,15 +368,16 @@
     },
     {
      "t": "젠슨황 ceo 복귀했대요",
-     "nsite": 3,
+     "nsite": 4,
      "np_here": 1,
      "nc_here": 19,
-     "issue_np": 3,
-     "issue_nc": 27,
+     "issue_np": 4,
+     "issue_nc": 43,
      "kw": [
       "젠슨",
       "복귀",
-      "속보"
+      "속보",
+      "CEO"
      ],
      "top_post": {
       "t": "젠슨황 ceo 복귀했대요",
@@ -295,7 +448,7 @@
       "네이버",
       "페이",
       "랜덤",
-      "라이브"
+      "보험"
      ],
      "top_post": {
       "t": "네이버페이 줍줍",
@@ -318,9 +471,9 @@
      "issue_np": 3,
      "issue_nc": 91,
      "kw": [
-      "행위",
       "수능",
-      "부정"
+      "부정",
+      "행위"
      ],
      "top_post": {
       "t": "수능 부정행위 단속 총정리",
@@ -337,9 +490,9 @@
      "issue_nc": 69,
      "kw": [
       "지갑",
-      "런닝맨",
       "명품",
-      "난리"
+      "난리",
+      "온에어"
      ],
      "top_post": {
       "t": "오늘자 온에어 난리난 런닝맨 명품지갑 논란.",
@@ -350,162 +503,9 @@
    ]
   },
   {
-   "name": "개드립",
-   "np": 9,
-   "nc": 128,
-   "topics": [
-    {
-     "t": "일본 다카이치 총리가 중국 방문했을 때 환영 인원이 적었던 이유.",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 31,
-     "issue_np": 3,
-     "issue_nc": 31,
-     "kw": [
-      "일본",
-      "중국",
-      "총리",
-      "다카이치"
-     ],
-     "top_post": {
-      "t": "일본 다카이치 총리가 중국 방문했을 때 환영 인원이 적었던 이유.",
-      "u": "https://www.dogdrip.net/dogdrip/736167901?sort_index=popular&page=1",
-      "nc": 31
-     }
-    },
-    {
-     "t": "엑셀방송 2년 했다는 스트리머의 수익",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 27,
-     "issue_np": 3,
-     "issue_nc": 30,
-     "kw": [
-      "엑셀",
-      "방송",
-      "수익"
-     ],
-     "top_post": {
-      "t": "엑셀방송 2년 했다는 스트리머의 수익",
-      "u": "https://www.dogdrip.net/dogdrip/736103398?sort_index=popular&page=1",
-      "nc": 27
-     }
-    },
-    {
-     "t": "넌 무슨 고백을 카톡으로 하냐?",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 20,
-     "issue_np": 3,
-     "issue_nc": 22,
-     "kw": [
-      "고백",
-      "카톡"
-     ],
-     "top_post": {
-      "t": "넌 무슨 고백을 카톡으로 하냐?",
-      "u": "https://www.dogdrip.net/dogdrip/736099624?sort_index=popular&page=1",
-      "nc": 20
-     }
-    },
-    {
-     "t": "수원 불법유턴 사고 ㄷㄷ",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 12,
-     "issue_np": 4,
-     "issue_nc": 16,
-     "kw": [
-      "불법",
-      "사고",
-      "수원",
-      "유턴"
-     ],
-     "top_post": {
-      "t": "수원 불법유턴 사고 ㄷㄷ",
-      "u": "https://www.dogdrip.net/dogdrip/736135691?sort_index=popular&page=1",
-      "nc": 12
-     }
-    },
-    {
-     "t": "돈 필요없는 세상 온다던 AI회사 대표 근황",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 9,
-     "issue_np": 3,
-     "issue_nc": 9,
-     "kw": [
-      "AI",
-      "세상",
-      "회사",
-      "대표"
-     ],
-     "top_post": {
-      "t": "돈 필요없는 세상 온다던 AI회사 대표 근황",
-      "u": "https://www.dogdrip.net/dogdrip/736259895?sort_index=popular&page=1",
-      "nc": 9
-     }
-    },
-    {
-     "t": "학폭 기록 때문에 수시 전부 떨어진 아들",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 8,
-     "issue_np": 6,
-     "issue_nc": 14,
-     "kw": [
-      "수시",
-      "기록",
-      "아들"
-     ],
-     "top_post": {
-      "t": "학폭 기록 때문에 수시 전부 떨어진 아들 ㄷㄷㄷ;;;",
-      "u": "https://www.dogdrip.net/dogdrip/736167822?sort_index=popular&page=1",
-      "nc": 8
-     }
-    },
-    {
-     "t": "성인되자 성전환한 이부진 사장 아들",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 8,
-     "issue_np": 4,
-     "issue_nc": 8,
-     "kw": [
-      "사장",
-      "아들",
-      "성인",
-      "이부진"
-     ],
-     "top_post": {
-      "t": "성인되자 성전환한 이부진 사장 아들",
-      "u": "https://www.dogdrip.net/dogdrip/736174325?sort_index=popular&page=1",
-      "nc": 8
-     }
-    },
-    {
-     "t": "일본인 한국 병원 후기",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 7,
-     "issue_np": 5,
-     "issue_nc": 8,
-     "kw": [
-      "일본인",
-      "한국"
-     ],
-     "top_post": {
-      "t": "한국서 일하는 일본인이 느끼는 한국인특징",
-      "u": "https://www.dogdrip.net/dogdrip/736237973?sort_index=popular&page=1",
-      "nc": 7
-     }
-    }
-   ]
-  },
-  {
    "name": "클리앙",
    "np": 9,
-   "nc": 114,
+   "nc": 117,
    "topics": [
     {
      "t": "주식에 있어 정부 책임이 없는건 아닙니다",
@@ -515,8 +515,8 @@
      "issue_np": 14,
      "issue_nc": 132,
      "kw": [
-      "시장",
       "주식",
+      "시장",
       "정부",
       "책임"
      ],
@@ -534,8 +534,8 @@
      "issue_np": 4,
      "issue_nc": 24,
      "kw": [
-      "당원",
       "천지",
+      "당원",
       "일치",
       "추산"
      ],
@@ -564,20 +564,40 @@
     },
     {
      "t": "젠슨황 ceo 복귀했대요",
-     "nsite": 3,
+     "nsite": 4,
      "np_here": 1,
      "nc_here": 8,
-     "issue_np": 3,
-     "issue_nc": 27,
+     "issue_np": 4,
+     "issue_nc": 43,
      "kw": [
       "젠슨",
       "복귀",
-      "속보"
+      "속보",
+      "CEO"
      ],
      "top_post": {
       "t": "젠슨황 복귀",
       "u": "https://www.clien.net/service/board/park/19297554?od=T33&po=0&category=0&groupCd=clien_all",
       "nc": 8
+     }
+    },
+    {
+     "t": "돈 필요없는 세상 온다던 AI회사 대표 근황",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 3,
+     "issue_np": 3,
+     "issue_nc": 15,
+     "kw": [
+      "AI",
+      "세상",
+      "대표",
+      "회사"
+     ],
+     "top_post": {
+      "t": "HW도 이제는 AI 없으면 일을 못하는 세상이 되었습니다.",
+      "u": "https://www.clien.net/service/board/park/19297654?od=T33&po=0&category=0&groupCd=clien_all",
+      "nc": 3
      }
     },
     {
@@ -598,32 +618,93 @@
       "u": "https://www.clien.net/service/board/cm_stock/19297559?od=T33&po=0&category=0&groupCd=clien_all",
       "nc": 1
      }
-    },
+    }
+   ]
+  },
+  {
+   "name": "아카라이브",
+   "np": 4,
+   "nc": 46,
+   "topics": [
     {
-     "t": "돈 필요없는 세상 온다던 AI회사 대표 근황",
-     "nsite": 3,
+     "t": "젠슨황 ceo 복귀했대요",
+     "nsite": 4,
      "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 9,
+     "nc_here": 16,
+     "issue_np": 4,
+     "issue_nc": 43,
      "kw": [
-      "AI",
-      "세상",
-      "회사",
-      "대표"
+      "젠슨",
+      "복귀",
+      "속보",
+      "CEO"
      ],
      "top_post": {
-      "t": "HW도 이제는 AI 없으면 일을 못하는 세상이 되었습니다.",
-      "u": "https://www.clien.net/service/board/park/19297654?od=T33&po=0&category=0&groupCd=clien_all",
-      "nc": 0
+      "t": "젠슨 황 트위터에 CEO 다시 써놓음 ㅋㅋㅋ",
+      "u": "https://arca.live/b/live/190061529?p=1",
+      "nc": 16
+     }
+    },
+    {
+     "t": "요즘 인생에서 가장힘들지만 행복한것",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 14,
+     "issue_np": 3,
+     "issue_nc": 66,
+     "kw": [
+      "행복",
+      "인생"
+     ],
+     "top_post": {
+      "t": "브붕이 지금이 인생에서 손꼽힐만큼 행복한 순간 같음",
+      "u": "https://arca.live/b/live/189941025?p=1",
+      "nc": 14
+     }
+    },
+    {
+     "t": "삼성 AI안경 관심있네요",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 10,
+     "issue_np": 5,
+     "issue_nc": 12,
+     "kw": [
+      "안경",
+      "AI",
+      "탑골공원",
+      "바둑"
+     ],
+     "top_post": {
+      "t": "\"AI 안경? 넌 더 이상 학생이라고 불릴 자격이 없어.\"",
+      "u": "https://arca.live/b/live/189991309?p=1",
+      "nc": 10
+     }
+    },
+    {
+     "t": "ㅅㄱㅂㄱ 일론머스크의 최애넝담",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 6,
+     "issue_np": 4,
+     "issue_nc": 7,
+     "kw": [
+      "일론",
+      "머스크",
+      "최애넝담"
+     ],
+     "top_post": {
+      "t": "ㅅㄱㅂㄱ 일론머스크의 최애넝담",
+      "u": "https://arca.live/b/live/189900103?p=1",
+      "nc": 6
      }
     }
    ]
   },
   {
    "name": "보배드림",
-   "np": 17,
-   "nc": 42,
+   "np": 16,
+   "nc": 39,
    "topics": [
     {
      "t": "박지윤 패드립 카톡 내용",
@@ -663,24 +744,6 @@
      }
     },
     {
-     "t": "ㅅㄱㅂㄱ 일론머스크의 최애넝담",
-     "nsite": 4,
-     "np_here": 2,
-     "nc_here": 4,
-     "issue_np": 5,
-     "issue_nc": 10,
-     "kw": [
-      "머스크",
-      "일론",
-      "최애넝담"
-     ],
-     "top_post": {
-      "t": "일론 머스크가 구상하는 앞으로 다가올 미래",
-      "u": "https://www.bobaedream.co.kr/view?code=best&No=1049381&vdate=",
-      "nc": 3
-     }
-    },
-    {
      "t": "수원 불법유턴 사고 ㄷㄷ",
      "nsite": 3,
      "np_here": 2,
@@ -688,10 +751,10 @@
      "issue_np": 4,
      "issue_nc": 16,
      "kw": [
-      "불법",
-      "사고",
       "수원",
-      "유턴"
+      "불법",
+      "유턴",
+      "사고"
      ],
      "top_post": {
       "t": "수원 불법유턴 사고",
@@ -725,8 +788,8 @@
      "issue_np": 3,
      "issue_nc": 59,
      "kw": [
-      "사망",
       "마라톤",
+      "사망",
       "사고"
      ],
      "top_post": {
@@ -769,66 +832,24 @@
       "u": "https://www.bobaedream.co.kr/view?code=best&No=1049534&vdate=",
       "nc": 3
      }
-    }
-   ]
-  },
-  {
-   "name": "아카라이브",
-   "np": 3,
-   "nc": 30,
-   "topics": [
-    {
-     "t": "요즘 인생에서 가장힘들지만 행복한것",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 14,
-     "issue_np": 3,
-     "issue_nc": 66,
-     "kw": [
-      "행복",
-      "인생"
-     ],
-     "top_post": {
-      "t": "브붕이 지금이 인생에서 손꼽힐만큼 행복한 순간 같음",
-      "u": "https://arca.live/b/live/189941025?p=1",
-      "nc": 14
-     }
     },
     {
      "t": "삼성 AI안경 관심있네요",
      "nsite": 4,
      "np_here": 1,
-     "nc_here": 10,
+     "nc_here": 2,
      "issue_np": 5,
      "issue_nc": 12,
      "kw": [
       "안경",
       "AI",
-      "바둑",
-      "탑골공원"
+      "탑골공원",
+      "바둑"
      ],
      "top_post": {
-      "t": "\"AI 안경? 넌 더 이상 학생이라고 불릴 자격이 없어.\"",
-      "u": "https://arca.live/b/live/189991309?p=1",
-      "nc": 10
-     }
-    },
-    {
-     "t": "ㅅㄱㅂㄱ 일론머스크의 최애넝담",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 6,
-     "issue_np": 5,
-     "issue_nc": 10,
-     "kw": [
-      "머스크",
-      "일론",
-      "최애넝담"
-     ],
-     "top_post": {
-      "t": "ㅅㄱㅂㄱ 일론머스크의 최애넝담",
-      "u": "https://arca.live/b/live/189900103?p=1",
-      "nc": 6
+      "t": "AI 안경끼고 탑골공원 바둑 털었다는 디시인",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1049447&vdate=",
+      "nc": 2
      }
     }
    ]
@@ -846,9 +867,9 @@
      "issue_np": 3,
      "issue_nc": 91,
      "kw": [
-      "행위",
       "수능",
-      "부정"
+      "부정",
+      "행위"
      ],
      "top_post": {
       "t": "수능 부정행위 1020대뿐만 아니라 그 나잇대 자식을 둔 4050대도 다 분노하는 주제잖음 얼굴+개...",
@@ -864,8 +885,8 @@
      "issue_np": 3,
      "issue_nc": 29,
      "kw": [
-      "연락",
-      "친구"
+      "친구",
+      "연락"
      ],
      "top_post": {
       "t": "조금 연락하다가 얼굴 봤는데 내가 친구없다하니깐 심심할때 자기 불러라 맛있는 밥 ...",
@@ -898,8 +919,8 @@
      "issue_np": 3,
      "issue_nc": 8,
      "kw": [
-      "엄마",
-      "아빠"
+      "아빠",
+      "엄마"
      ],
      "top_post": {
       "t": "엄마아빠 길 땜에 차에서 한시간 냉전ㅠㅠ",
@@ -916,9 +937,9 @@
      "issue_nc": 69,
      "kw": [
       "지갑",
-      "런닝맨",
       "명품",
-      "난리"
+      "난리",
+      "온에어"
      ],
      "top_post": {
       "t": "온에어 달리면서 난리났던 런닝맨 명품지갑 사연 돈 문제에 있어 조금 찌질한 남친...",
@@ -930,7 +951,7 @@
   },
   {
    "name": "루리웹",
-   "np": 30,
+   "np": 31,
    "nc": 0,
    "topics": [
     {
@@ -948,6 +969,44 @@
      "top_post": {
       "t": "의외로 남자들이 좋아하는 여자 스타일",
       "u": "https://bbs.ruliweb.com/best/board/300143/read/77493031?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "젠슨황 ceo 복귀했대요",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 43,
+     "kw": [
+      "젠슨",
+      "복귀",
+      "속보",
+      "CEO"
+     ],
+     "top_post": {
+      "t": "복귀한 젠슨황 근황",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77499064?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "121만부 찍은 해외 유튜브에 올라온 한국 빈민가ㅎㄷㄷ",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 31,
+     "kw": [
+      "한국",
+      "해외",
+      "빈민가",
+      "유튜브"
+     ],
+     "top_post": {
+      "t": "해외 유튜브에 올라온 한국 빈민가…",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77493407?m=all&t=now",
       "nc": 0
      }
     },
@@ -996,30 +1055,12 @@
      "kw": [
       "안경",
       "AI",
-      "바둑",
-      "탑골공원"
+      "탑골공원",
+      "바둑"
      ],
      "top_post": {
       "t": "AI 안경끼고 탑골공원 바둑 털었다는 사람",
       "u": "https://bbs.ruliweb.com/best/board/300143/read/77498671?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "ㅅㄱㅂㄱ 일론머스크의 최애넝담",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 10,
-     "kw": [
-      "머스크",
-      "일론",
-      "최애넝담"
-     ],
-     "top_post": {
-      "t": "일론머스크 : 램값이 너무 올랐어요 ㅠㅠㅠ",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77498831?m=all&t=now",
       "nc": 0
      }
     },
@@ -1058,25 +1099,6 @@
       "u": "https://bbs.ruliweb.com/best/board/300143/read/77496351?m=all&t=now",
       "nc": 0
      }
-    },
-    {
-     "t": "달려라달려‍‍네이버페이10원+10원+1원+1원+1원+15원+15원+15원+15원+15원+15원+15원+15…",
-     "nsite": 4,
-     "np_here": 3,
-     "nc_here": 0,
-     "issue_np": 7,
-     "issue_nc": 5,
-     "kw": [
-      "네이버",
-      "페이",
-      "랜덤",
-      "라이브"
-     ],
-     "top_post": {
-      "t": "핫딜 [네이버페이] 라방 랜덤 5원",
-      "u": "https://bbs.ruliweb.com/market/board/1020/read/109270",
-      "nc": 0
-     }
     }
    ]
   },
@@ -1085,6 +1107,25 @@
    "np": 6,
    "nc": 0,
    "topics": [
+    {
+     "t": "121만부 찍은 해외 유튜브에 올라온 한국 빈민가ㅎㄷㄷ",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 31,
+     "kw": [
+      "한국",
+      "해외",
+      "빈민가",
+      "유튜브"
+     ],
+     "top_post": {
+      "t": "121만부 찍은 해외 유튜브에 올라온 한국 빈민가ㅎㄷㄷ",
+      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=678023",
+      "nc": 0
+     }
+    },
     {
      "t": "수출 1조달러 세계 4위 - 반도체 빼면.gisa",
      "nsite": 4,
@@ -1130,8 +1171,8 @@
      "kw": [
       "안경",
       "AI",
-      "바둑",
-      "탑골공원"
+      "탑골공원",
+      "바둑"
      ],
      "top_post": {
       "t": "삼성 AI안경 관심있네요",
@@ -1147,9 +1188,9 @@
      "issue_np": 3,
      "issue_nc": 31,
      "kw": [
+      "총리",
       "일본",
       "중국",
-      "총리",
       "다카이치"
      ],
      "top_post": {
@@ -1166,112 +1207,12 @@
      "issue_np": 3,
      "issue_nc": 8,
      "kw": [
-      "GTA",
-      "게임"
+      "게임",
+      "GTA"
      ],
      "top_post": {
       "t": "내일 모레 50인데 GTA6 가능한가요(스타1 이후 게임 안함)",
       "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=678010",
-      "nc": 0
-     }
-    },
-    {
-     "t": "성인되자 성전환한 이부진 사장 아들",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 8,
-     "kw": [
-      "사장",
-      "아들",
-      "성인",
-      "이부진"
-     ],
-     "top_post": {
-      "t": "[속보] 이부진 사장 아들, 성인되자 아버지 성 임씨 버리고 어머니 성 이씨로",
-      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677990",
-      "nc": 0
-     }
-    }
-   ]
-  },
-  {
-   "name": "디시인사이드",
-   "np": 4,
-   "nc": 0,
-   "topics": [
-    {
-     "t": "ㅅㄱㅂㄱ 일론머스크의 최애넝담",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 10,
-     "kw": [
-      "머스크",
-      "일론",
-      "최애넝담"
-     ],
-     "top_post": {
-      "t": "ㅅㄱㅂㄱ 일론머스크의 최애넝담",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=480885&_dcbest=1&page=1",
-      "nc": 0
-     }
-    },
-    {
-     "t": "수능 부정행위 단속 총정리",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 91,
-     "kw": [
-      "행위",
-      "수능",
-      "부정"
-     ],
-     "top_post": {
-      "t": "교육부 \"작년 수능 부정행위 전수조사 안한다\"",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481106&_dcbest=1&page=1",
-      "nc": 0
-     }
-    },
-    {
-     "t": "친명 박선원 “신천지 당원 1만4388명 일치…4만3000명 추산”",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 24,
-     "kw": [
-      "당원",
-      "천지",
-      "일치",
-      "추산"
-     ],
-     "top_post": {
-      "t": "與박선원 “당내 신천지 당원 1만4388명 일치…4만3000명 추산”",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481131&_dcbest=1&page=1",
-      "nc": 0
-     }
-    },
-    {
-     "t": "변호사 피셜) 현재 커맨더지코 임금체불보다 심각한 문제",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 24,
-     "kw": [
-      "피셜",
-      "체불",
-      "커맨더지코",
-      "임금"
-     ],
-     "top_post": {
-      "t": "변호사 피셜) 현재 커맨더지코 임금체불보다 심각한 문제",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481158&_dcbest=1&page=1",
       "nc": 0
      }
     }
@@ -1279,9 +1220,28 @@
   },
   {
    "name": "더쿠",
-   "np": 6,
+   "np": 7,
    "nc": 0,
    "topics": [
+    {
+     "t": "121만부 찍은 해외 유튜브에 올라온 한국 빈민가ㅎㄷㄷ",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 31,
+     "kw": [
+      "한국",
+      "해외",
+      "빈민가",
+      "유튜브"
+     ],
+     "top_post": {
+      "t": "한국인도 모르는 한국 빈민가",
+      "u": "https://theqoo.net/hot/4415645605",
+      "nc": 0
+     }
+    },
     {
      "t": "젠슨 황 엔비디아 CEO 복귀, 이사회 만장일치",
      "nsite": 4,
@@ -1312,7 +1272,7 @@
       "네이버",
       "페이",
       "랜덤",
-      "라이브"
+      "보험"
      ],
      "top_post": {
       "t": "달려라달려‍‍네이버페이10원+10원+1원+1원+1원+15원+15원+15원+15원+15원+15원+15원+15원+5원+1원+1원+랜덤 눌러봐++1…",
@@ -1329,9 +1289,9 @@
      "issue_nc": 69,
      "kw": [
       "지갑",
-      "런닝맨",
       "명품",
-      "난리"
+      "난리",
+      "온에어"
      ],
      "top_post": {
       "t": "오늘 케톡 온에어 달리면서 난리났던 런닝맨 명품지갑 사연",
@@ -1347,8 +1307,8 @@
      "issue_np": 5,
      "issue_nc": 68,
      "kw": [
-      "이부진",
-      "아들"
+      "아들",
+      "이부진"
      ],
      "top_post": {
       "t": "이부진 아들, 엄마 성으로 바꿨다…임씨에서 이씨로",
@@ -1364,10 +1324,10 @@
      "issue_np": 4,
      "issue_nc": 47,
      "kw": [
-      "아이유",
-      "솔로",
       "입성",
-      "최초"
+      "최초",
+      "아이유",
+      "솔로"
      ],
      "top_post": {
       "t": "아이유, 한국 여자 솔로 가수 최초 ‘도쿄돔’ 입성한다…2027 월드투어 포문",
@@ -1383,9 +1343,9 @@
      "issue_np": 3,
      "issue_nc": 31,
      "kw": [
+      "총리",
       "일본",
       "중국",
-      "총리",
       "다카이치"
      ],
      "top_post": {
@@ -1415,6 +1375,86 @@
      "top_post": {
       "t": "일본인 한국 병원 후기",
       "u": "https://www.todayhumor.co.kr/board/view.php?table=bestofbest&no=484138&s_no=484138&page=1",
+      "nc": 0
+     }
+    }
+   ]
+  },
+  {
+   "name": "디시인사이드",
+   "np": 4,
+   "nc": 0,
+   "topics": [
+    {
+     "t": "ㅅㄱㅂㄱ 일론머스크의 최애넝담",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 7,
+     "kw": [
+      "일론",
+      "머스크",
+      "최애넝담"
+     ],
+     "top_post": {
+      "t": "ㅅㄱㅂㄱ 일론머스크의 최애넝담",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=480885&_dcbest=1&page=1",
+      "nc": 0
+     }
+    },
+    {
+     "t": "수능 부정행위 단속 총정리",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 91,
+     "kw": [
+      "수능",
+      "부정",
+      "행위"
+     ],
+     "top_post": {
+      "t": "교육부 \"작년 수능 부정행위 전수조사 안한다\"",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481106&_dcbest=1&page=1",
+      "nc": 0
+     }
+    },
+    {
+     "t": "친명 박선원 “신천지 당원 1만4388명 일치…4만3000명 추산”",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 24,
+     "kw": [
+      "천지",
+      "당원",
+      "일치",
+      "추산"
+     ],
+     "top_post": {
+      "t": "與박선원 “당내 신천지 당원 1만4388명 일치…4만3000명 추산”",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481131&_dcbest=1&page=1",
+      "nc": 0
+     }
+    },
+    {
+     "t": "젠슨황 복귀여론의 현실..",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 13,
+     "issue_nc": 15,
+     "kw": [
+      "복귀",
+      "젠슨 황",
+      "여론"
+     ],
+     "top_post": {
+      "t": "젠슨황 복귀여론의 현실..",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=480888&_dcbest=1&page=1",
       "nc": 0
      }
     }
