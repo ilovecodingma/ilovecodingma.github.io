@@ -1,31 +1,25 @@
 {
- "at": "2026-11-24 12:30",
+ "at": "2026-11-24 13:30",
  "nitems": 527,
  "cands": [
   {
    "kw": "결혼",
-   "nsrc": 8,
+   "nsrc": 7,
    "srcs": [
     "SBS",
     "뉴시스",
-    "동아일보",
     "세계일보",
     "연합뉴스",
     "조선일보",
     "한겨레",
     "헤럴드경제"
    ],
-   "n": 15,
+   "n": 14,
    "headlines": [
     {
      "src": "연합뉴스",
      "title": "배우 이가섭, 비연예인과 결혼…\"오랜 시간 든든한 버팀목\"",
      "link": "https://www.yna.co.kr/view/AKR20261119085400005"
-    },
-    {
-     "src": "동아일보",
-     "title": "‘결혼 지옥’ 10살 딸 “부모 싸움 꿈에도 나와”…부부 눈물",
-     "link": "https://sports.donga.com/ent/article/all/20261124/135078153/1"
     },
     {
      "src": "한겨레",
@@ -36,6 +30,11 @@
      "src": "세계일보",
      "title": "박강균·구혜리, 5년 열애 끝 결혼…‘오징어커플’ 실제 부부 된다",
      "link": "https://www.segye.com/newsView/20261123512263"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "‘47세’ 성시경, “좋은 타이밍에 결혼 했었으면...”",
+     "link": "https://biz.heraldcorp.com/article/10946776"
     }
    ]
   },
@@ -86,7 +85,7 @@
     "연합뉴스",
     "조선일보"
    ],
-   "n": 21,
+   "n": 22,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -261,8 +260,18 @@
     "조선일보",
     "헤럴드경제"
    ],
-   "n": 8,
+   "n": 10,
    "headlines": [
+    {
+     "src": "동아일보",
+     "title": "추성훈 은퇴 심경 “슬프냐고? 이제 시작” (상남자의 여행법)",
+     "link": "https://sports.donga.com/ent/article/all/20261124/135080229/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "추성훈, 故부친과 은퇴전…♥야노시호·추사랑 눈물 (상남자)",
+     "link": "https://sports.donga.com/ent/article/all/20261124/135080175/1"
+    },
     {
      "src": "동아일보",
      "title": "추성훈 은퇴전에 추사랑도 뭉클…“용돈 괜찮으니 이제 아프지 마”",
@@ -272,16 +281,41 @@
      "src": "세계일보",
      "title": "추성훈 은퇴하자 딸 추사랑이 전한 진심…“용돈은 괜찮아”",
      "link": "https://www.segye.com/newsView/20261124503189"
+    }
+   ]
+  },
+  {
+   "kw": "최초",
+   "nsrc": 6,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "세계일보",
+    "연합뉴스",
+    "조선일보",
+    "한겨레"
+   ],
+   "n": 7,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "BTS, 日 누적 스트리밍 100억회…해외 가수 최초 기록",
+     "link": "https://www.yna.co.kr/view/AKR20261120108900005"
     },
     {
-     "src": "헤럴드경제",
-     "title": "‘은퇴’ 추성훈 안고 오열한 딸 추사랑…“용돈은 괜찮으니 이제 아프지 마”",
-     "link": "https://biz.heraldcorp.com/article/10947011"
+     "src": "한겨레",
+     "title": "아이유, 케이팝 여성 솔로 가수 최초 도쿄돔 선다…4월7~8일 이틀간",
+     "link": "https://www.hani.co.kr/arti/culture/music/1288792.html"
+    },
+    {
+     "src": "세계일보",
+     "title": "엄은향, 임성한 작가 집 최초 공개…“너무 커서 내비게이션 켠다”",
+     "link": "https://www.segye.com/newsView/20261124509174"
     },
     {
      "src": "SBS",
-     "title": "\"내 인생 이제 시작\"…추성훈, 22년 격투기 인생 '마침표'",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008858020&plink=RSSLINK&cooper=RSSREADER"
+     "title": "'동상이몽2' 송진우, 지드래곤·스테픈 커리 얽힌 초특급 수집품 최초 공개…가격 추정 불가 스케일",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008860435&plink=RSSLINK&cooper=RSSREADER"
     }
    ]
   },
@@ -331,8 +365,13 @@
     "한겨레",
     "헤럴드경제"
    ],
-   "n": 6,
+   "n": 7,
    "headlines": [
+    {
+     "src": "동아일보",
+     "title": "추성훈 은퇴 심경 “슬프냐고? 이제 시작” (상남자의 여행법)",
+     "link": "https://sports.donga.com/ent/article/all/20261124/135080229/1"
+    },
     {
      "src": "동아일보",
      "title": "추성훈 은퇴전에 추사랑도 뭉클…“용돈 괜찮으니 이제 아프지 마”",
@@ -347,11 +386,6 @@
      "src": "헤럴드경제",
      "title": "‘은퇴’ 추성훈 안고 오열한 딸 추사랑…“용돈은 괜찮으니 이제 아프지 마”",
      "link": "https://biz.heraldcorp.com/article/10947011"
-    },
-    {
-     "src": "SBS",
-     "title": "\"내 인생 이제 시작\"…추성훈, 22년 격투기 인생 '마침표'",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008858020&plink=RSSLINK&cooper=RSSREADER"
     }
    ]
   },
@@ -399,7 +433,7 @@
     "연합뉴스",
     "조선일보"
    ],
-   "n": 11,
+   "n": 14,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -454,6 +488,40 @@
      "src": "연합뉴스",
      "title": "에이티즈, 새 미니앨범으로 첫 '더블 밀리언셀러'",
      "link": "https://www.yna.co.kr/view/AKR20261120043500005"
+    }
+   ]
+  },
+  {
+   "kw": "경찰",
+   "nsrc": 5,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "세계일보",
+    "연합뉴스",
+    "조선일보"
+   ],
+   "n": 9,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "경찰, 음주운전 고경표 1시간40분 조사…울먹이며 \"정말 죄송\"(종합2보)",
+     "link": "https://www.yna.co.kr/view/AKR20261123151352004"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "음주운전 배우 고경표 경찰 출석…\"무책임한 모습 죄송\"(종합)",
+     "link": "https://www.yna.co.kr/view/AKR20261123151351004"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "경찰, 음주운전 혐의 배우 고경표 오후 7시 출석 요구",
+     "link": "https://www.yna.co.kr/view/AKR20261123151300004"
+    },
+    {
+     "src": "세계일보",
+     "title": "음주운전 청소차 충돌 고경표, 사고 9일 만 경찰 출석…“무책임한 모습, 죄송하다”",
+     "link": "https://www.segye.com/newsView/20261123517254"
     }
    ]
   },
@@ -628,6 +696,40 @@
    ]
   },
   {
+   "kw": "대리수능",
+   "nsrc": 5,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "연합뉴스",
+    "조선일보",
+    "한국경제"
+   ],
+   "n": 6,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "\"수능 공정성 이슈 무겁게 느껴…'대리수능' 메시지에 집중하길\"",
+     "link": "https://www.yna.co.kr/view/AKR20261123091400005"
+    },
+    {
+     "src": "동아일보",
+     "title": "배현성, 순한 얼굴에 섬뜩한 야심…“내 수능 봐” (대리수능)",
+     "link": "https://sports.donga.com/ent/article/all/20261124/135079800/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "차강윤, 대리시험 들통…배현성과 위험한 거래 (대리수능)",
+     "link": "https://sports.donga.com/ent/article/all/20261124/135078325/1"
+    },
+    {
+     "src": "한국경제",
+     "title": "\"진지한 마음으로\"…'AI 컨닝' 사태 속 '대리수능', 공감 이끌까 [종합]",
+     "link": "https://www.hankyung.com/article/202611233940H"
+    }
+   ]
+  },
+  {
    "kw": "수능",
    "nsrc": 5,
    "srcs": [
@@ -662,36 +764,36 @@
    ]
   },
   {
-   "kw": "대리수능",
+   "kw": "도전",
    "nsrc": 5,
    "srcs": [
-    "뉴시스",
     "동아일보",
+    "세계일보",
     "연합뉴스",
     "조선일보",
-    "한국경제"
+    "헤럴드경제"
    ],
    "n": 6,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "\"수능 공정성 이슈 무겁게 느껴…'대리수능' 메시지에 집중하길\"",
-     "link": "https://www.yna.co.kr/view/AKR20261123091400005"
+     "title": "김신영, 14년 만에 '정오의 희망곡' 하차…\"또 다른 도전 위해\"",
+     "link": "https://www.yna.co.kr/view/AKR20261123072500005"
     },
     {
      "src": "동아일보",
-     "title": "배현성, 순한 얼굴에 섬뜩한 야심…“내 수능 봐” (대리수능)",
-     "link": "https://sports.donga.com/ent/article/all/20261124/135079800/1"
+     "title": "황신혜, 63세 첫 자전거 도전…제이쓴 코칭 (같이삽시다)",
+     "link": "https://sports.donga.com/ent/article/all/20261124/135080252/1"
     },
     {
      "src": "동아일보",
-     "title": "차강윤, 대리시험 들통…배현성과 위험한 거래 (대리수능)",
-     "link": "https://sports.donga.com/ent/article/all/20261124/135078325/1"
+     "title": "“라스타는 행복했다” 이세영, ‘재혼 황후’ 첫 악역 도전 마무리",
+     "link": "https://sports.donga.com/ent/article/all/20261124/135078293/1"
     },
     {
-     "src": "한국경제",
-     "title": "\"진지한 마음으로\"…'AI 컨닝' 사태 속 '대리수능', 공감 이끌까 [종합]",
-     "link": "https://www.hankyung.com/article/202611233940H"
+     "src": "세계일보",
+     "title": "J팝 그룹 투 에프 이, 한국 무대 도전 “우린작사·작곡·의상 다 만드는 리얼메이커…K팝 협업하고 싶어”",
+     "link": "https://www.segye.com/newsView/20261123512191"
     }
    ]
   },
@@ -730,40 +832,6 @@
    ]
   },
   {
-   "kw": "최초",
-   "nsrc": 5,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "연합뉴스",
-    "조선일보",
-    "한겨레"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "BTS, 日 누적 스트리밍 100억회…해외 가수 최초 기록",
-     "link": "https://www.yna.co.kr/view/AKR20261120108900005"
-    },
-    {
-     "src": "한겨레",
-     "title": "아이유, 케이팝 여성 솔로 가수 최초 도쿄돔 선다…4월7~8일 이틀간",
-     "link": "https://www.hani.co.kr/arti/culture/music/1288792.html"
-    },
-    {
-     "src": "SBS",
-     "title": "'동상이몽2' 송진우, 지드래곤·스테픈 커리 얽힌 초특급 수집품 최초 공개…가격 추정 불가 스케일",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008860435&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "뉴시스",
-     "title": "아이유, 韓 여성 솔로 최초 도쿄돔 입성…내년 4월 이틀간 단독 공연",
-     "link": "https://www.newsis.com/view/NISX20261124_0003880387"
-    }
-   ]
-  },
-  {
    "kw": "재혼",
    "nsrc": 5,
    "srcs": [
@@ -794,40 +862,6 @@
      "src": "헤럴드경제",
      "title": "“악플은 사양” 흑백요리사 유명 셰프 깜짝 재혼…백종원·안성재도 축하",
      "link": "https://biz.heraldcorp.com/article/10947057"
-    }
-   ]
-  },
-  {
-   "kw": "대시",
-   "nsrc": 5,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "연합뉴스",
-    "조선일보",
-    "헤럴드경제"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "박보경, 김서형 하차한 SBS 드라마 '대시' 합류",
-     "link": "https://www.yna.co.kr/view/AKR20261124074700005"
-    },
-    {
-     "src": "동아일보",
-     "title": "김서형 건강 악화로 ‘대시 하차…김보경 대체 투입 [공식]",
-     "link": "https://sports.donga.com/ent/article/all/20261124/135078690/1"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "배우 김서형 건강 악화로 SBS 새 드라마 ‘대시’에서 하차",
-     "link": "https://biz.heraldcorp.com/article/10947352"
-    },
-    {
-     "src": "뉴시스",
-     "title": "김서형, 건강 악화로 드라마 '대시' 하차…박보경 대체 투입",
-     "link": "https://www.newsis.com/view/NISX20261124_0003880341"
     }
    ]
   },
@@ -866,11 +900,11 @@
    ]
   },
   {
-   "kw": "도전",
+   "kw": "대시",
    "nsrc": 5,
    "srcs": [
+    "뉴시스",
     "동아일보",
-    "세계일보",
     "연합뉴스",
     "조선일보",
     "헤럴드경제"
@@ -879,23 +913,23 @@
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "김신영, 14년 만에 '정오의 희망곡' 하차…\"또 다른 도전 위해\"",
-     "link": "https://www.yna.co.kr/view/AKR20261123072500005"
+     "title": "박보경, 김서형 하차한 SBS 드라마 '대시' 합류",
+     "link": "https://www.yna.co.kr/view/AKR20261124074700005"
     },
     {
      "src": "동아일보",
-     "title": "“라스타는 행복했다” 이세영, ‘재혼 황후’ 첫 악역 도전 마무리",
-     "link": "https://sports.donga.com/ent/article/all/20261124/135078293/1"
-    },
-    {
-     "src": "세계일보",
-     "title": "J팝 그룹 투 에프 이, 한국 무대 도전 “우린작사·작곡·의상 다 만드는 리얼메이커…K팝 협업하고 싶어”",
-     "link": "https://www.segye.com/newsView/20261123512191"
+     "title": "김서형 건강 악화로 ‘대시 하차…김보경 대체 투입 [공식]",
+     "link": "https://sports.donga.com/ent/article/all/20261124/135078690/1"
     },
     {
      "src": "헤럴드경제",
-     "title": "김신영, 14년만에 MBC ‘정오의 희망곡’ DJ 하차…“새로운 도전”",
-     "link": "https://biz.heraldcorp.com/article/10945991"
+     "title": "배우 김서형 건강 악화로 SBS 새 드라마 ‘대시’에서 하차",
+     "link": "https://biz.heraldcorp.com/article/10947352"
+    },
+    {
+     "src": "뉴시스",
+     "title": "김서형, 건강 악화로 드라마 '대시' 하차…박보경 대체 투입",
+     "link": "https://www.newsis.com/view/NISX20261124_0003880341"
     }
    ]
   },
@@ -1000,39 +1034,6 @@
    ]
   },
   {
-   "kw": "경찰",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "세계일보",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 8,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "경찰, 음주운전 고경표 1시간40분 조사…울먹이며 \"정말 죄송\"(종합2보)",
-     "link": "https://www.yna.co.kr/view/AKR20261123151352004"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "음주운전 배우 고경표 경찰 출석…\"무책임한 모습 죄송\"(종합)",
-     "link": "https://www.yna.co.kr/view/AKR20261123151351004"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "경찰, 음주운전 혐의 배우 고경표 오후 7시 출석 요구",
-     "link": "https://www.yna.co.kr/view/AKR20261123151300004"
-    },
-    {
-     "src": "세계일보",
-     "title": "음주운전 청소차 충돌 고경표, 사고 9일 만 경찰 출석…“무책임한 모습, 죄송하다”",
-     "link": "https://www.segye.com/newsView/20261123517254"
-    }
-   ]
-  },
-  {
    "kw": "빅뱅",
    "nsrc": 4,
    "srcs": [
@@ -1095,6 +1096,105 @@
      "src": "조선일보",
      "title": "[단독] 이요원, '완벽한 타인2' 출연·전지현과 호흡..10년만 상업영화 복귀",
      "link": "https://www.chosun.com/entertainments/movie/2026/11/24/GRSTCY3EMQ2TEMLFGVQWKZJTMY/"
+    }
+   ]
+  },
+  {
+   "kw": "눈물",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "동아일보",
+    "연합뉴스",
+    "조선일보"
+   ],
+   "n": 8,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "로이킴, 13년만 첫 KSPO돔 입성…\"노래로 눈물 닦였기를\"",
+     "link": "https://www.yna.co.kr/view/AKR20261120178900005"
+    },
+    {
+     "src": "동아일보",
+     "title": "추성훈, 故부친과 은퇴전…♥야노시호·추사랑 눈물 (상남자)",
+     "link": "https://sports.donga.com/ent/article/all/20261124/135080175/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "송필근, 강훈·조현철·김정진 연기에 눈물…“세 번 울었다” (뜨거운 안녕)",
+     "link": "https://sports.donga.com/ent/article/all/20261124/135079004/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "빚 2억에 부부 싸움, 아이들이 나서…오은영 눈물 (결혼지옥)",
+     "link": "https://sports.donga.com/ent/article/all/20261124/135078295/1"
+    }
+   ]
+  },
+  {
+   "kw": "결국",
+   "nsrc": 4,
+   "srcs": [
+    "동아일보",
+    "조선일보",
+    "한국경제",
+    "헤럴드경제"
+   ],
+   "n": 8,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "최정현, 결국 결혼반지 뺐다…파국 위기 (계약결혼)",
+     "link": "https://sports.donga.com/ent/article/all/20261124/135080194/1"
+    },
+    {
+     "src": "한국경제",
+     "title": "결국 스며들었다…임시완, 화제성 넘어 새 얼굴 증명해낸 '유죄인간' [스타:라이트]",
+     "link": "https://www.hankyung.com/article/202611168180H"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "‘나 혼자 산다’ 번지점프 논란, 결국 과태료…“직원이 안전벨트도 없이 난간에”",
+     "link": "https://biz.heraldcorp.com/article/10945538"
+    },
+    {
+     "src": "조선일보",
+     "title": "박지윤 성소수자 지인, 최동석 상간소송 2심 불복..결국 대법원 간다 [Oh!쎈 이슈]",
+     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/24/MU4WKZLGMMZWCZTCGJRWMNZVGY/"
+    }
+   ]
+  },
+  {
+   "kw": "사고",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "세계일보",
+    "조선일보"
+   ],
+   "n": 8,
+   "headlines": [
+    {
+     "src": "세계일보",
+     "title": "김미경, 오토바이 타다 깔리는 사고…“아픈 것보다 촬영 걱정”",
+     "link": "https://www.segye.com/newsView/20261124502311"
+    },
+    {
+     "src": "세계일보",
+     "title": "음주운전 청소차 충돌 고경표, 사고 9일 만 경찰 출석…“무책임한 모습, 죄송하다”",
+     "link": "https://www.segye.com/newsView/20261123517254"
+    },
+    {
+     "src": "SBS",
+     "title": "부르튼 입술·초췌한 얼굴…'음주운전' 고경표, 사고 9일 만에 경찰 출석해 '눈물 사과'",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008860616&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "뉴시스",
+     "title": "풍자, 유튜브 6개월 공백에 \"사고 쳐서 자숙하는 줄 알더라\"",
+     "link": "https://www.newsis.com/view/NISX20261124_0003880413"
     }
    ]
   },
@@ -1198,72 +1298,6 @@
    ]
   },
   {
-   "kw": "부부",
-   "nsrc": 4,
-   "srcs": [
-    "동아일보",
-    "세계일보",
-    "연합뉴스",
-    "한국경제"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "배우 고규필·가수 에이민 부부 득녀…\"인생 가장 잘한 일\"",
-     "link": "https://www.yna.co.kr/view/AKR20261123138400005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "김태술·박하나 부부 부모 된다…\"모든 난임 부부들 응원\"",
-     "link": "https://www.yna.co.kr/view/AKR20261119154100005"
-    },
-    {
-     "src": "동아일보",
-     "title": "빚 2억에 부부 싸움, 아이들이 나서…오은영 눈물 (결혼지옥)",
-     "link": "https://sports.donga.com/ent/article/all/20261124/135078295/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "‘결혼 지옥’ 10살 딸 “부모 싸움 꿈에도 나와”…부부 눈물",
-     "link": "https://sports.donga.com/ent/article/all/20261124/135078153/1"
-    }
-   ]
-  },
-  {
-   "kw": "엔하이픈",
-   "nsrc": 4,
-   "srcs": [
-    "동아일보",
-    "연합뉴스",
-    "조선일보",
-    "한국경제"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "오사카 달군 '2026 마마 어워즈'…첫날 대상에 BTS·엔하이픈",
-     "link": "https://www.yna.co.kr/view/AKR20261120179200005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "엔하이픈, 오늘 컴백…\"어떤 콘셉트든 잘하는 팀 되고파\"",
-     "link": "https://www.yna.co.kr/view/AKR20261120122300005"
-    },
-    {
-     "src": "동아일보",
-     "title": "발매 첫날 70만 장 돌파…엔하이픈, 스핀오프 싱글로 한터차트 일간 1위",
-     "link": "https://sports.donga.com/ent/article/all/20261124/135079593/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "세븐틴·엔하이픈·캣츠아이 카메오…하이브 아메리카가 제작한 영화 ‘케이팝 슈퍼스타’, 예고편 공개",
-     "link": "https://sports.donga.com/ent/article/all/20261124/135078163/1"
-    }
-   ]
-  },
-  {
    "kw": "최동석",
    "nsrc": 4,
    "srcs": [
@@ -1297,40 +1331,7 @@
    ]
   },
   {
-   "kw": "겨울",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "세계일보",
-    "조선일보",
-    "헤럴드경제"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "세계일보",
-     "title": "하정우·차정원, 6년 열애인 줄 알았는데…청첩장에 담긴 ‘10번째 겨울’",
-     "link": "https://www.segye.com/newsView/20261124502484"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "‘내달 결혼’ 하정우-차정원, 교제 기간이 10년?…“열번째 함께 맞는 겨울”",
-     "link": "https://biz.heraldcorp.com/article/10946466"
-    },
-    {
-     "src": "뉴시스",
-     "title": "하정우·차정원, 6년 아닌 10년 열애였나…청첩장엔 \"열 번째 겨울\"",
-     "link": "https://www.newsis.com/view/NISX20261124_0003880133"
-    },
-    {
-     "src": "뉴시스",
-     "title": "설현, 퍼스널컬러 논란 끝냈다…겨울 다크·체형은 스트레이트",
-     "link": "https://www.newsis.com/view/NISX20261123_0003879071"
-    }
-   ]
-  },
-  {
-   "kw": "시간",
+   "kw": "죄송",
    "nsrc": 4,
    "srcs": [
     "뉴시스",
@@ -1347,13 +1348,13 @@
     },
     {
      "src": "연합뉴스",
-     "title": "배우 이가섭, 비연예인과 결혼…\"오랜 시간 든든한 버팀목\"",
-     "link": "https://www.yna.co.kr/view/AKR20261119085400005"
+     "title": "음주운전 배우 고경표 경찰 출석…\"무책임한 모습 죄송\"(종합)",
+     "link": "https://www.yna.co.kr/view/AKR20261123151351004"
     },
     {
      "src": "동아일보",
-     "title": "로버트 패틴슨, ‘듄: 파트 3’ 새 빌 합류…5시간 특수분장 감행",
-     "link": "https://sports.donga.com/ent/article/all/20261124/135078226/1"
+     "title": "“정말 죄송” 고경표, 미화원·제작진에 눈물의 사과 [DA피플]",
+     "link": "https://sports.donga.com/ent/article/all/20261124/135078614/1"
     },
     {
      "src": "뉴시스",
