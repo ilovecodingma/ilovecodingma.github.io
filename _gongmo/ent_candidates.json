@@ -1,5 +1,5 @@
 {
- "at": "2026-11-25 03:30",
+ "at": "2026-11-25 04:30",
  "nitems": 531,
  "cands": [
   {
@@ -764,40 +764,6 @@
    ]
   },
   {
-   "kw": "돌파",
-   "nsrc": 5,
-   "srcs": [
-    "SBS",
-    "동아일보",
-    "세계일보",
-    "연합뉴스",
-    "한겨레"
-   ],
-   "n": 7,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "'치이카와' 300만명 돌파…'토이 스토리 5' 꺾고 애니 흥행 1위",
-     "link": "https://www.yna.co.kr/view/AKR20261121027500005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "인천펜타포트, 올해 외국인관람객 1만명 돌파…2년만에 3배로",
-     "link": "https://www.yna.co.kr/view/AKR20261119119500005"
-    },
-    {
-     "src": "동아일보",
-     "title": "발매 첫날 70만 장 돌파…엔하이픈, 스핀오프 싱글로 한터차트 일간 1위",
-     "link": "https://sports.donga.com/ent/article/all/20261124/135079593/1"
-    },
-    {
-     "src": "한겨레",
-     "title": "‘먼작귀’ 열풍 ‘치이카와’ 300만 돌파…올해 애니 흥행 1위",
-     "link": "https://www.hani.co.kr/arti/culture/culture_general/1288426.html"
-    }
-   ]
-  },
-  {
    "kw": "양홍원",
    "nsrc": 5,
    "srcs": [
@@ -1067,39 +1033,6 @@
    ]
   },
   {
-   "kw": "발매",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "동아일보",
-    "세계일보",
-    "연합뉴스"
-   ],
-   "n": 7,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "[가요소식] 브로디, 신곡 '페이디드 러브' 발매…칠룹 피처링",
-     "link": "https://www.yna.co.kr/view/AKR20261124128800005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "버벌진트, 새 앨범 발매 앞두고 20명 초청 '생맥주 음감회'",
-     "link": "https://www.yna.co.kr/view/AKR20261124013300005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "[가요소식] 딘딘, 생일에 신곡 '케이크' 발매",
-     "link": "https://www.yna.co.kr/view/AKR20261120066300005"
-    },
-    {
-     "src": "동아일보",
-     "title": "세븐틴 정한X야마다 료스케 입맞춤…듀엣곡 ‘Afterglow’ 12월 발매",
-     "link": "https://sports.donga.com/ent/article/all/20261124/135079746/1"
-    }
-   ]
-  },
-  {
    "kw": "고경표",
    "nsrc": 4,
    "srcs": [
@@ -1195,6 +1128,72 @@
      "src": "뉴시스",
      "title": "풍자, 유튜브 6개월 공백에 \"사고 쳐서 자숙하는 줄 알더라\"",
      "link": "https://www.newsis.com/view/NISX20261124_0003880413"
+    }
+   ]
+  },
+  {
+   "kw": "발매",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "동아일보",
+    "세계일보",
+    "연합뉴스"
+   ],
+   "n": 6,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "[가요소식] 브로디, 신곡 '페이디드 러브' 발매…칠룹 피처링",
+     "link": "https://www.yna.co.kr/view/AKR20261124128800005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "버벌진트, 새 앨범 발매 앞두고 20명 초청 '생맥주 음감회'",
+     "link": "https://www.yna.co.kr/view/AKR20261124013300005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "[가요소식] 딘딘, 생일에 신곡 '케이크' 발매",
+     "link": "https://www.yna.co.kr/view/AKR20261120066300005"
+    },
+    {
+     "src": "동아일보",
+     "title": "세븐틴 정한X야마다 료스케 입맞춤…듀엣곡 ‘Afterglow’ 12월 발매",
+     "link": "https://sports.donga.com/ent/article/all/20261124/135079746/1"
+    }
+   ]
+  },
+  {
+   "kw": "돌파",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "세계일보",
+    "연합뉴스",
+    "한겨레"
+   ],
+   "n": 6,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "'치이카와' 300만명 돌파…'토이 스토리 5' 꺾고 애니 흥행 1위",
+     "link": "https://www.yna.co.kr/view/AKR20261121027500005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "인천펜타포트, 올해 외국인관람객 1만명 돌파…2년만에 3배로",
+     "link": "https://www.yna.co.kr/view/AKR20261119119500005"
+    },
+    {
+     "src": "한겨레",
+     "title": "‘먼작귀’ 열풍 ‘치이카와’ 300만 돌파…올해 애니 흥행 1위",
+     "link": "https://www.hani.co.kr/arti/culture/culture_general/1288426.html"
+    },
+    {
+     "src": "세계일보",
+     "title": "발매 30주년 맞은 추억의 ‘다마고치’…전 세계 누적 판매 1억대 돌파",
+     "link": "https://www.segye.com/newsView/20261123515266"
     }
    ]
   },
