@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-24 19:00",
+ "updated": "2026-11-24 20:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -207,6 +207,18 @@
    "expires": "2026-11-27"
   },
   {
+   "query": "젠슨황 복귀",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 20000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-24",
+   "expires": "2026-11-27"
+  },
+  {
    "query": "영장",
    "tier": "단기",
    "signal": [
@@ -228,6 +240,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-23",
+   "expires": "2026-11-27"
+  },
+  {
+   "query": "원현주",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 20000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-24",
    "expires": "2026-11-27"
   },
   {
@@ -264,6 +288,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-18",
+   "expires": "2026-11-27"
+  },
+  {
+   "query": "세인트루이스 시티 sc 대 엘에이 fc",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 20000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-24",
    "expires": "2026-11-27"
   },
   {
@@ -411,6 +447,18 @@
    "expires": "2026-11-27"
   },
   {
+   "query": "울릉도",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 10000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-24",
+   "expires": "2026-11-27"
+  },
+  {
    "query": "패딩",
    "tier": "단기",
    "signal": [
@@ -460,6 +508,18 @@
   },
   {
    "query": "맨유 대 애스턴 빌라",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 10000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-09",
+   "expires": "2026-11-27"
+  },
+  {
+   "query": "홍창기",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -555,18 +615,6 @@
    "expires": "2026-11-27"
   },
   {
-   "query": "홍창기",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 10000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-09",
-   "expires": "2026-11-27"
-  },
-  {
    "query": "빵",
    "tier": "단기",
    "signal": [
@@ -624,6 +672,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-23",
+   "expires": "2026-11-27"
+  },
+  {
+   "query": "김호중",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 10000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-24",
    "expires": "2026-11-27"
   },
   {
@@ -783,6 +843,18 @@
    "expires": "2026-11-27"
   },
   {
+   "query": "치매",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 5000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-06",
+   "expires": "2026-11-27"
+  },
+  {
    "query": "thời tiết ngày mai",
    "tier": "단기",
    "signal": [
@@ -840,6 +912,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-03",
+   "expires": "2026-11-27"
+  },
+  {
+   "query": "골프",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 5000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-04",
    "expires": "2026-11-27"
   },
   {
@@ -987,18 +1071,6 @@
    "expires": "2026-11-27"
   },
   {
-   "query": "골프",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 5000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-04",
-   "expires": "2026-11-27"
-  },
-  {
    "query": "kia 타이거즈",
    "tier": "단기",
    "signal": [
@@ -1011,7 +1083,7 @@
    "expires": "2026-11-27"
   },
   {
-   "query": "치매",
+   "query": "하이닉스 주가",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -1104,6 +1176,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-21",
+   "expires": "2026-11-27"
+  },
+  {
+   "query": "김호령",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 5000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-24",
    "expires": "2026-11-27"
   },
   {
@@ -1371,6 +1455,54 @@
    "expires": "2026-11-27"
   },
   {
+   "query": "강성태",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 5000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-24",
+   "expires": "2026-11-27"
+  },
+  {
+   "query": "김혜수",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 5000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-24",
+   "expires": "2026-11-27"
+  },
+  {
+   "query": "장기 기증",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 5000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-24",
+   "expires": "2026-11-27"
+  },
+  {
+   "query": "성심당",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 5000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-24",
+   "expires": "2026-11-27"
+  },
+  {
    "query": "서울경제tv",
    "tier": "단기",
    "signal": [
@@ -1611,6 +1743,30 @@
    "expires": "2026-11-27"
   },
   {
+   "query": "설악산",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 5000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-24",
+   "expires": "2026-11-27"
+  },
+  {
+   "query": "삼성전자 임원 인사",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 5000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-24",
+   "expires": "2026-11-27"
+  },
+  {
    "query": "숲",
    "tier": "단기",
    "signal": [
@@ -1839,6 +1995,18 @@
    "expires": "2026-11-27"
   },
   {
+   "query": "погода",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-17",
+   "expires": "2026-11-27"
+  },
+  {
    "query": "한화오션",
    "tier": "단기",
    "signal": [
@@ -1872,6 +2040,42 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-17",
+   "expires": "2026-11-27"
+  },
+  {
+   "query": "군인",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-24",
+   "expires": "2026-11-27"
+  },
+  {
+   "query": "중위소득",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-24",
+   "expires": "2026-11-27"
+  },
+  {
+   "query": "브레인악셀",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-24",
    "expires": "2026-11-27"
   },
   {
@@ -1947,6 +2151,18 @@
    "expires": "2026-11-27"
   },
   {
+   "query": "현대자동차",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-24",
+   "expires": "2026-11-27"
+  },
+  {
    "query": "남대문시장",
    "tier": "단기",
    "signal": [
@@ -2004,6 +2220,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-09",
+   "expires": "2026-11-27"
+  },
+  {
+   "query": "ssg 랜더스",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-10",
    "expires": "2026-11-27"
   },
   {
@@ -2103,18 +2331,6 @@
    "expires": "2026-11-27"
   },
   {
-   "query": "погода",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 2000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-17",
-   "expires": "2026-11-27"
-  },
-  {
    "query": "문무",
    "tier": "단기",
    "signal": [
@@ -2199,6 +2415,18 @@
    "expires": "2026-11-27"
   },
   {
+   "query": "배치표",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-20",
+   "expires": "2026-11-27"
+  },
+  {
    "query": "리야드",
    "tier": "단기",
    "signal": [
@@ -2208,6 +2436,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-21",
+   "expires": "2026-11-27"
+  },
+  {
+   "query": "정유라",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-24",
    "expires": "2026-11-27"
   },
   {
@@ -2368,18 +2608,6 @@
   },
   {
    "query": "김지민",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 2000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-06",
-   "expires": "2026-11-27"
-  },
-  {
-   "query": "하이닉스 주가",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -2712,6 +2940,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-22",
+   "expires": "2026-11-27"
+  },
+  {
+   "query": "전원주",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-11",
    "expires": "2026-11-27"
   },
   {
@@ -3159,6 +3399,42 @@
    "expires": "2026-11-27"
   },
   {
+   "query": "화이트캡스 대 솔트레이크",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-24",
+   "expires": "2026-11-27"
+  },
+  {
+   "query": "박지윤 카톡",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-24",
+   "expires": "2026-11-27"
+  },
+  {
+   "query": "이도현",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-24",
+   "expires": "2026-11-27"
+  },
+  {
    "query": "뉴캐슬 대 에버튼 순위",
    "tier": "단기",
    "signal": [
@@ -3435,18 +3711,6 @@
    "expires": "2026-11-27"
   },
   {
-   "query": "ssg 랜더스",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 2000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-10",
-   "expires": "2026-11-27"
-  },
-  {
    "query": "부부",
    "tier": "단기",
    "signal": [
@@ -3456,18 +3720,6 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-10",
-   "expires": "2026-11-27"
-  },
-  {
-   "query": "전원주",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 2000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-11",
    "expires": "2026-11-27"
   },
   {
@@ -3783,18 +4035,6 @@
    "expires": "2026-11-27"
   },
   {
-   "query": "배치표",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 2000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-20",
-   "expires": "2026-11-27"
-  },
-  {
    "query": "파기 환송",
    "tier": "단기",
    "signal": [
@@ -3843,6 +4083,66 @@
    "expires": "2026-11-27"
   },
   {
+   "query": "에코프로",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-24",
+   "expires": "2026-11-27"
+  },
+  {
+   "query": "정상빈",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-24",
+   "expires": "2026-11-27"
+  },
+  {
+   "query": "12 월 3 일",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-24",
+   "expires": "2026-11-27"
+  },
+  {
+   "query": "장원영",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-24",
+   "expires": "2026-11-27"
+  },
+  {
+   "query": "국민주권의 날",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 2000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-24",
+   "expires": "2026-11-27"
+  },
+  {
    "query": "알렉산더 즈베레프",
    "tier": "단기",
    "signal": [
@@ -3879,6 +4179,18 @@
    "expires": "2026-11-27"
   },
   {
+   "query": "노태문",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-07",
+   "expires": "2026-11-27"
+  },
+  {
    "query": "농구",
    "tier": "단기",
    "signal": [
@@ -3912,6 +4224,42 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-22",
+   "expires": "2026-11-27"
+  },
+  {
+   "query": "지스타",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-21",
+   "expires": "2026-11-27"
+  },
+  {
+   "query": "sk그룹",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-13",
+   "expires": "2026-11-27"
+  },
+  {
+   "query": "김종국",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-24",
    "expires": "2026-11-27"
   },
   {
@@ -3987,18 +4335,6 @@
    "expires": "2026-11-27"
   },
   {
-   "query": "노태문",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 1000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-07",
-   "expires": "2026-11-27"
-  },
-  {
    "query": "노동자",
    "tier": "단기",
    "signal": [
@@ -4024,6 +4360,18 @@
   },
   {
    "query": "대한민국 해군",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-18",
+   "expires": "2026-11-27"
+  },
+  {
+   "query": "둠스데이",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -4167,18 +4515,6 @@
    "expires": "2026-11-27"
   },
   {
-   "query": "지스타",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 1000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-21",
-   "expires": "2026-11-27"
-  },
-  {
    "query": "맨시티",
    "tier": "단기",
    "signal": [
@@ -4224,18 +4560,6 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-11",
-   "expires": "2026-11-27"
-  },
-  {
-   "query": "둠스데이",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 1000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-18",
    "expires": "2026-11-27"
   },
   {
@@ -4335,6 +4659,18 @@
    "expires": "2026-11-27"
   },
   {
+   "query": "로스앤젤레스 fc",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-17",
+   "expires": "2026-11-27"
+  },
+  {
    "query": "장동혁",
    "tier": "단기",
    "signal": [
@@ -4344,6 +4680,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-17",
+   "expires": "2026-11-27"
+  },
+  {
+   "query": "새마을금고",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-24",
    "expires": "2026-11-27"
   },
   {
@@ -4368,6 +4716,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-21",
+   "expires": "2026-11-27"
+  },
+  {
+   "query": "이진관 판사",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-24",
    "expires": "2026-11-27"
   },
   {
@@ -4443,6 +4803,18 @@
    "expires": "2026-11-27"
   },
   {
+   "query": "강호동",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-24",
+   "expires": "2026-11-27"
+  },
+  {
    "query": "제네시스 g90",
    "tier": "단기",
    "signal": [
@@ -4456,6 +4828,18 @@
   },
   {
    "query": "커버 드 콜",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-06",
+   "expires": "2026-11-27"
+  },
+  {
+   "query": "코인니스",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -4512,18 +4896,6 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-08",
-   "expires": "2026-11-27"
-  },
-  {
-   "query": "sk그룹",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 1000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-13",
    "expires": "2026-11-27"
   },
   {
@@ -4695,6 +5067,18 @@
    "expires": "2026-11-27"
   },
   {
+   "query": "天气",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-17",
+   "expires": "2026-11-27"
+  },
+  {
    "query": "웨이브",
    "tier": "단기",
    "signal": [
@@ -4728,6 +5112,18 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-17",
+   "expires": "2026-11-27"
+  },
+  {
+   "query": "부산항",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-24",
    "expires": "2026-11-27"
   },
   {
@@ -4767,6 +5163,30 @@
    "expires": "2026-11-27"
   },
   {
+   "query": "지방세",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-24",
+   "expires": "2026-11-27"
+  },
+  {
+   "query": "fifa u-17 월드컵",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-24",
+   "expires": "2026-11-27"
+  },
+  {
    "query": "2027 수능 만점자",
    "tier": "단기",
    "signal": [
@@ -4779,6 +5199,18 @@
    "expires": "2026-11-27"
   },
   {
+   "query": "휴머노이드",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-24",
+   "expires": "2026-11-27"
+  },
+  {
    "query": "해저",
    "tier": "단기",
    "signal": [
@@ -4788,6 +5220,30 @@
    "status": "미작성",
    "page": "",
    "registered": "2026-11-22",
+   "expires": "2026-11-27"
+  },
+  {
+   "query": "치이카와 클리닉",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-24",
+   "expires": "2026-11-27"
+  },
+  {
+   "query": "변리사",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-24",
    "expires": "2026-11-27"
   },
   {
@@ -5187,6 +5643,18 @@
    "expires": "2026-11-27"
   },
   {
+   "query": "그랜드 테프트 오토 vi",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-24",
+   "expires": "2026-11-27"
+  },
+  {
    "query": "정웅인",
    "tier": "단기",
    "signal": [
@@ -5272,6 +5740,18 @@
   },
   {
    "query": "방화",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-13",
+   "expires": "2026-11-27"
+  },
+  {
+   "query": "지하철 파업",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -5391,18 +5871,6 @@
    "expires": "2026-11-27"
   },
   {
-   "query": "天气",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 1000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-17",
-   "expires": "2026-11-27"
-  },
-  {
    "query": "경찰차",
    "tier": "단기",
    "signal": [
@@ -5452,18 +5920,6 @@
   },
   {
    "query": "볼로디미르 젤렌스키",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 1000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-17",
-   "expires": "2026-11-27"
-  },
-  {
-   "query": "로스앤젤레스 fc",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -5835,6 +6291,78 @@
    "expires": "2026-11-27"
   },
   {
+   "query": "구조조정",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-24",
+   "expires": "2026-11-27"
+  },
+  {
+   "query": "카카오",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-24",
+   "expires": "2026-11-27"
+  },
+  {
+   "query": "심진화",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-24",
+   "expires": "2026-11-27"
+  },
+  {
+   "query": "원자력",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-24",
+   "expires": "2026-11-27"
+  },
+  {
+   "query": "김동현",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-24",
+   "expires": "2026-11-27"
+  },
+  {
+   "query": "고규필",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-24",
+   "expires": "2026-11-27"
+  },
+  {
    "query": "오산대",
    "tier": "단기",
    "signal": [
@@ -6124,18 +6652,6 @@
   },
   {
    "query": "상장지수펀드",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 1000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-06",
-   "expires": "2026-11-27"
-  },
-  {
-   "query": "코인니스",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -6484,18 +7000,6 @@
   },
   {
    "query": "남대문 스카프 아저씨!",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 1000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-13",
-   "expires": "2026-11-27"
-  },
-  {
-   "query": "지하철 파업",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -6999,6 +7503,150 @@
    "expires": "2026-11-27"
   },
   {
+   "query": "에코프로비엠",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-24",
+   "expires": "2026-11-27"
+  },
+  {
+   "query": "원자력 추진",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-24",
+   "expires": "2026-11-27"
+  },
+  {
+   "query": "코스피 야간선물",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-24",
+   "expires": "2026-11-27"
+  },
+  {
+   "query": "투수",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-24",
+   "expires": "2026-11-27"
+  },
+  {
+   "query": "김범수",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-24",
+   "expires": "2026-11-27"
+  },
+  {
+   "query": "c-390 밀레니엄",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-24",
+   "expires": "2026-11-27"
+  },
+  {
+   "query": "뉴욕 메츠",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-24",
+   "expires": "2026-11-27"
+  },
+  {
+   "query": "부사관",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-24",
+   "expires": "2026-11-27"
+  },
+  {
+   "query": "호세 수아레즈",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-24",
+   "expires": "2026-11-27"
+  },
+  {
+   "query": "중고",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-24",
+   "expires": "2026-11-27"
+  },
+  {
+   "query": "김서형",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-24",
+   "expires": "2026-11-27"
+  },
+  {
+   "query": "이관희",
+   "tier": "단기",
+   "signal": [
+    "구글트렌드"
+   ],
+   "score": 1000,
+   "status": "미작성",
+   "page": "",
+   "registered": "2026-11-24",
+   "expires": "2026-11-27"
+  },
+  {
    "query": "앤트로픽 나스닥 첫날 97.17달러 마감, 공모가 83달러 대비 17.1%",
    "tier": "단기",
    "signal": [
@@ -7192,6 +7840,19 @@
    "page": "",
    "registered": "2026-11-19",
    "expires": "2026-11-23"
+  },
+  {
+   "query": "입영일자 본인선택 내일",
+   "tier": "단기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 5,
+   "status": "작성",
+   "page": "/issue/military-enlistment-date-selection-start-1125/",
+   "registered": "2026-11-24",
+   "expires": "2026-11-28"
   },
   {
    "query": "수능 AI 부정행위 정부 대책 총정리, 총리 담화 응시제한 10년·감독관 8,400명 추가",
