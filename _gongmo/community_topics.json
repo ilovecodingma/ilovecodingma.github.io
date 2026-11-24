@@ -1,14 +1,14 @@
 {
  "date": "2026-11-24",
- "updated": "2026-11-24 15:50",
+ "updated": "2026-11-24 16:50",
  "sites": 13,
- "npost": 2888,
+ "npost": 2896,
  "note": "출처(커뮤니티)별 집계예요. 작성자·연령·성별 정보는 수집하지 않아요. posts 는 이슈별로 뽑힌 일부라 전체 글 수가 아니에요.",
  "sources": [
   {
    "name": "MLB파크",
    "np": 13,
-   "nc": 712,
+   "nc": 933,
    "topics": [
     {
      "t": "박지윤 패드립 카톡 내용",
@@ -21,12 +21,29 @@
       "박지윤",
       "카톡",
       "패드립",
-      "도화선"
+      "최동석"
      ],
      "top_post": {
       "t": "박지윤 패드립 카톡 내용",
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611230120271380&m=view",
       "nc": 219
+     }
+    },
+    {
+     "t": "성시경 유튜브 보니 성시경이 먼저 기싸움 한거긴 하네요ㅋㅋㅋ",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 196,
+     "issue_np": 2,
+     "issue_nc": 196,
+     "kw": [
+      "유튜브",
+      "성시경"
+     ],
+     "top_post": {
+      "t": "성시경 유튜브 보니 성시경이 먼저 기싸움 한거긴 하네요ㅋㅋㅋ",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611240120285807&m=view",
+      "nc": 196
      }
     },
     {
@@ -56,15 +73,32 @@
      "issue_np": 3,
      "issue_nc": 102,
      "kw": [
+      "국가",
       "국민",
       "기념일",
-      "국가",
       "주권"
      ],
      "top_post": {
       "t": "12월 3일 국가기념일 된다…李 \"계엄 맞선 '국민 주권의 날' 기려야\"",
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611240120287097&m=view",
       "nc": 86
+     }
+    },
+    {
+     "t": "엄마에게 급식사진을 보냈더니",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 83,
+     "issue_np": 2,
+     "issue_nc": 83,
+     "kw": [
+      "엄마",
+      "급식"
+     ],
+     "top_post": {
+      "t": "엄마에게 급식사진을 보냈더니",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611240120287124&m=view",
+      "nc": 83
      }
     },
     {
@@ -89,9 +123,9 @@
      "t": "다른기차 잘못 타 놓고 우기는 KTX 민폐녀",
      "nsite": 3,
      "np_here": 1,
-     "nc_here": 46,
+     "nc_here": 49,
      "issue_np": 3,
-     "issue_nc": 61,
+     "issue_nc": 64,
      "kw": [
       "KTX",
       "민폐"
@@ -99,43 +133,7 @@
      "top_post": {
       "t": "다른기차 잘못 타 놓고 우기는 KTX 민폐녀",
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611240120285693&m=view",
-      "nc": 46
-     }
-    },
-    {
-     "t": "요즘 학원 강사 미모 ㄷㄷ",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 36,
-     "issue_np": 3,
-     "issue_nc": 38,
-     "kw": [
-      "강사",
-      "미모",
-      "학원",
-      "영어"
-     ],
-     "top_post": {
-      "t": "요즘 학원 강사 미모 ㄷㄷ",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611230120278928&m=view",
-      "nc": 36
-     }
-    },
-    {
-     "t": "테슬라 FSD15...의미 ㄷㄷ..",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 25,
-     "issue_np": 3,
-     "issue_nc": 25,
-     "kw": [
-      "FSD",
-      "테슬라"
-     ],
-     "top_post": {
-      "t": "테슬라 FSD 자율주행 절망편.",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611230120269307&m=view",
-      "nc": 25
+      "nc": 49
      }
     },
     {
@@ -162,7 +160,7 @@
   {
    "name": "개드립",
    "np": 12,
-   "nc": 243,
+   "nc": 246,
    "topics": [
     {
      "t": "더쿠: 젠슨황이 여자였어도 복귀가 가능했을까?",
@@ -172,13 +170,32 @@
      "issue_np": 4,
      "issue_nc": 54,
      "kw": [
-      "복귀",
-      "젠슨"
+      "젠슨",
+      "복귀"
      ],
      "top_post": {
       "t": "더쿠: 젠슨황이 여자였어도 복귀가 가능했을까?",
       "u": "https://www.dogdrip.net/dogdrip/736337053?sort_index=popular&page=1",
       "nc": 46
+     }
+    },
+    {
+     "t": "고등학생 딸 아이가 수업시간에 교복에 설사를 했답니다",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 45,
+     "issue_np": 3,
+     "issue_nc": 48,
+     "kw": [
+      "고등학생",
+      "교복",
+      "설사",
+      "수업"
+     ],
+     "top_post": {
+      "t": "고등학생 딸 아이가 수업시간에 교복에 설사를 했답니다",
+      "u": "https://www.dogdrip.net/dogdrip/736349571?sort_index=popular&page=1",
+      "nc": 45
      }
     },
     {
@@ -199,41 +216,22 @@
      }
     },
     {
-     "t": "고등학생 딸 아이가 수업시간에 교복에 설사를 했답니다",
+     "t": "장가계 패키지 여행 갔던 부모님이 협박 감금 당했다가 돌아오셨습니다 (스레드 좋아요 6천개 달린 글)",
      "nsite": 3,
      "np_here": 1,
-     "nc_here": 41,
+     "nc_here": 35,
      "issue_np": 3,
-     "issue_nc": 44,
+     "issue_nc": 47,
      "kw": [
-      "교복",
-      "설사",
-      "고등학생",
-      "아이"
+      "여행",
+      "패키지",
+      "장가계",
+      "협박"
      ],
      "top_post": {
-      "t": "고등학생 딸 아이가 수업시간에 교복에 설사를 했답니다",
-      "u": "https://www.dogdrip.net/dogdrip/736349571?sort_index=popular&page=1",
-      "nc": 41
-     }
-    },
-    {
-     "t": "일본 다카이치 총리가 중국 방문했을 때 환영 인원이 적었던 이유.",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 31,
-     "issue_np": 3,
-     "issue_nc": 31,
-     "kw": [
-      "일본",
-      "총리",
-      "중국",
-      "다카이치"
-     ],
-     "top_post": {
-      "t": "일본 다카이치 총리가 중국 방문했을 때 환영 인원이 적었던 이유.",
-      "u": "https://www.dogdrip.net/dogdrip/736167901?sort_index=popular&page=1",
-      "nc": 31
+      "t": "난리난 중국 \"장가계\" 패키지 여행 가이드 감금 협박",
+      "u": "https://www.dogdrip.net/dogdrip/736387231?sort_index=popular&page=1",
+      "nc": 35
      }
     },
     {
@@ -244,8 +242,8 @@
      "issue_np": 4,
      "issue_nc": 25,
      "kw": [
-      "주인",
       "최악",
+      "주인",
       "전세",
       "세입자"
      ],
@@ -263,8 +261,8 @@
      "issue_np": 4,
      "issue_nc": 19,
      "kw": [
-      "논란",
       "음식",
+      "논란",
       "신혼부부"
      ],
      "top_post": {
@@ -281,10 +279,10 @@
      "issue_np": 3,
      "issue_nc": 18,
      "kw": [
-      "AI",
       "세상",
-      "회사",
-      "대표"
+      "AI",
+      "대표",
+      "회사"
      ],
      "top_post": {
       "t": "돈 필요없는 세상 온다던 AI회사 대표 근황",
@@ -293,134 +291,22 @@
      }
     },
     {
-     "t": "학폭 기록 때문에 수시 전부 떨어진 아들 ㄷㄷㄷ;;;",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 8,
-     "issue_np": 6,
-     "issue_nc": 11,
-     "kw": [
-      "수시",
-      "아들",
-      "기록"
-     ],
-     "top_post": {
-      "t": "학폭 기록 때문에 수시 전부 떨어진 아들 ㄷㄷㄷ;;;",
-      "u": "https://www.dogdrip.net/dogdrip/736167822?sort_index=popular&page=1",
-      "nc": 8
-     }
-    }
-   ]
-  },
-  {
-   "name": "82쿡",
-   "np": 8,
-   "nc": 99,
-   "topics": [
-    {
-     "t": "주식에 있어 정부 책임이 없는건 아닙니다",
-     "nsite": 4,
-     "np_here": 3,
-     "nc_here": 44,
-     "issue_np": 7,
-     "issue_nc": 72,
-     "kw": [
-      "주식",
-      "시장",
-      "정부"
-     ],
-     "top_post": {
-      "t": "가장 안 좋은 시나리오로 가는 군요. 주식 시장은.",
-      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4262256&page=1",
-      "nc": 20
-     }
-    },
-    {
-     "t": "한국 반도체는 끝났다네요 ㅠㅠ",
+     "t": "한국서 일하는 일본인이 느끼는 한국인특징",
      "nsite": 3,
      "np_here": 1,
-     "nc_here": 22,
-     "issue_np": 3,
-     "issue_nc": 25,
+     "nc_here": 7,
+     "issue_np": 5,
+     "issue_nc": 8,
      "kw": [
+      "일본인",
       "한국",
-      "반도체"
+      "특징",
+      "한국인"
      ],
      "top_post": {
-      "t": "한국 반도체는 끝났다네요 ㅠㅠ",
-      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4262200&page=1",
-      "nc": 22
-     }
-    },
-    {
-     "t": "다른기차 잘못 타 놓고 우기는 KTX 민폐녀",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 15,
-     "issue_np": 3,
-     "issue_nc": 61,
-     "kw": [
-      "KTX",
-      "민폐"
-     ],
-     "top_post": {
-      "t": "ktx 민폐녀 영상 혹시 보셨나요?",
-      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4262209&page=1",
-      "nc": 15
-     }
-    },
-    {
-     "t": "국민연금 220조 손실도 개인탓?",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 15,
-     "issue_np": 3,
-     "issue_nc": 31,
-     "kw": [
-      "손실",
-      "국민연금"
-     ],
-     "top_post": {
-      "t": "개미들 563조 잃고 빚더미…국민연금도 220조 평가손실 '충격..",
-      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4262203&page=1",
-      "nc": 15
-     }
-    },
-    {
-     "t": "젠슨황 복귀했다고 삼전닉스 30%상한가 찍는건가요",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 2,
-     "issue_np": 22,
-     "issue_nc": 11,
-     "kw": [
-      "복귀",
-      "젠슨 황",
-      "첫날"
-     ],
-     "top_post": {
-      "t": "젠슨황 복귀에 숏돌이 마이클버리 날선 반응",
-      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4262378&page=1",
-      "nc": 2
-     }
-    },
-    {
-     "t": "요즘 학원 강사 미모 ㄷㄷ",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 1,
-     "issue_np": 3,
-     "issue_nc": 38,
-     "kw": [
-      "강사",
-      "미모",
-      "학원",
-      "영어"
-     ],
-     "top_post": {
-      "t": "영어학원 강사는 경력자만 뽑는가요?",
-      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4262125&page=1",
-      "nc": 1
+      "t": "한국서 일하는 일본인이 느끼는 한국인특징",
+      "u": "https://www.dogdrip.net/dogdrip/736237973?sort_index=popular&page=1",
+      "nc": 7
      }
     }
    ]
@@ -428,15 +314,15 @@
   {
    "name": "클리앙",
    "np": 9,
-   "nc": 90,
+   "nc": 92,
    "topics": [
     {
      "t": "주식에 있어 정부 책임이 없는건 아닙니다",
      "nsite": 4,
      "np_here": 1,
      "nc_here": 28,
-     "issue_np": 7,
-     "issue_nc": 72,
+     "issue_np": 6,
+     "issue_nc": 53,
      "kw": [
       "주식",
       "시장",
@@ -456,9 +342,9 @@
      "issue_np": 3,
      "issue_nc": 102,
      "kw": [
+      "국가",
       "국민",
       "기념일",
-      "국가",
       "주권"
      ],
      "top_post": {
@@ -488,14 +374,14 @@
      "t": "이재명 대통령 '사이비 단체 해산등·향후 계획 보고지시'",
      "nsite": 3,
      "np_here": 2,
-     "nc_here": 9,
+     "nc_here": 11,
      "issue_np": 4,
-     "issue_nc": 12,
+     "issue_nc": 14,
      "kw": [
       "해산",
       "단체",
       "사이비",
-      "대통령"
+      "종교"
      ],
      "top_post": {
       "t": "이재명 대통령 '사이비 단체 해산등·향후 계획 보고지시'",
@@ -530,8 +416,8 @@
      "issue_np": 4,
      "issue_nc": 54,
      "kw": [
-      "복귀",
-      "젠슨"
+      "젠슨",
+      "복귀"
      ],
      "top_post": {
       "t": "젠슨황 복귀",
@@ -547,10 +433,10 @@
      "issue_np": 3,
      "issue_nc": 18,
      "kw": [
-      "AI",
       "세상",
-      "회사",
-      "대표"
+      "AI",
+      "대표",
+      "회사"
      ],
      "top_post": {
       "t": "HW도 이제는 AI 없으면 일을 못하는 세상이 되었습니다.",
@@ -587,156 +473,97 @@
    ]
   },
   {
-   "name": "보배드림",
-   "np": 14,
-   "nc": 30,
+   "name": "82쿡",
+   "np": 6,
+   "nc": 69,
    "topics": [
     {
-     "t": "박지윤 패드립 카톡 내용",
-     "nsite": 5,
+     "t": "주식에 있어 정부 책임이 없는건 아닙니다",
+     "nsite": 4,
      "np_here": 2,
-     "nc_here": 6,
-     "issue_np": 7,
-     "issue_nc": 302,
-     "kw": [
-      "박지윤",
-      "카톡",
-      "패드립",
-      "도화선"
-     ],
-     "top_post": {
-      "t": "박지윤 카톡 뜸 ㄷㄷㄷ",
-      "u": "https://www.bobaedream.co.kr/view?code=best&No=1049558&vdate=",
-      "nc": 3
-     }
-    },
-    {
-     "t": "여자들 남자 키 좋아하는 거 이해가 안 가는게",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 3,
-     "issue_np": 7,
-     "issue_nc": 65,
-     "kw": [
-      "여자",
-      "남자",
-      "이해"
-     ],
-     "top_post": {
-      "t": "한국남자 좋다는 일본여자에 대한 한국여자들의 반응",
-      "u": "https://www.bobaedream.co.kr/view?code=best&No=1049626&vdate=",
-      "nc": 3
-     }
-    },
-    {
-     "t": "학폭 기록 때문에 수시 전부 떨어진 아들 ㄷㄷㄷ;;;",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 3,
+     "nc_here": 25,
      "issue_np": 6,
+     "issue_nc": 53,
+     "kw": [
+      "주식",
+      "시장",
+      "정부"
+     ],
+     "top_post": {
+      "t": "가장 안 좋은 시나리오로 가는 군요. 주식 시장은.",
+      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4262256&page=1",
+      "nc": 20
+     }
+    },
+    {
+     "t": "다른기차 잘못 타 놓고 우기는 KTX 민폐녀",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 15,
+     "issue_np": 3,
+     "issue_nc": 64,
+     "kw": [
+      "KTX",
+      "민폐"
+     ],
+     "top_post": {
+      "t": "ktx 민폐녀 영상 혹시 보셨나요?",
+      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4262209&page=1",
+      "nc": 15
+     }
+    },
+    {
+     "t": "국민연금 220조 손실도 개인탓?",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 15,
+     "issue_np": 3,
+     "issue_nc": 31,
+     "kw": [
+      "손실",
+      "국민연금"
+     ],
+     "top_post": {
+      "t": "개미들 563조 잃고 빚더미…국민연금도 220조 평가손실 '충격..",
+      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4262203&page=1",
+      "nc": 15
+     }
+    },
+    {
+     "t": "장가계 패키지 여행 갔던 부모님이 협박 감금 당했다가 돌아오셨습니다 (스레드 좋아요 6천개 달린 글)",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 12,
+     "issue_np": 3,
+     "issue_nc": 47,
+     "kw": [
+      "여행",
+      "패키지",
+      "장가계",
+      "협박"
+     ],
+     "top_post": {
+      "t": "[펌] 장가계 패키지 여행 갔던 부모님이 협박 감금 당했다가 돌..",
+      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4262269&page=1",
+      "nc": 12
+     }
+    },
+    {
+     "t": "젠슨황 복귀했다고 삼전닉스 30%상한가 찍는건가요",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 2,
+     "issue_np": 22,
      "issue_nc": 11,
      "kw": [
-      "수시",
-      "아들",
-      "기록"
+      "젠슨 황",
+      "복귀",
+      "첫날"
      ],
      "top_post": {
-      "t": "학폭기록때문에 수시에 떨어졌다는 고딩",
-      "u": "https://www.bobaedream.co.kr/view?code=best&No=1049529&vdate=",
-      "nc": 3
-     }
-    },
-    {
-     "t": "고등학생 딸 아이가 수업시간에 교복에 설사를 했답니다",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 3,
-     "issue_np": 3,
-     "issue_nc": 44,
-     "kw": [
-      "교복",
-      "설사",
-      "고등학생",
-      "아이"
-     ],
-     "top_post": {
-      "t": "고등학생 딸아이가 교복에 설사를 했답니다",
-      "u": "https://www.bobaedream.co.kr/view?code=best&No=1049726&vdate=",
-      "nc": 3
-     }
-    },
-    {
-     "t": "전세 안올리는 착한 집주인은 최악이라는 사람들 ㅋㅋ",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 3,
-     "issue_np": 4,
-     "issue_nc": 25,
-     "kw": [
-      "주인",
-      "최악",
-      "전세",
-      "세입자"
-     ],
-     "top_post": {
-      "t": "착한 집주인은 최악이라는 세입자",
-      "u": "https://www.bobaedream.co.kr/view?code=best&No=1049642&vdate=",
-      "nc": 3
-     }
-    },
-    {
-     "t": "한국 반도체는 끝났다네요 ㅠㅠ",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 3,
-     "issue_np": 3,
-     "issue_nc": 25,
-     "kw": [
-      "한국",
-      "반도체"
-     ],
-     "top_post": {
-      "t": "'아' 다르고 '어' 다르다고, 반도체 빼면 한국 8위",
-      "u": "https://www.bobaedream.co.kr/view?code=best&No=1049534&vdate=",
-      "nc": 3
-     }
-    },
-    {
-     "t": "이재명 대통령 '사이비 단체 해산등·향후 계획 보고지시'",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 3,
-     "issue_np": 4,
-     "issue_nc": 12,
-     "kw": [
-      "해산",
-      "단체",
-      "사이비",
-      "대통령"
-     ],
-     "top_post": {
-      "t": "사이비 종교단체 해산 검토 속도",
-      "u": "https://www.bobaedream.co.kr/view?code=best&No=1049714&vdate=",
-      "nc": 3
-     }
-    },
-    {
-     "t": "121만부 찍은 해외 유튜브에 올라온 한국 빈민가ㅎㄷㄷ",
-     "nsite": 5,
-     "np_here": 1,
-     "nc_here": 1,
-     "issue_np": 6,
-     "issue_nc": 7,
-     "kw": [
-      "한국",
-      "해외",
-      "빈민가",
-      "유튜브"
-     ],
-     "top_post": {
-      "t": "한국인도 모르는 한국 빈민가",
-      "u": "https://www.bobaedream.co.kr/view?code=best&No=1049692&vdate=",
-      "nc": 1
+      "t": "젠슨황 복귀에 숏돌이 마이클버리 날선 반응",
+      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4262378&page=1",
+      "nc": 2
      }
     }
    ]
@@ -773,8 +600,8 @@
      "issue_np": 3,
      "issue_nc": 13,
      "kw": [
-      "일론",
-      "머스크"
+      "머스크",
+      "일론"
      ],
      "top_post": {
       "t": "ㅅㄱㅂㄱ 일론머스크의 최애넝담",
@@ -799,6 +626,163 @@
       "t": "실시간 엔비디아 본사에서 기립 박수 받는 젠슨 황",
       "u": "https://arca.live/b/live/190077921?p=1",
       "nc": 3
+     }
+    }
+   ]
+  },
+  {
+   "name": "보배드림",
+   "np": 12,
+   "nc": 25,
+   "topics": [
+    {
+     "t": "박지윤 패드립 카톡 내용",
+     "nsite": 5,
+     "np_here": 2,
+     "nc_here": 6,
+     "issue_np": 7,
+     "issue_nc": 302,
+     "kw": [
+      "박지윤",
+      "카톡",
+      "패드립",
+      "최동석"
+     ],
+     "top_post": {
+      "t": "박지윤 카톡 뜸 ㄷㄷㄷ",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1049558&vdate=",
+      "nc": 3
+     }
+    },
+    {
+     "t": "여자들 남자 키 좋아하는 거 이해가 안 가는게",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 3,
+     "issue_np": 7,
+     "issue_nc": 65,
+     "kw": [
+      "여자",
+      "남자",
+      "이해"
+     ],
+     "top_post": {
+      "t": "한국남자 좋다는 일본여자에 대한 한국여자들의 반응",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1049626&vdate=",
+      "nc": 3
+     }
+    },
+    {
+     "t": "고등학생 딸 아이가 수업시간에 교복에 설사를 했답니다",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 3,
+     "issue_np": 3,
+     "issue_nc": 48,
+     "kw": [
+      "고등학생",
+      "교복",
+      "설사",
+      "수업"
+     ],
+     "top_post": {
+      "t": "고등학생 딸아이가 교복에 설사를 했답니다",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1049726&vdate=",
+      "nc": 3
+     }
+    },
+    {
+     "t": "전세 안올리는 착한 집주인은 최악이라는 사람들 ㅋㅋ",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 3,
+     "issue_np": 4,
+     "issue_nc": 25,
+     "kw": [
+      "최악",
+      "주인",
+      "전세",
+      "세입자"
+     ],
+     "top_post": {
+      "t": "착한 집주인은 최악이라는 세입자",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1049642&vdate=",
+      "nc": 3
+     }
+    },
+    {
+     "t": "이재명 대통령 '사이비 단체 해산등·향후 계획 보고지시'",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 3,
+     "issue_np": 4,
+     "issue_nc": 14,
+     "kw": [
+      "해산",
+      "단체",
+      "사이비",
+      "종교"
+     ],
+     "top_post": {
+      "t": "사이비 종교단체 해산 검토 속도",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1049714&vdate=",
+      "nc": 3
+     }
+    },
+    {
+     "t": "흙수저 출신 어떤 스코틀랜드 여성의 신데렐라 스토리",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 3,
+     "issue_np": 3,
+     "issue_nc": 3,
+     "kw": [
+      "신데렐라",
+      "스코틀랜드",
+      "흙수저",
+      "여성"
+     ],
+     "top_post": {
+      "t": "흙수저 출신 어떤 스코틀랜드 여성의 신데렐라 스토리",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1049760&vdate=",
+      "nc": 3
+     }
+    },
+    {
+     "t": "121만부 찍은 해외 유튜브에 올라온 한국 빈민가ㅎㄷㄷ",
+     "nsite": 5,
+     "np_here": 1,
+     "nc_here": 1,
+     "issue_np": 6,
+     "issue_nc": 7,
+     "kw": [
+      "한국",
+      "빈민가",
+      "해외",
+      "유튜브"
+     ],
+     "top_post": {
+      "t": "한국인도 모르는 한국 빈민가",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1049692&vdate=",
+      "nc": 1
+     }
+    },
+    {
+     "t": "“남성 100만원 벌 때 여성은 72만원”…한국의 씁쓸한 현실",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 1,
+     "issue_np": 3,
+     "issue_nc": 10,
+     "kw": [
+      "한국",
+      "여성",
+      "남성"
+     ],
+     "top_post": {
+      "t": "한국 남자를 좋아한다는 일본 여성에 대한 한국 여성들의 반응",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1049524&vdate=",
+      "nc": 1
      }
     }
    ]
@@ -849,7 +833,7 @@
   },
   {
    "name": "더쿠",
-   "np": 11,
+   "np": 12,
    "nc": 0,
    "topics": [
     {
@@ -863,7 +847,7 @@
       "박지윤",
       "카톡",
       "패드립",
-      "도화선"
+      "최동석"
      ],
      "top_post": {
       "t": "\"지 애미가 더럽게 키워 구질구질\"…박지윤 카톡 본 최동석, 파경 도화선",
@@ -899,8 +883,8 @@
      "issue_nc": 7,
      "kw": [
       "한국",
-      "해외",
       "빈민가",
+      "해외",
       "유튜브"
      ],
      "top_post": {
@@ -917,8 +901,8 @@
      "issue_np": 22,
      "issue_nc": 11,
      "kw": [
-      "복귀",
       "젠슨 황",
+      "복귀",
       "첫날"
      ],
      "top_post": {
@@ -935,9 +919,9 @@
      "issue_np": 3,
      "issue_nc": 102,
      "kw": [
+      "국가",
       "국민",
       "기념일",
-      "국가",
       "주권"
      ],
      "top_post": {
@@ -952,7 +936,7 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 3,
-     "issue_nc": 61,
+     "issue_nc": 64,
      "kw": [
       "KTX",
       "민폐"
@@ -964,40 +948,40 @@
      }
     },
     {
-     "t": "일본 다카이치 총리가 중국 방문했을 때 환영 인원이 적었던 이유.",
+     "t": "장가계 패키지 여행 갔던 부모님이 협박 감금 당했다가 돌아오셨습니다 (스레드 좋아요 6천개 달린 글)",
      "nsite": 3,
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 3,
-     "issue_nc": 31,
+     "issue_nc": 47,
      "kw": [
-      "일본",
-      "총리",
-      "중국",
-      "다카이치"
+      "여행",
+      "패키지",
+      "장가계",
+      "협박"
      ],
      "top_post": {
-      "t": "일본총리가 중국에 도착했을때 무시당했다!!!의 진실.......",
-      "u": "https://theqoo.net/hot/4415500570",
+      "t": "장가계 패키지 여행 갔던 부모님이 협박 감금 당했다가 돌아오셨습니다 (스레드 좋아요 6천개 달린 글)",
+      "u": "https://theqoo.net/hot/4415812024",
       "nc": 0
      }
     },
     {
-     "t": "여군 여전사 최초 특전사관 정년 전역한 김정아 예비역 원사님",
+     "t": "흙수저 출신 어떤 스코틀랜드 여성의 신데렐라 스토리",
      "nsite": 3,
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 3,
-     "issue_nc": 1,
+     "issue_nc": 3,
      "kw": [
-      "정년",
-      "전역",
-      "최초",
-      "여군"
+      "신데렐라",
+      "스코틀랜드",
+      "흙수저",
+      "여성"
      ],
      "top_post": {
-      "t": "여군 여전사 최초 특전사관 정년 전역한 김정아 예비역 원사님",
-      "u": "https://theqoo.net/hot/4416182897",
+      "t": "흙수저 출신 어떤 스코틀랜드 여성의 신데렐라 스토리",
+      "u": "https://theqoo.net/hot/4416385343",
       "nc": 0
      }
     }
@@ -1005,7 +989,7 @@
   },
   {
    "name": "SLR클럽",
-   "np": 11,
+   "np": 8,
    "nc": 0,
    "topics": [
     {
@@ -1017,31 +1001,13 @@
      "issue_nc": 7,
      "kw": [
       "한국",
-      "해외",
       "빈민가",
+      "해외",
       "유튜브"
      ],
      "top_post": {
       "t": "121만부 찍은 해외 유튜브에 올라온 한국 빈민가ㅎㄷㄷ",
       "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=678023",
-      "nc": 0
-     }
-    },
-    {
-     "t": "주식에 있어 정부 책임이 없는건 아닙니다",
-     "nsite": 4,
-     "np_here": 2,
-     "nc_here": 0,
-     "issue_np": 7,
-     "issue_nc": 72,
-     "kw": [
-      "주식",
-      "시장",
-      "정부"
-     ],
-     "top_post": {
-      "t": "정부가 주식 시장을 방치하는 이유",
-      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=678032",
       "nc": 0
      }
     },
@@ -1064,20 +1030,20 @@
      }
     },
     {
-     "t": "학폭 기록 때문에 수시 전부 떨어진 아들 ㄷㄷㄷ;;;",
+     "t": "주식에 있어 정부 책임이 없는건 아닙니다",
      "nsite": 4,
      "np_here": 2,
      "nc_here": 0,
      "issue_np": 6,
-     "issue_nc": 11,
+     "issue_nc": 53,
      "kw": [
-      "수시",
-      "아들",
-      "기록"
+      "주식",
+      "시장",
+      "정부"
      ],
      "top_post": {
-      "t": "학폭 기록 때문에 수시 전부 떨어진 아들 ㄷㄷㄷ",
-      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677992",
+      "t": "정부가 주식 시장을 방치하는 이유",
+      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=678032",
       "nc": 0
      }
     },
@@ -1087,35 +1053,16 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 3,
-     "issue_nc": 44,
+     "issue_nc": 48,
      "kw": [
+      "고등학생",
       "교복",
       "설사",
-      "고등학생",
-      "아이"
+      "수업"
      ],
      "top_post": {
       "t": "\"고등학생 딸 아이가 수업시간에 교복에 설사를 했답니다.\" ㄷㄷㄷ",
       "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=678082",
-      "nc": 0
-     }
-    },
-    {
-     "t": "일본 다카이치 총리가 중국 방문했을 때 환영 인원이 적었던 이유.",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 31,
-     "kw": [
-      "일본",
-      "총리",
-      "중국",
-      "다카이치"
-     ],
-     "top_post": {
-      "t": "중국의 일본 다카이치 총리 개무시하기...",
-      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=677999",
       "nc": 0
      }
     },
@@ -1127,8 +1074,8 @@
      "issue_np": 4,
      "issue_nc": 19,
      "kw": [
-      "논란",
       "음식",
+      "논란",
       "신혼부부"
      ],
      "top_post": {
@@ -1143,16 +1090,33 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 4,
-     "issue_nc": 12,
+     "issue_nc": 14,
      "kw": [
       "해산",
       "단체",
       "사이비",
-      "대통령"
+      "종교"
      ],
      "top_post": {
       "t": "[속보] 이 대통령 “사이비 종교단체 해산 방안 검토할 때”",
       "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=678072",
+      "nc": 0
+     }
+    },
+    {
+     "t": "내일 모레 50인데 GTA6 가능한가요(스타1 이후 게임 안함)",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 8,
+     "kw": [
+      "게임",
+      "GTA"
+     ],
+     "top_post": {
+      "t": "내일 모레 50인데 GTA6 가능한가요(스타1 이후 게임 안함)",
+      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=678010",
       "nc": 0
      }
     }
@@ -1160,7 +1124,7 @@
   },
   {
    "name": "루리웹",
-   "np": 30,
+   "np": 31,
    "nc": 0,
    "topics": [
     {
@@ -1172,8 +1136,8 @@
      "issue_nc": 7,
      "kw": [
       "한국",
-      "해외",
       "빈민가",
+      "해외",
       "유튜브"
      ],
      "top_post": {
@@ -1220,6 +1184,24 @@
      }
     },
     {
+     "t": "주식에 있어 정부 책임이 없는건 아닙니다",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 6,
+     "issue_nc": 53,
+     "kw": [
+      "주식",
+      "시장",
+      "정부"
+     ],
+     "top_post": {
+      "t": "다이나믹한 주식 시장",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77500911?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
      "t": "젠슨황 복귀했다고 삼전닉스 30%상한가 찍는건가요",
      "nsite": 4,
      "np_here": 3,
@@ -1227,50 +1209,13 @@
      "issue_np": 22,
      "issue_nc": 11,
      "kw": [
-      "복귀",
       "젠슨 황",
+      "복귀",
       "첫날"
      ],
      "top_post": {
       "t": "젠슨황 복귀로 ↗된사람",
       "u": "https://bbs.ruliweb.com/best/board/300143/read/77498982?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "학폭 기록 때문에 수시 전부 떨어진 아들 ㄷㄷㄷ;;;",
-     "nsite": 4,
-     "np_here": 2,
-     "nc_here": 0,
-     "issue_np": 6,
-     "issue_nc": 11,
-     "kw": [
-      "수시",
-      "아들",
-      "기록"
-     ],
-     "top_post": {
-      "t": "학폭 기록 때문에 수시 전부 떨어진 아들",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77489477?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "일본인 한국 병원 후기",
-     "nsite": 4,
-     "np_here": 3,
-     "nc_here": 0,
-     "issue_np": 6,
-     "issue_nc": 8,
-     "kw": [
-      "한국",
-      "일본인",
-      "특징",
-      "한국인"
-     ],
-     "top_post": {
-      "t": "한국 와서 게랑 야스한 일본인",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77496351?m=all&t=now",
       "nc": 0
      }
     },
@@ -1282,8 +1227,8 @@
      "issue_np": 4,
      "issue_nc": 54,
      "kw": [
-      "복귀",
-      "젠슨"
+      "젠슨",
+      "복귀"
      ],
      "top_post": {
       "t": "복귀한 젠슨황 근황",
@@ -1307,12 +1252,29 @@
       "u": "https://bbs.ruliweb.com/best/board/300143/read/77494963?m=all&t=now",
       "nc": 0
      }
+    },
+    {
+     "t": "국민연금 220조 손실도 개인탓?",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 31,
+     "kw": [
+      "손실",
+      "국민연금"
+     ],
+     "top_post": {
+      "t": "코스피 개인 -562조, 국민연금 -220조 손실",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77492647?m=all&t=now",
+      "nc": 0
+     }
     }
    ]
   },
   {
    "name": "디시인사이드",
-   "np": 5,
+   "np": 6,
    "nc": 0,
    "topics": [
     {
@@ -1354,23 +1316,6 @@
      }
     },
     {
-     "t": "테슬라 FSD15...의미 ㄷㄷ..",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 25,
-     "kw": [
-      "FSD",
-      "테슬라"
-     ],
-     "top_post": {
-      "t": "테슬라 FSD15...의미 ㄷㄷ..",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481201&_dcbest=1&page=1",
-      "nc": 0
-     }
-    },
-    {
      "t": "“남성 100만원 벌 때 여성은 72만원”…한국의 씁쓸한 현실",
      "nsite": 3,
      "np_here": 1,
@@ -1387,33 +1332,50 @@
       "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481197&_dcbest=1&page=1",
       "nc": 0
      }
+    },
+    {
+     "t": "식당 차리고 2년동안 영업 안한 내향인",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 3,
+     "kw": [
+      "식당",
+      "영업",
+      "내향"
+     ],
+     "top_post": {
+      "t": "식당 차리고 2년동안 영업 안한 내향인",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481242&_dcbest=1&page=1",
+      "nc": 0
+     }
+    },
+    {
+     "t": "안싱글벙글 어느 일본 만화가 급완결된 이유",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 0,
+     "kw": [
+      "만화",
+      "일본",
+      "완결"
+     ],
+     "top_post": {
+      "t": "안싱글벙글 어느 일본 만화가 급완결된 이유",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481151&_dcbest=1&page=1",
+      "nc": 0
+     }
     }
    ]
   },
   {
    "name": "오늘의유머",
-   "np": 2,
+   "np": 1,
    "nc": 0,
    "topics": [
-    {
-     "t": "일본인 한국 병원 후기",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 6,
-     "issue_nc": 8,
-     "kw": [
-      "한국",
-      "일본인",
-      "특징",
-      "한국인"
-     ],
-     "top_post": {
-      "t": "일본인 한국 병원 후기",
-      "u": "https://www.todayhumor.co.kr/board/view.php?table=bestofbest&no=484138&s_no=484138&page=1",
-      "nc": 0
-     }
-    },
     {
      "t": "친구 결혼식에 갔다가 여자를 만난 썰",
      "nsite": 3,
