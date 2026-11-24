@@ -1,27 +1,27 @@
 {
  "date": "2026-11-25",
- "updated": "2026-11-25 05:50",
+ "updated": "2026-11-25 06:50",
  "sites": 13,
- "npost": 2896,
+ "npost": 2877,
  "note": "출처(커뮤니티)별 집계예요. 작성자·연령·성별 정보는 수집하지 않아요. posts 는 이슈별로 뽑힌 일부라 전체 글 수가 아니에요.",
  "sources": [
   {
    "name": "MLB파크",
-   "np": 11,
-   "nc": 346,
+   "np": 12,
+   "nc": 356,
    "topics": [
     {
      "t": "실시간 엔비디아 본사 근황 ㄷㄷ. mp4",
-     "nsite": 6,
+     "nsite": 5,
      "np_here": 1,
      "nc_here": 125,
-     "issue_np": 6,
+     "issue_np": 5,
      "issue_nc": 128,
      "kw": [
-      "본사",
       "실시간",
-      "엔비디아",
-      "젠슨 황"
+      "본사",
+      "젠슨 황",
+      "엔비디아"
      ],
      "top_post": {
       "t": "실시간 엔비디아 본사 근황 ㄷㄷ. mp4",
@@ -37,10 +37,10 @@
      "issue_np": 4,
      "issue_nc": 102,
      "kw": [
-      "국민",
-      "기념일",
       "국가",
-      "대통령"
+      "기념일",
+      "국민",
+      "주권"
      ],
      "top_post": {
       "t": "12월 3일 국가기념일 된다…李 \"계엄 맞선 '국민 주권의 날' 기려야\"",
@@ -56,9 +56,9 @@
      "issue_np": 3,
      "issue_nc": 82,
      "kw": [
+      "감금",
       "패키지",
       "장가계",
-      "감금",
       "협박"
      ],
      "top_post": {
@@ -75,10 +75,10 @@
      "issue_np": 3,
      "issue_nc": 86,
      "kw": [
-      "GV",
       "소프트웨어",
-      "제네시스",
-      "기술력"
+      "GV",
+      "기술력",
+      "제네시스"
      ],
      "top_post": {
       "t": "제네시스 GV90 소프트웨어 기술력 근황",
@@ -94,8 +94,8 @@
      "issue_np": 3,
      "issue_nc": 25,
      "kw": [
-      "둠스데이",
-      "어벤져스"
+      "어벤져스",
+      "둠스데이"
      ],
      "top_post": {
       "t": "어벤져스 둠스데이 최종 예고편",
@@ -104,12 +104,30 @@
      }
     },
     {
+     "t": "친구 결혼식에 갔다가 여자를 만난 썰",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 20,
+     "issue_np": 4,
+     "issue_nc": 20,
+     "kw": [
+      "친구",
+      "여자",
+      "결혼식"
+     ],
+     "top_post": {
+      "t": "오늘 여자친구한테 한소리 했습니다.",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611250120297747&m=view",
+      "nc": 20
+     }
+    },
+    {
      "t": "무료로 40번 이상 먹은 배달 거지",
-     "nsite": 3,
+     "nsite": 4,
      "np_here": 1,
      "nc_here": 13,
-     "issue_np": 4,
-     "issue_nc": 13,
+     "issue_np": 5,
+     "issue_nc": 43,
      "kw": [
       "거지",
       "배달",
@@ -122,29 +140,11 @@
      }
     },
     {
-     "t": "친구 결혼식에 갔다가 여자를 만난 썰",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 11,
-     "issue_np": 4,
-     "issue_nc": 11,
-     "kw": [
-      "친구",
-      "여자",
-      "결혼식"
-     ],
-     "top_post": {
-      "t": "오늘 여자친구한테 한소리 했습니다.",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611250120297747&m=view",
-      "nc": 11
-     }
-    },
-    {
      "t": "젠슨황, 엔비디아 CEO 복귀",
      "nsite": 6,
      "np_here": 1,
      "nc_here": 9,
-     "issue_np": 27,
+     "issue_np": 24,
      "issue_nc": 40,
      "kw": [
       "복귀",
@@ -162,8 +162,8 @@
   },
   {
    "name": "개드립",
-   "np": 11,
-   "nc": 273,
+   "np": 12,
+   "nc": 303,
    "topics": [
     {
      "t": "고등학생 딸 아이가 수업시간에 교복에 설사를 했답니다",
@@ -192,9 +192,9 @@
      "issue_np": 3,
      "issue_nc": 82,
      "kw": [
+      "감금",
       "패키지",
       "장가계",
-      "감금",
       "협박"
      ],
      "top_post": {
@@ -208,7 +208,7 @@
      "nsite": 4,
      "np_here": 1,
      "nc_here": 46,
-     "issue_np": 6,
+     "issue_np": 5,
      "issue_nc": 61,
      "kw": [
       "복귀",
@@ -241,6 +241,24 @@
      }
     },
     {
+     "t": "무료로 40번 이상 먹은 배달 거지",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 30,
+     "issue_np": 5,
+     "issue_nc": 43,
+     "kw": [
+      "거지",
+      "배달",
+      "무료"
+     ],
+     "top_post": {
+      "t": "무료로 40번 이상 먹은 배달 거지",
+      "u": "https://www.dogdrip.net/dogdrip/736446063?sort_index=popular&page=1",
+      "nc": 30
+     }
+    },
+    {
      "t": "지금 대마도 마운자로 졷됨",
      "nsite": 4,
      "np_here": 1,
@@ -263,7 +281,7 @@
      "np_here": 1,
      "nc_here": 21,
      "issue_np": 6,
-     "issue_nc": 42,
+     "issue_nc": 43,
      "kw": [
       "남자",
       "친구",
@@ -294,25 +312,6 @@
       "u": "https://www.dogdrip.net/dogdrip/736325498?sort_index=popular&page=1",
       "nc": 15
      }
-    },
-    {
-     "t": "돈 필요없는 세상 온다던 AI회사 대표 근황",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 13,
-     "issue_np": 4,
-     "issue_nc": 18,
-     "kw": [
-      "AI",
-      "세상",
-      "회사",
-      "대표"
-     ],
-     "top_post": {
-      "t": "돈 필요없는 세상 온다던 AI회사 대표 근황",
-      "u": "https://www.dogdrip.net/dogdrip/736259895?sort_index=popular&page=1",
-      "nc": 13
-     }
     }
    ]
   },
@@ -329,10 +328,10 @@
      "issue_np": 3,
      "issue_nc": 86,
      "kw": [
-      "GV",
       "소프트웨어",
-      "제네시스",
-      "기술력"
+      "GV",
+      "기술력",
+      "제네시스"
      ],
      "top_post": {
       "t": "GV90 소프트웨어 이게 최선인가요?",
@@ -385,10 +384,10 @@
      "issue_np": 4,
      "issue_nc": 102,
      "kw": [
-      "국민",
-      "기념일",
       "국가",
-      "대통령"
+      "기념일",
+      "국민",
+      "주권"
      ],
      "top_post": {
       "t": "이 대통령 '빛의 혁명 12·3 국가기념일 '국민주권의 날'로 지정'",
@@ -401,7 +400,7 @@
      "nsite": 6,
      "np_here": 2,
      "nc_here": 8,
-     "issue_np": 27,
+     "issue_np": 24,
      "issue_nc": 40,
      "kw": [
       "복귀",
@@ -420,7 +419,7 @@
      "nsite": 4,
      "np_here": 1,
      "nc_here": 8,
-     "issue_np": 6,
+     "issue_np": 5,
      "issue_nc": 61,
      "kw": [
       "복귀",
@@ -441,10 +440,10 @@
      "issue_np": 3,
      "issue_nc": 7,
      "kw": [
+      "사이비",
       "대통령",
       "해산",
-      "단체",
-      "사이비"
+      "단체"
      ],
      "top_post": {
       "t": "이재명 대통령 '사이비 단체 해산등·향후 계획 보고지시'",
@@ -460,8 +459,8 @@
      "issue_np": 4,
      "issue_nc": 18,
      "kw": [
-      "AI",
       "세상",
+      "AI",
       "회사",
       "대표"
      ],
@@ -486,8 +485,8 @@
      "issue_np": 3,
      "issue_nc": 99,
      "kw": [
-      "행위",
       "속보",
+      "행위",
       "부정",
       "수능"
      ],
@@ -512,8 +511,8 @@
      "issue_np": 3,
      "issue_nc": 99,
      "kw": [
-      "행위",
       "속보",
+      "행위",
       "부정",
       "수능"
      ],
@@ -531,10 +530,10 @@
      "issue_np": 3,
      "issue_nc": 14,
      "kw": [
-      "경보",
       "항공기",
-      "러시아",
-      "침범"
+      "침범",
+      "경계",
+      "경보"
      ],
      "top_post": {
       "t": "경계경보 발령",
@@ -547,7 +546,7 @@
      "nsite": 6,
      "np_here": 1,
      "nc_here": 2,
-     "issue_np": 27,
+     "issue_np": 24,
      "issue_nc": 40,
      "kw": [
       "복귀",
@@ -563,16 +562,16 @@
     },
     {
      "t": "실시간 엔비디아 본사 근황 ㄷㄷ. mp4",
-     "nsite": 6,
+     "nsite": 5,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 6,
+     "issue_np": 5,
      "issue_nc": 128,
      "kw": [
-      "본사",
       "실시간",
-      "엔비디아",
-      "젠슨 황"
+      "본사",
+      "젠슨 황",
+      "엔비디아"
      ],
      "top_post": {
       "t": "실시간 본사 앞에서 샌드위치 나눠주는 젠슨황",
@@ -592,7 +591,7 @@
      "nsite": 6,
      "np_here": 1,
      "nc_here": 21,
-     "issue_np": 27,
+     "issue_np": 24,
      "issue_nc": 40,
      "kw": [
       "복귀",
@@ -608,16 +607,16 @@
     },
     {
      "t": "실시간 엔비디아 본사 근황 ㄷㄷ. mp4",
-     "nsite": 6,
+     "nsite": 5,
      "np_here": 1,
      "nc_here": 3,
-     "issue_np": 6,
+     "issue_np": 5,
      "issue_nc": 128,
      "kw": [
-      "본사",
       "실시간",
-      "엔비디아",
-      "젠슨 황"
+      "본사",
+      "젠슨 황",
+      "엔비디아"
      ],
      "top_post": {
       "t": "실시간 엔비디아 본사에서 기립 박수 받는 젠슨 황",
@@ -638,7 +637,7 @@
      "np_here": 1,
      "nc_here": 20,
      "issue_np": 6,
-     "issue_nc": 42,
+     "issue_nc": 43,
      "kw": [
       "남자",
       "친구",
@@ -656,7 +655,7 @@
   {
    "name": "보배드림",
    "np": 9,
-   "nc": 14,
+   "nc": 15,
    "topics": [
     {
      "t": "고등학생 딸 아이가 수업시간에 교복에 설사를 했답니다",
@@ -705,9 +704,9 @@
      "issue_nc": 3,
      "kw": [
       "흙수저",
-      "신데렐라",
+      "스토리",
       "스코틀랜드",
-      "스토리"
+      "신데렐라"
      ],
      "top_post": {
       "t": "흙수저 출신 어떤 스코틀랜드 여성의 신데렐라 스토리",
@@ -719,9 +718,9 @@
      "t": "제목 그대로 결혼생각이 있다고 초반부터 밝히고 만난 남자친구가 사귄지 반년이 넘어가자 ...",
      "nsite": 6,
      "np_here": 1,
-     "nc_here": 1,
+     "nc_here": 2,
      "issue_np": 6,
-     "issue_nc": 42,
+     "issue_nc": 43,
      "kw": [
       "남자",
       "친구",
@@ -731,7 +730,7 @@
      "top_post": {
       "t": "전 남자 친구랑 헤어진 게 너무 후회돼",
       "u": "https://www.bobaedream.co.kr/view?code=best&No=1049878&vdate=",
-      "nc": 1
+      "nc": 2
      }
     },
     {
@@ -760,8 +759,8 @@
      "issue_np": 3,
      "issue_nc": 1,
      "kw": [
-      "남편",
-      "아내"
+      "아내",
+      "남편"
      ],
      "top_post": {
       "t": "남편이 힘들게 벌어 온 돈을 아내가 지출하는 곳",
@@ -796,481 +795,15 @@
      "issue_np": 3,
      "issue_nc": 1,
      "kw": [
-      "원사",
-      "전역",
+      "여군",
       "정년",
+      "원사",
       "김정아"
      ],
      "top_post": {
       "t": "여군 특전사 최초 정년 전역이라는 김정아 예비역 원사",
       "u": "https://www.bobaedream.co.kr/view?code=best&No=1049718&vdate=",
       "nc": 1
-     }
-    }
-   ]
-  },
-  {
-   "name": "디시인사이드",
-   "np": 16,
-   "nc": 0,
-   "topics": [
-    {
-     "t": "실시간 엔비디아 본사 근황 ㄷㄷ. mp4",
-     "nsite": 6,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 6,
-     "issue_nc": 128,
-     "kw": [
-      "본사",
-      "실시간",
-      "엔비디아",
-      "젠슨 황"
-     ],
-     "top_post": {
-      "t": "실시간 엔비디아 본사 젠슨황 입갤 ㅋㅋㅋ.avi",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481252&_dcbest=1&page=1",
-      "nc": 0
-     }
-    },
-    {
-     "t": "제목 그대로 결혼생각이 있다고 초반부터 밝히고 만난 남자친구가 사귄지 반년이 넘어가자 ...",
-     "nsite": 6,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 6,
-     "issue_nc": 42,
-     "kw": [
-      "남자",
-      "친구",
-      "결혼",
-      "후회"
-     ],
-     "top_post": {
-      "t": "결혼할 남자는 최소 월 300만원은 벌어야 한다는 인티녀",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481347&_dcbest=1&page=1",
-      "nc": 0
-     }
-    },
-    {
-     "t": "지금 대마도 마운자로 졷됨",
-     "nsite": 4,
-     "np_here": 2,
-     "nc_here": 0,
-     "issue_np": 6,
-     "issue_nc": 22,
-     "kw": [
-      "마운자",
-      "대마도"
-     ],
-     "top_post": {
-      "t": "여초난리...대마도 마운자로 웨이팅 줄.",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481364&_dcbest=1&page=1",
-      "nc": 0
-     }
-    },
-    {
-     "t": "돈 필요없는 세상 온다던 AI회사 대표 근황",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 18,
-     "kw": [
-      "AI",
-      "세상",
-      "회사",
-      "대표"
-     ],
-     "top_post": {
-      "t": "세상 떠난 견주를 AI로 다시 만난 댕댕이 반응",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481374&_dcbest=1&page=1",
-      "nc": 0
-     }
-    },
-    {
-     "t": "감동감동 스코틀랜드 흙수저녀의 신데렐라 스토리",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 3,
-     "kw": [
-      "흙수저",
-      "신데렐라",
-      "스코틀랜드",
-      "스토리"
-     ],
-     "top_post": {
-      "t": "감동감동 스코틀랜드 흙수저녀의 신데렐라 스토리",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481435&_dcbest=1&page=1",
-      "nc": 0
-     }
-    },
-    {
-     "t": "수능 부정행위 단속 총정리",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 99,
-     "kw": [
-      "행위",
-      "속보",
-      "부정",
-      "수능"
-     ],
-     "top_post": {
-      "t": "[속보] 이 대통령 \"시험 부정행위는 중대범죄\"",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481307&_dcbest=1&page=1",
-      "nc": 0
-     }
-    },
-    {
-     "t": "식당 차리고 2년동안 영업 안한 내향인",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 41,
-     "kw": [
-      "영업",
-      "식당",
-      "내향",
-      "월세"
-     ],
-     "top_post": {
-      "t": "식당 차리고 2년동안 영업 안한 내향인",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481242&_dcbest=1&page=1",
-      "nc": 0
-     }
-    },
-    {
-     "t": "어벤져스 둠스데이 최종 예고편",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 25,
-     "kw": [
-      "둠스데이",
-      "어벤져스"
-     ],
-     "top_post": {
-      "t": "역대급으로 미쳤다는 어벤져스: 둠스데이 라인업",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481433&_dcbest=1&page=1",
-      "nc": 0
-     }
-    }
-   ]
-  },
-  {
-   "name": "더쿠",
-   "np": 14,
-   "nc": 0,
-   "topics": [
-    {
-     "t": "실시간 엔비디아 본사 근황 ㄷㄷ. mp4",
-     "nsite": 6,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 6,
-     "issue_nc": 128,
-     "kw": [
-      "본사",
-      "실시간",
-      "엔비디아",
-      "젠슨 황"
-     ],
-     "top_post": {
-      "t": "실시간 본사 앞에서 샌드위치 나눠주는 젠슨황",
-      "u": "https://theqoo.net/hot/4416416327",
-      "nc": 0
-     }
-    },
-    {
-     "t": "젠슨황, 엔비디아 CEO 복귀",
-     "nsite": 6,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 27,
-     "issue_nc": 40,
-     "kw": [
-      "복귀",
-      "젠슨 황",
-      "엔비디아",
-      "CEO"
-     ],
-     "top_post": {
-      "t": "젠슨 황 엔비디아 CEO 복귀, 이사회 만장일치",
-      "u": "https://theqoo.net/hot/4415979777",
-      "nc": 0
-     }
-    },
-    {
-     "t": "고등학생 딸 아이가 수업시간에 교복에 설사를 했답니다",
-     "nsite": 5,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 52,
-     "kw": [
-      "고등학생",
-      "설사",
-      "수업",
-      "교복"
-     ],
-     "top_post": {
-      "t": "고등학생 딸 아이가 수업시간에 교복에 설사를했답니다",
-      "u": "https://theqoo.net/hot/4417097017",
-      "nc": 0
-     }
-    },
-    {
-     "t": "12월 3일 국가기념일 된다…李 \"계엄 맞선 '국민 주권의 날' 기려야\"",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 102,
-     "kw": [
-      "국민",
-      "기념일",
-      "국가",
-      "대통령"
-     ],
-     "top_post": {
-      "t": "12월3일 국가기념일 된다…李대통령 \"계엄군 맞선 위대한 국민 승리\"",
-      "u": "https://theqoo.net/hot/4416349320",
-      "nc": 0
-     }
-    },
-    {
-     "t": "지금 대마도 마운자로 졷됨",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 6,
-     "issue_nc": 22,
-     "kw": [
-      "마운자",
-      "대마도"
-     ],
-     "top_post": {
-      "t": "말많은 핫게 오늘자 대마도 마운자로 받으러 간 후기 (야마토운수)",
-      "u": "https://theqoo.net/hot/4416802685",
-      "nc": 0
-     }
-    },
-    {
-     "t": "친구 결혼식에 갔다가 여자를 만난 썰",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 11,
-     "kw": [
-      "친구",
-      "여자",
-      "결혼식"
-     ],
-     "top_post": {
-      "t": "최근에 친구중에 결혼식 안하고 혼인신고만 한다는 애 있는데 엄마에게 그 얘길하니 엄마가 아이고 그러면 안된다는거야",
-      "u": "https://theqoo.net/hot/4416276592",
-      "nc": 0
-     }
-    },
-    {
-     "t": "감동감동 스코틀랜드 흙수저녀의 신데렐라 스토리",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 3,
-     "kw": [
-      "흙수저",
-      "신데렐라",
-      "스코틀랜드",
-      "스토리"
-     ],
-     "top_post": {
-      "t": "흙수저 출신 어떤 스코틀랜드 여성의 신데렐라 스토리",
-      "u": "https://theqoo.net/hot/4416385343",
-      "nc": 0
-     }
-    },
-    {
-     "t": "난리난 중국 \"장가계\" 패키지 여행 가이드 감금 협박",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 82,
-     "kw": [
-      "패키지",
-      "장가계",
-      "감금",
-      "협박"
-     ],
-     "top_post": {
-      "t": "장가계 패키지 여행 갔던 부모님이 협박 감금 당했다가 돌아오셨습니다 (스레드 좋아요 6천개 달린 글)",
-      "u": "https://theqoo.net/hot/4415812024",
-      "nc": 0
-     }
-    }
-   ]
-  },
-  {
-   "name": "루리웹",
-   "np": 34,
-   "nc": 0,
-   "topics": [
-    {
-     "t": "실시간 엔비디아 본사 근황 ㄷㄷ. mp4",
-     "nsite": 6,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 6,
-     "issue_nc": 128,
-     "kw": [
-      "본사",
-      "실시간",
-      "엔비디아",
-      "젠슨 황"
-     ],
-     "top_post": {
-      "t": "엔비디아 본사 출근길 상황",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77499043?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "제목 그대로 결혼생각이 있다고 초반부터 밝히고 만난 남자친구가 사귄지 반년이 넘어가자 ...",
-     "nsite": 6,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 6,
-     "issue_nc": 42,
-     "kw": [
-      "남자",
-      "친구",
-      "결혼",
-      "후회"
-     ],
-     "top_post": {
-      "t": "남자친구: '우리?'",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77501677?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "고등학생 딸 아이가 수업시간에 교복에 설사를 했답니다",
-     "nsite": 5,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 52,
-     "kw": [
-      "고등학생",
-      "설사",
-      "수업",
-      "교복"
-     ],
-     "top_post": {
-      "t": "고등학생 딸이 수업시간에 설사함",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77504329?m=humor",
-      "nc": 0
-     }
-    },
-    {
-     "t": "더쿠: 젠슨황이 여자였어도 복귀가 가능했을까?",
-     "nsite": 4,
-     "np_here": 3,
-     "nc_here": 0,
-     "issue_np": 6,
-     "issue_nc": 61,
-     "kw": [
-      "복귀",
-      "젠슨",
-      "여자"
-     ],
-     "top_post": {
-      "t": "복귀한 젠슨황 근황",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77499064?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "착한 집주인이 최악이라고 하는 세입자",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 57,
-     "kw": [
-      "세입자",
-      "최악",
-      "집주인",
-      "주인"
-     ],
-     "top_post": {
-      "t": "악덕 집주인을 만나서 인생이 꼬인 세입자",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77501036?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "지금 대마도 마운자로 졷됨",
-     "nsite": 4,
-     "np_here": 2,
-     "nc_here": 0,
-     "issue_np": 6,
-     "issue_nc": 22,
-     "kw": [
-      "마운자",
-      "대마도"
-     ],
-     "top_post": {
-      "t": "대마도 마운자로 수령 줄에 뚱뚱한 사람이 없는 이유 ㄷㄷㄷㄷ",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77502288?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "돈 필요없는 세상 온다던 AI회사 대표 근황",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 18,
-     "kw": [
-      "AI",
-      "세상",
-      "회사",
-      "대표"
-     ],
-     "top_post": {
-      "t": "위메이드 전대표 새회사에서도 막무가내식이네",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77507262?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "친구 결혼식에 갔다가 여자를 만난 썰",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 11,
-     "kw": [
-      "친구",
-      "여자",
-      "결혼식"
-     ],
-     "top_post": {
-      "t": "\"여자친구가 제 PS5를 부쉈습니다...\"",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77509004?m=all&t=now",
-      "nc": 0
      }
     }
    ]
@@ -1286,7 +819,7 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 6,
-     "issue_nc": 42,
+     "issue_nc": 43,
      "kw": [
       "남자",
       "친구",
@@ -1326,10 +859,10 @@
      "issue_np": 4,
      "issue_nc": 102,
      "kw": [
-      "국민",
-      "기념일",
       "국가",
-      "대통령"
+      "기념일",
+      "국민",
+      "주권"
      ],
      "top_post": {
       "t": "이 대통령 \"빛의 혁명 123 국가기념일 '국민주권의 날'로 지정\" ???????????",
@@ -1381,10 +914,10 @@
      "issue_np": 3,
      "issue_nc": 7,
      "kw": [
+      "사이비",
       "대통령",
       "해산",
-      "단체",
-      "사이비"
+      "단체"
      ],
      "top_post": {
       "t": "[속보] 이 대통령 “사이비 종교단체 해산 방안 검토할 때”",
@@ -1429,6 +962,471 @@
    ]
   },
   {
+   "name": "디시인사이드",
+   "np": 16,
+   "nc": 0,
+   "topics": [
+    {
+     "t": "제목 그대로 결혼생각이 있다고 초반부터 밝히고 만난 남자친구가 사귄지 반년이 넘어가자 ...",
+     "nsite": 6,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 6,
+     "issue_nc": 43,
+     "kw": [
+      "남자",
+      "친구",
+      "결혼",
+      "후회"
+     ],
+     "top_post": {
+      "t": "결혼할 남자는 최소 월 300만원은 벌어야 한다는 인티녀",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481347&_dcbest=1&page=1",
+      "nc": 0
+     }
+    },
+    {
+     "t": "실시간 엔비디아 본사 근황 ㄷㄷ. mp4",
+     "nsite": 5,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 5,
+     "issue_nc": 128,
+     "kw": [
+      "실시간",
+      "본사",
+      "젠슨 황",
+      "엔비디아"
+     ],
+     "top_post": {
+      "t": "실시간 엔비디아 본사 젠슨황 입갤 ㅋㅋㅋ.avi",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481252&_dcbest=1&page=1",
+      "nc": 0
+     }
+    },
+    {
+     "t": "지금 대마도 마운자로 졷됨",
+     "nsite": 4,
+     "np_here": 2,
+     "nc_here": 0,
+     "issue_np": 6,
+     "issue_nc": 22,
+     "kw": [
+      "마운자",
+      "대마도"
+     ],
+     "top_post": {
+      "t": "여초 대격노 마운자로 근황 (대마도)",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481418&_dcbest=1&page=1",
+      "nc": 0
+     }
+    },
+    {
+     "t": "돈 필요없는 세상 온다던 AI회사 대표 근황",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 18,
+     "kw": [
+      "세상",
+      "AI",
+      "회사",
+      "대표"
+     ],
+     "top_post": {
+      "t": "세상 떠난 견주를 AI로 다시 만난 댕댕이 반응",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481374&_dcbest=1&page=1",
+      "nc": 0
+     }
+    },
+    {
+     "t": "감동감동 스코틀랜드 흙수저녀의 신데렐라 스토리",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 3,
+     "kw": [
+      "흙수저",
+      "스토리",
+      "스코틀랜드",
+      "신데렐라"
+     ],
+     "top_post": {
+      "t": "감동감동 스코틀랜드 흙수저녀의 신데렐라 스토리",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481435&_dcbest=1&page=1",
+      "nc": 0
+     }
+    },
+    {
+     "t": "수능 부정행위 단속 총정리",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 99,
+     "kw": [
+      "속보",
+      "행위",
+      "부정",
+      "수능"
+     ],
+     "top_post": {
+      "t": "[속보] 이 대통령 \"시험 부정행위는 중대범죄\"",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481307&_dcbest=1&page=1",
+      "nc": 0
+     }
+    },
+    {
+     "t": "식당 차리고 2년동안 영업 안한 내향인",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 41,
+     "kw": [
+      "영업",
+      "식당",
+      "내향",
+      "월세"
+     ],
+     "top_post": {
+      "t": "식당 차리고 2년동안 영업 안한 내향인",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481242&_dcbest=1&page=1",
+      "nc": 0
+     }
+    },
+    {
+     "t": "어벤져스 둠스데이 최종 예고편",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 25,
+     "kw": [
+      "어벤져스",
+      "둠스데이"
+     ],
+     "top_post": {
+      "t": "역대급으로 미쳤다는 어벤져스: 둠스데이 라인업",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481433&_dcbest=1&page=1",
+      "nc": 0
+     }
+    }
+   ]
+  },
+  {
+   "name": "루리웹",
+   "np": 31,
+   "nc": 0,
+   "topics": [
+    {
+     "t": "제목 그대로 결혼생각이 있다고 초반부터 밝히고 만난 남자친구가 사귄지 반년이 넘어가자 ...",
+     "nsite": 6,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 6,
+     "issue_nc": 43,
+     "kw": [
+      "남자",
+      "친구",
+      "결혼",
+      "후회"
+     ],
+     "top_post": {
+      "t": "남자친구: '우리?'",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77501677?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "고등학생 딸 아이가 수업시간에 교복에 설사를 했답니다",
+     "nsite": 5,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 5,
+     "issue_nc": 52,
+     "kw": [
+      "고등학생",
+      "설사",
+      "수업",
+      "교복"
+     ],
+     "top_post": {
+      "t": "고등학생 딸이 수업시간에 설사함",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77504329?m=humor",
+      "nc": 0
+     }
+    },
+    {
+     "t": "더쿠: 젠슨황이 여자였어도 복귀가 가능했을까?",
+     "nsite": 4,
+     "np_here": 2,
+     "nc_here": 0,
+     "issue_np": 5,
+     "issue_nc": 61,
+     "kw": [
+      "복귀",
+      "젠슨",
+      "여자"
+     ],
+     "top_post": {
+      "t": "대충 복귀한 젠슨 황 출근 모습",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77499824?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "착한 집주인이 최악이라고 하는 세입자",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 57,
+     "kw": [
+      "세입자",
+      "최악",
+      "집주인",
+      "주인"
+     ],
+     "top_post": {
+      "t": "악덕 집주인을 만나서 인생이 꼬인 세입자",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77501036?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "무료로 40번 이상 먹은 배달 거지",
+     "nsite": 4,
+     "np_here": 2,
+     "nc_here": 0,
+     "issue_np": 5,
+     "issue_nc": 43,
+     "kw": [
+      "거지",
+      "배달",
+      "무료"
+     ],
+     "top_post": {
+      "t": "배달 거지",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77507749?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "지금 대마도 마운자로 졷됨",
+     "nsite": 4,
+     "np_here": 2,
+     "nc_here": 0,
+     "issue_np": 6,
+     "issue_nc": 22,
+     "kw": [
+      "마운자",
+      "대마도"
+     ],
+     "top_post": {
+      "t": "대마도 마운자로 수령 줄에 뚱뚱한 사람이 없는 이유 ㄷㄷㄷㄷ",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77502288?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "친구 결혼식에 갔다가 여자를 만난 썰",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 20,
+     "kw": [
+      "친구",
+      "여자",
+      "결혼식"
+     ],
+     "top_post": {
+      "t": "\"여자친구가 제 PS5를 부쉈습니다...\"",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77509004?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "돈 필요없는 세상 온다던 AI회사 대표 근황",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 18,
+     "kw": [
+      "세상",
+      "AI",
+      "회사",
+      "대표"
+     ],
+     "top_post": {
+      "t": "위메이드 전대표 새회사에서도 막무가내식이네",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77507262?m=all&t=now",
+      "nc": 0
+     }
+    }
+   ]
+  },
+  {
+   "name": "더쿠",
+   "np": 14,
+   "nc": 0,
+   "topics": [
+    {
+     "t": "젠슨황, 엔비디아 CEO 복귀",
+     "nsite": 6,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 24,
+     "issue_nc": 40,
+     "kw": [
+      "복귀",
+      "젠슨 황",
+      "엔비디아",
+      "CEO"
+     ],
+     "top_post": {
+      "t": "젠슨 황 엔비디아 CEO 복귀, 이사회 만장일치",
+      "u": "https://theqoo.net/hot/4415979777",
+      "nc": 0
+     }
+    },
+    {
+     "t": "실시간 엔비디아 본사 근황 ㄷㄷ. mp4",
+     "nsite": 5,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 5,
+     "issue_nc": 128,
+     "kw": [
+      "실시간",
+      "본사",
+      "젠슨 황",
+      "엔비디아"
+     ],
+     "top_post": {
+      "t": "실시간 본사 앞에서 샌드위치 나눠주는 젠슨황",
+      "u": "https://theqoo.net/hot/4416416327",
+      "nc": 0
+     }
+    },
+    {
+     "t": "고등학생 딸 아이가 수업시간에 교복에 설사를 했답니다",
+     "nsite": 5,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 5,
+     "issue_nc": 52,
+     "kw": [
+      "고등학생",
+      "설사",
+      "수업",
+      "교복"
+     ],
+     "top_post": {
+      "t": "고등학생 딸 아이가 수업시간에 교복에 설사를했답니다",
+      "u": "https://theqoo.net/hot/4417097017",
+      "nc": 0
+     }
+    },
+    {
+     "t": "12월 3일 국가기념일 된다…李 \"계엄 맞선 '국민 주권의 날' 기려야\"",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 102,
+     "kw": [
+      "국가",
+      "기념일",
+      "국민",
+      "주권"
+     ],
+     "top_post": {
+      "t": "12월3일 국가기념일 된다…李대통령 \"계엄군 맞선 위대한 국민 승리\"",
+      "u": "https://theqoo.net/hot/4416349320",
+      "nc": 0
+     }
+    },
+    {
+     "t": "지금 대마도 마운자로 졷됨",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 6,
+     "issue_nc": 22,
+     "kw": [
+      "마운자",
+      "대마도"
+     ],
+     "top_post": {
+      "t": "말많은 핫게 오늘자 대마도 마운자로 받으러 간 후기 (야마토운수)",
+      "u": "https://theqoo.net/hot/4416802685",
+      "nc": 0
+     }
+    },
+    {
+     "t": "친구 결혼식에 갔다가 여자를 만난 썰",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 20,
+     "kw": [
+      "친구",
+      "여자",
+      "결혼식"
+     ],
+     "top_post": {
+      "t": "최근에 친구중에 결혼식 안하고 혼인신고만 한다는 애 있는데 엄마에게 그 얘길하니 엄마가 아이고 그러면 안된다는거야",
+      "u": "https://theqoo.net/hot/4416276592",
+      "nc": 0
+     }
+    },
+    {
+     "t": "감동감동 스코틀랜드 흙수저녀의 신데렐라 스토리",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 3,
+     "kw": [
+      "흙수저",
+      "스토리",
+      "스코틀랜드",
+      "신데렐라"
+     ],
+     "top_post": {
+      "t": "흙수저 출신 어떤 스코틀랜드 여성의 신데렐라 스토리",
+      "u": "https://theqoo.net/hot/4416385343",
+      "nc": 0
+     }
+    },
+    {
+     "t": "난리난 중국 \"장가계\" 패키지 여행 가이드 감금 협박",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 82,
+     "kw": [
+      "감금",
+      "패키지",
+      "장가계",
+      "협박"
+     ],
+     "top_post": {
+      "t": "장가계 패키지 여행 갔던 부모님이 협박 감금 당했다가 돌아오셨습니다 (스레드 좋아요 6천개 달린 글)",
+      "u": "https://theqoo.net/hot/4415812024",
+      "nc": 0
+     }
+    }
+   ]
+  },
+  {
    "name": "오늘의유머",
    "np": 1,
    "nc": 0,
@@ -1439,7 +1437,7 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 4,
-     "issue_nc": 11,
+     "issue_nc": 20,
      "kw": [
       "친구",
       "여자",
