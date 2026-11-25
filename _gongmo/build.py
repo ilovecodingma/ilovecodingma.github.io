@@ -96,15 +96,17 @@ THEMES += [   # 2026-10-23 사용자 「런처·주제별 메인 분리」: 생�
 THEMES = [t for t in THEMES if t[0] != 'life']
 THEMES.append(('park', '가난한 박과장 수업', '🎓', '#4338ca', '/park/', [('/park/', '수업 홈'), ('/park/#start', '하네스 시작'), ('/park/archive/', '운영 기록'), ('/dev/', '개발 지식')], ['/park/']))
 THEMES.append(('diet', '다이어트', '🥗', '#16a34a', '/diet/', [('/diet/', '다이어트 허브'), ('/diet/meal/', '레시피 식단표'), ('/diet/workout/', '운동 사이클'), ('/diet/workout/#log', '기록'), ('/money/guide/meal-calorie-per-meal/', '식사 칼로리 가이드')], ['/diet/']))
-THEMES = [next(t for t in THEMES if t[0] == k) for k in ('today', 'recipe', 'watch', 'apply', 'contest', 'event', 'issue', 'money', 'game', 'plaza', 'diet', 'ai', 'wiki', 'park')]
+THEMES.append(('exam', '수험', '📝', '#1d4ed8', '/exam/', [('/exam/', '시험 일정'), ('/exam/bank/', '문제은행'), ('/exam/articles/', '시험 글'), ('/contest/', '수험생 스펙'), ('/diet/', '수험생 식단')], ['/exam/']))   # 2026-11-25 사용자 「메인은 수험」「교육 집중 개편」
+THEMES = [next(t for t in THEMES if t[0] == k) for k in ('exam', 'today', 'recipe', 'watch', 'apply', 'contest', 'event', 'issue', 'money', 'game', 'plaza', 'diet', 'ai', 'wiki', 'park')]
 
 
 # 2026-11-05 모바일 점검: 생활 가이드·계산기·고민 해결 글에 「애널리스트 종합·전문가 코멘트」 하위 메뉴가 떠서, 이 주소들은 가이드용 하위 메뉴를 쓴다
 GUIDE_SUB = [('/money/guide/', '생활 가이드'), ('/qa/', '고민 해결'), ('/money/tools/salary/', '계산기'), ('/book/', '전자책'), ('/wiki/', '위키')]
 GUIDE_SUB_PX = ('/money/guide/', '/money/tools/', '/qa/')
-GN_MAIN = ('money', 'issue', 'contest', 'apply')   # 헤더에 항상 보이는 주요 주제(나머지는 「전체」). 2026-11-10 방문 기록 순: 생활 가이드(들어오는 글의 44%) → 이슈 → 공모전 → 지원금. 위키(11월 방문자 5명)는 「전체」로
-GN_HOME = {'money': '/money/guide/', 'issue': '/issue/'}
-GN_LABEL = {'apply': '지원금<span class="x">·청약</span>', 'money': '생활 가이드', 'wiki': '위키'}
+GN_MAIN = ('exam', 'issue', 'contest', 'diet', 'wiki')   # 2026-11-25 수험 개편: 시험·이슈·스펙·식단·위키(생활 가이드·보험·세금 등은 위키로)
+GN_MAIN_OLD = ('money', 'issue', 'contest', 'apply')   # 헤더에 항상 보이는 주요 주제(나머지는 「전체」). 2026-11-10 방문 기록 순: 생활 가이드(들어오는 글의 44%) → 이슈 → 공모전 → 지원금. 위키(11월 방문자 5명)는 「전체」로
+GN_HOME = {'money': '/money/guide/', 'issue': '/issue/', 'exam': '/exam/'}
+GN_LABEL = {'apply': '지원금<span class="x">·청약</span>', 'money': '생활 가이드', 'wiki': '위키', 'exam': '시험', 'contest': '수험생 스펙', 'diet': '수험생 식단', 'issue': '수험 뉴스'}
 
 
 def GN_HTML(TH):
@@ -2855,8 +2857,8 @@ def build():
         page('/ruri/', '루리 줍줍 — 사람들이 궁금해하는 것을 분석합니다', '가난한 박과장이 만든 정보성 사이트. 이슈, 지원금·세금·청약 같은 돈 정보, 공모전, 집밥 레시피를 근거와 함께 정리하고 매시간 갱신합니다.', SC.home_html(sc_ctx), crumbs=[('가난한 박과장', '/'), ('루리 줍줍', '/ruri/')], full_title=True)
         page('/', '가난한 박과장 — 퇴근 후 AI 에이전트와 내 서비스를 만드는 곳', '퇴근 후 2~3시간, 하네스로 AI 에이전트와 내가 원하는 서비스를 만들어 보는 수업 사이트. 정해진 진도 없이 시작 안내, 저자의 실제 개발 사례, 이야기방을 제공합니다.', _HP.home_html([(p['title'], dev_url(p), p['date']) for p in _dv]), full_title=True, ld={'@context': 'https://schema.org', '@graph': [{'@type': 'WebSite', '@id': SITE + '/#website', 'name': '가난한 박과장', 'alternateName': ['루리 줍줍'], 'url': SITE + '/', 'publisher': {'@id': SITE + '/#org'}}, {'@type': 'Organization', '@id': SITE + '/#org', 'name': '가난한 박과장', 'url': SITE + '/', 'logo': {'@type': 'ImageObject', 'url': SITE + '/assets/icons/icon-512.png', 'width': 512, 'height': 512}}]})
     if not PLAT:
-      page('/', '루리 줍줍 — 사람들이 궁금해하는 것을 분석합니다',
-         f'사람들이 지금 궁금해하는 이슈, 해마다 반복해 찾는 제도, 돈 되는 생활 정보를 근거와 숫자로 분석해 정리하고, 지원금·세금·청약 같은 돈 정보와 진행 중 공모전 {len(live)}건, 집밥 레시피 {NR_HOME}개를 매시간 갱신합니다.',
+      page('/', '루리 줍줍 — 수능·정시·자격증·공무원 시험 일정과 문제은행',
+         f'수능·정시·자격증·공무원 시험의 접수·시험일·발표일, 예상 컷과 유사문제 풀이, 수험생 스펙(공모전)과 시험 기간 식단까지 한곳에 모았습니다.',
          SC.home_html(sc_ctx), full_title=True, ld={'@context': 'https://schema.org', '@graph': [  # 2026-10-19 구글 검색 결과 사이트 이름·로고
              {'@type': 'WebSite', '@id': SITE + '/#website', 'name': NAME, 'alternateName': ['루리 줍줍', '루리의 줍줍'], 'url': SITE + '/', 'publisher': {'@id': SITE + '/#org'}},
              {'@type': 'Organization', '@id': SITE + '/#org', 'name': NAME, 'url': SITE + '/', 'logo': {'@type': 'ImageObject', 'url': SITE + '/assets/icons/icon-512.png', 'width': 512, 'height': 512}}]})

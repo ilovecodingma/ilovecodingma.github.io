@@ -1,14 +1,14 @@
 {
  "date": "2026-11-25",
- "updated": "2026-11-25 09:50",
+ "updated": "2026-11-25 10:50",
  "sites": 13,
- "npost": 2880,
+ "npost": 2877,
  "note": "출처(커뮤니티)별 집계예요. 작성자·연령·성별 정보는 수집하지 않아요. posts 는 이슈별로 뽑힌 일부라 전체 글 수가 아니에요.",
  "sources": [
   {
    "name": "MLB파크",
-   "np": 15,
-   "nc": 1028,
+   "np": 10,
+   "nc": 515,
    "topics": [
     {
      "t": "성시경 유튜브 보니 성시경이 먼저 기싸움 한거긴 하네요ㅋㅋㅋ",
@@ -28,57 +28,6 @@
      }
     },
     {
-     "t": "서울역 노숙자들 근황",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 173,
-     "issue_np": 2,
-     "issue_nc": 188,
-     "kw": [
-      "서울역",
-      "노숙자"
-     ],
-     "top_post": {
-      "t": "서울역 노숙자들 근황",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611240120293985&m=view",
-      "nc": 173
-     }
-    },
-    {
-     "t": "초고층 아파트는 결국 폭탄이 될듯",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 169,
-     "issue_np": 2,
-     "issue_nc": 169,
-     "kw": [
-      "아파트",
-      "고층"
-     ],
-     "top_post": {
-      "t": "초고층 아파트는 결국 폭탄이 될듯",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611240120286758&m=view",
-      "nc": 169
-     }
-    },
-    {
-     "t": "한국 여자 보컬 티어",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 161,
-     "issue_np": 2,
-     "issue_nc": 164,
-     "kw": [
-      "여자",
-      "한국"
-     ],
-     "top_post": {
-      "t": "한국 여자 보컬 티어",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611240120292518&m=view",
-      "nc": 161
-     }
-    },
-    {
      "t": "실시간 엔비디아 본사 근황 ㄷㄷ. mp4",
      "nsite": 5,
      "np_here": 1,
@@ -86,8 +35,8 @@
      "issue_np": 5,
      "issue_nc": 128,
      "kw": [
-      "실시간",
       "본사",
+      "실시간",
       "젠슨 황",
       "엔비디아"
      ],
@@ -105,10 +54,10 @@
      "issue_np": 4,
      "issue_nc": 102,
      "kw": [
-      "국가",
-      "기념일",
       "국민",
-      "주권"
+      "기념일",
+      "국가",
+      "대통령"
      ],
      "top_post": {
       "t": "12월 3일 국가기념일 된다…李 \"계엄 맞선 '국민 주권의 날' 기려야\"",
@@ -124,10 +73,10 @@
      "issue_np": 3,
      "issue_nc": 86,
      "kw": [
-      "소프트웨어",
       "GV",
-      "기술력",
-      "제네시스"
+      "소프트웨어",
+      "제네시스",
+      "기술력"
      ],
      "top_post": {
       "t": "제네시스 GV90 소프트웨어 기술력 근황",
@@ -151,13 +100,68 @@
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611240120283197&m=view",
       "nc": 25
      }
+    },
+    {
+     "t": "친구 결혼식에 갔다가 여자를 만난 썰",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 20,
+     "issue_np": 4,
+     "issue_nc": 20,
+     "kw": [
+      "친구",
+      "여자",
+      "결혼식"
+     ],
+     "top_post": {
+      "t": "오늘 여자친구한테 한소리 했습니다.",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611250120297747&m=view",
+      "nc": 20
+     }
+    },
+    {
+     "t": "무료로 40번 이상 먹은 배달 거지",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 13,
+     "issue_np": 5,
+     "issue_nc": 54,
+     "kw": [
+      "거지",
+      "배달",
+      "무료"
+     ],
+     "top_post": {
+      "t": "무료로 40번 이상 먹은 배달 거지",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611240120296175&m=view",
+      "nc": 13
+     }
+    },
+    {
+     "t": "젠슨황, 엔비디아 CEO 복귀",
+     "nsite": 6,
+     "np_here": 1,
+     "nc_here": 9,
+     "issue_np": 16,
+     "issue_nc": 39,
+     "kw": [
+      "젠슨 황",
+      "복귀",
+      "엔비디아",
+      "CEO"
+     ],
+     "top_post": {
+      "t": "젠슨황 복귀했다고 삼전닉스 30%상한가 찍는건가요",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611240120283233&m=view",
+      "nc": 9
+     }
     }
    ]
   },
   {
    "name": "개드립",
-   "np": 10,
-   "nc": 258,
+   "np": 11,
+   "nc": 326,
    "topics": [
     {
      "t": "고등학생 딸 아이가 수업시간에 교복에 설사를 했답니다",
@@ -176,6 +180,25 @@
       "t": "고등학생 딸 아이가 수업시간에 교복에 설사를 했답니다",
       "u": "https://www.dogdrip.net/dogdrip/736349571?sort_index=popular&page=1",
       "nc": 49
+     }
+    },
+    {
+     "t": "이제 더 이상 하청국가 역할은 하지않겠다고 선언한 베트남",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 47,
+     "issue_np": 5,
+     "issue_nc": 47,
+     "kw": [
+      "하청",
+      "국가",
+      "베트남",
+      "선언"
+     ],
+     "top_post": {
+      "t": "이제 더 이상 하청국가 역할은 하지않겠다고 선언한 베트남",
+      "u": "https://www.dogdrip.net/dogdrip/736434260?sort_index=popular&page=1",
+      "nc": 47
      }
     },
     {
@@ -201,11 +224,11 @@
      "nsite": 3,
      "np_here": 2,
      "nc_here": 41,
-     "issue_np": 4,
+     "issue_np": 5,
      "issue_nc": 41,
      "kw": [
-      "식당",
       "영업",
+      "식당",
       "내향",
       "월세"
      ],
@@ -219,9 +242,9 @@
      "t": "무료로 40번 이상 먹은 배달 거지",
      "nsite": 4,
      "np_here": 1,
-     "nc_here": 36,
+     "nc_here": 40,
      "issue_np": 5,
-     "issue_nc": 50,
+     "issue_nc": 54,
      "kw": [
       "거지",
       "배달",
@@ -230,7 +253,24 @@
      "top_post": {
       "t": "무료로 40번 이상 먹은 배달 거지",
       "u": "https://www.dogdrip.net/dogdrip/736446063?sort_index=popular&page=1",
-      "nc": 36
+      "nc": 40
+     }
+    },
+    {
+     "t": "과즙세연 \"방시혁과 안 잤다\"",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 32,
+     "issue_np": 3,
+     "issue_nc": 32,
+     "kw": [
+      "방시혁과",
+      "과즙"
+     ],
+     "top_post": {
+      "t": "과즙세연 \"방시혁과 안 잤다\"",
+      "u": "https://www.dogdrip.net/dogdrip/736370600?sort_index=popular&page=1",
+      "nc": 32
      }
     },
     {
@@ -241,8 +281,8 @@
      "issue_np": 6,
      "issue_nc": 22,
      "kw": [
-      "마운자",
-      "대마도"
+      "대마도",
+      "마운자"
      ],
      "top_post": {
       "t": "지금 대마도 마운자로 졷됨",
@@ -256,7 +296,7 @@
      "np_here": 1,
      "nc_here": 21,
      "issue_np": 6,
-     "issue_nc": 45,
+     "issue_nc": 49,
      "kw": [
       "남자",
       "친구",
@@ -268,49 +308,13 @@
       "u": "https://www.dogdrip.net/dogdrip/736409264?sort_index=popular&page=1",
       "nc": 21
      }
-    },
-    {
-     "t": "착한 집주인이 최악이라고 하는 세입자",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 15,
-     "issue_np": 4,
-     "issue_nc": 57,
-     "kw": [
-      "세입자",
-      "최악",
-      "집주인",
-      "주인"
-     ],
-     "top_post": {
-      "t": "착한 집주인은 최악이라는 세입자",
-      "u": "https://www.dogdrip.net/dogdrip/736325498?sort_index=popular&page=1",
-      "nc": 15
-     }
-    },
-    {
-     "t": "서울역 노숙자들 근황",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 15,
-     "issue_np": 2,
-     "issue_nc": 188,
-     "kw": [
-      "서울역",
-      "노숙자"
-     ],
-     "top_post": {
-      "t": "서울역에 노숙자가 꼬이는거 마땅히해결책이 없어 보이는이유",
-      "u": "https://www.dogdrip.net/dogdrip/736328231?sort_index=popular&page=1",
-      "nc": 15
-     }
     }
    ]
   },
   {
    "name": "클리앙",
-   "np": 8,
-   "nc": 157,
+   "np": 6,
+   "nc": 134,
    "topics": [
     {
      "t": "GV90 소프트웨어 이게 최선인가요?",
@@ -320,10 +324,10 @@
      "issue_np": 3,
      "issue_nc": 86,
      "kw": [
-      "소프트웨어",
       "GV",
-      "기술력",
-      "제네시스"
+      "소프트웨어",
+      "제네시스",
+      "기술력"
      ],
      "top_post": {
       "t": "GV90 소프트웨어 이게 최선인가요?",
@@ -351,25 +355,6 @@
      }
     },
     {
-     "t": "ksoi 이재명대통령 지지율 40.3%",
-     "nsite": 3,
-     "np_here": 2,
-     "nc_here": 23,
-     "issue_np": 4,
-     "issue_nc": 26,
-     "kw": [
-      "이재명",
-      "대통령",
-      "KSOI",
-      "지지"
-     ],
-     "top_post": {
-      "t": "ksoi 이재명대통령 지지율 40.3%",
-      "u": "https://www.clien.net/service/board/park/19298154?od=T33&po=0&category=0&groupCd=clien_all",
-      "nc": 13
-     }
-    },
-    {
      "t": "12월 3일 국가기념일 된다…李 \"계엄 맞선 '국민 주권의 날' 기려야\"",
      "nsite": 4,
      "np_here": 1,
@@ -377,10 +362,10 @@
      "issue_np": 4,
      "issue_nc": 102,
      "kw": [
-      "국가",
-      "기념일",
       "국민",
-      "주권"
+      "기념일",
+      "국가",
+      "대통령"
      ],
      "top_post": {
       "t": "이 대통령 '빛의 혁명 12·3 국가기념일 '국민주권의 날'로 지정'",
@@ -396,9 +381,9 @@
      "issue_np": 4,
      "issue_nc": 14,
      "kw": [
-      "종교",
-      "해산",
       "사이비",
+      "해산",
+      "종교",
       "대통령"
      ],
      "top_post": {
@@ -412,7 +397,7 @@
      "nsite": 6,
      "np_here": 1,
      "nc_here": 7,
-     "issue_np": 17,
+     "issue_np": 16,
      "issue_nc": 39,
      "kw": [
       "젠슨 황",
@@ -441,9 +426,9 @@
      "issue_np": 3,
      "issue_nc": 99,
      "kw": [
+      "행위",
       "부정",
       "속보",
-      "행위",
       "수능"
      ],
      "top_post": {
@@ -455,9 +440,116 @@
    ]
   },
   {
+   "name": "네이트판",
+   "np": 3,
+   "nc": 36,
+   "topics": [
+    {
+     "t": "제목 그대로 결혼생각이 있다고 초반부터 밝히고 만난 남자친구가 사귄지 반년이 넘어가자 ...",
+     "nsite": 6,
+     "np_here": 1,
+     "nc_here": 25,
+     "issue_np": 6,
+     "issue_nc": 49,
+     "kw": [
+      "남자",
+      "친구",
+      "결혼",
+      "후회"
+     ],
+     "top_post": {
+      "t": "제목 그대로 결혼생각이 있다고 초반부터 밝히고 만난 남자친구가 사귄지 반년이 넘어가자 ...",
+      "u": "https://pann.nate.com/talk/375735180",
+      "nc": 25
+     }
+    },
+    {
+     "t": "아들 결혼 앞둔 아빠 '반신마비' 만든 남성…\"술취하면 자주 그래\"",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 8,
+     "issue_np": 3,
+     "issue_nc": 8,
+     "kw": [
+      "결혼",
+      "아들",
+      "마비",
+      "아빠"
+     ],
+     "top_post": {
+      "t": "결혼 17년차 중2 아들 하나 있는 집입니다황당한 일이 있어서 다른 집도 이런 건가 싶어서 올려...",
+      "u": "https://pann.nate.com/talk/375733744",
+      "nc": 8
+     }
+    },
+    {
+     "t": "싱글벙글 차를 아내만큼 사랑하는 남편",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 3,
+     "issue_np": 4,
+     "issue_nc": 4,
+     "kw": [
+      "아내",
+      "남편"
+     ],
+     "top_post": {
+      "t": "남편 차바꿀 때 보태라고 생활비가 아닌 용돈에서 매달 10만원씩 저축해온 아내",
+      "u": "https://pann.nate.com/talk/375736131",
+      "nc": 3
+     }
+    }
+   ]
+  },
+  {
+   "name": "아카라이브",
+   "np": 2,
+   "nc": 24,
+   "topics": [
+    {
+     "t": "젠슨황, 엔비디아 CEO 복귀",
+     "nsite": 6,
+     "np_here": 1,
+     "nc_here": 21,
+     "issue_np": 16,
+     "issue_nc": 39,
+     "kw": [
+      "젠슨 황",
+      "복귀",
+      "엔비디아",
+      "CEO"
+     ],
+     "top_post": {
+      "t": "젠슨황, 엔비디아 CEO 복귀",
+      "u": "https://arca.live/b/live/190057108?p=1",
+      "nc": 21
+     }
+    },
+    {
+     "t": "실시간 엔비디아 본사 근황 ㄷㄷ. mp4",
+     "nsite": 5,
+     "np_here": 1,
+     "nc_here": 3,
+     "issue_np": 5,
+     "issue_nc": 128,
+     "kw": [
+      "본사",
+      "실시간",
+      "젠슨 황",
+      "엔비디아"
+     ],
+     "top_post": {
+      "t": "실시간 엔비디아 본사에서 기립 박수 받는 젠슨 황",
+      "u": "https://arca.live/b/live/190077921?p=1",
+      "nc": 3
+     }
+    }
+   ]
+  },
+  {
    "name": "보배드림",
    "np": 11,
-   "nc": 25,
+   "nc": 19,
    "topics": [
     {
      "t": "제목 그대로 결혼생각이 있다고 초반부터 밝히고 만난 남자친구가 사귄지 반년이 넘어가자 ...",
@@ -465,7 +557,7 @@
      "np_here": 1,
      "nc_here": 3,
      "issue_np": 6,
-     "issue_nc": 45,
+     "issue_nc": 49,
      "kw": [
       "남자",
       "친구",
@@ -536,25 +628,6 @@
      }
     },
     {
-     "t": "ksoi 이재명대통령 지지율 40.3%",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 3,
-     "issue_np": 4,
-     "issue_nc": 26,
-     "kw": [
-      "이재명",
-      "대통령",
-      "KSOI",
-      "지지"
-     ],
-     "top_post": {
-      "t": "[KSOI] 이재명 지지율",
-      "u": "https://www.bobaedream.co.kr/view?code=best&No=1049939&vdate=",
-      "nc": 3
-     }
-    },
-    {
      "t": "대통령의 사이비종교 해산 박차..환영합니다",
      "nsite": 3,
      "np_here": 1,
@@ -562,9 +635,9 @@
      "issue_np": 4,
      "issue_nc": 14,
      "kw": [
-      "종교",
-      "해산",
       "사이비",
+      "해산",
+      "종교",
       "대통령"
      ],
      "top_post": {
@@ -574,29 +647,12 @@
      }
     },
     {
-     "t": "한국 여자 보컬 티어",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 3,
-     "issue_np": 2,
-     "issue_nc": 164,
-     "kw": [
-      "여자",
-      "한국"
-     ],
-     "top_post": {
-      "t": "한국남자 좋다는 일본여자에 대한 한국여자들의 반응",
-      "u": "https://www.bobaedream.co.kr/view?code=best&No=1049626&vdate=",
-      "nc": 3
-     }
-    },
-    {
      "t": "무료로 40번 이상 먹은 배달 거지",
      "nsite": 4,
      "np_here": 1,
      "nc_here": 1,
      "issue_np": 5,
-     "issue_nc": 50,
+     "issue_nc": 54,
      "kw": [
       "거지",
       "배달",
@@ -607,83 +663,48 @@
       "u": "https://www.bobaedream.co.kr/view?code=best&No=1049874&vdate=",
       "nc": 1
      }
-    }
-   ]
-  },
-  {
-   "name": "아카라이브",
-   "np": 2,
-   "nc": 24,
-   "topics": [
+    },
     {
-     "t": "젠슨황, 엔비디아 CEO 복귀",
-     "nsite": 6,
+     "t": "싱글벙글 차를 아내만큼 사랑하는 남편",
+     "nsite": 4,
      "np_here": 1,
-     "nc_here": 21,
-     "issue_np": 17,
-     "issue_nc": 39,
+     "nc_here": 1,
+     "issue_np": 4,
+     "issue_nc": 4,
      "kw": [
-      "젠슨 황",
-      "복귀",
-      "엔비디아",
-      "CEO"
+      "아내",
+      "남편"
      ],
      "top_post": {
-      "t": "젠슨황, 엔비디아 CEO 복귀",
-      "u": "https://arca.live/b/live/190057108?p=1",
-      "nc": 21
+      "t": "남편이 힘들게 벌어 온 돈을 아내가 지출하는 곳",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1049675&vdate=",
+      "nc": 1
      }
     },
     {
-     "t": "실시간 엔비디아 본사 근황 ㄷㄷ. mp4",
-     "nsite": 5,
+     "t": "젠슨황 하체에 갇혀버린 세계 경제.",
+     "nsite": 3,
      "np_here": 1,
-     "nc_here": 3,
-     "issue_np": 5,
-     "issue_nc": 128,
+     "nc_here": 1,
+     "issue_np": 4,
+     "issue_nc": 1,
      "kw": [
-      "실시간",
-      "본사",
-      "젠슨 황",
-      "엔비디아"
+      "경제",
+      "세계",
+      "젠슨",
+      "하체"
      ],
      "top_post": {
-      "t": "실시간 엔비디아 본사에서 기립 박수 받는 젠슨 황",
-      "u": "https://arca.live/b/live/190077921?p=1",
-      "nc": 3
-     }
-    }
-   ]
-  },
-  {
-   "name": "네이트판",
-   "np": 1,
-   "nc": 21,
-   "topics": [
-    {
-     "t": "제목 그대로 결혼생각이 있다고 초반부터 밝히고 만난 남자친구가 사귄지 반년이 넘어가자 ...",
-     "nsite": 6,
-     "np_here": 1,
-     "nc_here": 21,
-     "issue_np": 6,
-     "issue_nc": 45,
-     "kw": [
-      "남자",
-      "친구",
-      "결혼",
-      "후회"
-     ],
-     "top_post": {
-      "t": "제목 그대로 결혼생각이 있다고 초반부터 밝히고 만난 남자친구가 사귄지 반년이 넘어가자 ...",
-      "u": "https://pann.nate.com/talk/375735180",
-      "nc": 21
+      "t": "그의 ㄲㅊ에 갇혀버린 세계 경제",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1049702&vdate=",
+      "nc": 1
      }
     }
    ]
   },
   {
    "name": "82쿡",
-   "np": 3,
+   "np": 4,
    "nc": 18,
    "topics": [
     {
@@ -694,9 +715,9 @@
      "issue_np": 3,
      "issue_nc": 99,
      "kw": [
+      "행위",
       "부정",
       "속보",
-      "행위",
       "수능"
      ],
      "top_post": {
@@ -710,7 +731,7 @@
      "nsite": 6,
      "np_here": 1,
      "nc_here": 2,
-     "issue_np": 17,
+     "issue_np": 16,
      "issue_nc": 39,
      "kw": [
       "젠슨 황",
@@ -732,8 +753,8 @@
      "issue_np": 5,
      "issue_nc": 128,
      "kw": [
-      "실시간",
       "본사",
+      "실시간",
       "젠슨 황",
       "엔비디아"
      ],
@@ -742,12 +763,30 @@
       "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4262598&page=1",
       "nc": 0
      }
+    },
+    {
+     "t": "개그맨 오정태 딸 근황",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 0,
+     "kw": [
+      "오정태",
+      "개그맨",
+      "자랑"
+     ],
+     "top_post": {
+      "t": "개그맨 오정태 딸이 카이스트 조기입학했대요",
+      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4262689&page=1",
+      "nc": 0
+     }
     }
    ]
   },
   {
    "name": "SLR클럽",
-   "np": 8,
+   "np": 7,
    "nc": 0,
    "topics": [
     {
@@ -756,7 +795,7 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 6,
-     "issue_nc": 45,
+     "issue_nc": 49,
      "kw": [
       "남자",
       "친구",
@@ -796,33 +835,14 @@
      "issue_np": 4,
      "issue_nc": 102,
      "kw": [
-      "국가",
-      "기념일",
       "국민",
-      "주권"
+      "기념일",
+      "국가",
+      "대통령"
      ],
      "top_post": {
       "t": "이 대통령 \"빛의 혁명 123 국가기념일 '국민주권의 날'로 지정\" ???????????",
       "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=678108",
-      "nc": 0
-     }
-    },
-    {
-     "t": "ksoi 이재명대통령 지지율 40.3%",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 26,
-     "kw": [
-      "이재명",
-      "대통령",
-      "KSOI",
-      "지지"
-     ],
-     "top_post": {
-      "t": "이재명 다음 대통령은 죽었다 복창해라",
-      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=678130",
       "nc": 0
      }
     },
@@ -834,14 +854,33 @@
      "issue_np": 4,
      "issue_nc": 14,
      "kw": [
-      "종교",
-      "해산",
       "사이비",
+      "해산",
+      "종교",
       "대통령"
      ],
      "top_post": {
       "t": "[속보] 이 대통령 “사이비 종교단체 해산 방안 검토할 때”",
       "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=678072",
+      "nc": 0
+     }
+    },
+    {
+     "t": "아들 결혼 앞둔 아빠 '반신마비' 만든 남성…\"술취하면 자주 그래\"",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 8,
+     "kw": [
+      "결혼",
+      "아들",
+      "마비",
+      "아빠"
+     ],
+     "top_post": {
+      "t": "아들 결혼 앞둔 아빠 '반신마비' 만든 남성",
+      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=678054",
       "nc": 0
      }
     },
@@ -878,29 +917,12 @@
       "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=678084",
       "nc": 0
      }
-    },
-    {
-     "t": "초고층 아파트는 결국 폭탄이 될듯",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 2,
-     "issue_nc": 169,
-     "kw": [
-      "아파트",
-      "고층"
-     ],
-     "top_post": {
-      "t": "고층아파트 사는데 불안하네요",
-      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=678123",
-      "nc": 0
-     }
     }
    ]
   },
   {
    "name": "디시인사이드",
-   "np": 14,
+   "np": 15,
    "nc": 0,
    "topics": [
     {
@@ -909,7 +931,7 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 6,
-     "issue_nc": 45,
+     "issue_nc": 49,
      "kw": [
       "남자",
       "친구",
@@ -930,8 +952,8 @@
      "issue_np": 5,
      "issue_nc": 128,
      "kw": [
-      "실시간",
       "본사",
+      "실시간",
       "젠슨 황",
       "엔비디아"
      ],
@@ -949,12 +971,29 @@
      "issue_np": 6,
      "issue_nc": 22,
      "kw": [
-      "마운자",
-      "대마도"
+      "대마도",
+      "마운자"
      ],
      "top_post": {
       "t": "여초 대격노 마운자로 근황 (대마도)",
       "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481418&_dcbest=1&page=1",
+      "nc": 0
+     }
+    },
+    {
+     "t": "싱글벙글 차를 아내만큼 사랑하는 남편",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 4,
+     "kw": [
+      "아내",
+      "남편"
+     ],
+     "top_post": {
+      "t": "싱글벙글 차를 아내만큼 사랑하는 남편",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481298&_dcbest=1&page=1",
       "nc": 0
      }
     },
@@ -985,9 +1024,9 @@
      "issue_np": 3,
      "issue_nc": 99,
      "kw": [
+      "행위",
       "부정",
       "속보",
-      "행위",
       "수능"
      ],
      "top_post": {
@@ -1001,11 +1040,11 @@
      "nsite": 3,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 4,
+     "issue_np": 5,
      "issue_nc": 41,
      "kw": [
-      "식당",
       "영업",
+      "식당",
       "내향",
       "월세"
      ],
@@ -1016,38 +1055,19 @@
      }
     },
     {
-     "t": "역대급으로 미쳤다는 어벤져스: 둠스데이 라인업",
+     "t": "과즙세연 \"방시혁과 안 잤다\"",
      "nsite": 3,
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 3,
-     "issue_nc": 25,
+     "issue_nc": 32,
      "kw": [
-      "둠스데이",
-      "어벤져스"
+      "방시혁과",
+      "과즙"
      ],
      "top_post": {
-      "t": "역대급으로 미쳤다는 어벤져스: 둠스데이 라인업",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481433&_dcbest=1&page=1",
-      "nc": 0
-     }
-    },
-    {
-     "t": "中 여성 \"한국 남자 경찰 무능해\" 고래고래 악 쓴 .",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 9,
-     "kw": [
-      "남자",
-      "한국",
-      "여성",
-      "무능"
-     ],
-     "top_post": {
-      "t": "中 여성 \"한국 남자 경찰 무능해\" 고래고래 악 쓴 .",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481420&_dcbest=1&page=1",
+      "t": "과즙세연 \"방시혁과 안 잤다\"",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481331&_dcbest=1&page=1",
       "nc": 0
      }
     }
@@ -1055,7 +1075,7 @@
   },
   {
    "name": "루리웹",
-   "np": 25,
+   "np": 32,
    "nc": 0,
    "topics": [
     {
@@ -1064,7 +1084,7 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 6,
-     "issue_nc": 45,
+     "issue_nc": 49,
      "kw": [
       "남자",
       "친구",
@@ -1121,7 +1141,7 @@
      "np_here": 2,
      "nc_here": 0,
      "issue_np": 5,
-     "issue_nc": 50,
+     "issue_nc": 54,
      "kw": [
       "거지",
       "배달",
@@ -1141,8 +1161,8 @@
      "issue_np": 6,
      "issue_nc": 22,
      "kw": [
-      "마운자",
-      "대마도"
+      "대마도",
+      "마운자"
      ],
      "top_post": {
       "t": "대마도 마운자로 수령 줄에 뚱뚱한 사람이 없는 이유 ㄷㄷㄷㄷ",
@@ -1169,6 +1189,23 @@
      }
     },
     {
+     "t": "싱글벙글 차를 아내만큼 사랑하는 남편",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 4,
+     "kw": [
+      "아내",
+      "남편"
+     ],
+     "top_post": {
+      "t": "남편 사는거 보고 불쌍하다는 아내",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77507839?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
      "t": "감동감동 스코틀랜드 흙수저녀의 신데렐라 스토리",
      "nsite": 4,
      "np_here": 1,
@@ -1186,31 +1223,12 @@
       "u": "https://bbs.ruliweb.com/best/board/300143/read/77502156?m=all&t=now",
       "nc": 0
      }
-    },
-    {
-     "t": "GV90 소프트웨어 이게 최선인가요?",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 86,
-     "kw": [
-      "소프트웨어",
-      "GV",
-      "기술력",
-      "제네시스"
-     ],
-     "top_post": {
-      "t": "2억되는 신형 제네시스 GV90 소프트웨어 기술력 근황",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77503185?m=all&t=now",
-      "nc": 0
-     }
     }
    ]
   },
   {
    "name": "더쿠",
-   "np": 16,
+   "np": 18,
    "nc": 0,
    "topics": [
     {
@@ -1218,7 +1236,7 @@
      "nsite": 6,
      "np_here": 2,
      "nc_here": 0,
-     "issue_np": 17,
+     "issue_np": 16,
      "issue_nc": 39,
      "kw": [
       "젠슨 황",
@@ -1240,8 +1258,8 @@
      "issue_np": 5,
      "issue_nc": 128,
      "kw": [
-      "실시간",
       "본사",
+      "실시간",
       "젠슨 황",
       "엔비디아"
      ],
@@ -1278,10 +1296,10 @@
      "issue_np": 4,
      "issue_nc": 102,
      "kw": [
-      "국가",
-      "기념일",
       "국민",
-      "주권"
+      "기념일",
+      "국가",
+      "대통령"
      ],
      "top_post": {
       "t": "12월3일 국가기념일 된다…李대통령 \"계엄군 맞선 위대한 국민 승리\"",
@@ -1297,8 +1315,8 @@
      "issue_np": 6,
      "issue_nc": 22,
      "kw": [
-      "마운자",
-      "대마도"
+      "대마도",
+      "마운자"
      ],
      "top_post": {
       "t": "말많은 핫게 오늘자 대마도 마운자로 받으러 간 후기 (야마토운수)",
@@ -1351,8 +1369,8 @@
      "issue_np": 3,
      "issue_nc": 13,
      "kw": [
-      "아들",
       "배런 트럼프",
+      "아들",
       "트럼프"
      ],
      "top_post": {

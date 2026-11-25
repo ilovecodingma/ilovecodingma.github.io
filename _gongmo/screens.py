@@ -649,18 +649,20 @@ def home_html(ctx):
     cands = _read_candidates(ctx)
     # 2026-11-10 방문 기록 기준 개편: 들어오는 글의 44%가 생활 가이드·고민 해결, 13~25%가 이슈, 19%가 공모전. 홈에서 다음으로 누르는 곳은 공모전이 가장 많다.
     # → 첫 문장·검색 예시·바로가기를 그 순서로, 「많이 찾는 글」(실제 방문 순)을 맨 앞 구역으로.
-    top = ('<section class="h2-top" aria-labelledby="h2-t"><h1 id="h2-t">생활 가이드·이슈·공모전, 필요한 것을 바로 찾으세요</h1>'
-           '<p class="lead">세금·보험·장학금 같은 생활 정보부터 요즘 이슈, 공모전·지원금까지 출처와 함께 정리합니다. 자료는 AI로 수집·정리합니다. <a href="/about/#method">만드는 방식</a></p>'
-           f'<form class="h2-s" role="search" action="/wiki/"><div class="row"><label class="sr" for="hs">검색 범위</label><select id="hs"><option value="">전체</option><option value="c">공모전</option><option value="a">지원금</option><option value="w">가이드</option><option value="r">레시피</option></select>'
-           '<label class="sr" for="hq">검색어</label><input id="hq" type="search" placeholder="예: 4대보험 요율, 국가장학금, 영상 공모전" autocomplete="off" enterkeyhint="search"><button type="submit" class="go">검색</button></div>'
+    top = ('<section class="h2-top" aria-labelledby="h2-t"><h1 id="h2-t">수능·정시·자격증·공무원 시험, 일정부터 문제까지</h1>'
+           '<p class="lead">시험 일정과 접수·발표일, 예상 컷, 유사문제 풀이, 합격에 쓸 스펙과 시험 기간 식단까지 수험생에게 필요한 것을 한곳에 모았습니다. 날짜는 공식 공고로 확인한 값만 적습니다. <a href="/about/#method">만드는 방식</a></p>'
+           f'<form class="h2-s" role="search" action="/wiki/"><div class="row"><label class="sr" for="hs">검색 범위</label><select id="hs"><option value="">전체</option><option value="c">스펙(공모전)</option><option value="a">지원금</option><option value="w">가이드</option><option value="r">식단</option></select>'
+           '<label class="sr" for="hq">검색어</label><input id="hq" type="search" placeholder="예: 2027 수능 등급컷, 한능검, 국가장학금" autocomplete="off" enterkeyhint="search"><button type="submit" class="go">검색</button></div>'
            '<div class="res" id="hr" aria-live="polite"></div></form>'
-           '<ul class="qk" aria-label="목적별 바로가기">'
-           f'<li><a href="/money/guide/">{_ic("guide")}<span><b>생활 가이드</b><small>세금·보험·일·집 정보</small></span></a></li>'
-           f'<li><a href="/contest/">{_ic("contest")}<span><b>공모전 찾기</b><small>분야·마감으로 비교</small></span></a></li>'
-           f'<li><a href="/apply/">{_ic("apply")}<span><b>지원금 찾기</b><small>대상·지역으로 확인</small></span></a></li>'
-           f'<li><a href="/issue/">{_ic("issue")}<span><b>요즘 이슈</b><small>출처와 함께 정리</small></span></a></li></ul></section>')
+           '<ul class="qk" aria-label="수험 바로가기">'
+           f'<li><a href="/exam/">{_ic("event")}<span><b>시험 일정</b><small>접수·시험일·발표일</small></span></a></li>'
+           f'<li><a href="/exam/bank/">{_ic("guide")}<span><b>문제은행</b><small>시험별 유사문제</small></span></a></li>'
+           f'<li><a href="/exam/articles/">{_ic("issue")}<span><b>시험 글</b><small>컷·준비물·가이드</small></span></a></li>'
+           f'<li><a href="/contest/">{_ic("contest")}<span><b>수험생 스펙</b><small>공모전·대외활동</small></span></a></li>'
+           f'<li><a href="/diet/">{_ic("recipe")}<span><b>수험생 식단</b><small>시험 기간 한 끼</small></span></a></li></ul></section>')
     ent = [c for c in cands if c[1] == '연예']; cands = [c for c in cands if c[1] != '연예']
-    return (top + _sec_pop(cands, seen) + _sec_season(seen) + _sec_read(cands, seen) + _opp_cards(ctx, seen) + _sec_guides(seen) + _sec_ent(ent, seen) + _sec_topics(ctx, seen)
+    import exam_home as _EH
+    return (top + _EH.sections(ctx, _ic)
             + '<link rel="stylesheet" href="/assets/home/home2.css?v=11"><script defer src="/assets/home/home2.js?v=3"></script>')
 
 
