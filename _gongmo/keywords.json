@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-25 09:00",
+ "updated": "2026-11-25 10:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -7801,6 +7801,19 @@
    "page": "",
    "registered": "2026-11-19",
    "expires": "2026-11-23"
+  },
+  {
+   "query": "11월 28일 임용 중등 1차·한능검 81회 준비물과 입실",
+   "tier": "단기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 5,
+   "status": "작성",
+   "page": "/issue/exam-prep-teacher-hanneungum-1128/",
+   "registered": "2026-11-25",
+   "expires": "2026-11-29"
   },
   {
    "query": "구글 제미나이 4 네온 공개 가격 API 단가 이용 방법 컨텍스트 100만 토큰",
