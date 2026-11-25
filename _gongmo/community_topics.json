@@ -1,32 +1,32 @@
 {
  "date": "2026-11-25",
- "updated": "2026-11-25 18:50",
+ "updated": "2026-11-25 19:50",
  "sites": 13,
- "npost": 2858,
+ "npost": 2862,
  "note": "출처(커뮤니티)별 집계예요. 작성자·연령·성별 정보는 수집하지 않아요. posts 는 이슈별로 뽑힌 일부라 전체 글 수가 아니에요.",
  "sources": [
   {
    "name": "MLB파크",
-   "np": 14,
-   "nc": 950,
+   "np": 16,
+   "nc": 1131,
    "topics": [
     {
      "t": "대마도 스시자로 원정단 근황",
-     "nsite": 4,
+     "nsite": 5,
      "np_here": 1,
-     "nc_here": 198,
-     "issue_np": 8,
-     "issue_nc": 243,
+     "nc_here": 202,
+     "issue_np": 11,
+     "issue_nc": 289,
      "kw": [
-      "원정",
       "스시자",
+      "원정",
       "대마도",
       "소중국"
      ],
      "top_post": {
       "t": "대마도 스시자로 원정단 근황",
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611250120300672&m=view",
-      "nc": 198
+      "nc": 202
      }
     },
     {
@@ -88,8 +88,8 @@
      "issue_np": 2,
      "issue_nc": 88,
      "kw": [
-      "태형",
-      "이란"
+      "이란",
+      "태형"
      ],
      "top_post": {
       "t": "이란, 히잡 없이 공연한 여성 가수에 태형 74대",
@@ -98,76 +98,90 @@
      }
     },
     {
-     "t": "일본에서 라멘 먹을때 주의할 점",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 49,
-     "issue_np": 4,
-     "issue_nc": 49,
-     "kw": [
-      "라멘",
-      "일본",
-      "주의",
-      "약혐"
-     ],
-     "top_post": {
-      "t": "일본에서 라멘 먹을때 주의할 점",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611250120300045&m=view",
-      "nc": 49
-     }
-    },
-    {
-     "t": "일론 머스크 “수학자는 이제 수학에 형편없는 고기 컴퓨터일뿐”",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 36,
-     "issue_np": 3,
-     "issue_nc": 47,
-     "kw": [
-      "머스크",
-      "수학자",
-      "일론",
-      "고기"
-     ],
-     "top_post": {
-      "t": "일론 머스크 “수학자는 이제 수학에 형편없는 고기 컴퓨터일뿐”",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611250120298701&m=view",
-      "nc": 36
-     }
-    },
-    {
-     "t": "난리난 중국 \"장가계\" 패키지 여행 가이드 감금 협박",
+     "t": "조회수 터진 한국 인어공주 ㄷㄷ..",
      "nsite": 2,
      "np_here": 1,
-     "nc_here": 35,
+     "nc_here": 74,
      "issue_np": 2,
-     "issue_nc": 82,
+     "issue_nc": 74,
      "kw": [
-      "협박",
-      "감금",
-      "장가계",
-      "패키지"
+      "인어",
+      "공주",
+      "한국"
      ],
      "top_post": {
-      "t": "당한사람 속출중인 장가계 패키지투어 협박, 감금논란",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611240120288420&m=view",
-      "nc": 35
+      "t": "조회수 터진 한국 인어공주 ㄷㄷ..",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611240120293595&m=view",
+      "nc": 74
+     }
+    },
+    {
+     "t": "젠슨황 부인 근황 ㄷㄷ. jpg",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 70,
+     "issue_np": 2,
+     "issue_nc": 70,
+     "kw": [
+      "젠슨",
+      "부인"
+     ],
+     "top_post": {
+      "t": "젠슨황 부인 근황 ㄷㄷ. jpg",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611250120302646&m=view",
+      "nc": 70
+     }
+    },
+    {
+     "t": "김하성 디트로이트 1년 5m",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 58,
+     "issue_np": 2,
+     "issue_nc": 58,
+     "kw": [
+      "김하성",
+      "디트로이트"
+     ],
+     "top_post": {
+      "t": "김하성 디트로이트 1년 5m",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611250120298272&m=view",
+      "nc": 58
      }
     }
    ]
   },
   {
    "name": "개드립",
-   "np": 14,
-   "nc": 435,
+   "np": 13,
+   "nc": 426,
    "topics": [
+    {
+     "t": "대마도 스시자로 원정단 근황",
+     "nsite": 5,
+     "np_here": 3,
+     "nc_here": 84,
+     "issue_np": 11,
+     "issue_nc": 289,
+     "kw": [
+      "스시자",
+      "원정",
+      "대마도",
+      "소중국"
+     ],
+     "top_post": {
+      "t": "대마도 스시자로 근황",
+      "u": "https://www.dogdrip.net/dogdrip/736571907?sort_index=popular&page=1",
+      "nc": 42
+     }
+    },
     {
      "t": "마운자로때문에 장사안된다는 헬스장에 일침",
      "nsite": 3,
      "np_here": 2,
-     "nc_here": 54,
+     "nc_here": 81,
      "issue_np": 4,
-     "issue_nc": 57,
+     "issue_nc": 84,
      "kw": [
       "마운자",
       "장사",
@@ -175,9 +189,9 @@
       "헬스장"
      ],
      "top_post": {
-      "t": "마운자로때문에 장사안된다는 헬스장에 일침",
-      "u": "https://www.dogdrip.net/dogdrip/736516951?sort_index=popular&page=1",
-      "nc": 31
+      "t": "마운자로 때문에 장사가 안된다고??",
+      "u": "https://www.dogdrip.net/dogdrip/736567814?sort_index=popular&page=1",
+      "nc": 50
      }
     },
     {
@@ -200,25 +214,6 @@
      }
     },
     {
-     "t": "난리난 중국 \"장가계\" 패키지 여행 가이드 감금 협박",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 47,
-     "issue_np": 2,
-     "issue_nc": 82,
-     "kw": [
-      "협박",
-      "감금",
-      "장가계",
-      "패키지"
-     ],
-     "top_post": {
-      "t": "난리난 중국 \"장가계\" 패키지 여행 가이드 감금 협박",
-      "u": "https://www.dogdrip.net/dogdrip/736387231?sort_index=popular&page=1",
-      "nc": 47
-     }
-    },
-    {
      "t": "여자 왁서가 당하는 흔한 성희롱 ㄷㄷ",
      "nsite": 3,
      "np_here": 1,
@@ -226,8 +221,8 @@
      "issue_np": 3,
      "issue_nc": 48,
      "kw": [
-      "여자",
       "왁서",
+      "여자",
       "성희롱"
      ],
      "top_post": {
@@ -244,33 +239,14 @@
      "issue_np": 5,
      "issue_nc": 59,
      "kw": [
-      "배달",
       "거지",
+      "배달",
       "무료"
      ],
      "top_post": {
       "t": "무료로 40번 이상 먹은 배달 거지",
       "u": "https://www.dogdrip.net/dogdrip/736446063?sort_index=popular&page=1",
       "nc": 45
-     }
-    },
-    {
-     "t": "대마도 스시자로 원정단 근황",
-     "nsite": 4,
-     "np_here": 2,
-     "nc_here": 42,
-     "issue_np": 8,
-     "issue_nc": 243,
-     "kw": [
-      "원정",
-      "스시자",
-      "대마도",
-      "소중국"
-     ],
-     "top_post": {
-      "t": "개판났다는 스시자로 원정 후기 근황 ㄷㄷㄷ",
-      "u": "https://www.dogdrip.net/dogdrip/736492056?sort_index=popular&page=1",
-      "nc": 27
      }
     },
     {
@@ -281,10 +257,10 @@
      "issue_np": 6,
      "issue_nc": 39,
      "kw": [
-      "만점자",
       "수능",
+      "만점자",
       "공개",
-      "인터뷰"
+      "전원"
      ],
      "top_post": {
       "t": "2027 수능만점자 가채점 3명.... 전원 인터뷰 비공개 요청",
@@ -296,19 +272,36 @@
      "t": "처음 한국 온 외국인들이 차별로 오해하는 지하철 특징 ㅋㅋ",
      "nsite": 4,
      "np_here": 1,
-     "nc_here": 32,
+     "nc_here": 33,
      "issue_np": 4,
-     "issue_nc": 33,
+     "issue_nc": 34,
      "kw": [
-      "특징",
-      "지하철",
       "외국인",
-      "차별"
+      "지하철",
+      "차별",
+      "특징"
      ],
      "top_post": {
       "t": "처음 한국 온 외국인들이 차별로 오해하는 지하철 특징 ㅋㅋ",
       "u": "https://www.dogdrip.net/dogdrip/736538567?sort_index=popular&page=1",
-      "nc": 32
+      "nc": 33
+     }
+    },
+    {
+     "t": "지금 대마도 마운자로 졷됨",
+     "nsite": 5,
+     "np_here": 1,
+     "nc_here": 22,
+     "issue_np": 7,
+     "issue_nc": 22,
+     "kw": [
+      "마운자",
+      "대마도"
+     ],
+     "top_post": {
+      "t": "지금 대마도 마운자로 졷됨",
+      "u": "https://www.dogdrip.net/dogdrip/736392158?sort_index=popular&page=1",
+      "nc": 22
      }
     }
    ]
@@ -316,24 +309,24 @@
   {
    "name": "클리앙",
    "np": 5,
-   "nc": 156,
+   "nc": 194,
    "topics": [
     {
      "t": "진짜 몇달 내내 주식만 가지고 욕하는거 보면 이재명 대통령 잘하고 있다고 생각합니다",
-     "nsite": 4,
+     "nsite": 5,
      "np_here": 5,
-     "nc_here": 156,
-     "issue_np": 8,
-     "issue_nc": 180,
+     "nc_here": 194,
+     "issue_np": 11,
+     "issue_nc": 233,
      "kw": [
       "이재명",
       "대통령",
-      "코스피"
+      "주식"
      ],
      "top_post": {
       "t": "진짜 몇달 내내 주식만 가지고 욕하는거 보면 이재명 대통령 잘하고 있다고 생각합니다",
       "u": "https://www.clien.net/service/board/park/19298372?od=T33&po=0&category=0&groupCd=clien_all",
-      "nc": 67
+      "nc": 68
      }
     }
    ]
@@ -352,8 +345,8 @@
      "issue_nc": 99,
      "kw": [
       "행위",
-      "부정",
       "속보",
+      "부정",
       "수능"
      ],
      "top_post": {
@@ -413,6 +406,25 @@
    "nc": 22,
    "topics": [
     {
+     "t": "대마도 스시자로 원정단 근황",
+     "nsite": 5,
+     "np_here": 1,
+     "nc_here": 3,
+     "issue_np": 11,
+     "issue_nc": 289,
+     "kw": [
+      "스시자",
+      "원정",
+      "대마도",
+      "소중국"
+     ],
+     "top_post": {
+      "t": "소중국 소리 듣는 중인 대마도 스시자로 원정단",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1049964&vdate=",
+      "nc": 3
+     }
+    },
+    {
      "t": "2027 수능만점자 가채점 3명.... 전원 인터뷰 비공개 요청",
      "nsite": 5,
      "np_here": 2,
@@ -420,33 +432,14 @@
      "issue_np": 6,
      "issue_nc": 39,
      "kw": [
-      "만점자",
       "수능",
+      "만점자",
       "공개",
-      "인터뷰"
+      "전원"
      ],
      "top_post": {
       "t": "2027 수능 만점자 공개 거부와 인터뷰 거부가 당연한 이유",
       "u": "https://www.bobaedream.co.kr/view?code=best&No=1050028&vdate=",
-      "nc": 3
-     }
-    },
-    {
-     "t": "대마도 스시자로 원정단 근황",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 3,
-     "issue_np": 8,
-     "issue_nc": 243,
-     "kw": [
-      "원정",
-      "스시자",
-      "대마도",
-      "소중국"
-     ],
-     "top_post": {
-      "t": "소중국 소리 듣는 중인 대마도 스시자로 원정단",
-      "u": "https://www.bobaedream.co.kr/view?code=best&No=1049964&vdate=",
       "nc": 3
      }
     },
@@ -494,7 +487,7 @@
      "np_here": 1,
      "nc_here": 3,
      "issue_np": 4,
-     "issue_nc": 57,
+     "issue_nc": 84,
      "kw": [
       "마운자",
       "장사",
@@ -515,10 +508,10 @@
      "issue_np": 3,
      "issue_nc": 3,
      "kw": [
+      "엄마",
       "선물",
       "아들",
-      "엄마",
-      "투병"
+      "금반지"
      ],
      "top_post": {
       "t": "암투병중인 엄마에게 금반지선물한 중딩아들",
@@ -534,8 +527,8 @@
      "issue_np": 3,
      "issue_nc": 48,
      "kw": [
-      "여자",
       "왁서",
+      "여자",
       "성희롱"
      ],
      "top_post": {
@@ -552,8 +545,8 @@
      "issue_np": 5,
      "issue_nc": 59,
      "kw": [
-      "배달",
       "거지",
+      "배달",
       "무료"
      ],
      "top_post": {
@@ -566,7 +559,7 @@
   },
   {
    "name": "82쿡",
-   "np": 4,
+   "np": 3,
    "nc": 18,
    "topics": [
     {
@@ -578,8 +571,8 @@
      "issue_nc": 99,
      "kw": [
       "행위",
-      "부정",
       "속보",
+      "부정",
       "수능"
      ],
      "top_post": {
@@ -606,25 +599,6 @@
      }
     },
     {
-     "t": "실시간 엔비디아 본사에서 기립 박수 받는 젠슨 황",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 3,
-     "kw": [
-      "젠슨 황",
-      "실시간",
-      "본사",
-      "샌드위치"
-     ],
-     "top_post": {
-      "t": "실시간 본사 앞에서 샌드위치 나눠주는 젠슨황",
-      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4262598&page=1",
-      "nc": 0
-     }
-    },
-    {
      "t": "개그맨 오정태 딸 근황",
      "nsite": 3,
      "np_here": 1,
@@ -645,34 +619,163 @@
    ]
   },
   {
-   "name": "아카라이브",
-   "np": 1,
-   "nc": 3,
+   "name": "루리웹",
+   "np": 31,
+   "nc": 0,
    "topics": [
     {
-     "t": "실시간 엔비디아 본사에서 기립 박수 받는 젠슨 황",
-     "nsite": 3,
+     "t": "대마도 스시자로 원정단 근황",
+     "nsite": 5,
      "np_here": 1,
-     "nc_here": 3,
-     "issue_np": 3,
-     "issue_nc": 3,
+     "nc_here": 0,
+     "issue_np": 11,
+     "issue_nc": 289,
      "kw": [
-      "젠슨 황",
-      "실시간",
-      "본사",
-      "샌드위치"
+      "스시자",
+      "원정",
+      "대마도",
+      "소중국"
      ],
      "top_post": {
-      "t": "실시간 엔비디아 본사에서 기립 박수 받는 젠슨 황",
-      "u": "https://arca.live/b/live/190077921?p=1",
-      "nc": 3
+      "t": "개판났다는 스시자로 원정 후기 근황",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77510052?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "2027 수능만점자 가채점 3명.... 전원 인터뷰 비공개 요청",
+     "nsite": 5,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 6,
+     "issue_nc": 39,
+     "kw": [
+      "수능",
+      "만점자",
+      "공개",
+      "전원"
+     ],
+     "top_post": {
+      "t": "2027 수능만점자 가채점 3명.... 전원 인터뷰 비공개 요청",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77513381?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "지금 대마도 마운자로 졷됨",
+     "nsite": 5,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 7,
+     "issue_nc": 22,
+     "kw": [
+      "마운자",
+      "대마도"
+     ],
+     "top_post": {
+      "t": "마운자로)대마도 글 까는거 보면 웃긴게",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77512115?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "무료로 40번 이상 먹은 배달 거지",
+     "nsite": 4,
+     "np_here": 2,
+     "nc_here": 0,
+     "issue_np": 5,
+     "issue_nc": 59,
+     "kw": [
+      "거지",
+      "배달",
+      "무료"
+     ],
+     "top_post": {
+      "t": "배달 거지",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77507749?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "이제 더 이상 하청국가 역할은 하지않겠다고 선언한 베트남",
+     "nsite": 4,
+     "np_here": 3,
+     "nc_here": 0,
+     "issue_np": 6,
+     "issue_nc": 50,
+     "kw": [
+      "베트남",
+      "하청",
+      "국가",
+      "선언"
+     ],
+     "top_post": {
+      "t": "이제 더 이상 하청국가 역할은 하지않겠다고 선언한 베트남",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77504587?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "처음 한국 온 외국인들이 차별로 오해하는 지하철 특징 ㅋㅋ",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 34,
+     "kw": [
+      "외국인",
+      "지하철",
+      "차별",
+      "특징"
+     ],
+     "top_post": {
+      "t": "처음 한국 온 외국인들이 차별로 오해하는 지하철 특징 ㅋㅋ",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77514015?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "\"'학폭' 아들 수시 6곳에서 전부 떨어져…이 대가 맞나\" 父 토로에 '갑론을박'",
+     "nsite": 4,
+     "np_here": 2,
+     "nc_here": 0,
+     "issue_np": 5,
+     "issue_nc": 0,
+     "kw": [
+      "수시",
+      "아들",
+      "기록"
+     ],
+     "top_post": {
+      "t": "수시 6곳탈락한 아들",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77505892?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "마운자로때문에 장사안된다는 헬스장에 일침",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 84,
+     "kw": [
+      "마운자",
+      "장사",
+      "일침",
+      "헬스장"
+     ],
+     "top_post": {
+      "t": "마운자로 때문에 장사 안된다는 헬스장에 일침",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77512576?m=all&t=now",
+      "nc": 0
      }
     }
    ]
   },
   {
    "name": "디시인사이드",
-   "np": 14,
+   "np": 13,
    "nc": 0,
    "topics": [
     {
@@ -683,10 +786,10 @@
      "issue_np": 6,
      "issue_nc": 39,
      "kw": [
-      "만점자",
       "수능",
+      "만점자",
       "공개",
-      "인터뷰"
+      "전원"
      ],
      "top_post": {
       "t": "수능만점자 전원비공개요구는 뭐냐 ㅋㅋ",
@@ -702,8 +805,8 @@
      "issue_np": 7,
      "issue_nc": 22,
      "kw": [
-      "대마도",
-      "마운자"
+      "마운자",
+      "대마도"
      ],
      "top_post": {
       "t": "여초 대격노 마운자로 근황 (대마도)",
@@ -755,12 +858,12 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 4,
-     "issue_nc": 33,
+     "issue_nc": 34,
      "kw": [
-      "특징",
-      "지하철",
       "외국인",
-      "차별"
+      "지하철",
+      "차별",
+      "특징"
      ],
      "top_post": {
       "t": "외국인들이 차별로 오해하는 지하철 특징 ㅋㅋ",
@@ -777,8 +880,8 @@
      "issue_nc": 99,
      "kw": [
       "행위",
-      "부정",
       "속보",
+      "부정",
       "수능"
      ],
      "top_post": {
@@ -788,19 +891,21 @@
      }
     },
     {
-     "t": "과즙세연 \"방시혁과 안 잤다\"",
+     "t": "中 여성 \"한국 남자 경찰 무능해\" 고래고래 악 쓴 .",
      "nsite": 3,
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 3,
-     "issue_nc": 32,
+     "issue_nc": 24,
      "kw": [
-      "방시혁과",
-      "과즙"
+      "한국",
+      "남자",
+      "무능",
+      "경찰"
      ],
      "top_post": {
-      "t": "과즙세연 \"방시혁과 안 잤다\"",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481331&_dcbest=1&page=1",
+      "t": "中 여성 \"한국 남자 경찰 무능해\" 고래고래 악 쓴 .",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481420&_dcbest=1&page=1",
       "nc": 0
      }
     },
@@ -825,7 +930,7 @@
   },
   {
    "name": "SLR클럽",
-   "np": 5,
+   "np": 6,
    "nc": 0,
    "topics": [
     {
@@ -836,10 +941,10 @@
      "issue_np": 6,
      "issue_nc": 39,
      "kw": [
-      "만점자",
       "수능",
+      "만점자",
       "공개",
-      "인터뷰"
+      "전원"
      ],
      "top_post": {
       "t": "27수능 가채점 만점자 3명",
@@ -855,8 +960,8 @@
      "issue_np": 7,
      "issue_nc": 22,
      "kw": [
-      "대마도",
-      "마운자"
+      "마운자",
+      "대마도"
      ],
      "top_post": {
       "t": "대마도로 마운자로 받으러간 한국인들 ㅎ ㄷ ㄷ ㄷ",
@@ -872,8 +977,8 @@
      "issue_np": 5,
      "issue_nc": 0,
      "kw": [
-      "아들",
       "수시",
+      "아들",
       "기록"
      ],
      "top_post": {
@@ -915,159 +1020,21 @@
       "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=678189",
       "nc": 0
      }
-    }
-   ]
-  },
-  {
-   "name": "루리웹",
-   "np": 32,
-   "nc": 0,
-   "topics": [
+    },
     {
-     "t": "2027 수능만점자 가채점 3명.... 전원 인터뷰 비공개 요청",
-     "nsite": 5,
+     "t": "젠슨황 부인 근황 ㄷㄷ. jpg",
+     "nsite": 2,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 6,
-     "issue_nc": 39,
+     "issue_np": 2,
+     "issue_nc": 70,
      "kw": [
-      "만점자",
-      "수능",
-      "공개",
-      "인터뷰"
+      "젠슨",
+      "부인"
      ],
      "top_post": {
-      "t": "2027 수능만점자 가채점 3명.... 전원 인터뷰 비공개 요청",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77513381?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "지금 대마도 마운자로 졷됨",
-     "nsite": 5,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 7,
-     "issue_nc": 22,
-     "kw": [
-      "대마도",
-      "마운자"
-     ],
-     "top_post": {
-      "t": "마운자로)대마도 글 까는거 보면 웃긴게",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77512115?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "대마도 스시자로 원정단 근황",
-     "nsite": 4,
-     "np_here": 2,
-     "nc_here": 0,
-     "issue_np": 8,
-     "issue_nc": 243,
-     "kw": [
-      "원정",
-      "스시자",
-      "대마도",
-      "소중국"
-     ],
-     "top_post": {
-      "t": "개판났다는 스시자로 원정 후기 근황",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77510052?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "무료로 40번 이상 먹은 배달 거지",
-     "nsite": 4,
-     "np_here": 2,
-     "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 59,
-     "kw": [
-      "배달",
-      "거지",
-      "무료"
-     ],
-     "top_post": {
-      "t": "배달 거지",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77507749?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "이제 더 이상 하청국가 역할은 하지않겠다고 선언한 베트남",
-     "nsite": 4,
-     "np_here": 3,
-     "nc_here": 0,
-     "issue_np": 6,
-     "issue_nc": 50,
-     "kw": [
-      "베트남",
-      "하청",
-      "국가",
-      "선언"
-     ],
-     "top_post": {
-      "t": "이제 더 이상 하청국가 역할은 하지않겠다고 선언한 베트남",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77504587?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "처음 한국 온 외국인들이 차별로 오해하는 지하철 특징 ㅋㅋ",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 33,
-     "kw": [
-      "특징",
-      "지하철",
-      "외국인",
-      "차별"
-     ],
-     "top_post": {
-      "t": "처음 한국 온 외국인들이 차별로 오해하는 지하철 특징 ㅋㅋ",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77514015?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "\"'학폭' 아들 수시 6곳에서 전부 떨어져…이 대가 맞나\" 父 토로에 '갑론을박'",
-     "nsite": 4,
-     "np_here": 2,
-     "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 0,
-     "kw": [
-      "아들",
-      "수시",
-      "기록"
-     ],
-     "top_post": {
-      "t": "수시 6곳탈락한 아들",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77505892?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "마운자로때문에 장사안된다는 헬스장에 일침",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 57,
-     "kw": [
-      "마운자",
-      "장사",
-      "일침",
-      "헬스장"
-     ],
-     "top_post": {
-      "t": "마운자로 때문에 장사 안된다는 헬스장에 일침",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77512576?m=all&t=now",
+      "t": "젠슨황 부인 근황",
+      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=678175",
       "nc": 0
      }
     }
@@ -1075,7 +1042,7 @@
   },
   {
    "name": "더쿠",
-   "np": 10,
+   "np": 9,
    "nc": 0,
    "topics": [
     {
@@ -1086,8 +1053,8 @@
      "issue_np": 7,
      "issue_nc": 22,
      "kw": [
-      "대마도",
-      "마운자"
+      "마운자",
+      "대마도"
      ],
      "top_post": {
       "t": "말많은 핫게 오늘자 대마도 마운자로 받으러 간 후기 (야마토운수)",
@@ -1103,8 +1070,8 @@
      "issue_np": 5,
      "issue_nc": 0,
      "kw": [
-      "아들",
       "수시",
+      "아들",
       "기록"
      ],
      "top_post": {
@@ -1118,36 +1085,16 @@
      "nsite": 3,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 4,
+     "issue_np": 3,
      "issue_nc": 49,
      "kw": [
       "라멘",
       "일본",
-      "주의",
-      "약혐"
+      "주의"
      ],
      "top_post": {
       "t": "일본에서 라멘 먹을때 주의할 점",
       "u": "https://theqoo.net/hot/4417574944",
-      "nc": 0
-     }
-    },
-    {
-     "t": "실시간 엔비디아 본사에서 기립 박수 받는 젠슨 황",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 3,
-     "kw": [
-      "젠슨 황",
-      "실시간",
-      "본사",
-      "샌드위치"
-     ],
-     "top_post": {
-      "t": "실시간 본사 앞에서 샌드위치 나눠주는 젠슨황",
-      "u": "https://theqoo.net/hot/4416416327",
       "nc": 0
      }
     },
@@ -1159,10 +1106,10 @@
      "issue_np": 3,
      "issue_nc": 3,
      "kw": [
+      "엄마",
       "선물",
       "아들",
-      "엄마",
-      "투병"
+      "금반지"
      ],
      "top_post": {
       "t": "기념일도 아닌데 용돈 탈탈 털어 금반지 선물한 아들 때문에 오열한 엄마..",
@@ -1196,9 +1143,9 @@
      "issue_np": 3,
      "issue_nc": 0,
      "kw": [
-      "수업",
-      "고등학생",
       "설사",
+      "고등학생",
+      "수업",
       "교복"
      ],
      "top_post": {
@@ -1222,6 +1169,25 @@
      "top_post": {
       "t": "개그맨 오정태 딸 근황",
       "u": "https://theqoo.net/hot/4417226323",
+      "nc": 0
+     }
+    },
+    {
+     "t": "싱글벙글 프레시백 수거하러 온 쿠팡기사가 성심당 아이스백 절도한 사건",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 0,
+     "kw": [
+      "아이스백",
+      "수거",
+      "성심당",
+      "프레시백"
+     ],
+     "top_post": {
+      "t": "프레시백 수거하러 온 쿠팡기사가 성심당 아이스백 절도한 사건",
+      "u": "https://theqoo.net/hot/4417341053",
       "nc": 0
      }
     }
