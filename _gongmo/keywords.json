@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-26 00:00",
+ "updated": "2026-11-26 01:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -6100,18 +6100,6 @@
   },
   {
    "query": "남태현",
-   "tier": "단기",
-   "signal": [
-    "구글트렌드"
-   ],
-   "score": 1000,
-   "status": "미작성",
-   "page": "",
-   "registered": "2026-11-19",
-   "expires": "2026-11-29"
-  },
-  {
-   "query": "수능 수학",
    "tier": "단기",
    "signal": [
     "구글트렌드"
@@ -16274,8 +16262,8 @@
     "구글트렌드"
    ],
    "score": 5,
-   "status": "작성",
-   "page": "/issue/suneung-day-checklist-1104/",
+   "status": "미작성",
+   "page": "",
    "registered": "2026-11-04",
    "expires": "2026-11-25"
   },
@@ -16427,6 +16415,19 @@
    "expires": "2026-12-10"
   },
   {
+   "query": "AI 24종 중 1종만 수능 수학 46문항 전부 맞혔다",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 4,
+   "status": "작성",
+   "page": "/issue/ai-csat-math-24-models-1126/",
+   "registered": "2026-11-26",
+   "expires": "2026-12-10"
+  },
+  {
    "query": "고병원성 AI 올겨울 첫 발생 연천 달걀 산란계 농장 일시이동중지 정리",
    "tier": "중기",
    "signal": [
@@ -16525,8 +16526,8 @@
     "구글트렌드"
    ],
    "score": 4,
-   "status": "작성",
-   "page": "/issue/goyang-changneung-share-sale-1104/",
+   "status": "미작성",
+   "page": "",
    "registered": "2026-11-04",
    "expires": "2026-11-25"
   },
@@ -16577,8 +16578,8 @@
     "구글트렌드"
    ],
    "score": 4,
-   "status": "작성",
-   "page": "/issue/jamsil-raemian-ipark-jupjup-3units-1118/",
+   "status": "미작성",
+   "page": "",
    "registered": "2026-11-18",
    "expires": "2026-11-25"
   },
@@ -16616,8 +16617,8 @@
     "구글트렌드"
    ],
    "score": 4,
-   "status": "작성",
-   "page": "/issue/nvidia-q3-results-china-export-control-korea-hbm-1118/",
+   "status": "미작성",
+   "page": "",
    "registered": "2026-11-18",
    "expires": "2026-11-25"
   },
@@ -16655,8 +16656,8 @@
     "구글트렌드"
    ],
    "score": 4,
-   "status": "작성",
-   "page": "/issue/subway-fare-evasion-1104/",
+   "status": "미작성",
+   "page": "",
    "registered": "2026-11-04",
    "expires": "2026-11-25"
   },
@@ -16694,8 +16695,8 @@
     "구글트렌드"
    ],
    "score": 4,
-   "status": "작성",
-   "page": "/issue/suneung-smart-glasses-1104/",
+   "status": "미작성",
+   "page": "",
    "registered": "2026-11-04",
    "expires": "2026-11-25"
   },
@@ -16832,8 +16833,8 @@
     "구글트렌드"
    ],
    "score": 3,
-   "status": "작성",
-   "page": "/issue/ai-datacenter-power-grid-bottleneck-korea-us-1118/",
+   "status": "미작성",
+   "page": "",
    "registered": "2026-11-18",
    "expires": "2026-11-25"
   },
@@ -18241,8 +18242,8 @@
     "구글트렌드"
    ],
    "score": 2,
-   "status": "작성",
-   "page": "/issue/korea-gov-ai-chip-announcements-onyang-hbm-on-device-1118/",
+   "status": "미작성",
+   "page": "",
    "registered": "2026-11-18",
    "expires": "2026-11-25"
   },
