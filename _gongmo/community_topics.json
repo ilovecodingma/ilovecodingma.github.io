@@ -1,14 +1,14 @@
 {
  "date": "2026-11-26",
- "updated": "2026-11-26 01:50",
+ "updated": "2026-11-26 02:50",
  "sites": 13,
- "npost": 2881,
+ "npost": 2859,
  "note": "출처(커뮤니티)별 집계예요. 작성자·연령·성별 정보는 수집하지 않아요. posts 는 이슈별로 뽑힌 일부라 전체 글 수가 아니에요.",
  "sources": [
   {
    "name": "MLB파크",
-   "np": 13,
-   "nc": 693,
+   "np": 14,
+   "nc": 742,
    "topics": [
     {
      "t": "대마도 스시자로 원정단 근황",
@@ -16,7 +16,7 @@
      "np_here": 1,
      "nc_here": 202,
      "issue_np": 11,
-     "issue_nc": 258,
+     "issue_nc": 259,
      "kw": [
       "스시자",
       "원정",
@@ -35,7 +35,7 @@
      "np_here": 2,
      "nc_here": 97,
      "issue_np": 11,
-     "issue_nc": 304,
+     "issue_nc": 305,
      "kw": [
       "이재명",
       "대통령",
@@ -56,8 +56,8 @@
      "issue_nc": 74,
      "kw": [
       "인어",
-      "한국",
-      "공주"
+      "공주",
+      "한국"
      ],
      "top_post": {
       "t": "조회수 터진 한국 인어공주 ㄷㄷ..",
@@ -107,8 +107,8 @@
      "issue_np": 3,
      "issue_nc": 52,
      "kw": [
-      "하이닉스",
-      "SK"
+      "SK",
+      "하이닉스"
      ],
      "top_post": {
       "t": "[주식]SK하이닉스 현재상황",
@@ -117,49 +117,47 @@
      }
     },
     {
+     "t": "중년이 되면 확 맛이 가는 사람이 많다고 함.twitter",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 49,
+     "issue_np": 2,
+     "issue_nc": 52,
+     "kw": [
+      "twitter",
+      "중년"
+     ],
+     "top_post": {
+      "t": "중년이 되면 확 맛이 가는 사람이 많다고 함.twitter",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611250120299199&m=view",
+      "nc": 49
+     }
+    },
+    {
      "t": "이상적인 한국남자 키",
-     "nsite": 5,
+     "nsite": 4,
      "np_here": 1,
      "nc_here": 38,
-     "issue_np": 5,
+     "issue_np": 4,
      "issue_nc": 38,
      "kw": [
       "한국",
       "여성",
-      "경찰",
-      "남자"
+      "남자",
+      "경찰"
      ],
      "top_post": {
       "t": "이상적인 한국남자 키",
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611250120305778&m=view",
       "nc": 38
      }
-    },
-    {
-     "t": "일론 머스크 “수학자는 이제 수학에 형편없는 고기 컴퓨터일뿐”",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 36,
-     "issue_np": 3,
-     "issue_nc": 47,
-     "kw": [
-      "컴퓨터",
-      "일론",
-      "머스크",
-      "수학자"
-     ],
-     "top_post": {
-      "t": "일론 머스크 “수학자는 이제 수학에 형편없는 고기 컴퓨터일뿐”",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611250120298701&m=view",
-      "nc": 36
-     }
     }
    ]
   },
   {
    "name": "개드립",
-   "np": 14,
-   "nc": 390,
+   "np": 13,
+   "nc": 352,
    "topics": [
     {
      "t": "마운자로 때문에 장사가 안된다고??",
@@ -184,9 +182,9 @@
      "t": "대마도 스시자로 원정단 근황",
      "nsite": 5,
      "np_here": 3,
-     "nc_here": 53,
+     "nc_here": 54,
      "issue_np": 11,
-     "issue_nc": 258,
+     "issue_nc": 259,
      "kw": [
       "스시자",
       "원정",
@@ -219,34 +217,16 @@
      }
     },
     {
-     "t": "여자 왁서가 당하는 흔한 성희롱 ㄷㄷ",
+     "t": "무료로 40번 이상 먹은 배달 거지",
      "nsite": 3,
      "np_here": 1,
-     "nc_here": 46,
-     "issue_np": 3,
-     "issue_nc": 48,
-     "kw": [
-      "여자",
-      "성희롱",
-      "왁서"
-     ],
-     "top_post": {
-      "t": "여자 왁서가 당하는 흔한 성희롱 ㄷㄷ",
-      "u": "https://www.dogdrip.net/dogdrip/736468010?sort_index=popular&page=1",
-      "nc": 46
-     }
-    },
-    {
-     "t": "무료로 40번 이상 먹은 배달 거지",
-     "nsite": 4,
-     "np_here": 1,
      "nc_here": 45,
-     "issue_np": 4,
+     "issue_np": 3,
      "issue_nc": 59,
      "kw": [
-      "거지",
       "배달",
-      "무료"
+      "무료",
+      "거지"
      ],
      "top_post": {
       "t": "무료로 40번 이상 먹은 배달 거지",
@@ -262,8 +242,8 @@
      "issue_np": 6,
      "issue_nc": 39,
      "kw": [
-      "수능",
       "만점자",
+      "수능",
       "공개",
       "전원"
      ],
@@ -282,9 +262,9 @@
      "issue_nc": 37,
      "kw": [
       "제미나",
-      "이름",
+      "KFC",
       "인내심",
-      "KFC"
+      "이름"
      ],
      "top_post": {
       "t": "KFC 이름을 물어보자 결국 인내심을 잃은 제미나이",
@@ -300,31 +280,48 @@
      "issue_np": 5,
      "issue_nc": 34,
      "kw": [
+      "차별",
       "오해",
       "외국인",
-      "지하철",
-      "차별"
+      "지하철"
      ],
      "top_post": {
       "t": "처음 한국 온 외국인들이 차별로 오해하는 지하철 특징 ㅋㅋ",
       "u": "https://www.dogdrip.net/dogdrip/736538567?sort_index=popular&page=1",
       "nc": 33
      }
+    },
+    {
+     "t": "가불기에 걸린 프랑스",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 20,
+     "issue_np": 3,
+     "issue_nc": 20,
+     "kw": [
+      "프랑스",
+      "가불"
+     ],
+     "top_post": {
+      "t": "가불기에 걸린 프랑스",
+      "u": "https://www.dogdrip.net/dogdrip/736600508?sort_index=popular&page=1",
+      "nc": 20
+     }
     }
    ]
   },
   {
    "name": "클리앙",
-   "np": 10,
-   "nc": 363,
+   "np": 9,
+   "nc": 333,
    "topics": [
     {
      "t": "진짜 몇달 내내 주식만 가지고 욕하는거 보면 이재명 대통령 잘하고 있다고 생각합니다",
      "nsite": 5,
      "np_here": 4,
-     "nc_here": 190,
+     "nc_here": 191,
      "issue_np": 11,
-     "issue_nc": 304,
+     "issue_nc": 305,
      "kw": [
       "이재명",
       "대통령",
@@ -344,32 +341,13 @@
      "issue_np": 2,
      "issue_nc": 68,
      "kw": [
-      "시험",
-      "대학"
+      "대학",
+      "시험"
      ],
      "top_post": {
       "t": "대학 입학 시험 같은것들은 없어져야 합니다!!!!",
       "u": "https://www.clien.net/service/board/park/19297896?od=T33&po=0&category=0&groupCd=clien_all",
       "nc": 57
-     }
-    },
-    {
-     "t": "李대통령 '강남 집값 엄청 떨어져…부동산 가격 급락 대비해야'",
-     "nsite": 2,
-     "np_here": 2,
-     "nc_here": 53,
-     "issue_np": 3,
-     "issue_nc": 57,
-     "kw": [
-      "대통령",
-      "집값",
-      "강남",
-      "급락"
-     ],
-     "top_post": {
-      "t": "李대통령 '강남 집값 엄청 떨어져…부동산 가격 급락 대비해야'",
-      "u": "https://www.clien.net/service/board/park/19297884?od=T33&po=0&category=0&groupCd=clien_all",
-      "nc": 27
      }
     },
     {
@@ -380,13 +358,31 @@
      "issue_np": 2,
      "issue_nc": 59,
      "kw": [
-      "국민",
-      "재산"
+      "재산",
+      "국민"
      ],
      "top_post": {
       "t": "전국민재산 박살났는데 도대체 뭐하는걸까요",
       "u": "https://www.clien.net/service/board/park/19298470?od=T33&po=0&category=0&groupCd=clien_all",
       "nc": 48
+     }
+    },
+    {
+     "t": "권양숙 여사 “이 대통령, 노 전 대통령과 성격까지 닮아”",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 22,
+     "issue_np": 3,
+     "issue_nc": 24,
+     "kw": [
+      "권양숙",
+      "여사",
+      "성격"
+     ],
+     "top_post": {
+      "t": "권양숙 여사 “이 대통령, 노 전 대통령과 성격까지 닮아”",
+      "u": "https://www.clien.net/service/board/park/19298393?od=T33&po=0&category=0&groupCd=clien_all",
+      "nc": 22
      }
     },
     {
@@ -414,8 +410,8 @@
      "issue_np": 6,
      "issue_nc": 9,
      "kw": [
-      "시장",
       "주식",
+      "시장",
       "바닥"
      ],
      "top_post": {
@@ -427,9 +423,122 @@
    ]
   },
   {
+   "name": "82쿡",
+   "np": 6,
+   "nc": 28,
+   "topics": [
+    {
+     "t": "대학 입학 시험 같은것들은 없어져야 합니다!!!!",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 11,
+     "issue_np": 2,
+     "issue_nc": 68,
+     "kw": [
+      "대학",
+      "시험"
+     ],
+     "top_post": {
+      "t": "수능최저 못맞춘 대학으로 논술 시험 보내려니 맘이 짠해요.",
+      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4262931&page=1",
+      "nc": 11
+     }
+    },
+    {
+     "t": "전국민재산 박살났는데 도대체 뭐하는걸까요",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 11,
+     "issue_np": 2,
+     "issue_nc": 59,
+     "kw": [
+      "재산",
+      "국민"
+     ],
+     "top_post": {
+      "t": "전국민 재산이 50%가 날아가도 아무일도 없었던 겁니까?",
+      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4262748&page=1",
+      "nc": 11
+     }
+    },
+    {
+     "t": "중년이 되면 확 맛이 가는 사람이 많다고 함.twitter",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 3,
+     "issue_np": 2,
+     "issue_nc": 52,
+     "kw": [
+      "twitter",
+      "중년"
+     ],
+     "top_post": {
+      "t": "중년이 되면 확 맛이 가는 사람이 많다고 함.twitter",
+      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4262949&page=1",
+      "nc": 3
+     }
+    },
+    {
+     "t": "홈플러스, 27일부터 전국 67개점 영업 중단",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 2,
+     "issue_np": 3,
+     "issue_nc": 27,
+     "kw": [
+      "중단",
+      "홈플러스",
+      "영업",
+      "단독"
+     ],
+     "top_post": {
+      "t": "[단독] 홈플러스, 67개 점포 27일 영업 중단…인수의향서 접..",
+      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4262812&page=1",
+      "nc": 2
+     }
+    },
+    {
+     "t": "권양숙 여사 “이 대통령, 노 전 대통령과 성격까지 닮아”",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 1,
+     "issue_np": 3,
+     "issue_nc": 24,
+     "kw": [
+      "권양숙",
+      "여사",
+      "성격"
+     ],
+     "top_post": {
+      "t": "金여사 만난 권양숙 여사 “盧와 李, 식성부터 성격까지 닮아”",
+      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4262643&page=1",
+      "nc": 1
+     }
+    },
+    {
+     "t": "개그맨 오정태 딸 근황",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 5,
+     "issue_nc": 0,
+     "kw": [
+      "개그맨",
+      "오정태",
+      "자랑"
+     ],
+     "top_post": {
+      "t": "개그맨 오정태 딸이 카이스트 조기입학했대요",
+      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4262689&page=1",
+      "nc": 0
+     }
+    }
+   ]
+  },
+  {
    "name": "보배드림",
    "np": 15,
-   "nc": 28,
+   "nc": 27,
    "topics": [
     {
      "t": "다음 선거때는 주식시장 9시부터3시까지만 연다는 사람 뽑을겁니다",
@@ -439,8 +548,8 @@
      "issue_np": 6,
      "issue_nc": 9,
      "kw": [
-      "시장",
       "주식",
+      "시장",
       "바닥"
      ],
      "top_post": {
@@ -455,7 +564,7 @@
      "np_here": 1,
      "nc_here": 3,
      "issue_np": 11,
-     "issue_nc": 258,
+     "issue_nc": 259,
      "kw": [
       "스시자",
       "원정",
@@ -476,8 +585,8 @@
      "issue_np": 6,
      "issue_nc": 39,
      "kw": [
-      "수능",
       "만점자",
+      "수능",
       "공개",
       "전원"
      ],
@@ -551,10 +660,10 @@
      "issue_np": 3,
      "issue_nc": 3,
      "kw": [
+      "엄마",
       "선물",
       "아들",
-      "엄마",
-      "투병"
+      "금반지"
      ],
      "top_post": {
       "t": "암투병중인 엄마에게 금반지선물한 중딩아들",
@@ -563,118 +672,22 @@
      }
     },
     {
-     "t": "여자 왁서가 당하는 흔한 성희롱 ㄷㄷ",
-     "nsite": 3,
+     "t": "처음 한국 온 외국인들이 차별로 오해하는 지하철 특징 ㅋㅋ",
+     "nsite": 4,
      "np_here": 1,
-     "nc_here": 2,
-     "issue_np": 3,
-     "issue_nc": 48,
-     "kw": [
-      "여자",
-      "성희롱",
-      "왁서"
-     ],
-     "top_post": {
-      "t": "여자 왁서가 당하는 흔한 성희롱 ㄷㄷ",
-      "u": "https://www.bobaedream.co.kr/view?code=best&No=1049907&vdate=",
-      "nc": 2
-     }
-    }
-   ]
-  },
-  {
-   "name": "82쿡",
-   "np": 5,
-   "nc": 28,
-   "topics": [
-    {
-     "t": "대학 입학 시험 같은것들은 없어져야 합니다!!!!",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 11,
-     "issue_np": 2,
-     "issue_nc": 68,
-     "kw": [
-      "시험",
-      "대학"
-     ],
-     "top_post": {
-      "t": "수능최저 못맞춘 대학으로 논술 시험 보내려니 맘이 짠해요.",
-      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4262931&page=1",
-      "nc": 11
-     }
-    },
-    {
-     "t": "전국민재산 박살났는데 도대체 뭐하는걸까요",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 11,
-     "issue_np": 2,
-     "issue_nc": 59,
-     "kw": [
-      "국민",
-      "재산"
-     ],
-     "top_post": {
-      "t": "전국민 재산이 50%가 날아가도 아무일도 없었던 겁니까?",
-      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4262748&page=1",
-      "nc": 11
-     }
-    },
-    {
-     "t": "李대통령 '강남 집값 엄청 떨어져…부동산 가격 급락 대비해야'",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 4,
-     "issue_np": 3,
-     "issue_nc": 57,
-     "kw": [
-      "대통령",
-      "집값",
-      "강남",
-      "급락"
-     ],
-     "top_post": {
-      "t": "李대통령 “집값 급등 이어 급락도 경계”",
-      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4262678&page=1",
-      "nc": 4
-     }
-    },
-    {
-     "t": "홈플러스, 27일부터 전국 67개점 영업 중단",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 2,
-     "issue_np": 3,
-     "issue_nc": 27,
-     "kw": [
-      "홈플러스",
-      "영업",
-      "중단",
-      "인수"
-     ],
-     "top_post": {
-      "t": "[단독] 홈플러스, 67개 점포 27일 영업 중단…인수의향서 접..",
-      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4262812&page=1",
-      "nc": 2
-     }
-    },
-    {
-     "t": "개그맨 오정태 딸 근황",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
+     "nc_here": 1,
      "issue_np": 5,
-     "issue_nc": 0,
+     "issue_nc": 34,
      "kw": [
-      "오정태",
-      "개그맨",
-      "자랑"
+      "차별",
+      "오해",
+      "외국인",
+      "지하철"
      ],
      "top_post": {
-      "t": "개그맨 오정태 딸이 카이스트 조기입학했대요",
-      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4262689&page=1",
-      "nc": 0
+      "t": "처음 한국 온 외국인들이 차별로 오해하는 지하철 특징 ㅋㅋ",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1050032&vdate=",
+      "nc": 1
      }
     }
    ]
@@ -715,7 +728,7 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 11,
-     "issue_nc": 258,
+     "issue_nc": 259,
      "kw": [
       "스시자",
       "원정",
@@ -736,33 +749,14 @@
      "issue_np": 6,
      "issue_nc": 39,
      "kw": [
-      "수능",
       "만점자",
+      "수능",
       "공개",
       "전원"
      ],
      "top_post": {
       "t": "수능만점자 전원비공개요구는 뭐냐 ㅋㅋ",
       "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481515&_dcbest=1&page=1",
-      "nc": 0
-     }
-    },
-    {
-     "t": "이상적인 한국남자 키",
-     "nsite": 5,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 38,
-     "kw": [
-      "한국",
-      "여성",
-      "경찰",
-      "남자"
-     ],
-     "top_post": {
-      "t": "中 여성 \"한국 남자 경찰 무능해\" 고래고래 악 쓴 .",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481420&_dcbest=1&page=1",
       "nc": 0
      }
     },
@@ -786,6 +780,25 @@
      }
     },
     {
+     "t": "이상적인 한국남자 키",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 38,
+     "kw": [
+      "한국",
+      "여성",
+      "남자",
+      "경찰"
+     ],
+     "top_post": {
+      "t": "中 여성 \"한국 남자 경찰 무능해\" 고래고래 악 쓴 .",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481420&_dcbest=1&page=1",
+      "nc": 0
+     }
+    },
+    {
      "t": "처음 한국 온 외국인들이 차별로 오해하는 지하철 특징 ㅋㅋ",
      "nsite": 4,
      "np_here": 1,
@@ -793,10 +806,10 @@
      "issue_np": 5,
      "issue_nc": 34,
      "kw": [
+      "차별",
       "오해",
       "외국인",
-      "지하철",
-      "차별"
+      "지하철"
      ],
      "top_post": {
       "t": "외국인들이 차별로 오해하는 지하철 특징 ㅋㅋ",
@@ -822,25 +835,6 @@
      }
     },
     {
-     "t": "학폭 기록 때문에 수시 전부 떨어진 아들",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 0,
-     "kw": [
-      "수시",
-      "아들",
-      "기록",
-      "탈락"
-     ],
-     "top_post": {
-      "t": "JTBC) 수시 6곳 탈락한 아들…\"학폭 마음에 걸려, 대가 이게 맞나\"",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481676&_dcbest=1&page=1",
-      "nc": 0
-     }
-    },
-    {
      "t": "KFC 이름을 물어보자 결국 인내심을 잃은 제미나이",
      "nsite": 3,
      "np_here": 1,
@@ -849,13 +843,32 @@
      "issue_nc": 37,
      "kw": [
       "제미나",
-      "이름",
+      "KFC",
       "인내심",
-      "KFC"
+      "이름"
      ],
      "top_post": {
       "t": "싱글벙글 KFC 이름을 물어보자 결국 인내심을 잃은 제미나이",
       "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481625&_dcbest=1&page=1",
+      "nc": 0
+     }
+    },
+    {
+     "t": "싱글벙글 프레시백 수거하러 온 쿠팡기사가 성심당 아이스백 절도한 사건",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 0,
+     "kw": [
+      "성심당",
+      "수거",
+      "프레시백",
+      "아이스백"
+     ],
+     "top_post": {
+      "t": "싱글벙글 프레시백 수거하러 온 쿠팡기사가 성심당 아이스백 절도한 사건",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481561&_dcbest=1&page=1",
       "nc": 0
      }
     }
@@ -874,8 +887,8 @@
      "issue_np": 6,
      "issue_nc": 39,
      "kw": [
-      "수능",
       "만점자",
+      "수능",
       "공개",
       "전원"
      ],
@@ -887,16 +900,16 @@
     },
     {
      "t": "이상적인 한국남자 키",
-     "nsite": 5,
+     "nsite": 4,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 5,
+     "issue_np": 4,
      "issue_nc": 38,
      "kw": [
       "한국",
       "여성",
-      "경찰",
-      "남자"
+      "남자",
+      "경찰"
      ],
      "top_post": {
       "t": "요즘 경찰들 여성 주취자 다루는법 ㄷㄷㄷ",
@@ -929,8 +942,8 @@
      "issue_np": 6,
      "issue_nc": 9,
      "kw": [
-      "시장",
       "주식",
+      "시장",
       "바닥"
      ],
      "top_post": {
@@ -957,39 +970,38 @@
      }
     },
     {
-     "t": "학폭 기록 때문에 수시 전부 떨어진 아들",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 0,
-     "kw": [
-      "수시",
-      "아들",
-      "기록",
-      "탈락"
-     ],
-     "top_post": {
-      "t": "학폭 기록 때문에 수시 전부 떨어진 아들",
-      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=678145",
-      "nc": 0
-     }
-    },
-    {
      "t": "인스타 아기이름 논란",
      "nsite": 3,
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 3,
-     "issue_nc": 5,
+     "issue_nc": 8,
      "kw": [
-      "이름",
       "논란",
+      "이름",
       "인스타"
      ],
      "top_post": {
       "t": "논란중인 아이 이름 ㄷㄷㄷ",
       "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=678212",
+      "nc": 0
+     }
+    },
+    {
+     "t": "학폭 기록 때문에 수시 전부 떨어진 아들",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 0,
+     "kw": [
+      "수시",
+      "아들",
+      "기록"
+     ],
+     "top_post": {
+      "t": "학폭 기록 때문에 수시 전부 떨어진 아들",
+      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=678145",
       "nc": 0
      }
     },
@@ -1014,7 +1026,7 @@
   },
   {
    "name": "루리웹",
-   "np": 31,
+   "np": 26,
    "nc": 0,
    "topics": [
     {
@@ -1025,51 +1037,14 @@
      "issue_np": 6,
      "issue_nc": 39,
      "kw": [
-      "수능",
       "만점자",
+      "수능",
       "공개",
       "전원"
      ],
      "top_post": {
       "t": "2027 수능만점자 가채점 3명.... 전원 인터뷰 비공개 요청",
       "u": "https://bbs.ruliweb.com/best/board/300143/read/77513381?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "이상적인 한국남자 키",
-     "nsite": 5,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 38,
-     "kw": [
-      "한국",
-      "여성",
-      "경찰",
-      "남자"
-     ],
-     "top_post": {
-      "t": "中 여성 \"한국 남자 경찰 무능해\" 고래고래 악 쓴 사연",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77501939?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "무료로 40번 이상 먹은 배달 거지",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 59,
-     "kw": [
-      "거지",
-      "배달",
-      "무료"
-     ],
-     "top_post": {
-      "t": "무료로 40번 이상 먹은 배달 거지",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77509219?m=all&t=now",
       "nc": 0
      }
     },
@@ -1117,10 +1092,10 @@
      "issue_np": 5,
      "issue_nc": 34,
      "kw": [
+      "차별",
       "오해",
       "외국인",
-      "지하철",
-      "차별"
+      "지하철"
      ],
      "top_post": {
       "t": "처음 한국 온 외국인들이 차별로 오해하는 지하철 특징 ㅋㅋ",
@@ -1136,8 +1111,8 @@
      "issue_np": 6,
      "issue_nc": 9,
      "kw": [
-      "시장",
       "주식",
+      "시장",
       "바닥"
      ],
      "top_post": {
@@ -1162,6 +1137,44 @@
       "u": "https://bbs.ruliweb.com/best/board/300143/read/77512115?m=all&t=now",
       "nc": 0
      }
+    },
+    {
+     "t": "마운자로 때문에 장사가 안된다고??",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 65,
+     "kw": [
+      "마운자",
+      "장사",
+      "일침",
+      "헬스장"
+     ],
+     "top_post": {
+      "t": "마운자로 때문에 장사 안된다는 헬스장에 일침",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77512576?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "일론 머스크 “수학자는 이제 수학에 형편없는 고기 컴퓨터일뿐”",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 47,
+     "kw": [
+      "일론",
+      "컴퓨터",
+      "머스크",
+      "수학자"
+     ],
+     "top_post": {
+      "t": "일론 머스크: 수학자들은 고기 컴퓨터 발언 논란",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77512059?m=all&t=now",
+      "nc": 0
+     }
     }
    ]
   },
@@ -1172,16 +1185,16 @@
    "topics": [
     {
      "t": "이상적인 한국남자 키",
-     "nsite": 5,
+     "nsite": 4,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 5,
+     "issue_np": 4,
      "issue_nc": 38,
      "kw": [
       "한국",
       "여성",
-      "경찰",
-      "남자"
+      "남자",
+      "경찰"
      ],
      "top_post": {
       "t": "한국여성들에게 너무 부족하다는 이것",
@@ -1214,10 +1227,10 @@
      "issue_np": 3,
      "issue_nc": 27,
      "kw": [
+      "중단",
       "홈플러스",
       "영업",
-      "중단",
-      "인수"
+      "단독"
      ],
      "top_post": {
       "t": "[단독] 홈플러스, 67개 점포 27일 영업 중단 인수의향서 접수",
@@ -1233,10 +1246,10 @@
      "issue_np": 3,
      "issue_nc": 3,
      "kw": [
+      "엄마",
       "선물",
       "아들",
-      "엄마",
-      "투병"
+      "금반지"
      ],
      "top_post": {
       "t": "기념일도 아닌데 용돈 탈탈 털어 금반지 선물한 아들 때문에 오열한 엄마..",
@@ -1249,7 +1262,7 @@
      "nsite": 3,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 7,
+     "issue_np": 8,
      "issue_nc": 1,
      "kw": [
       "네이버",
@@ -1270,10 +1283,10 @@
      "issue_np": 3,
      "issue_nc": 0,
      "kw": [
-      "아이스백",
       "성심당",
+      "수거",
       "프레시백",
-      "수거"
+      "아이스백"
      ],
      "top_post": {
       "t": "프레시백 수거하러 온 쿠팡기사가 성심당 아이스백 절도한 사건",
@@ -1289,8 +1302,8 @@
      "issue_np": 5,
      "issue_nc": 0,
      "kw": [
-      "오정태",
       "개그맨",
+      "오정태",
       "자랑"
      ],
      "top_post": {
