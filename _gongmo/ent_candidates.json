@@ -1,20 +1,55 @@
 {
- "at": "2026-11-25 11:30",
+ "at": "2026-11-25 12:30",
  "nitems": 534,
  "cands": [
   {
-   "kw": "에이티즈",
+   "kw": "깜짝",
    "nsrc": 7,
    "srcs": [
     "SBS",
-    "뉴시스",
     "동아일보",
+    "세계일보",
+    "연합뉴스",
+    "조선일보",
+    "한국경제",
+    "헤럴드경제"
+   ],
+   "n": 10,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "20주년 빅뱅, 신곡 '기립' 깜짝 발표…GD 작사·작곡(종합)",
+     "link": "https://www.yna.co.kr/view/AKR20261120036851005"
+    },
+    {
+     "src": "동아일보",
+     "title": "황윤성, 알고 보니 도련님…父 농장 규모에 깜짝 (편스토랑)",
+     "link": "https://sports.donga.com/ent/article/all/20261125/135086076/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "황윤성, 알고 보니 도련님?…父 농장 규모에 이찬원 ‘깜짝’ (편스토랑)",
+     "link": "https://sports.donga.com/ent/article/all/20261125/135086065/1"
+    },
+    {
+     "src": "한국경제",
+     "title": "덥수룩한 수염에 상투 머리…'문무' 男 배우 '깜짝 정체'",
+     "link": "https://www.hankyung.com/article/202611234639H"
+    }
+   ]
+  },
+  {
+   "kw": "에이티즈",
+   "nsrc": 6,
+   "srcs": [
+    "SBS",
+    "뉴시스",
     "연합뉴스",
     "조선일보",
     "한겨레",
     "한국경제"
    ],
-   "n": 15,
+   "n": 14,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -40,17 +75,16 @@
   },
   {
    "kw": "빌보드",
-   "nsrc": 7,
+   "nsrc": 6,
    "srcs": [
     "SBS",
     "뉴시스",
-    "동아일보",
     "연합뉴스",
     "조선일보",
     "한겨레",
     "한국경제"
    ],
-   "n": 13,
+   "n": 12,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -68,150 +102,44 @@
      "link": "https://www.yna.co.kr/view/AKR20261122049200005"
     },
     {
-     "src": "동아일보",
-     "title": "에이티즈의 금빛 항해…초동 205만 장 이어 ‘빌보드 200’ 1위",
-     "link": "https://sports.donga.com/ent/article/all/20261125/135085240/1"
+     "src": "한겨레",
+     "title": "에이티즈 4개월 만에 또 ‘빌보드 200’ 1위",
+     "link": "https://www.hani.co.kr/arti/culture/music/1288587.html"
     }
    ]
   },
   {
-   "kw": "깜짝",
-   "nsrc": 7,
+   "kw": "빅뱅",
+   "nsrc": 6,
    "srcs": [
-    "SBS",
-    "동아일보",
+    "뉴시스",
     "세계일보",
     "연합뉴스",
     "조선일보",
     "한국경제",
     "헤럴드경제"
    ],
-   "n": 11,
+   "n": 10,
    "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "J팝 그룹 투 에프 이, 한국 정식 데뷔 \"K팝 좋아해…빅뱅 동경\"",
+     "link": "https://www.yna.co.kr/view/AKR20261123088800005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "BTS·코르티스, 마마 둘째날 대상…3관왕 빅뱅, 신곡 무대 첫선",
+     "link": "https://www.yna.co.kr/view/AKR20261121047200005"
+    },
     {
      "src": "연합뉴스",
      "title": "20주년 빅뱅, 신곡 '기립' 깜짝 발표…GD 작사·작곡(종합)",
      "link": "https://www.yna.co.kr/view/AKR20261120036851005"
     },
     {
-     "src": "동아일보",
-     "title": "황윤성, 알고 보니 도련님…父 농장 규모에 깜짝 (편스토랑)",
-     "link": "https://sports.donga.com/ent/article/all/20261125/135086076/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "황윤성, 알고 보니 도련님?…父 농장 규모에 이찬원 ‘깜짝’ (편스토랑)",
-     "link": "https://sports.donga.com/ent/article/all/20261125/135086065/1"
-    },
-    {
      "src": "한국경제",
-     "title": "덥수룩한 수염에 상투 머리…'문무' 男 배우 '깜짝 정체'",
-     "link": "https://www.hankyung.com/article/202611234639H"
-    }
-   ]
-  },
-  {
-   "kw": "최초",
-   "nsrc": 6,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "연합뉴스",
-    "조선일보",
-    "한겨레",
-    "헤럴드경제"
-   ],
-   "n": 9,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "아이유, 내년 새 월드투어…女 솔로 가수 최초 도쿄돔 입성",
-     "link": "https://www.yna.co.kr/view/AKR20261124141700005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "BTS, 日 누적 스트리밍 100억회…해외 가수 최초 기록",
-     "link": "https://www.yna.co.kr/view/AKR20261120108900005"
-    },
-    {
-     "src": "한겨레",
-     "title": "아이유, 케이팝 여성 솔로 가수 최초 도쿄돔 선다…4월7~8일 이틀간",
-     "link": "https://www.hani.co.kr/arti/culture/music/1288792.html"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "아이유, 결국 도쿄돔까지 접수…韓 여성 솔로 가수 최초 단독 콘서트",
-     "link": "https://biz.heraldcorp.com/article/10948600"
-    }
-   ]
-  },
-  {
-   "kw": "이도현",
-   "nsrc": 6,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "세계일보",
-    "연합뉴스",
-    "조선일보",
-    "한국경제"
-   ],
-   "n": 9,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "임지연·이도현, 교제 4년 만에 결별…\"좋은 동료로 남기로\"",
-     "link": "https://www.yna.co.kr/view/AKR20261124145200005"
-    },
-    {
-     "src": "한국경제",
-     "title": "이도현·임지연 결별…\"좋은 동료로 남기로\" [공식]",
-     "link": "https://www.hankyung.com/article/202611247415H"
-    },
-    {
-     "src": "세계일보",
-     "title": "'임지연과 결별' 이도현 SNS 재조명",
-     "link": "https://www.segye.com/newsView/20261125506399"
-    },
-    {
-     "src": "세계일보",
-     "title": "임지연·이도현, 4년 사랑 마침표…소속사 “서로의 앞날 응원”",
-     "link": "https://www.segye.com/newsView/20261125503029"
-    }
-   ]
-  },
-  {
-   "kw": "결별",
-   "nsrc": 6,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "세계일보",
-    "연합뉴스",
-    "조선일보",
-    "한국경제"
-   ],
-   "n": 9,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "임지연·이도현, 교제 4년 만에 결별…\"좋은 동료로 남기로\"",
-     "link": "https://www.yna.co.kr/view/AKR20261124145200005"
-    },
-    {
-     "src": "한국경제",
-     "title": "이도현·임지연 결별…\"좋은 동료로 남기로\" [공식]",
-     "link": "https://www.hankyung.com/article/202611247415H"
-    },
-    {
-     "src": "세계일보",
-     "title": "'임지연과 결별' 이도현 SNS 재조명",
-     "link": "https://www.segye.com/newsView/20261125506399"
-    },
-    {
-     "src": "SBS",
-     "title": "'더 글로리' 커플 마침표…임지연·이도현, 공개 열애 3년 만에 '결별'",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008861368&plink=RSSLINK&cooper=RSSREADER"
+     "title": "'마마 어워즈' BTS·코르티스·엔하이픈 '대상'…빅뱅 '기립' 공개 [종합]",
+     "link": "https://www.hankyung.com/article/202611211440H"
     }
    ]
   },
@@ -247,6 +175,41 @@
      "src": "헤럴드경제",
      "title": "“버진로드 걸으며 결혼식 예행연습”…이관희·유시은, 민폐 하객 논란 사과",
      "link": "https://biz.heraldcorp.com/article/10948086"
+    }
+   ]
+  },
+  {
+   "kw": "고백",
+   "nsrc": 6,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "동아일보",
+    "세계일보",
+    "연합뉴스",
+    "헤럴드경제"
+   ],
+   "n": 9,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "\"이런 시험이라면 없애는 게 낫다\"…'수능 창시자'의 고백",
+     "link": "https://www.yna.co.kr/view/AKR20261120161200005"
+    },
+    {
+     "src": "동아일보",
+     "title": "곽튜브, 소아비만 고백…“어릴 때 한 끼에 밥 세 공기씩 먹어” (전현무계획4)",
+     "link": "https://sports.donga.com/ent/article/all/20261125/135085491/1"
+    },
+    {
+     "src": "세계일보",
+     "title": "빅뱅 태양, 과민대장증후군 고백…콘서트 앞두고 난감했던 이유",
+     "link": "https://www.segye.com/newsView/20261125506413"
+    },
+    {
+     "src": "세계일보",
+     "title": "한그루, 소변 테러 피해 고백…“내 차 앞에 쉬해”",
+     "link": "https://www.segye.com/newsView/20261125502488"
     }
    ]
   },
@@ -321,72 +284,37 @@
    ]
   },
   {
-   "kw": "고백",
+   "kw": "최초",
    "nsrc": 6,
    "srcs": [
     "SBS",
     "뉴시스",
-    "동아일보",
-    "세계일보",
     "연합뉴스",
+    "조선일보",
+    "한겨레",
     "헤럴드경제"
    ],
    "n": 8,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "\"이런 시험이라면 없애는 게 낫다\"…'수능 창시자'의 고백",
-     "link": "https://www.yna.co.kr/view/AKR20261120161200005"
+     "title": "아이유, 내년 새 월드투어…女 솔로 가수 최초 도쿄돔 입성",
+     "link": "https://www.yna.co.kr/view/AKR20261124141700005"
     },
     {
-     "src": "동아일보",
-     "title": "곽튜브, 소아비만 고백…“어릴 때 한 끼에 밥 세 공기씩 먹어” (전현무계획4)",
-     "link": "https://sports.donga.com/ent/article/all/20261125/135085491/1"
+     "src": "연합뉴스",
+     "title": "BTS, 日 누적 스트리밍 100억회…해외 가수 최초 기록",
+     "link": "https://www.yna.co.kr/view/AKR20261120108900005"
     },
     {
-     "src": "세계일보",
-     "title": "한그루, 소변 테러 피해 고백…“내 차 앞에 쉬해”",
-     "link": "https://www.segye.com/newsView/20261125502488"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "‘싱글맘’ 한그루, 소변 테러 피해 고백…“다 큰 성인이”",
-     "link": "https://biz.heraldcorp.com/article/10948799"
-    }
-   ]
-  },
-  {
-   "kw": "결국",
-   "nsrc": 6,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "세계일보",
-    "조선일보",
-    "한국경제",
-    "헤럴드경제"
-   ],
-   "n": 7,
-   "headlines": [
-    {
-     "src": "한국경제",
-     "title": "결국 스며들었다…임시완, 화제성 넘어 새 얼굴 증명해낸 '유죄인간' [스타:라이트]",
-     "link": "https://www.hankyung.com/article/202611168180H"
-    },
-    {
-     "src": "세계일보",
-     "title": "이관희·유시은, 결국 고개 숙였다…‘민폐 하객’ 논란에 “무지하고 경솔했다”",
-     "link": "https://www.segye.com/newsView/20261125502669"
+     "src": "한겨레",
+     "title": "아이유, 케이팝 여성 솔로 가수 최초 도쿄돔 선다…4월7~8일 이틀간",
+     "link": "https://www.hani.co.kr/arti/culture/music/1288792.html"
     },
     {
      "src": "헤럴드경제",
      "title": "아이유, 결국 도쿄돔까지 접수…韓 여성 솔로 가수 최초 단독 콘서트",
      "link": "https://biz.heraldcorp.com/article/10948600"
-    },
-    {
-     "src": "SBS",
-     "title": "결혼식 닷새 만에 불륜 의혹 터지더니…양홍원·원현주, 결국 이혼",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008861287&plink=RSSLINK&cooper=RSSREADER"
     }
    ]
   },
@@ -426,37 +354,37 @@
    ]
   },
   {
-   "kw": "임지연",
+   "kw": "결국",
    "nsrc": 6,
    "srcs": [
     "SBS",
     "뉴시스",
     "세계일보",
-    "연합뉴스",
     "조선일보",
-    "한국경제"
+    "한국경제",
+    "헤럴드경제"
    ],
    "n": 6,
    "headlines": [
     {
-     "src": "연합뉴스",
-     "title": "임지연·이도현, 교제 4년 만에 결별…\"좋은 동료로 남기로\"",
-     "link": "https://www.yna.co.kr/view/AKR20261124145200005"
-    },
-    {
      "src": "한국경제",
-     "title": "이도현·임지연 결별…\"좋은 동료로 남기로\" [공식]",
-     "link": "https://www.hankyung.com/article/202611247415H"
+     "title": "결국 스며들었다…임시완, 화제성 넘어 새 얼굴 증명해낸 '유죄인간' [스타:라이트]",
+     "link": "https://www.hankyung.com/article/202611168180H"
     },
     {
      "src": "세계일보",
-     "title": "임지연·이도현, 4년 사랑 마침표…소속사 “서로의 앞날 응원”",
-     "link": "https://www.segye.com/newsView/20261125503029"
+     "title": "이관희·유시은, 결국 고개 숙였다…‘민폐 하객’ 논란에 “무지하고 경솔했다”",
+     "link": "https://www.segye.com/newsView/20261125502669"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "아이유, 결국 도쿄돔까지 접수…韓 여성 솔로 가수 최초 단독 콘서트",
+     "link": "https://biz.heraldcorp.com/article/10948600"
     },
     {
      "src": "SBS",
-     "title": "'더 글로리' 커플 마침표…임지연·이도현, 공개 열애 3년 만에 '결별'",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008861368&plink=RSSLINK&cooper=RSSREADER"
+     "title": "결혼식 닷새 만에 불륜 의혹 터지더니…양홍원·원현주, 결국 이혼",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008861287&plink=RSSLINK&cooper=RSSREADER"
     }
    ]
   },
@@ -470,8 +398,13 @@
     "연합뉴스",
     "한국경제"
    ],
-   "n": 22,
+   "n": 23,
    "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "[가요소식] 스트레이 키즈, 내년 1월 고척돔서 콘서트",
+     "link": "https://www.yna.co.kr/view/AKR20261125094500005"
+    },
     {
      "src": "연합뉴스",
      "title": "[방송소식] 차승원·김도훈 주연 '은퇴요원+관리팀' 내년 1월 첫선",
@@ -486,11 +419,6 @@
      "src": "연합뉴스",
      "title": "아이유, 내년 새 월드투어…女 솔로 가수 최초 도쿄돔 입성",
      "link": "https://www.yna.co.kr/view/AKR20261124141700005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "대출 위해 결혼한 김명수·표예진…'연대보증 로맨스' 내년 첫선",
-     "link": "https://www.yna.co.kr/view/AKR20261124049300005"
     }
    ]
   },
@@ -504,7 +432,7 @@
     "조선일보",
     "한국경제"
    ],
-   "n": 11,
+   "n": 12,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -538,61 +466,27 @@
     "조선일보",
     "한국경제"
    ],
-   "n": 11,
+   "n": 12,
    "headlines": [
     {
      "src": "연합뉴스",
      "title": "J팝 그룹 투 에프 이, 한국 정식 데뷔 \"K팝 좋아해…빅뱅 동경\"",
      "link": "https://www.yna.co.kr/view/AKR20261123088800005"
+    },
+    {
+     "src": "동아일보",
+     "title": "손태진, 데뷔 첫 LP 발매…‘여름 향수’ 아날로그 감성으로 재탄생",
+     "link": "https://sports.donga.com/ent/article/all/20261125/135087225/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "이즈나, 데뷔 2주년 맞아 ‘IWALY’ 발매…몽환적 감성 더했다",
+     "link": "https://sports.donga.com/ent/article/all/20261125/135087027/1"
     },
     {
      "src": "동아일보",
      "title": "데뷔 3개월 만에 신인상 4관왕…‘하이브 신예’ 튜이드, 연말 시상식 접수",
      "link": "https://sports.donga.com/ent/article/all/20261125/135086141/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "제로베이스원 김지웅 솔로 데뷔…12월 14일 EP 발매 [공식]",
-     "link": "https://sports.donga.com/ent/article/all/20261125/135086408/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "이주안, 12월 데뷔 첫 국내 팬미팅 개최…팬 사랑 보답",
-     "link": "https://sports.donga.com/ent/article/all/20261125/135085690/1"
-    }
-   ]
-  },
-  {
-   "kw": "빅뱅",
-   "nsrc": 5,
-   "srcs": [
-    "뉴시스",
-    "연합뉴스",
-    "조선일보",
-    "한국경제",
-    "헤럴드경제"
-   ],
-   "n": 10,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "J팝 그룹 투 에프 이, 한국 정식 데뷔 \"K팝 좋아해…빅뱅 동경\"",
-     "link": "https://www.yna.co.kr/view/AKR20261123088800005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "BTS·코르티스, 마마 둘째날 대상…3관왕 빅뱅, 신곡 무대 첫선",
-     "link": "https://www.yna.co.kr/view/AKR20261121047200005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "20주년 빅뱅, 신곡 '기립' 깜짝 발표…GD 작사·작곡(종합)",
-     "link": "https://www.yna.co.kr/view/AKR20261120036851005"
-    },
-    {
-     "src": "한국경제",
-     "title": "'마마 어워즈' BTS·코르티스·엔하이픈 '대상'…빅뱅 '기립' 공개 [종합]",
-     "link": "https://www.hankyung.com/article/202611211440H"
     }
    ]
   },
@@ -606,7 +500,7 @@
     "연합뉴스",
     "조선일보"
    ],
-   "n": 9,
+   "n": 10,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -640,7 +534,7 @@
     "연합뉴스",
     "조선일보"
    ],
-   "n": 8,
+   "n": 7,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -661,6 +555,74 @@
      "src": "SBS",
      "title": "김새롬, 이혼 10년 만에 깜짝 재혼 발표…\"법적 짝꿍 생겼다\"",
      "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008861229&plink=RSSLINK&cooper=RSSREADER"
+    }
+   ]
+  },
+  {
+   "kw": "결별",
+   "nsrc": 5,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "세계일보",
+    "연합뉴스",
+    "한국경제"
+   ],
+   "n": 7,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "임지연·이도현, 교제 4년 만에 결별…\"좋은 동료로 남기로\"",
+     "link": "https://www.yna.co.kr/view/AKR20261124145200005"
+    },
+    {
+     "src": "한국경제",
+     "title": "이도현·임지연 결별…\"좋은 동료로 남기로\" [공식]",
+     "link": "https://www.hankyung.com/article/202611247415H"
+    },
+    {
+     "src": "세계일보",
+     "title": "'임지연과 결별' 이도현 SNS 재조명",
+     "link": "https://www.segye.com/newsView/20261125506399"
+    },
+    {
+     "src": "SBS",
+     "title": "'더 글로리' 커플 마침표…임지연·이도현, 공개 열애 3년 만에 '결별'",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008861368&plink=RSSLINK&cooper=RSSREADER"
+    }
+   ]
+  },
+  {
+   "kw": "이도현",
+   "nsrc": 5,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "세계일보",
+    "연합뉴스",
+    "한국경제"
+   ],
+   "n": 7,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "임지연·이도현, 교제 4년 만에 결별…\"좋은 동료로 남기로\"",
+     "link": "https://www.yna.co.kr/view/AKR20261124145200005"
+    },
+    {
+     "src": "한국경제",
+     "title": "이도현·임지연 결별…\"좋은 동료로 남기로\" [공식]",
+     "link": "https://www.hankyung.com/article/202611247415H"
+    },
+    {
+     "src": "세계일보",
+     "title": "'임지연과 결별' 이도현 SNS 재조명",
+     "link": "https://www.segye.com/newsView/20261125506399"
+    },
+    {
+     "src": "세계일보",
+     "title": "임지연·이도현, 4년 사랑 마침표…소속사 “서로의 앞날 응원”",
+     "link": "https://www.segye.com/newsView/20261125503029"
     }
    ]
   },
@@ -733,74 +695,6 @@
    ]
   },
   {
-   "kw": "지드래곤",
-   "nsrc": 5,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "세계일보",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "지드래곤 예능 '굿데이' 시즌2…스키즈 쓰리라차·한로로 출연",
-     "link": "https://www.yna.co.kr/view/AKR20261123042700005"
-    },
-    {
-     "src": "세계일보",
-     "title": "지드래곤, 깜짝 자녀 계획 공개…“대성이 같은 아들이나 딸 있었으면”",
-     "link": "https://www.segye.com/newsView/20261125502661"
-    },
-    {
-     "src": "SBS",
-     "title": "'동상이몽2' 송진우, 지드래곤·스테픈 커리 얽힌 초특급 수집품 최초 공개…가격 추정 불가 스케일",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008860435&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "뉴시스",
-     "title": "38세 미혼 지드래곤 \"자녀 계획 있어…대성 같은 아들\"",
-     "link": "https://www.newsis.com/view/NISX20261124_0003881742"
-    }
-   ]
-  },
-  {
-   "kw": "코르티스",
-   "nsrc": 5,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "연합뉴스",
-    "조선일보",
-    "한국경제"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "BTS·코르티스, 마마 둘째날 대상…3관왕 빅뱅, 신곡 무대 첫선",
-     "link": "https://www.yna.co.kr/view/AKR20261121047200005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "아일릿, 일본 레코드 대상 우수작품상…코르티스 특별국제음악상",
-     "link": "https://www.yna.co.kr/view/AKR20261121027900005"
-    },
-    {
-     "src": "동아일보",
-     "title": "코르티스, 틱톡 전용 검색 허브까지 연다…팬덤 1주년 특급 이벤트",
-     "link": "https://sports.donga.com/ent/article/all/20261125/135085203/1"
-    },
-    {
-     "src": "한국경제",
-     "title": "'마마 어워즈' BTS·코르티스·엔하이픈 '대상'…빅뱅 '기립' 공개 [종합]",
-     "link": "https://www.hankyung.com/article/202611211440H"
-    }
-   ]
-  },
-  {
    "kw": "걸그룹",
    "nsrc": 5,
    "srcs": [
@@ -835,36 +729,70 @@
    ]
   },
   {
-   "kw": "같은",
+   "kw": "키즈",
    "nsrc": 5,
    "srcs": [
     "뉴시스",
-    "세계일보",
+    "동아일보",
     "연합뉴스",
     "조선일보",
     "한겨레"
    ],
-   "n": 6,
+   "n": 5,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "바닐라 라테 같은 달콤한 위로…스테이시 켄트 내한 공연",
-     "link": "https://www.yna.co.kr/view/AKR20261120086700005"
+     "title": "[가요소식] 스트레이 키즈, 내년 1월 고척돔서 콘서트",
+     "link": "https://www.yna.co.kr/view/AKR20261125094500005"
+    },
+    {
+     "src": "동아일보",
+     "title": "1월 1일부터 고척돔 스테이! 스트레이 키즈 스페셜 공연 개최",
+     "link": "https://sports.donga.com/ent/article/all/20261125/135085770/1"
     },
     {
      "src": "한겨레",
-     "title": "관객 흥얼거림이 즉흥곡으로…유니케 탄질의 마법 같은 첫 무대",
-     "link": "https://www.hani.co.kr/arti/culture/music/1288670.html"
-    },
-    {
-     "src": "세계일보",
-     "title": "지드래곤, 깜짝 자녀 계획 공개…“대성이 같은 아들이나 딸 있었으면”",
-     "link": "https://www.segye.com/newsView/20261125502661"
+     "title": "스트레이 키즈 필릭스 ‘한복웨이브’…서울·뉴욕·파리에 뜬다",
+     "link": "https://www.hani.co.kr/arti/culture/music/1288590.html"
     },
     {
      "src": "뉴시스",
-     "title": "38세 미혼 지드래곤 \"자녀 계획 있어…대성 같은 아들\"",
-     "link": "https://www.newsis.com/view/NISX20261124_0003881742"
+     "title": "스트레이 키즈, 내년 1월 고척돔 입성…새해 첫날부터 스페셜 공연",
+     "link": "https://www.newsis.com/view/NISX20261125_0003881951"
+    }
+   ]
+  },
+  {
+   "kw": "스트레이",
+   "nsrc": 5,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "연합뉴스",
+    "조선일보",
+    "한겨레"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "[가요소식] 스트레이 키즈, 내년 1월 고척돔서 콘서트",
+     "link": "https://www.yna.co.kr/view/AKR20261125094500005"
+    },
+    {
+     "src": "동아일보",
+     "title": "1월 1일부터 고척돔 스테이! 스트레이 키즈 스페셜 공연 개최",
+     "link": "https://sports.donga.com/ent/article/all/20261125/135085770/1"
+    },
+    {
+     "src": "한겨레",
+     "title": "스트레이 키즈 필릭스 ‘한복웨이브’…서울·뉴욕·파리에 뜬다",
+     "link": "https://www.hani.co.kr/arti/culture/music/1288590.html"
+    },
+    {
+     "src": "뉴시스",
+     "title": "스트레이 키즈, 내년 1월 고척돔 입성…새해 첫날부터 스페셜 공연",
+     "link": "https://www.newsis.com/view/NISX20261125_0003881951"
     }
    ]
   },
@@ -903,35 +831,138 @@
    ]
   },
   {
-   "kw": "이혼",
-   "nsrc": 4,
+   "kw": "임지연",
+   "nsrc": 5,
    "srcs": [
     "SBS",
     "뉴시스",
     "세계일보",
-    "조선일보"
+    "연합뉴스",
+    "한국경제"
    ],
-   "n": 10,
+   "n": 5,
    "headlines": [
     {
+     "src": "연합뉴스",
+     "title": "임지연·이도현, 교제 4년 만에 결별…\"좋은 동료로 남기로\"",
+     "link": "https://www.yna.co.kr/view/AKR20261124145200005"
+    },
+    {
+     "src": "한국경제",
+     "title": "이도현·임지연 결별…\"좋은 동료로 남기로\" [공식]",
+     "link": "https://www.hankyung.com/article/202611247415H"
+    },
+    {
      "src": "세계일보",
-     "title": "김새롬, 이혼 10년 만에 재혼 발표…“법적 짝꿍 생겼다”",
-     "link": "https://www.segye.com/newsView/20261125502550"
+     "title": "임지연·이도현, 4년 사랑 마침표…소속사 “서로의 앞날 응원”",
+     "link": "https://www.segye.com/newsView/20261125503029"
     },
     {
      "src": "SBS",
-     "title": "김새롬 \"법적 짝꿍 생겼다\"…이혼 9년 만에 재혼 발표",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008861907&plink=RSSLINK&cooper=RSSREADER"
+     "title": "'더 글로리' 커플 마침표…임지연·이도현, 공개 열애 3년 만에 '결별'",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008861368&plink=RSSLINK&cooper=RSSREADER"
+    }
+   ]
+  },
+  {
+   "kw": "지드래곤",
+   "nsrc": 5,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "세계일보",
+    "연합뉴스",
+    "조선일보"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "지드래곤 예능 '굿데이' 시즌2…스키즈 쓰리라차·한로로 출연",
+     "link": "https://www.yna.co.kr/view/AKR20261123042700005"
+    },
+    {
+     "src": "세계일보",
+     "title": "지드래곤, 깜짝 자녀 계획 공개…“대성이 같은 아들이나 딸 있었으면”",
+     "link": "https://www.segye.com/newsView/20261125502661"
     },
     {
      "src": "SBS",
-     "title": "김새롬, 이혼 10년 만에 깜짝 재혼 발표…\"법적 짝꿍 생겼다\"",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008861229&plink=RSSLINK&cooper=RSSREADER"
+     "title": "'동상이몽2' 송진우, 지드래곤·스테픈 커리 얽힌 초특급 수집품 최초 공개…가격 추정 불가 스케일",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008860435&plink=RSSLINK&cooper=RSSREADER"
     },
     {
-     "src": "SBS",
-     "title": "결혼식 닷새 만에 불륜 의혹 터지더니…양홍원·원현주, 결국 이혼",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008861287&plink=RSSLINK&cooper=RSSREADER"
+     "src": "뉴시스",
+     "title": "38세 미혼 지드래곤 \"자녀 계획 있어…대성 같은 아들\"",
+     "link": "https://www.newsis.com/view/NISX20261124_0003881742"
+    }
+   ]
+  },
+  {
+   "kw": "같은",
+   "nsrc": 5,
+   "srcs": [
+    "뉴시스",
+    "세계일보",
+    "연합뉴스",
+    "조선일보",
+    "한겨레"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "바닐라 라테 같은 달콤한 위로…스테이시 켄트 내한 공연",
+     "link": "https://www.yna.co.kr/view/AKR20261120086700005"
+    },
+    {
+     "src": "한겨레",
+     "title": "관객 흥얼거림이 즉흥곡으로…유니케 탄질의 마법 같은 첫 무대",
+     "link": "https://www.hani.co.kr/arti/culture/music/1288670.html"
+    },
+    {
+     "src": "세계일보",
+     "title": "지드래곤, 깜짝 자녀 계획 공개…“대성이 같은 아들이나 딸 있었으면”",
+     "link": "https://www.segye.com/newsView/20261125502661"
+    },
+    {
+     "src": "뉴시스",
+     "title": "38세 미혼 지드래곤 \"자녀 계획 있어…대성 같은 아들\"",
+     "link": "https://www.newsis.com/view/NISX20261124_0003881742"
+    }
+   ]
+  },
+  {
+   "kw": "이유",
+   "nsrc": 5,
+   "srcs": [
+    "뉴시스",
+    "세계일보",
+    "조선일보",
+    "한국경제",
+    "헤럴드경제"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "한국경제",
+     "title": "김신영, 14년 지킨 '정오의 희망곡' 떠나는 이유",
+     "link": "https://www.hankyung.com/article/202611234473H"
+    },
+    {
+     "src": "세계일보",
+     "title": "빅뱅 태양, 과민대장증후군 고백…콘서트 앞두고 난감했던 이유",
+     "link": "https://www.segye.com/newsView/20261125506413"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "‘62억 신혼집’ 김종국, 짠돌이 이유 있었네…“고교 졸업 때까지 집에서 부업”",
+     "link": "https://biz.heraldcorp.com/article/10946655"
+    },
+    {
+     "src": "뉴시스",
+     "title": "43kg 이유비, 밥 두 공기 먹고도 날씬한 이유",
+     "link": "https://www.newsis.com/view/NISX20261123_0003879227"
     }
    ]
   },
@@ -944,7 +975,7 @@
     "연합뉴스",
     "조선일보"
    ],
-   "n": 9,
+   "n": 10,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -965,6 +996,39 @@
      "src": "연합뉴스",
      "title": "[방송소식] 티빙, KBL 30주년 다큐 '백코트' 24일 공개",
      "link": "https://www.yna.co.kr/view/AKR20261123070100005"
+    }
+   ]
+  },
+  {
+   "kw": "발매",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "동아일보",
+    "연합뉴스",
+    "조선일보"
+   ],
+   "n": 9,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "[가요소식] 브로디, 신곡 '페이디드 러브' 발매…칠룹 피처링",
+     "link": "https://www.yna.co.kr/view/AKR20261124128800005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "버벌진트, 새 앨범 발매 앞두고 20명 초청 '생맥주 음감회'",
+     "link": "https://www.yna.co.kr/view/AKR20261124013300005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "[가요소식] 딘딘, 생일에 신곡 '케이크' 발매",
+     "link": "https://www.yna.co.kr/view/AKR20261120066300005"
+    },
+    {
+     "src": "동아일보",
+     "title": "손태진, 데뷔 첫 LP 발매…‘여름 향수’ 아날로그 감성으로 재탄생",
+     "link": "https://sports.donga.com/ent/article/all/20261125/135087225/1"
     }
    ]
   },
@@ -1002,6 +1066,72 @@
    ]
   },
   {
+   "kw": "이혼",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "세계일보",
+    "조선일보"
+   ],
+   "n": 9,
+   "headlines": [
+    {
+     "src": "세계일보",
+     "title": "김새롬, 이혼 10년 만에 재혼 발표…“법적 짝꿍 생겼다”",
+     "link": "https://www.segye.com/newsView/20261125502550"
+    },
+    {
+     "src": "SBS",
+     "title": "김새롬 \"법적 짝꿍 생겼다\"…이혼 9년 만에 재혼 발표",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008861907&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "SBS",
+     "title": "김새롬, 이혼 10년 만에 깜짝 재혼 발표…\"법적 짝꿍 생겼다\"",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008861229&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "SBS",
+     "title": "결혼식 닷새 만에 불륜 의혹 터지더니…양홍원·원현주, 결국 이혼",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008861287&plink=RSSLINK&cooper=RSSREADER"
+    }
+   ]
+  },
+  {
+   "kw": "음주운전",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "연합뉴스",
+    "조선일보"
+   ],
+   "n": 8,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "경찰, 음주운전 고경표 1시간40분 조사…울먹이며 \"정말 죄송\"(종합2보)",
+     "link": "https://www.yna.co.kr/view/AKR20261123151352004"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "음주운전 배우 고경표 경찰 출석…\"무책임한 모습 죄송\"(종합)",
+     "link": "https://www.yna.co.kr/view/AKR20261123151351004"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "경찰, 음주운전 혐의 배우 고경표 오후 7시 출석 요구",
+     "link": "https://www.yna.co.kr/view/AKR20261123151300004"
+    },
+    {
+     "src": "SBS",
+     "title": "부르튼 입술·초췌한 얼굴…'음주운전' 고경표, 사고 9일 만에 경찰 출석해 '눈물 사과'",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008860616&plink=RSSLINK&cooper=RSSREADER"
+    }
+   ]
+  },
+  {
    "kw": "대상",
    "nsrc": 4,
    "srcs": [
@@ -1031,39 +1161,6 @@
      "src": "한겨레",
      "title": "역대 최다 840팀 몰린 ‘유재하 음악경연대회’…대상 이종서",
      "link": "https://www.hani.co.kr/arti/culture/music/1288604.html"
-    }
-   ]
-  },
-  {
-   "kw": "출신",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "연합뉴스",
-    "조선일보",
-    "한국경제"
-   ],
-   "n": 8,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "걸그룹 여자친구 출신 3명, 차가원 회사와 전속계약 분쟁 1심 승소",
-     "link": "https://www.yna.co.kr/view/AKR20261120163000004"
-    },
-    {
-     "src": "한국경제",
-     "title": "'영끌'로 집 산 女 걸그룹 출신, 이자 부담에 \"안 괜찮다\"",
-     "link": "https://www.hankyung.com/article/2026112001247"
-    },
-    {
-     "src": "뉴시스",
-     "title": "'구글 출신' 현경렬, 장동민 꺾고 '데블스 플랜3' 우승…상금 2억",
-     "link": "https://www.newsis.com/view/NISX20261125_0003882109"
-    },
-    {
-     "src": "뉴시스",
-     "title": "걸그룹 출신 엠버 \"결혼·출산 생각 없다…데이트도 싫어\"",
-     "link": "https://www.newsis.com/view/NISX20261124_0003881467"
     }
    ]
   },
@@ -1101,101 +1198,35 @@
    ]
   },
   {
-   "kw": "발매",
+   "kw": "출신",
    "nsrc": 4,
    "srcs": [
-    "SBS",
-    "동아일보",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 7,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "[가요소식] 브로디, 신곡 '페이디드 러브' 발매…칠룹 피처링",
-     "link": "https://www.yna.co.kr/view/AKR20261124128800005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "버벌진트, 새 앨범 발매 앞두고 20명 초청 '생맥주 음감회'",
-     "link": "https://www.yna.co.kr/view/AKR20261124013300005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "[가요소식] 딘딘, 생일에 신곡 '케이크' 발매",
-     "link": "https://www.yna.co.kr/view/AKR20261120066300005"
-    },
-    {
-     "src": "동아일보",
-     "title": "태연 정규 LP 가져야겠지…2027년 1월 6일 발매",
-     "link": "https://sports.donga.com/ent/article/all/20261125/135086982/1"
-    }
-   ]
-  },
-  {
-   "kw": "음주운전",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
     "뉴시스",
     "연합뉴스",
-    "조선일보"
-   ],
-   "n": 7,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "경찰, 음주운전 고경표 1시간40분 조사…울먹이며 \"정말 죄송\"(종합2보)",
-     "link": "https://www.yna.co.kr/view/AKR20261123151352004"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "음주운전 배우 고경표 경찰 출석…\"무책임한 모습 죄송\"(종합)",
-     "link": "https://www.yna.co.kr/view/AKR20261123151351004"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "경찰, 음주운전 혐의 배우 고경표 오후 7시 출석 요구",
-     "link": "https://www.yna.co.kr/view/AKR20261123151300004"
-    },
-    {
-     "src": "SBS",
-     "title": "부르튼 입술·초췌한 얼굴…'음주운전' 고경표, 사고 9일 만에 경찰 출석해 '눈물 사과'",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008860616&plink=RSSLINK&cooper=RSSREADER"
-    }
-   ]
-  },
-  {
-   "kw": "굿파트너",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "세계일보",
-    "연합뉴스",
+    "조선일보",
     "한국경제"
    ],
    "n": 7,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "김혜윤 능력 알아본 장나라…'굿파트너2' 8.4% 출발",
-     "link": "https://www.yna.co.kr/view/AKR20261121023000005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "'굿파트너2'서 로펌대표 된 장나라 \"전작 재미 유지하려 애썼죠\"",
-     "link": "https://www.yna.co.kr/view/AKR20261120147300005"
+     "title": "걸그룹 여자친구 출신 3명, 차가원 회사와 전속계약 분쟁 1심 승소",
+     "link": "https://www.yna.co.kr/view/AKR20261120163000004"
     },
     {
      "src": "한국경제",
-     "title": "'굿파트너2' 변호사 장나라·김혜윤, '김앤장' 조합 이름값 할까 [종합]",
-     "link": "https://www.hankyung.com/article/202611200300H"
+     "title": "'영끌'로 집 산 女 걸그룹 출신, 이자 부담에 \"안 괜찮다\"",
+     "link": "https://www.hankyung.com/article/2026112001247"
     },
     {
-     "src": "한국경제",
-     "title": "'굿파트너2' 장나라 \"'모범택시' 시즌3까지 한 이제훈, 대단한 분\"",
-     "link": "https://www.hankyung.com/article/202611200274H"
+     "src": "뉴시스",
+     "title": "'구글 출신' 현경렬, 장동민 꺾고 '데블스 플랜3' 우승…상금 2억",
+     "link": "https://www.newsis.com/view/NISX20261125_0003882109"
+    },
+    {
+     "src": "뉴시스",
+     "title": "걸그룹 출신 엠버 \"결혼·출산 생각 없다…데이트도 싫어\"",
+     "link": "https://www.newsis.com/view/NISX20261124_0003881467"
     }
    ]
   },
@@ -1299,68 +1330,35 @@
    ]
   },
   {
-   "kw": "음악",
+   "kw": "앞두고",
    "nsrc": 4,
    "srcs": [
+    "SBS",
     "뉴시스",
     "세계일보",
-    "연합뉴스",
-    "한국경제"
+    "연합뉴스"
    ],
    "n": 5,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "배틀그라운드 첫 시즌형 음악 프로젝트에 아이브 참여",
-     "link": "https://www.yna.co.kr/view/AKR20261125051500017"
-    },
-    {
-     "src": "한국경제",
-     "title": "귀로 듣고 머리로 그려지는 음악…루시가 펼쳐낸 마법 '다시!' [신곡in가요]",
-     "link": "https://www.hankyung.com/article/202610076910H"
+     "title": "버벌진트, 새 앨범 발매 앞두고 20명 초청 '생맥주 음감회'",
+     "link": "https://www.yna.co.kr/view/AKR20261124013300005"
     },
     {
      "src": "세계일보",
-     "title": "대음협 ‘AI 음악 정책 수립 3대 원칙’ 발표",
-     "link": "https://www.segye.com/newsView/20261124514518"
+     "title": "빅뱅 태양, 과민대장증후군 고백…콘서트 앞두고 난감했던 이유",
+     "link": "https://www.segye.com/newsView/20261125506413"
+    },
+    {
+     "src": "SBS",
+     "title": "육성재, '나인 투 식스' 첫방 하루 앞두고 날벼락…\"턱 다쳐 봉합 수술\"",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008861558&plink=RSSLINK&cooper=RSSREADER"
     },
     {
      "src": "뉴시스",
-     "title": "변호사 한승훈 \"月 저작권료 1500원…음악 하려 사법연수원 1등도 피해\"",
-     "link": "https://www.newsis.com/view/NISX20261125_0003882131"
-    }
-   ]
-  },
-  {
-   "kw": "나의",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "연합뉴스",
-    "한겨레"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "사랑과 평화 찾은 임시완과 설인아…'나의 유죄인간' 5.9% 종영",
-     "link": "https://www.yna.co.kr/view/AKR20261125032600005"
-    },
-    {
-     "src": "동아일보",
-     "title": "‘나의 유죄인간’ 쌍방 청혼으로 ‘꽉 닫힌’ 해피엔딩",
-     "link": "https://sports.donga.com/ent/article/all/20261125/135086800/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "홍은희 처단…임시완♥설인아 ‘주접 꽁냥’ 가득 해피엔딩 (나의 유죄인간)",
-     "link": "https://sports.donga.com/ent/article/all/20261125/135085223/1"
-    },
-    {
-     "src": "한겨레",
-     "title": "영혼을 팔아서라도 갖고 싶은 나의 집…하지만 어딘가 기이하다",
-     "link": "https://www.hani.co.kr/arti/culture/culture_general/1288864.html"
+     "title": "육성재, 드라마 첫 방 앞두고 부상 \"기립성 저혈압으로 넘어져\"",
+     "link": "https://www.newsis.com/view/NISX20261124_0003881580"
     }
    ]
   }

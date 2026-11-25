@@ -79,7 +79,7 @@ THEMES = [  # (키, 이름, 아이콘, 테마색, 홈, [하위 메뉴], [이 테
     ('money', '머니', '📊', '#047857', '/analyst/', [('/analyst/', '애널리스트 종합'), ('/money/experts/', '전문가 코멘트'), ('/money/guide/', '생활 돈 가이드'), ('/money/policy/', '투자 정책'), ('/money/age/', '나이별 원칙'), ('/money/tools/salary/', '계산기'), ('/analyst/coin/btc/', '코인')], ['/analyst/', '/money/']),
     ('contest', '공모전', '🏆', '#6d28d9', '/contest/', [('/contest/', '공모전 찾기'), ('/cat/literature/', '분야별'), ('/prep/', '내 응모 준비'), ('/lab/', '수상작 분석'), ('/community/', '팀원 모집'), ('/guide/', '가이드'), ('/widget/', '위젯')],
      ['/contest/', '/c/', '/cat/', '/prep/', '/lab/', '/community/', '/guide/', '/v/', '/me/', '/widget/']),
-    ('recipe', '건강 레시피', '🥗', '#c2410c', '/fridge/', [('/fridge/', '건강 레시피'), ('/fridge/h/light/', '가볍게'), ('/fridge/h/protein/', '단백질'), ('/fridge/h/veggie/', '채소 듬뿍'), ('/fridge/h/lowoil/', '기름 적게'), ('/fridge/solo/', '자취 요리'), ('/fridge/weather/', '날씨별'), ('/fridge/plan/', '식단·장보기'), ('/fridge/c/guk/', '국·찌개'), ('/fridge/c/bap/', '밥'), ('/fridge/c/myeon/', '면'), ('/fridge/c/bokkeum/', '볶음'), ('/fridge/c/jorim/', '조림·찜'), ('/fridge/c/banchan/', '반찬'), ('/fridge/c/jeon/', '전')], ['/fridge/']),   # 2026-10-20 사용자: 레시피 유입이 많아 별도 카테고리로
+    ('recipe', '식단·레시피', '🥗', '#c2410c', '/fridge/', [('/diet/', '식단 홈'), ('/diet/meal/', '식단표'), ('/fridge/', '레시피 전체'), ('/fridge/h/full/', '든든한 한 끼'), ('/fridge/h/light/', '가볍게'), ('/fridge/h/protein/', '단백질'), ('/fridge/h/night/', '야식 대신'), ('/fridge/solo/', '자취 요리'), ('/fridge/plan/', '장보기'), ('/fridge/c/guk/', '국·찌개'), ('/fridge/c/bap/', '밥'), ('/fridge/c/myeon/', '면'), ('/fridge/c/bokkeum/', '볶음'), ('/fridge/c/banchan/', '반찬')], ['/fridge/']),   # 2026-10-20 사용자: 레시피 유입이 많아 별도 카테고리로
     ('life', '생활', '🧺', '#0e7490', '/apply/', [('/apply/', '지원금·청약'), ('/apply/recommend/', '청약 추천'), ('/apply/r/', '지역별'), ('/event/', '경품'), ('/qa/', '고민 해결'), ('/plaza/', '광장')], ['/apply/', '/a/', '/event/', '/qa/', '/ssul/', '/plaza/']),
     ('game', '게임', '🎮', '#4f46e5', '/game/', [('/game/', '게임 허브'), ('/game/free/', '무료 게임 기록'), ('/game/release/', '출시 일정'), ('/game/steam-sale/', '세일 달력'), ('/game/refund/', '환불 규정'), ('/game/#timing', '살 타이밍'), ('/game/#contest', '게임 공모전')], ['/game/']),   # 2026-10-20 홍보 세션 기획서: 게임·취미·개발 커뮤니티 콘텐츠
     ('ai', '개발 지식', '🧑‍💻', '#0f172a', '/ailog/', [('/dev/', '기술 블로그'), ('/ailog/', '개발 지식·제작 로그'), ('/dev/faq/', '개발 FAQ'), ('/en/guide/', 'English guides'), ('/class/', '루리의 AI교실'), ('/ailog/#log', 'AI 제작 로그')], ['/ailog/', '/dev/', '/en/', '/class/', '/ai/'])]   # 2026-10-19 사용자: AI 로그 → 개발 지식으로 개편
@@ -96,7 +96,7 @@ THEMES += [   # 2026-10-23 사용자 「런처·주제별 메인 분리」: 생�
 THEMES = [t for t in THEMES if t[0] != 'life']
 THEMES.append(('park', '가난한 박과장 수업', '🎓', '#4338ca', '/park/', [('/park/', '수업 홈'), ('/park/#start', '하네스 시작'), ('/park/archive/', '운영 기록'), ('/dev/', '개발 지식')], ['/park/']))
 THEMES.append(('diet', '다이어트', '🥗', '#16a34a', '/diet/', [('/diet/', '다이어트 허브'), ('/diet/meal/', '레시피 식단표'), ('/diet/workout/', '운동 사이클'), ('/diet/workout/#log', '기록'), ('/money/guide/meal-calorie-per-meal/', '식사 칼로리 가이드')], ['/diet/']))
-THEMES.append(('exam', '수험', '📝', '#1d4ed8', '/exam/', [('/exam/', '시험 일정'), ('/exam/bank/', '문제은행'), ('/exam/articles/', '시험 글'), ('/contest/', '수험생 스펙'), ('/diet/', '수험생 식단')], ['/exam/']))   # 2026-11-25 사용자 「메인은 수험」「교육 집중 개편」
+THEMES.append(('exam', '수험', '📝', '#1d4ed8', '/exam/', [('/exam/', '시험 일정'), ('/exam/bank/', '문제은행'), ('/exam/articles/', '시험 글'), ('/contest/', '공모전'), ('/diet/', '식단')], ['/exam/']))   # 2026-11-25 사용자 「메인은 수험」「교육 집중 개편」
 THEMES = [next(t for t in THEMES if t[0] == k) for k in ('exam', 'today', 'recipe', 'watch', 'apply', 'contest', 'event', 'issue', 'money', 'game', 'plaza', 'diet', 'ai', 'wiki', 'park')]
 
 
@@ -106,7 +106,7 @@ GUIDE_SUB_PX = ('/money/guide/', '/money/tools/', '/qa/')
 GN_MAIN = ('exam', 'issue', 'contest', 'diet', 'wiki')   # 2026-11-25 수험 개편: 시험·이슈·스펙·식단·위키(생활 가이드·보험·세금 등은 위키로)
 GN_MAIN_OLD = ('money', 'issue', 'contest', 'apply')   # 헤더에 항상 보이는 주요 주제(나머지는 「전체」). 2026-11-10 방문 기록 순: 생활 가이드(들어오는 글의 44%) → 이슈 → 공모전 → 지원금. 위키(11월 방문자 5명)는 「전체」로
 GN_HOME = {'money': '/money/guide/', 'issue': '/issue/', 'exam': '/exam/'}
-GN_LABEL = {'apply': '지원금<span class="x">·청약</span>', 'money': '생활 가이드', 'wiki': '위키', 'exam': '시험', 'contest': '수험생 스펙', 'diet': '수험생 식단', 'issue': '수험 뉴스'}
+GN_LABEL = {'apply': '지원금<span class="x">·청약</span>', 'money': '생활 가이드', 'wiki': '위키', 'exam': '시험', 'contest': '공모전', 'diet': '식단', 'issue': '시험 뉴스'}
 
 
 def GN_HTML(TH):
@@ -148,7 +148,7 @@ PAGE_INTRO = {k: f'<section class="pg-intro"><h2>{h}</h2>{v}</section>' for k, (
  '/satire/': ('루리 풍자에 대해', '<p>그날 화제가 된 증시·뉴스를 루리가 한 컷 만평으로 그려요. 특정 개인을 조롱하지 않고, 상황의 아이러니를 짚는 걸 원칙으로 해요. 이미지는 직접 만든 AI 그림이고, 지난 풍자도 날짜별로 모아 두었어요.</p>'),
  '/all/': ('전체 메뉴 안내', '<p>루리 줍줍은 이슈·머니·공모전·생활·AI 로그 다섯 테마로 나뉘어 있어요. 테마마다 매시간 자동으로 갱신되는 정리 페이지와, 직접 쓴 가이드·계산기가 섞여 있어요. 찾는 메뉴가 없으면 화면 아래 루리 챗봇에게 물어보세요.</p>'),
  '/event/': ('경품 이벤트 볼 때 알아 둘 것', '<p>기업·기관 SNS와 이벤트 사이트에 올라온 경품 이벤트를 매시간 모아 마감순으로 정리해요. 댓글 한 줄·퀴즈·설문처럼 1~5분이면 끝나는 것을 위로 올려요. 당첨됐다며 개인정보나 배송비·세금 송금을 먼저 요구하는 연락은 사기일 가능성이 크니, 꼭 공식 계정의 발표 글과 대조해 보세요. 경품이 5만원을 넘으면 제세공과금(22%)을 낼 수 있어요.</p>'),
- '/fridge/': ('냉장고 파먹기 사용법', '<p>집에 있는 재료를 고르면 루리가 정리한 집밥 레시피 중 지금 바로 만들 수 있는 메뉴를 먼저 보여 드려요. 재료 하나만 더 사면 되는 메뉴도 함께 알려 줘서, 장보기 목록을 줄일 수 있어요. 레시피는 1~2인분 기준이고 조리 시간과 난이도를 함께 적었어요.</p>'),
+ '/fridge/': ('식단·레시피 사용법', '<p>공부하고 일하는 동안 챙겨 먹기 쉬운 한 끼를 모았어요. 집에 있는 재료를 고르면 루리가 정리한 집밥 레시피 중 지금 바로 만들 수 있는 메뉴를 먼저 보여 드려요. 재료 하나만 더 사면 되는 메뉴도 함께 알려 줘서, 장보기 목록을 줄일 수 있어요. 레시피는 1~2인분 기준이고 조리 시간과 난이도를 함께 적었어요.</p>'),
  '/lab/': ('수상 연구소는 이렇게 분석해요', '<p>슬로건·표어·네이밍 공모전의 실제 수상작을 모아 글자 수, 운율, 대구, 핵심어 위치 같은 구조로 하나씩 풀어 봐요. 수상작을 베끼는 게 아니라 「왜 뽑혔는지」를 알아보는 곳이에요. 내 문구를 넣으면 같은 기준으로 진단해 드려요.</p>'),
  '/apply/': ('청약·지원금 신청 전에', f'<p>여기 모은 일정은 청약홈·LH·지자체·정부24 공고를 바탕으로 마감순으로 정리했어요. 같은 지원금이라도 지역·나이·소득 기준이 달라 신청 전에 자격부터 확인해야 해요. 청약은 <a href="/apply/recommend/">청약 추천</a>에서 내 가점을 먼저 계산해 보세요. 사는 곳 기준으로 보려면 <a href="/apply/r/">지역별 지원금·청약</a>에서 시·도를 고르세요. 달별로는 <a href="/apply/month/{TODAY:%Y-%m}/">{TODAY.month}월 청약 일정</a>·<a href="/apply/month/{(TODAY.replace(day=28) + datetime.timedelta(days=4)):%Y-%m}/">{(TODAY.replace(day=28) + datetime.timedelta(days=4)).month}월 청약 일정</a>, 대상별로는 <a href="/apply/newlywed/">신혼부부 지원금</a>도 있어요.</p>'),
  '/contest/': ('공모전 추천은 이렇게 해요', '<p>진행 중인 공모전을 마감·상금·분야·제출물로 정리해 두고, 내가 고른 조건에 맞는 것부터 보여 줘요. 상금이 큰 것만이 아니라 「준비 시간 대비 할 만한 것」을 위로 올리는 게 루리의 기준이에요. 각 공모전 페이지에는 같은 분야와 비교한 분석, 오늘 기준 준비 일정을 붙여 두었어요. <a href="/contest/week/">이번 주 마감 공모전</a>만 따로 볼 수도 있고, 대상·분야별로는 <a href="/contest/youth/">청소년 공모전</a>, <a href="/contest/novel/">소설 공모전</a>, <a href="/contest/photo/">사진 공모전</a>, <a href="/contest/video/">영상 공모전</a>, <a href="/contest/idea/">아이디어 공모전</a>, <a href="/contest/univ/">대학생 공모전</a>, <a href="/contest/ai-video/">AI 영상 공모전</a> 모음도 있어요.</p>'),
@@ -362,7 +362,7 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False, noinde
 <meta name="theme-color" content="{TH[3] if TH else '#5b21b6'}"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="오늘 뭐 먹지">
 <link rel="icon" href="/favicon.ico?v=6" sizes="any"><link rel="icon" type="image/png" sizes="48x48" href="/assets/icons/icon-48.png?v=6"><link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/icon-96.png?v=6"><link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/icon-192.png?v=6"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=6"><link rel="manifest" href="/site.webmanifest"><link rel="alternate" type="application/rss+xml" title="루리 줍줍" href="/rss.xml">
 <link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="/assets/gm.css?v=29"><link rel="stylesheet" href="/assets/ds.css?v=15"><link rel="stylesheet" href="/assets/print.css?v=1"><link rel="stylesheet" href="/assets/pro.css?v=17"><script defer src="/assets/print.js?v=1"></script><script src="/assets/img-fallback.js?v=1"></script>{('<link rel="stylesheet" href="/assets/chat/ruri-chat.css?v=9">') if not (TH and TH[0] == 'ai') else ''}{COMM_TAGS}{('<script type="module" src="/assets/chat/ruri-chat.js?v=17"></script>') if not (TH and TH[0] == 'ai') else ''}<link rel="stylesheet" href="/assets/app/shell.css?v=1"><script defer src="/assets/app/app.js?v=4"></script>
+<link rel="stylesheet" href="/assets/gm.css?v=29"><link rel="stylesheet" href="/assets/ds.css?v=15"><link rel="stylesheet" href="/assets/print.css?v=1"><link rel="stylesheet" href="/assets/pro.css?v=17"><link rel="stylesheet" href="/assets/exam-skin.css?v=1"><script defer src="/assets/print.js?v=1"></script><script src="/assets/img-fallback.js?v=1"></script>{('<link rel="stylesheet" href="/assets/chat/ruri-chat.css?v=9">') if not (TH and TH[0] == 'ai') else ''}{COMM_TAGS}{('<script type="module" src="/assets/chat/ruri-chat.js?v=17"></script>') if not (TH and TH[0] == 'ai') else ''}<link rel="stylesheet" href="/assets/app/shell.css?v=1"><script defer src="/assets/app/app.js?v=4"></script>
 {ldh}
 {TH_CSS}
 {GTAG}
@@ -2857,8 +2857,8 @@ def build():
         page('/ruri/', '루리 줍줍 — 사람들이 궁금해하는 것을 분석합니다', '가난한 박과장이 만든 정보성 사이트. 이슈, 지원금·세금·청약 같은 돈 정보, 공모전, 집밥 레시피를 근거와 함께 정리하고 매시간 갱신합니다.', SC.home_html(sc_ctx), crumbs=[('가난한 박과장', '/'), ('루리 줍줍', '/ruri/')], full_title=True)
         page('/', '가난한 박과장 — 퇴근 후 AI 에이전트와 내 서비스를 만드는 곳', '퇴근 후 2~3시간, 하네스로 AI 에이전트와 내가 원하는 서비스를 만들어 보는 수업 사이트. 정해진 진도 없이 시작 안내, 저자의 실제 개발 사례, 이야기방을 제공합니다.', _HP.home_html([(p['title'], dev_url(p), p['date']) for p in _dv]), full_title=True, ld={'@context': 'https://schema.org', '@graph': [{'@type': 'WebSite', '@id': SITE + '/#website', 'name': '가난한 박과장', 'alternateName': ['루리 줍줍'], 'url': SITE + '/', 'publisher': {'@id': SITE + '/#org'}}, {'@type': 'Organization', '@id': SITE + '/#org', 'name': '가난한 박과장', 'url': SITE + '/', 'logo': {'@type': 'ImageObject', 'url': SITE + '/assets/icons/icon-512.png', 'width': 512, 'height': 512}}]})
     if not PLAT:
-      page('/', '루리 줍줍 — 수능·정시·자격증·공무원 시험 일정과 문제은행',
-         f'수능·정시·자격증·공무원 시험의 접수·시험일·발표일, 예상 컷과 유사문제 풀이, 수험생 스펙(공모전)과 시험 기간 식단까지 한곳에 모았습니다.',
+      page('/', '루리 줍줍 — 수험·평생교육·자기개발, 시험 일정과 문제은행',
+         f'입시·공무원·자격증·어학·취업 시험의 접수·시험일·발표일, 예상 컷과 유사문제 풀이, 스펙(공모전)과 시험 기간 식단까지 수험·평생교육·자기개발 정보를 한곳에 모았습니다.',
          SC.home_html(sc_ctx), full_title=True, ld={'@context': 'https://schema.org', '@graph': [  # 2026-10-19 구글 검색 결과 사이트 이름·로고
              {'@type': 'WebSite', '@id': SITE + '/#website', 'name': NAME, 'alternateName': ['루리 줍줍', '루리의 줍줍'], 'url': SITE + '/', 'publisher': {'@id': SITE + '/#org'}},
              {'@type': 'Organization', '@id': SITE + '/#org', 'name': NAME, 'url': SITE + '/', 'logo': {'@type': 'ImageObject', 'url': SITE + '/assets/icons/icon-512.png', 'width': 512, 'height': 512}}]})

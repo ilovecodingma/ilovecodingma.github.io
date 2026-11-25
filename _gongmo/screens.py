@@ -662,8 +662,7 @@ def home_html(ctx):
            f'<li><a href="/diet/">{_ic("recipe")}<span><b>수험생 식단</b><small>시험 기간 한 끼</small></span></a></li></ul></section>')
     ent = [c for c in cands if c[1] == '연예']; cands = [c for c in cands if c[1] != '연예']
     import exam_home as _EH
-    return (top + _EH.sections(ctx, _ic)
-            + '<link rel="stylesheet" href="/assets/home/home2.css?v=11"><script defer src="/assets/home/home2.js?v=3"></script>')
+    return _EH.sections(ctx, _ic)
 
 
 def kwmap_page_html():
