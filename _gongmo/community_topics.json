@@ -1,15 +1,66 @@
 {
  "date": "2026-11-25",
- "updated": "2026-11-25 07:50",
+ "updated": "2026-11-25 08:50",
  "sites": 13,
- "npost": 2877,
+ "npost": 2874,
  "note": "출처(커뮤니티)별 집계예요. 작성자·연령·성별 정보는 수집하지 않아요. posts 는 이슈별로 뽑힌 일부라 전체 글 수가 아니에요.",
  "sources": [
   {
    "name": "MLB파크",
-   "np": 12,
-   "nc": 356,
+   "np": 14,
+   "nc": 867,
    "topics": [
+    {
+     "t": "성시경 유튜브 보니 성시경이 먼저 기싸움 한거긴 하네요ㅋㅋㅋ",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 204,
+     "issue_np": 2,
+     "issue_nc": 204,
+     "kw": [
+      "유튜브",
+      "성시경"
+     ],
+     "top_post": {
+      "t": "성시경 유튜브 보니 성시경이 먼저 기싸움 한거긴 하네요ㅋㅋㅋ",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611240120285807&m=view",
+      "nc": 204
+     }
+    },
+    {
+     "t": "서울역 노숙자들 근황",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 173,
+     "issue_np": 2,
+     "issue_nc": 188,
+     "kw": [
+      "서울역",
+      "노숙자"
+     ],
+     "top_post": {
+      "t": "서울역 노숙자들 근황",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611240120293985&m=view",
+      "nc": 173
+     }
+    },
+    {
+     "t": "초고층 아파트는 결국 폭탄이 될듯",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 169,
+     "issue_np": 2,
+     "issue_nc": 169,
+     "kw": [
+      "고층",
+      "아파트"
+     ],
+     "top_post": {
+      "t": "초고층 아파트는 결국 폭탄이 될듯",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611240120286758&m=view",
+      "nc": 169
+     }
+    },
     {
      "t": "실시간 엔비디아 본사 근황 ㄷㄷ. mp4",
      "nsite": 5,
@@ -37,34 +88,15 @@
      "issue_np": 4,
      "issue_nc": 102,
      "kw": [
+      "기념일",
       "국가",
       "국민",
-      "기념일",
-      "대통령"
+      "주권"
      ],
      "top_post": {
       "t": "12월 3일 국가기념일 된다…李 \"계엄 맞선 '국민 주권의 날' 기려야\"",
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611240120287097&m=view",
       "nc": 86
-     }
-    },
-    {
-     "t": "난리난 중국 \"장가계\" 패키지 여행 가이드 감금 협박",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 35,
-     "issue_np": 3,
-     "issue_nc": 82,
-     "kw": [
-      "감금",
-      "장가계",
-      "협박",
-      "패키지"
-     ],
-     "top_post": {
-      "t": "당한사람 속출중인 장가계 패키지투어 협박, 감금논란",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611240120288420&m=view",
-      "nc": 35
      }
     },
     {
@@ -75,10 +107,10 @@
      "issue_np": 3,
      "issue_nc": 86,
      "kw": [
-      "소프트웨어",
       "GV",
-      "기술력",
-      "제네시스"
+      "소프트웨어",
+      "제네시스",
+      "기술력"
      ],
      "top_post": {
       "t": "제네시스 GV90 소프트웨어 기술력 근황",
@@ -94,8 +126,8 @@
      "issue_np": 3,
      "issue_nc": 25,
      "kw": [
-      "둠스데이",
-      "어벤져스"
+      "어벤져스",
+      "둠스데이"
      ],
      "top_post": {
       "t": "어벤져스 둠스데이 최종 예고편",
@@ -120,50 +152,13 @@
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611250120297747&m=view",
       "nc": 20
      }
-    },
-    {
-     "t": "무료로 40번 이상 먹은 배달 거지",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 13,
-     "issue_np": 5,
-     "issue_nc": 44,
-     "kw": [
-      "배달",
-      "거지",
-      "무료"
-     ],
-     "top_post": {
-      "t": "무료로 40번 이상 먹은 배달 거지",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611240120296175&m=view",
-      "nc": 13
-     }
-    },
-    {
-     "t": "젠슨황, 엔비디아 CEO 복귀",
-     "nsite": 6,
-     "np_here": 1,
-     "nc_here": 9,
-     "issue_np": 22,
-     "issue_nc": 40,
-     "kw": [
-      "젠슨 황",
-      "복귀",
-      "엔비디아",
-      "CEO"
-     ],
-     "top_post": {
-      "t": "젠슨황 복귀했다고 삼전닉스 30%상한가 찍는건가요",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611240120283233&m=view",
-      "nc": 9
-     }
     }
    ]
   },
   {
    "name": "개드립",
-   "np": 12,
-   "nc": 303,
+   "np": 11,
+   "nc": 259,
    "topics": [
     {
      "t": "고등학생 딸 아이가 수업시간에 교복에 설사를 했답니다",
@@ -173,34 +168,15 @@
      "issue_np": 5,
      "issue_nc": 52,
      "kw": [
-      "고등학생",
       "설사",
-      "수업",
-      "교복"
+      "고등학생",
+      "교복",
+      "수업"
      ],
      "top_post": {
       "t": "고등학생 딸 아이가 수업시간에 교복에 설사를 했답니다",
       "u": "https://www.dogdrip.net/dogdrip/736349571?sort_index=popular&page=1",
       "nc": 49
-     }
-    },
-    {
-     "t": "난리난 중국 \"장가계\" 패키지 여행 가이드 감금 협박",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 47,
-     "issue_np": 3,
-     "issue_nc": 82,
-     "kw": [
-      "감금",
-      "장가계",
-      "협박",
-      "패키지"
-     ],
-     "top_post": {
-      "t": "난리난 중국 \"장가계\" 패키지 여행 가이드 감금 협박",
-      "u": "https://www.dogdrip.net/dogdrip/736387231?sort_index=popular&page=1",
-      "nc": 47
      }
     },
     {
@@ -229,8 +205,8 @@
      "issue_np": 4,
      "issue_nc": 41,
      "kw": [
-      "식당",
       "영업",
+      "식당",
       "내향",
       "월세"
      ],
@@ -244,18 +220,18 @@
      "t": "무료로 40번 이상 먹은 배달 거지",
      "nsite": 4,
      "np_here": 1,
-     "nc_here": 30,
+     "nc_here": 31,
      "issue_np": 5,
-     "issue_nc": 44,
+     "issue_nc": 45,
      "kw": [
-      "배달",
       "거지",
+      "배달",
       "무료"
      ],
      "top_post": {
       "t": "무료로 40번 이상 먹은 배달 거지",
       "u": "https://www.dogdrip.net/dogdrip/736446063?sort_index=popular&page=1",
-      "nc": 30
+      "nc": 31
      }
     },
     {
@@ -266,8 +242,8 @@
      "issue_np": 6,
      "issue_nc": 22,
      "kw": [
-      "대마도",
-      "마운자"
+      "마운자",
+      "대마도"
      ],
      "top_post": {
       "t": "지금 대마도 마운자로 졷됨",
@@ -281,7 +257,7 @@
      "np_here": 1,
      "nc_here": 21,
      "issue_np": 6,
-     "issue_nc": 43,
+     "issue_nc": 44,
      "kw": [
       "남자",
       "친구",
@@ -312,13 +288,30 @@
       "u": "https://www.dogdrip.net/dogdrip/736325498?sort_index=popular&page=1",
       "nc": 15
      }
+    },
+    {
+     "t": "서울역 노숙자들 근황",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 15,
+     "issue_np": 2,
+     "issue_nc": 188,
+     "kw": [
+      "서울역",
+      "노숙자"
+     ],
+     "top_post": {
+      "t": "서울역에 노숙자가 꼬이는거 마땅히해결책이 없어 보이는이유",
+      "u": "https://www.dogdrip.net/dogdrip/736328231?sort_index=popular&page=1",
+      "nc": 15
+     }
     }
    ]
   },
   {
    "name": "클리앙",
-   "np": 9,
-   "nc": 185,
+   "np": 8,
+   "nc": 143,
    "topics": [
     {
      "t": "GV90 소프트웨어 이게 최선인가요?",
@@ -328,33 +321,15 @@
      "issue_np": 3,
      "issue_nc": 86,
      "kw": [
-      "소프트웨어",
       "GV",
-      "기술력",
-      "제네시스"
+      "소프트웨어",
+      "제네시스",
+      "기술력"
      ],
      "top_post": {
       "t": "GV90 소프트웨어 이게 최선인가요?",
       "u": "https://www.clien.net/service/board/cm_car/19297744?od=T33&po=0&category=0&groupCd=clien_all",
       "nc": 61
-     }
-    },
-    {
-     "t": "주식으로 정부 쉴드 그만 치세요.",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 41,
-     "issue_np": 3,
-     "issue_nc": 41,
-     "kw": [
-      "주식",
-      "정부",
-      "시장"
-     ],
-     "top_post": {
-      "t": "주식으로 정부 쉴드 그만 치세요.",
-      "u": "https://www.clien.net/service/board/park/19298029?od=T33&po=0&category=0&groupCd=clien_all",
-      "nc": 41
      }
     },
     {
@@ -384,10 +359,10 @@
      "issue_np": 4,
      "issue_nc": 102,
      "kw": [
+      "기념일",
       "국가",
       "국민",
-      "기념일",
-      "대통령"
+      "주권"
      ],
      "top_post": {
       "t": "이 대통령 '빛의 혁명 12·3 국가기념일 '국민주권의 날'로 지정'",
@@ -396,11 +371,30 @@
      }
     },
     {
+     "t": "대통령의 사이비종교 해산 박차..환영합니다",
+     "nsite": 3,
+     "np_here": 2,
+     "nc_here": 11,
+     "issue_np": 4,
+     "issue_nc": 14,
+     "kw": [
+      "종교",
+      "사이비",
+      "해산",
+      "대통령"
+     ],
+     "top_post": {
+      "t": "대통령의 사이비종교 해산 박차..환영합니다",
+      "u": "https://www.clien.net/service/board/park/19298075?od=T33&po=0&category=0&groupCd=clien_all",
+      "nc": 7
+     }
+    },
+    {
      "t": "젠슨황, 엔비디아 CEO 복귀",
      "nsite": 6,
      "np_here": 2,
      "nc_here": 8,
-     "issue_np": 22,
+     "issue_np": 21,
      "issue_nc": 40,
      "kw": [
       "젠슨 황",
@@ -431,44 +425,6 @@
       "u": "https://www.clien.net/service/board/park/19297554?od=T33&po=0&category=0&groupCd=clien_all",
       "nc": 8
      }
-    },
-    {
-     "t": "이재명 대통령 '사이비 단체 해산등·향후 계획 보고지시'",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 7,
-     "issue_np": 3,
-     "issue_nc": 7,
-     "kw": [
-      "해산",
-      "대통령",
-      "사이비",
-      "단체"
-     ],
-     "top_post": {
-      "t": "이재명 대통령 '사이비 단체 해산등·향후 계획 보고지시'",
-      "u": "https://www.clien.net/service/board/park/19297816?od=T33&po=0&category=0&groupCd=clien_all",
-      "nc": 7
-     }
-    },
-    {
-     "t": "돈 필요없는 세상 온다던 AI회사 대표 근황",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 5,
-     "issue_np": 4,
-     "issue_nc": 18,
-     "kw": [
-      "세상",
-      "AI",
-      "대표",
-      "회사"
-     ],
-     "top_post": {
-      "t": "HW도 이제는 AI 없으면 일을 못하는 세상이 되었습니다.",
-      "u": "https://www.clien.net/service/board/park/19297654?od=T33&po=0&category=0&groupCd=clien_all",
-      "nc": 5
-     }
     }
    ]
   },
@@ -486,8 +442,8 @@
      "issue_nc": 99,
      "kw": [
       "행위",
-      "부정",
       "속보",
+      "부정",
       "수능"
      ],
      "top_post": {
@@ -512,8 +468,8 @@
      "issue_nc": 99,
      "kw": [
       "행위",
-      "부정",
       "속보",
+      "부정",
       "수능"
      ],
      "top_post": {
@@ -531,9 +487,9 @@
      "issue_nc": 14,
      "kw": [
       "발령",
-      "경계",
       "항공기",
-      "경보"
+      "경보",
+      "경계"
      ],
      "top_post": {
       "t": "경계경보 발령",
@@ -546,7 +502,7 @@
      "nsite": 6,
      "np_here": 1,
      "nc_here": 2,
-     "issue_np": 22,
+     "issue_np": 21,
      "issue_nc": 40,
      "kw": [
       "젠슨 황",
@@ -591,7 +547,7 @@
      "nsite": 6,
      "np_here": 1,
      "nc_here": 21,
-     "issue_np": 22,
+     "issue_np": 21,
      "issue_nc": 40,
      "kw": [
       "젠슨 황",
@@ -637,7 +593,7 @@
      "np_here": 1,
      "nc_here": 20,
      "issue_np": 6,
-     "issue_nc": 43,
+     "issue_nc": 44,
      "kw": [
       "남자",
       "친구",
@@ -654,9 +610,28 @@
   },
   {
    "name": "보배드림",
-   "np": 9,
-   "nc": 16,
+   "np": 10,
+   "nc": 20,
    "topics": [
+    {
+     "t": "제목 그대로 결혼생각이 있다고 초반부터 밝히고 만난 남자친구가 사귄지 반년이 넘어가자 ...",
+     "nsite": 6,
+     "np_here": 1,
+     "nc_here": 3,
+     "issue_np": 6,
+     "issue_nc": 44,
+     "kw": [
+      "남자",
+      "친구",
+      "결혼",
+      "후회"
+     ],
+     "top_post": {
+      "t": "전 남자 친구랑 헤어진 게 너무 후회돼",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1049878&vdate=",
+      "nc": 3
+     }
+    },
     {
      "t": "고등학생 딸 아이가 수업시간에 교복에 설사를 했답니다",
      "nsite": 5,
@@ -665,10 +640,10 @@
      "issue_np": 5,
      "issue_nc": 52,
      "kw": [
-      "고등학생",
       "설사",
-      "수업",
-      "교복"
+      "고등학생",
+      "교복",
+      "수업"
      ],
      "top_post": {
       "t": "고등학생 딸아이가 교복에 설사를 했답니다",
@@ -703,10 +678,10 @@
      "issue_np": 4,
      "issue_nc": 3,
      "kw": [
-      "스코틀랜드",
       "신데렐라",
       "스토리",
-      "흙수저"
+      "흙수저",
+      "스코틀랜드"
      ],
      "top_post": {
       "t": "흙수저 출신 어떤 스코틀랜드 여성의 신데렐라 스토리",
@@ -715,22 +690,22 @@
      }
     },
     {
-     "t": "제목 그대로 결혼생각이 있다고 초반부터 밝히고 만난 남자친구가 사귄지 반년이 넘어가자 ...",
-     "nsite": 6,
+     "t": "대통령의 사이비종교 해산 박차..환영합니다",
+     "nsite": 3,
      "np_here": 1,
-     "nc_here": 2,
-     "issue_np": 6,
-     "issue_nc": 43,
+     "nc_here": 3,
+     "issue_np": 4,
+     "issue_nc": 14,
      "kw": [
-      "남자",
-      "친구",
-      "결혼",
-      "후회"
+      "종교",
+      "사이비",
+      "해산",
+      "대통령"
      ],
      "top_post": {
-      "t": "전 남자 친구랑 헤어진 게 너무 후회돼",
-      "u": "https://www.bobaedream.co.kr/view?code=best&No=1049878&vdate=",
-      "nc": 2
+      "t": "사이비 종교단체 해산 검토 속도",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1049714&vdate=",
+      "nc": 3
      }
     },
     {
@@ -739,10 +714,10 @@
      "np_here": 1,
      "nc_here": 1,
      "issue_np": 5,
-     "issue_nc": 44,
+     "issue_nc": 45,
      "kw": [
-      "배달",
       "거지",
+      "배달",
       "무료"
      ],
      "top_post": {
@@ -753,15 +728,15 @@
     },
     {
      "t": "121만부 찍은 해외 유튜브에 올라온 한국 빈민가ㅎㄷㄷ",
-     "nsite": 4,
+     "nsite": 3,
      "np_here": 1,
      "nc_here": 1,
-     "issue_np": 4,
+     "issue_np": 3,
      "issue_nc": 7,
      "kw": [
       "한국",
-      "해외",
-      "빈민가"
+      "빈민가",
+      "해외"
      ],
      "top_post": {
       "t": "한국인도 모르는 한국 빈민가",
@@ -777,31 +752,12 @@
      "issue_np": 3,
      "issue_nc": 1,
      "kw": [
-      "남편",
-      "아내"
+      "아내",
+      "남편"
      ],
      "top_post": {
       "t": "남편이 힘들게 벌어 온 돈을 아내가 지출하는 곳",
       "u": "https://www.bobaedream.co.kr/view?code=best&No=1049675&vdate=",
-      "nc": 1
-     }
-    },
-    {
-     "t": "젠슨황 하체에 갇혀버린 세계 경제.",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 1,
-     "issue_np": 4,
-     "issue_nc": 1,
-     "kw": [
-      "세계",
-      "경제",
-      "하체",
-      "젠슨"
-     ],
-     "top_post": {
-      "t": "그의 ㄲㅊ에 갇혀버린 세계 경제",
-      "u": "https://www.bobaedream.co.kr/view?code=best&No=1049702&vdate=",
       "nc": 1
      }
     }
@@ -818,7 +774,7 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 6,
-     "issue_nc": 43,
+     "issue_nc": 44,
      "kw": [
       "남자",
       "친구",
@@ -839,10 +795,10 @@
      "issue_np": 5,
      "issue_nc": 52,
      "kw": [
-      "고등학생",
       "설사",
-      "수업",
-      "교복"
+      "고등학생",
+      "교복",
+      "수업"
      ],
      "top_post": {
       "t": "\"고등학생 딸 아이가 수업시간에 교복에 설사를 했답니다.\" ㄷㄷㄷ",
@@ -858,10 +814,10 @@
      "issue_np": 4,
      "issue_nc": 102,
      "kw": [
+      "기념일",
       "국가",
       "국민",
-      "기념일",
-      "대통령"
+      "주권"
      ],
      "top_post": {
       "t": "이 대통령 \"빛의 혁명 123 국가기념일 '국민주권의 날'로 지정\" ???????????",
@@ -870,57 +826,39 @@
      }
     },
     {
-     "t": "121만부 찍은 해외 유튜브에 올라온 한국 빈민가ㅎㄷㄷ",
-     "nsite": 4,
+     "t": "대통령의 사이비종교 해산 박차..환영합니다",
+     "nsite": 3,
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 4,
-     "issue_nc": 7,
+     "issue_nc": 14,
      "kw": [
-      "한국",
-      "해외",
-      "빈민가"
-     ],
-     "top_post": {
-      "t": "121만부 찍은 해외 유튜브에 올라온 한국 빈민가ㅎㄷㄷ",
-      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=678023",
-      "nc": 0
-     }
-    },
-    {
-     "t": "주식으로 정부 쉴드 그만 치세요.",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 41,
-     "kw": [
-      "주식",
-      "정부",
-      "시장"
-     ],
-     "top_post": {
-      "t": "정부가 주식 시장을 방치하는 이유",
-      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=678032",
-      "nc": 0
-     }
-    },
-    {
-     "t": "이재명 대통령 '사이비 단체 해산등·향후 계획 보고지시'",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 7,
-     "kw": [
-      "해산",
-      "대통령",
+      "종교",
       "사이비",
-      "단체"
+      "해산",
+      "대통령"
      ],
      "top_post": {
       "t": "[속보] 이 대통령 “사이비 종교단체 해산 방안 검토할 때”",
       "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=678072",
+      "nc": 0
+     }
+    },
+    {
+     "t": "121만부 찍은 해외 유튜브에 올라온 한국 빈민가ㅎㄷㄷ",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 7,
+     "kw": [
+      "한국",
+      "빈민가",
+      "해외"
+     ],
+     "top_post": {
+      "t": "121만부 찍은 해외 유튜브에 올라온 한국 빈민가ㅎㄷㄷ",
+      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=678023",
       "nc": 0
      }
     },
@@ -932,8 +870,8 @@
      "issue_np": 4,
      "issue_nc": 0,
      "kw": [
-      "수시",
-      "아들"
+      "아들",
+      "수시"
      ],
      "top_post": {
       "t": "\"학폭 탓 수시 6곳 떨어진 아들, 이 대가 타당한가\"…고3 아버지에 '싸늘'",
@@ -949,12 +887,29 @@
      "issue_np": 3,
      "issue_nc": 0,
      "kw": [
-      "대마도",
-      "마운"
+      "마운",
+      "대마도"
      ],
      "top_post": {
       "t": "대마도 마운자로 줄서기 근황",
       "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=678084",
+      "nc": 0
+     }
+    },
+    {
+     "t": "초고층 아파트는 결국 폭탄이 될듯",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 2,
+     "issue_nc": 169,
+     "kw": [
+      "고층",
+      "아파트"
+     ],
+     "top_post": {
+      "t": "고층아파트 사는데 불안하네요",
+      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=678123",
       "nc": 0
      }
     }
@@ -962,7 +917,7 @@
   },
   {
    "name": "디시인사이드",
-   "np": 16,
+   "np": 15,
    "nc": 0,
    "topics": [
     {
@@ -971,7 +926,7 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 6,
-     "issue_nc": 43,
+     "issue_nc": 44,
      "kw": [
       "남자",
       "친구",
@@ -1011,31 +966,12 @@
      "issue_np": 6,
      "issue_nc": 22,
      "kw": [
-      "대마도",
-      "마운자"
+      "마운자",
+      "대마도"
      ],
      "top_post": {
       "t": "여초 대격노 마운자로 근황 (대마도)",
       "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481418&_dcbest=1&page=1",
-      "nc": 0
-     }
-    },
-    {
-     "t": "돈 필요없는 세상 온다던 AI회사 대표 근황",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 18,
-     "kw": [
-      "세상",
-      "AI",
-      "대표",
-      "회사"
-     ],
-     "top_post": {
-      "t": "세상 떠난 견주를 AI로 다시 만난 댕댕이 반응",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481374&_dcbest=1&page=1",
       "nc": 0
      }
     },
@@ -1047,10 +983,10 @@
      "issue_np": 4,
      "issue_nc": 3,
      "kw": [
-      "스코틀랜드",
       "신데렐라",
       "스토리",
-      "흙수저"
+      "흙수저",
+      "스코틀랜드"
      ],
      "top_post": {
       "t": "감동감동 스코틀랜드 흙수저녀의 신데렐라 스토리",
@@ -1067,8 +1003,8 @@
      "issue_nc": 99,
      "kw": [
       "행위",
-      "부정",
       "속보",
+      "부정",
       "수능"
      ],
      "top_post": {
@@ -1085,8 +1021,8 @@
      "issue_np": 4,
      "issue_nc": 41,
      "kw": [
-      "식당",
       "영업",
+      "식당",
       "내향",
       "월세"
      ],
@@ -1104,12 +1040,31 @@
      "issue_np": 3,
      "issue_nc": 25,
      "kw": [
-      "둠스데이",
-      "어벤져스"
+      "어벤져스",
+      "둠스데이"
      ],
      "top_post": {
       "t": "역대급으로 미쳤다는 어벤져스: 둠스데이 라인업",
       "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481433&_dcbest=1&page=1",
+      "nc": 0
+     }
+    },
+    {
+     "t": "“러시아 항공기 영공침범”…울릉군 경계경보 발령",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 14,
+     "kw": [
+      "발령",
+      "항공기",
+      "경보",
+      "경계"
+     ],
+     "top_post": {
+      "t": "“러시아 항공기 영공침범”…울릉군 경계경보 발령",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481358&_dcbest=1&page=1",
       "nc": 0
      }
     }
@@ -1117,7 +1072,7 @@
   },
   {
    "name": "루리웹",
-   "np": 30,
+   "np": 27,
    "nc": 0,
    "topics": [
     {
@@ -1126,7 +1081,7 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 6,
-     "issue_nc": 43,
+     "issue_nc": 44,
      "kw": [
       "남자",
       "친구",
@@ -1147,10 +1102,10 @@
      "issue_np": 5,
      "issue_nc": 52,
      "kw": [
-      "고등학생",
       "설사",
-      "수업",
-      "교복"
+      "고등학생",
+      "교복",
+      "수업"
      ],
      "top_post": {
       "t": "고등학생 딸이 수업시간에 설사함",
@@ -1201,10 +1156,10 @@
      "np_here": 2,
      "nc_here": 0,
      "issue_np": 5,
-     "issue_nc": 44,
+     "issue_nc": 45,
      "kw": [
-      "배달",
       "거지",
+      "배달",
       "무료"
      ],
      "top_post": {
@@ -1221,8 +1176,8 @@
      "issue_np": 6,
      "issue_nc": 22,
      "kw": [
-      "대마도",
-      "마운자"
+      "마운자",
+      "대마도"
      ],
      "top_post": {
       "t": "대마도 마운자로 수령 줄에 뚱뚱한 사람이 없는 이유 ㄷㄷㄷㄷ",
@@ -1249,21 +1204,21 @@
      }
     },
     {
-     "t": "돈 필요없는 세상 온다던 AI회사 대표 근황",
+     "t": "감동감동 스코틀랜드 흙수저녀의 신데렐라 스토리",
      "nsite": 4,
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 4,
-     "issue_nc": 18,
+     "issue_nc": 3,
      "kw": [
-      "세상",
-      "AI",
-      "대표",
-      "회사"
+      "신데렐라",
+      "스토리",
+      "흙수저",
+      "스코틀랜드"
      ],
      "top_post": {
-      "t": "위메이드 전대표 새회사에서도 막무가내식이네",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77507262?m=all&t=now",
+      "t": "흙수저 출신 어떤 스코틀랜드 여성의 신데렐라 스토리",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77502156?m=all&t=now",
       "nc": 0
      }
     }
@@ -1279,7 +1234,7 @@
      "nsite": 6,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 22,
+     "issue_np": 21,
      "issue_nc": 40,
      "kw": [
       "젠슨 황",
@@ -1320,10 +1275,10 @@
      "issue_np": 5,
      "issue_nc": 52,
      "kw": [
-      "고등학생",
       "설사",
-      "수업",
-      "교복"
+      "고등학생",
+      "교복",
+      "수업"
      ],
      "top_post": {
       "t": "고등학생 딸 아이가 수업시간에 교복에 설사를했답니다",
@@ -1339,10 +1294,10 @@
      "issue_np": 4,
      "issue_nc": 102,
      "kw": [
+      "기념일",
       "국가",
       "국민",
-      "기념일",
-      "대통령"
+      "주권"
      ],
      "top_post": {
       "t": "12월3일 국가기념일 된다…李대통령 \"계엄군 맞선 위대한 국민 승리\"",
@@ -1358,8 +1313,8 @@
      "issue_np": 6,
      "issue_nc": 22,
      "kw": [
-      "대마도",
-      "마운자"
+      "마운자",
+      "대마도"
      ],
      "top_post": {
       "t": "말많은 핫게 오늘자 대마도 마운자로 받으러 간 후기 (야마토운수)",
@@ -1393,10 +1348,10 @@
      "issue_np": 4,
      "issue_nc": 3,
      "kw": [
-      "스코틀랜드",
       "신데렐라",
       "스토리",
-      "흙수저"
+      "흙수저",
+      "스코틀랜드"
      ],
      "top_post": {
       "t": "흙수저 출신 어떤 스코틀랜드 여성의 신데렐라 스토리",
@@ -1405,21 +1360,20 @@
      }
     },
     {
-     "t": "난리난 중국 \"장가계\" 패키지 여행 가이드 감금 협박",
+     "t": "트럼프 아들, 배런 트럼프 근황",
      "nsite": 3,
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 3,
-     "issue_nc": 82,
+     "issue_nc": 13,
      "kw": [
-      "감금",
-      "장가계",
-      "협박",
-      "패키지"
+      "배런 트럼프",
+      "트럼프",
+      "아들"
      ],
      "top_post": {
-      "t": "장가계 패키지 여행 갔던 부모님이 협박 감금 당했다가 돌아오셨습니다 (스레드 좋아요 6천개 달린 글)",
-      "u": "https://theqoo.net/hot/4415812024",
+      "t": "트럼프 아들, 배런 트럼프 근황",
+      "u": "https://theqoo.net/hot/4416072578",
       "nc": 0
      }
     }
