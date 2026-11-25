@@ -1,6 +1,6 @@
 {
- "at": "2026-11-26 03:30",
- "nitems": 529,
+ "at": "2026-11-26 04:30",
+ "nitems": 530,
  "cands": [
   {
    "kw": "복귀",
@@ -81,7 +81,7 @@
     "한국경제",
     "헤럴드경제"
    ],
-   "n": 8,
+   "n": 7,
    "headlines": [
     {
      "src": "한국경제",
@@ -217,8 +217,13 @@
     "한국경제",
     "헤럴드경제"
    ],
-   "n": 5,
+   "n": 6,
    "headlines": [
+    {
+     "src": "한국경제",
+     "title": "[포토+] 박지현, '우아한 분위기 여신'",
+     "link": "https://www.hankyung.com/article/202611260763H"
+    },
     {
      "src": "한국경제",
      "title": "HK직캠|신민아, '레드카펫 위 우아한 여신'",
@@ -233,11 +238,6 @@
      "src": "헤럴드경제",
      "title": "“위고비 1년반 맞았는데도”…‘워터밤 여신’ 터질듯한 뱃살, 이게 무슨 일?",
      "link": "https://biz.heraldcorp.com/article/10948998"
-    },
-    {
-     "src": "뉴시스",
-     "title": "\"내가 올림픽 여신\"…유타 레이르담 파격 'NY 패션'",
-     "link": "https://www.newsis.com/view/NISX20261125_0003882022"
     }
    ]
   },
@@ -250,12 +250,17 @@
     "조선일보",
     "한국경제"
    ],
-   "n": 18,
+   "n": 19,
    "headlines": [
     {
      "src": "연합뉴스",
      "title": "청룡영화상 작품상에 '호프'…설경구·전도연 남녀주연상 석권",
      "link": "https://www.yna.co.kr/view/AKR20261125187600005"
+    },
+    {
+     "src": "한국경제",
+     "title": "[포토+] 설경구, '중후한 카리스마'",
+     "link": "https://www.hankyung.com/article/202611260764H"
     },
     {
      "src": "한국경제",
@@ -266,11 +271,6 @@
      "src": "뉴시스",
      "title": "설경구, 청룡 남우주연상에 \"영원한 동지 송윤아에 감사\"",
      "link": "https://www.newsis.com/view/NISX20261125_0003883550"
-    },
-    {
-     "src": "조선일보",
-     "title": "청룡영화 작품상에 ‘호프’... 주연상은 설경구·전도연",
-     "link": "https://www.chosun.com/culture-life/culture_general/2026/11/25/EUJITRT7J5FWRC6B7KRHJBJ3IQ/"
     }
    ]
   },
@@ -308,6 +308,39 @@
    ]
   },
   {
+   "kw": "미소",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "세계일보",
+    "조선일보",
+    "한국경제"
+   ],
+   "n": 11,
+   "headlines": [
+    {
+     "src": "한국경제",
+     "title": "[포토+] 전도연, '여전히 사랑스러운 미소'",
+     "link": "https://www.hankyung.com/article/202611260767H"
+    },
+    {
+     "src": "한국경제",
+     "title": "[포토+] 서현우, '사람 좋은 미소'",
+     "link": "https://www.hankyung.com/article/202611260756H"
+    },
+    {
+     "src": "한국경제",
+     "title": "[포토+] 장혜진, '우아함 가득한 미소'",
+     "link": "https://www.hankyung.com/article/202611260752H"
+    },
+    {
+     "src": "한국경제",
+     "title": "[포토+] 김신록, '매력적인 미소'",
+     "link": "https://www.hankyung.com/article/202611260751H"
+    }
+   ]
+  },
+  {
    "kw": "수상",
    "nsrc": 4,
    "srcs": [
@@ -337,39 +370,6 @@
      "src": "뉴시스",
      "title": "'왕사남' 박지훈, 청룡영화상 신인남우상 수상",
      "link": "https://www.newsis.com/view/NISX20261125_0003883514"
-    }
-   ]
-  },
-  {
-   "kw": "미소",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "세계일보",
-    "조선일보",
-    "한국경제"
-   ],
-   "n": 10,
-   "headlines": [
-    {
-     "src": "한국경제",
-     "title": "[포토+] 서현우, '사람 좋은 미소'",
-     "link": "https://www.hankyung.com/article/202611260756H"
-    },
-    {
-     "src": "한국경제",
-     "title": "[포토+] 장혜진, '우아함 가득한 미소'",
-     "link": "https://www.hankyung.com/article/202611260752H"
-    },
-    {
-     "src": "한국경제",
-     "title": "[포토+] 김신록, '매력적인 미소'",
-     "link": "https://www.hankyung.com/article/202611260751H"
-    },
-    {
-     "src": "한국경제",
-     "title": "[포토+] 문상민, '팬들 빠져들게 만드는 미소'",
-     "link": "https://www.hankyung.com/article/202611260742H"
     }
    ]
   },
@@ -436,105 +436,6 @@
      "src": "동아일보",
      "title": "‘신병 더 무비’ 김민호 “시즌4까지 방영에 극장 영화까지, 영광스럽고 행복해”",
      "link": "https://sports.donga.com/ent/article/all/20261125/135087043/1"
-    }
-   ]
-  },
-  {
-   "kw": "공연",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "연합뉴스",
-    "한국경제"
-   ],
-   "n": 7,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "블루스 뮤지션 김목경, 12월 소극장 공연…히트곡·연주곡 망라",
-     "link": "https://www.yna.co.kr/view/AKR20261125097600005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "허키 시바세키·비프리, 내년 1월 합동 공연",
-     "link": "https://www.yna.co.kr/view/AKR20261123157900005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "[가요소식] 英 밴드 슬로우다이브, 내달 8일 내한 공연",
-     "link": "https://www.yna.co.kr/view/AKR20261123134100005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "[가요소식] 라이즈, 뉴욕서 '스포티파이 클로저' 공연",
-     "link": "https://www.yna.co.kr/view/AKR20261123077700005"
-    }
-   ]
-  },
-  {
-   "kw": "에이티즈",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "연합뉴스",
-    "한겨레",
-    "한국경제"
-   ],
-   "n": 7,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "에이티즈, 빌보드 메인 앨범 차트 1위…싱글 차트 90위",
-     "link": "https://www.yna.co.kr/view/AKR20261125072200005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "에이티즈 빌보드 네번째 1위에 \"벅차고 감사…초심 잃지 않겠다\"",
-     "link": "https://www.yna.co.kr/view/AKR20261123089400005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "에이티즈, 美 빌보드앨범 네 번째 1위…2020년대 그룹 최다 톱10(종합)",
-     "link": "https://www.yna.co.kr/view/AKR20261122049251005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "에이티즈, '골든아워 : 파트6'로 美 '빌보드 200' 네 번째 1위",
-     "link": "https://www.yna.co.kr/view/AKR20261122049200005"
-    }
-   ]
-  },
-  {
-   "kw": "빌보드",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "연합뉴스",
-    "한겨레",
-    "한국경제"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "에이티즈, 빌보드 메인 앨범 차트 1위…싱글 차트 90위",
-     "link": "https://www.yna.co.kr/view/AKR20261125072200005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "에이티즈 빌보드 네번째 1위에 \"벅차고 감사…초심 잃지 않겠다\"",
-     "link": "https://www.yna.co.kr/view/AKR20261123089400005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "에이티즈, '골든아워 : 파트6'로 美 '빌보드 200' 네 번째 1위",
-     "link": "https://www.yna.co.kr/view/AKR20261122049200005"
-    },
-    {
-     "src": "한겨레",
-     "title": "에이티즈 4개월 만에 또 ‘빌보드 200’ 1위",
-     "link": "https://www.hani.co.kr/arti/culture/music/1288587.html"
     }
    ]
   },
@@ -721,6 +622,11 @@
     },
     {
      "src": "한국경제",
+     "title": "[포토+] 박지현, '우아한 분위기 여신'",
+     "link": "https://www.hankyung.com/article/202611260763H"
+    },
+    {
+     "src": "한국경제",
      "title": "HK직캠|박지현, '레드카펫에 울려 퍼진 생일 축하 노래'",
      "link": "https://www.hankyung.com/article/202611260700H"
     },
@@ -728,44 +634,6 @@
      "src": "SBS",
      "title": "박지현, 국제 에미상 첫 여자 연기상 불발",
      "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008861905&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "조선일보",
-     "title": "[포토] 청룡영화상 여우조연상 조여정-박지현 진심으로 축하",
-     "link": "https://www.chosun.com/entertainments/entertain_photo/2026/11/25/HA3WIMTCGJSTCODFMQ4WENJUGM/"
-    }
-   ]
-  },
-  {
-   "kw": "번째",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "연합뉴스",
-    "조선일보",
-    "한국경제"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "에이티즈, 美 빌보드앨범 네 번째 1위…2020년대 그룹 최다 톱10(종합)",
-     "link": "https://www.yna.co.kr/view/AKR20261122049251005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "에이티즈, '골든아워 : 파트6'로 美 '빌보드 200' 네 번째 1위",
-     "link": "https://www.yna.co.kr/view/AKR20261122049200005"
-    },
-    {
-     "src": "한국경제",
-     "title": "에이티즈, 美 빌보드 네 번째 1위…\"벅차고 감사하다\"",
-     "link": "https://www.hankyung.com/article/202611234344i"
-    },
-    {
-     "src": "뉴시스",
-     "title": "에이티즈, '핫 100' 세 번째 진입…박재범 롱샷, '빌보드 200' 118위 첫 입성",
-     "link": "https://www.newsis.com/view/NISX20261125_0003881873"
     }
    ]
   },
@@ -799,39 +667,6 @@
      "src": "SBS",
      "title": "결혼식 닷새 만에 불륜 의혹 터지더니…양홍원·원현주, 결국 이혼",
      "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008861287&plink=RSSLINK&cooper=RSSREADER"
-    }
-   ]
-  },
-  {
-   "kw": "관왕",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "연합뉴스",
-    "조선일보",
-    "한국경제"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "BTS·코르티스, 마마 둘째날 대상…3관왕 빅뱅, 신곡 무대 첫선",
-     "link": "https://www.yna.co.kr/view/AKR20261121047200005"
-    },
-    {
-     "src": "한국경제",
-     "title": "리센느, 활동 종료에도 '인기가요' 1위…'음방 5관왕' 기염",
-     "link": "https://www.hankyung.com/article/202611234859H"
-    },
-    {
-     "src": "뉴시스",
-     "title": "'호프', 청룡 최우수작품상…'가능한 사랑', 4관왕(종합)",
-     "link": "https://www.newsis.com/view/NISX20261125_0003883572"
-    },
-    {
-     "src": "뉴시스",
-     "title": "투모로우바이투게더, 日 오리콘 주간 3관왕…합산 앨범 역대 최다 1위",
-     "link": "https://www.newsis.com/view/NISX20261125_0003883310"
     }
    ]
   },
@@ -898,72 +733,6 @@
      "src": "뉴시스",
      "title": "임시완·설인아, 쌍방 프러포즈로 해피엔딩…'나의 유죄인간' 5.9% 종영",
      "link": "https://www.newsis.com/view/NISX20261125_0003882103"
-    }
-   ]
-  },
-  {
-   "kw": "아이유",
-   "nsrc": 4,
-   "srcs": [
-    "연합뉴스",
-    "한겨레",
-    "한국경제",
-    "헤럴드경제"
-   ],
-   "n": 4,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "아이유, 내년 새 월드투어…女 솔로 가수 최초 도쿄돔 입성",
-     "link": "https://www.yna.co.kr/view/AKR20261124141700005"
-    },
-    {
-     "src": "한겨레",
-     "title": "아이유, 케이팝 여성 솔로 가수 최초 도쿄돔 선다…4월7~8일 이틀간",
-     "link": "https://www.hani.co.kr/arti/culture/music/1288792.html"
-    },
-    {
-     "src": "한국경제",
-     "title": "아이유, 한국 女 솔로 최초로 도쿄돔 선다…내년 4월 공연",
-     "link": "https://www.hankyung.com/article/202611234944H"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "아이유, 결국 도쿄돔까지 접수…韓 여성 솔로 가수 최초 단독 콘서트",
-     "link": "https://biz.heraldcorp.com/article/10948600"
-    }
-   ]
-  },
-  {
-   "kw": "솔로",
-   "nsrc": 4,
-   "srcs": [
-    "연합뉴스",
-    "한겨레",
-    "한국경제",
-    "헤럴드경제"
-   ],
-   "n": 4,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "아이유, 내년 새 월드투어…女 솔로 가수 최초 도쿄돔 입성",
-     "link": "https://www.yna.co.kr/view/AKR20261124141700005"
-    },
-    {
-     "src": "한겨레",
-     "title": "아이유, 케이팝 여성 솔로 가수 최초 도쿄돔 선다…4월7~8일 이틀간",
-     "link": "https://www.hani.co.kr/arti/culture/music/1288792.html"
-    },
-    {
-     "src": "한국경제",
-     "title": "아이유, 한국 女 솔로 최초로 도쿄돔 선다…내년 4월 공연",
-     "link": "https://www.hankyung.com/article/202611234944H"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "아이유, 결국 도쿄돔까지 접수…韓 여성 솔로 가수 최초 단독 콘서트",
-     "link": "https://biz.heraldcorp.com/article/10948600"
     }
    ]
   },
@@ -1133,39 +902,6 @@
    ]
   },
   {
-   "kw": "깜짝",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "세계일보",
-    "한국경제",
-    "헤럴드경제"
-   ],
-   "n": 4,
-   "headlines": [
-    {
-     "src": "한국경제",
-     "title": "덥수룩한 수염에 상투 머리…'문무' 男 배우 '깜짝 정체'",
-     "link": "https://www.hankyung.com/article/202611234639H"
-    },
-    {
-     "src": "세계일보",
-     "title": "씨엘, 박봄과 깜짝 통화로 불화설 일축…“언니 베리 섭섭”",
-     "link": "https://www.segye.com/newsView/20261125517262"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "“악플은 사양” 흑백요리사 유명 셰프 깜짝 재혼…백종원·안성재도 축하",
-     "link": "https://biz.heraldcorp.com/article/10947057"
-    },
-    {
-     "src": "SBS",
-     "title": "김새롬, 이혼 10년 만에 깜짝 재혼 발표…\"법적 짝꿍 생겼다\"",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008861229&plink=RSSLINK&cooper=RSSREADER"
-    }
-   ]
-  },
-  {
    "kw": "청룡영화",
    "nsrc": 3,
    "srcs": [
@@ -1173,7 +909,7 @@
     "연합뉴스",
     "조선일보"
    ],
-   "n": 45,
+   "n": 44,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -1230,6 +966,38 @@
    ]
   },
   {
+   "kw": "전도연",
+   "nsrc": 3,
+   "srcs": [
+    "연합뉴스",
+    "조선일보",
+    "한국경제"
+   ],
+   "n": 16,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "청룡영화상 작품상에 '호프'…설경구·전도연 남녀주연상 석권",
+     "link": "https://www.yna.co.kr/view/AKR20261125187600005"
+    },
+    {
+     "src": "한국경제",
+     "title": "[포토+] 전도연, '여전히 사랑스러운 미소'",
+     "link": "https://www.hankyung.com/article/202611260767H"
+    },
+    {
+     "src": "한국경제",
+     "title": "HK직캠|전도연, '세월을 잊은 아름다운 미소'",
+     "link": "https://www.hankyung.com/article/202611260714H"
+    },
+    {
+     "src": "조선일보",
+     "title": "청룡영화 작품상에 ‘호프’... 주연상은 설경구·전도연",
+     "link": "https://www.chosun.com/culture-life/culture_general/2026/11/25/EUJITRT7J5FWRC6B7KRHJBJ3IQ/"
+    }
+   ]
+  },
+  {
    "kw": "내년",
    "nsrc": 3,
    "srcs": [
@@ -1237,7 +1005,7 @@
     "연합뉴스",
     "한국경제"
    ],
-   "n": 16,
+   "n": 15,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -1258,38 +1026,6 @@
      "src": "연합뉴스",
      "title": "아이유, 내년 새 월드투어…女 솔로 가수 최초 도쿄돔 입성",
      "link": "https://www.yna.co.kr/view/AKR20261124141700005"
-    }
-   ]
-  },
-  {
-   "kw": "전도연",
-   "nsrc": 3,
-   "srcs": [
-    "연합뉴스",
-    "조선일보",
-    "한국경제"
-   ],
-   "n": 15,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "청룡영화상 작품상에 '호프'…설경구·전도연 남녀주연상 석권",
-     "link": "https://www.yna.co.kr/view/AKR20261125187600005"
-    },
-    {
-     "src": "한국경제",
-     "title": "HK직캠|전도연, '세월을 잊은 아름다운 미소'",
-     "link": "https://www.hankyung.com/article/202611260714H"
-    },
-    {
-     "src": "조선일보",
-     "title": "청룡영화 작품상에 ‘호프’... 주연상은 설경구·전도연",
-     "link": "https://www.chosun.com/culture-life/culture_general/2026/11/25/EUJITRT7J5FWRC6B7KRHJBJ3IQ/"
-    },
-    {
-     "src": "조선일보",
-     "title": "\"고통스럽게 즐겼다\"…설경구-전도연 남녀주연상, '최초' 대기록[청룡영화상]",
-     "link": "https://www.chosun.com/entertainments/enter_general/2026/11/26/MU4DGM3GHBSDGZRTMMYWGMTEGU/"
     }
    ]
   },
@@ -1322,6 +1058,262 @@
      "src": "조선일보",
      "title": "청룡영화 작품상에 ‘호프’... 주연상은 설경구·전도연",
      "link": "https://www.chosun.com/culture-life/culture_general/2026/11/25/EUJITRT7J5FWRC6B7KRHJBJ3IQ/"
+    }
+   ]
+  },
+  {
+   "kw": "눈물",
+   "nsrc": 3,
+   "srcs": [
+    "SBS",
+    "연합뉴스",
+    "조선일보"
+   ],
+   "n": 9,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "로이킴, 13년만 첫 KSPO돔 입성…\"노래로 눈물 닦였기를\"",
+     "link": "https://www.yna.co.kr/view/AKR20261120178900005"
+    },
+    {
+     "src": "SBS",
+     "title": "부르튼 입술·초췌한 얼굴…'음주운전' 고경표, 사고 9일 만에 경찰 출석해 '눈물 사과'",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008860616&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "조선일보",
+     "title": "[청룡영화상] 조여정-구교환, 남녀조연상에 눈물 \"연기 사랑해, 트로피 나눠갖자\"",
+     "link": "https://www.chosun.com/entertainments/enter_general/2026/11/25/GU4DKZJQG43WINJTMQ2GCNJYG4/"
+    },
+    {
+     "src": "조선일보",
+     "title": "[포토] 여우조연상 조여정, 조인성 품에 안겨 눈물",
+     "link": "https://www.chosun.com/entertainments/entertain_photo/2026/11/25/GI3DMMBRHAZDMOLEGUYGMNZYGU/"
+    }
+   ]
+  },
+  {
+   "kw": "전속계약",
+   "nsrc": 3,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "연합뉴스"
+   ],
+   "n": 8,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "[가요소식] 카라 허영지, DSP미디어와 전속계약",
+     "link": "https://www.yna.co.kr/view/AKR20261125123000005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "정승환, 안테나와 전속계약 만료…11년 동행 마무리",
+     "link": "https://www.yna.co.kr/view/AKR20261123056900005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "걸그룹 여자친구 출신 3명, 차가원 회사와 전속계약 분쟁 1심 승소",
+     "link": "https://www.yna.co.kr/view/AKR20261120163000004"
+    },
+    {
+     "src": "동아일보",
+     "title": "노매드 출신 박상하, 배우로 새 출발…오크컴퍼니와 전속계약",
+     "link": "https://sports.donga.com/ent/article/all/20261125/135088161/1"
+    }
+   ]
+  },
+  {
+   "kw": "주년",
+   "nsrc": 3,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "연합뉴스"
+   ],
+   "n": 8,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "'기분 좋은 날' 방송 20주년…MC 김한석 \"함께 나이 들어가고파\"",
+     "link": "https://www.yna.co.kr/view/AKR20261125053100005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "[방송소식] tvN, 개국 20주년 기념 '즐거움 체크인' 캠페인",
+     "link": "https://www.yna.co.kr/view/AKR20261124171900005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "YTN라디오, 백범 김구 탄생 150주년 특집 다큐 4부작 방송",
+     "link": "https://www.yna.co.kr/view/AKR20261123151500005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "[방송소식] 티빙, KBL 30주년 다큐 '백코트' 24일 공개",
+     "link": "https://www.yna.co.kr/view/AKR20261123070100005"
+    }
+   ]
+  },
+  {
+   "kw": "아들",
+   "nsrc": 3,
+   "srcs": [
+    "뉴시스",
+    "조선일보",
+    "헤럴드경제"
+   ],
+   "n": 7,
+   "headlines": [
+    {
+     "src": "헤럴드경제",
+     "title": "정준하, 13년생 아들 ‘4개 국어’ 술술",
+     "link": "https://biz.heraldcorp.com/article/10947814"
+    },
+    {
+     "src": "뉴시스",
+     "title": "추신수 17세 아들, 민소매 입고 드러낸 근육…벌써 이 정도",
+     "link": "https://www.newsis.com/view/NISX20261125_0003883066"
+    },
+    {
+     "src": "뉴시스",
+     "title": "정준하, '4개 국어 능통' 아들 자랑…\"한·영·일 원어민 수준\"",
+     "link": "https://www.newsis.com/view/NISX20261125_0003882007"
+    },
+    {
+     "src": "뉴시스",
+     "title": "조혜련 \"강재준 아들 '아나까나' 듣더니 경기 일으켰다\"",
+     "link": "https://www.newsis.com/view/NISX20261124_0003881786"
+    }
+   ]
+  },
+  {
+   "kw": "로맨스",
+   "nsrc": 3,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "연합뉴스"
+   ],
+   "n": 6,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "200년을 뛰어넘은 연애 코칭 로맨스…'러브 와이파이 궁' 개봉",
+     "link": "https://www.yna.co.kr/view/AKR20261125158400005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "최현욱·정채연의 청춘 로맨스…'그린라이트' 내년 방송",
+     "link": "https://www.yna.co.kr/view/AKR20261125047600005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "대출 위해 결혼한 김명수·표예진…'연대보증 로맨스' 내년 첫선",
+     "link": "https://www.yna.co.kr/view/AKR20261124049300005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "[방송소식] 수지·김선호의 미스터리 로맨스…'현혹' 내년 1월 공개",
+     "link": "https://www.yna.co.kr/view/AKR20261124043300005"
+    }
+   ]
+  },
+  {
+   "kw": "데뷔",
+   "nsrc": 3,
+   "srcs": [
+    "동아일보",
+    "연합뉴스",
+    "한국경제"
+   ],
+   "n": 6,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "4인조 버추얼 보이그룹 윙스, 27일 데뷔…첫 싱글 '헤일로'",
+     "link": "https://www.yna.co.kr/view/AKR20261125148100005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "J팝 그룹 투 에프 이, 한국 정식 데뷔 \"K팝 좋아해…빅뱅 동경\"",
+     "link": "https://www.yna.co.kr/view/AKR20261123088800005"
+    },
+    {
+     "src": "동아일보",
+     "title": "박민영X육성재X고수 혼성그룹 데뷔 공약 “9.6%↑ ‘인기가요’ 출연” (나인 투 식스)",
+     "link": "https://sports.donga.com/ent/article/all/20261125/135088283/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "손태진, 데뷔 첫 LP 발매…‘여름 향수’ 아날로그 감성으로 재탄생",
+     "link": "https://sports.donga.com/ent/article/all/20261125/135087225/1"
+    }
+   ]
+  },
+  {
+   "kw": "공연",
+   "nsrc": 3,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "연합뉴스"
+   ],
+   "n": 6,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "블루스 뮤지션 김목경, 12월 소극장 공연…히트곡·연주곡 망라",
+     "link": "https://www.yna.co.kr/view/AKR20261125097600005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "허키 시바세키·비프리, 내년 1월 합동 공연",
+     "link": "https://www.yna.co.kr/view/AKR20261123157900005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "[가요소식] 英 밴드 슬로우다이브, 내달 8일 내한 공연",
+     "link": "https://www.yna.co.kr/view/AKR20261123134100005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "[가요소식] 라이즈, 뉴욕서 '스포티파이 클로저' 공연",
+     "link": "https://www.yna.co.kr/view/AKR20261123077700005"
+    }
+   ]
+  },
+  {
+   "kw": "에이티즈",
+   "nsrc": 3,
+   "srcs": [
+    "뉴시스",
+    "연합뉴스",
+    "한겨레"
+   ],
+   "n": 6,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "에이티즈, 빌보드 메인 앨범 차트 1위…싱글 차트 90위",
+     "link": "https://www.yna.co.kr/view/AKR20261125072200005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "에이티즈 빌보드 네번째 1위에 \"벅차고 감사…초심 잃지 않겠다\"",
+     "link": "https://www.yna.co.kr/view/AKR20261123089400005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "에이티즈, 美 빌보드앨범 네 번째 1위…2020년대 그룹 최다 톱10(종합)",
+     "link": "https://www.yna.co.kr/view/AKR20261122049251005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "에이티즈, '골든아워 : 파트6'로 美 '빌보드 200' 네 번째 1위",
+     "link": "https://www.yna.co.kr/view/AKR20261122049200005"
     }
    ]
   }
