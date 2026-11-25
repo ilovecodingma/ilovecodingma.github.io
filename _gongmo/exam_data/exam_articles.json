@@ -215,11 +215,6 @@
   "date": "2026-11-18"
  },
  {
-  "url": "/issue/seoul-teacher-exam-smart-glasses-1105/",
-  "title": "서울 교사 임용시험 스마트안경 검사, 1교시 전 안경 벗어 확인? 시험일·조치 정리 (11/05 확인)",
-  "date": "2026-11-05"
- },
- {
   "url": "/issue/suneung-2027-answers-official-by-subject-1119/",
   "title": "2027 수능 정답 — 국어·수학·영어·한국사·탐구 평가원 정답표 (11/19)",
   "date": "2026-11-19",
@@ -241,12 +236,6 @@
   "url": "/issue/suneung-day-checklist-1104/",
   "title": "2027 수능 당일 준비물·입실 시간·시간표 정리 (11/19 시험)",
   "date": "2026-11-04",
-  "exam_id": "csat-2027"
- },
- {
-  "url": "/issue/suneung-day-market-hours-1106/",
-  "title": "수능일 증시 개장 시간 2026 11월 19일 몇 시? 시가·종가·선물옵션·채권 결제 시간 정리 (11/06 확인)",
-  "date": "2026-11-06",
   "exam_id": "csat-2027"
  },
  {
@@ -274,9 +263,36 @@
   "exam_id": "csat-2027"
  },
  {
-  "url": "/issue/tax-accountant-exam-ai-glasses-1113/",
-  "title": "세무사 시험 AI 안경 부정행위 의혹, 수석 397.5점 논란 공단·국세청·세무사회 입장 정리 (11/13 기준)",
-  "date": "2026-11-13",
-  "exam_id": "csat-2027"
+  "url": "/issue/military-enlistment-date-selection-start-1125/",
+  "title": "입영일자 본인선택 내일(11월 25일) 몇 시? 지방병무청별 시각 (11/24)",
+  "date": "2026-11-25",
+  "exam_id": "mma-select-2027-1",
+  "type": "뉴스",
+  "kind": "접수",
+  "published": "2026-11-24",
+  "updated": "2026-11-24",
+  "sources": [
+   "https://www.mma.go.kr/board/boardView.do?gesipan_id=2&gsgeul_no=1521843&mc=usr0000379",
+   "https://www.mma.go.kr/board/boardView.do?mc=mma0000392&gesipan_id=15&gsgeul_no=1522585"
+  ]
+ },
+ {
+  "url": "/issue/exam-prep-teacher-hanneungum-1128/",
+  "title": "11월 28일 임용 중등 1차·한능검 81회 준비물과 입실 (11/25)",
+  "date": "2026-11-25",
+  "exam_id": [
+   "teacher-2027-secondary",
+   "korean-history-81"
+  ],
+  "type": "뉴스",
+  "kind": "준비물",
+  "published": "2026-11-25",
+  "updated": "2026-11-25",
+  "sources": [
+   "https://www.goe.go.kr/resource/goe/na/bbs_2583/2026/09/4001dad5-8a82-4073-a393-2375c1bacfbc.pdf",
+   "https://www.historyexam.go.kr/pageLink.do?link=examSchedule",
+   "https://www.historyexam.go.kr/pageLink.do?link=apyexmInfo",
+   "https://www.historyexam.go.kr/pageLink.do?link=sclpstRegltn"
+  ]
  }
 ]
