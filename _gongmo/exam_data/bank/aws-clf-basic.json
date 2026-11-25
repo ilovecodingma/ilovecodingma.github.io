@@ -1,0 +1,281 @@
+{
+ "id": "aws-clf-basic",
+ "name": "AWS Cloud Practitioner 핵심 개념",
+ "category": "IT",
+ "kind": "original",
+ "method": "original",
+ "analysis": "기출 접근 불가: AWS 자격시험 문제는 비공개라 기출을 열람하지 못했다. 공식 CLF-C02 시험 가이드의 영역 비중(클라우드 개념 24%, 보안·규정 준수 30%, 기술·서비스 34%, 요금·지원 12%)과 작업 항목만 근거로 직접 작성했다.",
+ "source": {
+  "name": "AWS Certified Cloud Practitioner (CLF-C02) 공식 시험 가이드 / AWS 공식 문서",
+  "url": "https://docs.aws.amazon.com/aws-certification/latest/examguides/cloud-practitioner-02.html",
+  "license": "기출 접근 불가로 공식 시험 가이드와 AWS 문서를 근거로 직접 작성"
+ },
+ "updated": "2026-11-25",
+ "sec_per_q": 83,
+ "questions": [
+  {
+   "q": "AWS 공동 책임 모델에서 고객의 책임에 해당하는 것은?",
+   "choices": [
+    "하이퍼바이저 소프트웨어 관리",
+    "AWS 데이터 센터 건물의 물리적 출입 통제",
+    "EC2 인스턴스에 설치된 게스트 운영체제의 보안 패치",
+    "글로벌 인프라를 구성하는 네트워크 장비 교체"
+   ],
+   "answer": 2,
+   "explain": "AWS 는 클라우드 자체의 보안(시설·하드웨어·하이퍼바이저)을, 고객은 클라우드 안의 보안(게스트 OS·데이터·접근 권한)을 맡는다.",
+   "ref_url": "https://docs.aws.amazon.com/whitepapers/latest/aws-risk-and-compliance/shared-responsibility-model.html"
+  },
+  {
+   "q": "AWS Well-Architected Framework 의 6개 기둥에 포함되지 않는 것은?",
+   "choices": [
+    "확장성(Scalability)",
+    "보안",
+    "안정성",
+    "지속 가능성"
+   ],
+   "answer": 0,
+   "explain": "여섯 기둥은 운영 우수성, 보안, 안정성, 성능 효율성, 비용 최적화, 지속 가능성이다.",
+   "ref_url": "https://docs.aws.amazon.com/wellarchitected/latest/framework/the-pillars-of-the-framework.html"
+  },
+  {
+   "q": "AWS 가용 영역(Availability Zone)에 대한 설명으로 옳은 것은?",
+   "choices": [
+    "리전과 같은 말이다",
+    "전 세계 어디서나 콘텐츠를 캐시하는 엣지 위치이다",
+    "하나의 데이터 센터 안의 서버 랙 한 줄이다",
+    "한 리전 안에서 물리적으로 분리된 하나 이상의 데이터 센터 묶음이다"
+   ],
+   "answer": 3,
+   "explain": "리전은 여러 가용 영역으로 구성되며, 가용 영역은 전원·네트워크가 분리되어 장애를 격리한다.",
+   "ref_url": "https://docs.aws.amazon.com/whitepapers/latest/aws-fault-isolation-boundaries/availability-zones.html"
+  },
+  {
+   "q": "Amazon S3 Standard 스토리지 클래스가 설계한 객체 내구성 수준은?",
+   "choices": [
+    "99.9%",
+    "99.999999999% (11 나인)",
+    "99.99%",
+    "99.999%"
+   ],
+   "answer": 1,
+   "explain": "S3 Standard 는 연간 99.999999999% 내구성을 목표로 여러 가용 영역에 데이터를 저장한다.",
+   "ref_url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/DataDurability.html"
+  },
+  {
+   "q": "EC2 인스턴스에 연결해 부팅 디스크처럼 쓰는 블록 스토리지 서비스는?",
+   "choices": [
+    "Amazon S3",
+    "Amazon EBS",
+    "Amazon Glacier",
+    "Amazon Route 53"
+   ],
+   "answer": 1,
+   "explain": "EBS 는 EC2 에 붙이는 블록 볼륨이고 S3 는 객체 스토리지다.",
+   "ref_url": "https://docs.aws.amazon.com/ebs/latest/userguide/what-is-ebs.html"
+  },
+  {
+   "q": "AWS 계정의 루트 사용자 보호를 위한 모범 사례로 옳은 것은?",
+   "choices": [
+    "루트 비밀번호를 팀 메신저에 공유한다",
+    "루트 액세스 키를 만들어 개발자에게 공유한다",
+    "루트 사용자로 모든 일상 작업을 한다",
+    "루트 사용자에 MFA 를 켜고 일상 작업은 IAM 자격으로 한다"
+   ],
+   "answer": 3,
+   "explain": "루트 사용자는 계정의 모든 권한을 가지므로 MFA 로 보호하고 일상 작업에는 쓰지 않는다.",
+   "ref_url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html"
+  },
+  {
+   "q": "사용자에게 업무에 필요한 권한만 부여하고 그 이상은 주지 않는다는 보안 원칙은?",
+   "choices": [
+    "최소 권한 원칙",
+    "직무 분리 해제 원칙",
+    "권한 상속 확대 원칙",
+    "공용 계정 원칙"
+   ],
+   "answer": 0,
+   "explain": "IAM 정책은 필요한 작업과 리소스에만 허용하는 최소 권한을 따라야 한다.",
+   "ref_url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#grant-least-privilege"
+  },
+  {
+   "q": "서버를 프로비저닝하거나 관리하지 않고 이벤트가 발생할 때만 코드를 실행하는 서비스는?",
+   "choices": [
+    "Amazon Lightsail",
+    "Amazon EC2",
+    "AWS Lambda",
+    "AWS Snowball"
+   ],
+   "answer": 2,
+   "explain": "Lambda 는 서버리스 컴퓨팅 서비스이며 실행한 시간과 요청 수만큼 비용을 낸다.",
+   "ref_url": "https://docs.aws.amazon.com/lambda/latest/dg/welcome.html"
+  },
+  {
+   "q": "완전 관리형 키-값 NoSQL 데이터베이스 서비스는?",
+   "choices": [
+    "Amazon Aurora",
+    "Amazon RDS",
+    "Amazon Redshift",
+    "Amazon DynamoDB"
+   ],
+   "answer": 3,
+   "explain": "DynamoDB 는 NoSQL, RDS·Aurora 는 관계형, Redshift 는 데이터 웨어하우스다.",
+   "ref_url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Introduction.html"
+  },
+  {
+   "q": "전 세계 엣지 로케이션에 콘텐츠를 캐시해 사용자 지연 시간을 줄이는 서비스는?",
+   "choices": [
+    "Amazon Route 53",
+    "Amazon CloudFront",
+    "AWS Direct Connect",
+    "Amazon VPC"
+   ],
+   "answer": 1,
+   "explain": "CloudFront 는 콘텐츠 전송 네트워크(CDN) 서비스다.",
+   "ref_url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Introduction.html"
+  },
+  {
+   "q": "도메인 이름 등록과 DNS 라우팅을 제공하는 AWS 서비스는?",
+   "choices": [
+    "AWS WAF",
+    "Amazon CloudFront",
+    "Amazon Route 53",
+    "Amazon SNS"
+   ],
+   "answer": 2,
+   "explain": "Route 53 은 확장성 높은 DNS 웹 서비스다.",
+   "ref_url": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/Welcome.html"
+  },
+  {
+   "q": "VPC 에서 서브넷 수준에 적용되며 상태를 저장하지 않는(stateless) 방화벽 기능은?",
+   "choices": [
+    "네트워크 ACL",
+    "보안 그룹",
+    "AWS Shield",
+    "IAM 정책"
+   ],
+   "answer": 0,
+   "explain": "네트워크 ACL 은 서브넷 경계에서 동작하는 stateless 규칙이고 보안 그룹은 인스턴스 수준의 stateful 방화벽이다.",
+   "ref_url": "https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html"
+  },
+  {
+   "q": "중단되어도 괜찮은 대규모 배치 작업을 가장 저렴하게 처리하려는 상황에 적합한 EC2 구매 옵션은?",
+   "choices": [
+    "전용 호스트",
+    "온디맨드 인스턴스",
+    "스팟 인스턴스",
+    "용량 예약"
+   ],
+   "answer": 2,
+   "explain": "스팟 인스턴스는 남는 용량을 대폭 할인된 가격에 쓰지만 AWS 가 회수하면 중단될 수 있다.",
+   "ref_url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html"
+  },
+  {
+   "q": "AWS 에 워크로드를 배포하기 전에 예상 월 비용을 계산해 보는 데 쓰는 도구는?",
+   "choices": [
+    "AWS Pricing Calculator",
+    "AWS Cost Explorer",
+    "AWS CloudTrail",
+    "AWS Artifact"
+   ],
+   "answer": 0,
+   "explain": "Pricing Calculator 는 구성 기반 예상 비용을 산출하고, Cost Explorer 는 실제 지출 이력을 분석한다.",
+   "ref_url": "https://calculator.aws/"
+  },
+  {
+   "q": "월 지출이 정한 금액을 넘을 것으로 예상되면 이메일로 알려 주는 서비스는?",
+   "choices": [
+    "AWS Directory Service",
+    "AWS Config",
+    "Amazon Inspector",
+    "AWS Budgets"
+   ],
+   "answer": 3,
+   "explain": "AWS Budgets 는 비용·사용량 임곗값에 알림을 설정한다.",
+   "ref_url": "https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html"
+  },
+  {
+   "q": "AWS Organizations 의 통합 결제(consolidated billing)로 얻을 수 있는 이점은?",
+   "choices": [
+    "모든 계정이 같은 IAM 사용자를 공유한다",
+    "여러 계정의 사용량을 합산해 볼륨 할인을 받을 수 있다",
+    "리전 간 데이터 전송 요금이 면제된다",
+    "계정마다 별도의 청구서를 받는다"
+   ],
+   "answer": 1,
+   "explain": "통합 결제는 한 결제 계정에서 모든 멤버 계정의 요금을 합산해 볼륨 할인을 공유한다.",
+   "ref_url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/consolidated-billing.html"
+  },
+  {
+   "q": "누가 언제 어떤 AWS API 를 호출했는지 기록하는 서비스는?",
+   "choices": [
+    "Amazon CloudWatch",
+    "AWS CloudTrail",
+    "AWS Trusted Advisor",
+    "Amazon Macie"
+   ],
+   "answer": 1,
+   "explain": "CloudTrail 은 계정 활동과 API 호출을 기록하고, CloudWatch 는 지표와 로그를 모니터링한다.",
+   "ref_url": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-user-guide.html"
+  },
+  {
+   "q": "AWS 의 보안·컴플라이언스 보고서와 약관을 내려받는 셀프 서비스 포털은?",
+   "choices": [
+    "AWS Control Tower",
+    "AWS Shield",
+    "AWS Secrets Manager",
+    "AWS Artifact"
+   ],
+   "answer": 3,
+   "explain": "Artifact 에서 SOC·ISO 같은 감사 보고서를 받을 수 있다.",
+   "ref_url": "https://docs.aws.amazon.com/artifact/latest/ug/what-is-aws-artifact.html"
+  },
+  {
+   "q": "AWS 환경을 점검해 비용 최적화, 보안, 성능 등의 모범 사례 권고를 제공하는 도구는?",
+   "choices": [
+    "AWS Trusted Advisor",
+    "AWS Snowball",
+    "Amazon Rekognition",
+    "AWS Batch"
+   ],
+   "answer": 0,
+   "explain": "Trusted Advisor 는 계정을 점검하고 개선 권고를 제공한다.",
+   "ref_url": "https://docs.aws.amazon.com/awssupport/latest/user/trusted-advisor.html"
+  },
+  {
+   "q": "사용자 수요에 따라 리소스가 자동으로 늘고 줄어 필요한 만큼만 쓰게 되는 클라우드의 장점은?",
+   "choices": [
+    "고정 비용 구조",
+    "정적 용량 계획",
+    "탄력성",
+    "물리적 접근 통제"
+   ],
+   "answer": 2,
+   "explain": "탄력성은 수요에 맞춰 리소스를 자동으로 늘리거나 줄이는 능력이며 Auto Scaling 이 대표적이다.",
+   "ref_url": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html"
+  },
+  {
+   "q": "클라우드로 옮기면 데이터 센터 구입 같은 선투자 비용이 사용한 만큼 내는 비용으로 바뀐다. 이 변화를 가리키는 말은?",
+   "choices": [
+    "규모의 경제 소멸",
+    "운영 지출에서 자본 지출로의 전환",
+    "고정 비용의 증가",
+    "자본 지출(CapEx)에서 운영 지출(OpEx)로의 전환"
+   ],
+   "answer": 3,
+   "explain": "클라우드는 변동 비용 모델이라 사용량만큼 지불한다.",
+   "ref_url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/six-advantages-of-cloud-computing.html"
+  },
+  {
+   "q": "페타바이트 규모 데이터를 네트워크 대신 물리 장치로 AWS 에 옮길 때 쓰는 서비스군은?",
+   "choices": [
+    "Amazon Kinesis",
+    "AWS Snow Family",
+    "AWS Glue",
+    "Amazon Connect"
+   ],
+   "answer": 1,
+   "explain": "Snow Family 는 대용량 오프라인 데이터 이전과 엣지 컴퓨팅용 물리 장치다.",
+   "ref_url": "https://docs.aws.amazon.com/snowball/latest/developer-guide/whatissnowball.html"
+  }
+ ]
+}

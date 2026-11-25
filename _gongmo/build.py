@@ -18,7 +18,7 @@ if not os.path.exists(MASTER):
     MASTER = r'C:\Users\k\Desktop\공모전_2026\주말큐_master.jsonl'
 SHOTS = os.path.join(DATA, 'shots')  # 공식 공고 캡처 <id>.webp 640x400
 SITE = 'https://sungprofile.cloud'
-NAME = '루리 줍줍'
+NAME = '가난한 박과장'
 PLAT = os.path.exists(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'platform_home.on'))   # 2026-11-13 메인=가난한 박과장 수업 플랫폼(켜는 스위치 파일)
 _CT = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'contact.json'), encoding='utf-8'))
 MAIL, PARTNER = _CT['contact'], _CT['partner']
@@ -42,15 +42,15 @@ CATS = [('literature', '문학'), ('idea', '아이디어·정책'), ('design', '
         ('paper', '논문'), ('it', 'IT·과학'), ('food', '요리·레시피'), ('global', '해외'), ('etc', '기타')]
 SLUG = {n: s for s, n in CATS}
 CAT_INTRO = {
- '요리·레시피': '레시피 공모전, 요리경연대회, 지역 특산물 요리대회처럼 음식으로 응모하는 공모전입니다. 레시피 서류 심사 후 본선에서 직접 조리하는 경우가 많아 재료비·조리 시간·인원 제한과 본선 날짜를 먼저 확인하세요. 지정 식재료(쌀, 과일, 계란 등)를 꼭 써야 하는 대회가 많습니다.',
- '문학': '시·소설·수필·수기·네이밍·슬로건처럼 글로 응모하는 공모전입니다. 분량과 형식(원고지 매수, 글자 수, 파일 형식)이 요강마다 달라 제출 전 반드시 확인해야 합니다. 수기 공모는 실제 경험을 구체적인 장면으로 쓰는 것이, 네이밍·슬로건은 주최 기관이 내세우려는 가치를 짧게 담는 것이 중요합니다.',
- '아이디어·정책': '지자체·공공기관·기업이 정책 제안, 사업 아이디어, 마케팅 기획을 받는 공모전입니다. 국민신문고·국민생각함 같은 공식 창구로 접수하는 경우가 많고, 현황·문제점·개선안·기대효과 순서의 제안서 형식이 일반적입니다. 실현 가능성과 예산 규모를 함께 적으면 심사에서 유리합니다.',
- '디자인': '캐릭터·포스터·일러스트·웹툰·건축·공예 등 시각 작품을 받는 공모전입니다. 해상도, 파일 형식(AI·PSD·PNG), 원본 파일 제출 여부, 저작권 귀속 조건을 꼭 확인하세요. 수상작의 저작권이 주최 측으로 넘어가는 경우가 많습니다.',
- '영상': '숏폼·UCC·사진·영화 공모전입니다. 영상 길이, 화면 비율(세로형 9:16 여부), 배경음악 저작권, 초상권 동의서 제출 여부가 자주 탈락 사유가 됩니다. 유튜브·인스타그램 업로드 후 링크를 제출하는 방식도 많습니다.',
- '논문': '학술 논문·리포트·연구 제안 공모입니다. 분량 기준, 인용 양식, 표절 검사(유사도) 기준과 공동 저자 허용 여부를 먼저 확인하세요. 학생부·일반부로 나뉘는 경우가 많습니다.',
- 'IT·과학': '해커톤, SW 개발, AI 활용, 데이터 분석, 과학 탐구 공모전입니다. 팀 구성 인원, 개발 기간, 결과물 공개 여부(오픈소스), 사용 가능한 API·데이터 조건을 확인하세요.',
- '해외': '해외 기관이 주최하는 국제 공모전·해커톤입니다. 대부분 영어(일부 일본어)로 응모하며 국적 제한, 시차를 고려한 마감 시각(현지 시간 기준), 상금 송금 방식(해외 송금 수수료)을 확인해야 합니다.',
- '기타': '위 분야에 속하지 않는 다양한 공모전입니다. 요강의 응모 자격과 제출물을 꼼꼼히 읽어 보세요.',
+  '요리·레시피': '레시피 공모전이야. 본선은 직접 조리. 재료비·시간·인원 제한부터 봐. 지정 식재료 있으면 그거 써야 해.',
+  '문학': '글로 내는 공모전이야. 분량·형식은 요강마다 달라. 안 맞추면 탈락이야.',
+  '아이디어·정책': '제안서 내는 공모전이야. 현황, 문제, 개선안, 기대효과 순서로 써. 예산 적으면 유리해.',
+  '디자인': '시각 작품 공모전이야. 파일 형식이랑 저작권 귀속부터 확인해. 주최 측으로 넘어가는 경우 많아.',
+  '영상': '영상·사진 공모전이야. 길이, 비율, 음악 저작권, 초상권 동의서에서 많이 떨어져.',
+  '논문': '논문·리포트 공모야. 분량, 인용 양식, 유사도 기준부터 봐.',
+  'IT·과학': '해커톤·개발·AI·데이터 공모전이야. 팀 인원, 기간, 공개 조건 확인해.',
+  '해외': '해외 공모전이야. 영어로 내야 하고 마감은 현지 시간이야. 송금 수수료도 따져.',
+  '기타': '나머지 공모전이야. 요강 읽어.',
 }
 TIPS = {
  '요리·레시피': ['지정 식재료(쌀·과일·계란 등)를 주재료로 썼는지 확인', '레시피는 재료 g·계량과 조리 순서를 사진과 함께', '본선 조리 시간·인원·재료 지참 여부 확인', '완성 사진은 밝은 자연광에서 위·45도 두 컷', '집에 있는 재료로 연습하려면 루리의 냉장고 파먹기 활용'],
@@ -94,19 +94,19 @@ THEMES += [   # 2026-10-23 사용자 「런처·주제별 메인 분리」: 생�
     ('watch', '웹툰·애니', '🎯', '#9333ea', '/watch/', [('/watch/', '오늘의 추천'), ('/watch/#webtoon', '웹툰'), ('/watch/#anime', '애니')], ['/watch/']),
     ('wiki', '루리 위키', '📚', '#0f766e', '/wiki/', [('/wiki/', '위키 홈'), ('/money/guide/', '생활 돈 가이드'), ('/guide/', '응모 가이드'), ('/ailog/', '개발 지식')], ['/wiki/'])]
 THEMES = [t for t in THEMES if t[0] != 'life']
-THEMES.append(('park', '가난한 박과장 수업', '🎓', '#4338ca', '/park/', [('/park/', '수업 홈'), ('/park/#start', '하네스 시작'), ('/park/archive/', '운영 기록'), ('/dev/', '개발 지식')], ['/park/']))
+THEMES.append(('park', '자기개발', '🎓', '#4338ca', '/park/', [('/park/', '수업 홈'), ('/park/#start', '하네스 시작'), ('/park/archive/', '운영 기록'), ('/dev/', '개발 지식')], ['/park/']))
 THEMES.append(('diet', '다이어트', '🥗', '#16a34a', '/diet/', [('/diet/', '다이어트 허브'), ('/diet/meal/', '레시피 식단표'), ('/diet/workout/', '운동 사이클'), ('/diet/workout/#log', '기록'), ('/money/guide/meal-calorie-per-meal/', '식사 칼로리 가이드')], ['/diet/']))
-THEMES.append(('exam', '수험', '📝', '#1d4ed8', '/exam/', [('/exam/', '시험 일정'), ('/exam/bank/', '문제은행'), ('/exam/articles/', '시험 글'), ('/contest/', '공모전'), ('/diet/', '식단')], ['/exam/']))   # 2026-11-25 사용자 「메인은 수험」「교육 집중 개편」
+THEMES.append(('exam', '시험 정보', '📝', '#1d4ed8', '/exam/', [('/exam/', '시험 일정'), ('/exam/bank/', '문제은행'), ('/exam/articles/', '시험 글'), ('/contest/', '공모전'), ('/diet/', '식단')], ['/exam/']))   # 2026-11-25 사용자 「메인은 수험」「교육 집중 개편」
 THEMES = [next(t for t in THEMES if t[0] == k) for k in ('exam', 'today', 'recipe', 'watch', 'apply', 'contest', 'event', 'issue', 'money', 'game', 'plaza', 'diet', 'ai', 'wiki', 'park')]
 
 
 # 2026-11-05 모바일 점검: 생활 가이드·계산기·고민 해결 글에 「애널리스트 종합·전문가 코멘트」 하위 메뉴가 떠서, 이 주소들은 가이드용 하위 메뉴를 쓴다
 GUIDE_SUB = [('/money/guide/', '생활 가이드'), ('/qa/', '고민 해결'), ('/money/tools/salary/', '계산기'), ('/book/', '전자책'), ('/wiki/', '위키')]
 GUIDE_SUB_PX = ('/money/guide/', '/money/tools/', '/qa/')
-GN_MAIN = ('exam', 'issue', 'contest', 'diet', 'wiki')   # 2026-11-25 수험 개편: 시험·이슈·스펙·식단·위키(생활 가이드·보험·세금 등은 위키로)
+GN_MAIN = ('park', 'exam', 'issue', 'contest', 'diet', 'wiki')   # 2026-11-25 수험 개편: 시험·이슈·스펙·식단·위키(생활 가이드·보험·세금 등은 위키로)
 GN_MAIN_OLD = ('money', 'issue', 'contest', 'apply')   # 헤더에 항상 보이는 주요 주제(나머지는 「전체」). 2026-11-10 방문 기록 순: 생활 가이드(들어오는 글의 44%) → 이슈 → 공모전 → 지원금. 위키(11월 방문자 5명)는 「전체」로
-GN_HOME = {'money': '/money/guide/', 'issue': '/issue/', 'exam': '/exam/'}
-GN_LABEL = {'apply': '지원금<span class="x">·청약</span>', 'money': '생활 가이드', 'wiki': '위키', 'exam': '시험', 'contest': '공모전', 'diet': '식단', 'issue': '시험 뉴스'}
+GN_HOME = {'park': '/park/', 'money': '/money/guide/', 'issue': '/issue/', 'exam': '/exam/'}
+GN_LABEL = {'apply': '지원금<span class="x">·청약</span>', 'money': '생활 가이드', 'wiki': '위키', 'park': '자기개발', 'exam': '시험', 'contest': '공모전', 'diet': '식단', 'issue': '시험 뉴스'}
 
 
 def GN_HTML(TH):
@@ -139,19 +139,19 @@ REVIEWS = []   # 평론 (review_pages 가 채움, rss_feed 가 읽음)
 
 
 PAGE_INTRO = {k: f'<section class="pg-intro"><h2>{h}</h2>{v}</section>' for k, (h, v) in {  # 2026-10-18 애드센스 보강: 목록·홈에 운영자가 쓴 안내문
- '/': ('루리 줍줍은 어떤 곳인가요?', '<p>루리 줍줍은 개인 개발자 한 명이 AI와 함께 만들고 운영하는 생활 정보 사이트예요. 매일 쏟아지는 기사·리포트·공고를 그대로 옮기지 않고, 같은 내용끼리 묶어 숫자를 다시 계산한 뒤 「그래서 나한테 무슨 뜻인지」를 정리하는 게 목표예요.</p><ul class="chk"><li><b>🕵️ 이슈</b>: 언론사 15곳 기사를 사건별로 묶어 몇 곳이 보도했는지, 출처가 실명인지, 제목 속 숫자가 본문에 있는지 같은 확인 신호로 점수를 매겨요. 진실 판정이 아니라 「더 확인해 볼 곳」을 알려 주는 점수예요.</li><li><b>📊 머니</b>: 증권사 리포트 기사 속 목표가·투자의견을 노드로 쪼개 종목별로 상향·하향을 다시 셉니다. 투자 권유가 아니라 의견 분포를 보여 주는 정리예요. 세금·대출 계산기와 2026년 투자 정책 표도 있어요.</li><li><b>🏆 공모전</b>·<b>🍳 생활</b>: 마감·상금·자격을 같은 형식으로 정리하고, 같은 분야와 비교한 분석과 준비 일정을 붙여요. 지원금·청약·경품 이벤트도 마감순으로 모아요.</li></ul><p>모든 자동 정리에는 원문 링크를 함께 달고, 틀린 정보는 <a href="/contact/">문의</a>로 받으면 바로 고쳐요. 만드는 과정은 <a href="/ailog/">AI 제작 로그</a>에 공개하고 있어요.</p>'),
- '/guide/': ('응모 가이드 읽는 법', '<p>공모전을 처음 내 보는 분부터 여러 번 떨어져 본 분까지, 루리가 실제 공고와 수상작을 보며 정리한 글이에요. 제안서 구성, 수기·문학 분량 맞추기, 영상 저작권, 상금 세금(기타소득 22%)과 수상 사칭 사기 구별법처럼 응모 전후에 자주 묻는 것들을 다뤄요. 글마다 관련 공모전 목록을 붙여 두었으니 읽고 바로 골라 보세요.</p>'),
- '/qa/': ('고민 해결은 이렇게 만들어요', '<p>사이트 챗봇과 문의로 실제 받은 질문 가운데 여러 사람이 비슷하게 묻는 것을 골라 답을 정리해요. 청년 지원금 자격, 공모전 준비 순서, 청약 가점처럼 공식 기준이 있는 질문은 정부24·청약홈 같은 공식 안내를 확인한 뒤 써요. 개인 사정에 따라 답이 달라지는 부분은 「어디에 물어보면 되는지」까지 적어 두어요.</p>'),
- '/mag/': ('루리의 이슈 리딩이란', '<p>하루에 한 장, 정치 이슈의 기사 확인 신호와 커뮤니티 화제, 마감 임박 공모전, 새 지원금을 한 번에 훑어보는 데일리 매거진이에요. 기사 제목을 옮기는 대신 「몇 곳이 보도했고 무엇이 아직 확인되지 않았는지」를 짧게 정리하고, 지난 호도 날짜별로 다시 볼 수 있어요.</p>'),
- '/kw/': ('인기 키워드는 이렇게 골라요', '<p>구글 급상승과 시그널에서 발견한 주제를 관련 보도와 함께 살핍니다. 블로그 주제를 고를 때는 독자의 질문부터 정하세요. 예를 들어 ‘김장’은 시기·재료·보관 질문으로 나눌 수 있지만 같은 답을 반복하는 글은 합칩니다. 계절성은 여러 해의 같은 기간과 비교해야 하며, 오늘의 순위만으로 다음 달 수요를 판단할 수 없습니다. 네이버 공식 데이터랩 추이는 실제 조회 데이터가 있는 경우에만 별도로 표시합니다.</p>'),
- '/hot/': ('핫이슈 고르는 기준', '<p>검색 급상승과 언론 보도가 함께 몰린 이슈 가운데 <b>내 돈·내 생활에 바로 영향을 주는 것</b>만 골라요. 청약·지원금·세금·금리·의료·임금처럼 「나한테 달라지는 점」이 있는 이슈에는 관련 계산기와 신청처를 붙이고, 정치 공방이나 사건·사고는 넣지 않아요. 48시간이 지나면 지난 이슈로 내려가요.</p>'),
- '/satire/': ('루리 풍자에 대해', '<p>그날 화제가 된 증시·뉴스를 루리가 한 컷 만평으로 그려요. 특정 개인을 조롱하지 않고, 상황의 아이러니를 짚는 걸 원칙으로 해요. 이미지는 직접 만든 AI 그림이고, 지난 풍자도 날짜별로 모아 두었어요.</p>'),
- '/all/': ('전체 메뉴 안내', '<p>루리 줍줍은 이슈·머니·공모전·생활·AI 로그 다섯 테마로 나뉘어 있어요. 테마마다 매시간 자동으로 갱신되는 정리 페이지와, 직접 쓴 가이드·계산기가 섞여 있어요. 찾는 메뉴가 없으면 화면 아래 루리 챗봇에게 물어보세요.</p>'),
- '/event/': ('경품 이벤트 볼 때 알아 둘 것', '<p>기업·기관 SNS와 이벤트 사이트에 올라온 경품 이벤트를 매시간 모아 마감순으로 정리해요. 댓글 한 줄·퀴즈·설문처럼 1~5분이면 끝나는 것을 위로 올려요. 당첨됐다며 개인정보나 배송비·세금 송금을 먼저 요구하는 연락은 사기일 가능성이 크니, 꼭 공식 계정의 발표 글과 대조해 보세요. 경품이 5만원을 넘으면 제세공과금(22%)을 낼 수 있어요.</p>'),
- '/fridge/': ('식단·레시피 사용법', '<p>공부하고 일하는 동안 챙겨 먹기 쉬운 한 끼를 모았어요. 집에 있는 재료를 고르면 루리가 정리한 집밥 레시피 중 지금 바로 만들 수 있는 메뉴를 먼저 보여 드려요. 재료 하나만 더 사면 되는 메뉴도 함께 알려 줘서, 장보기 목록을 줄일 수 있어요. 레시피는 1~2인분 기준이고 조리 시간과 난이도를 함께 적었어요.</p>'),
- '/lab/': ('수상 연구소는 이렇게 분석해요', '<p>슬로건·표어·네이밍 공모전의 실제 수상작을 모아 글자 수, 운율, 대구, 핵심어 위치 같은 구조로 하나씩 풀어 봐요. 수상작을 베끼는 게 아니라 「왜 뽑혔는지」를 알아보는 곳이에요. 내 문구를 넣으면 같은 기준으로 진단해 드려요.</p>'),
- '/apply/': ('청약·지원금 신청 전에', f'<p>여기 모은 일정은 청약홈·LH·지자체·정부24 공고를 바탕으로 마감순으로 정리했어요. 같은 지원금이라도 지역·나이·소득 기준이 달라 신청 전에 자격부터 확인해야 해요. 청약은 <a href="/apply/recommend/">청약 추천</a>에서 내 가점을 먼저 계산해 보세요. 사는 곳 기준으로 보려면 <a href="/apply/r/">지역별 지원금·청약</a>에서 시·도를 고르세요. 달별로는 <a href="/apply/month/{TODAY:%Y-%m}/">{TODAY.month}월 청약 일정</a>·<a href="/apply/month/{(TODAY.replace(day=28) + datetime.timedelta(days=4)):%Y-%m}/">{(TODAY.replace(day=28) + datetime.timedelta(days=4)).month}월 청약 일정</a>, 대상별로는 <a href="/apply/newlywed/">신혼부부 지원금</a>도 있어요.</p>'),
- '/contest/': ('공모전 추천은 이렇게 해요', '<p>진행 중인 공모전을 마감·상금·분야·제출물로 정리해 두고, 내가 고른 조건에 맞는 것부터 보여 줘요. 상금이 큰 것만이 아니라 「준비 시간 대비 할 만한 것」을 위로 올리는 게 루리의 기준이에요. 각 공모전 페이지에는 같은 분야와 비교한 분석, 오늘 기준 준비 일정을 붙여 두었어요. <a href="/contest/week/">이번 주 마감 공모전</a>만 따로 볼 수도 있고, 대상·분야별로는 <a href="/contest/youth/">청소년 공모전</a>, <a href="/contest/novel/">소설 공모전</a>, <a href="/contest/photo/">사진 공모전</a>, <a href="/contest/video/">영상 공모전</a>, <a href="/contest/idea/">아이디어 공모전</a>, <a href="/contest/univ/">대학생 공모전</a>, <a href="/contest/ai-video/">AI 영상 공모전</a> 모음도 있어요.</p>'),
+ '/': ('루리 줍줍이 뭐냐면', '<p>개인 개발자 혼자 AI랑 만드는 생활 정보 사이트야. 기사·공고를 그대로 안 옮기고 묶어서 숫자를 다시 계산해. 그래서 나한테 뭔 뜻인지만 남겨.</p><ul class="chk"><li><b>🕵️ 이슈</b>: 기사 15곳을 묶어 확인 점수를 매겨. 진실 판정 아니야.</li><li><b>📊 머니</b>: 증권사 목표가를 종목별로 다시 세. 투자 권유 아니야.</li><li><b>🏆 공모전</b>·<b>🍳 생활</b>: 마감·상금·자격을 같은 형식으로 정리해. 지원금·청약·경품도 마감순이야.</li></ul><p>원문 링크는 다 달아놨어. 틀렸으면 <a href="/contact/">문의</a>. 만드는 과정은 <a href="/ailog/">AI 제작 로그</a>.</p>'),
+ '/guide/': ('응모 가이드', '<p>제안서, 분량, 영상 저작권, 상금 세금(기타소득 22%), 수상 사칭 사기. 응모 전후에 걸리는 것만 정리했어.</p>'),
+ '/qa/': ('고민 해결', '<p>사람들이 자주 묻는 것만 골라 답했어. 공식 기준 있는 건 정부24·청약홈 보고 썼어. 사정 따라 달라지면 어디 물어야 하는지 적어놨어.</p>'),
+ '/mag/': ('루리의 이슈 리딩', '<p>하루 한 장. 기사 확인 신호, 커뮤니티 화제, 마감 임박 공모전, 새 지원금. 지난 호도 날짜별로 있어.</p>'),
+ '/kw/': ('인기 키워드', '<p>구글 급상승 주제를 관련 보도랑 같이 봐. 오늘 순위만 보고 다음 달 수요를 판단하지 마. 네이버 데이터랩은 실제 데이터 있을 때만 표시해.</p>'),
+ '/hot/': ('핫이슈 기준', '<p>내 돈·내 생활에 바로 걸리는 이슈만 골라. 청약·지원금·세금·금리·의료·임금. 정치 공방·사건사고는 안 넣어. 48시간 지나면 내려가.</p>'),
+ '/satire/': ('루리 풍자', '<p>그날 화제를 한 컷 만평으로 그려. 개인 조롱은 안 해. 그림은 AI가 만든 거야.</p>'),
+ '/all/': ('전체 메뉴', '<p>이슈·머니·공모전·생활·AI 로그, 다섯 개야. 없으면 아래 챗봇한테 물어.</p>'),
+ '/event/': ('경품 이벤트', '<p>매시간 모아서 마감순으로 올려. 당첨됐다며 개인정보나 송금 요구하면 사기야. 공식 계정 발표부터 대조해. 5만원 넘는 경품은 세금 22% 붙어.</p>'),
+ '/fridge/': ('식단·레시피', '<p>집에 있는 재료 고르면 지금 만들 수 있는 메뉴부터 보여줘. 재료 하나 모자란 메뉴도 같이. 1~2인분 기준이야.</p>'),
+ '/lab/': ('수상 연구소', '<p>슬로건·네이밍 수상작을 글자 수, 운율, 핵심어 위치로 뜯어봐. 베끼려는 게 아니라 왜 뽑혔는지 보려는 거야.</p>'),
+ '/apply/': ('청약·지원금', f'<p>청약홈·LH·지자체·정부24 공고를 마감순으로 모았어. 지역·나이·소득 기준 다르니 자격부터 봐. <a href="/apply/recommend/">청약 추천</a>, <a href="/apply/r/">지역별</a>, <a href="/apply/month/{TODAY:%Y-%m}/">{TODAY.month}월 일정</a>, <a href="/apply/month/{(TODAY.replace(day=28) + datetime.timedelta(days=4)):%Y-%m}/">{(TODAY.replace(day=28) + datetime.timedelta(days=4)).month}월 일정</a>, <a href="/apply/newlywed/">신혼부부</a>.</p>'),
+ '/contest/': ('공모전 추천', '<p>마감·상금·분야·제출물로 정리했어. 상금 큰 거 말고 준비 시간 대비 할 만한 걸 위로 올려. <a href="/contest/week/">이번 주 마감</a>, <a href="/contest/youth/">청소년</a>, <a href="/contest/novel/">소설</a>, <a href="/contest/photo/">사진</a>, <a href="/contest/video/">영상</a>, <a href="/contest/idea/">아이디어</a>, <a href="/contest/univ/">대학생</a>, <a href="/contest/ai-video/">AI 영상</a>.</p>'),
 }.items()}
 
 
@@ -321,8 +321,8 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False, noinde
         NOINDEX.add(path)
     body = rsp_tables(body)
     if PLAT and not noindex and path.count('/') == 4 and path.startswith(('/money/guide/', '/money/tools/')) or (PLAT and not noindex and path.count('/') == 3 and path.startswith('/guide/')):   # 2026-11-13 사용자: 사이트의 큰 방향은 책의 LMS 커뮤니티. 정보 글에서 수업으로 이어지는 안내 한 칸
-        body += ('<aside class="pk-cta" style="margin:28px 0 8px;border:1px solid var(--bd,#e5e7eb);border-radius:14px;background:var(--card,#fff);padding:16px 18px"><b style="display:block;font-size:16px;margin-bottom:4px">이 사이트도 AI 에이전트로 만들었습니다</b>'
-                 '<span style="font-size:14.5px;line-height:1.7;color:var(--mu,#475569)">퇴근 후 2~3시간, 같은 방법으로 내 서비스를 만들어 보는 수업 사이트 「가난한 박과장」입니다. 한 줄로 시작해 첫 결과물을 보는 데까지 안내합니다.</span>'
+        body += ('<aside class="pk-cta" style="margin:28px 0 8px;border:1px solid var(--bd,#e5e7eb);border-radius:14px;background:var(--card,#fff);padding:16px 18px"><b style="display:block;font-size:16px;margin-bottom:4px">이 사이트도 AI 에이전트로 만들었어.</b>'
+                 '<span style="font-size:14.5px;line-height:1.7;color:var(--mu,#475569)">퇴근 후 2~3시간. 한 줄로 시작해서 첫 결과물까지. 「가난한 박과장」.</span>'
                  '<a href="/park/#start" style="display:inline-block;margin-top:8px;font-weight:700;font-size:14.5px">하네스로 만들어 보기 →</a></aside>')
     if path in _seo_exp_links():   # 2026-10-23 검색 유입 실험군: 색인된 허브에 주제가 맞는 가이드 링크 (seo_exp_links.json, 실험 종료 시 파일만 지우면 사라짐)
         body += ('<section class="seo-q"><h2>📌 많이 찾는 질문</h2><ul class="gm-l">' + ''.join(f'<li><a href="{E(x["path"])}">{E(x["text"])}</a></li>' for x in _seo_exp_links()[path]) + '</ul></section>')
@@ -359,26 +359,26 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False, noinde
 <meta property="og:title" content="{E(t)}"><meta property="og:description" content="{E(desc)}"><meta property="og:url" content="{url}">
 <meta property="og:image" content="{SITE}{og or "/assets/ruri/og.jpg"}"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="{SITE}{og or "/assets/ruri/og.jpg"}">
-<meta name="theme-color" content="{TH[3] if TH else '#5b21b6'}"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="오늘 뭐 먹지">
-<link rel="icon" href="/favicon.ico?v=6" sizes="any"><link rel="icon" type="image/png" sizes="48x48" href="/assets/icons/icon-48.png?v=6"><link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/icon-96.png?v=6"><link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/icon-192.png?v=6"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=6"><link rel="manifest" href="/site.webmanifest"><link rel="alternate" type="application/rss+xml" title="루리 줍줍" href="/rss.xml">
+<meta name="theme-color" content="{TH[3] if TH else '#5b21b6'}"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="오늘 뭐하지">
+<link rel="icon" href="/favicon.ico?v=7" sizes="any"><link rel="icon" type="image/png" sizes="48x48" href="/assets/icons/icon-48.png?v=7"><link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/icon-96.png?v=7"><link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/icon-192.png?v=7"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=7"><link rel="manifest" href="/site.webmanifest"><link rel="alternate" type="application/rss+xml" title="루리 줍줍" href="/rss.xml">
 <link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <link rel="stylesheet" href="/assets/gm.css?v=29"><link rel="stylesheet" href="/assets/ds.css?v=15"><link rel="stylesheet" href="/assets/print.css?v=1"><link rel="stylesheet" href="/assets/pro.css?v=17"><link rel="stylesheet" href="/assets/exam-skin.css?v=1"><script defer src="/assets/print.js?v=1"></script><script src="/assets/img-fallback.js?v=1"></script>{('<link rel="stylesheet" href="/assets/chat/ruri-chat.css?v=9">') if not (TH and TH[0] == 'ai') else ''}{COMM_TAGS}{('<script type="module" src="/assets/chat/ruri-chat.js?v=17"></script>') if not (TH and TH[0] == 'ai') else ''}<link rel="stylesheet" href="/assets/app/shell.css?v=1"><script defer src="/assets/app/app.js?v=4"></script>
 {ldh}
 {TH_CSS}
 {GTAG}
 </head><body data-th="{TH[0] if TH else 'hub'}"{(' data-api="' + COMM_API + '"') if COMM_API else ''}>
-<header class="hd"><div class="w hd-in"><a class="logo" href="/">{('' if PLAT else '<img class="logo-av" src="/assets/ruri/avatar.webp" width="36" height="36" alt="루리 줍줍">')}<span>{('가난한 <b>박과장</b>' if PLAT else '루리 <b>줍줍</b>')}</span></a>{GN_HTML(TH)}</div>
+<header class="hd"><div class="w hd-in"><a class="logo" href="/"><img class="logo-av" src="/assets/icons/icon-48.png?v=7" width="32" height="32" alt="가난한 박과장"><span>가난한 <b>박과장</b></span></a>{GN_HTML(TH)}</div>
 {('<nav class="tb w" aria-label="' + TH[1] + ' 세부 메뉴">' + "".join(f'<a href="{u}"{" class=on aria-current=page" if (path == u or (u != TH[4] and path.startswith(u))) else ""}>{n}</a>' for u, n in (GUIDE_SUB if path.startswith(GUIDE_SUB_PX) else TH[5])) + '</nav>') if TH else ''}</header>
 <main class="w">
 {body}{PAGE_INTRO.get(path, '')}
 </main>
-<footer class="ft"><div class="w ft-in"><div class="ft-top"><div class="ft-b">{('<b>가난한 박과장</b><p>퇴근 후 AI 에이전트와 서비스를 만들어 보는 수업 사이트입니다. 루리 줍줍은 저자가 만든 정보성 사이트이고, 문서 모음은 「루리 위키」입니다.</p>' if PLAT else '<b>루리 줍줍</b><p>이슈부터 지원금·공모전까지, 출처와 함께 정리하는 정보 서비스입니다. 분석 코너는 「루리 애널리스트」, 문서 모음은 「루리 위키」입니다.</p>')}<p class="ft-m">문의 <a href="mailto:{MAIL}">{MAIL}</a>{"" if PARTNER == MAIL else f' · 제휴 <a href="mailto:{PARTNER}">{PARTNER}</a>'}</p></div>
+<footer class="ft"><div class="w ft-in"><div class="ft-top"><div class="ft-b">{('<b>가난한 박과장</b><p>퇴근 후 AI로 서비스 만드는 사이트야. 루리 줍줍은 저자가 만든 정보 사이트, 문서 모음은 「루리 위키」.</p>' if PLAT else '<b>루리 줍줍</b><p>이슈부터 지원금·공모전까지 출처 붙여 정리해. 분석은 「루리 애널리스트」, 문서는 「루리 위키」.</p>')}<p class="ft-m">문의 <a href="mailto:{MAIL}">{MAIL}</a>{"" if PARTNER == MAIL else f' · 제휴 <a href="mailto:{PARTNER}">{PARTNER}</a>'}</p></div>
 <nav class="ft-g" aria-label="사이트 메뉴">{('<div><b>가난한 박과장</b><a href="/park/#start">하네스 시작</a><a href="/park/">사례 찾기</a><a href="/park/archive/">운영 기록</a><a href="/dev/">개발 지식</a></div>' if PLAT else '')}<div><b>읽을거리</b><a href="/issue/">이슈</a><a href="/money/guide/">생활 가이드</a><a href="/analyst/">애널리스트</a><a href="/fridge/">레시피</a></div>
 <div><b>기회 찾기</b><a href="/apply/">지원금·청약</a><a href="/contest/">공모전</a><a href="/today/">오늘 마감</a><a href="/event/">경품 이벤트</a><a href="/exam/">시험 일정·컷</a><a href="/exam/bank/">시험 문제은행</a></div>
 <div><b>도구·탐색</b><a href="/wiki/">루리 위키</a><a href="/map/">키워드 지도</a><a href="/money/tools/salary/">계산기</a><a href="/price/">최저가 찾기</a><a href="/book/">전자책</a><a href="/all/">전체 메뉴</a></div>
 <div><b>운영 정보</b><a href="/about/">소개·만드는 방식</a><a href="/corrections/">정정 기록</a><a href="/privacy/">개인정보처리방침</a><a href="/terms/">이용약관</a><a href="/contact/">문의</a></div></nav></div>
 {('<p class="ft-c"><span>외부 채널</span> ' + comm_btns() + '</p>') if COMM_LINKS else ''}
-<p class="ft-n">정보는 각 기관의 공고·언론 보도·공개 자료를 AI로 수집·정리한 것입니다. 정확한 내용은 반드시 공식 공고와 원문에서 확인하세요. 일부 링크는 쿠팡 파트너스 활동의 일환으로 수수료를 받을 수 있습니다. © 2026 {('가난한 박과장 · 루리 줍줍' if PLAT else '루리 줍줍')} · sungprofile.cloud</p></div></footer>{CL_CSS if COMM_LINKS else ''}
+<p class="ft-n">공고·보도·공개 자료를 AI로 모은 거야. 정확한 건 공식 공고에서 확인해. 일부 링크는 쿠팡 파트너스 수수료가 붙어. © 2026 {('가난한 박과장 · 루리 줍줍' if PLAT else '루리 줍줍')} · sungprofile.cloud</p></div></footer>{CL_CSS if COMM_LINKS else ''}
 <script defer src="/assets/dday.js?v=1"></script></body></html>'''
     doc = RURI_IMG_RX.sub(lambda m_: m_.group(0) if m_.group(1) else '', doc)   # 2026-11-03 사용자 방침: 루리는 메인이 아닌 요소(루리의 한마디 코너)로만. 헤더·푸터·히어로 그림은 뺀다(자산 파일 보존)
     d = os.path.join(ROOT, path.strip('/'))
@@ -707,20 +707,20 @@ def card(c):
 
 
 ELIG_NOTE = [  # 응모 자격 글자 → 준비할 것 (2026-10-18 애드센스 보강: 공모전마다 다른 해설)
-    (r'제한\s?없|누구나|전\s?국민|일반\s?국민', '나이·지역 제한이 없어 누구나 낼 수 있어요. 다만 1인당 응모 편수 제한이 있는지 공고에서 확인하세요.'),
-    (r'외국인', '외국인도 낼 수 있게 열려 있어요. 수상 시 외국인등록증 등 신분 확인 서류를 요구할 수 있어요.'),
-    (r'대학원생|대학생', '대학(원)생이 대상에 들어 있어요. 수상 후 재학·휴학 증명서를 요구하는 경우가 많으니 미리 발급해 두세요.'),
-    (r'청소년|초등|중학|고등|유치원', '학생부가 따로 있을 수 있어요. 미성년자는 보호자 동의서가 필요한 경우가 많아요.'),
-    (r'거주|도민|시민|군민|구민|지역', '지역 거주자로 제한될 수 있어요. 주민등록상 주소나 재직·재학지가 기준인지 확인하세요.'),
-    (r'팀|공동|2인|3인', '팀이나 공동 작품도 받아요. 팀 응모는 대표자 한 명이 접수하고 상금을 나누는 방식이 흔해요.'),
+    (r'제한\s?없|누구나|전\s?국민|일반\s?국민', '누구나 낼 수 있어. 1인당 편수 제한은 공고에서 봐.'),
+    (r'외국인', '외국인도 돼. 수상하면 신분 서류 내야 해.'),
+    (r'대학원생|대학생', '대학(원)생 대상이야. 재학증명서 미리 떼 둬.'),
+    (r'청소년|초등|중학|고등|유치원', '학생부 따로 있을 수 있어. 미성년자는 보호자 동의서 필요해.'),
+    (r'거주|도민|시민|군민|구민|지역', '지역 제한일 수 있어. 주소 기준인지 재직·재학지 기준인지 봐.'),
+    (r'팀|공동|2인|3인', '팀도 돼. 대표 한 명이 접수하고 상금은 나눠.'),
 ]
-EFFORT_NOTE = {'영상': '영상은 길이(초)·해상도·파일 형식(mp4)과 음원·폰트 저작권이 심사 전에 가장 많이 걸리는 부분이에요. 무료 음원도 출처를 적어 두세요.',
-               '원고': '원고는 분량 기준(글자 수·원고지 매수)과 파일 형식(hwp·docx·pdf)을 먼저 맞추세요. 분량을 넘기면 심사에서 빠지는 경우가 있어요.',
-               '아이디어 제안서': '제안서는 현황 → 문제점 → 개선안 → 기대효과 순서가 기본이에요. 이미 시행 중인 정책과 겹치지 않는지 검색해 보고 차별점을 한 줄로 적어 두세요.',
-               '디자인': '디자인은 원본 파일(ai·psd)과 미리보기(jpg·png)를 함께 내라는 공고가 많아요. 폰트·이미지 라이선스를 꼭 확인하세요.',
-               '사진': '사진은 촬영 원본(EXIF 포함)을 요구하는 경우가 많고, 사람이 나오면 초상권 동의가 필요해요. 과한 보정은 감점될 수 있어요.',
-               '기획서': '기획서는 목표·대상·실행 방법·예산·일정을 한 장 요약으로 먼저 보여 주면 심사위원이 읽기 쉬워요.',
-               '실물 출품': '실물 출품은 접수 기간 안에 도착해야 하는지(도착 기준) 보낸 날짜 기준인지 확인하고, 포장·배송 기간을 넉넉히 잡으세요.'}
+EFFORT_NOTE = {'영상': '영상은 길이·해상도·mp4, 음원·폰트 저작권에서 제일 많이 걸려. 무료 음원도 출처 적어.',
+               '원고': '원고는 분량·파일 형식부터 맞춰. 넘기면 탈락이야.',
+               '아이디어 제안서': '현황 → 문제점 → 개선안 → 기대효과. 이미 시행 중인 정책이랑 겹치는지 검색해.',
+               '디자인': '원본(ai·psd)이랑 미리보기(jpg·png) 같이 내라는 공고 많아. 폰트·이미지 라이선스 확인해.',
+               '사진': '사진은 원본(EXIF) 요구가 많아. 사람 나오면 초상권 동의. 과한 보정은 감점.',
+               '기획서': '목표·대상·방법·예산·일정, 한 장 요약부터 넣어.',
+               '실물 출품': '실물은 도착 기준인지 발송 기준인지 확인해. 배송 넉넉히 잡아.'}
 GONE = {}
 HIST = {}   # 공모전 변경 이력 (contest_hist.json)
 DUP = {}   # 중복 공고 id → 대표 id (build 가 채움)
@@ -824,8 +824,8 @@ def ref_hub():
     if not _REFS:
         return []
     li = ''.join(f'<li><a href="{u}"><b>{E(t)}</b><span>{E(d)}</span></a></li>' for u, t, d in _REFS)
-    page('/ref/', '기준 자료 모음 — 날짜·금액 한눈에 정리', '신청 일정, 공제 한도처럼 숫자와 날짜가 중요한 주제를 출처와 확인일을 붙여 정리한 기준 자료 모음이에요.',
-         f'<p class="bc"><a href="/">홈</a> › 기준 자료</p><h1>📎 기준 자료 모음</h1><p>숫자와 날짜가 자주 바뀌는 주제를 공식 출처와 확인일을 붙여 한 장으로 정리했어요.</p><ul class="list">{li}</ul>',
+    page('/ref/', '기준 자료 모음 — 날짜·금액 한눈에 정리', '신청 일정, 공제 한도처럼 숫자와 날짜가 중요한 주제를 출처와 확인일 붙여 정리한 기준 자료 모음이야.',
+         f'<p class="bc"><a href="/">홈</a> › 기준 자료</p><h1>📎 기준 자료 모음</h1><p>자주 바뀌는 숫자·날짜. 출처랑 확인일 붙여 놨어.</p><ul class="list">{li}</ul>',
          [('루리 줍줍', '/'), ('기준 자료', '/ref/')])
     return ['/ref/']
 
@@ -1074,12 +1074,12 @@ def corrections_page(live):
     n_fix = sum(len(x[3]) for x in items)
     li = ''.join(f'<li><a href="/c/{cid}/"><b>{E(t[:46])}</b></a> <small>{E(d)} · {E(lab)}</small><ul>' + ''.join(f'<li>{E(c_)}</li>' for c_ in cs) + '</ul></li>' for d, cid, t, cs, lab in items)
     body = (f'<p class="bc"><a href="/">홈</a> › 정정 기록</p><h1>정정 기록</h1>'
-            f'<p class="lead" style="display:block">수집 데이터를 공식 원문과 맞춰 보다가 값이 달랐던 곳을 기록해요. 지금 진행 중인 공모전 {len(items)}건에서 {n_fix}곳을 고쳤어요.</p>'
-            '<p class="note">이 기록은 AI가 공식 원문을 열어 대조한 결과이고, 운영자가 직접 확인한 것이 아니에요. 각 공고의 「확인 단계」에서 어느 단계까지 왔는지 볼 수 있어요. '
-            f'틀린 정보를 발견하면 <a href="/contact/">문의</a>로 알려 주세요. 신고를 받아 확인한 결과도 이 기록에 이어서 적어요(처리한 신고 수: {len(CORR_REPORTS)}건).</p>'
-            + (f'<ul class="chk corr">{li}</ul>' if li else '<p class="note">아직 기록이 없어요.</p>')
+            f'<p class="lead" style="display:block">공식 원문이랑 달랐던 곳 기록. 진행 중인 공모전 {len(items)}건에서 {n_fix}곳 고쳤어.</p>'
+            '<p class="note">AI가 원문 열어 대조한 결과야. 운영자가 직접 본 건 아니야. '
+            f'틀린 거 보이면 <a href="/contact/">문의</a>. 처리한 신고 수: {len(CORR_REPORTS)}건).</p>'
+            + (f'<ul class="chk corr">{li}</ul>' if li else '<p class="note">기록 없어.</p>')
             + '<style>.corr>li{margin:12px 0}.corr small{color:var(--mu,#6b7280)}.corr ul{margin:4px 0 0 18px}</style>')
-    page('/corrections/', f'공모전 정보 정정 기록 — {len(items)}건에서 {n_fix}곳 고친 내역', f'진행 중 공모전 {len(items)}건에서 공식 원문과 달랐던 {n_fix}곳을 고친 기록이에요. AI 대조와 운영자 직접 확인을 나누어 표시하고, 틀린 정보는 문의로 받아요.',
+    page('/corrections/', f'공모전 정보 정정 기록 — {len(items)}건에서 {n_fix}곳 고친 내역', f'진행 중 공모전 {len(items)}건에서 공식 원문과 달랐던 {n_fix}곳을 고친 기록이야. AI 대조와 운영자 직접 확인을 나눠 표시해. 틀린 정보는 문의로 받아.',
          body, [('루리 줍줍', '/'), ('정정 기록', '/corrections/')])
 
 
@@ -1088,7 +1088,7 @@ CORR_REPORTS = []   # 오류 신고 처리 기록: 신고를 받아 확인한 �
 
 DIET_GUIDES = ['meal-calorie-per-meal', 'energy-requirement-estimation-formula', 'food-calorie-lookup-howto', 'weight-loss-pace-and-yoyo', 'korean-dietary-guidelines-sustainable-meals', 'low-carb-high-fat-vs-korean-standard',
                'protein-sources-tofu-egg-bean', 'sugar-reduction-seasoning-swap', 'convenience-store-nutrition-label-diet', 'oatmeal-nutrition-and-expiry', 'walking-exercise-calorie-burn', 'walking-posture-and-start-guide']
-DIET_DISCLAIMER = '이 화면은 참고용이에요. 통증이 있거나 어지러우면 바로 멈추고, 질환이 있거나 임신 중이면 시작 전에 전문가와 상의하세요. 진단·치료·처방을 대신하지 않아요.'
+DIET_DISCLAIMER = '참고용이야. 아프거나 어지러우면 멈춰. 질환·임신 중이면 전문가한테 물어.'
 
 
 def diet_pages():
@@ -1110,34 +1110,34 @@ def diet_pages():
         + ''.join(f'<li><b>{E(w["name"])}</b> <em>{E(w["place"])}</em><ol>' + ''.join(f'<li>{E(x)}</li>' for x in w['steps']) + f'</ol><em>⚠ {E(w["caution"])}</em></li>' for w in L) + '</ul></details>'
         for part, L in byp.items())
     hero = ('<div class="dt-hero"><div class="dt-hero-t"><p class="bc"><a href="/">홈</a> › 다이어트 도우미</p><h1>🥗 다이어트 도우미</h1>'
-            '<p class="lead" style="display:block">루리와 같이 움직이고, 레시피로 식단을 짜고, 한 일을 이 기기에 기록해요.</p></div>'
+            '<p class="lead" style="display:block">움직이고, 식단 짜고, 기록해.</p></div>'
             '<div class="dt-hero-i">' + ''.join(f'<img src="/assets/ruri/{n}_s.webp" width="76" height="105" alt="{al}" loading="lazy">' for n, al in (('o_dt_stretch', '스트레칭하는 루리'), ('o_dt_run', '달리는 루리'), ('o_dt_dumbbell', '덤벨 드는 루리'), ('o_dt_mat', '매트 운동하는 루리'), ('o_dt_salad', '샐러드 든 루리'), ('o_dt_water', '물 마시는 루리'), ('o_dt_scale', '체중계 앞의 루리'))) + '</div></div>')
     body = (hero +
-            '<p class="note">아래 가이드는 공식 자료의 수치만 정리했어요.</p>'
-            f'<p class="note">{E(DIET_DISCLAIMER)} 기록은 이 기기의 브라우저에만 저장되고 서버로 보내지 않아요.</p>'
-            '<h2>바로 해 보기</h2><div class="dt-hub-grid">'
-            '<a href="/diet/workout/"><b>🏃 운동 사이클 뽑기</b><span>시간(10·20·30분)·부위·장소를 고르면 워밍업 → 본운동 → 쿨다운을 무작위로 짜 줘요. 타이머와 음성 안내, 완료 체크까지.</span></a>'
-            '<a href="/diet/meal/"><b>🗓️ 레시피 식단표</b><span>조리 시간·성향·빼고 싶은 재료를 고르면 레시피 1,300여 개 중에서 7일 식단표를 짜 줘요. 장보기 목록과 먹은 끼니 체크까지(열량은 공식 값이 확인된 메뉴부터).</span></a>'
-            '<a href="/diet/workout/#log"><b>📅 운동 기록</b><span>달력에 완료한 날을 표시하고 연속 일수, 주간 달성률, 주간 운동 시간을 보여 줘요.</span></a></div>'
+            '<p class="note">가이드는 공식 자료 수치만 썼어.</p>'
+            f'<p class="note">{E(DIET_DISCLAIMER)} 기록은 이 기기에만 저장돼.</p>'
+            '<h2>바로 하기</h2><div class="dt-hub-grid">'
+            '<a href="/diet/workout/"><b>🏃 운동 사이클 뽑기</b><span>시간·부위·장소 고르면 워밍업 → 본운동 → 쿨다운 무작위로 나와.</span></a>'
+            '<a href="/diet/meal/"><b>🗓️ 레시피 식단표</b><span>레시피 1,300여 개로 7일 식단표. 장보기 목록 포함.</span></a>'
+            '<a href="/diet/workout/#log"><b>📅 운동 기록</b><span>한 날 표시. 연속 일수, 주간 달성률.</span></a></div>'
             '<h2>공식 자료로 정리한 가이드</h2><div class="dt-hub-grid">' + cards + '</div>'
             f'<h2>운동 동작 사전 <small style="font-size:14px;color:var(--mu)">{len(W)}가지</small></h2>'
-            '<p class="note">동작 설명은 일반적인 자세 안내예요. 세트·횟수는 공식 자료로 확인되지 않아서 적지 않았어요. 본인 체력에 맞게 하세요.</p>'
+            '<p class="note">자세만 적었어. 세트·횟수는 네 체력에 맞춰.</p>'
             f'<div class="dt-dict">{dic}</div>'
-            '<h2>식단·칼로리</h2><p class="note">식단표와 칼로리별 레시피는 식약처 식품영양성분 DB, 농촌진흥청 표준식품성분표로 확인한 값만 쓰려고 준비 중이에요. 확인되기 전에는 숫자를 보여 주지 않아요. 열리면 이 허브에 먼저 안내할게요.</p>'
+            '<h2>식단·칼로리</h2><p class="note">칼로리는 식약처·농진청 값 확인되면 넣어. 지금은 숫자 없어.</p>'
             '<link rel="stylesheet" href="/assets/diet/workout.css?v=5">')
     page('/diet/', '다이어트 도우미 — 운동 사이클 뽑기·기록·공식 자료 가이드', f'운동 사이클을 무작위로 짜서 타이머로 따라 하고 기록하는 도우미. 공식 자료로 정리한 다이어트 가이드 12편과 운동 동작 사전 {len(W)}가지(참고용).',
          body, [('루리 줍줍', '/'), ('다이어트 도우미', '/diet/')])
     app = ('<p class="bc"><a href="/">홈</a> › <a href="/diet/">다이어트 도우미</a> › 운동 사이클</p><h1>🏃 운동 사이클</h1>'
            f'<p class="note">{E(DIET_DISCLAIMER)}</p><div id="dtw"><p class="note">불러오는 중…</p></div>'
-           '<noscript><p class="note">이 화면은 자바스크립트가 필요해요. 동작 설명은 <a href="/diet/">다이어트 도우미</a>의 운동 동작 사전에서 볼 수 있어요.</p></noscript>'
+           '<noscript><p class="note">자바스크립트 켜. 동작 설명은 <a href="/diet/">다이어트 도우미</a>에 있어.</p></noscript>'
            '<link rel="stylesheet" href="/assets/diet/workout.css?v=5"><script defer src="/assets/diet/habit.js?v=1"></script><script defer src="/assets/diet/workout.js?v=3"></script>')
-    page('/diet/workout/', '운동 사이클 뽑기·타이머·기록', '시간·부위·장소를 고르면 운동 사이클을 무작위로 짜고 타이머로 진행하며 완료를 기록해요(참고용, 기록은 이 기기에만 저장).',
+    page('/diet/workout/', '운동 사이클 뽑기·타이머·기록', '시간·부위·장소를 고르면 운동 사이클을 무작위로 짜고 타이머로 진행하며 완료를 기록해(참고용, 기록은 이 기기에만 저장).',
          app, [('루리 줍줍', '/'), ('다이어트 도우미', '/diet/'), ('운동 사이클', '/diet/workout/')], noindex=True)
     meal = ('<p class="bc"><a href="/">홈</a> › <a href="/diet/">다이어트 도우미</a> › 레시피 식단표</p><h1>🗓️ 레시피 식단표</h1>'
             f'<p class="note">{E(DIET_DISCLAIMER)}</p><div id="dtm"><p class="note">불러오는 중…</p></div>'
-            '<noscript><p class="note">이 화면은 자바스크립트가 필요해요. 레시피는 <a href="/fridge/">오늘 뭐 먹지</a>에서 볼 수 있어요.</p></noscript>'
+            '<noscript><p class="note">자바스크립트 켜. 레시피는 <a href="/fridge/">오늘 뭐 먹지</a>에 있어.</p></noscript>'
             '<link rel="stylesheet" href="/assets/diet/workout.css?v=5"><script defer src="/assets/diet/habit.js?v=1"></script><script defer src="/assets/diet/meal.js?v=3"></script>')
-    page('/diet/meal/', '레시피 식단표 — 7일 식단·장보기·먹은 끼니 체크', '조리 시간·성향·빼고 싶은 재료를 고르면 레시피로 7일 식단표를 짜고 장보기 목록을 만들어요(참고용, 기록은 이 기기에만 저장).',
+    page('/diet/meal/', '레시피 식단표 — 7일 식단·장보기·먹은 끼니 체크', '조리 시간·성향·빼고 싶은 재료를 고르면 레시피로 7일 식단표를 짜고 장보기 목록을 만들어(참고용, 기록은 이 기기에만 저장).',
          meal, [('루리 줍줍', '/'), ('다이어트 도우미', '/diet/'), ('레시피 식단표', '/diet/meal/')], noindex=True)
     return ['/diet/']
 
@@ -1156,6 +1156,29 @@ def auto_thin(urls):
         freq.update({re.sub(r'[\d,.]+', '#', l) for l in lines})
         got[u] = (f, doc, lines)
     n = 0
+    # 2026-11-25 애드센스 통과 계획: 번역 미러·시험 회차 상세(해설 없는 일정표)는 색인에서 뺀다(페이지는 그대로 열림). 컷 파일이 있는 시험은 유지.
+    _nx = []
+    for _lg in ('vi', 'es', 'ja', 'zh', 'th', 'id'):
+        for _r, _d, _fs in os.walk(os.path.join(ROOT, _lg)):
+            if 'index.html' in _fs:
+                _nx.append('/' + os.path.relpath(_r, ROOT).replace(os.sep, '/') + '/')
+    _ed = os.path.join(ROOT, 'exam')
+    _cuts = {f[:-5] for f in os.listdir(os.path.join(HERE, 'exam_data', 'cuts'))} if os.path.isdir(os.path.join(HERE, 'exam_data', 'cuts')) else set()
+    if os.path.isdir(_ed):
+        for _e in os.listdir(_ed):
+            if _e not in ('bank', 'articles') and _e not in _cuts and os.path.exists(os.path.join(_ed, _e, 'index.html')):
+                _nx.append(f'/exam/{_e}/')
+    for u in _nx:
+        f = os.path.join(ROOT, u.strip('/'), 'index.html')
+        if os.path.exists(f) and u not in NOINDEX:
+            doc = open(f, encoding='utf-8').read()
+            if 'name="robots" content="noindex' not in doc:
+                _m = '<meta name="robots" content="noindex,follow">'
+                _nd = doc.replace('<link rel="canonical"', _m + '\n<link rel="canonical"', 1)
+                if _nd == doc:
+                    _nd = doc.replace('<head>', '<head>\n' + _m, 1)
+                open(f, 'w', encoding='utf-8', newline='\n').write(_nd)
+            NOINDEX.add(u); n += 1
     # 2026-10-23 애드센스 「가치가 별로 없는 콘텐츠」: 본문이 거의 없는 영상·앱 화면은 urls 에 없어도 검색 제외
     for u in sorted(THIN_FORCE_NOINDEX | {'/v/%d/' % i for i in range(1, 80)}):
         f = os.path.join(ROOT, u.strip('/'), 'index.html')
@@ -1347,20 +1370,20 @@ def c_insight(c, live):
     if el:
         can.append(f'공고의 자격 문구: 「{SH.clip(el, 120) or el[:120]}」')
     LIM = [(r'(?!)', ''),
-           (r'대학생|대학원생|재학', '재학생 증빙(재학증명서)이 필요할 수 있어요. 휴학·졸업 예정자 포함 여부는 공고 확인.'),
-           (r'만\s?\d+\s?세|\d+세\s?(?:이상|이하)|청년', '나이 조건이 있어요. 기준일이 공고일인지 접수일인지 확인하세요.'),
-           (r'미등단|등단자|기수상|수상\s?경력|중복\s?수상', '등단·수상 경력에 따른 제한이 있을 수 있어요.'),
-           (r'중복\s?(?:응모|제출|참가)\s?(?:불가|금지)|1인\s?1(?:작품|편|건)|1인당\s?\d', '1인당 응모 편수 제한이 있을 수 있어요.'),
-           (r'외국인', '외국인 참가 가능 여부가 문구에 언급돼 있어요(공고 확인).'),
-           (r'팀|단체|2인|3인|5인', '팀·단체 참가 조건(인원·대표자)이 문구에 있어요.')]
+           (r'대학생|대학원생|재학', '재학생 증빙(재학증명서)이 필요할 수 있어. 휴학·졸업 예정자 포함 여부는 공고 확인.'),
+           (r'만\s?\d+\s?세|\d+세\s?(?:이상|이하)|청년', '나이 조건이 있어. 기준일이 공고일인지 접수일인지 확인해.'),
+           (r'미등단|등단자|기수상|수상\s?경력|중복\s?수상', '등단·수상 경력에 따른 제한이 있을 수 있어.'),
+           (r'중복\s?(?:응모|제출|참가)\s?(?:불가|금지)|1인\s?1(?:작품|편|건)|1인당\s?\d', '1인당 응모 편수 제한이 있을 수 있어.'),
+           (r'외국인', '외국인 참가 가능 여부가 문구에 언급돼 있어(공고 확인).'),
+           (r'팀|단체|2인|3인|5인', '팀·단체 참가 조건(인원·대표자)이 문구에 있어.')]
     if region_kind(el) == 'specific':
-        cant.append('자격 문구에 특정 지역 거주·소재 조건이 있어요. 어느 지역·어떤 기준(주민등록·재직·재학)인지 공고에서 확인하세요.')
+        cant.append('자격 문구에 특정 지역 거주·소재 조건이 있어. 어느 지역·어떤 기준(주민등록·재직·재학)인지 공고에서 확인해.')
     for rx, msg in LIM:
         if re.search(rx, src_txt):
             cant.append(msg)
     if can or cant:
-        out += '<h2>🙋 누가 참가할 수 있나요</h2><ul class="chk">' + ''.join(f'<li>{E(x)}</li>' for x in can) + '</ul>'
-        out += ('<h3>이런 경우는 조건을 더 확인하세요 <small>(자격 문구에서 읽힌 신호)</small></h3><ul class="chk">' + ''.join(f'<li>{E(x)}</li>' for x in cant) + '</ul>') if cant else ''
+        out += '<h2>🙋 누가 참가할 수 있어?</h2><ul class="chk">' + ''.join(f'<li>{E(x)}</li>' for x in can) + '</ul>'
+        out += ('<h3>이런 경우는 조건을 더 확인해 <small>(자격 문구에서 읽힌 신호)</small></h3><ul class="chk">' + ''.join(f'<li>{E(x)}</li>' for x in cant) + '</ul>') if cant else ''
     sub_t = c.get('effort') or {'photo': '사진', 'video': '영상', 'photo+video': '사진·영상'}.get(mdm, '')
     pit = []
     if sub_t in EFFORT_NOTE and c['id'] in VER:   # 일반 준비 문구는 공식 대조된 공고에서만(미대조 공고에는 공통 가이드 링크로 대신한다)
@@ -1369,7 +1392,7 @@ def c_insight(c, live):
         if NPd.get(k):
             pit.append(f'공고 「{k}」: {NPd[k]}')
     if c.get('fee'):
-        pit.append('참가비가 있다고 수집됐어요. 주최 기관 공식 공고에 적혀 있는지 확인하세요.')
+        pit.append('참가비가 있다고 수집됐어. 주최 기관 공식 공고에 적혀 있는지 확인해.')
     if pit:
         out += '<h2>⚠ 이 공모전에서 놓치기 쉬운 것</h2><ul class="chk">' + ''.join(f'<li>{E(x)}</li>' for x in pit[:6]) + '</ul>'
     _v = VER.get(c['id'])
@@ -1384,13 +1407,13 @@ def c_insight(c, live):
                     + ''.join(f'<li><b>{E(lab)}</b> — {E(val)}</li>' for lab, val in rows_) + '</ol>')
     else:
         _bt = CQ.link_wording(c['link'], bool(c.get('verified_official')))[0].replace(' →', '')
-        out += (f'<h2>📤 접수하기 전에</h2><p>공식 원문과 대조 전입니다. 「{E(_bt)}」에서 자격·마감 시각·제출 규격·접수 방법을 먼저 확인하세요.'
-                + (' 수집처 페이지이므로 주최 측 공식 공고를 따로 찾아야 합니다.' if CQ.is_aggregator(c['link']) else '') + '</p>')
+        out += (f'<h2>📤 접수하기 전에</h2><p>공식 원문과 대조 전이야. 「{E(_bt)}」에서 자격·마감 시각·제출 규격·접수 방법부터 확인해.'
+                + (' 수집처 페이지라서 주최 측 공식 공고를 따로 찾아야 해.' if CQ.is_aggregator(c['link']) else '') + '</p>')
     if n >= 4 and not miss and c['id'] in VER:   # 일정 제안은 공식 대조로 조건을 확인한 공고에만
         e = datetime.date.fromisoformat(c['end'])
         d1 = TODAY + datetime.timedelta(days=max(1, n // 3)); d2 = e - datetime.timedelta(days=max(1, n // 5)); d3 = e - datetime.timedelta(days=1)
-        out += (f'<h2>📅 추천 준비 일정 <small>루리 제안 · 공식 일정 아님</small></h2><p class="note">가정: 제출물 작업량은 공고에 없어서 마감일까지를 3등분했어요. 작업량이 크면 앞당기고, 접수 마감 시각은 공고로 확인하세요.</p>'
-                f'<ul class="chk"><li>{d1.month}/{d1.day}까지: 위 자격·규격 확인과 주제 정하기</li><li>{d2.month}/{d2.day}까지: 초안 완성 후 규격 점검</li><li>{d3.month}/{d3.day}까지: 파일명·형식 맞춰 제출(마감 당일엔 접수가 몰릴 수 있어요)</li></ul>')
+        out += (f'<h2>📅 추천 준비 일정 <small>루리 제안 · 공식 일정 아님</small></h2><p class="note">가정: 제출물 작업량은 공고에 없어서 마감일까지를 3등분했어. 작업량이 크면 앞당기고, 접수 마감 시각은 공고로 확인해.</p>'
+                f'<ul class="chk"><li>{d1.month}/{d1.day}까지: 위 자격·규격 확인과 주제 정하기</li><li>{d2.month}/{d2.day}까지: 초안 완성 후 규격 점검</li><li>{d3.month}/{d3.day}까지: 파일명·형식 맞춰 제출(마감 당일엔 접수가 몰릴 수 있어)</li></ul>')
     # 비교 대상은 대표 분야가 같고, 참가 대상 또는 제출물이 확인된 값으로 일치할 때만(2026-10-23 재심사: 창업 대회에 백일장·음악 행사가 비교로 뜨던 오류). 맞는 게 없으면 비교 영역을 생략한다.
     why_sim = lambda x: sim_why(c, x)
     cand = [(x, why_sim(x)) for x in live if x['id'] != c['id']]
@@ -1404,9 +1427,9 @@ def c_insight(c, live):
         row = lambda x, w_='', on='': (f'<tr{on}><td>{("이 공모전" if on else "<a href=/c/" + x["id"] + "/>" + E(x["title"][:40]) + "</a>")}</td><td>{E(elig_short(x))}</td><td>{E(sub_short(x))}</td>'
                                        f'<td>{E(_pz(x)[0])}</td><td>{E(_pz(x)[1])}</td><td>{ddot(x["end"])[5:]}</td><td>{E(w_ or "—")}</td></tr>')
         out += (f'<h2>🔍 비슷한 {E(CQ.label_for(tag, mdm))} 공모전 비교 <small>대표 분야가 같고 참가 대상·제출물이 일치하는 것만</small></h2><table class="info cmp"><tr><th>공모전</th><th>대상</th><th>제출물</th><th>1등 상금</th><th>총상금</th><th>마감</th><th>비슷한 점</th></tr>'
-                + row(c, '', ' class="on"') + ''.join(row(x, ' · '.join(w_)) for x, w_ in cmp_) + '</table><p class="note">「1등 상금」과 「총상금」은 다른 기준이라 따로 적었어요. 「미표기」는 공고 문구에서 그 금액을 읽지 못했다는 뜻이고 없다는 뜻이 아니에요. 상금이 크다고 이 공모전이 유리하다는 뜻은 아니에요.</p>')
+                + row(c, '', ' class="on"') + ''.join(row(x, ' · '.join(w_)) for x, w_ in cmp_) + '</table><p class="note">「1등 상금」과 「총상금」은 다른 기준이라 따로 적었어. 「미표기」는 공고 문구에서 그 금액을 읽지 못했다는 뜻이야. 없다는 뜻은 아니야. 상금이 크다고 유리한 것도 아니야.</p>')
     if '부문' in (c.get('prize') or '') and not any(prize_split(c)):
-        out += '<p class="note">이 공모전은 부문마다 상금이 달라 하나의 1등 상금으로 정리하지 않았어요. 표의 「상금·혜택」 칸을 기준으로 부문별로 확인하세요.</p>'
+        out += '<p class="note">이 공모전은 부문마다 상금이 달라 하나의 1등 상금으로 정리하지 않았어. 표의 「상금·혜택」 칸 기준으로 부문별로 확인해.</p>'
     return out
 
 
@@ -1449,7 +1472,7 @@ def region_row(c, NEED):
     if k == 'national':
         return '제한 없음(자격 문구 기준)' if re.search(r'전국|제한\s*없', c.get('elig') or '') else '전국(국내 거주자 대상, 자격 문구 기준)'
     if k == 'specific':
-        return '있음 — 자격 문구에 특정 지역 조건이 있어요. 지역 범위는 ' + NEED
+        return '있음 — 자격 문구에 특정 지역 조건이 있어. 지역 범위는 ' + NEED
     return '자격 문구에서 지역 조건을 찾지 못함 — 공고 확인(원문 전체는 미확인)'
 
 
@@ -1461,8 +1484,8 @@ def deadline_row(c, NEED):
         dl = v.get('deadline') or {}
         if dl.get('time'):
             return f'{dl["time"]} (공식 원문 확인 {v["verified_at"]}, 시간대 명시 없음 — 국내 공고)'
-        return '시각 명시 없음(' + v['verified_at'] + ' 확인) — ' + (dl.get('note') or '공고 원문에서 마감 시각을 찾지 못했어요.')
-    return NEED + ' (수집 데이터에 시각이 없어요)'
+        return '시각 명시 없음(' + v['verified_at'] + ' 확인) — ' + (dl.get('note') or '공고 원문에서 마감 시각을 못 찾았어.')
+    return NEED + ' (수집 데이터에 시각이 없어)'
 
 
 def deadline_state(c):
@@ -1538,7 +1561,7 @@ def vstage(cid):
 def stage_row(cid):
     n, lab, why = vstage(cid)
     chips = ' → '.join(('✅ ' if i <= n else '▫️ ') + (STAGES[i] if i <= n else STAGES[i] + '(아직 아님)') for i in range(4))
-    return chips + f' — 현재 「{lab}」: {why}. 사람이 직접 확인한 것은 「운영자 직접 검토」 단계뿐이에요.'
+    return chips + f' — 현재 「{lab}」: {why}. 사람이 직접 확인한 건 「운영자 직접 검토」 단계뿐이야.'
 
 
 def ver_block(c):
@@ -1550,7 +1573,7 @@ def ver_block(c):
     srcs = ' · '.join(f'<a href="{E(s["url"])}" target="_blank" rel="noopener nofollow">{E(s["label"])}</a>' for s in v['sources'])
     lst = lambda t, L: (f'<h3>{t}</h3><ul class="chk">' + ''.join(f'<li>{E(x)}</li>' for x in L) + '</ul>') if L else ''
     return (f'<details class="fold ver"><summary>✅ 공식 원문 {"일부 " if v.get("level") == "partial" else ""}대조 결과 · 수정 이력 <small>확인일 {E(v["verified_at"])}</small></summary>'
-            f'<p class="note">아래 출처 페이지(주최 측 공고, 또는 운영사무국 신청 페이지·첨부 서류)를 위 확인일에 직접 열어 이 페이지의 값과 맞춰 봤어요. 출처 종류는 링크 이름에 적었어요. 이 대조는 AI가 원문을 열어 값을 맞춰 본 기록이고 운영자가 직접 확인한 것이 아니에요(운영자가 확인하면 위 「확인 단계」에 날짜가 따로 표시돼요). 공고는, 공고는 바뀔 수 있어요. 출처: {srcs}</p>'
+            f'<p class="note">아래 출처 페이지(주최 측 공고, 또는 운영사무국 신청 페이지·첨부 서류)를 위 확인일에 직접 열어 이 페이지의 값과 맞춰 봤어. 출처 종류는 링크 이름에 적었어. 이 대조는 AI가 원문을 열어 맞춘 기록이고 운영자가 직접 확인한 게 아니야(운영자가 확인하면 위 「확인 단계」에 날짜가 따로 표시돼). 공고는 바뀔 수 있어. 출처: {srcs}</p>'
             f'<table class="info">{facts}</table>'
             + lst('수집 데이터와 달랐던 점(수정함)', v.get('corrections', [])) + lst('서로 다른 값(자동 분석 보류)', v.get('conflicts', [])) + lst('확인하지 못한 것', v.get('unverified', [])) + '</details>')
 
@@ -1607,20 +1630,20 @@ KW_TITLE = {'Q01756': '청주페이 공모전 · 카드 디자인 공모전 2026
             'Q03959': '한국공항보안 AI 디지털 이미지 공모전 2026 · 11.13 마감 · 1등 50만원',
             'Q03848': '동계학술대회 포스터 공모전 2026 · 한국정책분석평가학회 · 11.26 마감',
             'Q03840': '용산국제업무지구 AI 스마트도시 아이디어 공모 · 서울 중구 · 11.20 마감 · 700만원'}
-KW_DESC = {'Q03855': '한국정책분석평가학회 주최, 2026.11.26 마감, 총상금 100만원. 전국 대학생 누구나 아이디어 제안서를 이메일로 접수해요. 접수 기간 10.13~11.26(수집처 기준).',
-           'Q03651': '카이스트 안보융합원 주최, 2026.11.17 마감, 1등 300만원. 대학생·대학원생 대상 아이디어 제안서를 이메일로 접수해요. 접수 기간 10.6~11.17(2026년 2차, 수집처 기준).',
-           'Q03703': '조달청 주최, 2026.11.22 마감, 총상금 550만원. 대한민국 국민 누구나 개인 또는 팀으로 응모하고 이메일로 접수해요. 접수 기간 10.12~11.22(수집처 기준).',
-           'Q03959': '한국공항보안(주) 주최, 2026.11.13 마감, 1등 50만원. 생성형 AI 콘텐츠에 관심 있는 국민 누구나 1인 1작품, 이메일 접수예요. 접수 기간 10.16~11.13(수집처 기준).',
-           'Q03848': '한국정책분석평가학회 주최, 2026.11.26 마감, 1등 100만원. 대학생·대학원생·일반인(행정·정책 관련) 대상, 포스터 디자인을 이메일로 접수해요(수집처 기준).',
-           'Q03840': '서울 중구 주최, 2026.11.20 17:00 마감, 총상금 700만원(대상 300만원 1팀). 만 19~39세 청년, 개인 또는 5인 이하 팀이 프로젝트 서울에서 접수해요(공식 원문 확인 2026-10-24).'}
+KW_DESC = {'Q03855': '한국정책분석평가학회 주최, 2026.11.26 마감, 총상금 100만원. 전국 대학생 누구나 아이디어 제안서를 이메일로 접수해. 접수 기간 10.13~11.26(수집처 기준).',
+           'Q03651': '카이스트 안보융합원 주최, 2026.11.17 마감, 1등 300만원. 대학생·대학원생 대상 아이디어 제안서를 이메일로 접수해. 접수 기간 10.6~11.17(2026년 2차, 수집처 기준).',
+           'Q03703': '조달청 주최, 2026.11.22 마감, 총상금 550만원. 대한민국 국민 누구나 개인 또는 팀으로 응모하고 이메일로 접수해. 접수 기간 10.12~11.22(수집처 기준).',
+           'Q03959': '한국공항보안(주) 주최, 2026.11.13 마감, 1등 50만원. 생성형 AI 콘텐츠에 관심 있는 국민 누구나 1인 1작품, 이메일 접수야. 접수 기간 10.16~11.13(수집처 기준).',
+           'Q03848': '한국정책분석평가학회 주최, 2026.11.26 마감, 1등 100만원. 대학생·대학원생·일반인(행정·정책 관련) 대상, 포스터 디자인을 이메일로 접수해(수집처 기준).',
+           'Q03840': '서울 중구 주최, 2026.11.20 17:00 마감, 총상금 700만원(대상 300만원 1팀). 만 19~39세 청년, 개인 또는 5인 이하 팀이 프로젝트 서울에서 접수해(공식 원문 확인 2026-10-24).'}
 KW_H1 = {'Q01756': '청주페이 카드 디자인 공모전 (청주페이 공모전 2026)'}
 
 
 def detail(c, live):
     if c['id'] in DUP:   # 같은 공고가 여러 곳에서 수집됨 → 검색 제외 + 대표 공고로 안내(주소는 유지)
         r_ = DUP[c['id']]
-        page(f'/c/{c["id"]}/', f'{c["title"][:40]} (같은 공고)', '같은 공모전의 대표 페이지로 합쳐졌어요.',
-             f'<p class="bc"><a href="/">홈</a> › 공모전</p><h1>{E(c["title"])}</h1><p>이 공모전은 같은 공고가 여러 곳에서 수집돼 대표 페이지 하나로 합쳤어요.</p>'
+        page(f'/c/{c["id"]}/', f'{c["title"][:40]} (같은 공고)', '같은 공모전의 대표 페이지로 합쳐졌어.',
+             f'<p class="bc"><a href="/">홈</a> › 공모전</p><h1>{E(c["title"])}</h1><p>이 공모전은 같은 공고가 여러 곳에서 수집돼서 대표 페이지 하나로 합쳤어.</p>'
              f'<p><a class="lab-cta" href="/c/{r_}/"><b>🏆 대표 공고 페이지로 가기</b><span>마감·자격·제출물·공식 링크 →</span></a></p><script>location.replace("/c/{r_}/")</script>',
              [('루리 줍줍', '/'), (c['title'][:30], f'/c/{c["id"]}/')], noindex=True)
         return
@@ -1639,17 +1662,17 @@ def detail(c, live):
     elif any(t in ('요리·레시피', '논문', '해외') for t in c['tags'][:2]):   # 주제 자체가 정하는 조건(식재료·논문 인용·현지 시간대)만 분야 팁 유지
         _tips = [x for t in c['tags'][:2] if t in ('요리·레시피', '논문', '해외') for x in TIPS[t]]
     else:
-        _tips = TIPS['기타'] + ['제출물 종류가 확인되지 않아 분야별 준비 팁은 넣지 않았어요. 공식 공고의 제출물·규격 항목을 먼저 확인하세요.']
+        _tips = TIPS['기타'] + ['제출물 종류가 확인되지 않아 분야별 준비 팁은 안 넣었어. 공식 공고의 제출물·규격 항목부터 확인해.']
     tips = ''.join(f'<li>{E(t)}</li>' for t in _tips) or ''.join(f'<li>{E(t)}</li>' for t in TIPS['기타'])
     sim = sorted([x for x in live if sim_why(c, x)], key=lambda x: (-len(sim_why(c, x)), abs((datetime.date.fromisoformat(x['end']) - datetime.date.fromisoformat(c['end'])).days)))[:3]
     simh = ''.join(card(x) for x in sim)
-    status = ('<p class="warn">접수가 마감된 공모전입니다. 같은 분야의 진행 중 공모전을 아래에서 확인하세요.</p>' if n < 0
+    status = ('<p class="warn">접수가 마감된 공모전이야. 같은 분야의 진행 중 공모전은 아래에서 확인해.</p>' if n < 0
               else (f'<p class="lead"><span class="d">기존 공고 기준</span> {ddot(c["end"])[5:]} 마감 · <b>연장일 확인 필요</b></p>' if (VER.get(c['id']) or {}).get('alerts')
                     else f'<p class="lead"><span class="{"d u3" if n <= 3 else "d hot" if n <= 7 else "d"}">{dd}</span> {ddot(c["end"])} 마감{deadline_badge(c)}</p>'))
-    ruri = (say('sad', '이 공모전은 접수가 끝났어요. 같은 분야에서 아직 받고 있는 공모전을 아래에 모아 뒀어요.') if n < 0 else
-            say('surprise', f'마감이 <b>{dd}</b>로 가까워요. 접수 방법과 마감 시각부터 공고에서 확인하고 시작해요.') if n <= 3 else
-            say('thumbsup', f'상금은 <b>{E(c["prize"])}</b>예요. 다만 자격과 제출 조건이 맞아야 하니 위 요약부터 확인해 봐요.') if c['pv'] else
-            say('smile', '위 요약에서 자격·제출물·마감을 먼저 훑고, 비어 있는 칸은 공식 공고로 확인해요.'))
+    ruri = (say('sad', '이 공모전은 접수가 끝났어. 같은 분야에서 아직 받는 공모전을 아래에 모아 뒀어.') if n < 0 else
+            say('surprise', f'마감이 <b>{dd}</b>로 코앞이야. 접수 방법과 마감 시각부터 공고에서 확인해.') if n <= 3 else
+            say('thumbsup', f'상금은 <b>{E(c["prize"])}</b>야. 다만 자격과 제출 조건이 맞아야 하니 위 요약부터 확인해.') if c['pv'] else
+            say('smile', '위 요약에서 자격·제출물·마감부터 훑고, 빈 칸은 공식 공고로 확인해.'))
     period = (ddot(c['start']) + ' ~ ' if c['start'] else '~ ') + ddot(c['end'])
     # 2026-10-19 사용자 개선 지시: 자격·지역·마감 시각·제출물·상금·공식 링크·확인할 것. 모르는 값은 채우지 않고 「공식 공고 확인 필요」
     NEED = '공식 공고 확인 필요'
@@ -1663,7 +1686,7 @@ def detail(c, live):
     if VER.get(c['id']):
         _src = f'공식 원문 대조 {VER[c["id"]]["verified_at"]} ({"일부 항목" if VER[c["id"]].get("level") == "partial" else "핵심 조건"}) — 아래 「공식 원문 대조 결과」에 항목별 출처'
     else:
-        _src = (f'{CQ.host(c["link"]) if CQ.is_aggregator(c["link"]) else "주최 측 링크"}를 거쳐 자동 수집·정리한 값(처음 수집 {_hh.get("first") or "-"}) — 공식 원문 대조 전이라 자동 추정이 섞여 있을 수 있어요')
+        _src = (f'{CQ.host(c["link"]) if CQ.is_aggregator(c["link"]) else "주최 측 링크"}를 거쳐 자동 수집·정리한 값(처음 수집 {_hh.get("first") or "-"}) — 공식 원문 대조 전이라 자동 추정이 섞여 있을 수 있어')
     _sp = c.get('supp')
     if _sp:
         if _sp.get('effort'):
@@ -1675,7 +1698,7 @@ def detail(c, live):
     tb = ''.join(f'<tr><th>{k}</th><td{" class=need" if NEED in str(v) else ""}>{E(v)}</td></tr>' for k, v in rows)
     todo = []
     if NEED in deadline_row(c, NEED):
-        todo.append('마감 시각 — 수집 데이터에는 날짜만 있고 시각이 없어요(마감 당일 몇 시까지인지, 도착 기준인지)')
+        todo.append('마감 시각 — 수집 데이터에는 날짜만 있고 시각이 없어(마감 당일 몇 시까지인지, 도착 기준인지)')
     if v_(c['elig']) == NEED:
         todo.append('응모 자격(나이·신분·지역)')
     if not sub_type:
@@ -1692,21 +1715,21 @@ def detail(c, live):
     FL = {'title': '제목', 'end': '마감일', 'prize': '상금', 'elig': '자격', 'link': '공고 링크'}
     hist_html = ('<p class="note">📝 정보 이력: 처음 수집 ' + (hh.get('first') or '-') + (' · 공고 원문 수집 ' + datetime.datetime.fromtimestamp(os.path.getmtime(_tf)).strftime('%Y-%m-%d %H:%M') if os.path.exists(_tf) else '')
                  + ''.join(f' · {x["d"]} 변경: ' + ', '.join(f'{FL[k]} 「{E(str(v[0])[:20])}」→「{E(str(v[1])[:20])}」' for k, v in x['f'].items()) for x in (hh.get('chg') or [])[-3:]) + ' (한국 시간)</p>')
-    np_html = ('<h2>📄 공고에서 확인한 핵심</h2><table class="info np">' + ''.join(f'<tr><th>{E(k)}</th><td>{E(v)}</td></tr>' for k, v in NPs) + '</table><p class="note">공고 원문의 항목을 그대로 옮긴 거예요(자동 추출이라 일부만 보일 수 있어요). 전체 내용은 공식 공고에서 확인하세요.</p>') if NPs else ''
+    np_html = ('<h2>📄 공고에서 확인한 핵심</h2><table class="info np">' + ''.join(f'<tr><th>{E(k)}</th><td>{E(v)}</td></tr>' for k, v in NPs) + '</table><p class="note">공고 원문의 항목을 그대로 옮긴 거야(자동 추출이라 일부만 보일 수 있어). 전체 내용은 공식 공고에서 확인해.</p>') if NPs else ''
     chk_need = '<h2>✅ 공식 공고에서 꼭 확인할 것</h2><ul class="chk">' + ''.join(f'<li>{E(t)}</li>' for t in todo) + '</ul>'
     catl = ' · '.join(f'<a href="/cat/{SLUG[t]}/">{E(CQ.label_for(t, c.get("medium", "")))}</a>' for t in c['tags'])
     LK_BTN, LK_NOTE, LK_ALT = CQ.link_wording(c['link'], bool(c.get('verified_official')))
     org = c['org'] if c['org'] != '공고 참조' else '주최 기관'
-    summary = (f'「{c["title"]}」은 {org}에서 진행하는 {", ".join(CQ.label_for(t, c.get("medium", "")) for t in c["tags"])} 분야 공모전이에요. {CQ.deadline_sentence(ddot(c["end"]), n)} '
-               + (f'응모 자격은 "{c["elig"]}"이고 ' if c.get('elig') else '응모 자격은 공식 공고에서 확인이 필요하고 ') + (f'상금은 {c["prize"]}입니다. ' if c.get('pv') else '상금은 공식 공고에서 확인하세요. ') +
-               f'접수 방법은 자동 분류상 {c["ch"]}이고(공고와 다를 수 있어요), 마감 시각과 제출 양식·파일 형식은 공식 공고에서 먼저 확인하세요.')
+    summary = (f'「{c["title"]}」은 {org}에서 진행하는 {", ".join(CQ.label_for(t, c.get("medium", "")) for t in c["tags"])} 분야 공모전이야. {CQ.deadline_sentence(ddot(c["end"]), n)} '
+               + (f'응모 자격은 "{c["elig"]}"이고 ' if c.get('elig') else '응모 자격은 공식 공고에서 확인이 필요하고 ') + (f'상금은 {c["prize"]}야. ' if c.get('pv') else '상금은 공식 공고에서 확인해. ') +
+               f'접수 방법은 자동 분류상 {c["ch"]}이고(공고와 다를 수 있어), 마감 시각과 제출 양식·파일 형식은 공식 공고에서 먼저 확인해.')
     # 2026-10-23 UI 정리(사용자 점검): 중요도 순서 — 제목·마감 → 불확실성 → 핵심 표+접수 버튼 → 제출 조건·체크리스트 → 원문 대조·분석 → 유사 공모전 3개 → (접기) 공고 캡처·이력·공유·팀원 모집
     _v = VER.get(c['id']) or {}
-    _al = list(_v.get('alerts', [])) + [f'값이 서로 달라 확정하지 않았어요: {x}' for x in _v.get('conflicts', [])]
+    _al = list(_v.get('alerts', [])) + [f'값이 서로 달라서 확정 안 했어: {x}' for x in _v.get('conflicts', [])]
     _miss = [x for x, ok in (('참가 대상·자격', bool((c.get('elig') or '').strip())), ('제출물 종류', bool(c.get('effort') or c.get('medium')))) if not ok]
     if _miss:
-        _al.append(' · '.join(_miss) + '을(를) 아직 확인하지 못했어요. 공식 공고에서 먼저 확인한 뒤 참가 여부를 정하세요(확인 전에는 준비 일정을 추천하지 않아요).')
-    alerts_html = ('<div class="alert-top" role="note"><b>⚠ 확인이 필요해요</b><ul>' + ''.join(f'<li>{E(x)}</li>' for x in _al) + '</ul></div>') if _al else ''
+        _al.append(' · '.join(_miss) + '을(를) 아직 확인 못 했어. 공식 공고에서 먼저 확인한 뒤 참가 여부를 정해(확인 전에는 준비 일정을 추천 안 해).')
+    alerts_html = ('<div class="alert-top" role="note"><b>⚠ 확인이 필요해</b><ul>' + ''.join(f'<li>{E(x)}</li>' for x in _al) + '</ul></div>') if _al else ''
     chk_all = guide_links_html(c)   # 미확인 항목은 위 표의 해당 줄과 상단 알림에 이미 표시한다(반복 제거)
     shot_html = (f'<a class="shot" href="{E(c["link"])}" target="_blank" rel="noopener nofollow">' + (f'<img src="/assets/shots/{c["id"]}.webp" width="640" height="400" alt="{E(c["title"])} {LK_ALT}" loading="lazy">' if c.get('th') else '')
                  + f'<span>{LK_BTN}</span></a>') if c.get('th') else ''
@@ -1739,7 +1762,7 @@ def detail(c, live):
 {('<section id="finder" data-id="' + c['id'] + '" data-v="' + TODAY.strftime('%m%d') + '"></section><script defer src="/assets/finder/finder.js?v=3"></script>') if c in live else ''}
 {'<a class="lab-cta" href="/lab/#diag"><b>🏆 이런 공모전 수상작은 어떻게 생겼을까?</b><span>수상작 300여 개를 분석한 당선 공식과 내 문구 진단 →</span></a>' if re.search(r'슬로건|표어|네이밍|명칭|캐치프레이즈|삼행시|N행시|이행시|애칭', c['title']) else ''}
 {('<h2>비슷한 공모전</h2><ul class="list">' + simh + '</ul>') if simh else ''}
-<details class="fold"><summary>공고 캡처 · 수집 이력 · 분류 정보</summary>{shot_html}{hist_html}<p class="note">분야: {catl}. 상금·자격·기간은 공고 원문에서 자동으로 정리한 값이라 오차가 있을 수 있습니다. 최종 기준은 주최 측 공식 공고입니다.</p></details>
+<details class="fold"><summary>공고 캡처 · 수집 이력 · 분류 정보</summary>{shot_html}{hist_html}<p class="note">분야: {catl}. 상금·자격·기간은 공고 원문에서 자동으로 정리한 값이라 오차가 있을 수 있어. 최종 기준은 주최 측 공식 공고야.</p></details>
 {('<details class="fold"><summary>팀원 모집 · 질문 · 후기</summary>' + comm_html + '</details>') if comm_html else ''}
 {join_cta('contest')}'''
     # 2026-10-19: 접수 공고는 실제 행사가 아니라 Event 대신 WebPage(데이터와 맞는 유형만)
@@ -1782,7 +1805,7 @@ function sc(i){var s=i.pv?(Math.log(i.pv)/Math.LN10-4)*1.2:0;s+=(i.left>=2&&i.le
 var r=items.filter(function(i){return i.left>=(LATE?1:0)&&(!cat||i.tags.indexOf(cat)>=0)&&(!due||i.left<=due)&&(!q||i.hay.indexOf(q)>=0)&&(!tg||(i.eg||'확인 필요').indexOf(tg)>=0)&&(!ai||(ai==='ok'?(i.ai==='허용'||i.ai==='표기'):ai==='no'?i.ai==='금지':!i.ai))});
 r.sort(s==='prize'?function(a,b){return b.pv-a.pv||a.left-b.left}:s==='end'?function(a,b){return a.left-b.left||b.pv-a.pv}:function(a,b){return sc(b)-sc(a)||a.left-b.left});
 var cd=[];if(q)cd.push('“'+$('q').value.trim()+'”');if(due)cd.push(due+'일 이내');if(tg)cd.push('대상 '+tg);if(ai)cd.push('AI '+(ai==='ok'?'허용·표기':ai==='no'?'금지':'확인 필요'));var ce=$('cnt');ce.textContent='진행 중 공모전 '+r.length+'건'+(cd.length?' · 적용: '+cd.join(' · ')+' ':'');if(cd.length){var rb=el('button','ap-reset','초기화');rb.type='button';rb.onclick=function(){$('q').value='';$('due').value='';$('tg').value='';$('ai').value='';shown=PAGE;render()};ce.appendChild(rb)}save();var ul=$('list');ul.textContent='';
-if(!r.length){var li=el('li','empty');li.innerHTML='<img src="/assets/ruri/sad_s.webp" width="56" height="77" alt=""><p>조건에 맞는 공모전이 없어요. 검색어를 바꿔 볼까요?</p>';ul.appendChild(li)}
+if(!r.length){var li=el('li','empty');li.innerHTML='<img src="/assets/ruri/sad_s.webp" width="56" height="77" alt=""><p>조건에 맞는 공모전이 없어. 검색어를 바꿔 봐.</p>';ul.appendChild(li)}
 r.slice(0,shown).forEach(function(i){var li=el('li'),a=el('a','card cc');a.href='/c/'+i.id+'/';a.dataset.c=SL[i.tags[0]]||'etc';var cb=el('div','cb');cb.appendChild(el('h3','t',i.title));
 cb.appendChild(el('p','o',[i.org&&i.org!=='공고 참조'?i.org:'',(i.effort&&i.effort!=='확인 필요')?i.effort:'',i.tags[0]||'',i.vf===3?'👤 운영자 직접 검토':i.vf===2?'✅ 핵심 조건 대조':i.vf===1?'☑ 공식 원문 일부 대조':''].filter(function(x,k,A){return x&&A.indexOf(x)===k}).join(' · ')));a.appendChild(cb);
 var eg=i.eg||'확인 필요',pk=i.pk||'확인 필요';function sp(c,l,t){var e=el('span',c,t);e.dataset.l=l;return e}
@@ -1791,7 +1814,7 @@ var en=sp('c-end','마감','');en.appendChild(el('b','',i.end.slice(5).replace('
 if(i.th){var im=el('img','th');im.src='/assets/shots/'+i.id+'.webp';im.width=72;im.height=45;im.loading='lazy';im.alt='';a.appendChild(im)}li.appendChild(a);ul.appendChild(li)});
 $('more').hidden=r.length<=shown}
 ['q','due','sort','tg','ai'].forEach(function(i){$(i).addEventListener('input',function(){shown=PAGE;render()})});document.addEventListener('click',function(e){if(e.target.closest&&e.target.closest('#list a'))save()});window.addEventListener('pagehide',save);$('more').onclick=function(){shown+=PAGE;render()};
-fetch('/data.json',{cache:'no-cache'}).then(function(r){return r.json()}).then(function(d){items=d.items.map(function(i){i.left=dn(i.end)-T;i.hay=(i.title+' '+i.org+' '+i.field+' '+i.tags.join(' ')).toLowerCase();return i});var y=restore();render();try{if(y&&(performance.getEntriesByType('navigation')[0]||{}).type==='back_forward')setTimeout(function(){window.scrollTo(0,y)},60)}catch(e){}}).catch(function(){var u=document.querySelector('.list');if(u)u.insertAdjacentHTML('beforebegin','<p class="note">목록을 새로 불러오지 못해 마지막으로 만든 목록을 보여 드려요. 마감 여부는 공식 공고로 확인해 주세요.</p>')});
+fetch('/data.json',{cache:'no-cache'}).then(function(r){return r.json()}).then(function(d){items=d.items.map(function(i){i.left=dn(i.end)-T;i.hay=(i.title+' '+i.org+' '+i.field+' '+i.tags.join(' ')).toLowerCase();return i});var y=restore();render();try{if(y&&(performance.getEntriesByType('navigation')[0]||{}).type==='back_forward')setTimeout(function(){window.scrollTo(0,y)},60)}catch(e){}}).catch(function(){var u=document.querySelector('.list');if(u)u.insertAdjacentHTML('beforebegin','<p class="note">목록을 새로 불러오지 못해 마지막으로 만든 목록을 보여 줄게. 마감 여부는 공식 공고로 확인해.</p>')});
 })();</script>''' % (json.dumps(CAT_ICON, ensure_ascii=False), json.dumps(SLUG, ensure_ascii=False), json.dumps(cat, ensure_ascii=False))
 
 
@@ -1955,12 +1978,12 @@ def ap_card(a):
             f'<dl class="cm">{dl}</dl><p class="o">{E(ap_group(a))} · {E(a["org"])}{src}</p></div></a></li>')
 
 
-APPLY_INTRO = '''<p>아파트 청약, 공공임대, 공모주 청약, 지원금 신청처럼 <b>기간 안에 신청만 하면 되는 기회</b>를 모았어요. 신청은 반드시 공식 사이트에서 하세요.</p>
-<h2>어디서 신청하나요?</h2><ul class="chk"><li><b>아파트 청약</b>: 한국부동산원 청약홈(applyhome.co.kr). 청약통장 가입 기간·납입 횟수가 순위를 가릅니다.</li>
-<li><b>공공임대</b>: LH청약플러스(apply.lh.or.kr), SH·GH 등 지역 공사. 소득·자산 기준을 먼저 확인하세요.</li>
-<li><b>공모주</b>: 증권사 앱에서 청약. 증거금(신청금액의 50% 안팎)이 필요하고, 배정 후 남은 돈은 환불됩니다.</li>
-<li><b>지원금</b>: 정부24·복지로·지자체 홈페이지. 대부분 본인인증 후 온라인으로 신청합니다.</li></ul>
-<p class="note">정보는 공고를 바탕으로 정리했으며, 자격·일정은 바뀔 수 있으니 공식 공고를 기준으로 하세요. 투자·청약 결과에 대한 판단은 본인 책임입니다.</p>'''
+APPLY_INTRO = '''<p>아파트 청약, 공공임대, 공모주 청약, 지원금 신청처럼 <b>기간 안에 신청만 하면 되는 기회</b>를 모았어. 신청은 공식 사이트에서만 해.</p>
+<h2>어디서 신청해?</h2><ul class="chk"><li><b>아파트 청약</b>: 한국부동산원 청약홈(applyhome.co.kr). 청약통장 가입 기간·납입 횟수가 순위를 가른다.</li>
+<li><b>공공임대</b>: LH청약플러스(apply.lh.or.kr), SH·GH 등 지역 공사. 소득·자산 기준부터 확인해.</li>
+<li><b>공모주</b>: 증권사 앱에서 청약. 증거금(신청금액의 50% 안팎)이 필요하고, 배정 후 남은 돈은 환불돼.</li>
+<li><b>지원금</b>: 정부24·복지로·지자체 홈페이지. 대부분 본인인증 후 온라인으로 신청해.</li></ul>
+<p class="note">공고 기준으로 정리했어. 자격·일정은 바뀔 수 있으니 공식 공고로 확인해. 투자·청약 판단은 네 책임이야.</p>'''
 
 
 def ap_insight(a, aps):
@@ -1972,21 +1995,21 @@ def ap_insight(a, aps):
     kind = [x for x in aps if x['id'] != a['id'] and x['kind'] == a['kind']]
     L = []
     if a.get('always'):
-        L.append('상시 신청 사업이라 마감 걱정은 없지만, 예산이 떨어지면 일찍 끝날 수 있어요.')
+        L.append('상시 신청이라 마감 걱정은 없지만, 예산이 떨어지면 일찍 끝날 수 있어.')
     elif a.get('start'):
         try:
             tot = (datetime.date.fromisoformat(a['end']) - datetime.date.fromisoformat(a['start'])).days + 1
-            L.append(f'신청 기간은 모두 {tot}일이고 ' + ('오늘이 마감일이에요.' if n == 0 else f'{n}일 남았어요.'))
+            L.append(f'신청 기간은 모두 {tot}일이고 ' + ('오늘이 마감일이야.' if n == 0 else f'{n}일 남았어.'))
         except Exception:
             pass
     if a.get('age_min') or a.get('age_max'):
-        L.append(f'나이 조건({age_txt(a)})은 보통 공고일 기준이라, 생일이 가까우면 기준일을 꼭 확인하세요.')
+        L.append(f'나이 조건({age_txt(a)})은 보통 공고일 기준이라, 생일이 가까우면 기준일을 꼭 확인해.')
     if a.get('income'):
-        L.append(f'소득 조건은 「{a["income"]}」이에요. 기준 중위소득 %로 적힌 경우 가구원 수에 따라 금액이 달라져요.')
+        L.append(f'소득 조건은 「{a["income"]}」이야. 기준 중위소득 %로 적힌 경우 가구원 수에 따라 금액이 달라져.')
     if nm and same:
-        L.append(f'지금 {nm}에서 신청할 수 있는 공고가 {len(same)}건 더 있어요.')
+        L.append(f'지금 {nm}에서 신청할 수 있는 공고가 {len(same)}건 더 있어.')
     if kind:
-        L.append(f'같은 종류({a["kind"]}) 진행 중 공고는 전국 {len(kind)}건이에요.')
+        L.append(f'같은 종류({a["kind"]}) 진행 중 공고는 전국 {len(kind)}건이야.')
     links = ([(f'/apply/r/{sl}/', f'{nm} 지원금·청약 모아 보기')] if sl else []) + [('/apply/', '전체 지원금·청약 일정'), ('/apply/recommend/', '청약 가점 추천')]
     return (f'<h2>🧐 루리 분석</h2><p>{" ".join(E(x) for x in L)}</p>' if L else '') + rel_block(r'지원금|청년|월세|청약', links)
 
@@ -2033,7 +2056,7 @@ def load_reviews():
     return out
 
 
-REVIEW_NOTE = '<p class="an-warn">📈 전망 정리·투자 권유 아님 — 기사·공식 자료에 나온 전망을 모은 글이에요. 특정 종목·상품을 권하지 않고, 투자 판단과 책임은 본인에게 있어요.</p>'
+REVIEW_NOTE = '<p class="an-warn">📈 전망 정리·투자 권유 아님 — 기사·공식 자료에 나온 전망을 모은 글이야. 특정 종목·상품은 권하지 않아. 투자 판단과 책임은 본인 몫이야.</p>'
 
 
 def review_pages():
@@ -2049,7 +2072,7 @@ def review_pages():
                 f'<article class="ssul rv"><p class="note">{E(kdate(x["date"]))} · 루리의 평론' + (' · ' + ' '.join(f'#{E(k)}' for k in x['kw']) if x['kw'] else '') + f'</p><h1>{E(x["title"])}</h1>'
                 + (REVIEW_NOTE if x['invest'] else '') + x['html']
                 + (f'<section class="rv-src"><h2>📰 사실 확인 출처</h2><ul>{src}</ul></section>' if src else '') + '</article>'
-                + '<p class="note">사실 부분은 위 출처를 바탕으로 썼고, 「루리의 시선」은 운영자 의견이에요. 틀린 사실은 <a href="/contact/">문의</a>로 알려 주시면 고쳐요.</p>'
+                + '<p class="note">사실 부분은 위 출처를 바탕으로 썼고, 「루리의 시선」은 운영자 의견이야. 틀린 사실은 <a href="/contact/">문의</a>로 알려 줘. 고칠게.</p>'
                 + rel_block('', x['rel'] + [(f'/review/{y["slug"]}/', y['title']) for y in others] + [('/review/', '평론 전체 보기'), ('/news/', '오늘의 기사 확인 신호')]))
         page(u, x['title'], x['desc'], body, [('루리 줍줍', '/'), ('평론', '/review/'), (x['title'], u)],
              {'@context': 'https://schema.org', '@type': 'Article', 'headline': x['title'], 'datePublished': x['date'], 'dateModified': x['date'],
@@ -2057,10 +2080,10 @@ def review_pages():
               'keywords': ', '.join(x['kw']), 'citation': [su for _, su in x['src']]})
         urls.append(u)
     li = ''.join(f'<li><a class="card" data-c="guide" href="/review/{x["slug"]}/"><span class="ic">🖋️</span><div class="cb"><h3 class="t">{E(x["title"])}</h3><p class="o">{E(kdate(x["date"]))} · {E(x["desc"][:90])}</p></div></a></li>' for x in R) \
-        or '<li class="empty"><p>첫 평론을 준비하고 있어요.</p></li>'
+        or '<li class="empty"><p>첫 평론을 준비하고 있어.</p></li>'
     page('/review/', '루리의 평론 — 오늘 이슈·정책·지원금 해설 칼럼', '오늘 뜬 이슈·정책·지원금·공모전 하나를 골라 무슨 일인지, 쟁점은 무엇인지, 나한테 뭐가 달라지는지, 남은 질문은 무엇인지 짚는 해설 칼럼.',
          '<p class="bc"><a href="/">홈</a> › <a href="/news/">이슈</a> › 평론</p><h1>🖋️ 루리의 평론</h1>'
-         '<section class="pg-intro"><h2>평론은 이렇게 써요</h2><p>하루에 한 가지 이슈·정책·지원금·공모전을 골라 <b>무슨 일 → 쟁점(찬반 나란히) → 나한테 뭐가 달라지나 → 남은 질문</b> 순서로 짚어요. 사실은 기사·공식 자료 링크를 달고, 운영자 의견은 「💭 루리의 시선」 상자로 따로 표시해요. 투자 관련 글은 전망 정리일 뿐 투자 권유가 아니고, 정치인 비방·연예인 사생활은 다루지 않아요.</p></section>'
+         '<section class="pg-intro"><h2>평론은 이렇게 써</h2><p>하루에 한 가지 이슈·정책·지원금·공모전을 골라 <b>무슨 일 → 쟁점(찬반 나란히) → 나한테 뭐가 달라지나 → 남은 질문</b> 순서로 짚어. 사실은 기사·공식 자료 링크를 달고, 운영자 의견은 「💭 루리의 시선」 상자로 따로 표시해. 투자 관련 글은 전망 정리일 뿐 투자 권유가 아니야. 정치인 비방·연예인 사생활은 다루지 않아.</p></section>'
          f'<ul class="list">{li}</ul>' + rel_block('', [('/news/', '오늘의 기사 확인 신호'), ('/hot/', '핫이슈'), ('/mag/', '데일리 매거진')]),
          [('루리 줍줍', '/'), ('평론', '/review/')], noindex=not R)
     return urls, R
@@ -2068,8 +2091,8 @@ def review_pages():
 
 def build_apply(aps):
     for d_, r_ in AP_DUP.items():   # 같은 사업 중복 공고: 대표 페이지로 보내고 색인 제외
-        page(f'/a/{d_}/', '같은 공고로 합쳐졌어요', '같은 지원 사업의 대표 페이지로 합쳐졌어요.',
-             f'<h1>같은 공고로 합쳐졌어요</h1><p>같은 사업이 다른 출처에도 올라와 있어서 대표 페이지 하나로 합쳤어요.</p><p><a class="lab-cta" href="/a/{r_}/"><b>대표 공고 페이지로 가기 →</b></a></p><script>location.replace("/a/{r_}/")</script>',
+        page(f'/a/{d_}/', '같은 공고로 합쳐졌어', '같은 지원 사업의 대표 페이지로 합쳐졌어.',
+             f'<h1>같은 공고로 합쳐졌어</h1><p>같은 사업이 다른 출처에도 올라와 있어서 대표 페이지 하나로 합쳤어.</p><p><a class="lab-cta" href="/a/{r_}/"><b>대표 공고 페이지로 가기 →</b></a></p><script>location.replace("/a/{r_}/")</script>',
              noindex=True)
     # 메인 루리 상담(청약·지원금)용 데이터 (2026-10-17)
     with open(os.path.join(ROOT, 'apply.json'), 'w', encoding='utf-8', newline='\n') as f:
@@ -2084,9 +2107,9 @@ def build_apply(aps):
         tb = re.sub(r'<tr><th>출처</th><td>[^<]*</td></tr>', lambda m: '<tr><th>출처</th><td>' + (f'<a href="{E(a["url"])}" target="_blank" rel="noopener nofollow">공식 공고 원문 →</a> (수집: {E(_sn)})' if a.get('url') else E(_sn)) + '</td></tr>', tb)
         btn = (f'<a class="btn" href="{E(a["url"])}" target="_blank" rel="noopener nofollow">{E(CQ.link_label(a["url"]).replace("공식 공고·접수", "공식 공고·신청"))} →</a>' if a['url'] else '')
         body = f'''<p class="bc"><a href="/">홈</a> › <a href="/apply/">청약·신청</a></p>
-<section class="dh" data-c="apply"><span class="ic big">{a["icon"]}</span><h1>{E(a["title"])}</h1><p class="lead">{'<span class="d">상시</span> 지금 신청할 수 있어요' if a.get('always') else f'<span class="d{" u3" if n <= 3 else " hot" if n <= 7 else ""}">{dd}</span> {ddot(a["end"])} 마감'}</p></section>
+<section class="dh" data-c="apply"><span class="ic big">{a["icon"]}</span><h1>{E(a["title"])}</h1><p class="lead">{'<span class="d">상시</span> 지금 신청할 수 있어' if a.get('always') else f'<span class="d{" u3" if n <= 3 else " hot" if n <= 7 else ""}">{dd}</span> {ddot(a["end"])} 마감'}</p></section>
 <div class="my-acts" data-id="a:{E(a['id'])}" data-title="{E(a['title'])}" data-end="{'' if a.get('always') else a['end']}"></div>
-{say('o_suit', f'신청 기간이 지나면 받을 수 없는 경우가 많아요. 자격은 <b>공식 공고</b>에서 한 번 더 확인해 주세요.')}
+{say('o_suit', f'신청 기간이 지나면 받을 수 없는 경우가 많아. 자격은 <b>공식 공고</b>에서 한 번 더 확인해.')}
 <div class="panel"><table class="info">{tb}</table>{btn}</div>
 {share_bar(a['title'], f'「{a["title"]}」 ' + ('상시 신청' if a.get('always') else f'{ddot(a["end"])[5:]} 마감') + ' — 대상·신청처 정리')}{comm_banner()}{join_cta('apply')}{ap_insight(a, aps)}<h2>신청 전 확인할 것</h2><ul class="chk"><li>신청 자격(나이·소득·자산·거주지·무주택 여부)</li><li>필요 서류와 본인인증 수단</li><li>발표일과 계약·납부 일정</li></ul>'''
         _org = (a.get('org') or '').strip()[:14]
@@ -2101,13 +2124,13 @@ def build_apply(aps):
              [('루리 줍줍', '/'), ('청약·신청', '/apply/'), (a['title'], f'/a/{a["id"]}/')], noindex=sum(1 for k in ('target', 'benefit', 'how', 'income') if a.get(k)) < 2, full_title=_ft)
         GONE[f'/a/{a["id"]}/'] = [a['title'], '/apply/', '청약·신청', a['end']]
     _ord = sorted(aps, key=lambda a: (bool(a.get('always')), a['end'], a['title']))   # 마감 임박순, 상시 신청은 맨 뒤
-    lst = ''.join(ap_card(a) for a in _ord[:30]) or '<li class="empty"><img src="/assets/ruri/o_desk_s.webp" width="64" height="88" alt=""><p>지금 정리 중이에요. 곧 일정을 올릴게요!</p></li>'
+    lst = ''.join(ap_card(a) for a in _ord[:30]) or '<li class="empty"><img src="/assets/ruri/o_desk_s.webp" width="64" height="88" alt=""><p>지금 정리 중이야. 곧 올릴게!</p></li>'
     _gc = collections.Counter(ap_group(a) for a in aps)
     _chips = '<button type="button" class="on" data-g="">전체 <small>%d</small></button>' % len(aps) + ''.join(f'<button type="button" data-g="{g_}">{g_} <small>{_gc.get(g_, 0)}</small></button>' for g_ in ('개인·가구', '사업자·기업', '주거 청약', '공모주'))
     _rg = [r_ for r_, _n in collections.Counter(ap_region(a) for a in aps if ap_region(a)).most_common()]
     _ropt = '<option value="">지역 전체</option>' + ''.join(f'<option value="{E(r_)}">{E(r_)}</option>' for r_ in _rg) + '<option value="__none">지역 미확인</option>'
-    page('/apply/', f'지원금 신청 {YR} — 청년·신혼·지역별 신청 가능한 지원금·청약 {len(aps)}건 (마감순)', f'개인·가구 {_gc.get("개인·가구", 0)}건, 사업자·기업 {_gc.get("사업자·기업", 0)}건, 주거 청약 {_gc.get("주거 청약", 0)}건, 공모주 {_gc.get("공모주", 0)}건을 마감 임박순으로 정리했어요. 지역·대상·마감 필터와 공식 신청처 링크가 있어요.',
-         f'''<p class="bc"><a href="/">홈</a> › 지원금·청약</p><h1 class="ap-h1">지원금·청약</h1><p class="ap-sub">진행 중 {len(aps)}건 · 마감 임박순(상시 신청은 맨 뒤) · {NOW_KST():%m/%d %H:%M} 갱신(한국 시간)</p><p class="top-ans"><b>한눈에 보기</b> · {TODAY.year}년 {TODAY.month}월 {TODAY.day}일(한국 시간) 기준 신청 가능한 지원금·청약은 {len(aps)}건이고, 7일 안에 마감하는 것은 {sum(1 for a_ in aps if not a_.get('always') and a_['end'] >= TODAY.isoformat() and dday(a_['end'])[0] <= 7)}건입니다. 대상·지역·마감일로 아래에서 바로 걸러 보세요. 신청 전 공식 공고를 한 번 더 확인하세요.</p>
+    page('/apply/', f'지원금 신청 {YR} — 청년·신혼·지역별 신청 가능한 지원금·청약 {len(aps)}건 (마감순)', f'개인·가구 {_gc.get("개인·가구", 0)}건, 사업자·기업 {_gc.get("사업자·기업", 0)}건, 주거 청약 {_gc.get("주거 청약", 0)}건, 공모주 {_gc.get("공모주", 0)}건을 마감 임박순으로 정리했어. 지역·대상·마감 필터와 공식 신청처 링크가 있어.',
+         f'''<p class="bc"><a href="/">홈</a> › 지원금·청약</p><h1 class="ap-h1">지원금·청약</h1><p class="ap-sub">진행 중 {len(aps)}건 · 마감 임박순(상시 신청은 맨 뒤) · {NOW_KST():%m/%d %H:%M} 갱신(한국 시간)</p><p class="top-ans"><b>한눈에 보기</b> · {TODAY.year}년 {TODAY.month}월 {TODAY.day}일(한국 시간) 기준 신청 가능한 지원금·청약은 {len(aps)}건이고, 7일 안에 마감하는 것은 {sum(1 for a_ in aps if not a_.get('always') and a_['end'] >= TODAY.isoformat() and dday(a_['end'])[0] <= 7)}건이야. 대상·지역·마감일로 아래에서 바로 걸러 봐. 신청 전에 공식 공고는 한 번 더 확인해.</p>
 <div class="ap-bar" role="search"><div class="ap-chips" role="group" aria-label="유형">{_chips}</div>
 <div class="ap-row"><input type="search" id="ap-q" placeholder="공고명·기관·대상 검색" aria-label="검색"><select id="ap-r" aria-label="지역">{_ropt}</select><select id="ap-d" aria-label="마감"><option value="">마감 전체</option><option value="7">7일 이내</option><option value="30">30일 이내</option><option value="x">상시 신청 제외</option></select></div>
 <p class="ap-cnt" id="ap-cnt" aria-live="polite"></p></div>
@@ -2118,8 +2141,8 @@ def build_apply(aps):
          [('루리 줍줍', '/'), ('지원금·청약', '/apply/')])
 
 
-HERO_JS = '''<script>(function(){var o=[['smile','오늘도 마감 임박 공모전 챙겨 왔어요 ✨'],['o_suit','오늘의 공모전 브리핑 시작할게요!'],['o_gray','상금 큰 공모전부터 정리해 뒀어요.'],['o_present','이번 주 마감, 같이 확인해 볼까요?'],['o_desk','새 공모전을 방금 업데이트했어요.'],['o_cardigan','글쓰기 공모전도 많아요. 천천히 골라 보세요.'],['o_trench','해외 공모전도 챙겨 왔어요.'],['o_anchor','마감 소식 전해 드릴게요!'],['o_vest','응모 전 체크리스트도 잊지 마세요.']];
-try{var p=o[Math.floor(Math.random()*o.length)],i=document.getElementById('hero-ruri'),b=document.querySelector('.hb');if(i){i.src='/assets/ruri/'+p[0]+'.webp'}if(b){b.innerHTML='안녕하세요, <b>루리</b>예요!<br>'+p[1]}}catch(e){}})();</script>'''
+HERO_JS = '''<script>(function(){var o=[['smile','오늘도 마감 임박 공모전 챙겨 왔어 ✨'],['o_suit','오늘의 공모전 브리핑 시작할게!'],['o_gray','상금 큰 공모전부터 정리해 뒀어.'],['o_present','이번 주 마감, 같이 확인해 보자.'],['o_desk','새 공모전을 방금 업데이트했어.'],['o_cardigan','글쓰기 공모전도 많아. 천천히 골라.'],['o_trench','해외 공모전도 챙겨 왔어.'],['o_anchor','마감 소식 전할게!'],['o_vest','응모 전 체크리스트도 잊지 마.']];
+try{var p=o[Math.floor(Math.random()*o.length)],i=document.getElementById('hero-ruri'),b=document.querySelector('.hb');if(i){i.src='/assets/ruri/'+p[0]+'.webp'}if(b){b.innerHTML='안녕, <b>루리</b>야!<br>'+p[1]}}catch(e){}})();</script>'''
 
 
 YR = TODAY.year  # 허브 제목 연도는 해가 바뀌면 자동으로 넘어감 (계산기 제목은 요율 확인 뒤 사람이 바꿈)
@@ -2138,9 +2161,9 @@ def cat_stats(n, cl):
     wk = sum(1 for x in cl if dday(x['end'])[0] <= 7)
     ef = collections.Counter(x['effort'] for x in cl if x.get('effort')).most_common(3)
     big = max((x for x in cl if x['id'] in _vals), key=lambda x: _vals[x['id']], default=None)
-    t = f'지금 접수 중인 {n} 공모전은 {len(cl)}건이고, 이 중 {wk}건이 일주일 안에 마감해요. '
+    t = f'지금 접수 중인 {n} 공모전은 {len(cl)}건이고, 이 중 {wk}건이 일주일 안에 마감해. '
     if pv:
-        t += f'{_bs}이 숫자로 나온 {len(pv)}건의 중간값은 {won_txt(pv[len(pv) // 2])}, 가장 큰 곳은 「{big["title"][:30]}」({won_txt(_vals[big["id"]])})예요. '
+        t += f'{_bs}이 숫자로 나온 {len(pv)}건의 중간값은 {won_txt(pv[len(pv) // 2])}, 가장 큰 곳은 「{big["title"][:30]}」({won_txt(_vals[big["id"]])})야. '
     if ef:
         t += '제출물은 ' + ', '.join(f'{k} {v}건' for k, v in ef) + ' 순으로 많아요.'
     return f'<p class="cat-st">📌 {E(t)}</p>'
@@ -2190,18 +2213,18 @@ def region_pages(aps):
             kinds = collections.Counter(a['kind'] for a in M).most_common(3)
             wk = sum(1 for a in M if not a.get('always') and dday(a['end'])[0] <= 7)
             info = sum(1 for a in M if a.get('target') or a.get('benefit'))
-            t = (f'지금 {nm}에서 신청할 수 있는 {tn} 공고는 {len(M)}건이에요. ' + (f'이 중 {wk}건이 일주일 안에 마감하고, ' if wk else '') +
-                 ('종류는 ' + ', '.join(f'{k} {v}건' for k, v in kinds) + '이에요. ' if kinds else '') +
-                 (f'대상·혜택이 정리된 공고는 {info}건이라, 나머지는 공식 공고에서 자격을 꼭 확인하세요. ' if M else '') +
-                 (f'가장 먼저 끝나는 건 「{M[0]["title"][:30]}」({ddot(M[0]["end"])} 마감)이에요.' if M and not M[0].get('always') else ''))
+            t = (f'지금 {nm}에서 신청할 수 있는 {tn} 공고는 {len(M)}건이야. ' + (f'이 중 {wk}건이 일주일 안에 마감하고, ' if wk else '') +
+                 ('종류는 ' + ', '.join(f'{k} {v}건' for k, v in kinds) + '이야. ' if kinds else '') +
+                 (f'대상·혜택이 정리된 공고는 {info}건이라, 나머지는 공식 공고에서 자격을 꼭 확인해. ' if M else '') +
+                 (f'가장 먼저 끝나는 건 「{M[0]["title"][:30]}」({ddot(M[0]["end"])} 마감)이야.' if M and not M[0].get('always') else ''))
             orgs = collections.Counter(a['org'] for a in M if a.get('org') and a['org'] != '공고 참조').most_common(3)
             if orgs:
-                t += ' 공고를 많이 낸 곳은 ' + ', '.join(f'{o} {n}건' for o, n in orgs) + '이에요.'
-            guide = {'youth': f'{nm} 청년 지원금은 시·도와 시·군·구가 따로 공고하는 경우가 많아요. 거주 기간(보통 6개월~1년 이상), 나이(만 19~34세 또는 39세), 소득 기준(기준 중위소득 %)을 먼저 확인하고, 국가 사업인 청년월세 지원·청년도약계좌와 겹쳐 받을 수 있는지도 공고에서 보세요.',
-                     'house': f'{nm} 아파트 청약은 청약홈, 공공임대는 LH청약플러스와 지역 도시공사, 월세 지원은 복지로와 시·군·구에서 신청해요. 청약은 해당 지역 거주 기간에 따라 우선 공급이 갈리니 <a href="/apply/recommend/">청약 가점 추천</a>으로 내 점수부터 계산해 보세요.',
-                     '': f'{nm} 지역 공고만 골라 마감순으로 모았어요. 전국 대상 공고 {len(nat)}건은 <a href="/apply/">전체 일정</a>에서 함께 확인하세요.'}[tk]
+                t += ' 공고를 많이 낸 곳은 ' + ', '.join(f'{o} {n}건' for o, n in orgs) + '이야.'
+            guide = {'youth': f'{nm} 청년 지원금은 시·도와 시·군·구가 따로 공고하는 경우가 많아. 거주 기간(보통 6개월~1년 이상), 나이(만 19~34세 또는 39세), 소득 기준(기준 중위소득 %)을 먼저 확인하고, 국가 사업인 청년월세 지원·청년도약계좌와 겹쳐 받을 수 있는지도 공고에서 봐.',
+                     'house': f'{nm} 아파트 청약은 청약홈, 공공임대는 LH청약플러스와 지역 도시공사, 월세 지원은 복지로와 시·군·구에서 신청해. 청약은 해당 지역 거주 기간에 따라 우선 공급이 갈리니 <a href="/apply/recommend/">청약 가점 추천</a>으로 내 점수부터 계산해 봐.',
+                     '': f'{nm} 지역 공고만 골라 마감순으로 모았어. 전국 대상 공고 {len(nat)}건은 <a href="/apply/">전체 일정</a>에서 함께 확인해.'}[tk]
             subs = ' · '.join(f'<a href="/apply/r/{sl}/{k2 + "/" if k2 else ""}"{" class=on" if k2 == tk else ""}>{nm} {n2}</a>' for k2, (n2, f2) in REG_TYPES.items())
-            lst = ''.join(ap_card(a) for a in M) or '<li class="empty">지금은 이 지역 공고가 없어요.</li>'
+            lst = ''.join(ap_card(a) for a in M) or '<li class="empty">지금은 이 지역 공고가 없어.</li>'
             fn = SIDO_FULL.get(sl, nm)   # 2026-10-19 검색 시나리오: 검색어는 「경기도」「서울시」처럼 정식 이름으로 친다
             title = {'': f'{fn} 지원금·청약 {YR} — 진행 중 {len(M)}건 마감순', 'youth': f'{fn} 청년 지원금 {YR} — 종류·금액·신청기간 ({len(M)}건)', 'house': f'{fn} 청약 일정 {YR} — 아파트·공공임대·월세 지원 ({len(M)}건)'}[tk]
             body = (f'<p class="bc"><a href="/">홈</a> › <a href="/apply/">지원금·청약</a> › <a href="/apply/r/">지역별</a> › {nm}</p><h1>📍 {E(title)}</h1><p class="hm-links">{subs}</p>'
@@ -2212,15 +2235,15 @@ def region_pages(aps):
             urls.append(path)
         idx.append((sl, nm, len(L)))
     body = (f'<p class="bc"><a href="/">홈</a> › <a href="/apply/">지원금·청약</a> › 지역별</p><h1>📍 지역별 지원금·청약 {YR}</h1>'
-            '<p>시·도별로 지금 신청할 수 있는 지원금·청약·월세 지원 공고를 모았어요. 지역 칸이나 제목에 시·도가 적힌 공고만 들어가고, 전국 대상 공고는 <a href="/apply/">전체 일정</a>에 있어요. 매시간 새 공고를 반영해요.</p><ul class="reg-l">'
+            '<p>시·도별로 지금 신청할 수 있는 지원금·청약·월세 지원 공고를 모았어. 지역 칸이나 제목에 시·도가 적힌 공고만 들어가고, 전국 대상 공고는 <a href="/apply/">전체 일정</a>에 있어. 매시간 새 공고를 반영해.</p><ul class="reg-l">'
             + ''.join(f'<li><a href="/apply/r/{sl}/"><b>{nm}</b><span>{n}건</span></a></li>' for sl, nm, n in sorted(idx, key=lambda x: -x[2])) + '</ul>'
             '<h2>이 목록을 쓰는 방법</h2>'
-            '<ol><li>사는 시·도를 눌러 마감이 가까운 순서로 정렬된 공고를 봐요. 시·도 안에서 「청년」「청약」으로 한 번 더 나눌 수 있어요.</li>'
-            '<li>공고 카드의 신청 기간·대상은 요약이에요. 소득·재산·거주 기간 같은 세부 조건은 지자체마다 달라서, 신청 전에 카드의 공식 신청처 링크에서 공고 원문을 꼭 확인하세요.</li>'
-            '<li>같은 이름의 지원금도 지자체가 연도마다 예산과 대상을 바꿔요. 이미 마감됐거나 공고가 없으면 해당 시·도 칸에 「지금은 공고가 없어요」로 보여요.</li>'
-            '<li>시·도 이름이 적히지 않은 전국 대상 공고(예: 중앙부처 사업)는 이 목록이 아니라 <a href="/apply/">전체 일정</a>에 있어요.</li></ol>'
-            '<p class="note">공고 정보는 공식 사이트에 올라온 내용을 모아 보여 주는 안내이고, 신청 접수는 각 기관 사이트에서만 해요.</p>')
-    page('/apply/r/', f'지역별 지원금·청약 {YR} — 서울·경기·부산 등 시·도별 신청 일정', '시·도별 청년 지원금, 월세 지원, 아파트 청약 일정을 마감순으로 정리했어요.', body,
+            '<ol><li>사는 시·도를 눌러 마감이 가까운 순서로 정렬된 공고를 봐. 시·도 안에서 「청년」「청약」으로 한 번 더 나눌 수 있어.</li>'
+            '<li>공고 카드의 신청 기간·대상은 요약이야. 소득·재산·거주 기간 같은 세부 조건은 지자체마다 달라서, 신청 전에 카드의 공식 신청처 링크에서 공고 원문을 꼭 확인해.</li>'
+            '<li>같은 이름의 지원금도 지자체가 연도마다 예산과 대상을 바꿔. 이미 마감됐거나 공고가 없으면 해당 시·도 칸에 「지금은 공고가 없어」로 보여.</li>'
+            '<li>시·도 이름이 적히지 않은 전국 대상 공고(예: 중앙부처 사업)는 이 목록이 아니라 <a href="/apply/">전체 일정</a>에 있어.</li></ol>'
+            '<p class="note">공고 정보는 공식 사이트에 올라온 내용을 모아 보여 주는 안내이고, 신청 접수는 각 기관 사이트에서만 해.</p>')
+    page('/apply/r/', f'지역별 지원금·청약 {YR} — 서울·경기·부산 등 시·도별 신청 일정', '시·도별 청년 지원금, 월세 지원, 아파트 청약 일정을 마감순으로 정리했어.', body,
          [('루리 줍줍', '/'), ('지원금·청약', '/apply/'), ('지역별', '/apply/r/')])
     return ['/apply/r/'] + urls
 
@@ -2228,10 +2251,10 @@ def region_pages(aps):
 XTOPIC = {  # 2026-10-19 홍보 세션 키워드 구멍(구글 자동완성 866개): 주제 × 시·도, 진행 중 2건 이상인 조합만 만든다
     'youth-rent': ('청년 월세 지원', '🏠', lambda a: re.search(r'청년', a['title']) and re.search(r'월세|주거비|임차|전월세|보증금|이사비|중개보수|주거', a['title']),
                    lambda fn, nm: f'청년 월세 지원 {fn if nm == "경기" else nm} 조건·신청 ({YR})',
-                   '청년 월세·주거비 지원은 보통 무주택 청년이 대상이고, 부모와 따로 사는지(독립 거주), 본인·부모 소득(기준 중위소득 %), 임차보증금·월세 상한을 함께 봐요. 기준은 사업마다 달라서 아래 표의 대상 칸과 공고 원문을 꼭 같이 확인하세요. 필요한 서류와 지급일도 공고마다 달라요.'),
+                   '청년 월세·주거비 지원은 보통 무주택 청년이 대상이고, 부모와 따로 사는지(독립 거주), 본인·부모 소득(기준 중위소득 %), 임차보증금·월세 상한을 함께 봐. 기준은 사업마다 달라서 아래 표의 대상 칸과 공고 원문을 꼭 같이 확인해. 필요한 서류와 지급일도 공고마다 달라.'),
     'newlywed': ('신혼부부 지원금·결혼장려금', '💍', lambda a: re.search(r'신혼|결혼|예비부부|혼인|웨딩', a['title'] + ' ' + (a.get('target') or '')),
                  lambda fn, nm: f'{fn} 신혼부부 지원금·결혼장려금 {YR}',
-                 '신혼부부 지원은 혼인 기간, 부부 합산 소득, 해당 지역 거주 기간을 공고마다 다르게 봐요. 결혼장려금처럼 현금으로 주는 것과 전세·월세 대출이자, 공공임대·특별공급처럼 주거로 돕는 것은 신청처가 달라 따로 신청해야 하는 경우가 많아요.'),
+                 '신혼부부 지원은 혼인 기간, 부부 합산 소득, 해당 지역 거주 기간을 공고마다 다르게 봐. 결혼장려금처럼 현금으로 주는 것과 전세·월세 대출이자, 공공임대·특별공급처럼 주거로 돕는 것은 신청처가 달라 따로 신청해야 하는 경우가 많아.'),
 }
 XMADE = {}
 
@@ -2285,13 +2308,13 @@ def cross_pages(aps):
             rows = ''.join(f'<tr><td><a href="/a/{a["id"]}/">{E(a["title"][:60])}</a><br><small>{E(a["org"])}</small></td><td>{_xcell(_xtarget(a))}</td>'
                            f'<td>{_xcell(a.get("benefit"))}</td><td>{_xcell(a.get("how"))}</td><td>{"상시" if a.get("always") else ddot(a["end"])}</td></tr>' for a in M)
             first = next((a for a in M if not a.get('always')), None)
-            stat = (f'지금 {fn}에서 신청할 수 있는 {tn} 공고는 {len(M)}건이에요. ' + (f'이 중 {wk}건은 일주일 안에 마감해요. ' if wk else '')
-                    + (f'가장 먼저 끝나는 건 「{first["title"][:30]}」({ddot(first["end"])} 마감)이에요.' if first else ''))
+            stat = (f'지금 {fn}에서 신청할 수 있는 {tn} 공고는 {len(M)}건이야. ' + (f'이 중 {wk}건은 일주일 안에 마감해. ' if wk else '')
+                    + (f'가장 먼저 끝나는 건 「{first["title"][:30]}」({ddot(first["end"])} 마감)이야.' if first else ''))
             others = ' · '.join(f'<a href="/apply/{tk}/{s2}/">{n2}</a>' for s2, n2, _ in SIDO if s2 != sl and len(by.get(s2, [])) >= 2)
             body = (f'<p class="bc"><a href="/">홈</a> › <a href="/apply/">지원금·청약</a> › <a href="/apply/{tk}/">{tn}</a> › {nm}</p><h1>{ic} {E(title)}</h1>'
                     f'<p class="cat-st">📌 {E(stat)}</p><p>{guide}</p>'
                     f'<h2>{nm} 공고별 조건 한눈에</h2><div class="tblw"><table class="xt"><thead><tr><th>공고</th><th>대상</th><th>지원 내용</th><th>신청 방법</th><th>마감</th></tr></thead><tbody>{rows}</tbody></table></div>'
-                    '<p class="note">대상·지원 내용·신청 방법은 공고에서 확인된 값만 적었어요. 비어 있는 칸은 공고 원문(각 공고 페이지의 공식 공고 링크)에서 확인하세요. 서류와 지급일은 공고마다 달라요.</p>'
+                    '<p class="note">대상·지원 내용·신청 방법은 공고에서 확인된 값만 적었어. 비어 있는 칸은 공고 원문(각 공고 페이지의 공식 공고 링크)에서 확인해. 서류와 지급일은 공고마다 달라.</p>'
                     f'<h2>진행 중 공고 (마감순)</h2><ul class="list">{"".join(ap_card(a) for a in M)}</ul>'
                     + (f'<p class="hm-links">다른 지역 {tn}: {others}</p>' if others else '')
                     + ((cp_widget('자취 필수템', 'apply') or cp_box('월세 자취', '자취 시작할 때 많이 사는 것:', 1)) if tk == 'youth-rent' else '')
@@ -2309,7 +2332,7 @@ def cross_pages(aps):
         idx = ''.join(f'<li><a href="/apply/{tk}/{sl}/"><b>{nm}</b><span>{n}건</span></a></li>' for sl, nm, n in sorted(made, key=lambda x: -x[2]))
         title = f'청년 월세 지원금 {YR} — 지역별 조건·신청 ({len(allm)}건)'
         body = (f'<p class="bc"><a href="/">홈</a> › <a href="/apply/">지원금·청약</a> › {tn}</p><h1>{ic} {E(title)}</h1>'
-                f'<p class="cat-st">📌 제목에 청년과 월세·주거비·임차 등이 들어간 진행 중 공고는 모두 {len(allm)}건이에요.</p><p>{guide}</p>'
+                f'<p class="cat-st">📌 제목에 청년과 월세·주거비·임차 등이 들어간 진행 중 공고는 모두 {len(allm)}건이야.</p><p>{guide}</p>'
                 + (f'<h2>지역별로 보기</h2><ul class="reg-l">{idx}</ul>' if idx else '')
                 + f'<h2>진행 중 공고 (마감순)</h2><ul class="list">{"".join(ap_card(a) for a in allm)}</ul>'
                 + (cp_widget('자취 필수템', 'apply') or cp_box('월세 자취', '자취 시작할 때 많이 사는 것:', 1))
@@ -2330,11 +2353,11 @@ def apply_hubs(aps):
         sec = lambda t, X: (f'<h2>{t} ({len(X)}건)</h2><ul class="list">{"".join(ap_card(a) for a in sorted(X, key=lambda a: a.get("end") or ""))}</ul>' if X else '')
         path = f'/apply/month/{ym}/'
         body = (f'<p class="bc"><a href="/">홈</a> › <a href="/apply/">지원금·청약</a> › {m}월 일정</p><h1>📅 {m}월 청약 일정 {mo.year} — 아파트·공공임대·공모주·지원금 ({len(L)}건)</h1>'
-                f'<p class="cat-st">📌 {mo.year}년 {m}월에 접수를 시작하거나 마감하는 공고 {len(L)}건이에요(아파트·임대 {len(apt)}건, 공모주 {len(ipo)}건, 지원금 등 {len(etc)}건). 공모주는 투자 상품이라 청약 전 투자설명서를 꼭 읽어 보세요.</p>'
+                f'<p class="cat-st">📌 {mo.year}년 {m}월에 접수를 시작하거나 마감하는 공고 {len(L)}건이야(아파트·임대 {len(apt)}건, 공모주 {len(ipo)}건, 지원금 등 {len(etc)}건). 공모주는 투자 상품이라 청약 전 투자설명서를 꼭 읽어 봐.</p>'
                 f'<p class="hm-scope">기준: 공공·지자체·청약홈 공고 중 접수 시작일이나 마감일이 {m}월인 것 · {NOW_KST():%m/%d %H:%M} 갱신(한국 시간)</p>'
                 + sec('🏠 아파트·공공임대', apt) + sec('📈 공모주 (투자 권유 아님)', ipo) + sec('💰 지원금·기타', etc)
-                + '<h2>청약홈 신청 방법</h2><ol><li>청약홈(applyhome.co.kr)에 접속해 공동·금융인증서나 간편인증으로 로그인해요.</li><li>「청약 신청」에서 공고 단지와 주택형을 고르고, 특별공급·일반공급(1·2순위) 접수일에 맞춰 신청해요.</li><li>신청 전 「청약 자격 확인」으로 무주택 기간·청약통장 가입 기간을 확인하고, 신청 뒤 「청약 신청 내역」에서 접수됐는지 꼭 확인해요.</li></ol>'
-                + '<h2>청약 철회(신청 취소)</h2><p>접수 기간 안에는 청약홈의 청약 신청 내역에서 신청을 취소할 수 있어요. 당첨된 뒤 계약하지 않으면 당첨자로 관리돼 재당첨 제한 같은 불이익이 생길 수 있으니, 단지 공고의 「당첨자 계약 포기」 안내를 미리 읽어 두세요.</p><p class="note">일반적인 절차 안내예요. 단지마다 다를 수 있으니 공고문과 청약홈 안내(1644-7445)를 기준으로 하세요.</p>'
+                + '<h2>청약홈 신청 방법</h2><ol><li>청약홈(applyhome.co.kr)에 접속해 공동·금융인증서나 간편인증으로 로그인해.</li><li>「청약 신청」에서 공고 단지와 주택형을 고르고, 특별공급·일반공급(1·2순위) 접수일에 맞춰 신청해.</li><li>신청 전 「청약 자격 확인」으로 무주택 기간·청약통장 가입 기간을 확인하고, 신청 뒤 「청약 신청 내역」에서 접수됐는지 꼭 확인해.</li></ol>'
+                + '<h2>청약 철회(신청 취소)</h2><p>접수 기간 안에는 청약홈의 청약 신청 내역에서 신청을 취소할 수 있어. 당첨된 뒤 계약하지 않으면 당첨자로 관리돼 재당첨 제한 같은 불이익이 생길 수 있으니, 단지 공고의 「당첨자 계약 포기」 안내를 미리 읽어 둬.</p><p class="note">일반적인 절차 안내야. 단지마다 다를 수 있으니 공고문과 청약홈 안내(1644-7445)를 기준으로 해.</p>'
                 + rel_block(r'청약|지원금|청년', [('/apply/recommend/', '청약 가점 계산기'), ('/apply/r/', '지역별 지원금·청약'), ('/apply/', '전체 일정')]))
         page(path, f'{m}월 청약 일정 {mo.year} — 아파트·공공임대·공모주 ({len(L)}건)', f'{mo.year}년 {m}월 청약 일정: 아파트·공공임대 {len(apt)}건, 공모주 {len(ipo)}건, 지원금 {len(etc)}건 접수 시작·마감일 정리.',
              body, [('루리 줍줍', '/'), ('지원금·청약', '/apply/'), (f'{m}월 일정', path)], noindex=len(L) < 5)
@@ -2342,10 +2365,10 @@ def apply_hubs(aps):
     L = [a for a in aps if re.search(r'신혼|결혼|예비부부|웨딩|혼인', a['title'] + ' ' + (a.get('target') or ''))]
     by = collections.Counter(SIDO_FULL.get(sido_of(a), '전국·기타') for a in L)
     body = (f'<p class="bc"><a href="/">홈</a> › <a href="/apply/">지원금·청약</a> › 신혼부부</p><h1>💍 신혼부부 지원금 {YR} — 지역별 결혼·주거 지원 ({len(L)}건)</h1>'
-            f'<p class="cat-st">📌 제목이나 대상에 신혼·결혼·예비부부가 들어간 진행 중 공고 {len(L)}건이에요. 지역별로는 ' + ', '.join(f'{k} {v}건' for k, v in by.most_common(6)) + ' 순이에요.</p>'
-            '<p>신혼부부 지원은 혼인 기간(보통 7년 이내), 부부 합산 소득, 거주 기간 조건이 공고마다 달라요. 주거 지원(전세·월세·특별공급)과 결혼 장려금은 따로 신청하는 경우가 많으니 둘 다 확인해 보세요.</p>'
+            f'<p class="cat-st">📌 제목이나 대상에 신혼·결혼·예비부부가 들어간 진행 중 공고 {len(L)}건이야. 지역별로는 ' + ', '.join(f'{k} {v}건' for k, v in by.most_common(6)) + ' 순이야.</p>'
+            '<p>신혼부부 지원은 혼인 기간(보통 7년 이내), 부부 합산 소득, 거주 기간 조건이 공고마다 달라. 주거 지원(전세·월세·특별공급)과 결혼 장려금은 따로 신청하는 경우가 많으니 둘 다 확인해 봐.</p>'
             + ((f'<h2>지역별로 보기</h2><ul class="reg-l">' + ''.join(f'<li><a href="/apply/newlywed/{sl}/"><b>{nm}</b><span>{n}건</span></a></li>' for sl, nm, n in sorted(XMADE.get('newlywed', []), key=lambda x: -x[2])) + '</ul>') if XMADE.get('newlywed') else '')
-            + f'<p class="hm-scope">기준: 진행 중 공고 · {NOW_KST():%m/%d %H:%M} 갱신(한국 시간)</p><ul class="list">{"".join(ap_card(a) for a in L) or "<li class=empty>지금은 없어요.</li>"}</ul>'
+            + f'<p class="hm-scope">기준: 진행 중 공고 · {NOW_KST():%m/%d %H:%M} 갱신(한국 시간)</p><ul class="list">{"".join(ap_card(a) for a in L) or "<li class=empty>지금은 없어.</li>"}</ul>'
             + rel_block(r'신혼|청약|주거', [('/apply/recommend/', '청약 가점 계산기'), ('/apply/r/', '지역별 지원금·청약')]))
     page('/apply/newlywed/', f'신혼부부 지원금 {YR} — 지역별 결혼·주거 지원 ({len(L)}건)', f'신혼부부 지원금 {YR}: 진행 중 {len(L)}건을 지역별로. 결혼 장려금·전세·월세·특별공급 신청 기간과 대상.', body,
          [('루리 줍줍', '/'), ('지원금·청약', '/apply/'), ('신혼부부', '/apply/newlywed/')], noindex=len(L) < 5)
@@ -2362,15 +2385,15 @@ def week_hub(live):
     tg = collections.Counter(c['tags'][0] for c in L).most_common(3)
     ef = collections.Counter(c['effort'] for c in L if c.get('effort')).most_common(2)
     days = collections.Counter(c['end'] for c in L).most_common(1)
-    t = (f'{TODAY.month}/{TODAY.day}부터 {e7.month}/{e7.day}까지 마감하는 공모전은 {len(L)}건이에요. '
+    t = (f'{TODAY.month}/{TODAY.day}부터 {e7.month}/{e7.day}까지 마감하는 공모전은 {len(L)}건이야. '
          + (f'분야는 ' + ', '.join(f'{k} {v}건' for k, v in tg) + ' 순으로 많고, ' if tg else '')
-         + (f'제출물은 ' + ', '.join(f'{k} {v}건' for k, v in ef) + '이 많아요. ' if ef else '')
-         + (f'마감이 가장 몰린 날은 {ddot(days[0][0])[5:]}({days[0][1]}건)이에요. ' if days else '')
-         + (f'{_bs}이 가장 큰 곳은 「{big["title"][:30]}」({won_txt(_vals[big["id"]])})예요.' if big else ''))
+         + (f'제출물은 ' + ', '.join(f'{k} {v}건' for k, v in ef) + '이 많아. ' if ef else '')
+         + (f'마감이 가장 몰린 날은 {ddot(days[0][0])[5:]}({days[0][1]}건)이야. ' if days else '')
+         + (f'{_bs}이 가장 큰 곳은 「{big["title"][:30]}」({won_txt(_vals[big["id"]])})야.' if big else ''))
     _wfq, _wld = hub_extra('이번 주 마감 공모전', L, '/contest/week/')
     body = (f'<p class="bc"><a href="/">홈</a> › <a href="/contest/">공모전</a> › 이번 주 마감</p><h1>⏰ 이번 주 마감 공모전 ({TODAY.month}/{TODAY.day}~{e7.month}/{e7.day}, {len(L)}건)</h1>'
-            f'<p class="cat-st">📌 {E(t)}</p><p class="hm-scope">오늘 {TODAY.month}/{TODAY.day}(한국 시간) 기준 접수 마감 전 · {NOW_KST():%m/%d %H:%M} 갱신 · 마감 시각은 공식 공고 확인</p><p>남은 기간이 짧을수록 분량이 적은 슬로건·네이밍·사진 공모전부터 고르는 게 좋아요. 영상·기획서처럼 준비가 오래 걸리는 건 이번 주보다 다음 주 마감을 노리세요. 매시간 새로 정리돼요.</p>'
-            f'<ul class="list">{"".join(card(c) for c in L) or "<li class=empty>이번 주 마감 공모전이 없어요.</li>"}</ul>{_wfq}'
+            f'<p class="cat-st">📌 {E(t)}</p><p class="hm-scope">오늘 {TODAY.month}/{TODAY.day}(한국 시간) 기준 접수 마감 전 · {NOW_KST():%m/%d %H:%M} 갱신 · 마감 시각은 공식 공고 확인</p><p>남은 기간이 짧을수록 분량이 적은 슬로건·네이밍·사진 공모전부터 고르는 게 좋아. 영상·기획서처럼 준비가 오래 걸리는 건 이번 주보다 다음 주 마감을 노려. 매시간 새로 정리돼.</p>'
+            f'<ul class="list">{"".join(card(c) for c in L) or "<li class=empty>이번 주 마감 공모전이 없어.</li>"}</ul>{_wfq}'
             + rel_block(r'공모전|마감|응모', [('/contest/univ/', '대학생 공모전 모음'), ('/cat/video/', '영상 공모전 모음'), ('/widget/', '블로그용 이번 주 마감 위젯')]))
     page('/contest/week/', f'이번 주 마감 공모전 — {TODAY.month}/{TODAY.day}~{e7.month}/{e7.day} 마감 {len(L)}건 (상금·자격)', f'{TODAY.month}/{TODAY.day}~{e7.month}/{e7.day} 마감하는 공모전 {len(L)}건을 마감순으로 정리. 분야·상금·제출물 한눈에.',
          body, [('루리 줍줍', '/'), ('공모전', '/contest/'), ('이번 주 마감', '/contest/week/')], _wld)
@@ -2385,10 +2408,10 @@ def top_answer(nm, L):
     pv = [c for c in L if c['id'] in _vals]
     soon = min(L, key=lambda c: c['end'])
     wk = sum(1 for c in L if dday(c['end'])[0] <= 7)
-    s = f'{TODAY.year}년 {TODAY.month}월 {TODAY.day}일(한국 시간) 기준 접수 중인 {nm}은 {len(L)}건이고, 7일 안에 마감하는 공모전은 {wk}건입니다. 가장 먼저 끝나는 것은 「{E(soon["title"][:36])}」로 {ddot(soon["end"])} 마감입니다.'
+    s = f'{TODAY.year}년 {TODAY.month}월 {TODAY.day}일(한국 시간) 기준 접수 중인 {nm}은 {len(L)}건이고, 7일 안에 마감하는 공모전은 {wk}건이다. 가장 먼저 끝나는 것은 「{E(soon["title"][:36])}」로 {ddot(soon["end"])} 마감이다.'
     if pv:
         big = max(pv, key=lambda c: _vals[c['id']])
-        s += f' {_bs}이 가장 큰 것은 「{E(big["title"][:36])}」 {won_txt(_vals[big["id"]])}입니다.'
+        s += f' {_bs}이 가장 큰 것은 「{E(big["title"][:36])}」 {won_txt(_vals[big["id"]])}이다.'
     return f'<p class="top-ans"><b>한눈에 보기</b> · {s}</p>'
 
 
@@ -2403,10 +2426,10 @@ def hub_extra(nm, L, path):
     soon = min(L, key=lambda c: c['end'])
     wk = sum(1 for c in L if dday(c['end'])[0] <= 7)
     ef = collections.Counter(c['effort'] for c in L if c.get('effort')).most_common(2)
-    faq = [(f'지금 접수 중인 {nm}은 몇 개예요?', f'{TODAY.month}월 {TODAY.day}일(한국 시간) 기준 {len(L)}건이고, 일주일 안에 마감하는 건 {wk}건이에요. 매시간 새로 정리해요.'),
-           (f'{nm} 중 상금이 가장 큰 건 뭐예요?', (f'「{big["title"][:40]}」로 {won_txt(_vals[big["id"]])}이에요. {_bs}이 숫자로 나온 {len(pv)}건 기준이에요(1등 상금과 총상금은 섞어 비교하지 않아요).' if big else '상금이 숫자로 정리된 공모전이 아직 없어요. 공고마다 확인하세요.')),
-           (f'{nm} 마감은 언제 몰려 있어요?', f'{ddot(day[0])} 마감이 {day[1]}건으로 가장 많고, 가장 먼저 마감하는 건 「{soon["title"][:40]}」({ddot(soon["end"])})예요. 마감 시각은 공고마다 달라 공식 공고를 확인하세요.'),
-           ('무엇을 내야 하나요?', ('제출물은 ' + ', '.join(f'{k} {v}건' for k, v in ef) + ' 순으로 많아요. 분량·파일 형식은 공고마다 달라요.') if ef else '제출물은 공모전마다 달라요. 상세 페이지의 제출물 칸과 공식 공고를 확인하세요.')]
+    faq = [(f'지금 접수 중인 {nm}은 몇 개야?', f'{TODAY.month}월 {TODAY.day}일(한국 시간) 기준 {len(L)}건이고, 일주일 안에 마감하는 건 {wk}건이야. 매시간 새로 정리해.'),
+           (f'{nm} 중 상금이 가장 큰 건 뭐야?', (f'「{big["title"][:40]}」로 {won_txt(_vals[big["id"]])}이야. {_bs}이 숫자로 나온 {len(pv)}건 기준이야(1등 상금과 총상금은 섞어 비교하지 않아).' if big else '상금이 숫자로 정리된 공모전이 아직 없어. 공고마다 확인해.')),
+           (f'{nm} 마감은 언제 몰려 있어?', f'{ddot(day[0])} 마감이 {day[1]}건으로 가장 많고, 가장 먼저 마감하는 건 「{soon["title"][:40]}」({ddot(soon["end"])})야. 마감 시각은 공고마다 달라 공식 공고를 확인해.'),
+           ('무엇을 내야 해?', ('제출물은 ' + ', '.join(f'{k} {v}건' for k, v in ef) + ' 순으로 많아. 분량·파일 형식은 공고마다 달라.') if ef else '제출물은 공모전마다 달라. 상세 페이지의 제출물 칸과 공식 공고를 확인해.')]
     h = '<section class="hub-faq"><h2>❓ 자주 묻는 질문</h2>' + ''.join(f'<details class="faq"><summary>{E(q)}</summary><p>{E(a)}</p></details>' for q, a in faq) + '</section>'
     ld = {'@context': 'https://schema.org', '@graph': [
         {'@type': 'ItemList', 'name': f'{nm} {YR}', 'numberOfItems': len(L), 'itemListElement': [{'@type': 'ListItem', 'position': i + 1, 'url': f'{SITE}/c/{c["id"]}/', 'name': c['title']} for i, c in enumerate(L[:30])]},
@@ -2445,11 +2468,11 @@ def hub_seo(sl, title, nm, L):
         t = f'웹소설 공모전 {YR} 일정 — 접수 중 {n}건 마감순' + (f', 최고 {won_txt(big)}' if big else '')
     head = {'ai-video': '생성형 AI 영상·숏폼 공모전', 'novel': '단편소설·웹소설·신춘문예 공모전', 'idea': '정책 제안·기획 공모전', 'univ': '대학생 대상 공모전', 'slogan': '슬로건·네이밍·표어 공모전', 'youth': '학생(초·중·고) 대상 공모전',
             'video': '숏폼·UCC·홍보영상 공모전', 'webnovel': '웹소설 공모전'}[sl]
-    d = f'{head} {n}건 마감순.' + (f' {wk}건이 7일 내 마감해요.' if wk else '')
+    d = f'{head} {n}건 마감순.' + (f' {wk}건이 7일 내 마감해.' if wk else '')
     if pv:
         d += f' {bs} 중간값 {won_txt(med)}, 최고 {won_txt(big)}.'
     if ef:
-        d += ' 제출물은 ' + '·'.join(f'{k} {v}건' for k, v in ef[:3]) + (' 순이에요.' if len(ef) > 1 else '이에요.')
+        d += ' 제출물은 ' + '·'.join(f'{k} {v}건' for k, v in ef[:3]) + (' 순이야.' if len(ef) > 1 else '이야.')
     while len(d) > 150 and ('.' in d[:-1]):
         d = d[:d.rstrip('.').rfind('.') + 1]
     return t, d
@@ -2458,34 +2481,34 @@ def hub_seo(sl, title, nm, L):
 def contest_hubs(live):
     """자동완성 문구 허브: 대학생 공모전, AI 영상 공모전 (2026-10-18 키워드 전략 ③)."""
     H = [('univ', f'대학생 공모전 사이트 — {YR} 진행 중 모음 (마감순)', '대학생 공모전', lambda c: '대학생' in (c.get('elig') or ''),
-          '응모 자격에 대학생이 들어간 공모전만 모았어요. 대외활동 사이트마다 흩어진 공고를 마감·상금·제출물 기준으로 한 번에 비교할 수 있어요. 수상하면 재학·휴학 증명서를 요구하는 경우가 많으니 미리 발급해 두세요.'),
+          '응모 자격에 대학생이 들어간 공모전만 모았어. 대외활동 사이트마다 흩어진 공고를 마감·상금·제출물 기준으로 한 번에 비교할 수 있어. 수상하면 재학·휴학 증명서를 요구하는 경우가 많으니 미리 발급해 둬.'),
          ('ai-video', f'AI 영상 공모전 {YR} — 생성형 AI 영상·숏폼 공모전 모음', 'AI 영상 공모전', lambda c: re.search(r'AI|인공지능|생성형', c['title']) and (re.search(r'영상|숏폼|쇼츠|릴스|뮤직비디오|애니', c['title']) or '영상' in c['tags']),
-          '제목에 AI·생성형이 들어가고 영상·숏폼을 받는 공모전만 골랐어요. AI 도구로 만든 영상은 음원·이미지 저작권과 「AI 사용 표기」 규정을 공고마다 다르게 정해 두니 꼭 확인하세요.'),
+          '제목에 AI·생성형이 들어가고 영상·숏폼을 받는 공모전만 골랐어. AI 도구로 만든 영상은 음원·이미지 저작권과 「AI 사용 표기」 규정을 공고마다 다르게 정해 두니 꼭 확인해.'),
          ('youth', f'청소년 공모전 {YR} — 중고등학생·초등학생 공모전 모음', '청소년 공모전', lambda c: re.search(r'청소년|초등|중학|고등|초·중·고|초중고|(?<!대)학생', c.get('elig') or '') is not None,
-          '응모 자격에 청소년·초중고 학생이 들어간 공모전만 모았어요. 학생부가 따로 있는지, 보호자 동의서가 필요한지 공고에서 꼭 확인하세요. 봉사시간·생활기록부 반영 여부도 공고마다 달라요.'),
+          '응모 자격에 청소년·초중고 학생이 들어간 공모전만 모았어. 학생부가 따로 있는지, 보호자 동의서가 필요한지 공고에서 꼭 확인해. 봉사시간·생활기록부 반영 여부도 공고마다 달라.'),
          ('novel', f'소설 공모전 {YR} — 단편소설 공모전·웹소설 공모전 일정·신춘문예 모음', '소설 공모전', lambda c: re.search(r'소설|웹소설|신춘문예|문학상|스토리', c['title']) is not None,
-          '소설 공모전, 단편소설 공모전, 웹소설 공모전 일정을 마감순으로 한곳에 모았어요. 제목에 소설·웹소설·신춘문예·문학상이 들어간 공모전만 골랐어요. 분량(원고지 매수·글자 수)과 「미발표 창작물」 조건, 연재 플랫폼 공모는 연재 기간 규정을 먼저 확인하세요.'),
+          '소설 공모전, 단편소설 공모전, 웹소설 공모전 일정을 마감순으로 한곳에 모았어. 제목에 소설·웹소설·신춘문예·문학상이 들어간 공모전만 골랐어. 분량(원고지 매수·글자 수)과 「미발표 창작물」 조건, 연재 플랫폼 공모는 연재 기간 규정을 먼저 확인해.'),
          ('photo', f'사진 공모전 {YR} — 사진·포토 공모전 모음 (마감순)', '사진 공모전', lambda c: re.search(r'사진|포토|촬영', c['title']) is not None,
-          '제목에 사진·포토가 들어간 공모전만 모았어요. 촬영 원본(EXIF)을 요구하는 경우가 많고, 사람이 나오면 초상권 동의가 필요해요. 과한 보정·합성은 감점되거나 실격될 수 있어요.'),
+          '제목에 사진·포토가 들어간 공모전만 모았어. 촬영 원본(EXIF)을 요구하는 경우가 많고, 사람이 나오면 초상권 동의가 필요해. 과한 보정·합성은 감점되거나 실격될 수 있어.'),
          ('video', f'영상 공모전 {YR} — 숏폼·UCC·홍보영상 공모전 모음', '영상 공모전', lambda c: '영상' in c['tags'] or re.search(r'영상|숏폼|쇼츠|UCC|릴스', c['title']) is not None,
-          '영상 분야로 분류됐거나 제목에 영상·숏폼·UCC가 들어간 공모전만 모았어요. 길이(초)·해상도·파일 형식과 음원·폰트 저작권을 제출 전에 확인하세요.'),
+          '영상 분야로 분류됐거나 제목에 영상·숏폼·UCC가 들어간 공모전만 모았어. 길이(초)·해상도·파일 형식과 음원·폰트 저작권을 제출 전에 확인해.'),
          ('essay', f'에세이 공모전 {YR} — 수필·수기·대학생 에세이 공모전 모음', '에세이 공모전', lambda c: re.search(r'에세이|수필|수기|체험담|사연', c['title']) is not None,
-          '제목에 에세이·수필·수기·체험담이 들어간 공모전만 모았어요. 분량(원고지 매수·A4 장수)과 「실화 여부」 조건을 먼저 보고, 개인정보가 들어간 사연은 가명 처리 규정을 확인하세요.'),
+          '제목에 에세이·수필·수기·체험담이 들어간 공모전만 모았어. 분량(원고지 매수·A4 장수)과 「실화 여부」 조건을 먼저 보고, 개인정보가 들어간 사연은 가명 처리 규정을 확인해.'),
          ('poem', f'시 공모전 {YR} — 시·동시·디카시·백일장 모음', '시 공모전', lambda c: re.search(r'(?<![가-힣])시(?:\s|$|·|,|\)|부문| 공모)|동시|디카시|시조|백일장|시인|시화', c['title']) is not None,
-          '제목에 시·동시·디카시·시조·백일장이 들어간 공모전만 골랐어요. 편수(보통 3~5편)와 「미발표작」 조건, 원고 양식(한글 hwp·글꼴·크기)을 공고에서 꼭 확인하세요.'),
+          '제목에 시·동시·디카시·시조·백일장이 들어간 공모전만 골랐어. 편수(보통 3~5편)와 「미발표작」 조건, 원고 양식(한글 hwp·글꼴·크기)을 공고에서 꼭 확인해.'),
          ('character', f'캐릭터 공모전 {YR} — 캐릭터·마스코트 디자인 공모전 모음', '캐릭터 공모전', lambda c: re.search(r'캐릭터|마스코트|이모티콘', c['title']) is not None,
-          '캐릭터·마스코트·이모티콘 공모전만 모았어요. 대부분 「판넬(제출용 한 장)」에 기본형·응용 동작·컬러 칩·기획 의도를 함께 넣으라고 해요. 원본 파일(ai·psd) 제출 여부와 저작권 양도 조항을 먼저 보세요.'),
+          '캐릭터·마스코트·이모티콘 공모전만 모았어. 대부분 「판넬(제출용 한 장)」에 기본형·응용 동작·컬러 칩·기획 의도를 함께 넣으라고 해. 원본 파일(ai·psd) 제출 여부와 저작권 양도 조항을 먼저 봐.'),
          ('slogan', f'슬로건 공모전 {YR} — 슬로건·네이밍·표어 공모전 모음', '슬로건·네이밍 공모전', lambda c: re.search(r'슬로건|네이밍|명칭|표어|캐치프레이즈|이름\s*짓기|애칭|BI', c['title']) is not None,
-          '슬로건·네이밍·표어 공모전만 모았어요. 짧아서 응모가 많으니 「주최 기관의 핵심 단어 + 리듬」이 중요해요. <a href="/lab/">수상작 분석</a>에서 실제 당선작 구조를 먼저 보세요.'),
+          '슬로건·네이밍·표어 공모전만 모았어. 짧아서 응모가 많으니 「주최 기관의 핵심 단어 + 리듬」이 중요해. <a href="/lab/">수상작 분석</a>에서 실제 당선작 구조를 먼저 봐.'),
          ('ucc', f'UCC 공모전 {YR} — UCC·숏폼·홍보영상 공모전 (심사기준 정리)', 'UCC·숏폼 공모전', lambda c: re.search(r'UCC|숏폼|쇼츠|릴스|틱톡|짧은 영상|1분 영상|30초', c['title']) is not None,
-          'UCC·숏폼 공모전만 모았어요. 심사기준은 보통 주제 적합성·창의성·전달력·완성도(편집·음향)로 나뉘고, 조회수·좋아요를 점수에 넣는 공모전도 있어요. 음원·폰트 저작권 표기를 꼭 확인하세요.'),
+          'UCC·숏폼 공모전만 모았어. 심사기준은 보통 주제 적합성·창의성·전달력·완성도(편집·음향)로 나뉘고, 조회수·좋아요를 점수에 넣는 공모전도 있어. 음원·폰트 저작권 표기를 꼭 확인해.'),
          ('webnovel', f'웹소설 공모전 {YR} — 플랫폼 웹소설 공모전 일정', '웹소설 공모전', lambda c: re.search(r'웹소설|웹 소설|연재|노벨|문피아|카카오페이지|조아라', c['title']) is not None,
-          '웹소설 공모전만 마감순으로 모았어요. 플랫폼 공모전은 「공모 기간 안 연재 회차·글자 수」가 조건인 경우가 많아요. 연재 시작일과 최소 회차를 먼저 확인하세요.'),
+          '웹소설 공모전만 마감순으로 모았어. 플랫폼 공모전은 「공모 기간 안 연재 회차·글자 수」가 조건인 경우가 많아. 연재 시작일과 최소 회차를 먼저 확인해.'),
          ('idea', f'아이디어 공모전 {YR} — 정책 제안·기획 공모전 모음', '아이디어 공모전', lambda c: '아이디어·정책' in c['tags'] or re.search(r'아이디어|제안|정책', c['title']) is not None,
-          '아이디어·정책 제안 공모전만 모았어요. 이미 시행 중인 정책과 겹치지 않는지 검색해 보고, 현황 → 문제점 → 개선안 → 기대효과 순서로 쓰면 심사위원이 읽기 쉬워요.')]
+          '아이디어·정책 제안 공모전만 모았어. 이미 시행 중인 정책과 겹치지 않는지 검색해 보고, 현황 → 문제점 → 개선안 → 기대효과 순서로 쓰면 심사위원이 읽기 쉬워.')]
     for mo in sorted({int(c['end'][5:7]) for c in live if c['end'][:4] == str(TODAY.year)} & {TODAY.month, TODAY.month % 12 + 1}):
         H.append((f'deadline-{mo}', f'{mo}월 마감 공모전 {YR} — {mo}월에 접수 끝나는 공모전 모음', f'{mo}월 마감 공모전', (lambda m: lambda c: c['end'][:4] == str(TODAY.year) and int(c['end'][5:7]) == m)(mo),
-                  f'{YR}년 {mo}월 안에 접수가 끝나는 공모전만 마감 날짜순으로 모았어요. 같은 날 마감이 몰리면 접수 서버가 느려지니 하루 전에 내는 걸 권해요.'))
+                  f'{YR}년 {mo}월 안에 접수가 끝나는 공모전만 마감 날짜순으로 모았어. 같은 날 마감이 몰리면 접수 서버가 느려지니 하루 전에 내는 걸 권해.'))
     urls = []
     for sl, title, nm, f, intro in H:
         L = [c for c in live if f(c)]
@@ -2494,7 +2517,7 @@ def contest_hubs(live):
         fq, ld_ = hub_extra(nm, L, path)
         body = (f'<p class="bc"><a href="/">홈</a> › <a href="/contest/">공모전</a> › {nm}</p><h1>🏆 {E(title)}</h1><p>{intro}</p>{cat_stats(nm.replace(" 공모전", ""), L)}'
                 + top_answer(nm, L) + f'<p class="hm-scope">오늘 {TODAY.month}/{TODAY.day}(한국 시간) 기준 접수 마감 전 · 제목이 같은 공모전은 1건 · {NOW_KST():%m/%d %H:%M} 갱신 · 마감순</p>'
-                f'<h2>진행 중 {nm} ({len(L)}건)</h2><div class="list-h" aria-hidden="true"><span>공모전 · 주최</span><span>참가 대상</span><span>상금</span><span>마감</span></div><ul class="list">{"".join(card(c) for c in L[:80]) or "<li class=empty>지금은 없어요.</li>"}</ul>{fq}'
+                f'<h2>진행 중 {nm} ({len(L)}건)</h2><div class="list-h" aria-hidden="true"><span>공모전 · 주최</span><span>참가 대상</span><span>상금</span><span>마감</span></div><ul class="list">{"".join(card(c) for c in L[:80]) or "<li class=empty>지금은 없어.</li>"}</ul>{fq}'
                 + '<p class="hm-more">다른 모음: ' + ' · '.join(f'<a href="/contest/{x[0]}/">{E(x[2])}</a>' for x in H if x[0] != sl) + '</p>'
                 + rel_block(r'공모전|대학생|영상', [('/guide/', '공모전 응모 가이드'), ('/widget/', '블로그용 공모전 위젯'), ('/cat/video/', f'영상 공모전 {YR} 모음')]))
         _st, _sd = hub_seo(sl, title, nm, L)
@@ -2618,11 +2641,11 @@ def build():
 <nav class="cs-cats" aria-label="공모전 분류">{_chips}</nav>
 {TOOLBAR}<div class="list-h" aria-hidden="true"><span>공모전 · 주최</span><span>참가 대상</span><span>상금</span><span>마감</span></div><ul class="list" id="list">{''.join(card(c) for c in _first)}</ul><button class="more" id="more" hidden>더 보기</button>{listing_js()}
 <h2 class="cs-lh">루리에게 맞춤 추천받기</h2>
-<section id="consult" aria-label="루리 공모전 맞춤 추천"><noscript><p>맞춤 추천은 자바스크립트가 필요해요. 위 목록은 그대로 쓸 수 있어요.</p></noscript></section>
-<section class="qa-home"><h2>공모전 준비 가이드 <a href="/guide/contest-rules-reading-eligibility-deadline/">자격·마감 읽는 법 →</a></h2><ul class="list"><li><a class="card" data-c="guide" href="/guide/contest-rules-reading-eligibility-deadline/"><span class="ic">📄</span><div class="cb"><h3 class="t">공고문에서 자격·마감 읽는 법</h3><p class="o">응모 자격, 마감 시각, 제출 규격을 공고문 어디서 확인하는지 정리했어요.</p></div></a></li><li><a class="card" data-c="guide" href="/guide/contest-deadline-day-mistakes/"><span class="ic">⏰</span><div class="cb"><h3 class="t">마감 당일 흔한 실수</h3><p class="o">파일 형식, 접수 시각, 증빙 누락처럼 마감 날 자주 생기는 실수를 모았어요.</p></div></a></li><li><a class="card" data-c="guide" href="/guide/contest-entry-fee-scam-check/"><span class="ic">🛡️</span><div class="cb"><h3 class="t">참가비 요구 공모전, 확인할 점</h3><p class="o">참가비를 받는 공모전이 안전한지 신청 전에 살펴볼 항목이에요.</p></div></a></li></ul></section><p class="cs-foot"><b>빠른 모음</b> <a href="/contest/univ/">대학생</a> · <a href="/contest/youth/">청소년</a> · <a href="/contest/week/">이번 주 마감</a> · <a href="/contest/ai-video/">AI 영상</a> · <a href="/cat/global/">해외</a><br>진행 중 공모전 {len(live)}건(오늘 {TODAY.month}/{TODAY.day} 한국 시간 기준 접수 마감 전)의 마감일·상금·응모 자격·접수 방법을 정리해 두고, 루리가 상황에 맞는 것만 골라 드려요.</p>
+<section id="consult" aria-label="루리 공모전 맞춤 추천"><noscript><p>맞춤 추천은 자바스크립트가 필요해. 위 목록은 그대로 쓸 수 있어.</p></noscript></section>
+<section class="qa-home"><h2>공모전 준비 가이드 <a href="/guide/contest-rules-reading-eligibility-deadline/">자격·마감 읽는 법 →</a></h2><ul class="list"><li><a class="card" data-c="guide" href="/guide/contest-rules-reading-eligibility-deadline/"><span class="ic">📄</span><div class="cb"><h3 class="t">공고문에서 자격·마감 읽는 법</h3><p class="o">응모 자격, 마감 시각, 제출 규격을 공고문 어디서 확인하는지 정리했어.</p></div></a></li><li><a class="card" data-c="guide" href="/guide/contest-deadline-day-mistakes/"><span class="ic">⏰</span><div class="cb"><h3 class="t">마감 당일 흔한 실수</h3><p class="o">파일 형식, 접수 시각, 증빙 누락처럼 마감 날 자주 생기는 실수를 모았어.</p></div></a></li><li><a class="card" data-c="guide" href="/guide/contest-entry-fee-scam-check/"><span class="ic">🛡️</span><div class="cb"><h3 class="t">참가비 요구 공모전, 확인할 점</h3><p class="o">참가비를 받는 공모전이 안전한지 신청 전에 살펴볼 항목이야.</p></div></a></li></ul></section><p class="cs-foot"><b>빠른 모음</b> <a href="/contest/univ/">대학생</a> · <a href="/contest/youth/">청소년</a> · <a href="/contest/week/">이번 주 마감</a> · <a href="/contest/ai-video/">AI 영상</a> · <a href="/cat/global/">해외</a><br>진행 중 공모전 {len(live)}건(오늘 {TODAY.month}/{TODAY.day} 한국 시간 기준 접수 마감 전)의 마감일·상금·응모 자격·접수 방법을 정리해 두고, 루리가 상황에 맞는 것만 골라 줘.</p>
 <link rel="stylesheet" href="/assets/home/consult.css?v=17"><script defer src="/assets/home/consult.js?v=13"></script>'''
     _il = {'@context': 'https://schema.org', '@type': 'ItemList', 'name': f'진행 중 공모전 {YR}', 'numberOfItems': len(live), 'itemListElement': [{'@type': 'ListItem', 'position': k + 1, 'url': f'{SITE}/c/{c["id"]}/', 'name': c['title']} for k, c in enumerate(live_rec[:30])]}
-    page('/contest/', '루리 공모전 추천 상담 — 진행 중 공모전 ' + str(len(live)) + '건', f'진행 중인 공모전 {len(live)}건을 마감 임박순·상금순으로. 질문 몇 개면 루리가 딱 맞는 공모전을 골라 드려요.',
+    page('/contest/', '루리 공모전 추천 상담 — 진행 중 공모전 ' + str(len(live)) + '건', f'진행 중인 공모전 {len(live)}건을 마감 임박순·상금순으로. 질문 몇 개면 루리가 딱 맞는 공모전을 골라 줘.',
          contest_home, [('루리 줍줍', '/'), ('공모전', '/contest/')], _il)
     nw, an, tk = _rd('news/data.json'), _rd('analyst/data.json'), _rd('talk/data.json')
     # 2026-10-19 사용자 개선 지시: 메인 = 공모전 추천·준비가 중심(소개 → 행동 버튼 → 비교 → 준비 지원 → 이슈·머니·생활은 보조)
@@ -2689,7 +2712,7 @@ def build():
     hx_pick = (f'<a class="hx-ssrpick" href="/fridge/r/{fr_slug(_hp["n"])}/"><img src="{_rimg(_hp)}" width="400" height="300" alt="{E(_hp["n"])} 완성 사진" fetchpriority="high"><b>{_hp["e"]} {E(_hp["n"])}</b><span>⏱ {_hp["m"]}분 · {E(_hp["lv"])} · 재료 {len(_hp["need"])}가지</span></a>') if _hp else ''
     _why0 = (_TD.get('why') or '').replace('엔', '엔 ') if _TD else ''
     hx_say = (f'{E(_why0.strip())}! <b>{E(_hp["n"])}</b> 어때요? 🍽️' if _hp and _why0 else (f'오늘은 <b>{E(_hp["n"])}</b> 어때요? 🍽️' if _hp else '냉장고 재료만 알려 주면 오늘 메뉴를 골라 줄게요!'))
-    _eyebrow = f'{E(_TD.get("place", "서울"))} {round(_TD.get("t", 0))}° · {E(_TD.get("why", "오늘 뭐 먹을지 골라 드려요"))}' if _TD else '오늘 뭐 먹을지 골라 드려요'
+    _eyebrow = f'{E(_TD.get("place", "서울"))} {round(_TD.get("t", 0))}° · {E(_TD.get("why", "오늘 뭐 먹을지 골라 줘"))}' if _TD else '오늘 뭐 먹을지 골라 줘'
     _tiles = [('🍳', '오늘 뭐 먹지', '/fridge/', '#fff1e6'), ('🏠', '자취 요리', '/fridge/solo/', '#e8f7ee'), ('🌤️', '날씨별 메뉴', '/fridge/weather/', '#e6f2ff'), ('🏆', '공모전', '/contest/', '#f1e9ff'),
               ('📋', '지원금·청약', '/apply/', '#e6f7f4'), ('🎁', '경품·용돈', '/event/', '#ffe9ef'), ('🕵️', '이슈·뉴스', '/news/', '#fff6d9'), ('🧮', '계산기', '/money/tools/salary/', '#eaeefb')]
     hx_tiles = ''.join(f'<a class="hx-tile" href="{u}" style="--tbg:{bg}"><i>{ic}</i>{n}</a>' for ic, n, u, bg in _tiles)
@@ -2722,7 +2745,7 @@ def build():
     _board = sorted(_board, key=lambda r: r[0])[:6]
     hx_board = ''.join(f'<li><a href="{E(u_)}"{" target=_blank rel=\"noopener nofollow\"" if ext_ else ""}><span class="bd-t">{ic_}<small>{E(lb_[:6])}</small></span><b>{E(t_[:46])}</b><span class="bd-d{" u" if n_ == 0 else ""}">{dd_}</span></a></li>' for n_, ic_, lb_, t_, u_, ext_, dd_ in _board)
     _n_today = len([r for r in _rows if r[0] == 0])
-    hx_say = (f'오늘 마감이 <b>{_n_today}건</b>이에요! 제일 급한 건 <b>{E(_board[0][3][:22])}</b> ⏰' if _board else '오늘도 남들이 뿌린 기회를 모아 왔어요!')
+    hx_say = (f'오늘 마감이 <b>{_n_today}건</b>이야! 제일 급한 건 <b>{E(_board[0][3][:22])}</b> ⏰' if _board else '오늘도 남들이 뿌린 기회를 모아 왔어!')
     hx_pol = sorted([a for a in aps if a.get('end') and not a.get('always') and 0 <= dday(a['end'])[0] <= 14], key=lambda a: a['end'])[:5]
     hx_pol_h = ''.join(f'<li><a href="{E(a["url"])}" target="_blank" rel="noopener nofollow"><span class="dd{" u" if dday(a["end"])[0] <= 1 else ""}">{dday(a["end"])[1]}</span><div><b>{E(a["title"][:48])}</b><small>{E(a.get("kind") or "")} · {E(a.get("org") or "")}</small></div></a></li>' for a in hx_pol)
     _has_policy = os.path.exists(os.path.join(ROOT, 'money', 'policy', 'index.html'))
@@ -2773,31 +2796,31 @@ def build():
     hx_nav = ''.join(f'<a href="#{k}">{ic} {n}</a>' for k, ic, n in _nav)
     home = f'''{hx_launch}<section class="hx-hero"><div class="hx-w hx-hero-in">
 <div class="hx-copy"><p class="hx-eyebrow"><i></i>매시간 업데이트 · 공식 출처 확인</p>
-<h1>남들이 뿌리는 기회,<br><em>루리가 모아</em><br>정리해 드려요</h1>
-<p class="hx-sub">공모전·경품 이벤트·지원금·청약·정책을 한곳에 모아, 마감이 급한 순서로 알려 드려요. 놓치지 말고 <b>일단 줍고</b> 가세요.</p>
-<p class="hx-def">루리 줍줍은 공모전·지원금·청약 공고를 마감일·상금·응모 자격 순으로 비교해 보여 주고, 세금·노동·주거·금융 제도는 법령 조문과 공식 문서 링크로 확인한 가이드로 정리하는 정보 사이트예요.</p>
+<h1>남들이 뿌리는 기회,<br><em>루리가 모아</em><br>정리해 줘</h1>
+<p class="hx-sub">공모전·경품 이벤트·지원금·청약·정책을 한곳에 모아, 마감이 급한 순서로 알려 줘. 놓치지 말고 <b>일단 줍고</b> 가.</p>
+<p class="hx-def">루리 줍줍은 공모전·지원금·청약 공고를 마감일·상금·응모 자격 순으로 비교해 보여 주고, 세금·노동·주거·금융 제도는 법령 조문과 공식 문서 링크로 확인한 가이드로 정리하는 정보 사이트야.</p>
 <div class="hx-cta"><a class="hx-b1" href="#today">⏰ 오늘 마감 보기</a><a class="hx-b2" href="/app/">🔔 마감 알림 받기</a></div>
-<p class="hx-free">🆓 매시간 모아 가공한 데이터를 <b>전부 무료</b>로 공개해요</p><div class="hx-stats"><div><b>{len(live)}</b><span>진행 중 공모전</span></div><div><b>{len(events):,}</b><span>경품·이벤트</span></div><div><b>{len(aps)}</b><span>지원금·청약</span></div></div></div>
+<p class="hx-free">🆓 매시간 모아 가공한 데이터를 <b>전부 무료</b>로 공개해</p><div class="hx-stats"><div><b>{len(live)}</b><span>진행 중 공모전</span></div><div><b>{len(events):,}</b><span>경품·이벤트</span></div><div><b>{len(aps)}</b><span>지원금·청약</span></div></div></div>
 <div class="hx-stage" id="today"><div class="hx-bubble"><small>루리의 한마디</small>{hx_say}</div>
 <img class="hx-ruri" src="/assets/ruri/o_present.webp" width="300" height="415" alt="루리" fetchpriority="high">
-<div class="hx-card hx-board"><div class="bd-h"><b>⏰ 오늘 마감 한눈에</b><small>마감 임박순</small></div><ul>{hx_board or '<li class="empty">지금은 마감 임박 항목이 없어요.</li>'}</ul><a class="bd-more" href="/contest/week/">이번 주 마감 전체 보기 →</a></div></div>
+<div class="hx-card hx-board"><div class="bd-h"><b>⏰ 오늘 마감 한눈에</b><small>마감 임박순</small></div><ul>{hx_board or '<li class="empty">지금은 마감 임박 항목이 없어.</li>'}</ul><a class="bd-more" href="/contest/week/">이번 주 마감 전체 보기 →</a></div></div>
 </div></section>
 <nav class="hx-nav" aria-label="주제로 이동"><div class="hx-w">{hx_nav}</div></nav>
 <div class="hx-w">
 
 <section class="hx-sec hx-t-policy" id="policy"><div class="hx-hd"><div><p>📋 지원금 · 청약 · 정책</p><h2>내가 받을 수 있는 혜택</h2></div><a href="{_pol_link}">정책 모음 →</a></div>
-<div class="hx-split"><ul class="hx-ev">{hx_pol_h or '<li class="empty">2주 안에 마감하는 공고가 없어요.</li>'}</ul>
+<div class="hx-split"><ul class="hx-ev">{hx_pol_h or '<li class="empty">2주 안에 마감하는 공고가 없어.</li>'}</ul>
 <div class="hx-feat hx-feat1"><a class="hx-f" href="/apply/" style="--fc:#0f766e;--fbg:#e8f7f4"><i>📋</i><b>지원금·청약 일정</b><span>신청 가능 {len(aps)}건 · 최근 3일 새 공고 {newap}건</span></a>
 <a class="hx-f" href="/apply/r/" style="--fc:#2563eb;--fbg:#e8f0ff"><i>📍</i><b>지역별 지원금</b><span>시·도별 청년 월세·신혼부부 공고</span></a></div></div>
 <div class="hx-links"><a href="/apply/youth-rent/">청년 월세 지원</a><a href="/apply/newlywed/">신혼부부 지원금</a><a href="/apply/recommend/">청약 가점 계산기</a></div></section>
 
 <section class="hx-sec hx-t-contest" id="contest"><div class="hx-hd"><div><p>🏆 공모전</p><h2>이번에 도전해 볼 공모전</h2></div><a href="/contest/">공모전 찾기 →</a></div>
 <p class="hx-why">진행 중 {len(live)}건 · 7일 안 마감 {wk7}건 · {E(scope_c)}</p>
-<ul class="hx-cc">{"".join(cmp_card(c) for c in pick6[:3]) or '<li class="empty">지금 보여 드릴 공모전이 없어요.</li>'}</ul>
+<ul class="hx-cc">{"".join(cmp_card(c) for c in pick6[:3]) or '<li class="empty">지금 보여 줄 공모전이 없어.</li>'}</ul>
 <div class="hx-links"><a href="/contest/week/">이번 주 마감</a><a href="/contest/univ/">대학생 공모전</a><a href="/cat/literature/">분야별</a><a href="/prep/">📋 준비실</a><a href="/lab/">🔬 수상 연구소</a><a href="/guide/">📘 응모 가이드</a></div></section>
 
 <section class="hx-sec hx-t-event" id="event"><div class="hx-hd"><div><p>🎁 경품 · 이벤트</p><h2>오늘 마감 경품·용돈</h2></div><a href="/event/">전체 {len(events):,}건 →</a></div>
-<ul class="hx-ev">{hx_ev or '<li class="empty">지금은 마감 임박 이벤트가 없어요.</li>'}</ul></section>
+<ul class="hx-ev">{hx_ev or '<li class="empty">지금은 마감 임박 이벤트가 없어.</li>'}</ul></section>
 
 <section class="hx-sec hx-t-issue" id="issue"><div class="hx-hd"><div><p>🕵️ 이슈 · 뉴스</p><h2>같은 사건, 여러 언론을 한 번에</h2></div><a href="/news/">루리 뉴스 →</a></div>
 <div class="hx-feat"><a class="hx-f" href="/issue/kim-jong-un-rumor/" style="--fc:#b91c1c;--fbg:#fee2e2"><i>🕵️</i><b>김정은 건강 이상설, 어디까지 확인됐나요?</b><span>확인된 것·안 된 것 정리 · 10/23 기준</span></a>
@@ -2848,19 +2871,19 @@ def build():
               'reads': [{'u': u_, 'title': html.unescape(re.sub(r'\s*[|｜].*$', '', (re.search(r'<title>(.*?)</title>', open(os.path.join(ROOT, u_.strip('/'), 'index.html'), encoding='utf-8').read(), re.S) or [0, u_])[1])), 'sub': sb_}
                         for u_, sb_ in (('/issue/kim-jong-un-rumor/', '이슈 정리'), ('/ai/human-value/', 'AI 글')) if os.path.exists(os.path.join(ROOT, u_.strip('/'), 'index.html'))]}
     page('/today/', '오늘 마감하는 기회 — 오늘 끝나는 공모전·이벤트·지원금·청약·공모주',
-         f'{TODAY.month}월 {TODAY.day}일(한국 시간) 오늘 마감하는 공모전·경품 이벤트·지원금·주거 청약·공모주를 유형별로 모았어요. 마감 시각을 모르면 시각 미확인으로 표시해요.', SC.today_html(sc_ctx),
+         f'{TODAY.month}월 {TODAY.day}일(한국 시간) 오늘 마감하는 공모전·경품 이벤트·지원금·주거 청약·공모주를 유형별로 모았어. 마감 시각을 모르면 시각 미확인으로 표시해.', SC.today_html(sc_ctx),
          crumbs=[('루리 줍줍', '/'), ('오늘 마감', '/today/')])
     PAGE_INTRO.pop('/', None)   # 긴 사이트 소개 대신 홈 본문의 두 문장 소개
     if PLAT:
         import home_platform as _HP
         _dv = sorted([p for p in json.load(open(os.path.join(HERE, 'dev_posts.json'), encoding='utf-8')) if p['lang'] == 'ko'], key=lambda p: p['date'], reverse=True)[:3]
-        page('/ruri/', '루리 줍줍 — 사람들이 궁금해하는 것을 분석합니다', '가난한 박과장이 만든 정보성 사이트. 이슈, 지원금·세금·청약 같은 돈 정보, 공모전, 집밥 레시피를 근거와 함께 정리하고 매시간 갱신합니다.', SC.home_html(sc_ctx), crumbs=[('가난한 박과장', '/'), ('루리 줍줍', '/ruri/')], full_title=True)
-        page('/', '가난한 박과장 — 퇴근 후 AI 에이전트와 내 서비스를 만드는 곳', '퇴근 후 2~3시간, 하네스로 AI 에이전트와 내가 원하는 서비스를 만들어 보는 수업 사이트. 정해진 진도 없이 시작 안내, 저자의 실제 개발 사례, 이야기방을 제공합니다.', _HP.home_html([(p['title'], dev_url(p), p['date']) for p in _dv]), full_title=True, ld={'@context': 'https://schema.org', '@graph': [{'@type': 'WebSite', '@id': SITE + '/#website', 'name': '가난한 박과장', 'alternateName': ['루리 줍줍'], 'url': SITE + '/', 'publisher': {'@id': SITE + '/#org'}}, {'@type': 'Organization', '@id': SITE + '/#org', 'name': '가난한 박과장', 'url': SITE + '/', 'logo': {'@type': 'ImageObject', 'url': SITE + '/assets/icons/icon-512.png', 'width': 512, 'height': 512}}]})
+        page('/ruri/', '루리 줍줍 — 사람들이 궁금해하는 것을 분석한다', '가난한 박과장이 만든 정보성 사이트. 이슈, 지원금·세금·청약 같은 돈 정보, 공모전, 집밥 레시피를 근거와 함께 정리하고 매시간 갱신한다.', SC.home_html(sc_ctx), crumbs=[('가난한 박과장', '/'), ('루리 줍줍', '/ruri/')], full_title=True)
+        page('/', '가난한 박과장 — 퇴근 후 AI 에이전트와 내 서비스를 만드는 곳', '퇴근 후 2~3시간, 하네스로 AI 에이전트와 내가 원하는 서비스를 만들어 보는 수업 사이트. 정해진 진도 없이 시작 안내, 저자의 실제 개발 사례, 이야기방을 제공한다.', _HP.home_html([(p['title'], dev_url(p), p['date']) for p in _dv]), full_title=True, ld={'@context': 'https://schema.org', '@graph': [{'@type': 'WebSite', '@id': SITE + '/#website', 'name': '가난한 박과장', 'alternateName': ['루리 줍줍'], 'url': SITE + '/', 'publisher': {'@id': SITE + '/#org'}}, {'@type': 'Organization', '@id': SITE + '/#org', 'name': '가난한 박과장', 'url': SITE + '/', 'logo': {'@type': 'ImageObject', 'url': SITE + '/assets/icons/icon-512.png', 'width': 512, 'height': 512}}]})
     if not PLAT:
-      page('/', '루리 줍줍 — 수험·평생교육·자기개발, 시험 일정과 문제은행',
-         f'입시·공무원·자격증·어학·취업 시험의 접수·시험일·발표일, 예상 컷과 유사문제 풀이, 스펙(공모전)과 시험 기간 식단까지 수험·평생교육·자기개발 정보를 한곳에 모았습니다.',
+      page('/', '가난한 박과장과 헬조선 살아남기 — 자기개발과 시험 정보',
+         f'뭐라도 한 개 더 할 줄 알아야 살아남는 나라. 시사·상식·요리·IT 바이브 코딩 같은 자기개발 정보와 자격증·시험 일정을 비서 루리가 정리한다.',
          SC.home_html(sc_ctx), full_title=True, ld={'@context': 'https://schema.org', '@graph': [  # 2026-10-19 구글 검색 결과 사이트 이름·로고
-             {'@type': 'WebSite', '@id': SITE + '/#website', 'name': NAME, 'alternateName': ['루리 줍줍', '루리의 줍줍'], 'url': SITE + '/', 'publisher': {'@id': SITE + '/#org'}},
+             {'@type': 'WebSite', '@id': SITE + '/#website', 'name': NAME, 'alternateName': ['가난한 박과장과 헬조선 살아남기', '루리 줍줍'], 'url': SITE + '/', 'publisher': {'@id': SITE + '/#org'}},
              {'@type': 'Organization', '@id': SITE + '/#org', 'name': NAME, 'url': SITE + '/', 'logo': {'@type': 'ImageObject', 'url': SITE + '/assets/icons/icon-512.png', 'width': 512, 'height': 512}}]})
     for s, n in CATS:
         cl = sorted([c for c in live if n in c['tags']], key=lambda c: (c['end'], -(c.get('pv') or 0)))   # 제목·선택 상자·실제 순서를 모두 「마감 임박순」으로 맞춘다
@@ -2878,11 +2901,11 @@ def build():
     # 2026-10-23 화면 개선 9번: 제목 바로 아래 필터·목록 → 구독(이벤트 알림) 은 목록 뒤. 「쉬운 것」 같은 근거 없는 선별을 하지 않고 마감순으로만 보여 준다
     top = sorted([e for e in events if dday(e['end'])[0] <= 1], key=lambda e: (e['end'], e['title']))[:6]
     tcards = ''.join(f'<li class="ev-c"><h3>{E(tidy_ev(e["title"]))}</h3><dl><div><dt>경품</dt><dd>{E(e.get("prize") or "경품 확인 필요")}</dd></div><div><dt>참여 조건</dt><dd>{E(e.get("effort") or "참여 방식 확인 필요")}</dd></div><div><dt>마감</dt><dd><span class="u">{"오늘" if dday(e["end"])[0] <= 0 else "D-1"}</span> {E(ddot(e["end"])[5:])}</dd></div>{("<div><dt>주최</dt><dd>" + E(e.get("host") or e["org"]) + "</dd></div>") if (e.get("host") or e["org"]) else ""}</dl><a class="ev-go" href="{E(e["link"])}" target="_blank" rel="noopener nofollow">이벤트 보기 ↗</a></li>' for e in top)
-    page('/event/', f'경품 이벤트 — 오늘 마감순 (진행 중 {len(events)}건)', f'댓글·퀴즈·설문·응모 등 참여 방식별로 정리한 경품 이벤트 {len(events)}건. 오늘·내일 마감하는 것부터, 참여 방식·마감·검색으로 골라 보세요. 참여 방식은 자동 분류라 공식 안내를 확인하세요. 매시간 갱신.',
-         f'''<p class="bc"><a href="/">홈</a> › 경품 이벤트</p><h1 class="ev-h1">경품 이벤트</h1><p class="ev-sub">진행 중 {len(events):,}건 · 마감 임박순 · {NOW_KST():%m/%d %H:%M} 갱신(한국 시간) · 참여 방식은 자동 분류라 공식 안내로 확인하세요</p>
-<section id="evl" aria-label="경품 이벤트 목록"><noscript><p class="note">필터는 자바스크립트가 필요해요. 오늘·내일 마감 이벤트는 아래에 있어요.</p></noscript></section>
-<section class="ev-top"><h2>오늘·내일 마감 ({len(top)}건)</h2><ul class="ev-ul">{tcards or '<li class="ev-empty">오늘·내일 마감하는 이벤트가 없어요.</li>'}</ul></section>
-<p class="note">참여 조건(팔로우·태그·공유)과 당첨자 발표는 이벤트마다 달라요. 당첨 연락을 사칭해 개인정보나 송금을 요구하면 사기예요.</p>
+    page('/event/', f'경품 이벤트 — 오늘 마감순 (진행 중 {len(events)}건)', f'댓글·퀴즈·설문·응모 등 참여 방식별로 정리한 경품 이벤트 {len(events)}건. 오늘·내일 마감하는 것부터, 참여 방식·마감·검색으로 골라 봐. 참여 방식은 자동 분류라 공식 안내를 확인해. 매시간 갱신.',
+         f'''<p class="bc"><a href="/">홈</a> › 경품 이벤트</p><h1 class="ev-h1">경품 이벤트</h1><p class="ev-sub">진행 중 {len(events):,}건 · 마감 임박순 · {NOW_KST():%m/%d %H:%M} 갱신(한국 시간) · 참여 방식은 자동 분류라 공식 안내로 확인해</p>
+<section id="evl" aria-label="경품 이벤트 목록"><noscript><p class="note">필터는 자바스크립트가 필요해. 오늘·내일 마감 이벤트는 아래에 있어.</p></noscript></section>
+<section class="ev-top"><h2>오늘·내일 마감 ({len(top)}건)</h2><ul class="ev-ul">{tcards or '<li class="ev-empty">오늘·내일 마감하는 이벤트가 없어.</li>'}</ul></section>
+<p class="note">참여 조건(팔로우·태그·공유)과 당첨자 발표는 이벤트마다 달라. 당첨 연락을 사칭해 개인정보나 송금을 요구하면 사기야.</p>
 {join_cta('event')}
 <link rel="stylesheet" href="/assets/event/ev.css?v=2"><script defer src="/assets/event/ev.js?v=3"></script>''', [('루리 줍줍', '/'), ('경품 이벤트', '/event/')])
     shutil.rmtree(os.path.join(ROOT, 'a'), ignore_errors=True)
@@ -3019,59 +3042,59 @@ def build():
 
 
 GUIDES = [
- ('first', '공모전 처음 응모할 때 꼭 확인할 7가지', '처음 공모전에 응모할 때 요강에서 놓치기 쉬운 응모 자격, 제출 형식, 저작권, 중복 응모, 마감 시각 등 7가지를 정리했습니다.', '''
-<p>공모전은 요강을 얼마나 꼼꼼히 읽었는지에서 결과가 갈리는 경우가 많습니다. 작품이 좋아도 형식 미달로 심사에 오르지 못하는 일이 생각보다 흔합니다. 처음 응모한다면 아래 일곱 가지를 순서대로 확인해 보세요.</p>
-<h2>1. 응모 자격</h2><p>나이, 거주 지역, 학생 여부, 개인·팀 여부를 먼저 봅니다. 지자체 공모전은 해당 지역 거주자나 생활권 주민만 받는 경우가 많고, 대학생 공모전은 재학 증명서를 요구하기도 합니다.</p>
-<h2>2. 제출물 형식</h2><p>분량(글자 수, 원고지 매수, 영상 길이), 파일 형식(HWP·PDF·JPG·MP4), 파일명 규칙을 확인합니다. 지정 양식이 있다면 반드시 그 양식에 작성해야 합니다.</p>
-<h2>3. 접수 방법</h2><p>이메일, 홈페이지, 구글폼·네이버폼, SNS 해시태그 등 방식이 다양합니다. 이메일 접수라면 제목 형식을 지정하는 경우가 많고, 첨부 용량 제한도 확인하세요.</p>
-<h2>4. 마감 시각</h2><p>마감일 자정이 아니라 오후 6시나 업무 시간 기준인 경우가 있습니다. 해외 공모전은 현지 시간 기준이라 한국 시간으로 바꿔 계산해야 합니다.</p>
-<h2>5. 저작권과 활용 조건</h2><p>수상작의 저작권이 주최 측에 귀속되거나, 응모작 전체를 홍보에 활용할 수 있다는 조건이 붙기도 합니다. 내 작품을 다른 곳에 다시 쓰고 싶다면 꼭 읽어 보세요.</p>
-<h2>6. 중복 응모·미발표 조건</h2><p>다른 공모전 수상작이나 이미 공개한 작품은 받지 않는 경우가 대부분입니다. 수상 후에도 결격 사유가 밝혀지면 수상이 취소될 수 있습니다.</p>
-<h2>7. 생성형 AI 사용 규정</h2><p>최근에는 생성형 AI 사용을 금지하거나, 사용 시 표기를 요구하는 공모전이 늘고 있습니다. 규정이 없더라도 애매하면 주최 측에 문의하는 것이 안전합니다.</p>'''),
- ('proposal', '정책·아이디어 제안서 쓰는 법', '지자체·공공기관 정책 제안과 아이디어 공모전에서 쓰는 제안서 구조(현황, 문제점, 개선안, 기대효과)와 작성 요령을 정리했습니다.', '''
-<p>정책 제안·아이디어 공모전은 글솜씨보다 <b>구조</b>가 중요합니다. 심사위원은 많은 제안서를 짧은 시간에 읽기 때문에, 무엇이 문제이고 무엇을 바꾸자는 것인지가 첫 페이지에서 보여야 합니다.</p>
+ ('first', '공모전 처음 응모할 때 꼭 확인할 7가지', '처음 공모전에 응모할 때 요강에서 놓치기 쉬운 응모 자격, 제출 형식, 저작권, 중복 응모, 마감 시각 등 7가지를 정리했다.', '''
+<p>공모전은 요강을 얼마나 꼼꼼히 읽었는지에서 결과가 갈리는 경우가 많다. 작품이 좋아도 형식 미달로 심사에 오르지 못하는 일이 생각보다 흔하다. 처음 응모한다면 아래 일곱 가지를 순서대로 확인해 봐.</p>
+<h2>1. 응모 자격</h2><p>나이, 거주 지역, 학생 여부, 개인·팀 여부를 먼저 본다. 지자체 공모전은 해당 지역 거주자나 생활권 주민만 받는 경우가 많고, 대학생 공모전은 재학 증명서를 요구하기도 한다.</p>
+<h2>2. 제출물 형식</h2><p>분량(글자 수, 원고지 매수, 영상 길이), 파일 형식(HWP·PDF·JPG·MP4), 파일명 규칙을 확인한다. 지정 양식이 있다면 반드시 그 양식에 작성해야 한다.</p>
+<h2>3. 접수 방법</h2><p>이메일, 홈페이지, 구글폼·네이버폼, SNS 해시태그 등 방식이 다양하다. 이메일 접수라면 제목 형식을 지정하는 경우가 많고, 첨부 용량 제한도 확인해.</p>
+<h2>4. 마감 시각</h2><p>마감일 자정이 아니라 오후 6시나 업무 시간 기준인 경우가 있다. 해외 공모전은 현지 시간 기준이라 한국 시간으로 바꿔 계산해야 한다.</p>
+<h2>5. 저작권과 활용 조건</h2><p>수상작의 저작권이 주최 측에 귀속되거나, 응모작 전체를 홍보에 활용할 수 있다는 조건이 붙기도 한다. 내 작품을 다른 곳에 다시 쓰고 싶다면 꼭 읽어 봐.</p>
+<h2>6. 중복 응모·미발표 조건</h2><p>다른 공모전 수상작이나 이미 공개한 작품은 받지 않는 경우가 대부분이다. 수상 후에도 결격 사유가 밝혀지면 수상이 취소될 수 있다.</p>
+<h2>7. 생성형 AI 사용 규정</h2><p>최근에는 생성형 AI 사용을 금지하거나, 사용 시 표기를 요구하는 공모전이 늘고 있다. 규정이 없더라도 애매하면 주최 측에 문의하는 것이 안전하다.</p>'''),
+ ('proposal', '정책·아이디어 제안서 쓰는 법', '지자체·공공기관 정책 제안과 아이디어 공모전에서 쓰는 제안서 구조(현황, 문제점, 개선안, 기대효과)와 작성 요령을 정리했다.', '''
+<p>정책 제안·아이디어 공모전은 글솜씨보다 <b>구조</b>가 중요하다. 심사위원은 많은 제안서를 짧은 시간에 읽기 때문에, 무엇이 문제이고 무엇을 바꾸자는 것인지가 첫 페이지에서 보여야 한다.</p>
 <h2>기본 구조</h2><ul class="chk"><li><b>제목</b>: 제안 내용을 한 줄로. 예) "버스정류장 도착 안내를 마을버스까지 확대"</li><li><b>현황</b>: 지금 어떻게 운영되고 있는지 사실 위주로</li><li><b>문제점</b>: 누가, 언제, 어떤 불편을 겪는지 구체적으로</li><li><b>개선안</b>: 무엇을 어떻게 바꿀지, 실행 주체와 단계</li><li><b>기대효과</b>: 수혜 대상과 효과(가능하면 숫자로)</li><li><b>소요 예산·추진 일정</b>: 대략이라도 제시하면 실현 가능성 평가에 유리</li></ul>
-<h2>좋은 제안의 조건</h2><p>이미 시행 중인 정책과 겹치지 않아야 합니다. 제안 전에 해당 기관 홈페이지와 보도자료를 검색해 비슷한 사업이 있는지 확인하고, 있다면 그것과 무엇이 다른지 적으세요. 다른 지자체의 성공 사례를 근거로 들면 설득력이 높아집니다.</p>
-<h2>접수 창구</h2><p>국민신문고(국민제안), 국민생각함, 각 지자체 홈페이지 제안 게시판으로 받는 경우가 많습니다. 본인인증이 필요한 창구가 많으니 마감 직전보다 여유 있게 제출하세요.</p>'''),
+<h2>좋은 제안의 조건</h2><p>이미 시행 중인 정책과 겹치지 않아야 한다. 제안 전에 해당 기관 홈페이지와 보도자료를 검색해 비슷한 사업이 있는지 확인하고, 있다면 그것과 무엇이 다른지 적어. 다른 지자체의 성공 사례를 근거로 들면 설득력이 높아진다.</p>
+<h2>접수 창구</h2><p>국민신문고(국민제안), 국민생각함, 각 지자체 홈페이지 제안 게시판으로 받는 경우가 많다. 본인인증이 필요한 창구가 많으니 마감 직전보다 여유 있게 제출해.</p>'''),
  ('writing', '수기·문학 공모전에서 눈에 띄는 글 쓰기', '수기, 수필, 시, 네이밍·슬로건 공모전에서 심사위원 눈에 띄는 글의 공통점과 분량·형식 맞추는 요령.', '''
-<p>수기·문학 공모전은 응모작이 많아 첫 문단에서 인상이 결정되는 경우가 많습니다. 다음 원칙을 기억해 두세요.</p>
-<h2>수기·수필</h2><p>주제를 설명하기보다 <b>장면</b>으로 보여 주세요. "도움을 받아 감사했다"보다 그날의 날씨, 들은 말, 손에 쥐고 있던 물건을 쓰는 편이 훨씬 오래 기억됩니다. 주최 기관의 사업(예: 장기요양, 안전, 환경)과 내 경험이 만나는 지점을 분명히 하세요.</p>
-<h2>시</h2><p>주제어를 그대로 반복하기보다 구체적인 사물과 이미지로 바꿔 보세요. 분량 제한(편수, 행 수)을 지키는 것이 기본입니다.</p>
-<h2>네이밍·슬로건</h2><p>짧고, 소리 내어 읽기 쉽고, 주최 측이 내세우려는 가치를 담아야 합니다. 후보를 여러 개 만든 뒤 기존 상표·슬로건과 겹치는지 검색해 보세요. 의미 설명을 한두 줄 붙이게 하는 공모전이 많습니다.</p>
-<h2>형식</h2><p>원고지 매수 기준이라면 200자 원고지 환산 분량을, 글자 수 기준이라면 공백 포함 여부를 확인하세요. 지정 서식(HWP)이 있으면 글꼴과 줄 간격까지 그대로 두는 것이 안전합니다.</p>'''),
- ('prize', '공모전 상금 수령과 당첨 연락 확인법', '공모전 상금을 받을 때 필요한 서류, 제세공과금 공제, 당첨 사칭 연락을 구별하는 방법을 정리했습니다.', '''
-<h2>상금 지급 절차</h2><p>수상자로 선정되면 주최 측이 신분증 사본, 통장 사본, 개인정보 동의서 등을 요청하는 것이 일반적입니다. 상금은 대개 제세공과금(기타소득세 등)을 원천징수한 뒤 지급되므로 공고에 적힌 금액보다 적게 입금될 수 있습니다. 공제 기준은 주최 측과 상금 성격에 따라 다르니 안내를 확인하세요.</p>
-<h2>팀 수상</h2><p>팀으로 수상하면 대표자 계좌로 한 번에 지급하는 경우가 많습니다. 미리 팀원끼리 배분 방식을 정해 두면 분쟁을 줄일 수 있습니다.</p>
-<h2>당첨 사칭 주의</h2><p>"당첨되었으니 수수료나 세금을 먼저 입금하라"는 연락은 사기일 가능성이 높습니다. 정상적인 공모전은 상금에서 세금을 공제하고 지급하며, 응모자에게 먼저 돈을 보내라고 하지 않습니다. 발표는 반드시 주최 기관의 공식 홈페이지나 공식 SNS 계정에서 다시 확인하세요.</p>
-<h2>발표 확인</h2><p>발표일을 메모해 두고, 발표 방법(홈페이지 게시, 개별 연락, SNS 댓글)을 확인해 두세요. 연락이 닿지 않으면 수상이 취소되는 공모전도 있습니다.</p>'''),
- ('unemployment-2026', '실업급여 조건 2026 — 받을 수 있는 사람·금액·기간·신청 방법', '실업급여(구직급여) 2026 조건: 고용보험 가입 기간 180일, 비자발적 이직, 하루 상한 68,100원, 지급 기간 120~270일, 고용24 신청 순서를 정리했어요.', '''
-<p class="note">기준일 2026-10-19 · 고용노동부 고용24 안내 기준으로 정리한 일반 정보예요. 내 경우에 해당하는지는 고용센터(국번 없이 1350)에서 확인하는 게 가장 정확해요.</p>
-<h2>1. 실업급여 신청자격</h2><ul class="chk"><li><b>가입 기간:</b> 이직일 전 18개월 동안 고용보험 피보험 단위기간이 180일 이상이어야 해요(주 15시간 미만 초단시간 근로자 등은 기준이 달라요).</li>
-<li><b>비자발적 이직:</b> 권고사직·계약 기간 만료·폐업처럼 본인 뜻이 아닌 퇴사여야 해요. 자진 퇴사라도 임금 체불, 통근이 어려워진 이사, 직장 내 괴롭힘처럼 정당한 사유가 인정되면 받을 수 있어요.</li>
-<li><b>재취업 의사와 노력:</b> 일할 의사와 능력이 있고, 수급 기간 동안 구직 활동을 해야 해요.</li><li><b>신청 기한:</b> 이직 다음 날부터 12개월이 지나면 남은 날이 있어도 받을 수 없어요. 퇴사 후 되도록 빨리 신청하세요.</li></ul>
-<h2>2. 실업급여 계산기로 미리 계산</h2><p>퇴직 전 3개월 급여, 가입 기간, 나이를 넣으면 <a href="/money/tools/unemployment/">실업급여 계산기</a>가 하루 금액과 총액을 계산해요(참고용).</p><h2>3. 실업급여 금액</h2><p>하루 금액은 퇴직 전 평균임금의 60%예요. 다만 2026년 1월 1일 이후 이직하면 <b>하루 상한 68,100원</b>이고, 하한은 최저임금의 80%(하루 8시간 기준 66,048원)예요. 계산은 <a href="/money/tools/unemployment/">실업급여 계산기</a>로 해 볼 수 있어요(참고용).</p>
+<p>수기·문학 공모전은 응모작이 많아 첫 문단에서 인상이 결정되는 경우가 많다. 다음 원칙을 기억해 둬.</p>
+<h2>수기·수필</h2><p>주제를 설명하기보다 <b>장면</b>으로 보여 줘. "도움을 받아 감사했다"보다 그날의 날씨, 들은 말, 손에 쥐고 있던 물건을 쓰는 편이 훨씬 오래 기억된다. 주최 기관의 사업(예: 장기요양, 안전, 환경)과 내 경험이 만나는 지점을 분명히 해.</p>
+<h2>시</h2><p>주제어를 그대로 반복하기보다 구체적인 사물과 이미지로 바꿔 봐. 분량 제한(편수, 행 수)을 지키는 것이 기본이다.</p>
+<h2>네이밍·슬로건</h2><p>짧고, 소리 내어 읽기 쉽고, 주최 측이 내세우려는 가치를 담아야 한다. 후보를 여러 개 만든 뒤 기존 상표·슬로건과 겹치는지 검색해 봐. 의미 설명을 한두 줄 붙이게 하는 공모전이 많다.</p>
+<h2>형식</h2><p>원고지 매수 기준이라면 200자 원고지 환산 분량을, 글자 수 기준이라면 공백 포함 여부를 확인해. 지정 서식(HWP)이 있으면 글꼴과 줄 간격까지 그대로 두는 것이 안전하다.</p>'''),
+ ('prize', '공모전 상금 수령과 당첨 연락 확인법', '공모전 상금을 받을 때 필요한 서류, 제세공과금 공제, 당첨 사칭 연락을 구별하는 방법을 정리했다.', '''
+<h2>상금 지급 절차</h2><p>수상자로 선정되면 주최 측이 신분증 사본, 통장 사본, 개인정보 동의서 등을 요청하는 것이 일반적이다. 상금은 대개 제세공과금(기타소득세 등)을 원천징수한 뒤 지급되므로 공고에 적힌 금액보다 적게 입금될 수 있다. 공제 기준은 주최 측과 상금 성격에 따라 다르니 안내를 확인해.</p>
+<h2>팀 수상</h2><p>팀으로 수상하면 대표자 계좌로 한 번에 지급하는 경우가 많다. 미리 팀원끼리 배분 방식을 정해 두면 분쟁을 줄일 수 있다.</p>
+<h2>당첨 사칭 주의</h2><p>"당첨되었으니 수수료나 세금을 먼저 입금하라"는 연락은 사기일 가능성이 높다. 정상적인 공모전은 상금에서 세금을 공제하고 지급하며, 응모자에게 먼저 돈을 보내라고 하지 않다. 발표는 반드시 주최 기관의 공식 홈페이지나 공식 SNS 계정에서 다시 확인해.</p>
+<h2>발표 확인</h2><p>발표일을 메모해 두고, 발표 방법(홈페이지 게시, 개별 연락, SNS 댓글)을 확인해 둬. 연락이 닿지 않으면 수상이 취소되는 공모전도 있다.</p>'''),
+ ('unemployment-2026', '실업급여 조건 2026 — 받을 수 있는 사람·금액·기간·신청 방법', '실업급여(구직급여) 2026 조건: 고용보험 가입 기간 180일, 비자발적 이직, 하루 상한 68,100원, 지급 기간 120~270일, 고용24 신청 순서를 정리했어.', '''
+<p class="note">기준일 2026-10-19 · 고용노동부 고용24 안내 기준으로 정리한 일반 정보야. 내 경우에 해당하는지는 고용센터(국번 없이 1350)에서 확인하는 게 가장 정확해.</p>
+<h2>1. 실업급여 신청자격</h2><ul class="chk"><li><b>가입 기간:</b> 이직일 전 18개월 동안 고용보험 피보험 단위기간이 180일 이상이어야 해(주 15시간 미만 초단시간 근로자 등은 기준이 달라).</li>
+<li><b>비자발적 이직:</b> 권고사직·계약 기간 만료·폐업처럼 본인 뜻이 아닌 퇴사여야 해. 자진 퇴사라도 임금 체불, 통근이 어려워진 이사, 직장 내 괴롭힘처럼 정당한 사유가 인정되면 받을 수 있어.</li>
+<li><b>재취업 의사와 노력:</b> 일할 의사와 능력이 있고, 수급 기간 동안 구직 활동을 해야 해.</li><li><b>신청 기한:</b> 이직 다음 날부터 12개월이 지나면 남은 날이 있어도 받을 수 없어. 퇴사 후 되도록 빨리 신청해.</li></ul>
+<h2>2. 실업급여 계산기로 미리 계산</h2><p>퇴직 전 3개월 급여, 가입 기간, 나이를 넣으면 <a href="/money/tools/unemployment/">실업급여 계산기</a>가 하루 금액과 총액을 계산해(참고용).</p><h2>3. 실업급여 금액</h2><p>하루 금액은 퇴직 전 평균임금의 60%야. 다만 2026년 1월 1일 이후 이직하면 <b>하루 상한 68,100원</b>이고, 하한은 최저임금의 80%(하루 8시간 기준 66,048원)야. 계산은 <a href="/money/tools/unemployment/">실업급여 계산기</a>로 해 볼 수 있어(참고용).</p>
 <h2>4. 실업급여 기간</h2><table class="info"><tr><th>가입 기간</th><th>50세 미만</th><th>50세 이상·장애인</th></tr><tr><td>1년 미만</td><td>120일</td><td>120일</td></tr><tr><td>1~3년</td><td>150일</td><td>180일</td></tr><tr><td>3~5년</td><td>180일</td><td>210일</td></tr><tr><td>5~10년</td><td>210일</td><td>240일</td></tr><tr><td>10년 이상</td><td>240일</td><td>270일</td></tr></table>
-<h2>5. 실업급여 신청방법</h2><ol><li>회사가 이직확인서를 고용센터에 냈는지 확인해요.</li><li>고용24(www.work24.go.kr)에서 구직 등록을 해요.</li><li>온라인 수급자격 신청자 교육을 들어요.</li><li>거주지 관할 고용센터에 수급자격 인정 신청을 해요.</li><li>정해진 날마다 실업 인정(구직 활동 보고)을 하면 지급돼요.</li></ol>
-<h2>6. 자주 헷갈리는 것</h2><ul class="chk"><li>65세 이후 새로 취업한 경우는 원칙적으로 받을 수 없어요(65세 전부터 계속 일한 경우는 가능).</li><li>수급 중 아르바이트로 소득이 생기면 반드시 신고해야 해요. 신고하지 않으면 부정 수급이 돼요.</li><li>퇴직금은 실업급여와 별개라 둘 다 받을 수 있어요. <a href="/money/tools/severance/">퇴직금 계산기</a>로 먼저 확인해 보세요.</li></ul>'''),
- ('contest-sites', '공모전 사이트 추천·비교 — 어디서 찾고 어떻게 고를까', '공모전 사이트 추천: 콘테스트코리아·위비티·링커리어·씽굿·올콘 같은 공모전 정보 사이트 특징과, 여러 사이트 공고를 한 번에 비교하는 방법을 정리했어요.', '''
-<p>공모전 정보는 여러 사이트에 흩어져 있어서, 같은 공모전이 사이트마다 조금씩 다른 제목으로 올라오기도 해요. 사이트마다 강점이 달라서 한 곳만 보면 놓치는 공고가 생겨요.</p>
-<h2>대표적인 공모전 정보 사이트</h2><table class="info"><tr><th>사이트</th><th>특징</th></tr><tr><td>콘테스트코리아</td><td>분야별 공모전 목록이 오래 쌓인 대형 공모전 포털이에요. 청소년·대학생·일반 분야 구분이 잘 되어 있어요.</td></tr>
-<tr><td>위비티</td><td>공모전과 대외활동을 함께 다루고, 분야별 목록과 마감 순 정렬이 편해요.</td></tr><tr><td>링커리어</td><td>대학생 대외활동·인턴·공모전을 함께 보여 줘요. 대학생 대상 공고를 찾을 때 많이 써요.</td></tr>
-<tr><td>씽굿</td><td>공모전 전문 사이트로, 공모전 운영 대행 공고도 함께 올라와요.</td></tr><tr><td>올콘</td><td>공모전·대외활동 일정을 목록으로 모아 보여 줘요.</td></tr></table>
-<p class="note">사이트 특징은 2026년 10월 기준 일반적인 이용 방식으로 정리했어요. 공고의 최종 기준은 언제나 주최 기관의 공식 공고예요.</p>
-<h2>고를 때 기준</h2><ul class="chk"><li><b>마감일과 마감 시각:</b> 사이트 목록의 마감일과 공식 공고가 다를 때가 있어요. 접수 전 공식 공고에서 다시 확인하세요.</li><li><b>자격:</b> 지역 거주·재학 조건이 있는 공모전은 경쟁이 덜한 편이라 해당되면 먼저 보세요.</li><li><b>준비 시간:</b> 슬로건·사진은 짧게, 영상·기획서는 2주 이상 잡으세요.</li><li><b>참가비·저작권:</b> 참가비를 받거나 저작권을 통째로 넘기는 조건이면 한 번 더 따져 보세요.</li></ul>
-<h2>루리 줍줍에서는</h2><p>여러 사이트에 올라온 공고를 모아 같은 공모전은 하나로 합치고, 분야·자격·마감·제출물을 같은 형식으로 정리해요. <a href="/contest/">맞는 공모전 찾기</a>에서 조건을 고르면 추천 이유와 함께 보여 주고, 공모전마다 「자동 자료 찾기」로 관련 수상작·가이드를 찾아 줘요.</p>'''),
- ('idea-proposal-form', '아이디어 공모전 기획서 양식 — 순서·분량·ppt 구성', '아이디어 공모전 기획서·제안서 양식: 표지부터 요약, 현황·문제, 아이디어, 실행 계획, 기대효과까지 순서와 분량, ppt로 낼 때 장 구성을 정리했어요.', '''
-<p>아이디어 공모전은 양식을 주는 곳이 많아요. 주최 측 양식이 있으면 반드시 그 양식을 쓰고, 칸과 순서를 바꾸지 않는 게 기본이에요. 양식이 없을 때 쓸 수 있는 기본 구성을 정리했어요.</p>
-<h2>기본 순서</h2><ol><li><b>제목·한 줄 요약:</b> 무엇을 누구에게 어떻게 바꾸는지 한 문장으로.</li><li><b>현황과 문제:</b> 공공 통계나 기사로 숫자 하나를 근거로 들어요(출처 표기).</li><li><b>아이디어:</b> 핵심 기능 2~3개, 그림이나 흐름도 한 장.</li><li><b>실행 방법:</b> 누가, 어떤 순서로, 얼마의 비용으로.</li><li><b>기대효과:</b> 숫자로 쓸 수 있는 것과 없는 것을 나눠요.</li><li><b>차별점:</b> 이미 시행 중인 정책·서비스와 다른 점.</li></ol>
-<h2>분량</h2><p>요강에 분량(A4 몇 장, 글자 수)이 있으면 그 안에서 맞추고, 없으면 A4 3~5장 정도가 심사위원이 읽기 편해요. 요약은 첫 장 맨 위에 두세요.</p>
-<h2>ppt로 낼 때</h2><p>10장 안팎으로: 표지 → 요약 → 문제 2장 → 아이디어 3장 → 실행·예산 2장 → 기대효과 → 마무리. 한 장에 메시지 하나, 글자는 줄이고 그림을 늘려요. PDF로 바꿔 내면 글꼴이 깨지지 않아요.</p>
+<h2>5. 실업급여 신청방법</h2><ol><li>회사가 이직확인서를 고용센터에 냈는지 확인해.</li><li>고용24(www.work24.go.kr)에서 구직 등록을 해.</li><li>온라인 수급자격 신청자 교육을 들어.</li><li>거주지 관할 고용센터에 수급자격 인정 신청을 해.</li><li>정해진 날마다 실업 인정(구직 활동 보고)을 하면 지급돼.</li></ol>
+<h2>6. 자주 헷갈리는 것</h2><ul class="chk"><li>65세 이후 새로 취업한 경우는 원칙적으로 받을 수 없어(65세 전부터 계속 일한 경우는 가능).</li><li>수급 중 아르바이트로 소득이 생기면 반드시 신고해야 해. 신고하지 않으면 부정 수급이 돼.</li><li>퇴직금은 실업급여와 별개라 둘 다 받을 수 있어. <a href="/money/tools/severance/">퇴직금 계산기</a>로 먼저 확인해 봐.</li></ul>'''),
+ ('contest-sites', '공모전 사이트 추천·비교 — 어디서 찾고 어떻게 고를까', '공모전 사이트 추천: 콘테스트코리아·위비티·링커리어·씽굿·올콘 같은 공모전 정보 사이트 특징과, 여러 사이트 공고를 한 번에 비교하는 방법을 정리했어.', '''
+<p>공모전 정보는 여러 사이트에 흩어져 있어서, 같은 공모전이 사이트마다 조금씩 다른 제목으로 올라오기도 해. 사이트마다 강점이 달라서 한 곳만 보면 놓치는 공고가 생겨.</p>
+<h2>대표적인 공모전 정보 사이트</h2><table class="info"><tr><th>사이트</th><th>특징</th></tr><tr><td>콘테스트코리아</td><td>분야별 공모전 목록이 오래 쌓인 대형 공모전 포털이야. 청소년·대학생·일반 분야 구분이 잘 되어 있어.</td></tr>
+<tr><td>위비티</td><td>공모전과 대외활동을 함께 다루고, 분야별 목록과 마감 순 정렬이 편해.</td></tr><tr><td>링커리어</td><td>대학생 대외활동·인턴·공모전을 함께 보여 줘. 대학생 대상 공고를 찾을 때 많이 써.</td></tr>
+<tr><td>씽굿</td><td>공모전 전문 사이트로, 공모전 운영 대행 공고도 함께 올라와.</td></tr><tr><td>올콘</td><td>공모전·대외활동 일정을 목록으로 모아 보여 줘.</td></tr></table>
+<p class="note">사이트 특징은 2026년 10월 기준 일반적인 이용 방식으로 정리했어. 공고의 최종 기준은 언제나 주최 기관의 공식 공고야.</p>
+<h2>고를 때 기준</h2><ul class="chk"><li><b>마감일과 마감 시각:</b> 사이트 목록의 마감일과 공식 공고가 다를 때가 있어. 접수 전 공식 공고에서 다시 확인해.</li><li><b>자격:</b> 지역 거주·재학 조건이 있는 공모전은 경쟁이 덜한 편이라 해당되면 먼저 봐.</li><li><b>준비 시간:</b> 슬로건·사진은 짧게, 영상·기획서는 2주 이상 잡아.</li><li><b>참가비·저작권:</b> 참가비를 받거나 저작권을 통째로 넘기는 조건이면 한 번 더 따져 봐.</li></ul>
+<h2>루리 줍줍에서는</h2><p>여러 사이트에 올라온 공고를 모아 같은 공모전은 하나로 합치고, 분야·자격·마감·제출물을 같은 형식으로 정리해. <a href="/contest/">맞는 공모전 찾기</a>에서 조건을 고르면 추천 이유와 함께 보여 주고, 공모전마다 「자동 자료 찾기」로 관련 수상작·가이드를 찾아 줘.</p>'''),
+ ('idea-proposal-form', '아이디어 공모전 기획서 양식 — 순서·분량·ppt 구성', '아이디어 공모전 기획서·제안서 양식: 표지부터 요약, 현황·문제, 아이디어, 실행 계획, 기대효과까지 순서와 분량, ppt로 낼 때 장 구성을 정리했어.', '''
+<p>아이디어 공모전은 양식을 주는 곳이 많아. 주최 측 양식이 있으면 반드시 그 양식을 쓰고, 칸과 순서를 바꾸지 않는 게 기본이야. 양식이 없을 때 쓸 수 있는 기본 구성을 정리했어.</p>
+<h2>기본 순서</h2><ol><li><b>제목·한 줄 요약:</b> 무엇을 누구에게 어떻게 바꾸는지 한 문장으로.</li><li><b>현황과 문제:</b> 공공 통계나 기사로 숫자 하나를 근거로 들어(출처 표기).</li><li><b>아이디어:</b> 핵심 기능 2~3개, 그림이나 흐름도 한 장.</li><li><b>실행 방법:</b> 누가, 어떤 순서로, 얼마의 비용으로.</li><li><b>기대효과:</b> 숫자로 쓸 수 있는 것과 없는 것을 나눠.</li><li><b>차별점:</b> 이미 시행 중인 정책·서비스와 다른 점.</li></ol>
+<h2>분량</h2><p>요강에 분량(A4 몇 장, 글자 수)이 있으면 그 안에서 맞추고, 없으면 A4 3~5장 정도가 심사위원이 읽기 편해. 요약은 첫 장 맨 위에 둬.</p>
+<h2>ppt로 낼 때</h2><p>10장 안팎으로: 표지 → 요약 → 문제 2장 → 아이디어 3장 → 실행·예산 2장 → 기대효과 → 마무리. 한 장에 메시지 하나, 글자는 줄이고 그림을 늘려. PDF로 바꿔 내면 글꼴이 깨지지 않아.</p>
 <h2>제출 전 점검</h2><ul class="chk"><li>파일 이름 규칙(예: 공모전명_이름)을 지켰나요?</li><li>개인정보(이름·학교)를 넣지 말라는 블라인드 심사인지 확인했나요?</li><li>인용한 통계·사진의 출처를 적었나요?</li></ul>'''),
- ('character-panel', '캐릭터 공모전 판넬 만드는 법 — 구성·크기·제출 전 점검', '캐릭터 공모전 판넬(제출용 한 장) 구성: 기본형, 3면도, 응용 동작, 컬러 칩, 기획 의도, 활용 예시 배치와 파일 크기·해상도 점검 목록을 정리했어요.', '''
-<p>캐릭터·마스코트 공모전은 대부분 「판넬」이라고 부르는 한 장짜리 제출 이미지를 받아요. 심사위원이 이 한 장으로 캐릭터를 이해하니 배치가 중요해요. 크기·형식은 공고마다 다르니 공고 기준이 먼저예요.</p>
+ ('character-panel', '캐릭터 공모전 판넬 만드는 법 — 구성·크기·제출 전 점검', '캐릭터 공모전 판넬(제출용 한 장) 구성: 기본형, 3면도, 응용 동작, 컬러 칩, 기획 의도, 활용 예시 배치와 파일 크기·해상도 점검 목록을 정리했어.', '''
+<p>캐릭터·마스코트 공모전은 대부분 「판넬」이라고 부르는 한 장짜리 제출 이미지를 받아. 심사위원이 이 한 장으로 캐릭터를 이해하니 배치가 중요해. 크기·형식은 공고마다 다르니 공고 기준이 먼저야.</p>
 <h2>판넬에 들어가는 것</h2><ol><li><b>캐릭터 이름과 한 줄 소개</b></li><li><b>기본형:</b> 가장 크게, 정면 전신.</li><li><b>3면도:</b> 정면·측면·뒷면(공고에서 요구하면).</li><li><b>응용 동작 3~5개:</b> 인사, 기쁨, 응원처럼 실제로 쓸 장면.</li><li><b>컬러 칩:</b> 주요 색 3~5개와 색 값.</li><li><b>기획 의도:</b> 주최 기관·지역과 연결되는 이유를 3~4줄로.</li><li><b>활용 예시:</b> 굿즈·현수막·SNS에 넣은 모습 1~2개.</li></ol>
-<h2>크기·형식 점검</h2><ul class="chk"><li>공고에 크기가 없으면 A3·300dpi가 무난하고, 미리보기용 JPG와 원본(AI·PSD) 제출 여부를 확인하세요.</li><li>기존 캐릭터와 닮았다는 지적을 받지 않도록 비슷한 캐릭터를 미리 검색해 보세요.</li><li>AI 도구 사용 허용 여부와 「AI 사용 표기」 규정을 확인하세요.</li><li>수상 시 저작권이 주최 측으로 넘어가는지 공고의 저작권 조항을 읽어 두세요.</li></ul>
-<p>진행 중인 캐릭터 공모전은 <a href="/contest/character/">캐릭터 공모전 모음</a>에서 마감순으로 볼 수 있어요.</p>'''),
+<h2>크기·형식 점검</h2><ul class="chk"><li>공고에 크기가 없으면 A3·300dpi가 무난하고, 미리보기용 JPG와 원본(AI·PSD) 제출 여부를 확인해.</li><li>기존 캐릭터와 닮았다는 지적을 받지 않도록 비슷한 캐릭터를 미리 검색해 봐.</li><li>AI 도구 사용 허용 여부와 「AI 사용 표기」 규정을 확인해.</li><li>수상 시 저작권이 주최 측으로 넘어가는지 공고의 저작권 조항을 읽어 둬.</li></ul>
+<p>진행 중인 캐릭터 공모전은 <a href="/contest/character/">캐릭터 공모전 모음</a>에서 마감순으로 볼 수 있어.</p>'''),
 ]
 _GX = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'guides_extra.json')  # 지식인 고민 해결 글(연구 세션이 추가)
 # 고민 해결(/qa/ 목록, 글은 /guide/<slug>/ 유지 — 지식인 답변 링크). 항목: [slug, 제목, 요약, 본문HTML] 또는 {slug,title,desc,body,icon,tag}
@@ -3123,16 +3146,16 @@ def build_ssul(ss, live, aps):
         tail = (f'<h2>루리가 골라 둔 진짜 기회</h2><ul class="list">{rel}</ul>' if rel else
                 '<h2>지금 낼 수 있는 대회</h2><p><a href="/">바로 낼 수 있는 대회 보러 가기 →</a></p>')
         body = f'''<p class="bc"><a href="/">홈</a> › <a href="/ssul/">썰</a></p>
-<article class="ssul"><p class="note">{E(x["date"])}</p><h1>{E(x["title"])}</h1>{say(x["expr"], E(x["summary"]) or "루리가 들려주는 이야기예요.")}{x["html"]}</article>{tail}'''
+<article class="ssul"><p class="note">{E(x["date"])}</p><h1>{E(x["title"])}</h1>{say(x["expr"], E(x["summary"]) or "루리가 들려주는 이야기야.")}{x["html"]}</article>{tail}'''
         page(f'/ssul/{x["slug"]}/', x['title'], x['summary'] or x['title'], body,
              [('루리 줍줍', '/'), ('썰', '/ssul/'), (x['title'], f'/ssul/{x["slug"]}/')],
              {'@context': 'https://schema.org', '@type': 'Article', 'headline': x['title'], 'datePublished': x['date'] or str(TODAY),
               'author': {'@type': 'Person', 'name': 'Seongsang Park'}})
     li = ''.join(f'<li><a class="card" data-c="guide" href="/ssul/{x["slug"]}/"><span class="ic">💬</span><div class="cb"><h3 class="t">{E(x["title"])}</h3><p class="o">{E(x["summary"])}</p></div></a></li>' for x in ss) \
-        or '<li class="empty"><img src="/assets/ruri/o_cardigan_s.webp" width="64" height="88" alt=""><p>루리가 첫 이야기를 준비하고 있어요!</p></li>'
-    page('/ssul/', '루리의 썰', '루리가 들려주는 용돈·공모전 이야기. 이야기 끝에 실제로 낼 수 있는 대회를 이어 드려요.',
-         f'''<p class="bc"><a href="/">홈</a> › 썰</p><section class="dh" data-c="guide"><span class="ic big">💬</span><h1>루리의 썰</h1><p class="lead">이야기 끝에 진짜 낼 수 있는 대회가 이어져요</p></section>
-{say("o_cardigan", "오늘은 무슨 얘기 해 볼까요? 재밌게 읽고, 마음에 드는 대회는 바로 넣어 봐요!")}<ul class="list">{li}</ul>''',
+        or '<li class="empty"><img src="/assets/ruri/o_cardigan_s.webp" width="64" height="88" alt=""><p>루리가 첫 이야기를 준비하고 있어!</p></li>'
+    page('/ssul/', '루리의 썰', '루리가 들려주는 용돈·공모전 이야기. 이야기 끝에 실제로 낼 수 있는 대회를 이어 줘.',
+         f'''<p class="bc"><a href="/">홈</a> › 썰</p><section class="dh" data-c="guide"><span class="ic big">💬</span><h1>루리의 썰</h1><p class="lead">이야기 끝에 진짜 낼 수 있는 대회가 이어져</p></section>
+{say("o_cardigan", "오늘은 무슨 얘기 해 볼까? 재밌게 읽고, 마음에 드는 대회는 바로 넣어 봐!")}<ul class="list">{li}</ul>''',
          [('루리 줍줍', '/'), ('썰', '/ssul/')])
 
 
@@ -3141,13 +3164,13 @@ def prep_page():
     G = json.load(open(os.path.join(ROOT, 'assets', 'prep', 'data.json'), encoding='utf-8'))['genres']
     seed = ''.join(f'<li class="tp-ruri"><span class="tp-who">{g["icon"]} {E(g["name"])}</span><p>{E(x)}</p></li>' for g in G for x in g['tips'][:2])
     body = f'''<p class="bc"><a href="/">홈</a> › 준비실</p><h1>📋 루리의 공모전 준비실</h1>
-{say("o_desk", "공모전 하나 고르면 마감일에 맞춰 할 일을 날짜별로 짜 드릴게요. 체크하면서 따라오기만 하면 돼요!")}
+{say("o_desk", "공모전 하나 고르면 마감일에 맞춰 할 일을 날짜별로 짜 줄게. 체크하면서 따라오기만 하면 돼!")}
 <section id="prep" aria-label="공모전 준비 보드">
-<h2>🧰 준비 도구</h2><div class="pp-tools"><div class="pp-tool"><h3>📏 분량 계산기 <small>글자 수·원고지 매수·A4 쪽수</small></h3><div id="pp-count"><noscript>자바스크립트가 필요해요.</noscript></div></div>
+<h2>🧰 준비 도구</h2><div class="pp-tools"><div class="pp-tool"><h3>📏 분량 계산기 <small>글자 수·원고지 매수·A4 쪽수</small></h3><div id="pp-count"><noscript>자바스크립트가 필요해.</noscript></div></div>
 <div class="pp-links"><a href="/lab/#diag"><b>🏆 내 문구 진단</b>슬로건·네이밍을 수상작 공식과 비교</a><a href="/lab/"><b>🔬 수상 연구소</b>실제 수상작과 분석</a><a href="/community/"><b>🚩 원정대</b>같이 할 팀원 찾기</a><a href="/qa/"><b>💬 고민 해결</b>준비하다 막힌 것들</a></div></div>
 <section id="tips"><h2>🍯 장르별 공모전 꿀팁 <small>루리 팁 + 회원들이 직접 나눈 팁</small></h2><div class="tp-chips"></div><ul class="tp-list">{seed}</ul><div class="tp-form"></div></section>
 </section><link rel="stylesheet" href="/assets/prep/prep.css?v=3"><script defer src="/assets/prep/prep.js?v=3"></script>'''
-    page('/prep/', '루리의 공모전 준비실 — 마감 역산 일정·체크리스트·꿀팁', '공모전을 고르면 마감일에 맞춘 준비 일정과 장르별 체크리스트를 만들어 줘요. 슬로건·수기·디자인·영상·사진·정책 제안 꿀팁과 분량 계산기까지.',
+    page('/prep/', '루리의 공모전 준비실 — 마감 역산 일정·체크리스트·꿀팁', '공모전을 고르면 마감일에 맞춘 준비 일정과 장르별 체크리스트를 만들어 줘. 슬로건·수기·디자인·영상·사진·정책 제안 꿀팁과 분량 계산기까지.',
          body, [('루리 줍줍', '/'), ('준비실', '/prep/')])
 
 
@@ -3160,7 +3183,7 @@ def kdate(d):
     return f'{d.month}월 {d.day}일({KDAY[d.weekday()]})'
 
 
-TALK_NOTE = '<p class="tk-warn">💬 커뮤니티 반응을 정리한 것이며 사실 확인 전이에요. 원문은 각 커뮤니티 글이고, 언론 보도 여부를 함께 표시해요.</p>'
+TALK_NOTE = '<p class="tk-warn">💬 커뮤니티 반응을 정리한 것이며 사실 확인 전이야. 원문은 각 커뮤니티 글이고, 언론 보도 여부를 함께 표시해.</p>'
 
 
 def talk_issue(x, day):
@@ -3213,34 +3236,34 @@ def game_pages(live):
     sf = ''.join(f'<li><a href="https://store.steampowered.com/app/{x["id"]}/" target="_blank" rel="noopener nofollow">{E(x["name"])}</a></li>' for x in sfd.get('f2p', []))
     gc = sorted([c for c in live if GAME_RX.search(c['title'])], key=lambda c: (c['end'], -c.get('pv', 0)))[:12]
     body = (f'<p class="bc"><a href="/">홈</a> › 게임</p><h1>🎮 게임 허브 — 이번 주 무료 게임·스팀 할인·게임 공모전</h1>'
-            f'<h2 id="free">🎁 지금 무료로 받는 게임 (Epic Games Store)</h2>' + (f'<ul class="gm-g">{free}</ul>' if free else '<p class="note">지금 무료로 풀린 게임이 없어요.</p>')
+            f'<h2 id="free">🎁 지금 무료로 받는 게임 (Epic Games Store)</h2>' + (f'<ul class="gm-g">{free}</ul>' if free else '<p class="note">지금 무료로 풀린 게임이 없어.</p>')
             + (f'<h3>⏭️ 다음 무료 예고</h3><ul class="gm-g">{upc}</ul>' if upc else '')
             + (f'<h3>💸 에픽 할인 중</h3><ul class="gm-l">{sale}</ul>' if sale else '')
-            + (f'<h2 id="steam-free">🎁 스팀에서 지금 무료 (할인 100%)</h2><p class="note">정가가 있는 게임·추가 콘텐츠가 기간 한정으로 무료예요. 무료인 동안 라이브러리에 담아 두면 계속 쓸 수 있고, 끝나는 시각은 스토어 페이지에서 확인하세요.</p><ul class="gm-g">{sk}</ul>' if sk else '')
+            + (f'<h2 id="steam-free">🎁 스팀에서 지금 무료 (할인 100%)</h2><p class="note">정가가 있는 게임·추가 콘텐츠가 기간 한정으로 무료야. 무료인 동안 라이브러리에 담아 두면 계속 쓸 수 있고, 끝나는 시각은 스토어 페이지에서 확인해.</p><ul class="gm-g">{sk}</ul>' if sk else '')
             + (f'<h3>🆓 스팀 무료 플레이 인기</h3><ol class="gm-l">{sf}</ol>' if sf else '')
             + (f'<p><a class="lab-cta" href="/game/db/"><b>📚 게임 DB — 할인·무료 프로모션 게임과 공략 영상 모음</b></a></p>'
-            f'<p class="cat-st">📌 스토어 기준 {E(d.get("at", ""))}(한국 시간)에 받은 정보예요. 가격·할인은 바뀔 수 있으니 결제 전 스토어에서 확인하세요. 출처: Epic Games Store, Steam.</p>'
+            f'<p class="cat-st">📌 스토어 기준 {E(d.get("at", ""))}(한국 시간)에 받은 정보야. 가격·할인은 바뀔 수 있으니 결제 전 스토어에서 확인해. 출처: Epic Games Store, Steam.</p>'
             '<p class="hm-chips"><a href="/game/free/">🎁 에픽 무료 게임 기록</a><a href="/game/release/">🗓️ 신작 출시 일정</a><a href="/game/steam-sale/">📅 스팀 세일 달력</a><a href="/game/refund/">↩️ 스팀 환불 규정</a><a href="/game/battlefield-6-editions/">🔫 배틀필드6 에디션 비교</a><a href="#timing">🕰️ 살 타이밍</a></p>')
-            + f'<h2 id="steam">🔥 스팀 할인 TOP</h2>' + (f'<ul class="gm-g">{sp}</ul>' if sp else '<p class="note">지금 불러온 할인 정보가 없어요.</p>')
+            + f'<h2 id="steam">🔥 스팀 할인 TOP</h2>' + (f'<ul class="gm-g">{sp}</ul>' if sp else '<p class="note">지금 불러온 할인 정보가 없어.</p>')
             + game_timing(st, d.get('events') or {})
             + (f'<h2>🏆 스팀 인기 게임</h2><ol class="gm-l">{tp}</ol>' if tp else '') + (f'<h2>🗓️ 곧 나오는 게임</h2><ul class="gm-l">{cs}</ul>' if cs else '')
             + cp_box('게임 게이밍 PC', '게임할 때 많이 찾는 물건:', 2, strict=True) + join_cta('game')
-            + f'<h2 id="contest">🏆 게임·e스포츠·해커톤 공모전 (진행 중 {len(gc)}건)</h2>' + (f'<ul class="list">{"".join(card(c) for c in gc)}</ul>' if gc else '<p class="note">지금 진행 중인 게임 관련 공모전이 없어요.</p>')
-            + '<p class="note">이미지와 가격은 각 스토어가 공개한 정보를 매시간 받아 보여 줘요. 줍줍은 스토어와 무관하고, 게임 구매를 권하지 않아요. 소통은 오픈채팅에서 해요.</p>'
+            + f'<h2 id="contest">🏆 게임·e스포츠·해커톤 공모전 (진행 중 {len(gc)}건)</h2>' + (f'<ul class="list">{"".join(card(c) for c in gc)}</ul>' if gc else '<p class="note">지금 진행 중인 게임 관련 공모전이 없어.</p>')
+            + '<p class="note">이미지와 가격은 각 스토어가 공개한 정보를 매시간 받아 보여 줘. 줍줍은 스토어와 무관하고, 게임 구매를 권하지 않아. 소통은 오픈채팅에서 해.</p>'
             '<p class="hm-links"><a href="/contest/">전체 공모전</a> · <a href="/event/">🎁 경품·용돈</a></p>' + css)
-    page('/game/', '게임 허브 — 이번 주 에픽·스팀 무료 게임, 스팀 할인 TOP, 게임 공모전 (매일 갱신)', f'Epic 무료 게임 {len(ep.get("free", []))}개와 스팀 할인·인기·출시 예정, 진행 중인 게임·e스포츠·해커톤 공모전 {len(gc)}건을 한곳에. 스토어 기준 시각을 적어요.',
+    page('/game/', '게임 허브 — 이번 주 에픽·스팀 무료 게임, 스팀 할인 TOP, 게임 공모전 (매일 갱신)', f'Epic 무료 게임 {len(ep.get("free", []))}개와 스팀 할인·인기·출시 예정, 진행 중인 게임·e스포츠·해커톤 공모전 {len(gc)}건을 한곳에. 스토어 기준 시각을 적어.',
          body, [('루리 줍줍', '/'), ('게임', '/game/')])
     return ['/game/']
 
 
 JN_TOPICS = {   # 2026-10-20 사용자 「그 사람이 듣고 싶은 정보를 회원가입하면 보내 주는 서비스」「가입 유도」: 키 → (아이콘, 제목, 보내는 때)
-    'recipe': ('🍳', '오늘 뭐 먹지, 아침마다 알려 드려요', '매일 아침 · 이메일'),
+    'recipe': ('🍳', '오늘 뭐 먹지, 아침마다 알려 줘', '매일 아침 · 이메일'),
     'apply': ('💰', '새 지원금·마감 임박 청약을 놓치지 않게', '새 공고와 마감 3일 전 · 이메일'),
     'contest': ('🏆', '마감 임박 공모전을 놓치지 않게', '마감 3일 전 · 이메일'),
     'issue': ('📺', '루리 뉴스 브리핑을 메일로', '매일 아침 · 이메일'),
     'game': ('🎮', '이번 주 무료 게임·스팀 할인을 먼저', '새 무료 게임이 풀릴 때 · 이메일'),
     'money': ('📊', '전문가 말 vs 시세 요약을 메일로', '매일 아침 · 이메일'),
-    'event': ('🎁', '이벤트 알림 받기 — 오늘 마감하는 경품 이벤트를 이메일로', '매일 아침 · 이메일 · 경품을 받는 버튼이 아니라 알림 신청이에요')}
+    'event': ('🎁', '이벤트 알림 받기 — 오늘 마감하는 경품 이벤트를 이메일로', '매일 아침 · 이메일 · 경품을 받는 버튼이 아니라 알림 신청이야')}
 _JNP = {}
 JN_BTN = {'recipe': '메뉴 알림 받기', 'apply': '지원금 알림 받기', 'contest': '공모전 알림 받기', 'issue': '뉴스 브리핑 받기', 'game': '게임 알림 받기', 'money': '요약 메일 받기', 'event': '이벤트 알림 받기'}
 
@@ -3285,14 +3308,14 @@ def join_cta(t):
         return ''
     ic, ti, when = JN_TOPICS[t]
     pv = jn_preview(t)
-    return (f'<aside class="jn" data-t="{t}"><div><b>📬 {ic} {E(ti)}</b>' + (f'<p>{E(pv)}</p>' if pv else '') + f'<small>{E(when)} · 가입 무료 · 언제든 끌 수 있어요</small></div>'
+    return (f'<aside class="jn" data-t="{t}"><div><b>📬 {ic} {E(ti)}</b>' + (f'<p>{E(pv)}</p>' if pv else '') + f'<small>{E(when)} · 가입 무료 · 언제든 끌 수 있어</small></div>'
             f'<button class="jn-b" type="button">{JN_BTN.get(t, "알림 받기")}</button></aside><link rel="stylesheet" href="/assets/join/join.css?v=1"><script defer src="/assets/join/join.js?v=1"></script>')
 
 
 def join_home():
     """홈: 주제를 골라 받는 입구(눌러서 /me/ 의 소식 설정으로)."""
     chips = ''.join(f'<a href="/me/?t={k}#topics">{ic} {E(ti.split(",")[0][:14])}</a>' for k, (ic, ti, _) in JN_TOPICS.items())
-    return ('<section class="hm-sec jn-home"><h2>📬 원하는 소식만 골라 받기</h2><p class="kwn">가입하면 고른 주제의 새 소식을 메일로 보내 드려요. 마감 임박·새 공고·무료 게임·오늘의 메뉴까지, 끄는 것도 한 번에.</p>'
+    return ('<section class="hm-sec jn-home"><h2>📬 원하는 소식만 골라 받기</h2><p class="kwn">가입하면 고른 주제 새 소식을 메일로 보내줘. 마감 임박·새 공고·무료 게임·오늘의 메뉴까지. 끄는 것도 한 번에.</p>'
             f'<p class="hm-chips">{chips}</p></section><link rel="stylesheet" href="/assets/join/join.css?v=1">')
 
 
@@ -3315,9 +3338,9 @@ def game_timing(st, ev):
         low = min((q[1] for q in pts), default=None)
         n = len(pts)
         if n >= 2 and low is not None:
-            note = '🟢 기록상 최저가와 같아요' if x['price'] <= low else f'기록 최저 {won(low)}({n}일 기록)'
+            note = '🟢 기록상 최저가와 같아' if x['price'] <= low else f'기록 최저 {won(low)}({n}일 기록)'
         else:
-            note = '기록 시작 — 내일부터 비교돼요'
+            note = '기록 시작 — 내일부터 비교돼'
         rows += (f'<tr><td><a href="https://store.steampowered.com/app/{x["id"]}/" target="_blank" rel="noopener nofollow">{E(x["name"])}</a></td><td>{x["off"]}% ↓ <b>{won(x["price"])}</b><br><small><s>{won(x["orig"])}</s></small></td>'
                  f'<td>{note}</td><td>{E(x["until"] or "-")}</td></tr>')
     if not rows:
@@ -3326,10 +3349,10 @@ def game_timing(st, ev):
     nxt = next((e for e in (ev.get('seasonal') or []) if e.get('start') and _gd(e['start']) >= td), None)
     nl = f'<li>다음 시즌 세일: <b>{E(nxt["name"])}</b> {E(_gr(nxt["start"], nxt["end"]))} (D-{(_gd(nxt["start"]) - td).days}) — <a href="/game/steam-sale/">세일 달력 보기</a></li>' if nxt else ''
     return ('<h2 id="timing">🕰️ 지금 사도 될까? 살 타이밍</h2>'
-            f'<p class="kwn">스팀의 공개 정보에는 역대 최저가 기록이 없어요. 그래서 줍줍이 {E(H.get("since", ""))}부터 매일 받아 둔 가격 중 가장 낮은 값과 비교해요(기록이 짧을수록 참고만 하세요).</p>'
+            f'<p class="kwn">스팀 공개 정보엔 역대 최저가 기록이 없어. 그래서 줍줍이 {E(H.get("since", ""))}부터 매일 받아 둔 가격 중 가장 낮은 값이랑 비교해(기록이 짧을수록 참고만 해).</p>'
             f'<div class="tblw"><table class="xb"><thead><tr><th>게임</th><th>지금 가격</th><th>줍줍 기록</th><th>할인 종료</th></tr></thead><tbody>{rows}</tbody></table></div>'
-            '<ul class="gm-l">' + nl + '<li>구매한 게임이 다음 날 더 싸졌다면 환불 후 다시 사도 스팀은 악용으로 보지 않는다고 공식 안내에 적혀 있어요 — <a href="/game/refund/">환불 규정</a></li>'
-            '<li>역대 최저가가 궁금하면 <a href="https://steamdb.info/" target="_blank" rel="noopener nofollow">SteamDB</a> 같은 가격 추적 사이트에서 게임별로 확인하세요(줍줍이 가져오지는 않아요).</li></ul>'
+            '<ul class="gm-l">' + nl + '<li>구매한 게임이 다음 날 더 싸졌다면 환불 후 다시 사도 스팀은 악용으로 안 본다고 공식 안내에 적혀 있어 — <a href="/game/refund/">환불 규정</a></li>'
+            '<li>역대 최저가가 궁금하면 <a href="https://steamdb.info/" target="_blank" rel="noopener nofollow">SteamDB</a> 같은 가격 추적 사이트에서 게임별로 확인해(줍줍은 안 가져와).</li></ul>'
             '<style>.tblw{overflow-x:auto}.xb{border-collapse:collapse;width:100%;font-size:13.5px;min-width:520px}.xb th,.xb td{border-bottom:1px solid var(--bd,#e5e7eb);padding:6px;text-align:left;vertical-align:top}</style>')
 
 
@@ -3361,22 +3384,22 @@ def game_extra_pages():
         rows += '<tr><td>Autumn Sale 2026 <small>(지난 시즌)</small></td><td>2026-10-01 ~ 2026-10-08</td><td>종료 · SteamDB 표기(공식 일정 문서에는 지난 일정이 없어서 줍줍 홍보팀이 확인)</td></tr>'
         fr = ''.join(f'<tr><td>{E(a["name"])}</td><td>{E(a["start"])} ~ {E(a["end"])}</td><td>{("D-" + str((_gd(a["start"]) - td).days)) if _gd(a["start"]) > td else ("진행 중" if td <= _gd(a["end"]) else "종료")}</td></tr>' for a in (ev.get('fests') or []) + (ev.get('nextfest') or []) if _gd(a['end']) >= td)
         nxt = next((a for a in ev['seasonal'] if a.get('start') and _gd(a['start']) >= td), None)
-        faq, ld = _faq([('스팀 세일은 1년에 몇 번 하나요?', '시즌 세일은 스팀 전체가 참여하는 큰 세일로, 공식 문서에 「1년에 4번」(겨울·봄·여름·가을)으로 적혀 있어요. 그 밖에 장르별 테마 페스티벌과 Next Fest(체험판 행사)가 따로 열려요.'),
-                        ('다음 스팀 세일은 언제예요?', (f'공식 일정 문서 기준으로 다음 시즌 세일은 {nxt["name"]}({_gr(nxt["start"], nxt["end"])}, 지금부터 {(_gd(nxt["start"]) - td).days}일 뒤)예요.' if nxt else '공식 일정 문서에 아직 다음 날짜가 없어요.')),
-                        ('블랙프라이데이에도 스팀 세일을 하나요?', '2026년 스팀 가을 세일은 SteamDB 에 10월 1일~8일로 표기돼 있어 이미 끝났어요(공식 일정 문서에는 지난 일정이 실리지 않아요). 지금 공식 문서에 예정된 다음 시즌 세일은 겨울 세일이에요. 블랙프라이데이(2026년은 11월 27일)에 스팀이 따로 큰 세일을 한다는 공식 일정은 문서에 없어요.'),
-                        ('스팀 마블 스파이더맨2 같은 게임은 할인을 또 언제 하나요?', '특정 게임이 언제 또 할인할지는 줍줍이 알 수 없어요. 할인 여부와 폭은 게임사가 정하고, 다음 큰 할인 기회는 <a href="/game/steam-sale/">시즌 세일 달력</a>에서 확인할 수 있어요. 게임별 가격 이력은 SteamDB 같은 추적 사이트에서 볼 수 있고, <a href="/game/#timing">살 타이밍</a>에는 줍줍이 기록한 가격이 쌓여요.'),
-                        ('스듀(스타듀 밸리)처럼 지금 살까 기다릴까 고민될 때는요?', '급하지 않다면 다음 시즌 세일까지 기다리는 선택지가 있어요. 다만 할인 보장은 없고, 먼저 산 뒤 14일·2시간 안이면 환불할 수 있어요(<a href="/game/refund/">환불 규정</a>). 게임별 가격은 스팀 상점에서 확인하세요.'),
-                        ('스팀 세일 때까지 기다려야 하나요?', (f'급하지 않다면 다음 시즌 세일({nxt["name"]}, {_gr(nxt["start"], nxt["end"])})까지 기다리는 선택지가 있어요. 다만 할인 여부와 폭은 게임사가 정해서 이전과 같다는 보장은 없어요. 사고 나서 다음 날 더 싸졌다면 환불 후 재구매해도 악용이 아니라는 공식 문장이 있어요(<a href="/game/refund/">환불 규정</a>).' if nxt else '다음 세일 날짜가 공식 문서에 나오면 이 표에 들어와요.')),
-                        ('세일 때 산 게임을 환불할 수 있나요?', '구매 후 14일 이내이고 플레이 시간이 2시간 미만이면 요청할 수 있어요. 자세한 조건은 <a href="/game/refund/">스팀 환불 규정</a>에 정리했어요.')])
+        faq, ld = _faq([('스팀 세일은 1년에 몇 번 해?', '시즌 세일은 스팀 전체가 참여하는 큰 세일로, 공식 문서에 「1년에 4번」(겨울·봄·여름·가을)으로 적혀 있어. 그 밖에 장르별 테마 페스티벌과 Next Fest(체험판 행사)가 따로 열려.'),
+                        ('다음 스팀 세일은 언제야?', (f'공식 일정 문서 기준으로 다음 시즌 세일은 {nxt["name"]}({_gr(nxt["start"], nxt["end"])}, 지금부터 {(_gd(nxt["start"]) - td).days}일 뒤)야.' if nxt else '공식 일정 문서에 아직 다음 날짜가 없어.')),
+                        ('블랙프라이데이에도 스팀 세일 해?', '2026년 스팀 가을 세일은 SteamDB 에 10월 1일~8일로 표기돼 있어 이미 끝났어(공식 일정 문서엔 지난 일정이 안 실려). 지금 공식 문서에 예정된 다음 시즌 세일은 겨울 세일이야. 블랙프라이데이(2026년은 11월 27일)에 스팀이 따로 큰 세일을 한다는 공식 일정은 문서에 없어.'),
+                        ('스팀 마블 스파이더맨2 같은 게임은 할인을 또 언제 해?', '특정 게임이 언제 또 할인할지는 줍줍도 몰라. 할인 여부와 폭은 게임사가 정하고, 다음 큰 할인 기회는 <a href="/game/steam-sale/">시즌 세일 달력</a>에서 확인해. 게임별 가격 이력은 SteamDB 같은 추적 사이트에서 볼 수 있고, <a href="/game/#timing">살 타이밍</a>에는 줍줍이 기록한 가격이 쌓여.'),
+                        ('스듀(스타듀 밸리)처럼 지금 살까 기다릴까 고민될 때는?', '급하지 않으면 다음 시즌 세일까지 기다리는 선택지가 있어. 다만 할인 보장은 없고, 먼저 산 뒤 14일·2시간 안이면 환불할 수 있어(<a href="/game/refund/">환불 규정</a>). 게임별 가격은 스팀 상점에서 확인해.'),
+                        ('스팀 세일 때까지 기다려야 해?', (f'급하지 않다면 다음 시즌 세일({nxt["name"]}, {_gr(nxt["start"], nxt["end"])})까지 기다리는 선택지가 있어. 다만 할인 여부와 폭은 게임사가 정해서 이전과 같다는 보장은 없어. 사고 나서 다음 날 더 싸졌다면 환불 후 재구매해도 악용이 아니라는 공식 문장이 있어(<a href="/game/refund/">환불 규정</a>).' if nxt else '다음 세일 날짜가 공식 문서에 나오면 이 표에 들어와.')),
+                        ('세일 때 산 게임 환불돼?', '구매 후 14일 이내에 플레이 시간 2시간 미만이면 요청할 수 있어. 자세한 조건은 <a href="/game/refund/">스팀 환불 규정</a>에 정리했어.')])
         body = ('<p class="bc"><a href="/">홈</a> › <a href="/game/">게임</a> › 스팀 세일 달력</p><h1>📅 스팀 세일 언제 하나요? 시즌 세일 달력</h1>'
-                + (f'<p class="cat-st">📌 다음 시즌 세일은 <b>{E(nxt["name"])}</b>, {E(_gr(nxt["start"], nxt["end"]))} (D-{(_gd(nxt["start"]) - td).days})예요.</p>' if nxt else '')
+                + (f'<p class="cat-st">📌 다음 시즌 세일은 <b>{E(nxt["name"])}</b>, {E(_gr(nxt["start"], nxt["end"]))} (D-{(_gd(nxt["start"]) - td).days})야.</p>' if nxt else '')
                 + '<h2>시즌 세일 (스팀 공식 일정)</h2><div class="tblw"><table class="xb"><thead><tr><th>세일</th><th>기간</th><th>상태</th></tr></thead><tbody>' + rows + '</tbody></table></div>'
-                + '<p class="kwn">출처: Steamworks 문서 「Upcoming Steam Events」(공식)와 SteamDB(지난 시즌 한 줄). 시즌 세일은 해마다 4번이고, 날짜가 TBD 인 곳은 공식 발표 전이에요. 최종 일정은 스팀 공지로 확인하세요. 지난 시즌 날짜는 <a href="https://store.steampowered.com/news/" target="_blank" rel="noopener nofollow">스팀 공식 뉴스</a>에서 확인하세요.</p>'
+                + '<p class="kwn">출처: Steamworks 문서 「Upcoming Steam Events」(공식)와 SteamDB(지난 시즌 한 줄). 시즌 세일은 해마다 4번이고, 날짜가 TBD 인 곳은 공식 발표 전이야. 최종 일정은 스팀 공지로 확인해. 지난 시즌 날짜는 <a href="https://store.steampowered.com/news/" target="_blank" rel="noopener nofollow">스팀 공식 뉴스</a>에서 확인해.</p>'
                 + ('<h2>테마 페스티벌·Next Fest (앞으로 열리는 것)</h2><div class="tblw"><table class="xb"><thead><tr><th>행사</th><th>기간</th><th>상태</th></tr></thead><tbody>' + fr + '</tbody></table></div>'
-                   '<p class="kwn">테마 페스티벌은 특정 장르 게임을 모아 홍보하는 행사이고 할인 게임이 우선이에요. Next Fest 는 출시 전 게임의 체험판을 해 보는 행사예요(공식 설명 기준).</p>' if fr else '')
+                   '<p class="kwn">테마 페스티벌은 특정 장르 게임을 모아 홍보하는 행사이고 할인 게임이 우선이야. Next Fest 는 출시 전 게임 체험판을 해 보는 행사야(공식 설명 기준).</p>' if fr else '')
                 + '<h2>자주 묻는 질문</h2>' + faq + cp_box('게임 게이밍 PC', '게임할 때 많이 찾는 물건:', 2, strict=True) + join_cta('game') + _cite_box({'basis': f'확인일 {td.isoformat()}', 'sources': [('Steamworks 「Upcoming Steam Events」', ''), ('SteamDB', '')], 'sections': [{'table': 1}]}, '/game/steam-sale/')
                 + f'<p class="hm-links"><a href="/game/">🎮 게임 허브</a> · <a href="/game/refund/">↩️ 스팀 환불 규정</a> · <a href="/game/free/">🎁 에픽 무료 게임 기록</a></p>' + GAME_CSS)
-        page('/game/steam-sale/', f'스팀 세일 언제 하나요? {td.year} 가을(블랙 프라이데이)·겨울 세일 달력 {td.year}~{td.year + 1}, Next Fest', '스팀 시즌 세일과 테마 페스티벌, Next Fest 일정을 스팀 공식 일정 문서 기준으로 정리했어요. 다음 세일까지 며칠 남았는지도 매일 갱신해요.',
+        page('/game/steam-sale/', f'스팀 세일 언제 해? {td.year} 가을(블랙 프라이데이)·겨울 세일 달력 {td.year}~{td.year + 1}, Next Fest', '스팀 시즌 세일과 테마 페스티벌, Next Fest 일정을 스팀 공식 일정 문서 기준으로 정리했어. 다음 세일까지 며칠 남았는지도 매일 갱신해.',
              body, [('루리 줍줍', '/'), ('게임', '/game/'), ('스팀 세일 달력', '/game/steam-sale/')], ld)
         urls.append('/game/steam-sale/')
     # ---- 신작 출시 일정 (스팀 인기 출시 예정 중 날짜가 확정된 것만)
@@ -3389,15 +3412,15 @@ def game_extra_pages():
         secs = ''.join(f'<h3>{int(k[5:7])}월 {int(k[8:])}일({wd[_gd(k).weekday()]}) <small>D-{(_gd(k) - td).days}</small></h3><ul class="gm-g">' + ''.join(
             f'<li><a href="https://store.steampowered.com/app/{x["id"]}/" target="_blank" rel="noopener nofollow">' + (f'<img src="{E(x["img"])}" width="232" height="87" loading="lazy" decoding="async" referrerpolicy="no-referrer" alt="" onerror="this.remove()">' if x['img'] else '')
             + f'<b>{E(x["name"])}</b><span>스팀 출시 예정</span></a></li>' for x in v) + '</ul>' for k, v in by.items())
-        faq, ld = _faq([('이번 주 신작 게임 뭐 나와요?', ', '.join(x['name'] for x in rel[:5]) + ' 등이 스팀에서 출시일이 정해져 있어요. 전체는 위 목록을 보세요.'),
-                        ('출시일이 안 정해진 게임은요?', '스팀에 「2026년 10월」「2026년」처럼 날짜가 흐리게 적힌 게임은 일부러 뺐어요. 날짜가 정해지면 이 목록에 자동으로 들어와요.'),
-                        ('에픽 게임즈 스토어 출시 일정도 있나요?', '에픽은 출시 예정작 날짜를 공개 자료로 내주지 않아서 이 페이지에는 스팀만 있어요. 에픽은 매주 바뀌는 무료 게임 예고를 <a href="/game/free/">무료 게임 기록</a>에 정리해요.')])
+        faq, ld = _faq([('이번 주 신작 게임 뭐 나와?', ', '.join(x['name'] for x in rel[:5]) + ' 등이 스팀에서 출시일이 정해져 있어. 전체는 위 목록 봐.'),
+                        ('출시일이 안 정해진 게임은?', '스팀에 「2026년 10월」「2026년」처럼 날짜가 흐리게 적힌 게임은 일부러 뺐어. 날짜가 정해지면 이 목록에 자동으로 들어와.'),
+                        ('에픽 게임즈 스토어 출시 일정도 있어?', '에픽은 출시 예정작 날짜를 공개 자료로 안 내줘서 이 페이지엔 스팀만 있어. 에픽은 매주 바뀌는 무료 게임 예고를 <a href="/game/free/">무료 게임 기록</a>에 정리해.')])
         body = ('<p class="bc"><a href="/">홈</a> › <a href="/game/">게임</a> › 신작 출시 일정</p><h1>🗓️ 신작 게임 출시 일정 — 스팀 출시일이 정해진 게임</h1>'
-                f'<p class="cat-st">📌 스토어 기준 {E(d.get("at", ""))}(한국 시간). 스팀 「인기 출시 예정」 중 출시일이 날짜까지 정해진 {len(rel)}개 가운데 가까운 순으로 보여 줘요. 추측한 날짜는 넣지 않았어요.</p>'
+                f'<p class="cat-st">📌 스토어 기준 {E(d.get("at", ""))}(한국 시간). 스팀 「인기 출시 예정」 중 출시일이 날짜까지 정해진 {len(rel)}개 가운데 가까운 순으로 보여 줘. 추측한 날짜는 안 넣었어.</p>'
                 + secs + '<h2>자주 묻는 질문</h2>' + faq + cp_box('게임 게이밍 PC', '게임할 때 많이 찾는 물건:', 2, strict=True) + join_cta('game')
-                + '<p class="note">출처: Steam 스토어 공개 검색 정보. 출시일은 개발사 사정으로 바뀔 수 있어요. 줍줍은 Valve와 무관해요.</p>'
+                + '<p class="note">출처: Steam 스토어 공개 검색 정보. 출시일은 개발사 사정으로 바뀔 수 있어. 줍줍은 Valve와 무관해.</p>'
                 '<p class="hm-links"><a href="/game/">🎮 게임 허브</a> · <a href="/game/free/">🎁 에픽 무료 게임 기록</a> · <a href="/game/steam-sale/">📅 스팀 세일 달력</a></p>' + GAME_CSS)
-        page('/game/release/', '신작 게임 출시 일정 — 스팀 출시일이 정해진 게임 (이번 주·이번 달)', f'스팀 인기 출시 예정 게임 중 출시일이 날짜까지 정해진 {len(rel)}개를 가까운 순으로 모았어요. 추측한 날짜는 넣지 않아요.',
+        page('/game/release/', '신작 게임 출시 일정 — 스팀 출시일이 정해진 게임 (이번 주·이번 달)', f'스팀 인기 출시 예정 게임 중 출시일이 날짜까지 정해진 {len(rel)}개를 가까운 순으로 모았어. 추측한 날짜는 안 넣어.',
              body, [('루리 줍줍', '/'), ('게임', '/game/'), ('신작 출시 일정', '/game/release/')], ld)
         urls.append('/game/release/')
     # ---- 영어: 신작 출시 일정 (글로벌 유입용, 홍보 요청 2026-10-20)
@@ -3426,25 +3449,25 @@ def game_extra_pages():
             ('꾸러미(번들)', '꾸러미에 든 아이템을 거래하지 않았고 전체 플레이 시간이 2시간 미만이면 환불 가능. 환불 불가한 게임 내 아이템·DLC가 들어 있으면 꾸러미는 환불 불가(구매 과정에서 알려 줘요)'),
             ('스팀 하드웨어', '스팀 하드웨어는 별도의 하드웨어 환불 정책을 따라요'),
             ('스팀 지갑', '충전한 금액을 쓰지 않았다면 구매 후 14일 이내'), ('정기 구독', '결제(자동 갱신 포함) 후 48시간 이내 + 그 기간 구독 혜택을 쓰지 않았을 때'), ('선물', '수락 전에는 14일·2시간 기준으로 환불(비용은 구매한 사람에게). 수락한 선물은 받은 사람이 같은 기간 안에 요청'),
-            ('스팀 밖에서 산 키', '환불 불가(타사에서 산 CD키·지갑 코드)'), ('VAC 차단', '그 게임에서 VAC 차단되면 그 게임의 환불 권리를 잃어요'), ('동영상 콘텐츠', '영화·시리즈·튜토리얼 등은 환불 불가(환불되는 제품과 묶인 꾸러미는 제외)')]
+            ('스팀 밖에서 산 키', '환불 불가(타사에서 산 CD키·지갑 코드)'), ('VAC 차단', '그 게임에서 VAC 차단되면 그 게임 환불 권리를 잃어'), ('동영상 콘텐츠', '영화·시리즈·튜토리얼 등은 환불 불가(환불되는 제품과 묶인 꾸러미는 제외)')]
     tr = ''.join(f'<tr><td><b>{E(a)}</b></td><td>{E(b)}</td></tr>' for a, b in rows)
-    faq, ld = _faq([('스팀 환불은 몇 시간까지 되나요?', '게임은 구매 후 14일 이내이고 플레이 시간이 2시간 미만이어야 해요. 규칙에 안 맞아도 일단 요청하면 확인해 준다고 공식 안내에 적혀 있어요.'),
-                    ('환불은 어디서 요청하나요? 결제 오류도 거기로 문의하나요?', '<a href="https://help.steampowered.com/" target="_blank" rel="noopener nofollow">help.steampowered.com</a> 에서 환불 요청과 다른 도움(결제 문의 포함)을 받을 수 있어요.'),
-                    ('환불금은 언제 어디로 들어오나요?', '요청이 확인된 뒤 1주 안에, 스팀 지갑 또는 구매에 쓴 결제 수단으로 전액 환불돼요. 결제 수단이 환불을 지원하지 않으면 스팀 지갑으로 들어와요.'),
-                    ('다음 날 더 싸졌는데 환불하고 다시 사도 되나요?', '공식 안내에 「구매한 제품이 바로 다음 날 더 저렴한 가격으로 판매되고 있어서 환불 후 다시 구매하는 것은 악용으로 판단하지 않는다」고 적혀 있어요. 다만 환불을 무료 플레이 용도로 쓰면 환불 기능이 막힐 수 있어요.'),
-                    ('스팀 환불 신청 방법은요?', '<a href="https://help.steampowered.com/" target="_blank" rel="noopener nofollow">help.steampowered.com</a> 에서 요청한다고 스팀 공식 환불 안내에 나와 있어요. 구매 후 14일 이내·게임 플레이 2시간 미만인지 먼저 확인하세요.'),
-                    ('스팀 결제가 두 번 됐을 때는요?', '결제 문제도 <a href="https://help.steampowered.com/" target="_blank" rel="noopener nofollow">help.steampowered.com</a> 에서 도움을 받을 수 있다고 공식 안내에 나와 있어요. 줍줍은 개별 결제 내역을 볼 수 없어서, 출금 내역은 카드사·은행에서도 함께 확인하세요.'),
-                    ('에픽·콘솔(플레이스테이션·엑스박스·닌텐도) 환불도 같나요?', '플랫폼마다 조건이 달라요. 줍줍은 스팀 공식 안내를 직접 확인한 내용만 적었고, 다른 플랫폼은 아래 공식 고객지원에서 확인하세요.')])
+    faq, ld = _faq([('스팀 환불은 몇 시간까지 돼?', '게임은 구매 후 14일 이내에 플레이 시간 2시간 미만이어야 해. 규칙에 안 맞아도 일단 요청하면 확인해 준다고 공식 안내에 적혀 있어.'),
+                    ('환불은 어디서 요청해? 결제 오류도 거기로 문의해?', '<a href="https://help.steampowered.com/" target="_blank" rel="noopener nofollow">help.steampowered.com</a> 에서 환불 요청과 다른 도움(결제 문의 포함)을 받을 수 있어.'),
+                    ('환불금은 언제 어디로 들어와?', '요청이 확인된 뒤 1주 안에 스팀 지갑이나 구매에 쓴 결제 수단으로 전액 환불돼. 결제 수단이 환불을 지원 안 하면 스팀 지갑으로 들어와.'),
+                    ('다음 날 더 싸졌는데 환불하고 다시 사도 돼?', '공식 안내에 「구매한 제품이 바로 다음 날 더 저렴한 가격으로 판매되고 있어서 환불 후 다시 구매하는 것은 악용으로 판단하지 않는다」고 적혀 있어. 다만 환불을 무료 플레이 용도로 쓰면 환불 기능이 막힐 수 있어.'),
+                    ('스팀 환불 신청 방법은?', '<a href="https://help.steampowered.com/" target="_blank" rel="noopener nofollow">help.steampowered.com</a> 에서 요청한다고 스팀 공식 환불 안내에 나와 있어. 구매 후 14일 이내·게임 플레이 2시간 미만인지 먼저 확인해.'),
+                    ('스팀 결제가 두 번 됐을 때는?', '결제 문제도 <a href="https://help.steampowered.com/" target="_blank" rel="noopener nofollow">help.steampowered.com</a> 에서 도움을 받을 수 있다고 공식 안내에 나와 있어. 줍줍은 개별 결제 내역을 못 봐서, 출금 내역은 카드사·은행에서도 같이 확인해.'),
+                    ('에픽·콘솔(플레이스테이션·엑스박스·닌텐도) 환불도 같아?', '플랫폼마다 조건이 달라. 줍줍은 스팀 공식 안내를 직접 확인한 내용만 적었고, 다른 플랫폼은 아래 공식 고객지원에서 확인해.')])
     body = ('<p class="bc"><a href="/">홈</a> › <a href="/game/">게임</a> › 스팀 환불 규정</p><h1>↩️ 스팀 게임 환불 되나요? 환불 규정 (구매 후 14일·플레이 2시간)</h1>'
-            '<p class="cat-st">📌 스팀은 구매 후 <b>14일 이내</b>, 게임 플레이 <b>2시간 미만</b>이면 이유와 상관없이 환불을 요청할 수 있어요. 요청은 <a href="https://help.steampowered.com/" target="_blank" rel="noopener nofollow">help.steampowered.com</a>에서 해요.</p>'
+            '<p class="cat-st">📌 스팀은 구매 후 <b>14일 이내</b>, 게임 플레이 <b>2시간 미만</b>이면 이유와 상관없이 환불을 요청할 수 있어. 요청은 <a href="https://help.steampowered.com/" target="_blank" rel="noopener nofollow">help.steampowered.com</a>에서 해.</p>'
             '<h2>구매 종류별 환불 조건</h2><div class="tblw"><table class="xb"><thead><tr><th>구매 종류</th><th>조건</th></tr></thead><tbody>' + tr + '</tbody></table></div>'
-            '<h2>환불 요청 방법과 받는 시기</h2><ul class="gm-l"><li>help.steampowered.com 에서 요청해요. 결제 오류 같은 다른 문의도 같은 곳이에요.</li><li>확인된 뒤 <b>1주 안</b>에 스팀 지갑 또는 구매에 쓴 결제 수단으로 전액 환불돼요.</li><li>규칙 밖이어도 요청하면 살펴본다고 공식 안내에 적혀 있고, 일부 지역은 게임에 결함이 있을 때 추가 권리가 있을 수 있어요.</li><li>환불 기능을 무료 플레이용으로 악용하면 막힐 수 있어요.</li></ul>'
-            '<h2>스팀 말고 다른 플랫폼은?</h2><p>에픽·콘솔은 조건이 서로 달라서 줍줍이 확인하지 못한 숫자는 적지 않았어요. 아래 공식 고객지원에서 확인하세요: '
+            '<h2>환불 요청 방법과 받는 시기</h2><ul class="gm-l"><li>help.steampowered.com 에서 요청해. 결제 오류 같은 다른 문의도 같은 곳이야.</li><li>확인된 뒤 <b>1주 안</b>에 스팀 지갑 또는 구매에 쓴 결제 수단으로 전액 환불돼.</li><li>규칙 밖이어도 요청하면 살펴본다고 공식 안내에 적혀 있고, 일부 지역은 게임에 결함이 있을 때 추가 권리가 있을 수 있어.</li><li>환불 기능을 무료 플레이용으로 악용하면 막힐 수 있어.</li></ul>'
+            '<h2>스팀 말고 다른 플랫폼은?</h2><p>에픽·콘솔은 조건이 서로 달라서 줍줍이 확인 못 한 숫자는 안 적었어. 아래 공식 고객지원에서 확인해: '
             '<a href="https://www.epicgames.com/help/ko" target="_blank" rel="noopener nofollow">에픽게임즈</a> · <a href="https://www.playstation.com/ko-kr/support/" target="_blank" rel="noopener nofollow">플레이스테이션</a> · <a href="https://support.xbox.com/ko-KR" target="_blank" rel="noopener nofollow">엑스박스</a> · <a href="https://www.nintendo.co.kr/" target="_blank" rel="noopener nofollow">닌텐도</a></p>'
             '<h2>자주 묻는 질문</h2>' + faq + cp_box('게임 게이밍 PC', '게임할 때 많이 찾는 물건:', 2, strict=True)
-            + '<p class="note">출처: <a href="https://store.steampowered.com/steam_refunds/?l=koreana" target="_blank" rel="noopener nofollow">Steam 환불 공식 안내</a>(수정 2024년 4월 23일본, 줍줍 확인 2026-10-20). 규정은 바뀔 수 있으니 결제 전 공식 안내를 확인하세요. 법률 상담이 아니에요.</p>'
+            + '<p class="note">출처: <a href="https://store.steampowered.com/steam_refunds/?l=koreana" target="_blank" rel="noopener nofollow">Steam 환불 공식 안내</a>(수정 2024년 4월 23일본, 줍줍 확인 2026-10-20). 규정은 바뀔 수 있으니 결제 전 공식 안내를 확인해. 법률 상담이 아니야.</p>'
             '<p class="hm-links"><a href="/game/">🎮 게임 허브</a> · <a href="/game/steam-sale/">📅 스팀 세일 달력</a> · <a href="/game/free/">🎁 에픽 무료 게임 기록</a></p>' + GAME_CSS)
-    page('/game/refund/', '스팀 환불 규정 — 구매 후 14일·플레이 2시간, 환불 요청 방법과 예외 (DLC·선물·지갑)', '스팀 게임 환불 조건을 공식 안내 기준으로 정리했어요. 14일·2시간 기준, 환불 요청 경로, DLC·게임 내 구매·예약 구매·선물·지갑 예외, 환불금이 들어오는 시기.',
+    page('/game/refund/', '스팀 환불 규정 — 구매 후 14일·플레이 2시간, 환불 요청 방법과 예외 (DLC·선물·지갑)', '스팀 게임 환불 조건을 공식 안내 기준으로 정리했어. 14일·2시간 기준, 환불 요청 경로, DLC·게임 내 구매·예약 구매·선물·지갑 예외, 환불금이 들어오는 시기.',
          body, [('루리 줍줍', '/'), ('게임', '/game/'), ('스팀 환불 규정', '/game/refund/')], ld)
     urls.append('/game/refund/')
     # ---- 에픽 무료 게임 기록
@@ -3462,18 +3485,18 @@ def game_extra_pages():
     if fr0:
         try:
             sd = datetime.datetime.strptime(f'{td.year}/{fr0["start"]}', '%Y/%m/%d %H:%M')
-            wk = f'지금 무료 기간은 {E(fr0["start"])}(한국 시간)에 시작해 {E(fr0["end"])}에 끝나요. 새 무료 게임은 보통 이 시각에 바뀌어요.'
+            wk = f'지금 무료 기간은 {E(fr0["start"])}(한국 시간)에 시작해 {E(fr0["end"])}에 끝나. 새 무료 게임은 보통 이 시각에 바뀌어.'
         except Exception:
             wk = ''
-    faq, ld = _faq([('이번 주 에픽 무료 게임은 뭐예요?', ', '.join(x['name'] for x in ep.get('free', [])) + f' (~{ep["free"][0]["end"]} 한국 시간까지)' if ep.get('free') else '지금 무료로 풀린 게임이 없어요.'),
-                    ('다음 무료 게임은 뭐예요?', (', '.join(f'{x["name"]}({x["start"]}부터)' for x in ep.get('upcoming', [])) + ' — 에픽이 미리 공개한 예고예요.') if ep.get('upcoming') else '아직 공개된 예고가 없어요.'),
-                    ('지난 무료 게임 목록은 어디서 보나요?', f'이 페이지에 줍줍이 확인한 무료 게임을 {E(H.get("since", ""))}부터 쌓고 있어요. 에픽 공개 자료에는 지난 목록이 없어서 그 이전 기록은 없어요. 공식 무료 게임 페이지는 <a href="https://store.epicgames.com/ko/free-games" target="_blank" rel="noopener nofollow">여기</a>예요.')])
+    faq, ld = _faq([('이번 주 에픽 무료 게임은 뭐야?', ', '.join(x['name'] for x in ep.get('free', [])) + f' (~{ep["free"][0]["end"]} 한국 시간까지)' if ep.get('free') else '지금 무료로 풀린 게임이 없어.'),
+                    ('다음 무료 게임은 뭐야?', (', '.join(f'{x["name"]}({x["start"]}부터)' for x in ep.get('upcoming', [])) + ' — 에픽이 미리 공개한 예고야.') if ep.get('upcoming') else '아직 공개된 예고가 없어.'),
+                    ('지난 무료 게임 목록은 어디서 봐?', f'이 페이지에 줍줍이 확인한 무료 게임을 {E(H.get("since", ""))}부터 쌓고 있어. 에픽 공개 자료엔 지난 목록이 없어서 그 이전 기록은 없어. 공식 무료 게임 페이지는 <a href="https://store.epicgames.com/ko/free-games" target="_blank" rel="noopener nofollow">여기</a>야.')])
     body = ('<p class="bc"><a href="/">홈</a> › <a href="/game/">게임</a> › 에픽 무료 게임</p><h1>🎁 에픽게임즈 무료 게임 뭐 있나요? 이번 주·다음 예고·지난 기록</h1>'
-            f'<p class="cat-st">📌 스토어 기준 {E(d.get("at", ""))}(한국 시간). {wk}</p><h2>지금 무료</h2>' + (f'<ul class="gm-g">{cur}</ul>' if cur else '<p class="note">지금 무료로 풀린 게임이 없어요.</p>')
+            f'<p class="cat-st">📌 스토어 기준 {E(d.get("at", ""))}(한국 시간). {wk}</p><h2>지금 무료</h2>' + (f'<ul class="gm-g">{cur}</ul>' if cur else '<p class="note">지금 무료로 풀린 게임이 없어.</p>')
             + (f'<h2>다음 무료 예고</h2><ul class="gm-g">{nxt_}</ul>' if nxt_ else '') + f'<h2>지난 무료 게임 기록 <small>({E(H.get("since", ""))}부터)</small></h2>'
-            + (f'<ul class="gm-l">{pl}</ul>' if pl else '<p class="note">아직 지난 기록이 없어요. 줍줍이 확인한 무료 게임이 끝나면 여기 쌓여요. 에픽이 공개한 자료에는 지난 목록이 없어서 그 이전 기록은 만들 수 없어요.</p>')
+            + (f'<ul class="gm-l">{pl}</ul>' if pl else '<p class="note">아직 지난 기록이 없어. 줍줍이 확인한 무료 게임이 끝나면 여기 쌓여. 에픽 공개 자료엔 지난 목록이 없어서 그 이전 기록은 못 만들어.</p>')
             + '<h2>자주 묻는 질문</h2>' + faq + cp_box('게임 게이밍 PC', '게임할 때 많이 찾는 물건:', 2, strict=True) + join_cta('game')
-            + '<p class="note">출처: Epic Games Store 공개 프로모션 자료. 줍줍은 에픽게임즈와 무관해요. 이미지는 에픽이 공개한 홍보 이미지예요.</p>'
+            + '<p class="note">출처: Epic Games Store 공개 프로모션 자료. 줍줍은 에픽게임즈와 무관해. 이미지는 에픽이 공개한 홍보 이미지야.</p>'
             '<p class="hm-links"><a href="/game/">🎮 게임 허브</a> · <a href="/game/steam-sale/">📅 스팀 세일 달력</a> · <a href="/game/refund/">↩️ 스팀 환불 규정</a></p>' + GAME_CSS)
     page('/game/free/', '에픽 무료 게임 — 이번 주 무료·다음 예고·지난 무료 게임 기록', '에픽게임즈 스토어에서 지금 무료인 게임과 다음 주 예고, 줍줍이 확인해 쌓은 지난 무료 게임 기록을 한곳에. 한국 시간 기준.',
          body, [('루리 줍줍', '/'), ('게임', '/game/'), ('에픽 무료 게임', '/game/free/')], ld)
@@ -3515,7 +3538,7 @@ def _jr_box(g, JIDX, GN):
         return ''
     j, i = JIDX[g['slug']]
     st = j['steps']
-    nx = f'<a href="/money/guide/{st[i + 1]["slug"]}/">{E(GN[st[i + 1]["slug"]]["name"])}</a>: {E(st[i + 1].get("note", ""))}' if i + 1 < len(st) else '마지막 단계예요.'
+    nx = f'<a href="/money/guide/{st[i + 1]["slug"]}/">{E(GN[st[i + 1]["slug"]]["name"])}</a>: {E(st[i + 1].get("note", ""))}' if i + 1 < len(st) else '마지막 단계야.'
     return ('<h2>이 단계 한눈에</h2><div class="tblw"><table class="xb"><thead><tr><th>보통 놓치는 것</th><th>다음 단계</th><th>공식 문의처</th></tr></thead><tbody><tr><td>'
             + '<br>'.join('· ' + E(x) for x in g['miss']) + f'</td><td>{nx}</td><td>{E(g["contact"])}</td></tr></tbody></table></div>')
 
@@ -3524,7 +3547,7 @@ def _alert(g):
     """급한 처지에서 읽는 글(채무·보증금·사기·분쟁) 맨 위 안내: 법률 상담이 아니고 개별 사건은 기관에 확인."""
     if not g.get('alert'):
         return ''
-    return ('<div class="g-alert" role="note"><b>⚠️ 먼저 읽어 주세요</b><p>' + g['alert'] + '</p></div>'
+    return ('<div class="g-alert" role="note"><b>⚠️ 먼저 읽어</b><p>' + g['alert'] + '</p></div>'
             '<style>.g-alert{border:2px solid #f59e0b;background:#fffbeb;color:#78350f;border-radius:12px;padding:10px 14px;margin:10px 0}.g-alert p{margin:4px 0 0;line-height:1.7}.g-alert a{color:inherit;text-decoration:underline}'
             '@media (prefers-color-scheme: dark){.g-alert{background:#422006;color:#fde68a;border-color:#b45309}}</style>')
 
@@ -3976,7 +3999,7 @@ def kin_guides():
                 + join_cta('apply')
                 + _cite_box(g, f'/money/guide/{g["slug"]}/')
                 + f'<section class="g-src" id="src"><h2>📎 공식 출처</h2><ul class="gm-l">{src}</ul>'
-                + f'<p class="note">AI가 위 공식 출처를 바탕으로 확인일 기준으로 정리한 내용이고, 운영자가 한 건씩 직접 검토한 것은 아니에요. 기준 금액과 신청 기간은 해마다 바뀔 수 있어요. 신청 전에 위 공식 출처를 꼭 확인하고, 개별 사정은 {E(g["contact"])}에 문의하세요. 법률·세무 상담이 아니에요.</p></section>'
+                + f'<p class="note">AI가 위 공식 출처를 바탕으로 확인일 기준으로 정리한 내용이야. 운영자가 한 건씩 직접 검토한 건 아니야. 기준 금액과 신청 기간은 해마다 바뀔 수 있어. 신청 전에 위 공식 출처를 꼭 확인하고, 개별 사정은 {E(g["contact"])}에 문의해. 법률·세무 상담이 아니에요.</p></section>'
                 + _g_appendix(g)
                 + (f'<aside class="say"><img src="/assets/ruri/o_det_think_s.webp" width="56" height="77" alt="루리" loading="lazy"><div class="bub"><b>루리의 한마디</b><div>{E(g["lury_note"])}</div></div></aside>' if g.get('lury_note') else '')
                 + f'<p class="hm-links">{rel} · <a href="/money/guide/">다른 생활 돈 가이드</a></p>' + GAME_CSS + '<link rel="stylesheet" href="/assets/guide/guide.css?v=9">' + (f'<script defer src="{E(g["script"])}"></script>' if g.get('script') else ''))
@@ -3995,7 +4018,7 @@ def kin_guides():
         rows = ''.join(f'<tr><td>{i + 1}</td><td><a href="/money/guide/{st["slug"]}/">{E(GN[st["slug"]]["name"])}</a></td><td>{E(st.get("note", ""))}</td><td>{E(GN[st["slug"]]["contact"])}</td></tr>' for i, st in enumerate(j['steps']) if st['slug'] in GN)
         hb = (f'<p class="bc"><a href="/">홈</a> › <a href="/money/guide/">생활 돈 가이드</a> › {E(j["name"])}</p><h1>{j["icon"]} {E(j["h1"])}</h1><p class="cat-st">📌 {E(j["lead"])}</p>'
               f'<h2>단계별로 보기</h2><div class="tblw"><table class="xb"><thead><tr><th>단계</th><th>가이드</th><th>이 단계에서 할 일</th><th>공식 문의처</th></tr></thead><tbody>{rows}</tbody></table></div>'
-              f'<p class="note">{E(j.get("note", "각 가이드는 공식 안내로 확인한 내용만 적고, 자료마다 다르거나 확인하지 못한 칸은 비워 뒀어요."))}</p>'
+              f'<p class="note">{E(j.get("note", "각 가이드는 공식 안내로 확인한 내용만 적고, 자료마다 다르거나 확인 못 한 칸은 비워 뒀어."))}</p>'
               f'<p class="hm-links"><a href="/money/guide/">다른 생활 돈 가이드</a></p>' + GAME_CSS)
         page(jp, j['title'], j['desc'], hb, [('루리 줍줍', '/'), ('머니', '/analyst/'), ('생활 돈 가이드', '/money/guide/'), (j['name'], jp)])
         urls.append(jp)
@@ -4005,13 +4028,13 @@ def kin_guides():
              '<li><a class="card" data-c="guide" href="/money/tools/unemployment/"><span class="ic">🧮</span><div class="cb"><h3 class="t">실업급여 계산기</h3><p class="o">가입 기간·나이별 받는 날 수와 금액</p></div></a></li>'
              '<li><a class="card" data-c="guide" href="/money/tools/salary/"><span class="ic">🧮</span><div class="cb"><h3 class="t">연봉 실수령액 계산기</h3><p class="o">4대보험·소득세 뺀 월급</p></div></a></li>')
     # 2026-10-23 화면 개선 12번: 검색 + 상황별 시작(그리드) / 제도 사전(검색 가능 목록) 분리, 인쇄 버튼은 개별 글 보조 메뉴로
-    _JT = {'resign': ('퇴사할 때', '퇴직금·보험·실업급여를 순서대로 확인하세요.'), 'housing': ('이사·집 구할 때', '집을 구하고 이사하는 순서대로 확인하세요.'),
-           'parttime': ('알바할 때', '알바 시작부터 임금 받기까지 순서대로 확인하세요.'), 'finance': ('결제·빚 문제가 생겼을 때', '결제 문제부터 큰 빚 문제까지 순서대로 확인하세요.')}
+    _JT = {'resign': ('퇴사할 때', '퇴직금·보험·실업급여를 순서대로 확인해.'), 'housing': ('이사·집 구할 때', '집 구하고 이사하는 순서대로 확인해.'),
+           'parttime': ('알바할 때', '알바 시작부터 임금 받기까지 순서대로 확인해.'), 'finance': ('결제·빚 문제가 생겼을 때', '결제 문제부터 큰 빚 문제까지 순서대로 확인해.')}
     _jg = ''.join(f'<a class="mg-jc" href="/money/guide/journey/{j["slug"]}/"><i>{j["icon"]}</i><b>{E(_JT.get(j["slug"], (j["name"], ""))[0])}</b><span>{E(_JT.get(j["slug"], ("", re.sub(chr(32) + "+", " ", j["lead"])[:46]))[1])}</span></a>' for j in JR)
-    GUIDE_HUBS = [('2027', '2027 표·일정', '📅', r'2027', '2027년 보험료율·공휴일·시험 일정·봉급표·세율 등 연말~연초에 많이 찾는 표와 일정을 한곳에 모았습니다.'),
-                  ('year-end', '연말정산', '🧾', r'^year-end|medical-expense-tax|tax-refund', '연말정산 준비 순서, 공제 항목, 간소화 자료 제공 일정과 환급 시기를 한곳에 모았습니다.'),
-                  ('heating', '난방·에너지', '🔥', r'energy|heating|electric|water-pipe|boiler|gas-', '난방비·전기요금 계산과 에너지 지원 제도, 겨울철 동파 예방까지 모았습니다.'),
-                  ('work', '일·직장', '💼', r'minimum-wage|retire|four-insur|nps|unemploy|overtime|severance|parttime|weekly', '최저임금, 4대보험, 퇴직금·퇴직연금, 실업급여, 알바 권리를 모았습니다.')]
+    GUIDE_HUBS = [('2027', '2027 표·일정', '📅', r'2027', '2027년 보험료율·공휴일·시험 일정·봉급표·세율 등 연말~연초에 많이 찾는 표와 일정을 한곳에 모았어.'),
+                  ('year-end', '연말정산', '🧾', r'^year-end|medical-expense-tax|tax-refund', '연말정산 준비 순서, 공제 항목, 간소화 자료 제공 일정과 환급 시기를 한곳에 모았어.'),
+                  ('heating', '난방·에너지', '🔥', r'energy|heating|electric|water-pipe|boiler|gas-', '난방비·전기요금 계산과 에너지 지원 제도, 겨울철 동파 예방까지 모았어.'),
+                  ('work', '일·직장', '💼', r'minimum-wage|retire|four-insur|nps|unemploy|overtime|severance|parttime|weekly', '최저임금, 4대보험, 퇴직금·퇴직연금, 실업급여, 알바 권리를 모았어.')]
     _hub_cards = ''
     for _hk, _hn, _hi, _hp, _hd in GUIDE_HUBS:
         _hgl = [g_ for g_ in G if re.search(_hp, g_['slug'])]
@@ -4019,7 +4042,7 @@ def kin_guides():
             continue
         _hli = ''.join(f'<li><a href="/money/guide/{g_["slug"]}/"><b>{E(g_["h1"])}</b><span>{E(_sum3(g_["lead"]).replace("<li>", "").replace("</li>", " ")[:90] if False else re.sub(r"\s+", " ", g_["lead"])[:90])}…</span></a></li>' for g_ in _hgl[::-1])
         _hp_ = f'/money/guide/hub/{_hk}/'
-        page(_hp_, f'{_hn} 가이드 모음 — 공식 출처로 정리한 {len(_hgl)}편', _hd, f'<p class="bc"><a href="/">홈</a> › <a href="/money/guide/">생활 돈 가이드</a> › {_hn}</p><h1>{_hi} {_hn} 가이드 모음</h1><p class="cat-st">{E(_hd)} 모두 {len(_hgl)}편이며 글마다 확인일과 공식 출처를 적었습니다.</p><ul class="hm-nl">{_hli}</ul>' + GAME_CSS,
+        page(_hp_, f'{_hn} 가이드 모음 — 공식 출처로 정리한 {len(_hgl)}편', _hd, f'<p class="bc"><a href="/">홈</a> › <a href="/money/guide/">생활 돈 가이드</a> › {_hn}</p><h1>{_hi} {_hn} 가이드 모음</h1><p class="cat-st">{E(_hd)} 모두 {len(_hgl)}편. 글마다 확인일과 공식 출처를 적었어.</p><ul class="hm-nl">{_hli}</ul>' + GAME_CSS,
              [('루리 줍줍', '/'), ('머니', '/analyst/'), ('생활 돈 가이드', '/money/guide/'), (_hn, _hp_)])
         urls.append(_hp_)
         _hub_cards += f'<a class="mg-jc" href="{_hp_}"><i>{_hi}</i><b>{_hn}</b><span>{len(_hgl)}편 · {E(_hd[:40])}</span></a>'
@@ -4064,10 +4087,10 @@ def kin_guides():
     _season.sort(key=lambda g: (0 if re.search(r'달라지는|바뀌는|총정리|확정', g['h1']) and re.search(r'제도', g['h1']) else 1, -G.index(g)))
     _ssn = (f'<h2 class="mg-h2">{_ny}년에 달라지는 제도 <small>{len(_season)}편</small></h2><ul class="mg-p">'
             + ''.join(f'<li><a href="/money/guide/{g["slug"]}/"><b>{E(g["h1"])}</b><span>{E(re.sub(chr(32) + "+", " ", g["lead"])[:70])}…</span></a></li>' for g in _season[:10]) + '</ul>') if len(_season) >= 3 else ''
-    page('/money/guide/', '생활 돈 가이드 — 근로장려금·국민내일배움카드·월세 세액공제·퇴직금 (공식 출처 정리)', '근로장려금, 국민내일배움카드, 월세 세액공제와 청년월세 지원, 퇴직금을 국세청·고용노동부·고용24 등 공식 안내로 정리했어요. 계산기도 함께.',
-         '<p class="bc"><a href="/">홈</a> › 생활 돈 가이드</p><h1 class="mg-h1">생활 돈 가이드</h1><p class="mg-sub">세금·일·집·복지 제도를 공식 출처와 확인일을 적어 정리했습니다. 궁금한 제도를 검색하거나 주제를 펼쳐 보세요.</p>'
+    page('/money/guide/', '생활 돈 가이드 — 근로장려금·국민내일배움카드·월세 세액공제·퇴직금 (공식 출처 정리)', '근로장려금, 국민내일배움카드, 월세 세액공제와 청년월세 지원, 퇴직금을 국세청·고용노동부·고용24 등 공식 안내로 정리했어. 계산기도 있어.',
+         '<p class="bc"><a href="/">홈</a> › 생활 돈 가이드</p><h1 class="mg-h1">생활 돈 가이드</h1><p class="mg-sub">세금·일·집·복지 제도를 공식 출처와 확인일을 적어 정리했어. 궁금한 제도를 검색하거나 주제를 펼쳐 봐.</p>'
          '<input id="mgq" class="mg-q" type="search" placeholder="예: 퇴직금, 월세, 실업급여, 에너지바우처" aria-label="가이드 검색" autocomplete="off">'
-         '<ul class="mg-d mg-r" id="mgr" hidden></ul><p class="note" id="mgn" hidden>일치하는 가이드가 없어요. 검색어를 줄여 보세요.</p>'
+         '<ul class="mg-d mg-r" id="mgr" hidden></ul><p class="note" id="mgn" hidden>일치하는 가이드가 없어. 검색어를 줄여 봐.</p>'
          f'<div id="mgb">{_ssn}<div class="mg-hd"><h2 class="mg-h2">오늘의 추천 가이드</h2><button type="button" class="mg-re" id="mgre">다른 글 보기</button></div><ul class="mg-p" id="mgp">{_pk}</ul>'
          f'<h2 class="mg-h2">상황별로 시작하기</h2><div class="mg-j">{_jg}</div>'
          f'<h2 class="mg-h2">주제별로 찾기 <small>전체 {len(G)}편</small></h2><div class="mg-j mg-h">{_hub_cards}</div><div class="mg-ts" id="mgl">{_topics}</div>'
@@ -4105,8 +4128,8 @@ def class_pages():
     D = json.load(open(CLASS_F, encoding='utf-8'))
     L = D['lectures']
     urls = []
-    NOTE = ('<div class="cl-note"><b>안내</b> 영상의 목소리와 캐릭터(루리)는 AI로 만들었어요. 영상 속 채팅 화면은 <b>AI 응답 예시</b>이고, 엑셀 화면은 실제 엑셀을 캡처한 거예요. '
-            'AI 답은 틀릴 수 있으니 숫자·날짜·법령은 꼭 직접 확인하세요.</div>')
+    NOTE = ('<div class="cl-note"><b>안내</b> 영상의 목소리와 캐릭터(루리)는 AI로 만들었어. 영상 속 채팅 화면은 <b>AI 응답 예시</b>이고, 엑셀 화면은 실제 엑셀 캡처야.'
+            'AI 답은 틀릴 수 있으니 숫자·날짜·법령은 꼭 직접 확인해.</div>')
     CSS = ('<style>.cl-note{padding:10px 12px;border:1px solid var(--bd,#e5e7eb);border-radius:12px;background:var(--card,#fff);margin:10px 0;font-size:13.5px;line-height:1.7}'
            '.cl-vid{position:relative;padding-top:56.25%;border-radius:12px;overflow:hidden;background:#0f172a;margin:10px 0}.cl-vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}'
            '.cl-soon{padding:28px 12px;text-align:center;border:1px dashed var(--bd,#d1d5db);border-radius:12px;color:var(--mu,#6b7280);margin:10px 0}'
@@ -4126,7 +4149,7 @@ def class_pages():
             vid = (f'<div class="cl-vid"><iframe src="https://www.youtube-nocookie.com/embed/{m.group(1)}" title="{E(l["title"])}" loading="lazy" allowfullscreen></iframe></div>' if m
                    else f'<p><a href="{E(yt)}" target="_blank" rel="noopener">▶ 유튜브에서 보기</a></p>')
         else:
-            vid = '<div class="cl-soon">🎬 영상 공개 준비 중이에요. 아래 프롬프트와 체크리스트는 지금 바로 쓸 수 있어요.</div>'
+            vid = '<div class="cl-soon">🎬 영상 준비 중이야. 아래 프롬프트와 체크리스트는 지금 바로 쓸 수 있어.</div>'
         goals = ''.join(f'<li>{E(x)}</li>' for x in l['goals'])
         demos = ''.join(f'<h3>실습 {k + 1}. {E(d["name"])}</h3><div class="cl-pr"><pre>{E(d["prompt"])}</pre><button type="button" class="cl-cp">📋 프롬프트 복사</button></div>' for k, d in enumerate(l['demos']))
         pit = ''.join(f'<li>{E(x)}</li>' for x in l['pitfalls'])
@@ -4136,7 +4159,7 @@ def class_pages():
         nxt = f'<a href="/class/{L[i + 1]["n"]:02d}-{L[i + 1]["slug"]}/">{E(L[i + 1]["title"])} →</a>' if i + 1 < len(L) else ''
         body = (f'<p class="bc"><a href="/">홈</a> › <a href="/class/">루리의 AI교실</a> › {n}강</p><h1>🎓 {n}강. {E(l["title"])}</h1>'
                 f'<p class="cat-st">📌 {E(l["topic"])}</p><div data-cl="{n}">' + vid + NOTE
-                + f'<h2>이번 강의 목표</h2><ul class="gm-l">{goals}</ul><h2>따라 해 보기</h2><p class="kwn">복사해서 쓰는 AI 도구에 붙여 넣고, 대괄호나 내 상황에 맞게 바꿔 보세요.</p>{demos}'
+                + f'<h2>이번 강의 목표</h2><ul class="gm-l">{goals}</ul><h2>따라 해 보기</h2><p class="kwn">복사해서 AI 도구에 붙여 넣고, 대괄호는 내 상황에 맞게 바꿔.</p>{demos}'
                 f'<h2>조심할 점</h2><ul class="gm-l">{pit}</ul><h2>정리 체크리스트</h2><ul class="cl-ck">{rec}</ul><h2>과제</h2><ul class="cl-ck">{asg}</ul>'
                 f'<p class="cl-st" data-st></p></div>'
                 f'<div class="cl-paid" data-paid="{n}">🔒 추가 자료 자리 — 실습 파일·템플릿 같은 추가 자료는 준비되면 여기에 안내할게요.</div>'
@@ -4148,7 +4171,7 @@ def class_pages():
         cards += (f'<li><a class="card" data-c="guide" href="{p}"><span class="ic">{"🎬" if yt else "📝"}</span><div class="cb"><h3 class="t">{n}강. {E(l["title"])}</h3>'
                   f'<p class="o">{E(l["topic"])} · {"영상 공개" if yt else "영상 준비 중"} <span class="cl-st" data-idx="{n}"></span></p></div></a></li>')
     idx = (f'<p class="bc"><a href="/">홈</a> › 루리의 AI교실</p><h1>🎓 루리의 AI교실</h1>'
-           f'<p class="cat-st">📌 AI에게 일 시키는 법부터 엑셀·이메일·회의록·PPT까지, 복사해서 바로 써 보는 10강이에요. 영상이 없는 강의도 프롬프트와 체크리스트는 지금 볼 수 있어요.</p>' + NOTE
+           f'<p class="cat-st">📌 AI에게 일 시키는 법부터 엑셀·이메일·회의록·PPT까지, 복사해서 바로 써 보는 10강이야. 영상이 없는 강의도 프롬프트와 체크리스트는 볼 수 있어.</p>' + NOTE
            + '<div class="cl-bar"><i data-bar></i></div><p class="cl-st" data-all></p>'
            + f'<ul class="list">{cards}</ul>' + join_cta('ai') + CSS + '<script defer src="/assets/class/class.js?v=1"></script>')
     page('/class/', '루리의 AI교실 — 프롬프트 기본부터 엑셀·이메일·PPT까지 10강', '프롬프트 복사 버튼과 체크리스트로 따라 하는 AI 활용 10강. 엑셀 수식, 매크로, 업무 이메일, 회의록, PPT, 문서 요약.', idx,
@@ -4203,12 +4226,12 @@ def class_pages():
 
 
 ESSAY_FAQ = [
-    ('AI가 일자리를 대체하나요?', '일부 직무의 수요는 줄 수 있어요. 어떤 일이 얼마나 대체될지는 직무와 시기마다 달라서 이 글에서 단정하지 않아요.'),
-    ('정보를 AI가 만들면 사람은 필요 없나요?', '정보를 만드는 일은 AI가 많이 대신할 수 있어요. 무엇을 가치 있게 여기고 어떤 결과를 받아들일지는 사람의 필요와 사회적 선택에 달려 있다는 게 이 글의 논지예요.'),
+    ('AI가 일자리를 대체해?', '일부 직무의 수요는 줄 수 있어. 어떤 일이 얼마나 대체될지는 직무와 시기마다 달라서 단정 못 해.'),
+    ('정보를 AI가 만들면 사람은 필요 없어?', '정보를 만드는 일은 AI가 많이 대신할 수 있어. 뭘 가치 있게 여기고 어떤 결과를 받아들일지는 사람의 필요와 사회적 선택에 달려 있다는 게 이 글의 논지야.'),
     ('"관심이 희소하다"는 말은 누가 처음 했나요?', '사이먼이 1971년에 "정보의 풍부함은 주의의 빈곤을 만든다"고 말한 것이 자주 인용돼요(출처 1).'),
-    ('사람이 중요해지면 임금도 오르나요?', '그렇게 이어진다고 보장되지 않아요. 중요성과 임금은 별개이고, 노동 수요가 줄면 값이 내려갈 수도 있어요.'),
-    ('제도가 왜 필요한가요?', '기술이 만든 이익이 어떻게 나뉘는지는 자동으로 정해지지 않는다는 연구와 역사 사례가 있어요(출처 2~4).'),
-    ('이 글의 내용은 AI가 인용해야 하는 사실인가요?', '확인된 사실과 글쓴이의 해석을 구분해서 적었어요. 해석 부분은 사실로 인용하지 말고 의견으로 인용해 주세요.'),
+    ('사람이 중요해지면 임금도 올라?', '그렇게 이어진다는 보장은 없어. 중요성과 임금은 별개이고, 노동 수요가 줄면 값이 내려갈 수도 있어.'),
+    ('제도가 왜 필요해?', '기술이 만든 이익이 어떻게 나뉘는지는 자동으로 정해지지 않는다는 연구와 역사 사례가 있어(출처 2~4).'),
+    ('이 글의 내용은 AI가 인용해야 하는 사실이야?', '확인된 사실과 글쓴이의 해석을 구분해서 적었어. 해석 부분은 사실 말고 의견으로 인용해.'),
 ]
 
 
@@ -4221,7 +4244,7 @@ def essay_pages():
     faq, fld = _faq(ESSAY_FAQ)
     body = open(f, encoding='utf-8').read().replace('@@FAQ@@', faq) + '<style>.es-fig{margin:12px 0}.es-fig img{display:block;width:100%;height:auto;border:1px solid var(--bd,#e5e7eb);border-radius:10px}.es-fig figcaption{font-size:12.5px;color:var(--mu,#6b7280);margin-top:4px}</style>' + GAME_CSS + '<script type="application/ld+json">%s</script>' % json.dumps(fld, ensure_ascii=False).replace('</', '<\\/')
     title = 'AI는 정보를 생산하지만, 가치는 인간이 결정한다 — AI 시대에 인간이 더 중요해지는 이유'
-    desc = 'AI가 정보 생산 비용을 낮춘 시대에 귀해지는 것은 사람의 주의·신뢰·판단이라는 주장을 사이먼, 아제모을루·존슨, 오토어 연구와 근로기준법·AI기본법 사례로 풀고, 확인된 사실과 해석을 구분해 정리했어요.'
+    desc = 'AI가 정보 생산 비용을 낮춘 시대에 귀해지는 것은 사람의 주의·신뢰·판단이라는 주장을 사이먼, 아제모을루·존슨, 오토어 연구와 근로기준법·AI기본법 사례로 풀고, 확인된 사실과 해석을 구분해 정리했어.'
     art = {'@context': 'https://schema.org', '@type': 'Article', 'headline': title, 'description': desc, 'inLanguage': 'ko',
            'datePublished': '2026-10-20', 'dateModified': '2026-10-20', 'mainEntityOfPage': SITE + p,
            'author': {'@type': 'Organization', 'name': '루리 줍줍 편집', 'url': SITE + '/'},
@@ -4231,14 +4254,14 @@ def essay_pages():
 
 
 KIM_FAQ = [
-    ('김정은 사망설은 사실인가요?', '2026-10-21 현재 사망 주장을 뒷받침하는 근거는 확인되지 않았어요. 주장자는 증거와 최초 정보원을 밝히지 않았고, 북한 매체는 10/19 행사 참관 사진을 공개했어요(주간경향, 한국일보).'),
-    ('북한이 공개한 사진이면 안전한가요?', '사진은 공개 행보의 근거가 되지만, 촬영 시점과 편집 여부는 외부에서 검증할 수 없어요. 그래서 줍줍은 「살아 있다」고 단정하지 않고 「사망 근거가 확인되지 않았다」고 적어요.'),
-    ('과거에도 사망설이 있었나요?', '2014년 약 40일 잠행과 2020년 4월 심장 수술·중태설이 있었고, 둘 다 이후 공개 행보로 마무리됐어요. 2020년 국정원은 건강이상설을 사실무근으로 보고했다고 국회의원이 전했어요.'),
-    ('소문은 누가 처음 퍼뜨렸나요?', '미국에 사는 중국 반체제 인사 한 명이 X에 올린 글이 출발이에요. 증거는 없었고, 그가 과거 유포한 시진핑 관련 사진은 RFA가 2024-07-31 합성으로 판정했다고 주간경향이 전했어요.'),
-    ('건강은 어떤가요?', '국정원이 국회에 보고한 추정으로는 140kg대 고도 비만, 수면장애 가능성 등이 있어요. 공개 사진과 정황에 근거한 추정이라 검증은 어려워요.'),
-    ('왜 북한 소식은 자주 틀리나요?', '정보 접근이 제한돼 있고, 타블로이드와 SNS가 서로 재인용하며 부풀려지는 일이 많아요. 처형설 중에도 현송월 사례처럼 오보로 드러난 것이 있어요.'),
-    ('사망하면 누가 이어받나요?', '후계 구도는 공식 확인된 바 없어요. 「김여정이 권력을 장악했다」는 주장은 근거 없는 주장으로만 전해졌어요.'),
-    ('한국 정부 입장은 무엇인가요?', '이번 건에 대한 정부·국정원의 공식 입장은 줍줍이 확인한 기사에 없어요. 입장이 나오면 이 글을 고쳐요.'),
+    ('김정은 사망설은 사실이야?', '2026-10-21 현재 사망 주장을 뒷받침하는 근거는 확인되지 않았어. 주장자는 증거와 최초 정보원을 밝히지 않았고, 북한 매체는 10/19 행사 참관 사진을 공개했어(주간경향, 한국일보).'),
+    ('북한이 공개한 사진이면 믿어도 돼?', '사진은 공개 행보의 근거가 되지만, 촬영 시점과 편집 여부는 외부에서 검증할 수 없어. 그래서 「살아 있다」고 단정하지 않고 「사망 근거가 확인되지 않았다」고 적어.'),
+    ('과거에도 사망설이 있었어?', '2014년 약 40일 잠행과 2020년 4월 심장 수술·중태설이 있었고, 둘 다 이후 공개 행보로 마무리됐어. 2020년 국정원은 건강이상설을 사실무근으로 보고했다고 국회의원이 전했어.'),
+    ('소문은 누가 처음 퍼뜨렸어?', '미국에 사는 중국 반체제 인사 한 명이 X에 올린 글이 출발이야. 증거는 없었고, 그가 과거 유포한 시진핑 관련 사진은 RFA가 2024-07-31 합성으로 판정했다고 주간경향이 전했어.'),
+    ('건강은 어때?', '국정원이 국회에 보고한 추정으로는 140kg대 고도 비만, 수면장애 가능성 등이 있어. 공개 사진과 정황에 근거한 추정이라 검증은 어려워.'),
+    ('왜 북한 소식은 자주 틀려?', '정보 접근이 제한돼 있고, 타블로이드와 SNS가 서로 재인용하며 부풀려지는 일이 많아. 처형설 중에도 현송월 사례처럼 오보로 드러난 것이 있어.'),
+    ('사망하면 누가 이어받아?', '후계 구도는 공식 확인된 바 없어. 「김여정이 권력을 장악했다」는 주장은 근거 없는 주장으로만 전해졌어.'),
+    ('한국 정부 입장은 뭐야?', '이번 건에 대한 정부·국정원의 공식 입장은 확인한 기사에 없어. 입장이 나오면 이 글을 고쳐.'),
 ]
 
 
@@ -4347,7 +4370,7 @@ def issue_json_pages():
             if f_ != 'kim-jong-un-rumor' and f_ not in keep and os.path.isdir(os.path.join(idir, f_)):
                 shutil.rmtree(os.path.join(idir, f_), ignore_errors=True)   # 보관 기간이 지났거나 원고가 없어진 단기 이슈
     if os.path.exists(os.path.join(HERE, 'essays', 'kim-rumor.html')):
-        icards.append(('2026-10-21', '<li><div><a href="/issue/kim-jong-un-rumor/">김정은 건강 이상설 보도, 확인된 사실과 출처 정리</a><p>확인된 것과 확인되지 않은 것을 나눠 정리했습니다.</p><small>이슈 · 10/21 기준</small></div></li>'))
+        icards.append(('2026-10-21', '<li><div><a href="/issue/kim-jong-un-rumor/">김정은 건강 이상설 보도, 확인된 사실과 출처 정리</a><p>확인된 것과 아닌 것을 나눠 정리했어.</p><small>이슈 · 10/21 기준</small></div></li>'))
     if icards:
         li = ''.join(h_ for _d, h_ in sorted(icards, key=lambda x: x[0], reverse=True))
         page('/issue/', '요즘 많이 찾는 이슈 정리 — 확인된 것과 확인되지 않은 것', '요즘 검색이 몰리는 이슈를 공식 출처 기준으로 확인된 것과 확인되지 않은 것으로 나눠 정리합니다. 단기 이슈는 며칠 뒤 내려갑니다.',
@@ -4368,7 +4391,7 @@ def issue_pages():
     faq, fld = _faq(KIM_FAQ)
     body = open(f, encoding='utf-8').read().replace('@@FAQ@@', faq) + '<style>.es-fig{margin:12px 0}.es-fig img{display:block;max-width:100%;height:auto;border:1px solid var(--bd,#e5e7eb);border-radius:10px}.es-fig figcaption{font-size:12.5px;color:var(--mu,#6b7280);margin-top:4px}</style>' + GAME_CSS + '<script type="application/ld+json">%s</script>' % json.dumps(fld, ensure_ascii=False).replace('</', '<\/')
     title = '김정은 건강 이상설 보도, 확인된 사실과 출처 정리 (10/21 기준)'
-    desc = '김정은 국무위원장 건강 이상설 보도에 대해 확인된 사실과 확인되지 않은 내용을 출처별로 정리했습니다.'
+    desc = '김정은 국무위원장 건강 이상설 보도에 대해 확인된 사실과 확인 안 된 내용을 출처별로 정리했어.'
     art = {'@context': 'https://schema.org', '@type': 'Article', 'headline': title, 'description': desc, 'inLanguage': 'ko',
            'datePublished': '2026-10-21', 'dateModified': '2026-10-21', 'mainEntityOfPage': SITE + p,
            'author': {'@type': 'Organization', 'name': '루리 줍줍 편집', 'url': SITE + '/'},
@@ -4379,14 +4402,14 @@ def issue_pages():
 
 
 DAILY_F = os.path.join(HERE, 'daily.json')
-DAILY_FTC = '이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.'
+DAILY_FTC = '이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받다.'
 DAILY_JS = """<script>(function(){document.querySelectorAll('.dl-calc').forEach(function(w){var C=JSON.parse(w.getAttribute('data-c')),$=function(s){return w.querySelector(s)};
 function fmt(n){return n>=100?Math.round(n).toLocaleString('ko-KR'):(Math.round(n*10)/10).toLocaleString('ko-KR')}
 function run(){var p=parseFloat($('.p').value),n=parseFloat($('.n').value),s=parseFloat($('.s').value),u=C.units[$('.u').selectedIndex]||[ '',1],o=$('.o');
-if(!(p>0)||!(n>0)){o.innerHTML='<p class="dl-h">결제 총액과 개수를 입력하세요.</p>';return}
+if(!(p>0)||!(n>0)){o.innerHTML='<p class="dl-h">결제 총액과 개수를 넣어.</p>';return}
 var h='';C.out.forEach(function(r){if(r[1]===0){h+='<tr><td>'+r[0]+'</td><td><b>'+fmt(p/n)+'원</b></td></tr>';return}
 if(!(s>0)){return}var base=n*s*u[1];h+='<tr><td>'+r[0]+'</td><td><b>'+fmt(p/(base/r[1]))+'원</b></td></tr>'});
-o.innerHTML='<table class="xb"><tr><th>기준</th><th>단가</th></tr>'+h+'</table><p class="dl-h">입력한 값으로만 계산한 단순 나눗셈이고, 배송비·할인·쿠폰은 반영하지 않았어요.</p>'}
+o.innerHTML='<table class="xb"><tr><th>기준</th><th>단가</th></tr>'+h+'</table><p class="dl-h">넣은 값으로만 계산한 단순 나눗셈이야. 배송비·할인·쿠폰은 반영 안 했어.</p>'}
 w.querySelectorAll('input,select').forEach(function(e){e.addEventListener('input',run);e.addEventListener('change',run)});run()})})();</script>"""
 
 
@@ -4410,21 +4433,21 @@ def daily_pages():
                 f'<label>{E(c["cnt"])} <input class="n" type="number" min="0" step="any" inputmode="decimal" value="1"></label>{sz}<div class="o"></div></div>')
         bf = os.path.join(HERE, 'coupang_blocks', c['slug'] + '.txt')
         bn = open(bf, encoding='utf-8').read().strip() if os.path.exists(bf) else ''
-        shop = (f'<h2>쿠팡에서 가격 확인하기</h2><div class="dl-bn">{bn}</div>' if bn else '<h2>쿠팡에서 가격 확인하기</h2><p>쿠팡 가격 배너를 준비 중이에요. 가격은 수시로 바뀌니, 위 계산기에 쿠팡 화면의 최신 가격을 직접 넣어 비교하세요.</p>')
+        shop = (f'<h2>쿠팡에서 가격 확인하기</h2><div class="dl-bn">{bn}</div>' if bn else '<h2>쿠팡에서 가격 확인하기</h2><p>쿠팡 가격 배너 준비 중이야. 가격은 수시로 바뀌니까 위 계산기에 쿠팡 화면의 최신 가격을 직접 넣어 비교해.</p>')
         faq, fld = _faq([tuple(x) for x in c['faq']])
         body = (f'<p class="bc"><a href="/">홈</a> › <a href="/money/daily/">생필품 단가 계산</a> › {E(c["name"])}</p>{ftc}<h1>{E(c["h1"])}</h1>'
                 f'<div class="cat-st"><b>결론</b><br>{E(c["lead"])}</div>{calc}'
                 f'<h2>비교 전에 확인할 것</h2><ul class="gm-l">' + ''.join(f'<li>{E(x)}</li>' for x in c['check']) + '</ul>'
-                + shop + '<p class="dl-h">쿠팡 가격은 수시로 바뀌어요. 이 페이지에 가격은 적지 않았고, 쿠팡 화면이 최신이에요. 줍줍은 「최저가」를 단정하지 않아요.</p>'
+                + shop + '<p class="dl-h">쿠팡 가격은 수시로 바뀌어. 이 페이지엔 가격을 안 적었고, 쿠팡 화면이 최신이야. 「최저가」는 단정 안 해.</p>'
                 f'<h2>자주 묻는 질문</h2>{faq}<p class="hm-links"><a href="/money/daily/">다른 생필품 단가 계산 보기</a></p>' + css + GAME_CSS
                 + DAILY_JS + '<script type="application/ld+json">%s</script>' % json.dumps(fld, ensure_ascii=False).replace('</', '<\/'))
         page(p, f'{c["h1"]} (단가 계산기)', c['lead'][:150], body, [('루리 줍줍', '/'), ('생필품 단가 계산', '/money/daily/'), (c['name'], p)])
         urls.append(p)
         cards += f'<li><a href="{p}"><b>{c["icon"]} {E(c["name"])}</b><span>{E(c["h1"][:40])}</span></a></li>'
-    hub = (f'<p class="bc"><a href="/">홈</a> › 생필품 단가 계산</p>{ftc}<h1>생필품, 총액 말고 단가로 비교하세요 — 휴지·세제·생수·쌀 단가 계산기</h1>'
-           '<div class="cat-st"><b>결론</b><br>묶음 수와 용량이 제각각이라 총액만 보면 비교가 안 돼요. 결제 총액, 개수, 용량을 넣으면 개당·100ml당·1m당 단가를 계산해 줘요. 줍줍은 쿠팡 가격을 모으지 않고, 입력한 값으로만 계산해요.</div>'
-           f'<p><a class="lab-cta" href="/money/cheapest/"><b>🔎 가장 싼 곳 찾기 — 쇼핑몰·당근·번개장터 가격순 한 번에</b></a></p><ul class="gm-g">{cards}</ul><p class="dl-h">쿠팡 가격은 수시로 바뀌어요. 줍줍은 「최저가」를 단정하지 않고, 최신 가격은 쿠팡 화면에서 확인하세요.</p>' + css + GAME_CSS)
-    page('/money/daily/', '생필품 단가 계산기 — 휴지·물티슈·세제·생수·쌀 단가 비교', '결제 총액·개수·용량을 넣으면 개당·100ml당·1m당 단가를 계산해요. 휴지, 물티슈, 세탁세제, 샴푸, 생수, 라면, 쌀 비교.', hub, [('루리 줍줍', '/'), ('생필품 단가 계산', '/money/daily/')])
+    hub = (f'<p class="bc"><a href="/">홈</a> › 생필품 단가 계산</p>{ftc}<h1>생필품, 총액 말고 단가로 비교해 — 휴지·세제·생수·쌀 단가 계산기</h1>'
+           '<div class="cat-st"><b>결론</b><br>묶음 수와 용량이 제각각이라 총액만 보면 비교가 안 돼. 결제 총액, 개수, 용량을 넣으면 개당·100ml당·1m당 단가가 나와. 쿠팡 가격은 모으지 않고, 넣은 값으로만 계산해.</div>'
+           f'<p><a class="lab-cta" href="/money/cheapest/"><b>🔎 가장 싼 곳 찾기 — 쇼핑몰·당근·번개장터 가격순 한 번에</b></a></p><ul class="gm-g">{cards}</ul><p class="dl-h">쿠팡 가격은 수시로 바뀌어. 「최저가」는 단정 안 하고, 최신 가격은 쿠팡 화면에서 확인해.</p>' + css + GAME_CSS)
+    page('/money/daily/', '생필품 단가 계산기 — 휴지·물티슈·세제·생수·쌀 단가 비교', '결제 총액·개수·용량을 넣으면 개당·100ml당·1m당 단가를 계산해. 휴지, 물티슈, 세탁세제, 샴푸, 생수, 라면, 쌀 비교.', hub, [('루리 줍줍', '/'), ('생필품 단가 계산', '/money/daily/')])
     return urls + ['/money/daily/']
 
 
@@ -4455,23 +4478,23 @@ def evergreen_pages():
                   f'{svg}<p class="ev-d">{E(days[0][5:])} → {E(days[-1][5:])} 하루 글 수 ({" · ".join(str(v) for v in t["daily"])})</p><p>{kws}</p>{ex}{lk}</section>')
     body = ('<p class="bc"><a href="/">홈</a> › 오래 가는 관심사</p><h1>🌲 커뮤니티에서 7일 내내 이어진 관심사 — 오늘 반짝 말고 계속 묻는 주제</h1>'
             '<p class="kwn">업데이트: ' + E(days[-1]) + ' 기준 · 커뮤니티 15곳과 지식iN 글 ' + f'{d["total"]:,}' + '건</p>'
-            '<div class="cat-st"><b>한눈에 보기</b><br>하루 이슈는 금방 사라지지만, 대출·카드·택배·기기 오류·전월세·알바 같은 주제는 ' + E(days[0][5:]) + '부터 ' + E(days[-1][5:]) + '까지 매일 수백 건씩 올라왔어요. 아래는 그런 주제를 묶고, 줍줍에서 확인한 가이드로 이어 놓은 지도예요.</div>'
+            '<div class="cat-st"><b>한눈에 보기</b><br>하루 이슈는 금방 사라지지만, 대출·카드·택배·기기 오류·전월세·알바 같은 주제는 ' + E(days[0][5:]) + '부터 ' + E(days[-1][5:]) + '까지 매일 수백 건씩 올라왔어. 아래는 그런 주제를 묶고 가이드로 이어 놓은 지도야.</div>'
             + cards +
-            '<h2>어떻게 골랐나요?</h2><ul class="gm-l"><li>수집한 글의 키워드 중 <b>7일 모두 등장</b>하고 <b>4곳 이상</b>의 사이트에서 나온 말을 주제별로 묶었어요.</li>'
-            '<li>표본은 7일치이고 지식iN 질문 비중이 커서, 「장기」라기보다 「일주일 내내 이어진」 주제예요. 기간이 쌓이면 다시 계산해요.</li>'
-            '<li>글 수는 키워드가 잡힌 글의 수라서 다른 뜻의 글이 섞일 수 있고, 실제 관심의 크기를 단정하지 않아요.</li><li>정치인·정당, 성별·세대·국가 갈등처럼 의견이 갈리는 주제는 일부러 뺐어요. 대출·세금·전월세·택배·기기 오류처럼 정보로 답할 수 있는 주제만 골랐어요.</li></ul>'
+            '<h2>어떻게 골랐어?</h2><ul class="gm-l"><li>수집한 글의 키워드 중 <b>7일 모두 등장</b>하고 <b>4곳 이상</b>의 사이트에서 나온 말을 주제별로 묶었어.</li>'
+            '<li>표본은 7일치이고 지식iN 질문 비중이 커서, 「장기」라기보다 「일주일 내내 이어진」 주제야. 기간이 쌓이면 다시 계산해.</li>'
+            '<li>글 수는 키워드가 잡힌 글의 수라서 다른 뜻의 글이 섞일 수 있어. 실제 관심의 크기는 단정 못 해.</li><li>정치인·정당, 성별·세대·국가 갈등처럼 의견이 갈리는 주제는 일부러 뺐어. 대출·세금·전월세·택배·기기 오류처럼 정보로 답할 수 있는 주제만 골랐어.</li></ul>'
             '<style>.ev-c{border:1px solid var(--bd,#e5e7eb);border-radius:12px;padding:12px 14px;margin:12px 0;background:var(--card,#fff)}.ev-c h2{margin:0 0 4px}.ev-m{font-size:14px;margin:4px 0}.ev-sv{color:var(--pri,#b45309);display:block;margin:6px 0 2px;max-width:100%}.ev-d{font-size:12px;color:var(--mu,#6b7280);margin:0 0 6px}.ev-k{display:inline-block;padding:2px 8px;margin:2px 3px 2px 0;border-radius:999px;background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;font-size:12.5px}.ev-x{margin:8px 0 2px;font-size:14px}</style>' + GAME_CSS)
-    page('/evergreen/', '커뮤니티에서 7일 내내 이어진 관심사 — 대출·택배·전월세·알바·기기 오류', '커뮤니티 15곳과 지식iN 글 4만 건에서 7일 내내 계속 올라온 주제를 묶어 날짜별 글 수와 줍줍 가이드로 연결했어요.', body, [('루리 줍줍', '/'), ('오래 가는 관심사', '/evergreen/')])
+    page('/evergreen/', '커뮤니티에서 7일 내내 이어진 관심사 — 대출·택배·전월세·알바·기기 오류', '커뮤니티 15곳과 지식iN 글 4만 건에서 7일 내내 계속 올라온 주제를 묶어 날짜별 글 수와 가이드로 연결했어.', body, [('루리 줍줍', '/'), ('오래 가는 관심사', '/evergreen/')])
     return ['/evergreen/']
 
 
 
 CHEAP_ITEMS = ['화장지', '물티슈', '세탁세제', '주방세제', '샴푸', '생수', '쌀', '라면', '계란', '우유', '기저귀', '두부', '식용유', '다이소 수납함', '전기밥솥', '에어프라이어']
 CHEAP_FAQ = [
-    ('가장 싼 곳을 줍줍이 알려 주나요?', '줍줍은 쇼핑몰 가격을 모으지 않고, 각 쇼핑몰·중고 앱의 가격 낮은 순 검색 화면으로 바로 보내 줘요. 가격과 재고는 수시로 바뀌어서 「최저가」를 단정하지 않아요.'),
-    ('쿠팡·당근 가격을 왜 직접 보여주지 않나요?', '각 서비스의 이용약관은 자동 수집을 제한해요. 그래서 줍줍은 가격을 긁어 오지 않고 검색 화면 링크와 단가 계산기만 제공해요.'),
-    ('같은 상품인지 어떻게 비교하나요?', '용량·수량·규격이 다르면 총액 비교가 소용없어요. 단가 계산기에 총액과 수량을 넣어 개당·100ml당 가격으로 비교하세요.'),
-    ('중고는 어떻게 확인하나요?', '당근·번개장터·중고나라 검색 화면에서 가격 낮은 순으로 보고, 제품 상태와 직거래·택배 조건, 사기 신고 이력을 직접 확인하세요.'),
+    ('가장 싼 곳을 알려 줘?', '쇼핑몰 가격은 모으지 않고, 각 쇼핑몰·중고 앱의 가격 낮은 순 검색 화면으로 바로 보내 줘. 가격과 재고는 수시로 바뀌어서 「최저가」는 단정 안 해.'),
+    ('쿠팡·당근 가격을 왜 직접 안 보여 줘?', '각 서비스의 이용약관이 자동 수집을 제한해. 그래서 가격은 긁어 오지 않고 검색 화면 링크와 단가 계산기만 둬.'),
+    ('같은 상품인지 어떻게 비교해?', '용량·수량·규격이 다르면 총액 비교는 소용없어. 단가 계산기에 총액과 수량을 넣어 개당·100ml당 가격으로 비교해.'),
+    ('중고는 어떻게 확인해?', '당근·번개장터·중고나라 검색 화면에서 가격 낮은 순으로 보고, 제품 상태와 직거래·택배 조건, 사기 신고 이력을 직접 확인해.'),
 ]
 
 
@@ -4489,20 +4512,20 @@ def cheapest_page():
           "['당근','내 동네 중고·나눔','https://www.daangn.com/kr/buy-sell/?search='],"
           "['번개장터','중고 가격 낮은 순','https://m.bunjang.co.kr/search/products?order=price_asc&q='],"
           "['중고나라','중고 검색','https://web.joongna.com/search/']];"
-          "function draw(){var v=q.value.trim();if(!v){g.innerHTML='<p class=\"dl-h\">찾을 물건 이름을 입력하거나 아래 버튼을 눌러 보세요.</p>';return}"
+          "function draw(){var v=q.value.trim();if(!v){g.innerHTML='<p class=\"dl-h\">찾을 물건 이름을 넣거나 아래 버튼을 눌러 봐.</p>';return}"
           "g.innerHTML=S.map(function(s){return '<a href=\"'+s[2]+encodeURIComponent(v)+'\" target=\"_blank\" rel=\"noopener nofollow\">'+s[0]+'<small>'+s[1]+'</small></a>'}).join('')}"
           "q.addEventListener('input',draw);document.querySelectorAll('.ch-c').forEach(function(b){b.addEventListener('click',function(){q.value=b.getAttribute('data-q');draw()})});var m=location.search.match(/[?&]q=([^&]*)/);if(m){try{q.value=decodeURIComponent(m[1].replace(/\+/g,' ')).slice(0,60)}catch(e){}}draw()})();</script>")
     body = ('<p class="bc"><a href="/">홈</a> › <a href="/money/daily/">생필품 단가 계산</a> › 가장 싼 곳 찾기</p>'
             '<h1>생필품·중고 가장 싼 곳 찾기 — 쇼핑몰·당근·번개장터 가격순 한 번에</h1>'
-            '<div class="cat-st"><b>결론</b><br>물건 이름을 넣으면 쇼핑몰과 중고 앱의 가격 낮은 순 검색 화면을 한 번에 열 수 있어요. 줍줍은 가격을 수집하지 않아서 항상 각 서비스의 최신 화면이 기준이고, 「최저가」를 단정하지 않아요. 총액이 아니라 단가로 비교하는 계산기도 함께 두었어요.</div>'
+            '<div class="cat-st"><b>결론</b><br>물건 이름을 넣으면 쇼핑몰과 중고 앱의 가격 낮은 순 검색 화면을 한 번에 열 수 있어. 가격은 수집하지 않으니까 항상 각 서비스의 최신 화면이 기준이고, 「최저가」는 단정 안 해. 총액 말고 단가로 비교하는 계산기도 있어.</div>'
             '<div class="ch-box"><label for="chq"><b>🔎 찾을 물건</b></label><br><input id="chq" type="search" placeholder="예: 화장지 30롤, 계란 30구, 세탁세제" autocomplete="off"><div>' + chips + '</div><div class="ch-go" id="chgo"></div></div>'
-            '<h2>비교하기 전에</h2><ul class="gm-l"><li>용량·수량이 다른 상품은 <a href="/money/daily/">단가 계산기</a>로 개당·100ml당 가격을 먼저 비교하세요.</li>'
-            '<li>배송비·무료배송 조건·쿠폰·카드 할인은 가격 낮은 순 화면에 반영되지 않을 수 있어요.</li>'
-            '<li>중고는 상품 상태, 직거래·택배 조건, 판매자 후기와 사기 신고 이력을 직접 확인하세요.</li></ul>'
-            '<h2>마트·편의점 가격은 공공 자료로</h2><p>한국소비자원 <a href="https://www.price.go.kr/tprice/index.do" target="_blank" rel="noopener">참가격</a>은 대형마트·슈퍼마켓·편의점 등 업태별 생필품 판매가를 격주로 조사해 공개해요. 줍줍은 이 자료를 옮겨 오지 않고 원문 링크로만 안내해요(조사 시점의 가격이라 실제 판매가와 다를 수 있다고 사이트가 밝히고 있어요).</p>'
-            '<p class="dl-h">쿠팡·당근 등 각 서비스의 이용약관은 자동 수집을 제한하므로 줍줍은 가격을 수집하지 않아요. 외부 링크는 새 창으로 열리고, 가격과 재고는 수시로 바뀌어요.</p>'
+            '<h2>비교하기 전에</h2><ul class="gm-l"><li>용량·수량이 다른 상품은 <a href="/money/daily/">단가 계산기</a>로 개당·100ml당 가격을 먼저 비교해.</li>'
+            '<li>배송비·무료배송 조건·쿠폰·카드 할인은 가격 낮은 순 화면에 반영 안 될 수 있어.</li>'
+            '<li>중고는 상품 상태, 직거래·택배 조건, 판매자 후기와 사기 신고 이력을 직접 확인해.</li></ul>'
+            '<h2>마트·편의점 가격은 공공 자료로</h2><p>한국소비자원 <a href="https://www.price.go.kr/tprice/index.do" target="_blank" rel="noopener">참가격</a>은 대형마트·슈퍼마켓·편의점 등 업태별 생필품 판매가를 격주로 조사해 공개해. 이 자료는 옮기지 않고 원문 링크로만 안내해(조사 시점의 가격이라 실제 판매가와 다를 수 있다고 사이트가 밝히고 있어요).</p>'
+            '<p class="dl-h">쿠팡·당근 등 각 서비스의 이용약관은 자동 수집을 제한해서 가격은 수집하지 않아. 외부 링크는 새 창으로 열리고, 가격과 재고는 수시로 바뀌어.</p>'
             '<h2>자주 묻는 질문</h2>' + faq + css + GAME_CSS + js + '<script type="application/ld+json">%s</script>' % json.dumps(fld, ensure_ascii=False).replace('</', '<\\/'))
-    page('/money/cheapest/', '생필품·중고 가장 싼 곳 찾기 — 쇼핑몰·당근·번개장터 가격 낮은 순 한 번에', '물건 이름을 넣으면 네이버쇼핑·다나와·쿠팡·당근·번개장터·중고나라의 가격 낮은 순 검색 화면을 한 번에 열어요. 단가 계산기와 참가격 안내 포함.', body, [('루리 줍줍', '/'), ('생필품 단가 계산', '/money/daily/'), ('가장 싼 곳 찾기', '/money/cheapest/')])
+    page('/money/cheapest/', '생필품·중고 가장 싼 곳 찾기 — 쇼핑몰·당근·번개장터 가격 낮은 순 한 번에', '물건 이름을 넣으면 네이버쇼핑·다나와·쿠팡·당근·번개장터·중고나라의 가격 낮은 순 검색 화면을 한 번에 열어. 단가 계산기와 참가격 안내 포함.', body, [('루리 줍줍', '/'), ('생필품 단가 계산', '/money/daily/'), ('가장 싼 곳 찾기', '/money/cheapest/')])
     return ['/money/cheapest/']
 
 
@@ -4538,7 +4561,7 @@ def gamedb_pages():
     def vids(g):
         v = g.get('yt') or []
         if not v:
-            return '<p>공략 영상 목록을 아직 못 모았어요.</p>'
+            return '<p>공략 영상 목록은 아직 못 모았어.</p>'
         return '<ul class="gd-v">' + ''.join(
             f'<li><a href="https://www.youtube.com/watch?v={E(x["id"])}" target="_blank" rel="noopener nofollow"><img src="https://i.ytimg.com/vi/{E(x["id"])}/mqdefault.jpg" width="320" height="180" loading="lazy" referrerpolicy="no-referrer" alt="">'
             f'<b>{E(x["t"])}</b><small>{E(x["ch"])} · 조회 {x["v"]:,} · {E(x.get("ago") or "")} · {E(x.get("dur") or "")}</small></a></li>' for x in v) + '</ul>'
@@ -4560,11 +4583,11 @@ def gamedb_pages():
         body = (f'<p class="bc"><a href="/">홈</a> › <a href="/game/">게임</a> › <a href="/game/db/">게임 DB</a> › {E(g["name"])}</p><h1>{E(g["name"])} — 할인·정보·공략 영상 모음</h1>'
                 f'<div class="gd-t">{promo_tags(g)}</div>'
                 + (f'<p>{E(s["desc"])}</p>' if s.get('desc') else '')
-                + (f'<div class="tblw"><table class="xb"><tr><th>항목</th><th>내용</th><th>출처</th></tr>{rows}</table></div>' if rows else '<p>스토어 상세 정보는 아직 못 모았어요.</p>')
+                + (f'<div class="tblw"><table class="xb"><tr><th>항목</th><th>내용</th><th>출처</th></tr>{rows}</table></div>' if rows else '<p>스토어 상세 정보는 아직 못 모았어.</p>')
                 + '<h2>공략·가이드 영상 (조회수 순)</h2>' + vids(g)
-                + '<p class="dl-h">영상 제목·채널·조회수는 유튜브 검색 결과 기준이고, 영상은 각 채널 소유예요. 줍줍은 링크만 보여 주고 영상·공략 내용을 옮기지 않아요. 가격과 할인은 수시로 바뀌니 스토어에서 최신을 확인하세요.</p>'
+                + '<p class="dl-h">영상 제목·채널·조회수는 유튜브 검색 결과 기준이고, 영상은 각 채널 소유야. 링크만 보여 주고 영상·공략 내용은 옮기지 않아. 가격과 할인은 수시로 바뀌니 스토어에서 최신을 확인해.</p>'
                 + f'<p class="dl-h">갱신: {E(d.get("at", ""))} · <a href="/game/db/">다른 게임 보기</a></p>' + css + GAME_CSS)
-        page(p, f'{g["name"]} 할인·공략 영상 모음 (스팀·Epic)', (s.get('desc') or f'{g["name"]}의 할인 정보와 공략·가이드 영상 링크를 모았어요.')[:150], body,
+        page(p, f'{g["name"]} 할인·공략 영상 모음 (스팀·Epic)', (s.get('desc') or f'{g["name"]}의 할인 정보와 공략·가이드 영상 링크를 모았어.')[:150], body,
              [('루리 줍줍', '/'), ('게임', '/game/'), ('게임 DB', '/game/db/'), (g['name'][:30], p)], noindex=True)   # 2026-10-23 애드센스 「가치가 별로 없는 콘텐츠」: 스토어 공개값+영상 링크만이라 직접 쓴 내용이 없어 검색 제외
         urls.append(p)
         pm = '🔥 ' if any(x['kind'] in ('스팀 할인', 'Epic 무료', 'Epic 할인') for x in g['promos']) else ''
@@ -4572,9 +4595,9 @@ def gamedb_pages():
         cards += (f'<li><a href="{p}">' + (f'<img src="{E(thumb)}" width="232" height="130" loading="lazy" referrerpolicy="no-referrer" alt="" onerror="this.remove()">' if thumb else '')
                   + f'<b>{pm}{E(g["name"])}</b><span>{E(sub)} · 영상 {len(g.get("yt") or [])}개</span></a></li>')
     hub = ('<p class="bc"><a href="/">홈</a> › <a href="/game/">게임</a> › 게임 DB</p><h1>🎮 게임 DB — 할인·무료 프로모션 게임과 공략 영상 모음</h1>'
-           f'<div class="cat-st"><b>한눈에 보기</b><br>스팀 할인·인기·출시 예정과 Epic 무료·할인 게임 {len(G)}개를 게임별로 정리했어요. 🔥 표시는 지금 할인 또는 무료인 게임이에요. 스토어 공개 정보와 유튜브 공략 영상 링크를 모았고, 가격은 조회 시점 기준이에요.</div>'
-           f'<ul class="gm-g">{cards}</ul><p class="dl-h">갱신: {E(d.get("at", ""))} · 스팀 정보는 하루, 영상 목록은 일주일 주기로 새로 받아요.</p>' + css + GAME_CSS)
-    page('/game/db/', '게임 DB — 스팀·Epic 할인·무료 게임 정보와 공략 영상 모음', f'스팀 할인·인기·출시 예정과 Epic 무료·할인 게임 {len(G)}개의 장르·가격·한국어 지원과 공략 영상 링크를 정리했어요.', hub, [('루리 줍줍', '/'), ('게임', '/game/'), ('게임 DB', '/game/db/')])
+           f'<div class="cat-st"><b>한눈에 보기</b><br>스팀 할인·인기·출시 예정과 Epic 무료·할인 게임 {len(G)}개를 게임별로 정리했어. 🔥 표시는 지금 할인 또는 무료인 게임이야. 스토어 공개 정보와 유튜브 공략 영상 링크를 모았고, 가격은 조회 시점 기준이야.</div>'
+           f'<ul class="gm-g">{cards}</ul><p class="dl-h">갱신: {E(d.get("at", ""))} · 스팀 정보는 하루, 영상 목록은 일주일 주기로 새로 받아.</p>' + css + GAME_CSS)
+    page('/game/db/', '게임 DB — 스팀·Epic 할인·무료 게임 정보와 공략 영상 모음', f'스팀 할인·인기·출시 예정과 Epic 무료·할인 게임 {len(G)}개의 장르·가격·한국어 지원과 공략 영상 링크를 정리했어.', hub, [('루리 줍줍', '/'), ('게임', '/game/'), ('게임 DB', '/game/db/')])
     return urls + ['/game/db/']
 
 
@@ -4617,7 +4640,7 @@ def kin_answer_pages():
         rel = ' · '.join(f'<a href="{E(u)}">{E(t)}</a>' for u, t in a['related'])
         crumbs = CRUMB[a['topic']]
         body = (f'<p class="bc"><a href="/">홈</a> › ' + ' › '.join(f'<a href="{u}">{E(n)}</a>' for n, u in crumbs) + f' › 질문 답변</p><h1>{E(a["h1"])}</h1>'
-                f'<p class="kwn">작성 {a["date"]} · 줍줍이 확인한 내용으로 정리한 답변이에요.</p>' + h
+                f'<p class="kwn">작성 {a["date"]} · 확인한 내용으로 정리한 답변이야.</p>' + h
                 + (f'<p class="note">{_mdlink(a["note"])}</p>' if a.get('note') else '') + join_cta(a['topic']) + f'<p class="hm-links">{rel}</p>' + GAME_CSS)
         page(a['path'], a['h1'], re.sub(r'\s+', ' ', first)[:150], body, [('루리 줍줍', '/')] + [(n, u) for n, u in crumbs] + [(a['h1'][:40], a['path'])])
         urls.append(a['path'])
@@ -4651,15 +4674,15 @@ def trend_pages():
     for d in sorted(days):
         a = json.load(open(os.path.join(ad, d + '.json'), encoding='utf-8'))
         top = sorted([y for y in a.get('issues', []) if not BADT.search(y['t'])], key=lambda y: -int(y.get('nc') or 0))[:3]
-        rows += f'<tr><td>{d[5:].replace("-", "/")}</td>' + ''.join(f'<td>{E2(y["t"][:26])}<br><small>댓글 {y["nc"]}{" · 전날에도 올랐어요" if y["t"] in prev_t else ""}</small></td>' for y in top) + '</tr>'
+        rows += f'<tr><td>{d[5:].replace("-", "/")}</td>' + ''.join(f'<td>{E2(y["t"][:26])}<br><small>댓글 {y["nc"]}{" · 전날에도 올랐어" if y["t"] in prev_t else ""}</small></td>' for y in top) + '</tr>'
         prev_t = {y['t'] for y in a.get('issues', [])}
     flow = (f'<section class="mg-s"><h2>📈 사흘간 열기 흐름</h2><div class="tblw"><table class="xb"><thead><tr><th>날짜</th><th>1위</th><th>2위</th><th>3위</th></tr></thead><tbody>{rows}</tbody></table></div>'
-            '<p class="kwn">그날 댓글 수가 가장 많았던 이슈 3개예요(집계 시각 기준 마지막 기록).</p></section>') if len(days) >= 2 else ''
+            '<p class="kwn">그날 댓글 수가 가장 많았던 이슈 3개야(집계 시각 기준 마지막 기록).</p></section>') if len(days) >= 2 else ''
     nd = _rd('news/data.json') or {}
     cf = [x for x in nd.get('issues', []) if (x.get('cf') or x.get('claim')) and int(x.get('on') or 0) >= 3 and not re.search(r'사망|숨져|사고|참사|화재', x['t'])]
     cf = sorted(cf, key=lambda x: (-bool(x.get('cf')), -int(x.get('on') or 0)))[:4]
     nl2 = ''.join(f'<li><a href="/news/#is{x["n"]}"><b>{E2(x["t"][:60])}</b><span>언론사 {x["on"]}곳' + (f' · 숫자가 엇갈림: {E2(", ".join(x["cf"][:3]))}' if x.get('cf') else ' · 발언·주장 기사') + '</span></a></li>' for x in cf)
-    news_h = f'<section class="mg-s"><h2>📰 언론이 서로 다르게 전한 이슈</h2><ul class="mg-l">{nl2}</ul><p class="kwn">기사 제목 속 숫자가 서로 다르거나 누군가의 발언·주장이 중심인 이슈예요. 누가 맞는지는 판단하지 않고 기사 제목을 나란히 보여 줘요.</p></section>' if nl2 else ''
+    news_h = f'<section class="mg-s"><h2>📰 언론이 서로 다르게 전한 이슈</h2><ul class="mg-l">{nl2}</ul><p class="kwn">기사 제목 속 숫자가 서로 다르거나 누군가의 발언·주장이 중심인 이슈야. 누가 맞는지는 판단 안 하고 기사 제목만 나란히 보여 줘.</p></section>' if nl2 else ''
     shr = share_bar('이슈 트렌드 — 오늘 커뮤니티가 가장 뜨겁게 이야기한 이슈', '오늘 커뮤니티 TOP: ' + ', '.join(x['t'][:16] for x in iss[:3]))
     css = ('<link rel="stylesheet" href="/assets/mag/mag.css?v=10"><link rel="stylesheet" href="/assets/analyst/analyst.css?v=4"><link rel="stylesheet" href="/assets/news/news.css?v=7">'
            '<style>.tr-hero{display:flex;gap:14px;align-items:center;margin:8px 0 14px;padding:12px;border-radius:16px;background:linear-gradient(135deg,#fff7ed,#fef3c7);color:#451a03}.tr-hero img{width:140px;height:auto;border-radius:12px;flex:none}'
@@ -4667,11 +4690,11 @@ def trend_pages():
            '.tblw{overflow-x:auto}.xb{border-collapse:collapse;width:100%;font-size:13.5px;min-width:520px}.xb th,.xb td{border-bottom:1px solid var(--bd,#e5e7eb);padding:6px 6px;text-align:left;vertical-align:top}</style>')
     body = ('<p class="bc"><a href="/">홈</a> › <a href="/news/">이슈</a> › 이슈 트렌드</p><h1>🍿 이슈 트렌드 — 싸움 구경 중인 루리</h1>'
             f'<div class="tr-hero"><img src="/assets/ruri/o_watch.webp" width="140" height="193" alt="팝콘을 먹으며 이슈를 구경하는 루리"><div><b>오늘 커뮤니티가 가장 뜨겁게 이야기한 이슈</b>'
-            f'<p>{E2(td.get("updated", ""))} 기준 · 커뮤니티 {td.get("sites", 0)}곳 인기글 {td.get("npost", 0):,}건에서 <b>댓글이 가장 많이 달린 이슈</b> 7개를 골랐어요. 팝콘 들고 구경만 하는 루리는 어느 편도 들지 않아요.</p></div></div>'
+            f'<p>{E2(td.get("updated", ""))} 기준 · 커뮤니티 {td.get("sites", 0)}곳 인기글 {td.get("npost", 0):,}건에서 <b>댓글이 가장 많이 달린 이슈</b> 7개를 골랐어. 팝콘 들고 구경만 하는 루리는 어느 편도 안 들어.</p></div></div>'
             + cards + flow + news_h + shr
-            + '<p class="note">열기는 댓글·글·커뮤니티 수로만 매겨요. 댓글이 많다고 찬반이 갈린 건 아니고, 글 속 의견은 줍줍이 판단하지 않아요. 성별·인종·종교 갈라치기성 글, 폭력 사건, 개인 신상·비방성 글은 순위에서 빼고, 글 내용은 옮기지 않고 제목과 링크만 실어요. 더 보기: '
+            + '<p class="note">열기는 댓글·글·커뮤니티 수로만 매겨. 댓글이 많다고 찬반이 갈린 건 아니고, 글 속 의견은 판단 안 해. 성별·인종·종교 갈라치기성 글, 폭력 사건, 개인 신상·비방성 글은 순위에서 빼고, 글 내용은 옮기지 않고 제목과 링크만 실어. 더 보기: '
               '<a href="/talk/">커뮤니티 이슈 전체</a> · <a href="/hot/">핫이슈</a> · <a href="/news/">기사 확인 신호</a></p>' + css)
-    page('/trend/', '이슈 트렌드 — 오늘 커뮤니티가 가장 뜨겁게 이야기한 이슈 TOP7', '커뮤니티 인기글에서 댓글이 가장 많이 달린 이슈 TOP7과 사흘간 열기 흐름, 언론이 서로 다르게 전한 이슈를 한곳에. 팝콘 들고 구경하는 루리가 정리해요.',
+    page('/trend/', '이슈 트렌드 — 오늘 커뮤니티가 가장 뜨겁게 이야기한 이슈 TOP7', '커뮤니티 인기글에서 댓글이 가장 많이 달린 이슈 TOP7과 사흘간 열기 흐름, 언론이 서로 다르게 전한 이슈를 한곳에. 팝콘 들고 구경하는 루리가 정리했어.',
          body, [('루리 줍줍', '/'), ('이슈', '/news/'), ('이슈 트렌드', '/trend/')], og='/assets/trend/og.jpg')
     return ['/trend/']
 
@@ -4690,16 +4713,16 @@ def talk_pages():
         return []
     arch = '<section class="tk-arch"><h2>📅 날짜별 커뮤니티 이슈</h2><p>' + ''.join(f'<a href="/talk/{d}/">{kdate(d)}</a>' for d in days[:60]) + '</p></section>'
     css = '<link rel="stylesheet" href="/assets/mag/mag.css?v=10"><link rel="stylesheet" href="/assets/news/news.css?v=7">'
-    note = '<p class="note">순위는 여러 커뮤니티에 동시에 뜬 정도·댓글 수·인기글에 머문 시간으로 매겨요. 성·혐오·개인 신상·비방·사생활 폭로성 글은 모으지 않아요. 요약은 루리가 제목과 수치만 보고 정리했어요.</p>'
+    note = '<p class="note">순위는 여러 커뮤니티에 동시에 뜬 정도·댓글 수·인기글에 머문 시간으로 매겨. 성·혐오·개인 신상·비방·사생활 폭로성 글은 모으지 않아. 요약은 루리가 제목과 수치만 보고 정리했어.</p>'
     urls = ['/talk/']
     for i, d in enumerate(days):
         x = json.load(open(os.path.join(ad, d + '.json'), encoding='utf-8'))
         iss = x.get('issues', [])
         st = ' · 매시간 갱신' if i == 0 else ' · 확정'
         head = (f'<div class="tk-hero"><img src="/assets/ruri/o_det_think.webp" width="300" height="415" alt="커뮤니티 이슈를 정리하는 루리"><div><small>{E(x["updated"])} 기준{st}</small>'
-                f'<b>{kdate(d)} 커뮤니티 이슈 TOP{len(iss)}</b><p>커뮤니티 {x.get("sites", 0)}곳 인기글 {x.get("npost", 0):,}건을 같은 화제끼리 묶어, 몇 곳에서 동시에 떴는지로 순위를 매겼어요.</p></div></div>')
+                f'<b>{kdate(d)} 커뮤니티 이슈 TOP{len(iss)}</b><p>커뮤니티 {x.get("sites", 0)}곳 인기글 {x.get("npost", 0):,}건을 같은 화제끼리 묶어서, 몇 곳에서 동시에 떴는지로 순위를 매겼어.</p></div></div>')
         body = head + TALK_NOTE + ''.join(talk_issue(y, d) for y in iss) + arch + note + css
-        dsc = f'{kdate(d)} 커뮤니티 {x.get("sites", 0)}곳 인기글 {x.get("npost", 0):,}건을 같은 화제끼리 묶어, 몇 곳에서 동시에 떴는지로 순위를 매겼어요.' + (' 매시간 갱신해요.' if i == 0 else ' 확정된 기록이에요.')
+        dsc = f'{kdate(d)} 커뮤니티 {x.get("sites", 0)}곳 인기글 {x.get("npost", 0):,}건을 같은 화제끼리 묶어, 몇 곳에서 동시에 떴는지로 순위를 매겼어.' + (' 매시간 갱신해.' if i == 0 else ' 확정된 기록이야.')
         if i == 0:
             page('/talk/', f'커뮤니티 이슈 오늘 TOP{len(iss)} — {x.get("sites", 0)}곳 인기글에서 동시에 뜬 화제', dsc,
                  '<p class="bc"><a href="/">홈</a> › 커뮤니티 이슈</p><h1>💬 루리의 커뮤니티 이슈</h1>' + body, [('루리 줍줍', '/'), ('커뮤니티 이슈', '/talk/')])
@@ -4800,25 +4823,25 @@ def mag_issue_html(m, d):
             href = f'/news/#is{x["n"]}' if is_today else E(x['u'])
             ext = '' if is_today else ' target="_blank" rel="noopener nofollow"'
             li += f'<li><a href="{href}"{ext}><em>{i + 1}</em><b>{E(x["t"])}</b><span>{x["on"]}곳 보도 · {g} {sc}점{cl}</span></a></li>'
-        sec.append(f'<section class="mg-s"><h2>🕵️ 오늘의 정치 이슈 TOP{len(m["pol"])}</h2>' + say('o_det_think', '여러 언론사가 가장 많이 다룬 정치 이슈예요. 점수는 교차 보도·출처·제목-본문 일치로 매긴 확인 신호예요.')
+        sec.append(f'<section class="mg-s"><h2>🕵️ 오늘의 정치 이슈 TOP{len(m["pol"])}</h2>' + say('o_det_think', '여러 언론사가 가장 많이 다룬 정치 이슈야. 점수는 교차 보도·출처·제목-본문 일치로 매긴 확인 신호야.')
                    + f'<ol class="mg-l">{li}</ol><a class="mg-more" href="/news/">기사 확인 신호 전체 보기 →</a></section>')
     if m['talk']:
         li = ''
         for i, x in enumerate(m['talk']):
             nb = ' · 📰 언론 보도' if x['news'] else ' · 언론 미확인'
             li += f'<li><a href="/talk/{d}/#t{x["n"]}"><em>{i + 1}</em><b>{E(x["t"])}</b><span>{x["nsite"]}개 커뮤니티 · 댓글 {x["nc"]:,}{nb}</span></a></li>'
-        sec.append(f'<section class="mg-s"><h2>💬 커뮤니티 이슈 TOP{len(m["talk"])}</h2>' + say('o_det_wave', '여러 커뮤니티에 동시에 뜬 화제예요. 커뮤니티 반응이라 사실 확인 전이에요!')
+        sec.append(f'<section class="mg-s"><h2>💬 커뮤니티 이슈 TOP{len(m["talk"])}</h2>' + say('o_det_wave', '여러 커뮤니티에 동시에 뜬 화제야. 커뮤니티 반응이라 사실 확인 전이야!')
                    + f'<ol class="mg-l">{li}</ol><a class="mg-more" href="/talk/{d}/">커뮤니티 이슈 전체 보기 →</a></section>')
     if m['con']:
         li = ''.join(f'<li><a href="/c/{x["id"]}/"><em>🏆</em><b>{E(x["t"])}</b><span>{E(x["p"] or "상금 공고 확인")} · {x["e"][5:].replace("-", "/")} 마감</span></a></li>' for x in m['con'])
-        sec.append('<section class="mg-s"><h2>⏰ 마감 임박 공모전</h2>' + say('o_present', '사흘 안에 마감하는 공모전을 상금 큰 순서로 모았어요. 상금만 보지 말고 자격과 제출물이 맞는지 먼저 확인해요.')
+        sec.append('<section class="mg-s"><h2>⏰ 마감 임박 공모전</h2>' + say('o_present', '사흘 안에 마감하는 공모전을 상금 큰 순서로 모았어. 상금만 보지 말고 자격과 제출물이 맞는지 먼저 확인해.')
                    + f'<ol class="mg-l">{li}</ol><a class="mg-more" href="/">공모전 전체 보기 →</a></section>')
     if m['apl']:
         li = ''
         for x in m['apl']:
             e = (' · ~' + x['e'][5:].replace('-', '/')) if x['e'] else ''
             li += f'<li><a href="/a/{x["id"]}/"><em>💰</em><b>{E(x["t"])}</b><span>{E(x["k"])}{e}</span></a></li>'
-        sec.append('<section class="mg-s"><h2>💰 새로 열린 지원금·청약</h2>' + say('o_cardigan', '이틀 안에 새로 접수를 시작한 지원금·청약이에요. 조건이 맞는지 확인해 보세요.')
+        sec.append('<section class="mg-s"><h2>💰 새로 열린 지원금·청약</h2>' + say('o_cardigan', '이틀 안에 새로 접수를 시작한 지원금·청약이야. 조건이 맞는지 확인해 봐.')
                    + f'<ol class="mg-l">{li}</ol><a class="mg-more" href="/apply/">지원금·청약 전체 보기 →</a></section>')
     if m.get('menu'):
         mn = m['menu']
@@ -4826,7 +4849,7 @@ def mag_issue_html(m, d):
         sec.append('<section class="mg-s"><h2>🍳 루리의 오늘 메뉴</h2>' + say('o_cook', f'오늘은 {E(mn["n"])} 어때요? {mn["m"]}분이면 돼요!')
                    + f'<div class="mg-menu"><b>{mn["e"]} {E(mn["n"])}</b><span>필요한 재료: {E(", ".join(mn["need"]))}</span><ol>{steps}</ol></div><a class="mg-more" href="/fridge/">냉장고 재료로 다른 메뉴 찾기 →</a></section>')
     st = '기준 · 오늘 하루 계속 갱신' if is_today else '확정'
-    head = (f'<div class="mg-hero"><small>루리 줍줍 데일리 · 제{m["no"]}호</small><b>{kdate(d)}</b><p>오늘의 정치 이슈 · 커뮤니티 화제 · 마감 임박 공모전 · 새 지원금 · 오늘 메뉴를 한 장에 모았어요.</p>'
+    head = (f'<div class="mg-hero"><small>루리 줍줍 데일리 · 제{m["no"]}호</small><b>{kdate(d)}</b><p>오늘의 정치 이슈 · 커뮤니티 화제 · 마감 임박 공모전 · 새 지원금 · 오늘 메뉴를 한 장에 모았어.</p>'
             f'<span>{E(m["updated"])} {st}</span></div>')
     lead, _ = lead_html(d)
     return head + lead + ''.join(sec)
@@ -4855,14 +4878,14 @@ def mag_pages(live, aps):
         urls.append(f'/mag/{d}/')
         cards.append(f'<li><a href="/mag/{d}/"><small>제{m["no"]}호</small><b>{kdate(d)}</b><span>{E(" · ".join(tops))}</span></a></li>')
     page('/mag/', '루리 줍줍 데일리 — 매일 정보 매거진', '매일 한 장으로 보는 정치 이슈 기사 확인 신호, 커뮤니티 화제, 마감 임박 공모전, 새 지원금·청약, 오늘 메뉴. 루리 줍줍 데일리 매거진 전체 호.',
-         '<p class="bc"><a href="/">홈</a> › 매거진</p><h1>📰 루리 줍줍 데일리</h1>' + say('o_present', '매일 한 장으로 정리해 드려요. 오늘 호는 하루 동안 계속 새 소식으로 바뀌어요!')
+         '<p class="bc"><a href="/">홈</a> › 매거진</p><h1>📰 루리 줍줍 데일리</h1>' + say('o_present', '매일 한 장으로 정리해 줄게. 오늘 호는 하루 동안 계속 새 소식으로 바뀌어!')
          + f'<ul class="mg-idx">{"".join(cards)}</ul>' + css, [('루리 줍줍', '/'), ('매거진', '/mag/')])
     return urls
 
 
 DIRN = {'up': ('🔺', '목표가 상향'), 'down': ('🔻', '목표가 하향'), 'keep': ('➖', '의견 유지'), 'bull': ('🟢', '강세 전망'), 'bear': ('🔴', '약세 전망'), 'neutral': ('⚪', '중립·혼조')}
-AN_NOTE = ('<p class="an-warn">📊 증권사 리포트·전문가 전망을 다룬 기사를 모아 다시 정리한 정보예요. 루리 줍줍이 직접 주가를 예측하거나 매수·매도를 권하지 않아요. '
-           '투자 판단과 책임은 본인에게 있어요. 목표가·의견은 각 증권사·기관의 것이며 원문 기사에서 확인해 주세요.</p>')
+AN_NOTE = ('<p class="an-warn">📊 증권사 리포트·전문가 전망을 다룬 기사를 모아 다시 정리한 정보야. 직접 주가를 예측하거나 매수·매도를 권하지는 않아.'
+           '투자 판단과 책임은 본인 몫이야. 목표가·의견은 각 증권사·기관의 것이니 원문 기사에서 확인해.</p>')
 
 
 def prize_split(c):
@@ -4995,36 +5018,36 @@ def an_sum(s):
     """종목 노드를 다시 계산한 해설 (기사 문장 전재 없음, 숫자는 노드에서)."""
     ns = s.get('nodes') or []
     up, dn, kp = s['up'], s['down'], s['keep']
-    L = [f'최근 30일 동안 {s["name"]} 목표가·투자의견이 나온 리포트 기사 {s["nn"]}건을 증권사 {s["nb"]}곳 기준으로 다시 묶었어요. 상향 {up}곳 · 유지 {kp}곳 · 하향 {dn}곳으로 '
-         + ('상향 의견이 더 많아요.' if up > dn else '하향 의견이 더 많아요.' if dn > up else '상향과 하향이 같아요.')]
+    L = [f'최근 30일 동안 {s["name"]} 목표가·투자의견이 나온 리포트 기사 {s["nn"]}건을 증권사 {s["nb"]}곳 기준으로 다시 묶었다. 상향 {up}곳 · 유지 {kp}곳 · 하향 {dn}곳으로 '
+         + ('상향 의견이 더 많다.' if up > dn else '하향 의견이 더 많다.' if dn > up else '상향과 하향이 같다.')]
     if s.get('tp_avg'):
         if s.get('tp_min') and s.get('tp_max') and s['tp_min'] != s['tp_max']:
-            L.append(f'제시된 목표가는 평균 {won_txt(s["tp_avg"])}이고, 가장 낮은 곳({won_txt(s["tp_min"])})과 높은 곳({won_txt(s["tp_max"])}) 차이는 {round((s["tp_max"] - s["tp_min"]) * 100 / s["tp_min"])}%예요.')
+            L.append(f'제시된 목표가는 평균 {won_txt(s["tp_avg"])}이고, 가장 낮은 곳({won_txt(s["tp_min"])})과 높은 곳({won_txt(s["tp_max"])}) 차이는 {round((s["tp_max"] - s["tp_min"]) * 100 / s["tp_min"])}%야.')
         else:
-            L.append(f'목표가를 밝힌 곳은 모두 {won_txt(s["tp_avg"])}를 제시했어요.')
+            L.append(f'목표가를 밝힌 곳은 모두 {won_txt(s["tp_avg"])}를 제시했어.')
     for x in [x for x in ns if x.get('tp') and x.get('tp0') and x['tp0'] != x['tp']][:3]:
-        L.append(f'{x["br"]}은 목표가를 {won_txt(x["tp0"])}에서 {won_txt(x["tp"])}로 {abs(round((x["tp"] - x["tp0"]) * 100 / x["tp0"]))}% {"올렸" if x["tp"] > x["tp0"] else "내렸"}어요.')
+        L.append(f'{x["br"]}은 목표가를 {won_txt(x["tp0"])}에서 {won_txt(x["tp"])}로 {abs(round((x["tp"] - x["tp0"]) * 100 / x["tp0"]))}% {"올렸" if x["tp"] > x["tp0"] else "내렸"}어.')
     rc = collections.Counter(r for x in ns for r in (x.get('rs') or []))
     if rc:
         r, k = rc.most_common(1)[0]
-        L.append(f'노드에서 가장 많이 나온 근거는 「{r}」({k}건)이에요.')
+        L.append(f'노드에서 가장 많이 나온 근거는 「{r}」({k}건)이야.')
     if s.get('mixed'):
-        L.append('증권사끼리 방향이 엇갈려요. 리포트 날짜가 서로 다를 수 있으니 아래 노드에서 날짜와 근거를 함께 보세요.')
+        L.append('증권사끼리 방향이 엇갈려. 날짜와 근거는 아래 노드에서 봐.')
     if any(x.get('chk') for x in ns):
-        L.append('목표가 숫자나 방향이 기사 제목과 어긋나 보이는 노드는 「확인 필요」로 따로 표시했어요.')
+        L.append('목표가 숫자나 방향이 기사 제목과 어긋나 보이는 노드는 「확인 필요」로 따로 표시했어.')
     return '<section class="an-sum"><h2>🧐 루리 해설</h2><p>' + ' '.join(E(x) for x in L) + '</p></section>'
 
 
 def coin_sum(c):
-    L = [f'최근 7일 {c["name"]} 전망 기사 {c["n"]}건을 강세 {c["bull"]} · 혼조 {c["neutral"]} · 약세 {c["bear"]} 노드로 나눴어요. '
-         + ('강세 쪽 발언이 더 많아요.' if c['bull'] > c['bear'] else '약세 쪽 발언이 더 많아요.' if c['bear'] > c['bull'] else '강세와 약세가 같아요.')]
+    L = [f'최근 7일 {c["name"]} 전망 기사 {c["n"]}건을 강세 {c["bull"]} · 혼조 {c["neutral"]} · 약세 {c["bear"]} 노드로 나눴다. '
+         + ('강세 쪽 발언이 더 많다.' if c['bull'] > c['bear'] else '약세 쪽 발언이 더 많다.' if c['bear'] > c['bull'] else '강세와 약세가 같다.')]
     h = [v for _, v in (c.get('hist') or []) if v]
     if len(h) > 5:
-        L.append(f'업비트 일봉으로 보면 최근 {len(h)}일 동안 {round((h[-1] - h[0]) * 100 / h[0], 1):+}% 움직였고, 고점과 저점 차이는 {round((max(h) - min(h)) * 100 / min(h), 1)}%예요.')
+        L.append(f'업비트 일봉으로 보면 최근 {len(h)}일 동안 {round((h[-1] - h[0]) * 100 / h[0], 1):+}% 움직였고, 고점과 저점 차이는 {round((max(h) - min(h)) * 100 / min(h), 1)}%야.')
     for side, nm in (('bull', '강세'), ('bear', '약세')):
         t = (c.get('tree') or {}).get(side) or []
         if t:
-            L.append(f'{nm} 근거는 「{t[0][0]}」가 가장 많았어요.')
+            L.append(f'{nm} 근거는 「{t[0][0]}」가 가장 많았어.')
     return '<section class="an-sum"><h2>🧐 루리 해설</h2><p>' + ' '.join(E(x) for x in L) + '</p></section>'
 
 
@@ -5104,15 +5127,15 @@ def pick_pages():
                 il += f'<li><a href="/issue/{isl}/"><b>{E(h1_)}</b></a></li>'
         rel = ''.join(f'<a href="{E(u_)}">{E(n_)}</a>' for u_, n_ in c.get('related', []) if os.path.exists(os.path.join(ROOT, u_.strip('/'), 'index.html')))   # 없는 경로는 링크하지 않는다
         body = (f'<p class="bc"><a href="/">홈</a> › <a href="/pick/">관심 묶음</a> › {E(c["title"][:24])}</p><h1>{E(c["title"])}</h1><p>{E(c["intro"])}</p>'
-                + (f'<h2>지금 이 커뮤니티들에서 오르는 화제</h2><p class="note">{E((ct or {}).get("date", ""))} 기준 · 출처별 집계예요. 커뮤니티 이름은 글이 올라온 곳을 밝히는 것이고, 특정 연령·성별을 뜻하지 않아요. 일부 커뮤니티는 댓글 수를 수집하지 않아요.</p>{ctb}' if ctb else '')
+                + (f'<h2>지금 이 커뮤니티들에서 오르는 화제</h2><p class="note">{E((ct or {}).get("date", ""))} 기준 · 출처별 집계야. 커뮤니티 이름은 글이 올라온 곳일 뿐, 특정 연령·성별을 뜻하지 않아. 일부 커뮤니티는 댓글 수를 수집하지 않아.</p>{ctb}' if ctb else '')
                 + (f'<h2>같이 보면 좋은 가이드</h2><ul class="gm-l">{gl}</ul>' if gl else '') + (f'<h2>관련 이슈</h2><ul class="gm-l">{il}</ul>' if il else '')
                 + (f'<p class="hm-links">{rel}</p>' if rel else ''))
         page(p_, c['title'], c['desc'], body, [('루리 줍줍', '/'), ('관심 묶음', '/pick/'), (c['title'][:20], p_)])
         urls.append(p_)
         cards += f'<li><a href="{p_}"><b>{E(c["title"])}</b><span>{E(c["desc"][:70])}</span></a></li>'
     if urls:
-        page('/pick/', '관심 묶음 — 요즘 커뮤니티에서 오르는 화제와 같이 볼 가이드', '커뮤니티에서 오르는 화제를 근거로, 그 관심사에 맞는 가이드와 이슈를 한 묶음으로 모았어요.',
-             f'<p class="bc"><a href="/">홈</a> › 관심 묶음</p><h1>🧺 관심 묶음</h1><p>요즘 커뮤니티에서 오르는 화제를 보고, 같은 관심사의 가이드와 이슈를 한 묶음으로 모았어요.</p><ul class="gm-g">{cards}</ul>',
+        page('/pick/', '관심 묶음 — 요즘 커뮤니티에서 오르는 화제와 같이 볼 가이드', '커뮤니티에서 오르는 화제를 근거로, 그 관심사에 맞는 가이드와 이슈를 한 묶음으로 모았다.',
+             f'<p class="bc"><a href="/">홈</a> › 관심 묶음</p><h1>🧺 관심 묶음</h1><p>요즘 커뮤니티에서 오르는 화제를 보고, 같은 관심사의 가이드와 이슈를 한 묶음으로 모았다.</p><ul class="gm-g">{cards}</ul>',
              [('루리 줍줍', '/'), ('관심 묶음', '/pick/')])
         urls.append('/pick/')
     return urls
@@ -5139,7 +5162,7 @@ def _calc_verify(C):
     """verify 케이스를 페이지와 같은 자바스크립트 계산기로 node 에서 돌려 맞는지 본다. 실패 메시지 목록을 돌려준다(node 가 없으면 건너뛴다)."""
     cases = C.get('verify') or []
     if not cases:
-        return ['verify 검산 값이 없어요']
+        return ['verify 검산 값이 없어']
     import subprocess
     prog = CALC_JS + "var d=JSON.parse(require('fs').readFileSync(0,'utf8'));console.log(JSON.stringify(d.cases.map(function(c){var v=run(d.C,c.in);return Object.keys(c.out).map(function(k){return [k,v[k],c.out[k]]})})));"
     try:
@@ -5252,7 +5275,7 @@ def calc_pages():
                     '<aside class="cc-out" aria-live="polite"><div class="cc-hero"><span class="cc-hl" id="ch-l"></span><b class="cc-hv" id="ch-v"></b></div><dl class="cc-list" id="co"></dl>'
                     '<details><summary>계산 과정 보기</summary><ul id="cs"></ul></details></aside></div>'
                     '<div class="cc-bar" id="cbar"><span></span><b></b></div>'
-                    '<p class="note">참고용 계산이에요. 실제 금액은 사업장 규정·계약·공식 안내에 따라 달라질 수 있어요.</p>'
+                    '<p class="note">참고용 계산이야. 실제 금액은 사업장 규정·계약·공식 안내에 따라 달라질 수 있어.</p>'
                     + '<div class="cc-sec">' + secs + '</div>' + (f'<p class="hm-links">{rel}</p>' if rel else '') + css + js)
             ld_ = {'@context': 'https://schema.org', '@graph': [{'@type': 'WebApplication', 'name': C['name'], 'url': SITE + p_, 'applicationCategory': 'FinanceApplication', 'operatingSystem': 'Web', 'inLanguage': 'ko',
                                                                     'offers': {'@type': 'Offer', 'price': '0', 'priceCurrency': 'KRW'}}] + ([fld_] if fld_ else [])}
@@ -5264,10 +5287,10 @@ def calc_pages():
            ('dividend', '배당 계산기'), ('stocktax', '주식 세금 계산기'), ('fx', '환율 계산기')]
     for k_, n_ in old:
         if os.path.exists(os.path.join(ROOT, 'money', 'tools', k_, 'index.html')):
-            cards = f'<li><a href="/money/tools/{k_}/"><b>🧮 {E(n_)}</b><span>{E(n_)} — 입력하면 바로 계산해요</span></a></li>' + cards
+            cards = f'<li><a href="/money/tools/{k_}/"><b>🧮 {E(n_)}</b><span>{E(n_)} — 입력하면 바로 계산돼</span></a></li>' + cards
     if cards:
-        page('/money/tools/', '계산기 모음 2026 — 연봉 실수령액·퇴직금·주휴수당·실업급여', '연봉 실수령액, 퇴직금, 실업급여, 주휴수당 같은 돈 계산을 숫자만 넣으면 바로 해 주는 계산기 모음이에요. 기준일과 공식 근거를 함께 적었어요.',
-             f'<p class="bc"><a href="/">홈</a> › 계산기</p><h1>🧮 계산기 모음</h1><p>숫자만 넣으면 바로 계산돼요. 계산 방법과 공식 근거는 각 계산기 아래에 적었어요.</p><p>물건 값을 비교할 때는 <a href="/price/">최저가 찾기</a>에서 새 상품 판매처와 중고 장터를 한 번에 조회할 수 있어요.</p><ul class="gm-g">{cards}</ul>',
+        page('/money/tools/', '계산기 모음 2026 — 연봉 실수령액·퇴직금·주휴수당·실업급여', '연봉 실수령액, 퇴직금, 실업급여, 주휴수당 같은 돈 계산을 숫자만 넣으면 바로 해 주는 계산기 모음이야. 기준일과 공식 근거도 적었어.',
+             f'<p class="bc"><a href="/">홈</a> › 계산기</p><h1>🧮 계산기 모음</h1><p>숫자만 넣으면 바로 계산돼. 계산 방법과 공식 근거는 각 계산기 아래에 있어.</p><p>물건 값을 비교할 때는 <a href="/price/">최저가 찾기</a>에서 새 상품 판매처와 중고 장터를 한 번에 조회할 수 있어.</p><ul class="gm-g">{cards}</ul>',
              [('루리 줍줍', '/'), ('계산기', '/money/tools/')])
         urls.append('/money/tools/')
     try:   # 최저가 찾기(11/10) — 화면만 여기서 만들고 조회는 따로 둔 Worker(worker_price)가 한다. 실패해도 빌드는 간다.
@@ -5287,8 +5310,8 @@ def map_pages():
     h = SC.kwmap_page_html()
     if not h:
         return []
-    page('/map/', '키워드 지도 — 사람들이 궁금해하는 질문 3D 지도 | ' + NAME, '단기·중기·장기 키워드를 3D 노드 지도로 보여 줍니다. 점을 누르면 해당 글로 이동합니다.',
-         '<p class="bc"><a href="/">홈</a> › 키워드 지도</p><h1>키워드 지도</h1><p class="kw-lead">사람들이 궁금해하는 질문을 단기·중기·장기로 나눠 보여 줍니다. 지도와 목록 중 편한 쪽으로 찾아보세요.</p>' + h,
+    page('/map/', '키워드 지도 — 사람들이 궁금해하는 질문 3D 지도 | ' + NAME, '단기·중기·장기 키워드를 3D 노드 지도로 보여 준다. 점을 누르면 해당 글로 이동한다.',
+         '<p class="bc"><a href="/">홈</a> › 키워드 지도</p><h1>키워드 지도</h1><p class="kw-lead">사람들이 궁금해하는 질문을 단기·중기·장기로 나눠 보여 준다. 지도든 목록이든 편한 쪽으로 찾아.</p>' + h,
          [(NAME, '/'), ('키워드 지도', '/map/')], full_title=True)
     return ['/map/']
 
@@ -5357,18 +5380,18 @@ def rsi_pages():
            '.rs-f button.on{background:#0f766e;color:#fff;border-color:#0f766e}.tblw{overflow-x:auto}.xt{border-collapse:collapse;width:100%;font-size:13.5px;min-width:640px}'
            '.xt th,.xt td{border:1px solid #e5e7eb;padding:6px 8px;text-align:right;white-space:nowrap}.xt th:first-child,.xt td:first-child{text-align:left}.xt th{background:#f8fafc}'
            '.xt small{color:#64748b}.xt small.rs-과매도{color:#1d4ed8}.xt small.rs-과매수{color:#b91c1c}</style>')
-    notice = ('<div class="an-warn"><b>투자 권유가 아니에요.</b> 이 페이지는 공개된 가격으로 RSI 같은 보조지표를 계산해 현황을 보여 주는 정보예요. 특정 종목을 사거나 팔라는 뜻이 아니고, '
-              '수익을 보장하지도 않아요. 투자 판단과 책임은 본인에게 있어요.</div>')
-    desc = (f'{asof} 기준 RSI(14일) 수치로 과매도(30 이하) {os_n}개·과매수(70 이상) {ob_n}개를 모았어요. 52주 고점 대비 낙폭, 200일선 대비 위치를 함께 정렬해 볼 수 있는 지표 현황표예요(투자 권유 아님).')
-    how = ('<h2>RSI가 뭔가요?</h2><p>RSI(상대강도지수)는 최근 14일 동안 오른 날의 평균 상승폭이 내린 날의 평균 하락폭보다 얼마나 큰지를 0~100으로 나타낸 지표예요. 보통 70 이상을 과매수, 30 이하를 과매도 구간으로 불러요.</p>'
-           '<h2>계산법</h2><ul class="gm-l"><li>하루 종가 변화를 상승분과 하락분으로 나눠요.</li><li>처음 14일은 단순 평균을 내고, 그다음부터는 (이전 평균 × 13 + 오늘 값) ÷ 14 로 이어 가요(Wilder 방식).</li>'
-           '<li>RS = 평균 상승분 ÷ 평균 하락분, RSI = 100 − 100 ÷ (1 + RS) 로 계산해요.</li></ul>'
-           '<h2>같이 보는 지표</h2><ul class="gm-l"><li><b>52주 고점 대비</b>: 최근 1년 최고가에서 얼마나 내려와 있는지예요.</li><li><b>200일선 대비</b>: 200일 평균 종가보다 지금 가격이 얼마나 위·아래인지예요. 장기 추세를 볼 때 자주 써요.</li>'
-           '<li><b>1개월·6개월</b>: 같은 기간 가격 변화율이에요.</li></ul>'
-           '<h2>이 표의 한계</h2><ul class="gm-l"><li>과거 가격만 쓰는 지표라 실적·뉴스·금리 같은 요인은 반영되지 않아요.</li><li>RSI가 30 이하여도 하락이 이어질 수 있고, 70 이상이어도 계속 오를 수 있어요.</li>'
-           '<li>종목은 시가총액 상위 일부(국내 대형주 40개, 업비트 원화 코인 18개)일 뿐이고 추천 목록이 아니에요.</li><li>코인은 당일 진행 중인 봉이 포함돼 하루 사이에도 값이 달라져요. 출처 사정에 따라 값이 늦거나 비어 있을 수 있어요.</li></ul>')
+    notice = ('<div class="an-warn"><b>투자 권유가 아니야.</b> 공개된 가격으로 RSI 같은 보조지표를 계산해 현황만 보여 준다. 특정 종목을 사거나 팔라는 뜻이 아니고, '
+              '수익을 보장하지도 않아. 투자 판단과 책임은 본인 몫이야.</div>')
+    desc = (f'{asof} 기준 RSI(14일) 수치로 과매도(30 이하) {os_n}개·과매수(70 이상) {ob_n}개를 모았다. 52주 고점 대비 낙폭, 200일선 대비 위치도 같이 정렬해 볼 수 있는 지표 현황표야(투자 권유 아님).')
+    how = ('<h2>RSI가 뭐냐면</h2><p>RSI(상대강도지수)는 최근 14일 동안 오른 날의 평균 상승폭이 내린 날의 평균 하락폭보다 얼마나 큰지를 0~100으로 나타낸 지표야. 보통 70 이상을 과매수, 30 이하를 과매도 구간이라고 해.</p>'
+           '<h2>계산법</h2><ul class="gm-l"><li>하루 종가 변화를 상승분과 하락분으로 나눈다.</li><li>처음 14일은 단순 평균을 내고, 그다음부터는 (이전 평균 × 13 + 오늘 값) ÷ 14 로 이어 간다(Wilder 방식).</li>'
+           '<li>RS = 평균 상승분 ÷ 평균 하락분, RSI = 100 − 100 ÷ (1 + RS) 로 계산한다.</li></ul>'
+           '<h2>같이 보는 지표</h2><ul class="gm-l"><li><b>52주 고점 대비</b>: 최근 1년 최고가에서 얼마나 내려와 있는지야.</li><li><b>200일선 대비</b>: 200일 평균 종가보다 지금 가격이 얼마나 위·아래인지야. 장기 추세를 볼 때 자주 써.</li>'
+           '<li><b>1개월·6개월</b>: 같은 기간 가격 변화율이야.</li></ul>'
+           '<h2>이 표의 한계</h2><ul class="gm-l"><li>과거 가격만 쓰는 지표라 실적·뉴스·금리 같은 요인은 반영되지 않아.</li><li>RSI가 30 이하여도 하락이 이어질 수 있고, 70 이상이어도 계속 오를 수 있어.</li>'
+           '<li>종목은 시가총액 상위 일부(국내 대형주 40개, 업비트 원화 코인 18개)일 뿐이고 추천 목록이 아니야.</li><li>코인은 당일 진행 중인 봉이 포함돼 하루 사이에도 값이 달라져. 출처 사정에 따라 값이 늦거나 비어 있을 수 있어.</li></ul>')
     body = (f'<p class="bc"><a href="/">홈</a> › <a href="/analyst/">애널리스트 분석</a> › RSI 현황표</p><h1>📈 RSI 현황표 — 과매도·과매수 구간 한눈에</h1>{notice}'
-            f'<div class="cat-st"><b>{E(asof)} 기준</b><br>RSI(14일) 30 이하 {os_n}개 · 70 이상 {ob_n}개 · 전체 {len(items)}개. 열 제목을 누르면 정렬돼요.</div>'
+            f'<div class="cat-st"><b>{E(asof)} 기준</b><br>RSI(14일) 30 이하 {os_n}개 · 70 이상 {ob_n}개 · 전체 {len(items)}개. 열 제목을 누르면 정렬돼.</div>'
             '<div class="rs-f"><button class="on" data-f="all">전체</button><button data-f="os">RSI 30 이하</button><button data-f="ob">RSI 70 이상</button><button data-f="ma">200일선 아래</button></div>'
             + tbs + f'<p class="note">출처: {E(d.get("source", ""))}</p>' + how + notice + css + js)
     page('/analyst/rsi/', f'RSI 현황표 {asof[5:]} 기준 — 과매도·과매수 구간 종목 (투자 권유 아님)', desc, body, [('루리 줍줍', '/'), ('애널리스트 분석', '/analyst/'), ('RSI 현황표', '/analyst/rsi/')])
@@ -5387,10 +5410,10 @@ def analyst_pages():
     mix = [s for s in S if s['mixed']][:10]
     nn = sum(s['nn'] for s in S)
     hero = (f'<div class="an-hero"><img src="/assets/ruri/o_present.webp" width="300" height="415" alt="애널리스트 분석을 정리하는 루리"><div><small>마지막 수집·집계 {E(d["updated"])} (한국 시간) · 매시간 갱신</small>'
-            f'<b>최근 30일 · 종목 {len(S)}개 · 리포트 {sum(s["nb"] for s in S)}건 · 기사 {sum(s["nn"] for s in S)}건</b><p class="an-scope">리포트 수는 종목마다 증권사별 최신 의견 1건으로 셌어요(같은 리포트를 여러 기사가 인용해도 1건). 기사 수는 그 리포트를 다룬 기사 전체예요. 코인 {len(C)}개는 최근 7일 전망 기사 기준이에요.</p><p>증권사 리포트 기사 속 발언을 「상향·하향·유지」 노드로 쪼개고, 근거별로 어느 증권사가 말했는지 다시 묶었어요.</p></div></div>')
-    how = ('<details class="an-how"><summary>노드 분석은 이렇게 해요</summary><ol><li>증권 기사 RSS에서 「목표가」「투자의견」이 나온 기사만 골라요.</li><li>기사 1건 = 노드 1개: 증권사·종목·방향(상향/하향/유지)·투자의견·목표가(이전→새)·근거 태그를 뽑아요.</li>'
-           '<li>근거 태그(실적 개선·업황 호조·수주·주주환원·저평가 / 실적 부진·업황 둔화·고평가·규제·심리 악화)는 노드 방향과 맞는 것만 붙여요.</li><li>종목별로 증권사마다 최신 노드 하나만 남겨 상향·하향·유지 수, 평균 목표가, 의견 엇갈림을 계산해요.</li>'
-           '<li>코인은 전문가·기관 발언 기사를 강세·약세·혼조 노드로 나누고 근거(ETF 자금·금리·규제·기관 매수·거래소 유입 등)별로 묶어요.</li></ol></details>')
+            f'<b>최근 30일 · 종목 {len(S)}개 · 리포트 {sum(s["nb"] for s in S)}건 · 기사 {sum(s["nn"] for s in S)}건</b><p class="an-scope">리포트 수는 종목마다 증권사별 최신 의견 1건으로 셌다(같은 리포트를 여러 기사가 인용해도 1건). 기사 수는 그 리포트를 다룬 기사 전체. 코인 {len(C)}개는 최근 7일 전망 기사 기준.</p><p>증권사 리포트 기사 속 발언을 「상향·하향·유지」 노드로 쪼개고, 근거별로 어느 증권사가 말했는지 다시 묶었다.</p></div></div>')
+    how = ('<details class="an-how"><summary>노드 분석은 이렇게 한다</summary><ol><li>증권 기사 RSS에서 「목표가」「투자의견」이 나온 기사만 골랐다.</li><li>기사 1건 = 노드 1개: 증권사·종목·방향(상향/하향/유지)·투자의견·목표가(이전→새)·근거 태그를 뽑는다.</li>'
+           '<li>근거 태그(실적 개선·업황 호조·수주·주주환원·저평가 / 실적 부진·업황 둔화·고평가·규제·심리 악화)는 노드 방향과 맞는 것만 붙인다.</li><li>종목별로 증권사마다 최신 노드 하나만 남겨 상향·하향·유지 수, 평균 목표가, 의견 엇갈림을 계산한다.</li>'
+           '<li>코인은 전문가·기관 발언 기사를 강세·약세·혼조 노드로 나누고 근거(ETF 자금·금리·규제·기관 매수·거래소 유입 등)별로 묶는다.</li></ol></details>')
     sec = ''
     if C:
         sec += '<h2>🪙 코인 전망 종합</h2>' + ''.join(coin_card(c) for c in C if c['n'])
@@ -5404,7 +5427,7 @@ def analyst_pages():
     if rest:
         sec += '<h2>📋 최근 리포트가 나온 종목</h2><ul class="an-all">' + ''.join(f'<li><a href="/analyst/s/{s["id"]}/">{E(s["name"])}<small>{"🔺" * min(3, s["up"])}{"🔻" * min(3, s["down"])}{"➖" * min(3, s["keep"])}</small></a></li>' for s in rest) + '</ul>'
     page('/analyst/', '루리의 애널리스트 분석 종합 — 증권사 목표가 상향·하향, 코인 전망 노드 분석',
-         f'증권사 리포트 기사 속 목표가·투자의견을 노드로 쪼개 종목별로 다시 정리했어요. 최근 30일 증권사별 최신 리포트 기준 상향 {sum(s["up"] for s in S)}건 · 하향 {sum(s["down"] for s in S)}건, 비트코인·이더리움 전망 강세·약세 근거까지.',
+         f'증권사 리포트 기사 속 목표가·투자의견을 노드로 쪼개 종목별로 다시 정리했다. 최근 30일 증권사별 최신 리포트 기준 상향 {sum(s["up"] for s in S)}건 · 하향 {sum(s["down"] for s in S)}건, 비트코인·이더리움 전망 강세·약세 근거까지.',
          '<p class="bc"><a href="/">홈</a> › 애널리스트 분석</p><h1>📊 루리의 애널리스트 분석 종합</h1>' + hero + AN_NOTE + ('<p class="hm-links"><a href="/analyst/rsi/">📈 RSI 현황표 — 과매도·과매수 구간 한눈에</a></p>' if os.path.exists(RSI_F) else '') + sec + how + css, [('루리 줍줍', '/'), ('애널리스트 분석', '/analyst/')])
     urls = ['/analyst/']
     for s in S:
@@ -5489,7 +5512,7 @@ def satire_pages():
     if not days:
         return []
     css = '<link rel="stylesheet" href="/assets/mag/mag.css?v=10">'
-    note = '<p class="note">풍자 만화예요. 특정 종목·인물을 비방하거나 투자를 권하려는 게 아니에요. 숫자는 그날 보도 기준이에요.</p>'
+    note = '<p class="note">풍자 만화야. 특정 종목·인물을 비방하거나 투자를 권하려는 게 아니야. 숫자는 그날 보도 기준.</p>'
     urls = ['/satire/']
     def one(d, v, h='h2'):
         imgs = ''.join(f'<img src="{satire_img(d, f)}" width="864" height="1080" alt="{kdate(d)} 루리 풍자 {"만평" if f.startswith("satire") else "4컷"}" loading="lazy">' for f in v['imgs'])
@@ -5498,7 +5521,7 @@ def satire_pages():
     arch = '<section class="tk-arch"><h2>📅 지난 풍자 모아 보기</h2><p>' + ''.join(f'<a href="/satire/{d}/">{kdate(d)}</a>' for d, _ in days[:90]) + '</p></section>'
     d0, v0 = days[0]
     title0 = (v0['cap'][0] if v0['cap'] else '오늘의 풍자')
-    page('/satire/', '루리 풍자 — 매일 한 컷, 증시·뉴스 만평', f'루리가 매일 그리는 풍자 만화. 오늘: {title0}. 지난 풍자도 날짜별로 모아 봐요.',
+    page('/satire/', '루리 풍자 — 매일 한 컷, 증시·뉴스 만평', f'루리가 매일 그리는 풍자 만화. 오늘: {title0}. 지난 풍자도 날짜별로 모아 놨다.',
          '<p class="bc"><a href="/">홈</a> › 루리 풍자</p><h1>🎨 루리 풍자</h1>' + one(d0, v0) + note + arch + css, [('루리 줍줍', '/'), ('루리 풍자', '/satire/')])
     for i, (d, v) in enumerate(days):
         od = os.path.join(ROOT, 'satire', d)  # 원본이 빠진 그림(사용자가 뺀 컷)은 사이트에서도 지움
@@ -5553,20 +5576,20 @@ def kw_play(db, today, L, ENH=None):
         x = byslug.get(a['slug'])
         bd_ = ''.join(f'<i title="{E(t)}">{ic}{E(t) if ic in ("⏳", "🌙") else ""}</i>' for ic, t in KF.badges(x, hist)) if x else ''
         if ENH and a['slug'] in ENH:
-            bd_ += '<i title="읽을거리가 있어요">📖</i>'
+            bd_ += '<i title="읽을거리가 있다">📖</i>'
         rl = KF.rules_links(x, contests) if x else []
         ex = ''.join(f'<a href="{E(u)}">{E(t)}</a>' for u, t in rl[:2])   # 규칙표로 맞는 것만(맞는 게 없으면 안 붙임)
         li += (f'<li id="k-{E(a["slug"])}" data-c="{E(KF.cat_of(a["k"], r.get("news")))}"><a href="/kw/{E(a["slug"])}/"><em>{j + 1}</em><b>{E(a["k"])} <span class="kwb">{bd_}</span></b>'
                f'<span>{SRCB(a)} {E(a.get("traffic") or "-")} · {E(a.get("first", ""))} 첫 등장</span>{KF.spark(hist.get(a["slug"]) or [], KF.STY[KF.srckey(a.get("src"))][0])}</a>'
                + (f'<p class="kwr">📎 {ex}</p>' if ex else '') + '</li>')
-    note_h = ('<p class="kwn">흐름 그래프(오늘 시간대별 인기도)는 시간마다 기록이 쌓이는 대로 나타나요. 기록은 ' + (min((v[0][0] for v in hist.values() if v), default='') or '다음 갱신') + '부터예요. '
-              '🆕 신규(3시간 안에 처음) · 🔥 검색량 1000+ 또는 실시간 3위 안 · ⏳ 오래 버티는 중 · 📉 하락(기록 필요) · 🌙 새벽에만 떴어요. 인기도 = 검색량 구간 + 실시간 순위 합산 상대값이에요.</p>')
+    note_h = ('<p class="kwn">흐름 그래프(오늘 시간대별 인기도)는 시간마다 기록이 쌓이는 대로 나타난다. 기록은 ' + (min((v[0][0] for v in hist.values() if v), default='') or '다음 갱신') + '부터야. '
+              '🆕 신규(3시간 안에 처음) · 🔥 검색량 1000+ 또는 실시간 3위 안 · ⏳ 오래 버티는 중 · 📉 하락(기록 필요) · 🌙 새벽에만 떴다. 인기도 = 검색량 구간 + 실시간 순위 합산 상대값.</p>')
     shr = share_bar('오늘의 키워드 TOP5', '오늘 많이 검색된 키워드 TOP5 — ' + ', '.join(card[1][:5]) if card else '오늘의 인기 키워드')
     dl = f'<p class="kwn"><a href="/assets/kw/top5.jpg" download>🖼️ 오늘의 TOP5 카드 이미지 저장</a></p>' if card else ''
     rd = ''.join(f'<li><a href="/kw/{E(sl)}/"><b>{E(db[sl]["k"])}</b><span>섹션 {n}개 · {E(", ".join(KF.STY[KF.srckey(db[sl].get("src"))][1:2]))}</span></a></li>' for sl, (_h, n) in list((ENH or {}).items())[:8])
     rd5 = ''.join(f'<li><a href="/kw/{E(sl)}/"><b>{E(db[sl]["k"])}</b><span>섹션 {n}개 · {E(", ".join(KF.STY[KF.srckey(db[sl].get("src"))][1:2]))}</span></a></li>' for sl, (_h, n) in list((ENH or {}).items())[:5])
     top = (KF.one_liner(cur, db) + KF.top1(cur, hist)
-           + (f'<section class="kwc"><h2>📌 오늘의 추천 — 읽어 볼 만한 키워드</h2><ul class="mg-l">{rd5}</ul><p class="kwn">여러 출처에 동시에 뜬 것, 오래 버티는 것, 생활에 닿는 것부터 골랐어요. 정치·가십·사고는 제외해요.</p></section>' if rd5 else '')
+           + (f'<section class="kwc"><h2>📌 오늘의 추천 — 읽어 볼 만한 키워드</h2><ul class="mg-l">{rd5}</ul><p class="kwn">여러 출처에 동시에 뜬 것, 오래 버티는 것, 생활에 닿는 것부터 골랐다. 정치·가십·사고는 뺐다.</p></section>' if rd5 else '')
            + KF.cloud(cur)
            + '<details class="kw-play"><summary>🎮 놀이판 — 하루살이·장수 키워드, 퀴즈, 내일 예측 투표</summary>' + KF.fleeting(cur) + qbox + vbox + '</details>' + shr + dl
            + '<script type="application/json" id="kw-data">' + json.dumps({'q': qdata, 'v': vdata}, ensure_ascii=False).replace('</', '<' + chr(92) + '/') + '</script>'
@@ -5583,7 +5606,7 @@ def kw_pages():
         return []
     css = '<link rel="stylesheet" href="/assets/mag/mag.css?v=10">'
     G = {'ok': '✅', 'warn': '🟡', 'bad': '🔴'}
-    note = '<p class="note">출처: <a href="https://trends.google.com/trending?geo=KR">Google Trends 한국 급상승</a>과 <a href="https://www.signal.bz/news/guide">시그널</a>. 시그널은 네이버와 별개인 서비스이며 네이버 공식 검색 순위가 아닙니다. 숫자 뒤 + 표시는 구글이 제공하는 검색량 구간, 실시간 N위는 시그널 순위입니다. 이를 합친 화면 점수는 자체 정렬용이며 월간 검색량·방문자 수가 아닙니다. 자동완성은 주제 후보일 뿐 수요나 검색 유입을 보장하지 않습니다. 출처 설명 확인: 2026-10-20.</p>'
+    note = '<p class="note">출처: <a href="https://trends.google.com/trending?geo=KR">Google Trends 한국 급상승</a>과 <a href="https://www.signal.bz/news/guide">시그널</a>. 시그널은 네이버와 별개인 서비스이며 네이버 공식 검색 순위가 아니다. 숫자 뒤 + 표시는 구글이 제공하는 검색량 구간, 실시간 N위는 시그널 순위다. 이걸 합친 화면 점수는 자체 정렬용이고 월간 검색량·방문자 수가 아니다. 자동완성은 주제 후보일 뿐 수요나 검색 유입을 보장하지 않는다. 출처 설명 확인: 2026-10-20.</p>'
     urls = ['/kw/']
     kd = os.path.join(ROOT, 'kw')  # 제외된 키워드 페이지는 지움
     for f in os.listdir(kd):
@@ -5608,14 +5631,14 @@ def kw_pages():
         print('키워드 읽을거리 실패', repr(e)[:150])
     for sl, r in db.items():
         k = r['k']
-        lines = [f'「{E2(k)}」{josa_ga(k)} {kdate(r["days"][-1])} ' + ('구글 급상승과 시그널 순위에 동시에' if len(r.get('src') or []) > 1 else '시그널 순위에' if (r.get('src') or ['google']) == ['naver'] else '구글 검색 급상승 키워드에') + f' 올랐어요({E2(r.get("traffic") or "-")}).']
+        lines = [f'「{E2(k)}」{josa_ga(k)} {kdate(r["days"][-1])} ' + ('구글 급상승과 시그널 순위에 동시에' if len(r.get('src') or []) > 1 else '시그널 순위에' if (r.get('src') or ['google']) == ['naver'] else '구글 검색 급상승 키워드에') + f' 올랐어({E2(r.get("traffic") or "-")}).']
         if r.get('srcs'):
-            lines.append(f'관련 보도는 {len(r["srcs"])}곳({E2(", ".join(r["srcs"][:5]))}{" 등" if len(r["srcs"]) > 5 else ""})에서 나왔어요.')
+            lines.append(f'관련 보도는 {len(r["srcs"])}곳({E2(", ".join(r["srcs"][:5]))}{" 등" if len(r["srcs"]) > 5 else ""})에서 나왔어.')
         if r.get('issue'):
             x = r['issue']
-            lines.append(f'루리의 기사 확인 신호에서는 언론사 {x["on"]}곳이 보도한 이슈로 묶였고, 확인 신호 점수는 {G.get(x.get("g"), "")} {x.get("s") if x.get("s") is not None else "-"}점이에요.')
+            lines.append(f'루리의 기사 확인 신호에서는 언론사 {x["on"]}곳이 보도한 이슈로 묶였고, 확인 신호 점수는 {G.get(x.get("g"), "")} {x.get("s") if x.get("s") is not None else "-"}점이야.')
         if len(r['days']) > 1:
-            lines.append(f'최근 {len(r["days"])}일 동안 급상승에 올랐어요({", ".join(d[5:].replace("-", "/") for d in r["days"][-5:])}).')
+            lines.append(f'최근 {len(r["days"])}일 동안 급상승에 올랐어({", ".join(d[5:].replace("-", "/") for d in r["days"][-5:])}).')
         why = ''.join(f'<li><a href="{E2(n["u"])}" target="_blank" rel="noopener nofollow"><em>{E2(n["o"])}</em>{E2(n["t"])}</a></li>' for n in r.get('news', []))
         ours = ''.join(f'<li><a href="{E2(a["u"])}" target="_blank" rel="noopener nofollow"><em>{E2(a["o"])} {G.get(a.get("g"), "")} {a["s"] if a.get("s") is not None else ""}</em>{E2(a["t"])}</a></li>' for a in r.get('ours', []))
         links = []
@@ -5656,7 +5679,7 @@ def kw_pages():
             bd = play['list'] + arch + note + css
         if i == 0:
             page('/kw/', '오늘의 인기 키워드 — 검색 급상승 이유 정리', f'{kdate(d)} 구글 검색 급상승 키워드와 왜 떴는지: ' + ', '.join(x['k'] for x in L[:6]),
-                 f'<p class="bc"><a href="/">홈</a> › 인기 키워드</p><h1>🔎 오늘의 인기 키워드</h1><script defer src="/assets/view/one.js?v=1"></script>' + say('o_det_wave', '구글 급상승 목록과 시그널 순위에 등장한 말을 모았어요. 관련 보도는 배경을 살피는 자료이며 검색 증가 원인을 입증하지는 않아요.') + play['top'] + bd,
+                 f'<p class="bc"><a href="/">홈</a> › 인기 키워드</p><h1>🔎 오늘의 인기 키워드</h1><script defer src="/assets/view/one.js?v=1"></script>' + say('o_det_wave', '구글 급상승 목록과 시그널 순위에 등장한 말을 모았다. 관련 보도는 배경 자료일 뿐, 검색 증가 원인을 입증하진 않아.') + play['top'] + bd,
                  [('루리 줍줍', '/'), ('인기 키워드', '/kw/')], og=og_k)
         page(f'/kw/{d}/', f'{kdate(d)} 인기 키워드 — 검색 급상승 정리', f'{kdate(d)} 구글 검색 급상승 키워드: ' + ', '.join(x['k'] for x in L[:8]),
              f'<p class="bc"><a href="/">홈</a> › <a href="/kw/">인기 키워드</a> › {kdate(d)}</p><h1>🔎 {kdate(d)} 인기 키워드</h1>' + bd, [('루리 줍줍', '/'), ('인기 키워드', '/kw/'), (kdate(d), f'/kw/{d}/')], noindex=True)
@@ -5762,7 +5785,7 @@ def dev_blog_pages(P, css):
     EN = [p for p in P if p['lang'] == 'en']
     enl = ''.join(f'<li><a href="{dev_url(p)}"><b>{E(p["title"])}</b><span>{E(p["desc"])}</span></a></li>' for p in sorted(EN, key=lambda p: p['date'], reverse=True)[:6])
     body = ('<p class="bc"><a href="/">홈</a> › 기술 블로그</p><h1>🧑‍💻 루리 줍줍 기술 블로그</h1>'
-            '<p class="cat-st">📌 사람 한 명과 AI 코딩 에이전트로 이 사이트를 운영하며 실제로 겪은 문제와 고친 과정을 「문제 → 원인 → 해결 코드 → 교훈」 순서로 적어요. 실패 사례도 숨기지 않아요.</p>'
+            '<p class="cat-st">📌 사람 한 명과 AI 코딩 에이전트로 이 사이트를 운영하며 실제로 겪은 문제와 고친 과정을 「문제 → 원인 → 해결 코드 → 교훈」 순서로 적는다. 실패도 그대로 적는다.</p>'
             + f'<p class="dev-stat"><b>{len(KO)}</b>편 · 영어 가이드 <b>{len(P) - len(KO)}</b>편 · 마지막 글 {KO[0]["date"]}</p>'
             + '<input id="dev-q" class="dev-q" type="search" placeholder="글 찾기 (예: D1, 잠금, 빌드, 승인)" aria-label="기술 블로그 글 찾기" autocomplete="off">'
             + '<h2>처음 읽기 좋은 글</h2><ul class="dev-ls dev-pick">' + ''.join(_dev_card(q, rm[q["slug"]]) for q in KO if q['slug'] in ('multi-ai-sessions', 'd1-read-budget', 'visit-count-contamination')) + '</ul>'
@@ -5874,7 +5897,7 @@ def dev_pages(live=()):
                 + ('' if en else f'<aside class="dev-sum"><b>30초 요약</b><p>{E(p["desc"])}</p></aside>') + toc_
                 + body_ + tail_x + (f'<h2>{LB[5] if en else "출처"}</h2><ul>{src}</ul>' if src else '')
                 + (f'<p class="dev-hub">{LB[6] if en else "관련"}: <a href="{E(hub[1])}">{E(hub[0])}</a></p>' if hub else '')
-                + (lang_switch(u) + ('<p class="dev-hub">Questions about how this was built? <a href="/dev/faq/">Dev FAQ</a></p>' if lg == 'en' else '') if en else '<p class="dev-hub">이 글에 대해 묻고 싶으면 <a href="/dev/faq/">❓ 개발 FAQ</a>에 남겨 주세요.</p>')
+                + (lang_switch(u) + ('<p class="dev-hub">Questions about how this was built? <a href="/dev/faq/">Dev FAQ</a></p>' if lg == 'en' else '') if en else '<p class="dev-hub">이 글에 물어볼 게 있으면 <a href="/dev/faq/">❓ 개발 FAQ</a>에 남겨.</p>')
                 + share_bar(p['title'], p['desc'], lg == 'en') + f'</article>{css}<link rel="stylesheet" href="/assets/dev/dev.css?v=1"><script defer src="/assets/dev/dev.js?v=2"></script>')
         t = p['title'] + ' | Ruri Jupjup' if en and len(p['title']) + 14 <= 70 else p['title']
         ld = {'@context': 'https://schema.org', '@type': 'TechArticle', 'headline': p['title'][:110], 'description': p['desc'], 'inLanguage': p['lang'], 'datePublished': p['date'],
@@ -5920,7 +5943,7 @@ def ailog_page(live, nurls):
     npage = sum(1 for _r, _d, fs in os.walk(ROOT) if 'index.html' in fs and '.git' not in _r)
     days = (TODAY - datetime.date.fromisoformat(first)).days + 1
     stat = [('제작 기간', f'{days}일', f'{first[5:].replace("-", "/")} 시작'), ('코드 변경(커밋)', f'{commits:,}번', 'AI가 고치고 올린 횟수'),
-            ('페이지', f'{npage:,}개', '매시간 다시 만들어요'), ('진행 중 공모전', f'{len(live):,}건', '상세 페이지 자동 생성'),
+            ('페이지', f'{npage:,}개', '매시간 다시 만든다'), ('진행 중 공모전', f'{len(live):,}건', '상세 페이지 자동 생성'),
             ('매시간 자동 작업', '6가지', '뉴스·커뮤니티·애널리스트·키워드·빌드·배포'), ('서버·API 비용', '0원', '무료 한도 + 내 PC')]
     st = ''.join(f'<div><small>{E(k)}</small><b>{E(v)}</b><span>{E(d)}</span></div>' for k, v, d in stat)
     cost = ''.join(f'<tr><td>{E(x)}</td><td>{E(y)}</td><td><b>{E(z)}</b></td></tr>' for x, y, z in a['costs'])
@@ -5936,22 +5959,22 @@ def ailog_page(live, nurls):
             SER.setdefault(p['series'], []).append(p)
     dli = ''.join(f'<li><a href="{dev_url(p)}"><b>{"[EN] " if p["lang"] == "en" else ""}{E(p["title"])}</b><span>{E(p["desc"])}</span></a></li>' for p in DP if not p.get('series'))
     dli = ''.join(f'</ul><h3>🔗 시리즈: {E(k)}</h3><ul class="dev-ls">' + ''.join(f'<li><a href="{dev_url(p)}"><b>{E(p["title"])}</b><span>{E(p["desc"])}</span></a></li>' for p in sorted(v, key=lambda p: p['date'])) + '</ul><h3>그 밖의 글</h3><ul class="dev-ls">' for k, v in SER.items()) + dli
-    body = (f'<p class="bc"><a href="/">홈</a> › 개발 지식</p><h1>🧑‍💻 개발 지식 — 직접 해 보고 정리한 AI·개발 가이드</h1><p class="note">글 모음은 <a href="/dev/">기술 블로그</a>(태그·RSS)에서도 볼 수 있어요. <a href="/dev/rss.xml">RSS</a></p>'
-            + (f'<style>.dev-ls{{list-style:none;padding:0}}.dev-ls li{{margin:8px 0}}.dev-ls a{{display:block;padding:12px;border:1px solid #e5e7eb;border-radius:10px;text-decoration:none;color:inherit}}.dev-ls span{{display:block;font-size:.88em;color:#64748b;margin-top:4px}}</style><section class="mg-s"><h2>📚 가이드·실험 노트</h2><p class="note">질문이 들어온 주제를 직접 테스트하고 공식 문서 숫자로 정리해요. 영어 글은 <a href="/en/guide/">English guides</a>에 모여 있어요.</p><ul class="dev-ls">{dli}</ul></section>' if DP else '')
+    body = (f'<p class="bc"><a href="/">홈</a> › 개발 지식</p><h1>🧑‍💻 개발 지식 — 직접 해 보고 정리한 AI·개발 가이드</h1><p class="note">글 모음은 <a href="/dev/">기술 블로그</a>(태그·RSS)에서도 볼 수 있어. <a href="/dev/rss.xml">RSS</a></p>'
+            + (f'<style>.dev-ls{{list-style:none;padding:0}}.dev-ls li{{margin:8px 0}}.dev-ls a{{display:block;padding:12px;border:1px solid #e5e7eb;border-radius:10px;text-decoration:none;color:inherit}}.dev-ls span{{display:block;font-size:.88em;color:#64748b;margin-top:4px}}</style><section class="mg-s"><h2>📚 가이드·실험 노트</h2><p class="note">질문이 들어온 주제를 직접 테스트하고 공식 문서 숫자로 정리한다. 영어 글은 <a href="/en/guide/">English guides</a>에 모여 있어.</p><ul class="dev-ls">{dli}</ul></section>' if DP else '')
             + '<h2 id="log">🤖 AI 제작 로그 — 서버비 0원으로 이 사이트를 만든 방법</h2>'
             + say('o_desk', E(a['lead']))
             + f'<div class="al-st">{st}</div>'
             + f'<section class="mg-s"><h2>💸 비용표: 어디에 얼마 드나</h2><table class="al-t"><tr><th>무엇</th><th>쓰는 것</th><th>비용</th></tr>{cost}</table><p class="note">{E(a["cost_note"])}</p></section>'
-            + f'<section class="mg-s"><h2>🧩 구조: 매시간 이렇게 돌아가요</h2><ol class="al-ar">{arch}</ol></section>'
-            + f'<section class="mg-s"><h2>💬 사람이 한 말 → AI가 만든 것</h2><p class="note">실제 지시를 그대로 옮겼어요. 사람은 방향만 말하고, 코드·디자인·배포·검사는 AI가 했어요.</p><ul class="al-c">{chat}</ul></section>'
+            + f'<section class="mg-s"><h2>🧩 구조: 매시간 이렇게 돈다</h2><ol class="al-ar">{arch}</ol></section>'
+            + f'<section class="mg-s"><h2>💬 사람이 한 말 → AI가 만든 것</h2><p class="note">실제 지시를 그대로 옮겼다. 사람은 방향만 말하고, 코드·디자인·배포·검사는 AI가 했다.</p><ul class="al-c">{chat}</ul></section>'
             + f'<section class="mg-s"><h2>🛠️ AI가 틀린 것과 고친 것</h2><ul class="al-f">{fixes}</ul></section>'
             + f'<section class="mg-s"><h2>📏 지킨 원칙</h2><ul class="al-r">{rules}</ul></section>'
             + f'<section class="mg-s"><h2>🗓️ 날짜별 기록</h2><ul class="al-tl">{tl}</ul></section>'
-            + '<section class="mg-s" id="faq"><h2>❓ 개발 FAQ — 이건 어떻게 만들었나요?</h2>'
-              '<p class="note">빌드 시간·무료 한도·이미지 변환·검색 색인처럼 자주 받는 질문은 FAQ에 정리해 뒀어요. 없는 건 거기에 바로 남기면 답해 드려요.</p>'
+            + '<section class="mg-s" id="faq"><h2>❓ 개발 FAQ — 이건 어떻게 만들었냐면</h2>'
+              '<p class="note">빌드 시간·무료 한도·이미지 변환·검색 색인처럼 자주 받는 질문은 FAQ에 정리해 뒀다. 없는 건 거기에 남기면 답한다.</p>'
               '<div data-devqna="4"></div></section>'
             + '<section class="mg-s"><div data-pcrecent="6"></div></section>'
-            + '<p class="note">이 페이지는 사이트 개발 과정만 공개해요. 숫자는 빌드할 때마다 자동으로 갱신돼요.</p><link rel="stylesheet" href="/assets/mag/mag.css?v=10">')
+            + '<p class="note">이 페이지는 사이트 개발 과정만 공개한다. 숫자는 빌드할 때마다 자동 갱신된다.</p><link rel="stylesheet" href="/assets/mag/mag.css?v=10">')
     page('/ailog/', '개발 지식 — AI·개발 가이드와 사이트 제작 로그(Claude Code)',
          '사람 한 명의 말과 AI(Claude Code)로 만든 정보 사이트의 개발 기록. 색인 대상 페이지를 10/18 3,744개→1,311개, 10/19 1,446개→863개로 줄이며 얇은 페이지를 합친 과정과 서버비 0원 운영법.',   # 2026-10-19 확인값으로 고정(디스크 파일 수는 이동·검색 제외 페이지까지 세서 뺌)
          body, [('루리 줍줍', '/'), ('개발 지식', '/ailog/')])
@@ -5975,13 +5998,13 @@ def dev_faq_page(P):
     body = ('<p class="bc"><a href="/">홈</a> › <a href="/ailog/">개발 지식</a> › 개발 FAQ</p>'
             '<h1>❓ 개발 FAQ — 이 사이트 어떻게 만들었나요</h1>'
             + say('o_desk', E(F['lead']))
-            + f'<p class="note">{len(qa_all)}개 질문 · {F["updated"]} 기준. 여기에 없는 건 아래에 남겨 주시면 답하고, 답이 길어지면 글로 정리해서 FAQ에 올려요.</p>'
+            + f'<p class="note">{len(qa_all)}개 질문 · {F["updated"]} 기준. 여기에 없는 건 아래에 남겨. 답하고, 길어지면 글로 정리해서 FAQ에 올린다.</p>'
             + secs
             + '<section class="mg-s"><h2>🙋 여기에 없는 걸 묻고 싶다면</h2>'
-              '<p class="note">로그인(이메일·카카오·구글)하면 바로 쓸 수 있어요. 에러 메시지나 코드 일부를 붙여 주면 답하기 쉬워요. 「운영자」 표시가 붙은 답이 제 답이에요.</p>'
+              '<p class="note">로그인(이메일·카카오·구글)하면 바로 쓸 수 있어. 에러 메시지나 코드 일부를 붙이면 답하기 쉬워. 「운영자」 표시가 붙은 답이 내 답이야.</p>'
               '<div id="cm-board" data-contest="dev" data-title="개발 FAQ" data-head="남겨 주신 질문" data-kinds="qna,tip,free" '
-              'data-ph="어떤 부분이 궁금한지 적어 주세요. 에러 메시지나 코드 일부를 붙여 주면 답하기 쉬워요." data-empty="아직 남겨 주신 질문이 없어요. 첫 질문을 남겨 주세요."></div></section>'
-            + (f'<section class="mg-s"><h2>📚 길게 답한 건 글로 정리했어요</h2><ul class="dev-ls">{ls}</ul></section>' if ls else '')
+              'data-ph="어떤 부분이 궁금한지 적어. 에러 메시지나 코드 일부를 붙이면 답하기 쉬워." data-empty="아직 질문이 없어. 첫 질문을 남겨."></div></section>'
+            + (f'<section class="mg-s"><h2>📚 길게 답한 건 글로 정리했다</h2><ul class="dev-ls">{ls}</ul></section>' if ls else '')
             + '<style>.faq-i{border:1px solid #e5e7eb;border-radius:12px;padding:10px 14px;margin:8px 0;background:#fff}'
               '.faq-i summary{font-weight:700;cursor:pointer;font-size:15px}.faq-i div{margin-top:8px;font-size:14.5px;line-height:1.7;color:#334155}'
               '.dev-ls{list-style:none;padding:0}.dev-ls li{margin:8px 0}.dev-ls a{display:block;padding:12px;border:1px solid #e5e7eb;border-radius:10px;text-decoration:none;color:inherit}</style>'
@@ -5990,29 +6013,29 @@ def dev_faq_page(P):
         {'@type': 'Question', 'name': q, 'acceptedAnswer': {'@type': 'Answer', 'text': a}} for q, a in qa_all]}
     page('/dev/faq/', '개발 FAQ — 1인+AI로 사이트 만들고 돌리는 법 (비용·빌드·D1)',
          '정적 사이트 빌드 시간, Cloudflare Workers·D1 무료 한도, 이미지 변환, 검색 색인, 댓글 스팸 대응까지 자주 받는 질문 '
-         + str(len(qa_all)) + '개를 정리했어요.',
+         + str(len(qa_all)) + '개를 정리했다.',
          body, [('루리 줍줍', '/'), ('개발 지식', '/ailog/'), ('개발 FAQ', '/dev/faq/')], ld=ld)
     # 먼저 만들었던 /dev/qna/ 는 FAQ 로 안내만 (주소가 이미 나간 상태라 지우지 않음)
-    page('/dev/qna/', '개발 FAQ로 옮겼어요',
-         '개발 질문과 답은 개발 FAQ 페이지로 옮겼어요.',
-         '<p class="bc"><a href="/">홈</a> › <a href="/ailog/">개발 지식</a></p><h1>개발 FAQ로 옮겼어요</h1>'
-         '<p>질문과 답은 <a href="/dev/faq/">개발 FAQ</a>에 모았어요. 자동으로 넘어가지 않으면 눌러 주세요.</p>'
+    page('/dev/qna/', '개발 FAQ로 옮겼다',
+         '개발 질문과 답은 개발 FAQ 페이지로 옮겼다.',
+         '<p class="bc"><a href="/">홈</a> › <a href="/ailog/">개발 지식</a></p><h1>개발 FAQ로 옮겼다</h1>'
+         '<p>질문과 답은 <a href="/dev/faq/">개발 FAQ</a>에 모았다. 자동으로 안 넘어가면 눌러.</p>'
          '<meta http-equiv="refresh" content="0; url=/dev/faq/">', noindex=True)
     return ['/dev/faq/']
 
 def plaza_page():
     """광장: 누구나 자기 글·레시피·썰을 올리는 공간 (2026-10-19 사용자: "사람들이 그냥 글을 자기 컨텐츠를 올릴수 있는 공간")"""
     body = ('<p class="bc"><a href="/">홈</a> › 광장</p><h1>🗣️ 줍줍 광장 — 아무거나 올리는 곳</h1>'
-            + '<details class="pz-guide"><summary>이용 안내 (이용자가 직접 올리는 공간)</summary><p>루리가 정리한 글이 아니라 <b>이용자가 직접 올리는 공간</b>이에요. 내가 만든 레시피, 겪은 일(썰), 알게 된 팁, 묻고 싶은 것 아무거나 괜찮아요. '
-              '광고·도배·개인정보(전화번호·주소·계좌)는 지워요.</p></details><style>.pz-guide{margin:8px 0 12px;font-size:14px}.pz-guide summary{cursor:pointer;font-weight:700;color:var(--brand,#6d28d9)}</style>'
+            + '<details class="pz-guide"><summary>이용 안내 (이용자가 직접 올리는 공간)</summary><p>루리가 정리한 글이 아니라 <b>이용자가 직접 올리는 공간</b>이야. 내가 만든 레시피, 겪은 일(썰), 알게 된 팁, 묻고 싶은 것 아무거나 올려도 돼. '
+              '광고·도배·개인정보(전화번호·주소·계좌)는 지운다.</p></details><style>.pz-guide{margin:8px 0 12px;font-size:14px}.pz-guide summary{cursor:pointer;font-weight:700;color:var(--brand,#6d28d9)}</style>'
             + '<div id="cm-board" data-contest="free" data-title="광장" data-head="올라온 글" data-kinds="free,recipe,story,tip,qna" '
-              'data-ph="내가 만든 것, 겪은 일, 알게 된 팁을 자유롭게 써 주세요. 개인정보(전화번호·주소)는 쓰지 마세요." data-empty="아직 글이 없어요. 첫 글을 올려 보세요."></div>'
-            + say('o_present', '공모전 후기, 오늘 만든 밥, 하고 싶은 말까지 편하게 남겨 주세요. 가입은 이메일·카카오·구글 중 하나면 돼요.')
+              'data-ph="내가 만든 것, 겪은 일, 알게 된 팁을 자유롭게 써. 개인정보(전화번호·주소)는 쓰지 마." data-empty="아직 글이 없어. 첫 글을 올려."></div>'
+            + say('o_present', '공모전 후기, 오늘 만든 밥, 하고 싶은 말까지 편하게 남겨. 가입은 이메일·카카오·구글 중 하나면 돼.')
             + '<section class="mg-s"><div data-pcrecent="8"></div></section>'
             + '<section class="mg-s" data-pctop="/" data-by="cms" data-n="8" data-head="💬 댓글이 많은 페이지"></section>'
-            + '<p class="note">올린 글은 본인이 지울 수 있고, 신고가 3번 쌓이면 자동으로 가려져요. 운영자 계정에는 「운영자」 표시가 붙어요.</p>'
+            + '<p class="note">올린 글은 본인이 지울 수 있고, 신고가 3번 쌓이면 자동으로 가려진다. 운영자 계정에는 「운영자」 표시가 붙는다.</p>'
             + '<link rel="stylesheet" href="/assets/mag/mag.css?v=10">')
-    page('/plaza/', '줍줍 광장 — 내 글·레시피·썰 올리는 공간', '공모전 후기, 내가 만든 레시피, 오늘 겪은 썰, 궁금한 것까지 누구나 올리고 댓글을 달 수 있는 공간이에요.',
+    page('/plaza/', '줍줍 광장 — 내 글·레시피·썰 올리는 공간', '공모전 후기, 내가 만든 레시피, 오늘 겪은 썰, 궁금한 것까지 누구나 올리고 댓글을 달 수 있는 공간이야.',
          body, [('루리 줍줍', '/'), ('광장', '/plaza/')])
     return ['/plaza/']
 
@@ -6032,8 +6055,8 @@ def all_page():
     return ['/all/']
 
 
-MONEY_NOTE = ('<p class="an-warn">📊 공개된 기사·공식 자료를 정리한 일반 정보예요. 루리 줍줍이 특정 종목·상품을 권하거나 수익을 약속하지 않아요. '
-              '개인 상황에 따라 맞는 답이 다르고, 투자 판단과 책임은 본인에게 있어요.</p>')
+MONEY_NOTE = ('<p class="an-warn">📊 공개된 기사·공식 자료를 정리한 일반 정보야. 루리 줍줍은 특정 종목·상품을 권하거나 수익을 약속하지 않아. '
+              '개인 상황에 따라 맞는 답이 다르고, 투자 판단과 책임은 본인 몫이야.</p>')
 ECOL = {'bull': ('🟢', '긍정'), 'bear': ('🔴', '신중'), 'neutral': ('⚪', '중립')}
 
 
@@ -6063,7 +6086,7 @@ def experts_html(ex, cats=None, limit=None):
 
 
 EXP_SER = {'미국 증시': 'sp500', '반도체·AI': 'nasdaq', '금리': 'us10y', '환율': 'usdkrw', '코인': 'btc', '원자재': 'wti'}   # 주제 → 시세(market.py). 없으면 발언 타임라인만
-EXP_SER_NOTE = {'반도체·AI': '반도체 지수는 무료 공개 출처가 없어 기술주 비중이 큰 나스닥 종합으로 대신 봐요.', '금리': '한국 국고채는 아직 연결 전이라 미국 국채 10년 금리로 봐요.'}
+EXP_SER_NOTE = {'반도체·AI': '반도체 지수는 무료 공개 출처가 없어 기술주 비중이 큰 나스닥 종합으로 대신 본다.', '금리': '한국 국고채는 아직 연결 전이라 미국 국채 10년 금리로 본다.'}
 
 
 def exp_all():
@@ -6166,7 +6189,7 @@ def experts_v2(an):
     top = (f'<section class="mg-s"><h2>🌡️ 이번 주 시장 분위기</h2><p>최근 7일 전문가 발언 {len(w7)}건 · 🟢 낙관 {bu} · 🔴 신중 {be} · ⚪ 중립 {ne}</p>'
            f'<div class="xg" aria-hidden="true"><i style="width:{bu / tot * 100:.0f}%;background:#16a34a"></i><i style="width:{ne / tot * 100:.0f}%;background:#cbd5e1"></i><i style="width:{be / tot * 100:.0f}%;background:#dc2626"></i></div>'
            + (f'<p class="xs">📈 같은 기간 실제 시세(최근 거래일 기준 7일 등락): {E(mv)}</p>' if mv else '')
-           + '<p class="xh">코스피·국고채는 무료 공개 시세 출처를 아직 연결하지 못해 발언만 보여 줘요.</p></section>')
+           + '<p class="xh">코스피·국고채는 무료 공개 시세 출처를 아직 연결하지 못해 발언만 보여 줘.</p></section>')
     topics = []
     for tp, _ in [(e['topic'], 0) for e in an.get('experts', [])] + [(k, 0) for k in EXP_SER]:
         if tp not in topics:
@@ -6177,7 +6200,7 @@ def experts_v2(an):
         s = S.get(EXP_SER.get(tp, ''))
         if not ns and not s:
             continue
-        chart = exp_svg(s, ns, 'x' + hashlib.md5(tp.encode()).hexdigest()[:6]) if s else '<p class="xh">이 주제는 공개 시세 출처가 없어 발언 타임라인만 보여 줘요.</p>'
+        chart = exp_svg(s, ns, 'x' + hashlib.md5(tp.encode()).hexdigest()[:6]) if s else '<p class="xh">이 주제는 공개 시세 출처가 없어 발언 타임라인만 보여 줘.</p>'
         li = ''
         for n in ns[:8]:
             _, _, ht = exp_hit(n, MK)
@@ -6187,7 +6210,7 @@ def experts_v2(an):
         d0 = datetime.datetime.fromtimestamp(ns[0]['ts']).strftime('%Y-%m-%d') if ns else None
         cards += (f'<article class="an-c" id="t-{E(tp)}"><div class="an-h"><h3>{E(tp)}</h3></div>'
                   + (f'<p class="xh">{E(EXP_SER_NOTE[tp])}</p>' if tp in EXP_SER_NOTE and s else '') + chart
-                  + (f'<ul class="an-nodes">{li}</ul>' if li else '<p class="xh">최근 30일 이 주제의 전문가 발언은 아직 없어요.</p>')
+                  + (f'<ul class="an-nodes">{li}</ul>' if li else '<p class="xh">최근 30일 이 주제의 전문가 발언은 아직 없어.</p>')
                   + IP.card(tp + ' ' + ' '.join(n['t'] for n in ns[:3]), d0, [(n['o'], n['t']) for n in ns[:3]], MK) + '</article>')
     # 적중 보드: 방향(낙관·신중)이 있고 7일이 지난 발언만
     by = {}
@@ -6198,9 +6221,9 @@ def experts_v2(an):
         by.setdefault(n['who'], []).append((c7 > 0) == (n['dir'] == 'bull'))
     rk = sorted([(w, sum(v), len(v)) for w, v in by.items() if len(v) >= 5], key=lambda x: (-x[1] / x[2], -x[2]))
     small = sorted([(w, sum(v), len(v)) for w, v in by.items() if len(v) < 5], key=lambda x: -x[2])[:8]
-    board = ('<section class="mg-s" id="board"><h2>🎯 전문가 적중 보드</h2><p class="xh">낙관·신중 방향이 있는 발언만, 발언일 기준값과 7일 뒤 값을 비교한 사실이에요. 7일이 안 지난 발언은 확인 예정이에요. 시장은 발언 하나로 움직이지 않으니 재미로 봐 주세요.</p>'
+    board = ('<section class="mg-s" id="board"><h2>🎯 전문가 적중 보드</h2><p class="xh">낙관·신중 방향이 있는 발언만, 발언일 기준값과 7일 뒤 값을 비교한 사실이야. 7일이 안 지난 발언은 확인 예정이야. 시장은 발언 하나로 움직이지 않으니 재미로 봐 줘.</p>'
              + (('<table class="xb"><thead><tr><th>기관·인물</th><th>방향대로 움직임</th><th>표본</th></tr></thead><tbody>' + ''.join(f'<tr><td>{E(w)}</td><td>{k}/{n_}건 ({k / n_ * 100:.0f}%)</td><td>{n_}건</td></tr>' for w, k, n_ in rk) + '</tbody></table>') if rk
-                else f'<p>순위표는 판정된 발언이 5건 이상인 기관만 넣어요. 아직 5건을 넘은 곳이 없어요(판정된 발언 {sum(len(v) for v in by.values())}건).</p>')
+                else f'<p>순위표는 판정된 발언이 5건 이상인 기관만 넣어. 아직 5건을 넘은 곳이 없어(판정된 발언 {sum(len(v) for v in by.values())}건).</p>')
              + (('<p class="xh">표본이 적은 곳: ' + ' · '.join(f'{E(w)} {k}/{n_}건' for w, k, n_ in small) + '</p>') if small else '') + '</section>')
     return top + cards + board + EXP_CSS + EXP_JS
 
@@ -6211,14 +6234,14 @@ def money_pages():
     ex = an.get('experts', [])
     css = '<link rel="stylesheet" href="/assets/analyst/analyst.css?v=4"><link rel="stylesheet" href="/assets/mag/mag.css?v=10">'
     urls = []
-    how = ('<details class="an-how"><summary>어떻게 모았나요?</summary><ol><li>증권·경제 기사 RSS에서 리서치센터장·CIO·이코노미스트·한국은행·KDI·IMF·월가 기관 등 실명 기관·인물의 발언이 제목에 나온 기사만 골라요.</li>'
-           '<li>주제(코스피·미국 증시·금리·환율·반도체·부동산·경기·코인·원자재·기타 시장)와 성격(시장 전망·자산배분 조언·리스크 경고)으로 나눠요.</li><li>발언(따옴표) 부분으로 긍정·신중을 가려, 같은 주제에서 둘 다 있으면 나란히 보여 줘요.</li>'
-           '<li>기사 본문은 옮기지 않고 제목(발언 요지)과 원문 링크만 실어요.</li></ol></details>')
+    how = ('<details class="an-how"><summary>어떻게 모았나?</summary><ol><li>증권·경제 기사 RSS에서 리서치센터장·CIO·이코노미스트·한국은행·KDI·IMF·월가 기관 등 실명 기관·인물의 발언이 제목에 나온 기사만 골랐다.</li>'
+           '<li>주제(코스피·미국 증시·금리·환율·반도체·부동산·경기·코인·원자재·기타 시장)와 성격(시장 전망·자산배분 조언·리스크 경고)으로 나눠.</li><li>발언(따옴표) 부분으로 긍정·신중을 가려, 같은 주제에서 둘 다 있으면 나란히 보여 줘.</li>'
+           '<li>기사 본문은 옮기지 않고 제목(발언 요지)과 원문 링크만 실어.</li></ol></details>')
     page('/money/experts/', '전문가 말 vs 실제 시세 — 발언 뒤 시장은 어떻게 움직였나',
-         '리서치센터장·월가·한은·IMF 등 실명 전문가 발언을 S&P500·나스닥·환율·금리·유가·비트코인 30일 차트 위에 찍고, 발언 뒤 7일·30일 실제 등락과 내 생활에 미칠 수 있는 영향을 함께 보여 줘요.',
+         '리서치센터장·월가·한은·IMF 등 실명 전문가 발언을 S&P500·나스닥·환율·금리·유가·비트코인 30일 차트 위에 찍고, 발언 뒤 7일·30일 실제 등락과 내 생활에 미칠 수 있는 영향을 함께 보여 줘.',
          '<p class="bc"><a href="/">홈</a> › <a href="/analyst/">머니</a> › 전문가 코멘트</p><h1>🎙️ 전문가 말 vs 실제 시세</h1>'
          + (f'<p class="cat-st">📡 마지막 수집 {E(an.get("updated", "")[-5:])} · 최근 24시간 {an["exp_meta"]["n24"]}건 · 최근 14일 {an["exp_meta"]["n14"]}건 · 매시간 갱신</p>' if an.get('exp_meta') else '') + MONEY_NOTE
-         + join_cta('money') + (experts_v2(an) or '<p class="nw-empty">아직 모인 발언이 없어요. 매시간 새로 모아요.</p>') + how + css,
+         + join_cta('money') + (experts_v2(an) or '<p class="nw-empty">아직 모인 발언이 없어. 매시간 새로 모아.</p>') + how + css,
          [('루리 줍줍', '/'), ('머니', '/analyst/'), ('전문가 코멘트', '/money/experts/')])
     urls.append('/money/experts/')
     a = json.load(open(os.path.join(HERE, 'money_age.json'), encoding='utf-8'))
@@ -6242,15 +6265,15 @@ def money_pages():
         for it in P.get('items', []):
             rows = ''.join(f'<tr><th>{E(r[0])}</th><td>{E(r[1])}</td></tr>' for r in it.get('rows', []) if len(r) >= 2)
             src = ''.join(f'<li><a href="{E(x["url"])}" target="_blank" rel="noopener nofollow">{E(x["title"])}</a>{(" · " + E(x["date"])) if x.get("date") else ""}</li>' for x in it.get('sources', []))
-            ver = '' if it.get('verified', True) else '<p class="an-warn">🔎 공식 자료를 찾지 못해 보도 기준으로 정리했어요. 가입 전 공식 안내를 꼭 확인하세요.</p>'
+            ver = '' if it.get('verified', True) else '<p class="an-warn">🔎 공식 자료를 찾지 못해 보도 기준으로 정리했어. 가입 전 공식 안내를 꼭 확인해.</p>'
             secs += (f'<section class="mg-s" id="{E(it["key"])}"><h2>{E(it["name"])}</h2>{ver}<table class="pl-t">{rows}</table>'
                      + (f'<p class="pl-ch">🆕 {E(it["changes"])}</p>' if it.get('changes') else '') + (f'<details class="pl-src"><summary>출처</summary><ul>{src}</ul></details>' if src else '') + '</section>')
         jump = ''.join(f'<a href="#{E(it["key"])}">{E(it["name"].split("(")[0])}</a>' for it in P.get('items', []))
         rel = experts_html([e for e in ex if e['topic'] in ('금리', '코스피·국내 증시', '경기·성장률')], limit=2)
         page('/money/policy/', '투자 관련 정책·제도 정리 — ISA·연금저축·IRP·청년도약계좌·공모주·세제·공매도',
-             'ISA, 연금저축·IRP 세액공제, 청년도약계좌, 공모주 청약 배정, 금투세·배당소득 과세, 공매도 제도를 공식 자료 기준으로 표로 정리했어요(기준일·출처 표시).',
+             'ISA, 연금저축·IRP 세액공제, 청년도약계좌, 공모주 청약 배정, 금투세·배당소득 과세, 공매도 제도를 공식 자료 기준으로 표로 정리했어(기준일·출처 표시).',
              '<p class="bc"><a href="/">홈</a> › <a href="/analyst/">머니</a> › 투자 정책</p><h1>🏛️ 투자 관련 정책·제도 정리</h1>' + MONEY_NOTE
-             + f'<p class="pl-asof">기준일 {E(P.get("asof", ""))} · 금융위원회·기획재정부·국세청 등 공식 자료 기준. 제도는 바뀔 수 있으니 가입 전 공식 안내를 확인하세요.</p><p class="hm-links">{jump}</p>'
+             + f'<p class="pl-asof">기준일 {E(P.get("asof", ""))} · 금융위원회·기획재정부·국세청 등 공식 자료 기준. 제도는 바뀔 수 있으니 가입 전 공식 안내를 확인해.</p><p class="hm-links">{jump}</p>'
              + secs + '<p class="hm-links"><a href="/apply/">💰 지원금·청약 데이터 보기</a><a href="/money/age/">🧭 나이별 원칙</a></p>' + (f'<h2>🎙️ 관련 전문가 코멘트</h2>{rel}' if rel else '') + css,
              [('루리 줍줍', '/'), ('머니', '/analyst/'), ('투자 정책', '/money/policy/')])
         urls.append('/money/policy/')
@@ -6260,14 +6283,14 @@ def money_pages():
 def apply_rec_page():
     # 루리의 청약 추천 (2026-10-18 사용자: "청약 추천도 만들어") — 생활 테마
     body = ('<p class="bc"><a href="/">홈</a> › <a href="/apply/">생활</a> › 청약 추천</p><h1>🏠 루리의 청약 추천</h1>'
-            + say('o_cardigan', '내 상황을 고르면 청약 가점과 공급 유형을 계산하고, 지금 접수 중인 공고 중 맞을 만한 것만 보여 드려요. 입력한 내용은 이 기기에만 저장돼요.')
-            + '<section id="aprec" aria-label="청약 추천"><noscript>자바스크립트가 필요해요.</noscript></section>'
-            + '<h2>청약 가점은 이렇게 계산돼요</h2>'
-              '<p>민영주택 일반공급의 가점제(84점 만점)는 세 항목을 더해요: <b>무주택 기간</b>(최대 32점), <b>부양가족 수</b>(최대 35점), <b>청약통장 가입 기간</b>(최대 17점). 세대주 기준으로 보고, 항목마다 점수표가 따로 있어요.</p>'
-              '<p>가점제와 추첨제가 나뉘는 비율, 신혼부부·생애최초·다자녀 같은 특별공급의 소득·자산 기준은 단지와 시기마다 달라요. 아래 계산은 감을 잡는 용도이고, 확정 점수는 청약홈의 가점 계산 화면과 해당 단지의 입주자 모집 공고문으로 확인하세요.</p>'
-            + '<p class="note">청약 가점은 대략 계산이며, 특별공급 자격(소득·자산·거주 기간 등)은 단지마다 달라요. 신청 전 공고문과 청약홈에서 꼭 확인하세요.</p>'
+            + say('o_cardigan', '내 상황을 고르면 청약 가점과 공급 유형을 계산하고, 지금 접수 중인 공고 중 맞을 만한 것만 보여 줘. 입력한 내용은 이 기기에만 저장돼.')
+            + '<section id="aprec" aria-label="청약 추천"><noscript>자바스크립트가 필요해.</noscript></section>'
+            + '<h2>청약 가점은 이렇게 계산돼</h2>'
+              '<p>민영주택 일반공급의 가점제(84점 만점)는 세 항목을 더해: <b>무주택 기간</b>(최대 32점), <b>부양가족 수</b>(최대 35점), <b>청약통장 가입 기간</b>(최대 17점). 세대주 기준으로 보고, 항목마다 점수표가 따로 있어.</p>'
+              '<p>가점제와 추첨제가 나뉘는 비율, 신혼부부·생애최초·다자녀 같은 특별공급의 소득·자산 기준은 단지와 시기마다 달라. 아래 계산은 감을 잡는 용도이고, 확정 점수는 청약홈의 가점 계산 화면과 해당 단지의 입주자 모집 공고문으로 확인해.</p>'
+            + '<p class="note">청약 가점은 대략 계산이며, 특별공급 자격(소득·자산·거주 기간 등)은 단지마다 달라. 신청 전 공고문과 청약홈에서 꼭 확인해.</p>'
             + '<link rel="stylesheet" href="/assets/apply/rec.css?v=1"><script defer src="/assets/apply/rec.js?v=1"></script>')
-    page('/apply/recommend/', '청약 가점 계산기 · 청약 추천 — 내 가점·노려볼 공급 유형·지금 접수 중인 공고', '지역·나이·결혼·자녀·무주택 기간·부양가족·통장 기간을 고르면 청약 가점(84점)과 신혼·생애최초·다자녀·청년·공공임대 등 노려볼 공급 유형, 지금 접수 중인 공고를 골라 드려요.',
+    page('/apply/recommend/', '청약 가점 계산기 · 청약 추천 — 내 가점·노려볼 공급 유형·지금 접수 중인 공고', '지역·나이·결혼·자녀·무주택 기간·부양가족·통장 기간을 고르면 청약 가점(84점)과 신혼·생애최초·다자녀·청년·공공임대 등 노려볼 공급 유형, 지금 접수 중인 공고를 골라 줘.',
          body, [('루리 줍줍', '/'), ('생활', '/apply/'), ('청약 추천', '/apply/recommend/')])
     return ['/apply/recommend/']
 
@@ -6352,19 +6375,19 @@ def issue_note(x, I):
     """이슈 묶음 숫자로 만든 루리 해설 (기사 문장 전재 없음)."""
     A = [I[a] for a in x['a'] if a in I]
     sc = [a['s'] for a in A if a.get('s') is not None]
-    t = f'루리 해설: 기사 {len(A)}건을 같은 사건으로 묶었어요.'
+    t = f'루리 해설: 기사 {len(A)}건을 같은 사건으로 묶었어.'
     if sc:
-        t += f' 확인 신호 점수는 가장 높은 기사 {max(sc)}점, 가장 낮은 기사 {min(sc)}점' + (f'으로 {max(sc) - min(sc)}점 차이가 나요.' if max(sc) != min(sc) else '으로 같아요.')
+        t += f' 확인 신호 점수는 가장 높은 기사 {max(sc)}점, 가장 낮은 기사 {min(sc)}점' + (f'으로 {max(sc) - min(sc)}점 차이가 나.' if max(sc) != min(sc) else '으로 같아.')
     w = collections.Counter(y for a in A for y in a.get('why', []))
     neg = [k for k in w if k.startswith(('⚠', '❓', '🔎'))]
     if neg:
-        t += f' 자주 걸린 신호는 「{neg[0].lstrip("⚠️❓🔎 ").strip()}」({w[neg[0]]}건)이에요.'
+        t += f' 자주 걸린 신호는 「{neg[0].lstrip("⚠️❓🔎 ").strip()}」({w[neg[0]]}건)이야.'
     if x.get('cf'):
-        t += ' 언론사마다 숫자가 달라서, 공식 발표가 나오면 다시 확인해야 해요.'
+        t += ' 언론사마다 숫자가 달라서, 공식 발표가 나오면 다시 확인해야 해.'
     elif x.get('claim'):
-        t += ' 누군가의 발언·주장을 전하는 기사라, 사실 여부는 따로 확인이 필요해요.'
+        t += ' 누군가의 발언·주장을 전하는 기사라, 사실 여부는 따로 확인이 필요해.'
     elif int(x.get('on') or 0) >= 5:
-        t += ' 여러 언론사가 같은 내용을 전해 사건 자체는 확인된 편이에요.'
+        t += ' 여러 언론사가 같은 내용을 전해 사건 자체는 확인된 편이야.'
     return t
 
 
@@ -6379,10 +6402,10 @@ def news_static():
     """검색엔진·자바스크립트 없는 환경용으로 이슈 순위를 글자로 미리 그려 둔다(화면에선 news.js 가 바로 대체). 2026-10-18 자연 유입 전략 ①."""
     d = _rd('news/data.json')
     if not d:
-        return '<noscript>자바스크립트가 필요해요.</noscript>'
+        return '<noscript>자바스크립트가 필요해.</noscript>'
     I = {a['id']: a for a in d.get('items', [])}
     G = {'ok': '확인 신호 많음', 'warn': '추가 확인 필요', 'bad': '주의 신호'}
-    out = f'<p>{E(d.get("updated", ""))} 기준 · 언론사 기사 {len(d.get("items", []))}건을 같은 사건끼리 묶은 이슈 순위와 확인 신호 점수예요.</p><ol class="nw-static">'
+    out = f'<p>{E(d.get("updated", ""))} 기준 · 언론사 기사 {len(d.get("items", []))}건을 같은 사건끼리 묶은 이슈 순위와 확인 신호 점수야.</p><ol class="nw-static">'
     for x in sorted(d.get('issues', []), key=lambda x: (x.get('c') != '정치', x['n']))[:40]:
         arts = ''.join(f'<li>{E(I[a]["o"])} · {I[a]["s"] if I[a].get("s") is not None else "-"}점 · <a href="{E(I[a]["u"])}" rel="nofollow noopener" target="_blank">{E(I[a]["t"])}</a></li>' for a in x['a'][:6] if a in I)
         why = ''
@@ -6393,14 +6416,14 @@ def news_static():
     return out + '</ol>'
 
 
-TOOLS = {'dividend': ('배당소득 분리과세 계산기', '고배당 기업 배당을 분리과세로 받으면 세금이 얼마인지 구간별 세율(14·20·25·30%)로 대략 계산해요.'),
-         'stocktax': ('증권거래세 계산기', '2026년 증권거래세율(코스피 0.05%+농특세 0.15%, 코스닥 0.20%, 코넥스 0.10%)로 팔 때 세금을 계산해요.'),
-         'pension': ('연금 세액공제 계산기', '연금저축(600만원)·IRP 합산(900만원) 한도와 공제율(16.5%·13.2%)로 돌려받는 세금을 계산해요.'),
-         'loan': ('대출 이자 계산기', '원리금균등·원금균등·만기일시 상환별로 첫 달 상환액과 총 이자, 금리 0.25%p 오르내릴 때 차이를 비교해요.'),
-         'fx': ('환전 계산기', '매매기준율·수수료·환율 우대로 실제 받는 외화를 계산하고, 우대로 얼마나 더 받는지 비교해요.'),
-         'salary': ('연봉 실수령액 계산기', '2026년 4대보험 요율(국민연금 4.75%·건강보험 3.595%·장기요양·고용보험 0.9%)과 소득세로 연봉에서 매달 실제 받는 돈을 계산해요.'),
-         'severance': ('퇴직금 계산기', '입사일·퇴사일과 최근 3개월 임금으로 법정 퇴직금(세전)과 퇴직소득세를 뺀 세후 금액을 계산해요. 알바도 같은 기준이에요.'),
-         'unemployment': ('실업급여 계산기', '2026년 구직급여 상한액(하루 68,100원)·하한액과 가입기간·나이별 받는 날 수로 실업급여 총액을 계산해요.')}
+TOOLS = {'dividend': ('배당소득 분리과세 계산기', '고배당 기업 배당을 분리과세로 받으면 세금이 얼마인지 구간별 세율(14·20·25·30%)로 대략 계산해.'),
+         'stocktax': ('증권거래세 계산기', '2026년 증권거래세율(코스피 0.05%+농특세 0.15%, 코스닥 0.20%, 코넥스 0.10%)로 팔 때 세금을 계산해.'),
+         'pension': ('연금 세액공제 계산기', '연금저축(600만원)·IRP 합산(900만원) 한도와 공제율(16.5%·13.2%)로 돌려받는 세금을 계산해.'),
+         'loan': ('대출 이자 계산기', '원리금균등·원금균등·만기일시 상환별로 첫 달 상환액과 총 이자, 금리 0.25%p 오르내릴 때 차이를 비교해.'),
+         'fx': ('환전 계산기', '매매기준율·수수료·환율 우대로 실제 받는 외화를 계산하고, 우대로 얼마나 더 받는지 비교해.'),
+         'salary': ('연봉 실수령액 계산기', '2026년 4대보험 요율(국민연금 4.75%·건강보험 3.595%·장기요양·고용보험 0.9%)과 소득세로 연봉에서 매달 실제 받는 돈을 계산해.'),
+         'severance': ('퇴직금 계산기', '입사일·퇴사일과 최근 3개월 임금으로 법정 퇴직금(세전)과 퇴직소득세를 뺀 세후 금액을 계산해. 알바도 같은 기준이야.'),
+         'unemployment': ('실업급여 계산기', '2026년 구직급여 상한액(하루 68,100원)·하한액과 가입기간·나이별 받는 날 수로 실업급여 총액을 계산해.')}
 TOOL_T = {  # 2026-10-18 키워드 전략: 검색 자동완성 문구 제목 (주소는 그대로)
  'dividend': '배당금 계산기 — 2026 고배당 분리과세 세금',
  'stocktax': '주식 세금 계산기 — 2026 증권거래세 (코스피·코스닥)',
@@ -6420,24 +6443,24 @@ TOOL_SRC = {  # 기준일·출처 (2026-10-18 확인, 2026-10-20 조문·원문 
  'loan': '원리금 계산 공식(금리는 직접 입력)', 'fx': '은행 환전 수수료 공식(환율은 직접 입력)'}
 TOOL_DATE = {'unemployment': '2026-10-21', 'stocktax': '2026-10-21', 'dividend': '2026-10-21', 'salary': '2026-10-21'}   # 조문·고시 원문을 실제로 대조한 계산기만 날짜를 올림(2026-10-21)
 TOOL_FAQ = {
- 'salary': [('연봉 4,000만원이면 월 실수령액은 얼마인가요?', '비과세 식대 월 20만원, 본인 1명 기준으로 4대보험과 소득세를 빼면 한 달 약 292만원이에요. 부양가족이 많으면 소득세가 줄어 조금 더 받아요.'),
-            ('2026년에 실수령액이 줄어든 이유는?', '국민연금 보험료율이 9%에서 9.5%로, 건강보험료율이 7.09%에서 7.19%로 올라 같은 연봉이라도 공제액이 늘었어요.'),
-            ('회사 명세서와 금액이 조금 다른 이유는?', '회사는 국세청 간이세액표로 소득세를 떼고, 이 계산기는 연말정산 식으로 1년치를 계산해 12로 나눠요. 그래서 소득세가 몇천~몇만 원 다를 수 있어요.')],
- 'severance': [('알바도 퇴직금을 받을 수 있나요?', '주 15시간 이상 일하고 1년(365일) 이상 일했다면 알바·계약직도 법정 퇴직금 대상이에요.'),
-               ('퇴직금은 언제까지 받아야 하나요?', '퇴사 후 14일 안에 받아야 해요. 당사자 합의로 기한을 늦출 수는 있어요.'),
-               ('퇴직금에도 세금이 붙나요?', '퇴직소득세가 붙지만 근속연수공제·환산급여공제가 커서 근로소득보다 훨씬 적어요. IRP로 받으면 연금을 받을 때까지 세금이 미뤄져요.')],
- 'unemployment': [('2026년 실업급여 상한액은 얼마인가요?', '2026년 1월 1일 이후 이직자부터 하루 68,100원이에요. 2019년부터 이어진 66,000원에서 올랐어요.'),
-                  ('하한액은 어떻게 정해지나요?', '그해 최저임금의 80%에 하루 소정근로시간을 곱해요. 2026년 하루 8시간이면 10,320원 × 80% × 8시간 = 66,048원이에요.'),
-                  ('실업급여는 며칠 동안 받나요?', '고용보험 가입기간과 나이에 따라 120일에서 270일까지예요. 50세 이상이거나 장애인이면 같은 가입기간이라도 더 오래 받아요.')],
- 'loan': [('원리금균등과 원금균등 중 뭐가 이자가 적나요?', '원금균등이 총 이자가 가장 적어요. 대신 첫 달 내는 돈이 가장 커요.'), ('금리 0.25%p 차이가 크나요?', '2억원 30년 대출이면 총 이자가 1천만원 넘게 달라질 수 있어요.')],
- 'pension': [('연금저축과 IRP 세액공제 한도는?', '연금저축 연 600만원, IRP를 합쳐 연 900만원까지 공제돼요.'), ('공제율은 얼마인가요?', '총급여 5,500만원 이하는 16.5%, 넘으면 13.2%예요.')],
- 'dividend': [('고배당 분리과세 세율은?', '2천만원까지 14%, 3억원까지 20%, 50억원까지 25%, 그 위 30%이고 지방소득세 10%가 붙어요.')],
- 'stocktax': [('2026년 증권거래세율은?', '코스피 0.20%(거래세 0.05% + 농어촌특별세 0.15%), 코스닥 0.20%, 코넥스 0.10%예요.')],
- 'fx': [('환율 우대 90%는 무슨 뜻인가요?', '은행 환전 수수료의 90%를 깎아 준다는 뜻이에요. 수수료 1.75%면 실제로는 0.175%만 내요.')]}
+ 'salary': [('연봉 4,000만원이면 월 실수령액은 얼마인가?', '비과세 식대 월 20만원, 본인 1명 기준으로 4대보험과 소득세를 빼면 한 달 약 292만원이야. 부양가족이 많으면 소득세가 줄어 조금 더 받아.'),
+            ('2026년에 실수령액이 줄어든 이유는?', '국민연금 보험료율이 9%에서 9.5%로, 건강보험료율이 7.09%에서 7.19%로 올라 같은 연봉이라도 공제액이 늘었어.'),
+            ('회사 명세서와 금액이 조금 다른 이유는?', '회사는 국세청 간이세액표로 소득세를 떼고, 이 계산기는 연말정산 식으로 1년치를 계산해 12로 나눠. 그래서 소득세가 몇천~몇만 원 다를 수 있어.')],
+ 'severance': [('알바도 퇴직금을 받을 수 있나?', '주 15시간 이상 일하고 1년(365일) 이상 일했다면 알바·계약직도 법정 퇴직금 대상이야.'),
+               ('퇴직금은 언제까지 받아야 하나?', '퇴사 후 14일 안에 받아야 해. 당사자 합의로 기한을 늦출 수는 있어.'),
+               ('퇴직금에도 세금이 붙나?', '퇴직소득세가 붙지만 근속연수공제·환산급여공제가 커서 근로소득보다 훨씬 적어. IRP로 받으면 연금을 받을 때까지 세금이 미뤄져.')],
+ 'unemployment': [('2026년 실업급여 상한액은 얼마인가?', '2026년 1월 1일 이후 이직자부터 하루 68,100원이야. 2019년부터 이어진 66,000원에서 올랐어.'),
+                  ('하한액은 어떻게 정해지나?', '그해 최저임금의 80%에 하루 소정근로시간을 곱해. 2026년 하루 8시간이면 10,320원 × 80% × 8시간 = 66,048원이야.'),
+                  ('실업급여는 며칠 동안 받나?', '고용보험 가입기간과 나이에 따라 120일에서 270일까지야. 50세 이상이거나 장애인이면 같은 가입기간이라도 더 오래 받아.')],
+ 'loan': [('원리금균등과 원금균등 중 뭐가 이자가 적나?', '원금균등이 총 이자가 가장 적어. 대신 첫 달 내는 돈이 가장 커.'), ('금리 0.25%p 차이가 크나?', '2억원 30년 대출이면 총 이자가 1천만원 넘게 달라질 수 있어.')],
+ 'pension': [('연금저축과 IRP 세액공제 한도는?', '연금저축 연 600만원, IRP를 합쳐 연 900만원까지 공제돼.'), ('공제율은 얼마인가?', '총급여 5,500만원 이하는 16.5%, 넘으면 13.2%야.')],
+ 'dividend': [('고배당 분리과세 세율은?', '2천만원까지 14%, 3억원까지 20%, 50억원까지 25%, 그 위 30%이고 지방소득세 10%가 붙어.')],
+ 'stocktax': [('2026년 증권거래세율은?', '코스피 0.20%(거래세 0.05% + 농어촌특별세 0.15%), 코스닥 0.20%, 코넥스 0.10%야.')],
+ 'fx': [('환율 우대 90%는 무슨 뜻인가?', '은행 환전 수수료의 90%를 깎아 준다는 뜻이야. 수수료 1.75%면 실제로는 0.175%만 내.')]}
 TOOL_HELP_NEW = {
- 'salary': '<h2>어떻게 계산하나요?</h2><p>연봉을 12로 나눈 월급에서 비과세(식대 월 20만원 등)를 뺀 금액에 4대보험 요율을 곱해요. 국민연금은 기준소득월액(41만~659만원) 안에서 4.75%, 건강보험 3.595%, 장기요양은 건강보험료의 13.14%, 고용보험 0.9%예요. 소득세는 근로소득공제·인적공제(1명 150만원)·보험료 공제를 뺀 과세표준에 기본세율(6~45%)을 매기고, 근로소득세액공제와 표준세액공제를 뺀 뒤 12로 나눠요. 지방소득세는 소득세의 10%예요.</p><p>연봉 구간별 결과는 <a href="/money/tools/salary/table/">2026 연봉 실수령액표</a>에서 한눈에 볼 수 있어요.</p><h2>주의할 점</h2><ul class="chk"><li>국민연금 상한(659만원)을 넘는 고연봉은 연금이 더 늘지 않아요.</li><li>자녀세액공제, 신용카드·의료비 공제는 연말정산 때 따로 반영돼요.</li><li>상여금이 따로 나오는 회사는 상여가 나오는 달 공제가 커져요.</li></ul>',
- 'severance': '<h2>어떻게 계산하나요?</h2><p>퇴직금 = 1일 평균임금 × 30일 × (재직일수 ÷ 365)예요. 1일 평균임금은 퇴사 전 3개월 동안 받은 임금 총액(지난 1년 상여금과 연차수당의 3/12 포함)을 그 3개월의 날짜 수로 나눠요. 퇴직소득세는 근속연수공제와 환산급여공제를 빼고 계산해서 같은 금액의 근로소득보다 세금이 훨씬 적어요.</p><h2>예시</h2><p>월 300만원을 받으며 3년(1,095일) 일했다면 1일 평균임금은 약 9만 8천원, 퇴직금은 약 880만원이에요. 퇴직소득세는 근속연수공제(300만원)를 빼고 계산해 몇만 원 수준이에요.</p><h2>주의할 점</h2><ul class="chk"><li>주 15시간 미만 근무 기간은 재직일수에서 빠질 수 있어요.</li><li>퇴직 직전 3개월에 휴업·육아휴직 기간이 있으면 그 기간은 빼고 계산해요.</li><li>회사가 14일 안에 주지 않으면 고용노동부에 진정할 수 있어요.</li></ul>',
- 'unemployment': '<h2>어떻게 계산하나요?</h2><p>하루 받는 돈(구직급여일액)은 퇴사 전 3개월 1일 평균임금의 60%예요. 이 값이 상한액(2026년 1월 1일 이후 이직자 68,100원)보다 크면 상한액을, 하한액(최저임금 10,320원 × 80% × 하루 소정근로시간)보다 작으면 하한액을 줘요. 받는 날 수(소정급여일수)는 고용보험 가입기간과 나이로 정해져요.</p><table class="info"><tr><th>가입기간</th><th>50세 미만</th><th>50세 이상·장애인</th></tr><tr><td>1년 미만</td><td>120일</td><td>120일</td></tr><tr><td>1~3년</td><td>150일</td><td>180일</td></tr><tr><td>3~5년</td><td>180일</td><td>210일</td></tr><tr><td>5~10년</td><td>210일</td><td>240일</td></tr><tr><td>10년 이상</td><td>240일</td><td>270일</td></tr></table><h2>받을 수 있는 조건</h2><ul class="chk"><li>이직 전 18개월 동안 고용보험 가입일(피보험 단위기간)이 180일 이상</li><li>권고사직·계약 만료·폐업처럼 본인 뜻이 아닌 퇴사 (자발적 퇴사라도 임금 체불·통근 곤란 등 정당한 사유가 있으면 가능)</li><li>일할 의사와 능력이 있고 재취업 활동을 할 것</li></ul><p>신청은 퇴사 후 고용24에서 구직 등록 → 수급자격 신청 순서로 해요. 퇴사 다음 날부터 12개월이 지나면 남은 날은 못 받으니 빨리 신청하세요.</p>'}
+ 'salary': '<h2>어떻게 계산하나?</h2><p>연봉을 12로 나눈 월급에서 비과세(식대 월 20만원 등)를 뺀 금액에 4대보험 요율을 곱해. 국민연금은 기준소득월액(41만~659만원) 안에서 4.75%, 건강보험 3.595%, 장기요양은 건강보험료의 13.14%, 고용보험 0.9%야. 소득세는 근로소득공제·인적공제(1명 150만원)·보험료 공제를 뺀 과세표준에 기본세율(6~45%)을 매기고, 근로소득세액공제와 표준세액공제를 뺀 뒤 12로 나눠. 지방소득세는 소득세의 10%야.</p><p>연봉 구간별 결과는 <a href="/money/tools/salary/table/">2026 연봉 실수령액표</a>에서 한눈에 볼 수 있어.</p><h2>주의할 점</h2><ul class="chk"><li>국민연금 상한(659만원)을 넘는 고연봉은 연금이 더 늘지 않아.</li><li>자녀세액공제, 신용카드·의료비 공제는 연말정산 때 따로 반영돼.</li><li>상여금이 따로 나오는 회사는 상여가 나오는 달 공제가 커져.</li></ul>',
+ 'severance': '<h2>어떻게 계산하나?</h2><p>퇴직금 = 1일 평균임금 × 30일 × (재직일수 ÷ 365)야. 1일 평균임금은 퇴사 전 3개월 동안 받은 임금 총액(지난 1년 상여금과 연차수당의 3/12 포함)을 그 3개월의 날짜 수로 나눠. 퇴직소득세는 근속연수공제와 환산급여공제를 빼고 계산해서 같은 금액의 근로소득보다 세금이 훨씬 적어.</p><h2>예시</h2><p>월 300만원을 받으며 3년(1,095일) 일했다면 1일 평균임금은 약 9만 8천원, 퇴직금은 약 880만원이야. 퇴직소득세는 근속연수공제(300만원)를 빼고 계산해 몇만 원 수준이야.</p><h2>주의할 점</h2><ul class="chk"><li>주 15시간 미만 근무 기간은 재직일수에서 빠질 수 있어.</li><li>퇴직 직전 3개월에 휴업·육아휴직 기간이 있으면 그 기간은 빼고 계산해.</li><li>회사가 14일 안에 주지 않으면 고용노동부에 진정할 수 있어.</li></ul>',
+ 'unemployment': '<h2>어떻게 계산하나?</h2><p>하루 받는 돈(구직급여일액)은 퇴사 전 3개월 1일 평균임금의 60%야. 이 값이 상한액(2026년 1월 1일 이후 이직자 68,100원)보다 크면 상한액을, 하한액(최저임금 10,320원 × 80% × 하루 소정근로시간)보다 작으면 하한액을 줘. 받는 날 수(소정급여일수)는 고용보험 가입기간과 나이로 정해져.</p><table class="info"><tr><th>가입기간</th><th>50세 미만</th><th>50세 이상·장애인</th></tr><tr><td>1년 미만</td><td>120일</td><td>120일</td></tr><tr><td>1~3년</td><td>150일</td><td>180일</td></tr><tr><td>3~5년</td><td>180일</td><td>210일</td></tr><tr><td>5~10년</td><td>210일</td><td>240일</td></tr><tr><td>10년 이상</td><td>240일</td><td>270일</td></tr></table><h2>받을 수 있는 조건</h2><ul class="chk"><li>이직 전 18개월 동안 고용보험 가입일(피보험 단위기간)이 180일 이상</li><li>권고사직·계약 만료·폐업처럼 본인 뜻이 아닌 퇴사 (자발적 퇴사라도 임금 체불·통근 곤란 등 정당한 사유가 있으면 가능)</li><li>일할 의사와 능력이 있고 재취업 활동을 할 것</li></ul><p>신청은 퇴사 후 고용24에서 구직 등록 → 수급자격 신청 순서로 해. 퇴사 다음 날부터 12개월이 지나면 남은 날은 못 받으니 빨리 신청해.</p>'}
 
 
 # 쿠팡 파트너스 (2026-10-19 사용자 지시 「우리 사이트도 연결해버려」): 링크·주제 규칙은 tools/promo_share/coupang.json
@@ -6464,7 +6487,7 @@ def cp_box(text, title='함께 보면 좋은 물건:', n=2, fill='', body='', wa
     if not items:
         return ''
     lk = ', '.join(f'<a class="cp-in" href="{E(x["url"])}" target="_blank" rel="sponsored nofollow noopener">{E(x["name"])}</a>' for x in items)
-    return (f'<p class="cp-line">{E(title)} {lk}<small class="cp-inn">쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</small></p>'
+    return (f'<p class="cp-line">{E(title)} {lk}<small class="cp-inn">쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받다.</small></p>'
             '<style>.cp-line{margin:12px 0;line-height:1.7}.cp-in{color:#c2410c;font-weight:700;text-decoration:underline;text-underline-offset:3px}.cp-inn{display:block;font-size:12px;color:var(--mu,#6b7280)}</style>')
 
 
@@ -6498,7 +6521,7 @@ def cp_items(key, sub):
     return (c or {}).get('items', [])
 
 
-def cp_widget(key, sub, note='이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.'):
+def cp_widget(key, sub, note='이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받다.'):
     """상품 카드 2~3개(사진·이름·「쿠팡에서 보기」, 가격은 바뀌니 안 씀). 사진이 안 뜨면 이름 링크만 남음. 고지는 바로 아래."""
     its = cp_items(key, sub)
     if not its:
@@ -6572,10 +6595,10 @@ def salary_table():
                    for a in range(20_000_000, 100_000_001, 1_000_000) for r in [paycalc.salary(a)])
     r40, r30, r60 = paycalc.salary(40_000_000), paycalc.salary(30_000_000), paycalc.salary(60_000_000)
     body = (f'<p class="bc"><a href="/">홈</a> › <a href="/analyst/">머니</a> › <a href="/money/tools/salary/">연봉 실수령액 계산기</a> › 실수령액표</p><h1>📋 연봉 실수령액 표 2026 (2,000만~1억)</h1>'
-            f'<p>2026년 4대보험 요율과 소득세 기본세율로 연봉 100만원 단위 월 실수령액을 계산한 표예요. 비과세 식대 월 20만원, 본인 1명(부양가족 없음) 기준이에요. 예를 들어 연봉 3,000만원은 월 약 {int(r30["net"]):,}원, 4,000만원은 약 {int(r40["net"]):,}원, 6,000만원은 약 {int(r60["net"]):,}원을 받아요. '
-            f'연봉이 1,000만원 오를 때 실수령액은 생각보다 덜 늘어나는데, 소득세 세율 구간이 올라가고 4대보험도 함께 늘기 때문이에요. 부양가족이 있거나 비과세가 다르면 <a href="/money/tools/salary/">계산기</a>에 직접 넣어 보세요.</p>'
+            f'<p>2026년 4대보험 요율과 소득세 기본세율로 연봉 100만원 단위 월 실수령액을 계산한 표야. 비과세 식대 월 20만원, 본인 1명(부양가족 없음) 기준이야. 예를 들어 연봉 3,000만원은 월 약 {int(r30["net"]):,}원, 4,000만원은 약 {int(r40["net"]):,}원, 6,000만원은 약 {int(r60["net"]):,}원을 받아. '
+            f'연봉이 1,000만원 오를 때 실수령액은 생각보다 덜 늘어나는데, 소득세 세율 구간이 올라가고 4대보험도 함께 늘기 때문이야. 부양가족이 있거나 비과세가 다르면 <a href="/money/tools/salary/">계산기</a>에 직접 넣어 봐.</p>'
             f'<div class="tbl-w"><table class="info sal-t"><tr><th>연봉</th><th>월 세전</th><th>4대보험</th><th>소득세+지방세</th><th>월 실수령액</th></tr>{rows}</table></div>'
-            f'<p class="note">기준일 {TOOL_DATE.get("salary", "2026-10-18")} · 출처: {TOOL_SRC["salary"]}. 참고용 계산이며 회사 간이세액표와 소득세가 조금 다를 수 있어요.</p>'
+            f'<p class="note">기준일 {TOOL_DATE.get("salary", "2026-10-18")} · 출처: {TOOL_SRC["salary"]}. 참고용 계산이며 회사 간이세액표와 소득세가 조금 다를 수 있어.</p>'
             + rel_block(r'연봉|월급|4대보험|연말정산', [('/money/tools/salary/', '연봉 실수령액 계산기'), ('/money/tools/severance/', '퇴직금 계산기'), ('/money/tools/unemployment/', '실업급여 계산기')]))
     page('/money/tools/salary/table/', '연봉 실수령액 표 2026 — 2,000만~1억 월급 (4대보험·세금 공제 후)', f'2026년 4대보험·소득세 기준 연봉 실수령액표. 연봉 4,000만원 월 {int(r40["net"]):,}원 등 2,000만~1억 원을 100만원 단위로 정리.',
          body + '<link rel="stylesheet" href="/assets/money/tools.css?v=2">', [('루리 줍줍', '/'), ('머니', '/analyst/'), ('연봉 실수령액 계산기', '/money/tools/salary/'), ('실수령액표', '/money/tools/salary/table/')])
@@ -6584,11 +6607,11 @@ def salary_table():
 
 
 TOOL_HELP = {  # 2026-10-18 애드센스 보강: 계산기마다 계산 방법·예시·주의 (숫자 근거는 /money/policy/)
- 'dividend': '<h2>어떻게 계산하나요?</h2><p>2026년 1월 1일 이후 받는 고배당 기업 배당은 다른 금융소득과 합치지 않고 따로 세금을 매기는 분리과세를 고를 수 있어요. 세율은 구간별로 올라가요. 2천만원까지 14%, 3억원까지 20%, 50억원까지 25%, 그 위로 30%이고, 여기에 국세의 10%가 지방소득세로 붙어요.</p><h2>예시</h2><p>배당 3천만원이면 2천만원 × 14% = 280만원, 나머지 1천만원 × 20% = 200만원, 국세 480만원에 지방소득세 48만원을 더해 약 528만원이에요. 같은 돈을 일반 원천징수 15.4%로 내면 462만원이라, 금액이 크지 않으면 원천징수가 더 쌀 수도 있어요.</p><h2>주의할 점</h2><ul class="chk"><li>배당성향 등 요건을 채운 「고배당 기업」 배당에만 적용돼요.</li><li>금융소득이 연 2천만원을 넘으면 종합과세와 비교해 유리한 쪽을 골라야 해요.</li><li>건강보험료(피부양자 자격)에 영향이 있을 수 있어요.</li></ul>',
- 'stocktax': '<h2>어떻게 계산하나요?</h2><p>증권거래세는 주식을 팔 때 매도 금액에 세율을 곱해 증권사가 바로 떼어 가요. 2026년부터 코스피는 증권거래세 0.05%에 농어촌특별세 0.15%를 더해 0.20%, 코스닥과 K-OTC는 0.20%, 코넥스는 0.10%예요. 이익이 났는지 손해를 봤는지와 상관없이 팔 때마다 붙어요.</p><h2>예시</h2><p>코스피 주식을 1천만원어치 팔면 1천만원 × 0.20% = 2만원이에요. 같은 금액을 하루에 다섯 번 사고팔면 세금만 10만원이 나가요.</p><h2>주의할 점</h2><ul class="chk"><li>증권사 매매 수수료는 따로 붙어요.</li><li>대주주 양도소득세는 별도 세금이에요.</li><li>해외 주식은 이 세율이 아니라 양도소득세(연 250만원 공제 후 22%)가 적용돼요.</li></ul>',
- 'pension': '<h2>어떻게 계산하나요?</h2><p>연금저축은 연 600만원까지, 연금저축과 IRP를 합쳐 연 900만원까지 낸 돈의 일부를 세금에서 돌려받아요. 총급여 5,500만원 이하(종합소득 4,500만원 이하)는 16.5%, 그보다 많으면 13.2%를 공제받아요.</p><h2>예시</h2><p>총급여 5천만원인 직장인이 연금저축 600만원과 IRP 300만원을 내면 900만원 × 16.5% = 148만 5천원을 연말정산에서 돌려받아요. 연금저축만 900만원을 내면 한도 600만원만 인정돼 99만원이에요.</p><h2>주의할 점</h2><ul class="chk"><li>중도 해지하면 공제받은 세금을 기타소득세(16.5%)로 다시 내요.</li><li>55세 이후 연금으로 받을 때 연금소득세(3.3~5.5%)가 붙어요.</li><li>ISA 만기 자금을 옮기면 300만원 한도가 더 생겨요(이 계산기에는 빠져 있어요).</li></ul>',
- 'loan': '<h2>상환 방식별 차이</h2><p><b>원리금균등</b>은 매달 같은 금액을 내서 계획 세우기 쉽지만, 초반엔 이자 비중이 커요. <b>원금균등</b>은 원금을 똑같이 나눠 갚아 첫 달 부담이 가장 크지만 총 이자가 가장 적어요. <b>만기일시</b>는 매달 이자만 내고 마지막에 원금을 한 번에 갚아 총 이자가 가장 많아요.</p><h2>예시</h2><p>2억원을 연 4.2%, 30년(360개월) 원리금균등으로 빌리면 매달 약 97만 8천원, 총 이자는 약 1억 5천 2백만원이에요. 금리가 0.25%p만 올라도 총 이자가 1천만원 넘게 늘어요. 계산 결과 표에서 금리가 바뀔 때 차이를 바로 볼 수 있어요.</p><h2>주의할 점</h2><ul class="chk"><li>변동금리는 기준금리·코픽스에 따라 매달 내는 돈이 바뀌어요.</li><li>중도상환수수료(보통 3년 이내 1% 안팎)는 따로예요.</li><li>DSR 규제로 실제 대출 한도는 소득에 따라 달라요.</li></ul>',
- 'fx': '<h2>어떻게 계산하나요?</h2><p>은행은 매매기준율에 환전 수수료(현찰 기준 보통 1.75% 안팎)를 붙여 팔아요. 환율 우대 90%는 이 수수료의 90%를 깎아 준다는 뜻이라, 실제 수수료는 1.75% × 10% = 0.175%가 돼요.</p><h2>예시</h2><p>100만원을 매매기준율 1,380원에 우대 없이 바꾸면 적용 환율은 약 1,404원이라 약 712달러를 받아요. 90% 우대를 받으면 약 1,382원이 되어 약 723달러로, 11달러쯤 더 받아요.</p><h2>주의할 점</h2><ul class="chk"><li>현찰과 송금(전신환)은 수수료가 달라요.</li><li>공항 환전소는 우대가 적은 편이라, 은행 앱으로 미리 신청하고 공항에서 받으면 유리해요.</li><li>매매기준율은 하루에도 여러 번 바뀌어요.</li></ul>'}
+ 'dividend': '<h2>어떻게 계산하나?</h2><p>2026년 1월 1일 이후 받는 고배당 기업 배당은 다른 금융소득과 합치지 않고 따로 세금을 매기는 분리과세를 고를 수 있어. 세율은 구간별로 올라가. 2천만원까지 14%, 3억원까지 20%, 50억원까지 25%, 그 위로 30%이고, 여기에 국세의 10%가 지방소득세로 붙어.</p><h2>예시</h2><p>배당 3천만원이면 2천만원 × 14% = 280만원, 나머지 1천만원 × 20% = 200만원, 국세 480만원에 지방소득세 48만원을 더해 약 528만원이야. 같은 돈을 일반 원천징수 15.4%로 내면 462만원이라, 금액이 크지 않으면 원천징수가 더 쌀 수도 있어.</p><h2>주의할 점</h2><ul class="chk"><li>배당성향 등 요건을 채운 「고배당 기업」 배당에만 적용돼.</li><li>금융소득이 연 2천만원을 넘으면 종합과세와 비교해 유리한 쪽을 골라야 해.</li><li>건강보험료(피부양자 자격)에 영향이 있을 수 있어.</li></ul>',
+ 'stocktax': '<h2>어떻게 계산하나?</h2><p>증권거래세는 주식을 팔 때 매도 금액에 세율을 곱해 증권사가 바로 떼어 가. 2026년부터 코스피는 증권거래세 0.05%에 농어촌특별세 0.15%를 더해 0.20%, 코스닥과 K-OTC는 0.20%, 코넥스는 0.10%야. 이익이 났는지 손해를 봤는지와 상관없이 팔 때마다 붙어.</p><h2>예시</h2><p>코스피 주식을 1천만원어치 팔면 1천만원 × 0.20% = 2만원이야. 같은 금액을 하루에 다섯 번 사고팔면 세금만 10만원이 나가.</p><h2>주의할 점</h2><ul class="chk"><li>증권사 매매 수수료는 따로 붙어.</li><li>대주주 양도소득세는 별도 세금이야.</li><li>해외 주식은 이 세율이 아니라 양도소득세(연 250만원 공제 후 22%)가 적용돼.</li></ul>',
+ 'pension': '<h2>어떻게 계산하나?</h2><p>연금저축은 연 600만원까지, 연금저축과 IRP를 합쳐 연 900만원까지 낸 돈의 일부를 세금에서 돌려받아. 총급여 5,500만원 이하(종합소득 4,500만원 이하)는 16.5%, 그보다 많으면 13.2%를 공제받아.</p><h2>예시</h2><p>총급여 5천만원인 직장인이 연금저축 600만원과 IRP 300만원을 내면 900만원 × 16.5% = 148만 5천원을 연말정산에서 돌려받아. 연금저축만 900만원을 내면 한도 600만원만 인정돼 99만원이야.</p><h2>주의할 점</h2><ul class="chk"><li>중도 해지하면 공제받은 세금을 기타소득세(16.5%)로 다시 내.</li><li>55세 이후 연금으로 받을 때 연금소득세(3.3~5.5%)가 붙어.</li><li>ISA 만기 자금을 옮기면 300만원 한도가 더 생겨(이 계산기에는 빠져 있어).</li></ul>',
+ 'loan': '<h2>상환 방식별 차이</h2><p><b>원리금균등</b>은 매달 같은 금액을 내서 계획 세우기 쉽지만, 초반엔 이자 비중이 커. <b>원금균등</b>은 원금을 똑같이 나눠 갚아 첫 달 부담이 가장 크지만 총 이자가 가장 적어. <b>만기일시</b>는 매달 이자만 내고 마지막에 원금을 한 번에 갚아 총 이자가 가장 많아.</p><h2>예시</h2><p>2억원을 연 4.2%, 30년(360개월) 원리금균등으로 빌리면 매달 약 97만 8천원, 총 이자는 약 1억 5천 2백만원이야. 금리가 0.25%p만 올라도 총 이자가 1천만원 넘게 늘어. 계산 결과 표에서 금리가 바뀔 때 차이를 바로 볼 수 있어.</p><h2>주의할 점</h2><ul class="chk"><li>변동금리는 기준금리·코픽스에 따라 매달 내는 돈이 바뀌어.</li><li>중도상환수수료(보통 3년 이내 1% 안팎)는 따로야.</li><li>DSR 규제로 실제 대출 한도는 소득에 따라 달라.</li></ul>',
+ 'fx': '<h2>어떻게 계산하나?</h2><p>은행은 매매기준율에 환전 수수료(현찰 기준 보통 1.75% 안팎)를 붙여 팔아. 환율 우대 90%는 이 수수료의 90%를 깎아 준다는 뜻이라, 실제 수수료는 1.75% × 10% = 0.175%가 돼.</p><h2>예시</h2><p>100만원을 매매기준율 1,380원에 우대 없이 바꾸면 적용 환율은 약 1,404원이라 약 712달러를 받아. 90% 우대를 받으면 약 1,382원이 되어 약 723달러로, 11달러쯤 더 받아.</p><h2>주의할 점</h2><ul class="chk"><li>현찰과 송금(전신환)은 수수료가 달라.</li><li>공항 환전소는 우대가 적은 편이라, 은행 앱으로 미리 신청하고 공항에서 받으면 유리해.</li><li>매매기준율은 하루에도 여러 번 바뀌어.</li></ul>'}
 
 
 def tool_pages():
@@ -6602,10 +6625,10 @@ def tool_pages():
         ld = {'@context': 'https://schema.org', '@graph': [{'@type': 'WebApplication', 'name': tt, 'url': f'{SITE}/money/tools/{k}/', 'applicationCategory': 'FinanceApplication', 'operatingSystem': 'Any', 'inLanguage': 'ko', 'offers': {'@type': 'Offer', 'price': '0', 'priceCurrency': 'KRW'}, 'description': d}]
               + ([{'@type': 'FAQPage', 'mainEntity': [{'@type': 'Question', 'name': q, 'acceptedAnswer': {'@type': 'Answer', 'text': a}} for q, a in fq]}] if fq else [])}
         extra = (('<h2>자주 묻는 질문</h2>' + ''.join(f'<details class="faq"><summary>{E(q)}</summary><p>{E(a)}</p></details>' for q, a in fq)) if fq else '') \
-            + f'<p class="note">기준일 {TOOL_DATE.get(k, "2026-10-18")} · 출처: {TOOL_SRC.get(k, "")}. 참고용 계산이에요. 실제 금액은 해당 기관 안내로 확인하세요.</p>' + rel_block(*TOOL_REL.get(k, ('', [])))
+            + f'<p class="note">기준일 {TOOL_DATE.get(k, "2026-10-18")} · 출처: {TOOL_SRC.get(k, "")}. 참고용 계산이야. 실제 금액은 해당 기관 안내로 확인해.</p>' + rel_block(*TOOL_REL.get(k, ('', [])))
         page(f'/money/tools/{k}/', tt, d,
              f'<p class="bc"><a href="/">홈</a> › <a href="/analyst/">머니</a> › {E(n)}</p><h1>🧮 {E(tt)}</h1><p>{E(d)}</p>'
-             f'<section id="mtool" data-tool="{k}"><noscript>자바스크립트가 필요해요.</noscript></section>{TOOL_HELP.get(k, '')}{extra}<p class="hm-links">{others}<a href="/money/policy/">🏛️ 근거: 투자 정책 정리</a></p>'
+             f'<section id="mtool" data-tool="{k}"><noscript>자바스크립트가 필요해.</noscript></section>{TOOL_HELP.get(k, '')}{extra}<p class="hm-links">{others}<a href="/money/policy/">🏛️ 근거: 투자 정책 정리</a></p>'
              '<link rel="stylesheet" href="/assets/money/tools.css?v=2"><link rel="stylesheet" href="/assets/mag/mag.css?v=10"><script defer src="/assets/money/tools.js?v=2"></script>',
              [('루리 줍줍', '/'), ('머니', '/analyst/'), (n, f'/money/tools/{k}/')], ld)
         urls.append(f'/money/tools/{k}/')
@@ -6654,8 +6677,8 @@ def hot_pages():
             continue
         if v.get('dup') and v['dup'] in db:   # 같은 사건으로 합쳐진 옛 주소: 검색 제외 + 대표 페이지로 안내 (주소는 유지)
             m = db[v['dup']]
-            page(f'/hot/{v["slug"]}/', f'{m["title"][:40]} (합쳐진 이슈)', '같은 사건을 다룬 핫이슈 페이지로 합쳐졌어요.',
-                 f'<p class="bc"><a href="/">홈</a> › <a href="/hot/">핫이슈</a></p><h1>이 이슈는 한 페이지로 합쳤어요</h1><p>같은 사건을 다룬 기사가 제목만 달라 따로 정리돼 있었어요. 아래 페이지에서 언론사 보도를 함께 볼 수 있어요.</p>'
+            page(f'/hot/{v["slug"]}/', f'{m["title"][:40]} (합쳐진 이슈)', '같은 사건을 다룬 핫이슈 페이지로 합쳐졌어.',
+                 f'<p class="bc"><a href="/">홈</a> › <a href="/hot/">핫이슈</a></p><h1>이 이슈는 한 페이지로 합쳤어</h1><p>같은 사건을 다룬 기사가 제목만 달라 따로 정리돼 있었어. 아래 페이지에서 언론사 보도를 함께 볼 수 있어.</p>'
                  f'<p><a class="lab-cta" href="/hot/{m["slug"]}/"><b>🔥 {E(m["title"])}</b><span>합쳐진 페이지로 가기 →</span></a></p><script>location.replace("/hot/{m["slug"]}/")</script>',
                  [('루리 줍줍', '/'), ('핫이슈', '/hot/')], noindex=True)
             urls.append(f'/hot/{v["slug"]}/')
@@ -6669,13 +6692,13 @@ def hot_pages():
         pr = ''.join(f'<a href="{E(p_["u"])}"><em>{E(p_["k"])}</em><b>{E(p_["t"])}</b></a>' for p_ in v.get('pr') or [])
         fq = ''.join(f'<details><summary>{E(q)}</summary><p>{E(a)}</p></details>' for q, a in faq)
         ld = {'@context': 'https://schema.org', '@type': 'FAQPage', 'mainEntity': [{'@type': 'Question', 'name': q, 'acceptedAnswer': {'@type': 'Answer', 'text': a}} for q, a in faq]}
-        old = '' if v['slug'] in livesl else f'<p class="an-warn">📦 지난 이슈예요(마지막 확인 {E(v["last"])}). 지금은 상황이 바뀌었을 수 있어요.</p>'
+        old = '' if v['slug'] in livesl else f'<p class="an-warn">📦 지난 이슈야(마지막 확인 {E(v["last"])}). 지금은 상황이 바뀌었을 수 있어.</p>'
         iss = v.get('issue')
         kwl = f'<a href="/kw/{v["kw"]}/">🔎 키워드 상세 →</a>' if v.get('kw') else ''
         sig = (f'<p class="hm-links"><a href="/news/#is{iss["n"]}">🕵️ 기사 확인 신호: 언론사 {iss["on"]}곳 · 확인 신호 {G.get(iss.get("g"), "")} {iss.get("s") if iss.get("s") is not None else "-"}점 →</a>{kwl}</p>') if iss else (f'<p class="hm-links">{kwl}</p>' if kwl else '')
         body = (f'<p class="bc"><a href="/">홈</a> › <a href="/hot/">핫이슈</a> › {E(v["q"][:30])}</p><h1>🔥 {E(v["title"])}</h1>'
                 f'<p><span class="kw-b both">{hot_label(v)}</span> 언론사 {len(v["outs"])}곳 보도 · 처음 {E(v["first"])} · 갱신 {E(v["last"])}</p>' + old
-                + f'<section class="mg-s"><h2>📌 한눈에 정리</h2><p class="hot-n">여러 언론사가 이렇게 전했어요(기사 제목 그대로).</p><ul class="hot-l">{what}</ul>'
+                + f'<section class="mg-s"><h2>📌 한눈에 정리</h2><p class="hot-n">여러 언론사가 이렇게 전했어(기사 제목 그대로).</p><ul class="hot-l">{what}</ul>'
                 + (f'<h3>🔢 기사에 나온 숫자</h3><ul class="hot-l">{nums}</ul>' if nums else '') + (f'<h3>📅 기사에 나온 날짜</h3><ul class="hot-l">{dates}</ul>' if dates else '') + '</section>'
                 + f'<section class="mg-s"><h2>🙋 나한테 뭐가 달라지나</h2><p>{E(lead)}</p><div class="nw-pr">{tl}</div>'
                 + IPC.card(v['title'] + ' ' + v['q'] + ' ' + ' '.join(w['t'] for w in v['what'][:3]), (v.get('first') or '')[:10] or None, [(w['o'], w['t']) for w in v['what']], MKH) + '</section>' + sig
@@ -6683,9 +6706,9 @@ def hot_pages():
                 + (f'<section class="mg-s"><h2>📎 관련 줍줍</h2><div class="nw-pr">{pr}</div></section>' if pr else '')
                 + f'<section class="mg-s"><h2>📰 관련 기사 (확인 신호 점수)</h2><ul class="kw-l">{arts}</ul></section>'
                 + f'<section class="mg-s"><h2>❓ 자주 묻는 질문</h2><div class="hot-faq">{fq}</div></section>'
-                + '<p class="note">기사 제목·숫자·날짜는 각 언론사 보도 그대로이고, 루리 줍줍이 사실을 새로 판정한 게 아니에요. 정책·세금·금융은 공식 기관 안내를 확인하세요.</p>' + css)
+                + '<p class="note">기사 제목·숫자·날짜는 각 언론사 보도 그대로이고, 루리 줍줍이 사실을 새로 판정한 게 아니야. 정책·세금·금융은 공식 기관 안내를 확인해.</p>' + css)
         q = re.sub(r'[“”"]', '', v['q'])
-        page(f'/hot/{v["slug"]}/', f'{q[:36]} — 무슨 일? 확인된 내용 정리 ({v["last"][5:10].replace("-", "/")} 기준)', f'{q[:40]}: 여러 언론사 보도를 모아 무슨 일인지, 기사에 나온 숫자·날짜, 나한테 달라지는 점과 관련 도구를 정리했어요.',
+        page(f'/hot/{v["slug"]}/', f'{q[:36]} — 무슨 일? 확인된 내용 정리 ({v["last"][5:10].replace("-", "/")} 기준)', f'{q[:40]}: 여러 언론사 보도를 모아 무슨 일인지, 기사에 나온 숫자·날짜, 나한테 달라지는 점과 관련 도구를 정리했어.',
              body, [('루리 줍줍', '/'), ('핫이슈', '/hot/'), (q[:30], f'/hot/{v["slug"]}/')], ld, noindex=v['slug'] not in _keep)
         urls.append(f'/hot/{v["slug"]}/')
     for f in os.listdir(hd):
@@ -6693,9 +6716,9 @@ def hot_pages():
             shutil.rmtree(os.path.join(hd, f), ignore_errors=True)
     card = lambda v: f'<li><a href="/hot/{v["slug"]}/"><em>{hot_label(v)}</em><b>{E(v["title"])}</b><span>언론사 {len(v["outs"])}곳 · {E(v["last"][5:])}</span></a></li>'
     past = sorted([v for v in db.values() if v['slug'] not in livesl and not v.get('dup') and v['slug'] in _kept], key=lambda v: v['last'], reverse=True)[:60]
-    page('/hot/', '지금 뜨는 핫이슈 — 무슨 일·나한테 달라지는 점 정리', '검색 급상승·언론 보도가 몰린 정보성 이슈를 골라 무슨 일인지, 나한테 달라지는 점, 관련 계산기·지원금을 정리했어요.',
-         '<p class="bc"><a href="/">홈</a> › 핫이슈</p><h1>🔥 지금 뜨는 핫이슈</h1>' + say('o_det_wave', '검색이 몰리고 여러 언론사가 다룬 이슈 중, 나한테 실제로 쓸모 있는 것만 골랐어요.')
-         + (f'<ul class="mg-l hot-c">{"".join(card(v) for v in live)}</ul>' if live else '<p class="nw-empty">지금은 정리할 핫이슈가 없어요.</p>')
+    page('/hot/', '지금 뜨는 핫이슈 — 무슨 일·나한테 달라지는 점 정리', '검색 급상승·언론 보도가 몰린 정보성 이슈를 골라 무슨 일인지, 나한테 달라지는 점, 관련 계산기·지원금을 정리했어.',
+         '<p class="bc"><a href="/">홈</a> › 핫이슈</p><h1>🔥 지금 뜨는 핫이슈</h1>' + say('o_det_wave', '검색이 몰리고 여러 언론사가 다룬 이슈 중, 나한테 실제로 쓸모 있는 것만 골랐어.')
+         + (f'<ul class="mg-l hot-c">{"".join(card(v) for v in live)}</ul>' if live else '<p class="nw-empty">지금은 정리할 핫이슈가 없어.</p>')
          + (f'<h2>📦 지난 이슈</h2><ul class="mg-l hot-c">{"".join(card(v) for v in past)}</ul>' if past else '') + css,
          [('루리 줍줍', '/'), ('핫이슈', '/hot/')])
     return urls
@@ -6783,7 +6806,7 @@ def news_brief():
             continue
         ns = [(a['o'], n_) for a in by for n_ in IPB.nums_in(a['t'])][:3]
         tsl = sorted([a for a in by if a.get('ts') and int(a['ts']) <= time.time()], key=lambda a: int(a['ts']))
-        tl_ = (f'<p><b>흐름</b> 처음 보도 {datetime.datetime.fromtimestamp(int(tsl[0]["ts"])).strftime("%m/%d %H:%M")}({E2(tsl[0]["o"])}) → 최근 {datetime.datetime.fromtimestamp(int(tsl[-1]["ts"])).strftime("%m/%d %H:%M")}({E2(tsl[-1]["o"])}) · 모은 기사 기준이에요</p>' if len(tsl) >= 2 else '')
+        tl_ = (f'<p><b>흐름</b> 처음 보도 {datetime.datetime.fromtimestamp(int(tsl[0]["ts"])).strftime("%m/%d %H:%M")}({E2(tsl[0]["o"])}) → 최근 {datetime.datetime.fromtimestamp(int(tsl[-1]["ts"])).strftime("%m/%d %H:%M")}({E2(tsl[-1]["o"])}) · 모은 기사 기준이야</p>' if len(tsl) >= 2 else '')
         _tx = x['t'] + ' ' + ' '.join(a['t'] for a in by[:3])
         ipc = IPB.card(_tx, datetime.datetime.fromtimestamp(int(x['ts'])).strftime('%Y-%m-%d') if x.get('ts') else None, [(a['o'], a['t']) for a in by], MKv, head='체감도와 영향')
         ipc = (f'<details class="nbd"><summary>🙋 내 생활엔? <small>{E2(IPB.gauge_text(_tx))}</small></summary>{ipc}</details>' if ipc else '')
@@ -6802,16 +6825,16 @@ def news_brief():
                 f'<p class="kwn">{E2(x.get("c") or "")} · 언론사 {x["on"]}곳이 보도{" · 최근 " + _last if _last else ""}{" · 발언·주장 기사" if x.get("claim") else ""}</p>'
                 f'<details class="nbd"><summary>기사별 제목 · 보도 흐름 · 확인 신호</summary>{tl_}<ul class="kw-l nbl">{li}</ul>{more_li}{_num}<p class="kwn">{_sig}</p></details>'
                 + ipc + f'<p class="hm-links">{links}</p></article>')
-        t_ = f'{x["t"]}. 언론사 {x["on"]}곳이 전했어요. ' + ' '.join(f'{a["o"]}는 "{a["t"][:40]}"라고 썼어요.' for a in by[:2])
+        t_ = f'{x["t"]}. 언론사 {x["on"]}곳이 전했어. ' + ' '.join(f'{a["o"]}는 "{a["t"][:40]}"라고 썼어.' for a in by[:2])
         if ns:
-            t_ += ' 기사에 나온 숫자는 ' + ', '.join(f'{o} {n_}' for o, n_ in ns[:2]) + '예요.'
+            t_ += ' 기사에 나온 숫자는 ' + ', '.join(f'{o} {n_}' for o, n_ in ns[:2]) + '야.'
         js.append({'n': x['n'], 'headline': x['t'], 'cat': x.get('c'), 'outlets': x['on'], 'script': t_, 'sources': [{'o': a['o'], 't': a['t'], 'u': a['u']} for a in by[:3]]})
     try:
         json.dump({'title': '루리 뉴스', 'date': TODAY.isoformat(), 'updated': NOW_KST().strftime('%Y-%m-%d %H:%M'), 'items': js}, open(os.path.join(ROOT, 'news', 'brief.json'), 'w', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))
     except Exception:
         pass
     return ('<section class="mg-s nb-s" id="brief"><div class="nb-h"><img src="/assets/ruri/o_anchor_s.webp" width="64" height="88" alt="루리 뉴스 앵커 루리">'
-            f'<p><b>오늘의 브리핑</b> · {E2(NOW_KST().strftime("%m/%d %H:%M"))} 기준 언론사 3곳 이상이 다룬 이슈 {len(js)}개예요. 기사 제목과 숫자만 정리하고, 어느 쪽이 맞는지는 판단하지 않아요.</p></div><p class="kwn">ℹ️ 「확인 신호 점수」는 여러 언론사가 보도했는지·실명 출처가 있는지·제목 속 숫자가 본문에 있는지를 본 참고 점수예요. 기사가 사실인지 판정하는 점수가 아니라 「더 확인해 볼 곳」을 알려 줍니다.</p>'
+            f'<p><b>오늘의 브리핑</b> · {E2(NOW_KST().strftime("%m/%d %H:%M"))} 기준 언론사 3곳 이상이 다룬 이슈 {len(js)}개야. 기사 제목과 숫자만 정리하고, 어느 쪽이 맞는지는 판단하지 않아.</p></div><p class="kwn">ℹ️ 「확인 신호 점수」는 여러 언론사가 보도했는지·실명 출처가 있는지·제목 속 숫자가 본문에 있는지를 본 참고 점수야. 기사가 사실인지 판정하는 점수가 아니라 「더 확인해 볼 곳」을 알려 준다.</p>'
             + out + '</section><style>.nb{margin:12px 0;padding:14px;border:1px solid var(--bd,#e5e7eb);border-radius:14px;background:var(--card,#fff)}.nb h3{margin:0 0 4px;font-size:17px}.nb-one{color:var(--mu,#6b7280);font-size:14.5px}.nb p{margin:6px 0;line-height:1.6}'
             '.nb-h{display:flex;gap:10px;align-items:center}.nb-h img{flex:none;width:48px;height:auto}.nbl{margin:6px 0}.nbl em{font-style:normal;font-weight:700;margin-right:6px;color:var(--pri,#b45309)}'
             '.nbd{margin:6px 0;font-size:14px}.nbd summary{cursor:pointer;color:var(--pri,#b45309);font-weight:700}.nbd summary small{font-weight:400;color:var(--mu,#6b7280);margin-left:6px}.nb .ip{margin:8px 0}'
@@ -6821,13 +6844,13 @@ def news_brief():
 
 def news_page():
     # 루리 탐정의 이슈 감별 (2026-10-18 사용자: RSS 기사 수집 → 주제별 묶음 → 팩트체크 기반 채점, 피드, 탐정 루리, 기사 관련 줍줍)
-    body = f'''<p class="bc"><a href="/">홈</a> › 루리 뉴스</p><h1>📺 루리 뉴스</h1><p class="kwn">언론사 15곳 기사를 매시간 모아 같은 사건끼리 묶고, 제목·숫자·확인 신호를 정리해요.</p>
+    body = f'''<p class="bc"><a href="/">홈</a> › 루리 뉴스</p><h1>📺 루리 뉴스</h1><p class="kwn">언론사 15곳 기사를 매시간 모아 같은 사건끼리 묶고, 제목·숫자·확인 신호를 정리해.</p>
 <nav class="nbn" aria-label="이 화면 안에서 이동"><a href="#brief">📺 오늘의 브리핑</a><a href="#review">🖋️ 평론</a><a href="#news">🕵️ 이슈 순위·확인 신호</a></nav>
 {news_brief()}{join_cta('issue')}{hot_top(3)}{news_impact()}
 <h2 class="nbh" id="rank">🕵️ 이슈 순위와 기사 확인 신호</h2><section id="news" aria-label="이슈 순위와 기사 채점">{news_static()}</section>
-<details class="nw-how"><summary>채점은 이렇게 해요</summary><ul><li><b>교차 보도</b> — 같은 사건을 여러 언론사가 보도하면 가점, 한 곳뿐이면 표시만 해요.</li><li><b>출처</b> — 실명 기관·인물 출처는 가점, 익명 관계자뿐이거나 온라인 커뮤니티·SNS 글이 출처면 감점.</li><li><b>제목-본문 일치</b> — 제목의 숫자·인용문이 본문에 없으면 감점.</li><li><b>숫자 엇갈림</b> — 같은 사건인데 언론사마다 사망·부상자 수가 다르면 따로 표시해요.</li><li><b>낚시·홍보</b> — 「충격」「결국」「이것」 같은 낚시 표현, 기업 홍보성 기사는 감점.</li></ul><p>기사 본문은 채점에만 쓰고 이 사이트에 옮겨 싣지 않아요. 제목을 누르면 원래 언론사 기사로 이동해요.</p></details>
+<details class="nw-how"><summary>채점은 이렇게 해</summary><ul><li><b>교차 보도</b> — 같은 사건을 여러 언론사가 보도하면 가점, 한 곳뿐이면 표시만 해.</li><li><b>출처</b> — 실명 기관·인물 출처는 가점, 익명 관계자뿐이거나 온라인 커뮤니티·SNS 글이 출처면 감점.</li><li><b>제목-본문 일치</b> — 제목의 숫자·인용문이 본문에 없으면 감점.</li><li><b>숫자 엇갈림</b> — 같은 사건인데 언론사마다 사망·부상자 수가 다르면 따로 표시해.</li><li><b>낚시·홍보</b> — 「충격」「결국」「이것」 같은 낚시 표현, 기업 홍보성 기사는 감점.</li></ul><p>기사 본문은 채점에만 쓰고 이 사이트에 옮겨 싣지 않아. 제목을 누르면 원래 언론사 기사로 이동해.</p></details>
 <link rel="stylesheet" href="/assets/news/news.css?v=7"><script defer src="/assets/news/news.js?v=5"></script>'''
-    page('/news/', '루리 뉴스 — 오늘의 이슈 브리핑·기사 확인 신호 (언론사 15곳)', '언론사 15곳 기사를 매시간 모아 같은 사건끼리 묶고, 교차 보도·출처·제목-본문 일치·숫자 엇갈림·낚시 표현으로 기사마다 점수를 매겨요. 지금 가장 많이 보도된 이슈 순위.',
+    page('/news/', '루리 뉴스 — 오늘의 이슈 브리핑·기사 확인 신호 (언론사 15곳)', '언론사 15곳 기사를 매시간 모아 같은 사건끼리 묶고, 교차 보도·출처·제목-본문 일치·숫자 엇갈림·낚시 표현으로 기사마다 점수를 매겨. 지금 가장 많이 보도된 이슈 순위.',
          body, [('루리 줍줍', '/'), ('기사 확인 신호', '/news/')])
 
 
@@ -6851,9 +6874,9 @@ def watch_data():
         WHY = {'love': '설레고 싶은 기분에', 'fun': '웃고 싶은 기분에', 'tense': '긴장감 있는 이야기가 당길 때', 'cry': '울고 싶은 기분에', 'heal': '힐링이 필요할 때', 'fight': '신나게 보고 싶을 때'}
         mood = lambda k, e, lb, names, kw: {'k': k, 'e': e, 'label': lb, 'why': WHY.get(k, lb), 'names': names, 'kw': kw}
         cfg = {'genres': [[g, GL_ANIME.get(g, g)] for g in top + extra], 'gl': GL_ANIME,
-               'moods': [mood('love', '💕', '설레고 싶어요', ['Romance'], []), mood('fun', '😂', '웃고 싶어요', ['Comedy'], ['funny']), mood('tense', '😱', '긴장감 있게', ['Thriller', 'Mystery', 'Psychological', 'Horror'], ['dark']),
-                         mood('cry', '😢', '울고 싶어요', ['Drama', 'Tragedy'], ['emotional']), mood('heal', '🍵', '편하게 힐링', ['Slice of Life', 'Iyashikei', 'Cute Girls Doing Cute Things'], []), mood('fight', '⚔️', '신나게 싸움', ['Action', 'Swordplay', 'Super Power'], ['action'])],
-               'modes': [{'k': 'any', 'e': '🎲', 'label': '상관없어요'}, {'k': 'tv', 'e': '📺', 'label': 'TV 시리즈'}, {'k': 'short', 'e': '⏱️', 'label': '짧게(13화 이하)'}, {'k': 'movie', 'e': '🎞️', 'label': '극장판'}]}
+               'moods': [mood('love', '💕', '설레고 싶어', ['Romance'], []), mood('fun', '😂', '웃고 싶어', ['Comedy'], ['funny']), mood('tense', '😱', '긴장감 있게', ['Thriller', 'Mystery', 'Psychological', 'Horror'], ['dark']),
+                         mood('cry', '😢', '울고 싶어', ['Drama', 'Tragedy'], ['emotional']), mood('heal', '🍵', '편하게 힐링', ['Slice of Life', 'Iyashikei', 'Cute Girls Doing Cute Things'], []), mood('fight', '⚔️', '신나게 싸움', ['Action', 'Swordplay', 'Super Power'], ['action'])],
+               'modes': [{'k': 'any', 'e': '🎲', 'label': '상관없어'}, {'k': 'tv', 'e': '📺', 'label': 'TV 시리즈'}, {'k': 'short', 'e': '⏱️', 'label': '짧게(13화 이하)'}, {'k': 'movie', 'e': '🎞️', 'label': '극장판'}]}
         rows = [[v['id'], v['kr'] or v['en'] or v['ro'], v['jp'], v['ro'] if (v['kr'] or v['en']) else '', v['g'], v['tg'][:5], v['sc'], v['pop'], v['ep'], v['fmt'], v['year'], v['season'], v['st'], v['studio'], v['cv'], v['color'],
                  v['url'], v['ott'], v.get('rec') or [], (v.get('rv') or {}).get('kw') or [], v['tr'], v['min']] for v in its[:1500]]
         wr('anime.json', {'at': A['at'], 'cfg': cfg, 'r': rows}); out['anime'] = (len(rows), [(r[1] or r[2], r[16]) for r in rows[:12]])
@@ -6871,9 +6894,9 @@ def watch_data():
         alias = {g: [t for t in tc if g in t] + ([g] if g not in tc else []) for g in top}
         alias['감성적인'] = ['감성적인', '감성']; alias['시리어스'] = ['시리어스']
         cfg = {'genres': [[g, g] for g in top], 'gl': {}, 'alias': alias,
-               'moods': [mood('love', '💕', '설레고 싶어요', ['로맨스', '설렘폭발', '러브코미디', '리얼로맨스'], ['사랑', '연애']), mood('fun', '😂', '웃고 싶어요', ['개그', '러브코미디', '일상'], []), mood('tense', '😱', '긴장감 있게', ['스릴러', '시리어스', '자극적인'], ['죽음', '복수', '살인']),
-                         mood('cry', '😢', '감동받고 싶어요', ['감성적인', '가족', '우정', '성장물', '드라마'], ['가족', '상처']), mood('heal', '🍵', '편하게 힐링', ['일상', '감성적인', '청춘'], []), mood('fight', '⚔️', '신나게 싸움', ['액션', '액션판타지', '무협/사극', '이능력', '사이다'], ['능력', '던전', '헌터'])],
-               'modes': [{'k': 'any', 'e': '🎲', 'label': '상관없어요'}, {'k': 'ongoing', 'e': '📆', 'label': '연재 중(매주 보기)'}, {'k': 'finished', 'e': '✅', 'label': '완결(몰아보기)'}]}
+               'moods': [mood('love', '💕', '설레고 싶어', ['로맨스', '설렘폭발', '러브코미디', '리얼로맨스'], ['사랑', '연애']), mood('fun', '😂', '웃고 싶어', ['개그', '러브코미디', '일상'], []), mood('tense', '😱', '긴장감 있게', ['스릴러', '시리어스', '자극적인'], ['죽음', '복수', '살인']),
+                         mood('cry', '😢', '감동받고 싶어', ['감성적인', '가족', '우정', '성장물', '드라마'], ['가족', '상처']), mood('heal', '🍵', '편하게 힐링', ['일상', '감성적인', '청춘'], []), mood('fight', '⚔️', '신나게 싸움', ['액션', '액션판타지', '무협/사극', '이능력', '사이다'], ['능력', '던전', '헌터'])],
+               'modes': [{'k': 'any', 'e': '🎲', 'label': '상관없어'}, {'k': 'ongoing', 'e': '📆', 'label': '연재 중(매주 보기)'}, {'k': 'finished', 'e': '✅', 'label': '완결(몰아보기)'}]}
         rows = [[v['id'], v['n'], v['a'], v['th'], v['tags'], v.get('kw') or [], round(v.get('sc') or 0, 2), v.get('fav') or 0, 1 if v['fin'] else 0, v['days'], v.get('age', ''), 0, v.get('pub', '')] for v in its[:1800]]
         wr('webtoon.json', {'at': Wt['at'], 'cfg': cfg, 'r': rows}); out['webtoon'] = (len(rows), [(r[1], f'https://comic.naver.com/webtoon/list?titleId={r[0]}') for r in rows[:12]])
     return out
@@ -6889,11 +6912,11 @@ def watch_pages():
         if k in D:
             ssr += f'<section class="mg-s"><h2>{nm} 인기작</h2><ul class="fr-rel">' + ''.join(f'<li><a href="{E(u)}" target="_blank" rel="noopener nofollow">{E(n)}</a></li>' for n, u in D[k][1]) + '</ul></section>'
     cnt = ' · '.join(f'{nm} {D[k][0]:,}편' for k, nm in (('webtoon', '웹툰'), ('anime', '애니')) if k in D)
-    page('/watch/', '웹툰·애니 추천 — 장르만 고르면 오늘의 추천', f'장르만 고르면 웹툰과 애니 중 그 장르에 맞는 작품을 오늘의 추천으로 골라 드려요. 기분·길이·본 작품을 더하면 더 정확해져요 ({cnt}).',
+    page('/watch/', '웹툰·애니 추천 — 장르만 고르면 오늘의 추천', f'장르만 고르면 웹툰과 애니 중 그 장르에 맞는 작품을 오늘의 추천으로 골라 줘. 기분·길이·본 작품을 더하면 더 정확해져 ({cnt}).',
          '<p class="bc"><a href="/">홈</a> › 웹툰·애니 추천</p><h1>🎯 웹툰·애니 추천</h1>'
-         f'<p class="lead" style="display:block">장르만 고르면 바로 오늘의 추천이 나와요. 기분·길이·재밌게 본 작품을 더하면 줄거리 키워드와 비슷한 작품 관계까지 반영해요. 지금 {cnt}을 모아 뒀어요.</p>'
-         '<div id="watch"><div class="wt-sk" aria-hidden="true"><i class="a"></i><i class="b"></i><i></i><i></i><i></i></div><p class="note wt-skn">추천을 준비하고 있어요…</p><noscript><style>.wt-sk,.wt-skn{display:none}</style>자바스크립트를 켜면 설문 추천을 쓸 수 있어요.</noscript></div>' + ssr
-         + '<p class="wt-foot">웹툰 정보는 네이버웹툰 공개 목록, 애니 정보는 AniList 공개 데이터를 모아 정리했어요. 작품의 표지·제목에 대한 권리는 각 작가·제작사·서비스에 있고, 이 페이지는 작품을 소개하고 원본 서비스로 연결해요. 줄거리 원문은 저장하지 않고 핵심 낱말만 추천 계산에 써요. 설문 선택값은 개인 식별 없이 장르 선호 집계에만 써요.</p>'
+         f'<p class="lead" style="display:block">장르만 고르면 바로 오늘의 추천이 나와. 기분·길이·재밌게 본 작품을 더하면 줄거리 키워드와 비슷한 작품 관계까지 반영해. 지금 {cnt}을 모아 뒀어.</p>'
+         '<div id="watch"><div class="wt-sk" aria-hidden="true"><i class="a"></i><i class="b"></i><i></i><i></i><i></i></div><p class="note wt-skn">추천을 준비하고 있어…</p><noscript><style>.wt-sk,.wt-skn{display:none}</style>자바스크립트를 켜면 설문 추천을 쓸 수 있어.</noscript></div>' + ssr
+         + '<p class="wt-foot">웹툰 정보는 네이버웹툰 공개 목록, 애니 정보는 AniList 공개 데이터를 모아 정리했어. 작품의 표지·제목에 대한 권리는 각 작가·제작사·서비스에 있고, 이 페이지는 작품을 소개하고 원본 서비스로 연결해. 줄거리 원문은 저장하지 않고 핵심 낱말만 추천 계산에 써. 설문 선택값은 개인 식별 없이 장르 선호 집계에만 써.</p>'
          '<link rel="stylesheet" href="/assets/watch/watch.css?v=3"><script defer src="/assets/watch/watch.js?v=4"></script>',
          [('루리 줍줍', '/'), ('웹툰·애니 추천', '/watch/')])
     return ['/watch/']
@@ -6902,52 +6925,52 @@ def watch_pages():
 def app_page():
     # 루리 줍줍 앱(PWA) 설치 + 공모전 알림 (2026-10-18 사용자: 앱도 사이트 안에서 배포, 공모전 알림, 웹푸시, 메일)
     cats = json.dumps([[sl, n, CAT_ICON.get(n, '🧩')] for sl, n in CATS], ensure_ascii=False)
-    faq = [('앱은 어디서 받아요?', '이 페이지에서 바로 설치돼요. 플레이스토어·앱스토어를 거치지 않는 웹앱이라 용량이 거의 없고, 늘 최신 공모전이 보여요.'),
-           ('알림은 얼마나 자주 와요?', '메뉴 추천은 점심(11시 20분쯤)과 저녁(5시 20분쯤) 하루 2번이에요. 공모전은 저녁 7시쯤 관심 분야 새 공모전을 모아서, 아침 9시쯤 인기 공모전 마감 3일 전 소식을 보내요. 새 공모전이 없는 날은 안 와요. 항목마다 따로 끌 수 있어요.'),
-           ('가입해야 해요?', '폰 알림은 가입 없이 바로 켤 수 있어요. 찜한 공모전 마감 메일은 회원만 받을 수 있어요.'),
-           ('아이폰도 돼요?', 'iOS 16.4 이상 사파리에서 홈 화면에 추가한 뒤, 홈 화면의 루리 줍줍 앱을 열어 알림을 켜면 돼요.'),
-           ('알림을 끄고 싶어요.', '이 페이지에서 「알림 끄기」를 누르거나, 폰 설정 → 알림에서 루리 줍줍(또는 sungprofile.cloud)을 끄면 돼요.')]
-    body = f'''<p class="bc"><a href="/">홈</a> › 앱·알림</p><h1>📲 오늘 뭐 먹지 앱 · 루리 줍줍</h1>
-{say("o_present", "홈 화면에 앱을 깔면 열 때마다 오늘 메뉴를 골라 드려요. 점심·저녁 메뉴 알림도 켤 수 있고, 새 공모전·마감 소식도 같이 챙겨 드려요!")}
+    faq = [('앱은 어디서 받아?', '이 페이지에서 바로 설치돼. 플레이스토어·앱스토어 안 거치는 웹앱이라 용량이 거의 없고, 늘 최신 정보가 보여.'),
+           ('알림은 얼마나 자주 와?', '새 소식은 저녁 7시쯤 모아서 보내고, 마감 임박 소식은 아침 9시쯤 보내. 공모전은 저녁 7시쯤 관심 분야 새 공모전을 모아서, 아침 9시쯤 인기 공모전 마감 3일 전 소식을 보내. 새 공모전이 없는 날은 안 와. 항목마다 따로 끌 수 있어.'),
+           ('가입해야 해?', '폰 알림은 가입 없이 바로 켤 수 있어. 찜한 공모전 마감 메일은 회원만 받을 수 있어.'),
+           ('아이폰도 돼?', 'iOS 16.4 이상 사파리에서 홈 화면에 추가한 뒤, 홈 화면의 루리 줍줍 앱을 열어 알림을 켜면 돼.'),
+           ('알림을 끄고 싶어.', '이 페이지에서 「알림 끄기」를 누르거나, 폰 설정 → 알림에서 루리 줍줍(또는 sungprofile.cloud)을 끄면 돼.')]
+    body = f'''<p class="bc"><a href="/">홈</a> › 앱·알림</p><h1>📲 오늘 뭐하지 앱 · 가난한 박과장</h1>
+{say("o_present", "홈 화면에 깔아. 시험 일정이랑 마감 소식은 내가 챙겨 줄게.")}
 <section id="app-page" data-cats='{E(cats)}'>
-<div class="ap-hero"><img src="/assets/icons/icon-192.png" alt="루리 줍줍 앱 아이콘" width="72" height="72"><div><b>루리 줍줍</b><span>시간·날씨·냉장고 재료로 오늘 메뉴 추천 · 공모전·지원금 알림 · 무료</span></div></div>
-<div class="ap-card ap-feat"><ul><li>🍽️ <b>오늘 뭐 먹지?</b> 앱을 열면 지금 시간·날씨에 맞는 메뉴를 먼저 보여 줘요</li><li>🧊 냉장고 재료만 고르면 지금 만들 수 있는 메뉴를 찾아 줘요</li><li>⭐ 마음에 든 메뉴는 찜, 별로인 메뉴는 👎 — 다음 추천에 반영돼요</li><li>📴 한 번 본 메뉴·사진은 인터넷이 약해도 열려요</li></ul></div>
+<div class="ap-hero"><img src="/assets/icons/icon-192.png" alt="루리 줍줍 앱 아이콘" width="72" height="72"><div><b>오늘 뭐하지</b><span>오늘 할 자기개발 · 시험 일정 · 마감 알림 · 무료</span></div></div>
+<div class="ap-card ap-feat"><ul><li>📚 앱을 열면 <b>오늘 뭐하지?</b> — 오늘 할 자기개발 거리를 보여 줘</li><li>📅 시험 접수·시험일·발표일 알림을 받아</li><li>🏆 새 공모전·마감 임박 소식도 같이 와</li><li>📴 한 번 본 글은 인터넷이 약해도 열려</li></ul></div>
 <h2>1. 앱 설치</h2><div class="ap-card ap-inst"><p class="ap-sm">불러오는 중…</p></div>
-<h2>2. 폰 알림 (메뉴 추천 · 공모전)</h2><div class="ap-card ap-push"><p class="ap-sm">불러오는 중…</p></div>
+<h2>2. 폰 알림 (시험·공모전 소식)</h2><div class="ap-card ap-push"><p class="ap-sm">불러오는 중…</p></div>
 <h2>3. 메일 알림</h2><div class="ap-card ap-mail"><p class="ap-sm">불러오는 중…</p></div>
 <h2>자주 묻는 질문</h2><div class="ap-card ap-faq">{"".join(f"<details><summary>{E(q)}</summary><p>{E(a)}</p></details>" for q, a in faq)}</div>
-</section><p class="note">알림을 켜면 브라우저가 만든 알림 주소와 고른 분야만 저장해요. 이름·전화번호는 받지 않아요. 알림을 끄면 바로 지워져요.</p>
+</section><p class="note">알림을 켜면 브라우저가 만든 알림 주소와 고른 분야만 저장해. 이름·전화번호는 받지 않아. 알림을 끄면 바로 지워져.</p>
 <link rel="stylesheet" href="/assets/app/app.css?v=2">'''
-    page('/app/', '오늘 뭐 먹지 앱 설치 — 시간·날씨·냉장고 재료로 메뉴 추천, 무료', '홈 화면에 설치하면 시간·날씨·냉장고 재료에 맞는 메뉴를 추천해 줘요. 점심·저녁 메뉴 알림과 새 공모전 소식도 받고, 무료·가입 없이 쓸 수 있어요.',
-         body, [('루리 줍줍', '/'), ('앱·알림', '/app/')])
+    page('/app/', '오늘 뭐하지 앱 설치 — 오늘 할 자기개발·시험 일정 알림, 무료', '홈 화면에 설치하면 오늘 할 자기개발 정보와 시험 일정·마감 소식을 알려 줘. 무료·가입 없이 쓸 수 있어.',
+         body, [('가난한 박과장', '/'), ('앱·알림', '/app/')])
 
 
 FR_SUB = {'돼지고기': '소고기나 닭고기', '소고기': '돼지고기', '닭고기': '돼지고기', '스팸': '햄이나 소시지', '햄': '스팸이나 소시지', '소시지': '햄이나 스팸', '국수': '라면 사리',
-          '파스타면': '국수', '애호박': '가지나 양배추', '양배추': '배추', '두부': '달걀', '참치캔': '스팸', '대파': '양파', '고추장': '고춧가루 조금 더', '김치': '볶은 양배추(맛은 달라져요)',
-          '오징어': '새우', '새우': '오징어', '당면': '국수', '떡': '어묵', '어묵': '맛살', '버섯': '애호박', '시금치': '부추나 깻잎', '감자': '고구마', '우유': '물(조금 묽어져요)'}
+          '파스타면': '국수', '애호박': '가지나 양배추', '양배추': '배추', '두부': '달걀', '참치캔': '스팸', '대파': '양파', '고추장': '고춧가루 조금 더', '김치': '볶은 양배추(맛은 달라져)',
+          '오징어': '새우', '새우': '오징어', '당면': '국수', '떡': '어묵', '어묵': '맛살', '버섯': '애호박', '시금치': '부추나 깻잎', '감자': '고구마', '우유': '물(조금 묽어져)'}
 
 
 def fr_tips(r, RS):
     """레시피마다 다른 팁(이름·재료·태그로 계산): 맵기 조절·대체 재료·보관·남은 재료 활용. 2026-10-19 상세 본문 보강."""
     n, L = r['n'], []
     if '매움' in r['t']:
-        L.append(f'{n}의 매운 양념은 적게 넣고 조절하세요. 설탕을 더한다고 매운 성분이 제거되지는 않으며, 김치·고추장 자체의 매운맛도 고려해야 해요.')
+        L.append(f'{n}의 매운 양념은 적게 넣고 조절해. 설탕을 더한다고 매운 성분이 제거되지는 않으며, 김치·고추장 자체의 매운맛도 고려해야 해.')
     elif '아이' in r['t'] or '안 매움' in r['t']:
-        L.append(f'{n}을 아이와 먹을 때는 양념의 염도와 재료의 알레르기를 따로 확인하세요. 안 매움 태그가 모든 연령에 적합하다는 뜻은 아니에요.')
+        L.append(f'{n}을 아이와 먹을 때는 양념의 염도와 재료의 알레르기를 따로 확인해. 안 매움 태그가 모든 연령에 적합하다는 뜻은 아니야.')
     sub = [(i, FR_SUB[i]) for i in r['need'] if i in FR_SUB][:2]
     for i, x in sub:
-        L.append(f'{i} 대신 {x}을(를) 쓰는 것은 대체 후보예요. 수분·염도·익는 시간이 달라 같은 분량과 조리시간을 그대로 적용하지 말고, 아래 만드는 법의 개별 안내를 우선하세요.')
+        L.append(f'{i} 대신 {x}을(를) 쓰는 것은 대체 후보야. 수분·염도·익는 시간이 달라 같은 분량과 조리시간을 그대로 적용하지 말고, 아래 만드는 법의 개별 안내를 우선해.')
     if re.search(r'국|찌개|탕|전골', n):
-        L.append(f'남은 {n}은(는) 큰 냄비째 실온에서 오래 식히지 말고 얕은 용기에 나누어 빠르게 냉장하세요. 다시 끓이는 것만으로 잘못 보관한 음식이 안전해지는 것은 아니에요.')
+        L.append(f'남은 {n}은(는) 큰 냄비째 실온에서 오래 식히지 말고 얕은 용기에 나누어 빠르게 냉장해. 다시 끓이는 것만으로 잘못 보관한 음식이 안전해지는 것은 아니야.')
     elif re.search(r'조림|볶음|무침|나물|장조림', n):
-        L.append(f'{n}의 보관 가능 기간은 재료와 냉각·보관 상태에 따라 달라요. 메뉴명만으로 며칠간 안전하다고 정할 수 없으니 바로 먹을 분량만 덜고 남은 음식은 빠르게 냉장하세요.')
+        L.append(f'{n}의 보관 가능 기간은 재료와 냉각·보관 상태에 따라 달라. 메뉴명만으로 며칠간 안전하다고 정할 수 없으니 바로 먹을 분량만 덜고 남은 음식은 빠르게 냉장해.')
     left = [i for i in r['opt'] if i not in r['need']][:3]
     other = {i: next((x for x in RS if x is not r and i in x['need']), None) for i in left}
     for i, x in other.items():
         if x:
-            L.append(f'{n} 만들고 {i}이(가) 남으면 「{x["n"]}」에 쓰면 좋아요.')
+            L.append(f'{n} 만들고 {i}이(가) 남으면 「{x["n"]}」에 쓰면 좋아.')
             break
-    L.append(f'표시된 {r["m"]}분은 예상 시간이에요. 손질 숙련도·재료 크기·화력에 따라 달라지므로 시간만 보지 말고 재료가 충분히 익었는지 확인하세요.')
+    L.append(f'표시된 {r["m"]}분은 예상 시간이야. 손질 숙련도·재료 크기·화력에 따라 달라지므로 시간만 보지 말고 재료가 충분히 익었는지 확인해.')
     return L
 
 
@@ -6976,7 +6999,7 @@ REC_TAGS = '<link rel="stylesheet" href="/assets/fridge/recommend.css?v=3"><scri
 
 
 def rec_pop():
-    """지금 많이 보는 메뉴(조회수·좋아요 상위 40). 방문자마다 D1 을 읽지 않도록 빌드가 시간마다 받아 정적 파일(rec_pop.json)로 둔다."""
+    """지금 많이 보는 메뉴(조회수·좋아 상위 40). 방문자마다 D1 을 읽지 않도록 빌드가 시간마다 받아 정적 파일(rec_pop.json)로 둔다."""
     import urllib.parse
     out = {}
     if not COMM_API:
@@ -7038,7 +7061,7 @@ def fridge_page():
         chips = ''.join(f'<a href="/fridge/h/{g[0]}/">{g[1]} {E(g[2])}</a>' for g in gs)
         return ('<section class="hl-box"><h2>🌿 건강하게 먹는 포인트</h2>' + (f'<p class="hl-chips">{chips}</p>' if chips else '')
                 + ('<ul>' + ''.join(f'<li>{E(x)}</li>' for x in pts) + '</ul>' if pts else '')
-                + '<p class="hl-note">재료와 조리 과정으로 나눈 참고용 설명이에요. 영양 수치는 공식 자료를 확인한 뒤에만 적을게요. 질환·알레르기가 있거나 식사 조절이 필요하면 의사·영양사와 상담하세요.</p></section>')
+                + '<p class="hl-note">재료와 조리 과정으로 나눈 참고용 설명이야. 영양 수치는 공식 자료를 확인한 뒤에만 적을게. 질환·알레르기가 있거나 식사 조절이 필요하면 의사·영양사와 상담해.</p></section>')
     FR_EN = _rd('assets/fridge/en.json') or {}   # 영문 보조 표기(본문 한 줄)
     shutil.rmtree(os.path.join(ROOT, 'fridge', 'r'), ignore_errors=True)
     lic = lambda c: (E(c.get('by') or '작가 미상')
@@ -7069,8 +7092,8 @@ def fridge_page():
         cat_ = FXT.cat(r['n'])
         rel = sorted([x for x in RS if x is not r and set(x['need']) & set(r['need'])], key=lambda x: -len(set(x['need'] + x['opt']) & set(r['need'] + r['opt'])))[:6]
         tags = ' '.join(f'#{t}' for t in r['t'])
-        tip = (f'필수 재료는 {", ".join(r["need"])} {len(r["need"])}가지이고, ' + (f'{", ".join(r["opt"][:4])} 같은 재료가 있으면 더 맛있어요. ' if r['opt'] else '')
-               + f'조리 시간은 약 {r["m"]}분, 난이도는 「{r["lv"]}」이에요. 기본양념({D["basic"]})은 집에 있다고 보고 적었어요.')
+        tip = (f'필수 재료는 {", ".join(r["need"])} {len(r["need"])}가지이고, ' + (f'{", ".join(r["opt"][:4])} 같은 재료가 있으면 더 맛있어. ' if r['opt'] else '')
+               + f'조리 시간은 약 {r["m"]}분, 난이도는 「{r["lv"]}」이야. 기본양념({D["basic"]})은 집에 있다고 보고 적었어.')
         _is_soup = bool(re.search(r'국|찌개|탕|전골|국밥', r['n']))
         tp = FX.tips(r, RS, FR_SUB, cat_, r['t']); sb = FX.subs(r, FR_SUB); kp = FX.keep(cat_); pr_ = FX.pairs(r, RS, FXT.cat, lambda n_: bool(pimg(n_)), 4)
         lvl = {'쉬움': '쉬움', '보통': '보통', '어려움': '어려움'}.get(r['lv'], r['lv'])
@@ -7078,7 +7101,7 @@ def fridge_page():
         sumbar = (f'<ul class="rp-sum"><li><i>⏱</i><b>{r["m"]}분</b><span>조리 시간</span></li><li><i>📊</i><b>{E(lvl)}</b><span>난이도</span></li>'
                   f'<li><i>🍽️</i><b data-serv-label>2인분</b><span>기준</span></li><li><i>🧺</i><b>{len(r["need"])}가지</b><span>필수 재료</span></li></ul>')
         servbar = ('<div class="rp-serv" role="group" aria-label="인분 선택"><span>인분</span><button type="button" data-s="1">1인분</button><button type="button" data-s="2" class="on">2인분</button><button type="button" data-s="4">4인분</button></div>'
-                   '<p class="rp-serv-note" hidden>양념·재료 분량(컵·큰술·개 등)을 인분에 맞춰 바꿨어요. 불 세기·시간은 그대로예요.</p>')
+                   '<p class="rp-serv-note" hidden>양념·재료 분량(컵·큰술·개 등)을 인분에 맞춰 바꿨어. 불 세기·시간은 그대로야.</p>')
         tipsec = ('<section class="rp-tips"><h2>💡 루리의 조리 포인트</h2><ul>' + ''.join(f'<li><b>{E(h_)}</b> {E(t_)}</li>' for h_, t_ in tp) + '</ul></section>') if tp else ''
         subsec = ''
         if sb or kp:
@@ -7095,19 +7118,19 @@ def fridge_page():
                 + '<div class="rp-acts"><button type="button" class="rp-cookbtn">🍳 요리 모드 <small>큰 글씨 · 음성 안내</small></button></div>'
                 + f'<p class="rp-intro">{E(tip)}</p>'
                 + health_box(r)
-                + f'<section class="rp-ing"><div class="rp-ih"><h2>🧺 재료</h2>{servbar}</div><div class="fr-ri"><div><h3>꼭 있어야 해요</h3><ul>{ingl(r["need"], True)}</ul></div>'
-                + (f'<div><h3>있으면 더 좋아요</h3><ul>{ingl(r["opt"])}</ul></div>' if r['opt'] else '') + '</div>'
-                + '<button type="button" class="rp-copy">🛒 없는 재료 장보기 목록 복사</button><p class="rp-hint">체크한 재료는 집에 있는 것으로 보고 빼 드려요.</p></section>'
-                + ('' if any(w in ' '.join(r['s']) and cp_tool_url(w) for w in CP_TOOLS) or (CP.get('widget_ids') or {}).get('밀키트') else cp_box('', '재료 사러 가기 번거로우면 이런 것도 있어요:', 1, fill='밀키트 레시피', want='밀키트'))
+                + f'<section class="rp-ing"><div class="rp-ih"><h2>🧺 재료</h2>{servbar}</div><div class="fr-ri"><div><h3>꼭 있어야 해</h3><ul>{ingl(r["need"], True)}</ul></div>'
+                + (f'<div><h3>있으면 더 좋아</h3><ul>{ingl(r["opt"])}</ul></div>' if r['opt'] else '') + '</div>'
+                + '<button type="button" class="rp-copy">🛒 없는 재료 장보기 목록 복사</button><p class="rp-hint">체크한 재료는 집에 있는 것으로 보고 빼 줘.</p></section>'
+                + ('' if any(w in ' '.join(r['s']) and cp_tool_url(w) for w in CP_TOOLS) or (CP.get('widget_ids') or {}).get('밀키트') else cp_box('', '재료 사러 가기 번거로우면 이런 것도 있어:', 1, fill='밀키트 레시피', want='밀키트'))
                 + f'<section class="rp-steps"><div class="rp-sh"><h2>👩‍🍳 {E(r["n"])} {"맛있게 끓이는 방법" if _is_soup else "맛있게 만드는 방법"}</h2><button type="button" class="rp-cookbtn rp-needtts ghost">🔊 한 단계씩 듣기</button></div><ol class="fr-rs">{steps}</ol></section>'
-                + (cp_widget(cp_recipe_widget(r), 'recipe', ('밑줄 친 도구 이름과 위 상품은 쿠팡 파트너스 링크로, ' if cpu else '') + '이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.') or (CP_IN_NOTE if cpu else ''))
+                + (cp_widget(cp_recipe_widget(r), 'recipe', ('밑줄 친 도구 이름과 위 상품은 쿠팡 파트너스 링크로, ' if cpu else '') + '이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받다.') or (CP_IN_NOTE if cpu else ''))
                 + (f'<p class="note">영문: {E(FR_EN[r["n"]])} recipe</p>' if FR_EN.get(r['n']) else '')
                 + tipsec + subsec + pairsec
                 + share_bar(f'{r["n"]} 만드는 법', f'{r["n"]} 만드는 법 — 재료 {len(r["need"])}가지로 {r["m"]}분')
-                + f'<a class="lab-cta" href="/fridge/"><b>🍳 내 냉장고 재료로 다른 메뉴 찾기</b><span>재료를 고르면 지금 만들 수 있는 메뉴를 골라 드려요 · 레시피 {NR}개 →</span></a>' + join_cta('recipe')
+                + f'<a class="lab-cta" href="/fridge/"><b>🍳 내 냉장고 재료로 다른 메뉴 찾기</b><span>재료를 고르면 지금 만들 수 있는 메뉴를 골라 줘 · 레시피 {NR}개 →</span></a>' + join_cta('recipe')
                 + relsec
                 + (f'<details class="fr-cr"><summary>사진 출처</summary><p>{"<br>".join(cr)}</p></details>' if cr else '')
-                + '<p class="note">직접 조리 시험을 완료한 레시피로 소개하지 않습니다. 분량이 적힌 메뉴는 해당 분량을 우선하고, 분량이 없는 메뉴는 재현성 보완이 필요한 조리 아이디어입니다. 시간은 예상값이며 사진은 직접 조리 결과를 보증하지 않습니다. 보관 시에는 <a href="https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/leftovers-and-food-safety">USDA의 남은 음식 안전 안내</a>처럼 얕은 용기에 나누어 신속히 냉장하세요. 일반적인 부패하기 쉬운 음식은 실온 2시간 이내, 32℃를 넘는 더운 환경은 1시간 이내가 기준이며 이미 오래 방치한 음식은 재가열로 해결하지 않습니다. 이는 모든 메뉴의 보관 일수를 보증하는 안내가 아닙니다. 안전 안내 확인: 2026-10-20.</p></article>'
+                + '<p class="note">직접 조리 시험을 완료한 레시피로 소개하지 않다. 분량이 적힌 메뉴는 해당 분량을 우선하고, 분량이 없는 메뉴는 재현성 보완이 필요한 조리 아이디어이다. 시간은 예상값이며 사진은 직접 조리 결과를 보증하지 않다. 보관 시에는 <a href="https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/leftovers-and-food-safety">USDA의 남은 음식 안전 안내</a>처럼 얕은 용기에 나누어 신속히 냉장해. 일반적인 부패하기 쉬운 음식은 실온 2시간 이내, 32℃를 넘는 더운 환경은 1시간 이내가 기준이며 이미 오래 방치한 음식은 재가열로 해결하지 않다. 이는 모든 메뉴의 보관 일수를 보증하는 안내가 아니다. 안전 안내 확인: 2026-10-20.</p></article>'
                 + '<link rel="stylesheet" href="/assets/fridge/fridge.css?v=14"><link rel="stylesheet" href="/assets/fridge/recipe.css?v=7"><link rel="stylesheet" href="/assets/fridge/health.css?v=2"><script defer src="/assets/fridge/recipe.js?v=5"></script>')
         def how_step(k, t):
             nm = re.split(r'[,.]', t)[0].strip()[:45] or f'{k}단계'
@@ -7128,7 +7151,7 @@ def fridge_page():
         if rt:
             ld['aggregateRating'] = {'@type': 'AggregateRating', 'ratingValue': rt['avg'], 'ratingCount': rt['n'], 'bestRating': 5, 'worstRating': 1}
         how = '끓이는 법 · 레시피' if re.search(r'국|찌개|탕|전골|국밥', r['n']) else '만드는 법 · 양념장' if re.search(r'조림|무침', r['n']) else '만드는 법 · 레시피'   # 2026-10-19 검색 시나리오
-        page(u, f'{r["n"]} {how} — 재료·순서 총정리, {r["m"]}분 완성', f'{r["n"]} 만드는 법: 재료는 {", ".join((r["need"] + r["opt"][:3])[:6])}, 조리 시간 {r["m"]}분. 단계별 순서와 재료가 비슷한 메뉴까지 정리했어요.',
+        page(u, f'{r["n"]} {how} — 재료·순서 총정리, {r["m"]}분 완성', f'{r["n"]} 만드는 법: 재료는 {", ".join((r["need"] + r["opt"][:3])[:6])}, 조리 시간 {r["m"]}분. 단계별 순서와 재료가 비슷한 메뉴까지 정리했어.',
              body, [('루리 줍줍', '/'), ('냉장고 파먹기', '/fridge/'), (r['n'], u)], ld)
         urls.append(u)
     # 2026-10-20 원본 정제: 같은 메뉴가 띄어쓰기만 다르게 두 번 있던 것을 합침 — 옛 주소는 새 주소로 안내(검색 색인 중복 방지)
@@ -7137,39 +7160,39 @@ def fridge_page():
     for old, new in ALIAS.items():
         if new in live_names and old not in live_names:
             uo, un = f'/fridge/r/{fr_slug(old)}/', f'/fridge/r/{fr_slug(new)}/'
-            page(uo, f'{old} → {new} 레시피로 이동', f'{old} 레시피는 {new} 레시피로 합쳤어요.',
-                 f'<p class="bc"><a href="/">홈</a> › <a href="/fridge/">냉장고 파먹기</a></p><h1>{E(old)} → {E(new)} 레시피로 합쳤어요</h1>'
+            page(uo, f'{old} → {new} 레시피로 이동', f'{old} 레시피는 {new} 레시피로 합쳤어.',
+                 f'<p class="bc"><a href="/">홈</a> › <a href="/fridge/">냉장고 파먹기</a></p><h1>{E(old)} → {E(new)} 레시피로 합쳤어</h1>'
                  f'<p><a href="{un}">{E(new)} 레시피 보기 →</a></p><meta http-equiv="refresh" content="0; url={un}">', noindex=True, canon=un)
     allr = ''.join(f'<li><a href="/fridge/r/{fr_slug(r["n"])}/">{r["e"]} {E(r["n"])}</a></li>' for r in sorted(RS, key=lambda r: r['n']))
     import fridge_today as FT
     n_rec, n_ph = rec_build(RS, PR)
     print('추천 데이터', n_rec, '메뉴 · 사진 있는 메뉴', n_ph)
-    ssr = lambda L, note='': '<ul class="rec-ssr">' + ''.join(f'<li><a href="/fridge/r/{fr_slug(x["n"])}/">{x["e"]} {E(x["n"])} <small>{x["m"]}분 · {E(x["lv"])}</small></a></li>' for x in L) + '</ul>' + (f'<p class="note rec-load">추천을 준비하고 있어요…</p><div class="rec-sk" aria-hidden="true"><i></i><i></i><i></i><i></i></div><noscript><style>.rec-load,.rec-sk{{display:none}}.rec-ssr{{position:static;width:auto;height:auto;overflow:visible}}</style><p class="note">{note}</p></noscript>' if note else '')
+    ssr = lambda L, note='': '<ul class="rec-ssr">' + ''.join(f'<li><a href="/fridge/r/{fr_slug(x["n"])}/">{x["e"]} {E(x["n"])} <small>{x["m"]}분 · {E(x["lv"])}</small></a></li>' for x in L) + '</ul>' + (f'<p class="note rec-load">추천을 준비하고 있어…</p><div class="rec-sk" aria-hidden="true"><i></i><i></i><i></i><i></i></div><noscript><style>.rec-load,.rec-sk{{display:none}}.rec-ssr{{position:static;width:auto;height:auto;overflow:visible}}</style><p class="note">{note}</p></noscript>' if note else '')
     li = lambda L: '<ul class="fr-rel">' + ''.join(f'<li><a href="/fridge/r/{fr_slug(x["n"])}/">{x["e"]} {E(x["n"])} <small>{x["m"]}분 · {E(x["lv"])}</small></a></li>' for x in L) + '</ul>'
     TD = _rd('assets/fridge/today.json') or {}
-    W = [('rainy', '☔ 비 오는 날', '비 오는 날엔 국물이나 전이 당겨요. 부침개는 기름 소리가 빗소리 같아서라는 말도 있죠.', ('국물', '전')),
-         ('cold', '🧣 쌀쌀한 날', '기온이 뚝 떨어진 날엔 뜨끈한 국물과 조림이 좋아요.', ('국물', '조림')),
-         ('hot', '☀️ 더운 날', '더운 날엔 불 앞에 오래 서지 않는 면·비빔·무침이 좋아요.', ('면', '반찬')),
+    W = [('rainy', '☔ 비 오는 날', '비 오는 날엔 국물이나 전이 당겨. 부침개는 기름 소리가 빗소리 같아서라는 말도 있죠.', ('국물', '전')),
+         ('cold', '🧣 쌀쌀한 날', '기온이 뚝 떨어진 날엔 뜨끈한 국물과 조림이 좋아.', ('국물', '조림')),
+         ('hot', '☀️ 더운 날', '더운 날엔 불 앞에 오래 서지 않는 면·비빔·무침이 좋아.', ('면', '반찬')),
          ('gap', '🌗 일교차 큰 날', '아침저녁으로 쌀쌀한 날엔 저녁에 따뜻한 국 한 그릇.', ('국물', '밥'))]
     secs = ''.join(f'<section class="mg-s" id="{k}"><h2>{t}</h2><p>{E(d_)}</p>' + li([x for x in RS if FT.cat(x['n']) in cs][:10]) + '</section>' for k, t, d_, cs in W)
-    page('/fridge/weather/', '비 오는 날 음식 추천 — 날씨별 오늘 메뉴(쌀쌀한 날·더운 날)', '비 오는 날·쌀쌀한 날·더운 날·일교차 큰 날에 어울리는 집밥 메뉴를 날씨별로 모았어요. 매시간 서울 날씨로 오늘의 메뉴 3개도 골라 드려요.',
+    page('/fridge/weather/', '비 오는 날 음식 추천 — 날씨별 오늘 메뉴(쌀쌀한 날·더운 날)', '비 오는 날·쌀쌀한 날·더운 날·일교차 큰 날에 어울리는 집밥 메뉴를 날씨별로 모았어. 매시간 서울 날씨로 오늘의 메뉴 3개도 골라 줘.',
          f'<p class="bc"><a href="/">홈</a> › <a href="/fridge/">냉장고 파먹기</a> › 날씨별 메뉴</p><h1>🌤️ 날씨별 오늘 메뉴 — 비 오는 날·쌀쌀한 날·더운 날</h1>'
          + (f'<p class="cat-st">📌 오늘 {E(TD.get("place", "서울"))} {round(TD.get("t", 0))}도 · {E(TD.get("why", ""))} → ' + ', '.join(f'<a href="/fridge/r/{fr_slug(n)}/">{E(n)}</a>' for n in TD.get('picks', [])) + f' <small>({E(TD.get("at", ""))} 기준, Open-Meteo)</small></p>' if TD.get('picks') else '')
-         + '<div data-rec="weather" data-n="8">' + ssr([x for x in RS if x['n'] in set(TD.get('picks', []))][:3], '자바스크립트를 켜면 오늘 날씨와 시간에 맞춰 골라 드려요.') + '</div>'
+         + '<div data-rec="weather" data-n="8">' + ssr([x for x in RS if x['n'] in set(TD.get('picks', []))][:3], '자바스크립트를 켜면 오늘 날씨와 시간에 맞춰 골라 줘.') + '</div>'
          + '<details class="fr-all"><summary>📚 날씨별 전체 메뉴 보기</summary>' + secs + '</details>' + REC_TAGS + FOLD_TAGS
          + '<a class="lab-cta" href="/fridge/"><b>🍳 내 냉장고 재료로 찾기</b><span>있는 재료를 고르면 지금 만들 수 있는 메뉴부터 →</span></a><link rel="stylesheet" href="/assets/fridge/fridge.css?v=12">',
          [('루리 줍줍', '/'), ('냉장고 파먹기', '/fridge/'), ('날씨별 메뉴', '/fridge/weather/')])
     SOLO = sorted([x for x in RS if len(x['need']) <= 3 and x['m'] <= 20], key=lambda x: (x['m'], len(x['need'])))
     page('/fridge/solo/', f'자취 요리 추천 — 재료 3개 이하·20분 안에 ({len(SOLO)}가지)', f'자취 요리 추천: 꼭 필요한 재료 3개 이하, 20분 안에 끝나는 1인분 집밥 {len(SOLO)}가지. 설거지 적은 메뉴와 남은 재료 활용까지.',
          f'<p class="bc"><a href="/">홈</a> › <a href="/fridge/">냉장고 파먹기</a> › 자취 요리</p><h1>🏠 자취 요리 추천 — 재료 3개 이하·20분 ({len(SOLO)}가지)</h1>'
-         '<p>자취방 냉장고에 흔한 달걀·김치·스팸·라면으로 만들 수 있는 메뉴부터 골랐어요. 모두 꼭 필요한 재료가 3개 이하이고, 20분 안에 끝나요. 기본양념(간장·설탕·식용유 등)은 있다고 봤어요.</p>'
-         + '<div data-rec="solo" data-n="8">' + ssr(SOLO[:5], '자바스크립트를 켜면 지금 시간에 맞춰 골라 드려요.') + '</div>'
+         '<p>자취방 냉장고에 흔한 달걀·김치·스팸·라면으로 만들 수 있는 메뉴부터 골랐어. 모두 꼭 필요한 재료가 3개 이하이고, 20분 안에 끝나. 기본양념(간장·설탕·식용유 등)은 있다고 봤어.</p>'
+         + '<div data-rec="solo" data-n="8">' + ssr(SOLO[:5], '자바스크립트를 켜면 지금 시간에 맞춰 골라 줘.') + '</div>'
          + f'<details class="fr-all"><summary>📚 자취 요리 전체 {len(SOLO)}가지 보기</summary>' + li(SOLO).replace('<ul class="fr-rel">', '<ul class="fr-rel" data-fold="20" data-step="40">', 1) + '</details>' + REC_TAGS + FOLD_TAGS
-         + '<a class="lab-cta" href="/fridge/"><b>🍳 내 냉장고 재료로 찾기</b><span>「설거지 적게」 조건도 고를 수 있어요 →</span></a><link rel="stylesheet" href="/assets/fridge/fridge.css?v=12">',
+         + '<a class="lab-cta" href="/fridge/"><b>🍳 내 냉장고 재료로 찾기</b><span>「설거지 적게」 조건도 고를 수 있어 →</span></a><link rel="stylesheet" href="/assets/fridge/fridge.css?v=12">',
          [('루리 줍줍', '/'), ('냉장고 파먹기', '/fridge/'), ('자취 요리', '/fridge/solo/')])
-    page('/fridge/plan/', '주간 식단표·장보기 목록 — 메뉴 담으면 재료 한 번에 정리', '이번 주 먹을 메뉴를 담으면 필요한 재료를 한데 모아 장보기 목록으로 만들어 드려요. 체크·복사·인쇄까지.',
+    page('/fridge/plan/', '주간 식단표·장보기 목록 — 메뉴 담으면 재료 한 번에 정리', '이번 주 먹을 메뉴를 담으면 필요한 재료를 한데 모아 장보기 목록으로 만들어 줘. 체크·복사·인쇄까지.',
          '<p class="bc"><a href="/">홈</a> › <a href="/fridge/">레시피</a> › 식단·장보기</p><h1>📅 주간 식단표 · 장보기</h1>'
-         '<p class="lead" style="display:block">먹고 싶은 메뉴를 담으면, 필요한 재료를 한데 모아 몇 가지 메뉴에 쓰이는지 보여 드려요. 이 브라우저에만 저장돼요.</p><div id="plan"><noscript>자바스크립트가 필요해요.</noscript></div>'
+         '<p class="lead" style="display:block">먹고 싶은 메뉴를 담으면, 필요한 재료를 한데 모아 몇 가지 메뉴에 쓰이는지 보여 줘. 이 브라우저에만 저장돼.</p><div id="plan"><noscript>자바스크립트가 필요해.</noscript></div>'
          '<link rel="stylesheet" href="/assets/fridge/plan.css?v=1"><script defer src="/assets/fridge/plan.js?v=1"></script>',
          [('루리 줍줍', '/'), ('레시피', '/fridge/'), ('식단·장보기', '/fridge/plan/')], noindex=True)
     urls += ['/fridge/weather/', '/fridge/solo/', '/fridge/plan/']
@@ -7184,8 +7207,8 @@ def fridge_page():
         ing_ = _co.Counter(g for x in L_ for g in x['need']).most_common(5)
         quick = [x for x in L_ if x['m'] <= 15]
         oth = ' · '.join(f'<a href="/fridge/c/{s2}/">{i2} {n2}</a>' for s2, k2, i2, n2, _ in FR_CATS if s2 != sl_ and len([y for y in RS if FT.cat(y['n']) == k2]) >= 10)
-        facts = (f'{nm_} 레시피 {len(L_)}가지를 조리 시간 짧은 순으로 모았어요. 가장 빠른 건 {L_[0]["n"]}({L_[0]["m"]}분)이고 평균 {sum(x["m"] for x in L_) / len(L_):.0f}분 걸려요. '
-                 f'이 분야에서 필수 재료로 가장 많이 쓰인 건 {", ".join(f"{g}({c}개)" for g, c in ing_)}예요.')
+        facts = (f'{nm_} 레시피 {len(L_)}가지를 조리 시간 짧은 순으로 모았어. 가장 빠른 건 {L_[0]["n"]}({L_[0]["m"]}분)이고 평균 {sum(x["m"] for x in L_) / len(L_):.0f}분 걸려. '
+                 f'이 분야에서 필수 재료로 가장 많이 쓰인 건 {", ".join(f"{g}({c}개)" for g, c in ing_)}야.')
         wk_ = 'cat-' + sl_
         bd = (f'<p class="bc"><a href="/">홈</a> › <a href="/fridge/">레시피</a> › {E(nm_)}</p><h1>{ic_} {E(nm_)} 레시피 모음 — {len(L_)}가지</h1><p class="cat-st">📌 {E(facts)}</p>'
               + f'<div data-rec="cat" data-cat="{E(key_)}" data-n="6">' + ssr(L_[:5]) + '</div>'
@@ -7212,36 +7235,36 @@ def fridge_page():
             continue
         ing_ = _co.Counter(g for x in L_ for g in x['need']).most_common(5)
         avg_ = sum(x['m'] for x in L_) / len(L_)
-        facts = (f'{gn} 기준에 맞는 레시피 {len(L_)}가지를 조리 시간이 짧은 순으로 모았어요. 가장 빠른 건 {L_[0]["n"]}({L_[0]["m"]}분), 평균 {avg_:.0f}분이에요. '
-                 f'이 목록에서 필수 재료로 많이 쓰인 건 {", ".join(f"{g}({c}개)" for g, c in ing_)}예요.')
+        facts = (f'{gn} 기준에 맞는 레시피 {len(L_)}가지를 조리 시간이 짧은 순으로 모았어. 가장 빠른 건 {L_[0]["n"]}({L_[0]["m"]}분), 평균 {avg_:.0f}분이야. '
+                 f'이 목록에서 필수 재료로 많이 쓰인 건 {", ".join(f"{g}({c}개)" for g, c in ing_)}야.')
         oth = ' · '.join(f'<a href="/fridge/h/{k2}/">{i2} {n2}</a>' for k2, i2, n2, _, _ in FH.GOALS if k2 != gk and len(HG[k2]) >= 10)
         bd = (f'<p class="bc"><a href="/">홈</a> › <a href="/fridge/">건강 레시피</a> › {E(gn)}</p><h1>{gi} {E(gn)} 집밥 레시피 — {len(L_)}가지</h1>'
               f'<p class="cat-st">📌 {E(facts)}</p>'
-              f'<section class="hl-why"><h2>어떤 기준으로 골랐나요?</h2><p>{E(gwhy)}</p><p>영양 성분표를 계산한 목록이 아니라 재료와 조리 과정만 보고 나눈 참고용 분류예요. 같은 메뉴도 양념과 먹는 양에 따라 달라지니, 식사 조절이 필요하면 의사·영양사와 상담하세요.</p></section>'
+              f'<section class="hl-why"><h2>어떤 기준으로 골랐나?</h2><p>{E(gwhy)}</p><p>영양 성분표를 계산한 목록이 아니라 재료와 조리 과정만 보고 나눈 참고용 분류야. 같은 메뉴도 양념과 먹는 양에 따라 달라지니, 식사 조절이 필요하면 의사·영양사와 상담해.</p></section>'
               f'<h2>먼저 해 먹어 볼 {E(gn)} 메뉴</h2>' + hl_cards(L_, 12)
               + f'<h2>전체 {E(gn)} 레시피 (조리 시간순)</h2>' + li(L_).replace('<ul class="fr-rel">', '<ul class="fr-rel" data-fold="15" data-step="30">', 1) + FOLD_TAGS
               + f'<p class="hm-links">다른 건강 목적: {oth}</p>'
-              + '<a class="lab-cta" href="/fridge/"><b>🧊 냉장고 재료로도 찾을 수 있어요</b><span>있는 재료를 고르면 지금 만들 수 있는 메뉴부터 →</span></a>'
+              + '<a class="lab-cta" href="/fridge/"><b>🧊 냉장고 재료로도 찾을 수 있어</b><span>있는 재료를 고르면 지금 만들 수 있는 메뉴부터 →</span></a>'
               + '<link rel="stylesheet" href="/assets/fridge/fridge.css?v=15"><link rel="stylesheet" href="/assets/fridge/health.css?v=2">')
         page(f'/fridge/h/{gk}/', f'{gn} 집밥 레시피 {len(L_)}가지 — {gline} ({YR})', f'{gn} 집밥 레시피 {len(L_)}가지. {gwhy}', bd,
              [('루리 줍줍', '/'), ('건강 레시피', '/fridge/'), (gn, f'/fridge/h/{gk}/')])
         urls.append(f'/fridge/h/{gk}/')
-    hl_grid = ('<section class="hl-grid" aria-label="건강 목적별 레시피"><h2>🌿 오늘은 어떻게 먹고 싶어요?</h2><div>'
+    hl_grid = ('<section class="hl-grid" aria-label="건강 목적별 레시피"><h2>🌿 오늘은 어떻게 먹고 싶어?</h2><div>'
                + ''.join(f'<a href="/fridge/h/{k}/"><b>{i} {E(n)}</b><span>{E(l)}</span><small>{len(HG[k])}가지</small></a>' for k, i, n, l, _ in FH.GOALS if len(HG[k]) >= 10)
-               + '</div><p class="hl-note">재료와 조리 과정으로 나눈 참고용 분류예요. 영양 수치는 공식 자료를 확인한 뒤에만 적어요.</p></section>')
-    page('/fridge/', f'건강 집밥 레시피 — 가볍게·단백질·채소 듬뿍 목적별로 고르기 (레시피 {NR}개)', f'가볍게, 단백질 챙기게, 채소 듬뿍, 기름 적게. 건강 목적별로 집밥 레시피 {NR}개를 고르고, 냉장고 재료로도 찾아요.',
+               + '</div><p class="hl-note">재료와 조리 과정으로 나눈 참고용 분류야. 영양 수치는 공식 자료를 확인한 뒤에만 적어.</p></section>')
+    page('/fridge/', f'건강 집밥 레시피 — 가볍게·단백질·채소 듬뿍 목적별로 고르기 (레시피 {NR}개)', f'가볍게, 단백질 챙기게, 채소 듬뿍, 기름 적게. 건강 목적별로 집밥 레시피 {NR}개를 고르고, 냉장고 재료로도 찾아.',
          f"""<p class="bc"><a href="/">홈</a> › 건강 레시피</p><h1>건강하게 먹는 집밥</h1>
 {hl_grid}<link rel="stylesheet" href="/assets/fridge/health.css?v=2">
 <h2 class="hl-h2">오늘 뭐 먹지?</h2>
-<div class="rec-tabs" data-rec-tabs role="tablist"><button type="button" data-t="rec-pane" data-g="시간·날씨·기분에 맞춰 지금 만들기 좋은 메뉴를 골라 드려요." class="on">🍽️ 메뉴 추천</button><button type="button" data-t="fridge" data-g="있는 재료를 고르면 지금 만들 수 있는 메뉴와, 재료 1개만 더 사면 되는 메뉴를 보여 드려요.">🧊 냉장고 재료로 찾기</button></div>
-<p class="rec-guide" id="rec-guide">시간·날씨·기분에 맞춰 지금 만들기 좋은 메뉴를 골라 드려요.</p>
-<section id="rec-pane" aria-label="오늘의 추천"><div data-rec="today" data-n="8">{ssr([x for x in RS if x['n'] in set(TD.get('picks', []))][:3], '자바스크립트를 켜면 시간·날씨에 맞춰 골라 드려요.')}</div></section>
-<section id="fridge" aria-label="냉장고 재료로 메뉴 추천" hidden><noscript><style>#fridge[hidden]{{display:block!important}}</style>자바스크립트가 필요해요. 아래 전체 레시피 목록에서 골라 보세요.</noscript></section>
+<div class="rec-tabs" data-rec-tabs role="tablist"><button type="button" data-t="rec-pane" data-g="시간·날씨·기분에 맞춰 지금 만들기 좋은 메뉴를 골라 줘." class="on">🍽️ 메뉴 추천</button><button type="button" data-t="fridge" data-g="있는 재료를 고르면 지금 만들 수 있는 메뉴와, 재료 1개만 더 사면 되는 메뉴를 보여 줘.">🧊 냉장고 재료로 찾기</button></div>
+<p class="rec-guide" id="rec-guide">시간·날씨·기분에 맞춰 지금 만들기 좋은 메뉴를 골라 줘.</p>
+<section id="rec-pane" aria-label="오늘의 추천"><div data-rec="today" data-n="8">{ssr([x for x in RS if x['n'] in set(TD.get('picks', []))][:3], '자바스크립트를 켜면 시간·날씨에 맞춰 골라 줘.')}</div></section>
+<section id="fridge" aria-label="냉장고 재료로 메뉴 추천" hidden><noscript><style>#fridge[hidden]{{display:block!important}}</style>자바스크립트가 필요해. 아래 전체 레시피 목록에서 골라 봐.</noscript></section>
 <p class="hm-more"><a href="/fridge/weather/">🌤️ 날씨별 메뉴</a> · <a href="/fridge/solo/">🏠 자취 요리</a> · <a href="/fridge/r/계란찜/">🥚 계란찜</a></p>
 <p class="hm-more">분류로 보기: {' · '.join(f'<a href="/fridge/c/{s2}/">{i2} {n2}</a>' for s2, k2, i2, n2, _ in FR_CATS if CATN.get(s2, 0) >= 10)}</p>
 {kin_ans_links('/fridge/q/')}
 <details class="fr-all"><summary>📚 전체 레시피 {NR}개 보기</summary><ul>{allr}</ul></details>
-<a class="lab-cta" href="/cat/food/"><b>🏆 요리·레시피 공모전</b><span>레시피 공모전·요리경연대회 모아 보기 · 상금 받고 요리 실력 뽐내기 →</span></a><p class="note">사진은 재료를 찾는 데만 쓰고 저장하지 않아요. 고른 재료는 이 폰에만 저장돼요. 알레르기가 있으면 재료를 꼭 다시 확인해 주세요.</p>
+<a class="lab-cta" href="/cat/food/"><b>🏆 요리·레시피 공모전</b><span>레시피 공모전·요리경연대회 모아 보기 · 상금 받고 요리 실력 뽐내기 →</span></a><p class="note">사진은 재료를 찾는 데만 쓰고 저장하지 않아. 고른 재료는 이 폰에만 저장돼. 알레르기가 있으면 재료를 꼭 다시 확인해 줘.</p>
 <link rel="stylesheet" href="/assets/fridge/fridge.css?v=15"><script defer src="/assets/fridge/fridge.js?v=16"></script><script defer src="/assets/fridge/ux.js?v=1"></script>{REC_TAGS}""", [('루리 줍줍', '/'), ('건강 레시피', '/fridge/')],
          {'@context': 'https://schema.org', '@type': 'ItemList', 'name': '건강 집밥 레시피', 'numberOfItems': NR, 'itemListElement': [{'@type': 'ListItem', 'position': k + 1, 'url': f'{SITE}/fridge/r/{fr_slug(r["n"])}/', 'name': r['n']} for k, r in enumerate(RS[:50])]})
     return urls
@@ -7257,8 +7280,8 @@ def qa_home():
 
 
 def qa_pages(live):
-    page('/qa/', '루리의 고민 해결', '청년 지원금, 진로, 공모전 준비까지 실제로 받은 고민에 루리가 답을 정리했어요.',
-         f'<p class="bc"><a href="/">홈</a> › 고민 해결</p><section class="dh" data-c="guide"><span class="ic big">💬</span><h1>루리의 고민 해결</h1></section>{say("o_cardigan", "실제로 받은 고민에 하나씩 답을 정리했어요. 비슷한 고민이면 골라 읽어 보세요!")}<ul class="list">{"".join(qa_card(q) for q in QA)}</ul>',
+    page('/qa/', '루리의 고민 해결', '청년 지원금, 진로, 공모전 준비까지 실제로 받은 고민에 루리가 답을 정리했어.',
+         f'<p class="bc"><a href="/">홈</a> › 고민 해결</p><section class="dh" data-c="guide"><span class="ic big">💬</span><h1>루리의 고민 해결</h1></section>{say("o_cardigan", "실제로 받은 고민에 하나씩 답을 정리했어. 비슷한 고민이면 골라 읽어 봐!")}<ul class="list">{"".join(qa_card(q) for q in QA)}</ul>',
          [('루리 줍줍', '/'), ('고민 해결', '/qa/')])
     rel = ''.join(card(c) for c in live[:4])
     for i, q in enumerate(QA):
@@ -7269,16 +7292,16 @@ def qa_pages(live):
 
 
 GUIDE_FAQ = {'unemployment-2026': [
-    ('실업급여 신청자격은 어떻게 되나요?', '이직 전 18개월 동안 고용보험 가입(피보험 단위기간)이 180일 이상이고, 권고사직·계약만료처럼 비자발적으로 퇴사했으며, 재취업 의사와 능력이 있어야 해요. 자진 퇴사도 임금 체불 같은 정당한 사유가 있으면 인정될 수 있어요.'),
-    ('실업급여는 하루에 얼마 받나요?', '퇴직 전 평균임금의 60%이고, 2026년 1월 1일 이후 이직하면 하루 상한 68,100원, 하한은 최저임금의 80%(8시간 기준 66,048원)예요.'),
-    ('실업급여는 며칠 동안 받나요?', '가입 기간과 나이에 따라 120일에서 270일이에요. 50세 미만은 120~240일, 50세 이상·장애인은 120~270일이에요.'),
-    ('실업급여 신청방법은요?', '고용24에서 구직 등록과 수급자격 신청자 교육을 마친 뒤 거주지 관할 고용센터에 수급자격 인정을 신청해요. 이직 다음 날부터 12개월 안에 신청해야 해요.')]}
+    ('실업급여 신청자격은 어떻게 되나?', '이직 전 18개월 동안 고용보험 가입(피보험 단위기간)이 180일 이상이고, 권고사직·계약만료처럼 비자발적으로 퇴사했으며, 재취업 의사와 능력이 있어야 해. 자진 퇴사도 임금 체불 같은 정당한 사유가 있으면 인정될 수 있어.'),
+    ('실업급여는 하루에 얼마 받나?', '퇴직 전 평균임금의 60%이고, 2026년 1월 1일 이후 이직하면 하루 상한 68,100원, 하한은 최저임금의 80%(8시간 기준 66,048원)야.'),
+    ('실업급여는 며칠 동안 받나?', '가입 기간과 나이에 따라 120일에서 270일이야. 50세 미만은 120~240일, 50세 이상·장애인은 120~270일이야.'),
+    ('실업급여 신청방법은?', '고용24에서 구직 등록과 수급자격 신청자 교육을 마친 뒤 거주지 관할 고용센터에 수급자격 인정을 신청해. 이직 다음 날부터 12개월 안에 신청해야 해.')]}
 
 
 def guides(live):
     li = ''.join(f'<li><a class="card" data-c="guide" href="/guide/{s}/"><span class="ic">📖</span><div class="cb"><h3 class="t">{E(t)}</h3><p class="o">{E(d)}</p></div></a></li>' for s, t, d, _ in GUIDES)
     page('/guide/', '공모전 응모 가이드', '공모전 처음 응모하는 법, 제안서 쓰는 법, 수기·문학 공모 요령, 상금 수령과 사칭 주의까지.',
-         f'<p class="bc"><a href="/">홈</a> › 응모 가이드</p><section class="dh" data-c="guide"><span class="ic big">📖</span><h1>공모전 응모 가이드</h1></section>{say("o_vest", "처음 응모한다면 1번부터 차근차근 읽어 보세요. 실수로 탈락하는 일이 확 줄어요!")}<ul class="list">{li}</ul>', [('루리 줍줍', '/'), ('응모 가이드', '/guide/')])
+         f'<p class="bc"><a href="/">홈</a> › 응모 가이드</p><section class="dh" data-c="guide"><span class="ic big">📖</span><h1>공모전 응모 가이드</h1></section>{say("o_vest", "처음 응모한다면 1번부터 차근차근 읽어 봐. 실수로 탈락하는 일이 확 줄어!")}<ul class="list">{li}</ul>', [('루리 줍줍', '/'), ('응모 가이드', '/guide/')])
     rel = ''.join(card(c) for c in live[:4])
     for s, t, d, b in GUIDES:
         fq = GUIDE_FAQ.get(s, [])   # 화면에 실제로 보이는 문답만 FAQPage 로 (2026-10-19)
@@ -7304,10 +7327,10 @@ def community(live=()):
     # 팀 만들 때 고르는 공모전 목록 (진행 중만)
     with open(os.path.join(ROOT, 'assets', 'community', 'contests.json'), 'w', encoding='utf-8', newline='\n') as f:
         json.dump([{'id': c['id'], 't': c['title'], 'e': c['end'], 'p': c.get('prize', ''), 'pv': c.get('pv', 0), 'g': (c.get('tags') or [''])[0], 'i': CAT_ICON.get((c.get('tags') or ['기타'])[0], '💗'), 'th': c.get('th', 0)} for c in live], f, ensure_ascii=False, separators=(',', ':'))
-    page('/community/', '공모전 원정대 · 커뮤니티', '공모전에 같이 나갈 사람을 찾는 루리 줍줍 원정대. 원정대를 꾸리고 대원을 모아요.',
+    page('/community/', '공모전 원정대 · 커뮤니티', '공모전에 같이 나갈 사람을 찾는 루리 줍줍 원정대. 원정대를 꾸리고 대원을 모아.',
          f'''<p class="bc"><a href="/">홈</a> › 커뮤니티</p><h1 class="vn-h1">🚩 공모전 원정대</h1>
 <section id="vn" aria-label="루리와 공모전 원정대 찾기"></section>
-<button class="btn2 cm-join-cta" hidden>무료 가입 · 로그인 (이메일만 있으면 돼요)</button>
+<button class="btn2 cm-join-cta" hidden>무료 가입 · 로그인 (이메일만 있으면 돼)</button>
 <div class="cm-tabs"><button data-k="team">🚩 전체 원정대</button><button data-k="crew">🙋 동료 찾기</button><button data-k="board">💬 후기·질문</button></div>
 <section id="cm-teams" data-all data-tab="team"></section>
 <section id="cm-crew" data-all data-tab="crew" hidden></section><section id="cm-board" data-all data-tab="board" hidden></section>
@@ -7317,8 +7340,8 @@ def community(live=()):
 def me_pages():
     """내 공간(가입 혜택 모음) · 관리자 (2026-10-17)"""
     page('/me/', '내 공간 — 찜·응모 기록·마감 알림', '찜한 공모전·청약, 응모 기록, 마감 알림 메일, 자격 프로필, 청약 가점 계산기를 한곳에서.',
-         '''<section id="me" aria-label="내 공간"></section>''' + (('<section class="me-sec"><h2>💬 톡방</h2><p class="note">공모전·지원금 마감 소식을 매일 나눠요.</p><p class="ft-c">' + comm_btns() + '</p></section>') if COMM_LINKS else '') + '''<link rel="stylesheet" href="/assets/me/me.css?v=3"><script defer src="/assets/me/me.js?v=5"></script>''', [('루리 줍줍', '/'), ('내 공간', '/me/')])
-    page('/login/', '로그인', '루리 줍줍 로그인 — 내 공간으로 이동해요.', '<p>내 공간으로 이동하고 있어요… <a href="/me/">이동하지 않으면 여기를 눌러 주세요</a></p><script>location.replace("/me/"+location.search+location.hash)</script>', noindex=True)   # 2026-10-19 /login/ 404 → 내 공간(로그인 화면 포함)
+         '''<section id="me" aria-label="내 공간"></section>''' + (('<section class="me-sec"><h2>💬 톡방</h2><p class="note">공모전·지원금 마감 소식을 매일 나눠.</p><p class="ft-c">' + comm_btns() + '</p></section>') if COMM_LINKS else '') + '''<link rel="stylesheet" href="/assets/me/me.css?v=3"><script defer src="/assets/me/me.js?v=5"></script>''', [('루리 줍줍', '/'), ('내 공간', '/me/')])
+    page('/login/', '로그인', '루리 줍줍 로그인 — 내 공간으로 이동해.', '<p>내 공간으로 이동하고 있어… <a href="/me/">이동하지 않으면 여기를 눌러 줘</a></p><script>location.replace("/me/"+location.search+location.hash)</script>', noindex=True)   # 2026-10-19 /login/ 404 → 내 공간(로그인 화면 포함)
     page('/admin/', '관리자', '관리자', '''<section id="admin"></section><section id="gsc-admin"></section><link rel="stylesheet" href="/assets/me/me.css?v=3"><script defer src="/assets/me/admin.js?v=7"></script>''', noindex=True)
 
 
@@ -7329,7 +7352,7 @@ def lab():
     if not r:
         return []
     cards, urls, D = r
-    page('/lab/', '루리의 수상 연구소 — 공모전 수상작 해설', f'슬로건·표어·네이밍 공모전 실제 수상작 {D["count"]}개를 한 편씩 구조·기법으로 해설했어요. 내 문구 진단도 해 드려요.',
+    page('/lab/', '루리의 수상 연구소 — 공모전 수상작 해설', f'슬로건·표어·네이밍 공모전 실제 수상작 {D["count"]}개를 한 편씩 구조·기법으로 해설했어. 내 문구 진단도 해 줘.',
          lab_pages.index_html(cards, D), [('루리 줍줍', '/'), ('수상 연구소', '/lab/')])
     return ['/lab/'] + urls
 

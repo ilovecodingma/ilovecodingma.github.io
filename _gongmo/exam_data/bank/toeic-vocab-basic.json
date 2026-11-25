@@ -1,0 +1,304 @@
+{
+ "id": "toeic-vocab-basic",
+ "name": "토익 비즈니스 어휘 기본",
+ "category": "어학",
+ "kind": "original",
+ "method": "original",
+ "analysis": "기출 접근 불가: 토익 정기시험 문제는 비공개이고 ETS 공식 샘플 테스트의 Part 5 문항 5개만 열람했다. 샘플에서 어휘 문항은 비즈니스 문맥(인사·계약·마감·제품)에서 철자가 비슷한 어휘나 의미가 다른 동사·형용사 중 알맞은 것을 고르는 형태였다. 기출 분석이 아니라 이 유형에 맞춰 자체 창작했다.",
+ "source": {
+  "name": "ETS TOEIC Listening & Reading 공식 샘플 테스트(Part 5 유형 참고), Oxford Learner's Dictionaries",
+  "url": "https://www.mx.ets.org/content/dam/ets-org/pdfs/toeic/toeic-listening-reading-sample-test.pdf",
+  "license": "기출 열람 불가로 공식 샘플 유형만 참고해 자체 창작"
+ },
+ "updated": "2026-11-25",
+ "questions": [
+  {
+   "q": "The company will ------- a new chief executive officer next month.",
+   "choices": [
+    "apply",
+    "attach",
+    "approve",
+    "appoint"
+   ],
+   "answer": 3,
+   "explain": "appoint는 '임명하다'. apply는 지원하다, attach는 첨부하다.",
+   "ref_url": "https://www.oxfordlearnersdictionaries.com/definition/english/appoint"
+  },
+  {
+   "q": "Please ------- your receipt at the counter to receive a refund.",
+   "choices": [
+    "prevent",
+    "preserve",
+    "present",
+    "pretend"
+   ],
+   "answer": 2,
+   "explain": "present는 '제시하다'. prevent는 막다, preserve는 보존하다, pretend는 ~인 체하다.",
+   "ref_url": "https://www.oxfordlearnersdictionaries.com/definition/english/present"
+  },
+  {
+   "q": "The hotel offers ------- Wi-Fi to all guests.",
+   "choices": [
+    "complimentary",
+    "compulsory",
+    "competitive",
+    "complicated"
+   ],
+   "answer": 0,
+   "explain": "complimentary는 '무료의'. compulsory는 의무적인, competitive는 경쟁력 있는.",
+   "ref_url": "https://www.oxfordlearnersdictionaries.com/definition/english/complimentary"
+  },
+  {
+   "q": "Employees must ------- with safety regulations at all times.",
+   "choices": [
+    "complain",
+    "compose",
+    "comply",
+    "compare"
+   ],
+   "answer": 2,
+   "explain": "comply with는 '(규정 등을) 준수하다'.",
+   "ref_url": "https://www.oxfordlearnersdictionaries.com/definition/english/comply"
+  },
+  {
+   "q": "The finance team is preparing a detailed ------- of this year's spending.",
+   "choices": [
+    "sympathy",
+    "symbol",
+    "symphony",
+    "summary"
+   ],
+   "answer": 3,
+   "explain": "summary는 '요약, 개요'.",
+   "ref_url": "https://www.oxfordlearnersdictionaries.com/definition/english/summary"
+  },
+  {
+   "q": "Because of heavy traffic, the delivery was ------- by two hours.",
+   "choices": [
+    "defeated",
+    "delayed",
+    "dismissed",
+    "deleted"
+   ],
+   "answer": 1,
+   "explain": "delay는 '지연시키다'. 수동태로 'was delayed'.",
+   "ref_url": "https://www.oxfordlearnersdictionaries.com/definition/english/delay"
+  },
+  {
+   "q": "The new policy will take ------- on January 1.",
+   "choices": [
+    "effect",
+    "affect",
+    "effort",
+    "efficient"
+   ],
+   "answer": 0,
+   "explain": "take effect는 '시행되다, 효력이 발생하다'. affect는 동사로 '영향을 미치다'.",
+   "ref_url": "https://www.oxfordlearnersdictionaries.com/definition/english/effect"
+  },
+  {
+   "q": "Ms. Wong is ------- for managing the company's overseas accounts.",
+   "choices": [
+    "respectful",
+    "responsible",
+    "respective",
+    "resistant"
+   ],
+   "answer": 1,
+   "explain": "be responsible for는 '~에 책임이 있다'.",
+   "ref_url": "https://www.oxfordlearnersdictionaries.com/definition/english/responsible"
+  },
+  {
+   "q": "Applicants should ------- their résumés before the deadline.",
+   "choices": [
+    "subtract",
+    "subscribe",
+    "submit",
+    "substitute"
+   ],
+   "answer": 2,
+   "explain": "submit는 '제출하다'. subtract는 빼다, subscribe는 구독하다.",
+   "ref_url": "https://www.oxfordlearnersdictionaries.com/definition/english/submit"
+  },
+  {
+   "q": "The store is offering a 20 percent ------- on all winter coats.",
+   "choices": [
+    "discipline",
+    "discount",
+    "disaster",
+    "discussion"
+   ],
+   "answer": 1,
+   "explain": "discount는 '할인'.",
+   "ref_url": "https://www.oxfordlearnersdictionaries.com/definition/english/discount"
+  },
+  {
+   "q": "The lease ------- in December, so we need to renew it soon.",
+   "choices": [
+    "exports",
+    "expires",
+    "expands",
+    "explains"
+   ],
+   "answer": 1,
+   "explain": "expire는 '만료되다'. 계약서·보증서 등의 기한이 끝날 때 쓴다.",
+   "ref_url": "https://www.oxfordlearnersdictionaries.com/definition/english/expire"
+  },
+  {
+   "q": "Mr. Dale was ------- with the task of organizing the annual conference.",
+   "choices": [
+    "enrolled",
+    "entertained",
+    "entered",
+    "entrusted"
+   ],
+   "answer": 3,
+   "explain": "be entrusted with는 '~을 맡다'.",
+   "ref_url": "https://www.oxfordlearnersdictionaries.com/definition/english/entrust"
+  },
+  {
+   "q": "The audit revealed several ------- in the financial records.",
+   "choices": [
+    "discounts",
+    "discussions",
+    "discrepancies",
+    "disciplines"
+   ],
+   "answer": 2,
+   "explain": "discrepancy는 '불일치, 차이'. 장부·기록의 오류를 말할 때 자주 쓴다.",
+   "ref_url": "https://www.oxfordlearnersdictionaries.com/definition/english/discrepancy"
+  },
+  {
+   "q": "We need to ------- a venue for the awards dinner by Friday.",
+   "choices": [
+    "secure",
+    "soothe",
+    "scatter",
+    "squeeze"
+   ],
+   "answer": 0,
+   "explain": "secure는 여기서 '확보하다'.",
+   "ref_url": "https://www.oxfordlearnersdictionaries.com/definition/english/secure"
+  },
+  {
+   "q": "Due to the ------- of the supplier, production was halted for a week.",
+   "choices": [
+    "bargain",
+    "barrier",
+    "bankruptcy",
+    "balance"
+   ],
+   "answer": 2,
+   "explain": "bankruptcy는 '파산'.",
+   "ref_url": "https://www.oxfordlearnersdictionaries.com/definition/english/bankruptcy"
+  },
+  {
+   "q": "The contract requires both parties to ------- the terms in writing.",
+   "choices": [
+    "confirm",
+    "conquer",
+    "confuse",
+    "consume"
+   ],
+   "answer": 0,
+   "explain": "confirm은 '확인하다, 확정하다'.",
+   "ref_url": "https://www.oxfordlearnersdictionaries.com/definition/english/confirm"
+  },
+  {
+   "q": "Our team ------- all the requirements before launching the product.",
+   "choices": [
+    "fastened",
+    "fulfilled",
+    "fabricated",
+    "flattered"
+   ],
+   "answer": 1,
+   "explain": "fulfill a requirement는 '요건을 충족하다'.",
+   "ref_url": "https://www.mx.ets.org/content/dam/ets-org/pdfs/toeic/toeic-listening-reading-sample-test.pdf"
+  },
+  {
+   "q": "Ms. Shin was ------- by the board for her outstanding contribution.",
+   "choices": [
+    "commanded",
+    "commuted",
+    "commended",
+    "commented"
+   ],
+   "answer": 2,
+   "explain": "commend는 '칭찬하다, 표창하다'.",
+   "ref_url": "https://www.oxfordlearnersdictionaries.com/definition/english/commend"
+  },
+  {
+   "q": "The training session is ------- for all new hires.",
+   "choices": [
+    "mandatory",
+    "momentary",
+    "monetary",
+    "moderate"
+   ],
+   "answer": 0,
+   "explain": "mandatory는 '의무적인'.",
+   "ref_url": "https://www.oxfordlearnersdictionaries.com/definition/english/mandatory"
+  },
+  {
+   "q": "The museum ------- visitors from taking photographs inside the gallery.",
+   "choices": [
+    "promotes",
+    "prolongs",
+    "prospers",
+    "prohibits"
+   ],
+   "answer": 3,
+   "explain": "prohibit A from -ing는 'A가 ~하는 것을 금지하다'.",
+   "ref_url": "https://www.oxfordlearnersdictionaries.com/definition/english/prohibit"
+  },
+  {
+   "q": "Mr. Ito will ------- the sales team while Ms. Reyes is on leave.",
+   "choices": [
+    "supervise",
+    "supply",
+    "suppose",
+    "suppress"
+   ],
+   "answer": 0,
+   "explain": "supervise는 '감독하다, 관리하다'.",
+   "ref_url": "https://www.oxfordlearnersdictionaries.com/definition/english/supervise"
+  },
+  {
+   "q": "Please keep the ------- of your purchase until the end of the warranty period.",
+   "choices": [
+    "profit",
+    "proposal",
+    "project",
+    "proof"
+   ],
+   "answer": 3,
+   "explain": "proof of purchase는 '구매 증빙'.",
+   "ref_url": "https://www.oxfordlearnersdictionaries.com/definition/english/proof"
+  },
+  {
+   "q": "The conference has been ------- to a later date because of the holiday.",
+   "choices": [
+    "positioned",
+    "postponed",
+    "possessed",
+    "posted"
+   ],
+   "answer": 1,
+   "explain": "postpone A to B는 'A를 B로 연기하다'.",
+   "ref_url": "https://www.oxfordlearnersdictionaries.com/definition/english/postpone"
+  },
+  {
+   "q": "The firm is looking for candidates with ------- experience in project management.",
+   "choices": [
+    "expensive",
+    "expressive",
+    "excessive",
+    "extensive"
+   ],
+   "answer": 3,
+   "explain": "extensive experience는 '폭넓은 경험'. expensive는 비싼, excessive는 과도한.",
+   "ref_url": "https://www.oxfordlearnersdictionaries.com/definition/english/extensive"
+  }
+ ]
+}

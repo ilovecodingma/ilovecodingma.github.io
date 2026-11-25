@@ -1,0 +1,304 @@
+{
+ "id": "csat-math-2",
+ "name": "수능 수학Ⅱ 핵심 문제",
+ "exam_id": "csat-2027",
+ "category": "대학 입시",
+ "kind": "original",
+ "method": "rework",
+ "analysis": "열람: 2026학년도 수능 수학영역 문제지(평가원 공개 PDF) 1회분, 1~14번 확인. ① 함수의 극한·연속(4번), 미분계수(5번), 접선 방정식(9·13번), 곡선과 직선으로 둘러싸인 넓이(7번) ② 3점은 극한·미분계수 계산, 4점은 접선 두 개와 y축으로 둘러싸인 도형처럼 미분과 적분 결합형 ③ 접점과 기울기 혼동, 연속·미분가능 조건 누락이 함정. 1회분 기준 분석임.",
+ "sec_per_q": 200,
+ "source": {
+  "name": "한국교육과정평가원 대학수학능력시험 기출문제(suneung.re.kr)",
+  "url": "https://www.suneung.re.kr/boardCnts/list.do?boardID=1500234&m=0403&s=suneung",
+  "license": "기출을 분석해 문항을 새로 개편, 사실 확인은 공식 자료 참고"
+ },
+ "updated": "2026-11-25",
+ "questions": [
+  {
+   "q": "lim(x→3) (x² − 2x − 3)/(x − 3) 의 값은?",
+   "choices": [
+    "0",
+    "2",
+    "3",
+    "4",
+    "6"
+   ],
+   "answer": 3,
+   "explain": "분자 인수분해: (x−3)(x+1). 약분 후 x+1 에 x=3 대입하면 4.",
+   "ref_url": "https://www.suneung.re.kr/boardCnts/list.do?boardID=1500234&m=0403&s=suneung"
+  },
+  {
+   "q": "lim(x→∞) (√(x²+6x) − x) 의 값은?",
+   "choices": [
+    "1",
+    "2",
+    "3",
+    "6",
+    "9"
+   ],
+   "answer": 2,
+   "explain": "유리화: 6x/(√(x²+6x)+x) → 6/(1+1)=3.",
+   "ref_url": "https://www.suneung.re.kr/boardCnts/list.do?boardID=1500234&m=0403&s=suneung"
+  },
+  {
+   "q": "함수 f(x) = (x² + ax − 8)/(x − 2) (x≠2), f(2)=b 가 x=2 에서 연속일 때, a+b 의 값은?",
+   "choices": [
+    "4",
+    "6",
+    "8",
+    "10",
+    "12"
+   ],
+   "answer": 2,
+   "explain": "극한이 존재하려면 4+2a−8=0, a=2. f(x)=(x−2)(x+4)/(x−2)=x+4 이므로 b=6. a+b=8.",
+   "ref_url": "https://www.suneung.re.kr/boardCnts/list.do?boardID=1500234&m=0403&s=suneung"
+  },
+  {
+   "q": "f(x)=x³−3x²+5 일 때, lim(h→0) [f(1+2h) − f(1)]/h 의 값은?",
+   "choices": [
+    "-6",
+    "-3",
+    "0",
+    "3",
+    "6"
+   ],
+   "answer": 0,
+   "explain": "구하는 값은 2f′(1). f′(x)=3x²−6x 에서 f′(1)=−3 이므로 −6.",
+   "ref_url": "https://www.suneung.re.kr/boardCnts/list.do?boardID=1500234&m=0403&s=suneung"
+  },
+  {
+   "q": "곡선 y=x³−3x+1 위의 점 (2, 3) 에서의 접선의 y절편은?",
+   "choices": [
+    "-15",
+    "-9",
+    "-6",
+    "3",
+    "9"
+   ],
+   "answer": 0,
+   "explain": "y′=3x²−3, 기울기 9. 접선 y=9(x−2)+3=9x−15, y절편은 −15.",
+   "ref_url": "https://www.suneung.re.kr/boardCnts/list.do?boardID=1500234&m=0403&s=suneung"
+  },
+  {
+   "q": "함수 f(x)=x³−6x²+9x+k 의 극댓값이 8 일 때, 극솟값은?",
+   "choices": [
+    "0",
+    "2",
+    "3",
+    "4",
+    "6"
+   ],
+   "answer": 3,
+   "explain": "f′=3(x−1)(x−3). x=1 에서 극대: 4+k=8, k=4. 극솟값 f(3)=k=4.",
+   "ref_url": "https://www.suneung.re.kr/boardCnts/list.do?boardID=1500234&m=0403&s=suneung"
+  },
+  {
+   "q": "닫힌구간 [−1, 3] 에서 함수 f(x)=x³−12x+5 의 최댓값과 최솟값의 합은?",
+   "choices": [
+    "-4",
+    "0",
+    "5",
+    "10",
+    "16"
+   ],
+   "answer": 2,
+   "explain": "f′=3(x²−4), x=2 에서 최소. f(−1)=16, f(2)=−11, f(3)=−4. 최대 16, 최소 −11, 합 5.",
+   "ref_url": "https://www.suneung.re.kr/boardCnts/list.do?boardID=1500234&m=0403&s=suneung"
+  },
+  {
+   "q": "방정식 x³ − 3x² + k = 0 이 서로 다른 세 실근을 갖도록 하는 정수 k 의 개수는?",
+   "choices": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5"
+   ],
+   "answer": 2,
+   "explain": "g(x)=x³−3x² 은 x=0 에서 극댓값 0, x=2 에서 극솟값 −4. y=−k 가 −4<−k<0 이어야 하므로 k=1,2,3.",
+   "ref_url": "https://www.suneung.re.kr/boardCnts/list.do?boardID=1500234&m=0403&s=suneung"
+  },
+  {
+   "q": "수직선 위를 움직이는 점 P 의 시각 t 에서의 위치가 x(t)=t³−6t²+9t 일 때, t=0 에서 t=4 까지 P 가 움직인 거리는?",
+   "choices": [
+    "4",
+    "8",
+    "10",
+    "12",
+    "16"
+   ],
+   "answer": 3,
+   "explain": "v=3(t−1)(t−3). t=1,3 에서 방향 전환. x: 0→4→0→4 이므로 4+4+4=12.",
+   "ref_url": "https://www.suneung.re.kr/boardCnts/list.do?boardID=1500234&m=0403&s=suneung"
+  },
+  {
+   "q": "f′(x)=6x²−4x+1, f(0)=2 일 때, f(2) 의 값은?",
+   "choices": [
+    "8",
+    "10",
+    "12",
+    "14",
+    "18"
+   ],
+   "answer": 2,
+   "explain": "f(x)=2x³−2x²+x+2. f(2)=16−8+2+2=12.",
+   "ref_url": "https://www.suneung.re.kr/boardCnts/list.do?boardID=1500234&m=0403&s=suneung"
+  },
+  {
+   "q": "정적분 ∫₀² (3x² − 2x + 1) dx 의 값은?",
+   "choices": [
+    "2",
+    "4",
+    "6",
+    "8",
+    "10"
+   ],
+   "answer": 2,
+   "explain": "[x³−x²+x]₀²=8−4+2=6.",
+   "ref_url": "https://www.suneung.re.kr/boardCnts/list.do?boardID=1500234&m=0403&s=suneung"
+  },
+  {
+   "q": "정적분 ∫₀⁴ |x − 1| dx 의 값은?",
+   "choices": [
+    "3",
+    "4",
+    "5",
+    "6",
+    "8"
+   ],
+   "answer": 2,
+   "explain": "0~1 구간 ½, 1~4 구간 9/2. 합 5.",
+   "ref_url": "https://www.suneung.re.kr/boardCnts/list.do?boardID=1500234&m=0403&s=suneung"
+  },
+  {
+   "q": "곡선 y = −x² + 6x 와 x축으로 둘러싸인 부분의 넓이는?",
+   "choices": [
+    "18",
+    "24",
+    "30",
+    "36",
+    "48"
+   ],
+   "answer": 3,
+   "explain": "교점 x=0,6. ∫₀⁶(−x²+6x)dx=−72+108=36.",
+   "ref_url": "https://www.suneung.re.kr/boardCnts/list.do?boardID=1500234&m=0403&s=suneung"
+  },
+  {
+   "q": "곡선 y=x² 과 직선 y=x+6 으로 둘러싸인 부분의 넓이는?",
+   "choices": [
+    "49/6",
+    "32/3",
+    "81/4",
+    "125/6",
+    "64/3"
+   ],
+   "answer": 3,
+   "explain": "교점 x=−2,3. ∫(x+6−x²)dx=125/6.",
+   "ref_url": "https://www.suneung.re.kr/boardCnts/list.do?boardID=1500234&m=0403&s=suneung"
+  },
+  {
+   "q": "수직선 위를 움직이는 점의 시각 t 에서의 속도가 v(t)=6−2t 일 때, t=0 에서 t=5 까지 움직인 거리는?",
+   "choices": [
+    "5",
+    "9",
+    "11",
+    "13",
+    "15"
+   ],
+   "answer": 3,
+   "explain": "t=3 에서 방향 전환. ∫₀³(6−2t)dt=9, ∫₃⁵(2t−6)dt=4. 합 13.",
+   "ref_url": "https://www.suneung.re.kr/boardCnts/list.do?boardID=1500234&m=0403&s=suneung"
+  },
+  {
+   "q": "함수 f(x) = x + a (x<1), 2x² − 3 (x≥1) 이 x=1 에서 연속일 때, 상수 a 의 값은?",
+   "choices": [
+    "-3",
+    "-2",
+    "-1",
+    "1",
+    "2"
+   ],
+   "answer": 1,
+   "explain": "좌극한 1+a, 우극한·함숫값 2−3=−1. 1+a=−1 이므로 a=−2.",
+   "ref_url": "https://www.suneung.re.kr/boardCnts/list.do?boardID=1500234&m=0403&s=suneung"
+  },
+  {
+   "q": "함수 f(x) = x²+ax (x<1), x³+b (x≥1) 이 x=1 에서 미분가능할 때, a+b 의 값은?",
+   "choices": [
+    "-2",
+    "0",
+    "1",
+    "2",
+    "3"
+   ],
+   "answer": 3,
+   "explain": "연속: 1+a=1+b. 미분계수 일치: 2+a=3. a=b=1, a+b=2.",
+   "ref_url": "https://www.suneung.re.kr/boardCnts/list.do?boardID=1500234&m=0403&s=suneung"
+  },
+  {
+   "q": "정적분 ∫₋₂² (x³ + 3x² + 1) dx 의 값은?",
+   "choices": [
+    "4",
+    "10",
+    "16",
+    "20",
+    "24"
+   ],
+   "answer": 3,
+   "explain": "x³ 은 홀함수이므로 0. 2∫₀²(3x²+1)dx=2(8+2)=20.",
+   "ref_url": "https://www.suneung.re.kr/boardCnts/list.do?boardID=1500234&m=0403&s=suneung"
+  },
+  {
+   "q": "lim(x→1) (x² + ax + b)/(x − 1) = 3 일 때, ab 의 값은?",
+   "choices": [
+    "-3",
+    "-2",
+    "-1",
+    "2",
+    "3"
+   ],
+   "answer": 1,
+   "explain": "극한이 유한하려면 1+a+b=0. 분자를 (x−1)(x−c) 꼴로 두면 극한값은 1−c=3, 즉 도함수 2+a=3 과 같다. a=1, b=−2, ab=−2.",
+   "ref_url": "https://www.suneung.re.kr/boardCnts/list.do?boardID=1500234&m=0403&s=suneung"
+  },
+  {
+   "q": "곡선 y=x³−3x²+2x 위의 점에서의 접선의 기울기의 최솟값은?",
+   "choices": [
+    "-3",
+    "-2",
+    "-1",
+    "0",
+    "2"
+   ],
+   "answer": 2,
+   "explain": "y′=3x²−6x+2=3(x−1)²−1. 최솟값 −1 (x=1).",
+   "ref_url": "https://www.suneung.re.kr/boardCnts/list.do?boardID=1500234&m=0403&s=suneung"
+  },
+  {
+   "q": "함수 f(x) 가 f(x) = 3x² + x∫₀¹ f(t)dt 를 만족시킬 때, f(2) 의 값은?",
+   "choices": [
+    "10",
+    "12",
+    "14",
+    "16",
+    "20"
+   ],
+   "answer": 3,
+   "explain": "K=∫₀¹f(t)dt 라 하면 f(x)=3x²+Kx. K=1+K/2 에서 K=2. f(2)=12+4=16.",
+   "ref_url": "https://www.suneung.re.kr/boardCnts/list.do?boardID=1500234&m=0403&s=suneung"
+  },
+  {
+   "q": "lim(x→1) 1/(x−1) ∫₁ˣ (3t² + 2t) dt 의 값은?",
+   "choices": [
+    "3",
+    "4",
+    "5",
+    "6",
+    "8"
+   ],
+   "answer": 2,
+   "explain": "F′(1) 꼴. 미적분의 기본 정리에 의해 3·1²+2·1=5.",
+   "ref_url": "https://www.suneung.re.kr/boardCnts/list.do?boardID=1500234&m=0403&s=suneung"
+  }
+ ]
+}

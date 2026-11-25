@@ -1,0 +1,304 @@
+{
+ "id": "csat-english-vocab",
+ "name": "수능 영어 어휘·빈칸 추론",
+ "exam_id": "csat-2027",
+ "category": "대학 입시",
+ "kind": "original",
+ "method": "rework",
+ "analysis": "열람: 2026학년도 수능 영어영역 문제지(평가원 공개 PDF, 홀수형) 1회분, 빈칸 추론 31·32번 등 확인. ① 31번은 단어형 빈칸(profitability 등 추상 명사 선지), 32번은 구 형태 빈칸(독자의 반응을 예측한다는 내용) ② 지문 중심 논리(앞뒤 대비·결과)로 빈칸을 푸는 유형 ③ 본문 단어를 재사용한 선지와 반대 의미 선지가 함정. 1회분 기준 분석임.",
+ "sec_per_q": 70,
+ "source": {
+  "name": "한국교육과정평가원 대학수학능력시험 기출문제(suneung.re.kr)",
+  "url": "https://www.suneung.re.kr/boardCnts/list.do?boardID=1500234&m=0403&s=suneung",
+  "license": "기출을 분석해 문항을 새로 개편, 사실 확인은 공식 자료 참고"
+ },
+ "updated": "2026-11-25",
+ "questions": [
+  {
+   "q": "다음 빈칸에 들어갈 말로 가장 적절한 것은?\n\nMost people assume that a good memory means remembering everything. Cognitive scientists, however, argue that forgetting is not a failure of memory but a ______ of it: by discarding trivial details, the brain keeps room for the information that matters.",
+   "choices": [
+    "flaw",
+    "burden",
+    "feature",
+    "rival",
+    "imitation"
+   ],
+   "answer": 2,
+   "explain": "'not a failure but a ___' 의 대비 구조와 '쓸모없는 세부를 버려 중요한 정보를 위한 공간을 남긴다'는 내용에서 망각은 기억의 '기능(feature)'이다.",
+   "ref_url": "https://www.suneung.re.kr/boardCnts/list.do?boardID=1500234&m=0403&s=suneung"
+  },
+  {
+   "q": "다음 빈칸에 들어갈 말로 가장 적절한 것은?\n\nWhen a city adds a new bike lane, drivers often complain at first. Yet once people ______ to the change, the complaints usually fade within a few months.",
+   "choices": [
+    "object",
+    "adjust",
+    "resort",
+    "contribute",
+    "refer"
+   ],
+   "answer": 1,
+   "explain": "'적응하다'라는 의미의 adjust to 가 문맥(불평이 사라짐)에 맞는다. object to 는 '반대하다'로 불평이 사라진다는 흐름과 반대이다.",
+   "ref_url": "https://www.suneung.re.kr/boardCnts/list.do?boardID=1500234&m=0403&s=suneung"
+  },
+  {
+   "q": "다음 빈칸에 들어갈 말로 가장 적절한 것은?\n\nThe more a company relies on a single supplier, the more ______ it becomes to any disruption in that supplier's operations.",
+   "choices": [
+    "resistant",
+    "indifferent",
+    "grateful",
+    "vulnerable",
+    "loyal"
+   ],
+   "answer": 3,
+   "explain": "한 공급자에 의존할수록 그 공급자의 차질에 '취약해진다(vulnerable)'. resistant 는 반대 의미이다.",
+   "ref_url": "https://www.suneung.re.kr/boardCnts/list.do?boardID=1500234&m=0403&s=suneung"
+  },
+  {
+   "q": "다음 빈칸에 들어갈 말로 가장 적절한 것은?\n\nGood teachers do not simply deliver answers. They ask questions that push students to examine their own assumptions, because real understanding comes not from being told what is true but from ______.",
+   "choices": [
+    "discovering it through one's own reasoning",
+    "memorizing definitions word for word",
+    "following the majority opinion",
+    "avoiding difficult problems",
+    "comparing grades with classmates"
+   ],
+   "answer": 0,
+   "explain": "'not from being told ... but from ___' 구조이므로 '들어서 아는 것'과 대비되는 '스스로 추론하여 알아내는 것'이 빈칸이다.",
+   "ref_url": "https://www.suneung.re.kr/boardCnts/list.do?boardID=1500234&m=0403&s=suneung"
+  },
+  {
+   "q": "다음 빈칸에 들어갈 말로 가장 적절한 것은?\n\nPrices of fresh produce fluctuate widely. When a harvest is plentiful, supply exceeds demand and prices fall; when drought shrinks the crop, the opposite happens. In short, prices ______ the balance between how much is available and how much people want.",
+   "choices": [
+    "ignore",
+    "conceal",
+    "reverse",
+    "postpone",
+    "reflect"
+   ],
+   "answer": 4,
+   "explain": "공급과 수요의 균형에 따라 가격이 오르내린다는 내용이므로 가격은 그 균형을 '반영한다(reflect)'.",
+   "ref_url": "https://www.suneung.re.kr/boardCnts/list.do?boardID=1500234&m=0403&s=suneung"
+  },
+  {
+   "q": "다음 빈칸에 들어갈 말로 가장 적절한 것은?\n\nBecause translation is never a word-for-word exchange, a skilled translator must decide what to keep and what to give up. A translation that is perfectly faithful to the vocabulary of the original may still ______ its tone.",
+   "choices": [
+    "mirror",
+    "reinforce",
+    "distort",
+    "emphasize",
+    "explain"
+   ],
+   "answer": 2,
+   "explain": "단어에는 충실해도 'still' 뒤에는 역접의 결과가 와야 하므로 어조를 '왜곡할(distort)' 수 있다.",
+   "ref_url": "https://www.suneung.re.kr/boardCnts/list.do?boardID=1500234&m=0403&s=suneung"
+  },
+  {
+   "q": "다음 빈칸에 들어갈 말로 가장 적절한 것은?\n\nUnlike a sprint, a marathon rewards ______ rather than speed: runners who pace themselves evenly usually finish ahead of those who start too fast.",
+   "choices": [
+    "ambition",
+    "steadiness",
+    "luxury",
+    "rivalry",
+    "curiosity"
+   ],
+   "answer": 1,
+   "explain": "'pace themselves evenly' 는 일정한 속도, 즉 꾸준함(steadiness)을 가리킨다.",
+   "ref_url": "https://www.suneung.re.kr/boardCnts/list.do?boardID=1500234&m=0403&s=suneung"
+  },
+  {
+   "q": "다음 빈칸에 들어갈 말로 가장 적절한 것은?\n\nSome birds migrate thousands of kilometers each year. Scientists once thought they simply followed the coastline, but tracking devices have revealed that many of them ______.",
+   "choices": [
+    "return to the same nest within a day",
+    "travel together in groups of exactly ten",
+    "avoid warm climates entirely",
+    "cross open water along routes far from any coast",
+    "depend mainly on human-built lights"
+   ],
+   "answer": 3,
+   "explain": "'해안선을 따라간다고 생각했지만(but) 추적 장치가 밝혔다'는 역접이므로 해안에서 멀리 떨어진 바다를 가로지른다는 내용이 적절하다.",
+   "ref_url": "https://www.suneung.re.kr/boardCnts/list.do?boardID=1500234&m=0403&s=suneung"
+  },
+  {
+   "q": "다음 빈칸에 들어갈 말로 가장 적절한 것은?\n\nSocial media can make us feel connected, but heavy users often report feeling lonelier than before. This paradox suggests that the ______ of our online contacts does not guarantee the quality of our relationships.",
+   "choices": [
+    "quantity",
+    "honesty",
+    "privacy",
+    "location",
+    "diversity"
+   ],
+   "answer": 0,
+   "explain": "'quality' 와 짝을 이루는 대비어가 필요하다. 접촉의 많음, 즉 양(quantity)이 관계의 질을 보장하지 않는다.",
+   "ref_url": "https://www.suneung.re.kr/boardCnts/list.do?boardID=1500234&m=0403&s=suneung"
+  },
+  {
+   "q": "다음 빈칸에 들어갈 말로 가장 적절한 것은?\n\nA good map does not show everything. If it recorded every tree and every crack in the pavement, it would be useless. Its value lies in what it ______.",
+   "choices": [
+    "adds up",
+    "carries away",
+    "puts off",
+    "makes up",
+    "leaves out"
+   ],
+   "answer": 4,
+   "explain": "모든 것을 담으면 쓸모없다고 했으므로 지도의 가치는 '생략하는 것(leaves out)'에 있다.",
+   "ref_url": "https://www.suneung.re.kr/boardCnts/list.do?boardID=1500234&m=0403&s=suneung"
+  },
+  {
+   "q": "다음 빈칸에 들어갈 말로 가장 적절한 것은?\n\nAlthough the novel was dismissed by critics when it appeared, it has since gained a devoted readership, proving that a work's initial reception is not always a reliable ______ of its lasting value.",
+   "choices": [
+    "source",
+    "purpose",
+    "indicator",
+    "reward",
+    "summary"
+   ],
+   "answer": 2,
+   "explain": "처음의 평가가 오래가는 가치를 보여 주는 '지표(indicator)'가 항상 되지는 않는다는 의미이다.",
+   "ref_url": "https://www.suneung.re.kr/boardCnts/list.do?boardID=1500234&m=0403&s=suneung"
+  },
+  {
+   "q": "다음 빈칸에 들어갈 말로 가장 적절한 것은?\n\nEfficiency is usually seen as an unmixed good, yet a system with no spare capacity has no ______ when something unexpected happens.",
+   "choices": [
+    "motive",
+    "buffer",
+    "ceremony",
+    "rhythm",
+    "audience"
+   ],
+   "answer": 1,
+   "explain": "여유 용량이 없으면 예기치 못한 일에 대비할 완충 장치(buffer)가 없다는 뜻이다.",
+   "ref_url": "https://www.suneung.re.kr/boardCnts/list.do?boardID=1500234&m=0403&s=suneung"
+  },
+  {
+   "q": "밑줄 친 단어와 의미가 가장 가까운 것은?\n\nThe manager's ambiguous reply left the team unsure whether the project would continue.",
+   "choices": [
+    "generous",
+    "hostile",
+    "immediate",
+    "unclear",
+    "formal"
+   ],
+   "answer": 3,
+   "explain": "'팀이 확신하지 못했다'는 결과로 보아 ambiguous 는 '모호한(unclear)'이다.",
+   "ref_url": "https://www.suneung.re.kr/boardCnts/list.do?boardID=1500234&m=0403&s=suneung"
+  },
+  {
+   "q": "밑줄 친 단어의 의미로 가장 적절한 것은?\n\nThe politician's remarks were deemed inflammatory and sparked protests.",
+   "choices": [
+    "intended to arouse strong anger",
+    "meant to calm a dispute",
+    "extremely brief and vague",
+    "based on careful research",
+    "widely admired by critics"
+   ],
+   "answer": 0,
+   "explain": "항의 시위를 불러일으켰다는 문맥에서 inflammatory 는 분노를 부추기는 뜻이다.",
+   "ref_url": "https://www.suneung.re.kr/boardCnts/list.do?boardID=1500234&m=0403&s=suneung"
+  },
+  {
+   "q": "밑줄 친 단어의 의미로 가장 적절한 것은?\n\nThe museum's collection is eclectic, ranging from medieval armor to modern posters.",
+   "choices": [
+    "limited to a single period",
+    "arranged in strict order",
+    "rarely open to visitors",
+    "worth a great deal of money",
+    "drawn from a wide variety of sources"
+   ],
+   "answer": 4,
+   "explain": "중세 갑옷에서 현대 포스터까지라는 범위로 보아 eclectic 은 '다양한 출처에서 모은'이다.",
+   "ref_url": "https://www.suneung.re.kr/boardCnts/list.do?boardID=1500234&m=0403&s=suneung"
+  },
+  {
+   "q": "밑줄 친 단어의 의미로 가장 적절한 것은?\n\nHer frugal habits allowed her to save a large sum.",
+   "choices": [
+    "generous with friends",
+    "quick to make decisions",
+    "careful about spending money",
+    "fond of expensive goods",
+    "slow to change plans"
+   ],
+   "answer": 2,
+   "explain": "큰돈을 저축할 수 있었다는 결과에서 frugal 은 '절약하는'이다.",
+   "ref_url": "https://www.suneung.re.kr/boardCnts/list.do?boardID=1500234&m=0403&s=suneung"
+  },
+  {
+   "q": "밑줄 친 단어의 의미로 가장 적절한 것은?\n\nThe scientist's findings corroborate earlier studies.",
+   "choices": [
+    "contradict",
+    "confirm",
+    "replace",
+    "summarize",
+    "question"
+   ],
+   "answer": 1,
+   "explain": "corroborate 는 '(증거로) 확증하다'이다. 이전 연구와 일치하는 결과를 말한다.",
+   "ref_url": "https://www.suneung.re.kr/boardCnts/list.do?boardID=1500234&m=0403&s=suneung"
+  },
+  {
+   "q": "밑줄 친 단어의 의미로 가장 적절한 것은?\n\nThe mayor tried to appease the angry crowd by promising a public meeting.",
+   "choices": [
+    "ignore by leaving",
+    "punish by force",
+    "entertain with music",
+    "calm by giving something",
+    "confuse with details"
+   ],
+   "answer": 3,
+   "explain": "화난 군중에게 공개 회의를 약속했다는 것은 달래려는 행동이므로 appease 는 '달래다'이다.",
+   "ref_url": "https://www.suneung.re.kr/boardCnts/list.do?boardID=1500234&m=0403&s=suneung"
+  },
+  {
+   "q": "다음 글의 밑줄 친 부분 중, 문맥상 낱말의 쓰임이 적절하지 않은 것은?\n\nRegular sleep helps the brain ①consolidate memories formed during the day. People who stay up all night before an exam therefore tend to ②retain less information than they expect. Sleep is also ③trivial for emotional balance; a tired person is more likely to ④overreact to minor problems. For this reason, students should ⑤protect their sleep.",
+   "choices": [
+    "① consolidate",
+    "② retain",
+    "③ trivial",
+    "④ overreact",
+    "⑤ protect"
+   ],
+   "answer": 2,
+   "explain": "수면이 감정 조절에 '사소하다(trivial)'는 것은 뒤 문장(피곤하면 과민 반응)과 모순이다. essential 이 되어야 한다.",
+   "ref_url": "https://www.suneung.re.kr/boardCnts/list.do?boardID=1500234&m=0403&s=suneung"
+  },
+  {
+   "q": "다음 글의 밑줄 친 부분 중, 문맥상 낱말의 쓰임이 적절하지 않은 것은?\n\nA city that encourages walking benefits in many ways. Fewer cars on the road ①reduce air pollution, and residents who walk daily tend to be ②unhealthier. Local shops also gain, since pedestrians are more likely to ③stop and browse than drivers passing quickly by. Narrow, crowded sidewalks can ④discourage people from walking, so planners often ⑤widen them.",
+   "choices": [
+    "① reduce",
+    "② unhealthier",
+    "③ stop",
+    "④ discourage",
+    "⑤ widen"
+   ],
+   "answer": 1,
+   "explain": "걷는 것의 이점을 나열하는 글이므로 매일 걷는 주민은 더 '건강하다(healthier)'가 되어야 한다.",
+   "ref_url": "https://www.suneung.re.kr/boardCnts/list.do?boardID=1500234&m=0403&s=suneung"
+  },
+  {
+   "q": "다음 빈칸에 들어갈 말로 가장 적절한 것은?\n\nThe company's ______ growth, from ten to ten thousand employees in a decade, surprised even its founders.",
+   "choices": [
+    "exponential",
+    "gradual",
+    "negligible",
+    "temporary",
+    "accidental"
+   ],
+   "answer": 0,
+   "explain": "10년 만에 10명에서 1만 명이 되었다는 설명은 급격한(exponential) 성장이다.",
+   "ref_url": "https://www.suneung.re.kr/boardCnts/list.do?boardID=1500234&m=0403&s=suneung"
+  },
+  {
+   "q": "다음 빈칸에 들어갈 말로 가장 적절한 것은?\n\nContrary to popular belief, creativity rarely arrives as a sudden flash. More often it is the product of long, ______ effort in which small ideas are tested, discarded, and refined.",
+   "choices": [
+    "effortless",
+    "accidental",
+    "shallow",
+    "hasty",
+    "painstaking"
+   ],
+   "answer": 4,
+   "explain": "'long', 'tested, discarded, refined' 로 보아 공들이고 힘든(painstaking) 노력이다. effortless 는 effort 와 모순된다.",
+   "ref_url": "https://www.suneung.re.kr/boardCnts/list.do?boardID=1500234&m=0403&s=suneung"
+  }
+ ]
+}

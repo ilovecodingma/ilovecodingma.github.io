@@ -1,0 +1,304 @@
+{
+ "id": "csat-math-1",
+ "name": "수능 수학Ⅰ 핵심 문제",
+ "exam_id": "csat-2027",
+ "category": "대학 입시",
+ "kind": "original",
+ "method": "rework",
+ "analysis": "열람: 2026학년도 수능 수학영역 문제지(평가원 공개 PDF) 1회분, 1~14번 확인. ① 지수·로그(6번), 삼각함수 부호 판단 후 값 구하기(8번), 지수함수 그래프의 점근선·넓이 조건(10번)이 반복되는 개념 ② 3점은 계산형 객관식, 4점은 조건 해석+도형·그래프 결합형 ③ 부호·정의역 조건을 놓치면 부적합한 근을 고르게 되는 함정. 5~10회분 전수 열람은 하지 못해 1회분 기준 분석임.",
+ "sec_per_q": 200,
+ "source": {
+  "name": "한국교육과정평가원 대학수학능력시험 기출문제(suneung.re.kr)",
+  "url": "https://www.suneung.re.kr/boardCnts/list.do?boardID=1500234&m=0403&s=suneung",
+  "license": "기출을 분석해 문항을 새로 개편, 사실 확인은 공식 자료 참고"
+ },
+ "updated": "2026-11-25",
+ "questions": [
+  {
+   "q": "(5^(√3+1))^(√3−1) ÷ 25^(1/2) 의 값은?",
+   "choices": [
+    "2",
+    "5",
+    "10",
+    "25",
+    "125"
+   ],
+   "answer": 1,
+   "explain": "지수 곱: (√3+1)(√3−1)=2 이므로 5²=25, 25^(1/2)=5 로 나누면 5.",
+   "ref_url": "https://www.suneung.re.kr/boardCnts/list.do?boardID=1500234&m=0403&s=suneung"
+  },
+  {
+   "q": "log₂48 − log₂3 + log₃81 의 값은?",
+   "choices": [
+    "4",
+    "6",
+    "7",
+    "8",
+    "12"
+   ],
+   "answer": 3,
+   "explain": "log₂(48/3)=log₂16=4, log₃81=4 이므로 합은 8.",
+   "ref_url": "https://www.suneung.re.kr/boardCnts/list.do?boardID=1500234&m=0403&s=suneung"
+  },
+  {
+   "q": "π/2 < θ < π 이고 cosθ = −4/5 일 때, sin2θ 의 값은?",
+   "choices": [
+    "-24/25",
+    "-12/25",
+    "-7/25",
+    "12/25",
+    "24/25"
+   ],
+   "answer": 0,
+   "explain": "2사분면에서 sinθ>0, sinθ=3/5. sin2θ=2·(3/5)·(−4/5)=−24/25.",
+   "ref_url": "https://www.suneung.re.kr/boardCnts/list.do?boardID=1500234&m=0403&s=suneung"
+  },
+  {
+   "q": "0 ≤ x ≤ 2π 에서 방정식 2cos²x − cosx − 1 = 0 의 서로 다른 실근의 개수는?",
+   "choices": [
+    "2",
+    "3",
+    "4",
+    "5",
+    "6"
+   ],
+   "answer": 2,
+   "explain": "(2cosx+1)(cosx−1)=0 에서 cosx=1 또는 −1/2. x=0, 2π/3, 4π/3, 2π 로 4개.",
+   "ref_url": "https://www.suneung.re.kr/boardCnts/list.do?boardID=1500234&m=0403&s=suneung"
+  },
+  {
+   "q": "삼각형 ABC 에서 BC=4√3, ∠A=60°, ∠B=45° 일 때, AC 의 길이는?",
+   "choices": [
+    "4",
+    "2√6",
+    "4√2",
+    "4√3",
+    "8"
+   ],
+   "answer": 2,
+   "explain": "사인법칙: 2R=BC/sin60°=8. AC=2R·sin45°=8·(√2/2)=4√2.",
+   "ref_url": "https://www.suneung.re.kr/boardCnts/list.do?boardID=1500234&m=0403&s=suneung"
+  },
+  {
+   "q": "삼각형 ABC 에서 AB=8, AC=5, ∠A=60° 일 때, BC 의 길이는?",
+   "choices": [
+    "5",
+    "6",
+    "7",
+    "8",
+    "9"
+   ],
+   "answer": 2,
+   "explain": "코사인법칙: BC²=64+25−2·8·5·cos60°=49 이므로 BC=7.",
+   "ref_url": "https://www.suneung.re.kr/boardCnts/list.do?boardID=1500234&m=0403&s=suneung"
+  },
+  {
+   "q": "등차수열 {aₙ} 에서 a₃=11, a₇=27 일 때, 첫째항부터 제10항까지의 합은?",
+   "choices": [
+    "180",
+    "190",
+    "200",
+    "210",
+    "220"
+   ],
+   "answer": 3,
+   "explain": "공차 d=(27−11)/4=4, a₁=3. S₁₀=10(2·3+9·4)/2=210.",
+   "ref_url": "https://www.suneung.re.kr/boardCnts/list.do?boardID=1500234&m=0403&s=suneung"
+  },
+  {
+   "q": "등비수열 {aₙ} 에서 a₂=6, a₅=162 이고 공비가 실수일 때, 첫째항부터 제5항까지의 합은?",
+   "choices": [
+    "121",
+    "162",
+    "242",
+    "244",
+    "363"
+   ],
+   "answer": 2,
+   "explain": "a₅/a₂=r³=27 이므로 r=3, a₁=2. S₅=2(3⁵−1)/(3−1)=242.",
+   "ref_url": "https://www.suneung.re.kr/boardCnts/list.do?boardID=1500234&m=0403&s=suneung"
+  },
+  {
+   "q": "Σ(k=1~10) (2k² − 3k + 1) 의 값은?",
+   "choices": [
+    "550",
+    "585",
+    "615",
+    "640",
+    "660"
+   ],
+   "answer": 2,
+   "explain": "Σk²=385, Σk=55 이므로 2·385−3·55+10=615.",
+   "ref_url": "https://www.suneung.re.kr/boardCnts/list.do?boardID=1500234&m=0403&s=suneung"
+  },
+  {
+   "q": "수열 {aₙ} 의 첫째항부터 제n항까지의 합이 Sₙ=n²+2n 일 때, a₅ 의 값은?",
+   "choices": [
+    "9",
+    "10",
+    "11",
+    "12",
+    "35"
+   ],
+   "answer": 2,
+   "explain": "a₅=S₅−S₄=35−24=11. (일반항 aₙ=2n+1)",
+   "ref_url": "https://www.suneung.re.kr/boardCnts/list.do?boardID=1500234&m=0403&s=suneung"
+  },
+  {
+   "q": "a₁=3, aₙ₊₁=2aₙ+1 (n≥1) 로 정의된 수열에서 a₄ 의 값은?",
+   "choices": [
+    "15",
+    "23",
+    "27",
+    "31",
+    "63"
+   ],
+   "answer": 3,
+   "explain": "a₂=7, a₃=15, a₄=31.",
+   "ref_url": "https://www.suneung.re.kr/boardCnts/list.do?boardID=1500234&m=0403&s=suneung"
+  },
+  {
+   "q": "방정식 4ˣ − 5·2ˣ + 4 = 0 의 두 실근의 합은?",
+   "choices": [
+    "0",
+    "1",
+    "2",
+    "3",
+    "4"
+   ],
+   "answer": 2,
+   "explain": "2ˣ=u 로 치환하면 u²−5u+4=0, u=1 또는 4. x=0, 2 이므로 합은 2.",
+   "ref_url": "https://www.suneung.re.kr/boardCnts/list.do?boardID=1500234&m=0403&s=suneung"
+  },
+  {
+   "q": "부등식 log₂(x−1) + log₂(x+1) ≤ 4 를 만족시키는 정수 x 의 개수는?",
+   "choices": [
+    "2",
+    "3",
+    "4",
+    "5",
+    "16"
+   ],
+   "answer": 1,
+   "explain": "진수 조건 x>1. x²−1≤16, x≤√17≈4.12 이므로 x=2,3,4 로 3개.",
+   "ref_url": "https://www.suneung.re.kr/boardCnts/list.do?boardID=1500234&m=0403&s=suneung"
+  },
+  {
+   "q": "2ᵃ=3, 3ᵇ=5 일 때, 4^(ab) 의 값은?",
+   "choices": [
+    "5",
+    "10",
+    "15",
+    "25",
+    "125"
+   ],
+   "answer": 3,
+   "explain": "2^(ab)=(2ᵃ)ᵇ=3ᵇ=5 이므로 4^(ab)=5²=25.",
+   "ref_url": "https://www.suneung.re.kr/boardCnts/list.do?boardID=1500234&m=0403&s=suneung"
+  },
+  {
+   "q": "함수 y = a·cos(bx) + c (a>0, b>0) 의 최댓값이 7, 최솟값이 −1, 주기가 π 일 때, a+b+c 의 값은?",
+   "choices": [
+    "7",
+    "8",
+    "9",
+    "10",
+    "11"
+   ],
+   "answer": 2,
+   "explain": "a=(7−(−1))/2=4, c=3, 주기 2π/b=π 에서 b=2. a+b+c=9.",
+   "ref_url": "https://www.suneung.re.kr/boardCnts/list.do?boardID=1500234&m=0403&s=suneung"
+  },
+  {
+   "q": "3ˣ=5ʸ=15ᶻ 이고 x=6, z=4 일 때, y 의 값은?",
+   "choices": [
+    "8",
+    "9",
+    "10",
+    "12",
+    "24"
+   ],
+   "answer": 3,
+   "explain": "3ˣ=5ʸ=15ᶻ=K 라 하면 3=K^(1/x), 5=K^(1/y), 15=K^(1/z) 이므로 1/x+1/y=1/z. 1/y=1/4−1/6=1/12, y=12.",
+   "ref_url": "https://www.suneung.re.kr/boardCnts/list.do?boardID=1500234&m=0403&s=suneung"
+  },
+  {
+   "q": "첫째항이 40, 공차가 −6 인 등차수열의 첫째항부터 제n항까지의 합 Sₙ 의 최댓값은?",
+   "choices": [
+    "144",
+    "150",
+    "154",
+    "160",
+    "168"
+   ],
+   "answer": 2,
+   "explain": "a₇=4>0, a₈=−2<0 이므로 S₇ 이 최대. S₇=7(80−36)/2=154.",
+   "ref_url": "https://www.suneung.re.kr/boardCnts/list.do?boardID=1500234&m=0403&s=suneung"
+  },
+  {
+   "q": "삼각형 ABC 에서 AB=4, AC=10, ∠A=120° 일 때, 삼각형의 넓이는?",
+   "choices": [
+    "10",
+    "10√3",
+    "20",
+    "20√3",
+    "40"
+   ],
+   "answer": 1,
+   "explain": "넓이=½·4·10·sin120°=20·(√3/2)=10√3.",
+   "ref_url": "https://www.suneung.re.kr/boardCnts/list.do?boardID=1500234&m=0403&s=suneung"
+  },
+  {
+   "q": "부등식 (1/2)^(x²−3x) ≥ 1/16 을 만족시키는 정수 x 의 개수는?",
+   "choices": [
+    "4",
+    "5",
+    "6",
+    "7",
+    "8"
+   ],
+   "answer": 2,
+   "explain": "x²−3x≤4 에서 (x−4)(x+1)≤0, −1≤x≤4. 정수는 6개.",
+   "ref_url": "https://www.suneung.re.kr/boardCnts/list.do?boardID=1500234&m=0403&s=suneung"
+  },
+  {
+   "q": "Σ(k=1~24) 1/(√(k+1)+√k) 의 값은?",
+   "choices": [
+    "3",
+    "4",
+    "5",
+    "6",
+    "24"
+   ],
+   "answer": 1,
+   "explain": "분모를 유리화하면 √(k+1)−√k. 합은 √25−√1=4.",
+   "ref_url": "https://www.suneung.re.kr/boardCnts/list.do?boardID=1500234&m=0403&s=suneung"
+  },
+  {
+   "q": "sinθ + cosθ = 1/2 일 때, sin³θ + cos³θ 의 값은?",
+   "choices": [
+    "1/2",
+    "5/8",
+    "11/16",
+    "3/4",
+    "13/16"
+   ],
+   "answer": 2,
+   "explain": "(sinθ+cosθ)²=1+2sinθcosθ=1/4 에서 sinθcosθ=−3/8. 세제곱 합 공식: (s+c)(1−sc)=½·(11/8)=11/16.",
+   "ref_url": "https://www.suneung.re.kr/boardCnts/list.do?boardID=1500234&m=0403&s=suneung"
+  },
+  {
+   "q": "방정식 log₃x + log₃(x−6) = 3 의 실근은?",
+   "choices": [
+    "3",
+    "6",
+    "9",
+    "12",
+    "15"
+   ],
+   "answer": 2,
+   "explain": "진수 조건 x>6. x(x−6)=27, (x−9)(x+3)=0 에서 x=9 (x=−3 은 부적합).",
+   "ref_url": "https://www.suneung.re.kr/boardCnts/list.do?boardID=1500234&m=0403&s=suneung"
+  }
+ ]
+}

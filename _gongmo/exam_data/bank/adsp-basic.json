@@ -1,0 +1,305 @@
+{
+ "id": "adsp-basic",
+ "name": "ADsP 데이터 이해·분석 기획·기초 통계",
+ "category": "IT",
+ "kind": "original",
+ "source": {
+  "name": "한국데이터산업진흥원 데이터자격시험(ADsP)",
+  "url": "https://www.dataq.or.kr",
+  "license": "기출 접근 불가로 공식 안내·공개 개념 자료를 근거로 직접 작성, 수치는 파이썬 검증"
+ },
+ "updated": "2026-11-25",
+ "questions": [
+  {
+   "q": "DIKW 피라미드에서 '이 편의점의 컵라면이 옆 편의점보다 200원 싸다'처럼 데이터를 비교·가공해 의미를 부여한 단계는?",
+   "choices": [
+    "정보",
+    "데이터",
+    "지식",
+    "지혜"
+   ],
+   "answer": 0,
+   "explain": "DIKW는 데이터 → 정보 → 지식 → 지혜 순이다. 개별 사실(가격)이 데이터이고, 그것을 비교해 의미를 준 것이 정보다. 이 정보를 활용해 '싼 곳에서 사야 한다'고 판단하는 것은 지식·지혜 쪽이다.",
+   "ref_url": "https://en.wikipedia.org/wiki/DIKW_pyramid"
+  },
+  {
+   "q": "노나카의 SECI 모델에서 형식지를 학습하고 체화해 개인의 암묵지로 바꾸는 과정은?",
+   "choices": [
+    "공동화",
+    "표출화",
+    "연결화",
+    "내면화"
+   ],
+   "answer": 3,
+   "explain": "SECI는 공동화(암묵→암묵), 표출화(암묵→형식), 연결화(형식→형식), 내면화(형식→암묵)다. 매뉴얼을 익혀 몸에 배게 하는 것은 형식지→암묵지의 내면화다.",
+   "ref_url": "https://en.wikipedia.org/wiki/SECI_model_of_knowledge_dimensions"
+  },
+  {
+   "q": "빅데이터의 특징을 설명하는 3V에 해당하지 않는 것은?",
+   "choices": [
+    "Volume(규모)",
+    "Variety(다양성)",
+    "Validity(정확성)",
+    "Velocity(속도)"
+   ],
+   "answer": 2,
+   "explain": "3V는 Volume, Variety, Velocity다. 규모는 TB·PB 단위, 다양성은 정형·반정형·비정형 데이터, 속도는 실시간에 가까운 생성·처리를 뜻한다.",
+   "ref_url": "https://en.wikipedia.org/wiki/Big_data"
+  },
+  {
+   "q": "다음 중 반정형 데이터에 해당하는 것은?",
+   "choices": [
+    "관계형 DB의 주문 테이블",
+    "JSON 형식의 API 응답",
+    "고객센터 통화 녹음 파일",
+    "CCTV 영상"
+   ],
+   "answer": 1,
+   "explain": "JSON·XML은 태그나 키로 구조를 스스로 설명하지만 고정된 스키마가 없는 반정형 데이터다. 관계형 테이블은 정형, 음성·영상은 비정형이다.",
+   "ref_url": "https://en.wikipedia.org/wiki/Semi-structured_data"
+  },
+  {
+   "q": "CRISP-DM 방법론의 단계 순서로 옳은 것은?",
+   "choices": [
+    "업무 이해 → 데이터 준비 → 데이터 이해 → 모델링 → 평가 → 전개",
+    "업무 이해 → 데이터 이해 → 데이터 준비 → 모델링 → 평가 → 전개",
+    "데이터 이해 → 업무 이해 → 모델링 → 데이터 준비 → 평가 → 전개",
+    "업무 이해 → 데이터 이해 → 모델링 → 데이터 준비 → 전개 → 평가"
+   ],
+   "answer": 1,
+   "explain": "CRISP-DM은 6단계(Business Understanding, Data Understanding, Data Preparation, Modeling, Evaluation, Deployment)이다.",
+   "ref_url": "https://en.wikipedia.org/wiki/Cross-industry_standard_process_for_data_mining"
+  },
+  {
+   "q": "CRISP-DM에서 모델을 실제 업무에 적용하기 직전에 모델이 업무 목적에 맞는지 점검하는 단계는?",
+   "choices": [
+    "평가(Evaluation)",
+    "모델링(Modeling)",
+    "데이터 준비(Data Preparation)",
+    "데이터 이해(Data Understanding)"
+   ],
+   "answer": 0,
+   "explain": "모델링 다음이 평가이고 그다음이 전개(Deployment)다. 평가에서는 모델 성능뿐 아니라 업무 목표 충족 여부를 본다.",
+   "ref_url": "https://en.wikipedia.org/wiki/Cross-industry_standard_process_for_data_mining"
+  },
+  {
+   "q": "KDD 분석 절차에서 잡음 제거와 결측치 처리 등 데이터를 깨끗하게 만드는 단계는?",
+   "choices": [
+    "데이터 선택(Selection)",
+    "데이터 변환(Transformation)",
+    "해석/평가(Interpretation/Evaluation)",
+    "데이터 전처리(Pre-processing)"
+   ],
+   "answer": 3,
+   "explain": "KDD는 선택 → 전처리 → 변환 → 데이터마이닝 → 해석/평가 순이다. 노이즈와 결측 레코드를 정리하는 것은 전처리 단계다.",
+   "ref_url": "https://en.wikipedia.org/wiki/Data_mining"
+  },
+  {
+   "q": "자료 2, 4, 4, 4, 5, 5, 7, 9의 모집단 표준편차는?",
+   "choices": [
+    "1",
+    "4",
+    "2",
+    "5"
+   ],
+   "answer": 2,
+   "explain": "평균은 5, 편차 제곱의 합은 32, 모분산은 32/8=4이므로 표준편차는 2다. 파이썬으로 계산해 확인했다.",
+   "ref_url": "https://en.wikipedia.org/wiki/Standard_deviation"
+  },
+  {
+   "q": "자료 2, 4, 4, 4, 5, 5, 7, 9를 표본으로 보았을 때 표본분산은? (소수 둘째 자리까지)",
+   "choices": [
+    "4.00",
+    "5.33",
+    "4.57",
+    "3.50"
+   ],
+   "answer": 2,
+   "explain": "표본분산은 편차제곱합 32를 n-1=7로 나눈 4.57이다. 모분산(32/8=4)과 분모가 다르다. 파이썬 statistics.variance로 확인했다.",
+   "ref_url": "https://en.wikipedia.org/wiki/Variance"
+  },
+  {
+   "q": "자료 3, 5, 7, 9, 100에 대한 설명으로 옳은 것은?",
+   "choices": [
+    "평균과 중앙값이 모두 7이다",
+    "평균은 24.8이고 중앙값은 7이어서, 이상치에는 중앙값이 덜 민감하다",
+    "평균은 7이고 중앙값은 24.8이다",
+    "이상치가 있어도 평균이 중앙값보다 대표성이 높다"
+   ],
+   "answer": 1,
+   "explain": "평균은 (3+5+7+9+100)/5=24.8로 극단값 100에 끌려가지만 중앙값은 7로 거의 변하지 않는다. 계산으로 확인했다.",
+   "ref_url": "https://en.wikipedia.org/wiki/Median"
+  },
+  {
+   "q": "어떤 자료의 제1사분위수가 20, 제3사분위수가 30이다. 박스플롯의 1.5×IQR 기준으로 이상치로 분류되는 값은?",
+   "choices": [
+    "46",
+    "45",
+    "38",
+    "12"
+   ],
+   "answer": 0,
+   "explain": "IQR=10, 상한 울타리는 30+15=45, 하한은 20-15=5다. 45를 초과하는 46만 이상치다(45는 경계라 포함되지 않는다). 12는 5보다 크므로 정상이다.",
+   "ref_url": "https://en.wikipedia.org/wiki/Interquartile_range"
+  },
+  {
+   "q": "x=1,2,3,4,5, y=2,4,5,4,5 일 때 y를 x에 단순회귀한 결정계수 R²은?",
+   "choices": [
+    "0.77",
+    "0.40",
+    "0.36",
+    "0.60"
+   ],
+   "answer": 3,
+   "explain": "피어슨 상관계수 r=0.7746이고 단순회귀의 R²은 r의 제곱이므로 0.60이다. 0.77은 R²이 아니라 r이다. 파이썬으로 계산해 확인했다.",
+   "ref_url": "https://en.wikipedia.org/wiki/Coefficient_of_determination"
+  },
+  {
+   "q": "두 변수의 피어슨 상관계수가 -0.9일 때 해석으로 옳은 것은?",
+   "choices": [
+    "한 변수가 원인이고 다른 변수가 결과임이 입증된다",
+    "두 변수는 거의 관계가 없다",
+    "한 변수가 10% 증가하면 다른 변수가 9% 감소한다",
+    "강한 음의 선형 관계가 있으나 인과관계를 의미하지는 않는다"
+   ],
+   "answer": 3,
+   "explain": "상관계수는 -1~1 범위에서 선형관계의 방향과 강도를 나타낼 뿐 인과를 보증하지 않고, 증가율의 비율을 뜻하지도 않는다.",
+   "ref_url": "https://en.wikipedia.org/wiki/Pearson_correlation_coefficient"
+  },
+  {
+   "q": "평균 100, 표준편차 15인 정규분포에서 점수 130의 표준점수(z)는?",
+   "choices": [
+    "1.5",
+    "30",
+    "2",
+    "0.5"
+   ],
+   "answer": 2,
+   "explain": "z=(130-100)/15=2다. 정규분포에서 평균±2표준편차 안에 약 95%가 들어가므로 130은 상위 약 2.3% 수준이다.",
+   "ref_url": "https://en.wikipedia.org/wiki/68%E2%80%9395%E2%80%9399.7_rule"
+  },
+  {
+   "q": "평균 100, 표준편차 15인 정규분포를 따르는 점수에서 85점부터 115점 사이에 속하는 비율은 대략?",
+   "choices": [
+    "50%",
+    "68%",
+    "95%",
+    "99.7%"
+   ],
+   "answer": 1,
+   "explain": "85~115는 평균±1표준편차이고 정규분포에서 약 68.27%가 이 범위에 있다. 2표준편차는 약 95%, 3표준편차는 약 99.7%다.",
+   "ref_url": "https://en.wikipedia.org/wiki/68%E2%80%9395%E2%80%9399.7_rule"
+  },
+  {
+   "q": "거래 10건 중 A가 5건, B가 4건, A와 B가 함께 2건 포함된다. 연관규칙 A→B의 신뢰도와 향상도는?",
+   "choices": [
+    "신뢰도 0.4, 향상도 1.0",
+    "신뢰도 0.5, 향상도 1.0",
+    "신뢰도 0.4, 향상도 2.0",
+    "신뢰도 0.2, 향상도 0.5"
+   ],
+   "answer": 0,
+   "explain": "지지도=2/10=0.2, 신뢰도=2/5=0.4, 향상도=0.2/(0.5×0.4)=1.0이다. 향상도 1은 A와 B가 독립이라 규칙이 유용한 연관을 보여 주지 않는다는 뜻이다.",
+   "ref_url": "https://en.wikipedia.org/wiki/Association_rule_learning"
+  },
+  {
+   "q": "이진 분류 결과 TP=40, FP=10, FN=20, TN=30이다. 정밀도(precision)와 재현율(recall)은?",
+   "choices": [
+    "정밀도 0.80, 재현율 약 0.67",
+    "정밀도 0.67, 재현율 0.80",
+    "정밀도 0.70, 재현율 0.70",
+    "정밀도 0.80, 재현율 0.80"
+   ],
+   "answer": 0,
+   "explain": "정밀도=TP/(TP+FP)=40/50=0.8, 재현율=TP/(TP+FN)=40/60≈0.67이다. 정확도는 (40+30)/100=0.7이다.",
+   "ref_url": "https://en.wikipedia.org/wiki/Precision_and_recall"
+  },
+  {
+   "q": "가설검정에서 제1종 오류에 대한 설명으로 옳은 것은?",
+   "choices": [
+    "귀무가설이 거짓인데 기각하지 못하는 오류이다",
+    "대립가설이 참인데 채택하는 오류이다",
+    "검정력과 같은 개념이다",
+    "귀무가설이 참인데 기각하는 오류이며 그 확률이 유의수준 α이다"
+   ],
+   "answer": 3,
+   "explain": "제1종 오류는 참인 귀무가설을 기각하는 위양성이고 확률이 α(보통 0.05)다. 거짓인 귀무가설을 기각하지 못하는 것은 제2종 오류(β)이고 검정력은 1-β다.",
+   "ref_url": "https://en.wikipedia.org/wiki/Type_I_and_type_II_errors"
+  },
+  {
+   "q": "유의수준 0.05에서 검정한 결과 p-값이 0.03이었다. 올바른 결론은?",
+   "choices": [
+    "귀무가설을 채택한다",
+    "유의수준을 0.01로 바꿔야 결론이 난다",
+    "귀무가설을 기각한다",
+    "대립가설이 참일 확률이 97%이다"
+   ],
+   "answer": 2,
+   "explain": "p-값(0.03)이 유의수준(0.05)보다 작으므로 귀무가설을 기각한다. p-값은 대립가설이 참일 확률이 아니다.",
+   "ref_url": "https://en.wikipedia.org/wiki/Type_I_and_type_II_errors"
+  },
+  {
+   "q": "학습 데이터에서 정확도 99%인 모델이 검증 데이터에서는 70%의 정확도를 보였다. 이 현상은?",
+   "choices": [
+    "과소적합(Underfitting)",
+    "과적합(Overfitting)",
+    "다중공선성",
+    "차원 축소"
+   ],
+   "answer": 1,
+   "explain": "학습 데이터의 잡음까지 외워 새 데이터에서 성능이 크게 떨어지는 것이 과적합이다. 과소적합은 학습 데이터에서조차 성능이 낮은 경우다.",
+   "ref_url": "https://en.wikipedia.org/wiki/Overfitting"
+  },
+  {
+   "q": "k-평균(k-means) 군집분석에 대한 설명으로 옳은 것은?",
+   "choices": [
+    "지도 학습이며 종속변수가 필요하다",
+    "비지도 학습이며 군집 수 k를 미리 정해야 한다",
+    "군집 수를 알고리즘이 자동으로 결정한다",
+    "초기 중심값과 관계없이 항상 같은 결과가 나온다"
+   ],
+   "answer": 1,
+   "explain": "k-평균은 레이블이 없는 데이터를 묶는 비지도 학습이고 k는 입력 값이다. 초기 중심에 따라 지역 최적해에 수렴할 수 있다.",
+   "ref_url": "https://en.wikipedia.org/wiki/K-means_clustering"
+  },
+  {
+   "q": "모집단을 서로 겹치지 않는 집단(층)으로 나눈 뒤 각 층에서 따로 표본을 추출하는 방법은?",
+   "choices": [
+    "층화추출",
+    "단순랜덤추출",
+    "계통추출",
+    "군집추출"
+   ],
+   "answer": 0,
+   "explain": "층화추출은 모집단을 층으로 나누고 각 층에서 추출해 표본의 정밀도를 높인다.",
+   "ref_url": "https://en.wikipedia.org/wiki/Stratified_sampling"
+  },
+  {
+   "q": "한국데이터산업진흥원 ADsP 필기시험의 문항 구성으로 옳은 것은?",
+   "choices": [
+    "데이터 이해 20문항, 데이터분석 기획 20문항, 데이터 분석 10문항",
+    "3과목 각 10문항",
+    "데이터 이해 30문항, 데이터분석 기획 10문항, 데이터 분석 10문항",
+    "데이터 이해 10문항, 데이터분석 기획 10문항, 데이터 분석 30문항"
+   ],
+   "answer": 3,
+   "explain": "공식 안내에 따르면 50문항(문항당 2점), 90분이며 합격은 총점 60점 이상이고 과목별 40% 미만이면 과락이다.",
+   "ref_url": "https://www.dataq.or.kr/www/sub/a_06.do"
+  },
+  {
+   "q": "ADsP 필기시험의 합격 기준으로 옳은 것은?",
+   "choices": [
+    "총점 70점 이상이면 합격이다",
+    "과목별 60점 이상이어야 한다",
+    "총점 60점 이상이고 과목별 40% 미만 득점 과목이 없어야 한다",
+    "총점 60점 이상이면 과목별 점수와 관계없이 합격이다"
+   ],
+   "answer": 2,
+   "explain": "한국데이터산업진흥원 안내: 총점 60점 이상, 과목별 40% 미만이면 과락 불합격이다.",
+   "ref_url": "https://www.dataq.or.kr/www/sub/a_06.do"
+  }
+ ],
+ "method": "original",
+ "sec_per_q": 108,
+ "analysis": "기출 접근 불가: ADsP 는 시행기관이 기출 원문을 공개하지 않고 열람 가능한 공개 문제지를 찾지 못했다. 공식 시험 안내(3과목, 50문항, 90분, 60점 합격·과목 40% 미만 과락)와 출제 범위만 근거로 직접 작성했다. 수치 문항은 파이썬으로 검증했다."
+}
