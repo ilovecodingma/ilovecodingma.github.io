@@ -1,5 +1,5 @@
 {
- "at": "2026-11-25 22:30",
+ "at": "2026-11-25 23:30",
  "nitems": 530,
  "cands": [
   {
@@ -39,15 +39,16 @@
   },
   {
    "kw": "복귀",
-   "nsrc": 5,
+   "nsrc": 6,
    "srcs": [
     "SBS",
     "뉴시스",
     "동아일보",
     "연합뉴스",
+    "조선일보",
     "헤럴드경제"
    ],
-   "n": 5,
+   "n": 6,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -72,36 +73,36 @@
    ]
   },
   {
-   "kw": "있어",
+   "kw": "깜짝",
    "nsrc": 5,
    "srcs": [
     "SBS",
-    "뉴시스",
-    "동아일보",
+    "세계일보",
     "조선일보",
-    "한국경제"
+    "한국경제",
+    "헤럴드경제"
    ],
-   "n": 5,
+   "n": 7,
    "headlines": [
     {
-     "src": "동아일보",
-     "title": "전현무, 촬영 중 분노 폭발…“기본이 안 돼 있어” (티처스3)",
-     "link": "https://sports.donga.com/ent/article/all/20261125/135088179/1"
+     "src": "한국경제",
+     "title": "덥수룩한 수염에 상투 머리…'문무' 男 배우 '깜짝 정체'",
+     "link": "https://www.hankyung.com/article/202611234639H"
     },
     {
      "src": "한국경제",
-     "title": "투어스 \"스스로 못 믿는 순간도…이름 불러주는 팬 있어 용기 생기죠\" [인터뷰+]",
-     "link": "https://www.hankyung.com/article/202611146527H"
+     "title": "빅뱅, 오늘 신곡 깜짝 발표…'마마 어워즈' 기대감 ↑",
+     "link": "https://www.hankyung.com/article/202611209274H"
     },
     {
-     "src": "SBS",
-     "title": "'틈만나면' 비, \"삶 자체가 운동…하지만 지방간 있어\" 충격 고백",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008861856&plink=RSSLINK&cooper=RSSREADER"
+     "src": "한국경제",
+     "title": "'두 도시 이야기' 신성록, 기상캐스터로 깜짝 변신한다",
+     "link": "https://www.hankyung.com/article/202611197375H"
     },
     {
-     "src": "뉴시스",
-     "title": "38세 미혼 지드래곤 \"자녀 계획 있어…대성 같은 아들\"",
-     "link": "https://www.newsis.com/view/NISX20261124_0003881742"
+     "src": "세계일보",
+     "title": "씨엘, 박봄과 깜짝 통화로 불화설 일축…“언니 베리 섭섭”",
+     "link": "https://www.segye.com/newsView/20261125517262"
     }
    ]
   },
@@ -201,6 +202,39 @@
      "src": "동아일보",
      "title": "박민영 “연상남 고수=눈빛이 멜로…연하남 육성재는 코드 잘 맞아” (나인 투 식스)",
      "link": "https://sports.donga.com/ent/article/all/20261125/135088121/1"
+    }
+   ]
+  },
+  {
+   "kw": "수상",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "연합뉴스",
+    "조선일보"
+   ],
+   "n": 9,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "춘천시, 지자체 홍보대상 스마트도시 부문 대상…3회 연속 수상",
+     "link": "https://www.yna.co.kr/view/AKR20261123146500062"
+    },
+    {
+     "src": "SBS",
+     "title": "'명예 방첩요원' 현빈, 국정원 공로패 수상",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008861906&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "뉴시스",
+     "title": "故 안성기 공로상에 이정재 울컥…차남 안필립 대리 수상",
+     "link": "https://www.newsis.com/view/NISX20261125_0003883504"
+    },
+    {
+     "src": "뉴시스",
+     "title": "'왕사남' 박지훈, 청룡영화상 신인남우상 수상",
+     "link": "https://www.newsis.com/view/NISX20261125_0003883514"
     }
    ]
   },
@@ -337,35 +371,68 @@
    ]
   },
   {
-   "kw": "결별",
+   "kw": "연기",
    "nsrc": 4,
    "srcs": [
-    "SBS",
     "뉴시스",
-    "연합뉴스",
-    "한국경제"
+    "동아일보",
+    "세계일보",
+    "조선일보"
    ],
    "n": 7,
    "headlines": [
     {
-     "src": "연합뉴스",
-     "title": "임지연·이도현, 교제 4년 만에 결별…\"좋은 동료로 남기로\"",
-     "link": "https://www.yna.co.kr/view/AKR20261124145200005"
+     "src": "동아일보",
+     "title": "“연기 자세에 150% 만족”…‘신병 더 무비’ 트와이스 정연 아닌 ‘배우 유정연’의 첫걸음(종합)",
+     "link": "https://sports.donga.com/ent/article/all/20261125/135087135/1"
     },
     {
-     "src": "한국경제",
-     "title": "이도현·임지연 결별…\"좋은 동료로 남기로\" [공식]",
-     "link": "https://www.hankyung.com/article/202611247415H"
+     "src": "동아일보",
+     "title": "고나영, 셰프에서 뮤비 감독으로…연기·OST 넘나드는 열일 행보",
+     "link": "https://sports.donga.com/ent/article/all/20261125/135087210/1"
     },
     {
-     "src": "SBS",
-     "title": "'더 글로리' 커플 마침표…임지연·이도현, 공개 열애 3년 만에 '결별'",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008861368&plink=RSSLINK&cooper=RSSREADER"
+     "src": "동아일보",
+     "title": "‘신병 더 무비’ 감독 “공승연과 인연으로 동생 정연 캐스팅…연기 150% 만족”",
+     "link": "https://sports.donga.com/ent/article/all/20261125/135087106/1"
     },
     {
-     "src": "SBS",
-     "title": "'청담부부' 정우성-이정재, 결별 수순…정우성 아컴 지분 매각",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008860454&plink=RSSLINK&cooper=RSSREADER"
+     "src": "동아일보",
+     "title": "‘신병 더 무비’ 정연 “첫 연기 도전작, 부족하겠지만 예쁘게 봐주셨으면”",
+     "link": "https://sports.donga.com/ent/article/all/20261125/135086994/1"
+    }
+   ]
+  },
+  {
+   "kw": "축하",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "세계일보",
+    "조선일보",
+    "헤럴드경제"
+   ],
+   "n": 7,
+   "headlines": [
+    {
+     "src": "세계일보",
+     "title": "오정태, 16세 딸 카이스트 조기 입학…\"축하 선물은 성형수술\"",
+     "link": "https://www.segye.com/newsView/20261125515616"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "“악플은 사양” 흑백요리사 유명 셰프 깜짝 재혼…백종원·안성재도 축하",
+     "link": "https://biz.heraldcorp.com/article/10947057"
+    },
+    {
+     "src": "뉴시스",
+     "title": "조권 첫사랑 홍재경 아나운서 12월 결혼 \"축하 감사해\"",
+     "link": "https://www.newsis.com/view/NISX20261124_0003881753"
+    },
+    {
+     "src": "조선일보",
+     "title": "[포토] 청룡영화상 여우조연상 조여정-박지현 진심으로 축하",
+     "link": "https://www.chosun.com/entertainments/entertain_photo/2026/11/25/HA3WIMTCGJSTCODFMQ4WENJUGM/"
     }
    ]
   },
@@ -403,40 +470,7 @@
    ]
   },
   {
-   "kw": "좋은",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "연합뉴스",
-    "한국경제",
-    "헤럴드경제"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "'기분 좋은 날' 방송 20주년…MC 김한석 \"함께 나이 들어가고파\"",
-     "link": "https://www.yna.co.kr/view/AKR20261125053100005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "임지연·이도현, 교제 4년 만에 결별…\"좋은 동료로 남기로\"",
-     "link": "https://www.yna.co.kr/view/AKR20261124145200005"
-    },
-    {
-     "src": "한국경제",
-     "title": "이도현·임지연 결별…\"좋은 동료로 남기로\" [공식]",
-     "link": "https://www.hankyung.com/article/202611247415H"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "‘47세’ 성시경, “좋은 타이밍에 결혼 했었으면...”",
-     "link": "https://biz.heraldcorp.com/article/10946776"
-    }
-   ]
-  },
-  {
-   "kw": "이도현",
+   "kw": "결별",
    "nsrc": 4,
    "srcs": [
     "SBS",
@@ -462,9 +496,9 @@
      "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008861368&plink=RSSLINK&cooper=RSSREADER"
     },
     {
-     "src": "뉴시스",
-     "title": "얼굴 반쪽된 이도현, 임지연과 결별 전 포착된 모습",
-     "link": "https://www.newsis.com/view/NISX20261125_0003882930"
+     "src": "SBS",
+     "title": "'청담부부' 정우성-이정재, 결별 수순…정우성 아컴 지분 매각",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008860454&plink=RSSLINK&cooper=RSSREADER"
     }
    ]
   },
@@ -535,105 +569,6 @@
    ]
   },
   {
-   "kw": "미모",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "세계일보",
-    "조선일보"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "야노시호, 미모 유지 비법 뭐길래…“100% 내돈내산” 관리템 공개 (편스토랑)",
-     "link": "https://sports.donga.com/ent/article/all/20261125/135087502/1"
-    },
-    {
-     "src": "세계일보",
-     "title": "[포토] 박민영 '완벽한 미모'",
-     "link": "https://www.segye.com/newsView/20261125510788"
-    },
-    {
-     "src": "뉴시스",
-     "title": "48세 김하늘, 해외여행서 민낯 공개…청순 미모",
-     "link": "https://www.newsis.com/view/NISX20261125_0003882061"
-    },
-    {
-     "src": "조선일보",
-     "title": "[사진]조이현 '황홀한 미모'",
-     "link": "https://www.chosun.com/entertainments/entertain_photo/2026/11/25/GM3GCOBTMRSDKNLDGMYWCYRZG4/"
-    }
-   ]
-  },
-  {
-   "kw": "깜짝",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "세계일보",
-    "한국경제",
-    "헤럴드경제"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "한국경제",
-     "title": "덥수룩한 수염에 상투 머리…'문무' 男 배우 '깜짝 정체'",
-     "link": "https://www.hankyung.com/article/202611234639H"
-    },
-    {
-     "src": "한국경제",
-     "title": "빅뱅, 오늘 신곡 깜짝 발표…'마마 어워즈' 기대감 ↑",
-     "link": "https://www.hankyung.com/article/202611209274H"
-    },
-    {
-     "src": "한국경제",
-     "title": "'두 도시 이야기' 신성록, 기상캐스터로 깜짝 변신한다",
-     "link": "https://www.hankyung.com/article/202611197375H"
-    },
-    {
-     "src": "세계일보",
-     "title": "씨엘, 박봄과 깜짝 통화로 불화설 일축…“언니 베리 섭섭”",
-     "link": "https://www.segye.com/newsView/20261125517262"
-    }
-   ]
-  },
-  {
-   "kw": "아이브",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "연합뉴스",
-    "조선일보",
-    "한국경제"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "배틀그라운드 첫 시즌형 음악 프로젝트에 아이브 참여",
-     "link": "https://www.yna.co.kr/view/AKR20261125051500017"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "아이브, 내년 1월 서울 KSPO돔서 월드투어 앙코르",
-     "link": "https://www.yna.co.kr/view/AKR20261120145400005"
-    },
-    {
-     "src": "한국경제",
-     "title": "BTS 대상 2개 포함 '6관왕'·아이브 눈물의 '5관왕'…MMA 2026 피날레 [종합]",
-     "link": "https://www.hankyung.com/article/202611157614H"
-    },
-    {
-     "src": "뉴시스",
-     "title": "방탄소년단·아이브·에스파·코르티스, '제41회 골든디스크' 본상 동시 후보",
-     "link": "https://www.newsis.com/view/NISX20261125_0003883423"
-    }
-   ]
-  },
-  {
    "kw": "음악",
    "nsrc": 4,
    "srcs": [
@@ -667,6 +602,39 @@
    ]
   },
   {
+   "kw": "좋은",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "연합뉴스",
+    "한국경제",
+    "헤럴드경제"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "'기분 좋은 날' 방송 20주년…MC 김한석 \"함께 나이 들어가고파\"",
+     "link": "https://www.yna.co.kr/view/AKR20261125053100005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "임지연·이도현, 교제 4년 만에 결별…\"좋은 동료로 남기로\"",
+     "link": "https://www.yna.co.kr/view/AKR20261124145200005"
+    },
+    {
+     "src": "한국경제",
+     "title": "이도현·임지연 결별…\"좋은 동료로 남기로\" [공식]",
+     "link": "https://www.hankyung.com/article/202611247415H"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "‘47세’ 성시경, “좋은 타이밍에 결혼 했었으면...”",
+     "link": "https://biz.heraldcorp.com/article/10946776"
+    }
+   ]
+  },
+  {
    "kw": "재혼",
    "nsrc": 4,
    "srcs": [
@@ -696,6 +664,39 @@
      "src": "SBS",
      "title": "김새롬 \"법적 짝꿍 생겼다\"…이혼 9년 만에 재혼 발표",
      "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008861907&plink=RSSLINK&cooper=RSSREADER"
+    }
+   ]
+  },
+  {
+   "kw": "이도현",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "연합뉴스",
+    "한국경제"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "임지연·이도현, 교제 4년 만에 결별…\"좋은 동료로 남기로\"",
+     "link": "https://www.yna.co.kr/view/AKR20261124145200005"
+    },
+    {
+     "src": "한국경제",
+     "title": "이도현·임지연 결별…\"좋은 동료로 남기로\" [공식]",
+     "link": "https://www.hankyung.com/article/202611247415H"
+    },
+    {
+     "src": "SBS",
+     "title": "'더 글로리' 커플 마침표…임지연·이도현, 공개 열애 3년 만에 '결별'",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008861368&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "뉴시스",
+     "title": "얼굴 반쪽된 이도현, 임지연과 결별 전 포착된 모습",
+     "link": "https://www.newsis.com/view/NISX20261125_0003882930"
     }
    ]
   },
@@ -865,39 +866,6 @@
    ]
   },
   {
-   "kw": "유죄인간",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "연합뉴스",
-    "한국경제"
-   ],
-   "n": 4,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "사랑과 평화 찾은 임시완과 설인아…'나의 유죄인간' 5.9% 종영",
-     "link": "https://www.yna.co.kr/view/AKR20261125032600005"
-    },
-    {
-     "src": "동아일보",
-     "title": "‘나의 유죄인간’ 쌍방 청혼으로 ‘꽉 닫힌’ 해피엔딩",
-     "link": "https://sports.donga.com/ent/article/all/20261125/135086800/1"
-    },
-    {
-     "src": "한국경제",
-     "title": "결국 스며들었다…임시완, 화제성 넘어 새 얼굴 증명해낸 '유죄인간' [스타:라이트]",
-     "link": "https://www.hankyung.com/article/202611168180H"
-    },
-    {
-     "src": "뉴시스",
-     "title": "임시완·설인아, 쌍방 프러포즈로 해피엔딩…'나의 유죄인간' 5.9% 종영",
-     "link": "https://www.newsis.com/view/NISX20261125_0003882103"
-    }
-   ]
-  },
-  {
    "kw": "나의",
    "nsrc": 4,
    "srcs": [
@@ -922,6 +890,39 @@
      "src": "한겨레",
      "title": "영혼을 팔아서라도 갖고 싶은 나의 집…하지만 어딘가 기이하다",
      "link": "https://www.hani.co.kr/arti/culture/culture_general/1288864.html"
+    },
+    {
+     "src": "뉴시스",
+     "title": "임시완·설인아, 쌍방 프러포즈로 해피엔딩…'나의 유죄인간' 5.9% 종영",
+     "link": "https://www.newsis.com/view/NISX20261125_0003882103"
+    }
+   ]
+  },
+  {
+   "kw": "유죄인간",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "연합뉴스",
+    "한국경제"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "사랑과 평화 찾은 임시완과 설인아…'나의 유죄인간' 5.9% 종영",
+     "link": "https://www.yna.co.kr/view/AKR20261125032600005"
+    },
+    {
+     "src": "동아일보",
+     "title": "‘나의 유죄인간’ 쌍방 청혼으로 ‘꽉 닫힌’ 해피엔딩",
+     "link": "https://sports.donga.com/ent/article/all/20261125/135086800/1"
+    },
+    {
+     "src": "한국경제",
+     "title": "결국 스며들었다…임시완, 화제성 넘어 새 얼굴 증명해낸 '유죄인간' [스타:라이트]",
+     "link": "https://www.hankyung.com/article/202611168180H"
     },
     {
      "src": "뉴시스",
@@ -1030,72 +1031,6 @@
    ]
   },
   {
-   "kw": "임지연",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "연합뉴스",
-    "한국경제"
-   ],
-   "n": 4,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "임지연·이도현, 교제 4년 만에 결별…\"좋은 동료로 남기로\"",
-     "link": "https://www.yna.co.kr/view/AKR20261124145200005"
-    },
-    {
-     "src": "한국경제",
-     "title": "이도현·임지연 결별…\"좋은 동료로 남기로\" [공식]",
-     "link": "https://www.hankyung.com/article/202611247415H"
-    },
-    {
-     "src": "SBS",
-     "title": "'더 글로리' 커플 마침표…임지연·이도현, 공개 열애 3년 만에 '결별'",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008861368&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "뉴시스",
-     "title": "임지연·이도현, 열애 4년 만에 결별…\"좋은 동료로 남기로\"",
-     "link": "https://www.newsis.com/view/NISX20261124_0003881383"
-    }
-   ]
-  },
-  {
-   "kw": "아닌",
-   "nsrc": 4,
-   "srcs": [
-    "동아일보",
-    "연합뉴스",
-    "조선일보",
-    "한겨레"
-   ],
-   "n": 4,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "\"방송·OTT 규제기준, 매체 아닌 기능·영향력 중심으로 바꿔야\"",
-     "link": "https://www.yna.co.kr/view/AKR20261124061800017"
-    },
-    {
-     "src": "동아일보",
-     "title": "“연기 자세에 150% 만족”…‘신병 더 무비’ 트와이스 정연 아닌 ‘배우 유정연’의 첫걸음(종합)",
-     "link": "https://sports.donga.com/ent/article/all/20261125/135087135/1"
-    },
-    {
-     "src": "한겨레",
-     "title": "<span>19세기 ‘인상파’ 아닌 21세기 한국 ‘인상화’…을지로를 물들이다</span>",
-     "link": "https://www.hani.co.kr/arti/culture/music/1289073.html"
-    },
-    {
-     "src": "조선일보",
-     "title": "[사진]스윙스 아닌 배우 문지훈",
-     "link": "https://www.chosun.com/entertainments/entertain_photo/2026/11/25/GBSDIODFGFSDIOLFGQ4GKY3CGY/"
-    }
-   ]
-  },
-  {
    "kw": "앞두고",
    "nsrc": 4,
    "srcs": [
@@ -1125,6 +1060,39 @@
      "src": "뉴시스",
      "title": "육성재, 드라마 첫 방 앞두고 부상 \"기립성 저혈압으로 넘어져\"",
      "link": "https://www.newsis.com/view/NISX20261124_0003881580"
+    }
+   ]
+  },
+  {
+   "kw": "이관희",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "동아일보",
+    "헤럴드경제"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "윤하정, 이관희♥유시은 사과받고도 폭로 논란…결국 “제가 경솔”",
+     "link": "https://sports.donga.com/ent/article/all/20261125/135088449/1"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "“버진로드 걸으며 결혼식 예행연습”…이관희·유시은, 민폐 하객 논란 사과",
+     "link": "https://biz.heraldcorp.com/article/10948086"
+    },
+    {
+     "src": "SBS",
+     "title": "이관희♥유시은, 민폐 하객 논란 사과…\"버진로드 걸은 건 무지·경솔\"",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008862300&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "뉴시스",
+     "title": "이관희·유시은 결혼식 민폐 사과 \"무지하고 경솔했다\"",
+     "link": "https://www.newsis.com/view/NISX20261124_0003881767"
     }
    ]
   },
@@ -1195,68 +1163,35 @@
    ]
   },
   {
-   "kw": "이관희",
+   "kw": "있어",
    "nsrc": 4,
    "srcs": [
     "SBS",
     "뉴시스",
     "동아일보",
-    "헤럴드경제"
+    "한국경제"
    ],
    "n": 4,
    "headlines": [
     {
      "src": "동아일보",
-     "title": "윤하정, 이관희♥유시은 사과받고도 폭로 논란…결국 “제가 경솔”",
-     "link": "https://sports.donga.com/ent/article/all/20261125/135088449/1"
+     "title": "전현무, 촬영 중 분노 폭발…“기본이 안 돼 있어” (티처스3)",
+     "link": "https://sports.donga.com/ent/article/all/20261125/135088179/1"
     },
     {
-     "src": "헤럴드경제",
-     "title": "“버진로드 걸으며 결혼식 예행연습”…이관희·유시은, 민폐 하객 논란 사과",
-     "link": "https://biz.heraldcorp.com/article/10948086"
+     "src": "한국경제",
+     "title": "투어스 \"스스로 못 믿는 순간도…이름 불러주는 팬 있어 용기 생기죠\" [인터뷰+]",
+     "link": "https://www.hankyung.com/article/202611146527H"
     },
     {
      "src": "SBS",
-     "title": "이관희♥유시은, 민폐 하객 논란 사과…\"버진로드 걸은 건 무지·경솔\"",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008862300&plink=RSSLINK&cooper=RSSREADER"
+     "title": "'틈만나면' 비, \"삶 자체가 운동…하지만 지방간 있어\" 충격 고백",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008861856&plink=RSSLINK&cooper=RSSREADER"
     },
     {
      "src": "뉴시스",
-     "title": "이관희·유시은 결혼식 민폐 사과 \"무지하고 경솔했다\"",
-     "link": "https://www.newsis.com/view/NISX20261124_0003881767"
-    }
-   ]
-  },
-  {
-   "kw": "개월",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "조선일보",
-    "한겨레"
-   ],
-   "n": 4,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "지윤미, 유흥업소·스폰까지 황당 루머…악플러 징역 1년 6개월",
-     "link": "https://sports.donga.com/ent/article/all/20261125/135088473/1"
-    },
-    {
-     "src": "한겨레",
-     "title": "에이티즈 4개월 만에 또 ‘빌보드 200’ 1위",
-     "link": "https://www.hani.co.kr/arti/culture/music/1288587.html"
-    },
-    {
-     "src": "뉴시스",
-     "title": "거미, 출산한 지 채 1년 안 돼…\"둘째 딸, 이제 9개월\"",
-     "link": "https://www.newsis.com/view/NISX20261125_0003883487"
-    },
-    {
-     "src": "조선일보",
-     "title": "지윤미, 유흥업소 루머 유포자에 승소..\"징역 1년 6개월·1억 배상\"",
-     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/25/GA3DSNZXGQ4TIMZVGA2TSODFMQ/"
+     "title": "38세 미혼 지드래곤 \"자녀 계획 있어…대성 같은 아들\"",
+     "link": "https://www.newsis.com/view/NISX20261124_0003881742"
     }
    ]
   },
@@ -1322,6 +1257,70 @@
      "src": "연합뉴스",
      "title": "아이유, 내년 새 월드투어…女 솔로 가수 최초 도쿄돔 입성",
      "link": "https://www.yna.co.kr/view/AKR20261124141700005"
+    }
+   ]
+  },
+  {
+   "kw": "아일릿",
+   "nsrc": 3,
+   "srcs": [
+    "동아일보",
+    "연합뉴스",
+    "조선일보"
+   ],
+   "n": 14,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "아일릿, 일본 레코드 대상 우수작품상…코르티스 특별국제음악상",
+     "link": "https://www.yna.co.kr/view/AKR20261121027900005"
+    },
+    {
+     "src": "동아일보",
+     "title": "세븐틴 정한·아일릿·최예나까지…K팝이 J팝 맞손 잡는 이유는?",
+     "link": "https://sports.donga.com/ent/article/all/20261125/135088170/1"
+    },
+    {
+     "src": "조선일보",
+     "title": "[포토] 아일릿 원희-구교환, 체포하겠어",
+     "link": "https://www.chosun.com/entertainments/entertain_photo/2026/11/25/G42WKMRVGM4DMYZWMVQTOMRXGI/"
+    },
+    {
+     "src": "조선일보",
+     "title": "[포토] 아일릿 원희, 오늘은 영화 배우 체포",
+     "link": "https://www.chosun.com/entertainments/entertain_photo/2026/11/25/GA4DIMRQGE4WEYTGGYZTKZRRGI/"
+    }
+   ]
+  },
+  {
+   "kw": "박지현",
+   "nsrc": 3,
+   "srcs": [
+    "SBS",
+    "연합뉴스",
+    "조선일보"
+   ],
+   "n": 13,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "박지현, 美국제에미상 첫 여자연기상 불발…'하이퍼나이프'도 고배",
+     "link": "https://www.yna.co.kr/view/AKR20261124097600075"
+    },
+    {
+     "src": "SBS",
+     "title": "박지현, 국제 에미상 첫 여자 연기상 불발",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008861905&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "조선일보",
+     "title": "[포토] 청룡영화상 여우조연상 조여정-박지현 진심으로 축하",
+     "link": "https://www.chosun.com/entertainments/entertain_photo/2026/11/25/HA3WIMTCGJSTCODFMQ4WENJUGM/"
+    },
+    {
+     "src": "조선일보",
+     "title": "[포토] 청룡영화상 여우조연상 조여정-박지현 진심으로 축하",
+     "link": "https://www.chosun.com/entertainments/entertain_photo/2026/11/25/MY4DGZJQMYYWGMBTMIZDQMLBGI/"
     }
    ]
   }
