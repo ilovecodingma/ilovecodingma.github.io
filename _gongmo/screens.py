@@ -71,12 +71,12 @@ def today_html(ctx):
     cnt = {k: sum(1 for i in items if i['type'] == k) for k in order}
     chips = f'<button type="button" class="on" data-f="">전체 <small>{len(items)}</small></button>' + ''.join(f'<button type="button" data-f="{k}">{k} <small>{v}</small></button>' for k, v in cnt.items())
     now = ctx['now']
-    lst = ''.join(_card(i) for i in items) or '<li class="td-empty">오늘 마감 없어. 내일 건 <a href="/contest/">공모전 목록</a>에서 봐.</li>'
+    lst = ''.join(_card(i) for i in items) or '<li class="td-empty">오늘 마감하는 항목이 없어요. 내일 마감하는 공모전은 <a href="/contest/">공모전 목록</a>에서 마감순으로 볼 수 있어요.</li>'
     return (f'<p class="bc"><a href="/">홈</a> › 오늘 마감</p><h1 class="td-h1">오늘 마감하는 기회</h1>'
-            f'<p class="td-sub">{now:%Y년 %m월 %d일}(한국 시간) 마감 · {now:%H:%M} 갱신 · 시각 모르면 「시각 미확인」</p>'
+            f'<p class="td-sub">{now:%Y년 %m월 %d일}(한국 시간) 마감 · {now:%H:%M} 갱신 · 마감 시각을 알 수 없으면 「시각 미확인」으로 표시해요</p>'
             f'<div class="td-f" role="group" aria-label="유형 필터">{chips}</div>'
-            f'<ul class="td-l" id="tdl">{lst}</ul><p class="td-n" id="tdn" hidden>이 유형은 오늘 마감 없어.</p>'
-            '<p class="note">마감은 자동 수집 값이야. 신청 전에 공식 사이트에서 다시 확인해. <a href="/">홈</a></p>'
+            f'<ul class="td-l" id="tdl">{lst}</ul><p class="td-n" id="tdn" hidden>이 유형은 오늘 마감하는 항목이 없어요.</p>'
+            '<p class="note">뉴스·웹툰·레시피 등 다른 주제는 <a href="/">홈</a>에서 찾아보세요. 마감 정보는 자동 수집 값이라 신청 전에 공식 사이트에서 다시 확인하세요.</p>'
             '<link rel="stylesheet" href="/assets/home/screens.css?v=5"><script defer src="/assets/home/screens.js?v=1"></script>')
 
 
@@ -222,7 +222,7 @@ def _kwmap_sec(full=False):
                 edges.append([a, b]); deg[a] += 1; deg[b] += 1
     data = json.dumps({'n': nodes, 'e': edges}, ensure_ascii=False).replace('</', '<' + chr(92) + '/')
     head = '' if full else '<div class="hm-h"><h2>키워드 지도</h2><a href="/map/">크게 보기 →</a></div>'
-    return (f'<section class="hm-sec hm-kw">{head}<p class="note"><i class="kd" style="background:#e5484d"></i>단기 · <i class="kd" style="background:#d97706"></i>중기 · <i class="kd" style="background:#2563eb"></i>장기 — 끌어서 돌려. 점 누르면 글로 가. 선은 겹치는 단어야.</p>'
+    return (f'<section class="hm-sec hm-kw">{head}<p class="note"><i class="kd" style="background:#e5484d"></i>단기 · <i class="kd" style="background:#d97706"></i>중기 · <i class="kd" style="background:#2563eb"></i>장기 — 끌어서 돌리고, 점을 누르면 해당 글로 이동합니다. 선은 겹치는 단어로 이어집니다.</p>'
             f'<div id="kwmap" class="kw-box"></div><script type="application/json" id="kwdata">{data}</script><script defer src="/assets/home/kwmap.js?v=1"></script></section>')
 
 
@@ -240,14 +240,14 @@ def _concept_sec():
         pass
     def card(cls, tag, h, p, n, unit):
         return f'<div class="cp-c {cls}"><span class="cp-t">{tag}</span><b class="cp-n">{n}<small>{unit}</small></b><h3>{h}</h3><p>{p}</p></div>'
-    cards = (card('s', '단기 · 3~4일', '지금 급상승', '갑자기 뜬 질문. 며칠 뒤 내려.', c['단기'], '건')
-             + card('m', '중기 · 약 2주', '이번 달 관심사', '시즌 주제. 2주 단위.', c['중기'], '건')
-             + card('l', '장기 · 계속', '오래 찾는 것', '해마다 반복되는 제도. 계속 둬.', c['장기'], '건'))
+    cards = (card('s', '단기 · 3~4일', '지금 급상승', '뉴스·트렌드에서 갑자기 뜬 질문을 빠르게 확인해 정리하고, 며칠 뒤 내립니다.', c['단기'], '건')
+             + card('m', '중기 · 약 2주', '이번 달 관심사', '시즌과 검색 흐름이 이어지는 주제를 2주 단위로 다룹니다.', c['중기'], '건')
+             + card('l', '장기 · 계속', '오래 찾는 것', '해마다 반복되는 제도와 방법을 공식 자료로 깊게 정리해 유지합니다.', c['장기'], '건'))
     flow = ''.join(f'<li><i>{n}</i><b>{a}</b><span>{b}</span></li>' for n, a, b in (
         (1, '신호 수집', '자동완성·검색 콘솔·지식인·커뮤니티·뉴스'), (2, '분석', '겹침 대조, 점수화, 단기·중기·장기 분류'),
         (3, '작성', '공식 출처와 기준일을 단 분석 글'), (4, '루리 위키에 기록', '검색으로 찾아오는 문서, 기간 지난 단기 글은 정리')))
-    return (f'<section class="cp"><p class="cp-k">LURI ANALYST · LIVE ARCHIVE</p><h2 class="cp-h">사람들이 궁금해하는 것을<br><em>실시간으로 기록</em>해</h2>'
-            f'<p class="cp-s">검색어·커뮤니티·뉴스 신호를 매시간 모아 질문을 뽑아. <b>루리 위키</b>에 현재 <b>{tot}개</b>.</p>'
+    return (f'<section class="cp"><p class="cp-k">LURI ANALYST · LIVE ARCHIVE</p><h2 class="cp-h">사람들이 궁금해하는 것을<br><em>실시간으로 찾아 기록</em>합니다</h2>'
+            f'<p class="cp-s">루리 애널리스트는 검색어·자동완성·커뮤니티·뉴스 신호를 매시간 수집하고 분석해, 사람들이 궁금해하는 질문을 찾아냅니다. 찾아낸 질문은 공식 출처 기준의 문서로 <b>루리 위키</b>에 기록하고, 현재 <b>{tot}개</b>의 질문이 쌓여 있습니다.</p>'
             f'<div class="cp-g">{cards}</div><ol class="cp-f">{flow}</ol><p class="cp-a"><a class="cp-btn" href="/wiki/">루리 위키 열기 →</a><a class="cp-btn o" href="/map/">키워드 지도 보기</a></p></section>')
 
 
@@ -483,7 +483,7 @@ def _opp_cards(ctx, seen, limit=4):
         return ''
     head = '<li class="op-h" aria-hidden="true"><span>공모전·지원 기회</span><span>참가 대상</span><span>혜택</span><span>마감</span></li>'
     return (f'<section class="h2-sec" aria-labelledby="s-opp"><div class="h2-hd"><h2 id="s-opp">마감 임박 공모전·지원 기회</h2><a href="/contest/">전체 보기 {_ic("arrow", "sv s")}</a></div>'
-            f'<ul class="op-g">{head}{li}</ul><p class="h2-nt">마감 빠른 순. 조건 확인 안 된 공고는 뺐어. 공식 공고 다시 봐. <a href="/apply/">지원금·청약 전체</a> · <a href="/today/">오늘 마감</a></p></section>')
+            f'<ul class="op-g">{head}{li}</ul><p class="h2-nt">마감 빠른 순입니다. 핵심 조건을 확인하지 못한 공고는 제외했으니 신청 전 공식 공고를 다시 확인해 주세요. <a href="/apply/">지원금·청약 전체</a> · <a href="/today/">오늘 마감</a></p></section>')
 
 
 def _sec_guides(seen):
@@ -567,7 +567,7 @@ def _sec_pop(cands, seen, n=6, max_issue=2):
             return t.split('?')[0].strip() + '?' if '?' in t and re.search(r'[은는]$', s) else s
         li = ''.join(f'<li><p class="kk">{E(k)}</p><h3><a href="{E(u)}">{E(_short(ttl(t), 60))}</a></h3><p class="sm">{E(_first_sentences(s, 70))}</p></li>' for u, k, t, s in pick)
         return (f'<section class="h2-sec" aria-labelledby="s-pop"><div class="h2-hd"><h2 id="s-pop">많이 찾는 글</h2><a href="/money/guide/">가이드 전체 {_ic("arrow", "sv s")}</a></div>'
-                f'<ol class="gd-l pp-l">{li}</ol><p class="h2-nt">최근 7일 조회 많은 순.</p></section>')
+                f'<ol class="gd-l pp-l">{li}</ol><p class="h2-nt">최근 7일 동안 방문이 많았던 글 순서입니다.</p></section>')
     except Exception as e:
         print('홈 「많이 찾는 글」 건너뜀', repr(e)[:160])
         return ''
@@ -641,7 +641,7 @@ def _sec_ent(ent, seen):
     for c in L:
         seen.add(c[0])
     li = ''.join(f'<li><p class="kk">연예·화제</p><h3><a href="{E(c[0])}">{E(_short(_dt(c[2]), 60))}</a></h3><p class="sm">{E(_first_sentences(c[3], 70))}</p><p class="mt"><time datetime="{c[4]}">{_dstr(c[4])} 업데이트</time></p></li>' for c in L)
-    return f'<section class="h2-sec" aria-labelledby="s-ent"><div class="h2-hd"><h2 id="s-ent">연예·화제</h2><a href="/issue/">이슈 전체 {_ic("arrow", "sv s")}</a></div><ul class="gd-l">{li}</ul><p class="h2-nt">주장이랑 확인된 사실은 따로 적었어. 미확인은 표시해.</p></section>'
+    return f'<section class="h2-sec" aria-labelledby="s-ent"><div class="h2-hd"><h2 id="s-ent">연예·화제</h2><a href="/issue/">이슈 전체 {_ic("arrow", "sv s")}</a></div><ul class="gd-l">{li}</ul><p class="h2-nt">제기된 주장과 확인된 사실을 나누어 적은 정리입니다. 확인되지 않은 내용은 확인 상태를 함께 표시합니다.</p></section>'
 
 
 def home_html(ctx):
@@ -649,20 +649,19 @@ def home_html(ctx):
     cands = _read_candidates(ctx)
     # 2026-11-10 방문 기록 기준 개편: 들어오는 글의 44%가 생활 가이드·고민 해결, 13~25%가 이슈, 19%가 공모전. 홈에서 다음으로 누르는 곳은 공모전이 가장 많다.
     # → 첫 문장·검색 예시·바로가기를 그 순서로, 「많이 찾는 글」(실제 방문 순)을 맨 앞 구역으로.
-    top = ('<section class="h2-top" aria-labelledby="h2-t"><h1 id="h2-t">수능·정시·자격증·공무원 시험, 일정부터 문제까지</h1>'
-           '<p class="lead">시험 일정, 접수·발표일, 예상 컷, 유사문제, 스펙, 식단. 날짜는 공식 공고 확인한 것만 적어. <a href="/about/#method">만드는 방식</a></p>'
-           f'<form class="h2-s" role="search" action="/wiki/"><div class="row"><label class="sr" for="hs">검색 범위</label><select id="hs"><option value="">전체</option><option value="c">스펙(공모전)</option><option value="a">지원금</option><option value="w">가이드</option><option value="r">식단</option></select>'
-           '<label class="sr" for="hq">검색어</label><input id="hq" type="search" placeholder="예: 2027 수능 등급컷, 한능검, 국가장학금" autocomplete="off" enterkeyhint="search"><button type="submit" class="go">검색</button></div>'
+    top = ('<section class="h2-top" aria-labelledby="h2-t"><h1 id="h2-t">생활 가이드·이슈·공모전, 필요한 것을 바로 찾으세요</h1>'
+           '<p class="lead">세금·보험·장학금 같은 생활 정보부터 요즘 이슈, 공모전·지원금까지 출처와 함께 정리합니다. 자료는 AI로 수집·정리합니다. <a href="/about/#method">만드는 방식</a></p>'
+           f'<form class="h2-s" role="search" action="/wiki/"><div class="row"><label class="sr" for="hs">검색 범위</label><select id="hs"><option value="">전체</option><option value="c">공모전</option><option value="a">지원금</option><option value="w">가이드</option><option value="r">레시피</option></select>'
+           '<label class="sr" for="hq">검색어</label><input id="hq" type="search" placeholder="예: 4대보험 요율, 국가장학금, 영상 공모전" autocomplete="off" enterkeyhint="search"><button type="submit" class="go">검색</button></div>'
            '<div class="res" id="hr" aria-live="polite"></div></form>'
-           '<ul class="qk" aria-label="수험 바로가기">'
-           f'<li><a href="/exam/">{_ic("event")}<span><b>시험 일정</b><small>접수·시험일·발표일</small></span></a></li>'
-           f'<li><a href="/exam/bank/">{_ic("guide")}<span><b>문제은행</b><small>시험별 유사문제</small></span></a></li>'
-           f'<li><a href="/exam/articles/">{_ic("issue")}<span><b>시험 글</b><small>컷·준비물·가이드</small></span></a></li>'
-           f'<li><a href="/contest/">{_ic("contest")}<span><b>수험생 스펙</b><small>공모전·대외활동</small></span></a></li>'
-           f'<li><a href="/diet/">{_ic("recipe")}<span><b>수험생 식단</b><small>시험 기간 한 끼</small></span></a></li></ul></section>')
+           '<ul class="qk" aria-label="목적별 바로가기">'
+           f'<li><a href="/money/guide/">{_ic("guide")}<span><b>생활 가이드</b><small>세금·보험·일·집 정보</small></span></a></li>'
+           f'<li><a href="/contest/">{_ic("contest")}<span><b>공모전 찾기</b><small>분야·마감으로 비교</small></span></a></li>'
+           f'<li><a href="/apply/">{_ic("apply")}<span><b>지원금 찾기</b><small>대상·지역으로 확인</small></span></a></li>'
+           f'<li><a href="/issue/">{_ic("issue")}<span><b>요즘 이슈</b><small>출처와 함께 정리</small></span></a></li></ul></section>')
     ent = [c for c in cands if c[1] == '연예']; cands = [c for c in cands if c[1] != '연예']
-    import exam_home as _EH
-    return _EH.sections(ctx, _ic)
+    return (top + _sec_pop(cands, seen) + _sec_season(seen) + _sec_read(cands, seen) + _opp_cards(ctx, seen) + _sec_guides(seen) + _sec_ent(ent, seen) + _sec_topics(ctx, seen)
+            + '<link rel="stylesheet" href="/assets/home/home2.css?v=11"><script defer src="/assets/home/home2.js?v=3"></script>')
 
 
 def kwmap_page_html():
@@ -687,6 +686,6 @@ def kwmap_page_html():
             '<div class="kw-z" role="group" aria-label="지도 조작"><button type="button" id="kw-in" aria-label="확대">＋</button><button type="button" id="kw-out" aria-label="축소">－</button><button type="button" id="kw-reset">초기화</button></div></div>'
             '<div class="kw-main"><div id="kwmap" class="kw-box"><canvas tabindex="0" role="img" aria-label="키워드 지도. 방향키로 돌리고 플러스·마이너스로 확대합니다. 같은 내용은 아래 목록에 있습니다."></canvas></div>'
             '<aside id="kw-info" class="kw-info" aria-live="polite"></aside></div>'
-            '<p class="kw-hint"><b>보는 법</b> · 점 하나가 질문(글) 하나입니다. 안쪽 점이 단기, 바깥쪽 점이 장기입니다. 두 점을 잇는 선은 <b>제목에 같은 핵심 단어가 들어 있다</b>는 뜻이며, 의미가 비슷하다는 판단은 아닙니다. 끌어서 돌려. 점 누르면 연결된 질문이 켜져.</p>'
-            f'<h2 class="kw-h2">목록으로 보기</h2><p id="kw-empty" class="kw-empty" hidden>맞는 키워드 없어. 검색어 줄이거나 분류 켜.</p>{lists}</div>'
+            '<p class="kw-hint"><b>보는 법</b> · 점 하나가 질문(글) 하나입니다. 안쪽 점이 단기, 바깥쪽 점이 장기입니다. 두 점을 잇는 선은 <b>제목에 같은 핵심 단어가 들어 있다</b>는 뜻이며, 의미가 비슷하다는 판단은 아닙니다. 끌어서 돌리고, 점을 누르면 연결된 질문이 강조됩니다.</p>'
+            f'<h2 class="kw-h2">목록으로 보기</h2><p id="kw-empty" class="kw-empty" hidden>조건에 맞는 키워드가 없어요. 검색어를 줄이거나 분류를 다시 켜 보세요.</p>{lists}</div>'
             f'<script type="application/json" id="kwdata">{raw}</script><link rel="stylesheet" href="/assets/home/kwmap.css?v=1"><script defer src="/assets/home/kwmap.js?v=4"></script>')

@@ -105,7 +105,7 @@ def hero(ic):
             '<label class="sr" for="hq">검색어</label><input id="hq" type="search" placeholder="시험 이름 검색 (예: 한능검, 토익, 컴활)" autocomplete="off" enterkeyhint="search"><button type="submit" class="go">검색</button></div>'
             '<div class="res" id="hr" aria-live="polite"></div></form>'
             f'<div class="ct-chips"><small>자주 찾는 시험</small>{chips}</div>{stats}</div>'
-            '<div class="ct-ruri"><img src="/assets/ruri/o_present.webp" width="260" height="360" alt="박과장의 전속 비서 루리"><span class="ct-stamp">아직도<br>안 배움?</span></div></section>'
+            '<div class="ct-ruri"><img src="/assets/ruri/o_sn_point.webp" width="260" height="360" alt="박과장의 전속 비서 루리"><span class="ct-stamp">아직도<br>안 배움?</span></div></section>'
             '<div class="ct-paths"><a href="/park/"><b>자기개발</b><span>시사·요리·바이브 코딩</span></a>'
             '<a href="/exam/"><b>자격증·시험</b><span>따야 산다</span></a></div>'
 
@@ -132,7 +132,6 @@ def sections(ctx, ic):
     out += ('<section class="ct-sec">' + _hd('자기개발', ('/park/', '전체 보기')) + '<ul class="ct-grid">'
             '<li><a class="ct-card" href="/park/"><span class="d far">시작</span><h3>AI 에이전트로 내 서비스 만들기</h3><p>퇴근하고 3시간</p></a></li>'
             '<li><a class="ct-card" href="/ailog/"><span class="d far">지식</span><h3>개발 지식 · 제작 로그</h3><p>만들면서 배운 것</p></a></li>'
-            '<li><a class="ct-card" href="/book/"><span class="d far">읽기</span><h3>전자책</h3><p>읽고 따라 해</p></a></li>'
             '<li><a class="ct-card" href="/dev/"><span class="d far">블로그</span><h3>기술 블로그</h3><p>개발·AI 글</p></a></li></ul></section>')
     tiles = ''
     for nm, sub, keys in CATS12:
@@ -165,7 +164,7 @@ def sections(ctx, ic):
         out += f'<section class="ct-sec"><div class="ct-two">{left}{right}</div></section>'
     n_c = ctx.get('n_contest')
     out += ('<section class="ct-sec">' + _hd('공모전', ('/contest/', '공모전 찾기'))
-            + '<div class="ct-ban"><img src="/assets/ruri/o_present.webp" alt="" width="84" height="116"><div><b>학생·취준생이 낼 수 있는 공모전'
+            + '<div class="ct-ban"><img src="/assets/ruri/o_sn_point.webp" alt="" width="84" height="116"><div><b>학생·취준생이 낼 수 있는 공모전'
             + (f' {n_c}건' if n_c else '') + '</b><span>마감 임박순.</span></div></div></section>')
     out += ('<section class="ct-sec"><div class="ct-two"><a class="ct-ban" href="/diet/"><div><b>식단</b><span>먹어야 공부한다.</span></div></a>'
             '<a class="ct-ban" href="/wiki/"><div><b>위키 · 생활 정보</b><span>세금·보험·지원금처럼 나머지 잡다한 건 위키.</span></div></a></div></section></div>')

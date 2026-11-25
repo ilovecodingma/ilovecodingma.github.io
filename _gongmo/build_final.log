@@ -1,0 +1,8 @@
+C:\Users\k\Desktop\adsense_sites\root\_gongmo\build.py:451: SyntaxWarning: invalid escape sequence '\_'
+  """k-44(영상 세션)가 공고 원문을 읽고 정리한 자격·제출물·상금 보충값(data\_supplement_*.json) + 개발 쪽 supplement.json. 수집 원문 기준이며 공식 대조 표시는 붙이지 않는다."""
+C:\Users\k\Desktop\adsense_sites\root\_gongmo\build.py:4392: SyntaxWarning: invalid escape sequence '\/'
+  body = open(f, encoding='utf-8').read().replace('@@FAQ@@', faq) + '<style>.es-fig{margin:12px 0}.es-fig img{display:block;max-width:100%;height:auto;border:1px solid var(--bd,#e5e7eb);border-radius:10px}.es-fig figcaption{font-size:12.5px;color:var(--mu,#6b7280);margin-top:4px}</style>' + GAME_CSS + '<script type="application/ld+json">%s</script>' % json.dumps(fld, ensure_ascii=False).replace('</', '<\/')
+C:\Users\k\Desktop\adsense_sites\root\_gongmo\build.py:4443: SyntaxWarning: invalid escape sequence '\/'
+  + DAILY_JS + '<script type="application/ld+json">%s</script>' % json.dumps(fld, ensure_ascii=False).replace('</', '<\/'))
+C:\Users\k\Desktop\adsense_sites\root\_gongmo\build.py:4517: SyntaxWarning: invalid escape sequence '\+'
+  "q.addEventListener('input',draw);document.querySelectorAll('.ch-c').forEach(function(b){b.addEventListener('click',function(){q.value=b.getAttribute('data-q');draw()})});var m=location.search.match(/[?&]q=([^&]*)/);if(m){try{q.value=decodeURIComponent(m[1].replace(/\+/g,' ')).slice(0,60)}catch(e){}}draw()})();</script>")

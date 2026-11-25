@@ -33,14 +33,8 @@ def _items():
     return out
 
 
-def _ids(x):
-    """exam_id 는 문자열 하나 또는 목록(글 하나가 시험 둘 이상일 때)."""
-    v = x.get('exam_id') or []
-    return [v] if isinstance(v, str) else [i for i in v if isinstance(i, str)]
-
-
 def related(eid, limit=6):
-    return [(x['url'], x['title']) for x in _items() if eid in _ids(x)][:limit]
+    return [(x['url'], x['title']) for x in _items() if x.get('exam_id') == eid][:limit]
 
 
 def pages(page):
@@ -54,8 +48,7 @@ def pages(page):
         names = {}
     groups = {}
     for x in items:
-        for i in (_ids(x) or ['']):
-            groups.setdefault(i, []).append(x)
+        groups.setdefault(x.get('exam_id') or '', []).append(x)
     order = sorted(groups, key=lambda k: (k == '', -len(groups[k]), k))
     secs = ''
     for k in order:

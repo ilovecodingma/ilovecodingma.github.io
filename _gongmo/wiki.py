@@ -8,9 +8,9 @@
 import os, re, json, html as H
 
 GROUPS = [
-    ('dev', '자기개발 · 개발 지식', '🧑‍💻', re.compile(r'^/dev/[^/]+/$')),
+    ('money', '생활 돈 가이드', '💰', re.compile(r'^/money/guide/[^/]+/$')),
     ('guide', '가이드 · 고민 해결', '📘', re.compile(r'^/guide/[^/]+/$')),
-    ('money', '시험·생활 정보 가이드', '📌', re.compile(r'^/money/guide/[^/]+/$')),
+    ('dev', '개발 지식', '🧑‍💻', re.compile(r'^/dev/[^/]+/$')),
     ('review', '평론', '🖋️', re.compile(r'^/review/[^/]+/$')),
     ('en', 'English guides', '🌐', re.compile(r'^/en/guide/[^/]+/$')),
 ]
@@ -128,7 +128,7 @@ def _side(arts, cur, near):
         cnt[a['g']] = cnt.get(a['g'], 0) + 1
     allg = ''.join(f'<a href="/wiki/#g-{key}">{ic} {E(label)} <small>{cnt[key]}</small></a>' for key, label, ic, _rx in GROUPS if cnt.get(key))
     return ('<aside class="wk-side"><button type="button" class="wk-toggle" aria-expanded="false">📚 위키에서 다른 글 찾기</button><div class="wk-nav">'
-            '<a class="wk-home" href="/wiki/">📚 박과장 위키</a><input class="wk-q" type="search" placeholder="글 찾기" aria-label="위키에서 글 찾기" autocomplete="off">'
+            '<a class="wk-home" href="/wiki/">📚 루리 위키</a><input class="wk-q" type="search" placeholder="글 찾기" aria-label="위키에서 글 찾기" autocomplete="off">'
             '<ul class="wk-sr" hidden></ul>'
             + (f'<div class="wk-near"><b>가까운 글</b><ul>{li}</ul></div>' if li else '')
             + f'<div class="wk-all"><b>묶음별 전체 보기</b>{allg}</div></div></aside>')
@@ -162,10 +162,10 @@ def inject(arts, root):
         if not m:
             continue
         lb, ic = label[a['g']]
-        top = f'<div class="wk-top"><a href="/wiki/">📚 박과장 위키</a><span>›</span><span>{ic} {E(lb)}</span></div>'
+        top = f'<div class="wk-top"><a href="/wiki/">📚 루리 위키</a><span>›</span><span>{ic} {E(lb)}</span></div>'
         # 본문을 HTML 맨 앞에 둔다(왼쪽 칸은 CSS grid-area 로 자리만 왼쪽)
         shell = ('<main class="w wk"><div class="wk-grid"><article class="wk-art">' + top + m.group(1) + _pn(arts, a) + '</article>' + _side(arts, a, near) + _toc(a) + '</div>'
-                 '<link rel="stylesheet" href="/assets/wiki/wiki.css?v=4"><script defer src="/assets/wiki/wiki.js?v=3"></script></main>')
+                 '<link rel="stylesheet" href="/assets/wiki/wiki.css?v=3"><script defer src="/assets/wiki/wiki.js?v=3"></script></main>')
         doc = doc[:m.start()] + shell + doc[m.end():]
         open(f, 'w', encoding='utf-8', newline='\n').write(doc)
         n += 1
@@ -185,14 +185,14 @@ def hub(arts, page_fn, site):
     start = sorted([a for a in arts if a['g'] == 'money' and a.get('dt')], key=lambda a: a['dt'], reverse=True)[:5]
     st = ''.join(f'<a href="{E(a["u"])}"><b>{E(a["title"][:44])}</b><span>{E(a["desc"])}</span><small>확인일 {E(a["dt"])}</small></a>' for a in start)
     chips = ''.join(f'<a href="#g-{k}">{ic} {E(lb)} <small>{len(byg[k])}</small></a>' for k, lb, ic, _ in GROUPS if k in byg)
-    body = (f'<p class="bc"><a href="/">홈</a> › 박과장 위키</p>'
-            '<header class="wk-hero"><h1>📚 박과장 위키</h1><p>자기개발·시험·생활 정보 모음.</p>'
+    body = (f'<p class="bc"><a href="/">홈</a> › 루리 위키</p>'
+            '<header class="wk-hero"><h1>📚 루리 위키</h1><p>공식 출처로 확인한 생활 돈·응모·개발 지식을 한곳에 모았어요. 글마다 확인일과 출처를 적고, 확인하지 못한 값은 비워 둡니다.</p>'
             '<input class="wk-hq" type="search" placeholder="예: 에너지바우처, 근로장려금, 퇴직금" aria-label="위키 검색" autocomplete="off"><div class="wk-sc" role="group" aria-label="검색 범위"><button type="button" class="on" data-s="">전체</button><button type="button" data-s="money">생활 돈</button><button type="button" data-s="guide">가이드</button><button type="button" data-s="dev">개발·기타</button></div><div class="wk-res" aria-live="polite"></div>'
             f'<div class="wk-chips">{chips}</div></header>'
             + (f'<section class="wk-start"><h2>최근 확인한 가이드 <small>확인일이 가장 최근인 5편</small></h2><div class="wk-sgrid">{st}</div></section>' if st else '')
-            + cards + '<link rel="stylesheet" href="/assets/wiki/wiki.css?v=4"><script defer src="/assets/wiki/wiki.js?v=3"></script>')
-    page_fn('/wiki/', '박과장 위키 — 자기개발·시험 정보·생활 정보 한곳에', f'공식 출처로 확인한 생활 돈 가이드 {len(byg.get("money", []))}편과 응모·고민 해결 가이드, 개발 지식, 평론을 한곳에서 검색하고 읽어요.',
-            body, [('가난한 박과장', '/'), ('박과장 위키', '/wiki/')])
+            + cards + '<link rel="stylesheet" href="/assets/wiki/wiki.css?v=3"><script defer src="/assets/wiki/wiki.js?v=3"></script>')
+    page_fn('/wiki/', '루리 위키 — 생활 돈 가이드·응모 가이드·개발 지식 한곳에', f'공식 출처로 확인한 생활 돈 가이드 {len(byg.get("money", []))}편과 응모·고민 해결 가이드, 개발 지식, 평론을 한곳에서 검색하고 읽어요.',
+            body, [('루리 애널리스트', '/'), ('루리 위키', '/wiki/')])
 
 
 def build_wiki(urls, noindex, page_fn, root, site):
