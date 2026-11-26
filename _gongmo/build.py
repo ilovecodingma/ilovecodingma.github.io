@@ -4246,6 +4246,37 @@ ISSUE_DIR = os.path.join(HERE, 'issues')
 import photo as PH   # 자료 사진 은행(2026-11-05)
 
 
+
+_YT_ID = re.compile(r'(?:youtu\.be/|youtube\.com/(?:shorts/|watch\?(?:[^#]*&)?v=|embed/|live/)|^)([A-Za-z0-9_-]{11})(?:[?&#/].*)?$')
+
+
+def yt_ids(v):
+    """이슈 원고의 선택 필드 video: 유튜브 주소 또는 영상 ID(문자열 또는 목록) → 영상 ID 목록(중복·잘못된 값 제외)."""
+    out = []
+    for x in ([v] if isinstance(v, str) else (v if isinstance(v, list) else [])):
+        m = _YT_ID.search(str(x).strip())
+        if m and m.group(1) not in out:
+            out.append(m.group(1))
+    return out
+
+
+def video_html(ids):
+    """영상 하단 블록: 처음에는 썸네일+재생 버튼만 두고(가볍게), 누르면 그때 영상을 불러온다. 아래에 유튜브 링크도 함께."""
+    if not ids:
+        return ''
+    cards = ''.join(
+        f'<div class="vd"><button type="button" class="vd-b" data-v="{i}" aria-label="영상 재생">'
+        f'<img src="https://i.ytimg.com/vi/{i}/hqdefault.jpg" width="320" height="180" loading="lazy" alt="관련 영상 미리보기">'
+        f'<span aria-hidden="true">▶</span></button>'
+        f'<a href="https://www.youtube.com/shorts/{i}" target="_blank" rel="noopener">유튜브에서 보기</a></div>' for i in ids)
+    return ('<h2>영상으로 보기</h2><div class="vds">' + cards + '</div>'
+            '<style>.vds{display:flex;flex-wrap:wrap;gap:14px;margin:8px 0 18px}.vd{width:min(320px,100%)}.vd-b{position:relative;display:block;width:100%;aspect-ratio:16/9;padding:0;border:0;border-radius:12px;overflow:hidden;background:#000;cursor:pointer}'
+            '.vd-b img{width:100%;height:100%;object-fit:cover;display:block;opacity:.85}.vd-b span{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:42px;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.6)}'
+            '.vd iframe{width:100%;aspect-ratio:9/16;max-height:560px;border:0;border-radius:12px}.vd a{display:inline-block;margin-top:6px;font-size:13.5px}</style>'
+            '<script>document.querySelectorAll(".vd-b").forEach(function(b){b.addEventListener("click",function(){var f=document.createElement("iframe");f.src="https://www.youtube-nocookie.com/embed/"+b.getAttribute("data-v")+"?autoplay=1&rel=0&playsinline=1";'
+            'f.allow="autoplay; encrypted-media; picture-in-picture";f.allowFullscreen=true;f.title="관련 영상";b.replaceWith(f)})});</script>')
+
+
 def issue_json_pages():
     """/issue/<slug>/ 단기 이슈 설명 (2026-11-02 마케터 원고 JSON → 페이지). 원고는 _gongmo/issues/<slug>.json.
     필드: slug, title, desc, h1, date(기준일 YYYY-MM-DD), keep_days(기본 4), summary, confirmed[[내용,출처]], unconfirmed[[내용,이유]],
@@ -4303,6 +4334,8 @@ def issue_json_pages():
                          + (tbl(c['unconfirmed'], '내용', '이유') if _n else '') + _lim + '</details>')
             if faq:
                 secs += f'<h2>자주 묻는 질문</h2>{faq}'
+            if c.get('video'):   # 2026-11-27 마케터 요청: 쇼츠 주소를 글 하단에 보여 준다(없으면 아무것도 안 함)
+                secs += video_html(yt_ids(c['video']))
             if c.get('sources'):
                 secs += '<h2>출처</h2><ul class="gm-l">' + ''.join(f'<li><a href="{E(u_)}" target="_blank" rel="noopener nofollow">{E(n_)}</a></li>' for n_, u_ in c['sources']) + '</ul>'
             if c.get('lury_note'):   # 2026-11-02 사용자 방침: 루리는 글 끝 「루리의 한마디」 코너에서만 말한다

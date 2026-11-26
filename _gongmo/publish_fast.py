@@ -32,6 +32,11 @@ def validate(c):
     kd = c.get('keep_days', 4)
     if not isinstance(kd, int) or not 1 <= kd <= 30:
         e.append('keep_days: 1~30 사이 정수여야 해요')
+    if c.get('video') is not None:
+        import build as _B
+        _v = c['video']; _n = len([_v] if isinstance(_v, str) else _v) if isinstance(_v, (str, list)) else -1
+        if _n < 1 or len(_B.yt_ids(_v)) != _n:
+            e.append('video: 유튜브 주소 또는 11자리 영상 ID(문자열이나 목록)여야 해요. 중복·잘못된 값이 있어요')
     for k, n in (('confirmed', 2), ('unconfirmed', 2), ('faq', 2), ('sources', 2), ('related', 2)):
         v = c.get(k, [])
         if not isinstance(v, list) or any(not isinstance(x, (list, tuple)) or len(x) != n or not all(isinstance(y, str) and y.strip() for y in x) for x in v):
