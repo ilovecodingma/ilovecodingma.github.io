@@ -1,0 +1,4 @@
+한 일: 브라우저 자세추정 PoC와 안드로이드 APK 제작. MediaPipe 자세추정 웹 PoC(YouTube 재생·화면공유 입력·스켈레톤·성능측정), 전면+후면 동시 카메라 시험용 APK 빌드 후 메일 발송.
+결과: 33점 추출 성공, GPU lite 평균 18ms·초당 약 24회, 90초 연속 안정. YouTube 재생은 PASS, 정책 준수 프레임 입력은 FAIL(화면공유만 가능), 종합 PARTIAL. APK 16MB(zip), 주소는 로컬 localhost:47213.
+막힌 것: YouTube iframe 프레임 접근 공식 경로 없음, 웹 PoC 다인원 추정(numPoses)은 수정 중 중단된 상태, 폰 실기 시험 결과 대기.
+내일 할 일: 폰 로그 결과로 동시 카메라 지원 확인, 웹 PoC 다인원 입력칸 마무리.
