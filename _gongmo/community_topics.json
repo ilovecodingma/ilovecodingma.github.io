@@ -1,15 +1,34 @@
 {
  "date": "2026-11-26",
- "updated": "2026-11-26 12:50",
+ "updated": "2026-11-26 13:50",
  "sites": 13,
  "npost": 2815,
  "note": "출처(커뮤니티)별 집계예요. 작성자·연령·성별 정보는 수집하지 않아요. posts 는 이슈별로 뽑힌 일부라 전체 글 수가 아니에요.",
  "sources": [
   {
    "name": "MLB파크",
-   "np": 14,
-   "nc": 848,
+   "np": 13,
+   "nc": 846,
    "topics": [
+    {
+     "t": "\"육아휴직 중 주 80시간 공부\"…세무사 합격 수기 논란",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 227,
+     "issue_np": 6,
+     "issue_nc": 258,
+     "kw": [
+      "합격",
+      "육아",
+      "휴직",
+      "세무사"
+     ],
+     "top_post": {
+      "t": "\"육아휴직 중 주 80시간 공부\"…세무사 합격 수기 논란",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611260120316482&m=view",
+      "nc": 227
+     }
+    },
     {
      "t": "대마도 스시자로 원정단 근황",
      "nsite": 5,
@@ -18,8 +37,8 @@
      "issue_np": 8,
      "issue_nc": 260,
      "kw": [
-      "스시자",
       "대마도",
+      "스시자",
       "원정",
       "소중국"
      ],
@@ -30,31 +49,29 @@
      }
     },
     {
-     "t": "\"육아휴직 중 주 80시간 공부\"…세무사 합격 수기 논란",
-     "nsite": 3,
+     "t": "이게 커뮤니티별 특징이라는데",
+     "nsite": 2,
      "np_here": 1,
-     "nc_here": 198,
-     "issue_np": 6,
-     "issue_nc": 229,
+     "nc_here": 80,
+     "issue_np": 2,
+     "issue_nc": 80,
      "kw": [
-      "휴직",
-      "합격",
-      "육아",
-      "세무사"
+      "커뮤니티",
+      "특징"
      ],
      "top_post": {
-      "t": "\"육아휴직 중 주 80시간 공부\"…세무사 합격 수기 논란",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611260120316482&m=view",
-      "nc": 198
+      "t": "이게 커뮤니티별 특징이라는데",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611260120317790&m=view",
+      "nc": 80
      }
     },
     {
      "t": "주식하는 사람들 이재명 욕 하는게 제일 한심.",
-     "nsite": 3,
+     "nsite": 2,
      "np_here": 1,
      "nc_here": 75,
-     "issue_np": 3,
-     "issue_nc": 79,
+     "issue_np": 2,
+     "issue_nc": 75,
      "kw": [
       "이재명",
       "주식"
@@ -83,23 +100,6 @@
      }
     },
     {
-     "t": "이게 커뮤니티별 특징이라는데",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 67,
-     "issue_np": 2,
-     "issue_nc": 67,
-     "kw": [
-      "커뮤니티",
-      "특징"
-     ],
-     "top_post": {
-      "t": "이게 커뮤니티별 특징이라는데",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611260120317790&m=view",
-      "nc": 67
-     }
-    },
-    {
      "t": "일본에서 라멘 먹을때 주의할 점",
      "nsite": 3,
      "np_here": 1,
@@ -119,29 +119,12 @@
      }
     },
     {
-     "t": "중년이 되면 확 맛이 가는 사람이 많다고 함.twitter",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 49,
-     "issue_np": 2,
-     "issue_nc": 52,
-     "kw": [
-      "twitter",
-      "중년"
-     ],
-     "top_post": {
-      "t": "중년이 되면 확 맛이 가는 사람이 많다고 함.twitter",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611250120299199&m=view",
-      "nc": 49
-     }
-    },
-    {
      "t": "저는 이재명 대통령 죄가 없다고 생각합니다",
-     "nsite": 4,
+     "nsite": 3,
      "np_here": 2,
      "nc_here": 44,
      "issue_np": 7,
-     "issue_nc": 111,
+     "issue_nc": 113,
      "kw": [
       "대통령",
       "이재명"
@@ -151,13 +134,31 @@
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611250120304392&m=view",
       "nc": 22
      }
+    },
+    {
+     "t": "제목 그대로 결혼생각이 있다고 초반부터 밝히고 만난 남자친구가 사귄지 반년이 넘어가자 ...",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 38,
+     "issue_np": 4,
+     "issue_nc": 66,
+     "kw": [
+      "남자",
+      "결혼",
+      "친구"
+     ],
+     "top_post": {
+      "t": "남자분들 초딩때 친구는 스스로 사귀는거죠?",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611260120317529&m=view",
+      "nc": 38
+     }
     }
    ]
   },
   {
    "name": "개드립",
-   "np": 12,
-   "nc": 352,
+   "np": 14,
+   "nc": 411,
    "topics": [
     {
      "t": "마운자로 때문에 장사가 안된다고??",
@@ -169,8 +170,8 @@
      "kw": [
       "장사",
       "마운자",
-      "일침",
-      "헬스장"
+      "헬스장",
+      "일침"
      ],
      "top_post": {
       "t": "마운자로 때문에 장사가 안된다고??",
@@ -186,8 +187,8 @@
      "issue_np": 8,
      "issue_nc": 260,
      "kw": [
-      "스시자",
       "대마도",
+      "스시자",
       "원정",
       "소중국"
      ],
@@ -195,6 +196,25 @@
       "t": "개판났다는 스시자로 원정 후기 근황 ㄷㄷㄷ",
       "u": "https://www.dogdrip.net/dogdrip/736492056?sort_index=popular&page=1",
       "nc": 27
+     }
+    },
+    {
+     "t": "중국 역사상 전례가 없던 사건",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 46,
+     "issue_np": 3,
+     "issue_nc": 46,
+     "kw": [
+      "역사",
+      "전례",
+      "사건",
+      "중국"
+     ],
+     "top_post": {
+      "t": "중국 역사상 전례가 없던 사건",
+      "u": "https://www.dogdrip.net/dogdrip/736670208?sort_index=popular&page=1",
+      "nc": 46
      }
     },
     {
@@ -222,8 +242,8 @@
      "issue_np": 3,
      "issue_nc": 40,
      "kw": [
-      "담합",
       "족쇄",
+      "담합",
       "비명",
       "식품가"
      ],
@@ -241,8 +261,8 @@
      "issue_np": 6,
      "issue_nc": 39,
      "kw": [
-      "만점자",
       "수능",
+      "만점자",
       "공개",
       "전원"
      ],
@@ -260,10 +280,10 @@
      "issue_np": 5,
      "issue_nc": 34,
      "kw": [
-      "차별",
-      "외국인",
       "오해",
-      "지하철"
+      "지하철",
+      "외국인",
+      "차별"
      ],
      "top_post": {
       "t": "처음 한국 온 외국인들이 차별로 오해하는 지하철 특징 ㅋㅋ",
@@ -277,11 +297,11 @@
      "np_here": 1,
      "nc_here": 31,
      "issue_np": 6,
-     "issue_nc": 229,
+     "issue_nc": 258,
      "kw": [
-      "휴직",
       "합격",
       "육아",
+      "휴직",
       "세무사"
      ],
      "top_post": {
@@ -289,39 +309,21 @@
       "u": "https://www.dogdrip.net/dogdrip/736545441?sort_index=popular&page=1",
       "nc": 31
      }
-    },
-    {
-     "t": "실물경제 통계 근황.",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 30,
-     "issue_np": 2,
-     "issue_nc": 74,
-     "kw": [
-      "통계",
-      "경제",
-      "실물"
-     ],
-     "top_post": {
-      "t": "실물경제 통계 근황",
-      "u": "https://www.dogdrip.net/dogdrip/736675237?sort_index=popular&page=1",
-      "nc": 30
-     }
     }
    ]
   },
   {
    "name": "클리앙",
    "np": 11,
-   "nc": 233,
+   "nc": 238,
    "topics": [
     {
      "t": "저는 이재명 대통령 죄가 없다고 생각합니다",
-     "nsite": 4,
+     "nsite": 3,
      "np_here": 3,
      "nc_here": 65,
      "issue_np": 7,
-     "issue_nc": 111,
+     "issue_nc": 113,
      "kw": [
       "대통령",
       "이재명"
@@ -353,18 +355,18 @@
      "t": "실물경제 통계 근황.",
      "nsite": 2,
      "np_here": 1,
-     "nc_here": 44,
+     "nc_here": 45,
      "issue_np": 2,
-     "issue_nc": 74,
+     "issue_nc": 64,
      "kw": [
-      "통계",
+      "실물",
       "경제",
-      "실물"
+      "통계"
      ],
      "top_post": {
       "t": "실물경제 통계 근황.",
       "u": "https://www.clien.net/service/board/park/19298758?od=T33&po=0&category=0&groupCd=clien_all",
-      "nc": 44
+      "nc": 45
      }
     },
     {
@@ -436,29 +438,28 @@
      }
     },
     {
-     "t": "주식시장이 심각한 이유",
-     "nsite": 4,
+     "t": "호남 광주 반도체 근황",
+     "nsite": 3,
      "np_here": 1,
-     "nc_here": 4,
-     "issue_np": 6,
-     "issue_nc": 9,
+     "nc_here": 8,
+     "issue_np": 3,
+     "issue_nc": 27,
      "kw": [
-      "시장",
-      "주식",
-      "바닥"
+      "호남",
+      "반도체"
      ],
      "top_post": {
-      "t": "다음 선거때는 주식시장 9시부터3시까지만 연다는 사람 뽑을겁니다",
-      "u": "https://www.clien.net/service/board/park/19298526?od=T33&po=0&category=0&groupCd=clien_all",
-      "nc": 4
+      "t": "호남반도체 물건너갈 이유 추가(중앙일보 주의)",
+      "u": "https://www.clien.net/service/board/park/19298740?od=T33&po=0&category=0&groupCd=clien_all",
+      "nc": 8
      }
     }
    ]
   },
   {
    "name": "82쿡",
-   "np": 8,
-   "nc": 39,
+   "np": 7,
+   "nc": 36,
    "topics": [
     {
      "t": "오늘 한은 금통위…금리 3.25%로 인상할 듯",
@@ -502,8 +503,8 @@
      "issue_np": 3,
      "issue_nc": 27,
      "kw": [
-      "하락",
-      "부동산"
+      "부동산",
+      "하락"
      ],
      "top_post": {
       "t": "치솟던 도쿄 부동산 가격 6개월 연속 하락",
@@ -519,8 +520,8 @@
      "issue_np": 4,
      "issue_nc": 17,
      "kw": [
-      "젠슨 황",
       "복귀",
+      "젠슨 황",
       "효과",
       "주식"
      ],
@@ -528,23 +529,6 @@
       "t": "미국 아짐의 젠슨황 복귀 반응",
       "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4262940&page=1",
       "nc": 5
-     }
-    },
-    {
-     "t": "중년이 되면 확 맛이 가는 사람이 많다고 함.twitter",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 3,
-     "issue_np": 2,
-     "issue_nc": 52,
-     "kw": [
-      "twitter",
-      "중년"
-     ],
-     "top_post": {
-      "t": "중년이 되면 확 맛이 가는 사람이 많다고 함.twitter",
-      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4262949&page=1",
-      "nc": 3
      }
     },
     {
@@ -558,7 +542,7 @@
       "홈플러스",
       "중단",
       "영업",
-      "인수"
+      "단독"
      ],
      "top_post": {
       "t": "[단독] 홈플러스, 67개 점포 27일 영업 중단…인수의향서 접..",
@@ -585,11 +569,11 @@
     },
     {
      "t": "주식하는 사람들 이재명 욕 하는게 제일 한심.",
-     "nsite": 3,
+     "nsite": 2,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 79,
+     "issue_np": 2,
+     "issue_nc": 75,
      "kw": [
       "이재명",
       "주식"
@@ -615,8 +599,8 @@
      "issue_np": 6,
      "issue_nc": 9,
      "kw": [
-      "시장",
       "주식",
+      "시장",
       "바닥"
      ],
      "top_post": {
@@ -633,8 +617,8 @@
      "issue_np": 8,
      "issue_nc": 260,
      "kw": [
-      "스시자",
       "대마도",
+      "스시자",
       "원정",
       "소중국"
      ],
@@ -652,14 +636,32 @@
      "issue_np": 6,
      "issue_nc": 39,
      "kw": [
-      "만점자",
       "수능",
+      "만점자",
       "공개",
       "전원"
      ],
      "top_post": {
       "t": "2027 수능 만점자 공개 거부와 인터뷰 거부가 당연한 이유",
       "u": "https://www.bobaedream.co.kr/view?code=best&No=1050028&vdate=",
+      "nc": 3
+     }
+    },
+    {
+     "t": "제목 그대로 결혼생각이 있다고 초반부터 밝히고 만난 남자친구가 사귄지 반년이 넘어가자 ...",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 3,
+     "issue_np": 4,
+     "issue_nc": 66,
+     "kw": [
+      "남자",
+      "결혼",
+      "친구"
+     ],
+     "top_post": {
+      "t": "결혼 생활 ㅈ같다는 남자",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1050188&vdate=",
       "nc": 3
      }
     },
@@ -673,30 +675,12 @@
      "kw": [
       "장사",
       "마운자",
-      "일침",
-      "헬스장"
+      "헬스장",
+      "일침"
      ],
      "top_post": {
       "t": "마운자로때문에 장사안된다는 헬스장에 일침",
       "u": "https://www.bobaedream.co.kr/view?code=best&No=1050004&vdate=",
-      "nc": 3
-     }
-    },
-    {
-     "t": "제목 그대로 결혼생각이 있다고 초반부터 밝히고 만난 남자친구가 사귄지 반년이 넘어가자 ...",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 3,
-     "issue_np": 4,
-     "issue_nc": 61,
-     "kw": [
-      "남자",
-      "결혼",
-      "친구"
-     ],
-     "top_post": {
-      "t": "결혼 생활 ㅈ같다는 남자",
-      "u": "https://www.bobaedream.co.kr/view?code=best&No=1050188&vdate=",
       "nc": 3
      }
     },
@@ -725,8 +709,8 @@
      "issue_np": 3,
      "issue_nc": 40,
      "kw": [
-      "담합",
       "족쇄",
+      "담합",
       "비명",
       "식품가"
      ],
@@ -737,20 +721,21 @@
      }
     },
     {
-     "t": "싱글벙글 다른 나라의 하청으로 살지 않겠다는 베트남 근황",
+     "t": "신병 면회 오신 어머니.manhwa",
      "nsite": 3,
      "np_here": 1,
      "nc_here": 3,
      "issue_np": 3,
-     "issue_nc": 3,
+     "issue_nc": 27,
      "kw": [
-      "베트남",
-      "하청",
-      "국가"
+      "면회",
+      "어머니",
+      "신병",
+      "manhwa"
      ],
      "top_post": {
-      "t": "베트남 더이상 하청 국가가 되지 않겠다고 선언",
-      "u": "https://www.bobaedream.co.kr/view?code=best&No=1049953&vdate=",
+      "t": "신병 면회 오신 어머니",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1050150&vdate=",
       "nc": 3
      }
     }
@@ -767,7 +752,7 @@
      "np_here": 1,
      "nc_here": 25,
      "issue_np": 4,
-     "issue_nc": 61,
+     "issue_nc": 66,
      "kw": [
       "남자",
       "결혼",
@@ -782,8 +767,32 @@
    ]
   },
   {
+   "name": "아카라이브",
+   "np": 1,
+   "nc": 19,
+   "topics": [
+    {
+     "t": "호남 광주 반도체 근황",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 19,
+     "issue_np": 3,
+     "issue_nc": 27,
+     "kw": [
+      "호남",
+      "반도체"
+     ],
+     "top_post": {
+      "t": "호남반도체는 모든 재앙의 출발점이었는데 아무도 언급 안함",
+      "u": "https://arca.live/b/live/190310423?p=1",
+      "nc": 19
+     }
+    }
+   ]
+  },
+  {
    "name": "디시인사이드",
-   "np": 8,
+   "np": 7,
    "nc": 0,
    "topics": [
     {
@@ -794,8 +803,8 @@
      "issue_np": 8,
      "issue_nc": 260,
      "kw": [
-      "스시자",
       "대마도",
+      "스시자",
       "원정",
       "소중국"
      ],
@@ -813,8 +822,8 @@
      "issue_np": 6,
      "issue_nc": 39,
      "kw": [
-      "만점자",
       "수능",
+      "만점자",
       "공개",
       "전원"
      ],
@@ -832,14 +841,33 @@
      "issue_np": 5,
      "issue_nc": 34,
      "kw": [
-      "차별",
-      "외국인",
       "오해",
-      "지하철"
+      "지하철",
+      "외국인",
+      "차별"
      ],
      "top_post": {
       "t": "외국인들이 차별로 오해하는 지하철 특징 ㅋㅋ",
       "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481592&_dcbest=1&page=1",
+      "nc": 0
+     }
+    },
+    {
+     "t": "중국 역사상 전례가 없던 사건",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 46,
+     "kw": [
+      "역사",
+      "전례",
+      "사건",
+      "중국"
+     ],
+     "top_post": {
+      "t": "싱글벙글 중국 역사상 전례가 없던 사건..",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481700&_dcbest=1&page=1",
       "nc": 0
      }
     },
@@ -851,30 +879,12 @@
      "issue_np": 3,
      "issue_nc": 27,
      "kw": [
-      "하락",
-      "부동산"
+      "부동산",
+      "하락"
      ],
      "top_post": {
       "t": "근데 요즘 진짜 부동산 하락하는게 느껴지는게",
       "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481552&_dcbest=1&page=1",
-      "nc": 0
-     }
-    },
-    {
-     "t": "싱글벙글 다른 나라의 하청으로 살지 않겠다는 베트남 근황",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 3,
-     "kw": [
-      "베트남",
-      "하청",
-      "국가"
-     ],
-     "top_post": {
-      "t": "싱글벙글 다른 나라의 하청으로 살지 않겠다는 베트남 근황",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481581&_dcbest=1&page=1",
       "nc": 0
      }
     },
@@ -886,8 +896,8 @@
      "issue_np": 3,
      "issue_nc": 0,
      "kw": [
-      "AI",
       "리만가설",
+      "AI",
       "난리"
      ],
      "top_post": {
@@ -904,8 +914,8 @@
      "issue_np": 3,
      "issue_nc": 0,
      "kw": [
-      "아들",
       "수시",
+      "아들",
       "기록"
      ],
      "top_post": {
@@ -913,31 +923,12 @@
       "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481676&_dcbest=1&page=1",
       "nc": 0
      }
-    },
-    {
-     "t": "싱글벙글 프레시백 수거하러 온 쿠팡기사가 성심당 아이스백 절도한 사건",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 0,
-     "kw": [
-      "수거",
-      "성심당",
-      "아이스백",
-      "프레시백"
-     ],
-     "top_post": {
-      "t": "싱글벙글 프레시백 수거하러 온 쿠팡기사가 성심당 아이스백 절도한 사건",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481561&_dcbest=1&page=1",
-      "nc": 0
-     }
     }
    ]
   },
   {
    "name": "SLR클럽",
-   "np": 8,
+   "np": 9,
    "nc": 0,
    "topics": [
     {
@@ -948,8 +939,8 @@
      "issue_np": 6,
      "issue_nc": 39,
      "kw": [
-      "만점자",
       "수능",
+      "만점자",
       "공개",
       "전원"
      ],
@@ -967,8 +958,8 @@
      "issue_np": 4,
      "issue_nc": 26,
      "kw": [
-      "이름",
       "논란",
+      "이름",
       "인스타",
       "아기"
      ],
@@ -986,13 +977,30 @@
      "issue_np": 6,
      "issue_nc": 9,
      "kw": [
-      "시장",
       "주식",
+      "시장",
       "바닥"
      ],
      "top_post": {
       "t": "주식시장이 심각한 이유",
       "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=678210",
+      "nc": 0
+     }
+    },
+    {
+     "t": "호남 광주 반도체 근황",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 27,
+     "kw": [
+      "호남",
+      "반도체"
+     ],
+     "top_post": {
+      "t": "호남 광주 반도체 근황",
+      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=678155",
       "nc": 0
      }
     },
@@ -1038,8 +1046,8 @@
      "issue_np": 3,
      "issue_nc": 0,
      "kw": [
-      "아들",
       "수시",
+      "아들",
       "기록"
      ],
      "top_post": {
@@ -1080,14 +1088,32 @@
      "issue_np": 6,
      "issue_nc": 39,
      "kw": [
-      "만점자",
       "수능",
+      "만점자",
       "공개",
       "전원"
      ],
      "top_post": {
       "t": "2027 수능만점자 가채점 3명.... 전원 인터뷰 비공개 요청",
       "u": "https://bbs.ruliweb.com/best/board/300143/read/77513381?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "제목 그대로 결혼생각이 있다고 초반부터 밝히고 만난 남자친구가 사귄지 반년이 넘어가자 ...",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 66,
+     "kw": [
+      "남자",
+      "결혼",
+      "친구"
+     ],
+     "top_post": {
+      "t": "30대 남자 10명중6명은 결혼못함",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77502497?m=all&t=now",
       "nc": 0
      }
     },
@@ -1101,30 +1127,12 @@
      "kw": [
       "장사",
       "마운자",
-      "일침",
-      "헬스장"
+      "헬스장",
+      "일침"
      ],
      "top_post": {
       "t": "마운자로때문에 장사안된다는 헬스장에 일침",
       "u": "https://bbs.ruliweb.com/best/board/300143/read/77519300?m=humor",
-      "nc": 0
-     }
-    },
-    {
-     "t": "제목 그대로 결혼생각이 있다고 초반부터 밝히고 만난 남자친구가 사귄지 반년이 넘어가자 ...",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 61,
-     "kw": [
-      "남자",
-      "결혼",
-      "친구"
-     ],
-     "top_post": {
-      "t": "30대 남자 10명중6명은 결혼못함",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77502497?m=all&t=now",
       "nc": 0
      }
     },
@@ -1136,10 +1144,10 @@
      "issue_np": 5,
      "issue_nc": 34,
      "kw": [
-      "차별",
-      "외국인",
       "오해",
-      "지하철"
+      "지하철",
+      "외국인",
+      "차별"
      ],
      "top_post": {
       "t": "처음 한국 온 외국인들이 차별로 오해하는 지하철 특징 ㅋㅋ",
@@ -1155,8 +1163,8 @@
      "issue_np": 4,
      "issue_nc": 26,
      "kw": [
-      "이름",
       "논란",
+      "이름",
       "인스타",
       "아기"
      ],
@@ -1174,8 +1182,8 @@
      "issue_np": 6,
      "issue_nc": 9,
      "kw": [
-      "시장",
       "주식",
+      "시장",
       "바닥"
      ],
      "top_post": {
@@ -1224,7 +1232,7 @@
   },
   {
    "name": "더쿠",
-   "np": 9,
+   "np": 8,
    "nc": 0,
    "topics": [
     {
@@ -1237,8 +1245,8 @@
      "kw": [
       "장사",
       "마운자",
-      "일침",
-      "헬스장"
+      "헬스장",
+      "일침"
      ],
      "top_post": {
       "t": "마운자로 때문에 장사가 안된다는 PT사장",
@@ -1252,11 +1260,11 @@
      "np_here": 4,
      "nc_here": 0,
      "issue_np": 6,
-     "issue_nc": 229,
+     "issue_nc": 258,
      "kw": [
-      "휴직",
       "합격",
       "육아",
+      "휴직",
       "세무사"
      ],
      "top_post": {
@@ -1295,7 +1303,7 @@
       "홈플러스",
       "중단",
       "영업",
-      "인수"
+      "단독"
      ],
      "top_post": {
       "t": "[단독] 홈플러스, 67개 점포 27일 영업 중단 인수의향서 접수",
@@ -1318,25 +1326,6 @@
      "top_post": {
       "t": "네이버페이15원+5원+10원+10원+1원+1원+1원+1원+랜덤 눌러봐++10원+5원+눌러눌러 보험랜덤+보험랜덤 하나더+라이브미리보고18원받기+…",
       "u": "https://theqoo.net/hot/4418216556",
-      "nc": 0
-     }
-    },
-    {
-     "t": "싱글벙글 프레시백 수거하러 온 쿠팡기사가 성심당 아이스백 절도한 사건",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 0,
-     "kw": [
-      "수거",
-      "성심당",
-      "아이스백",
-      "프레시백"
-     ],
-     "top_post": {
-      "t": "프레시백 수거하러 온 쿠팡기사가 성심당 아이스백 절도한 사건",
-      "u": "https://theqoo.net/hot/4417341053",
       "nc": 0
      }
     }
