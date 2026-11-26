@@ -1,14 +1,14 @@
 {
  "date": "2026-11-26",
- "updated": "2026-11-26 22:50",
+ "updated": "2026-11-26 23:50",
  "sites": 13,
- "npost": 2823,
+ "npost": 2821,
  "note": "출처(커뮤니티)별 집계예요. 작성자·연령·성별 정보는 수집하지 않아요. posts 는 이슈별로 뽑힌 일부라 전체 글 수가 아니에요.",
  "sources": [
   {
    "name": "MLB파크",
-   "np": 13,
-   "nc": 1086,
+   "np": 12,
+   "nc": 977,
    "topics": [
     {
      "t": "\"육아휴직 중 주 80시간 공부\"…세무사 합격 수기 논란",
@@ -18,10 +18,10 @@
      "issue_np": 3,
      "issue_nc": 240,
      "kw": [
-      "휴직",
       "육아",
+      "휴직",
       "합격",
-      "세무사"
+      "공부"
      ],
      "top_post": {
       "t": "\"육아휴직 중 주 80시간 공부\"…세무사 합격 수기 논란",
@@ -37,8 +37,8 @@
      "issue_np": 2,
      "issue_nc": 184,
      "kw": [
-      "국제",
-      "시장"
+      "시장",
+      "국제"
      ],
      "top_post": {
       "t": "국제시장 2 포스터 예고편",
@@ -48,38 +48,21 @@
     },
     {
      "t": "장인, 간이식 거절한 사위",
-     "nsite": 2,
+     "nsite": 3,
      "np_here": 1,
      "nc_here": 170,
-     "issue_np": 2,
-     "issue_nc": 173,
+     "issue_np": 3,
+     "issue_nc": 217,
      "kw": [
+      "이식",
       "사위",
       "장인",
-      "이식"
+      "강요"
      ],
      "top_post": {
       "t": "장인, 간이식 거절한 사위",
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611260120321402&m=view",
       "nc": 170
-     }
-    },
-    {
-     "t": "이게 커뮤니티별 특징이라는데",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 110,
-     "issue_np": 4,
-     "issue_nc": 110,
-     "kw": [
-      "커뮤니티",
-      "특징",
-      "인터넷"
-     ],
-     "top_post": {
-      "t": "이게 커뮤니티별 특징이라는데",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611260120317790&m=view",
-      "nc": 110
      }
     },
     {
@@ -107,33 +90,14 @@
      "issue_np": 3,
      "issue_nc": 85,
      "kw": [
-      "리센느",
       "콘서트",
+      "리센느",
       "단독"
      ],
      "top_post": {
       "t": "리센느 첫 콘서트 가격ㄷㄷ",
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611260120322842&m=view",
       "nc": 64
-     }
-    },
-    {
-     "t": "“회식 술값 왜 다 계산 안해”…사장 얼굴 벽돌로 내리친 20대",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 61,
-     "issue_np": 2,
-     "issue_nc": 99,
-     "kw": [
-      "얼굴",
-      "계산",
-      "사장",
-      "술값"
-     ],
-     "top_post": {
-      "t": "“회식 술값 왜 다 계산 안해”…사장 얼굴 벽돌로 내리친 20대",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611260120322599&m=view",
-      "nc": 61
      }
     },
     {
@@ -153,49 +117,67 @@
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611260120317457&m=view",
       "nc": 54
      }
+    },
+    {
+     "t": "하이디라오의 악독한 상술",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 41,
+     "issue_np": 3,
+     "issue_nc": 74,
+     "kw": [
+      "악독",
+      "상술",
+      "하이디라오"
+     ],
+     "top_post": {
+      "t": "하이디라오의 악독한 상술",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611260120318123&m=view",
+      "nc": 41
+     }
+    },
+    {
+     "t": "중후반 넘어가는 한국남자들 동남아서 여자 사오는거 좀 안했으면 좋겠네요",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 40,
+     "issue_np": 3,
+     "issue_nc": 40,
+     "kw": [
+      "남자",
+      "여자",
+      "한국"
+     ],
+     "top_post": {
+      "t": "중후반 넘어가는 한국남자들 동남아서 여자 사오는거 좀 안했으면 좋겠네요",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611260120320169&m=view",
+      "nc": 40
+     }
     }
    ]
   },
   {
    "name": "개드립",
    "np": 14,
-   "nc": 402,
+   "nc": 331,
    "topics": [
     {
-     "t": "시장에 피가 낭자하고 공포가 만연하다(자영업 버전)",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 45,
-     "issue_np": 4,
-     "issue_nc": 54,
-     "kw": [
-      "만연",
-      "공포",
-      "시장",
-      "자영업"
-     ],
-     "top_post": {
-      "t": "시장에 피가 낭자하고 공포가 만연하다(자영업 버전)",
-      "u": "https://www.dogdrip.net/dogdrip/736760391?sort_index=popular&page=1",
-      "nc": 45
-     }
-    },
-    {
-     "t": "위험하다는 'AI 개발 속도조절론' 근황",
+     "t": "장인, 간이식 거절한 사위",
      "nsite": 3,
      "np_here": 1,
-     "nc_here": 45,
+     "nc_here": 44,
      "issue_np": 3,
-     "issue_nc": 45,
+     "issue_nc": 217,
      "kw": [
-      "AI",
-      "발전",
-      "속도"
+      "이식",
+      "사위",
+      "장인",
+      "강요"
      ],
      "top_post": {
-      "t": "위험하다는 'AI 개발 속도조절론' 근황",
-      "u": "https://www.dogdrip.net/dogdrip/736756011?sort_index=popular&page=1",
-      "nc": 45
+      "t": "장인 간이식 강요받는 사위 ㄷ",
+      "u": "https://www.dogdrip.net/dogdrip/736780718?sort_index=popular&page=1",
+      "nc": 44
      }
     },
     {
@@ -225,32 +207,13 @@
      "kw": [
       "유튜버",
       "안경",
-      "여행",
-      "중국"
+      "AI",
+      "여행"
      ],
      "top_post": {
       "t": "AI안경으로 중국여행한 유튜버",
       "u": "https://www.dogdrip.net/dogdrip/736740404?sort_index=popular&page=1",
       "nc": 42
-     }
-    },
-    {
-     "t": "“회식 술값 왜 다 계산 안해”…사장 얼굴 벽돌로 내리친 20대",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 38,
-     "issue_np": 2,
-     "issue_nc": 99,
-     "kw": [
-      "얼굴",
-      "계산",
-      "사장",
-      "술값"
-     ],
-     "top_post": {
-      "t": "“술값 왜 다 계산 안해”…사장 얼굴 벽돌로 내리친 20대",
-      "u": "https://www.dogdrip.net/dogdrip/736688462?sort_index=popular&page=1",
-      "nc": 38
      }
     },
     {
@@ -261,10 +224,10 @@
      "issue_np": 3,
      "issue_nc": 40,
      "kw": [
-      "식품가",
-      "담합",
       "비명",
-      "족쇄"
+      "담합",
+      "족쇄",
+      "식품가"
      ],
      "top_post": {
       "t": "올리면 담합, 버티면 적자...족쇄에 갇힌 식품가 '비명'",
@@ -280,13 +243,31 @@
      "issue_np": 3,
      "issue_nc": 74,
      "kw": [
-      "상술",
       "악독",
+      "상술",
       "하이디라오"
      ],
      "top_post": {
       "t": "하이디라오의 악독한 상술",
       "u": "https://www.dogdrip.net/dogdrip/736692330?sort_index=popular&page=1",
+      "nc": 33
+     }
+    },
+    {
+     "t": "사장님의 부재중전화 27",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 33,
+     "issue_np": 3,
+     "issue_nc": 36,
+     "kw": [
+      "전화",
+      "사장",
+      "부재중"
+     ],
+     "top_post": {
+      "t": "사장님의 부재중전화 27",
+      "u": "https://www.dogdrip.net/dogdrip/736751409?sort_index=popular&page=1",
       "nc": 33
      }
     },
@@ -306,13 +287,31 @@
       "u": "https://www.dogdrip.net/dogdrip/736567814?sort_index=popular&page=1",
       "nc": 31
      }
+    },
+    {
+     "t": "논란중인 마술 유튜버 김준표 채널 근황",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 27,
+     "issue_np": 7,
+     "issue_nc": 81,
+     "kw": [
+      "김준표",
+      "채널",
+      "논란"
+     ],
+     "top_post": {
+      "t": "깔끔하게 정리된 김준표 채널",
+      "u": "https://www.dogdrip.net/dogdrip/736665759?sort_index=popular&page=1",
+      "nc": 27
+     }
     }
    ]
   },
   {
    "name": "클리앙",
-   "np": 4,
-   "nc": 96,
+   "np": 5,
+   "nc": 127,
    "topics": [
     {
      "t": "구급차 막고 30명 우르르..영상 퍼지자 '공분'",
@@ -330,6 +329,42 @@
       "t": "구급차 막고 30명 우르르..영상 퍼지자 '공분'",
       "u": "https://www.clien.net/service/board/park/19298844?od=T33&po=0&category=0&groupCd=clien_all",
       "nc": 72
+     }
+    },
+    {
+     "t": "GTA6는 50대인 제겐 최고의 게임입니다.",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 29,
+     "issue_np": 6,
+     "issue_nc": 29,
+     "kw": [
+      "게임",
+      "GTA"
+     ],
+     "top_post": {
+      "t": "GTA6는 50대인 제겐 최고의 게임입니다.",
+      "u": "https://www.clien.net/service/board/park/19298762?od=T33&po=0&category=0&groupCd=clien_all",
+      "nc": 29
+     }
+    },
+    {
+     "t": "시장에는 피가 낭자하고 공포가 만연하다(자영업 편)",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 11,
+     "issue_np": 4,
+     "issue_nc": 16,
+     "kw": [
+      "시장",
+      "만연",
+      "자영업",
+      "공포"
+     ],
+     "top_post": {
+      "t": "시장에는 피가 낭자하고 공포가 만연하다(자영업 편)",
+      "u": "https://www.clien.net/service/board/park/19298971?od=T33&po=0&category=0&groupCd=clien_all",
+      "nc": 11
      }
     },
     {
@@ -351,25 +386,6 @@
      }
     },
     {
-     "t": "시장에 피가 낭자하고 공포가 만연하다(자영업 버전)",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 9,
-     "issue_np": 4,
-     "issue_nc": 54,
-     "kw": [
-      "만연",
-      "공포",
-      "시장",
-      "자영업"
-     ],
-     "top_post": {
-      "t": "시장에는 피가 낭자하고 공포가 만연하다(자영업 편)",
-      "u": "https://www.clien.net/service/board/park/19298971?od=T33&po=0&category=0&groupCd=clien_all",
-      "nc": 9
-     }
-    },
-    {
      "t": "주식시장이 심각한 이유",
      "nsite": 3,
      "np_here": 1,
@@ -377,8 +393,8 @@
      "issue_np": 3,
      "issue_nc": 7,
      "kw": [
-      "주식",
-      "시장"
+      "시장",
+      "주식"
      ],
      "top_post": {
       "t": "다음 선거때는 주식시장 9시부터3시까지만 연다는 사람 뽑을겁니다",
@@ -401,8 +417,8 @@
      "issue_np": 4,
      "issue_nc": 30,
      "kw": [
-      "야구",
-      "불꽃"
+      "불꽃",
+      "야구"
      ],
      "top_post": {
       "t": "불꽃야구 얘들이 뭘 그렇게 잘못함?",
@@ -414,8 +430,8 @@
   },
   {
    "name": "82쿡",
-   "np": 6,
-   "nc": 26,
+   "np": 5,
+   "nc": 25,
    "topics": [
     {
      "t": "오늘 한은 금통위…금리 3.25%로 인상할 듯",
@@ -443,8 +459,8 @@
      "issue_np": 5,
      "issue_nc": 9,
      "kw": [
-      "윤석열",
       "위증",
+      "윤석열",
       "한덕수",
       "재판"
      ],
@@ -455,40 +471,22 @@
      }
     },
     {
-     "t": "미국 아짐의 젠슨황 복귀 반응",
+     "t": "내일 학교 비정규직 파업해서 대체급식 준다네",
      "nsite": 3,
      "np_here": 1,
      "nc_here": 5,
      "issue_np": 3,
-     "issue_nc": 17,
-     "kw": [
-      "복귀",
-      "젠슨 황",
-      "효과"
-     ],
-     "top_post": {
-      "t": "미국 아짐의 젠슨황 복귀 반응",
-      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4262940&page=1",
-      "nc": 5
-     }
-    },
-    {
-     "t": "내일 학교 비정규직 파업해서 대체급식 준다네",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 1,
-     "issue_np": 3,
-     "issue_nc": 1,
+     "issue_nc": 5,
      "kw": [
       "급식",
       "학교",
       "내일",
-      "정규직"
+      "파업"
      ],
      "top_post": {
       "t": "학교비정규직 4만명 내일 총파업…교육당국, 급식·돌봄 비상대응",
       "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4263280&page=1",
-      "nc": 1
+      "nc": 5
      }
     }
    ]
@@ -517,6 +515,25 @@
      }
     },
     {
+     "t": "장인, 간이식 거절한 사위",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 3,
+     "issue_np": 3,
+     "issue_nc": 217,
+     "kw": [
+      "이식",
+      "사위",
+      "장인",
+      "강요"
+     ],
+     "top_post": {
+      "t": "장인 간이식 강요받는 사위",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1050299&vdate=",
+      "nc": 3
+     }
+    },
+    {
      "t": "가불기에 걸린 프랑스",
      "nsite": 3,
      "np_here": 1,
@@ -541,10 +558,10 @@
      "issue_np": 3,
      "issue_nc": 40,
      "kw": [
-      "식품가",
-      "담합",
       "비명",
-      "족쇄"
+      "담합",
+      "족쇄",
+      "식품가"
      ],
      "top_post": {
       "t": "올리면 담합, 버티면 적자...족쇄에 갇힌 식품가 “비명”",
@@ -558,7 +575,7 @@
      "np_here": 1,
      "nc_here": 3,
      "issue_np": 3,
-     "issue_nc": 29,
+     "issue_nc": 36,
      "kw": [
       "전화",
       "사장",
@@ -578,8 +595,8 @@
      "issue_np": 3,
      "issue_nc": 27,
      "kw": [
-      "어머니",
       "면회",
+      "어머니",
       "신병",
       "manhwa"
      ],
@@ -597,8 +614,8 @@
      "issue_np": 3,
      "issue_nc": 7,
      "kw": [
-      "주식",
-      "시장"
+      "시장",
+      "주식"
      ],
      "top_post": {
       "t": "미스테리한 요즘 주식시장",
@@ -623,24 +640,6 @@
       "u": "https://www.bobaedream.co.kr/view?code=best&No=1050233&vdate=",
       "nc": 3
      }
-    },
-    {
-     "t": "장인, 간이식 거절한 사위",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 3,
-     "issue_np": 2,
-     "issue_nc": 173,
-     "kw": [
-      "사위",
-      "장인",
-      "이식"
-     ],
-     "top_post": {
-      "t": "장인 간이식 강요받는 사위",
-      "u": "https://www.bobaedream.co.kr/view?code=best&No=1050299&vdate=",
-      "nc": 3
-     }
     }
    ]
   },
@@ -657,8 +656,8 @@
      "issue_np": 3,
      "issue_nc": 85,
      "kw": [
-      "리센느",
       "콘서트",
+      "리센느",
       "단독"
      ],
      "top_post": {
@@ -693,17 +692,17 @@
      }
     },
     {
-     "t": "시장에 피가 낭자하고 공포가 만연하다(자영업 버전)",
+     "t": "시장에는 피가 낭자하고 공포가 만연하다(자영업 편)",
      "nsite": 4,
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 4,
-     "issue_nc": 54,
+     "issue_nc": 16,
      "kw": [
-      "만연",
-      "공포",
       "시장",
-      "자영업"
+      "만연",
+      "자영업",
+      "공포"
      ],
      "top_post": {
       "t": "시장에 피가 낭자하고 공포가 만연하다 - 자영업 버젼 만화",
@@ -729,29 +728,12 @@
      }
     },
     {
-     "t": "올해 주식으로 3천 날렸어요",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 32,
-     "kw": [
-      "올해",
-      "주식"
-     ],
-     "top_post": {
-      "t": "올해 주식으로 3천 날렸어요",
-      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=678192",
-      "nc": 0
-     }
-    },
-    {
      "t": "사장님의 부재중전화 27",
      "nsite": 3,
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 3,
-     "issue_nc": 29,
+     "issue_nc": 36,
      "kw": [
       "전화",
       "사장",
@@ -760,6 +742,23 @@
      "top_post": {
       "t": "사장님 부재중 전화 27통",
       "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=678274",
+      "nc": 0
+     }
+    },
+    {
+     "t": "올해 주식으로 3천 날렸어요",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 32,
+     "kw": [
+      "주식",
+      "올해"
+     ],
+     "top_post": {
+      "t": "올해 주식으로 3천 날렸어요",
+      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=678192",
       "nc": 0
      }
     },
@@ -789,8 +788,8 @@
      "issue_np": 3,
      "issue_nc": 7,
      "kw": [
-      "주식",
-      "시장"
+      "시장",
+      "주식"
      ],
      "top_post": {
       "t": "주식시장이 심각한 이유",
@@ -802,7 +801,7 @@
   },
   {
    "name": "루리웹",
-   "np": 29,
+   "np": 32,
    "nc": 0,
    "topics": [
     {
@@ -824,17 +823,17 @@
      }
     },
     {
-     "t": "시장에 피가 낭자하고 공포가 만연하다(자영업 버전)",
+     "t": "시장에는 피가 낭자하고 공포가 만연하다(자영업 편)",
      "nsite": 4,
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 4,
-     "issue_nc": 54,
+     "issue_nc": 16,
      "kw": [
-      "만연",
-      "공포",
       "시장",
-      "자영업"
+      "만연",
+      "자영업",
+      "공포"
      ],
      "top_post": {
       "t": "시장에는 피가 낭자하고 공포가 만연하다(자영업 버젼)",
@@ -885,8 +884,8 @@
      "issue_np": 3,
      "issue_nc": 74,
      "kw": [
-      "상술",
       "악독",
+      "상술",
       "하이디라오"
      ],
      "top_post": {
@@ -913,24 +912,6 @@
      }
     },
     {
-     "t": "위험하다는 'AI 개발 속도조절론' 근황",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 45,
-     "kw": [
-      "AI",
-      "발전",
-      "속도"
-     ],
-     "top_post": {
-      "t": "AI 발전으로 나타난 신종 진상 유형",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77525677?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
      "t": "AI안경으로 중국여행한 유튜버",
      "nsite": 3,
      "np_here": 1,
@@ -940,12 +921,31 @@
      "kw": [
       "유튜버",
       "안경",
-      "여행",
-      "중국"
+      "AI",
+      "여행"
      ],
      "top_post": {
       "t": "AI안경으로 중국여행한 유튜버",
       "u": "https://bbs.ruliweb.com/best/board/300143/read/77525932?m=humor",
+      "nc": 0
+     }
+    },
+    {
+     "t": "올리면 담합, 버티면 적자...족쇄에 갇힌 식품가 '비명'",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 40,
+     "kw": [
+      "비명",
+      "담합",
+      "족쇄",
+      "식품가"
+     ],
+     "top_post": {
+      "t": "올리면 담합, 버티면 적자...족쇄에 갇힌 식품가 '비명'",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77521053?m=all&t=now",
       "nc": 0
      }
     }
@@ -953,7 +953,7 @@
   },
   {
    "name": "더쿠",
-   "np": 11,
+   "np": 12,
    "nc": 0,
    "topics": [
     {
@@ -964,8 +964,8 @@
      "issue_np": 3,
      "issue_nc": 85,
      "kw": [
-      "리센느",
       "콘서트",
+      "리센느",
       "단독"
      ],
      "top_post": {
@@ -984,8 +984,8 @@
      "kw": [
       "유튜버",
       "안경",
-      "여행",
-      "중국"
+      "AI",
+      "여행"
      ],
      "top_post": {
       "t": "(스압) 중국에서 AI안경 사고 안경쓴 채로 여행해본 유튜버",
@@ -994,15 +994,33 @@
      }
     },
     {
-     "t": "신축아파트 1층뷰..",
+     "t": "중후반 넘어가는 한국남자들 동남아서 여자 사오는거 좀 안했으면 좋겠네요",
      "nsite": 3,
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 3,
-     "issue_nc": 31,
+     "issue_nc": 40,
      "kw": [
-      "신축",
-      "아파트"
+      "남자",
+      "여자",
+      "한국"
+     ],
+     "top_post": {
+      "t": "남자아이돌이 한국 여자사귈까봐 두려움에 떠는 해외 케이팝팬들",
+      "u": "https://theqoo.net/hot/4417873589",
+      "nc": 0
+     }
+    },
+    {
+     "t": "신축아파트 1층뷰",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 37,
+     "kw": [
+      "아파트",
+      "신축"
      ],
      "top_post": {
       "t": "신축아파트 1층뷰..",
@@ -1035,8 +1053,8 @@
      "issue_np": 4,
      "issue_nc": 30,
      "kw": [
-      "야구",
-      "불꽃"
+      "불꽃",
+      "야구"
      ],
      "top_post": {
       "t": "크보 팬들은 반응 안 좋을 수 밖에 없는 불꽃야구 상황",
@@ -1052,8 +1070,8 @@
      "issue_np": 5,
      "issue_nc": 9,
      "kw": [
-      "윤석열",
       "위증",
+      "윤석열",
       "한덕수",
       "재판"
      ],
@@ -1071,8 +1089,8 @@
      "issue_np": 6,
      "issue_nc": 2,
      "kw": [
-      "네이버",
       "페이",
+      "네이버",
       "랜덤"
      ],
      "top_post": {
@@ -1080,48 +1098,45 @@
       "u": "https://theqoo.net/hot/4418216556",
       "nc": 0
      }
-    },
-    {
-     "t": "\"육아휴직 중 주 80시간 공부\"…세무사 합격 수기 논란",
-     "nsite": 2,
-     "np_here": 2,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 240,
-     "kw": [
-      "휴직",
-      "육아",
-      "합격",
-      "세무사"
-     ],
-     "top_post": {
-      "t": "“육아휴직 하고 세무사 합격”…워킹맘 합격 후기에 발칵",
-      "u": "https://theqoo.net/hot/4418375974",
-      "nc": 0
-     }
     }
    ]
   },
   {
    "name": "디시인사이드",
-   "np": 5,
+   "np": 7,
    "nc": 0,
    "topics": [
     {
-     "t": "위험하다는 'AI 개발 속도조절론' 근황",
+     "t": "GTA6는 50대인 제겐 최고의 게임입니다.",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 6,
+     "issue_nc": 29,
+     "kw": [
+      "게임",
+      "GTA"
+     ],
+     "top_post": {
+      "t": "게임 개발진들이 바라본 GTA6 평가",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481860&_dcbest=1&page=1",
+      "nc": 0
+     }
+    },
+    {
+     "t": "여자친구가 매일 점심 먹는 거 사진 찍어서 보내라는데..",
      "nsite": 3,
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 3,
-     "issue_nc": 45,
+     "issue_nc": 28,
      "kw": [
-      "AI",
-      "발전",
-      "속도"
+      "친구",
+      "여자"
      ],
      "top_post": {
-      "t": "와들와들 ai의 무서운 발전 속도",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481707&_dcbest=1&page=1",
+      "t": "남자들아 여자친구 직업이 뭐였으면 좋겠어?",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481842&_dcbest=1&page=1",
       "nc": 0
      }
     },
@@ -1133,8 +1148,8 @@
      "issue_np": 5,
      "issue_nc": 9,
      "kw": [
-      "윤석열",
       "위증",
+      "윤석열",
       "한덕수",
       "재판"
      ],
@@ -1149,17 +1164,36 @@
      "nsite": 3,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 3,
+     "issue_np": 4,
      "issue_nc": 6,
      "kw": [
-      "전례",
       "사건",
+      "역사",
       "중국",
-      "역사"
+      "전례"
      ],
      "top_post": {
       "t": "싱글벙글 중국 역사상 전례가 없던 사건..",
       "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481700&_dcbest=1&page=1",
+      "nc": 0
+     }
+    },
+    {
+     "t": "내일 학교 비정규직 파업해서 대체급식 준다네",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 5,
+     "kw": [
+      "급식",
+      "학교",
+      "내일",
+      "파업"
+     ],
+     "top_post": {
+      "t": "내일 학교 비정규직 파업해서 대체급식 준다네",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481831&_dcbest=1&page=1",
       "nc": 0
      }
     },
@@ -1171,8 +1205,8 @@
      "issue_np": 3,
      "issue_nc": 2,
      "kw": [
-      "저작",
       "김준표",
+      "저작",
       "신고"
      ],
      "top_post": {
@@ -1182,21 +1216,20 @@
      }
     },
     {
-     "t": "내일 학교 비정규직 파업해서 대체급식 준다네",
+     "t": "와들와들 ai의 무서운 발전 속도",
      "nsite": 3,
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 3,
      "issue_nc": 1,
      "kw": [
-      "급식",
-      "학교",
-      "내일",
-      "정규직"
+      "AI",
+      "속도",
+      "발전"
      ],
      "top_post": {
-      "t": "내일 학교 비정규직 파업해서 대체급식 준다네",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481831&_dcbest=1&page=1",
+      "t": "와들와들 ai의 무서운 발전 속도",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481707&_dcbest=1&page=1",
       "nc": 0
      }
     }

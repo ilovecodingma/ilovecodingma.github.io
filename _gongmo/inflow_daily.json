@@ -1,26 +1,242 @@
 {
- "at": "2026-11-26 00:13",
+ "at": "2026-11-27 00:13",
  "note": "그날 처음 들어온 방문자 기준(관리자·자동 점검 제외). 채널 → 첫 페이지별 방문자 수.",
  "days": [
   {
    "day": "2026-11-26",
-   "visitors": 1,
+   "visitors": 370,
    "channels": [
     [
+     "🔍 다음·빙 검색",
+     200
+    ],
+    [
+     "🔗 직접 접속(주소 입력·즐겨찾기·앱 안 링크)",
+     60
+    ],
+    [
      "🔍 네이버 검색",
+     53
+    ],
+    [
+     "🔍 구글 검색",
+     43
+    ],
+    [
+     "🏷️ 기타 홍보 링크(chatgptcom)",
+     10
+    ],
+    [
+     "💻 개발자 커뮤니티",
+     1
+    ],
+    [
+     "🏷️ 기타 홍보 링크(openai)",
+     1
+    ],
+    [
+     "🏷️ 기타 홍보 링크(naver_kin)",
+     1
+    ],
+    [
+     "🌐 기타 사이트(facebook.com)",
      1
     ]
    ],
    "landing": [
     [
+     "/money/guide/insurance-rates-2027-table/",
+     45
+    ],
+    [
+     "/money/guide/teacher-exam-2027-schedule/",
+     35
+    ],
+    [
+     "/contest/slogan/",
+     14
+    ],
+    [
+     "/money/guide/public-security-pay-2027-salary-table/",
+     10
+    ],
+    [
+     "/issue/suneung-score-report-1105/",
+     8
+    ],
+    [
      "/guide/bank-passbook-reissue-fee-period/",
-     1
+     7
+    ],
+    [
+     "/money/guide/police-officer-2027-recruitment-exam-schedule/",
+     7
+    ],
+    [
+     "/money/guide/industrial-accident-insurance-rate-2027/",
+     7
+    ],
+    [
+     "/money/guide/teacher-exam-2027-first-round-result-second-round-schedule/",
+     6
+    ],
+    [
+     "/guide/court-auction-bidder-payment-eviction-order/",
+     6
+    ],
+    [
+     "/event/",
+     6
+    ],
+    [
+     "/money/guide/teacher-pay-2027-salary-table/",
+     6
+    ],
+    [
+     "/money/guide/suneung-2027-after-exam-schedule-nonsul-dates/",
+     6
+    ],
+    [
+     "/issue/insurance-rates-2027-1104/",
+     6
+    ],
+    [
+     "/contest/deadline-12/",
+     5
     ]
    ],
    "by_channel": {
+    "🔍 다음·빙 검색": [
+     [
+      "/money/guide/insurance-rates-2027-table/",
+      43
+     ],
+     [
+      "/money/guide/teacher-exam-2027-schedule/",
+      32
+     ],
+     [
+      "/money/guide/teacher-exam-2027-first-round-result-second-round-schedule/",
+      6
+     ],
+     [
+      "/issue/suneung-score-report-1105/",
+      6
+     ],
+     [
+      "/money/guide/zodiac-2027-year-of-sheep-samjae/",
+      5
+     ]
+    ],
+    "🔗 직접 접속(주소 입력·즐겨찾기·앱 안 링크)": [
+     [
+      "/contest/slogan/",
+      14
+     ],
+     [
+      "/event/",
+      5
+     ],
+     [
+      "/contest/deadline-12/",
+      5
+     ],
+     [
+      "/money/guide/teacher-exam-2027-schedule/",
+      3
+     ],
+     [
+      "/",
+      3
+     ]
+    ],
+    "🔍 구글 검색": [
+     [
+      "/money/guide/public-security-pay-2027-salary-table/",
+      8
+     ],
+     [
+      "/money/guide/police-officer-2027-recruitment-exam-schedule/",
+      5
+     ],
+     [
+      "/money/guide/military-enlistment-2027-date-selection-schedule/",
+      4
+     ],
+     [
+      "/money/guide/industrial-accident-insurance-rate-2027/",
+      4
+     ],
+     [
+      "/game/battlefield-6-editions/",
+      3
+     ]
+    ],
     "🔍 네이버 검색": [
      [
       "/guide/bank-passbook-reissue-fee-period/",
+      7
+     ],
+     [
+      "/guide/court-auction-bidder-payment-eviction-order/",
+      6
+     ],
+     [
+      "/guide/employment-support-target-veterans-apply/",
+      4
+     ],
+     [
+      "/money/guide/nps-payment-exception-apply-consequence/",
+      3
+     ],
+     [
+      "/guide/phone-device-change-condition-method/",
+      3
+     ]
+    ],
+    "🏷️ 기타 홍보 링크(chatgptcom)": [
+     [
+      "/issue/insurance-rates-2027-1104/",
+      4
+     ],
+     [
+      "/talk/2026-11-26/",
+      2
+     ],
+     [
+      "/money/guide/police-officer-2027-recruitment-exam-schedule/",
+      1
+     ],
+     [
+      "/contest/ai-video/",
+      1
+     ],
+     [
+      "/c/Q04870/",
+      1
+     ]
+    ],
+    "💻 개발자 커뮤니티": [
+     [
+      "/fridge/",
+      1
+     ]
+    ],
+    "🏷️ 기타 홍보 링크(openai)": [
+     [
+      "/ja/guide/steam-refund-policy/",
+      1
+     ]
+    ],
+    "🏷️ 기타 홍보 링크(naver_kin)": [
+     [
+      "/guide/account-hacked-suspended-recovery-118/",
+      1
+     ]
+    ],
+    "🌐 기타 사이트(facebook.com)": [
+     [
+      "/talk/",
       1
      ]
     ]
@@ -519,236 +735,6 @@
     "🌐 기타 사이트(perplexity.ai)": [
      [
       "/guide/proposal/",
-      1
-     ]
-    ]
-   }
-  },
-  {
-   "day": "2026-11-23",
-   "visitors": 431,
-   "channels": [
-    [
-     "🔍 다음·빙 검색",
-     238
-    ],
-    [
-     "🔗 직접 접속(주소 입력·즐겨찾기·앱 안 링크)",
-     79
-    ],
-    [
-     "🔍 네이버 검색",
-     54
-    ],
-    [
-     "🔍 구글 검색",
-     39
-    ],
-    [
-     "🏷️ 기타 홍보 링크(chatgptcom)",
-     18
-    ],
-    [
-     "💬 네이버 지식인",
-     1
-    ],
-    [
-     "🌐 기타 사이트(search.yahoo.com)",
-     1
-    ],
-    [
-     "☕ 카페",
-     1
-    ]
-   ],
-   "landing": [
-    [
-     "/money/guide/insurance-rates-2027-table/",
-     41
-    ],
-    [
-     "/money/guide/teacher-exam-2027-schedule/",
-     32
-    ],
-    [
-     "/issue/suneung-2027-grade-cut-difficulty-answers-1119/",
-     25
-    ],
-    [
-     "/issue/suneung-score-report-1105/",
-     18
-    ],
-    [
-     "/contest/slogan/",
-     15
-    ],
-    [
-     "/money/guide/car-insurance-driving-record-recognition-apply/",
-     9
-    ],
-    [
-     "/issue/insurance-rates-2027-1104/",
-     8
-    ],
-    [
-     "/money/guide/teacher-exam-2027-first-round-result-second-round-schedule/",
-     7
-    ],
-    [
-     "/money/guide/suneung-2027-after-exam-schedule-nonsul-dates/",
-     7
-    ],
-    [
-     "/money/guide/susi-2027-result-registration-schedule/",
-     7
-    ],
-    [
-     "/game/battlefield-6-editions/",
-     7
-    ],
-    [
-     "/issue/suneung-2027-answers-official-by-subject-1119/",
-     7
-    ],
-    [
-     "/event/",
-     6
-    ],
-    [
-     "/money/guide/jeongsi-2027-result-announcement-dates-by-university/",
-     6
-    ],
-    [
-     "/money/guide/police-officer-2027-recruitment-exam-schedule/",
-     6
-    ]
-   ],
-   "by_channel": {
-    "🔍 다음·빙 검색": [
-     [
-      "/money/guide/insurance-rates-2027-table/",
-      41
-     ],
-     [
-      "/money/guide/teacher-exam-2027-schedule/",
-      25
-     ],
-     [
-      "/issue/suneung-2027-grade-cut-difficulty-answers-1119/",
-      23
-     ],
-     [
-      "/issue/suneung-score-report-1105/",
-      17
-     ],
-     [
-      "/money/guide/teacher-exam-2027-first-round-result-second-round-schedule/",
-      7
-     ]
-    ],
-    "🔗 직접 접속(주소 입력·즐겨찾기·앱 안 링크)": [
-     [
-      "/contest/slogan/",
-      15
-     ],
-     [
-      "/money/guide/teacher-exam-2027-schedule/",
-      7
-     ],
-     [
-      "/event/",
-      6
-     ],
-     [
-      "/contest/idea/",
-      3
-     ],
-     [
-      "/cat/idea/",
-      3
-     ]
-    ],
-    "🔍 네이버 검색": [
-     [
-      "/money/guide/car-insurance-driving-record-recognition-apply/",
-      7
-     ],
-     [
-      "/issue/insurance-rates-2027-1104/",
-      5
-     ],
-     [
-      "/money/guide/housing-bond-purchase-cost-registration/",
-      4
-     ],
-     [
-      "/guide/pre-placement-health-exam-private-apply-cost/",
-      4
-     ],
-     [
-      "/guide/youth-monthly-rent-support-payment-eligibility/",
-      3
-     ]
-    ],
-    "🔍 구글 검색": [
-     [
-      "/money/guide/police-officer-2027-recruitment-exam-schedule/",
-      5
-     ],
-     [
-      "/game/battlefield-6-editions/",
-      5
-     ],
-     [
-      "/money/guide/industrial-accident-insurance-rate-2027/",
-      4
-     ],
-     [
-      "/money/guide/teacher-pay-2027-salary-table/",
-      3
-     ],
-     [
-      "/money/guide/public-security-pay-2027-salary-table/",
-      2
-     ]
-    ],
-    "🏷️ 기타 홍보 링크(chatgptcom)": [
-     [
-      "/issue/insurance-rates-2027-1104/",
-      2
-     ],
-     [
-      "/contest/univ/",
-      2
-     ],
-     [
-      "/talk/2026-11-21/",
-      1
-     ],
-     [
-      "/money/guide/winter-electricity-tier-superuser/",
-      1
-     ],
-     [
-      "/money/guide/suneung-2027-after-exam-schedule-nonsul-dates/",
-      1
-     ]
-    ],
-    "💬 네이버 지식인": [
-     [
-      "/guide/lh-youth-jeonse-2026/",
-      1
-     ]
-    ],
-    "🌐 기타 사이트(search.yahoo.com)": [
-     [
-      "/c/Q02774/",
-      1
-     ]
-    ],
-    "☕ 카페": [
-     [
-      "/issue/remarried-empress-buzz-rank-1110/",
       1
      ]
     ]
