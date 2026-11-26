@@ -1,5 +1,5 @@
 {
- "at": "2026-11-26 16:30",
+ "at": "2026-11-26 17:30",
  "nitems": 525,
  "cands": [
   {
@@ -12,7 +12,7 @@
     "조선일보",
     "한국경제"
    ],
-   "n": 22,
+   "n": 23,
    "headlines": [
     {
      "src": "동아일보",
@@ -46,7 +46,7 @@
     "조선일보",
     "한국경제"
    ],
-   "n": 19,
+   "n": 18,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -114,7 +114,7 @@
     "조선일보",
     "한국경제"
    ],
-   "n": 15,
+   "n": 13,
    "headlines": [
     {
      "src": "동아일보",
@@ -173,6 +173,40 @@
    ]
   },
   {
+   "kw": "재혼",
+   "nsrc": 5,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "동아일보",
+    "연합뉴스",
+    "조선일보"
+   ],
+   "n": 7,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "방송인 김새롬, 비연예인과 재혼…\"오래도록 사랑하겠다\"",
+     "link": "https://www.yna.co.kr/view/AKR20261124150400005"
+    },
+    {
+     "src": "동아일보",
+     "title": "‘재혼’ 서인영 신혼집 ‘영끌’…이혼 당시 뭘 챙겼나 봤더니 (유행꼰대)",
+     "link": "https://sports.donga.com/ent/article/all/20261126/135093850/1"
+    },
+    {
+     "src": "SBS",
+     "title": "김새롬 \"법적 짝꿍 생겼다\"…이혼 9년 만에 재혼 발표",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008861907&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "SBS",
+     "title": "김새롬, 이혼 10년 만에 깜짝 재혼 발표…\"법적 짝꿍 생겼다\"",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008861229&plink=RSSLINK&cooper=RSSREADER"
+    }
+   ]
+  },
+  {
    "kw": "한국",
    "nsrc": 5,
    "srcs": [
@@ -203,6 +237,40 @@
      "src": "한겨레",
      "title": "<span>19세기 ‘인상파’ 아닌 21세기 한국 ‘인상화’…을지로를 물들이다</span>",
      "link": "https://www.hani.co.kr/arti/culture/music/1289073.html"
+    }
+   ]
+  },
+  {
+   "kw": "국제시장",
+   "nsrc": 5,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "연합뉴스",
+    "조선일보",
+    "한국경제"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "천만 영화 '국제시장' 돌아온다…'국제시장2' 내년 설에 출격",
+     "link": "https://www.yna.co.kr/view/AKR20261126047700005"
+    },
+    {
+     "src": "한국경제",
+     "title": "'국제시장2', 내년 설 개봉 확정…천만 신화 잇나",
+     "link": "https://www.hankyung.com/article/202611261895H"
+    },
+    {
+     "src": "SBS",
+     "title": "'국제시장2', 내년 설 개봉 …황정민 빈자리 이성민·강하늘이 채운다",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008864316&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "뉴시스",
+     "title": "1400만 신화 다시 한 번…'국제시장2' 설 연휴에 본다",
+     "link": "https://www.newsis.com/view/NISX20261126_0003884059"
     }
    ]
   },
@@ -240,39 +308,6 @@
    ]
   },
   {
-   "kw": "그냥사람",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "세계일보",
-    "조선일보"
-   ],
-   "n": 13,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "‘그냥사람친구’, 나영석 PD의 ‘신메뉴’ 통할까?",
-     "link": "https://sports.donga.com/ent/article/all/20261126/135096803/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "‘그냥사람친구’ 김용건 “이서진, 팔짱 끼는 모습 많이 봤어” [현장]",
-     "link": "https://sports.donga.com/ent/article/all/20261126/135095998/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "‘그냥사람친구’ 이서진 ‘14년차 짐꾼’ 벗어났다 [현장]",
-     "link": "https://sports.donga.com/ent/article/all/20261126/135095401/1"
-    },
-    {
-     "src": "세계일보",
-     "title": "[포토] 박정수-김용건 '그냥사람친구'",
-     "link": "https://www.segye.com/newsView/20261126512151"
-    }
-   ]
-  },
-  {
    "kw": "미소",
    "nsrc": 4,
    "srcs": [
@@ -281,7 +316,7 @@
     "조선일보",
     "한국경제"
    ],
-   "n": 13,
+   "n": 15,
    "headlines": [
     {
      "src": "동아일보",
@@ -306,20 +341,20 @@
    ]
   },
   {
-   "kw": "김용건",
+   "kw": "그냥사람",
    "nsrc": 4,
    "srcs": [
+    "뉴시스",
     "동아일보",
     "세계일보",
-    "조선일보",
-    "한국경제"
+    "조선일보"
    ],
-   "n": 10,
+   "n": 12,
    "headlines": [
     {
      "src": "동아일보",
-     "title": "김용건 “원조 짐꾼 이서진, 팔짱 끼는 여유…새 짐꾼 주헌-정연 활약” (그사친)",
-     "link": "https://sports.donga.com/ent/article/all/20261126/135096338/1"
+     "title": "‘그냥사람친구’, 나영석 PD의 ‘신메뉴’ 통할까?",
+     "link": "https://sports.donga.com/ent/article/all/20261126/135096803/1"
     },
     {
      "src": "동아일보",
@@ -327,9 +362,9 @@
      "link": "https://sports.donga.com/ent/article/all/20261126/135095998/1"
     },
     {
-     "src": "한국경제",
-     "title": "'그사친' 이서진 \"짐꾼 할 나이 지나\"…김용건 \"팔짱 많이 끼더라\"",
-     "link": "https://www.hankyung.com/article/202611262194H"
+     "src": "동아일보",
+     "title": "‘그냥사람친구’ 이서진 ‘14년차 짐꾼’ 벗어났다 [현장]",
+     "link": "https://sports.donga.com/ent/article/all/20261126/135095401/1"
     },
     {
      "src": "세계일보",
@@ -372,7 +407,7 @@
    ]
   },
   {
-   "kw": "박정수",
+   "kw": "김용건",
    "nsrc": 4,
    "srcs": [
     "동아일보",
@@ -380,22 +415,22 @@
     "조선일보",
     "한국경제"
    ],
-   "n": 9,
+   "n": 10,
    "headlines": [
     {
      "src": "동아일보",
-     "title": "박정수 “이서진·한지민, 잠잘 때 외에는 계속 싸워” [현장]",
-     "link": "https://sports.donga.com/ent/article/all/20261126/135096095/1"
+     "title": "김용건 “원조 짐꾼 이서진, 팔짱 끼는 여유…새 짐꾼 주헌-정연 활약” (그사친)",
+     "link": "https://sports.donga.com/ent/article/all/20261126/135096338/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "‘그냥사람친구’ 김용건 “이서진, 팔짱 끼는 모습 많이 봤어” [현장]",
+     "link": "https://sports.donga.com/ent/article/all/20261126/135095998/1"
     },
     {
      "src": "한국경제",
-     "title": "'그사친' 박정수 \"이서진·한지민 어찌나 싸우던지\"",
-     "link": "https://www.hankyung.com/article/202611262435H"
-    },
-    {
-     "src": "세계일보",
-     "title": "[포토] 박정수 '우아하게'",
-     "link": "https://www.segye.com/newsView/20261126512188"
+     "title": "'그사친' 이서진 \"짐꾼 할 나이 지나\"…김용건 \"팔짱 많이 끼더라\"",
+     "link": "https://www.hankyung.com/article/202611262194H"
     },
     {
      "src": "세계일보",
@@ -438,6 +473,39 @@
    ]
   },
   {
+   "kw": "박정수",
+   "nsrc": 4,
+   "srcs": [
+    "동아일보",
+    "세계일보",
+    "조선일보",
+    "한국경제"
+   ],
+   "n": 8,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "박정수 “이서진·한지민, 잠잘 때 외에는 계속 싸워” [현장]",
+     "link": "https://sports.donga.com/ent/article/all/20261126/135096095/1"
+    },
+    {
+     "src": "한국경제",
+     "title": "'그사친' 박정수 \"이서진·한지민 어찌나 싸우던지\"",
+     "link": "https://www.hankyung.com/article/202611262435H"
+    },
+    {
+     "src": "세계일보",
+     "title": "[포토] 박정수 '우아하게'",
+     "link": "https://www.segye.com/newsView/20261126512188"
+    },
+    {
+     "src": "세계일보",
+     "title": "[포토] 박정수-김용건 '그냥사람친구'",
+     "link": "https://www.segye.com/newsView/20261126512151"
+    }
+   ]
+  },
+  {
    "kw": "청룡영화",
    "nsrc": 4,
    "srcs": [
@@ -446,7 +514,7 @@
     "연합뉴스",
     "조선일보"
    ],
-   "n": 8,
+   "n": 7,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -467,6 +535,39 @@
      "src": "뉴시스",
      "title": "'왕사남' 박지훈, 청룡영화상 신인남우상 수상",
      "link": "https://www.newsis.com/view/NISX20261125_0003883514"
+    }
+   ]
+  },
+  {
+   "kw": "사랑",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "연합뉴스",
+    "조선일보"
+   ],
+   "n": 7,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "혁오, 오늘 6년 만의 정규앨범 '33'…사랑 향한 시선 담아",
+     "link": "https://www.yna.co.kr/view/AKR20261125096500005"
+    },
+    {
+     "src": "동아일보",
+     "title": "‘100일의 거짓말’ 작가, 박진영 캐릭터 입 열었다 “답은 ‘사랑’”",
+     "link": "https://sports.donga.com/ent/article/all/20261126/135095183/1"
+    },
+    {
+     "src": "뉴시스",
+     "title": "'호프', 청룡 최우수작품상…'가능한 사랑', 4관왕(종합)",
+     "link": "https://www.newsis.com/view/NISX20261125_0003883572"
+    },
+    {
+     "src": "뉴시스",
+     "title": "혁오, 6년의 시간 새긴 '33'…상실과 불안 지나 곁에 남은 사랑",
+     "link": "https://www.newsis.com/view/NISX20261125_0003883388"
     }
    ]
   },
@@ -537,35 +638,35 @@
    ]
   },
   {
-   "kw": "브라이언",
+   "kw": "피트",
    "nsrc": 4,
    "srcs": [
     "뉴시스",
-    "동아일보",
     "세계일보",
+    "연합뉴스",
     "조선일보"
    ],
-   "n": 7,
+   "n": 6,
    "headlines": [
     {
-     "src": "동아일보",
-     "title": "브라이언 눈물, 환희 진심 7년 만에 알았다 (유퀴즈)",
-     "link": "https://sports.donga.com/ent/article/all/20261126/135094334/1"
+     "src": "연합뉴스",
+     "title": "졸리·피트, 결별 10년만에 법적분쟁도 종료…재산소송 합의",
+     "link": "https://www.yna.co.kr/view/AKR20261126036500009"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "'브래드 피트 연기스승' 이바나 처벅, 서울 용산서 마스터클래스",
+     "link": "https://www.yna.co.kr/view/AKR20261125068100005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "브래드 피트 '클리프 부스의 더 뻔뻔한 모험' 내달 IMAX 개봉",
+     "link": "https://www.yna.co.kr/view/AKR20261124113400005"
     },
     {
      "src": "세계일보",
-     "title": "환희·브라이언, 7년 만에 불화설·열애설 해명…“사귄 적 없다”",
-     "link": "https://www.segye.com/newsView/20261126513722"
-    },
-    {
-     "src": "뉴시스",
-     "title": "브라이언, 성대결절로 6개월 묵언수행…\"무대 오르기 두려웠다\"",
-     "link": "https://www.newsis.com/view/NISX20261126_0003883967"
-    },
-    {
-     "src": "뉴시스",
-     "title": "환희·브라이언, 열애설 재차 부인 \"사귄 적은 없다\"",
-     "link": "https://www.newsis.com/view/NISX20261126_0003883785"
+     "title": "브래드 피트 '연기 선생님' 이바나 처벅, 1년 만에 다시 한국 찾았다",
+     "link": "https://www.segye.com/newsView/20261126509782"
     }
    ]
   },
@@ -669,39 +770,6 @@
    ]
   },
   {
-   "kw": "재혼",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "동아일보",
-    "연합뉴스"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "방송인 김새롬, 비연예인과 재혼…\"오래도록 사랑하겠다\"",
-     "link": "https://www.yna.co.kr/view/AKR20261124150400005"
-    },
-    {
-     "src": "동아일보",
-     "title": "‘재혼’ 서인영 신혼집 ‘영끌’…이혼 당시 뭘 챙겼나 봤더니 (유행꼰대)",
-     "link": "https://sports.donga.com/ent/article/all/20261126/135093850/1"
-    },
-    {
-     "src": "SBS",
-     "title": "김새롬 \"법적 짝꿍 생겼다\"…이혼 9년 만에 재혼 발표",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008861907&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "SBS",
-     "title": "김새롬, 이혼 10년 만에 깜짝 재혼 발표…\"법적 짝꿍 생겼다\"",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008861229&plink=RSSLINK&cooper=RSSREADER"
-    }
-   ]
-  },
-  {
    "kw": "고백",
    "nsrc": 4,
    "srcs": [
@@ -731,6 +799,39 @@
      "src": "SBS",
      "title": "'틈만나면' 비, \"삶 자체가 운동…하지만 지방간 있어\" 충격 고백",
      "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008861856&plink=RSSLINK&cooper=RSSREADER"
+    }
+   ]
+  },
+  {
+   "kw": "여신",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "조선일보",
+    "한국경제",
+    "헤럴드경제"
+   ],
+   "n": 6,
+   "headlines": [
+    {
+     "src": "한국경제",
+     "title": "[포토+] 박지현, '우아한 분위기 여신'",
+     "link": "https://www.hankyung.com/article/202611260763H"
+    },
+    {
+     "src": "한국경제",
+     "title": "HK직캠|신민아, '레드카펫 위 우아한 여신'",
+     "link": "https://www.hankyung.com/article/202611260708H"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "“위고비 1년반 맞았는데도”…‘워터밤 여신’ 터질듯한 뱃살, 이게 무슨 일?",
+     "link": "https://biz.heraldcorp.com/article/10948998"
+    },
+    {
+     "src": "뉴시스",
+     "title": "\"내가 올림픽 여신\"…유타 레이르담 파격 'NY 패션'",
+     "link": "https://www.newsis.com/view/NISX20261125_0003882022"
     }
    ]
   },
@@ -801,35 +902,35 @@
    ]
   },
   {
-   "kw": "출격",
+   "kw": "브래드",
    "nsrc": 4,
    "srcs": [
     "뉴시스",
+    "세계일보",
     "연합뉴스",
-    "조선일보",
-    "한국경제"
+    "조선일보"
    ],
    "n": 5,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "천만 영화 '국제시장' 돌아온다…'국제시장2' 내년 설에 출격",
-     "link": "https://www.yna.co.kr/view/AKR20261126047700005"
+     "title": "'브래드 피트 연기스승' 이바나 처벅, 서울 용산서 마스터클래스",
+     "link": "https://www.yna.co.kr/view/AKR20261125068100005"
     },
     {
-     "src": "한국경제",
-     "title": "라이즈, '테카테 팔 노르테' 출격…'페스티벌 최강자' 굳히기",
-     "link": "https://www.hankyung.com/article/202611258969H"
+     "src": "연합뉴스",
+     "title": "브래드 피트 '클리프 부스의 더 뻔뻔한 모험' 내달 IMAX 개봉",
+     "link": "https://www.yna.co.kr/view/AKR20261124113400005"
+    },
+    {
+     "src": "세계일보",
+     "title": "브래드 피트 '연기 선생님' 이바나 처벅, 1년 만에 다시 한국 찾았다",
+     "link": "https://www.segye.com/newsView/20261126509782"
     },
     {
      "src": "뉴시스",
-     "title": "고경표 빠진 '보검 매직컬2'…지수·엄지원·안은진 출격",
-     "link": "https://www.newsis.com/view/NISX20261125_0003883179"
-    },
-    {
-     "src": "조선일보",
-     "title": "안방 평정한 ‘신병’ 유니버스, 스크린 출격..민진기 감독 “군병원서 펼쳐질 색다른 웃음과 공포”",
-     "link": "https://www.chosun.com/entertainments/movie/2026/11/26/GYZDONTBGNRDQY3GMI4WCOJTMU/"
+     "title": "브래드 피트 '연기 선생님' 이바나 처벅, 1년 만에 다시 한국 찾았다",
+     "link": "https://www.newsis.com/view/NISX20261126_0003884454"
     }
    ]
   },
@@ -966,12 +1067,12 @@
    ]
   },
   {
-   "kw": "국제시장",
+   "kw": "출격",
    "nsrc": 4,
    "srcs": [
-    "SBS",
     "뉴시스",
     "연합뉴스",
+    "조선일보",
     "한국경제"
    ],
    "n": 4,
@@ -983,51 +1084,51 @@
     },
     {
      "src": "한국경제",
-     "title": "'국제시장2', 내년 설 개봉 확정…천만 신화 잇나",
-     "link": "https://www.hankyung.com/article/202611261895H"
-    },
-    {
-     "src": "SBS",
-     "title": "'국제시장2', 내년 설 개봉 …황정민 빈자리 이성민·강하늘이 채운다",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008864316&plink=RSSLINK&cooper=RSSREADER"
+     "title": "라이즈, '테카테 팔 노르테' 출격…'페스티벌 최강자' 굳히기",
+     "link": "https://www.hankyung.com/article/202611258969H"
     },
     {
      "src": "뉴시스",
-     "title": "1400만 신화 다시 한 번…'국제시장2' 설 연휴에 본다",
-     "link": "https://www.newsis.com/view/NISX20261126_0003884059"
-    }
-   ]
-  },
-  {
-   "kw": "신병",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 4,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "영화로 만나는 '신병' 시리즈…\"드라마와는 다른 재미 드릴 것\"",
-     "link": "https://www.yna.co.kr/view/AKR20261125102000005"
-    },
-    {
-     "src": "SBS",
-     "title": "정연, 배우로 데뷔한다…'신병 더 무비'서 간호장교 역할",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008863868&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "뉴시스",
-     "title": "영화 '신병' 군병원 간다…\"군 리얼리즘에 공포 담았죠\"",
-     "link": "https://www.newsis.com/view/NISX20261125_0003882684"
+     "title": "고경표 빠진 '보검 매직컬2'…지수·엄지원·안은진 출격",
+     "link": "https://www.newsis.com/view/NISX20261125_0003883179"
     },
     {
      "src": "조선일보",
      "title": "안방 평정한 ‘신병’ 유니버스, 스크린 출격..민진기 감독 “군병원서 펼쳐질 색다른 웃음과 공포”",
      "link": "https://www.chosun.com/entertainments/movie/2026/11/26/GYZDONTBGNRDQY3GMI4WCOJTMU/"
+    }
+   ]
+  },
+  {
+   "kw": "여전히",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "연합뉴스",
+    "조선일보",
+    "한국경제"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "영화 '여전히 찬란하게' 조용한 돌풍…응원상영회 잇따라",
+     "link": "https://www.yna.co.kr/view/AKR20261125165900054"
+    },
+    {
+     "src": "한국경제",
+     "title": "[포토+] 전도연, '여전히 사랑스러운 미소'",
+     "link": "https://www.hankyung.com/article/202611260767H"
+    },
+    {
+     "src": "뉴시스",
+     "title": "하나도 안 변한 송중기, 행사서 포착된 근황…\"여전히 대학생 같아\"",
+     "link": "https://www.newsis.com/view/NISX20261126_0003884989"
+    },
+    {
+     "src": "조선일보",
+     "title": "‘케이티♥’ 송중기, 애아빠 아닌 ‘동결건조’ 비주얼 목격담... “여전히 대학생“",
+     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/26/GNQTIMTEGBSDSZJYGM2WGNDEGM/"
     }
    ]
   },
@@ -1061,39 +1162,6 @@
      "src": "헤럴드경제",
      "title": "아이유, 결국 도쿄돔까지 접수…韓 여성 솔로 가수 최초 단독 콘서트",
      "link": "https://biz.heraldcorp.com/article/10948600"
-    }
-   ]
-  },
-  {
-   "kw": "합류",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 4,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "박보경, 김서형 하차한 SBS 드라마 '대시' 합류",
-     "link": "https://www.yna.co.kr/view/AKR20261124074700005"
-    },
-    {
-     "src": "SBS",
-     "title": "[스브스夜] '동상이몽2' 여에스더, ♥홍혜걸의 2만 8천원 짜리 팔찌 선물에도 '행복'…가수 강균성 부부 합류 예고",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008861876&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "뉴시스",
-     "title": "스윙스, 마동석 영화 나온다 \"유의미한 역할로 합류\"",
-     "link": "https://www.newsis.com/view/NISX20261126_0003883630"
-    },
-    {
-     "src": "조선일보",
-     "title": "김나영, tvN ‘뜨거운 안녕’ OST 합류… 28일 ‘동굴’ 발매",
-     "link": "https://www.chosun.com/entertainments/music/2026/11/26/MUYGKYZYGJRGIZBYGVSTEODCGM/"
     }
    ]
   },
@@ -1223,70 +1291,6 @@
      "src": "연합뉴스",
      "title": "[가요소식] 英 밴드 슬로우다이브, 내달 8일 내한 공연",
      "link": "https://www.yna.co.kr/view/AKR20261123134100005"
-    }
-   ]
-  },
-  {
-   "kw": "트와이스",
-   "nsrc": 3,
-   "srcs": [
-    "세계일보",
-    "조선일보",
-    "헤럴드경제"
-   ],
-   "n": 8,
-   "headlines": [
-    {
-     "src": "세계일보",
-     "title": "[포토] 트와이스 정연 '상큼한 손하트'",
-     "link": "https://www.segye.com/newsView/20261126512010"
-    },
-    {
-     "src": "세계일보",
-     "title": "[포토] 트와이스 정연 '반가운 손인사'",
-     "link": "https://www.segye.com/newsView/20261126511982"
-    },
-    {
-     "src": "세계일보",
-     "title": "[포토] 트와이스 정연 '시선 사로잡는 각선미'",
-     "link": "https://www.segye.com/newsView/20261126511935"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "신동엽, ‘KBS 연예대상’ MC 3년 만에 복귀…성시경·트와이스 나연과 호흡",
-     "link": "https://biz.heraldcorp.com/article/10949299"
-    }
-   ]
-  },
-  {
-   "kw": "이세영",
-   "nsrc": 3,
-   "srcs": [
-    "뉴시스",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 7,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "이세영 \"욕망하는 악녀, 더 많이 욕먹고 싶었죠\"",
-     "link": "https://www.yna.co.kr/view/AKR20261126109100005"
-    },
-    {
-     "src": "뉴시스",
-     "title": "'성형에 1억' 이세영…\"밤샘 야식은 굴찜\"",
-     "link": "https://www.newsis.com/view/NISX20261125_0003882838"
-    },
-    {
-     "src": "조선일보",
-     "title": "이세영 “‘재혼황후’ 시즌2 나온다면 무조건, 욕 더 많이 먹고파”",
-     "link": "https://www.chosun.com/entertainments/enter_general/2026/11/26/MI4DCNBQGY2GMNTBMFRDGMTDG4/"
-    },
-    {
-     "src": "조선일보",
-     "title": "[인터뷰] 이세영 \"'재혼황후' 라스타 만족도 90%, 시즌2에선 욕 먹고파\"(종합)",
-     "link": "https://www.chosun.com/entertainments/enter_general/2026/11/26/HEZTMYZUG4ZWEZDBG5RTKMJRGY/"
     }
    ]
   },
