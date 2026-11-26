@@ -6,3 +6,49 @@ C:\Users\k\Desktop\adsense_sites\root\_gongmo\build.py:4418: SyntaxWarning: inva
   + DAILY_JS + '<script type="application/ld+json">%s</script>' % json.dumps(fld, ensure_ascii=False).replace('</', '<\/'))
 C:\Users\k\Desktop\adsense_sites\root\_gongmo\build.py:4492: SyntaxWarning: invalid escape sequence '\+'
   "q.addEventListener('input',draw);document.querySelectorAll('.ch-c').forEach(function(b){b.addEventListener('click',function(){q.value=b.getAttribute('data-q');draw()})});var m=location.search.match(/[?&]q=([^&]*)/);if(m){try{q.value=decodeURIComponent(m[1].replace(/\+/g,' ')).slice(0,60)}catch(e){}}draw()})();</script>")
+C:\Users\k\Desktop\adsense_sites\root\_gongmo\build.py:2960: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  _today = (datetime.datetime.utcnow() + datetime.timedelta(hours=9)).strftime('%Y-%m-%d')
+txt synced 0
+items 448 {'src': 4885, 'past': 236, 'noncontest': 47, 'dup': 131}
+마감일 원문 보정 18
+중복 공고 합침 52
+게이트 검수 대기 0 재수집 대상 15
+shots 363 removed 0
+지원금 칸 정리 {'글머리 기호 제거': 101, '혜택 칸의 대상 설명 분리': 10, '혜택 칸의 사업비 제거': 1}
+추천 데이터 1313 메뉴 · 사진 있는 메뉴 1211
+전자책 6 권 [('year-end-tax', 16), ('resign', 6), ('housing', 7), ('parttime', 4), ('money-trouble', 7), ('winter-energy', 10)]
+생활 가이드 주제 분포 {'세금·연말정산': 71, '4대보험·건강보험': 30, '급여·노동': 68, '연금·복지': 51, '주거·부동산': 73, '교육·장학': 27, '가족·출산·상속': 17, '금융·대출·보험': 46, '자동차·교통': 29, '법률·분쟁·사기': 12, '증명서·민원': 9, '건강·의료': 24, '생활·소비자': 28, '사업자·자영업': 16, '공무원·병역·보훈': 16, '그 밖의 생활 정보': 35}
+책 읽기 화면 38 장 / 그림 224 장
+시험 허브 109 건
+시험 글 모음 건너뜀(사이트는 계속) TypeError("unhashable type: 'list'")
+시험 문제은행 6 종
+개발 업무일지 7 일
+개발 글 요청 후보 0
+마감 안내 페이지 삭제 0 안내 데이터 1824
+자료 색인 10302 질의 368
+공모전 충실도 분포 [(2, 39), (3, 170), (4, 120), (5, 30), (6, 25), (7, 10), (8, 2)] 기준 6
+auto_thin noindex 2086
+광고 스크립트 뺀 검색 제외 페이지 10442
+수치 불일치 의심 근로장려금 맞벌이 소득 기준: 7,000만 (money\guide\child-incentive-payment-conditions-amount\index.html)
+수치 불일치 의심 근로장려금 홑벌이 소득 기준: 2,100만 (money\guide\child-incentive-payment-conditions-amount\index.html)
+수치 불일치 의심 근로장려금 맞벌이 소득 기준: 4,300만 (money\guide\eitc\index.html)
+홈·목록·상세 불일치 0 []
+얇은 페이지 합침 (8520, 106)
+루리 위키 글/적용 (1014, 1014)
+광고 스크립트 뺀 페이지(최종) 2
+PDF 새로 만듦 0 / 전체 450
+전자책 PDF 새로 만듦 0
+지난 달 모음 검색 제외 0
+방향 전환 정리(검색 제외) 117
+내부 링크 보강 {'hot': 6, 'ld_fixed': 431, 'low': 353, 'hosts_a': 8, 'hubs_b': 8, 'by': {'기타': 179, '/analyst/': 12, '/fridge/': 12, '/hot/': 83, '/issue/': 1, '/lab/': 46, '/money/': 14, '/pick/': 4, '/ssul/': 2}}
+contests 448 live 368 events 154 urls 3480 noindex 2098
+죽은 /c/ 링크 푼 페이지 18 / 죽은 /a/ 링크 정리 36 / 지난 이슈 링크 푼 페이지 14
+health ['깨진 내부 링크 2개', '빈 페이지 3개']
+git add 0 warning: in the working copy of '_gongmo/community_topics.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'a/lh-2015122300021119/index.html', LF will be
+git diff 1 
+git commit 0 
+git pull 128 error: cannot pull with rebase: You have unstaged changes.
+error: Please commit or stash them.
+git push 0 
+2026-11-26 22:32 서치콘솔 사이트맵 재제출 성공 {'sitemap_index.xml': 204, 'sitemap.xml': 204}
