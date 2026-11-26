@@ -1,14 +1,14 @@
 {
  "date": "2026-11-26",
- "updated": "2026-11-26 18:50",
+ "updated": "2026-11-26 19:50",
  "sites": 13,
- "npost": 2793,
+ "npost": 2802,
  "note": "출처(커뮤니티)별 집계예요. 작성자·연령·성별 정보는 수집하지 않아요. posts 는 이슈별로 뽑힌 일부라 전체 글 수가 아니에요.",
  "sources": [
   {
    "name": "MLB파크",
    "np": 13,
-   "nc": 1002,
+   "nc": 832,
    "topics": [
     {
      "t": "\"육아휴직 중 주 80시간 공부\"…세무사 합격 수기 논란",
@@ -18,8 +18,8 @@
      "issue_np": 5,
      "issue_nc": 271,
      "kw": [
-      "휴직",
       "육아",
+      "휴직",
       "합격",
       "세무사"
      ],
@@ -30,39 +30,21 @@
      }
     },
     {
-     "t": "대마도 스시자로 원정단 근황",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 202,
-     "issue_np": 5,
-     "issue_nc": 215,
-     "kw": [
-      "대마도",
-      "스시자",
-      "원정"
-     ],
-     "top_post": {
-      "t": "대마도 스시자로 원정단 근황",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611250120300672&m=view",
-      "nc": 202
-     }
-    },
-    {
      "t": "장인, 간이식 거절한 사위",
      "nsite": 2,
      "np_here": 1,
-     "nc_here": 143,
+     "nc_here": 156,
      "issue_np": 2,
-     "issue_nc": 146,
+     "issue_nc": 159,
      "kw": [
+      "사위",
       "장인",
-      "이식",
-      "사위"
+      "이식"
      ],
      "top_post": {
       "t": "장인, 간이식 거절한 사위",
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611260120321402&m=view",
-      "nc": 143
+      "nc": 156
      }
     },
     {
@@ -73,8 +55,8 @@
      "issue_np": 3,
      "issue_nc": 110,
      "kw": [
-      "커뮤니티",
       "특징",
+      "커뮤니티",
       "인터넷"
      ],
      "top_post": {
@@ -122,9 +104,9 @@
      "t": "리센느 첫 단독 콘서트 일정 및 예매 일정",
      "nsite": 3,
      "np_here": 1,
-     "nc_here": 44,
+     "nc_here": 54,
      "issue_np": 3,
-     "issue_nc": 65,
+     "issue_nc": 75,
      "kw": [
       "콘서트",
       "리센느",
@@ -133,7 +115,7 @@
      "top_post": {
       "t": "리센느 첫 콘서트 가격ㄷㄷ",
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611260120322842&m=view",
-      "nc": 44
+      "nc": 54
      }
     },
     {
@@ -153,13 +135,30 @@
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611260120318123&m=view",
       "nc": 41
      }
+    },
+    {
+     "t": "올해 주식으로 3천 날렸어요",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 32,
+     "issue_np": 3,
+     "issue_nc": 32,
+     "kw": [
+      "올해",
+      "주식"
+     ],
+     "top_post": {
+      "t": "올해 주식장 은 고트입니다 . jpg",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611250120313428&m=view",
+      "nc": 32
+     }
     }
    ]
   },
   {
    "name": "개드립",
-   "np": 15,
-   "nc": 386,
+   "np": 14,
+   "nc": 380,
    "topics": [
     {
      "t": "실물경제 통계 근황.",
@@ -170,8 +169,8 @@
      "issue_nc": 91,
      "kw": [
       "통계",
-      "경제",
-      "실물"
+      "실물",
+      "경제"
      ],
      "top_post": {
       "t": "실물경제 통계 근황",
@@ -187,12 +186,29 @@
      "issue_np": 3,
      "issue_nc": 46,
      "kw": [
-      "가불",
-      "프랑스"
+      "프랑스",
+      "가불"
      ],
      "top_post": {
       "t": "가불기에 걸린 프랑스",
       "u": "https://www.dogdrip.net/dogdrip/736600508?sort_index=popular&page=1",
+      "nc": 43
+     }
+    },
+    {
+     "t": "5억을준다면 서울에서 부산까지 걸어서 일주일만에 가능?",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 43,
+     "issue_np": 2,
+     "issue_nc": 52,
+     "kw": [
+      "부산",
+      "서울"
+     ],
+     "top_post": {
+      "t": "5억을준다면 서울에서 부산까지 걸어서 일주일만에 가능?",
+      "u": "https://www.dogdrip.net/dogdrip/736699409?sort_index=popular&page=1",
       "nc": 43
      }
     },
@@ -204,10 +220,10 @@
      "issue_np": 3,
      "issue_nc": 40,
      "kw": [
-      "족쇄",
-      "식품가",
+      "비명",
       "담합",
-      "비명"
+      "족쇄",
+      "식품가"
      ],
      "top_post": {
       "t": "올리면 담합, 버티면 적자...족쇄에 갇힌 식품가 '비명'",
@@ -234,25 +250,6 @@
      }
     },
     {
-     "t": "외국인들이 차별로 오해하는 지하철 특징 ㅋㅋ",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 33,
-     "issue_np": 3,
-     "issue_nc": 33,
-     "kw": [
-      "지하철",
-      "외국인",
-      "오해",
-      "차별"
-     ],
-     "top_post": {
-      "t": "처음 한국 온 외국인들이 차별로 오해하는 지하철 특징 ㅋㅋ",
-      "u": "https://www.dogdrip.net/dogdrip/736538567?sort_index=popular&page=1",
-      "nc": 33
-     }
-    },
-    {
      "t": "\"육아휴직 중 주 80시간 공부\"…세무사 합격 수기 논란",
      "nsite": 3,
      "np_here": 1,
@@ -260,32 +257,14 @@
      "issue_np": 5,
      "issue_nc": 271,
      "kw": [
-      "휴직",
       "육아",
+      "휴직",
       "합격",
       "세무사"
      ],
      "top_post": {
       "t": "현재 논란이라는 육아휴직 중 세무사 합격 논란",
       "u": "https://www.dogdrip.net/dogdrip/736545441?sort_index=popular&page=1",
-      "nc": 31
-     }
-    },
-    {
-     "t": "ㅈ된다는 중국 자동차 최신근황ㄷㄷㄷㄷㄷ",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 31,
-     "issue_np": 3,
-     "issue_nc": 35,
-     "kw": [
-      "자동차",
-      "중국",
-      "최신"
-     ],
-     "top_post": {
-      "t": "ㅈ된다는 중국 자동차 최신근황ㄷㄷㄷㄷㄷ",
-      "u": "https://www.dogdrip.net/dogdrip/736534268?sort_index=popular&page=1",
       "nc": 31
      }
     },
@@ -305,30 +284,48 @@
       "u": "https://www.dogdrip.net/dogdrip/736567814?sort_index=popular&page=1",
       "nc": 31
      }
+    },
+    {
+     "t": "와들와들 ai의 무서운 발전 속도",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 28,
+     "issue_np": 3,
+     "issue_nc": 28,
+     "kw": [
+      "AI",
+      "발전",
+      "속도"
+     ],
+     "top_post": {
+      "t": "위험하다는 'AI 개발 속도조절론' 근황",
+      "u": "https://www.dogdrip.net/dogdrip/736756011?sort_index=popular&page=1",
+      "nc": 28
+     }
     }
    ]
   },
   {
    "name": "클리앙",
    "np": 5,
-   "nc": 189,
+   "nc": 191,
    "topics": [
     {
      "t": "구급차 막고 30명 우르르..영상 퍼지자 '공분'",
      "nsite": 4,
      "np_here": 1,
-     "nc_here": 69,
+     "nc_here": 71,
      "issue_np": 4,
-     "issue_nc": 72,
+     "issue_nc": 74,
      "kw": [
-      "공분",
       "구급차",
+      "공분",
       "마라톤"
      ],
      "top_post": {
       "t": "구급차 막고 30명 우르르..영상 퍼지자 '공분'",
       "u": "https://www.clien.net/service/board/park/19298844?od=T33&po=0&category=0&groupCd=clien_all",
-      "nc": 69
+      "nc": 71
      }
     },
     {
@@ -357,8 +354,8 @@
      "issue_nc": 91,
      "kw": [
       "통계",
-      "경제",
-      "실물"
+      "실물",
+      "경제"
      ],
      "top_post": {
       "t": "실물경제 통계 근황.",
@@ -371,11 +368,12 @@
      "nsite": 3,
      "np_here": 1,
      "nc_here": 11,
-     "issue_np": 3,
+     "issue_np": 4,
      "issue_nc": 22,
      "kw": [
+      "금리",
       "인상",
-      "금리"
+      "한은"
      ],
      "top_post": {
       "t": "오늘 한은 금통위…금리 3.25%로 인상할 듯",
@@ -388,11 +386,11 @@
      "nsite": 4,
      "np_here": 1,
      "nc_here": 4,
-     "issue_np": 5,
-     "issue_nc": 9,
+     "issue_np": 4,
+     "issue_nc": 7,
      "kw": [
-      "시장",
-      "주식"
+      "주식",
+      "시장"
      ],
      "top_post": {
       "t": "다음 선거때는 주식시장 9시부터3시까지만 연다는 사람 뽑을겁니다",
@@ -403,42 +401,139 @@
    ]
   },
   {
-   "name": "보배드림",
-   "np": 11,
+   "name": "82쿡",
+   "np": 7,
    "nc": 30,
    "topics": [
     {
-     "t": "주식시장이 심각한 이유",
-     "nsite": 4,
+     "t": "오늘 한은 금통위…금리 3.25%로 인상할 듯",
+     "nsite": 3,
      "np_here": 2,
-     "nc_here": 5,
+     "nc_here": 11,
+     "issue_np": 4,
+     "issue_nc": 22,
+     "kw": [
+      "금리",
+      "인상",
+      "한은"
+     ],
+     "top_post": {
+      "t": "기준금리 0.25%p 인상",
+      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4263021&page=1",
+      "nc": 11
+     }
+    },
+    {
+     "t": "[2보] 대법, 윤석열 '한덕수 재판 위증' 무죄 확정",
+     "nsite": 3,
+     "np_here": 2,
+     "nc_here": 9,
      "issue_np": 5,
      "issue_nc": 9,
      "kw": [
-      "시장",
+      "재판",
+      "위증",
+      "윤석열",
+      "확정"
+     ],
+     "top_post": {
+      "t": "윤석열, ‘한덕수 재판 위증’ 혐의 무죄 확정",
+      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4263086&page=1",
+      "nc": 7
+     }
+    },
+    {
+     "t": "이제 부동산도 하락하겠네요",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 5,
+     "issue_np": 3,
+     "issue_nc": 27,
+     "kw": [
+      "부동산",
+      "하락"
+     ],
+     "top_post": {
+      "t": "치솟던 도쿄 부동산 가격 6개월 연속 하락",
+      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4262976&page=1",
+      "nc": 5
+     }
+    },
+    {
+     "t": "미국 아짐의 젠슨황 복귀 반응",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 5,
+     "issue_np": 4,
+     "issue_nc": 17,
+     "kw": [
+      "젠슨 황",
+      "복귀",
+      "효과",
       "주식"
      ],
      "top_post": {
-      "t": "미스테리한 요즘 주식시장",
-      "u": "https://www.bobaedream.co.kr/view?code=best&No=1050128&vdate=",
-      "nc": 3
+      "t": "미국 아짐의 젠슨황 복귀 반응",
+      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4262940&page=1",
+      "nc": 5
      }
     },
+    {
+     "t": "일론 머스크가 확신하는 앞으로 곧 다가올 ㅎㄷㄷ한 미래...",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 15,
+     "kw": [
+      "머스크",
+      "일론"
+     ],
+     "top_post": {
+      "t": "일론 머스크가 엔비디아에 방문",
+      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4263193&page=1",
+      "nc": 0
+     }
+    }
+   ]
+  },
+  {
+   "name": "보배드림",
+   "np": 9,
+   "nc": 25,
+   "topics": [
     {
      "t": "구급차 막고 30명 우르르..영상 퍼지자 '공분'",
      "nsite": 4,
      "np_here": 1,
      "nc_here": 3,
      "issue_np": 4,
-     "issue_nc": 72,
+     "issue_nc": 74,
      "kw": [
-      "공분",
       "구급차",
+      "공분",
       "마라톤"
      ],
      "top_post": {
       "t": "구급차까지 막아버린 마라톤..영상 퍼지자 '공분'",
       "u": "https://www.bobaedream.co.kr/view?code=best&No=1050274&vdate=",
+      "nc": 3
+     }
+    },
+    {
+     "t": "주식시장이 심각한 이유",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 3,
+     "issue_np": 4,
+     "issue_nc": 7,
+     "kw": [
+      "주식",
+      "시장"
+     ],
+     "top_post": {
+      "t": "미스테리한 요즘 주식시장",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1050128&vdate=",
       "nc": 3
      }
     },
@@ -450,8 +545,8 @@
      "issue_np": 3,
      "issue_nc": 46,
      "kw": [
-      "가불",
-      "프랑스"
+      "프랑스",
+      "가불"
      ],
      "top_post": {
       "t": "가불기에 걸린 프랑스",
@@ -467,32 +562,14 @@
      "issue_np": 3,
      "issue_nc": 40,
      "kw": [
-      "족쇄",
-      "식품가",
+      "비명",
       "담합",
-      "비명"
+      "족쇄",
+      "식품가"
      ],
      "top_post": {
       "t": "올리면 담합, 버티면 적자...족쇄에 갇힌 식품가 “비명”",
       "u": "https://www.bobaedream.co.kr/view?code=best&No=1050151&vdate=",
-      "nc": 3
-     }
-    },
-    {
-     "t": "ㅈ된다는 중국 자동차 최신근황ㄷㄷㄷㄷㄷ",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 3,
-     "issue_np": 3,
-     "issue_nc": 35,
-     "kw": [
-      "자동차",
-      "중국",
-      "최신"
-     ],
-     "top_post": {
-      "t": "ㅈ된다는 중국 자동차 최신근황",
-      "u": "https://www.bobaedream.co.kr/view?code=best&No=1050153&vdate=",
       "nc": 3
      }
     },
@@ -541,108 +618,31 @@
      "issue_np": 3,
      "issue_nc": 3,
      "kw": [
-      "남자",
-      "결혼"
+      "결혼",
+      "남자"
      ],
      "top_post": {
       "t": "결혼 생활 ㅈ같다는 남자",
       "u": "https://www.bobaedream.co.kr/view?code=best&No=1050188&vdate=",
       "nc": 3
      }
-    }
-   ]
-  },
-  {
-   "name": "82쿡",
-   "np": 5,
-   "nc": 22,
-   "topics": [
-    {
-     "t": "오늘 한은 금통위…금리 3.25%로 인상할 듯",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 11,
-     "issue_np": 3,
-     "issue_nc": 22,
-     "kw": [
-      "인상",
-      "금리"
-     ],
-     "top_post": {
-      "t": "기준금리 0.25%p 인상",
-      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4263021&page=1",
-      "nc": 11
-     }
     },
     {
-     "t": "이제 부동산도 하락하겠네요",
-     "nsite": 3,
+     "t": "장인, 간이식 거절한 사위",
+     "nsite": 2,
      "np_here": 1,
-     "nc_here": 5,
-     "issue_np": 3,
-     "issue_nc": 27,
+     "nc_here": 3,
+     "issue_np": 2,
+     "issue_nc": 159,
      "kw": [
-      "부동산",
-      "하락"
+      "사위",
+      "장인",
+      "이식"
      ],
      "top_post": {
-      "t": "치솟던 도쿄 부동산 가격 6개월 연속 하락",
-      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4262976&page=1",
-      "nc": 5
-     }
-    },
-    {
-     "t": "미국 아짐의 젠슨황 복귀 반응",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 5,
-     "issue_np": 4,
-     "issue_nc": 17,
-     "kw": [
-      "복귀",
-      "젠슨 황",
-      "효과",
-      "주식"
-     ],
-     "top_post": {
-      "t": "미국 아짐의 젠슨황 복귀 반응",
-      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4262940&page=1",
-      "nc": 5
-     }
-    },
-    {
-     "t": "ㅈ된다는 중국 자동차 최신근황ㄷㄷㄷㄷㄷ",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 1,
-     "issue_np": 3,
-     "issue_nc": 35,
-     "kw": [
-      "자동차",
-      "중국",
-      "최신"
-     ],
-     "top_post": {
-      "t": "누가 중국이 만든 자동차를 타느냐고",
-      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4263118&page=1",
-      "nc": 1
-     }
-    },
-    {
-     "t": "일론 머스크가 확신하는 앞으로 곧 다가올 ㅎㄷㄷ한 미래...",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 15,
-     "kw": [
-      "일론",
-      "머스크"
-     ],
-     "top_post": {
-      "t": "일론 머스크가 엔비디아에 방문",
-      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4263193&page=1",
-      "nc": 0
+      "t": "장인 간이식 강요받는 사위",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1050299&vdate=",
+      "nc": 3
      }
     }
    ]
@@ -658,7 +658,7 @@
      "np_here": 1,
      "nc_here": 21,
      "issue_np": 3,
-     "issue_nc": 65,
+     "issue_nc": 75,
      "kw": [
       "콘서트",
       "리센느",
@@ -675,15 +675,15 @@
   {
    "name": "아카라이브",
    "np": 1,
-   "nc": 10,
+   "nc": 11,
    "topics": [
     {
      "t": "크보 팬들은 반응 안 좋을 수 밖에 없는 불꽃야구 상황",
      "nsite": 3,
      "np_here": 1,
-     "nc_here": 10,
+     "nc_here": 11,
      "issue_np": 3,
-     "issue_nc": 10,
+     "issue_nc": 11,
      "kw": [
       "불꽃",
       "야구"
@@ -691,146 +691,32 @@
      "top_post": {
       "t": "이분 <<< 불꽃야구 멤버 강력추천함",
       "u": "https://arca.live/b/live/190337196?p=1",
-      "nc": 10
+      "nc": 11
      }
     }
    ]
   },
   {
-   "name": "디시인사이드",
-   "np": 7,
+   "name": "SLR클럽",
+   "np": 6,
    "nc": 0,
    "topics": [
     {
-     "t": "대마도 스시자로 원정단 근황",
-     "nsite": 4,
-     "np_here": 2,
-     "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 215,
-     "kw": [
-      "대마도",
-      "스시자",
-      "원정"
-     ],
-     "top_post": {
-      "t": "마운자로 대마도 원정 경찰 개입했다고 함",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481607&_dcbest=1&page=1",
-      "nc": 0
-     }
-    },
-    {
-     "t": "외국인들이 차별로 오해하는 지하철 특징 ㅋㅋ",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 33,
-     "kw": [
-      "지하철",
-      "외국인",
-      "오해",
-      "차별"
-     ],
-     "top_post": {
-      "t": "외국인들이 차별로 오해하는 지하철 특징 ㅋㅋ",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481592&_dcbest=1&page=1",
-      "nc": 0
-     }
-    },
-    {
-     "t": "이제 부동산도 하락하겠네요",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 27,
-     "kw": [
-      "부동산",
-      "하락"
-     ],
-     "top_post": {
-      "t": "근데 요즘 진짜 부동산 하락하는게 느껴지는게",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481552&_dcbest=1&page=1",
-      "nc": 0
-     }
-    },
-    {
-     "t": "싱글벙글 중국 역사상 전례가 없던 사건..",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 6,
-     "kw": [
-      "역사",
-      "사건",
-      "중국",
-      "전례"
-     ],
-     "top_post": {
-      "t": "싱글벙글 중국 역사상 전례가 없던 사건..",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481700&_dcbest=1&page=1",
-      "nc": 0
-     }
-    },
-    {
-     "t": "존경할 수 있는 남자와 결혼하고싶다는 애프터스쿨 이주연",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 3,
-     "kw": [
-      "남자",
-      "결혼"
-     ],
-     "top_post": {
-      "t": "존경할 수 있는 남자와 결혼하고싶다는 애프터스쿨 이주연",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481580&_dcbest=1&page=1",
-      "nc": 0
-     }
-    },
-    {
-     "t": "김준표 저작권 신고 누적 2회 ㄷㄷㄷ",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 2,
-     "kw": [
-      "저작",
-      "김준표",
-      "신고"
-     ],
-     "top_post": {
-      "t": "최근 영상 저작권 3번 경고 신고삭당하는 렉카 마술 유튜버 김준표 해명 ㄷㄷㄷ",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481803&_dcbest=1&page=1",
-      "nc": 0
-     }
-    }
-   ]
-  },
-  {
-   "name": "루리웹",
-   "np": 31,
-   "nc": 0,
-   "topics": [
-    {
-     "t": "대마도 스시자로 원정단 근황",
-     "nsite": 4,
+     "t": "인스타 아기이름 논란",
+     "nsite": 5,
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 5,
-     "issue_nc": 215,
+     "issue_nc": 26,
      "kw": [
-      "대마도",
-      "스시자",
-      "원정"
+      "이름",
+      "논란",
+      "인스타",
+      "아기"
      ],
      "top_post": {
-      "t": "대마도 스시자로 근황",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77516521?m=all&t=now",
+      "t": "논란중인 아이 이름 ㄷㄷㄷ",
+      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=678212",
       "nc": 0
      }
     },
@@ -840,24 +726,100 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 4,
-     "issue_nc": 72,
+     "issue_nc": 74,
      "kw": [
-      "공분",
       "구급차",
+      "공분",
       "마라톤"
      ],
      "top_post": {
-      "t": "구급차까지 막아버린 마라톤..영상 퍼지자 '공분'",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77523419?m=all&t=now",
+      "t": "구급차 막고 30명 우르르..영상 퍼지자 '공분'",
+      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=678256",
       "nc": 0
      }
     },
     {
-     "t": "인스타 아기이름 논란",
+     "t": "주식시장이 심각한 이유",
      "nsite": 4,
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 4,
+     "issue_nc": 7,
+     "kw": [
+      "주식",
+      "시장"
+     ],
+     "top_post": {
+      "t": "주식시장이 심각한 이유",
+      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=678210",
+      "nc": 0
+     }
+    },
+    {
+     "t": "평생 한 회사 라면만 먹는다면?",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 85,
+     "kw": [
+      "라면",
+      "회사"
+     ],
+     "top_post": {
+      "t": "한 회사 라면만 먹는다면?",
+      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=678270",
+      "nc": 0
+     }
+    },
+    {
+     "t": "올해 주식으로 3천 날렸어요",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 32,
+     "kw": [
+      "올해",
+      "주식"
+     ],
+     "top_post": {
+      "t": "올해 주식으로 3천 날렸어요",
+      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=678192",
+      "nc": 0
+     }
+    },
+    {
+     "t": "오늘 한은 금통위…금리 3.25%로 인상할 듯",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 22,
+     "kw": [
+      "금리",
+      "인상",
+      "한은"
+     ],
+     "top_post": {
+      "t": "[1보] 한은, 기준금리 연 3.25%로 0.25%p 인상",
+      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=678238",
+      "nc": 0
+     }
+    }
+   ]
+  },
+  {
+   "name": "루리웹",
+   "np": 30,
+   "nc": 0,
+   "topics": [
+    {
+     "t": "인스타 아기이름 논란",
+     "nsite": 5,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 5,
      "issue_nc": 26,
      "kw": [
       "이름",
@@ -872,15 +834,33 @@
      }
     },
     {
+     "t": "구급차 막고 30명 우르르..영상 퍼지자 '공분'",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 74,
+     "kw": [
+      "구급차",
+      "공분",
+      "마라톤"
+     ],
+     "top_post": {
+      "t": "구급차까지 막아버린 마라톤..영상 퍼지자 '공분'",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77523419?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
      "t": "주식시장이 심각한 이유",
      "nsite": 4,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 9,
+     "issue_np": 4,
+     "issue_nc": 7,
      "kw": [
-      "시장",
-      "주식"
+      "주식",
+      "시장"
      ],
      "top_post": {
       "t": "요즘 주식시장 슬슬 바닥이 보이...",
@@ -949,46 +929,47 @@
      "issue_np": 3,
      "issue_nc": 46,
      "kw": [
-      "가불",
-      "프랑스"
+      "프랑스",
+      "가불"
      ],
      "top_post": {
       "t": "가불기에 걸린 프랑스",
       "u": "https://bbs.ruliweb.com/best/board/300143/read/77518712?m=all&t=now",
       "nc": 0
      }
+    },
+    {
+     "t": "올리면 담합, 버티면 적자...족쇄에 갇힌 식품가 '비명'",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 40,
+     "kw": [
+      "비명",
+      "담합",
+      "족쇄",
+      "식품가"
+     ],
+     "top_post": {
+      "t": "올리면 담합, 버티면 적자...족쇄에 갇힌 식품가 '비명'",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77521053?m=all&t=now",
+      "nc": 0
+     }
     }
    ]
   },
   {
-   "name": "SLR클럽",
-   "np": 6,
+   "name": "디시인사이드",
+   "np": 7,
    "nc": 0,
    "topics": [
     {
-     "t": "구급차 막고 30명 우르르..영상 퍼지자 '공분'",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 72,
-     "kw": [
-      "공분",
-      "구급차",
-      "마라톤"
-     ],
-     "top_post": {
-      "t": "구급차 막고 30명 우르르..영상 퍼지자 '공분'",
-      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=678256",
-      "nc": 0
-     }
-    },
-    {
      "t": "인스타 아기이름 논란",
-     "nsite": 4,
+     "nsite": 5,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 4,
+     "issue_np": 5,
      "issue_nc": 26,
      "kw": [
       "이름",
@@ -997,76 +978,116 @@
       "아기"
      ],
      "top_post": {
-      "t": "논란중인 아이 이름 ㄷㄷㄷ",
-      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=678212",
+      "t": "요즘 아기 이름 수준..",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481815&_dcbest=1&page=1",
       "nc": 0
      }
     },
     {
-     "t": "주식시장이 심각한 이유",
-     "nsite": 4,
+     "t": "와들와들 ai의 무서운 발전 속도",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 28,
+     "kw": [
+      "AI",
+      "발전",
+      "속도"
+     ],
+     "top_post": {
+      "t": "와들와들 ai의 무서운 발전 속도",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481707&_dcbest=1&page=1",
+      "nc": 0
+     }
+    },
+    {
+     "t": "이제 부동산도 하락하겠네요",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 27,
+     "kw": [
+      "부동산",
+      "하락"
+     ],
+     "top_post": {
+      "t": "근데 요즘 진짜 부동산 하락하는게 느껴지는게",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481552&_dcbest=1&page=1",
+      "nc": 0
+     }
+    },
+    {
+     "t": "[2보] 대법, 윤석열 '한덕수 재판 위증' 무죄 확정",
+     "nsite": 3,
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 5,
      "issue_nc": 9,
      "kw": [
-      "시장",
-      "주식"
+      "재판",
+      "위증",
+      "윤석열",
+      "확정"
      ],
      "top_post": {
-      "t": "주식시장이 심각한 이유",
-      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=678210",
+      "t": "대법, 윤석열 '한덕수 재판 위증' 무죄 확정",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481805&_dcbest=1&page=1",
       "nc": 0
      }
     },
     {
-     "t": "평생 한 회사 라면만 먹는다면?",
+     "t": "싱글벙글 중국 역사상 전례가 없던 사건..",
      "nsite": 3,
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 3,
-     "issue_nc": 85,
+     "issue_nc": 6,
      "kw": [
-      "라면",
-      "회사"
+      "역사",
+      "전례",
+      "사건",
+      "중국"
      ],
      "top_post": {
-      "t": "한 회사 라면만 먹는다면?",
-      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=678270",
+      "t": "싱글벙글 중국 역사상 전례가 없던 사건..",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481700&_dcbest=1&page=1",
       "nc": 0
      }
     },
     {
-     "t": "올해 주식으로 3천 날렸어요",
+     "t": "존경할 수 있는 남자와 결혼하고싶다는 애프터스쿨 이주연",
      "nsite": 3,
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 3,
-     "issue_nc": 32,
+     "issue_nc": 3,
      "kw": [
-      "주식",
-      "올해"
+      "결혼",
+      "남자"
      ],
      "top_post": {
-      "t": "올해 주식으로 3천 날렸어요",
-      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=678192",
+      "t": "존경할 수 있는 남자와 결혼하고싶다는 애프터스쿨 이주연",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481580&_dcbest=1&page=1",
       "nc": 0
      }
     },
     {
-     "t": "오늘 한은 금통위…금리 3.25%로 인상할 듯",
+     "t": "김준표 저작권 신고 누적 2회 ㄷㄷㄷ",
      "nsite": 3,
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 3,
-     "issue_nc": 22,
+     "issue_nc": 2,
      "kw": [
-      "인상",
-      "금리"
+      "저작",
+      "김준표",
+      "신고"
      ],
      "top_post": {
-      "t": "[1보] 한은, 기준금리 연 3.25%로 0.25%p 인상",
-      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=678238",
+      "t": "최근 영상 저작권 3번 경고 신고삭당하는 렉카 마술 유튜버 김준표 해명 ㄷㄷㄷ",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481803&_dcbest=1&page=1",
       "nc": 0
      }
     }
@@ -1074,7 +1095,7 @@
   },
   {
    "name": "더쿠",
-   "np": 8,
+   "np": 10,
    "nc": 0,
    "topics": [
     {
@@ -1085,8 +1106,8 @@
      "issue_np": 5,
      "issue_nc": 271,
      "kw": [
-      "휴직",
       "육아",
+      "휴직",
       "합격",
       "세무사"
      ],
@@ -1102,7 +1123,7 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 3,
-     "issue_nc": 65,
+     "issue_nc": 75,
      "kw": [
       "콘서트",
       "리센느",
@@ -1137,7 +1158,7 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 3,
-     "issue_nc": 10,
+     "issue_nc": 11,
      "kw": [
       "불꽃",
       "야구"
@@ -1145,6 +1166,25 @@
      "top_post": {
       "t": "크보 팬들은 반응 안 좋을 수 밖에 없는 불꽃야구 상황",
       "u": "https://theqoo.net/hot/4418311957",
+      "nc": 0
+     }
+    },
+    {
+     "t": "[2보] 대법, 윤석열 '한덕수 재판 위증' 무죄 확정",
+     "nsite": 3,
+     "np_here": 2,
+     "nc_here": 0,
+     "issue_np": 5,
+     "issue_nc": 9,
+     "kw": [
+      "재판",
+      "위증",
+      "윤석열",
+      "확정"
+     ],
+     "top_post": {
+      "t": "[2보] 대법, 윤석열 '한덕수 재판 위증' 무죄 확정",
+      "u": "https://theqoo.net/hot/4418498403",
       "nc": 0
      }
     },
