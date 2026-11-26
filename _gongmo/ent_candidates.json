@@ -1,38 +1,140 @@
 {
- "at": "2026-11-26 15:30",
+ "at": "2026-11-26 16:30",
  "nitems": 525,
  "cands": [
   {
-   "kw": "박지현",
+   "kw": "이서진",
    "nsrc": 5,
    "srcs": [
-    "SBS",
     "뉴시스",
+    "동아일보",
+    "세계일보",
+    "조선일보",
+    "한국경제"
+   ],
+   "n": 22,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "이서진-한지민 진짜 싸워요…‘찐친’ 폭풍 디스 여행 ‘그사친’ (종합)[DA현장]",
+     "link": "https://sports.donga.com/ent/article/all/20261126/135096622/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "김용건 “원조 짐꾼 이서진, 팔짱 끼는 여유…새 짐꾼 주헌-정연 활약” (그사친)",
+     "link": "https://sports.donga.com/ent/article/all/20261126/135096338/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "이서진 “한지민 얌전한 소녀였는데…갱년기인가? 남의 말 안 들어” (그사친)",
+     "link": "https://sports.donga.com/ent/article/all/20261126/135096260/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "박정수 “이서진·한지민, 잠잘 때 외에는 계속 싸워” [현장]",
+     "link": "https://sports.donga.com/ent/article/all/20261126/135096095/1"
+    }
+   ]
+  },
+  {
+   "kw": "한지민",
+   "nsrc": 5,
+   "srcs": [
+    "동아일보",
+    "세계일보",
     "연합뉴스",
     "조선일보",
     "한국경제"
    ],
-   "n": 9,
+   "n": 19,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "박지현, 美국제에미상 첫 여자연기상 불발…'하이퍼나이프'도 고배",
-     "link": "https://www.yna.co.kr/view/AKR20261124097600075"
+     "title": "도합 85년 우정 여행…한지민 \"나이·성별 떠나 친구 됐죠\"",
+     "link": "https://www.yna.co.kr/view/AKR20261126143000005"
+    },
+    {
+     "src": "동아일보",
+     "title": "이서진-한지민 진짜 싸워요…‘찐친’ 폭풍 디스 여행 ‘그사친’ (종합)[DA현장]",
+     "link": "https://sports.donga.com/ent/article/all/20261126/135096622/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "이서진 “한지민 얌전한 소녀였는데…갱년기인가? 남의 말 안 들어” (그사친)",
+     "link": "https://sports.donga.com/ent/article/all/20261126/135096260/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "박정수 “이서진·한지민, 잠잘 때 외에는 계속 싸워” [현장]",
+     "link": "https://sports.donga.com/ent/article/all/20261126/135096095/1"
+    }
+   ]
+  },
+  {
+   "kw": "친구",
+   "nsrc": 5,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "세계일보",
+    "연합뉴스",
+    "조선일보"
+   ],
+   "n": 15,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "도합 85년 우정 여행…한지민 \"나이·성별 떠나 친구 됐죠\"",
+     "link": "https://www.yna.co.kr/view/AKR20261126143000005"
+    },
+    {
+     "src": "동아일보",
+     "title": "‘그냥사람친구’, 나영석 PD의 ‘신메뉴’ 통할까?",
+     "link": "https://sports.donga.com/ent/article/all/20261126/135096803/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "‘그냥사람친구’ 김용건 “이서진, 팔짱 끼는 모습 많이 봤어” [현장]",
+     "link": "https://sports.donga.com/ent/article/all/20261126/135095998/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "‘그냥사람친구’ 이서진 ‘14년차 짐꾼’ 벗어났다 [현장]",
+     "link": "https://sports.donga.com/ent/article/all/20261126/135095401/1"
+    }
+   ]
+  },
+  {
+   "kw": "정연",
+   "nsrc": 5,
+   "srcs": [
+    "SBS",
+    "동아일보",
+    "세계일보",
+    "조선일보",
+    "한국경제"
+   ],
+   "n": 15,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "김용건 “원조 짐꾼 이서진, 팔짱 끼는 여유…새 짐꾼 주헌-정연 활약” (그사친)",
+     "link": "https://sports.donga.com/ent/article/all/20261126/135096338/1"
     },
     {
      "src": "한국경제",
-     "title": "[포토+] 박지현, '우아한 분위기 여신'",
-     "link": "https://www.hankyung.com/article/202611260763H"
+     "title": "이서진·한지민 싸우고, 주헌·정연 '새 짐꾼'…나영석 예능 또 터질까 [종합]",
+     "link": "https://www.hankyung.com/article/202611262495H"
     },
     {
-     "src": "한국경제",
-     "title": "HK직캠|박지현, '레드카펫에 울려 퍼진 생일 축하 노래'",
-     "link": "https://www.hankyung.com/article/202611260700H"
+     "src": "세계일보",
+     "title": "[포토] 트와이스 정연 '상큼한 손하트'",
+     "link": "https://www.segye.com/newsView/20261126512010"
     },
     {
-     "src": "SBS",
-     "title": "박지현, 국제 에미상 첫 여자 연기상 불발",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008861905&plink=RSSLINK&cooper=RSSREADER"
+     "src": "세계일보",
+     "title": "[포토] 트와이스 정연 '반가운 손인사'",
+     "link": "https://www.segye.com/newsView/20261126511982"
     }
    ]
   },
@@ -71,68 +173,36 @@
    ]
   },
   {
-   "kw": "이서진",
-   "nsrc": 4,
+   "kw": "한국",
+   "nsrc": 5,
    "srcs": [
+    "뉴시스",
     "동아일보",
     "세계일보",
-    "조선일보",
-    "한국경제"
+    "연합뉴스",
+    "한겨레"
    ],
-   "n": 17,
+   "n": 7,
    "headlines": [
     {
-     "src": "동아일보",
-     "title": "김용건 “원조 짐꾼 이서진, 팔짱 끼는 여유…새 짐꾼 주헌-정연 활약” (그사친)",
-     "link": "https://sports.donga.com/ent/article/all/20261126/135096338/1"
+     "src": "연합뉴스",
+     "title": "제41대 한국PD연합회장에 김보슬 MBC PD",
+     "link": "https://www.yna.co.kr/view/AKR20261123102200005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "J팝 그룹 투 에프 이, 한국 정식 데뷔 \"K팝 좋아해…빅뱅 동경\"",
+     "link": "https://www.yna.co.kr/view/AKR20261123088800005"
     },
     {
      "src": "동아일보",
-     "title": "이서진 “한지민 얌전한 소녀였는데…갱년기인가? 남의 말 안 들어” (그사친)",
-     "link": "https://sports.donga.com/ent/article/all/20261126/135096260/1"
+     "title": "킴 카다시안 “한국 미용시술 후 얼굴 망가져”…母도 눈물 [DA할리우드]",
+     "link": "https://sports.donga.com/ent/article/all/20261126/135096743/1"
     },
     {
-     "src": "동아일보",
-     "title": "박정수 “이서진·한지민, 잠잘 때 외에는 계속 싸워” [현장]",
-     "link": "https://sports.donga.com/ent/article/all/20261126/135096095/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "이서진 “몬스타엑스 다 내 동생…주헌이 열심히 하고 귀여워” (그사친)",
-     "link": "https://sports.donga.com/ent/article/all/20261126/135096181/1"
-    }
-   ]
-  },
-  {
-   "kw": "한지민",
-   "nsrc": 4,
-   "srcs": [
-    "동아일보",
-    "세계일보",
-    "조선일보",
-    "한국경제"
-   ],
-   "n": 17,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "이서진 “한지민 얌전한 소녀였는데…갱년기인가? 남의 말 안 들어” (그사친)",
-     "link": "https://sports.donga.com/ent/article/all/20261126/135096260/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "박정수 “이서진·한지민, 잠잘 때 외에는 계속 싸워” [현장]",
-     "link": "https://sports.donga.com/ent/article/all/20261126/135096095/1"
-    },
-    {
-     "src": "한국경제",
-     "title": "'그사친' 박정수 \"이서진·한지민 어찌나 싸우던지\"",
-     "link": "https://www.hankyung.com/article/202611262435H"
-    },
-    {
-     "src": "한국경제",
-     "title": "[포토+] 이제훈-한지민, '다정한 모습으로 등장'",
-     "link": "https://www.hankyung.com/article/202611260733H"
+     "src": "한겨레",
+     "title": "<span>19세기 ‘인상파’ 아닌 21세기 한국 ‘인상화’…을지로를 물들이다</span>",
+     "link": "https://www.hani.co.kr/arti/culture/music/1289073.html"
     }
    ]
   },
@@ -170,10 +240,10 @@
    ]
   },
   {
-   "kw": "정연",
+   "kw": "그냥사람",
    "nsrc": 4,
    "srcs": [
-    "SBS",
+    "뉴시스",
     "동아일보",
     "세계일보",
     "조선일보"
@@ -182,23 +252,23 @@
    "headlines": [
     {
      "src": "동아일보",
-     "title": "김용건 “원조 짐꾼 이서진, 팔짱 끼는 여유…새 짐꾼 주헌-정연 활약” (그사친)",
-     "link": "https://sports.donga.com/ent/article/all/20261126/135096338/1"
+     "title": "‘그냥사람친구’, 나영석 PD의 ‘신메뉴’ 통할까?",
+     "link": "https://sports.donga.com/ent/article/all/20261126/135096803/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "‘그냥사람친구’ 김용건 “이서진, 팔짱 끼는 모습 많이 봤어” [현장]",
+     "link": "https://sports.donga.com/ent/article/all/20261126/135095998/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "‘그냥사람친구’ 이서진 ‘14년차 짐꾼’ 벗어났다 [현장]",
+     "link": "https://sports.donga.com/ent/article/all/20261126/135095401/1"
     },
     {
      "src": "세계일보",
-     "title": "[포토] 트와이스 정연 '상큼한 손하트'",
-     "link": "https://www.segye.com/newsView/20261126512010"
-    },
-    {
-     "src": "세계일보",
-     "title": "[포토] 트와이스 정연 '반가운 손인사'",
-     "link": "https://www.segye.com/newsView/20261126511982"
-    },
-    {
-     "src": "세계일보",
-     "title": "[포토] 트와이스 정연 '시선 사로잡는 각선미'",
-     "link": "https://www.segye.com/newsView/20261126511935"
+     "title": "[포토] 박정수-김용건 '그냥사람친구'",
+     "link": "https://www.segye.com/newsView/20261126512151"
     }
    ]
   },
@@ -211,7 +281,7 @@
     "조선일보",
     "한국경제"
    ],
-   "n": 12,
+   "n": 13,
    "headlines": [
     {
      "src": "동아일보",
@@ -236,39 +306,6 @@
    ]
   },
   {
-   "kw": "수상",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 9,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "부산대 학생 연출 단편영화, 부산독립영화제 2개 부문 수상",
-     "link": "https://www.yna.co.kr/view/AKR20261126043700051"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "춘천시, 지자체 홍보대상 스마트도시 부문 대상…3회 연속 수상",
-     "link": "https://www.yna.co.kr/view/AKR20261123146500062"
-    },
-    {
-     "src": "SBS",
-     "title": "'명예 방첩요원' 현빈, 국정원 공로패 수상",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008861906&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "뉴시스",
-     "title": "이민호, 청룡 수상 불발에 입 열였다 \"아쉬워 말아요\"",
-     "link": "https://www.newsis.com/view/NISX20261126_0003883810"
-    }
-   ]
-  },
-  {
    "kw": "김용건",
    "nsrc": 4,
    "srcs": [
@@ -277,7 +314,7 @@
     "조선일보",
     "한국경제"
    ],
-   "n": 9,
+   "n": 10,
    "headlines": [
     {
      "src": "동아일보",
@@ -298,6 +335,39 @@
      "src": "세계일보",
      "title": "[포토] 박정수-김용건 '그냥사람친구'",
      "link": "https://www.segye.com/newsView/20261126512151"
+    }
+   ]
+  },
+  {
+   "kw": "주헌",
+   "nsrc": 4,
+   "srcs": [
+    "동아일보",
+    "세계일보",
+    "조선일보",
+    "한국경제"
+   ],
+   "n": 10,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "김용건 “원조 짐꾼 이서진, 팔짱 끼는 여유…새 짐꾼 주헌-정연 활약” (그사친)",
+     "link": "https://sports.donga.com/ent/article/all/20261126/135096338/1"
+    },
+    {
+     "src": "한국경제",
+     "title": "이서진·한지민 싸우고, 주헌·정연 '새 짐꾼'…나영석 예능 또 터질까 [종합]",
+     "link": "https://www.hankyung.com/article/202611262495H"
+    },
+    {
+     "src": "세계일보",
+     "title": "[포토] 정연-주헌 '우리는 데뷔 동기'",
+     "link": "https://www.segye.com/newsView/20261126511920"
+    },
+    {
+     "src": "세계일보",
+     "title": "[포토] 몬스타엑스 주헌 '멋짐 폭발'",
+     "link": "https://www.segye.com/newsView/20261126511885"
     }
    ]
   },
@@ -335,101 +405,134 @@
    ]
   },
   {
-   "kw": "식스",
+   "kw": "수상",
    "nsrc": 4,
    "srcs": [
     "SBS",
     "뉴시스",
-    "세계일보",
-    "연합뉴스"
+    "연합뉴스",
+    "조선일보"
    ],
    "n": 8,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "악연 같은 박민영·육성재의 첫 만남…'나인 투 식스' 3.6% 출발",
-     "link": "https://www.yna.co.kr/view/AKR20261126036100005"
+     "title": "부산대 학생 연출 단편영화, 부산독립영화제 2개 부문 수상",
+     "link": "https://www.yna.co.kr/view/AKR20261126043700051"
     },
     {
-     "src": "세계일보",
-     "title": "악연 같은 박민영·육성재의 첫 만남…'나인 투 식스' 3.6% 출발",
-     "link": "https://www.segye.com/newsView/20261126503715"
-    },
-    {
-     "src": "SBS",
-     "title": "박민영 또 한번 오피스로맨스 펼쳐…'나인 투 식스' 첫방",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008863867&plink=RSSLINK&cooper=RSSREADER"
+     "src": "연합뉴스",
+     "title": "춘천시, 지자체 홍보대상 스마트도시 부문 대상…3회 연속 수상",
+     "link": "https://www.yna.co.kr/view/AKR20261123146500062"
     },
     {
      "src": "SBS",
-     "title": "'나인 투 식스' 고수 \"15년 만의 로맨스 복귀 너무 좋아\"…'달빛 남주'의 은은한 매력 예고",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008863170&plink=RSSLINK&cooper=RSSREADER"
+     "title": "'명예 방첩요원' 현빈, 국정원 공로패 수상",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008861906&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "뉴시스",
+     "title": "이민호, 청룡 수상 불발에 입 열였다 \"아쉬워 말아요\"",
+     "link": "https://www.newsis.com/view/NISX20261126_0003883810"
     }
    ]
   },
   {
-   "kw": "나인",
+   "kw": "청룡영화",
    "nsrc": 4,
    "srcs": [
     "SBS",
     "뉴시스",
-    "세계일보",
-    "연합뉴스"
+    "연합뉴스",
+    "조선일보"
    ],
    "n": 8,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "악연 같은 박민영·육성재의 첫 만남…'나인 투 식스' 3.6% 출발",
-     "link": "https://www.yna.co.kr/view/AKR20261126036100005"
-    },
-    {
-     "src": "세계일보",
-     "title": "악연 같은 박민영·육성재의 첫 만남…'나인 투 식스' 3.6% 출발",
-     "link": "https://www.segye.com/newsView/20261126503715"
+     "title": "청룡영화상 작품상에 '호프'…설경구·전도연 남녀주연상 석권",
+     "link": "https://www.yna.co.kr/view/AKR20261125187600005"
     },
     {
      "src": "SBS",
-     "title": "박민영 또 한번 오피스로맨스 펼쳐…'나인 투 식스' 첫방",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008863867&plink=RSSLINK&cooper=RSSREADER"
+     "title": "설경구·전도연 나란히 남녀주연상…청룡영화상서 '석권'",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008863866&plink=RSSLINK&cooper=RSSREADER"
     },
     {
-     "src": "SBS",
-     "title": "'나인 투 식스' 고수 \"15년 만의 로맨스 복귀 너무 좋아\"…'달빛 남주'의 은은한 매력 예고",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008863170&plink=RSSLINK&cooper=RSSREADER"
+     "src": "뉴시스",
+     "title": "문근영, 앞머리 이렇게 잘랐다고?…청룡영화상서 파격 변신",
+     "link": "https://www.newsis.com/view/NISX20261126_0003884605"
+    },
+    {
+     "src": "뉴시스",
+     "title": "'왕사남' 박지훈, 청룡영화상 신인남우상 수상",
+     "link": "https://www.newsis.com/view/NISX20261125_0003883514"
     }
    ]
   },
   {
-   "kw": "개월",
+   "kw": "눈물",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "동아일보",
+    "조선일보"
+   ],
+   "n": 7,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "킴 카다시안 “한국 미용시술 후 얼굴 망가져”…母도 눈물 [DA할리우드]",
+     "link": "https://sports.donga.com/ent/article/all/20261126/135096743/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "브라이언 눈물, 환희 진심 7년 만에 알았다 (유퀴즈)",
+     "link": "https://sports.donga.com/ent/article/all/20261126/135094334/1"
+    },
+    {
+     "src": "SBS",
+     "title": "'최대주주 특혜 논란' 이정재, 수척해진 모습으로 공식 석상…고인 떠올리며 눈물",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008864834&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "뉴시스",
+     "title": "홍윤화 \"93만원에 산 10돈 금팔찌, 떨어진 시세에 눈물 나\"",
+     "link": "https://www.newsis.com/view/NISX20261126_0003884699"
+    }
+   ]
+  },
+  {
+   "kw": "짐꾼",
    "nsrc": 4,
    "srcs": [
     "뉴시스",
     "동아일보",
     "조선일보",
-    "한겨레"
+    "한국경제"
    ],
-   "n": 8,
+   "n": 7,
    "headlines": [
     {
      "src": "동아일보",
-     "title": "혼인신고 3개월 만에 다른 男과 동거…서장훈 격노 (이혼숙려캠프)",
-     "link": "https://sports.donga.com/ent/article/all/20261126/135093645/1"
+     "title": "김용건 “원조 짐꾼 이서진, 팔짱 끼는 여유…새 짐꾼 주헌-정연 활약” (그사친)",
+     "link": "https://sports.donga.com/ent/article/all/20261126/135096338/1"
     },
     {
-     "src": "한겨레",
-     "title": "에이티즈 4개월 만에 또 ‘빌보드 200’ 1위",
-     "link": "https://www.hani.co.kr/arti/culture/music/1288587.html"
+     "src": "동아일보",
+     "title": "‘그냥사람친구’ 이서진 ‘14년차 짐꾼’ 벗어났다 [현장]",
+     "link": "https://sports.donga.com/ent/article/all/20261126/135095401/1"
     },
     {
-     "src": "뉴시스",
-     "title": "초아, 생후 9개월 아들 응급실행 \"입술까지 하얘져\" 눈물",
-     "link": "https://www.newsis.com/view/NISX20261126_0003884710"
+     "src": "한국경제",
+     "title": "이서진·한지민 싸우고, 주헌·정연 '새 짐꾼'…나영석 예능 또 터질까 [종합]",
+     "link": "https://www.hankyung.com/article/202611262495H"
     },
     {
-     "src": "뉴시스",
-     "title": "브라이언, 성대결절로 6개월 묵언수행…\"무대 오르기 두려웠다\"",
-     "link": "https://www.newsis.com/view/NISX20261126_0003883967"
+     "src": "한국경제",
+     "title": "'그사친' 이서진 \"짐꾼 할 나이 지나\"…김용건 \"팔짱 많이 끼더라\"",
+     "link": "https://www.hankyung.com/article/202611262194H"
     }
    ]
   },
@@ -467,39 +570,6 @@
    ]
   },
   {
-   "kw": "박민영",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "세계일보",
-    "연합뉴스"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "악연 같은 박민영·육성재의 첫 만남…'나인 투 식스' 3.6% 출발",
-     "link": "https://www.yna.co.kr/view/AKR20261126036100005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "박민영 \"오피스물과 인연 잘 맞아…고수·육성재 둘 다 설렜죠\"",
-     "link": "https://www.yna.co.kr/view/AKR20261125141400005"
-    },
-    {
-     "src": "세계일보",
-     "title": "악연 같은 박민영·육성재의 첫 만남…'나인 투 식스' 3.6% 출발",
-     "link": "https://www.segye.com/newsView/20261126503715"
-    },
-    {
-     "src": "SBS",
-     "title": "박민영 또 한번 오피스로맨스 펼쳐…'나인 투 식스' 첫방",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008863867&plink=RSSLINK&cooper=RSSREADER"
-    }
-   ]
-  },
-  {
    "kw": "설경구",
    "nsrc": 4,
    "srcs": [
@@ -533,11 +603,11 @@
    ]
   },
   {
-   "kw": "청룡영화",
+   "kw": "데뷔",
    "nsrc": 4,
    "srcs": [
-    "SBS",
-    "뉴시스",
+    "동아일보",
+    "세계일보",
     "연합뉴스",
     "조선일보"
    ],
@@ -545,23 +615,23 @@
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "청룡영화상 작품상에 '호프'…설경구·전도연 남녀주연상 석권",
-     "link": "https://www.yna.co.kr/view/AKR20261125187600005"
+     "title": "4인조 버추얼 보이그룹 윙스, 27일 데뷔…첫 싱글 '헤일로'",
+     "link": "https://www.yna.co.kr/view/AKR20261125148100005"
     },
     {
-     "src": "SBS",
-     "title": "설경구·전도연 나란히 남녀주연상…청룡영화상서 '석권'",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008863866&plink=RSSLINK&cooper=RSSREADER"
+     "src": "연합뉴스",
+     "title": "J팝 그룹 투 에프 이, 한국 정식 데뷔 \"K팝 좋아해…빅뱅 동경\"",
+     "link": "https://www.yna.co.kr/view/AKR20261123088800005"
     },
     {
-     "src": "뉴시스",
-     "title": "문근영, 앞머리 이렇게 잘랐다고?…청룡영화상서 파격 변신",
-     "link": "https://www.newsis.com/view/NISX20261126_0003884605"
+     "src": "동아일보",
+     "title": "얼굴 대신 취향 먼저…JYP 스쿼드 첫 신인 오브더블루, 파격 데뷔 공식",
+     "link": "https://sports.donga.com/ent/article/all/20261126/135096179/1"
     },
     {
-     "src": "뉴시스",
-     "title": "'왕사남' 박지훈, 청룡영화상 신인남우상 수상",
-     "link": "https://www.newsis.com/view/NISX20261125_0003883514"
+     "src": "동아일보",
+     "title": "이즈나, 데뷔 2주년 맞아 ‘IWALY’ 재해석…스페셜 플리 공개",
+     "link": "https://sports.donga.com/ent/article/all/20261126/135094455/1"
     }
    ]
   },
@@ -632,39 +702,6 @@
    ]
   },
   {
-   "kw": "한국",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "세계일보",
-    "연합뉴스",
-    "한겨레"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "제41대 한국PD연합회장에 김보슬 MBC PD",
-     "link": "https://www.yna.co.kr/view/AKR20261123102200005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "J팝 그룹 투 에프 이, 한국 정식 데뷔 \"K팝 좋아해…빅뱅 동경\"",
-     "link": "https://www.yna.co.kr/view/AKR20261123088800005"
-    },
-    {
-     "src": "한겨레",
-     "title": "<span>19세기 ‘인상파’ 아닌 21세기 한국 ‘인상화’…을지로를 물들이다</span>",
-     "link": "https://www.hani.co.kr/arti/culture/music/1289073.html"
-    },
-    {
-     "src": "세계일보",
-     "title": "브래드 피트 '연기 선생님' 이바나 처벅, 1년 만에 다시 한국 찾았다",
-     "link": "https://www.segye.com/newsView/20261126509782"
-    }
-   ]
-  },
-  {
    "kw": "고백",
    "nsrc": 4,
    "srcs": [
@@ -698,68 +735,35 @@
    ]
   },
   {
-   "kw": "아들",
+   "kw": "나이",
    "nsrc": 4,
    "srcs": [
     "뉴시스",
-    "동아일보",
+    "연합뉴스",
     "조선일보",
-    "헤럴드경제"
+    "한국경제"
    ],
-   "n": 6,
+   "n": 5,
    "headlines": [
     {
-     "src": "동아일보",
-     "title": "안효섭=장영남 아들, 파국 스토리 결말은? (파이널 테이블)",
-     "link": "https://sports.donga.com/ent/article/all/20261126/135094458/1"
+     "src": "연합뉴스",
+     "title": "도합 85년 우정 여행…한지민 \"나이·성별 떠나 친구 됐죠\"",
+     "link": "https://www.yna.co.kr/view/AKR20261126143000005"
     },
     {
-     "src": "헤럴드경제",
-     "title": "정준하, 13년생 아들 ‘4개 국어’ 술술",
-     "link": "https://biz.heraldcorp.com/article/10947814"
-    },
-    {
-     "src": "뉴시스",
-     "title": "초아, 생후 9개월 아들 응급실행 \"입술까지 하얘져\" 눈물",
-     "link": "https://www.newsis.com/view/NISX20261126_0003884710"
-    },
-    {
-     "src": "뉴시스",
-     "title": "얼마나 악필이길래…이종혁, 아들 준수 글씨에 버럭",
-     "link": "https://www.newsis.com/view/NISX20261126_0003883716"
-    }
-   ]
-  },
-  {
-   "kw": "여신",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "조선일보",
-    "한국경제",
-    "헤럴드경제"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "한국경제",
-     "title": "[포토+] 박지현, '우아한 분위기 여신'",
-     "link": "https://www.hankyung.com/article/202611260763H"
+     "src": "연합뉴스",
+     "title": "'기분 좋은 날' 방송 20주년…MC 김한석 \"함께 나이 들어가고파\"",
+     "link": "https://www.yna.co.kr/view/AKR20261125053100005"
     },
     {
      "src": "한국경제",
-     "title": "HK직캠|신민아, '레드카펫 위 우아한 여신'",
-     "link": "https://www.hankyung.com/article/202611260708H"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "“위고비 1년반 맞았는데도”…‘워터밤 여신’ 터질듯한 뱃살, 이게 무슨 일?",
-     "link": "https://biz.heraldcorp.com/article/10948998"
+     "title": "'그사친' 이서진 \"짐꾼 할 나이 지나\"…김용건 \"팔짱 많이 끼더라\"",
+     "link": "https://www.hankyung.com/article/202611262194H"
     },
     {
      "src": "뉴시스",
-     "title": "\"내가 올림픽 여신\"…유타 레이르담 파격 'NY 패션'",
-     "link": "https://www.newsis.com/view/NISX20261125_0003882022"
+     "title": "나영석 새 예능 '그냥사람친구'…이서진 \"이제 짐꾼 필요한 나이\"",
+     "link": "https://www.newsis.com/view/NISX20261126_0003884814"
     }
    ]
   },
@@ -791,74 +795,140 @@
     },
     {
      "src": "조선일보",
-     "title": "“정말 많이 사랑합니다 내 친구” 정찬성, 마지막까지 함께한 에디 차 추모",
-     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/26/GQ3WGMJYMVRTENBSGNQTCNJQME/"
+     "title": "이세영 “‘재혼황후’ 시즌2 나온다면 무조건, 욕 더 많이 먹고파”",
+     "link": "https://www.chosun.com/entertainments/enter_general/2026/11/26/MI4DCNBQGY2GMNTBMFRDGMTDG4/"
     }
    ]
   },
   {
-   "kw": "부부",
+   "kw": "출격",
    "nsrc": 4,
    "srcs": [
-    "SBS",
     "뉴시스",
-    "동아일보",
-    "연합뉴스"
+    "연합뉴스",
+    "조선일보",
+    "한국경제"
    ],
    "n": 5,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "특수요원 황정민·형사 염정아 부부 귀환…'크로스2' 내달 공개",
-     "link": "https://www.yna.co.kr/view/AKR20261126054600005"
+     "title": "천만 영화 '국제시장' 돌아온다…'국제시장2' 내년 설에 출격",
+     "link": "https://www.yna.co.kr/view/AKR20261126047700005"
     },
     {
+     "src": "한국경제",
+     "title": "라이즈, '테카테 팔 노르테' 출격…'페스티벌 최강자' 굳히기",
+     "link": "https://www.hankyung.com/article/202611258969H"
+    },
+    {
+     "src": "뉴시스",
+     "title": "고경표 빠진 '보검 매직컬2'…지수·엄지원·안은진 출격",
+     "link": "https://www.newsis.com/view/NISX20261125_0003883179"
+    },
+    {
+     "src": "조선일보",
+     "title": "안방 평정한 ‘신병’ 유니버스, 스크린 출격..민진기 감독 “군병원서 펼쳐질 색다른 웃음과 공포”",
+     "link": "https://www.chosun.com/entertainments/movie/2026/11/26/GYZDONTBGNRDQY3GMI4WCOJTMU/"
+    }
+   ]
+  },
+  {
+   "kw": "박지현",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "연합뉴스",
+    "한국경제"
+   ],
+   "n": 5,
+   "headlines": [
+    {
      "src": "연합뉴스",
-     "title": "배우 고규필·가수 에이민 부부 득녀…\"인생 가장 잘한 일\"",
-     "link": "https://www.yna.co.kr/view/AKR20261123138400005"
+     "title": "박지현, 美국제에미상 첫 여자연기상 불발…'하이퍼나이프'도 고배",
+     "link": "https://www.yna.co.kr/view/AKR20261124097600075"
+    },
+    {
+     "src": "한국경제",
+     "title": "[포토+] 박지현, '우아한 분위기 여신'",
+     "link": "https://www.hankyung.com/article/202611260763H"
+    },
+    {
+     "src": "한국경제",
+     "title": "HK직캠|박지현, '레드카펫에 울려 퍼진 생일 축하 노래'",
+     "link": "https://www.hankyung.com/article/202611260700H"
+    },
+    {
+     "src": "SBS",
+     "title": "박지현, 국제 에미상 첫 여자 연기상 불발",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008861905&plink=RSSLINK&cooper=RSSREADER"
+    }
+   ]
+  },
+  {
+   "kw": "모습",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "연합뉴스",
+    "조선일보"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "음주운전 배우 고경표 경찰 출석…\"무책임한 모습 죄송\"(종합)",
+     "link": "https://www.yna.co.kr/view/AKR20261123151351004"
     },
     {
      "src": "동아일보",
-     "title": "황정민X염정아 부부 케미 어게인…‘크로스 2’ 크리스마스 공개",
-     "link": "https://sports.donga.com/ent/article/all/20261126/135093444/1"
+     "title": "‘그냥사람친구’ 김용건 “이서진, 팔짱 끼는 모습 많이 봤어” [현장]",
+     "link": "https://sports.donga.com/ent/article/all/20261126/135095998/1"
+    },
+    {
+     "src": "뉴시스",
+     "title": "진경, 카페 갔다가 故이선균 만났다…앳된 모습 '눈길'",
+     "link": "https://www.newsis.com/view/NISX20261125_0003883100"
+    },
+    {
+     "src": "뉴시스",
+     "title": "얼굴 반쪽된 이도현, 임지연과 결별 전 포착된 모습",
+     "link": "https://www.newsis.com/view/NISX20261125_0003882930"
+    }
+   ]
+  },
+  {
+   "kw": "예고",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "동아일보",
+    "조선일보",
+    "한국경제"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "BTS 정국부터 ‘파친코’ 김민하까지…코드 쿤스트, 초호화 협업 예고",
+     "link": "https://sports.donga.com/ent/article/all/20261126/135096282/1"
+    },
+    {
+     "src": "한국경제",
+     "title": "\"모두 무릎 꿇을 것\"…'어벤져스: 둠스데이' 역대급 결전 예고",
+     "link": "https://www.hankyung.com/article/202611258616H"
+    },
+    {
+     "src": "SBS",
+     "title": "'나인 투 식스' 고수 \"15년 만의 로맨스 복귀 너무 좋아\"…'달빛 남주'의 은은한 매력 예고",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008863170&plink=RSSLINK&cooper=RSSREADER"
     },
     {
      "src": "SBS",
      "title": "[스브스夜] '동상이몽2' 여에스더, ♥홍혜걸의 2만 8천원 짜리 팔찌 선물에도 '행복'…가수 강균성 부부 합류 예고",
      "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008861876&plink=RSSLINK&cooper=RSSREADER"
-    }
-   ]
-  },
-  {
-   "kw": "솔로",
-   "nsrc": 4,
-   "srcs": [
-    "동아일보",
-    "연합뉴스",
-    "한겨레",
-    "헤럴드경제"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "아이유, 내년 새 월드투어…女 솔로 가수 최초 도쿄돔 입성",
-     "link": "https://www.yna.co.kr/view/AKR20261124141700005"
-    },
-    {
-     "src": "동아일보",
-     "title": "SF9 휘영 솔로 컴백…신곡 ‘Sunset’ 노을빛 타이틀 포스터",
-     "link": "https://sports.donga.com/ent/article/all/20261126/135094338/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "프로듀싱부터 솔로·DJ까지…‘역량 충전’ 제로베이스원, 1월 18일 귀환",
-     "link": "https://sports.donga.com/ent/article/all/20261126/135093170/1"
-    },
-    {
-     "src": "한겨레",
-     "title": "아이유, 케이팝 여성 솔로 가수 최초 도쿄돔 선다…4월7~8일 이틀간",
-     "link": "https://www.hani.co.kr/arti/culture/music/1288792.html"
     }
    ]
   },
@@ -896,39 +966,6 @@
    ]
   },
   {
-   "kw": "출격",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "연합뉴스",
-    "조선일보",
-    "한국경제"
-   ],
-   "n": 4,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "천만 영화 '국제시장' 돌아온다…'국제시장2' 내년 설에 출격",
-     "link": "https://www.yna.co.kr/view/AKR20261126047700005"
-    },
-    {
-     "src": "한국경제",
-     "title": "라이즈, '테카테 팔 노르테' 출격…'페스티벌 최강자' 굳히기",
-     "link": "https://www.hankyung.com/article/202611258969H"
-    },
-    {
-     "src": "뉴시스",
-     "title": "고경표 빠진 '보검 매직컬2'…지수·엄지원·안은진 출격",
-     "link": "https://www.newsis.com/view/NISX20261125_0003883179"
-    },
-    {
-     "src": "조선일보",
-     "title": "싱어송라이터 NOWIZ(노위즈), tvN ‘뜨거운 안녕’ OST 주자 출격..29일 ‘하루 끝’ 발매",
-     "link": "https://www.chosun.com/entertainments/music/2026/11/26/GJSTEOBSMMYTMZLGGFRTOZDDMI/"
-    }
-   ]
-  },
-  {
    "kw": "국제시장",
    "nsrc": 4,
    "srcs": [
@@ -962,35 +999,68 @@
    ]
   },
   {
-   "kw": "만남",
+   "kw": "신병",
    "nsrc": 4,
    "srcs": [
     "SBS",
     "뉴시스",
-    "세계일보",
-    "연합뉴스"
+    "연합뉴스",
+    "조선일보"
    ],
    "n": 4,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "악연 같은 박민영·육성재의 첫 만남…'나인 투 식스' 3.6% 출발",
-     "link": "https://www.yna.co.kr/view/AKR20261126036100005"
-    },
-    {
-     "src": "세계일보",
-     "title": "악연 같은 박민영·육성재의 첫 만남…'나인 투 식스' 3.6% 출발",
-     "link": "https://www.segye.com/newsView/20261126503715"
+     "title": "영화로 만나는 '신병' 시리즈…\"드라마와는 다른 재미 드릴 것\"",
+     "link": "https://www.yna.co.kr/view/AKR20261125102000005"
     },
     {
      "src": "SBS",
-     "title": "'푸른길' 손석구 \"'한-일 대표 배우의 만남' 의미 부여, 설레는 포인트\"",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008863304&plink=RSSLINK&cooper=RSSREADER"
+     "title": "정연, 배우로 데뷔한다…'신병 더 무비'서 간호장교 역할",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008863868&plink=RSSLINK&cooper=RSSREADER"
     },
     {
      "src": "뉴시스",
-     "title": "\"TXT와 찹쌀떡의 즐거운 만남\" 요아정, 협업 신메뉴 2종 선봬",
-     "link": "https://www.newsis.com/view/NISX20261126_0003883823"
+     "title": "영화 '신병' 군병원 간다…\"군 리얼리즘에 공포 담았죠\"",
+     "link": "https://www.newsis.com/view/NISX20261125_0003882684"
+    },
+    {
+     "src": "조선일보",
+     "title": "안방 평정한 ‘신병’ 유니버스, 스크린 출격..민진기 감독 “군병원서 펼쳐질 색다른 웃음과 공포”",
+     "link": "https://www.chosun.com/entertainments/movie/2026/11/26/GYZDONTBGNRDQY3GMI4WCOJTMU/"
+    }
+   ]
+  },
+  {
+   "kw": "솔로",
+   "nsrc": 4,
+   "srcs": [
+    "동아일보",
+    "연합뉴스",
+    "한겨레",
+    "헤럴드경제"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "아이유, 내년 새 월드투어…女 솔로 가수 최초 도쿄돔 입성",
+     "link": "https://www.yna.co.kr/view/AKR20261124141700005"
+    },
+    {
+     "src": "동아일보",
+     "title": "SF9 휘영 솔로 컴백…신곡 ‘Sunset’ 노을빛 타이틀 포스터",
+     "link": "https://sports.donga.com/ent/article/all/20261126/135094338/1"
+    },
+    {
+     "src": "한겨레",
+     "title": "아이유, 케이팝 여성 솔로 가수 최초 도쿄돔 선다…4월7~8일 이틀간",
+     "link": "https://www.hani.co.kr/arti/culture/music/1288792.html"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "아이유, 결국 도쿄돔까지 접수…韓 여성 솔로 가수 최초 단독 콘서트",
+     "link": "https://biz.heraldcorp.com/article/10948600"
     }
    ]
   },
@@ -1061,163 +1131,98 @@
    ]
   },
   {
-   "kw": "자태",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "조선일보",
-    "한국경제"
-   ],
-   "n": 4,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "이다희, 블랙 수영복 자태…슈퍼모델 출신답네 [DA★]",
-     "link": "https://sports.donga.com/ent/article/all/20261126/135093812/1"
-    },
-    {
-     "src": "한국경제",
-     "title": "[포토+] 박지연, '우아한 자태 뽐내며~'",
-     "link": "https://www.hankyung.com/article/202611260747H"
-    },
-    {
-     "src": "뉴시스",
-     "title": "효민, 이탈리아서 비키니 자태…꾸준한 운동 탄탄한 몸매",
-     "link": "https://www.newsis.com/view/NISX20261125_0003882257"
-    },
-    {
-     "src": "조선일보",
-     "title": "[포토] 한지민, 여신 자태",
-     "link": "https://www.chosun.com/entertainments/entertain_photo/2026/11/25/MNTDCNZRGQYGENRYHA3TENDBGU/"
-    }
-   ]
-  },
-  {
-   "kw": "친구",
+   "kw": "그사친",
    "nsrc": 3,
    "srcs": [
     "동아일보",
-    "세계일보",
-    "조선일보"
-   ],
-   "n": 11,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "‘그냥사람친구’ 김용건 “이서진, 팔짱 끼는 모습 많이 봤어” [현장]",
-     "link": "https://sports.donga.com/ent/article/all/20261126/135095998/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "‘그냥사람친구’ 이서진 ‘14년차 짐꾼’ 벗어났다 [현장]",
-     "link": "https://sports.donga.com/ent/article/all/20261126/135095401/1"
-    },
-    {
-     "src": "세계일보",
-     "title": "[포토] 박정수-김용건 '그냥사람친구'",
-     "link": "https://www.segye.com/newsView/20261126512151"
-    },
-    {
-     "src": "세계일보",
-     "title": "[포토] 한지민-이서진 '20년지기 그냥사람친구'",
-     "link": "https://www.segye.com/newsView/20261126511767"
-    }
-   ]
-  },
-  {
-   "kw": "그냥사람",
-   "nsrc": 3,
-   "srcs": [
-    "동아일보",
-    "세계일보",
-    "조선일보"
-   ],
-   "n": 10,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "‘그냥사람친구’ 김용건 “이서진, 팔짱 끼는 모습 많이 봤어” [현장]",
-     "link": "https://sports.donga.com/ent/article/all/20261126/135095998/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "‘그냥사람친구’ 이서진 ‘14년차 짐꾼’ 벗어났다 [현장]",
-     "link": "https://sports.donga.com/ent/article/all/20261126/135095401/1"
-    },
-    {
-     "src": "세계일보",
-     "title": "[포토] 박정수-김용건 '그냥사람친구'",
-     "link": "https://www.segye.com/newsView/20261126512151"
-    },
-    {
-     "src": "세계일보",
-     "title": "[포토] 한지민-이서진 '20년지기 그냥사람친구'",
-     "link": "https://www.segye.com/newsView/20261126511767"
-    }
-   ]
-  },
-  {
-   "kw": "박지훈",
-   "nsrc": 3,
-   "srcs": [
-    "뉴시스",
     "조선일보",
     "한국경제"
    ],
    "n": 9,
    "headlines": [
     {
-     "src": "한국경제",
-     "title": "[포토+] 박지훈, '이러니 팬들이 좋아할 수밖에...'",
-     "link": "https://www.hankyung.com/article/202611260744H"
+     "src": "동아일보",
+     "title": "이서진-한지민 진짜 싸워요…‘찐친’ 폭풍 디스 여행 ‘그사친’ (종합)[DA현장]",
+     "link": "https://sports.donga.com/ent/article/all/20261126/135096622/1"
     },
-    {
-     "src": "한국경제",
-     "title": "HK직캠|박지훈, '오늘 이 모습도 저장~'",
-     "link": "https://www.hankyung.com/article/202611260704H"
-    },
-    {
-     "src": "뉴시스",
-     "title": "'왕사남' 박지훈, 청룡영화상 신인남우상 수상",
-     "link": "https://www.newsis.com/view/NISX20261125_0003883514"
-    },
-    {
-     "src": "조선일보",
-     "title": "[포토] 박지훈, 대세",
-     "link": "https://www.chosun.com/entertainments/entertain_photo/2026/11/25/MQ2WMNJWMNRDEZBZGZRTCYZRMQ/"
-    }
-   ]
-  },
-  {
-   "kw": "주헌",
-   "nsrc": 3,
-   "srcs": [
-    "동아일보",
-    "세계일보",
-    "조선일보"
-   ],
-   "n": 8,
-   "headlines": [
     {
      "src": "동아일보",
      "title": "김용건 “원조 짐꾼 이서진, 팔짱 끼는 여유…새 짐꾼 주헌-정연 활약” (그사친)",
      "link": "https://sports.donga.com/ent/article/all/20261126/135096338/1"
     },
     {
-     "src": "세계일보",
-     "title": "[포토] 정연-주헌 '우리는 데뷔 동기'",
-     "link": "https://www.segye.com/newsView/20261126511920"
+     "src": "동아일보",
+     "title": "이서진 “한지민 얌전한 소녀였는데…갱년기인가? 남의 말 안 들어” (그사친)",
+     "link": "https://sports.donga.com/ent/article/all/20261126/135096260/1"
     },
     {
-     "src": "세계일보",
-     "title": "[포토] 몬스타엑스 주헌 '멋짐 폭발'",
-     "link": "https://www.segye.com/newsView/20261126511885"
+     "src": "동아일보",
+     "title": "이서진 “몬스타엑스 다 내 동생…주헌이 열심히 하고 귀여워” (그사친)",
+     "link": "https://sports.donga.com/ent/article/all/20261126/135096181/1"
+    }
+   ]
+  },
+  {
+   "kw": "청룡",
+   "nsrc": 3,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "조선일보"
+   ],
+   "n": 9,
+   "headlines": [
+    {
+     "src": "SBS",
+     "title": "설경구 쿼드러플·전도연 트리플 크라운…'청룡'의 기록을 쓴 명배우 그리고 '호프'",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008864275&plink=RSSLINK&cooper=RSSREADER"
     },
     {
-     "src": "조선일보",
-     "title": "원조 짐꾼 이서진 “나도 짐꾼 필요할 나이..막내 주헌·정연 잘 하더라” (‘그사친’)",
-     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/26/GRRTOZRSMNTDKNLEMZQTIMJRMM/"
+     "src": "뉴시스",
+     "title": "이민호, 청룡 수상 불발에 입 열였다 \"아쉬워 말아요\"",
+     "link": "https://www.newsis.com/view/NISX20261126_0003883810"
+    },
+    {
+     "src": "뉴시스",
+     "title": "'호프', 청룡 최우수작품상…'가능한 사랑', 4관왕(종합)",
+     "link": "https://www.newsis.com/view/NISX20261125_0003883572"
+    },
+    {
+     "src": "뉴시스",
+     "title": "'호프' 나홍진, 청룡 최고상에 \"칸에서 주지…왜 여기서\"",
+     "link": "https://www.newsis.com/view/NISX20261125_0003883571"
+    }
+   ]
+  },
+  {
+   "kw": "공연",
+   "nsrc": 3,
+   "srcs": [
+    "뉴시스",
+    "연합뉴스",
+    "조선일보"
+   ],
+   "n": 8,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "공연계 \"中 공연 분야 사전심사 비차별 원칙 적용돼야\"",
+     "link": "https://www.yna.co.kr/view/AKR20261126078100005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "블루스 뮤지션 김목경, 12월 소극장 공연…히트곡·연주곡 망라",
+     "link": "https://www.yna.co.kr/view/AKR20261125097600005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "허키 시바세키·비프리, 내년 1월 합동 공연",
+     "link": "https://www.yna.co.kr/view/AKR20261123157900005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "[가요소식] 英 밴드 슬로우다이브, 내달 8일 내한 공연",
+     "link": "https://www.yna.co.kr/view/AKR20261123134100005"
     }
    ]
   },
@@ -1275,13 +1280,13 @@
     },
     {
      "src": "조선일보",
-     "title": "[인터뷰] 이세영 \"'재혼황후' 라스타 만족도 90%, 시즌2에선 욕 먹고파\"(종합)",
-     "link": "https://www.chosun.com/entertainments/enter_general/2026/11/26/HEZTMYZUG4ZWEZDBG5RTKMJRGY/"
+     "title": "이세영 “‘재혼황후’ 시즌2 나온다면 무조건, 욕 더 많이 먹고파”",
+     "link": "https://www.chosun.com/entertainments/enter_general/2026/11/26/MI4DCNBQGY2GMNTBMFRDGMTDG4/"
     },
     {
      "src": "조선일보",
-     "title": "'재혼황후' 임신한 이세영 \"시즌2 무조건 할것..황후 자리 올라보고 싶다\" [인터뷰④]",
-     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/26/GVSTEMRZGZSDGNZUGMZGGYJXG4/"
+     "title": "[인터뷰] 이세영 \"'재혼황후' 라스타 만족도 90%, 시즌2에선 욕 먹고파\"(종합)",
+     "link": "https://www.chosun.com/entertainments/enter_general/2026/11/26/HEZTMYZUG4ZWEZDBG5RTKMJRGY/"
     }
    ]
   },
