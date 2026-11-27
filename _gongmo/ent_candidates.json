@@ -1,6 +1,6 @@
 {
- "at": "2026-11-27 16:30",
- "nitems": 528,
+ "at": "2026-11-27 17:30",
+ "nitems": 530,
  "cands": [
   {
    "kw": "내년",
@@ -118,7 +118,7 @@
     "조선일보",
     "한국경제"
    ],
-   "n": 13,
+   "n": 15,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -211,36 +211,36 @@
    ]
   },
   {
-   "kw": "결혼",
+   "kw": "발매",
    "nsrc": 5,
    "srcs": [
     "뉴시스",
     "동아일보",
     "세계일보",
-    "조선일보",
-    "헤럴드경제"
+    "연합뉴스",
+    "조선일보"
    ],
-   "n": 9,
+   "n": 7,
    "headlines": [
     {
+     "src": "연합뉴스",
+     "title": "양방언, 오늘 11년 만에 신보 '뉴 호라이즌' 발매",
+     "link": "https://www.yna.co.kr/view/AKR20261127079500005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "[가요소식] 브로디, 신곡 '페이디드 러브' 발매…칠룹 피처링",
+     "link": "https://www.yna.co.kr/view/AKR20261124128800005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "버벌진트, 새 앨범 발매 앞두고 20명 초청 '생맥주 음감회'",
+     "link": "https://www.yna.co.kr/view/AKR20261124013300005"
+    },
+    {
      "src": "동아일보",
-     "title": "곽튜브, 결혼 후에도 여행 걱정 없다…“천사와 사는 느낌”",
-     "link": "https://sports.donga.com/ent/article/all/20261127/135101263/1"
-    },
-    {
-     "src": "세계일보",
-     "title": "양홍원, 원현주와 결혼 한 달 만에 파경…“다시 버텨내고 가지겠어”",
-     "link": "https://www.segye.com/newsView/20261126514780"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "‘지적장애 팬과 나들이’ 오정세 또 미담…“팬 위해 병문안, 조문, 결혼 축가까지”",
-     "link": "https://biz.heraldcorp.com/article/10951687"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "‘1010만 유튜버’ 진우와 해티, 결혼 4년 만에 이혼…“각자의 삶”",
-     "link": "https://biz.heraldcorp.com/article/10949770"
+     "title": "숙희, 오늘(27일) 신곡 ‘너라서 다 괜찮아’ 발매",
+     "link": "https://sports.donga.com/ent/article/all/20261127/135103670/1"
     }
    ]
   },
@@ -354,7 +354,7 @@
     "연합뉴스",
     "조선일보"
    ],
-   "n": 10,
+   "n": 9,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -373,8 +373,41 @@
     },
     {
      "src": "조선일보",
-     "title": "[인터뷰④] 신민아 \"청룡 이광수 등장에 나도 세 번 '환호'..박수도 열심히 쳤는데\"('재혼 황후')",
-     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/27/GNTGCNBRG4ZGKNJQMNRTKMZXMM/"
+     "title": "'이종석과 재혼' 신민아 \"시즌2 만들면? 당연히 제가 나와야죠\" 적극 관심 [인터뷰⑤]",
+     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/27/GUZTQZJTGZRDQYRXMFSTMZBQME/"
+    }
+   ]
+  },
+  {
+   "kw": "결혼",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "조선일보",
+    "헤럴드경제"
+   ],
+   "n": 9,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "곽튜브, 결혼 후에도 여행 걱정 없다…“천사와 사는 느낌”",
+     "link": "https://sports.donga.com/ent/article/all/20261127/135101263/1"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "‘지적장애 팬과 나들이’ 오정세 또 미담…“팬 위해 병문안, 조문, 결혼 축가까지”",
+     "link": "https://biz.heraldcorp.com/article/10951687"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "‘1010만 유튜버’ 진우와 해티, 결혼 4년 만에 이혼…“각자의 삶”",
+     "link": "https://biz.heraldcorp.com/article/10949770"
+    },
+    {
+     "src": "뉴시스",
+     "title": "'결혼 14년 차' 별 \"하하와 각자 수입 관리, 얼마 있는지도 몰라\"",
+     "link": "https://www.newsis.com/view/NISX20261127_0003886301"
     }
    ]
   },
@@ -387,8 +420,13 @@
     "조선일보",
     "헤럴드경제"
    ],
-   "n": 9,
+   "n": 8,
    "headlines": [
+    {
+     "src": "동아일보",
+     "title": "‘188cm’ 강호동 아들 강시후, 전국 골프대회 준우승",
+     "link": "https://sports.donga.com/ent/article/all/20261127/135104405/1"
+    },
     {
      "src": "동아일보",
      "title": "강호동, 아들 농사 제대로 지었네…188cm 강시후 전국대회 준우승",
@@ -403,44 +441,39 @@
      "src": "뉴시스",
      "title": "'키 188㎝' 강호동 아들 강시후, 전국 학생 골프대회 준우승",
      "link": "https://www.newsis.com/view/NISX20261127_0003886577"
-    },
-    {
-     "src": "뉴시스",
-     "title": "김은우, 아들 둘 데리고 17살 연하 재혼 \"재산 노리는 거 아니냐고\"",
-     "link": "https://www.newsis.com/view/NISX20261127_0003885412"
     }
    ]
   },
   {
-   "kw": "양홍원",
+   "kw": "폭설",
    "nsrc": 4,
    "srcs": [
+    "SBS",
     "뉴시스",
-    "동아일보",
     "세계일보",
-    "조선일보"
+    "연합뉴스"
    ],
-   "n": 8,
+   "n": 7,
    "headlines": [
     {
-     "src": "동아일보",
-     "title": "“너나 잘해라” ‘불륜 의혹’ 양홍원, 후배 득남 축하했다 뭇매",
-     "link": "https://sports.donga.com/ent/article/all/20261127/135102064/1"
+     "src": "연합뉴스",
+     "title": "김윤석·구교환 '폭설', 캐나다서 리메이크…홍의정 감독 연출",
+     "link": "https://www.yna.co.kr/view/AKR20261127045100005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "[주말극장가] 김윤석·구교환 '폭설' 9일째 1위…흥행 예고",
+     "link": "https://www.yna.co.kr/view/AKR20261127039400005"
     },
     {
      "src": "세계일보",
-     "title": "양홍원, 원현주와 결혼 한 달 만에 파경…“다시 버텨내고 가지겠어”",
-     "link": "https://www.segye.com/newsView/20261126514780"
+     "title": "김윤석·구교환 주연 ‘폭설’ 영어 리메이크 확정… 원작 홍의정 감독이 연출",
+     "link": "https://www.segye.com/newsView/20261127505354"
     },
     {
-     "src": "뉴시스",
-     "title": "'불륜설' 양홍원, 후배 득남에 \"잘해라\" 댓글…이혼 직후 역풍",
-     "link": "https://www.newsis.com/view/NISX20261127_0003885532"
-    },
-    {
-     "src": "뉴시스",
-     "title": "\"모텔만 들어가도 불륜\"…양홍원·원현주, 결혼 5주 만 파경 재조명",
-     "link": "https://www.newsis.com/view/NISX20261127_0003885427"
+     "src": "SBS",
+     "title": "'폭설', 캐나다서 리메이크…홍의정 감독 직접 연출",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008866245&plink=RSSLINK&cooper=RSSREADER"
     }
    ]
   },
@@ -478,68 +511,101 @@
    ]
   },
   {
-   "kw": "로맨스",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "동아일보",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 7,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "200년을 뛰어넘은 연애 코칭 로맨스…'러브 와이파이 궁' 개봉",
-     "link": "https://www.yna.co.kr/view/AKR20261125158400005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "최현욱·정채연의 청춘 로맨스…'그린라이트' 내년 방송",
-     "link": "https://www.yna.co.kr/view/AKR20261125047600005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "대출 위해 결혼한 김명수·표예진…'연대보증 로맨스' 내년 첫선",
-     "link": "https://www.yna.co.kr/view/AKR20261124049300005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "[방송소식] 수지·김선호의 미스터리 로맨스…'현혹' 내년 1월 공개",
-     "link": "https://www.yna.co.kr/view/AKR20261124043300005"
-    }
-   ]
-  },
-  {
-   "kw": "발매",
+   "kw": "정우성",
    "nsrc": 4,
    "srcs": [
     "뉴시스",
-    "동아일보",
-    "세계일보",
-    "연합뉴스"
+    "연합뉴스",
+    "조선일보",
+    "헤럴드경제"
    ],
    "n": 6,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "양방언, 오늘 11년 만에 신보 '뉴 호라이즌' 발매",
-     "link": "https://www.yna.co.kr/view/AKR20261127079500005"
+     "title": "정우성, 이정재와 설립한 아티스트컴퍼니 떠났다…10년 동행 끝",
+     "link": "https://www.yna.co.kr/view/AKR20261127133500005"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "정우성, 이정재와 ‘10년 동행’ 끝내…이정재 소속사 떠나",
+     "link": "https://biz.heraldcorp.com/article/10951815"
+    },
+    {
+     "src": "뉴시스",
+     "title": "정우성, 이정재와 설립한 소속사 떠났다…10년 동업 마침표",
+     "link": "https://www.newsis.com/view/NISX20261127_0003886021"
+    },
+    {
+     "src": "조선일보",
+     "title": "‘청담 부부’ 정우성·이정재 10년만 갈라섰다... 정우성, 10년 매니저와 퇴사",
+     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/27/G5SWGN3BGBRDIMLEGM2DKNTFHE/"
+    }
+   ]
+  },
+  {
+   "kw": "데뷔",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "연합뉴스",
+    "조선일보"
+   ],
+   "n": 6,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "[가요소식] 에이비식스 출신 전웅, '문득'으로 솔로 데뷔",
+     "link": "https://www.yna.co.kr/view/AKR20261127072500005"
     },
     {
      "src": "연합뉴스",
-     "title": "[가요소식] 브로디, 신곡 '페이디드 러브' 발매…칠룹 피처링",
-     "link": "https://www.yna.co.kr/view/AKR20261124128800005"
+     "title": "4인조 버추얼 보이그룹 윙스, 27일 데뷔…첫 싱글 '헤일로'",
+     "link": "https://www.yna.co.kr/view/AKR20261125148100005"
     },
     {
      "src": "연합뉴스",
-     "title": "버벌진트, 새 앨범 발매 앞두고 20명 초청 '생맥주 음감회'",
-     "link": "https://www.yna.co.kr/view/AKR20261124013300005"
+     "title": "J팝 그룹 투 에프 이, 한국 정식 데뷔 \"K팝 좋아해…빅뱅 동경\"",
+     "link": "https://www.yna.co.kr/view/AKR20261123088800005"
     },
     {
      "src": "동아일보",
-     "title": "숙희, 오늘(27일) 신곡 ‘너라서 다 괜찮아’ 발매",
-     "link": "https://sports.donga.com/ent/article/all/20261127/135103670/1"
+     "title": "데뷔 전 연습생 시절 코르티스, 포토북 나온다",
+     "link": "https://sports.donga.com/ent/article/all/20261127/135102322/1"
+    }
+   ]
+  },
+  {
+   "kw": "연출",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "세계일보",
+    "연합뉴스"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "김윤석·구교환 '폭설', 캐나다서 리메이크…홍의정 감독 연출",
+     "link": "https://www.yna.co.kr/view/AKR20261127045100005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "부산대 학생 연출 단편영화, 부산독립영화제 2개 부문 수상",
+     "link": "https://www.yna.co.kr/view/AKR20261126043700051"
+    },
+    {
+     "src": "세계일보",
+     "title": "김윤석·구교환 주연 ‘폭설’ 영어 리메이크 확정… 원작 홍의정 감독이 연출",
+     "link": "https://www.segye.com/newsView/20261127505354"
+    },
+    {
+     "src": "SBS",
+     "title": "'폭설', 캐나다서 리메이크…홍의정 감독 직접 연출",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008866245&plink=RSSLINK&cooper=RSSREADER"
     }
    ]
   },
@@ -573,39 +639,6 @@
      "src": "뉴시스",
      "title": "'결별' 이도현, 한소희 짧은 치마에 재킷 벗었다…다리까지 가려줘",
      "link": "https://www.newsis.com/view/NISX20261127_0003886270"
-    }
-   ]
-  },
-  {
-   "kw": "청룡영화",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "세계일보",
-    "연합뉴스"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "청룡영화상 작품상에 '호프'…설경구·전도연 남녀주연상 석권",
-     "link": "https://www.yna.co.kr/view/AKR20261125187600005"
-    },
-    {
-     "src": "세계일보",
-     "title": "'만약에 우리' 문가영·구교환, 청룡영화상서 장난기 가득한 모습…여전한 케미",
-     "link": "https://www.segye.com/newsView/20261126517995"
-    },
-    {
-     "src": "SBS",
-     "title": "설경구·전도연 나란히 남녀주연상…청룡영화상서 '석권'",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008863866&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "뉴시스",
-     "title": "문근영, 청룡영화상 앞머리 왜 저랬나 했더니 \"쓰러져서 다쳤어요\"",
-     "link": "https://www.newsis.com/view/NISX20261127_0003885571"
     }
    ]
   },
@@ -676,35 +709,200 @@
    ]
   },
   {
-   "kw": "눈물",
+   "kw": "준우승",
    "nsrc": 4,
    "srcs": [
-    "SBS",
     "뉴시스",
     "동아일보",
-    "조선일보"
+    "조선일보",
+    "헤럴드경제"
    ],
    "n": 5,
    "headlines": [
     {
      "src": "동아일보",
-     "title": "연우, 계단 3000개 오르고 결국 눈물…설인아 활약 (무쇠소녀단3)",
-     "link": "https://sports.donga.com/ent/article/all/20261127/135101220/1"
+     "title": "‘188cm’ 강호동 아들 강시후, 전국 골프대회 준우승",
+     "link": "https://sports.donga.com/ent/article/all/20261127/135104405/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "강호동, 아들 농사 제대로 지었네…188cm 강시후 전국대회 준우승",
+     "link": "https://sports.donga.com/ent/article/all/20261127/135102764/1"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "강호동 아들 강시후, 전국 골프대회 고등부 준우승 쾌거",
+     "link": "https://biz.heraldcorp.com/article/10951420"
+    },
+    {
+     "src": "뉴시스",
+     "title": "'키 188㎝' 강호동 아들 강시후, 전국 학생 골프대회 준우승",
+     "link": "https://www.newsis.com/view/NISX20261127_0003886577"
+    }
+   ]
+  },
+  {
+   "kw": "강호동",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "조선일보",
+    "헤럴드경제"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "‘188cm’ 강호동 아들 강시후, 전국 골프대회 준우승",
+     "link": "https://sports.donga.com/ent/article/all/20261127/135104405/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "강호동, 아들 농사 제대로 지었네…188cm 강시후 전국대회 준우승",
+     "link": "https://sports.donga.com/ent/article/all/20261127/135102764/1"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "강호동 아들 강시후, 전국 골프대회 고등부 준우승 쾌거",
+     "link": "https://biz.heraldcorp.com/article/10951420"
+    },
+    {
+     "src": "뉴시스",
+     "title": "'키 188㎝' 강호동 아들 강시후, 전국 학생 골프대회 준우승",
+     "link": "https://www.newsis.com/view/NISX20261127_0003886577"
+    }
+   ]
+  },
+  {
+   "kw": "서인영",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "조선일보",
+    "헤럴드경제"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "서인영 12월 26일 재혼…브라이언 “이번이 마지막 결혼식?” (유행꼰대)",
+     "link": "https://sports.donga.com/ent/article/all/20261127/135102241/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "서인영, 꽃장식만 1억 썼는데…재혼은 스몰웨딩 (미우새)",
+     "link": "https://sports.donga.com/ent/article/all/20261127/135101824/1"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "서인영 감동시킨 예비 신랑 한마디…“이혼해 본 게 오히려 고맙다”",
+     "link": "https://biz.heraldcorp.com/article/10952162"
+    },
+    {
+     "src": "뉴시스",
+     "title": "브라이언, 절친 서인영 연애사 폭로…\"킴 카다시안 같았다\"",
+     "link": "https://www.newsis.com/view/NISX20261127_0003885626"
+    }
+   ]
+  },
+  {
+   "kw": "이정재와",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "연합뉴스",
+    "조선일보",
+    "헤럴드경제"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "정우성, 이정재와 설립한 아티스트컴퍼니 떠났다…10년 동행 끝",
+     "link": "https://www.yna.co.kr/view/AKR20261127133500005"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "정우성, 이정재와 ‘10년 동행’ 끝내…이정재 소속사 떠나",
+     "link": "https://biz.heraldcorp.com/article/10951815"
+    },
+    {
+     "src": "뉴시스",
+     "title": "정우성, 이정재와 설립한 소속사 떠났다…10년 동업 마침표",
+     "link": "https://www.newsis.com/view/NISX20261127_0003886021"
+    },
+    {
+     "src": "조선일보",
+     "title": "임기 반년 남기고..정우성, 이정재와 설립한 소속사 사내이사직 사임 [Oh!쎈 이슈]",
+     "link": "https://www.chosun.com/entertainments/broadcast/2026/10/09/MIYTGMJUGEZWEYZUHA3GGNBQGA/"
+    }
+   ]
+  },
+  {
+   "kw": "홍의정",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "세계일보",
+    "연합뉴스"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "김윤석·구교환 '폭설', 캐나다서 리메이크…홍의정 감독 연출",
+     "link": "https://www.yna.co.kr/view/AKR20261127045100005"
+    },
+    {
+     "src": "세계일보",
+     "title": "김윤석·구교환 주연 ‘폭설’ 영어 리메이크 확정… 원작 홍의정 감독이 연출",
+     "link": "https://www.segye.com/newsView/20261127505354"
     },
     {
      "src": "SBS",
-     "title": "'최대주주 특혜 논란' 이정재, 수척해진 모습으로 공식 석상…고인 떠올리며 눈물",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008864834&plink=RSSLINK&cooper=RSSREADER"
+     "title": "'폭설', 캐나다서 리메이크…홍의정 감독 직접 연출",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008866245&plink=RSSLINK&cooper=RSSREADER"
     },
     {
      "src": "뉴시스",
-     "title": "홍윤화 \"93만원에 산 10돈 금팔찌, 떨어진 시세에 눈물 나\"",
-     "link": "https://www.newsis.com/view/NISX20261126_0003884699"
+     "title": "'폭설', 해외 리메이크 확정…홍의정 감독, 직접 연출",
+     "link": "https://www.newsis.com/view/NISX20261127_0003885648"
+    }
+   ]
+  },
+  {
+   "kw": "리메이크",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "세계일보",
+    "연합뉴스"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "김윤석·구교환 '폭설', 캐나다서 리메이크…홍의정 감독 연출",
+     "link": "https://www.yna.co.kr/view/AKR20261127045100005"
+    },
+    {
+     "src": "세계일보",
+     "title": "김윤석·구교환 주연 ‘폭설’ 영어 리메이크 확정… 원작 홍의정 감독이 연출",
+     "link": "https://www.segye.com/newsView/20261127505354"
+    },
+    {
+     "src": "SBS",
+     "title": "'폭설', 캐나다서 리메이크…홍의정 감독 직접 연출",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008866245&plink=RSSLINK&cooper=RSSREADER"
     },
     {
      "src": "뉴시스",
-     "title": "초아, 생후 9개월 아들 응급실행 \"입술까지 하얘져\" 눈물",
-     "link": "https://www.newsis.com/view/NISX20261126_0003884710"
+     "title": "'폭설', 해외 리메이크 확정…홍의정 감독, 직접 연출",
+     "link": "https://www.newsis.com/view/NISX20261127_0003885648"
     }
    ]
   },
@@ -771,6 +969,39 @@
      "src": "뉴시스",
      "title": "에스파, 美 온라인 강타한 '키스 앤 텔' 영어 버전 오늘 공개",
      "link": "https://www.newsis.com/view/NISX20261127_0003886334"
+    }
+   ]
+  },
+  {
+   "kw": "청룡영화",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "세계일보",
+    "연합뉴스"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "청룡영화상 작품상에 '호프'…설경구·전도연 남녀주연상 석권",
+     "link": "https://www.yna.co.kr/view/AKR20261125187600005"
+    },
+    {
+     "src": "세계일보",
+     "title": "'만약에 우리' 문가영·구교환, 청룡영화상서 장난기 가득한 모습…여전한 케미",
+     "link": "https://www.segye.com/newsView/20261126517995"
+    },
+    {
+     "src": "SBS",
+     "title": "설경구·전도연 나란히 남녀주연상…청룡영화상서 '석권'",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008863866&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "뉴시스",
+     "title": "문근영, 청룡영화상 앞머리 왜 저랬나 했더니 \"쓰러져서 다쳤어요\"",
+     "link": "https://www.newsis.com/view/NISX20261127_0003885571"
     }
    ]
   },
@@ -907,101 +1138,68 @@
    ]
   },
   {
-   "kw": "강호동",
+   "kw": "이유",
    "nsrc": 4,
    "srcs": [
-    "뉴시스",
     "동아일보",
     "조선일보",
+    "한겨레",
     "헤럴드경제"
    ],
    "n": 4,
    "headlines": [
     {
      "src": "동아일보",
-     "title": "강호동, 아들 농사 제대로 지었네…188cm 강시후 전국대회 준우승",
-     "link": "https://sports.donga.com/ent/article/all/20261127/135102764/1"
+     "title": "유연석, 죽기 전 서현진 집 찾아간 이유 (라이어)",
+     "link": "https://sports.donga.com/ent/article/all/20261127/135101351/1"
+    },
+    {
+     "src": "한겨레",
+     "title": "19세기 노동자들이 시계 박살 낸 이유…시간의 정치화·무기화 [.txt]",
+     "link": "https://www.hani.co.kr/arti/culture/book/1289357.html"
     },
     {
      "src": "헤럴드경제",
-     "title": "강호동 아들 강시후, 전국 골프대회 고등부 준우승 쾌거",
-     "link": "https://biz.heraldcorp.com/article/10951420"
-    },
-    {
-     "src": "뉴시스",
-     "title": "'키 188㎝' 강호동 아들 강시후, 전국 학생 골프대회 준우승",
-     "link": "https://www.newsis.com/view/NISX20261127_0003886577"
+     "title": "장항준, ‘왕사남’ 수익 26억 안 줘도 되는데 나눈 이유…“한국영화 100년사 가장 돈 많이 벌어”",
+     "link": "https://biz.heraldcorp.com/article/10951978"
     },
     {
      "src": "조선일보",
-     "title": "강호동 아들 강시후, 전국 골프대회 준우승... 아빠 피 물려받았네",
-     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/27/MQZWCM3GHE3TSNLBMQ4WGMRRMM/"
+     "title": "지나, 10년 만에 '고속노화 비주얼' 이유 있었다..\"AI 영상\" 직접 해명[Oh!쎈 이슈]",
+     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/27/HA4GMYTGMJQTGNDCGM3DAOJRMU/"
     }
    ]
   },
   {
-   "kw": "강시후",
+   "kw": "지나",
    "nsrc": 4,
    "srcs": [
     "뉴시스",
-    "동아일보",
     "조선일보",
+    "한국경제",
     "헤럴드경제"
    ],
    "n": 4,
    "headlines": [
     {
-     "src": "동아일보",
-     "title": "강호동, 아들 농사 제대로 지었네…188cm 강시후 전국대회 준우승",
-     "link": "https://sports.donga.com/ent/article/all/20261127/135102764/1"
+     "src": "한국경제",
+     "title": "'그사친' 이서진 \"짐꾼 할 나이 지나\"…김용건 \"팔짱 많이 끼더라\"",
+     "link": "https://www.hankyung.com/article/202611262194H"
     },
     {
      "src": "헤럴드경제",
-     "title": "강호동 아들 강시후, 전국 골프대회 고등부 준우승 쾌거",
-     "link": "https://biz.heraldcorp.com/article/10951420"
+     "title": "‘성매매 벌금형’ 지나, 심각한 얼굴 노화 화제 되더니…반전 해명",
+     "link": "https://biz.heraldcorp.com/article/10952150"
     },
     {
      "src": "뉴시스",
-     "title": "'키 188㎝' 강호동 아들 강시후, 전국 학생 골프대회 준우승",
-     "link": "https://www.newsis.com/view/NISX20261127_0003886577"
+     "title": "'10년 공백' 지나, 몰라보게 달라진 근황 \"같은 사람이지만…\"",
+     "link": "https://www.newsis.com/view/NISX20261127_0003885418"
     },
     {
      "src": "조선일보",
-     "title": "강호동 아들 강시후, 전국 골프대회 준우승... 아빠 피 물려받았네",
-     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/27/MQZWCM3GHE3TSNLBMQ4WGMRRMM/"
-    }
-   ]
-  },
-  {
-   "kw": "준우승",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "조선일보",
-    "헤럴드경제"
-   ],
-   "n": 4,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "강호동, 아들 농사 제대로 지었네…188cm 강시후 전국대회 준우승",
-     "link": "https://sports.donga.com/ent/article/all/20261127/135102764/1"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "강호동 아들 강시후, 전국 골프대회 고등부 준우승 쾌거",
-     "link": "https://biz.heraldcorp.com/article/10951420"
-    },
-    {
-     "src": "뉴시스",
-     "title": "'키 188㎝' 강호동 아들 강시후, 전국 학생 골프대회 준우승",
-     "link": "https://www.newsis.com/view/NISX20261127_0003886577"
-    },
-    {
-     "src": "조선일보",
-     "title": "강호동 아들 강시후, 전국 골프대회 준우승... 아빠 피 물려받았네",
-     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/27/MQZWCM3GHE3TSNLBMQ4WGMRRMM/"
+     "title": "지나, 10년 만에 '고속노화 비주얼' 이유 있었다..\"AI 영상\" 직접 해명[Oh!쎈 이슈]",
+     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/27/HA4GMYTGMJQTGNDCGM3DAOJRMU/"
     }
    ]
   },
@@ -1077,7 +1275,7 @@
     "연합뉴스",
     "조선일보"
    ],
-   "n": 8,
+   "n": 11,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -1096,40 +1294,8 @@
     },
     {
      "src": "조선일보",
-     "title": "‘제자와 성관계 시도 인정·성폭행 부인’ 남경주, 아내 “여전히 예쁘다”더니…휴정 때 왼손 약지엔 결혼반지 [Oh쎈 이슈]",
-     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/27/MRTGGNDFGEZTEZLBMZSTCZBUGI/"
-    }
-   ]
-  },
-  {
-   "kw": "뮤지컬",
-   "nsrc": 3,
-   "srcs": [
-    "조선일보",
-    "한국경제",
-    "헤럴드경제"
-   ],
-   "n": 8,
-   "headlines": [
-    {
-     "src": "한국경제",
-     "title": "'분리수거장에 팬레터가?'…뮤지컬 배우 이동연 결국 사과",
-     "link": "https://www.hankyung.com/article/202611274651H"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "뮤지컬 배우 이동연, 팬 편지 읽지도 않고 버렸다 들통",
-     "link": "https://biz.heraldcorp.com/article/10951210"
-    },
-    {
-     "src": "조선일보",
-     "title": "'재혼황후' 신민아 \"이종석과 열기구 신, 뮤지컬 밈 될줄 몰랐다\" [인터뷰③]",
-     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/27/GJTDSM3EMJQWIYTFME3GIZDEHA/"
-    },
-    {
-     "src": "조선일보",
-     "title": "[사진]여제자 성폭행 혐의 뮤지컬 배우 남경주",
-     "link": "https://www.chosun.com/entertainments/entertain_photo/2026/11/27/GVTGGMLGMZRDMNJZGZSWINBXGA/"
+     "title": "강호동 아들 준우승→임창정 장남 프로 입회..필드 누비는 스타 2세들 [Oh!쎈 이슈]",
+     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/27/MJQWIYTDGA2TEOJTHBQWEODBGU/"
     }
    ]
   },
@@ -1141,7 +1307,7 @@
     "뉴시스",
     "조선일보"
    ],
-   "n": 8,
+   "n": 9,
    "headlines": [
     {
      "src": "SBS",
@@ -1155,173 +1321,13 @@
     },
     {
      "src": "조선일보",
-     "title": "[인터뷰①] 신민아 \"♥김우빈, 누구보다 '재혼황후'에 깊이 빠져있어..나를 나비에로 부르는中\"('재혼 황후')",
-     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/27/MU3DAYTFMUZDSNTDGFQTOYLCGU/"
+     "title": "[SC인터뷰] \"김우빈♥, 집에서도 나비에로 불러\"…'재혼황후' 신민아, 왕관의 무게를 견디는 법(종합)",
+     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/27/MZSGINTEGVSWENLBHA3WCMBVGM/"
     },
     {
      "src": "조선일보",
-     "title": "'재혼황후' 신민아 \"주지훈 모든 대사가 열 받았다..어떻게 저런 말을\" [인터뷰④]",
-     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/27/HFRGIOLCGIYWGYZQGI2DIMDGGM/"
-    }
-   ]
-  },
-  {
-   "kw": "주년",
-   "nsrc": 3,
-   "srcs": [
-    "뉴시스",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 7,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "강릉씨네마떼끄 30주년…11일부터 '환영의 영화' 기획전",
-     "link": "https://www.yna.co.kr/view/AKR20261127035700062"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "웅산, 오색찬란한 30주년 자축…\"재즈 만찬에 감개무량\"",
-     "link": "https://www.yna.co.kr/view/AKR20261126069600005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "'기분 좋은 날' 방송 20주년…MC 김한석 \"함께 나이 들어가고파\"",
-     "link": "https://www.yna.co.kr/view/AKR20261125053100005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "[방송소식] tvN, 개국 20주년 기념 '즐거움 체크인' 캠페인",
-     "link": "https://www.yna.co.kr/view/AKR20261124171900005"
-    }
-   ]
-  },
-  {
-   "kw": "입고",
-   "nsrc": 3,
-   "srcs": [
-    "뉴시스",
-    "세계일보",
-    "한국경제"
-   ],
-   "n": 7,
-   "headlines": [
-    {
-     "src": "한국경제",
-     "title": "[포토+] 이정은, '멋지게 슈트 입고 등장'",
-     "link": "https://www.hankyung.com/article/202611260762H"
-    },
-    {
-     "src": "세계일보",
-     "title": "48세 정가은, 수영복 입고 드러낸 몸매…군살 하나 없네",
-     "link": "https://www.segye.com/newsView/20261126516467"
-    },
-    {
-     "src": "뉴시스",
-     "title": "트와이스 모모, 속옷 같은 의상 입고 춤췄다가 日 팬들 지적",
-     "link": "https://www.newsis.com/view/NISX20261127_0003886436"
-    },
-    {
-     "src": "뉴시스",
-     "title": "임예진, '재혼황후' 신민아 극찬…\"트레이닝복 입고 찍어도 예뻐\"",
-     "link": "https://www.newsis.com/view/NISX20261127_0003885952"
-    }
-   ]
-  },
-  {
-   "kw": "별세",
-   "nsrc": 3,
-   "srcs": [
-    "뉴시스",
-    "연합뉴스",
-    "한겨레"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "극동방송 이사장 김장환 목사 부인 트루디 김 여사 별세",
-     "link": "https://www.yna.co.kr/view/AKR20261127094200005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "1세대 슈퍼모델 베루슈카 별세…1960년대 패션 아이콘",
-     "link": "https://www.yna.co.kr/view/AKR20261126149600009"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "英밴드 듀란듀란 기타리스트 앤디 테일러 별세…향년 65세",
-     "link": "https://www.yna.co.kr/view/AKR20261126015200075"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "'EBS 밑그림' 그린 '해직 PD'…김학천 전 EBS 사장 별세(종합)",
-     "link": "https://www.yna.co.kr/view/AKR20261123086051005"
-    }
-   ]
-  },
-  {
-   "kw": "폭설",
-   "nsrc": 3,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "연합뉴스"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "김윤석·구교환 '폭설', 캐나다서 리메이크…홍의정 감독 연출",
-     "link": "https://www.yna.co.kr/view/AKR20261127045100005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "[주말극장가] 김윤석·구교환 '폭설' 9일째 1위…흥행 예고",
-     "link": "https://www.yna.co.kr/view/AKR20261127039400005"
-    },
-    {
-     "src": "SBS",
-     "title": "'폭설', 캐나다서 리메이크…홍의정 감독 직접 연출",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008866245&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "SBS",
-     "title": "'폭설', 8일 연속 박스오피스 1위…누적 관객 50만 돌파",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008864336&plink=RSSLINK&cooper=RSSREADER"
-    }
-   ]
-  },
-  {
-   "kw": "공연",
-   "nsrc": 3,
-   "srcs": [
-    "뉴시스",
-    "세계일보",
-    "연합뉴스"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "공연계 \"中 공연 분야 사전심사 비차별 원칙 적용돼야\"",
-     "link": "https://www.yna.co.kr/view/AKR20261126078100005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "블루스 뮤지션 김목경, 12월 소극장 공연…히트곡·연주곡 망라",
-     "link": "https://www.yna.co.kr/view/AKR20261125097600005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "허키 시바세키·비프리, 내년 1월 합동 공연",
-     "link": "https://www.yna.co.kr/view/AKR20261123157900005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "[가요소식] 英 밴드 슬로우다이브, 내달 8일 내한 공연",
-     "link": "https://www.yna.co.kr/view/AKR20261123134100005"
+     "title": "[인터뷰①] 신민아 \"♥김우빈, 누구보다 '재혼황후'에 깊이 빠져있어..나를 나비에로 부르는中\"('재혼 황후')",
+     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/27/MU3DAYTFMUZDSNTDGFQTOYLCGU/"
     }
    ]
   }
