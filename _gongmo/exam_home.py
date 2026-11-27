@@ -99,7 +99,7 @@ def hero(ic):
     chips = ''.join(f'<a href="/exam/{i}/">{E(n)}</a>' for n, i in CHIPS if _exists(f'/exam/{i}/'))
     return ('<div class="ct"><div class="ct-tick" aria-hidden="true"><div class="ct-tick-in"><span>니 점수에 잠이 오냐</span><span>남들은 이미 뭐 땄다더라</span><span>그래서 취직하겠냐</span><span>이거라도 해야 먹고살지 않겠냐</span><span>지금 자면 내일은 라면 한 봉지에 2,000원이다</span><span>학점도 월급도 그 모양인데</span><span>니 점수에 잠이 오냐</span><span>남들은 이미 뭐 땄다더라</span><span>그래서 취직하겠냐</span><span>이거라도 해야 먹고살지 않겠냐</span><span>지금 자면 내일은 라면 한 봉지에 2,000원이다</span><span>학점도 월급도 그 모양인데</span></div></div><canvas id="ct-bg" aria-hidden="true"></canvas><section class="ct-hero" aria-labelledby="h2-t"><div>'
             '<h1 id="h2-t">가난한 박과장과 <b>헬조선 <mark>살아남기</mark></b></h1>'
-            '<p class="lead">남들은 이미 뭐 땄다더라. 니는 아직 아무것도 안 했지? 일정 보고, 문제 풀고, 따. 알아서 해.</p><p class="ct-rant">어차피 에드센스도 통과 안 되는 거 그냥 막장으로 간다. 구글 씹 ㅅㄲ들</p>'
+            '<p class="lead">남들은 이미 뭐 땄다더라. 니는 아직 아무것도 안 했지? 일정 보고, 문제 풀고, 따.</p><p class="ct-rant">어차피 에드센스도 통과 안 되는 거 그냥 막장으로 간다. 구글 씹 ㅅㄲ들</p>'
 
             '<form class="h2-s" role="search" action="/wiki/"><div class="row"><label class="sr" for="hs">검색 범위</label><select id="hs"><option value="">전체</option><option value="c">공모전</option><option value="a">지원금</option><option value="w">가이드</option><option value="r">식단</option></select>'
             '<label class="sr" for="hq">검색어</label><input id="hq" type="search" placeholder="뭘 딸 건지부터 검색해 (한능검, 토익, 컴활)" autocomplete="off" enterkeyhint="search"><button type="submit" class="go">검색</button></div>'
@@ -129,17 +129,22 @@ def sections(ctx, ic):
     for x in ex:
         cnt[x.get('category')] = cnt.get(x.get('category'), 0) + 1
     out = hero(ic)
-    out += ('<section class="ct-sec">' + _hd('자기개발', ('/park/', '전체 보기')) + '<ul class="ct-grid">'
-            '<li><a class="ct-card" href="/park/"><span class="d far">시작</span><h3>AI 에이전트로 내 서비스 만들기</h3><p>퇴근하고 3시간</p></a></li>'
-            '<li><a class="ct-card" href="/ailog/"><span class="d far">지식</span><h3>개발 지식 · 제작 로그</h3><p>만들면서 배운 것</p></a></li>'
-            '<li><a class="ct-card" href="/dev/"><span class="d far">블로그</span><h3>기술 블로그</h3><p>개발·AI 글</p></a></li></ul></section>')
+    out += ('<section class="ct-sec" id="join"><div class="ct-hd"><h2>가입하면 해주는 것 <small>전부 무료</small></h2></div><ul class="ct-grid">'
+            '<li><a class="ct-card" href="/me/"><span class="d far">상태창</span><h3>헬조선 생존 확률</h3><p>능력치 6개와 레벨. 활동할 때마다 바뀐다</p></a></li>'
+            '<li><a class="ct-card" href="/me/"><span class="d far">플랜</span><h3>목표 · 기한 · 할 일</h3><p>시험·자격증·습관 중 골라라. 짜 준다</p></a></li>'
+            '<li><a class="ct-card" href="/app/"><span class="d far">퀘스트</span><h3>오늘의 퀘스트 알림</h3><p>앱 깔면 목표에 맞게 폰으로 던진다</p></a></li>'
+            '<li><a class="ct-card" href="/exam/bank/"><span class="d far">기록</span><h3>점수 · 틀린 문제 저장</h3><p>폰·PC 어디서든 이어서 푼다</p></a></li>'
+            '<li><a class="ct-card" href="/me/"><span class="d far">업적</span><h3>목표 달성 업적</h3><p>해내면 준다. 칭찬은 안 한다</p></a></li>'
+            '<li><a class="ct-card" href="/me/"><span class="d far">요청</span><h3>없는 목표 추가 요청</h3><p>말하면 하루 안에 플랜을 넣는다</p></a></li></ul>'
+            '<p style="margin:14px 0"><button type="button" class="ct-join" onclick="if(window.JUP&&JUP.authModal){JUP.authModal(function(){location.href=&#39;/me/&#39;})}else{location.href=&#39;/me/&#39;}" style="padding:12px 26px;border:0;border-radius:12px;background:linear-gradient(90deg,#6c7bff,#ff5c9a);color:#fff;font-weight:800;font-size:16px;cursor:pointer">가입하고 살아남기</button></p></section><script>try{if(localStorage.getItem("jupjup_tok"))document.getElementById("join").hidden=true}catch(e){}</script>')
+    # 2026-11-27 사용자 「이거 메인에서 없애」: 자기개발(AI 에이전트 서비스·개발 지식·기술 블로그) 블록 제거 — 주소는 그대로
     tiles = ''
     for nm, sub, keys in CATS12:
         n = sum(cnt.get(k, 0) for k in keys)
         href = '/park/' if nm == '자기개발' else '/exam/'
         n = n or (1 if nm == '자기개발' else 0)
         tiles += (f'<a class="ct-cat{"" if n else " off"}" href="{href}"><b>{E(nm)}</b><span>{E(sub)}</span>'
-                  f'<em>{("공부나 해" if nm == "자기개발" else f"{n}개 시험 일정") if n else "아직 없다. 알아서 찾아"}</em></a>')
+                  f'<em>{("공부나 해" if nm == "자기개발" else f"{n}개 시험 일정") if n else "준비 중"}</em></a>')
     out += '<section class="ct-sec">' + _hd('분야별로 찾기', ('/exam/', '전체 일정')) + f'<div class="ct-cats">{tiles}</div></section>'
     out += '<div class="ct-tape" aria-hidden="true"><span>남들은 이미 땄다 · 니는? · 남들은 이미 땄다 · 니는? · 남들은 이미 땄다 · 니는? · 남들은 이미 땄다 · 니는? · </span></div>'
     up = _upcoming(ex)

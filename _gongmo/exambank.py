@@ -43,13 +43,17 @@ CSS2 = ('<style>'
  '.bk div.q.ok{border-color:#34d399}.bk div.q.no{border-color:#fb7185}.bk label.ans{background:rgba(52,211,153,.14)!important;border-color:#34d399!important}.bk label.wr{background:rgba(251,113,133,.14)!important;border-color:#fb7185!important}'
  '.bk .rv{color:var(--tx)}.bk .rv .ex{background:var(--bg);border-left:3px solid var(--ac);border-radius:6px;padding:10px 12px}'
  '.bk .clk{background:var(--bg2);border:1px solid var(--ln);color:var(--ac2)}.bk #bk-start,.bk #bk-grade{background:linear-gradient(90deg,var(--ac),#8b5cf6);border:0;border-radius:12px;box-shadow:0 6px 18px rgba(108,123,255,.35)}'
- '.bk .bar button.g{background:transparent;color:var(--ac);border-color:var(--ac)}.bk .nt{color:var(--mu)}.bk .nt a{color:var(--ac)}'
+ '.bk .bar button.g{background:transparent;color:var(--ac);border-color:var(--ac)}.bk .nt{color:var(--mu)}.bk .nt a{color:var(--ac)}.bk .nag{margin:14px 0;padding:16px 18px;border:1px solid var(--ac2);border-radius:14px;background:linear-gradient(160deg,rgba(255,92,154,.12),rgba(108,123,255,.1))}.bk .nag>b{font-size:18px;display:block;margin-bottom:6px;color:var(--ac2)}.bk .nag p{margin:6px 0}'
  '</style>')
 JS = r'''<script>(function(){var el=document.getElementById('bk-data');if(!el)return;var D=JSON.parse(el.textContent),Q=D.questions,key='bk_wrong_'+D.id;
 var sheet=document.getElementById('bk-sheet'),res=document.getElementById('bk-res'),clock=document.getElementById('bk-clock'),gb=document.getElementById('bk-grade'),rs=document.getElementById('bk-reset'),setup=document.getElementById('bk-setup'),info=document.getElementById('bk-info'),nin=document.getElementById('bk-n'),bar=document.getElementById('bk-gbar');
 var cfg={n:'all',m:'p',o:'seq',r:'all'},order=[],timed=false,tmr=null,tleft=0,tstart=0,graded=false,SEC=D.sec_per_q||60;
 var IMG='/assets/ruri/o_sn_smirk_s.webp',FB='/assets/ruri/o_present_s.webp';
 var WR=['이걸 틀려? 남들은 이미 땄다더라.','이 점수로 취직하겠냐?','찍었냐? 찍어도 이건 안 틀리겠다.','틀렸어. 해설 읽어. 읽으라고 써 놨으니까.','이거라도 해야 먹고살지 않겠냐?','아깝지도 않냐. 그냥 몰랐던 거잖아.','시험장에서 이러면 올해도 끝이다.','이 정도는 외우고 와야지. 누가 대신 풀어 주냐?'];
+function nag(p,w){var tk;try{tk=localStorage.getItem('jupjup_tok')}catch(e){}
+if(tk)return '<p class="nt">틀린 문제 '+w+'개 기록했다. 상태창에 반영된다.</p>';
+var L=p>=90?'점수는 나쁘지 않네. 근데 이거 저장 안 된다. 다음에 또 처음부터다.':p>=60?'그렇게 해서 살아남겠냐? 틀린 '+w+'개는 이 브라우저에만 남는다.':'이 점수로 살아남겠냐? 틀린 '+w+'개, 이대로 두면 시험장에서 또 틀린다.';
+return '<div class="nag"><b>'+L+'</b><p>가입하면 점수와 틀린 문제가 계정에 쌓이고, 헬조선 생존 확률이 나온다. 목표를 정하면 플랜이랑 오늘의 퀘스트도 던져 준다. 전부 무료다.</p><div class="bar"><button id="b-join">가입하고 살아남기</button></div></div>'+'<p class="nt">틀린 문제 '+w+'개는 이 브라우저에만 저장돼.</p>'}
 function pick(a){return a[Math.floor(Math.random()*a.length)]}
 function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
 function ru(t){return '<div class="ru"><img src="'+IMG+'" width="56" height="78" alt="비웃는 루리" onerror="this.onerror=null;this.src=\''+FB+'\'"><p>'+esc(t)+'</p></div>'}
@@ -75,8 +79,8 @@ f.querySelector('.rv').innerHTML='<b>'+(ok?'정답':(v<0?'미응답':'오답')+'
 if(ok)score++;else wrong.push(qi)});
 var prev=ld().filter(function(i){return order.indexOf(i)<0});sv(prev.concat(wrong));try{window.jamQ&&jamQ(D.id,order.length,score)}catch(e){}
 var p=Math.round(score*100/order.length),used=Math.round((Date.now()-tstart)/1000);
-res.innerHTML='<h3>결과: '+score+' / '+order.length+' ('+p+'점)'+' · 걸린 시간 '+fmt(used)+'</h3>'+ru(verdict(p,to))+'<p class="nt">틀린 문제 '+wrong.length+'개는 이 브라우저에만 저장돼(서버로 안 보내).</p>'+(wrong.length?'<div class="bar"><button id="b-wr">틀린 문제만 다시</button></div>':'');
-var w=document.getElementById('b-wr');if(w)w.onclick=function(){render(wrong.slice(),false);window.scrollTo(0,res.offsetTop-70)};
+res.innerHTML='<h3>결과: '+score+' / '+order.length+' ('+p+'점)'+' · 걸린 시간 '+fmt(used)+'</h3>'+ru(verdict(p,to))+nag(p,wrong.length)+(wrong.length?'<div class="bar"><button id="b-wr">틀린 문제만 다시</button></div>':'');
+var jn=document.getElementById('b-join');if(jn)jn.onclick=function(){if(window.JUP&&JUP.authModal)JUP.authModal(function(){location.reload()});else location.href='/me/'};var w=document.getElementById('b-wr');if(w)w.onclick=function(){render(wrong.slice(),false);window.scrollTo(0,res.offsetTop-70)};
 gb.hidden=true;rs.hidden=false;clock.hidden=true;window.scrollTo(0,res.offsetTop-70);if(score===order.length&&order.length>=3&&!(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches))shatter()}
 function shatter(){var cs=[].slice.call(sheet.querySelectorAll('div.q')),list=order.slice(),fx=[];
 cs.forEach(function(c){var r=c.getBoundingClientRect();if(r.bottom<-40||r.top>innerHeight+40)return;var ys=[0,12,26,40,55,70,85,100],pts=ys.map(function(y){return [50+(Math.random()*12-6),y]});
