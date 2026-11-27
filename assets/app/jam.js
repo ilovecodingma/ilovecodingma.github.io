@@ -50,6 +50,7 @@
   }
 
   async function save() {
+    if (!tok()) { msg('가입해야 알림이 간다. 위 상태창에서 가입하면 이세계가 시작되고 퀘스트가 날아온다.'); return; }
     if (!S.exams.length && !S.topics.length) { msg('하나도 안 골랐다. 뭘 알려 주라는 거냐.'); return; }
     if (!canPush()) { msg(ios && !standalone() ? '아이폰은 먼저 홈 화면에 추가해라. 그 앱에서 알림을 켜야 한다.' : '이 브라우저는 알림이 안 된다. 크롬·엣지·사파리 최신판을 써라.'); return; }
     const b = $('.jm-go'); b.disabled = true;

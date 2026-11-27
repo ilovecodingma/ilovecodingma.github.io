@@ -239,3 +239,10 @@ CREATE TABLE IF NOT EXISTS hit_daily (day TEXT NOT NULL, ch TEXT NOT NULL, path 
 
 -- 2026-11-19 검색엔진 유입 검색어 요약(리퍼러에 검색어가 붙어 올 때만 q 가 채워진다, 안 붙으면 q='')
 CREATE TABLE IF NOT EXISTS ref_q (day TEXT NOT NULL, eng TEXT NOT NULL, q TEXT NOT NULL DEFAULT '', path TEXT NOT NULL, n INTEGER NOT NULL DEFAULT 0, PRIMARY KEY (day, eng, q, path));
+
+-- 2026-11-27 「목표 추가 요청하기」: 우리 목록에 없는 목표를 회원이 요청 → 개발 세션이 플랜 템플릿을 만들어 goals.json 에 넣고 status=1 로 닫는다. 기존 DB 는 아래 CREATE 한 번 실행.
+CREATE TABLE IF NOT EXISTS goal_req (id INTEGER PRIMARY KEY AUTOINCREMENT, uid INTEGER NOT NULL, job TEXT, text TEXT NOT NULL, status INTEGER DEFAULT 0, created INTEGER, plan_id TEXT);
+CREATE INDEX IF NOT EXISTS goal_req_status ON goal_req (status, created);
+
+-- 2026-11-27 이세계 상태창 기록(활동·문제 점수)을 회원 계정에 저장. 기존 DB 는 아래 CREATE 한 번 실행.
+CREATE TABLE IF NOT EXISTS jam_log (uid INTEGER PRIMARY KEY, data TEXT, updated INTEGER);

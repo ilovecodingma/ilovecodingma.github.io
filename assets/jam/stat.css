@@ -1,0 +1,51 @@
+/* 상태창 — 사이버펑크 HUD */
+.js{position:relative;margin:16px 0;padding:18px 16px 14px;color:#d8fbff;font-family:ui-monospace,Consolas,"Malgun Gothic",monospace;background:linear-gradient(160deg,#07091a 0%,#10092a 100%);border:1px solid #00f0ff;clip-path:polygon(0 14px,14px 0,calc(100% - 22px) 0,100% 22px,100% calc(100% - 14px),calc(100% - 14px) 100%,22px 100%,0 calc(100% - 22px));box-shadow:inset 0 0 40px rgba(0,240,255,.12)}
+.js::before{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(0,240,255,.05) 0 1px,transparent 1px 3px);animation:jsScan 6s linear infinite}
+.js::after{content:"SYS//ONLINE";position:absolute;top:6px;right:30px;font-size:10px;letter-spacing:2px;color:#ff2bd6;opacity:.8}
+@keyframes jsScan{from{background-position:0 0}to{background-position:0 60px}}
+@keyframes jsGlitch{0%,92%,100%{transform:none;text-shadow:0 0 14px rgba(255,43,214,.7)}93%{transform:translate(-3px,1px);text-shadow:3px 0 #00f0ff,-3px 0 #ff2bd6}96%{transform:translate(3px,-1px);text-shadow:-3px 0 #00f0ff,3px 0 #ff2bd6}}
+.js-top{display:flex;gap:18px;align-items:center;position:relative;z-index:1}
+.js-gauge{flex:none;filter:drop-shadow(0 0 12px rgba(0,240,255,.6))}
+.js-id{min-width:0}.js-id small{color:#00f0ff;letter-spacing:1px;font-size:12px}
+.js-id h2{margin:2px 0;font-size:58px;line-height:1;color:#fff;animation:jsGlitch 4s steps(1) infinite}
+.js-t{margin:4px 0 8px;font-size:15px;color:#ff9be9;font-weight:800}
+.js-x{display:flex;flex-direction:column;gap:4px;max-width:280px}.js-x i{display:block;height:7px;background:#1b2140}.js-x b{display:block;height:100%;background:linear-gradient(90deg,#00f0ff,#ff2bd6)}
+.js-g{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:14px;align-items:center;margin-top:12px;position:relative;z-index:1}
+.js-sub,.js-q b{color:#00f0ff;font-size:12px;letter-spacing:1px}
+.js-r{display:grid;grid-template-columns:54px 1fr 28px;gap:8px;align-items:center;margin:8px 0;font-size:14px}
+.js-r i{display:flex;gap:2px}.js-r u{flex:1;height:12px;background:#1b2140;display:block;transform:skewX(-18deg)}.js-r u.on{background:linear-gradient(180deg,#00f0ff,#2b6cff);box-shadow:0 0 6px rgba(0,240,255,.7)}
+.js-r em{font-style:normal;text-align:right;font-weight:900;color:#fff}
+.js-say{position:relative;z-index:1;display:flex;gap:10px;align-items:center;margin:14px 0 6px;padding:10px 12px;background:rgba(255,43,214,.1);border-left:3px solid #ff2bd6}.js-say img{height:64px;width:auto;flex:none;filter:drop-shadow(0 0 10px rgba(255,43,214,.7))}.js-say span{font-weight:800;color:#fff}.js-say small{font-weight:400;color:#ffc9f4}
+.js-q{position:relative;z-index:1;margin-top:8px}.js-q ul{margin:6px 0 0;padding-left:18px}.js-q li{margin:4px 0}.js-q a{color:#ffeb5c;font-weight:800;text-decoration:none;border-bottom:1px dashed #ffeb5c}
+.js-m{position:relative;z-index:1;margin:10px 0 0;font-size:11px;color:#7aa9b3;letter-spacing:.5px}
+.js-zero,.js-low{border-color:#ff2b55}.js-zero::after,.js-low::after{content:"WARNING//LOW";color:#ff2b55}
+.js-high,.js-max{border-color:#ffe14d}.js-high::after,.js-max::after{content:"SYS//OVERCLOCK";color:#ffe14d}
+@media(max-width:620px){.js-top{flex-direction:column;text-align:center}.js-g{grid-template-columns:1fr}.js-id h2{font-size:46px}.js-x{margin:0 auto}}
+@media (prefers-reduced-motion:reduce){.js::before,.js-id h2{animation:none}}
+
+/* ── 마법사·플랜·이세계 미연시 ── */
+.js-hd{margin:14px 0 6px;color:#ff9be9;font-size:13px;letter-spacing:1px;position:relative;z-index:2}
+.js-opt{display:flex;flex-wrap:wrap;gap:8px;position:relative;z-index:2}.js-opt.js-col{flex-direction:column}
+.js-opt button,.js-btn,.js-ghost,.js-next{font:inherit;color:#d8fbff;background:rgba(0,240,255,.08);border:1px solid #00f0ff;padding:9px 14px;cursor:pointer;text-align:left;clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,8px 100%,0 calc(100% - 8px))}
+.js-opt button:hover,.js-btn:hover,.js-next:hover{background:rgba(0,240,255,.22);box-shadow:0 0 12px rgba(0,240,255,.5)}.js-opt button b{display:block}.js-opt button small{display:block;opacity:.7;margin-top:2px}
+.js-btn{display:inline-block;text-decoration:none;color:#fff;background:linear-gradient(90deg,#00a6b4,#c2179f);border:0;font-weight:800}.js-ghost{background:none;border-color:#44507a;color:#8fa3c8;font-size:13px}
+.js-next{margin-left:auto;display:block;font-weight:800;background:rgba(255,43,214,.15);border-color:#ff2bd6}
+.js-req{border-color:#ffeb5c!important;color:#ffeb5c!important;background:rgba(255,235,92,.08)!important}
+.js-ask{display:flex;gap:8px;position:relative;z-index:2}.js-ask input{flex:1;font:inherit;color:#fff;background:#0b0e22;border:1px solid #00f0ff;padding:9px 12px}
+.js-msg{position:relative;z-index:2;margin:10px 0 0;color:#ffeb5c}.js-say2{margin:6px 0 10px;color:#ffc9f4;position:relative;z-index:1}
+.js-vn{min-height:420px;padding:0;overflow:hidden}
+.js-vnbg{position:absolute;inset:0;background:radial-gradient(ellipse at 20% 30%,rgba(255,43,214,.25),transparent 55%),radial-gradient(ellipse at 85% 80%,rgba(0,240,255,.2),transparent 50%),repeating-linear-gradient(90deg,rgba(0,240,255,.06) 0 1px,transparent 1px 48px),repeating-linear-gradient(0deg,rgba(0,240,255,.06) 0 1px,transparent 1px 48px)}
+.js-por{position:absolute;left:8px;bottom:0;height:300px;width:auto;max-width:42%;filter:drop-shadow(0 0 16px rgba(255,43,214,.6));z-index:1;animation:jsFloat 3.4s ease-in-out infinite}
+@keyframes jsFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.js-dlg{position:relative;z-index:2;margin:18px 16px 10px 38%;padding:12px 14px;background:rgba(5,8,26,.88);border:1px solid #ff2bd6;box-shadow:0 0 18px rgba(255,43,214,.3)}
+.js-nm{display:block;color:#ff9be9;margin-bottom:6px}.js-nm small{color:#7f8fb8;font-weight:400;margin-left:6px}.js-tx{margin:0;min-height:48px;color:#fff;font-weight:700;line-height:1.6;cursor:pointer}
+.js-ch{position:relative;z-index:2;margin:0 16px 14px 38%}
+.js-open .js-por{animation:jsFloat 3.4s ease-in-out infinite,jsOpen .9s steps(1) 1}@keyframes jsOpen{0%{filter:brightness(4) hue-rotate(90deg)}40%{filter:brightness(1.6)}100%{filter:drop-shadow(0 0 16px rgba(255,43,214,.6))}}
+.js-goal{position:relative;z-index:1;margin:14px 0 0;padding:10px 12px;border:1px dashed #00f0ff;display:grid;gap:6px}.js-goal>b{font-size:17px;color:#fff}.js-goal>span{color:#ffeb5c;font-weight:800}
+.js-goal>i{display:block;height:7px;background:#1b2140}.js-goal>i b{display:block;height:100%;background:linear-gradient(90deg,#00f0ff,#ff2bd6)}
+.js-ph{display:flex;gap:6px;flex-wrap:wrap;font-size:12px}.js-ph span{padding:2px 8px;border:1px solid #33406a;color:#7f8fb8}.js-ph span.on{border-color:#ff2bd6;color:#fff;background:rgba(255,43,214,.2)}.js-ph span.pass{border-color:#00f0ff;color:#00f0ff}
+.js-tk{list-style:none;padding:0;margin:6px 0 0}.js-tk li{margin:6px 0}.js-tk li span{display:inline-block;width:20px;color:#00f0ff;font-weight:900}.js-tk li.ok a{opacity:.55;text-decoration:line-through}.js-tk a{color:#ffeb5c;font-weight:800;text-decoration:none}.js-ok{color:#7dffb0;margin:6px 0 0}
+@media(max-width:620px){.js-vn{min-height:0}.js-por{position:relative;display:block;margin:6px auto 0;height:170px;max-width:60%;left:0}.js-dlg,.js-ch{margin-left:14px;margin-right:14px}}
+.js-chk{font:inherit;font-weight:800;color:#fff;background:linear-gradient(90deg,#00a6b4,#c2179f);border:0;padding:5px 12px;cursor:pointer;margin-left:6px}.js-done{font-style:normal;color:#7dffb0;margin-left:6px}
+.js-ach{position:relative;z-index:1;margin-top:12px}.js-ach b{color:#00f0ff;font-size:12px;letter-spacing:1px}.js-ach ul{list-style:none;padding:0;margin:8px 0 0;display:flex;flex-wrap:wrap;gap:6px}
+.js-ach li{padding:4px 10px;border:1px solid #33406a;color:#6f7fa8;font-size:12px}.js-ach li.on{border-color:#ffe14d;color:#ffe14d;background:rgba(255,225,77,.1);box-shadow:0 0 10px rgba(255,225,77,.35)}.js-ach li i{font-style:normal;margin-right:5px}

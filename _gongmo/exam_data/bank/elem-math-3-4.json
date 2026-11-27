@@ -301,5 +301,7 @@
    "explain": "정답은 3번 60°이다.\n핵심 개념: 각도기가 없어도 직각을 기준으로 어림할 수 있다.\n풀이: 그림의 각은 직각보다 작고 직각의 반보다는 크다. 따라서 60°가 알맞다. 각을 직각 모서리와 겹쳐 보면 감이 잡힌다.\n오답 확인: 1번(30°) 직각의 3분의 1이므로 너무 작다. / 2번(90°) 직각과 같은 크기이다. / 4번(150°) 직각보다 많이 큰 크기이다.\n함정: 직각과 비교하며 어림한다.",
    "fig": "<svg viewBox=\"0 0 200 140\" width=\"200\" xmlns=\"http://www.w3.org/2000/svg\" font-size=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><line x1=\"30\" y1=\"120\" x2=\"170\" y2=\"120\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"30\" y1=\"120\" x2=\"100\" y2=\"-1\" stroke=\"currentColor\" stroke-width=\"2\"/><path d=\"M 60 120 A 30 30 0 0 0 45 94\" stroke=\"#ff4d7d\" fill=\"none\"/><text x=\"90\" y=\"108\" text-anchor=\"start\" fill=\"#ff4d7d\" stroke=\"none\" font-size=\"16\">?</text></svg>"
   }
- ]
+ ],
+ "hold": true,
+ "hold_reason": "자격증·실제 시험 위주로만 공개(사용자 11/27) — 교과·대학 전공 은행은 보류"
 }

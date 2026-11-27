@@ -40,3 +40,13 @@ PDF 새로 만듦 0 / 전체 450
 C:\Users\k\Desktop\adsense_sites\root\_gongmo\build.py:3024: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
   _today = (datetime.datetime.utcnow() + datetime.timedelta(hours=9)).strftime('%Y-%m-%d')
 contests 439 live 369 events 154 urls 3440 noindex 2218
+죽은 /c/ 링크 푼 페이지 13 / 죽은 /a/ 링크 정리 41 / 지난 이슈 링크 푼 페이지 14
+health ['깨진 내부 링크 2개', '빈 페이지 3개']
+git add 0 warning: in the working copy of '_gongmo/community_topics.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '_gongmo/exambank.py', LF will be replaced by 
+git diff 1 
+git commit 0 
+git pull 128 error: cannot pull with rebase: You have unstaged changes.
+error: Please commit or stash them.
+git push 0 
+2026-11-27 10:47 서치콘솔 사이트맵 재제출 성공 {'sitemap_index.xml': 204, 'sitemap.xml': 204}

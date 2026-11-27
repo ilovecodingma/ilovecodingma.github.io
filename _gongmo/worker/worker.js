@@ -247,7 +247,7 @@ export default {
         const id = u0.id, st = [];
         for (const t of ['sessions', 'posts', 'comments', 'reports', 'team_members', 'invite_codes', 'invited', 'user_prefs', 'team_images', 'oauth_links', 'user_items', 'prep', 'post_likes', 'seekers', 'crew_invites', 'kakao_alert', 'kakao_alert_nonce', 'page_comments', 'page_likes', 'page_ratings'])
           st.push(env.DB.prepare('DELETE FROM ' + t + ' WHERE user_id = ?').bind(id));
-        st.push(env.DB.prepare('DELETE FROM push_subs WHERE uid = ?').bind(id), env.DB.prepare('UPDATE hits SET uid = 0 WHERE uid = ?').bind(id), env.DB.prepare('DELETE FROM users WHERE id = ?').bind(id));
+        st.push(env.DB.prepare('DELETE FROM push_subs WHERE uid = ?').bind(id), env.DB.prepare('DELETE FROM jam_log WHERE uid = ?').bind(id), env.DB.prepare('DELETE FROM goal_req WHERE uid = ?').bind(id), env.DB.prepare('UPDATE hits SET uid = 0 WHERE uid = ?').bind(id), env.DB.prepare('DELETE FROM users WHERE id = ?').bind(id));
         await env.DB.batch(st);
         return json(req, { ok: true });
       }
@@ -281,7 +281,7 @@ export default {
       if (p === '/api/withdraw' && req.method === 'POST') {  // 회원 탈퇴: 계정·세션 삭제, 글은 '탈퇴한 회원'으로 숨김
         const u = await me(req, env); if (!u) return err(req, '로그인이 필요해요.', 401);
         await env.DB.batch([env.DB.prepare('UPDATE posts SET hidden = 1 WHERE user_id = ?').bind(u.id), env.DB.prepare('UPDATE comments SET hidden = 1 WHERE user_id = ?').bind(u.id), env.DB.prepare('UPDATE page_comments SET hidden = 1 WHERE user_id = ?').bind(u.id), env.DB.prepare('DELETE FROM page_likes WHERE user_id = ?').bind(u.id), env.DB.prepare('DELETE FROM page_ratings WHERE user_id = ?').bind(u.id),
-          env.DB.prepare('DELETE FROM sessions WHERE user_id = ?').bind(u.id), env.DB.prepare('DELETE FROM invite_codes WHERE user_id = ?').bind(u.id), env.DB.prepare('DELETE FROM user_prefs WHERE user_id = ?').bind(u.id), env.DB.prepare('DELETE FROM oauth_links WHERE user_id = ?').bind(u.id), env.DB.prepare('DELETE FROM user_items WHERE user_id = ?').bind(u.id), env.DB.prepare('DELETE FROM kakao_alert WHERE user_id = ?').bind(u.id), env.DB.prepare('DELETE FROM users WHERE id = ?').bind(u.id)]);
+          env.DB.prepare('DELETE FROM sessions WHERE user_id = ?').bind(u.id), env.DB.prepare('DELETE FROM invite_codes WHERE user_id = ?').bind(u.id), env.DB.prepare('DELETE FROM user_prefs WHERE user_id = ?').bind(u.id), env.DB.prepare('DELETE FROM jam_log WHERE uid = ?').bind(u.id), env.DB.prepare('DELETE FROM goal_req WHERE uid = ?').bind(u.id), env.DB.prepare('DELETE FROM oauth_links WHERE user_id = ?').bind(u.id), env.DB.prepare('DELETE FROM user_items WHERE user_id = ?').bind(u.id), env.DB.prepare('DELETE FROM kakao_alert WHERE user_id = ?').bind(u.id), env.DB.prepare('DELETE FROM users WHERE id = ?').bind(u.id)]);
         return json(req, { ok: true });
       }
       // ---- 글 ----
@@ -389,9 +389,36 @@ export default {
         const fl = v => v === undefined ? null : (v === 0 || v === false ? 0 : 1);
         const nqh = body.qh === undefined ? null : Math.min(23, Math.max(0, parseInt(body.qh, 10) || 0));
         const u = await me(req, env), n = await count(env, 'SELECT COUNT(*) n FROM push_subs');
+        if (!u) return err(req, '가입하고 로그인해야 알림을 받을 수 있어요.', 401);   // 2026-11-27 푸시는 회원만
         if (n > 20000) return err(req, '지금은 알림 등록이 많아요. 잠시 뒤에 다시 해 주세요.', 429);
         await env.DB.prepare('INSERT INTO push_subs (endpoint, p256dh, auth, cats, newc, dl, meal, uid, created, sent, fails, fit, fh, dl2, exams, topics, sch, qz, nw, sd, qh) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 0, 0, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ON CONFLICT(endpoint) DO UPDATE SET p256dh = excluded.p256dh, auth = excluded.auth, cats = excluded.cats, newc = excluded.newc, dl = excluded.dl, meal = excluded.meal, fit = excluded.fit, fh = excluded.fh, dl2 = excluded.dl2, exams = COALESCE(excluded.exams, push_subs.exams), topics = COALESCE(excluded.topics, push_subs.topics), sch = COALESCE(excluded.sch, push_subs.sch), qz = COALESCE(excluded.qz, push_subs.qz), nw = COALESCE(excluded.nw, push_subs.nw), sd = COALESCE(excluded.sd, push_subs.sd), qh = COALESCE(excluded.qh, push_subs.qh), uid = COALESCE(excluded.uid, push_subs.uid), fails = 0')
           .bind(ep, k.p256dh, k.auth, cats, body.newc === 0 ? 0 : 1, body.dl === 0 ? 0 : 1, body.meal === 1 ? 1 : 0, u ? u.id : null, now(), body.fit === 1 ? 1 : 0, Math.min(23, Math.max(0, parseInt(body.fh, 10) || 20)), body.dl2 === 1 ? 1 : 0, nexams, ntopics, fl(body.sch), fl(body.qz), fl(body.nw), fl(body.sd), nqh).run();
+        return json(req, { ok: true });
+      }
+      if (p === '/api/jam/sync' && req.method === 'POST') {   // 2026-11-27 이세계 상태창: 활동·점수 기록을 계정에 저장(기기를 바꿔도 이어짐)
+        const u = await me(req, env); if (!u) return err(req, '로그인이 필요해요.', 401);
+        const d = body.d && typeof body.d === 'object' ? body.d : {}, q = Array.isArray(body.q) ? body.q : [];
+        const keys = Object.keys(d).filter(k => /^\d{4}-\d\d-\d\d$/.test(k)).sort().slice(-120), dd = {};
+        for (const k of keys) { const v = d[k] || {}, vv = {}; for (const [c, n] of Object.entries(v.v || {})) if (/^[a-z]{2,8}$/.test(c)) vv[c] = Math.min(9999, Math.max(0, parseInt(n, 10) || 0)); dd[k] = { v: vv, p: (Array.isArray(v.p) ? v.p : []).filter(x => typeof x === 'string').slice(0, 80).map(x => x.slice(0, 80)) }; }
+        const qq = q.slice(-600).map(x => ({ t: Math.floor(+x.t) || 0, b: clean(x.b, 40), n: Math.min(200, Math.max(0, parseInt(x.n, 10) || 0)), s: Math.min(200, Math.max(0, parseInt(x.s, 10) || 0)) })).filter(x => x.t > 0);
+        const aa = {}; for (const [k, v] of Object.entries(body.a && typeof body.a === 'object' ? body.a : {}).slice(0, 60)) if (/^[a-z0-9_]{2,20}$/.test(k)) aa[k] = Math.floor(+v) || 0;   // 업적(id → 달성 시각)
+        const data = JSON.stringify({ d: dd, q: qq, a: aa });
+        if (data.length > 120000) return err(req, '기록이 너무 크다.', 413);
+        await env.DB.prepare('INSERT INTO jam_log (uid, data, updated) VALUES (?, ?, ?) ON CONFLICT(uid) DO UPDATE SET data = excluded.data, updated = excluded.updated').bind(u.id, data, now()).run();
+        return json(req, { ok: true });
+      }
+      if (p === '/api/jam/log') {
+        const u = await me(req, env); if (!u) return err(req, '로그인이 필요해요.', 401);
+        const r = await env.DB.prepare('SELECT data FROM jam_log WHERE uid = ?').bind(u.id).first('data');
+        return json(req, r ? JSON.parse(r) : { d: {}, q: [] });
+      }
+      if (p === '/api/goal/req' && req.method === 'POST') {   // 2026-11-27 「목표 추가 요청하기」: 우리 목록에 없는 목표를 접수 → 개발 세션이 플랜 템플릿을 만들어 넣는다
+        const u = await me(req, env); if (!u) return err(req, '로그인이 필요해요.', 401);
+        const text = clean(body.text, 60), job = clean(body.job, 12);
+        if (text.length < 2) return err(req, '내용을 적어 줘.');
+        const pend = await env.DB.prepare('SELECT COUNT(*) n FROM goal_req WHERE uid = ? AND status = 0').bind(u.id).first('n');
+        if (pend >= 3) return err(req, '아직 처리 안 된 요청이 세 개나 있다. 기다려라.', 429);
+        await env.DB.prepare('INSERT INTO goal_req (uid, job, text, status, created) VALUES (?, ?, ?, 0, ?)').bind(u.id, job, text, now()).run();
         return json(req, { ok: true });
       }
       if (p === '/api/push/unsub' && req.method === 'POST') {

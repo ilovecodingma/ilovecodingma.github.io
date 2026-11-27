@@ -301,5 +301,7 @@
    "explain": "정답은 3번 1000000 cm³이다.\n핵심 개념: 1 m는 100 cm이다.\n풀이: 1 m³는 가로 100 cm, 세로 100 cm, 높이 100 cm인 정육면체이다. 100×100×100=1000000이다.\n오답 확인: 1번(100 cm³) 1 m의 cm 값이다. / 2번(1000 cm³) 1 m를 10 cm로 본 값이다. / 4번(10000 cm³) 100을 두 번만 곱한 값이다.\n함정: 부피는 세 번 곱한다.",
    "fig": "<svg viewBox=\"0 0 200 100\" width=\"200\" xmlns=\"http://www.w3.org/2000/svg\" font-size=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><text x=\"10\" y=\"40\" text-anchor=\"start\" fill=\"currentColor\" stroke=\"none\" font-size=\"16\">1 m = 100 cm</text><text x=\"10\" y=\"70\" text-anchor=\"start\" fill=\"currentColor\" stroke=\"none\" font-size=\"16\">100×100×100</text></svg>"
   }
- ]
+ ],
+ "hold": true,
+ "hold_reason": "자격증·실제 시험 위주로만 공개(사용자 11/27) — 교과·대학 전공 은행은 보류"
 }

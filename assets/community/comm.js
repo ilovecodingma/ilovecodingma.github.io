@@ -26,11 +26,11 @@
 
   // ---- 로그인/가입 창 ----
   function authModal(onDone) {
-    const m = document.createElement('div'); m.className = 'cm-modal';
+    const m = document.createElement('div'); m.className = 'cm-modal cm-game';
     m.innerHTML = `<div class="cm-box" role="dialog" aria-label="로그인"><button class="cm-x" aria-label="닫기">✕</button>
-<h3>🚩 가입 · 로그인</h3><p class="note">이메일과 비밀번호만 있으면 돼요. 다른 정보는 받지 않아요.</p>
+<small class="cm-sys">SYS//HELL-JOSEON.EXE</small><h3>헬조선 생존기</h3><p class="note">가입하면 바로 시작된다. 눈 뜨면 이세계다. 이메일과 비밀번호만 있으면 돼.</p>
 <div class="cm-soc"><a class="soc kakao" href="${API}/api/oauth/kakao/start?back=${encodeURIComponent(location.pathname)}">💬 카카오로 시작</a><a class="soc google" href="${API}/api/oauth/google/start?back=${encodeURIComponent(location.pathname)}"><b>G</b> 구글로 시작</a></div><p class="cm-or">또는 이메일로</p><input type="email" class="cm-em" placeholder="이메일" autocomplete="email"><input type="password" class="cm-pw" placeholder="비밀번호 (8자 이상)" autocomplete="current-password">
-<p class="cm-err"></p><div class="cm-row"><button class="cm-login btn2">로그인</button><button class="cm-join btn2 ghost">처음이에요, 가입</button></div>
+<p class="cm-err"></p><div class="cm-row"><button class="cm-join btn2">▶ NEW GAME <small>처음이면 가입</small></button><button class="cm-login btn2 ghost">CONTINUE <small>로그인</small></button></div>
 <p class="note">가입하면 <a href="/terms/">이용약관</a>과 <a href="/privacy/">개인정보처리방침</a>에 동의한 것으로 봐요. 글쓴이 이름은 이메일 앞부분을 가려서(예: sun***) 표시해요.</p></div>`;
     document.body.appendChild(m);
     const em = m.querySelector('.cm-em'), pw = m.querySelector('.cm-pw'), er = m.querySelector('.cm-err');

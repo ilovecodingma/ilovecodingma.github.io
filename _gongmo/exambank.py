@@ -55,7 +55,7 @@ order.forEach(function(qi){var q=Q[qi],f=document.getElementById('q'+qi),sel=she
 f.className='q '+(ok?'ok':'no');f.querySelectorAll('label.o').forEach(function(l,i){l.querySelector('input').disabled=true;if(i===q.answer)l.className='o ans';else if(i===v)l.className='o wr'});
 f.querySelector('.rv').innerHTML='<b>'+(ok?'정답':(v<0?'미응답':'오답')+' · 정답 '+(q.answer+1)+'번')+'</b> '+'<span class="ex">'+esc(q.explain||'')+'</span>'+(q.fig?'<div class="fig">'+q.fig+'</div>':'')+(ok?'':ru(pick(WR)));
 if(ok)score++;else wrong.push(qi)});
-var prev=ld().filter(function(i){return order.indexOf(i)<0});sv(prev.concat(wrong));
+var prev=ld().filter(function(i){return order.indexOf(i)<0});sv(prev.concat(wrong));try{window.jamQ&&jamQ(D.id,order.length,score)}catch(e){}
 var p=Math.round(score*100/order.length),used=Math.round((Date.now()-tstart)/1000);
 res.innerHTML='<h3>결과: '+score+' / '+order.length+' ('+p+'점)'+' · 걸린 시간 '+fmt(used)+'</h3>'+ru(verdict(p,to))+'<p class="nt">틀린 문제 '+wrong.length+'개는 이 브라우저에만 저장돼(서버로 안 보내).</p>'+(wrong.length?'<div class="bar"><button id="b-wr">틀린 문제만 다시</button></div>':'');
 var w=document.getElementById('b-wr');if(w)w.onclick=function(){render(wrong.slice(),false);window.scrollTo(0,res.offsetTop-70)};
@@ -91,6 +91,24 @@ def _sec(d):
     if isinstance(d.get('sec_per_q'), (int, float)) and d['sec_per_q'] > 0:
         return int(d['sec_per_q'])
     return next((v for k, v in TIME_SEC if d['id'].startswith(k)), 60)
+
+
+
+HUBJS = ("<script>(function(){var tk;try{tk=localStorage.getItem('jupjup_tok')}catch(e){}if(!tk)return;"
+ "var API='https://jupjup-api.sung2011103.workers.dev';"
+ "fetch(API+'/api/me',{headers:{Authorization:'Bearer '+tk}}).then(function(r){return r.ok?r.json():null}).then(function(m){var P=m&&m.prefs;if(!P||!P.goal)return;"
+ "Promise.all([fetch('/assets/jam/goals.json').then(function(r){return r.json()}),fetch('/assets/jam/exams.json').then(function(r){return r.json()})]).then(function(a){"
+ "var G=a[0],X=a[1],banks=[],name='';"
+ "if(/^exam:/.test(P.goal)){var f=X.fams.filter(function(x){return 'exam:'+x.k===P.goal})[0];if(f){banks=f.banks;name=f.name+' 시험'}}"
+ "else{var g=G.goals.filter(function(x){return x.id===P.goal})[0];if(g){banks=g.bank||[];name=g.name}}"
+ "if(!banks.length)return;"
+ "var root=document.querySelector('.bk');if(!root)return;var lis=root.querySelectorAll('li[data-b]'),all=false;"
+ "function apply(){lis.forEach(function(li){li.hidden=!all&&banks.indexOf(li.getAttribute('data-b'))<0});"
+ "root.querySelectorAll('h2').forEach(function(h){var u=h.nextElementSibling;if(u&&u.tagName==='UL'){var any=[].some.call(u.children,function(c){return !c.hidden});h.hidden=u.hidden=!any}});}"
+ "var bar=document.createElement('p');bar.className='ai';bar.innerHTML='<b>내 목표: '+name.replace(/</g,'')+'</b> · 목표에 맞는 문제만 보여준다. <a href=\"#\" id=\"bk-all\">전체 보기</a>';"
+ "var h1=root.querySelector('h1');h1.parentNode.insertBefore(bar,h1.nextSibling.nextSibling||h1.nextSibling);"
+ "bar.querySelector('#bk-all').onclick=function(e){e.preventDefault();all=!all;this.textContent=all?'내 목표만 보기':'전체 보기';apply()};apply();"
+ "})}).catch(function(){})})();</script>")
 
 
 def _notes(bid):
@@ -174,13 +192,18 @@ def pages(page):
              [('홈', '/'), ('시험', '/exam/'), ('문제은행', '/exam/bank/'), (d['name'], f'/exam/bank/{d["id"]}/')])
         urls.append(f'/exam/bank/{d["id"]}/')
     def _li(L):
-        return ''.join(f'<li><a href="/exam/bank/{E(d["id"])}/"><b>{E(d["name"])}</b></a> {_badge(d)} <small>문제 {len(d["questions"])}개</small></li>' for d in L)
-    _sd = [d for d in banks if d.get('category') == '자기개발']
-    _ex = [d for d in banks if d.get('category') != '자기개발']
-    li = ('<h2>시험</h2><ul>' + _li(_ex) + '</ul>' + ('<h2>자기개발 <small>법률·시사·직무</small></h2><ul>' + _li(_sd) + '</ul>' if _sd else ''))
+        return ''.join(f'<li data-b="{E(d["id"])}"><a href="/exam/bank/{E(d["id"])}/"><b>{E(d["name"])}</b></a> {_badge(d)} <small>문제 {len(d["questions"])}개</small></li>' for d in L)
+    _grp = [('시험·자격증', lambda c: not (c.startswith('초등') or c.startswith('중·고등') or c.startswith('대학 전공') or c == '자기개발')),
+            ('초등 교과', lambda c: c.startswith('초등')), ('중·고등 교과', lambda c: c.startswith('중·고등')),
+            ('대학 전공 기초', lambda c: c.startswith('대학 전공')), ('자기개발', lambda c: c == '자기개발')]
+    li = ''
+    for _gn, _fn in _grp:
+        _L = [d for d in banks if _fn(d.get('category') or '')]
+        if _L:
+            li += '<h2>' + _gn + ' <small>' + str(len(_L)) + '개</small></h2><ul>' + _li(_L) + '</ul>'
     hub = ('<div class="bk"><p class="bc"><a href="/">홈</a> › <a href="/exam/">시험</a> › 문제은행</p><h1>시험 문제은행</h1>'
            '<p>시험별 연습문제. 풀고 해설 봐. 모든 문제는 AI 에이전트가 만들고 다른 AI 에이전트가 검수했습니다.'
-           f'{li}</div>' + CSS)
+           f'{li}</div>' + HUBJS + CSS)
     page('/exam/bank/', '시험 문제은행 — 자격증·공무원·수능 무료 연습문제 — 가난한 박과장', '자격증·공무원·수능 시험별 연습문제를 풀고 정답과 해설, 근거 링크를 확인해. 틀린 문제만 다시 풀 수 있어.', hub, [('홈', '/'), ('시험', '/exam/'), ('문제은행', '/exam/bank/')])
     urls.append('/exam/bank/')
     print('시험 문제은행', len(banks), '종')

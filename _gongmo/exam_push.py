@@ -61,6 +61,13 @@ def main():
             z = I.pick_quiz(I.csv(s['exams']), today, s['endpoint'])
             if z:
                 ok += out(s, I.quiz_msg(z, today, s['endpoint']))
+    elif mode == 'quest':   # 가입 회원의 목표(상태창)에 맞는 오늘의 퀘스트 — 구독자가 고른 시각(qh)에 매시 정각
+        for s in quest_subs(P, demo):
+            if int(s['qh'] if s['qh'] is not None else 8) != hour:
+                continue
+            m = quest_msg(s.get('prefs') or {}, today)
+            if m:
+                ok += out(s, m)
     elif mode == 'news':
         # 본 목록 갱신: 분야별 현재 항목을 한 번만 계산
         cur = {}
@@ -101,6 +108,66 @@ def main():
         st['last_' + mode] = datetime.datetime.now().isoformat(timespec='minutes')
         json.dump(st, open(STATE, 'w', encoding='utf-8'), ensure_ascii=False)
     print(f'보냄 {ok}')
+
+
+ROOT = os.path.dirname(HERE)
+QDEMO = [{'endpoint': 'demo-q1', 'qh': 8, 'prefs': {'job': 'corp', 'goal': 'exam:korcham', 'gdate': '2027-01-11', 'gstart': '2026-11-20'}},
+         {'endpoint': 'demo-q2', 'qh': 8, 'prefs': {'job': 'seeker', 'goal': 'exam:toeic', 'gdate': '2026-12-20', 'gstart': '2026-11-01'}}]
+
+
+def quest_subs(P, demo):
+    """푸시 구독 중 목표(user_prefs)가 있는 회원. 개인정보는 읽지 않고 job·goal·gdate·gstart 만 쓴다."""
+    if demo:
+        return QDEMO
+    out = []
+    for r in P.q('SELECT ps.endpoint, ps.p256dh, ps.auth, ps.qh, up.data FROM push_subs ps JOIN user_prefs up ON up.user_id = ps.uid WHERE ps.uid IS NOT NULL'):
+        try:
+            d = json.loads(r['data'] or '{}')
+        except Exception:
+            continue
+        if d.get('goal') and d.get('gdate'):
+            r['prefs'] = {k: d.get(k, '') for k in ('job', 'goal', 'gdate', 'gstart')}
+            out.append(r)
+    return out
+
+
+def _goal(gid):
+    """상태창(assets/jam/stat.js)과 같은 규칙: 'exam:<계열>' 은 시험 데이터로 즉석 플랜, 나머지는 goals.json"""
+    if gid.startswith('exam:'):
+        X = json.load(open(os.path.join(ROOT, 'assets', 'jam', 'exams.json'), encoding='utf-8'))
+        f = next((x for x in X['fams'] if 'exam:' + x['k'] == gid), None)
+        if not f:
+            return None
+        u = f'/exam/bank/{f["banks"][0]}/' if f['banks'] else '/exam/bank/'
+        return {'name': f['name'] + ' 시험', 'phases': [
+            {'name': '개념 잡기', 'share': .35, 'tasks': [{'t': '문제 5개 풀고 풀이를 읽어라', 'url': u}, {'t': '시험 일정부터 확인해라', 'url': '/exam/'}]},
+            {'name': '문제 풀이', 'share': .4, 'tasks': [{'t': '문제 15개 풀어라. 틀린 건 다시', 'url': u}]},
+            {'name': '실전 감각', 'share': .25, 'tasks': [{'t': '시간제로 문제 25개 풀어라', 'url': u}]}]}
+    G = json.load(open(os.path.join(ROOT, 'assets', 'jam', 'goals.json'), encoding='utf-8'))
+    return next((g for g in G['goals'] if g['id'] == gid), None)
+
+
+def quest_msg(p, today):
+    try:
+        g = _goal(p['goal'])
+        end = datetime.date.fromisoformat(p['gdate'])
+        st = datetime.date.fromisoformat(p['gstart']) if p.get('gstart') else today
+    except Exception:
+        return None
+    left = (end - today).days
+    if not g or left < 0:
+        return None
+    f = max(0, min(.9999, (today - st).days / max(1, (end - st).days)))
+    acc = 0
+    ph = g['phases'][-1]
+    for x in g['phases']:
+        acc += x['share']
+        if f < acc:
+            ph = x
+            break
+    tasks = ph['tasks'][:3]
+    body = '\n'.join('□ ' + t['t'] for t in tasks) + f'\n안 하면 생존 확률이 깎인다.'
+    return {'title': f'퀘스트 도착 · {g["name"]} D-{left}', 'body': body, 'url': (tasks[0].get('url') or '/me/') + '?src=push_quest', 'tag': 'jam-quest'}
 
 
 def health_pick(P, today, st):

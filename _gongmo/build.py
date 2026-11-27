@@ -69,7 +69,7 @@ EV_KIND = {'event': '이벤트', 'sweepstakes': '추첨 경품', 'quiz': '퀴즈
            'sns_tag_required': '친구 태그', 'sns_story_required': '스토리 공유', 'sns_capture': '캡처 인증', 'sns_form_only': '폼 응모',
            'sns_comment+form': '댓글+폼', 'sns_purchase': '구매 인증', 'sns_region': '지역 한정', 'sns_other': 'SNS 이벤트'}
 
-COMM_TAGS_TPL = '<link rel="stylesheet" href="/assets/community/comm.css?v=17"><script defer src="/assets/community/comm.js?v=34"></script><script defer src="/assets/community/crew.js?v=1"></script>'
+COMM_TAGS_TPL = '<link rel="stylesheet" href="/assets/community/comm.css?v=18"><script defer src="/assets/community/comm.js?v=35"></script><script defer src="/assets/community/crew.js?v=1"></script>'
 GTAG = ('<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4248498719773262" crossorigin="anonymous"></script>\n'
         '<script async src="https://www.googletagmanager.com/gtag/js?id=G-G9BPFF95GY"></script>\n'
         "<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());if(location.hostname!=='sungprofile.cloud')window['ga-disable-G-G9BPFF95GY']=true;gtag('config','G-G9BPFF95GY');</script>")
@@ -417,7 +417,7 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False, noinde
 <div><b>운영 정보</b><a href="/about/">소개·만드는 방식</a><a href="/corrections/">정정 기록</a><a href="/privacy/">개인정보처리방침</a><a href="/terms/">이용약관</a><a href="/contact/">문의</a></div></nav></div>
 {('<p class="ft-c"><span>외부 채널</span> ' + comm_btns() + '</p>') if COMM_LINKS else ''}
 <p class="ft-n">공고·보도·공개 자료를 AI로 모은 거야. 정확한 건 공식 공고에서 확인해. 일부 링크는 쿠팡 파트너스 수수료가 붙어. © 2026 {'가난한 박과장'} · sungprofile.cloud</p></div></footer>{CL_CSS if COMM_LINKS else ''}
-<script defer src="/assets/dday.js?v=1"></script></body></html>'''
+<script defer src="/assets/dday.js?v=1"></script><script defer src="/assets/jam/track.js?v=2"></script><script defer src="/assets/jam/hud.js?v=1"></script></body></html>'''
     doc = RURI_IMG_RX.sub(lambda m_: m_.group(0) if m_.group(1) else '', doc)   # 2026-11-03 사용자 방침: 루리는 메인이 아닌 요소(루리의 한마디 코너)로만. 헤더·푸터·히어로 그림은 뺀다(자산 파일 보존)
     doc = _attach_src(_no_disc(_dark(doc), path))   # 2026-11-27 흑화·불친절 컨셉
     d = os.path.join(ROOT, path.strip('/'))
@@ -6997,12 +6997,18 @@ def watch_pages():
 def app_page():
     # 2026-11-27 PWA 「잠이 오냐」: 관심 시험·분야를 고르면 일정·마감·오늘의 문제·새 소식을 푸시·메일로 쪼아 준다. 화면은 assets/app/jam.js, 목록은 assets/app/jam.json(interest.py 가 만든다), 발송은 _gongmo/exam_push.py·digest.py
     import interest as _IN
+    try:
+        import jam_exams as _JE; _JE.main()   # 상태창 목표 선택용 시험 목록(assets/jam/exams.json)
+    except Exception as _e:
+        print('jam_exams 실패', repr(_e)[:80])
     json.dump(_IN.catalog(), open(os.path.join(ROOT, 'assets', 'app', 'jam.json'), 'w', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))
     faq = [('알림은 얼마나 오냐?', '고른 시험 접수·시험일 D-7·3·1·당일, 지원금·청약·공모전 마감 3일 전부터, 오늘의 문제는 니가 고른 시각에 하나. 새 소식은 저녁에 모아서 한 번. 고른 것만 온다.'),
-           ('가입해야 하냐?', '폰 알림은 가입 없이 켠다. 메일은 로그인해야 받는다.'),
+           ('가입해야 하냐?', '알림은 가입해야 받는다. 가입하면 이세계가 시작되고 목표를 정한다. 목표에 맞는 퀘스트가 폰으로 날아온다.'),
+           ('목표가 목록에 없다.', '목표 정하는 화면에서 「목표 추가 요청하기」를 눌러라. 최대 하루 안에 내가 플랜을 새로 세워 놓는다.'),
            ('아이폰도 되냐?', 'iOS 16.4 이상 사파리에서 홈 화면에 추가하고, 그 앱을 열어서 알림을 켜라.'),
            ('끄고 싶다.', '이 화면에서 알림 끄기를 누르거나 폰 설정 → 알림에서 sungprofile.cloud 를 꺼라.')]
-    body = f'''<section id="jam"><noscript>자바스크립트를 켜야 시험을 고를 수 있다.</noscript></section>
+    body = f'''<div id="jam-stat"></div><link rel="stylesheet" href="/assets/jam/stat.css?v=1"><script defer src="/assets/jam/stat.js?v=1"></script>
+<section id="jam"><noscript>자바스크립트를 켜야 시험을 고를 수 있다.</noscript></section>
 <h2 style="max-width:640px;margin:24px auto 8px;font-size:17px">자주 묻는 질문</h2><div style="max-width:640px;margin:0 auto" class="jm-card">{"".join(f"<details><summary><b>{E(q)}</b></summary><p class='jm-sm'>{E(a)}</p></details>" for q, a in faq)}</div>
 <p class="note" style="max-width:640px;margin:14px auto">알림을 켜면 브라우저가 만든 알림 주소와 고른 시험·분야만 저장한다. 이름·전화번호는 안 받는다. 끄면 바로 지운다.</p>
 <link rel="stylesheet" href="/assets/app/jam.css?v=1"><script defer src="/assets/app/jam.js?v=1"></script>'''
@@ -7405,7 +7411,7 @@ def community(live=()):
 def me_pages():
     """내 공간(가입 혜택 모음) · 관리자 (2026-10-17)"""
     page('/me/', '내 공간 — 찜·응모 기록·마감 알림', '찜한 공모전·청약, 응모 기록, 마감 알림 메일, 자격 프로필, 청약 가점 계산기를 한곳에서.',
-         '''<section id="me" aria-label="내 공간"></section>''' + (('<section class="me-sec"><h2>💬 톡방</h2><p class="note">공모전·지원금 마감 소식을 매일 나눠.</p><p class="ft-c">' + comm_btns() + '</p></section>') if COMM_LINKS else '') + '''<link rel="stylesheet" href="/assets/me/me.css?v=3"><script defer src="/assets/me/me.js?v=5"></script>''', [('루리 줍줍', '/'), ('내 공간', '/me/')])
+         '''<div id="jam-stat"></div><link rel="stylesheet" href="/assets/jam/stat.css?v=1"><script defer src="/assets/jam/stat.js?v=1"></script><section id="me" aria-label="내 공간"></section>''' + (('<section class="me-sec"><h2>💬 톡방</h2><p class="note">공모전·지원금 마감 소식을 매일 나눠.</p><p class="ft-c">' + comm_btns() + '</p></section>') if COMM_LINKS else '') + '''<link rel="stylesheet" href="/assets/me/me.css?v=3"><script defer src="/assets/me/me.js?v=5"></script>''', [('루리 줍줍', '/'), ('내 공간', '/me/')])
     page('/login/', '로그인', '루리 줍줍 로그인 — 내 공간으로 이동해.', '<p>내 공간으로 이동하고 있어… <a href="/me/">이동하지 않으면 여기를 눌러 줘</a></p><script>location.replace("/me/"+location.search+location.hash)</script>', noindex=True)   # 2026-10-19 /login/ 404 → 내 공간(로그인 화면 포함)
     page('/admin/', '관리자', '관리자', '''<section id="admin"></section><section id="gsc-admin"></section><link rel="stylesheet" href="/assets/me/me.css?v=3"><script defer src="/assets/me/admin.js?v=7"></script>''', noindex=True)
 

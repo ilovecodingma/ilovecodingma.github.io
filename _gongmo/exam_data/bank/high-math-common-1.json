@@ -314,5 +314,7 @@
    "explain": "정답은 5번 5이다.\n핵심 개념: 연립이차방정식은 일차식을 대입하여 한 문자로 정리한 뒤 푼다.\n풀이: y=x-1 을 대입하면 x²+(x-1)²=13, 2x²-2x-12=0, x²-x-6=0 이므로 x=3 또는 x=-2 이다. 해는 (3, 2), (-2, -3) 이고 양수인 x+y 는 5 이다.\n오답 분석:\n①(1) x-y 의 값이다.\n②(3) 해의 x 좌표 3 이다.\n③(6) 해에서 xy 의 값이다.\n④(25) (x+y)² 의 값이다.\n함정: 해가 두 쌍이므로 x+y 가 5 와 -5 두 가지임에 유의하고 조건에 맞는 것을 고른다.",
    "fig": "<svg viewBox=\"0 0 380 300\" width=\"380\" xmlns=\"http://www.w3.org/2000/svg\"><line x1=\"34.0\" y1=\"150.0\" x2=\"346.0\" y2=\"150.0\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"190.0\" y1=\"266.0\" x2=\"190.0\" y2=\"34.0\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"344.0\" y=\"142.0\" font-size=\"14\" fill=\"currentColor\" text-anchor=\"end\">x</text><text x=\"200.0\" y=\"40.0\" font-size=\"14\" fill=\"currentColor\" text-anchor=\"start\">y</text><text x=\"180.0\" y=\"166.0\" font-size=\"14\" fill=\"currentColor\" text-anchor=\"start\">O</text><ellipse cx=\"190.0\" cy=\"150.0\" rx=\"112.5\" ry=\"83.6\" fill=\"none\" stroke=\"#ff4d7d\" stroke-width=\"2.5\"/><line x1=\"65.2\" y1=\"266.0\" x2=\"346.0\" y2=\"57.2\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"283.6\" cy=\"103.6\" r=\"4\" fill=\"#ff4d7d\"/><text x=\"291.6\" y=\"95.6\" font-size=\"14\" fill=\"currentColor\" text-anchor=\"start\">(3, 2)</text><circle cx=\"127.6\" cy=\"219.6\" r=\"4\" fill=\"#ff4d7d\"/><text x=\"135.6\" y=\"237.6\" font-size=\"14\" fill=\"currentColor\" text-anchor=\"start\">(-2, -3)</text></svg>"
   }
- ]
+ ],
+ "hold": true,
+ "hold_reason": "자격증·실제 시험 위주로만 공개(사용자 11/27) — 교과·대학 전공 은행은 보류"
 }

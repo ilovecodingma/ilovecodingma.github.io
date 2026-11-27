@@ -209,3 +209,11 @@
 /* UI 2차 15번: 광장 검색·분류 막대 */
 .cm-bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:8px 0}.cm-q{flex:1 1 200px;min-height:42px;padding:0 12px;border:1px solid var(--bd,#e5e7eb);border-radius:12px;font:inherit;background:var(--card,#fff);color:var(--tx,#111)}
 .cm-fk{display:flex;flex-wrap:wrap;gap:6px}.cm-fk button{min-height:38px;padding:0 13px;border:1px solid var(--bd,#e5e7eb);border-radius:999px;background:transparent;color:var(--mu,#6b7280);font:inherit;font-weight:700;cursor:pointer}.cm-fk button.on{background:var(--brand,#6d28d9);border-color:var(--brand,#6d28d9);color:#fff}
+
+/* 2026-11-27 가입창 = 게임 시작 화면 */
+.cm-game .cm-box{background:linear-gradient(160deg,#07091a,#10092a)!important;color:#d8fbff!important;border:1px solid #00f0ff!important;border-radius:0!important;font-family:ui-monospace,Consolas,"Malgun Gothic",monospace;clip-path:polygon(0 14px,14px 0,calc(100% - 22px) 0,100% 22px,100% calc(100% - 14px),calc(100% - 14px) 100%,22px 100%,0 calc(100% - 22px));box-shadow:0 0 40px rgba(0,240,255,.35)!important}
+.cm-game .cm-sys{display:block;color:#ff2bd6;letter-spacing:2px;font-size:11px}.cm-game h3{color:#fff!important;font-size:24px!important;text-shadow:0 0 14px rgba(255,43,214,.7);margin:4px 0}
+.cm-game .note,.cm-game small{color:#9fc4cc!important}.cm-game input{background:#0b0e22!important;color:#fff!important;border:1px solid #00f0ff!important;border-radius:0!important}
+.cm-game .cm-join{background:linear-gradient(90deg,#00a6b4,#c2179f)!important;color:#fff!important;border:0!important;border-radius:0!important;font-weight:900}.cm-game .cm-login{background:none!important;border:1px solid #44507a!important;color:#8fa3c8!important;border-radius:0!important}
+.cm-game .cm-join small,.cm-game .cm-login small{display:block;font-weight:400;font-size:11px}.cm-game .cm-err{color:#ffeb5c!important}
+.cm-game input{box-sizing:border-box!important;max-width:100%!important;width:100%!important}.cm-game .cm-box{overflow:hidden}
