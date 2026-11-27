@@ -52,14 +52,14 @@
       return;
     }
     el.innerHTML = ios
-      ? '<ol class="ap-steps"><li>사파리 아래쪽 <b>공유 버튼(□↑)</b>을 눌러요</li><li><b>홈 화면에 추가</b>를 눌러요</li><li>홈 화면의 <b>루리의 줍줍</b> 앱을 열고, 아래에서 알림을 켜요</li></ol><p class="ap-sm">아이폰은 iOS 16.4 이상, 사파리에서만 설치·알림이 돼요.</p>'
-      : '<ol class="ap-steps"><li>크롬 오른쪽 위 <b>⋮ 메뉴</b>를 눌러요</li><li><b>홈 화면에 추가</b> 또는 <b>앱 설치</b>를 눌러요</li><li>홈 화면의 <b>루리의 줍줍</b> 앱으로 열면 끝!</li></ol><p class="ap-sm">PC 크롬·엣지는 주소창 오른쪽 <b>설치(⊕)</b> 아이콘을 눌러도 돼요.</p>';
+      ? '<ol class="ap-steps"><li>사파리 아래쪽 <b>공유 버튼(□↑)</b>을 눌러요</li><li><b>홈 화면에 추가</b>를 눌러요</li><li>홈 화면의 <b>오늘 뭐하지</b> 앱을 열고, 아래에서 알림을 켜요</li></ol><p class="ap-sm">아이폰은 iOS 16.4 이상, 사파리에서만 설치·알림이 돼요.</p>'
+      : '<ol class="ap-steps"><li>크롬 오른쪽 위 <b>⋮ 메뉴</b>를 눌러요</li><li><b>홈 화면에 추가</b> 또는 <b>앱 설치</b>를 눌러요</li><li>홈 화면의 <b>오늘 뭐하지</b> 앱으로 열면 끝!</li></ol><p class="ap-sm">PC 크롬·엣지는 주소창 오른쪽 <b>설치(⊕)</b> 아이콘을 눌러도 돼요.</p>';
   }
   async function paintPush() {
     const el = ROOT.querySelector('.ap-push'), cats = JSON.parse(ROOT.dataset.cats || '[]');
     const on = await isOn(), cur = Object.assign({ cats: [], newc: true, dl: true, meal: true, fit: false, fh: 19, dl2: false }, get() || {});
-    el.innerHTML = `<label class="ap-sw ap-main"><input type="checkbox" class="ap-meal" ${cur.meal ? 'checked' : ''}> 🍽️ <b>오늘 뭐 먹지?</b> 점심·저녁 메뉴 추천 (11:30·17:30쯤, 하루 최대 2번)</label>
-<p class="ap-sm">관심 분야를 고르면 <b>새 공모전이 올라온 날 저녁에 한 번</b>, <b>인기 공모전 마감 3일 전</b>에 폰으로 알려 드려요. 하루 최대 2번이에요.</p>
+    el.innerHTML = `<input type="checkbox" class="ap-meal" hidden>
+<p class="ap-sm">관심 분야를 고르면 <b>새 소식이 올라온 날 저녁에 한 번</b>, <b>인기 공모전 마감 3일 전</b>에 폰으로 알려 드려요. 하루 최대 2번이에요.</p>
 <div class="ap-cats">${cats.map(([s, n, i]) => `<button data-c="${s}" class="${cur.cats.includes(s) ? 'on' : ''}">${i} ${esc(n)}</button>`).join('')}</div><p class="ap-sm">하나도 안 고르면 전체 분야로 받아요.</p>
 <label class="ap-sw"><input type="checkbox" class="ap-newc" ${cur.newc ? 'checked' : ''}> 🆕 새 공모전 올라오면 (저녁 7시쯤 모아서)</label>
 <label class="ap-sw"><input type="checkbox" class="ap-dl" ${cur.dl ? 'checked' : ''}> ⏰ 인기 공모전 마감 3일 전 (아침 9시쯤)</label>
@@ -182,7 +182,7 @@
       addEventListener('beforeinstallprompt', e => {
         e.preventDefault(); const ev = e;
         if (n < 2 || Date.now() - last < 7 * 864e5) return;
-        const b = document.createElement('div'); b.className = 'app-ins'; b.innerHTML = '<span>📲 <b>오늘 뭐 먹지?</b>를 앱으로 설치하면<br>점심·저녁 메뉴를 알려 드려요</span><button class="go">설치</button><button class="no">나중에</button>';
+        const b = document.createElement('div'); b.className = 'app-ins'; b.innerHTML = '<span>📲 <b>오늘 뭐하지</b> 앱을 설치하면<br>시험 일정·마감 소식을 알려 드려요</span><button class="go">설치</button><button class="no">나중에</button>';
         document.body.appendChild(b); localStorage.setItem('jupjup_ins_ask', Date.now()); ga('app_install_banner');
         b.querySelector('.no').onclick = () => b.remove();
         b.querySelector('.go').onclick = async () => { ev.prompt(); const r = await ev.userChoice.catch(() => ({})); ga('app_install_click', { outcome: r && r.outcome, from: 'banner' }); b.remove(); };

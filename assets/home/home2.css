@@ -88,7 +88,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
   .op-c::before,.op-p::before{content:attr(data-l) ' ';font-size:12.5px;font-weight:600;color:#64748b}
 }
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
-@media(prefers-color-scheme:dark){:root:not([data-theme=light]) .h2-top,:root:not([data-theme=light]) .h2-sec{--tx:#e6e9ee;--mu:#a5afbd;--bd:#273040;--br:#a78bfa}
+@media all{:root:not([data-theme=light]) .h2-top,:root:not([data-theme=light]) .h2-sec{--tx:#e6e9ee;--mu:#a5afbd;--bd:#273040;--br:#a78bfa}
 :root:not([data-theme=light]) .h2-s .row,:root:not([data-theme=light]) .rd-f,:root:not([data-theme=light]) .h2-s .res{background:#161a21}
 :root:not([data-theme=light]) .h2-s select{background:#1d232d;color:#e6e9ee}
 :root:not([data-theme=light]) .h2-s .go{background:#7c3aed}}

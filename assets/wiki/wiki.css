@@ -91,3 +91,17 @@ main.w.wk{max-width:1280px;width:100%}
 .wk-sr{margin-bottom:8px}.wk-sr li.no{padding:6px 10px;font-size:13.5px;color:var(--mu,#6b7280)}
 .wk-all a{display:flex;justify-content:space-between;gap:8px;padding:7px 10px;font-size:14px;font-weight:700;color:var(--tx,#111);text-decoration:none;border-radius:8px}
 .wk-all a:hover{background:color-mix(in srgb,var(--pri,#6d28d9) 6%,transparent)}.wk-all a small{color:var(--mu,#6b7280);font-weight:700;font-size:12px}
+/* 2026-11-25 박과장 위키 새 디자인: 남색 히어로 + 둥근 카드 */
+.wk-hero{margin:0 0 26px;padding:34px 28px 24px;border-radius:20px;background:radial-gradient(120% 140% at 85% 0%,#2b3a85 0%,#131a2e 55%);color:#e5e9f5;border:1px solid #232c48}
+.wk-hero h1{margin:0 0 8px;color:#fff;font-size:34px;letter-spacing:-.03em;border:0}
+.wk-hero p{margin:0 0 18px;color:#aeb7d6;line-height:1.65;max-width:620px}
+.wk-hero .wk-hq{background:#1a2340;border:1px solid #2a3558;color:#fff;max-width:620px}
+.wk-hero .wk-hq::placeholder{color:#7f8aae}
+.wk-hero .wk-chips a{color:#c7cee6;border:1px solid #2a3558;background:#1a2340;padding:7px 14px;border-radius:999px}
+.wk-hero .wk-chips a:hover{border-color:#5b6bdc;color:#fff}
+.wk-hero .wk-sc button{background:#1a2340;color:#c7cee6;border:1px solid #2a3558}
+.wk-hero .wk-sc button.on{background:#4f5bd5;color:#fff;border-color:#4f5bd5}
+.wk-card{border-radius:16px;border:1px solid #e1e4f2;background:#fff}
+.wk-card h2{color:#131a2e}
+.wk-list a:hover{background:#f1f2fb}
+.wk-start{border-radius:16px}

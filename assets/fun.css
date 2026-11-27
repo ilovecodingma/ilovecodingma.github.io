@@ -1,5 +1,5 @@
 :root{--acc:#7c5cff;--acc2:#ff6fb1;--bg:#faf7ff;--fg:#241f3a;--mut:#6d6786;--card:#fff;--bd:#e7e1fa;--soft:#f1ecff;--ok:#18a874;--no:#e5484d;--sh:0 8px 28px rgba(80,50,160,.10)}
-@media(prefers-color-scheme:dark){:root{--bg:#14111f;--fg:#f1eefc;--mut:#a9a2c4;--card:#1e1a2f;--bd:#352f4f;--soft:#2a2442;--sh:0 8px 28px rgba(0,0,0,.35)}}
+@media all{:root{--bg:#14111f;--fg:#f1eefc;--mut:#a9a2c4;--card:#1e1a2f;--bd:#352f4f;--soft:#2a2442;--sh:0 8px 28px rgba(0,0,0,.35)}}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.7 Pretendard,"Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",system-ui,sans-serif;word-break:keep-all}

@@ -211,7 +211,7 @@ main.w:has(.hx-hero){max-width:none;padding:0}
 .hot-home li,.nw-home li,.hot-home ol{min-width:0}.hot-home li a b{min-width:0;overflow-wrap:anywhere}
 
 /* 다크 모드 */
-@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#13111f;--card:#1d1a2e;--tx:#ece9ff;--mu:#a49fc7;--bd:#2e2a47;--accbg:#3a2012;--sh:0 1px 2px rgba(0,0,0,.4);--sh2:0 18px 40px -18px rgba(0,0,0,.7)}
+@media all{:root:not([data-theme=light]){--bg:#13111f;--card:#1d1a2e;--tx:#ece9ff;--mu:#a49fc7;--bd:#2e2a47;--accbg:#3a2012;--sh:0 1px 2px rgba(0,0,0,.4);--sh2:0 18px 40px -18px rgba(0,0,0,.7)}
  .hx-hero{background:radial-gradient(70% 90% at 90% 10%,#4a2a17 0%,transparent 60%),radial-gradient(60% 70% at 0% 100%,#2a1c4a 0%,transparent 55%),#13111f}
  .hx-eyebrow,.hx-chips a,.hx-search{background:var(--card);color:var(--tx)}
  .hx-card,.hx-bubble{background:var(--card);border-color:var(--bd)}

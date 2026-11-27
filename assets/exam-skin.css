@@ -1,19 +1,24 @@
-/* 전체 사이트 스킨 2026-11-25 — 수험·평생교육·자기개발 개편. 짙은 남색 헤더·푸터 + 인디고 포인트, 본문은 밝게 유지(기존 글 가독성). 레퍼런스: certoday */
-:root{--pri:#4f5bd5;--pri2:#3f4ab8;--pbg:#eceefc;--brand:#4f5bd5;--acc:#4f5bd5;--bg:#f5f6fb;--bd:#e1e4f2;--tx:#131a2e;--mu:#56607f;--gold:#b45309;--navy:#131a2e;--navy2:#1a2340}
-body{background:var(--bg);color:var(--tx)}
-.hd{background:var(--navy)!important;border-bottom:1px solid #232c48}
+/* 흑화 스킨 2026-11-27 — 항상 어두운 화면, 거의 검정 바탕 + 붉은 핑크 강조. (기존 CSS의 어두운 화면 규칙은 빌드에서 상시 적용으로 바꿨다) */
+:root,:root:not([data-theme=light]){--bg:#090a10;--card:#11131c;--tx:#e8eaf2;--mu:#9097ad;--bd:#242838;--pri:#ff4d7d;--pri2:#ff7a9d;--pbg:#2a1420;--brand:#ff4d7d;--acc:#ff4d7d;--gold:#fbbf24;--gbg:#2a2112;--red:#ff5c7a;--rbg:#3a1420;--ok:#5eead4;--okbg:#123230;--sh:0 1px 2px rgba(0,0,0,.5);color-scheme:dark}
+html,body{background:var(--bg)!important;color:var(--tx)}
+.hd{background:#07080d!important;border-bottom:1px solid #1b1e2c}
 .hd .logo,.hd .logo span,.hd .logo span b{color:#fff!important}
-.hd .gn a,.hd .hd-s{color:#c7cee6!important}
+.hd .gn a,.hd .hd-s{color:#b4b9cc!important}
 .hd .gn a:hover,.hd .gn a.on,.hd .gn a[aria-current]{color:#fff!important}
-.hd .gn a.on,.hd .gn a[aria-current=page]{box-shadow:inset 0 -2px 0 #8b97ff}
-.hd .gn-cur{color:#aab4ff!important}
-.tb{background:#fff;border-bottom:1px solid var(--bd)}
-.tb a.on{color:var(--pri)!important;box-shadow:inset 0 -2px 0 var(--pri)}
-.ft{background:#0e1424!important;color:#9aa4c4}
-.ft-l a,.ft-g a{color:#c7cee6!important}.ft-l a:hover,.ft-g a:hover{color:#fff!important}
-.ft-g b,.ft-b b{color:#fff!important}
-.ft-m a{color:#aab4ff!important}
-a{color:var(--pri2)}
-button.go,.btn,.btn-p{background:var(--pri)}
-h1,h2,h3{letter-spacing:-.02em}
+.hd .gn a.on,.hd .gn a[aria-current=page]{box-shadow:inset 0 -2px 0 #ff4d7d}
+.hd .gn-cur{color:#ff7a9d!important}
+.tb{background:#0d0f17!important;border-bottom:1px solid var(--bd)}
+.tb a.on{color:#ff7a9d!important;box-shadow:inset 0 -2px 0 #ff4d7d}
+.ft{background:#05060a!important;color:#8b91a6;border-top:1px solid #151826}
+.ft-l a,.ft-g a{color:#b4b9cc!important}.ft-l a:hover,.ft-g a:hover{color:#fff!important}
+.ft-g b,.ft-b b{color:#fff!important}.ft-m a{color:#ff7a9d!important}
+a{color:#ff7a9d}
+h1,h2,h3{letter-spacing:-.02em;color:#f3f4fa}
 main.w{max-width:1120px}
+table,th,td{border-color:var(--bd)}
+th{background:#171a26!important;color:#e8eaf2}
+td{background:transparent}
+input,select,textarea{background:#11131c;color:#e8eaf2;border-color:#2a2e40}
+details.att{margin:30px 0 0;padding:10px 14px;border:1px dashed #2c3043;border-radius:10px;background:#0d0f17;font-size:13.5px;color:#9097ad}
+details.att summary{cursor:pointer;font-weight:700;color:#b4b9cc}
+details.att .gm-l{margin:10px 0 0}

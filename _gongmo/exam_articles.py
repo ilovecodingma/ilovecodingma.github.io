@@ -33,8 +33,14 @@ def _items():
     return out
 
 
+def _ids(x):
+    """exam_id 는 문자열 하나 또는 목록(글 하나가 시험 둘 이상일 때)."""
+    v = x.get('exam_id') or []
+    return [v] if isinstance(v, str) else [i for i in v if isinstance(i, str)]
+
+
 def related(eid, limit=6):
-    return [(x['url'], x['title']) for x in _items() if x.get('exam_id') == eid][:limit]
+    return [(x['url'], x['title']) for x in _items() if eid in _ids(x)][:limit]
 
 
 def pages(page):
@@ -48,7 +54,8 @@ def pages(page):
         names = {}
     groups = {}
     for x in items:
-        groups.setdefault(x.get('exam_id') or '', []).append(x)
+        for i in (_ids(x) or ['']):
+            groups.setdefault(i, []).append(x)
     order = sorted(groups, key=lambda k: (k == '', -len(groups[k]), k))
     secs = ''
     for k in order:
@@ -59,7 +66,7 @@ def pages(page):
     body = ('<div class="bk"><p class="bc"><a href="/">홈</a> › <a href="/exam/">시험</a> › 시험 글 모음</p><h1>시험 글 모음</h1>'
             f'<p>수능·정시·자격증·공무원 등 시험 관련 글 {len(items)}편을 시험별로 모았어요. 일정과 예상 컷은 <a href="/exam/">시험 허브</a>, 연습문제는 <a href="/exam/bank/">문제은행</a>에서 볼 수 있어요.</p>'
             + secs + '</div>')
-    page('/exam/articles/', '시험 글 모음 — 수능·정시·자격증 가이드 한곳에 — 루리 줍줍', f'시험 관련 가이드·이슈 글 {len(items)}편을 시험별로 모았습니다. 일정·접수·합격 기준을 한곳에서 찾아보세요.', body,
+    page('/exam/articles/', '시험 글 모음 — 수능·정시·자격증 가이드 한곳에 — 가난한 박과장', f'시험 관련 가이드·이슈 글 {len(items)}편을 시험별로 모았습니다. 일정·접수·합격 기준을 한곳에서 찾아보세요.', body,
          [('홈', '/'), ('시험', '/exam/'), ('시험 글 모음', '/exam/articles/')])
     print('시험 글 모음', len(items), '편')
     return ['/exam/articles/']

@@ -17,19 +17,68 @@ CSS = ('<style>.bk{max-width:820px;margin:0 auto;line-height:1.75}.bk h2{margin:
        '.bk .nt{font-size:13px;color:#64748b}.bk .play button{display:block;width:100%;text-align:left;margin:6px 0;padding:12px 14px;border:1px solid #cbd5e1;border-radius:10px;background:#fff;font-size:16px;cursor:pointer;min-height:44px}'
        '.bk .play button.ok{background:#dcfce7;border-color:#16a34a}.bk .play button.no{background:#fee2e2;border-color:#dc2626}.bk .play .ex{margin:10px 0;padding:10px 12px;background:#f8fafc;border-radius:8px}'
        '.bk .bar{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}.bk .bar button{padding:10px 14px;border:1px solid #2563eb;border-radius:8px;background:#2563eb;color:#fff;cursor:pointer;min-height:44px}.bk .bar button.g{background:#fff;color:#2563eb}'
-       '@media (prefers-color-scheme:dark){.bk .q,.bk .play button{border-color:#334155;background:transparent;color:inherit}.bk .play .ex{background:#1e293b}}</style>')
-JS = r'''<script>(function(){var el=document.getElementById('bk-data');if(!el)return;var D=JSON.parse(el.textContent),Q=D.questions,key='bk_wrong_'+D.id;var box=document.getElementById('bk-play'),idx=0,score=0,order=[],wrong=[];
-function sv(){try{localStorage.setItem(key,JSON.stringify(wrong))}catch(e){}}function ld(){try{return JSON.parse(localStorage.getItem(key)||'[]')}catch(e){return[]}}
-function start(list){order=list.slice();idx=0;score=0;wrong=[];show()}
-function show(){if(idx>=order.length){var old=ld();box.innerHTML='<h3>결과: '+score+' / '+order.length+'</h3><p class="nt">틀린 문제 '+wrong.length+'개는 이 브라우저에만 저장돼요(서버로 보내지 않아요).</p><div class="bar"><button id="b-again">처음부터 다시</button>'+(wrong.length?'<button class="g" id="b-wr">틀린 문제만 다시</button>':'')+'</div>';document.getElementById('b-again').onclick=function(){start(Q.map(function(_,i){return i}))};var w=document.getElementById('b-wr');if(w)w.onclick=function(){start(wrong.slice())};return}
-var q=Q[order[idx]],h='<p class="nt">'+(idx+1)+' / '+order.length+'</p><p><b>'+esc(q.q)+'</b></p>';q.choices.forEach(function(c,i){h+='<button data-i="'+i+'">'+(i+1)+'. '+esc(c)+'</button>'});box.innerHTML=h;
-box.querySelectorAll('button').forEach(function(b){b.onclick=function(){var i=+b.getAttribute('data-i');if(i===q.answer){score++}else{wrong.push(order[idx]);sv()}
-box.querySelectorAll('button').forEach(function(x){x.disabled=true;var j=+x.getAttribute('data-i');if(j===q.answer)x.className='ok';else if(j===i)x.className='no'});
-var e=document.createElement('div');e.className='ex';e.innerHTML='<b>'+(i===q.answer?'정답이에요.':'정답은 '+(q.answer+1)+'번이에요.')+'</b> '+esc(q.explain||'')+(q.ref_url?' <a href="'+esc(q.ref_url)+'" target="_blank" rel="noopener nofollow">근거 보기</a>':'');box.appendChild(e);
-var n=document.createElement('div');n.className='bar';n.innerHTML='<button>다음 문제</button>';box.appendChild(n);n.firstChild.onclick=function(){idx++;show()}}})}
+       '.bk .ai{padding:10px 14px;border-radius:10px;background:#eef0ff;border:1px solid #c7cdf5;color:#26336a;font-size:14px}.bk .ai b{color:#4f5bd5}.bk .ru{display:flex;gap:10px;align-items:center;margin:8px 0 10px;padding:10px 12px;background:#1a2340;border-radius:12px 12px 12px 4px;color:#e5e9f5}.bk .ru img{flex:0 0 auto;border-radius:8px}.bk .ru p{margin:0;font-weight:700}.bk .clk{font-weight:800;font-size:18px;color:#b8235a;margin:0 0 4px}'
+       '.bk .setup{border:1px solid #cbd5e1;border-radius:16px;padding:16px 18px;margin:16px 0;background:rgba(79,91,213,.05)}.bk .setup h2{margin:0 0 10px;font-size:18px}.bk .setup .row{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;margin:10px 0}.bk .setup .row b{min-width:58px}.bk .setup .grp{display:inline-flex;flex-wrap:wrap;gap:6px}.bk .setup .grp button{padding:9px 14px;border:1px solid #cbd5e1;border-radius:999px;background:#fff;color:#131a2e;cursor:pointer;font-weight:700;min-height:40px}.bk .setup .grp button.on{background:#4f5bd5;border-color:#4f5bd5;color:#fff}.bk .setup input[type=number]{width:110px;padding:9px 10px;border:1px solid #cbd5e1;border-radius:10px;min-height:40px}.bk div.q{border:1px solid #d6dbf0;border-radius:16px;margin:16px 0;padding:18px 18px 14px;background:#fff;box-shadow:0 2px 10px rgba(30,40,100,.07)}.bk .qt{margin:0 0 6px;font-weight:700;line-height:1.7}.bk .qt .n{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;margin-right:8px;border-radius:50%;background:#131a2e;color:#fff;font-size:14px}.bk label.o{display:block;padding:11px 14px;margin:8px 0;border:1.5px solid #d6dbf0;border-radius:12px;cursor:pointer;line-height:1.55;background:#fff}.bk label.o:hover{border-color:#4f5bd5}.bk label.o:has(input:checked){border-color:#4f5bd5;background:#eef0ff;box-shadow:0 0 0 2px rgba(79,91,213,.2)}.bk label.o input{position:absolute;opacity:0;pointer-events:none}.bk label.o em{font-style:normal;display:inline-block;min-width:22px;color:#4f5bd5;font-weight:800}.bk div.q.ok{border-color:#16a34a}.bk div.q.no{border-color:#dc2626}.bk label.ans{background:#dcfce7!important;border-color:#16a34a!important}.bk label.wr{background:#fee2e2!important;border-color:#dc2626!important}.bk .rv{margin-top:10px;line-height:1.7}.bk .clk{position:sticky;top:60px;z-index:5;margin:0 0 8px;padding:8px 12px;border-radius:10px;background:#131a2e;color:#ff7ab6;font-weight:800;font-size:18px}.bk #bk-grade,.bk #bk-start{padding:14px 30px;font-size:17px}'
+       '.bk .play .setup button,.bk .play .bar button{display:inline-block;width:auto;text-align:center;margin:0 6px 6px 0;font-size:15px}.bk .play .setup .grp button{margin:0}.bk .play .bar button{padding:12px 22px;border-radius:10px}.bk .setup input[type=number]{background:#fff;color:#131a2e}'
+       '.bk div.q{background:#fff;color:#131a2e}.bk div.q .rv{color:#131a2e}'
+       '.bk #bk-start,.bk #bk-grade,.bk #b-go,.bk #b-wr{background:#4f5bd5;color:#fff;border-color:#4f5bd5}.bk #bk-start:hover,.bk #bk-grade:hover{background:#3f4ab8}'
+       '@keyframes bkTear{0%{transform:none;opacity:1}18%{transform:translate(calc(var(--dx)*.18),-14px) rotate(calc(var(--r)*.3))}100%{transform:translate(var(--dx),var(--dy)) rotate(var(--r));opacity:0}}@keyframes bkHand{from{transform:translate(110%,-30px) rotate(9deg);opacity:0}to{transform:none;opacity:1}}.bk-half{background:#fff!important;box-shadow:0 4px 14px rgba(0,0,0,.5)}.bk-tearmsg{position:fixed;left:50%;top:40%;z-index:99999;transform:translate(-50%,-50%) rotate(-3deg);padding:12px 20px;background:#ff4d7d;color:#fff;font-size:22px;font-weight:800;border-radius:6px;white-space:nowrap;pointer-events:none;animation:bkMsg 1.5s ease-out forwards}@keyframes bkMsg{0%{opacity:0;transform:translate(-50%,-50%) rotate(-3deg) scale(.7)}12%{opacity:1;transform:translate(-50%,-50%) rotate(-3deg) scale(1.05)}85%{opacity:1}100%{opacity:0}}.bk div.q:nth-child(3n+1){transform:rotate(-.5deg)}.bk div.q:nth-child(3n+2){transform:rotate(.45deg) translateX(3px)}.bk div.q:nth-child(3n){transform:rotate(-.25deg) translateX(-3px)}@media (prefers-reduced-motion:reduce){.bk div.q{transform:none!important}}'
+       '@media (prefers-color-scheme:dark){.bk div.q{background:#1a2340;color:#e5e9f5;border-color:#2a3558}.bk div.q .rv{color:#e5e9f5}.bk label.o{background:#131a2e;border-color:#2a3558;color:#e5e9f5}.bk label.o:has(input:checked){background:#26336a}.bk .setup .grp button{background:#1a2340;color:#e5e9f5;border-color:#2a3558}.bk label.ans{background:#0f3d24!important;color:#e5e9f5}.bk label.wr{background:#4a1620!important;color:#e5e9f5}.bk .q,.bk .play button{border-color:#334155;background:transparent;color:inherit}.bk .play .ex{background:#1e293b}}</style>')
+JS = r'''<script>(function(){var el=document.getElementById('bk-data');if(!el)return;var D=JSON.parse(el.textContent),Q=D.questions,key='bk_wrong_'+D.id;
+var sheet=document.getElementById('bk-sheet'),res=document.getElementById('bk-res'),clock=document.getElementById('bk-clock'),gb=document.getElementById('bk-grade'),rs=document.getElementById('bk-reset'),setup=document.getElementById('bk-setup'),info=document.getElementById('bk-info'),nin=document.getElementById('bk-n'),bar=document.getElementById('bk-gbar');
+var cfg={n:'all',m:'p',o:'seq',r:'all'},order=[],timed=false,tmr=null,tleft=0,tstart=0,graded=false,SEC=D.sec_per_q||60;
+var IMG='/assets/ruri/o_sn_smirk_s.webp',FB='/assets/ruri/o_present_s.webp';
+var WR=['이걸 틀려? 남들은 이미 땄다더라.','이 점수로 취직하겠냐?','찍었냐? 찍어도 이건 안 틀리겠다.','틀렸어. 해설 읽어. 읽으라고 써 놨으니까.','이거라도 해야 먹고살지 않겠냐?','아깝지도 않냐. 그냥 몰랐던 거잖아.','시험장에서 이러면 올해도 끝이다.','이 정도는 외우고 와야지. 누가 대신 풀어 주냐?'];
+function pick(a){return a[Math.floor(Math.random()*a.length)]}
 function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
-var w0=ld();document.getElementById('bk-start').onclick=function(){start(Q.map(function(_,i){return i}))};var rb=document.getElementById('bk-redo');if(rb){if(w0.length){rb.hidden=false;rb.textContent='지난번 틀린 문제 '+w0.length+'개 다시 풀기'}rb.onclick=function(){start(ld())}}
-var sh=document.getElementById('bk-shuf');if(sh)sh.onclick=function(){var a=Q.map(function(_,i){return i});for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t}start(a)}})();</script>'''
+function ru(t){return '<div class="ru"><img src="'+IMG+'" width="56" height="78" alt="비웃는 루리" onerror="this.onerror=null;this.src=\''+FB+'\'"><p>'+esc(t)+'</p></div>'}
+function fmt(s){s=Math.max(0,s);var m=Math.floor(s/60),r=s%60;return m+':'+(r<10?'0':'')+r}
+function sv(w){try{localStorage.setItem(key,JSON.stringify(w))}catch(e){}}function ld(){try{return JSON.parse(localStorage.getItem(key)||'[]')}catch(e){return[]}}
+function all(){return Q.map(function(_,i){return i})}
+function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t}return a}
+function verdict(p,to){if(to)return '시간 초과. 시험장은 안 기다려 준다.';if(p>=90)return '니가? 만점이라고? 남들은 이미 땄다.';if(p>=70)return '그 점수로 취직하겠냐. 틀린 거나 다시 풀어.';if(p>=40)return '이 점수에 잠이 오냐?';return '기초부터 다시 해. 지금 자면 내년에도 똑같다.'}
+function pool(){return cfg.r==='wrong'?ld().filter(function(i){return Q[i]}):all()}
+function count(){var p=pool().length;var n=cfg.n==='all'?p:parseInt(cfg.n,10);if(!(n>0))n=p;return Math.min(n,p)}
+function refresh(){var n=count();info.textContent=n+'문제 · '+(cfg.m==='t'?'시간제 '+Math.max(1,Math.round(n*SEC/60))+'분 (끝나면 자동 채점)':'시간 제한 없음')+' · '+(cfg.o==='shuf'?'섞어서':'순서대로')}
+function mark(g,v){g.querySelectorAll('button').forEach(function(b){b.classList.toggle('on',b.getAttribute('data-'+g.getAttribute('data-k'))===String(v))})}
+setup.querySelectorAll('.grp').forEach(function(g){var k=g.getAttribute('data-k');g.querySelectorAll('button').forEach(function(b){b.onclick=function(){var v=b.getAttribute('data-'+k);cfg[k]=v;if(k==='n')nin.value='';mark(g,v);refresh()}})});
+nin.oninput=function(){var v=parseInt(nin.value,10);if(v>0){cfg.n=String(v);mark(setup.querySelector('.grp[data-k=n]'),'-')}else{cfg.n='all'}refresh()};
+var w0=ld().filter(function(i){return Q[i]});var wb=setup.querySelector('[data-r=wrong]');if(wb){if(w0.length){wb.hidden=false;wb.textContent='지난번 틀린 문제 '+w0.length+'개'}}
+function render(list,t){order=list.slice();timed=!!t;graded=false;clearInterval(tmr);res.innerHTML='';rs.hidden=true;gb.hidden=false;bar.hidden=false;clock.hidden=true;setup.hidden=true;
+var h='';order.forEach(function(qi,n){var q=Q[qi];h+='<div class="q" id="q'+qi+'"><p class="qt"><b class="n">'+(n+1)+'</b>'+esc(q.q)+'</p>';q.choices.forEach(function(c,i){h+='<label class="o"><input type="radio" name="q'+qi+'" value="'+i+'"><span><em>'+(i+1)+'</em>'+esc(c)+'</span></label>'});h+='<div class="rv"></div></div>'});sheet.innerHTML=h;sheet.hidden=false;
+if(timed){tleft=Math.max(60,Math.round(order.length*SEC));tstart=Date.now();clock.hidden=false;clock.textContent='남은 시간 '+fmt(tleft);tmr=setInterval(function(){tleft--;clock.textContent='남은 시간 '+fmt(tleft);if(tleft<=0){clearInterval(tmr);grade(true)}},1000)}else{tstart=Date.now()}}
+function grade(to){if(graded)return;graded=true;clearInterval(tmr);var score=0,wrong=[];
+order.forEach(function(qi){var q=Q[qi],f=document.getElementById('q'+qi),sel=sheet.querySelector('input[name=q'+qi+']:checked'),v=sel?+sel.value:-1,ok=v===q.answer;
+f.className='q '+(ok?'ok':'no');f.querySelectorAll('label.o').forEach(function(l,i){l.querySelector('input').disabled=true;if(i===q.answer)l.className='o ans';else if(i===v)l.className='o wr'});
+f.querySelector('.rv').innerHTML='<b>'+(ok?'정답':(v<0?'미응답':'오답')+' · 정답 '+(q.answer+1)+'번')+'</b> '+esc(q.explain||'')+(q.ref_url?' <a href="'+esc(q.ref_url)+'" target="_blank" rel="noopener nofollow">근거 보기</a>':'')+(ok?'':ru(pick(WR)));
+if(ok)score++;else wrong.push(qi)});
+var prev=ld().filter(function(i){return order.indexOf(i)<0});sv(prev.concat(wrong));
+var p=Math.round(score*100/order.length),used=Math.round((Date.now()-tstart)/1000);
+res.innerHTML='<h3>결과: '+score+' / '+order.length+' ('+p+'점)'+' · 걸린 시간 '+fmt(used)+'</h3>'+ru(verdict(p,to))+'<p class="nt">틀린 문제 '+wrong.length+'개는 이 브라우저에만 저장돼(서버로 안 보내).</p>'+(wrong.length?'<div class="bar"><button id="b-wr">틀린 문제만 다시</button></div>':'');
+var w=document.getElementById('b-wr');if(w)w.onclick=function(){render(wrong.slice(),false);window.scrollTo(0,res.offsetTop-70)};
+gb.hidden=true;rs.hidden=false;clock.hidden=true;window.scrollTo(0,res.offsetTop-70);if(score===order.length&&order.length>=3&&!(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches))shatter()}
+function shatter(){var cs=[].slice.call(sheet.querySelectorAll('div.q')),list=order.slice(),fx=[];
+cs.forEach(function(c){var r=c.getBoundingClientRect();if(r.bottom<-40||r.top>innerHeight+40)return;var ys=[0,12,26,40,55,70,85,100],pts=ys.map(function(y){return [50+(Math.random()*12-6),y]});
+var L='polygon(0 0,'+pts.map(function(p){return p[0].toFixed(1)+'% '+p[1]+'%'}).join(',')+',0 100%)',R='polygon('+pts.map(function(p){return p[0].toFixed(1)+'% '+p[1]+'%'}).join(',')+',100% 100%,100% 0)';
+[[L,-1],[R,1]].forEach(function(h){var cl=c.cloneNode(true);cl.removeAttribute('id');cl.className='q bk-half';cl.style.cssText='position:fixed;left:'+r.left+'px;top:'+r.top+'px;width:'+r.width+'px;height:'+r.height+'px;margin:0;z-index:99998;pointer-events:none;clip-path:'+h[0]+';--dx:'+(h[1]*(70+Math.random()*130))+'px;--dy:'+(420+Math.random()*420)+'px;--r:'+(h[1]*(8+Math.random()*26))+'deg;animation:bkTear 1.1s cubic-bezier(.45,0,.85,.5) '+(Math.random()*.2)+'s forwards';document.body.appendChild(cl);fx.push(cl)});c.style.visibility='hidden'});
+var tp=document.createElement('div');tp.className='bk-tearmsg';tp.textContent='니가? 만점이라고? 인정 안 해. 다시 풀어.';document.body.appendChild(tp);
+setTimeout(function(){fx.forEach(function(e){e.remove()});tp.remove();render(list,false);[].slice.call(sheet.querySelectorAll('div.q')).forEach(function(c,k){c.style.animation='bkHand .7s cubic-bezier(.2,1.2,.4,1) '+(k*.09)+'s both'});res.innerHTML=ru('니가? 만점이라고? 새 시험지 줄 테니까 다시 풀어.');setTimeout(function(){[].slice.call(sheet.querySelectorAll('div.q')).forEach(function(c){c.style.animation=''})},700+list.length*90+400)},1500)}
+function gate(){var n=count(),list=pool();if(cfg.o==='shuf')list=shuffle(list);list=list.slice(0,n);if(!list.length){res.innerHTML='<p class="nt">풀 문제가 없어.</p>';return}
+setup.hidden=true;res.innerHTML='<div class="ai"><b>읽고 시작해</b><br>'+(D.method==='rework'?'이 문제는 AI 에이전트들이 실제 기출문제를 찾아 읽고 분석한 뒤, 기출 문장을 베끼지 않고 새로 만든 거야. 검수도 다른 AI 에이전트가 했고 사람이 한 검수가 아니야. 실제 시험이랑 달라. 정답과 법령은 공식 자료로 다시 확인해.':'이 문제는 AI 에이전트가 공식 자료를 근거로 새로 만들었고, 검수도 다른 AI 에이전트가 했어. 사람이 한 검수가 아니야. 기출 원문이 아니야. 정답과 법령은 공식 자료로 다시 확인해.')+'</div><p class="nt">'+list.length+'문제 · '+(cfg.m==='t'?'시간제 '+Math.max(1,Math.round(list.length*SEC/60))+'분. 시간 끝나면 자동 채점':'시간 제한 없음. 다 풀고 채점')+'</p><div class="bar"><button id="b-go">시작</button><button class="g" id="b-no">설정으로</button></div>';
+document.getElementById('b-go').onclick=function(){render(list,cfg.m==='t');window.scrollTo(0,0)};document.getElementById('b-no').onclick=function(){res.innerHTML='';setup.hidden=false}}
+document.getElementById('bk-start').onclick=gate;
+gb.onclick=function(){grade(false)};
+rs.onclick=function(){sheet.hidden=true;sheet.innerHTML='';res.innerHTML='';bar.hidden=true;setup.hidden=false;refresh();window.scrollTo(0,setup.offsetTop-70)};
+sheet.hidden=true;bar.hidden=true;refresh()})();</script>'''
+
+
+TIME_SEC = [('csat-math', 200), ('csat-english', 55), ('csat-', 60), ('toeic', 45), ('realtor', 150), ('korean-history', 84), ('sqld', 108), ('adsp', 108), ('engineer-info', 90), ('aws', 83), ('driver', 60)]   # 실제 시험의 문항당 시간(초) 기준 안. 은행 파일의 sec_per_q 가 있으면 그것을 쓴다.
+
+
+def _sec(d):
+    if isinstance(d.get('sec_per_q'), (int, float)) and d['sec_per_q'] > 0:
+        return int(d['sec_per_q'])
+    return next((v for k, v in TIME_SEC if d['id'].startswith(k)), 60)
 
 
 def _load():
@@ -40,6 +89,8 @@ def _load():
         except Exception:
             continue
         qs = [q for q in d.get('questions', []) if q.get('q') and isinstance(q.get('choices'), list) and len(q['choices']) >= 2 and isinstance(q.get('answer'), int) and 0 <= q['answer'] < len(q['choices'])]
+        if d.get('hold'):
+            continue   # 검증 전 보류(공개 안 함)
         if d.get('id') and qs:
             d['questions'] = qs
             out.append(d)
@@ -47,7 +98,7 @@ def _load():
 
 
 def _badge(d):
-    return ('<span class="bd pb">공식 공개 기출</span>' if d.get('kind') == 'public' else '<span class="bd">공식 자료 기반 유사문제</span>')
+    return ('<span class="bd pb">공식 공개 기출</span>' if d.get('kind') == 'public' else ('<span class="bd">AI가 기출을 분석해 개편한 문제</span>' if d.get('method') == 'rework' else '<span class="bd">공식 자료 기반 유사문제</span>'))
 
 
 def pages(page):
@@ -59,26 +110,41 @@ def pages(page):
         src = d.get('source') or {}
         srct = (f'출처: <a href="{E(src["url"])}" target="_blank" rel="noopener nofollow">{E(src.get("name", "공식 자료"))}</a>' if src.get('url') else E(src.get('name', '')))
         lic = f' · 이용 조건: {E(src["license"])}' if src.get('license') else ''
-        note = ('이 문제는 기출 원문이 아니라 위 공식 자료(법령·공고)를 근거로 실제 시험과 비슷한 유형으로 새로 쓴 유사문제예요. 실제 시험 문제와 다르고, 법령은 바뀔 수 있어 시험 전에 공식 자료로 한 번 더 확인하세요.'
-                if d.get('kind') != 'public' else '기관이 재사용을 허용한 기출문제예요. 이용 조건을 지켜 올렸어요.')
+        note = (('이 문제는 AI 에이전트들이 실제 기출문제를 찾아 읽고 분석한 뒤, 기출 문장을 베끼지 않고 새로 만든 거야. 검수도 다른 AI 에이전트가 했고 사람이 한 검수가 아니야. 실제 시험이랑 달라. 정답과 법령은 공식 자료로 다시 확인해.'
+                 if d.get('method') == 'rework' else '이 문제는 AI 에이전트가 공식 자료를 근거로 새로 만들었고, 검수도 다른 AI 에이전트가 했어. 사람이 한 검수가 아니야. 기출 원문이 아니야. 정답과 법령은 공식 자료로 다시 확인해.')
+                if d.get('kind') != 'public' else '기관이 재사용을 허용한 기출문제야. 이용 조건을 지켜서 올렸어.')
         lst = ''
         for i, q in enumerate(d['questions'], 1):
             lst += (f'<div class="q"><p><b class="n">{i}.</b>{E(q["q"])}</p><ol class="c">' + ''.join(f'<li>{E(c)}</li>' for c in q['choices']) + '</ol>'
                     f'<details><summary>정답과 해설</summary><p>정답 {q["answer"] + 1}번. {E(q.get("explain", ""))}' + (f' <a href="{E(q["ref_url"])}" target="_blank" rel="noopener nofollow">근거 보기</a>' if q.get('ref_url') else '') + '</p></details></div>')
         eu = f'/exam/{d["exam_id"]}/' if d.get('exam_id') and os.path.exists(os.path.join(os.path.dirname(HERE), 'exam', d['exam_id'], 'index.html')) else ''
-        data = json.dumps({'id': d['id'], 'questions': [{'q': q['q'], 'choices': q['choices'], 'answer': q['answer'], 'explain': q.get('explain', ''), 'ref_url': q.get('ref_url', '')} for q in d['questions']]}, ensure_ascii=False).replace('</', '<' + chr(92) + '/')
+        data = json.dumps({'id': d['id'], 'sec_per_q': _sec(d), 'method': d.get('method', ''), 'questions': [{'q': q['q'], 'choices': q['choices'], 'answer': q['answer'], 'explain': q.get('explain', ''), 'ref_url': q.get('ref_url', '')} for q in d['questions']]}, ensure_ascii=False).replace('</', '<' + chr(92) + '/')
+        AINOTE = ('<p class="ai"><b>AI 제작·AI 검수</b> · 에이전트가 실제 기출을 읽고 새로 만들었고, 다른 에이전트가 검수했어. 사람 검수 아니야.</p>' if d.get('method') == 'rework' else '')
+        _n = len(d['questions'])
+        _setup = ('<div class="setup" id="bk-setup"><h2>시험 볼 거면 정해</h2>'
+                  f'<div class="row"><b>문제 수</b><span class="grp" data-k="n"><button data-n="10">10</button><button data-n="20">20</button><button data-n="all" class="on">전체 {_n}</button></span><input type="number" id="bk-n" min="1" max="{_n}" placeholder="직접 입력" aria-label="문제 수 직접 입력"></div>'
+                  '<div class="row"><b>방식</b><span class="grp" data-k="m"><button data-m="p" class="on">풀고 채점</button><button data-m="t">시간제</button></span></div>'
+                  '<div class="row"><b>순서</b><span class="grp" data-k="o"><button data-o="seq" class="on">순서대로</button><button data-o="shuf">섞기</button></span></div>'
+                  '<div class="row"><b>범위</b><span class="grp" data-k="r"><button data-r="all" class="on">전체</button><button data-r="wrong" hidden>지난번 틀린 문제</button></span></div>'
+                  '<p class="nt" id="bk-info"></p><div class="bar"><button id="bk-start">시작해</button></div></div>')
         body = (f'<div class="bk"><p class="bc"><a href="/">홈</a> › <a href="/exam/">시험</a> › <a href="/exam/bank/">문제은행</a> › {E(d["name"])}</p><h1>{E(d["name"])} 문제은행 {_badge(d)}</h1>'
-                f'<p class="nt">{srct}{lic}</p><p>{E(note)}</p>' + (f'<p><a href="{eu}">이 시험의 일정·접수·발표일 보기 →</a></p>' if eu else '')
-                + f'<div class="play" id="bk-play"><div class="bar"><button id="bk-start">문제 {len(d["questions"])}개 풀기 시작</button><button class="g" id="bk-shuf">섞어서 풀기</button><button class="g" id="bk-redo" hidden>지난번 틀린 문제 다시</button></div></div>'
-                f'<h2>전체 문제 보기</h2>{lst}<script type="application/json" id="bk-data">{data}</script>' + '</div>' + CSS + JS)
-        page(f'/exam/bank/{d["id"]}/', f'{d["name"]} 문제은행 — 무료 연습문제 {len(d["questions"])}개 — 루리 줍줍', f'{d["name"]} 연습문제 {len(d["questions"])}개를 한 문제씩 풀고 정답·해설과 근거를 확인합니다. 틀린 문제만 다시 풀 수 있어요.', body,
+                f'<p class="nt">{srct}{lic}</p>{AINOTE}<p>{E(note)}</p>' + (f'<p><a href="{eu}">이 시험의 일정·접수·발표일 보기 →</a></p>' if eu else '')
+                + '<div class="play" id="bk-play">' + _setup
+                + '<div id="bk-res"></div><p class="clk" id="bk-clock" hidden></p><form id="bk-sheet" onsubmit="return false" hidden></form>'
+                '<div class="bar" id="bk-gbar" hidden><button id="bk-grade">채점하기</button></div><div class="bar"><button class="g" id="bk-reset" hidden>설정으로 돌아가기</button></div></div>'
+                f'<noscript>{lst}</noscript><script type="application/json" id="bk-data">{data}</script>' + '</div>' + CSS + JS)
+        page(f'/exam/bank/{d["id"]}/', f'{d["name"]} 문제은행 — 무료 연습문제 {len(d["questions"])}개 — 가난한 박과장', f'{d["name"]} 연습문제 {len(d["questions"])}개(멀티 에이전트가 기출문제를 분석해 다시 개편한 문제)를 한 문제씩 풀고 정답·해설과 근거를 확인해. 틀린 문제만 다시 풀 수 있어.', body,
              [('홈', '/'), ('시험', '/exam/'), ('문제은행', '/exam/bank/'), (d['name'], f'/exam/bank/{d["id"]}/')])
         urls.append(f'/exam/bank/{d["id"]}/')
-    li = ''.join(f'<li><a href="/exam/bank/{E(d["id"])}/"><b>{E(d["name"])}</b></a> {_badge(d)} <small>문제 {len(d["questions"])}개</small></li>' for d in banks)
+    def _li(L):
+        return ''.join(f'<li><a href="/exam/bank/{E(d["id"])}/"><b>{E(d["name"])}</b></a> {_badge(d)} <small>문제 {len(d["questions"])}개</small></li>' for d in L)
+    _sd = [d for d in banks if d.get('category') == '자기개발']
+    _ex = [d for d in banks if d.get('category') != '자기개발']
+    li = ('<h2>시험</h2><ul>' + _li(_ex) + '</ul>' + ('<h2>자기개발 <small>법률·시사·직무</small></h2><ul>' + _li(_sd) + '</ul>' if _sd else ''))
     hub = ('<div class="bk"><p class="bc"><a href="/">홈</a> › <a href="/exam/">시험</a> › 문제은행</p><h1>시험 문제은행</h1>'
-           '<p>자격증·공무원·수능 등 시험별 연습문제를 한 문제씩 풀고 해설을 확인합니다. 기출문제를 옮기지 않고, 실제 시험과 비슷한 유형으로 공식 자료(법령·공고)를 근거로 새로 쓴 유사문제만 올리며, 문제마다 근거 링크를 답니다. 시험이 계속 늘어납니다.</p>'
-           f'<ul>{li}</ul></div>' + CSS)
-    page('/exam/bank/', '시험 문제은행 — 자격증·공무원·수능 무료 연습문제 — 루리 줍줍', '자격증·공무원·수능 시험별 연습문제를 풀고 정답과 해설, 근거 링크를 확인합니다. 틀린 문제만 다시 풀 수 있어요.', hub, [('홈', '/'), ('시험', '/exam/'), ('문제은행', '/exam/bank/')])
+           '<p>시험별 연습문제. 풀고 해설 봐. 모든 문제는 AI 에이전트가 만들었습니다. 기출을 열람할 수 있었던 시험은 실제 기출을 읽고 분석해 새로 만들었고(각 문제은행에 표시), 검수도 다른 AI 에이전트가 했습니다. 사람이 검수한 것이 아니며 기출 원문 그대로도 아닙니다. 정답은 공식 자료로 다시 확인하세요.</p>'
+           f'{li}</div>' + CSS)
+    page('/exam/bank/', '시험 문제은행 — 자격증·공무원·수능 무료 연습문제 — 가난한 박과장', '자격증·공무원·수능 시험별 연습문제를 풀고 정답과 해설, 근거 링크를 확인해. 틀린 문제만 다시 풀 수 있어.', hub, [('홈', '/'), ('시험', '/exam/'), ('문제은행', '/exam/bank/')])
     urls.append('/exam/bank/')
     print('시험 문제은행', len(banks), '종')
     return urls

@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-27 09:00",
+ "updated": "2026-11-27 10:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -16136,6 +16136,19 @@
    "page": "",
    "registered": "2026-11-02",
    "expires": "2026-11-09"
+  },
+  {
+   "query": "12월 1일 수능 최종 정답 17시·종부세 납부 시작, 2일 공인중개사 발표",
+   "tier": "중기",
+   "signal": [
+    "뉴스",
+    "구글트렌드"
+   ],
+   "score": 5,
+   "status": "작성",
+   "page": "/issue/dec-1-2-deadlines-suneung-answer-jongbuse-realtor-1127/",
+   "registered": "2026-11-27",
+   "expires": "2026-12-03"
   },
   {
    "query": "전세사기 최소보장제 신청 대상과 방법, 시행 예정 내용 정리",

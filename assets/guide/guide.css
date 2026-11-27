@@ -37,7 +37,7 @@
 .gs details.faq summary{cursor:pointer;font-weight:700;padding:11px 0;font-size:16px}
 .g-src{margin:30px 0;padding:16px 18px;border-radius:16px;background:var(--card,#fff);border:1px solid var(--bd,#e5e7eb)}
 .g-src h2{font-size:18px;margin:0 0 8px}
-@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .gs-warn{background:#3a2a0e;color:#fde68a;border-color:#b45309}}
+@media all{:root:not([data-theme=light]) .gs-warn{background:#3a2a0e;color:#fde68a;border-color:#b45309}}
 @media print{.g-toc{display:none}}
 
 /* 공용 정보성 글(.art): 공모 가이드·평론·개발 글 등 — 내용은 그대로, 겉모양만 */
