@@ -1,0 +1,280 @@
+{
+ "id": "transfer-english-basic",
+ "name": "편입 영어 핵심 문제",
+ "category": "대학 입시",
+ "kind": "original",
+ "method": "original",
+ "sec_per_q": 60,
+ "source": {
+  "name": "중앙대학교 2025학년도 편입학전형 영어 문제지",
+  "url": "https://admission.cau.ac.kr/files/2025/2025_cau_pi_eng.pdf",
+  "license": "기출을 분석해 문항을 새로 개편, 사실 확인은 공식 자료 참고"
+ },
+ "updated": "2026-11-25",
+ "questions": [
+  {
+   "q": "다음 문장의 밑줄 친 부분과 의미가 가장 가까운 것을 고르시오.\n\nThe senator's laconic reply disappointed reporters who had hoped for a detailed explanation.",
+   "choices": [
+    "verbose",
+    "terse",
+    "evasive",
+    "hostile"
+   ],
+   "answer": 1,
+   "explain": "laconic 은 '말수가 적은, 간결한'. 자세한 설명을 기대했다는 문맥과 맞는다.",
+   "ref_url": "https://admission.cau.ac.kr/files/2025/2025_cau_pi_eng.pdf"
+  },
+  {
+   "q": "다음 문장의 밑줄 친 부분과 의미가 가장 가까운 것을 고르시오.\n\nThe beauty of the sunset was ephemeral, fading within minutes.",
+   "choices": [
+    "eternal",
+    "overwhelming",
+    "deceptive",
+    "short-lived"
+   ],
+   "answer": 3,
+   "explain": "ephemeral 은 '순식간의, 덧없는'. 몇 분 안에 사라졌다는 설명과 일치한다.",
+   "ref_url": "https://admission.cau.ac.kr/files/2025/2025_cau_pi_eng.pdf"
+  },
+  {
+   "q": "다음 문장의 밑줄 친 부분과 의미가 가장 가까운 것을 고르시오.\n\nHer prudent investment strategy protected her savings during the crash.",
+   "choices": [
+    "judicious",
+    "reckless",
+    "lavish",
+    "ambitious"
+   ],
+   "answer": 0,
+   "explain": "prudent 는 '신중한', judicious 는 '분별 있는'. 폭락장에서 저축을 지켰다는 결과와 어울린다.",
+   "ref_url": "https://admission.cau.ac.kr/files/2025/2025_cau_pi_eng.pdf"
+  },
+  {
+   "q": "다음 문장의 밑줄 친 부분과 의미가 가장 가까운 것을 고르시오.\n\nMobile phones have become ubiquitous in modern life.",
+   "choices": [
+    "scarce",
+    "controversial",
+    "omnipresent",
+    "expensive"
+   ],
+   "answer": 2,
+   "explain": "ubiquitous 는 '어디에나 있는'. omnipresent 와 동의어이다.",
+   "ref_url": "https://admission.cau.ac.kr/files/2025/2025_cau_pi_eng.pdf"
+  },
+  {
+   "q": "다음 문장의 밑줄 친 부분과 의미가 가장 가까운 것을 고르시오.\n\nNew regulations were introduced to mitigate the environmental damage.",
+   "choices": [
+    "aggravate",
+    "document",
+    "predict",
+    "alleviate"
+   ],
+   "answer": 3,
+   "explain": "mitigate 는 '완화하다'. aggravate 는 반대(악화시키다).",
+   "ref_url": "https://admission.cau.ac.kr/files/2025/2025_cau_pi_eng.pdf"
+  },
+  {
+   "q": "다음 문장의 밑줄 친 부분과 의미가 가장 가까운 것을 고르시오.\n\nThe critics lambasted the film as shallow and predictable.",
+   "choices": [
+    "praised",
+    "censured",
+    "ignored",
+    "imitated"
+   ],
+   "answer": 1,
+   "explain": "lambast 는 '맹렬히 비난하다'. shallow, predictable 이라는 부정적 평가와 맞는다.",
+   "ref_url": "https://admission.cau.ac.kr/files/2025/2025_cau_pi_eng.pdf"
+  },
+  {
+   "q": "다음 문장의 밑줄 친 부분과 의미가 가장 가까운 것을 고르시오.\n\nHe is notorious for his mendacity, and few colleagues trust what he says.",
+   "choices": [
+    "dishonesty",
+    "generosity",
+    "stubbornness",
+    "humor"
+   ],
+   "answer": 0,
+   "explain": "mendacity 는 '거짓말하는 버릇, 불성실'. 동료들이 그의 말을 믿지 않는다는 문맥이다.",
+   "ref_url": "https://admission.cau.ac.kr/files/2025/2025_cau_pi_eng.pdf"
+  },
+  {
+   "q": "다음 문장의 밑줄 친 (A)~(D) 중 문법적으로 적절하지 않은 것을 고르시오.\n\nThe number of students (A)who take the course (B)have increased (C)sharply since the department (D)introduced a new curriculum.",
+   "choices": [
+    "(A) who take the course",
+    "(B) have increased",
+    "(C) sharply",
+    "(D) introduced a new curriculum"
+   ],
+   "answer": 1,
+   "explain": "'the number of + 복수명사' 는 단수 취급하므로 have increased 는 has increased 가 되어야 한다. (a number of 는 복수 취급)",
+   "ref_url": "https://admission.cau.ac.kr/files/2025/2025_cau_pi_eng.pdf"
+  },
+  {
+   "q": "다음 문장의 밑줄 친 (A)~(D) 중 문법적으로 적절하지 않은 것을 고르시오.\n\nHardly (A)had the lecture begun (B)when the fire alarm (C)went off, forcing everyone (D)evacuating the building.",
+   "choices": [
+    "(A) had the lecture begun",
+    "(B) when",
+    "(C) went off",
+    "(D) evacuating the building"
+   ],
+   "answer": 3,
+   "explain": "force + 목적어 + to부정사 구문이므로 evacuating 은 to evacuate 가 되어야 한다. Hardly ~ when 의 도치(had+주어)는 적절하다.",
+   "ref_url": "https://admission.cau.ac.kr/files/2025/2025_cau_pi_eng.pdf"
+  },
+  {
+   "q": "다음 문장의 밑줄 친 (A)~(D) 중 문법적으로 적절하지 않은 것을 고르시오.\n\nNot only (A)did the committee reject the proposal, but it also (B)demanded that the author (C)resubmits the report (D)by Friday.",
+   "choices": [
+    "(A) did the committee reject",
+    "(B) demanded",
+    "(C) resubmits the report",
+    "(D) by Friday"
+   ],
+   "answer": 2,
+   "explain": "demand 뒤 that 절은 '(should) + 동사원형'을 쓴다. resubmits 는 resubmit 이 되어야 한다. Not only 의 도치는 적절하다.",
+   "ref_url": "https://admission.cau.ac.kr/files/2025/2025_cau_pi_eng.pdf"
+  },
+  {
+   "q": "다음의 대화들 중 흐름이 가장 적절하지 않은 것을 고르시오.",
+   "choices": [
+    "A: Excuse me, does this bus go to the airport? / B: Yes, but it only runs every thirty minutes.",
+    "A: I'm afraid I can't attend tomorrow's meeting. / B: That's fine. I'll send you the notes afterward.",
+    "A: How did your job interview go this morning? / B: I bought a new umbrella yesterday.",
+    "A: Could you lend me your pen for a second? / B: Sure, here you are."
+   ],
+   "answer": 2,
+   "explain": "면접이 어땠는지 묻는 질문에 우산을 샀다는 답은 질문과 이어지지 않는다.",
+   "ref_url": "https://admission.cau.ac.kr/files/2025/2025_cau_pi_eng.pdf"
+  },
+  {
+   "q": "다음 빈칸에 가장 적합한 단어를 고르시오.\n\nBecause the evidence was ______, the judge could not be certain which version of events was true.",
+   "choices": [
+    "conclusive",
+    "abundant",
+    "compelling",
+    "conflicting"
+   ],
+   "answer": 3,
+   "explain": "어느 쪽이 사실인지 확신하지 못했다는 결과로 보아 증거가 서로 '상충했다(conflicting)'.",
+   "ref_url": "https://admission.cau.ac.kr/files/2025/2025_cau_pi_eng.pdf"
+  },
+  {
+   "q": "다음 빈칸에 가장 적합한 단어를 고르시오.\n\nThe newly elected president promised to ______ the economy, which had been in decline for years.",
+   "choices": [
+    "revitalize",
+    "stagnate",
+    "neglect",
+    "undermine"
+   ],
+   "answer": 0,
+   "explain": "수년간 쇠퇴한 경제에 대한 공약이므로 '되살리다(revitalize)'가 적절하다.",
+   "ref_url": "https://admission.cau.ac.kr/files/2025/2025_cau_pi_eng.pdf"
+  },
+  {
+   "q": "다음 빈칸에 가장 적합한 단어를 고르시오.\n\nDespite her ______ appearance, she was in fact one of the most determined negotiators in the company.",
+   "choices": [
+    "formidable",
+    "unassuming",
+    "imposing",
+    "ruthless"
+   ],
+   "answer": 1,
+   "explain": "Despite 는 대조를 이끌므로 '결연한 협상가'와 반대되는 '겸손해 보이는(unassuming)' 외모여야 한다.",
+   "ref_url": "https://admission.cau.ac.kr/files/2025/2025_cau_pi_eng.pdf"
+  },
+  {
+   "q": "다음 빈칸에 가장 적합한 단어를 고르시오.\n\nScientists remain ______ about whether the new vaccine will protect against future variants; they say more data are needed.",
+   "choices": [
+    "adamant",
+    "euphoric",
+    "cautious",
+    "dismissive"
+   ],
+   "answer": 2,
+   "explain": "더 많은 자료가 필요하다고 했으므로 '신중한(cautious)' 태도이다.",
+   "ref_url": "https://admission.cau.ac.kr/files/2025/2025_cau_pi_eng.pdf"
+  },
+  {
+   "q": "다음 빈칸에 가장 적합한 어구를 고르시오.\n\nThe company's profits have been falling for years, and unless it changes direction, it will soon ______.",
+   "choices": [
+    "step up",
+    "look into",
+    "go under",
+    "come across"
+   ],
+   "answer": 2,
+   "explain": "go under 는 '(사업이) 망하다'.",
+   "ref_url": "https://admission.cau.ac.kr/files/2025/2025_cau_pi_eng.pdf"
+  },
+  {
+   "q": "다음 빈칸에 가장 적합한 어구를 고르시오.\n\nIt is not easy to ______ a decision that affects so many people.",
+   "choices": [
+    "sit in",
+    "pass over",
+    "hold up",
+    "come to"
+   ],
+   "answer": 3,
+   "explain": "come to a decision 은 '결정에 이르다'라는 연어 표현이다.",
+   "ref_url": "https://admission.cau.ac.kr/files/2025/2025_cau_pi_eng.pdf"
+  },
+  {
+   "q": "다음 빈칸에 가장 적합한 어구를 고르시오.\n\nShe has been ______ the idea of moving abroad for months but still cannot decide.",
+   "choices": [
+    "mulling over",
+    "cutting down on",
+    "giving in to",
+    "looking up to"
+   ],
+   "answer": 0,
+   "explain": "mull over 는 '곰곰이 생각하다'. 몇 달째 결정하지 못했다는 문맥과 맞는다.",
+   "ref_url": "https://admission.cau.ac.kr/files/2025/2025_cau_pi_eng.pdf"
+  },
+  {
+   "q": "다음 빈칸에 가장 적합한 어구를 고르시오.\n\nThe new policy is ______ the interests of small farmers; it was written with their needs in mind.",
+   "choices": [
+    "at odds with",
+    "in line with",
+    "out of touch with",
+    "beside the point of"
+   ],
+   "answer": 1,
+   "explain": "그들의 필요를 염두에 두고 작성되었다고 했으므로 이익과 '부합한다(in line with)'.",
+   "ref_url": "https://admission.cau.ac.kr/files/2025/2025_cau_pi_eng.pdf"
+  },
+  {
+   "q": "다음 글의 주제로 가장 적절한 것을 고르시오.\n\nMany people believe that working longer hours always leads to greater output. Studies of factory workers, however, show that productivity per hour drops sharply after about fifty hours a week, and that the extra time often produces more errors than goods. Beyond a certain point, rest is not a luxury but a requirement for good work.",
+   "choices": [
+    "Long working hours can reduce rather than raise productivity.",
+    "Factory work is more error-prone than office work.",
+    "Rest should be replaced by extra training.",
+    "Workers prefer shorter weeks to higher pay."
+   ],
+   "answer": 0,
+   "explain": "주 50시간 이후 시간당 생산성이 급감하고 오류가 늘어난다는 내용으로, 장시간 노동이 생산성을 오히려 떨어뜨릴 수 있다는 것이 주제이다.",
+   "ref_url": "https://admission.cau.ac.kr/files/2025/2025_cau_pi_eng.pdf"
+  },
+  {
+   "q": "다음 빈칸에 가장 적합한 것을 고르시오.\n\nScientific knowledge is not a fixed collection of facts. Each new experiment may confirm, refine, or overturn what was previously accepted, which is why a good scientist holds even favorite theories ______.",
+   "choices": [
+    "rigidly",
+    "secretly",
+    "emotionally",
+    "provisionally"
+   ],
+   "answer": 3,
+   "explain": "새 실험이 기존 이론을 뒤집을 수 있다고 했으므로 이론을 '잠정적으로(provisionally)' 다룬다.",
+   "ref_url": "https://admission.cau.ac.kr/files/2025/2025_cau_pi_eng.pdf"
+  },
+  {
+   "q": "다음 글에서 전체 흐름과 관계 없는 문장을 고르시오.\n\n(1) Honeybees communicate the location of food through a 'waggle dance.' (2) The angle of the dance relative to vertical shows the direction of the food relative to the sun. (3) Bees are also essential pollinators of many fruit crops. (4) The longer the waggle phase of the dance lasts, the farther away the food is.",
+   "choices": [
+    "(1)",
+    "(2)",
+    "(3)",
+    "(4)"
+   ],
+   "answer": 2,
+   "explain": "꿀벌의 춤으로 먹이의 위치를 알리는 방법을 설명하는 글에서 (3)의 꽃가루 매개 역할은 주제에서 벗어난다.",
+   "ref_url": "https://admission.cau.ac.kr/files/2025/2025_cau_pi_eng.pdf"
+  }
+ ]
+}

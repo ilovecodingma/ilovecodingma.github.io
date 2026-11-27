@@ -1,0 +1,26 @@
+/* 잠이 오냐 앱 (2026-11-27) — 흑화 스킨(exam-skin.css) 위에서, 폭 360 기준 모바일 우선 */
+#jam{max-width:640px;margin:0 auto}
+#jam h2{font-size:17px;margin:24px 0 8px;color:var(--tx)}
+.jm-hero{display:flex;gap:12px;align-items:center;background:linear-gradient(135deg,#1a0f18,#11131c);border:1px solid #3a1d2a;border-radius:18px;padding:14px}
+.jm-hero img{width:60px;height:60px;border-radius:14px;flex:none}
+.jm-hero b{display:block;font-size:20px;color:var(--pri2)}.jm-hero span{font-size:13.5px;color:var(--mu);line-height:1.5}
+.jm-card{background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:12px 14px}
+.jm-sm{font-size:13px;color:var(--mu);line-height:1.6;margin:6px 0}
+.jm-q{width:100%;box-sizing:border-box;height:42px;border:1px solid var(--bd);border-radius:12px;background:#0b0c13;color:var(--tx);padding:0 12px;font:inherit;font-size:15px}
+.jm-chips{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 0;max-height:300px;overflow:auto}
+.jm-chips label{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--bd);background:#0b0c13;border-radius:999px;padding:8px 12px;font-size:14px;cursor:pointer;min-height:20px;line-height:1.3}
+.jm-chips label.on{border-color:var(--pri);background:var(--pbg);color:#fff;font-weight:800}
+.jm-chips input{position:absolute;opacity:0;width:0;height:0}
+.jm-chips small{color:var(--mu);font-weight:400;font-size:11.5px}
+.jm-sw{display:flex;gap:10px;align-items:flex-start;font-size:14.5px;margin:10px 0;cursor:pointer}
+.jm-sw input{width:20px;height:20px;accent-color:#ff4d7d;flex:none;margin-top:1px}
+.jm-sw small{display:block;color:var(--mu);font-size:12.5px;margin-top:2px}
+.jm-sel{min-height:42px;border:1px solid var(--bd);border-radius:10px;padding:0 8px;font:inherit;background:#0b0c13;color:var(--tx)}
+.jm-btn{display:block;width:100%;border:0;border-radius:14px;padding:14px;font-size:16px;font-weight:900;color:#fff;background:linear-gradient(135deg,#ff4d7d,#c026d3);cursor:pointer;margin-top:8px}
+.jm-btn.ghost{background:#0b0c13;color:var(--pri2);border:1px solid var(--bd)}
+.jm-btn:disabled{opacity:.5}
+.jm-off{border:0;background:none;color:var(--mu);text-decoration:underline;font-size:13px;cursor:pointer;margin-top:6px}
+.jm-msg{font-size:13.5px;font-weight:700;color:var(--pri2);margin:8px 0 0;min-height:1.2em}
+.jm-st{display:flex;gap:8px;align-items:center;font-size:14.5px;font-weight:800}.jm-st i{width:10px;height:10px;border-radius:50%;background:#555;flex:none}.jm-st.on i{background:var(--ok)}
+.jm-n{color:var(--pri2);font-weight:900}
+@media(max-width:380px){.jm-chips label{padding:7px 10px;font-size:13.5px}}

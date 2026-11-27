@@ -1,4 +1,4 @@
-// 오늘 뭐 먹지? · 루리의 줍줍 앱(PWA) 서비스워커 — 홈 화면 설치 + 오프라인 추천 + 웹푸시 (2026-10-18 최초, 2026-10-20 레시피 추천 앱으로 고도화)
+// 잠이 오냐(PWA, 2026-11-27 개편: push 는 관심 시험·분야 알림, 클릭하면 payload.url 의 시험/문제 페이지를 연다) · 옛 이름 오늘 뭐 먹지?·루리의 줍줍 앱 서비스워커 — 홈 화면 설치 + 오프라인 추천 + 웹푸시 (2026-10-18 최초, 2026-10-20 레시피 추천 앱으로 고도화)
 //  · 화면(HTML)은 늘 새로 받고, 인터넷이 끊기면 저장해 둔 화면 → 그것도 없으면 오늘의 추천(/fridge/)을 보여 준다
 //  · 추천 데이터·스크립트·작은 사진은 한 번 받아 두면 오프라인에서도 「오늘 뭐 먹지」가 돈다
 const PAGES = 'jupjup-pages-v2', ASSETS = 'jupjup-assets-v2', IMGS = 'jupjup-img-v1', KEEP = [PAGES, ASSETS, IMGS];
@@ -44,10 +44,10 @@ self.addEventListener('fetch', e => {
 self.addEventListener('push', e => {
   let d = {};
   try { d = e.data ? e.data.json() : {}; } catch { d = { body: e.data ? e.data.text() : '' }; }
-  e.waitUntil(self.registration.showNotification(d.title || '루리의 줍줍', {
-    body: d.body || '새 소식이 있어요.', icon: d.icon || '/assets/icons/icon-192.png', badge: '/assets/icons/favicon-32.png',
-    ...(d.image ? { image: d.image } : {}), tag: d.tag || 'jupjup', renotify: true, data: { url: d.url || '/' },
-    ...(d.tag === 'jupjup-meal' ? { actions: [{ action: 'open', title: '레시피 보기' }, { action: 'another', title: '다른 메뉴' }] } : {})
+  e.waitUntil(self.registration.showNotification(d.title || '잠이 오냐', {
+    body: d.body || '시험은 온다. 일어나라.', icon: d.icon || '/assets/icons/icon-192.png', badge: '/assets/icons/favicon-32.png',
+    ...(d.image ? { image: d.image } : {}), tag: d.tag || 'jam', renotify: true, data: { url: d.url || '/' },
+    ...(d.tag === 'jam-qz' ? { actions: [{ action: 'open', title: '풀러 가기' }] } : d.tag === 'jupjup-meal' ? { actions: [{ action: 'open', title: '레시피 보기' }, { action: 'another', title: '다른 메뉴' }] } : {})
   }));
 });
 self.addEventListener('notificationclick', e => {

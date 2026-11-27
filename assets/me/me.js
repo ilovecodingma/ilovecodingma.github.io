@@ -35,12 +35,11 @@
     M.querySelector('.me-join').onclick = () => J.authModal(() => location.reload()); return;
   }
   M.innerHTML = '<p class="note">불러오는 중…</p>';
-  Promise.all([J.api('/api/items').catch(() => ({ items: [] })), J.api('/api/me').catch(() => ({}))]).then(([it, me]) => {
+  Promise.all([J.api('/api/items').catch(() => ({ items: [] })), J.api('/api/me').catch(() => ({})), fetch('/assets/app/jam.json?v=1').then(r => r.json()).catch(() => ({ fams: [], fields: [] }))]).then(([it, me, CAT]) => {
     const items = it.items || [], P = me.prefs || {};
     const save = data => J.api('/api/prefs', { method: 'POST', body: { data: { ...P, ...data } } }).then(() => Object.assign(P, data));
     const topicsNow = () => String(P.topics || '').split(',').filter(Boolean);
     let pend = ''; try { pend = localStorage.getItem(LSJ) || ''; localStorage.removeItem(LSJ); } catch {}
-    if (pend && TOPICS.some(t => t[0] === pend) && !topicsNow().includes(pend)) save({ topics: [...topicsNow(), pend].join(',').slice(0, 78), dg: '1' });
     const lab = (() => { try { return JSON.parse(localStorage.getItem('jupjup_lab') || '[]'); } catch { return []; } })();
     const soon = items.filter(x => x.fav && x.state === '' && (left(x.end) ?? 99) >= 0).sort((a, b) => (left(a.end) ?? 999) - (left(b.end) ?? 999));
     const rec = items.filter(x => x.state), won = rec.filter(x => x.state === 'won').length;
@@ -48,8 +47,11 @@
 <div><h1>${esc(me.nick || J.st.n)}의 공간</h1><p class="me-stat"><span><b>${soon.length}</b>찜</span><span><b>${rec.length}</b>냈어요</span><span><b>${won}</b>당첨</span><span><b>${(me.visits || 0) + (me.invites || 0) * 3}</b>초대 점수</span></p></div></section>
 <section class="me-sec"><h2>🔔 마감 알림</h2><label class="me-sw"><input type="checkbox" class="me-alert" ${P.alert === '1' ? 'checked' : ''}> 찜한 것 마감 3일 전·당일에 메일 받기</label>
 <p class="note">받는 곳: ${esc(me.email || '가입 이메일')} · 매일 아침 8시 · 끄면 바로 멈춰요</p></section>
-<section class="me-sec" id="topics"><h2>📬 받고 싶은 소식</h2><p class="note">고른 주제만 메일로 보내 드려요. 소식이 있는 날에만 한 통이고, 언제든 끌 수 있어요.</p>
-<div class="me-tp">${TOPICS.map(([k, ic, l, d]) => `<label class="me-sw"><input type="checkbox" data-tp="${k}" ${(String(P.topics || '').split(',').includes(k) || pend === k) ? 'checked' : ''}> ${ic} <b>${l}</b> <small>${d}</small></label>`).join('')}</div>
+<section class="me-sec" id="topics"><h2>📬 잠이 오냐 · 받을 소식</h2><p class="note">고른 시험·분야만 메일로 보낸다. 소식 없는 날은 안 보낸다. 폰 알림은 <a href="/app/">잠이 오냐 앱</a>에서 켠다.</p>
+<label class="me-sw"><input type="checkbox" class="me-xm" ${P.xm === '1' ? 'checked' : ''}> <b>메일로 받기</b> <small>끄면 바로 멈춘다</small></label>
+<label class="me-sw"><b>보내는 때</b> <select class="me-xf"><option value="d" ${P.xf !== 'w' ? 'selected' : ''}>매일 아침</option><option value="w" ${P.xf === 'w' ? 'selected' : ''}>월요일에 한 번</option></select></label>
+<p class="note"><b>시험</b></p><div class="me-tp">${(CAT.fams || []).map(f => `<label class="me-sw"><input type="checkbox" data-ex="${f.k}" ${String(P.exams || '').split(',').includes(f.k) ? 'checked' : ''}> <b>${esc(f.n)}</b> <small>${f.nx ? '다음 일정 ' + f.nx.slice(5).replace('-', '.') : '문제 ' + f.q}</small></label>`).join('')}</div>
+<p class="note"><b>분야</b></p><div class="me-tp">${(CAT.fields || []).map(f => `<label class="me-sw"><input type="checkbox" data-sd="${f.k}" ${String(P.sdt || '').split(',').includes(f.k) ? 'checked' : ''}> <b>${esc(f.n)}</b></label>`).join('')}</div>
 <p class="note me-tpn">받는 곳: ${esc(me.email || '가입 이메일')}</p></section>
 <section class="me-sec me-ka" hidden><h2>💬 카카오톡으로 마감 알림 받기</h2><label class="me-sw"><input type="checkbox" class="me-kalert"> 찜한 것 마감 3일 전·1일 전에 카카오톡 「나와의 채팅」으로 받기</label>
 <p class="note me-kanote">매일 아침 8시 30분 · 켤 때 카카오 「메시지 전송」 동의를 한 번 받아요 · 끄면 동의도 철회돼요</p></section>
@@ -72,10 +74,11 @@ ${gjHTML()}
       const id = b.closest('li').dataset.id;
       await J.api('/api/items', { method: 'POST', body: b.dataset.s ? { id, state: b.dataset.s } : { id, fav: 0 } }); location.reload();
     });
-    M.querySelectorAll('[data-tp]').forEach(c => c.onchange = () => {
-      const on = [...M.querySelectorAll('[data-tp]:checked')].map(x => x.dataset.tp);
-      save({ topics: on.join(',').slice(0, 78), dg: on.length ? '1' : '0' }).then(() => { M.querySelector('.me-tpn').textContent = on.length ? `✅ 저장했어요. ${on.length}개 주제를 ${me.email || '가입 이메일'}로 보내 드려요.` : '모두 껐어요. 소식 메일은 보내지 않아요.'; J.ga && J.ga('topics_save', { n: on.length }); });
-    });
+    const saveX = () => {
+      const ex = [...M.querySelectorAll('[data-ex]:checked')].map(x => x.dataset.ex).slice(0, 20), sd = [...M.querySelectorAll('[data-sd]:checked')].map(x => x.dataset.sd), xm = M.querySelector('.me-xm').checked && (ex.length || sd.length);
+      save({ exams: ex.join(','), sdt: sd.join(','), xm: xm ? '1' : '0', xf: M.querySelector('.me-xf').value }).then(() => { M.querySelector('.me-tpn').textContent = xm ? `저장했다. 시험 ${ex.length}개·분야 ${sd.length}개를 ${me.email || '가입 이메일'}로 보낸다.` : '메일 안 보낸다.'; J.ga && J.ga('jam_mail', { n: ex.length + sd.length }); });
+    };
+    M.querySelectorAll('[data-ex],[data-sd],.me-xm,.me-xf').forEach(c => c.onchange = saveX);
     M.querySelector('.me-alert').onchange = e => save({ alert: e.target.checked ? '1' : '0' }).then(() => J.ga && J.ga('alert_toggle', { on: e.target.checked }));
     const ka = M.querySelector('.me-ka'), kc = M.querySelector('.me-kalert'), kn = M.querySelector('.me-kanote');
     const kh = (location.hash.match(/kalert=(on|fail)/) || [])[1];

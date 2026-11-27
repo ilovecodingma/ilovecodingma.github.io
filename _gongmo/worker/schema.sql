@@ -157,7 +157,19 @@ CREATE TABLE IF NOT EXISTS crew_invites (team_id INTEGER NOT NULL, user_id INTEG
 CREATE TABLE IF NOT EXISTS fridge_log (id INTEGER PRIMARY KEY, day TEXT NOT NULL, ts INTEGER NOT NULL, who TEXT NOT NULL, ok INTEGER NOT NULL DEFAULT 1, tin INTEGER DEFAULT 0, tout INTEGER DEFAULT 0);
 CREATE INDEX IF NOT EXISTS fridge_day ON fridge_log(day, who);
 -- 웹푸시 공모전 알림 구독 (2026-10-18)
-CREATE TABLE IF NOT EXISTS push_subs (endpoint TEXT PRIMARY KEY, p256dh TEXT NOT NULL, auth TEXT NOT NULL, cats TEXT DEFAULT '', newc INTEGER DEFAULT 1, dl INTEGER DEFAULT 1, uid INTEGER, created INTEGER, sent INTEGER DEFAULT 0, fails INTEGER DEFAULT 0, last_ok INTEGER, meal INTEGER DEFAULT 0, fit INTEGER DEFAULT 0, fh INTEGER DEFAULT 20, dl2 INTEGER DEFAULT 0);   -- meal: 점심·저녁 메뉴 추천 알림(2026-10-20), 기존 DB 는 ALTER TABLE push_subs ADD COLUMN meal INTEGER DEFAULT 0 로 한 번 추가
+CREATE TABLE IF NOT EXISTS push_subs (endpoint TEXT PRIMARY KEY, p256dh TEXT NOT NULL, auth TEXT NOT NULL, cats TEXT DEFAULT '', newc INTEGER DEFAULT 1, dl INTEGER DEFAULT 1, uid INTEGER, created INTEGER, sent INTEGER DEFAULT 0, fails INTEGER DEFAULT 0, last_ok INTEGER, meal INTEGER DEFAULT 0, fit INTEGER DEFAULT 0, fh INTEGER DEFAULT 20, dl2 INTEGER DEFAULT 0, exams TEXT, topics TEXT, sch INTEGER, qz INTEGER, nw INTEGER, sd INTEGER, qh INTEGER);   -- meal: 점심·저녁 메뉴 추천 알림(2026-10-20), 기존 DB 는 ALTER TABLE push_subs ADD COLUMN meal INTEGER DEFAULT 0 로 한 번 추가
+
+-- 2026-11-27 「잠이 오냐」 관심 기준 알림. 기존 DB 에는 아래 7줄을 한 번씩 실행(워커 배포 전에):
+--   exams: 관심 시험 계열 키 쉼표(toeic,korhist,csat …) · topics: 자기개발 주제 키 쉼표(dev,course,cert,money,career,book)
+--   sch 시험 일정 · qz 오늘의 문제 · nw 시험 새 소식 · sd 자기개발 새 정보(1/0) · qh 문제 알림 시각(0~23)
+-- ALTER TABLE push_subs ADD COLUMN exams TEXT;
+-- ALTER TABLE push_subs ADD COLUMN topics TEXT;
+-- ALTER TABLE push_subs ADD COLUMN sch INTEGER;
+-- ALTER TABLE push_subs ADD COLUMN qz INTEGER;
+-- ALTER TABLE push_subs ADD COLUMN nw INTEGER;
+-- ALTER TABLE push_subs ADD COLUMN sd INTEGER;
+-- ALTER TABLE push_subs ADD COLUMN qh INTEGER;
+-- 메일 관심사는 user_prefs.data JSON 의 exams(시험 계열 키)·sdt(자기개발 주제 키)·xm('1'=받기)·xf('d' 매일 /'w' 주 1회) 키를 쓴다(테이블 변경 없음).
 
 CREATE TABLE IF NOT EXISTS widget_views (id INTEGER PRIMARY KEY, day TEXT, ts INTEGER, kind TEXT, host TEXT);
 CREATE INDEX IF NOT EXISTS widget_views_day ON widget_views (day);

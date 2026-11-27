@@ -1,0 +1,305 @@
+{
+ "id": "elem-math-3-4",
+ "name": "초등 수학 3~4학년 핵심",
+ "category": "초등 교과",
+ "kind": "original",
+ "method": "original",
+ "analysis": "2022 개정 수학과 초 3~4학년군 성취기준(곱셈·나눗셈, 분수·소수, 각도, 평면도형, 길이·들이·무게, 자료의 정리)에 맞춰 직접 출제했다.",
+ "source": {
+  "name": "교육부 2022 개정 교육과정·국가교육과정정보센터(NCIC)",
+  "url": "https://ncic.moe.go.kr",
+  "license": "문항은 직접 작성, 성취기준 범위만 공공 자료 참고"
+ },
+ "updated": "2026-11-27",
+ "sec_per_q": 60,
+ "questions": [
+  {
+   "q": "345 × 6 의 값은 얼마입니까?",
+   "choices": [
+    "2060",
+    "1970",
+    "2070",
+    "2170"
+   ],
+   "answer": 2,
+   "explain": "정답은 3번 2070이다.\n핵심 개념: (세 자리 수)×(한 자리 수)는 자리별로 곱한 뒤 올림을 더한다.\n풀이: 일의 자리 5×6=30이므로 0을 쓰고 3을 올린다. 십의 자리 4×6=24에 3을 더해 27이므로 7을 쓰고 2를 올린다. 백의 자리 3×6=18에 2를 더해 20이다. 따라서 2070이다.\n오답 확인: 1번(2060) 십의 자리 올림을 빼먹어 10이 모자란 값이다. / 2번(1970) 백의 자리 계산을 19로 잘못한 값이다. / 4번(2170) 백의 자리에서 올림을 크게 더한 값이다.\n함정: 올림을 다음 자리에 더하는 것을 잊기 쉽다."
+  },
+  {
+   "q": "50÷6 의 몫과 나머지를 바르게 나타낸 것은 어느 것입니까?",
+   "choices": [
+    "몫 8, 나머지 2",
+    "몫 8, 나머지 3",
+    "몫 9, 나머지 0",
+    "몫 7, 나머지 8"
+   ],
+   "answer": 0,
+   "explain": "정답은 1번 몫 8, 나머지 2이다.\n핵심 개념: 나눗셈에서 나머지는 나누는 수보다 작아야 한다.\n풀이: 6×8=48이므로 50에서 48을 빼면 2가 남는다. 6×9=54는 50보다 크므로 몫은 8이다. 검산으로 6×8+2=50이 된다.\n오답 확인: 2번(몫 8, 나머지 3) 6×8+3=51이라 50이 되지 않는다. / 3번(몫 9, 나머지 0) 6×9=54이므로 나누어떨어지지 않는다. / 4번(몫 7, 나머지 8) 나머지 8은 나누는 수 6보다 커서 더 나눌 수 있다.\n함정: 나머지가 나누는 수보다 크거나 같으면 몫을 더 키워야 한다."
+  },
+  {
+   "q": "12 × 34 의 값은 얼마입니까?",
+   "choices": [
+    "368",
+    "48",
+    "468",
+    "408"
+   ],
+   "answer": 3,
+   "explain": "정답은 4번 408이다.\n핵심 개념: (두 자리 수)×(두 자리 수)는 한 자리씩 나누어 곱한 뒤 더한다.\n풀이: 12×4=48이고 12×30=360이다. 48+360=408이다. 다른 방법으로 34×12=340+68=408이다.\n오답 확인: 1번(368) 12×30 부분이 320으로 작게 계산된 값이다. / 2번(48) 12×4만 구한 값이다. / 3번(468) 12×30 부분이 420으로 크게 계산된 값이다.\n함정: 십의 자리 곱은 10배인 것을 잊지 않는다."
+  },
+  {
+   "q": "그림에서 색칠한 부분은 전체의 얼마입니까?",
+   "choices": [
+    "3/8",
+    "3/4",
+    "8/6",
+    "1/4"
+   ],
+   "answer": 1,
+   "explain": "정답은 2번 3/4이다.\n핵심 개념: 분수는 전체를 똑같이 나눈 것 중 몇 개인지 나타낸다.\n풀이: 전체를 8칸으로 나누었고 6칸을 색칠했다. 6/8이고 분모와 분자를 2로 나누면 3/4이다. 3/4과 6/8은 크기가 같다.\n오답 확인: 1번(3/8) 3칸만 색칠했을 때의 분수이다. / 3번(8/6) 분모와 분자를 거꾸로 쓴 것이다. / 4번(1/4) 2칸만 색칠하지 않은 부분 같은 값이다.\n함정: 분모는 전체 칸 수, 분자는 색칠한 칸 수이다.",
+   "fig": "<svg viewBox=\"0 0 320 90\" width=\"320\" xmlns=\"http://www.w3.org/2000/svg\" font-size=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><rect x=\"10.0\" y=\"10\" width=\"37.5\" height=\"40\" stroke=\"currentColor\" fill=\"#ff4d7d\"/><rect x=\"47.5\" y=\"10\" width=\"37.5\" height=\"40\" stroke=\"currentColor\" fill=\"#ff4d7d\"/><rect x=\"85.0\" y=\"10\" width=\"37.5\" height=\"40\" stroke=\"currentColor\" fill=\"#ff4d7d\"/><rect x=\"122.5\" y=\"10\" width=\"37.5\" height=\"40\" stroke=\"currentColor\" fill=\"#ff4d7d\"/><rect x=\"160.0\" y=\"10\" width=\"37.5\" height=\"40\" stroke=\"currentColor\" fill=\"#ff4d7d\"/><rect x=\"197.5\" y=\"10\" width=\"37.5\" height=\"40\" stroke=\"currentColor\" fill=\"#ff4d7d\"/><rect x=\"235.0\" y=\"10\" width=\"37.5\" height=\"40\" stroke=\"currentColor\" fill=\"none\"/><rect x=\"272.5\" y=\"10\" width=\"37.5\" height=\"40\" stroke=\"currentColor\" fill=\"none\"/></svg>"
+  },
+  {
+   "q": "3/7 과 5/7 중 더 큰 수는 무엇입니까?",
+   "choices": [
+    "3/7",
+    "5/7",
+    "같다",
+    "비교할 수 없다"
+   ],
+   "answer": 1,
+   "explain": "정답은 2번 5/7이다.\n핵심 개념: 분모가 같은 분수는 분자가 큰 쪽이 크다.\n풀이: 두 분수의 분모가 7로 같다. 분자 5가 3보다 크므로 5/7이 더 크다.\n오답 확인: 1번(3/7) 분자 3은 5보다 작아서 더 작은 수이다. / 3번(같다) 분자가 다르므로 크기가 다르다. / 4번(비교할 수 없다) 분모가 같으면 분자로 비교할 수 있다.\n함정: 분모가 같을 때는 분모를 비교하지 않는다."
+  },
+  {
+   "q": "그림에서 색칠한 부분을 소수로 나타내면 얼마입니까?",
+   "choices": [
+    "0.07",
+    "7",
+    "0.3",
+    "0.7"
+   ],
+   "answer": 3,
+   "explain": "정답은 4번 0.7이다.\n핵심 개념: 전체를 10칸으로 나눈 것 중 한 칸은 0.1이다.\n풀이: 10칸 중 7칸이 색칠되어 있으므로 7/10이다. 7/10은 소수로 0.7이다.\n오답 확인: 1번(0.07) 0.07은 100칸 중 7칸이다. / 2번(7) 7은 칸의 수일 뿐 소수가 아니다. / 3번(0.3) 0.3은 색칠하지 않은 부분이다.\n함정: 소수점 아래 첫째 자리는 십분의 일을 뜻한다.",
+   "fig": "<svg viewBox=\"0 0 320 90\" width=\"320\" xmlns=\"http://www.w3.org/2000/svg\" font-size=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><rect x=\"10.0\" y=\"10\" width=\"30.0\" height=\"40\" stroke=\"currentColor\" fill=\"#ff4d7d\"/><rect x=\"40.0\" y=\"10\" width=\"30.0\" height=\"40\" stroke=\"currentColor\" fill=\"#ff4d7d\"/><rect x=\"70.0\" y=\"10\" width=\"30.0\" height=\"40\" stroke=\"currentColor\" fill=\"#ff4d7d\"/><rect x=\"100.0\" y=\"10\" width=\"30.0\" height=\"40\" stroke=\"currentColor\" fill=\"#ff4d7d\"/><rect x=\"130.0\" y=\"10\" width=\"30.0\" height=\"40\" stroke=\"currentColor\" fill=\"#ff4d7d\"/><rect x=\"160.0\" y=\"10\" width=\"30.0\" height=\"40\" stroke=\"currentColor\" fill=\"#ff4d7d\"/><rect x=\"190.0\" y=\"10\" width=\"30.0\" height=\"40\" stroke=\"currentColor\" fill=\"#ff4d7d\"/><rect x=\"220.0\" y=\"10\" width=\"30.0\" height=\"40\" stroke=\"currentColor\" fill=\"none\"/><rect x=\"250.0\" y=\"10\" width=\"30.0\" height=\"40\" stroke=\"currentColor\" fill=\"none\"/><rect x=\"280.0\" y=\"10\" width=\"30.0\" height=\"40\" stroke=\"currentColor\" fill=\"none\"/></svg>"
+  },
+  {
+   "q": "0.8 과 0.75 중 더 큰 수는 무엇입니까?",
+   "choices": [
+    "0.8",
+    "0.75",
+    "같다",
+    "알 수 없다"
+   ],
+   "answer": 0,
+   "explain": "정답은 1번 0.8이다.\n핵심 개념: 소수는 같은 자리의 수를 비교한다.\n풀이: 0.8을 0.80으로 쓰면 0.75와 소수 둘째 자리를 맞출 수 있다. 소수 첫째 자리 8이 7보다 크므로 0.8이 더 크다.\n오답 확인: 2번(0.75) 0.75가 길어 보이지만 첫째 자리가 7로 더 작다. / 3번(같다) 0.80과 0.75는 다른 수이다. / 4번(알 수 없다) 두 수 모두 비교할 수 있다.\n함정: 소수 자리 수가 많다고 더 큰 수는 아니다."
+  },
+  {
+   "q": "직각삼각형에서 직각이 아닌 한 각이 35°입니다. 나머지 한 각은 몇 도입니까?",
+   "choices": [
+    "145°",
+    "65°",
+    "55°",
+    "35°"
+   ],
+   "answer": 2,
+   "explain": "정답은 3번 55°이다.\n핵심 개념: 삼각형의 세 각의 합은 180°이다.\n풀이: 직각은 90°이다. 180-90-35=55이므로 나머지 한 각은 55°이다. 35+90+55=180으로 검산한다.\n오답 확인: 1번(145°) 180에서 35만 뺀 값이다. / 2번(65°) 90에서 25를 뺀 잘못된 계산 값이다. / 4번(35°) 두 각이 같다고 잘못 생각한 값이다.\n함정: 직각은 90°이며 세 각의 합에 포함된다.",
+   "fig": "<svg viewBox=\"0 0 220 140\" width=\"220\" xmlns=\"http://www.w3.org/2000/svg\" font-size=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><polygon points=\"20,120 200,120 20,20\" stroke=\"currentColor\" fill=\"none\"/><text x=\"30\" y=\"112\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-size=\"16\">90°</text><text x=\"120\" y=\"112\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-size=\"16\">35°</text><text x=\"30\" y=\"18\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-size=\"16\">?</text></svg>"
+  },
+  {
+   "q": "삼각형의 두 각이 70°와 50°일 때, 나머지 한 각은 몇 도입니까?",
+   "choices": [
+    "120°",
+    "70°",
+    "180°",
+    "60°"
+   ],
+   "answer": 3,
+   "explain": "정답은 4번 60°이다.\n핵심 개념: 삼각형의 세 각의 합은 180°이다.\n풀이: 70+50=120이다. 180-120=60이므로 나머지 한 각은 60°이다. 세 각을 모두 더하면 70+50+60=180이다.\n오답 확인: 1번(120°) 두 각의 합 120°이다. / 2번(70°) 한 각과 같다고 본 값이다. / 3번(180°) 세 각의 합 180°이다.\n함정: 두 각의 합이 아니라 세 각의 합에서 뺀다.",
+   "fig": "<svg viewBox=\"0 0 220 140\" width=\"220\" xmlns=\"http://www.w3.org/2000/svg\" font-size=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><polygon points=\"20,120 200,120 120,20\" stroke=\"currentColor\" fill=\"none\"/><text x=\"40\" y=\"112\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-size=\"16\">70°</text><text x=\"165\" y=\"112\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-size=\"16\">50°</text><text x=\"120\" y=\"16\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-size=\"16\">?</text></svg>"
+  },
+  {
+   "q": "이등변삼각형의 세 변의 길이의 합이 20 cm 이고 길이가 같은 두 변이 각각 7 cm 입니다. 나머지 한 변은 몇 cm입니까?",
+   "choices": [
+    "7 cm",
+    "6 cm",
+    "13 cm",
+    "14 cm"
+   ],
+   "answer": 1,
+   "explain": "정답은 2번 6 cm이다.\n핵심 개념: 이등변삼각형은 두 변의 길이가 같다.\n풀이: 같은 두 변의 합은 7+7=14 cm이다. 20-14=6이므로 나머지 한 변은 6 cm이다.\n오답 확인: 1번(7 cm) 세 변이 모두 7이면 합이 21이 되어 20과 맞지 않는다. / 3번(13 cm) 20에서 7만 한 번 뺀 값이다. / 4번(14 cm) 같은 두 변의 합 14 cm이다.\n함정: 같은 두 변을 모두 빼야 나머지 변이 나온다.",
+   "fig": "<svg viewBox=\"0 0 220 140\" width=\"220\" xmlns=\"http://www.w3.org/2000/svg\" font-size=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><polygon points=\"20,120 200,120 110,25\" stroke=\"currentColor\" fill=\"none\"/><text x=\"50\" y=\"65\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-size=\"16\">7</text><text x=\"170\" y=\"65\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-size=\"16\">7</text><text x=\"110\" y=\"138\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-size=\"16\">?</text></svg>"
+  },
+  {
+   "q": "한 변이 5 cm인 정사각형의 네 변의 길이의 합은 몇 cm입니까?",
+   "choices": [
+    "10 cm",
+    "25 cm",
+    "20 cm",
+    "15 cm"
+   ],
+   "answer": 2,
+   "explain": "정답은 3번 20 cm이다.\n핵심 개념: 정사각형은 네 변의 길이가 모두 같고 네 각이 모두 직각이다.\n풀이: 한 변이 5 cm이므로 네 변의 합은 5×4=20 cm이다. 5+5+5+5=20으로 확인한다.\n오답 확인: 1번(10 cm) 두 변만 더한 값이다. / 2번(25 cm) 5×5로 넓이를 구한 값이다. / 4번(15 cm) 세 변만 더한 값이다.\n함정: 둘레는 곱하는 수가 4이다.",
+   "fig": "<svg viewBox=\"0 0 150 150\" width=\"150\" xmlns=\"http://www.w3.org/2000/svg\" font-size=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><rect x=\"20\" y=\"20\" width=\"100\" height=\"100\" stroke=\"currentColor\" fill=\"none\"/><text x=\"70\" y=\"140\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-size=\"16\">5 cm</text><text x=\"128\" y=\"76\" text-anchor=\"start\" fill=\"currentColor\" stroke=\"none\" font-size=\"16\">5 cm</text></svg>"
+  },
+  {
+   "q": "반지름이 6 cm인 원의 지름은 몇 cm입니까?",
+   "choices": [
+    "12 cm",
+    "3 cm",
+    "6 cm",
+    "36 cm"
+   ],
+   "answer": 0,
+   "explain": "정답은 1번 12 cm이다.\n핵심 개념: 지름은 반지름의 2배이다.\n풀이: 원의 중심을 지나는 선분이 지름이다. 반지름이 6 cm이면 지름은 6×2=12 cm이다. 1 L=1000 mL이므로 단위를 바꿀 때는 1000을 곱한다.\n오답 확인: 2번(3 cm) 반지름의 절반이다. / 3번(6 cm) 반지름 그대로이다. / 4번(36 cm) 6×6을 한 값이다.\n함정: 지름과 반지름을 바꾸지 않는다.",
+   "fig": "<svg viewBox=\"0 0 200 150\" width=\"200\" xmlns=\"http://www.w3.org/2000/svg\" font-size=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"100\" cy=\"75\" r=\"60\" stroke=\"currentColor\" fill=\"none\"/><line x1=\"40\" y1=\"75\" x2=\"160\" y2=\"75\" stroke=\"#ff4d7d\" stroke-width=\"2\"/><text x=\"100\" y=\"70\" text-anchor=\"middle\" fill=\"#ff4d7d\" stroke=\"none\" font-size=\"16\">지름</text><circle cx=\"100\" cy=\"75\" r=\"3\" stroke=\"currentColor\" fill=\"currentColor\"/><text x=\"70\" y=\"100\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-size=\"16\">6 cm</text></svg>"
+  },
+  {
+   "q": "2 L 300 mL 는 모두 몇 mL 입니까?",
+   "choices": [
+    "2300 mL",
+    "230 mL",
+    "203 mL",
+    "2030 mL"
+   ],
+   "answer": 0,
+   "explain": "정답은 1번 2300 mL이다.\n핵심 개념: 1 L 는 1000 mL 이다.\n풀이: 2 L 는 2000 mL 이므로 2000+300=2300 mL 이다.\n오답 확인: 2번(230 mL) 2L를 100 mL로 계산하고 30만 더한 값이다. / 3번(203 mL) 2와 3을 단순히 이어 쓴 값이다. / 4번(2030 mL) 2L를 2000 mL로 하고 30만 더한 값이다.\n함정: L를 mL로 바꿀 때는 1000을 곱한다."
+  },
+  {
+   "q": "3 kg 200 g 은 모두 몇 g 입니까?",
+   "choices": [
+    "320 g",
+    "302 g",
+    "3200 g",
+    "3020 g"
+   ],
+   "answer": 2,
+   "explain": "정답은 3번 3200 g이다.\n핵심 개념: 1 kg 은 1000 g 이다.\n풀이: 3 kg 은 3000 g 이다. 3000+200=3200 g 이다.\n오답 확인: 1번(320 g) 3kg을 100 g으로 계산한 값이다. / 2번(302 g) 3 kg을 3 g으로 본 값이다. / 4번(3020 g) 3 kg을 3000 g으로 하고 20만 더한 값이다.\n함정: kg 와 g 사이는 1000배이다."
+  },
+  {
+   "q": "2분 15초는 모두 몇 초입니까?",
+   "choices": [
+    "215초",
+    "135초",
+    "75초",
+    "115초"
+   ],
+   "answer": 1,
+   "explain": "정답은 2번 135초이다.\n핵심 개념: 1분은 60초이다.\n풀이: 2분은 60×2=120초이다. 120+15=135초이다. 1분이 60초이므로 분을 먼저 초로 바꾸어 더한다.\n오답 확인: 1번(215초) 2와 15를 단순히 이은 값이다. / 3번(75초) 1분 15초이다. / 4번(115초) 2분을 100초로 계산한 값이다.\n함정: 분과 초는 60단위이다."
+  },
+  {
+   "q": "막대그래프에서 가장 많은 것과 가장 적은 것의 차는 얼마입니까?",
+   "choices": [
+    "9",
+    "3",
+    "26",
+    "6"
+   ],
+   "answer": 3,
+   "explain": "정답은 4번 6이다.\n핵심 개념: 그래프의 눈금을 정확히 읽는다.\n풀이: 값은 6, 9, 3, 8이다. 가장 많은 것은 9, 가장 적은 것은 3이다. 9-3=6이다. 막대 높이는 왼쪽 눈금과 맞추어 읽는다.\n오답 확인: 1번(9) 가장 많은 값 그대로이다. / 2번(3) 가장 적은 값 그대로이다. / 3번(26) 모든 값을 더한 합이다.\n함정: 차를 구할 때 막대 높이를 눈금으로 읽는다.",
+   "fig": "<svg viewBox=\"0 0 400 175\" width=\"400\" xmlns=\"http://www.w3.org/2000/svg\" font-size=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><line x1=\"40\" y1=\"20\" x2=\"40\" y2=\"140\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"40\" y1=\"140\" x2=\"360\" y2=\"140\" stroke=\"currentColor\" stroke-width=\"2\"/><rect x=\"60\" y=\"62\" width=\"45\" height=\"78\" stroke=\"#ff4d7d\" fill=\"#ff4d7d\"/><text x=\"82\" y=\"162\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-size=\"16\">가</text><rect x=\"140\" y=\"23\" width=\"45\" height=\"117\" stroke=\"#ff4d7d\" fill=\"#ff4d7d\"/><text x=\"162\" y=\"162\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-size=\"16\">나</text><rect x=\"220\" y=\"101\" width=\"45\" height=\"39\" stroke=\"#ff4d7d\" fill=\"#ff4d7d\"/><text x=\"242\" y=\"162\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-size=\"16\">다</text><rect x=\"300\" y=\"36\" width=\"45\" height=\"104\" stroke=\"#ff4d7d\" fill=\"#ff4d7d\"/><text x=\"322\" y=\"162\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-size=\"16\">라</text><text x=\"32\" y=\"144\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\" font-size=\"16\">0</text><text x=\"32\" y=\"118\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\" font-size=\"16\">2</text><text x=\"32\" y=\"92\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\" font-size=\"16\">4</text><text x=\"32\" y=\"66\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\" font-size=\"16\">6</text><text x=\"32\" y=\"40\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\" font-size=\"16\">8</text><text x=\"32\" y=\"14\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\" font-size=\"16\">10</text></svg>"
+  },
+  {
+   "q": "2/9 + 4/9 의 값은 얼마입니까?",
+   "choices": [
+    "6/18",
+    "8/9",
+    "6/9",
+    "2/9"
+   ],
+   "answer": 2,
+   "explain": "정답은 3번 6/9이다.\n핵심 개념: 분모가 같은 분수는 분자끼리 더한다.\n풀이: 분모 9는 그대로 두고 분자 2+4=6이다. 따라서 6/9이다. 약분하면 2/3이다. 분모가 같으면 분자만 더하고 분모는 그대로 쓴다.\n오답 확인: 1번(6/18) 분모까지 더한 값이다. / 2번(8/9) 분자를 곱한 값이다. / 4번(2/9) 더하지 않고 첫 분수만 쓴 값이다.\n함정: 분모는 더하지 않는다."
+  },
+  {
+   "q": "7/8 - 3/8 의 값은 얼마입니까?",
+   "choices": [
+    "4/16",
+    "10/8",
+    "21/8",
+    "4/8"
+   ],
+   "answer": 3,
+   "explain": "정답은 4번 4/8이다.\n핵심 개념: 분모가 같은 분수의 뺄셈은 분자끼리 뺀다.\n풀이: 분모 8은 그대로이고 분자 7-3=4이다. 따라서 4/8이다. 약분하면 1/2이다. 분모가 같으면 분자만 빼고 분모는 그대로 쓴다.\n오답 확인: 1번(4/16) 분모까지 더한 값이다. / 2번(10/8) 분자를 더한 값이다. / 3번(21/8) 분자를 곱한 값이다.\n함정: 분모는 그대로 둔다."
+  },
+  {
+   "q": "0.6 + 0.7 의 값은 얼마입니까?",
+   "choices": [
+    "1.3",
+    "0.13",
+    "1.1",
+    "13"
+   ],
+   "answer": 0,
+   "explain": "정답은 1번 1.3이다.\n핵심 개념: 소수점의 위치를 맞추어 더한다.\n풀이: 6+7=13이고 0.1이 13개이므로 1.3이다. 수직선으로도 0.6에서 0.7만큼 가면 1.3이다. 그림이 있다면 0.1칸을 세어 확인할 수 있다.\n오답 확인: 2번(0.13) 소수점을 잘못 둔 값이다. / 3번(1.1) 올림 1을 빼먹은 값이다. / 4번(13) 소수점을 빼먹은 값이다.\n함정: 0.1이 10개면 1이 된다.",
+   "fig": "<svg viewBox=\"0 0 560 100\" width=\"560\" xmlns=\"http://www.w3.org/2000/svg\" font-size=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><line x1=\"30\" y1=\"50\" x2=\"530\" y2=\"50\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"30.0\" y1=\"42\" x2=\"30.0\" y2=\"58\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"30.0\" y=\"80\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-size=\"16\">0</text><line x1=\"55.0\" y1=\"42\" x2=\"55.0\" y2=\"58\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"55.0\" y=\"80\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-size=\"16\"></text><line x1=\"80.0\" y1=\"42\" x2=\"80.0\" y2=\"58\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"80.0\" y=\"80\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-size=\"16\"></text><line x1=\"105.0\" y1=\"42\" x2=\"105.0\" y2=\"58\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"105.0\" y=\"80\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-size=\"16\"></text><line x1=\"130.0\" y1=\"42\" x2=\"130.0\" y2=\"58\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"130.0\" y=\"80\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-size=\"16\"></text><line x1=\"155.0\" y1=\"42\" x2=\"155.0\" y2=\"58\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"155.0\" y=\"80\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-size=\"16\"></text><line x1=\"180.0\" y1=\"42\" x2=\"180.0\" y2=\"58\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"180.0\" y=\"80\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-size=\"16\"></text><line x1=\"205.0\" y1=\"42\" x2=\"205.0\" y2=\"58\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"205.0\" y=\"80\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-size=\"16\"></text><line x1=\"230.0\" y1=\"42\" x2=\"230.0\" y2=\"58\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"230.0\" y=\"80\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-size=\"16\"></text><line x1=\"255.0\" y1=\"42\" x2=\"255.0\" y2=\"58\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"255.0\" y=\"80\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-size=\"16\"></text><line x1=\"280.0\" y1=\"42\" x2=\"280.0\" y2=\"58\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"280.0\" y=\"80\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-size=\"16\">1</text><line x1=\"305.0\" y1=\"42\" x2=\"305.0\" y2=\"58\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"305.0\" y=\"80\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-size=\"16\"></text><line x1=\"330.0\" y1=\"42\" x2=\"330.0\" y2=\"58\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"330.0\" y=\"80\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-size=\"16\"></text><line x1=\"355.0\" y1=\"42\" x2=\"355.0\" y2=\"58\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"355.0\" y=\"80\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-size=\"16\"></text><line x1=\"380.0\" y1=\"42\" x2=\"380.0\" y2=\"58\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"380.0\" y=\"80\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-size=\"16\"></text><line x1=\"405.0\" y1=\"42\" x2=\"405.0\" y2=\"58\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"405.0\" y=\"80\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-size=\"16\"></text><line x1=\"430.0\" y1=\"42\" x2=\"430.0\" y2=\"58\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"430.0\" y=\"80\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-size=\"16\"></text><line x1=\"455.0\" y1=\"42\" x2=\"455.0\" y2=\"58\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"455.0\" y=\"80\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-size=\"16\"></text><line x1=\"480.0\" y1=\"42\" x2=\"480.0\" y2=\"58\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"480.0\" y=\"80\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-size=\"16\"></text><line x1=\"505.0\" y1=\"42\" x2=\"505.0\" y2=\"58\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"505.0\" y=\"80\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-size=\"16\"></text><line x1=\"530.0\" y1=\"42\" x2=\"530.0\" y2=\"58\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"530.0\" y=\"80\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-size=\"16\">2</text><circle cx=\"355.0\" cy=\"50\" r=\"7\" stroke=\"#ff4d7d\" fill=\"#ff4d7d\"/></svg>"
+  },
+  {
+   "q": "사탕 84개를 4명에게 똑같이 나누어 주면 한 명이 몇 개씩 받습니까?",
+   "choices": [
+    "20개",
+    "21개",
+    "22개",
+    "24개"
+   ],
+   "answer": 1,
+   "explain": "정답은 2번 21개이다.\n핵심 개념: 똑같이 나누는 것은 나눗셈이다.\n풀이: 84÷4에서 8÷4=2, 4÷4=1이므로 21이다. 4×21=84로 확인한다. 나눗셈 결과는 항상 곱셈으로 되돌려 검산한다.\n오답 확인: 1번(20개) 4×20=80이라서 4개가 남는다. / 3번(22개) 4×22=88로 84보다 크다. / 4번(24개) 4×24=96으로 84보다 크다.\n함정: 계산 후 곱셈으로 검산한다."
+  },
+  {
+   "q": "어떤 수를 7로 나누었더니 몫이 5, 나머지가 3입니다. 어떤 수는 무엇입니까?",
+   "choices": [
+    "35",
+    "8",
+    "15",
+    "38"
+   ],
+   "answer": 3,
+   "explain": "정답은 4번 38이다.\n핵심 개념: 나누어지는 수 = 나누는 수 × 몫 + 나머지이다.\n풀이: 7×5=35이고 35+3=38이다. 38÷7=5 나머지 3으로 확인한다. 문제에 나온 말을 식으로 먼저 바꾸어 본다.\n오답 확인: 1번(35) 나머지를 더하지 않은 값이다. / 2번(8) 몫과 나머지를 더한 값이다. / 3번(15) 7×2+1로 잘못 계산한 값이다.\n함정: 나머지를 반드시 더한다."
+  },
+  {
+   "q": "수직선에서 ●가 나타내는 소수는 얼마입니까?",
+   "choices": [
+    "0.6",
+    "0.5",
+    "0.7",
+    "6"
+   ],
+   "answer": 0,
+   "explain": "정답은 1번 0.6이다.\n핵심 개념: 0과 1 사이를 10칸으로 나누면 한 칸은 0.1이다.\n풀이: 0에서 6칸 간 곳이므로 0.1이 6개이다. 따라서 0.6이다. 눈금 하나의 크기를 알면 쉽게 읽을 수 있다.\n오답 확인: 2번(0.5) 5칸 간 곳이다. / 3번(0.7) 7칸 간 곳이다. / 4번(6) 6칸이라는 칸 수일 뿐이다.\n함정: 눈금 하나가 얼마인지 먼저 구한다.",
+   "fig": "<svg viewBox=\"0 0 560 100\" width=\"560\" xmlns=\"http://www.w3.org/2000/svg\" font-size=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><line x1=\"30\" y1=\"50\" x2=\"530\" y2=\"50\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"30.0\" y1=\"42\" x2=\"30.0\" y2=\"58\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"30.0\" y=\"80\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-size=\"16\">0</text><line x1=\"80.0\" y1=\"42\" x2=\"80.0\" y2=\"58\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"80.0\" y=\"80\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-size=\"16\">0.1</text><line x1=\"130.0\" y1=\"42\" x2=\"130.0\" y2=\"58\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"130.0\" y=\"80\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-size=\"16\">0.2</text><line x1=\"180.0\" y1=\"42\" x2=\"180.0\" y2=\"58\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"180.0\" y=\"80\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-size=\"16\">0.3</text><line x1=\"230.0\" y1=\"42\" x2=\"230.0\" y2=\"58\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"230.0\" y=\"80\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-size=\"16\">0.4</text><line x1=\"280.0\" y1=\"42\" x2=\"280.0\" y2=\"58\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"280.0\" y=\"80\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-size=\"16\">0.5</text><line x1=\"330.0\" y1=\"42\" x2=\"330.0\" y2=\"58\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"330.0\" y=\"80\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-size=\"16\">0.6</text><line x1=\"380.0\" y1=\"42\" x2=\"380.0\" y2=\"58\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"380.0\" y=\"80\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-size=\"16\">0.7</text><line x1=\"430.0\" y1=\"42\" x2=\"430.0\" y2=\"58\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"430.0\" y=\"80\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-size=\"16\">0.8</text><line x1=\"480.0\" y1=\"42\" x2=\"480.0\" y2=\"58\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"480.0\" y=\"80\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-size=\"16\">0.9</text><line x1=\"530.0\" y1=\"42\" x2=\"530.0\" y2=\"58\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"530.0\" y=\"80\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-size=\"16\">1.0</text><circle cx=\"330.0\" cy=\"50\" r=\"7\" stroke=\"#ff4d7d\" fill=\"#ff4d7d\"/></svg>"
+  },
+  {
+   "q": "95° 인 각은 예각·직각·둔각 중 무엇입니까?",
+   "choices": [
+    "예각",
+    "둔각",
+    "직각",
+    "평각"
+   ],
+   "answer": 1,
+   "explain": "정답은 2번 둔각이다.\n핵심 개념: 90°보다 크고 180°보다 작은 각을 둔각이라고 한다.\n풀이: 95는 90보다 크고 180보다 작다. 따라서 둔각이다. 90°보다 작으면 예각이다.\n오답 확인: 1번(예각) 예각은 90°보다 작은 각이다. / 3번(직각) 직각은 정확히 90°이다. / 4번(평각) 평각은 180°이다.\n함정: 직각과 비교해서 크고 작음을 본다.",
+   "fig": "<svg viewBox=\"0 0 200 140\" width=\"200\" xmlns=\"http://www.w3.org/2000/svg\" font-size=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><line x1=\"30\" y1=\"120\" x2=\"170\" y2=\"120\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"30\" y1=\"120\" x2=\"18\" y2=\"-19\" stroke=\"currentColor\" stroke-width=\"2\"/><path d=\"M 60 120 A 30 30 0 0 0 27 90\" stroke=\"#ff4d7d\" fill=\"none\"/><text x=\"90\" y=\"108\" text-anchor=\"start\" fill=\"#ff4d7d\" stroke=\"none\" font-size=\"16\">95°</text></svg>"
+  },
+  {
+   "q": "1/5 과 1/8 중 더 큰 수는 무엇입니까?",
+   "choices": [
+    "1/8",
+    "같다",
+    "1/5",
+    "알 수 없다"
+   ],
+   "answer": 2,
+   "explain": "정답은 3번 1/5이다.\n핵심 개념: 단위분수는 분모가 클수록 작다.\n풀이: 1/5은 전체를 5로 나눈 한 조각이고 1/8은 8로 나눈 한 조각이다. 조각이 더 많은 8로 나눈 조각이 더 작으므로 1/5이 더 크다.\n오답 확인: 1번(1/8) 1/8이 더 작은 수이다. / 2번(같다) 분모가 다르면 크기도 같다고 잘못 본 값이다. / 4번(알 수 없다) 분모가 다르면 크기를 비교할 수 없다고 잘못 본 값이다.\n함정: 분모가 클수록 단위분수는 작아진다.",
+   "fig": "<svg viewBox=\"0 0 340 100\" width=\"340\" xmlns=\"http://www.w3.org/2000/svg\" font-size=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><rect x=\"10\" y=\"10\" width=\"300\" height=\"25\" stroke=\"currentColor\" fill=\"none\"/><rect x=\"10\" y=\"10\" width=\"60\" height=\"25\" stroke=\"#ff4d7d\" fill=\"#ff4d7d\"/><text x=\"320\" y=\"30\" text-anchor=\"start\" fill=\"currentColor\" stroke=\"none\" font-size=\"16\">1/5</text><rect x=\"10\" y=\"55\" width=\"300\" height=\"25\" stroke=\"currentColor\" fill=\"none\"/><rect x=\"10\" y=\"55\" width=\"37.5\" height=\"25\" stroke=\"#ff4d7d\" fill=\"#ff4d7d\"/><text x=\"320\" y=\"75\" text-anchor=\"start\" fill=\"currentColor\" stroke=\"none\" font-size=\"16\">1/8</text></svg>"
+  },
+  {
+   "q": "그림의 각의 크기를 어림하여 가장 알맞은 것을 고르시오.",
+   "choices": [
+    "30°",
+    "90°",
+    "60°",
+    "150°"
+   ],
+   "answer": 2,
+   "explain": "정답은 3번 60°이다.\n핵심 개념: 각도기가 없어도 직각을 기준으로 어림할 수 있다.\n풀이: 그림의 각은 직각보다 작고 직각의 반보다는 크다. 따라서 60°가 알맞다. 각을 직각 모서리와 겹쳐 보면 감이 잡힌다.\n오답 확인: 1번(30°) 직각의 3분의 1이므로 너무 작다. / 2번(90°) 직각과 같은 크기이다. / 4번(150°) 직각보다 많이 큰 크기이다.\n함정: 직각과 비교하며 어림한다.",
+   "fig": "<svg viewBox=\"0 0 200 140\" width=\"200\" xmlns=\"http://www.w3.org/2000/svg\" font-size=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><line x1=\"30\" y1=\"120\" x2=\"170\" y2=\"120\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"30\" y1=\"120\" x2=\"100\" y2=\"-1\" stroke=\"currentColor\" stroke-width=\"2\"/><path d=\"M 60 120 A 30 30 0 0 0 45 94\" stroke=\"#ff4d7d\" fill=\"none\"/><text x=\"90\" y=\"108\" text-anchor=\"start\" fill=\"#ff4d7d\" stroke=\"none\" font-size=\"16\">?</text></svg>"
+  }
+ ]
+}

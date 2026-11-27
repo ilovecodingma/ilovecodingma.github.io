@@ -46,7 +46,7 @@
     for (var i = 0; i < 3; i++) P.push({ x: e.clientX, y: e.clientY, vx: (Math.random() - .5) * 2.2, vy: (Math.random() - .5) * 2.2 + .6, l: .8, d: .03, h: COL[(Math.random() * COL.length) | 0], r: 1.6, g: false });
   }, { passive: true });
   // 첫 진입 대폭발 + 이후 주기적으로
-  setTimeout(big, 700); setTimeout(big, 1300);
+  setTimeout(big, 300); setTimeout(big, 900);
   var T1 = setInterval(function () { if (!document.hidden) big(); }, 5200);
 
 
@@ -77,7 +77,7 @@
     flash = Math.max(flash, .9); shake(520, 22); burst(x, y, 60, 8, 200);
   }
   addEventListener('pointerdown', function (e) { if (!CALM && Math.random() < .35) glass(e.clientX, e.clientY); }, { passive: true });
-  setTimeout(function () { glass(W * .62, H * .3); }, 2300);
+  setTimeout(function () { glass(W * .62, H * .3); }, 1100);
   var T2 = setInterval(function () { if (!document.hidden && !CALM) glass(W * (.2 + Math.random() * .6), H * (.15 + Math.random() * .5)); }, 7800);
 
   /* ── 글자 흩날림 → 합체 ── 제목·소제목·카드 글자를 낱자로 쪼개 날렸다가 모은다. 몇 초마다 다시 폭발. */
@@ -177,7 +177,34 @@
     (document.querySelector('.ct') || document.body).classList.add('ct-calm');
     FL.forEach(function (f) { f.out = true; f.b.style.opacity = 0; var m = Math.hypot(f.x - W / 2, f.y - H / 2) || 1; f.vx = (f.x - W / 2) / m * 14; f.vy = (f.y - H / 2) / m * 14; });
     setTimeout(function () { FL.length = 0; if (fwrap.parentNode) fwrap.parentNode.removeChild(fwrap); }, 2600);
-  }, 15000);
+  }, 3000);
+
+  /* ── 글자 씹어먹기 ── 루리가 날아와 글자 하나를 물고 와구와구 씹은 뒤 뱉듯이 되돌려 놓는다 */
+  function chomp() {
+    if (CALM || document.hidden) return;
+    var cand = LET.filter(function (sp) { var r = sp.getBoundingClientRect(); return r.width > 8 && r.top > 80 && r.bottom < innerHeight - 40 && r.left > 10 && r.right < innerWidth - 10 && sp.style.visibility !== 'hidden'; });
+    if (!cand.length || !document.body.animate) return;
+    var sp = cand[(Math.random() * cand.length) | 0], r = sp.getBoundingClientRect(), sz = innerWidth < 700 ? 120 : 170;
+    var d = document.createElement('div'), im = new Image(), b = document.createElement('b');
+    im.src = '/assets/ruri/sc_' + ['meal_1', 'meal_2', 'meal_3', 'meal_4', 'dday_1', 'perfect_2'][(Math.random() * 6) | 0] + '.webp'; im.alt = '';
+    im.style.cssText = 'display:block;width:100%;height:auto;filter:drop-shadow(0 0 16px rgba(255,60,120,.8))';
+    b.textContent = '와구와구'; b.style.cssText = 'position:absolute;left:50%;top:-4px;transform:translate(-50%,-100%) rotate(-4deg);white-space:nowrap;background:#ff4d7d;color:#fff;font:800 15px/1 system-ui,sans-serif;padding:7px 10px;border-radius:6px;opacity:0';
+    d.style.cssText = 'position:fixed;left:' + (r.left + r.width / 2 - sz * .5) + 'px;top:' + (r.top + r.height / 2 - sz * .55) + 'px;width:' + sz + 'px;pointer-events:none;z-index:9985';
+    d.appendChild(im); d.appendChild(b); document.body.appendChild(d);
+    var fromX = (Math.random() < .5 ? -1 : 1) * (innerWidth * .7), fromY = (Math.random() - .5) * innerHeight * .6;
+    var inn = d.animate([{ transform: 'translate(' + fromX + 'px,' + fromY + 'px) rotate(' + (fromX < 0 ? -40 : 40) + 'deg) scale(.6)', opacity: 0 }, { transform: 'none', opacity: 1 }], { duration: 520, easing: 'cubic-bezier(.2,1.2,.4,1)', fill: 'both' });
+    inn.onfinish = function () {
+      b.style.opacity = 1; sp.style.visibility = 'hidden';
+      var chew = d.animate([{ transform: 'none' }, { transform: 'scale(1.1,.88) translateY(6px)' }, { transform: 'none' }, { transform: 'scale(1.1,.88) translateY(6px)' }, { transform: 'none' }, { transform: 'scale(1.12,.86) translateY(8px)' }, { transform: 'none' }], { duration: 700, fill: 'both' });
+      var n = 0, t = setInterval(function () { burst(r.left + r.width / 2, r.top + r.height / 2, 7, 3, 40); if (++n > 3) clearInterval(t); }, 170);
+      chew.onfinish = function () {
+        b.textContent = '맛없네'; sp.style.visibility = 'visible'; fly(sp, 'in', 0);
+        var out = d.animate([{ transform: 'none', opacity: 1 }, { transform: 'translate(' + (-fromX) + 'px,' + (-fromY) + 'px) rotate(' + (fromX < 0 ? 50 : -50) + 'deg) scale(.5)', opacity: 0 }], { duration: 520, delay: 150, easing: 'ease-in', fill: 'both' });
+        out.onfinish = function () { d.remove(); };
+      };
+    };
+  }
+  setTimeout(chomp, 500);
 
   var prev = performance.now();
   function loop(t) {

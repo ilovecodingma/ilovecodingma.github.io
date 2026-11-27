@@ -19,8 +19,9 @@
     "시속 50킬로미터 이내"
    ],
    "answer": 1,
-   "explain": "도로교통법 제12조제1항은 어린이 보호구역에서 자동차등의 통행속도를 시속 30킬로미터 이내로 제한할 수 있다고 정한다.",
-   "ref_url": "https://www.law.go.kr/법령/%EB%8F%84%EB%A1%9C%EA%B5%90%ED%86%B5%EB%B2%95/%EC%A0%9C12%EC%A1%B0"
+   "explain": "정답은 2번 「시속 30킬로미터 이내」이다.\n도로교통법 제12조제1항은 시장등이 어린이 보호구역으로 지정한 구간에서 자동차등의 통행속도를 시속 30킬로미터 이내로 제한할 수 있다고 정한다.\n1번: 시속 20킬로미터는 법이 정한 한도가 아니라 틀렸다.\n3번: 시속 40킬로미터는 법의 한도(30킬로미터)보다 높아 틀렸다.\n4번: 시속 50킬로미터는 주거·상업·공업지역 일반도로의 최고속도라 보호구역 한도로는 틀렸다.\n함정: 일반도로 최고속도(50킬로미터)와 어린이 보호구역 한도(30킬로미터)를 바꿔 기억하기 쉽다.",
+   "ref_url": "https://www.law.go.kr/법령/%EB%8F%84%EB%A1%9C%EA%B5%90%ED%86%B5%EB%B2%95/%EC%A0%9C12%EC%A1%B0",
+   "fig": "<svg viewBox=\"0 0 600 112\" width=\"600\" height=\"112\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\" font-size=\"14\"><text x=\"300\" y=\"26\" text-anchor=\"middle\" font-size=\"14\" fill=\"currentColor\" font-weight=\"bold\">최고속도 비교</text><text x=\"242\" y=\"59\" text-anchor=\"end\" font-size=\"14\" fill=\"currentColor\">주거·상업·공업지역 일반도로</text><rect x=\"250\" y=\"43\" width=\"250.0\" height=\"22\" rx=\"4\" fill=\"currentColor\" fill-opacity=\"0.18\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"508.0\" y=\"60\" text-anchor=\"start\" font-size=\"14\" fill=\"currentColor\">50km/h</text><text x=\"242\" y=\"93\" text-anchor=\"end\" font-size=\"14\" fill=\"#ff4d7d\">어린이 보호구역 제한 한도</text><rect x=\"250\" y=\"77\" width=\"150.0\" height=\"22\" rx=\"4\" fill=\"#ff4d7d\" fill-opacity=\"0.18\" stroke=\"#ff4d7d\" stroke-width=\"2\"/><text x=\"408.0\" y=\"94\" text-anchor=\"start\" font-size=\"14\" fill=\"#ff4d7d\">30km/h</text></svg>"
   },
   {
    "q": "주거지역의 일반도로(시ㆍ도경찰청장이 별도로 지정한 노선ㆍ구간 제외)에서 자동차의 최고속도로 맞는 것은?",
@@ -31,8 +32,9 @@
     "매시 50킬로미터 이내"
    ],
    "answer": 3,
-   "explain": "시행규칙 제19조제1항제1호가목은 주거ㆍ상업ㆍ공업지역의 일반도로에서 매시 50킬로미터 이내로 정한다.",
-   "ref_url": "https://www.law.go.kr/법령/%EB%8F%84%EB%A1%9C%EA%B5%90%ED%86%B5%EB%B2%95%EC%8B%9C%ED%96%89%EA%B7%9C%EC%B9%99/%EC%A0%9C19%EC%A1%B0"
+   "explain": "정답은 4번 「매시 50킬로미터 이내」이다.\n규칙 제19조제1항제1호가목은 주거·상업·공업지역의 일반도로 최고속도를 매시 50킬로미터 이내로 정한다.\n1번: 매시 40킬로미터는 법에 없는 수치라 틀렸다.\n2번: 매시 60킬로미터는 시·도경찰청장이 소통을 위해 따로 지정한 노선·구간에만 적용되어 문제의 조건(별도 지정 제외)과 맞지 않아 틀렸다.\n3번: 매시 80킬로미터는 그 밖의 지역에서 편도 2차로 이상인 일반도로의 기준이라 틀렸다.\n함정: 지역(주거·상업·공업)이 기준이므로 같은 일반도로라도 지역에 따라 50·60·80으로 갈린다.",
+   "ref_url": "https://www.law.go.kr/법령/%EB%8F%84%EB%A1%9C%EA%B5%90%ED%86%B5%EB%B2%95%EC%8B%9C%ED%96%89%EA%B7%9C%EC%B9%99/%EC%A0%9C19%EC%A1%B0",
+   "fig": "<svg viewBox=\"0 0 600 146\" width=\"600\" height=\"146\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\" font-size=\"14\"><text x=\"300\" y=\"26\" text-anchor=\"middle\" font-size=\"14\" fill=\"currentColor\" font-weight=\"bold\">일반도로 최고속도</text><text x=\"242\" y=\"59\" text-anchor=\"end\" font-size=\"14\" fill=\"#ff4d7d\">주거·상업·공업지역 일반도로</text><rect x=\"250\" y=\"43\" width=\"156.25\" height=\"22\" rx=\"4\" fill=\"#ff4d7d\" fill-opacity=\"0.18\" stroke=\"#ff4d7d\" stroke-width=\"2\"/><text x=\"414.25\" y=\"60\" text-anchor=\"start\" font-size=\"14\" fill=\"#ff4d7d\">50km/h</text><text x=\"242\" y=\"93\" text-anchor=\"end\" font-size=\"14\" fill=\"currentColor\">그 밖의 지역 일반도로</text><rect x=\"250\" y=\"77\" width=\"187.5\" height=\"22\" rx=\"4\" fill=\"currentColor\" fill-opacity=\"0.18\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"445.5\" y=\"94\" text-anchor=\"start\" font-size=\"14\" fill=\"currentColor\">60km/h</text><text x=\"242\" y=\"127\" text-anchor=\"end\" font-size=\"14\" fill=\"currentColor\">그 밖의 지역 편도 2차로 이상</text><rect x=\"250\" y=\"111\" width=\"250.0\" height=\"22\" rx=\"4\" fill=\"currentColor\" fill-opacity=\"0.18\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"508.0\" y=\"128\" text-anchor=\"start\" font-size=\"14\" fill=\"currentColor\">80km/h</text></svg>"
   },
   {
    "q": "주거ㆍ상업ㆍ공업지역이 아닌 곳의 편도 2차로 이상 일반도로에서 자동차의 최고속도는?",
@@ -43,8 +45,9 @@
     "매시 90킬로미터 이내"
    ],
    "answer": 0,
-   "explain": "시행규칙 제19조제1항제1호나목에 따라 그 밖의 일반도로는 60킬로미터 이내이나, 편도 2차로 이상이면 80킬로미터 이내이다.",
-   "ref_url": "https://www.law.go.kr/법령/%EB%8F%84%EB%A1%9C%EA%B5%90%ED%86%B5%EB%B2%95%EC%8B%9C%ED%96%89%EA%B7%9C%EC%B9%99/%EC%A0%9C19%EC%A1%B0"
+   "explain": "정답은 1번 「매시 80킬로미터 이내」이다.\n규칙 제19조제1항제1호나목은 주거·상업·공업지역이 아닌 일반도로의 최고속도를 매시 60킬로미터 이내로 하되, 편도 2차로 이상인 도로에서는 매시 80킬로미터 이내로 정한다.\n문제 조건이 지역 외 + 편도 2차로 이상이므로 단서가 적용되어 80킬로미터다.\n2번: 매시 60킬로미터는 편도 1차로 도로의 기준이라 틀렸다.\n3번: 매시 70킬로미터는 법에 없는 수치라 틀렸다.\n4번: 매시 90킬로미터는 자동차전용도로의 최고속도라 틀렸다.\n함정: 60킬로미터가 기본이고 편도 2차로 이상이라는 단서가 붙을 때만 80킬로미터가 된다.",
+   "ref_url": "https://www.law.go.kr/법령/%EB%8F%84%EB%A1%9C%EA%B5%90%ED%86%B5%EB%B2%95%EC%8B%9C%ED%96%89%EA%B7%9C%EC%B9%99/%EC%A0%9C19%EC%A1%B0",
+   "fig": "<svg viewBox=\"0 0 600 146\" width=\"600\" height=\"146\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\" font-size=\"14\"><text x=\"300\" y=\"26\" text-anchor=\"middle\" font-size=\"14\" fill=\"currentColor\" font-weight=\"bold\">일반도로 최고속도</text><text x=\"242\" y=\"59\" text-anchor=\"end\" font-size=\"14\" fill=\"currentColor\">주거·상업·공업지역 일반도로</text><rect x=\"250\" y=\"43\" width=\"156.25\" height=\"22\" rx=\"4\" fill=\"currentColor\" fill-opacity=\"0.18\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"414.25\" y=\"60\" text-anchor=\"start\" font-size=\"14\" fill=\"currentColor\">50km/h</text><text x=\"242\" y=\"93\" text-anchor=\"end\" font-size=\"14\" fill=\"currentColor\">그 밖의 지역 일반도로</text><rect x=\"250\" y=\"77\" width=\"187.5\" height=\"22\" rx=\"4\" fill=\"currentColor\" fill-opacity=\"0.18\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"445.5\" y=\"94\" text-anchor=\"start\" font-size=\"14\" fill=\"currentColor\">60km/h</text><text x=\"242\" y=\"127\" text-anchor=\"end\" font-size=\"14\" fill=\"#ff4d7d\">그 밖의 지역 편도 2차로 이상</text><rect x=\"250\" y=\"111\" width=\"250.0\" height=\"22\" rx=\"4\" fill=\"#ff4d7d\" fill-opacity=\"0.18\" stroke=\"#ff4d7d\" stroke-width=\"2\"/><text x=\"508.0\" y=\"128\" text-anchor=\"start\" font-size=\"14\" fill=\"#ff4d7d\">80km/h</text></svg>"
   },
   {
    "q": "자동차전용도로에서의 최고속도와 최저속도를 옳게 짝지은 것은?",
@@ -55,8 +58,9 @@
     "최고 매시 100킬로미터, 최저 매시 50킬로미터"
    ],
    "answer": 2,
-   "explain": "시행규칙 제19조제1항제2호는 자동차전용도로의 최고속도를 매시 90킬로미터, 최저속도를 매시 30킬로미터로 정한다.",
-   "ref_url": "https://www.law.go.kr/법령/%EB%8F%84%EB%A1%9C%EA%B5%90%ED%86%B5%EB%B2%95%EC%8B%9C%ED%96%89%EA%B7%9C%EC%B9%99/%EC%A0%9C19%EC%A1%B0"
+   "explain": "정답은 3번 「최고 매시 90킬로미터, 최저 매시 30킬로미터」이다.\n규칙 제19조제1항제2호는 자동차전용도로의 최고속도를 매시 90킬로미터, 최저속도를 매시 30킬로미터로 정한다.\n1번: 최고 80킬로미터는 법의 최고속도(90킬로미터)와 달라 틀렸다.\n2번: 최저 50킬로미터는 고속도로의 최저속도이고 자동차전용도로는 30킬로미터라 틀렸다.\n4번: 최고 100킬로미터·최저 50킬로미터는 편도 2차로 이상 고속도로의 기준이라 틀렸다.\n함정: 고속도로(최저 50)와 자동차전용도로(최저 30)를 한 묶음으로 외우면 최저속도에서 틀린다.",
+   "ref_url": "https://www.law.go.kr/법령/%EB%8F%84%EB%A1%9C%EA%B5%90%ED%86%B5%EB%B2%95%EC%8B%9C%ED%96%89%EA%B7%9C%EC%B9%99/%EC%A0%9C19%EC%A1%B0",
+   "fig": "<svg viewBox=\"0 0 600 146\" width=\"600\" height=\"146\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\" font-size=\"14\"><text x=\"300\" y=\"26\" text-anchor=\"middle\" font-size=\"14\" fill=\"currentColor\" font-weight=\"bold\">최고·최저속도</text><text x=\"202\" y=\"59\" text-anchor=\"end\" font-size=\"14\" fill=\"#ff4d7d\">자동차전용도로 최고</text><rect x=\"210\" y=\"43\" width=\"225.0\" height=\"22\" rx=\"4\" fill=\"#ff4d7d\" fill-opacity=\"0.18\" stroke=\"#ff4d7d\" stroke-width=\"2\"/><text x=\"443.0\" y=\"60\" text-anchor=\"start\" font-size=\"14\" fill=\"#ff4d7d\">90km/h</text><text x=\"202\" y=\"93\" text-anchor=\"end\" font-size=\"14\" fill=\"#ff4d7d\">자동차전용도로 최저</text><rect x=\"210\" y=\"77\" width=\"75.0\" height=\"22\" rx=\"4\" fill=\"#ff4d7d\" fill-opacity=\"0.18\" stroke=\"#ff4d7d\" stroke-width=\"2\"/><text x=\"293.0\" y=\"94\" text-anchor=\"start\" font-size=\"14\" fill=\"#ff4d7d\">30km/h</text><text x=\"202\" y=\"127\" text-anchor=\"end\" font-size=\"14\" fill=\"currentColor\">고속도로 최저</text><rect x=\"210\" y=\"111\" width=\"125.0\" height=\"22\" rx=\"4\" fill=\"currentColor\" fill-opacity=\"0.18\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"343.0\" y=\"128\" text-anchor=\"start\" font-size=\"14\" fill=\"currentColor\">50km/h</text></svg>"
   },
   {
    "q": "비가 내려 노면이 젖어 있는 도로에서 운전자가 지켜야 하는 감속 기준은?",
@@ -67,8 +71,9 @@
     "최고속도의 100분의 20을 줄인 속도로 운행"
    ],
    "answer": 3,
-   "explain": "시행규칙 제19조제2항제1호가목은 비로 노면이 젖은 경우 최고속도의 100분의 20을 줄인 속도로 운행하도록 한다(가시거리 100미터 이내 등은 100분의 50).",
-   "ref_url": "https://www.law.go.kr/법령/%EB%8F%84%EB%A1%9C%EA%B5%90%ED%86%B5%EB%B2%95%EC%8B%9C%ED%96%89%EA%B7%9C%EC%B9%99/%EC%A0%9C19%EC%A1%B0"
+   "explain": "정답은 4번 「최고속도의 100분의 20을 줄인 속도로 운행」이다.\n규칙 제19조제2항제1호가목은 비가 내려 노면이 젖어 있는 경우 최고속도의 100분의 20을 줄인 속도로 운행하도록 정한다.\n최고속도가 80이면 80×0.8=64킬로미터가 된다. 가시거리 100미터 이내 같은 더 거친 조건에서는 100분의 50을 줄인다.\n1번: 100분의 10 감속이라는 기준은 법에 없어 틀렸다.\n2번: 100분의 30 감속이라는 기준은 법에 없어 틀렸다.\n3번: 100분의 50 감속은 가시거리 100미터 이내, 노면 결빙, 눈 20밀리미터 이상 같은 더 거친 조건의 기준이라 틀렸다.\n함정: 젖은 노면(20%)과 폭우·안개·결빙(50%)의 두 단계를 구분해야 한다.",
+   "ref_url": "https://www.law.go.kr/법령/%EB%8F%84%EB%A1%9C%EA%B5%90%ED%86%B5%EB%B2%95%EC%8B%9C%ED%96%89%EA%B7%9C%EC%B9%99/%EC%A0%9C19%EC%A1%B0",
+   "fig": "<svg viewBox=\"0 0 600 112\" width=\"600\" height=\"112\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\" font-size=\"14\"><text x=\"300\" y=\"26\" text-anchor=\"middle\" font-size=\"14\" fill=\"currentColor\" font-weight=\"bold\">최고속도에서 줄이는 비율</text><text x=\"222\" y=\"59\" text-anchor=\"end\" font-size=\"14\" fill=\"#ff4d7d\">젖은 노면·눈 20mm 미만</text><rect x=\"230\" y=\"43\" width=\"100.0\" height=\"22\" rx=\"4\" fill=\"#ff4d7d\" fill-opacity=\"0.18\" stroke=\"#ff4d7d\" stroke-width=\"2\"/><text x=\"338.0\" y=\"60\" text-anchor=\"start\" font-size=\"14\" fill=\"#ff4d7d\">20%</text><text x=\"222\" y=\"93\" text-anchor=\"end\" font-size=\"14\" fill=\"currentColor\">가시거리 100m 이내·결빙</text><rect x=\"230\" y=\"77\" width=\"250.0\" height=\"22\" rx=\"4\" fill=\"currentColor\" fill-opacity=\"0.18\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"488.0\" y=\"94\" text-anchor=\"start\" font-size=\"14\" fill=\"currentColor\">50%</text></svg>"
   },
   {
    "q": "도로교통법상 '정차'의 정의로 옳은 것은?",
@@ -79,8 +84,9 @@
     "차를 즉시 정지시킬 수 있는 느린 속도로 진행하는 것"
    ],
    "answer": 1,
-   "explain": "제2조제25호는 정차를 운전자가 5분을 초과하지 아니하고 차를 정지시키는 것으로서 주차 외의 정지 상태로 정의한다.",
-   "ref_url": "https://www.law.go.kr/법령/%EB%8F%84%EB%A1%9C%EA%B5%90%ED%86%B5%EB%B2%95/%EC%A0%9C2%EC%A1%B0"
+   "explain": "정답은 2번 「운전자가 5분을 초과하지 않고 차를 정지시키는 것으로서 주차 외의 정지 상태」이다.\n도로교통법 제2조제25호는 정차를 운전자가 5분을 초과하지 아니하고 차를 정지시키는 것으로서 주차 외의 정지 상태로 정의한다.\n제2조제24호의 주차는 승객을 기다리거나 화물을 싣거나 고장 등으로 계속 정지 상태에 두는 것, 또는 운전자가 차에서 떠나 즉시 운전할 수 없는 상태에 두는 것이다.\n1번: 운전자가 차를 떠나 즉시 운전할 수 없는 상태에 두는 것은 주차의 정의라 틀렸다.\n3번: 바퀴를 일시적으로 완전히 정지시키는 것은 일시정지의 정의라 틀렸다.\n4번: 즉시 정지시킬 수 있는 느린 속도로 진행하는 것은 서행의 정의라 틀렸다.\n함정: 5분이라는 숫자는 정차에만 붙고, 운전자가 차를 떠나면 5분 이내여도 주차다.",
+   "ref_url": "https://www.law.go.kr/법령/%EB%8F%84%EB%A1%9C%EA%B5%90%ED%86%B5%EB%B2%95/%EC%A0%9C2%EC%A1%B0",
+   "fig": "<svg viewBox=\"0 0 600 124\" width=\"600\" height=\"124\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\" font-size=\"14\"><rect x=\"8.0\" y=\"20\" width=\"279.0\" height=\"84\" rx=\"4\" fill=\"#ff4d7d\" fill-opacity=\"0.18\" stroke=\"#ff4d7d\" stroke-width=\"2\"/><text x=\"147.5\" y=\"48\" text-anchor=\"middle\" font-size=\"14\" fill=\"#ff4d7d\">정차</text><text x=\"147.5\" y=\"70\" text-anchor=\"middle\" font-size=\"14\" fill=\"#ff4d7d\">5분 이내 정지</text><line x1=\"290.0\" y1=\"62\" x2=\"310.0\" y2=\"62\" stroke=\"currentColor\" stroke-width=\"2\"/><polygon points=\"310.0,62 302.6315120479769,65.1153467384692 302.6315120479769,58.884653261530794\" fill=\"currentColor\"/><rect x=\"313.0\" y=\"20\" width=\"279.0\" height=\"84\" rx=\"4\" fill=\"none\" fill-opacity=\"0\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"452.5\" y=\"48\" text-anchor=\"middle\" font-size=\"14\" fill=\"currentColor\">주차</text><text x=\"452.5\" y=\"70\" text-anchor=\"middle\" font-size=\"14\" fill=\"currentColor\">계속 정지·운전자</text><text x=\"452.5\" y=\"92\" text-anchor=\"middle\" font-size=\"14\" fill=\"currentColor\">이탈</text></svg>"
   },
   {
    "q": "도로교통법상 '서행'의 뜻으로 옳은 것은?",
@@ -91,7 +97,7 @@
     "보행자의 걸음 속도와 같은 속도로 진행하는 것"
    ],
    "answer": 2,
-   "explain": "제2조제28호는 서행을 차 또는 노면전차를 즉시 정지시킬 수 있는 정도의 느린 속도로 진행하는 것으로 정의하며, 특정 속도 수치는 정하지 않는다.",
+   "explain": "정답은 3번 「운전자가 차를 즉시 정지시킬 수 있는 정도의 느린 속도로 진행하는 것」이다.\n도로교통법 제2조제28호는 서행을 운전자가 차를 즉시 정지시킬 수 있는 정도의 느린 속도로 진행하는 것으로 정의하며 특정 속도 수치를 정하지 않는다.\n1번: 시속 10킬로미터 이하라는 수치는 법에 없어 틀렸다.\n2번: 바퀴를 완전히 멈추었다가 출발하는 것은 일시정지에 가까운 설명이라 틀렸다.\n4번: 보행자의 걸음 속도라는 기준은 법에 없어 틀렸다.\n함정: 서행은 속도 수치가 아니라 즉시 정지할 수 있는 상태라는 기준으로 판단한다.",
    "ref_url": "https://www.law.go.kr/법령/%EB%8F%84%EB%A1%9C%EA%B5%90%ED%86%B5%EB%B2%95/%EC%A0%9C2%EC%A1%B0"
   },
   {
@@ -103,8 +109,9 @@
     "차를 계속 정지 상태에 두는 것"
    ],
    "answer": 0,
-   "explain": "제2조제30호는 일시정지를 바퀴를 일시적으로 완전히 정지시키는 것으로 정의한다.",
-   "ref_url": "https://www.law.go.kr/법령/%EB%8F%84%EB%A1%9C%EA%B5%90%ED%86%B5%EB%B2%95/%EC%A0%9C2%EC%A1%B0"
+   "explain": "정답은 1번 「차의 바퀴를 일시적으로 완전히 정지시키는 것」이다.\n도로교통법 제2조제30호는 일시정지를 차의 바퀴를 일시적으로 완전히 정지시키는 것으로 정의한다.\n2번: 즉시 정지시킬 수 있는 느린 속도로 진행하는 것은 서행이라 틀렸다.\n3번: 5분을 초과하지 않고 차를 세우는 것은 정차의 정의라 틀렸다.\n4번: 계속 정지 상태에 두는 것은 주차의 정의라 틀렸다.\n함정: 서행은 움직이는 상태이고 일시정지는 바퀴가 완전히 멈추는 상태라는 점이 핵심이다.",
+   "ref_url": "https://www.law.go.kr/법령/%EB%8F%84%EB%A1%9C%EA%B5%90%ED%86%B5%EB%B2%95/%EC%A0%9C2%EC%A1%B0",
+   "fig": "<svg viewBox=\"0 0 600 124\" width=\"600\" height=\"124\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\" font-size=\"14\"><rect x=\"8.0\" y=\"20\" width=\"177.33333333333334\" height=\"84\" rx=\"4\" fill=\"none\" fill-opacity=\"0\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"96.66666666666667\" y=\"48\" text-anchor=\"middle\" font-size=\"14\" fill=\"currentColor\">서행</text><text x=\"96.66666666666667\" y=\"70\" text-anchor=\"middle\" font-size=\"14\" fill=\"currentColor\">즉시 정지 가능한</text><text x=\"96.66666666666667\" y=\"92\" text-anchor=\"middle\" font-size=\"14\" fill=\"currentColor\">느린 속도</text><line x1=\"188.33333333333334\" y1=\"62\" x2=\"208.33333333333334\" y2=\"62\" stroke=\"currentColor\" stroke-width=\"2\"/><polygon points=\"208.33333333333334,62 200.96484538131025,65.1153467384692 200.96484538131025,58.884653261530794\" fill=\"currentColor\"/><rect x=\"211.33333333333334\" y=\"20\" width=\"177.33333333333334\" height=\"84\" rx=\"4\" fill=\"#ff4d7d\" fill-opacity=\"0.18\" stroke=\"#ff4d7d\" stroke-width=\"2\"/><text x=\"300.0\" y=\"48\" text-anchor=\"middle\" font-size=\"14\" fill=\"#ff4d7d\">일시정지</text><text x=\"300.0\" y=\"70\" text-anchor=\"middle\" font-size=\"14\" fill=\"#ff4d7d\">바퀴를 완전히</text><text x=\"300.0\" y=\"92\" text-anchor=\"middle\" font-size=\"14\" fill=\"#ff4d7d\">멈춤</text><line x1=\"391.6666666666667\" y1=\"62\" x2=\"411.6666666666667\" y2=\"62\" stroke=\"currentColor\" stroke-width=\"2\"/><polygon points=\"411.6666666666667,62 404.2981787146436,65.1153467384692 404.2981787146436,58.884653261530794\" fill=\"currentColor\"/><rect x=\"414.6666666666667\" y=\"20\" width=\"177.33333333333334\" height=\"84\" rx=\"4\" fill=\"none\" fill-opacity=\"0\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"503.33333333333337\" y=\"48\" text-anchor=\"middle\" font-size=\"14\" fill=\"currentColor\">정차</text><text x=\"503.33333333333337\" y=\"70\" text-anchor=\"middle\" font-size=\"14\" fill=\"currentColor\">5분 이내 정지</text></svg>"
   },
   {
    "q": "다음 중 교차로의 가장자리나 도로의 모퉁이로부터 몇 미터 이내인 곳에 정차하거나 주차해서는 안 되는가?",
@@ -115,8 +122,9 @@
     "15미터"
    ],
    "answer": 1,
-   "explain": "제32조제2호는 교차로의 가장자리나 도로의 모퉁이로부터 5미터 이내인 곳에서 정차ㆍ주차를 금지한다.",
-   "ref_url": "https://www.law.go.kr/법령/%EB%8F%84%EB%A1%9C%EA%B5%90%ED%86%B5%EB%B2%95/%EC%A0%9C32%EC%A1%B0"
+   "explain": "정답은 2번 「5미터」이다.\n도로교통법 제32조제2호는 교차로의 가장자리나 도로의 모퉁이로부터 5미터 이내인 곳에서 정차와 주차를 금지한다.\n교차로 가장자리 5미터 이내이므로 보기 중 5미터가 정답이다.\n1번: 3미터는 법에 없는 수치라 틀렸다.\n3번: 10미터는 안전지대 사방, 버스 정류지, 건널목 가장자리와 횡단보도 기준이라 틀렸다.\n4번: 15미터는 법에 없는 수치라 틀렸다.\n함정: 같은 제32조에 5미터와 10미터 장소가 섞여 있으므로 장소별로 짝지어 외워야 한다.",
+   "ref_url": "https://www.law.go.kr/법령/%EB%8F%84%EB%A1%9C%EA%B5%90%ED%86%B5%EB%B2%95/%EC%A0%9C32%EC%A1%B0",
+   "fig": "<svg viewBox=\"0 0 600 192\" width=\"600\" height=\"192\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\" font-size=\"14\"><text x=\"300\" y=\"24\" text-anchor=\"middle\" font-size=\"14\" fill=\"currentColor\" font-weight=\"bold\">교차로 가장자리·도로 모퉁이</text><line x1=\"20\" y1=\"100\" x2=\"580\" y2=\"100\" stroke=\"currentColor\" stroke-width=\"3\"/><rect x=\"40\" y=\"70\" width=\"150\" height=\"30\" rx=\"4\" fill=\"#ff4d7d\" fill-opacity=\"0.18\" stroke=\"#ff4d7d\" stroke-width=\"2\"/><text x=\"115\" y=\"90\" text-anchor=\"middle\" font-size=\"14\" fill=\"#ff4d7d\">교차로 모퉁이</text><line x1=\"170\" y1=\"125\" x2=\"430\" y2=\"125\" stroke=\"#ff4d7d\" stroke-width=\"3\"/><line x1=\"170\" y1=\"115\" x2=\"170\" y2=\"135\" stroke=\"#ff4d7d\" stroke-width=\"2\"/><line x1=\"430\" y1=\"115\" x2=\"430\" y2=\"135\" stroke=\"#ff4d7d\" stroke-width=\"2\"/><text x=\"300\" y=\"150\" text-anchor=\"middle\" font-size=\"14\" fill=\"#ff4d7d\" font-weight=\"bold\">5미터 이내</text><text x=\"300\" y=\"176\" text-anchor=\"middle\" font-size=\"14\" fill=\"currentColor\">이 구간 안에서는 정차·주차를 하지 못한다</text></svg>"
   },
   {
    "q": "소방용수시설 또는 비상소화장치가 설치된 곳으로부터 몇 미터 이내에서는 정차와 주차가 금지되는가?",
@@ -127,8 +135,9 @@
     "5미터"
    ],
    "answer": 3,
-   "explain": "제32조제6호가목은 소방용수시설 또는 비상소화장치가 설치된 곳으로부터 5미터 이내를 정차ㆍ주차 금지 장소로 정한다.",
-   "ref_url": "https://www.law.go.kr/법령/%EB%8F%84%EB%A1%9C%EA%B5%90%ED%86%B5%EB%B2%95/%EC%A0%9C32%EC%A1%B0"
+   "explain": "정답은 4번 「5미터」이다.\n도로교통법 제32조제6호가목은 소방용수시설 또는 비상소화장치가 설치된 곳으로부터 5미터 이내를 정차·주차 금지 장소로 정한다.\n같은 제32조에서 소방 관련 장소와 교차로 가장자리·모퉁이는 5미터, 안전지대·버스 정류지·건널목·횡단보도는 10미터로 구분된다.\n1번: 3미터는 법에 없는 수치라 틀렸다.\n2번: 10미터는 법이 정한 5미터보다 넓어 틀렸다.\n3번: 20미터는 법에 없는 수치라 틀렸다.\n함정: 소방 관련 5미터와 정류지·횡단보도 10미터를 서로 바꿔 외우기 쉽다.",
+   "ref_url": "https://www.law.go.kr/법령/%EB%8F%84%EB%A1%9C%EA%B5%90%ED%86%B5%EB%B2%95/%EC%A0%9C32%EC%A1%B0",
+   "fig": "<svg viewBox=\"0 0 600 192\" width=\"600\" height=\"192\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\" font-size=\"14\"><text x=\"300\" y=\"24\" text-anchor=\"middle\" font-size=\"14\" fill=\"currentColor\" font-weight=\"bold\">소방용수시설·비상소화장치</text><line x1=\"20\" y1=\"100\" x2=\"580\" y2=\"100\" stroke=\"currentColor\" stroke-width=\"3\"/><rect x=\"40\" y=\"70\" width=\"150\" height=\"30\" rx=\"4\" fill=\"#ff4d7d\" fill-opacity=\"0.18\" stroke=\"#ff4d7d\" stroke-width=\"2\"/><text x=\"115\" y=\"90\" text-anchor=\"middle\" font-size=\"14\" fill=\"#ff4d7d\">소화전 등</text><line x1=\"170\" y1=\"125\" x2=\"430\" y2=\"125\" stroke=\"#ff4d7d\" stroke-width=\"3\"/><line x1=\"170\" y1=\"115\" x2=\"170\" y2=\"135\" stroke=\"#ff4d7d\" stroke-width=\"2\"/><line x1=\"430\" y1=\"115\" x2=\"430\" y2=\"135\" stroke=\"#ff4d7d\" stroke-width=\"2\"/><text x=\"300\" y=\"150\" text-anchor=\"middle\" font-size=\"14\" fill=\"#ff4d7d\" font-weight=\"bold\">5미터 이내</text><text x=\"300\" y=\"176\" text-anchor=\"middle\" font-size=\"14\" fill=\"currentColor\">이 구간 안에서는 정차·주차를 하지 못한다</text></svg>"
   },
   {
    "q": "교통정리가 없는 교차로에 두 차가 동시에 들어가려 할 때의 양보 방법으로 옳은 것은?",
@@ -139,8 +148,9 @@
     "속도가 빠른 차가 먼저 통행한다"
    ],
    "answer": 0,
-   "explain": "제26조제3항은 교통정리를 하지 않는 교차로에 동시에 들어가려는 차의 운전자는 우측 도로의 차에 진로를 양보하도록 정한다.",
-   "ref_url": "https://www.law.go.kr/법령/%EB%8F%84%EB%A1%9C%EA%B5%90%ED%86%B5%EB%B2%95/%EC%A0%9C26%EC%A1%B0"
+   "explain": "정답은 1번 「우측 도로의 차에 진로를 양보한다」이다.\n도로교통법 제26조제3항은 교통정리를 하지 않는 교차로에 동시에 들어가려는 차의 운전자가 우측도로의 차에 진로를 양보하도록 정한다.\n2번: 좌측 도로의 차에 양보하는 것이 아니라 우측 도로의 차에 양보하므로 틀렸다.\n3번: 차의 크기에 따른 우선 규정은 이 조문에 없어 틀렸다.\n4번: 속도가 빠른 차가 먼저라는 규정은 없어 틀렸다.\n함정: 이미 교차로에 들어가 있는 차가 있으면(제1항) 우측 차보다 그 차가 먼저라는 점도 같이 알아 둬야 한다.",
+   "ref_url": "https://www.law.go.kr/법령/%EB%8F%84%EB%A1%9C%EA%B5%90%ED%86%B5%EB%B2%95/%EC%A0%9C26%EC%A1%B0",
+   "fig": "<svg viewBox=\"0 0 600 252\" width=\"600\" height=\"252\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\" font-size=\"14\"><text x=\"300\" y=\"24\" text-anchor=\"middle\" font-size=\"14\" fill=\"currentColor\" font-weight=\"bold\">동시 진입: 우측 도로의 차가 먼저</text><line x1=\"230\" y1=\"114\" x2=\"230\" y2=\"200\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"330\" y1=\"114\" x2=\"330\" y2=\"200\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"230\" y1=\"66\" x2=\"230\" y2=\"40\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"6 5\"/><line x1=\"330\" y1=\"66\" x2=\"330\" y2=\"40\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"6 5\"/><line x1=\"20\" y1=\"66\" x2=\"230\" y2=\"66\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"330\" y1=\"66\" x2=\"580\" y2=\"66\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"20\" y1=\"114\" x2=\"230\" y2=\"114\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"330\" y1=\"114\" x2=\"580\" y2=\"114\" stroke=\"currentColor\" stroke-width=\"2\"/><rect x=\"255\" y=\"160\" width=\"50\" height=\"30\" rx=\"4\" fill=\"none\" fill-opacity=\"0\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"280\" y=\"180\" text-anchor=\"middle\" font-size=\"14\" fill=\"currentColor\">내 차</text><line x1=\"280\" y1=\"155\" x2=\"280\" y2=\"122\" stroke=\"currentColor\" stroke-width=\"2\"/><polygon points=\"280,122 283.1153467384692,129.3684879520231 276.8846532615308,129.3684879520231\" fill=\"currentColor\"/><rect x=\"470\" y=\"76\" width=\"70\" height=\"28\" rx=\"4\" fill=\"#ff4d7d\" fill-opacity=\"0.18\" stroke=\"#ff4d7d\" stroke-width=\"2\"/><line x1=\"465\" y1=\"90\" x2=\"340\" y2=\"90\" stroke=\"#ff4d7d\" stroke-width=\"2\"/><polygon points=\"340,90 347.3684879520231,86.8846532615308 347.3684879520231,93.1153467384692\" fill=\"#ff4d7d\"/><text x=\"300\" y=\"218\" text-anchor=\"middle\" font-size=\"14\" fill=\"#ff4d7d\">우측 도로 차: 먼저 통행</text><text x=\"300\" y=\"240\" text-anchor=\"middle\" font-size=\"14\" fill=\"currentColor\">내 차: 양보</text></svg>"
   },
   {
    "q": "교통정리가 없는 교차로에서 자신이 달리는 도로보다 교차하는 도로의 폭이 넓은 경우, 운전자가 해야 할 행동으로 옳은 것은?",
@@ -151,8 +161,9 @@
     "우측 도로 차에 양보할 필요 없이 가속하여 통과한다"
    ],
    "answer": 2,
-   "explain": "제26조제2항은 통행 중인 도로보다 교차하는 도로의 폭이 넓으면 서행하고, 폭이 넓은 도로에서 들어오려는 차에 진로를 양보하도록 정한다.",
-   "ref_url": "https://www.law.go.kr/법령/%EB%8F%84%EB%A1%9C%EA%B5%90%ED%86%B5%EB%B2%95/%EC%A0%9C26%EC%A1%B0"
+   "explain": "정답은 3번 「서행하며, 폭이 넓은 도로에서 들어오는 차에 진로를 양보한다」이다.\n도로교통법 제26조제2항은 통행 중인 도로보다 교차하는 도로의 폭이 넓은 경우 서행하고, 폭이 넓은 도로에서 들어오려는 차에 진로를 양보하도록 정한다.\n1번: 그대로 진행하며 상대가 양보하기를 기다리면 양보 의무를 어기게 되어 틀렸다.\n2번: 일시정지 없이 경음기를 울리며 먼저 통과하는 것은 양보 의무에 반해 틀렸다.\n4번: 폭이 넓은 도로의 차에는 우측 도로 차인지와 상관없이 양보해야 하므로 틀렸다.\n함정: 동시 진입 시 우측 차 양보(제3항)보다 도로 폭 규정(제2항)이 먼저 따져지는 경우다.",
+   "ref_url": "https://www.law.go.kr/법령/%EB%8F%84%EB%A1%9C%EA%B5%90%ED%86%B5%EB%B2%95/%EC%A0%9C26%EC%A1%B0",
+   "fig": "<svg viewBox=\"0 0 600 252\" width=\"600\" height=\"252\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\" font-size=\"14\"><text x=\"300\" y=\"24\" text-anchor=\"middle\" font-size=\"14\" fill=\"currentColor\" font-weight=\"bold\">교차 도로가 넓을 때: 넓은 도로의 차가 먼저</text><line x1=\"230\" y1=\"130\" x2=\"230\" y2=\"200\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"330\" y1=\"130\" x2=\"330\" y2=\"200\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"230\" y1=\"50\" x2=\"230\" y2=\"40\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"6 5\"/><line x1=\"330\" y1=\"50\" x2=\"330\" y2=\"40\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"6 5\"/><line x1=\"20\" y1=\"50\" x2=\"230\" y2=\"50\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"330\" y1=\"50\" x2=\"580\" y2=\"50\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"20\" y1=\"130\" x2=\"230\" y2=\"130\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"330\" y1=\"130\" x2=\"580\" y2=\"130\" stroke=\"currentColor\" stroke-width=\"2\"/><rect x=\"255\" y=\"160\" width=\"50\" height=\"30\" rx=\"4\" fill=\"none\" fill-opacity=\"0\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"280\" y=\"180\" text-anchor=\"middle\" font-size=\"14\" fill=\"currentColor\">내 차</text><line x1=\"280\" y1=\"155\" x2=\"280\" y2=\"138\" stroke=\"currentColor\" stroke-width=\"2\"/><polygon points=\"280,138 283.1153467384692,145.3684879520231 276.8846532615308,145.3684879520231\" fill=\"currentColor\"/><rect x=\"470\" y=\"76\" width=\"70\" height=\"28\" rx=\"4\" fill=\"#ff4d7d\" fill-opacity=\"0.18\" stroke=\"#ff4d7d\" stroke-width=\"2\"/><line x1=\"465\" y1=\"90\" x2=\"340\" y2=\"90\" stroke=\"#ff4d7d\" stroke-width=\"2\"/><polygon points=\"340,90 347.3684879520231,86.8846532615308 347.3684879520231,93.1153467384692\" fill=\"#ff4d7d\"/><text x=\"300\" y=\"218\" text-anchor=\"middle\" font-size=\"14\" fill=\"#ff4d7d\">넓은 도로의 차: 먼저 통행</text><text x=\"300\" y=\"240\" text-anchor=\"middle\" font-size=\"14\" fill=\"currentColor\">내 차: 서행하며 양보</text></svg>"
   },
   {
    "q": "어린이 보호구역 안에 있는, 신호기가 설치되지 않은 횡단보도 앞에서 운전자가 해야 하는 행동은?",
@@ -163,7 +174,7 @@
     "경음기로 알린 뒤 통과한다"
    ],
    "answer": 1,
-   "explain": "제27조제7항은 어린이 보호구역 내 신호기 없는 횡단보도 앞에서 보행자의 횡단 여부와 관계없이 일시정지하도록 정한다.",
+   "explain": "정답은 2번 「보행자의 횡단 여부와 관계없이 일시정지한다」이다.\n도로교통법 제27조제7항은 어린이 보호구역 안에서 신호기가 설치되지 않은 횡단보도 앞에서는 보행자의 횡단 여부와 관계없이 일시정지하도록 정한다.\n1번: 보행자가 있을 때만 정지하는 것은 일반 횡단보도(제1항)의 기준이라 틀렸다.\n3번: 서행만으로는 일시정지 의무를 이행하지 못해 틀렸다.\n4번: 경음기로 알리고 통과하는 것은 일시정지 의무를 지키지 않은 것이라 틀렸다.\n함정: 보행자가 없어도 멈춰야 한다는 점이 일반 횡단보도와 다른 핵심이다.",
    "ref_url": "https://www.law.go.kr/법령/%EB%8F%84%EB%A1%9C%EA%B5%90%ED%86%B5%EB%B2%95/%EC%A0%9C27%EC%A1%B0"
   },
   {
@@ -175,8 +186,9 @@
     "교차로를 피하여 일시정지한다"
    ],
    "answer": 3,
-   "explain": "제29조제4항은 교차로나 그 부근에서 긴급자동차가 접근하면 교차로를 피하여 일시정지하도록 정한다. 그 밖의 곳에서는 진로를 양보한다(제5항).",
-   "ref_url": "https://www.law.go.kr/법령/%EB%8F%84%EB%A1%9C%EA%B5%90%ED%86%B5%EB%B2%95/%EC%A0%9C29%EC%A1%B0"
+   "explain": "정답은 4번 「교차로를 피하여 일시정지한다」이다.\n도로교통법 제29조제4항은 교차로나 그 부근에서 긴급자동차가 접근하면 차마와 노면전차의 운전자가 교차로를 피하여 일시정지하도록 정한다.\n제5항은 교차로 외의 곳에서는 긴급자동차가 우선 통행할 수 있도록 진로를 양보하도록 정한다.\n1번: 교차로 안에서 속도를 높이는 것은 긴급자동차 통행을 방해해 틀렸다.\n2번: 교차로 한가운데 정지하면 긴급자동차의 진로를 막아 틀렸다.\n3번: 서행하며 그대로 통과하는 것은 교차로를 피해 일시정지해야 한다는 규정에 어긋나 틀렸다.\n함정: 교차로에서는 교차로를 피해 일시정지, 그 밖의 곳에서는 진로 양보로 행동이 달라진다.",
+   "ref_url": "https://www.law.go.kr/법령/%EB%8F%84%EB%A1%9C%EA%B5%90%ED%86%B5%EB%B2%95/%EC%A0%9C29%EC%A1%B0",
+   "fig": "<svg viewBox=\"0 0 600 124\" width=\"600\" height=\"124\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\" font-size=\"14\"><rect x=\"8.0\" y=\"20\" width=\"279.0\" height=\"84\" rx=\"4\" fill=\"none\" fill-opacity=\"0\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"147.5\" y=\"48\" text-anchor=\"middle\" font-size=\"14\" fill=\"currentColor\">교차로·</text><text x=\"147.5\" y=\"70\" text-anchor=\"middle\" font-size=\"14\" fill=\"currentColor\">그 부근</text><line x1=\"290.0\" y1=\"62\" x2=\"310.0\" y2=\"62\" stroke=\"currentColor\" stroke-width=\"2\"/><polygon points=\"310.0,62 302.6315120479769,65.1153467384692 302.6315120479769,58.884653261530794\" fill=\"currentColor\"/><rect x=\"313.0\" y=\"20\" width=\"279.0\" height=\"84\" rx=\"4\" fill=\"#ff4d7d\" fill-opacity=\"0.18\" stroke=\"#ff4d7d\" stroke-width=\"2\"/><text x=\"452.5\" y=\"48\" text-anchor=\"middle\" font-size=\"14\" fill=\"#ff4d7d\">교차로를 피해</text><text x=\"452.5\" y=\"70\" text-anchor=\"middle\" font-size=\"14\" fill=\"#ff4d7d\">일시정지</text></svg>"
   },
   {
    "q": "다음 중 법에서 다른 차를 앞지르는 것을 금지하는 장소로 직접 열거한 곳은?",
@@ -187,7 +199,7 @@
     "터널 안, 주차장 출구, 버스정류장 앞"
    ],
    "answer": 2,
-   "explain": "제22조제3항은 교차로, 터널 안, 다리 위 등을 앞지르기 금지 장소로 정한다.",
+   "explain": "정답은 3번 「교차로, 터널 안, 다리 위」이다.\n도로교통법 제22조제3항은 앞지르기 금지 장소로 교차로, 터널 안, 다리 위와 시·도경찰청장이 안전표지로 지정한 도로의 구부러진 곳·고갯마루·가파른 내리막 등을 정한다.\n1번: 편도 3차로 직선도로와 학교 앞은 법에 열거되어 있지 않아 틀렸다.\n2번: 교차로는 맞지만 고속도로 진입로와 횡단보도 앞은 열거되어 있지 않아 틀렸다.\n4번: 터널 안은 맞지만 주차장 출구와 버스정류장 앞은 열거되어 있지 않아 틀렸다.\n함정: 보기 중 하나라도 열거되지 않은 장소가 섞이면 그 보기는 틀린 보기다.",
    "ref_url": "https://www.law.go.kr/법령/%EB%8F%84%EB%A1%9C%EA%B5%90%ED%86%B5%EB%B2%95/%EC%A0%9C22%EC%A1%B0"
   },
   {
@@ -199,8 +211,9 @@
     "앞차 바로 뒤에 붙어 경음기를 계속 울린다"
    ],
    "answer": 0,
-   "explain": "제21조제1항은 다른 차를 앞지르려면 앞차의 좌측으로 통행하도록 정한다(자전거등의 우측 앞지르기는 같은 조 제2항의 예외).",
-   "ref_url": "https://www.law.go.kr/법령/%EB%8F%84%EB%A1%9C%EA%B5%90%ED%86%B5%EB%B2%95/%EC%A0%9C21%EC%A1%B0"
+   "explain": "정답은 1번 「앞차의 좌측으로 통행한다」이다.\n도로교통법 제21조제1항은 모든 차의 운전자가 다른 차를 앞지르려면 앞차의 좌측으로 통행하도록 정한다.\n제3항은 앞지르기 때 반대방향과 앞차 앞쪽 교통에 주의하고 안전한 속도와 방법으로 하도록 정한다.\n2번: 앞차의 우측 통행은 자전거등의 운전자가 서행·정지한 차를 앞지르는 예외(제2항)일 뿐이라 틀렸다.\n3번: 좌·우측 중 빈 쪽으로 통행하라는 규정은 없어 틀렸다.\n4번: 앞차 바로 뒤에 붙어 경음기를 계속 울리는 것은 안전한 방법이 아니고 통행 방법의 규정과도 달라 틀렸다.\n함정: 자전거등의 우측 앞지르기 예외를 일반 운전자에게 적용하면 안 된다.",
+   "ref_url": "https://www.law.go.kr/법령/%EB%8F%84%EB%A1%9C%EA%B5%90%ED%86%B5%EB%B2%95/%EC%A0%9C21%EC%A1%B0",
+   "fig": "<svg viewBox=\"0 0 600 200\" width=\"600\" height=\"200\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\" font-size=\"14\"><text x=\"300\" y=\"24\" text-anchor=\"middle\" font-size=\"14\" fill=\"currentColor\" font-weight=\"bold\">앞지르기 통행 방법</text><line x1=\"20\" y1=\"60\" x2=\"580\" y2=\"60\" stroke=\"currentColor\" stroke-width=\"1\"/><line x1=\"20\" y1=\"150\" x2=\"580\" y2=\"150\" stroke=\"currentColor\" stroke-width=\"1\"/><line x1=\"20\" y1=\"105\" x2=\"580\" y2=\"105\" stroke=\"currentColor\" stroke-width=\"2\" stroke-dasharray=\"20 14\"/><rect x=\"250\" y=\"115\" width=\"90\" height=\"28\" rx=\"4\" fill=\"none\" fill-opacity=\"0\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"295\" y=\"134\" text-anchor=\"middle\" font-size=\"14\" fill=\"currentColor\">앞차</text><rect x=\"60\" y=\"115\" width=\"90\" height=\"28\" rx=\"4\" fill=\"#ff4d7d\" fill-opacity=\"0.18\" stroke=\"#ff4d7d\" stroke-width=\"2\"/><text x=\"105\" y=\"134\" text-anchor=\"middle\" font-size=\"14\" fill=\"#ff4d7d\">내 차</text><path d=\"M155 129 C 200 129 200 80 250 80 L 400 80\" fill=\"none\" stroke=\"#ff4d7d\" stroke-width=\"3\"/><line x1=\"395\" y1=\"80\" x2=\"430\" y2=\"80\" stroke=\"#ff4d7d\" stroke-width=\"2\"/><polygon points=\"430,80 422.6315120479769,83.1153467384692 422.6315120479769,76.8846532615308\" fill=\"#ff4d7d\"/><text x=\"300\" y=\"182\" text-anchor=\"middle\" font-size=\"14\" fill=\"#ff4d7d\">앞차의 좌측으로 통행해 앞지른다</text></svg>"
   },
   {
    "q": "자동차(이륜자동차 제외) 운전자의 좌석안전띠에 관한 설명으로 옳은 것은?",
@@ -211,7 +224,7 @@
     "운전자는 안전띠를 매고, 모든 좌석의 동승자에게도 매도록 해야 한다"
    ],
    "answer": 3,
-   "explain": "제50조제1항은 자동차 운전자가 좌석안전띠를 매고 모든 좌석의 동승자에게도 매도록 해야 한다고 정한다(영유아는 유아보호용 장구 장착 후).",
+   "explain": "정답은 4번 「운전자는 안전띠를 매고, 모든 좌석의 동승자에게도 매도록 해야 한다」이다.\n도로교통법 제50조제1항은 자동차(이륜자동차 제외) 운전자가 좌석안전띠를 매고, 모든 좌석의 동승자에게도 좌석안전띠를 매도록 하라고 정한다(영유아는 유아보호용 장구 장착 후).\n1번: 동승자는 앞좌석만이 아니라 모든 좌석이 대상이라 틀렸다.\n2번: 고속도로에 한정되지 않고 모든 도로에서 의무라 틀렸다.\n3번: 동승자의 안전띠도 운전자가 매도록 해야 하는 의무라 틀렸다.\n함정: 뒷좌석 동승자도 운전자의 의무 범위에 들어간다.",
    "ref_url": "https://www.law.go.kr/법령/%EB%8F%84%EB%A1%9C%EA%B5%90%ED%86%B5%EB%B2%95/%EC%A0%9C50%EC%A1%B0"
   },
   {
@@ -223,7 +236,7 @@
     "야간에만 착용하면 된다"
    ],
    "answer": 1,
-   "explain": "제50조제3항은 운전자가 인명보호 장구를 착용하고 동승자에게도 착용하도록 해야 한다고 정한다.",
+   "explain": "정답은 2번 「행정안전부령으로 정하는 인명보호 장구를 착용하고, 동승자에게도 착용하게 해야 한다」이다.\n도로교통법 제50조제3항은 이륜자동차와 원동기장치자전거(개인형 이동장치 제외) 운전자가 행정안전부령으로 정하는 인명보호 장구를 착용하고, 동승자에게도 착용하도록 하라고 정한다.\n1번: 운전자만이 아니라 동승자에게도 착용시켜야 해 틀렸다.\n3번: 고속도로에 한정되지 않고 운행할 때 늘 착용해야 해 틀렸다.\n4번: 야간에만 착용하는 것이 아니라 항상 착용해야 해 틀렸다.\n함정: 자동차의 안전띠(제1항)와 이륜차의 인명보호 장구(제3항)는 조문이 달라 대상 차종이 다르다.",
    "ref_url": "https://www.law.go.kr/법령/%EB%8F%84%EB%A1%9C%EA%B5%90%ED%86%B5%EB%B2%95/%EC%A0%9C50%EC%A1%B0"
   },
   {
@@ -235,8 +248,9 @@
     "적재 길이는 자동차 길이의 2분의 1을 더한 길이 이내"
    ],
    "answer": 2,
-   "explain": "시행령 제22조제3호는 화물자동차의 적재중량을 구조 및 성능에 따르는 적재중량의 110퍼센트 이내로 정한다(높이는 원칙 4미터, 길이는 자동차 길이의 10분의 1을 더한 길이).",
-   "ref_url": "https://www.law.go.kr/법령/%EB%8F%84%EB%A1%9C%EA%B5%90%ED%86%B5%EB%B2%95%EC%8B%9C%ED%96%89%EB%A0%B9/%EC%A0%9C22%EC%A1%B0"
+   "explain": "정답은 3번 「적재중량은 구조 및 성능에 따르는 적재중량의 110퍼센트 이내」이다.\n시행령 제22조제3호는 화물자동차의 적재중량을 구조 및 성능에 따르는 적재중량의 110퍼센트 이내로 정한다.\n적재중량 5톤인 차라면 5×1.1=5.5톤까지가 한도다. 적재 높이는 지상 4미터, 적재 길이는 자동차 길이에 그 10분의 1을 더한 길이 이내다.\n1번: 120퍼센트는 법의 한도(110퍼센트)를 넘어 틀렸다.\n2번: 적재 높이는 지상으로부터 3미터가 아니라 4미터라 틀렸다.\n4번: 적재 길이는 자동차 길이의 2분의 1이 아니라 10분의 1을 더한 길이라 틀렸다.\n함정: 적재 높이 4미터·길이 10분의 1·중량 110퍼센트를 섞어 외우다 숫자를 바꾸기 쉽다.",
+   "ref_url": "https://www.law.go.kr/법령/%EB%8F%84%EB%A1%9C%EA%B5%90%ED%86%B5%EB%B2%95%EC%8B%9C%ED%96%89%EB%A0%B9/%EC%A0%9C22%EC%A1%B0",
+   "fig": "<svg viewBox=\"0 0 600 112\" width=\"600\" height=\"112\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\" font-size=\"14\"><text x=\"300\" y=\"26\" text-anchor=\"middle\" font-size=\"14\" fill=\"currentColor\" font-weight=\"bold\">적재중량 한도</text><text x=\"192\" y=\"59\" text-anchor=\"end\" font-size=\"14\" fill=\"currentColor\">구조·성능상 적재중량</text><rect x=\"200\" y=\"43\" width=\"227.27272727272728\" height=\"22\" rx=\"4\" fill=\"currentColor\" fill-opacity=\"0.18\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"435.27272727272725\" y=\"60\" text-anchor=\"start\" font-size=\"14\" fill=\"currentColor\">100%</text><text x=\"192\" y=\"93\" text-anchor=\"end\" font-size=\"14\" fill=\"#ff4d7d\">허용 상한</text><rect x=\"200\" y=\"77\" width=\"250.0\" height=\"22\" rx=\"4\" fill=\"#ff4d7d\" fill-opacity=\"0.18\" stroke=\"#ff4d7d\" stroke-width=\"2\"/><text x=\"458.0\" y=\"94\" text-anchor=\"start\" font-size=\"14\" fill=\"#ff4d7d\">110%</text></svg>"
   },
   {
    "q": "고속도로등에서 자동차 운전자가 부득이한 사정이 없을 때 갓길(길어깨)로 통행하는 것에 대한 설명으로 옳은 것은?",
@@ -247,7 +261,7 @@
     "경음기를 울리면 통행할 수 있다"
    ],
    "answer": 0,
-   "explain": "제60조제1항은 고속도로등에서 부득이한 사정이 없으면 갓길 통행을 금지하고, 긴급자동차 등 예외를 열거한다.",
+   "explain": "정답은 1번 「원칙적으로 금지되며, 긴급자동차 등 법에 정한 경우만 예외이다」이다.\n도로교통법 제60조제1항은 고속도로등에서 자동차 고장 등 부득이한 사정이 없으면 갓길 통행을 금지하고, 긴급자동차와 보수·유지 작업 자동차, 차량정체 시 신호·경찰공무원 지시에 따른 경우만 예외로 둔다.\n2번: 교통이 막혀도 누구나가 아니라 신호기나 경찰공무원 등의 지시에 따를 때만 허용되어 틀렸다.\n3번: 화물차라는 이유로 언제나 허용되는 규정은 없어 틀렸다.\n4번: 경음기를 울리는 것은 예외 사유가 아니라 틀렸다.\n함정: 정체가 심해도 임의로 갓길로 가면 안 되고 지시가 있을 때만 가능하다.",
    "ref_url": "https://www.law.go.kr/법령/%EB%8F%84%EB%A1%9C%EA%B5%90%ED%86%B5%EB%B2%95/%EC%A0%9C60%EC%A1%B0"
   },
   {
@@ -259,7 +273,7 @@
     "주차장 안 빈 공간"
    ],
    "answer": 2,
-   "explain": "제31조제1항은 교통정리를 하지 않는 교차로, 도로가 구부러진 부근, 비탈길의 고갯마루 부근, 가파른 비탈길의 내리막 등에서 서행하도록 정한다.",
+   "explain": "정답은 3번 「도로가 구부러진 부근」이다.\n도로교통법 제31조제1항은 교통정리를 하지 않는 교차로, 도로가 구부러진 부근, 비탈길의 고갯마루 부근, 가파른 비탈길의 내리막, 안전표지로 지정한 곳에서 서행하도록 정한다.\n1번: 횡단보도가 없는 직선 평지는 열거된 서행 장소가 아니라 틀렸다.\n2번: 편도 3차로의 직진 차로는 열거된 서행 장소가 아니라 틀렸다.\n4번: 주차장 안 빈 공간은 열거된 서행 장소가 아니라 틀렸다.\n함정: 교통정리가 없고 좌우를 볼 수 없거나 교통이 빈번한 교차로는 서행이 아니라 일시정지(제2항)다.",
    "ref_url": "https://www.law.go.kr/법령/%EB%8F%84%EB%A1%9C%EA%B5%90%ED%86%B5%EB%B2%95/%EC%A0%9C31%EC%A1%B0"
   },
   {
@@ -271,8 +285,9 @@
     "피해자가 요구할 때만 인적 사항을 제공한다"
    ],
    "answer": 1,
-   "explain": "제54조제1항은 교통사고 시 운전자등이 즉시 정차하여 사상자 구호 등 필요한 조치를 하고 피해자에게 인적 사항을 제공하도록 정한다.",
-   "ref_url": "https://www.law.go.kr/법령/%EB%8F%84%EB%A1%9C%EA%B5%90%ED%86%B5%EB%B2%95/%EC%A0%9C54%EC%A1%B0"
+   "explain": "정답은 2번 「즉시 정차하여 사상자를 구호하는 등 필요한 조치를 한다」이다.\n도로교통법 제54조제1항은 교통사고를 낸 운전자가 즉시 정차하여 사상자를 구호하는 등 필요한 조치를 하고 피해자에게 인적 사항을 제공하도록 정한다.\n제2항은 그 뒤 경찰공무원이나 가까운 경찰관서에 지체 없이 신고하도록 정한다.\n1번: 현장을 벗어나면 즉시 정차해 조치해야 하는 의무를 어겨 틀렸다.\n3번: 현장에서 대기만 하는 것이 아니라 구호 조치와 신고를 해야 해 틀렸다.\n4번: 피해자가 요구할 때만이 아니라 의무적으로 인적 사항을 제공해야 해 틀렸다.\n함정: 구호 조치가 먼저이고 보험사 연락은 법이 정한 의무가 아니다.",
+   "ref_url": "https://www.law.go.kr/법령/%EB%8F%84%EB%A1%9C%EA%B5%90%ED%86%B5%EB%B2%95/%EC%A0%9C54%EC%A1%B0",
+   "fig": "<svg viewBox=\"0 0 600 124\" width=\"600\" height=\"124\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\" font-size=\"14\"><rect x=\"8.0\" y=\"20\" width=\"177.33333333333334\" height=\"84\" rx=\"4\" fill=\"#ff4d7d\" fill-opacity=\"0.18\" stroke=\"#ff4d7d\" stroke-width=\"2\"/><text x=\"96.66666666666667\" y=\"48\" text-anchor=\"middle\" font-size=\"14\" fill=\"#ff4d7d\">즉시 정차</text><line x1=\"188.33333333333334\" y1=\"62\" x2=\"208.33333333333334\" y2=\"62\" stroke=\"currentColor\" stroke-width=\"2\"/><polygon points=\"208.33333333333334,62 200.96484538131025,65.1153467384692 200.96484538131025,58.884653261530794\" fill=\"currentColor\"/><rect x=\"211.33333333333334\" y=\"20\" width=\"177.33333333333334\" height=\"84\" rx=\"4\" fill=\"none\" fill-opacity=\"0\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"300.0\" y=\"48\" text-anchor=\"middle\" font-size=\"14\" fill=\"currentColor\">사상자 구호·</text><text x=\"300.0\" y=\"70\" text-anchor=\"middle\" font-size=\"14\" fill=\"currentColor\">인적 사항 제공</text><line x1=\"391.6666666666667\" y1=\"62\" x2=\"411.6666666666667\" y2=\"62\" stroke=\"currentColor\" stroke-width=\"2\"/><polygon points=\"411.6666666666667,62 404.2981787146436,65.1153467384692 404.2981787146436,58.884653261530794\" fill=\"currentColor\"/><rect x=\"414.6666666666667\" y=\"20\" width=\"177.33333333333334\" height=\"84\" rx=\"4\" fill=\"none\" fill-opacity=\"0\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"503.33333333333337\" y=\"48\" text-anchor=\"middle\" font-size=\"14\" fill=\"currentColor\">경찰에</text><text x=\"503.33333333333337\" y=\"70\" text-anchor=\"middle\" font-size=\"14\" fill=\"currentColor\">지체 없이 신고</text></svg>"
   },
   {
    "q": "교통안전시설이 표시하는 신호와 교통정리를 하는 경찰공무원의 신호가 서로 다를 때 따라야 하는 것은?",
@@ -283,7 +298,7 @@
     "경찰공무원등의 신호 또는 지시"
    ],
    "answer": 3,
-   "explain": "제5조제2항은 교통안전시설의 신호와 경찰공무원등의 신호가 다르면 경찰공무원등의 신호 또는 지시를 따르도록 정한다.",
+   "explain": "정답은 4번 「경찰공무원등의 신호 또는 지시」이다.\n도로교통법 제5조제2항은 교통안전시설의 신호와 교통정리를 하는 경찰공무원등의 신호·지시가 다르면 경찰공무원등의 신호 또는 지시를 따르도록 정한다.\n1번: 신호기의 신호가 아니라 경찰공무원등의 지시가 우선이라 틀렸다.\n2번: 먼저 본 신호라는 기준은 법에 없어 틀렸다.\n3번: 앞서 가는 차를 따라가라는 규정은 없어 틀렸다.\n함정: 신호등이 아무리 녹색이어도 교통정리 중인 경찰의 수신호가 다르면 수신호가 우선한다.",
    "ref_url": "https://www.law.go.kr/법령/%EB%8F%84%EB%A1%9C%EA%B5%90%ED%86%B5%EB%B2%95/%EC%A0%9C5%EC%A1%B0"
   },
   {
@@ -295,7 +310,7 @@
     "경음기를 울리고 진입한다"
    ],
    "answer": 0,
-   "explain": "제25조제5항은 앞쪽 상황으로 교차로에 정지하여 다른 차의 통행에 방해가 될 우려가 있으면 그 교차로에 들어가지 못하도록 정한다.",
+   "explain": "정답은 1번 「그 교차로에 들어가서는 안 된다」이다.\n도로교통법 제25조제5항은 신호기로 교통정리를 하는 교차로에 들어가려는 운전자가 앞쪽 차의 상황 때문에 교차로에 정지하게 되어 다른 차의 통행에 방해가 될 우려가 있으면 교차로에 들어가지 못하도록 정한다.\n2번: 녹색 신호여도 교차로 안에서 멈출 우려가 있으면 진입할 수 없어 틀렸다.\n3번: 좌회전 차량만 예외로 허용하는 규정은 없어 틀렸다.\n4번: 경음기를 울리고 들어가는 것은 진입 금지 규정을 피하는 방법이 아니라 틀렸다.\n함정: 신호가 녹색인지보다 교차로 건너편에 나갈 공간이 있는지가 기준이다.",
    "ref_url": "https://www.law.go.kr/법령/%EB%8F%84%EB%A1%9C%EA%B5%90%ED%86%B5%EB%B2%95/%EC%A0%9C25%EC%A1%B0"
   },
   {
@@ -307,7 +322,7 @@
     "원동기장치자전거면허"
    ],
    "answer": 1,
-   "explain": "제80조제2항제2호는 제2종 운전면허를 보통, 소형, 원동기장치자전거면허로 구분한다. 대형면허는 제1종 면허이다.",
+   "explain": "정답은 2번 「대형면허」이다.\n도로교통법 제80조제2항제2호는 제2종 운전면허를 보통면허, 소형면허, 원동기장치자전거면허로 구분한다.\n대형면허는 같은 항 제1호의 제1종 운전면허(대형·보통·소형·특수)에 속한다.\n1번: 보통면허는 제2종 면허에 해당하므로 해당하지 않는 것을 고르는 문제에서 정답이 될 수 없어 틀렸다.\n3번: 소형면허는 제2종 면허에 해당해 틀렸다.\n4번: 원동기장치자전거면허는 제2종 면허에 해당해 틀렸다.\n함정: 소형·보통은 제1종과 제2종에 모두 있지만 대형은 제1종에만 있다.",
    "ref_url": "https://www.law.go.kr/법령/%EB%8F%84%EB%A1%9C%EA%B5%90%ED%86%B5%EB%B2%95/%EC%A0%9C80%EC%A1%B0"
   }
  ]

@@ -1,7 +1,42 @@
 {
- "at": "2026-11-27 09:30",
+ "at": "2026-11-27 10:30",
  "nitems": 524,
  "cands": [
+  {
+   "kw": "박지현",
+   "nsrc": 6,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "연합뉴스",
+    "조선일보",
+    "한국경제",
+    "헤럴드경제"
+   ],
+   "n": 7,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "박지현, 美국제에미상 첫 여자연기상 불발…'하이퍼나이프'도 고배",
+     "link": "https://www.yna.co.kr/view/AKR20261124097600075"
+    },
+    {
+     "src": "한국경제",
+     "title": "[포토+] 박지현, '우아한 분위기 여신'",
+     "link": "https://www.hankyung.com/article/202611260763H"
+    },
+    {
+     "src": "한국경제",
+     "title": "HK직캠|박지현, '레드카펫에 울려 퍼진 생일 축하 노래'",
+     "link": "https://www.hankyung.com/article/202611260700H"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "박지현, 레드카펫서 유창한 영어 화제…알고 보니 중학교 때 토익 900점",
+     "link": "https://biz.heraldcorp.com/article/10951282"
+    }
+   ]
+  },
   {
    "kw": "내년",
    "nsrc": 5,
@@ -12,8 +47,13 @@
     "연합뉴스",
     "한국경제"
    ],
-   "n": 20,
+   "n": 21,
    "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "[가요소식] FT아일랜드, 내년 1월 아시아 투어 '에프티소드'",
+     "link": "https://www.yna.co.kr/view/AKR20261127043700005"
+    },
     {
      "src": "연합뉴스",
      "title": "'잔혹한 천사의 테제' 부른 日 다카하시 요코 내년 2월 내한",
@@ -28,45 +68,6 @@
      "src": "연합뉴스",
      "title": "MBC 새 일일드라마 '효녀 구복이' 내년 1월 첫 방송",
      "link": "https://www.yna.co.kr/view/AKR20261126123300005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "'M:리부트'부터 '환승연애 5'까지…티빙 내년 콘텐츠 라인업",
-     "link": "https://www.yna.co.kr/view/AKR20261126121900005"
-    }
-   ]
-  },
-  {
-   "kw": "이서진",
-   "nsrc": 5,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "조선일보",
-    "한국경제",
-    "헤럴드경제"
-   ],
-   "n": 12,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "이서진-한지민 진짜 싸워요…‘찐친’ 폭풍 디스 여행 ‘그사친’ (종합)[DA현장]",
-     "link": "https://sports.donga.com/ent/article/all/20261126/135096622/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "김용건 “원조 짐꾼 이서진, 팔짱 끼는 여유…새 짐꾼 주헌-정연 활약” (그사친)",
-     "link": "https://sports.donga.com/ent/article/all/20261126/135096338/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "이서진 “한지민 얌전한 소녀였는데…갱년기인가? 남의 말 안 들어” (그사친)",
-     "link": "https://sports.donga.com/ent/article/all/20261126/135096260/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "박정수 “이서진·한지민, 잠잘 때 외에는 계속 싸워” [현장]",
-     "link": "https://sports.donga.com/ent/article/all/20261126/135096095/1"
     }
    ]
   },
@@ -80,7 +81,7 @@
     "조선일보",
     "헤럴드경제"
    ],
-   "n": 11,
+   "n": 13,
    "headlines": [
     {
      "src": "동아일보",
@@ -101,6 +102,40 @@
      "src": "헤럴드경제",
      "title": "‘1010만 유튜버’ 진우와 해티, 결혼 4년 만에 이혼…“각자의 삶”",
      "link": "https://biz.heraldcorp.com/article/10949770"
+    }
+   ]
+  },
+  {
+   "kw": "이서진",
+   "nsrc": 5,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "조선일보",
+    "한국경제",
+    "헤럴드경제"
+   ],
+   "n": 9,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "이서진, 싸우긴 해도 한지민 팀장으로 추대 (그사친)",
+     "link": "https://sports.donga.com/ent/article/all/20261127/135101564/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "이서진-한지민 진짜 싸워요…‘찐친’ 폭풍 디스 여행 ‘그사친’ (종합)[DA현장]",
+     "link": "https://sports.donga.com/ent/article/all/20261126/135096622/1"
+    },
+    {
+     "src": "한국경제",
+     "title": "이서진·한지민 싸우고, 주헌·정연 '새 짐꾼'…나영석 예능 또 터질까 [종합]",
+     "link": "https://www.hankyung.com/article/202611262495H"
+    },
+    {
+     "src": "한국경제",
+     "title": "'그사친' 박정수 \"이서진·한지민 어찌나 싸우던지\"",
+     "link": "https://www.hankyung.com/article/202611262435H"
     }
    ]
   },
@@ -135,40 +170,6 @@
      "src": "뉴시스",
      "title": "휘인, 과거 우울증 고백 \"너무 망가져 있었다\"",
      "link": "https://www.newsis.com/view/NISX20261126_0003885347"
-    }
-   ]
-  },
-  {
-   "kw": "재혼",
-   "nsrc": 5,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "동아일보",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 8,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "방송인 김새롬, 비연예인과 재혼…\"오래도록 사랑하겠다\"",
-     "link": "https://www.yna.co.kr/view/AKR20261124150400005"
-    },
-    {
-     "src": "동아일보",
-     "title": "‘재혼’ 김나영, 남편 자랑할 만하네…♥마이큐 “잘못도 사과도 제가”",
-     "link": "https://sports.donga.com/ent/article/all/20261126/135098250/1"
-    },
-    {
-     "src": "SBS",
-     "title": "김새롬 \"법적 짝꿍 생겼다\"…이혼 9년 만에 재혼 발표",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008861907&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "뉴시스",
-     "title": "김은우, 아들 둘 데리고 17살 연하 재혼 \"재산 노리는 거 아니냐고\"",
-     "link": "https://www.newsis.com/view/NISX20261127_0003885412"
     }
    ]
   },
@@ -241,36 +242,36 @@
    ]
   },
   {
-   "kw": "박지현",
+   "kw": "재혼",
    "nsrc": 5,
    "srcs": [
     "SBS",
     "뉴시스",
+    "동아일보",
     "연합뉴스",
-    "조선일보",
-    "한국경제"
+    "조선일보"
    ],
-   "n": 6,
+   "n": 7,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "박지현, 美국제에미상 첫 여자연기상 불발…'하이퍼나이프'도 고배",
-     "link": "https://www.yna.co.kr/view/AKR20261124097600075"
+     "title": "방송인 김새롬, 비연예인과 재혼…\"오래도록 사랑하겠다\"",
+     "link": "https://www.yna.co.kr/view/AKR20261124150400005"
     },
     {
-     "src": "한국경제",
-     "title": "[포토+] 박지현, '우아한 분위기 여신'",
-     "link": "https://www.hankyung.com/article/202611260763H"
-    },
-    {
-     "src": "한국경제",
-     "title": "HK직캠|박지현, '레드카펫에 울려 퍼진 생일 축하 노래'",
-     "link": "https://www.hankyung.com/article/202611260700H"
+     "src": "동아일보",
+     "title": "‘재혼’ 김나영, 남편 자랑할 만하네…♥마이큐 “잘못도 사과도 제가”",
+     "link": "https://sports.donga.com/ent/article/all/20261126/135098250/1"
     },
     {
      "src": "SBS",
-     "title": "박지현, 국제 에미상 첫 여자 연기상 불발",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008861905&plink=RSSLINK&cooper=RSSREADER"
+     "title": "김새롬 \"법적 짝꿍 생겼다\"…이혼 9년 만에 재혼 발표",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008861907&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "뉴시스",
+     "title": "김은우, 아들 둘 데리고 17살 연하 재혼 \"재산 노리는 거 아니냐고\"",
+     "link": "https://www.newsis.com/view/NISX20261127_0003885412"
     }
    ]
   },
@@ -284,7 +285,7 @@
     "연합뉴스",
     "조선일보"
    ],
-   "n": 5,
+   "n": 6,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -303,8 +304,42 @@
     },
     {
      "src": "뉴시스",
-     "title": "문근영, 앞머리 이렇게 잘랐다고?…청룡영화상서 파격 변신",
-     "link": "https://www.newsis.com/view/NISX20261126_0003884605"
+     "title": "문근영, 청룡영화상 앞머리 왜 저랬나 했더니 \"쓰러져서 다쳤어요\"",
+     "link": "https://www.newsis.com/view/NISX20261127_0003885571"
+    }
+   ]
+  },
+  {
+   "kw": "아이돌",
+   "nsrc": 5,
+   "srcs": [
+    "뉴시스",
+    "세계일보",
+    "연합뉴스",
+    "조선일보",
+    "한국경제"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "엠넷, 日 반다이 남코와 버추얼 아이돌 서바이벌 제작",
+     "link": "https://www.yna.co.kr/view/AKR20261127037300005"
+    },
+    {
+     "src": "한국경제",
+     "title": "HK직캠|설경구, '팬들 마음 흔드는 지천명 아이돌'",
+     "link": "https://www.hankyung.com/article/202611260705H"
+    },
+    {
+     "src": "세계일보",
+     "title": "‘비주류 아이돌’ 허간민, 유튜브 채널 개설…하루 만에 6만명 모였다",
+     "link": "https://www.segye.com/newsView/20261126513348"
+    },
+    {
+     "src": "뉴시스",
+     "title": "엠넷(Mnet), 日 반다이 남코 손잡고 첫 버추얼 아이돌 서바이벌",
+     "link": "https://www.newsis.com/view/NISX20261126_0003884077"
     }
    ]
   },
@@ -351,7 +386,7 @@
     "조선일보",
     "한국경제"
    ],
-   "n": 9,
+   "n": 8,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -360,18 +395,18 @@
     },
     {
      "src": "동아일보",
+     "title": "이서진, 싸우긴 해도 한지민 팀장으로 추대 (그사친)",
+     "link": "https://sports.donga.com/ent/article/all/20261127/135101564/1"
+    },
+    {
+     "src": "동아일보",
      "title": "이서진-한지민 진짜 싸워요…‘찐친’ 폭풍 디스 여행 ‘그사친’ (종합)[DA현장]",
      "link": "https://sports.donga.com/ent/article/all/20261126/135096622/1"
     },
     {
-     "src": "동아일보",
-     "title": "이서진 “한지민 얌전한 소녀였는데…갱년기인가? 남의 말 안 들어” (그사친)",
-     "link": "https://sports.donga.com/ent/article/all/20261126/135096260/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "박정수 “이서진·한지민, 잠잘 때 외에는 계속 싸워” [현장]",
-     "link": "https://sports.donga.com/ent/article/all/20261126/135096095/1"
+     "src": "한국경제",
+     "title": "이서진·한지민 싸우고, 주헌·정연 '새 짐꾼'…나영석 예능 또 터질까 [종합]",
+     "link": "https://www.hankyung.com/article/202611262495H"
     }
    ]
   },
@@ -384,7 +419,7 @@
     "조선일보",
     "헤럴드경제"
    ],
-   "n": 7,
+   "n": 8,
    "headlines": [
     {
      "src": "헤럴드경제",
@@ -409,6 +444,204 @@
    ]
   },
   {
+   "kw": "리센느",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "세계일보",
+    "연합뉴스",
+    "조선일보"
+   ],
+   "n": 7,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "국가별 최고 인기 K팝 스타는…韓 리센느·中 에스파·日 BTS",
+     "link": "https://www.yna.co.kr/view/AKR20261126086700005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "[테크스냅] 쿠팡플레이, 리센느 첫 단독 콘서트 예매 일정 공개",
+     "link": "https://www.yna.co.kr/view/AKR20261123124700017"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "[가요소식] 한해·문세윤, 리센느 제나와 신곡 '러브 어게인'",
+     "link": "https://www.yna.co.kr/view/AKR20261123081800005"
+    },
+    {
+     "src": "세계일보",
+     "title": "K팝 최애는… ‘韓 리센느·中 에스파·日 BTS’",
+     "link": "https://www.segye.com/newsView/20261126515226"
+    }
+   ]
+  },
+  {
+   "kw": "예고",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "연합뉴스",
+    "조선일보",
+    "한국경제"
+   ],
+   "n": 6,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "[주말극장가] 김윤석·구교환 '폭설' 9일째 1위…흥행 예고",
+     "link": "https://www.yna.co.kr/view/AKR20261127039400005"
+    },
+    {
+     "src": "한국경제",
+     "title": "\"모두 무릎 꿇을 것\"…'어벤져스: 둠스데이' 역대급 결전 예고",
+     "link": "https://www.hankyung.com/article/202611258616H"
+    },
+    {
+     "src": "SBS",
+     "title": "'나인 투 식스' 고수 \"15년 만의 로맨스 복귀 너무 좋아\"…'달빛 남주'의 은은한 매력 예고",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008863170&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "SBS",
+     "title": "[스브스夜] '동상이몽2' 여에스더, ♥홍혜걸의 2만 8천원 짜리 팔찌 선물에도 '행복'…가수 강균성 부부 합류 예고",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008861876&plink=RSSLINK&cooper=RSSREADER"
+    }
+   ]
+  },
+  {
+   "kw": "다른",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "연합뉴스",
+    "조선일보",
+    "한겨레"
+   ],
+   "n": 6,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "영화로 만나는 '신병' 시리즈…\"드라마와는 다른 재미 드릴 것\"",
+     "link": "https://www.yna.co.kr/view/AKR20261125102000005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "김신영, 14년 만에 '정오의 희망곡' 하차…\"또 다른 도전 위해\"",
+     "link": "https://www.yna.co.kr/view/AKR20261123072500005"
+    },
+    {
+     "src": "한겨레",
+     "title": "불 꺼진 산업단지, 글 쓰는 노동자들…“다른 세계 빠져드는 행복” [.txt]",
+     "link": "https://www.hani.co.kr/arti/culture/book/1289370.html"
+    },
+    {
+     "src": "뉴시스",
+     "title": "마포 보안관 하하 \"다른 구 집 알아봤다가 엉덩이 맞아\"",
+     "link": "https://www.newsis.com/view/NISX20261127_0003885406"
+    }
+   ]
+  },
+  {
+   "kw": "무슨",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "조선일보",
+    "헤럴드경제"
+   ],
+   "n": 6,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "BTS 뷔, 대만 카스텔라 가게에 무슨 일이…“김태형에게 감사”",
+     "link": "https://sports.donga.com/ent/article/all/20261127/135100916/1"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "“위고비 1년반 맞았는데도”…‘워터밤 여신’ 터질듯한 뱃살, 이게 무슨 일?",
+     "link": "https://biz.heraldcorp.com/article/10948998"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "김남길, 하정우-차정원 결혼식 사회 맡는다…무슨 인연이기에",
+     "link": "https://biz.heraldcorp.com/article/10948806"
+    },
+    {
+     "src": "뉴시스",
+     "title": "'궁' 임예진, 윤은혜에 대뜸 \"뒤에 가서 춤춰 봐\"…무슨 일?",
+     "link": "https://www.newsis.com/view/NISX20261127_0003885765"
+    }
+   ]
+  },
+  {
+   "kw": "버추얼",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "연합뉴스",
+    "조선일보",
+    "한국경제"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "엠넷, 日 반다이 남코와 버추얼 아이돌 서바이벌 제작",
+     "link": "https://www.yna.co.kr/view/AKR20261127037300005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "4인조 버추얼 보이그룹 윙스, 27일 데뷔…첫 싱글 '헤일로'",
+     "link": "https://www.yna.co.kr/view/AKR20261125148100005"
+    },
+    {
+     "src": "한국경제",
+     "title": "\"평양냉면처럼 중독될 것\"…윙스, 플레이브 이어 버추얼 새 바람 일으킬까 [종합]",
+     "link": "https://www.hankyung.com/article/202611259421H"
+    },
+    {
+     "src": "뉴시스",
+     "title": "엠넷(Mnet), 日 반다이 남코 손잡고 첫 버추얼 아이돌 서바이벌",
+     "link": "https://www.newsis.com/view/NISX20261126_0003884077"
+    }
+   ]
+  },
+  {
+   "kw": "서바이벌",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "연합뉴스",
+    "조선일보"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "엠넷, 日 반다이 남코와 버추얼 아이돌 서바이벌 제작",
+     "link": "https://www.yna.co.kr/view/AKR20261127037300005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "SBS 에너지 창업 서바이벌 '스파크업' 내달 첫 방송",
+     "link": "https://www.yna.co.kr/view/AKR20261123086900005"
+    },
+    {
+     "src": "동아일보",
+     "title": "장동민, 서바이벌 최강자도 AI 앞에선 굴욕…“왜 나만 이런 모욕을”",
+     "link": "https://sports.donga.com/ent/article/all/20261127/135101300/1"
+    },
+    {
+     "src": "뉴시스",
+     "title": "엠넷(Mnet), 日 반다이 남코 손잡고 첫 버추얼 아이돌 서바이벌",
+     "link": "https://www.newsis.com/view/NISX20261126_0003884077"
+    }
+   ]
+  },
+  {
    "kw": "많이",
    "nsrc": 4,
    "srcs": [
@@ -417,7 +650,7 @@
     "연합뉴스",
     "한국경제"
    ],
-   "n": 6,
+   "n": 5,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -435,75 +668,42 @@
      "link": "https://sports.donga.com/ent/article/all/20261127/135101202/1"
     },
     {
-     "src": "동아일보",
-     "title": "‘그냥사람친구’ 김용건 “이서진, 팔짱 끼는 모습 많이 봤어” [현장]",
-     "link": "https://sports.donga.com/ent/article/all/20261126/135095998/1"
-    }
-   ]
-  },
-  {
-   "kw": "입고",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "세계일보",
-    "조선일보",
-    "한국경제"
-   ],
-   "n": 6,
-   "headlines": [
-    {
      "src": "한국경제",
-     "title": "[포토+] 이정은, '멋지게 슈트 입고 등장'",
-     "link": "https://www.hankyung.com/article/202611260762H"
-    },
-    {
-     "src": "세계일보",
-     "title": "48세 정가은, 수영복 입고 드러낸 몸매…군살 하나 없네",
-     "link": "https://www.segye.com/newsView/20261126516467"
-    },
-    {
-     "src": "뉴시스",
-     "title": "41세 이다희, 블랙 수영복 입고 뽐낸 한 줌 허리",
-     "link": "https://www.newsis.com/view/NISX20261126_0003884061"
-    },
-    {
-     "src": "뉴시스",
-     "title": "48세 정가은, 수영복 입고 드러낸 몸매…군살 하나 없네",
-     "link": "https://www.newsis.com/view/NISX20261126_0003884980"
+     "title": "'그사친' 이서진 \"짐꾼 할 나이 지나\"…김용건 \"팔짱 많이 끼더라\"",
+     "link": "https://www.hankyung.com/article/202611262194H"
     }
    ]
   },
   {
-   "kw": "나이",
+   "kw": "부부",
    "nsrc": 4,
    "srcs": [
+    "SBS",
     "뉴시스",
     "연합뉴스",
-    "조선일보",
-    "한국경제"
+    "헤럴드경제"
    ],
    "n": 5,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "도합 85년 우정 여행…한지민 \"나이·성별 떠나 친구 됐죠\"",
-     "link": "https://www.yna.co.kr/view/AKR20261126143000005"
+     "title": "특수요원 황정민·형사 염정아 부부 귀환…'크로스2' 내달 공개",
+     "link": "https://www.yna.co.kr/view/AKR20261126054600005"
     },
     {
      "src": "연합뉴스",
-     "title": "'기분 좋은 날' 방송 20주년…MC 김한석 \"함께 나이 들어가고파\"",
-     "link": "https://www.yna.co.kr/view/AKR20261125053100005"
+     "title": "배우 고규필·가수 에이민 부부 득녀…\"인생 가장 잘한 일\"",
+     "link": "https://www.yna.co.kr/view/AKR20261123138400005"
     },
     {
-     "src": "한국경제",
-     "title": "'그사친' 이서진 \"짐꾼 할 나이 지나\"…김용건 \"팔짱 많이 끼더라\"",
-     "link": "https://www.hankyung.com/article/202611262194H"
+     "src": "헤럴드경제",
+     "title": "‘이혼할 결심’ 2년 만에…정대세 부부, 13살 터울 셋째 임신 ‘눈물바다’",
+     "link": "https://biz.heraldcorp.com/article/10951404"
     },
     {
-     "src": "뉴시스",
-     "title": "나영석 새 예능 '그냥사람친구'…이서진 \"이제 짐꾼 필요한 나이\"",
-     "link": "https://www.newsis.com/view/NISX20261126_0003884814"
+     "src": "SBS",
+     "title": "[스브스夜] '동상이몽2' 여에스더, ♥홍혜걸의 2만 8천원 짜리 팔찌 선물에도 '행복'…가수 강균성 부부 합류 예고",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008861876&plink=RSSLINK&cooper=RSSREADER"
     }
    ]
   },
@@ -607,68 +807,68 @@
    ]
   },
   {
-   "kw": "무슨",
+   "kw": "연속",
    "nsrc": 4,
    "srcs": [
+    "SBS",
     "뉴시스",
     "동아일보",
-    "조선일보",
-    "헤럴드경제"
+    "연합뉴스"
    ],
    "n": 5,
    "headlines": [
     {
+     "src": "연합뉴스",
+     "title": "TXT, 日 오리콘 15개 음반 연속 1위…해외 가수 최다 기록",
+     "link": "https://www.yna.co.kr/view/AKR20261124052600005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "춘천시, 지자체 홍보대상 스마트도시 부문 대상…3회 연속 수상",
+     "link": "https://www.yna.co.kr/view/AKR20261123146500062"
+    },
+    {
      "src": "동아일보",
-     "title": "BTS 뷔, 대만 카스텔라 가게에 무슨 일이…“김태형에게 감사”",
-     "link": "https://sports.donga.com/ent/article/all/20261127/135100916/1"
+     "title": "투모로우바이투게더, 8연속 초동 밀리언셀러 달성…써클 주간 차트 2관왕",
+     "link": "https://sports.donga.com/ent/article/all/20261126/135096419/1"
     },
     {
-     "src": "헤럴드경제",
-     "title": "“위고비 1년반 맞았는데도”…‘워터밤 여신’ 터질듯한 뱃살, 이게 무슨 일?",
-     "link": "https://biz.heraldcorp.com/article/10948998"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "김남길, 하정우-차정원 결혼식 사회 맡는다…무슨 인연이기에",
-     "link": "https://biz.heraldcorp.com/article/10948806"
-    },
-    {
-     "src": "뉴시스",
-     "title": "천상지희 선데이, 조권과 무슨 사이? \"보기보다 더 예쁜 애\"",
-     "link": "https://www.newsis.com/view/NISX20261127_0003885568"
+     "src": "SBS",
+     "title": "'폭설', 8일 연속 박스오피스 1위…누적 관객 50만 돌파",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008864336&plink=RSSLINK&cooper=RSSREADER"
     }
    ]
   },
   {
-   "kw": "예고",
+   "kw": "카다시안",
    "nsrc": 4,
    "srcs": [
-    "SBS",
+    "뉴시스",
     "동아일보",
-    "조선일보",
-    "한국경제"
+    "세계일보",
+    "조선일보"
    ],
    "n": 5,
    "headlines": [
     {
      "src": "동아일보",
-     "title": "BTS 정국부터 ‘파친코’ 김민하까지…코드 쿤스트, 초호화 협업 예고",
-     "link": "https://sports.donga.com/ent/article/all/20261126/135096282/1"
+     "title": "킴 카다시안 “한국 미용시술 후 얼굴 망가져”…母도 눈물 [DA할리우드]",
+     "link": "https://sports.donga.com/ent/article/all/20261126/135096743/1"
     },
     {
-     "src": "한국경제",
-     "title": "\"모두 무릎 꿇을 것\"…'어벤져스: 둠스데이' 역대급 결전 예고",
-     "link": "https://www.hankyung.com/article/202611258616H"
+     "src": "세계일보",
+     "title": "카다시안 자매 \"한국에서 미용 시술받고 부작용…비행기서 상태 더 심해져\"",
+     "link": "https://www.segye.com/newsView/20261126517695"
     },
     {
-     "src": "SBS",
-     "title": "'나인 투 식스' 고수 \"15년 만의 로맨스 복귀 너무 좋아\"…'달빛 남주'의 은은한 매력 예고",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008863170&plink=RSSLINK&cooper=RSSREADER"
+     "src": "뉴시스",
+     "title": "브라이언, 절친 서인영 연애사 폭로…\"킴 카다시안 같았다\"",
+     "link": "https://www.newsis.com/view/NISX20261127_0003885626"
     },
     {
-     "src": "SBS",
-     "title": "[스브스夜] '동상이몽2' 여에스더, ♥홍혜걸의 2만 8천원 짜리 팔찌 선물에도 '행복'…가수 강균성 부부 합류 예고",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008861876&plink=RSSLINK&cooper=RSSREADER"
+     "src": "뉴시스",
+     "title": "\"한국서 시술받고 얼굴 퉁퉁\"…카다시안 자매 폭로에 K뷰티 '굴욕'",
+     "link": "https://www.newsis.com/view/NISX20261126_0003885322"
     }
    ]
   },
@@ -706,6 +906,39 @@
    ]
   },
   {
+   "kw": "에스파",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "세계일보",
+    "연합뉴스"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "국가별 최고 인기 K팝 스타는…韓 리센느·中 에스파·日 BTS",
+     "link": "https://www.yna.co.kr/view/AKR20261126086700005"
+    },
+    {
+     "src": "동아일보",
+     "title": "에스파 지젤, 건강미 발산…자기관리도 철저",
+     "link": "https://sports.donga.com/ent/article/all/20261127/135101694/1"
+    },
+    {
+     "src": "세계일보",
+     "title": "K팝 최애는… ‘韓 리센느·中 에스파·日 BTS’",
+     "link": "https://www.segye.com/newsView/20261126515226"
+    },
+    {
+     "src": "뉴시스",
+     "title": "한·중·일 K-팝 차트 각축…韓 리센느·中 에스파·日 방탄소년단 최다 1위",
+     "link": "https://www.newsis.com/view/NISX20261126_0003883669"
+    }
+   ]
+  },
+  {
    "kw": "차트",
    "nsrc": 4,
    "srcs": [
@@ -735,6 +968,72 @@
      "src": "뉴시스",
      "title": "한·중·일 K-팝 차트 각축…韓 리센느·中 에스파·日 방탄소년단 최다 1위",
      "link": "https://www.newsis.com/view/NISX20261126_0003883669"
+    }
+   ]
+  },
+  {
+   "kw": "만났다",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "세계일보",
+    "조선일보"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "아이브도 팝마트와 만났다…‘미니브’ 협업 컬렉션 출시",
+     "link": "https://sports.donga.com/ent/article/all/20261127/135101536/1"
+    },
+    {
+     "src": "세계일보",
+     "title": "'왕사남' 박지훈·'스윙스' 문지훈, 만났다…\"너도 지훈? 나도 지훈\"",
+     "link": "https://www.segye.com/newsView/20261126517774"
+    },
+    {
+     "src": "뉴시스",
+     "title": "\"아빠 같아서 만났다\"…결혼 3개월 만에 외도·동거 女 충격",
+     "link": "https://www.newsis.com/view/NISX20261127_0003885693"
+    },
+    {
+     "src": "조선일보",
+     "title": "'감독' 이정현, '나혼렙' 변우석과 만났다 \"생각 깊고 멋진 후배 배우님\"",
+     "link": "https://www.chosun.com/entertainments/movie/2026/11/26/MZRDQYRTMJSGCNTCMYZTKNDFHE/"
+    }
+   ]
+  },
+  {
+   "kw": "없는",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "조선일보",
+    "한국경제"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "조세호, 초등생 “돈 많아요?” 기습 질문에 진땀…“돈이 없는 건 아닌데”",
+     "link": "https://sports.donga.com/ent/article/all/20261127/135101334/1"
+    },
+    {
+     "src": "한국경제",
+     "title": "[포토+] 장다아, '눈 뗄 수 없는 예쁨'",
+     "link": "https://www.hankyung.com/article/202611260735H"
+    },
+    {
+     "src": "뉴시스",
+     "title": "강민경, 뉴욕 밤 수놓은 블랙 드레스 자태…군살 없는 몸매 비결은",
+     "link": "https://www.newsis.com/view/NISX20261126_0003884263"
+    },
+    {
+     "src": "조선일보",
+     "title": "조권, 양성애자 구용구와 열애설 첫 공식석상…주름 하나 없는 피부[핫피플]",
+     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/27/GBSTCNDEGVSDCMZSGBSTQYJWGI/"
     }
    ]
   },
@@ -805,39 +1104,6 @@
    ]
   },
   {
-   "kw": "카다시안",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "세계일보",
-    "조선일보"
-   ],
-   "n": 4,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "킴 카다시안 “한국 미용시술 후 얼굴 망가져”…母도 눈물 [DA할리우드]",
-     "link": "https://sports.donga.com/ent/article/all/20261126/135096743/1"
-    },
-    {
-     "src": "세계일보",
-     "title": "카다시안 자매 \"한국에서 미용 시술받고 부작용…비행기서 상태 더 심해져\"",
-     "link": "https://www.segye.com/newsView/20261126517695"
-    },
-    {
-     "src": "뉴시스",
-     "title": "\"한국서 시술받고 얼굴 퉁퉁\"…카다시안 자매 폭로에 K뷰티 '굴욕'",
-     "link": "https://www.newsis.com/view/NISX20261126_0003885322"
-    },
-    {
-     "src": "조선일보",
-     "title": "카다시안 “한국서 미용 시술 후 얼굴 망가져, 母도 오열” 주장 논란",
-     "link": "https://www.chosun.com/entertainments/enter_general/2026/11/26/MJRTAMRVMIYDIMDBGBQWGN3GGU/"
-    }
-   ]
-  },
-  {
    "kw": "양홍원",
    "nsrc": 3,
    "srcs": [
@@ -902,34 +1168,34 @@
    ]
   },
   {
-   "kw": "별세",
+   "kw": "브라이언",
    "nsrc": 3,
    "srcs": [
     "뉴시스",
-    "연합뉴스",
-    "한겨레"
+    "세계일보",
+    "조선일보"
    ],
-   "n": 7,
+   "n": 8,
    "headlines": [
     {
-     "src": "연합뉴스",
-     "title": "1세대 슈퍼모델 베루슈카 별세…1960년대 패션 아이콘",
-     "link": "https://www.yna.co.kr/view/AKR20261126149600009"
+     "src": "세계일보",
+     "title": "환희·브라이언, 7년 만에 불화설·열애설 해명…“사귄 적 없다”",
+     "link": "https://www.segye.com/newsView/20261126513722"
     },
     {
-     "src": "연합뉴스",
-     "title": "英밴드 듀란듀란 기타리스트 앤디 테일러 별세…향년 65세",
-     "link": "https://www.yna.co.kr/view/AKR20261126015200075"
+     "src": "뉴시스",
+     "title": "브라이언, 절친 서인영 연애사 폭로…\"킴 카다시안 같았다\"",
+     "link": "https://www.newsis.com/view/NISX20261127_0003885626"
     },
     {
-     "src": "연합뉴스",
-     "title": "'EBS 밑그림' 그린 '해직 PD'…김학천 전 EBS 사장 별세(종합)",
-     "link": "https://www.yna.co.kr/view/AKR20261123086051005"
+     "src": "뉴시스",
+     "title": "브라이언, 서인영과 얼마나 친하길래 \"몸에 점 위치도 알아\"",
+     "link": "https://www.newsis.com/view/NISX20261126_0003885331"
     },
     {
-     "src": "연합뉴스",
-     "title": "김학천 전 EBS 사장 22일 별세…향년 85세",
-     "link": "https://www.yna.co.kr/view/AKR20261123086000005"
+     "src": "뉴시스",
+     "title": "브라이언, 성대결절로 6개월 묵언수행…\"무대 오르기 두려웠다\"",
+     "link": "https://www.newsis.com/view/NISX20261126_0003883967"
     }
    ]
   },
@@ -986,83 +1252,19 @@
      "link": "https://sports.donga.com/ent/article/all/20261126/135096743/1"
     },
     {
-     "src": "동아일보",
-     "title": "얼굴 대신 취향 먼저…JYP 스쿼드 첫 신인 오브더블루, 파격 데뷔 공식",
-     "link": "https://sports.donga.com/ent/article/all/20261126/135096179/1"
-    },
-    {
      "src": "뉴시스",
      "title": "\"한국서 시술받고 얼굴 퉁퉁\"…카다시안 자매 폭로에 K뷰티 '굴욕'",
      "link": "https://www.newsis.com/view/NISX20261126_0003885322"
+    },
+    {
+     "src": "조선일보",
+     "title": "돌아온 아이언맨? '둠스데이' 로다주, 같은 얼굴 다른 캐릭터 \"같은 천재지만 정반대\"",
+     "link": "https://www.chosun.com/entertainments/movie/2026/11/27/HFSTGNJRMM3GKMZSMZSWINJYMI/"
     }
    ]
   },
   {
-   "kw": "브라이언",
-   "nsrc": 3,
-   "srcs": [
-    "뉴시스",
-    "세계일보",
-    "조선일보"
-   ],
-   "n": 7,
-   "headlines": [
-    {
-     "src": "세계일보",
-     "title": "환희·브라이언, 7년 만에 불화설·열애설 해명…“사귄 적 없다”",
-     "link": "https://www.segye.com/newsView/20261126513722"
-    },
-    {
-     "src": "뉴시스",
-     "title": "브라이언, 서인영과 얼마나 친하길래 \"몸에 점 위치도 알아\"",
-     "link": "https://www.newsis.com/view/NISX20261126_0003885331"
-    },
-    {
-     "src": "뉴시스",
-     "title": "브라이언, 성대결절로 6개월 묵언수행…\"무대 오르기 두려웠다\"",
-     "link": "https://www.newsis.com/view/NISX20261126_0003883967"
-    },
-    {
-     "src": "뉴시스",
-     "title": "환희·브라이언, 열애설 재차 부인 \"사귄 적은 없다\"",
-     "link": "https://www.newsis.com/view/NISX20261126_0003883785"
-    }
-   ]
-  },
-  {
-   "kw": "리센느",
-   "nsrc": 3,
-   "srcs": [
-    "뉴시스",
-    "세계일보",
-    "연합뉴스"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "국가별 최고 인기 K팝 스타는…韓 리센느·中 에스파·日 BTS",
-     "link": "https://www.yna.co.kr/view/AKR20261126086700005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "[테크스냅] 쿠팡플레이, 리센느 첫 단독 콘서트 예매 일정 공개",
-     "link": "https://www.yna.co.kr/view/AKR20261123124700017"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "[가요소식] 한해·문세윤, 리센느 제나와 신곡 '러브 어게인'",
-     "link": "https://www.yna.co.kr/view/AKR20261123081800005"
-    },
-    {
-     "src": "세계일보",
-     "title": "K팝 최애는… ‘韓 리센느·中 에스파·日 BTS’",
-     "link": "https://www.segye.com/newsView/20261126515226"
-    }
-   ]
-  },
-  {
-   "kw": "식스",
+   "kw": "폭설",
    "nsrc": 3,
    "srcs": [
     "SBS",
@@ -1073,247 +1275,55 @@
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "악연 같은 박민영·육성재의 첫 만남…'나인 투 식스' 3.6% 출발",
-     "link": "https://www.yna.co.kr/view/AKR20261126036100005"
+     "title": "김윤석·구교환 '폭설', 캐나다서 리메이크…홍의정 감독 연출",
+     "link": "https://www.yna.co.kr/view/AKR20261127045100005"
     },
-    {
-     "src": "SBS",
-     "title": "박민영 또 한번 오피스로맨스 펼쳐…'나인 투 식스' 첫방",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008863867&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "SBS",
-     "title": "'나인 투 식스' 고수 \"15년 만의 로맨스 복귀 너무 좋아\"…'달빛 남주'의 은은한 매력 예고",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008863170&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "SBS",
-     "title": "'달빛' 고수 vs '햇살' 육성재…'나인 투 식스' 박민영의 행복한 고민 \"둘 다 설레\"",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008863162&plink=RSSLINK&cooper=RSSREADER"
-    }
-   ]
-  },
-  {
-   "kw": "나인",
-   "nsrc": 3,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "연합뉴스"
-   ],
-   "n": 6,
-   "headlines": [
     {
      "src": "연합뉴스",
-     "title": "악연 같은 박민영·육성재의 첫 만남…'나인 투 식스' 3.6% 출발",
-     "link": "https://www.yna.co.kr/view/AKR20261126036100005"
+     "title": "[주말극장가] 김윤석·구교환 '폭설' 9일째 1위…흥행 예고",
+     "link": "https://www.yna.co.kr/view/AKR20261127039400005"
     },
     {
      "src": "SBS",
-     "title": "박민영 또 한번 오피스로맨스 펼쳐…'나인 투 식스' 첫방",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008863867&plink=RSSLINK&cooper=RSSREADER"
+     "title": "'폭설', 8일 연속 박스오피스 1위…누적 관객 50만 돌파",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008864336&plink=RSSLINK&cooper=RSSREADER"
     },
     {
-     "src": "SBS",
-     "title": "'나인 투 식스' 고수 \"15년 만의 로맨스 복귀 너무 좋아\"…'달빛 남주'의 은은한 매력 예고",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008863170&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "SBS",
-     "title": "'달빛' 고수 vs '햇살' 육성재…'나인 투 식스' 박민영의 행복한 고민 \"둘 다 설레\"",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008863162&plink=RSSLINK&cooper=RSSREADER"
+     "src": "뉴시스",
+     "title": "'폭설' 2주 연속 1위 도전…'슬픈 열대' '헥스' 추격",
+     "link": "https://www.newsis.com/view/NISX20261127_0003885809"
     }
    ]
   },
   {
-   "kw": "의혹",
+   "kw": "별세",
    "nsrc": 3,
    "srcs": [
     "뉴시스",
     "연합뉴스",
-    "조선일보"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "공무원노조 \"공소청, TV조선 점수조작 의혹 항소 취하해야\"",
-     "link": "https://www.yna.co.kr/view/AKR20261123058200017"
-    },
-    {
-     "src": "뉴시스",
-     "title": "\"팬들이 준 편지 버렸나\"…뮤지컬배우, 팬 기만 의혹 나왔다",
-     "link": "https://www.newsis.com/view/NISX20261127_0003885567"
-    },
-    {
-     "src": "뉴시스",
-     "title": "'尹 관저 의혹' 김대기·이상민 오늘 1심 선고…남경주 국참 시작",
-     "link": "https://www.newsis.com/view/NISX20261126_0003885018"
-    },
-    {
-     "src": "뉴시스",
-     "title": "양홍원 불륜설 폭로자, 또 다른 의혹 제기 \"특정인 지목 아냐\"",
-     "link": "https://www.newsis.com/view/NISX20261126_0003884466"
-    }
-   ]
-  },
-  {
-   "kw": "이유",
-   "nsrc": 3,
-   "srcs": [
-    "동아일보",
-    "조선일보",
     "한겨레"
    ],
    "n": 6,
    "headlines": [
     {
-     "src": "동아일보",
-     "title": "유연석, 죽기 전 서현진 집 찾아간 이유 (라이어)",
-     "link": "https://sports.donga.com/ent/article/all/20261127/135101351/1"
+     "src": "연합뉴스",
+     "title": "1세대 슈퍼모델 베루슈카 별세…1960년대 패션 아이콘",
+     "link": "https://www.yna.co.kr/view/AKR20261126149600009"
     },
     {
-     "src": "동아일보",
-     "title": "‘손목에 시계가 없다’…로버트 패틴슨 007 발탁, 명품 시계 업계가 주목하는 이유",
-     "link": "https://sports.donga.com/ent/article/all/20261126/135093823/1"
+     "src": "연합뉴스",
+     "title": "英밴드 듀란듀란 기타리스트 앤디 테일러 별세…향년 65세",
+     "link": "https://www.yna.co.kr/view/AKR20261126015200075"
     },
     {
-     "src": "한겨레",
-     "title": "19세기 노동자들이 시계 박살 낸 이유…시간의 정치화·무기화 [.txt]",
-     "link": "https://www.hani.co.kr/arti/culture/book/1289357.html"
+     "src": "연합뉴스",
+     "title": "'EBS 밑그림' 그린 '해직 PD'…김학천 전 EBS 사장 별세(종합)",
+     "link": "https://www.yna.co.kr/view/AKR20261123086051005"
     },
     {
-     "src": "조선일보",
-     "title": "문근영, '혹평' 앞머리 이유 있었다..\"기립성 저혈압으로 쓰러져 부상\"[핫피플]",
-     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/27/GVRGCOLCGFQTKN3EMNSGMOLCGM/"
-    }
-   ]
-  },
-  {
-   "kw": "연우",
-   "nsrc": 3,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "헤럴드경제"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "연우, 계단 3000개 오르고 결국 눈물…설인아 활약 (무쇠소녀단3)",
-     "link": "https://sports.donga.com/ent/article/all/20261127/135101220/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "연우 “2달만에 10kg 감량…온몸 두드러기, 많이 울어” (무쇠소녀단3)",
-     "link": "https://sports.donga.com/ent/article/all/20261127/135101202/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "연우, 하루 밥 두 숟갈 먹고 10kg 감량…“이렇게 살면 안 되겠다”",
-     "link": "https://sports.donga.com/ent/article/all/20261126/135099831/1"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "두 달 만에 10㎏ 감량한 연우 “하루에 밥 두 숟갈…두드러기 나고 아팠다”",
-     "link": "https://biz.heraldcorp.com/article/10951249"
-    }
-   ]
-  },
-  {
-   "kw": "눈물",
-   "nsrc": 3,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "동아일보"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "연우, 계단 3000개 오르고 결국 눈물…설인아 활약 (무쇠소녀단3)",
-     "link": "https://sports.donga.com/ent/article/all/20261127/135101220/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "킴 카다시안 “한국 미용시술 후 얼굴 망가져”…母도 눈물 [DA할리우드]",
-     "link": "https://sports.donga.com/ent/article/all/20261126/135096743/1"
-    },
-    {
-     "src": "SBS",
-     "title": "'최대주주 특혜 논란' 이정재, 수척해진 모습으로 공식 석상…고인 떠올리며 눈물",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008864834&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "뉴시스",
-     "title": "홍윤화 \"93만원에 산 10돈 금팔찌, 떨어진 시세에 눈물 나\"",
-     "link": "https://www.newsis.com/view/NISX20261126_0003884699"
-    }
-   ]
-  },
-  {
-   "kw": "남편",
-   "nsrc": 3,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "조선일보"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "‘재혼’ 김나영, 남편 자랑할 만하네…♥마이큐 “잘못도 사과도 제가”",
-     "link": "https://sports.donga.com/ent/article/all/20261126/135098250/1"
-    },
-    {
-     "src": "뉴시스",
-     "title": "선우용여 \"애 낳으면 남편 소중해져…무조건 낳아야\"",
-     "link": "https://www.newsis.com/view/NISX20261127_0003885404"
-    },
-    {
-     "src": "뉴시스",
-     "title": "야노시호, 50억 도쿄 자택 공개 \"남편 추성훈과 각방살이\"",
-     "link": "https://www.newsis.com/view/NISX20261126_0003885358"
-    },
-    {
-     "src": "뉴시스",
-     "title": "아내 친구에 뽀뽀한 남편 \"둘 다 갖고 싶었다\"",
-     "link": "https://www.newsis.com/view/NISX20261126_0003883872"
-    }
-   ]
-  },
-  {
-   "kw": "야노시호",
-   "nsrc": 3,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "조선일보"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "‘♥추성훈’ 야노시호, 50세에도 NO 보톡스…“영크크 되려고 노력”",
-     "link": "https://sports.donga.com/ent/article/all/20261126/135096712/1"
-    },
-    {
-     "src": "동아일보",
-     "title": "‘추성훈♥’ 야노시호 “보톡스 안 맞는다”…난리난 관리법 (편스토랑)",
-     "link": "https://sports.donga.com/ent/article/all/20261126/135096248/1"
-    },
-    {
-     "src": "뉴시스",
-     "title": "야노시호, 50억 도쿄 자택 공개 \"남편 추성훈과 각방살이\"",
-     "link": "https://www.newsis.com/view/NISX20261126_0003885358"
-    },
-    {
-     "src": "조선일보",
-     "title": "50억 도쿄집에 천만원 '수소호흡기'까지..야노시호, 50대 동안 비결공개",
-     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/27/MFRTGYZXMQZGEMJSMQ2TMZJRMU/"
+     "src": "연합뉴스",
+     "title": "김학천 전 EBS 사장 22일 별세…향년 85세",
+     "link": "https://www.yna.co.kr/view/AKR20261123086000005"
     }
    ]
   }

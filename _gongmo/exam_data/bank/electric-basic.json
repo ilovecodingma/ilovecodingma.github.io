@@ -22,8 +22,9 @@
     "5"
    ],
    "answer": 0,
-   "explain": "직렬 합성저항은 합이므로 12+18+30=60Ω.",
-   "ref_url": "https://www.q-net.or.kr"
+   "explain": "정답은 1번 「60」이다.\n직렬 연결의 합성저항은 각 저항의 합이다. R=R1+R2+R3.\nR=12+18+30=60Ω. 직렬 합성저항은 가장 큰 저항(30Ω)보다 항상 크다.\n2번: 30Ω은 세 저항 중 가장 큰 값 하나일 뿐이고 직렬 합성은 그보다 커야 해 틀렸다.\n3번: 120Ω은 합(60Ω)의 두 배로 계산과 맞지 않아 틀렸다.\n4번: 5Ω은 30Ω보다 작아서 직렬 합성저항이 될 수 없어 틀렸다.\n함정: 직렬은 더하고 병렬은 역수의 합이라는 규칙을 바꾸어 적용하면 틀린다.",
+   "ref_url": "https://www.q-net.or.kr",
+   "fig": "<svg viewBox=\"0 0 600 204\" width=\"600\" height=\"204\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\" font-size=\"14\"><text x=\"300\" y=\"24\" text-anchor=\"middle\" font-size=\"14\" fill=\"currentColor\" font-weight=\"bold\">저항 3개 직렬</text><line x1=\"40\" y1=\"90\" x2=\"560\" y2=\"90\" stroke=\"currentColor\" stroke-width=\"2\"/><rect x=\"95.0\" y=\"72\" width=\"100\" height=\"36\" rx=\"4\" fill=\"currentColor\" fill-opacity=\"0.18\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"145.0\" y=\"96\" text-anchor=\"middle\" font-size=\"14\" fill=\"currentColor\">12Ω</text><rect x=\"250.0\" y=\"72\" width=\"100\" height=\"36\" rx=\"4\" fill=\"currentColor\" fill-opacity=\"0.18\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"300.0\" y=\"96\" text-anchor=\"middle\" font-size=\"14\" fill=\"currentColor\">18Ω</text><rect x=\"405.0\" y=\"72\" width=\"100\" height=\"36\" rx=\"4\" fill=\"currentColor\" fill-opacity=\"0.18\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"455.0\" y=\"96\" text-anchor=\"middle\" font-size=\"14\" fill=\"currentColor\">30Ω</text><line x1=\"40\" y1=\"90\" x2=\"40\" y2=\"150\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"560\" y1=\"90\" x2=\"560\" y2=\"150\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"40\" y1=\"150\" x2=\"560\" y2=\"150\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"300\" y=\"184\" text-anchor=\"middle\" font-size=\"14\" fill=\"#ff4d7d\" font-weight=\"bold\">합성저항 = 12+18+30 = 60Ω</text></svg>"
   },
   {
    "q": "12Ω과 24Ω을 병렬로 연결한 합성저항(Ω)은?",
@@ -34,8 +35,9 @@
     "12"
    ],
    "answer": 1,
-   "explain": "R=12×24/(12+24)=8Ω.",
-   "ref_url": "https://www.q-net.or.kr"
+   "explain": "정답은 2번 「8」이다.\n병렬 연결의 두 저항의 합성저항은 R=R1×R2/(R1+R2)이다.\nR=12×24/(12+24)=288/36=8Ω. 병렬 합성저항은 가장 작은 저항(12Ω)보다 항상 작다.\n1번: 18Ω은 두 저항의 산술평균으로 병렬 합성값이 아니라 틀렸다.\n3번: 36Ω은 직렬 합성값이라 틀렸다.\n4번: 12Ω은 가장 작은 저항과 같아 병렬 합성저항(그보다 작아야 함)이 될 수 없어 틀렸다.\n함정: 병렬 합성은 반드시 가장 작은 저항보다 작아진다는 점으로 검산할 수 있다.",
+   "ref_url": "https://www.q-net.or.kr",
+   "fig": "<svg viewBox=\"0 0 600 214\" width=\"600\" height=\"214\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\" font-size=\"14\"><text x=\"300\" y=\"24\" text-anchor=\"middle\" font-size=\"14\" fill=\"currentColor\" font-weight=\"bold\">저항 2개 병렬</text><line x1=\"60\" y1=\"60\" x2=\"60\" y2=\"150\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"540\" y1=\"60\" x2=\"540\" y2=\"150\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"60\" y1=\"60\" x2=\"230\" y2=\"60\" stroke=\"currentColor\" stroke-width=\"2\"/><rect x=\"230\" y=\"42\" width=\"140\" height=\"36\" rx=\"4\" fill=\"currentColor\" fill-opacity=\"0.18\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"300\" y=\"66\" text-anchor=\"middle\" font-size=\"14\" fill=\"currentColor\">12Ω</text><line x1=\"370\" y1=\"60\" x2=\"540\" y2=\"60\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"60\" y1=\"150\" x2=\"230\" y2=\"150\" stroke=\"currentColor\" stroke-width=\"2\"/><rect x=\"230\" y=\"132\" width=\"140\" height=\"36\" rx=\"4\" fill=\"currentColor\" fill-opacity=\"0.18\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"300\" y=\"156\" text-anchor=\"middle\" font-size=\"14\" fill=\"currentColor\">24Ω</text><line x1=\"370\" y1=\"150\" x2=\"540\" y2=\"150\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"300\" y=\"196\" text-anchor=\"middle\" font-size=\"14\" fill=\"#ff4d7d\" font-weight=\"bold\">합성저항 = 12×24/(12+24) = 8Ω</text></svg>"
   },
   {
    "q": "저항 25Ω에 100V를 가했을 때 흐르는 전류(A)는?",
@@ -46,7 +48,7 @@
     "0.25"
    ],
    "answer": 2,
-   "explain": "I=V/R=100/25=4A.",
+   "explain": "정답은 3번 「4」이다.\n옴의 법칙에서 전류는 전압을 저항으로 나눈 값이다. I=V/R.\nI=100/25=4A. 전압이 같을 때 저항이 클수록 전류는 작아지므로 25Ω에 100V를 가하면 100보다 작은 수가 나와야 한다.\n1번: 2.5A는 식과 맞지 않는 값이라 틀렸다.\n2번: 25A는 저항값을 그대로 쓴 값이라 틀렸다.\n4번: 0.25A는 R을 V로 나눈 값(25/100)으로 분자와 분모를 바꿔 틀렸다.\n함정: 전압과 저항 중 어느 쪽을 분자에 놓는지 헷갈리면 단위(V÷Ω=A)로 확인한다.",
    "ref_url": "https://www.q-net.or.kr"
   },
   {
@@ -58,7 +60,7 @@
     "1000"
    ],
    "answer": 3,
-   "explain": "P=VI=200×5=1000W.",
+   "explain": "정답은 4번 「1000」이다.\n소비전력은 전압과 전류의 곱이다. P=VI.\nP=200×5=1000W. P=VI의 단위는 V×A=W이다. 이 부하는 200V에서 5A를 쓰므로 1초에 1000J의 에너지를 소비한다.\n1번: 40은 V를 I로 나눈 값(저항 40Ω)이라 전력이 아니라 틀렸다.\n2번: 205는 전압과 전류를 더한 값이라 틀렸다.\n3번: 16.6667은 VI의 곱(1000)과 다른 값이라 틀렸다.\n함정: V÷I는 저항이고 V×I가 전력이라는 점을 구분해야 한다.",
    "ref_url": "https://www.q-net.or.kr"
   },
   {
@@ -70,7 +72,7 @@
     "0.6"
    ],
    "answer": 0,
-   "explain": "W=Pt=2×3=6kWh.",
+   "explain": "정답은 1번 「6」이다.\n전력량은 전력과 사용 시간의 곱이다. W=Pt.\n2kW×3h=6kWh. kW와 h를 곱하면 바로 kWh가 된다. 전력량 단위 kWh는 kW에 시간(h)을 곱한 단위이므로 히터가 2kW로 3시간 일한 양이 그대로 6kWh다.\n2번: 0.6667은 2÷3으로 곱이 아니라 나눈 값이라 틀렸다.\n3번: 5는 2+3으로 더한 값이라 틀렸다.\n4번: 0.6은 곱 6과 다른 값이라 틀렸다.\n함정: 단위가 kW인지 W인지 확인해 kWh로 맞춰야 하며, 이 문제는 이미 kW라 환산이 필요 없다.",
    "ref_url": "https://www.q-net.or.kr"
   },
   {
@@ -82,7 +84,7 @@
     "4608"
    ],
    "answer": 1,
-   "explain": "H=0.24I²Rt=0.24×16×10×60=2304cal.",
+   "explain": "정답은 2번 「2304」이다.\n저항에서 발생하는 열량은 줄의 법칙에 따라 H=0.24I²Rt(cal)이다.\nH=0.24×4²×10×60=0.24×16×600=2304cal.\n1번: 9600은 0.24를 곱하지 않은 I²Rt(16×10×60)의 값이라 틀렸다.\n3번: 576은 전류를 제곱하지 않고 4를 곱한 값(0.24×4×10×60)이라 틀렸다.\n4번: 4608은 계수를 0.48로 계산한 값이라 틀렸다.\n함정: 전류는 제곱하고 계수는 0.24라는 두 가지를 모두 지켜야 한다.",
    "ref_url": "https://www.q-net.or.kr"
   },
   {
@@ -94,8 +96,9 @@
     "9"
    ],
    "answer": 2,
-   "explain": "병렬 4Ω + 10Ω = 14Ω.",
-   "ref_url": "https://www.q-net.or.kr"
+   "explain": "정답은 3번 「14」이다.\n병렬 부분을 먼저 합성한 뒤 직렬 저항을 더한다.\n6Ω과 12Ω의 병렬은 6×12/(6+12)=4Ω이고, 직렬 10Ω을 더하면 4+10=14Ω이다.\n1번: 28Ω은 세 저항을 모두 직렬로 더한 값(6+12+10)이라 틀렸다.\n2번: 2.5714Ω은 직렬 10Ω이 포함된 회로에서 나올 수 없는 값(병렬 부분 4Ω보다 작음)이라 틀렸다.\n4번: 9Ω은 직렬 10Ω보다 작아서 합성저항이 될 수 없어 틀렸다.\n함정: 회로를 병렬 묶음과 직렬 저항으로 나누어 안쪽부터 합쳐야 한다.",
+   "ref_url": "https://www.q-net.or.kr",
+   "fig": "<svg viewBox=\"0 0 600 204\" width=\"600\" height=\"204\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\" font-size=\"14\"><text x=\"300\" y=\"24\" text-anchor=\"middle\" font-size=\"14\" fill=\"currentColor\" font-weight=\"bold\">병렬 후 직렬</text><line x1=\"40\" y1=\"90\" x2=\"560\" y2=\"90\" stroke=\"currentColor\" stroke-width=\"2\"/><rect x=\"146.66666666666669\" y=\"72\" width=\"100\" height=\"36\" rx=\"4\" fill=\"currentColor\" fill-opacity=\"0.18\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"196.66666666666669\" y=\"96\" text-anchor=\"middle\" font-size=\"14\" fill=\"currentColor\">6Ω∥12Ω = 4Ω</text><rect x=\"353.33333333333337\" y=\"72\" width=\"100\" height=\"36\" rx=\"4\" fill=\"currentColor\" fill-opacity=\"0.18\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"403.33333333333337\" y=\"96\" text-anchor=\"middle\" font-size=\"14\" fill=\"currentColor\">10Ω</text><line x1=\"40\" y1=\"90\" x2=\"40\" y2=\"150\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"560\" y1=\"90\" x2=\"560\" y2=\"150\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"40\" y1=\"150\" x2=\"560\" y2=\"150\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"300\" y=\"184\" text-anchor=\"middle\" font-size=\"14\" fill=\"#ff4d7d\" font-weight=\"bold\">합성저항 = 4+10 = 14Ω</text></svg>"
   },
   {
    "q": "3A의 전류가 20초 동안 흐를 때 이동한 전기량(C)은?",
@@ -106,7 +109,7 @@
     "60"
    ],
    "answer": 3,
-   "explain": "Q=It=3×20=60C.",
+   "explain": "정답은 4번 「60」이다.\n이동한 전기량은 전류와 시간의 곱이다. Q=It.\nQ=3×20=60C. 전류 1A는 1초에 1C이 이동하는 세기이므로 3A가 20초 동안 흐르면 3C씩 20번 이동한 60C이다. 전기량 단위 C은 A·s와 같으므로 전류와 시간의 단위를 곱하면 곧바로 C이 된다.\n1번: 10C은 곱 60과 다른 값이라 틀렸다.\n2번: 23C은 3+20으로 더한 값이라 틀렸다.\n3번: 17C은 20−3으로 뺀 값이라 틀렸다.\n함정: 1A의 전류가 1초 흐를 때의 전기량이 1C이다.",
    "ref_url": "https://www.q-net.or.kr"
   },
   {
@@ -118,7 +121,7 @@
     "0.0531"
    ],
    "answer": 0,
-   "explain": "XL=2πfL=2×3.14×60×0.05=18.84Ω.",
+   "explain": "정답은 1번 「18.84」이다.\n유도 리액턴스는 XL=2πfL이다. 인덕턴스 50mH는 0.05H로 환산해 계산한다.\nXL=2×3.14×60×0.05=18.84Ω.\n2번: 376.8Ω은 2πf(376.8)만 구하고 L을 곱하지 않은 값이라 틀렸다.\n3번: 9.42Ω은 이 값의 절반으로 식과 맞지 않아 틀렸다.\n4번: 0.0531은 XL의 역수(1/18.84)라 틀렸다.\n함정: mH를 H로 바꾸는 환산(÷1000)을 빠뜨리면 1000배가 틀어진다.",
    "ref_url": "https://www.q-net.or.kr"
   },
   {
@@ -130,7 +133,7 @@
     "318.5"
    ],
    "answer": 1,
-   "explain": "XC=1/(2πfC)=1/(2×3.14×50×100×10⁻⁶)≈31.8Ω.",
+   "explain": "정답은 2번 「31.8」이다.\n용량 리액턴스는 XC=1/(2πfC)이다. 100μF은 100×10⁻⁶F로 환산한다.\nXC=1/(2×3.14×50×100×10⁻⁶)=1/0.0314≈31.8Ω.\n1번: 63.7Ω은 분모에 2를 빠뜨려 두 배가 된 값이라 틀렸다.\n3번: 15.9Ω은 분모에 4π를 쓴 것처럼 절반이 된 값이라 틀렸다.\n4번: 318.5Ω은 C를 10μF으로 계산했을 때의 값이라 틀렸다.\n함정: 용량 리액턴스는 주파수와 용량이 클수록 작아진다는 점도 검산에 쓸 수 있다.",
    "ref_url": "https://www.q-net.or.kr"
   },
   {
@@ -142,8 +145,9 @@
     "48"
    ],
    "answer": 2,
-   "explain": "Z=√(6²+8²)=10Ω.",
-   "ref_url": "https://www.q-net.or.kr"
+   "explain": "정답은 3번 「10」이다.\nR과 XL이 직렬인 회로의 임피던스는 Z=√(R²+XL²)이다.\nZ=√(6²+8²)=√100=10Ω. 저항 성분과 리액턴스 성분은 서로 직각 관계라 단순히 더하지 않고 제곱합의 제곱근으로 합성하며, 6-8-10은 대표적인 직각삼각형 수 조합이다.\n1번: 14Ω은 R과 XL을 단순히 더한 값이라 위상이 90도 다른 두 성분의 합성이 아니라 틀렸다.\n2번: 2Ω은 두 값의 차라 틀렸다.\n4번: 48Ω은 두 값의 곱이라 틀렸다.\n함정: 저항과 리액턴스는 직각삼각형의 두 변이므로 피타고라스 정리로 합성한다.",
+   "ref_url": "https://www.q-net.or.kr",
+   "fig": "<svg viewBox=\"0 0 600 282\" width=\"600\" height=\"282\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\" font-size=\"14\"><text x=\"300\" y=\"24\" text-anchor=\"middle\" font-size=\"14\" fill=\"currentColor\" font-weight=\"bold\">임피던스 삼각형</text><line x1=\"150\" y1=\"210.4\" x2=\"337.20000000000005\" y2=\"210.4\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"337.20000000000005\" y1=\"210.4\" x2=\"337.20000000000005\" y2=\"70\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"150\" y1=\"210.4\" x2=\"337.20000000000005\" y2=\"70\" stroke=\"#ff4d7d\" stroke-width=\"3\"/><text x=\"243.60000000000002\" y=\"232.4\" text-anchor=\"middle\" font-size=\"14\" fill=\"currentColor\">R = 6Ω</text><text x=\"347.20000000000005\" y=\"140.2\" text-anchor=\"start\" font-size=\"14\" fill=\"currentColor\">XL = 8Ω</text><text x=\"213.60000000000002\" y=\"130.2\" text-anchor=\"end\" font-size=\"14\" fill=\"#ff4d7d\" font-weight=\"bold\">Z = 10Ω</text><text x=\"300\" y=\"262.4\" text-anchor=\"middle\" font-size=\"14\" fill=\"currentColor\">Z = √(6²+8²) = 10Ω</text></svg>"
   },
   {
    "q": "유효전력 800W, 피상전력 1000VA인 회로의 역률은?",
@@ -154,8 +158,9 @@
     "0.8"
    ],
    "answer": 3,
-   "explain": "역률=유효전력/피상전력=800/1000=0.8.",
-   "ref_url": "https://www.q-net.or.kr"
+   "explain": "정답은 4번 「0.8」이다.\n역률은 유효전력을 피상전력으로 나눈 값이다. cosθ=P/S.\ncosθ=800/1000=0.8. 유효전력과 무효전력은 직각 관계라 피상전력은 √(800²+600²)=1000VA가 되고 역률은 그 비율이다.\n1번: 0.6은 무효율 sinθ(=√(1−0.8²))의 값이라 틀렸다.\n2번: 1.25는 피상전력을 유효전력으로 나눈 값(분자·분모 반대)이라 틀렸다.\n3번: 0.2는 1−0.8로 구한 값이라 틀렸다.\n함정: 역률은 항상 1 이하이므로 1보다 큰 값은 바로 소거할 수 있다.",
+   "ref_url": "https://www.q-net.or.kr",
+   "fig": "<svg viewBox=\"0 0 600 282\" width=\"600\" height=\"282\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\" font-size=\"14\"><text x=\"300\" y=\"24\" text-anchor=\"middle\" font-size=\"14\" fill=\"currentColor\" font-weight=\"bold\">전력 삼각형</text><line x1=\"150\" y1=\"210.4\" x2=\"337.20000000000005\" y2=\"210.4\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"337.20000000000005\" y1=\"210.4\" x2=\"337.20000000000005\" y2=\"70\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"150\" y1=\"210.4\" x2=\"337.20000000000005\" y2=\"70\" stroke=\"#ff4d7d\" stroke-width=\"3\"/><text x=\"243.60000000000002\" y=\"232.4\" text-anchor=\"middle\" font-size=\"14\" fill=\"currentColor\">유효전력 800W</text><text x=\"347.20000000000005\" y=\"140.2\" text-anchor=\"start\" font-size=\"14\" fill=\"currentColor\">무효전력 600var</text><text x=\"213.60000000000002\" y=\"130.2\" text-anchor=\"end\" font-size=\"14\" fill=\"#ff4d7d\" font-weight=\"bold\">피상전력 1000VA</text><text x=\"300\" y=\"262.4\" text-anchor=\"middle\" font-size=\"14\" fill=\"currentColor\">역률 = 800/1000 = 0.8</text></svg>"
   },
   {
    "q": "1차 권수 300회, 2차 권수 30회인 변압기의 1차 전압이 3300V일 때 2차 전압(V)은?",
@@ -166,8 +171,9 @@
     "110"
    ],
    "answer": 0,
-   "explain": "V2=V1×N2/N1=3300×30/300=330V.",
-   "ref_url": "https://www.q-net.or.kr"
+   "explain": "정답은 1번 「330」이다.\n변압기의 전압비는 권수비와 같다. V1/V2=N1/N2.\nV2=V1×N2/N1=3300×30/300=330V. 2차 전압이 1차의 10분의 1이므로 권수비 N1:N2=10:1의 강압 변압기다.\n2번: 33000V는 권수비를 거꾸로 적용한 값(V1×N1/N2)이라 틀렸다.\n3번: 3330V는 V1에 30을 더한 값이라 틀렸다.\n4번: 110V는 3300을 30으로만 나눈 값이라 권수비(1/10)를 쓰지 않아 틀렸다.\n함정: 권수가 적은 쪽의 전압이 낮으므로 2차 권수가 1차보다 작으면 강압이다.",
+   "ref_url": "https://www.q-net.or.kr",
+   "fig": "<svg viewBox=\"0 0 600 214\" width=\"600\" height=\"214\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\" font-size=\"14\"><text x=\"300\" y=\"24\" text-anchor=\"middle\" font-size=\"14\" fill=\"currentColor\" font-weight=\"bold\">변압기: 전압비 = 권수비</text><rect x=\"60\" y=\"70\" width=\"90\" height=\"60\" rx=\"4\" fill=\"none\" fill-opacity=\"0\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"105\" y=\"95\" text-anchor=\"middle\" font-size=\"14\" fill=\"currentColor\">1차</text><text x=\"105\" y=\"118\" text-anchor=\"middle\" font-size=\"14\" fill=\"currentColor\">300회</text><rect x=\"450\" y=\"70\" width=\"90\" height=\"60\" rx=\"4\" fill=\"#ff4d7d\" fill-opacity=\"0.18\" stroke=\"#ff4d7d\" stroke-width=\"2\"/><text x=\"495\" y=\"95\" text-anchor=\"middle\" font-size=\"14\" fill=\"#ff4d7d\">2차</text><text x=\"495\" y=\"118\" text-anchor=\"middle\" font-size=\"14\" fill=\"#ff4d7d\">30회</text><line x1=\"150\" y1=\"100\" x2=\"450\" y2=\"100\" stroke=\"currentColor\" stroke-width=\"2\" stroke-dasharray=\"6 6\"/><text x=\"105\" y=\"160\" text-anchor=\"middle\" font-size=\"14\" fill=\"currentColor\">V1=3300V</text><text x=\"495\" y=\"160\" text-anchor=\"middle\" font-size=\"14\" fill=\"#ff4d7d\" font-weight=\"bold\">V2=330V</text><text x=\"300\" y=\"196\" text-anchor=\"middle\" font-size=\"14\" fill=\"currentColor\">V2 = V1 × N2/N1 = 3300 × 30/300</text></svg>"
   },
   {
    "q": "선간전압 200V, 선전류 10A, 역률 0.8인 3상 부하의 유효전력(W)은? (√3=1.73, 정수 반올림)",
@@ -178,7 +184,7 @@
     "4800"
    ],
    "answer": 1,
-   "explain": "P=√3VIcosθ=1.73×200×10×0.8≈2768W.",
+   "explain": "정답은 2번 「2768」이다.\n3상 부하의 유효전력은 P=√3·V·I·cosθ이다.\nP=1.73×200×10×0.8=2768W. 선간전압·선전류로 구한 피상전력은 √3×200×10=3460VA이고, 여기에 역률을 곱한 것이 유효전력이다.\n1번: 3460W는 역률 0.8을 곱하지 않은 값(1.73×200×10)이라 틀렸다.\n3번: 1600W는 √3을 곱하지 않은 값(200×10×0.8)이라 틀렸다.\n4번: 4800W는 √3 대신 3을 곱한 값이라 틀렸다.\n함정: 선간전압·선전류로 계산할 때는 3이 아니라 √3을 쓴다.",
    "ref_url": "https://www.q-net.or.kr"
   },
   {
@@ -190,7 +196,7 @@
     "1592"
    ],
    "answer": 2,
-   "explain": "f0=1/(2π√(LC))≈159.2Hz.",
+   "explain": "정답은 3번 「159」이다.\n직렬 공진 회로의 공진주파수는 f0=1/(2π√(LC))이다.\nLC=0.1×10×10⁻⁶=10⁻⁶이므로 √(LC)=10⁻³이고 f0=1/(2π×10⁻³)≈159.2Hz.\n1번: 318Hz는 분모에 π만 써서 두 배가 된 값이라 틀렸다.\n2번: 80Hz는 분모에 4π를 쓴 것처럼 절반이 된 값이라 틀렸다.\n4번: 1592Hz는 μF 환산에서 10배 어긋난 값이라 틀렸다.\n함정: μF를 10⁻⁶F로 바꾸고 제곱근 안에 L과 C를 곱해 넣는다.",
    "ref_url": "https://www.q-net.or.kr"
   },
   {
@@ -202,8 +208,9 @@
     "2"
    ],
    "answer": 3,
-   "explain": "직렬은 곱/합: 6×3/(6+3)=2μF.",
-   "ref_url": "https://www.q-net.or.kr"
+   "explain": "정답은 4번 「2」이다.\n콘덴서를 직렬로 연결하면 합성 정전용량은 곱을 합으로 나눈 값이다. C=C1C2/(C1+C2).\nC=6×3/(6+3)=18/9=2μF. 직렬 합성은 가장 작은 정전용량(3μF)보다 작다.\n1번: 9μF은 병렬 연결의 합성값(합)이라 틀렸다.\n2번: 4.5μF은 병렬 합(9)의 절반이라 계산식과 맞지 않아 틀렸다.\n3번: 1μF은 식으로 구한 2μF와 달라 틀렸다.\n함정: 콘덴서는 저항과 반대로 직렬이 역수 합, 병렬이 단순 합이다.",
+   "ref_url": "https://www.q-net.or.kr",
+   "fig": "<svg viewBox=\"0 0 600 204\" width=\"600\" height=\"204\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\" font-size=\"14\"><text x=\"300\" y=\"24\" text-anchor=\"middle\" font-size=\"14\" fill=\"currentColor\" font-weight=\"bold\">콘덴서 직렬</text><line x1=\"40\" y1=\"90\" x2=\"560\" y2=\"90\" stroke=\"currentColor\" stroke-width=\"2\"/><rect x=\"146.66666666666669\" y=\"72\" width=\"100\" height=\"36\" rx=\"4\" fill=\"currentColor\" fill-opacity=\"0.18\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"196.66666666666669\" y=\"96\" text-anchor=\"middle\" font-size=\"14\" fill=\"currentColor\">6μF</text><rect x=\"353.33333333333337\" y=\"72\" width=\"100\" height=\"36\" rx=\"4\" fill=\"currentColor\" fill-opacity=\"0.18\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"403.33333333333337\" y=\"96\" text-anchor=\"middle\" font-size=\"14\" fill=\"currentColor\">3μF</text><line x1=\"40\" y1=\"90\" x2=\"40\" y2=\"150\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"560\" y1=\"90\" x2=\"560\" y2=\"150\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"40\" y1=\"150\" x2=\"560\" y2=\"150\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"300\" y=\"184\" text-anchor=\"middle\" font-size=\"14\" fill=\"#ff4d7d\" font-weight=\"bold\">합성 = 6×3/(6+3) = 2μF</text></svg>"
   },
   {
    "q": "고유저항 1.7×10⁻⁸Ω·m, 길이 100m, 단면적 2mm²인 도체의 저항(Ω)은?",
@@ -214,7 +221,7 @@
     "850"
    ],
    "answer": 0,
-   "explain": "R=ρl/A=1.7×10⁻⁸×100/(2×10⁻⁶)=0.85Ω.",
+   "explain": "정답은 1번 「0.85」이다.\n도체의 저항은 R=ρl/A이다. 단면적 2mm²는 2×10⁻⁶m²로 환산한다.\nR=1.7×10⁻⁸×100/(2×10⁻⁶)=0.85Ω. 고유저항의 단위는 Ω·m이므로 길이는 m, 단면적은 m²로 맞추어 넣어야 하며, 길이가 길수록 저항이 크고 단면적이 클수록 작다.\n2번: 8.5Ω은 10배 어긋난 값(길이나 단위 환산 오류)이라 틀렸다.\n3번: 0.085Ω은 10분의 1로 어긋난 값이라 틀렸다.\n4번: 850Ω은 단면적을 mm²에서 m²로 환산하지 않아 1000배 커진 값이라 틀렸다.\n함정: mm²를 m²로 바꿀 때는 10⁻⁶을 곱한다.",
    "ref_url": "https://www.q-net.or.kr"
   },
   {
@@ -226,8 +233,9 @@
     "9"
    ],
    "answer": 1,
-   "explain": "I=90/30=3A, V=3×10=30V.",
-   "ref_url": "https://www.q-net.or.kr"
+   "explain": "정답은 2번 「30」이다.\n직렬 회로에서는 전류가 같고 전압은 저항에 비례해 나뉜다.\nI=90/(20+10)=3A, 10Ω 양단 전압 V=3×10=30V. 20Ω과 10Ω의 비가 2:1이므로 전압도 2:1로 나뉘어 20Ω에 60V, 10Ω에 30V가 걸린다.\n1번: 60V는 20Ω 양단의 전압이라 틀렸다.\n3번: 45V는 전체 전압의 절반으로 저항비(2:1)를 반영하지 않아 틀렸다.\n4번: 9는 전체 전압을 10Ω 하나로만 나눈 값이라 틀렸다.\n함정: 전체 전압을 저항 비율로 나누는 분압 공식(V×10/30)으로도 같은 값이 나온다.",
+   "ref_url": "https://www.q-net.or.kr",
+   "fig": "<svg viewBox=\"0 0 600 204\" width=\"600\" height=\"204\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\" font-size=\"14\"><text x=\"300\" y=\"24\" text-anchor=\"middle\" font-size=\"14\" fill=\"currentColor\" font-weight=\"bold\">전압 분배(90V)</text><line x1=\"40\" y1=\"90\" x2=\"560\" y2=\"90\" stroke=\"currentColor\" stroke-width=\"2\"/><rect x=\"146.66666666666669\" y=\"72\" width=\"100\" height=\"36\" rx=\"4\" fill=\"currentColor\" fill-opacity=\"0.18\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"196.66666666666669\" y=\"96\" text-anchor=\"middle\" font-size=\"14\" fill=\"currentColor\">20Ω</text><rect x=\"353.33333333333337\" y=\"72\" width=\"100\" height=\"36\" rx=\"4\" fill=\"currentColor\" fill-opacity=\"0.18\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"403.33333333333337\" y=\"96\" text-anchor=\"middle\" font-size=\"14\" fill=\"currentColor\">10Ω</text><line x1=\"40\" y1=\"90\" x2=\"40\" y2=\"150\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"560\" y1=\"90\" x2=\"560\" y2=\"150\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"40\" y1=\"150\" x2=\"560\" y2=\"150\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"300\" y=\"184\" text-anchor=\"middle\" font-size=\"14\" fill=\"#ff4d7d\" font-weight=\"bold\">I=3A, 10Ω 양단 전압 = 30V</text></svg>"
   },
   {
    "q": "휘트스톤 브리지의 평형 조건은 P×X=Q×R이다. P=10Ω, Q=15Ω, R=30Ω이면 X(Ω)는?",
@@ -238,8 +246,9 @@
     "10"
    ],
    "answer": 2,
-   "explain": "X=QR/P=15×30/10=45Ω.",
-   "ref_url": "https://www.q-net.or.kr"
+   "explain": "정답은 3번 「45」이다.\n휘트스톤 브리지의 평형 조건은 P×X=Q×R이다.\nX=Q×R/P=15×30/10=45Ω. 브리지가 평형이면 검류계에 전류가 흐르지 않는다. 검산하면 P×X=10×45=450, Q×R=15×30=450으로 같다.\n1번: 20Ω은 P/Q×R로 분수를 뒤집어 계산한 값이라 틀렸다.\n2번: 5Ω은 P×Q/R로 구한 값이라 틀렸다.\n4번: 10Ω은 P의 값을 그대로 쓴 것이라 틀렸다.\n함정: 문제에 주어진 평형 조건식에서 X만 남기도록 정리해야 한다.",
+   "ref_url": "https://www.q-net.or.kr",
+   "fig": "<svg viewBox=\"0 0 600 222\" width=\"600\" height=\"222\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\" font-size=\"14\"><text x=\"300\" y=\"24\" text-anchor=\"middle\" font-size=\"14\" fill=\"currentColor\" font-weight=\"bold\">휘트스톤 브리지 평형: P×X = Q×R</text><polygon points=\"300,50 420,110 300,170 180,110\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"225\" y=\"78\" text-anchor=\"end\" font-size=\"14\" fill=\"currentColor\">P=10Ω</text><text x=\"375\" y=\"78\" text-anchor=\"start\" font-size=\"14\" fill=\"currentColor\">Q=15Ω</text><text x=\"225\" y=\"152\" text-anchor=\"end\" font-size=\"14\" fill=\"currentColor\">R=30Ω</text><text x=\"375\" y=\"152\" text-anchor=\"start\" font-size=\"14\" fill=\"#ff4d7d\" font-weight=\"bold\">X=45Ω</text><line x1=\"180\" y1=\"110\" x2=\"420\" y2=\"110\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"5 5\"/><text x=\"300\" y=\"106\" text-anchor=\"middle\" font-size=\"14\" fill=\"currentColor\">검류계 0</text><text x=\"300\" y=\"205\" text-anchor=\"middle\" font-size=\"14\" fill=\"currentColor\">X = Q×R/P = 15×30/10</text></svg>"
   },
   {
    "q": "2μC의 점전하 두 개가 0.3m 떨어져 있을 때 작용하는 힘(N)은? (k=9×10⁹)",
@@ -250,8 +259,9 @@
     "0.4"
    ],
    "answer": 3,
-   "explain": "F=kq1q2/r²=9×10⁹×(2×10⁻⁶)²/0.3²=0.4N.",
-   "ref_url": "https://www.q-net.or.kr"
+   "explain": "정답은 4번 「0.4」이다.\n두 점전하 사이의 힘은 쿨롱의 법칙 F=k·q1·q2/r²이다.\nF=9×10⁹×(2×10⁻⁶)²/0.3²=9×10⁹×4×10⁻¹²/0.09=0.036/0.09=0.4N.\n1번: 1.2N은 r²(0.09) 대신 0.03으로 나눈 값이라 틀렸다.\n2번: 0.04N은 r²을 0.9로 나눈 값이라 틀렸다.\n3번: 0.12N은 r²이 아니라 r(0.3)로 나눈 값이라 틀렸다.\n함정: 거리는 제곱해서 쓰고 μC를 10⁻⁶C으로 환산해야 한다.",
+   "ref_url": "https://www.q-net.or.kr",
+   "fig": "<svg viewBox=\"0 0 600 184\" width=\"600\" height=\"184\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\" font-size=\"14\"><text x=\"300\" y=\"24\" text-anchor=\"middle\" font-size=\"14\" fill=\"currentColor\" font-weight=\"bold\">쿨롱의 법칙: F = k·q1·q2 / r²</text><circle cx=\"150\" cy=\"100\" r=\"22\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"150\" y=\"106\" text-anchor=\"middle\" font-size=\"14\" fill=\"currentColor\">2μC</text><circle cx=\"450\" cy=\"100\" r=\"22\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"450\" y=\"106\" text-anchor=\"middle\" font-size=\"14\" fill=\"currentColor\">2μC</text><line x1=\"175\" y1=\"100\" x2=\"425\" y2=\"100\" stroke=\"#ff4d7d\" stroke-width=\"2\"/><text x=\"300\" y=\"90\" text-anchor=\"middle\" font-size=\"14\" fill=\"#ff4d7d\">0.3m</text><text x=\"300\" y=\"160\" text-anchor=\"middle\" font-size=\"14\" fill=\"#ff4d7d\" font-weight=\"bold\">F = 9×10⁹ × (2×10⁻⁶)² / 0.3² = 0.4N</text></svg>"
   }
  ]
 }

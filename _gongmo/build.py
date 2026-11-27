@@ -6995,26 +6995,19 @@ def watch_pages():
 
 
 def app_page():
-    # 루리 줍줍 앱(PWA) 설치 + 공모전 알림 (2026-10-18 사용자: 앱도 사이트 안에서 배포, 공모전 알림, 웹푸시, 메일)
-    cats = json.dumps([[sl, n, CAT_ICON.get(n, '🧩')] for sl, n in CATS], ensure_ascii=False)
-    faq = [('앱은 어디서 받아?', '이 페이지에서 바로 설치돼. 플레이스토어·앱스토어 안 거치는 웹앱이라 용량이 거의 없고, 늘 최신 정보가 보여.'),
-           ('알림은 얼마나 자주 와?', '새 소식은 저녁 7시쯤 모아서 보내고, 마감 임박 소식은 아침 9시쯤 보내. 공모전은 저녁 7시쯤 관심 분야 새 공모전을 모아서, 아침 9시쯤 인기 공모전 마감 3일 전 소식을 보내. 새 공모전이 없는 날은 안 와. 항목마다 따로 끌 수 있어.'),
-           ('가입해야 해?', '폰 알림은 가입 없이 바로 켤 수 있어. 찜한 공모전 마감 메일은 회원만 받을 수 있어.'),
-           ('아이폰도 돼?', 'iOS 16.4 이상 사파리에서 홈 화면에 추가한 뒤, 홈 화면의 루리 줍줍 앱을 열어 알림을 켜면 돼.'),
-           ('알림을 끄고 싶어.', '이 페이지에서 「알림 끄기」를 누르거나, 폰 설정 → 알림에서 루리 줍줍(또는 sungprofile.cloud)을 끄면 돼.')]
-    body = f'''<p class="bc"><a href="/">홈</a> › 앱·알림</p><h1>📲 오늘 뭐하지 앱 · 가난한 박과장</h1>
-{say("o_present", "홈 화면에 깔아. 시험 일정이랑 마감 소식은 내가 챙겨 줄게.")}
-<section id="app-page" data-cats='{E(cats)}'>
-<div class="ap-hero"><img src="/assets/icons/icon-192.png" alt="루리 줍줍 앱 아이콘" width="72" height="72"><div><b>오늘 뭐하지</b><span>오늘 할 자기개발 · 시험 일정 · 마감 알림 · 무료</span></div></div>
-<div class="ap-card ap-feat"><ul><li>📚 앱을 열면 <b>오늘 뭐하지?</b> — 오늘 할 자기개발 거리를 보여 줘</li><li>📅 시험 접수·시험일·발표일 알림을 받아</li><li>🏆 새 공모전·마감 임박 소식도 같이 와</li><li>📴 한 번 본 글은 인터넷이 약해도 열려</li></ul></div>
-<h2>1. 앱 설치</h2><div class="ap-card ap-inst"><p class="ap-sm">불러오는 중…</p></div>
-<h2>2. 폰 알림 (시험·공모전 소식)</h2><div class="ap-card ap-push"><p class="ap-sm">불러오는 중…</p></div>
-<h2>3. 메일 알림</h2><div class="ap-card ap-mail"><p class="ap-sm">불러오는 중…</p></div>
-<h2>자주 묻는 질문</h2><div class="ap-card ap-faq">{"".join(f"<details><summary>{E(q)}</summary><p>{E(a)}</p></details>" for q, a in faq)}</div>
-</section><p class="note">알림을 켜면 브라우저가 만든 알림 주소와 고른 분야만 저장해. 이름·전화번호는 받지 않아. 알림을 끄면 바로 지워져.</p>
-<link rel="stylesheet" href="/assets/app/app.css?v=2">'''
-    page('/app/', '오늘 뭐하지 앱 설치 — 오늘 할 자기개발·시험 일정 알림, 무료', '홈 화면에 설치하면 오늘 할 자기개발 정보와 시험 일정·마감 소식을 알려 줘. 무료·가입 없이 쓸 수 있어.',
-         body, [('가난한 박과장', '/'), ('앱·알림', '/app/')])
+    # 2026-11-27 PWA 「잠이 오냐」: 관심 시험·분야를 고르면 일정·마감·오늘의 문제·새 소식을 푸시·메일로 쪼아 준다. 화면은 assets/app/jam.js, 목록은 assets/app/jam.json(interest.py 가 만든다), 발송은 _gongmo/exam_push.py·digest.py
+    import interest as _IN
+    json.dump(_IN.catalog(), open(os.path.join(ROOT, 'assets', 'app', 'jam.json'), 'w', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))
+    faq = [('알림은 얼마나 오냐?', '고른 시험 접수·시험일 D-7·3·1·당일, 지원금·청약·공모전 마감 3일 전부터, 오늘의 문제는 니가 고른 시각에 하나. 새 소식은 저녁에 모아서 한 번. 고른 것만 온다.'),
+           ('가입해야 하냐?', '폰 알림은 가입 없이 켠다. 메일은 로그인해야 받는다.'),
+           ('아이폰도 되냐?', 'iOS 16.4 이상 사파리에서 홈 화면에 추가하고, 그 앱을 열어서 알림을 켜라.'),
+           ('끄고 싶다.', '이 화면에서 알림 끄기를 누르거나 폰 설정 → 알림에서 sungprofile.cloud 를 꺼라.')]
+    body = f'''<section id="jam"><noscript>자바스크립트를 켜야 시험을 고를 수 있다.</noscript></section>
+<h2 style="max-width:640px;margin:24px auto 8px;font-size:17px">자주 묻는 질문</h2><div style="max-width:640px;margin:0 auto" class="jm-card">{"".join(f"<details><summary><b>{E(q)}</b></summary><p class='jm-sm'>{E(a)}</p></details>" for q, a in faq)}</div>
+<p class="note" style="max-width:640px;margin:14px auto">알림을 켜면 브라우저가 만든 알림 주소와 고른 시험·분야만 저장한다. 이름·전화번호는 안 받는다. 끄면 바로 지운다.</p>
+<link rel="stylesheet" href="/assets/app/jam.css?v=1"><script defer src="/assets/app/jam.js?v=1"></script>'''
+    page('/app/', '잠이 오냐 — 시험 일정·오늘의 문제 알림 앱', '관심 시험 접수·시험일 D-day, 오늘의 문제, 지원금·청약·공모전 마감을 폰 알림과 메일로 쪼아 주는 앱. 무료.',
+         body, [('가난한 박과장', '/'), ('잠이 오냐', '/app/')])
 
 
 FR_SUB = {'돼지고기': '소고기나 닭고기', '소고기': '돼지고기', '닭고기': '돼지고기', '스팸': '햄이나 소시지', '햄': '스팸이나 소시지', '소시지': '햄이나 스팸', '국수': '라면 사리',

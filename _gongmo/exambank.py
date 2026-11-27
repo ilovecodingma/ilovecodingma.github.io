@@ -22,6 +22,9 @@ CSS = ('<style>.bk{max-width:820px;margin:0 auto;line-height:1.75}.bk h2{margin:
        '.bk .play .setup button,.bk .play .bar button{display:inline-block;width:auto;text-align:center;margin:0 6px 6px 0;font-size:15px}.bk .play .setup .grp button{margin:0}.bk .play .bar button{padding:12px 22px;border-radius:10px}.bk .setup input[type=number]{background:#fff;color:#131a2e}'
        '.bk div.q{background:#fff;color:#131a2e}.bk div.q .rv{color:#131a2e}'
        '.bk #bk-start,.bk #bk-grade,.bk #b-go,.bk #b-wr{background:#4f5bd5;color:#fff;border-color:#4f5bd5}.bk #bk-start:hover,.bk #bk-grade:hover{background:#3f4ab8}'
+       '.bk-big{position:relative;min-height:230px;margin:10px 0 18px;overflow:visible}.bk-sc{font-size:72px;font-weight:900;line-height:1;color:#ff4d7d;text-shadow:0 0 24px rgba(255,77,125,.7);transform:rotate(-3deg)}.bk-one{display:inline-block}.bk-rr{position:absolute;right:0;top:-10px;height:230px;width:auto;filter:drop-shadow(0 0 14px rgba(255,60,120,.6))}.bk-bub{position:absolute;right:150px;top:6px;max-width:210px;background:#ff4d7d;color:#fff;font:800 15px/1.3 system-ui,sans-serif;padding:9px 12px;border-radius:8px;font-style:normal;opacity:0;transition:opacity .15s;transform:rotate(-2deg)}'
+       '.nts{margin:16px 0;padding:14px 16px;border:1px solid #2a2f4a;border-radius:10px;background:#0f1220}.nts h2{margin:0 0 8px;font-size:20px}.nts-i{margin:0 0 10px}.nts-s{margin:8px 0;border-top:1px solid #23284a;padding-top:8px}.nts-s summary{cursor:pointer;font-weight:800}.nts-b{white-space:pre-line;line-height:1.75}.nts-k{margin:6px 0;padding-left:18px}.nts-k li{margin:3px 0}.nts-r{margin-top:12px;padding:10px 12px;background:#1a1030;border-left:3px solid #ff4d7d}.nts-r ul{margin:6px 0 0;padding-left:18px}'
+       '.bk .rv .ex,.bk details p{white-space:pre-line;display:block;margin:6px 0}.bk .fig{margin:10px 0;padding:10px;background:#0f1220;border:1px solid #2a2f4a;border-radius:8px;overflow-x:auto}.bk .fig svg{max-width:100%;height:auto;color:#e8e8f0}'
        '@keyframes bkTear{0%{transform:none;opacity:1}18%{transform:translate(calc(var(--dx)*.18),-14px) rotate(calc(var(--r)*.3))}100%{transform:translate(var(--dx),var(--dy)) rotate(var(--r));opacity:0}}@keyframes bkHand{from{transform:translate(110%,-30px) rotate(9deg);opacity:0}to{transform:none;opacity:1}}.bk-half{background:#fff!important;box-shadow:0 4px 14px rgba(0,0,0,.5)}.bk-tearmsg{position:fixed;left:50%;top:40%;z-index:99999;transform:translate(-50%,-50%) rotate(-3deg);padding:12px 20px;background:#ff4d7d;color:#fff;font-size:22px;font-weight:800;border-radius:6px;white-space:nowrap;pointer-events:none;animation:bkMsg 1.5s ease-out forwards}@keyframes bkMsg{0%{opacity:0;transform:translate(-50%,-50%) rotate(-3deg) scale(.7)}12%{opacity:1;transform:translate(-50%,-50%) rotate(-3deg) scale(1.05)}85%{opacity:1}100%{opacity:0}}.bk div.q:nth-child(3n+1){transform:rotate(-.5deg)}.bk div.q:nth-child(3n+2){transform:rotate(.45deg) translateX(3px)}.bk div.q:nth-child(3n){transform:rotate(-.25deg) translateX(-3px)}@media (prefers-reduced-motion:reduce){.bk div.q{transform:none!important}}'
        '@media (prefers-color-scheme:dark){.bk div.q{background:#1a2340;color:#e5e9f5;border-color:#2a3558}.bk div.q .rv{color:#e5e9f5}.bk label.o{background:#131a2e;border-color:#2a3558;color:#e5e9f5}.bk label.o:has(input:checked){background:#26336a}.bk .setup .grp button{background:#1a2340;color:#e5e9f5;border-color:#2a3558}.bk label.ans{background:#0f3d24!important;color:#e5e9f5}.bk label.wr{background:#4a1620!important;color:#e5e9f5}.bk .q,.bk .play button{border-color:#334155;background:transparent;color:inherit}.bk .play .ex{background:#1e293b}}</style>')
 JS = r'''<script>(function(){var el=document.getElementById('bk-data');if(!el)return;var D=JSON.parse(el.textContent),Q=D.questions,key='bk_wrong_'+D.id;
@@ -50,7 +53,7 @@ if(timed){tleft=Math.max(60,Math.round(order.length*SEC));tstart=Date.now();cloc
 function grade(to){if(graded)return;graded=true;clearInterval(tmr);var score=0,wrong=[];
 order.forEach(function(qi){var q=Q[qi],f=document.getElementById('q'+qi),sel=sheet.querySelector('input[name=q'+qi+']:checked'),v=sel?+sel.value:-1,ok=v===q.answer;
 f.className='q '+(ok?'ok':'no');f.querySelectorAll('label.o').forEach(function(l,i){l.querySelector('input').disabled=true;if(i===q.answer)l.className='o ans';else if(i===v)l.className='o wr'});
-f.querySelector('.rv').innerHTML='<b>'+(ok?'정답':(v<0?'미응답':'오답')+' · 정답 '+(q.answer+1)+'번')+'</b> '+esc(q.explain||'')+(q.ref_url?' <a href="'+esc(q.ref_url)+'" target="_blank" rel="noopener nofollow">근거 보기</a>':'')+(ok?'':ru(pick(WR)));
+f.querySelector('.rv').innerHTML='<b>'+(ok?'정답':(v<0?'미응답':'오답')+' · 정답 '+(q.answer+1)+'번')+'</b> '+'<span class="ex">'+esc(q.explain||'')+'</span>'+(q.fig?'<div class="fig">'+q.fig+'</div>':'')+(ok?'':ru(pick(WR)));
 if(ok)score++;else wrong.push(qi)});
 var prev=ld().filter(function(i){return order.indexOf(i)<0});sv(prev.concat(wrong));
 var p=Math.round(score*100/order.length),used=Math.round((Date.now()-tstart)/1000);
@@ -62,9 +65,18 @@ cs.forEach(function(c){var r=c.getBoundingClientRect();if(r.bottom<-40||r.top>in
 var L='polygon(0 0,'+pts.map(function(p){return p[0].toFixed(1)+'% '+p[1]+'%'}).join(',')+',0 100%)',R='polygon('+pts.map(function(p){return p[0].toFixed(1)+'% '+p[1]+'%'}).join(',')+',100% 100%,100% 0)';
 [[L,-1],[R,1]].forEach(function(h){var cl=c.cloneNode(true);cl.removeAttribute('id');cl.className='q bk-half';cl.style.cssText='position:fixed;left:'+r.left+'px;top:'+r.top+'px;width:'+r.width+'px;height:'+r.height+'px;margin:0;z-index:99998;pointer-events:none;clip-path:'+h[0]+';--dx:'+(h[1]*(70+Math.random()*130))+'px;--dy:'+(420+Math.random()*420)+'px;--r:'+(h[1]*(8+Math.random()*26))+'deg;animation:bkTear 1.1s cubic-bezier(.45,0,.85,.5) '+(Math.random()*.2)+'s forwards';document.body.appendChild(cl);fx.push(cl)});c.style.visibility='hidden'});
 var tp=document.createElement('div');tp.className='bk-tearmsg';tp.textContent='니가? 만점이라고? 인정 안 해. 다시 풀어.';document.body.appendChild(tp);
-setTimeout(function(){fx.forEach(function(e){e.remove()});tp.remove();render(list,false);[].slice.call(sheet.querySelectorAll('div.q')).forEach(function(c,k){c.style.animation='bkHand .7s cubic-bezier(.2,1.2,.4,1) '+(k*.09)+'s both'});res.innerHTML=ru('니가? 만점이라고? 새 시험지 줄 테니까 다시 풀어.');setTimeout(function(){[].slice.call(sheet.querySelectorAll('div.q')).forEach(function(c){c.style.animation=''})},700+list.length*90+400)},1500)}
+setTimeout(function(){fx.forEach(function(e){e.remove()});tp.remove();render(list,false);[].slice.call(sheet.querySelectorAll('div.q')).forEach(function(c,k){c.style.animation='bkHand .7s cubic-bezier(.2,1.2,.4,1) '+(k*.09)+'s both'});res.innerHTML=ru('니가? 만점이라고? 새 시험지 줄 테니까 다시 풀어.');pocket();setTimeout(function(){[].slice.call(sheet.querySelectorAll('div.q')).forEach(function(c){c.style.animation=''})},700+list.length*90+400)},1500)}
+function pocket(){var box=document.createElement('div');box.className='bk-big';box.innerHTML='<div class="bk-sc"><b class="bk-one">1</b><span class="bk-zz">00점</span></div><img class="bk-rr" src="/assets/ruri/sc_perfect_1.webp" alt=""><i class="bk-bub"></i>';res.insertBefore(box,res.firstChild);
+var one=box.querySelector('.bk-one'),rr=box.querySelector('.bk-rr'),bub=box.querySelector('.bk-bub'),zz=box.querySelector('.bk-zz');
+function say(t){bub.textContent=t;bub.style.opacity=1}
+if(!rr.animate){return}
+var a=rr.animate([{transform:'translateX(160%) rotate(14deg)',opacity:0},{transform:'none',opacity:1}],{duration:650,easing:'cubic-bezier(.2,1.3,.4,1)',fill:'both'});
+a.onfinish=function(){say('이게 뭐야? 1이 붙어 있네?');setTimeout(function(){var r1=one.getBoundingClientRect(),r2=rr.getBoundingClientRect(),dx=r2.left+r2.width*.55-r1.left-r1.width/2,dy=r2.top+r2.height*.72-r1.top-r1.height/2;
+one.style.position='relative';one.style.zIndex=5;var b=one.animate([{transform:'none',opacity:1},{transform:'translate(-18px,-70px) rotate(-20deg) scale(1.2)',opacity:1,offset:.35},{transform:'translate('+dx+'px,'+dy+'px) rotate(300deg) scale(.15)',opacity:.9}],{duration:900,easing:'ease-in',fill:'forwards'});
+b.onfinish=function(){one.style.visibility='hidden';rr.animate([{transform:'none'},{transform:'scale(1.06,.94)'},{transform:'none'}],{duration:260});zz.animate([{transform:'none'},{transform:'translateX(-8px)'},{transform:'none'}],{duration:300});
+setTimeout(function(){say('0점이네 ㅋ');setTimeout(function(){say('니가? 만점이라고? 0점인데?')},1700)},900)}},1100)}}
 function gate(){var n=count(),list=pool();if(cfg.o==='shuf')list=shuffle(list);list=list.slice(0,n);if(!list.length){res.innerHTML='<p class="nt">풀 문제가 없어.</p>';return}
-setup.hidden=true;res.innerHTML='<div class="ai"><b>읽고 시작해</b><br>'+(D.method==='rework'?'이 문제는 AI 에이전트들이 실제 기출문제를 찾아 읽고 분석한 뒤, 기출 문장을 베끼지 않고 새로 만든 거야. 검수도 다른 AI 에이전트가 했고 사람이 한 검수가 아니야. 실제 시험이랑 달라. 정답과 법령은 공식 자료로 다시 확인해.':'이 문제는 AI 에이전트가 공식 자료를 근거로 새로 만들었고, 검수도 다른 AI 에이전트가 했어. 사람이 한 검수가 아니야. 기출 원문이 아니야. 정답과 법령은 공식 자료로 다시 확인해.')+'</div><p class="nt">'+list.length+'문제 · '+(cfg.m==='t'?'시간제 '+Math.max(1,Math.round(list.length*SEC/60))+'분. 시간 끝나면 자동 채점':'시간 제한 없음. 다 풀고 채점')+'</p><div class="bar"><button id="b-go">시작</button><button class="g" id="b-no">설정으로</button></div>';
+setup.hidden=true;res.innerHTML='<div class="ai"><b>읽고 시작해</b><br>'+(D.method==='rework'?'AI 에이전트들이 실제 기출을 보고 새로 만들었고, 다른 AI 에이전트가 검수했어.':'AI 에이전트가 공식 자료를 보고 새로 만들었고, 다른 AI 에이전트가 검수했어.')+'</div><p class="nt">'+list.length+'문제 · '+(cfg.m==='t'?'시간제 '+Math.max(1,Math.round(list.length*SEC/60))+'분. 시간 끝나면 자동 채점':'시간 제한 없음. 다 풀고 채점')+'</p><div class="bar"><button id="b-go">시작</button><button class="g" id="b-no">설정으로</button></div>';
 document.getElementById('b-go').onclick=function(){render(list,cfg.m==='t');window.scrollTo(0,0)};document.getElementById('b-no').onclick=function(){res.innerHTML='';setup.hidden=false}}
 document.getElementById('bk-start').onclick=gate;
 gb.onclick=function(){grade(false)};
@@ -79,6 +91,31 @@ def _sec(d):
     if isinstance(d.get('sec_per_q'), (int, float)) and d['sec_per_q'] > 0:
         return int(d['sec_per_q'])
     return next((v for k, v in TIME_SEC if d['id'].startswith(k)), 60)
+
+
+def _notes(bid):
+    u"""개념 정리(쉬운 말로 다시 쓴 학습 자료) — exam_data/notes/<id>.json: {"title","intro","sections":[{"h","body","fig","key":[..]}],"recap":[..]}"""
+    f = os.path.join(HERE, 'exam_data', 'notes', bid + '.json')
+    if not os.path.exists(f):
+        return ''
+    try:
+        n = json.load(open(f, encoding='utf-8'))
+    except Exception:
+        return ''
+    out = '<section class="nts"><h2>' + E(n.get('title', '개념 정리')) + '</h2>'
+    if n.get('intro'):
+        out += '<p class="nts-i">' + E(n['intro']) + '</p>'
+    for i, sc in enumerate(n.get('sections', []), 1):
+        out += '<details class="nts-s"' + (' open' if i == 1 else '') + '><summary>' + str(i) + '. ' + E(sc.get('h', '')) + '</summary>'
+        out += '<p class="nts-b">' + E(sc.get('body', '')) + '</p>'
+        if sc.get('fig'):
+            out += '<div class="fig">' + sc['fig'] + '</div>'
+        if sc.get('key'):
+            out += '<ul class="nts-k">' + ''.join('<li>' + E(k) + '</li>' for k in sc['key']) + '</ul>'
+        out += '</details>'
+    if n.get('recap'):
+        out += '<div class="nts-r"><b>한 장 요약</b><ul>' + ''.join('<li>' + E(k) + '</li>' for k in n['recap']) + '</ul></div>'
+    return out + '</section>'
 
 
 def _load():
@@ -110,16 +147,16 @@ def pages(page):
         src = d.get('source') or {}
         srct = (f'출처: <a href="{E(src["url"])}" target="_blank" rel="noopener nofollow">{E(src.get("name", "공식 자료"))}</a>' if src.get('url') else E(src.get('name', '')))
         lic = f' · 이용 조건: {E(src["license"])}' if src.get('license') else ''
-        note = (('이 문제는 AI 에이전트들이 실제 기출문제를 찾아 읽고 분석한 뒤, 기출 문장을 베끼지 않고 새로 만든 거야. 검수도 다른 AI 에이전트가 했고 사람이 한 검수가 아니야. 실제 시험이랑 달라. 정답과 법령은 공식 자료로 다시 확인해.'
-                 if d.get('method') == 'rework' else '이 문제는 AI 에이전트가 공식 자료를 근거로 새로 만들었고, 검수도 다른 AI 에이전트가 했어. 사람이 한 검수가 아니야. 기출 원문이 아니야. 정답과 법령은 공식 자료로 다시 확인해.')
+        note = (('AI 에이전트들이 실제 기출을 보고 새로 만들었고, 다른 AI 에이전트가 검수했어.'
+                 if d.get('method') == 'rework' else 'AI 에이전트가 공식 자료를 보고 새로 만들었고, 다른 AI 에이전트가 검수했어.')
                 if d.get('kind') != 'public' else '기관이 재사용을 허용한 기출문제야. 이용 조건을 지켜서 올렸어.')
         lst = ''
         for i, q in enumerate(d['questions'], 1):
             lst += (f'<div class="q"><p><b class="n">{i}.</b>{E(q["q"])}</p><ol class="c">' + ''.join(f'<li>{E(c)}</li>' for c in q['choices']) + '</ol>'
-                    f'<details><summary>정답과 해설</summary><p>정답 {q["answer"] + 1}번. {E(q.get("explain", ""))}' + (f' <a href="{E(q["ref_url"])}" target="_blank" rel="noopener nofollow">근거 보기</a>' if q.get('ref_url') else '') + '</p></details></div>')
+                    f'<details><summary>풀이 보기</summary><p>정답 {q["answer"] + 1}번. {E(q.get("explain", ""))}' + '</p>' + (f'<div class="fig">{q["fig"]}</div>' if q.get('fig') else '') + '</details></div>')
         eu = f'/exam/{d["exam_id"]}/' if d.get('exam_id') and os.path.exists(os.path.join(os.path.dirname(HERE), 'exam', d['exam_id'], 'index.html')) else ''
-        data = json.dumps({'id': d['id'], 'sec_per_q': _sec(d), 'method': d.get('method', ''), 'questions': [{'q': q['q'], 'choices': q['choices'], 'answer': q['answer'], 'explain': q.get('explain', ''), 'ref_url': q.get('ref_url', '')} for q in d['questions']]}, ensure_ascii=False).replace('</', '<' + chr(92) + '/')
-        AINOTE = ('<p class="ai"><b>AI 제작·AI 검수</b> · 에이전트가 실제 기출을 읽고 새로 만들었고, 다른 에이전트가 검수했어. 사람 검수 아니야.</p>' if d.get('method') == 'rework' else '')
+        data = json.dumps({'id': d['id'], 'sec_per_q': _sec(d), 'method': d.get('method', ''), 'questions': [{'q': q['q'], 'choices': q['choices'], 'answer': q['answer'], 'explain': q.get('explain', ''), 'fig': q.get('fig', '')} for q in d['questions']]}, ensure_ascii=False).replace('</', '<' + chr(92) + '/')
+        AINOTE = ('<p class="ai"><b>AI 제작·AI 검수</b> · 에이전트가 실제 기출을 보고 만들고 다른 에이전트가 검수했어.</p>' if d.get('method') == 'rework' else '')
         _n = len(d['questions'])
         _setup = ('<div class="setup" id="bk-setup"><h2>시험 볼 거면 정해</h2>'
                   f'<div class="row"><b>문제 수</b><span class="grp" data-k="n"><button data-n="10">10</button><button data-n="20">20</button><button data-n="all" class="on">전체 {_n}</button></span><input type="number" id="bk-n" min="1" max="{_n}" placeholder="직접 입력" aria-label="문제 수 직접 입력"></div>'
@@ -128,12 +165,12 @@ def pages(page):
                   '<div class="row"><b>범위</b><span class="grp" data-k="r"><button data-r="all" class="on">전체</button><button data-r="wrong" hidden>지난번 틀린 문제</button></span></div>'
                   '<p class="nt" id="bk-info"></p><div class="bar"><button id="bk-start">시작해</button></div></div>')
         body = (f'<div class="bk"><p class="bc"><a href="/">홈</a> › <a href="/exam/">시험</a> › <a href="/exam/bank/">문제은행</a> › {E(d["name"])}</p><h1>{E(d["name"])} 문제은행 {_badge(d)}</h1>'
-                f'<p class="nt">{srct}{lic}</p>{AINOTE}<p>{E(note)}</p>' + (f'<p><a href="{eu}">이 시험의 일정·접수·발표일 보기 →</a></p>' if eu else '')
+                f'<p class="nt">{srct}{lic}</p>{AINOTE}<p>{E(note)}</p>' + _notes(d['id']) + (f'<p><a href="{eu}">이 시험의 일정·접수·발표일 보기 →</a></p>' if eu else '')
                 + '<div class="play" id="bk-play">' + _setup
                 + '<div id="bk-res"></div><p class="clk" id="bk-clock" hidden></p><form id="bk-sheet" onsubmit="return false" hidden></form>'
                 '<div class="bar" id="bk-gbar" hidden><button id="bk-grade">채점하기</button></div><div class="bar"><button class="g" id="bk-reset" hidden>설정으로 돌아가기</button></div></div>'
                 f'<noscript>{lst}</noscript><script type="application/json" id="bk-data">{data}</script>' + '</div>' + CSS + JS)
-        page(f'/exam/bank/{d["id"]}/', f'{d["name"]} 문제은행 — 무료 연습문제 {len(d["questions"])}개 — 가난한 박과장', f'{d["name"]} 연습문제 {len(d["questions"])}개(멀티 에이전트가 기출문제를 분석해 다시 개편한 문제)를 한 문제씩 풀고 정답·해설과 근거를 확인해. 틀린 문제만 다시 풀 수 있어.', body,
+        page(f'/exam/bank/{d["id"]}/', f'{d["name"]} 문제은행 — 무료 연습문제 {len(d["questions"])}개 — 가난한 박과장', f'{d["name"]} 연습문제 {len(d["questions"])}개를 한 문제씩 풀고 정답·해설과 근거를 확인해. 틀린 문제만 다시 풀 수 있어.', body,
              [('홈', '/'), ('시험', '/exam/'), ('문제은행', '/exam/bank/'), (d['name'], f'/exam/bank/{d["id"]}/')])
         urls.append(f'/exam/bank/{d["id"]}/')
     def _li(L):
@@ -142,7 +179,7 @@ def pages(page):
     _ex = [d for d in banks if d.get('category') != '자기개발']
     li = ('<h2>시험</h2><ul>' + _li(_ex) + '</ul>' + ('<h2>자기개발 <small>법률·시사·직무</small></h2><ul>' + _li(_sd) + '</ul>' if _sd else ''))
     hub = ('<div class="bk"><p class="bc"><a href="/">홈</a> › <a href="/exam/">시험</a> › 문제은행</p><h1>시험 문제은행</h1>'
-           '<p>시험별 연습문제. 풀고 해설 봐. 모든 문제는 AI 에이전트가 만들었습니다. 기출을 열람할 수 있었던 시험은 실제 기출을 읽고 분석해 새로 만들었고(각 문제은행에 표시), 검수도 다른 AI 에이전트가 했습니다. 사람이 검수한 것이 아니며 기출 원문 그대로도 아닙니다. 정답은 공식 자료로 다시 확인하세요.</p>'
+           '<p>시험별 연습문제. 풀고 해설 봐. 모든 문제는 AI 에이전트가 만들고 다른 AI 에이전트가 검수했습니다.'
            f'{li}</div>' + CSS)
     page('/exam/bank/', '시험 문제은행 — 자격증·공무원·수능 무료 연습문제 — 가난한 박과장', '자격증·공무원·수능 시험별 연습문제를 풀고 정답과 해설, 근거 링크를 확인해. 틀린 문제만 다시 풀 수 있어.', hub, [('홈', '/'), ('시험', '/exam/'), ('문제은행', '/exam/bank/')])
     urls.append('/exam/bank/')

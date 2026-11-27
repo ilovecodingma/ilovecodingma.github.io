@@ -32,3 +32,23 @@ auto_thin noindex 2262
 얇은 페이지 합침 (8605, 102)
 루리 위키 글/적용 (1014, 1014)
 광고 스크립트 뺀 페이지(최종) 2
+PDF 새로 만듦 450 / 전체 450
+전자책 PDF 새로 만듦 0
+지난 달 모음 검색 제외 0
+방향 전환 정리(검색 제외) 117
+내부 링크 보강 {'hot': 6, 'ld_fixed': 431, 'low': 334, 'hosts_a': 8, 'hubs_b': 8, 'by': {'기타': 167, '/analyst/': 8, '/fridge/': 12, '/hot/': 80, '/issue/': 1, '/lab/': 46, '/money/': 14, '/pick/': 4, '/ssul/': 2}}
+C:\Users\k\Desktop\adsense_sites\root\_gongmo\build.py:3024: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  _today = (datetime.datetime.utcnow() + datetime.timedelta(hours=9)).strftime('%Y-%m-%d')
+contests 439 live 369 events 154 urls 3447 noindex 2218
+죽은 /c/ 링크 푼 페이지 13 / 죽은 /a/ 링크 정리 41 / 지난 이슈 링크 푼 페이지 14
+health ['깨진 내부 링크 9개', '빈 페이지 3개']
+git add 0 warning: in the working copy of '_gongmo/build.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '_gongmo/community_topics.json', LF will be replaced by CRL
+git diff 1 
+git commit 0 
+git pull 128 error: cannot pull with rebase: You have unstaged changes.
+error: Please commit or stash them.
+git push 0 
+indexnow https://api.indexnow.org/indexnow 200 8
+indexnow https://searchadvisor.naver.com/indexnow 200 8
+2026-11-27 10:19 서치콘솔 사이트맵 재제출 성공 {'sitemap_index.xml': 204, 'sitemap.xml': 204}

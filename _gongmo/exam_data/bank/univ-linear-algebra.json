@@ -1,0 +1,315 @@
+{
+ "id": "univ-linear-algebra",
+ "name": "선형대수 기초(행렬·행렬식·벡터공간·고윳값)",
+ "category": "대학 전공(공대)",
+ "kind": "original",
+ "method": "original",
+ "analysis": "대학 공대 1~2학년 선형대수 중간·기말고사 중간 수준. 연립방정식·행렬 연산·역행렬·행렬식, 계수와 영공간, 부분공간·기저·차원, 고윳값·대각화, 내적·외적·정사영·그람–슈미트로 구성했다. 난이도 구성은 하 10문항(약 42%)·중 14문항(약 58%)이며 계산 문항은 sympy 로 검증했다.",
+ "source": {
+  "name": "MIT OpenCourseWare 18.06 Linear Algebra 및 KOCW 선형대수 강의계획 범위 참고",
+  "url": "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/",
+  "license": "문항은 직접 작성, 교과 범위만 공개 강의계획 참고"
+ },
+ "updated": "2026-11-27",
+ "sec_per_q": 90,
+ "questions": [
+  {
+   "q": "그림에서 점선 정사각형(넓이 1)이 2×2 행렬 A 에 의해 분홍색 평행사변형으로 옮겨졌다. A 의 열벡터가 (2,0), (1,1) 일 때 det A 는?",
+   "choices": [
+    "3",
+    "1",
+    "2",
+    "4",
+    "−2"
+   ],
+   "answer": 2,
+   "explain": "정답은 3번 「2」이다.\n단위 정사각형의 넓이는 변환 후 |det A| 배가 된다. 열벡터가 (2,0),(1,1) 이므로 A = [[2,1],[0,1]] 이고 det A = 2·1 − 1·0 = 2 이다. 평행사변형의 넓이도 밑변 2 × 높이 1 = 2 로 일치한다.\n1번: 평행사변형 꼭짓점의 x좌표 3을 넓이로 착각한 값이다.\n2번: 단위 정사각형의 넓이 그대로로, 변환에 의한 넓이 배율을 무시했다.\n4번: 열벡터 성분 2와 2를 곱한 값으로, 행렬식 공식(ad−bc)을 쓰지 않았다.\n5번: 두 열벡터가 반시계 방향 순서라 방향이 뒤집히지 않으므로 부호는 양수다.\n함정: 행렬식의 부호는 방향(뒤집힘)을, 절댓값은 넓이 배율을 뜻한다.",
+   "fig": "<svg viewBox=\"0 0 348 228\" width=\"348\" height=\"228\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\"><defs><marker id=\"ac1\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"currentColor\"/></marker><marker id=\"ap1\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#ff4d7d\"/></marker></defs><line x1=\"24\" y1=\"204\" x2=\"24\" y2=\"24\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"84\" y1=\"204\" x2=\"84\" y2=\"24\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"144\" y1=\"204\" x2=\"144\" y2=\"24\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"204\" y1=\"204\" x2=\"204\" y2=\"24\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"264\" y1=\"204\" x2=\"264\" y2=\"24\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"324\" y1=\"204\" x2=\"324\" y2=\"24\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"24\" y1=\"204\" x2=\"324\" y2=\"204\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"24\" y1=\"144\" x2=\"324\" y2=\"144\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"24\" y1=\"84\" x2=\"324\" y2=\"84\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"24\" y1=\"24\" x2=\"324\" y2=\"24\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"24\" y1=\"144\" x2=\"324\" y2=\"144\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"84\" y1=\"204\" x2=\"84\" y2=\"24\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"306.0\" y=\"174.0\" font-size=\"14\" fill=\"currentColor\">x</text><text x=\"96.0\" y=\"36.0\" font-size=\"14\" fill=\"currentColor\">y</text><polygon points=\"84,144 144,144 144,84 84,84\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-dasharray=\"5 4\"/><polygon points=\"84,144 204,144 264,84 144,84\" fill=\"#ff4d7d\" fill-opacity=\"0.18\" stroke=\"#ff4d7d\" stroke-width=\"2\"/><line x1=\"84\" y1=\"144\" x2=\"204\" y2=\"144\" stroke=\"#ff4d7d\" stroke-width=\"2.5\" marker-end=\"url(#ap1)\"/><line x1=\"84\" y1=\"144\" x2=\"144\" y2=\"84\" stroke=\"#ff4d7d\" stroke-width=\"2.5\" marker-end=\"url(#ap1)\"/><text x=\"198.0\" y=\"168.0\" font-size=\"14\" fill=\"#ff4d7d\">(2,0)</text><text x=\"102.0\" y=\"75.0\" font-size=\"14\" fill=\"#ff4d7d\">(1,1)</text></svg>"
+  },
+  {
+   "q": "A = [[1,2],[3,4]], B = [[0,1],[1,0]] 일 때 곱 AB 는? (행 단위로 표기)",
+   "choices": [
+    "[[3, 4], [1, 2]]",
+    "[[0, 2], [3, 0]]",
+    "[[1, 3], [2, 4]]",
+    "[[1, 3], [4, 4]]",
+    "[[2, 1], [4, 3]]"
+   ],
+   "answer": 4,
+   "explain": "정답은 5번 「[[2, 1], [4, 3]]」이다.\n(AB)의 i행 j열은 A 의 i행과 B 의 j열의 내적이다. 1행: [1·0+2·1, 1·1+2·0] = [2, 1], 2행: [3·0+4·1, 3·1+4·0] = [4, 3]. B 는 열을 서로 바꾸는 행렬이어서 A 의 두 열이 맞바뀐 모양이 된다.\n1번: BA 의 결과로, 행렬곱은 교환법칙이 성립하지 않아 순서가 다르면 값이 다르다.\n2번: 같은 위치끼리 곱한 성분별 곱으로 행렬곱이 아니다.\n3번: A 의 전치행렬일 뿐 B 를 곱한 결과가 아니다.\n4번: A+B 의 합으로 곱이 아니다.\n함정: 오른쪽에 곱하면 열이, 왼쪽에 곱하면 행이 바뀐다."
+  },
+  {
+   "q": "행렬 [[2,0,1],[1,3,2],[0,1,4]] 의 행렬식은?",
+   "choices": [
+    "21",
+    "20",
+    "19",
+    "24",
+    "11"
+   ],
+   "answer": 0,
+   "explain": "정답은 1번 「21」이다.\n첫 행으로 여인수 전개한다. det = 2·(3·4−2·1) − 0·(1·4−2·0) + 1·(1·1−3·0) = 2·10 − 0 + 1 = 21 이다. 둘째 항은 계수 0 이라 사라지고, 셋째 항의 부호는 (+)이다.\n2번: 첫 행 전개에서 세 번째 항 1·(1·1−3·0)=1 을 빠뜨린 값이다.\n3번: 세 번째 항의 부호를 잘못 붙여 20−1 로 계산했다.\n4번: 대각성분의 곱 2·3·4 로 삼각행렬 공식을 잘못 적용했다.\n5번: 첫 항 2·10 대신 10 만 쓰고 1 을 더한 값이다.\n함정: 전개 부호는 +, −, + 로 번갈아 붙고, 대각곱 공식은 삼각행렬에만 통한다."
+  },
+  {
+   "q": "A = [[2,1],[5,3]] 의 역행렬은?",
+   "choices": [
+    "[[3, 1], [5, 2]]",
+    "[[2, -1], [-5, 3]]",
+    "[[3, -5], [-1, 2]]",
+    "[[3, -1], [-5, 2]]",
+    "[[1/2, 1], [1/5, 1/3]]"
+   ],
+   "answer": 3,
+   "explain": "정답은 4번 「[[3, -1], [-5, 2]]」이다.\n2×2 행렬 [[a,b],[c,d]] 의 역행렬은 1/(ad−bc)·[[d,−b],[−c,a]] 이다. det A = 2·3 − 1·5 = 1 이므로 역행렬은 [[3,−1],[−5,2]] 이다. 검산하면 A·A⁻¹ 의 첫 행은 [2·3+1·(−5), 2·(−1)+1·2] = [1, 0] 이다.\n1번: 대각성분은 맞바꿨으나 비대각성분의 부호를 바꾸지 않았다.\n2번: 비대각 부호만 바꾸고 대각성분 a, d 를 맞바꾸지 않았다.\n3번: 올바른 역행렬을 전치한 값으로, 비대각 성분의 위치가 틀렸다.\n5번: 각 성분의 역수를 취한 것으로 역행렬이 아니다.\n함정: 역행렬은 성분별 역수가 아니며, a 와 d 를 맞바꾸고 b, c 만 부호를 바꾼다."
+  },
+  {
+   "q": "연립방정식 x+2y+z=8, 2x+y−z=1, x−y+2z=5 를 가우스 소거법으로 풀 때 z 의 값은?",
+   "choices": [
+    "1",
+    "3",
+    "2",
+    "5",
+    "4"
+   ],
+   "answer": 1,
+   "explain": "정답은 2번 「3」이다.\n2행−2·1행: −3y−3z=−15 이므로 y+z=5. 3행−1행: −3y+z=−3. 두 식을 연립하면 y=5−z 를 대입해 −15+4z=−3, z=3 이다. 이어서 y=2, x=8−4−3=1 이므로 해는 (1,2,3) 이다.\n1번: 해의 x 값이다.\n3번: 해의 y 값이다.\n4번: 소거 중간 결과 y+z=5 의 우변이지 z 가 아니다.\n5번: x+2y 에 8−z 를 대입하다 생긴 계산 실수로 얻는 값이다.\n함정: 소거 후에는 모든 식에 대입해 검산한다. (1,2,3) 은 세 식을 모두 만족한다."
+  },
+  {
+   "q": "연립방정식 2x−y=1, 4x−2y=6 을 직선으로 그린 것이 그림이다. 이 연립방정식의 해는?",
+   "choices": [
+    "(1, 1)",
+    "해가 없다",
+    "(0, −3)",
+    "무수히 많다",
+    "한 점에서 만나는 유일한 해가 있다"
+   ],
+   "answer": 1,
+   "explain": "정답은 2번 「해가 없다」이다.\n두 식을 y 에 대해 쓰면 y=2x−1, y=2x−3 으로 기울기가 같고 절편이 달라 평행하다. 가우스 소거로 둘째 식에서 첫 식의 2배를 빼면 0=4 라는 모순이 생겨 해가 없다.\n1번: 첫 식 2−1=1 은 만족하지만 둘째 식 4−2=2≠6 이다.\n3번: 둘째 식 0+6=6 은 만족하지만 첫 식 3≠1 이다.\n4번: 둘째 식이 첫 식의 2배(상수 2)일 때만 성립하는데 상수가 6 이다.\n5번: 기울기가 같은 평행선이라 교점이 없다.\n함정: 계수 비가 같아도 상수 비가 다르면 무수히 많은 해가 아니라 해가 없다.",
+   "fig": "<svg viewBox=\"0 0 248 408\" width=\"248\" height=\"408\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\"><defs><marker id=\"ac6\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"currentColor\"/></marker><marker id=\"ap6\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#ff4d7d\"/></marker></defs><line x1=\"24\" y1=\"384\" x2=\"24\" y2=\"24\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"64\" y1=\"384\" x2=\"64\" y2=\"24\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"104\" y1=\"384\" x2=\"104\" y2=\"24\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"144\" y1=\"384\" x2=\"144\" y2=\"24\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"184\" y1=\"384\" x2=\"184\" y2=\"24\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"224\" y1=\"384\" x2=\"224\" y2=\"24\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"24\" y1=\"384\" x2=\"224\" y2=\"384\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"24\" y1=\"344\" x2=\"224\" y2=\"344\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"24\" y1=\"304\" x2=\"224\" y2=\"304\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"24\" y1=\"264\" x2=\"224\" y2=\"264\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"24\" y1=\"224\" x2=\"224\" y2=\"224\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"24\" y1=\"184\" x2=\"224\" y2=\"184\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"24\" y1=\"144\" x2=\"224\" y2=\"144\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"24\" y1=\"104\" x2=\"224\" y2=\"104\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"24\" y1=\"64\" x2=\"224\" y2=\"64\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"24\" y1=\"24\" x2=\"224\" y2=\"24\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"24\" y1=\"224\" x2=\"224\" y2=\"224\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"64\" y1=\"384\" x2=\"64\" y2=\"24\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"212.0\" y=\"244.0\" font-size=\"14\" fill=\"currentColor\">x</text><text x=\"72.0\" y=\"32.0\" font-size=\"14\" fill=\"currentColor\">y</text><line x1=\"44.0\" y1=\"304\" x2=\"184\" y2=\"24\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"44.0\" y1=\"384\" x2=\"184\" y2=\"104\" stroke=\"#ff4d7d\" stroke-width=\"2\"/><text x=\"152.0\" y=\"96.0\" font-size=\"14\" fill=\"currentColor\">2x−y=1</text><text x=\"152.0\" y=\"184.0\" font-size=\"14\" fill=\"#ff4d7d\">4x−2y=6</text></svg>"
+  },
+  {
+   "q": "행렬 [[1,2,3],[2,4,6],[1,0,1]] 의 계수(rank)는?",
+   "choices": [
+    "1",
+    "3",
+    "0",
+    "2",
+    "4"
+   ],
+   "answer": 3,
+   "explain": "정답은 4번 「2」이다.\n2행 − 2·1행 = (0,0,0) 이므로 2행은 1행에 종속이다. 남은 (1,2,3) 과 (1,0,1) 은 서로 상수배가 아니어서 독립이다. 따라서 일차독립인 행의 최대 개수는 2 이다. 행사다리꼴로 만들어도 0 이 아닌 행이 2개 남는다.\n1번: 두 번째 행이 첫 행의 2배라는 점만 보고 나머지 행도 종속이라 판단했다.\n2번: 3×3 이어도 행이 종속이면 계수는 3 보다 작다.\n3번: 영행렬이 아니므로 계수는 0 이 아니다.\n5번: 계수는 행 수와 열 수 중 작은 값 3 을 넘을 수 없다.\n함정: 행 수가 아니라 일차독립인 행의 수가 계수이다."
+  },
+  {
+   "q": "3×4 행렬 A = [[1,2,0,1],[0,0,1,1],[1,2,1,2]] 에 대해 Ax=0 의 해공간(영공간)의 차원은?",
+   "choices": [
+    "1",
+    "0",
+    "2",
+    "3",
+    "4"
+   ],
+   "answer": 2,
+   "explain": "정답은 3번 「2」이다.\n3행 = 1행 + 2행 이므로 독립인 행은 2개, 계수는 2 이다. 계수-영공간 차원 정리 rank + nullity = (열 수) 에서 nullity = 4 − 2 = 2 이다. 자유변수는 x₂, x₄ 두 개이다.\n1번: 행 수 3 에서 계수 2 를 뺀 값으로, 열 수 4 를 써야 한다.\n2번: 미지수가 4개이고 계수가 2 이므로 자명해만 있을 수 없다.\n4번: 계수를 1 로 잘못 판단했을 때의 값이다.\n5번: 영행렬일 때만 가능한 값이다.\n함정: 정리에 쓰는 수는 행 수가 아니라 열 수(미지수 개수)이다."
+  },
+  {
+   "q": "그림은 R² 의 두 벡터 v1=(1,2), v2=(2,4) 이다. span{v1, v2} 의 차원은?",
+   "choices": [
+    "1 (원점을 지나는 직선)",
+    "0 (원점 하나)",
+    "2 (평면 전체)",
+    "3",
+    "정할 수 없다"
+   ],
+   "answer": 0,
+   "explain": "정답은 1번 「1 (원점을 지나는 직선)」이다.\nv2 = 2·v1 이므로 두 벡터는 일차종속이고 span{v1,v2} = span{v1} 이다. 이는 원점을 지나는 직선 y=2x 이며 차원은 일차독립인 벡터의 최대 개수인 1 이다.\n2번: 영벡터가 아닌 벡터가 있으므로 0차원이 아니다.\n3번: 벡터가 두 개라고 2차원이 되는 것이 아니라 독립이어야 한다.\n4번: R² 의 부분공간은 2차원을 넘을 수 없다.\n5번: v2=2·v1 이므로 차원은 하나로 정해진다.\n함정: 생성 집합의 원소 수와 차원은 다르다. 독립인 것만 센다.",
+   "fig": "<svg viewBox=\"0 0 248 288\" width=\"248\" height=\"288\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\"><defs><marker id=\"ac9\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"currentColor\"/></marker><marker id=\"ap9\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#ff4d7d\"/></marker></defs><line x1=\"24\" y1=\"264\" x2=\"24\" y2=\"24\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"64\" y1=\"264\" x2=\"64\" y2=\"24\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"104\" y1=\"264\" x2=\"104\" y2=\"24\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"144\" y1=\"264\" x2=\"144\" y2=\"24\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"184\" y1=\"264\" x2=\"184\" y2=\"24\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"224\" y1=\"264\" x2=\"224\" y2=\"24\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"24\" y1=\"264\" x2=\"224\" y2=\"264\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"24\" y1=\"224\" x2=\"224\" y2=\"224\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"24\" y1=\"184\" x2=\"224\" y2=\"184\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"24\" y1=\"144\" x2=\"224\" y2=\"144\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"24\" y1=\"104\" x2=\"224\" y2=\"104\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"24\" y1=\"64\" x2=\"224\" y2=\"64\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"24\" y1=\"24\" x2=\"224\" y2=\"24\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"24\" y1=\"224\" x2=\"224\" y2=\"224\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"64\" y1=\"264\" x2=\"64\" y2=\"24\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"212.0\" y=\"244.0\" font-size=\"14\" fill=\"currentColor\">x</text><text x=\"72.0\" y=\"32.0\" font-size=\"14\" fill=\"currentColor\">y</text><line x1=\"44.0\" y1=\"264\" x2=\"164.0\" y2=\"24\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\"/><line x1=\"64\" y1=\"224\" x2=\"104\" y2=\"144\" stroke=\"#ff4d7d\" stroke-width=\"2.5\" marker-end=\"url(#ap9)\"/><line x1=\"64\" y1=\"224\" x2=\"144\" y2=\"64\" stroke=\"currentColor\" stroke-width=\"2.5\" marker-end=\"url(#ac9)\"/><text x=\"108.0\" y=\"156.0\" font-size=\"14\" fill=\"#ff4d7d\">v1</text><text x=\"148.0\" y=\"76.0\" font-size=\"14\" fill=\"currentColor\">v2</text></svg>"
+  },
+  {
+   "q": "다음 중 R³ 의 부분공간인 것은?",
+   "choices": [
+    "{(x,y,z) : x+y+z = 1}",
+    "{(x,y,z) : x ≥ 0}",
+    "{(x,y,z) : xy = 0}",
+    "{(x,y,z) : z = x²}",
+    "{(x,y,z) : x+y+z = 0}"
+   ],
+   "answer": 4,
+   "explain": "정답은 5번 「{(x,y,z) : x+y+z = 0}」이다.\n부분공간은 영벡터를 포함하고 덧셈과 스칼라배에 닫혀 있어야 한다. x+y+z=0 인 두 벡터의 합은 합이 0+0=0 이고 c배도 0 이므로 조건을 만족한다. 이 집합은 원점을 지나는 평면으로 차원은 2 이다.\n1번: 영벡터 (0,0,0) 이 포함되지 않는다.\n2번: (1,0,0) 에 −1 을 곱하면 집합 밖으로 나간다.\n3번: (1,0,0)+(0,1,0)=(1,1,0) 은 xy=1 이라 덧셈에 닫혀 있지 않다.\n4번: (1,0,1) 에 2 를 곱한 (2,0,2) 는 2≠4 로 스칼라배에 닫혀 있지 않다.\n함정: 원점을 지나는 일차 동차 방정식의 해집합만 부분공간이다."
+  },
+  {
+   "q": "다음 중 R³ 의 기저인 것은?",
+   "choices": [
+    "{(1,2,3), (2,4,6), (0,0,1)}",
+    "{(1,0,0), (0,1,0)}",
+    "{(1,1,0), (0,1,1), (1,2,1)}",
+    "{(1,0,0), (0,1,0), (0,0,1), (1,1,1)}",
+    "{(1,0,0), (1,1,0), (1,1,1)}"
+   ],
+   "answer": 4,
+   "explain": "정답은 5번 「{(1,0,0), (1,1,0), (1,1,1)}」이다.\nR³ 의 기저는 일차독립이면서 R³ 를 생성하는, 개수가 정확히 3개인 집합이다. 세 벡터를 열로 한 행렬은 상삼각이고 det = 1·1·1 = 1 ≠ 0 이므로 독립이며 따라서 기저이다.\n1번: (2,4,6)=2(1,2,3) 이어서 일차종속이다.\n2번: 벡터가 2개뿐이라 R³ 전체를 생성하지 못한다.\n3번: 셋째가 앞의 두 벡터의 합이라 일차종속이다.\n4번: 벡터가 4개라 R³ 에서는 반드시 일차종속이다.\n함정: 개수가 3개여도 독립이 아니면 기저가 아니다."
+  },
+  {
+   "q": "A = [[2,1],[1,2]] 이다. 그림은 v=(1,1), w=(1,0) 과 그 상 Av, Aw 를 나타낸다. 벡터 v 에 대응하는 A 의 고윳값은?",
+   "choices": [
+    "3",
+    "1",
+    "2",
+    "6",
+    "0"
+   ],
+   "answer": 0,
+   "explain": "정답은 1번 「3」이다.\n고유벡터는 변환 후에도 방향이 유지되고 길이만 λ배가 되는 벡터다. Av = (2+1, 1+2) = (3,3) = 3·(1,1) 이므로 λ=3 이다. w=(1,0) 은 Aw=(2,1) 로 방향이 바뀌므로 고유벡터가 아니다.\n2번: 다른 고유벡터 (1,−1) 에 대한 고윳값이다.\n3번: 대각성분 값이지 v 의 고윳값이 아니다.\n4번: Av=(3,3) 의 성분 합으로 배율이 아니다.\n5번: Av 가 영벡터가 아니므로 0 이 아니다.\n함정: 방향이 유지되는지 확인하는 것이 핵심이다.",
+   "fig": "<svg viewBox=\"0 0 273 273\" width=\"273\" height=\"273\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\"><defs><marker id=\"ac12\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"currentColor\"/></marker><marker id=\"ap12\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#ff4d7d\"/></marker></defs><line x1=\"24\" y1=\"249\" x2=\"24\" y2=\"24\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"69\" y1=\"249\" x2=\"69\" y2=\"24\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"114\" y1=\"249\" x2=\"114\" y2=\"24\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"159\" y1=\"249\" x2=\"159\" y2=\"24\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"204\" y1=\"249\" x2=\"204\" y2=\"24\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"249\" y1=\"249\" x2=\"249\" y2=\"24\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"24\" y1=\"249\" x2=\"249\" y2=\"249\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"24\" y1=\"204\" x2=\"249\" y2=\"204\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"24\" y1=\"159\" x2=\"249\" y2=\"159\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"24\" y1=\"114\" x2=\"249\" y2=\"114\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"24\" y1=\"69\" x2=\"249\" y2=\"69\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"24\" y1=\"24\" x2=\"249\" y2=\"24\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"24\" y1=\"204\" x2=\"249\" y2=\"204\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"69\" y1=\"249\" x2=\"69\" y2=\"24\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"235.5\" y=\"226.5\" font-size=\"14\" fill=\"currentColor\">x</text><text x=\"78.0\" y=\"33.0\" font-size=\"14\" fill=\"currentColor\">y</text><line x1=\"69\" y1=\"204\" x2=\"114\" y2=\"159\" stroke=\"currentColor\" stroke-width=\"2.5\" marker-end=\"url(#ac12)\"/><line x1=\"69\" y1=\"204\" x2=\"204\" y2=\"69\" stroke=\"#ff4d7d\" stroke-width=\"2.5\" marker-end=\"url(#ap12)\"/><line x1=\"69\" y1=\"204\" x2=\"114\" y2=\"204\" stroke=\"currentColor\" stroke-width=\"2.5\" marker-end=\"url(#ac12)\"/><line x1=\"69\" y1=\"204\" x2=\"159\" y2=\"159\" stroke=\"#ff4d7d\" stroke-width=\"2.5\" marker-end=\"url(#ap12)\"/><text x=\"87.0\" y=\"150.0\" font-size=\"14\" fill=\"currentColor\">v=(1,1)</text><text x=\"181.5\" y=\"55.5\" font-size=\"14\" fill=\"#ff4d7d\">Av</text><text x=\"114.0\" y=\"224.2\" font-size=\"14\" fill=\"currentColor\">w</text><text x=\"163.5\" y=\"172.5\" font-size=\"14\" fill=\"#ff4d7d\">Aw</text></svg>"
+  },
+  {
+   "q": "행렬 [[4,1],[2,3]] 의 고윳값은?",
+   "choices": [
+    "4, 3",
+    "2, 5",
+    "1, 6",
+    "−2, −5",
+    "1, 10"
+   ],
+   "answer": 1,
+   "explain": "정답은 2번 「2, 5」이다.\n특성방정식 det(A−λI) = (4−λ)(3−λ) − 2 = λ² − 7λ + 10 = (λ−2)(λ−5) = 0 이므로 λ=2, 5 이다. 검산으로 고윳값의 합 7 은 trace(4+3), 곱 10 은 det(12−2) 와 일치한다.\n1번: 대각성분을 그대로 고윳값으로 읽은 것으로 삼각행렬일 때만 성립한다.\n3번: 합 7 은 맞지만 곱이 6 이라 det=10 과 다르다.\n4번: 특성방정식 (λ−2)(λ−5)=0 의 해 부호를 반대로 읽었다.\n5번: 곱은 10 이지만 합이 11 이라 trace=7 과 다르다.\n함정: 합=trace, 곱=det 로 검산하면 실수를 잡는다."
+  },
+  {
+   "q": "3×3 행렬 A 의 고윳값이 1, 2, 4 일 때 det(A) + tr(A) 의 값은?",
+   "choices": [
+    "7",
+    "8",
+    "15",
+    "56",
+    "9"
+   ],
+   "answer": 2,
+   "explain": "정답은 3번 「15」이다.\ndet A 는 고윳값의 곱 1·2·4 = 8 이고, tr A 는 고윳값의 합 1+2+4 = 7 이다. 따라서 det A + tr A = 8 + 7 = 15 이다. 행렬 성분을 몰라도 고윳값만으로 계산된다.\n1번: trace 만 구한 값이다.\n2번: 행렬식만 구한 값이다.\n4번: det 와 trace 를 더하지 않고 곱한 값이다.\n5번: 행렬식 8 에 고윳값 1 을 더하는 실수로 얻는 값이다.\n함정: 문제가 요구한 연산은 합이다. 곱·합을 혼동하지 않는다."
+  },
+  {
+   "q": "A = [[2,1],[1,2]] (고윳값 3, 1) 일 때 A³ 는?",
+   "choices": [
+    "[[8, 1], [1, 8]]",
+    "[[27, 0], [0, 1]]",
+    "[[5, 4], [4, 5]]",
+    "[[14, 13], [13, 14]]",
+    "[[13, 14], [14, 13]]"
+   ],
+   "answer": 3,
+   "explain": "정답은 4번 「[[14, 13], [13, 14]]」이다.\nA² = [[2·2+1·1, 2·1+1·2],[1·2+2·1, 1·1+2·2]] = [[5,4],[4,5]] 이고 A³ = A²·A = [[5·2+4·1, 5·1+4·2],[4·2+5·1, 4·1+5·2]] = [[14,13],[13,14]] 이다. 대각화로 확인하면 (27+1)/2=14, (27−1)/2=13 이다.\n1번: 각 성분을 따로 세제곱한 값으로 행렬 거듭제곱이 아니다.\n2번: 대각화한 D³ 일 뿐 P 와 P⁻¹ 를 곱해 되돌리지 않았다.\n3번: A² 까지만 계산한 값이다.\n5번: 대각·비대각 성분이 서로 바뀐 값이다.\n함정: A = PDP⁻¹ 이면 Aⁿ = PDⁿP⁻¹ 이며 Dⁿ 만으로는 끝나지 않는다."
+  },
+  {
+   "q": "그림의 벡터 b=(4,2) 를 a=(1,1) 방향에 수직으로 내린 정사영 proj_a b 는?",
+   "choices": [
+    "(6, 6)",
+    "(1, −1)",
+    "(4, 2)",
+    "(3, 3)",
+    "(3/2, 3/2)"
+   ],
+   "answer": 3,
+   "explain": "정답은 4번 「(3, 3)」이다.\n정사영 공식은 proj_a b = (a·b)/(a·a)·a 이다. a·b = 4+2 = 6, a·a = 2 이므로 계수는 3 이고 결과는 3·(1,1) = (3,3) 이다. 검산으로 b − proj = (1,−1) 이 a 와 수직(내적 1−1=0)이다.\n1번: b·a=6 을 a·a=2 로 나누지 않고 a 에 곱했다.\n2번: b 에서 정사영을 뺀 수직 성분이다.\n3번: b 자신으로 b 가 a 와 평행할 때만 성립한다.\n5번: 분모를 a·a 대신 4 로 잘못 쓴 값이다.\n함정: 분모는 a·a 이다. 나누는 과정을 빼면 길이가 틀린다.",
+   "fig": "<svg viewBox=\"0 0 408 288\" width=\"408\" height=\"288\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\"><defs><marker id=\"ac16\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"currentColor\"/></marker><marker id=\"ap16\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#ff4d7d\"/></marker></defs><line x1=\"24\" y1=\"264\" x2=\"24\" y2=\"24\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"84\" y1=\"264\" x2=\"84\" y2=\"24\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"144\" y1=\"264\" x2=\"144\" y2=\"24\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"204\" y1=\"264\" x2=\"204\" y2=\"24\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"264\" y1=\"264\" x2=\"264\" y2=\"24\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"324\" y1=\"264\" x2=\"324\" y2=\"24\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"384\" y1=\"264\" x2=\"384\" y2=\"24\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"24\" y1=\"264\" x2=\"384\" y2=\"264\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"24\" y1=\"204\" x2=\"384\" y2=\"204\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"24\" y1=\"144\" x2=\"384\" y2=\"144\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"24\" y1=\"84\" x2=\"384\" y2=\"84\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"24\" y1=\"24\" x2=\"384\" y2=\"24\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"24\" y1=\"204\" x2=\"384\" y2=\"204\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"84\" y1=\"264\" x2=\"84\" y2=\"24\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"366.0\" y=\"234.0\" font-size=\"14\" fill=\"currentColor\">x</text><text x=\"96.0\" y=\"36.0\" font-size=\"14\" fill=\"currentColor\">y</text><line x1=\"84\" y1=\"204\" x2=\"144\" y2=\"144\" stroke=\"currentColor\" stroke-width=\"2.5\" marker-end=\"url(#ac16)\"/><line x1=\"84\" y1=\"204\" x2=\"324\" y2=\"84\" stroke=\"#ff4d7d\" stroke-width=\"2.5\" marker-end=\"url(#ap16)\"/><line x1=\"54.0\" y1=\"234.0\" x2=\"294.0\" y2=\"-6.0\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"5 4\"/><text x=\"150.0\" y=\"162.0\" font-size=\"14\" fill=\"currentColor\">a=(1,1)</text><text x=\"300.0\" y=\"78.0\" font-size=\"14\" fill=\"#ff4d7d\">b=(4,2)</text></svg>"
+  },
+  {
+   "q": "그림의 두 벡터 u=(2,0), v=(1,√3) 이 이루는 각은?",
+   "choices": [
+    "30°",
+    "60°",
+    "45°",
+    "90°",
+    "120°"
+   ],
+   "answer": 1,
+   "explain": "정답은 2번 「60°」이다.\ncosθ = u·v/(|u||v|) 이다. u·v = 2·1+0·√3 = 2, |u| = 2, |v| = √(1+3) = 2 이므로 cosθ = 2/4 = 1/2 이고 θ = 60° 이다. v 가 x축과 이루는 각 tanθ = √3 으로도 같은 결과를 얻는다.\n1번: tan 값 1/√3 과 √3 을 혼동한 각이다.\n3번: 두 성분이 같을 때의 각이다.\n4번: 내적이 0 일 때의 각인데 u·v=2 이다.\n5번: cosθ 가 −1/2 일 때의 각인데 여기선 +1/2 이다.\n함정: 내적이 양수이면 예각이다.",
+   "fig": "<svg viewBox=\"0 0 288 288\" width=\"288\" height=\"288\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\"><defs><marker id=\"ac17\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"currentColor\"/></marker><marker id=\"ap17\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#ff4d7d\"/></marker></defs><line x1=\"24\" y1=\"264\" x2=\"24\" y2=\"24\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"84\" y1=\"264\" x2=\"84\" y2=\"24\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"144\" y1=\"264\" x2=\"144\" y2=\"24\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"204\" y1=\"264\" x2=\"204\" y2=\"24\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"264\" y1=\"264\" x2=\"264\" y2=\"24\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"24\" y1=\"264\" x2=\"264\" y2=\"264\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"24\" y1=\"204\" x2=\"264\" y2=\"204\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"24\" y1=\"144\" x2=\"264\" y2=\"144\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"24\" y1=\"84\" x2=\"264\" y2=\"84\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"24\" y1=\"24\" x2=\"264\" y2=\"24\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"24\" y1=\"204\" x2=\"264\" y2=\"204\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"84\" y1=\"264\" x2=\"84\" y2=\"24\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"246.0\" y=\"234.0\" font-size=\"14\" fill=\"currentColor\">x</text><text x=\"96.0\" y=\"36.0\" font-size=\"14\" fill=\"currentColor\">y</text><line x1=\"84\" y1=\"204\" x2=\"204\" y2=\"204\" stroke=\"currentColor\" stroke-width=\"2.5\" marker-end=\"url(#ac17)\"/><line x1=\"84\" y1=\"204\" x2=\"144\" y2=\"100.1\" stroke=\"#ff4d7d\" stroke-width=\"2.5\" marker-end=\"url(#ap17)\"/><text x=\"180.0\" y=\"222.0\" font-size=\"14\" fill=\"currentColor\">u=(2,0)</text><text x=\"150.0\" y=\"90.0\" font-size=\"14\" fill=\"#ff4d7d\">v=(1,√3)</text></svg>"
+  },
+  {
+   "q": "u=(1,2,3), v=(0,1,4) 일 때 외적 u×v 는?",
+   "choices": [
+    "(5, 4, 1)",
+    "(−5, 4, −1)",
+    "(0, 2, 12)",
+    "(1, 3, 7)",
+    "(5, −4, 1)"
+   ],
+   "answer": 4,
+   "explain": "정답은 5번 「(5, −4, 1)」이다.\nu×v = (u₂v₃−u₃v₂, u₃v₁−u₁v₃, u₁v₂−u₂v₁) = (2·4−3·1, 3·0−1·4, 1·1−2·0) = (5, −4, 1) 이다. 검산으로 u·(u×v) = 5−8+3 = 0 이라 u 와 수직이다.\n1번: 가운데 성분의 부호를 바꾸지 않았다.\n2번: v×u 의 결과로 순서를 바꾸면 부호가 반대가 된다.\n3번: 성분별로 곱한 값으로 외적이 아니다.\n4번: 두 벡터를 더한 값이다.\n함정: 외적은 교환법칙이 성립하지 않고 순서에 따라 부호가 바뀐다."
+  },
+  {
+   "q": "그림은 원점 O, (4,1), (1,3) 을 꼭짓점으로 하는 삼각형이다. 넓이는?",
+   "choices": [
+    "11",
+    "13/2",
+    "11/2",
+    "6",
+    "7"
+   ],
+   "answer": 2,
+   "explain": "정답은 3번 「11/2」이다.\n두 변벡터 (4,1), (1,3) 으로 만든 행렬의 행렬식 절댓값이 평행사변형의 넓이이고 삼각형은 그 절반이다. det = 4·3 − 1·1 = 11 이므로 넓이는 11/2 이다.\n1번: ½ 을 빠뜨려 평행사변형의 넓이를 구했다.\n2번: 행렬식에서 빼기 대신 더해 4·3+1·1=13 으로 계산했다.\n4번: 외접 직사각형 4×3 의 절반으로 어림한 값이다.\n5번: 좌표 4 와 3 을 더한 값으로 넓이 공식이 아니다.\n함정: 삼각형 넓이는 행렬식 절댓값의 ½ 이다.",
+   "fig": "<svg viewBox=\"0 0 378 323\" width=\"378\" height=\"323\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\"><defs><marker id=\"ac19\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"currentColor\"/></marker><marker id=\"ap19\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#ff4d7d\"/></marker></defs><line x1=\"24\" y1=\"299\" x2=\"24\" y2=\"24\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"79\" y1=\"299\" x2=\"79\" y2=\"24\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"134\" y1=\"299\" x2=\"134\" y2=\"24\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"189\" y1=\"299\" x2=\"189\" y2=\"24\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"244\" y1=\"299\" x2=\"244\" y2=\"24\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"299\" y1=\"299\" x2=\"299\" y2=\"24\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"354\" y1=\"299\" x2=\"354\" y2=\"24\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"24\" y1=\"299\" x2=\"354\" y2=\"299\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"24\" y1=\"244\" x2=\"354\" y2=\"244\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"24\" y1=\"189\" x2=\"354\" y2=\"189\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"24\" y1=\"134\" x2=\"354\" y2=\"134\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"24\" y1=\"79\" x2=\"354\" y2=\"79\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"24\" y1=\"24\" x2=\"354\" y2=\"24\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"24\" y1=\"244\" x2=\"354\" y2=\"244\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"79\" y1=\"299\" x2=\"79\" y2=\"24\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"337.5\" y=\"271.5\" font-size=\"14\" fill=\"currentColor\">x</text><text x=\"90.0\" y=\"35.0\" font-size=\"14\" fill=\"currentColor\">y</text><polygon points=\"79,244 299,189 134,79\" fill=\"#ff4d7d\" fill-opacity=\"0.18\" stroke=\"#ff4d7d\" stroke-width=\"2\"/><text x=\"304.5\" y=\"194.5\" font-size=\"14\" fill=\"#ff4d7d\">(4,1)</text><text x=\"128.5\" y=\"65.2\" font-size=\"14\" fill=\"#ff4d7d\">(1,3)</text><text x=\"29.5\" y=\"271.5\" font-size=\"14\" fill=\"currentColor\">O</text></svg>"
+  },
+  {
+   "q": "v1=(3,1), v2=(1,2) 에 그람–슈미트 과정을 적용할 때 v1 에 수직인 u2 는?",
+   "choices": [
+    "(−1/2, 3/2)",
+    "(3/2, 1/2)",
+    "(−2, 1)",
+    "(1/2, 3/2)",
+    "(−1/2, −3/2)"
+   ],
+   "answer": 0,
+   "explain": "정답은 1번 「(−1/2, 3/2)」이다.\nu2 = v2 − (v2·v1)/(v1·v1)·v1 이다. v2·v1 = 3+2 = 5, v1·v1 = 10 이므로 u2 = (1,2) − (1/2)(3,1) = (−1/2, 3/2) 이다. 검산하면 u2·v1 = −3/2+3/2 = 0 이다.\n2번: v2 의 v1 위 정사영으로 제거해야 할 성분이다.\n3번: v2−v1 로 계수가 1 이라 v1 과 수직이 아니다(내적 −5).\n4번: 부호 실수로 v1 과의 내적이 3 이라 수직이 아니다.\n5번: y 성분의 부호가 틀려 v1 과의 내적이 −3 이다.\n함정: 정사영 자체가 아니라 그것을 뺀 나머지가 직교 성분이다.",
+   "fig": "<svg viewBox=\"0 0 408 288\" width=\"408\" height=\"288\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\"><defs><marker id=\"ac20\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"currentColor\"/></marker><marker id=\"ap20\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#ff4d7d\"/></marker></defs><line x1=\"24\" y1=\"264\" x2=\"24\" y2=\"24\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"84\" y1=\"264\" x2=\"84\" y2=\"24\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"144\" y1=\"264\" x2=\"144\" y2=\"24\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"204\" y1=\"264\" x2=\"204\" y2=\"24\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"264\" y1=\"264\" x2=\"264\" y2=\"24\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"324\" y1=\"264\" x2=\"324\" y2=\"24\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"384\" y1=\"264\" x2=\"384\" y2=\"24\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"24\" y1=\"264\" x2=\"384\" y2=\"264\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"24\" y1=\"204\" x2=\"384\" y2=\"204\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"24\" y1=\"144\" x2=\"384\" y2=\"144\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"24\" y1=\"84\" x2=\"384\" y2=\"84\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"24\" y1=\"24\" x2=\"384\" y2=\"24\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"24\" y1=\"204\" x2=\"384\" y2=\"204\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"144\" y1=\"264\" x2=\"144\" y2=\"24\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"366.0\" y=\"234.0\" font-size=\"14\" fill=\"currentColor\">x</text><text x=\"156.0\" y=\"36.0\" font-size=\"14\" fill=\"currentColor\">y</text><line x1=\"144\" y1=\"204\" x2=\"324\" y2=\"144\" stroke=\"currentColor\" stroke-width=\"2.5\" marker-end=\"url(#ac20)\"/><line x1=\"144\" y1=\"204\" x2=\"204\" y2=\"84\" stroke=\"#ff4d7d\" stroke-width=\"2.5\" marker-end=\"url(#ap20)\"/><text x=\"318.0\" y=\"171.0\" font-size=\"14\" fill=\"currentColor\">v1=(3,1)</text><text x=\"186.0\" y=\"72.0\" font-size=\"14\" fill=\"#ff4d7d\">v2=(1,2)</text></svg>"
+  },
+  {
+   "q": "3×3 행렬 A 의 det(A)=3 일 때 det(2Aᵀ) 의 값은?",
+   "choices": [
+    "24",
+    "6",
+    "3",
+    "12",
+    "48"
+   ],
+   "answer": 0,
+   "explain": "정답은 1번 「24」이다.\ndet(Aᵀ) = det(A) 이고 n×n 행렬에 스칼라 c 를 곱하면 det(cA) = cⁿ·det(A) 이다. n=3 이므로 det(2Aᵀ) = 2³·3 = 24 이다. 모든 행에 2 가 곱해지므로 2 가 3번 나온다.\n2번: 2 를 한 번만 곱한 값이다.\n3번: 스칼라 2 의 영향을 무시했다.\n4번: 2² 를 곱해 2×2 행렬로 착각한 값이다.\n5번: 2⁴ 를 곱해 4×4 행렬로 착각한 값이다.\n함정: 스칼라배는 행렬식에 cⁿ 으로 반영된다."
+  },
+  {
+   "q": "원점을 중심으로 반시계 방향 90° 회전하는 변환 R 은 e1=(1,0) 을 (0,1) 로, e2=(0,1) 을 (−1,0) 으로 보낸다(그림). R(2,1) 은?",
+   "choices": [
+    "(1, −2)",
+    "(−2, −1)",
+    "(−1, 2)",
+    "(1, 2)",
+    "(2, −1)"
+   ],
+   "answer": 2,
+   "explain": "정답은 3번 「(−1, 2)」이다.\n선형변환의 표준 행렬은 기저의 상을 열로 놓은 것이므로 R = [[0,−1],[1,0]] 이다. R(2,1) = 2·R(e1)+1·R(e2) = 2(0,1)+(−1,0) = (−1, 2) 이다. 길이가 √5 로 같아 회전임을 확인할 수 있다.\n1번: 시계 방향 90° 회전의 결과이다.\n2번: 180° 회전의 결과이다.\n4번: y=x 에 대한 대칭변환의 결과이다.\n5번: x축 대칭변환의 결과이다.\n함정: 열은 행이 아니라 e1, e2 의 상이다.",
+   "fig": "<svg viewBox=\"0 0 348 288\" width=\"348\" height=\"288\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\"><defs><marker id=\"ac22\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"currentColor\"/></marker><marker id=\"ap22\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#ff4d7d\"/></marker></defs><line x1=\"24\" y1=\"264\" x2=\"24\" y2=\"24\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"84\" y1=\"264\" x2=\"84\" y2=\"24\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"144\" y1=\"264\" x2=\"144\" y2=\"24\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"204\" y1=\"264\" x2=\"204\" y2=\"24\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"264\" y1=\"264\" x2=\"264\" y2=\"24\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"324\" y1=\"264\" x2=\"324\" y2=\"24\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"24\" y1=\"264\" x2=\"324\" y2=\"264\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"24\" y1=\"204\" x2=\"324\" y2=\"204\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"24\" y1=\"144\" x2=\"324\" y2=\"144\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"24\" y1=\"84\" x2=\"324\" y2=\"84\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"24\" y1=\"24\" x2=\"324\" y2=\"24\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"24\" y1=\"204\" x2=\"324\" y2=\"204\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"144\" y1=\"264\" x2=\"144\" y2=\"24\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"306.0\" y=\"234.0\" font-size=\"14\" fill=\"currentColor\">x</text><text x=\"156.0\" y=\"36.0\" font-size=\"14\" fill=\"currentColor\">y</text><line x1=\"144\" y1=\"204\" x2=\"204\" y2=\"204\" stroke=\"currentColor\" stroke-width=\"2.5\" marker-end=\"url(#ac22)\"/><line x1=\"144\" y1=\"204\" x2=\"144\" y2=\"144\" stroke=\"#ff4d7d\" stroke-width=\"2.5\" marker-end=\"url(#ap22)\"/><line x1=\"144\" y1=\"204\" x2=\"84\" y2=\"204\" stroke=\"#ff4d7d\" stroke-width=\"2.5\" marker-end=\"url(#ap22)\"/><text x=\"207.0\" y=\"222.0\" font-size=\"14\" fill=\"currentColor\">e1</text><text x=\"150.0\" y=\"132.0\" font-size=\"14\" fill=\"#ff4d7d\">R(e1)</text><text x=\"30.0\" y=\"186.0\" font-size=\"14\" fill=\"#ff4d7d\">R(e2)</text></svg>"
+  },
+  {
+   "q": "연립방정식 2x+y=5, x+3y=5 (그림은 두 직선)에서 크라메르 공식으로 x 를 구하면?",
+   "choices": [
+    "1",
+    "10",
+    "1/2",
+    "2",
+    "−2"
+   ],
+   "answer": 3,
+   "explain": "정답은 4번 「2」이다.\nx = det[[5,1],[5,3]] / det[[2,1],[1,3]] 이다. 분자 = 5·3−1·5 = 10, 분모 = 2·3−1·1 = 5 이므로 x = 2 이다. 이 값은 그림의 교점 (2,1) 의 x좌표와 같다.\n1번: y 의 값이다.\n2번: 분자 det 만 구하고 분모 det 로 나누지 않았다.\n3번: 분자와 분모를 뒤바꿔 5/10 로 계산했다.\n5번: 분자 행렬식의 뺄셈 순서를 바꿔 부호가 반대로 나왔다.\n함정: 분자는 해당 열을 상수항으로 바꾼 행렬의 행렬식이다.",
+   "fig": "<svg viewBox=\"0 0 318 363\" width=\"318\" height=\"363\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\"><defs><marker id=\"ac23\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"currentColor\"/></marker><marker id=\"ap23\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#ff4d7d\"/></marker></defs><line x1=\"24\" y1=\"339\" x2=\"24\" y2=\"24\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"69\" y1=\"339\" x2=\"69\" y2=\"24\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"114\" y1=\"339\" x2=\"114\" y2=\"24\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"159\" y1=\"339\" x2=\"159\" y2=\"24\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"204\" y1=\"339\" x2=\"204\" y2=\"24\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"249\" y1=\"339\" x2=\"249\" y2=\"24\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"294\" y1=\"339\" x2=\"294\" y2=\"24\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"24\" y1=\"339\" x2=\"294\" y2=\"339\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"24\" y1=\"294\" x2=\"294\" y2=\"294\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"24\" y1=\"249\" x2=\"294\" y2=\"249\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"24\" y1=\"204\" x2=\"294\" y2=\"204\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"24\" y1=\"159\" x2=\"294\" y2=\"159\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"24\" y1=\"114\" x2=\"294\" y2=\"114\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"24\" y1=\"69\" x2=\"294\" y2=\"69\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"24\" y1=\"24\" x2=\"294\" y2=\"24\" stroke=\"currentColor\" stroke-opacity=\"0.15\"/><line x1=\"24\" y1=\"294\" x2=\"294\" y2=\"294\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"69\" y1=\"339\" x2=\"69\" y2=\"24\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"280.5\" y=\"316.5\" font-size=\"14\" fill=\"currentColor\">x</text><text x=\"78.0\" y=\"33.0\" font-size=\"14\" fill=\"currentColor\">y</text><line x1=\"46.5\" y1=\"24\" x2=\"204\" y2=\"339\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"24\" y1=\"204\" x2=\"294\" y2=\"294\" stroke=\"#ff4d7d\" stroke-width=\"2\"/><circle cx=\"159\" cy=\"249\" r=\"4\" fill=\"currentColor\"/><text x=\"168.0\" y=\"226.5\" font-size=\"14\" fill=\"currentColor\">(2,1)</text><text x=\"28.5\" y=\"46.5\" font-size=\"14\" fill=\"currentColor\">2x+y=5</text><text x=\"217.5\" y=\"271.5\" font-size=\"14\" fill=\"#ff4d7d\">x+3y=5</text></svg>"
+  },
+  {
+   "q": "행렬 [[1,2],[2,k]] 가 역행렬을 갖지 않도록 하는 k 의 값은?",
+   "choices": [
+    "0",
+    "4",
+    "1",
+    "2",
+    "−4"
+   ],
+   "answer": 1,
+   "explain": "정답은 2번 「4」이다.\n역행렬이 없을 조건은 det = 0 이다. det = 1·k − 2·2 = k − 4 = 0 이므로 k = 4 이다. 이때 두 번째 열 (2,4) 는 첫 열 (1,2) 의 2배이므로 열이 종속이다.\n1번: det = −4 이므로 역행렬이 존재한다.\n3번: det = k−4 = −3 이므로 역행렬이 존재한다.\n4번: det = −2 이므로 역행렬이 존재한다.\n5번: det = −8 이므로 역행렬이 존재한다.\n함정: det=0 이 곧 비가역(특이)행렬이다."
+  }
+ ]
+}

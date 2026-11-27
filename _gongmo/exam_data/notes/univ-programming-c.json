@@ -1,0 +1,95 @@
+{
+ "id": "univ-programming-c",
+ "title": "C 프로그래밍 개념 정리",
+ "intro": "C 언어 과목은 자료형과 연산, 반복, 배열, 포인터, 함수, 구조체를 다룬다. 시험에서는 포인터와 배열, 증감 연산자가 섞인 출력 예측 문제가 가장 중요하다.",
+ "sections": [
+  {
+   "h": "자료형과 나눗셈, 형변환",
+   "body": "C 는 변수를 만들 때 자료형을 먼저 적는다. int 는 정수, double 은 실수, char 는 글자 하나이다. 정수끼리 나누면 소수점이 버려진다는 점이 가장 큰 함정이다.\nint a = 7, b = 2;\nprintf(\"%d %d %.1f\\n\", a / b, a % b, (double)a / b);\n출력은 3 1 3.5 이다. a / b 는 정수 나눗셈이라 3, a % b 는 나머지라 1 이다. (double)a 는 a 를 실수로 잠깐 바꾸는 형변환이라 실수 나눗셈이 되어 3.5 가 나오고, %.1f 는 소수 첫째 자리까지 찍으라는 뜻이다.\nprintf 의 %d 는 정수, %f 는 실수, %c 는 글자, %s 는 문자열이다. 서식 문자와 값의 자료형이 다르면 엉뚱한 값이 나온다.",
+   "key": [
+    "정수끼리 나누면 소수점이 사라진다",
+    "(double) 형변환으로 실수 나눗셈을 만든다",
+    "%d %f %c %s 서식 문자를 구분한다"
+   ]
+  },
+  {
+   "h": "증감 연산자와 반복문",
+   "body": "i++ 는 쓰고 나서 1 올리고, ++i 는 1 올리고 나서 쓴다. 단독으로 쓰면 같지만 다른 식과 섞이면 값이 달라진다.\nint i = 5;\nprintf(\"%d \", i++);\nprintf(\"%d\\n\", i);\n첫 printf 는 i 를 먼저 출력하므로 5 가 나오고, 그 직후 i 가 6 이 된다. 다음 printf 는 6 을 찍어 한 줄 전체는 5 6 이다. ++i 였다면 6 6 이 된다.\nfor (초기식; 조건식; 증감식) 은 초기식을 한 번 하고, 조건이 참이면 몸통을 실행한 뒤 증감식을 하는 순서로 되풀이한다. while 은 조건만 보고, do-while 은 일단 한 번 실행한 뒤 조건을 본다. break 와 continue 의 뜻은 다른 언어와 같다.",
+   "fig": "<svg viewBox=\"0 0 420 130\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\" font-size=\"14\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><rect x=\"10\" y=\"20\" width=\"90\" height=\"36\" stroke=\"currentColor\"/><text x=\"55.0\" y=\"43.0\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-size=\"14\">초기식</text><line x1=\"100\" y1=\"38\" x2=\"130\" y2=\"38\" stroke=\"currentColor\"/><polygon points=\"130,38 121.7,41.5 121.7,34.5\" fill=\"currentColor\" stroke=\"none\"/><rect x=\"130\" y=\"20\" width=\"90\" height=\"36\" stroke=\"#ff4d7d\"/><text x=\"175.0\" y=\"43.0\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-size=\"14\">조건식</text><line x1=\"220\" y1=\"38\" x2=\"250\" y2=\"38\" stroke=\"currentColor\"/><polygon points=\"250,38 241.7,41.5 241.7,34.5\" fill=\"currentColor\" stroke=\"none\"/><rect x=\"250\" y=\"20\" width=\"70\" height=\"36\" stroke=\"currentColor\"/><text x=\"285.0\" y=\"43.0\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-size=\"14\">몸통</text><line x1=\"320\" y1=\"38\" x2=\"350\" y2=\"38\" stroke=\"currentColor\"/><polygon points=\"350,38 341.7,41.5 341.7,34.5\" fill=\"currentColor\" stroke=\"none\"/><rect x=\"350\" y=\"20\" width=\"60\" height=\"36\" stroke=\"currentColor\"/><text x=\"380.0\" y=\"43.0\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-size=\"14\">증감</text><line x1=\"380\" y1=\"56\" x2=\"380\" y2=\"95\" stroke=\"currentColor\"/><polygon points=\"380,95 376.5,86.7 383.5,86.7\" fill=\"currentColor\" stroke=\"none\"/><line x1=\"380\" y1=\"95\" x2=\"175\" y2=\"95\" stroke=\"currentColor\"/><line x1=\"175\" y1=\"95\" x2=\"175\" y2=\"58\" stroke=\"currentColor\"/><polygon points=\"175,58 178.5,66.3 171.5,66.3\" fill=\"currentColor\" stroke=\"none\"/><text x=\"175\" y=\"118\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-size=\"14\">거짓이면 반복 종료</text></svg>",
+   "key": [
+    "i++ 는 쓰고 증가, ++i 는 증가하고 씀",
+    "for: 초기식, 조건식, 몸통, 증감식 순서",
+    "do-while 은 최소 한 번 실행"
+   ]
+  },
+  {
+   "h": "배열과 문자열",
+   "body": "배열은 같은 자료형 칸이 나란히 붙은 줄이다. 번호는 0부터 시작하고, 칸 수를 넘는 번호를 쓰면 오류 없이 엉뚱한 메모리를 건드려 위험하다.\nint a[4] = {3, 1, 2, 5};\nint sum = 0;\nfor (int i = 0; i < 4; i++) sum += a[i];\nprintf(\"%d\\n\", sum);\ni 가 0부터 3까지 돌며 3, 1, 2, 5 를 더해 11 이 출력된다. 조건이 i < 4 인 것이 핵심이고 i <= 4 로 쓰면 범위를 벗어난다.\nC 의 문자열은 글자 배열 끝에 널 문자 '\\0' 이 붙은 것이다. char s[] = \"abc\"; 는 칸이 4개(a, b, c, \\0)이고, strlen(s) 는 널 문자를 빼고 세어 3 이다. sizeof(s) 는 4 이다.",
+   "fig": "<svg viewBox=\"0 0 420 100\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\" font-size=\"14\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><rect x=\"30\" y=\"25\" width=\"60\" height=\"36\" stroke=\"currentColor\"/><text x=\"60.0\" y=\"48.0\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-size=\"14\">a</text><rect x=\"90\" y=\"25\" width=\"60\" height=\"36\" stroke=\"currentColor\"/><text x=\"120.0\" y=\"48.0\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-size=\"14\">b</text><rect x=\"150\" y=\"25\" width=\"60\" height=\"36\" stroke=\"currentColor\"/><text x=\"180.0\" y=\"48.0\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-size=\"14\">c</text><rect x=\"210\" y=\"25\" width=\"60\" height=\"36\" stroke=\"#ff4d7d\" fill=\"#ff4d7d\" fill-opacity=\"0.12\"/><text x=\"240.0\" y=\"48.0\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-size=\"14\">\\0</text><text x=\"60\" y=\"85\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-size=\"14\">s[0]</text><text x=\"120\" y=\"85\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-size=\"14\">s[1]</text><text x=\"180\" y=\"85\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-size=\"14\">s[2]</text><text x=\"240\" y=\"85\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-size=\"14\">s[3]</text></svg>",
+   "key": [
+    "배열 번호는 0부터, 범위를 넘으면 위험",
+    "문자열 끝에는 널 문자 \\0 이 있다",
+    "strlen 은 3, sizeof 는 4 (abc 의 경우)"
+   ]
+  },
+  {
+   "h": "포인터의 기본",
+   "body": "포인터는 값이 아니라 값이 있는 칸의 주소를 담는 변수이다. 집 안 물건이 아니라 집 주소를 적은 쪽지라고 생각하면 된다. &변수 는 주소를 구하고, *포인터 는 그 주소로 찾아가 값을 다룬다.\nint x = 10;\nint *p = &x;\n*p = 20;\nprintf(\"%d\\n\", x);\np 에는 x 의 주소가 들어간다. *p = 20 은 그 주소로 가서 값을 20 으로 바꾸는 것이라 x 자체가 바뀐다. 따라서 출력은 20 이다.\n선언의 int *p 에서 *는 포인터 변수라는 표시이고, 사용할 때의 *p 는 가리키는 값이라는 뜻으로 같은 기호의 다른 역할이다. 아무것도 가리키지 않는 포인터에는 NULL 을 넣고, NULL 인 포인터의 값을 읽으려 하면 프로그램이 멈춘다.",
+   "fig": "<svg viewBox=\"0 0 420 110\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\" font-size=\"14\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><rect x=\"20\" y=\"30\" width=\"100\" height=\"40\" stroke=\"currentColor\"/><text x=\"70.0\" y=\"55.0\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-size=\"14\">p (주소)</text><line x1=\"120\" y1=\"50\" x2=\"230\" y2=\"50\" stroke=\"#ff4d7d\"/><polygon points=\"230,50 221.7,53.5 221.7,46.5\" fill=\"#ff4d7d\" stroke=\"none\"/><rect x=\"230\" y=\"30\" width=\"110\" height=\"40\" stroke=\"#ff4d7d\" fill=\"#ff4d7d\" fill-opacity=\"0.12\"/><text x=\"285.0\" y=\"55.0\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-size=\"14\">x = 20</text><text x=\"285\" y=\"95\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-size=\"14\">주소 0x1000</text><text x=\"70\" y=\"95\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-size=\"14\">0x1000</text></svg>",
+   "key": [
+    "&x 는 주소, *p 는 가리키는 값",
+    "*p 를 바꾸면 x 도 바뀐다",
+    "NULL 은 아무것도 가리키지 않음"
+   ]
+  },
+  {
+   "h": "포인터와 배열의 관계",
+   "body": "배열 이름은 첫 칸의 주소처럼 쓰인다. 그래서 포인터에 배열을 대입할 수 있고, 포인터에 1을 더하면 바이트 1이 아니라 자료형 한 칸만큼 이동한다.\nint a[3] = {10, 20, 30};\nint *p = a;\nprintf(\"%d %d\\n\", *(p + 1), a[2]);\np 는 a[0] 을 가리킨다. p + 1 은 다음 칸 a[1] 을 가리키므로 *(p + 1) 은 20 이고, a[2] 는 30 이어서 출력은 20 30 이다. 결국 a[i] 와 *(a + i) 는 같은 뜻이다.\np++ 을 하면 p 는 다음 칸으로 간다. int 가 4바이트인 환경에서는 주소가 실제로 4씩 늘어난다. 같은 배열 안의 두 포인터를 빼면 칸 수가 나온다.",
+   "fig": "<svg viewBox=\"0 0 420 110\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\" font-size=\"14\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><rect x=\"30\" y=\"40\" width=\"90\" height=\"36\" stroke=\"currentColor\"/><text x=\"75.0\" y=\"63.0\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-size=\"14\">10</text><rect x=\"120\" y=\"40\" width=\"90\" height=\"36\" stroke=\"#ff4d7d\" fill=\"#ff4d7d\" fill-opacity=\"0.12\"/><text x=\"165.0\" y=\"63.0\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-size=\"14\">20</text><rect x=\"210\" y=\"40\" width=\"90\" height=\"36\" stroke=\"currentColor\"/><text x=\"255.0\" y=\"63.0\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-size=\"14\">30</text><text x=\"75\" y=\"28\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-size=\"14\">p 또는 a</text><text x=\"165\" y=\"28\" text-anchor=\"middle\" fill=\"#ff4d7d\" stroke=\"none\" font-size=\"14\">p+1</text><text x=\"255\" y=\"28\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-size=\"14\">p+2</text><text x=\"165\" y=\"100\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-size=\"14\">*(p+1) = a[1] = 20</text></svg>",
+   "key": [
+    "a[i] 와 *(a+i) 는 같다",
+    "p+1 은 한 칸(자료형 크기)만큼 이동",
+    "배열 이름은 첫 칸 주소처럼 쓰인다"
+   ]
+  },
+  {
+   "h": "함수와 값 전달·주소 전달",
+   "body": "C 의 함수는 인자를 복사해서 받는다(값에 의한 전달). 그래서 함수 안에서 바꿔도 밖의 변수는 그대로이다. 밖의 변수를 바꾸고 싶으면 주소를 넘기고 포인터로 받는다.\nvoid inc(int n) { n = n + 1; }\nvoid inc2(int *n) { *n = *n + 1; }\nint x = 5;\ninc(x); inc2(&x);\nprintf(\"%d\\n\", x);\ninc(x) 는 5 의 복사본만 바꾸고 끝나 x 는 5 그대로이다. inc2(&x) 는 x 의 주소로 가서 값을 바꾸므로 x 가 6 이 되고 출력은 6 이다.\n교과서의 두 값을 바꾸는 swap 함수가 대표 예제이며, 주소를 넘기지 않으면 바뀌지 않는다. 배열을 인자로 넘기면 첫 칸 주소가 넘어가서 함수 안에서 바꾼 내용이 밖에도 반영된다.",
+   "key": [
+    "일반 인자는 복사본이라 밖에 영향이 없다",
+    "주소를 넘기면 원본을 바꿀 수 있다",
+    "배열 인자는 주소로 넘어간다"
+   ]
+  },
+  {
+   "h": "구조체",
+   "body": "구조체는 서로 다른 자료형을 한 묶음으로 만든 새 자료형이다. 학생 한 명의 이름, 번호, 점수를 한 상자에 담는 모양이다. 안의 값은 점(.)으로, 포인터로 가리킬 때는 화살표(->)로 꺼낸다.\nstruct Pt { int x; int y; };\nstruct Pt a = {3, 4};\nstruct Pt *p = &a;\np->x = 7;\nprintf(\"%d %d\\n\", a.x, p->y);\na 는 x 가 3, y 가 4 이다. p->x = 7 로 a 의 x 가 7 로 바뀌므로 출력은 7 4 이다. p->x 는 (*p).x 와 같은 뜻이다.\ntypedef 를 쓰면 struct Pt 를 Pt 로 줄여 쓸 수 있다. 구조체는 대입하면 안의 값이 통째로 복사된다. 공용체(union)는 같은 칸을 여러 멤버가 번갈아 쓰는 점이 다르다.",
+   "fig": "<svg viewBox=\"0 0 420 110\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\" font-size=\"14\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><rect x=\"30\" y=\"15\" width=\"180\" height=\"80\" stroke=\"currentColor\"/><text x=\"120\" y=\"35\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-size=\"14\">struct Pt a</text><rect x=\"45\" y=\"45\" width=\"70\" height=\"36\" stroke=\"#ff4d7d\" fill=\"#ff4d7d\" fill-opacity=\"0.12\"/><text x=\"80.0\" y=\"68.0\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-size=\"14\">x = 7</text><rect x=\"125\" y=\"45\" width=\"70\" height=\"36\" stroke=\"currentColor\"/><text x=\"160.0\" y=\"68.0\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-size=\"14\">y = 4</text><text x=\"320\" y=\"40\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-size=\"14\">a.x  ->  점으로 접근</text><text x=\"320\" y=\"70\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-size=\"14\">p->y  ->  화살표로 접근</text></svg>",
+   "key": [
+    "구조체는 서로 다른 자료형의 묶음",
+    "변수는 점(.), 포인터는 화살표(->)",
+    "p->x 는 (*p).x 와 같다"
+   ]
+  },
+  {
+   "h": "동적 메모리와 전처리",
+   "body": "배열 크기를 실행 중에 정하고 싶을 때 malloc 으로 메모리를 빌리고, 다 쓰면 free 로 돌려준다. 안 돌려주면 메모리 누수가 생긴다.\nint *p = (int *)malloc(3 * sizeof(int));\np[0] = 1; p[1] = 2; p[2] = 3;\nprintf(\"%d\\n\", p[0] + p[2]);\nfree(p);\nmalloc(12) 처럼 int 3칸(보통 12바이트)을 빌려 p 가 첫 칸을 가리킨다. p[0] + p[2] 는 1 + 3 이라 출력은 4 이다. free 한 뒤에는 p 를 다시 쓰면 안 된다.\n전처리기는 컴파일 전에 처리되는 줄이다. #include 는 헤더를 끼워 넣고, #define PI 3 은 글자를 그대로 바꿔 넣는다. 매크로는 계산 순서까지 바뀔 수 있어 괄호를 꼭 친다.",
+   "key": [
+    "malloc 으로 빌리고 free 로 반납",
+    "반납한 포인터는 다시 쓰지 않는다",
+    "#define 은 글자 치환이라 괄호 주의"
+   ]
+  }
+ ],
+ "recap": [
+  "정수끼리 나누면 소수점이 버려진다",
+  "i++ 는 쓰고 증가, ++i 는 증가하고 씀",
+  "배열 번호는 0부터 시작하고 범위 밖은 위험하다",
+  "문자열 끝에는 널 문자가 있어 sizeof 가 strlen 보다 1 크다",
+  "&x 는 주소, *p 는 가리키는 값이다",
+  "a[i] 와 *(a+i) 는 같고 p+1 은 한 칸 이동",
+  "값 전달은 복사, 원본을 바꾸려면 주소를 넘긴다",
+  "구조체는 . 과 -> 로 멤버에 접근한다",
+  "malloc 한 메모리는 free 로 반납한다"
+ ]
+}

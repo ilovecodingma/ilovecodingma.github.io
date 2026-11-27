@@ -114,7 +114,7 @@ def hero(ic):
 
 
 WEIRD = {'자기개발': '일단 뭐라도 배워라', '분야별로 찾기': '니가 뭘 따야 하는지도 모르지?', '다가오는 시험': '곧 터진다. 원서는 냈냐',
-         '문제은행': '틀리면 루리가 웃는다', '시험 뉴스·글': '알고나 있어라', '공모전': '스펙 없으면 이거라도 내라'}
+         '문제은행': '문제나 풀어', '시험 뉴스·글': '알고나 있어라', '공모전': '스펙 없으면 이거라도 내라'}
 
 
 def _hd(t, more):
@@ -168,5 +168,5 @@ def sections(ctx, ic):
             + (f' {n_c}건' if n_c else '') + '</b><span>스펙 없으면 이거라도 내. 마감 임박순.</span></div></div></section>')
     out += ('<section class="ct-sec"><div class="ct-two"><a class="ct-ban" href="/diet/"><div><b>식단</b><span>먹어야 공부한다.</span></div></a>'
             '<a class="ct-ban" href="/wiki/"><div><b>위키 · 생활 정보</b><span>세금·보험·지원금처럼 나머지 잡다한 건 위키.</span></div></a></div></section></div>')
-    out += '<link rel="stylesheet" href="/assets/home/home2.css?v=11"><link rel="stylesheet" href="/assets/home/ct.css?v=8"><script defer src="/assets/home/ct-bg.js?v=4"></script><script defer src="/assets/home/ct-fx.js?v=5"></script><script defer src="/assets/home/home2.js?v=3"></script>'
+    out += '<link rel="stylesheet" href="/assets/home/home2.css?v=11"><link rel="stylesheet" href="/assets/home/ct.css?v=8"><script defer src="/assets/home/ct-bg.js?v=4"></script><script defer src="/assets/home/ct-fx.js?v=7"></script><script defer src="/assets/home/home2.js?v=3"></script>'
     return out

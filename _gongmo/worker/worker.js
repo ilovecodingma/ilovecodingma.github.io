@@ -265,7 +265,7 @@ export default {
       }
       if (p === '/api/prefs' && req.method === 'POST') {  // 루리 꾸미기 저장
         const u = await me(req, env); if (!u) return err(req, '로그인이 필요해요.', 401);
-        const d = {}; for (const [k, v] of Object.entries(body.data || {}).slice(0, 40)) if (/^[a-z]{1,12}$/.test(k)) d[k] = clean(v, 80);
+        const d = {}; for (const [k, v] of Object.entries(body.data || {}).slice(0, 40)) if (/^[a-z]{1,12}$/.test(k)) d[k] = clean(v, k === 'exams' || k === 'sdt' ? 600 : 80);   // exams·sdt(잠이 오냐 메일 관심사)는 목록이라 길게
         await env.DB.prepare('INSERT OR REPLACE INTO user_prefs (user_id, data) VALUES (?, ?)').bind(u.id, JSON.stringify(d)).run();
         return json(req, { ok: true });
       }
@@ -383,10 +383,15 @@ export default {
         const ok = x => typeof x === 'string' && /^[A-Za-z0-9_-]{10,200}$/.test(x);
         if (!ok(k.p256dh) || !ok(k.auth)) return err(req, '알림 등록에 실패했어요.');
         const cats = (Array.isArray(body.cats) ? body.cats : []).filter(c => /^[a-z]{2,12}$/.test(c)).slice(0, 12).join(',');
+        // 2026-11-27 「잠이 오냐」: 관심 시험 계열(exams)·자기개발 주제(topics)·알림 종류(sch 일정·qz 오늘의 문제·nw 시험 새 소식·sd 자기개발 새 정보)·문제 시각(qh). 안 보내면 null → 기존 값 유지(옛 앱 호환)
+        const lst = (v, re, n) => Array.isArray(v) ? v.filter(c => typeof c === 'string' && re.test(c)).slice(0, n).join(',') : null;
+        const nexams = lst(body.exams, /^[a-z0-9-]{2,30}$/, 30), ntopics = lst(body.topics, /^[a-z]{2,12}$/, 12);
+        const fl = v => v === undefined ? null : (v === 0 || v === false ? 0 : 1);
+        const nqh = body.qh === undefined ? null : Math.min(23, Math.max(0, parseInt(body.qh, 10) || 0));
         const u = await me(req, env), n = await count(env, 'SELECT COUNT(*) n FROM push_subs');
         if (n > 20000) return err(req, '지금은 알림 등록이 많아요. 잠시 뒤에 다시 해 주세요.', 429);
-        await env.DB.prepare('INSERT INTO push_subs (endpoint, p256dh, auth, cats, newc, dl, meal, uid, created, sent, fails, fit, fh, dl2) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 0, 0, ?, ?, ?) ON CONFLICT(endpoint) DO UPDATE SET p256dh = excluded.p256dh, auth = excluded.auth, cats = excluded.cats, newc = excluded.newc, dl = excluded.dl, meal = excluded.meal, fit = excluded.fit, fh = excluded.fh, dl2 = excluded.dl2, uid = COALESCE(excluded.uid, push_subs.uid), fails = 0')
-          .bind(ep, k.p256dh, k.auth, cats, body.newc === 0 ? 0 : 1, body.dl === 0 ? 0 : 1, body.meal === 1 ? 1 : 0, u ? u.id : null, now(), body.fit === 1 ? 1 : 0, Math.min(23, Math.max(0, parseInt(body.fh, 10) || 20)), body.dl2 === 1 ? 1 : 0).run();
+        await env.DB.prepare('INSERT INTO push_subs (endpoint, p256dh, auth, cats, newc, dl, meal, uid, created, sent, fails, fit, fh, dl2, exams, topics, sch, qz, nw, sd, qh) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 0, 0, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ON CONFLICT(endpoint) DO UPDATE SET p256dh = excluded.p256dh, auth = excluded.auth, cats = excluded.cats, newc = excluded.newc, dl = excluded.dl, meal = excluded.meal, fit = excluded.fit, fh = excluded.fh, dl2 = excluded.dl2, exams = COALESCE(excluded.exams, push_subs.exams), topics = COALESCE(excluded.topics, push_subs.topics), sch = COALESCE(excluded.sch, push_subs.sch), qz = COALESCE(excluded.qz, push_subs.qz), nw = COALESCE(excluded.nw, push_subs.nw), sd = COALESCE(excluded.sd, push_subs.sd), qh = COALESCE(excluded.qh, push_subs.qh), uid = COALESCE(excluded.uid, push_subs.uid), fails = 0')
+          .bind(ep, k.p256dh, k.auth, cats, body.newc === 0 ? 0 : 1, body.dl === 0 ? 0 : 1, body.meal === 1 ? 1 : 0, u ? u.id : null, now(), body.fit === 1 ? 1 : 0, Math.min(23, Math.max(0, parseInt(body.fh, 10) || 20)), body.dl2 === 1 ? 1 : 0, nexams, ntopics, fl(body.sch), fl(body.qz), fl(body.nw), fl(body.sd), nqh).run();
         return json(req, { ok: true });
       }
       if (p === '/api/push/unsub' && req.method === 'POST') {

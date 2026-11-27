@@ -1,0 +1,294 @@
+{
+ "id": "mid-math-1",
+ "name": "중1 수학 (정수·문자·방정식·도형)",
+ "category": "중·고등 교과",
+ "kind": "original",
+ "method": "original",
+ "analysis": "2022 개정 교육과정 중학교 수학 1학년군 성취기준(소인수분해·정수와 유리수, 문자와 식, 일차방정식, 기본 도형·평면도형·입체도형, 자료의 정리)을 교과서 수준 개념으로 재구성한 원작 문항",
+ "source": {
+  "name": "교육부 2022 개정 교육과정·국가교육과정정보센터(NCIC)",
+  "url": "https://ncic.kr",
+  "license": "문항은 직접 작성, 성취기준 범위만 공공 자료 참고"
+ },
+ "updated": "2026-11-27",
+ "sec_per_q": 75,
+ "questions": [
+  {
+   "q": "그림의 수직선에서 점 A, B, C, D 가 나타내는 수 가운데 절댓값이 가장 큰 수에 대응하는 점은?",
+   "choices": [
+    "점 B",
+    "점 A",
+    "점 C",
+    "점 D"
+   ],
+   "answer": 1,
+   "explain": "정답: ② 점 A\n핵심 개념: 절댓값은 수직선에서 원점까지의 거리이다.\n풀이: A는 −4, B는 −1.5, C는 2, D는 3 이므로 절댓값은 각각 4, 1.5, 2, 3 이다. 이 중 4 가 가장 크므로 A 이다.\n오답 분석\n① 점 B: B는 −1.5 근처로 절댓값이 1.5 로 네 점 중 가장 작다.\n③ 점 C: C는 2 이므로 절댓값 2 이고 A의 4 보다 작다.\n④ 점 D: D는 3 으로 오른쪽 끝이지만 절댓값은 3 이어서 A의 4 보다 작다.\n함정: 가장 오른쪽 점이 절댓값도 가장 크다고 생각하기 쉽지만 음수는 부호를 떼고 비교해야 한다.",
+   "fig": "<svg viewBox=\"0 0 560 90\" xmlns=\"http://www.w3.org/2000/svg\" style=\"max-width:560px;width:100%\"><line x1=\"20\" y1=\"50\" x2=\"540\" y2=\"50\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"30\" y1=\"44\" x2=\"30\" y2=\"56\" stroke=\"currentColor\" stroke-width=\"1\"/><text x=\"30\" y=\"78\" fill=\"currentColor\" font-size=\"14\" text-anchor=\"middle\" font-family=\"sans-serif\">−5</text><line x1=\"80\" y1=\"44\" x2=\"80\" y2=\"56\" stroke=\"currentColor\" stroke-width=\"1\"/><text x=\"80\" y=\"78\" fill=\"currentColor\" font-size=\"14\" text-anchor=\"middle\" font-family=\"sans-serif\">−4</text><line x1=\"130\" y1=\"44\" x2=\"130\" y2=\"56\" stroke=\"currentColor\" stroke-width=\"1\"/><text x=\"130\" y=\"78\" fill=\"currentColor\" font-size=\"14\" text-anchor=\"middle\" font-family=\"sans-serif\">−3</text><line x1=\"180\" y1=\"44\" x2=\"180\" y2=\"56\" stroke=\"currentColor\" stroke-width=\"1\"/><text x=\"180\" y=\"78\" fill=\"currentColor\" font-size=\"14\" text-anchor=\"middle\" font-family=\"sans-serif\">−2</text><line x1=\"230\" y1=\"44\" x2=\"230\" y2=\"56\" stroke=\"currentColor\" stroke-width=\"1\"/><text x=\"230\" y=\"78\" fill=\"currentColor\" font-size=\"14\" text-anchor=\"middle\" font-family=\"sans-serif\">−1</text><line x1=\"280\" y1=\"44\" x2=\"280\" y2=\"56\" stroke=\"currentColor\" stroke-width=\"1\"/><text x=\"280\" y=\"78\" fill=\"currentColor\" font-size=\"14\" text-anchor=\"middle\" font-family=\"sans-serif\">0</text><line x1=\"330\" y1=\"44\" x2=\"330\" y2=\"56\" stroke=\"currentColor\" stroke-width=\"1\"/><text x=\"330\" y=\"78\" fill=\"currentColor\" font-size=\"14\" text-anchor=\"middle\" font-family=\"sans-serif\">1</text><line x1=\"380\" y1=\"44\" x2=\"380\" y2=\"56\" stroke=\"currentColor\" stroke-width=\"1\"/><text x=\"380\" y=\"78\" fill=\"currentColor\" font-size=\"14\" text-anchor=\"middle\" font-family=\"sans-serif\">2</text><line x1=\"430\" y1=\"44\" x2=\"430\" y2=\"56\" stroke=\"currentColor\" stroke-width=\"1\"/><text x=\"430\" y=\"78\" fill=\"currentColor\" font-size=\"14\" text-anchor=\"middle\" font-family=\"sans-serif\">3</text><line x1=\"480\" y1=\"44\" x2=\"480\" y2=\"56\" stroke=\"currentColor\" stroke-width=\"1\"/><text x=\"480\" y=\"78\" fill=\"currentColor\" font-size=\"14\" text-anchor=\"middle\" font-family=\"sans-serif\">4</text><line x1=\"530\" y1=\"44\" x2=\"530\" y2=\"56\" stroke=\"currentColor\" stroke-width=\"1\"/><text x=\"530\" y=\"78\" fill=\"currentColor\" font-size=\"14\" text-anchor=\"middle\" font-family=\"sans-serif\">5</text><circle cx=\"80\" cy=\"50\" r=\"5\" fill=\"#ff4d7d\" stroke=\"#ff4d7d\" stroke-width=\"2\"/><text x=\"80\" y=\"36\" fill=\"#ff4d7d\" font-size=\"14\" text-anchor=\"middle\" font-family=\"sans-serif\">A</text><circle cx=\"205\" cy=\"50\" r=\"5\" fill=\"#ff4d7d\" stroke=\"#ff4d7d\" stroke-width=\"2\"/><text x=\"205\" y=\"36\" fill=\"#ff4d7d\" font-size=\"14\" text-anchor=\"middle\" font-family=\"sans-serif\">B</text><circle cx=\"380\" cy=\"50\" r=\"5\" fill=\"#ff4d7d\" stroke=\"#ff4d7d\" stroke-width=\"2\"/><text x=\"380\" y=\"36\" fill=\"#ff4d7d\" font-size=\"14\" text-anchor=\"middle\" font-family=\"sans-serif\">C</text><circle cx=\"430\" cy=\"50\" r=\"5\" fill=\"#ff4d7d\" stroke=\"#ff4d7d\" stroke-width=\"2\"/><text x=\"430\" y=\"36\" fill=\"#ff4d7d\" font-size=\"14\" text-anchor=\"middle\" font-family=\"sans-serif\">D</text></svg>"
+  },
+  {
+   "q": "다음 네 수 −1/2, −0.4, −2/3, −3/5 중 가장 큰 수는?",
+   "choices": [
+    "−1/2",
+    "−3/5",
+    "−2/3",
+    "−0.4"
+   ],
+   "answer": 3,
+   "explain": "정답: ④ −0.4\n핵심 개념: 음수는 절댓값이 작을수록 큰 수이다.\n풀이: 소수로 고치면 −0.5, −0.4, −0.667, −0.6 이다. 절댓값은 각각 0.5, 0.4, 0.667, 0.6 이고 이 중 0.4 가 가장 작으므로 −0.4 가 가장 크다.\n오답 분석\n① −1/2: −0.5 로 −0.4 보다 왼쪽에 있어 더 작다.\n② −3/5: −0.6 이므로 −0.4 보다 작다.\n③ −2/3: 약 −0.667 로 네 수 중 가장 작다.\n함정: −2/3 처럼 분모가 큰 분수가 커 보여도 음수에서는 절댓값이 클수록 오히려 작은 수이다."
+  },
+  {
+   "q": "(−2)³ ÷ (−4) + 3 × (−2) 의 값은?",
+   "choices": [
+    "−4",
+    "8",
+    "−8",
+    "4"
+   ],
+   "answer": 0,
+   "explain": "정답: ① −4\n핵심 개념: 거듭제곱을 먼저, 곱셈·나눗셈을 그다음, 덧셈·뺄셈을 마지막에 계산한다.\n풀이: (−2)³ = −8 이므로 (−8) ÷ (−4) = +2 이다. 3 × (−2) = −6 이다. 따라서 2 + (−6) = −4 이다.\n오답 분석\n② 8: 3×(−2) 를 +6 으로 계산하고 나눗셈 결과를 −2 로 둔 뒤 더한 값이다.\n③ −8: (−8) ÷ (−4) 를 −2 로 잘못 계산하면 −2 − 6 = −8 이 된다.\n④ 4: 마지막 덧셈 부호를 반대로 보고 −(2 − 6) 처럼 계산한 값이다.\n함정: 음수 ÷ 음수 = 양수이며, (−2)³ 은 괄호가 있어 −8 이지 8 이 아니다."
+  },
+  {
+   "q": "수직선 위의 두 점 A(−3), B(5) 의 한가운데에 있는 점 M 이 나타내는 수는?",
+   "choices": [
+    "2",
+    "4",
+    "−1",
+    "1"
+   ],
+   "answer": 3,
+   "explain": "정답: ④ 1\n핵심 개념: 두 점의 중점은 두 수의 평균이다.\n풀이: (−3 + 5) ÷ 2 = 1 이다. 거리로 확인하면 A에서 B까지 8 이므로 A에서 4 만큼 오른쪽으로 간 −3 + 4 = 1 이 M 이다.\n오답 분석\n① 2: −3 과 5 의 합 2 를 나누지 않고 그대로 쓴 값이다.\n② 4: A에서 B까지 거리 8 의 절반인 4 는 M의 좌표가 아니라 A에서 M까지의 거리이다.\n③ −1: 두 수의 합 2 의 부호를 바꿔 반으로 나눈 값으로 중점이 아니다.\n함정: 거리의 절반 4 와 좌표 1 을 혼동하기 쉬우니 A의 위치에서 더해야 한다.",
+   "fig": "<svg viewBox=\"0 0 560 90\" xmlns=\"http://www.w3.org/2000/svg\" style=\"max-width:560px;width:100%\"><line x1=\"20\" y1=\"50\" x2=\"540\" y2=\"50\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"30\" y1=\"44\" x2=\"30\" y2=\"56\" stroke=\"currentColor\" stroke-width=\"1\"/><line x1=\"80\" y1=\"44\" x2=\"80\" y2=\"56\" stroke=\"currentColor\" stroke-width=\"1\"/><line x1=\"130\" y1=\"44\" x2=\"130\" y2=\"56\" stroke=\"currentColor\" stroke-width=\"1\"/><line x1=\"180\" y1=\"44\" x2=\"180\" y2=\"56\" stroke=\"currentColor\" stroke-width=\"1\"/><line x1=\"230\" y1=\"44\" x2=\"230\" y2=\"56\" stroke=\"currentColor\" stroke-width=\"1\"/><line x1=\"280\" y1=\"44\" x2=\"280\" y2=\"56\" stroke=\"currentColor\" stroke-width=\"1\"/><line x1=\"330\" y1=\"44\" x2=\"330\" y2=\"56\" stroke=\"currentColor\" stroke-width=\"1\"/><line x1=\"380\" y1=\"44\" x2=\"380\" y2=\"56\" stroke=\"currentColor\" stroke-width=\"1\"/><line x1=\"430\" y1=\"44\" x2=\"430\" y2=\"56\" stroke=\"currentColor\" stroke-width=\"1\"/><line x1=\"480\" y1=\"44\" x2=\"480\" y2=\"56\" stroke=\"currentColor\" stroke-width=\"1\"/><line x1=\"530\" y1=\"44\" x2=\"530\" y2=\"56\" stroke=\"currentColor\" stroke-width=\"1\"/><circle cx=\"80\" cy=\"50\" r=\"5\" fill=\"#ff4d7d\" stroke=\"#ff4d7d\" stroke-width=\"2\"/><text x=\"80\" y=\"34\" fill=\"#ff4d7d\" font-size=\"14\" text-anchor=\"middle\" font-family=\"sans-serif\">A(−3)</text><circle cx=\"530\" cy=\"50\" r=\"5\" fill=\"#ff4d7d\" stroke=\"#ff4d7d\" stroke-width=\"2\"/><text x=\"530\" y=\"34\" fill=\"#ff4d7d\" font-size=\"14\" text-anchor=\"middle\" font-family=\"sans-serif\">B(5)</text><circle cx=\"330\" cy=\"50\" r=\"5\" fill=\"#ff4d7d\" stroke=\"#ff4d7d\" stroke-width=\"2\"/><text x=\"330\" y=\"34\" fill=\"#ff4d7d\" font-size=\"14\" text-anchor=\"middle\" font-family=\"sans-serif\">M</text></svg>"
+  },
+  {
+   "q": "두 수 72 와 108 의 최대공약수를 a, 최소공배수를 b 라 할 때 b ÷ a 의 값은?",
+   "choices": [
+    "3",
+    "9",
+    "6",
+    "12"
+   ],
+   "answer": 2,
+   "explain": "정답: ③ 6\n핵심 개념: 소인수분해로 공통 소인수의 작은 지수는 최대공약수, 큰 지수는 최소공배수가 된다.\n풀이: 72 = 2³ × 3², 108 = 2² × 3³ 이다. 최대공약수 a = 2² × 3² = 36, 최소공배수 b = 2³ × 3³ = 216 이다. 따라서 b ÷ a = 216 ÷ 36 = 6 이다.\n오답 분석\n① 3: 최소공배수를 108 로 잘못 보면 108 ÷ 36 = 3 이다.\n② 9: 최소공배수를 324 로 잘못 구했을 때의 값이다. 3 의 지수만 크게 잡은 실수이다.\n④ 12: 최소공배수를 432 로 잘못 구했을 때의 값이다. 2 의 지수를 한 번 더 올린 실수이다.\n함정: 공통인 소인수의 작은 지수와 큰 지수를 서로 바꿔 쓰지 않도록 주의한다."
+  },
+  {
+   "q": "3(2x − 1) − 2(x − 4) 를 간단히 하면?",
+   "choices": [
+    "4x + 5",
+    "4x − 11",
+    "8x + 5",
+    "4x + 11"
+   ],
+   "answer": 0,
+   "explain": "정답: ① 4x + 5\n핵심 개념: 분배법칙으로 괄호를 풀고 동류항끼리 계산한다.\n풀이: 3(2x − 1) = 6x − 3 이고 −2(x − 4) = −2x + 8 이다. 합치면 x 항은 6x − 2x = 4x, 상수항은 −3 + 8 = 5 이다. 따라서 4x + 5 이다.\n오답 분석\n② 4x − 11: −2 에 −4 를 곱할 때 −8 로 계산한 결과이다. 올바른 값은 +8 이다.\n③ 8x + 5: −2x 를 +2x 로 계산하여 6x + 2x = 8x 로 만든 결과이다.\n④ 4x + 11: 3 × (−1) 의 부호를 놓쳐 +3 으로 계산한 결과이다.\n함정: 괄호 앞이 음수일 때 괄호 안 모든 항의 부호가 바뀐다."
+  },
+  {
+   "q": "한 개에 800원인 사과 x 개를 사고 전체 금액에서 20% 를 할인받았을 때 내야 할 금액을 문자를 사용한 식으로 나타내면?",
+   "choices": [
+    "640x 원",
+    "960x 원",
+    "160x 원",
+    "780x 원"
+   ],
+   "answer": 0,
+   "explain": "정답: ① 640x 원\n핵심 개념: a % 할인한 금액은 원래 금액에 (1 − a/100) 를 곱한다.\n풀이: 전체 금액은 800x 원이다. 20% 할인이므로 800x × (1 − 0.2) = 800x × 0.8 = 640x 원이다.\n오답 분석\n② 960x 원: 20% 를 할인이 아닌 인상으로 보고 1.2 를 곱한 값이다.\n③ 160x 원: 할인받는 금액 800 × 0.2 × x 이며 내야 할 금액이 아니다.\n④ 780x 원: 20% 대신 20원을 뺀 값 (800 − 20) × x 이다.\n함정: 할인액과 지불 금액을 구분하고, % 와 원 단위를 섞지 않는다."
+  },
+  {
+   "q": "x = −2 일 때 3x² − 2x + 1 의 값은?",
+   "choices": [
+    "9",
+    "−7",
+    "41",
+    "17"
+   ],
+   "answer": 3,
+   "explain": "정답: ④ 17\n핵심 개념: 문자에 음수를 대입할 때는 괄호를 씌워 대입한다.\n풀이: 3 × (−2)² − 2 × (−2) + 1 = 3 × 4 + 4 + 1 = 12 + 4 + 1 = 17 이다.\n오답 분석\n① 9: −2x 를 −4 로 계산하여 12 − 4 + 1 = 9 가 된 부호 실수이다.\n② −7: x² 을 −4 로 보아 3x² = −12 로 계산하면 −12 + 4 + 1 = −7 이다.\n③ 41: 3x 를 먼저 계산한 뒤 제곱하여 (−6)² = 36 으로 본 값 36 + 4 + 1 이다.\n함정: (−2)² 은 4 로 양수이며, −2 × (−2) 는 +4 가 된다."
+  },
+  {
+   "q": "등식 a = b 에 대한 설명 중 항상 성립한다고 할 수 없는 것은? (단, c 는 임의의 수)",
+   "choices": [
+    "a ÷ c = b ÷ c",
+    "a + c = b + c",
+    "a − c = b − c",
+    "a × c = b × c"
+   ],
+   "answer": 0,
+   "explain": "정답: ① a ÷ c = b ÷ c\n핵심 개념: 등식의 성질: 양변에 같은 수를 더하거나 빼거나 곱해도 성립하고, 0 이 아닌 수로 나눌 때만 성립한다.\n풀이: c = 0 이면 a ÷ c 와 b ÷ c 는 정의되지 않는다. 따라서 나눗셈은 c ≠ 0 이라는 조건이 있어야 성립하며 조건 없이는 항상 성립한다고 할 수 없다.\n오답 분석\n② a + c = b + c: 양변에 같은 수를 더해도 등식은 성립하므로 항상 옳다.\n③ a − c = b − c: 양변에서 같은 수를 빼도 등식은 성립하므로 항상 옳다.\n④ a × c = b × c: 양변에 같은 수를 곱해도 등식은 성립하므로 항상 옳다.\n함정: 곱셈은 c = 0 이어도 0 = 0 으로 성립하지만 나눗셈은 0 으로 나눌 수 없다."
+  },
+  {
+   "q": "일차방정식 (x − 3)/2 = (2x + 1)/3 − 1 의 해는?",
+   "choices": [
+    "x = 5",
+    "x = −10",
+    "x = 1",
+    "x = −5"
+   ],
+   "answer": 3,
+   "explain": "정답: ④ x = −5\n핵심 개념: 분모의 최소공배수를 양변에 곱해 분수를 없앤 뒤 이항한다.\n풀이: 양변에 6 을 곱하면 3(x − 3) = 2(2x + 1) − 6 이다. 3x − 9 = 4x + 2 − 6 = 4x − 4 이다. 3x − 4x = −4 + 9 이므로 −x = 5, x = −5 이다.\n오답 분석\n① x = 5: 3x − 9 = 4x − 4 를 정리할 때 이항 부호를 놓쳐 x = 5 가 된 값이다.\n② x = −10: 양변에 6 을 곱할 때 −1 에 6 을 곱하지 않아 3x − 9 = 4x + 1 이 된 결과이다.\n③ x = 1: 3(x − 3) 에서 −3 에는 3 을 곱하지 않아 3x − 3 = 4x − 4 가 된 결과이다.\n함정: 정수항 −1 에도 6 을 곱해 −6 으로 만들어야 한다."
+  },
+  {
+   "q": "연속하는 세 홀수의 합이 69 일 때 가장 큰 수는?",
+   "choices": [
+    "23",
+    "25",
+    "21",
+    "27"
+   ],
+   "answer": 1,
+   "explain": "정답: ② 25\n핵심 개념: 연속하는 홀수는 2 씩 차이 나므로 가운데 수를 x 로 두면 x − 2, x, x + 2 이다.\n풀이: (x − 2) + x + (x + 2) = 3x = 69 이므로 x = 23 이다. 세 수는 21, 23, 25 이고 합은 69 이다. 가장 큰 수는 25 이다.\n오답 분석\n① 23: 세 수의 가운데 수이다. 가장 큰 수는 여기에 2 를 더해야 한다.\n③ 21: 세 수 중 가장 작은 수이다.\n④ 27: 가운데 수 23 에 4 를 더한 값으로 네 번째 홀수에 해당한다.\n함정: 구한 x 가 가운데 수이므로 문제가 묻는 가장 큰 수로 다시 환산해야 한다."
+  },
+  {
+   "q": "A 지점에서 B 지점까지 시속 4 km 로 가고, 같은 길을 시속 6 km 로 되돌아왔더니 모두 5 시간이 걸렸다. A, B 사이의 거리는?",
+   "choices": [
+    "10 km",
+    "15 km",
+    "12 km",
+    "24 km"
+   ],
+   "answer": 2,
+   "explain": "정답: ③ 12 km\n핵심 개념: 시간 = 거리 ÷ 속력 으로 식을 세운다.\n풀이: 거리를 d km 라 하면 d/4 + d/6 = 5 이다. 양변에 12 를 곱하면 3d + 2d = 60 이므로 d = 12 이다. 검산하면 12/4 = 3 시간, 12/6 = 2 시간으로 합이 5 시간이다.\n오답 분석\n① 10 km: 가는 데 2.5 시간, 오는 데 약 1.67 시간으로 합이 약 4.17 시간이어서 5 시간이 안 된다.\n② 15 km: 가는 데 3.75 시간, 오는 데 2.5 시간으로 합이 6.25 시간이어서 5 시간을 넘는다.\n④ 24 km: 왕복 거리 2 × 12 이다. 문제는 한 방향 거리를 묻는다.\n함정: 평균 속력을 5 km/h 로 단순 평균하면 틀리고 가는 시간과 오는 시간을 따로 식에 넣어야 한다.",
+   "fig": "<svg viewBox=\"0 0 560 130\" xmlns=\"http://www.w3.org/2000/svg\" style=\"max-width:560px;width:100%\"><line x1=\"60\" y1=\"70\" x2=\"500\" y2=\"70\" stroke=\"currentColor\" stroke-width=\"3\"/><circle cx=\"60\" cy=\"70\" r=\"6\" fill=\"currentColor\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"500\" cy=\"70\" r=\"6\" fill=\"currentColor\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"60\" y=\"100\" fill=\"currentColor\" font-size=\"14\" text-anchor=\"middle\" font-family=\"sans-serif\">A</text><text x=\"500\" y=\"100\" fill=\"currentColor\" font-size=\"14\" text-anchor=\"middle\" font-family=\"sans-serif\">B</text><line x1=\"100\" y1=\"48\" x2=\"460\" y2=\"48\" stroke=\"#ff4d7d\" stroke-width=\"2\"/><text x=\"280\" y=\"38\" fill=\"#ff4d7d\" font-size=\"14\" text-anchor=\"middle\" font-family=\"sans-serif\">가는 길: 시속 4 km</text><text x=\"280\" y=\"122\" fill=\"currentColor\" font-size=\"14\" text-anchor=\"middle\" font-family=\"sans-serif\">오는 길: 시속 6 km (총 5시간)</text></svg>"
+  },
+  {
+   "q": "성냥개비로 그림과 같이 정사각형을 한 줄로 이어 붙여 만든다. 정사각형을 n 개 만들 때 필요한 성냥개비가 40 개이면 n 의 값은?",
+   "choices": [
+    "13",
+    "10",
+    "12",
+    "14"
+   ],
+   "answer": 0,
+   "explain": "정답: ① 13\n핵심 개념: 규칙을 찾아 n 번째 항을 문자식으로 나타낸 뒤 방정식을 푼다.\n풀이: 정사각형 1 개는 4 개, 이후 하나 늘 때마다 3 개씩 늘어난다. 따라서 4 + 3(n − 1) = 3n + 1 이다. 3n + 1 = 40 이므로 3n = 39, n = 13 이다.\n오답 분석\n② 10: 정사각형마다 4 개씩 필요하다고 보아 4n = 40 으로 계산한 값이다.\n③ 12: 3n + 4 = 40 으로 식을 세운 값이다. 처음 한 개만 4 개이므로 3n + 1 이다.\n④ 14: 3n = 42 로 근사한 값이다. 3 × 14 + 1 = 43 이어서 40 개와 다르다.\n함정: 공유하는 변은 한 번만 세므로 4n 이 아니다.",
+   "fig": "<svg viewBox=\"0 0 560 130\" xmlns=\"http://www.w3.org/2000/svg\" style=\"max-width:560px;width:100%\"><rect x=\"60\" y=\"20\" width=\"70\" height=\"70\" fill=\"none\" fill-opacity=\"1\" stroke=\"currentColor\" stroke-width=\"3\"/><rect x=\"130\" y=\"20\" width=\"70\" height=\"70\" fill=\"none\" fill-opacity=\"1\" stroke=\"currentColor\" stroke-width=\"3\"/><rect x=\"200\" y=\"20\" width=\"70\" height=\"70\" fill=\"none\" fill-opacity=\"1\" stroke=\"currentColor\" stroke-width=\"3\"/><text x=\"300\" y=\"118\" fill=\"currentColor\" font-size=\"14\" text-anchor=\"middle\" font-family=\"sans-serif\">정사각형 3 개 → 성냥개비 10 개</text></svg>"
+  },
+  {
+   "q": "그림과 같이 두 직선이 한 점에서 만날 때 (2x + 10)° 와 (3x − 20)° 가 맞꼭지각이다. x 의 값은?",
+   "choices": [
+    "70",
+    "30",
+    "110",
+    "10"
+   ],
+   "answer": 1,
+   "explain": "정답: ② 30\n핵심 개념: 맞꼭지각의 크기는 서로 같다.\n풀이: 2x + 10 = 3x − 20 에서 10 + 20 = 3x − 2x 이므로 x = 30 이다. 이때 각은 2 × 30 + 10 = 70° 와 3 × 30 − 20 = 70° 로 같다.\n오답 분석\n① 70: 맞꼭지각의 크기 70° 이다. x 의 값이 아니다.\n③ 110: 이웃하는 각의 크기 180° − 70° 이다.\n④ 10: 2x + 10 = 3x − 20 에서 10 과 −20 을 더한 뒤 부호를 바꾼 값으로 이항 계산이 틀렸다.\n함정: 문제가 묻는 것이 각의 크기인지 x 의 값인지 구분해야 한다.",
+   "fig": "<svg viewBox=\"0 0 560 180\" xmlns=\"http://www.w3.org/2000/svg\" style=\"max-width:560px;width:100%\"><line x1=\"189.9\" y1=\"153.1\" x2=\"370.1\" y2=\"26.9\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"189.9\" y1=\"26.9\" x2=\"370.1\" y2=\"153.1\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"218\" y=\"95\" fill=\"#ff4d7d\" font-size=\"14\" text-anchor=\"middle\" font-family=\"sans-serif\">(2x+10)°</text><text x=\"342\" y=\"95\" fill=\"#ff4d7d\" font-size=\"14\" text-anchor=\"middle\" font-family=\"sans-serif\">(3x−20)°</text></svg>"
+  },
+  {
+   "q": "그림에서 l // m 일 때 ∠x 의 크기는?",
+   "choices": [
+    "5°",
+    "105°",
+    "75°",
+    "140°"
+   ],
+   "answer": 2,
+   "explain": "정답: ③ 75°\n핵심 개념: 평행선에서 엇각의 크기는 같다. 꺾인 점을 지나는 평행선을 그어 풀 수 있다.\n풀이: 꺾인 점을 지나 l 에 평행한 직선을 그으면 위쪽 각은 엇각으로 40°, 아래쪽 각은 엇각으로 35° 이다. 따라서 x = 40° + 35° = 75° 이다.\n오답 분석\n① 5°: 두 각의 차 40° − 35° 이다. 꺾인 각은 합이다.\n② 105°: 75° 의 보각 180° − 75° 이다.\n④ 140°: 180° − 40° 로 한 각의 보각만 구한 값이다.\n함정: 평행선을 한 개 더 긋는 보조선이 핵심이며 두 각을 더하는 것이지 빼는 것이 아니다.",
+   "fig": "<svg viewBox=\"0 0 560 180\" xmlns=\"http://www.w3.org/2000/svg\" style=\"max-width:560px;width:100%\"><line x1=\"60\" y1=\"40\" x2=\"520\" y2=\"40\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"60\" y1=\"140\" x2=\"520\" y2=\"140\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"540\" y=\"45\" fill=\"currentColor\" font-size=\"14\" text-anchor=\"middle\" font-family=\"sans-serif\">l</text><text x=\"540\" y=\"145\" fill=\"currentColor\" font-size=\"14\" text-anchor=\"middle\" font-family=\"sans-serif\">m</text><line x1=\"240.4\" y1=\"40\" x2=\"300\" y2=\"90\" stroke=\"#ff4d7d\" stroke-width=\"2\"/><line x1=\"228.6\" y1=\"140\" x2=\"300\" y2=\"90\" stroke=\"#ff4d7d\" stroke-width=\"2\"/><text x=\"290.4\" y=\"62\" fill=\"currentColor\" font-size=\"14\" text-anchor=\"middle\" font-family=\"sans-serif\">40°</text><text x=\"280.6\" y=\"132\" fill=\"currentColor\" font-size=\"14\" text-anchor=\"middle\" font-family=\"sans-serif\">35°</text><text x=\"276\" y=\"95\" fill=\"#ff4d7d\" font-size=\"14\" text-anchor=\"middle\" font-family=\"sans-serif\">x°</text><circle cx=\"300\" cy=\"90\" r=\"3\" fill=\"#ff4d7d\" stroke=\"#ff4d7d\" stroke-width=\"2\"/></svg>"
+  },
+  {
+   "q": "그림은 정육각형의 한 꼭짓점에서 모든 대각선을 그은 것이다. 이때 생기는 삼각형의 개수와 정육각형의 내각의 크기의 합을 바르게 짝지은 것은?",
+   "choices": [
+    "3개, 540°",
+    "6개, 1080°",
+    "5개, 900°",
+    "4개, 720°"
+   ],
+   "answer": 3,
+   "explain": "정답: ④ 4개, 720°\n핵심 개념: n 각형의 한 꼭짓점에서 대각선을 그으면 (n − 2) 개의 삼각형이 생기고 내각의 합은 180° × (n − 2) 이다.\n풀이: 정육각형에서 한 꼭짓점에서 그을 수 있는 대각선은 6 − 3 = 3 개이고 삼각형은 6 − 2 = 4 개이다. 내각의 합은 180° × 4 = 720° 이다. 한 내각은 720° ÷ 6 = 120° 이다.\n오답 분석\n① 3개, 540°: 삼각형 개수를 3 개로 세어 180° × 3 = 540° 로 계산한 값이다.\n② 6개, 1080°: 육각형이라 6 개로 착각하여 180° × 6 = 1080° 로 계산한 값이다.\n③ 5개, 900°: 칠각형의 값이다. 변의 개수에서 2 를 빼야 한다.\n함정: 삼각형의 개수는 변의 수 n 이 아니라 n − 2 이다.",
+   "fig": "<svg viewBox=\"0 0 560 200\" xmlns=\"http://www.w3.org/2000/svg\" style=\"max-width:560px;width:100%\"><polygon points=\"230,100 190,30.7 110,30.7 70,100 110,169.3 190,169.3\" fill=\"none\" fill-opacity=\"1\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"230\" y1=\"100\" x2=\"110\" y2=\"30.7\" stroke=\"#ff4d7d\" stroke-width=\"2\"/><line x1=\"230\" y1=\"100\" x2=\"70\" y2=\"100\" stroke=\"#ff4d7d\" stroke-width=\"2\"/><line x1=\"230\" y1=\"100\" x2=\"110\" y2=\"169.3\" stroke=\"#ff4d7d\" stroke-width=\"2\"/><text x=\"400\" y=\"100\" fill=\"currentColor\" font-size=\"14\" text-anchor=\"middle\" font-family=\"sans-serif\">한 꼭짓점에서 대각선 3 개</text></svg>"
+  },
+  {
+   "q": "호의 길이가 4π, 넓이가 12π 인 부채꼴의 중심각의 크기는?",
+   "choices": [
+    "60°",
+    "120°",
+    "90°",
+    "150°"
+   ],
+   "answer": 1,
+   "explain": "정답: ② 120°\n핵심 개념: 부채꼴의 넓이 S = (1/2) r l, 호의 길이 l = 2πr × (x/360) 이다.\n풀이: 12π = (1/2) × r × 4π 이므로 r = 6 이다. 호의 길이 4π = 2π × 6 × (x/360) 에서 12π × x/360 = 4π 이므로 x = 120 이다. 넓이로 확인하면 36π × 1/3 = 12π 이다.\n오답 분석\n① 60°: 반지름을 12 로 잘못 구했을 때 나오는 값이다. 올바른 반지름은 6 이다.\n③ 90°: 반지름을 8 로 잘못 구했을 때 나오는 값이다.\n④ 150°: 반지름을 4.8 로 잘못 구했을 때 나오는 값이다.\n함정: 넓이 공식에 1/2 이 붙는다는 점을 놓치면 반지름이 두 배로 틀어진다.",
+   "fig": "<svg viewBox=\"0 0 560 190\" xmlns=\"http://www.w3.org/2000/svg\" style=\"max-width:560px;width:100%\"><path d=\"M170 160 L290 160 A120 120 0 0 0 110 56.1 Z\" fill=\"currentColor\" fill-opacity=\"0.15\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"206\" y=\"152\" fill=\"#ff4d7d\" font-size=\"14\" text-anchor=\"middle\" font-family=\"sans-serif\">x°</text><text x=\"430\" y=\"60\" fill=\"currentColor\" font-size=\"14\" text-anchor=\"middle\" font-family=\"sans-serif\">호의 길이 4π</text><text x=\"430\" y=\"95\" fill=\"currentColor\" font-size=\"14\" text-anchor=\"middle\" font-family=\"sans-serif\">넓이 12π</text><text x=\"430\" y=\"130\" fill=\"currentColor\" font-size=\"14\" text-anchor=\"middle\" font-family=\"sans-serif\">(중심각 x° 를 구한다)</text></svg>"
+  },
+  {
+   "q": "삼각형의 합동 조건이 아닌 것은?",
+   "choices": [
+    "세 쌍의 변의 길이가 각각 같다.",
+    "두 쌍의 변의 길이가 각각 같고, 그 끼인각의 크기가 같다.",
+    "두 쌍의 변의 길이가 각각 같고, 그 끼인각이 아닌 다른 한 각의 크기가 같다.",
+    "한 쌍의 변의 길이가 같고, 그 양 끝 각의 크기가 각각 같다."
+   ],
+   "answer": 2,
+   "explain": "정답: ③ 두 쌍의 변의 길이가 각각 같고, 그 끼인각이 아닌 다른 한 각의 크기가 같다.\n핵심 개념: 삼각형의 합동 조건은 SSS, SAS, ASA 세 가지이다.\n풀이: 두 변과 끼인각이 아닌 각만 같은 경우 삼각형이 하나로 정해지지 않아 모양이 다른 삼각형이 두 개 만들어질 수 있다. 그래서 SSA 는 합동 조건이 아니다.\n오답 분석\n① 세 쌍의 변의 길이가 각각 같다.: SSS 합동 조건이다.\n② 두 쌍의 변의 길이가 각각 같고, 그 끼인각의 크기가 같다.: SAS 합동 조건이다.\n④ 한 쌍의 변의 길이가 같고, 그 양 끝 각의 크기가 각각 같다.: ASA 합동 조건이다.\n함정: SSA 는 겉보기에 SAS 와 비슷하지만 각이 두 변의 사이에 있지 않다."
+  },
+  {
+   "q": "세 변의 길이가 다음과 같을 때 삼각형을 작도할 수 있는 것은?",
+   "choices": [
+    "2 cm, 3 cm, 5 cm",
+    "4 cm, 5 cm, 10 cm",
+    "3 cm, 4 cm, 6 cm",
+    "6 cm, 6 cm, 13 cm"
+   ],
+   "answer": 2,
+   "explain": "정답: ③ 3 cm, 4 cm, 6 cm\n핵심 개념: 삼각형이 만들어지려면 (가장 긴 변의 길이) < (나머지 두 변의 길이의 합) 이어야 한다.\n풀이: 3, 4, 6 에서 가장 긴 변 6 은 나머지 두 변의 합 3 + 4 = 7 보다 작아 조건을 만족한다. 나머지는 모두 같거나 크다.\n오답 분석\n① 2 cm, 3 cm, 5 cm: 가장 긴 변 5 가 나머지 두 변의 합 2 + 3 = 5 와 같아 삼각형이 만들어지지 않는다.\n② 4 cm, 5 cm, 10 cm: 가장 긴 변 10 이 나머지 두 변의 합 9 보다 길어 불가능하다.\n④ 6 cm, 6 cm, 13 cm: 가장 긴 변 13 이 나머지 두 변의 합 12 보다 길어 불가능하다.\n함정: 합이 같은 경우(2, 3, 5)는 세 점이 일직선이 되어 삼각형이 되지 않는다."
+  },
+  {
+   "q": "직각을 낀 두 변의 길이가 3, 4 인 직각삼각형을 길이가 4 인 변을 축으로 하여 1 회전시킬 때 생기는 입체도형의 부피는?",
+   "choices": [
+    "12π",
+    "16π",
+    "36π",
+    "48π"
+   ],
+   "answer": 0,
+   "explain": "정답: ① 12π\n핵심 개념: 직각삼각형을 한 변을 축으로 회전하면 원뿔이 되고 부피는 (1/3) × 밑넓이 × 높이 이다.\n풀이: 축으로 쓰는 변 4 가 높이이고, 나머지 변 3 이 밑면의 반지름이다. 부피는 (1/3) × π × 3² × 4 = 12π 이다.\n오답 분석\n② 16π: 길이 3 인 변을 축으로 회전시킨 원뿔의 부피 (1/3)·π·4²·3 = 16π 이다.\n③ 36π: 원뿔의 부피 공식에서 1/3 을 빠뜨린 π·3²·4 = 36π 이다.\n④ 48π: 축을 3 으로 잡고 1/3 도 빠뜨린 π·4²·3 = 48π 이다.\n함정: 축이 되는 변이 높이이므로 어느 변을 축으로 쓰는지 먼저 확인해야 한다.",
+   "fig": "<svg viewBox=\"0 0 560 200\" xmlns=\"http://www.w3.org/2000/svg\" style=\"max-width:560px;width:100%\"><polygon points=\"120,160 120,40 210,160\" fill=\"none\" fill-opacity=\"1\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"120\" y1=\"20\" x2=\"120\" y2=\"180\" stroke=\"#ff4d7d\" stroke-width=\"2\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"15\" fill=\"#ff4d7d\" font-size=\"14\" text-anchor=\"middle\" font-family=\"sans-serif\">축</text><text x=\"98\" y=\"105\" fill=\"currentColor\" font-size=\"14\" text-anchor=\"middle\" font-family=\"sans-serif\">4</text><text x=\"165\" y=\"182\" fill=\"currentColor\" font-size=\"14\" text-anchor=\"middle\" font-family=\"sans-serif\">3</text><rect x=\"120\" y=\"150\" width=\"10\" height=\"10\" fill=\"none\" fill-opacity=\"1\" stroke=\"currentColor\" stroke-width=\"1\"/><text x=\"400\" y=\"100\" fill=\"currentColor\" font-size=\"14\" text-anchor=\"middle\" font-family=\"sans-serif\">길이 4 인 변을 축으로 1 회전</text></svg>"
+  },
+  {
+   "q": "밑면의 반지름이 3, 높이가 5 인 원기둥의 겉넓이는?",
+   "choices": [
+    "30π",
+    "48π",
+    "39π",
+    "45π"
+   ],
+   "answer": 1,
+   "explain": "정답: ② 48π\n핵심 개념: 원기둥의 겉넓이 = 2 × (밑넓이) + (옆넓이) 이고 옆넓이는 (밑면 둘레) × (높이) 이다.\n풀이: 밑넓이는 π × 3² = 9π 이므로 두 밑면의 합은 18π 이다. 옆넓이는 2π × 3 × 5 = 30π 이다. 따라서 겉넓이는 18π + 30π = 48π 이다.\n오답 분석\n① 30π: 옆넓이 2π × 3 × 5 만 구한 값이다. 밑면 두 개가 빠졌다.\n③ 39π: 옆넓이 30π 에 밑면 1 개 9π 만 더한 값이다.\n④ 45π: πr²h = 45π 는 부피 값이다.\n함정: 부피와 겉넓이를 구별하고 밑면이 위아래 두 개임을 잊지 않는다.",
+   "fig": "<svg viewBox=\"0 0 560 260\" xmlns=\"http://www.w3.org/2000/svg\" style=\"max-width:560px;width:100%\"><circle cx=\"280\" cy=\"38\" r=\"36\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"280\" y=\"43\" fill=\"#ff4d7d\" font-size=\"14\" text-anchor=\"middle\" font-family=\"sans-serif\">r=3</text><rect x=\"167\" y=\"76\" width=\"226\" height=\"80\" fill=\"none\" fill-opacity=\"1\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"280\" y=\"122\" fill=\"currentColor\" font-size=\"14\" text-anchor=\"middle\" font-family=\"sans-serif\">옆면: 가로 = 밑면 둘레</text><text x=\"402\" y=\"120\" fill=\"#ff4d7d\" font-size=\"14\" text-anchor=\"start\" font-family=\"sans-serif\">5</text><circle cx=\"280\" cy=\"196\" r=\"36\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"280\" y1=\"196\" x2=\"316\" y2=\"196\" stroke=\"#ff4d7d\" stroke-width=\"2\"/><text x=\"298\" y=\"188\" fill=\"#ff4d7d\" font-size=\"14\" text-anchor=\"middle\" font-family=\"sans-serif\">3</text><text x=\"480\" y=\"60\" fill=\"currentColor\" font-size=\"14\" text-anchor=\"middle\" font-family=\"sans-serif\">반지름 r = 3</text><text x=\"480\" y=\"90\" fill=\"currentColor\" font-size=\"14\" text-anchor=\"middle\" font-family=\"sans-serif\">높이 h = 5</text></svg>"
+  },
+  {
+   "q": "그림과 같이 구가 원기둥에 꼭 맞게 들어 있다. 원기둥의 부피가 54π 일 때 구의 부피는?",
+   "choices": [
+    "27π",
+    "18π",
+    "81π",
+    "36π"
+   ],
+   "answer": 3,
+   "explain": "정답: ④ 36π\n핵심 개념: 구가 꼭 맞게 들어간 원기둥에서 높이는 지름 2r 이고, (구) : (원기둥) = 2 : 3 이다.\n풀이: 원기둥 부피는 π r² × 2r = 2π r³ = 54π 이므로 r³ = 27, r = 3 이다. 구의 부피는 (4/3)π r³ = (4/3) × π × 27 = 36π 이다. 비로도 54π × 2/3 = 36π 이다.\n오답 분석\n① 27π: 원기둥 부피의 1/2 로 잘못 계산한 값이다.\n② 18π: 원기둥 부피의 1/3 로 잘못 계산한 값이다.\n③ 81π: 원기둥 부피의 3/2 배로 구와 원기둥의 비를 거꾸로 쓴 값이다.\n함정: 구와 원기둥의 부피 비를 2 : 3 으로 기억하되 어느 쪽이 큰지 방향을 틀리지 않는다.",
+   "fig": "<svg viewBox=\"0 0 560 200\" xmlns=\"http://www.w3.org/2000/svg\" style=\"max-width:560px;width:100%\"><rect x=\"190\" y=\"20\" width=\"160\" height=\"160\" fill=\"none\" fill-opacity=\"1\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"270\" cy=\"100\" r=\"80\" fill=\"none\" stroke=\"#ff4d7d\" stroke-width=\"2\"/><text x=\"270\" y=\"106\" fill=\"#ff4d7d\" font-size=\"14\" text-anchor=\"middle\" font-family=\"sans-serif\">구</text><text x=\"480\" y=\"100\" fill=\"currentColor\" font-size=\"14\" text-anchor=\"middle\" font-family=\"sans-serif\">원기둥 부피 54π</text></svg>"
+  },
+  {
+   "q": "선분 AB 위에 점 M 은 AB 의 중점이고, 점 N 은 선분 MB 의 중점이다. AN = 18 일 때 AB 의 길이는?",
+   "choices": [
+    "36",
+    "24",
+    "27",
+    "20"
+   ],
+   "answer": 1,
+   "explain": "정답: ② 24\n핵심 개념: 중점의 정의: 선분을 이등분하는 점이다. 길이를 AB 의 비율로 나타낸다.\n풀이: AB = 4k 로 두면 AM = 2k, MB = 2k 이고 N 은 MB 의 중점이므로 MN = k 이다. AN = 2k + k = 3k = 18 이므로 k = 6 이고 AB = 24 이다.\n오답 분석\n① 36: AN 을 AB 의 절반으로 보면 AB = 36 이 되지만 AN 은 AB 의 3/4 이다.\n③ 27: AN 을 AB 의 2/3 로 보아 구한 값이다.\n④ 20: AN 에 2 만 더해 근사한 값으로 비례 관계를 고려하지 않았다.\n함정: N 이 MB 의 중점이므로 AN 은 AB 의 1/2 이 아니라 3/4 이다.",
+   "fig": "<svg viewBox=\"0 0 560 120\" xmlns=\"http://www.w3.org/2000/svg\" style=\"max-width:560px;width:100%\"><line x1=\"40\" y1=\"60\" x2=\"520\" y2=\"60\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"40\" cy=\"60\" r=\"5\" fill=\"currentColor\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"280\" cy=\"60\" r=\"5\" fill=\"currentColor\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"400\" cy=\"60\" r=\"5\" fill=\"currentColor\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"520\" cy=\"60\" r=\"5\" fill=\"currentColor\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"40\" y=\"88\" fill=\"currentColor\" font-size=\"14\" text-anchor=\"middle\" font-family=\"sans-serif\">A</text><text x=\"280\" y=\"88\" fill=\"currentColor\" font-size=\"14\" text-anchor=\"middle\" font-family=\"sans-serif\">M</text><text x=\"400\" y=\"88\" fill=\"currentColor\" font-size=\"14\" text-anchor=\"middle\" font-family=\"sans-serif\">N</text><text x=\"520\" y=\"88\" fill=\"currentColor\" font-size=\"14\" text-anchor=\"middle\" font-family=\"sans-serif\">B</text><line x1=\"40\" y1=\"36\" x2=\"400\" y2=\"36\" stroke=\"#ff4d7d\" stroke-width=\"2\"/><text x=\"220\" y=\"28\" fill=\"#ff4d7d\" font-size=\"14\" text-anchor=\"middle\" font-family=\"sans-serif\">AN = 18</text></svg>"
+  },
+  {
+   "q": "어느 반 학생 40 명의 수학 점수를 조사하여 그린 히스토그램이다. 점수가 70 점 이상인 학생의 상대도수는?",
+   "choices": [
+    "0.4",
+    "0.35",
+    "0.65",
+    "0.25"
+   ],
+   "answer": 2,
+   "explain": "정답: ③ 0.65\n핵심 개념: 상대도수 = (그 계급의 도수) ÷ (도수의 총합) 이다.\n풀이: 70 점 이상은 70~80 점의 16 명과 80~90 점의 10 명이므로 26 명이다. 상대도수는 26 ÷ 40 = 0.65 이다. 70 점 미만은 14 명이며 0.35 이고 합은 1 이다.\n오답 분석\n① 0.4: 도수가 가장 큰 계급 70~80 점의 상대도수 16/40 이다.\n② 0.35: 70 점 미만 학생 14 명의 상대도수 14/40 이다.\n④ 0.25: 80~90 점 계급만의 상대도수 10/40 이다.\n함정: 한 계급이 아니라 두 계급을 합한 도수를 써야 한다.",
+   "fig": "<svg viewBox=\"0 0 560 215\" xmlns=\"http://www.w3.org/2000/svg\" style=\"max-width:560px;width:100%\"><line x1=\"70\" y1=\"20\" x2=\"70\" y2=\"170\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"70\" y1=\"170\" x2=\"500\" y2=\"170\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"60\" y=\"175\" fill=\"currentColor\" font-size=\"14\" text-anchor=\"end\" font-family=\"sans-serif\">0</text><line x1=\"66\" y1=\"170\" x2=\"70\" y2=\"170\" stroke=\"currentColor\" stroke-width=\"1\"/><text x=\"60\" y=\"139\" fill=\"currentColor\" font-size=\"14\" text-anchor=\"end\" font-family=\"sans-serif\">4</text><line x1=\"66\" y1=\"134\" x2=\"70\" y2=\"134\" stroke=\"currentColor\" stroke-width=\"1\"/><text x=\"60\" y=\"103\" fill=\"currentColor\" font-size=\"14\" text-anchor=\"end\" font-family=\"sans-serif\">8</text><line x1=\"66\" y1=\"98\" x2=\"70\" y2=\"98\" stroke=\"currentColor\" stroke-width=\"1\"/><text x=\"60\" y=\"67\" fill=\"currentColor\" font-size=\"14\" text-anchor=\"end\" font-family=\"sans-serif\">12</text><line x1=\"66\" y1=\"62\" x2=\"70\" y2=\"62\" stroke=\"currentColor\" stroke-width=\"1\"/><text x=\"60\" y=\"31\" fill=\"currentColor\" font-size=\"14\" text-anchor=\"end\" font-family=\"sans-serif\">16</text><line x1=\"66\" y1=\"26\" x2=\"70\" y2=\"26\" stroke=\"currentColor\" stroke-width=\"1\"/><rect x=\"90\" y=\"134\" width=\"90\" height=\"36\" fill=\"#ff4d7d\" fill-opacity=\"0.15\" stroke=\"#ff4d7d\" stroke-width=\"2\"/><text x=\"135\" y=\"194\" fill=\"currentColor\" font-size=\"14\" text-anchor=\"middle\" font-family=\"sans-serif\">50~60</text><text x=\"135\" y=\"128\" fill=\"currentColor\" font-size=\"14\" text-anchor=\"middle\" font-family=\"sans-serif\">4</text><rect x=\"190\" y=\"80\" width=\"90\" height=\"90\" fill=\"#ff4d7d\" fill-opacity=\"0.15\" stroke=\"#ff4d7d\" stroke-width=\"2\"/><text x=\"235\" y=\"194\" fill=\"currentColor\" font-size=\"14\" text-anchor=\"middle\" font-family=\"sans-serif\">60~70</text><text x=\"235\" y=\"74\" fill=\"currentColor\" font-size=\"14\" text-anchor=\"middle\" font-family=\"sans-serif\">10</text><rect x=\"290\" y=\"26\" width=\"90\" height=\"144\" fill=\"#ff4d7d\" fill-opacity=\"0.15\" stroke=\"#ff4d7d\" stroke-width=\"2\"/><text x=\"335\" y=\"194\" fill=\"currentColor\" font-size=\"14\" text-anchor=\"middle\" font-family=\"sans-serif\">70~80</text><text x=\"335\" y=\"20\" fill=\"currentColor\" font-size=\"14\" text-anchor=\"middle\" font-family=\"sans-serif\">16</text><rect x=\"390\" y=\"80\" width=\"90\" height=\"90\" fill=\"#ff4d7d\" fill-opacity=\"0.15\" stroke=\"#ff4d7d\" stroke-width=\"2\"/><text x=\"435\" y=\"194\" fill=\"currentColor\" font-size=\"14\" text-anchor=\"middle\" font-family=\"sans-serif\">80~90</text><text x=\"435\" y=\"74\" fill=\"currentColor\" font-size=\"14\" text-anchor=\"middle\" font-family=\"sans-serif\">10</text><text x=\"530\" y=\"194\" fill=\"currentColor\" font-size=\"14\" text-anchor=\"middle\" font-family=\"sans-serif\">(점)</text></svg>"
+  }
+ ]
+}
