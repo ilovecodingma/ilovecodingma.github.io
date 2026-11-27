@@ -1,19 +1,20 @@
 {
- "at": "2026-11-27 14:30",
+ "at": "2026-11-27 15:30",
  "nitems": 526,
  "cands": [
   {
    "kw": "내년",
-   "nsrc": 6,
+   "nsrc": 7,
    "srcs": [
     "SBS",
     "뉴시스",
     "세계일보",
     "연합뉴스",
+    "조선일보",
     "한국경제",
     "헤럴드경제"
    ],
-   "n": 23,
+   "n": 24,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -106,36 +107,36 @@
    ]
   },
   {
-   "kw": "까지",
+   "kw": "부부",
    "nsrc": 5,
    "srcs": [
+    "SBS",
     "뉴시스",
-    "동아일보",
-    "세계일보",
     "연합뉴스",
-    "조선일보"
+    "조선일보",
+    "헤럴드경제"
    ],
    "n": 8,
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "'M:리부트'부터 '환승연애 5'까지…티빙 내년 콘텐츠 라인업",
-     "link": "https://www.yna.co.kr/view/AKR20261126121900005"
+     "title": "특수요원 황정민·형사 염정아 부부 귀환…'크로스2' 내달 공개",
+     "link": "https://www.yna.co.kr/view/AKR20261126054600005"
     },
     {
-     "src": "동아일보",
-     "title": "‘팬덤 화력’의 중요성…임영웅부터 치이카와까지, 달라진 흥행 공식",
-     "link": "https://sports.donga.com/ent/article/all/20261126/135095800/1"
+     "src": "연합뉴스",
+     "title": "배우 고규필·가수 에이민 부부 득녀…\"인생 가장 잘한 일\"",
+     "link": "https://www.yna.co.kr/view/AKR20261123138400005"
     },
     {
-     "src": "세계일보",
-     "title": "4개 국어에 카이스트 조기 입학·상위 1%까지…남다른 재능 뽐내는 개그맨 2세들",
-     "link": "https://www.segye.com/newsView/20261125516234"
+     "src": "헤럴드경제",
+     "title": "‘이혼할 결심’ 2년 만에…정대세 부부, 13살 터울 셋째 임신 ‘눈물바다’",
+     "link": "https://biz.heraldcorp.com/article/10951404"
     },
     {
-     "src": "뉴시스",
-     "title": "'64kg에서 48kg까지' 정채연…\"냉장고 앞 체중계·줄자\"",
-     "link": "https://www.newsis.com/view/NISX20261124_0003881365"
+     "src": "SBS",
+     "title": "[스브스夜] '동상이몽2' 여에스더, ♥홍혜걸의 2만 8천원 짜리 팔찌 선물에도 '행복'…가수 강균성 부부 합류 예고",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008861876&plink=RSSLINK&cooper=RSSREADER"
     }
    ]
   },
@@ -174,11 +175,45 @@
    ]
   },
   {
-   "kw": "청룡영화",
+   "kw": "이동연",
    "nsrc": 5,
    "srcs": [
-    "SBS",
     "뉴시스",
+    "동아일보",
+    "조선일보",
+    "한국경제",
+    "헤럴드경제"
+   ],
+   "n": 7,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "이동연, 팬레터 인증샷 찍고 버렸나…봉인 스티커도 그대로 [SD이슈]",
+     "link": "https://sports.donga.com/ent/article/all/20261127/135102001/1"
+    },
+    {
+     "src": "한국경제",
+     "title": "'분리수거장에 팬레터가?'…뮤지컬 배우 이동연 결국 사과",
+     "link": "https://www.hankyung.com/article/202611274651H"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "“선물 챙기고 팬레터는 버려”…배우 이동연 논란에 입 열었다 “소중히 보관했는데 실수로”",
+     "link": "https://biz.heraldcorp.com/article/10951762"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "뮤지컬 배우 이동연, 팬 편지 읽지도 않고 버렸다 들통",
+     "link": "https://biz.heraldcorp.com/article/10951210"
+    }
+   ]
+  },
+  {
+   "kw": "까지",
+   "nsrc": 5,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
     "세계일보",
     "연합뉴스",
     "조선일보"
@@ -187,57 +222,23 @@
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "청룡영화상 작품상에 '호프'…설경구·전도연 남녀주연상 석권",
-     "link": "https://www.yna.co.kr/view/AKR20261125187600005"
+     "title": "'M:리부트'부터 '환승연애 5'까지…티빙 내년 콘텐츠 라인업",
+     "link": "https://www.yna.co.kr/view/AKR20261126121900005"
+    },
+    {
+     "src": "동아일보",
+     "title": "‘팬덤 화력’의 중요성…임영웅부터 치이카와까지, 달라진 흥행 공식",
+     "link": "https://sports.donga.com/ent/article/all/20261126/135095800/1"
     },
     {
      "src": "세계일보",
-     "title": "'만약에 우리' 문가영·구교환, 청룡영화상서 장난기 가득한 모습…여전한 케미",
-     "link": "https://www.segye.com/newsView/20261126517995"
-    },
-    {
-     "src": "SBS",
-     "title": "설경구·전도연 나란히 남녀주연상…청룡영화상서 '석권'",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008863866&plink=RSSLINK&cooper=RSSREADER"
+     "title": "4개 국어에 카이스트 조기 입학·상위 1%까지…남다른 재능 뽐내는 개그맨 2세들",
+     "link": "https://www.segye.com/newsView/20261125516234"
     },
     {
      "src": "뉴시스",
-     "title": "문근영, 청룡영화상 앞머리 왜 저랬나 했더니 \"쓰러져서 다쳤어요\"",
-     "link": "https://www.newsis.com/view/NISX20261127_0003885571"
-    }
-   ]
-  },
-  {
-   "kw": "아이돌",
-   "nsrc": 5,
-   "srcs": [
-    "뉴시스",
-    "세계일보",
-    "연합뉴스",
-    "조선일보",
-    "한국경제"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "엠넷, 日 반다이 남코와 버추얼 아이돌 서바이벌 제작",
-     "link": "https://www.yna.co.kr/view/AKR20261127037300005"
-    },
-    {
-     "src": "한국경제",
-     "title": "HK직캠|설경구, '팬들 마음 흔드는 지천명 아이돌'",
-     "link": "https://www.hankyung.com/article/202611260705H"
-    },
-    {
-     "src": "세계일보",
-     "title": "‘비주류 아이돌’ 허간민, 유튜브 채널 개설…하루 만에 6만명 모였다",
-     "link": "https://www.segye.com/newsView/20261126513348"
-    },
-    {
-     "src": "뉴시스",
-     "title": "엠넷(Mnet), 日 반다이 남코 손잡고 첫 버추얼 아이돌 서바이벌",
-     "link": "https://www.newsis.com/view/NISX20261126_0003884077"
+     "title": "'64kg에서 48kg까지' 정채연…\"냉장고 앞 체중계·줄자\"",
+     "link": "https://www.newsis.com/view/NISX20261124_0003881365"
     }
    ]
   },
@@ -276,35 +277,35 @@
    ]
   },
   {
-   "kw": "양홍원",
+   "kw": "신민아",
    "nsrc": 4,
    "srcs": [
+    "SBS",
     "뉴시스",
-    "동아일보",
-    "세계일보",
-    "조선일보"
+    "조선일보",
+    "한국경제"
    ],
-   "n": 10,
+   "n": 9,
    "headlines": [
     {
-     "src": "동아일보",
-     "title": "“너나 잘해라” ‘불륜 의혹’ 양홍원, 후배 득남 축하했다 뭇매",
-     "link": "https://sports.donga.com/ent/article/all/20261127/135102064/1"
+     "src": "한국경제",
+     "title": "[포토+] 신민아, '강렬한 레드의 유혹'",
+     "link": "https://www.hankyung.com/article/202611260765H"
     },
     {
-     "src": "세계일보",
-     "title": "양홍원, 원현주와 결혼 한 달 만에 파경…“다시 버텨내고 가지겠어”",
-     "link": "https://www.segye.com/newsView/20261126514780"
+     "src": "한국경제",
+     "title": "HK직캠|신민아, '레드카펫 위 우아한 여신'",
+     "link": "https://www.hankyung.com/article/202611260708H"
+    },
+    {
+     "src": "SBS",
+     "title": "떠나는 신민아 붙잡고 애원하는 주지훈…'재혼황후', 오늘(25일) 최종회 공개",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008862466&plink=RSSLINK&cooper=RSSREADER"
     },
     {
      "src": "뉴시스",
-     "title": "'불륜설' 양홍원, 후배 득남에 \"잘해라\" 댓글…이혼 직후 역풍",
-     "link": "https://www.newsis.com/view/NISX20261127_0003885532"
-    },
-    {
-     "src": "뉴시스",
-     "title": "\"모텔만 들어가도 불륜\"…양홍원·원현주, 결혼 5주 만 파경 재조명",
-     "link": "https://www.newsis.com/view/NISX20261127_0003885427"
+     "title": "임예진, '재혼황후' 신민아 극찬…\"트레이닝복 입고 찍어도 예뻐\"",
+     "link": "https://www.newsis.com/view/NISX20261127_0003885952"
     }
    ]
   },
@@ -342,6 +343,39 @@
    ]
   },
   {
+   "kw": "양홍원",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "세계일보",
+    "조선일보"
+   ],
+   "n": 8,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "“너나 잘해라” ‘불륜 의혹’ 양홍원, 후배 득남 축하했다 뭇매",
+     "link": "https://sports.donga.com/ent/article/all/20261127/135102064/1"
+    },
+    {
+     "src": "세계일보",
+     "title": "양홍원, 원현주와 결혼 한 달 만에 파경…“다시 버텨내고 가지겠어”",
+     "link": "https://www.segye.com/newsView/20261126514780"
+    },
+    {
+     "src": "뉴시스",
+     "title": "'불륜설' 양홍원, 후배 득남에 \"잘해라\" 댓글…이혼 직후 역풍",
+     "link": "https://www.newsis.com/view/NISX20261127_0003885532"
+    },
+    {
+     "src": "뉴시스",
+     "title": "\"모텔만 들어가도 불륜\"…양홍원·원현주, 결혼 5주 만 파경 재조명",
+     "link": "https://www.newsis.com/view/NISX20261127_0003885427"
+    }
+   ]
+  },
+  {
    "kw": "폭설",
    "nsrc": 4,
    "srcs": [
@@ -371,39 +405,6 @@
      "src": "SBS",
      "title": "'폭설', 8일 연속 박스오피스 1위…누적 관객 50만 돌파",
      "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008864336&plink=RSSLINK&cooper=RSSREADER"
-    }
-   ]
-  },
-  {
-   "kw": "예고",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "연합뉴스",
-    "조선일보",
-    "한국경제"
-   ],
-   "n": 7,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "[주말극장가] 김윤석·구교환 '폭설' 9일째 1위…흥행 예고",
-     "link": "https://www.yna.co.kr/view/AKR20261127039400005"
-    },
-    {
-     "src": "한국경제",
-     "title": "\"모두 무릎 꿇을 것\"…'어벤져스: 둠스데이' 역대급 결전 예고",
-     "link": "https://www.hankyung.com/article/202611258616H"
-    },
-    {
-     "src": "SBS",
-     "title": "'나인 투 식스' 고수 \"15년 만의 로맨스 복귀 너무 좋아\"…'달빛 남주'의 은은한 매력 예고",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008863170&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "SBS",
-     "title": "[스브스夜] '동상이몽2' 여에스더, ♥홍혜걸의 2만 8천원 짜리 팔찌 선물에도 '행복'…가수 강균성 부부 합류 예고",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008861876&plink=RSSLINK&cooper=RSSREADER"
     }
    ]
   },
@@ -441,76 +442,10 @@
    ]
   },
   {
-   "kw": "리센느",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "세계일보",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 7,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "국가별 최고 인기 K팝 스타는…韓 리센느·中 에스파·日 BTS",
-     "link": "https://www.yna.co.kr/view/AKR20261126086700005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "[테크스냅] 쿠팡플레이, 리센느 첫 단독 콘서트 예매 일정 공개",
-     "link": "https://www.yna.co.kr/view/AKR20261123124700017"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "[가요소식] 한해·문세윤, 리센느 제나와 신곡 '러브 어게인'",
-     "link": "https://www.yna.co.kr/view/AKR20261123081800005"
-    },
-    {
-     "src": "세계일보",
-     "title": "K팝 최애는… ‘韓 리센느·中 에스파·日 BTS’",
-     "link": "https://www.segye.com/newsView/20261126515226"
-    }
-   ]
-  },
-  {
-   "kw": "부부",
+   "kw": "로맨스",
    "nsrc": 4,
    "srcs": [
     "SBS",
-    "연합뉴스",
-    "조선일보",
-    "헤럴드경제"
-   ],
-   "n": 7,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "특수요원 황정민·형사 염정아 부부 귀환…'크로스2' 내달 공개",
-     "link": "https://www.yna.co.kr/view/AKR20261126054600005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "배우 고규필·가수 에이민 부부 득녀…\"인생 가장 잘한 일\"",
-     "link": "https://www.yna.co.kr/view/AKR20261123138400005"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "‘이혼할 결심’ 2년 만에…정대세 부부, 13살 터울 셋째 임신 ‘눈물바다’",
-     "link": "https://biz.heraldcorp.com/article/10951404"
-    },
-    {
-     "src": "SBS",
-     "title": "[스브스夜] '동상이몽2' 여에스더, ♥홍혜걸의 2만 8천원 짜리 팔찌 선물에도 '행복'…가수 강균성 부부 합류 예고",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008861876&plink=RSSLINK&cooper=RSSREADER"
-    }
-   ]
-  },
-  {
-   "kw": "의혹",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
     "동아일보",
     "연합뉴스",
     "조선일보"
@@ -519,89 +454,23 @@
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "공무원노조 \"공소청, TV조선 점수조작 의혹 항소 취하해야\"",
-     "link": "https://www.yna.co.kr/view/AKR20261123058200017"
-    },
-    {
-     "src": "동아일보",
-     "title": "“너나 잘해라” ‘불륜 의혹’ 양홍원, 후배 득남 축하했다 뭇매",
-     "link": "https://sports.donga.com/ent/article/all/20261127/135102064/1"
-    },
-    {
-     "src": "뉴시스",
-     "title": "\"팬들이 준 편지 버렸나\"…뮤지컬배우, 팬 기만 의혹 나왔다",
-     "link": "https://www.newsis.com/view/NISX20261127_0003885567"
-    },
-    {
-     "src": "뉴시스",
-     "title": "'尹 관저 의혹' 김대기·이상민 오늘 1심 선고…남경주 국참 시작",
-     "link": "https://www.newsis.com/view/NISX20261126_0003885018"
-    }
-   ]
-  },
-  {
-   "kw": "신민아",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "조선일보",
-    "한국경제"
-   ],
-   "n": 7,
-   "headlines": [
-    {
-     "src": "한국경제",
-     "title": "[포토+] 신민아, '강렬한 레드의 유혹'",
-     "link": "https://www.hankyung.com/article/202611260765H"
-    },
-    {
-     "src": "한국경제",
-     "title": "HK직캠|신민아, '레드카펫 위 우아한 여신'",
-     "link": "https://www.hankyung.com/article/202611260708H"
-    },
-    {
-     "src": "SBS",
-     "title": "떠나는 신민아 붙잡고 애원하는 주지훈…'재혼황후', 오늘(25일) 최종회 공개",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008862466&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "뉴시스",
-     "title": "임예진, '재혼황후' 신민아 극찬…\"트레이닝복 입고 찍어도 예뻐\"",
-     "link": "https://www.newsis.com/view/NISX20261127_0003885952"
-    }
-   ]
-  },
-  {
-   "kw": "발매",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "세계일보",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "양방언, 오늘 11년 만에 신보 '뉴 호라이즌' 발매",
-     "link": "https://www.yna.co.kr/view/AKR20261127079500005"
+     "title": "200년을 뛰어넘은 연애 코칭 로맨스…'러브 와이파이 궁' 개봉",
+     "link": "https://www.yna.co.kr/view/AKR20261125158400005"
     },
     {
      "src": "연합뉴스",
-     "title": "[가요소식] 브로디, 신곡 '페이디드 러브' 발매…칠룹 피처링",
-     "link": "https://www.yna.co.kr/view/AKR20261124128800005"
+     "title": "최현욱·정채연의 청춘 로맨스…'그린라이트' 내년 방송",
+     "link": "https://www.yna.co.kr/view/AKR20261125047600005"
     },
     {
      "src": "연합뉴스",
-     "title": "버벌진트, 새 앨범 발매 앞두고 20명 초청 '생맥주 음감회'",
-     "link": "https://www.yna.co.kr/view/AKR20261124013300005"
+     "title": "대출 위해 결혼한 김명수·표예진…'연대보증 로맨스' 내년 첫선",
+     "link": "https://www.yna.co.kr/view/AKR20261124049300005"
     },
     {
-     "src": "세계일보",
-     "title": "'질풍가도' 유정석, 발라드 신곡으로 돌아온다…12월 1일 발매",
-     "link": "https://www.segye.com/newsView/20261126517704"
+     "src": "연합뉴스",
+     "title": "[방송소식] 수지·김선호의 미스터리 로맨스…'현혹' 내년 1월 공개",
+     "link": "https://www.yna.co.kr/view/AKR20261124043300005"
     }
    ]
   },
@@ -614,7 +483,7 @@
     "연합뉴스",
     "조선일보"
    ],
-   "n": 6,
+   "n": 7,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -633,74 +502,8 @@
     },
     {
      "src": "조선일보",
-     "title": "'구두만 800켤레' 서인영, 원조 '신상녀' 버리고 미니멀라이프…'12월 재혼' 180도 달라진 러브스토리 (미우새)",
-     "link": "https://www.chosun.com/entertainments/enter_general/2026/11/27/G5STEMTCMQ3GCZRSGYZGEZTEG4/"
-    }
-   ]
-  },
-  {
-   "kw": "위해",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "연합뉴스",
-    "조선일보",
-    "헤럴드경제"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "대출 위해 결혼한 김명수·표예진…'연대보증 로맨스' 내년 첫선",
-     "link": "https://www.yna.co.kr/view/AKR20261124049300005"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "‘지적장애 팬과 나들이’ 오정세 또 미담…“팬 위해 병문안, 조문, 결혼 축가까지”",
-     "link": "https://biz.heraldcorp.com/article/10951687"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "‘난임’ 서동주, 임신 위해 향수도 끊었다…“로션도 무향 무취”",
-     "link": "https://biz.heraldcorp.com/article/10951427"
-    },
-    {
-     "src": "뉴시스",
-     "title": "서동주, 임신 위해 향수까지 끊었다…\"난임에 안 좋다고\"",
-     "link": "https://www.newsis.com/view/NISX20261127_0003885637"
-    }
-   ]
-  },
-  {
-   "kw": "직접",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "동아일보",
-    "조선일보"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "BTS 정국, 오아시스 리암 갤러거도 반했다…커버 영상에 직접 댓글",
-     "link": "https://sports.donga.com/ent/article/all/20261127/135100890/1"
-    },
-    {
-     "src": "SBS",
-     "title": "'폭설', 캐나다서 리메이크…홍의정 감독 직접 연출",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008866245&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "뉴시스",
-     "title": "'폭설', 해외 리메이크 확정…홍의정 감독, 직접 연출",
-     "link": "https://www.newsis.com/view/NISX20261127_0003885648"
-    },
-    {
-     "src": "조선일보",
-     "title": "'재혼황후' 이세영, 7살 아역 시절 임예진 특급 미담 공개 \"직접 운전해 집 데려다주고 떡볶이까지\"",
-     "link": "https://www.chosun.com/entertainments/enter_general/2026/11/27/GBSGCNLBGMZGEZJVGFRGGNBSMM/"
+     "title": "[인터뷰①] 신민아 \"♥김우빈, 누구보다 '재혼황후'에 깊이 빠져있어..나를 나비에로 부르는中\"('재혼 황후')",
+     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/27/MU3DAYTFMUZDSNTDGFQTOYLCGU/"
     }
    ]
   },
@@ -771,72 +574,6 @@
    ]
   },
   {
-   "kw": "서바이벌",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "엠넷, 日 반다이 남코와 버추얼 아이돌 서바이벌 제작",
-     "link": "https://www.yna.co.kr/view/AKR20261127037300005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "SBS 에너지 창업 서바이벌 '스파크업' 내달 첫 방송",
-     "link": "https://www.yna.co.kr/view/AKR20261123086900005"
-    },
-    {
-     "src": "동아일보",
-     "title": "장동민, 서바이벌 최강자도 AI 앞에선 굴욕…“왜 나만 이런 모욕을”",
-     "link": "https://sports.donga.com/ent/article/all/20261127/135101300/1"
-    },
-    {
-     "src": "뉴시스",
-     "title": "엠넷(Mnet), 日 반다이 남코 손잡고 첫 버추얼 아이돌 서바이벌",
-     "link": "https://www.newsis.com/view/NISX20261126_0003884077"
-    }
-   ]
-  },
-  {
-   "kw": "버추얼",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "연합뉴스",
-    "조선일보",
-    "한국경제"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "엠넷, 日 반다이 남코와 버추얼 아이돌 서바이벌 제작",
-     "link": "https://www.yna.co.kr/view/AKR20261127037300005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "4인조 버추얼 보이그룹 윙스, 27일 데뷔…첫 싱글 '헤일로'",
-     "link": "https://www.yna.co.kr/view/AKR20261125148100005"
-    },
-    {
-     "src": "한국경제",
-     "title": "\"평양냉면처럼 중독될 것\"…윙스, 플레이브 이어 버추얼 새 바람 일으킬까 [종합]",
-     "link": "https://www.hankyung.com/article/202611259421H"
-    },
-    {
-     "src": "뉴시스",
-     "title": "엠넷(Mnet), 日 반다이 남코 손잡고 첫 버추얼 아이돌 서바이벌",
-     "link": "https://www.newsis.com/view/NISX20261126_0003884077"
-    }
-   ]
-  },
-  {
    "kw": "많이",
    "nsrc": 4,
    "srcs": [
@@ -866,6 +603,39 @@
      "src": "한국경제",
      "title": "'그사친' 이서진 \"짐꾼 할 나이 지나\"…김용건 \"팔짱 많이 끼더라\"",
      "link": "https://www.hankyung.com/article/202611262194H"
+    }
+   ]
+  },
+  {
+   "kw": "청룡영화",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "세계일보",
+    "연합뉴스"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "청룡영화상 작품상에 '호프'…설경구·전도연 남녀주연상 석권",
+     "link": "https://www.yna.co.kr/view/AKR20261125187600005"
+    },
+    {
+     "src": "세계일보",
+     "title": "'만약에 우리' 문가영·구교환, 청룡영화상서 장난기 가득한 모습…여전한 케미",
+     "link": "https://www.segye.com/newsView/20261126517995"
+    },
+    {
+     "src": "SBS",
+     "title": "설경구·전도연 나란히 남녀주연상…청룡영화상서 '석권'",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008863866&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "뉴시스",
+     "title": "문근영, 청룡영화상 앞머리 왜 저랬나 했더니 \"쓰러져서 다쳤어요\"",
+     "link": "https://www.newsis.com/view/NISX20261127_0003885571"
     }
    ]
   },
@@ -903,35 +673,35 @@
    ]
   },
   {
-   "kw": "이동연",
+   "kw": "위해",
    "nsrc": 4,
    "srcs": [
     "뉴시스",
-    "동아일보",
+    "연합뉴스",
     "조선일보",
     "헤럴드경제"
    ],
    "n": 5,
    "headlines": [
     {
-     "src": "동아일보",
-     "title": "이동연, 팬레터 인증샷 찍고 버렸나…봉인 스티커도 그대로 [SD이슈]",
-     "link": "https://sports.donga.com/ent/article/all/20261127/135102001/1"
+     "src": "연합뉴스",
+     "title": "대출 위해 결혼한 김명수·표예진…'연대보증 로맨스' 내년 첫선",
+     "link": "https://www.yna.co.kr/view/AKR20261124049300005"
     },
     {
      "src": "헤럴드경제",
-     "title": "뮤지컬 배우 이동연, 팬 편지 읽지도 않고 버렸다 들통",
-     "link": "https://biz.heraldcorp.com/article/10951210"
+     "title": "‘지적장애 팬과 나들이’ 오정세 또 미담…“팬 위해 병문안, 조문, 결혼 축가까지”",
+     "link": "https://biz.heraldcorp.com/article/10951687"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "‘난임’ 서동주, 임신 위해 향수도 끊었다…“로션도 무향 무취”",
+     "link": "https://biz.heraldcorp.com/article/10951427"
     },
     {
      "src": "뉴시스",
-     "title": "이동연, 팬레터 폐기 논란에…\"정리 중 실수\"",
-     "link": "https://www.newsis.com/view/NISX20261127_0003886100"
-    },
-    {
-     "src": "조선일보",
-     "title": "팬레터가 쓰레기장서 발견..이동연, 폐기 의혹에 “직접 버린 것 아냐, 실수” [전문]",
-     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/27/MY4DCNBXGY2WMZJSGJSTOMTDHE/"
+     "title": "서동주, 임신 위해 향수까지 끊었다…\"난임에 안 좋다고\"",
+     "link": "https://www.newsis.com/view/NISX20261127_0003885637"
     }
    ]
   },
@@ -969,39 +739,6 @@
    ]
   },
   {
-   "kw": "달라진",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "조선일보",
-    "한국경제"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "‘팬덤 화력’의 중요성…임영웅부터 치이카와까지, 달라진 흥행 공식",
-     "link": "https://sports.donga.com/ent/article/all/20261126/135095800/1"
-    },
-    {
-     "src": "한국경제",
-     "title": "[포토+] 조이현, '확 달라진 분위기'",
-     "link": "https://www.hankyung.com/article/202611260755H"
-    },
-    {
-     "src": "뉴시스",
-     "title": "'10년 공백' 지나, 몰라보게 달라진 근황 \"같은 사람이지만…\"",
-     "link": "https://www.newsis.com/view/NISX20261127_0003885418"
-    },
-    {
-     "src": "조선일보",
-     "title": "'구두만 800켤레' 서인영, 원조 '신상녀' 버리고 미니멀라이프…'12월 재혼' 180도 달라진 러브스토리 (미우새)",
-     "link": "https://www.chosun.com/entertainments/enter_general/2026/11/27/G5STEMTCMQ3GCZRSGYZGEZTEG4/"
-    }
-   ]
-  },
-  {
    "kw": "홍의정",
    "nsrc": 4,
    "srcs": [
@@ -1035,6 +772,39 @@
    ]
   },
   {
+   "kw": "아이돌",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "세계일보",
+    "연합뉴스",
+    "한국경제"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "엠넷, 日 반다이 남코와 버추얼 아이돌 서바이벌 제작",
+     "link": "https://www.yna.co.kr/view/AKR20261127037300005"
+    },
+    {
+     "src": "한국경제",
+     "title": "HK직캠|설경구, '팬들 마음 흔드는 지천명 아이돌'",
+     "link": "https://www.hankyung.com/article/202611260705H"
+    },
+    {
+     "src": "세계일보",
+     "title": "‘비주류 아이돌’ 허간민, 유튜브 채널 개설…하루 만에 6만명 모였다",
+     "link": "https://www.segye.com/newsView/20261126513348"
+    },
+    {
+     "src": "뉴시스",
+     "title": "엠넷(Mnet), 日 반다이 남코 손잡고 첫 버추얼 아이돌 서바이벌",
+     "link": "https://www.newsis.com/view/NISX20261126_0003884077"
+    }
+   ]
+  },
+  {
    "kw": "에스파",
    "nsrc": 4,
    "srcs": [
@@ -1062,8 +832,8 @@
     },
     {
      "src": "뉴시스",
-     "title": "한·중·일 K-팝 차트 각축…韓 리센느·中 에스파·日 방탄소년단 최다 1위",
-     "link": "https://www.newsis.com/view/NISX20261126_0003883669"
+     "title": "에스파, 美 온라인 강타한 '키스 앤 텔' 영어 버전 오늘 공개",
+     "link": "https://www.newsis.com/view/NISX20261127_0003886334"
     }
    ]
   },
@@ -1101,6 +871,39 @@
    ]
   },
   {
+   "kw": "선물",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "세계일보",
+    "연합뉴스",
+    "헤럴드경제"
+   ],
+   "n": 4,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "포천시 \"시 대표 캐릭터 영상 보고 퀴즈 풀면 선물\"",
+     "link": "https://www.yna.co.kr/view/AKR20261123108600060"
+    },
+    {
+     "src": "세계일보",
+     "title": "'데블스 플랜3' 현경렬, 출연진 전원에 '금' 선물…재재 \"우승자의 품격\"",
+     "link": "https://www.segye.com/newsView/20261126520527"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "“선물 챙기고 팬레터는 버려”…배우 이동연 논란에 입 열었다 “소중히 보관했는데 실수로”",
+     "link": "https://biz.heraldcorp.com/article/10951762"
+    },
+    {
+     "src": "뉴시스",
+     "title": "'데블스 플랜3' 현경렬, 출연진 전원에 '금' 선물…재재 \"우승자의 품격\"",
+     "link": "https://www.newsis.com/view/NISX20261126_0003885360"
+    }
+   ]
+  },
+  {
    "kw": "없는",
    "nsrc": 4,
    "srcs": [
@@ -1134,35 +937,35 @@
    ]
   },
   {
-   "kw": "완벽",
+   "kw": "달라진",
    "nsrc": 4,
    "srcs": [
     "뉴시스",
-    "세계일보",
+    "동아일보",
     "조선일보",
-    "한겨레"
+    "한국경제"
    ],
    "n": 4,
    "headlines": [
     {
-     "src": "한겨레",
-     "title": "그의 삶이 디바였다…사랑 원한 마리아, 완벽 추구한 칼라스 [.txt]",
-     "link": "https://www.hani.co.kr/arti/culture/book/1289344.html"
+     "src": "동아일보",
+     "title": "‘팬덤 화력’의 중요성…임영웅부터 치이카와까지, 달라진 흥행 공식",
+     "link": "https://sports.donga.com/ent/article/all/20261126/135095800/1"
     },
     {
-     "src": "세계일보",
-     "title": "이즈나, 스페셜 음원 'IWALY' 퍼포먼스 비디오 공개…완벽 군무",
-     "link": "https://www.segye.com/newsView/20261126518012"
+     "src": "한국경제",
+     "title": "[포토+] 조이현, '확 달라진 분위기'",
+     "link": "https://www.hankyung.com/article/202611260755H"
     },
     {
      "src": "뉴시스",
-     "title": "카리나, 볼륨감 넘치는 몸매…단발 스타일링도 완벽 소화",
-     "link": "https://www.newsis.com/view/NISX20261126_0003884095"
+     "title": "'10년 공백' 지나, 몰라보게 달라진 근황 \"같은 사람이지만…\"",
+     "link": "https://www.newsis.com/view/NISX20261127_0003885418"
     },
     {
      "src": "조선일보",
-     "title": "'이유진♥' 차경은, 혼전임신 맞아? 배가 날씬한 임산부라니..웨딩드레스 완벽 소화 [핫피플]",
-     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/27/GMYDAOJQHBSDSMBTGZRTAZDEMI/"
+     "title": "'구두만 800켤레' 서인영, 원조 '신상녀' 버리고 미니멀라이프…'12월 재혼' 180도 달라진 러브스토리 (미우새)",
+     "link": "https://www.chosun.com/entertainments/enter_general/2026/11/27/G5STEMTCMQ3GCZRSGYZGEZTEG4/"
     }
    ]
   },
@@ -1174,8 +977,13 @@
     "동아일보",
     "조선일보"
    ],
-   "n": 18,
+   "n": 23,
    "headlines": [
+    {
+     "src": "동아일보",
+     "title": "남경주, 제자와 성관계 시도 인정했지만…“무죄 주장”",
+     "link": "https://sports.donga.com/ent/article/all/20261127/135103373/1"
+    },
     {
      "src": "동아일보",
      "title": "‘제자 성폭행 혐의’ 남경주 법정 출석…오늘 국민참여재판",
@@ -1188,13 +996,8 @@
     },
     {
      "src": "조선일보",
-     "title": "[사진]어두운 표정의 남경주, 국민참여재판 참석",
-     "link": "https://www.chosun.com/entertainments/entertain_photo/2026/11/27/GE4TCZJRGU4WKYRWMY4GEYLCMQ/"
-    },
-    {
-     "src": "조선일보",
-     "title": "[사진]남경주, 국민참여재판 출석",
-     "link": "https://www.chosun.com/entertainments/entertain_photo/2026/11/27/GQ4DAZJXGQ2DCYRSGZSGGZJYMQ/"
+     "title": "[속보] 남경주, 제자와 성관계 시도 인정…“위력 행사 안 했다” 피감독자간음 혐의는 부인",
+     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/27/ME3TIYZZGQ3WIYJSMYZDQMJWG4/"
     }
    ]
   },
@@ -1206,7 +1009,7 @@
     "연합뉴스",
     "조선일보"
    ],
-   "n": 14,
+   "n": 15,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -1220,45 +1023,13 @@
     },
     {
      "src": "조선일보",
-     "title": "[사진]여제자 성폭행 혐의 남경주, 급한 발걸음",
-     "link": "https://www.chosun.com/entertainments/entertain_photo/2026/11/27/MUZTIZRRGNSTKMTCMRTDAZLDGU/"
+     "title": "[포토] 피감독자간음 혐의 남경주, 국민참여재판 참석",
+     "link": "https://www.chosun.com/entertainments/entertain_photo/2026/11/27/MVQTEZBRMRSGIMLFHAYDCOLBGE/"
     },
     {
      "src": "조선일보",
-     "title": "[사진]제자 성폭행 혐의 남경주, 국민참여재판 시작",
-     "link": "https://www.chosun.com/entertainments/entertain_photo/2026/11/27/HA4GIOLDMQZTON3GMJRWKYZSGI/"
-    }
-   ]
-  },
-  {
-   "kw": "이슈",
-   "nsrc": 3,
-   "srcs": [
-    "동아일보",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 10,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "\"수능 공정성 이슈 무겁게 느껴…'대리수능' 메시지에 집중하길\"",
-     "link": "https://www.yna.co.kr/view/AKR20261123091400005"
-    },
-    {
-     "src": "동아일보",
-     "title": "이동연, 팬레터 인증샷 찍고 버렸나…봉인 스티커도 그대로 [SD이슈]",
-     "link": "https://sports.donga.com/ent/article/all/20261127/135102001/1"
-    },
-    {
-     "src": "조선일보",
-     "title": "‘팬레터 폐기’ 이동연의 황당 변명, \"소중히 모았지만 실수로 버린 것\".…분리수거장 봉투엔 봉인 스티커 그대로? [Oh!쎈 이슈]",
-     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/27/G42TAM3GGJSDOMBTGI4DQYJYMQ/"
-    },
-    {
-     "src": "조선일보",
-     "title": "낸시랭, 음주운전 혐의로 불구속 송치..면허취소 수준 [Oh!쎈 이슈]",
-     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/27/GJTDSYZUGVSTSM3EGRRGIZBWGE/"
+     "title": "[포토] 피감독자간음 혐의 남경주, 취재진 시선 피해",
+     "link": "https://www.chosun.com/entertainments/entertain_photo/2026/11/27/GM3GIMJUMQ4GKMRTGIYDMYZZG4/"
     }
    ]
   },
@@ -1295,6 +1066,102 @@
    ]
   },
   {
+   "kw": "뮤지컬",
+   "nsrc": 3,
+   "srcs": [
+    "조선일보",
+    "한국경제",
+    "헤럴드경제"
+   ],
+   "n": 8,
+   "headlines": [
+    {
+     "src": "한국경제",
+     "title": "'분리수거장에 팬레터가?'…뮤지컬 배우 이동연 결국 사과",
+     "link": "https://www.hankyung.com/article/202611274651H"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "뮤지컬 배우 이동연, 팬 편지 읽지도 않고 버렸다 들통",
+     "link": "https://biz.heraldcorp.com/article/10951210"
+    },
+    {
+     "src": "조선일보",
+     "title": "'재혼황후' 신민아 \"이종석과 열기구 신, 뮤지컬 밈 될줄 몰랐다\" [인터뷰③]",
+     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/27/GJTDSM3EMJQWIYTFME3GIZDEHA/"
+    },
+    {
+     "src": "조선일보",
+     "title": "[사진]피감독자간음 혐의 뮤지컬 배우 남경주, 국민참여재판 잠시 휴정",
+     "link": "https://www.chosun.com/entertainments/entertain_photo/2026/11/27/GQ2GENBTMIZDAY3EGMYTEMZVMQ/"
+    }
+   ]
+  },
+  {
+   "kw": "재혼황후",
+   "nsrc": 3,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "조선일보"
+   ],
+   "n": 8,
+   "headlines": [
+    {
+     "src": "SBS",
+     "title": "떠나는 신민아 붙잡고 애원하는 주지훈…'재혼황후', 오늘(25일) 최종회 공개",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008862466&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "뉴시스",
+     "title": "임예진, '재혼황후' 신민아 극찬…\"트레이닝복 입고 찍어도 예뻐\"",
+     "link": "https://www.newsis.com/view/NISX20261127_0003885952"
+    },
+    {
+     "src": "조선일보",
+     "title": "[인터뷰①] 신민아 \"♥김우빈, 누구보다 '재혼황후'에 깊이 빠져있어..나를 나비에로 부르는中\"('재혼 황후')",
+     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/27/MU3DAYTFMUZDSNTDGFQTOYLCGU/"
+    },
+    {
+     "src": "조선일보",
+     "title": "'재혼황후' 신민아 \"주지훈 모든 대사가 열 받았다..어떻게 저런 말을\" [인터뷰④]",
+     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/27/HFRGIOLCGIYWGYZQGI2DIMDGGM/"
+    }
+   ]
+  },
+  {
+   "kw": "별세",
+   "nsrc": 3,
+   "srcs": [
+    "뉴시스",
+    "연합뉴스",
+    "한겨레"
+   ],
+   "n": 7,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "극동방송 이사장 김장환 목사 부인 트루디 김 여사 별세",
+     "link": "https://www.yna.co.kr/view/AKR20261127094200005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "1세대 슈퍼모델 베루슈카 별세…1960년대 패션 아이콘",
+     "link": "https://www.yna.co.kr/view/AKR20261126149600009"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "英밴드 듀란듀란 기타리스트 앤디 테일러 별세…향년 65세",
+     "link": "https://www.yna.co.kr/view/AKR20261126015200075"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "'EBS 밑그림' 그린 '해직 PD'…김학천 전 EBS 사장 별세(종합)",
+     "link": "https://www.yna.co.kr/view/AKR20261123086051005"
+    }
+   ]
+  },
+  {
    "kw": "공연",
    "nsrc": 3,
    "srcs": [
@@ -1302,7 +1169,7 @@
     "세계일보",
     "연합뉴스"
    ],
-   "n": 8,
+   "n": 7,
    "headlines": [
     {
      "src": "연합뉴스",
@@ -1323,6 +1190,134 @@
      "src": "연합뉴스",
      "title": "[가요소식] 英 밴드 슬로우다이브, 내달 8일 내한 공연",
      "link": "https://www.yna.co.kr/view/AKR20261123134100005"
+    }
+   ]
+  },
+  {
+   "kw": "이슈",
+   "nsrc": 3,
+   "srcs": [
+    "동아일보",
+    "연합뉴스",
+    "조선일보"
+   ],
+   "n": 6,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "\"수능 공정성 이슈 무겁게 느껴…'대리수능' 메시지에 집중하길\"",
+     "link": "https://www.yna.co.kr/view/AKR20261123091400005"
+    },
+    {
+     "src": "동아일보",
+     "title": "이동연, 팬레터 인증샷 찍고 버렸나…봉인 스티커도 그대로 [SD이슈]",
+     "link": "https://sports.donga.com/ent/article/all/20261127/135102001/1"
+    },
+    {
+     "src": "조선일보",
+     "title": "‘오상진♥’ 김소영, 주사 안맞고 16kg 뺐다…둘째 득남 8개월만에 성공[Oh!쎈 이슈]",
+     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/27/MY3GGZLBGA2WKZLCGVQTIZDGGI/"
+    },
+    {
+     "src": "조선일보",
+     "title": "‘아저씨’ 이후 스크린 출연 無…원빈, 21억에 산 성수동 건물만 70억 이상 [Oh!쎈 이슈]",
+     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/27/MIZTKODDGVSGEMZWHFSWMYZZGQ/"
+    }
+   ]
+  },
+  {
+   "kw": "서인영",
+   "nsrc": 3,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "조선일보"
+   ],
+   "n": 6,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "서인영 12월 26일 재혼…브라이언 “이번이 마지막 결혼식?” (유행꼰대)",
+     "link": "https://sports.donga.com/ent/article/all/20261127/135102241/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "서인영, 꽃장식만 1억 썼는데…재혼은 스몰웨딩 (미우새)",
+     "link": "https://sports.donga.com/ent/article/all/20261127/135101824/1"
+    },
+    {
+     "src": "뉴시스",
+     "title": "브라이언, 절친 서인영 연애사 폭로…\"킴 카다시안 같았다\"",
+     "link": "https://www.newsis.com/view/NISX20261127_0003885626"
+    },
+    {
+     "src": "뉴시스",
+     "title": "서인영, 쥬얼리 시절 의상 두고 기싸움…\"이지현 불편했다\"",
+     "link": "https://www.newsis.com/view/NISX20261126_0003884621"
+    }
+   ]
+  },
+  {
+   "kw": "입고",
+   "nsrc": 3,
+   "srcs": [
+    "뉴시스",
+    "세계일보",
+    "한국경제"
+   ],
+   "n": 6,
+   "headlines": [
+    {
+     "src": "한국경제",
+     "title": "[포토+] 이정은, '멋지게 슈트 입고 등장'",
+     "link": "https://www.hankyung.com/article/202611260762H"
+    },
+    {
+     "src": "세계일보",
+     "title": "48세 정가은, 수영복 입고 드러낸 몸매…군살 하나 없네",
+     "link": "https://www.segye.com/newsView/20261126516467"
+    },
+    {
+     "src": "뉴시스",
+     "title": "임예진, '재혼황후' 신민아 극찬…\"트레이닝복 입고 찍어도 예뻐\"",
+     "link": "https://www.newsis.com/view/NISX20261127_0003885952"
+    },
+    {
+     "src": "뉴시스",
+     "title": "41세 이다희, 블랙 수영복 입고 뽐낸 한 줌 허리",
+     "link": "https://www.newsis.com/view/NISX20261126_0003884061"
+    }
+   ]
+  },
+  {
+   "kw": "솔비",
+   "nsrc": 3,
+   "srcs": [
+    "뉴시스",
+    "조선일보",
+    "헤럴드경제"
+   ],
+   "n": 6,
+   "headlines": [
+    {
+     "src": "헤럴드경제",
+     "title": "솔비-이규한, 내년 4월25일 서울 종로구서 야외 혼례 올린다",
+     "link": "https://biz.heraldcorp.com/article/10951704"
+    },
+    {
+     "src": "뉴시스",
+     "title": "이규한, 솔비 아침밥까지 챙긴다…\"잘 먹여 보내려고\"",
+     "link": "https://www.newsis.com/view/NISX20261127_0003886282"
+    },
+    {
+     "src": "뉴시스",
+     "title": "솔비 그림 본 미술작가 반응…\"보통 색감이 아니다\"",
+     "link": "https://www.newsis.com/view/NISX20261127_0003886258"
+    },
+    {
+     "src": "뉴시스",
+     "title": "솔비·이규한, 내년 4월25일 야외 결혼식 확정",
+     "link": "https://www.newsis.com/view/NISX20261127_0003886131"
     }
    ]
   }

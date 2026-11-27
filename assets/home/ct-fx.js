@@ -4,6 +4,12 @@
   var reduce = false;
   try { reduce = matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
   if (reduce) return;
+  /* 하루에 한 번만 난장판 — 오늘 이미 봤으면 바로 차분하게 */
+  try {
+    var _d = new Date(), _k = _d.getFullYear() + '-' + (_d.getMonth() + 1) + '-' + _d.getDate();
+    if (localStorage.getItem('ct_fx_day') === _k) { (document.querySelector('.ct') || document.body).classList.add('ct-calm'); return; }
+    localStorage.setItem('ct_fx_day', _k);
+  } catch (e) {}
   var LITE = false; try { LITE = innerWidth < 760 || matchMedia('(pointer:coarse)').matches; } catch (e) {}   /* 폰: 열화판 — 폭죽 적게, 루리 2명, 글자 흩날림·유리·씹기 없음, 1.2초 뒤 차분 */
   var cv = document.createElement('canvas');
   cv.setAttribute('aria-hidden', 'true');

@@ -204,12 +204,15 @@ def pages(page):
                   '<div class="row"><b>순서</b><span class="grp" data-k="o"><button data-o="seq" class="on">순서대로</button><button data-o="shuf">섞기</button></span></div>'
                   '<div class="row"><b>범위</b><span class="grp" data-k="r"><button data-r="all" class="on">전체</button><button data-r="wrong" hidden>지난번 틀린 문제</button></span></div>'
                   '<p class="nt" id="bk-info"></p><div class="bar"><button id="bk-start">시작해</button></div></div>')
+        _rl=[x for x in banks if x['id']!=d['id'] and x.get('category')==d.get('category')][:3]
+        if len(_rl)<3: _rl+= [x for x in banks if x['id']!=d['id'] and x not in _rl][:3-len(_rl)]
+        _relh=('<div class="rel"><h2>이것도 풀어</h2><ul>'+''.join(f'<li><a href="/exam/bank/{E(x["id"])}/">{E(x["name"])} 문제은행</a> <small>문제 {len(x["questions"])}개</small></li>' for x in _rl)+'</ul><p><a href="/exam/bank/">문제은행 전체</a> · <a href="/wiki/">루리위키</a> · <a href="/exam/">시험 일정</a> · <a href="/me/">내 상태창</a></p></div>')
         body = (f'<div class="bk"><p class="bc"><a href="/">홈</a> › <a href="/exam/">시험</a> › <a href="/exam/bank/">문제은행</a> › {E(d["name"])}</p><h1>{E(d["name"])} 문제은행 {_badge(d)}</h1>'
                 f'<p class="nt">{srct}{lic}</p>{AINOTE}<p>{E(note)}</p>' + _notes(d['id']) + (f'<p><a href="{eu}">이 시험의 일정·접수·발표일 보기 →</a></p>' if eu else '')
                 + '<div class="play" id="bk-play">' + _setup
                 + '<div id="bk-res"></div><p class="clk" id="bk-clock" hidden></p><form id="bk-sheet" onsubmit="return false" hidden></form>'
                 '<div class="bar" id="bk-gbar" hidden><button id="bk-grade">채점하기</button></div><div class="bar"><button class="g" id="bk-reset" hidden>설정으로 돌아가기</button></div></div>'
-                f'<noscript>{lst}</noscript><script type="application/json" id="bk-data">{data}</script>' + '</div>' + CSS + CSS2 + JS)
+                f'<noscript>{lst}</noscript><script type="application/json" id="bk-data">{data}</script>' + _relh + '</div>' + CSS + CSS2 + JS)
         page(f'/exam/bank/{d["id"]}/', f'{d["name"]} 문제은행 — 무료 연습문제 {len(d["questions"])}개 — 가난한 박과장', f'{d["name"]} 연습문제 {len(d["questions"])}개를 한 문제씩 풀고 정답·해설과 근거를 확인해. 틀린 문제만 다시 풀 수 있어.', body,
              [('홈', '/'), ('시험', '/exam/'), ('문제은행', '/exam/bank/'), (d['name'], f'/exam/bank/{d["id"]}/')])
         urls.append(f'/exam/bank/{d["id"]}/')
