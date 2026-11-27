@@ -1,15 +1,34 @@
 {
  "date": "2026-11-27",
- "updated": "2026-11-27 20:50",
+ "updated": "2026-11-27 21:50",
  "sites": 13,
- "npost": 2826,
+ "npost": 2818,
  "note": "출처(커뮤니티)별 집계예요. 작성자·연령·성별 정보는 수집하지 않아요. posts 는 이슈별로 뽑힌 일부라 전체 글 수가 아니에요.",
  "sources": [
   {
    "name": "MLB파크",
    "np": 15,
-   "nc": 1280,
+   "nc": 1239,
    "topics": [
+    {
+     "t": "국정원 휴민트 사건 요약",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 176,
+     "issue_np": 2,
+     "issue_nc": 180,
+     "kw": [
+      "사건",
+      "국정원",
+      "휴민트",
+      "요약"
+     ],
+     "top_post": {
+      "t": "국정원 휴민트 사건 요약",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611270120334131&m=view",
+      "nc": 176
+     }
+    },
     {
      "t": "실시간 난리난 뮤지컬배우 대참사",
      "nsite": 4,
@@ -20,8 +39,8 @@
      "kw": [
       "뮤지컬",
       "참사",
-      "난리",
-      "배우"
+      "실시간",
+      "난리"
      ],
      "top_post": {
       "t": "실시간 난리난 뮤지컬배우 대참사",
@@ -37,9 +56,9 @@
      "issue_np": 2,
      "issue_nc": 192,
      "kw": [
+      "장인",
       "사위",
-      "이식",
-      "장인"
+      "이식"
      ],
      "top_post": {
       "t": "장인, 간이식 거절한 사위",
@@ -48,31 +67,12 @@
      }
     },
     {
-     "t": "국정원 휴민트 사건 요약",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 168,
-     "issue_np": 2,
-     "issue_nc": 172,
-     "kw": [
-      "휴민트",
-      "사건",
-      "국정원",
-      "요약"
-     ],
-     "top_post": {
-      "t": "국정원 휴민트 사건 요약",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611270120334131&m=view",
-      "nc": 168
-     }
-    },
-    {
      "t": "남자들은 이쁘다고 생각하지 않는 연예인 TOP15",
      "nsite": 2,
      "np_here": 1,
-     "nc_here": 123,
+     "nc_here": 145,
      "issue_np": 2,
-     "issue_nc": 171,
+     "issue_nc": 156,
      "kw": [
       "남자",
       "연예인"
@@ -80,16 +80,16 @@
      "top_post": {
       "t": "남자들은 이쁘다고 생각하지 않는 연예인 TOP15",
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611270120335388&m=view",
-      "nc": 123
+      "nc": 145
      }
     },
     {
      "t": "손연재 부부 30억 기부ㄷㄷㄷ",
      "nsite": 6,
      "np_here": 2,
-     "nc_here": 120,
+     "nc_here": 123,
      "issue_np": 10,
-     "issue_nc": 196,
+     "issue_nc": 199,
      "kw": [
       "손연재",
       "기부",
@@ -127,8 +127,8 @@
      "issue_np": 2,
      "issue_nc": 139,
      "kw": [
-      "목록",
-      "금지"
+      "금지",
+      "목록"
      ],
      "top_post": {
       "t": "40대 이상 금지 목록",
@@ -157,26 +157,9 @@
   },
   {
    "name": "개드립",
-   "np": 16,
-   "nc": 376,
+   "np": 17,
+   "nc": 349,
    "topics": [
-    {
-     "t": "남자들은 이쁘다고 생각하지 않는 연예인 TOP15",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 48,
-     "issue_np": 2,
-     "issue_nc": 171,
-     "kw": [
-      "남자",
-      "연예인"
-     ],
-     "top_post": {
-      "t": "남자는 예쁘다고 생각하지 않는 여자 연예인",
-      "u": "https://www.dogdrip.net/dogdrip/736902606?sort_index=popular&page=1",
-      "nc": 48
-     }
-    },
     {
      "t": "아키하바라에서 오타쿠 한테 제지당한 썰",
      "nsite": 3,
@@ -185,8 +168,8 @@
      "issue_np": 3,
      "issue_nc": 60,
      "kw": [
-      "제지",
       "오타쿠",
+      "제지",
       "아키하바라"
      ],
      "top_post": {
@@ -203,8 +186,8 @@
      "issue_np": 3,
      "issue_nc": 37,
      "kw": [
-      "직전",
       "남자",
+      "직전",
       "결혼",
       "파토"
      ],
@@ -222,9 +205,9 @@
      "issue_np": 3,
      "issue_nc": 36,
      "kw": [
+      "전화",
       "부재중",
-      "사장",
-      "전화"
+      "사장"
      ],
      "top_post": {
       "t": "사장님의 부재중전화 27",
@@ -242,13 +225,30 @@
      "kw": [
       "뮤지컬",
       "참사",
-      "난리",
-      "배우"
+      "실시간",
+      "난리"
      ],
      "top_post": {
       "t": "실시간 뮤지컬판에서 대참사 난 사건",
       "u": "https://www.dogdrip.net/dogdrip/736840495?sort_index=popular&page=1",
       "nc": 30
+     }
+    },
+    {
+     "t": "업소 가 본 사람들 대부분 하는 말..",
+     "nsite": 3,
+     "np_here": 2,
+     "nc_here": 30,
+     "issue_np": 4,
+     "issue_nc": 31,
+     "kw": [
+      "업소",
+      "대부분"
+     ],
+     "top_post": {
+      "t": "업소 가 본 사람들 대부분 하는 말..",
+      "u": "https://www.dogdrip.net/dogdrip/736908766?sort_index=popular&page=1",
+      "nc": 29
      }
     },
     {
@@ -259,8 +259,8 @@
      "issue_np": 6,
      "issue_nc": 31,
      "kw": [
-      "백화점",
       "민원",
+      "백화점",
       "고객",
       "근무복"
      ],
@@ -278,10 +278,10 @@
      "issue_np": 3,
      "issue_nc": 31,
      "kw": [
-      "다이소",
-      "속출",
+      "스노우볼",
       "피해자",
-      "스노우볼"
+      "속출",
+      "다이소"
      ],
      "top_post": {
       "t": "피해자가 속출하고 있다는 다이소 스노우볼",
@@ -290,19 +290,20 @@
      }
     },
     {
-     "t": "업소 가 본 사람들 대부분 하는 말..",
+     "t": "지금 논란인 뮤지컬배우 충격적인점",
      "nsite": 3,
      "np_here": 1,
      "nc_here": 24,
      "issue_np": 3,
-     "issue_nc": 25,
+     "issue_nc": 24,
      "kw": [
-      "업소",
-      "대부분"
+      "뮤지컬",
+      "배우",
+      "논란"
      ],
      "top_post": {
-      "t": "업소 가 본 사람들 대부분 하는 말..",
-      "u": "https://www.dogdrip.net/dogdrip/736908766?sort_index=popular&page=1",
+      "t": "지금 논란되는 뮤지컬 배우 더 논란 되는 점 ㄷㄷㄷ;;",
+      "u": "https://www.dogdrip.net/dogdrip/736863994?sort_index=popular&page=1",
       "nc": 24
      }
     }
@@ -311,24 +312,24 @@
   {
    "name": "클리앙",
    "np": 10,
-   "nc": 183,
+   "nc": 171,
    "topics": [
     {
      "t": "최민희 당원권 2년 정지",
      "nsite": 2,
      "np_here": 2,
-     "nc_here": 62,
+     "nc_here": 63,
      "issue_np": 3,
-     "issue_nc": 99,
+     "issue_nc": 100,
      "kw": [
-      "최민희",
       "정지",
+      "최민희",
       "당원"
      ],
      "top_post": {
       "t": "최민희 당원권 2년 정지",
       "u": "https://www.clien.net/service/board/park/19299358?od=T33&po=0&category=0&groupCd=clien_all",
-      "nc": 58
+      "nc": 59
      }
     },
     {
@@ -337,10 +338,10 @@
      "np_here": 3,
      "nc_here": 51,
      "issue_np": 5,
-     "issue_nc": 52,
+     "issue_nc": 59,
      "kw": [
-      "중징계",
       "최민희",
+      "중징계",
       "민주당"
      ],
      "top_post": {
@@ -357,8 +358,8 @@
      "issue_np": 4,
      "issue_nc": 29,
      "kw": [
-      "GTA",
-      "게임"
+      "게임",
+      "GTA"
      ],
      "top_post": {
       "t": "GTA6는 50대인 제겐 최고의 게임입니다.",
@@ -367,29 +368,12 @@
      }
     },
     {
-     "t": "요즘 경기 안좋은거 실제로 체감 하시나요",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 16,
-     "issue_np": 2,
-     "issue_nc": 94,
-     "kw": [
-      "체감",
-      "경기"
-     ],
-     "top_post": {
-      "t": "금리가 오르는 이유 (체감경기와 별개)",
-      "u": "https://www.clien.net/service/board/park/19299152?od=T33&po=0&category=0&groupCd=clien_all",
-      "nc": 16
-     }
-    },
-    {
      "t": "손연재 부부 30억 기부ㄷㄷㄷ",
      "nsite": 6,
      "np_here": 1,
      "nc_here": 11,
      "issue_np": 10,
-     "issue_nc": 196,
+     "issue_nc": 199,
      "kw": [
       "손연재",
       "기부",
@@ -412,13 +396,31 @@
      "kw": [
       "자영업",
       "공포",
-      "시장",
-      "만연"
+      "만연",
+      "시장"
      ],
      "top_post": {
       "t": "시장에는 피가 낭자하고 공포가 만연하다(자영업 편)",
       "u": "https://www.clien.net/service/board/park/19298971?od=T33&po=0&category=0&groupCd=clien_all",
       "nc": 11
+     }
+    },
+    {
+     "t": "어제 주식 생방송중 눈물흘린 눈나",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 3,
+     "issue_np": 5,
+     "issue_nc": 4,
+     "kw": [
+      "주식",
+      "방송",
+      "눈물"
+     ],
+     "top_post": {
+      "t": "눈물의 주식 브리핑",
+      "u": "https://www.clien.net/service/board/park/19299079?od=T33&po=0&category=0&groupCd=clien_all",
+      "nc": 3
      }
     },
     {
@@ -445,7 +447,7 @@
   {
    "name": "82쿡",
    "np": 7,
-   "nc": 112,
+   "nc": 119,
    "topics": [
     {
      "t": "손연재 부부 30억 기부ㄷㄷㄷ",
@@ -453,7 +455,7 @@
      "np_here": 3,
      "nc_here": 60,
      "issue_np": 10,
-     "issue_nc": 196,
+     "issue_nc": 199,
      "kw": [
       "손연재",
       "기부",
@@ -472,10 +474,10 @@
      "np_here": 1,
      "nc_here": 37,
      "issue_np": 3,
-     "issue_nc": 99,
+     "issue_nc": 100,
      "kw": [
-      "최민희",
       "정지",
+      "최민희",
       "당원"
      ],
      "top_post": {
@@ -506,30 +508,31 @@
      "t": "최민희 중징계라는군요?",
      "nsite": 3,
      "np_here": 1,
-     "nc_here": 1,
+     "nc_here": 8,
      "issue_np": 5,
-     "issue_nc": 52,
+     "issue_nc": 59,
      "kw": [
-      "중징계",
       "최민희",
+      "중징계",
       "민주당"
      ],
      "top_post": {
       "t": "막가는 민주당, 최민희가 중징계면 김민석은 제명감",
       "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4263563&page=1",
-      "nc": 1
+      "nc": 8
      }
     },
     {
-     "t": "주식 손실을 회복하려고 경제방송 삭제했어요",
-     "nsite": 3,
+     "t": "어제 주식 생방송중 눈물흘린 눈나",
+     "nsite": 4,
      "np_here": 1,
      "nc_here": 1,
-     "issue_np": 3,
-     "issue_nc": 1,
+     "issue_np": 5,
+     "issue_nc": 4,
      "kw": [
       "주식",
-      "방송"
+      "방송",
+      "눈물"
      ],
      "top_post": {
       "t": "주식 손실을 회복하려고 경제방송 삭제했어요",
@@ -555,7 +558,7 @@
       "학원",
       "머리",
       "수영",
-      "남자"
+      "학부모"
      ],
      "top_post": {
       "t": "현재 여론살벌한 수영학원 머리 말리기 논란.",
@@ -571,8 +574,8 @@
      "issue_np": 2,
      "issue_nc": 139,
      "kw": [
-      "목록",
-      "금지"
+      "금지",
+      "목록"
      ],
      "top_post": {
       "t": "현재 인스타에서 난리난 늙크크 금지목록.",
@@ -584,8 +587,8 @@
   },
   {
    "name": "보배드림",
-   "np": 12,
-   "nc": 23,
+   "np": 13,
+   "nc": 26,
    "topics": [
     {
      "t": "실시간 난리난 뮤지컬배우 대참사",
@@ -597,8 +600,8 @@
      "kw": [
       "뮤지컬",
       "참사",
-      "난리",
-      "배우"
+      "실시간",
+      "난리"
      ],
      "top_post": {
       "t": "뮤지컬판에서 대참사 난 사건",
@@ -617,7 +620,7 @@
       "학원",
       "머리",
       "수영",
-      "남자"
+      "학부모"
      ],
      "top_post": {
       "t": "남자가 머리말려주는 게 불편한 수영학원 학부모들. jpg",
@@ -633,8 +636,8 @@
      "issue_np": 3,
      "issue_nc": 37,
      "kw": [
-      "직전",
       "남자",
+      "직전",
       "결혼",
       "파토"
      ],
@@ -652,13 +655,32 @@
      "issue_np": 3,
      "issue_nc": 36,
      "kw": [
+      "전화",
       "부재중",
-      "사장",
-      "전화"
+      "사장"
      ],
      "top_post": {
       "t": "사장님 부재중 전화 27통",
       "u": "https://www.bobaedream.co.kr/view?code=best&No=1050358&vdate=",
+      "nc": 3
+     }
+    },
+    {
+     "t": "돈 못 번다고 플스 박살 낸 아내 ㄷㄷ.knn",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 3,
+     "issue_np": 3,
+     "issue_nc": 3,
+     "kw": [
+      "플스",
+      "박살",
+      "아내",
+      "게임"
+     ],
+     "top_post": {
+      "t": "게임했다고 플스 박살",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1050569&vdate=",
       "nc": 3
      }
     },
@@ -687,8 +709,8 @@
      "issue_np": 6,
      "issue_nc": 31,
      "kw": [
-      "백화점",
       "민원",
+      "백화점",
       "고객",
       "근무복"
      ],
@@ -715,32 +737,13 @@
       "u": "https://www.bobaedream.co.kr/view?code=best&No=1050474&vdate=",
       "nc": 2
      }
-    },
-    {
-     "t": "피해자가 속출하고 있다는 다이소 스노우볼",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 2,
-     "issue_np": 3,
-     "issue_nc": 31,
-     "kw": [
-      "다이소",
-      "속출",
-      "피해자",
-      "스노우볼"
-     ],
-     "top_post": {
-      "t": "피해자가 속출하고 있다는 다이소 스노우볼. gif",
-      "u": "https://www.bobaedream.co.kr/view?code=best&No=1050451&vdate=",
-      "nc": 2
-     }
     }
    ]
   },
   {
    "name": "네이트판",
-   "np": 4,
-   "nc": 20,
+   "np": 3,
+   "nc": 16,
    "topics": [
     {
      "t": "남자들아 여자친구 직업이 뭐였으면 좋겠어?",
@@ -763,20 +766,19 @@
     {
      "t": "네이버페이 59원 (신속히 받으세요)",
      "nsite": 4,
-     "np_here": 2,
-     "nc_here": 7,
-     "issue_np": 9,
-     "issue_nc": 9,
+     "np_here": 1,
+     "nc_here": 3,
+     "issue_np": 8,
+     "issue_nc": 5,
      "kw": [
-      "네이버",
       "페이",
-      "랜덤",
-      "포인트"
+      "네이버",
+      "랜덤"
      ],
      "top_post": {
       "t": "ㅈㄱㄴ..⭐ 이거 설문조사 앱인데 설문조사 하고나면 네이버페이 포인트나 현금으로 받을수있음 ...",
-      "u": "https://pann.nate.com/talk/375738376",
-      "nc": 4
+      "u": "https://pann.nate.com/talk/375740063",
+      "nc": 3
      }
     }
    ]
@@ -794,8 +796,8 @@
      "issue_np": 3,
      "issue_nc": 60,
      "kw": [
-      "제지",
       "오타쿠",
+      "제지",
       "아키하바라"
      ],
      "top_post": {
@@ -808,7 +810,7 @@
   },
   {
    "name": "디시인사이드",
-   "np": 8,
+   "np": 9,
    "nc": 0,
    "topics": [
     {
@@ -837,14 +839,51 @@
      "issue_np": 6,
      "issue_nc": 31,
      "kw": [
-      "백화점",
       "민원",
+      "백화점",
       "고객",
       "근무복"
      ],
      "top_post": {
       "t": "낭만낭만 백화점 근무복에 민원 넣은 고객님..",
       "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481974&_dcbest=1&page=1",
+      "nc": 0
+     }
+    },
+    {
+     "t": "어제 주식 생방송중 눈물흘린 눈나",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 5,
+     "issue_nc": 4,
+     "kw": [
+      "주식",
+      "방송",
+      "눈물"
+     ],
+     "top_post": {
+      "t": "어제 주식 생방송중 눈물흘린 눈나",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=482041&_dcbest=1&page=1",
+      "nc": 0
+     }
+    },
+    {
+     "t": "본인 사진이 한국에 돌고있는지 모르겠다는 배우",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 5,
+     "issue_nc": 1,
+     "kw": [
+      "한국",
+      "배우",
+      "AV",
+      "성매매"
+     ],
+     "top_post": {
+      "t": "왜 본인의 사진이 한국에 돌고있는지 모르겠다는 AV배우",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481927&_dcbest=1&page=1",
       "nc": 0
      }
     },
@@ -856,8 +895,8 @@
      "issue_np": 3,
      "issue_nc": 37,
      "kw": [
-      "직전",
       "남자",
+      "직전",
       "결혼",
       "파토"
      ],
@@ -875,8 +914,8 @@
      "issue_np": 4,
      "issue_nc": 29,
      "kw": [
-      "GTA",
-      "게임"
+      "게임",
+      "GTA"
      ],
      "top_post": {
       "t": "게임 개발진들이 바라본 GTA6 평가",
@@ -910,9 +949,9 @@
      "issue_np": 3,
      "issue_nc": 12,
      "kw": [
+      "머스크",
       "이재용",
       "일론",
-      "머스크",
       "대화"
      ],
      "top_post": {
@@ -920,46 +959,12 @@
       "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=482058&_dcbest=1&page=1",
       "nc": 0
      }
-    },
-    {
-     "t": "본인 사진이 한국에 돌고있는지 모르겠다는 배우",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 1,
-     "kw": [
-      "한국",
-      "배우"
-     ],
-     "top_post": {
-      "t": "왜 본인의 사진이 한국에 돌고있는지 모르겠다는 AV배우",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481927&_dcbest=1&page=1",
-      "nc": 0
-     }
-    },
-    {
-     "t": "주식 손실을 회복하려고 경제방송 삭제했어요",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 1,
-     "kw": [
-      "주식",
-      "방송"
-     ],
-     "top_post": {
-      "t": "어제 주식 생방송중 눈물흘린 눈나",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=482041&_dcbest=1&page=1",
-      "nc": 0
-     }
     }
    ]
   },
   {
    "name": "루리웹",
-   "np": 19,
+   "np": 23,
    "nc": 0,
    "topics": [
     {
@@ -988,8 +993,8 @@
      "issue_np": 6,
      "issue_nc": 31,
      "kw": [
-      "백화점",
       "민원",
+      "백화점",
       "고객",
       "근무복"
      ],
@@ -1009,8 +1014,8 @@
      "kw": [
       "뮤지컬",
       "참사",
-      "난리",
-      "배우"
+      "실시간",
+      "난리"
      ],
      "top_post": {
       "t": "난리난 뮤지컬 배우 사과문 입갤",
@@ -1039,19 +1044,55 @@
     {
      "t": "네이버페이 59원 (신속히 받으세요)",
      "nsite": 4,
-     "np_here": 2,
+     "np_here": 3,
      "nc_here": 0,
-     "issue_np": 9,
-     "issue_nc": 9,
+     "issue_np": 8,
+     "issue_nc": 5,
      "kw": [
-      "네이버",
       "페이",
-      "랜덤",
-      "포인트"
+      "네이버",
+      "랜덤"
      ],
      "top_post": {
       "t": "핫딜 [네이버페이] 삼성SDS 유튜브구독 180원",
       "u": "https://bbs.ruliweb.com/best/board/1020/read/109376?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "어제 주식 생방송중 눈물흘린 눈나",
+     "nsite": 4,
+     "np_here": 2,
+     "nc_here": 0,
+     "issue_np": 5,
+     "issue_nc": 4,
+     "kw": [
+      "주식",
+      "방송",
+      "눈물"
+     ],
+     "top_post": {
+      "t": "주식 전문가가 방송에서 운 이유",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77534179?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "본인 사진이 한국에 돌고있는지 모르겠다는 배우",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 5,
+     "issue_nc": 1,
+     "kw": [
+      "한국",
+      "배우",
+      "AV",
+      "성매매"
+     ],
+     "top_post": {
+      "t": "일본 AV배우 20명!! 한국에서 성매매 '시간당 1,000만원'",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77540246?m=all&t=now",
       "nc": 0
      }
     },
@@ -1061,7 +1102,7 @@
      "np_here": 2,
      "nc_here": 0,
      "issue_np": 4,
-     "issue_nc": 73,
+     "issue_nc": 81,
      "kw": [
       "해밍웨이",
       "코리안"
@@ -1069,41 +1110,6 @@
      "top_post": {
       "t": "코리안 해밍웨이",
       "u": "https://bbs.ruliweb.com/best/board/300143/read/77538696?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "아키하바라에서 오타쿠 한테 제지당한 썰",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 60,
-     "kw": [
-      "제지",
-      "오타쿠",
-      "아키하바라"
-     ],
-     "top_post": {
-      "t": "아키하바라에서 오타쿠 한테 제지당한 썰",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77531895?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "신축아파트 1층뷰",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 37,
-     "kw": [
-      "아파트",
-      "신축"
-     ],
-     "top_post": {
-      "t": "믿지 못할 요즘 신축아파트 1층 뷰",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77532241?m=all&t=now",
       "nc": 0
      }
     }
@@ -1122,8 +1128,8 @@
      "issue_np": 6,
      "issue_nc": 31,
      "kw": [
-      "백화점",
       "민원",
+      "백화점",
       "고객",
       "근무복"
      ],
@@ -1139,10 +1145,10 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 5,
-     "issue_nc": 52,
+     "issue_nc": 59,
      "kw": [
-      "중징계",
       "최민희",
+      "중징계",
       "민주당"
      ],
      "top_post": {
@@ -1176,9 +1182,9 @@
      "issue_np": 3,
      "issue_nc": 36,
      "kw": [
+      "전화",
       "부재중",
-      "사장",
-      "전화"
+      "사장"
      ],
      "top_post": {
       "t": "사장님 부재중 전화 27통",
@@ -1196,8 +1202,8 @@
      "kw": [
       "자영업",
       "공포",
-      "시장",
-      "만연"
+      "만연",
+      "시장"
      ],
      "top_post": {
       "t": "시장에 피가 낭자하고 공포가 만연하다 - 자영업 버젼 만화",
@@ -1235,13 +1241,12 @@
      "nsite": 4,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 9,
-     "issue_nc": 9,
+     "issue_np": 8,
+     "issue_nc": 5,
      "kw": [
-      "네이버",
       "페이",
-      "랜덤",
-      "포인트"
+      "네이버",
+      "랜덤"
      ],
      "top_post": {
       "t": "네이버페이15원+10원+10원+5원+1원+1원+1원+1원+랜덤 눌러봐++10원+5원+눌러눌러 보험랜덤+보험랜덤 하나더+라이브미리보고5원받기",
@@ -1260,7 +1265,7 @@
       "학원",
       "머리",
       "수영",
-      "남자"
+      "학부모"
      ],
      "top_post": {
       "t": "남자가 머리말려주는 게 불편한 수영학원 학부모들",
