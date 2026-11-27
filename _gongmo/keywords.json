@@ -1,6 +1,6 @@
 {
  "_schema": "query, tier(단기|중기|장기), signal[], score, status(미작성|작성|내림), page, registered, expires(빈칸=유지)",
- "updated": "2026-11-28 00:00",
+ "updated": "2026-11-28 01:00",
  "items": [
   {
    "query": "내일 날씨",
@@ -16262,8 +16262,8 @@
     "구글트렌드"
    ],
    "score": 5,
-   "status": "작성",
-   "page": "/issue/suneung-2027-grade-cut-difficulty-answers-1119/",
+   "status": "미작성",
+   "page": "",
    "registered": "2026-11-20",
    "expires": "2026-11-27"
   },
