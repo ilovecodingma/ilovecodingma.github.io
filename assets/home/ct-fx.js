@@ -4,15 +4,16 @@
   var reduce = false;
   try { reduce = matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
   if (reduce) return;
+  var LITE = false; try { LITE = innerWidth < 760 || matchMedia('(pointer:coarse)').matches; } catch (e) {}   /* 폰: 열화판 — 폭죽 적게, 루리 2명, 글자 흩날림·유리·씹기 없음, 1.2초 뒤 차분 */
   var cv = document.createElement('canvas');
   cv.setAttribute('aria-hidden', 'true');
   cv.style.cssText = 'position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:9990;mix-blend-mode:screen';
   document.body.appendChild(cv);
-  var cx = cv.getContext('2d'), W = 0, H = 0, dpr = Math.min(devicePixelRatio || 1, 2);
+  var cx = cv.getContext('2d'), W = 0, H = 0, dpr = LITE ? 1 : Math.min(devicePixelRatio || 1, 2);
   function fit() { W = innerWidth; H = innerHeight; cv.width = W * dpr; cv.height = H * dpr; cx.setTransform(dpr, 0, 0, dpr, 0, 0); }
   fit(); addEventListener('resize', fit);
   var P = [], R = [], flash = 0, COL = [330, 345, 15, 35, 50, 190, 280];
-  var MAX = innerWidth < 700 ? 500 : 1100;
+  var MAX = LITE ? 160 : 1100;
 
   function burst(x, y, n, power, hue0) {
     for (var i = 0; i < n && P.length < MAX; i++) {
@@ -78,7 +79,7 @@
   }
   addEventListener('pointerdown', function (e) { if (!CALM && Math.random() < .35) glass(e.clientX, e.clientY); }, { passive: true });
   setTimeout(function () { glass(W * .62, H * .3); }, 1100);
-  var T2 = setInterval(function () { if (!document.hidden && !CALM) glass(W * (.2 + Math.random() * .6), H * (.15 + Math.random() * .5)); }, 7800);
+  var T2 = setInterval(function () { if (!LITE && !document.hidden && !CALM) glass(W * (.2 + Math.random() * .6), H * (.15 + Math.random() * .5)); }, 7800);
 
   /* ── 글자 흩날림 → 합체 ── 제목·소제목·카드 글자를 낱자로 쪼개 날렸다가 모은다. 몇 초마다 다시 폭발. */
   var LET = [], io = null;
@@ -116,7 +117,7 @@
   function setup() {
     var sel = '.ct h1, .ct .lead, .ct-hd h2, .ct-card h3, .ct-paths b, .ct-tabs a, .ct-rant, .ct-stats span';
     var els = Array.prototype.slice.call(document.querySelectorAll(sel)).filter(function (e) { return e.textContent.length < 90; });
-    if (!els.length) return;
+    if (!els.length || LITE) return;
     els.forEach(split);
     var groups = new Map();
     LET.forEach(function (sp) { if (!groups.has(sp._g)) groups.set(sp._g, []); groups.get(sp._g).push(sp); });
@@ -156,7 +157,7 @@
     FL.push(f);
   }
   function talk(f) { f.b.textContent = SAY[(Math.random() * SAY.length) | 0]; f.b.style.opacity = 1; f.say = 70; }
-  var NF = innerWidth < 700 ? 5 : 9; for (var q = 0; q < NF; q++) spawn();
+  var NF = LITE ? 2 : 9; for (var q = 0; q < NF; q++) spawn();
   function stepFly(dt) {
     FL.forEach(function (f) {
       f.x += f.vx * dt; f.y += f.vy * dt; f.r += f.vr * dt; f.ph += f.sp * dt;
@@ -177,7 +178,7 @@
     (document.querySelector('.ct') || document.body).classList.add('ct-calm');
     FL.forEach(function (f) { f.out = true; f.b.style.opacity = 0; var m = Math.hypot(f.x - W / 2, f.y - H / 2) || 1; f.vx = (f.x - W / 2) / m * 14; f.vy = (f.y - H / 2) / m * 14; });
     setTimeout(function () { FL.length = 0; if (fwrap.parentNode) fwrap.parentNode.removeChild(fwrap); }, 2600);
-  }, 3000);
+  }, LITE ? 1200 : 3000);
 
   /* ── 글자 씹어먹기 ── 루리가 날아와 글자 하나를 물고 와구와구 씹은 뒤 뱉듯이 되돌려 놓는다 */
   function chomp() {
@@ -204,7 +205,7 @@
       };
     };
   }
-  setTimeout(chomp, 500);
+  if (!LITE) setTimeout(chomp, 500);
 
   var prev = performance.now();
   function loop(t) {

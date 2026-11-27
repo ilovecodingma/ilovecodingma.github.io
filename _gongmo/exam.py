@@ -169,7 +169,7 @@ def pages(page):
         sec += '<h2>다가오는 시험</h2><div class="tw"><table>' + head + '<tbody>' + ''.join(li(x) for x in up) + '</tbody></table></div>'
     sec = ('<h2>입시 일정표</h2><ul><li><a href="/exam/jeongsi-univ-2027/">2027학년도 정시 대학별 합격자 발표일·등록 기간</a></li><li><a href="/exam/nonsul-2027/">2027학년도 대학별 논술 시험일</a></li></ul>' if (_rows('jeongsi_2027_universities.json') or _rows('nonsul_2026_2027.json')) else '') + sec
     if os.path.isdir(os.path.join(DATA, 'bank')) and any(f.endswith('.json') for f in os.listdir(os.path.join(DATA, 'bank'))):
-        sec = '<h2>문제은행</h2><ul><li><a href="/exam/bank/">시험별 유사문제 풀어 보기(운전면허·근로기준법·한국사 등)</a></li></ul>' + sec
+        sec = '<h2>문제은행</h2><ul><li><a href="/exam/bank/">시험별 연습문제 풀어 보기(운전면허·근로기준법·한국사 등)</a></li></ul>' + sec
     for cat in CATS + sorted({x.get('category', '기타') for x in ex} - set(CATS)):
         L = [x for x in ex_s if x.get('category', '기타') == cat]
         if L:

@@ -27,6 +27,24 @@ CSS = ('<style>.bk{max-width:820px;margin:0 auto;line-height:1.75}.bk h2{margin:
        '.bk .rv .ex,.bk details p{white-space:pre-line;display:block;margin:6px 0}.bk .fig{margin:10px 0;padding:10px;background:#0f1220;border:1px solid #2a2f4a;border-radius:8px;overflow-x:auto}.bk .fig svg{max-width:100%;height:auto;color:#e8e8f0}'
        '@keyframes bkTear{0%{transform:none;opacity:1}18%{transform:translate(calc(var(--dx)*.18),-14px) rotate(calc(var(--r)*.3))}100%{transform:translate(var(--dx),var(--dy)) rotate(var(--r));opacity:0}}@keyframes bkHand{from{transform:translate(110%,-30px) rotate(9deg);opacity:0}to{transform:none;opacity:1}}.bk-half{background:#fff!important;box-shadow:0 4px 14px rgba(0,0,0,.5)}.bk-tearmsg{position:fixed;left:50%;top:40%;z-index:99999;transform:translate(-50%,-50%) rotate(-3deg);padding:12px 20px;background:#ff4d7d;color:#fff;font-size:22px;font-weight:800;border-radius:6px;white-space:nowrap;pointer-events:none;animation:bkMsg 1.5s ease-out forwards}@keyframes bkMsg{0%{opacity:0;transform:translate(-50%,-50%) rotate(-3deg) scale(.7)}12%{opacity:1;transform:translate(-50%,-50%) rotate(-3deg) scale(1.05)}85%{opacity:1}100%{opacity:0}}.bk div.q:nth-child(3n+1){transform:rotate(-.5deg)}.bk div.q:nth-child(3n+2){transform:rotate(.45deg) translateX(3px)}.bk div.q:nth-child(3n){transform:rotate(-.25deg) translateX(-3px)}@media (prefers-reduced-motion:reduce){.bk div.q{transform:none!important}}'
        '@media (prefers-color-scheme:dark){.bk div.q{background:#1a2340;color:#e5e9f5;border-color:#2a3558}.bk div.q .rv{color:#e5e9f5}.bk label.o{background:#131a2e;border-color:#2a3558;color:#e5e9f5}.bk label.o:has(input:checked){background:#26336a}.bk .setup .grp button{background:#1a2340;color:#e5e9f5;border-color:#2a3558}.bk label.ans{background:#0f3d24!important;color:#e5e9f5}.bk label.wr{background:#4a1620!important;color:#e5e9f5}.bk .q,.bk .play button{border-color:#334155;background:transparent;color:inherit}.bk .play .ex{background:#1e293b}}</style>')
+
+CSS2 = ('<style>'
+ '.bk{max-width:860px;--bg:#0e1222;--bg2:#151b33;--ln:#252d52;--tx:#e8ebf8;--mu:#8e98c0;--ac:#6c7bff;--ac2:#ff5c9a;color:var(--tx)}'
+ '.bk h1{font-size:28px;letter-spacing:-.02em;margin:6px 0 12px}.bk h2{font-size:15px;letter-spacing:.04em;color:var(--mu);font-weight:700;margin:30px 0 12px;text-transform:none}.bk h2 small{color:var(--ac);margin-left:4px}'
+ '.bk>ul,.bk ul:not(.nts-k):not(.c){list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px}'
+ '.bk>ul>li{margin:0;padding:0}.bk>ul>li>a{display:block;padding:14px 16px 12px;border:1px solid var(--ln);border-radius:14px;background:linear-gradient(160deg,var(--bg2),var(--bg));text-decoration:none;color:var(--tx);transition:border-color .15s,transform .15s}'
+ '.bk>ul>li>a:hover{border-color:var(--ac);transform:translateY(-2px)}.bk>ul>li>a b{display:block;font-size:16px;margin-bottom:6px}'
+ '.bk>ul>li .bd{font-size:11px;padding:2px 8px;margin-right:6px}.bk>ul>li small{color:var(--mu);font-size:12px}'
+ '.bk .bd{background:rgba(255,92,154,.14);color:#ff8ab8;border:1px solid rgba(255,92,154,.3)}.bk .bd.pb{background:rgba(52,211,153,.12);color:#6ee7b7;border-color:rgba(52,211,153,.3)}'
+ '.bk .ai{background:rgba(108,123,255,.1);border:1px solid rgba(108,123,255,.3);color:var(--tx);border-radius:12px}'
+ '.bk .setup{border:1px solid var(--ln);background:var(--bg2);border-radius:16px}.bk .setup h2{color:var(--tx);font-size:17px;margin:0 0 10px}.bk .setup .grp button{background:var(--bg);color:var(--tx);border-color:var(--ln)}.bk .setup .grp button.on{background:var(--ac);border-color:var(--ac);color:#fff}.bk .setup input[type=number]{background:var(--bg);color:var(--tx);border-color:var(--ln)}'
+ '.bk div.q,.bk div.q:nth-child(n){transform:none!important;background:var(--bg2);color:var(--tx);border:1px solid var(--ln);border-radius:16px;box-shadow:none;padding:20px 20px 14px}'
+ '.bk .qt .n{background:var(--ac);width:30px;height:30px}.bk label.o{background:var(--bg);border:1px solid var(--ln);color:var(--tx);border-radius:12px;padding:12px 14px}.bk label.o:hover{border-color:var(--ac)}.bk label.o:has(input:checked){background:rgba(108,123,255,.16);border-color:var(--ac);box-shadow:none}.bk label.o em{color:var(--ac)}'
+ '.bk div.q.ok{border-color:#34d399}.bk div.q.no{border-color:#fb7185}.bk label.ans{background:rgba(52,211,153,.14)!important;border-color:#34d399!important}.bk label.wr{background:rgba(251,113,133,.14)!important;border-color:#fb7185!important}'
+ '.bk .rv{color:var(--tx)}.bk .rv .ex{background:var(--bg);border-left:3px solid var(--ac);border-radius:6px;padding:10px 12px}'
+ '.bk .clk{background:var(--bg2);border:1px solid var(--ln);color:var(--ac2)}.bk #bk-start,.bk #bk-grade{background:linear-gradient(90deg,var(--ac),#8b5cf6);border:0;border-radius:12px;box-shadow:0 6px 18px rgba(108,123,255,.35)}'
+ '.bk .bar button.g{background:transparent;color:var(--ac);border-color:var(--ac)}.bk .nt{color:var(--mu)}.bk .nt a{color:var(--ac)}'
+ '</style>')
 JS = r'''<script>(function(){var el=document.getElementById('bk-data');if(!el)return;var D=JSON.parse(el.textContent),Q=D.questions,key='bk_wrong_'+D.id;
 var sheet=document.getElementById('bk-sheet'),res=document.getElementById('bk-res'),clock=document.getElementById('bk-clock'),gb=document.getElementById('bk-grade'),rs=document.getElementById('bk-reset'),setup=document.getElementById('bk-setup'),info=document.getElementById('bk-info'),nin=document.getElementById('bk-n'),bar=document.getElementById('bk-gbar');
 var cfg={n:'all',m:'p',o:'seq',r:'all'},order=[],timed=false,tmr=null,tleft=0,tstart=0,graded=false,SEC=D.sec_per_q||60;
@@ -153,7 +171,7 @@ def _load():
 
 
 def _badge(d):
-    return ('<span class="bd pb">공식 공개 기출</span>' if d.get('kind') == 'public' else ('<span class="bd">AI가 기출을 분석해 개편한 문제</span>' if d.get('method') == 'rework' else '<span class="bd">공식 자료 기반 유사문제</span>'))
+    return ('<span class="bd pb">공식 기출</span>' if d.get('kind') == 'public' else ('<span class="bd">AI 제작</span>' if d.get('method') == 'rework' else '<span class="bd">AI 제작</span>'))
 
 
 def pages(page):
@@ -187,7 +205,7 @@ def pages(page):
                 + '<div class="play" id="bk-play">' + _setup
                 + '<div id="bk-res"></div><p class="clk" id="bk-clock" hidden></p><form id="bk-sheet" onsubmit="return false" hidden></form>'
                 '<div class="bar" id="bk-gbar" hidden><button id="bk-grade">채점하기</button></div><div class="bar"><button class="g" id="bk-reset" hidden>설정으로 돌아가기</button></div></div>'
-                f'<noscript>{lst}</noscript><script type="application/json" id="bk-data">{data}</script>' + '</div>' + CSS + JS)
+                f'<noscript>{lst}</noscript><script type="application/json" id="bk-data">{data}</script>' + '</div>' + CSS + CSS2 + JS)
         page(f'/exam/bank/{d["id"]}/', f'{d["name"]} 문제은행 — 무료 연습문제 {len(d["questions"])}개 — 가난한 박과장', f'{d["name"]} 연습문제 {len(d["questions"])}개를 한 문제씩 풀고 정답·해설과 근거를 확인해. 틀린 문제만 다시 풀 수 있어.', body,
              [('홈', '/'), ('시험', '/exam/'), ('문제은행', '/exam/bank/'), (d['name'], f'/exam/bank/{d["id"]}/')])
         urls.append(f'/exam/bank/{d["id"]}/')
@@ -202,8 +220,8 @@ def pages(page):
         if _L:
             li += '<h2>' + _gn + ' <small>' + str(len(_L)) + '개</small></h2><ul>' + _li(_L) + '</ul>'
     hub = ('<div class="bk"><p class="bc"><a href="/">홈</a> › <a href="/exam/">시험</a> › 문제은행</p><h1>시험 문제은행</h1>'
-           '<p>시험별 연습문제. 풀고 해설 봐. 모든 문제는 AI 에이전트가 만들고 다른 AI 에이전트가 검수했습니다.'
-           f'{li}</div>' + HUBJS + CSS)
+           '<p>시험별 연습문제. 풀고 풀이 봐. AI 에이전트가 만들고 다른 AI 에이전트가 검수했어.</p>'
+           f'{li}</div>' + HUBJS + CSS + CSS2)
     page('/exam/bank/', '시험 문제은행 — 자격증·공무원·수능 무료 연습문제 — 가난한 박과장', '자격증·공무원·수능 시험별 연습문제를 풀고 정답과 해설, 근거 링크를 확인해. 틀린 문제만 다시 풀 수 있어.', hub, [('홈', '/'), ('시험', '/exam/'), ('문제은행', '/exam/bank/')])
     urls.append('/exam/bank/')
     print('시험 문제은행', len(banks), '종')

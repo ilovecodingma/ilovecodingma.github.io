@@ -9,14 +9,14 @@
 <label>무주택 기간 <select data-g="h">${['1년 미만', ...Array.from({ length: 14 }, (_, i) => `${i + 1}년 이상`), '15년 이상'].map((v, i) => `<option value="${i}">${v}</option>`).join('')}</select></label>
 <label>부양가족 수 <select data-g="f">${['0명', '1명', '2명', '3명', '4명', '5명', '6명 이상'].map((v, i) => `<option value="${i}">${v}</option>`).join('')}</select></label>
 <label>청약통장 가입 기간 <select data-g="b">${['6개월 미만', '6개월~1년', ...Array.from({ length: 14 }, (_, i) => `${i + 1}년 이상`), '15년 이상'].map((v, i) => `<option value="${i}">${v}</option>`).join('')}</select></label></div>
-<div class="me-gjr"><b class="me-gs">0점</b><span class="me-gd"></span></div><p class="note">무주택 2점×기간(최대 32) + 부양가족 5점×(인원+1)(최대 35) + 통장 기간(최대 17). 실제 판정은 청약홈 기준이에요.</p></section>`;
+<div class="me-gjr"><b class="me-gs">0점</b><span class="me-gd"></span></div><p class="note">무주택 2점×기간(최대 32) + 부양가족 5점×(인원+1)(최대 35) + 통장 기간(최대 17). 실제 판정은 청약홈 기준이다.</p></section>`;
   function gajum(P, save) {
     const g = { h: +(P.gh || 0), f: +(P.gf || 0), b: +(P.gb || 0) };
     M.querySelectorAll('[data-g]').forEach(s => { s.value = g[s.dataset.g]; s.onchange = () => { g[s.dataset.g] = +s.value; calc(true); }; });
     function calc(store) {
       const H = g.h === 0 ? 2 : Math.min(32, 2 * (g.h + 1)), F = Math.min(35, 5 * (g.f + 1)), B = Math.min(17, g.b + 1), S = H + F + B;
       M.querySelector('.me-gs').textContent = S + '점';
-      M.querySelector('.me-gd').textContent = `무주택 ${H} · 부양가족 ${F} · 통장 ${B} — ${S >= 60 ? '수도권 인기 단지도 노려볼 만해요' : S >= 45 ? '지방·비인기 단지 일반공급에 유리해요' : '추첨제·특별공급(신혼·청년)을 같이 보세요'}`;
+      M.querySelector('.me-gd').textContent = `무주택 ${H} · 부양가족 ${F} · 통장 ${B} — ${S >= 60 ? '수도권 인기 단지도 노려볼 만하다' : S >= 45 ? '지방·비인기 단지 일반공급에 유리하다' : '추첨제·특별공급(신혼·청년)을 같이 봐'}`;
       if (store && save) save({ gh: String(g.h), gf: String(g.f), gb: String(g.b), gajum: String(S) });
     }
     calc(false);
@@ -25,12 +25,12 @@
     ['game', '🎮', '무료 게임·스팀 할인', '새 무료 게임이 풀릴 때'], ['money', '📊', '전문가 말 vs 시세', '매일 아침'], ['event', '🎁', '경품·용돈', '오늘 마감']];
   const LSJ = 'jupjup_join_t', qt = (location.search.match(/[?&]t=([a-z]+)/) || [])[1];
   if (qt && TOPICS.some(t => t[0] === qt)) { try { localStorage.setItem(LSJ, qt); } catch {} }
-  const STATE = { '': '찜', applied: '✅ 냈어요', won: '🏆 당첨', lost: '😢 아쉬움' };
+  const STATE = { '': '찜', applied: '✅ 냈다', won: '🏆 당첨', lost: '😢 아쉬움' };
   if (!J.st.t) {
-    M.innerHTML = `<section class="me-hero"><img src="/assets/ruri/p/office_wave.webp" alt="" width="300" height="415"><div><h1>가입하면 루리가 챙겨 줘요</h1>
-<ul class="me-ben"><li>🔔 <b>마감 알림 메일</b> — 찜한 공모전·청약 마감 3일 전과 당일</li><li>⭐ <b>찜·응모 기록</b> — 폰·PC 어디서든, 냈어요 → 당첨까지</li><li>🎯 <b>자격 맞춤 추천</b> — 나이·지역·신분에 안 맞는 건 자동으로 빼요</li>
-<li>📬 <b>맞춤 소식 메일</b> — 고른 주제(오늘의 메뉴·지원금·공모전·무료 게임·뉴스)만 소식이 있는 날 한 통</li><li>🏠 <b>청약 가점 계산·저장</b></li><li>🏆 <b>수상작 전체 보기 + 내 문구 진단 기록</b></li><li>🎮 <b>루리 옷벗기기 · 🚩 원정대</b></li></ul>
-<button class="btn2 me-join">구글·카카오·이메일로 1초 가입</button></div></section>${gjHTML()}`;
+    M.innerHTML = `<section class="me-hero"><img src="/assets/ruri/p/office_wave.webp" alt="" width="300" height="415"><div><h1>가입하면 상태창이 열려</h1>
+<ul class="me-ben"><li>📊 <b>헬조선 생존 확률</b> — 6개 능력치와 레벨, 활동할 때마다 바뀐다</li><li>🎯 <b>목표 플랜</b> — 시험·자격증·습관 중 고르면 기한에 맞춰 할 일을 짜 준다</li><li>✅ <b>오늘의 퀘스트</b> — 앱을 깔면 목표에 맞는 퀘스트를 폰 알림으로 던진다</li>
+<li>🏅 <b>업적</b> — 목표를 해내면 받는다</li><li>💾 <b>기록 저장</b> — 푼 문제·점수가 계정에 남아 폰·PC 어디서든 이어진다</li><li>🧞 <b>목표 추가 요청</b> — 없는 목표는 말해라. 하루 안에 플랜을 짜 넣는다</li></ul>
+<button class="btn2 me-join">구글·카카오·이메일로 1초 가입</button></div></section>`;
     gajum({}, null);
     M.querySelector('.me-join').onclick = () => J.authModal(() => location.reload()); return;
   }
@@ -44,9 +44,9 @@
     const soon = items.filter(x => x.fav && x.state === '' && (left(x.end) ?? 99) >= 0).sort((a, b) => (left(a.end) ?? 999) - (left(b.end) ?? 999));
     const rec = items.filter(x => x.state), won = rec.filter(x => x.state === 'won').length;
     M.innerHTML = `<section class="me-top"><img src="${J.poseSrc ? J.poseSrc(P.o && P.o !== 'smile' ? P.o.replace(/^o_/, '') : 'office', 'wave', false) || '/assets/ruri/p/office_wave.webp' : '/assets/ruri/p/office_wave.webp'}" alt="" width="300" height="415">
-<div><h1>${esc(me.nick || J.st.n)}의 공간</h1><p class="me-stat"><span><b>${soon.length}</b>찜</span><span><b>${rec.length}</b>냈어요</span><span><b>${won}</b>당첨</span><span><b>${(me.visits || 0) + (me.invites || 0) * 3}</b>초대 점수</span></p></div></section>
+<div><h1>${esc(me.nick || J.st.n)}의 공간</h1><p class="me-stat"><span><b>${(JSON.parse(localStorage.getItem("jam_hud")||"{}").lv)||1}</b>레벨</span><span><b>${(JSON.parse(localStorage.getItem("jam_surv")||"{}").v)||"?"}%</b>생존 확률</span></p></div></section>
 <section class="me-sec"><h2>🔔 마감 알림</h2><label class="me-sw"><input type="checkbox" class="me-alert" ${P.alert === '1' ? 'checked' : ''}> 찜한 것 마감 3일 전·당일에 메일 받기</label>
-<p class="note">받는 곳: ${esc(me.email || '가입 이메일')} · 매일 아침 8시 · 끄면 바로 멈춰요</p></section>
+<p class="note">받는 곳: ${esc(me.email || '가입 이메일')} · 매일 아침 8시 · 끄면 바로 멈춘다</p></section>
 <section class="me-sec" id="topics"><h2>📬 잠이 오냐 · 받을 소식</h2><p class="note">고른 시험·분야만 메일로 보낸다. 소식 없는 날은 안 보낸다. 폰 알림은 <a href="/app/">잠이 오냐 앱</a>에서 켠다.</p>
 <label class="me-sw"><input type="checkbox" class="me-xm" ${P.xm === '1' ? 'checked' : ''}> <b>메일로 받기</b> <small>끄면 바로 멈춘다</small></label>
 <label class="me-sw"><b>보내는 때</b> <select class="me-xf"><option value="d" ${P.xf !== 'w' ? 'selected' : ''}>매일 아침</option><option value="w" ${P.xf === 'w' ? 'selected' : ''}>월요일에 한 번</option></select></label>
@@ -54,21 +54,38 @@
 <p class="note"><b>분야</b></p><div class="me-tp">${(CAT.fields || []).map(f => `<label class="me-sw"><input type="checkbox" data-sd="${f.k}" ${String(P.sdt || '').split(',').includes(f.k) ? 'checked' : ''}> <b>${esc(f.n)}</b></label>`).join('')}</div>
 <p class="note me-tpn">받는 곳: ${esc(me.email || '가입 이메일')}</p></section>
 <section class="me-sec me-ka" hidden><h2>💬 카카오톡으로 마감 알림 받기</h2><label class="me-sw"><input type="checkbox" class="me-kalert"> 찜한 것 마감 3일 전·1일 전에 카카오톡 「나와의 채팅」으로 받기</label>
-<p class="note me-kanote">매일 아침 8시 30분 · 켤 때 카카오 「메시지 전송」 동의를 한 번 받아요 · 끄면 동의도 철회돼요</p></section>
-<section class="me-sec"><h2>⭐ 찜 <small>마감 임박순</small></h2><ul class="me-list">${soon.map(x => row(x)).join('') || '<li class="note">아직 찜한 게 없어요. 공모전·청약 상세 페이지나 루리 추천에서 ⭐를 눌러 보세요.</li>'}</ul></section>
-<section class="me-sec"><h2>📒 응모 기록</h2><ul class="me-list">${rec.map(x => row(x, true)).join('') || '<li class="note">상세 페이지에서 「✅ 냈어요」를 누르면 여기 쌓여요. 발표 나면 당첨/아쉬움을 골라 두세요.</li>'}</ul></section>
-<section class="me-sec"><h2>🎯 자격 프로필 <small>추천에서 안 맞는 건 빼요</small></h2><div class="me-prof">
+<p class="note me-kanote">매일 아침 8시 30분 · 켤 때 카카오 「메시지 전송」 동의를 한 번 받는다 · 끄면 동의도 철회된다</p></section>
+<section class="me-sec"><h2>⭐ 찜 <small>마감 임박순</small></h2><ul class="me-list">${soon.map(x => row(x)).join('') || '<li class="note">아직 찜한 게 없다. 공모전·청약 상세 페이지나 루리 추천에서 ⭐를 눌러 봐.</li>'}</ul></section>
+<section class="me-sec"><h2>📒 응모 기록</h2><ul class="me-list">${rec.map(x => row(x, true)).join('') || '<li class="note">상세 페이지에서 「✅ 냈다」를 누르면 여기 쌓인다. 발표 나면 당첨/아쉬움을 골라 둬.</li>'}</ul></section>
+<section class="me-sec"><h2>🎯 자격 프로필 <small>추천에서 안 맞는 건 뺀다</small></h2><div class="me-prof">
 <label>나이대 <select data-k="age">${['선택 안 함', '10대', '20대', '30대', '40대', '50대 이상'].map(v => `<option${P.age === v ? ' selected' : ''}>${v}</option>`).join('')}</select></label>
 <label>사는 곳 <select data-k="region">${['선택 안 함', '서울', '경기', '인천', '부산', '대구', '광주', '대전', '울산', '세종', '강원', '충북', '충남', '전북', '전남', '경북', '경남', '제주'].map(v => `<option${P.region === v ? ' selected' : ''}>${v}</option>`).join('')}</select></label>
 <label>신분 <select data-k="role">${['선택 안 함', '초중고 학생', '대학생', '직장인', '구직·프리랜서', '주부', '기타'].map(v => `<option${P.role === v ? ' selected' : ''}>${v}</option>`).join('')}</select></label>
 <label>주택 <select data-k="house">${['선택 안 함', '무주택', '1주택', '다주택'].map(v => `<option${P.house === v ? ' selected' : ''}>${v}</option>`).join('')}</select></label></div><p class="note me-saved"></p></section>
 ${gjHTML()}
-<section class="me-sec"><h2>🏆 내 문구 진단 기록</h2><ul class="me-list">${lab.map(h => `<li><q>${esc(h.q)}</q> <b>${h.score}점</b> <small>${esc(h.th || '')}</small></li>`).join('') || '<li class="note"><a href="/lab/#diag">수상 연구소</a>에서 문구를 진단하면 여기 남아요.</li>'}</ul></section>
+<section class="me-sec"><h2>🏆 내 문구 진단 기록</h2><ul class="me-list">${lab.map(h => `<li><q>${esc(h.q)}</q> <b>${h.score}점</b> <small>${esc(h.th || '')}</small></li>`).join('') || '<li class="note"><a href="/lab/#diag">수상 연구소</a>에서 문구를 진단하면 여기 남는다.</li>'}</ul></section>
 <section class="me-sec me-links"><a href="/community/">🚩 원정대</a><a href="/lab/">🏆 수상 연구소</a><a href="/">💬 루리 상담</a></section>`;
+    (function () {   // 2026-11-27 프로필 개편: 활동 기록(28일) 위로, 예전 공모전·청약 기능은 접는다
+      var A = {}; try { A = JSON.parse(localStorage.getItem('jam_act') || '{}'); } catch (e) {}
+      var D = A.d || {}, cells = '', tot = 0, days = 0, now = new Date();
+      for (var i = 27; i >= 0; i--) {
+        var x = new Date(now); x.setDate(now.getDate() - i);
+        var k = x.getFullYear() + '-' + ('0' + (x.getMonth() + 1)).slice(-2) + '-' + ('0' + x.getDate()).slice(-2), v = D[k], n = 0;
+        if (v) { for (var c in v.v) n += v.v[c]; n += (v.p || []).length; }
+        if (n) { tot += n; days++; }
+        cells += '<i class="hm' + (n === 0 ? 0 : n < 4 ? 1 : n < 10 ? 2 : n < 25 ? 3 : 4) + '" title="' + k + ' · ' + n + '회"></i>';
+      }
+      var sec = document.createElement('section'); sec.className = 'me-sec me-act';
+      sec.innerHTML = '<h2>📅 활동 기록 <small>최근 28일</small></h2><div class="me-hm">' + cells + '</div><p class="note">' + days + '일 활동 · 총 ' + tot + '회. 문제 풀이, 습관 체크인, 읽은 글이 합쳐진다.</p>';
+      var tp = M.querySelector('#topics'); if (tp) tp.parentNode.insertBefore(sec, tp);
+      var old = document.createElement('details'); old.className = 'me-old'; old.innerHTML = '<summary>공모전·청약 기록 · 마감 알림 (예전 기능)</summary>';
+      M.querySelectorAll('.me-sec').forEach(function (e) { if (e.id !== 'topics' && !e.classList.contains('me-act')) old.appendChild(e); });
+      M.appendChild(old);
+    })();
     function row(x, rec) {
       const l = left(x.end);
       return `<li data-id="${esc(x.id)}"><a href="${link(x.id)}">${esc(x.title || x.id)}</a><small>${l === null ? '' : l < 0 ? '마감' : l ? 'D-' + l : 'D-DAY'}</small>
-<span class="me-st">${rec ? ['applied', 'won', 'lost'].map(s => `<button data-s="${s}" class="${x.state === s ? 'on' : ''}">${STATE[s]}</button>`).join('') : `<button data-s="applied">✅ 냈어요</button><button data-unfav>☆ 빼기</button>`}</span></li>`;
+<span class="me-st">${rec ? ['applied', 'won', 'lost'].map(s => `<button data-s="${s}" class="${x.state === s ? 'on' : ''}">${STATE[s]}</button>`).join('') : `<button data-s="applied">✅ 냈다</button><button data-unfav>☆ 빼기</button>`}</span></li>`;
     }
     M.querySelectorAll('.me-list [data-s],.me-list [data-unfav]').forEach(b => b.onclick = async () => {
       const id = b.closest('li').dataset.id;
@@ -84,13 +101,13 @@ ${gjHTML()}
     const kh = (location.hash.match(/kalert=(on|fail)/) || [])[1];
     J.api('/api/kakao/alert').then(r => {
       if (!r.ready) return; ka.hidden = false; kc.checked = !!r.on;
-      if (kh) { kn.textContent = kh === 'on' && r.on ? '✅ 켜졌어요. 찜한 것 마감 3일 전·1일 전 아침 8시 30분에 카카오톡으로 보내 드려요.' : '⚠️ 연결하지 못했어요. 「메시지 전송」에 동의했는지 확인하고 다시 켜 주세요.'; history.replaceState(null, '', location.pathname); }
+      if (kh) { kn.textContent = kh === 'on' && r.on ? '✅ 켜졌다. 찜한 것 마감 3일 전·1일 전 아침 8시 30분에 카카오톡으로 보내 준다.' : '⚠️ 연결하지 못했다. 「메시지 전송」에 동의했는지 확인하고 다시 켜 줘.'; history.replaceState(null, '', location.pathname); }
     }).catch(() => {});
     kc.onchange = () => {
       if (kc.checked) J.api('/api/kakao/alert/start', { method: 'POST', body: {} }).then(r => { location.href = r.url; }).catch(() => { kc.checked = false; });
-      else J.api('/api/kakao/alert/off', { method: 'POST', body: {} }).then(() => { kn.textContent = '껐어요. 카카오 메시지 전송 동의도 철회했어요.'; J.ga && J.ga('kakao_alert_toggle', { on: false }); });
+      else J.api('/api/kakao/alert/off', { method: 'POST', body: {} }).then(() => { kn.textContent = '껐다. 카카오 메시지 전송 동의도 철회했다.'; J.ga && J.ga('kakao_alert_toggle', { on: false }); });
     };
-    M.querySelectorAll('.me-prof select').forEach(s => s.onchange = () => save({ [s.dataset.k]: s.value === '선택 안 함' ? '' : s.value }).then(() => { M.querySelector('.me-saved').textContent = '저장했어요. 루리 추천에 바로 반영돼요.'; }));
+    M.querySelectorAll('.me-prof select').forEach(s => s.onchange = () => save({ [s.dataset.k]: s.value === '선택 안 함' ? '' : s.value }).then(() => { M.querySelector('.me-saved').textContent = '저장했다. 루리 추천에 바로 반영된다.'; }));
     gajum(P, save);
   });
 })();

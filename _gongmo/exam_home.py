@@ -156,7 +156,7 @@ def sections(ctx, ic):
     left = right = ''
     if bk:
         left = '<div>' + _hd('문제은행', ('/exam/bank/', '전체')) + '<ul class="ct-list">' + ''.join(
-            f'<li><a href="{u}">{E(nm)} <small style="color:#9aa4c4">· 유사문제 {n}문항</small></a></li>' for u, nm, n in bk) + '</ul></div>'
+            f'<li><a href="{u}">{E(nm)} <small style="color:#9aa4c4">· 문제 {n}개</small></a></li>' for u, nm, n in bk) + '</ul></div>'
     if ar:
         right = '<div>' + _hd('시험 뉴스·글', ('/exam/articles/', '전체')) + '<ul class="ct-list">' + ''.join(
             f'<li><a href="{E(u)}">{E(t)}</a></li>' for u, t in ar) + '</ul></div>'
@@ -168,5 +168,5 @@ def sections(ctx, ic):
             + (f' {n_c}건' if n_c else '') + '</b><span>스펙 없으면 이거라도 내. 마감 임박순.</span></div></div></section>')
     out += ('<section class="ct-sec"><div class="ct-two"><a class="ct-ban" href="/diet/"><div><b>식단</b><span>먹어야 공부한다.</span></div></a>'
             '<a class="ct-ban" href="/wiki/"><div><b>위키 · 생활 정보</b><span>세금·보험·지원금처럼 나머지 잡다한 건 위키.</span></div></a></div></section></div>')
-    out += '<link rel="stylesheet" href="/assets/home/home2.css?v=11"><link rel="stylesheet" href="/assets/home/ct.css?v=8"><script defer src="/assets/home/ct-bg.js?v=4"></script><script defer src="/assets/home/ct-fx.js?v=7"></script><script defer src="/assets/home/home2.js?v=3"></script>'
+    out += '<link rel="stylesheet" href="/assets/home/home2.css?v=11"><link rel="stylesheet" href="/assets/home/ct.css?v=8"><script defer src="/assets/home/ct-bg.js?v=4"></script><script defer src="/assets/home/ct-fx.js?v=8"></script><script defer src="/assets/home/home2.js?v=3"></script>'
     return out

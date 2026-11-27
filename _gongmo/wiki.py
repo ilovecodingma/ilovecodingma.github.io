@@ -172,8 +172,8 @@ def inject(arts, root):
     return n
 
 
-def hub(arts, page_fn, site):
-    cards, byg = '', {}
+def hub(arts, page_fn, site, aw=''):
+    cards, byg = aw, {}
     for key, label, ic, _ in GROUPS:
         L = [a for a in arts if a['g'] == key]
         if not L:
@@ -200,5 +200,11 @@ def build_wiki(urls, noindex, page_fn, root, site):
     os.makedirs(os.path.join(root, 'assets', 'wiki'), exist_ok=True)
     json.dump([{'u': a['u'], 't': a['title'], 'g': a['g'], 'd': a['desc'], 'dt': a.get('dt', '')} for a in arts],
               open(os.path.join(root, 'assets', 'wiki', 'index.json'), 'w', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))
-    hub(arts, page_fn, site)
+    import wiki_agent
+    aw = wiki_agent.build(page_fn, urls)
+    hub(arts, page_fn, site, aw)
+    try:
+        wiki_agent.link_tips(wiki_agent.load(), root)
+    except Exception as e:
+        print('위키 꿀팁 연결 실패', e)
     return len(arts), inject(arts, root)

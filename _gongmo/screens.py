@@ -650,13 +650,13 @@ def home_html(ctx):
     # 2026-11-10 방문 기록 기준 개편: 들어오는 글의 44%가 생활 가이드·고민 해결, 13~25%가 이슈, 19%가 공모전. 홈에서 다음으로 누르는 곳은 공모전이 가장 많다.
     # → 첫 문장·검색 예시·바로가기를 그 순서로, 「많이 찾는 글」(실제 방문 순)을 맨 앞 구역으로.
     top = ('<section class="h2-top" aria-labelledby="h2-t"><h1 id="h2-t">수능·정시·자격증·공무원 시험, 일정부터 문제까지</h1>'
-           '<p class="lead">시험 일정, 접수·발표일, 예상 컷, 유사문제, 스펙, 식단. 날짜는 공식 공고 확인한 것만 적어. <a href="/about/#method">만드는 방식</a></p>'
+           '<p class="lead">시험 일정, 접수·발표일, 예상 컷, 문제은행, 스펙, 식단. 날짜는 공식 공고 확인한 것만 적어. <a href="/about/#method">만드는 방식</a></p>'
            f'<form class="h2-s" role="search" action="/wiki/"><div class="row"><label class="sr" for="hs">검색 범위</label><select id="hs"><option value="">전체</option><option value="c">스펙(공모전)</option><option value="a">지원금</option><option value="w">가이드</option><option value="r">식단</option></select>'
            '<label class="sr" for="hq">검색어</label><input id="hq" type="search" placeholder="예: 2027 수능 등급컷, 한능검, 국가장학금" autocomplete="off" enterkeyhint="search"><button type="submit" class="go">검색</button></div>'
            '<div class="res" id="hr" aria-live="polite"></div></form>'
            '<ul class="qk" aria-label="수험 바로가기">'
            f'<li><a href="/exam/">{_ic("event")}<span><b>시험 일정</b><small>접수·시험일·발표일</small></span></a></li>'
-           f'<li><a href="/exam/bank/">{_ic("guide")}<span><b>문제은행</b><small>시험별 유사문제</small></span></a></li>'
+           f'<li><a href="/exam/bank/">{_ic("guide")}<span><b>문제은행</b><small>시험별 연습문제</small></span></a></li>'
            f'<li><a href="/exam/articles/">{_ic("issue")}<span><b>시험 글</b><small>컷·준비물·가이드</small></span></a></li>'
            f'<li><a href="/contest/">{_ic("contest")}<span><b>수험생 스펙</b><small>공모전·대외활동</small></span></a></li>'
            f'<li><a href="/diet/">{_ic("recipe")}<span><b>수험생 식단</b><small>시험 기간 한 끼</small></span></a></li></ul></section>')

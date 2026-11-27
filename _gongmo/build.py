@@ -78,7 +78,7 @@ THEMES = [  # (키, 이름, 아이콘, 테마색, 홈, [하위 메뉴], [이 테
      ['/trend/', '/hot/', '/news/', '/talk/', '/kw/', '/satire/', '/mag/', '/review/']),
     ('money', '머니', '📊', '#047857', '/analyst/', [('/analyst/', '애널리스트 종합'), ('/money/experts/', '전문가 코멘트'), ('/money/guide/', '생활 돈 가이드'), ('/money/policy/', '투자 정책'), ('/money/age/', '나이별 원칙'), ('/money/tools/salary/', '계산기'), ('/analyst/coin/btc/', '코인')], ['/analyst/', '/money/']),
     ('contest', '공모전', '🏆', '#6d28d9', '/contest/', [('/contest/', '공모전 찾기'), ('/cat/literature/', '분야별'), ('/prep/', '내 응모 준비'), ('/lab/', '수상작 분석'), ('/community/', '팀원 모집'), ('/guide/', '가이드'), ('/widget/', '위젯')],
-     ['/contest/', '/c/', '/cat/', '/prep/', '/lab/', '/community/', '/guide/', '/v/', '/me/', '/widget/']),
+     ['/contest/', '/c/', '/cat/', '/prep/', '/lab/', '/community/', '/guide/', '/v/', '/widget/']),
     ('recipe', '식단·레시피', '🥗', '#c2410c', '/fridge/', [('/diet/', '식단 홈'), ('/diet/meal/', '식단표'), ('/fridge/', '레시피 전체'), ('/fridge/h/full/', '든든한 한 끼'), ('/fridge/h/light/', '가볍게'), ('/fridge/h/protein/', '단백질'), ('/fridge/h/night/', '야식 대신'), ('/fridge/solo/', '자취 요리'), ('/fridge/plan/', '장보기'), ('/fridge/c/guk/', '국·찌개'), ('/fridge/c/bap/', '밥'), ('/fridge/c/myeon/', '면'), ('/fridge/c/bokkeum/', '볶음'), ('/fridge/c/banchan/', '반찬')], ['/fridge/']),   # 2026-10-20 사용자: 레시피 유입이 많아 별도 카테고리로
     ('life', '생활', '🧺', '#0e7490', '/apply/', [('/apply/', '지원금·청약'), ('/apply/recommend/', '청약 추천'), ('/apply/r/', '지역별'), ('/event/', '경품'), ('/qa/', '고민 해결'), ('/plaza/', '광장')], ['/apply/', '/a/', '/event/', '/qa/', '/ssul/', '/plaza/']),
     ('game', '게임', '🎮', '#4f46e5', '/game/', [('/game/', '게임 허브'), ('/game/free/', '무료 게임 기록'), ('/game/release/', '출시 일정'), ('/game/steam-sale/', '세일 달력'), ('/game/refund/', '환불 규정'), ('/game/#timing', '살 타이밍'), ('/game/#contest', '게임 공모전')], ['/game/']),   # 2026-10-20 홍보 세션 기획서: 게임·취미·개발 커뮤니티 콘텐츠
@@ -96,7 +96,7 @@ THEMES += [   # 2026-10-23 사용자 「런처·주제별 메인 분리」: 생�
 THEMES = [t for t in THEMES if t[0] != 'life']
 THEMES.append(('park', '자기개발', '🎓', '#4338ca', '/park/', [('/park/', '수업 홈'), ('/park/#start', '하네스 시작'), ('/park/archive/', '운영 기록'), ('/dev/', '개발 지식')], ['/park/']))
 THEMES.append(('diet', '다이어트', '🥗', '#16a34a', '/diet/', [('/diet/', '다이어트 허브'), ('/diet/meal/', '레시피 식단표'), ('/diet/workout/', '운동 사이클'), ('/diet/workout/#log', '기록'), ('/money/guide/meal-calorie-per-meal/', '식사 칼로리 가이드')], ['/diet/']))
-THEMES.append(('exam', '시험 정보', '📝', '#1d4ed8', '/exam/', [('/exam/', '시험 일정'), ('/exam/bank/', '문제은행'), ('/exam/articles/', '시험 글'), ('/contest/', '공모전'), ('/diet/', '식단')], ['/exam/']))   # 2026-11-25 사용자 「메인은 수험」「교육 집중 개편」
+THEMES.append(('exam', '시험 정보', '📝', '#1d4ed8', '/exam/', [('/exam/', '시험 일정'), ('/exam/bank/', '문제은행'), ('/exam/articles/', '시험 글'), ('/contest/', '공모전'), ('/diet/', '식단')], ['/exam/', '/me/']))   # 2026-11-25 사용자 「메인은 수험」「교육 집중 개편」
 THEMES = [next(t for t in THEMES if t[0] == k) for k in ('exam', 'today', 'recipe', 'watch', 'apply', 'contest', 'event', 'issue', 'money', 'game', 'plaza', 'diet', 'ai', 'wiki', 'park')]
 
 
@@ -106,7 +106,7 @@ GUIDE_SUB_PX = ('/money/guide/', '/money/tools/', '/qa/')
 GN_MAIN = ('park', 'exam', 'issue', 'contest', 'diet', 'wiki')   # 2026-11-25 수험 개편: 시험·이슈·스펙·식단·위키(생활 가이드·보험·세금 등은 위키로)
 GN_MAIN_OLD = ('money', 'issue', 'contest', 'apply')   # 헤더에 항상 보이는 주요 주제(나머지는 「전체」). 2026-11-10 방문 기록 순: 생활 가이드(들어오는 글의 44%) → 이슈 → 공모전 → 지원금. 위키(11월 방문자 5명)는 「전체」로
 GN_HOME = {'park': '/park/', 'money': '/money/guide/', 'issue': '/issue/', 'exam': '/exam/'}
-GN_LABEL = {'park': '일단 뭐라도 해', 'exam': '시험 따', 'issue': '알고나 있어', 'contest': '스펙 내놔', 'diet': '먹고 해', 'wiki': '알아서 찾아', 'apply': '지원금<span class="x">·청약</span>', 'money': '생활 가이드'}
+GN_LABEL = {'park': '일단 뭐라도 해', 'exam': '시험 따', 'issue': '알고나 있어', 'contest': '스펙 내놔', 'diet': '먹고 해', 'wiki': '루리위키', 'apply': '지원금<span class="x">·청약</span>', 'money': '생활 가이드'}
 
 
 def GN_HTML(TH):
@@ -7411,9 +7411,9 @@ def community(live=()):
 def me_pages():
     """내 공간(가입 혜택 모음) · 관리자 (2026-10-17)"""
     page('/me/', '내 공간 — 찜·응모 기록·마감 알림', '찜한 공모전·청약, 응모 기록, 마감 알림 메일, 자격 프로필, 청약 가점 계산기를 한곳에서.',
-         '''<div id="jam-stat"></div><link rel="stylesheet" href="/assets/jam/stat.css?v=1"><script defer src="/assets/jam/stat.js?v=1"></script><section id="me" aria-label="내 공간"></section>''' + (('<section class="me-sec"><h2>💬 톡방</h2><p class="note">공모전·지원금 마감 소식을 매일 나눠.</p><p class="ft-c">' + comm_btns() + '</p></section>') if COMM_LINKS else '') + '''<link rel="stylesheet" href="/assets/me/me.css?v=3"><script defer src="/assets/me/me.js?v=5"></script>''', [('루리 줍줍', '/'), ('내 공간', '/me/')])
+         '''<div id="jam-stat"></div><link rel="stylesheet" href="/assets/jam/stat.css?v=1"><script defer src="/assets/jam/stat.js?v=1"></script><section id="me" aria-label="내 공간"></section>''' + (('<section class="me-sec"><h2>💬 톡방</h2><p class="note">공모전·지원금 마감 소식을 매일 나눠.</p><p class="ft-c">' + comm_btns() + '</p></section>') if COMM_LINKS else '') + '''<link rel="stylesheet" href="/assets/me/me.css?v=4"><script defer src="/assets/me/me.js?v=6"></script>''', [('루리 줍줍', '/'), ('내 공간', '/me/')])
     page('/login/', '로그인', '루리 줍줍 로그인 — 내 공간으로 이동해.', '<p>내 공간으로 이동하고 있어… <a href="/me/">이동하지 않으면 여기를 눌러 줘</a></p><script>location.replace("/me/"+location.search+location.hash)</script>', noindex=True)   # 2026-10-19 /login/ 404 → 내 공간(로그인 화면 포함)
-    page('/admin/', '관리자', '관리자', '''<section id="admin"></section><section id="gsc-admin"></section><link rel="stylesheet" href="/assets/me/me.css?v=3"><script defer src="/assets/me/admin.js?v=7"></script>''', noindex=True)
+    page('/admin/', '관리자', '관리자', '''<section id="admin"></section><section id="gsc-admin"></section><link rel="stylesheet" href="/assets/me/me.css?v=4"><script defer src="/assets/me/admin.js?v=7"></script>''', noindex=True)
 
 
 def lab():
