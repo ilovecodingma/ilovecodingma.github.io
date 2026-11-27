@@ -170,6 +170,7 @@ def _load():
             continue   # 검증 전 보류(공개 안 함)
         if d.get('id') and qs:
             d['questions'] = qs
+            d['name'] = d.get('name', '').replace('유사문제', '연습문제')
             out.append(d)
     return out
 
@@ -182,6 +183,10 @@ def pages(page):
     banks = _load()
     if not banks:
         return []
+    try:
+        import hook_exam; hook_exam.build(banks)
+    except Exception as e:
+        print('hook_exam 실패', e)
     urls = []
     for d in banks:
         src = d.get('source') or {}

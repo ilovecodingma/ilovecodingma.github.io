@@ -419,6 +419,12 @@ def page(path, title, desc, body, crumbs=None, ld=None, full_title=False, noinde
 <p class="ft-n">공고·보도·공개 자료를 AI로 모은 거야. 정확한 건 공식 공고에서 확인해. 일부 링크는 쿠팡 파트너스 수수료가 붙어. © 2026 {'가난한 박과장'} · sungprofile.cloud</p></div></footer>{CL_CSS if COMM_LINKS else ''}
 <script defer src="/assets/dday.js?v=1"></script><script defer src="/assets/jam/track.js?v=2"></script><script defer src="/assets/jam/hud.js?v=1"></script></body></html>'''
     doc = RURI_IMG_RX.sub(lambda m_: m_.group(0) if m_.group(1) else '', doc)   # 2026-11-03 사용자 방침: 루리는 메인이 아닌 요소(루리의 한마디 코너)로만. 헤더·푸터·히어로 그림은 뺀다(자산 파일 보존)
+    try:
+        import hook_exam as _HX
+        _hx = _HX.tag(path) if not noindex else ''
+        if _hx: doc = doc.replace('</main>', _hx + '</main>', 1)
+    except Exception:
+        pass
     doc = _attach_src(_no_disc(_dark(doc), path))   # 2026-11-27 흑화·불친절 컨셉
     d = os.path.join(ROOT, path.strip('/'))
     os.makedirs(d, exist_ok=True)
