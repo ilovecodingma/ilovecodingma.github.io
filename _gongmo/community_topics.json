@@ -1,14 +1,14 @@
 {
  "date": "2026-11-27",
- "updated": "2026-11-27 11:50",
+ "updated": "2026-11-27 12:50",
  "sites": 13,
- "npost": 2833,
+ "npost": 2824,
  "note": "출처(커뮤니티)별 집계예요. 작성자·연령·성별 정보는 수집하지 않아요. posts 는 이슈별로 뽑힌 일부라 전체 글 수가 아니에요.",
  "sources": [
   {
    "name": "MLB파크",
-   "np": 11,
-   "nc": 1007,
+   "np": 12,
+   "nc": 1141,
    "topics": [
     {
      "t": "\"육아휴직 중 주 80시간 공부\"…세무사 합격 수기 논란",
@@ -19,8 +19,8 @@
      "issue_nc": 240,
      "kw": [
       "육아",
-      "휴직",
       "합격",
+      "휴직",
       "세무사"
      ],
      "top_post": {
@@ -37,8 +37,8 @@
      "issue_np": 2,
      "issue_nc": 184,
      "kw": [
-      "국제",
-      "시장"
+      "시장",
+      "국제"
      ],
      "top_post": {
       "t": "국제시장 2 포스터 예고편",
@@ -54,9 +54,9 @@
      "issue_np": 3,
      "issue_nc": 195,
      "kw": [
-      "이식",
-      "사위",
       "장인",
+      "사위",
+      "이식",
       "강요"
      ],
      "top_post": {
@@ -73,14 +73,50 @@
      "issue_np": 3,
      "issue_nc": 110,
      "kw": [
-      "특징",
       "커뮤니티",
+      "특징",
       "인터넷"
      ],
      "top_post": {
       "t": "이게 커뮤니티별 특징이라는데",
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611260120317790&m=view",
       "nc": 110
+     }
+    },
+    {
+     "t": "전세계에서 가장 비호감인 나라 Top 15",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 107,
+     "issue_np": 2,
+     "issue_nc": 107,
+     "kw": [
+      "호감",
+      "TOP"
+     ],
+     "top_post": {
+      "t": "전세계에서 가장 비호감인 나라 Top 15",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611260120326340&m=view",
+      "nc": 107
+     }
+    },
+    {
+     "t": "실시간 난리난 뮤지컬배우 대참사",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 105,
+     "issue_np": 4,
+     "issue_nc": 155,
+     "kw": [
+      "뮤지컬",
+      "배우",
+      "실시간",
+      "참사"
+     ],
+     "top_post": {
+      "t": "실시간 난리난 뮤지컬배우 대참사",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611270120331209&m=view",
+      "nc": 105
      }
     },
     {
@@ -101,29 +137,11 @@
      }
     },
     {
-     "t": "실시간 난리난 뮤지컬배우 대참사",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 78,
-     "issue_np": 2,
-     "issue_nc": 114,
-     "kw": [
-      "실시간",
-      "뮤지컬",
-      "참사"
-     ],
-     "top_post": {
-      "t": "실시간 난리난 뮤지컬배우 대참사",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611270120331209&m=view",
-      "nc": 78
-     }
-    },
-    {
      "t": "논란중인 마술 유튜버 김준표 채널 근황",
      "nsite": 4,
      "np_here": 1,
      "nc_here": 54,
-     "issue_np": 7,
+     "issue_np": 6,
      "issue_nc": 81,
      "kw": [
       "김준표",
@@ -135,43 +153,44 @@
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611260120317457&m=view",
       "nc": 54
      }
-    },
-    {
-     "t": "남자들아 여자친구 직업이 뭐였으면 좋겠어?",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 43,
-     "issue_np": 3,
-     "issue_nc": 50,
-     "kw": [
-      "친구",
-      "남자",
-      "여자"
-     ],
-     "top_post": {
-      "t": "여자친구가 매일 점심 먹는 거 사진 찍어서 보내라는데..",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611260120327489&m=view",
-      "nc": 43
-     }
     }
    ]
   },
   {
    "name": "개드립",
-   "np": 16,
-   "nc": 369,
+   "np": 15,
+   "nc": 376,
    "topics": [
+    {
+     "t": "실시간 난리난 뮤지컬배우 대참사",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 50,
+     "issue_np": 4,
+     "issue_nc": 155,
+     "kw": [
+      "뮤지컬",
+      "배우",
+      "실시간",
+      "참사"
+     ],
+     "top_post": {
+      "t": "실시간 뮤지컬판에서 대참사 난 사건",
+      "u": "https://www.dogdrip.net/dogdrip/736840495?sort_index=popular&page=1",
+      "nc": 50
+     }
+    },
     {
      "t": "일본인 오타쿠에게 피규어사는걸 제지당한 썰.",
      "nsite": 3,
      "np_here": 1,
      "nc_here": 45,
      "issue_np": 4,
-     "issue_nc": 59,
+     "issue_nc": 60,
      "kw": [
       "제지",
       "오타쿠",
-      "피규어",
+      "아키하바라",
       "일본인"
      ],
      "top_post": {
@@ -188,10 +207,10 @@
      "issue_np": 3,
      "issue_nc": 42,
      "kw": [
-      "안경",
+      "AI",
+      "중국",
       "여행",
-      "유튜버",
-      "중국"
+      "안경"
      ],
      "top_post": {
       "t": "AI안경으로 중국여행한 유튜버",
@@ -200,35 +219,17 @@
      }
     },
     {
-     "t": "실시간 난리난 뮤지컬배우 대참사",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 36,
-     "issue_np": 2,
-     "issue_nc": 114,
-     "kw": [
-      "실시간",
-      "뮤지컬",
-      "참사"
-     ],
-     "top_post": {
-      "t": "실시간 뮤지컬판에서 대참사 난 사건",
-      "u": "https://www.dogdrip.net/dogdrip/736840495?sort_index=popular&page=1",
-      "nc": 36
-     }
-    },
-    {
      "t": "결혼 직전까지 갔다가 파토 낸 남자 ㄷㄷ",
      "nsite": 3,
      "np_here": 1,
      "nc_here": 34,
-     "issue_np": 4,
-     "issue_nc": 40,
+     "issue_np": 3,
+     "issue_nc": 37,
      "kw": [
       "남자",
-      "결혼",
       "직전",
-      "파토"
+      "파토",
+      "결혼"
      ],
      "top_post": {
       "t": "결혼 직전까지 갔다가 파토 낸 남자 ㄷㄷ",
@@ -244,8 +245,8 @@
      "issue_np": 3,
      "issue_nc": 74,
      "kw": [
-      "상술",
       "악독",
+      "상술",
       "하이디라오"
      ],
      "top_post": {
@@ -262,9 +263,9 @@
      "issue_np": 3,
      "issue_nc": 36,
      "kw": [
-      "전화",
       "사장",
-      "부재중"
+      "부재중",
+      "전화"
      ],
      "top_post": {
       "t": "사장님의 부재중전화 27",
@@ -277,11 +278,11 @@
      "nsite": 4,
      "np_here": 1,
      "nc_here": 29,
-     "issue_np": 4,
+     "issue_np": 5,
      "issue_nc": 30,
      "kw": [
-      "고객",
       "민원",
+      "고객",
       "백화점",
       "근무복"
      ],
@@ -297,12 +298,12 @@
      "np_here": 1,
      "nc_here": 29,
      "issue_np": 3,
-     "issue_nc": 29,
+     "issue_nc": 31,
      "kw": [
-      "속출",
-      "스노우볼",
       "다이소",
-      "피해자"
+      "피해자",
+      "스노우볼",
+      "속출"
      ],
      "top_post": {
       "t": "피해자가 속출하고 있다는 다이소 스노우볼",
@@ -314,8 +315,8 @@
   },
   {
    "name": "클리앙",
-   "np": 5,
-   "nc": 133,
+   "np": 4,
+   "nc": 122,
    "topics": [
     {
      "t": "구급차 막고 30명 우르르..영상 퍼지자 '공분'",
@@ -325,8 +326,8 @@
      "issue_np": 4,
      "issue_nc": 75,
      "kw": [
-      "구급차",
       "공분",
+      "구급차",
       "마라톤"
      ],
      "top_post": {
@@ -353,24 +354,6 @@
      }
     },
     {
-     "t": "오늘 한은 금통위…금리 3.25%로 인상할 듯",
-     "nsite": 4,
-     "np_here": 2,
-     "nc_here": 21,
-     "issue_np": 5,
-     "issue_nc": 21,
-     "kw": [
-      "인상",
-      "금리",
-      "한은"
-     ],
-     "top_post": {
-      "t": "오늘 한은 금통위…금리 3.25%로 인상할 듯",
-      "u": "https://www.clien.net/service/board/park/19298679?od=T33&po=0&category=0&groupCd=clien_all",
-      "nc": 11
-     }
-    },
-    {
      "t": "시장에 피가 낭자하고 공포가 만연하다 - 자영업 버젼 만화",
      "nsite": 4,
      "np_here": 1,
@@ -379,14 +362,57 @@
      "issue_nc": 16,
      "kw": [
       "공포",
-      "자영업",
       "만연",
-      "시장"
+      "시장",
+      "자영업"
      ],
      "top_post": {
       "t": "시장에는 피가 낭자하고 공포가 만연하다(자영업 편)",
       "u": "https://www.clien.net/service/board/park/19298971?od=T33&po=0&category=0&groupCd=clien_all",
       "nc": 11
+     }
+    },
+    {
+     "t": "[1보] 한은, 기준금리 연 3.25%로 0.25%p 인상",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 10,
+     "issue_np": 4,
+     "issue_nc": 10,
+     "kw": [
+      "금리",
+      "인상"
+     ],
+     "top_post": {
+      "t": "집 사도 이자 폭탄, 안 사도 월세 폭탄…금리 인상에 비상",
+      "u": "https://www.clien.net/service/board/park/19299099?od=T33&po=0&category=0&groupCd=clien_all",
+      "nc": 10
+     }
+    }
+   ]
+  },
+  {
+   "name": "인스티즈",
+   "np": 1,
+   "nc": 38,
+   "topics": [
+    {
+     "t": "남자가 머리말려주는 게 불편한 수영학원 학부모들. jpg",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 38,
+     "issue_np": 3,
+     "issue_nc": 41,
+     "kw": [
+      "수영",
+      "학원",
+      "머리",
+      "학부모"
+     ],
+     "top_post": {
+      "t": "현재 여론살벌한 수영학원 머리 말리기 논란.",
+      "u": "https://www.instiz.net/pt/7929886?page=1&srt=3&k=",
+      "nc": 38
      }
     }
    ]
@@ -394,7 +420,7 @@
   {
    "name": "아카라이브",
    "np": 3,
-   "nc": 30,
+   "nc": 31,
    "topics": [
     {
      "t": "불꽃야구 애들이 뭘 그렇게 잘못함?",
@@ -404,8 +430,8 @@
      "issue_np": 5,
      "issue_nc": 16,
      "kw": [
-      "불꽃",
-      "야구"
+      "야구",
+      "불꽃"
      ],
      "top_post": {
       "t": "이분 <<< 불꽃야구 멤버 강력추천함",
@@ -417,19 +443,19 @@
      "t": "일본인 오타쿠에게 피규어사는걸 제지당한 썰.",
      "nsite": 3,
      "np_here": 1,
-     "nc_here": 14,
+     "nc_here": 15,
      "issue_np": 4,
-     "issue_nc": 59,
+     "issue_nc": 60,
      "kw": [
       "제지",
       "오타쿠",
-      "피규어",
+      "아키하바라",
       "일본인"
      ],
      "top_post": {
       "t": "아키하바라에서 오타쿠 한테 제지당한 썰",
       "u": "https://arca.live/b/live/190361535?p=1",
-      "nc": 14
+      "nc": 15
      }
     }
    ]
@@ -449,8 +475,8 @@
      "kw": [
       "학교",
       "급식",
-      "정규직",
-      "파업"
+      "파업",
+      "내일"
      ],
      "top_post": {
       "t": "학교 급식 말이에요",
@@ -467,9 +493,9 @@
      "issue_nc": 9,
      "kw": [
       "재판",
-      "위증",
+      "확정",
       "윤석열",
-      "한덕수"
+      "위증"
      ],
      "top_post": {
       "t": "윤석열, ‘한덕수 재판 위증’ 혐의 무죄 확정",
@@ -478,16 +504,15 @@
      }
     },
     {
-     "t": "오늘 한은 금통위…금리 3.25%로 인상할 듯",
+     "t": "[1보] 한은, 기준금리 연 3.25%로 0.25%p 인상",
      "nsite": 4,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 21,
+     "issue_np": 4,
+     "issue_nc": 10,
      "kw": [
-      "인상",
       "금리",
-      "한은"
+      "인상"
      ],
      "top_post": {
       "t": "한은, 기준금리 3.25%로 인상…내년 성장률 4.1% 전망",
@@ -498,55 +523,10 @@
    ]
   },
   {
-   "name": "인스티즈",
-   "np": 1,
-   "nc": 28,
-   "topics": [
-    {
-     "t": "남자가 머리말려주는 게 불편한 수영학원 학부모들. jpg",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 28,
-     "issue_np": 3,
-     "issue_nc": 31,
-     "kw": [
-      "머리",
-      "수영",
-      "학원",
-      "불편"
-     ],
-     "top_post": {
-      "t": "현재 여론살벌한 수영학원 머리 말리기 논란.",
-      "u": "https://www.instiz.net/pt/7929886?page=1&srt=3&k=",
-      "nc": 28
-     }
-    }
-   ]
-  },
-  {
    "name": "보배드림",
    "np": 12,
-   "nc": 27,
+   "nc": 25,
    "topics": [
-    {
-     "t": "결혼 직전까지 갔다가 파토 낸 남자 ㄷㄷ",
-     "nsite": 3,
-     "np_here": 2,
-     "nc_here": 6,
-     "issue_np": 4,
-     "issue_nc": 40,
-     "kw": [
-      "남자",
-      "결혼",
-      "직전",
-      "파토"
-     ],
-     "top_post": {
-      "t": "결혼 직전까지 갔다가 파토 낸 남자",
-      "u": "https://www.bobaedream.co.kr/view?code=best&No=1050371&vdate=",
-      "nc": 3
-     }
-    },
     {
      "t": "구급차 막고 30명 우르르..영상 퍼지자 '공분'",
      "nsite": 4,
@@ -555,8 +535,8 @@
      "issue_np": 4,
      "issue_nc": 75,
      "kw": [
-      "구급차",
       "공분",
+      "구급차",
       "마라톤"
      ],
      "top_post": {
@@ -575,8 +555,8 @@
      "kw": [
       "사건",
       "역사",
-      "중국",
-      "전례"
+      "전례",
+      "중국"
      ],
      "top_post": {
       "t": "취업후에 비로소 이해된다는 역사적사건",
@@ -592,14 +572,52 @@
      "issue_np": 3,
      "issue_nc": 195,
      "kw": [
-      "이식",
-      "사위",
       "장인",
+      "사위",
+      "이식",
       "강요"
      ],
      "top_post": {
       "t": "장인 간이식 강요받는 사위",
       "u": "https://www.bobaedream.co.kr/view?code=best&No=1050299&vdate=",
+      "nc": 3
+     }
+    },
+    {
+     "t": "남자가 머리말려주는 게 불편한 수영학원 학부모들. jpg",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 3,
+     "issue_np": 3,
+     "issue_nc": 41,
+     "kw": [
+      "수영",
+      "학원",
+      "머리",
+      "학부모"
+     ],
+     "top_post": {
+      "t": "남자가 머리말려주는 게 불편한 수영학원 학부모들. jpg",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1050367&vdate=",
+      "nc": 3
+     }
+    },
+    {
+     "t": "결혼 직전까지 갔다가 파토 낸 남자 ㄷㄷ",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 3,
+     "issue_np": 3,
+     "issue_nc": 37,
+     "kw": [
+      "남자",
+      "직전",
+      "파토",
+      "결혼"
+     ],
+     "top_post": {
+      "t": "결혼 직전까지 갔다가 파토 낸 남자",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1050371&vdate=",
       "nc": 3
      }
     },
@@ -611,32 +629,13 @@
      "issue_np": 3,
      "issue_nc": 36,
      "kw": [
-      "전화",
       "사장",
-      "부재중"
+      "부재중",
+      "전화"
      ],
      "top_post": {
       "t": "사장님 부재중 전화 27통",
       "u": "https://www.bobaedream.co.kr/view?code=best&No=1050358&vdate=",
-      "nc": 3
-     }
-    },
-    {
-     "t": "남자가 머리말려주는 게 불편한 수영학원 학부모들. jpg",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 3,
-     "issue_np": 3,
-     "issue_nc": 31,
-     "kw": [
-      "머리",
-      "수영",
-      "학원",
-      "불편"
-     ],
-     "top_post": {
-      "t": "남자가 머리말려주는 게 불편한 수영학원 학부모들. jpg",
-      "u": "https://www.bobaedream.co.kr/view?code=best&No=1050367&vdate=",
       "nc": 3
      }
     },
@@ -648,8 +647,8 @@
      "issue_np": 3,
      "issue_nc": 6,
      "kw": [
-      "치킨",
       "귀뚜라미",
+      "치킨",
       "사장"
      ],
      "top_post": {
@@ -659,22 +658,22 @@
      }
     },
     {
-     "t": "백화점 근무복에 민원 넣은 고객...그 결과",
-     "nsite": 4,
+     "t": "피해자가 속출하고 있다는 다이소 스노우볼",
+     "nsite": 3,
      "np_here": 1,
-     "nc_here": 1,
-     "issue_np": 4,
-     "issue_nc": 30,
+     "nc_here": 2,
+     "issue_np": 3,
+     "issue_nc": 31,
      "kw": [
-      "고객",
-      "민원",
-      "백화점",
-      "근무복"
+      "다이소",
+      "피해자",
+      "스노우볼",
+      "속출"
      ],
      "top_post": {
-      "t": "백화점 근무복에 민원 넣은 고객...그 결과",
-      "u": "https://www.bobaedream.co.kr/view?code=best&No=1050384&vdate=",
-      "nc": 1
+      "t": "피해자가 속출하고 있다는 다이소 스노우볼. gif",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1050451&vdate=",
+      "nc": 2
      }
     }
    ]
@@ -682,15 +681,15 @@
   {
    "name": "네이트판",
    "np": 2,
-   "nc": 11,
+   "nc": 12,
    "topics": [
     {
      "t": "남자들아 여자친구 직업이 뭐였으면 좋겠어?",
      "nsite": 3,
      "np_here": 1,
-     "nc_here": 7,
+     "nc_here": 8,
      "issue_np": 3,
-     "issue_nc": 50,
+     "issue_nc": 51,
      "kw": [
       "친구",
       "남자",
@@ -699,7 +698,7 @@
      "top_post": {
       "t": "남자친구가 내 친구들 앞에서만 무뚝뚝한데 왜 그래?",
       "u": "https://pann.nate.com/talk/375738061",
-      "nc": 7
+      "nc": 8
      }
     },
     {
@@ -707,18 +706,325 @@
      "nsite": 4,
      "np_here": 1,
      "nc_here": 4,
-     "issue_np": 11,
+     "issue_np": 10,
      "issue_nc": 6,
      "kw": [
-      "페이",
       "네이버",
-      "랜덤",
-      "보험"
+      "페이",
+      "랜덤"
      ],
      "top_post": {
       "t": "ㅈㄱㄴ..⭐ 이거 설문조사 앱인데 설문조사 하고나면 네이버페이 포인트나 현금으로 받을수있음 ...",
       "u": "https://pann.nate.com/talk/375738376",
       "nc": 4
+     }
+    }
+   ]
+  },
+  {
+   "name": "더쿠",
+   "np": 11,
+   "nc": 0,
+   "topics": [
+    {
+     "t": "실시간 난리난 뮤지컬배우 대참사",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 155,
+     "kw": [
+      "뮤지컬",
+      "배우",
+      "실시간",
+      "참사"
+     ],
+     "top_post": {
+      "t": "핫게 뮤지컬 배우 사과문",
+      "u": "https://theqoo.net/hot/4419500488",
+      "nc": 0
+     }
+    },
+    {
+     "t": "네이버페이 59원 (신속히 받으세요)",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 10,
+     "issue_nc": 6,
+     "kw": [
+      "네이버",
+      "페이",
+      "랜덤"
+     ],
+     "top_post": {
+      "t": "네이버페이15원+10원+10원+5원+1원+1원+1원+1원+랜덤 눌러봐++10원+5원+눌러눌러 보험랜덤+보험랜덤 하나더+라이브미리보고5원받기",
+      "u": "https://theqoo.net/hot/4419230490",
+      "nc": 0
+     }
+    },
+    {
+     "t": "\"육아휴직 중 주 80시간 공부\"…세무사 합격 수기 논란",
+     "nsite": 3,
+     "np_here": 2,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 240,
+     "kw": [
+      "육아",
+      "합격",
+      "휴직",
+      "세무사"
+     ],
+     "top_post": {
+      "t": "“육아휴직 하고 세무사 합격”…워킹맘 합격 후기에 발칵",
+      "u": "https://theqoo.net/hot/4418375974",
+      "nc": 0
+     }
+    },
+    {
+     "t": "AI안경으로 중국여행한 유튜버",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 42,
+     "kw": [
+      "AI",
+      "중국",
+      "여행",
+      "안경"
+     ],
+     "top_post": {
+      "t": "(스압) 중국에서 AI안경 사고 안경쓴 채로 여행해본 유튜버",
+      "u": "https://theqoo.net/hot/4418550726",
+      "nc": 0
+     }
+    },
+    {
+     "t": "남자가 머리말려주는 게 불편한 수영학원 학부모들. jpg",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 41,
+     "kw": [
+      "수영",
+      "학원",
+      "머리",
+      "학부모"
+     ],
+     "top_post": {
+      "t": "남자가 머리말려주는 게 불편한 수영학원 학부모들",
+      "u": "https://theqoo.net/hot/4418892821",
+      "nc": 0
+     }
+    },
+    {
+     "t": "친자검사에서 친자불일치보다 더 끔찍한 결과",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 17,
+     "kw": [
+      "친자",
+      "일치",
+      "친자검사"
+     ],
+     "top_post": {
+      "t": "친자검사에서 친자불일치보다 더 끔찍한 결과",
+      "u": "https://theqoo.net/hot/4419256411",
+      "nc": 0
+     }
+    },
+    {
+     "t": "불꽃야구 애들이 뭘 그렇게 잘못함?",
+     "nsite": 3,
+     "np_here": 2,
+     "nc_here": 0,
+     "issue_np": 5,
+     "issue_nc": 16,
+     "kw": [
+      "야구",
+      "불꽃"
+     ],
+     "top_post": {
+      "t": "크보 팬들은 반응 안 좋을 수 밖에 없는 불꽃야구 상황",
+      "u": "https://theqoo.net/hot/4418311957",
+      "nc": 0
+     }
+    },
+    {
+     "t": "대법, 윤석열 '한덕수 재판 위증' 무죄 확정",
+     "nsite": 3,
+     "np_here": 2,
+     "nc_here": 0,
+     "issue_np": 5,
+     "issue_nc": 9,
+     "kw": [
+      "재판",
+      "확정",
+      "윤석열",
+      "위증"
+     ],
+     "top_post": {
+      "t": "[2보] 대법, 윤석열 '한덕수 재판 위증' 무죄 확정",
+      "u": "https://theqoo.net/hot/4418498403",
+      "nc": 0
+     }
+    }
+   ]
+  },
+  {
+   "name": "루리웹",
+   "np": 33,
+   "nc": 0,
+   "topics": [
+    {
+     "t": "실시간 난리난 뮤지컬배우 대참사",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 155,
+     "kw": [
+      "뮤지컬",
+      "배우",
+      "실시간",
+      "참사"
+     ],
+     "top_post": {
+      "t": "난리난 뮤지컬 배우 사과문 입갤",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77534911?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "논란중인 마술 유튜버 김준표 채널 근황",
+     "nsite": 4,
+     "np_here": 3,
+     "nc_here": 0,
+     "issue_np": 6,
+     "issue_nc": 81,
+     "kw": [
+      "김준표",
+      "유튜브",
+      "채널"
+     ],
+     "top_post": {
+      "t": "김준표 유튜브 이제투스트라이크인가보네",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77521843?m=humor",
+      "nc": 0
+     }
+    },
+    {
+     "t": "구급차 막고 30명 우르르..영상 퍼지자 '공분'",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 75,
+     "kw": [
+      "공분",
+      "구급차",
+      "마라톤"
+     ],
+     "top_post": {
+      "t": "구급차까지 막아버린 마라톤..영상 퍼지자 '공분'",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77523419?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "시장에 피가 낭자하고 공포가 만연하다 - 자영업 버젼 만화",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 16,
+     "kw": [
+      "공포",
+      "만연",
+      "시장",
+      "자영업"
+     ],
+     "top_post": {
+      "t": "시장에는 피가 낭자하고 공포가 만연하다(자영업 버젼)",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77527597?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "[1보] 한은, 기준금리 연 3.25%로 0.25%p 인상",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 10,
+     "kw": [
+      "금리",
+      "인상"
+     ],
+     "top_post": {
+      "t": "한국 금리 3.00% -> 3.25% 인상",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77524173?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "싱글벙글 중국 역사상 전례가 없던 사건..",
+     "nsite": 4,
+     "np_here": 2,
+     "nc_here": 0,
+     "issue_np": 5,
+     "issue_nc": 9,
+     "kw": [
+      "사건",
+      "역사",
+      "전례",
+      "중국"
+     ],
+     "top_post": {
+      "t": "중국 역사상 전례가 없던 사건",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77524197?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "네이버페이 59원 (신속히 받으세요)",
+     "nsite": 4,
+     "np_here": 3,
+     "nc_here": 0,
+     "issue_np": 10,
+     "issue_nc": 6,
+     "kw": [
+      "네이버",
+      "페이",
+      "랜덤"
+     ],
+     "top_post": {
+      "t": "핫딜 [네이버페이] 삼성SDS 유튜브구독 180원",
+      "u": "https://bbs.ruliweb.com/best/board/1020/read/109376?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "본인 사진이 한국에 돌고있는지 모르겠다는 배우",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 1,
+     "kw": [
+      "배우",
+      "한국",
+      "AV"
+     ],
+     "top_post": {
+      "t": "또 한번 팬미팅차 한국 온다는 AV배우",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77527782?m=all&t=now",
+      "nc": 0
      }
     }
    ]
@@ -733,7 +1039,7 @@
      "nsite": 4,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 7,
+     "issue_np": 6,
      "issue_nc": 81,
      "kw": [
       "김준표",
@@ -751,11 +1057,11 @@
      "nsite": 4,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 4,
+     "issue_np": 5,
      "issue_nc": 30,
      "kw": [
-      "고객",
       "민원",
+      "고객",
       "백화점",
       "근무복"
      ],
@@ -775,8 +1081,8 @@
      "kw": [
       "사건",
       "역사",
-      "중국",
-      "전례"
+      "전례",
+      "중국"
      ],
      "top_post": {
       "t": "싱글벙글 중국 역사상 전례가 없던 사건..",
@@ -808,7 +1114,7 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 3,
-     "issue_nc": 50,
+     "issue_nc": 51,
      "kw": [
       "친구",
       "남자",
@@ -825,13 +1131,13 @@
      "nsite": 3,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 40,
+     "issue_np": 3,
+     "issue_nc": 37,
      "kw": [
       "남자",
-      "결혼",
       "직전",
-      "파토"
+      "파토",
+      "결혼"
      ],
      "top_post": {
       "t": "지금 30대 남자들이 미치기 일보직전인 이유",
@@ -866,167 +1172,12 @@
      "kw": [
       "학교",
       "급식",
-      "정규직",
-      "파업"
+      "파업",
+      "내일"
      ],
      "top_post": {
       "t": "내일 학교 비정규직 파업해서 대체급식 준다네",
       "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481831&_dcbest=1&page=1",
-      "nc": 0
-     }
-    }
-   ]
-  },
-  {
-   "name": "루리웹",
-   "np": 33,
-   "nc": 0,
-   "topics": [
-    {
-     "t": "논란중인 마술 유튜버 김준표 채널 근황",
-     "nsite": 4,
-     "np_here": 3,
-     "nc_here": 0,
-     "issue_np": 7,
-     "issue_nc": 81,
-     "kw": [
-      "김준표",
-      "유튜브",
-      "채널"
-     ],
-     "top_post": {
-      "t": "김준표 유튜브 이제투스트라이크인가보네",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77521843?m=humor",
-      "nc": 0
-     }
-    },
-    {
-     "t": "구급차 막고 30명 우르르..영상 퍼지자 '공분'",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 75,
-     "kw": [
-      "구급차",
-      "공분",
-      "마라톤"
-     ],
-     "top_post": {
-      "t": "구급차까지 막아버린 마라톤..영상 퍼지자 '공분'",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77523419?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "오늘 한은 금통위…금리 3.25%로 인상할 듯",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 21,
-     "kw": [
-      "인상",
-      "금리",
-      "한은"
-     ],
-     "top_post": {
-      "t": "한국 금리 3.00% -> 3.25% 인상",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77524173?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "시장에 피가 낭자하고 공포가 만연하다 - 자영업 버젼 만화",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 16,
-     "kw": [
-      "공포",
-      "자영업",
-      "만연",
-      "시장"
-     ],
-     "top_post": {
-      "t": "시장에는 피가 낭자하고 공포가 만연하다(자영업 버젼)",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77527597?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "싱글벙글 중국 역사상 전례가 없던 사건..",
-     "nsite": 4,
-     "np_here": 2,
-     "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 9,
-     "kw": [
-      "사건",
-      "역사",
-      "중국",
-      "전례"
-     ],
-     "top_post": {
-      "t": "중국 역사상 전례가 없던 사건",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77524197?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "네이버페이 59원 (신속히 받으세요)",
-     "nsite": 4,
-     "np_here": 3,
-     "nc_here": 0,
-     "issue_np": 11,
-     "issue_nc": 6,
-     "kw": [
-      "페이",
-      "네이버",
-      "랜덤",
-      "보험"
-     ],
-     "top_post": {
-      "t": "핫딜 [네이버페이] 삼성SDS 유튜브구독 180원",
-      "u": "https://bbs.ruliweb.com/best/board/1020/read/109376?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "본인 사진이 한국에 돌고있는지 모르겠다는 배우",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 1,
-     "kw": [
-      "배우",
-      "한국",
-      "AV"
-     ],
-     "top_post": {
-      "t": "또 한번 팬미팅차 한국 온다는 AV배우",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77527782?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "\"육아휴직 중 주 80시간 공부\"…세무사 합격 수기 논란",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 240,
-     "kw": [
-      "육아",
-      "휴직",
-      "합격",
-      "세무사"
-     ],
-     "top_post": {
-      "t": "육아휴직중 세무사합격 자랑하다가 신고당해",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77534423?m=all&t=now",
       "nc": 0
      }
     }
@@ -1045,8 +1196,8 @@
      "issue_np": 4,
      "issue_nc": 75,
      "kw": [
-      "구급차",
       "공분",
+      "구급차",
       "마라톤"
      ],
      "top_post": {
@@ -1060,35 +1211,17 @@
      "nsite": 4,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 4,
+     "issue_np": 5,
      "issue_nc": 30,
      "kw": [
-      "고객",
       "민원",
+      "고객",
       "백화점",
       "근무복"
      ],
      "top_post": {
       "t": "백화점 주차요원 복장 보고 민원 넣은 고객",
       "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=678302",
-      "nc": 0
-     }
-    },
-    {
-     "t": "오늘 한은 금통위…금리 3.25%로 인상할 듯",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 21,
-     "kw": [
-      "인상",
-      "금리",
-      "한은"
-     ],
-     "top_post": {
-      "t": "[1보] 한은, 기준금리 연 3.25%로 0.25%p 인상",
-      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=678238",
       "nc": 0
      }
     },
@@ -1101,13 +1234,30 @@
      "issue_nc": 16,
      "kw": [
       "공포",
-      "자영업",
       "만연",
-      "시장"
+      "시장",
+      "자영업"
      ],
      "top_post": {
       "t": "시장에 피가 낭자하고 공포가 만연하다 - 자영업 버젼 만화",
       "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=678280",
+      "nc": 0
+     }
+    },
+    {
+     "t": "[1보] 한은, 기준금리 연 3.25%로 0.25%p 인상",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 10,
+     "kw": [
+      "금리",
+      "인상"
+     ],
+     "top_post": {
+      "t": "[1보] 한은, 기준금리 연 3.25%로 0.25%p 인상",
+      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=678238",
       "nc": 0
      }
     },
@@ -1136,150 +1286,13 @@
      "issue_np": 3,
      "issue_nc": 36,
      "kw": [
-      "전화",
       "사장",
-      "부재중"
+      "부재중",
+      "전화"
      ],
      "top_post": {
       "t": "사장님 부재중 전화 27통",
       "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=678274",
-      "nc": 0
-     }
-    }
-   ]
-  },
-  {
-   "name": "더쿠",
-   "np": 10,
-   "nc": 0,
-   "topics": [
-    {
-     "t": "네이버페이 59원 (신속히 받으세요)",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 11,
-     "issue_nc": 6,
-     "kw": [
-      "페이",
-      "네이버",
-      "랜덤",
-      "보험"
-     ],
-     "top_post": {
-      "t": "네이버페이15원+10원+10원+5원+1원+1원+1원+1원+랜덤 눌러봐++10원+5원+눌러눌러 보험랜덤+보험랜덤 하나더+라이브미리보고5원받기",
-      "u": "https://theqoo.net/hot/4419230490",
-      "nc": 0
-     }
-    },
-    {
-     "t": "\"육아휴직 중 주 80시간 공부\"…세무사 합격 수기 논란",
-     "nsite": 3,
-     "np_here": 2,
-     "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 240,
-     "kw": [
-      "육아",
-      "휴직",
-      "합격",
-      "세무사"
-     ],
-     "top_post": {
-      "t": "“육아휴직 하고 세무사 합격”…워킹맘 합격 후기에 발칵",
-      "u": "https://theqoo.net/hot/4418375974",
-      "nc": 0
-     }
-    },
-    {
-     "t": "AI안경으로 중국여행한 유튜버",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 42,
-     "kw": [
-      "안경",
-      "여행",
-      "유튜버",
-      "중국"
-     ],
-     "top_post": {
-      "t": "(스압) 중국에서 AI안경 사고 안경쓴 채로 여행해본 유튜버",
-      "u": "https://theqoo.net/hot/4418550726",
-      "nc": 0
-     }
-    },
-    {
-     "t": "남자가 머리말려주는 게 불편한 수영학원 학부모들. jpg",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 31,
-     "kw": [
-      "머리",
-      "수영",
-      "학원",
-      "불편"
-     ],
-     "top_post": {
-      "t": "남자가 머리말려주는 게 불편한 수영학원 학부모들",
-      "u": "https://theqoo.net/hot/4418892821",
-      "nc": 0
-     }
-    },
-    {
-     "t": "친자검사에서 친자불일치보다 더 끔찍한 결과",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 17,
-     "kw": [
-      "일치",
-      "친자",
-      "친자검사"
-     ],
-     "top_post": {
-      "t": "친자검사에서 친자불일치보다 더 끔찍한 결과",
-      "u": "https://theqoo.net/hot/4419256411",
-      "nc": 0
-     }
-    },
-    {
-     "t": "불꽃야구 애들이 뭘 그렇게 잘못함?",
-     "nsite": 3,
-     "np_here": 2,
-     "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 16,
-     "kw": [
-      "불꽃",
-      "야구"
-     ],
-     "top_post": {
-      "t": "크보 팬들은 반응 안 좋을 수 밖에 없는 불꽃야구 상황",
-      "u": "https://theqoo.net/hot/4418311957",
-      "nc": 0
-     }
-    },
-    {
-     "t": "대법, 윤석열 '한덕수 재판 위증' 무죄 확정",
-     "nsite": 3,
-     "np_here": 2,
-     "nc_here": 0,
-     "issue_np": 5,
-     "issue_nc": 9,
-     "kw": [
-      "재판",
-      "위증",
-      "윤석열",
-      "한덕수"
-     ],
-     "top_post": {
-      "t": "[2보] 대법, 윤석열 '한덕수 재판 위증' 무죄 확정",
-      "u": "https://theqoo.net/hot/4418498403",
       "nc": 0
      }
     }
