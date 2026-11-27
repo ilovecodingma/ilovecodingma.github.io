@@ -1,0 +1,31 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark"><title>습관 시험</title>
+<link rel="stylesheet" href="/assets/jam/stat.css"></head><body style="background:#05060f;margin:0;color:#eee;font-family:system-ui"><main style="max-width:760px;margin:0 auto;padding:16px"><div id="jam-stat"></div></main>
+<script>
+(function () {
+  localStorage.removeItem('jam_act'); localStorage.removeItem('jam_hud'); localStorage.removeItem('jam_surv'); localStorage.removeItem('jam_ach_extra');
+  function f(x) { return x.getFullYear() + '-' + ('0' + (x.getMonth() + 1)).slice(-2) + '-' + ('0' + x.getDate()).slice(-2); }
+  var n = new Date(), e = new Date(n); e.setDate(n.getDate() + 5); var s = new Date(n); s.setDate(n.getDate() - 2);
+  window.JAM_DEMO = { prefs: { job: 'corp', goal: 'habit-wake', gdate: f(e), gstart: f(s) } };
+})();
+</script>
+<script defer src="/assets/jam/track.js"></script><script defer src="/assets/jam/hud.js"></script><script defer src="/assets/jam/stat.js"></script>
+<script>
+addEventListener('load', function () {
+  var log = [];
+  setTimeout(function () {
+    var before = document.querySelector('.js-tk') ? document.querySelector('.js-tk').textContent : 'NOTASK';
+    log.push('before=' + before.slice(0, 60));
+    var b = document.querySelector('[data-chk]'); log.push('btn=' + !!b);
+    if (b) b.click();
+    setTimeout(function () {
+      var after = document.querySelector('.js-tk') ? document.querySelector('.js-tk').textContent : 'NOTASK';
+      var o = JSON.parse(localStorage.getItem('jam_act') || '{}'), k = Object.keys(o.d || {});
+      log.push('after=' + after.slice(0, 60)); log.push('habitDay=' + k.map(function (d) { return o.d[d].v.habit || 0; }).join(','));
+      log.push('ach=' + (document.querySelector('.js-ach b') ? document.querySelector('.js-ach b').textContent : 'none'));
+      log.push('surv=' + (document.querySelector('.js-id h2') ? document.querySelector('.js-id h2').textContent : '?'));
+      log.push('toast=' + ((document.getElementById('jam-toast') || {}).textContent || ''));
+      document.title = 'RESULT ' + log.join(' | ');
+    }, 1500);
+  }, 2500);
+});
+</script></body></html>

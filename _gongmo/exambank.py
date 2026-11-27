@@ -174,7 +174,7 @@ def pages(page):
                     f'<details><summary>풀이 보기</summary><p>정답 {q["answer"] + 1}번. {E(q.get("explain", ""))}' + '</p>' + (f'<div class="fig">{q["fig"]}</div>' if q.get('fig') else '') + '</details></div>')
         eu = f'/exam/{d["exam_id"]}/' if d.get('exam_id') and os.path.exists(os.path.join(os.path.dirname(HERE), 'exam', d['exam_id'], 'index.html')) else ''
         data = json.dumps({'id': d['id'], 'sec_per_q': _sec(d), 'method': d.get('method', ''), 'questions': [{'q': q['q'], 'choices': q['choices'], 'answer': q['answer'], 'explain': q.get('explain', ''), 'fig': q.get('fig', '')} for q in d['questions']]}, ensure_ascii=False).replace('</', '<' + chr(92) + '/')
-        AINOTE = ('<p class="ai"><b>AI 제작·AI 검수</b> · 에이전트가 실제 기출을 보고 만들고 다른 에이전트가 검수했어.</p>' if d.get('method') == 'rework' else '')
+        AINOTE = ''
         _n = len(d['questions'])
         _setup = ('<div class="setup" id="bk-setup"><h2>시험 볼 거면 정해</h2>'
                   f'<div class="row"><b>문제 수</b><span class="grp" data-k="n"><button data-n="10">10</button><button data-n="20">20</button><button data-n="all" class="on">전체 {_n}</button></span><input type="number" id="bk-n" min="1" max="{_n}" placeholder="직접 입력" aria-label="문제 수 직접 입력"></div>'
