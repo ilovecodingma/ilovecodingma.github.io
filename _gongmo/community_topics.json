@@ -1,31 +1,31 @@
 {
  "date": "2026-11-28",
- "updated": "2026-11-28 18:50",
+ "updated": "2026-11-28 19:50",
  "sites": 13,
- "npost": 2572,
+ "npost": 2562,
  "note": "출처(커뮤니티)별 집계예요. 작성자·연령·성별 정보는 수집하지 않아요. posts 는 이슈별로 뽑힌 일부라 전체 글 수가 아니에요.",
  "sources": [
   {
    "name": "MLB파크",
    "np": 24,
-   "nc": 1487,
+   "nc": 1503,
    "topics": [
     {
      "t": "최근 논란이 심한 배달 요청 사항 ㄷㄷ",
      "nsite": 4,
      "np_here": 2,
-     "nc_here": 190,
+     "nc_here": 200,
      "issue_np": 5,
-     "issue_nc": 193,
+     "issue_nc": 203,
      "kw": [
-      "요청",
       "사항",
+      "요청",
       "배달"
      ],
      "top_post": {
       "t": "최근 논란이 심한 배달 요청 사항 ㄷㄷ",
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611280120345525&m=view",
-      "nc": 153
+      "nc": 163
      }
     },
     {
@@ -36,9 +36,9 @@
      "issue_np": 3,
      "issue_nc": 185,
      "kw": [
+      "사건",
       "휴민트",
       "국정원",
-      "사건",
       "요약"
      ],
      "top_post": {
@@ -55,15 +55,34 @@
      "issue_np": 4,
      "issue_nc": 188,
      "kw": [
-      "DL",
+      "그룹",
       "회장",
-      "직원",
-      "그룹"
+      "DL",
+      "집합"
      ],
      "top_post": {
       "t": "자정 지난 한밤중에 직원 수백명 회사로 집합시켜 강하게 질책한 DL그룹 회장",
       "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611280120341775&m=view",
       "nc": 140
+     }
+    },
+    {
+     "t": "서빙로봇에 부딪힌 아이, 갈비탕에 화상…\"고소 진행 중\"",
+     "nsite": 5,
+     "np_here": 2,
+     "nc_here": 168,
+     "issue_np": 8,
+     "issue_nc": 230,
+     "kw": [
+      "서빙",
+      "아이",
+      "로봇",
+      "화상"
+     ],
+     "top_post": {
+      "t": "서빙로봇에 부딪힌 아이, 갈비탕에 화상…\"고소 진행 중\"",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611280120343998&m=view",
+      "nc": 101
      }
     },
     {
@@ -84,30 +103,28 @@
      }
     },
     {
-     "t": "서빙로봇에 부딪힌 아이, 갈비탕에 화상…\"고소 진행 중\"",
-     "nsite": 5,
+     "t": "아이폰 듀오 내구도 수준 ㄷㄷ",
+     "nsite": 3,
      "np_here": 2,
-     "nc_here": 160,
-     "issue_np": 8,
-     "issue_nc": 216,
+     "nc_here": 136,
+     "issue_np": 4,
+     "issue_nc": 136,
      "kw": [
-      "화상",
-      "서빙",
-      "로봇",
-      "아이"
+      "아이폰",
+      "듀오"
      ],
      "top_post": {
-      "t": "서빙로봇에 부딪힌 아이, 갈비탕에 화상…\"고소 진행 중\"",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611280120343998&m=view",
-      "nc": 101
+      "t": "아이폰 듀오 내구도 수준 ㄷㄷ",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611280120345597&m=view",
+      "nc": 104
      }
     },
     {
      "t": "손연재 부부 30억 기부ㄷㄷㄷ",
-     "nsite": 5,
+     "nsite": 4,
      "np_here": 2,
      "nc_here": 123,
-     "issue_np": 7,
+     "issue_np": 6,
      "issue_nc": 193,
      "kw": [
       "손연재",
@@ -122,45 +139,29 @@
      }
     },
     {
-     "t": "아이폰 듀오 내구도 수준 ㄷㄷ",
-     "nsite": 2,
-     "np_here": 2,
-     "nc_here": 117,
-     "issue_np": 3,
-     "issue_nc": 117,
-     "kw": [
-      "아이폰",
-      "듀오"
-     ],
-     "top_post": {
-      "t": "아이폰 듀오 내구도 수준 ㄷㄷ",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611280120345597&m=view",
-      "nc": 87
-     }
-    },
-    {
-     "t": "현재 인스타에서 난리난 늙크크 금지목록.",
+     "t": "대한항공 승무원 월급 실수령액",
      "nsite": 2,
      "np_here": 1,
-     "nc_here": 106,
+     "nc_here": 105,
      "issue_np": 2,
-     "issue_nc": 139,
+     "issue_nc": 105,
      "kw": [
-      "금지",
-      "목록"
+      "승무원",
+      "대한항공",
+      "수령액"
      ],
      "top_post": {
-      "t": "40대 이상 금지 목록",
-      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611270120333522&m=view",
-      "nc": 106
+      "t": "대한항공 승무원 월급 실수령액",
+      "u": "https://mlbpark.donga.com/mp/b.php?b=bullpen&id=202611280120341904&m=view",
+      "nc": 105
      }
     }
    ]
   },
   {
    "name": "클리앙",
-   "np": 15,
-   "nc": 356,
+   "np": 17,
+   "nc": 446,
    "topics": [
     {
      "t": "최민희 중징계로 완전 지지층 갈라놓네요",
@@ -170,8 +171,8 @@
      "issue_np": 6,
      "issue_nc": 131,
      "kw": [
-      "최민희",
-      "중징계"
+      "중징계",
+      "최민희"
      ],
      "top_post": {
       "t": "최민희 중징계로 완전 지지층 갈라놓네요",
@@ -180,12 +181,31 @@
      }
     },
     {
+     "t": "김민석 대표 사퇴각 떴네요",
+     "nsite": 3,
+     "np_here": 3,
+     "nc_here": 111,
+     "issue_np": 5,
+     "issue_nc": 130,
+     "kw": [
+      "사퇴",
+      "김민석",
+      "집회",
+      "촉구"
+     ],
+     "top_post": {
+      "t": "김민석 대표 사퇴각 떴네요",
+      "u": "https://www.clien.net/service/board/park/19299695?od=T33&po=0&category=0&groupCd=clien_all",
+      "nc": 64
+     }
+    },
+    {
      "t": "최민희 당원권 2년 정지",
-     "nsite": 4,
+     "nsite": 3,
      "np_here": 4,
      "nc_here": 102,
-     "issue_np": 8,
-     "issue_nc": 145,
+     "issue_np": 7,
+     "issue_nc": 108,
      "kw": [
       "당원",
       "최민희",
@@ -216,25 +236,6 @@
      }
     },
     {
-     "t": "오늘 '김민석 사퇴' 촉구 집회.",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 21,
-     "issue_np": 3,
-     "issue_nc": 40,
-     "kw": [
-      "김민석",
-      "사퇴",
-      "집회",
-      "촉구"
-     ],
-     "top_post": {
-      "t": "김민석 대표 사퇴각 떴네요",
-      "u": "https://www.clien.net/service/board/park/19299695?od=T33&po=0&category=0&groupCd=clien_all",
-      "nc": 21
-     }
-    },
-    {
      "t": "역시 빠꾸 없는 아구통교수님",
      "nsite": 3,
      "np_here": 1,
@@ -253,10 +254,10 @@
     },
     {
      "t": "손연재 부부 30억 기부ㄷㄷㄷ",
-     "nsite": 5,
+     "nsite": 4,
      "np_here": 1,
      "nc_here": 11,
-     "issue_np": 7,
+     "issue_np": 6,
      "issue_nc": 193,
      "kw": [
       "손연재",
@@ -275,18 +276,18 @@
   {
    "name": "개드립",
    "np": 14,
-   "nc": 291,
+   "nc": 297,
    "topics": [
     {
      "t": "업소 가 본 사람들 대부분 하는 말..",
-     "nsite": 3,
+     "nsite": 2,
      "np_here": 2,
      "nc_here": 67,
-     "issue_np": 4,
+     "issue_np": 3,
      "issue_nc": 69,
      "kw": [
-      "업소",
-      "대부분"
+      "대부분",
+      "업소"
      ],
      "top_post": {
       "t": "업소 가 본 사람들 대부분 하는 말..",
@@ -298,19 +299,19 @@
      "t": "서빙로봇에 부딪힌 아이, 갈비탕에 화상…\"고소 진행 중\"",
      "nsite": 5,
      "np_here": 2,
-     "nc_here": 56,
+     "nc_here": 62,
      "issue_np": 8,
-     "issue_nc": 216,
+     "issue_nc": 230,
      "kw": [
-      "화상",
       "서빙",
+      "아이",
       "로봇",
-      "아이"
+      "화상"
      ],
      "top_post": {
       "t": "서빙로봇에 부딪힌 아이, 갈비탕에 화상…\"고소 진행 중\"",
       "u": "https://www.dogdrip.net/dogdrip/737029415?sort_index=popular&page=1",
-      "nc": 42
+      "nc": 45
      }
     },
     {
@@ -321,9 +322,9 @@
      "issue_np": 3,
      "issue_nc": 47,
      "kw": [
-      "아이돌",
       "강소라",
       "포지션",
+      "아이돌",
       "상상"
      ],
      "top_post": {
@@ -338,12 +339,12 @@
      "np_here": 1,
      "nc_here": 31,
      "issue_np": 2,
-     "issue_nc": 64,
+     "issue_nc": 73,
      "kw": [
-      "중국",
-      "로봇",
       "출시",
-      "행동"
+      "중국",
+      "행동",
+      "로봇"
      ],
      "top_post": {
       "t": "중국에서 사람 행동을 99.8% 따라하는 로봇 출시",
@@ -356,7 +357,7 @@
      "nsite": 3,
      "np_here": 1,
      "nc_here": 28,
-     "issue_np": 4,
+     "issue_np": 3,
      "issue_nc": 86,
      "kw": [
       "코리안",
@@ -376,10 +377,10 @@
      "issue_np": 4,
      "issue_nc": 188,
      "kw": [
-      "DL",
+      "그룹",
       "회장",
-      "직원",
-      "그룹"
+      "DL",
+      "집합"
      ],
      "top_post": {
       "t": "한밤중 직원들 집합시킨 DL그룹 회장...성과 부진 탓하며 '보직 해임'",
@@ -393,10 +394,10 @@
      "np_here": 1,
      "nc_here": 13,
      "issue_np": 7,
-     "issue_nc": 25,
+     "issue_nc": 28,
      "kw": [
-      "삼촌",
       "소방관",
+      "삼촌",
       "충격"
      ],
      "top_post": {
@@ -426,15 +427,15 @@
   },
   {
    "name": "82쿡",
-   "np": 7,
-   "nc": 150,
+   "np": 6,
+   "nc": 113,
    "topics": [
     {
      "t": "손연재 부부 30억 기부ㄷㄷㄷ",
-     "nsite": 5,
+     "nsite": 4,
      "np_here": 2,
      "nc_here": 56,
-     "issue_np": 7,
+     "issue_np": 6,
      "issue_nc": 193,
      "kw": [
       "손연재",
@@ -449,24 +450,6 @@
      }
     },
     {
-     "t": "최민희 당원권 2년 정지",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 37,
-     "issue_np": 8,
-     "issue_nc": 145,
-     "kw": [
-      "당원",
-      "최민희",
-      "정지"
-     ],
-     "top_post": {
-      "t": "최민희 당원권 정지 2년",
-      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4263526&page=1",
-      "nc": 37
-     }
-    },
-    {
      "t": "단독] 이부진 아들, 고2때 엄마 성 따르기로 결심…“내 정체성은 엄마에게”",
      "nsite": 3,
      "np_here": 1,
@@ -474,10 +457,10 @@
      "issue_np": 3,
      "issue_nc": 25,
      "kw": [
-      "결심",
-      "이부진",
       "아들",
-      "단독"
+      "이부진",
+      "단독",
+      "결심"
      ],
      "top_post": {
       "t": "[단독] 이부진 아들, 고2때 엄마 성 따르기로 결심…",
@@ -486,15 +469,15 @@
      }
     },
     {
-     "t": "오늘 '김민석 사퇴' 촉구 집회.",
+     "t": "김민석 대표 사퇴각 떴네요",
      "nsite": 3,
      "np_here": 1,
      "nc_here": 19,
-     "issue_np": 3,
-     "issue_nc": 40,
+     "issue_np": 5,
+     "issue_nc": 130,
      "kw": [
-      "김민석",
       "사퇴",
+      "김민석",
       "집회",
       "촉구"
      ],
@@ -523,15 +506,15 @@
      }
     },
     {
-     "t": "젠슨황 복귀시킨 이유 중",
+     "t": "젠슨황 복귀하자마자 한 일 ㅋㅋㅋㅋㅋㅋㅋ",
      "nsite": 3,
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 3,
      "issue_nc": 0,
      "kw": [
-      "복귀",
-      "젠슨 황"
+      "젠슨 황",
+      "복귀"
      ],
      "top_post": {
       "t": "젠슨황 복귀시킨 이유 중",
@@ -542,40 +525,52 @@
    ]
   },
   {
-   "name": "인스티즈",
-   "np": 1,
-   "nc": 33,
+   "name": "보배드림",
+   "np": 8,
+   "nc": 20,
    "topics": [
     {
-     "t": "현재 인스타에서 난리난 늙크크 금지목록.",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 33,
-     "issue_np": 2,
-     "issue_nc": 139,
+     "t": "최민희 당원권 2년 정지",
+     "nsite": 3,
+     "np_here": 2,
+     "nc_here": 6,
+     "issue_np": 7,
+     "issue_nc": 108,
      "kw": [
-      "금지",
-      "목록"
+      "당원",
+      "최민희",
+      "정지"
      ],
      "top_post": {
-      "t": "현재 인스타에서 난리난 늙크크 금지목록.",
-      "u": "https://www.instiz.net/pt/7928863?page=1&srt=3&k=",
-      "nc": 33
+      "t": "최민희 당원권 정지 2년은 아주 당연한 조치",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1050602&vdate=",
+      "nc": 3
      }
-    }
-   ]
-  },
-  {
-   "name": "보배드림",
-   "np": 6,
-   "nc": 17,
-   "topics": [
+    },
     {
-     "t": "손연재 부부 30억 기부ㄷㄷㄷ",
-     "nsite": 5,
+     "t": "최근 논란이 심한 배달 요청 사항 ㄷㄷ",
+     "nsite": 4,
      "np_here": 1,
      "nc_here": 3,
-     "issue_np": 7,
+     "issue_np": 5,
+     "issue_nc": 203,
+     "kw": [
+      "사항",
+      "요청",
+      "배달"
+     ],
+     "top_post": {
+      "t": "과일집 택배 배달 요청사항",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1050622&vdate=",
+      "nc": 3
+     }
+    },
+    {
+     "t": "손연재 부부 30억 기부ㄷㄷㄷ",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 3,
+     "issue_np": 6,
      "issue_nc": 193,
      "kw": [
       "손연재",
@@ -590,42 +585,6 @@
      }
     },
     {
-     "t": "최근 논란이 심한 배달 요청 사항 ㄷㄷ",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 3,
-     "issue_np": 5,
-     "issue_nc": 193,
-     "kw": [
-      "요청",
-      "사항",
-      "배달"
-     ],
-     "top_post": {
-      "t": "과일집 택배 배달 요청사항",
-      "u": "https://www.bobaedream.co.kr/view?code=best&No=1050622&vdate=",
-      "nc": 3
-     }
-    },
-    {
-     "t": "최민희 당원권 2년 정지",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 3,
-     "issue_np": 8,
-     "issue_nc": 145,
-     "kw": [
-      "당원",
-      "최민희",
-      "정지"
-     ],
-     "top_post": {
-      "t": "최민희 당원권 정지 2년은 아주 당연한 조치",
-      "u": "https://www.bobaedream.co.kr/view?code=best&No=1050602&vdate=",
-      "nc": 3
-     }
-    },
-    {
      "t": "국정원 휴민트 사건 요약",
      "nsite": 3,
      "np_here": 1,
@@ -633,9 +592,9 @@
      "issue_np": 3,
      "issue_nc": 185,
      "kw": [
+      "사건",
       "휴민트",
       "국정원",
-      "사건",
       "요약"
      ],
      "top_post": {
@@ -665,19 +624,36 @@
     },
     {
      "t": "업소 가 본 사람들 대부분 하는 말..",
-     "nsite": 3,
+     "nsite": 2,
      "np_here": 1,
      "nc_here": 2,
-     "issue_np": 4,
+     "issue_np": 3,
      "issue_nc": 69,
      "kw": [
-      "업소",
-      "대부분"
+      "대부분",
+      "업소"
      ],
      "top_post": {
       "t": "업소 가 본 사람들이 대부분 하는 말…",
       "u": "https://www.bobaedream.co.kr/view?code=best&No=1050533&vdate=",
       "nc": 2
+     }
+    },
+    {
+     "t": "아이폰 듀오 내구도 수준 ㄷㄷ",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 136,
+     "kw": [
+      "아이폰",
+      "듀오"
+     ],
+     "top_post": {
+      "t": "생방송 중 사망하는 아이폰 듀오",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1050734&vdate=",
+      "nc": 0
      }
     }
    ]
@@ -685,24 +661,24 @@
   {
    "name": "아카라이브",
    "np": 1,
-   "nc": 12,
+   "nc": 15,
    "topics": [
     {
      "t": "충격적이라는 소방관 삼촌 현재 상황",
      "nsite": 3,
      "np_here": 1,
-     "nc_here": 12,
+     "nc_here": 15,
      "issue_np": 7,
-     "issue_nc": 25,
+     "issue_nc": 28,
      "kw": [
-      "삼촌",
       "소방관",
+      "삼촌",
       "충격"
      ],
      "top_post": {
       "t": "소방관 삼촌 아찔한 근황ㄷㄷㄷ",
       "u": "https://arca.live/b/live/190512677?p=1",
-      "nc": 12
+      "nc": 15
      }
     }
    ]
@@ -744,12 +720,12 @@
      "np_here": 2,
      "nc_here": 0,
      "issue_np": 8,
-     "issue_nc": 216,
+     "issue_nc": 230,
      "kw": [
-      "화상",
       "서빙",
+      "아이",
       "로봇",
-      "아이"
+      "화상"
      ],
      "top_post": {
       "t": "서빙로봇에 부딪힌 아이, 갈비탕에 화상…\"고소 진행 중\" [영상]",
@@ -765,9 +741,9 @@
      "issue_np": 3,
      "issue_nc": 47,
      "kw": [
-      "아이돌",
       "강소라",
       "포지션",
+      "아이돌",
       "상상"
      ],
      "top_post": {
@@ -784,10 +760,10 @@
      "issue_np": 3,
      "issue_nc": 25,
      "kw": [
-      "결심",
-      "이부진",
       "아들",
-      "단독"
+      "이부진",
+      "단독",
+      "결심"
      ],
      "top_post": {
       "t": "[단독] 이부진 아들, 고2때 이미 '경주 이씨'로 변경 결심했다",
@@ -803,8 +779,8 @@
      "issue_np": 3,
      "issue_nc": 3,
      "kw": [
-      "순두부",
       "일본",
+      "순두부",
       "오픈"
      ],
      "top_post": {
@@ -841,8 +817,8 @@
      "kw": [
       "뮤지컬",
       "배우",
-      "편지",
-      "논란"
+      "논란",
+      "편지"
      ],
      "top_post": {
       "t": "손편지 논란 뮤지컬 배우 새로운 인스타",
@@ -858,8 +834,8 @@
      "issue_np": 2,
      "issue_nc": 105,
      "kw": [
-      "대한항공",
       "승무원",
+      "대한항공",
       "수령액"
      ],
      "top_post": {
@@ -881,10 +857,10 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 5,
-     "issue_nc": 193,
+     "issue_nc": 203,
      "kw": [
-      "요청",
       "사항",
+      "요청",
       "배달"
      ],
      "top_post": {
@@ -894,15 +870,32 @@
      }
     },
     {
-     "t": "오늘 '김민석 사퇴' 촉구 집회.",
+     "t": "아이폰 듀오 내구도 수준 ㄷㄷ",
      "nsite": 3,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 40,
+     "issue_np": 4,
+     "issue_nc": 136,
      "kw": [
-      "김민석",
+      "아이폰",
+      "듀오"
+     ],
+     "top_post": {
+      "t": "아이폰 듀오 힌지 테스트 최종 결과",
+      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=678372",
+      "nc": 0
+     }
+    },
+    {
+     "t": "김민석 대표 사퇴각 떴네요",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 5,
+     "issue_nc": 130,
+     "kw": [
       "사퇴",
+      "김민석",
       "집회",
       "촉구"
      ],
@@ -922,8 +915,8 @@
      "kw": [
       "성매매",
       "한국",
-      "배우",
-      "일본"
+      "일본",
+      "배우"
      ],
      "top_post": {
       "t": "일본 성인배우 한국 원정 성매매",
@@ -939,8 +932,8 @@
      "issue_np": 9,
      "issue_nc": 0,
      "kw": [
-      "AV",
       "배우",
+      "AV",
       "한국",
       "일본"
      ],
@@ -958,29 +951,12 @@
      "issue_np": 6,
      "issue_nc": 131,
      "kw": [
-      "최민희",
-      "중징계"
+      "중징계",
+      "최민희"
      ],
      "top_post": {
       "t": "與 \"최민희 당직자격정지 이상 중징계\"",
       "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=678344",
-      "nc": 0
-     }
-    },
-    {
-     "t": "아이폰 듀오 내구도 수준 ㄷㄷ",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 117,
-     "kw": [
-      "아이폰",
-      "듀오"
-     ],
-     "top_post": {
-      "t": "아이폰 듀오 힌지 테스트 최종 결과",
-      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=678372",
       "nc": 0
      }
     }
@@ -988,7 +964,7 @@
   },
   {
    "name": "루리웹",
-   "np": 27,
+   "np": 26,
    "nc": 0,
    "topics": [
     {
@@ -997,10 +973,10 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 5,
-     "issue_nc": 193,
+     "issue_nc": 203,
      "kw": [
-      "요청",
       "사항",
+      "요청",
       "배달"
      ],
      "top_post": {
@@ -1017,10 +993,10 @@
      "issue_np": 4,
      "issue_nc": 188,
      "kw": [
-      "DL",
+      "그룹",
       "회장",
-      "직원",
-      "그룹"
+      "DL",
+      "집합"
      ],
      "top_post": {
       "t": "한밤중 직원들 집합시킨 DL그룹 회장...성과 부진 탓하며 '보직 해임'",
@@ -1031,9 +1007,9 @@
     {
      "t": "코리안 해밍웨이",
      "nsite": 3,
-     "np_here": 2,
+     "np_here": 1,
      "nc_here": 0,
-     "issue_np": 4,
+     "issue_np": 3,
      "issue_nc": 86,
      "kw": [
       "코리안",
@@ -1041,24 +1017,7 @@
      ],
      "top_post": {
       "t": "코리안 해밍웨이",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77538696?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "업소 가 본 사람들 대부분 하는 말..",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 4,
-     "issue_nc": 69,
-     "kw": [
-      "업소",
-      "대부분"
-     ],
-     "top_post": {
-      "t": "업소 가 본 사람들 대부분 하는 말..",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77538557?m=all&t=now",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77539394?m=all&t=now",
       "nc": 0
      }
     },
@@ -1070,9 +1029,9 @@
      "issue_np": 3,
      "issue_nc": 47,
      "kw": [
-      "아이돌",
       "강소라",
       "포지션",
+      "아이돌",
       "상상"
      ],
      "top_post": {
@@ -1087,10 +1046,10 @@
      "np_here": 4,
      "nc_here": 0,
      "issue_np": 7,
-     "issue_nc": 25,
+     "issue_nc": 28,
      "kw": [
-      "삼촌",
       "소방관",
+      "삼촌",
       "충격"
      ],
      "top_post": {
@@ -1107,9 +1066,9 @@
      "issue_np": 3,
      "issue_nc": 23,
      "kw": [
+      "특징",
       "지능",
-      "박살",
-      "특징"
+      "박살"
      ],
      "top_post": {
       "t": "지능이 박살난 사람 특징",
@@ -1133,6 +1092,25 @@
       "u": "https://bbs.ruliweb.com/best/board/300143/read/77536616?m=humor",
       "nc": 0
      }
+    },
+    {
+     "t": "결혼 준비하면 남자도 이렇게 빡세게 다욧트하고 하나요?아 전 여자인데 남친도 저도 좀 통통한 ...",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 9,
+     "kw": [
+      "여자",
+      "남자",
+      "결혼",
+      "남친"
+     ],
+     "top_post": {
+      "t": "남친이 세상 경험 없어서 고민인 여자",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77545648?m=all&t=now",
+      "nc": 0
+     }
     }
    ]
   },
@@ -1149,10 +1127,10 @@
      "issue_np": 3,
      "issue_nc": 25,
      "kw": [
-      "결심",
-      "이부진",
       "아들",
-      "단독"
+      "이부진",
+      "단독",
+      "결심"
      ],
      "top_post": {
       "t": "단독] 이부진 아들, 고2때 엄마 성 따르기로 결심…“내 정체성은 엄마에게”",
@@ -1208,8 +1186,8 @@
      "kw": [
       "뮤지컬",
       "배우",
-      "편지",
-      "논란"
+      "논란",
+      "편지"
      ],
      "top_post": {
       "t": "지금 논란인 뮤지컬배우 충격적인점",
@@ -1218,15 +1196,15 @@
      }
     },
     {
-     "t": "젠슨황 복귀시킨 이유 중",
+     "t": "젠슨황 복귀하자마자 한 일 ㅋㅋㅋㅋㅋㅋㅋ",
      "nsite": 3,
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 3,
      "issue_nc": 0,
      "kw": [
-      "복귀",
-      "젠슨 황"
+      "젠슨 황",
+      "복귀"
      ],
      "top_post": {
       "t": "젠슨황 복귀하자마자 한 일 ㅋㅋㅋㅋㅋㅋㅋ",
