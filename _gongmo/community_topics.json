@@ -1,14 +1,14 @@
 {
  "date": "2026-11-28",
- "updated": "2026-11-28 07:50",
+ "updated": "2026-11-28 08:50",
  "sites": 13,
- "npost": 2759,
+ "npost": 2735,
  "note": "출처(커뮤니티)별 집계예요. 작성자·연령·성별 정보는 수집하지 않아요. posts 는 이슈별로 뽑힌 일부라 전체 글 수가 아니에요.",
  "sources": [
   {
    "name": "MLB파크",
-   "np": 14,
-   "nc": 1067,
+   "np": 17,
+   "nc": 1093,
    "topics": [
     {
      "t": "국정원 휴민트 사건 요약",
@@ -16,12 +16,12 @@
      "np_here": 1,
      "nc_here": 176,
      "issue_np": 4,
-     "issue_nc": 187,
+     "issue_nc": 189,
      "kw": [
+      "휴민트",
       "국정원",
-      "사건",
       "요약",
-      "휴민트"
+      "사건"
      ],
      "top_post": {
       "t": "국정원 휴민트 사건 요약",
@@ -56,8 +56,8 @@
      "issue_np": 2,
      "issue_nc": 178,
      "kw": [
-      "연예인",
-      "남자"
+      "남자",
+      "연예인"
      ],
      "top_post": {
       "t": "남자들은 이쁘다고 생각하지 않는 연예인 TOP15",
@@ -70,13 +70,13 @@
      "nsite": 6,
      "np_here": 2,
      "nc_here": 123,
-     "issue_np": 10,
-     "issue_nc": 199,
+     "issue_np": 11,
+     "issue_nc": 206,
      "kw": [
       "기부",
       "손연재",
       "부부",
-      "연세"
+      "의료원"
      ],
      "top_post": {
       "t": "손연재 부부 30억 기부ㄷㄷㄷ",
@@ -109,8 +109,8 @@
      "issue_np": 2,
      "issue_nc": 102,
      "kw": [
-      "고층",
-      "아파트"
+      "아파트",
+      "고층"
      ],
      "top_post": {
       "t": "요즘 초고층 아파트에 부정적인 콘텐츠가 많이 올라오는데",
@@ -156,16 +156,16 @@
   },
   {
    "name": "클리앙",
-   "np": 15,
+   "np": 14,
    "nc": 320,
    "topics": [
     {
      "t": "최민희 중징계로 완전 지지층 갈라놓네요",
      "nsite": 4,
      "np_here": 5,
-     "nc_here": 126,
+     "nc_here": 127,
      "issue_np": 8,
-     "issue_nc": 135,
+     "issue_nc": 136,
      "kw": [
       "중징계",
       "최민희",
@@ -174,7 +174,7 @@
      "top_post": {
       "t": "최민희 중징계로 완전 지지층 갈라놓네요",
       "u": "https://www.clien.net/service/board/park/19299495?od=T33&po=0&category=0&groupCd=clien_all",
-      "nc": 55
+      "nc": 56
      }
     },
     {
@@ -185,8 +185,8 @@
      "issue_np": 7,
      "issue_nc": 144,
      "kw": [
-      "당원",
       "최민희",
+      "당원",
       "정지"
      ],
      "top_post": {
@@ -201,7 +201,7 @@
      "np_here": 3,
      "nc_here": 77,
      "issue_np": 4,
-     "issue_nc": 77,
+     "issue_nc": 85,
      "kw": [
       "최민희",
       "의원",
@@ -218,13 +218,13 @@
      "nsite": 6,
      "np_here": 1,
      "nc_here": 11,
-     "issue_np": 10,
-     "issue_nc": 199,
+     "issue_np": 11,
+     "issue_nc": 206,
      "kw": [
       "기부",
       "손연재",
       "부부",
-      "연세"
+      "의료원"
      ],
      "top_post": {
       "t": "손연재 부부 30억 연세의료원 기부",
@@ -233,30 +233,12 @@
      }
     },
     {
-     "t": "어제 주식 생방송중 눈물흘린 눈나",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 3,
-     "issue_np": 5,
-     "issue_nc": 4,
-     "kw": [
-      "주식",
-      "방송",
-      "눈물"
-     ],
-     "top_post": {
-      "t": "눈물의 주식 브리핑",
-      "u": "https://www.clien.net/service/board/park/19299079?od=T33&po=0&category=0&groupCd=clien_all",
-      "nc": 3
-     }
-    },
-    {
      "t": "리만 가설 증명의 압축본이 발표됨",
      "nsite": 3,
      "np_here": 1,
-     "nc_here": 2,
+     "nc_here": 4,
      "issue_np": 3,
-     "issue_nc": 25,
+     "issue_nc": 38,
      "kw": [
       "리만",
       "증명",
@@ -265,31 +247,49 @@
      "top_post": {
       "t": "리만가설 증명에서 클로드의 독창적 방법",
       "u": "https://www.clien.net/service/board/park/19299529?od=T33&po=0&category=0&groupCd=clien_all",
-      "nc": 2
+      "nc": 4
      }
     }
    ]
   },
   {
    "name": "개드립",
-   "np": 14,
-   "nc": 287,
+   "np": 13,
+   "nc": 271,
    "topics": [
     {
      "t": "업소 가 본 사람들 대부분 하는 말..",
      "nsite": 3,
      "np_here": 2,
-     "nc_here": 66,
+     "nc_here": 67,
      "issue_np": 4,
-     "issue_nc": 68,
+     "issue_nc": 69,
      "kw": [
-      "업소",
-      "대부분"
+      "대부분",
+      "업소"
      ],
      "top_post": {
       "t": "업소 가 본 사람들 대부분 하는 말..",
       "u": "https://www.dogdrip.net/dogdrip/736938845?sort_index=popular&page=1",
-      "nc": 37
+      "nc": 38
+     }
+    },
+    {
+     "t": "리만 가설 증명의 압축본이 발표됨",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 34,
+     "issue_np": 3,
+     "issue_nc": 38,
+     "kw": [
+      "리만",
+      "증명",
+      "가설"
+     ],
+     "top_post": {
+      "t": "리만 가설 증명의 압축본이 발표됨",
+      "u": "https://www.dogdrip.net/dogdrip/736970094?sort_index=popular&page=1",
+      "nc": 34
      }
     },
     {
@@ -302,8 +302,8 @@
      "kw": [
       "직전",
       "남자",
-      "결혼",
-      "파토"
+      "파토",
+      "결혼"
      ],
      "top_post": {
       "t": "결혼 직전까지 갔다가 파토 낸 남자 ㄷㄷ",
@@ -328,25 +328,6 @@
       "t": "실시간 뮤지컬판에서 대참사 난 사건",
       "u": "https://www.dogdrip.net/dogdrip/736840495?sort_index=popular&page=1",
       "nc": 30
-     }
-    },
-    {
-     "t": "백화점 근무복에 민원 넣은 고객...그 결과",
-     "nsite": 5,
-     "np_here": 1,
-     "nc_here": 29,
-     "issue_np": 6,
-     "issue_nc": 31,
-     "kw": [
-      "민원",
-      "백화점",
-      "고객",
-      "근무복"
-     ],
-     "top_post": {
-      "t": "백화점 근무복에 민원 넣은 고객...그 결과",
-      "u": "https://www.dogdrip.net/dogdrip/736775658?sort_index=popular&page=1",
-      "nc": 29
      }
     },
     {
@@ -385,24 +366,6 @@
      }
     },
     {
-     "t": "리만 가설 증명의 압축본이 발표됨",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 23,
-     "issue_np": 3,
-     "issue_nc": 25,
-     "kw": [
-      "리만",
-      "증명",
-      "가설"
-     ],
-     "top_post": {
-      "t": "리만 가설 증명의 압축본이 발표됨",
-      "u": "https://www.dogdrip.net/dogdrip/736970094?sort_index=popular&page=1",
-      "nc": 23
-     }
-    },
-    {
      "t": "친자검사에서 친자불일치보다 더 끔찍한 결과",
      "nsite": 3,
      "np_here": 1,
@@ -418,13 +381,181 @@
       "u": "https://www.dogdrip.net/dogdrip/736820559?sort_index=popular&page=1",
       "nc": 17
      }
+    },
+    {
+     "t": "요즘 유럽에서 일단 한국인이냐고 묻는 이유",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 13,
+     "issue_np": 4,
+     "issue_nc": 14,
+     "kw": [
+      "유럽",
+      "한국인"
+     ],
+     "top_post": {
+      "t": "요즘 유럽에서 일단 한국인이냐고 묻는 이유",
+      "u": "https://www.dogdrip.net/dogdrip/736849968?sort_index=popular&page=1",
+      "nc": 13
+     }
+    }
+   ]
+  },
+  {
+   "name": "82쿡",
+   "np": 11,
+   "nc": 174,
+   "topics": [
+    {
+     "t": "손연재 부부 30억 기부ㄷㄷㄷ",
+     "nsite": 6,
+     "np_here": 3,
+     "nc_here": 63,
+     "issue_np": 11,
+     "issue_nc": 206,
+     "kw": [
+      "기부",
+      "손연재",
+      "부부",
+      "의료원"
+     ],
+     "top_post": {
+      "t": "손연재부부 30억 기부하네요",
+      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4263422&page=1",
+      "nc": 28
+     }
+    },
+    {
+     "t": "최민희 당원권 2년 정지",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 37,
+     "issue_np": 7,
+     "issue_nc": 144,
+     "kw": [
+      "최민희",
+      "당원",
+      "정지"
+     ],
+     "top_post": {
+      "t": "최민희 당원권 정지 2년",
+      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4263526&page=1",
+      "nc": 37
+     }
+    },
+    {
+     "t": "[단독] 이부진 아들, 고2때 엄마 성 따르기로 결심…",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 25,
+     "issue_np": 3,
+     "issue_nc": 25,
+     "kw": [
+      "결심",
+      "아들",
+      "이부진",
+      "단독"
+     ],
+     "top_post": {
+      "t": "[단독] 이부진 아들, 고2때 엄마 성 따르기로 결심…",
+      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4263608&page=1",
+      "nc": 25
+     }
+    },
+    {
+     "t": "오늘 이재용이 받은 배당금 규모 ㄷㄷ. jpg",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 19,
+     "issue_np": 2,
+     "issue_nc": 79,
+     "kw": [
+      "이재용",
+      "배당금"
+     ],
+     "top_post": {
+      "t": "이재용 회장 오늘 삼전 배당금",
+      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4263440&page=1",
+      "nc": 19
+     }
+    },
+    {
+     "t": "남자들아 여자친구 직업이 뭐였으면 좋겠어?",
+     "nsite": 5,
+     "np_here": 1,
+     "nc_here": 13,
+     "issue_np": 8,
+     "issue_nc": 42,
+     "kw": [
+      "여자",
+      "친구",
+      "남자"
+     ],
+     "top_post": {
+      "t": "남자는 엄마랑 닮은 여자 좋아하는 거 같아요",
+      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4263432&page=1",
+      "nc": 13
+     }
+    },
+    {
+     "t": "최민희 중징계로 완전 지지층 갈라놓네요",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 8,
+     "issue_np": 8,
+     "issue_nc": 136,
+     "kw": [
+      "중징계",
+      "최민희",
+      "민주당"
+     ],
+     "top_post": {
+      "t": "막가는 민주당, 최민희가 중징계면 김민석은 제명감",
+      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4263563&page=1",
+      "nc": 8
+     }
+    },
+    {
+     "t": "최민희는 국회의원 제명감이지요",
+     "nsite": 2,
+     "np_here": 1,
+     "nc_here": 8,
+     "issue_np": 4,
+     "issue_nc": 85,
+     "kw": [
+      "최민희",
+      "의원",
+      "제명"
+     ],
+     "top_post": {
+      "t": "최민희는 제명시켰어야죠",
+      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4263630&page=1",
+      "nc": 8
+     }
+    },
+    {
+     "t": "어제 주식 생방송중 눈물흘린 눈나",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 1,
+     "issue_np": 4,
+     "issue_nc": 1,
+     "kw": [
+      "방송",
+      "주식"
+     ],
+     "top_post": {
+      "t": "주식 손실을 회복하려고 경제방송 삭제했어요",
+      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4263330&page=1",
+      "nc": 1
+     }
     }
    ]
   },
   {
    "name": "인스티즈",
-   "np": 3,
-   "nc": 167,
+   "np": 2,
+   "nc": 107,
    "topics": [
     {
      "t": "신혼부부 집들이 음식 논란",
@@ -435,30 +566,13 @@
      "issue_nc": 74,
      "kw": [
       "음식",
-      "논란",
-      "신혼부부"
+      "신혼부부",
+      "논란"
      ],
      "top_post": {
       "t": "신혼부부 집들이 음식 논란",
       "u": "https://www.instiz.net/pt/7929821?page=1&srt=3&k=",
       "nc": 74
-     }
-    },
-    {
-     "t": "현재 적나라해서 난리난 MAMA 무보정.",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 60,
-     "issue_np": 3,
-     "issue_nc": 60,
-     "kw": [
-      "무보정",
-      "MAMA"
-     ],
-     "top_post": {
-      "t": "현재 적나라해서 난리난 MAMA 무보정.",
-      "u": "https://www.instiz.net/pt/7930075?page=1&srt=3&k=",
-      "nc": 60
      }
     },
     {
@@ -481,160 +595,9 @@
    ]
   },
   {
-   "name": "82쿡",
-   "np": 11,
-   "nc": 161,
-   "topics": [
-    {
-     "t": "손연재 부부 30억 기부ㄷㄷㄷ",
-     "nsite": 6,
-     "np_here": 3,
-     "nc_here": 60,
-     "issue_np": 10,
-     "issue_nc": 199,
-     "kw": [
-      "기부",
-      "손연재",
-      "부부",
-      "연세"
-     ],
-     "top_post": {
-      "t": "손연재부부 30억 기부하네요",
-      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4263422&page=1",
-      "nc": 28
-     }
-    },
-    {
-     "t": "최민희 당원권 2년 정지",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 37,
-     "issue_np": 7,
-     "issue_nc": 144,
-     "kw": [
-      "당원",
-      "최민희",
-      "정지"
-     ],
-     "top_post": {
-      "t": "최민희 당원권 정지 2년",
-      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4263526&page=1",
-      "nc": 37
-     }
-    },
-    {
-     "t": "[단독] 이부진 아들, 고2때 엄마 성 따르기로 결심…",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 23,
-     "issue_np": 3,
-     "issue_nc": 23,
-     "kw": [
-      "이부진",
-      "아들",
-      "단독",
-      "결심"
-     ],
-     "top_post": {
-      "t": "[단독] 이부진 아들, 고2때 엄마 성 따르기로 결심…",
-      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4263608&page=1",
-      "nc": 23
-     }
-    },
-    {
-     "t": "오늘 이재용이 받은 배당금 규모 ㄷㄷ. jpg",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 19,
-     "issue_np": 2,
-     "issue_nc": 79,
-     "kw": [
-      "이재용",
-      "배당금"
-     ],
-     "top_post": {
-      "t": "이재용 회장 오늘 삼전 배당금",
-      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4263440&page=1",
-      "nc": 19
-     }
-    },
-    {
-     "t": "남자들아 여자친구 직업이 뭐였으면 좋겠어?",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 13,
-     "issue_np": 7,
-     "issue_nc": 26,
-     "kw": [
-      "여자",
-      "친구",
-      "남자"
-     ],
-     "top_post": {
-      "t": "남자는 엄마랑 닮은 여자 좋아하는 거 같아요",
-      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4263432&page=1",
-      "nc": 13
-     }
-    },
-    {
-     "t": "최민희 중징계로 완전 지지층 갈라놓네요",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 8,
-     "issue_np": 8,
-     "issue_nc": 135,
-     "kw": [
-      "중징계",
-      "최민희",
-      "민주당"
-     ],
-     "top_post": {
-      "t": "막가는 민주당, 최민희가 중징계면 김민석은 제명감",
-      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4263563&page=1",
-      "nc": 8
-     }
-    },
-    {
-     "t": "어제 주식 생방송중 눈물흘린 눈나",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 1,
-     "issue_np": 5,
-     "issue_nc": 4,
-     "kw": [
-      "주식",
-      "방송",
-      "눈물"
-     ],
-     "top_post": {
-      "t": "주식 손실을 회복하려고 경제방송 삭제했어요",
-      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4263330&page=1",
-      "nc": 1
-     }
-    },
-    {
-     "t": "고추장 티어 계급표",
-     "nsite": 2,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 2,
-     "issue_nc": 78,
-     "kw": [
-      "고추장",
-      "계급"
-     ],
-     "top_post": {
-      "t": "고추장 티어 계급표",
-      "u": "https://www.82cook.com/entiz/read.php?bn=15&num=4263483&page=1",
-      "nc": 0
-     }
-    }
-   ]
-  },
-  {
    "name": "보배드림",
-   "np": 13,
-   "nc": 25,
+   "np": 15,
+   "nc": 26,
    "topics": [
     {
      "t": "실시간 난리난 뮤지컬배우 대참사",
@@ -656,6 +619,25 @@
      }
     },
     {
+     "t": "국정원 휴민트 사건 요약",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 3,
+     "issue_np": 4,
+     "issue_nc": 189,
+     "kw": [
+      "휴민트",
+      "국정원",
+      "요약",
+      "사건"
+     ],
+     "top_post": {
+      "t": "국정원 휴민트 사건 요약",
+      "u": "https://www.bobaedream.co.kr/view?code=best&No=1050605&vdate=",
+      "nc": 3
+     }
+    },
+    {
      "t": "최민희 당원권 2년 정지",
      "nsite": 3,
      "np_here": 1,
@@ -663,8 +645,8 @@
      "issue_np": 7,
      "issue_nc": 144,
      "kw": [
-      "당원",
       "최민희",
+      "당원",
       "정지"
      ],
      "top_post": {
@@ -683,8 +665,8 @@
      "kw": [
       "직전",
       "남자",
-      "결혼",
-      "파토"
+      "파토",
+      "결혼"
      ],
      "top_post": {
       "t": "결혼 직전까지 갔다가 파토 낸 남자",
@@ -700,8 +682,8 @@
      "issue_np": 3,
      "issue_nc": 3,
      "kw": [
-      "플스",
       "박살",
+      "플스",
       "아내",
       "게임"
      ],
@@ -719,8 +701,8 @@
      "issue_np": 2,
      "issue_nc": 102,
      "kw": [
-      "고층",
-      "아파트"
+      "아파트",
+      "고층"
      ],
      "top_post": {
       "t": "폭탄이 되어가고 있다는 초고층 아파트",
@@ -729,12 +711,12 @@
      }
     },
     {
-     "t": "백화점 근무복에 민원 넣은 고객...그 결과",
-     "nsite": 5,
+     "t": "낭만낭만 백화점 근무복에 민원 넣은 고객님..",
+     "nsite": 4,
      "np_here": 2,
      "nc_here": 2,
-     "issue_np": 6,
-     "issue_nc": 31,
+     "issue_np": 5,
+     "issue_nc": 2,
      "kw": [
       "민원",
       "백화점",
@@ -748,34 +730,15 @@
      }
     },
     {
-     "t": "국정원 휴민트 사건 요약",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 2,
-     "issue_np": 4,
-     "issue_nc": 187,
-     "kw": [
-      "국정원",
-      "사건",
-      "요약",
-      "휴민트"
-     ],
-     "top_post": {
-      "t": "국정원 휴민트 사건 요약",
-      "u": "https://www.bobaedream.co.kr/view?code=best&No=1050605&vdate=",
-      "nc": 2
-     }
-    },
-    {
      "t": "업소 가 본 사람들 대부분 하는 말..",
      "nsite": 3,
      "np_here": 1,
      "nc_here": 2,
      "issue_np": 4,
-     "issue_nc": 68,
+     "issue_nc": 69,
      "kw": [
-      "업소",
-      "대부분"
+      "대부분",
+      "업소"
      ],
      "top_post": {
       "t": "업소 가 본 사람들이 대부분 하는 말…",
@@ -792,11 +755,11 @@
    "topics": [
     {
      "t": "남자들아 여자친구 직업이 뭐였으면 좋겠어?",
-     "nsite": 4,
+     "nsite": 5,
      "np_here": 2,
      "nc_here": 13,
-     "issue_np": 7,
-     "issue_nc": 26,
+     "issue_np": 8,
+     "issue_nc": 42,
      "kw": [
       "여자",
       "친구",
@@ -832,10 +795,10 @@
      "np_here": 1,
      "nc_here": 3,
      "issue_np": 11,
-     "issue_nc": 5,
+     "issue_nc": 6,
      "kw": [
-      "네이버",
       "페이",
+      "네이버",
       "랜덤",
       "보험"
      ],
@@ -877,21 +840,20 @@
    "nc": 0,
    "topics": [
     {
-     "t": "백화점 근무복에 민원 넣은 고객...그 결과",
+     "t": "남자들아 여자친구 직업이 뭐였으면 좋겠어?",
      "nsite": 5,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 6,
-     "issue_nc": 31,
+     "issue_np": 8,
+     "issue_nc": 42,
      "kw": [
-      "민원",
-      "백화점",
-      "고객",
-      "근무복"
+      "여자",
+      "친구",
+      "남자"
      ],
      "top_post": {
-      "t": "낭만낭만 백화점 근무복에 민원 넣은 고객님..",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481974&_dcbest=1&page=1",
+      "t": "남자들아 여자친구 직업이 뭐였으면 좋겠어?",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481842&_dcbest=1&page=1",
       "nc": 0
      }
     },
@@ -915,38 +877,21 @@
      }
     },
     {
-     "t": "남자들아 여자친구 직업이 뭐였으면 좋겠어?",
-     "nsite": 4,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 7,
-     "issue_nc": 26,
-     "kw": [
-      "여자",
-      "친구",
-      "남자"
-     ],
-     "top_post": {
-      "t": "남자들아 여자친구 직업이 뭐였으면 좋겠어?",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481842&_dcbest=1&page=1",
-      "nc": 0
-     }
-    },
-    {
-     "t": "어제 주식 생방송중 눈물흘린 눈나",
+     "t": "낭만낭만 백화점 근무복에 민원 넣은 고객님..",
      "nsite": 4,
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 5,
-     "issue_nc": 4,
+     "issue_nc": 2,
      "kw": [
-      "주식",
-      "방송",
-      "눈물"
+      "민원",
+      "백화점",
+      "고객",
+      "근무복"
      ],
      "top_post": {
-      "t": "어제 주식 생방송중 눈물흘린 눈나",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=482041&_dcbest=1&page=1",
+      "t": "낭만낭만 백화점 근무복에 민원 넣은 고객님..",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481974&_dcbest=1&page=1",
       "nc": 0
      }
     },
@@ -960,8 +905,8 @@
      "kw": [
       "직전",
       "남자",
-      "결혼",
-      "파토"
+      "파토",
+      "결혼"
      ],
      "top_post": {
       "t": "지금 30대 남자들이 미치기 일보직전인 이유",
@@ -987,6 +932,25 @@
      }
     },
     {
+     "t": "[단독] 이부진 아들, 고2때 엄마 성 따르기로 결심…",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 25,
+     "kw": [
+      "결심",
+      "아들",
+      "이부진",
+      "단독"
+     ],
+     "top_post": {
+      "t": "단독] 이부진 아들, 고2때 엄마 성 따르기로 결심…“내 정체성은 엄마에게”",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=482100&_dcbest=1&page=1",
+      "nc": 0
+     }
+    },
+    {
      "t": "지금 논란인 뮤지컬배우 충격적인점",
      "nsite": 3,
      "np_here": 1,
@@ -1005,70 +969,6 @@
      }
     },
     {
-     "t": "[단독] 이부진 아들, 고2때 엄마 성 따르기로 결심…",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 23,
-     "kw": [
-      "이부진",
-      "아들",
-      "단독",
-      "결심"
-     ],
-     "top_post": {
-      "t": "단독] 이부진 아들, 고2때 엄마 성 따르기로 결심…“내 정체성은 엄마에게”",
-      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=482100&_dcbest=1&page=1",
-      "nc": 0
-     }
-    }
-   ]
-  },
-  {
-   "name": "SLR클럽",
-   "np": 3,
-   "nc": 0,
-   "topics": [
-    {
-     "t": "백화점 근무복에 민원 넣은 고객...그 결과",
-     "nsite": 5,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 6,
-     "issue_nc": 31,
-     "kw": [
-      "민원",
-      "백화점",
-      "고객",
-      "근무복"
-     ],
-     "top_post": {
-      "t": "백화점 주차요원 복장 보고 민원 넣은 고객",
-      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=678302",
-      "nc": 0
-     }
-    },
-    {
-     "t": "일본 AV배우 20명 한국에서 성매매",
-     "nsite": 5,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 10,
-     "issue_nc": 1,
-     "kw": [
-      "한국",
-      "배우",
-      "성매매",
-      "AV"
-     ],
-     "top_post": {
-      "t": "일본 성인배우 한국 원정 성매매",
-      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=678362",
-      "nc": 0
-     }
-    },
-    {
      "t": "결혼 하려면 남자가 집을 해가야 한다는 두 나라 여자들을 비교해보자",
      "nsite": 3,
      "np_here": 1,
@@ -1081,8 +981,8 @@
       "남자"
      ],
      "top_post": {
-      "t": "이슬람 왕족 여자와 결혼한 한국남자 ㄷㄷㄷㄷㄷㄷㄷ",
-      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=678330",
+      "t": "결혼 하려면 남자가 집을 해가야 한다는 두 나라 여자들을 비교해보자",
+      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=482088&_dcbest=1&page=1",
       "nc": 0
      }
     }
@@ -1090,25 +990,24 @@
   },
   {
    "name": "루리웹",
-   "np": 22,
+   "np": 20,
    "nc": 0,
    "topics": [
     {
-     "t": "백화점 근무복에 민원 넣은 고객...그 결과",
+     "t": "남자들아 여자친구 직업이 뭐였으면 좋겠어?",
      "nsite": 5,
      "np_here": 1,
      "nc_here": 0,
-     "issue_np": 6,
-     "issue_nc": 31,
+     "issue_np": 8,
+     "issue_nc": 42,
      "kw": [
-      "민원",
-      "백화점",
-      "고객",
-      "근무복"
+      "여자",
+      "친구",
+      "남자"
      ],
      "top_post": {
-      "t": "백화점 근무복에 민원 넣은 아줌마",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77536028?m=all&t=now",
+      "t": "웨펀 마스터 여자친구",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77535757?m=all&t=now",
       "nc": 0
      }
     },
@@ -1151,33 +1050,15 @@
      }
     },
     {
-     "t": "남자들아 여자친구 직업이 뭐였으면 좋겠어?",
+     "t": "네이버페이 59원 (신속히 받으세요)",
      "nsite": 4,
      "np_here": 2,
      "nc_here": 0,
-     "issue_np": 7,
-     "issue_nc": 26,
-     "kw": [
-      "여자",
-      "친구",
-      "남자"
-     ],
-     "top_post": {
-      "t": "웨펀 마스터 여자친구",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77535757?m=all&t=now",
-      "nc": 0
-     }
-    },
-    {
-     "t": "네이버페이 59원 (신속히 받으세요)",
-     "nsite": 4,
-     "np_here": 3,
-     "nc_here": 0,
      "issue_np": 11,
-     "issue_nc": 5,
+     "issue_nc": 6,
      "kw": [
-      "네이버",
       "페이",
+      "네이버",
       "랜덤",
       "보험"
      ],
@@ -1188,20 +1069,21 @@
      }
     },
     {
-     "t": "어제 주식 생방송중 눈물흘린 눈나",
+     "t": "낭만낭만 백화점 근무복에 민원 넣은 고객님..",
      "nsite": 4,
-     "np_here": 2,
+     "np_here": 1,
      "nc_here": 0,
      "issue_np": 5,
-     "issue_nc": 4,
+     "issue_nc": 2,
      "kw": [
-      "주식",
-      "방송",
-      "눈물"
+      "민원",
+      "백화점",
+      "고객",
+      "근무복"
      ],
      "top_post": {
-      "t": "주식 전문가가 방송에서 운 이유",
-      "u": "https://bbs.ruliweb.com/best/board/300143/read/77534179?m=all&t=now",
+      "t": "백화점 근무복에 민원 넣은 아줌마",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77536028?m=all&t=now",
       "nc": 0
      }
     },
@@ -1228,14 +1110,113 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 4,
-     "issue_nc": 68,
+     "issue_nc": 69,
      "kw": [
-      "업소",
-      "대부분"
+      "대부분",
+      "업소"
      ],
      "top_post": {
       "t": "업소 가 본 사람들 대부분 하는 말..",
       "u": "https://bbs.ruliweb.com/best/board/300143/read/77538557?m=all&t=now",
+      "nc": 0
+     }
+    },
+    {
+     "t": "리만 가설 증명의 압축본이 발표됨",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 38,
+     "kw": [
+      "리만",
+      "증명",
+      "가설"
+     ],
+     "top_post": {
+      "t": "ai의 리만가설 증명에 수학자들이 삔또 나간 이유",
+      "u": "https://bbs.ruliweb.com/best/board/300143/read/77540345?m=all&t=now",
+      "nc": 0
+     }
+    }
+   ]
+  },
+  {
+   "name": "SLR클럽",
+   "np": 4,
+   "nc": 0,
+   "topics": [
+    {
+     "t": "일본 AV배우 20명 한국에서 성매매",
+     "nsite": 5,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 10,
+     "issue_nc": 1,
+     "kw": [
+      "한국",
+      "배우",
+      "성매매",
+      "AV"
+     ],
+     "top_post": {
+      "t": "일본 성인배우 한국 원정 성매매",
+      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=678362",
+      "nc": 0
+     }
+    },
+    {
+     "t": "낭만낭만 백화점 근무복에 민원 넣은 고객님..",
+     "nsite": 4,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 5,
+     "issue_nc": 2,
+     "kw": [
+      "민원",
+      "백화점",
+      "고객",
+      "근무복"
+     ],
+     "top_post": {
+      "t": "백화점 주차요원 복장 보고 민원 넣은 고객",
+      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=678302",
+      "nc": 0
+     }
+    },
+    {
+     "t": "이야 신호위반 신고했더니 ㅋㅋㅋ 결과가",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 4,
+     "issue_nc": 9,
+     "kw": [
+      "위반",
+      "신호",
+      "사고"
+     ],
+     "top_post": {
+      "t": "이야 신호위반 신고했더니 ㅋㅋㅋ 결과가",
+      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=678304",
+      "nc": 0
+     }
+    },
+    {
+     "t": "결혼 하려면 남자가 집을 해가야 한다는 두 나라 여자들을 비교해보자",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 4,
+     "kw": [
+      "결혼",
+      "여자",
+      "남자"
+     ],
+     "top_post": {
+      "t": "이슬람 왕족 여자와 결혼한 한국남자 ㄷㄷㄷㄷㄷㄷㄷ",
+      "u": "https://www.slrclub.com/bbs/vx2.php?id=best_article&no=678330",
       "nc": 0
      }
     }
@@ -1243,7 +1224,7 @@
   },
   {
    "name": "더쿠",
-   "np": 8,
+   "np": 6,
    "nc": 0,
    "topics": [
     {
@@ -1252,16 +1233,35 @@
      "np_here": 1,
      "nc_here": 0,
      "issue_np": 11,
-     "issue_nc": 5,
+     "issue_nc": 6,
      "kw": [
-      "네이버",
       "페이",
+      "네이버",
       "랜덤",
       "보험"
      ],
      "top_post": {
       "t": "네이버페이15원+10원+10원+5원+1원+1원+1원+1원+랜덤 눌러봐++10원+5원+눌러눌러 보험랜덤+보험랜덤 하나더+라이브미리보고5원받기",
       "u": "https://theqoo.net/hot/4419230490",
+      "nc": 0
+     }
+    },
+    {
+     "t": "[단독] 이부진 아들, 고2때 엄마 성 따르기로 결심…",
+     "nsite": 3,
+     "np_here": 1,
+     "nc_here": 0,
+     "issue_np": 3,
+     "issue_nc": 25,
+     "kw": [
+      "결심",
+      "아들",
+      "이부진",
+      "단독"
+     ],
+     "top_post": {
+      "t": "[단독] 이부진 아들, 고2때 이미 '경주 이씨'로 변경 결심했다",
+      "u": "https://theqoo.net/hot/4419806215",
       "nc": 0
      }
     },
@@ -1280,25 +1280,6 @@
      "top_post": {
       "t": "손편지 논란 뮤지컬 배우 새로운 인스타",
       "u": "https://theqoo.net/hot/4420094185",
-      "nc": 0
-     }
-    },
-    {
-     "t": "[단독] 이부진 아들, 고2때 엄마 성 따르기로 결심…",
-     "nsite": 3,
-     "np_here": 1,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 23,
-     "kw": [
-      "이부진",
-      "아들",
-      "단독",
-      "결심"
-     ],
-     "top_post": {
-      "t": "[단독] 이부진 아들, 고2때 이미 '경주 이씨'로 변경 결심했다",
-      "u": "https://theqoo.net/hot/4419806215",
       "nc": 0
      }
     },
@@ -1329,29 +1310,12 @@
      "issue_nc": 74,
      "kw": [
       "음식",
-      "논란",
-      "신혼부부"
+      "신혼부부",
+      "논란"
      ],
      "top_post": {
       "t": "신혼부부 집들이 음식 논란",
       "u": "https://theqoo.net/hot/4419107933",
-      "nc": 0
-     }
-    },
-    {
-     "t": "현재 적나라해서 난리난 MAMA 무보정.",
-     "nsite": 2,
-     "np_here": 2,
-     "nc_here": 0,
-     "issue_np": 3,
-     "issue_nc": 60,
-     "kw": [
-      "무보정",
-      "MAMA"
-     ],
-     "top_post": {
-      "t": "MAMA 남자아이돌 무보정",
-      "u": "https://theqoo.net/hot/4419282311",
       "nc": 0
      }
     }
