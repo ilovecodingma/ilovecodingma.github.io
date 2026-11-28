@@ -1,5 +1,5 @@
 {
- "at": "2026-11-28 14:30",
+ "at": "2026-11-28 15:30",
  "nitems": 528,
  "cands": [
   {
@@ -12,8 +12,13 @@
     "한국경제",
     "헤럴드경제"
    ],
-   "n": 21,
+   "n": 22,
    "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "에이티즈, 내년 3월 런던서 '제로 투 올' 유럽 투어 출발",
+     "link": "https://www.yna.co.kr/view/AKR20261128033900005"
+    },
     {
      "src": "연합뉴스",
      "title": "[가요소식] FT아일랜드, 내년 1월 아시아 투어 '에프티소드'",
@@ -28,11 +33,6 @@
      "src": "연합뉴스",
      "title": "제15회 디아스포라영화제, 내년 5월 인천서 개최",
      "link": "https://www.yna.co.kr/view/AKR20261126130000371"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "MBC 새 일일드라마 '효녀 구복이' 내년 1월 첫 방송",
-     "link": "https://www.yna.co.kr/view/AKR20261126123300005"
     }
    ]
   },
@@ -46,7 +46,7 @@
     "조선일보",
     "헤럴드경제"
    ],
-   "n": 19,
+   "n": 17,
    "headlines": [
     {
      "src": "동아일보",
@@ -139,6 +139,40 @@
    ]
   },
   {
+   "kw": "솔로",
+   "nsrc": 5,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "세계일보",
+    "연합뉴스",
+    "조선일보"
+   ],
+   "n": 7,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "[가요소식] 에이비식스 출신 전웅, '문득'으로 솔로 데뷔",
+     "link": "https://www.yna.co.kr/view/AKR20261127072500005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "아이유, 내년 새 월드투어…女 솔로 가수 최초 도쿄돔 입성",
+     "link": "https://www.yna.co.kr/view/AKR20261124141700005"
+    },
+    {
+     "src": "동아일보",
+     "title": "트와이스 지효, K팝 솔로 최초 칠레 ‘비냐 델 마르 페스티벌’ 출격",
+     "link": "https://sports.donga.com/ent/article/all/20261128/135107261/1"
+    },
+    {
+     "src": "세계일보",
+     "title": "트와이스 지효, 칠레 '비냐 델 마르 페스티벌' 출격…K-팝 솔로 최초",
+     "link": "https://www.segye.com/newsView/20261128502278"
+    }
+   ]
+  },
+  {
    "kw": "출격",
    "nsrc": 5,
    "srcs": [
@@ -207,74 +241,6 @@
    ]
   },
   {
-   "kw": "신민아",
-   "nsrc": 5,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "동아일보",
-    "연합뉴스",
-    "한국경제"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "신민아 \"K-로판의 출발점, 왕관의 무게 견뎌야 했죠\"",
-     "link": "https://www.yna.co.kr/view/AKR20261127118300005"
-    },
-    {
-     "src": "동아일보",
-     "title": "신민아 “♥김우빈도 ‘재혼 황후’ 팬…나비에 불쌍하다고” [DA인터뷰③]",
-     "link": "https://sports.donga.com/ent/article/all/20261127/135105494/2"
-    },
-    {
-     "src": "동아일보",
-     "title": "신민아 “‘재혼 황후’ 시즌2 제작된다면? 나비에는 있어야죠” [DA인터뷰②]",
-     "link": "https://sports.donga.com/ent/article/all/20261127/135105491/2"
-    },
-    {
-     "src": "한국경제",
-     "title": "[포토+] 신민아, '강렬한 레드의 유혹'",
-     "link": "https://www.hankyung.com/article/202611260765H"
-    }
-   ]
-  },
-  {
-   "kw": "솔로",
-   "nsrc": 5,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "세계일보",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "[가요소식] 에이비식스 출신 전웅, '문득'으로 솔로 데뷔",
-     "link": "https://www.yna.co.kr/view/AKR20261127072500005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "아이유, 내년 새 월드투어…女 솔로 가수 최초 도쿄돔 입성",
-     "link": "https://www.yna.co.kr/view/AKR20261124141700005"
-    },
-    {
-     "src": "동아일보",
-     "title": "트와이스 지효, K팝 솔로 최초 칠레 ‘비냐 델 마르 페스티벌’ 출격",
-     "link": "https://sports.donga.com/ent/article/all/20261128/135107261/1"
-    },
-    {
-     "src": "세계일보",
-     "title": "트와이스 지효, 칠레 '비냐 델 마르 페스티벌' 출격…K-팝 솔로 최초",
-     "link": "https://www.segye.com/newsView/20261128502278"
-    }
-   ]
-  },
-  {
    "kw": "부부",
    "nsrc": 5,
    "srcs": [
@@ -309,35 +275,70 @@
    ]
   },
   {
-   "kw": "연하",
-   "nsrc": 4,
+   "kw": "시선",
+   "nsrc": 5,
    "srcs": [
     "뉴시스",
     "동아일보",
-    "세계일보",
-    "조선일보"
+    "연합뉴스",
+    "조선일보",
+    "한국경제"
    ],
-   "n": 11,
+   "n": 6,
    "headlines": [
     {
-     "src": "동아일보",
-     "title": "장윤주, 런던서 결국 눈물…♥4세 연하 남편 생일에 무슨 일",
-     "link": "https://sports.donga.com/ent/article/all/20261128/135107301/1"
+     "src": "연합뉴스",
+     "title": "'푸른길' 한준희 감독 \"원작에 한국인의 시선 더했죠\"",
+     "link": "https://www.yna.co.kr/view/AKR20261125167500005"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "혁오, 오늘 6년 만의 정규앨범 '33'…사랑 향한 시선 담아",
+     "link": "https://www.yna.co.kr/view/AKR20261125096500005"
     },
     {
      "src": "동아일보",
-     "title": "오윤아, ♥4세 연하 남편 공개…바라보는 눈에서 꿀이 뚝뚝",
-     "link": "https://sports.donga.com/ent/article/all/20261128/135106857/1"
+     "title": "클릭비 김상혁, 유채련 친구들 앞 눈시울 붉혔다…“괜한 시선 쏠릴까 봐”",
+     "link": "https://sports.donga.com/ent/article/all/20261128/135106694/1"
     },
     {
-     "src": "세계일보",
-     "title": "오윤아, 4세 연하 남편 공개…모자이크 뚫는 듬직한 체격",
-     "link": "https://www.segye.com/newsView/20261128500011"
+     "src": "한국경제",
+     "title": "HK직캠|장다아, '러블리 미소에 시선 강탈'",
+     "link": "https://www.hankyung.com/article/202611275674H"
+    }
+   ]
+  },
+  {
+   "kw": "신민아",
+   "nsrc": 5,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "동아일보",
+    "연합뉴스",
+    "한국경제"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "신민아 \"K-로판의 출발점, 왕관의 무게 견뎌야 했죠\"",
+     "link": "https://www.yna.co.kr/view/AKR20261127118300005"
     },
     {
-     "src": "뉴시스",
-     "title": "오윤아, 4세 연하 남편 공개…모자이크 뚫는 듬직한 체격",
-     "link": "https://www.newsis.com/view/NISX20261127_0003886910"
+     "src": "동아일보",
+     "title": "신민아 “♥김우빈도 ‘재혼 황후’ 팬…나비에 불쌍하다고” [DA인터뷰③]",
+     "link": "https://sports.donga.com/ent/article/all/20261127/135105494/2"
+    },
+    {
+     "src": "한국경제",
+     "title": "[포토+] 신민아, '강렬한 레드의 유혹'",
+     "link": "https://www.hankyung.com/article/202611260765H"
+    },
+    {
+     "src": "SBS",
+     "title": "떠나는 신민아 붙잡고 애원하는 주지훈…'재혼황후', 오늘(25일) 최종회 공개",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008862466&plink=RSSLINK&cooper=RSSREADER"
     }
    ]
   },
@@ -408,6 +409,39 @@
    ]
   },
   {
+   "kw": "한지민",
+   "nsrc": 4,
+   "srcs": [
+    "동아일보",
+    "연합뉴스",
+    "조선일보",
+    "한국경제"
+   ],
+   "n": 9,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "도합 85년 우정 여행…한지민 \"나이·성별 떠나 친구 됐죠\"",
+     "link": "https://www.yna.co.kr/view/AKR20261126143000005"
+    },
+    {
+     "src": "동아일보",
+     "title": "이서진vs한지민 통했다…‘그냥사람친구’ 첫방송 5%",
+     "link": "https://sports.donga.com/ent/article/all/20261128/135106891/1"
+    },
+    {
+     "src": "한국경제",
+     "title": "\"팬티만 빼고 벗어야\" 박정수 각오에…한지민 '당황'",
+     "link": "https://www.hankyung.com/article/2026112860817"
+    },
+    {
+     "src": "한국경제",
+     "title": "이서진·한지민 싸우고, 주헌·정연 '새 짐꾼'…나영석 예능 또 터질까 [종합]",
+     "link": "https://www.hankyung.com/article/202611262495H"
+    }
+   ]
+  },
+  {
    "kw": "결국",
    "nsrc": 4,
    "srcs": [
@@ -441,6 +475,39 @@
    ]
   },
   {
+   "kw": "연하",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "세계일보",
+    "조선일보"
+   ],
+   "n": 9,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "장윤주, 런던서 결국 눈물…♥4세 연하 남편 생일에 무슨 일",
+     "link": "https://sports.donga.com/ent/article/all/20261128/135107301/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "오윤아, ♥4세 연하 남편 공개…바라보는 눈에서 꿀이 뚝뚝",
+     "link": "https://sports.donga.com/ent/article/all/20261128/135106857/1"
+    },
+    {
+     "src": "세계일보",
+     "title": "오윤아, 4세 연하 남편 공개…모자이크 뚫는 듬직한 체격",
+     "link": "https://www.segye.com/newsView/20261128500011"
+    },
+    {
+     "src": "뉴시스",
+     "title": "오윤아, 4세 연하 남편 공개…모자이크 뚫는 듬직한 체격",
+     "link": "https://www.newsis.com/view/NISX20261127_0003886910"
+    }
+   ]
+  },
+  {
    "kw": "이동연",
    "nsrc": 4,
    "srcs": [
@@ -470,39 +537,6 @@
      "src": "헤럴드경제",
      "title": "뮤지컬 배우 이동연, 팬 편지 읽지도 않고 버렸다 들통",
      "link": "https://biz.heraldcorp.com/article/10951210"
-    }
-   ]
-  },
-  {
-   "kw": "한지민",
-   "nsrc": 4,
-   "srcs": [
-    "동아일보",
-    "연합뉴스",
-    "조선일보",
-    "한국경제"
-   ],
-   "n": 8,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "도합 85년 우정 여행…한지민 \"나이·성별 떠나 친구 됐죠\"",
-     "link": "https://www.yna.co.kr/view/AKR20261126143000005"
-    },
-    {
-     "src": "동아일보",
-     "title": "이서진vs한지민 통했다…‘그냥사람친구’ 첫방송 5%",
-     "link": "https://sports.donga.com/ent/article/all/20261128/135106891/1"
-    },
-    {
-     "src": "한국경제",
-     "title": "이서진·한지민 싸우고, 주헌·정연 '새 짐꾼'…나영석 예능 또 터질까 [종합]",
-     "link": "https://www.hankyung.com/article/202611262495H"
-    },
-    {
-     "src": "한국경제",
-     "title": "'그사친' 박정수 \"이서진·한지민 어찌나 싸우던지\"",
-     "link": "https://www.hankyung.com/article/202611262435H"
     }
    ]
   },
@@ -606,6 +640,39 @@
    ]
   },
   {
+   "kw": "결별",
+   "nsrc": 4,
+   "srcs": [
+    "SBS",
+    "뉴시스",
+    "연합뉴스",
+    "조선일보"
+   ],
+   "n": 7,
+   "headlines": [
+    {
+     "src": "연합뉴스",
+     "title": "졸리·피트, 결별 10년만에 법적분쟁도 종료…재산소송 합의",
+     "link": "https://www.yna.co.kr/view/AKR20261126036500009"
+    },
+    {
+     "src": "연합뉴스",
+     "title": "임지연·이도현, 교제 4년 만에 결별…\"좋은 동료로 남기로\"",
+     "link": "https://www.yna.co.kr/view/AKR20261124145200005"
+    },
+    {
+     "src": "SBS",
+     "title": "결별 아픔 활동으로 잊는다…이도현, 해외 프로모션·연기 활동 박차",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008866154&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "뉴시스",
+     "title": "'결별' 이도현, 한소희 짧은 치마에 재킷 벗었다…다리까지 가려줘",
+     "link": "https://www.newsis.com/view/NISX20261127_0003886270"
+    }
+   ]
+  },
+  {
    "kw": "음주운전",
    "nsrc": 4,
    "srcs": [
@@ -639,11 +706,11 @@
    ]
   },
   {
-   "kw": "결별",
+   "kw": "너무",
    "nsrc": 4,
    "srcs": [
     "SBS",
-    "뉴시스",
+    "세계일보",
     "연합뉴스",
     "조선일보"
    ],
@@ -651,23 +718,56 @@
    "headlines": [
     {
      "src": "연합뉴스",
-     "title": "졸리·피트, 결별 10년만에 법적분쟁도 종료…재산소송 합의",
-     "link": "https://www.yna.co.kr/view/AKR20261126036500009"
+     "title": "'관객 떼창' 지휘한 마에스트로 조용필…\"신청곡 너무 많아\"",
+     "link": "https://www.yna.co.kr/view/AKR20261128030900005"
     },
     {
-     "src": "연합뉴스",
-     "title": "임지연·이도현, 교제 4년 만에 결별…\"좋은 동료로 남기로\"",
-     "link": "https://www.yna.co.kr/view/AKR20261124145200005"
+     "src": "세계일보",
+     "title": "‘폭설’, 캐나다서 리메이크된다…“한국에만 머물기엔 너무 아까워”",
+     "link": "https://www.segye.com/newsView/20261127504909"
     },
     {
      "src": "SBS",
-     "title": "결별 아픔 활동으로 잊는다…이도현, 해외 프로모션·연기 활동 박차",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008866154&plink=RSSLINK&cooper=RSSREADER"
+     "title": "'나인 투 식스' 고수 \"15년 만의 로맨스 복귀 너무 좋아\"…'달빛 남주'의 은은한 매력 예고",
+     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008863170&plink=RSSLINK&cooper=RSSREADER"
+    },
+    {
+     "src": "조선일보",
+     "title": "\"가족 상처받지 않게\" 남경주, 결혼반지에 담긴 속내?…\"너무 무섭고 힘들다\" 피해자 절규",
+     "link": "https://www.chosun.com/entertainments/enter_general/2026/11/28/MVSWMZBTGBSGEYJRGBRDCMZZGI/"
+    }
+   ]
+  },
+  {
+   "kw": "입고",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "조선일보",
+    "한국경제"
+   ],
+   "n": 6,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "AOA 출신 지민, 속옷만 입고 파격… 민망하네 [DA★]",
+     "link": "https://sports.donga.com/ent/article/all/20261128/135106821/1"
+    },
+    {
+     "src": "한국경제",
+     "title": "[포토+] 이정은, '멋지게 슈트 입고 등장'",
+     "link": "https://www.hankyung.com/article/202611260762H"
     },
     {
      "src": "뉴시스",
-     "title": "'결별' 이도현, 한소희 짧은 치마에 재킷 벗었다…다리까지 가려줘",
-     "link": "https://www.newsis.com/view/NISX20261127_0003886270"
+     "title": "허윤진, 뉴욕서 파격 톱 입고 시선 집중…탄탄한 몸매까지 눈길",
+     "link": "https://www.newsis.com/view/NISX20261128_0003887141"
+    },
+    {
+     "src": "뉴시스",
+     "title": "트와이스 모모, 속옷 같은 의상 입고 춤췄다가 日 팬들 지적",
+     "link": "https://www.newsis.com/view/NISX20261127_0003886436"
     }
    ]
   },
@@ -701,39 +801,6 @@
      "src": "뉴시스",
      "title": "장윤주, 영국서 뽐낸 군살 없는 몸매…비결은 \"2주 동안 밀가루 끊기\"",
      "link": "https://www.newsis.com/view/NISX20261127_0003886651"
-    }
-   ]
-  },
-  {
-   "kw": "지나",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "조선일보",
-    "한국경제",
-    "헤럴드경제"
-   ],
-   "n": 6,
-   "headlines": [
-    {
-     "src": "한국경제",
-     "title": "'그사친' 이서진 \"짐꾼 할 나이 지나\"…김용건 \"팔짱 많이 끼더라\"",
-     "link": "https://www.hankyung.com/article/202611262194H"
-    },
-    {
-     "src": "헤럴드경제",
-     "title": "‘성매매 벌금형’ 지나, 심각한 얼굴 노화 화제 되더니…반전 해명",
-     "link": "https://biz.heraldcorp.com/article/10952150"
-    },
-    {
-     "src": "뉴시스",
-     "title": "'10년 공백' 지나, 외모 변화 직접 해명 \"AI에요\"",
-     "link": "https://www.newsis.com/view/NISX20261128_0003887031"
-    },
-    {
-     "src": "뉴시스",
-     "title": "'10년 공백' 지나, 몰라보게 달라진 근황 \"같은 사람이지만…\"",
-     "link": "https://www.newsis.com/view/NISX20261127_0003885418"
     }
    ]
   },
@@ -837,39 +904,6 @@
    ]
   },
   {
-   "kw": "시선",
-   "nsrc": 4,
-   "srcs": [
-    "동아일보",
-    "연합뉴스",
-    "조선일보",
-    "한국경제"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "'푸른길' 한준희 감독 \"원작에 한국인의 시선 더했죠\"",
-     "link": "https://www.yna.co.kr/view/AKR20261125167500005"
-    },
-    {
-     "src": "연합뉴스",
-     "title": "혁오, 오늘 6년 만의 정규앨범 '33'…사랑 향한 시선 담아",
-     "link": "https://www.yna.co.kr/view/AKR20261125096500005"
-    },
-    {
-     "src": "동아일보",
-     "title": "클릭비 김상혁, 유채련 친구들 앞 눈시울 붉혔다…“괜한 시선 쏠릴까 봐”",
-     "link": "https://sports.donga.com/ent/article/all/20261128/135106694/1"
-    },
-    {
-     "src": "한국경제",
-     "title": "HK직캠|장다아, '러블리 미소에 시선 강탈'",
-     "link": "https://www.hankyung.com/article/202611275674H"
-    }
-   ]
-  },
-  {
    "kw": "해외",
    "nsrc": 4,
    "srcs": [
@@ -903,39 +937,6 @@
    ]
   },
   {
-   "kw": "장윤주",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "세계일보",
-    "조선일보"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "장윤주, 런던서 결국 눈물…♥4세 연하 남편 생일에 무슨 일",
-     "link": "https://sports.donga.com/ent/article/all/20261128/135107301/1"
-    },
-    {
-     "src": "세계일보",
-     "title": "장윤주, 영국서 뽐낸 군살 없는 몸매…비결은 \"2주 동안 밀가루 끊기\"",
-     "link": "https://www.segye.com/newsView/20261128500313"
-    },
-    {
-     "src": "뉴시스",
-     "title": "장윤주, 영국서 뽐낸 군살 없는 몸매…비결은 \"2주 동안 밀가루 끊기\"",
-     "link": "https://www.newsis.com/view/NISX20261127_0003886651"
-    },
-    {
-     "src": "조선일보",
-     "title": "런던도 한국 김 열풍..장윤주, 텅텅 빈 매대 앞 “인기 많대..다 팔렸다” (‘윤주르’)",
-     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/28/GBSTONLDMNTGCMZUGMZTOMBZGI/"
-    }
-   ]
-  },
-  {
    "kw": "남편",
    "nsrc": 4,
    "srcs": [
@@ -965,6 +966,39 @@
      "src": "뉴시스",
      "title": "오윤아, 4세 연하 남편 공개…모자이크 뚫는 듬직한 체격",
      "link": "https://www.newsis.com/view/NISX20261127_0003886910"
+    }
+   ]
+  },
+  {
+   "kw": "장윤주",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "동아일보",
+    "세계일보",
+    "조선일보"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "동아일보",
+     "title": "장윤주, 런던서 결국 눈물…♥4세 연하 남편 생일에 무슨 일",
+     "link": "https://sports.donga.com/ent/article/all/20261128/135107301/1"
+    },
+    {
+     "src": "세계일보",
+     "title": "장윤주, 영국서 뽐낸 군살 없는 몸매…비결은 \"2주 동안 밀가루 끊기\"",
+     "link": "https://www.segye.com/newsView/20261128500313"
+    },
+    {
+     "src": "뉴시스",
+     "title": "장윤주, 영국서 뽐낸 군살 없는 몸매…비결은 \"2주 동안 밀가루 끊기\"",
+     "link": "https://www.newsis.com/view/NISX20261127_0003886651"
+    },
+    {
+     "src": "조선일보",
+     "title": "런던도 한국 김 열풍..장윤주, 텅텅 빈 매대 앞 “인기 많대..다 팔렸다” (‘윤주르’)",
+     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/28/GBSTONLDMNTGCMZUGMZTOMBZGI/"
     }
    ]
   },
@@ -1035,40 +1069,7 @@
    ]
   },
   {
-   "kw": "입고",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "조선일보",
-    "한국경제"
-   ],
-   "n": 5,
-   "headlines": [
-    {
-     "src": "동아일보",
-     "title": "AOA 출신 지민, 속옷만 입고 파격… 민망하네 [DA★]",
-     "link": "https://sports.donga.com/ent/article/all/20261128/135106821/1"
-    },
-    {
-     "src": "한국경제",
-     "title": "[포토+] 이정은, '멋지게 슈트 입고 등장'",
-     "link": "https://www.hankyung.com/article/202611260762H"
-    },
-    {
-     "src": "뉴시스",
-     "title": "트와이스 모모, 속옷 같은 의상 입고 춤췄다가 日 팬들 지적",
-     "link": "https://www.newsis.com/view/NISX20261127_0003886436"
-    },
-    {
-     "src": "뉴시스",
-     "title": "임예진, '재혼황후' 신민아 극찬…\"트레이닝복 입고 찍어도 예뻐\"",
-     "link": "https://www.newsis.com/view/NISX20261127_0003885952"
-    }
-   ]
-  },
-  {
-   "kw": "아들",
+   "kw": "없어",
    "nsrc": 4,
    "srcs": [
     "뉴시스",
@@ -1080,23 +1081,89 @@
    "headlines": [
     {
      "src": "동아일보",
-     "title": "나윤권, 두 돌 아들 육아 얼마나 힘들길래…“테이보다 간절하게 먹어”",
-     "link": "https://sports.donga.com/ent/article/all/20261128/135106768/1"
+     "title": "‘지연과 이혼’ 황재균, 손아섭 결혼반지 공격에 받아쳤다…“나도 없어”",
+     "link": "https://sports.donga.com/ent/article/all/20261128/135106724/1"
+    },
+    {
+     "src": "동아일보",
+     "title": "조준현, 72일 만에 소이원에게 고백했는데…“오래 만날 확신 없어”",
+     "link": "https://sports.donga.com/ent/article/all/20261128/135106714/1"
     },
     {
      "src": "헤럴드경제",
-     "title": "강호동 아들 강시후, 전국 골프대회 고등부 준우승 쾌거",
-     "link": "https://biz.heraldcorp.com/article/10951420"
+     "title": "조세호, 뜻밖의 재산 질문에 …“최근 수입 없어”",
+     "link": "https://biz.heraldcorp.com/article/10952124"
     },
     {
      "src": "뉴시스",
-     "title": "'키 188㎝' 강호동 아들 강시후, 전국 학생 골프대회 준우승",
-     "link": "https://www.newsis.com/view/NISX20261127_0003886577"
+     "title": "박준형, 수능 영어 풀더니 \"단어 전혀 알 수 없어\" 난색",
+     "link": "https://www.newsis.com/view/NISX20261127_0003886834"
+    }
+   ]
+  },
+  {
+   "kw": "지나",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "조선일보",
+    "한국경제",
+    "헤럴드경제"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "한국경제",
+     "title": "'그사친' 이서진 \"짐꾼 할 나이 지나\"…김용건 \"팔짱 많이 끼더라\"",
+     "link": "https://www.hankyung.com/article/202611262194H"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "‘성매매 벌금형’ 지나, 심각한 얼굴 노화 화제 되더니…반전 해명",
+     "link": "https://biz.heraldcorp.com/article/10952150"
     },
     {
      "src": "뉴시스",
-     "title": "김은우, 아들 둘 데리고 17살 연하 재혼 \"재산 노리는 거 아니냐고\"",
-     "link": "https://www.newsis.com/view/NISX20261127_0003885412"
+     "title": "'10년 공백' 지나, 외모 변화 직접 해명 \"AI에요\"",
+     "link": "https://www.newsis.com/view/NISX20261128_0003887031"
+    },
+    {
+     "src": "조선일보",
+     "title": "배우 이어 가수들까지…지나·S.E.S 슈 맞아? 전성기 시절 잊게 한 ‘고속노화’[Oh!쎈 이슈]",
+     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/28/ME4WGZLBMMYTCZLDMNSTGNRYGQ/"
+    }
+   ]
+  },
+  {
+   "kw": "동생",
+   "nsrc": 4,
+   "srcs": [
+    "뉴시스",
+    "세계일보",
+    "조선일보",
+    "헤럴드경제"
+   ],
+   "n": 5,
+   "headlines": [
+    {
+     "src": "세계일보",
+     "title": "LG 임찬규, '손나은 동생' 골퍼 손새은과 5년 열애 끝 내달 결혼",
+     "link": "https://www.segye.com/newsView/20261128501356"
+    },
+    {
+     "src": "헤럴드경제",
+     "title": "콘서트장서 무릎 꿇은 LG 임찬규…‘손나은 동생’ 골퍼 손새은과 12월 결혼",
+     "link": "https://biz.heraldcorp.com/article/10952413"
+    },
+    {
+     "src": "뉴시스",
+     "title": "LG 임찬규, '손나은 동생' 골퍼 손새은과 5년 열애 끝 내달 결혼",
+     "link": "https://www.newsis.com/view/NISX20261128_0003886958"
+    },
+    {
+     "src": "조선일보",
+     "title": "'손나은 동생' 손새은, ♥임찬규에 다이아 반지 프러포즈 받았다..'다듀 콘서트서 폭풍 오열' [Oh!쎈 이슈]",
+     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/28/MFRDAMJZGRRTGYZTG5SDGMLGME/"
     }
    ]
   },
@@ -1134,35 +1201,35 @@
    ]
   },
   {
-   "kw": "동생",
+   "kw": "유럽",
    "nsrc": 4,
    "srcs": [
     "뉴시스",
-    "세계일보",
-    "조선일보",
-    "헤럴드경제"
+    "동아일보",
+    "연합뉴스",
+    "조선일보"
    ],
-   "n": 5,
+   "n": 4,
    "headlines": [
     {
-     "src": "세계일보",
-     "title": "LG 임찬규, '손나은 동생' 골퍼 손새은과 5년 열애 끝 내달 결혼",
-     "link": "https://www.segye.com/newsView/20261128501356"
+     "src": "연합뉴스",
+     "title": "에이티즈, 내년 3월 런던서 '제로 투 올' 유럽 투어 출발",
+     "link": "https://www.yna.co.kr/view/AKR20261128033900005"
     },
     {
-     "src": "헤럴드경제",
-     "title": "콘서트장서 무릎 꿇은 LG 임찬규…‘손나은 동생’ 골퍼 손새은과 12월 결혼",
-     "link": "https://biz.heraldcorp.com/article/10952413"
+     "src": "동아일보",
+     "title": "에이티즈, 유럽 대형 아레나 7곳 접수…월드클래스의 위엄",
+     "link": "https://sports.donga.com/ent/article/all/20261128/135106910/1"
     },
     {
      "src": "뉴시스",
-     "title": "LG 임찬규, '손나은 동생' 골퍼 손새은과 5년 열애 끝 내달 결혼",
-     "link": "https://www.newsis.com/view/NISX20261128_0003886958"
+     "title": "에이티즈, 내년 봄 유럽 6개국 7개 도시 투어…대형 아레나 출격",
+     "link": "https://www.newsis.com/view/NISX20261128_0003886998"
     },
     {
      "src": "조선일보",
-     "title": "'손나은 동생' 손새은, ♥임찬규에 다이아 반지 프러포즈 받았다..'다듀 콘서트서 폭풍 오열' [Oh!쎈 이슈]",
-     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/28/MFRDAMJZGRRTGYZTG5SDGMLGME/"
+     "title": "엔하이픈, 유럽 대형 음악축제 ‘매드 쿨 2027’ 헤드라이너 출격",
+     "link": "https://www.chosun.com/entertainments/music/2026/11/28/HAYWMOJRGVQWCNJSGVTGGNTBGU/"
     }
    ]
   },
@@ -1262,72 +1329,6 @@
      "src": "뉴시스",
      "title": "박지민, MBC 떠나나 \"주변서 이제 나가야지 말 많이 해\"",
      "link": "https://www.newsis.com/view/NISX20261127_0003886563"
-    }
-   ]
-  },
-  {
-   "kw": "청룡영화",
-   "nsrc": 4,
-   "srcs": [
-    "SBS",
-    "뉴시스",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 4,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "청룡영화상 작품상에 '호프'…설경구·전도연 남녀주연상 석권",
-     "link": "https://www.yna.co.kr/view/AKR20261125187600005"
-    },
-    {
-     "src": "SBS",
-     "title": "설경구·전도연 나란히 남녀주연상…청룡영화상서 '석권'",
-     "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008863866&plink=RSSLINK&cooper=RSSREADER"
-    },
-    {
-     "src": "뉴시스",
-     "title": "문근영, 청룡영화상 앞머리 왜 저랬나 했더니 \"쓰러져서 다쳤어요\"",
-     "link": "https://www.newsis.com/view/NISX20261127_0003885571"
-    },
-    {
-     "src": "조선일보",
-     "title": "[포토] 청룡영화상 음악상 수상한 영화 파반느 이민휘 감독",
-     "link": "https://www.chosun.com/entertainments/entertain_photo/2026/11/27/GRTGEMDGMQ3TCYTEMEZTQYLFG4/"
-    }
-   ]
-  },
-  {
-   "kw": "앞두고",
-   "nsrc": 4,
-   "srcs": [
-    "뉴시스",
-    "동아일보",
-    "연합뉴스",
-    "조선일보"
-   ],
-   "n": 4,
-   "headlines": [
-    {
-     "src": "연합뉴스",
-     "title": "버벌진트, 새 앨범 발매 앞두고 20명 초청 '생맥주 음감회'",
-     "link": "https://www.yna.co.kr/view/AKR20261124013300005"
-    },
-    {
-     "src": "동아일보",
-     "title": "김준호, ♥김지민과 제주 여행 앞두고 역사 공부까지 (독박투어)",
-     "link": "https://sports.donga.com/ent/article/all/20261128/135107138/1"
-    },
-    {
-     "src": "뉴시스",
-     "title": "솔비, 4월 결혼식 앞두고 2세 계획 언급 \"내년이 마지노선\"",
-     "link": "https://www.newsis.com/view/NISX20261128_0003887072"
-    },
-    {
-     "src": "조선일보",
-     "title": "친일파 미화 논란 '100일의 거짓말', 결말은?..종영 앞두고 김현주·박진영 총 겨눴다",
-     "link": "https://www.chosun.com/entertainments/broadcast/2026/11/28/GZRTINLEMU3WIOBYHAYTINRYMY/"
     }
    ]
   }
