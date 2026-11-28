@@ -1,26 +1,260 @@
 {
- "at": "2026-11-28 00:16",
+ "at": "2026-11-29 00:15",
  "note": "그날 처음 들어온 방문자 기준(관리자·자동 점검 제외). 채널 → 첫 페이지별 방문자 수.",
  "days": [
   {
-   "day": "2026-11-28",
-   "visitors": 1,
+   "day": "2026-11-29",
+   "visitors": 2,
    "channels": [
     [
-     "🔍 네이버 검색",
+     "🔗 직접 접속(주소 입력·즐겨찾기·앱 안 링크)",
+     1
+    ],
+    [
+     "💬 네이버 지식인",
      1
     ]
    ],
    "landing": [
     [
-     "/guide/workers-welfare-livelihood-loan-apply/",
+     "/money/guide/doctor-pharmacist-national-exam-2027-schedule/",
+     1
+    ],
+    [
+     "/guide/video-portfolio/",
      1
     ]
    ],
    "by_channel": {
+    "🔗 직접 접속(주소 입력·즐겨찾기·앱 안 링크)": [
+     [
+      "/money/guide/doctor-pharmacist-national-exam-2027-schedule/",
+      1
+     ]
+    ],
+    "💬 네이버 지식인": [
+     [
+      "/guide/video-portfolio/",
+      1
+     ]
+    ]
+   }
+  },
+  {
+   "day": "2026-11-28",
+   "visitors": 297,
+   "channels": [
+    [
+     "🔍 다음·빙 검색",
+     152
+    ],
+    [
+     "🔗 직접 접속(주소 입력·즐겨찾기·앱 안 링크)",
+     95
+    ],
+    [
+     "🔍 네이버 검색",
+     27
+    ],
+    [
+     "🔍 구글 검색",
+     15
+    ],
+    [
+     "🏷️ 기타 홍보 링크(chatgptcom)",
+     6
+    ],
+    [
+     "💬 네이버 지식인",
+     1
+    ],
+    [
+     "🌐 기타 사이트(t.co)",
+     1
+    ]
+   ],
+   "landing": [
+    [
+     "/money/guide/teacher-exam-2027-schedule/",
+     88
+    ],
+    [
+     "/contest/slogan/",
+     13
+    ],
+    [
+     "/event/",
+     11
+    ],
+    [
+     "/money/guide/teacher-exam-2027-first-round-result-second-round-schedule/",
+     11
+    ],
+    [
+     "/issue/suneung-score-report-1105/",
+     6
+    ],
+    [
+     "/exam/teacher-2027-kinder-elem-special/",
+     5
+    ],
+    [
+     "/contest/deadline-12/",
+     4
+    ],
+    [
+     "/money/guide/susi-2027-result-registration-schedule/",
+     4
+    ],
+    [
+     "/money/guide/civil-servant-pay-2027-salary-table-all-occupations/",
+     4
+    ],
+    [
+     "/money/guide/zodiac-2027-year-of-sheep-samjae/",
+     4
+    ],
+    [
+     "/money/guide/teacher-exam-2027-to-quota-by-region/",
+     4
+    ],
+    [
+     "/guide/phone-device-change-condition-method/",
+     4
+    ],
+    [
+     "/money/guide/public-security-pay-2027-salary-table/",
+     4
+    ],
+    [
+     "/talk/",
+     3
+    ],
+    [
+     "/contest/photo/",
+     3
+    ]
+   ],
+   "by_channel": {
+    "🔍 다음·빙 검색": [
+     [
+      "/money/guide/teacher-exam-2027-schedule/",
+      71
+     ],
+     [
+      "/money/guide/teacher-exam-2027-first-round-result-second-round-schedule/",
+      9
+     ],
+     [
+      "/issue/suneung-score-report-1105/",
+      5
+     ],
+     [
+      "/money/guide/susi-2027-result-registration-schedule/",
+      4
+     ],
+     [
+      "/money/guide/civil-servant-pay-2027-salary-table-all-occupations/",
+      4
+     ]
+    ],
+    "🔗 직접 접속(주소 입력·즐겨찾기·앱 안 링크)": [
+     [
+      "/money/guide/teacher-exam-2027-schedule/",
+      17
+     ],
+     [
+      "/contest/slogan/",
+      13
+     ],
+     [
+      "/event/",
+      11
+     ],
+     [
+      "/contest/deadline-12/",
+      4
+     ],
+     [
+      "/talk/",
+      3
+     ]
+    ],
     "🔍 네이버 검색": [
      [
+      "/guide/phone-device-change-condition-method/",
+      3
+     ],
+     [
+      "/money/guide/personal-customs-id-number-reissue-lookup/",
+      2
+     ],
+     [
       "/guide/workers-welfare-livelihood-loan-apply/",
+      2
+     ],
+     [
+      "/guide/conditional-recipient-self-support-work-duty/",
+      2
+     ],
+     [
+      "/money/guide/unemployment-job-search/",
+      1
+     ]
+    ],
+    "🔍 구글 검색": [
+     [
+      "/money/guide/public-security-pay-2027-salary-table/",
+      2
+     ],
+     [
+      "/game/battlefield-6-editions/",
+      2
+     ],
+     [
+      "/exam/teacher-2027-secondary/",
+      2
+     ],
+     [
+      "/money/guide/teacher-exam-2027-first-round-result-second-round-schedule/",
+      1
+     ],
+     [
+      "/money/guide/seollal-2027-train-ticket-booking-date/",
+      1
+     ]
+    ],
+    "💬 네이버 지식인": [
+     [
+      "/cat/literature/",
+      1
+     ]
+    ],
+    "🏷️ 기타 홍보 링크(chatgptcom)": [
+     [
+      "/guide/insurance-duty-to-disclose-simplified-claim-prescription/",
+      1
+     ],
+     [
+      "/cat/literature/",
+      1
+     ],
+     [
+      "/c/Q04889/",
+      1
+     ],
+     [
+      "/c/Q04554/",
+      1
+     ],
+     [
+      "/c/Q02996/",
+      1
+     ]
+    ],
+    "🌐 기타 사이트(t.co)": [
+     [
+      "/c/Q04406/",
       1
      ]
     ]
@@ -521,250 +755,6 @@
     "🌐 기타 사이트(facebook.com)": [
      [
       "/talk/",
-      1
-     ]
-    ]
-   }
-  },
-  {
-   "day": "2026-11-25",
-   "visitors": 385,
-   "channels": [
-    [
-     "🔍 다음·빙 검색",
-     205
-    ],
-    [
-     "🔍 구글 검색",
-     63
-    ],
-    [
-     "🔍 네이버 검색",
-     57
-    ],
-    [
-     "🔗 직접 접속(주소 입력·즐겨찾기·앱 안 링크)",
-     49
-    ],
-    [
-     "🏷️ 기타 홍보 링크(chatgptcom)",
-     4
-    ],
-    [
-     "🏷️ 기타 홍보 링크(naver_kin)",
-     3
-    ],
-    [
-     "📝 블로그",
-     2
-    ],
-    [
-     "🏷️ 기타 홍보 링크(perplexity)",
-     1
-    ],
-    [
-     "🌐 기타 사이트(github.com)",
-     1
-    ]
-   ],
-   "landing": [
-    [
-     "/money/guide/insurance-rates-2027-table/",
-     39
-    ],
-    [
-     "/money/guide/teacher-exam-2027-schedule/",
-     30
-    ],
-    [
-     "/money/guide/teacher-pay-2027-salary-table/",
-     13
-    ],
-    [
-     "/money/guide/military-enlistment-2027-date-selection-schedule/",
-     11
-    ],
-    [
-     "/contest/slogan/",
-     10
-    ],
-    [
-     "/issue/suneung-score-report-1105/",
-     10
-    ],
-    [
-     "/money/guide/susi-2027-result-registration-schedule/",
-     9
-    ],
-    [
-     "/money/guide/public-security-pay-2027-salary-table/",
-     8
-    ],
-    [
-     "/guide/bank-passbook-reissue-fee-period/",
-     7
-    ],
-    [
-     "/money/guide/teacher-exam-2027-first-round-result-second-round-schedule/",
-     6
-    ],
-    [
-     "/event/",
-     5
-    ],
-    [
-     "/money/guide/teacher-exam-2027-to-quota-by-region/",
-     5
-    ],
-    [
-     "/money/guide/civil-servant-pay-2027-salary-table-all-occupations/",
-     5
-    ],
-    [
-     "/money/guide/military-civilian-2027-exam-schedule/",
-     5
-    ],
-    [
-     "/money/guide/industrial-accident-insurance-rate-2027/",
-     5
-    ]
-   ],
-   "by_channel": {
-    "🔍 다음·빙 검색": [
-     [
-      "/money/guide/insurance-rates-2027-table/",
-      39
-     ],
-     [
-      "/money/guide/teacher-exam-2027-schedule/",
-      26
-     ],
-     [
-      "/money/guide/susi-2027-result-registration-schedule/",
-      9
-     ],
-     [
-      "/issue/suneung-score-report-1105/",
-      8
-     ],
-     [
-      "/money/guide/teacher-pay-2027-salary-table/",
-      7
-     ]
-    ],
-    "🔗 직접 접속(주소 입력·즐겨찾기·앱 안 링크)": [
-     [
-      "/contest/slogan/",
-      10
-     ],
-     [
-      "/event/",
-      5
-     ],
-     [
-      "/money/guide/teacher-exam-2027-schedule/",
-      4
-     ],
-     [
-      "/contest/photo/",
-      3
-     ],
-     [
-      "/money/guide/military-enlistment-2027-date-selection-schedule/",
-      2
-     ]
-    ],
-    "🔍 구글 검색": [
-     [
-      "/money/guide/military-enlistment-2027-date-selection-schedule/",
-      8
-     ],
-     [
-      "/money/guide/teacher-pay-2027-salary-table/",
-      5
-     ],
-     [
-      "/money/guide/public-security-pay-2027-salary-table/",
-      5
-     ],
-     [
-      "/money/guide/military-civilian-2027-exam-schedule/",
-      5
-     ],
-     [
-      "/money/guide/police-officer-2027-recruitment-exam-schedule/",
-      3
-     ]
-    ],
-    "🔍 네이버 검색": [
-     [
-      "/guide/bank-passbook-reissue-fee-period/",
-      6
-     ],
-     [
-      "/issue/insurance-rates-2027-1104/",
-      3
-     ],
-     [
-      "/guide/one-person-corporation-closure-liquidation-tax/",
-      3
-     ],
-     [
-      "/money/guide/nps-payment-exception-apply-consequence/",
-      2
-     ],
-     [
-      "/money/guide/jeonse-loan-basics/",
-      2
-     ]
-    ],
-    "📝 블로그": [
-     [
-      "/",
-      2
-     ]
-    ],
-    "🏷️ 기타 홍보 링크(perplexity)": [
-     [
-      "/guide/bank-passbook-reissue-fee-period/",
-      1
-     ]
-    ],
-    "🏷️ 기타 홍보 링크(naver_kin)": [
-     [
-      "/money/guide/card-loss-theft-fraud-liability-60days/",
-      1
-     ],
-     [
-      "/guide/overseas-purchase-agent-customs-delay-refund/",
-      1
-     ],
-     [
-      "/guide/account-hacked-suspended-recovery-118/",
-      1
-     ]
-    ],
-    "🏷️ 기타 홍보 링크(chatgptcom)": [
-     [
-      "/satire/",
-      1
-     ],
-     [
-      "/money/guide/police-officer-2027-recruitment-exam-schedule/",
-      1
-     ],
-     [
-      "/contest/ai-video/",
-      1
-     ],
-     [
-      "/app/",
-      1
-     ]
-    ],
-    "🌐 기타 사이트(github.com)": [
-     [
-      "/park/",
       1
      ]
     ]
